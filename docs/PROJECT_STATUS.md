@@ -50,7 +50,7 @@ See `docs/LOCAL_EXECUTION_POLICY.md`.
 | C06 external validation | full pinned Belief-R zero-shot run completed with negative result | `artifacts/external_validation/c06-final-official/`, `docs/C06_EXTERNAL_VALIDATION_RESULTS.md` |
 | Metrics for stability/revision/recovery | runnable | `src/sparkbrain/metrics.py` |
 | Static replay visualizer | runnable locally | `artifacts/demo/visualizer.html` |
-| Unit tests | integration verification pending | `python -m pytest -q` |
+| Unit tests | 197 passing with learned/spiking extras available | `python -m pytest -q` |
 | Local readiness audit | runnable | `scripts/local_readiness_check.py` |
 | Generated Phase-0 report | complete with limitations | `artifacts/benchmarks/benchmark_report.md` |
 | Codex repository instructions | complete | `AGENTS.md`, `.agents/skills/sparkbrain-research/SKILL.md` |

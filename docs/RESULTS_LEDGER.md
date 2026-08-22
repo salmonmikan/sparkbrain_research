@@ -417,3 +417,33 @@ existing evidence. CL-011 remains E1 pending an independent clean-room reproduct
 
 **Claim impact:** CL-007 remains E0. This run establishes an offline external adapter and a
 negative result, not external generalization or superiority.
+
+---
+
+## 2026-08-23 — R0013 — C01-C10 integrated non-license release candidate
+
+**Code/base:** integrated `codex/c01-c10-integration`; package `0.2.1`, schema `0.2`  
+**Primary validation:** `python -m pytest -q`, `python -m ruff check .`,
+`python scripts/validate_release.py --preparation-only`  
+**Offline reproduction:** `python scripts/reproduce_release.py --offline --output <LOCAL_OUTPUT>`
+
+### Validation outcome
+
+- 197 tests, Ruff, local readiness, the 23-source/11-target prior-art audit, and 88-file
+  bundle validation passed on Windows/Python 3.13.3 CPU;
+- the bounded primary Markdown table and SVG reproduced byte-for-byte with no network
+  operations after setup;
+- the release evidence map contains no pending C01-C10 entry and connects the C05 encoder
+  manifest, C06 external artifacts, and C08 negative structural artifacts;
+- tracked-file completeness, Windows absolute-path rejection, evidence/provenance ancestry,
+  and project-license/SBOM consistency are fail-closed release gates.
+
+### Boundary and blocker
+
+- C05, C06, and C08 results remain negative and do not raise CL-007 or CL-008;
+- the fixed primary smoke subset was not expanded after seeing C05/C06/C08 results;
+- the owner has not selected a project license, so public validation remains blocked and no
+  public archive or tag is produced.
+
+**Claim impact:** no evidence grade increase. C01-C10 implementation and non-license release
+preparation are integrated; public release readiness is not claimed.
