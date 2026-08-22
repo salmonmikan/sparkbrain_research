@@ -1,0 +1,14 @@
+{
+  "development_effects": {
+    "contradiction_world": -0.08333333333333326,
+    "switchworld": -0.041666666666666685
+  },
+  "fail_closed": true,
+  "selected_world": null,
+  "selection_rule": "unique positive maximum development ablation impairment",
+  "test_worlds": [
+    "delayed_evidence_world",
+    "multi_object_world",
+    "reliability_world"
+  ]
+}

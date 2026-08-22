@@ -1,0 +1,256 @@
+[
+  {
+    "active_edges": 24,
+    "active_modules": 14,
+    "candidate": [
+      9,
+      13
+    ],
+    "dev_functional_effect_signature": {
+      "contradiction_world": -0.08333333333333326,
+      "switchworld": -0.041666666666666685
+    },
+    "events_applied": 4,
+    "events_rejected": 4,
+    "history": [
+      {
+        "boundary": 1,
+        "kind": "edge_prune",
+        "priority": 10,
+        "reason": "edge_credit_low",
+        "rejection": null,
+        "score": 1.0,
+        "sequence": 1,
+        "source_slot": 1,
+        "status": "applied",
+        "target_slot": 2
+      },
+      {
+        "boundary": 1,
+        "kind": "duplicate",
+        "priority": 50,
+        "reason": "routing_load_high",
+        "rejection": null,
+        "score": 3.0,
+        "sequence": 0,
+        "source_slot": 1,
+        "status": "applied",
+        "target_slot": 12
+      },
+      {
+        "boundary": 2,
+        "kind": "edge_prune",
+        "priority": 10,
+        "reason": "edge_credit_low",
+        "rejection": null,
+        "score": 1.0,
+        "sequence": 3,
+        "source_slot": 0,
+        "status": "applied",
+        "target_slot": 0
+      },
+      {
+        "boundary": 2,
+        "kind": "duplicate",
+        "priority": 50,
+        "reason": "routing_load_high",
+        "rejection": null,
+        "score": 3.2499999999999996,
+        "sequence": 2,
+        "source_slot": 1,
+        "status": "applied",
+        "target_slot": 13
+      },
+      {
+        "boundary": 3,
+        "kind": "edge_prune",
+        "priority": 10,
+        "reason": "edge_credit_low",
+        "rejection": "run_budget",
+        "score": 1.0,
+        "sequence": 5,
+        "source_slot": 0,
+        "status": "rejected",
+        "target_slot": 1
+      },
+      {
+        "boundary": 3,
+        "kind": "duplicate",
+        "priority": 50,
+        "reason": "routing_load_high",
+        "rejection": "run_budget",
+        "score": 3.5,
+        "sequence": 4,
+        "source_slot": 9,
+        "status": "rejected",
+        "target_slot": 14
+      },
+      {
+        "boundary": 4,
+        "kind": "edge_prune",
+        "priority": 10,
+        "reason": "edge_credit_low",
+        "rejection": "run_budget",
+        "score": 1.0,
+        "sequence": 7,
+        "source_slot": 0,
+        "status": "rejected",
+        "target_slot": 1
+      },
+      {
+        "boundary": 4,
+        "kind": "duplicate",
+        "priority": 50,
+        "reason": "routing_load_high",
+        "rejection": "run_budget",
+        "score": 3.5,
+        "sequence": 6,
+        "source_slot": 9,
+        "status": "rejected",
+        "target_slot": 14
+      }
+    ],
+    "identities": [
+      {
+        "created_by": null,
+        "logical_id": "source:0",
+        "parents": [],
+        "slot": 0,
+        "status": "active",
+        "tombstone_reason": null,
+        "version": 1
+      },
+      {
+        "created_by": null,
+        "logical_id": "source:1",
+        "parents": [],
+        "slot": 1,
+        "status": "active",
+        "tombstone_reason": null,
+        "version": 1
+      },
+      {
+        "created_by": null,
+        "logical_id": "source:2",
+        "parents": [],
+        "slot": 2,
+        "status": "active",
+        "tombstone_reason": null,
+        "version": 1
+      },
+      {
+        "created_by": null,
+        "logical_id": "source:3",
+        "parents": [],
+        "slot": 3,
+        "status": "active",
+        "tombstone_reason": null,
+        "version": 1
+      },
+      {
+        "created_by": null,
+        "logical_id": "source:4",
+        "parents": [],
+        "slot": 4,
+        "status": "active",
+        "tombstone_reason": null,
+        "version": 1
+      },
+      {
+        "created_by": null,
+        "logical_id": "source:5",
+        "parents": [],
+        "slot": 5,
+        "status": "active",
+        "tombstone_reason": null,
+        "version": 1
+      },
+      {
+        "created_by": null,
+        "logical_id": "source:6",
+        "parents": [],
+        "slot": 6,
+        "status": "active",
+        "tombstone_reason": null,
+        "version": 1
+      },
+      {
+        "created_by": null,
+        "logical_id": "source:7",
+        "parents": [],
+        "slot": 7,
+        "status": "active",
+        "tombstone_reason": null,
+        "version": 1
+      },
+      {
+        "created_by": null,
+        "logical_id": "source:8",
+        "parents": [],
+        "slot": 8,
+        "status": "active",
+        "tombstone_reason": null,
+        "version": 1
+      },
+      {
+        "created_by": null,
+        "logical_id": "source:9",
+        "parents": [],
+        "slot": 9,
+        "status": "active",
+        "tombstone_reason": null,
+        "version": 1
+      },
+      {
+        "created_by": null,
+        "logical_id": "source:10",
+        "parents": [],
+        "slot": 10,
+        "status": "active",
+        "tombstone_reason": null,
+        "version": 1
+      },
+      {
+        "created_by": null,
+        "logical_id": "source:11",
+        "parents": [],
+        "slot": 11,
+        "status": "active",
+        "tombstone_reason": null,
+        "version": 1
+      },
+      {
+        "created_by": 0,
+        "logical_id": "struct:83:12",
+        "parents": [
+          "source:1"
+        ],
+        "slot": 12,
+        "status": "active",
+        "tombstone_reason": null,
+        "version": 1
+      },
+      {
+        "created_by": 2,
+        "logical_id": "struct:83:13",
+        "parents": [
+          "source:1"
+        ],
+        "slot": 13,
+        "status": "active",
+        "tombstone_reason": null,
+        "version": 1
+      }
+    ],
+    "lineage_signature": [
+      [
+        "source:1"
+      ],
+      [
+        "source:9"
+      ]
+    ],
+    "seed": 83,
+    "tombstones": []
+  }
+]

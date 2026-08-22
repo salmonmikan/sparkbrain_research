@@ -44,9 +44,10 @@ See `docs/LOCAL_EXECUTION_POLICY.md`.
 | C05 matched baseline harness | implemented; reduced quality match negative | `src/sparkbrain/baselines/neural/`, `evaluation/run_baselines.py`, `artifacts/phase2/baselines/` |
 | C02 controlled worlds and statistical suite | implemented with negative results | `src/sparkbrain/tasks/`, `evaluation/`, `artifacts/phase1/c02-main-1000/` |
 | C04 learned sparse-rate backend | implemented with held-out synthetic result and collapse diagnostics | `src/sparkbrain/learned/`, `artifacts/phase2/`, `docs/C04_LEARNED_ROUTING_RESULTS.md` |
+| C08 bounded structural plasticity | implemented with valid negative specialization result | `src/sparkbrain/structural/`, `artifacts/phase3/`, `docs/C08_STRUCTURAL_PLASTICITY_RESULTS.md` |
 | Metrics for stability/revision/recovery | runnable | `src/sparkbrain/metrics.py` |
 | Static replay visualizer | runnable locally | `artifacts/demo/visualizer.html` |
-| Unit tests | 158 passing with PyTorch available; optional learned/spiking tests require their extras | `python -m pytest -q` |
+| Unit tests | integration verification pending | `python -m pytest -q` |
 | Local readiness audit | runnable | `scripts/local_readiness_check.py` |
 | Generated Phase-0 report | complete with limitations | `artifacts/benchmarks/benchmark_report.md` |
 | Codex repository instructions | complete | `AGENTS.md`, `.agents/skills/sparkbrain-research/SKILL.md` |
@@ -89,7 +90,7 @@ The accumulator baseline is close in this hand-authored setting. Therefore this 
 | P1 | full-scale matched-baseline scientific run; reduced harness is complete | C05 follow-on |
 | P1 | external model comparison; cache/schema/generator/metric foundation is implemented and model glue is pending | C06 |
 | P2 | fully spiking and multi-world equivalence beyond the reduced hybrid | C07 follow-on |
-| P2 | structural plasticity and emergent-organ tests | C08 |
+| P2 | additional structural-plasticity hypotheses after negative causal result | C08 follow-on |
 | continuous | systematic prior-art review and novelty audit | C09 |
 | release | local reproducibility/publication package | C10 |
 
@@ -146,3 +147,10 @@ scientific compute matching was false and no learned family met the accumulator
 accuracy/coverage quality target at every seed after ten optimizer steps. CL-007 therefore
 remains E0. The full frozen 1,000-episode-per-world run and a completed 12-trial search were
 not executed by this integration profile.
+
+C08 is locally implemented over the frozen C04 checkpoint and C02 manifests. Fixed-capacity
+module/edge masks, deterministic boundary events, identity/lineage/tombstone tracking,
+homeostasis, budgets, checkpoint continuation, actual selected-edge counters, paired causal
+controls, and sensitivity artifacts are covered. The two-seed candidate passed multiplicity
+only; decisiveness, fertility, and specificity failed. CL-008 remains E0 and no emergent-organ
+claim is permitted.

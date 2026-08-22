@@ -1,0 +1,38 @@
+[
+  {
+    "accuracy": 0.65625,
+    "active_edges": 24,
+    "active_modules": 12,
+    "candidate": [
+      9,
+      3
+    ],
+    "capped": false,
+    "event_budget": 0,
+    "events_applied": 0
+  },
+  {
+    "accuracy": 0.6696428571428571,
+    "active_edges": 26,
+    "active_modules": 15,
+    "candidate": [
+      9,
+      13
+    ],
+    "capped": false,
+    "event_budget": 4,
+    "events_applied": 4
+  },
+  {
+    "accuracy": 0.6919642857142857,
+    "active_edges": 25,
+    "active_modules": 17,
+    "candidate": [
+      0,
+      14
+    ],
+    "capped": false,
+    "event_budget": 12,
+    "events_applied": 12
+  }
+]

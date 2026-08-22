@@ -157,6 +157,19 @@ the calibrated confidence/margin gate preserves `None` as no-ignition. The addit
 `learned/contracts.py` module is the C04/C05 exchange contract and does not change Episode
 schema `0.2`.
 
+### `structural/` (C08 optional backend)
+
+`structural/` extends the C04 backend without resizing tensors at runtime. Boolean module and
+edge masks define live capacity; top-k routing excludes inactive modules and message passing
+enumerates only active selected edges. `StructuralController` applies seeded structural events
+only at episode boundaries in priority/sequence order. Create, duplicate, split, merge, edge
+grow/prune, and module prune are explicit, budgeted mechanisms with minimum-capacity safeguards.
+
+Logical IDs, versions, lineage, tombstones, pending events, controller RNG, optimizer state,
+statistics, and budgets are checkpointed together with the inherited C01 runtime queue and
+trace state. Discovery uses unlabeled routing/coactivation/credit/confidence statistics. C08's
+negative causal result is documented in `docs/C08_STRUCTURAL_PLASTICITY_RESULTS.md`.
+
 ### `visualizer.py`
 
 - self-contained HTML + SVG

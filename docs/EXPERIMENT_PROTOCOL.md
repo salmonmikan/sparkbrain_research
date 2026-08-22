@@ -80,6 +80,23 @@ candidate routes, selected state updates, evaluated selected edges/messages, rem
 encoder/router operations, estimated launches, tracked memory, and wall-clock. Required
 ablations and coefficient sensitivity are machine-readable under `artifacts/phase2/`.
 
+### Phase 2.5 — Structural plasticity (C08)
+
+C08 freezes the accepted C04 checkpoint/config and C02 development/test manifests by SHA-256.
+Structural adaptation reads development episodes only. Candidate discovery is limited to
+routing load, coactivation, edge credit, and confidence delta; world/function/truth labels are
+excluded. Held-out results never select thresholds or candidates.
+
+The primary comparison is paired unablated, targeted candidate ablation, matched random
+ablation, degree-matched ablation, activation intervention, and frozen C04 source evaluation.
+Multiplicity, decisiveness, fertility, and specificity thresholds are declared in config.
+Passing all four is required for a specialization claim; otherwise E0 and negative-result
+wording are mandatory. Graph fragmentation, permutation selectivity, event history, actual
+active-edge work, and event-budget sensitivity are recorded as diagnostics, not Gate overrides.
+Specificity fixes a unique positive target on development intervention data before test. Test
+then separately requires target impairment and caps unrelated collateral; a missing or tied
+development target fails closed.
+
 ### Phase 3 — External reasoning benchmarks
 
 Candidate tasks:

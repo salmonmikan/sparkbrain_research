@@ -1,0 +1,13 @@
+{
+  "activation_intervention": true,
+  "actual_edge_counters": true,
+  "bounded_capacity": true,
+  "budget_sensitivity_recorded": true,
+  "degree_matched_control": true,
+  "deterministic_events_serialized": true,
+  "dev_target_fixed_or_fail_closed": true,
+  "frozen_inputs_unchanged": true,
+  "gate_matrix_recorded": true,
+  "positive_or_valid_negative": true,
+  "random_control": true
+}

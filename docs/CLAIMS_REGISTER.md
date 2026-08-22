@@ -99,6 +99,22 @@ See `docs/research/literature_matrix.csv` for source-level verdicts and `docs/re
 - The profile is not the full frozen 1,000-episode-per-world evaluation and does not raise
   CL-007 above E0. No neural, general-superiority, biological, or energy claim is permitted.
 
+## C08 negative claim record (run `structural-plasticity-v1/main`)
+
+- CL-008 remains E0. No grade change is made.
+- Frozen inputs, seeds, paired targeted/random/degree-matched controls, activation intervention,
+  event-budget sensitivity, and raw paths are recorded under
+  `artifacts/phase3/structural-plasticity-v1/main/`.
+- Candidate discovery used unlabeled dynamics statistics and the pair `(9, 14)` was consistent
+  across seeds 83 and 89. Multiplicity passed, while decisiveness, fertility, and specificity
+  failed under predeclared thresholds.
+- Development intervention could not fix a unique positive target, so specificity failed closed.
+  Graph fragmentation and zero post-hoc world selectivity are negative diagnostics. Test labels
+  and analyses were not used for target or threshold selection.
+- Permitted wording: “bounded structural plasticity produced a stable candidate pair in this
+  controlled-synthetic run, but causal specialization criteria failed.” “Organs emerged”
+  remains prohibited. See `docs/C08_STRUCTURAL_PLASTICITY_RESULTS.md`.
+
 ## Claim change procedure
 
 Any grade change must include:
