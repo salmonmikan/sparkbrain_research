@@ -253,3 +253,31 @@ general spiking equivalence, biological fidelity, efficiency, or multi-world rob
 ### Claim impact
 
 None. The correction removes causal-order and import-validation defects without expanding the single-scenario hybrid evidence boundary recorded in R0005.
+
+---
+
+## 2026-08-23 — R0008 — C04 learned sparse routing on controlled held-out worlds
+
+**Nature:** controlled synthetic learned-backend result with explicit negative diagnostics  
+**Run:** `artifacts/phase2/learned-routing-v1/main`  
+**Config:** `configs/experiments/phase2/main.json`
+
+### Outcome
+
+- 60 frozen test episodes / 2,160 steps completed on local CPU in 45.433 seconds;
+- all-step accuracy 0.66343 exceeded chance 0.33333 and the training-majority non-learning baseline 0.33981;
+- coverage was 0.77963, covered accuracy 0.85095, no-ignition count 476, and loser-recovery count 84;
+- actual indexed recurrent work selected 8,640 module updates and evaluated 34,560 edges/messages from 25,920 conceptual candidates, while 4,320 dense encoder/router operations remained separately counted;
+- all 11 required ablations and five sensitivity rows were emitted after development-only ignition calibration.
+
+### Boundaries and negative findings
+
+- the reduced smoke profile was below chance;
+- the main router retained three dead modules, four overloaded modules, and normalized load entropy 0.6698;
+- natural unseen evidence bigrams in the primary subset were zero, so compound/distractor stress tests remain separately labeled derived evaluations;
+- only 60 of the frozen 1,000 C02 test seeds were evaluated, the encoder/router remain dense, and the random-router condition was not retrained;
+- this result supports only controlled-synthetic learned no-ignition and routing behavior. It does not support CL-007, Transformer superiority, external generalization, biological fidelity, or energy claims.
+
+### Verification
+
+The integrated tree passed 134 tests, Ruff, local readiness, and bundle validation. C02 dev/test manifest SHA-256 values remained unchanged before and after the experiment.
