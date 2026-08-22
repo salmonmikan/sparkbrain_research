@@ -434,3 +434,31 @@ Checkpoint state includes the pending event queue, sequence number, persistent h
 ### Deterministic persistence boundary
 
 Schema `0.2` checkpoints require graph state, broadcast listeners, pending queue ordering, next sequence, RNG state, Coalition stability, Workspace, eligibility, counters, trace, and frame-local audit buffers. Unsupported, incomplete, nonfinite, dangling, duplicate-ID, and past-event payloads are rejected. Two fresh canonical runs must produce the same normalized trace and state hash; checkpoint continuation must reproduce future beliefs, ignitions, counters, and trace state.
+
+## 16. C03 localhost Brain Lab
+
+`sparkbrain.lab` はC01 reference engineの外側に置くoptional UI control planeである。`[project].dependencies` は空のまま保ち、FastAPI/Uvicornは `lab` extraへ分離する。
+
+```text
+Bundled HTML/CSS/JavaScript
+        │ REST + finite SSE
+        ▼
+127.0.0.1 FastAPI app
+        │ pure inspection / validated commands
+        ▼
+In-memory LabManager ── LabRun ── SparkBrain
+        │                            │
+        └── local export JSON        └── C01 checkpoint / trace
+```
+
+- launcherはloopback bindだけを許可する。
+- UI assetはpackageへ同梱し、CDN、analytics、remote APIを使わない。
+- pause、SSE、state取得はdynamicsを進めない。
+- forkは親checkpointから子runを作り、親、base hash、patchを監査可能にする。
+- comparisonはrun間を同じframe indexで同期する。
+- blind modeはAPI、trace、exportの全階層でtruthを除外する。
+- exportはartifact root配下へ限定し、importはsizeとschemaを検証する。
+- 2,000 Sparks / 10,000 edgesではengine全体を変更せず、表示用relevant subsetだけを作る。
+- 既存の静的Visualizerをserver不要のfallbackおよび回帰oracleとして残す。
+
+画面、視覚legend、介入意味論、API、保存先、性能測定の詳細は `docs/BRAIN_LAB.md` を正本とする。

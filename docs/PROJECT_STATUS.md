@@ -40,11 +40,12 @@ See `docs/LOCAL_EXECUTION_POLICY.md`.
 | Phase-0 scalar baselines and ablations | runnable | `src/sparkbrain/baselines.py`, `benchmark.py` |
 | Metrics for stability/revision/recovery | runnable | `src/sparkbrain/metrics.py` |
 | Static replay visualizer | runnable locally | `artifacts/demo/visualizer.html` |
-| Unit tests | 55 passing | `python -m pytest -q` |
+| Unit tests | 68 passing | `python -m pytest -q` |
 | Local readiness audit | runnable | `scripts/local_readiness_check.py` |
 | Generated Phase-0 report | complete with limitations | `artifacts/benchmarks/benchmark_report.md` |
 | Codex repository instructions | complete | `AGENTS.md`, `.agents/skills/sparkbrain-research/SKILL.md` |
 | Versioned checkpoint and trace replay | C01 accepted | `serialization.py`, `replay.py`, `schemas/`, `tests/test_schemas.py`, CI run `32594805438` |
+| Interactive localhost Brain Lab | C03 accepted locally | `src/sparkbrain/lab/`, `docs/BRAIN_LAB.md`, `tests/test_brain_lab_*.py` |
 | Detailed Codex execution queue | complete | `docs/CODEX_EXECUTION_BRIEF.md`, `docs/codex/` |
 
 ## 4. Verified local commands
@@ -79,7 +80,6 @@ The accumulator baseline is close in this hand-authored setting. Therefore this 
 | Priority | Missing capability | Codex task |
 |---:|---|---|
 | P0 | controlled worlds, full ablations, uncertainty estimates | C02 |
-| P1 | local interactive Brain Lab and interventions | C03 |
 | P1 | learned event encoding/routing and held-out generalization | C04 |
 | P1 | matched GRU/Transformer/RIM/Bayesian baselines | C05 |
 | P1 | external belief-revision and relational tasks with local cached datasets | C06 |
@@ -119,4 +119,4 @@ C04 ─> C08
 C09 runs continuously and must review C10 claims.
 ```
 
-C01 is accepted: schema `0.2`, deterministic fresh-run replay, checkpoint continuation, pure inspection, bounded event failure, and counter contracts are covered locally and by the Python 3.11/3.13 CI matrix. C02 and C03 are unblocked. C04 and C05 should share the same local data harness and splits.
+C01 is accepted: schema `0.2`, deterministic fresh-run replay, checkpoint continuation, pure inspection, bounded event failure, and counter contracts are covered locally and by the Python 3.11/3.13 CI matrix. C03 is locally accepted: loopback control, deterministic pause/step/reset, event injection, immutable-parent intervention forks, synchronized comparison, blind-safe export/import, bundled offline UI, API/E2E/accessibility contracts, and relevant-subset performance are covered. C02 remains unblocked. C04 and C05 should share the same local data harness and splits.

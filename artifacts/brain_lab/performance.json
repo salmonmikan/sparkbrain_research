@@ -1,0 +1,10 @@
+{
+  "frame_budget_ms_60fps": 16.666667,
+  "note": "Measures deterministic relevant-subset preparation, not browser paint time or energy.",
+  "render_edges": 600,
+  "render_nodes": 250,
+  "source_edges": 10000,
+  "source_nodes": 2000,
+  "subset_prepare_ms": 0.9654,
+  "within_prepare_budget": true
+}

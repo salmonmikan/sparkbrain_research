@@ -119,3 +119,38 @@ The Phase-0 dynamics and persisted config/state/trace schema are intended to rem
 ### Compatibility and limitations
 
 Schema remains `0.2`; no migration is introduced. The stricter validators reject incomplete payloads that omitted required deterministic state, including `broadcast_listeners`. This is validation hardening rather than reinterpretation of valid v0.2 artifacts. The clean CI matrix passed on the two repository-supported Python versions; this does not establish compatibility with untested environments.
+
+---
+
+## 2026-08-23 — R0004 — C03 localhost Brain Lab acceptance
+
+**Code/version:** SparkBrain package v0.2.1; persisted engine schema v0.2; Brain Lab schema v1
+**Nature:** optional local UI/control plane; no intended core dynamics change
+**Primary commands:** `python -m pytest -q`, `python -m ruff check .`, `python scripts/measure_brain_lab.py`, `python scripts/run_brain_lab.py`
+
+### Changes under test
+
+- loopback-only FastAPI control plane and bundled no-CDN frontend;
+- nine UI regions for graph, timeline, belief, Workspace, inspection, control, intervention, comparison, and export/import;
+- deterministic pause, single-step, run, reset, and validated event injection;
+- parent-preserving checkpoint fork with edge, Spark, organ, and threshold interventions;
+- frame-index synchronized comparison, blind-safe API/export, and local bundle import;
+- static visualizer fallback and pure-inspection non-interference.
+
+### Validation outcome
+
+- tests: 68 passing, including 13 focused Brain Lab API/service/E2E contract tests;
+- Ruff: PASS;
+- canonical UI/API flow: CAT → TOY → CAT with evidence provenance;
+- 2,000-Spark / 10,000-edge relevant-subset preparation: 0.9654 ms for 250 Sparks / 600 edges;
+- 60 FPS preparation budget (16.6667 ms): PASS;
+- loopback startup and non-loopback rejection: PASS;
+- offline bundled assets, keyboard/focus/accessibility contract, blind truth removal, and import/export regression: PASS.
+
+### Limitations retained
+
+- the measured time covers deterministic subset preparation, not browser paint or end-to-end frame time;
+- the run registry is in-memory and single-process; exported bundles are required across restarts;
+- SSE reports a finite current-frame snapshot and does not create a background simulation queue;
+- the native SVG graph is a functional view, not a biological anatomy claim;
+- no energy-efficiency claim follows from UI timing.

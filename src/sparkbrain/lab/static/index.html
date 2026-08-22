@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SparkBrain Local Brain Lab</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<a class="skip" href="#controls">Skip to experiment controls</a>
+<header><h1>SparkBrain Local Brain Lab</h1><p>Functional layout, not biological anatomy. Local loopback data only.</p></header>
+<aside id="legend" aria-label="Visual legend"><b>Legend:</b> blue sensory; violet hypothesis; green memory; orange action; size means activation; gold ring means firing; dashed red means inhibition; outline means Coalition; red transfer means ignition; NO IGNITION means unresolved, not failure.</aside>
+<main>
+  <section id="brain-field" aria-labelledby="brain-title"><h2 id="brain-title">Brain field</h2><svg id="graph" role="img" aria-label="Functional Spark graph showing active relevant nodes and edges"></svg></section>
+  <section id="timeline" aria-labelledby="timeline-title"><h2 id="timeline-title">Timeline</h2><ol id="timeline-list"></ol></section>
+  <section id="belief-panel" aria-labelledby="belief-title"><h2 id="belief-title">Belief panel</h2><div id="belief">NO IGNITION / unresolved</div><table><thead><tr><th>Hypothesis</th><th>Score</th><th>Activation</th><th>Evidence strength</th><th>Diversity</th><th>Members / provenance</th><th>Contradiction</th><th>Stability</th><th>Margin</th></tr></thead><tbody id="coalitions"></tbody></table></section>
+  <section id="workspace" aria-labelledby="workspace-title"><h2 id="workspace-title">Workspace</h2><div id="workspace-items">empty</div><div id="broadcasts"></div><ol id="workspace-history" aria-label="Ignition and Workspace history"></ol></section>
+  <section id="inspector" aria-labelledby="inspector-title"><h2 id="inspector-title">Inspector</h2><label>Object type <select id="inspect-type"><option value="spark">Spark</option><option value="edge">Edge</option><option value="coalition">Coalition</option></select></label><label>Object <select id="inspect-item"></select></label><pre id="inspect-detail" tabindex="0">Select a Spark, edge, or Coalition</pre></section>
+  <section id="controls" aria-labelledby="controls-title"><h2 id="controls-title">Experiment controls</h2><label>Seed <input id="seed" type="number" value="7"></label><label><input id="blind" type="checkbox"> Blind analysis</label><label>Speed <input id="speed" type="range" min="1" max="10" value="5"></label><button id="create">Start</button><button id="pause">Pause</button><button id="step">Step</button><button id="run">Run</button><button id="reset">Reset</button><fieldset><legend>Inject evidence</legend><label>Target <input id="event-target" value="sensory:fur"></label><label>Label <input id="event-label" value="fur"></label><label>Strength <input id="event-strength" type="number" step="0.1" value="1"></label><button id="inject">Inject</button></fieldset></section>
+  <section id="intervention" aria-labelledby="intervention-title"><h2 id="intervention-title">Intervention fork</h2><label>Kind <select id="patch-kind"><option value="ablate_edge">Ablate edge</option><option value="edit_edge">Edit edge</option><option value="clamp_spark">Clamp Spark</option><option value="ablate_spark">Ablate Spark</option><option value="suppress_organ">Suppress organ</option><option value="set_threshold">Set threshold</option></select></label><label>Source <input id="patch-source" value="sensory:plastic_seam"></label><label>Target/Spark/organ <input id="patch-target" value="hypothesis:toy"></label><label>Value <input id="patch-value" type="number" step="0.1" value="0"></label><button id="fork">Fork run</button><pre id="patch-result"></pre></section>
+  <section id="comparison" aria-labelledby="comparison-title"><h2 id="comparison-title">Synchronized comparison</h2><label>Left run <input id="left-run"></label><label>Right run <input id="right-run"></label><label>Cursor <input id="cursor" type="range" min="0" max="6" value="0"></label><button id="compare">Compare</button><div class="compare"><pre id="left-frame"></pre><pre id="right-frame"></pre></div></section>
+  <section id="export" aria-labelledby="export-title"><h2 id="export-title">Export / import</h2><button id="export-run">Export exact run</button><button id="import-run">Import last export</button><p id="export-path"></p></section>
+</main>
+<div id="status" role="status" aria-live="polite">Create a local run.</div>
+<script src="/static/app.js"></script>
+</body>
+</html>

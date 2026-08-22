@@ -46,6 +46,7 @@ SparkBrainは、局所的で持続的な活動単位 **Spark** が、イベン�
 - accumulator / hard-WTA / instant classifierとのPhase-0比較
 - 再現可能なtrace、JSON、CSV、Markdown report
 - ローカル完結条件を検査するreadiness checker
+- loopback限定でpause/step/reset、介入fork、比較、blind export/importを行うBrain Lab
 
 ## ローカルで動かす
 
@@ -79,6 +80,15 @@ python scripts/run_benchmark.py --episodes 40 --steps 30
 python -m pytest -q
 python scripts/validate_bundle.py
 ```
+
+対話型Brain Labはoptional extraとして起動します。
+
+```bash
+python -m pip install -e ".[lab]"
+python scripts/run_brain_lab.py
+```
+
+既定URLは `http://127.0.0.1:8765` です。UI assetは同梱され、CDN、外部API、analyticsを使いません。操作、画面、介入、blind mode、artifact、性能境界は [`docs/BRAIN_LAB.md`](docs/BRAIN_LAB.md) を参照してください。
 
 生成物:
 
