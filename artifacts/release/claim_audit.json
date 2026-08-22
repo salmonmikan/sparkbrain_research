@@ -1,0 +1,15 @@
+{
+  "inspected_files": [
+    "README.md",
+    "docs/TECHNICAL_REPORT_v0.2.1.md",
+    "artifacts/release/primary_results.md"
+  ],
+  "pending_evidence_entries": [
+    "EV-C05-CHECKPOINT",
+    "EV-C06-FOUNDATION",
+    "EV-C08-PLASTICITY"
+  ],
+  "prohibited_wording_findings": [],
+  "schema_version": "c10-claim-audit-v1",
+  "status": "pass-with-pending-evidence"
+}

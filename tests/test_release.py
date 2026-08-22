@@ -1,11 +1,17 @@
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
+import pytest
+
 from sparkbrain.release import (
-    REQUIRED_RELEASE_FILES,
+    REQUIRED_PREPARATION_FILES,
+    build_release_archive,
     build_release_manifest,
+    preparation_problems,
     project_license_selected,
+    validate_evidence_map,
     validate_release_tree,
     verify_release_manifest,
 )
@@ -23,6 +29,8 @@ def test_release_manifest_is_stable_and_detects_tampering(tmp_path: Path) -> Non
 
     assert manifest["file_count"] == 1
     assert manifest["files"][0]["path"] == "docs/result.md"
+    assert manifest["files"][0]["artifact_class"] == "documentation"
+    assert manifest["platform"]
     assert verify_release_manifest(tmp_path, manifest) == []
 
     (tmp_path / "docs" / "result.md").write_text("changed\n", encoding="utf-8")
@@ -60,5 +68,33 @@ def test_release_validator_reports_missing_artifacts_and_unselected_license(
 ) -> None:
     (tmp_path / "LICENSE_NOT_SELECTED.md").write_text("pending", encoding="utf-8")
     problems = validate_release_tree(tmp_path)
-    assert f"missing required release artifact: {REQUIRED_RELEASE_FILES[0]}" in problems
+    assert f"missing required release artifact: {REQUIRED_PREPARATION_FILES[0]}" in problems
     assert "project license has not been selected by the repository owner" in problems
+
+
+def test_integrated_release_preparation_passes_but_public_release_is_blocked() -> None:
+    root = Path(__file__).resolve().parents[1]
+    assert preparation_problems(root) == []
+    assert not project_license_selected(root)
+    assert validate_release_tree(root) == [
+        "pending release evidence gate: EV-C05-CHECKPOINT",
+        "pending release evidence gate: EV-C06-FOUNDATION",
+        "pending release evidence gate: EV-C08-PLASTICITY",
+        "project license has not been selected by the repository owner",
+    ]
+
+
+def test_evidence_map_has_existing_artifacts_and_pending_gates() -> None:
+    root = Path(__file__).resolve().parents[1]
+    evidence = json.loads(
+        (root / "artifacts/release/evidence_map.json").read_text(encoding="utf-8")
+    )
+    assert validate_evidence_map(root, evidence) == []
+    pending = {entry["id"] for entry in evidence["entries"] if entry["status"] == "pending"}
+    assert pending == {"EV-C05-CHECKPOINT", "EV-C06-FOUNDATION", "EV-C08-PLASTICITY"}
+
+
+def test_archive_refuses_unlicensed_repository(tmp_path: Path) -> None:
+    (tmp_path / "LICENSE_NOT_SELECTED.md").write_text("owner decision pending", encoding="utf-8")
+    with pytest.raises(PermissionError, match="project license is not selected"):
+        build_release_archive(tmp_path, tmp_path / "release.zip", source_date_epoch=1_700_000_000)

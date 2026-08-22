@@ -2,12 +2,14 @@ from __future__ import annotations
 
 import hashlib
 import json
+import platform
 import subprocess
+import zipfile
 from collections.abc import Iterable
 from pathlib import Path, PurePosixPath
 from typing import Any
 
-MANIFEST_SCHEMA_VERSION = "2"
+MANIFEST_SCHEMA_VERSION = "3"
 MANIFEST_PATH = "PACKAGE_MANIFEST.json"
 EXCLUDED_PREFIXES = (
     ".git/",
@@ -17,12 +19,20 @@ EXCLUDED_PREFIXES = (
     ".venv/",
     "data/external/",
 )
-REQUIRED_RELEASE_FILES = (
-    "LICENSE",
+EXCLUDED_PATHS = {
+    MANIFEST_PATH,
+    # Rewritten by validate_bundle.py on every local run; it is not release evidence.
+    "artifacts/validation_manifest.json",
+}
+REQUIRED_PREPARATION_FILES = (
     "PACKAGE_MANIFEST.json",
     "requirements-release.lock",
+    "requirements-release-provenance.json",
     "scripts/reproduce_release.py",
+    "scripts/generate_release_artifacts.py",
+    "scripts/build_release_archive.py",
     "docs/ARTIFACT_EVALUATION_GUIDE.md",
+    "docs/CLEAN_ROOM_REPRODUCTION.md",
     "docs/MODEL_CARD.md",
     "docs/NEGATIVE_RESULTS_APPENDIX.md",
     "docs/PLATFORM_MATRIX.md",
@@ -32,8 +42,14 @@ REQUIRED_RELEASE_FILES = (
     "docs/TECHNICAL_REPORT_v0.2.1.md",
     "docs/THIRD_PARTY_NOTICES.md",
     "artifacts/release/evidence_map.json",
+    "artifacts/release/primary_subset.json",
+    "artifacts/release/provenance.json",
+    "artifacts/release/claim_audit.json",
     "artifacts/release/sbom.spdx.json",
 )
+REQUIRED_PUBLIC_FILES = ("LICENSE",)
+# Backward-compatible name used by the initial C10 tests.
+REQUIRED_RELEASE_FILES = (*REQUIRED_PUBLIC_FILES, *REQUIRED_PREPARATION_FILES)
 
 
 def _canonical_json(value: Any) -> str:
@@ -49,7 +65,7 @@ def _safe_relative_path(value: str) -> str:
 
 
 def _is_release_path(path: str) -> bool:
-    return path != MANIFEST_PATH and not path.startswith(EXCLUDED_PREFIXES)
+    return path not in EXCLUDED_PATHS and not path.startswith(EXCLUDED_PREFIXES)
 
 
 def tracked_release_paths(root: Path) -> list[str]:
@@ -75,12 +91,29 @@ def sha256_file(path: Path) -> str:
     return digest.hexdigest()
 
 
+def artifact_class(path: str) -> str:
+    if path.startswith("artifacts/release/"):
+        return "generated-release-evidence"
+    if path.startswith("artifacts/"):
+        return "research-artifact"
+    if path.startswith("configs/") or path.startswith("schemas/"):
+        return "configuration-or-schema"
+    if path.startswith("docs/") or path.endswith(".md"):
+        return "documentation"
+    if path.startswith("scripts/"):
+        return "reproduction-tooling"
+    if path.startswith("src/") or path.startswith("tests/"):
+        return "software"
+    return "package-metadata"
+
+
 def build_release_manifest(
     root: Path,
     *,
     generated_at: str,
     source_revision: str,
     paths: Iterable[str] | None = None,
+    platform_record: dict[str, str] | None = None,
 ) -> dict[str, Any]:
     selected = tracked_release_paths(root) if paths is None else sorted(
         _safe_relative_path(path) for path in paths if _is_release_path(path)
@@ -98,13 +131,27 @@ def build_release_manifest(
             raise FileNotFoundError(f"tracked release file is missing: {relative}")
         size = absolute.stat().st_size
         total_bytes += size
-        files.append({"path": relative, "size": size, "sha256": sha256_file(absolute)})
+        files.append(
+            {
+                "path": relative,
+                "size": size,
+                "sha256": sha256_file(absolute),
+                "artifact_class": artifact_class(relative),
+            }
+        )
 
     return {
         "manifest_schema_version": MANIFEST_SCHEMA_VERSION,
         "generated_at": generated_at,
         "source_revision": source_revision,
-        "manifest_excludes": [MANIFEST_PATH],
+        "platform": platform_record
+        or {
+            "system": platform.system(),
+            "release": platform.release(),
+            "machine": platform.machine(),
+            "python": platform.python_version(),
+        },
+        "manifest_excludes": sorted(EXCLUDED_PATHS),
         "file_count": len(files),
         "uncompressed_bytes_excluding_manifest": total_bytes,
         "files": files,
@@ -126,8 +173,11 @@ def verify_release_manifest(root: Path, manifest: dict[str, Any]) -> list[str]:
     seen: set[str] = set()
     total_bytes = 0
     for index, row in enumerate(rows):
-        if not isinstance(row, dict) or set(row) != {"path", "size", "sha256"}:
-            problems.append(f"files[{index}] must contain only path, size, and sha256")
+        required = {"path", "size", "sha256", "artifact_class"}
+        if not isinstance(row, dict) or set(row) != required:
+            problems.append(
+                f"files[{index}] must contain only path, size, sha256, and artifact_class"
+            )
             continue
         try:
             relative = _safe_relative_path(row["path"])
@@ -151,6 +201,8 @@ def verify_release_manifest(root: Path, manifest: dict[str, Any]) -> list[str]:
         actual_hash = sha256_file(absolute)
         if row["sha256"] != actual_hash:
             problems.append(f"sha256 mismatch: {relative}")
+        if row["artifact_class"] != artifact_class(relative):
+            problems.append(f"artifact class mismatch: {relative}")
         total_bytes += actual_size
 
     if manifest.get("file_count") != len(rows):
@@ -164,13 +216,86 @@ def project_license_selected(root: Path) -> bool:
     return (root / "LICENSE").is_file() and not (root / "LICENSE_NOT_SELECTED.md").exists()
 
 
-def validate_release_tree(root: Path) -> list[str]:
+def validate_evidence_map(root: Path, evidence_map: dict[str, Any]) -> list[str]:
+    problems: list[str] = []
+    if evidence_map.get("schema_version") != "c10-evidence-map-v1":
+        problems.append("unsupported evidence-map schema version")
+    entries = evidence_map.get("entries")
+    if not isinstance(entries, list):
+        return [*problems, "evidence-map entries must be an array"]
+    claim_text = (root / "docs/CLAIMS_REGISTER.md").read_text(encoding="utf-8")
+    seen: set[str] = set()
+    for index, entry in enumerate(entries):
+        if not isinstance(entry, dict):
+            problems.append(f"evidence-map entries[{index}] must be an object")
+            continue
+        entry_id = entry.get("id")
+        if not isinstance(entry_id, str) or not entry_id:
+            problems.append(f"evidence-map entries[{index}] has no id")
+            continue
+        if entry_id in seen:
+            problems.append(f"duplicate evidence-map id: {entry_id}")
+        seen.add(entry_id)
+        status = entry.get("status")
+        if status not in {"accepted", "pending", "negative"}:
+            problems.append(f"invalid evidence status for {entry_id}: {status!r}")
+        claim_ids = entry.get("claim_ids")
+        if not isinstance(claim_ids, list) or not claim_ids:
+            problems.append(f"evidence entry {entry_id} has no claim_ids")
+        else:
+            for claim_id in claim_ids:
+                if not isinstance(claim_id, str) or claim_id not in claim_text:
+                    problems.append(f"unknown claim id in {entry_id}: {claim_id!r}")
+        paths = entry.get("artifacts", [])
+        if not isinstance(paths, list):
+            problems.append(f"artifacts for {entry_id} must be an array")
+            continue
+        for relative in paths:
+            try:
+                safe = _safe_relative_path(relative)
+            except (TypeError, ValueError) as exc:
+                problems.append(f"unsafe evidence path in {entry_id}: {exc}")
+                continue
+            if not (root / safe).is_file():
+                problems.append(f"missing evidence artifact for {entry_id}: {safe}")
+    return problems
+
+
+def preparation_problems(root: Path) -> list[str]:
     problems = [
         f"missing required release artifact: {relative}"
-        for relative in REQUIRED_RELEASE_FILES
+        for relative in REQUIRED_PREPARATION_FILES
         if not (root / relative).is_file()
     ]
-    if not project_license_selected(root):
+    evidence_path = root / "artifacts/release/evidence_map.json"
+    if evidence_path.is_file():
+        try:
+            evidence_map = json.loads(evidence_path.read_text(encoding="utf-8"))
+        except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+            problems.append(f"evidence map is not valid UTF-8 JSON: {exc}")
+        else:
+            problems.extend(validate_evidence_map(root, evidence_map))
+    return problems
+
+
+def validate_release_tree(root: Path, *, require_public: bool = True) -> list[str]:
+    problems = preparation_problems(root)
+    selected = project_license_selected(root)
+    evidence_path = root / "artifacts/release/evidence_map.json"
+    if require_public and evidence_path.is_file():
+        evidence = json.loads(evidence_path.read_text(encoding="utf-8"))
+        problems.extend(
+            f"pending release evidence gate: {entry['id']}"
+            for entry in evidence.get("entries", [])
+            if isinstance(entry, dict) and entry.get("status") == "pending"
+        )
+    if require_public and selected:
+        problems.extend(
+            f"missing required release artifact: {relative}"
+            for relative in REQUIRED_PUBLIC_FILES
+            if not (root / relative).is_file()
+        )
+    if not selected:
         problems.append("project license has not been selected by the repository owner")
 
     manifest_path = root / MANIFEST_PATH
@@ -192,3 +317,30 @@ def validate_release_tree(root: Path) -> list[str]:
             if leaked:
                 problems.append(f"external dataset cache is included in release: {leaked}")
     return problems
+
+
+def build_release_archive(root: Path, output: Path, *, source_date_epoch: int) -> dict[str, Any]:
+    if not project_license_selected(root):
+        raise PermissionError("public archive blocked: project license is not selected")
+    problems = validate_release_tree(root, require_public=True)
+    if problems:
+        raise ValueError("release tree is not ready: " + "; ".join(problems))
+    manifest = json.loads((root / MANIFEST_PATH).read_text(encoding="utf-8"))
+    paths = [row["path"] for row in manifest["files"]]
+    # ZIP cannot represent dates before 1980. The caller supplies the frozen release epoch.
+    import datetime
+
+    date = datetime.datetime.fromtimestamp(max(source_date_epoch, 315532800), tz=datetime.UTC)
+    timestamp = (date.year, date.month, date.day, date.hour, date.minute, date.second)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    with zipfile.ZipFile(output, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
+        for relative in sorted([*paths, MANIFEST_PATH]):
+            info = zipfile.ZipInfo(relative, date_time=timestamp)
+            info.create_system = 3
+            info.external_attr = 0o100644 << 16
+            info.compress_type = zipfile.ZIP_DEFLATED
+            archive.writestr(info, (root / relative).read_bytes())
+    checksum = sha256_file(output)
+    checksum_path = output.with_suffix(output.suffix + ".sha256")
+    checksum_path.write_text(f"{checksum}  {output.name}\n", encoding="ascii", newline="\n")
+    return {"archive": str(output), "sha256": checksum, "checksum_file": str(checksum_path)}

@@ -1,0 +1,29 @@
+{
+  "generator": "scripts/generate_release_artifacts.py",
+  "products": {
+    "artifacts/release/primary_results.md": [
+      "artifacts/benchmarks/benchmark_aggregate.csv",
+      "artifacts/phase1/c02-main-1000/aggregate/metrics.json",
+      "artifacts/phase2/learned-routing-v1/main/summary.json",
+      "artifacts/spiking/c07_comparison.json"
+    ],
+    "artifacts/release/primary_results.svg": [
+      "artifacts/benchmarks/benchmark_aggregate.csv",
+      "artifacts/phase1/c02-main-1000/aggregate/metrics.json",
+      "artifacts/phase2/learned-routing-v1/main/summary.json",
+      "artifacts/spiking/c07_comparison.json"
+    ],
+    "artifacts/release/sbom.spdx.json": [
+      "pyproject.toml",
+      "requirements-release.lock"
+    ],
+    "docs/NEGATIVE_RESULTS_APPENDIX.md": [
+      "docs/RESULTS_LEDGER.md"
+    ],
+    "docs/TECHNICAL_REPORT_v0.2.1.html": [
+      "docs/TECHNICAL_REPORT_v0.2.1.md"
+    ]
+  },
+  "schema_version": "c10-provenance-v1",
+  "source_revision": "be9cf7079ccf30fa3e1918d4bd10d40f6dfd776f"
+}

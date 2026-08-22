@@ -349,3 +349,34 @@ the causal specialization criteria failed; no emergent-organ claim is permitted.
 The integrated tree passed 175 tests and Ruff. Frozen C04/C02 input hashes remained unchanged,
 and selected-edge work, controls, sensitivity, Gate decisions, and negative findings are
 retained in the run artifacts.
+
+---
+
+## 2026-08-23 — R0011 — C10 non-license reproducibility package
+
+**Code/base:** C10 branch from integrated `be9cf70`; package `0.2.1`, schema `0.2`  
+**Command:** `python scripts/reproduce_release.py --offline --output <LOCAL_OUTPUT>`  
+**Inputs:** four committed Phase-0/C02/C04/C07 aggregate or comparison artifacts selected in
+`artifacts/release/primary_subset.json`  
+**Outputs:** generated primary Markdown table, SVG, and machine-readable clean-room run manifest
+
+### Validation outcome
+
+- the bounded primary table and SVG reproduced byte-for-byte from frozen input hashes;
+- table SHA-256: `085f2a5f65d6e5069e3221042158eefdd4045f22c7b55c1b4c5644c95ed97765`;
+- SVG SHA-256: `718b3f1ca2a668b61ea3e29401d686a6dbda82f9afd8c5eedae714f996a709ae`;
+- 155 tests, Ruff, local readiness, 23-source/11-target prior-art validation, and 76-file
+  bundle validation passed on Windows/Python 3.13.3 CPU;
+- no network operation was used by the reproduction command after setup.
+
+### Negative findings and blockers
+
+- the primary subset is a smoke check, not the full C02-C08 evaluation;
+- C05 checkpoint evidence lacks an integrated checkpoint-matched, hashed dev-only encoder
+  vocabulary/feature manifest;
+- final C06 model execution and C08 structural-plasticity evidence are not integrated;
+- `LICENSE_NOT_SELECTED.md` remains, so no public archive, tag, or ready claim was produced;
+- the tested lock is a Windows/Python 3.13 snapshot, not a universal cross-platform wheel lock.
+
+**Claim impact:** no evidence grade increases. This is reproducibility engineering for selected
+existing evidence. CL-011 remains E1 pending an independent clean-room reproduction.

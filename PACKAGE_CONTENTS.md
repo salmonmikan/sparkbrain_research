@@ -88,8 +88,22 @@ python scripts/validate_bundle.py
 Current packaging validation:
 
 - local readiness: PASS
-- tests: 30 passing
+- tests: 155 passing
 - canonical final belief: CAT
-- checkpoint state SHA-256: `cedc8543d87677d2cbf1707f0df2ec7d95e8a1d31b735a40a917d9de9d7ff13c`
-- v0.2.1 demo trace and aggregate benchmark: byte-identical to archived v0.2
-- ruff was not available in the packaging environment and was not executed
+- Ruff: PASS
+- bundle validation: 76 required files
+- offline primary-subset reproduction: PASS with exact table/SVG hashes
+- public release validation: blocked by C05/C06/C08 evidence gates and owner license
+
+## C10 release-candidate evidence
+
+- `requirements-release.lock` and its provenance record pin the tested Windows/Python 3.13
+  candidate snapshot; they do not claim a universal wheel lock.
+- `scripts/reproduce_release.py` is the single offline CPU smoke command and writes a local
+  machine-readable run manifest.
+- `artifacts/release/primary_subset.json` freezes the bounded input/output hashes and states
+  that the subset is not a full evaluation.
+- `artifacts/release/evidence_map.json` and `provenance.json` connect claims, runs, inputs, and
+  generated products.
+- `scripts/build_release_archive.py` refuses to create a public archive while the project
+  license or evidence gates remain blocked.

@@ -1,0 +1,131 @@
+{
+  "entries": [
+    {
+      "artifacts": [
+        "artifacts/demo/trace.json",
+        "artifacts/demo/checkpoint.json"
+      ],
+      "boundary": "Deterministic implementation and replay evidence only.",
+      "claim_ids": [
+        "CL-001",
+        "CL-002",
+        "CL-005",
+        "CL-011"
+      ],
+      "id": "EV-C01-REFERENCE",
+      "run_ids": [
+        "R0003"
+      ],
+      "status": "accepted"
+    },
+    {
+      "artifacts": [
+        "artifacts/phase1/c02-main-1000/run_manifest.json",
+        "artifacts/phase1/c02-main-1000/aggregate/metrics.json",
+        "artifacts/phase1/c02-main-1000/aggregate/confidence_intervals.json"
+      ],
+      "boundary": "Controlled synthetic E2 evidence; MultiObjectWorld is a retained failure.",
+      "claim_ids": [
+        "CL-003",
+        "CL-004",
+        "CL-006",
+        "CL-007"
+      ],
+      "id": "EV-C02-CONTROLLED",
+      "run_ids": [
+        "R0006"
+      ],
+      "status": "negative"
+    },
+    {
+      "artifacts": [
+        "artifacts/phase2/learned-routing-v1/main/summary.json",
+        "artifacts/phase2/learned-routing-v1/main/manifest-evidence.json",
+        "artifacts/phase2/learned-routing-v1/main/negative-findings.json"
+      ],
+      "boundary": "Controlled held-out result with dead/overloaded modules; no superiority claim.",
+      "claim_ids": [
+        "CL-004",
+        "CL-007"
+      ],
+      "id": "EV-C04-LEARNED",
+      "run_ids": [
+        "R0008"
+      ],
+      "status": "negative"
+    },
+    {
+      "artifacts": [],
+      "boundary": "C05 is not integrated. Public evidence requires a dev-only encoder vocabulary/feature manifest whose hash and input dimension match every selected checkpoint.",
+      "claim_ids": [
+        "CL-003",
+        "CL-004",
+        "CL-007"
+      ],
+      "id": "EV-C05-CHECKPOINT",
+      "run_ids": [],
+      "status": "pending"
+    },
+    {
+      "artifacts": [
+        "configs/external_validation/foundation.json",
+        "schemas/external-evaluation-v0.2.schema.json"
+      ],
+      "boundary": "Foundation only. External model execution and strict C05 encoder-state/hash validation are pending.",
+      "claim_ids": [
+        "CL-003",
+        "CL-004",
+        "CL-007"
+      ],
+      "id": "EV-C06-FOUNDATION",
+      "run_ids": [],
+      "status": "pending"
+    },
+    {
+      "artifacts": [
+        "artifacts/spiking/c07_comparison.json",
+        "artifacts/spiking/rate_trace.json",
+        "artifacts/spiking/spike_trace.json"
+      ],
+      "boundary": "Reduced sensory-LIF hybrid canonical equivalence only.",
+      "claim_ids": [
+        "CL-009"
+      ],
+      "id": "EV-C07-SPIKING",
+      "run_ids": [
+        "R0005",
+        "R0007"
+      ],
+      "status": "accepted"
+    },
+    {
+      "artifacts": [],
+      "boundary": "Exploratory structural-plasticity result is not integrated in this candidate.",
+      "claim_ids": [
+        "CL-008"
+      ],
+      "id": "EV-C08-PLASTICITY",
+      "run_ids": [],
+      "status": "pending"
+    },
+    {
+      "artifacts": [
+        "docs/research/literature_matrix.csv",
+        "docs/research/claim_challenge_report.md"
+      ],
+      "boundary": "Bounded search and adversarial audit; absence of a match is not novelty proof.",
+      "claim_ids": [
+        "CL-001",
+        "CL-002",
+        "CL-003",
+        "CL-005",
+        "CL-009"
+      ],
+      "id": "EV-C09-PRIOR-ART",
+      "run_ids": [],
+      "status": "accepted"
+    }
+  ],
+  "schema_version": "c10-evidence-map-v1",
+  "source_revision": "be9cf7079ccf30fa3e1918d4bd10d40f6dfd776f"
+}

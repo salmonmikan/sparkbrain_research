@@ -47,7 +47,7 @@ See `docs/LOCAL_EXECUTION_POLICY.md`.
 | C08 bounded structural plasticity | implemented with valid negative specialization result | `src/sparkbrain/structural/`, `artifacts/phase3/`, `docs/C08_STRUCTURAL_PLASTICITY_RESULTS.md` |
 | Metrics for stability/revision/recovery | runnable | `src/sparkbrain/metrics.py` |
 | Static replay visualizer | runnable locally | `artifacts/demo/visualizer.html` |
-| Unit tests | 175 passing with PyTorch available; optional learned/spiking tests require their extras | `python -m pytest -q` |
+| Unit tests | integration verification pending | `python -m pytest -q` |
 | Local readiness audit | runnable | `scripts/local_readiness_check.py` |
 | Generated Phase-0 report | complete with limitations | `artifacts/benchmarks/benchmark_report.md` |
 | Codex repository instructions | complete | `AGENTS.md`, `.agents/skills/sparkbrain-research/SKILL.md` |
@@ -93,6 +93,15 @@ The accumulator baseline is close in this hand-authored setting. Therefore this 
 | P2 | additional structural-plasticity hypotheses after negative causal result | C08 follow-on |
 | continuous | systematic prior-art review and novelty audit | C09 |
 | release | local reproducibility/publication package | C10 |
+
+### C10 release-candidate preparation
+
+The non-license C10 package now pins the tested local environment, freezes a bounded primary
+smoke subset, regenerates its table/SVG/report/negative appendix/SBOM deterministically, maps
+claims to exact run/artifact evidence, and emits an offline machine run manifest. This is
+release preparation, not public readiness. Public validation remains blocked by the owner
+license decision and pending C05 checkpoint-matched encoder evidence, final C06 execution, and
+C08 integration. The smoke subset is explicitly not the full evaluation.
 
 ## 7. Exit criteria for the core final system
 
