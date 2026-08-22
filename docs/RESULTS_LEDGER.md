@@ -60,7 +60,7 @@ Next action:
 **Command:** `python -m sparkbrain.evaluation.run_suite --config configs/experiments/phase1/main.json --output artifacts/phase1/c02-main-1000`
 **Data/splits:** frozen local test seeds 200000–200999; 37 declared conditions; 1,000 episodes per condition
 **Raw outputs:** `artifacts/phase1/c02-main-1000/raw/` (local, reproducible, approximately 492 MiB)
-**Aggregate:** `artifacts/phase1/c02-main-1000/aggregate/metrics.csv`
+**Aggregate:** `artifacts/phase1/c02-main-1000/aggregate/metrics.json`
 
 ### Result
 

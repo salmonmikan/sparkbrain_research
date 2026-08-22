@@ -1,0 +1,2602 @@
+[
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.7771666666666667,
+    "low": 0.7552333333333333,
+    "metric": "accuracy_all_steps",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.9352,
+    "low": 0.9308333333333334,
+    "metric": "coverage",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.0006,
+    "low": 0.00013333333333333334,
+    "metric": "false_certainty_rate",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "recovery_rate",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_precision",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "revision_recall",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "forced_prediction",
+    "episodes": 1000,
+    "high": 0.8138,
+    "low": 0.7922333333333333,
+    "metric": "accuracy_all_steps",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "forced_prediction",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "forced_prediction",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "coverage",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "forced_prediction",
+    "episodes": 1000,
+    "high": 0.0006,
+    "low": 0.00013333333333333334,
+    "metric": "false_certainty_rate",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "forced_prediction",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "forced_prediction",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "recovery_rate",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "forced_prediction",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_precision",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "forced_prediction",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "revision_recall",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.7771666666666667,
+    "low": 0.7552333333333333,
+    "metric": "accuracy_all_steps",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.9352,
+    "low": 0.9308333333333334,
+    "metric": "coverage",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.0006,
+    "low": 0.00013333333333333334,
+    "metric": "false_certainty_rate",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "recovery_rate",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_precision",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "revision_recall",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_contradiction_penalty",
+    "episodes": 1000,
+    "high": 0.7761,
+    "low": 0.7538333333333334,
+    "metric": "accuracy_all_steps",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_contradiction_penalty",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_contradiction_penalty",
+    "episodes": 1000,
+    "high": 0.9356,
+    "low": 0.9315,
+    "metric": "coverage",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_contradiction_penalty",
+    "episodes": 1000,
+    "high": 0.0004333333333333333,
+    "low": 3.3333333333333335e-05,
+    "metric": "false_certainty_rate",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_contradiction_penalty",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_contradiction_penalty",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "recovery_rate",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_contradiction_penalty",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_precision",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_contradiction_penalty",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "revision_recall",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_lateral_inhibition",
+    "episodes": 1000,
+    "high": 0.7637333333333334,
+    "low": 0.7410333333333333,
+    "metric": "accuracy_all_steps",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_lateral_inhibition",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_lateral_inhibition",
+    "episodes": 1000,
+    "high": 0.9281,
+    "low": 0.9226,
+    "metric": "coverage",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_lateral_inhibition",
+    "episodes": 1000,
+    "high": 0.0004,
+    "low": 3.3333333333333335e-05,
+    "metric": "false_certainty_rate",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_lateral_inhibition",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_lateral_inhibition",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "recovery_rate",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_lateral_inhibition",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_precision",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_lateral_inhibition",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "revision_recall",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_margin_gate",
+    "episodes": 1000,
+    "high": 0.7748333333333334,
+    "low": 0.7533666666666666,
+    "metric": "accuracy_all_steps",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_margin_gate",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_margin_gate",
+    "episodes": 1000,
+    "high": 0.9362,
+    "low": 0.9317333333333333,
+    "metric": "coverage",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_margin_gate",
+    "episodes": 1000,
+    "high": 0.0006,
+    "low": 0.00013333333333333334,
+    "metric": "false_certainty_rate",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_margin_gate",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_margin_gate",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "recovery_rate",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_margin_gate",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_precision",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_margin_gate",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "revision_recall",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_refractory",
+    "episodes": 1000,
+    "high": 0.7772666666666667,
+    "low": 0.7552,
+    "metric": "accuracy_all_steps",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_refractory",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_refractory",
+    "episodes": 1000,
+    "high": 0.9352,
+    "low": 0.9308333333333334,
+    "metric": "coverage",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_refractory",
+    "episodes": 1000,
+    "high": 0.0006,
+    "low": 0.00013333333333333334,
+    "metric": "false_certainty_rate",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_refractory",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_refractory",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "recovery_rate",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_refractory",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_precision",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_refractory",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "revision_recall",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_source_diversity",
+    "episodes": 1000,
+    "high": 0.7497333333333334,
+    "low": 0.7268,
+    "metric": "accuracy_all_steps",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_source_diversity",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_source_diversity",
+    "episodes": 1000,
+    "high": 0.8927666666666667,
+    "low": 0.8841666666666667,
+    "metric": "coverage",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_source_diversity",
+    "episodes": 1000,
+    "high": 0.0001,
+    "low": 0.0,
+    "metric": "false_certainty_rate",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_source_diversity",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_source_diversity",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "recovery_rate",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_source_diversity",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_precision",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "no_source_diversity",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "revision_recall",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "single_spark_ignition",
+    "episodes": 1000,
+    "high": 0.7497333333333334,
+    "low": 0.7268,
+    "metric": "accuracy_all_steps",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "single_spark_ignition",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "single_spark_ignition",
+    "episodes": 1000,
+    "high": 0.8927666666666667,
+    "low": 0.8841666666666667,
+    "metric": "coverage",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "single_spark_ignition",
+    "episodes": 1000,
+    "high": 0.0001,
+    "low": 0.0,
+    "metric": "false_certainty_rate",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "single_spark_ignition",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "single_spark_ignition",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "recovery_rate",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "single_spark_ignition",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_precision",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "single_spark_ignition",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "revision_recall",
+    "world": "contradiction_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.7095333333333333,
+    "low": 0.6969,
+    "metric": "accuracy_all_steps",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.9299000000000001,
+    "low": 0.9249333333333334,
+    "metric": "coverage",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.009066666666666667,
+    "low": 0.0068,
+    "metric": "false_certainty_rate",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 2.43155,
+    "low": 2.2344166666666667,
+    "metric": "mean_switch_latency",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.9378952380952381,
+    "low": 0.9170642857142857,
+    "metric": "recovery_rate",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.8856238095238095,
+    "low": 0.86095,
+    "metric": "revision_precision",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.8765,
+    "low": 0.8577083333333333,
+    "metric": "revision_recall",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "forced_prediction",
+    "episodes": 1000,
+    "high": 0.7609666666666667,
+    "low": 0.7479,
+    "metric": "accuracy_all_steps",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "forced_prediction",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "forced_prediction",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "coverage",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "forced_prediction",
+    "episodes": 1000,
+    "high": 0.009066666666666667,
+    "low": 0.0068,
+    "metric": "false_certainty_rate",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "forced_prediction",
+    "episodes": 1000,
+    "high": 2.43155,
+    "low": 2.2344166666666667,
+    "metric": "mean_switch_latency",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "forced_prediction",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "forced_prediction",
+    "episodes": 1000,
+    "high": 0.9378952380952381,
+    "low": 0.9170642857142857,
+    "metric": "recovery_rate",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "forced_prediction",
+    "episodes": 1000,
+    "high": 0.7870809523809523,
+    "low": 0.7602047619047619,
+    "metric": "revision_precision",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "forced_prediction",
+    "episodes": 1000,
+    "high": 0.8765,
+    "low": 0.8577083333333333,
+    "metric": "revision_recall",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.7095333333333333,
+    "low": 0.6969,
+    "metric": "accuracy_all_steps",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.9299000000000001,
+    "low": 0.9249333333333334,
+    "metric": "coverage",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.009066666666666667,
+    "low": 0.0068,
+    "metric": "false_certainty_rate",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 2.43155,
+    "low": 2.2344166666666667,
+    "metric": "mean_switch_latency",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.9378952380952381,
+    "low": 0.9170642857142857,
+    "metric": "recovery_rate",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.8856238095238095,
+    "low": 0.86095,
+    "metric": "revision_precision",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.8765,
+    "low": 0.8577083333333333,
+    "metric": "revision_recall",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "hard_wta",
+    "episodes": 1000,
+    "high": 0.5482,
+    "low": 0.5312333333333333,
+    "metric": "accuracy_all_steps",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "hard_wta",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "hard_wta",
+    "episodes": 1000,
+    "high": 0.9299000000000001,
+    "low": 0.9249333333333334,
+    "metric": "coverage",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "hard_wta",
+    "episodes": 1000,
+    "high": 0.016866666666666665,
+    "low": 0.0137,
+    "metric": "false_certainty_rate",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "hard_wta",
+    "episodes": 972,
+    "high": 2.9138374485596708,
+    "low": 2.617644032921811,
+    "metric": "mean_switch_latency",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "hard_wta",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "hard_wta",
+    "episodes": 1000,
+    "high": 0.83265,
+    "low": 0.7952642857142858,
+    "metric": "recovery_rate",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "hard_wta",
+    "episodes": 1000,
+    "high": 0.77,
+    "low": 0.7190833333333333,
+    "metric": "revision_precision",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "hard_wta",
+    "episodes": 1000,
+    "high": 0.6720833333333334,
+    "low": 0.6404166666666666,
+    "metric": "revision_recall",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "no_residual",
+    "episodes": 1000,
+    "high": 0.4652,
+    "low": 0.4474,
+    "metric": "accuracy_all_steps",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "no_residual",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "no_residual",
+    "episodes": 1000,
+    "high": 0.8249,
+    "low": 0.812,
+    "metric": "coverage",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "no_residual",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "false_certainty_rate",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "no_residual",
+    "episodes": 997,
+    "high": 2.9587094617184886,
+    "low": 2.728117686392511,
+    "metric": "mean_switch_latency",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "no_residual",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "no_residual",
+    "episodes": 1000,
+    "high": 0.8761142857142857,
+    "low": 0.8451142857142857,
+    "metric": "recovery_rate",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "no_residual",
+    "episodes": 1000,
+    "high": 0.6469206349206349,
+    "low": 0.6067428571428571,
+    "metric": "revision_precision",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "no_residual",
+    "episodes": 1000,
+    "high": 0.7811666666666667,
+    "low": 0.7530416666666667,
+    "metric": "revision_recall",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "no_temporal_stability",
+    "episodes": 1000,
+    "high": 0.6783333333333333,
+    "low": 0.6649333333333334,
+    "metric": "accuracy_all_steps",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "no_temporal_stability",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "no_temporal_stability",
+    "episodes": 1000,
+    "high": 0.8980666666666667,
+    "low": 0.8903666666666666,
+    "metric": "coverage",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "no_temporal_stability",
+    "episodes": 1000,
+    "high": 0.0056,
+    "low": 0.004,
+    "metric": "false_certainty_rate",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "no_temporal_stability",
+    "episodes": 999,
+    "high": 2.45995995995996,
+    "low": 2.2566066066066064,
+    "metric": "mean_switch_latency",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "no_temporal_stability",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "no_temporal_stability",
+    "episodes": 1000,
+    "high": 0.9357666666666666,
+    "low": 0.9151619047619047,
+    "metric": "recovery_rate",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "no_temporal_stability",
+    "episodes": 1000,
+    "high": 0.8859952380952381,
+    "low": 0.8602869047619047,
+    "metric": "revision_precision",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "no_temporal_stability",
+    "episodes": 1000,
+    "high": 0.877,
+    "low": 0.8578333333333333,
+    "metric": "revision_recall",
+    "world": "delayed_evidence_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.8757333333333334,
+    "low": 0.8646333333333334,
+    "metric": "accuracy_all_steps",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.8757333333333334,
+    "low": 0.8646333333333334,
+    "metric": "action_accuracy",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.8972,
+    "low": 0.8914666666666667,
+    "metric": "coverage",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.03256666666666667,
+    "low": 0.027766666666666665,
+    "metric": "false_certainty_rate",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "recovery_rate",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_precision",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "revision_recall",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.8757333333333334,
+    "low": 0.8646333333333334,
+    "metric": "accuracy_all_steps",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.8757333333333334,
+    "low": 0.8646333333333334,
+    "metric": "action_accuracy",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.8972,
+    "low": 0.8914666666666667,
+    "metric": "coverage",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.03256666666666667,
+    "low": 0.027766666666666665,
+    "metric": "false_certainty_rate",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "recovery_rate",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_precision",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "revision_recall",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "no_homeostasis",
+    "episodes": 1000,
+    "high": 0.8748333333333334,
+    "low": 0.8636,
+    "metric": "accuracy_all_steps",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "no_homeostasis",
+    "episodes": 1000,
+    "high": 0.8748333333333334,
+    "low": 0.8636,
+    "metric": "action_accuracy",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "no_homeostasis",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "no_homeostasis",
+    "episodes": 1000,
+    "high": 0.8958,
+    "low": 0.89,
+    "metric": "coverage",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "no_homeostasis",
+    "episodes": 1000,
+    "high": 0.032100000000000004,
+    "low": 0.027266666666666668,
+    "metric": "false_certainty_rate",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "no_homeostasis",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "no_homeostasis",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "recovery_rate",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "no_homeostasis",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_precision",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "no_homeostasis",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "revision_recall",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "no_workspace_broadcast",
+    "episodes": 1000,
+    "high": 0.8757,
+    "low": 0.8646333333333334,
+    "metric": "accuracy_all_steps",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "no_workspace_broadcast",
+    "episodes": 1000,
+    "high": 0.8757,
+    "low": 0.8646333333333334,
+    "metric": "action_accuracy",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "no_workspace_broadcast",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "no_workspace_broadcast",
+    "episodes": 1000,
+    "high": 0.8972,
+    "low": 0.8914666666666667,
+    "metric": "coverage",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "no_workspace_broadcast",
+    "episodes": 1000,
+    "high": 0.03256666666666667,
+    "low": 0.027766666666666665,
+    "metric": "false_certainty_rate",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "no_workspace_broadcast",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "no_workspace_broadcast",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "recovery_rate",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "no_workspace_broadcast",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_precision",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "no_workspace_broadcast",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "revision_recall",
+    "world": "goal_conflict_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "accuracy_all_steps",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "coverage",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "false_certainty_rate",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.51,
+    "low": 0.446,
+    "metric": "recovery_rate",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_precision",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_recall",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "accuracy_all_steps",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "coverage",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "false_certainty_rate",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.51,
+    "low": 0.446,
+    "metric": "recovery_rate",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_precision",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_recall",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "no_lateral_inhibition",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "accuracy_all_steps",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "no_lateral_inhibition",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "no_lateral_inhibition",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "coverage",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "no_lateral_inhibition",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "false_certainty_rate",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "no_lateral_inhibition",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "no_lateral_inhibition",
+    "episodes": 1000,
+    "high": 0.51,
+    "low": 0.446,
+    "metric": "recovery_rate",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "no_lateral_inhibition",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_precision",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "no_lateral_inhibition",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_recall",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "no_margin_gate",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "accuracy_all_steps",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "no_margin_gate",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "no_margin_gate",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "coverage",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "no_margin_gate",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "false_certainty_rate",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "no_margin_gate",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "no_margin_gate",
+    "episodes": 1000,
+    "high": 0.51,
+    "low": 0.446,
+    "metric": "recovery_rate",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "no_margin_gate",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_precision",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "no_margin_gate",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_recall",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "no_workspace_broadcast",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "accuracy_all_steps",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "no_workspace_broadcast",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "no_workspace_broadcast",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "coverage",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "no_workspace_broadcast",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "false_certainty_rate",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "no_workspace_broadcast",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "no_workspace_broadcast",
+    "episodes": 1000,
+    "high": 0.51,
+    "low": 0.446,
+    "metric": "recovery_rate",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "no_workspace_broadcast",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_precision",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "no_workspace_broadcast",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_recall",
+    "world": "multi_object_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.8026333333333333,
+    "low": 0.7817333333333334,
+    "metric": "accuracy_all_steps",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.9268666666666667,
+    "low": 0.922,
+    "metric": "coverage",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": -0.006464970676352766,
+    "low": -0.02842487823193883,
+    "metric": "duplicate_evidence_inflation",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.0001,
+    "low": 0.0,
+    "metric": "false_certainty_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "recovery_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_precision",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "revision_recall",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.021489113308477435,
+    "low": 0.013461864699402287,
+    "metric": "source_reliability_sensitivity",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.8026333333333333,
+    "low": 0.7817333333333334,
+    "metric": "accuracy_all_steps",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.9268666666666667,
+    "low": 0.922,
+    "metric": "coverage",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": -0.006464970676352766,
+    "low": -0.02842487823193883,
+    "metric": "duplicate_evidence_inflation",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.0001,
+    "low": 0.0,
+    "metric": "false_certainty_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "recovery_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_precision",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "revision_recall",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.021489113308477435,
+    "low": 0.013461864699402287,
+    "metric": "source_reliability_sensitivity",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_contradiction_penalty",
+    "episodes": 1000,
+    "high": 0.801,
+    "low": 0.7807000000000001,
+    "metric": "accuracy_all_steps",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_contradiction_penalty",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_contradiction_penalty",
+    "episodes": 1000,
+    "high": 0.9275,
+    "low": 0.9230666666666667,
+    "metric": "coverage",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_contradiction_penalty",
+    "episodes": 1000,
+    "high": -0.007419685004017683,
+    "low": -0.02915922151149756,
+    "metric": "duplicate_evidence_inflation",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_contradiction_penalty",
+    "episodes": 1000,
+    "high": 0.0001,
+    "low": 0.0,
+    "metric": "false_certainty_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_contradiction_penalty",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_contradiction_penalty",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "recovery_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_contradiction_penalty",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_precision",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_contradiction_penalty",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "revision_recall",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_contradiction_penalty",
+    "episodes": 1000,
+    "high": 0.020849270142717174,
+    "low": 0.0130393798530546,
+    "metric": "source_reliability_sensitivity",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_refractory",
+    "episodes": 1000,
+    "high": 0.8025666666666667,
+    "low": 0.7818333333333334,
+    "metric": "accuracy_all_steps",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_refractory",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_refractory",
+    "episodes": 1000,
+    "high": 0.9268666666666667,
+    "low": 0.922,
+    "metric": "coverage",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_refractory",
+    "episodes": 1000,
+    "high": -0.006657973991063843,
+    "low": -0.028463209303913727,
+    "metric": "duplicate_evidence_inflation",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_refractory",
+    "episodes": 1000,
+    "high": 0.0001,
+    "low": 0.0,
+    "metric": "false_certainty_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_refractory",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_refractory",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "recovery_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_refractory",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_precision",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_refractory",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "revision_recall",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_refractory",
+    "episodes": 1000,
+    "high": 0.021465339350633564,
+    "low": 0.013435281826475482,
+    "metric": "source_reliability_sensitivity",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_source_diversity",
+    "episodes": 1000,
+    "high": 0.7980333333333334,
+    "low": 0.7766333333333334,
+    "metric": "accuracy_all_steps",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_source_diversity",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_source_diversity",
+    "episodes": 1000,
+    "high": 0.8951333333333333,
+    "low": 0.8866333333333334,
+    "metric": "coverage",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_source_diversity",
+    "episodes": 1000,
+    "high": -0.006014060196691762,
+    "low": -0.027480516682073342,
+    "metric": "duplicate_evidence_inflation",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_source_diversity",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "false_certainty_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_source_diversity",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_source_diversity",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "recovery_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_source_diversity",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_precision",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_source_diversity",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "revision_recall",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_source_diversity",
+    "episodes": 1000,
+    "high": 0.021165030932909917,
+    "low": 0.01319584626793188,
+    "metric": "source_reliability_sensitivity",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "single_spark_ignition",
+    "episodes": 1000,
+    "high": 0.8018333333333333,
+    "low": 0.7800666666666667,
+    "metric": "accuracy_all_steps",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "single_spark_ignition",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "single_spark_ignition",
+    "episodes": 1000,
+    "high": 0.9002666666666667,
+    "low": 0.8913666666666666,
+    "metric": "coverage",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "single_spark_ignition",
+    "episodes": 1000,
+    "high": -0.006014060196691762,
+    "low": -0.027480516682073342,
+    "metric": "duplicate_evidence_inflation",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "single_spark_ignition",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "false_certainty_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "single_spark_ignition",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "single_spark_ignition",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "recovery_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "single_spark_ignition",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_precision",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "single_spark_ignition",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "revision_recall",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "single_spark_ignition",
+    "episodes": 1000,
+    "high": 0.021164981865408123,
+    "low": 0.0131939699724727,
+    "metric": "source_reliability_sensitivity",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.6048,
+    "low": 0.5881333333333333,
+    "metric": "accuracy_all_steps",
+    "world": "switchworld"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "switchworld"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.9262,
+    "low": 0.9211666666666667,
+    "metric": "coverage",
+    "world": "switchworld"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.0026333333333333334,
+    "low": 0.0015333333333333334,
+    "metric": "false_certainty_rate",
+    "world": "switchworld"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 987,
+    "high": 1.7149330181245075,
+    "low": 1.5331234621508179,
+    "metric": "mean_switch_latency",
+    "world": "switchworld"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "switchworld"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.7442174603174603,
+    "low": 0.7061970057720057,
+    "metric": "recovery_rate",
+    "world": "switchworld"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.693749025974026,
+    "low": 0.6573186507936508,
+    "metric": "revision_precision",
+    "world": "switchworld"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.6964396048396049,
+    "low": 0.6707767676767676,
+    "metric": "revision_recall",
+    "world": "switchworld"
+  },
+  {
+    "condition": "forced_prediction",
+    "episodes": 1000,
+    "high": 0.6501666666666667,
+    "low": 0.6335333333333333,
+    "metric": "accuracy_all_steps",
+    "world": "switchworld"
+  },
+  {
+    "condition": "forced_prediction",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "switchworld"
+  },
+  {
+    "condition": "forced_prediction",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "coverage",
+    "world": "switchworld"
+  },
+  {
+    "condition": "forced_prediction",
+    "episodes": 1000,
+    "high": 0.0026333333333333334,
+    "low": 0.0015333333333333334,
+    "metric": "false_certainty_rate",
+    "world": "switchworld"
+  },
+  {
+    "condition": "forced_prediction",
+    "episodes": 987,
+    "high": 1.6515314163490455,
+    "low": 1.475209067078368,
+    "metric": "mean_switch_latency",
+    "world": "switchworld"
+  },
+  {
+    "condition": "forced_prediction",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "switchworld"
+  },
+  {
+    "condition": "forced_prediction",
+    "episodes": 1000,
+    "high": 0.744784126984127,
+    "low": 0.7069607142857143,
+    "metric": "recovery_rate",
+    "world": "switchworld"
+  },
+  {
+    "condition": "forced_prediction",
+    "episodes": 1000,
+    "high": 0.6324109307359307,
+    "low": 0.5987476551226552,
+    "metric": "revision_precision",
+    "world": "switchworld"
+  },
+  {
+    "condition": "forced_prediction",
+    "episodes": 1000,
+    "high": 0.7038515873015873,
+    "low": 0.6786661616161616,
+    "metric": "revision_recall",
+    "world": "switchworld"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.6048,
+    "low": 0.5881333333333333,
+    "metric": "accuracy_all_steps",
+    "world": "switchworld"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "switchworld"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.9262,
+    "low": 0.9211666666666667,
+    "metric": "coverage",
+    "world": "switchworld"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.0026333333333333334,
+    "low": 0.0015333333333333334,
+    "metric": "false_certainty_rate",
+    "world": "switchworld"
+  },
+  {
+    "condition": "full",
+    "episodes": 987,
+    "high": 1.7149330181245075,
+    "low": 1.5331234621508179,
+    "metric": "mean_switch_latency",
+    "world": "switchworld"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "switchworld"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.7442174603174603,
+    "low": 0.7061970057720057,
+    "metric": "recovery_rate",
+    "world": "switchworld"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.693749025974026,
+    "low": 0.6573186507936508,
+    "metric": "revision_precision",
+    "world": "switchworld"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.6964396048396049,
+    "low": 0.6707767676767676,
+    "metric": "revision_recall",
+    "world": "switchworld"
+  },
+  {
+    "condition": "hard_wta",
+    "episodes": 1000,
+    "high": 0.4842666666666667,
+    "low": 0.4625666666666667,
+    "metric": "accuracy_all_steps",
+    "world": "switchworld"
+  },
+  {
+    "condition": "hard_wta",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "switchworld"
+  },
+  {
+    "condition": "hard_wta",
+    "episodes": 1000,
+    "high": 0.9262,
+    "low": 0.9211666666666667,
+    "metric": "coverage",
+    "world": "switchworld"
+  },
+  {
+    "condition": "hard_wta",
+    "episodes": 1000,
+    "high": 0.017233333333333333,
+    "low": 0.0133,
+    "metric": "false_certainty_rate",
+    "world": "switchworld"
+  },
+  {
+    "condition": "hard_wta",
+    "episodes": 947,
+    "high": 1.8481344596972897,
+    "low": 1.563727560718057,
+    "metric": "mean_switch_latency",
+    "world": "switchworld"
+  },
+  {
+    "condition": "hard_wta",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "switchworld"
+  },
+  {
+    "condition": "hard_wta",
+    "episodes": 1000,
+    "high": 0.5819106060606061,
+    "low": 0.5453369047619048,
+    "metric": "recovery_rate",
+    "world": "switchworld"
+  },
+  {
+    "condition": "hard_wta",
+    "episodes": 1000,
+    "high": 0.52805,
+    "low": 0.4734833333333333,
+    "metric": "revision_precision",
+    "world": "switchworld"
+  },
+  {
+    "condition": "hard_wta",
+    "episodes": 1000,
+    "high": 0.47147045454545455,
+    "low": 0.44708474025974027,
+    "metric": "revision_recall",
+    "world": "switchworld"
+  },
+  {
+    "condition": "no_homeostasis",
+    "episodes": 1000,
+    "high": 0.6045333333333334,
+    "low": 0.5878333333333333,
+    "metric": "accuracy_all_steps",
+    "world": "switchworld"
+  },
+  {
+    "condition": "no_homeostasis",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "switchworld"
+  },
+  {
+    "condition": "no_homeostasis",
+    "episodes": 1000,
+    "high": 0.9254333333333333,
+    "low": 0.9201,
+    "metric": "coverage",
+    "world": "switchworld"
+  },
+  {
+    "condition": "no_homeostasis",
+    "episodes": 1000,
+    "high": 0.0024666666666666665,
+    "low": 0.0014333333333333333,
+    "metric": "false_certainty_rate",
+    "world": "switchworld"
+  },
+  {
+    "condition": "no_homeostasis",
+    "episodes": 986,
+    "high": 1.7164726810264335,
+    "low": 1.5234521394764802,
+    "metric": "mean_switch_latency",
+    "world": "switchworld"
+  },
+  {
+    "condition": "no_homeostasis",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "switchworld"
+  },
+  {
+    "condition": "no_homeostasis",
+    "episodes": 1000,
+    "high": 0.7400507936507936,
+    "low": 0.7021013708513708,
+    "metric": "recovery_rate",
+    "world": "switchworld"
+  },
+  {
+    "condition": "no_homeostasis",
+    "episodes": 1000,
+    "high": 0.6896619047619048,
+    "low": 0.6531443001443001,
+    "metric": "revision_precision",
+    "world": "switchworld"
+  },
+  {
+    "condition": "no_homeostasis",
+    "episodes": 1000,
+    "high": 0.6934413364413364,
+    "low": 0.6683018648018648,
+    "metric": "revision_recall",
+    "world": "switchworld"
+  },
+  {
+    "condition": "no_residual",
+    "episodes": 1000,
+    "high": 0.4270333333333333,
+    "low": 0.40896666666666665,
+    "metric": "accuracy_all_steps",
+    "world": "switchworld"
+  },
+  {
+    "condition": "no_residual",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "switchworld"
+  },
+  {
+    "condition": "no_residual",
+    "episodes": 1000,
+    "high": 0.8107,
+    "low": 0.7981,
+    "metric": "coverage",
+    "world": "switchworld"
+  },
+  {
+    "condition": "no_residual",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "false_certainty_rate",
+    "world": "switchworld"
+  },
+  {
+    "condition": "no_residual",
+    "episodes": 975,
+    "high": 2.191965811965812,
+    "low": 1.9436630036630036,
+    "metric": "mean_switch_latency",
+    "world": "switchworld"
+  },
+  {
+    "condition": "no_residual",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "switchworld"
+  },
+  {
+    "condition": "no_residual",
+    "episodes": 1000,
+    "high": 0.6767015873015872,
+    "low": 0.6403354978354978,
+    "metric": "recovery_rate",
+    "world": "switchworld"
+  },
+  {
+    "condition": "no_residual",
+    "episodes": 1000,
+    "high": 0.5253902236652237,
+    "low": 0.48444758297258295,
+    "metric": "revision_precision",
+    "world": "switchworld"
+  },
+  {
+    "condition": "no_residual",
+    "episodes": 1000,
+    "high": 0.5948898629148629,
+    "low": 0.56591394993895,
+    "metric": "revision_recall",
+    "world": "switchworld"
+  },
+  {
+    "condition": "no_temporal_stability",
+    "episodes": 1000,
+    "high": 0.5761999999999999,
+    "low": 0.5583333333333333,
+    "metric": "accuracy_all_steps",
+    "world": "switchworld"
+  },
+  {
+    "condition": "no_temporal_stability",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "switchworld"
+  },
+  {
+    "condition": "no_temporal_stability",
+    "episodes": 1000,
+    "high": 0.8851,
+    "low": 0.8780333333333333,
+    "metric": "coverage",
+    "world": "switchworld"
+  },
+  {
+    "condition": "no_temporal_stability",
+    "episodes": 1000,
+    "high": 0.0009333333333333333,
+    "low": 0.0003333333333333333,
+    "metric": "false_certainty_rate",
+    "world": "switchworld"
+  },
+  {
+    "condition": "no_temporal_stability",
+    "episodes": 987,
+    "high": 1.8083707241761953,
+    "low": 1.618989723548994,
+    "metric": "mean_switch_latency",
+    "world": "switchworld"
+  },
+  {
+    "condition": "no_temporal_stability",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "switchworld"
+  },
+  {
+    "condition": "no_temporal_stability",
+    "episodes": 1000,
+    "high": 0.7498654761904762,
+    "low": 0.7111569264069264,
+    "metric": "recovery_rate",
+    "world": "switchworld"
+  },
+  {
+    "condition": "no_temporal_stability",
+    "episodes": 1000,
+    "high": 0.6868775974025974,
+    "low": 0.6500779942279942,
+    "metric": "revision_precision",
+    "world": "switchworld"
+  },
+  {
+    "condition": "no_temporal_stability",
+    "episodes": 1000,
+    "high": 0.6886628427128427,
+    "low": 0.6636307303807304,
+    "metric": "revision_recall",
+    "world": "switchworld"
+  }
+]

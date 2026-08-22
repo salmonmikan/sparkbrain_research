@@ -1,0 +1,12 @@
+{
+  "command": "C:\\55_personal\\sikou\\sparkbrain-c02\\src\\sparkbrain\\evaluation\\run_suite.py --config configs\\experiments\\phase1\\main.json --output artifacts\\phase1\\c02-main-1000",
+  "completed": true,
+  "config_hash": "1426c6dc8584a15df5de8b11964cc66ba50ed7f99ae3fe3a9c68da2c72c84e54",
+  "episode_count": 37000,
+  "failed_episode_count": 0,
+  "git_commit": "43c78ea5f682e21f491b6f8802b5878c05d28f7d",
+  "local_execution": true,
+  "run_id": "c02-main-1000",
+  "schema_version": "0.2",
+  "split_hash": "ece7b858a0c50d8c9047fcbf17c4716bb6a82feb4efc8ce4582c85e81dd2645c"
+}

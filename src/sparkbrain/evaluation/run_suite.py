@@ -36,7 +36,7 @@ def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
         return
     fields = sorted({key for row in rows for key in row})
     with path.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fields)
+        writer = csv.DictWriter(handle, fieldnames=fields, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
@@ -279,8 +279,8 @@ def run_suite(config_path: Path, output: Path, *, command: str = "") -> dict[str
         "## Artifact links",
         "",
         "- [Raw results](raw/)",
-        "- [Aggregate metrics](aggregate/metrics.csv)",
-        "- [Confidence intervals](aggregate/confidence_intervals.csv)",
+        "- [Aggregate metrics](aggregate/metrics.json)",
+        "- [Confidence intervals](aggregate/confidence_intervals.json)",
         "- [Pareto frontier](pareto/frontier.svg)",
         "- [Failure cases](failures/index.md)",
         "",

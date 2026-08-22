@@ -1,0 +1,717 @@
+{
+  "aggregate": [
+    {
+      "accuracy_all_steps": 0.7922666666666667,
+      "accuracy_when_decided": 0.8561132997207135,
+      "belief_goal_flip_rate": 0.0,
+      "brier_score": 0.32040680268139904,
+      "condition": "dense_update_accounting",
+      "coverage": 0.9247666666666667,
+      "decided_steps": 27.743,
+      "duplicate_evidence_inflation": -0.017888329674165176,
+      "episodes": 1000,
+      "expected_calibration_error": 0.24743166763113345,
+      "false_certainty_rate": 3.3333333333333335e-05,
+      "false_ignition_rate": 0.15130535186989158,
+      "missed_decision_rate": 0.07523333333333333,
+      "noise_induced_wrong_switches": 0.0,
+      "noise_steps": 0.0,
+      "object_cross_talk": 0.0,
+      "prediction_changes": 2.24,
+      "recovery_rate": 1.0,
+      "recurrent_truth_segments": 0.0,
+      "revision_precision": 0.0,
+      "revision_recall": 1.0,
+      "source_reliability_sensitivity": 0.017493122908423798,
+      "steps": 30.0,
+      "truth_changes": 0.0,
+      "unnecessary_revisions": 2.24,
+      "unresolved_switches": 0.0,
+      "world": "reliability_world"
+    },
+    {
+      "accuracy_all_steps": 0.7922666666666667,
+      "accuracy_when_decided": 0.8561132997207135,
+      "belief_goal_flip_rate": 0.0,
+      "brier_score": 0.32040680268139904,
+      "condition": "full",
+      "coverage": 0.9247666666666667,
+      "decided_steps": 27.743,
+      "duplicate_evidence_inflation": -0.017888329674165176,
+      "episodes": 1000,
+      "expected_calibration_error": 0.24743166763113345,
+      "false_certainty_rate": 3.3333333333333335e-05,
+      "false_ignition_rate": 0.15130535186989158,
+      "missed_decision_rate": 0.07523333333333333,
+      "noise_induced_wrong_switches": 0.0,
+      "noise_steps": 0.0,
+      "object_cross_talk": 0.0,
+      "prediction_changes": 2.24,
+      "recovery_rate": 1.0,
+      "recurrent_truth_segments": 0.0,
+      "revision_precision": 0.0,
+      "revision_recall": 1.0,
+      "source_reliability_sensitivity": 0.017493122908423798,
+      "steps": 30.0,
+      "truth_changes": 0.0,
+      "unnecessary_revisions": 2.24,
+      "unresolved_switches": 0.0,
+      "world": "reliability_world"
+    },
+    {
+      "accuracy_all_steps": 0.7908666666666667,
+      "accuracy_when_decided": 0.853890872735183,
+      "belief_goal_flip_rate": 0.0,
+      "brier_score": 0.32849729469069383,
+      "condition": "no_contradiction_penalty",
+      "coverage": 0.9255333333333333,
+      "decided_steps": 27.766,
+      "duplicate_evidence_inflation": -0.01894998263914803,
+      "episodes": 1000,
+      "expected_calibration_error": 0.25222520339980453,
+      "false_certainty_rate": 3.3333333333333335e-05,
+      "false_ignition_rate": 0.1542754878279792,
+      "missed_decision_rate": 0.07446666666666667,
+      "noise_induced_wrong_switches": 0.0,
+      "noise_steps": 0.0,
+      "object_cross_talk": 0.0,
+      "prediction_changes": 2.288,
+      "recovery_rate": 1.0,
+      "recurrent_truth_segments": 0.0,
+      "revision_precision": 0.0,
+      "revision_recall": 1.0,
+      "source_reliability_sensitivity": 0.01690785158310704,
+      "steps": 30.0,
+      "truth_changes": 0.0,
+      "unnecessary_revisions": 2.288,
+      "unresolved_switches": 0.0,
+      "world": "reliability_world"
+    },
+    {
+      "accuracy_all_steps": 0.7922333333333333,
+      "accuracy_when_decided": 0.8560789081863219,
+      "belief_goal_flip_rate": 0.0,
+      "brier_score": 0.32035721059967,
+      "condition": "no_refractory",
+      "coverage": 0.9247666666666667,
+      "decided_steps": 27.743,
+      "duplicate_evidence_inflation": -0.017939069252404915,
+      "episodes": 1000,
+      "expected_calibration_error": 0.24751512513280968,
+      "false_certainty_rate": 3.3333333333333335e-05,
+      "false_ignition_rate": 0.15114156341537038,
+      "missed_decision_rate": 0.07523333333333333,
+      "noise_induced_wrong_switches": 0.0,
+      "noise_steps": 0.0,
+      "object_cross_talk": 0.0,
+      "prediction_changes": 2.237,
+      "recovery_rate": 1.0,
+      "recurrent_truth_segments": 0.0,
+      "revision_precision": 0.0,
+      "revision_recall": 1.0,
+      "source_reliability_sensitivity": 0.017478407573196526,
+      "steps": 30.0,
+      "truth_changes": 0.0,
+      "unnecessary_revisions": 2.237,
+      "unresolved_switches": 0.0,
+      "world": "reliability_world"
+    },
+    {
+      "accuracy_all_steps": 0.7876666666666666,
+      "accuracy_when_decided": 0.8830006169164951,
+      "belief_goal_flip_rate": 0.0,
+      "brier_score": 0.3284606536559133,
+      "condition": "no_source_diversity",
+      "coverage": 0.8908,
+      "decided_steps": 26.724,
+      "duplicate_evidence_inflation": -0.01716278980084552,
+      "episodes": 1000,
+      "expected_calibration_error": 0.25696029681301524,
+      "false_certainty_rate": 0.0,
+      "false_ignition_rate": 0.09664329391786196,
+      "missed_decision_rate": 0.1092,
+      "noise_induced_wrong_switches": 0.0,
+      "noise_steps": 0.0,
+      "object_cross_talk": 0.0,
+      "prediction_changes": 1.061,
+      "recovery_rate": 1.0,
+      "recurrent_truth_segments": 0.0,
+      "revision_precision": 0.0,
+      "revision_recall": 1.0,
+      "source_reliability_sensitivity": 0.017301311014011035,
+      "steps": 30.0,
+      "truth_changes": 0.0,
+      "unnecessary_revisions": 1.061,
+      "unresolved_switches": 0.0,
+      "world": "reliability_world"
+    },
+    {
+      "accuracy_all_steps": 0.7918000000000001,
+      "accuracy_when_decided": 0.8823105206398472,
+      "belief_goal_flip_rate": 0.0,
+      "brier_score": 0.32846217867671906,
+      "condition": "single_spark_ignition",
+      "coverage": 0.8960333333333333,
+      "decided_steps": 26.881,
+      "duplicate_evidence_inflation": -0.01716278980084552,
+      "episodes": 1000,
+      "expected_calibration_error": 0.2600712075859022,
+      "false_certainty_rate": 0.0,
+      "false_ignition_rate": 0.09703357149766538,
+      "missed_decision_rate": 0.10396666666666667,
+      "noise_induced_wrong_switches": 0.0,
+      "noise_steps": 0.0,
+      "object_cross_talk": 0.0,
+      "prediction_changes": 1.07,
+      "recovery_rate": 1.0,
+      "recurrent_truth_segments": 0.0,
+      "revision_precision": 0.0,
+      "revision_recall": 1.0,
+      "source_reliability_sensitivity": 0.017301270850296157,
+      "steps": 30.0,
+      "truth_changes": 0.0,
+      "unnecessary_revisions": 1.07,
+      "unresolved_switches": 0.0,
+      "world": "reliability_world"
+    }
+  ],
+  "confidence_intervals": [
+    {
+      "condition": "dense_update_accounting",
+      "episodes": 1000,
+      "high": 0.8026333333333333,
+      "low": 0.7817333333333334,
+      "metric": "accuracy_all_steps",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "dense_update_accounting",
+      "episodes": 1000,
+      "high": 0.0,
+      "low": 0.0,
+      "metric": "belief_goal_flip_rate",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "dense_update_accounting",
+      "episodes": 1000,
+      "high": 0.9268666666666667,
+      "low": 0.922,
+      "metric": "coverage",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "dense_update_accounting",
+      "episodes": 1000,
+      "high": -0.006464970676352766,
+      "low": -0.02842487823193883,
+      "metric": "duplicate_evidence_inflation",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "dense_update_accounting",
+      "episodes": 1000,
+      "high": 0.0001,
+      "low": 0.0,
+      "metric": "false_certainty_rate",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "dense_update_accounting",
+      "episodes": 1000,
+      "high": 0.0,
+      "low": 0.0,
+      "metric": "object_cross_talk",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "dense_update_accounting",
+      "episodes": 1000,
+      "high": 1.0,
+      "low": 1.0,
+      "metric": "recovery_rate",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "dense_update_accounting",
+      "episodes": 1000,
+      "high": 0.0,
+      "low": 0.0,
+      "metric": "revision_precision",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "dense_update_accounting",
+      "episodes": 1000,
+      "high": 1.0,
+      "low": 1.0,
+      "metric": "revision_recall",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "dense_update_accounting",
+      "episodes": 1000,
+      "high": 0.021489113308477435,
+      "low": 0.013461864699402287,
+      "metric": "source_reliability_sensitivity",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "full",
+      "episodes": 1000,
+      "high": 0.8026333333333333,
+      "low": 0.7817333333333334,
+      "metric": "accuracy_all_steps",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "full",
+      "episodes": 1000,
+      "high": 0.0,
+      "low": 0.0,
+      "metric": "belief_goal_flip_rate",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "full",
+      "episodes": 1000,
+      "high": 0.9268666666666667,
+      "low": 0.922,
+      "metric": "coverage",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "full",
+      "episodes": 1000,
+      "high": -0.006464970676352766,
+      "low": -0.02842487823193883,
+      "metric": "duplicate_evidence_inflation",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "full",
+      "episodes": 1000,
+      "high": 0.0001,
+      "low": 0.0,
+      "metric": "false_certainty_rate",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "full",
+      "episodes": 1000,
+      "high": 0.0,
+      "low": 0.0,
+      "metric": "object_cross_talk",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "full",
+      "episodes": 1000,
+      "high": 1.0,
+      "low": 1.0,
+      "metric": "recovery_rate",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "full",
+      "episodes": 1000,
+      "high": 0.0,
+      "low": 0.0,
+      "metric": "revision_precision",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "full",
+      "episodes": 1000,
+      "high": 1.0,
+      "low": 1.0,
+      "metric": "revision_recall",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "full",
+      "episodes": 1000,
+      "high": 0.021489113308477435,
+      "low": 0.013461864699402287,
+      "metric": "source_reliability_sensitivity",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_contradiction_penalty",
+      "episodes": 1000,
+      "high": 0.801,
+      "low": 0.7807000000000001,
+      "metric": "accuracy_all_steps",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_contradiction_penalty",
+      "episodes": 1000,
+      "high": 0.0,
+      "low": 0.0,
+      "metric": "belief_goal_flip_rate",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_contradiction_penalty",
+      "episodes": 1000,
+      "high": 0.9275,
+      "low": 0.9230666666666667,
+      "metric": "coverage",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_contradiction_penalty",
+      "episodes": 1000,
+      "high": -0.007419685004017683,
+      "low": -0.02915922151149756,
+      "metric": "duplicate_evidence_inflation",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_contradiction_penalty",
+      "episodes": 1000,
+      "high": 0.0001,
+      "low": 0.0,
+      "metric": "false_certainty_rate",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_contradiction_penalty",
+      "episodes": 1000,
+      "high": 0.0,
+      "low": 0.0,
+      "metric": "object_cross_talk",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_contradiction_penalty",
+      "episodes": 1000,
+      "high": 1.0,
+      "low": 1.0,
+      "metric": "recovery_rate",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_contradiction_penalty",
+      "episodes": 1000,
+      "high": 0.0,
+      "low": 0.0,
+      "metric": "revision_precision",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_contradiction_penalty",
+      "episodes": 1000,
+      "high": 1.0,
+      "low": 1.0,
+      "metric": "revision_recall",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_contradiction_penalty",
+      "episodes": 1000,
+      "high": 0.020849270142717174,
+      "low": 0.0130393798530546,
+      "metric": "source_reliability_sensitivity",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_refractory",
+      "episodes": 1000,
+      "high": 0.8025666666666667,
+      "low": 0.7818333333333334,
+      "metric": "accuracy_all_steps",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_refractory",
+      "episodes": 1000,
+      "high": 0.0,
+      "low": 0.0,
+      "metric": "belief_goal_flip_rate",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_refractory",
+      "episodes": 1000,
+      "high": 0.9268666666666667,
+      "low": 0.922,
+      "metric": "coverage",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_refractory",
+      "episodes": 1000,
+      "high": -0.006657973991063843,
+      "low": -0.028463209303913727,
+      "metric": "duplicate_evidence_inflation",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_refractory",
+      "episodes": 1000,
+      "high": 0.0001,
+      "low": 0.0,
+      "metric": "false_certainty_rate",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_refractory",
+      "episodes": 1000,
+      "high": 0.0,
+      "low": 0.0,
+      "metric": "object_cross_talk",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_refractory",
+      "episodes": 1000,
+      "high": 1.0,
+      "low": 1.0,
+      "metric": "recovery_rate",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_refractory",
+      "episodes": 1000,
+      "high": 0.0,
+      "low": 0.0,
+      "metric": "revision_precision",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_refractory",
+      "episodes": 1000,
+      "high": 1.0,
+      "low": 1.0,
+      "metric": "revision_recall",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_refractory",
+      "episodes": 1000,
+      "high": 0.021465339350633564,
+      "low": 0.013435281826475482,
+      "metric": "source_reliability_sensitivity",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_source_diversity",
+      "episodes": 1000,
+      "high": 0.7980333333333334,
+      "low": 0.7766333333333334,
+      "metric": "accuracy_all_steps",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_source_diversity",
+      "episodes": 1000,
+      "high": 0.0,
+      "low": 0.0,
+      "metric": "belief_goal_flip_rate",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_source_diversity",
+      "episodes": 1000,
+      "high": 0.8951333333333333,
+      "low": 0.8866333333333334,
+      "metric": "coverage",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_source_diversity",
+      "episodes": 1000,
+      "high": -0.006014060196691762,
+      "low": -0.027480516682073342,
+      "metric": "duplicate_evidence_inflation",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_source_diversity",
+      "episodes": 1000,
+      "high": 0.0,
+      "low": 0.0,
+      "metric": "false_certainty_rate",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_source_diversity",
+      "episodes": 1000,
+      "high": 0.0,
+      "low": 0.0,
+      "metric": "object_cross_talk",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_source_diversity",
+      "episodes": 1000,
+      "high": 1.0,
+      "low": 1.0,
+      "metric": "recovery_rate",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_source_diversity",
+      "episodes": 1000,
+      "high": 0.0,
+      "low": 0.0,
+      "metric": "revision_precision",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_source_diversity",
+      "episodes": 1000,
+      "high": 1.0,
+      "low": 1.0,
+      "metric": "revision_recall",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_source_diversity",
+      "episodes": 1000,
+      "high": 0.021165030932909917,
+      "low": 0.01319584626793188,
+      "metric": "source_reliability_sensitivity",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "single_spark_ignition",
+      "episodes": 1000,
+      "high": 0.8018333333333333,
+      "low": 0.7800666666666667,
+      "metric": "accuracy_all_steps",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "single_spark_ignition",
+      "episodes": 1000,
+      "high": 0.0,
+      "low": 0.0,
+      "metric": "belief_goal_flip_rate",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "single_spark_ignition",
+      "episodes": 1000,
+      "high": 0.9002666666666667,
+      "low": 0.8913666666666666,
+      "metric": "coverage",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "single_spark_ignition",
+      "episodes": 1000,
+      "high": -0.006014060196691762,
+      "low": -0.027480516682073342,
+      "metric": "duplicate_evidence_inflation",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "single_spark_ignition",
+      "episodes": 1000,
+      "high": 0.0,
+      "low": 0.0,
+      "metric": "false_certainty_rate",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "single_spark_ignition",
+      "episodes": 1000,
+      "high": 0.0,
+      "low": 0.0,
+      "metric": "object_cross_talk",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "single_spark_ignition",
+      "episodes": 1000,
+      "high": 1.0,
+      "low": 1.0,
+      "metric": "recovery_rate",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "single_spark_ignition",
+      "episodes": 1000,
+      "high": 0.0,
+      "low": 0.0,
+      "metric": "revision_precision",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "single_spark_ignition",
+      "episodes": 1000,
+      "high": 1.0,
+      "low": 1.0,
+      "metric": "revision_recall",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "single_spark_ignition",
+      "episodes": 1000,
+      "high": 0.021164981865408123,
+      "low": 0.0131939699724727,
+      "metric": "source_reliability_sensitivity",
+      "world": "reliability_world"
+    }
+  ],
+  "pareto": [
+    {
+      "condition": "reliability_world:dense_update_accounting",
+      "dominated": false,
+      "dominated_by": [],
+      "mean_switch_latency": 1000000000.0,
+      "revision_recall": 1.0,
+      "unnecessary_revision_rate": 1.0,
+      "world": "reliability_world"
+    },
+    {
+      "condition": "reliability_world:full",
+      "dominated": false,
+      "dominated_by": [],
+      "mean_switch_latency": 1000000000.0,
+      "revision_recall": 1.0,
+      "unnecessary_revision_rate": 1.0,
+      "world": "reliability_world"
+    },
+    {
+      "condition": "reliability_world:no_contradiction_penalty",
+      "dominated": false,
+      "dominated_by": [],
+      "mean_switch_latency": 1000000000.0,
+      "revision_recall": 1.0,
+      "unnecessary_revision_rate": 1.0,
+      "world": "reliability_world"
+    },
+    {
+      "condition": "reliability_world:no_refractory",
+      "dominated": false,
+      "dominated_by": [],
+      "mean_switch_latency": 1000000000.0,
+      "revision_recall": 1.0,
+      "unnecessary_revision_rate": 1.0,
+      "world": "reliability_world"
+    },
+    {
+      "condition": "reliability_world:no_source_diversity",
+      "dominated": false,
+      "dominated_by": [],
+      "mean_switch_latency": 1000000000.0,
+      "revision_recall": 1.0,
+      "unnecessary_revision_rate": 1.0,
+      "world": "reliability_world"
+    },
+    {
+      "condition": "reliability_world:single_spark_ignition",
+      "dominated": false,
+      "dominated_by": [],
+      "mean_switch_latency": 1000000000.0,
+      "revision_recall": 1.0,
+      "unnecessary_revision_rate": 1.0,
+      "world": "reliability_world"
+    }
+  ],
+  "schema_version": "0.2"
+}

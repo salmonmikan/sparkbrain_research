@@ -1,0 +1,482 @@
+[
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.8026333333333333,
+    "low": 0.7817333333333334,
+    "metric": "accuracy_all_steps",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.9268666666666667,
+    "low": 0.922,
+    "metric": "coverage",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": -0.006464970676352766,
+    "low": -0.02842487823193883,
+    "metric": "duplicate_evidence_inflation",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.0001,
+    "low": 0.0,
+    "metric": "false_certainty_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "recovery_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_precision",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "revision_recall",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "dense_update_accounting",
+    "episodes": 1000,
+    "high": 0.021489113308477435,
+    "low": 0.013461864699402287,
+    "metric": "source_reliability_sensitivity",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.8026333333333333,
+    "low": 0.7817333333333334,
+    "metric": "accuracy_all_steps",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.9268666666666667,
+    "low": 0.922,
+    "metric": "coverage",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": -0.006464970676352766,
+    "low": -0.02842487823193883,
+    "metric": "duplicate_evidence_inflation",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.0001,
+    "low": 0.0,
+    "metric": "false_certainty_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "recovery_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_precision",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "revision_recall",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "full",
+    "episodes": 1000,
+    "high": 0.021489113308477435,
+    "low": 0.013461864699402287,
+    "metric": "source_reliability_sensitivity",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_contradiction_penalty",
+    "episodes": 1000,
+    "high": 0.801,
+    "low": 0.7807000000000001,
+    "metric": "accuracy_all_steps",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_contradiction_penalty",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_contradiction_penalty",
+    "episodes": 1000,
+    "high": 0.9275,
+    "low": 0.9230666666666667,
+    "metric": "coverage",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_contradiction_penalty",
+    "episodes": 1000,
+    "high": -0.007419685004017683,
+    "low": -0.02915922151149756,
+    "metric": "duplicate_evidence_inflation",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_contradiction_penalty",
+    "episodes": 1000,
+    "high": 0.0001,
+    "low": 0.0,
+    "metric": "false_certainty_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_contradiction_penalty",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_contradiction_penalty",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "recovery_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_contradiction_penalty",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_precision",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_contradiction_penalty",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "revision_recall",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_contradiction_penalty",
+    "episodes": 1000,
+    "high": 0.020849270142717174,
+    "low": 0.0130393798530546,
+    "metric": "source_reliability_sensitivity",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_refractory",
+    "episodes": 1000,
+    "high": 0.8025666666666667,
+    "low": 0.7818333333333334,
+    "metric": "accuracy_all_steps",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_refractory",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_refractory",
+    "episodes": 1000,
+    "high": 0.9268666666666667,
+    "low": 0.922,
+    "metric": "coverage",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_refractory",
+    "episodes": 1000,
+    "high": -0.006657973991063843,
+    "low": -0.028463209303913727,
+    "metric": "duplicate_evidence_inflation",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_refractory",
+    "episodes": 1000,
+    "high": 0.0001,
+    "low": 0.0,
+    "metric": "false_certainty_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_refractory",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_refractory",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "recovery_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_refractory",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_precision",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_refractory",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "revision_recall",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_refractory",
+    "episodes": 1000,
+    "high": 0.021465339350633564,
+    "low": 0.013435281826475482,
+    "metric": "source_reliability_sensitivity",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_source_diversity",
+    "episodes": 1000,
+    "high": 0.7980333333333334,
+    "low": 0.7766333333333334,
+    "metric": "accuracy_all_steps",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_source_diversity",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_source_diversity",
+    "episodes": 1000,
+    "high": 0.8951333333333333,
+    "low": 0.8866333333333334,
+    "metric": "coverage",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_source_diversity",
+    "episodes": 1000,
+    "high": -0.006014060196691762,
+    "low": -0.027480516682073342,
+    "metric": "duplicate_evidence_inflation",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_source_diversity",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "false_certainty_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_source_diversity",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_source_diversity",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "recovery_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_source_diversity",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_precision",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_source_diversity",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "revision_recall",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "no_source_diversity",
+    "episodes": 1000,
+    "high": 0.021165030932909917,
+    "low": 0.01319584626793188,
+    "metric": "source_reliability_sensitivity",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "single_spark_ignition",
+    "episodes": 1000,
+    "high": 0.8018333333333333,
+    "low": 0.7800666666666667,
+    "metric": "accuracy_all_steps",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "single_spark_ignition",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "belief_goal_flip_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "single_spark_ignition",
+    "episodes": 1000,
+    "high": 0.9002666666666667,
+    "low": 0.8913666666666666,
+    "metric": "coverage",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "single_spark_ignition",
+    "episodes": 1000,
+    "high": -0.006014060196691762,
+    "low": -0.027480516682073342,
+    "metric": "duplicate_evidence_inflation",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "single_spark_ignition",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "false_certainty_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "single_spark_ignition",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "object_cross_talk",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "single_spark_ignition",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "recovery_rate",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "single_spark_ignition",
+    "episodes": 1000,
+    "high": 0.0,
+    "low": 0.0,
+    "metric": "revision_precision",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "single_spark_ignition",
+    "episodes": 1000,
+    "high": 1.0,
+    "low": 1.0,
+    "metric": "revision_recall",
+    "world": "reliability_world"
+  },
+  {
+    "condition": "single_spark_ignition",
+    "episodes": 1000,
+    "high": 0.021164981865408123,
+    "low": 0.0131939699724727,
+    "metric": "source_reliability_sensitivity",
+    "world": "reliability_world"
+  }
+]

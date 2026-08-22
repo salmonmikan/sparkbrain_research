@@ -1,0 +1,685 @@
+{
+  "category": "unresolved_or_slow",
+  "episode_id": "switchworld:test:200297:5f7682d71707",
+  "steps": [
+    {
+      "action_prediction": "report:none",
+      "coalition_score": 0.6983999999999999,
+      "confidence": 0.4385119603892332,
+      "forced": false,
+      "object_id": null,
+      "observation_id": "obs:0",
+      "prediction": {
+        "object": null
+      },
+      "probabilities": {
+        "cat": 0.4385119603892332,
+        "dog": 0.3287794256372949,
+        "toy": 0.2327086139734719
+      },
+      "scenario_tags": [],
+      "step_index": 0,
+      "time": 1.0,
+      "truth": {
+        "object": "cat"
+      }
+    },
+    {
+      "action_prediction": "report:cat",
+      "coalition_score": 1.4571539520697405,
+      "confidence": 0.6830857426829451,
+      "forced": false,
+      "object_id": null,
+      "observation_id": "obs:1",
+      "prediction": {
+        "object": "cat"
+      },
+      "probabilities": {
+        "cat": 0.6830857426829451,
+        "dog": 0.15846974094139274,
+        "toy": 0.15844451637566218
+      },
+      "scenario_tags": [
+        "noise"
+      ],
+      "step_index": 1,
+      "time": 2.0,
+      "truth": {
+        "object": "cat"
+      }
+    },
+    {
+      "action_prediction": "report:cat",
+      "coalition_score": 1.8462338954805764,
+      "confidence": 0.7633972725815463,
+      "forced": false,
+      "object_id": null,
+      "observation_id": "obs:2",
+      "prediction": {
+        "object": "cat"
+      },
+      "probabilities": {
+        "cat": 0.7633972725815463,
+        "dog": 0.11707353182638673,
+        "toy": 0.11952919559206694
+      },
+      "scenario_tags": [],
+      "step_index": 2,
+      "time": 3.0,
+      "truth": {
+        "object": "cat"
+      }
+    },
+    {
+      "action_prediction": "report:cat",
+      "coalition_score": 2.108650790161472,
+      "confidence": 0.8074947275826105,
+      "forced": false,
+      "object_id": null,
+      "observation_id": "obs:3",
+      "prediction": {
+        "object": "cat"
+      },
+      "probabilities": {
+        "cat": 0.8074947275826105,
+        "dog": 0.09525364471917208,
+        "toy": 0.09725162769821745
+      },
+      "scenario_tags": [
+        "noise"
+      ],
+      "step_index": 3,
+      "time": 4.0,
+      "truth": {
+        "object": "cat"
+      }
+    },
+    {
+      "action_prediction": "report:cat",
+      "coalition_score": 2.286776584615481,
+      "confidence": 0.8336803862377042,
+      "forced": false,
+      "object_id": null,
+      "observation_id": "obs:4",
+      "prediction": {
+        "object": "cat"
+      },
+      "probabilities": {
+        "cat": 0.8336803862377042,
+        "dog": 0.08229670387829104,
+        "toy": 0.08402290988400483
+      },
+      "scenario_tags": [],
+      "step_index": 4,
+      "time": 5.0,
+      "truth": {
+        "object": "cat"
+      }
+    },
+    {
+      "action_prediction": "report:cat",
+      "coalition_score": 2.005476355613177,
+      "confidence": 0.7840610438813298,
+      "forced": false,
+      "object_id": null,
+      "observation_id": "obs:5",
+      "prediction": {
+        "object": "cat"
+      },
+      "probabilities": {
+        "cat": 0.7840610438813298,
+        "dog": 0.11772440528338132,
+        "toy": 0.09821455083528892
+      },
+      "scenario_tags": [
+        "state_switch"
+      ],
+      "step_index": 5,
+      "time": 6.0,
+      "truth": {
+        "object": "dog"
+      }
+    },
+    {
+      "action_prediction": "report:cat",
+      "coalition_score": 1.8597873861459406,
+      "confidence": 0.7486544954177848,
+      "forced": false,
+      "object_id": null,
+      "observation_id": "obs:6",
+      "prediction": {
+        "object": "cat"
+      },
+      "probabilities": {
+        "cat": 0.7486544954177848,
+        "dog": 0.1343094306932234,
+        "toy": 0.11703607388899177
+      },
+      "scenario_tags": [
+        "state_switch"
+      ],
+      "step_index": 6,
+      "time": 7.0,
+      "truth": {
+        "object": "toy"
+      }
+    },
+    {
+      "action_prediction": "report:cat",
+      "coalition_score": 1.665725937146706,
+      "confidence": 0.6754858764992138,
+      "forced": false,
+      "object_id": null,
+      "observation_id": "obs:7",
+      "prediction": {
+        "object": "cat"
+      },
+      "probabilities": {
+        "cat": 0.6754858764992138,
+        "dog": 0.19681124398922106,
+        "toy": 0.12770287951156514
+      },
+      "scenario_tags": [
+        "state_switch"
+      ],
+      "step_index": 7,
+      "time": 8.0,
+      "truth": {
+        "object": "dog"
+      }
+    },
+    {
+      "action_prediction": "report:cat",
+      "coalition_score": 1.8049219015300701,
+      "confidence": 0.7265570927674818,
+      "forced": false,
+      "object_id": null,
+      "observation_id": "obs:8",
+      "prediction": {
+        "object": "cat"
+      },
+      "probabilities": {
+        "cat": 0.7265570927674818,
+        "dog": 0.15335961859087954,
+        "toy": 0.12008328864163874
+      },
+      "scenario_tags": [],
+      "step_index": 8,
+      "time": 9.0,
+      "truth": {
+        "object": "dog"
+      }
+    },
+    {
+      "action_prediction": "report:cat",
+      "coalition_score": 1.8976265631163043,
+      "confidence": 0.744583389808961,
+      "forced": false,
+      "object_id": null,
+      "observation_id": "obs:9",
+      "prediction": {
+        "object": "cat"
+      },
+      "probabilities": {
+        "cat": 0.744583389808961,
+        "dog": 0.14324962500257848,
+        "toy": 0.11216698518846052
+      },
+      "scenario_tags": [],
+      "step_index": 9,
+      "time": 10.0,
+      "truth": {
+        "object": "dog"
+      }
+    },
+    {
+      "action_prediction": "report:cat",
+      "coalition_score": 1.275810260031039,
+      "confidence": 0.5301914596846116,
+      "forced": false,
+      "object_id": null,
+      "observation_id": "obs:10",
+      "prediction": {
+        "object": "cat"
+      },
+      "probabilities": {
+        "cat": 0.5301914596846116,
+        "dog": 0.3229538039834751,
+        "toy": 0.14685473633191337
+      },
+      "scenario_tags": [],
+      "step_index": 10,
+      "time": 11.0,
+      "truth": {
+        "object": "dog"
+      }
+    },
+    {
+      "action_prediction": "report:cat",
+      "coalition_score": 1.2651560338200327,
+      "confidence": 0.5578594122735938,
+      "forced": false,
+      "object_id": null,
+      "observation_id": "obs:11",
+      "prediction": {
+        "object": "cat"
+      },
+      "probabilities": {
+        "cat": 0.5578594122735938,
+        "dog": 0.2847153054455862,
+        "toy": 0.15742528228081995
+      },
+      "scenario_tags": [],
+      "step_index": 11,
+      "time": 12.0,
+      "truth": {
+        "object": "dog"
+      }
+    },
+    {
+      "action_prediction": "report:cat",
+      "coalition_score": 1.665741856728859,
+      "confidence": 0.6727821876407953,
+      "forced": false,
+      "object_id": null,
+      "observation_id": "obs:12",
+      "prediction": {
+        "object": "cat"
+      },
+      "probabilities": {
+        "cat": 0.6727821876407953,
+        "dog": 0.1915349357086233,
+        "toy": 0.13568287665058137
+      },
+      "scenario_tags": [],
+      "step_index": 12,
+      "time": 13.0,
+      "truth": {
+        "object": "dog"
+      }
+    },
+    {
+      "action_prediction": "report:cat",
+      "coalition_score": 1.5880993476827585,
+      "confidence": 0.6941856144338964,
+      "forced": false,
+      "object_id": null,
+      "observation_id": "obs:13",
+      "prediction": {
+        "object": "cat"
+      },
+      "probabilities": {
+        "cat": 0.6941856144338964,
+        "dog": 0.16341551877545538,
+        "toy": 0.14239886679064823
+      },
+      "scenario_tags": [],
+      "step_index": 13,
+      "time": 14.0,
+      "truth": {
+        "object": "dog"
+      }
+    },
+    {
+      "action_prediction": "report:cat",
+      "coalition_score": 2.0148907892453534,
+      "confidence": 0.7903947664363782,
+      "forced": false,
+      "object_id": null,
+      "observation_id": "obs:14",
+      "prediction": {
+        "object": "cat"
+      },
+      "probabilities": {
+        "cat": 0.7903947664363782,
+        "dog": 0.10404955855136569,
+        "toy": 0.10555567501225624
+      },
+      "scenario_tags": [
+        "noise"
+      ],
+      "step_index": 14,
+      "time": 15.0,
+      "truth": {
+        "object": "dog"
+      }
+    },
+    {
+      "action_prediction": "report:cat",
+      "coalition_score": 1.8625208003289668,
+      "confidence": 0.7491684948662524,
+      "forced": false,
+      "object_id": null,
+      "observation_id": "obs:15",
+      "prediction": {
+        "object": "cat"
+      },
+      "probabilities": {
+        "cat": 0.7491684948662524,
+        "dog": 0.13403476903410574,
+        "toy": 0.11679673609964185
+      },
+      "scenario_tags": [],
+      "step_index": 15,
+      "time": 16.0,
+      "truth": {
+        "object": "dog"
+      }
+    },
+    {
+      "action_prediction": "report:cat",
+      "coalition_score": 1.751950286862944,
+      "confidence": 0.6722396402664396,
+      "forced": false,
+      "object_id": null,
+      "observation_id": "obs:16",
+      "prediction": {
+        "object": "cat"
+      },
+      "probabilities": {
+        "cat": 0.6722396402664396,
+        "dog": 0.21117023257052756,
+        "toy": 0.11659012716303281
+      },
+      "scenario_tags": [
+        "noise"
+      ],
+      "step_index": 16,
+      "time": 17.0,
+      "truth": {
+        "object": "dog"
+      }
+    },
+    {
+      "action_prediction": "report:cat",
+      "coalition_score": 1.185163112235161,
+      "confidence": 0.5075658693510356,
+      "forced": false,
+      "object_id": null,
+      "observation_id": "obs:17",
+      "prediction": {
+        "object": "cat"
+      },
+      "probabilities": {
+        "cat": 0.5075658693510356,
+        "dog": 0.3385069918005692,
+        "toy": 0.15392713884839518
+      },
+      "scenario_tags": [],
+      "step_index": 17,
+      "time": 18.0,
+      "truth": {
+        "object": "dog"
+      }
+    },
+    {
+      "action_prediction": "report:cat",
+      "coalition_score": 1.4256430638554178,
+      "confidence": 0.625069444613218,
+      "forced": false,
+      "object_id": null,
+      "observation_id": "obs:18",
+      "prediction": {
+        "object": "cat"
+      },
+      "probabilities": {
+        "cat": 0.625069444613218,
+        "dog": 0.22142042563233402,
+        "toy": 0.1535101297544479
+      },
+      "scenario_tags": [],
+      "step_index": 18,
+      "time": 19.0,
+      "truth": {
+        "object": "dog"
+      }
+    },
+    {
+      "action_prediction": "report:cat",
+      "coalition_score": 1.520882648922241,
+      "confidence": 0.6469763838727924,
+      "forced": false,
+      "object_id": null,
+      "observation_id": "obs:19",
+      "prediction": {
+        "object": "cat"
+      },
+      "probabilities": {
+        "cat": 0.6469763838727924,
+        "dog": 0.2085600780677408,
+        "toy": 0.14446353805946682
+      },
+      "scenario_tags": [],
+      "step_index": 19,
+      "time": 20.0,
+      "truth": {
+        "object": "dog"
+      }
+    },
+    {
+      "action_prediction": "report:cat",
+      "coalition_score": 1.0644678555822342,
+      "confidence": 0.4461388101097226,
+      "forced": false,
+      "object_id": null,
+      "observation_id": "obs:20",
+      "prediction": {
+        "object": "cat"
+      },
+      "probabilities": {
+        "cat": 0.4461388101097226,
+        "dog": 0.15023642703730855,
+        "toy": 0.40362476285296883
+      },
+      "scenario_tags": [
+        "noise"
+      ],
+      "step_index": 20,
+      "time": 21.0,
+      "truth": {
+        "object": "dog"
+      }
+    },
+    {
+      "action_prediction": "report:cat",
+      "coalition_score": 1.2355483105061473,
+      "confidence": 0.5795745629811038,
+      "forced": false,
+      "object_id": null,
+      "observation_id": "obs:21",
+      "prediction": {
+        "object": "cat"
+      },
+      "probabilities": {
+        "cat": 0.5795745629811038,
+        "dog": 0.2482880572786358,
+        "toy": 0.17213737974026042
+      },
+      "scenario_tags": [],
+      "step_index": 21,
+      "time": 22.0,
+      "truth": {
+        "object": "dog"
+      }
+    },
+    {
+      "action_prediction": "report:cat",
+      "coalition_score": 1.3690461286704358,
+      "confidence": 0.6117145522437684,
+      "forced": false,
+      "object_id": null,
+      "observation_id": "obs:22",
+      "prediction": {
+        "object": "cat"
+      },
+      "probabilities": {
+        "cat": 0.6117145522437684,
+        "dog": 0.22930734204987444,
+        "toy": 0.15897810570635715
+      },
+      "scenario_tags": [],
+      "step_index": 22,
+      "time": 23.0,
+      "truth": {
+        "object": "dog"
+      }
+    },
+    {
+      "action_prediction": "report:cat",
+      "coalition_score": 0.9698213083135571,
+      "confidence": 0.4331306828299028,
+      "forced": false,
+      "object_id": null,
+      "observation_id": "obs:23",
+      "prediction": {
+        "object": "cat"
+      },
+      "probabilities": {
+        "cat": 0.4331306828299028,
+        "dog": 0.40395340913052996,
+        "toy": 0.16291590803956726
+      },
+      "scenario_tags": [],
+      "step_index": 23,
+      "time": 24.0,
+      "truth": {
+        "object": "dog"
+      }
+    },
+    {
+      "action_prediction": "report:cat",
+      "coalition_score": 0.9600813653011648,
+      "confidence": 0.4652586558098164,
+      "forced": false,
+      "object_id": null,
+      "observation_id": "obs:24",
+      "prediction": {
+        "object": "cat"
+      },
+      "probabilities": {
+        "cat": 0.35802813724901517,
+        "dog": 0.4652586558098164,
+        "toy": 0.1767132069411685
+      },
+      "scenario_tags": [],
+      "step_index": 24,
+      "time": 25.0,
+      "truth": {
+        "object": "dog"
+      }
+    },
+    {
+      "action_prediction": "report:dog",
+      "coalition_score": 1.2395736116400533,
+      "confidence": 0.5366408791340115,
+      "forced": false,
+      "object_id": null,
+      "observation_id": "obs:25",
+      "prediction": {
+        "object": "dog"
+      },
+      "probabilities": {
+        "cat": 0.31971158926031945,
+        "dog": 0.5366408791340115,
+        "toy": 0.14364753160566915
+      },
+      "scenario_tags": [],
+      "step_index": 25,
+      "time": 26.0,
+      "truth": {
+        "object": "dog"
+      }
+    },
+    {
+      "action_prediction": "report:dog",
+      "coalition_score": 1.177272621880289,
+      "confidence": 0.6133195360056881,
+      "forced": false,
+      "object_id": null,
+      "observation_id": "obs:26",
+      "prediction": {
+        "object": "dog"
+      },
+      "probabilities": {
+        "cat": 0.21080831581595505,
+        "dog": 0.6133195360056881,
+        "toy": 0.17587214817835672
+      },
+      "scenario_tags": [],
+      "step_index": 26,
+      "time": 27.0,
+      "truth": {
+        "object": "dog"
+      }
+    },
+    {
+      "action_prediction": "report:dog",
+      "coalition_score": 1.3768540094918575,
+      "confidence": 0.5944334782768641,
+      "forced": false,
+      "object_id": null,
+      "observation_id": "obs:27",
+      "prediction": {
+        "object": "dog"
+      },
+      "probabilities": {
+        "cat": 0.26344046603683996,
+        "dog": 0.5944334782768641,
+        "toy": 0.142126055686296
+      },
+      "scenario_tags": [
+        "state_switch",
+        "noise"
+      ],
+      "step_index": 27,
+      "time": 28.0,
+      "truth": {
+        "object": "cat"
+      }
+    },
+    {
+      "action_prediction": "report:dog",
+      "coalition_score": 1.3121614492436422,
+      "confidence": 0.6447809982327689,
+      "forced": false,
+      "object_id": null,
+      "observation_id": "obs:28",
+      "prediction": {
+        "object": "dog"
+      },
+      "probabilities": {
+        "cat": 0.19365632991863868,
+        "dog": 0.6447809982327689,
+        "toy": 0.16156267184859233
+      },
+      "scenario_tags": [],
+      "step_index": 28,
+      "time": 29.0,
+      "truth": {
+        "object": "cat"
+      }
+    },
+    {
+      "action_prediction": "report:dog",
+      "coalition_score": 1.040857418961733,
+      "confidence": 0.4840757580753745,
+      "forced": false,
+      "object_id": null,
+      "observation_id": "obs:29",
+      "prediction": {
+        "object": "dog"
+      },
+      "probabilities": {
+        "cat": 0.3412393033301686,
+        "dog": 0.4840757580753745,
+        "toy": 0.17468493859445694
+      },
+      "scenario_tags": [],
+      "step_index": 29,
+      "time": 30.0,
+      "truth": {
+        "object": "cat"
+      }
+    }
+  ]
+}
