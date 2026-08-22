@@ -12,11 +12,8 @@
     "artifacts/release/primary_results.md",
     "artifacts/release/primary_results.svg"
   ],
-  "pending_evidence_entries": [
-    "EV-C05-CHECKPOINT",
-    "EV-C06-FOUNDATION"
-  ],
+  "pending_evidence_entries": [],
   "prohibited_wording_findings": [],
   "schema_version": "c10-claim-audit-v1",
-  "status": "pass-with-pending-evidence"
+  "status": "pass"
 }

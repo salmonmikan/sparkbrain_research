@@ -55,31 +55,47 @@
       "status": "negative"
     },
     {
-      "artifacts": [],
-      "boundary": "C05 is not integrated. Public evidence requires a dev-only encoder vocabulary/feature manifest whose hash and input dimension match every selected checkpoint.",
+      "artifacts": [
+        "artifacts/phase2/baselines/c05-acceptance-final/run_manifest.json",
+        "artifacts/phase2/baselines/c05-acceptance-final/acceptance.json",
+        "artifacts/phase2/baselines/c05-acceptance-final/aggregate_metrics.json",
+        "artifacts/phase2/baselines/c05-acceptance-final/paired_statistics.json",
+        "configs/external_validation/model_adapters.json"
+      ],
+      "boundary": "Reduced matched-baseline harness with failed quality/scientific-compute matching; the frozen dev-only encoder hash and checkpoint input dimensions are verified.",
       "claim_ids": [
         "CL-003",
         "CL-004",
         "CL-007"
       ],
       "id": "EV-C05-CHECKPOINT",
-      "run_ids": [],
-      "status": "pending"
+      "run_ids": [
+        "R0009"
+      ],
+      "status": "negative"
     },
     {
       "artifacts": [
-        "configs/external_validation/foundation.json",
-        "schemas/external-evaluation-v0.2.schema.json"
+        "artifacts/external_validation/c06-final-official/run_manifest.json",
+        "artifacts/external_validation/c06-final-official/belief_r_metrics.json",
+        "artifacts/external_validation/c06-final-official/leakage_audit.json",
+        "artifacts/external_validation/c06-final-official/manual_trace_audit.json",
+        "artifacts/external_validation/c06-final-official/interventions.json",
+        "artifacts/external_validation/c06-final-official/track_b.json",
+        "artifacts/external_validation/c06-final-official/track_c.json",
+        "configs/external_validation/model_adapters.json"
       ],
-      "boundary": "Foundation only. External model execution and strict C05 encoder-state/hash validation are pending.",
+      "boundary": "Full pinned Belief-R zero-shot execution completed offline; Spark BREU was below direct/chance, representations and compute were unmatched, and CL-007 remains E0.",
       "claim_ids": [
         "CL-003",
         "CL-004",
         "CL-007"
       ],
-      "id": "EV-C06-FOUNDATION",
-      "run_ids": [],
-      "status": "pending"
+      "id": "EV-C06-EXTERNAL",
+      "run_ids": [
+        "R0012"
+      ],
+      "status": "negative"
     },
     {
       "artifacts": [
@@ -134,5 +150,5 @@
     }
   ],
   "schema_version": "c10-evidence-map-v1",
-  "source_revision": "e421dd7e24098470618a7c9efabd436fad34d558"
+  "source_revision": "07dbd94e7e84f78745a6d161ea852c1a87216f8b"
 }
