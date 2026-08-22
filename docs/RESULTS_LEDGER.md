@@ -114,7 +114,8 @@ The Phase-0 dynamics and persisted config/state/trace schema are intended to rem
 - normalized fresh-run traces: identical;
 - generated-artifact schema regression: PASS;
 - Phase-0 benchmark aggregate values: unchanged; persisted JSON documents gained explicit schema metadata only.
+- GitHub Actions CI: PASS on Python 3.11 and 3.13, run `32594805438`.
 
 ### Compatibility and limitations
 
-Schema remains `0.2`; no migration is introduced. The stricter validators reject incomplete payloads that omitted required deterministic state, including `broadcast_listeners`. This is validation hardening rather than reinterpretation of valid v0.2 artifacts. Local validation does not replace a successful clean CI run on every supported Python version.
+Schema remains `0.2`; no migration is introduced. The stricter validators reject incomplete payloads that omitted required deterministic state, including `broadcast_listeners`. This is validation hardening rather than reinterpretation of valid v0.2 artifacts. The clean CI matrix passed on the two repository-supported Python versions; this does not establish compatibility with untested environments.
