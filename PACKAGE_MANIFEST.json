@@ -1,5 +1,5 @@
 {
-  "file_count": 289,
+  "file_count": 407,
   "files": [
     {
       "artifact_class": "documentation",
@@ -64,8 +64,8 @@
     {
       "artifact_class": "documentation",
       "path": "README.md",
-      "sha256": "04296a4d7f5c9bd50b3a140ad44f9e74851dca1f40f86d79e45f7f199c864fc3",
-      "size": 10189
+      "sha256": "545d8971d36948c5fad8cdf71ebb068ad48662c339d535f0035d8574860f5e45",
+      "size": 10254
     },
     {
       "artifact_class": "package-metadata",
@@ -417,6 +417,306 @@
     },
     {
       "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/acceptance.json",
+      "sha256": "1c34b506ef874483434c89d8def6722f677742cc20975500da43829c75124e91",
+      "size": 368
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/aggregate_metrics.json",
+      "sha256": "a75912b0430b0a699c65ffd21c7d2b1e7012082d13f87e362c531641da2716dd",
+      "size": 8387
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/checkpoints/causal_transformer_context64-seed-101.pt",
+      "sha256": "b5f20c86842165452ff69293ef486050a827b3a16175a74ed52a23a550cbc3f6",
+      "size": 137671
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/checkpoints/causal_transformer_context64-seed-211.pt",
+      "sha256": "9a02e000c1194cf9419cb833dc29158019d2a56b5dd8a2688c8404eba5094992",
+      "size": 137671
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/checkpoints/causal_transformer_context64-seed-307.pt",
+      "sha256": "0509468173ef8a0b611f01f8a5def0df5901f6db4a6ca25dd1c9170735c7bbf1",
+      "size": 137671
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/checkpoints/causal_transformer_context64-seed-401.pt",
+      "sha256": "b6a51f937ff042538eb07f6da42b93e193c620bdfb7f373c0edba58444801d78",
+      "size": 137671
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/checkpoints/causal_transformer_context64-seed-503.pt",
+      "sha256": "44d56876eeb705b2abed66014c032295c44af50f31feb2c84cd809442beb6c70",
+      "size": 137671
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/checkpoints/explicit_state_memory-seed-101.pt",
+      "sha256": "2102b570c590e0eee7fec90dac08c0cb0dcefc486b5966dd0a3139adfd584c51",
+      "size": 131779
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/checkpoints/explicit_state_memory-seed-211.pt",
+      "sha256": "983f3e46ab07f18e1931a0bfefdf63a2fa38960c964f93339bcf384ef4d50cb0",
+      "size": 131779
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/checkpoints/explicit_state_memory-seed-307.pt",
+      "sha256": "abde647cb78a6294dc981721b34f77145b7cb5d055ddb717a22b6db74deb1b0e",
+      "size": 131779
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/checkpoints/explicit_state_memory-seed-401.pt",
+      "sha256": "f3fc586babd9b9a3b324a93aa1bdb1de0bd8a2da70af5dc32032433d267babbf",
+      "size": 131779
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/checkpoints/explicit_state_memory-seed-503.pt",
+      "sha256": "4419478258befee6bfe1bfea70f01e0690426c7db04f9c38e07e27218c3b140e",
+      "size": 131779
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/checkpoints/gru-seed-101.pt",
+      "sha256": "e8c4ffc42b54dbf71c81ca2b0f5bbd24ecb63686253234ca85a6caaff378f416",
+      "size": 132305
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/checkpoints/gru-seed-211.pt",
+      "sha256": "3ce691043751e7e0075866e05ff5cb325bd919e7d7d62616898801350c486585",
+      "size": 132305
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/checkpoints/gru-seed-307.pt",
+      "sha256": "8cc1c78b632efb2f207827ff506209d2981c9aa5c03fb0cac42f67e11d72babf",
+      "size": 132305
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/checkpoints/gru-seed-401.pt",
+      "sha256": "c35d5d2042d909f65b3232e2a3a6b2e1d168bb12a2631cd2f2b7e9eae38e7d43",
+      "size": 132305
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/checkpoints/gru-seed-503.pt",
+      "sha256": "a395f9fc8eef83341f4236b643451ee90f6478fc8f33a7689f8c008ba276194d",
+      "size": 132305
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/checkpoints/lstm-seed-101.pt",
+      "sha256": "f100f138db7805d236770cc676ab4be6b95843d4fd8602b8f3a03bcb741b2d90",
+      "size": 130205
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/checkpoints/lstm-seed-211.pt",
+      "sha256": "5ec1618e50fbbf35c01854803d1b00f970b0bfd2b1fd1d0120b24e19e6b44314",
+      "size": 130205
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/checkpoints/lstm-seed-307.pt",
+      "sha256": "baf99d956c440490330c8a9991dfcd10c7a86ce080e1c938d38ab2f179c203e7",
+      "size": 130205
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/checkpoints/lstm-seed-401.pt",
+      "sha256": "c1e567503935fc69b0e142e6a96272e12e5e15d325171b7bdfa34528734f2414",
+      "size": 130205
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/checkpoints/lstm-seed-503.pt",
+      "sha256": "3ef24d60102eef72ca272464e587883f0b86f1191a2b2c70d207145d161884fe",
+      "size": 130205
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/checkpoints/rim_like_top2_of4-seed-101.pt",
+      "sha256": "351ad7b8dd6c2b08a9690d3f3d630608782ce9844d0010712df94f5e2a4e4395",
+      "size": 138933
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/checkpoints/rim_like_top2_of4-seed-211.pt",
+      "sha256": "eab3f7b6786894f206de569941a0ae25f9f94747ead936c49499352e851f3a38",
+      "size": 138933
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/checkpoints/rim_like_top2_of4-seed-307.pt",
+      "sha256": "df6c2d8eccce9c7b383faad19f20de49dd2e8498ae1526319bd9d4d25e340cc8",
+      "size": 138933
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/checkpoints/rim_like_top2_of4-seed-401.pt",
+      "sha256": "2dbe282633d4060ad1f1d09edb2893d2a2fa99e3b6201972ab1a6329d4384b2e",
+      "size": 138933
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/checkpoints/rim_like_top2_of4-seed-503.pt",
+      "sha256": "f5d5c6dcd4c2e379935324ca9f37a7935323d2d9fe946a2e9439dcc5d02d5b29",
+      "size": 138933
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/failure_cases.json",
+      "sha256": "6b4d05c0a0e705c5499bc713431cb799f37b97fc89a58666b71c684759c3666c",
+      "size": 3097
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/failures.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "size": 3
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/paired_statistics.json",
+      "sha256": "4b3b6e3d096c83f1a8493d41687e03c92f154d25ccf0c09d05bb4df8e232ab19",
+      "size": 10325
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/profiles.json",
+      "sha256": "17cce4b1fdb673d71aa2656ef1def752cea2078f886ae156ce96842d3fa8ebbb",
+      "size": 25394
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/raw_results.json",
+      "sha256": "73aa221b6d79c7309303c83f133c40885a49d844440b01497181e12affab2dd7",
+      "size": 3020400
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/report.md",
+      "sha256": "657d97e517ae237f22128f8d3fb75d70011721d157e3cdcd556fcce1057271c9",
+      "size": 449
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/resolved_config.json",
+      "sha256": "53420f39c797fc38665a1607966780b6543d770a20264610c516648ba501b67b",
+      "size": 736
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-acceptance-final/run_manifest.json",
+      "sha256": "314d75e2f5578917404bb0b9b6df92e1fe42b627019699f68ac9378ecdb79f2f",
+      "size": 5290
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-smoke-final/acceptance.json",
+      "sha256": "55f06cb3f21dcf6747778e61a84bc9a7e25ce6f3e716870f89dbce99f095e415",
+      "size": 369
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-smoke-final/aggregate_metrics.json",
+      "sha256": "4890e6743fbab3c3d9b4b055bc68d29664d23af3c1d54fa42646128f27d76b4b",
+      "size": 2594
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-smoke-final/checkpoints/causal_transformer_context64-seed-101.pt",
+      "sha256": "bb8ebf683bf7758a9b615c32a2347bd4a52109cb6ee61f2e9f3ea6e154dc37f6",
+      "size": 47111
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-smoke-final/checkpoints/explicit_state_memory-seed-101.pt",
+      "sha256": "82510fc3639d9b4ad58e6fc9f64088a230f1227c7b34717b945a524a34a51561",
+      "size": 42307
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-smoke-final/checkpoints/gru-seed-101.pt",
+      "sha256": "535642c9c39d1a6b5ffdcbb0d1c2a33745418ef6cf3c59412be6e1e7a0c66b29",
+      "size": 42321
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-smoke-final/checkpoints/lstm-seed-101.pt",
+      "sha256": "61ba0f83270f897cdbd507fb7f9587b43f853adc209dc048a697ecc5f7f1e83e",
+      "size": 42397
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-smoke-final/checkpoints/rim_like_top2_of4-seed-101.pt",
+      "sha256": "ec1f5998059b21c220e0f963678b1ad90b5d6a0d08eee810e8be9bc23579334e",
+      "size": 48949
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-smoke-final/failure_cases.json",
+      "sha256": "effb126dd2ac3bc79ca97c0053aa11efbe95bd9d1307114ecb231167581f2b82",
+      "size": 3094
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-smoke-final/failures.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "size": 3
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-smoke-final/paired_statistics.json",
+      "sha256": "7c91714f0d02b7eb8442109821bd7f51f5f3dd9a985aedcffd0d88d46e9c16e6",
+      "size": 3106
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-smoke-final/profiles.json",
+      "sha256": "56a1d5759236034711628fec8babeef1d42b1459fb622fef94ae62ca1920e473",
+      "size": 4901
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-smoke-final/raw_results.json",
+      "sha256": "6e4400fd279bfc609f37fbd998f5cde316037784716454560aef87da80514946",
+      "size": 326881
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-smoke-final/report.md",
+      "sha256": "6e5ea5c3e7b52322bba6b37986c68402ae8d87fb091a626152b5e8166c21a3ec",
+      "size": 443
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-smoke-final/resolved_config.json",
+      "sha256": "ac00afac42bf532a98410c636f93115b89b62d2fdf55bf05fe6b9aabe2e8aa78",
+      "size": 689
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase2/baselines/c05-smoke-final/run_manifest.json",
+      "sha256": "47a290efe055a5d0767554433aa3ba85f50f0b4ddaf9693ce49177c2dc9fa4f2",
+      "size": 4768
+    },
+    {
+      "artifact_class": "research-artifact",
       "path": "artifacts/phase2/learned-routing-v1/main/ablations.json",
       "sha256": "8ca3b273d907afa208b0810685fbf26a8d07dac37bf02a19198cfee7fe614a63",
       "size": 10844
@@ -620,6 +920,180 @@
       "size": 310
     },
     {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase3/structural-plasticity-v1/main/acceptance-matrix.json",
+      "sha256": "ad6cac143f6d95ce128e982a31542c833b6acfae3e516d4987ba384271e10da6",
+      "size": 388
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase3/structural-plasticity-v1/main/analyses.json",
+      "sha256": "f80dbd5575f52ed70439f9acb81c16d9133e148bf7872eb5e579bc014dbf096a",
+      "size": 1838
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase3/structural-plasticity-v1/main/budget-sensitivity.json",
+      "sha256": "a7bbacdeaff9900f550defcd03940b7436aa6709c4ed13f96b46d18a878d1569",
+      "size": 614
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase3/structural-plasticity-v1/main/dev-target-selection.json",
+      "sha256": "309fa40ba098325928bffd191dc8321e6abfa75f010073fbefa64ffa5e74462f",
+      "size": 354
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase3/structural-plasticity-v1/main/gate-matrix.json",
+      "sha256": "b910c02aed907db6f992c988bdbaaafbd386acb1e66056a8805276a98b5d2c97",
+      "size": 1193
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase3/structural-plasticity-v1/main/input-hashes.json",
+      "sha256": "1ff9195d27fd33307e9ce9fa5388af3aecdf3599395c098ded4443d7966da9ac",
+      "size": 756
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase3/structural-plasticity-v1/main/negative-findings.json",
+      "sha256": "8cb2499ab586c11cc3e212f7f239fb4f6bded4ac1c62e3656b22fcede303b69f",
+      "size": 349
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase3/structural-plasticity-v1/main/paired-controls.json",
+      "sha256": "73accfd671cd97a6078106349499c4476d2c80a054197f1699588481ac003ee5",
+      "size": 4445
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase3/structural-plasticity-v1/main/paired-rows.json",
+      "sha256": "896687a28bf5e38931ea8d9439a8b9e11bf42a1e987f28f848381a9670a2f9c7",
+      "size": 1046941
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase3/structural-plasticity-v1/main/resolved-config.json",
+      "sha256": "280d00dd14fa26bfbbeabe540ebc176808a4e2556000db0f362999e2abad543a",
+      "size": 1346
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase3/structural-plasticity-v1/main/structural-history.json",
+      "sha256": "162022775a85e9faa7887ee649a2738dba64c91fe21fa3164334c590af25b271",
+      "size": 31267
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase3/structural-plasticity-v1/main/structural-seed-83.pt",
+      "sha256": "86a19ef4d1a6229a0b540a62963f901d1c4ce0f9f0e7a6ba6cb853c07da4132c",
+      "size": 102191
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase3/structural-plasticity-v1/main/structural-seed-89.pt",
+      "sha256": "d672d914840c2fc641ea412b4f4442ef41d1e4b837f0f0c416ec818f3fd6a2d4",
+      "size": 102191
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase3/structural-plasticity-v1/main/structural-timeline.html",
+      "sha256": "c249e50f5cc76b1001bbba5cf41ac57e160586071135b7d83299e271fd426dbd",
+      "size": 7198
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase3/structural-plasticity-v1/main/summary.json",
+      "sha256": "8e4e689be66be55b2bdc7418e55c57120b1692cfd0f15e726fe51eeef0b84ae6",
+      "size": 44240
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase3/structural-plasticity-v1/smoke/acceptance-matrix.json",
+      "sha256": "ad6cac143f6d95ce128e982a31542c833b6acfae3e516d4987ba384271e10da6",
+      "size": 388
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase3/structural-plasticity-v1/smoke/analyses.json",
+      "sha256": "fc3b853be6d510787199969a6fac95a4032892389f52e0998217707498cf5de3",
+      "size": 1715
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase3/structural-plasticity-v1/smoke/budget-sensitivity.json",
+      "sha256": "8052ed3cece99fd777538fa5206f0ae022d4ceb5ec13701a3d615aa6d53cd955",
+      "size": 388
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase3/structural-plasticity-v1/smoke/dev-target-selection.json",
+      "sha256": "6f5b5c80aa72e4479b73a8a2277fa87b8fd14cdd2ff4b598de6fb27525111e0d",
+      "size": 357
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase3/structural-plasticity-v1/smoke/gate-matrix.json",
+      "sha256": "45150ccbd73ba4f288fbbf2a3a4ffe8cdf95ad0a5077236731254618c2fc1818",
+      "size": 977
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase3/structural-plasticity-v1/smoke/input-hashes.json",
+      "sha256": "1ff9195d27fd33307e9ce9fa5388af3aecdf3599395c098ded4443d7966da9ac",
+      "size": 756
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase3/structural-plasticity-v1/smoke/negative-findings.json",
+      "sha256": "8cb2499ab586c11cc3e212f7f239fb4f6bded4ac1c62e3656b22fcede303b69f",
+      "size": 349
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase3/structural-plasticity-v1/smoke/paired-controls.json",
+      "sha256": "faabbd97139c95aa0c217b35ee84f74fb6120b9e4f08b27b43a4dcaf83c0b1ca",
+      "size": 4239
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase3/structural-plasticity-v1/smoke/paired-rows.json",
+      "sha256": "97a10e25a2e9330820d2070ab47ffda0fd1776c31bf47a059d60c3c73b11efd6",
+      "size": 191901
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase3/structural-plasticity-v1/smoke/resolved-config.json",
+      "sha256": "919c2758a746c0fd83f68d489978d19f4c75dbe790bdc439384a7e8890db6125",
+      "size": 1299
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase3/structural-plasticity-v1/smoke/structural-history.json",
+      "sha256": "7f07ac72f9285ecebfe375081c8a502933d92fc6916dcac067cc2310b0aed191",
+      "size": 5737
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase3/structural-plasticity-v1/smoke/structural-seed-83.pt",
+      "sha256": "5d3f1b3fda5645c8a895addea9413a2f451f4603a1f1b4636ed3061171c71b93",
+      "size": 94511
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase3/structural-plasticity-v1/smoke/structural-timeline.html",
+      "sha256": "17c1f98bdd4c0eb9fced999f740da4455f28c1b8f56abd880622a26c12dd6961",
+      "size": 1206
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/phase3/structural-plasticity-v1/smoke/summary.json",
+      "sha256": "1ffd97fa6218012f3c6cbf185f44af2b68eb2396bb9d40e62105a8a85fbdf1e6",
+      "size": 15927
+    },
+    {
       "artifact_class": "generated-release-evidence",
       "path": "artifacts/release/claim_audit.json",
       "sha256": "75dddc28ba08c1ffa37909ec3698c13d784c1d7e885eff5d2bbe8f75d9d7453a",
@@ -723,6 +1197,18 @@
     },
     {
       "artifact_class": "configuration-or-schema",
+      "path": "configs/experiments/phase2/baselines_acceptance.json",
+      "sha256": "bdebd1aa748bd4ddcebf7a7a3c09a6d39f9cad628509d79490d4005ca97c6b82",
+      "size": 684
+    },
+    {
+      "artifact_class": "configuration-or-schema",
+      "path": "configs/experiments/phase2/baselines_smoke.json",
+      "sha256": "20075dc4c32b097dae079fedfe2cfcb08c2ff099705e3072e71ca334372d4fac",
+      "size": 653
+    },
+    {
+      "artifact_class": "configuration-or-schema",
       "path": "configs/experiments/phase2/main.json",
       "sha256": "46625c18277d896a3534e8573089ffbd3dbfe0f89459e0f97ef084cff4afd498",
       "size": 732
@@ -732,6 +1218,18 @@
       "path": "configs/experiments/phase2/smoke.json",
       "sha256": "f242141ce8b7546c408d122f0765782f7d38d9a6c9aa2ff5bdb90cd1a1a3e7b1",
       "size": 710
+    },
+    {
+      "artifact_class": "configuration-or-schema",
+      "path": "configs/experiments/phase3/main.json",
+      "sha256": "1e0d9fa5521ed4eb126016e4948eb10bb1997b70db8210516b95397166609f30",
+      "size": 1286
+    },
+    {
+      "artifact_class": "configuration-or-schema",
+      "path": "configs/experiments/phase3/smoke.json",
+      "sha256": "4f081d7e4b52f784365b7313853526e02d8fe34224539d9ac0593bf35a9be971",
+      "size": 1251
     },
     {
       "artifact_class": "configuration-or-schema",
@@ -753,6 +1251,12 @@
     },
     {
       "artifact_class": "documentation",
+      "path": "docs/BASELINES.md",
+      "sha256": "1080e56c1cda9e96352a0d5ead77e7e5cfb17c42bf0fba428ec6b505f8d9039b",
+      "size": 3490
+    },
+    {
+      "artifact_class": "documentation",
       "path": "docs/BRAIN_LAB.md",
       "sha256": "b5e27243494693803aca981d7842a03581fb2d3ff1173b85bfc9e0f8065fc143",
       "size": 5656
@@ -765,9 +1269,15 @@
     },
     {
       "artifact_class": "documentation",
+      "path": "docs/C08_STRUCTURAL_PLASTICITY_RESULTS.md",
+      "sha256": "713e169b093871758396d49839178c6856ce17c22522d32240edd8e688eb86f2",
+      "size": 5057
+    },
+    {
+      "artifact_class": "documentation",
       "path": "docs/CLAIMS_REGISTER.md",
-      "sha256": "7364d78e6dd62b241832005f788ce97ab50a8519faf0f3c51baac2f3e7a2b9e6",
-      "size": 7495
+      "sha256": "4e570713ce34a224db70ad09d8d22d72288632deaa104b3d6a0c6cfd9fa6b346",
+      "size": 9214
     },
     {
       "artifact_class": "documentation",
@@ -790,14 +1300,14 @@
     {
       "artifact_class": "documentation",
       "path": "docs/DEPENDENCIES.md",
-      "sha256": "e34e879843adceee8f8ce4a0c83f50a657b19433b583bb200061c0ff69a8b1b0",
-      "size": 2732
+      "sha256": "782861b7e08b56d418c377c45a4b8ab2883bddf77004ba06b9770e44e3bfcf36",
+      "size": 3344
     },
     {
       "artifact_class": "documentation",
       "path": "docs/EXPERIMENT_PROTOCOL.md",
-      "sha256": "c44e5f57c24cc988f685a552a242a41de044ccde9e64dea6949ed6cd42e8c172",
-      "size": 13946
+      "sha256": "22398eb5bbad174698f9afbcdc2142424d82c3067ddfed7edd335380c19c2e4b",
+      "size": 16042
     },
     {
       "artifact_class": "documentation",
@@ -868,14 +1378,14 @@
     {
       "artifact_class": "documentation",
       "path": "docs/PROJECT_STATUS.md",
-      "sha256": "bfc7d4bcd33475d15d86deb3b016eecc95204332e71c5f10363f09c93773edc1",
-      "size": 8756
+      "sha256": "a9644bb6a8ba59e904b8a076229f5a1ecfec3823352d722c3c45f32b2298a628",
+      "size": 10379
     },
     {
       "artifact_class": "documentation",
       "path": "docs/RESULTS_LEDGER.md",
-      "sha256": "4d6f784ef08d228fbd6dc8fb71e759839db336ae99dd4c792f9385aaea687be8",
-      "size": 16470
+      "sha256": "5582c8e3334451f32af003c3e2fb90ea4075d607e17fc4d2e01ea41759abbb86",
+      "size": 20060
     },
     {
       "artifact_class": "documentation",
@@ -886,8 +1396,8 @@
     {
       "artifact_class": "documentation",
       "path": "docs/SOFTWARE_ARCHITECTURE.md",
-      "sha256": "742cd325a842894fbbbd800c4ecaf963ec4c7012af83abdab35e85702ef50e62",
-      "size": 18125
+      "sha256": "698b3df74618be2bd2e6d65facb93336e98c306a551c76ed82bac5e37cf70e0d",
+      "size": 19742
     },
     {
       "artifact_class": "documentation",
@@ -946,8 +1456,8 @@
     {
       "artifact_class": "documentation",
       "path": "docs/THIRD_PARTY_NOTICES.md",
-      "sha256": "7480015eec29aec5fdc53e4b92039fc7acac77ece9219368dc63c7902ef8e2f9",
-      "size": 3057
+      "sha256": "0beb4fdfcea521061c0bccad0fa2b6f480069c2f0a51be01bc417fae18bba2b4",
+      "size": 3541
     },
     {
       "artifact_class": "documentation",
@@ -1023,6 +1533,48 @@
     },
     {
       "artifact_class": "documentation",
+      "path": "docs/model_cards/c05/accumulator.md",
+      "sha256": "2ecbc481065b3249493f5872b6bf3903c2809a0de4411f5b6cfa9c1ceab8288a",
+      "size": 404
+    },
+    {
+      "artifact_class": "documentation",
+      "path": "docs/model_cards/c05/bounds.md",
+      "sha256": "6166831691a48cf023e955dcaaa9ede05d9fde60f01fba571b7a8a2db02d4a55",
+      "size": 340
+    },
+    {
+      "artifact_class": "documentation",
+      "path": "docs/model_cards/c05/explicit_state.md",
+      "sha256": "a8d9bd28f7cd82a308a25a88a075c877828c5357ff03dd5ecbe0a53c62e93273",
+      "size": 457
+    },
+    {
+      "artifact_class": "documentation",
+      "path": "docs/model_cards/c05/probabilistic.md",
+      "sha256": "00f924d60981bd3f0553c9123c64b1a5ade2589e37bb8430e18b6638c120e807",
+      "size": 472
+    },
+    {
+      "artifact_class": "documentation",
+      "path": "docs/model_cards/c05/recurrent.md",
+      "sha256": "af86ccf288bfb9da445684d240524efdfcddfeb42b46251a6fa6b00d81d4111a",
+      "size": 587
+    },
+    {
+      "artifact_class": "documentation",
+      "path": "docs/model_cards/c05/rim_like.md",
+      "sha256": "a712d3a3b42df427ca4f87cbc85ffc61fd8be1e8566c0a0dbbca3b640ed84349",
+      "size": 437
+    },
+    {
+      "artifact_class": "documentation",
+      "path": "docs/model_cards/c05/transformer.md",
+      "sha256": "776103aac3d41f073ac52b713cc09d0a05386766ce341c70e991908334a6eb76",
+      "size": 438
+    },
+    {
+      "artifact_class": "documentation",
       "path": "docs/plans/c01-c10-continuous-plan.md",
       "sha256": "2cf10b3e164472e4ad2999344d4da47d93a0b425e4ea79730ca3b3fb7b8f55b4",
       "size": 10595
@@ -1047,6 +1599,12 @@
     },
     {
       "artifact_class": "documentation",
+      "path": "docs/plans/c05-matched-baselines-plan.md",
+      "sha256": "59d4b8d3fc457868629ac1618ed41fc937645b29b733a0597a8f0581907426fc",
+      "size": 6171
+    },
+    {
+      "artifact_class": "documentation",
       "path": "docs/plans/c06-external-validation-foundation-plan.md",
       "sha256": "883b5d17db23ff2aa19f6d8c91c53c0464a67fcb891bbe50a014d62f3ac0ed60",
       "size": 2913
@@ -1056,6 +1614,12 @@
       "path": "docs/plans/c07-spiking-backend-plan.md",
       "sha256": "b1aac8aaa6072ba7847ff5b4825667a0b9c9418151dfae910d9f67301ba2c418",
       "size": 6644
+    },
+    {
+      "artifact_class": "documentation",
+      "path": "docs/plans/c08-structural-plasticity-plan.md",
+      "sha256": "139b468d1b7353fec02a01fbb0e166c1b9ed43098210af80b72849a9a2225a64",
+      "size": 6051
     },
     {
       "artifact_class": "documentation",
@@ -1102,14 +1666,20 @@
     {
       "artifact_class": "package-metadata",
       "path": "pyproject.toml",
-      "sha256": "86d062ea266ecc37b7746ac4045a1bbb4f3c3e17606361e5c4cebe5f4ec6dd3a",
-      "size": 1202
+      "sha256": "59904b227aae7b637601dcc8382b0949c227df7b6e249ffe3d9e8f0d1cf8addd",
+      "size": 1204
     },
     {
       "artifact_class": "package-metadata",
       "path": "requirements-lab.lock",
       "sha256": "62d2d34895b5148fc5a907281baf5e95e40ff81709c78340cff4a245e7896413",
       "size": 184
+    },
+    {
+      "artifact_class": "package-metadata",
+      "path": "requirements-learned.lock",
+      "sha256": "c507ee09d46f4a2085630b908cf75c3317df31f6cf086c9421e6e8fc063562dd",
+      "size": 93
     },
     {
       "artifact_class": "package-metadata",
@@ -1122,6 +1692,12 @@
       "path": "requirements-release.lock",
       "sha256": "6d0cd9f8170773f7d5eabc36274bca58bdd364f69b27b4bd86baf683fd8dc52b",
       "size": 908
+    },
+    {
+      "artifact_class": "configuration-or-schema",
+      "path": "schemas/baseline-experiment-v0.1.schema.json",
+      "sha256": "ce5635f9761a4b02b99ead820dc1b957f879b71a9ad3d012e003f2d84d3016cc",
+      "size": 1498
     },
     {
       "artifact_class": "configuration-or-schema",
@@ -1276,8 +1852,8 @@
     {
       "artifact_class": "reproduction-tooling",
       "path": "scripts/validate_bundle.py",
-      "sha256": "3799d1d885f968bf2b5e0d48284f767d0e80d7427f4ae894c699fdfc6ea02bdf",
-      "size": 8976
+      "sha256": "e8d3d19b3ba758677352774a36282454c634f69384ae2efdcbefc15e738a9906",
+      "size": 10297
     },
     {
       "artifact_class": "reproduction-tooling",
@@ -1299,9 +1875,51 @@
     },
     {
       "artifact_class": "software",
-      "path": "src/sparkbrain/baselines.py",
-      "sha256": "29dfb19b6d98d8e811bc1e9e98d356db7b14585c1cd3e66dfc242a97eb236a09",
-      "size": 3102
+      "path": "src/sparkbrain/baselines/__init__.py",
+      "sha256": "18fb90a6ef88ba5c3281b0001a3ad5084096d89ce32b8039be6b1084023c2a17",
+      "size": 520
+    },
+    {
+      "artifact_class": "software",
+      "path": "src/sparkbrain/baselines/bounds.py",
+      "sha256": "ab03ff63a2322fd086678caa49ffcdb8c1c63b33102cabe68eccfe7b3f05d54d",
+      "size": 1667
+    },
+    {
+      "artifact_class": "software",
+      "path": "src/sparkbrain/baselines/classic.py",
+      "sha256": "e1b84d6ac3816ae826ab5c5d20712d4bd1c406f4db0f2d2b648ab42dd1a128d7",
+      "size": 3821
+    },
+    {
+      "artifact_class": "software",
+      "path": "src/sparkbrain/baselines/neural/__init__.py",
+      "sha256": "0e2eb5e7ae4372b4b68d81d843b8c63026cd97eec8d72872fad5cd253083733b",
+      "size": 612
+    },
+    {
+      "artifact_class": "software",
+      "path": "src/sparkbrain/baselines/neural/common.py",
+      "sha256": "ddb9e2e30437e424f0924540c2b8db8e055d74dc1b07ed985a8418d3da57e6af",
+      "size": 6425
+    },
+    {
+      "artifact_class": "software",
+      "path": "src/sparkbrain/baselines/neural/models.py",
+      "sha256": "abec147e9eec6d538db9bcd89eb5099f76da9b29f78b945b82ceee6380fd1103",
+      "size": 6133
+    },
+    {
+      "artifact_class": "software",
+      "path": "src/sparkbrain/baselines/probabilistic.py",
+      "sha256": "dda8c119504665f04539d91b505c3cddac75890c6820d764f0c343921f7e3f67",
+      "size": 5769
+    },
+    {
+      "artifact_class": "software",
+      "path": "src/sparkbrain/baselines/protocol.py",
+      "sha256": "898641d50e59f20a6482a8f51434165d5b9359cc9c9242cfa7956345ddd0580f",
+      "size": 406
     },
     {
       "artifact_class": "software",
@@ -1329,6 +1947,30 @@
     },
     {
       "artifact_class": "software",
+      "path": "src/sparkbrain/evaluation/baseline_data.py",
+      "sha256": "720b551b18628d68b58fc6ced20eb31d04d6df4a120aaab511a54f37b36cedc7",
+      "size": 1435
+    },
+    {
+      "artifact_class": "software",
+      "path": "src/sparkbrain/evaluation/baseline_profiler.py",
+      "sha256": "8326718d75a35910b93b06ef2d5b6d985a77d66f04a7b0269235a67c71682ede",
+      "size": 1046
+    },
+    {
+      "artifact_class": "software",
+      "path": "src/sparkbrain/evaluation/baseline_report.py",
+      "sha256": "edd3315cc2b88d031f95f10a547807994b6f409823977e5dd306d6af62e22479",
+      "size": 1533
+    },
+    {
+      "artifact_class": "software",
+      "path": "src/sparkbrain/evaluation/baseline_trainer.py",
+      "sha256": "7b3047e32d25ae141f40ae45b8da70169ff6cf187f97f384725e31de02f7739d",
+      "size": 1662
+    },
+    {
+      "artifact_class": "software",
       "path": "src/sparkbrain/evaluation/bootstrap.py",
       "sha256": "c9afdae51d5957232e1e3059be7aba530b9e2ec53bafbb1ee78a2946afd8fcd3",
       "size": 450
@@ -1344,6 +1986,12 @@
       "path": "src/sparkbrain/evaluation/profile_suite.py",
       "sha256": "b02ce0465e712957971ed66b20652cc2143d8ff8f4735107dd8657663fe6a7e4",
       "size": 2585
+    },
+    {
+      "artifact_class": "software",
+      "path": "src/sparkbrain/evaluation/run_baselines.py",
+      "sha256": "b01d0791007b0dca00a7a1c8d19becad1f48bce3852b6ed5b9660cc09f95a6a8",
+      "size": 18268
     },
     {
       "artifact_class": "software",
@@ -1545,6 +2193,48 @@
     },
     {
       "artifact_class": "software",
+      "path": "src/sparkbrain/structural/__init__.py",
+      "sha256": "69567a15e1dd659173ddc0af05a1c1ccc035696eaf6f71e9ad9b8be4b21b3065",
+      "size": 362
+    },
+    {
+      "artifact_class": "software",
+      "path": "src/sparkbrain/structural/backend.py",
+      "sha256": "ea63eefa87dedd7ccbc89d2f0b3b04f41bdf80bd46c2e153856e67cced57ffe6",
+      "size": 8979
+    },
+    {
+      "artifact_class": "software",
+      "path": "src/sparkbrain/structural/config.py",
+      "sha256": "49406656de09c564986dafd902c037efd66228c48f30f46f6c8d1d407bb66c78",
+      "size": 2486
+    },
+    {
+      "artifact_class": "software",
+      "path": "src/sparkbrain/structural/contracts.py",
+      "sha256": "edc5363d9d00c5d8c7fc85bb4122462ceefb2283d884a924e67c9b5352390465",
+      "size": 1656
+    },
+    {
+      "artifact_class": "software",
+      "path": "src/sparkbrain/structural/controller.py",
+      "sha256": "5528c1ba8399c840273460c7bd2553d036a4b6f4d5e4f5e3715e1f8c3faa95b9",
+      "size": 15376
+    },
+    {
+      "artifact_class": "software",
+      "path": "src/sparkbrain/structural/experiment.py",
+      "sha256": "1b8c31a5df5cac95d8d1211c18409988673eba0ff5d9c9c81d39a9139ef2c55b",
+      "size": 25990
+    },
+    {
+      "artifact_class": "software",
+      "path": "src/sparkbrain/structural/model.py",
+      "sha256": "930a92bbcefd6150b718ad1941d1eac5db442070d996d6e153a1620ab8377d87",
+      "size": 6974
+    },
+    {
+      "artifact_class": "software",
       "path": "src/sparkbrain/tasks/__init__.py",
       "sha256": "a44765f387646f1d7301eb42245c9f18e8d1c5ef4ed9feb89faa919ce5eb0009",
       "size": 307
@@ -1617,6 +2307,12 @@
     },
     {
       "artifact_class": "software",
+      "path": "tests/test_baseline_package.py",
+      "sha256": "d8db6b79179f62372fbe4596952a41bdc561f1bde4be450ef88b051fa970691a",
+      "size": 1389
+    },
+    {
+      "artifact_class": "software",
       "path": "tests/test_brain_lab_api.py",
       "sha256": "8718ec0ddad11c892d8e1e7b4cb04c816dd894c4b6557329458ac1dc2b5866a2",
       "size": 3406
@@ -1662,6 +2358,12 @@
       "path": "tests/test_local_only.py",
       "sha256": "7a83d0ac6efc9f547973b13db9430b741de4a04ed743626142541189399b6ab5",
       "size": 1793
+    },
+    {
+      "artifact_class": "software",
+      "path": "tests/test_matched_baselines.py",
+      "sha256": "dd6fc6d48258f8f121f1e1115942f91887d5ce420dd553dcd719a5fe23da3e54",
+      "size": 5721
     },
     {
       "artifact_class": "software",
@@ -1725,6 +2427,12 @@
     },
     {
       "artifact_class": "software",
+      "path": "tests/test_structural_plasticity.py",
+      "sha256": "d6ed8413c10cde9a8f9135feb47b4cbb58eb7073e0477c0c31c79c3725180cba",
+      "size": 11547
+    },
+    {
+      "artifact_class": "software",
       "path": "tests/test_task_schemas.py",
       "sha256": "f8769108a0f4785b6b59f64c36c6cdfdeb9b98e3fd4b5f95aec00257d711cc03",
       "size": 2158
@@ -1736,7 +2444,7 @@
       "size": 4109
     }
   ],
-  "generated_at": "2026-08-23T06:00:00+09:00",
+  "generated_at": "2026-08-22T21:16:06.101421+00:00",
   "manifest_excludes": [
     "PACKAGE_MANIFEST.json",
     "artifacts/validation_manifest.json"
@@ -1748,6 +2456,6 @@
     "release": "11",
     "system": "Windows"
   },
-  "source_revision": "8d56eb2",
-  "uncompressed_bytes_excluding_manifest": 7041218
+  "source_revision": "d65cc06",
+  "uncompressed_bytes_excluding_manifest": 15874299
 }
