@@ -2,7 +2,7 @@
 
 ## SparkBrain v0.2.1 release-candidate technical report
 
-Status: evidence-bounded local research prototype. Public release is blocked until the repository owner selects a project license. C05 matched baselines, final C06 external execution, and C08 structural-plasticity results are not integrated in this candidate.
+Status: evidence-bounded local research prototype. Public release is blocked until the repository owner selects a project license. C05 matched baselines are integrated but await the checkpoint-matched encoder evidence supplied by C06; final C06 external execution remains pending. C08 is integrated as a negative specialization result.
 
 ## 1. Problem and falsifiable hypotheses
 
@@ -42,7 +42,7 @@ C07 provides a reduced snnTorch LIF sensory encoder while evidence graph, hypoth
 
 ## 10. Ablations and causal interventions
 
-C02 records residual, hard-WTA, inhibition, source-diversity, contradiction, stability, margin, forced-prediction, dense-accounting, Workspace, homeostasis, and refractory conditions. Brain Lab branches preserve immutable parents. C08 emergent-organ interventions are pending and must not be inferred from C04 module activity.
+C02 records residual, hard-WTA, inhibition, source-diversity, contradiction, stability, margin, forced-prediction, dense-accounting, Workspace, homeostasis, and refractory conditions. Brain Lab branches preserve immutable parents. C08 implemented bounded structural mechanisms, but targeted, random, and degree-matched ablations all produced zero impairment; decisiveness, fertility, and specificity failed. CL-008 remains E0 and no emergent-organ claim is permitted.
 
 ## 11. Compute and resource accounting
 

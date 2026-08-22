@@ -17,7 +17,7 @@ Human-impact decisions, autonomous deployment, medical or safety-critical use, c
 
 ## Known limitations
 
-Most evidence is controlled synthetic. Matched C05 baselines, final C06 external execution, and C08 structural-plasticity evidence are pending in this candidate. The owner license decision blocks public release.
+Most evidence is controlled synthetic. C05 produced a negative reduced matched-baseline result, and C08 produced a valid negative specialization result. Final C06 external execution and its checkpoint-matched encoder evidence remain pending. The owner license decision blocks public release.
 
 ## Observability
 

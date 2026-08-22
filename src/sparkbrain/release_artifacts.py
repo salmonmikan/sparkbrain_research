@@ -113,12 +113,18 @@ def build_evidence_map(root: Path) -> dict[str, Any]:
         },
         {
             "id": "EV-C08-PLASTICITY",
-            "status": "pending",
+            "status": "negative",
             "claim_ids": ["CL-008"],
-            "run_ids": [],
-            "artifacts": [],
+            "run_ids": ["R0010"],
+            "artifacts": [
+                "artifacts/phase3/structural-plasticity-v1/main/summary.json",
+                "artifacts/phase3/structural-plasticity-v1/main/gate-matrix.json",
+                "artifacts/phase3/structural-plasticity-v1/main/input-hashes.json",
+                "artifacts/phase3/structural-plasticity-v1/main/negative-findings.json",
+            ],
             "boundary": (
-                "Exploratory structural-plasticity result is not integrated in this candidate."
+                "Bounded mechanism acceptance with failed decisiveness, fertility, and "
+                "specificity gates; CL-008 remains E0 and no emergent-organ claim is permitted."
             ),
         },
         {
@@ -339,6 +345,7 @@ def build_negative_appendix(root: Path) -> str:
         "R0005": "Single hybrid scenario and parameter-sensitive no-spike failure.",
         "R0006": "MultiObjectWorld coverage was zero; duplicate signals changed activation.",
         "R0008": "Smoke was below chance; dead/overloaded learned modules remained.",
+        "R0010": "Structural mechanisms ran, but causal specialization gates failed.",
     }
     for run_id, title in run_titles:
         interpretation = boundaries.get(run_id, "No grade increase inferred.")
@@ -352,7 +359,6 @@ def build_negative_appendix(root: Path) -> str:
             "present in this candidate.",
             "- C06 external execution remains blocked at the model gate; only foundation code "
             "is present.",
-            "- C08 structural plasticity is exploratory and is not present in this candidate.",
             "- The owner has not selected a project license; public release remains blocked.",
         ]
     )

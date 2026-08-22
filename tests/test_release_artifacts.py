@@ -53,7 +53,6 @@ def test_claim_audit_and_evidence_gate() -> None:
     assert audit["pending_evidence_entries"] == [
         "EV-C05-CHECKPOINT",
         "EV-C06-FOUNDATION",
-        "EV-C08-PLASTICITY",
     ]
 
 

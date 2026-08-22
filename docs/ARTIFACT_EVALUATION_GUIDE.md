@@ -2,7 +2,7 @@
 
 ## Candidate status
 
-The non-license release package is reproducible, but public readiness remains blocked by LICENSE_NOT_SELECTED.md and pending C05/C06/C08 integration. C05 checkpoints are not accepted evidence without a dev-only encoder vocabulary/feature manifest whose input dimension and hash are validated against the checkpoint.
+The non-license release package is reproducible, but public readiness remains blocked by LICENSE_NOT_SELECTED.md and pending C05/C06 checkpoint-matched encoder evidence. C08 is integrated as a negative result. C05 checkpoints are not accepted evidence without a dev-only encoder vocabulary/feature manifest whose input dimension and hash are validated against the checkpoint.
 
 ## Fast offline evaluation
 
@@ -22,7 +22,7 @@ The non-license release package is reproducible, but public readiness remains bl
 
 ## Full runs
 
-The smoke command does not replace C02 37,000-episode generation, C04 training, optional C07 execution, or future C05/C06/C08 runs. Use the exact commands in each phase report/config and compare their immutable manifests.
+The smoke command does not replace C02 37,000-episode generation, C04 training, C05/C06 execution, optional C07 execution, or C08 structural evaluation. Use the exact commands in each phase report/config and compare their immutable manifests.
 
 ## Acceptance interpretation
 

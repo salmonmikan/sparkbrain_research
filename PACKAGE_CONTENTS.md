@@ -93,7 +93,7 @@ Current packaging validation:
 - Ruff: PASS
 - bundle validation: 76 required files
 - offline primary-subset reproduction: PASS with exact table/SVG hashes
-- public release validation: blocked by C05/C06/C08 evidence gates and owner license
+- public release validation: blocked by C05/C06 checkpoint evidence and owner license
 
 ## C10 release-candidate evidence
 

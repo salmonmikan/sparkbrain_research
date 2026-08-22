@@ -100,8 +100,8 @@ The non-license C10 package now pins the tested local environment, freezes a bou
 smoke subset, regenerates its table/SVG/report/negative appendix/SBOM deterministically, maps
 claims to exact run/artifact evidence, and emits an offline machine run manifest. This is
 release preparation, not public readiness. Public validation remains blocked by the owner
-license decision and pending C05 checkpoint-matched encoder evidence, final C06 execution, and
-C08 integration. The smoke subset is explicitly not the full evaluation.
+license decision and pending C05 checkpoint-matched encoder evidence plus final C06 execution.
+C08 is integrated as a negative specialization result. The smoke subset is explicitly not the full evaluation.
 
 ## 7. Exit criteria for the core final system
 
