@@ -362,8 +362,16 @@ def build_negative_appendix(root: Path) -> str:
 def claim_audit(root: Path, evidence_map: dict[str, Any]) -> dict[str, Any]:
     inspected = [
         "README.md",
+        "docs/ARTIFACT_EVALUATION_GUIDE.md",
+        "docs/MODEL_CARD.md",
+        "docs/NEGATIVE_RESULTS_APPENDIX.md",
+        "docs/PROJECT_STATUS.md",
+        "docs/SECURITY_PRIVACY_REVIEW.md",
+        "docs/SYSTEM_CARD.md",
         "docs/TECHNICAL_REPORT_v0.2.1.md",
+        "docs/TECHNICAL_REPORT_v0.2.1.html",
         "artifacts/release/primary_results.md",
+        "artifacts/release/primary_results.svg",
     ]
     prohibited = {
         "human brain reproduction": r"\b(reproduces?|reproduced) the human brain\b",

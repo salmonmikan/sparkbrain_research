@@ -44,6 +44,12 @@ def test_claim_audit_and_evidence_gate() -> None:
     audit = claim_audit(ROOT, evidence)
     assert audit["status"] == "pass-with-pending-evidence"
     assert audit["prohibited_wording_findings"] == []
+    assert {
+        "docs/MODEL_CARD.md",
+        "docs/NEGATIVE_RESULTS_APPENDIX.md",
+        "docs/PROJECT_STATUS.md",
+        "docs/SYSTEM_CARD.md",
+    }.issubset(audit["inspected_files"])
     assert audit["pending_evidence_entries"] == [
         "EV-C05-CHECKPOINT",
         "EV-C06-FOUNDATION",

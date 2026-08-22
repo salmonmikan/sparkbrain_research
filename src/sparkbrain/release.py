@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import json
 import platform
+import re
 import subprocess
 import tomllib
 import zipfile
@@ -336,6 +337,21 @@ def validate_evidence_map(root: Path, evidence_map: dict[str, Any]) -> list[str]
     return problems
 
 
+def validate_source_revision(root: Path, payload: dict[str, Any], *, label: str) -> list[str]:
+    revision = payload.get("source_revision")
+    if not isinstance(revision, str) or re.fullmatch(r"[0-9a-f]{40}", revision) is None:
+        return [f"{label} source_revision must be a full lowercase Git SHA"]
+    result = subprocess.run(
+        ["git", "merge-base", "--is-ancestor", revision, "HEAD"],
+        cwd=root,
+        capture_output=True,
+        check=False,
+    )
+    if result.returncode != 0:
+        return [f"{label} source_revision is not an ancestor of HEAD"]
+    return []
+
+
 def validate_generated_release_evidence(root: Path) -> list[str]:
     problems: list[str] = []
     release_dir = root / "artifacts/release"
@@ -371,6 +387,7 @@ def validate_generated_release_evidence(root: Path) -> list[str]:
     else:
         if provenance.get("schema_version") != "c10-provenance-v1":
             problems.append("unsupported release-provenance schema version")
+        problems.extend(validate_source_revision(root, provenance, label="release provenance"))
         products = provenance.get("products")
         if not isinstance(products, dict) or not products:
             problems.append("release provenance products must be a non-empty object")
@@ -439,6 +456,7 @@ def preparation_problems(root: Path) -> list[str]:
             problems.append(f"evidence map is not valid UTF-8 JSON: {exc}")
         else:
             problems.extend(validate_evidence_map(root, evidence_map))
+            problems.extend(validate_source_revision(root, evidence_map, label="evidence map"))
     if all((root / relative).is_file() for relative in REQUIRED_PREPARATION_FILES):
         problems.extend(validate_generated_release_evidence(root))
     return problems
