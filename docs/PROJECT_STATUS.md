@@ -47,7 +47,7 @@ See `docs/LOCAL_EXECUTION_POLICY.md`.
 | C08 bounded structural plasticity | implemented with valid negative specialization result | `src/sparkbrain/structural/`, `artifacts/phase3/`, `docs/C08_STRUCTURAL_PLASTICITY_RESULTS.md` |
 | Metrics for stability/revision/recovery | runnable | `src/sparkbrain/metrics.py` |
 | Static replay visualizer | runnable locally | `artifacts/demo/visualizer.html` |
-| Unit tests | integration verification pending | `python -m pytest -q` |
+| Unit tests | 175 passing with PyTorch available; optional learned/spiking tests require their extras | `python -m pytest -q` |
 | Local readiness audit | runnable | `scripts/local_readiness_check.py` |
 | Generated Phase-0 report | complete with limitations | `artifacts/benchmarks/benchmark_report.md` |
 | Codex repository instructions | complete | `AGENTS.md`, `.agents/skills/sparkbrain-research/SKILL.md` |

@@ -315,3 +315,37 @@ None. The correction removes causal-order and import-validation defects without 
 ### Verification
 
 The integrated tree passed 134 tests, Ruff, local readiness, and bundle validation. C02 dev/test manifest SHA-256 values remained unchanged before and after the experiment.
+
+---
+
+## 2026-08-23 — R0010 — C08 bounded structural plasticity negative specialization result
+
+**Nature:** mechanism acceptance with a preregistered negative scientific result  
+**Run:** `artifacts/phase3/structural-plasticity-v1/main`  
+**Config:** `configs/experiments/phase3/main.json`
+
+### Outcome
+
+- the fixed-capacity masked graph, bounded structural events, logical identities, lineage,
+  tombstones, budgets, credit/homeostasis state, RNG, optimizer, and checkpoint continuation
+  were implemented and serialized;
+- the two-seed candidate pair `(9, 14)` passed multiplicity, with matching root-lineage and
+  development functional-effect signatures;
+- decisiveness failed at 0.0000 versus 0.05, fertility failed at 0.00893 versus 0.01, and
+  specificity failed closed because development intervention could not fix a unique positive
+  target;
+- targeted, random, and degree-matched ablations all produced zero impairment, and the
+  activation intervention effect was zero.
+
+### Boundaries and claim impact
+
+The primary graph was fragmented, only two controlled-synthetic seeds were evaluated, the
+initial ring graph remains a confound, and there is no external reproduction. CL-008 remains
+E0. The only permitted conclusion is that bounded structural plasticity was implemented and
+the causal specialization criteria failed; no emergent-organ claim is permitted.
+
+### Verification
+
+The integrated tree passed 175 tests and Ruff. Frozen C04/C02 input hashes remained unchanged,
+and selected-edge work, controls, sensitivity, Gate decisions, and negative findings are
+retained in the run artifacts.

@@ -8,6 +8,7 @@ causal specialization gates. CL-008 therefore remains E0, and the phrase “orga
 not permitted.
 
 Run identifier: `structural-plasticity-v1/main`.
+Results ledger: `R0010`.
 
 ## Frozen inputs
 
