@@ -54,7 +54,7 @@ Claim grade impact:
 Next action:
 ```
 
-## 2026-08-23 — C05 matched-baseline reduced acceptance (ID assigned at integration)
+## 2026-08-23 — R0009 — C05 matched-baseline reduced acceptance
 
 **Command:** `python -m sparkbrain.evaluation.run_baselines --config configs/experiments/phase2/baselines_acceptance.json --output artifacts/phase2/baselines/c05-acceptance-final`
 **Data/splits:** C02 frozen dev/test manifests; four episodes per world in this reduced run
