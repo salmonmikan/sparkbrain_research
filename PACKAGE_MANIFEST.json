@@ -10,8 +10,8 @@
     {
       "artifact_class": "package-metadata",
       "path": ".github/workflows/ci.yml",
-      "sha256": "e0018c281a13bbdf7e6d3c8683a8b6d479c48a20a1b3301424360340baae99cd",
-      "size": 689
+      "sha256": "2b874d0db5ba48cbd20149341d347c851b842aa45ac4bbbf5ab73b91e5090390",
+      "size": 736
     },
     {
       "artifact_class": "package-metadata",
@@ -2576,6 +2576,6 @@
     "release": "11",
     "system": "Windows"
   },
-  "source_revision": "929dc7de3a42c11a0fbf6e4150821ada5f2832c1",
-  "uncompressed_bytes_excluding_manifest": 22288186
+  "source_revision": "d8638bbd239b6978ae0b651c47fc056417cbaa63",
+  "uncompressed_bytes_excluding_manifest": 22288233
 }
