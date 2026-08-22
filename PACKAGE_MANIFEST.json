@@ -1096,13 +1096,13 @@
     {
       "artifact_class": "generated-release-evidence",
       "path": "artifacts/release/claim_audit.json",
-      "sha256": "75dddc28ba08c1ffa37909ec3698c13d784c1d7e885eff5d2bbe8f75d9d7453a",
-      "size": 362
+      "sha256": "dc434a85f4fdeeb31d9858633c6e9c3c0db01f58c63ccdf43cd8be6807ccdc3b",
+      "size": 652
     },
     {
       "artifact_class": "generated-release-evidence",
       "path": "artifacts/release/evidence_map.json",
-      "sha256": "15ea094f7cb6435abec00c2e1b9d0c9f6a3b364095d38584e5037c696d554ce3",
+      "sha256": "477b5a86a51167004d8cf768bf5dc727626665700dea5c413dbeb61ebce009ac",
       "size": 3539
     },
     {
@@ -1126,13 +1126,13 @@
     {
       "artifact_class": "generated-release-evidence",
       "path": "artifacts/release/provenance.json",
-      "sha256": "d463b11d1b99e10660d35464bf30f619ba144570750868b277bbc96fb3bf8f18",
+      "sha256": "f828fc85de87288dbc1c7855cb8cfdbb9a7be966788281085785510aebe09d3d",
       "size": 1022
     },
     {
       "artifact_class": "generated-release-evidence",
       "path": "artifacts/release/sbom.spdx.json",
-      "sha256": "805d5aa37ecbea20265a309e71096a4a865253f2754cf516f268c87029c777d7",
+      "sha256": "9af7de799fa4bc05b147f026cdf3c8a3d7b91efc7a9f02b13f4924ca10b4aab5",
       "size": 9864
     },
     {
@@ -1354,8 +1354,8 @@
     {
       "artifact_class": "documentation",
       "path": "docs/NEGATIVE_RESULTS_APPENDIX.md",
-      "sha256": "b17660b18d83007014006a8cb065721d6ecfc37a2dd798ffaeb23a175d55980a",
-      "size": 1488
+      "sha256": "5be5d2301d7d6e292445cfcf640ddf803e7ea3e5489b4857a1e1c1ca77a641cb",
+      "size": 1677
     },
     {
       "artifact_class": "documentation",
@@ -2164,14 +2164,14 @@
     {
       "artifact_class": "software",
       "path": "src/sparkbrain/release.py",
-      "sha256": "0415c11fbb149d2310eb6cc0ce9cec0395286a21348772ac873632ad5e699c1f",
-      "size": 21708
+      "sha256": "eb965b63a2bc61931b4e105a7952b55c61efce2d648f4f6f392d62af9c4993ea",
+      "size": 22504
     },
     {
       "artifact_class": "software",
       "path": "src/sparkbrain/release_artifacts.py",
-      "sha256": "c5ad41d781ecf97b6b6b3ee05941b3822e0eb0e1f80604348867595c9fac58cb",
-      "size": 18145
+      "sha256": "114895578e34b3c973e7c917423860e5e061c7629a0f2765dd58020779f2ccb0",
+      "size": 18467
     },
     {
       "artifact_class": "software",
@@ -2404,8 +2404,8 @@
     {
       "artifact_class": "software",
       "path": "tests/test_release_artifacts.py",
-      "sha256": "7656a9bdc82ef5bb051895b287d53cc36f4985cb395db490f4c0d0f70cd546f5",
-      "size": 2492
+      "sha256": "c0ed0d8b9129265453abafc53deb54a02e7367ccfaaf632711235bc36362b156",
+      "size": 2686
     },
     {
       "artifact_class": "software",
@@ -2444,7 +2444,7 @@
       "size": 4109
     }
   ],
-  "generated_at": "2026-08-22T21:22:10.549546+00:00",
+  "generated_at": "2026-08-22T21:23:59.173075+00:00",
   "manifest_excludes": [
     "PACKAGE_MANIFEST.json",
     "artifacts/validation_manifest.json"
@@ -2456,6 +2456,6 @@
     "release": "11",
     "system": "Windows"
   },
-  "source_revision": "2fec111",
-  "uncompressed_bytes_excluding_manifest": 15879732
+  "source_revision": "acae0e3",
+  "uncompressed_bytes_excluding_manifest": 15881523
 }
