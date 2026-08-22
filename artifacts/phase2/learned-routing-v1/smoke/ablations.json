@@ -1,0 +1,453 @@
+[
+  {
+    "accuracy": 0.2857142857142857,
+    "chance_accuracy": 0.3333333333333333,
+    "condition": "full",
+    "counters": {
+      "conceptual_candidates": 840,
+      "dense_tensor_ops": 168,
+      "evaluated_edges": 756,
+      "evaluated_messages": 756,
+      "kernel_launch_estimate": 1008,
+      "observations": 84,
+      "peak_memory_bytes": 57420,
+      "selected_modules": 252,
+      "state_updates": 252,
+      "wall_clock_seconds": 0.028647200320847332
+    },
+    "coverage": 0.6904761904761905,
+    "covered_accuracy": 0.41379310344827586,
+    "diagnostics": {
+      "dead_modules": 4,
+      "no_ignition_count": 26,
+      "overloaded_modules": 3
+    },
+    "examples": 84,
+    "module_loads": [
+      0,
+      31,
+      2,
+      63,
+      0,
+      34,
+      55,
+      0,
+      0,
+      67
+    ],
+    "nonlearning_accuracy": 0.20238095238095238,
+    "recovery_count": 4,
+    "routing_entropy": 0.6937419296770142,
+    "split": "test"
+  },
+  {
+    "accuracy": 0.2976190476190476,
+    "chance_accuracy": 0.3333333333333333,
+    "condition": "dense_recurrent",
+    "counters": {
+      "conceptual_candidates": 840,
+      "dense_tensor_ops": 168,
+      "evaluated_edges": 8400,
+      "evaluated_messages": 8400,
+      "kernel_launch_estimate": 1008,
+      "observations": 84,
+      "peak_memory_bytes": 57420,
+      "selected_modules": 840,
+      "state_updates": 840,
+      "wall_clock_seconds": 0.03752709983382374
+    },
+    "coverage": 0.7142857142857143,
+    "covered_accuracy": 0.4166666666666667,
+    "diagnostics": {
+      "dead_modules": 0,
+      "no_ignition_count": 24,
+      "overloaded_modules": 0
+    },
+    "examples": 84,
+    "module_loads": [
+      84,
+      84,
+      84,
+      84,
+      84,
+      84,
+      84,
+      84,
+      84,
+      84
+    ],
+    "nonlearning_accuracy": 0.20238095238095238,
+    "recovery_count": 3,
+    "routing_entropy": 0.9999999999999998,
+    "split": "test"
+  },
+  {
+    "accuracy": 0.25,
+    "chance_accuracy": 0.3333333333333333,
+    "condition": "no_persistent_state",
+    "counters": {
+      "conceptual_candidates": 840,
+      "dense_tensor_ops": 168,
+      "evaluated_edges": 756,
+      "evaluated_messages": 756,
+      "kernel_launch_estimate": 1008,
+      "observations": 84,
+      "peak_memory_bytes": 57420,
+      "selected_modules": 252,
+      "state_updates": 252,
+      "wall_clock_seconds": 0.029915899853222072
+    },
+    "coverage": 0.5119047619047619,
+    "covered_accuracy": 0.4883720930232558,
+    "diagnostics": {
+      "dead_modules": 4,
+      "no_ignition_count": 41,
+      "overloaded_modules": 3
+    },
+    "examples": 84,
+    "module_loads": [
+      0,
+      31,
+      2,
+      63,
+      0,
+      34,
+      55,
+      0,
+      0,
+      67
+    ],
+    "nonlearning_accuracy": 0.20238095238095238,
+    "recovery_count": 5,
+    "routing_entropy": 0.6937419296770142,
+    "split": "test"
+  },
+  {
+    "accuracy": 0.047619047619047616,
+    "chance_accuracy": 0.3333333333333333,
+    "condition": "no_residual",
+    "counters": {
+      "conceptual_candidates": 840,
+      "dense_tensor_ops": 168,
+      "evaluated_edges": 756,
+      "evaluated_messages": 756,
+      "kernel_launch_estimate": 1008,
+      "observations": 84,
+      "peak_memory_bytes": 57420,
+      "selected_modules": 252,
+      "state_updates": 252,
+      "wall_clock_seconds": 0.030146999866701663
+    },
+    "coverage": 0.13095238095238096,
+    "covered_accuracy": 0.36363636363636365,
+    "diagnostics": {
+      "dead_modules": 4,
+      "no_ignition_count": 73,
+      "overloaded_modules": 3
+    },
+    "examples": 84,
+    "module_loads": [
+      0,
+      31,
+      2,
+      63,
+      0,
+      34,
+      55,
+      0,
+      0,
+      67
+    ],
+    "nonlearning_accuracy": 0.20238095238095238,
+    "recovery_count": 0,
+    "routing_entropy": 0.6937419296770142,
+    "split": "test"
+  },
+  {
+    "accuracy": 0.2857142857142857,
+    "chance_accuracy": 0.3333333333333333,
+    "condition": "no_coalition_score",
+    "counters": {
+      "conceptual_candidates": 840,
+      "dense_tensor_ops": 168,
+      "evaluated_edges": 756,
+      "evaluated_messages": 756,
+      "kernel_launch_estimate": 1008,
+      "observations": 84,
+      "peak_memory_bytes": 57420,
+      "selected_modules": 252,
+      "state_updates": 252,
+      "wall_clock_seconds": 0.029017000808380544
+    },
+    "coverage": 0.6904761904761905,
+    "covered_accuracy": 0.41379310344827586,
+    "diagnostics": {
+      "dead_modules": 4,
+      "no_ignition_count": 26,
+      "overloaded_modules": 3
+    },
+    "examples": 84,
+    "module_loads": [
+      0,
+      31,
+      2,
+      63,
+      0,
+      34,
+      55,
+      0,
+      0,
+      67
+    ],
+    "nonlearning_accuracy": 0.20238095238095238,
+    "recovery_count": 4,
+    "routing_entropy": 0.6937419296770142,
+    "split": "test"
+  },
+  {
+    "accuracy": 0.36904761904761907,
+    "chance_accuracy": 0.3333333333333333,
+    "condition": "forced_prediction",
+    "counters": {
+      "conceptual_candidates": 840,
+      "dense_tensor_ops": 168,
+      "evaluated_edges": 756,
+      "evaluated_messages": 756,
+      "kernel_launch_estimate": 1008,
+      "observations": 84,
+      "peak_memory_bytes": 57420,
+      "selected_modules": 252,
+      "state_updates": 252,
+      "wall_clock_seconds": 0.028674900182522833
+    },
+    "coverage": 1.0,
+    "covered_accuracy": 0.36904761904761907,
+    "diagnostics": {
+      "dead_modules": 4,
+      "no_ignition_count": 0,
+      "overloaded_modules": 3
+    },
+    "examples": 84,
+    "module_loads": [
+      0,
+      31,
+      2,
+      63,
+      0,
+      34,
+      55,
+      0,
+      0,
+      67
+    ],
+    "nonlearning_accuracy": 0.20238095238095238,
+    "recovery_count": 6,
+    "routing_entropy": 0.6937419296770142,
+    "split": "test"
+  },
+  {
+    "accuracy": 0.2976190476190476,
+    "chance_accuracy": 0.3333333333333333,
+    "condition": "random_router",
+    "counters": {
+      "conceptual_candidates": 840,
+      "dense_tensor_ops": 168,
+      "evaluated_edges": 756,
+      "evaluated_messages": 756,
+      "kernel_launch_estimate": 1008,
+      "observations": 84,
+      "peak_memory_bytes": 57420,
+      "selected_modules": 252,
+      "state_updates": 252,
+      "wall_clock_seconds": 0.02781469956971705
+    },
+    "coverage": 0.6904761904761905,
+    "covered_accuracy": 0.43103448275862066,
+    "diagnostics": {
+      "dead_modules": 0,
+      "no_ignition_count": 26,
+      "overloaded_modules": 0
+    },
+    "examples": 84,
+    "module_loads": [
+      26,
+      25,
+      29,
+      20,
+      20,
+      26,
+      28,
+      26,
+      26,
+      26
+    ],
+    "nonlearning_accuracy": 0.20238095238095238,
+    "recovery_count": 5,
+    "routing_entropy": 0.9971695800822645,
+    "split": "test"
+  },
+  {
+    "accuracy": 0.2857142857142857,
+    "chance_accuracy": 0.3333333333333333,
+    "condition": "learned_router_no_load_balance",
+    "counters": {
+      "conceptual_candidates": 840,
+      "dense_tensor_ops": 168,
+      "evaluated_edges": 756,
+      "evaluated_messages": 756,
+      "kernel_launch_estimate": 1008,
+      "observations": 84,
+      "peak_memory_bytes": 57420,
+      "selected_modules": 252,
+      "state_updates": 252,
+      "wall_clock_seconds": 0.026546499924734235
+    },
+    "coverage": 0.7023809523809523,
+    "covered_accuracy": 0.4067796610169492,
+    "diagnostics": {
+      "dead_modules": 4,
+      "no_ignition_count": 25,
+      "overloaded_modules": 3
+    },
+    "examples": 84,
+    "module_loads": [
+      0,
+      31,
+      2,
+      63,
+      0,
+      34,
+      55,
+      0,
+      0,
+      67
+    ],
+    "nonlearning_accuracy": 0.20238095238095238,
+    "recovery_count": 4,
+    "routing_entropy": 0.6937419296770142,
+    "split": "test"
+  },
+  {
+    "accuracy": 0.2857142857142857,
+    "chance_accuracy": 0.3333333333333333,
+    "condition": "no_workspace_broadcast",
+    "counters": {
+      "conceptual_candidates": 840,
+      "dense_tensor_ops": 168,
+      "evaluated_edges": 756,
+      "evaluated_messages": 756,
+      "kernel_launch_estimate": 1008,
+      "observations": 84,
+      "peak_memory_bytes": 57420,
+      "selected_modules": 252,
+      "state_updates": 252,
+      "wall_clock_seconds": 0.028237999766133726
+    },
+    "coverage": 0.6904761904761905,
+    "covered_accuracy": 0.41379310344827586,
+    "diagnostics": {
+      "dead_modules": 4,
+      "no_ignition_count": 26,
+      "overloaded_modules": 3
+    },
+    "examples": 84,
+    "module_loads": [
+      0,
+      31,
+      2,
+      63,
+      0,
+      34,
+      55,
+      0,
+      0,
+      67
+    ],
+    "nonlearning_accuracy": 0.20238095238095238,
+    "recovery_count": 4,
+    "routing_entropy": 0.6937419296770142,
+    "split": "test"
+  },
+  {
+    "accuracy": 0.2857142857142857,
+    "chance_accuracy": 0.3333333333333333,
+    "condition": "detached_coalition",
+    "counters": {
+      "conceptual_candidates": 840,
+      "dense_tensor_ops": 168,
+      "evaluated_edges": 756,
+      "evaluated_messages": 756,
+      "kernel_launch_estimate": 1008,
+      "observations": 84,
+      "peak_memory_bytes": 57420,
+      "selected_modules": 252,
+      "state_updates": 252,
+      "wall_clock_seconds": 0.031549800070934
+    },
+    "coverage": 0.6904761904761905,
+    "covered_accuracy": 0.41379310344827586,
+    "diagnostics": {
+      "dead_modules": 4,
+      "no_ignition_count": 26,
+      "overloaded_modules": 3
+    },
+    "examples": 84,
+    "module_loads": [
+      0,
+      31,
+      2,
+      63,
+      0,
+      34,
+      55,
+      0,
+      0,
+      67
+    ],
+    "nonlearning_accuracy": 0.20238095238095238,
+    "recovery_count": 4,
+    "routing_entropy": 0.6937419296770142,
+    "split": "test"
+  },
+  {
+    "accuracy": 0.2857142857142857,
+    "chance_accuracy": 0.3333333333333333,
+    "condition": "end_to_end_coalition",
+    "counters": {
+      "conceptual_candidates": 840,
+      "dense_tensor_ops": 168,
+      "evaluated_edges": 756,
+      "evaluated_messages": 756,
+      "kernel_launch_estimate": 1008,
+      "observations": 84,
+      "peak_memory_bytes": 57420,
+      "selected_modules": 252,
+      "state_updates": 252,
+      "wall_clock_seconds": 0.028316900017671287
+    },
+    "coverage": 0.6904761904761905,
+    "covered_accuracy": 0.41379310344827586,
+    "diagnostics": {
+      "dead_modules": 4,
+      "no_ignition_count": 26,
+      "overloaded_modules": 3
+    },
+    "examples": 84,
+    "module_loads": [
+      0,
+      31,
+      2,
+      63,
+      0,
+      34,
+      55,
+      0,
+      0,
+      67
+    ],
+    "nonlearning_accuracy": 0.20238095238095238,
+    "recovery_count": 4,
+    "routing_entropy": 0.6937419296770142,
+    "split": "test"
+  }
+]

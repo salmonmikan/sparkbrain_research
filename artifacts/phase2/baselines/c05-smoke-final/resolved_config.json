@@ -1,0 +1,28 @@
+{
+  "compute_target": 1188000,
+  "context_limit": 64,
+  "dev_episodes_per_world": 2,
+  "dev_manifest": "configs/experiments/phase1/manifests/dev-v1.json",
+  "hard_timeout_seconds": 600,
+  "learning_rate": 0.003,
+  "optimizer_steps": 5,
+  "parameter_target": 9900,
+  "profile": "smoke",
+  "run_seeds": [
+    101
+  ],
+  "schema_version": "0.1",
+  "steps": 8,
+  "test_episodes_per_world": 2,
+  "test_manifest": "configs/experiments/phase1/manifests/test-v1.json",
+  "torch_threads": 1,
+  "trial_budget_per_family": 12,
+  "worlds": [
+    "switchworld",
+    "reliability_world",
+    "delayed_evidence_world",
+    "contradiction_world",
+    "multi_object_world",
+    "goal_conflict_world"
+  ]
+}

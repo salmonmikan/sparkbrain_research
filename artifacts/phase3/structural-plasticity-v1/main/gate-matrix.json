@@ -1,0 +1,59 @@
+{
+  "decisiveness": {
+    "observed": 0.0,
+    "passed": false,
+    "threshold": 0.05
+  },
+  "fertility": {
+    "observed": 0.008928571428571397,
+    "passed": false,
+    "threshold": 0.01
+  },
+  "multiplicity": {
+    "dev_functional_effect_signatures": [
+      {
+        "contradiction_world": 0.0,
+        "goal_conflict_world": 0.0,
+        "switchworld": 0.0
+      },
+      {
+        "contradiction_world": 0.0,
+        "goal_conflict_world": 0.0,
+        "switchworld": 0.0
+      }
+    ],
+    "lineage_consistent": true,
+    "lineage_signatures": [
+      [
+        [
+          "source:9"
+        ],
+        [
+          "source:9"
+        ]
+      ],
+      [
+        [
+          "source:9"
+        ],
+        [
+          "source:9"
+        ]
+      ]
+    ],
+    "observed": 2,
+    "passed": true,
+    "slot_sets_consistent": true,
+    "threshold": 2
+  },
+  "specificity": {
+    "dev_target_world": null,
+    "fail_closed_reason": "dev target unavailable or absent from held-out test families",
+    "passed": false,
+    "target_impairment": null,
+    "target_minimum": 0.02,
+    "target_present_in_test": false,
+    "unrelated_collateral": 0.0,
+    "unrelated_collateral_maximum": 0.02
+  }
+}

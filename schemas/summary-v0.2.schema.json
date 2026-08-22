@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sparkbrain.local/schemas/summary-v0.2.schema.json",
+  "title": "SparkBrain demo summary v0.2",
+  "type": "object",
+  "required": ["schema_version", "frames", "final_prediction", "ignitions", "stats"],
+  "properties": {
+    "schema_version": {"const": "0.2"},
+    "frames": {"type": "integer", "minimum": 0},
+    "final_prediction": {"type": ["string", "null"]},
+    "ignitions": {"type": "array"},
+    "stats": {"type": "object"}
+  },
+  "additionalProperties": false
+}

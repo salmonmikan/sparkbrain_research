@@ -1,0 +1,25 @@
+{
+  "repository_id": "CAiRE/belief_r",
+  "revision": "3719f5804c63318037465fecf298a7fd78d99121",
+  "filename": "test.csv",
+  "split": "test",
+  "license": "CC-BY-SA-4.0",
+  "expected_sha256": "b584c18328965cf3eb3d36f2f9ef145c1e15c9bf57bba084982ba18df1fa4153",
+  "expected_size_bytes": 2230828,
+  "expected_rows": 3656,
+  "expected_pairs": 1744,
+  "expected_update_pairs": 1074,
+  "expected_header": [
+    "questions",
+    "ground_truth",
+    "step",
+    "modus",
+    "types_of_relation",
+    "agreement_lv",
+    "atomic_idx",
+    "dataset_id",
+    "a",
+    "b",
+    "c"
+  ]
+}

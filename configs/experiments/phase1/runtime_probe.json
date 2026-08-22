@@ -1,0 +1,30 @@
+{
+  "profile": "runtime_probe",
+  "split": "smoke",
+  "frozen": false,
+  "episode_count": 25,
+  "seed_start": 10000,
+  "steps": 30,
+  "all_combinations": false,
+  "matrix": [
+    {"world": "switchworld", "condition": "full"},
+    {"world": "reliability_world", "condition": "full"},
+    {"world": "delayed_evidence_world", "condition": "full"},
+    {"world": "contradiction_world", "condition": "full"},
+    {"world": "multi_object_world", "condition": "full"},
+    {"world": "goal_conflict_world", "condition": "full"},
+    {"world": "switchworld", "condition": "no_residual"},
+    {"world": "switchworld", "condition": "hard_wta"},
+    {"world": "delayed_evidence_world", "condition": "no_temporal_stability"},
+    {"world": "contradiction_world", "condition": "no_lateral_inhibition"},
+    {"world": "reliability_world", "condition": "no_source_diversity"},
+    {"world": "contradiction_world", "condition": "no_contradiction_penalty"},
+    {"world": "multi_object_world", "condition": "no_margin_gate"},
+    {"world": "reliability_world", "condition": "single_spark_ignition"},
+    {"world": "delayed_evidence_world", "condition": "forced_prediction"},
+    {"world": "multi_object_world", "condition": "dense_update_accounting"},
+    {"world": "goal_conflict_world", "condition": "no_workspace_broadcast"},
+    {"world": "switchworld", "condition": "no_homeostasis"},
+    {"world": "contradiction_world", "condition": "no_refractory"}
+  ]
+}

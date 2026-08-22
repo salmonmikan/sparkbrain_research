@@ -1,6 +1,6 @@
 # Project Status — SparkBrain v0.2.1
 
-Status date: 2026-08-22
+Status date: 2026-08-23
 
 ## 1. Current maturity
 
@@ -8,7 +8,12 @@ The repository is a **Phase-0 local functional research prototype**. It demonstr
 
 v0.2.1 fixes the core destination to one general-purpose local computer, adds a plain-language foundation guide and expanded glossary, and moves dedicated neuromorphic hardware to an independent extension track.
 
-It is not yet a learned architecture, a completed spiking implementation, a validated biological model, or a matched comparison against modern neural baselines.
+It now includes an optional controlled-synthetic learned-routing backend and a matched-baseline
+harness. The reduced C05 run did not achieve scientific compute or dev quality matching and is
+not evidence of a general comparison advantage. It is not a validated biological model. C07
+adds only a reduced hybrid canonical comparison. C06 completed one frozen offline official
+Belief-R run, but Spark BREU was below direct and chance; this is a retained negative result,
+not external-generalization evidence.
 
 ## 2. Local execution contract
 
@@ -33,18 +38,25 @@ See `docs/LOCAL_EXECUTION_POLICY.md`.
 | Beginner foundation guide | complete | `docs/FOUNDATIONS_FOR_BEGINNERS.md` |
 | Plain-language glossary | expanded | `docs/GLOSSARY.md` |
 | Local execution policy | complete | `docs/LOCAL_EXECUTION_POLICY.md` |
-| Prior-art gap analysis | initial review complete | `docs/PRIOR_ART_GAP_ANALYSIS.md` |
+| Prior-art gap analysis | bounded adversarial second pass complete; monitoring remains continuous | `docs/PRIOR_ART_GAP_ANALYSIS.md`, `docs/research/` |
 | Deterministic reference engine | runnable | `src/sparkbrain/engine.py` |
 | Spark/Event/Coalition/Workspace model | runnable | `src/sparkbrain/model.py` |
 | Canonical and randomized SwitchWorld | runnable | `src/sparkbrain/worlds.py` |
-| Phase-0 scalar baselines and ablations | runnable | `src/sparkbrain/baselines.py`, `benchmark.py` |
+| Phase-0 scalar baselines and ablations | runnable; legacy imports preserved | `src/sparkbrain/baselines/`, `benchmark.py` |
+| C05 matched baseline harness | implemented; reduced quality match negative | `src/sparkbrain/baselines/neural/`, `evaluation/run_baselines.py`, `artifacts/phase2/baselines/` |
+| C02 controlled worlds and statistical suite | implemented with negative results | `src/sparkbrain/tasks/`, `evaluation/`, `artifacts/phase1/c02-main-1000/` |
+| C04 learned sparse-rate backend | implemented with held-out synthetic result and collapse diagnostics | `src/sparkbrain/learned/`, `artifacts/phase2/`, `docs/C04_LEARNED_ROUTING_RESULTS.md` |
+| C08 bounded structural plasticity | implemented with valid negative specialization result | `src/sparkbrain/structural/`, `artifacts/phase3/`, `docs/C08_STRUCTURAL_PLASTICITY_RESULTS.md` |
+| C06 external validation | full pinned Belief-R zero-shot run completed with negative result | `artifacts/external_validation/c06-final-official/`, `docs/C06_EXTERNAL_VALIDATION_RESULTS.md` |
 | Metrics for stability/revision/recovery | runnable | `src/sparkbrain/metrics.py` |
 | Static replay visualizer | runnable locally | `artifacts/demo/visualizer.html` |
-| Unit tests | 30 passing | `python -m pytest -q` |
+| Unit tests | 197 passing with learned/spiking extras available | `python -m pytest -q` |
 | Local readiness audit | runnable | `scripts/local_readiness_check.py` |
 | Generated Phase-0 report | complete with limitations | `artifacts/benchmarks/benchmark_report.md` |
 | Codex repository instructions | complete | `AGENTS.md`, `.agents/skills/sparkbrain-research/SKILL.md` |
-| Versioned checkpoint and trace replay | implemented | `serialization.py`, `replay.py`, `schemas/` |
+| Versioned checkpoint and trace replay | C01 accepted | `serialization.py`, `replay.py`, `schemas/`, `tests/test_schemas.py`, CI run `32594805438` |
+| Interactive localhost Brain Lab | C03 accepted locally | `src/sparkbrain/lab/`, `docs/BRAIN_LAB.md`, `tests/test_brain_lab_*.py` |
+| Reduced local spiking backend | hybrid canonical equivalence; fully spiking work remains | `src/sparkbrain/spiking.py`, `artifacts/spiking/` |
 | Detailed Codex execution queue | complete | `docs/CODEX_EXECUTION_BRIEF.md`, `docs/codex/` |
 
 ## 4. Verified local commands
@@ -78,16 +90,22 @@ The accumulator baseline is close in this hand-authored setting. Therefore this 
 
 | Priority | Missing capability | Codex task |
 |---:|---|---|
-| P0 | strict replay/schema edge cases, CI execution, compatibility policy | C01 |
-| P0 | controlled worlds, full ablations, uncertainty estimates | C02 |
-| P1 | local interactive Brain Lab and interventions | C03 |
-| P1 | learned event encoding/routing and held-out generalization | C04 |
-| P1 | matched GRU/Transformer/RIM/Bayesian baselines | C05 |
-| P1 | external belief-revision and relational tasks with local cached datasets | C06 |
-| P2 | local rate-to-spiking backend equivalence | C07 |
-| P2 | structural plasticity and emergent-organ tests | C08 |
+| P1 | full-scale matched-baseline scientific run; reduced harness is complete | C05 follow-on |
+| P2 | semantic language-encoder and citation-capable attribution follow-on; frozen external adapter run is complete | C06 follow-on |
+| P2 | fully spiking and multi-world equivalence beyond the reduced hybrid | C07 follow-on |
+| P2 | additional structural-plasticity hypotheses after negative causal result | C08 follow-on |
 | continuous | systematic prior-art review and novelty audit | C09 |
 | release | local reproducibility/publication package | C10 |
+
+### C10 release-candidate preparation
+
+The non-license C10 package now pins the tested local environment, freezes a bounded primary
+smoke subset, regenerates its table/SVG/report/negative appendix/SBOM deterministically, maps
+claims to exact run/artifact evidence, and emits an offline machine run manifest. This is
+release preparation, not public readiness. C05 checkpoint-matched encoder evidence, the final
+C06 negative external run, and the C08 negative specialization result are integrated. Public
+validation remains blocked by the owner license decision. The smoke subset is explicitly not
+the full evaluation.
 
 ## 7. Exit criteria for the core final system
 
@@ -120,4 +138,38 @@ C04 ─> C08
 C09 runs continuously and must review C10 claims.
 ```
 
-C01 remains the strict first task. C03 may begin once C01 freezes trace and control interfaces. C04 and C05 should share the same local data harness and splits.
+C01 is accepted: schema `0.2`, deterministic fresh-run replay, checkpoint continuation, pure inspection, bounded event failure, and counter contracts are covered locally and by the Python 3.11/3.13 CI matrix. C03 is locally accepted: loopback control, deterministic pause/step/reset, event injection, immutable-parent intervention forks, synchronized comparison, blind-safe export/import, bundled offline UI, API/E2E/accessibility contracts, and relevant-subset performance are covered.
+
+C02 is locally implemented. The frozen main run completed 37 declared conditions with
+1,000 episodes each and generated raw rows, bootstrap intervals, Pareto output, and three
+deterministically selected failure visualizations. This is an E2 controlled synthetic result,
+not external validation. MultiObjectWorld produced no full-system ignition under the frozen
+configuration and is retained as a negative result; C04/C05 must not tune against its test
+seeds. C04 and C05 must share this frozen data harness and its split manifests.
+
+C04 is locally implemented on the immutable C02 manifests. Its 60-episode held-out CPU profile
+beat chance and the training-majority baseline while retaining calibrated no-ignition and
+non-hand-authored recovery cases. The router nevertheless exhibited dead/overloaded modules,
+and the reduced smoke profile was below chance. These negative findings remain explicit.
+
+C05 is locally implemented as a shared observation-only pipeline for accumulator,
+privileged Bayes, train-only Laplace HMM, GRU, LSTM, causal Transformer, RIM-like modular
+recurrence, explicit-state memory, oracle, and chance. The reduced five-seed acceptance
+profile matched architecture-body parameter counts and retained paired raw outputs, but
+scientific compute matching was false and no learned family met the accumulator
+accuracy/coverage quality target at every seed after ten optimizer steps. CL-007 therefore
+remains E0. The full frozen 1,000-episode-per-world run and a completed 12-trial search were
+not executed by this integration profile.
+
+C08 is locally implemented over the frozen C04 checkpoint and C02 manifests. Fixed-capacity
+module/edge masks, deterministic boundary events, identity/lineage/tombstone tracking,
+homeostasis, budgets, checkpoint continuation, actual selected-edge counters, paired causal
+controls, and sensitivity artifacts are covered. The two-seed candidate passed multiplicity
+only; decisiveness, fertility, and specificity failed. CL-008 remains E0 and no emergent-organ
+claim is permitted.
+C06 is locally implemented through a frozen adapter manifest that verifies the C04/C05
+checkpoint, configuration, profile, encoder vocabulary, and input dimension. The
+network-blocked official run evaluated all 1,744 Belief-R pairs without test fitting or
+tuning. Spark BU/BM/BREU were 0.0391/0.0896/0.0643, below direct and chance BREU 0.25. The C05
+external feature path maps unseen categorical tokens to UNK, parameter/compute matching is
+false, and evidence attribution is unavailable. Gate P3 and CL-007 therefore remain unmet.

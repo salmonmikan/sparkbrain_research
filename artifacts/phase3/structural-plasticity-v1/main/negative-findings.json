@@ -1,0 +1,14 @@
+{
+  "allowed_wording": "candidate functional specialization",
+  "candidate_discovery_inputs": [
+    "routing_load",
+    "coactivation",
+    "edge_credit",
+    "confidence_delta"
+  ],
+  "claim_grade": "E0",
+  "prohibited_wording": "organs emerged",
+  "runtime_cap_reached": false,
+  "specialization_passed": false,
+  "test_threshold_tuning": false
+}

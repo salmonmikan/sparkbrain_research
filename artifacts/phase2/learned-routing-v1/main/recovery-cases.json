@@ -1,0 +1,590 @@
+[
+  {
+    "episode_id": "switchworld:test:200001:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 21,
+    "switch_step": 20
+  },
+  {
+    "episode_id": "switchworld:test:200001:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "dog",
+    "recovered_step": 34,
+    "switch_step": 33
+  },
+  {
+    "episode_id": "switchworld:test:200001:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 35,
+    "switch_step": 35
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200003:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 12,
+    "switch_step": 11
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200003:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "toy",
+    "recovered_step": 25,
+    "switch_step": 21
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200003:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "dog",
+    "recovered_step": 32,
+    "switch_step": 31
+  },
+  {
+    "episode_id": "switchworld:test:200004:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "dog",
+    "recovered_step": 9,
+    "switch_step": 7
+  },
+  {
+    "episode_id": "switchworld:test:200004:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "toy",
+    "recovered_step": 10,
+    "switch_step": 10
+  },
+  {
+    "episode_id": "switchworld:test:200004:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "dog",
+    "recovered_step": 27,
+    "switch_step": 20
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200006:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 13,
+    "switch_step": 10
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200006:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "dog",
+    "recovered_step": 23,
+    "switch_step": 21
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200006:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 33,
+    "switch_step": 29
+  },
+  {
+    "episode_id": "switchworld:test:200007:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "dog",
+    "recovered_step": 11,
+    "switch_step": 5
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200009:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "toy",
+    "recovered_step": 9,
+    "switch_step": 9
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200009:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "dog",
+    "recovered_step": 23,
+    "switch_step": 20
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200009:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 35,
+    "switch_step": 31
+  },
+  {
+    "episode_id": "switchworld:test:200010:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 27,
+    "switch_step": 27
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200012:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "toy",
+    "recovered_step": 12,
+    "switch_step": 10
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200012:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "dog",
+    "recovered_step": 29,
+    "switch_step": 20
+  },
+  {
+    "episode_id": "switchworld:test:200013:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "toy",
+    "recovered_step": 9,
+    "switch_step": 8
+  },
+  {
+    "episode_id": "switchworld:test:200013:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 22,
+    "switch_step": 22
+  },
+  {
+    "episode_id": "switchworld:test:200013:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "dog",
+    "recovered_step": 28,
+    "switch_step": 26
+  },
+  {
+    "episode_id": "switchworld:test:200013:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 29,
+    "switch_step": 29
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200015:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "dog",
+    "recovered_step": 18,
+    "switch_step": 9
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200015:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "toy",
+    "recovered_step": 20,
+    "switch_step": 20
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200015:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 32,
+    "switch_step": 30
+  },
+  {
+    "episode_id": "switchworld:test:200016:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "toy",
+    "recovered_step": 2,
+    "switch_step": 1
+  },
+  {
+    "episode_id": "switchworld:test:200016:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 6,
+    "switch_step": 5
+  },
+  {
+    "episode_id": "switchworld:test:200016:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "dog",
+    "recovered_step": 10,
+    "switch_step": 8
+  },
+  {
+    "episode_id": "switchworld:test:200016:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 11,
+    "switch_step": 11
+  },
+  {
+    "episode_id": "switchworld:test:200016:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "toy",
+    "recovered_step": 14,
+    "switch_step": 14
+  },
+  {
+    "episode_id": "switchworld:test:200016:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 19,
+    "switch_step": 18
+  },
+  {
+    "episode_id": "switchworld:test:200016:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "toy",
+    "recovered_step": 23,
+    "switch_step": 22
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200018:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "toy",
+    "recovered_step": 13,
+    "switch_step": 10
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200018:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 19,
+    "switch_step": 19
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200018:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "toy",
+    "recovered_step": 31,
+    "switch_step": 30
+  },
+  {
+    "episode_id": "switchworld:test:200019:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "toy",
+    "recovered_step": 3,
+    "switch_step": 3
+  },
+  {
+    "episode_id": "switchworld:test:200019:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "dog",
+    "recovered_step": 7,
+    "switch_step": 4
+  },
+  {
+    "episode_id": "switchworld:test:200019:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 14,
+    "switch_step": 10
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200021:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 15,
+    "switch_step": 12
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200021:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "toy",
+    "recovered_step": 21,
+    "switch_step": 20
+  },
+  {
+    "episode_id": "switchworld:test:200022:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "toy",
+    "recovered_step": 11,
+    "switch_step": 11
+  },
+  {
+    "episode_id": "switchworld:test:200022:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "dog",
+    "recovered_step": 27,
+    "switch_step": 21
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200024:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "dog",
+    "recovered_step": 27,
+    "switch_step": 19
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200024:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 33,
+    "switch_step": 30
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200027:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 14,
+    "switch_step": 11
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200027:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "dog",
+    "recovered_step": 21,
+    "switch_step": 21
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200027:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 31,
+    "switch_step": 30
+  },
+  {
+    "episode_id": "switchworld:test:200028:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "toy",
+    "recovered_step": 31,
+    "switch_step": 29
+  },
+  {
+    "episode_id": "switchworld:test:200031:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "dog",
+    "recovered_step": 35,
+    "switch_step": 35
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200033:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "toy",
+    "recovered_step": 12,
+    "switch_step": 10
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200036:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 12,
+    "switch_step": 10
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200036:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 34,
+    "switch_step": 30
+  },
+  {
+    "episode_id": "switchworld:test:200037:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "toy",
+    "recovered_step": 13,
+    "switch_step": 11
+  },
+  {
+    "episode_id": "switchworld:test:200037:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 19,
+    "switch_step": 18
+  },
+  {
+    "episode_id": "switchworld:test:200037:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "dog",
+    "recovered_step": 20,
+    "switch_step": 20
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200039:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "dog",
+    "recovered_step": 18,
+    "switch_step": 10
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200039:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 24,
+    "switch_step": 20
+  },
+  {
+    "episode_id": "switchworld:test:200040:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "toy",
+    "recovered_step": 17,
+    "switch_step": 16
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200042:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 9,
+    "switch_step": 9
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200042:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "dog",
+    "recovered_step": 21,
+    "switch_step": 20
+  },
+  {
+    "episode_id": "switchworld:test:200043:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "toy",
+    "recovered_step": 1,
+    "switch_step": 1
+  },
+  {
+    "episode_id": "switchworld:test:200043:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "dog",
+    "recovered_step": 2,
+    "switch_step": 2
+  },
+  {
+    "episode_id": "switchworld:test:200043:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 10,
+    "switch_step": 8
+  },
+  {
+    "episode_id": "switchworld:test:200043:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 20,
+    "switch_step": 18
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200045:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 19,
+    "switch_step": 19
+  },
+  {
+    "episode_id": "switchworld:test:200046:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "toy",
+    "recovered_step": 22,
+    "switch_step": 18
+  },
+  {
+    "episode_id": "switchworld:test:200046:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 29,
+    "switch_step": 28
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200048:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 13,
+    "switch_step": 10
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200048:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "dog",
+    "recovered_step": 21,
+    "switch_step": 20
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200048:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "toy",
+    "recovered_step": 33,
+    "switch_step": 30
+  },
+  {
+    "episode_id": "switchworld:test:200049:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 15,
+    "switch_step": 11
+  },
+  {
+    "episode_id": "switchworld:test:200049:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "toy",
+    "recovered_step": 19,
+    "switch_step": 19
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200051:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "toy",
+    "recovered_step": 13,
+    "switch_step": 10
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200051:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 23,
+    "switch_step": 19
+  },
+  {
+    "episode_id": "switchworld:test:200052:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "toy",
+    "recovered_step": 12,
+    "switch_step": 6
+  },
+  {
+    "episode_id": "switchworld:test:200052:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 21,
+    "switch_step": 21
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200054:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "dog",
+    "recovered_step": 22,
+    "switch_step": 20
+  },
+  {
+    "episode_id": "switchworld:test:200055:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 25,
+    "switch_step": 24
+  },
+  {
+    "episode_id": "switchworld:test:200055:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "toy",
+    "recovered_step": 35,
+    "switch_step": 33
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200057:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 13,
+    "switch_step": 11
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200057:7b5beb6689c3",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 35,
+    "switch_step": 31
+  },
+  {
+    "episode_id": "switchworld:test:200058:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "toy",
+    "recovered_step": 24,
+    "switch_step": 23
+  },
+  {
+    "episode_id": "switchworld:test:200058:978085e0d16d",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 35,
+    "switch_step": 31
+  }
+]

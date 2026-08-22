@@ -1,12 +1,11 @@
 from __future__ import annotations
 
 import random
+from collections.abc import Iterable
 from dataclasses import dataclass
-from typing import Iterable
 
 from .engine import SparkBrain
 from .model import BrainConfig, Spark, SparkKind, TraceFrame
-
 
 LABELS = ("cat", "dog", "toy")
 

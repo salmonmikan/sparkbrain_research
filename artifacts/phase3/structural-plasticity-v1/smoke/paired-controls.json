@@ -1,0 +1,161 @@
+{
+  "activation_effect": 0.008333333333333304,
+  "activation_intervention": {
+    "accuracy": 0.5916666666666667,
+    "accuracy_by_world": {
+      "delayed_evidence_world": 0.625,
+      "multi_object_world": 0.3,
+      "reliability_world": 0.85
+    },
+    "counters": {
+      "conceptual_candidates": 1800,
+      "dense_tensor_ops": 240,
+      "evaluated_edges": 481,
+      "evaluated_messages": 481,
+      "kernel_launch_estimate": 1440,
+      "observations": 120,
+      "peak_memory_bytes": 185352,
+      "selected_modules": 480,
+      "state_updates": 480,
+      "wall_clock_seconds": 0.053078300785273314
+    },
+    "coverage": 0.7166666666666667,
+    "episodes": 6,
+    "steps": 120
+  },
+  "candidate": [
+    9,
+    13
+  ],
+  "degree_impairment": -0.016666666666666607,
+  "degree_matched": {
+    "accuracy": 0.6,
+    "accuracy_by_world": {
+      "delayed_evidence_world": 0.65,
+      "multi_object_world": 0.3,
+      "reliability_world": 0.85
+    },
+    "counters": {
+      "conceptual_candidates": 1800,
+      "dense_tensor_ops": 240,
+      "evaluated_edges": 488,
+      "evaluated_messages": 488,
+      "kernel_launch_estimate": 1440,
+      "observations": 120,
+      "peak_memory_bytes": 185352,
+      "selected_modules": 480,
+      "state_updates": 480,
+      "wall_clock_seconds": 0.054141900152899325
+    },
+    "coverage": 0.7416666666666667,
+    "episodes": 6,
+    "steps": 120
+  },
+  "degree_matched_slots": [
+    1,
+    2
+  ],
+  "random": {
+    "accuracy": 0.6083333333333333,
+    "accuracy_by_world": {
+      "delayed_evidence_world": 0.65,
+      "multi_object_world": 0.32499999999999996,
+      "reliability_world": 0.85
+    },
+    "counters": {
+      "conceptual_candidates": 1800,
+      "dense_tensor_ops": 240,
+      "evaluated_edges": 494,
+      "evaluated_messages": 494,
+      "kernel_launch_estimate": 1440,
+      "observations": 120,
+      "peak_memory_bytes": 185352,
+      "selected_modules": 480,
+      "state_updates": 480,
+      "wall_clock_seconds": 0.04743829928338528
+    },
+    "coverage": 0.7583333333333333,
+    "episodes": 6,
+    "steps": 120
+  },
+  "random_impairment": -0.02499999999999991,
+  "random_slots": [
+    5,
+    6
+  ],
+  "source_c04": {
+    "accuracy": 0.625,
+    "accuracy_by_world": {
+      "delayed_evidence_world": 0.7,
+      "multi_object_world": 0.3,
+      "reliability_world": 0.875
+    },
+    "counters": {
+      "conceptual_candidates": 1440,
+      "dense_tensor_ops": 240,
+      "evaluated_edges": 1920,
+      "evaluated_messages": 1920,
+      "kernel_launch_estimate": 1440,
+      "observations": 120,
+      "peak_memory_bytes": 181608,
+      "selected_modules": 480,
+      "state_updates": 480,
+      "wall_clock_seconds": 0.04621779907029122
+    },
+    "coverage": 0.7833333333333333,
+    "episodes": 6,
+    "steps": 120
+  },
+  "target_impairment": -0.016666666666666607,
+  "targeted": {
+    "accuracy": 0.6,
+    "accuracy_by_world": {
+      "delayed_evidence_world": 0.65,
+      "multi_object_world": 0.32499999999999996,
+      "reliability_world": 0.825
+    },
+    "counters": {
+      "conceptual_candidates": 1800,
+      "dense_tensor_ops": 240,
+      "evaluated_edges": 480,
+      "evaluated_messages": 480,
+      "kernel_launch_estimate": 1440,
+      "observations": 120,
+      "peak_memory_bytes": 185352,
+      "selected_modules": 480,
+      "state_updates": 480,
+      "wall_clock_seconds": 0.0531232999637723
+    },
+    "coverage": 0.7583333333333333,
+    "episodes": 6,
+    "steps": 120
+  },
+  "unablated": {
+    "accuracy": 0.5833333333333334,
+    "accuracy_by_world": {
+      "delayed_evidence_world": 0.625,
+      "multi_object_world": 0.3,
+      "reliability_world": 0.825
+    },
+    "counters": {
+      "conceptual_candidates": 1800,
+      "dense_tensor_ops": 240,
+      "evaluated_edges": 488,
+      "evaluated_messages": 488,
+      "kernel_launch_estimate": 1440,
+      "observations": 120,
+      "peak_memory_bytes": 185352,
+      "selected_modules": 480,
+      "state_updates": 480,
+      "wall_clock_seconds": 0.05335419927723706
+    },
+    "coverage": 0.7,
+    "episodes": 6,
+    "steps": 120
+  },
+  "world_effects": {
+    "delayed_evidence_world": -0.025000000000000022,
+    "multi_object_world": -0.024999999999999967,
+    "reliability_world": 0.0
+  }
+}

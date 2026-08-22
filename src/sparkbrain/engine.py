@@ -4,8 +4,8 @@ import heapq
 import math
 import random
 from collections import defaultdict
-from dataclasses import asdict
-from typing import Iterable
+from collections.abc import Iterable
+from dataclasses import asdict, replace
 
 from .model import (
     BrainConfig,
@@ -21,7 +21,13 @@ from .model import (
     TraceFrame,
     WorkspaceItem,
 )
-from .validation import SCHEMA_VERSION, validate_config, validate_graph, validate_spark
+from .validation import (
+    SCHEMA_VERSION,
+    validate_config,
+    validate_graph,
+    validate_spark,
+    validate_state_payload,
+)
 
 
 def _jsonable_tuple(value):
@@ -76,6 +82,55 @@ class SparkBrain:
         self._fired_since_frame: list[str] = []
         self._active_edges_since_frame: list[tuple[str, str, float]] = []
         self._updated_since_frame: set[str] = set()
+
+    def reset(
+        self,
+        *,
+        seed: int | None = None,
+        config: BrainConfig | None = None,
+    ) -> None:
+        """Reset runtime state while preserving the constructed graph.
+
+        Connection weights remain in place so a learned backend can reset an
+        episode without discarding learned parameters.  Episode-local
+        eligibility, evidence, activity, queue state, and traces are cleared.
+        """
+
+        if config is not None:
+            self.config = config
+        if seed is not None:
+            self.config = replace(self.config, random_seed=seed)
+        validate_config(self.config)
+        self.random = random.Random(self.config.random_seed)
+        self.time = 0.0
+        self._queue = []
+        self._sequence = 0
+        self._active_hypotheses = set()
+        self._stability = defaultdict(int)
+        self._last_top_hypothesis = None
+        self._last_ignition_time = -math.inf
+        self._last_ignition_hypothesis = None
+        self.workspace = []
+        self.ignitions = []
+        self.last_coalitions = []
+        self.belief_label = None
+        self.stats = EngineStats()
+        self.trace = []
+        self._fired_since_frame = []
+        self._active_edges_since_frame = []
+        self._updated_since_frame = set()
+
+        for spark in self.sparks.values():
+            spark.activation = 0.0
+            spark.threshold = spark.base_threshold
+            spark.last_update = 0.0
+            spark.refractory_until = 0.0
+            spark.last_fire = None
+            spark.fired_count = 0
+            spark.supports.clear()
+            spark.contradictions.clear()
+        for edge in self.connections:
+            edge.eligibility = 0.0
 
     # ------------------------------------------------------------------
     # Graph construction
@@ -149,6 +204,8 @@ class SparkBrain:
             raise ValueError(f"Cannot schedule an event in the past: {time} < {self.time}")
         if not math.isfinite(time) or not math.isfinite(strength):
             raise ValueError("Event time and strength must be finite")
+        if isinstance(priority, bool) or not isinstance(priority, int):
+            raise ValueError(f"Event priority must be an integer, got {priority!r}")
         sequence = self._sequence
         self._sequence += 1
         event = Event(
@@ -340,8 +397,14 @@ class SparkBrain:
             positive_records = self._live_records(spark.supports.values(), now)
             negative_records = self._live_records(spark.contradictions.values(), now)
             source_names = {record.source for record, _ in positive_records}
-            evidence_strength = sum(max(0.0, record.strength) * recency for record, recency in positive_records)
-            contradiction = sum(abs(record.strength) * recency for record, recency in negative_records)
+            evidence_strength = sum(
+                max(0.0, record.strength) * recency
+                for record, recency in positive_records
+            )
+            contradiction = sum(
+                abs(record.strength) * recency
+                for record, recency in negative_records
+            )
 
             base_score = (
                 max(0.0, spark.activation)
@@ -480,6 +543,30 @@ class SparkBrain:
     # ------------------------------------------------------------------
     # Learning and inspection
     # ------------------------------------------------------------------
+    def erase_losing_hypotheses(self, winner_id: str) -> None:
+        """Apply the explicit hard-WTA research intervention.
+
+        This is intentionally not part of normal dynamics.  C02 uses the hook
+        after an ignition so the hard-WTA ablation erases loser state rather
+        than approximating erasure with stronger inhibition.
+        """
+
+        winner = self.sparks.get(winner_id)
+        if winner is None or winner.kind is not SparkKind.HYPOTHESIS:
+            raise ValueError(f"Hard-WTA winner must be a hypothesis Spark: {winner_id!r}")
+        group = winner.competition_group
+        for spark in self.sparks.values():
+            if (
+                spark.kind is SparkKind.HYPOTHESIS
+                and spark.id != winner_id
+                and spark.competition_group == group
+            ):
+                spark.activation = 0.0
+                spark.supports.clear()
+                spark.contradictions.clear()
+                self._active_hypotheses.discard(spark.id)
+                self._stability.pop(spark.id, None)
+
     def _decay_eligibilities(self) -> None:
         for edge in self.connections:
             edge.eligibility *= self.config.eligibility_decay
@@ -498,7 +585,14 @@ class SparkBrain:
     def prediction(self) -> str | None:
         return self.belief_label
 
-    def snapshot(self, *, external_event: str, truth: str | None = None) -> TraceFrame:
+    def inspect_snapshot(
+        self,
+        *,
+        external_event: str,
+        truth: str | None = None,
+    ) -> TraceFrame:
+        """Project the current frame without recording or consuming audit buffers."""
+
         spark_rows: list[dict] = []
         for spark in self.sparks.values():
             # Inspection must not turn dormant Sparks into computational work.
@@ -525,7 +619,7 @@ class SparkBrain:
                 }
             )
 
-        frame = TraceFrame(
+        return TraceFrame(
             time=self.time,
             external_event=external_event,
             truth=truth,
@@ -555,6 +649,10 @@ class SparkBrain:
                 "active_spark_fraction": len(self._updated_since_frame) / max(1, len(self.sparks)),
             },
         )
+    def snapshot(self, *, external_event: str, truth: str | None = None) -> TraceFrame:
+        """Capture and record a frame, preserving the existing public behavior."""
+
+        frame = self.inspect_snapshot(external_event=external_event, truth=truth)
         self.trace.append(frame)
         self._fired_since_frame.clear()
         self._active_edges_since_frame.clear()
@@ -646,18 +744,12 @@ class SparkBrain:
         }
 
     @classmethod
-    def from_state_dict(cls, state: dict) -> "SparkBrain":
-        schema_version = str(state.get("schema_version", ""))
-        if schema_version != SCHEMA_VERSION:
-            raise ValueError(f"Unsupported state schema: {schema_version!r}")
-        config_payload = state.get("config")
-        if not isinstance(config_payload, dict):
-            raise ValueError("State config must be an object")
+    def from_state_dict(cls, state: dict) -> SparkBrain:
+        validate_state_payload(state)
+        config_payload = dict(state["config"])
         brain = cls(BrainConfig(**config_payload))
 
-        spark_payload = state.get("sparks")
-        if not isinstance(spark_payload, list):
-            raise ValueError("State sparks must be a list")
+        spark_payload = state["sparks"]
         for raw in spark_payload:
             row = dict(raw)
             kind = SparkKind(row.pop("kind"))
@@ -671,60 +763,54 @@ class SparkBrain:
             }
             brain.add_spark(Spark(kind=kind, **row))
 
-        connection_payload = state.get("connections")
-        if not isinstance(connection_payload, list):
-            raise ValueError("State connections must be a list")
+        connection_payload = state["connections"]
         for raw in connection_payload:
             row = dict(raw)
             eligibility = float(row.pop("eligibility", 0.0))
             edge = brain.connect(**row)
             edge.eligibility = eligibility
 
-        for listener in state.get("broadcast_listeners", []):
+        for listener in state["broadcast_listeners"]:
             brain.register_broadcast_listener(str(listener))
 
-        queue_payload = state.get("queue", [])
-        if not isinstance(queue_payload, list):
-            raise ValueError("State queue must be a list")
+        queue_payload = state["queue"]
         brain._queue = []
         for raw in queue_payload:
             row = dict(raw)
             row["kind"] = EventKind(row["kind"])
             heapq.heappush(brain._queue, Event(**row))
 
-        brain._sequence = int(state.get("next_sequence", 0))
+        brain._sequence = int(state["next_sequence"])
         if brain._queue:
             brain._sequence = max(
                 brain._sequence,
                 max(event.sequence for event in brain._queue) + 1,
             )
-        brain.time = float(state.get("time", 0.0))
-        brain._active_hypotheses = set(state.get("active_hypotheses", []))
+        brain.time = float(state["time"])
+        brain._active_hypotheses = set(state["active_hypotheses"])
         brain._stability = defaultdict(
             int,
-            {str(key): int(value) for key, value in dict(state.get("stability", {})).items()},
+            {str(key): int(value) for key, value in dict(state["stability"]).items()},
         )
-        brain._last_top_hypothesis = state.get("last_top_hypothesis")
-        last_ignition_time = state.get("last_ignition_time")
+        brain._last_top_hypothesis = state["last_top_hypothesis"]
+        last_ignition_time = state["last_ignition_time"]
         brain._last_ignition_time = (
             -math.inf if last_ignition_time is None else float(last_ignition_time)
         )
-        brain._last_ignition_hypothesis = state.get("last_ignition_hypothesis")
-        brain.workspace = [WorkspaceItem(**row) for row in state.get("workspace", [])]
-        brain.ignitions = [Ignition(**row) for row in state.get("ignitions", [])]
-        brain.last_coalitions = [Coalition(**row) for row in state.get("last_coalitions", [])]
-        brain.belief_label = state.get("belief_label")
-        brain.stats = EngineStats(**dict(state.get("stats", {})))
-        brain.trace = [TraceFrame(**row) for row in state.get("trace", [])]
-        brain._fired_since_frame = list(state.get("fired_since_frame", []))
+        brain._last_ignition_hypothesis = state["last_ignition_hypothesis"]
+        brain.workspace = [WorkspaceItem(**row) for row in state["workspace"]]
+        brain.ignitions = [Ignition(**row) for row in state["ignitions"]]
+        brain.last_coalitions = [Coalition(**row) for row in state["last_coalitions"]]
+        brain.belief_label = state["belief_label"]
+        brain.stats = EngineStats(**dict(state["stats"]))
+        brain.trace = [TraceFrame(**row) for row in state["trace"]]
+        brain._fired_since_frame = list(state["fired_since_frame"])
         brain._active_edges_since_frame = [
             (str(row[0]), str(row[1]), float(row[2]))
-            for row in state.get("active_edges_since_frame", [])
+            for row in state["active_edges_since_frame"]
         ]
-        brain._updated_since_frame = set(state.get("updated_since_frame", []))
-        random_state = state.get("random_state")
-        if random_state is not None:
-            brain.random.setstate(_restore_tuple(random_state))
+        brain._updated_since_frame = set(state["updated_since_frame"])
+        brain.random.setstate(_restore_tuple(state["random_state"]))
 
         validate_graph(brain.sparks.values(), brain.connections, brain.broadcast_listeners)
         unknown_active = brain._active_hypotheses - set(brain.sparks)
@@ -735,3 +821,9 @@ class SparkBrain:
                 raise ValueError(f"Queued event targets unknown Spark: {event.target}")
         return brain
 
+    def load_state_dict(self, state: dict) -> None:
+        """Replace this instance with a fully validated checkpoint state."""
+
+        restored = type(self).from_state_dict(state)
+        self.__dict__.clear()
+        self.__dict__.update(restored.__dict__)

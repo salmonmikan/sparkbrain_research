@@ -1,0 +1,117 @@
+{
+  "completed": true,
+  "determinism": [
+    {
+      "deterministic_algorithms": true,
+      "seed": 101,
+      "threads": 1,
+      "torch_version": "2.13.0+cpu"
+    },
+    {
+      "deterministic_algorithms": true,
+      "seed": 211,
+      "threads": 1,
+      "torch_version": "2.13.0+cpu"
+    },
+    {
+      "deterministic_algorithms": true,
+      "seed": 307,
+      "threads": 1,
+      "torch_version": "2.13.0+cpu"
+    },
+    {
+      "deterministic_algorithms": true,
+      "seed": 401,
+      "threads": 1,
+      "torch_version": "2.13.0+cpu"
+    },
+    {
+      "deterministic_algorithms": true,
+      "seed": 503,
+      "threads": 1,
+      "torch_version": "2.13.0+cpu"
+    }
+  ],
+  "elapsed_seconds": 29.72525969997514,
+  "episode_manifest_hashes": {
+    "dev": "3f83a56e615f12231b9f7a84f94ebb7b244637fc480f417cac4593f6050f93c4",
+    "test": "1b2daa27f88aeafc0afe0506e8f446d93682df2aa3b54debf94ba4f19ec0bc6b"
+  },
+  "frozen_input_sha256_after": {
+    "artifacts/phase1/c02-main-1000/run_manifest.json": "f838fc13af0466c7c390a4d74c5a469ddb429c4ec8adda867e0d8c149bea96a1",
+    "artifacts/phase1/c02-main-1000/split_manifest.json": "8dd47a7c78be8600f3e5fa5bfd125b88e2bdaf5562596490e7e2019811a17ffe",
+    "configs/experiments/phase1/manifests/dev-v1.json": "968593ff7c5f4274aaeb416bd58200e8625218d1a0179a1dff8a31d1b82a85a8",
+    "configs/experiments/phase1/manifests/test-v1.json": "3815f3857c485fb6c596f496c00ce36c437ee3b17fd97105d0fb729ff16e9e20"
+  },
+  "frozen_input_sha256_before": {
+    "artifacts/phase1/c02-main-1000/run_manifest.json": "f838fc13af0466c7c390a4d74c5a469ddb429c4ec8adda867e0d8c149bea96a1",
+    "artifacts/phase1/c02-main-1000/split_manifest.json": "8dd47a7c78be8600f3e5fa5bfd125b88e2bdaf5562596490e7e2019811a17ffe",
+    "configs/experiments/phase1/manifests/dev-v1.json": "968593ff7c5f4274aaeb416bd58200e8625218d1a0179a1dff8a31d1b82a85a8",
+    "configs/experiments/phase1/manifests/test-v1.json": "3815f3857c485fb6c596f496c00ce36c437ee3b17fd97105d0fb729ff16e9e20"
+  },
+  "frozen_inputs_unchanged": true,
+  "input_hashes": {
+    "dev": "28d8bd6d1ede2095323dd508f8082f30b466b7310ff42c6e26c89d48f2a93b92",
+    "test": "0ac28c7b146eb945ab48baab8d66743bae0daddf3e959a0f448e29e8fd9bf40a",
+    "train": "715398c55658bf32cab1f55fe4b9a38a57aae51752b883852ed4e422742f9878"
+  },
+  "input_hashes_by_family": {
+    "accumulator": {
+      "dev": "28d8bd6d1ede2095323dd508f8082f30b466b7310ff42c6e26c89d48f2a93b92",
+      "test": "0ac28c7b146eb945ab48baab8d66743bae0daddf3e959a0f448e29e8fd9bf40a",
+      "train": "715398c55658bf32cab1f55fe4b9a38a57aae51752b883852ed4e422742f9878"
+    },
+    "causal_transformer_context64": {
+      "dev": "28d8bd6d1ede2095323dd508f8082f30b466b7310ff42c6e26c89d48f2a93b92",
+      "test": "0ac28c7b146eb945ab48baab8d66743bae0daddf3e959a0f448e29e8fd9bf40a",
+      "train": "715398c55658bf32cab1f55fe4b9a38a57aae51752b883852ed4e422742f9878"
+    },
+    "chance": {
+      "dev": "28d8bd6d1ede2095323dd508f8082f30b466b7310ff42c6e26c89d48f2a93b92",
+      "test": "0ac28c7b146eb945ab48baab8d66743bae0daddf3e959a0f448e29e8fd9bf40a",
+      "train": "715398c55658bf32cab1f55fe4b9a38a57aae51752b883852ed4e422742f9878"
+    },
+    "explicit_state_memory": {
+      "dev": "28d8bd6d1ede2095323dd508f8082f30b466b7310ff42c6e26c89d48f2a93b92",
+      "test": "0ac28c7b146eb945ab48baab8d66743bae0daddf3e959a0f448e29e8fd9bf40a",
+      "train": "715398c55658bf32cab1f55fe4b9a38a57aae51752b883852ed4e422742f9878"
+    },
+    "gru": {
+      "dev": "28d8bd6d1ede2095323dd508f8082f30b466b7310ff42c6e26c89d48f2a93b92",
+      "test": "0ac28c7b146eb945ab48baab8d66743bae0daddf3e959a0f448e29e8fd9bf40a",
+      "train": "715398c55658bf32cab1f55fe4b9a38a57aae51752b883852ed4e422742f9878"
+    },
+    "laplace_hmm": {
+      "dev": "28d8bd6d1ede2095323dd508f8082f30b466b7310ff42c6e26c89d48f2a93b92",
+      "test": "0ac28c7b146eb945ab48baab8d66743bae0daddf3e959a0f448e29e8fd9bf40a",
+      "train": "715398c55658bf32cab1f55fe4b9a38a57aae51752b883852ed4e422742f9878"
+    },
+    "lstm": {
+      "dev": "28d8bd6d1ede2095323dd508f8082f30b466b7310ff42c6e26c89d48f2a93b92",
+      "test": "0ac28c7b146eb945ab48baab8d66743bae0daddf3e959a0f448e29e8fd9bf40a",
+      "train": "715398c55658bf32cab1f55fe4b9a38a57aae51752b883852ed4e422742f9878"
+    },
+    "oracle": {
+      "dev": "28d8bd6d1ede2095323dd508f8082f30b466b7310ff42c6e26c89d48f2a93b92",
+      "test": "0ac28c7b146eb945ab48baab8d66743bae0daddf3e959a0f448e29e8fd9bf40a",
+      "train": "715398c55658bf32cab1f55fe4b9a38a57aae51752b883852ed4e422742f9878"
+    },
+    "privileged_bayes": {
+      "dev": "28d8bd6d1ede2095323dd508f8082f30b466b7310ff42c6e26c89d48f2a93b92",
+      "test": "0ac28c7b146eb945ab48baab8d66743bae0daddf3e959a0f448e29e8fd9bf40a",
+      "train": "715398c55658bf32cab1f55fe4b9a38a57aae51752b883852ed4e422742f9878"
+    },
+    "rim_like_top2_of4": {
+      "dev": "28d8bd6d1ede2095323dd508f8082f30b466b7310ff42c6e26c89d48f2a93b92",
+      "test": "0ac28c7b146eb945ab48baab8d66743bae0daddf3e959a0f448e29e8fd9bf40a",
+      "train": "715398c55658bf32cab1f55fe4b9a38a57aae51752b883852ed4e422742f9878"
+    }
+  },
+  "network_required": false,
+  "platform": "Windows-11-10.0.26200-SP0",
+  "profile": "acceptance",
+  "python": "3.13.3",
+  "run_id": "c05-acceptance-final",
+  "schema_version": "0.1",
+  "test_used_for_selection": false
+}

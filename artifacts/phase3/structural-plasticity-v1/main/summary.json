@@ -1,0 +1,1736 @@
+{
+  "acceptance": {
+    "activation_intervention": true,
+    "actual_edge_counters": true,
+    "bounded_capacity": true,
+    "budget_sensitivity_recorded": true,
+    "degree_matched_control": true,
+    "deterministic_events_serialized": true,
+    "dev_target_fixed_or_fail_closed": true,
+    "frozen_inputs_unchanged": true,
+    "gate_matrix_recorded": true,
+    "positive_or_valid_negative": true,
+    "random_control": true
+  },
+  "analyses": {
+    "dev_target_selection": {
+      "development_effects": {
+        "contradiction_world": 0.0,
+        "goal_conflict_world": 0.0,
+        "switchworld": 0.0
+      },
+      "fail_closed": true,
+      "selected_world": null,
+      "selection_rule": "unique positive maximum development ablation impairment",
+      "test_worlds": [
+        "delayed_evidence_world",
+        "multi_object_world",
+        "reliability_world"
+      ]
+    },
+    "functional_reuse_world_effects": {
+      "delayed_evidence_world": 0.0,
+      "multi_object_world": 0.0,
+      "reliability_world": 0.0
+    },
+    "graph": {
+      "active_edges": 24,
+      "active_modules": 17,
+      "connected_components": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          3
+        ],
+        [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        [
+          12
+        ],
+        [
+          13
+        ],
+        [
+          14
+        ],
+        [
+          15
+        ],
+        [
+          16
+        ],
+        [
+          17
+        ]
+      ],
+      "degrees": {
+        "0": 2,
+        "1": 2,
+        "10": 4,
+        "11": 3,
+        "12": 2,
+        "13": 2,
+        "14": 2,
+        "15": 2,
+        "16": 2,
+        "17": 2,
+        "3": 2,
+        "4": 3,
+        "5": 4,
+        "6": 4,
+        "7": 4,
+        "8": 4,
+        "9": 4
+      },
+      "directed_density": 0.08304498269896193,
+      "erdos_renyi_density_null": 0.08304498269896193,
+      "fragmented": true
+    },
+    "selectivity": {
+      "measure": "mutual_information(candidate_routed, world_id)",
+      "observed": 0.0,
+      "permutation_null_mean": 0.0,
+      "permutations": 50,
+      "post_hoc_only": true,
+      "used_for_candidate_discovery": false
+    },
+    "specialization_load_balance_tradeoff": {
+      "activation_effect": 0.0,
+      "active_edges": 24,
+      "active_modules": 17,
+      "candidate": [
+        9,
+        14
+      ],
+      "target_impairment": 0.0
+    }
+  },
+  "frozen_inputs": {
+    "dev_manifest": "968593ff7c5f4274aaeb416bd58200e8625218d1a0179a1dff8a31d1b82a85a8",
+    "source_checkpoint": "15be1b56f527cb3b46a0c0b089472c2f45e82177a90a96844c303bb7b49c770e",
+    "source_config": "8c659c8f93b6a90c7c8b957fef7e2b35d4299e8ade887a8ff537bd96d4ea7e60",
+    "test_manifest": "3815f3857c485fb6c596f496c00ce36c437ee3b17fd97105d0fb729ff16e9e20"
+  },
+  "gates": {
+    "decisiveness": {
+      "observed": 0.0,
+      "passed": false,
+      "threshold": 0.05
+    },
+    "fertility": {
+      "observed": 0.008928571428571397,
+      "passed": false,
+      "threshold": 0.01
+    },
+    "multiplicity": {
+      "dev_functional_effect_signatures": [
+        {
+          "contradiction_world": 0.0,
+          "goal_conflict_world": 0.0,
+          "switchworld": 0.0
+        },
+        {
+          "contradiction_world": 0.0,
+          "goal_conflict_world": 0.0,
+          "switchworld": 0.0
+        }
+      ],
+      "lineage_consistent": true,
+      "lineage_signatures": [
+        [
+          [
+            "source:9"
+          ],
+          [
+            "source:9"
+          ]
+        ],
+        [
+          [
+            "source:9"
+          ],
+          [
+            "source:9"
+          ]
+        ]
+      ],
+      "observed": 2,
+      "passed": true,
+      "slot_sets_consistent": true,
+      "threshold": 2
+    },
+    "specificity": {
+      "dev_target_world": null,
+      "fail_closed_reason": "dev target unavailable or absent from held-out test families",
+      "passed": false,
+      "target_impairment": null,
+      "target_minimum": 0.02,
+      "target_present_in_test": false,
+      "unrelated_collateral": 0.0,
+      "unrelated_collateral_maximum": 0.02
+    }
+  },
+  "negative_findings": {
+    "allowed_wording": "candidate functional specialization",
+    "candidate_discovery_inputs": [
+      "routing_load",
+      "coactivation",
+      "edge_credit",
+      "confidence_delta"
+    ],
+    "claim_grade": "E0",
+    "prohibited_wording": "organs emerged",
+    "runtime_cap_reached": false,
+    "specialization_passed": false,
+    "test_threshold_tuning": false
+  },
+  "paired_controls": {
+    "activation_effect": 0.0,
+    "activation_intervention": {
+      "accuracy": 0.6532738095238095,
+      "accuracy_by_world": {
+        "delayed_evidence_world": 0.6919642857142857,
+        "multi_object_world": 0.41964285714285715,
+        "reliability_world": 0.8482142857142857
+      },
+      "counters": {
+        "conceptual_candidates": 12096,
+        "dense_tensor_ops": 1344,
+        "evaluated_edges": 2688,
+        "evaluated_messages": 2688,
+        "kernel_launch_estimate": 8064,
+        "observations": 672,
+        "peak_memory_bytes": 758112,
+        "selected_modules": 2688,
+        "state_updates": 2688,
+        "wall_clock_seconds": 0.2941171001875773
+      },
+      "coverage": 0.7931547619047619,
+      "episodes": 24,
+      "steps": 672
+    },
+    "candidate": [
+      9,
+      14
+    ],
+    "degree_impairment": 0.0,
+    "degree_matched": {
+      "accuracy": 0.6532738095238095,
+      "accuracy_by_world": {
+        "delayed_evidence_world": 0.6919642857142857,
+        "multi_object_world": 0.41964285714285715,
+        "reliability_world": 0.8482142857142857
+      },
+      "counters": {
+        "conceptual_candidates": 12096,
+        "dense_tensor_ops": 1344,
+        "evaluated_edges": 2688,
+        "evaluated_messages": 2688,
+        "kernel_launch_estimate": 8064,
+        "observations": 672,
+        "peak_memory_bytes": 758112,
+        "selected_modules": 2688,
+        "state_updates": 2688,
+        "wall_clock_seconds": 0.33124859898816794
+      },
+      "coverage": 0.7931547619047619,
+      "episodes": 24,
+      "steps": 672
+    },
+    "degree_matched_slots": [
+      4,
+      11
+    ],
+    "random": {
+      "accuracy": 0.6532738095238095,
+      "accuracy_by_world": {
+        "delayed_evidence_world": 0.6919642857142857,
+        "multi_object_world": 0.41964285714285715,
+        "reliability_world": 0.8482142857142857
+      },
+      "counters": {
+        "conceptual_candidates": 12096,
+        "dense_tensor_ops": 1344,
+        "evaluated_edges": 2688,
+        "evaluated_messages": 2688,
+        "kernel_launch_estimate": 8064,
+        "observations": 672,
+        "peak_memory_bytes": 758112,
+        "selected_modules": 2688,
+        "state_updates": 2688,
+        "wall_clock_seconds": 0.32713380036875606
+      },
+      "coverage": 0.7931547619047619,
+      "episodes": 24,
+      "steps": 672
+    },
+    "random_impairment": 0.0,
+    "random_slots": [
+      6,
+      7
+    ],
+    "source_c04": {
+      "accuracy": 0.6443452380952381,
+      "accuracy_by_world": {
+        "delayed_evidence_world": 0.6919642857142857,
+        "multi_object_world": 0.4375,
+        "reliability_world": 0.8035714285714286
+      },
+      "counters": {
+        "conceptual_candidates": 8064,
+        "dense_tensor_ops": 1344,
+        "evaluated_edges": 10752,
+        "evaluated_messages": 10752,
+        "kernel_launch_estimate": 8064,
+        "observations": 672,
+        "peak_memory_bytes": 726432,
+        "selected_modules": 2688,
+        "state_updates": 2688,
+        "wall_clock_seconds": 0.25566270120907575
+      },
+      "coverage": 0.7797619047619048,
+      "episodes": 24,
+      "steps": 672
+    },
+    "target_impairment": 0.0,
+    "targeted": {
+      "accuracy": 0.6532738095238095,
+      "accuracy_by_world": {
+        "delayed_evidence_world": 0.6919642857142857,
+        "multi_object_world": 0.41964285714285715,
+        "reliability_world": 0.8482142857142857
+      },
+      "counters": {
+        "conceptual_candidates": 12096,
+        "dense_tensor_ops": 1344,
+        "evaluated_edges": 2688,
+        "evaluated_messages": 2688,
+        "kernel_launch_estimate": 8064,
+        "observations": 672,
+        "peak_memory_bytes": 758112,
+        "selected_modules": 2688,
+        "state_updates": 2688,
+        "wall_clock_seconds": 0.2936639008112252
+      },
+      "coverage": 0.7931547619047619,
+      "episodes": 24,
+      "steps": 672
+    },
+    "unablated": {
+      "accuracy": 0.6532738095238095,
+      "accuracy_by_world": {
+        "delayed_evidence_world": 0.6919642857142857,
+        "multi_object_world": 0.41964285714285715,
+        "reliability_world": 0.8482142857142857
+      },
+      "counters": {
+        "conceptual_candidates": 12096,
+        "dense_tensor_ops": 1344,
+        "evaluated_edges": 2688,
+        "evaluated_messages": 2688,
+        "kernel_launch_estimate": 8064,
+        "observations": 672,
+        "peak_memory_bytes": 758112,
+        "selected_modules": 2688,
+        "state_updates": 2688,
+        "wall_clock_seconds": 0.29408299864735454
+      },
+      "coverage": 0.7931547619047619,
+      "episodes": 24,
+      "steps": 672
+    },
+    "world_effects": {
+      "delayed_evidence_world": 0.0,
+      "multi_object_world": 0.0,
+      "reliability_world": 0.0
+    }
+  },
+  "runtime_seconds": 5.577253900002688,
+  "schema_version": "0.2",
+  "seed_runs": [
+    {
+      "active_edges": 24,
+      "active_modules": 17,
+      "candidate": [
+        9,
+        14
+      ],
+      "dev_functional_effect_signature": {
+        "contradiction_world": 0.0,
+        "goal_conflict_world": 0.0,
+        "switchworld": 0.0
+      },
+      "events_applied": 16,
+      "events_rejected": 20,
+      "history": [
+        {
+          "boundary": 1,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": null,
+          "score": 1.0,
+          "sequence": 1,
+          "source_slot": 1,
+          "status": "applied",
+          "target_slot": 2
+        },
+        {
+          "boundary": 1,
+          "kind": "duplicate",
+          "priority": 50,
+          "reason": "routing_load_high",
+          "rejection": null,
+          "score": 3.0,
+          "sequence": 0,
+          "source_slot": 3,
+          "status": "applied",
+          "target_slot": 12
+        },
+        {
+          "boundary": 2,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": "minimum_in_degree",
+          "score": 1.0,
+          "sequence": 3,
+          "source_slot": 2,
+          "status": "rejected",
+          "target_slot": 2
+        },
+        {
+          "boundary": 2,
+          "kind": "duplicate",
+          "priority": 50,
+          "reason": "routing_load_high",
+          "rejection": null,
+          "score": 3.2499999999999996,
+          "sequence": 2,
+          "source_slot": 9,
+          "status": "applied",
+          "target_slot": 13
+        },
+        {
+          "boundary": 3,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": "minimum_in_degree",
+          "score": 1.0,
+          "sequence": 5,
+          "source_slot": 2,
+          "status": "rejected",
+          "target_slot": 2
+        },
+        {
+          "boundary": 3,
+          "kind": "duplicate",
+          "priority": 50,
+          "reason": "routing_load_high",
+          "rejection": null,
+          "score": 3.5,
+          "sequence": 4,
+          "source_slot": 9,
+          "status": "applied",
+          "target_slot": 14
+        },
+        {
+          "boundary": 4,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": null,
+          "score": 1.0,
+          "sequence": 7,
+          "source_slot": 0,
+          "status": "applied",
+          "target_slot": 0
+        },
+        {
+          "boundary": 4,
+          "kind": "duplicate",
+          "priority": 50,
+          "reason": "routing_load_high",
+          "rejection": null,
+          "score": 3.75,
+          "sequence": 6,
+          "source_slot": 9,
+          "status": "applied",
+          "target_slot": 15
+        },
+        {
+          "boundary": 5,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": null,
+          "score": 1.0,
+          "sequence": 9,
+          "source_slot": 0,
+          "status": "applied",
+          "target_slot": 1
+        },
+        {
+          "boundary": 5,
+          "kind": "duplicate",
+          "priority": 50,
+          "reason": "routing_load_high",
+          "rejection": null,
+          "score": 4.0,
+          "sequence": 8,
+          "source_slot": 9,
+          "status": "applied",
+          "target_slot": 16
+        },
+        {
+          "boundary": 6,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": "minimum_in_degree",
+          "score": 1.0,
+          "sequence": 11,
+          "source_slot": 2,
+          "status": "rejected",
+          "target_slot": 2
+        },
+        {
+          "boundary": 6,
+          "kind": "duplicate",
+          "priority": 50,
+          "reason": "routing_load_high",
+          "rejection": null,
+          "score": 4.25,
+          "sequence": 10,
+          "source_slot": 9,
+          "status": "applied",
+          "target_slot": 17
+        },
+        {
+          "boundary": 7,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": "minimum_in_degree",
+          "score": 1.0,
+          "sequence": 12,
+          "source_slot": 1,
+          "status": "rejected",
+          "target_slot": 1
+        },
+        {
+          "boundary": 7,
+          "kind": "module_prune",
+          "priority": 20,
+          "reason": "load_low",
+          "rejection": null,
+          "score": 1.0,
+          "sequence": 13,
+          "source_slot": 0,
+          "status": "applied",
+          "target_slot": null
+        },
+        {
+          "boundary": 8,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": "minimum_in_degree",
+          "score": 1.0,
+          "sequence": 15,
+          "source_slot": 2,
+          "status": "rejected",
+          "target_slot": 2
+        },
+        {
+          "boundary": 8,
+          "kind": "duplicate",
+          "priority": 50,
+          "reason": "routing_load_high",
+          "rejection": null,
+          "score": 4.25,
+          "sequence": 14,
+          "source_slot": 14,
+          "status": "applied",
+          "target_slot": 0
+        },
+        {
+          "boundary": 9,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": "minimum_in_degree",
+          "score": 1.0,
+          "sequence": 16,
+          "source_slot": 2,
+          "status": "rejected",
+          "target_slot": 2
+        },
+        {
+          "boundary": 9,
+          "kind": "module_prune",
+          "priority": 20,
+          "reason": "load_low",
+          "rejection": null,
+          "score": 1.0,
+          "sequence": 17,
+          "source_slot": 2,
+          "status": "applied",
+          "target_slot": null
+        },
+        {
+          "boundary": 10,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": "minimum_in_degree",
+          "score": 1.0,
+          "sequence": 19,
+          "source_slot": 0,
+          "status": "rejected",
+          "target_slot": 0
+        },
+        {
+          "boundary": 10,
+          "kind": "duplicate",
+          "priority": 50,
+          "reason": "routing_load_high",
+          "rejection": null,
+          "score": 4.25,
+          "sequence": 18,
+          "source_slot": 13,
+          "status": "applied",
+          "target_slot": 2
+        },
+        {
+          "boundary": 11,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": "minimum_in_degree",
+          "score": 1.0,
+          "sequence": 20,
+          "source_slot": 3,
+          "status": "rejected",
+          "target_slot": 3
+        },
+        {
+          "boundary": 11,
+          "kind": "module_prune",
+          "priority": 20,
+          "reason": "load_low",
+          "rejection": null,
+          "score": 1.0,
+          "sequence": 21,
+          "source_slot": 3,
+          "status": "applied",
+          "target_slot": null
+        },
+        {
+          "boundary": 12,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": "minimum_in_degree",
+          "score": 1.0,
+          "sequence": 23,
+          "source_slot": 0,
+          "status": "rejected",
+          "target_slot": 0
+        },
+        {
+          "boundary": 12,
+          "kind": "duplicate",
+          "priority": 50,
+          "reason": "routing_load_high",
+          "rejection": null,
+          "score": 4.25,
+          "sequence": 22,
+          "source_slot": 15,
+          "status": "applied",
+          "target_slot": 3
+        },
+        {
+          "boundary": 13,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": "minimum_in_degree",
+          "score": 1.0,
+          "sequence": 24,
+          "source_slot": 2,
+          "status": "rejected",
+          "target_slot": 2
+        },
+        {
+          "boundary": 13,
+          "kind": "module_prune",
+          "priority": 20,
+          "reason": "load_low",
+          "rejection": null,
+          "score": 1.0,
+          "sequence": 25,
+          "source_slot": 2,
+          "status": "applied",
+          "target_slot": null
+        },
+        {
+          "boundary": 14,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": "run_budget",
+          "score": 1.0,
+          "sequence": 27,
+          "source_slot": 0,
+          "status": "rejected",
+          "target_slot": 0
+        },
+        {
+          "boundary": 14,
+          "kind": "duplicate",
+          "priority": 50,
+          "reason": "routing_load_high",
+          "rejection": "run_budget",
+          "score": 4.25,
+          "sequence": 26,
+          "source_slot": 3,
+          "status": "rejected",
+          "target_slot": 2
+        },
+        {
+          "boundary": 15,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": "run_budget",
+          "score": 1.0,
+          "sequence": 29,
+          "source_slot": 3,
+          "status": "rejected",
+          "target_slot": 3
+        },
+        {
+          "boundary": 15,
+          "kind": "duplicate",
+          "priority": 50,
+          "reason": "routing_load_high",
+          "rejection": "run_budget",
+          "score": 4.25,
+          "sequence": 28,
+          "source_slot": 13,
+          "status": "rejected",
+          "target_slot": 2
+        },
+        {
+          "boundary": 16,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": "run_budget",
+          "score": 1.0,
+          "sequence": 31,
+          "source_slot": 0,
+          "status": "rejected",
+          "target_slot": 0
+        },
+        {
+          "boundary": 16,
+          "kind": "duplicate",
+          "priority": 50,
+          "reason": "routing_load_high",
+          "rejection": "run_budget",
+          "score": 4.25,
+          "sequence": 30,
+          "source_slot": 3,
+          "status": "rejected",
+          "target_slot": 2
+        },
+        {
+          "boundary": 17,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": "run_budget",
+          "score": 1.0,
+          "sequence": 33,
+          "source_slot": 3,
+          "status": "rejected",
+          "target_slot": 3
+        },
+        {
+          "boundary": 17,
+          "kind": "duplicate",
+          "priority": 50,
+          "reason": "routing_load_high",
+          "rejection": "run_budget",
+          "score": 4.25,
+          "sequence": 32,
+          "source_slot": 0,
+          "status": "rejected",
+          "target_slot": 2
+        },
+        {
+          "boundary": 18,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": "run_budget",
+          "score": 1.0,
+          "sequence": 35,
+          "source_slot": 0,
+          "status": "rejected",
+          "target_slot": 0
+        },
+        {
+          "boundary": 18,
+          "kind": "duplicate",
+          "priority": 50,
+          "reason": "routing_load_high",
+          "rejection": "run_budget",
+          "score": 4.25,
+          "sequence": 34,
+          "source_slot": 9,
+          "status": "rejected",
+          "target_slot": 2
+        }
+      ],
+      "identities": [
+        {
+          "created_by": null,
+          "logical_id": "source:1",
+          "parents": [],
+          "slot": 1,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        },
+        {
+          "created_by": null,
+          "logical_id": "source:4",
+          "parents": [],
+          "slot": 4,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        },
+        {
+          "created_by": null,
+          "logical_id": "source:5",
+          "parents": [],
+          "slot": 5,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        },
+        {
+          "created_by": null,
+          "logical_id": "source:6",
+          "parents": [],
+          "slot": 6,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        },
+        {
+          "created_by": null,
+          "logical_id": "source:7",
+          "parents": [],
+          "slot": 7,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        },
+        {
+          "created_by": null,
+          "logical_id": "source:8",
+          "parents": [],
+          "slot": 8,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        },
+        {
+          "created_by": null,
+          "logical_id": "source:9",
+          "parents": [],
+          "slot": 9,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        },
+        {
+          "created_by": null,
+          "logical_id": "source:10",
+          "parents": [],
+          "slot": 10,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        },
+        {
+          "created_by": null,
+          "logical_id": "source:11",
+          "parents": [],
+          "slot": 11,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        },
+        {
+          "created_by": 0,
+          "logical_id": "struct:83:12",
+          "parents": [
+            "source:3"
+          ],
+          "slot": 12,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        },
+        {
+          "created_by": 2,
+          "logical_id": "struct:83:13",
+          "parents": [
+            "source:9"
+          ],
+          "slot": 13,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        },
+        {
+          "created_by": 4,
+          "logical_id": "struct:83:14",
+          "parents": [
+            "source:9"
+          ],
+          "slot": 14,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        },
+        {
+          "created_by": 6,
+          "logical_id": "struct:83:15",
+          "parents": [
+            "source:9"
+          ],
+          "slot": 15,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        },
+        {
+          "created_by": 8,
+          "logical_id": "struct:83:16",
+          "parents": [
+            "source:9"
+          ],
+          "slot": 16,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        },
+        {
+          "created_by": 10,
+          "logical_id": "struct:83:17",
+          "parents": [
+            "source:9"
+          ],
+          "slot": 17,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        },
+        {
+          "created_by": 14,
+          "logical_id": "struct:83:18",
+          "parents": [
+            "struct:83:14"
+          ],
+          "slot": 0,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        },
+        {
+          "created_by": 22,
+          "logical_id": "struct:83:20",
+          "parents": [
+            "struct:83:15"
+          ],
+          "slot": 3,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        }
+      ],
+      "lineage_signature": [
+        [
+          "source:9"
+        ],
+        [
+          "source:9"
+        ]
+      ],
+      "seed": 83,
+      "tombstones": [
+        {
+          "created_by": null,
+          "logical_id": "source:0",
+          "parents": [],
+          "slot": 0,
+          "status": "tombstone",
+          "tombstone_reason": "pruned",
+          "version": 1
+        },
+        {
+          "created_by": null,
+          "logical_id": "source:2",
+          "parents": [],
+          "slot": 2,
+          "status": "tombstone",
+          "tombstone_reason": "pruned",
+          "version": 1
+        },
+        {
+          "created_by": null,
+          "logical_id": "source:3",
+          "parents": [],
+          "slot": 3,
+          "status": "tombstone",
+          "tombstone_reason": "pruned",
+          "version": 1
+        },
+        {
+          "created_by": 18,
+          "logical_id": "struct:83:19",
+          "parents": [
+            "struct:83:13"
+          ],
+          "slot": 2,
+          "status": "tombstone",
+          "tombstone_reason": "pruned",
+          "version": 1
+        }
+      ]
+    },
+    {
+      "active_edges": 24,
+      "active_modules": 17,
+      "candidate": [
+        9,
+        14
+      ],
+      "dev_functional_effect_signature": {
+        "contradiction_world": 0.0,
+        "goal_conflict_world": 0.0,
+        "switchworld": 0.0
+      },
+      "events_applied": 16,
+      "events_rejected": 20,
+      "history": [
+        {
+          "boundary": 1,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": null,
+          "score": 1.0,
+          "sequence": 1,
+          "source_slot": 1,
+          "status": "applied",
+          "target_slot": 2
+        },
+        {
+          "boundary": 1,
+          "kind": "duplicate",
+          "priority": 50,
+          "reason": "routing_load_high",
+          "rejection": null,
+          "score": 3.0,
+          "sequence": 0,
+          "source_slot": 3,
+          "status": "applied",
+          "target_slot": 12
+        },
+        {
+          "boundary": 2,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": "minimum_in_degree",
+          "score": 1.0,
+          "sequence": 3,
+          "source_slot": 2,
+          "status": "rejected",
+          "target_slot": 2
+        },
+        {
+          "boundary": 2,
+          "kind": "duplicate",
+          "priority": 50,
+          "reason": "routing_load_high",
+          "rejection": null,
+          "score": 3.2499999999999996,
+          "sequence": 2,
+          "source_slot": 9,
+          "status": "applied",
+          "target_slot": 13
+        },
+        {
+          "boundary": 3,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": "minimum_in_degree",
+          "score": 1.0,
+          "sequence": 5,
+          "source_slot": 2,
+          "status": "rejected",
+          "target_slot": 2
+        },
+        {
+          "boundary": 3,
+          "kind": "duplicate",
+          "priority": 50,
+          "reason": "routing_load_high",
+          "rejection": null,
+          "score": 3.5,
+          "sequence": 4,
+          "source_slot": 9,
+          "status": "applied",
+          "target_slot": 14
+        },
+        {
+          "boundary": 4,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": null,
+          "score": 1.0,
+          "sequence": 7,
+          "source_slot": 0,
+          "status": "applied",
+          "target_slot": 0
+        },
+        {
+          "boundary": 4,
+          "kind": "duplicate",
+          "priority": 50,
+          "reason": "routing_load_high",
+          "rejection": null,
+          "score": 3.75,
+          "sequence": 6,
+          "source_slot": 9,
+          "status": "applied",
+          "target_slot": 15
+        },
+        {
+          "boundary": 5,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": null,
+          "score": 1.0,
+          "sequence": 9,
+          "source_slot": 0,
+          "status": "applied",
+          "target_slot": 1
+        },
+        {
+          "boundary": 5,
+          "kind": "duplicate",
+          "priority": 50,
+          "reason": "routing_load_high",
+          "rejection": null,
+          "score": 4.0,
+          "sequence": 8,
+          "source_slot": 9,
+          "status": "applied",
+          "target_slot": 16
+        },
+        {
+          "boundary": 6,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": "minimum_in_degree",
+          "score": 1.0,
+          "sequence": 11,
+          "source_slot": 2,
+          "status": "rejected",
+          "target_slot": 2
+        },
+        {
+          "boundary": 6,
+          "kind": "duplicate",
+          "priority": 50,
+          "reason": "routing_load_high",
+          "rejection": null,
+          "score": 4.25,
+          "sequence": 10,
+          "source_slot": 9,
+          "status": "applied",
+          "target_slot": 17
+        },
+        {
+          "boundary": 7,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": "minimum_in_degree",
+          "score": 1.0,
+          "sequence": 12,
+          "source_slot": 1,
+          "status": "rejected",
+          "target_slot": 1
+        },
+        {
+          "boundary": 7,
+          "kind": "module_prune",
+          "priority": 20,
+          "reason": "load_low",
+          "rejection": null,
+          "score": 1.0,
+          "sequence": 13,
+          "source_slot": 0,
+          "status": "applied",
+          "target_slot": null
+        },
+        {
+          "boundary": 8,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": "minimum_in_degree",
+          "score": 1.0,
+          "sequence": 15,
+          "source_slot": 2,
+          "status": "rejected",
+          "target_slot": 2
+        },
+        {
+          "boundary": 8,
+          "kind": "duplicate",
+          "priority": 50,
+          "reason": "routing_load_high",
+          "rejection": null,
+          "score": 4.25,
+          "sequence": 14,
+          "source_slot": 14,
+          "status": "applied",
+          "target_slot": 0
+        },
+        {
+          "boundary": 9,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": "minimum_in_degree",
+          "score": 1.0,
+          "sequence": 16,
+          "source_slot": 2,
+          "status": "rejected",
+          "target_slot": 2
+        },
+        {
+          "boundary": 9,
+          "kind": "module_prune",
+          "priority": 20,
+          "reason": "load_low",
+          "rejection": null,
+          "score": 1.0,
+          "sequence": 17,
+          "source_slot": 2,
+          "status": "applied",
+          "target_slot": null
+        },
+        {
+          "boundary": 10,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": "minimum_in_degree",
+          "score": 1.0,
+          "sequence": 19,
+          "source_slot": 0,
+          "status": "rejected",
+          "target_slot": 0
+        },
+        {
+          "boundary": 10,
+          "kind": "duplicate",
+          "priority": 50,
+          "reason": "routing_load_high",
+          "rejection": null,
+          "score": 4.25,
+          "sequence": 18,
+          "source_slot": 13,
+          "status": "applied",
+          "target_slot": 2
+        },
+        {
+          "boundary": 11,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": "minimum_in_degree",
+          "score": 1.0,
+          "sequence": 20,
+          "source_slot": 3,
+          "status": "rejected",
+          "target_slot": 3
+        },
+        {
+          "boundary": 11,
+          "kind": "module_prune",
+          "priority": 20,
+          "reason": "load_low",
+          "rejection": null,
+          "score": 1.0,
+          "sequence": 21,
+          "source_slot": 3,
+          "status": "applied",
+          "target_slot": null
+        },
+        {
+          "boundary": 12,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": "minimum_in_degree",
+          "score": 1.0,
+          "sequence": 23,
+          "source_slot": 0,
+          "status": "rejected",
+          "target_slot": 0
+        },
+        {
+          "boundary": 12,
+          "kind": "duplicate",
+          "priority": 50,
+          "reason": "routing_load_high",
+          "rejection": null,
+          "score": 4.25,
+          "sequence": 22,
+          "source_slot": 15,
+          "status": "applied",
+          "target_slot": 3
+        },
+        {
+          "boundary": 13,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": "minimum_in_degree",
+          "score": 1.0,
+          "sequence": 24,
+          "source_slot": 2,
+          "status": "rejected",
+          "target_slot": 2
+        },
+        {
+          "boundary": 13,
+          "kind": "module_prune",
+          "priority": 20,
+          "reason": "load_low",
+          "rejection": null,
+          "score": 1.0,
+          "sequence": 25,
+          "source_slot": 2,
+          "status": "applied",
+          "target_slot": null
+        },
+        {
+          "boundary": 14,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": "run_budget",
+          "score": 1.0,
+          "sequence": 27,
+          "source_slot": 0,
+          "status": "rejected",
+          "target_slot": 0
+        },
+        {
+          "boundary": 14,
+          "kind": "duplicate",
+          "priority": 50,
+          "reason": "routing_load_high",
+          "rejection": "run_budget",
+          "score": 4.25,
+          "sequence": 26,
+          "source_slot": 3,
+          "status": "rejected",
+          "target_slot": 2
+        },
+        {
+          "boundary": 15,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": "run_budget",
+          "score": 1.0,
+          "sequence": 29,
+          "source_slot": 3,
+          "status": "rejected",
+          "target_slot": 3
+        },
+        {
+          "boundary": 15,
+          "kind": "duplicate",
+          "priority": 50,
+          "reason": "routing_load_high",
+          "rejection": "run_budget",
+          "score": 4.25,
+          "sequence": 28,
+          "source_slot": 13,
+          "status": "rejected",
+          "target_slot": 2
+        },
+        {
+          "boundary": 16,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": "run_budget",
+          "score": 1.0,
+          "sequence": 31,
+          "source_slot": 0,
+          "status": "rejected",
+          "target_slot": 0
+        },
+        {
+          "boundary": 16,
+          "kind": "duplicate",
+          "priority": 50,
+          "reason": "routing_load_high",
+          "rejection": "run_budget",
+          "score": 4.25,
+          "sequence": 30,
+          "source_slot": 3,
+          "status": "rejected",
+          "target_slot": 2
+        },
+        {
+          "boundary": 17,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": "run_budget",
+          "score": 1.0,
+          "sequence": 33,
+          "source_slot": 3,
+          "status": "rejected",
+          "target_slot": 3
+        },
+        {
+          "boundary": 17,
+          "kind": "duplicate",
+          "priority": 50,
+          "reason": "routing_load_high",
+          "rejection": "run_budget",
+          "score": 4.25,
+          "sequence": 32,
+          "source_slot": 0,
+          "status": "rejected",
+          "target_slot": 2
+        },
+        {
+          "boundary": 18,
+          "kind": "edge_prune",
+          "priority": 10,
+          "reason": "edge_credit_low",
+          "rejection": "run_budget",
+          "score": 1.0,
+          "sequence": 35,
+          "source_slot": 0,
+          "status": "rejected",
+          "target_slot": 0
+        },
+        {
+          "boundary": 18,
+          "kind": "duplicate",
+          "priority": 50,
+          "reason": "routing_load_high",
+          "rejection": "run_budget",
+          "score": 4.25,
+          "sequence": 34,
+          "source_slot": 9,
+          "status": "rejected",
+          "target_slot": 2
+        }
+      ],
+      "identities": [
+        {
+          "created_by": null,
+          "logical_id": "source:1",
+          "parents": [],
+          "slot": 1,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        },
+        {
+          "created_by": null,
+          "logical_id": "source:4",
+          "parents": [],
+          "slot": 4,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        },
+        {
+          "created_by": null,
+          "logical_id": "source:5",
+          "parents": [],
+          "slot": 5,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        },
+        {
+          "created_by": null,
+          "logical_id": "source:6",
+          "parents": [],
+          "slot": 6,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        },
+        {
+          "created_by": null,
+          "logical_id": "source:7",
+          "parents": [],
+          "slot": 7,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        },
+        {
+          "created_by": null,
+          "logical_id": "source:8",
+          "parents": [],
+          "slot": 8,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        },
+        {
+          "created_by": null,
+          "logical_id": "source:9",
+          "parents": [],
+          "slot": 9,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        },
+        {
+          "created_by": null,
+          "logical_id": "source:10",
+          "parents": [],
+          "slot": 10,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        },
+        {
+          "created_by": null,
+          "logical_id": "source:11",
+          "parents": [],
+          "slot": 11,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        },
+        {
+          "created_by": 0,
+          "logical_id": "struct:89:12",
+          "parents": [
+            "source:3"
+          ],
+          "slot": 12,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        },
+        {
+          "created_by": 2,
+          "logical_id": "struct:89:13",
+          "parents": [
+            "source:9"
+          ],
+          "slot": 13,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        },
+        {
+          "created_by": 4,
+          "logical_id": "struct:89:14",
+          "parents": [
+            "source:9"
+          ],
+          "slot": 14,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        },
+        {
+          "created_by": 6,
+          "logical_id": "struct:89:15",
+          "parents": [
+            "source:9"
+          ],
+          "slot": 15,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        },
+        {
+          "created_by": 8,
+          "logical_id": "struct:89:16",
+          "parents": [
+            "source:9"
+          ],
+          "slot": 16,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        },
+        {
+          "created_by": 10,
+          "logical_id": "struct:89:17",
+          "parents": [
+            "source:9"
+          ],
+          "slot": 17,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        },
+        {
+          "created_by": 14,
+          "logical_id": "struct:89:18",
+          "parents": [
+            "struct:89:14"
+          ],
+          "slot": 0,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        },
+        {
+          "created_by": 22,
+          "logical_id": "struct:89:20",
+          "parents": [
+            "struct:89:15"
+          ],
+          "slot": 3,
+          "status": "active",
+          "tombstone_reason": null,
+          "version": 1
+        }
+      ],
+      "lineage_signature": [
+        [
+          "source:9"
+        ],
+        [
+          "source:9"
+        ]
+      ],
+      "seed": 89,
+      "tombstones": [
+        {
+          "created_by": null,
+          "logical_id": "source:0",
+          "parents": [],
+          "slot": 0,
+          "status": "tombstone",
+          "tombstone_reason": "pruned",
+          "version": 1
+        },
+        {
+          "created_by": null,
+          "logical_id": "source:2",
+          "parents": [],
+          "slot": 2,
+          "status": "tombstone",
+          "tombstone_reason": "pruned",
+          "version": 1
+        },
+        {
+          "created_by": null,
+          "logical_id": "source:3",
+          "parents": [],
+          "slot": 3,
+          "status": "tombstone",
+          "tombstone_reason": "pruned",
+          "version": 1
+        },
+        {
+          "created_by": 18,
+          "logical_id": "struct:89:19",
+          "parents": [
+            "struct:89:13"
+          ],
+          "slot": 2,
+          "status": "tombstone",
+          "tombstone_reason": "pruned",
+          "version": 1
+        }
+      ]
+    }
+  ],
+  "specialization_passed": false,
+  "structural_config": {
+    "active_k": 4,
+    "credit_decay": 0.9,
+    "decisiveness_margin": 0.05,
+    "enabled_events": [
+      "create",
+      "duplicate",
+      "split",
+      "merge",
+      "edge_grow",
+      "edge_prune",
+      "module_prune"
+    ],
+    "fertility_min_effect": 0.01,
+    "grow_credit": 0.08,
+    "homeostasis_rate": 0.05,
+    "load_high": 1.65,
+    "load_low": 0.12,
+    "max_active_edges": 96,
+    "max_events_per_boundary": 2,
+    "max_events_total": 16,
+    "max_modules": 18,
+    "min_in_degree": 1,
+    "min_live_modules": 6,
+    "multiplicity_min_seeds": 2,
+    "prune_credit": 0.005,
+    "reward_eligibility": false,
+    "schema_version": "0.2",
+    "seed": 83,
+    "source_modules": 12,
+    "specificity_margin": 0.02,
+    "unrelated_collateral_max": 0.02
+  }
+}

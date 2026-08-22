@@ -71,6 +71,32 @@ Data split must separate:
 - noise regimes
 - source identities
 
+C04 freezes the C02 dev/test manifests by SHA-256. Training and ignition calibration use
+disjoint development-seed ranges; threshold selection never reads test labels. The CPU smoke
+profile proves offline execution only. The main profile holds out ReliabilityWorld and
+DelayedEvidenceWorld from training, uses longer sequences, reports chance and training-majority
+baselines, and keeps accuracy separate from ignition coverage. Sparse counters distinguish
+candidate routes, selected state updates, evaluated selected edges/messages, remaining dense
+encoder/router operations, estimated launches, tracked memory, and wall-clock. Required
+ablations and coefficient sensitivity are machine-readable under `artifacts/phase2/`.
+
+### Phase 2.5 — Structural plasticity (C08)
+
+C08 freezes the accepted C04 checkpoint/config and C02 development/test manifests by SHA-256.
+Structural adaptation reads development episodes only. Candidate discovery is limited to
+routing load, coactivation, edge credit, and confidence delta; world/function/truth labels are
+excluded. Held-out results never select thresholds or candidates.
+
+The primary comparison is paired unablated, targeted candidate ablation, matched random
+ablation, degree-matched ablation, activation intervention, and frozen C04 source evaluation.
+Multiplicity, decisiveness, fertility, and specificity thresholds are declared in config.
+Passing all four is required for a specialization claim; otherwise E0 and negative-result
+wording are mandatory. Graph fragmentation, permutation selectivity, event history, actual
+active-edge work, and event-budget sensitivity are recorded as diagnostics, not Gate overrides.
+Specificity fixes a unique positive target on development intervention data before test. Test
+then separately requires target impairment and caps unrelated collateral; a missing or tied
+development target fails closed.
+
 ### Phase 3 — External reasoning benchmarks
 
 Candidate tasks:
@@ -81,6 +107,35 @@ Candidate tasks:
 - partially observable control tasks
 
 External task adapters must preserve sequential evidence instead of flattening all premises into one input.
+
+#### C06 foundation contract
+
+Belief-R is the official `CAiRE/belief_r` Hugging Face test split pinned by full revision,
+size, SHA-256, CSV header, row count, and `time_t`/`time_t1` pair counts. It is never split
+into development data and is never used for training, tuning, prompt selection, threshold
+selection, or early stopping. Adapter and model choices must be frozen on separate Track B
+or other licensed development data before one final Belief-R run.
+
+Track B uses seeded symbolic non-monotonic streams with template-family group splits, not
+example-level random splits. Track C transforms observations only; evaluator Targets are
+aligned afterward through returned source indices. External text stays in a gitignored local
+cache, and evaluation after acquisition must succeed with network access blocked.
+
+The model execution gate opened after the committed C04 learned checkpoint and C05 common
+protocol/checkpoints were integrated and hash-audited. `c06-final-official` evaluates the
+complete 1,744-pair official test once with network blocked. C05 encoder state is reconstructed
+from the original deterministic development half and serialized before external evaluation;
+all fit/calibration/selection entry points reject test Episodes.
+
+The direct Transformer, explicit-state memory, and Spark conditions receive identical
+Observation objects and example counts at the adapter API. Effective input representations,
+parameters, and compute are not matched: the C05 dev vocabulary maps external categorical
+tokens to UNK, while C04 hashes raw text. Oracle is target-visible and must remain outside
+information-matched conclusions. BU-Acc and BM-Acc are reported separately and BREU is their
+equal average. Attribution without checkpoint evidence IDs is N/A, not zero.
+
+The official run is a negative result: Spark BREU is 0.0643 versus 0.25 for both direct and
+uniform-chance conditions. Gate P3's improvement criterion is therefore not met.
 
 ### Phase 4 — Local spiking equivalence
 
@@ -265,6 +320,33 @@ The architecture is inspectable, so use interventions rather than correlation al
 
 Expected outcome must be specified before execution.
 
+## 7.1 C02 controlled-suite contract
+
+C02 uses explicit `dev` and frozen `test` seed manifests. Defaults and score mappings may
+be selected on dev seeds only. The main synthetic matrix uses 1,000 test episodes for each
+declared world/ablation condition and retains per-episode JSONL locally.
+
+The additional metrics are multiclass Brier score, fixed-bin expected calibration error,
+appropriate abstention, missed decisions, false certainty, source-reliability sensitivity,
+duplicate-evidence inflation, object cross-talk, belief/action disentanglement, and
+distributions of Spark/edge work. Brier/ECE use a declared normalized score mapping and do
+not turn Coalition score into a calibrated probability claim.
+
+Uncertainty uses deterministic episode-level bootstrap 95% intervals. No p-value family is
+reported in C02; therefore there is no uncorrected multiple-hypothesis significance claim.
+The Pareto table minimizes unnecessary revision and latency while maximizing revision
+recall. It identifies dominated conditions and does not choose one scalar winner.
+
+Run locally with:
+
+```bash
+python -m sparkbrain.evaluation.run_suite \
+  --config configs/experiments/phase1/main.json \
+  --output artifacts/phase1/<new-run-id>
+```
+
+The output path must be new or empty. Runtime data is never uploaded.
+
 ## 8. Phase-0 current result
 
 Generated by:
@@ -318,6 +400,21 @@ python scripts/run_benchmark.py --episodes 40 --steps 30
 - hand-authored routing removed from primary result
 - matched GRU/Transformer/RIM baselines complete
 
+### C05 reduced matched-baseline protocol (2026-08-23)
+
+C05 consumes C02 `Episode` objects and frozen manifest files without modifying them.
+Observation encoding is fitted on a deterministic training half of dev; confidence
+threshold, quality match, and model choices use dev only. Test targets remain evaluator
+fields. Learned final seeds are 101, 211, 307, 401, and 503. Parameter and analytical
+training-operation targets are checked within ±2% and ±5%; accuracy quality uses ±1
+percentage point and coverage ±2 points. Oracle and privileged Bayes are excluded from
+information-matched conclusions.
+
+The committed acceptance artifact is a reduced CPU integration profile, not the full C02
+frozen scientific matrix. It records failed quality matches, all test rows, paired
+episode-level bootstrap/sign-flip statistics, effect sizes, and Holm adjustment. Operation
+counts and CPU timing are never treated as energy measurements.
+
 ### Gate P3
 
 - at least one external benchmark improved on primary revision metric without unacceptable false ignition
@@ -327,6 +424,15 @@ python scripts/run_benchmark.py --episodes 40 --steps 30
 
 - spiking backend reproduces predefined behavioral invariants
 - rate/spike disagreement analyzed
+
+### C07 frozen reduced comparison (2026-08-23)
+
+Before final comparison, canonical predictions and distinct ignition order were fixed to
+exact equality; switch and recovery indices were limited to a one-event delta;
+no-ignition, duplicate diversity 1, residual recovery, Workspace capacity, and directional
+edge ablation were frozen as checks. This backend is hybrid: snnTorch LIF sensory encoding
+with rate/algorithmic Coalition and Workspace. Activity, messages, and CPU wall-clock are
+reported separately and are not energy evidence.
 
 ### Gate P5
 

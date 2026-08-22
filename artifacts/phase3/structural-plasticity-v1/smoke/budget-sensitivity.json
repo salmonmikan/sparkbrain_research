@@ -1,0 +1,26 @@
+[
+  {
+    "accuracy": 0.75,
+    "active_edges": 24,
+    "active_modules": 12,
+    "candidate": [
+      1,
+      5
+    ],
+    "capped": false,
+    "event_budget": 0,
+    "events_applied": 0
+  },
+  {
+    "accuracy": 0.725,
+    "active_edges": 24,
+    "active_modules": 13,
+    "candidate": [
+      1,
+      9
+    ],
+    "capped": false,
+    "event_budget": 2,
+    "events_applied": 2
+  }
+]

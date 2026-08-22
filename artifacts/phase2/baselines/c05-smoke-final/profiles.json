@@ -1,0 +1,167 @@
+[
+  {
+    "architecture": {
+      "architecture_size": 39
+    },
+    "body_parameters": 9831,
+    "checkpoint": "checkpoints/gru-seed-101.pt",
+    "compute_target": 1188000,
+    "cpu_ms_p50": 0.3438,
+    "cpu_ms_p95": 0.3442,
+    "dev_accuracy_all_steps": 0.041666666666666664,
+    "dev_coverage": 0.6875,
+    "family_forward_operations_per_episode": 77688,
+    "family_training_operations_estimate": 1165320,
+    "model": "gru",
+    "nominal_padded_parameters": null,
+    "optimizer_proxy_match": true,
+    "optimizer_work_proxy": 1179720,
+    "parameter_match": true,
+    "parameter_target": 9900,
+    "parameters": 9831,
+    "quality_match": false,
+    "quality_target_accuracy": 0.5625,
+    "quality_target_coverage": 0.6875,
+    "seed": 101,
+    "selected_confidence_threshold": 0.6,
+    "training": {
+      "error": null,
+      "examples_seen": 40,
+      "failed": false,
+      "final_loss": 0.5930426120758057,
+      "steps_completed": 5
+    }
+  },
+  {
+    "architecture": {
+      "architecture_size": 32
+    },
+    "body_parameters": 9827,
+    "checkpoint": "checkpoints/lstm-seed-101.pt",
+    "compute_target": 1188000,
+    "cpu_ms_p50": 0.1461,
+    "cpu_ms_p95": 0.1674,
+    "dev_accuracy_all_steps": 0.041666666666666664,
+    "dev_coverage": 0.8333333333333334,
+    "family_forward_operations_per_episode": 77568,
+    "family_training_operations_estimate": 1163520,
+    "model": "lstm",
+    "nominal_padded_parameters": null,
+    "optimizer_proxy_match": true,
+    "optimizer_work_proxy": 1179240,
+    "parameter_match": true,
+    "parameter_target": 9900,
+    "parameters": 9827,
+    "quality_match": false,
+    "quality_target_accuracy": 0.5625,
+    "quality_target_coverage": 0.6875,
+    "seed": 101,
+    "selected_confidence_threshold": 0.45,
+    "training": {
+      "error": null,
+      "examples_seen": 40,
+      "failed": false,
+      "final_loss": 0.840000331401825,
+      "steps_completed": 5
+    }
+  },
+  {
+    "architecture": {
+      "architecture_size": 32
+    },
+    "body_parameters": 10019,
+    "checkpoint": "checkpoints/causal_transformer_context64-seed-101.pt",
+    "compute_target": 1188000,
+    "cpu_ms_p50": 0.3219,
+    "cpu_ms_p95": 0.3524,
+    "dev_accuracy_all_steps": 0.0625,
+    "dev_coverage": 0.7291666666666666,
+    "family_forward_operations_per_episode": 81152,
+    "family_training_operations_estimate": 1217280,
+    "model": "causal_transformer_context64",
+    "nominal_padded_parameters": null,
+    "optimizer_proxy_match": true,
+    "optimizer_work_proxy": 1202280,
+    "parameter_match": true,
+    "parameter_target": 9900,
+    "parameters": 10019,
+    "quality_match": false,
+    "quality_target_accuracy": 0.5625,
+    "quality_target_coverage": 0.6875,
+    "seed": 101,
+    "selected_confidence_threshold": 0.9,
+    "training": {
+      "error": null,
+      "examples_seen": 40,
+      "failed": false,
+      "final_loss": 0.17337408661842346,
+      "steps_completed": 5
+    }
+  },
+  {
+    "architecture": {
+      "architecture_size": 14
+    },
+    "body_parameters": 10087,
+    "checkpoint": "checkpoints/rim_like_top2_of4-seed-101.pt",
+    "compute_target": 1188000,
+    "cpu_ms_p50": 2.6387,
+    "cpu_ms_p95": 3.4451,
+    "dev_accuracy_all_steps": 0.041666666666666664,
+    "dev_coverage": 0.7291666666666666,
+    "family_forward_operations_per_episode": 40992,
+    "family_training_operations_estimate": 614880,
+    "model": "rim_like_top2_of4",
+    "nominal_padded_parameters": null,
+    "optimizer_proxy_match": true,
+    "optimizer_work_proxy": 1210440,
+    "parameter_match": true,
+    "parameter_target": 9900,
+    "parameters": 10087,
+    "quality_match": false,
+    "quality_target_accuracy": 0.5625,
+    "quality_target_coverage": 0.6875,
+    "seed": 101,
+    "selected_confidence_threshold": 0.45,
+    "training": {
+      "error": null,
+      "examples_seen": 40,
+      "failed": false,
+      "final_loss": 0.9005628824234009,
+      "steps_completed": 5
+    }
+  },
+  {
+    "architecture": {
+      "architecture_size": 79
+    },
+    "body_parameters": 9878,
+    "checkpoint": "checkpoints/explicit_state_memory-seed-101.pt",
+    "compute_target": 1188000,
+    "cpu_ms_p50": 0.2575,
+    "cpu_ms_p95": 0.3021,
+    "dev_accuracy_all_steps": 0.0625,
+    "dev_coverage": 1.0,
+    "family_forward_operations_per_episode": 78368,
+    "family_training_operations_estimate": 1175520,
+    "model": "explicit_state_memory",
+    "nominal_padded_parameters": null,
+    "optimizer_proxy_match": true,
+    "optimizer_work_proxy": 1185360,
+    "parameter_match": true,
+    "parameter_target": 9900,
+    "parameters": 9878,
+    "quality_match": false,
+    "quality_target_accuracy": 0.5625,
+    "quality_target_coverage": 0.6875,
+    "seed": 101,
+    "selected_confidence_threshold": 0.0,
+    "training": {
+      "error": null,
+      "examples_seen": 40,
+      "failed": false,
+      "final_loss": 0.003783975960686803,
+      "steps_completed": 5
+    }
+  }
+]

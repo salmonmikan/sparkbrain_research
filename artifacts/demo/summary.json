@@ -1,4 +1,5 @@
 {
+  "schema_version": "0.2",
   "frames": 7,
   "final_prediction": "cat",
   "ignitions": [

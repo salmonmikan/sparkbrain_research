@@ -1,0 +1,17 @@
+{
+  "profile": "reliability_sensitivity",
+  "split": "test",
+  "frozen": true,
+  "episode_count": 1000,
+  "seed_start": 200000,
+  "steps": 30,
+  "all_combinations": false,
+  "matrix": [
+    {"world": "reliability_world", "condition": "full"},
+    {"world": "reliability_world", "condition": "no_source_diversity"},
+    {"world": "reliability_world", "condition": "no_contradiction_penalty"},
+    {"world": "reliability_world", "condition": "single_spark_ignition"},
+    {"world": "reliability_world", "condition": "dense_update_accounting"},
+    {"world": "reliability_world", "condition": "no_refractory"}
+  ]
+}

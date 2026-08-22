@@ -1,0 +1,157 @@
+{
+  "c04": {
+    "checkpoint": "artifacts/phase2/learned-routing-v1/main/checkpoint.pt",
+    "checkpoint_config": {
+      "active_k": 4,
+      "belief_loss": 1.0,
+      "calibration_episodes": 12,
+      "coalition_end_to_end": true,
+      "condition": "full",
+      "confidence_threshold": 0.6630581021308899,
+      "device": "cpu",
+      "epochs": 4,
+      "event_dim": 24,
+      "hash_buckets": 128,
+      "hidden_dim": 24,
+      "ignition_loss": 0.1,
+      "labels": [
+        "cat",
+        "dog",
+        "toy"
+      ],
+      "learning_rate": 0.012,
+      "load_balance_loss": 0.02,
+      "margin_threshold": 0.3404403328895569,
+      "module_count": 12,
+      "persistence": 0.75,
+      "provenance_loss": 0.02,
+      "recovery_loss": 0.1,
+      "residual_scale": 1.0,
+      "revision_loss": 0.15,
+      "schema_version": "0.2",
+      "seed": 41,
+      "sparsity_loss": 0.005,
+      "steps": 24,
+      "test_episodes": 60,
+      "trace_consistency_loss": 0.02,
+      "train_episodes": 48,
+      "workspace_broadcast": true
+    },
+    "checkpoint_metadata": {
+      "dev_manifest_sha256": "968593ff7c5f4274aaeb416bd58200e8625218d1a0179a1dff8a31d1b82a85a8",
+      "training_seed": 41
+    },
+    "checkpoint_sha256": "15be1b56f527cb3b46a0c0b089472c2f45e82177a90a96844c303bb7b49c770e",
+    "condition": "spark",
+    "resolved_config": "artifacts/phase2/learned-routing-v1/main/resolved-config.json",
+    "resolved_config_sha256": "8c659c8f93b6a90c7c8b957fef7e2b35d4299e8ade887a8ff537bd96d4ea7e60"
+  },
+  "c05": {
+    "config": "configs/experiments/phase2/baselines_acceptance.json",
+    "config_sha256": "bdebd1aa748bd4ddcebf7a7a3c09a6d39f9cad628509d79490d4005ca97c6b82",
+    "encoder": {
+      "fitted_split": "dev",
+      "input_size": 49,
+      "kind": "c05-feature-encoder",
+      "ordered_vocabulary": [
+        "<UNK>",
+        "channel:evidence",
+        "channel:goal",
+        "evidence:avoid",
+        "evidence:bark",
+        "evidence:collar",
+        "evidence:four_legs",
+        "evidence:fur",
+        "evidence:meow",
+        "evidence:motionless",
+        "evidence:plastic_seam",
+        "evidence:purr",
+        "evidence:report",
+        "evidence:tail_wag",
+        "evidence:warm_body",
+        "evidence:whiskers",
+        "object:<NONE>",
+        "object:a",
+        "object:b",
+        "reliability:<NONE>",
+        "reliability:high",
+        "reliability:low",
+        "source:goal-controller",
+        "source:sensor:a",
+        "source:sensor:b",
+        "source:sensor:bark",
+        "source:sensor:collar",
+        "source:sensor:corr-a",
+        "source:sensor:corr-b",
+        "source:sensor:four_legs",
+        "source:sensor:fur",
+        "source:sensor:high",
+        "source:sensor:independent:0",
+        "source:sensor:independent:10",
+        "source:sensor:independent:2",
+        "source:sensor:independent:4",
+        "source:sensor:independent:6",
+        "source:sensor:independent:8",
+        "source:sensor:low",
+        "source:sensor:motionless",
+        "source:sensor:plastic_seam",
+        "source:sensor:purr",
+        "source:sensor:shared",
+        "source:sensor:tail_wag",
+        "source:sensor:warm_body",
+        "source:sensor:whiskers"
+      ],
+      "schema_version": "0.1",
+      "state_sha256": "3dfb8215e8c6f53babc3dcd3db66f06ebfa65cb497b35a37e065e0c40aea3614"
+    },
+    "encoder_fit_episode_hash": "6d9b0f51bfdceebfea78b7e5458b1f6868ce2f5e0d3d6c9b0739bbb069d182f4",
+    "models": {
+      "direct": {
+        "architecture_size": 60,
+        "checkpoint": "artifacts/phase2/baselines/c05-acceptance-final/checkpoints/causal_transformer_context64-seed-101.pt",
+        "checkpoint_input_size": 49,
+        "checkpoint_sha256": "b5f20c86842165452ff69293ef486050a827b3a16175a74ed52a23a550cbc3f6",
+        "confidence_threshold": 0.6,
+        "context_limit": 64,
+        "model": "causal_transformer_context64",
+        "parameters": 32643,
+        "quality_match": false,
+        "seed": 101
+      },
+      "explicit": {
+        "architecture_size": 155,
+        "checkpoint": "artifacts/phase2/baselines/c05-acceptance-final/checkpoints/explicit_state_memory-seed-101.pt",
+        "checkpoint_input_size": 49,
+        "checkpoint_sha256": "2102b570c590e0eee7fec90dac08c0cb0dcefc486b5966dd0a3139adfd584c51",
+        "confidence_threshold": 0.8,
+        "context_limit": 64,
+        "model": "explicit_state_memory",
+        "parameters": 32243,
+        "quality_match": false,
+        "seed": 101
+      }
+    },
+    "profiles": "artifacts/phase2/baselines/c05-acceptance-final/profiles.json",
+    "profiles_sha256": "17cce4b1fdb673d71aa2656ef1def752cea2078f886ae156ce96842d3fa8ebbb"
+  },
+  "fixed_output_maps": {
+    "belief_r": {
+      "cat": "a",
+      "dog": "b",
+      "toy": "c"
+    },
+    "track_b_candidates": [
+      "true",
+      "false",
+      "unknown"
+    ],
+    "track_b_unsupported_truth": "both"
+  },
+  "role": "frozen_external_zero_shot_adapters",
+  "schema_version": "0.2",
+  "selection_policy": {
+    "belief_r_fit_or_tuning": false,
+    "c04": "committed main checkpoint; thresholds selected on C04 dev only",
+    "c05_seed": "first preregistered C05 seed (101), not selected by external results"
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "entries": [
+    {
+      "artifacts": [
+        "artifacts/demo/trace.json",
+        "artifacts/demo/checkpoint.json"
+      ],
+      "boundary": "Deterministic implementation and replay evidence only.",
+      "claim_ids": [
+        "CL-001",
+        "CL-002",
+        "CL-005",
+        "CL-011"
+      ],
+      "id": "EV-C01-REFERENCE",
+      "run_ids": [
+        "R0003"
+      ],
+      "status": "accepted"
+    },
+    {
+      "artifacts": [
+        "artifacts/phase1/c02-main-1000/run_manifest.json",
+        "artifacts/phase1/c02-main-1000/aggregate/metrics.json",
+        "artifacts/phase1/c02-main-1000/aggregate/confidence_intervals.json"
+      ],
+      "boundary": "Controlled synthetic E2 evidence; MultiObjectWorld is a retained failure.",
+      "claim_ids": [
+        "CL-003",
+        "CL-004",
+        "CL-006",
+        "CL-007"
+      ],
+      "id": "EV-C02-CONTROLLED",
+      "run_ids": [
+        "R0006"
+      ],
+      "status": "negative"
+    },
+    {
+      "artifacts": [
+        "artifacts/phase2/learned-routing-v1/main/summary.json",
+        "artifacts/phase2/learned-routing-v1/main/manifest-evidence.json",
+        "artifacts/phase2/learned-routing-v1/main/negative-findings.json"
+      ],
+      "boundary": "Controlled held-out result with dead/overloaded modules; no superiority claim.",
+      "claim_ids": [
+        "CL-004",
+        "CL-007"
+      ],
+      "id": "EV-C04-LEARNED",
+      "run_ids": [
+        "R0008"
+      ],
+      "status": "negative"
+    },
+    {
+      "artifacts": [
+        "artifacts/phase2/baselines/c05-acceptance-final/run_manifest.json",
+        "artifacts/phase2/baselines/c05-acceptance-final/acceptance.json",
+        "artifacts/phase2/baselines/c05-acceptance-final/aggregate_metrics.json",
+        "artifacts/phase2/baselines/c05-acceptance-final/paired_statistics.json",
+        "configs/external_validation/model_adapters.json"
+      ],
+      "boundary": "Reduced matched-baseline harness with failed quality/scientific-compute matching; the frozen dev-only encoder hash and checkpoint input dimensions are verified.",
+      "claim_ids": [
+        "CL-003",
+        "CL-004",
+        "CL-007"
+      ],
+      "id": "EV-C05-CHECKPOINT",
+      "run_ids": [
+        "R0009"
+      ],
+      "status": "negative"
+    },
+    {
+      "artifacts": [
+        "artifacts/external_validation/c06-final-official/run_manifest.json",
+        "artifacts/external_validation/c06-final-official/belief_r_metrics.json",
+        "artifacts/external_validation/c06-final-official/leakage_audit.json",
+        "artifacts/external_validation/c06-final-official/manual_trace_audit.json",
+        "artifacts/external_validation/c06-final-official/interventions.json",
+        "artifacts/external_validation/c06-final-official/track_b.json",
+        "artifacts/external_validation/c06-final-official/track_c.json",
+        "configs/external_validation/model_adapters.json"
+      ],
+      "boundary": "Full pinned Belief-R zero-shot execution completed offline; Spark BREU was below direct/chance, representations and compute were unmatched, and CL-007 remains E0.",
+      "claim_ids": [
+        "CL-003",
+        "CL-004",
+        "CL-007"
+      ],
+      "id": "EV-C06-EXTERNAL",
+      "run_ids": [
+        "R0012"
+      ],
+      "status": "negative"
+    },
+    {
+      "artifacts": [
+        "artifacts/spiking/c07_comparison.json",
+        "artifacts/spiking/rate_trace.json",
+        "artifacts/spiking/spike_trace.json"
+      ],
+      "boundary": "Reduced sensory-LIF hybrid canonical equivalence only.",
+      "claim_ids": [
+        "CL-009"
+      ],
+      "id": "EV-C07-SPIKING",
+      "run_ids": [
+        "R0005",
+        "R0007"
+      ],
+      "status": "accepted"
+    },
+    {
+      "artifacts": [
+        "artifacts/phase3/structural-plasticity-v1/main/summary.json",
+        "artifacts/phase3/structural-plasticity-v1/main/gate-matrix.json",
+        "artifacts/phase3/structural-plasticity-v1/main/input-hashes.json",
+        "artifacts/phase3/structural-plasticity-v1/main/negative-findings.json"
+      ],
+      "boundary": "Bounded mechanism acceptance with failed decisiveness, fertility, and specificity gates; CL-008 remains E0 and no emergent-organ claim is permitted.",
+      "claim_ids": [
+        "CL-008"
+      ],
+      "id": "EV-C08-PLASTICITY",
+      "run_ids": [
+        "R0010"
+      ],
+      "status": "negative"
+    },
+    {
+      "artifacts": [
+        "docs/research/literature_matrix.csv",
+        "docs/research/claim_challenge_report.md"
+      ],
+      "boundary": "Bounded search and adversarial audit; absence of a match is not novelty proof.",
+      "claim_ids": [
+        "CL-001",
+        "CL-002",
+        "CL-003",
+        "CL-005",
+        "CL-009"
+      ],
+      "id": "EV-C09-PRIOR-ART",
+      "run_ids": [],
+      "status": "accepted"
+    }
+  ],
+  "schema_version": "c10-evidence-map-v1",
+  "source_revision": "c2b12ff88ac86d917c227f184b0b42653c124658"
+}

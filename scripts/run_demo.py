@@ -5,6 +5,7 @@ import json
 from dataclasses import asdict
 from pathlib import Path
 
+from sparkbrain.serialization import dump_config
 from sparkbrain.visualizer import write_trace, write_visualizer
 from sparkbrain.worlds import SwitchWorld, run_scenario
 
@@ -16,18 +17,19 @@ def main() -> None:
 
     brain, frames = run_scenario(SwitchWorld.canonical_scenario())
     args.output.mkdir(parents=True, exist_ok=True)
+    dump_config(brain.config, args.output / "config.json")
     write_trace(brain, args.output / "trace.json")
     write_visualizer(brain, args.output / "visualizer.html")
 
     summary = {
+        "schema_version": "0.2",
         "frames": len(frames),
         "final_prediction": brain.prediction,
         "ignitions": [asdict(ignition) for ignition in brain.ignitions],
         "stats": asdict(brain.stats),
     }
-    (args.output / "summary.json").write_text(
-        json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8"
-    )
+    with (args.output / "summary.json").open("w", encoding="utf-8", newline="") as handle:
+        handle.write(json.dumps(summary, ensure_ascii=False, indent=2) + "\n")
 
     for frame in frames:
         top = frame.coalitions[0] if frame.coalitions else None

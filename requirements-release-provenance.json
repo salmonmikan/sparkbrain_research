@@ -1,0 +1,22 @@
+{
+  "schema_version": "c10-environment-provenance-v1",
+  "captured_on": "2026-08-23",
+  "capture_command": "python -m pip freeze",
+  "environment": "Windows 11 AMD64, Python 3.13.3, CPU",
+  "lock_scope": "tested local candidate snapshot; not a cross-platform wheel/hash lock",
+  "install_boundary": "package acquisition is setup; reproduction is offline",
+  "direct_optional_stacks": {
+    "dev": ["pytest", "ruff", "jsonschema", "fastapi", "uvicorn", "httpx"],
+    "learned": ["numpy", "torch"],
+    "spiking": ["torch", "snntorch"]
+  },
+  "official_method_references": [
+    "https://pip.pypa.io/en/stable/topics/secure-installs/",
+    "https://pytorch.org/get-started/locally/"
+  ],
+  "limitations": [
+    "The PyTorch CPU local version suffix may require the official PyTorch wheel index during setup.",
+    "The moving GitHub ubuntu-latest matrix is recorded separately and is not implied by this Windows snapshot.",
+    "No package wheel is redistributed by this repository."
+  ]
+}

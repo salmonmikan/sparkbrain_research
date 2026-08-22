@@ -1,0 +1,26 @@
+[
+  {
+    "epoch": 1,
+    "mean_loss": 1.0752302041898172,
+    "soft_routing_entropy": 0.6827366948127747,
+    "training_accuracy": 0.4869791666666667
+  },
+  {
+    "epoch": 2,
+    "mean_loss": 0.825691687874496,
+    "soft_routing_entropy": 0.28435787558555603,
+    "training_accuracy": 0.6605902777777778
+  },
+  {
+    "epoch": 3,
+    "mean_loss": 0.7340527726337314,
+    "soft_routing_entropy": 0.1162927895784378,
+    "training_accuracy": 0.7152777777777778
+  },
+  {
+    "epoch": 4,
+    "mean_loss": 0.7089484203606844,
+    "soft_routing_entropy": 0.11623787134885788,
+    "training_accuracy": 0.7300347222222222
+  }
+]

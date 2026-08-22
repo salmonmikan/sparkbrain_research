@@ -1,0 +1,142 @@
+{
+  "python": "3.13.3",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "episodes_per_repeat": 25,
+  "repeats": 3,
+  "conditions": [
+    {
+      "world": "switchworld",
+      "condition": "full",
+      "median_seconds_per_episode": 0.007114960001781583,
+      "forecast_1000_seconds": 7.114960001781583,
+      "forecast_with_20_percent_contingency": 8.5379520021379
+    },
+    {
+      "world": "reliability_world",
+      "condition": "full",
+      "median_seconds_per_episode": 0.00608485999982804,
+      "forecast_1000_seconds": 6.084859999828041,
+      "forecast_with_20_percent_contingency": 7.301831999793649
+    },
+    {
+      "world": "delayed_evidence_world",
+      "condition": "full",
+      "median_seconds_per_episode": 0.005741015998646617,
+      "forecast_1000_seconds": 5.741015998646617,
+      "forecast_with_20_percent_contingency": 6.88921919837594
+    },
+    {
+      "world": "contradiction_world",
+      "condition": "full",
+      "median_seconds_per_episode": 0.006367488000541925,
+      "forecast_1000_seconds": 6.367488000541925,
+      "forecast_with_20_percent_contingency": 7.6409856006503105
+    },
+    {
+      "world": "multi_object_world",
+      "condition": "full",
+      "median_seconds_per_episode": 0.006059675998985767,
+      "forecast_1000_seconds": 6.059675998985767,
+      "forecast_with_20_percent_contingency": 7.27161119878292
+    },
+    {
+      "world": "goal_conflict_world",
+      "condition": "full",
+      "median_seconds_per_episode": 0.004976788000203669,
+      "forecast_1000_seconds": 4.976788000203669,
+      "forecast_with_20_percent_contingency": 5.972145600244403
+    },
+    {
+      "world": "switchworld",
+      "condition": "no_residual",
+      "median_seconds_per_episode": 0.005153971998952329,
+      "forecast_1000_seconds": 5.153971998952329,
+      "forecast_with_20_percent_contingency": 6.184766398742795
+    },
+    {
+      "world": "switchworld",
+      "condition": "hard_wta",
+      "median_seconds_per_episode": 0.004425575998611748,
+      "forecast_1000_seconds": 4.425575998611748,
+      "forecast_with_20_percent_contingency": 5.310691198334098
+    },
+    {
+      "world": "delayed_evidence_world",
+      "condition": "no_temporal_stability",
+      "median_seconds_per_episode": 0.005324252001009881,
+      "forecast_1000_seconds": 5.3242520010098815,
+      "forecast_with_20_percent_contingency": 6.389102401211858
+    },
+    {
+      "world": "contradiction_world",
+      "condition": "no_lateral_inhibition",
+      "median_seconds_per_episode": 0.005059263999573887,
+      "forecast_1000_seconds": 5.059263999573886,
+      "forecast_with_20_percent_contingency": 6.071116799488665
+    },
+    {
+      "world": "reliability_world",
+      "condition": "no_source_diversity",
+      "median_seconds_per_episode": 0.005752611998468637,
+      "forecast_1000_seconds": 5.7526119984686375,
+      "forecast_with_20_percent_contingency": 6.903134398162365
+    },
+    {
+      "world": "contradiction_world",
+      "condition": "no_contradiction_penalty",
+      "median_seconds_per_episode": 0.006553575997240841,
+      "forecast_1000_seconds": 6.553575997240841,
+      "forecast_with_20_percent_contingency": 7.864291196689009
+    },
+    {
+      "world": "multi_object_world",
+      "condition": "no_margin_gate",
+      "median_seconds_per_episode": 0.006311535998247564,
+      "forecast_1000_seconds": 6.311535998247564,
+      "forecast_with_20_percent_contingency": 7.573843197897077
+    },
+    {
+      "world": "reliability_world",
+      "condition": "single_spark_ignition",
+      "median_seconds_per_episode": 0.005792987998574972,
+      "forecast_1000_seconds": 5.792987998574972,
+      "forecast_with_20_percent_contingency": 6.951585598289967
+    },
+    {
+      "world": "delayed_evidence_world",
+      "condition": "forced_prediction",
+      "median_seconds_per_episode": 0.005519111999310553,
+      "forecast_1000_seconds": 5.519111999310553,
+      "forecast_with_20_percent_contingency": 6.622934399172664
+    },
+    {
+      "world": "multi_object_world",
+      "condition": "dense_update_accounting",
+      "median_seconds_per_episode": 0.0058392200013622645,
+      "forecast_1000_seconds": 5.839220001362264,
+      "forecast_with_20_percent_contingency": 7.007064001634717
+    },
+    {
+      "world": "goal_conflict_world",
+      "condition": "no_workspace_broadcast",
+      "median_seconds_per_episode": 0.004105736003257334,
+      "forecast_1000_seconds": 4.105736003257334,
+      "forecast_with_20_percent_contingency": 4.926883203908801
+    },
+    {
+      "world": "switchworld",
+      "condition": "no_homeostasis",
+      "median_seconds_per_episode": 0.0064372120006009935,
+      "forecast_1000_seconds": 6.437212000600994,
+      "forecast_with_20_percent_contingency": 7.724654400721192
+    },
+    {
+      "world": "contradiction_world",
+      "condition": "no_refractory",
+      "median_seconds_per_episode": 0.006640784000046552,
+      "forecast_1000_seconds": 6.640784000046551,
+      "forecast_with_20_percent_contingency": 7.9689408000558615
+    }
+  ],
+  "serial_forecast_seconds": 109.26062799524516
+}

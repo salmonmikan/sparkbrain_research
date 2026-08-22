@@ -1,0 +1,161 @@
+{
+  "activation_effect": 0.0,
+  "activation_intervention": {
+    "accuracy": 0.6532738095238095,
+    "accuracy_by_world": {
+      "delayed_evidence_world": 0.6919642857142857,
+      "multi_object_world": 0.41964285714285715,
+      "reliability_world": 0.8482142857142857
+    },
+    "counters": {
+      "conceptual_candidates": 12096,
+      "dense_tensor_ops": 1344,
+      "evaluated_edges": 2688,
+      "evaluated_messages": 2688,
+      "kernel_launch_estimate": 8064,
+      "observations": 672,
+      "peak_memory_bytes": 758112,
+      "selected_modules": 2688,
+      "state_updates": 2688,
+      "wall_clock_seconds": 0.2941171001875773
+    },
+    "coverage": 0.7931547619047619,
+    "episodes": 24,
+    "steps": 672
+  },
+  "candidate": [
+    9,
+    14
+  ],
+  "degree_impairment": 0.0,
+  "degree_matched": {
+    "accuracy": 0.6532738095238095,
+    "accuracy_by_world": {
+      "delayed_evidence_world": 0.6919642857142857,
+      "multi_object_world": 0.41964285714285715,
+      "reliability_world": 0.8482142857142857
+    },
+    "counters": {
+      "conceptual_candidates": 12096,
+      "dense_tensor_ops": 1344,
+      "evaluated_edges": 2688,
+      "evaluated_messages": 2688,
+      "kernel_launch_estimate": 8064,
+      "observations": 672,
+      "peak_memory_bytes": 758112,
+      "selected_modules": 2688,
+      "state_updates": 2688,
+      "wall_clock_seconds": 0.33124859898816794
+    },
+    "coverage": 0.7931547619047619,
+    "episodes": 24,
+    "steps": 672
+  },
+  "degree_matched_slots": [
+    4,
+    11
+  ],
+  "random": {
+    "accuracy": 0.6532738095238095,
+    "accuracy_by_world": {
+      "delayed_evidence_world": 0.6919642857142857,
+      "multi_object_world": 0.41964285714285715,
+      "reliability_world": 0.8482142857142857
+    },
+    "counters": {
+      "conceptual_candidates": 12096,
+      "dense_tensor_ops": 1344,
+      "evaluated_edges": 2688,
+      "evaluated_messages": 2688,
+      "kernel_launch_estimate": 8064,
+      "observations": 672,
+      "peak_memory_bytes": 758112,
+      "selected_modules": 2688,
+      "state_updates": 2688,
+      "wall_clock_seconds": 0.32713380036875606
+    },
+    "coverage": 0.7931547619047619,
+    "episodes": 24,
+    "steps": 672
+  },
+  "random_impairment": 0.0,
+  "random_slots": [
+    6,
+    7
+  ],
+  "source_c04": {
+    "accuracy": 0.6443452380952381,
+    "accuracy_by_world": {
+      "delayed_evidence_world": 0.6919642857142857,
+      "multi_object_world": 0.4375,
+      "reliability_world": 0.8035714285714286
+    },
+    "counters": {
+      "conceptual_candidates": 8064,
+      "dense_tensor_ops": 1344,
+      "evaluated_edges": 10752,
+      "evaluated_messages": 10752,
+      "kernel_launch_estimate": 8064,
+      "observations": 672,
+      "peak_memory_bytes": 726432,
+      "selected_modules": 2688,
+      "state_updates": 2688,
+      "wall_clock_seconds": 0.25566270120907575
+    },
+    "coverage": 0.7797619047619048,
+    "episodes": 24,
+    "steps": 672
+  },
+  "target_impairment": 0.0,
+  "targeted": {
+    "accuracy": 0.6532738095238095,
+    "accuracy_by_world": {
+      "delayed_evidence_world": 0.6919642857142857,
+      "multi_object_world": 0.41964285714285715,
+      "reliability_world": 0.8482142857142857
+    },
+    "counters": {
+      "conceptual_candidates": 12096,
+      "dense_tensor_ops": 1344,
+      "evaluated_edges": 2688,
+      "evaluated_messages": 2688,
+      "kernel_launch_estimate": 8064,
+      "observations": 672,
+      "peak_memory_bytes": 758112,
+      "selected_modules": 2688,
+      "state_updates": 2688,
+      "wall_clock_seconds": 0.2936639008112252
+    },
+    "coverage": 0.7931547619047619,
+    "episodes": 24,
+    "steps": 672
+  },
+  "unablated": {
+    "accuracy": 0.6532738095238095,
+    "accuracy_by_world": {
+      "delayed_evidence_world": 0.6919642857142857,
+      "multi_object_world": 0.41964285714285715,
+      "reliability_world": 0.8482142857142857
+    },
+    "counters": {
+      "conceptual_candidates": 12096,
+      "dense_tensor_ops": 1344,
+      "evaluated_edges": 2688,
+      "evaluated_messages": 2688,
+      "kernel_launch_estimate": 8064,
+      "observations": 672,
+      "peak_memory_bytes": 758112,
+      "selected_modules": 2688,
+      "state_updates": 2688,
+      "wall_clock_seconds": 0.29408299864735454
+    },
+    "coverage": 0.7931547619047619,
+    "episodes": 24,
+    "steps": 672
+  },
+  "world_effects": {
+    "delayed_evidence_world": 0.0,
+    "multi_object_world": 0.0,
+    "reliability_world": 0.0
+  }
+}

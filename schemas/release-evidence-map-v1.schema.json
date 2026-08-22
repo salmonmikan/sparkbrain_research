@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sparkbrain.local/schemas/release-evidence-map-v1.schema.json",
+  "type": "object",
+  "required": ["schema_version", "source_revision", "entries"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": "c10-evidence-map-v1"},
+    "source_revision": {"type": "string", "minLength": 7},
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "status", "claim_ids", "run_ids", "artifacts", "boundary"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {"type": "string", "pattern": "^EV-C[0-9]{2}-"},
+          "status": {"enum": ["accepted", "pending", "negative"]},
+          "claim_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "run_ids": {"type": "array", "items": {"type": "string"}},
+          "artifacts": {"type": "array", "items": {"type": "string"}},
+          "boundary": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}

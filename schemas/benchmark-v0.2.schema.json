@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sparkbrain.local/schemas/benchmark-v0.2.schema.json",
+  "title": "SparkBrain benchmark results v0.2",
+  "type": "object",
+  "required": ["schema_version", "episodes", "aggregate"],
+  "properties": {
+    "schema_version": {"const": "0.2"},
+    "episodes": {"type": "array", "items": {"type": "object"}},
+    "aggregate": {"type": "array", "items": {"type": "object"}}
+  },
+  "additionalProperties": false
+}

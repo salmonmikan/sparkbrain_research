@@ -1,0 +1,12 @@
+{
+  "command": "C:\\55_personal\\sikou\\sparkbrain-c02\\src\\sparkbrain\\evaluation\\run_suite.py --config configs\\experiments\\phase1\\reliability_sensitivity.json --output artifacts\\phase1\\c02-reliability-sensitivity-1000",
+  "completed": true,
+  "config_hash": "4d96c9c6c3e55fe9174f1114800f08cf837ffdf55cdb57ea41a118c5dd973627",
+  "episode_count": 6000,
+  "failed_episode_count": 0,
+  "git_commit": "43c78ea5f682e21f491b6f8802b5878c05d28f7d",
+  "local_execution": true,
+  "run_id": "c02-reliability-sensitivity-1000",
+  "schema_version": "0.2",
+  "split_hash": "6ebb48390bb56c4d5a8f5c0bfdf2add4ed2504cb81c8b53bf2393358c3b29b7e"
+}

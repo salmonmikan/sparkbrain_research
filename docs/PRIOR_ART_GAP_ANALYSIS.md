@@ -23,6 +23,8 @@ SparkBrain の基本思想を構成する部品の大半は既知である。
 
 ただし、これは「完全一致する先行研究をまだ確認できていない」という状態であり、新規性が証明された状態ではない。
 
+2026-08-23 の反証的 second pass では、HEARSAY-II blackboard、active inference、recurrent attractor、HMM、asynchronous sparse convolution、bipolar argumentation、neuromorphic dynamic field／sequence memoryまで範囲を拡張した。これらは各差分候補をさらに狭めるが、exact end-to-end duplicate の未取得を新規性の証拠にはしない。検索範囲、citation chaining、取得状態、license、残留不確実性は `docs/research/` を正本とする。
+
 ## 2. Mapping matrix
 
 | SparkBrain element | Closest prior art | Overlap | Remaining difference candidate | Assessment |
@@ -216,3 +218,15 @@ The boundary is instead operational:
 - results from Extension H cannot retroactively validate biological fidelity or the cognitive theory.
 
 Prior-art auditing should continue to include neuromorphic and hardware implementations because they may invalidate architectural novelty claims, even though reproducing those systems is not required for core completion.
+
+## 10. Initial C09 systematic-audit result (2026-08-23)
+
+The initial review above is now accompanied by a traceable first-pass counterexample set:
+
+- `docs/research/literature_matrix.csv` records source metadata, exact overlap, non-overlap, publication status, and a claim-level novelty verdict;
+- `docs/research/search_log.md` records the dated query strings, verification method, and the required second-pass databases;
+- `docs/research/closest_systems.md` explains the strongest counterexamples and the permitted claim boundary.
+
+This pass reinforces, rather than weakens, the existing caution. LIDA and Shared Global Workspace are strong architectural counterexamples to an original coalition-to-workspace claim. ART, Dynamic Field Theory, predictive coding, RIMs, AEGNN, Assembly Calculus, and spiking global-workspace systems establish that the constituent mechanisms are known. Belief-R is an existing benchmark for update-versus-retain behavior.
+
+The only remaining difference candidates are integration and evaluation questions: explicit evidence identity, formal treatment of support versus contradiction, residual-loser recovery as a measured capability, a distinct no-ignition semantics, and audited no-touch execution sparsity. They are **unverified difference candidates**, not novelty claims. A complete end-to-end duplicate was not established by this first pass, and that absence is not evidence of novelty.

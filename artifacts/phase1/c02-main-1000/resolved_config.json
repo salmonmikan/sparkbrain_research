@@ -1,0 +1,159 @@
+{
+  "all_combinations": false,
+  "episode_count": 1000,
+  "frozen": true,
+  "matrix": [
+    {
+      "condition": "full",
+      "world": "switchworld"
+    },
+    {
+      "condition": "full",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "full",
+      "world": "delayed_evidence_world"
+    },
+    {
+      "condition": "full",
+      "world": "contradiction_world"
+    },
+    {
+      "condition": "full",
+      "world": "multi_object_world"
+    },
+    {
+      "condition": "full",
+      "world": "goal_conflict_world"
+    },
+    {
+      "condition": "no_residual",
+      "world": "switchworld"
+    },
+    {
+      "condition": "no_residual",
+      "world": "delayed_evidence_world"
+    },
+    {
+      "condition": "hard_wta",
+      "world": "switchworld"
+    },
+    {
+      "condition": "hard_wta",
+      "world": "delayed_evidence_world"
+    },
+    {
+      "condition": "no_lateral_inhibition",
+      "world": "contradiction_world"
+    },
+    {
+      "condition": "no_lateral_inhibition",
+      "world": "multi_object_world"
+    },
+    {
+      "condition": "no_source_diversity",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_source_diversity",
+      "world": "contradiction_world"
+    },
+    {
+      "condition": "no_contradiction_penalty",
+      "world": "contradiction_world"
+    },
+    {
+      "condition": "no_contradiction_penalty",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_temporal_stability",
+      "world": "switchworld"
+    },
+    {
+      "condition": "no_temporal_stability",
+      "world": "delayed_evidence_world"
+    },
+    {
+      "condition": "no_margin_gate",
+      "world": "contradiction_world"
+    },
+    {
+      "condition": "no_margin_gate",
+      "world": "multi_object_world"
+    },
+    {
+      "condition": "single_spark_ignition",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "single_spark_ignition",
+      "world": "contradiction_world"
+    },
+    {
+      "condition": "forced_prediction",
+      "world": "switchworld"
+    },
+    {
+      "condition": "forced_prediction",
+      "world": "delayed_evidence_world"
+    },
+    {
+      "condition": "forced_prediction",
+      "world": "contradiction_world"
+    },
+    {
+      "condition": "dense_update_accounting",
+      "world": "switchworld"
+    },
+    {
+      "condition": "dense_update_accounting",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "dense_update_accounting",
+      "world": "delayed_evidence_world"
+    },
+    {
+      "condition": "dense_update_accounting",
+      "world": "contradiction_world"
+    },
+    {
+      "condition": "dense_update_accounting",
+      "world": "multi_object_world"
+    },
+    {
+      "condition": "dense_update_accounting",
+      "world": "goal_conflict_world"
+    },
+    {
+      "condition": "no_workspace_broadcast",
+      "world": "multi_object_world"
+    },
+    {
+      "condition": "no_workspace_broadcast",
+      "world": "goal_conflict_world"
+    },
+    {
+      "condition": "no_homeostasis",
+      "world": "switchworld"
+    },
+    {
+      "condition": "no_homeostasis",
+      "world": "goal_conflict_world"
+    },
+    {
+      "condition": "no_refractory",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_refractory",
+      "world": "contradiction_world"
+    }
+  ],
+  "profile": "main",
+  "seed_start": 200000,
+  "split": "test",
+  "steps": 30
+}

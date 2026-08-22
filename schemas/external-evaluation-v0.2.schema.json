@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sparkbrain.local/schemas/external-evaluation-v0.2.schema.json",
+  "title": "SparkBrain external evaluation result v0.2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "dataset",
+    "dataset_revision",
+    "split",
+    "condition",
+    "metrics",
+    "error_counts",
+    "interventions"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.2"},
+    "dataset": {"type": "string", "minLength": 1},
+    "dataset_revision": {"type": "string", "minLength": 1},
+    "split": {"enum": ["dev", "test", "smoke"]},
+    "condition": {"type": "string", "minLength": 1},
+    "metrics": {
+      "type": "object",
+      "additionalProperties": {"type": ["number", "null"]}
+    },
+    "error_counts": {
+      "type": "object",
+      "additionalProperties": {"type": "integer", "minimum": 0}
+    },
+    "interventions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["evidence_id", "kind", "passed"],
+        "properties": {
+          "evidence_id": {"type": "string", "minLength": 1},
+          "kind": {"enum": ["remove", "replace"]},
+          "passed": {"type": "boolean"}
+        }
+      }
+    }
+  }
+}

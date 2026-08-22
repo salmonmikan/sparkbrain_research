@@ -1,0 +1,169 @@
+{
+  "backend_boundary": "snnTorch LIF sensory encoding; rate evidence graph, hypothesis state, Coalition, ignition, and Workspace",
+  "checks": {
+    "duplicate_diversity_exact": true,
+    "edge_ablation_direction": true,
+    "exact_distinct_ignitions": true,
+    "exact_prediction_sequence": true,
+    "final_recovery": true,
+    "first_event_no_ignition": true,
+    "recovery_latency_within_one": true,
+    "switch_latency_within_one": true,
+    "workspace_capacity": true
+  },
+  "claim_boundary": "Activity and local runtime are separate descriptive measurements. They do not measure or imply energy efficiency.",
+  "duplicate_evidence": {
+    "diversity": 1,
+    "evidence_id": "same-id"
+  },
+  "edge_ablation": {
+    "ablated_toy_ignitions": [],
+    "control_toy_ignitions": [
+      5.01,
+      6.0
+    ],
+    "removed": "sensory:plastic_seam -> hypothesis:toy"
+  },
+  "lif_config": {
+    "filtered_decay": 0.8,
+    "membrane_decay": 0.5,
+    "spike_threshold": 0.75
+  },
+  "negative_result": {
+    "condition": "spike_threshold=1.1 with unit currents",
+    "interpretation": "No sensory spikes and no beliefs; equivalence is parameter-sensitive.",
+    "predictions": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  "rate": {
+    "distinct_ignitions": [
+      "cat",
+      "toy",
+      "cat"
+    ],
+    "predictions": [
+      null,
+      "cat",
+      "cat",
+      "cat",
+      "toy",
+      "toy",
+      "cat"
+    ],
+    "stats": {
+      "broadcasts": 10,
+      "edge_evaluations": 29,
+      "events_processed": 46,
+      "fires": 21,
+      "ignitions": 5,
+      "spark_updates": 178
+    },
+    "wall_clock_seconds": 0.0015443000011146069
+  },
+  "schema": "c07-spiking-comparison-v1",
+  "seed": 7,
+  "spiking": {
+    "distinct_ignitions": [
+      "cat",
+      "toy",
+      "cat"
+    ],
+    "messages": 7,
+    "predictions": [
+      null,
+      "cat",
+      "cat",
+      "cat",
+      "toy",
+      "toy",
+      "cat"
+    ],
+    "raw_spike_events": [
+      {
+        "filtered_spike": 0.19999999999999996,
+        "input_current": 1.0,
+        "target": "sensory:fur",
+        "time": 1.0
+      },
+      {
+        "filtered_spike": 0.19999999999999996,
+        "input_current": 1.0,
+        "target": "sensory:meow",
+        "time": 2.0
+      },
+      {
+        "filtered_spike": 0.19999999999999996,
+        "input_current": 1.0,
+        "target": "sensory:bark",
+        "time": 3.0
+      },
+      {
+        "filtered_spike": 0.19999999999999996,
+        "input_current": 1.0,
+        "target": "sensory:motionless",
+        "time": 4.0
+      },
+      {
+        "filtered_spike": 0.19999999999999996,
+        "input_current": 1.0,
+        "target": "sensory:plastic_seam",
+        "time": 5.0
+      },
+      {
+        "filtered_spike": 0.19999999999999996,
+        "input_current": 1.0,
+        "target": "sensory:warm_body",
+        "time": 6.0
+      },
+      {
+        "filtered_spike": 0.19999999999999996,
+        "input_current": 1.0,
+        "target": "sensory:purr",
+        "time": 7.0
+      }
+    ],
+    "spikes": 7,
+    "stats": {
+      "broadcasts": 10,
+      "edge_evaluations": 29,
+      "events_processed": 46,
+      "fires": 21,
+      "ignitions": 5,
+      "spark_updates": 178
+    },
+    "wall_clock_seconds": 0.003460699925199151
+  },
+  "tolerances_frozen_before_comparison": {
+    "distinct_ignitions": [
+      "cat",
+      "toy",
+      "cat"
+    ],
+    "duplicate_diversity": 1,
+    "edge_ablation": "TOY no earlier and count no greater",
+    "predictions": [
+      null,
+      "cat",
+      "cat",
+      "cat",
+      "toy",
+      "toy",
+      "cat"
+    ],
+    "switch_and_recovery_index_delta_max": 1,
+    "workspace_capacity": 4
+  },
+  "versions": {
+    "device": "cpu",
+    "python": "3.13.3",
+    "snntorch": "1.0.0",
+    "torch": "2.13.0+cpu"
+  }
+}

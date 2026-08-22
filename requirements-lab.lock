@@ -1,0 +1,5 @@
+# C03 versions used for local acceptance on 2026-08-23.
+# Install the project first, then use this file as a reproducibility constraint.
+fastapi==0.141.1
+uvicorn==0.52.4
+httpx==0.28.1

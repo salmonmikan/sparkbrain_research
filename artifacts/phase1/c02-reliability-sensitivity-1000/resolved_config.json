@@ -1,0 +1,35 @@
+{
+  "all_combinations": false,
+  "episode_count": 1000,
+  "frozen": true,
+  "matrix": [
+    {
+      "condition": "full",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_source_diversity",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_contradiction_penalty",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "single_spark_ignition",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "dense_update_accounting",
+      "world": "reliability_world"
+    },
+    {
+      "condition": "no_refractory",
+      "world": "reliability_world"
+    }
+  ],
+  "profile": "reliability_sensitivity",
+  "seed_start": 200000,
+  "split": "test",
+  "steps": 30
+}

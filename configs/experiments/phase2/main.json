@@ -1,0 +1,23 @@
+{
+  "learned": {
+    "seed": 41,
+    "event_dim": 24,
+    "hidden_dim": 24,
+    "module_count": 12,
+    "active_k": 4,
+    "learning_rate": 0.012,
+    "epochs": 4,
+    "train_episodes": 48,
+    "calibration_episodes": 12,
+    "test_episodes": 60,
+    "steps": 24
+  },
+  "dev_manifest": "configs/experiments/phase1/manifests/dev-v1.json",
+  "test_manifest": "configs/experiments/phase1/manifests/test-v1.json",
+  "train_worlds": ["switchworld", "contradiction_world"],
+  "calibration_worlds": ["goal_conflict_world", "multi_object_world"],
+  "test_worlds": ["delayed_evidence_world", "switchworld", "reliability_world"],
+  "ablation_episodes": 8,
+  "retain_trace": false,
+  "output_dir": "artifacts/phase2/learned-routing-v1/main"
+}

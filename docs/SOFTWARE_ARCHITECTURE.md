@@ -93,13 +93,22 @@ Responsibilities:
 - hand-authored evidence routing
 - standard brain topology factory
 
-### `baselines.py`
+### `baselines/`
 
 - dense evidence accumulator
 - hard-WTA accumulator
 - instant event classifier
 
-These are software sanity baselines, not sufficient neural baselines.
+`classic.py` retains the Phase-0 scalar baselines and `__init__.py` preserves the former
+`sparkbrain.baselines` imports. `probabilistic.py` contains privileged Bayes and a causal
+train-only Laplace HMM; `bounds.py` contains evaluator-only oracle and chance bounds.
+
+`baselines/neural/` is optional-PyTorch code for GRU, LSTM, causal Transformer (context
+64), top-two-of-four RIM-like recurrence, and explicit-state memory. All implement the
+same reset/step/probability/trace/counter surface. C02 `Episode` construction stays outside
+the models in `evaluation/baseline_data.py`; truth and test selection remain evaluator-only.
+Training, analytical work accounting, profiling, paired statistics, and artifact output are
+separate modules under `evaluation/`. This is a comparison harness, not an engine backend.
 
 ### `metrics.py`
 
@@ -118,6 +127,48 @@ These are software sanity baselines, not sufficient neural baselines.
 - SFA ablations
 - aggregate JSON / CSV / Markdown
 - instrumentation metrics
+
+### `tasks/` and `evaluation/` (C02)
+
+`tasks/` defines versioned, deterministic `Observation`, evaluator-only `Target`, and
+`Episode` contracts. Observations never contain truth labels. Six controlled generators
+cover switching, source reliability, delayed evidence, contradiction, multiple objects,
+and goal conflict.
+
+`evaluation/` owns the shared ablation registry, engine adapter, episode metrics, paired
+episode bootstrap intervals, Pareto dominance, immutable manifests, raw JSONL, and report
+generation. World generators do not mutate an engine. The hard-WTA research condition uses
+the explicit `erase_losing_hypotheses()` intervention after ignition; it is not normal
+dynamics. Dense-update figures are labeled counterfactual accounting and are not executed
+work or energy measurements.
+
+### `learned/` (C04 optional backend)
+
+`learned/` is imported only when the optional `learned` dependency extra is installed. Its
+fixed-width hash encoder maps observation evidence/source/channel plus numeric strength and
+delay into an event representation. A learned top-k router selects a bounded set of persistent
+modules. The backend indexes only those states and their K-by-K edge block before recurrent
+message passing; it does not compute a dense recurrent graph and mask it afterward.
+
+The encoder/router remain dense and are counted separately. `LearnedBrainBackend` implements
+the C01 `BrainBackend` schedule/run/snapshot/state contract. Belief and action heads are
+separate. Coalition traces expose support, diversity, stability, contradiction, and score;
+the calibrated confidence/margin gate preserves `None` as no-ignition. The additive
+`learned/contracts.py` module is the C04/C05 exchange contract and does not change Episode
+schema `0.2`.
+
+### `structural/` (C08 optional backend)
+
+`structural/` extends the C04 backend without resizing tensors at runtime. Boolean module and
+edge masks define live capacity; top-k routing excludes inactive modules and message passing
+enumerates only active selected edges. `StructuralController` applies seeded structural events
+only at episode boundaries in priority/sequence order. Create, duplicate, split, merge, edge
+grow/prune, and module prune are explicit, budgeted mechanisms with minimum-capacity safeguards.
+
+Logical IDs, versions, lineage, tombstones, pending events, controller RNG, optimizer state,
+statistics, and budgets are checkpointed together with the inherited C01 runtime queue and
+trace state. Discovery uses unlabeled routing/coactivation/credit/confidence statistics. C08's
+negative causal result is documented in `docs/C08_STRUCTURAL_PLASTICITY_RESULTS.md`.
 
 ### `visualizer.py`
 
@@ -405,6 +456,34 @@ These are explicit phase boundaries, not hidden omissions.
 - `replay.py`: dynamics-free trace reading.
 - `schemas/`: versioned JSON contracts for configuration, trace, and checkpoint state.
 
+### `external_validation/` (C06)
+
+Model-independent external evaluation contracts live outside the cognition core:
+
+- `belief_r.py`: official pinned test-only cache acquisition, integrity verification,
+  sequential pairing, and C02 Episode mapping;
+- `symbolic.py`: seeded non-monotonic streams plus an independent symbolic oracle and
+  template-group splits;
+- `transforms.py`: target-blind adversarial evidence-order/source transforms;
+- `metrics.py`: revision/error/attribution evaluation primitives;
+- `interventions.py`: evidence removal/replacement and expected-effect assessment;
+- `adapters.py`: strict dev-only C05 encoder state, artifact hashing, and real C04/C05
+  checkpoint adapters;
+- `evaluation.py`: network-blocked Track A/B/C execution, information-condition separation,
+  metrics, sanitized predictions, and intervention deltas;
+- `gate.py`: fail-closed C04/C05 prerequisite check.
+
+Dataset acquisition is the only network-capable operation and must be explicitly requested.
+Normal loading, transforms, evaluation primitives, and tests are local/offline. No external
+dataset text or upstream executable code is packaged.
+
+The C05 encoder state is a strict schema with ordered vocabulary, fitted split, input size,
+and SHA-256. The frozen adapter manifest validates that input size against reconstructed model
+architectures before loading weights. Fit, calibration, selection, and early-stopping helpers
+reject test Episodes. C04 and C05 receive the same Observation API but do not share an
+effective tokenizer: this is recorded as an unmatched feature condition, not hidden as a fair
+semantic-encoder comparison.
+
 Checkpoint state includes the pending event queue, sequence number, persistent hypotheses, stability, Workspace, eligibility, counters, trace buffer, frame-local audit buffers, and RNG state. The format is research-versioned and not yet promised as a permanent public storage API.
 
 
@@ -414,3 +493,60 @@ Checkpoint state includes the pending event queue, sequence number, persistent h
 - `tests/test_local_only.py`: guards the package version and local-only dependency/import boundary.
 - `docs/LOCAL_EXECUTION_POLICY.md`: defines mandatory local execution and optional Extension H.
 - persisted config/state/trace schema remains `0.2`; package version is `0.2.1`.
+
+## 15. C01 reference replay and inspection contract
+
+### Frame projection and recording
+
+- `inspect_snapshot()` is a pure projection. It returns the current visible frame without appending to `trace`, clearing frame-local audit buffers, incrementing counters, or changing dynamics state.
+- `snapshot()` remains the backward-compatible recording operation. It delegates projection to `inspect_snapshot()`, appends the returned frame to `trace`, and then consumes `fired_since_frame`, `active_edges_since_frame`, and `updated_since_frame` for the next recorded frame.
+- Serialization is observational: `state_dict()` and normalized hashing do not increment counters or mutate runtime state.
+
+### Counter semantics
+
+- `events_processed`: number of events removed from the deterministic queue and processed, including reward and internal events.
+- `spark_updates`: number of `_touch` state updates. Coalition evaluation may touch active hypotheses, so this is not the number of external inputs or unique Sparks.
+- `edge_evaluations`: number of outgoing connections evaluated when a Spark fires.
+- `fires`, `ignitions`, and `broadcasts`: actual occurrences of the corresponding engine operations.
+- Inspection and serialization are excluded from all work counters.
+
+### Deterministic persistence boundary
+
+Schema `0.2` checkpoints require graph state, broadcast listeners, pending queue ordering, next sequence, RNG state, Coalition stability, Workspace, eligibility, counters, trace, and frame-local audit buffers. Unsupported, incomplete, nonfinite, dangling, duplicate-ID, and past-event payloads are rejected. Two fresh canonical runs must produce the same normalized trace and state hash; checkpoint continuation must reproduce future beliefs, ignitions, counters, and trace state.
+
+## 16. C03 localhost Brain Lab
+
+`sparkbrain.lab` はC01 reference engineの外側に置くoptional UI control planeである。`[project].dependencies` は空のまま保ち、FastAPI/Uvicornは `lab` extraへ分離する。
+
+```text
+Bundled HTML/CSS/JavaScript
+        │ REST + finite SSE
+        ▼
+127.0.0.1 FastAPI app
+        │ pure inspection / validated commands
+        ▼
+In-memory LabManager ── LabRun ── SparkBrain
+        │                            │
+        └── local export JSON        └── C01 checkpoint / trace
+```
+
+- launcherはloopback bindだけを許可する。
+- UI assetはpackageへ同梱し、CDN、analytics、remote APIを使わない。
+- pause、SSE、state取得はdynamicsを進めない。
+- forkは親checkpointから子runを作り、親、base hash、patchを監査可能にする。
+- comparisonはrun間を同じframe indexで同期する。
+- blind modeはAPI、trace、exportの全階層でtruthを除外する。
+- exportはartifact root配下へ限定し、importはsizeとschemaを検証する。
+- 2,000 Sparks / 10,000 edgesではengine全体を変更せず、表示用relevant subsetだけを作る。
+- 既存の静的Visualizerをserver不要のfallbackおよび回帰oracleとして残す。
+
+画面、視覚legend、介入意味論、API、保存先、性能測定の詳細は `docs/BRAIN_LAB.md` を正本とする。
+
+## 17. C07 reduced spiking backend boundary
+
+`SnnTorchLIFHybridBackend` implements the C01 `BrainBackend` protocol. External currents
+enter stateful snnTorch LIF sensory encoders; emitted spikes gate the unchanged signed
+evidence graph. Hypothesis state, evidence identity, Coalition scoring, ignition,
+broadcast, and Workspace remain the deterministic rate engine. State serialization adds
+membrane, filtered-spike, spike/message counters, and raw spike events. Both traces retain
+schema `0.2`; per-frame spiking counts are extra allowed statistics.

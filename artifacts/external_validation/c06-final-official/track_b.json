@@ -1,0 +1,154 @@
+{
+  "conditions": {
+    "chance": {
+      "accuracy": 0.6,
+      "attribution_fidelity": null,
+      "attribution_status": "not_available",
+      "contradiction_sensitivity": 0.6,
+      "coverage": 1.0,
+      "output_map_selected_on_dev": null,
+      "steps": 60,
+      "unsupported_both_steps": 4
+    },
+    "direct": {
+      "accuracy": 0.6,
+      "attribution_fidelity": null,
+      "attribution_status": "not_available",
+      "contradiction_sensitivity": 0.6,
+      "coverage": 0.8,
+      "output_map_selected_on_dev": {
+        "cat": "false",
+        "dog": "true",
+        "toy": "unknown"
+      },
+      "steps": 60,
+      "unsupported_both_steps": 4
+    },
+    "explicit": {
+      "accuracy": 0.4,
+      "attribution_fidelity": null,
+      "attribution_status": "not_available",
+      "contradiction_sensitivity": 0.4,
+      "coverage": 0.6,
+      "output_map_selected_on_dev": {
+        "cat": "true",
+        "dog": "false",
+        "toy": "unknown"
+      },
+      "steps": 60,
+      "unsupported_both_steps": 4
+    },
+    "oracle": {
+      "accuracy": 1.0,
+      "attribution_fidelity": null,
+      "attribution_status": "not_available",
+      "contradiction_sensitivity": 1.0,
+      "coverage": 1.0,
+      "output_map_selected_on_dev": null,
+      "steps": 60,
+      "unsupported_both_steps": 4
+    },
+    "spark": {
+      "accuracy": 0.11666666666666667,
+      "attribution_fidelity": null,
+      "attribution_status": "not_available",
+      "contradiction_sensitivity": 0.2,
+      "coverage": 0.31666666666666665,
+      "output_map_selected_on_dev": {
+        "cat": "false",
+        "dog": "true",
+        "toy": "unknown"
+      },
+      "steps": 60,
+      "unsupported_both_steps": 4
+    }
+  },
+  "split_manifest": {
+    "dev_usage": "output label permutation only; no official Belief-R examples",
+    "episode_hashes": {
+      "dev": "b8eec62e0c0e14acf7e13f9d13a938c9e7dbf74baef23d9c5155bf34a70b511f",
+      "test": "56f3bec8d76214e277901681eba4c66ff7bd1de3b6204ebd395fca64b8e3f535",
+      "train": "1087c078144f8b647f7a3da9f9635121ce7ea58dcc3b25dc20cd173e70287ced"
+    },
+    "episode_ids": {
+      "dev": [
+        "symbolic_nonmonotonic:dev:41000:66a4f98c11cb",
+        "symbolic_nonmonotonic:dev:41001:01996e9ba6f0",
+        "symbolic_nonmonotonic:dev:41002:5b2de093cd27",
+        "symbolic_nonmonotonic:dev:41003:5797aac0e482",
+        "symbolic_nonmonotonic:dev:41000:c27c5092d2dd",
+        "symbolic_nonmonotonic:dev:41001:470467546df6",
+        "symbolic_nonmonotonic:dev:41002:badebe683c1d",
+        "symbolic_nonmonotonic:dev:41003:fd040fb9fb1b",
+        "symbolic_nonmonotonic:dev:41000:4b8f91da6751",
+        "symbolic_nonmonotonic:dev:41001:124d6edfa884",
+        "symbolic_nonmonotonic:dev:41002:502b3946cf16",
+        "symbolic_nonmonotonic:dev:41003:042d90894cf9"
+      ],
+      "test": [
+        "symbolic_nonmonotonic:test:51000:df158b44dc4f",
+        "symbolic_nonmonotonic:test:51001:5f01cf10c212",
+        "symbolic_nonmonotonic:test:51002:19a0b0c4eec7",
+        "symbolic_nonmonotonic:test:51003:c56a4bcb2f65",
+        "symbolic_nonmonotonic:test:51000:ec50892a47c0",
+        "symbolic_nonmonotonic:test:51001:41b079be3ce0",
+        "symbolic_nonmonotonic:test:51002:5e04ccdca2ce",
+        "symbolic_nonmonotonic:test:51003:27766c2e642f",
+        "symbolic_nonmonotonic:test:51000:b1acaada20a2",
+        "symbolic_nonmonotonic:test:51001:f2444feeefaa",
+        "symbolic_nonmonotonic:test:51002:7e7ce4589445",
+        "symbolic_nonmonotonic:test:51003:e15dcb61183c"
+      ],
+      "train": [
+        "symbolic_nonmonotonic:train:31000:b9b077935912",
+        "symbolic_nonmonotonic:train:31001:ed08b1cc483f",
+        "symbolic_nonmonotonic:train:31002:7d1022f46efa",
+        "symbolic_nonmonotonic:train:31003:7a5942469815",
+        "symbolic_nonmonotonic:train:31000:6acc6c25a638",
+        "symbolic_nonmonotonic:train:31001:072996d28b02",
+        "symbolic_nonmonotonic:train:31002:813831c5c7ba",
+        "symbolic_nonmonotonic:train:31003:c0b1e78830d9",
+        "symbolic_nonmonotonic:train:31000:046e887e77bb",
+        "symbolic_nonmonotonic:train:31001:bf78b9f22304",
+        "symbolic_nonmonotonic:train:31002:065d2bf75f2c",
+        "symbolic_nonmonotonic:train:31003:f6cdab5d029c",
+        "symbolic_nonmonotonic:train:31000:9b8985371e82",
+        "symbolic_nonmonotonic:train:31001:dfa1b3b20b5f",
+        "symbolic_nonmonotonic:train:31002:e32b26b04857",
+        "symbolic_nonmonotonic:train:31003:d25219aa657b",
+        "symbolic_nonmonotonic:train:31000:2dac56c14a79",
+        "symbolic_nonmonotonic:train:31001:b2392bb967e2",
+        "symbolic_nonmonotonic:train:31002:bb21c243f1f8",
+        "symbolic_nonmonotonic:train:31003:6f722ab0659e",
+        "symbolic_nonmonotonic:train:31000:9fb3d76aa56d",
+        "symbolic_nonmonotonic:train:31001:22d766f0df3a",
+        "symbolic_nonmonotonic:train:31002:aaf0399437b7",
+        "symbolic_nonmonotonic:train:31003:cb00ae77aa21"
+      ]
+    },
+    "episodes_per_group": 4,
+    "groups": {
+      "dev": [
+        "staff_retraction",
+        "account_retraction",
+        "sensor_contradiction"
+      ],
+      "test": [
+        "vehicle_exception",
+        "report_contradiction",
+        "plant_exception"
+      ],
+      "train": [
+        "animal_exception",
+        "signal_contradiction",
+        "member_retraction",
+        "weather_contradiction",
+        "permit_exception",
+        "device_retraction"
+      ]
+    },
+    "split_seed": 1729,
+    "test_usage": "metrics only",
+    "train_usage": "materialized and disjoint; pretrained C04/C05 weights are not refit"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "accuracy": 0.5879629629629629,
+  "chance_accuracy": 0.3333333333333333,
+  "condition": "full",
+  "counters": {
+    "conceptual_candidates": 5184,
+    "dense_tensor_ops": 864,
+    "evaluated_edges": 6912,
+    "evaluated_messages": 6912,
+    "kernel_launch_estimate": 5184,
+    "observations": 432,
+    "peak_memory_bytes": 363216,
+    "selected_modules": 1728,
+    "state_updates": 1728,
+    "wall_clock_seconds": 0.25761649932246655
+  },
+  "coverage": 0.7222222222222222,
+  "covered_accuracy": 0.8141025641025641,
+  "diagnostics": {
+    "dead_modules": 3,
+    "no_ignition_count": 120,
+    "overloaded_modules": 3
+  },
+  "examples": 432,
+  "module_loads": [
+    103,
+    399,
+    0,
+    423,
+    0,
+    284,
+    0,
+    37,
+    17,
+    432,
+    30,
+    3
+  ],
+  "nonlearning_accuracy": 0.2708333333333333,
+  "recovery_count": 16,
+  "routing_entropy": 0.6855686555569772,
+  "split": "test"
+}

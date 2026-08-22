@@ -5,8 +5,7 @@ from dataclasses import asdict
 from pathlib import Path
 
 from .engine import SparkBrain
-from .validation import SCHEMA_VERSION
-
+from .validation import SCHEMA_VERSION, validate_trace_payload
 
 HTML_TEMPLATE = r'''<!doctype html>
 <html lang="ja">
@@ -180,6 +179,11 @@ render(0);
 '''
 
 
+def _write_utf8_lf(path: Path, contents: str) -> None:
+    with path.open("w", encoding="utf-8", newline="") as handle:
+        handle.write(contents)
+
+
 def write_trace(brain: SparkBrain, output_path: str | Path) -> Path:
     output = Path(output_path)
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -189,7 +193,8 @@ def write_trace(brain: SparkBrain, output_path: str | Path) -> Path:
         "frames": [asdict(frame) for frame in brain.trace],
         "ignitions": [asdict(ignition) for ignition in brain.ignitions],
     }
-    output.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    validate_trace_payload(payload)
+    _write_utf8_lf(output, json.dumps(payload, ensure_ascii=False, indent=2) + "\n")
     return output
 
 
@@ -202,9 +207,10 @@ def write_visualizer(brain: SparkBrain, output_path: str | Path) -> Path:
         "frames": [asdict(frame) for frame in brain.trace],
         "ignitions": [asdict(ignition) for ignition in brain.ignitions],
     }
+    validate_trace_payload(payload)
     html = HTML_TEMPLATE.replace(
         "__PAYLOAD__",
         json.dumps(payload, ensure_ascii=False, separators=(",", ":")),
     )
-    output.write_text(html, encoding="utf-8")
+    _write_utf8_lf(output, html)
     return output

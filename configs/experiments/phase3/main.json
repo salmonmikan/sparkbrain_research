@@ -1,0 +1,30 @@
+{
+  "structural": {
+    "seed": 83,
+    "source_modules": 12,
+    "max_modules": 18,
+    "max_active_edges": 96,
+    "active_k": 4,
+    "max_events_per_boundary": 2,
+    "max_events_total": 16
+  },
+  "source_checkpoint": "artifacts/phase2/learned-routing-v1/main/checkpoint.pt",
+  "source_config": "artifacts/phase2/learned-routing-v1/main/resolved-config.json",
+  "dev_manifest": "configs/experiments/phase1/manifests/dev-v1.json",
+  "test_manifest": "configs/experiments/phase1/manifests/test-v1.json",
+  "expected_sha256": {
+    "source_checkpoint": "15be1b56f527cb3b46a0c0b089472c2f45e82177a90a96844c303bb7b49c770e",
+    "source_config": "8c659c8f93b6a90c7c8b957fef7e2b35d4299e8ade887a8ff537bd96d4ea7e60",
+    "dev_manifest": "968593ff7c5f4274aaeb416bd58200e8625218d1a0179a1dff8a31d1b82a85a8",
+    "test_manifest": "3815f3857c485fb6c596f496c00ce36c437ee3b17fd97105d0fb729ff16e9e20"
+  },
+  "train_worlds": ["switchworld", "contradiction_world", "goal_conflict_world"],
+  "test_worlds": ["delayed_evidence_world", "reliability_world", "multi_object_world"],
+  "train_episodes": 18,
+  "test_episodes": 24,
+  "steps": 20,
+  "structural_seeds": [83, 89],
+  "budget_sensitivity": [0, 4, 12],
+  "hard_cap_seconds": 10800,
+  "output_dir": "artifacts/phase3/structural-plasticity-v1/main"
+}

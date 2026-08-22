@@ -1,0 +1,379 @@
+[
+  {
+    "bootstrap_95": [
+      -0.6319444444444444,
+      -0.4895833333333333
+    ],
+    "comparison_id": "gru:seed=101",
+    "effect_size": -0.887389076941093,
+    "holm_p_value": 0.014492753623188406,
+    "mean_accuracy_difference": -0.5659722222222222,
+    "model": "gru",
+    "p_value": 0.0004997501249375312,
+    "seed": 101
+  },
+  {
+    "bootstrap_95": [
+      -0.2708333333333333,
+      -0.12152777777777778
+    ],
+    "comparison_id": "lstm:seed=101",
+    "effect_size": -0.29932603534145075,
+    "holm_p_value": 0.014492753623188406,
+    "mean_accuracy_difference": -0.19444444444444445,
+    "model": "lstm",
+    "p_value": 0.0004997501249375312,
+    "seed": 101
+  },
+  {
+    "bootstrap_95": [
+      -0.6805555555555556,
+      -0.5486111111111112
+    ],
+    "comparison_id": "causal_transformer_context64:seed=101",
+    "effect_size": -1.0378226555940626,
+    "holm_p_value": 0.014492753623188406,
+    "mean_accuracy_difference": -0.6284722222222222,
+    "model": "causal_transformer_context64",
+    "p_value": 0.0004997501249375312,
+    "seed": 101
+  },
+  {
+    "bootstrap_95": [
+      -0.6041666666666666,
+      -0.4618055555555556
+    ],
+    "comparison_id": "rim_like_top2_of4:seed=101",
+    "effect_size": -0.8850520795199186,
+    "holm_p_value": 0.014492753623188406,
+    "mean_accuracy_difference": -0.5416666666666666,
+    "model": "rim_like_top2_of4",
+    "p_value": 0.0004997501249375312,
+    "seed": 101
+  },
+  {
+    "bootstrap_95": [
+      -0.3472222222222222,
+      -0.21180555555555555
+    ],
+    "comparison_id": "explicit_state_memory:seed=101",
+    "effect_size": -0.5072861783426721,
+    "holm_p_value": 0.014492753623188406,
+    "mean_accuracy_difference": -0.28125,
+    "model": "explicit_state_memory",
+    "p_value": 0.0004997501249375312,
+    "seed": 101
+  },
+  {
+    "bootstrap_95": [
+      -0.4340277777777778,
+      -0.2951388888888889
+    ],
+    "comparison_id": "gru:seed=211",
+    "effect_size": -0.5764838879029727,
+    "holm_p_value": 0.014492753623188406,
+    "mean_accuracy_difference": -0.3680555555555556,
+    "model": "gru",
+    "p_value": 0.0004997501249375312,
+    "seed": 211
+  },
+  {
+    "bootstrap_95": [
+      -0.6180555555555556,
+      -0.4791666666666667
+    ],
+    "comparison_id": "lstm:seed=211",
+    "effect_size": -0.8909263163976974,
+    "holm_p_value": 0.014492753623188406,
+    "mean_accuracy_difference": -0.5590277777777778,
+    "model": "lstm",
+    "p_value": 0.0004997501249375312,
+    "seed": 211
+  },
+  {
+    "bootstrap_95": [
+      -0.6909722222222222,
+      -0.5625
+    ],
+    "comparison_id": "causal_transformer_context64:seed=211",
+    "effect_size": -1.0908641700835668,
+    "holm_p_value": 0.014492753623188406,
+    "mean_accuracy_difference": -0.6388888888888888,
+    "model": "causal_transformer_context64",
+    "p_value": 0.0004997501249375312,
+    "seed": 211
+  },
+  {
+    "bootstrap_95": [
+      -0.3229166666666667,
+      -0.1875
+    ],
+    "comparison_id": "rim_like_top2_of4:seed=211",
+    "effect_size": -0.4375151027123681,
+    "holm_p_value": 0.014492753623188406,
+    "mean_accuracy_difference": -0.2569444444444444,
+    "model": "rim_like_top2_of4",
+    "p_value": 0.0004997501249375312,
+    "seed": 211
+  },
+  {
+    "bootstrap_95": [
+      -0.4027777777777778,
+      -0.28125
+    ],
+    "comparison_id": "explicit_state_memory:seed=211",
+    "effect_size": -0.6122493916958222,
+    "holm_p_value": 0.014492753623188406,
+    "mean_accuracy_difference": -0.3402777777777778,
+    "model": "explicit_state_memory",
+    "p_value": 0.0004997501249375312,
+    "seed": 211
+  },
+  {
+    "bootstrap_95": [
+      -0.6041666666666666,
+      -0.4652777777777778
+    ],
+    "comparison_id": "gru:seed=307",
+    "effect_size": -0.88733909339066,
+    "holm_p_value": 0.014492753623188406,
+    "mean_accuracy_difference": -0.5381944444444444,
+    "model": "gru",
+    "p_value": 0.0004997501249375312,
+    "seed": 307
+  },
+  {
+    "bootstrap_95": [
+      -0.2951388888888889,
+      -0.1388888888888889
+    ],
+    "comparison_id": "lstm:seed=307",
+    "effect_size": -0.3330433521272197,
+    "holm_p_value": 0.014492753623188406,
+    "mean_accuracy_difference": -0.2222222222222222,
+    "model": "lstm",
+    "p_value": 0.0004997501249375312,
+    "seed": 307
+  },
+  {
+    "bootstrap_95": [
+      -0.6805555555555556,
+      -0.5486111111111112
+    ],
+    "comparison_id": "causal_transformer_context64:seed=307",
+    "effect_size": -1.0378226555940626,
+    "holm_p_value": 0.014492753623188406,
+    "mean_accuracy_difference": -0.6284722222222222,
+    "model": "causal_transformer_context64",
+    "p_value": 0.0004997501249375312,
+    "seed": 307
+  },
+  {
+    "bootstrap_95": [
+      -0.3159722222222222,
+      -0.1701388888888889
+    ],
+    "comparison_id": "rim_like_top2_of4:seed=307",
+    "effect_size": -0.38069690710573667,
+    "holm_p_value": 0.014492753623188406,
+    "mean_accuracy_difference": -0.24305555555555555,
+    "model": "rim_like_top2_of4",
+    "p_value": 0.0004997501249375312,
+    "seed": 307
+  },
+  {
+    "bootstrap_95": [
+      -0.4027777777777778,
+      -0.2847222222222222
+    ],
+    "comparison_id": "explicit_state_memory:seed=307",
+    "effect_size": -0.6173975628512653,
+    "holm_p_value": 0.014492753623188406,
+    "mean_accuracy_difference": -0.34375,
+    "model": "explicit_state_memory",
+    "p_value": 0.0004997501249375312,
+    "seed": 307
+  },
+  {
+    "bootstrap_95": [
+      -0.6631944444444444,
+      -0.53125
+    ],
+    "comparison_id": "gru:seed=401",
+    "effect_size": -0.9967338698566398,
+    "holm_p_value": 0.014492753623188406,
+    "mean_accuracy_difference": -0.6076388888888888,
+    "model": "gru",
+    "p_value": 0.0004997501249375312,
+    "seed": 401
+  },
+  {
+    "bootstrap_95": [
+      -0.5486111111111112,
+      -0.4097222222222222
+    ],
+    "comparison_id": "lstm:seed=401",
+    "effect_size": -0.7728987673422069,
+    "holm_p_value": 0.014492753623188406,
+    "mean_accuracy_difference": -0.4826388888888889,
+    "model": "lstm",
+    "p_value": 0.0004997501249375312,
+    "seed": 401
+  },
+  {
+    "bootstrap_95": [
+      -0.6805555555555556,
+      -0.5486111111111112
+    ],
+    "comparison_id": "causal_transformer_context64:seed=401",
+    "effect_size": -1.0378226555940626,
+    "holm_p_value": 0.014492753623188406,
+    "mean_accuracy_difference": -0.6284722222222222,
+    "model": "causal_transformer_context64",
+    "p_value": 0.0004997501249375312,
+    "seed": 401
+  },
+  {
+    "bootstrap_95": [
+      -0.5451388888888888,
+      -0.3993055555555556
+    ],
+    "comparison_id": "rim_like_top2_of4:seed=401",
+    "effect_size": -0.7293495397991913,
+    "holm_p_value": 0.014492753623188406,
+    "mean_accuracy_difference": -0.4791666666666667,
+    "model": "rim_like_top2_of4",
+    "p_value": 0.0004997501249375312,
+    "seed": 401
+  },
+  {
+    "bootstrap_95": [
+      -0.4409722222222222,
+      -0.3125
+    ],
+    "comparison_id": "explicit_state_memory:seed=401",
+    "effect_size": -0.6924153501475647,
+    "holm_p_value": 0.014492753623188406,
+    "mean_accuracy_difference": -0.3784722222222222,
+    "model": "explicit_state_memory",
+    "p_value": 0.0004997501249375312,
+    "seed": 401
+  },
+  {
+    "bootstrap_95": [
+      -0.3819444444444444,
+      -0.23958333333333334
+    ],
+    "comparison_id": "gru:seed=503",
+    "effect_size": -0.4961086222726875,
+    "holm_p_value": 0.014492753623188406,
+    "mean_accuracy_difference": -0.3125,
+    "model": "gru",
+    "p_value": 0.0004997501249375312,
+    "seed": 503
+  },
+  {
+    "bootstrap_95": [
+      -0.6354166666666666,
+      -0.5034722222222222
+    ],
+    "comparison_id": "lstm:seed=503",
+    "effect_size": -0.938217083868392,
+    "holm_p_value": 0.014492753623188406,
+    "mean_accuracy_difference": -0.5763888888888888,
+    "model": "lstm",
+    "p_value": 0.0004997501249375312,
+    "seed": 503
+  },
+  {
+    "bootstrap_95": [
+      -0.6805555555555556,
+      -0.5486111111111112
+    ],
+    "comparison_id": "causal_transformer_context64:seed=503",
+    "effect_size": -1.0378226555940626,
+    "holm_p_value": 0.014492753623188406,
+    "mean_accuracy_difference": -0.6284722222222222,
+    "model": "causal_transformer_context64",
+    "p_value": 0.0004997501249375312,
+    "seed": 503
+  },
+  {
+    "bootstrap_95": [
+      -0.3194444444444444,
+      -0.1736111111111111
+    ],
+    "comparison_id": "rim_like_top2_of4:seed=503",
+    "effect_size": -0.4145541019095123,
+    "holm_p_value": 0.014492753623188406,
+    "mean_accuracy_difference": -0.2465277777777778,
+    "model": "rim_like_top2_of4",
+    "p_value": 0.0004997501249375312,
+    "seed": 503
+  },
+  {
+    "bootstrap_95": [
+      -0.3090277777777778,
+      -0.1701388888888889
+    ],
+    "comparison_id": "explicit_state_memory:seed=503",
+    "effect_size": -0.3961645323140868,
+    "holm_p_value": 0.014492753623188406,
+    "mean_accuracy_difference": -0.2361111111111111,
+    "model": "explicit_state_memory",
+    "p_value": 0.0004997501249375312,
+    "seed": 503
+  },
+  {
+    "bootstrap_95": [
+      0.0763888888888889,
+      0.16666666666666666
+    ],
+    "comparison_id": "privileged_bayes:seed=None",
+    "effect_size": 0.294926662009887,
+    "holm_p_value": 0.014492753623188406,
+    "mean_accuracy_difference": 0.11805555555555555,
+    "model": "privileged_bayes",
+    "p_value": 0.0004997501249375312,
+    "seed": null
+  },
+  {
+    "bootstrap_95": [
+      -0.2881944444444444,
+      -0.14583333333333334
+    ],
+    "comparison_id": "laplace_hmm:seed=None",
+    "effect_size": -0.3731659013197906,
+    "holm_p_value": 0.014492753623188406,
+    "mean_accuracy_difference": -0.2222222222222222,
+    "model": "laplace_hmm",
+    "p_value": 0.0004997501249375312,
+    "seed": null
+  },
+  {
+    "bootstrap_95": [
+      -0.2743055555555556,
+      -0.11805555555555555
+    ],
+    "comparison_id": "chance:seed=None",
+    "effect_size": -0.3090298957180551,
+    "holm_p_value": 0.014492753623188406,
+    "mean_accuracy_difference": -0.19791666666666666,
+    "model": "chance",
+    "p_value": 0.0004997501249375312,
+    "seed": null
+  },
+  {
+    "bootstrap_95": [
+      0.2604166666666667,
+      0.3645833333333333
+    ],
+    "comparison_id": "oracle:seed=None",
+    "effect_size": 0.6621723508439644,
+    "holm_p_value": 0.014492753623188406,
+    "mean_accuracy_difference": 0.3055555555555556,
+    "model": "oracle",
+    "p_value": 0.0004997501249375312,
+    "seed": null
+  }
+]

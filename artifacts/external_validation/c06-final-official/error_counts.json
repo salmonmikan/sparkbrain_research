@@ -1,0 +1,25 @@
+{
+  "chance": {
+    "initial_error": 872,
+    "missed_revision": 1074
+  },
+  "direct": {
+    "false_revision": 670,
+    "inappropriate_abstention": 1744,
+    "initial_error": 1744,
+    "missed_revision": 1074
+  },
+  "explicit": {
+    "inappropriate_abstention": 3488,
+    "initial_error": 1744,
+    "missed_revision": 1074
+  },
+  "oracle": {},
+  "spark": {
+    "false_revision": 213,
+    "inappropriate_abstention": 2749,
+    "initial_error": 1616,
+    "missed_revision": 1032,
+    "overconfident_wrong": 120
+  }
+}

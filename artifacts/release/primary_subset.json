@@ -1,0 +1,16 @@
+{
+  "full_evaluation": false,
+  "inputs": {
+    "artifacts/benchmarks/benchmark_aggregate.csv": "15db42806a12624b2cf95518fc23ff0e952378c84e11fbce5345265e3658003a",
+    "artifacts/phase1/c02-main-1000/aggregate/metrics.json": "918a73466a0bd487496918c3fb8cf00927c9f6a644a4c79ecd967e5778c840d4",
+    "artifacts/phase2/learned-routing-v1/main/summary.json": "1698c5a106588c5378b83b8c880242b0173732829eab06dfba71e6b3259ad2dd",
+    "artifacts/spiking/c07_comparison.json": "b6ff61afd4c934c7797f93474c58c8c32b0791399fd63e612d5e7f4be4a872e4"
+  },
+  "outputs": {
+    "artifacts/release/primary_results.md": "085f2a5f65d6e5069e3221042158eefdd4045f22c7b55c1b4c5644c95ed97765",
+    "artifacts/release/primary_results.svg": "718b3f1ca2a668b61ea3e29401d686a6dbda82f9afd8c5eedae714f996a709ae"
+  },
+  "schema_version": "c10-primary-subset-v1",
+  "selection_status": "immutable-smoke-subset",
+  "warning": "This smoke subset must not be described as the full C02-C08 evaluation."
+}

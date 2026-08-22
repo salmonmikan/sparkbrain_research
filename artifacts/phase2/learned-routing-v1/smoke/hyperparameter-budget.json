@@ -1,0 +1,9 @@
+{
+  "configurations_executed": 5,
+  "maximum_development_configurations": 6,
+  "maximum_training_seeds": 3,
+  "test_labels_used_for_threshold_selection": false,
+  "training_seeds_executed": [
+    41
+  ]
+}
