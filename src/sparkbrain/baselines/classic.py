@@ -3,7 +3,7 @@ from __future__ import annotations
 import math
 from dataclasses import dataclass
 
-from .worlds import EVIDENCE_WEIGHTS, LABELS, SwitchEvent
+from ..worlds import EVIDENCE_WEIGHTS, LABELS, SwitchEvent
 
 
 @dataclass(slots=True)
@@ -21,39 +21,55 @@ class EvidenceAccumulator:
     name = "accumulator"
 
     def __init__(
-        self,
-        *,
-        decay_tau: float = 4.0,
-        threshold: float = 1.0,
-        margin: float = 0.18,
+        self, *, decay_tau: float = 4.0, threshold: float = 1.0, margin: float = 0.18
     ) -> None:
         self.decay_tau = decay_tau
         self.threshold = threshold
         self.margin = margin
+        self.reset()
+
+    def reset(self) -> None:
         self.scores = {label: 0.0 for label in LABELS}
         self.last_time = 0.0
         self.prediction: str | None = None
+        self._updates = 0
 
     def update(self, event: SwitchEvent) -> BaselineStep:
         dt = max(0.0, event.time - self.last_time)
         decay = math.exp(-dt / self.decay_tau)
         for label in self.scores:
             self.scores[label] *= decay
-            self.scores[label] += EVIDENCE_WEIGHTS[event.evidence][label]
-
+            self.scores[label] += EVIDENCE_WEIGHTS.get(event.evidence, {}).get(label, 0.0)
         ranked = sorted(self.scores.items(), key=lambda item: item[1], reverse=True)
         top_label, top_score = ranked[0]
         second_score = ranked[1][1]
         if top_score >= self.threshold and top_score - second_score >= self.margin:
             self.prediction = top_label
         self.last_time = event.time
+        self._updates += len(self.scores)
         return BaselineStep(
-            time=event.time,
-            evidence=event.evidence,
-            truth=event.truth,
-            prediction=self.prediction,
-            scores={label: round(score, 6) for label, score in self.scores.items()},
+            event.time,
+            event.evidence,
+            event.truth,
+            self.prediction,
+            {label: round(score, 6) for label, score in self.scores.items()},
         )
+
+    def step(self, event: SwitchEvent) -> BaselineStep:
+        return self.update(event)
+
+    def predict_proba(self) -> dict[str, float]:
+        values = {
+            label: math.exp(max(-20.0, min(20.0, score))) for label, score in self.scores.items()
+        }
+        total = sum(values.values())
+        return {label: value / total for label, value in values.items()}
+
+    def state_trace(self) -> dict[str, object]:
+        return {"scores": dict(self.scores), "prediction": self.prediction, "time": self.last_time}
+
+    def work_counters(self) -> dict[str, int]:
+        return {"state_updates": self._updates, "messages": self._updates}
 
 
 class HardWinnerTakeAll(EvidenceAccumulator):
@@ -81,12 +97,13 @@ class InstantClassifier(EvidenceAccumulator):
         ranked = sorted(self.scores.items(), key=lambda item: item[1], reverse=True)
         self.prediction = ranked[0][0]
         self.last_time = event.time
+        self._updates += len(self.scores)
         return BaselineStep(
-            time=event.time,
-            evidence=event.evidence,
-            truth=event.truth,
-            prediction=self.prediction,
-            scores={label: round(score, 6) for label, score in self.scores.items()},
+            event.time,
+            event.evidence,
+            event.truth,
+            self.prediction,
+            {label: round(score, 6) for label, score in self.scores.items()},
         )
 
 

@@ -8,9 +8,10 @@ The repository is a **Phase-0 local functional research prototype**. It demonstr
 
 v0.2.1 fixes the core destination to one general-purpose local computer, adds a plain-language foundation guide and expanded glossary, and moves dedicated neuromorphic hardware to an independent extension track.
 
-It now includes an optional controlled-synthetic learned-routing backend. It is not yet a
-validated biological model or a matched comparison against modern neural baselines. C07 adds
-only a reduced hybrid canonical comparison.
+It now includes an optional controlled-synthetic learned-routing backend and a matched-baseline
+harness. The reduced C05 run did not achieve scientific compute or dev quality matching and is
+not evidence of a general comparison advantage. It is not a validated biological model. C07
+adds only a reduced hybrid canonical comparison.
 
 ## 2. Local execution contract
 
@@ -39,12 +40,13 @@ See `docs/LOCAL_EXECUTION_POLICY.md`.
 | Deterministic reference engine | runnable | `src/sparkbrain/engine.py` |
 | Spark/Event/Coalition/Workspace model | runnable | `src/sparkbrain/model.py` |
 | Canonical and randomized SwitchWorld | runnable | `src/sparkbrain/worlds.py` |
-| Phase-0 scalar baselines and ablations | runnable | `src/sparkbrain/baselines.py`, `benchmark.py` |
+| Phase-0 scalar baselines and ablations | runnable; legacy imports preserved | `src/sparkbrain/baselines/`, `benchmark.py` |
+| C05 matched baseline harness | implemented; reduced quality match negative | `src/sparkbrain/baselines/neural/`, `evaluation/run_baselines.py`, `artifacts/phase2/baselines/` |
 | C02 controlled worlds and statistical suite | implemented with negative results | `src/sparkbrain/tasks/`, `evaluation/`, `artifacts/phase1/c02-main-1000/` |
 | C04 learned sparse-rate backend | implemented with held-out synthetic result and collapse diagnostics | `src/sparkbrain/learned/`, `artifacts/phase2/`, `docs/C04_LEARNED_ROUTING_RESULTS.md` |
 | Metrics for stability/revision/recovery | runnable | `src/sparkbrain/metrics.py` |
 | Static replay visualizer | runnable locally | `artifacts/demo/visualizer.html` |
-| Unit tests | 148 passing with PyTorch available; optional learned/spiking tests require their extras | `python -m pytest -q` |
+| Unit tests | integration verification pending | `python -m pytest -q` |
 | Local readiness audit | runnable | `scripts/local_readiness_check.py` |
 | Generated Phase-0 report | complete with limitations | `artifacts/benchmarks/benchmark_report.md` |
 | Codex repository instructions | complete | `AGENTS.md`, `.agents/skills/sparkbrain-research/SKILL.md` |
@@ -84,8 +86,8 @@ The accumulator baseline is close in this hand-authored setting. Therefore this 
 
 | Priority | Missing capability | Codex task |
 |---:|---|---|
-| P1 | matched GRU/Transformer/RIM/Bayesian baselines | C05 |
-| P1 | external model comparison; model-independent cache/schema/generator/metric foundation is implemented, but C04/C05 gate remains closed | C06 |
+| P1 | full-scale matched-baseline scientific run; reduced harness is complete | C05 follow-on |
+| P1 | external model comparison; cache/schema/generator/metric foundation is implemented and model glue is pending | C06 |
 | P2 | fully spiking and multi-world equivalence beyond the reduced hybrid | C07 follow-on |
 | P2 | structural plasticity and emergent-organ tests | C08 |
 | continuous | systematic prior-art review and novelty audit | C09 |
@@ -135,3 +137,12 @@ C04 is locally implemented on the immutable C02 manifests. Its 60-episode held-o
 beat chance and the training-majority baseline while retaining calibrated no-ignition and
 non-hand-authored recovery cases. The router nevertheless exhibited dead/overloaded modules,
 and the reduced smoke profile was below chance. These negative findings remain explicit.
+
+C05 is locally implemented as a shared observation-only pipeline for accumulator,
+privileged Bayes, train-only Laplace HMM, GRU, LSTM, causal Transformer, RIM-like modular
+recurrence, explicit-state memory, oracle, and chance. The reduced five-seed acceptance
+profile matched architecture-body parameter counts and retained paired raw outputs, but
+scientific compute matching was false and no learned family met the accumulator
+accuracy/coverage quality target at every seed after ten optimizer steps. CL-007 therefore
+remains E0. The full frozen 1,000-episode-per-world run and a completed 12-trial search were
+not executed by this integration profile.

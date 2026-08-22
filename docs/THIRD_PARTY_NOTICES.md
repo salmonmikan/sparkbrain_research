@@ -22,3 +22,12 @@ Belief-R text is acquired into a gitignored local cache and is not redistributed
 repository. The separate `HLTCHKUST/belief-revision` GitHub repository did not display a
 repository license when checked on 2026-08-23. Its code is not cloned, imported, executed,
 copied, or treated as covered by the dataset-card license.
+
+## Optional C05 learned baseline tooling
+
+| Package | C05 role | Tested version | Upstream license | Official source |
+|---|---|---:|---|---|
+| PyTorch | CPU GRU/LSTM/Transformer/modular/explicit-state models and profiler substrate | 2.13.0+cpu | BSD-style 3-clause plus bundled component notices | <https://github.com/pytorch/pytorch/blob/v2.13.0/LICENSE> |
+
+PyTorch is not a core runtime dependency and is installed only through the `learned` or
+existing optional `spiking` extra.

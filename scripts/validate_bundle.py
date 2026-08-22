@@ -29,14 +29,19 @@ REQUIRED = [
     "docs/DEPENDENCIES.md",
     "docs/CODEX_EXECUTION_BRIEF.md",
     "docs/BRAIN_LAB.md",
+    "docs/BASELINES.md",
     "docs/THIRD_PARTY_NOTICES.md",
     "requirements-lab.lock",
+    "requirements-learned.lock",
     "src/sparkbrain/engine.py",
     "src/sparkbrain/model.py",
     "src/sparkbrain/lab/app.py",
     "src/sparkbrain/lab/static/index.html",
     "scripts/run_brain_lab.py",
     "src/sparkbrain/spiking.py",
+    "src/sparkbrain/baselines/classic.py",
+    "src/sparkbrain/baselines/neural/models.py",
+    "src/sparkbrain/evaluation/run_baselines.py",
     "scripts/local_readiness_check.py",
     "scripts/validate_prior_art_audit.py",
     "scripts/run_spiking_comparison.py",
@@ -51,6 +56,10 @@ REQUIRED = [
     "artifacts/demo/visualizer.html",
     "artifacts/benchmarks/benchmark_results.json",
     "artifacts/brain_lab/performance.json",
+    "artifacts/phase2/baselines/c05-smoke-final/run_manifest.json",
+    "artifacts/phase2/baselines/c05-smoke-final/report.md",
+    "artifacts/phase2/baselines/c05-acceptance-final/run_manifest.json",
+    "artifacts/phase2/baselines/c05-acceptance-final/report.md",
     "schemas/config-v0.2.schema.json",
     "schemas/config-document-v0.2.schema.json",
     "schemas/trace-v0.2.schema.json",
@@ -61,7 +70,10 @@ REQUIRED = [
     "schemas/episode-v0.2.schema.json",
     "schemas/phase1-run-manifest-v0.2.schema.json",
     "schemas/phase1-results-v0.2.schema.json",
+    "schemas/baseline-experiment-v0.1.schema.json",
     "configs/experiments/phase1/main.json",
+    "configs/experiments/phase2/baselines_smoke.json",
+    "configs/experiments/phase2/baselines_acceptance.json",
     "artifacts/phase1/c02-main-1000/run_manifest.json",
     "artifacts/phase1/c02-main-1000/phase1-results.json",
     "artifacts/phase1/c02-main-1000/report.md",
@@ -159,6 +171,9 @@ def main() -> None:
     phase1_results_schema = json.loads(
         (schema_dir / "phase1-results-v0.2.schema.json").read_text()
     )
+    baseline_config_schema = json.loads(
+        (schema_dir / "baseline-experiment-v0.1.schema.json").read_text()
+    )
     Draft202012Validator(trace_schema).validate(trace)
     Draft202012Validator(state_schema).validate(checkpoint)
     Draft202012Validator(config_schema).validate(checkpoint["config"])
@@ -176,6 +191,16 @@ def main() -> None:
     Draft202012Validator(phase1_results_schema).validate(phase1_results)
     if phase1_manifest["episode_count"] != 37_000:
         fail("C02 main manifest must contain 37,000 declared episode results")
+    for profile in ("smoke", "acceptance"):
+        config = json.loads(
+            (ROOT / f"configs/experiments/phase2/baselines_{profile}.json").read_text()
+        )
+        Draft202012Validator(baseline_config_schema).validate(config)
+        c05_manifest = json.loads(
+            (ROOT / f"artifacts/phase2/baselines/c05-{profile}-final/run_manifest.json").read_text()
+        )
+        if not c05_manifest.get("completed") or not c05_manifest.get("frozen_inputs_unchanged"):
+            fail(f"C05 {profile} manifest is incomplete or changed frozen inputs")
 
     html = (ROOT / "artifacts/demo/visualizer.html").read_text(encoding="utf-8")
     for marker in ("SparkBrain", "IGNITION", "const payload"):

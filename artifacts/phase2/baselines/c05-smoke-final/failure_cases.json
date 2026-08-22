@@ -1,0 +1,133 @@
+[
+  {
+    "correct": false,
+    "decided": false,
+    "episode_id": "switchworld:test:200000:ce89dd4d1bac",
+    "model": "accumulator",
+    "prediction": null,
+    "probabilities": {
+      "cat": 0.39033769958272174,
+      "dog": 0.3531921562525259,
+      "toy": 0.25647014416475233
+    },
+    "step_index": 0,
+    "truth": "cat"
+  },
+  {
+    "correct": false,
+    "decided": true,
+    "episode_id": "switchworld:test:200001:ce89dd4d1bac",
+    "model": "causal_transformer_context64",
+    "prediction": "cat",
+    "probabilities": {
+      "cat": 0.905637264251709,
+      "dog": 0.04782683402299881,
+      "toy": 0.046535901725292206
+    },
+    "seed": 101,
+    "step_index": 0,
+    "truth": "toy"
+  },
+  {
+    "correct": false,
+    "decided": true,
+    "episode_id": "switchworld:test:200001:ce89dd4d1bac",
+    "model": "chance",
+    "prediction": "cat",
+    "probabilities": {
+      "cat": 0.3333333333333333,
+      "dog": 0.3333333333333333,
+      "toy": 0.3333333333333333
+    },
+    "step_index": 0,
+    "truth": "toy"
+  },
+  {
+    "correct": false,
+    "decided": true,
+    "episode_id": "switchworld:test:200001:ce89dd4d1bac",
+    "model": "explicit_state_memory",
+    "prediction": "cat",
+    "probabilities": {
+      "cat": 0.974915623664856,
+      "dog": 0.000168151906109415,
+      "toy": 0.024916237220168114
+    },
+    "seed": 101,
+    "step_index": 0,
+    "truth": "toy"
+  },
+  {
+    "correct": false,
+    "decided": false,
+    "episode_id": "switchworld:test:200000:ce89dd4d1bac",
+    "model": "gru",
+    "prediction": null,
+    "probabilities": {
+      "cat": 0.4933261275291443,
+      "dog": 0.2329118698835373,
+      "toy": 0.2737619876861572
+    },
+    "seed": 101,
+    "step_index": 0,
+    "truth": "cat"
+  },
+  {
+    "correct": false,
+    "decided": true,
+    "episode_id": "switchworld:test:200001:ce89dd4d1bac",
+    "model": "laplace_hmm",
+    "prediction": "dog",
+    "probabilities": {
+      "cat": 0.28901348069783567,
+      "dog": 0.361418522803895,
+      "toy": 0.34956799649826925
+    },
+    "step_index": 0,
+    "truth": "toy"
+  },
+  {
+    "correct": false,
+    "decided": false,
+    "episode_id": "switchworld:test:200000:ce89dd4d1bac",
+    "model": "lstm",
+    "prediction": null,
+    "probabilities": {
+      "cat": 0.4379819929599762,
+      "dog": 0.3222992718219757,
+      "toy": 0.2397187054157257
+    },
+    "seed": 101,
+    "step_index": 0,
+    "truth": "cat"
+  },
+  {
+    "correct": false,
+    "decided": true,
+    "episode_id": "switchworld:test:200001:ce89dd4d1bac",
+    "model": "privileged_bayes",
+    "prediction": "toy",
+    "probabilities": {
+      "cat": 0.2583694981221751,
+      "dog": 0.3093244492529359,
+      "toy": 0.4323060526248891
+    },
+    "step_index": 1,
+    "truth": "cat"
+  },
+  {
+    "correct": false,
+    "decided": false,
+    "episode_id": "switchworld:test:200000:ce89dd4d1bac",
+    "model": "rim_like_top2_of4",
+    "prediction": null,
+    "probabilities": {
+      "cat": 0.4132465720176697,
+      "dog": 0.26894938945770264,
+      "toy": 0.3178040683269501
+    },
+    "seed": 101,
+    "step_index": 0,
+    "truth": "cat"
+  }
+]

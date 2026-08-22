@@ -54,6 +54,40 @@ Claim grade impact:
 Next action:
 ```
 
+## 2026-08-23 — C05 matched-baseline reduced acceptance (ID assigned at integration)
+
+**Command:** `python -m sparkbrain.evaluation.run_baselines --config configs/experiments/phase2/baselines_acceptance.json --output artifacts/phase2/baselines/c05-acceptance-final`
+**Data/splits:** C02 frozen dev/test manifests; four episodes per world in this reduced run
+**Seeds:** learned seeds 101, 211, 307, 401, 503; paired C02 episode seeds
+**Raw outputs:** `artifacts/phase2/baselines/c05-acceptance-final/raw_results.json`
+**Aggregate:** `artifacts/phase2/baselines/c05-acceptance-final/aggregate_metrics.json`
+
+### Result
+
+- all ten baseline families completed locally in 29.7 seconds on the recorded CPU setup;
+- architecture-body parameter counts were within ±2% of the 32,100 target without a
+  padding reserve; the common optimizer-work proxy was within ±5%;
+- frozen C02 input-file SHA-256 values were identical before and after execution;
+- the privileged Bayes diagnostic reached 0.8125 all-step accuracy and oracle 1.0, but
+  these are explicitly privileged bounds and not matched competitors.
+
+### Negative findings and confounds
+
+- quality matching against accumulator dev accuracy/coverage was not achieved for every
+  learned seed/family after ten optimizer steps;
+- learned test accuracy varied widely by seed; the compact Transformer reached as low as
+  0.0556 and explicit-state memory showed unstable/high loss in some runs;
+- the reduced run executed one configuration per seed, not a completed 12-trial search or
+  the full 1,000-episode-per-world frozen matrix;
+- family-specific analytical work and CPU profiler results did not establish a scientific
+  training-compute match; `scientific_compute_match` is retained as false;
+- all timing and operation counts are local compute observations, not energy evidence.
+
+**Claim impact:** CL-007 remains E0. The result validates the harness and records a negative
+quality-matching outcome; it does not support general superiority.
+
+---
+
 ## 2026-08-23 — R0006 — C02 controlled synthetic suite
 
 **Code/base:** C02 branch from accepted C01 `c5178db`; schema remains `0.2`

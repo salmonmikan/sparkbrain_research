@@ -93,13 +93,22 @@ Responsibilities:
 - hand-authored evidence routing
 - standard brain topology factory
 
-### `baselines.py`
+### `baselines/`
 
 - dense evidence accumulator
 - hard-WTA accumulator
 - instant event classifier
 
-These are software sanity baselines, not sufficient neural baselines.
+`classic.py` retains the Phase-0 scalar baselines and `__init__.py` preserves the former
+`sparkbrain.baselines` imports. `probabilistic.py` contains privileged Bayes and a causal
+train-only Laplace HMM; `bounds.py` contains evaluator-only oracle and chance bounds.
+
+`baselines/neural/` is optional-PyTorch code for GRU, LSTM, causal Transformer (context
+64), top-two-of-four RIM-like recurrence, and explicit-state memory. All implement the
+same reset/step/probability/trace/counter surface. C02 `Episode` construction stays outside
+the models in `evaluation/baseline_data.py`; truth and test selection remain evaluator-only.
+Training, analytical work accounting, profiling, paired statistics, and artifact output are
+separate modules under `evaluation/`. This is a comparison harness, not an engine backend.
 
 ### `metrics.py`
 

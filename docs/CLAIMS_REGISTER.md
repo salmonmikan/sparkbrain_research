@@ -89,6 +89,16 @@ See `docs/research/literature_matrix.csv` for source-level verdicts and `docs/re
   development-calibrated no-ignition state.” Do not generalize this to external tasks or
   calibrated uncertainty broadly. See `docs/C04_LEARNED_ROUTING_RESULTS.md`.
 
+## C05 reduced matched-baseline boundary
+
+- The harness and ten baseline-family CPU paths are E1 implementation evidence only.
+- The reduced five-seed profile matched architecture-body parameter counts within the declared
+  tolerance. Only an optimizer-work proxy matched the compute tolerance; family-specific
+  analytical work and CPU timing did not, so scientific compute matching is false.
+- Dev quality matching failed for at least one learned family/seed.
+- The profile is not the full frozen 1,000-episode-per-world evaluation and does not raise
+  CL-007 above E0. No neural, general-superiority, biological, or energy claim is permitted.
+
 ## Claim change procedure
 
 Any grade change must include:

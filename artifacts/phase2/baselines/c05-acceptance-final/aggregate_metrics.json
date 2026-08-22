@@ -1,0 +1,362 @@
+[
+  {
+    "accuracy_all_steps": 0.1284722222222222,
+    "accuracy_when_decided": 0.14859437751004015,
+    "coverage": 0.8645833333333334,
+    "model": "gru",
+    "seed": 101,
+    "steps": 288,
+    "work_counters": {
+      "messages": 6318,
+      "state_updates": 6318
+    }
+  },
+  {
+    "accuracy_all_steps": 0.5,
+    "accuracy_when_decided": 0.5,
+    "coverage": 1.0,
+    "model": "lstm",
+    "seed": 101,
+    "steps": 288,
+    "work_counters": {
+      "messages": 5226,
+      "state_updates": 5226
+    }
+  },
+  {
+    "accuracy_all_steps": 0.06597222222222222,
+    "accuracy_when_decided": 0.08085106382978724,
+    "coverage": 0.8159722222222222,
+    "model": "causal_transformer_context64",
+    "seed": 101,
+    "steps": 288,
+    "work_counters": {
+      "messages": 39000,
+      "state_updates": 39000
+    }
+  },
+  {
+    "accuracy_all_steps": 0.1527777777777778,
+    "accuracy_when_decided": 0.21153846153846154,
+    "coverage": 0.7222222222222222,
+    "model": "rim_like_top2_of4",
+    "seed": 101,
+    "steps": 288,
+    "work_counters": {
+      "messages": 4992,
+      "state_updates": 4992
+    }
+  },
+  {
+    "accuracy_all_steps": 0.4131944444444444,
+    "accuracy_when_decided": 0.49583333333333335,
+    "coverage": 0.8333333333333334,
+    "model": "explicit_state_memory",
+    "seed": 101,
+    "steps": 288,
+    "work_counters": {
+      "messages": 12090,
+      "state_updates": 12090
+    }
+  },
+  {
+    "accuracy_all_steps": 0.3263888888888889,
+    "accuracy_when_decided": 0.3560606060606061,
+    "coverage": 0.9166666666666666,
+    "model": "gru",
+    "seed": 211,
+    "steps": 288,
+    "work_counters": {
+      "messages": 6318,
+      "state_updates": 6318
+    }
+  },
+  {
+    "accuracy_all_steps": 0.13541666666666666,
+    "accuracy_when_decided": 0.14885496183206107,
+    "coverage": 0.9097222222222222,
+    "model": "lstm",
+    "seed": 211,
+    "steps": 288,
+    "work_counters": {
+      "messages": 5226,
+      "state_updates": 5226
+    }
+  },
+  {
+    "accuracy_all_steps": 0.05555555555555555,
+    "accuracy_when_decided": 0.08163265306122448,
+    "coverage": 0.6805555555555556,
+    "model": "causal_transformer_context64",
+    "seed": 211,
+    "steps": 288,
+    "work_counters": {
+      "messages": 39000,
+      "state_updates": 39000
+    }
+  },
+  {
+    "accuracy_all_steps": 0.4375,
+    "accuracy_when_decided": 0.4701492537313433,
+    "coverage": 0.9305555555555556,
+    "model": "rim_like_top2_of4",
+    "seed": 211,
+    "steps": 288,
+    "work_counters": {
+      "messages": 4992,
+      "state_updates": 4992
+    }
+  },
+  {
+    "accuracy_all_steps": 0.3541666666666667,
+    "accuracy_when_decided": 0.425,
+    "coverage": 0.8333333333333334,
+    "model": "explicit_state_memory",
+    "seed": 211,
+    "steps": 288,
+    "work_counters": {
+      "messages": 12090,
+      "state_updates": 12090
+    }
+  },
+  {
+    "accuracy_all_steps": 0.15625,
+    "accuracy_when_decided": 0.2542372881355932,
+    "coverage": 0.6145833333333334,
+    "model": "gru",
+    "seed": 307,
+    "steps": 288,
+    "work_counters": {
+      "messages": 6318,
+      "state_updates": 6318
+    }
+  },
+  {
+    "accuracy_all_steps": 0.4722222222222222,
+    "accuracy_when_decided": 0.5093632958801498,
+    "coverage": 0.9270833333333334,
+    "model": "lstm",
+    "seed": 307,
+    "steps": 288,
+    "work_counters": {
+      "messages": 5226,
+      "state_updates": 5226
+    }
+  },
+  {
+    "accuracy_all_steps": 0.06597222222222222,
+    "accuracy_when_decided": 0.0708955223880597,
+    "coverage": 0.9305555555555556,
+    "model": "causal_transformer_context64",
+    "seed": 307,
+    "steps": 288,
+    "work_counters": {
+      "messages": 39000,
+      "state_updates": 39000
+    }
+  },
+  {
+    "accuracy_all_steps": 0.4513888888888889,
+    "accuracy_when_decided": 0.5038759689922481,
+    "coverage": 0.8958333333333334,
+    "model": "rim_like_top2_of4",
+    "seed": 307,
+    "steps": 288,
+    "work_counters": {
+      "messages": 4992,
+      "state_updates": 4992
+    }
+  },
+  {
+    "accuracy_all_steps": 0.3506944444444444,
+    "accuracy_when_decided": 0.38549618320610685,
+    "coverage": 0.9097222222222222,
+    "model": "explicit_state_memory",
+    "seed": 307,
+    "steps": 288,
+    "work_counters": {
+      "messages": 12090,
+      "state_updates": 12090
+    }
+  },
+  {
+    "accuracy_all_steps": 0.08680555555555555,
+    "accuracy_when_decided": 0.10245901639344263,
+    "coverage": 0.8472222222222222,
+    "model": "gru",
+    "seed": 401,
+    "steps": 288,
+    "work_counters": {
+      "messages": 6318,
+      "state_updates": 6318
+    }
+  },
+  {
+    "accuracy_all_steps": 0.21180555555555555,
+    "accuracy_when_decided": 0.22262773722627738,
+    "coverage": 0.9513888888888888,
+    "model": "lstm",
+    "seed": 401,
+    "steps": 288,
+    "work_counters": {
+      "messages": 5226,
+      "state_updates": 5226
+    }
+  },
+  {
+    "accuracy_all_steps": 0.06597222222222222,
+    "accuracy_when_decided": 0.07569721115537849,
+    "coverage": 0.8715277777777778,
+    "model": "causal_transformer_context64",
+    "seed": 401,
+    "steps": 288,
+    "work_counters": {
+      "messages": 39000,
+      "state_updates": 39000
+    }
+  },
+  {
+    "accuracy_all_steps": 0.2152777777777778,
+    "accuracy_when_decided": 0.22545454545454546,
+    "coverage": 0.9548611111111112,
+    "model": "rim_like_top2_of4",
+    "seed": 401,
+    "steps": 288,
+    "work_counters": {
+      "messages": 4992,
+      "state_updates": 4992
+    }
+  },
+  {
+    "accuracy_all_steps": 0.3159722222222222,
+    "accuracy_when_decided": 0.4212962962962963,
+    "coverage": 0.75,
+    "model": "explicit_state_memory",
+    "seed": 401,
+    "steps": 288,
+    "work_counters": {
+      "messages": 12090,
+      "state_updates": 12090
+    }
+  },
+  {
+    "accuracy_all_steps": 0.3819444444444444,
+    "accuracy_when_decided": 0.4583333333333333,
+    "coverage": 0.8333333333333334,
+    "model": "gru",
+    "seed": 503,
+    "steps": 288,
+    "work_counters": {
+      "messages": 6318,
+      "state_updates": 6318
+    }
+  },
+  {
+    "accuracy_all_steps": 0.11805555555555555,
+    "accuracy_when_decided": 0.13991769547325103,
+    "coverage": 0.84375,
+    "model": "lstm",
+    "seed": 503,
+    "steps": 288,
+    "work_counters": {
+      "messages": 5226,
+      "state_updates": 5226
+    }
+  },
+  {
+    "accuracy_all_steps": 0.06597222222222222,
+    "accuracy_when_decided": 0.076,
+    "coverage": 0.8680555555555556,
+    "model": "causal_transformer_context64",
+    "seed": 503,
+    "steps": 288,
+    "work_counters": {
+      "messages": 39000,
+      "state_updates": 39000
+    }
+  },
+  {
+    "accuracy_all_steps": 0.4479166666666667,
+    "accuracy_when_decided": 0.48863636363636365,
+    "coverage": 0.9166666666666666,
+    "model": "rim_like_top2_of4",
+    "seed": 503,
+    "steps": 288,
+    "work_counters": {
+      "messages": 4992,
+      "state_updates": 4992
+    }
+  },
+  {
+    "accuracy_all_steps": 0.4583333333333333,
+    "accuracy_when_decided": 0.5,
+    "coverage": 0.9166666666666666,
+    "model": "explicit_state_memory",
+    "seed": 503,
+    "steps": 288,
+    "work_counters": {
+      "messages": 12090,
+      "state_updates": 12090
+    }
+  },
+  {
+    "accuracy_all_steps": 0.6944444444444444,
+    "accuracy_when_decided": 0.8583690987124464,
+    "coverage": 0.8090277777777778,
+    "model": "accumulator",
+    "seed": null,
+    "steps": 288,
+    "work_counters": {
+      "messages": 36,
+      "state_updates": 36
+    }
+  },
+  {
+    "accuracy_all_steps": 0.8125,
+    "accuracy_when_decided": 0.8125,
+    "coverage": 1.0,
+    "model": "privileged_bayes",
+    "seed": null,
+    "steps": 288,
+    "work_counters": {
+      "messages": 144,
+      "state_updates": 144
+    }
+  },
+  {
+    "accuracy_all_steps": 0.4722222222222222,
+    "accuracy_when_decided": 0.4722222222222222,
+    "coverage": 1.0,
+    "model": "laplace_hmm",
+    "seed": null,
+    "steps": 288,
+    "work_counters": {
+      "messages": 144,
+      "state_updates": 144
+    }
+  },
+  {
+    "accuracy_all_steps": 0.4965277777777778,
+    "accuracy_when_decided": 0.4965277777777778,
+    "coverage": 1.0,
+    "model": "chance",
+    "seed": null,
+    "steps": 288,
+    "work_counters": {
+      "messages": 0,
+      "state_updates": 0
+    }
+  },
+  {
+    "accuracy_all_steps": 1.0,
+    "accuracy_when_decided": 1.0,
+    "coverage": 1.0,
+    "model": "oracle",
+    "seed": null,
+    "steps": 288,
+    "work_counters": {
+      "messages": 0,
+      "state_updates": 0
+    }
+  }
+]

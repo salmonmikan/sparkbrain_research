@@ -370,6 +370,21 @@ python scripts/run_benchmark.py --episodes 40 --steps 30
 - hand-authored routing removed from primary result
 - matched GRU/Transformer/RIM baselines complete
 
+### C05 reduced matched-baseline protocol (2026-08-23)
+
+C05 consumes C02 `Episode` objects and frozen manifest files without modifying them.
+Observation encoding is fitted on a deterministic training half of dev; confidence
+threshold, quality match, and model choices use dev only. Test targets remain evaluator
+fields. Learned final seeds are 101, 211, 307, 401, and 503. Parameter and analytical
+training-operation targets are checked within ±2% and ±5%; accuracy quality uses ±1
+percentage point and coverage ±2 points. Oracle and privileged Bayes are excluded from
+information-matched conclusions.
+
+The committed acceptance artifact is a reduced CPU integration profile, not the full C02
+frozen scientific matrix. It records failed quality matches, all test rows, paired
+episode-level bootstrap/sign-flip statistics, effect sizes, and Holm adjustment. Operation
+counts and CPU timing are never treated as energy measurements.
+
 ### Gate P3
 
 - at least one external benchmark improved on primary revision metric without unacceptable false ignition

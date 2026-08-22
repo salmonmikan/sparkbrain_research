@@ -14,6 +14,17 @@ NumPy 2.5.2. C04 adds no PyTorch Geometric, remote tracker, hosted storage, or m
 The repository does not redistribute either wheel. Exact release packaging/notices remain a
 C10 responsibility.
 
+## C05 optional learned stack — reviewed 2026-08-23
+
+PyTorch `2.13.0` is pinned in `requirements-learned.lock` and isolated in the `learned`
+optional extra. The tested local build was `2.13.0+cpu` on Python 3.13.3. PyTorch's
+upstream v2.13.0 license permits redistribution under three conditions and includes
+component copyright notices; it is recorded as BSD-style/3-clause in this project.
+Official source: <https://github.com/pytorch/pytorch/blob/v2.13.0/LICENSE>.
+
+The baseline runtime performs no network access and uses one CPU thread in committed
+profiles. Core `[project].dependencies` remains empty.
+
 ## C07 optional spiking stack — reviewed 2026-08-23
 
 Core SparkBrain remains dependency-light. These packages are isolated in the `spiking`

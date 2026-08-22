@@ -1,0 +1,13 @@
+{
+  "all_families_present": true,
+  "equal_trial_budget": true,
+  "five_learned_seeds": true,
+  "identical_input_hash_recorded": true,
+  "no_failed_runs": true,
+  "optimizer_proxy_tolerance": true,
+  "parameter_tolerance": true,
+  "quality_match_achieved": false,
+  "quality_match_evaluated": true,
+  "scientific_compute_match": false,
+  "within_hard_timeout": true
+}

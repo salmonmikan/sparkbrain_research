@@ -1,0 +1,2 @@
+# Optional C05 learned baseline stack; core runtime dependencies remain empty.
+torch==2.13.0

@@ -159,7 +159,7 @@ sparkbrain_research_v0_2_1/
 │   ├── model.py
 │   ├── engine.py
 │   ├── worlds.py
-│   ├── baselines.py
+│   ├── baselines/        # classic, probabilistic, bounds, optional neural baselines
 │   ├── metrics.py
 │   ├── benchmark.py
 │   ├── visualizer.py

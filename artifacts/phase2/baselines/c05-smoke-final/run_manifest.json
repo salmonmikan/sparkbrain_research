@@ -1,0 +1,93 @@
+{
+  "completed": true,
+  "determinism": [
+    {
+      "deterministic_algorithms": true,
+      "seed": 101,
+      "threads": 1,
+      "torch_version": "2.13.0+cpu"
+    }
+  ],
+  "elapsed_seconds": 3.996365699917078,
+  "episode_manifest_hashes": {
+    "dev": "72e689e6be2d2f99aee4debcdcbfc2dd103fc46c38e9310ba87b8668e8865008",
+    "test": "50f5f7f02a5f351c81635ae65daf83a99ff345f697e3ce7884ca1ff02ba33c5c"
+  },
+  "frozen_input_sha256_after": {
+    "artifacts/phase1/c02-main-1000/run_manifest.json": "f838fc13af0466c7c390a4d74c5a469ddb429c4ec8adda867e0d8c149bea96a1",
+    "artifacts/phase1/c02-main-1000/split_manifest.json": "8dd47a7c78be8600f3e5fa5bfd125b88e2bdaf5562596490e7e2019811a17ffe",
+    "configs/experiments/phase1/manifests/dev-v1.json": "968593ff7c5f4274aaeb416bd58200e8625218d1a0179a1dff8a31d1b82a85a8",
+    "configs/experiments/phase1/manifests/test-v1.json": "3815f3857c485fb6c596f496c00ce36c437ee3b17fd97105d0fb729ff16e9e20"
+  },
+  "frozen_input_sha256_before": {
+    "artifacts/phase1/c02-main-1000/run_manifest.json": "f838fc13af0466c7c390a4d74c5a469ddb429c4ec8adda867e0d8c149bea96a1",
+    "artifacts/phase1/c02-main-1000/split_manifest.json": "8dd47a7c78be8600f3e5fa5bfd125b88e2bdaf5562596490e7e2019811a17ffe",
+    "configs/experiments/phase1/manifests/dev-v1.json": "968593ff7c5f4274aaeb416bd58200e8625218d1a0179a1dff8a31d1b82a85a8",
+    "configs/experiments/phase1/manifests/test-v1.json": "3815f3857c485fb6c596f496c00ce36c437ee3b17fd97105d0fb729ff16e9e20"
+  },
+  "frozen_inputs_unchanged": true,
+  "input_hashes": {
+    "dev": "f4f9c633299a894b3b989ab8f472cd5ac2524d08b737b7a571887397aa7e866e",
+    "test": "1439b3868bec3c47bdc3988630250e2542b6fc092bc40866252eef6beef7c102",
+    "train": "08adfca9444b90a6b5cabbc4bf7d3dd111c826563b793675307c3d973cfd2710"
+  },
+  "input_hashes_by_family": {
+    "accumulator": {
+      "dev": "f4f9c633299a894b3b989ab8f472cd5ac2524d08b737b7a571887397aa7e866e",
+      "test": "1439b3868bec3c47bdc3988630250e2542b6fc092bc40866252eef6beef7c102",
+      "train": "08adfca9444b90a6b5cabbc4bf7d3dd111c826563b793675307c3d973cfd2710"
+    },
+    "causal_transformer_context64": {
+      "dev": "f4f9c633299a894b3b989ab8f472cd5ac2524d08b737b7a571887397aa7e866e",
+      "test": "1439b3868bec3c47bdc3988630250e2542b6fc092bc40866252eef6beef7c102",
+      "train": "08adfca9444b90a6b5cabbc4bf7d3dd111c826563b793675307c3d973cfd2710"
+    },
+    "chance": {
+      "dev": "f4f9c633299a894b3b989ab8f472cd5ac2524d08b737b7a571887397aa7e866e",
+      "test": "1439b3868bec3c47bdc3988630250e2542b6fc092bc40866252eef6beef7c102",
+      "train": "08adfca9444b90a6b5cabbc4bf7d3dd111c826563b793675307c3d973cfd2710"
+    },
+    "explicit_state_memory": {
+      "dev": "f4f9c633299a894b3b989ab8f472cd5ac2524d08b737b7a571887397aa7e866e",
+      "test": "1439b3868bec3c47bdc3988630250e2542b6fc092bc40866252eef6beef7c102",
+      "train": "08adfca9444b90a6b5cabbc4bf7d3dd111c826563b793675307c3d973cfd2710"
+    },
+    "gru": {
+      "dev": "f4f9c633299a894b3b989ab8f472cd5ac2524d08b737b7a571887397aa7e866e",
+      "test": "1439b3868bec3c47bdc3988630250e2542b6fc092bc40866252eef6beef7c102",
+      "train": "08adfca9444b90a6b5cabbc4bf7d3dd111c826563b793675307c3d973cfd2710"
+    },
+    "laplace_hmm": {
+      "dev": "f4f9c633299a894b3b989ab8f472cd5ac2524d08b737b7a571887397aa7e866e",
+      "test": "1439b3868bec3c47bdc3988630250e2542b6fc092bc40866252eef6beef7c102",
+      "train": "08adfca9444b90a6b5cabbc4bf7d3dd111c826563b793675307c3d973cfd2710"
+    },
+    "lstm": {
+      "dev": "f4f9c633299a894b3b989ab8f472cd5ac2524d08b737b7a571887397aa7e866e",
+      "test": "1439b3868bec3c47bdc3988630250e2542b6fc092bc40866252eef6beef7c102",
+      "train": "08adfca9444b90a6b5cabbc4bf7d3dd111c826563b793675307c3d973cfd2710"
+    },
+    "oracle": {
+      "dev": "f4f9c633299a894b3b989ab8f472cd5ac2524d08b737b7a571887397aa7e866e",
+      "test": "1439b3868bec3c47bdc3988630250e2542b6fc092bc40866252eef6beef7c102",
+      "train": "08adfca9444b90a6b5cabbc4bf7d3dd111c826563b793675307c3d973cfd2710"
+    },
+    "privileged_bayes": {
+      "dev": "f4f9c633299a894b3b989ab8f472cd5ac2524d08b737b7a571887397aa7e866e",
+      "test": "1439b3868bec3c47bdc3988630250e2542b6fc092bc40866252eef6beef7c102",
+      "train": "08adfca9444b90a6b5cabbc4bf7d3dd111c826563b793675307c3d973cfd2710"
+    },
+    "rim_like_top2_of4": {
+      "dev": "f4f9c633299a894b3b989ab8f472cd5ac2524d08b737b7a571887397aa7e866e",
+      "test": "1439b3868bec3c47bdc3988630250e2542b6fc092bc40866252eef6beef7c102",
+      "train": "08adfca9444b90a6b5cabbc4bf7d3dd111c826563b793675307c3d973cfd2710"
+    }
+  },
+  "network_required": false,
+  "platform": "Windows-11-10.0.26200-SP0",
+  "profile": "smoke",
+  "python": "3.13.3",
+  "run_id": "c05-smoke-final",
+  "schema_version": "0.1",
+  "test_used_for_selection": false
+}
