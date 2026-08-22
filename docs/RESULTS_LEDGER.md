@@ -226,3 +226,30 @@ Schema remains `0.2`; no migration is introduced. The stricter validators reject
 
 CL-009 advances only to E1 for this reduced hybrid canonical fixture. It does not establish
 general spiking equivalence, biological fidelity, efficiency, or multi-world robustness.
+
+---
+
+## 2026-08-23 — R0007 — C03 import boundary and C07 queue-order correction
+
+**Nature:** acceptance and safety correction; no scientific claim increase
+**Primary commands:** `python -m pytest -q`, `python -m ruff check .`, `python scripts/run_spiking_comparison.py`, `python scripts/validate_bundle.py`
+
+### Corrected contracts
+
+- Brain Lab import enforces a 25 MiB serialized limit and strict agreement among metadata, checkpoint, trace, figure data, and event manifest before creating a run;
+- blind imports reject visible truth and export paths remain confined to the artifact root;
+- hybrid LIF state advances when events leave the deterministic queue, preserving time, priority, and sequence order instead of caller scheduling order;
+- pending LIF events remain checkpointable across an event-limit interruption;
+- CI installs the optional spiking dependencies before executing the full test suite.
+
+### Validation outcome
+
+- focused Brain Lab/C07 tests: 25 passing;
+- full tests: 113 passing;
+- Ruff, local readiness, dependency check, and 55-file bundle validation: PASS;
+- C07 frozen comparison: 9/9 checks remain PASS;
+- trace schema, reset, internal generated events, reverse scheduling, equal-time ordering, checkpoint continuation, oversize import, malformed import, blind behavior, parent preservation, and artifact-root confinement are covered.
+
+### Claim impact
+
+None. The correction removes causal-order and import-validation defects without expanding the single-scenario hybrid evidence boundary recorded in R0005.

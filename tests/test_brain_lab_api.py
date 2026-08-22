@@ -1,10 +1,12 @@
 from __future__ import annotations
 
 import json
+from copy import deepcopy
 
 from fastapi.testclient import TestClient
 
 from sparkbrain.lab.app import create_app
+from sparkbrain.lab.service import MAX_EXPORT_BYTES
 from sparkbrain.serialization import state_hash
 
 
@@ -57,6 +59,24 @@ def test_export_import_api_round_trip(tmp_path) -> None:
         assert restored.status_code == 201
         assert restored.json()["prediction"] == "cat"
         assert restored.json()["event_index"] == 7
+
+
+def test_import_api_rejects_oversize_and_malformed_bundles(tmp_path) -> None:
+    with client(tmp_path) as api:
+        run = api.post("/api/runs", json={}).json()
+        bundle = api.post(f"/api/runs/{run['run_id']}/export").json()["bundle"]
+
+        oversized = deepcopy(bundle)
+        oversized["padding"] = "x" * (MAX_EXPORT_BYTES + 1)
+        response = api.post("/api/import", json={"bundle": oversized})
+        assert response.status_code == 422
+        assert "size limit" in response.json()["detail"]
+
+        malformed = deepcopy(bundle)
+        malformed["trace"] = "not-a-trace"
+        response = api.post("/api/import", json={"bundle": malformed})
+        assert response.status_code == 422
+        assert "trace" in response.json()["detail"]
 
 
 def test_loopback_health_contract(tmp_path) -> None:

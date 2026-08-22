@@ -12,8 +12,8 @@
   "artifacts/phase1/c02-main-1000/phase1-results.json": "fd3a4a5cd58e05b69dc697a958f96956d5bd713c0afb9a4ddac486ce4e7f205a",
   "artifacts/phase1/c02-main-1000/report.md": "dc8e0b75ebfdcb54bd6d035b921f8bdcb4d75fd2e1d148fe1a4aa777d0a1d760",
   "artifacts/phase1/c02-main-1000/run_manifest.json": "f838fc13af0466c7c390a4d74c5a469ddb429c4ec8adda867e0d8c149bea96a1",
-  "artifacts/spiking/c07_comparison.json": "ca3b9804be6fd9de40ed836bb0d9a339e9a5711660f19fb50aa3427652003bc1",
-  "artifacts/spiking/c07_report.md": "6eff4827f0f5abec62f0ab34d1c29d01b01d43f012351f8edb249974fad0a9ed",
+  "artifacts/spiking/c07_comparison.json": "b6ff61afd4c934c7797f93474c58c8c32b0791399fd63e612d5e7f4be4a872e4",
+  "artifacts/spiking/c07_report.md": "b9a4f7ab09090160c163de21ed4bc48a9649e503d6ee80ec0ecd12fcc8fa9232",
   "artifacts/spiking/rate_trace.json": "951e6a95115bafb504ef67ed534a4d80b0af60f5332651d139bae3c67aa73261",
   "artifacts/spiking/spike_trace.json": "2276a5307bc2082c7108c85e74f9ad3f9e820f2f43bfccc65bd0f3fa9b265e20",
   "configs/experiments/phase1/main.json": "9b91c86e34966f479fa6bb8b0011ff4a5a8fc189f8ddc5bb3413f73f2cec7b9d",
@@ -26,7 +26,7 @@
   "docs/LOCAL_EXECUTION_POLICY.md": "20b5eae416451a59d469feabbd8ddf6e1f3926eea4cfb8b723c48ad9f31adcd4",
   "docs/PRIOR_ART_GAP_ANALYSIS.md": "f3e48147546b5bd812e052ca2573710be85d98d8743924afa264a0d3fc7111b6",
   "docs/PROJECT_CHARTER.md": "e0bc371c4bad2dae26d753bdc3239c4a9e11a689f41bfa73e43a0bc6e5db877a",
-  "docs/PROJECT_STATUS.md": "f202ab449092d1a7ccfbf8bf6cade4d569c3dd59b997b635bc6e01311301412b",
+  "docs/PROJECT_STATUS.md": "5cc79cbd79b25fb149f06b5f500465ed549abfdd83e09f556fb427742b1d58ef",
   "docs/START_HERE.md": "a6a3023b3b515c338f4b5cec88275c3dfc9708e184787f836c25e7a6f1d1f8ab",
   "docs/THEORY_SPEC_v0.2.1.md": "7a1425ed3aa194136022dcbf9ec43f93fd07b002e9282eee138c0a54ae8ce4e3",
   "docs/THIRD_PARTY_NOTICES.md": "bcbefd95239ff8a336b56de9485848e74e524f6bcb9191d06032e324cc4c65f0",
@@ -53,5 +53,5 @@
   "src/sparkbrain/lab/app.py": "d379295db77b68907064611ee357b29cc04b079f0c948cd4395cda49debf1e2b",
   "src/sparkbrain/lab/static/index.html": "bca141d6fd2eec55aefd843ad3e5dfbca146299ed08974c9766ff5df6e198af4",
   "src/sparkbrain/model.py": "434d38226de4036cf6efa0d92ed06db5b5a3ea4e2fa17af72ad5ebde182b88fc",
-  "src/sparkbrain/spiking.py": "7e528203c9b80cca65dbe5a88c616bda2a483fb1fdd0be244f78c704a2241799"
+  "src/sparkbrain/spiking.py": "fe8cfe90622186f81c7905f3cb9b9f1ba3c564d8423d548c6fbc785617dcaadf"
 }

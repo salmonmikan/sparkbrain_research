@@ -1,11 +1,12 @@
 from __future__ import annotations
 
+import heapq
 import math
 import time
 from dataclasses import asdict, dataclass, replace
 from typing import Any
 
-from .model import BrainConfig, EngineStats, EventKind, TraceFrame
+from .model import BrainConfig, EngineStats, Event, EventKind, TraceFrame
 from .worlds import SwitchEvent, build_reference_brain
 
 
@@ -165,18 +166,18 @@ class SnnTorchLIFHybridBackend:
         evidence_label: str | None = None,
         metadata: dict | None = None,
     ) -> None:
-        encoded = strength
         merged = dict(metadata or {})
         if kind is EventKind.STIMULUS and target is not None:
-            encoded = self._encode_current(target, strength, time)
-            merged["spiking_backend"] = self.backend_name
-            merged["lif_spike"] = bool(encoded)
+            # LIF state must advance in the same deterministic queue order as the
+            # reference engine, not in caller scheduling order.  The marker and raw
+            # strength are checkpointed with the pending event and consumed by run().
+            merged["_spiking_encode_pending"] = True
         self.engine.schedule(
             time=time,
             kind=kind,
             source=source,
             target=target,
-            strength=encoded,
+            strength=strength,
             priority=priority,
             evidence_id=evidence_id,
             evidence_label=evidence_label,
@@ -209,8 +210,52 @@ class SnnTorchLIFHybridBackend:
 
     def run(self, *, max_events: int = 100_000) -> None:
         started = time.perf_counter()
-        self.engine.run(max_events=max_events)
-        self.cpu_seconds += time.perf_counter() - started
+        processed = 0
+        try:
+            while self.engine._queue:
+                if processed >= max_events:
+                    preview = [
+                        {
+                            "time": event.time,
+                            "kind": event.kind.value,
+                            "source": event.source,
+                            "target": event.target,
+                        }
+                        for event in sorted(self.engine._queue)[:5]
+                    ]
+                    raise RuntimeError(
+                        "Event limit exceeded; possible recurrent event loop; "
+                        f"remaining={len(self.engine._queue)} next={preview}"
+                    )
+                event = heapq.heappop(self.engine._queue)
+                if (
+                    event.kind is EventKind.STIMULUS
+                    and event.target is not None
+                    and event.metadata.get("_spiking_encode_pending")
+                ):
+                    metadata = dict(event.metadata)
+                    metadata.pop("_spiking_encode_pending", None)
+                    encoded = self._encode_current(event.target, event.strength, event.time)
+                    metadata["spiking_backend"] = self.backend_name
+                    metadata["lif_spike"] = bool(encoded)
+                    event = Event(
+                        time=event.time,
+                        priority=event.priority,
+                        sequence=event.sequence,
+                        kind=event.kind,
+                        source=event.source,
+                        target=event.target,
+                        strength=encoded,
+                        evidence_id=event.evidence_id,
+                        evidence_label=event.evidence_label,
+                        metadata=metadata,
+                    )
+                self.engine.time = event.time
+                self.engine._decay_eligibilities()
+                self.engine._process_event(event)
+                processed += 1
+        finally:
+            self.cpu_seconds += time.perf_counter() - started
 
     def _with_spiking_stats(self, frame: TraceFrame) -> TraceFrame:
         return replace(

@@ -13,7 +13,27 @@ from sparkbrain.serialization import canonical_json, state_hash
 from sparkbrain.worlds import SwitchEvent, SwitchWorld, build_reference_brain
 
 MAX_EXTERNAL_EVENTS = 10_000
-MAX_EXPORT_BYTES = 25_000_000
+MAX_EXPORT_BYTES = 25 * 1024 * 1024
+IMPORT_TOP_LEVEL_KEYS = {
+    "schema_version",
+    "lab_version",
+    "run",
+    "event_manifest",
+    "checkpoint",
+    "trace",
+    "figure_data",
+}
+IMPORT_RUN_KEYS = {
+    "run_id",
+    "seed",
+    "blind",
+    "event_index",
+    "status",
+    "parent_run_id",
+    "intervention_patch",
+    "fork_base_hash",
+    "injections",
+}
 
 
 def _frame_dict(frame: Any, *, blind: bool) -> dict[str, Any]:
@@ -32,6 +52,29 @@ def _blind_sanitize(value: Any) -> Any:
     if isinstance(value, list):
         return [_blind_sanitize(child) for child in value]
     return value
+
+
+def _require_exact_keys(value: Any, expected: set[str], location: str) -> dict[str, Any]:
+    if not isinstance(value, dict):
+        raise ValueError(f"{location} must be an object")
+    actual = set(value)
+    if actual != expected:
+        raise ValueError(
+            f"{location} keys mismatch: missing={sorted(expected - actual)} "
+            f"unknown={sorted(actual - expected)}"
+        )
+    return value
+
+
+def _has_visible_truth(value: Any) -> bool:
+    if isinstance(value, dict):
+        return any(
+            (key == "truth" and child is not None) or _has_visible_truth(child)
+            for key, child in value.items()
+        )
+    if isinstance(value, list):
+        return any(_has_visible_truth(child) for child in value)
+    return False
 
 
 def prepare_relevant_graph(
@@ -325,16 +368,112 @@ class LabManager:
         return bundle, path
 
     def import_bundle(self, bundle: dict[str, Any]) -> LabRun:
+        try:
+            serialized = canonical_json(bundle).encode("utf-8")
+        except (TypeError, ValueError) as exc:
+            raise ValueError("Brain Lab import must be finite JSON") from exc
+        if len(serialized) > MAX_EXPORT_BYTES:
+            raise ValueError("import exceeds local artifact size limit")
+        _require_exact_keys(bundle, IMPORT_TOP_LEVEL_KEYS, "bundle")
         if bundle.get("schema_version") != "0.2" or bundle.get("lab_version") != "0.1":
             raise ValueError("unsupported Brain Lab export version")
-        raw = bundle["run"]
+        raw = _require_exact_keys(bundle["run"], IMPORT_RUN_KEYS, "bundle.run")
+        if isinstance(raw["seed"], bool) or not isinstance(raw["seed"], int):
+            raise ValueError("bundle.run.seed must be an integer")
+        if not isinstance(raw["blind"], bool):
+            raise ValueError("bundle.run.blind must be a boolean")
+        if isinstance(raw["event_index"], bool) or not isinstance(raw["event_index"], int):
+            raise ValueError("bundle.run.event_index must be an integer")
+        if raw["status"] not in {"paused", "running", "complete"}:
+            raise ValueError("bundle.run.status is invalid")
+        if not isinstance(raw["run_id"], str):
+            raise ValueError("bundle.run.run_id must be a string")
+        for key in ("parent_run_id", "fork_base_hash"):
+            if raw[key] is not None and not isinstance(raw[key], str):
+                raise ValueError(f"bundle.run.{key} must be a string or null")
+        if raw["intervention_patch"] is not None and not isinstance(
+            raw["intervention_patch"], dict
+        ):
+            raise ValueError("bundle.run.intervention_patch must be an object or null")
+        if not isinstance(raw["injections"], list) or len(raw["injections"]) > MAX_EXTERNAL_EVENTS:
+            raise ValueError("bundle.run.injections must be a bounded array")
+        for index, item in enumerate(raw["injections"]):
+            injection = _require_exact_keys(
+                item, {"target", "label", "strength", "time"}, f"run.injections[{index}]"
+            )
+            if not isinstance(injection["target"], str) or not isinstance(
+                injection["label"], str
+            ):
+                raise ValueError("injection target and label must be strings")
+            for key in ("strength", "time"):
+                value = injection[key]
+                if (
+                    isinstance(value, bool)
+                    or not isinstance(value, int | float)
+                    or not math.isfinite(value)
+                ):
+                    raise ValueError(f"injection {key} must be finite")
+
+        manifest_payload = bundle["event_manifest"]
+        if not isinstance(manifest_payload, list) or len(manifest_payload) > MAX_EXTERNAL_EVENTS:
+            raise ValueError("bundle.event_manifest must be a bounded array")
+        manifest: list[SwitchEvent] = []
+        previous_time = -1.0
+        for index, item in enumerate(manifest_payload):
+            row = _require_exact_keys(
+                item, {"time", "evidence", "truth", "note"}, f"event_manifest[{index}]"
+            )
+            event_time = row["time"]
+            if (
+                isinstance(event_time, bool)
+                or not isinstance(event_time, int | float)
+                or not math.isfinite(event_time)
+                or event_time < previous_time
+            ):
+                raise ValueError("event manifest times must be finite and nondecreasing")
+            if not isinstance(row["evidence"], str) or not isinstance(row["note"], str):
+                raise ValueError("event manifest evidence and note must be strings")
+            if raw["blind"]:
+                if row["truth"] is not None:
+                    raise ValueError("blind event manifest contains visible truth")
+            elif not isinstance(row["truth"], str):
+                raise ValueError("event manifest truth must be a string")
+            previous_time = float(event_time)
+            manifest.append(
+                SwitchEvent(
+                    time=float(event_time),
+                    evidence=row["evidence"],
+                    truth=row["truth"],
+                    note=row["note"],
+                )
+            )
+        if not 0 <= raw["event_index"] <= len(manifest):
+            raise ValueError("bundle.run.event_index is outside the event manifest")
+
+        if not isinstance(bundle["checkpoint"], dict):
+            raise ValueError("bundle.checkpoint must be an object")
+        brain = SparkBrain.from_state_dict(bundle["checkpoint"])
+        if raw["seed"] != brain.config.random_seed:
+            raise ValueError("bundle seed does not match checkpoint config")
+        if not isinstance(bundle["trace"], list):
+            raise ValueError("bundle.trace must be an array")
+        if bundle["trace"] != bundle["checkpoint"].get("trace"):
+            raise ValueError("bundle trace does not match checkpoint trace")
+        figure = _require_exact_keys(bundle["figure_data"], {"graph", "frames"}, "figure_data")
+        if figure["frames"] != bundle["trace"]:
+            raise ValueError("figure frames do not match the exported trace")
+        if figure["graph"] != brain.export_graph():
+            raise ValueError("figure graph does not match the checkpoint graph")
+        if raw["blind"] and _has_visible_truth(bundle):
+            raise ValueError("blind import contains visible truth")
+
         run = LabRun(
             run_id=uuid.uuid4().hex,
-            seed=int(raw["seed"]),
-            blind=bool(raw["blind"]),
-            brain=SparkBrain.from_state_dict(bundle["checkpoint"]),
-            manifest=[SwitchEvent(**row) for row in bundle["event_manifest"]],
-            event_index=int(raw["event_index"]),
+            seed=raw["seed"],
+            blind=raw["blind"],
+            brain=brain,
+            manifest=manifest,
+            event_index=raw["event_index"],
             status="paused",
             parent_run_id=raw.get("parent_run_id"),
             intervention_patch=raw.get("intervention_patch"),

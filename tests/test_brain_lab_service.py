@@ -1,6 +1,10 @@
 from __future__ import annotations
 
-from sparkbrain.lab.service import LabManager, prepare_relevant_graph
+from copy import deepcopy
+
+import pytest
+
+from sparkbrain.lab.service import MAX_EXPORT_BYTES, LabManager, prepare_relevant_graph
 from sparkbrain.serialization import state_hash
 
 
@@ -82,6 +86,46 @@ def test_export_import_round_trip_and_blind_sanitization(tmp_path) -> None:
     assert state_hash(restored.brain) != state_hash(run.brain)
     assert restored.brain.prediction == run.brain.prediction
     assert restored.event_index == run.event_index
+
+
+def test_import_rejects_oversize_and_structurally_inconsistent_bundles(tmp_path) -> None:
+    manager = LabManager(tmp_path)
+    bundle = manager.create_run().export_bundle()
+    oversized = deepcopy(bundle)
+    oversized["padding"] = "x" * (MAX_EXPORT_BYTES + 1)
+    with pytest.raises(ValueError, match="size limit"):
+        manager.import_bundle(oversized)
+
+    malformed_cases = []
+    extra_key = deepcopy(bundle)
+    extra_key["unexpected"] = True
+    malformed_cases.append(extra_key)
+    bad_trace = deepcopy(bundle)
+    bad_trace["trace"] = "not-a-trace"
+    malformed_cases.append(bad_trace)
+    inconsistent_figure = deepcopy(bundle)
+    inconsistent_figure["figure_data"]["graph"] = {"nodes": [], "edges": []}
+    malformed_cases.append(inconsistent_figure)
+    bad_checkpoint = deepcopy(bundle)
+    bad_checkpoint["checkpoint"].pop("config")
+    malformed_cases.append(bad_checkpoint)
+    bad_manifest = deepcopy(bundle)
+    bad_manifest["event_manifest"][0]["time"] = "tomorrow"
+    malformed_cases.append(bad_manifest)
+
+    for malformed in malformed_cases:
+        with pytest.raises((KeyError, TypeError, ValueError)):
+            manager.import_bundle(malformed)
+
+
+def test_export_path_cannot_escape_artifact_root(tmp_path) -> None:
+    manager = LabManager(tmp_path)
+    run = manager.create_run()
+    manager.runs.pop(run.run_id)
+    run.run_id = "../escape"
+    manager.runs[run.run_id] = run
+    with pytest.raises(ValueError, match="invalid export path"):
+        manager.write_export(run.run_id)
 
 
 def test_relevant_subset_never_invents_ids() -> None:

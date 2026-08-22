@@ -41,7 +41,7 @@ See `docs/LOCAL_EXECUTION_POLICY.md`.
 | C02 controlled worlds and statistical suite | implemented with negative results | `src/sparkbrain/tasks/`, `evaluation/`, `artifacts/phase1/c02-main-1000/` |
 | Metrics for stability/revision/recovery | runnable | `src/sparkbrain/metrics.py` |
 | Static replay visualizer | runnable locally | `artifacts/demo/visualizer.html` |
-| Unit tests | 104 passing | `python -m pytest -q` |
+| Unit tests | 113 passing | `python -m pytest -q` |
 | Local readiness audit | runnable | `scripts/local_readiness_check.py` |
 | Generated Phase-0 report | complete with limitations | `artifacts/benchmarks/benchmark_report.md` |
 | Codex repository instructions | complete | `AGENTS.md`, `.agents/skills/sparkbrain-research/SKILL.md` |
