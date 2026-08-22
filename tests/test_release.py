@@ -12,6 +12,7 @@ from sparkbrain.release import (
     preparation_problems,
     project_license_selected,
     validate_evidence_map,
+    validate_generated_release_evidence,
     validate_release_tree,
     verify_release_manifest,
 )
@@ -98,3 +99,29 @@ def test_archive_refuses_unlicensed_repository(tmp_path: Path) -> None:
     (tmp_path / "LICENSE_NOT_SELECTED.md").write_text("owner decision pending", encoding="utf-8")
     with pytest.raises(PermissionError, match="project license is not selected"):
         build_release_archive(tmp_path, tmp_path / "release.zip", source_date_epoch=1_700_000_000)
+
+
+def test_generated_release_evidence_contract_passes() -> None:
+    root = Path(__file__).resolve().parents[1]
+    assert validate_generated_release_evidence(root) == []
+
+
+def test_generated_release_evidence_detects_primary_output_tampering(tmp_path: Path) -> None:
+    root = Path(__file__).resolve().parents[1]
+    (tmp_path / "artifacts/release").mkdir(parents=True)
+    for name in ("primary_subset.json", "provenance.json", "claim_audit.json", "sbom.spdx.json"):
+        (tmp_path / "artifacts/release" / name).write_bytes(
+            (root / "artifacts/release" / name).read_bytes()
+        )
+    subset = json.loads(
+        (tmp_path / "artifacts/release/primary_subset.json").read_text(encoding="utf-8")
+    )
+    subset["inputs"] = {"artifacts/release/tampered.txt": "0" * 64}
+    subset["outputs"] = {"artifacts/release/tampered.txt": "0" * 64}
+    (tmp_path / "artifacts/release/primary_subset.json").write_text(
+        json.dumps(subset), encoding="utf-8"
+    )
+    (tmp_path / "artifacts/release/tampered.txt").write_text("changed", encoding="utf-8")
+    problems = validate_generated_release_evidence(tmp_path)
+    assert "primary subset input hash mismatch: artifacts/release/tampered.txt" in problems
+    assert "primary subset output hash mismatch: artifacts/release/tampered.txt" in problems

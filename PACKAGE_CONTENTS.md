@@ -88,7 +88,7 @@ python scripts/validate_bundle.py
 Current packaging validation:
 
 - local readiness: PASS
-- tests: 155 passing
+- tests: 157 passing
 - canonical final belief: CAT
 - Ruff: PASS
 - bundle validation: 76 required files

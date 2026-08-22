@@ -261,6 +261,95 @@ def validate_evidence_map(root: Path, evidence_map: dict[str, Any]) -> list[str]
     return problems
 
 
+def validate_generated_release_evidence(root: Path) -> list[str]:
+    problems: list[str] = []
+    release_dir = root / "artifacts/release"
+    try:
+        subset = json.loads((release_dir / "primary_subset.json").read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        return [f"primary subset is unreadable: {exc}"]
+    if subset.get("schema_version") != "c10-primary-subset-v1":
+        problems.append("unsupported primary-subset schema version")
+    if subset.get("full_evaluation") is not False:
+        problems.append("primary subset must state that it is not the full evaluation")
+    for section in ("inputs", "outputs"):
+        rows = subset.get(section)
+        if not isinstance(rows, dict) or not rows:
+            problems.append(f"primary subset {section} must be a non-empty object")
+            continue
+        for relative, expected in rows.items():
+            try:
+                safe = _safe_relative_path(relative)
+            except (TypeError, ValueError) as exc:
+                problems.append(f"unsafe primary subset path: {exc}")
+                continue
+            path = root / safe
+            if not path.is_file():
+                problems.append(f"missing primary subset {section[:-1]}: {safe}")
+            elif expected != sha256_file(path):
+                problems.append(f"primary subset {section[:-1]} hash mismatch: {safe}")
+
+    try:
+        provenance = json.loads((release_dir / "provenance.json").read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        problems.append(f"release provenance is unreadable: {exc}")
+    else:
+        if provenance.get("schema_version") != "c10-provenance-v1":
+            problems.append("unsupported release-provenance schema version")
+        products = provenance.get("products")
+        if not isinstance(products, dict) or not products:
+            problems.append("release provenance products must be a non-empty object")
+        else:
+            for product, inputs in products.items():
+                if not (root / _safe_relative_path(product)).is_file():
+                    problems.append(f"missing provenance product: {product}")
+                if not isinstance(inputs, list) or not inputs:
+                    problems.append(f"provenance product has no inputs: {product}")
+                    continue
+                for relative in inputs:
+                    if not (root / _safe_relative_path(relative)).is_file():
+                        problems.append(f"missing provenance input for {product}: {relative}")
+
+    try:
+        audit = json.loads((release_dir / "claim_audit.json").read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        problems.append(f"claim audit is unreadable: {exc}")
+    else:
+        if audit.get("schema_version") != "c10-claim-audit-v1":
+            problems.append("unsupported claim-audit schema version")
+        if audit.get("status") not in {"pass", "pass-with-pending-evidence"}:
+            problems.append("claim audit has unresolved prohibited wording findings")
+        if audit.get("prohibited_wording_findings") != []:
+            problems.append("claim audit prohibited-wording findings must be empty")
+
+    try:
+        sbom = json.loads((release_dir / "sbom.spdx.json").read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        problems.append(f"SBOM is unreadable: {exc}")
+    else:
+        if sbom.get("spdxVersion") != "SPDX-2.3":
+            problems.append("SBOM must declare SPDX-2.3")
+        package_names = {
+            row.get("name") for row in sbom.get("packages", []) if isinstance(row, dict)
+        }
+        if "sparkbrain-research" not in package_names:
+            problems.append("SBOM does not identify the SparkBrain package")
+
+    c04_manifest = root / "artifacts/phase2/learned-routing-v1/main/manifest-evidence.json"
+    if c04_manifest.is_file():
+        evidence = json.loads(c04_manifest.read_text(encoding="utf-8"))
+        for split in ("dev", "test"):
+            relative = evidence.get("paths", {}).get(split)
+            expected = evidence.get("sha256_after", {}).get(split)
+            if not isinstance(relative, str) or not isinstance(expected, str):
+                problems.append(f"C04 immutable {split} manifest evidence is incomplete")
+                continue
+            normalized = relative.replace("\\", "/")
+            if not (root / normalized).is_file() or sha256_file(root / normalized) != expected:
+                problems.append(f"C04 immutable {split} manifest hash mismatch")
+    return problems
+
+
 def preparation_problems(root: Path) -> list[str]:
     problems = [
         f"missing required release artifact: {relative}"
@@ -275,6 +364,8 @@ def preparation_problems(root: Path) -> list[str]:
             problems.append(f"evidence map is not valid UTF-8 JSON: {exc}")
         else:
             problems.extend(validate_evidence_map(root, evidence_map))
+    if all((root / relative).is_file() for relative in REQUIRED_PREPARATION_FILES):
+        problems.extend(validate_generated_release_evidence(root))
     return problems
 
 
@@ -283,12 +374,16 @@ def validate_release_tree(root: Path, *, require_public: bool = True) -> list[st
     selected = project_license_selected(root)
     evidence_path = root / "artifacts/release/evidence_map.json"
     if require_public and evidence_path.is_file():
-        evidence = json.loads(evidence_path.read_text(encoding="utf-8"))
-        problems.extend(
-            f"pending release evidence gate: {entry['id']}"
-            for entry in evidence.get("entries", [])
-            if isinstance(entry, dict) and entry.get("status") == "pending"
-        )
+        try:
+            evidence = json.loads(evidence_path.read_text(encoding="utf-8"))
+        except (UnicodeDecodeError, json.JSONDecodeError):
+            pass
+        else:
+            problems.extend(
+                f"pending release evidence gate: {entry['id']}"
+                for entry in evidence.get("entries", [])
+                if isinstance(entry, dict) and entry.get("status") == "pending"
+            )
     if require_public and selected:
         problems.extend(
             f"missing required release artifact: {relative}"

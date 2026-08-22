@@ -365,7 +365,7 @@ retained in the run artifacts.
 - the bounded primary table and SVG reproduced byte-for-byte from frozen input hashes;
 - table SHA-256: `085f2a5f65d6e5069e3221042158eefdd4045f22c7b55c1b4c5644c95ed97765`;
 - SVG SHA-256: `718b3f1ca2a668b61ea3e29401d686a6dbda82f9afd8c5eedae714f996a709ae`;
-- 155 tests, Ruff, local readiness, 23-source/11-target prior-art validation, and 76-file
+- 157 tests, Ruff, local readiness, 23-source/11-target prior-art validation, and 76-file
   bundle validation passed on Windows/Python 3.13.3 CPU;
 - no network operation was used by the reproduction command after setup.
 
