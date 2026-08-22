@@ -5,6 +5,7 @@ Generated from the append-only results ledger. This index does not replace the f
 | Run | Ledger title | Release interpretation |
 |---|---|---|
 | R0001 | Phase-0 SwitchWorld software validation | Accumulator remained competitive; no general advantage. |
+| R0009 | C05 matched-baseline reduced acceptance | No grade increase inferred. |
 | R0006 | C02 controlled synthetic suite | MultiObjectWorld coverage was zero; duplicate signals changed activation. |
 | R0002 | v0.2.1 local-scope and documentation expansion | No grade increase inferred. |
 | R0003 | C01 deterministic reference and replay contract | No grade increase inferred. |
@@ -12,7 +13,8 @@ Generated from the append-only results ledger. This index does not replace the f
 | R0005 | C07 reduced snnTorch hybrid equivalence | Single hybrid scenario and parameter-sensitive no-spike failure. |
 | R0007 | C03 import boundary and C07 queue-order correction | No grade increase inferred. |
 | R0008 | C04 learned sparse routing on controlled held-out worlds | Smoke was below chance; dead/overloaded learned modules remained. |
-| R0009 | C10 non-license reproducibility package | No grade increase inferred. |
+| R0010 | C08 bounded structural plasticity negative specialization result | No grade increase inferred. |
+| R0011 | C10 non-license reproducibility package | No grade increase inferred. |
 
 ## Pending integration
 

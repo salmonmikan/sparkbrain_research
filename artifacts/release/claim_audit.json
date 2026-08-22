@@ -1,8 +1,16 @@
 {
   "inspected_files": [
     "README.md",
+    "docs/ARTIFACT_EVALUATION_GUIDE.md",
+    "docs/MODEL_CARD.md",
+    "docs/NEGATIVE_RESULTS_APPENDIX.md",
+    "docs/PROJECT_STATUS.md",
+    "docs/SECURITY_PRIVACY_REVIEW.md",
+    "docs/SYSTEM_CARD.md",
     "docs/TECHNICAL_REPORT_v0.2.1.md",
-    "artifacts/release/primary_results.md"
+    "docs/TECHNICAL_REPORT_v0.2.1.html",
+    "artifacts/release/primary_results.md",
+    "artifacts/release/primary_results.svg"
   ],
   "pending_evidence_entries": [
     "EV-C05-CHECKPOINT",
