@@ -102,9 +102,10 @@ The accumulator baseline is close in this hand-authored setting. Therefore this 
 The non-license C10 package now pins the tested local environment, freezes a bounded primary
 smoke subset, regenerates its table/SVG/report/negative appendix/SBOM deterministically, maps
 claims to exact run/artifact evidence, and emits an offline machine run manifest. This is
-release preparation, not public readiness. Public validation remains blocked by the owner
-license decision and pending C05 checkpoint-matched encoder evidence plus final C06 execution.
-C08 is integrated as a negative specialization result. The smoke subset is explicitly not the full evaluation.
+release preparation, not public readiness. C05 checkpoint-matched encoder evidence, the final
+C06 negative external run, and the C08 negative specialization result are integrated. Public
+validation remains blocked by the owner license decision. The smoke subset is explicitly not
+the full evaluation.
 
 ## 7. Exit criteria for the core final system
 

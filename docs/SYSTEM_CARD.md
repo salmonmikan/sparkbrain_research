@@ -17,7 +17,7 @@ Human-impact decisions, autonomous deployment, medical or safety-critical use, c
 
 ## Known limitations
 
-Most evidence is controlled synthetic. C05 produced a negative reduced matched-baseline result, and C08 produced a valid negative specialization result. Final C06 external execution and its checkpoint-matched encoder evidence remain pending. The owner license decision blocks public release.
+Most evidence is controlled synthetic. C05 produced a negative reduced matched-baseline result, C06 produced a negative official zero-shot external result, and C08 produced a negative specialization result. The owner license decision is the remaining public-release gate.
 
 ## Observability
 

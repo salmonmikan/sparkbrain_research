@@ -42,7 +42,7 @@ def test_primary_outputs_regenerate_exactly(tmp_path: Path) -> None:
 def test_claim_audit_and_evidence_gate() -> None:
     evidence = build_evidence_map(ROOT)
     audit = claim_audit(ROOT, evidence)
-    assert audit["status"] == "pass-with-pending-evidence"
+    assert audit["status"] == "pass"
     assert audit["prohibited_wording_findings"] == []
     assert {
         "docs/MODEL_CARD.md",
@@ -50,10 +50,7 @@ def test_claim_audit_and_evidence_gate() -> None:
         "docs/PROJECT_STATUS.md",
         "docs/SYSTEM_CARD.md",
     }.issubset(audit["inspected_files"])
-    assert audit["pending_evidence_entries"] == [
-        "EV-C05-CHECKPOINT",
-        "EV-C06-FOUNDATION",
-    ]
+    assert audit["pending_evidence_entries"] == []
 
 
 def test_clean_room_reproduction_does_not_open_socket(tmp_path: Path, monkeypatch) -> None:

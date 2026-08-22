@@ -2,7 +2,7 @@
 
 ## Candidate status
 
-The non-license release package is reproducible, but public readiness remains blocked by LICENSE_NOT_SELECTED.md and pending C05/C06 checkpoint-matched encoder evidence. C08 is integrated as a negative result. C05 checkpoints are not accepted evidence without a dev-only encoder vocabulary/feature manifest whose input dimension and hash are validated against the checkpoint.
+The non-license release package is reproducible, and C01-C10 evidence is integrated. Public readiness remains blocked by `LICENSE_NOT_SELECTED.md`. C05/C06 checkpoint evidence includes a dev-only encoder vocabulary hash and input-dimension validation; its external outcome is negative.
 
 ## Fast offline evaluation
 

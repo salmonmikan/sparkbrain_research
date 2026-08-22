@@ -133,8 +133,6 @@ def test_integrated_release_preparation_passes_but_public_release_is_blocked() -
     assert preparation_problems(root) == []
     assert not project_license_selected(root)
     assert validate_release_tree(root) == [
-        "pending release evidence gate: EV-C05-CHECKPOINT",
-        "pending release evidence gate: EV-C06-FOUNDATION",
         "project license has not been selected by the repository owner",
     ]
 
@@ -146,7 +144,7 @@ def test_evidence_map_has_existing_artifacts_and_pending_gates() -> None:
     )
     assert validate_evidence_map(root, evidence) == []
     pending = {entry["id"] for entry in evidence["entries"] if entry["status"] == "pending"}
-    assert pending == {"EV-C05-CHECKPOINT", "EV-C06-FOUNDATION"}
+    assert pending == set()
 
 
 def test_archive_refuses_unlicensed_repository(tmp_path: Path) -> None:

@@ -14,4 +14,4 @@ Optional snnTorch LIF sensory encoder. Downstream belief/Coalition/Workspace rem
 
 ## Evaluation boundary
 
-Accuracy, coverage, revision, recovery, calibration descriptors, work counters, and wall-clock are reported separately. Activity counters are not energy measurements. No C05 matched-baseline or final C06 external result is included here. C05 will remain pending until checkpoint input dimensions resolve to a hashed dev-only encoder manifest.
+Accuracy, coverage, revision, recovery, calibration descriptors, work counters, and wall-clock are reported separately. Activity counters are not energy measurements. C05's reduced matched-baseline run failed quality/scientific-compute matching. C06 verifies the dev-only encoder hash and checkpoint input dimensions, but the official zero-shot Spark BREU 0.0643 was below direct/chance 0.25. These are negative results; CL-007 remains E0.

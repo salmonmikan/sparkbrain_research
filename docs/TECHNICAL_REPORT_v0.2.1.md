@@ -2,7 +2,7 @@
 
 ## SparkBrain v0.2.1 release-candidate technical report
 
-Status: evidence-bounded local research prototype. Public release is blocked until the repository owner selects a project license. C05 matched baselines are integrated but await the checkpoint-matched encoder evidence supplied by C06; final C06 external execution remains pending. C08 is integrated as a negative specialization result.
+Status: evidence-bounded local research prototype. C01-C10 implementation and non-license reproducibility preparation are integrated. Public release remains blocked until the repository owner selects a project license.
 
 ## 1. Problem and falsifiable hypotheses
 
@@ -30,11 +30,11 @@ C04 adds an optional PyTorch learned encoder, bounded top-k router, persistent m
 
 ## 7. Matched baselines
 
-The Phase-0 scalar controls and C02 ablations are present. The required matched GRU, Transformer, modular recurrent, and probabilistic comparison package from C05 is pending integration. Therefore CL-007 remains E0 and no result in this candidate supports a modern-baseline advantage.
+The Phase-0 scalar controls, C02 ablations, and ten C05 baseline families are integrated. In the reduced five-seed acceptance run, architecture-body parameters were within ±2% and an optimizer-work proxy within ±5%, but quality matching and scientific compute matching failed. Learned accuracy varied sharply by seed. CL-007 remains E0; the run validates the harness, not a modern-baseline advantage.
 
 ## 8. External validation
 
-C06 currently supplies only versioned acquisition/checksum/cache schemas and a generated development track. Belief-R remains test-only and its dataset card separately declares CC BY-SA 4.0; that declaration does not license generated Track B or SparkBrain source. External text is excluded from Git and release enumeration. Model execution is not an accepted result in this candidate.
+C06 pins Belief-R revision `3719f5804c63318037465fecf298a7fd78d99121` and evaluates all 1,744 official pairs zero-shot with network access blocked. The official test cannot be used for fit, calibration, selection, or splitting. Spark BU/BM/BREU were 0.0391/0.0896/0.0643 with final coverage 0.2271, below direct and uniform-chance BREU 0.25. Representations, parameters, and compute were unmatched; duplicate and irrelevant interventions exposed substantial sensitivity. This is a negative external result and CL-007 remains E0. External text remains excluded from Git and release enumeration.
 
 ## 9. Spiking equivalence
 
@@ -50,7 +50,7 @@ Reference and learned paths separate active updates, edge/message evaluations, d
 
 ## 12. Failures and threats to validity
 
-The tasks are generated, weights and distributions can encode solutions, coverage changes metric interpretation, C04 uses a small held-out subset, C07 covers one scenario, C06 has no accepted model result, and C09 is a bounded audit. The generated negative appendix and evidence map enumerate exact run and artifact boundaries.
+The controlled tasks are generated, weights and distributions can encode solutions, coverage changes metric interpretation, C04 uses a small held-out subset, C05 matching failed, C06 representations are unmatched and performed below direct/chance, C07 covers one scenario, C08 specialization gates failed, and C09 is a bounded audit. The generated negative appendix and evidence map enumerate exact run and artifact boundaries.
 
 ## 13. Reproducibility
 
@@ -58,4 +58,4 @@ After local dependency setup, run: python scripts/reproduce_release.py --offline
 
 ## Conclusion
 
-The candidate establishes an inspectable local software substrate plus controlled synthetic observations. It does not establish a completed theory, general advantage, external replication, autonomous organs, biological fidelity, consciousness, AGI, novelty, or energy gains. Exact support and pending gates are machine-readable in artifacts/release/evidence_map.json.
+The candidate establishes an inspectable local software substrate, controlled synthetic observations, and a negative offline external evaluation. It does not establish a completed theory, general advantage, successful external generalization, autonomous organs, biological fidelity, consciousness, AGI, novelty, or energy gains. Exact support and evidence boundaries are machine-readable in artifacts/release/evidence_map.json.

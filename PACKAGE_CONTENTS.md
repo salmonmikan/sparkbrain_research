@@ -93,7 +93,7 @@ Current packaging validation:
 - Ruff: PASS
 - bundle validation: 76 required files
 - offline primary-subset reproduction: PASS with exact table/SVG hashes
-- public release validation: blocked by C05/C06 checkpoint evidence and owner license
+- public release validation: blocked only by owner license selection
 
 ## C10 release-candidate evidence
 
@@ -106,4 +106,4 @@ Current packaging validation:
 - `artifacts/release/evidence_map.json` and `provenance.json` connect claims, runs, inputs, and
   generated products.
 - `scripts/build_release_archive.py` refuses to create a public archive while the project
-  license or evidence gates remain blocked.
+  license gate remains blocked.

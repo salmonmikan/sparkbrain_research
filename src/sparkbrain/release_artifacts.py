@@ -76,27 +76,39 @@ def build_evidence_map(root: Path) -> dict[str, Any]:
         },
         {
             "id": "EV-C05-CHECKPOINT",
-            "status": "pending",
+            "status": "negative",
             "claim_ids": ["CL-003", "CL-004", "CL-007"],
-            "run_ids": [],
-            "artifacts": [],
+            "run_ids": ["R0009"],
+            "artifacts": [
+                "artifacts/phase2/baselines/c05-acceptance-final/run_manifest.json",
+                "artifacts/phase2/baselines/c05-acceptance-final/acceptance.json",
+                "artifacts/phase2/baselines/c05-acceptance-final/aggregate_metrics.json",
+                "artifacts/phase2/baselines/c05-acceptance-final/paired_statistics.json",
+                "configs/external_validation/model_adapters.json",
+            ],
             "boundary": (
-                "C05 is not integrated. Public evidence requires a dev-only encoder vocabulary/"
-                "feature manifest whose hash and input dimension match every selected checkpoint."
+                "Reduced matched-baseline harness with failed quality/scientific-compute matching; "
+                "the frozen dev-only encoder hash and checkpoint input dimensions are verified."
             ),
         },
         {
-            "id": "EV-C06-FOUNDATION",
-            "status": "pending",
+            "id": "EV-C06-EXTERNAL",
+            "status": "negative",
             "claim_ids": ["CL-003", "CL-004", "CL-007"],
-            "run_ids": [],
+            "run_ids": ["R0012"],
             "artifacts": [
-                "configs/external_validation/foundation.json",
-                "schemas/external-evaluation-v0.2.schema.json",
+                "artifacts/external_validation/c06-final-official/run_manifest.json",
+                "artifacts/external_validation/c06-final-official/belief_r_metrics.json",
+                "artifacts/external_validation/c06-final-official/leakage_audit.json",
+                "artifacts/external_validation/c06-final-official/manual_trace_audit.json",
+                "artifacts/external_validation/c06-final-official/interventions.json",
+                "artifacts/external_validation/c06-final-official/track_b.json",
+                "artifacts/external_validation/c06-final-official/track_c.json",
+                "configs/external_validation/model_adapters.json",
             ],
             "boundary": (
-                "Foundation only. External model execution and strict C05 encoder-state/hash "
-                "validation are pending."
+                "Full pinned Belief-R zero-shot execution completed offline; Spark BREU was below "
+                "direct/chance, representations and compute were unmatched, and CL-007 remains E0."
             ),
         },
         {
@@ -345,7 +357,9 @@ def build_negative_appendix(root: Path) -> str:
         "R0005": "Single hybrid scenario and parameter-sensitive no-spike failure.",
         "R0006": "MultiObjectWorld coverage was zero; duplicate signals changed activation.",
         "R0008": "Smoke was below chance; dead/overloaded learned modules remained.",
+        "R0009": "Reduced quality and scientific-compute matching failed.",
         "R0010": "Structural mechanisms ran, but causal specialization gates failed.",
+        "R0012": "Spark BREU was below direct/chance on the official zero-shot run.",
     }
     for run_id, title in run_titles:
         interpretation = boundaries.get(run_id, "No grade increase inferred.")
@@ -355,10 +369,6 @@ def build_negative_appendix(root: Path) -> str:
             "",
             "## Pending integration",
             "",
-            "- C05 matched baselines and checkpoint-matched dev-only encoder manifests are not "
-            "present in this candidate.",
-            "- C06 external execution remains blocked at the model gate; only foundation code "
-            "is present.",
             "- The owner has not selected a project license; public release remains blocked.",
         ]
     )
@@ -398,7 +408,13 @@ def claim_audit(root: Path, evidence_map: dict[str, Any]) -> dict[str, Any]:
         "inspected_files": inspected,
         "prohibited_wording_findings": findings,
         "pending_evidence_entries": pending,
-        "status": "pass-with-pending-evidence" if not findings else "fail",
+        "status": (
+            "fail"
+            if findings
+            else "pass-with-pending-evidence"
+            if pending
+            else "pass"
+        ),
     }
 
 
