@@ -1,0 +1,26 @@
+{
+  "schema_version": "0.2",
+  "run_id": "c06-final-official",
+  "offline_required": true,
+  "belief_r_spec": "configs/external_validation/belief_r.json",
+  "belief_r_cache": ".cache/external/test.csv",
+  "adapter_manifest": "configs/external_validation/model_adapters.json",
+  "output_dir": "artifacts/external_validation/c06-final-official",
+  "track_b": {
+    "split_seed": 1729,
+    "episodes_per_group": 4,
+    "train_seed_start": 31000,
+    "dev_seed_start": 41000,
+    "test_seed_start": 51000
+  },
+  "track_c": {
+    "transforms": [
+      "premise_permutation",
+      "delayed_decisive_correction",
+      "same_id_duplicate",
+      "deterministic_restatement",
+      "correlated_source",
+      "irrelevant_distractor"
+    ]
+  }
+}

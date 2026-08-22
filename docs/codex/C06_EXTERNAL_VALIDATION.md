@@ -85,3 +85,11 @@ adapter, recursive answer-leakage checks, Track B generator/oracle/group splits,
 target-blind transforms, metrics/error/intervention primitives, schemas/config, and offline
 tests. Model glue, direct/baseline comparisons, manual trace audit, results, and claim-grade
 updates remain blocked until C04 and C05 are integrated.
+
+## Final model-evaluation status — 2026-08-23
+
+C04/C05 artifacts are integrated through a frozen, hash-verified adapter manifest. The
+network-blocked `c06-final-official` run evaluated all 1,744 official pairs, disjoint Track B
+groups, all six Track C transforms, and target-blind interventions. Spark reached BU 0.0391,
+BM 0.0896, and BREU 0.0643, below direct/chance BREU 0.25. This negative outcome is retained;
+CL-007 remains E0. See `docs/C06_EXTERNAL_VALIDATION_RESULTS.md`.

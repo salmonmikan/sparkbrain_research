@@ -456,7 +456,7 @@ These are explicit phase boundaries, not hidden omissions.
 - `replay.py`: dynamics-free trace reading.
 - `schemas/`: versioned JSON contracts for configuration, trace, and checkpoint state.
 
-### `external_validation/` (C06 foundation)
+### `external_validation/` (C06)
 
 Model-independent external evaluation contracts live outside the cognition core:
 
@@ -467,11 +467,22 @@ Model-independent external evaluation contracts live outside the cognition core:
 - `transforms.py`: target-blind adversarial evidence-order/source transforms;
 - `metrics.py`: revision/error/attribution evaluation primitives;
 - `interventions.py`: evidence removal/replacement and expected-effect assessment;
+- `adapters.py`: strict dev-only C05 encoder state, artifact hashing, and real C04/C05
+  checkpoint adapters;
+- `evaluation.py`: network-blocked Track A/B/C execution, information-condition separation,
+  metrics, sanitized predictions, and intervention deltas;
 - `gate.py`: fail-closed C04/C05 prerequisite check.
 
 Dataset acquisition is the only network-capable operation and must be explicitly requested.
 Normal loading, transforms, evaluation primitives, and tests are local/offline. No external
 dataset text or upstream executable code is packaged.
+
+The C05 encoder state is a strict schema with ordered vocabulary, fitted split, input size,
+and SHA-256. The frozen adapter manifest validates that input size against reconstructed model
+architectures before loading weights. Fit, calibration, selection, and early-stopping helpers
+reject test Episodes. C04 and C05 receive the same Observation API but do not share an
+effective tokenizer: this is recorded as an unmatched feature condition, not hidden as a fair
+semantic-encoder comparison.
 
 Checkpoint state includes the pending event queue, sequence number, persistent hypotheses, stability, Workspace, eligibility, counters, trace buffer, frame-local audit buffers, and RNG state. The format is research-versioned and not yet promised as a permanent public storage API.
 

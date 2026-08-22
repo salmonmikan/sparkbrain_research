@@ -121,8 +121,21 @@ example-level random splits. Track C transforms observations only; evaluator Tar
 aligned afterward through returned source indices. External text stays in a gitignored local
 cache, and evaluation after acquisition must succeed with network access blocked.
 
-The model execution gate remains closed until C04 learned routing and C05 matched baselines
-are integrated. Foundation utilities and their tests do not constitute Gate P3 evidence.
+The model execution gate opened after the committed C04 learned checkpoint and C05 common
+protocol/checkpoints were integrated and hash-audited. `c06-final-official` evaluates the
+complete 1,744-pair official test once with network blocked. C05 encoder state is reconstructed
+from the original deterministic development half and serialized before external evaluation;
+all fit/calibration/selection entry points reject test Episodes.
+
+The direct Transformer, explicit-state memory, and Spark conditions receive identical
+Observation objects and example counts at the adapter API. Effective input representations,
+parameters, and compute are not matched: the C05 dev vocabulary maps external categorical
+tokens to UNK, while C04 hashes raw text. Oracle is target-visible and must remain outside
+information-matched conclusions. BU-Acc and BM-Acc are reported separately and BREU is their
+equal average. Attribution without checkpoint evidence IDs is N/A, not zero.
+
+The official run is a negative result: Spark BREU is 0.0643 versus 0.25 for both direct and
+uniform-chance conditions. Gate P3's improvement criterion is therefore not met.
 
 ### Phase 4 — Local spiking equivalence
 

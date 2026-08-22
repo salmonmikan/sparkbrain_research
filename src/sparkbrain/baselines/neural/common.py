@@ -77,6 +77,85 @@ class FeatureEncoder:
     def input_size(self) -> int:
         return len(self.vocabulary) + 3
 
+    @staticmethod
+    def _state_digest(
+        *, ordered_vocabulary: list[str], fitted_split: str, input_size: int
+    ) -> str:
+        payload = {
+            "schema_version": "0.1",
+            "kind": "c05-feature-encoder",
+            "ordered_vocabulary": ordered_vocabulary,
+            "fitted_split": fitted_split,
+            "input_size": input_size,
+        }
+        encoded = json.dumps(payload, sort_keys=True, separators=(",", ":")).encode()
+        return hashlib.sha256(encoded).hexdigest()
+
+    def state_dict(self) -> dict[str, Any]:
+        """Return a strict, portable encoder state without evaluator targets."""
+
+        if self.fitted_split is None:
+            raise RuntimeError("FeatureEncoder.fit must be called before serialization")
+        if self.fitted_split == "test":
+            raise ValueError("FeatureEncoder state cannot originate from test episodes")
+        ordered = [
+            token for token, _ in sorted(self.vocabulary.items(), key=lambda item: item[1])
+        ]
+        digest = self._state_digest(
+            ordered_vocabulary=ordered,
+            fitted_split=self.fitted_split,
+            input_size=self.input_size,
+        )
+        return {
+            "schema_version": "0.1",
+            "kind": "c05-feature-encoder",
+            "ordered_vocabulary": ordered,
+            "fitted_split": self.fitted_split,
+            "input_size": self.input_size,
+            "state_sha256": digest,
+        }
+
+    @classmethod
+    def from_state_dict(cls, state: dict[str, Any]) -> FeatureEncoder:
+        required = {
+            "schema_version",
+            "kind",
+            "ordered_vocabulary",
+            "fitted_split",
+            "input_size",
+            "state_sha256",
+        }
+        if set(state) != required:
+            raise ValueError("FeatureEncoder state fields do not match schema 0.1")
+        if state["schema_version"] != "0.1" or state["kind"] != "c05-feature-encoder":
+            raise ValueError("Unsupported FeatureEncoder state schema")
+        fitted_split = state["fitted_split"]
+        if fitted_split not in {"train", "dev", "smoke"}:
+            raise ValueError("FeatureEncoder state must originate from train/dev-like data")
+        ordered = state["ordered_vocabulary"]
+        if (
+            not isinstance(ordered, list)
+            or not ordered
+            or ordered[0] != "<UNK>"
+            or any(not isinstance(token, str) or not token for token in ordered)
+            or len(set(ordered)) != len(ordered)
+        ):
+            raise ValueError("FeatureEncoder ordered vocabulary is invalid")
+        input_size = state["input_size"]
+        if isinstance(input_size, bool) or input_size != len(ordered) + 3:
+            raise ValueError("FeatureEncoder input_size does not match its vocabulary")
+        digest = cls._state_digest(
+            ordered_vocabulary=ordered,
+            fitted_split=fitted_split,
+            input_size=input_size,
+        )
+        if state["state_sha256"] != digest:
+            raise ValueError("FeatureEncoder state hash mismatch")
+        result = cls()
+        result.vocabulary = {token: index for index, token in enumerate(ordered)}
+        result.fitted_split = fitted_split
+        return result
+
     def encode_observation(
         self, observation: Observation, *, previous_time: float
     ) -> tuple[float, ...]:

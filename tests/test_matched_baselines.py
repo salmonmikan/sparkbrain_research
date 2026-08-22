@@ -43,6 +43,25 @@ def test_encoder_rejects_test_fit_and_uses_unk_without_truth() -> None:
     assert encoder.vocabulary["<UNK>"] == 0
 
 
+def test_encoder_state_round_trip_is_strict_hashed_and_dev_only() -> None:
+    encoder = FeatureEncoder()
+    train, _selection = split_dev_episodes(_episodes())
+    encoder.fit(train)
+    state = encoder.state_dict()
+    restored = FeatureEncoder.from_state_dict(state)
+    assert restored.state_dict() == state
+    assert state["ordered_vocabulary"][0] == "<UNK>"
+    assert state["input_size"] == len(state["ordered_vocabulary"]) + 3
+
+    damaged = {**state, "input_size": state["input_size"] + 1}
+    with pytest.raises(ValueError, match="input_size"):
+        FeatureEncoder.from_state_dict(damaged)
+    with pytest.raises(ValueError, match="train/dev-like"):
+        FeatureEncoder.from_state_dict({**state, "fitted_split": "test"})
+    with pytest.raises(ValueError, match="fields"):
+        FeatureEncoder.from_state_dict({**state, "unexpected": True})
+
+
 def test_all_neural_families_match_parameter_and_compute_contract() -> None:
     configure_determinism(101, threads=1)
     encoder = FeatureEncoder()

@@ -45,10 +45,13 @@ from sparkbrain.external_validation.symbolic import (
 )
 from sparkbrain.external_validation.transforms import (
     correlated_source_variants,
+    delay_decisive_correction,
     delay_observation,
     duplicate_restatement,
+    duplicate_same_id,
     inject_irrelevant_distractor,
     permute_order,
+    restate_observation,
 )
 from sparkbrain.tasks.schema import Observation
 
@@ -291,6 +294,16 @@ def test_track_c_transforms_are_seeded_target_blind_and_keep_correlation() -> No
     assert sorted(permuted.source_indices) == [0, 1, 2]
     delayed = delay_observation(observations, source_index=0, delay_steps=2)
     assert delayed.source_indices == (1, 2, 0)
+    decisive = delay_decisive_correction(observations, source_index=1, delay_steps=3)
+    assert decisive.source_indices == (0, 1, 2)
+    assert [row.delivery_time for row in decisive.observations] == [0.0, 4.0, 5.0]
+    duplicated = duplicate_same_id(observations, source_index=1)
+    assert duplicated.source_indices == (0, 1, 1, 2)
+    assert duplicated.observations[1].evidence_id == duplicated.observations[2].evidence_id
+    assert duplicated.observations[1].evidence_label == duplicated.observations[2].evidence_label
+    rewritten = restate_observation(observations, source_index=1)
+    assert rewritten.source_indices == (0, 1, 2)
+    assert "which conclusion necessarily follows" in rewritten.observations[1].evidence_label
     restated = duplicate_restatement(observations, source_index=1)
     assert restated.source_indices == (0, 1, 1, 2)
     assert restated.observations[1].evidence_id == restated.observations[2].evidence_id

@@ -13,16 +13,17 @@
   "track_c": {
     "target_blind": true,
     "transforms": [
-      "order_permutation",
-      "delay",
-      "duplicate_restatement",
-      "correlated_source_variants",
+      "premise_permutation",
+      "delayed_decisive_correction",
+      "same_id_duplicate",
+      "deterministic_restatement",
+      "correlated_source",
       "irrelevant_distractor"
     ]
   },
   "model_evaluation_gate": {
-    "c04_learned_backend_integrated": false,
-    "c05_matched_harness_integrated": false,
-    "status": "closed"
+    "c04_learned_backend_integrated": true,
+    "c05_matched_harness_integrated": true,
+    "status": "open_with_negative_external_result"
   }
 }

@@ -47,6 +47,32 @@ def delay_observation(
     return _reindex(rows, transform_id=f"delay:{source_index}:{delay_steps}")
 
 
+def delay_decisive_correction(
+    observations: tuple[Observation, ...], *, source_index: int, delay_steps: int
+) -> TransformResult:
+    """Delay a preregistered observation in logical time without consulting its Target."""
+
+    if delay_steps < 1:
+        raise ValueError("delay_steps must be >= 1")
+    if source_index < 0 or source_index >= len(observations):
+        raise ValueError(f"source_index out of range: {source_index}")
+    result = tuple(
+        replace(
+            observation,
+            delivery_time=observation.delivery_time
+            + (float(delay_steps) if index >= source_index else 0.0),
+        )
+        for index, observation in enumerate(observations)
+    )
+    for observation in result:
+        observation.validate()
+    return TransformResult(
+        result,
+        tuple(range(len(observations))),
+        f"delayed_decisive_correction:{source_index}:{delay_steps}",
+    )
+
+
 def _restatement(text: str) -> str:
     old = "What necessarily had to follow assuming that the above premises were true?"
     new = "Given only the premises above, which conclusion necessarily follows?"
@@ -74,6 +100,53 @@ def duplicate_restatement(
     rows = list(enumerate(observations))
     rows.insert(source_index + 1, (source_index, duplicate))
     return _reindex(rows, transform_id=f"duplicate_restatement:{source_index}")
+
+
+def duplicate_same_id(
+    observations: tuple[Observation, ...], *, source_index: int
+) -> TransformResult:
+    try:
+        original = observations[source_index]
+    except IndexError as exc:
+        raise ValueError(f"source_index out of range: {source_index}") from exc
+    duplicate = replace(
+        original,
+        observation_id=f"{original.observation_id}:duplicate",
+        metadata={
+            **original.metadata,
+            "track_c_transform": {
+                "kind": "same_id_duplicate",
+                "original_observation_id": original.observation_id,
+            },
+        },
+    )
+    rows = list(enumerate(observations))
+    rows.insert(source_index + 1, (source_index, duplicate))
+    return _reindex(rows, transform_id=f"same_id_duplicate:{source_index}")
+
+
+def restate_observation(
+    observations: tuple[Observation, ...], *, source_index: int
+) -> TransformResult:
+    try:
+        original = observations[source_index]
+    except IndexError as exc:
+        raise ValueError(f"source_index out of range: {source_index}") from exc
+    restated = replace(
+        original,
+        observation_id=f"{original.observation_id}:restatement",
+        evidence_label=_restatement(original.evidence_label),
+        metadata={
+            **original.metadata,
+            "track_c_transform": {
+                "kind": "deterministic_restatement",
+                "original_observation_id": original.observation_id,
+            },
+        },
+    )
+    rows = list(enumerate(observations))
+    rows[source_index] = (source_index, restated)
+    return _reindex(rows, transform_id=f"deterministic_restatement:{source_index}")
 
 
 def correlated_source_variants(

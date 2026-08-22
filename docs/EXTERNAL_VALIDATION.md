@@ -1,11 +1,12 @@
-# C06 External Validation Foundation
+# C06 External Validation and Model Evaluation
 
 ## Status and gate
 
-The model-independent C06 foundation is implemented. Model comparison remains deliberately
-blocked until the C04 learned backend and C05 matched baseline harness are both integrated.
-`require_model_evaluation_gate()` fails closed when either prerequisite is absent. This
-foundation does not report an external SparkBrain result.
+The model-independent foundation and the C04/C05 model adapters are implemented. The gate
+opened only after the committed C04 main checkpoint and C05 common protocol/checkpoints were
+audited. The completed official run is `c06-final-official`; its negative results are retained
+under `artifacts/external_validation/c06-final-official/`. The gate still fails closed when
+either prerequisite artifact is absent or has a mismatched hash.
 
 ## Track A: official Belief-R test-only adapter
 
@@ -129,3 +130,47 @@ The last command is optional local evidence against a separately acquired gitign
 the automated suite uses only original synthetic CSV fixtures and works with network access
 blocked. It also invokes `git ls-files` to prove the external cache locations contain no
 tracked files.
+
+## Frozen model adapters and official result
+
+`configs/external_validation/model_adapters.json` serializes the strict C05 FeatureEncoder
+state, ordered dev-only vocabulary, state hash, fitted split, input dimension, and C04/C05
+checkpoint/config/profile hashes. Release-time regeneration is deterministic:
+
+```powershell
+python scripts/build_external_adapter_manifest.py
+```
+
+The official evaluation command is:
+
+```powershell
+python scripts/run_external_validation.py
+```
+
+The runner blocks socket connections, verifies the cache and every adapter artifact, and
+rejects any fit/calibration/selection helper that receives a test Episode. Belief-R is never
+split or reused as development data.
+
+| Condition | BU-Acc | BM-Acc | BREU | Final coverage |
+| --- | ---: | ---: | ---: | ---: |
+| direct C05 Transformer | 0.0000 | 0.5000 | 0.2500 | 1.0000 |
+| explicit C05 memory | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
+| Spark C04 checkpoint | 0.0391 | 0.0896 | 0.0643 | 0.2271 |
+| uniform chance | 0.0000 | 0.5000 | 0.2500 | 1.0000 |
+| evaluator-only oracle | 1.0000 | 1.0000 | 1.0000 | 1.0000 |
+
+BU/BM are final accuracies on the official update/maintain subsets. BREU is their equal
+average, following the Belief-R paper. Spark is below direct and chance on BREU. This is a
+negative external result and does not support CL-007.
+
+All non-oracle conditions receive the same Episode/Observation objects and two-step example
+budget at the adapter API. Effective features are not matched: C04 hashes raw evidence text,
+whereas the frozen C05 encoder maps unseen external categorical tokens to UNK and retains only
+its declared scalar features. Parameters and scientific compute are also unmatched. Oracle is
+target-visible and excluded from comparisons.
+
+Track B uses disjoint template-family train/dev/test groups; dev selects only a three-label
+output permutation and test is metrics-only. Track C executes all six preregistered transforms
+over all 1,744 pairs. Attribution is `null` / not available because none of the connected
+checkpoints cites input evidence IDs. The committed artifacts contain only hashes, IDs,
+metrics, probabilities, predictions, and audit outcomes; official text remains cache-only.
