@@ -1,0 +1,40 @@
+from __future__ import annotations
+
+import argparse
+import subprocess
+import sys
+from datetime import UTC, datetime
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
+
+from sparkbrain.release import build_release_manifest, write_release_manifest  # noqa: E402
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Generate the deterministic release file manifest")
+    parser.add_argument("--output", type=Path, default=ROOT / "PACKAGE_MANIFEST.json")
+    parser.add_argument("--generated-at")
+    parser.add_argument("--source-revision")
+    args = parser.parse_args()
+
+    revision = args.source_revision or subprocess.run(
+        ["git", "rev-parse", "HEAD"],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.strip()
+    generated_at = args.generated_at or datetime.now(UTC).isoformat()
+    manifest = build_release_manifest(
+        ROOT,
+        generated_at=generated_at,
+        source_revision=revision,
+    )
+    write_release_manifest(args.output, manifest)
+    print(f"wrote {args.output} with {manifest['file_count']} files")
+
+
+if __name__ == "__main__":
+    main()
