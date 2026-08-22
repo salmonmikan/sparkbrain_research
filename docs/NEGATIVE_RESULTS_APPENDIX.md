@@ -16,6 +16,7 @@ Generated from the append-only results ledger. This index does not replace the f
 | R0010 | C08 bounded structural plasticity negative specialization result | Structural mechanisms ran, but causal specialization gates failed. |
 | R0011 | C10 non-license reproducibility package | No grade increase inferred. |
 | R0012 | C06 official external zero-shot evaluation | Spark BREU was below direct/chance on the official zero-shot run. |
+| R0013 | C01-C10 integrated non-license release candidate | No grade increase inferred. |
 
 ## Pending integration
 
