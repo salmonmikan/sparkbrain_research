@@ -4,6 +4,16 @@
 
 Test whether Spark groups can develop stable, reusable functional specialization through learning and structural change, rather than having every organ role assigned by the designer.
 
+## Local-only contract
+
+- Required outputs must run on one general-purpose local computer.
+- Keep a CPU-runnable reference or reduced configuration. Local GPU use is optional.
+- Do not introduce a mandatory cloud service, remote model API, hosted database, remote queue, or SaaS login.
+- Runtime data, checkpoints, traces, and reports stay in explicit local paths.
+- After dependencies/data are installed, the task's primary smoke/reproduction path must run offline.
+- Dedicated neuromorphic hardware belongs to Extension H and is not an acceptance requirement.
+- Run `python scripts/local_readiness_check.py` before completion.
+
 ## Prerequisite
 
 C04 learned routing/backend accepted. C02 must provide multiple task families to distinguish reusable specialization from overfitting.

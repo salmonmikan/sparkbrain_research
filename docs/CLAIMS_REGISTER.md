@@ -1,4 +1,4 @@
-# Claims Register
+# Claims Register — v0.2.1
 
 This file separates implementation facts, observed results, supported research claims, and prohibited statements.
 
@@ -26,9 +26,10 @@ This file separates implementation facts, observed results, supported research c
 | CL-007 | SparkBrain improves the stability/adaptability frontier over strong neural baselines. | E0 | C04–C06 |
 | CL-008 | Learned Spark groups form stable functional organs. | E0 | C08 causal specialization tests |
 | CL-009 | A spiking substrate preserves core SparkBrain behavior. | E0 | C07 equivalence suite |
-| CL-010 | Neuromorphic execution is more energy efficient. | E0 | hardware measurement, matched workloads, power methodology |
+| CL-010 | Dedicated-hardware execution is more energy efficient. Extension H only. | E0 | direct hardware measurement, matched workloads, accuracy/latency controls, power methodology |
+| CL-011 | The deterministic reference engine and static visualizer can run on one local CPU machine without a remote runtime service. | E1 | clean-room run on additional supported platforms |
 
-## Prohibited public claims at v0.2
+## Prohibited public claims at v0.2.1
 
 - “The human brain has been reproduced.”
 - “The system is conscious.”

@@ -2,7 +2,17 @@
 
 ## Goal
 
-Produce a clean, independently runnable research release whose written claims exactly match its code, raw data, statistical evidence, and limitations.
+Produce a clean, independently runnable local-first research release whose written claims exactly match its code, raw data, statistical evidence, and limitations.
+
+## Local-only contract
+
+- Required outputs must run on one general-purpose local computer.
+- Keep a CPU-runnable reference or reduced configuration. Local GPU use is optional.
+- Do not introduce a mandatory cloud service, remote model API, hosted database, remote queue, or SaaS login.
+- Runtime data, checkpoints, traces, and reports stay in explicit local paths.
+- After dependencies/data are installed, the task's primary smoke/reproduction path must run offline.
+- Dedicated neuromorphic hardware belongs to Extension H and is not an acceptance requirement.
+- Run `python scripts/local_readiness_check.py` before completion.
 
 ## Prerequisites
 
@@ -11,8 +21,8 @@ Primary results selected from C02–C07; C09 novelty audit current. C08 may be i
 ## Required release artifacts
 
 - pinned environment lock(s) and platform matrix;
-- clean-install reproduction command;
-- container image definition;
+- clean local-install reproduction command;
+- optional container image definition plus a non-container local path;
 - dataset acquisition/checksum scripts;
 - immutable experiment manifests;
 - raw per-seed outputs;
@@ -44,13 +54,14 @@ Primary results selected from C02–C07; C09 novelty audit current. C08 may be i
 
 ## Reproduction requirements
 
-From a clean environment, one documented command must:
+From a clean local environment, one documented command must:
 
 - validate versions and data checksums;
 - run a smoke test;
 - reproduce the primary table/figure subset;
 - verify output hashes or tolerance-based numerical invariants;
-- emit a machine-readable run manifest.
+- emit a machine-readable run manifest;
+- after setup/data acquisition, succeed with network disabled.
 
 Full expensive runs may be separate, but sample artifacts cannot be mistaken for full results.
 
@@ -60,7 +71,7 @@ Before release, inspect every abstract, README, figure caption, table takeaway, 
 
 ## Acceptance criteria
 
-- an independent clean-room run reproduces the primary result within documented tolerance;
+- an independent single-machine clean-room run reproduces the primary result within documented tolerance;
 - all figures/tables have scripts and raw inputs;
 - code/data/model licenses permit the chosen release;
 - report source, generated report, code tag, and artifact manifest agree;

@@ -1,11 +1,16 @@
-# Codex Task Queue
+# Codex task briefs
 
-Each file is a self-contained task contract. Use one task per Codex session or worktree unless the brief explicitly permits otherwise.
+Each `Cxx_*.md` file is a self-contained implementation/research contract. Run one task per Codex thread or worktree.
 
-Start with C01. C09 may run independently as a documentation/research stream. Read `../CODEX_EXECUTION_BRIEF.md` for dependencies and integration gates.
+All tasks inherit:
 
-Copy-ready pattern:
+- `AGENTS.md`
+- `docs/LOCAL_EXECUTION_POLICY.md`
+- CPU-runnable reference or reduced path
+- explicit local artifact storage
+- no mandatory cloud/API/SaaS runtime dependency
+- dedicated hardware excluded from core acceptance criteria
 
-```text
-Use $sparkbrain-research. Execute CXX from docs/codex/<file>.md. Follow AGENTS.md. Satisfy every acceptance criterion, run the specified commands, regenerate affected artifacts, update status/ledger, and return the required completion report.
-```
+Recommended order and dependency gates are defined in `../CODEX_EXECUTION_BRIEF.md`. Copy-ready invocations are in `PROMPTS.md`.
+
+A task is not complete until local readiness, task tests, project tests, affected artifact regeneration, and documentation updates are complete.

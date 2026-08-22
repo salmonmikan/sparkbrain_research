@@ -4,9 +4,19 @@
 
 Turn the current Phase-0 engine into a trustworthy deterministic reference implementation whose configuration, state, traces, counters, and replay behavior are validated and versioned.
 
+## Local-only contract
+
+- Required outputs must run on one general-purpose local computer.
+- Keep a CPU-runnable reference or reduced configuration. Local GPU use is optional.
+- Do not introduce a mandatory cloud service, remote model API, hosted database, remote queue, or SaaS login.
+- Runtime data, checkpoints, traces, and reports stay in explicit local paths.
+- After dependencies/data are installed, the task's primary smoke/reproduction path must run offline.
+- Dedicated neuromorphic hardware belongs to Extension H and is not an acceptance requirement.
+- Run `python scripts/local_readiness_check.py` before completion.
+
 ## Existing starting point
 
-v0.2 already includes `protocols.py`, `serialization.py`, `replay.py`, `validation.py`, three JSON Schemas, a CI workflow scaffold, deterministic checkpoint continuation tests, and 26 passing tests. Do not recreate these blindly. Audit and finish them against the acceptance criteria below. In particular, verify schema completeness, migration/compatibility behavior, queue/RNG replay across adversarial cases, and CI in a clean supported environment.
+v0.2/v0.2.1 already include `protocols.py`, `serialization.py`, `replay.py`, `validation.py`, three JSON Schemas, a CI workflow scaffold, deterministic checkpoint continuation tests, and 30 passing tests at the v0.2.1 packaging baseline. Do not recreate these blindly. Audit and finish them against the acceptance criteria below. In particular, verify schema completeness, migration/compatibility behavior, queue/RNG replay across adversarial cases, and CI in a clean supported environment.
 
 ## Why this task exists
 

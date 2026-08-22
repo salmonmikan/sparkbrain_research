@@ -14,7 +14,7 @@
 
 ## D-003 — Reference engine precedes spiking implementation
 
-**Decision:** Build and freeze rate-based behavior before Norse/snnTorch/Nengo/Lava.
+**Decision:** Build and freeze rate-based behavior before local Norse/snnTorch/Nengo simulation. Dedicated-hardware mapping is Extension H.
 
 **Reason:** Otherwise theory failure, training failure, and substrate failure cannot be separated.
 
@@ -50,7 +50,7 @@
 
 ## D-009 — Algorithmic sparsity and energy efficiency are separate claims
 
-**Decision:** Report active nodes/edges first. Reserve energy claims for measured runtime/hardware.
+**Decision:** Report active nodes/edges and local runtime separately. Reserve physical energy claims for direct Extension H hardware measurement.
 
 **Reason:** Sparse dynamic Python or GPU execution can be slower despite less semantic work.
 
@@ -59,3 +59,28 @@
 **Decision:** No task is complete because code exists. It must meet explicit tests, outputs, and documentation criteria.
 
 **Reason:** The project combines research and software; unverifiable output is not useful.
+
+
+## D-011 — Core completion is local-only
+
+**Decision:** The reference engine, simulator, visualizer, experiments, storage, and reproduction path must complete on one general-purpose local computer. CPU is mandatory; local GPU is optional. Remote APIs and cloud services are not core dependencies.
+
+**Reason:** The project requires inspectable causal state, reproducibility, privacy, and independence from proprietary runtime services.
+
+## D-012 — Dedicated hardware is a separate extension
+
+**Decision:** Loihi, FPGA, ASIC, Lava/vendor mapping, and physical power measurement are assigned to Extension H and removed from core completion gates.
+
+**Reason:** Algorithmic validity and local spiking equivalence can be established without specialized access; hardware availability must not determine whether the core theory is complete.
+
+## D-013 — Package patch version and persisted schema version are distinct
+
+**Decision:** Release v0.2.1 uses package/theory version `0.2.1` while retaining config/state/trace schema `0.2`.
+
+**Reason:** The patch adds scope, explanations, and local validation without changing persisted dynamics contracts.
+
+## D-014 — Maintain formal and beginner documentation together
+
+**Decision:** Core terminology changes must update the formal theory, beginner foundation guide, and glossary in the same change.
+
+**Reason:** A technically precise theory that cannot be followed by implementers or reviewers is not sufficient for this project, but analogies must not silently replace formal semantics.

@@ -1,4 +1,4 @@
-# Hypotheses and Falsification Matrix
+# Hypotheses and Falsification Matrix — v0.2.1
 
 ## 1. Research posture
 
@@ -92,9 +92,9 @@ Candidate specialization must pass held-out reuse and causal ablation controls. 
 
 Rate and spiking backends should satisfy predefined invariants within tolerance. Failure may reveal that the current theory depends on rate-specific operations.
 
-### H10 — Neuromorphic execution improves energy efficiency
+### Extension H10 — Dedicated-hardware execution improves energy efficiency
 
-Requires matched workload, hardware power measurement, accuracy/latency controls, and platform disclosure. Event sparsity or spike counts alone cannot support this claim.
+This is outside the core theory completion criteria. It requires matched workload, direct hardware power measurement, accuracy/latency controls, and platform disclosure. Event sparsity, spike counts, or local CPU/GPU runtime alone cannot support this claim.
 
 ## 4. Experiment-to-hypothesis map
 

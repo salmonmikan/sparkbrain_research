@@ -202,3 +202,17 @@ Primary contribution candidates:
 | True hardware efficiency will improve | unknown |
 | Emergent organs will form | speculative |
 
+
+## Local-first scope note — v0.2.1
+
+The single-machine local-only requirement is an engineering and reproducibility constraint, not a novelty claim. Many prior cognitive architectures and neural simulators already run locally. SparkBrain must not present local execution itself as a scientific contribution.
+
+The boundary is instead operational:
+
+- core theory and evidence must remain testable without access to a proprietary remote service;
+- the CPU reference engine defines semantics independently from acceleration substrates;
+- local spiking simulation belongs to the core comparison program;
+- dedicated neuromorphic hardware and physical energy measurement belong to Extension H;
+- results from Extension H cannot retroactively validate biological fidelity or the cognitive theory.
+
+Prior-art auditing should continue to include neuromorphic and hardware implementations because they may invalidate architectural novelty claims, even though reproducing those systems is not required for core completion.

@@ -1,23 +1,34 @@
-# Master Roadmap
+# Master Roadmap — Local-First v0.2.1
 
 ## 1. Strategy
 
-「理論を完成してから実装」「実装後に研究」という直列方式は採らない。以下のworkstreamを共通のversioned specificationで並行させる。
+「理論を完成してから実装」「実装後に研究」という直列方式は採らない。以下のworkstreamを、共通のversioned specificationとローカル実行契約の下で並行させる。
 
 ```text
-R: Prior-art research ───────┐
-T: Theory specification ────┼─> versioned claims
-E: Reference engine ────────┤
-V: Visualizer ──────────────┤
-X: Experiments / baselines ─┤
-L: Learning ────────────────┤
-S: Spiking backend ─────────┤
-P: Publication / audit ─────┘
+R: Prior-art research ─────────┐
+T: Theory specification ──────┼─> versioned claims
+E: Local reference engine ────┤
+V: Local visualizer ──────────┤
+X: Experiments / baselines ───┤
+L: Learning ──────────────────┤
+S: Local spiking simulation ──┤
+P: Publication / audit ───────┘
 ```
 
-ただし依存関係は守る。特にspiking化や大規模UIは、reference behaviorを固定してから行う。
+専用ハードウェアはこの図に含めず、完成後のExtension Hへ分離する。
 
-## 2. Workstreams
+## 2. 共通制約
+
+全workstreamは次を守る。
+
+- CPU参照経路を維持する
+- コア実行に外部API、クラウドDB、遠隔推論を要求しない
+- raw data、trace、checkpointをローカル保存する
+- UIは静的配布またはlocalhostで動く
+- セットアップ後の主要実験をオフライン実行可能にする
+- CIだけでなく対応するローカル検証コマンドを持つ
+
+## 3. Workstreams
 
 ### R — Prior-art and novelty boundary
 
@@ -27,7 +38,7 @@ Outputs:
 - exact overlap/non-overlap
 - reproducibility and license notes
 - novelty claims allowed/prohibited
-- monthly or release-based source refresh
+- release-based source refresh
 
 Exit condition:
 
@@ -45,34 +56,38 @@ Outputs:
 - learning rules
 - invariants
 - falsification criteria
+- plain-language mapping
 - version migration notes
 
 Exit condition:
 
 - every theory term maps to code or is explicitly future work
 - every primary hypothesis has an experiment and ablation
+- formal definition and beginner explanation do not contradict each other
 
-### E — Engine
+### E — Local engine
 
 Outputs:
 
-- deterministic reference engine
+- deterministic CPU reference engine
 - learned rate-based backend
 - backend protocol
 - profiling and trace hooks
+- local checkpoint/replay
 
 Exit condition:
 
 - tests and theory conformance pass
 - no hidden global state
 - trace collection is non-interfering
+- core behavior runs without network access
 
-### V — Visualizer
+### V — Local visualizer
 
 Outputs:
 
 - static reference viewer
-- live interactive UI
+- localhost interactive Brain Lab
 - causal intervention controls
 - run comparison
 - exportable figures
@@ -81,13 +96,14 @@ Exit condition:
 
 - user can explain any ignition from evidence graph and preceding events
 - UI never invents state not in trace
+- release UI has no mandatory external CDN or SaaS dependency
 
 ### X — Experiments
 
 Outputs:
 
 - synthetic worlds
-- external benchmark adapters
+- locally cached external benchmark adapters
 - baselines
 - ablations
 - statistics and reports
@@ -95,8 +111,9 @@ Outputs:
 Exit condition:
 
 - repeated seeded experiments
-- raw results retained
+- raw results retained locally
 - matched comparison regimes
+- benchmark can rerun after network disconnection once data is installed
 
 ### L — Learning and self-organization
 
@@ -106,26 +123,30 @@ Outputs:
 - learned weights/thresholds
 - structural plasticity
 - organ discovery metrics
+- CPU-scale reference training configuration
 
 Exit condition:
 
 - held-out generalization
 - collapse/load-balance controls
 - causal evidence of specialization
+- at least one small training experiment runs on CPU
 
-### S — Spiking and neuromorphic
+### S — Local spiking simulation
 
 Outputs:
 
-- Norse/snnTorch backend
-- Nengo comparison model
+- Norse or snnTorch backend
+- optional Nengo comparison model
 - Brian2 timing model where needed
-- Lava mapping
+- shared trace/backend protocol
 
 Exit condition:
 
-- predefined rate/spike behavioral equivalence
-- hardware claims separated from simulation claims
+- predefined rate/spike behavioral equivalence or documented failure
+- local CPU execution path exists
+- local GPU acceleration is optional
+- activity counts, runtime, and hardware-energy claims remain separated
 
 ### P — Publication and reproducibility
 
@@ -135,16 +156,19 @@ Outputs:
 - experiment manifests
 - figure scripts
 - negative result appendix
-- reproducibility instructions
+- local reproducibility instructions
 
 Exit condition:
 
-- independent reviewer can rerun primary result
+- independent reviewer can rerun primary result on a local machine
 - claims match evidence strength
+- external services are not required to inspect or regenerate core artifacts
 
-## 3. Milestones
+## 4. Milestones
 
-### M0 — Project foundation — completed in v0.2
+### M0 — Project foundation — completed across v0.2 and v0.2.1
+
+v0.2:
 
 - project charter
 - theory v0.2
@@ -158,6 +182,16 @@ Exit condition:
 - versioned config, trace, and state schemas
 - Codex handoff queue
 
+v0.2.1:
+
+- local-only completion policy
+- CPU reference requirement
+- dedicated hardware separated from core
+- beginner foundation guide
+- expanded plain-language glossary
+- local readiness audit
+- package version patch while retaining schema 0.2
+
 ### M1 — Reference validity
 
 Required:
@@ -167,7 +201,7 @@ Required:
 - configuration serialization
 - richer tests for duplicates, contradictions, cooldown, workspace capacity
 - profiling counters audited
-- CI
+- local readiness and optional CI
 
 Blocks: M2–M7 release claims.
 
@@ -183,21 +217,19 @@ Required:
 - complete ablation matrix
 - bootstrap intervals
 
-Can proceed in parallel with M3 UI work after M1 interfaces stabilize.
-
-### M3 — Interactive Brain Lab
+### M3 — Local Interactive Brain Lab
 
 Required:
 
-- FastAPI control plane
-- WebSocket frames
-- React/TypeScript visualizer
+- local Python control plane
+- localhost streaming or polling
+- bundled frontend assets
 - pause/step/reset
 - parameter edits
 - Spark/edge intervention
 - side-by-side run comparison
 
-Must preserve static visualizer as fallback.
+Must preserve static visualizer as fallback. No external CDN at runtime.
 
 ### M4 — Learned routing and representation
 
@@ -209,10 +241,9 @@ Required:
 - held-out combinations
 - routing diagnostics
 - differentiable or hybrid coalition scorer
+- CPU-scale reference configuration
 
-This is the first milestone capable of supporting a modern ML architecture claim.
-
-### M5 — Matched neural baselines
+### M5 — Matched neural and probabilistic baselines
 
 Required:
 
@@ -221,21 +252,21 @@ Required:
 - RIM/modular recurrent model
 - HMM/Bayes baseline where applicable
 - parameter/FLOP/wall-clock matching
-- shared datasets and splits
-
-M4 and M5 should use the same training harness.
+- shared local datasets and splits
 
 ### M6 — External belief-revision validation
 
 Required:
 
-- Belief-R adapter
+- locally cached Belief-R adapter or documented equivalent
 - relational/non-monotonic stream task
 - generalization and failure analysis
 - calibration
 - causal interventions
 
-### M7 — Spiking equivalence
+Network download may be a setup step; evaluation must run from local files afterward.
+
+### M7 — Local spiking equivalence
 
 Required:
 
@@ -244,6 +275,7 @@ Required:
 - event encoding
 - surrogate-gradient or local learning
 - rate/spike invariant comparison
+- CPU runnable reduced configuration
 
 ### M8 — Structural plasticity and emergent organs
 
@@ -256,63 +288,90 @@ Required:
 
 High-risk milestone. Failure does not invalidate M0–M7.
 
-### M9 — Neuromorphic and publication package
+### M9 — Local final integration and publication package
 
 Required:
 
-- Lava mapping
-- actual runtime/energy experiment where hardware is available
+- integrated local Brain Lab
+- local installer or reproducible environment
+- offline-capable demo
 - technical paper
-- reproducibility bundle
+- full raw-result bundle
+- figure generation
+- clean-room local rerun
 - external review
 
-## 4. Parallel execution batches
+M9 is the core completion milestone.
+
+## 5. Extension H — Dedicated hardware validation
+
+Extension H is outside M0–M9.
+
+Possible outputs:
+
+- Lava or vendor-specific mapping
+- Loihi / FPGA / ASIC execution
+- physical power and latency measurement
+- rate/local-SNN/hardware equivalence report
+
+Entry requires completion of M7 and fixed measurement methodology. Failure or non-execution does not invalidate core completion.
+
+## 6. Parallel execution batches
 
 ### Batch A — immediately actionable
 
 - M1 engine hardening
 - M2 world implementations
-- M3 backend/frontend scaffolding
+- M3 local UI scaffolding
 - R literature matrix expansion
 
 ### Batch B — after schemas stabilize
 
 - M4 learned router
-- M5 neural baselines
+- M5 neural/probabilistic baselines
 - M3 advanced UI
 - statistical report generation
 
 ### Batch C — after learned comparison
 
 - M6 external tasks
-- M7 spiking backend
+- M7 local spiking backend
 - theory v0.3 based on findings
 
-### Batch D — exploratory
+### Batch D — exploratory core
 
 - M8 self-organization
-- M9 hardware deployment
+- M9 local final integration
 - publication and naming
 
-## 5. Artifact status board
+### Separate Batch H — optional
 
-| Artifact | v0.2 | Next gate |
+- dedicated hardware mapping
+- physical energy experiments
+
+## 7. Artifact status board
+
+| Artifact | v0.2.1 | Next gate |
 |---|---|---|
 | Project Charter | complete | revise at theory v0.3 |
-| Theory Specification | draft complete | formal schema + conformance tests |
+| Theory Specification | working draft | formal conformance tests |
+| Beginner Guide | complete | update with theory changes |
+| Glossary | expanded | keep synchronized |
+| Local Policy | complete | enforce in all tasks |
 | Prior-art matrix | initial complete | systematic review expansion |
 | Reference Engine | functional complete | M1 hardening |
 | SwitchWorld | functional complete | M2 worlds |
 | Static Visualizer | functional complete | M3 live lab |
-| Phase-0 Baselines | functional complete | M5 neural baselines |
+| Phase-0 Baselines | functional complete | M5 matched baselines |
 | Benchmark Report | generated | confidence intervals and matched models |
 | Learned Routing | absent | M4 |
-| Spiking Backend | absent | M7 |
+| Local Spiking Backend | absent | M7 |
 | Structural Plasticity | absent | M8 |
-| Neuromorphic Measurement | absent | M9 |
+| Local Final Package | partial | M9 |
+| Dedicated Hardware | outside core | Extension H only |
 | Codex instructions | complete | update after each merged task |
 
-## 6. Change control
+## 8. Change control
 
 Any change to one of the following requires a Decision Log entry:
 
@@ -323,6 +382,7 @@ Any change to one of the following requires a Decision Log entry:
 - workspace semantics
 - primary hypotheses
 - primary benchmark metrics
+- local execution contract
 - claim strength
 - official project/theory name
 

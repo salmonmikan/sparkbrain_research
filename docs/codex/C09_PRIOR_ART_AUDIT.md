@@ -4,6 +4,16 @@
 
 Turn the initial gap analysis into a traceable, reproducible literature matrix that identifies the strongest precedent for every proposed contribution and prevents unsupported novelty claims.
 
+## Local-only contract
+
+- Required outputs must run on one general-purpose local computer.
+- Keep a CPU-runnable reference or reduced configuration. Local GPU use is optional.
+- Do not introduce a mandatory cloud service, remote model API, hosted database, remote queue, or SaaS login.
+- Runtime data, checkpoints, traces, and reports stay in explicit local paths.
+- After dependencies/data are installed, the task's primary smoke/reproduction path must run offline.
+- Dedicated neuromorphic hardware belongs to Extension H and is not an acceptance requirement.
+- Run `python scripts/local_readiness_check.py` before completion.
+
 ## Independence
 
 May start immediately and run continuously. Prefer a separate documentation branch/worktree to avoid code conflicts.

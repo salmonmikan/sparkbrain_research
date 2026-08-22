@@ -4,16 +4,26 @@
 
 Build a live, causal, inspectable visual laboratory for SparkBrain. Users must be able to observe real engine state, pause time, inject evidence, modify selected parameters, intervene on Sparks/connections, compare runs, and export exact traces.
 
+## Local-only contract
+
+- Required outputs must run on one general-purpose local computer.
+- Keep a CPU-runnable reference or reduced configuration. Local GPU use is optional.
+- Do not introduce a mandatory cloud service, remote model API, hosted database, remote queue, or SaaS login.
+- Runtime data, checkpoints, traces, and reports stay in explicit local paths.
+- After dependencies/data are installed, the task's primary smoke/reproduction path must run offline.
+- Dedicated neuromorphic hardware belongs to Extension H and is not an acceptance requirement.
+- Run `python scripts/local_readiness_check.py` before completion.
+
 ## Prerequisite
 
 C01 trace/state/control contracts accepted. C03 may run in parallel with C02 if it does not modify task metrics.
 
 ## Target architecture
 
-- backend: FastAPI, Pydantic schemas, WebSocket/SSE frames;
-- frontend: React + TypeScript + Vite;
+- backend: local FastAPI bound to `127.0.0.1` by default, Pydantic schemas, WebSocket/SSE frames;
+- frontend: React + TypeScript + Vite or a simpler bundled local frontend; final assets must be vendored/built locally;
 - graph rendering: choose a maintained SVG/WebGL library after documenting license and scale trade-offs;
-- static HTML replay remains supported as a dependency-free fallback.
+- static HTML replay remains supported as a dependency-free fallback; no runtime CDN, hosted font, analytics, or remote asset is allowed.
 
 ## Required screens
 
@@ -58,14 +68,14 @@ C01 trace/state/control contracts accepted. C03 may run in parallel with C02 if 
 
 ## Acceptance criteria
 
-- `docker compose up` or documented two-command startup launches the lab;
+- one documented local command, or at most a two-command backend/frontend startup, launches the lab; Docker may be optional but not mandatory;
 - canonical scenario can be reproduced entirely from the UI;
 - user can demonstrate CAT→TOY→CAT revision and inspect the exact supporting evidence;
 - an edge-ablation fork changes behavior while preserving the parent trace;
 - side-by-side comparison remains synchronized;
 - all API/E2E tests pass;
 - static visualizer remains functional;
-- architecture, UI legend, and intervention semantics are documented.
+- architecture, UI legend, intervention semantics, local bind address, local artifact paths, and offline startup are documented.
 
 ## Non-goals
 

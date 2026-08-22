@@ -9,10 +9,11 @@ The plan must contain:
 3. **Theory contract** — equations/invariants affected.
 4. **Implementation slices** — independently testable increments.
 5. **Data and evaluation** — train/dev/test split, seeds, metrics, raw outputs.
-6. **Risk register** — scientific confounds, software risks, performance risks.
+6. **Risk register** — scientific confounds, software risks, performance risks, and local/offline compliance risks.
 7. **Acceptance criteria** — copied from the assigned task and made executable where possible.
-8. **Validation commands** — exact commands.
+8. **Validation commands** — exact local commands, including `python scripts/local_readiness_check.py`.
 9. **Documentation updates** — files that will change.
-10. **Rollback boundary** — how to revert without corrupting generated results.
+10. **Local execution contract** — CPU path, local data paths, offline behavior, and optional acceleration.
+11. **Rollback boundary** — how to revert without corrupting generated results.
 
 Update the plan as facts change. Mark assumptions that were disproven rather than deleting them.

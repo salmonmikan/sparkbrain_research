@@ -4,6 +4,16 @@
 
 Test whether the learned SparkBrain architecture generalizes beyond its synthetic worlds, especially when new evidence should sometimes change a prior conclusion and sometimes leave it unchanged.
 
+## Local-only contract
+
+- Required outputs must run on one general-purpose local computer.
+- Keep a CPU-runnable reference or reduced configuration. Local GPU use is optional.
+- Do not introduce a mandatory cloud service, remote model API, hosted database, remote queue, or SaaS login.
+- Runtime data, checkpoints, traces, and reports stay in explicit local paths.
+- After dependencies/data are installed, the task's primary smoke/reproduction path must run offline.
+- Dedicated neuromorphic hardware belongs to Extension H and is not an acceptance requirement.
+- Run `python scripts/local_readiness_check.py` before completion.
+
 ## Prerequisites
 
 Minimum viable C04 learned backend and C05 matched harness.
@@ -49,6 +59,8 @@ Generate order permutations, delayed corrections, duplicate paraphrases, and cor
 - keep copyrighted datasets out of the repository when redistribution is not allowed; provide acquisition scripts and checksums.
 
 ## Acceptance criteria
+
+- after documented acquisition, the complete evaluation runs from a local data cache with network disabled;
 
 - at least one official external dataset adapter is reproducible;
 - update-needed and no-update cases are both reported;

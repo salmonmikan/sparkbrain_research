@@ -1,4 +1,4 @@
-# Software Architecture
+# Software Architecture — Local-First v0.2.1
 
 ## 1. Architectural objective
 
@@ -49,7 +49,7 @@ Global Workspace
 Trace Store      Visualizer
 ```
 
-## 2. Current v0.2 implementation
+## 2. Current v0.2.1 implementation
 
 ### `model.py`
 
@@ -151,7 +151,7 @@ activation_at_now = activation_at_last_touch * exp(-dt / tau)
 
 ## 5. Data contracts for future backends
 
-Rate-based、PyTorch、SNN、neuromorphic backendを交換可能にするため、次の抽象interfaceを固定する。
+Rate-based、PyTorch、ローカルSNN backendを交換可能にするため、次の抽象interfaceを固定する。専用neuromorphic hardwareはコアinterfaceの利用先になり得るが、完成条件には含めない。
 
 ### Dynamics backend
 
@@ -212,12 +212,12 @@ Use cases:
 
 PyTorch Geometric is appropriate when the active graph is represented by sparse `edge_index` / sparse tensors. However, first implementation should preserve a custom event scheduler because ordinary message passing may still evaluate all included edges in a batch.
 
-### Stage C — Interactive experiment UI
+### Stage C — Local interactive experiment UI
 
 Recommended split:
 
 ```text
-FastAPI backend
+Local FastAPI backend (bind to 127.0.0.1 by default)
   ├─ REST: config, graph, experiment control
   ├─ WebSocket: live frames
   └─ artifact export
@@ -230,23 +230,25 @@ React + TypeScript frontend
   └─ experiment comparison
 ```
 
-The existing static HTML visualizer remains the reference fallback and regression oracle.
+The existing static HTML visualizer remains the reference fallback and regression oracle. The release frontend must bundle its assets and must not require an external CDN, hosted font, analytics endpoint, or SaaS session.
 
-### Stage D — Spiking backends
+### Stage D — Local spiking simulation backends
 
 1. **Norse** for PyTorch-compatible LIF/recurrent cells and learning integration.
 2. **snnTorch** as an alternative for surrogate-gradient experiments and simple neuron models.
 3. **NengoSPA** for semantic/spiking cognitive modeling and associative memory comparison.
 4. **Brian2** for equation-level neural dynamics, STDP, and detailed timing experiments.
 
-Do not begin Stage D until the rate-based behavioral contract and tests are stable.
+Do not begin Stage D until the rate-based behavioral contract and tests are stable. A reduced CPU-runnable configuration is mandatory; local GPU acceleration is optional.
 
-### Stage E — Neuromorphic deployment
+### Extension H — Dedicated hardware deployment (outside core)
 
-- Lava Process abstraction
-- CPU simulation first
-- asynchronous/custom protocol second
-- supported neuromorphic hardware only after algorithmic validation
+- optional Lava or vendor-specific process mapping
+- dedicated neuromorphic hardware, FPGA, or ASIC only after local algorithmic validation
+- physical power/latency methodology fixed before measurement
+- failure or absence of this extension does not block the core project
+
+The core Stage D ends at local spiking simulation.
 
 ## 7. Storage and reproducibility
 
@@ -269,8 +271,10 @@ software_versions.json
 {
   "run_id": "...",
   "git_commit": "...",
-  "theory_version": "0.2",
-  "engine_version": "0.2.0",
+  "theory_version": "0.2.1",
+  "engine_version": "0.2.1",
+  "schema_version": "0.2",
+  "local_execution": true,
   "world": "switchworld",
   "seed": 123,
   "config_hash": "...",
@@ -281,7 +285,29 @@ software_versions.json
 
 Never overwrite raw run artifacts. Aggregate reports may be regenerated from raw data.
 
-## 8. Proposed API
+## 8. Local runtime boundary
+
+The mandatory architecture is single-machine and local-first:
+
+```text
+Local World / Dataset
+        │
+        ▼
+Python Engine ── local files ── Trace / Checkpoint / Results
+        │
+        └── 127.0.0.1 or static HTML ── Local Browser
+```
+
+Core runtime rules:
+
+- no mandatory remote inference or model API;
+- no mandatory cloud database, queue, object storage, or authentication service;
+- CPU reference behavior remains available;
+- all runtime artifacts have user-visible local paths;
+- after dependencies and datasets are installed, the primary workflow can run offline;
+- an optional external-model adapter must sit outside the cognition core and be disabled by default.
+
+## 9. Proposed local API
 
 ### REST
 
@@ -310,7 +336,7 @@ Never overwrite raw run artifacts. Aggregate reports may be regenerated from raw
 }
 ```
 
-## 9. Visual semantics
+## 10. Visual semantics
 
 The UI must distinguish:
 
@@ -326,7 +352,7 @@ The UI must distinguish:
 
 Visual encoding must not imply biological anatomy unless an anatomical mapping is explicitly supported.
 
-## 10. Performance strategy
+## 11. Performance strategy
 
 ### Do
 
@@ -347,18 +373,18 @@ Visual encoding must not imply biological anatomy unless an anatomical mapping i
 - recurrent cycles without event budget
 - claiming sparse energy efficiency from GPU runtime alone
 
-## 11. Security and operational boundaries
+## 12. Security and operational boundaries
 
-The current simulator executes no untrusted code and has no network API. When the web control plane is added:
+The current simulator executes no untrusted code and has no network API. When the localhost control plane is added:
 
 - validate all configuration ranges
 - cap event count and recurrent depth
 - isolate user-defined plugins
 - prevent arbitrary path writes
-- authenticate remote experiment control
+- bind to loopback by default and reject remote interfaces unless an explicit non-core development mode is enabled
 - preserve immutable run records
 
-## 12. Technical debt intentionally accepted
+## 13. Technical debt intentionally accepted
 
 - hand-authored evidence routing
 - scalar Spark activation
@@ -371,7 +397,7 @@ The current simulator executes no untrusted code and has no network API. When th
 
 These are explicit phase boundaries, not hidden omissions.
 
-## Reference integrity modules added in v0.2
+## 14. Reference integrity modules added in v0.2 and v0.2.1
 
 - `protocols.py`: shared behavioral interface for future rate/learned/spiking backends.
 - `validation.py`: finite-value, configuration, Spark, and graph invariant checks.
@@ -380,3 +406,11 @@ These are explicit phase boundaries, not hidden omissions.
 - `schemas/`: versioned JSON contracts for configuration, trace, and checkpoint state.
 
 Checkpoint state includes the pending event queue, sequence number, persistent hypotheses, stability, Workspace, eligibility, counters, trace buffer, frame-local audit buffers, and RNG state. The format is research-versioned and not yet promised as a permanent public storage API.
+
+
+### v0.2.1 local integrity additions
+
+- `scripts/local_readiness_check.py`: checks the local runtime contract, required files, package version, empty core runtime dependency list, and known remote-client imports.
+- `tests/test_local_only.py`: guards the package version and local-only dependency/import boundary.
+- `docs/LOCAL_EXECUTION_POLICY.md`: defines mandatory local execution and optional Extension H.
+- persisted config/state/trace schema remains `0.2`; package version is `0.2.1`.

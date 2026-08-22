@@ -1,4 +1,4 @@
-.PHONY: install lint test demo benchmark validate all clean-artifacts
+.PHONY: install lint test local-check demo benchmark validate all clean-artifacts
 
 install:
 	python -m pip install -e ".[dev]"
@@ -9,6 +9,9 @@ lint:
 test:
 	python -m pytest -q
 
+local-check:
+	python scripts/local_readiness_check.py
+
 demo:
 	python scripts/run_demo.py
 
@@ -18,7 +21,7 @@ benchmark:
 validate:
 	python scripts/validate_bundle.py
 
-all: lint test demo benchmark validate
+all: lint local-check test demo benchmark validate
 
 clean-artifacts:
 	rm -rf artifacts/demo artifacts/benchmarks

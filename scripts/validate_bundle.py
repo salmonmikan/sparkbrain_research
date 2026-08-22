@@ -11,15 +11,21 @@ ROOT = Path(__file__).resolve().parents[1]
 
 REQUIRED = [
     "README.md",
+    "CHANGELOG.md",
     "AGENTS.md",
+    "docs/START_HERE.md",
+    "docs/FOUNDATIONS_FOR_BEGINNERS.md",
+    "docs/GLOSSARY.md",
+    "docs/LOCAL_EXECUTION_POLICY.md",
     "docs/PROJECT_CHARTER.md",
-    "docs/THEORY_SPEC_v0.2.md",
+    "docs/THEORY_SPEC_v0.2.1.md",
     "docs/PROJECT_STATUS.md",
     "docs/PRIOR_ART_GAP_ANALYSIS.md",
     "docs/EXPERIMENT_PROTOCOL.md",
     "docs/CODEX_EXECUTION_BRIEF.md",
     "src/sparkbrain/engine.py",
     "src/sparkbrain/model.py",
+    "scripts/local_readiness_check.py",
     "artifacts/demo/trace.json",
     "artifacts/demo/checkpoint.json",
     "artifacts/demo/visualizer.html",
@@ -111,6 +117,14 @@ def main() -> None:
     for marker in ("SparkBrain", "IGNITION", "const payload"):
         if marker not in html:
             fail(f"visualizer missing marker: {marker}")
+
+    local_result = subprocess.run(
+        [sys.executable, "scripts/local_readiness_check.py"],
+        cwd=ROOT,
+        check=False,
+    )
+    if local_result.returncode:
+        fail("local readiness check failed")
 
     compile_result = subprocess.run(
         [sys.executable, "-m", "compileall", "-q", "src", "scripts", "tests"],

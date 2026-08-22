@@ -4,6 +4,16 @@
 
 Create a controlled research suite that isolates stability, justified revision, contradiction handling, delayed evidence, multi-object interference, goal conflict, and sparse execution. Produce uncertainty estimates instead of single aggregate values.
 
+## Local-only contract
+
+- Required outputs must run on one general-purpose local computer.
+- Keep a CPU-runnable reference or reduced configuration. Local GPU use is optional.
+- Do not introduce a mandatory cloud service, remote model API, hosted database, remote queue, or SaaS login.
+- Runtime data, checkpoints, traces, and reports stay in explicit local paths.
+- After dependencies/data are installed, the task's primary smoke/reproduction path must run offline.
+- Dedicated neuromorphic hardware belongs to Extension H and is not an acceptance requirement.
+- Run `python scripts/local_readiness_check.py` before completion.
+
 ## Prerequisite
 
 C01 accepted. Use its Episode/Trace/config contracts.

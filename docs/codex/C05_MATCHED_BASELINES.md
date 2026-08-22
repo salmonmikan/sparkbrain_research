@@ -4,6 +4,16 @@
 
 Build credible comparison systems and a shared training/evaluation harness so SparkBrain is tested against strong alternatives rather than only scalar toy baselines.
 
+## Local-only contract
+
+- Required outputs must run on one general-purpose local computer.
+- Keep a CPU-runnable reference or reduced configuration. Local GPU use is optional.
+- Do not introduce a mandatory cloud service, remote model API, hosted database, remote queue, or SaaS login.
+- Runtime data, checkpoints, traces, and reports stay in explicit local paths.
+- After dependencies/data are installed, the task's primary smoke/reproduction path must run offline.
+- Dedicated neuromorphic hardware belongs to Extension H and is not an acceptance requirement.
+- Run `python scripts/local_readiness_check.py` before completion.
+
 ## Prerequisites
 
 C01 and C02 harness accepted. Coordinate input encoders, datasets, splits, parameter budgets, and compute accounting with C04.
@@ -52,6 +62,9 @@ Also report an unconstrained “best reasonable configuration” for each family
 - failure-case traces where internal states are available.
 
 ## Acceptance criteria
+
+- every baseline has a CPU smoke configuration, even if full local GPU runs are optionally provided;
+- datasets/splits are local files after setup and no remote experiment tracker is required;
 
 - all required baseline families run through one command/config system;
 - at least five independent seeds for learned models, or a documented power/runtime justification;

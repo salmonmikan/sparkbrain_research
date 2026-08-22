@@ -4,6 +4,16 @@
 
 Replace hand-authored-only evidence routing with a trainable rate-based backend while preserving explicit persistent beliefs, evidence Coalitions, no-ignition, residual recovery, inspectable traces, and actual active-set accounting.
 
+## Local-only contract
+
+- Required outputs must run on one general-purpose local computer.
+- Keep a CPU-runnable reference or reduced configuration. Local GPU use is optional.
+- Do not introduce a mandatory cloud service, remote model API, hosted database, remote queue, or SaaS login.
+- Runtime data, checkpoints, traces, and reports stay in explicit local paths.
+- After dependencies/data are installed, the task's primary smoke/reproduction path must run offline.
+- Dedicated neuromorphic hardware belongs to Extension H and is not an acceptance requirement.
+- Run `python scripts/local_readiness_check.py` before completion.
+
 ## Prerequisites
 
 C01 accepted; use C02 datasets/splits where available. Coordinate schemas and training harness with C05.
@@ -22,7 +32,7 @@ Implement a backend behind the C01 protocol with these separable components:
 8. belief/action readouts kept separate;
 9. optional local/reward learning experiment distinct from backprop baseline.
 
-Use PyTorch first. PyTorch Geometric may be introduced only if it improves the active graph implementation and license/dependency costs are documented.
+Use PyTorch locally first. Provide a small CPU-runnable configuration and treat CUDA/MPS as optional acceleration. PyTorch Geometric may be introduced only if it improves the active graph implementation and license/dependency costs are documented.
 
 ## Critical sparsity distinction
 
@@ -78,6 +88,8 @@ Document every coefficient and provide sensitivity analysis.
 - detach vs end-to-end Coalition learning.
 
 ## Acceptance criteria
+
+- a documented CPU smoke-training/evaluation configuration completes locally without network access;
 
 - training is reproducible from config/seed;
 - dev/test splits are immutable and manifested;

@@ -1,4 +1,4 @@
-# Experimental Protocol
+# Experimental Protocol — Local-First v0.2.1
 
 ## 1. Purpose
 
@@ -13,6 +13,12 @@ SparkBrain の目的は「脳っぽく見えるアニメーション」を作る
 5. 過去のloserへ復帰できるか
 6. 全Sparkを常時計算せず成立するか
 7. learned settingでも成立するか
+
+## 1.1 Local execution discipline
+
+Core experiments must run on one general-purpose local computer. A CPU reference configuration is mandatory; local GPU acceleration is optional. Runtime cloud services, remote model APIs, hosted experiment trackers, and remote storage must not be required. External datasets may be acquired during setup, but final evaluation must run from a versioned local cache.
+
+Dedicated hardware and physical energy measurement are outside the core phase gates and are tracked only under Extension H.
 
 ## 2. Experimental layers
 
@@ -76,12 +82,12 @@ Candidate tasks:
 
 External task adapters must preserve sequential evidence instead of flattening all premises into one input.
 
-### Phase 4 — Spiking equivalence
+### Phase 4 — Local spiking equivalence
 
 Purpose:
 
 - rate-based behavioral contractをNorse/snnTorch/Nengo backendで再現
-- spike timing、energy proxy、latencyを測る
+- spike timing、activity/message counts、local CPU/GPU latencyを測る
 
 Do not tune the spiking model only for final accuracy. Compare internal dynamics:
 
@@ -91,13 +97,21 @@ Do not tune the spiking model only for final accuracy. Compare internal dynamics
 - workspace sequence
 - coalition membership or decoded equivalent
 
-### Phase 5 — Neuromorphic measurement
+### Phase 5 — Local final integration and clean-room reproduction
 
 Purpose:
 
-- supported hardware / Lava backendでactual energy and latencyを測る
+- one local machineでengine、World、Visualizer、benchmark、reportを統合する
+- dependency/data setup後にnetworkを切断して主要結果を再生成する
+- CPU reference pathとoptional local accelerator pathを分離して報告する
 
-Only this phase may support physical efficiency claims.
+### Extension H — Dedicated hardware measurement (outside core)
+
+Purpose:
+
+- supported dedicated hardwareでactual energy and latencyを測る
+
+Only Extension H may support physical efficiency claims. It is not a core completion gate.
 
 ## 3. Baselines
 
@@ -121,7 +135,7 @@ Report at least three matching regimes:
 
 1. matched parameter count
 2. matched approximate FLOPs / edge operations
-3. matched wall-clock or latency on same hardware
+3. matched wall-clock or latency on the same disclosed local hardware
 
 A model may be better in one regime and worse in another. Do not compress all comparisons into a single rank.
 
@@ -217,7 +231,7 @@ Coalition score is not automatically a probability. If probability claims are ne
 - memory footprint
 - wall-clock CPU/GPU
 - kernel launch count where available
-- hardware energy only when measured
+- physical hardware energy only in Extension H when directly measured
 
 `active_spark_fraction` and energy are not interchangeable.
 
@@ -316,5 +330,13 @@ python scripts/run_benchmark.py --episodes 40 --steps 30
 
 ### Gate P5
 
-- energy measured on actual target runtime/hardware
-- full environment and run manifest published
+- full local system starts from documented commands
+- primary result subset reproduces from a clean local environment
+- after setup/data acquisition, the primary workflow succeeds offline
+- full environment and run manifest are published
+
+### Extension Gate H
+
+- physical energy measured on an actual dedicated target
+- workload, accuracy, latency, instrumentation, and platform are disclosed
+- result remains separate from core completion

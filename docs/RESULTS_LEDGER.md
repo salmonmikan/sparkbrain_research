@@ -53,3 +53,38 @@ Confounds:
 Claim grade impact:
 Next action:
 ```
+
+## 2026-08-22 — R0002 — v0.2.1 local-scope and documentation expansion
+
+**Code/version:** SparkBrain package v0.2.1; persisted schema v0.2  
+**Nature:** documentation, local-execution contract, validation guard; no intended dynamics change  
+**Primary commands:** `python scripts/local_readiness_check.py`, `python -m pytest -q`, `python scripts/validate_bundle.py`
+
+### Changes under test
+
+- core completion constrained to one general-purpose local computer;
+- CPU reference path made mandatory;
+- remote runtime services excluded from core dependencies;
+- dedicated hardware moved to Extension H;
+- beginner foundation guide and expanded glossary added;
+- local-readiness checks added;
+- package version advanced to 0.2.1 while schema remains 0.2.
+
+### Scientific result
+
+None claimed. This patch does not increase the evidence grade of H1–H10 or establish a performance improvement.
+
+### Validation outcome
+
+- local readiness: PASS on Python 3.13.5 / Linux x86_64;
+- tests: 30 passing;
+- canonical demo: CAT → TOY → CAT reproduced;
+- checkpoint state hash: `cedc8543d87677d2cbf1707f0df2ec7d95e8a1d31b735a40a917d9de9d7ff13c`;
+- bundle validation: 23 required artifacts validated;
+- benchmark aggregate CSV: byte-identical to archived v0.2;
+- canonical trace JSON: byte-identical to archived v0.2;
+- ruff: not executed in the packaging environment because it was not installed.
+
+### Compatibility target
+
+The Phase-0 dynamics and persisted config/state/trace schema are intended to remain compatible with v0.2. The byte-identical benchmark aggregate and canonical trace support that narrow compatibility statement for the bundled scenarios; they do not prove compatibility for every possible checkpoint or graph.
