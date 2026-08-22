@@ -8,7 +8,7 @@ The repository is a **Phase-0 local functional research prototype**. It demonstr
 
 v0.2.1 fixes the core destination to one general-purpose local computer, adds a plain-language foundation guide and expanded glossary, and moves dedicated neuromorphic hardware to an independent extension track.
 
-It is not yet a learned architecture, a completed spiking implementation, a validated biological model, or a matched comparison against modern neural baselines.
+It is not yet a learned architecture, a fully spiking implementation, a validated biological model, or a matched comparison against modern neural baselines. C07 adds only a reduced hybrid canonical comparison.
 
 ## 2. Local execution contract
 
@@ -46,6 +46,7 @@ See `docs/LOCAL_EXECUTION_POLICY.md`.
 | Codex repository instructions | complete | `AGENTS.md`, `.agents/skills/sparkbrain-research/SKILL.md` |
 | Versioned checkpoint and trace replay | C01 accepted | `serialization.py`, `replay.py`, `schemas/`, `tests/test_schemas.py`, CI run `32594805438` |
 | Interactive localhost Brain Lab | C03 accepted locally | `src/sparkbrain/lab/`, `docs/BRAIN_LAB.md`, `tests/test_brain_lab_*.py` |
+| Reduced local spiking backend | hybrid canonical equivalence; fully spiking work remains | `src/sparkbrain/spiking.py`, `artifacts/spiking/` |
 | Detailed Codex execution queue | complete | `docs/CODEX_EXECUTION_BRIEF.md`, `docs/codex/` |
 
 ## 4. Verified local commands
@@ -83,7 +84,7 @@ The accumulator baseline is close in this hand-authored setting. Therefore this 
 | P1 | learned event encoding/routing and held-out generalization | C04 |
 | P1 | matched GRU/Transformer/RIM/Bayesian baselines | C05 |
 | P1 | external belief-revision and relational tasks with local cached datasets | C06 |
-| P2 | local rate-to-spiking backend equivalence | C07 |
+| P2 | fully spiking and multi-world equivalence beyond the reduced hybrid | C07 follow-on |
 | P2 | structural plasticity and emergent-organ tests | C08 |
 | continuous | systematic prior-art review and novelty audit | C09 |
 | release | local reproducibility/publication package | C10 |

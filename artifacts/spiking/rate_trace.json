@@ -1,0 +1,2334 @@
+{
+  "schema_version": "0.2",
+  "graph": {
+    "nodes": [
+      {
+        "id": "sensory:fur",
+        "label": "fur",
+        "kind": "sensory",
+        "organ": "perception"
+      },
+      {
+        "id": "sensory:meow",
+        "label": "meow",
+        "kind": "sensory",
+        "organ": "perception"
+      },
+      {
+        "id": "sensory:purr",
+        "label": "purr",
+        "kind": "sensory",
+        "organ": "perception"
+      },
+      {
+        "id": "sensory:bark",
+        "label": "bark",
+        "kind": "sensory",
+        "organ": "perception"
+      },
+      {
+        "id": "sensory:tail_wag",
+        "label": "tail_wag",
+        "kind": "sensory",
+        "organ": "perception"
+      },
+      {
+        "id": "sensory:motionless",
+        "label": "motionless",
+        "kind": "sensory",
+        "organ": "perception"
+      },
+      {
+        "id": "sensory:plastic_seam",
+        "label": "plastic_seam",
+        "kind": "sensory",
+        "organ": "perception"
+      },
+      {
+        "id": "sensory:warm_body",
+        "label": "warm_body",
+        "kind": "sensory",
+        "organ": "perception"
+      },
+      {
+        "id": "sensory:four_legs",
+        "label": "four_legs",
+        "kind": "sensory",
+        "organ": "perception"
+      },
+      {
+        "id": "sensory:whiskers",
+        "label": "whiskers",
+        "kind": "sensory",
+        "organ": "perception"
+      },
+      {
+        "id": "sensory:collar",
+        "label": "collar",
+        "kind": "sensory",
+        "organ": "perception"
+      },
+      {
+        "id": "hypothesis:cat",
+        "label": "cat",
+        "kind": "hypothesis",
+        "organ": "hypothesis"
+      },
+      {
+        "id": "hypothesis:dog",
+        "label": "dog",
+        "kind": "hypothesis",
+        "organ": "hypothesis"
+      },
+      {
+        "id": "hypothesis:toy",
+        "label": "toy",
+        "kind": "hypothesis",
+        "organ": "hypothesis"
+      },
+      {
+        "id": "memory:workspace",
+        "label": "working memory",
+        "kind": "memory",
+        "organ": "memory"
+      },
+      {
+        "id": "action:report",
+        "label": "report belief",
+        "kind": "action",
+        "organ": "action"
+      }
+    ],
+    "edges": [
+      {
+        "source": "sensory:fur",
+        "target": "hypothesis:cat",
+        "weight": 0.48,
+        "plastic": false,
+        "label": "evidence"
+      },
+      {
+        "source": "sensory:fur",
+        "target": "hypothesis:dog",
+        "weight": 0.38,
+        "plastic": false,
+        "label": "evidence"
+      },
+      {
+        "source": "sensory:fur",
+        "target": "hypothesis:toy",
+        "weight": 0.06,
+        "plastic": false,
+        "label": "evidence"
+      },
+      {
+        "source": "sensory:meow",
+        "target": "hypothesis:cat",
+        "weight": 0.82,
+        "plastic": false,
+        "label": "evidence"
+      },
+      {
+        "source": "sensory:meow",
+        "target": "hypothesis:dog",
+        "weight": -0.18,
+        "plastic": false,
+        "label": "evidence"
+      },
+      {
+        "source": "sensory:meow",
+        "target": "hypothesis:toy",
+        "weight": -0.05,
+        "plastic": false,
+        "label": "evidence"
+      },
+      {
+        "source": "sensory:purr",
+        "target": "hypothesis:cat",
+        "weight": 0.78,
+        "plastic": false,
+        "label": "evidence"
+      },
+      {
+        "source": "sensory:purr",
+        "target": "hypothesis:dog",
+        "weight": -0.12,
+        "plastic": false,
+        "label": "evidence"
+      },
+      {
+        "source": "sensory:purr",
+        "target": "hypothesis:toy",
+        "weight": -0.05,
+        "plastic": false,
+        "label": "evidence"
+      },
+      {
+        "source": "sensory:bark",
+        "target": "hypothesis:dog",
+        "weight": 0.85,
+        "plastic": false,
+        "label": "evidence"
+      },
+      {
+        "source": "sensory:bark",
+        "target": "hypothesis:cat",
+        "weight": -0.18,
+        "plastic": false,
+        "label": "evidence"
+      },
+      {
+        "source": "sensory:bark",
+        "target": "hypothesis:toy",
+        "weight": -0.05,
+        "plastic": false,
+        "label": "evidence"
+      },
+      {
+        "source": "sensory:tail_wag",
+        "target": "hypothesis:dog",
+        "weight": 0.55,
+        "plastic": false,
+        "label": "evidence"
+      },
+      {
+        "source": "sensory:tail_wag",
+        "target": "hypothesis:cat",
+        "weight": 0.1,
+        "plastic": false,
+        "label": "evidence"
+      },
+      {
+        "source": "sensory:tail_wag",
+        "target": "hypothesis:toy",
+        "weight": 0.0,
+        "plastic": false,
+        "label": "evidence"
+      },
+      {
+        "source": "sensory:motionless",
+        "target": "hypothesis:toy",
+        "weight": 0.66,
+        "plastic": false,
+        "label": "evidence"
+      },
+      {
+        "source": "sensory:motionless",
+        "target": "hypothesis:cat",
+        "weight": -0.22,
+        "plastic": false,
+        "label": "evidence"
+      },
+      {
+        "source": "sensory:motionless",
+        "target": "hypothesis:dog",
+        "weight": -0.22,
+        "plastic": false,
+        "label": "evidence"
+      },
+      {
+        "source": "sensory:plastic_seam",
+        "target": "hypothesis:toy",
+        "weight": 0.92,
+        "plastic": false,
+        "label": "evidence"
+      },
+      {
+        "source": "sensory:plastic_seam",
+        "target": "hypothesis:cat",
+        "weight": -0.15,
+        "plastic": false,
+        "label": "evidence"
+      },
+      {
+        "source": "sensory:plastic_seam",
+        "target": "hypothesis:dog",
+        "weight": -0.15,
+        "plastic": false,
+        "label": "evidence"
+      },
+      {
+        "source": "sensory:warm_body",
+        "target": "hypothesis:cat",
+        "weight": 0.25,
+        "plastic": false,
+        "label": "evidence"
+      },
+      {
+        "source": "sensory:warm_body",
+        "target": "hypothesis:dog",
+        "weight": 0.25,
+        "plastic": false,
+        "label": "evidence"
+      },
+      {
+        "source": "sensory:warm_body",
+        "target": "hypothesis:toy",
+        "weight": -0.45,
+        "plastic": false,
+        "label": "evidence"
+      },
+      {
+        "source": "sensory:four_legs",
+        "target": "hypothesis:cat",
+        "weight": 0.25,
+        "plastic": false,
+        "label": "evidence"
+      },
+      {
+        "source": "sensory:four_legs",
+        "target": "hypothesis:dog",
+        "weight": 0.28,
+        "plastic": false,
+        "label": "evidence"
+      },
+      {
+        "source": "sensory:four_legs",
+        "target": "hypothesis:toy",
+        "weight": 0.05,
+        "plastic": false,
+        "label": "evidence"
+      },
+      {
+        "source": "sensory:whiskers",
+        "target": "hypothesis:cat",
+        "weight": 0.64,
+        "plastic": false,
+        "label": "evidence"
+      },
+      {
+        "source": "sensory:whiskers",
+        "target": "hypothesis:dog",
+        "weight": -0.08,
+        "plastic": false,
+        "label": "evidence"
+      },
+      {
+        "source": "sensory:whiskers",
+        "target": "hypothesis:toy",
+        "weight": 0.02,
+        "plastic": false,
+        "label": "evidence"
+      },
+      {
+        "source": "sensory:collar",
+        "target": "hypothesis:dog",
+        "weight": 0.36,
+        "plastic": false,
+        "label": "evidence"
+      },
+      {
+        "source": "sensory:collar",
+        "target": "hypothesis:cat",
+        "weight": 0.18,
+        "plastic": false,
+        "label": "evidence"
+      },
+      {
+        "source": "sensory:collar",
+        "target": "hypothesis:toy",
+        "weight": 0.02,
+        "plastic": false,
+        "label": "evidence"
+      },
+      {
+        "source": "hypothesis:cat",
+        "target": "hypothesis:dog",
+        "weight": -0.16,
+        "plastic": false,
+        "label": "lateral_inhibition"
+      },
+      {
+        "source": "hypothesis:cat",
+        "target": "hypothesis:toy",
+        "weight": -0.16,
+        "plastic": false,
+        "label": "lateral_inhibition"
+      },
+      {
+        "source": "hypothesis:dog",
+        "target": "hypothesis:cat",
+        "weight": -0.16,
+        "plastic": false,
+        "label": "lateral_inhibition"
+      },
+      {
+        "source": "hypothesis:dog",
+        "target": "hypothesis:toy",
+        "weight": -0.16,
+        "plastic": false,
+        "label": "lateral_inhibition"
+      },
+      {
+        "source": "hypothesis:toy",
+        "target": "hypothesis:cat",
+        "weight": -0.16,
+        "plastic": false,
+        "label": "lateral_inhibition"
+      },
+      {
+        "source": "hypothesis:toy",
+        "target": "hypothesis:dog",
+        "weight": -0.16,
+        "plastic": false,
+        "label": "lateral_inhibition"
+      }
+    ]
+  },
+  "frames": [
+    {
+      "time": 1.01,
+      "external_event": "fur",
+      "truth": "cat",
+      "prediction": null,
+      "sparks": [
+        {
+          "id": "sensory:fur",
+          "label": "fur",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.048901,
+          "threshold": 0.564985,
+          "fired_count": 1,
+          "last_fire": 1.0
+        },
+        {
+          "id": "sensory:meow",
+          "label": "meow",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:purr",
+          "label": "purr",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:bark",
+          "label": "bark",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:tail_wag",
+          "label": "tail_wag",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:motionless",
+          "label": "motionless",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:plastic_seam",
+          "label": "plastic_seam",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:warm_body",
+          "label": "warm_body",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:four_legs",
+          "label": "four_legs",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:whiskers",
+          "label": "whiskers",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:collar",
+          "label": "collar",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "hypothesis:cat",
+          "label": "cat",
+          "kind": "hypothesis",
+          "organ": "hypothesis",
+          "activation": 0.48,
+          "threshold": 0.78,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "hypothesis:dog",
+          "label": "dog",
+          "kind": "hypothesis",
+          "organ": "hypothesis",
+          "activation": 0.38,
+          "threshold": 0.78,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "hypothesis:toy",
+          "label": "toy",
+          "kind": "hypothesis",
+          "organ": "hypothesis",
+          "activation": 0.06,
+          "threshold": 0.78,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "memory:workspace",
+          "label": "working memory",
+          "kind": "memory",
+          "organ": "memory",
+          "activation": 0.0,
+          "threshold": 0.7,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "action:report",
+          "label": "report belief",
+          "kind": "action",
+          "organ": "action",
+          "activation": 0.0,
+          "threshold": 0.7,
+          "fired_count": 0,
+          "last_fire": null
+        }
+      ],
+      "coalitions": [
+        {
+          "id": "coalition:hypothesis:cat",
+          "hypothesis_id": "hypothesis:cat",
+          "label": "cat",
+          "members": [
+            "fur"
+          ],
+          "score": 0.6984,
+          "activation": 0.48,
+          "evidence_strength": 0.48,
+          "diversity": 1,
+          "stability": 3,
+          "contradiction": 0
+        },
+        {
+          "id": "coalition:hypothesis:dog",
+          "hypothesis_id": "hypothesis:dog",
+          "label": "dog",
+          "members": [
+            "fur"
+          ],
+          "score": 0.4104,
+          "activation": 0.38,
+          "evidence_strength": 0.38,
+          "diversity": 1,
+          "stability": 0,
+          "contradiction": 0
+        },
+        {
+          "id": "coalition:hypothesis:toy",
+          "hypothesis_id": "hypothesis:toy",
+          "label": "toy",
+          "members": [
+            "fur"
+          ],
+          "score": 0.0648,
+          "activation": 0.06,
+          "evidence_strength": 0.06,
+          "diversity": 1,
+          "stability": 0,
+          "contradiction": 0
+        }
+      ],
+      "workspace": [],
+      "fired": [
+        "sensory:fur"
+      ],
+      "active_edges": [
+        [
+          "sensory:fur",
+          "hypothesis:cat",
+          0.48
+        ],
+        [
+          "sensory:fur",
+          "hypothesis:dog",
+          0.38
+        ],
+        [
+          "sensory:fur",
+          "hypothesis:toy",
+          0.06
+        ]
+      ],
+      "stats": {
+        "events_processed": 4,
+        "spark_updates": 10,
+        "edge_evaluations": 3,
+        "fires": 1,
+        "ignitions": 0,
+        "broadcasts": 0,
+        "active_sparks_since_frame": 4,
+        "active_spark_fraction": 0.25
+      }
+    },
+    {
+      "time": 2.0199999999999996,
+      "external_event": "meow",
+      "truth": "cat",
+      "prediction": "cat",
+      "sparks": [
+        {
+          "id": "sensory:fur",
+          "label": "fur",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.005183,
+          "threshold": 0.563545,
+          "fired_count": 1,
+          "last_fire": 1.0
+        },
+        {
+          "id": "sensory:meow",
+          "label": "meow",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.047826,
+          "threshold": 0.56497,
+          "fired_count": 1,
+          "last_fire": 2.0
+        },
+        {
+          "id": "sensory:purr",
+          "label": "purr",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:bark",
+          "label": "bark",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:tail_wag",
+          "label": "tail_wag",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:motionless",
+          "label": "motionless",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:plastic_seam",
+          "label": "plastic_seam",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:warm_body",
+          "label": "warm_body",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:four_legs",
+          "label": "four_legs",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:whiskers",
+          "label": "whiskers",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:collar",
+          "label": "collar",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "hypothesis:cat",
+          "label": "cat",
+          "kind": "hypothesis",
+          "organ": "hypothesis",
+          "activation": 1.000309,
+          "threshold": 0.794985,
+          "fired_count": 1,
+          "last_fire": 2.01
+        },
+        {
+          "id": "hypothesis:dog",
+          "label": "dog",
+          "kind": "hypothesis",
+          "organ": "hypothesis",
+          "activation": -0.044345,
+          "threshold": 0.78,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "hypothesis:toy",
+          "label": "toy",
+          "kind": "hypothesis",
+          "organ": "hypothesis",
+          "activation": -0.163264,
+          "threshold": 0.78,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "memory:workspace",
+          "label": "working memory",
+          "kind": "memory",
+          "organ": "memory",
+          "activation": 0.7,
+          "threshold": 0.715,
+          "fired_count": 1,
+          "last_fire": 2.0199999999999996
+        },
+        {
+          "id": "action:report",
+          "label": "report belief",
+          "kind": "action",
+          "organ": "action",
+          "activation": 0.05,
+          "threshold": 0.715,
+          "fired_count": 1,
+          "last_fire": 2.0199999999999996
+        }
+      ],
+      "coalitions": [
+        {
+          "id": "coalition:hypothesis:cat",
+          "hypothesis_id": "hypothesis:cat",
+          "label": "cat",
+          "members": [
+            "fur",
+            "meow"
+          ],
+          "score": 1.457154,
+          "activation": 1.000309,
+          "evidence_strength": 1.210567,
+          "diversity": 2,
+          "stability": 11,
+          "contradiction": 0
+        },
+        {
+          "id": "coalition:hypothesis:dog",
+          "hypothesis_id": "hypothesis:dog",
+          "label": "dog",
+          "members": [
+            "fur"
+          ],
+          "score": -0.003903,
+          "activation": -0.044345,
+          "evidence_strength": 0.310496,
+          "diversity": 1,
+          "stability": 0,
+          "contradiction": 0.17964
+        },
+        {
+          "id": "coalition:hypothesis:toy",
+          "hypothesis_id": "hypothesis:toy",
+          "label": "toy",
+          "members": [
+            "fur"
+          ],
+          "score": -0.004062,
+          "activation": -0.163264,
+          "evidence_strength": 0.049026,
+          "diversity": 1,
+          "stability": 0,
+          "contradiction": 0.0499
+        }
+      ],
+      "workspace": [
+        {
+          "coalition_id": "coalition:hypothesis:cat",
+          "hypothesis_id": "hypothesis:cat",
+          "label": "cat",
+          "score": 1.4598517366525845,
+          "ignition_time": 2.01,
+          "supports": [
+            "fur",
+            "meow"
+          ]
+        }
+      ],
+      "fired": [
+        "sensory:meow",
+        "hypothesis:cat",
+        "action:report",
+        "memory:workspace"
+      ],
+      "active_edges": [
+        [
+          "sensory:meow",
+          "hypothesis:cat",
+          0.82
+        ],
+        [
+          "sensory:meow",
+          "hypothesis:dog",
+          -0.18
+        ],
+        [
+          "sensory:meow",
+          "hypothesis:toy",
+          -0.05
+        ],
+        [
+          "hypothesis:cat",
+          "hypothesis:dog",
+          -0.16
+        ],
+        [
+          "hypothesis:cat",
+          "hypothesis:toy",
+          -0.16
+        ]
+      ],
+      "stats": {
+        "events_processed": 12,
+        "spark_updates": 42,
+        "edge_evaluations": 8,
+        "fires": 5,
+        "ignitions": 1,
+        "broadcasts": 2,
+        "active_sparks_since_frame": 6,
+        "active_spark_fraction": 0.375
+      }
+    },
+    {
+      "time": 3.0199999999999996,
+      "external_event": "bark",
+      "truth": "cat",
+      "prediction": "cat",
+      "sparks": [
+        {
+          "id": "sensory:fur",
+          "label": "fur",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.000562,
+          "threshold": 0.562256,
+          "fired_count": 1,
+          "last_fire": 1.0
+        },
+        {
+          "id": "sensory:meow",
+          "label": "meow",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.005183,
+          "threshold": 0.563545,
+          "fired_count": 1,
+          "last_fire": 2.0
+        },
+        {
+          "id": "sensory:purr",
+          "label": "purr",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:bark",
+          "label": "bark",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.047826,
+          "threshold": 0.56497,
+          "fired_count": 1,
+          "last_fire": 3.0
+        },
+        {
+          "id": "sensory:tail_wag",
+          "label": "tail_wag",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:motionless",
+          "label": "motionless",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:plastic_seam",
+          "label": "plastic_seam",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:warm_body",
+          "label": "warm_body",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:four_legs",
+          "label": "four_legs",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:whiskers",
+          "label": "whiskers",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:collar",
+          "label": "collar",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "hypothesis:cat",
+          "label": "cat",
+          "kind": "hypothesis",
+          "organ": "hypothesis",
+          "activation": 0.439491,
+          "threshold": 0.793559,
+          "fired_count": 1,
+          "last_fire": 2.01
+        },
+        {
+          "id": "hypothesis:dog",
+          "label": "dog",
+          "kind": "hypothesis",
+          "organ": "hypothesis",
+          "activation": 0.683207,
+          "threshold": 0.794985,
+          "fired_count": 1,
+          "last_fire": 3.01
+        },
+        {
+          "id": "hypothesis:toy",
+          "label": "toy",
+          "kind": "hypothesis",
+          "organ": "hypothesis",
+          "activation": -0.337025,
+          "threshold": 0.78,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "memory:workspace",
+          "label": "working memory",
+          "kind": "memory",
+          "organ": "memory",
+          "activation": 1.131549,
+          "threshold": 0.728558,
+          "fired_count": 2,
+          "last_fire": 3.01
+        },
+        {
+          "id": "action:report",
+          "label": "report belief",
+          "kind": "action",
+          "organ": "action",
+          "activation": 0.050422,
+          "threshold": 0.728558,
+          "fired_count": 2,
+          "last_fire": 3.01
+        }
+      ],
+      "coalitions": [
+        {
+          "id": "coalition:hypothesis:dog",
+          "hypothesis_id": "hypothesis:dog",
+          "label": "dog",
+          "members": [
+            "bark",
+            "fur"
+          ],
+          "score": 1.107876,
+          "activation": 0.683207,
+          "evidence_strength": 1.102514,
+          "diversity": 2,
+          "stability": 5,
+          "contradiction": 0.147077
+        },
+        {
+          "id": "coalition:hypothesis:cat",
+          "hypothesis_id": "hypothesis:cat",
+          "label": "cat",
+          "members": [
+            "fur",
+            "meow"
+          ],
+          "score": 0.850038,
+          "activation": 0.439491,
+          "evidence_strength": 0.991129,
+          "diversity": 2,
+          "stability": 13,
+          "contradiction": 0.17964
+        },
+        {
+          "id": "coalition:hypothesis:toy",
+          "hypothesis_id": "hypothesis:toy",
+          "label": "toy",
+          "members": [
+            "fur"
+          ],
+          "score": -0.01131,
+          "activation": -0.337025,
+          "evidence_strength": 0.040139,
+          "diversity": 1,
+          "stability": 0,
+          "contradiction": 0.090755
+        }
+      ],
+      "workspace": [
+        {
+          "coalition_id": "coalition:hypothesis:cat",
+          "hypothesis_id": "hypothesis:cat",
+          "label": "cat",
+          "score": 1.222554146089639,
+          "ignition_time": 3.0,
+          "supports": [
+            "fur",
+            "meow"
+          ]
+        }
+      ],
+      "fired": [
+        "sensory:bark",
+        "hypothesis:dog",
+        "action:report",
+        "memory:workspace"
+      ],
+      "active_edges": [
+        [
+          "sensory:bark",
+          "hypothesis:dog",
+          0.85
+        ],
+        [
+          "sensory:bark",
+          "hypothesis:cat",
+          -0.18
+        ],
+        [
+          "sensory:bark",
+          "hypothesis:toy",
+          -0.05
+        ],
+        [
+          "hypothesis:dog",
+          "hypothesis:cat",
+          -0.16
+        ],
+        [
+          "hypothesis:dog",
+          "hypothesis:toy",
+          -0.16
+        ]
+      ],
+      "stats": {
+        "events_processed": 20,
+        "spark_updates": 74,
+        "edge_evaluations": 13,
+        "fires": 9,
+        "ignitions": 2,
+        "broadcasts": 4,
+        "active_sparks_since_frame": 6,
+        "active_spark_fraction": 0.375
+      }
+    },
+    {
+      "time": 4.01,
+      "external_event": "motionless",
+      "truth": "toy",
+      "prediction": "cat",
+      "sparks": [
+        {
+          "id": "sensory:fur",
+          "label": "fur",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 6.2e-05,
+          "threshold": 0.561101,
+          "fired_count": 1,
+          "last_fire": 1.0
+        },
+        {
+          "id": "sensory:meow",
+          "label": "meow",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.000574,
+          "threshold": 0.562269,
+          "fired_count": 1,
+          "last_fire": 2.0
+        },
+        {
+          "id": "sensory:purr",
+          "label": "purr",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:bark",
+          "label": "bark",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.005299,
+          "threshold": 0.563559,
+          "fired_count": 1,
+          "last_fire": 3.0
+        },
+        {
+          "id": "sensory:tail_wag",
+          "label": "tail_wag",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:motionless",
+          "label": "motionless",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.048901,
+          "threshold": 0.564985,
+          "fired_count": 1,
+          "last_fire": 4.0
+        },
+        {
+          "id": "sensory:plastic_seam",
+          "label": "plastic_seam",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:warm_body",
+          "label": "warm_body",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:four_legs",
+          "label": "four_legs",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:whiskers",
+          "label": "whiskers",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:collar",
+          "label": "collar",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "hypothesis:cat",
+          "label": "cat",
+          "kind": "hypothesis",
+          "organ": "hypothesis",
+          "activation": 0.123132,
+          "threshold": 0.792281,
+          "fired_count": 1,
+          "last_fire": 2.01
+        },
+        {
+          "id": "hypothesis:dog",
+          "label": "dog",
+          "kind": "hypothesis",
+          "organ": "hypothesis",
+          "activation": 0.313414,
+          "threshold": 0.793573,
+          "fired_count": 1,
+          "last_fire": 3.01
+        },
+        {
+          "id": "hypothesis:toy",
+          "label": "toy",
+          "kind": "hypothesis",
+          "organ": "hypothesis",
+          "activation": 0.396868,
+          "threshold": 0.78,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "memory:workspace",
+          "label": "working memory",
+          "kind": "memory",
+          "organ": "memory",
+          "activation": 0.999838,
+          "threshold": 0.725866,
+          "fired_count": 2,
+          "last_fire": 3.01
+        },
+        {
+          "id": "action:report",
+          "label": "report belief",
+          "kind": "action",
+          "organ": "action",
+          "activation": 0.018736,
+          "threshold": 0.725866,
+          "fired_count": 2,
+          "last_fire": 3.01
+        }
+      ],
+      "coalitions": [
+        {
+          "id": "coalition:hypothesis:dog",
+          "hypothesis_id": "hypothesis:dog",
+          "label": "dog",
+          "members": [
+            "bark",
+            "fur"
+          ],
+          "score": 0.691266,
+          "activation": 0.313414,
+          "evidence_strength": 0.90447,
+          "diversity": 2,
+          "stability": 7,
+          "contradiction": 0.340658
+        },
+        {
+          "id": "coalition:hypothesis:toy",
+          "hypothesis_id": "hypothesis:toy",
+          "label": "toy",
+          "members": [
+            "fur",
+            "motionless"
+          ],
+          "score": 0.620389,
+          "activation": 0.396868,
+          "evidence_strength": 0.692929,
+          "diversity": 2,
+          "stability": 1,
+          "contradiction": 0.074453
+        },
+        {
+          "id": "coalition:hypothesis:cat",
+          "hypothesis_id": "hypothesis:cat",
+          "label": "cat",
+          "members": [
+            "fur",
+            "meow"
+          ],
+          "score": 0.4894,
+          "activation": 0.123132,
+          "evidence_strength": 0.813092,
+          "diversity": 2,
+          "stability": 12,
+          "contradiction": 0.367372
+        }
+      ],
+      "workspace": [
+        {
+          "coalition_id": "coalition:hypothesis:cat",
+          "hypothesis_id": "hypothesis:cat",
+          "label": "cat",
+          "score": 1.222554146089639,
+          "ignition_time": 3.0,
+          "supports": [
+            "fur",
+            "meow"
+          ]
+        }
+      ],
+      "fired": [
+        "sensory:motionless"
+      ],
+      "active_edges": [
+        [
+          "sensory:motionless",
+          "hypothesis:toy",
+          0.66
+        ],
+        [
+          "sensory:motionless",
+          "hypothesis:cat",
+          -0.22
+        ],
+        [
+          "sensory:motionless",
+          "hypothesis:dog",
+          -0.22
+        ]
+      ],
+      "stats": {
+        "events_processed": 24,
+        "spark_updates": 90,
+        "edge_evaluations": 16,
+        "fires": 10,
+        "ignitions": 2,
+        "broadcasts": 4,
+        "active_sparks_since_frame": 4,
+        "active_spark_fraction": 0.25
+      }
+    },
+    {
+      "time": 5.02,
+      "external_event": "plastic_seam",
+      "truth": "toy",
+      "prediction": "toy",
+      "sparks": [
+        {
+          "id": "sensory:fur",
+          "label": "fur",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 7e-06,
+          "threshold": 0.560035,
+          "fired_count": 1,
+          "last_fire": 1.0
+        },
+        {
+          "id": "sensory:meow",
+          "label": "meow",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 6.1e-05,
+          "threshold": 0.56109,
+          "fired_count": 1,
+          "last_fire": 2.0
+        },
+        {
+          "id": "sensory:purr",
+          "label": "purr",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:bark",
+          "label": "bark",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.000562,
+          "threshold": 0.562256,
+          "fired_count": 1,
+          "last_fire": 3.0
+        },
+        {
+          "id": "sensory:tail_wag",
+          "label": "tail_wag",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:motionless",
+          "label": "motionless",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.005183,
+          "threshold": 0.563545,
+          "fired_count": 1,
+          "last_fire": 4.0
+        },
+        {
+          "id": "sensory:plastic_seam",
+          "label": "plastic_seam",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.047826,
+          "threshold": 0.56497,
+          "fired_count": 1,
+          "last_fire": 5.0
+        },
+        {
+          "id": "sensory:warm_body",
+          "label": "warm_body",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:four_legs",
+          "label": "four_legs",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:whiskers",
+          "label": "whiskers",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:collar",
+          "label": "collar",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "hypothesis:cat",
+          "label": "cat",
+          "kind": "hypothesis",
+          "organ": "hypothesis",
+          "activation": -0.213969,
+          "threshold": 0.791101,
+          "fired_count": 1,
+          "last_fire": 2.01
+        },
+        {
+          "id": "hypothesis:dog",
+          "label": "dog",
+          "kind": "hypothesis",
+          "organ": "hypothesis",
+          "activation": -0.066148,
+          "threshold": 0.792269,
+          "fired_count": 1,
+          "last_fire": 3.01
+        },
+        {
+          "id": "hypothesis:toy",
+          "label": "toy",
+          "kind": "hypothesis",
+          "organ": "hypothesis",
+          "activation": 1.02985,
+          "threshold": 0.794985,
+          "fired_count": 1,
+          "last_fire": 5.01
+        },
+        {
+          "id": "memory:workspace",
+          "label": "working memory",
+          "kind": "memory",
+          "organ": "memory",
+          "activation": 1.316876,
+          "threshold": 0.738381,
+          "fired_count": 3,
+          "last_fire": 5.02
+        },
+        {
+          "id": "action:report",
+          "label": "report belief",
+          "kind": "action",
+          "organ": "action",
+          "activation": 0.050341,
+          "threshold": 0.738381,
+          "fired_count": 3,
+          "last_fire": 5.02
+        }
+      ],
+      "coalitions": [
+        {
+          "id": "coalition:hypothesis:toy",
+          "hypothesis_id": "hypothesis:toy",
+          "label": "toy",
+          "members": [
+            "fur",
+            "motionless",
+            "plastic_seam"
+          ],
+          "score": 1.618864,
+          "activation": 1.02985,
+          "evidence_strength": 1.48435,
+          "diversity": 3,
+          "stability": 9,
+          "contradiction": 0.060835
+        },
+        {
+          "id": "coalition:hypothesis:dog",
+          "hypothesis_id": "hypothesis:dog",
+          "label": "dog",
+          "members": [
+            "bark",
+            "fur"
+          ],
+          "score": 0.350635,
+          "activation": -0.066148,
+          "evidence_strength": 0.739037,
+          "diversity": 2,
+          "stability": 7,
+          "contradiction": 0.42805
+        },
+        {
+          "id": "coalition:hypothesis:cat",
+          "hypothesis_id": "hypothesis:cat",
+          "label": "cat",
+          "members": [
+            "fur",
+            "meow"
+          ],
+          "score": 0.341169,
+          "activation": -0.213969,
+          "evidence_strength": 0.664373,
+          "diversity": 2,
+          "stability": 12,
+          "contradiction": 0.449878
+        }
+      ],
+      "workspace": [
+        {
+          "coalition_id": "coalition:hypothesis:toy",
+          "hypothesis_id": "hypothesis:toy",
+          "label": "toy",
+          "score": 1.6216605560481832,
+          "ignition_time": 5.01,
+          "supports": [
+            "fur",
+            "motionless",
+            "plastic_seam"
+          ]
+        },
+        {
+          "coalition_id": "coalition:hypothesis:cat",
+          "hypothesis_id": "hypothesis:cat",
+          "label": "cat",
+          "score": 1.222554146089639,
+          "ignition_time": 3.0,
+          "supports": [
+            "fur",
+            "meow"
+          ]
+        }
+      ],
+      "fired": [
+        "sensory:plastic_seam",
+        "hypothesis:toy",
+        "action:report",
+        "memory:workspace"
+      ],
+      "active_edges": [
+        [
+          "sensory:plastic_seam",
+          "hypothesis:toy",
+          0.92
+        ],
+        [
+          "sensory:plastic_seam",
+          "hypothesis:cat",
+          -0.15
+        ],
+        [
+          "sensory:plastic_seam",
+          "hypothesis:dog",
+          -0.15
+        ],
+        [
+          "hypothesis:toy",
+          "hypothesis:cat",
+          -0.16
+        ],
+        [
+          "hypothesis:toy",
+          "hypothesis:dog",
+          -0.16
+        ]
+      ],
+      "stats": {
+        "events_processed": 32,
+        "spark_updates": 122,
+        "edge_evaluations": 21,
+        "fires": 14,
+        "ignitions": 3,
+        "broadcasts": 6,
+        "active_sparks_since_frame": 6,
+        "active_spark_fraction": 0.375
+      }
+    },
+    {
+      "time": 6.01,
+      "external_event": "warm_body",
+      "truth": "cat",
+      "prediction": "toy",
+      "sparks": [
+        {
+          "id": "sensory:fur",
+          "label": "fur",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 1e-06,
+          "threshold": 0.559089,
+          "fired_count": 1,
+          "last_fire": 1.0
+        },
+        {
+          "id": "sensory:meow",
+          "label": "meow",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 7e-06,
+          "threshold": 0.560045,
+          "fired_count": 1,
+          "last_fire": 2.0
+        },
+        {
+          "id": "sensory:purr",
+          "label": "purr",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:bark",
+          "label": "bark",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 6.2e-05,
+          "threshold": 0.561101,
+          "fired_count": 1,
+          "last_fire": 3.0
+        },
+        {
+          "id": "sensory:tail_wag",
+          "label": "tail_wag",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:motionless",
+          "label": "motionless",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.000574,
+          "threshold": 0.562269,
+          "fired_count": 1,
+          "last_fire": 4.0
+        },
+        {
+          "id": "sensory:plastic_seam",
+          "label": "plastic_seam",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.005299,
+          "threshold": 0.563559,
+          "fired_count": 1,
+          "last_fire": 5.0
+        },
+        {
+          "id": "sensory:warm_body",
+          "label": "warm_body",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.048901,
+          "threshold": 0.564985,
+          "fired_count": 1,
+          "last_fire": 6.0
+        },
+        {
+          "id": "sensory:four_legs",
+          "label": "four_legs",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:whiskers",
+          "label": "whiskers",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:collar",
+          "label": "collar",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "hypothesis:cat",
+          "label": "cat",
+          "kind": "hypothesis",
+          "organ": "hypothesis",
+          "activation": 0.082943,
+          "threshold": 0.790055,
+          "fired_count": 1,
+          "last_fire": 2.01
+        },
+        {
+          "id": "hypothesis:dog",
+          "label": "dog",
+          "kind": "hypothesis",
+          "organ": "hypothesis",
+          "activation": 0.198355,
+          "threshold": 0.791112,
+          "fired_count": 1,
+          "last_fire": 3.01
+        },
+        {
+          "id": "hypothesis:toy",
+          "label": "toy",
+          "kind": "hypothesis",
+          "organ": "hypothesis",
+          "activation": 0.354056,
+          "threshold": 0.793573,
+          "fired_count": 1,
+          "last_fire": 5.01
+        },
+        {
+          "id": "memory:workspace",
+          "label": "working memory",
+          "kind": "memory",
+          "organ": "memory",
+          "activation": 1.514515,
+          "threshold": 0.749763,
+          "fired_count": 4,
+          "last_fire": 6.01
+        },
+        {
+          "id": "action:report",
+          "label": "report belief",
+          "kind": "action",
+          "organ": "action",
+          "activation": 0.050935,
+          "threshold": 0.749763,
+          "fired_count": 4,
+          "last_fire": 6.01
+        }
+      ],
+      "coalitions": [
+        {
+          "id": "coalition:hypothesis:toy",
+          "hypothesis_id": "hypothesis:toy",
+          "label": "toy",
+          "members": [
+            "fur",
+            "motionless",
+            "plastic_seam"
+          ],
+          "score": 0.851488,
+          "activation": 0.354056,
+          "evidence_strength": 1.217716,
+          "diversity": 3,
+          "stability": 15,
+          "contradiction": 0.499907
+        },
+        {
+          "id": "coalition:hypothesis:dog",
+          "hypothesis_id": "hypothesis:dog",
+          "label": "dog",
+          "members": [
+            "bark",
+            "fur",
+            "warm_body"
+          ],
+          "score": 0.690672,
+          "activation": 0.198355,
+          "evidence_strength": 0.856284,
+          "diversity": 3,
+          "stability": 7,
+          "contradiction": 0.351159
+        },
+        {
+          "id": "coalition:hypothesis:cat",
+          "hypothesis_id": "hypothesis:cat",
+          "label": "cat",
+          "members": [
+            "fur",
+            "meow",
+            "warm_body"
+          ],
+          "score": 0.567495,
+          "activation": 0.082943,
+          "evidence_strength": 0.795032,
+          "diversity": 3,
+          "stability": 12,
+          "contradiction": 0.369066
+        }
+      ],
+      "workspace": [
+        {
+          "coalition_id": "coalition:hypothesis:toy",
+          "hypothesis_id": "hypothesis:toy",
+          "label": "toy",
+          "score": 1.3756794910075978,
+          "ignition_time": 6.0,
+          "supports": [
+            "fur",
+            "motionless",
+            "plastic_seam"
+          ]
+        },
+        {
+          "coalition_id": "coalition:hypothesis:cat",
+          "hypothesis_id": "hypothesis:cat",
+          "label": "cat",
+          "score": 1.222554146089639,
+          "ignition_time": 3.0,
+          "supports": [
+            "fur",
+            "meow"
+          ]
+        }
+      ],
+      "fired": [
+        "sensory:warm_body",
+        "action:report",
+        "memory:workspace"
+      ],
+      "active_edges": [
+        [
+          "sensory:warm_body",
+          "hypothesis:cat",
+          0.25
+        ],
+        [
+          "sensory:warm_body",
+          "hypothesis:dog",
+          0.25
+        ],
+        [
+          "sensory:warm_body",
+          "hypothesis:toy",
+          -0.45
+        ]
+      ],
+      "stats": {
+        "events_processed": 38,
+        "spark_updates": 146,
+        "edge_evaluations": 24,
+        "fires": 17,
+        "ignitions": 4,
+        "broadcasts": 8,
+        "active_sparks_since_frame": 6,
+        "active_spark_fraction": 0.375
+      }
+    },
+    {
+      "time": 7.029999999999999,
+      "external_event": "purr",
+      "truth": "cat",
+      "prediction": "cat",
+      "sparks": [
+        {
+          "id": "sensory:fur",
+          "label": "fur",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.558208,
+          "fired_count": 1,
+          "last_fire": 1.0
+        },
+        {
+          "id": "sensory:meow",
+          "label": "meow",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 1e-06,
+          "threshold": 0.559071,
+          "fired_count": 1,
+          "last_fire": 2.0
+        },
+        {
+          "id": "sensory:purr",
+          "label": "purr",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.046775,
+          "threshold": 0.564955,
+          "fired_count": 1,
+          "last_fire": 7.0
+        },
+        {
+          "id": "sensory:bark",
+          "label": "bark",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 6e-06,
+          "threshold": 0.560025,
+          "fired_count": 1,
+          "last_fire": 3.0
+        },
+        {
+          "id": "sensory:tail_wag",
+          "label": "tail_wag",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:motionless",
+          "label": "motionless",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 6e-05,
+          "threshold": 0.561079,
+          "fired_count": 1,
+          "last_fire": 4.0
+        },
+        {
+          "id": "sensory:plastic_seam",
+          "label": "plastic_seam",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.000549,
+          "threshold": 0.562244,
+          "fired_count": 1,
+          "last_fire": 5.0
+        },
+        {
+          "id": "sensory:warm_body",
+          "label": "warm_body",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.005069,
+          "threshold": 0.563532,
+          "fired_count": 1,
+          "last_fire": 6.0
+        },
+        {
+          "id": "sensory:four_legs",
+          "label": "four_legs",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:whiskers",
+          "label": "whiskers",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "sensory:collar",
+          "label": "collar",
+          "kind": "sensory",
+          "organ": "perception",
+          "activation": 0.0,
+          "threshold": 0.55,
+          "fired_count": 0,
+          "last_fire": null
+        },
+        {
+          "id": "hypothesis:cat",
+          "label": "cat",
+          "kind": "hypothesis",
+          "organ": "hypothesis",
+          "activation": 0.705923,
+          "threshold": 0.80405,
+          "fired_count": 2,
+          "last_fire": 7.01
+        },
+        {
+          "id": "hypothesis:dog",
+          "label": "dog",
+          "kind": "hypothesis",
+          "organ": "hypothesis",
+          "activation": -0.125293,
+          "threshold": 0.790035,
+          "fired_count": 1,
+          "last_fire": 3.01
+        },
+        {
+          "id": "hypothesis:toy",
+          "label": "toy",
+          "kind": "hypothesis",
+          "organ": "hypothesis",
+          "activation": 0.065012,
+          "threshold": 0.792256,
+          "fired_count": 1,
+          "last_fire": 5.01
+        },
+        {
+          "id": "memory:workspace",
+          "label": "working memory",
+          "kind": "memory",
+          "organ": "memory",
+          "activation": 1.633252,
+          "threshold": 0.759938,
+          "fired_count": 5,
+          "last_fire": 7.029999999999999
+        },
+        {
+          "id": "action:report",
+          "label": "report belief",
+          "kind": "action",
+          "organ": "action",
+          "activation": 0.050918,
+          "threshold": 0.759938,
+          "fired_count": 5,
+          "last_fire": 7.029999999999999
+        }
+      ],
+      "coalitions": [
+        {
+          "id": "coalition:hypothesis:cat",
+          "hypothesis_id": "hypothesis:cat",
+          "label": "cat",
+          "members": [
+            "fur",
+            "meow",
+            "purr",
+            "warm_body"
+          ],
+          "score": 1.371785,
+          "activation": 0.705923,
+          "evidence_strength": 1.425205,
+          "diversity": 4,
+          "stability": 5,
+          "contradiction": 0.30096
+        },
+        {
+          "id": "coalition:hypothesis:toy",
+          "hypothesis_id": "hypothesis:toy",
+          "label": "toy",
+          "members": [
+            "fur",
+            "motionless",
+            "plastic_seam"
+          ],
+          "score": 0.55126,
+          "activation": 0.065012,
+          "evidence_strength": 0.993002,
+          "diversity": 3,
+          "stability": 17,
+          "contradiction": 0.457456
+        },
+        {
+          "id": "coalition:hypothesis:dog",
+          "hypothesis_id": "hypothesis:dog",
+          "label": "dog",
+          "members": [
+            "bark",
+            "fur",
+            "warm_body"
+          ],
+          "score": 0.470921,
+          "activation": -0.125293,
+          "evidence_strength": 0.698267,
+          "diversity": 3,
+          "stability": 6,
+          "contradiction": 0.405878
+        }
+      ],
+      "workspace": [
+        {
+          "coalition_id": "coalition:hypothesis:cat",
+          "hypothesis_id": "hypothesis:cat",
+          "label": "cat",
+          "score": 1.2536842336300058,
+          "ignition_time": 7.02,
+          "supports": [
+            "fur",
+            "meow",
+            "purr",
+            "warm_body"
+          ]
+        },
+        {
+          "coalition_id": "coalition:hypothesis:toy",
+          "hypothesis_id": "hypothesis:toy",
+          "label": "toy",
+          "score": 1.3756794910075978,
+          "ignition_time": 6.0,
+          "supports": [
+            "fur",
+            "motionless",
+            "plastic_seam"
+          ]
+        }
+      ],
+      "fired": [
+        "sensory:purr",
+        "hypothesis:cat",
+        "action:report",
+        "memory:workspace"
+      ],
+      "active_edges": [
+        [
+          "sensory:purr",
+          "hypothesis:cat",
+          0.78
+        ],
+        [
+          "sensory:purr",
+          "hypothesis:dog",
+          -0.12
+        ],
+        [
+          "sensory:purr",
+          "hypothesis:toy",
+          -0.05
+        ],
+        [
+          "hypothesis:cat",
+          "hypothesis:dog",
+          -0.16
+        ],
+        [
+          "hypothesis:cat",
+          "hypothesis:toy",
+          -0.16
+        ]
+      ],
+      "stats": {
+        "events_processed": 46,
+        "spark_updates": 178,
+        "edge_evaluations": 29,
+        "fires": 21,
+        "ignitions": 5,
+        "broadcasts": 10,
+        "active_sparks_since_frame": 6,
+        "active_spark_fraction": 0.375
+      }
+    }
+  ],
+  "ignitions": [
+    {
+      "time": 2.01,
+      "label": "cat",
+      "hypothesis_id": "hypothesis:cat",
+      "coalition_id": "coalition:hypothesis:cat",
+      "score": 1.4598517366525845,
+      "margin": 1.34781802419188,
+      "supports": [
+        "fur",
+        "meow"
+      ]
+    },
+    {
+      "time": 3.0,
+      "label": "cat",
+      "hypothesis_id": "hypothesis:cat",
+      "coalition_id": "coalition:hypothesis:cat",
+      "score": 1.222554146089639,
+      "margin": 1.2257622722190833,
+      "supports": [
+        "fur",
+        "meow"
+      ]
+    },
+    {
+      "time": 5.01,
+      "label": "toy",
+      "hypothesis_id": "hypothesis:toy",
+      "coalition_id": "coalition:hypothesis:toy",
+      "score": 1.6216605560481832,
+      "margin": 1.176957254839352,
+      "supports": [
+        "fur",
+        "motionless",
+        "plastic_seam"
+      ]
+    },
+    {
+      "time": 6.0,
+      "label": "toy",
+      "hypothesis_id": "hypothesis:toy",
+      "coalition_id": "coalition:hypothesis:toy",
+      "score": 1.3756794910075978,
+      "margin": 1.023377623481436,
+      "supports": [
+        "fur",
+        "motionless",
+        "plastic_seam"
+      ]
+    },
+    {
+      "time": 7.02,
+      "label": "cat",
+      "hypothesis_id": "hypothesis:cat",
+      "coalition_id": "coalition:hypothesis:cat",
+      "score": 1.2536842336300058,
+      "margin": 0.5422493566263342,
+      "supports": [
+        "fur",
+        "meow",
+        "purr",
+        "warm_body"
+      ]
+    }
+  ]
+}

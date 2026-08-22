@@ -462,3 +462,12 @@ In-memory LabManager ── LabRun ── SparkBrain
 - 既存の静的Visualizerをserver不要のfallbackおよび回帰oracleとして残す。
 
 画面、視覚legend、介入意味論、API、保存先、性能測定の詳細は `docs/BRAIN_LAB.md` を正本とする。
+
+## 17. C07 reduced spiking backend boundary
+
+`SnnTorchLIFHybridBackend` implements the C01 `BrainBackend` protocol. External currents
+enter stateful snnTorch LIF sensory encoders; emitted spikes gate the unchanged signed
+evidence graph. Hypothesis state, evidence identity, Coalition scoring, ignition,
+broadcast, and Workspace remain the deterministic rate engine. State serialization adds
+membrane, filtered-spike, spike/message counters, and raw spike events. Both traces retain
+schema `0.2`; per-frame spiking counts are extra allowed statistics.

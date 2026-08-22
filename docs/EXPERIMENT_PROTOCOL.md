@@ -328,6 +328,15 @@ python scripts/run_benchmark.py --episodes 40 --steps 30
 - spiking backend reproduces predefined behavioral invariants
 - rate/spike disagreement analyzed
 
+### C07 frozen reduced comparison (2026-08-23)
+
+Before final comparison, canonical predictions and distinct ignition order were fixed to
+exact equality; switch and recovery indices were limited to a one-event delta;
+no-ignition, duplicate diversity 1, residual recovery, Workspace capacity, and directional
+edge ablation were frozen as checks. This backend is hybrid: snnTorch LIF sensory encoding
+with rate/algorithmic Coalition and Workspace. Activity, messages, and CPU wall-clock are
+reported separately and are not energy evidence.
+
 ### Gate P5
 
 - full local system starts from documented commands

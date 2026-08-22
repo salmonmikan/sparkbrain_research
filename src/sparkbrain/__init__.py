@@ -14,6 +14,7 @@ from .serialization import (
     load_state,
     state_hash,
 )
+from .spiking import LIFConfig, SnnTorchLIFHybridBackend, run_spiking_scenario
 from .validation import SCHEMA_VERSION
 
 __all__ = [
@@ -32,5 +33,8 @@ __all__ = [
     "load_state",
     "load_config",
     "load_trace",
+    "LIFConfig",
+    "SnnTorchLIFHybridBackend",
+    "run_spiking_scenario",
     "state_hash",
 ]

@@ -154,3 +154,34 @@ Schema remains `0.2`; no migration is introduced. The stricter validators reject
 - SSE reports a finite current-frame snapshot and does not create a background simulation queue;
 - the native SVG graph is a functional view, not a biological anatomy claim;
 - no energy-efficiency claim follows from UI timing.
+
+---
+
+## 2026-08-23 — R0005 — C07 reduced snnTorch hybrid equivalence
+
+**Code/version:** `codex/c07-spiking-backend`; schema `0.2` unchanged
+**Command:** `python scripts/run_spiking_comparison.py`
+**Data/seed:** fixed seven-event SwitchWorld CAT→TOY→CAT; seed 7
+**Raw outputs:** `artifacts/spiking/c07_comparison.json`, `rate_trace.json`, `spike_trace.json`
+**Aggregate:** `artifacts/spiking/c07_report.md`
+
+### Result
+
+- all 9 frozen comparison checks passed;
+- hybrid predictions exactly matched `[None, cat, cat, cat, toy, toy, cat]`;
+- distinct ignition order matched `[cat, toy, cat]`;
+- focused tests preserved no-ignition, duplicate evidence, residual recovery, Workspace
+  capacity, directional edge ablation, protocol conformance, and state replay.
+
+### Negative findings and confounds
+
+- LIF threshold 1.1 produced no sensory spikes and no predictions;
+- equivalence is parameter-sensitive and covers one hand-authored scenario;
+- only sensory encoding is spiking; Coalition and Workspace remain algorithmic/rate;
+- local wall-clock is not an energy measurement;
+- no fully spiking, learned, surrogate-gradient, or local-plasticity comparison was done.
+
+### Claim impact
+
+CL-009 advances only to E1 for this reduced hybrid canonical fixture. It does not establish
+general spiking equivalence, biological fidelity, efficiency, or multi-world robustness.
