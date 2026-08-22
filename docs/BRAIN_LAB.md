@@ -78,7 +78,7 @@ POST /api/runs/{run_id}/reset
 POST /api/runs/{run_id}/events
 POST /api/runs/{run_id}/fork
 POST /api/comparisons
-GET  /api/runs/{run_id}/export
+POST /api/runs/{run_id}/export
 POST /api/import
 GET  /api/runs/{run_id}/events/stream
 ```
