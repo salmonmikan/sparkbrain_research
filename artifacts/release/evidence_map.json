@@ -99,14 +99,21 @@
       "status": "accepted"
     },
     {
-      "artifacts": [],
-      "boundary": "Exploratory structural-plasticity result is not integrated in this candidate.",
+      "artifacts": [
+        "artifacts/phase3/structural-plasticity-v1/main/summary.json",
+        "artifacts/phase3/structural-plasticity-v1/main/gate-matrix.json",
+        "artifacts/phase3/structural-plasticity-v1/main/input-hashes.json",
+        "artifacts/phase3/structural-plasticity-v1/main/negative-findings.json"
+      ],
+      "boundary": "Bounded mechanism acceptance with failed decisiveness, fertility, and specificity gates; CL-008 remains E0 and no emergent-organ claim is permitted.",
       "claim_ids": [
         "CL-008"
       ],
       "id": "EV-C08-PLASTICITY",
-      "run_ids": [],
-      "status": "pending"
+      "run_ids": [
+        "R0010"
+      ],
+      "status": "negative"
     },
     {
       "artifacts": [
@@ -127,5 +134,5 @@
     }
   ],
   "schema_version": "c10-evidence-map-v1",
-  "source_revision": "a44efce35d98010911bdf0873d1dbe87eaa4062d"
+  "source_revision": "e421dd7e24098470618a7c9efabd436fad34d558"
 }

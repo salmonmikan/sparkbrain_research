@@ -14,8 +14,7 @@
   ],
   "pending_evidence_entries": [
     "EV-C05-CHECKPOINT",
-    "EV-C06-FOUNDATION",
-    "EV-C08-PLASTICITY"
+    "EV-C06-FOUNDATION"
   ],
   "prohibited_wording_findings": [],
   "schema_version": "c10-claim-audit-v1",
