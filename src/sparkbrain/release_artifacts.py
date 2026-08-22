@@ -8,7 +8,13 @@ import subprocess
 from pathlib import Path
 from typing import Any
 
-from .release import _canonical_json, sha256_file, validate_evidence_map
+from .release import (
+    _canonical_json,
+    declared_project_license,
+    project_license_selected,
+    sha256_file,
+    validate_evidence_map,
+)
 
 PRIMARY_INPUTS = (
     "artifacts/benchmarks/benchmark_aggregate.csv",
@@ -290,6 +296,18 @@ def build_sbom(root: Path) -> dict[str, Any]:
                 "licenseDeclared": "NOASSERTION",
             }
         )
+    selected = project_license_selected(root)
+    project_license = declared_project_license(root) if selected else "NOASSERTION"
+    project_package = {
+        "SPDXID": "SPDXRef-Package-SparkBrain",
+        "name": "sparkbrain-research",
+        "versionInfo": "0.2.1",
+        "downloadLocation": "NOASSERTION",
+        "licenseConcluded": project_license,
+        "licenseDeclared": project_license,
+    }
+    if not selected:
+        project_package["comment"] = "Project license is intentionally owner-blocked."
     return {
         "spdxVersion": "SPDX-2.3",
         "dataLicense": "CC0-1.0",
@@ -298,15 +316,7 @@ def build_sbom(root: Path) -> dict[str, Any]:
         "documentNamespace": f"urn:sparkbrain:sbom:{source_revision(root)}",
         "creationInfo": {"creators": ["Tool: scripts/generate_release_artifacts.py"]},
         "packages": [
-            {
-                "SPDXID": "SPDXRef-Package-SparkBrain",
-                "name": "sparkbrain-research",
-                "versionInfo": "0.2.1",
-                "downloadLocation": "NOASSERTION",
-                "licenseConcluded": "NOASSERTION",
-                "licenseDeclared": "NOASSERTION",
-                "comment": "Project license is intentionally owner-blocked.",
-            },
+            project_package,
             *package_rows,
         ],
     }

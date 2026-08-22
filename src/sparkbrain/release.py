@@ -4,9 +4,10 @@ import hashlib
 import json
 import platform
 import subprocess
+import tomllib
 import zipfile
 from collections.abc import Iterable
-from pathlib import Path, PurePosixPath
+from pathlib import Path, PurePosixPath, PureWindowsPath
 from typing import Any
 
 MANIFEST_SCHEMA_VERSION = "3"
@@ -57,9 +58,18 @@ def _canonical_json(value: Any) -> str:
 
 
 def _safe_relative_path(value: str) -> str:
+    if not isinstance(value, str):
+        raise ValueError(f"unsafe release path: {value!r}")
     normalized = value.replace("\\", "/")
     path = PurePosixPath(normalized)
-    if path.is_absolute() or ".." in path.parts or normalized in {"", "."}:
+    windows_path = PureWindowsPath(value)
+    if (
+        path.is_absolute()
+        or windows_path.is_absolute()
+        or bool(windows_path.drive)
+        or ".." in path.parts
+        or normalized in {"", "."}
+    ):
         raise ValueError(f"unsafe release path: {value!r}")
     return path.as_posix()
 
@@ -162,7 +172,12 @@ def write_release_manifest(path: Path, manifest: dict[str, Any]) -> None:
     path.write_text(_canonical_json(manifest), encoding="utf-8", newline="\n")
 
 
-def verify_release_manifest(root: Path, manifest: dict[str, Any]) -> list[str]:
+def verify_release_manifest(
+    root: Path,
+    manifest: dict[str, Any],
+    *,
+    require_complete_tracked_tree: bool = False,
+) -> list[str]:
     problems: list[str] = []
     if manifest.get("manifest_schema_version") != MANIFEST_SCHEMA_VERSION:
         problems.append("unsupported release manifest schema version")
@@ -209,11 +224,71 @@ def verify_release_manifest(root: Path, manifest: dict[str, Any]) -> list[str]:
         problems.append("release manifest file_count mismatch")
     if manifest.get("uncompressed_bytes_excluding_manifest") != total_bytes:
         problems.append("release manifest total byte count mismatch")
+    if require_complete_tracked_tree:
+        tracked = set(tracked_release_paths(root))
+        missing = sorted(tracked - seen)
+        unexpected = sorted(seen - tracked)
+        if missing:
+            problems.append(f"release manifest omits tracked files: {missing}")
+        if unexpected:
+            problems.append(f"release manifest contains untracked files: {unexpected}")
     return problems
 
 
+def declared_project_license(root: Path) -> str | None:
+    pyproject = root / "pyproject.toml"
+    try:
+        metadata = tomllib.loads(pyproject.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, tomllib.TOMLDecodeError):
+        return None
+    value = metadata.get("project", {}).get("license")
+    if not isinstance(value, str):
+        return None
+    value = value.strip()
+    if not value or value.upper() == "NOASSERTION":
+        return None
+    return value
+
+
 def project_license_selected(root: Path) -> bool:
-    return (root / "LICENSE").is_file() and not (root / "LICENSE_NOT_SELECTED.md").exists()
+    license_path = root / "LICENSE"
+    if (root / "LICENSE_NOT_SELECTED.md").exists() or not license_path.is_file():
+        return False
+    try:
+        license_text = license_path.read_text(encoding="utf-8").strip()
+    except (OSError, UnicodeDecodeError):
+        return False
+    return bool(license_text) and declared_project_license(root) is not None
+
+
+def validate_project_license_metadata(root: Path) -> list[str]:
+    declared = declared_project_license(root)
+    if declared is None:
+        return ["pyproject project.license must contain the selected SPDX expression"]
+    try:
+        sbom = json.loads(
+            (root / "artifacts/release/sbom.spdx.json").read_text(encoding="utf-8")
+        )
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        return [f"release SBOM is unreadable for license validation: {exc}"]
+    packages = sbom.get("packages")
+    if not isinstance(packages, list):
+        return ["release SBOM packages must be an array for license validation"]
+    project_rows = [
+        row
+        for row in packages
+        if isinstance(row, dict) and row.get("name") == "sparkbrain-research"
+    ]
+    if len(project_rows) != 1:
+        return ["release SBOM must contain exactly one sparkbrain-research package"]
+    project = project_rows[0]
+    problems = []
+    for field in ("licenseDeclared", "licenseConcluded"):
+        if project.get(field) != declared:
+            problems.append(f"release SBOM {field} does not match pyproject project.license")
+    if "owner-blocked" in str(project.get("comment", "")):
+        problems.append("release SBOM still marks the project license as owner-blocked")
+    return problems
 
 
 def validate_evidence_map(root: Path, evidence_map: dict[str, Any]) -> list[str]:
@@ -392,6 +467,8 @@ def validate_release_tree(root: Path, *, require_public: bool = True) -> list[st
         )
     if not selected:
         problems.append("project license has not been selected by the repository owner")
+    elif require_public:
+        problems.extend(validate_project_license_metadata(root))
 
     manifest_path = root / MANIFEST_PATH
     if manifest_path.is_file():
@@ -400,7 +477,9 @@ def validate_release_tree(root: Path, *, require_public: bool = True) -> list[st
         except (UnicodeDecodeError, json.JSONDecodeError) as exc:
             problems.append(f"release manifest is not valid UTF-8 JSON: {exc}")
         else:
-            problems.extend(verify_release_manifest(root, manifest))
+            problems.extend(
+                verify_release_manifest(root, manifest, require_complete_tracked_tree=True)
+            )
             manifest_paths = {
                 row.get("path") for row in manifest.get("files", []) if isinstance(row, dict)
             }

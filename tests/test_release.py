@@ -9,10 +9,12 @@ from sparkbrain.release import (
     REQUIRED_PREPARATION_FILES,
     build_release_archive,
     build_release_manifest,
+    declared_project_license,
     preparation_problems,
     project_license_selected,
     validate_evidence_map,
     validate_generated_release_evidence,
+    validate_project_license_metadata,
     validate_release_tree,
     verify_release_manifest,
 )
@@ -56,12 +58,65 @@ def test_release_manifest_rejects_parent_traversal(tmp_path: Path) -> None:
         raise AssertionError("parent traversal was accepted")
 
 
+@pytest.mark.parametrize("unsafe", ["C:/outside.txt", r"C:\\outside.txt", "//server/share.txt"])
+def test_release_manifest_rejects_windows_absolute_paths(
+    tmp_path: Path, unsafe: str
+) -> None:
+    with pytest.raises(ValueError, match="unsafe release path"):
+        build_release_manifest(
+            tmp_path,
+            generated_at="fixed",
+            source_revision="fixed",
+            paths=[unsafe],
+        )
+
+
 def test_unselected_project_license_blocks_release(tmp_path: Path) -> None:
     (tmp_path / "LICENSE_NOT_SELECTED.md").write_text("pending", encoding="utf-8")
     assert not project_license_selected(tmp_path)
     (tmp_path / "LICENSE_NOT_SELECTED.md").unlink()
     (tmp_path / "LICENSE").write_text("selected by owner", encoding="utf-8")
+    (tmp_path / "pyproject.toml").write_text(
+        '[project]\nname = "example"\nversion = "1.0"\nlicense = "MIT"\n',
+        encoding="utf-8",
+    )
+    assert declared_project_license(tmp_path) == "MIT"
     assert project_license_selected(tmp_path)
+
+
+def test_selected_license_requires_matching_sbom_metadata(tmp_path: Path) -> None:
+    (tmp_path / "LICENSE").write_text("selected by owner", encoding="utf-8")
+    (tmp_path / "pyproject.toml").write_text(
+        '[project]\nname = "example"\nversion = "1.0"\nlicense = "MIT"\n',
+        encoding="utf-8",
+    )
+    (tmp_path / "artifacts/release").mkdir(parents=True)
+    sbom = {
+        "packages": [
+            {
+                "name": "sparkbrain-research",
+                "licenseDeclared": "NOASSERTION",
+                "licenseConcluded": "NOASSERTION",
+                "comment": "Project license is intentionally owner-blocked.",
+            }
+        ]
+    }
+    (tmp_path / "artifacts/release/sbom.spdx.json").write_text(
+        json.dumps(sbom), encoding="utf-8"
+    )
+    assert validate_project_license_metadata(tmp_path) == [
+        "release SBOM licenseDeclared does not match pyproject project.license",
+        "release SBOM licenseConcluded does not match pyproject project.license",
+        "release SBOM still marks the project license as owner-blocked",
+    ]
+
+
+def test_complete_manifest_detects_omitted_tracked_file() -> None:
+    root = Path(__file__).resolve().parents[1]
+    manifest = json.loads((root / "PACKAGE_MANIFEST.json").read_text(encoding="utf-8"))
+    manifest["files"] = manifest["files"][1:]
+    problems = verify_release_manifest(root, manifest, require_complete_tracked_tree=True)
+    assert any(problem.startswith("release manifest omits tracked files:") for problem in problems)
 
 
 def test_release_validator_reports_missing_artifacts_and_unselected_license(
