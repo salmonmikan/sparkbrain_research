@@ -17,6 +17,23 @@ EXCLUDED_PREFIXES = (
     ".venv/",
     "data/external/",
 )
+REQUIRED_RELEASE_FILES = (
+    "LICENSE",
+    "PACKAGE_MANIFEST.json",
+    "requirements-release.lock",
+    "scripts/reproduce_release.py",
+    "docs/ARTIFACT_EVALUATION_GUIDE.md",
+    "docs/MODEL_CARD.md",
+    "docs/NEGATIVE_RESULTS_APPENDIX.md",
+    "docs/PLATFORM_MATRIX.md",
+    "docs/SECURITY_PRIVACY_REVIEW.md",
+    "docs/SYSTEM_CARD.md",
+    "docs/TECHNICAL_REPORT_v0.2.1.html",
+    "docs/TECHNICAL_REPORT_v0.2.1.md",
+    "docs/THIRD_PARTY_NOTICES.md",
+    "artifacts/release/evidence_map.json",
+    "artifacts/release/sbom.spdx.json",
+)
 
 
 def _canonical_json(value: Any) -> str:
@@ -145,3 +162,33 @@ def verify_release_manifest(root: Path, manifest: dict[str, Any]) -> list[str]:
 
 def project_license_selected(root: Path) -> bool:
     return (root / "LICENSE").is_file() and not (root / "LICENSE_NOT_SELECTED.md").exists()
+
+
+def validate_release_tree(root: Path) -> list[str]:
+    problems = [
+        f"missing required release artifact: {relative}"
+        for relative in REQUIRED_RELEASE_FILES
+        if not (root / relative).is_file()
+    ]
+    if not project_license_selected(root):
+        problems.append("project license has not been selected by the repository owner")
+
+    manifest_path = root / MANIFEST_PATH
+    if manifest_path.is_file():
+        try:
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+            problems.append(f"release manifest is not valid UTF-8 JSON: {exc}")
+        else:
+            problems.extend(verify_release_manifest(root, manifest))
+            manifest_paths = {
+                row.get("path") for row in manifest.get("files", []) if isinstance(row, dict)
+            }
+            leaked = sorted(
+                path
+                for path in manifest_paths
+                if isinstance(path, str) and path.startswith("data/external/")
+            )
+            if leaked:
+                problems.append(f"external dataset cache is included in release: {leaked}")
+    return problems

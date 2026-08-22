@@ -3,8 +3,10 @@ from __future__ import annotations
 from pathlib import Path
 
 from sparkbrain.release import (
+    REQUIRED_RELEASE_FILES,
     build_release_manifest,
     project_license_selected,
+    validate_release_tree,
     verify_release_manifest,
 )
 
@@ -51,3 +53,12 @@ def test_unselected_project_license_blocks_release(tmp_path: Path) -> None:
     (tmp_path / "LICENSE_NOT_SELECTED.md").unlink()
     (tmp_path / "LICENSE").write_text("selected by owner", encoding="utf-8")
     assert project_license_selected(tmp_path)
+
+
+def test_release_validator_reports_missing_artifacts_and_unselected_license(
+    tmp_path: Path,
+) -> None:
+    (tmp_path / "LICENSE_NOT_SELECTED.md").write_text("pending", encoding="utf-8")
+    problems = validate_release_tree(tmp_path)
+    assert f"missing required release artifact: {REQUIRED_RELEASE_FILES[0]}" in problems
+    assert "project license has not been selected by the repository owner" in problems
