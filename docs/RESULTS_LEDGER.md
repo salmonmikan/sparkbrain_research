@@ -54,7 +54,7 @@ Claim grade impact:
 Next action:
 ```
 
-## 2026-08-23 — R0003 — C02 controlled synthetic suite
+## 2026-08-23 — R0006 — C02 controlled synthetic suite
 
 **Code/base:** C02 branch from accepted C01 `c5178db`; schema remains `0.2`
 **Command:** `python -m sparkbrain.evaluation.run_suite --config configs/experiments/phase1/main.json --output artifacts/phase1/c02-main-1000`
