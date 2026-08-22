@@ -9,6 +9,7 @@
     "time",
     "sparks",
     "connections",
+    "broadcast_listeners",
     "queue",
     "next_sequence",
     "active_hypotheses",

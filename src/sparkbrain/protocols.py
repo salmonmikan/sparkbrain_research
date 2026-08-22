@@ -38,6 +38,13 @@ class BrainBackend(Protocol):
 
     def run(self, *, max_events: int = 100_000) -> None: ...
 
+    def inspect_snapshot(
+        self,
+        *,
+        external_event: str,
+        truth: str | None = None,
+    ) -> TraceFrame: ...
+
     def snapshot(self, *, external_event: str, truth: str | None = None) -> TraceFrame: ...
 
     def state_dict(self, *, include_trace: bool = True) -> dict[str, Any]: ...

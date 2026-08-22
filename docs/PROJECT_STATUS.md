@@ -1,6 +1,6 @@
 # Project Status — SparkBrain v0.2.1
 
-Status date: 2026-08-22
+Status date: 2026-08-23
 
 ## 1. Current maturity
 
@@ -40,11 +40,11 @@ See `docs/LOCAL_EXECUTION_POLICY.md`.
 | Phase-0 scalar baselines and ablations | runnable | `src/sparkbrain/baselines.py`, `benchmark.py` |
 | Metrics for stability/revision/recovery | runnable | `src/sparkbrain/metrics.py` |
 | Static replay visualizer | runnable locally | `artifacts/demo/visualizer.html` |
-| Unit tests | 30 passing | `python -m pytest -q` |
+| Unit tests | 55 passing | `python -m pytest -q` |
 | Local readiness audit | runnable | `scripts/local_readiness_check.py` |
 | Generated Phase-0 report | complete with limitations | `artifacts/benchmarks/benchmark_report.md` |
 | Codex repository instructions | complete | `AGENTS.md`, `.agents/skills/sparkbrain-research/SKILL.md` |
-| Versioned checkpoint and trace replay | implemented | `serialization.py`, `replay.py`, `schemas/` |
+| Versioned checkpoint and trace replay | C01 accepted locally | `serialization.py`, `replay.py`, `schemas/`, `tests/test_schemas.py` |
 | Detailed Codex execution queue | complete | `docs/CODEX_EXECUTION_BRIEF.md`, `docs/codex/` |
 
 ## 4. Verified local commands
@@ -78,7 +78,6 @@ The accumulator baseline is close in this hand-authored setting. Therefore this 
 
 | Priority | Missing capability | Codex task |
 |---:|---|---|
-| P0 | strict replay/schema edge cases, CI execution, compatibility policy | C01 |
 | P0 | controlled worlds, full ablations, uncertainty estimates | C02 |
 | P1 | local interactive Brain Lab and interventions | C03 |
 | P1 | learned event encoding/routing and held-out generalization | C04 |
@@ -120,4 +119,4 @@ C04 ─> C08
 C09 runs continuously and must review C10 claims.
 ```
 
-C01 remains the strict first task. C03 may begin once C01 freezes trace and control interfaces. C04 and C05 should share the same local data harness and splits.
+C01 is locally accepted: schema `0.2`, deterministic fresh-run replay, checkpoint continuation, pure inspection, bounded event failure, and counter contracts are covered by tests. C02 and C03 are unblocked. C04 and C05 should share the same local data harness and splits.

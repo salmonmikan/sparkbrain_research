@@ -4,6 +4,7 @@ from dataclasses import asdict
 
 from sparkbrain.engine import SparkBrain
 from sparkbrain.model import BrainConfig, Spark, SparkKind
+from sparkbrain.serialization import state_hash
 from sparkbrain.worlds import SwitchWorld, build_reference_brain, run_scenario
 
 
@@ -14,6 +15,18 @@ def test_snapshot_does_not_change_engine_counters_or_core_activation() -> None:
     brain.snapshot(external_event="inspection", truth="cat")
     assert asdict(brain.stats) == counters_before
     assert {key: spark.activation for key, spark in brain.sparks.items()} == activation_before
+
+
+def test_inspect_snapshot_does_not_change_any_serialized_state() -> None:
+    brain = build_reference_brain()
+    brain.inject_stimulus(target="sensory:fur", label="fur", time=1.0)
+    brain.run()
+    before = state_hash(brain)
+
+    frame = brain.inspect_snapshot(external_event="inspection", truth="cat")
+
+    assert frame.external_event == "inspection"
+    assert state_hash(brain) == before
 
 
 def test_duplicate_evidence_id_is_not_independent_source_diversity() -> None:

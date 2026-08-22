@@ -561,7 +561,14 @@ class SparkBrain:
     def prediction(self) -> str | None:
         return self.belief_label
 
-    def snapshot(self, *, external_event: str, truth: str | None = None) -> TraceFrame:
+    def inspect_snapshot(
+        self,
+        *,
+        external_event: str,
+        truth: str | None = None,
+    ) -> TraceFrame:
+        """Project the current frame without recording or consuming audit buffers."""
+
         spark_rows: list[dict] = []
         for spark in self.sparks.values():
             # Inspection must not turn dormant Sparks into computational work.
@@ -588,7 +595,7 @@ class SparkBrain:
                 }
             )
 
-        frame = TraceFrame(
+        return TraceFrame(
             time=self.time,
             external_event=external_event,
             truth=truth,
@@ -618,6 +625,10 @@ class SparkBrain:
                 "active_spark_fraction": len(self._updated_since_frame) / max(1, len(self.sparks)),
             },
         )
+    def snapshot(self, *, external_event: str, truth: str | None = None) -> TraceFrame:
+        """Capture and record a frame, preserving the existing public behavior."""
+
+        frame = self.inspect_snapshot(external_event=external_event, truth=truth)
         self.trace.append(frame)
         self._fired_since_frame.clear()
         self._active_edges_since_frame.clear()

@@ -414,3 +414,23 @@ Checkpoint state includes the pending event queue, sequence number, persistent h
 - `tests/test_local_only.py`: guards the package version and local-only dependency/import boundary.
 - `docs/LOCAL_EXECUTION_POLICY.md`: defines mandatory local execution and optional Extension H.
 - persisted config/state/trace schema remains `0.2`; package version is `0.2.1`.
+
+## 15. C01 reference replay and inspection contract
+
+### Frame projection and recording
+
+- `inspect_snapshot()` is a pure projection. It returns the current visible frame without appending to `trace`, clearing frame-local audit buffers, incrementing counters, or changing dynamics state.
+- `snapshot()` remains the backward-compatible recording operation. It delegates projection to `inspect_snapshot()`, appends the returned frame to `trace`, and then consumes `fired_since_frame`, `active_edges_since_frame`, and `updated_since_frame` for the next recorded frame.
+- Serialization is observational: `state_dict()` and normalized hashing do not increment counters or mutate runtime state.
+
+### Counter semantics
+
+- `events_processed`: number of events removed from the deterministic queue and processed, including reward and internal events.
+- `spark_updates`: number of `_touch` state updates. Coalition evaluation may touch active hypotheses, so this is not the number of external inputs or unique Sparks.
+- `edge_evaluations`: number of outgoing connections evaluated when a Spark fires.
+- `fires`, `ignitions`, and `broadcasts`: actual occurrences of the corresponding engine operations.
+- Inspection and serialization are excluded from all work counters.
+
+### Deterministic persistence boundary
+
+Schema `0.2` checkpoints require graph state, broadcast listeners, pending queue ordering, next sequence, RNG state, Coalition stability, Workspace, eligibility, counters, trace, and frame-local audit buffers. Unsupported, incomplete, nonfinite, dangling, duplicate-ID, and past-event payloads are rejected. Two fresh canonical runs must produce the same normalized trace and state hash; checkpoint continuation must reproduce future beliefs, ignitions, counters, and trace state.

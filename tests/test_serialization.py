@@ -9,7 +9,14 @@ from sparkbrain.engine import SparkBrain
 from sparkbrain.model import BrainConfig, Spark, SparkKind
 from sparkbrain.protocols import BrainBackend
 from sparkbrain.replay import load_trace
-from sparkbrain.serialization import dump_config, dump_state, load_config, load_state, state_hash
+from sparkbrain.serialization import (
+    canonical_json,
+    dump_config,
+    dump_state,
+    load_config,
+    load_state,
+    state_hash,
+)
 from sparkbrain.visualizer import write_trace
 from sparkbrain.worlds import SwitchWorld, build_reference_brain, run_scenario
 
@@ -35,6 +42,16 @@ def test_checkpoint_continuation_is_deterministic(tmp_path) -> None:
         frame.prediction for frame in original_frames
     ]
     assert state_hash(restored) == state_hash(original)
+
+
+def test_fresh_runs_have_identical_normalized_trace() -> None:
+    first, _ = run_scenario(SwitchWorld.canonical_scenario())
+    second, _ = run_scenario(SwitchWorld.canonical_scenario())
+
+    assert canonical_json([asdict(frame) for frame in first.trace]) == canonical_json(
+        [asdict(frame) for frame in second.trace]
+    )
+    assert state_hash(first) == state_hash(second)
 
 
 def test_json_checkpoint_contains_no_infinity(tmp_path) -> None:

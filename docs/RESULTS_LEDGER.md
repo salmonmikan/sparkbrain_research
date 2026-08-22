@@ -88,3 +88,33 @@ None claimed. This patch does not increase the evidence grade of H1–H10 or est
 ### Compatibility target
 
 The Phase-0 dynamics and persisted config/state/trace schema are intended to remain compatible with v0.2. The byte-identical benchmark aggregate and canonical trace support that narrow compatibility statement for the bundled scenarios; they do not prove compatibility for every possible checkpoint or graph.
+
+---
+
+## 2026-08-23 — R0003 — C01 deterministic reference and replay contract
+
+**Code/version:** SparkBrain package v0.2.1; persisted schema v0.2
+**Nature:** reference-engine hardening and compatibility validation; no intended dynamics change
+**Primary commands:** `python -m pytest -q`, `python -m ruff check .`, `python scripts/local_readiness_check.py`, `python scripts/validate_bundle.py`
+
+### Changes under test
+
+- deterministic continuation includes the pending event queue, sequence counter, RNG, stability, Workspace, eligibility, counters, trace, and frame-local audit buffers;
+- pure `inspect_snapshot()` is separated from backward-compatible recording `snapshot()`;
+- generated config, checkpoint, trace, summary, and benchmark JSON are validated against schema `0.2`;
+- `broadcast_listeners` is required by both runtime and JSON Schema validation;
+- equal-time ordering, event-limit diagnostics, invalid payloads, evidence identity, contradiction provenance, no-ignition, recovery, cooldown, refractory, homeostasis, Workspace, and plasticity boundaries are covered by focused tests.
+
+### Validation outcome
+
+- local readiness: PASS;
+- tests: 55 passing;
+- Ruff: PASS;
+- fresh canonical state hash: `ba166f0e801665e98c200f8a291fdf475f2dbbc6d86232867e21b1f08226caa5` on two independent runs;
+- normalized fresh-run traces: identical;
+- generated-artifact schema regression: PASS;
+- Phase-0 benchmark aggregate values: unchanged; persisted JSON documents gained explicit schema metadata only.
+
+### Compatibility and limitations
+
+Schema remains `0.2`; no migration is introduced. The stricter validators reject incomplete payloads that omitted required deterministic state, including `broadcast_listeners`. This is validation hardening rather than reinterpretation of valid v0.2 artifacts. Local validation does not replace a successful clean CI run on every supported Python version.
