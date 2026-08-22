@@ -23,6 +23,8 @@ SparkBrain の基本思想を構成する部品の大半は既知である。
 
 ただし、これは「完全一致する先行研究をまだ確認できていない」という状態であり、新規性が証明された状態ではない。
 
+2026-08-23 の反証的 second pass では、HEARSAY-II blackboard、active inference、recurrent attractor、HMM、asynchronous sparse convolution、bipolar argumentation、neuromorphic dynamic field／sequence memoryまで範囲を拡張した。これらは各差分候補をさらに狭めるが、exact end-to-end duplicate の未取得を新規性の証拠にはしない。検索範囲、citation chaining、取得状態、license、残留不確実性は `docs/research/` を正本とする。
+
 ## 2. Mapping matrix
 
 | SparkBrain element | Closest prior art | Overlap | Remaining difference candidate | Assessment |

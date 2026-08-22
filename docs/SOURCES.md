@@ -136,4 +136,30 @@ Retrieval date: 2026-08-22. Prefer primary papers and official project documenta
 36. “Verbalizable Representations Form a Global Workspace in Language Models.” *Transformer Circuits*, 2026. First-party research report; no DOI or peer-review status was verified.
     https://transformer-circuits.pub/2026/workspace/index.html
 
+37. Erman, L. D., Hayes-Roth, F., Lesser, V. R., and Reddy, D. R. “The HEARSAY-II Speech-Understanding System: Integrating Knowledge to Resolve Uncertainty.” *ACM Computing Surveys* 12(2), 1980. DOI: 10.1145/356810.356816.
+    https://doi.org/10.1145/356810.356816
+
+38. Parr, T., and Friston, K. J. “Working Memory, Attention, and Salience in Active Inference.” *Scientific Reports* 7, 14678, 2017. DOI: 10.1038/s41598-017-15249-0.
+    https://doi.org/10.1038/s41598-017-15249-0
+
+39. Wang, X.-J. “Probabilistic Decision Making by Slow Reverberation in Cortical Circuits.” *Neuron* 36(5), 2002. DOI: 10.1016/S0896-6273(02)01092-9.
+    https://pubmed.ncbi.nlm.nih.gov/12467598/
+
+40. Rabiner, L. R. “A Tutorial on Hidden Markov Models and Selected Applications in Speech Recognition.” *Proceedings of the IEEE* 77(2), 1989. DOI: 10.1109/5.18626.
+    https://doi.org/10.1109/5.18626
+
+41. Messikommer, N., Gehrig, D., Loquercio, A., and Scaramuzza, D. “Event-Based Asynchronous Sparse Convolutional Networks.” *ECCV*, 2020. DOI: 10.1007/978-3-030-58598-3_25.
+    https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123530409.pdf
+
+42. Cayrol, C., and Lagasquie-Schiex, M.-C. “On the Acceptability of Arguments in Bipolar Argumentation Frameworks.” *ECSQARU*, 2005. DOI: 10.1007/11518655_33.
+    https://doi.org/10.1007/11518655_33
+
+43. Sandamirskaya, Y. “Dynamic Neural Fields as a Step Toward Cognitive Neuromorphic Architectures.” *Frontiers in Neuroscience* 7:276, 2014. DOI: 10.3389/fnins.2013.00276.
+    https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2013.00276/full
+
+44. Kreiser, R., Aathmani, D., Qiao, N., Indiveri, G., and Sandamirskaya, Y. “Organizing Sequential Memory in a Neuromorphic Device Using Dynamic Neural Fields.” *Frontiers in Neuroscience* 12:717, 2018. DOI: 10.3389/fnins.2018.00717.
+    https://pmc.ncbi.nlm.nih.gov/articles/PMC6262404/
+
+Official repository/license checks on 2026-08-23: TGN (`twitter-research/tgn`) is Apache-2.0; AEGNN (`uzh-rpg/aegnn`) is MIT; the inspected RIMs and Belief-R repositories did not contain a repository license file, so reuse rights are not inferred.
+
 The source-level search strings, status, implementation/license state, and claim-level novelty verdicts for the C09 review are maintained in `docs/research/`.

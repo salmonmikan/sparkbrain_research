@@ -33,7 +33,7 @@ See `docs/LOCAL_EXECUTION_POLICY.md`.
 | Beginner foundation guide | complete | `docs/FOUNDATIONS_FOR_BEGINNERS.md` |
 | Plain-language glossary | expanded | `docs/GLOSSARY.md` |
 | Local execution policy | complete | `docs/LOCAL_EXECUTION_POLICY.md` |
-| Prior-art gap analysis | initial review complete | `docs/PRIOR_ART_GAP_ANALYSIS.md` |
+| Prior-art gap analysis | bounded adversarial second pass complete; monitoring remains continuous | `docs/PRIOR_ART_GAP_ANALYSIS.md`, `docs/research/` |
 | Deterministic reference engine | runnable | `src/sparkbrain/engine.py` |
 | Spark/Event/Coalition/Workspace model | runnable | `src/sparkbrain/model.py` |
 | Canonical and randomized SwitchWorld | runnable | `src/sparkbrain/worlds.py` |

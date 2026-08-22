@@ -1,6 +1,6 @@
 # C09 Closest Systems and Claim Boundaries
 
-**Status:** initial counterexample set, reviewed 2026-08-23.
+**Status:** bounded adversarial second pass, reviewed 2026-08-23.
 **Scope:** this file identifies the strongest known precedents for SparkBrain's current design language. It does not claim the set is exhaustive or that a complete duplicate has been found.
 
 ## Bottom line
@@ -82,6 +82,18 @@ The 2026 Transformer Circuits report presents causal evidence for workspace-like
 
 **Boundary:** no public document may assert that Transformers or LLMs lack workspace-like organization. SparkBrain's potential distinction is explicit inspectable state and event-routed execution, neither of which is yet a demonstrated performance advantage.
 
+### Blackboard, probabilistic, and attractor alternatives — PA-016 to PA-019
+
+HEARSAY-II predates LIDA with asynchronous knowledge sources, a shared blackboard, and explicit partial hypotheses. Active inference, recurrent attractor decision models, and HMMs provide stronger probabilistic alternatives for persistent or sequential competing hypotheses.
+
+**Boundary:** an evaluation must compare state semantics and revision behavior to suitable non-workspace baselines; architectural vocabulary alone cannot establish a gap.
+
+### Asynchronous execution, bipolar argumentation, and neuromorphic memory — PA-020 to PA-023
+
+Asynchronous sparse convolutions provide identical-output local recomputation and compute accounting; bipolar argumentation formalizes support and attack; dynamic neural fields have been mapped to cognitive neuromorphic architectures and physical sequence memory.
+
+**Boundary:** G2, G5, C07, C08, and hardware-extension claims must survive these closer counterexamples. Algorithmic sparsity or neuromorphic deployment is not energy evidence.
+
 ## Claim-by-claim novelty verdicts
 
 | SparkBrain candidate | Current verdict | Strongest counterexample(s) | Required evidence before stronger framing |
@@ -96,4 +108,4 @@ The 2026 Transformer Circuits report presents causal evidence for workspace-like
 
 ## Citation map
 
-The full bibliographic and implementation-status record is in `literature_matrix.csv`; exact query history and the required second-pass search plan are in `search_log.md`.
+The full bibliographic and implementation-status record is in `literature_matrix.csv`; exact query and citation-chain history is in `search_log.md`; the matrix-derived adversarial summary is in `claim_challenge_report.md`.

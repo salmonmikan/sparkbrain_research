@@ -43,6 +43,8 @@ This file separates implementation facts, observed results, supported research c
 
 This status is separate from evidence grades. It does not raise or lower any grade above.
 
+The adversarial second pass additionally reviewed HEARSAY-II, active inference, attractor and HMM baselines, asynchronous sparse convolution, bipolar argumentation, and neuromorphic dynamic-field memory. It strengthens the constraints below but does not change an evidence grade. See `docs/research/claim_challenge_report.md` for the matrix-derived strongest counterexample per target.
+
 | Claim IDs | Current prior-art verdict | Strongest reviewed counterexample(s) | Public framing constraint |
 |---|---|---|---|
 | CL-001, CL-002, CL-004 | partial overlap / strong near-duplicate at mechanism level | LIDA; Global Neuronal Workspace; Shared Global Workspace | Do not describe persistent state, coalition, ignition, workspace competition, or broadcast as original mechanisms. |
