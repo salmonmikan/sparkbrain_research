@@ -133,6 +133,21 @@ the explicit `erase_losing_hypotheses()` intervention after ignition; it is not 
 dynamics. Dense-update figures are labeled counterfactual accounting and are not executed
 work or energy measurements.
 
+### `learned/` (C04 optional backend)
+
+`learned/` is imported only when the optional `learned` dependency extra is installed. Its
+fixed-width hash encoder maps observation evidence/source/channel plus numeric strength and
+delay into an event representation. A learned top-k router selects a bounded set of persistent
+modules. The backend indexes only those states and their K-by-K edge block before recurrent
+message passing; it does not compute a dense recurrent graph and mask it afterward.
+
+The encoder/router remain dense and are counted separately. `LearnedBrainBackend` implements
+the C01 `BrainBackend` schedule/run/snapshot/state contract. Belief and action heads are
+separate. Coalition traces expose support, diversity, stability, contradiction, and score;
+the calibrated confidence/margin gate preserves `None` as no-ignition. The additive
+`learned/contracts.py` module is the C04/C05 exchange contract and does not change Episode
+schema `0.2`.
+
 ### `visualizer.py`
 
 - self-contained HTML + SVG

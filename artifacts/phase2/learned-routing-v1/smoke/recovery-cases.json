@@ -1,0 +1,93 @@
+[
+  {
+    "episode_id": "switchworld:test:200001:e8105a6408dd",
+    "hand_authored_event_weights": false,
+    "label": "dog",
+    "recovered_step": 3,
+    "switch_step": 3
+  },
+  {
+    "episode_id": "switchworld:test:200001:e8105a6408dd",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 14,
+    "switch_step": 7
+  },
+  {
+    "episode_id": "switchworld:test:200001:e8105a6408dd",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 21,
+    "switch_step": 20
+  },
+  {
+    "episode_id": "switchworld:test:200001:e8105a6408dd",
+    "hand_authored_event_weights": false,
+    "label": "dog",
+    "recovered_step": 25,
+    "switch_step": 25
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200003:592400f32c49",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 12,
+    "switch_step": 11
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200003:592400f32c49",
+    "hand_authored_event_weights": false,
+    "label": "toy",
+    "recovered_step": 26,
+    "switch_step": 21
+  },
+  {
+    "episode_id": "switchworld:test:200004:e8105a6408dd",
+    "hand_authored_event_weights": false,
+    "label": "toy",
+    "recovered_step": 6,
+    "switch_step": 1
+  },
+  {
+    "episode_id": "switchworld:test:200004:e8105a6408dd",
+    "hand_authored_event_weights": false,
+    "label": "dog",
+    "recovered_step": 7,
+    "switch_step": 7
+  },
+  {
+    "episode_id": "switchworld:test:200004:e8105a6408dd",
+    "hand_authored_event_weights": false,
+    "label": "toy",
+    "recovered_step": 10,
+    "switch_step": 10
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200006:592400f32c49",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 13,
+    "switch_step": 10
+  },
+  {
+    "episode_id": "switchworld:test:200007:e8105a6408dd",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 13,
+    "switch_step": 8
+  },
+  {
+    "episode_id": "delayed_evidence_world:test:200009:592400f32c49",
+    "hand_authored_event_weights": false,
+    "label": "toy",
+    "recovered_step": 9,
+    "switch_step": 9
+  },
+  {
+    "episode_id": "switchworld:test:200010:e8105a6408dd",
+    "hand_authored_event_weights": false,
+    "label": "cat",
+    "recovered_step": 13,
+    "switch_step": 11
+  }
+]

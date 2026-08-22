@@ -1,0 +1,17 @@
+{
+  "above_chance": true,
+  "above_nonlearning_baseline": true,
+  "all_ablations_completed": true,
+  "all_held_out_axes_documented": true,
+  "bounded_active_set": true,
+  "checkpoint_reload_completed": true,
+  "collapse_and_load_diagnostics_present": true,
+  "immutable_manifests_unchanged": true,
+  "negative_findings_and_budget_recorded": true,
+  "no_ignition_not_collapsed": true,
+  "non_hand_authored_recovery": true,
+  "offline_cpu_main_completed": true,
+  "real_selected_edge_counter": true,
+  "reproducible_seed_and_config_recorded": true,
+  "trace_fields_present": true
+}

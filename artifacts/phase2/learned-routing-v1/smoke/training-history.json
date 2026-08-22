@@ -1,0 +1,14 @@
+[
+  {
+    "epoch": 1,
+    "mean_loss": 1.2917942851781845,
+    "soft_routing_entropy": 0.9556356072425842,
+    "training_accuracy": 0.3020833333333333
+  },
+  {
+    "epoch": 2,
+    "mean_loss": 1.081703136364619,
+    "soft_routing_entropy": 0.7780328989028931,
+    "training_accuracy": 0.5208333333333334
+  }
+]

@@ -24,6 +24,10 @@ lab = [
   "fastapi>=0.115,<1",
   "uvicorn>=0.30,<1",
 ]
+learned = [
+  "numpy>=2.0",
+  "torch>=2.2",
+]
 spiking = [
   "torch>=2.2",
   "snntorch==1.0.0",

@@ -71,6 +71,15 @@ Data split must separate:
 - noise regimes
 - source identities
 
+C04 freezes the C02 dev/test manifests by SHA-256. Training and ignition calibration use
+disjoint development-seed ranges; threshold selection never reads test labels. The CPU smoke
+profile proves offline execution only. The main profile holds out ReliabilityWorld and
+DelayedEvidenceWorld from training, uses longer sequences, reports chance and training-majority
+baselines, and keeps accuracy separate from ignition coverage. Sparse counters distinguish
+candidate routes, selected state updates, evaluated selected edges/messages, remaining dense
+encoder/router operations, estimated launches, tracked memory, and wall-clock. Required
+ablations and coefficient sensitivity are machine-readable under `artifacts/phase2/`.
+
 ### Phase 3 — External reasoning benchmarks
 
 Candidate tasks:

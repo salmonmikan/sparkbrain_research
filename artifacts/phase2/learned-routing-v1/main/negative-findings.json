@@ -1,0 +1,7 @@
+{
+  "dense_compute_remaining": "encoder and router are dense and counted separately",
+  "full_test_manifest": "evaluated 60 of 1000 seeds under the C04 CPU profile; this is not a C02 1000-episode claim",
+  "natural_unseen_evidence_combinations": "the frozen primary subset had 0 unseen evidence bigrams; the required unseen-combination axis is therefore a separately labeled derived compound-token stress, not part of primary accuracy",
+  "random_router_interpretation": "evaluated without retraining; not a capacity-matched search",
+  "scope": "controlled synthetic C02 worlds only; no general superiority claim"
+}

@@ -8,7 +8,9 @@ The repository is a **Phase-0 local functional research prototype**. It demonstr
 
 v0.2.1 fixes the core destination to one general-purpose local computer, adds a plain-language foundation guide and expanded glossary, and moves dedicated neuromorphic hardware to an independent extension track.
 
-It is not yet a learned architecture, a fully spiking implementation, a validated biological model, or a matched comparison against modern neural baselines. C07 adds only a reduced hybrid canonical comparison.
+It now includes an optional controlled-synthetic learned-routing backend. It is not yet a
+validated biological model or a matched comparison against modern neural baselines. C07 adds
+only a reduced hybrid canonical comparison.
 
 ## 2. Local execution contract
 
@@ -39,9 +41,10 @@ See `docs/LOCAL_EXECUTION_POLICY.md`.
 | Canonical and randomized SwitchWorld | runnable | `src/sparkbrain/worlds.py` |
 | Phase-0 scalar baselines and ablations | runnable | `src/sparkbrain/baselines.py`, `benchmark.py` |
 | C02 controlled worlds and statistical suite | implemented with negative results | `src/sparkbrain/tasks/`, `evaluation/`, `artifacts/phase1/c02-main-1000/` |
+| C04 learned sparse-rate backend | implemented with held-out synthetic result and collapse diagnostics | `src/sparkbrain/learned/`, `artifacts/phase2/`, `docs/C04_LEARNED_ROUTING_RESULTS.md` |
 | Metrics for stability/revision/recovery | runnable | `src/sparkbrain/metrics.py` |
 | Static replay visualizer | runnable locally | `artifacts/demo/visualizer.html` |
-| Unit tests | 113 passing | `python -m pytest -q` |
+| Unit tests | 134 passing with PyTorch available; optional learned/spiking tests require their extras | `python -m pytest -q` |
 | Local readiness audit | runnable | `scripts/local_readiness_check.py` |
 | Generated Phase-0 report | complete with limitations | `artifacts/benchmarks/benchmark_report.md` |
 | Codex repository instructions | complete | `AGENTS.md`, `.agents/skills/sparkbrain-research/SKILL.md` |
@@ -81,7 +84,6 @@ The accumulator baseline is close in this hand-authored setting. Therefore this 
 
 | Priority | Missing capability | Codex task |
 |---:|---|---|
-| P1 | learned event encoding/routing and held-out generalization | C04 |
 | P1 | matched GRU/Transformer/RIM/Bayesian baselines | C05 |
 | P1 | external belief-revision and relational tasks with local cached datasets | C06 |
 | P2 | fully spiking and multi-world equivalence beyond the reduced hybrid | C07 follow-on |
@@ -128,3 +130,8 @@ deterministically selected failure visualizations. This is an E2 controlled synt
 not external validation. MultiObjectWorld produced no full-system ignition under the frozen
 configuration and is retained as a negative result; C04/C05 must not tune against its test
 seeds. C04 and C05 must share this frozen data harness and its split manifests.
+
+C04 is locally implemented on the immutable C02 manifests. Its 60-episode held-out CPU profile
+beat chance and the training-majority baseline while retaining calibrated no-ignition and
+non-hand-authored recovery cases. The router nevertheless exhibited dead/overloaded modules,
+and the reduced smoke profile was below chance. These negative findings remain explicit.

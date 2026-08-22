@@ -1,0 +1,40 @@
+{
+  "ablation_and_sensitivity_order": "after main ignition threshold was frozen",
+  "axes": {
+    "changed_source_reliability": {
+      "definition": "ReliabilityWorld is absent from training and present in test",
+      "satisfied": true
+    },
+    "changed_switch_frequency": {
+      "definition": "train SwitchWorld p=0.16 versus held-out DelayedEvidenceWorld fixed period 10",
+      "satisfied": true
+    },
+    "held_out_world_family": {
+      "families": [
+        "delayed_evidence_world",
+        "reliability_world"
+      ],
+      "satisfied": true
+    },
+    "longer_sequences": {
+      "satisfied": true,
+      "test_steps": 28,
+      "train_steps": 16
+    },
+    "unseen_distractor_compositions": {
+      "definition": "deterministic every-seventh-step unseen-token transform on 12 frozen test episodes",
+      "episodes": 12,
+      "satisfied": true,
+      "summary_file": "distractor-stress-summary.json"
+    },
+    "unseen_evidence_combinations": {
+      "definition": "natural ordered bigram audit plus deterministic compound-token stress on 12 frozen test episodes",
+      "derived_stress_episodes": 12,
+      "natural_unseen_bigram_count": 32,
+      "satisfied": true,
+      "summary_file": "combination-stress-summary.json"
+    }
+  },
+  "test_labels_used_for_threshold_or_hyperparameter_selection": false,
+  "threshold_selected_from": "disjoint development calibration episodes only"
+}

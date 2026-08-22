@@ -1,0 +1,171 @@
+{
+  "checkpoint_metadata": {
+    "dev_manifest_sha256": "968593ff7c5f4274aaeb416bd58200e8625218d1a0179a1dff8a31d1b82a85a8",
+    "training_seed": 41
+  },
+  "config": {
+    "active_k": 4,
+    "belief_loss": 1.0,
+    "calibration_episodes": 12,
+    "coalition_end_to_end": true,
+    "condition": "full",
+    "confidence_threshold": 0.6630581021308899,
+    "device": "cpu",
+    "epochs": 4,
+    "event_dim": 24,
+    "hash_buckets": 128,
+    "hidden_dim": 24,
+    "ignition_loss": 0.1,
+    "labels": [
+      "cat",
+      "dog",
+      "toy"
+    ],
+    "learning_rate": 0.012,
+    "load_balance_loss": 0.02,
+    "margin_threshold": 0.3404403328895569,
+    "module_count": 12,
+    "persistence": 0.75,
+    "provenance_loss": 0.02,
+    "recovery_loss": 0.1,
+    "residual_scale": 1.0,
+    "revision_loss": 0.15,
+    "schema_version": "0.2",
+    "seed": 41,
+    "sparsity_loss": 0.005,
+    "steps": 24,
+    "test_episodes": 60,
+    "trace_consistency_loss": 0.02,
+    "train_episodes": 48,
+    "workspace_broadcast": true
+  },
+  "held_out": {
+    "accuracy": 0.663425925925926,
+    "chance_accuracy": 0.3333333333333333,
+    "condition": "full",
+    "counters": {
+      "conceptual_candidates": 25920,
+      "dense_tensor_ops": 4320,
+      "evaluated_edges": 34560,
+      "evaluated_messages": 34560,
+      "kernel_launch_estimate": 25920,
+      "observations": 2160,
+      "peak_memory_bytes": 1816080,
+      "selected_modules": 8640,
+      "state_updates": 8640,
+      "wall_clock_seconds": 0.8545548975234851
+    },
+    "coverage": 0.7796296296296297,
+    "covered_accuracy": 0.8509501187648456,
+    "diagnostics": {
+      "dead_modules": 3,
+      "no_ignition_count": 476,
+      "overloaded_modules": 4
+    },
+    "examples": 2160,
+    "module_loads": [
+      461,
+      2035,
+      0,
+      2094,
+      0,
+      1552,
+      0,
+      168,
+      33,
+      2160,
+      122,
+      15
+    ],
+    "nonlearning_accuracy": 0.3398148148148148,
+    "recovery_count": 84,
+    "routing_entropy": 0.6698359345005243,
+    "split": "test"
+  },
+  "held_out_protocol": {
+    "ablation_and_sensitivity_order": "after main ignition threshold was frozen",
+    "axes": {
+      "changed_source_reliability": {
+        "definition": "ReliabilityWorld is absent from training and present in test",
+        "satisfied": true
+      },
+      "changed_switch_frequency": {
+        "definition": "train SwitchWorld p=0.16 versus held-out DelayedEvidenceWorld fixed period 10",
+        "satisfied": true
+      },
+      "held_out_world_family": {
+        "families": [
+          "delayed_evidence_world",
+          "reliability_world"
+        ],
+        "satisfied": true
+      },
+      "longer_sequences": {
+        "satisfied": true,
+        "test_steps": 36,
+        "train_steps": 24
+      },
+      "unseen_distractor_compositions": {
+        "definition": "deterministic every-seventh-step unseen-token transform on 12 frozen test episodes",
+        "episodes": 12,
+        "satisfied": true,
+        "summary_file": "distractor-stress-summary.json"
+      },
+      "unseen_evidence_combinations": {
+        "definition": "natural ordered bigram audit plus deterministic compound-token stress on 12 frozen test episodes",
+        "derived_stress_episodes": 12,
+        "natural_unseen_bigram_count": 0,
+        "satisfied": true,
+        "summary_file": "combination-stress-summary.json"
+      }
+    },
+    "test_labels_used_for_threshold_or_hyperparameter_selection": false,
+    "threshold_selected_from": "disjoint development calibration episodes only"
+  },
+  "manifest_evidence": {
+    "paths": {
+      "dev": "configs\\experiments\\phase1\\manifests\\dev-v1.json",
+      "test": "configs\\experiments\\phase1\\manifests\\test-v1.json"
+    },
+    "sha256_after": {
+      "dev": "968593ff7c5f4274aaeb416bd58200e8625218d1a0179a1dff8a31d1b82a85a8",
+      "test": "3815f3857c485fb6c596f496c00ce36c437ee3b17fd97105d0fb729ff16e9e20"
+    },
+    "sha256_before": {
+      "dev": "968593ff7c5f4274aaeb416bd58200e8625218d1a0179a1dff8a31d1b82a85a8",
+      "test": "3815f3857c485fb6c596f496c00ce36c437ee3b17fd97105d0fb729ff16e9e20"
+    },
+    "unchanged": true
+  },
+  "runtime_seconds": 45.433311600005254,
+  "schema_version": "0.2",
+  "training_history": [
+    {
+      "epoch": 1,
+      "mean_loss": 1.0752302041898172,
+      "soft_routing_entropy": 0.6827366948127747,
+      "training_accuracy": 0.4869791666666667
+    },
+    {
+      "epoch": 2,
+      "mean_loss": 0.825691687874496,
+      "soft_routing_entropy": 0.28435787558555603,
+      "training_accuracy": 0.6605902777777778
+    },
+    {
+      "epoch": 3,
+      "mean_loss": 0.7340527726337314,
+      "soft_routing_entropy": 0.1162927895784378,
+      "training_accuracy": 0.7152777777777778
+    },
+    {
+      "epoch": 4,
+      "mean_loss": 0.7089484203606844,
+      "soft_routing_entropy": 0.11623787134885788,
+      "training_accuracy": 0.7300347222222222
+    }
+  ],
+  "versions": {
+    "torch": "2.13.0+cpu"
+  }
+}

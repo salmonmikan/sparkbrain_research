@@ -1,5 +1,19 @@
 # Dependency and License Record
 
+## C04 optional learned stack — verified 2026-08-23
+
+PyTorch and NumPy are isolated in the `learned` optional extra and are not core runtime
+dependencies. The offline CPU smoke and main profiles ran locally with PyTorch 2.13.0+cpu and
+NumPy 2.5.2. C04 adds no PyTorch Geometric, remote tracker, hosted storage, or model API.
+
+| Package | Local role | License boundary |
+|---|---|---|
+| PyTorch 2.13.0+cpu | encoder, router, recurrent selected-subgraph update, training/checkpoint | upstream BSD-3-Clause plus bundled component notices |
+| NumPy 2.5.2 | optional learned-stack compatibility; no core import | upstream BSD-3-Clause |
+
+The repository does not redistribute either wheel. Exact release packaging/notices remain a
+C10 responsibility.
+
 ## C07 optional spiking stack — reviewed 2026-08-23
 
 Core SparkBrain remains dependency-light. These packages are isolated in the `spiking`

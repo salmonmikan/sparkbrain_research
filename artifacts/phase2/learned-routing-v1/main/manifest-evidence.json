@@ -1,0 +1,15 @@
+{
+  "paths": {
+    "dev": "configs\\experiments\\phase1\\manifests\\dev-v1.json",
+    "test": "configs\\experiments\\phase1\\manifests\\test-v1.json"
+  },
+  "sha256_after": {
+    "dev": "968593ff7c5f4274aaeb416bd58200e8625218d1a0179a1dff8a31d1b82a85a8",
+    "test": "3815f3857c485fb6c596f496c00ce36c437ee3b17fd97105d0fb729ff16e9e20"
+  },
+  "sha256_before": {
+    "dev": "968593ff7c5f4274aaeb416bd58200e8625218d1a0179a1dff8a31d1b82a85a8",
+    "test": "3815f3857c485fb6c596f496c00ce36c437ee3b17fd97105d0fb729ff16e9e20"
+  },
+  "unchanged": true
+}
