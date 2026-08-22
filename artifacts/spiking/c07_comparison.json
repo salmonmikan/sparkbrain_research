@@ -65,7 +65,7 @@
       "ignitions": 5,
       "spark_updates": 178
     },
-    "wall_clock_seconds": 0.0018896000692620873
+    "wall_clock_seconds": 0.001559700001962483
   },
   "schema": "c07-spiking-comparison-v1",
   "seed": 7,
@@ -138,7 +138,7 @@
       "ignitions": 5,
       "spark_updates": 178
     },
-    "wall_clock_seconds": 0.004003899986855686
+    "wall_clock_seconds": 0.003486400004476309
   },
   "tolerances_frozen_before_comparison": {
     "distinct_ignitions": [
