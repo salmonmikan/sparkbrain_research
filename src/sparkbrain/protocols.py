@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Any, Protocol, runtime_checkable
 
-from .model import EventKind, TraceFrame
+from .model import BrainConfig, EngineStats, EventKind, TraceFrame
 
 
 @runtime_checkable
@@ -11,6 +11,16 @@ class BrainBackend(Protocol):
 
     @property
     def prediction(self) -> str | None: ...
+
+    @property
+    def stats(self) -> EngineStats: ...
+
+    def reset(
+        self,
+        *,
+        seed: int | None = None,
+        config: BrainConfig | None = None,
+    ) -> None: ...
 
     def schedule(
         self,
@@ -31,3 +41,5 @@ class BrainBackend(Protocol):
     def snapshot(self, *, external_event: str, truth: str | None = None) -> TraceFrame: ...
 
     def state_dict(self, *, include_trace: bool = True) -> dict[str, Any]: ...
+
+    def load_state_dict(self, state: dict[str, Any]) -> None: ...

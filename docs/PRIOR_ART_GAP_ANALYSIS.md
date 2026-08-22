@@ -216,3 +216,15 @@ The boundary is instead operational:
 - results from Extension H cannot retroactively validate biological fidelity or the cognitive theory.
 
 Prior-art auditing should continue to include neuromorphic and hardware implementations because they may invalidate architectural novelty claims, even though reproducing those systems is not required for core completion.
+
+## 10. Initial C09 systematic-audit result (2026-08-23)
+
+The initial review above is now accompanied by a traceable first-pass counterexample set:
+
+- `docs/research/literature_matrix.csv` records source metadata, exact overlap, non-overlap, publication status, and a claim-level novelty verdict;
+- `docs/research/search_log.md` records the dated query strings, verification method, and the required second-pass databases;
+- `docs/research/closest_systems.md` explains the strongest counterexamples and the permitted claim boundary.
+
+This pass reinforces, rather than weakens, the existing caution. LIDA and Shared Global Workspace are strong architectural counterexamples to an original coalition-to-workspace claim. ART, Dynamic Field Theory, predictive coding, RIMs, AEGNN, Assembly Calculus, and spiking global-workspace systems establish that the constituent mechanisms are known. Belief-R is an existing benchmark for update-versus-retain behavior.
+
+The only remaining difference candidates are integration and evaluation questions: explicit evidence identity, formal treatment of support versus contradiction, residual-loser recovery as a measured capability, a distinct no-ignition semantics, and audited no-touch execution sparsity. They are **unverified difference candidates**, not novelty claims. A complete end-to-end duplicate was not established by this first pass, and that absence is not evidence of novelty.

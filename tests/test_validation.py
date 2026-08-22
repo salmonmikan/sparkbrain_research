@@ -25,6 +25,20 @@ def test_config_rejects_invalid_residual() -> None:
         SparkBrain(BrainConfig(post_fire_residual=1.1))
 
 
+@pytest.mark.parametrize(
+    "config",
+    [
+        BrainConfig(ignition_cooldown=-0.1),
+        BrainConfig(workspace_slots=1.5),
+        BrainConfig(min_support_sources=True),
+        BrainConfig(stability_evaluations=1.5),
+    ],
+)
+def test_config_rejects_invalid_integer_or_cooldown_value(config) -> None:
+    with pytest.raises(ValueError):
+        SparkBrain(config)
+
+
 def test_duplicate_spark_id_is_rejected() -> None:
     brain = SparkBrain()
     spark = Spark("x", "x", SparkKind.SENSORY, "perception")
@@ -51,6 +65,19 @@ def test_nonfinite_event_is_rejected() -> None:
             source="world",
             target="x",
             strength=math.nan,
+        )
+
+
+def test_noninteger_event_priority_is_rejected() -> None:
+    brain = SparkBrain()
+    brain.add_spark(Spark("x", "x", SparkKind.SENSORY, "perception"))
+    with pytest.raises(ValueError, match="priority"):
+        brain.schedule(
+            time=1.0,
+            kind=EventKind.STIMULUS,
+            source="world",
+            target="x",
+            priority=1.5,
         )
 
 
@@ -85,7 +112,13 @@ def test_event_insertion_order_breaks_equal_time_priority_ties() -> None:
 
 
 def test_event_limit_error_contains_queue_diagnostics() -> None:
-    brain = SparkBrain(BrainConfig(propagation_delay=0.001, refractory_period=0.0001, homeostatic_increment=0.0))
+    brain = SparkBrain(
+        BrainConfig(
+            propagation_delay=0.001,
+            refractory_period=0.0001,
+            homeostatic_increment=0.0,
+        )
+    )
     brain.add_spark(
         Spark(
             "loop",

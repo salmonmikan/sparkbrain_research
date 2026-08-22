@@ -12,7 +12,10 @@ def main() -> None:
     args = parser.parse_args()
 
     replay = load_trace(args.trace)
-    print(f"schema={replay.schema_version} frames={len(replay.frames)} final={replay.final_prediction}")
+    print(
+        f"schema={replay.schema_version} frames={len(replay.frames)} "
+        f"final={replay.final_prediction}"
+    )
     for index, frame in enumerate(replay):
         top = frame.get("coalitions", [])
         top_label = top[0]["label"] if top else "-"

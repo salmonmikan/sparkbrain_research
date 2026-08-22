@@ -2,18 +2,22 @@ from __future__ import annotations
 
 import csv
 import json
-from dataclasses import asdict
+from collections.abc import Callable
 from pathlib import Path
 from statistics import mean
-from typing import Callable
 
 from .baselines import EvidenceAccumulator, HardWinnerTakeAll, InstantClassifier, run_baseline
 from .metrics import SequencePoint, evaluate_sequence
 from .model import BrainConfig
+from .validation import SCHEMA_VERSION
 from .worlds import SwitchEvent, SwitchWorld, build_reference_brain, run_scenario
 
-
 MetricRow = dict[str, float | int | str | None]
+
+
+def _write_utf8_lf(path: Path, contents: str) -> None:
+    with path.open("w", encoding="utf-8", newline="") as handle:
+        handle.write(contents)
 
 
 def _truth_at(events: list[SwitchEvent], time: float) -> str:
@@ -199,13 +203,18 @@ def write_benchmark_outputs(
     episodes_rows, aggregate_rows = run_benchmark(episodes=episodes, steps=steps)
 
     json_path = output / "benchmark_results.json"
-    json_path.write_text(
+    _write_utf8_lf(
+        json_path,
         json.dumps(
-            {"episodes": episodes_rows, "aggregate": aggregate_rows},
+            {
+                "schema_version": SCHEMA_VERSION,
+                "episodes": episodes_rows,
+                "aggregate": aggregate_rows,
+            },
             ensure_ascii=False,
             indent=2,
-        ),
-        encoding="utf-8",
+        )
+        + "\n",
     )
 
     csv_path = output / "benchmark_aggregate.csv"
@@ -259,5 +268,5 @@ def write_benchmark_outputs(
             "- The decisive research comparison requires learned routing and matched-parameter GRU/Transformer/RIM baselines.",
         ]
     )
-    md_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    _write_utf8_lf(md_path, "\n".join(lines) + "\n")
     return json_path, csv_path, md_path

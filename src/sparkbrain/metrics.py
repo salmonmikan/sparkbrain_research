@@ -1,8 +1,8 @@
 from __future__ import annotations
 
+from collections.abc import Iterable
 from dataclasses import asdict, dataclass
 from statistics import mean
-from typing import Iterable
 
 
 @dataclass(frozen=True, slots=True)
@@ -101,7 +101,6 @@ def evaluate_sequence(points: Iterable[SequencePoint]) -> SequenceMetrics:
     # A recovery segment is a truth label that reappears after at least one
     # intervening different segment.
     segment_starts = [0, *truth_change_indices]
-    segment_labels = [rows[index].truth for index in segment_starts]
     recurrent_segments = 0
     recovered_segments = 0
     seen_labels: set[str] = set()

@@ -81,3 +81,59 @@ Retrieval date: 2026-08-22. Prefer primary papers and official project documenta
 
 21. OpenAI — Building repository skills with `SKILL.md`  
     https://developers.openai.com/codex/build-skills
+
+## C09 primary literature added 2026-08-23
+
+22. Baars, B. J., and Franklin, S. “An Architectural Model of Conscious and Unconscious Brain Functions: Global Workspace Theory and IDA.” *Neural Networks* 20(9), 2007, 955–961. Peer-reviewed.
+    https://doi.org/10.1016/j.neunet.2007.09.013
+
+23. Dehaene, S., Kerszberg, M., and Changeux, J.-P. “A Neuronal Model of a Global Workspace in Effortful Cognitive Tasks.” *PNAS* 95(24), 1998, 14529–14534. Peer-reviewed.
+    https://doi.org/10.1073/pnas.95.24.14529
+
+24. Shanahan, M. “A Spiking Neuron Model of Cortical Broadcast and Competition.” *Consciousness and Cognition* 17(1), 2008, 288–303. Peer-reviewed.
+    https://pubmed.ncbi.nlm.nih.gov/17317220/
+    https://doi.org/10.1016/j.concog.2006.12.005
+
+25. Johnson, J. S., Spencer, J. P., and Schöner, G. “Moving to Higher Ground: The Dynamic Field Theory and the Dynamics of Visual Cognition.” *New Ideas in Psychology* 26(2), 2008, 227–251. Peer-reviewed.
+    https://pubmed.ncbi.nlm.nih.gov/19173013/
+    https://doi.org/10.1016/j.newideapsych.2007.07.007
+
+26. Carpenter, G. A., and Grossberg, S. “ART 2: Self-Organization of Stable Category Recognition Codes for Analog Input Patterns.” *Applied Optics* 26(23), 1987, 4919–4930. Peer-reviewed.
+    https://pubmed.ncbi.nlm.nih.gov/20523470/
+    https://doi.org/10.1364/AO.26.004919
+
+27. Goyal, A. et al. “Recurrent Independent Mechanisms.” *ICLR*, 2021. Peer-reviewed conference paper.
+    https://openreview.net/forum?id=mLcmdlEUxy-
+
+28. Goyal, A. et al. “Coordination Among Neural Modules Through a Shared Global Workspace.” *ICLR*, 2022. Peer-reviewed conference paper.
+    https://openreview.net/forum?id=XzTtHjgPDsT
+
+29. Rossi, E. et al. “Temporal Graph Networks for Deep Learning on Dynamic Graphs.” *GRL+ Workshop at ICML*, 2020. Workshop/preprint status; not treated as a main-track peer-reviewed result here.
+    https://arxiv.org/abs/2006.10637
+
+30. Schaefer, S., Gehrig, D., and Scaramuzza, D. “AEGNN: Asynchronous Event-Based Graph Neural Networks.” *CVPR*, 2022. Peer-reviewed conference paper.
+    https://openaccess.thecvf.com/content/CVPR2022/html/Schaefer_AEGNN_Asynchronous_Event-Based_Graph_Neural_Networks_CVPR_2022_paper.html
+
+31. Friston, K. “A Theory of Cortical Responses.” *Philosophical Transactions of the Royal Society B* 360(1456), 2005, 815–836. Peer-reviewed.
+    https://pubmed.ncbi.nlm.nih.gov/15937014/
+    https://doi.org/10.1098/rstb.2005.1622
+
+32. Papadimitriou, C. H., Vempala, S. S., Mitropolsky, D., and Collins, M. “Brain Computation by Assemblies of Neurons.” *PNAS* 117(25), 2020, 14464–14472. Peer-reviewed.
+    https://pmc.ncbi.nlm.nih.gov/articles/PMC7322080/
+    https://doi.org/10.1073/pnas.2001893117
+
+33. Eliasmith, C. et al. “A Large-Scale Model of the Functioning Brain.” *Science* 338(6111), 2012, 1202–1205. Peer-reviewed.
+    https://pubmed.ncbi.nlm.nih.gov/23197532/
+    https://doi.org/10.1126/science.1225266
+
+34. Dung, P. M. “On the Acceptability of Arguments and Its Fundamental Role in Nonmonotonic Reasoning, Logic Programming and N-Person Games.” *Artificial Intelligence* 77(2), 1995, 321–357. Peer-reviewed.
+    https://doi.org/10.1016/0004-3702(94)00041-X
+
+35. Wilie, B., Cahyawijaya, S., Ishii, E., He, J., and Fung, P. “Belief Revision: The Adaptability of Large Language Models Reasoning.” *EMNLP*, 2024, 10480–10496. Peer-reviewed conference paper.
+    https://aclanthology.org/2024.emnlp-main.586/
+    https://doi.org/10.18653/v1/2024.emnlp-main.586
+
+36. “Verbalizable Representations Form a Global Workspace in Language Models.” *Transformer Circuits*, 2026. First-party research report; no DOI or peer-review status was verified.
+    https://transformer-circuits.pub/2026/workspace/index.html
+
+The source-level search strings, status, implementation/license state, and claim-level novelty verdicts for the C09 review are maintained in `docs/research/`.

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sparkbrain.local/schemas/config-document-v0.2.schema.json",
+  "title": "SparkBrain persisted configuration envelope v0.2",
+  "type": "object",
+  "required": ["schema_version", "config"],
+  "properties": {
+    "schema_version": {"const": "0.2"},
+    "config": {"type": "object"}
+  },
+  "additionalProperties": false
+}

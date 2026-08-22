@@ -39,6 +39,23 @@ This file separates implementation facts, observed results, supported research c
 - “Sparse activity proves lower energy use.”
 - “Organs emerged autonomously.”
 
+## C09 prior-art audit status (2026-08-23)
+
+This status is separate from evidence grades. It does not raise or lower any grade above.
+
+| Claim IDs | Current prior-art verdict | Strongest reviewed counterexample(s) | Public framing constraint |
+|---|---|---|---|
+| CL-001, CL-002, CL-004 | partial overlap / strong near-duplicate at mechanism level | LIDA; Global Neuronal Workspace; Shared Global Workspace | Do not describe persistent state, coalition, ignition, workspace competition, or broadcast as original mechanisms. |
+| CL-003, CL-006 | partial overlap; performance difference unverified | Dynamic Field Theory; Adaptive Resonance Theory | Residual-loser recovery is a testable evaluation emphasis only until controlled ablations reproduce an advantage. |
+| CL-005 | partial overlap; strong execution precedent | RIMs; AEGNN | Claim only audited reference-algorithm behavior. Activity ratios alone do not establish true no-touch execution or efficiency. |
+| CL-007 | unsupported | Shared Global Workspace; RIMs; established neural baselines | No performance-frontier claim before C04–C06 matched, held-out experiments. |
+| CL-008 | unsupported | Assembly Calculus; existing modular and plastic systems | No emergent-organ claim before causal specialization and held-out reuse tests. |
+| CL-009 | known research program; unsupported for SparkBrain | Shanahan spiking workspace; Spaun | C07 may report behavioral equivalence or failure only; spiking implementation is not novelty by itself. |
+| CL-010 | unsupported; Extension H only | no C09 efficiency conclusion | Preserve the direct-hardware-measurement requirement. |
+| CL-011 | engineering implementation claim | local cognitive and neural simulators | Local-only execution is a reproducibility constraint, not a scientific contribution. |
+
+See `docs/research/literature_matrix.csv` for source-level verdicts and `docs/research/closest_systems.md` for the rationale.
+
 ## Claim change procedure
 
 Any grade change must include:
