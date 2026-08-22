@@ -69,7 +69,6 @@ def validate_config(config: BrainConfig) -> None:
     positive = {
         "ignition_threshold": config.ignition_threshold,
         "support_tau": config.support_tau,
-        "refractory_period": config.refractory_period,
         "threshold_relaxation_tau": config.threshold_relaxation_tau,
         "max_abs_weight": config.max_abs_weight,
         "propagation_delay": config.propagation_delay,
@@ -81,6 +80,7 @@ def validate_config(config: BrainConfig) -> None:
     nonnegative = {
         "ignition_margin": config.ignition_margin,
         "ignition_cooldown": config.ignition_cooldown,
+        "refractory_period": config.refractory_period,
         "diversity_bonus": config.diversity_bonus,
         "temporal_coherence_bonus": config.temporal_coherence_bonus,
         "contradiction_penalty": config.contradiction_penalty,

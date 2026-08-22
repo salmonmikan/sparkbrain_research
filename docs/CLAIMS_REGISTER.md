@@ -19,10 +19,10 @@ This file separates implementation facts, observed results, supported research c
 |---|---|---:|---|
 | CL-001 | Persistent competing belief objects can be represented and inspected in a deterministic event-driven engine. | E1 | independent replay and schema conformance |
 | CL-002 | Coalition-level ignition can require score, margin, stability, and source diversity. | E1 | expanded adversarial tests |
-| CL-003 | A losing belief can retain state and later recover after new evidence. | E2 | controlled ablation with confidence intervals and held-out worlds |
+| CL-003 | A losing belief can retain state and later recover after new evidence. | E2 | matched learned baselines and external tasks |
 | CL-004 | No-ignition can be represented as a low-level computational state. | E1 | learned system evaluation and calibration |
 | CL-005 | Event routing can avoid touching every dormant Spark in the reference algorithm. | E1 | audited counters and scale study |
-| CL-006 | Residual retention improves belief revision in the current hand-authored SwitchWorld distribution. | E2 | preregistered held-out distributions and matched statistical tests |
+| CL-006 | Residual retention improves belief revision in the current hand-authored SwitchWorld and delayed-evidence distributions. | E2 | matched learned baselines and external tasks |
 | CL-007 | SparkBrain improves the stability/adaptability frontier over strong neural baselines. | E0 | C04–C06 |
 | CL-008 | Learned Spark groups form stable functional organs. | E0 | C08 causal specialization tests |
 | CL-009 | A reduced snnTorch LIF hybrid preserves the frozen canonical SparkBrain behavior. | E1 | fully spiking mapping, multiple held-out worlds, and independent reproduction |
@@ -57,6 +57,15 @@ The adversarial second pass additionally reviewed HEARSAY-II, active inference, 
 | CL-011 | engineering implementation claim | local cognitive and neural simulators | Local-only execution is a reproducibility constraint, not a scientific contribution. |
 
 See `docs/research/literature_matrix.csv` for source-level verdicts and `docs/research/closest_systems.md` for the rationale.
+
+## C02 controlled-result boundary (run `c02-main-1000`)
+
+- CL-003/CL-006 remain E2. Frozen synthetic ablations reproduced a residual-state advantage
+  in SwitchWorld and DelayedEvidenceWorld, but this does not establish generalization.
+- MultiObjectWorld full-system coverage was zero in the frozen run. No multi-object success
+  claim is permitted from C02.
+- Source-reliability, contradiction, calibration, and work metrics are descriptive for a
+  hand-authored system. They do not raise CL-007 or any biological/energy grade.
 
 ## Claim change procedure
 

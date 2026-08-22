@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sparkbrain.local/schemas/observation-v0.2.schema.json",
+  "title": "SparkBrain observation v0.2",
+  "type": "object",
+  "required": ["observation_id", "step_index", "emitted_time", "delivery_time", "channel", "source_id", "evidence_id", "evidence_label", "strength", "object_id", "metadata"],
+  "properties": {
+    "observation_id": {"type": "string", "minLength": 1},
+    "step_index": {"type": "integer", "minimum": 0},
+    "emitted_time": {"type": "number", "minimum": 0},
+    "delivery_time": {"type": "number", "minimum": 0},
+    "channel": {"enum": ["evidence", "goal", "value"]},
+    "source_id": {"type": "string", "minLength": 1},
+    "evidence_id": {"type": "string", "minLength": 1},
+    "evidence_label": {"type": "string"},
+    "strength": {"type": "number"},
+    "object_id": {"type": ["string", "null"]},
+    "metadata": {"type": "object"}
+  },
+  "additionalProperties": false
+}

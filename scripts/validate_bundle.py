@@ -57,6 +57,14 @@ REQUIRED = [
     "schemas/state-v0.2.schema.json",
     "schemas/summary-v0.2.schema.json",
     "schemas/benchmark-v0.2.schema.json",
+    "schemas/observation-v0.2.schema.json",
+    "schemas/episode-v0.2.schema.json",
+    "schemas/phase1-run-manifest-v0.2.schema.json",
+    "schemas/phase1-results-v0.2.schema.json",
+    "configs/experiments/phase1/main.json",
+    "artifacts/phase1/c02-main-1000/run_manifest.json",
+    "artifacts/phase1/c02-main-1000/phase1-results.json",
+    "artifacts/phase1/c02-main-1000/report.md",
 ]
 
 
@@ -145,6 +153,12 @@ def main() -> None:
     )
     summary_schema = json.loads((schema_dir / "summary-v0.2.schema.json").read_text())
     benchmark_schema = json.loads((schema_dir / "benchmark-v0.2.schema.json").read_text())
+    phase1_manifest_schema = json.loads(
+        (schema_dir / "phase1-run-manifest-v0.2.schema.json").read_text()
+    )
+    phase1_results_schema = json.loads(
+        (schema_dir / "phase1-results-v0.2.schema.json").read_text()
+    )
     Draft202012Validator(trace_schema).validate(trace)
     Draft202012Validator(state_schema).validate(checkpoint)
     Draft202012Validator(config_schema).validate(checkpoint["config"])
@@ -152,6 +166,16 @@ def main() -> None:
     Draft202012Validator(config_schema).validate(config_document["config"])
     Draft202012Validator(summary_schema).validate(summary)
     Draft202012Validator(benchmark_schema).validate(results)
+    phase1_manifest = json.loads(
+        (ROOT / "artifacts/phase1/c02-main-1000/run_manifest.json").read_text()
+    )
+    phase1_results = json.loads(
+        (ROOT / "artifacts/phase1/c02-main-1000/phase1-results.json").read_text()
+    )
+    Draft202012Validator(phase1_manifest_schema).validate(phase1_manifest)
+    Draft202012Validator(phase1_results_schema).validate(phase1_results)
+    if phase1_manifest["episode_count"] != 37_000:
+        fail("C02 main manifest must contain 37,000 declared episode results")
 
     html = (ROOT / "artifacts/demo/visualizer.html").read_text(encoding="utf-8")
     for marker in ("SparkBrain", "IGNITION", "const payload"):

@@ -27,7 +27,7 @@
     "temporal_coherence_bonus": {"type": "number", "minimum": 0},
     "contradiction_penalty": {"type": "number", "minimum": 0},
     "support_tau": {"type": "number", "exclusiveMinimum": 0},
-    "refractory_period": {"type": "number", "exclusiveMinimum": 0},
+    "refractory_period": {"type": "number", "minimum": 0},
     "post_fire_residual": {"type": "number", "minimum": 0, "maximum": 1},
     "active_epsilon": {"type": "number", "minimum": 0},
     "homeostatic_increment": {"type": "number", "minimum": 0},

@@ -1,0 +1,11 @@
+{
+  "profile": "smoke",
+  "split": "smoke",
+  "frozen": false,
+  "episode_count": 2,
+  "seed_start": 1,
+  "steps": 12,
+  "all_combinations": true,
+  "worlds": ["switchworld", "reliability_world", "delayed_evidence_world", "contradiction_world", "multi_object_world", "goal_conflict_world"],
+  "conditions": ["full", "no_residual", "hard_wta", "no_lateral_inhibition", "no_source_diversity", "no_contradiction_penalty", "no_temporal_stability", "no_margin_gate", "single_spark_ignition", "forced_prediction", "dense_update_accounting", "no_workspace_broadcast", "no_homeostasis", "no_refractory"]
+}

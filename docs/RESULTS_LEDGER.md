@@ -54,6 +54,47 @@ Claim grade impact:
 Next action:
 ```
 
+## 2026-08-23 — R0003 — C02 controlled synthetic suite
+
+**Code/base:** C02 branch from accepted C01 `c5178db`; schema remains `0.2`
+**Command:** `python -m sparkbrain.evaluation.run_suite --config configs/experiments/phase1/main.json --output artifacts/phase1/c02-main-1000`
+**Data/splits:** frozen local test seeds 200000–200999; 37 declared conditions; 1,000 episodes per condition
+**Raw outputs:** `artifacts/phase1/c02-main-1000/raw/` (local, reproducible, approximately 492 MiB)
+**Aggregate:** `artifacts/phase1/c02-main-1000/aggregate/metrics.csv`
+
+### Result
+
+- SwitchWorld full accuracy was 0.5965, coverage 0.9234, revision recall 0.6839,
+  revision precision 0.6761, and mean switch latency 1.6196.
+- Removing residual state reduced SwitchWorld accuracy to 0.4180 and delayed-evidence
+  accuracy from 0.7035 to 0.4573 in these frozen synthetic distributions.
+- Hard-WTA reduced SwitchWorld recovery from 0.7240 to 0.5636 and delayed-evidence recovery
+  from 0.9284 to 0.8136.
+- GoalConflictWorld changed actions while the measured goal-only belief-flip rate remained
+  zero. This is a narrow implementation observation, not a cognitive claim.
+
+### Negative findings and confounds
+
+- MultiObjectWorld full-system coverage and all-step accuracy were both zero: the frozen
+  configuration did not ignite object-scoped beliefs. The failure is retained.
+- Duplicate evidence produced a non-zero paired score change on average; evidence-record
+  identity deduplication does not guarantee activation-level invariance.
+- The supplementary frozen reliability run reported source-reliability sensitivity of
+  0.0175 for the full condition; this small descriptive difference is not a calibrated
+  reliability claim.
+- Coalition softmax values were used only for descriptive Brier/ECE; they are not calibrated
+  probabilities.
+- The generators and evidence weights remain hand-authored, and no learned or modern matched
+  baseline is present. No general superiority claim is supported.
+- Main bootstrap intervals are descriptive. No p-value family or significance-ranking claim
+  was made.
+
+**Claim impact:** CL-003 and CL-006 remain E2; CL-007 remains E0.
+**Next action:** C04/C05 consume the immutable Episode/split contracts without tuning on C02
+test seeds. Multi-object ignition requires dev-only diagnosis before a new frozen evaluation.
+
+---
+
 ## 2026-08-22 — R0002 — v0.2.1 local-scope and documentation expansion
 
 **Code/version:** SparkBrain package v0.2.1; persisted schema v0.2  

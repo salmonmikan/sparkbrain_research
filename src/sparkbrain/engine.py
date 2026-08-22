@@ -543,6 +543,30 @@ class SparkBrain:
     # ------------------------------------------------------------------
     # Learning and inspection
     # ------------------------------------------------------------------
+    def erase_losing_hypotheses(self, winner_id: str) -> None:
+        """Apply the explicit hard-WTA research intervention.
+
+        This is intentionally not part of normal dynamics.  C02 uses the hook
+        after an ignition so the hard-WTA ablation erases loser state rather
+        than approximating erasure with stronger inhibition.
+        """
+
+        winner = self.sparks.get(winner_id)
+        if winner is None or winner.kind is not SparkKind.HYPOTHESIS:
+            raise ValueError(f"Hard-WTA winner must be a hypothesis Spark: {winner_id!r}")
+        group = winner.competition_group
+        for spark in self.sparks.values():
+            if (
+                spark.kind is SparkKind.HYPOTHESIS
+                and spark.id != winner_id
+                and spark.competition_group == group
+            ):
+                spark.activation = 0.0
+                spark.supports.clear()
+                spark.contradictions.clear()
+                self._active_hypotheses.discard(spark.id)
+                self._stability.pop(spark.id, None)
+
     def _decay_eligibilities(self) -> None:
         for edge in self.connections:
             edge.eligibility *= self.config.eligibility_decay

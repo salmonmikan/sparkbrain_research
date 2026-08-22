@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sparkbrain.local/schemas/phase1-results-v0.2.schema.json",
+  "title": "SparkBrain Phase-1 aggregate results v0.2",
+  "type": "object",
+  "required": ["schema_version", "aggregate", "confidence_intervals", "pareto"],
+  "properties": {"schema_version": {"const": "0.2"}, "aggregate": {"type": "array"}, "confidence_intervals": {"type": "array"}, "pareto": {"type": "array"}},
+  "additionalProperties": false
+}

@@ -38,6 +38,7 @@ See `docs/LOCAL_EXECUTION_POLICY.md`.
 | Spark/Event/Coalition/Workspace model | runnable | `src/sparkbrain/model.py` |
 | Canonical and randomized SwitchWorld | runnable | `src/sparkbrain/worlds.py` |
 | Phase-0 scalar baselines and ablations | runnable | `src/sparkbrain/baselines.py`, `benchmark.py` |
+| C02 controlled worlds and statistical suite | implemented with negative results | `src/sparkbrain/tasks/`, `evaluation/`, `artifacts/phase1/c02-main-1000/` |
 | Metrics for stability/revision/recovery | runnable | `src/sparkbrain/metrics.py` |
 | Static replay visualizer | runnable locally | `artifacts/demo/visualizer.html` |
 | Unit tests | 68 passing | `python -m pytest -q` |
@@ -80,7 +81,6 @@ The accumulator baseline is close in this hand-authored setting. Therefore this 
 
 | Priority | Missing capability | Codex task |
 |---:|---|---|
-| P0 | controlled worlds, full ablations, uncertainty estimates | C02 |
 | P1 | learned event encoding/routing and held-out generalization | C04 |
 | P1 | matched GRU/Transformer/RIM/Bayesian baselines | C05 |
 | P1 | external belief-revision and relational tasks with local cached datasets | C06 |
@@ -120,4 +120,11 @@ C04 ─> C08
 C09 runs continuously and must review C10 claims.
 ```
 
-C01 is accepted: schema `0.2`, deterministic fresh-run replay, checkpoint continuation, pure inspection, bounded event failure, and counter contracts are covered locally and by the Python 3.11/3.13 CI matrix. C03 is locally accepted: loopback control, deterministic pause/step/reset, event injection, immutable-parent intervention forks, synchronized comparison, blind-safe export/import, bundled offline UI, API/E2E/accessibility contracts, and relevant-subset performance are covered. C02 remains unblocked. C04 and C05 should share the same local data harness and splits.
+C01 is accepted: schema `0.2`, deterministic fresh-run replay, checkpoint continuation, pure inspection, bounded event failure, and counter contracts are covered locally and by the Python 3.11/3.13 CI matrix. C03 is locally accepted: loopback control, deterministic pause/step/reset, event injection, immutable-parent intervention forks, synchronized comparison, blind-safe export/import, bundled offline UI, API/E2E/accessibility contracts, and relevant-subset performance are covered.
+
+C02 is locally implemented. The frozen main run completed 37 declared conditions with
+1,000 episodes each and generated raw rows, bootstrap intervals, Pareto output, and three
+deterministically selected failure visualizations. This is an E2 controlled synthetic result,
+not external validation. MultiObjectWorld produced no full-system ignition under the frozen
+configuration and is retained as a negative result; C04/C05 must not tune against its test
+seeds. C04 and C05 must share this frozen data harness and its split manifests.

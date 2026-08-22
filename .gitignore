@@ -2,6 +2,12 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .ruff_cache/
+
+# C02 retains full per-episode rows locally; the 37,000-episode run is about
+# 492 MiB and is reproduced from the frozen config rather than committed.
+artifacts/phase1/*/raw/
+artifacts/phase1/*/aggregate/work_distributions.json
+artifacts/phase1/*/aggregate/work_distributions.csv
 .venv/
 dist/
 build/

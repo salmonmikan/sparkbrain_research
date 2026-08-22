@@ -119,6 +119,20 @@ These are software sanity baselines, not sufficient neural baselines.
 - aggregate JSON / CSV / Markdown
 - instrumentation metrics
 
+### `tasks/` and `evaluation/` (C02)
+
+`tasks/` defines versioned, deterministic `Observation`, evaluator-only `Target`, and
+`Episode` contracts. Observations never contain truth labels. Six controlled generators
+cover switching, source reliability, delayed evidence, contradiction, multiple objects,
+and goal conflict.
+
+`evaluation/` owns the shared ablation registry, engine adapter, episode metrics, paired
+episode bootstrap intervals, Pareto dominance, immutable manifests, raw JSONL, and report
+generation. World generators do not mutate an engine. The hard-WTA research condition uses
+the explicit `erase_losing_hypotheses()` intervention after ignition; it is not normal
+dynamics. Dense-update figures are labeled counterfactual accounting and are not executed
+work or energy measurements.
+
 ### `visualizer.py`
 
 - self-contained HTML + SVG
