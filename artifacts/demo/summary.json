@@ -1,0 +1,78 @@
+{
+  "frames": 7,
+  "final_prediction": "cat",
+  "ignitions": [
+    {
+      "time": 2.01,
+      "label": "cat",
+      "hypothesis_id": "hypothesis:cat",
+      "coalition_id": "coalition:hypothesis:cat",
+      "score": 1.4598517366525845,
+      "margin": 1.34781802419188,
+      "supports": [
+        "fur",
+        "meow"
+      ]
+    },
+    {
+      "time": 3.0,
+      "label": "cat",
+      "hypothesis_id": "hypothesis:cat",
+      "coalition_id": "coalition:hypothesis:cat",
+      "score": 1.222554146089639,
+      "margin": 1.2257622722190833,
+      "supports": [
+        "fur",
+        "meow"
+      ]
+    },
+    {
+      "time": 5.01,
+      "label": "toy",
+      "hypothesis_id": "hypothesis:toy",
+      "coalition_id": "coalition:hypothesis:toy",
+      "score": 1.6216605560481832,
+      "margin": 1.176957254839352,
+      "supports": [
+        "fur",
+        "motionless",
+        "plastic_seam"
+      ]
+    },
+    {
+      "time": 6.0,
+      "label": "toy",
+      "hypothesis_id": "hypothesis:toy",
+      "coalition_id": "coalition:hypothesis:toy",
+      "score": 1.3756794910075978,
+      "margin": 1.023377623481436,
+      "supports": [
+        "fur",
+        "motionless",
+        "plastic_seam"
+      ]
+    },
+    {
+      "time": 7.02,
+      "label": "cat",
+      "hypothesis_id": "hypothesis:cat",
+      "coalition_id": "coalition:hypothesis:cat",
+      "score": 1.2536842336300058,
+      "margin": 0.5422493566263342,
+      "supports": [
+        "fur",
+        "meow",
+        "purr",
+        "warm_body"
+      ]
+    }
+  ],
+  "stats": {
+    "events_processed": 46,
+    "spark_updates": 178,
+    "edge_evaluations": 29,
+    "fires": 21,
+    "ignitions": 5,
+    "broadcasts": 10
+  }
+}

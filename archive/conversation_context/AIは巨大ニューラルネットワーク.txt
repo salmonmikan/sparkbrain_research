@@ -1,0 +1,517 @@
+うん。ここは一度、**「研究として何を作り、何をもって到達とするか」**を固定した方がいい。
+
+今の2点は方向性として合っている。ただし「脳模倣」という言葉だけは少し慎重にしたい。生物学的な人間脳の再現を証明することまで含めると、研究範囲が一気に広がるから、当面は **「脳型情報処理の模倣」** と定義するのがいいと思う。
+
+## プロジェクトの最終目的
+
+> **多数の局所的な活動単位「Spark」が並列・非同期的に発生、競争、連合、減衰、再活性化することで、知覚・仮説形成・判断・記憶・行動選択が動的に形成される脳型情報処理モデルを理論化し、その理論を実際に稼働するソフトウェアとして実装する。**
+
+大きく **理論成果物** と **実装成果物** の2本柱にする。
+
+---
+
+# 1. 最終成果物
+
+最終的には単なるPythonライブラリではなく、**「人工脳実験環境」**に近いものを作る。
+
+```text id="5beqx9"
+                  ┌───────────────────┐
+                  │      WORLD        │
+                  │ 外界・入力・課題   │
+                  └────────┬──────────┘
+                           │ events
+                           ▼
+┌──────────────────────────────────────────────┐
+│                ARTIFICIAL BRAIN              │
+│                                              │
+│    ○     ○       ○            ○             │
+│       ○       ○       ○                      │
+│  ○         Spark Field          ○           │
+│       ○            ○      ○                  │
+│                                              │
+│       ┌─ perception                          │
+│       ├─ memory                              │
+│       ├─ hypothesis                          │
+│       ├─ prediction                          │
+│       ├─ goal                                │
+│       └─ action                              │
+│                                              │
+│  excitation / inhibition / coalition         │
+│  ignition / decay / residual / learning      │
+└──────────────────┬───────────────────────────┘
+                   │
+                   ▼
+              ACTION / OUTPUT
+```
+
+### A. Core Engine
+
+Pythonを中心として、
+
+- Spark生成
+- Spark間接続
+- activation
+- threshold
+- decay
+- excitation
+- inhibition
+- refractory
+- coalition
+- ignition
+- residual state
+- working memory
+- long-term memory
+- learning
+- event routing
+
+を実装する。
+
+ここが「脳」に相当する部分。
+
+---
+
+### B. Brain Visualizer
+
+これはかなり重要な成果物にしたい。
+
+単なるログではなく、
+
+```text id="t8kfxa"
+          ●
+       ↗     ↘
+     ●         ●
+      ↘       ↙
+         ●●●
+          │
+       Coalition
+          │
+       IGNITION
+```
+
+のように、**内部で何が起きているかをリアルタイム表示する。**
+
+画面上では、
+
+- Sparkの発生
+- 活動値
+- 発火
+- Spark間の興奮
+- Spark間の抑制
+- Coalition形成
+- 仮説同士の競争
+- Global ignition
+- 記憶形成
+- 仮説消滅
+- 仮説復活
+
+まで見えるようにする。
+
+理想的には、
+
+```text id="6c7oas"
+赤く発火
+↓
+周囲のSparkへ伝播
+↓
+複数Sparkが同期
+↓
+Coalition形成
+↓
+全体へBroadcast
+```
+
+という一連の動作を目で追える。
+
+これによって、
+
+> 「AIが内部で何を考えているのか分からない」
+
+という現在のニューラルネットとはかなり違う実験環境にもなる。
+
+---
+
+# 2. 「器官」を作る
+
+ユーザーが言った**「スパークを器官とした脳模倣」**は、少し概念を整理するともっと面白くなる。
+
+Spark自体を器官とするというより、
+
+> **Spark = 神経活動の最小機能単位**
+>
+> **Spark群 = 器官 / 機能領域**
+
+とした方がスケールしやすい。
+
+例えば、
+
+```text id="73mtob"
+              Spark
+                │
+         数十〜数千集まる
+                ↓
+          Spark Organ
+
+┌─────────────────────────────┐
+│ Perceptual Organ            │
+│  ○ ○ ○ ○ ○ ○               │
+└─────────────────────────────┘
+
+┌─────────────────────────────┐
+│ Memory Organ                │
+│  ○ ○ ○ ○ ○ ○               │
+└─────────────────────────────┘
+
+┌─────────────────────────────┐
+│ Hypothesis Organ            │
+│  ○ ○ ○ ○ ○ ○               │
+└─────────────────────────────┘
+
+┌─────────────────────────────┐
+│ Action Organ                │
+│  ○ ○ ○ ○ ○ ○               │
+└─────────────────────────────┘
+```
+
+ただし、脳のように器官を完全固定する必要もない。
+
+むしろ最終的には、
+
+```text id="8z26ma"
+Spark
+ ↓
+Spark群
+ ↓
+一時的な機能ネットワーク
+ ↓
+役割が形成される
+```
+
+という**自己組織化**まで持っていきたい。
+
+つまり「記憶器官を人間が全部設計する」のではなく、
+
+> 学習の結果として記憶を担うSpark群が形成される
+
+のが理想形。
+
+---
+
+# 3. 理論としての最終着地点
+
+実装よりむしろ、こちらが研究本体になる。
+
+最終的には、
+
+> **Sparkを基礎単位とする動的認知システムの計算理論**
+
+を定義する。
+
+必要なのは最低でも次の階層。
+
+### Level 1 ― Spark
+
+Sparkとは何か。
+
+例えば、
+
+\[
+S_i =
+(a_i,\theta_i,r_i,e_i,v_i,\tau_i,\ldots)
+\]
+
+として、
+
+- activity
+- threshold
+- residual
+- eligibility
+- semantic state
+- lifetime
+
+などを定義する。
+
+---
+
+### Level 2 ― Interaction
+
+Spark同士がどう作用するか。
+
+\[
+\frac{da_i}{dt}
+=
+-\lambda_i a_i
++\sum_j w_{ji}^{+}s_j
+-\sum_k w_{ki}^{-}s_k
++I_i
++\epsilon_i
+\]
+
+など。
+
+ここで、
+
+- 興奮
+- 抑制
+- 時間
+- ノイズ
+- 入力
+
+を理論化する。
+
+---
+
+### Level 3 ― Coalition
+
+どういう状態を「一つの思考」とみなすのか。
+
+Spark単体ではなく、
+
+\[
+C = \{S_1,S_2,\dots,S_n\}
+\]
+
+という集合が一時的なCoalitionを形成する。
+
+さらに、
+
+\[
+Q(C)
+=
+Evidence
++
+Coherence
++
+Persistence
++
+Diversity
+-
+Contradiction
+\]
+
+のような量を定義する。
+
+---
+
+### Level 4 ― Ignition
+
+Coalitionがいつ「有効な認知」となるか。
+
+単純な、
+
+\[
+Q(C)>\theta
+\]
+
+だけではなく、
+
+\[
+Q(C)>\theta_I
+\]
+
+かつ、
+
+\[
+\frac{dQ}{dt}\approx0
+\]
+
+かつ競合Coalitionとの差が一定以上、
+
+などの条件を定義する。
+
+---
+
+### Level 5 ― Cognitive State
+
+ここが重要。
+
+システム全体の「現在の思考」を、
+
+```text id="um9f4x"
+Brain State =
+{
+ active sparks,
+ active coalitions,
+ workspace,
+ memories,
+ goals,
+ unresolved hypotheses
+}
+```
+
+として定義する。
+
+LLMのような、
+
+\[
+Output=f(Input)
+\]
+
+ではなく、
+
+\[
+B_{t+1}=F(B_t,E_t)
+\]
+
+とする。
+
+つまり、
+
+> **知能を入出力関数ではなく、時間発展する状態系として定義する。**
+
+ここが我々の理論の中心に据えられると思う。
+
+---
+
+# 4. 学習理論
+
+最終的にはこれも必要になる。
+
+固定されたSparkネットワークだけなら「シミュレーター」で終わる。
+
+本当に人工認知モデルにするなら、
+
+```text id="isknms"
+経験
+ ↓
+Spark activation
+ ↓
+Coalition
+ ↓
+結果
+ ↓
+成功 / 失敗
+ ↓
+connection変化
+ ↓
+次回のSpark dynamicsが変化
+```
+
+が必要。
+
+少なくとも、
+
+- Hebbian learning
+- reward modulation
+- eligibility traces
+- homeostatic adaptation
+- structural plasticity
+- Spark生成
+- Spark pruning
+
+まで理論に含めたい。
+
+最終的には、
+
+> **経験によってSparkの構造そのものが変化する**
+
+ところまで持っていく。
+
+---
+
+# 5. 「脳模倣」を3段階に分ける
+
+ここを明確にしておくと、研究が暴走しにくい。
+
+### Stage A：機能模倣
+
+まずここ。
+
+> 複数仮説、競争、記憶、注意、判断、反転など、脳に見られる認知機能を再現する。
+
+生物学的に正確である必要はない。
+
+---
+
+### Stage B：計算原理模倣
+
+次。
+
+> sparse / asynchronous / event-driven / excitation / inhibition / plasticityなど、生物脳に近い計算方式を導入する。
+
+ここでSNNやneuromorphic computingが入る。
+
+---
+
+### Stage C：神経学的模倣
+
+これはかなり遠い。
+
+> 実際のニューロン・神経伝達・皮質構造などとの対応まで要求する。
+
+ここまで行くかは将来判断でいい。
+
+**現段階ではA→Bまでを正式目標にするのが妥当。**
+
+---
+
+# 6. 最終成果物を一文で定義すると
+
+こうしたい。
+
+> **Sparkと呼ぶ局所的・持続的な活動単位を基礎として、知覚・仮説・記憶・判断・行動が、並列的な発火、競争、抑制、連合、再帰、減衰および学習によって動的に形成される計算理論を定義し、その理論をリアルタイムに観察・操作・検証可能な人工脳シミュレーションシステムとして実装する。**
+
+これならかなり明確。
+
+---
+
+## そして「完成」の定義
+
+これも最初から置いておいた方がいい。
+
+単にプログラムが動けば完成ではない。
+
+最終的には、
+
+```text id="8cojtq"
+        理論
+         │
+         ▼
+      数理定義
+         │
+         ▼
+    Reference Engine
+         │
+         ▼
+     Visualizer
+         │
+         ▼
+     Test Worlds
+         │
+         ▼
+ Transformer等と比較
+         │
+         ▼
+       実証
+```
+
+までを一つの成果物群にする。
+
+具体的には、
+
+**① Theory Specification**  
+Spark、Coalition、Ignition、Memory、Learning、Global Stateの正式定義。
+
+**② Reference Implementation**  
+Python/PyTorchによる標準実装。
+
+**③ Brain Simulator**  
+人工環境に置いて連続動作させられるシステム。
+
+**④ Brain Visualizer**  
+Spark活動と内部状態をリアルタイム観測できるUI。
+
+**⑤ Experimental Suite**  
+SwitchWorldやbelief revisionなどの実験環境。
+
+**⑥ Benchmark Report**  
+Transformer/RNN/RIM等との比較。
+
+この6個を最終成果物とするのがかなり綺麗。
+
+そして研究上の最終着地点は、
+
+> **「Spark型動的認知モデル」という理論体系を、反証可能な計算理論として定義すること。**
+
+だと思う。
+
+「人間の脳を再現した」ところをゴールにすると永遠に終わらない。一方、**明確に定義された計算原理を作り、それが実際に認知的振る舞いを生み出すことをプログラムで示す**ところなら、十分に大きく、かつ到達可能な研究目標になる。

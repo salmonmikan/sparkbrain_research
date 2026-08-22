@@ -1,0 +1,214 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sparkbrain.local/schemas/state-v0.2.schema.json",
+  "title": "SparkBrain Checkpoint v0.2",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "config",
+    "time",
+    "sparks",
+    "connections",
+    "queue",
+    "next_sequence",
+    "workspace",
+    "ignitions",
+    "stats",
+    "random_state"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.2"
+    },
+    "config": {
+      "$ref": "#/$defs/config"
+    },
+    "time": {
+      "type": "number",
+      "minimum": 0
+    },
+    "sparks": {
+      "type": "array",
+      "minItems": 1
+    },
+    "connections": {
+      "type": "array"
+    },
+    "broadcast_listeners": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "queue": {
+      "type": "array"
+    },
+    "next_sequence": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "active_hypotheses": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "stability": {
+      "type": "object"
+    },
+    "last_top_hypothesis": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "last_ignition_time": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "last_ignition_hypothesis": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "workspace": {
+      "type": "array"
+    },
+    "ignitions": {
+      "type": "array"
+    },
+    "last_coalitions": {
+      "type": "array"
+    },
+    "belief_label": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "stats": {
+      "type": "object"
+    },
+    "trace": {
+      "type": "array"
+    },
+    "fired_since_frame": {
+      "type": "array"
+    },
+    "active_edges_since_frame": {
+      "type": "array"
+    },
+    "updated_since_frame": {
+      "type": "array"
+    },
+    "random_state": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "config": {
+      "type": "object",
+      "required": [
+        "ignition_threshold",
+        "ignition_margin",
+        "min_support_sources",
+        "stability_evaluations",
+        "workspace_slots",
+        "support_tau",
+        "refractory_period",
+        "post_fire_residual",
+        "eligibility_decay",
+        "propagation_delay",
+        "random_seed"
+      ],
+      "properties": {
+        "ignition_threshold": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "ignition_margin": {
+          "type": "number",
+          "minimum": 0
+        },
+        "min_support_sources": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "stability_evaluations": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "workspace_slots": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "ignition_cooldown": {
+          "type": "number",
+          "minimum": 0
+        },
+        "diversity_bonus": {
+          "type": "number",
+          "minimum": 0
+        },
+        "temporal_coherence_bonus": {
+          "type": "number",
+          "minimum": 0
+        },
+        "contradiction_penalty": {
+          "type": "number",
+          "minimum": 0
+        },
+        "support_tau": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "refractory_period": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "post_fire_residual": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "active_epsilon": {
+          "type": "number",
+          "minimum": 0
+        },
+        "homeostatic_increment": {
+          "type": "number",
+          "minimum": 0
+        },
+        "threshold_relaxation_tau": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "eligibility_decay": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "learning_rate": {
+          "type": "number",
+          "minimum": 0
+        },
+        "max_abs_weight": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "propagation_delay": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "random_seed": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

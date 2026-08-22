@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sparkbrain.local/schemas/config-v0.2.schema.json",
+  "title": "SparkBrain BrainConfig v0.2",
+  "type": "object",
+  "required": [
+    "ignition_threshold",
+    "ignition_margin",
+    "min_support_sources",
+    "stability_evaluations",
+    "workspace_slots",
+    "support_tau",
+    "refractory_period",
+    "post_fire_residual",
+    "eligibility_decay",
+    "propagation_delay",
+    "random_seed"
+  ],
+  "properties": {
+    "ignition_threshold": {"type": "number", "exclusiveMinimum": 0},
+    "ignition_margin": {"type": "number", "minimum": 0},
+    "min_support_sources": {"type": "integer", "minimum": 1},
+    "stability_evaluations": {"type": "integer", "minimum": 1},
+    "workspace_slots": {"type": "integer", "minimum": 1},
+    "ignition_cooldown": {"type": "number", "minimum": 0},
+    "diversity_bonus": {"type": "number", "minimum": 0},
+    "temporal_coherence_bonus": {"type": "number", "minimum": 0},
+    "contradiction_penalty": {"type": "number", "minimum": 0},
+    "support_tau": {"type": "number", "exclusiveMinimum": 0},
+    "refractory_period": {"type": "number", "exclusiveMinimum": 0},
+    "post_fire_residual": {"type": "number", "minimum": 0, "maximum": 1},
+    "active_epsilon": {"type": "number", "minimum": 0},
+    "homeostatic_increment": {"type": "number", "minimum": 0},
+    "threshold_relaxation_tau": {"type": "number", "exclusiveMinimum": 0},
+    "eligibility_decay": {"type": "number", "minimum": 0, "maximum": 1},
+    "learning_rate": {"type": "number", "minimum": 0},
+    "max_abs_weight": {"type": "number", "exclusiveMinimum": 0},
+    "propagation_delay": {"type": "number", "exclusiveMinimum": 0},
+    "random_seed": {"type": "integer"}
+  },
+  "additionalProperties": false
+}

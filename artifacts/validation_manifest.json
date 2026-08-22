@@ -1,0 +1,19 @@
+{
+  "AGENTS.md": "8388bb29a02677a78f47256516b6670cc7d114c69dae6112de1e139467b39425",
+  "README.md": "09d08caa8041368883435ed2e6f3bc184f54a64e75bca346a1777b9003c9d5da",
+  "artifacts/benchmarks/benchmark_results.json": "4c4704c20915104b5366c5d138bc37df069752f532ab0cfea97e0a27c2ac5488",
+  "artifacts/demo/checkpoint.json": "d41b733f3a4325d99be7d460853f60b822d89ad7fb69a91f8fc42c9c67b73570",
+  "artifacts/demo/trace.json": "9788890ed33c01112f9882b453d7e1f603b0c9b8fd25f59e1fc7d4daf84c656a",
+  "artifacts/demo/visualizer.html": "67d81e1378e2d0fcab9e97492d75242dd1fdd0d3fa1767f702114bca8e3e2920",
+  "docs/CODEX_EXECUTION_BRIEF.md": "a84e5c4aeda22876b089804b22cfa8a792f87b9ef1bb7fe0eea324b20f5cff7e",
+  "docs/EXPERIMENT_PROTOCOL.md": "439207f8b8aeb4f3b6d6dd0df71cc921ac8532573d344b46ae8abfa8c51139fe",
+  "docs/PRIOR_ART_GAP_ANALYSIS.md": "cb9b8d41f8e031f0c3d68b6db34ba8192f890baa115d7140bee1789378f8721a",
+  "docs/PROJECT_CHARTER.md": "e160f40f27c005fe7006d49999b61687fd126e49b45cbc15daebdcd61428cfce",
+  "docs/PROJECT_STATUS.md": "6a0b79fa836c9f8427249a81143108c53e6b0a0d04fcefb7da1459d77f51829f",
+  "docs/THEORY_SPEC_v0.2.md": "c0651b686c4a13bad7541e1bce1a7cdd94af339c81aca9dd40e4b8927e78648a",
+  "schemas/config-v0.2.schema.json": "7a663d44261867157f34c70042fcc7810d5101a7852f22070182843abcc2872a",
+  "schemas/state-v0.2.schema.json": "24253fffbde7060fcc01a211c616aeb6d3505557ff6cd96f5d1ade81afad719c",
+  "schemas/trace-v0.2.schema.json": "2eed3249effbe5fea09a3e60143142673de434efbeae70187bf8e3598bbeb0f7",
+  "src/sparkbrain/engine.py": "590b37f80db266b5e8741adc553d93d63bf459e6304fbbb63ebf6dcc97e208eb",
+  "src/sparkbrain/model.py": "a98db8c33c22759460258476533cb73f06bb49b5fa85999117606e96d0391f6f"
+}

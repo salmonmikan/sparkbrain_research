@@ -1,0 +1,138 @@
+from __future__ import annotations
+
+import hashlib
+import json
+import math
+import subprocess
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+
+REQUIRED = [
+    "README.md",
+    "AGENTS.md",
+    "docs/PROJECT_CHARTER.md",
+    "docs/THEORY_SPEC_v0.2.md",
+    "docs/PROJECT_STATUS.md",
+    "docs/PRIOR_ART_GAP_ANALYSIS.md",
+    "docs/EXPERIMENT_PROTOCOL.md",
+    "docs/CODEX_EXECUTION_BRIEF.md",
+    "src/sparkbrain/engine.py",
+    "src/sparkbrain/model.py",
+    "artifacts/demo/trace.json",
+    "artifacts/demo/checkpoint.json",
+    "artifacts/demo/visualizer.html",
+    "artifacts/benchmarks/benchmark_results.json",
+    "schemas/config-v0.2.schema.json",
+    "schemas/trace-v0.2.schema.json",
+    "schemas/state-v0.2.schema.json",
+]
+
+
+def fail(message: str) -> None:
+    raise SystemExit(f"VALIDATION FAILED: {message}")
+
+
+def sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def assert_finite(value: object, location: str) -> None:
+    if isinstance(value, float) and not math.isfinite(value):
+        fail(f"non-finite number at {location}")
+    if isinstance(value, dict):
+        for key, child in value.items():
+            assert_finite(child, f"{location}.{key}")
+    elif isinstance(value, list):
+        for index, child in enumerate(value):
+            assert_finite(child, f"{location}[{index}]")
+
+
+def main() -> None:
+    for relative in REQUIRED:
+        path = ROOT / relative
+        if not path.is_file():
+            fail(f"missing required file: {relative}")
+        if path.stat().st_size == 0:
+            fail(f"empty required file: {relative}")
+
+    trace = json.loads((ROOT / "artifacts/demo/trace.json").read_text(encoding="utf-8"))
+    if not isinstance(trace, dict):
+        fail("demo trace must be a JSON object")
+    frames = trace.get("frames")
+    if not isinstance(frames, list) or len(frames) < 3:
+        fail("demo trace must contain at least three frames")
+    if not isinstance(trace.get("graph"), dict):
+        fail("demo trace is missing graph metadata")
+    assert_finite(trace, "trace")
+
+    results = json.loads(
+        (ROOT / "artifacts/benchmarks/benchmark_results.json").read_text(encoding="utf-8")
+    )
+    if not results.get("aggregate") or not results.get("episodes"):
+        fail("benchmark result is missing aggregate or episode rows")
+    model_names = {row.get("model") for row in results["aggregate"]}
+    required_models = {
+        "sparkbrain",
+        "sparkbrain_no_residual",
+        "sparkbrain_single_spark_ignition",
+        "accumulator",
+        "hard_wta",
+        "instant",
+    }
+    if not required_models.issubset(model_names):
+        fail(f"benchmark models missing: {sorted(required_models - model_names)}")
+    assert_finite(results, "benchmark")
+
+    checkpoint = json.loads(
+        (ROOT / "artifacts/demo/checkpoint.json").read_text(encoding="utf-8")
+    )
+    assert_finite(checkpoint, "checkpoint")
+
+    try:
+        from jsonschema import Draft202012Validator
+    except ImportError:
+        Draft202012Validator = None
+    if Draft202012Validator is not None:
+        schema_dir = ROOT / "schemas"
+        trace_schema = json.loads((schema_dir / "trace-v0.2.schema.json").read_text())
+        state_schema = json.loads((schema_dir / "state-v0.2.schema.json").read_text())
+        config_schema = json.loads((schema_dir / "config-v0.2.schema.json").read_text())
+        Draft202012Validator(trace_schema).validate(trace)
+        Draft202012Validator(state_schema).validate(checkpoint)
+        Draft202012Validator(config_schema).validate(checkpoint["config"])
+
+    html = (ROOT / "artifacts/demo/visualizer.html").read_text(encoding="utf-8")
+    for marker in ("SparkBrain", "IGNITION", "const payload"):
+        if marker not in html:
+            fail(f"visualizer missing marker: {marker}")
+
+    compile_result = subprocess.run(
+        [sys.executable, "-m", "compileall", "-q", "src", "scripts", "tests"],
+        cwd=ROOT,
+        check=False,
+    )
+    if compile_result.returncode:
+        fail("compileall failed")
+
+    manifest = {
+        relative: sha256(ROOT / relative)
+        for relative in REQUIRED
+    }
+    output = ROOT / "artifacts" / "validation_manifest.json"
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+    print(f"Validated {len(REQUIRED)} required files")
+    print(f"Trace frames: {len(frames)}")
+    print(f"Benchmark episode rows: {len(results['episodes'])}")
+    print(f"Wrote: {output.relative_to(ROOT)}")
+
+
+if __name__ == "__main__":
+    main()
