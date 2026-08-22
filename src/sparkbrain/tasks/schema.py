@@ -10,6 +10,22 @@ SCHEMA_VERSION = "0.2"
 RESERVED_OBSERVATION_KEYS = frozenset({"truth", "answer", "target", "label_truth"})
 
 
+def reserved_observation_paths(value: Any, *, path: str = "metadata") -> tuple[str, ...]:
+    """Return nested metadata paths that expose evaluator-owned field names."""
+
+    leaked: list[str] = []
+    if isinstance(value, dict):
+        for key, child in value.items():
+            child_path = f"{path}.{key}"
+            if str(key).casefold() in RESERVED_OBSERVATION_KEYS:
+                leaked.append(child_path)
+            leaked.extend(reserved_observation_paths(child, path=child_path))
+    elif isinstance(value, (list, tuple)):
+        for index, child in enumerate(value):
+            leaked.extend(reserved_observation_paths(child, path=f"{path}[{index}]"))
+    return tuple(leaked)
+
+
 @dataclass(frozen=True, slots=True)
 class Observation:
     observation_id: str
@@ -40,9 +56,9 @@ class Observation:
                 raise ValueError(f"Observation {name} must be finite")
         if self.emitted_time < 0 or self.delivery_time < 0:
             raise ValueError("Observation times must be >= 0")
-        leaked = RESERVED_OBSERVATION_KEYS & set(self.metadata)
+        leaked = reserved_observation_paths(self.metadata)
         if leaked:
-            raise ValueError(f"Observation metadata leaks evaluator fields: {sorted(leaked)}")
+            raise ValueError(f"Observation metadata leaks evaluator fields: {list(leaked)}")
 
 
 @dataclass(frozen=True, slots=True)
@@ -81,7 +97,7 @@ class Episode:
     def validate(self) -> None:
         if self.schema_version != SCHEMA_VERSION:
             raise ValueError(f"Unsupported Episode schema: {self.schema_version!r}")
-        if self.split not in {"dev", "test", "smoke"}:
+        if self.split not in {"train", "dev", "test", "smoke"}:
             raise ValueError(f"Unsupported Episode split: {self.split!r}")
         if not self.episode_id or not self.world_id or not self.steps:
             raise ValueError("Episode identifiers and steps must not be empty")

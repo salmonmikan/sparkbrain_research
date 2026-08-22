@@ -434,6 +434,23 @@ These are explicit phase boundaries, not hidden omissions.
 - `replay.py`: dynamics-free trace reading.
 - `schemas/`: versioned JSON contracts for configuration, trace, and checkpoint state.
 
+### `external_validation/` (C06 foundation)
+
+Model-independent external evaluation contracts live outside the cognition core:
+
+- `belief_r.py`: official pinned test-only cache acquisition, integrity verification,
+  sequential pairing, and C02 Episode mapping;
+- `symbolic.py`: seeded non-monotonic streams plus an independent symbolic oracle and
+  template-group splits;
+- `transforms.py`: target-blind adversarial evidence-order/source transforms;
+- `metrics.py`: revision/error/attribution evaluation primitives;
+- `interventions.py`: evidence removal/replacement and expected-effect assessment;
+- `gate.py`: fail-closed C04/C05 prerequisite check.
+
+Dataset acquisition is the only network-capable operation and must be explicitly requested.
+Normal loading, transforms, evaluation primitives, and tests are local/offline. No external
+dataset text or upstream executable code is packaged.
+
 Checkpoint state includes the pending event queue, sequence number, persistent hypotheses, stability, Workspace, eligibility, counters, trace buffer, frame-local audit buffers, and RNG state. The format is research-versioned and not yet promised as a permanent public storage API.
 
 

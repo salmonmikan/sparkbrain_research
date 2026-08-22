@@ -47,6 +47,7 @@ SparkBrainは、局所的で持続的な活動単位 **Spark** が、イベン�
 - 再現可能なtrace、JSON、CSV、Markdown report
 - ローカル完結条件を検査するreadiness checker
 - loopback限定でpause/step/reset、介入fork、比較、blind export/importを行うBrain Lab
+- pinned Belief-R cache検証、記号的非単調stream、target-blind変換を含むC06外部評価基盤（モデル比較はC04/C05統合待ち）
 
 ## ローカルで動かす
 
@@ -89,6 +90,9 @@ python scripts/run_brain_lab.py
 ```
 
 既定URLは `http://127.0.0.1:8765` です。UI assetは同梱され、CDN、外部API、analyticsを使いません。操作、画面、介入、blind mode、artifact、性能境界は [`docs/BRAIN_LAB.md`](docs/BRAIN_LAB.md) を参照してください。
+
+C06の外部評価基盤、Belief-Rのtest-only/ライセンス境界、取得・offline検証手順は
+[`docs/EXTERNAL_VALIDATION.md`](docs/EXTERNAL_VALIDATION.md) を参照してください。
 
 生成物:
 

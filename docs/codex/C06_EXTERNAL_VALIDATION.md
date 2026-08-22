@@ -76,3 +76,12 @@ Generate order permutations, delayed corrections, duplicate paraphrases, and cor
 - cherry-picking only update-needed cases;
 - using benchmark answers inside routing features;
 - claiming human-like belief revision from one dataset.
+
+## Foundation implementation status — 2026-08-23
+
+The model-independent foundation is implemented in `sparkbrain.external_validation`; see
+`docs/EXTERNAL_VALIDATION.md`. It includes the pinned official Belief-R test-only cache
+adapter, recursive answer-leakage checks, Track B generator/oracle/group splits, Track C
+target-blind transforms, metrics/error/intervention primitives, schemas/config, and offline
+tests. Model glue, direct/baseline comparisons, manual trace audit, results, and claim-grade
+updates remain blocked until C04 and C05 are integrated.

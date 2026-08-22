@@ -16,3 +16,7 @@ dist/
 build/
 *.egg-info/
 artifacts/benchmarks/benchmark_results.json
+
+# C06 external dataset text is acquired locally and is never redistributed.
+data/external/
+.cache/external/

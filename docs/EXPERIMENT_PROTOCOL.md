@@ -91,6 +91,22 @@ Candidate tasks:
 
 External task adapters must preserve sequential evidence instead of flattening all premises into one input.
 
+#### C06 foundation contract
+
+Belief-R is the official `CAiRE/belief_r` Hugging Face test split pinned by full revision,
+size, SHA-256, CSV header, row count, and `time_t`/`time_t1` pair counts. It is never split
+into development data and is never used for training, tuning, prompt selection, threshold
+selection, or early stopping. Adapter and model choices must be frozen on separate Track B
+or other licensed development data before one final Belief-R run.
+
+Track B uses seeded symbolic non-monotonic streams with template-family group splits, not
+example-level random splits. Track C transforms observations only; evaluator Targets are
+aligned afterward through returned source indices. External text stays in a gitignored local
+cache, and evaluation after acquisition must succeed with network access blocked.
+
+The model execution gate remains closed until C04 learned routing and C05 matched baselines
+are integrated. Foundation utilities and their tests do not constitute Gate P3 evidence.
+
 ### Phase 4 — Local spiking equivalence
 
 Purpose:

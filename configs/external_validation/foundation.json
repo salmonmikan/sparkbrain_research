@@ -1,0 +1,28 @@
+{
+  "schema_version": "0.2",
+  "track_a": {
+    "dataset": "belief_r",
+    "role": "official_test_only",
+    "allow_training": false,
+    "allow_tuning": false
+  },
+  "track_b": {
+    "generator": "symbolic_nonmonotonic_v1",
+    "split_seed": 1729
+  },
+  "track_c": {
+    "target_blind": true,
+    "transforms": [
+      "order_permutation",
+      "delay",
+      "duplicate_restatement",
+      "correlated_source_variants",
+      "irrelevant_distractor"
+    ]
+  },
+  "model_evaluation_gate": {
+    "c04_learned_backend_integrated": false,
+    "c05_matched_harness_integrated": false,
+    "status": "closed"
+  }
+}

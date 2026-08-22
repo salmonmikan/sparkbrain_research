@@ -44,7 +44,7 @@ See `docs/LOCAL_EXECUTION_POLICY.md`.
 | C04 learned sparse-rate backend | implemented with held-out synthetic result and collapse diagnostics | `src/sparkbrain/learned/`, `artifacts/phase2/`, `docs/C04_LEARNED_ROUTING_RESULTS.md` |
 | Metrics for stability/revision/recovery | runnable | `src/sparkbrain/metrics.py` |
 | Static replay visualizer | runnable locally | `artifacts/demo/visualizer.html` |
-| Unit tests | 134 passing with PyTorch available; optional learned/spiking tests require their extras | `python -m pytest -q` |
+| Unit tests | integration verification pending | `python -m pytest -q` |
 | Local readiness audit | runnable | `scripts/local_readiness_check.py` |
 | Generated Phase-0 report | complete with limitations | `artifacts/benchmarks/benchmark_report.md` |
 | Codex repository instructions | complete | `AGENTS.md`, `.agents/skills/sparkbrain-research/SKILL.md` |
@@ -85,7 +85,7 @@ The accumulator baseline is close in this hand-authored setting. Therefore this 
 | Priority | Missing capability | Codex task |
 |---:|---|---|
 | P1 | matched GRU/Transformer/RIM/Bayesian baselines | C05 |
-| P1 | external belief-revision and relational tasks with local cached datasets | C06 |
+| P1 | external model comparison; model-independent cache/schema/generator/metric foundation is implemented, but C04/C05 gate remains closed | C06 |
 | P2 | fully spiking and multi-world equivalence beyond the reduced hybrid | C07 follow-on |
 | P2 | structural plasticity and emergent-organ tests | C08 |
 | continuous | systematic prior-art review and novelty audit | C09 |
