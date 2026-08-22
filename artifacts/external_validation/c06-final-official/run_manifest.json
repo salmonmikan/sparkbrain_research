@@ -1,0 +1,43 @@
+{
+  "adapter_manifest": "configs/external_validation/model_adapters.json",
+  "adapter_manifest_sha256": "3c31935c5aebaa5198652e413d49a3b4cb9248d022e8cf19a3114fdf5fd779fa",
+  "artifact_content_policy": "IDs, hashes, metrics, probabilities, and predictions only; no official text",
+  "belief_r_cache_sha256": "b584c18328965cf3eb3d36f2f9ef145c1e15c9bf57bba084982ba18df1fa4153",
+  "belief_r_fit_or_tuning": false,
+  "belief_r_pairs": 1744,
+  "belief_r_revision": "3719f5804c63318037465fecf298a7fd78d99121",
+  "belief_r_role": "official_test_only_zero_shot",
+  "belief_r_rows": 3656,
+  "completed": true,
+  "config": "configs/external_validation/final.json",
+  "config_sha256": "1c49c28affebc1a79619083272c9a5b83c35a169538e0260f3a5ee3eb66ba1fc",
+  "determinism": {
+    "deterministic_algorithms": true,
+    "seed": 101,
+    "threads": 1,
+    "torch_version": "2.13.0+cpu"
+  },
+  "fairness": {
+    "compute_matched": false,
+    "parameter_matched": false,
+    "reason": "C04 hashes raw evidence text while C05 uses its frozen dev-fitted feature vocabulary and maps unseen external categorical tokens to UNK while retaining strength/timing; C05's reduced run also failed scientific compute matching",
+    "same_context_steps_track_a": 2,
+    "same_effective_features": false,
+    "same_example_budget": true,
+    "same_observation_objects_at_adapter_api": true,
+    "same_official_examples": true,
+    "tokenizer_matched": false
+  },
+  "information_conditions": {
+    "chance": "uniform three-choice bound; no target or semantic features",
+    "direct": "C05 causal Transformer; observation-only; frozen seed 101",
+    "explicit": "C05 explicit-state memory; observation-only; frozen seed 101",
+    "oracle": "evaluator-only target-visible upper bound; excluded from matched conclusions",
+    "spark": "C04 learned sparse-rate checkpoint; observation-only; frozen seed 41"
+  },
+  "offline_network_blocked": true,
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.13.3",
+  "run_id": "c06-final-official",
+  "schema_version": "0.2"
+}

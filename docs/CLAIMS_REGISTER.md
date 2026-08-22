@@ -114,6 +114,19 @@ See `docs/research/literature_matrix.csv` for source-level verdicts and `docs/re
 - Permitted wording: “bounded structural plasticity produced a stable candidate pair in this
   controlled-synthetic run, but causal specialization criteria failed.” “Organs emerged”
   remains prohibited. See `docs/C08_STRUCTURAL_PLASTICITY_RESULTS.md`.
+## C06 official external-result boundary (run `c06-final-official`)
+
+- The full pinned official test ran once, zero-shot and network-blocked. This is external
+  execution evidence, not a successful generalization result.
+- Spark BU-Acc was 0.0391, BM-Acc 0.0896, BREU 0.0643, and final coverage 0.2271. Direct and
+  uniform chance both reached BREU 0.25; Spark did not improve the measured frontier.
+- Effective input representations, parameters, and compute were unmatched. C05 external
+  categorical tokens used UNK; C04 hashed raw text. The C05 quality/compute confounds remain.
+- Same-ID duplicate and irrelevant-distractor interventions changed Spark predictions in
+  18.98% and 21.90% of pairs. Attribution fidelity is unavailable because checkpoints do not
+  cite input evidence IDs.
+- CL-007 remains E0. Permitted wording is limited to: “The frozen adapters completed the
+  official offline protocol and produced a negative external result.”
 
 ## Claim change procedure
 

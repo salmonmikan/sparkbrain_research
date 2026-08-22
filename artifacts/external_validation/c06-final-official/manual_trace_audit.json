@@ -1,0 +1,39 @@
+{
+  "audit_scope": "local-cache sequence, pairing, choice-ID, and evaluator-separation review",
+  "auditor": "Codex",
+  "external_text_committed": false,
+  "sample_count": 16,
+  "selection": "lexicographically first and last pair ID in each update-by-modus-by-relation stratum",
+  "sample_pair_ids": [
+    "belief_r:102:ponens:184-strong:108",
+    "belief_r:94:ponens:175-strong:100",
+    "belief_r:0:ponens:0-weak:1282",
+    "belief_r:99:ponens:183-strong:107",
+    "belief_r:102:tollens:184-strong:749",
+    "belief_r:94:tollens:175-strong:741",
+    "belief_r:0:tollens:0-weak:1513",
+    "belief_r:99:tollens:183-strong:748",
+    "belief_r:102:ponens:185-strong:109",
+    "belief_r:94:ponens:178-strong:102",
+    "belief_r:0:ponens:0-strong:0",
+    "belief_r:98:ponens:181-strong:105",
+    "belief_r:102:tollens:185-strong:750",
+    "belief_r:94:tollens:178-strong:743",
+    "belief_r:0:tollens:0-strong:641",
+    "belief_r:98:tollens:181-strong:746"
+  ],
+  "strata": {
+    "update_or_maintain": [false, true],
+    "modus": ["ponens", "tollens"],
+    "relation_type": ["If-Event-Then-Event", "If-Event-Then-MentalState"]
+  },
+  "checks": {
+    "time_t_then_time_t1_sequence_preserved": 16,
+    "time_t1_retains_time_t_premise_prefix": 16,
+    "choice_identity_preserved_across_pair": 16,
+    "target_fields_absent_from_observation_metadata": 16,
+    "adapter_predictions_derived_without_evaluator_target": 16
+  },
+  "exceptions": [],
+  "boundary": "The audit checks adapter/pair integrity; it does not re-adjudicate official human labels or claim semantic independence from model pretraining."
+}

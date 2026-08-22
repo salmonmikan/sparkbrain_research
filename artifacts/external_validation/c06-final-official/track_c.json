@@ -1,0 +1,252 @@
+{
+  "chance": {
+    "correlated_source": {
+      "context_length_degradation": 0.0,
+      "coverage": 1.0,
+      "episodes": 1744,
+      "final_accuracy": 0.19208715596330275,
+      "final_accuracy_delta_from_original": 0.0,
+      "prediction_change_from_original": 0.0
+    },
+    "delayed_decisive_correction": {
+      "context_length_degradation": null,
+      "coverage": 1.0,
+      "episodes": 1744,
+      "final_accuracy": 0.19208715596330275,
+      "final_accuracy_delta_from_original": 0.0,
+      "prediction_change_from_original": 0.0
+    },
+    "deterministic_restatement": {
+      "context_length_degradation": null,
+      "coverage": 1.0,
+      "episodes": 1744,
+      "final_accuracy": 0.19208715596330275,
+      "final_accuracy_delta_from_original": 0.0,
+      "prediction_change_from_original": 0.0
+    },
+    "irrelevant_distractor": {
+      "context_length_degradation": 0.0,
+      "coverage": 1.0,
+      "episodes": 1744,
+      "final_accuracy": 0.19208715596330275,
+      "final_accuracy_delta_from_original": 0.0,
+      "prediction_change_from_original": 0.0
+    },
+    "premise_permutation": {
+      "context_length_degradation": null,
+      "coverage": 1.0,
+      "episodes": 1744,
+      "final_accuracy": 0.19208715596330275,
+      "final_accuracy_delta_from_original": 0.0,
+      "prediction_change_from_original": 0.0
+    },
+    "same_id_duplicate": {
+      "context_length_degradation": 0.0,
+      "coverage": 1.0,
+      "episodes": 1744,
+      "final_accuracy": 0.19208715596330275,
+      "final_accuracy_delta_from_original": 0.0,
+      "prediction_change_from_original": 0.0
+    }
+  },
+  "direct": {
+    "correlated_source": {
+      "context_length_degradation": 0.0,
+      "coverage": 1.0,
+      "episodes": 1744,
+      "final_accuracy": 0.19208715596330275,
+      "final_accuracy_delta_from_original": 0.0,
+      "prediction_change_from_original": 0.0
+    },
+    "delayed_decisive_correction": {
+      "context_length_degradation": null,
+      "coverage": 1.0,
+      "episodes": 1744,
+      "final_accuracy": 0.19208715596330275,
+      "final_accuracy_delta_from_original": 0.0,
+      "prediction_change_from_original": 0.0
+    },
+    "deterministic_restatement": {
+      "context_length_degradation": null,
+      "coverage": 1.0,
+      "episodes": 1744,
+      "final_accuracy": 0.19208715596330275,
+      "final_accuracy_delta_from_original": 0.0,
+      "prediction_change_from_original": 0.0
+    },
+    "irrelevant_distractor": {
+      "context_length_degradation": 0.0,
+      "coverage": 1.0,
+      "episodes": 1744,
+      "final_accuracy": 0.19208715596330275,
+      "final_accuracy_delta_from_original": 0.0,
+      "prediction_change_from_original": 0.0
+    },
+    "premise_permutation": {
+      "context_length_degradation": null,
+      "coverage": 1.0,
+      "episodes": 1744,
+      "final_accuracy": 0.19208715596330275,
+      "final_accuracy_delta_from_original": 0.0,
+      "prediction_change_from_original": 0.0
+    },
+    "same_id_duplicate": {
+      "context_length_degradation": 0.0,
+      "coverage": 1.0,
+      "episodes": 1744,
+      "final_accuracy": 0.19208715596330275,
+      "final_accuracy_delta_from_original": 0.0,
+      "prediction_change_from_original": 0.0
+    }
+  },
+  "explicit": {
+    "correlated_source": {
+      "context_length_degradation": -0.19208715596330275,
+      "coverage": 1.0,
+      "episodes": 1744,
+      "final_accuracy": 0.19208715596330275,
+      "final_accuracy_delta_from_original": -0.19208715596330275,
+      "prediction_change_from_original": 1.0
+    },
+    "delayed_decisive_correction": {
+      "context_length_degradation": null,
+      "coverage": 0.0,
+      "episodes": 1744,
+      "final_accuracy": 0.0,
+      "final_accuracy_delta_from_original": 0.0,
+      "prediction_change_from_original": 0.0
+    },
+    "deterministic_restatement": {
+      "context_length_degradation": null,
+      "coverage": 0.0,
+      "episodes": 1744,
+      "final_accuracy": 0.0,
+      "final_accuracy_delta_from_original": 0.0,
+      "prediction_change_from_original": 0.0
+    },
+    "irrelevant_distractor": {
+      "context_length_degradation": -0.19208715596330275,
+      "coverage": 1.0,
+      "episodes": 1744,
+      "final_accuracy": 0.19208715596330275,
+      "final_accuracy_delta_from_original": -0.19208715596330275,
+      "prediction_change_from_original": 1.0
+    },
+    "premise_permutation": {
+      "context_length_degradation": null,
+      "coverage": 0.0,
+      "episodes": 1744,
+      "final_accuracy": 0.0,
+      "final_accuracy_delta_from_original": 0.0,
+      "prediction_change_from_original": 0.0
+    },
+    "same_id_duplicate": {
+      "context_length_degradation": -0.19208715596330275,
+      "coverage": 1.0,
+      "episodes": 1744,
+      "final_accuracy": 0.19208715596330275,
+      "final_accuracy_delta_from_original": -0.19208715596330275,
+      "prediction_change_from_original": 1.0
+    }
+  },
+  "oracle": {
+    "correlated_source": {
+      "context_length_degradation": 0.0,
+      "coverage": 1.0,
+      "episodes": 1744,
+      "final_accuracy": 1.0,
+      "final_accuracy_delta_from_original": 0.0,
+      "prediction_change_from_original": 0.0
+    },
+    "delayed_decisive_correction": {
+      "context_length_degradation": null,
+      "coverage": 1.0,
+      "episodes": 1744,
+      "final_accuracy": 1.0,
+      "final_accuracy_delta_from_original": 0.0,
+      "prediction_change_from_original": 0.0
+    },
+    "deterministic_restatement": {
+      "context_length_degradation": null,
+      "coverage": 1.0,
+      "episodes": 1744,
+      "final_accuracy": 1.0,
+      "final_accuracy_delta_from_original": 0.0,
+      "prediction_change_from_original": 0.0
+    },
+    "irrelevant_distractor": {
+      "context_length_degradation": 0.0,
+      "coverage": 1.0,
+      "episodes": 1744,
+      "final_accuracy": 1.0,
+      "final_accuracy_delta_from_original": 0.0,
+      "prediction_change_from_original": 0.0
+    },
+    "premise_permutation": {
+      "context_length_degradation": null,
+      "coverage": 1.0,
+      "episodes": 1744,
+      "final_accuracy": 1.0,
+      "final_accuracy_delta_from_original": 0.0,
+      "prediction_change_from_original": 0.0
+    },
+    "same_id_duplicate": {
+      "context_length_degradation": 0.0,
+      "coverage": 1.0,
+      "episodes": 1744,
+      "final_accuracy": 1.0,
+      "final_accuracy_delta_from_original": 0.0,
+      "prediction_change_from_original": 0.0
+    }
+  },
+  "spark": {
+    "correlated_source": {
+      "context_length_degradation": -0.18463302752293578,
+      "coverage": 0.7110091743119266,
+      "episodes": 1744,
+      "final_accuracy": 0.24311926605504589,
+      "final_accuracy_delta_from_original": -0.18463302752293578,
+      "prediction_change_from_original": 0.5103211009174312
+    },
+    "delayed_decisive_correction": {
+      "context_length_degradation": null,
+      "coverage": 0.22706422018348624,
+      "episodes": 1744,
+      "final_accuracy": 0.058486238532110095,
+      "final_accuracy_delta_from_original": 0.0,
+      "prediction_change_from_original": 0.0
+    },
+    "deterministic_restatement": {
+      "context_length_degradation": null,
+      "coverage": 0.231651376146789,
+      "episodes": 1744,
+      "final_accuracy": 0.06823394495412843,
+      "final_accuracy_delta_from_original": -0.009747706422018339,
+      "prediction_change_from_original": 0.3646788990825688
+    },
+    "irrelevant_distractor": {
+      "context_length_degradation": -0.03153669724770642,
+      "coverage": 0.3394495412844037,
+      "episodes": 1744,
+      "final_accuracy": 0.09002293577981652,
+      "final_accuracy_delta_from_original": -0.03153669724770642,
+      "prediction_change_from_original": 0.2190366972477064
+    },
+    "premise_permutation": {
+      "context_length_degradation": null,
+      "coverage": 0.22821100917431192,
+      "episodes": 1744,
+      "final_accuracy": 0.05504587155963303,
+      "final_accuracy_delta_from_original": 0.0034403669724770644,
+      "prediction_change_from_original": 0.10091743119266056
+    },
+    "same_id_duplicate": {
+      "context_length_degradation": -0.05103211009174311,
+      "coverage": 0.41341743119266056,
+      "episodes": 1744,
+      "final_accuracy": 0.1095183486238532,
+      "final_accuracy_delta_from_original": -0.05103211009174311,
+      "prediction_change_from_original": 0.18979357798165136
+    }
+  }
+}

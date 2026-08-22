@@ -11,7 +11,9 @@ v0.2.1 fixes the core destination to one general-purpose local computer, adds a 
 It now includes an optional controlled-synthetic learned-routing backend and a matched-baseline
 harness. The reduced C05 run did not achieve scientific compute or dev quality matching and is
 not evidence of a general comparison advantage. It is not a validated biological model. C07
-adds only a reduced hybrid canonical comparison.
+adds only a reduced hybrid canonical comparison. C06 completed one frozen offline official
+Belief-R run, but Spark BREU was below direct and chance; this is a retained negative result,
+not external-generalization evidence.
 
 ## 2. Local execution contract
 
@@ -45,6 +47,7 @@ See `docs/LOCAL_EXECUTION_POLICY.md`.
 | C02 controlled worlds and statistical suite | implemented with negative results | `src/sparkbrain/tasks/`, `evaluation/`, `artifacts/phase1/c02-main-1000/` |
 | C04 learned sparse-rate backend | implemented with held-out synthetic result and collapse diagnostics | `src/sparkbrain/learned/`, `artifacts/phase2/`, `docs/C04_LEARNED_ROUTING_RESULTS.md` |
 | C08 bounded structural plasticity | implemented with valid negative specialization result | `src/sparkbrain/structural/`, `artifacts/phase3/`, `docs/C08_STRUCTURAL_PLASTICITY_RESULTS.md` |
+| C06 external validation | full pinned Belief-R zero-shot run completed with negative result | `artifacts/external_validation/c06-final-official/`, `docs/C06_EXTERNAL_VALIDATION_RESULTS.md` |
 | Metrics for stability/revision/recovery | runnable | `src/sparkbrain/metrics.py` |
 | Static replay visualizer | runnable locally | `artifacts/demo/visualizer.html` |
 | Unit tests | integration verification pending | `python -m pytest -q` |
@@ -88,7 +91,7 @@ The accumulator baseline is close in this hand-authored setting. Therefore this 
 | Priority | Missing capability | Codex task |
 |---:|---|---|
 | P1 | full-scale matched-baseline scientific run; reduced harness is complete | C05 follow-on |
-| P1 | external model comparison; cache/schema/generator/metric foundation is implemented and model glue is pending | C06 |
+| P2 | semantic language-encoder and citation-capable attribution follow-on; frozen external adapter run is complete | C06 follow-on |
 | P2 | fully spiking and multi-world equivalence beyond the reduced hybrid | C07 follow-on |
 | P2 | additional structural-plasticity hypotheses after negative causal result | C08 follow-on |
 | continuous | systematic prior-art review and novelty audit | C09 |
@@ -163,3 +166,9 @@ homeostasis, budgets, checkpoint continuation, actual selected-edge counters, pa
 controls, and sensitivity artifacts are covered. The two-seed candidate passed multiplicity
 only; decisiveness, fertility, and specificity failed. CL-008 remains E0 and no emergent-organ
 claim is permitted.
+C06 is locally implemented through a frozen adapter manifest that verifies the C04/C05
+checkpoint, configuration, profile, encoder vocabulary, and input dimension. The
+network-blocked official run evaluated all 1,744 Belief-R pairs without test fitting or
+tuning. Spark BU/BM/BREU were 0.0391/0.0896/0.0643, below direct and chance BREU 0.25. The C05
+external feature path maps unseen categorical tokens to UNK, parameter/compute matching is
+false, and evidence attribution is unavailable. Gate P3 and CL-007 therefore remain unmet.

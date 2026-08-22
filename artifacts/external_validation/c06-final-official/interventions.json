@@ -1,0 +1,52 @@
+{
+  "chance": {
+    "attribution_fidelity": null,
+    "attribution_status": "not_available",
+    "causal_delta_t_to_t1": 0.0,
+    "entity_cross_talk_rate": 0.0,
+    "episodes": 1744,
+    "irrelevant_distractor_change_rate": 0.0,
+    "remove_decisive_change_rate": 0.0,
+    "same_id_duplicate_change_rate": 0.0
+  },
+  "direct": {
+    "attribution_fidelity": null,
+    "attribution_status": "not_available",
+    "causal_delta_t_to_t1": 1.0,
+    "entity_cross_talk_rate": 0.0,
+    "episodes": 1744,
+    "irrelevant_distractor_change_rate": 0.0,
+    "remove_decisive_change_rate": 1.0,
+    "same_id_duplicate_change_rate": 0.0
+  },
+  "explicit": {
+    "attribution_fidelity": null,
+    "attribution_status": "not_available",
+    "causal_delta_t_to_t1": 0.0,
+    "entity_cross_talk_rate": 1.0,
+    "episodes": 1744,
+    "irrelevant_distractor_change_rate": 1.0,
+    "remove_decisive_change_rate": 0.0,
+    "same_id_duplicate_change_rate": 1.0
+  },
+  "oracle": {
+    "attribution_fidelity": null,
+    "attribution_status": "not_available",
+    "causal_delta_t_to_t1": 0.6158256880733946,
+    "entity_cross_talk_rate": 0.0,
+    "episodes": 1744,
+    "irrelevant_distractor_change_rate": 0.0,
+    "remove_decisive_change_rate": 0.0,
+    "same_id_duplicate_change_rate": 0.0
+  },
+  "spark": {
+    "attribution_fidelity": null,
+    "attribution_status": "not_available",
+    "causal_delta_t_to_t1": 0.3073394495412844,
+    "entity_cross_talk_rate": 0.2190366972477064,
+    "episodes": 1744,
+    "irrelevant_distractor_change_rate": 0.2190366972477064,
+    "remove_decisive_change_rate": 0.3073394495412844,
+    "same_id_duplicate_change_rate": 0.18979357798165136
+  }
+}

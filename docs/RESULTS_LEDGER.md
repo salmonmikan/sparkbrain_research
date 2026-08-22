@@ -380,3 +380,40 @@ retained in the run artifacts.
 
 **Claim impact:** no evidence grade increases. This is reproducibility engineering for selected
 existing evidence. CL-011 remains E1 pending an independent clean-room reproduction.
+
+---
+
+## 2026-08-23 — R0012 — C06 official external zero-shot evaluation
+
+**Code/base:** C06 final from integration `68fe8fb`; schema remains `0.2`
+**Command:** `python scripts/run_external_validation.py`
+**Data/splits:** pinned official Belief-R test only; Track B template-group train/dev/test
+**Seeds:** C04 seed 41; first preregistered C05 seed 101; Track B split seed 1729
+**Raw outputs:** `artifacts/external_validation/c06-final-official/belief_r_predictions.jsonl`
+**Aggregate:** `artifacts/external_validation/c06-final-official/belief_r_metrics.json`
+
+### Result
+
+- the network-blocked runner completed all 1,744 official pairs without fitting, tuning,
+  selecting, or splitting on Belief-R;
+- Spark reached BU-Acc 0.0391, BM-Acc 0.0896, BREU 0.0643, and final coverage 0.2271;
+- direct and uniform-chance conditions both reached BREU 0.25; the explicit-state condition
+  abstained on every original Belief-R step; oracle reached 1.0 as a privileged upper bound;
+- Track B disjoint group test, all six Track C transforms, categorized errors, calibration,
+  and remove/duplicate/irrelevant intervention deltas completed.
+
+### Negative findings and confounds
+
+- Spark BREU was below both direct and chance; Gate P3's improvement criterion was not met;
+- Spark predictions changed for 18.98% of same-ID duplicates and 21.90% of irrelevant
+  distractors, indicating substantial non-causal sensitivity;
+- the C05 dev-fitted encoder mapped unseen external categorical tokens to UNK, while C04
+  hashed raw text; effective features, tokenization, parameters, and compute were not matched;
+- C05's earlier quality/scientific-compute matching failures remain unresolved;
+- checkpoint paths do not cite input evidence IDs, so attribution fidelity is N/A rather than
+  zero; no language-encoder-only semantic ablation was available;
+- exact overlap checking is string-level only and cannot rule out semantic or pretraining
+  exposure.
+
+**Claim impact:** CL-007 remains E0. This run establishes an offline external adapter and a
+negative result, not external generalization or superiority.

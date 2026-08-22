@@ -1,0 +1,10 @@
+{
+  "c02_dev_fitted_evidence_label_hashes": 13,
+  "exact_overlap_count": 0,
+  "exact_overlap_sha256": [],
+  "method": "exact SHA-256 comparison after frozen adapters were selected",
+  "official_observation_count": 3488,
+  "official_unique_observation_hashes": 3230,
+  "scope_limit": "Exact string overlap only; it does not establish semantic independence or absence from unrelated pretraining corpora",
+  "selection_effect": "none; audit is evaluator-side after adapter freeze"
+}
