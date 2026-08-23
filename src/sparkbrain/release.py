@@ -33,6 +33,7 @@ EXCLUDED_PATHS = {
 }
 REQUIRED_PREPARATION_FILES = (
     "PACKAGE_MANIFEST.json",
+    "RELEASE_METADATA.json",
     "requirements-release.lock",
     "requirements-release-provenance.json",
     "scripts/reproduce_release.py",

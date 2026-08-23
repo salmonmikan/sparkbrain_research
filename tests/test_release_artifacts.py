@@ -144,6 +144,25 @@ def test_atomic_rename_failure_cleans_staging(tmp_path: Path, monkeypatch) -> No
     assert list(tmp_path.glob(f".{output.name}.staging-*")) == []
 
 
+def test_staged_hash_failure_is_not_published(tmp_path: Path, monkeypatch) -> None:
+    import scripts.reproduce_release as reproduction
+
+    output = tmp_path / "staged-hash-failure"
+    original_hash = reproduction.sha256_file
+
+    def corrupt_staged_hash(path: Path) -> str:
+        if ".staged-hash-failure.staging-" in str(path):
+            return "0" * 64
+        return original_hash(path)
+
+    monkeypatch.setattr(reproduction, "sha256_file", corrupt_staged_hash)
+    with pytest.raises(RuntimeError, match="staged primary output hash mismatch"):
+        reproduction.reproduce(ROOT, output, offline=True)
+
+    assert not output.exists()
+    assert list(tmp_path.glob(f".{output.name}.staging-*")) == []
+
+
 def test_cli_expected_failure_has_no_traceback(tmp_path: Path) -> None:
     output = tmp_path / "occupied"
     output.mkdir()
