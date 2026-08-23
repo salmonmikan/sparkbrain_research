@@ -116,7 +116,12 @@ def test_complete_manifest_detects_omitted_tracked_file() -> None:
     manifest = json.loads((root / "PACKAGE_MANIFEST.json").read_text(encoding="utf-8"))
     manifest["files"] = manifest["files"][1:]
     problems = verify_release_manifest(root, manifest, require_complete_tracked_tree=True)
-    assert any(problem.startswith("release manifest omits tracked files:") for problem in problems)
+    assert any(
+        problem.startswith(
+            ("release manifest omits tracked files:", "release manifest omits archive files:")
+        )
+        for problem in problems
+    )
 
 
 def test_release_validator_reports_missing_artifacts_and_unselected_license(

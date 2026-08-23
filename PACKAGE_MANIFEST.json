@@ -1,5 +1,5 @@
 {
-  "file_count": 427,
+  "file_count": 431,
   "files": [
     {
       "artifact_class": "documentation",
@@ -52,8 +52,8 @@
     {
       "artifact_class": "documentation",
       "path": "PACKAGE_CONTENTS.md",
-      "sha256": "1d81f152f4f94c81235908fac5d06c2819f4c18bc740e78ea658abc504071c55",
-      "size": 3579
+      "sha256": "108d6ef5a13de68f128e3422d1868d43b76958e8451afc8516d9a927579a1bbe",
+      "size": 4278
     },
     {
       "artifact_class": "documentation",
@@ -64,8 +64,8 @@
     {
       "artifact_class": "documentation",
       "path": "README.md",
-      "sha256": "ce00220e5e7584cc855f83d919074cf39655cf7f2f518187b1d6297d01358703",
-      "size": 10354
+      "sha256": "81f7066982f45ec3c743ee2c287e4753e4759c70c89cbe2d1fe31528cf941c16",
+      "size": 11013
     },
     {
       "artifact_class": "package-metadata",
@@ -1168,7 +1168,7 @@
     {
       "artifact_class": "generated-release-evidence",
       "path": "artifacts/release/evidence_map.json",
-      "sha256": "29efb471f4fb7761010905d3dc107618bdd827de4896ee9db02238dbec27e7c2",
+      "sha256": "03250b57888348ede7e4f57f1a1adf99773a0298b0d7052f561361c233676758",
       "size": 4931
     },
     {
@@ -1192,13 +1192,13 @@
     {
       "artifact_class": "generated-release-evidence",
       "path": "artifacts/release/provenance.json",
-      "sha256": "4fffd4ff86b9301d39b78e9997b7ec7210e42711195dc2b13f08aab6ae60a020",
+      "sha256": "f58845b1b268dc5097f56d7034778f2584acdae93509f55a51e129fd9caf9104",
       "size": 1022
     },
     {
       "artifact_class": "generated-release-evidence",
       "path": "artifacts/release/sbom.spdx.json",
-      "sha256": "97850a68498cf96dd675c57fd388cce7cb64b9b3f14da6a379c6e77b55a8ee3f",
+      "sha256": "e218377a4fb67e0ee6f68f40bc230859cd50403b0291c2623badda0ab48592b8",
       "size": 9864
     },
     {
@@ -1324,8 +1324,8 @@
     {
       "artifact_class": "documentation",
       "path": "docs/ARTIFACT_EVALUATION_GUIDE.md",
-      "sha256": "7bc42b80d50e7e439deb801bfbd75c59d1181bfcc645b04698ab3d1227664014",
-      "size": 1570
+      "sha256": "51febe60c465559e6a39ae741708835d672cdd9a18c3611be8a550e657c1ee87",
+      "size": 2335
     },
     {
       "artifact_class": "documentation",
@@ -1366,8 +1366,8 @@
     {
       "artifact_class": "documentation",
       "path": "docs/CLEAN_ROOM_REPRODUCTION.md",
-      "sha256": "6b5ad35a76ab332559f4e4cfea2d8f62ca322052fbc496f8bacb0759636ba093",
-      "size": 1081
+      "sha256": "be5c65ae2dccaf0a4d8e7391da5ba08101ad486a4b38a88257e1b9717762f940",
+      "size": 3500
     },
     {
       "artifact_class": "documentation",
@@ -1378,8 +1378,8 @@
     {
       "artifact_class": "documentation",
       "path": "docs/DECISION_LOG.md",
-      "sha256": "4e03592f28507f279910b0bd5e9085fdc2823107fd9ac95262c733f9b5616d25",
-      "size": 4263
+      "sha256": "ced3af7076a1b6c2965b6709ae2dd8e86a361bf92dafd6e4fb638846fd11e75f",
+      "size": 5124
     },
     {
       "artifact_class": "documentation",
@@ -1438,8 +1438,8 @@
     {
       "artifact_class": "documentation",
       "path": "docs/NEGATIVE_RESULTS_APPENDIX.md",
-      "sha256": "9b6477c98f81775be0a7d0f7dc9929203f143cd3f8cbbdf1a758897df3676092",
-      "size": 1675
+      "sha256": "54d529e068edf5b20661ac9dccb887b6c23fe4b3f777700c1f28d73439696440",
+      "size": 1770
     },
     {
       "artifact_class": "documentation",
@@ -1462,14 +1462,14 @@
     {
       "artifact_class": "documentation",
       "path": "docs/PROJECT_STATUS.md",
-      "sha256": "bdf77fc3b226c573466eeeca78620a32efc8717746608c30077b8f6185ac4333",
-      "size": 11350
+      "sha256": "3edf3e6b2f55a90ff4fdfe314185f3156eb24e6d12a474d68eec9aeb6bade038",
+      "size": 11857
     },
     {
       "artifact_class": "documentation",
       "path": "docs/RESULTS_LEDGER.md",
-      "sha256": "5f05f3b12ff12d03ee0811b5dfcafaeb4f959418fab45a2333f1885faf053f33",
-      "size": 23644
+      "sha256": "c50bca7bdabd8e745d7a372715720d37e9040df888ad86d3deed8b7aab70d19b",
+      "size": 25572
     },
     {
       "artifact_class": "documentation",
@@ -1875,6 +1875,12 @@
     },
     {
       "artifact_class": "reproduction-tooling",
+      "path": "scripts/build_review_bundle.py",
+      "sha256": "f7af7cc9a206aa169a6961cd71c14400b473e93d1990e3dcb4f554b1a1d54d9f",
+      "size": 17028
+    },
+    {
+      "artifact_class": "reproduction-tooling",
       "path": "scripts/checkpoint_demo.py",
       "sha256": "c4ed24b7ba89560d8d374cdac117d0f160d35890b7d90b832cff09a74deba65e",
       "size": 970
@@ -1888,8 +1894,8 @@
     {
       "artifact_class": "reproduction-tooling",
       "path": "scripts/generate_release_manifest.py",
-      "sha256": "8411bfe0906e7c539b4b54ccb27ed56b2a194f62cdb12a01cd8d58a06511c1a3",
-      "size": 1203
+      "sha256": "437fcb312e2b82fe542386a1714bf61355c325cdb1bf928a92656f955cc0052a",
+      "size": 1562
     },
     {
       "artifact_class": "reproduction-tooling",
@@ -1918,8 +1924,8 @@
     {
       "artifact_class": "reproduction-tooling",
       "path": "scripts/reproduce_release.py",
-      "sha256": "a13f3ea02506d78a9cbc7a17ca8a4f1da68e9711225a007a802de0f2c979e87a",
-      "size": 3460
+      "sha256": "1ea4bf6258ae39e6fa8ac5d8f3235e4be07635b985986fb7d6f9c0f613966e4f",
+      "size": 5289
     },
     {
       "artifact_class": "reproduction-tooling",
@@ -2278,14 +2284,14 @@
     {
       "artifact_class": "software",
       "path": "src/sparkbrain/release.py",
-      "sha256": "eb965b63a2bc61931b4e105a7952b55c61efce2d648f4f6f392d62af9c4993ea",
-      "size": 22504
+      "sha256": "95e86f0df88c444e749ab705a5a051d6783821c306dfee568186f2c8bdc4f19d",
+      "size": 34931
     },
     {
       "artifact_class": "software",
       "path": "src/sparkbrain/release_artifacts.py",
-      "sha256": "71894215e272bcaae8698d1c9574732033579593132152166de4b487bd3b62b6",
-      "size": 19946
+      "sha256": "772a6153f344744fbf793d777d8ff538f24d83683cdbbb97515855eaf5fa7cbc",
+      "size": 19735
     },
     {
       "artifact_class": "software",
@@ -2445,6 +2451,12 @@
     },
     {
       "artifact_class": "software",
+      "path": "tests/test_clean_room_release.py",
+      "sha256": "8b4aed1e690b50e9f618697e43333ac500e1f9b9b602d421aac9fa18a2a2db2d",
+      "size": 5493
+    },
+    {
+      "artifact_class": "software",
       "path": "tests/test_dynamics.py",
       "sha256": "27e4e971aa5c785e409d1cc3c55254ea9a07d1baa7637bf4119b903d8b936f31",
       "size": 6161
@@ -2458,8 +2470,8 @@
     {
       "artifact_class": "software",
       "path": "tests/test_external_validation.py",
-      "sha256": "8ef3680cf64dc7ce99a251a2c69025207485c4df02323c8f470f388ac81b805d",
-      "size": 15300
+      "sha256": "2444772f9636b4684321264f3d5e8db284a54a9d7c03d196a40a9a04f244a76b",
+      "size": 15282
     },
     {
       "artifact_class": "software",
@@ -2518,14 +2530,26 @@
     {
       "artifact_class": "software",
       "path": "tests/test_release.py",
-      "sha256": "1f6deb3bdfde18b1a47e92da8c6d67a3ccf5337f1663b18933a1e7945d923aef",
-      "size": 7301
+      "sha256": "7b96fbb7415db1230c23ddfc4f5a4b06169d686673c672df07e38fa01d3f7cc3",
+      "size": 7388
+    },
+    {
+      "artifact_class": "software",
+      "path": "tests/test_release_archive_mode.py",
+      "sha256": "479b1efe61ce3d89ad78b2ecb4245a37216e89a00ce9ee58d189c09191e045b5",
+      "size": 9166
     },
     {
       "artifact_class": "software",
       "path": "tests/test_release_artifacts.py",
-      "sha256": "22ebbbd46ae4c7414882f0c9b6436d7b23288cb0e9c638bef9bdcbd75e423e12",
-      "size": 2572
+      "sha256": "c37a83b7826317e2bcc8ae03b85369eff1b6ceaa9878f372cceb3615bddcf786",
+      "size": 6696
+    },
+    {
+      "artifact_class": "software",
+      "path": "tests/test_review_bundle.py",
+      "sha256": "a172a5eabb45cb494e0a1688e62438e8b07f0d51446240bfd93fe73127a697a0",
+      "size": 9046
     },
     {
       "artifact_class": "software",
@@ -2564,9 +2588,10 @@
       "size": 4109
     }
   ],
-  "generated_at": "2026-08-23T00:00:00+00:00",
+  "generated_at": "2026-08-23T16:28:23Z",
   "manifest_excludes": [
     "PACKAGE_MANIFEST.json",
+    "RELEASE_METADATA.json",
     "artifacts/validation_manifest.json"
   ],
   "manifest_schema_version": "3",
@@ -2576,6 +2601,6 @@
     "release": "11",
     "system": "Windows"
   },
-  "source_revision": "d8638bbd239b6978ae0b651c47fc056417cbaa63",
-  "uncompressed_bytes_excluding_manifest": 22288233
+  "source_revision": "679f9ff9fc90e88206028d48e8fc69469750e104",
+  "uncompressed_bytes_excluding_manifest": 22355496
 }

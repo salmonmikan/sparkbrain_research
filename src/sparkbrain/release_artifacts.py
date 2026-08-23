@@ -4,7 +4,6 @@ import csv
 import html
 import json
 import re
-import subprocess
 from pathlib import Path
 from typing import Any
 
@@ -13,6 +12,7 @@ from .release import (
     declared_project_license,
     project_license_selected,
     sha256_file,
+    source_revision,
     validate_evidence_map,
 )
 
@@ -22,16 +22,6 @@ PRIMARY_INPUTS = (
     "artifacts/phase2/learned-routing-v1/main/summary.json",
     "artifacts/spiking/c07_comparison.json",
 )
-
-
-def source_revision(root: Path) -> str:
-    return subprocess.run(
-        ["git", "rev-parse", "HEAD"],
-        cwd=root,
-        check=True,
-        capture_output=True,
-        text=True,
-    ).stdout.strip()
 
 
 def _load_json(root: Path, relative: str) -> Any:

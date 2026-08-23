@@ -84,3 +84,16 @@
 **Decision:** Core terminology changes must update the formal theory, beginner foundation guide, and glossary in the same change.
 
 **Reason:** A technically precise theory that cannot be followed by implementers or reviewers is not sufficient for this project, but analogies must not silently replace formal semantics.
+
+## D-015 — Separate repository, archive, and private-review verification
+
+**Decision:** Repository mode keeps Git tracked-file and ancestry checks. A no-`.git` release
+archive must instead validate fixed release metadata, exact revision agreement, and manifest
+contents without invoking Git. A private review bundle is a distinct packaging layer with its own
+exact-content `REVIEW_BUNDLE_MANIFEST.json` and external ZIP SHA-256; it must not introduce
+implicit exceptions into public release validation.
+
+**Reason:** A public or review ZIP does not contain repository history. Treating Git failure as a
+validation failure made standalone reproduction impossible, while treating it as success would
+weaken provenance. Explicit modes preserve fail-closed evidence checks and keep private review
+packaging separate from the owner-controlled public license gate.

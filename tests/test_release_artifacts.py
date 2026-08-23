@@ -2,7 +2,12 @@ from __future__ import annotations
 
 import json
 import socket
+import subprocess
+import sys
 from pathlib import Path
+from types import SimpleNamespace
+
+import pytest
 
 from sparkbrain.release import sha256_file
 from sparkbrain.release_artifacts import (
@@ -60,8 +65,124 @@ def test_clean_room_reproduction_does_not_open_socket(tmp_path: Path, monkeypatc
         raise AssertionError("network socket opened during offline reproduction")
 
     monkeypatch.setattr(socket, "socket", forbidden_socket)
-    manifest = reproduce(ROOT, tmp_path, offline=True)
+    output = tmp_path / "reproduced-release"
+    manifest = reproduce(ROOT, output, offline=True)
     assert manifest["status"] == "pass"
     assert manifest["network_operations"] == []
     assert manifest["primary_subset_is_full_evaluation"] is False
-    assert (tmp_path / "run_manifest.json").is_file()
+    assert (output / "run_manifest.json").is_file()
+
+
+def test_reproduction_rejects_non_empty_output_without_touching_it(tmp_path: Path) -> None:
+    from scripts.reproduce_release import reproduce
+
+    output = tmp_path / "occupied"
+    output.mkdir()
+    sentinel = output / "keep.txt"
+    sentinel.write_text("unchanged\n", encoding="utf-8")
+
+    with pytest.raises(ValueError, match="not empty"):
+        reproduce(ROOT, output, offline=True)
+
+    assert sentinel.read_text(encoding="utf-8") == "unchanged\n"
+    assert sorted(path.name for path in output.iterdir()) == ["keep.txt"]
+
+
+def test_revision_preflight_failure_leaves_no_output_or_staging(
+    tmp_path: Path, monkeypatch
+) -> None:
+    import scripts.reproduce_release as reproduction
+
+    output = tmp_path / "revision-failure"
+
+    def fail_revision(root: Path) -> str:
+        raise ValueError("release metadata is unavailable")
+
+    monkeypatch.setattr(reproduction, "source_revision", fail_revision)
+    with pytest.raises(ValueError, match="metadata is unavailable"):
+        reproduction.reproduce(ROOT, output, offline=True)
+
+    assert not output.exists()
+    assert list(tmp_path.glob(f".{output.name}.staging-*")) == []
+
+
+def test_output_hash_failure_leaves_no_output_or_staging(tmp_path: Path, monkeypatch) -> None:
+    import scripts.reproduce_release as reproduction
+
+    output = tmp_path / "hash-failure"
+    monkeypatch.setattr(reproduction, "source_revision", lambda root: "a" * 40)
+    monkeypatch.setattr(
+        reproduction.subprocess,
+        "run",
+        lambda *args, **kwargs: SimpleNamespace(returncode=0, stdout="ready\n", stderr=""),
+    )
+    monkeypatch.setattr(reproduction, "render_primary_table", lambda rows: "tampered\n")
+
+    with pytest.raises(ValueError, match="primary output hash mismatch"):
+        reproduction.reproduce(ROOT, output, offline=True)
+
+    assert not output.exists()
+    assert list(tmp_path.glob(f".{output.name}.staging-*")) == []
+
+
+def test_atomic_rename_failure_cleans_staging(tmp_path: Path, monkeypatch) -> None:
+    import scripts.reproduce_release as reproduction
+
+    output = tmp_path / "rename-failure"
+    original_rename = Path.rename
+
+    def fail_final_rename(path: Path, target: Path) -> Path:
+        if target == output:
+            raise OSError("injected final rename failure")
+        return original_rename(path, target)
+
+    monkeypatch.setattr(Path, "rename", fail_final_rename)
+    with pytest.raises(OSError, match="injected final rename failure"):
+        reproduction.reproduce(ROOT, output, offline=True)
+
+    assert not output.exists()
+    assert list(tmp_path.glob(f".{output.name}.staging-*")) == []
+
+
+def test_staged_hash_failure_is_not_published(tmp_path: Path, monkeypatch) -> None:
+    import scripts.reproduce_release as reproduction
+
+    output = tmp_path / "staged-hash-failure"
+    original_hash = reproduction.sha256_file
+
+    def corrupt_staged_hash(path: Path) -> str:
+        if ".staged-hash-failure.staging-" in str(path):
+            return "0" * 64
+        return original_hash(path)
+
+    monkeypatch.setattr(reproduction, "sha256_file", corrupt_staged_hash)
+    with pytest.raises(RuntimeError, match="staged primary output hash mismatch"):
+        reproduction.reproduce(ROOT, output, offline=True)
+
+    assert not output.exists()
+    assert list(tmp_path.glob(f".{output.name}.staging-*")) == []
+
+
+def test_cli_expected_failure_has_no_traceback(tmp_path: Path) -> None:
+    output = tmp_path / "occupied"
+    output.mkdir()
+    (output / "keep.txt").write_text("unchanged\n", encoding="utf-8")
+
+    result = subprocess.run(
+        [
+            sys.executable,
+            "scripts/reproduce_release.py",
+            "--offline",
+            "--output",
+            str(output),
+        ],
+        cwd=ROOT,
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+
+    assert result.returncode != 0
+    assert "not empty" in result.stderr
+    assert "Traceback" not in result.stderr
+    assert (output / "keep.txt").read_text(encoding="utf-8") == "unchanged\n"

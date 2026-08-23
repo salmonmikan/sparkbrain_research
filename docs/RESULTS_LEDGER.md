@@ -447,3 +447,41 @@ negative result, not external generalization or superiority.
 
 **Claim impact:** no evidence grade increase. C01-C10 implementation and non-license release
 preparation are integrated; public release readiness is not claimed.
+
+---
+
+## 2026-08-24 — R0014 — C10 standalone archive and private review correction
+
+**Code/base:** C10 corrective branch from integrated `5495648`; package `0.2.1`, schema `0.2`
+
+**Repository validation:** `python scripts/validate_release.py --preparation-only`
+
+**Archive validation:** extracted package without `.git`; local readiness, offline reproduction
+to an empty path outside the archive root, release preparation validation, and the full packaged
+test suite
+
+**Private review command:**
+`python scripts/build_review_bundle.py --output <REVIEW_ZIP> --source-date-epoch <UTC_EPOCH>`
+
+### Correction and validation outcome
+
+- repository mode retains tracked-file completeness and Git-ancestry validation;
+- archive mode uses fixed release metadata, exact cross-file revision agreement, and packaged
+  file hashes without invoking Git;
+- offline reproduction completes atomically from a no-`.git` extraction and retains the frozen
+  primary table SHA-256 `085f2a5f65d6e5069e3221042158eefdd4045f22c7b55c1b4c5644c95ed97765`;
+- the frozen SVG SHA-256 remains
+  `718b3f1ca2a668b61ea3e29401d686a6dbda82f9afd8c5eedae714f996a709ae`;
+- the private review ZIP now has a dedicated exact-content manifest and adjacent ZIP SHA-256;
+  Unicode names, duplicate entries, traversal, symlinks, CRC failure, and content tampering are
+  covered by focused tests;
+- public validation remains blocked only by the owner project-license decision. No license was
+  selected and no public archive or tag was produced.
+
+### Scientific boundary
+
+The primary subset remains a smoke check rather than a full evaluation. C06 remains a negative
+external result: Spark BREU is `0.0643`, the language-encoder-only ablation is unavailable, and
+attribution is N/A. C08 decisiveness, fertility, and specificity remain failed. CL-007 and CL-008
+remain E0. No scientific artifact, negative result, or evidence grade is changed by this packaging
+correction.
