@@ -7,6 +7,7 @@
 - Current status: `docs/PROJECT_STATUS.md`
 - Local execution contract: `docs/LOCAL_EXECUTION_POLICY.md`
 - File-level hashes: `PACKAGE_MANIFEST.json`
+- Archive-mode hash binding: `RELEASE_METADATA.json`
 
 ## v0.2.1 expansion
 
@@ -47,6 +48,8 @@
 - `scripts/local_readiness_check.py`
 - `tests/test_local_only.py`
 - `scripts/validate_bundle.py`
+- `scripts/validate_release.py`
+- `scripts/build_review_bundle.py`
 - `.github/workflows/ci.yml` as an optional mirror of local checks
 
 ## Visualizer and evidence
@@ -83,15 +86,17 @@ python scripts/checkpoint_demo.py
 python scripts/replay_trace.py
 python scripts/run_benchmark.py --episodes 40 --steps 30
 python scripts/validate_bundle.py
+python scripts/validate_release.py --preparation-only
 ```
 
 Current packaging validation:
 
 - local readiness: PASS
-- tests: 157 passing
+- the repository and no-`.git` archive test suites are authoritative; dated counts remain in
+  `docs/RESULTS_LEDGER.md` rather than this living package index
 - canonical final belief: CAT
 - Ruff: PASS
-- bundle validation: 76 required files
+- bundle validation: PASS
 - offline primary-subset reproduction: PASS with exact table/SVG hashes
 - public release validation: blocked only by owner license selection
 
@@ -107,3 +112,8 @@ Current packaging validation:
   generated products.
 - `scripts/build_release_archive.py` refuses to create a public archive while the project
   license gate remains blocked.
+- repository mode checks tracked-file completeness and Git ancestry; archive mode checks the
+  fixed release metadata and packaged file hashes without invoking Git.
+- `scripts/build_review_bundle.py` builds the separately scoped private review ZIP. Its embedded
+  `REVIEW_BUNDLE_MANIFEST.json` lists every ZIP member except itself, and the adjacent
+  `.sha256` file authenticates the ZIP byte stream.

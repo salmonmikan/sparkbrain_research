@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import platform
 import re
 import subprocess
@@ -9,10 +10,12 @@ import tomllib
 import zipfile
 from collections.abc import Iterable
 from pathlib import Path, PurePosixPath, PureWindowsPath
-from typing import Any
+from typing import Any, Literal
 
 MANIFEST_SCHEMA_VERSION = "3"
 MANIFEST_PATH = "PACKAGE_MANIFEST.json"
+RELEASE_METADATA_SCHEMA_VERSION = "1"
+RELEASE_METADATA_PATH = "RELEASE_METADATA.json"
 EXCLUDED_PREFIXES = (
     ".git/",
     ".mypy_cache/",
@@ -23,6 +26,8 @@ EXCLUDED_PREFIXES = (
 )
 EXCLUDED_PATHS = {
     MANIFEST_PATH,
+    # This file binds the manifest hash without creating a self-hash cycle.
+    RELEASE_METADATA_PATH,
     # Rewritten by validate_bundle.py on every local run; it is not release evidence.
     "artifacts/validation_manifest.json",
 }
@@ -79,7 +84,38 @@ def _is_release_path(path: str) -> bool:
     return path not in EXCLUDED_PATHS and not path.startswith(EXCLUDED_PREFIXES)
 
 
+def release_mode(root: Path) -> Literal["repository", "archive"]:
+    """Select the validation contract from the package root, not an ancestor repo."""
+
+    return "repository" if (root / ".git").exists() else "archive"
+
+
 def tracked_release_paths(root: Path) -> list[str]:
+    if release_mode(root) == "archive":
+        metadata_problems = validate_release_metadata(root)
+        if metadata_problems:
+            raise ValueError(
+                "archive release metadata is invalid: " + "; ".join(metadata_problems)
+            )
+        manifest, problems = _read_json_object(
+            root / MANIFEST_PATH, label="release manifest"
+        )
+        if manifest is None:
+            raise ValueError("archive release manifest is invalid: " + "; ".join(problems))
+        rows = manifest.get("files")
+        if not isinstance(rows, list):
+            raise ValueError("archive release manifest files must be an array")
+        paths: list[str] = []
+        for index, row in enumerate(rows):
+            if not isinstance(row, dict) or not isinstance(row.get("path"), str):
+                raise ValueError(f"archive release manifest files[{index}] has no path")
+            relative = _safe_relative_path(row["path"])
+            if not _is_release_path(relative):
+                raise ValueError(f"archive release manifest contains excluded path: {relative}")
+            paths.append(relative)
+        if len(paths) != len(set(paths)):
+            raise ValueError("archive release manifest paths must be unique")
+        return sorted(paths)
     result = subprocess.run(
         ["git", "ls-files", "-z"],
         cwd=root,
@@ -173,6 +209,154 @@ def write_release_manifest(path: Path, manifest: dict[str, Any]) -> None:
     path.write_text(_canonical_json(manifest), encoding="utf-8", newline="\n")
 
 
+def package_version(root: Path) -> str:
+    try:
+        metadata = tomllib.loads((root / "pyproject.toml").read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, tomllib.TOMLDecodeError) as exc:
+        raise ValueError(f"project metadata is unreadable: {exc}") from exc
+    value = metadata.get("project", {}).get("version")
+    if not isinstance(value, str) or not value.strip():
+        raise ValueError("pyproject project.version must be a non-empty string")
+    return value.strip()
+
+
+def build_release_metadata(root: Path, manifest_path: Path) -> dict[str, Any]:
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ValueError(f"release manifest is unreadable for metadata generation: {exc}") from exc
+    return {
+        "release_metadata_schema_version": RELEASE_METADATA_SCHEMA_VERSION,
+        "source_revision": manifest.get("source_revision"),
+        "generated_at": manifest.get("generated_at"),
+        "package_version": package_version(root),
+        "manifest_sha256": sha256_file(manifest_path),
+        "file_count": manifest.get("file_count"),
+    }
+
+
+def write_release_metadata(path: Path, metadata: dict[str, Any]) -> None:
+    path.write_text(_canonical_json(metadata), encoding="utf-8", newline="\n")
+
+
+def _read_json_object(path: Path, *, label: str) -> tuple[dict[str, Any] | None, list[str]]:
+    try:
+        value = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        return None, [f"{label} is unreadable: {exc}"]
+    if not isinstance(value, dict):
+        return None, [f"{label} must be a JSON object"]
+    return value, []
+
+
+def validate_release_metadata(root: Path) -> list[str]:
+    metadata_path = root / RELEASE_METADATA_PATH
+    manifest_path = root / MANIFEST_PATH
+    metadata, problems = _read_json_object(metadata_path, label="release metadata")
+    manifest, manifest_problems = _read_json_object(manifest_path, label="release manifest")
+    problems.extend(manifest_problems)
+    if metadata is None or manifest is None:
+        return problems
+
+    expected_fields = {
+        "release_metadata_schema_version",
+        "source_revision",
+        "generated_at",
+        "package_version",
+        "manifest_sha256",
+        "file_count",
+    }
+    if set(metadata) != expected_fields:
+        problems.append("release metadata fields do not match the fixed schema")
+    if metadata.get("release_metadata_schema_version") != RELEASE_METADATA_SCHEMA_VERSION:
+        problems.append("unsupported release metadata schema version")
+    revision = metadata.get("source_revision")
+    if not isinstance(revision, str) or re.fullmatch(r"[0-9a-f]{40}", revision) is None:
+        problems.append("release metadata source_revision must be a full lowercase Git SHA")
+    generated_at = metadata.get("generated_at")
+    if not isinstance(generated_at, str) or not generated_at.strip():
+        problems.append("release metadata generated_at must be a non-empty string")
+    manifest_hash = metadata.get("manifest_sha256")
+    if not isinstance(manifest_hash, str) or re.fullmatch(r"[0-9a-f]{64}", manifest_hash) is None:
+        problems.append("release metadata manifest_sha256 must be a lowercase SHA-256")
+    elif manifest_hash != sha256_file(manifest_path):
+        problems.append("release metadata manifest_sha256 does not match PACKAGE_MANIFEST.json")
+    if metadata.get("file_count") != manifest.get("file_count"):
+        problems.append("release metadata file_count does not match PACKAGE_MANIFEST.json")
+    if metadata.get("source_revision") != manifest.get("source_revision"):
+        problems.append("release metadata source_revision does not match PACKAGE_MANIFEST.json")
+    if metadata.get("generated_at") != manifest.get("generated_at"):
+        problems.append("release metadata generated_at does not match PACKAGE_MANIFEST.json")
+    try:
+        expected_version = package_version(root)
+    except ValueError as exc:
+        problems.append(str(exc))
+    else:
+        if metadata.get("package_version") != expected_version:
+            problems.append("release metadata package_version does not match pyproject.toml")
+    return problems
+
+
+def source_revision(root: Path) -> str:
+    if release_mode(root) == "archive":
+        metadata, problems = _read_json_object(
+            root / RELEASE_METADATA_PATH, label="release metadata"
+        )
+        if metadata is None:
+            raise RuntimeError("archive source revision unavailable: " + "; ".join(problems))
+        revision = metadata.get("source_revision")
+        if not isinstance(revision, str) or re.fullmatch(r"[0-9a-f]{40}", revision) is None:
+            raise RuntimeError(
+                "archive source revision unavailable: release metadata source_revision "
+                "must be a full lowercase Git SHA"
+            )
+        return revision
+
+    try:
+        result = subprocess.run(
+            ["git", "rev-parse", "HEAD"],
+            cwd=root,
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+    except OSError as exc:
+        raise RuntimeError(f"repository source revision unavailable: {exc}") from exc
+    revision = result.stdout.strip()
+    if result.returncode or re.fullmatch(r"[0-9a-f]{40}", revision) is None:
+        detail = result.stderr.strip() or "git rev-parse HEAD failed"
+        raise RuntimeError(f"repository source revision unavailable: {detail}")
+    return revision
+
+
+def _archive_tree_paths(root: Path) -> tuple[set[str], list[str]]:
+    paths: set[str] = set()
+    problems: list[str] = []
+    for directory, dirnames, filenames in os.walk(root, followlinks=False):
+        base = Path(directory)
+        for name in [*dirnames, *filenames]:
+            absolute = base / name
+            relative = absolute.relative_to(root).as_posix()
+            if absolute.is_symlink():
+                problems.append(f"archive tree contains symlink: {relative}")
+                continue
+            if absolute.is_dir() and _forbidden_archive_path(relative):
+                problems.append(f"archive tree contains forbidden directory: {relative}")
+            if absolute.is_file():
+                paths.add(relative)
+    return paths, problems
+
+
+def _forbidden_archive_path(path: str) -> bool:
+    parts = PurePosixPath(path).parts
+    cache_names = {"__pycache__", ".pytest_cache", ".mypy_cache", ".ruff_cache", ".venv"}
+    return (
+        any(part in cache_names for part in parts)
+        or path == "data/external"
+        or path.startswith("data/external/")
+    )
+
+
 def verify_release_manifest(
     root: Path,
     manifest: dict[str, Any],
@@ -226,13 +410,45 @@ def verify_release_manifest(
     if manifest.get("uncompressed_bytes_excluding_manifest") != total_bytes:
         problems.append("release manifest total byte count mismatch")
     if require_complete_tracked_tree:
-        tracked = set(tracked_release_paths(root))
-        missing = sorted(tracked - seen)
-        unexpected = sorted(seen - tracked)
-        if missing:
-            problems.append(f"release manifest omits tracked files: {missing}")
-        if unexpected:
-            problems.append(f"release manifest contains untracked files: {unexpected}")
+        if release_mode(root) == "repository":
+            try:
+                tracked = set(tracked_release_paths(root))
+            except (OSError, subprocess.SubprocessError, UnicodeDecodeError) as exc:
+                problems.append(f"repository release completeness check failed: {exc}")
+            else:
+                missing = sorted(tracked - seen)
+                unexpected = sorted(seen - tracked)
+                if missing:
+                    problems.append(f"release manifest omits tracked files: {missing}")
+                if unexpected:
+                    problems.append(f"release manifest contains untracked files: {unexpected}")
+        else:
+            problems.extend(validate_release_metadata(root))
+            bound_manifest, bound_problems = _read_json_object(
+                root / MANIFEST_PATH, label="release manifest"
+            )
+            problems.extend(bound_problems)
+            if bound_manifest is not None and isinstance(bound_manifest.get("files"), list):
+                bound_paths = {
+                    row.get("path")
+                    for row in bound_manifest["files"]
+                    if isinstance(row, dict) and isinstance(row.get("path"), str)
+                }
+                omitted = sorted(bound_paths - seen)
+                if omitted:
+                    problems.append(f"release manifest omits archive files: {omitted}")
+            actual, tree_problems = _archive_tree_paths(root)
+            problems.extend(tree_problems)
+            forbidden = sorted(path for path in actual if _forbidden_archive_path(path))
+            if forbidden:
+                problems.append(f"archive tree contains forbidden paths: {forbidden}")
+            expected = {*seen, MANIFEST_PATH, RELEASE_METADATA_PATH}
+            missing = sorted(expected - actual)
+            unexpected = sorted(actual - expected)
+            if missing:
+                problems.append(f"archive tree is missing manifest files: {missing}")
+            if unexpected:
+                problems.append(f"archive tree contains unexpected files: {unexpected}")
     return problems
 
 
@@ -341,15 +557,55 @@ def validate_source_revision(root: Path, payload: dict[str, Any], *, label: str)
     revision = payload.get("source_revision")
     if not isinstance(revision, str) or re.fullmatch(r"[0-9a-f]{40}", revision) is None:
         return [f"{label} source_revision must be a full lowercase Git SHA"]
-    result = subprocess.run(
-        ["git", "merge-base", "--is-ancestor", revision, "HEAD"],
-        cwd=root,
-        capture_output=True,
-        check=False,
-    )
+    if release_mode(root) == "archive":
+        metadata, problems = _read_json_object(
+            root / RELEASE_METADATA_PATH, label="release metadata"
+        )
+        if metadata is None:
+            return problems
+        if revision != metadata.get("source_revision"):
+            return [f"{label} source_revision does not match release metadata"]
+        return []
+    try:
+        result = subprocess.run(
+            ["git", "merge-base", "--is-ancestor", revision, "HEAD"],
+            cwd=root,
+            capture_output=True,
+            check=False,
+        )
+    except OSError as exc:
+        return [f"{label} source_revision ancestry check failed: {exc}"]
     if result.returncode != 0:
         return [f"{label} source_revision is not an ancestor of HEAD"]
     return []
+
+
+def validate_release_revision_consistency(root: Path) -> list[str]:
+    payloads: dict[str, dict[str, Any]] = {}
+    paths = {
+        "package manifest": root / MANIFEST_PATH,
+        "release evidence map": root / "artifacts/release/evidence_map.json",
+        "release provenance": root / "artifacts/release/provenance.json",
+    }
+    if (root / RELEASE_METADATA_PATH).is_file() or release_mode(root) == "archive":
+        paths["release metadata"] = root / RELEASE_METADATA_PATH
+    problems: list[str] = []
+    for label, path in paths.items():
+        payload, read_problems = _read_json_object(path, label=label)
+        problems.extend(read_problems)
+        if payload is not None:
+            payloads[label] = payload
+    revisions: dict[str, str] = {}
+    for label, payload in payloads.items():
+        revision = payload.get("source_revision")
+        if not isinstance(revision, str) or re.fullmatch(r"[0-9a-f]{40}", revision) is None:
+            problems.append(f"{label} source_revision must be a full lowercase Git SHA")
+        else:
+            revisions[label] = revision
+    if len(set(revisions.values())) > 1:
+        detail = ", ".join(f"{label}={revision}" for label, revision in revisions.items())
+        problems.append(f"release source_revision values do not match: {detail}")
+    return problems
 
 
 def validate_generated_release_evidence(root: Path) -> list[str]:
@@ -457,6 +713,9 @@ def preparation_problems(root: Path) -> list[str]:
         else:
             problems.extend(validate_evidence_map(root, evidence_map))
             problems.extend(validate_source_revision(root, evidence_map, label="evidence map"))
+    if (root / RELEASE_METADATA_PATH).is_file() or release_mode(root) == "archive":
+        problems.extend(validate_release_metadata(root))
+    problems.extend(validate_release_revision_consistency(root))
     if all((root / relative).is_file() for relative in REQUIRED_PREPARATION_FILES):
         problems.extend(validate_generated_release_evidence(root))
     return problems
@@ -517,6 +776,9 @@ def build_release_archive(root: Path, output: Path, *, source_date_epoch: int) -
     problems = validate_release_tree(root, require_public=True)
     if problems:
         raise ValueError("release tree is not ready: " + "; ".join(problems))
+    metadata_problems = validate_release_metadata(root)
+    if metadata_problems:
+        raise ValueError("release metadata is not ready: " + "; ".join(metadata_problems))
     manifest = json.loads((root / MANIFEST_PATH).read_text(encoding="utf-8"))
     paths = [row["path"] for row in manifest["files"]]
     # ZIP cannot represent dates before 1980. The caller supplies the frozen release epoch.
@@ -526,7 +788,7 @@ def build_release_archive(root: Path, output: Path, *, source_date_epoch: int) -
     timestamp = (date.year, date.month, date.day, date.hour, date.minute, date.second)
     output.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(output, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
-        for relative in sorted([*paths, MANIFEST_PATH]):
+        for relative in sorted([*paths, MANIFEST_PATH, RELEASE_METADATA_PATH]):
             info = zipfile.ZipInfo(relative, date_time=timestamp)
             info.create_system = 3
             info.external_attr = 0o100644 << 16

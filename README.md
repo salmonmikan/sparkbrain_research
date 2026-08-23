@@ -95,6 +95,13 @@ C06の外部評価基盤、Belief-Rのtest-only/ライセンス境界、取得�
 [`docs/EXTERNAL_VALIDATION.md`](docs/EXTERNAL_VALIDATION.md)、負の公式実測結果は
 [`docs/C06_EXTERNAL_VALIDATION_RESULTS.md`](docs/C06_EXTERNAL_VALIDATION_RESULTS.md) を参照してください。
 
+C10の再現検証は、Git履歴を検査できるrepository modeと、`.git`を含まない配布物を
+固定metadataとmanifestで検査するarchive modeを分離しています。どちらも同じ限定的な
+primary smoke subsetを再生成するもので、C02–C08のfull evaluationの代替ではありません。
+手順は [`docs/CLEAN_ROOM_REPRODUCTION.md`](docs/CLEAN_ROOM_REPRODUCTION.md) を参照してください。
+private review ZIPは `scripts/build_review_bundle.py` が専用manifestと外部SHA-256を生成します。
+これはpublic releaseではなく、プロジェクトライセンスのowner decisionを解除しません。
+
 生成物:
 
 ```text
@@ -139,7 +146,7 @@ artifacts/benchmarks/benchmark_results.json
 ## リポジトリ構成
 
 ```text
-sparkbrain_research_v0_2_1/
+sparkbrain_research_v0_2/
 ├── README.md
 ├── CHANGELOG.md
 ├── docs/

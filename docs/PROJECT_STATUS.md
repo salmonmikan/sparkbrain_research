@@ -50,7 +50,7 @@ See `docs/LOCAL_EXECUTION_POLICY.md`.
 | C06 external validation | full pinned Belief-R zero-shot run completed with negative result | `artifacts/external_validation/c06-final-official/`, `docs/C06_EXTERNAL_VALIDATION_RESULTS.md` |
 | Metrics for stability/revision/recovery | runnable | `src/sparkbrain/metrics.py` |
 | Static replay visualizer | runnable locally | `artifacts/demo/visualizer.html` |
-| Unit tests | 197 passing with learned/spiking extras available | `python -m pytest -q` |
+| Unit tests | integrated suite passing with learned/spiking extras available | `python -m pytest -q`; dated counts in `docs/RESULTS_LEDGER.md` |
 | Local readiness audit | runnable | `scripts/local_readiness_check.py` |
 | Generated Phase-0 report | complete with limitations | `artifacts/benchmarks/benchmark_report.md` |
 | Codex repository instructions | complete | `AGENTS.md`, `.agents/skills/sparkbrain-research/SKILL.md` |
@@ -95,17 +95,22 @@ The accumulator baseline is close in this hand-authored setting. Therefore this 
 | P2 | fully spiking and multi-world equivalence beyond the reduced hybrid | C07 follow-on |
 | P2 | additional structural-plasticity hypotheses after negative causal result | C08 follow-on |
 | continuous | systematic prior-art review and novelty audit | C09 |
-| release | local reproducibility/publication package | C10 |
+| owner action | select a project license before any public archive/tag | C10 public gate |
 
 ### C10 release-candidate preparation
 
 The non-license C10 package now pins the tested local environment, freezes a bounded primary
 smoke subset, regenerates its table/SVG/report/negative appendix/SBOM deterministically, maps
-claims to exact run/artifact evidence, and emits an offline machine run manifest. This is
-release preparation, not public readiness. C05 checkpoint-matched encoder evidence, the final
-C06 negative external run, and the C08 negative specialization result are integrated. Public
-validation remains blocked by the owner license decision. The smoke subset is explicitly not
-the full evaluation.
+claims to exact run/artifact evidence, and emits an offline machine run manifest. Repository
+mode retains tracked-file and Git-ancestry checks. Standalone archive mode uses fixed release
+metadata and manifest hashes, invokes no Git command, and passes after extraction without
+`.git`. The private review bundle has its own exact-content manifest and ZIP SHA-256 rather
+than treating `PACKAGE_MANIFEST.json` as an implicit exception list.
+
+This is non-license release preparation, not public readiness. C05 checkpoint-matched encoder
+evidence, the final C06 negative external run, and the C08 negative specialization result remain
+integrated as negative evidence. CL-007 and CL-008 remain E0. Public validation remains blocked
+by the owner license decision. The smoke subset is explicitly not the full evaluation.
 
 ## 7. Exit criteria for the core final system
 

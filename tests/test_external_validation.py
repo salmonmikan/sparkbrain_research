@@ -4,7 +4,6 @@ import csv
 import hashlib
 import io
 import json
-import subprocess
 from dataclasses import replace
 from pathlib import Path
 
@@ -53,6 +52,7 @@ from sparkbrain.external_validation.transforms import (
     permute_order,
     restate_observation,
 )
+from sparkbrain.release import tracked_release_paths
 from sparkbrain.tasks.schema import Observation
 
 ROOT = Path(__file__).parents[1]
@@ -374,14 +374,11 @@ def test_external_text_cache_locations_are_ignored_and_untracked() -> None:
     ignore_text = (ROOT / ".gitignore").read_text(encoding="utf-8")
     assert "data/external/" in ignore_text
     assert ".cache/external/" in ignore_text
-    tracked = subprocess.run(
-        ["git", "ls-files", "--", "data/external", ".cache/external"],
-        cwd=ROOT,
-        check=True,
-        capture_output=True,
-        text=True,
+    release_paths = tracked_release_paths(ROOT)
+    assert not any(
+        path.startswith(("data/external/", ".cache/external/"))
+        for path in release_paths
     )
-    assert tracked.stdout == ""
 
 
 def test_external_evaluation_schema_separates_metrics_errors_and_interventions() -> None:
