@@ -736,3 +736,30 @@ contract correction only.
   understanding, biological fidelity, or energy efficiency.
 - Claim-grade impact: unchanged. C06/C08 negative results, protected hashes, package 0.2.1,
   persisted schema 0.2, and release metadata remain unchanged.
+
+## 2026-08-26 — R-V03-0007 — C15 v2 global aggregation failure and timeout noncompliance
+
+- Protocol/run: `c15-revision-objectives-v2` / `c15-revision-objectives-main-v2`
+- Audited source: `bb89797c92a8a5f38216dac00f48cfa59f66381f`; source-pin amendment:
+  `b521249`; model seeds 2851--2855; bootstrap seed 4365
+- Pre-run verification: 439 tests passed and five were skipped, including the clean-room
+  archive suite; local readiness, Ruff, source-scope audit, and all 28 protected hashes passed.
+- Environment correction: the first invocation stopped in preflight because the shared
+  editable environment pointed to the main worktree. No model ran in that invocation. The
+  subsequent invocation explicitly set `PYTHONPATH` to the C15 worktree's `src` directory.
+- Failure: training/evaluation returned to global aggregation without a recorded failed seed,
+  then `_comparison_effect` attempted `float(None)` inside `_bootstrap_intervals` and raised
+  `TypeError`. No scientific metrics or support decision were printed or accepted.
+- Contract gap: empty prediction-dependent metrics are frozen as null, whereas the bootstrap
+  contract requires 10,000 finite effects and does not specify undefined resamples. Dropping,
+  redrawing, or imputing such resamples is not authorized by v2.
+- Additional protocol violation: the run exceeded the frozen 120-second timeout, which the
+  source did not enforce. The elapsed execution is not a compliant v2 run.
+- Artifact boundary: global aggregation failed before publication. The atomic runner removed
+  staging and published no final eight-file bundle. In-memory prediction/training rows were
+  not retained and are not claimed as validated evidence.
+- Disposition: implementation failure plus protocol noncompliance, not a scientific negative
+  or an inconclusive scientific finding. C15 is not accepted. Any corrected official execution
+  requires a new Decision/protocol, fresh unused seeds, a newly audited source pin, explicit
+  nullable-bootstrap behavior, and an enforced execution-budget contract.
+- Claim-grade impact: none. C06/C08 negatives and accepted C11--C14 evidence remain unchanged.

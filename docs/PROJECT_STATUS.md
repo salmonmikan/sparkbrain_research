@@ -1,5 +1,14 @@
 # Project Status — SparkBrain v0.2.1
 
+## v0.3 C15 — not yet accepted
+
+C15 v2 source `bb89797` passed focused and full source verification, but its official run
+failed during bootstrap aggregation on an undefined metric and exceeded an unenforced
+120-second protocol timeout. No final artifact bundle or scientific support decision was
+published. R-V03-0007 retains this implementation/protocol failure. A corrected preregistration
+and fresh unused seeds are required before another official execution; C14 remains the latest
+accepted stage.
+
 ## v0.3 C14 — attributable Coalition-driven Ignition
 
 C14 is accepted under preregistered protocol `c14-coalition-gate-v1`, using accepted C13
