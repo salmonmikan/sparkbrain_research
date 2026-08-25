@@ -365,3 +365,24 @@ evidence content, equal-case behavior depended on an unstated stability update s
 percentiles were not byte-reproducible, and nested artifacts could omit recalculation inputs. This
 amendment closes only those pre-result degrees of freedom. It changes no logits, score transform,
 weight, threshold, seed, intervention expectation, claim policy, or source-pin sequence.
+
+## D-V03-0012 — Freeze C14 nested artifacts and repair the weak-case activation conflict
+
+**Decision:** Before source editing or result observation, require exact nested types, null/default
+rules, cardinalities, and ordering for raw candidate terms, decisions, belief snapshots, evidence
+IDs, causal replays, no-Ignition references, aggregate/seed metrics, paired statistics,
+engineering gates, failed seeds, and the manifest. G0 and no-Coalition rows carry an empty
+`candidate_terms` list because they do not consume the C14 score; G1 rows retain every candidate
+term. All conditions still retain a decision and canonical before/after belief snapshot.
+
+Repair `weak_low_score` without changing the frozen probability-to-activation mapping: keep alpha
+and beta activation at 0.72 and 0.28, move the two strength-0.05 evidence records to time 65.0,
+and evaluate at time 100.0. Freshness `exp(-35/30)` remains above the 0.30 hard minimum while the
+bounded top score remains below 0.55. Recompute only the five full-fixture hashes; retain the
+identity-only hashes unchanged for audit continuity.
+
+**Reason:** A final read-only audit found that the previous weak case reached Ignition only by
+overriding activation to zero, contradicting the fixed-logit mapping, and that nested artifact
+containers were not independently validatable. This pre-source repair restores the intended
+score-specific negative and makes exact artifacts implementable. No threshold, weight, seed,
+expected reason, claim policy, or official result changed.

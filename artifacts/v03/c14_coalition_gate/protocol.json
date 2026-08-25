@@ -117,7 +117,7 @@
     "correlated_copy": "distinct ID and source, strength 1.0, same correlation group as first support",
     "same_source_distinct_groups": "two distinct support IDs and correlation groups, strength 1.0 each, but the same source ID",
     "strong_contradiction": "independent contradict record with strength 2.0",
-    "weak_low_score": "two independent support records with strength 0.05 and activation 0.0",
+    "weak_low_score": "two independent support records with strength 0.05, frozen activation 0.72/0.28, evidence time 65.0, and evaluation now 100.0; recency remains above the 0.30 hard minimum while score stays below 0.55",
     "equal_low_margin": "alpha has two independent support records of strength 0.2 each; beta has two independent support records each of strength (-ln(1 - ((1 - exp(-0.4)) + 0.44))) / 2, making the two frozen-logit coalition scores exactly equal",
     "remove_restore": "deactivate one of two necessary independent support records, then restore the same immutable record",
     "fixed_logit_hash_required": true
@@ -317,11 +317,11 @@
         "evidence_id": "C13 derive_evidence_id from the registered Spark, hypothesis_id, and polarity"
       },
       "full_fixture_sha256_by_seed": {
-        "2701": "7933e782d5ce6c2e0929ee8a3dfd2a23b15e681488bffc662d7d446871bd6426",
-        "2702": "caf9c5c66213c48c48cf8c210b942dcc2381380c6b216609635c49fe094effe3",
-        "2703": "ed8bf3026f1aad5c176d5c6b8f34761e5edc3c7293f89f741eeeaa964d274e7b",
-        "2704": "fb106abed485cf7715db5fa3929223b696bea66a7ed403ab53587809008e4436",
-        "2705": "41e713311fde0c795384e061272fe69020ffb540e65ddbf1ed5fb100fbc6d951"
+        "2701": "d21fe4f02ad6b5d79af4661562ccf8708746efc0ac899b238e4353f5d7ed591d",
+        "2702": "79e1560d19790ea5a611451500ef418ee8345d697ab5dc4c0af064e25da265b4",
+        "2703": "6198e744d6be5645e8bf19a028f536d5ba5da6ef2be35e9b6a8625599cbf1b99",
+        "2704": "fb1a62036cea67c06242d2e3651ed8c1d88d98e77b9cab77a074655838c079e7",
+        "2705": "16b0d90120bc505542a9ed4f4e8e5193777d06073815364550778e15d49bbda1"
       },
       "seed_effect": "seed changes only deterministic IDs and pairing keys; numeric evidence, logits, times, and expected outcomes are exact replicates and degenerate between-seed intervals must be reported honestly"
     },
@@ -374,10 +374,10 @@
         ], "stages": {"main": {"active_roles": ["old_primary", "old_secondary"]}}
       },
       "weak_low_score": {
-        "entity_key": "object-a", "now": 10.0, "activation_overrides": {"hypothesis-alpha": 0.0, "hypothesis-beta": 0.0}, "primary_stage": "main", "primary_evaluation": 2, "expected_g1": {"ignited": false, "reason": "score_below_threshold", "winner": "hypothesis-alpha"},
+        "entity_key": "object-a", "now": 100.0, "activation_overrides": {"hypothesis-alpha": 0.72, "hypothesis-beta": 0.28}, "primary_stage": "main", "primary_evaluation": 2, "expected_g1": {"ignited": false, "reason": "score_below_threshold", "winner": "hypothesis-alpha"},
         "records": [
-          {"role": "weak_primary", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 0.05, "source_id": "source-a", "correlation_group": "group-a", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}},
-          {"role": "weak_secondary", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 0.05, "source_id": "source-b", "correlation_group": "group-b", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}}
+          {"role": "weak_primary", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 0.05, "source_id": "source-a", "correlation_group": "group-a", "evidence_time": 65.0, "parent_evidence_roles": [], "metadata": {}},
+          {"role": "weak_secondary", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 0.05, "source_id": "source-b", "correlation_group": "group-b", "evidence_time": 65.0, "parent_evidence_roles": [], "metadata": {}}
         ], "stages": {"main": {"active_roles": ["weak_primary", "weak_secondary"]}}
       },
       "equal_coalition_low_margin": {
@@ -403,8 +403,8 @@
       "same_source_support": "source-a, group-b, support, strength 1.0, evidence time 10.0",
       "correlated_support": "source-b, group-a, support, strength 1.0, evidence time 10.0",
       "contradiction": "source-c, group-c, contradict, strength 2.0, evidence time 10.0",
-      "weak_primary": "source-a, group-a, support, strength 0.05, evidence time 10.0",
-      "weak_secondary": "source-b, group-b, support, strength 0.05, evidence time 10.0",
+      "weak_primary": "source-a, group-a, support, strength 0.05, evidence time 65.0, evaluation now 100.0",
+      "weak_secondary": "source-b, group-b, support, strength 0.05, evidence time 65.0, evaluation now 100.0",
       "equal_alpha": "two independent alpha support rows, strength 0.2 each, evidence time 10.0",
       "equal_beta": "two independent beta support rows, strength 0.7341427164006862 each, evidence time 10.0",
       "old_primary_secondary": "two independent support rows, strength 1.0 each, evidence time 0.0, evaluation now 100.0"
@@ -574,6 +574,57 @@
       "total_rows": 360,
       "causal_removal_rows": 15,
       "all_metrics_recalculable_from_artifacts": true
+    },
+    "nested_artifact_schema": {
+      "scalar_policy": "bool is never accepted as int or number; number means finite JSON int or float; all strings are nonempty unless explicitly nullable; JSON serialization uses sort_keys=True, separators=(',', ':'), allow_nan=False and one LF after each JSONL object",
+      "fixed_logit_interventions": {
+        "candidate_terms": "list; G1 contains one object per candidate sorted by entity_key then hypothesis_id; G0 and G1_no_coalition_ablation contain the exact empty list because C14 terms are not consumed",
+        "candidate_term_types": {"entity_key": "string", "hypothesis_id": "string", "raw_activation": "number", "raw_effective_support": "number", "raw_effective_contradiction": "number", "raw_redundancy": "number", "source_count": "int>=0", "independent_group_count": "int>=0", "evidence_count": "int>=0", "stability": "int>=0", "support_evidence_ids": "sorted unique list[string]", "contradiction_evidence_ids": "sorted unique list[string]", "support_evidence_times": "list[number] ordered by corresponding support_evidence_ids", "activation": "number", "effective_support": "number", "source_diversity": "number", "group_diversity": "number", "temporal_stability": "number", "recency": "number", "contradiction": "number", "redundancy": "number", "weighted_activation": "number", "weighted_support": "number", "weighted_source_diversity": "number", "weighted_group_diversity": "number", "weighted_temporal_stability": "number", "weighted_recency": "number", "weighted_contradiction": "number<=0", "weighted_redundancy": "number<=0", "score": "number"},
+        "decision_types": {"ignited": "bool", "winner_hypothesis": "string|null; null when not ignited", "winner_entity": "string|null; null when not ignited", "score": "number", "runner_up_score": "number", "margin": "number", "reason": "string", "citations": "sorted unique list[string]; empty when not ignited or in G0/no-coalition"},
+        "belief_snapshot_required_fields": ["winner", "states"],
+        "belief_snapshot_types": {"winner": "string|null", "states": "list of belief_state objects sorted by entity_key then hypothesis_id"},
+        "belief_state_required_fields": ["entity_key", "hypothesis_id", "activation", "last_score", "last_update_time", "ignition_count", "cited_evidence_ids"],
+        "belief_state_types": {"entity_key": "string", "hypothesis_id": "string", "activation": "number", "last_score": "number", "last_update_time": "number", "ignition_count": "int>=0", "cited_evidence_ids": "sorted unique list[string]"},
+        "evidence_ids": "sorted unique list[string] of every active and inactive record present in the case ledger at this stage"
+      },
+      "causal_evidence_removal": {
+        "cardinality": 15,
+        "condition_population": "one row for each condition in condition_order and seed; case_id is necessary_evidence_remove_restore",
+        "immutable_evidence": "string containing the exact EvidenceRecord.to_canonical_json() payload for secondary_independent_support",
+        "terms": "baseline_terms, removed_terms, and restored_terms are the alpha candidate_term object for G1 and null for G0/no-coalition",
+        "decision": "baseline_decision, removed_decision, and restored_decision use the exact decision schema",
+        "active_state_hash": "lowercase 64-character SHA-256 string from C13 active_state_hash",
+        "exact_flags": "restore_state_exact, restore_terms_exact, restore_decision_exact, and restore_belief_exact are bool and equal canonical baseline-versus-restored equality for the named object"
+      },
+      "no_ignition_reasons": {
+        "required_reasons": "exact engineering_gates.required_reason_coverage order",
+        "observed_reason_counts": "object with exactly required_reasons as keys and int>=0 values over G1 primary rows",
+        "raw_reference_required_fields": ["condition_id", "seed", "case_id", "case_index", "stage", "evaluation_index", "reason"],
+        "raw_reference_types": {"condition_id": "string", "seed": "int", "case_id": "string", "case_index": "int", "stage": "string", "evaluation_index": "int", "reason": "string"},
+        "raw_references": "one reference per G1 primary row, sorted by seed then case_index; cardinality 50",
+        "coverage_passed": "bool equal set(observed reasons) == set(required_reasons)"
+      },
+      "gate_ablation_metrics": {
+        "aggregate_metric_required_fields": ["condition_id", "metric", "value", "numerator", "denominator"],
+        "aggregate_metric_types": {"condition_id": "string", "metric": "string", "value": "number", "numerator": "number|null", "denominator": "int|null"},
+        "aggregate_metrics": "24 rows: every condition in condition_order crossed with every reported_metrics entry in listed order; sort by condition order then reported_metrics order",
+        "seed_metric_required_fields": ["condition_id", "seed", "metric", "value", "numerator", "denominator"],
+        "seed_metric_types": {"condition_id": "string", "seed": "int", "metric": "string", "value": "number", "numerator": "number|null", "denominator": "int|null"},
+        "seed_level_rows": "120 rows: condition order, seed ascending, then reported_metrics order",
+        "paired_statistic_required_fields": ["effect_id", "pairing_unit", "n", "point_estimate", "ci_low", "ci_high", "bootstrap_resamples", "bootstrap_seed", "confidence_interval"],
+        "paired_statistic_types": {"effect_id": "string", "pairing_unit": "string", "n": "int>0", "point_estimate": "number", "ci_low": "number", "ci_high": "number", "bootstrap_resamples": "int", "bootstrap_seed": "int", "confidence_interval": "number"},
+        "paired_statistics": "exactly four rows in primary_metrics.bootstrap_effects_in_order",
+        "engineering_gate_required_fields": ["gate_id", "comparison", "threshold", "observed", "passed"],
+        "engineering_gate_types": {"gate_id": "string", "comparison": "one of >=, <=, ==, coverage, call_graph", "threshold": "number|bool|list[string]", "observed": "number|bool|list[string]", "passed": "bool"},
+        "engineering_gates": "one row for every key in top-level engineering_gates insertion order; required_reason_coverage uses comparison coverage, call_graph_requires_coalition_score_consumption uses call_graph, all others use the suffix-indicated >= or <= comparison",
+        "failed_seed_required_fields": ["seed", "reasons"],
+        "failed_seed_types": {"seed": "int", "reasons": "sorted unique nonempty list[string]"},
+        "failed_seeds": "rows sorted by seed; empty is valid and expected only if no seed failed"
+      },
+      "manifest": {
+        "exact_required_fields": ["source_commit", "protocol_hash", "fixed_logit_hash", "fixture_hashes", "protected_hashes", "dependency_hashes", "raw_row_counts", "failed_seeds"],
+        "types": {"source_commit": "lowercase 40-character Git hash", "protocol_hash": "lowercase 64-character SHA-256", "fixed_logit_hash": "lowercase 64-character SHA-256", "fixture_hashes": "object with exactly seed strings 2701..2705 mapped to full fixture SHA-256", "protected_hashes": "object with exactly the five protected relative paths mapped to SHA-256", "dependency_hashes": "object with exactly c12_merge, c13_merge, c13_source_contract", "raw_row_counts": "object with exactly fixed_logit_interventions_jsonl=360 and causal_evidence_removal_jsonl=15", "failed_seeds": "same canonical list as top-level failed_seeds"}
+      }
     },
     "manifest_contract": {
       "location": "gate_ablation_metrics.json manifest object",

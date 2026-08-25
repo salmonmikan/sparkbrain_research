@@ -654,3 +654,10 @@ unchanged candidate before scoring, and every case/condition/replay uses a fresh
 belief field. The bootstrap resampling and percentile interpolation are exact, and the nested raw,
 causal, reason, metrics, manifest, ordering, and unknown-key contracts are frozen so the six
 artifacts alone support recalculation of every score, margin, reason, effect, and engineering gate.
+
+Decision `D-V03-0012` fixes every nested artifact key/type/null/cardinality/order contract and
+keeps non-Coalition controls from fabricating C14 candidate terms. It also repairs the sole
+fixed-activation conflict before source editing: `weak_low_score` retains activation 0.72/0.28,
+uses strength-0.05 evidence at time 65, and evaluates at time 100. Its recency passes the hard
+minimum while its bounded score stays below threshold. Only the five full-fixture hashes change;
+the frozen logits, weights, thresholds, seeds, expected reason, and identity hashes do not.
