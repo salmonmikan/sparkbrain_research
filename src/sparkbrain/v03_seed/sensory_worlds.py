@@ -12,6 +12,7 @@ class SensoryWorldStep:
     episode_id: str
     event_kind: str
     expected_salient: bool
+    target_feature_id: str
     sample: SensorySample
     goal_bias: dict[str, float]
 
@@ -47,6 +48,7 @@ class HabituationWorld:
                 f"habituation:{self.seed}",
                 "onset" if step == 0 else "predictable_repetition",
                 step == 0,
+                "vision:tone",
                 _sample(
                     seed=self.seed,
                     episode="habituation",
@@ -76,6 +78,7 @@ class UnexpectedChangeWorld:
                         f"{kind}:{self.seed}",
                         "onset" if step == 0 else "predictable_repetition",
                         step == 0,
+                        "vision:tone",
                         _sample(
                             seed=self.seed,
                             episode=kind,
@@ -107,6 +110,7 @@ class UnexpectedChangeWorld:
                     f"{kind}:{self.seed}",
                     f"unexpected_{kind}",
                     True,
+                    "vision:tone",
                     sample,
                     {},
                 )
@@ -128,6 +132,7 @@ class GoalTargetWorld:
                 f"{episode}:{self.seed}",
                 "weak_goal_target" if step == 2 else ("onset" if step == 0 else "repeat"),
                 step in {0, 2},
+                "vision:weak",
                 _sample(
                     seed=self.seed,
                     episode=episode,
@@ -152,6 +157,7 @@ class DistractorNoiseWorld:
                 f"{episode}:{self.seed}",
                 "noise_probe" if step >= 2 else ("onset" if step == 0 else "repeat"),
                 step == 0,
+                "vision:noise",
                 _sample(
                     seed=self.seed,
                     episode=episode,
@@ -175,6 +181,7 @@ class StimulusSpecificityWorld:
                 f"specificity:{self.seed}",
                 "onset" if step == 0 else "predictable_repetition",
                 step == 0,
+                "vision:adapted",
                 _sample(
                     seed=self.seed,
                     episode="specificity",
@@ -191,6 +198,7 @@ class StimulusSpecificityWorld:
                 f"specificity:{self.seed}",
                 "novel_channel",
                 True,
+                "vision:novel",
                 _sample(
                     seed=self.seed,
                     episode="specificity",

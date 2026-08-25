@@ -5,6 +5,7 @@ import hashlib
 import json
 import random
 import shutil
+import tempfile
 from collections.abc import Iterable
 from pathlib import Path
 from statistics import mean
@@ -15,6 +16,7 @@ from sparkbrain.v03_seed import (
     DistractorNoiseWorld,
     GoalTargetWorld,
     HabituationWorld,
+    SensorySample,
     SensoryWorldStep,
     StimulusSpecificityWorld,
     UnexpectedChangeWorld,
@@ -38,6 +40,12 @@ CONDITIONS = (
 
 def _canonical_json(value: object) -> str:
     return json.dumps(value, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
+
+
+def _write_jsonl(path: Path, rows: Iterable[dict[str, Any]]) -> None:
+    with path.open("w", encoding="utf-8", newline="\n") as handle:
+        for row in rows:
+            handle.write(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n")
 
 
 def _sha256(path: Path) -> str:
@@ -106,7 +114,14 @@ def _execute(
             ablations=ablations,
             bypass=bypass,
         )
-        event_emission[(step.episode_id, step.event_kind)] = bool(result.sparks)
+        target_rows = [
+            row for row in result.channel_trace if row.feature_id == step.target_feature_id
+        ]
+        if len(target_rows) != 1:
+            raise RuntimeError(
+                f"target trace row missing or duplicated: {step.target_feature_id}"
+            )
+        event_emission[(step.episode_id, step.event_kind)] = target_rows[0].accepted
         for channel in result.channel_trace:
             rows.append(
                 {
@@ -117,6 +132,8 @@ def _execute(
                     "step_index": step_index,
                     "event_kind": step.event_kind,
                     "expected_salient": step.expected_salient,
+                    "target_feature_id": step.target_feature_id,
+                    "target_channel": channel.feature_id == step.target_feature_id,
                     "state_hash_before": result.state_hash_before,
                     "state_hash_after": result.state_hash_after,
                     "work_delta": result.work_delta.as_dict(),
@@ -134,6 +151,7 @@ def _evaluate_condition(
     change_examples: list[dict[str, Any]],
 ) -> tuple[dict[str, Any], dict[str, list[float]]]:
     repetition_reductions: list[float] = []
+    downstream_reductions: list[float] = []
     change_recalls: list[float] = []
     goal_deltas: list[float] = []
     false_deltas: list[float] = []
@@ -150,6 +168,19 @@ def _evaluate_condition(
         first = step_counts[0]
         repeated_mean = mean(step_counts[index] for index in sorted(step_counts)[1:])
         repetition_reductions.append(1.0 - repeated_mean / first if first else 0.0)
+        downstream_by_step: dict[int, int] = {}
+        for row in habitation_rows:
+            downstream_by_step.setdefault(
+                int(row["step_index"]),
+                int(row["work_delta"]["downstream_active_work"]),
+            )
+        first_downstream = downstream_by_step[0]
+        repeated_downstream = mean(
+            downstream_by_step[index] for index in sorted(downstream_by_step)[1:]
+        )
+        downstream_reductions.append(
+            1.0 - repeated_downstream / first_downstream if first_downstream else 0.0
+        )
 
         recovered: list[float] = []
         for episode in UnexpectedChangeWorld(seed).episodes():
@@ -213,7 +244,7 @@ def _evaluate_condition(
         "goal_relevant_recall_delta": mean(goal_deltas),
         "irrelevant_false_activation_increase_percentage_points": mean(false_deltas),
         "predictable_repetition_active_spark_reduction": mean(repetition_reductions),
-        "predictable_repetition_downstream_work_reduction": mean(repetition_reductions),
+        "predictable_repetition_downstream_work_reduction": mean(downstream_reductions),
         "stimulus_specificity_recall": mean(specificity),
     }
     paired = {
@@ -221,17 +252,134 @@ def _evaluate_condition(
         "goal_relevant_recall_delta": goal_deltas,
         "irrelevant_false_activation_increase_percentage_points": false_deltas,
         "predictable_repetition_active_spark_reduction": repetition_reductions,
+        "predictable_repetition_downstream_work_reduction": downstream_reductions,
         "stimulus_specificity_recall": specificity,
     }
     return metrics, paired
 
 
-def _acceptance(metrics: dict[str, Any], protocol: dict[str, Any]) -> dict[str, bool]:
+def _goal_adversarial_audit(protocol: dict[str, Any]) -> dict[str, Any]:
+    base = AdaptiveSensoryField()
+    base.observe(
+        SensorySample("audit:0", 0.0, "audit", "vision", {"weak": 1.0})
+    )
+    base.observe(
+        SensorySample("audit:1", 1.0, "audit", "vision", {"weak": 1.0})
+    )
+    checks: list[dict[str, Any]] = []
+
+    def record_refusal(
+        *,
+        check_id: str,
+        field: AdaptiveSensoryField,
+        sample: SensorySample,
+        goal_bias: dict[str, float] | None = None,
+    ) -> None:
+        before = field.state_hash()
+        refused = False
+        error = ""
+        try:
+            field.observe(sample, goal_bias=goal_bias)
+        except ValueError as exc:
+            refused = True
+            error = str(exc)
+        after = field.state_hash()
+        checks.append(
+            {
+                "check_id": check_id,
+                "error": error,
+                "passed": refused and before == after,
+                "refused": refused,
+                "state_hash_after": after,
+                "state_hash_before": before,
+                "state_unchanged": before == after,
+            }
+        )
+
+    forbidden = protocol["goal_policy"]["forbidden_recursive_names"]
+    for name in forbidden:
+        record_refusal(
+            check_id=f"metadata_top:{name}",
+            field=AdaptiveSensoryField.from_serialized_state(base.serialize_state()),
+            sample=SensorySample(
+                f"audit:metadata-top:{name}",
+                2.0,
+                "audit",
+                "vision",
+                {"weak": 0.4},
+                metadata={name: True},
+            ),
+        )
+        record_refusal(
+            check_id=f"metadata_nested:{name}",
+            field=AdaptiveSensoryField.from_serialized_state(base.serialize_state()),
+            sample=SensorySample(
+                f"audit:metadata-nested:{name}",
+                2.0,
+                "audit",
+                "vision",
+                {"weak": 0.4},
+                metadata={"outer": [{name: True}]},
+            ),
+        )
+        record_refusal(
+            check_id=f"goal_key:{name}",
+            field=AdaptiveSensoryField.from_serialized_state(base.serialize_state()),
+            sample=SensorySample(
+                f"audit:goal:{name}", 2.0, "audit", "vision", {"weak": 0.4}
+            ),
+            goal_bias={name: 0.1},
+        )
+
+    for label, value in (("nan", float("nan")), ("positive_inf", float("inf"))):
+        record_refusal(
+            check_id=f"goal_value:{label}",
+            field=AdaptiveSensoryField.from_serialized_state(base.serialize_state()),
+            sample=SensorySample(
+                f"audit:{label}", 2.0, "audit", "vision", {"weak": 0.4}
+            ),
+            goal_bias={"vision:weak": value},
+        )
+
+    capped_field = AdaptiveSensoryField.from_serialized_state(base.serialize_state())
+    before = capped_field.state_hash()
+    capped = capped_field.observe_with_trace(
+        SensorySample("audit:extreme", 2.0, "audit", "vision", {"weak": 0.4}),
+        goal_bias={"vision:weak": 1.0e300},
+    ).channel_trace[0]
+    checks.append(
+        {
+            "applied": capped.goal_bias_applied,
+            "check_id": "goal_value:finite_extreme_cap",
+            "passed": (
+                capped.goal_bias_requested == 1.0e300
+                and capped.goal_bias_applied == protocol["goal_policy"]["maximum_channel_request"]
+            ),
+            "requested": capped.goal_bias_requested,
+            "state_hash_after": capped_field.state_hash(),
+            "state_hash_before": before,
+            "state_unchanged": False,
+        }
+    )
+    return {
+        "all_checks_passed": all(check["passed"] for check in checks),
+        "checks": checks,
+        "goal_bias_applied_maximum": protocol["goal_policy"]["maximum_channel_request"],
+        "protocol_id": protocol["protocol_id"],
+    }
+
+
+def _acceptance(
+    metrics: dict[str, Any],
+    protocol: dict[str, Any],
+    goal_audit: dict[str, Any],
+) -> dict[str, bool]:
     gates = protocol["acceptance"]
     return {
         "change_or_omission_recall": metrics["change_or_omission_recall"]
         >= gates["unexpected_change_or_omission_recall_minimum"],
         "goal_relevant_low_salience_recall": metrics["goal_relevant_recall_delta"] > 0.0,
+        "goal_adversarial_audit": goal_audit["all_checks_passed"],
         "irrelevant_false_activation": metrics[
             "irrelevant_false_activation_increase_percentage_points"
         ]
@@ -248,7 +396,7 @@ def _acceptance(metrics: dict[str, Any], protocol: dict[str, Any]) -> dict[str, 
     }
 
 
-def run(*, root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
+def _run_into(*, root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
     if output.exists() and any(output.iterdir()):
         raise RuntimeError("output directory must be new or empty")
     protocol = json.loads(protocol_path.read_text(encoding="utf-8"))
@@ -274,7 +422,8 @@ def run(*, root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
                 name: _paired_interval(values, protocol) for name, values in paired.items()
             },
         }
-    full_acceptance = _acceptance(by_condition["full"]["metrics"], protocol)
+    goal_audit = _goal_adversarial_audit(protocol)
+    full_acceptance = _acceptance(by_condition["full"]["metrics"], protocol, goal_audit)
     acceptance_passed = all(full_acceptance.values())
     aggregate = {
         "acceptance": full_acceptance,
@@ -301,31 +450,14 @@ def run(*, root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
     change_examples.sort(
         key=lambda row: (CONDITIONS.index(row["condition_id"]), row["seed"], row["event_kind"])
     )
-    with (output / "raw_trace.jsonl").open("w", encoding="utf-8", newline="\n") as handle:
-        for row in raw_rows:
-            handle.write(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n")
+    _write_jsonl(output / "raw_trace.jsonl", raw_rows)
     (output / "ablation_metrics.json").write_text(
         _canonical_json(aggregate), encoding="utf-8", newline="\n"
     )
-    with (output / "change_recovery_examples.jsonl").open(
-        "w", encoding="utf-8", newline="\n"
-    ) as handle:
-        for row in change_examples:
-            handle.write(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n")
+    _write_jsonl(output / "change_recovery_examples.jsonl", change_examples)
     goal_adversarial = {
-        "acceptance_passed": full_acceptance["irrelevant_false_activation"],
-        "forbidden_fields_rejected_by_contract": [
-            "answer",
-            "contradiction",
-            "evaluator",
-            "gold",
-            "label",
-            "split",
-            "target",
-            "test_only",
-            "truth",
-        ],
-        "goal_bias_applied_maximum": 0.35,
+        **goal_audit,
+        "acceptance_passed": full_acceptance["goal_adversarial_audit"],
         "irrelevant_false_activation_increase_percentage_points": by_condition["full"][
             "metrics"
         ]["irrelevant_false_activation_increase_percentage_points"],
@@ -377,6 +509,42 @@ negative findings or scientific claim grades. Failed ablations and adversarial r
 """
     (output / "report.md").write_text(report, encoding="utf-8", newline="\n")
     return aggregate
+
+
+def run(*, root: Path, protocol_path: Path, output: Path) -> dict[str, Any]:
+    if output.exists() and any(output.iterdir()):
+        raise RuntimeError("output directory must be new or empty")
+    output.parent.mkdir(parents=True, exist_ok=True)
+    staging = Path(
+        tempfile.mkdtemp(prefix=f".{output.name}.staging-", dir=output.parent)
+    )
+    try:
+        result = _run_into(root=root, protocol_path=protocol_path, output=staging)
+        expected = {
+            "ablation_metrics.json",
+            "change_recovery_examples.jsonl",
+            "goal_bias_adversarial.json",
+            "protocol.json",
+            "raw_trace.jsonl",
+            "report.md",
+        }
+        if {path.name for path in staging.iterdir()} != expected:
+            raise RuntimeError("C12 staging output is incomplete or contains extra files")
+        json.loads((staging / "ablation_metrics.json").read_text(encoding="utf-8"))
+        goal_audit = json.loads(
+            (staging / "goal_bias_adversarial.json").read_text(encoding="utf-8")
+        )
+        if not goal_audit["all_checks_passed"]:
+            raise RuntimeError("C12 goal adversarial audit failed")
+        if not (staging / "raw_trace.jsonl").read_text(encoding="utf-8").strip():
+            raise RuntimeError("C12 raw trace is empty")
+        if output.exists():
+            output.rmdir()
+        staging.replace(output)
+        return result
+    except Exception:
+        shutil.rmtree(staging, ignore_errors=True)
+        raise
 
 
 def main() -> int:
