@@ -300,17 +300,14 @@ class EvidenceRecord:
         ):
             raise ValueError("evidence strength must be finite and non-negative")
         if self.correlation_group is not None and (
-            not isinstance(self.correlation_group, str)
-            or not self.correlation_group.strip()
+            not isinstance(self.correlation_group, str) or not self.correlation_group.strip()
         ):
             raise ValueError("correlation_group must be a non-empty string when present")
         for name, values in (
             ("parent_evidence_ids", self.parent_evidence_ids),
             ("parent_spark_ids", self.parent_spark_ids),
         ):
-            if not isinstance(values, tuple) or any(
-                not isinstance(value, str) for value in values
-            ):
+            if not isinstance(values, tuple) or any(not isinstance(value, str) for value in values):
                 raise ValueError(f"{name} must be a tuple of strings")
             if tuple(sorted(values)) != values or len(set(values)) != len(values):
                 raise ValueError(f"{name} must be sorted and unique")
@@ -452,8 +449,10 @@ class EvidenceAuditRow:
             ("previous_audit_hash", self.previous_audit_hash),
             ("audit_hash", self.audit_hash),
         ):
-            if not isinstance(value, str) or len(value) != 64 or any(
-                character not in "0123456789abcdef" for character in value
+            if (
+                not isinstance(value, str)
+                or len(value) != 64
+                or any(character not in "0123456789abcdef" for character in value)
             ):
                 raise ValueError(f"{name} must be a lowercase SHA-256")
 
@@ -541,9 +540,7 @@ class EntityBinding:
             ("entity_slot", self.entity_slot),
             ("entity_key", self.entity_key),
         ):
-            if value is not None and (
-                not isinstance(value, str) or not value.strip()
-            ):
+            if value is not None and (not isinstance(value, str) or not value.strip()):
                 raise ValueError(f"{name} must be a non-empty string when present")
         if self.assignment_status not in {"assigned", "unassigned", "uncertain"}:
             raise ValueError("invalid entity assignment status")
@@ -686,6 +683,23 @@ class CoalitionState:
     stability: int
     support_ids: tuple[str, ...]
     contradiction_ids: tuple[str, ...]
+    support_times: tuple[float, ...] = ()
+    normalized_activation: float = 0.0
+    normalized_support: float = 0.0
+    normalized_source_diversity: float = 0.0
+    normalized_group_diversity: float = 0.0
+    normalized_stability: float = 0.0
+    normalized_recency: float = 0.0
+    normalized_contradiction: float = 0.0
+    normalized_redundancy: float = 0.0
+    weighted_activation: float = 0.0
+    weighted_support: float = 0.0
+    weighted_source_diversity: float = 0.0
+    weighted_group_diversity: float = 0.0
+    weighted_stability: float = 0.0
+    weighted_recency: float = 0.0
+    weighted_contradiction: float = 0.0
+    weighted_redundancy: float = 0.0
 
 
 @dataclass(frozen=True, slots=True)
