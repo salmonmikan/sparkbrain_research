@@ -635,3 +635,36 @@ protected hash, and negative-result policy unchanged.
 without hiding the procedural breach or reusing observed fixture-controller combinations. The
 change is contamination control, not a response to learned performance or test metrics. v1 must
 not be source-pinned or executed.
+
+## D-V03-0021 — Freeze C15 failed-seed artifact semantics
+
+**Decision:** Before the source-only commit or any official v2 execution, close the gap between
+the requirement to retain failed seeds and the success-only fixed cardinalities. Treat one model
+seed as the atomic execution unit across all twelve conditions. Buffer all rows for that seed. On
+the first failure, discard its whole buffer, do not retry it, record exactly one row with fields
+`model_seed`, `phase`, `condition_id`, `error_type`, and `error_hash`, then continue with the next
+frozen seed. `error_hash` is SHA-256 of canonical `[phase, condition_id, error_type]`; exception
+messages and machine-local paths are not artifacts.
+
+Every JSON artifact with `failed_seeds` repeats the same list sorted by model seed. The raw JSONL
+contains only complete successful prediction rows, and `report.md` names each failure. For S
+complete seeds, raw, training-step, condition-seed, objective, confusion-seed, calibration-seed,
+and Pareto-seed cardinalities are respectively `4352*S`, `4608*S`, `12*S`, `108*S`, `34*S`,
+`34*S`, and `12*S`. When S is positive, descriptive aggregate/confusion, aggregate/Pareto, and
+pairwise row counts remain 34, 12, and 66; when S is zero they are empty. No partial seed row is
+published or imputed.
+
+Any failed required seed fixes engineering status to `implementation_failure` and scientific
+status to `not_evaluated_implementation_failure`. All nine bootstrap rows retain the frozen
+resample count and bootstrap seed but use null effect/lower/upper. Successful rows and descriptive
+aggregates remain inspectable but cannot support a scientific gate. If every seed fails, publish
+the same exact eight files with static objective configuration, empty data/derived arrays, the
+common failed-seed list, implementation-failure status, and null bootstrap results.
+
+**Reason:** The preregistered v2 artifact schemas named `failed_seeds` and required null bootstrap
+effects, but did not define an exact failure row or how fixed success cardinalities shrink. A
+source review found the runner could only abort atomically and emit no failure evidence. This
+amendment makes failure reporting reconstructible without inventing predictions, dropping a
+failure silently, or mixing incomplete seeds into a scientific conclusion. No official v2 seed,
+training result, checkpoint, calibration result, diagnostic, or test result had been executed or
+observed.

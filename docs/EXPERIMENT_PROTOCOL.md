@@ -773,6 +773,16 @@ supersede v1 with fresh episode seeds 151000/251000/451000, model seeds 2851--28
 fixtures and a non-official model seed; reconstructing fixture bytes for hash verification is not
 model/controller execution. All other C15 scientific and engineering contracts remain unchanged.
 
+D-V03-0021 closes the failed-seed artifact boundary before source pinning. A model seed is atomic
+across all twelve conditions: its rows are buffered, discarded on its first failure without retry,
+and replaced by one exact failed-seed record while later seeds continue. Successful seed rows stay
+visible, but any failed seed makes engineering status `implementation_failure`, sets scientific
+status to `not_evaluated_implementation_failure`, and makes every bootstrap effect and interval
+null. Derived cardinalities scale only with complete successful seeds according to the formulas in
+the protocol; partial seed rows are never published or imputed. All JSON artifacts repeat the same
+failed-seed list and the report names it. Even zero successful seeds produce the exact eight-file
+failure bundle with static configuration and empty data arrays.
+
 Primary evaluation is I1 local-compositional input with E1 explicit Oracle entity scope. The
 twelve primary conditions are full separated objectives, nine single-objective ablations,
 one-weighted-CE, and no-residual. Full-only diagnostics cover the other five I0/I1/I2 by E0/E1
