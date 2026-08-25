@@ -1,0 +1,101 @@
+{
+  "acceptance": {
+    "distractor_false_activation_increase_max_percentage_points": 10.0,
+    "goal_relevant_low_salience_recall": "strictly greater than paired no-goal recall",
+    "predictable_repetition_active_spark_reduction_minimum": 0.5,
+    "predictable_repetition_downstream_work_reduction_minimum": 0.5,
+    "requires_dishabituation_or_stimulus_specificity_example": true,
+    "unexpected_change_or_omission_recall_minimum": 0.9
+  },
+  "ablations": [
+    "full",
+    "no_goal",
+    "no_habituation",
+    "no_prediction_error",
+    "no_novelty",
+    "no_magnitude",
+    "bypass"
+  ],
+  "claim_boundary": "Computational sensory-gate behavior only; not biological sensory reproduction, semantic understanding, energy evidence, or a changed scientific claim grade.",
+  "created_at": "2026-08-26T04:10:00+09:00",
+  "goal_policy": {
+    "forbidden_recursive_names": [
+      "answer",
+      "contradiction",
+      "evaluator",
+      "gold",
+      "label",
+      "split",
+      "target",
+      "test_only",
+      "truth"
+    ],
+    "goal_gain": 0.9,
+    "maximum_channel_request": 0.35,
+    "scope": "numeric channel-local hint only"
+  },
+  "official_test_data_used": false,
+  "omission_contract": "An explicit adapter observation of a previously expected missing channel; never inferred from an absent key in a partial sample and never evaluator truth.",
+  "protocol_id": "c12-sensory-field-v1",
+  "run_id": "c12-sensory-field-main-v1",
+  "salience": {
+    "base_threshold": 0.9,
+    "habituation_penalty": 1.25,
+    "habituation_rate": 0.22,
+    "habituation_release": 0.55,
+    "magnitude_cap": 2.0,
+    "magnitude_gain": 0.15,
+    "max_active": 8,
+    "minimum_scale": 0.1,
+    "novelty_gain": 1.2,
+    "onset_bonus": 1.25,
+    "prediction_rate": 0.25,
+    "stable_error_ratio": 0.35,
+    "threshold_increment": 0.2,
+    "threshold_relaxation": 0.12,
+    "variability_rate": 0.15
+  },
+  "seed_list": [
+    2601,
+    2602,
+    2603,
+    2604,
+    2605
+  ],
+  "statistical_analysis": {
+    "bootstrap_repetitions": 10000,
+    "bootstrap_seed": 4312,
+    "confidence_level": 0.95,
+    "interval_method": "paired nonparametric bootstrap over episode/world blocks",
+    "paired_unit": "seed_world_episode",
+    "primary_comparison": true
+  },
+  "status": "preregistered",
+  "stop_conditions": [
+    "protected baseline hash changes",
+    "fewer than five unique primary seeds",
+    "output directory is non-empty",
+    "goal, sample, state, or Spark contains evaluator truth, target, label, test-only, contradiction, or answer fields",
+    "an invalid multi-channel sample changes any state or counter",
+    "inspection mutates thresholds, counters, sequence, or feature state",
+    "serialized replay changes Spark IDs, trace rows, counters, or state hashes",
+    "a score term or ablation is missing from accepted/suppressed trace",
+    "dense channel evaluation is reported as active downstream work"
+  ],
+  "task_id": "C12",
+  "work_counters": {
+    "candidate_channels": "channels at or above threshold before top-k",
+    "channels_inspected": "every input or explicit-omission channel read",
+    "downstream_active_work": "one unit per emitted PerceptualSpark",
+    "features_scored": "every channel with all enabled score terms computed",
+    "sparks_emitted": "PerceptualSparks emitted after threshold and top-k",
+    "state_updates": "committed local feature-state updates",
+    "suppressed_channels": "input channels not emitted"
+  },
+  "worlds": [
+    "HabituationWorld",
+    "UnexpectedChangeWorld",
+    "GoalTargetWorld",
+    "DistractorNoiseWorld"
+  ]
+}
