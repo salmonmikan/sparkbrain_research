@@ -1,5 +1,13 @@
 # Project Status — SparkBrain v0.2.1
 
+## v0.3 C11 — baseline freeze and input-bottleneck diagnosis
+
+The accepted v0.2.1 baseline is frozen at Git commit `f692c98`, release source revision
+`6aef091`, package `0.2.1`, and persisted schema `0.2`. Protocol
+`c11-input-bottleneck-v1` is preregistered before v0.3 source integration. C11 engineering and
+scientific diagnosis are in progress. C12 and later tasks remain blocked until C11 is reviewed
+and accepted. Existing C06/C08 negative results and release metadata are unchanged.
+
 Status date: 2026-08-23
 
 ## 1. Current maturity

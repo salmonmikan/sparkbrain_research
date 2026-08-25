@@ -1,0 +1,14 @@
+{
+  "manifest_id": "c11-diagnostic-pairs-v1",
+  "protocol_id": "c11-input-bottleneck-v1",
+  "seed": 1729,
+  "official_test_data": false,
+  "pairs": [
+    {"pair_id": "P01", "family": "paraphrase", "expected_relation": "similar", "left": {"text": "The red key opens the north door.", "symbolic_event": {"kind": "literal", "literal": {"predicate": "opens", "entity": "red-key|north-door", "positive": true}}}, "right": {"text": "The north door is opened by the red key.", "symbolic_event": {"kind": "literal", "literal": {"predicate": "opens", "entity": "red-key|north-door", "positive": true}}}},
+    {"pair_id": "P02", "family": "local_change", "expected_relation": "different", "left": {"text": "The red key opens the north door.", "symbolic_event": {"kind": "literal", "literal": {"predicate": "opens", "entity": "red-key|north-door", "positive": true}}}, "right": {"text": "The blue key opens the north door.", "symbolic_event": {"kind": "literal", "literal": {"predicate": "opens", "entity": "blue-key|north-door", "positive": true}}}},
+    {"pair_id": "P03", "family": "unrelated", "expected_relation": "different", "left": {"text": "The red key opens the north door.", "symbolic_event": {"kind": "literal", "literal": {"predicate": "opens", "entity": "red-key|north-door", "positive": true}}}, "right": {"text": "A quiet river crosses the valley.", "symbolic_event": {"kind": "literal", "literal": {"predicate": "crosses", "entity": "river|valley", "positive": true}}}},
+    {"pair_id": "P04", "family": "synonym_limitation", "expected_relation": "similar", "left": {"text": "The cat sleeps on the mat.", "symbolic_event": {"kind": "literal", "literal": {"predicate": "rests-on", "entity": "cat|mat", "positive": true}}}, "right": {"text": "The feline rests upon the rug.", "symbolic_event": {"kind": "literal", "literal": {"predicate": "rests-on", "entity": "cat|mat", "positive": true}}}},
+    {"pair_id": "P05", "family": "high_overlap_negation", "expected_relation": "different", "left": {"text": "The red key opens the north door.", "symbolic_event": {"kind": "literal", "literal": {"predicate": "opens", "entity": "red-key|north-door", "positive": true}}}, "right": {"text": "The red key does not open the north door.", "symbolic_event": {"kind": "literal", "literal": {"predicate": "opens", "entity": "red-key|north-door", "positive": false}}}},
+    {"pair_id": "P06", "family": "unseen_composition", "expected_relation": "similar", "left": {"text": "Mira gives the bronze orb to Taro.", "symbolic_event": {"kind": "literal", "literal": {"predicate": "gives", "entity": "mira|bronze-orb|taro", "positive": true}}}, "right": {"text": "Taro receives the bronze orb from Mira.", "symbolic_event": {"kind": "literal", "literal": {"predicate": "gives", "entity": "mira|bronze-orb|taro", "positive": true}}}}
+  ]
+}

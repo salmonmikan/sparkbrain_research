@@ -529,3 +529,16 @@ negative, CL-007 and CL-008 remain E0, and the primary subset remains explicitly
 
 **Claim impact:** no scientific evidence grade increase. This is a release-integrity and command
 contract correction only.
+
+## 2026-08-26 — R-V03-0001 — Accepted v0.2.1 baseline freeze for C11
+
+- Engineering status: complete
+- Scientific status: not evaluated
+- Accepted Git baseline: `f692c984d6f3b15d883ced92f11a6f6ad491d4a7`
+- Release source revision: `6aef0911dc9e363478c23f98241d80d60ac4fd71`
+- Review archive SHA-256: `217771f2b602b32d8161017cd10c9db28206fcf35bd85c9a1ef9f71e88653313`
+- Package/schema: `0.2.1` / `0.2`
+- Protected C06, C08, primary subset, and claim-register hashes: all matched
+- Existing full tests, local readiness, offline reproduction, and release preparation passed
+- Release preparation retained the project-license owner blocker and no other problem
+- C06 and C08 negative results and existing claim grades remain unchanged

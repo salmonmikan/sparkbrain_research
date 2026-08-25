@@ -1,0 +1,42 @@
+{
+  "protocol_id": "c11-input-bottleneck-v1",
+  "task_id": "C11",
+  "created_at": "2026-08-26T03:05:00+09:00",
+  "status": "preregistered",
+  "seed_list": [1729],
+  "official_test_data_used": false,
+  "input_tracks": [
+    {"condition_id": "I0_whole_hash", "oracle": false, "description": "Legacy-compatible whole-string SHA-256 bucket control", "hash_buckets": 128},
+    {"condition_id": "I1_local_compositional", "oracle": false, "description": "Local token, bigram, and character n-gram surface diagnostic"},
+    {"condition_id": "I2_symbolic_oracle", "oracle": true, "description": "Explicit structured-event diagnostic upper bound, disabled by default"}
+  ],
+  "downstream": {
+    "interface": "FrozenPairEvaluatorV1",
+    "checkpoint_rule": "no training; deterministic frozen cosine decision",
+    "similarity_threshold": 0.5,
+    "labels": ["different", "similar"],
+    "budget": {"pair_count": 6, "examples_per_track": 12, "prediction_calls_per_track": 6}
+  },
+  "pair_families": ["paraphrase", "local_change", "unrelated", "synonym_limitation", "high_overlap_negation", "unseen_composition"],
+  "diagnosis_rule": {
+    "implicated": "I2 accuracy minus I0 accuracy is at least 0.25, I2 accuracy is at least 0.80, Oracle leakage audit passes, and I1 retains more similar-pair surface structure than I0",
+    "not_implicated": "I2 accuracy minus I0 accuracy is at most 0.05 with a passing Oracle leakage audit",
+    "inconclusive": "all other outcomes or any missing condition",
+    "surface_retention_minimum_delta": 0.15
+  },
+  "oracle_policy": {
+    "default_enabled": false,
+    "ordinary_text_allowed": false,
+    "unknown_fields_allowed": false,
+    "recursive_forbidden_names": ["answer", "evaluator", "gold", "label", "split", "target", "test_only", "truth"],
+    "allowed_event_fields": ["kind", "literal"],
+    "allowed_literal_fields": ["entity", "positive", "predicate"]
+  },
+  "stop_conditions": [
+    "protected baseline hash changes",
+    "official Belief-R test is read or used",
+    "Oracle input contains a forbidden or unknown field",
+    "a condition uses a different pair, label, threshold, seed, or downstream evaluator",
+    "output directory is non-empty"
+  ]
+}

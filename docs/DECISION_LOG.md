@@ -112,3 +112,15 @@ mode.
 ordinary documented Python commands must not be mistaken for content originally shipped in the
 archive. The two phases preserve strict package integrity without requiring hidden user-supplied
 environment variables or weakening the ban on cache files in a pristine release.
+
+## D-V03-0001 — Preregister the C11 input-bottleneck diagnosis
+
+**Decision:** Freeze protocol `c11-input-bottleneck-v1` before adding v0.3 source. Compare
+`I0_whole_hash`, `I1_local_compositional`, and diagnostic-only `I2_symbolic_oracle` on the same
+six pairs, deterministic seed, feature budget, frozen cosine evaluator, labels, and threshold.
+The Oracle rejects ordinary text, unknown fields, and evaluator/target metadata, remains disabled
+by default, and is excluded from autonomous-input claims. The official Belief-R test is not read.
+
+**Reason:** C11 must localize information loss without tuning the production model or allowing
+an Oracle result to be mistaken for language understanding. Any post-result protocol change
+requires a new decision ID and a new protocol run.
