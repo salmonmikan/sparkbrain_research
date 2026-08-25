@@ -700,8 +700,9 @@ energy efficiency.
 
 ## 14. C15 persistent revision-objective protocol
 
-Protocol `c15-revision-objectives-v1`, run `c15-revision-objectives-main-v1`, is frozen by
-D-V03-0017 before C15 source editing or numerical observation. Its machine-readable authority is
+Protocol `c15-revision-objectives-v2`, run `c15-revision-objectives-main-v2`, supersedes the
+unevaluated v1 procedure under D-V03-0020 and carries forward the substantive contracts frozen by
+D-V03-0017 through D-V03-0019. Its machine-readable authority is
 `artifacts/v03/c15_revision/protocol.json`. C14 is an immutable dependency: the C15 controller
 composes the existing bounded Coalition gate and must not edit C14's contracts, Coalition, loop,
 or runner source paths. C14 evaluates attributable ledger evidence before any belief mutation.
@@ -729,7 +730,7 @@ citations/residual candidates, and does not force a prediction or clear other en
 
 The controlled worlds are maintain, contradictory update, A-to-B-to-A recovery, and explicit
 insufficient information. Train/dev/test contain 16/8/8 fixtures per world, respectively. Their
-episode seeds start at 150000/250000/450000, their template families do not overlap, and canonical
+episode seeds start at 151000/251000/451000, their template families do not overlap, and canonical
 split-manifest and full-fixture SHA-256 values are frozen in the protocol. Production-visible IDs
 are opaque SHA-256 derivations; the exact event, evidence, stage, variant, and attribution-target
 generator is machine-frozen. Dev indices 0--3 per world select among
@@ -762,6 +763,15 @@ stage. C14 therefore evaluates the current stage's attributable active evidence 
 settle passes. Belief history, residual activation, citations, model hidden state, and the gate
 instance remain continuous; other entities are untouched. Same-ID duplication within a stage is
 still an exact redelivery no-op, and the frozen generator never restores an earlier-stage ID.
+
+D-V03-0020 invalidates the unevaluated v1 procedure after focused tests accidentally executed
+deterministic controller probes on v1 split episodes before the source pin. No training,
+checkpoint selection, calibration, E0 evaluation, test evaluation, or artifact generation had
+occurred. Protocol `c15-revision-objectives-v2` and run `c15-revision-objectives-main-v2`
+supersede v1 with fresh episode seeds 151000/251000/451000, model seeds 2851--2855, bootstrap seed
+4365, and newly frozen manifest/full-fixture hashes. Focused runtime tests use reserved synthetic
+fixtures and a non-official model seed; reconstructing fixture bytes for hash verification is not
+model/controller execution. All other C15 scientific and engineering contracts remain unchanged.
 
 Primary evaluation is I1 local-compositional input with E1 explicit Oracle entity scope. The
 twelve primary conditions are full separated objectives, nine single-objective ablations,

@@ -605,3 +605,33 @@ stage, rather than the whole episode's superseded evidence, the attributable inp
 closes an implementation boundary discovered by an acceptance test without tuning against any
 official model seed or result. No official training, checkpoint selection, calibration, E0
 evaluation, or test evaluation had been executed or observed.
+
+## D-V03-0020 — Supersede unevaluated C15 v1 after a pre-pin fixture probe
+
+**Decision:** Invalidate the C15 v1 execution procedure before source pinning. During focused
+source testing, tests used v1 split episodes as inputs to deterministic `RevisionController`
+probes. This violated the frozen order requiring focused tests to avoid official train/dev/test
+seeds before the source-only commit, even though no learned training, checkpoint selection,
+calibration, E0 diagnostic, test evaluation, artifact generation, or result-driven tuning had
+occurred.
+
+Protocol `c15-revision-objectives-v2` and run `c15-revision-objectives-main-v2` supersede v1.
+Freeze fresh train/dev/test episode-seed bases 151000/251000/451000, model seeds 2851--2855, and
+bootstrap seed 4365. Freeze the independently reconstructed split-manifest SHA-256 values as
+train `0f33808ba39613c998a3015d1cf0aa2adbe2808d0c4c455a8da63dc6fe45489e`, dev
+`e161c6bb652fd35a82e17e22003c792b3001f6b8a9d5c608c2e3e0caffb2b0b6`, and test
+`e4dc44af60c268ac57ea38904cefd4f31bf6f35ac40178a319aa5d8688648fd5`; freeze full-fixture
+SHA-256 as train `2d5de7eef61a4d92f8e1a83cf92670e42688f32ac0abe0295d0d736dbce2ff2b`, dev
+`1714829588a605bfa6a38b443f452dc86b2bdcb71929631e7cc26e2c24b975d8`, and test
+`6cf39d823996bd37c9bec4ee9bc7fd235b51da3e2931d3337190d50c60bfef64`.
+
+All focused runtime/controller tests must use explicitly reserved synthetic fixtures and a
+non-official model seed. Pure reconstruction of the frozen fixture documents for hash checks is
+allowed and does not execute the model or controller. Carry forward D-V03-0017 through
+D-V03-0019, every condition, objective, threshold, metric, gate, cardinality, output schema,
+protected hash, and negative-result policy unchanged.
+
+**Reason:** Replacing the unpinned, unevaluated seed surface restores a clean preregistered order
+without hiding the procedural breach or reusing observed fixture-controller combinations. The
+change is contamination control, not a response to learned performance or test metrics. v1 must
+not be source-pinned or executed.
