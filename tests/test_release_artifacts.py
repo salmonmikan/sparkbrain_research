@@ -149,6 +149,7 @@ def test_output_hash_failure_leaves_no_output_or_staging(tmp_path: Path, monkeyp
     import scripts.reproduce_release as reproduction
 
     output = tmp_path / "hash-failure"
+    monkeypatch.setattr(reproduction, "non_public_integrity_problems", lambda root: [])
     monkeypatch.setattr(reproduction, "source_revision", lambda root: "a" * 40)
     monkeypatch.setattr(
         reproduction.subprocess,
