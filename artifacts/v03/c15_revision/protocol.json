@@ -220,6 +220,29 @@
     "pythonhashseed_reproduction": "run twice with distinct values and require all eight files byte-identical",
     "remote_or_network_runtime": false
   },
+  "failure_contract": {
+    "seed_atomicity": "the model seed is the failure unit across all twelve conditions; buffer every training/dev/test row for one model seed, and if any condition or phase fails discard that seed buffer, record one failed-seed row, do not retry it, and continue with the next frozen model seed",
+    "failed_seed_fields": ["model_seed", "phase", "condition_id", "error_type", "error_hash"],
+    "phase_order": ["training", "checkpoint_selection", "calibration", "dev_evaluation", "test_evaluation"],
+    "error_hash": "lowercase SHA-256 of canonical JSON [phase,condition_id,error_type]; exception messages and local paths are not artifacts",
+    "artifact_identity": "every JSON artifact carrying failed_seeds uses the exact same sorted list; per_transition_predictions.jsonl contains only successful prediction rows and report.md names every failed seed",
+    "successful_seed_cardinality": {
+      "raw_rows_per_seed": 4352,
+      "training_step_rows_per_seed": 4608,
+      "condition_seed_rows_per_seed": 12,
+      "objective_rows_per_seed": 108,
+      "confusion_seed_rows_per_seed": 34,
+      "calibration_seed_rows_per_seed": 34,
+      "pareto_seed_points_per_seed": 12,
+      "aggregate_rows_when_any_seed_succeeds": 34,
+      "aggregate_points_when_any_seed_succeeds": 12,
+      "pairwise_rows_when_any_seed_succeeds": 66
+    },
+    "failed_run_status": "if any required model seed fails, engineering status is implementation_failure; successful rows and descriptive aggregates remain visible but no scientific gate is evaluated",
+    "failed_bootstrap": "every comparison retains resamples and bootstrap_seed but effect, lower, and upper are null",
+    "failed_scientific_status": "not_evaluated_implementation_failure",
+    "no_successful_seed": "retain the exact eight files with empty prediction/training/derived row arrays, static objective configuration, the common failed_seeds list, implementation_failure status, and null bootstrap effects"
+  },
   "input_and_leakage": {
     "forbidden_recursive_keys": [
       "answer",
