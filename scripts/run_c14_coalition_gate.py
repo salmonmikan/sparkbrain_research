@@ -556,8 +556,8 @@ def _metric_rows(
         g1_g0 = [
             int(
                 _decision_diff(
-                    by_key[("G1_evidence_coalition", seed, case)],
-                    by_key[("G0_probability_margin", seed, case)],
+                    by_key[("G1_evidence_coalition", seed, case)]["decision"],
+                    by_key[("G0_probability_margin", seed, case)]["decision"],
                 )
             )
             for seed in seed_set
@@ -566,8 +566,8 @@ def _metric_rows(
         g1_no = [
             int(
                 _decision_diff(
-                    by_key[("G1_evidence_coalition", seed, case)],
-                    by_key[("G1_no_coalition_ablation", seed, case)],
+                    by_key[("G1_evidence_coalition", seed, case)]["decision"],
+                    by_key[("G1_no_coalition_ablation", seed, case)]["decision"],
                 )
             )
             for seed in seed_set
