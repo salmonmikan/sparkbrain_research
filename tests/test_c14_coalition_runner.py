@@ -253,6 +253,42 @@ def test_metric_rows_use_nested_decisions_for_cross_condition_metrics() -> None:
     assert all(row["denominator"] == len(case_order) for row in seed_cross)
 
 
+def test_in_memory_evaluation_reaches_all_metric_and_gate_aggregates() -> None:
+    value = protocol()
+    fixture_hashes = {
+        str(seed): runner.fixture_sha256(value, int(seed)) for seed in value["seeds"]
+    }
+
+    raw, removal = runner._run_evaluation(
+        protocol=value,
+        fixture_hashes=fixture_hashes,
+        fixed_hash=value["frozen_logits"]["sha256"],
+    )
+    aggregate, seed_rows = runner._metric_rows(raw, value)
+    paired = runner._paired_statistics(raw, value)
+    call_graph_probe = runner._call_graph_probe()
+    gates = runner._engineering_gates(
+        raw,
+        removal,
+        value,
+        call_graph_probe=call_graph_probe,
+    )
+    failed = runner._failed_seed_rows(
+        raw=raw,
+        removal=removal,
+        protocol=value,
+        call_graph_probe=call_graph_probe,
+    )
+
+    assert len(raw) == 360
+    assert len(removal) == 15
+    assert len(aggregate) == 24
+    assert len(seed_rows) == 120
+    assert len(paired) == 4
+    assert len(gates) == 12
+    assert isinstance(failed, list)
+
+
 def test_expected_source_scope_and_exact_six_files_are_frozen() -> None:
     value = protocol()
     assert (
