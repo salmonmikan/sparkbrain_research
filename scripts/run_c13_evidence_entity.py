@@ -309,14 +309,28 @@ def _run_seed(
                     cross_denominator += 1
                     cross_event = not _snapshot_equal(paired_before, paired_after)
                     cross_numerator += int(cross_event)
+                    before_bytes = _compact_json(paired_before).encode("utf-8")
+                    after_bytes = _compact_json(paired_after).encode("utf-8")
                     cross_rows.append(
                         {
                             "condition_id": condition_id,
                             "cross_talk_event": cross_event,
                             "episode_id": episode["episode_id"],
-                            "non_target_after": paired_after,
-                            "non_target_before": paired_before,
                             "non_target_entity": "object-b",
+                            "non_target_probability_after": paired_after[
+                                "positive_probability"
+                            ],
+                            "non_target_probability_before": paired_before[
+                                "positive_probability"
+                            ],
+                            "non_target_snapshot_after_sha256": _sha256_bytes(
+                                after_bytes
+                            ),
+                            "non_target_snapshot_before_sha256": _sha256_bytes(
+                                before_bytes
+                            ),
+                            "non_target_snapshot_byte_identical": before_bytes
+                            == after_bytes,
                             "seed": fixture["seed"],
                             "target_entity": "object-a",
                         }
@@ -417,6 +431,10 @@ def _invariant_audit() -> dict[str, object]:
     )
     restored_state = ledger.active_state_hash()
     restored_summary = ledger.summary("state-left", object_key="object-a", now=2.0)
+    restored_snapshot = probability_snapshot(
+        ledger, entity_key="object-a", hypothesis_id="state-left", now=2.0
+    )
+    restored_decision = decide_g0(ledger, entity_key="object-a", now=2.0)
     ledger.deactivate(primary.evidence_id, at_time=2.0)
     ledger.restore(primary.evidence_id, at_time=2.0)
     identity_state = ledger.active_state_hash()
@@ -444,7 +462,13 @@ def _invariant_audit() -> dict[str, object]:
         "fixed_time_restore_exact": ledger.active_state_hash() == identity_state
         and ledger.active_state_hash() == restored_state
         and ledger.summary("state-left", object_key="object-a", now=2.0)
-        == restored_summary,
+        == restored_summary
+        and probability_snapshot(
+            ledger, entity_key="object-a", hypothesis_id="state-left", now=2.0
+        )
+        == restored_snapshot
+        and decide_g0(ledger, entity_key="object-a", now=2.0)
+        == restored_decision,
         "identity_reassignment_rejected": identity_rejected,
         "same_id_independent_count_delta": redelivered_summary.independent_group_count
         - initial_summary.independent_group_count
@@ -457,6 +481,12 @@ def _invariant_audit() -> dict[str, object]:
         "same_id_state_unchanged": state_before_redelivery
         == ledger.audit_rows()[1].active_state_hash_after,
         "same_id_summary_delta": redelivered_summary == initial_summary,
+        "orphan_citations_after_remove_restore": all(
+            ledger.resolve(evidence_id)
+            for evidence_id in (
+                restored_summary.support_ids + restored_summary.contradiction_ids
+            )
+        ),
     }
     return {
         "all_checks_passed": all(checks.values()),
@@ -571,7 +601,16 @@ def _run_into(
                 "cross_talk_numerator": sum(
                     int(row["cross_talk_numerator"]) for row in rows
                 ),
+                "evidence_assignment_denominator": sum(
+                    int(row["evidence_assignment_denominator"]) for row in rows
+                ),
+                "evidence_misassignment_numerator": sum(
+                    int(row["evidence_misassignment_numerator"]) for row in rows
+                ),
                 "failed_seeds": failed_seeds,
+                "oracle_coverage_numerator": sum(
+                    int(row["oracle_coverage_numerator"]) for row in rows
+                ),
                 "seed_level_rows": rows,
             }
             for condition, rows in by_condition.items()

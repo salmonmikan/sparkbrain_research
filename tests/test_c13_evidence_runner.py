@@ -107,9 +107,10 @@ def test_e1_non_target_snapshots_are_byte_identical_and_e0_is_separate() -> None
     assert e0_rows and e1_rows
     assert all(row["cross_talk_event"] for row in e0_rows)
     assert all(not row["cross_talk_event"] for row in e1_rows)
+    assert all(row["non_target_snapshot_byte_identical"] for row in e1_rows)
     assert all(
-        json.dumps(row["non_target_before"], sort_keys=True, separators=(",", ":"))
-        == json.dumps(row["non_target_after"], sort_keys=True, separators=(",", ":"))
+        row["non_target_snapshot_before_sha256"]
+        == row["non_target_snapshot_after_sha256"]
         for row in e1_rows
     )
 
