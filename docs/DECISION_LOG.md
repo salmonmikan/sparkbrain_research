@@ -453,3 +453,31 @@ decision objects. Repin C14 to `eb7f542...` before the next and only remaining o
 **Reason:** This is a mechanical acceptance-calculation correction after a fail-closed attempt,
 not a result-driven protocol change. It changes no fixture, score, weight, threshold, seed,
 expected outcome, metric formula, engineering gate, protected artifact, or claim boundary.
+
+## D-V03-0016 — Accept C14 at the attributable Coalition-gate boundary
+
+**Decision:** Accept C14 G03 for protocol `c14-coalition-gate-v1`, run
+`c14-coalition-gate-main-v1`, final source pin
+`eb7f542963397eba1b7d9b4a66a7873b3ba17ac4`, and artifact commit
+`4c0d26cd0be862da63594f1f32e295127de72304`. Freeze the exact six artifacts under
+`artifacts/v03/c14_coalition_gate/`.
+
+All 360 raw fixed-logit rows, 15 causal removal rows, 24 aggregate metrics, 120 seed-level rows,
+four paired statistics, 50 reason references, and 12 engineering gates are retained. All gates
+passed with no failed seed. Independent support Ignition rate and removal reversal/restore-exact
+rates are 1.0; same-ID score/decision delta is 0.0; correlated-copy independent-group delta is
+0; contradiction score delta is -0.1296997075145081; and both G1-versus-control decision
+difference rates are 0.9. All nine required reasons are represented. Fixed-logit integrity is
+1.0 across every raw row.
+
+The six artifacts reproduced byte-for-byte in a second process with a different
+`PYTHONHASHSEED`. Raw-only recalculation reproduced all aggregate, seed, paired, gate, reason, and
+failed-seed outputs. The complete test suite passed with five explicit frozen-release skips and
+the existing Starlette deprecation warning only.
+
+**Reason:** C14 now demonstrates the narrow engineering claim that an attributable, bounded,
+evidence-bearing Coalition score causally controls the actual isolated v0.3 Ignition decision
+while logits remain fixed. It does not establish external accuracy improvement, learned
+coalition formation, semantic understanding, biological fidelity, energy efficiency, or a higher
+scientific claim grade. The accepted C06/C08 negative findings, v0.2 package/schema, release
+metadata, and protected artifacts remain unchanged.

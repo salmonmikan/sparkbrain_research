@@ -683,3 +683,17 @@ instead of their nested decision objects. Decision `D-V03-0015` records that fai
 the independently audited mechanical correction. The final source pin is
 `eb7f542963397eba1b7d9b4a66a7873b3ba17ac4`; its write-free full calculation regression retains
 exact counts `360 / 15 / 24 / 120 / 4 / 12` and changes no frozen scientific value.
+
+C14 is accepted at final source pin `eb7f542963397eba1b7d9b4a66a7873b3ba17ac4` and artifact
+commit `4c0d26cd0be862da63594f1f32e295127de72304`. The frozen run retains 360 raw rows, 15 causal
+rows, 24 aggregate metrics, 120 seed rows, four paired statistics, 50 reason references, and all
+12 gate results. Every gate passed and failed seeds are empty. Independent-support Ignition,
+removal reversal, and exact restoration are 1.0; same-ID delta is 0.0; correlated-group inflation
+is 0; contradiction score delta is -0.1296997075145081; and G1 differs from both probability
+controls on 90% of paired primary cases. All nine no-Ignition/ignition reasons are covered.
+
+The exact six artifacts reproduce byte-for-byte under a different `PYTHONHASHSEED`, and raw-only
+recalculation matches all derived outputs. This establishes only attributable synthetic Coalition
+control of the isolated v0.3 Ignition call path at fixed logits. It is not evidence of external
+accuracy gain, learned Coalition formation, semantic understanding, biological fidelity, or
+energy efficiency.
