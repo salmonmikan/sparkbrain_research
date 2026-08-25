@@ -1,0 +1,202 @@
+{
+  "schema_version": "0.3",
+  "protocol_id": "c14-coalition-gate-v1",
+  "run_id": "c14-coalition-gate-main-v1",
+  "preregistered_at": "2026-08-26T05:36:00+09:00",
+  "status": "preregistered_not_run",
+  "dependencies": {
+    "c12_merge": "280516fb61eab7c7a96c109baefc82b333fcc367",
+    "c13_merge": "06e13975b486548bb17924acc3b82786246ad6e1",
+    "c13_source_contract": "03b26591c653592ec501177d9628bd2bea9b8ec4"
+  },
+  "conditions": [
+    "G0_probability_margin",
+    "G1_evidence_coalition",
+    "G1_no_coalition_ablation"
+  ],
+  "frozen_logits": {
+    "hypothesis-alpha": 0.72,
+    "hypothesis-beta": 0.28,
+    "g0_confidence_threshold": 0.5,
+    "g0_margin_threshold": 0.08,
+    "g0_winner": "hypothesis-alpha",
+    "g0_ignited": true,
+    "must_be_byte_identical_across_interventions": true
+  },
+  "coalition_terms": {
+    "activation": "clamp(activation, 0, 1)",
+    "effective_support": "1 - exp(-max(effective_support, 0))",
+    "source_diversity": "min(source_count / 2, 1)",
+    "group_diversity": "min(independent_group_count / 2, 1)",
+    "temporal_stability": "min(stability / 2, 1)",
+    "recency": "mean(exp(-max(0, now - evidence_time) / 30)) over effectively-active support evidence, else 0",
+    "contradiction": "1 - exp(-max(effective_contradiction, 0))",
+    "redundancy": "1 - exp(-max(redundancy, 0))",
+    "all_terms_bounded": [
+      0.0,
+      1.0
+    ]
+  },
+  "coalition_score": {
+    "formula": "0.25*activation + 0.25*effective_support + 0.05*source_diversity + 0.05*group_diversity + 0.10*temporal_stability + 0.20*recency - 0.15*contradiction - 0.10*redundancy",
+    "weights": {
+      "activation": 0.25,
+      "effective_support": 0.25,
+      "source_diversity": 0.05,
+      "group_diversity": 0.05,
+      "temporal_stability": 0.1,
+      "recency": 0.2,
+      "contradiction": 0.15,
+      "redundancy": 0.1
+    },
+    "not_trained_to_probability": true,
+    "probability_copy_forbidden": true
+  },
+  "gate": {
+    "ignition_threshold": 0.55,
+    "ignition_margin": 0.1,
+    "minimum_sources": 2,
+    "minimum_independent_groups": 2,
+    "minimum_evidence": 2,
+    "stability_steps": 2,
+    "minimum_recency": 0.3,
+    "contradiction_ceiling": 0.35,
+    "budget": 1,
+    "reason_priority": [
+      "no_candidates",
+      "insufficient_evidence",
+      "insufficient_sources",
+      "insufficient_independent_groups",
+      "excessive_contradiction",
+      "insufficient_stability",
+      "insufficient_recency",
+      "score_below_threshold",
+      "margin_below_threshold",
+      "ignited"
+    ],
+    "tie_break": "highest score, then entity_key lexicographic, then hypothesis_id lexicographic"
+  },
+  "intervention_cases": [
+    "independent_multi_source_support",
+    "same_id_exact_duplicate",
+    "same_source_distinct_groups",
+    "correlated_distinct_copy",
+    "strong_contradiction",
+    "unstable_first_observation",
+    "old_time_decayed_support",
+    "weak_low_score",
+    "equal_coalition_low_margin",
+    "necessary_evidence_remove_restore"
+  ],
+  "case_contract": {
+    "entity_key": "object-a",
+    "primary_hypothesis": "hypothesis-alpha",
+    "secondary_hypothesis": "hypothesis-beta",
+    "fresh_time": 10.0,
+    "old_evidence_time": 0.0,
+    "old_evaluation_time": 100.0,
+    "independent_support": "two support records, strength 1.0 each, distinct source and correlation group",
+    "same_id_duplicate": "byte-exact redelivery of the first support record",
+    "correlated_copy": "distinct ID and source, strength 1.0, same correlation group as first support",
+    "same_source_distinct_groups": "two distinct support IDs and correlation groups, strength 1.0 each, but the same source ID",
+    "strong_contradiction": "independent contradict record with strength 2.0",
+    "weak_low_score": "two independent support records with strength 0.05 and activation 0.0",
+    "equal_low_margin": "alpha has two independent support records of strength 0.2 each; beta has two independent support records each of strength (-ln(1 - ((1 - exp(-0.4)) + 0.44))) / 2, making the two frozen-logit coalition scores exactly equal",
+    "remove_restore": "deactivate one of two necessary independent support records, then restore the same immutable record",
+    "fixed_logit_hash_required": true
+  },
+  "gate_state_control": {
+    "default": "each case and condition starts from a fresh gate and ledger",
+    "stability": "evaluate the byte-identical coalition twice at the same now; the second decision is the primary row",
+    "remove_restore": "compare baseline, removed, and restored decisions by replaying each ledger state through a fresh gate for exactly two identical evaluations",
+    "reason": "prevent prior intervention history from changing the frozen stability term"
+  },
+  "actual_call_path": {
+    "entry": "V03ReferenceLoop.settle",
+    "gate": "CoalitionGate.evaluate",
+    "consumed_value": "bounded CoalitionState.score",
+    "output": "IgnitionDecision and workspace/belief update",
+    "learned_v0_2_backend_changed": false
+  },
+  "seeds": [
+    2701,
+    2702,
+    2703,
+    2704,
+    2705
+  ],
+  "statistics": {
+    "paired": true,
+    "pairing_unit": "seed-by-intervention-case block",
+    "bootstrap_resamples": 10000,
+    "bootstrap_seed": 4314,
+    "confidence_interval": 0.95,
+    "retain_seed_level_rows": true,
+    "retain_all_raw_rows": true,
+    "retain_failed_seeds": true
+  },
+  "engineering_gates": {
+    "fixed_logit_integrity_rate_min": 1.0,
+    "independent_support_ignition_rate_min": 1.0,
+    "independent_support_score_delta_min": 1e-12,
+    "same_id_score_and_decision_delta_max": 0.0,
+    "correlated_copy_independent_group_delta_max": 0,
+    "contradiction_score_delta_max": -1e-12,
+    "removal_reversal_rate_min": 1.0,
+    "restore_exact_rate_min": 1.0,
+    "g1_vs_no_coalition_decision_difference_rate_min": 0.3,
+    "required_reason_coverage": [
+      "insufficient_evidence",
+      "insufficient_sources",
+      "insufficient_independent_groups",
+      "excessive_contradiction",
+      "insufficient_stability",
+      "insufficient_recency",
+      "score_below_threshold",
+      "margin_below_threshold",
+      "ignited"
+    ],
+    "call_graph_requires_coalition_score_consumption": true,
+    "external_accuracy_improvement_required": false
+  },
+  "reported_metrics": [
+    "coverage",
+    "covered_accuracy",
+    "false_ignition_rate",
+    "mean_top_coalition_score",
+    "mean_score_delta_from_independent_support",
+    "mean_score_delta_from_contradiction",
+    "g1_vs_g0_decision_difference_rate",
+    "g1_vs_no_coalition_decision_difference_rate"
+  ],
+  "metric_definitions": {
+    "coverage": "ignited primary decision rows / all primary decision rows",
+    "covered_accuracy": "ignited primary rows whose winner equals the frozen expected winner / ignited primary rows; 0 when denominator is zero",
+    "false_ignition_rate": "ignited primary rows among cases frozen as expected_no_ignition / all expected_no_ignition primary rows",
+    "primary_decision": "the second identical evaluation for ordinary cases and the removed stage for necessary_evidence_remove_restore",
+    "decision_difference": "ignited flag, winner, or machine-readable reason differs",
+    "score_delta": "paired G1 top coalition score difference at fixed logits and fixed now"
+  },
+  "expected_files": [
+    "protocol.json",
+    "fixed_logit_interventions.jsonl",
+    "gate_ablation_metrics.json",
+    "causal_evidence_removal.jsonl",
+    "no_ignition_reasons.json",
+    "report.md"
+  ],
+  "claim_policy": {
+    "engineering_completion_separate_from_external_accuracy": true,
+    "synthetic_causality_does_not_establish_external_improvement": true,
+    "no_energy_or_biological_claim": true,
+    "v0_2_claim_grades_unchanged": true
+  },
+  "stop_conditions": [
+    "G1 output is copied from probability confidence",
+    "threshold, weight, seed, fixture, or reason priority changes after any result",
+    "no-coalition ablation leaves every preregistered decision unchanged",
+    "fixed logits differ between paired interventions",
+    "raw rows, failed seeds, counterexamples, or no-ignition reasons are omitted",
+    "C06 or C08 negative findings, package 0.2.1, schema 0.2, release metadata, or protected hashes change"
+  ]
+}

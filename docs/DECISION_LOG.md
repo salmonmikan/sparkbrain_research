@@ -293,3 +293,26 @@ claim grades, protected hashes, package/schema, and release metadata remain unch
 rows and the numeric/canonical G02 before/after observations to remain in the exact eight
 artifacts. This correction changes no protocol, threshold, fixture, seed, metric definition, or
 result; it makes the existing acceptance independently recalculable instead of boolean-only.
+## D-V03-0009 — Preregister C14 Coalition-driven Ignition
+
+**Decision:** Before C14 source implementation or evaluation, freeze protocol
+`c14-coalition-gate-v1` and run `c14-coalition-gate-main-v1`. Compare the unchanged G0
+probability/margin control, the G1 evidence-Coalition gate, and a no-Coalition ablation while
+holding logits at `hypothesis-alpha=0.72` and `hypothesis-beta=0.28`. Use seeds 2701--2705 and a
+paired 10,000-resample interval over seed-by-intervention-case blocks with bootstrap seed 4314.
+
+Bound activation, effective support, source/group diversity, temporal stability, recency,
+contradiction, and redundancy to `[0,1]` using the exact transforms and weights in
+`artifacts/v03/c14_coalition_gate/protocol.json`. Freeze threshold 0.55, margin 0.10, minimum two
+sources/groups/evidence, stability two, recency minimum 0.30, contradiction ceiling 0.35, budget
+one, and the machine-readable reason priority. Run the ten frozen independent-support,
+same-ID, same-source, correlated-copy, contradiction, instability, time-decay, low-score,
+low-margin, and remove/restore interventions. Each case uses a fresh gate/ledger; stability uses
+two identical evaluations, and remove/restore compares fresh-gate replays so intervention history
+cannot alter the stability term. Retain every raw row and failed seed.
+
+**Reason:** C14 must show that attributable evidence changes the actual v0.3 Ignition decision
+while logits stay fixed. A probability copy, a post-result threshold reduction, or an ablation
+that changes no decision would not establish Coalition causality. External accuracy improvement
+is not required for engineering completion, and the accepted C06/C08 findings, claim grades,
+package/schema, release metadata, and protected artifacts remain unchanged.

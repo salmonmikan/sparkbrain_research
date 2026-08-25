@@ -620,3 +620,20 @@ The metrics artifact retains all 1,440 ordered execution rows, including add-row
 lineage fields. The invariant artifact retains numeric and canonical before/after observations
 for same-ID, correlation, identity rejection, lineage, orphan, and remove/restore checks so the
 reported aggregates and gates can be independently recalculated from checked-in raw evidence.
+## 13. C14 Coalition-driven Ignition protocol
+
+Protocol `c14-coalition-gate-v1`, run `c14-coalition-gate-main-v1`, is frozen before C14 source
+implementation or evaluation. The paired controls are `G0_probability_margin`,
+`G1_evidence_coalition`, and `G1_no_coalition_ablation`; every intervention uses identical logits
+`hypothesis-alpha=0.72`, `hypothesis-beta=0.28`. G0 retains confidence threshold 0.50 and margin
+threshold 0.08. G1 consumes the bounded evidence-Coalition score and cannot copy confidence.
+
+The exact score transforms, weights, gate thresholds, reason priority, ten intervention cases,
+seeds 2701--2705, 10,000 paired bootstrap resamples, and bootstrap seed 4314 are frozen in
+`artifacts/v03/c14_coalition_gate/protocol.json`. G03 engineering acceptance requires direct code
+and test evidence that the score is consumed, independent support can Ignite, duplicates and
+correlated copies cannot manufacture independence, contradiction and removal causally change the
+gate, restore is exact, fixed logits never change, and G1 differs from the no-Coalition ablation on
+at least 30% of preregistered paired cases. Coverage, covered accuracy, false Ignition, every raw
+row, counterexample, failed seed, and machine-readable no-Ignition reason are retained. External
+accuracy improvement is explicitly outside the engineering gate.
