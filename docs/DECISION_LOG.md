@@ -124,3 +124,17 @@ by default, and is excluded from autonomous-input claims. The official Belief-R 
 **Reason:** C11 must localize information loss without tuning the production model or allowing
 an Oracle result to be mistaken for language understanding. Any post-result protocol change
 requires a new decision ID and a new protocol run.
+
+## D-V03-0002 — Supersede C11 v1 with a five-seed statistical audit
+
+**Decision:** Before accepting C11, supersede protocol `c11-input-bottleneck-v1` with
+`c11-input-bottleneck-v2`. Keep the six pairs, input tracks, threshold, diagnosis rule, and
+Oracle policy unchanged, but execute preregistered seeds 1729–1733. Report paired effect sizes
+and 95% nonparametric bootstrap intervals over diagnostic-pair blocks using bootstrap seed 4311.
+The deterministic frontends and evaluator are expected to be seed-invariant; that invariance is
+reported explicitly rather than treating duplicate seeded executions as independent evidence.
+
+**Reason:** Independent C11 review found that v1 met the task-specific criteria but did not meet
+the v0.3 global rule requiring at least five seeds and an interval for a primary synthetic
+comparison. This is a new protocol and run recorded before execution; it does not tune any
+feature, threshold, pair, label, diagnosis gate, or checkpoint after seeing v1 results.

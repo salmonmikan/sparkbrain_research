@@ -465,3 +465,13 @@ least 0.25, reaches at least 0.80, passes leakage checks, and the local track re
 more similar-pair surface similarity than whole hashing. A gap of at most 0.05 is `not implicated`;
 other complete outcomes are `inconclusive`. Missing conditions or protocol violations fail closed.
 The official Belief-R test is outside C11 and must not be inspected or used for tuning.
+
+### C11 statistical-completeness amendment
+
+Protocol `c11-input-bottleneck-v2` supersedes v1 for C11 acceptance. It preserves all six
+diagnostic pairs, conditions, labels, features, threshold 0.5, and diagnosis gates, and adds the
+preregistered seed list 1729–1733. Because the three frontends and frozen evaluator are
+deterministic, seeds audit execution invariance rather than stochastic model variation. Primary
+effect sizes and 95% intervals use 10,000 paired bootstrap resamples of diagnostic-pair blocks
+with bootstrap seed 4311. Seeded rows remain visible in raw artifacts, and a degenerate
+between-seed spread is reported as such rather than promoted as independent replication.
