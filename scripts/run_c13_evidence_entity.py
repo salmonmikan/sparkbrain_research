@@ -15,8 +15,10 @@ from typing import Any
 from sparkbrain.v03_seed import (
     E0_GLOBAL,
     E1_ORACLE_ENTITY,
+    EntityBinding,
     EvidenceLedger,
     EvidenceRecord,
+    EvidenceSummary,
     PerceptualSpark,
     SlotMetricRow,
     aggregate_condition_rows,
@@ -182,7 +184,7 @@ def _record_for_event(
     episode: dict[str, Any],
     event: dict[str, Any],
     spark: PerceptualSpark,
-) -> EvidenceRecord:
+) -> tuple[EvidenceRecord, EntityBinding]:
     binding = bind_entity(
         spark,
         condition_id=condition_id,
@@ -216,7 +218,7 @@ def _record_for_event(
     )
     if record.evidence_id != expected_evidence_id:
         raise RuntimeError("production EvidenceRecord ID derivation mismatch")
-    return record
+    return record, binding
 
 
 def _snapshot_equal(left: dict[str, object], right: dict[str, object]) -> bool:
@@ -225,7 +227,12 @@ def _snapshot_equal(left: dict[str, object], right: dict[str, object]) -> bool:
 
 def _run_seed(
     *, condition_id: str, fixture: dict[str, Any]
-) -> tuple[dict[str, object], list[dict[str, object]], list[dict[str, object]]]:
+) -> tuple[
+    dict[str, object],
+    list[dict[str, object]],
+    list[dict[str, object]],
+    list[dict[str, object]],
+]:
     ledger = EvidenceLedger()
     execution_rows: list[dict[str, object]] = []
     cross_rows: list[dict[str, object]] = []
@@ -246,6 +253,7 @@ def _run_seed(
             row: dict[str, object] = {
                 "condition_id": condition_id,
                 "episode_id": episode["episode_id"],
+                "episode_index": episode["episode_index"],
                 "event_kind": kind,
                 "event_time": event["event_time"],
                 "seed": fixture["seed"],
@@ -257,7 +265,7 @@ def _run_seed(
                 sample_id = spark.parents[0]
                 ledger.register_sample(sample_id)
                 ledger.register_spark(spark.spark_id, (sample_id,))
-                evidence = _record_for_event(
+                evidence, binding = _record_for_event(
                     condition_id=condition_id,
                     episode=episode,
                     event=event,
@@ -273,6 +281,19 @@ def _run_seed(
                     )
                 row["evidence_id"] = evidence.evidence_id
                 row["entity_key"] = evidence.entity_key
+                row["assignment_status"] = binding.assignment_status
+                row["binding_id"] = binding.binding_id
+                row["eligible_for_assignment"] = True
+                row["lineage_resolution_denominator"] = 1
+                row["lineage_resolution_numerator"] = int(
+                    ledger.lineage_resolution_rate() == 1.0
+                )
+                row["lineage_resolved"] = (
+                    row["lineage_resolution_numerator"] == 1
+                )
+                row["parent_spark_ids"] = list(evidence.parent_spark_ids)
+                row["sample_id"] = sample_id
+                row["spark_id"] = spark.spark_id
             elif kind == "late_exact_redelivery":
                 evidence = records[str(event["redelivers"])]
                 state_before = ledger.active_state_hash()
@@ -382,7 +403,20 @@ def _run_seed(
         "oracle_entity_coverage": assignment_covered / assignment_eligible,
         "seed": fixture["seed"],
     }
-    return metrics, cross_rows, removal_rows
+    return metrics, cross_rows, removal_rows, execution_rows
+
+
+def _summary_observation(summary: EvidenceSummary) -> dict[str, object]:
+    return {
+        "contradiction_ids": list(summary.contradiction_ids),
+        "effective_contradiction": summary.effective_contradiction,
+        "effective_support": summary.effective_support,
+        "independent_group_count": summary.independent_group_count,
+        "redundancy": summary.redundancy,
+        "source_count": summary.source_count,
+        "support_ids": list(summary.support_ids),
+        "unique_evidence_count": summary.unique_evidence_count,
+    }
 
 
 def _invariant_audit() -> dict[str, object]:
@@ -407,6 +441,7 @@ def _invariant_audit() -> dict[str, object]:
     )
     state_before_redelivery = ledger.active_state_hash()
     ledger.add(primary, delivered_at=1.0)
+    state_after_redelivery = ledger.active_state_hash()
     redelivered_summary = ledger.summary("state-left", object_key="object-a", now=0.0)
     redelivered_probability = probability_snapshot(
         ledger, entity_key="object-a", hypothesis_id="state-left", now=0.0
@@ -429,64 +464,161 @@ def _invariant_audit() -> dict[str, object]:
     correlated_probability = probability_snapshot(
         ledger, entity_key="object-a", hypothesis_id="state-left", now=0.0
     )
-    restored_state = ledger.active_state_hash()
-    restored_summary = ledger.summary("state-left", object_key="object-a", now=2.0)
-    restored_snapshot = probability_snapshot(
+    restore_before_state = ledger.active_state_hash()
+    restore_before_summary = ledger.summary(
+        "state-left", object_key="object-a", now=2.0
+    )
+    restore_before_snapshot = probability_snapshot(
         ledger, entity_key="object-a", hypothesis_id="state-left", now=2.0
     )
-    restored_decision = decide_g0(ledger, entity_key="object-a", now=2.0)
+    restore_before_decision = decide_g0(
+        ledger, entity_key="object-a", now=2.0
+    )
     ledger.deactivate(primary.evidence_id, at_time=2.0)
+    removed_state = ledger.active_state_hash()
     ledger.restore(primary.evidence_id, at_time=2.0)
-    identity_state = ledger.active_state_hash()
+    restore_after_state = ledger.active_state_hash()
+    restore_after_summary = ledger.summary(
+        "state-left", object_key="object-a", now=2.0
+    )
+    restore_after_snapshot = probability_snapshot(
+        ledger, entity_key="object-a", hypothesis_id="state-left", now=2.0
+    )
+    restore_after_decision = decide_g0(
+        ledger, entity_key="object-a", now=2.0
+    )
+    identity_state_before = ledger.active_state_hash()
     try:
         ledger.add(replace(primary, polarity="contradict"), delivered_at=3.0)
         identity_rejected = False
     except ValueError:
         identity_rejected = True
-    checks = {
-        "cited_lineage_resolution_rate": ledger.lineage_resolution_rate() == 1.0,
-        "correlated_effective_marginal_ratio": abs(
-            (correlated_summary.effective_support - initial_summary.effective_support)
-            / initial_summary.effective_support
-            - 0.2
-        )
-        <= 1e-12,
-        "correlated_group_count_delta": correlated_summary.independent_group_count
-        - initial_summary.independent_group_count
-        == 0,
-        "correlated_prediction_change": abs(
-            float(correlated_probability["positive_probability"])
-            - float(initial_probability["positive_probability"])
-        )
-        <= 0.05,
-        "fixed_time_restore_exact": ledger.active_state_hash() == identity_state
-        and ledger.active_state_hash() == restored_state
-        and ledger.summary("state-left", object_key="object-a", now=2.0)
-        == restored_summary
-        and probability_snapshot(
-            ledger, entity_key="object-a", hypothesis_id="state-left", now=2.0
-        )
-        == restored_snapshot
-        and decide_g0(ledger, entity_key="object-a", now=2.0)
-        == restored_decision,
-        "identity_reassignment_rejected": identity_rejected,
-        "same_id_independent_count_delta": redelivered_summary.independent_group_count
-        - initial_summary.independent_group_count
-        == 0,
-        "same_id_prediction_change": abs(
+    identity_state_after = ledger.active_state_hash()
+    citations = tuple(
+        restore_after_summary.support_ids + restore_after_summary.contradiction_ids
+    )
+    orphan_count = 0
+    for evidence_id in citations:
+        try:
+            ledger.resolve(evidence_id)
+        except KeyError:
+            orphan_count += 1
+    same_id = {
+        "active_state_hash_after": state_after_redelivery,
+        "active_state_hash_before": state_before_redelivery,
+        "independent_group_count_after": redelivered_summary.independent_group_count,
+        "independent_group_count_before": initial_summary.independent_group_count,
+        "independent_group_count_delta": redelivered_summary.independent_group_count
+        - initial_summary.independent_group_count,
+        "positive_probability_after": redelivered_probability["positive_probability"],
+        "positive_probability_before": initial_probability["positive_probability"],
+        "positive_probability_delta": abs(
             float(redelivered_probability["positive_probability"])
             - float(initial_probability["positive_probability"])
+        ),
+        "summary_after": _summary_observation(redelivered_summary),
+        "summary_before": _summary_observation(initial_summary),
+        "unique_evidence_count_after": redelivered_summary.unique_evidence_count,
+        "unique_evidence_count_before": initial_summary.unique_evidence_count,
+    }
+    correlation = {
+        "correlation_group": correlated.correlation_group,
+        "effective_marginal": correlated_summary.effective_support
+        - initial_summary.effective_support,
+        "effective_marginal_ratio": (
+            correlated_summary.effective_support - initial_summary.effective_support
+        )
+        / correlated.strength,
+        "effective_support_after": correlated_summary.effective_support,
+        "effective_support_before": initial_summary.effective_support,
+        "independent_group_count_after": correlated_summary.independent_group_count,
+        "independent_group_count_before": initial_summary.independent_group_count,
+        "positive_probability_after": correlated_probability["positive_probability"],
+        "positive_probability_before": initial_probability["positive_probability"],
+        "positive_probability_delta": abs(
+            float(correlated_probability["positive_probability"])
+            - float(initial_probability["positive_probability"])
+        ),
+    }
+    identity_mutation = {
+        "attempted_fields": ["polarity"],
+        "attempted_polarity": "contradict",
+        "rejected": identity_rejected,
+        "state_hash_after": identity_state_after,
+        "state_hash_before": identity_state_before,
+    }
+    lineage = {
+        "resolution_denominator": 2,
+        "resolution_numerator": int(ledger.lineage_resolution_rate() == 1.0) * 2,
+        "resolution_rate": ledger.lineage_resolution_rate(),
+    }
+    remove_restore = {
+        "active_state_hash_after_restore": restore_after_state,
+        "active_state_hash_before_remove": restore_before_state,
+        "active_state_hash_removed": removed_state,
+        "citations_after_restore": list(citations),
+        "citations_before_remove": list(
+            restore_before_summary.support_ids
+            + restore_before_summary.contradiction_ids
+        ),
+        "decision_after_restore": restore_after_decision.to_dict(),
+        "decision_before_remove": restore_before_decision.to_dict(),
+        "orphan_count_after_restore": orphan_count,
+        "positive_probability_after_restore": restore_after_snapshot[
+            "positive_probability"
+        ],
+        "positive_probability_before_remove": restore_before_snapshot[
+            "positive_probability"
+        ],
+        "summary_after_restore": _summary_observation(restore_after_summary),
+        "summary_before_remove": _summary_observation(restore_before_summary),
+    }
+    checks = {
+        "cited_lineage_resolution_rate": lineage["resolution_numerator"]
+        == lineage["resolution_denominator"],
+        "correlated_effective_marginal_ratio": abs(
+            float(correlation["effective_marginal_ratio"]) - 0.2
+        )
+        <= 1e-12,
+        "correlated_group_count_delta": correlation[
+            "independent_group_count_after"
+        ]
+        == correlation["independent_group_count_before"],
+        "correlated_prediction_change": float(
+            correlation["positive_probability_delta"]
+        )
+        <= 0.05,
+        "fixed_time_restore_exact": remove_restore[
+            "active_state_hash_after_restore"
+        ]
+        == remove_restore["active_state_hash_before_remove"]
+        and remove_restore["summary_after_restore"]
+        == remove_restore["summary_before_remove"]
+        and remove_restore["positive_probability_after_restore"]
+        == remove_restore["positive_probability_before_remove"]
+        and remove_restore["decision_after_restore"]
+        == remove_restore["decision_before_remove"]
+        and remove_restore["citations_after_restore"]
+        == remove_restore["citations_before_remove"],
+        "identity_reassignment_rejected": identity_mutation["rejected"]
+        and identity_mutation["state_hash_before"]
+        == identity_mutation["state_hash_after"],
+        "same_id_independent_count_delta": same_id[
+            "independent_group_count_delta"
+        ]
+        == 0,
+        "same_id_prediction_change": float(
+            same_id["positive_probability_delta"]
         )
         <= 0.01,
-        "same_id_state_unchanged": state_before_redelivery
-        == ledger.audit_rows()[1].active_state_hash_after,
-        "same_id_summary_delta": redelivered_summary == initial_summary,
-        "orphan_citations_after_remove_restore": all(
-            ledger.resolve(evidence_id)
-            for evidence_id in (
-                restored_summary.support_ids + restored_summary.contradiction_ids
-            )
-        ),
+        "same_id_state_unchanged": same_id["active_state_hash_before"]
+        == same_id["active_state_hash_after"],
+        "same_id_summary_delta": same_id["summary_before"]
+        == same_id["summary_after"],
+        "orphan_citations_after_remove_restore": remove_restore[
+            "orphan_count_after_restore"
+        ]
+        == 0,
     }
     return {
         "all_checks_passed": all(checks.values()),
@@ -495,6 +627,13 @@ def _invariant_audit() -> dict[str, object]:
             "is not an externally anchored signature"
         ),
         "checks": checks,
+        "observations": {
+            "correlation": correlation,
+            "identity_mutation": identity_mutation,
+            "lineage": lineage,
+            "remove_restore": remove_restore,
+            "same_id_redelivery": same_id,
+        },
     }
 
 
@@ -524,16 +663,18 @@ def _run_into(
 
     seed_rows: list[dict[str, object]] = []
     cross_rows: list[dict[str, object]] = []
+    execution_rows: list[dict[str, object]] = []
     removal_rows: list[dict[str, object]] = []
     failed_seeds: list[dict[str, object]] = []
     for condition_id in CONDITIONS:
         for seed, fixture in fixtures.items():
             try:
-                metrics, cross, removal = _run_seed(
+                metrics, cross, removal, execution = _run_seed(
                     condition_id=condition_id, fixture=fixture
                 )
                 seed_rows.append(metrics)
                 cross_rows.extend(cross)
+                execution_rows.extend(execution)
                 removal_rows.extend(removal)
             except Exception as exc:
                 failed_seeds.append(
@@ -616,6 +757,15 @@ def _run_into(
             for condition, rows in by_condition.items()
         },
         "e2_execution_rows": 0,
+        "execution_rows": sorted(
+            execution_rows,
+            key=lambda row: (
+                CONDITIONS.index(str(row["condition_id"])),
+                int(row["seed"]),
+                int(row["episode_index"]),
+                int(row["event_time"]),
+            ),
+        ),
         "failed_seeds": failed_seeds,
         "slot_metrics": permutation_invariant_slot_metrics(slot_rows),
     }
