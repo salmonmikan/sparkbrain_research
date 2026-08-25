@@ -170,6 +170,7 @@
     "contradiction_score_delta_max": -1e-12,
     "removal_reversal_rate_min": 1.0,
     "restore_exact_rate_min": 1.0,
+    "g1_vs_g0_decision_difference_rate_min": 0.3,
     "g1_vs_no_coalition_decision_difference_rate_min": 0.3,
     "required_reason_coverage": [
       "insufficient_evidence",
@@ -182,8 +183,7 @@
       "margin_below_threshold",
       "ignited"
     ],
-    "call_graph_requires_coalition_score_consumption": true,
-    "external_accuracy_improvement_required": false
+    "call_graph_requires_coalition_score_consumption": true
   },
   "reported_metrics": [
     "coverage",
@@ -546,7 +546,8 @@
         "decision",
         "belief_before",
         "belief_after",
-        "evidence_ids"
+        "evidence_ids",
+        "comparators"
       ],
       "condition_order": [
         "G0_probability_margin",
@@ -585,7 +586,11 @@
         "belief_snapshot_types": {"winner": "string|null", "states": "list of belief_state objects sorted by entity_key then hypothesis_id"},
         "belief_state_required_fields": ["entity_key", "hypothesis_id", "activation", "last_score", "last_update_time", "ignition_count", "cited_evidence_ids"],
         "belief_state_types": {"entity_key": "string", "hypothesis_id": "string", "activation": "number", "last_score": "number", "last_update_time": "number", "ignition_count": "int>=0", "cited_evidence_ids": "sorted unique list[string]"},
-        "evidence_ids": "sorted unique list[string] of every active and inactive record present in the case ledger at this stage"
+        "evidence_ids": "sorted unique list[string] of every active and inactive record present in the case ledger at this stage",
+        "comparator_required_fields": ["primary_support_only", "independent_support_baseline"],
+        "comparator_observation_required_fields": ["decision", "candidate_terms", "belief_before", "belief_after"],
+        "comparators": "object present on every raw row; values are comparator_observation or null. Only G1 primary rows are non-null: primary_support_only for independent_multi_source_support, same_id_exact_duplicate, and correlated_distinct_copy; independent_support_baseline for strong_contradiction. All other values are null. Comparator candidate_terms is the sorted G1 list and all nested objects use the same decision/belief schemas.",
+        "comparator_replay": "each non-null comparator is a fresh complete loop evaluated twice at the case now and records the second decision; it is diagnostic evidence nested in the primary row and does not add a fixed_logit_interventions JSONL row"
       },
       "causal_evidence_removal": {
         "cardinality": 15,
@@ -620,6 +625,18 @@
         "failed_seed_required_fields": ["seed", "reasons"],
         "failed_seed_types": {"seed": "int", "reasons": "sorted unique nonempty list[string]"},
         "failed_seeds": "rows sorted by seed; empty is valid and expected only if no seed failed"
+      },
+      "metric_formula_table": {
+        "coverage": "per condition: primary rows with decision.ignited / 50",
+        "covered_accuracy": "per condition: ignited primary rows whose winner_hypothesis equals expected_winner / ignited primary rows; value 0 when denominator is 0",
+        "false_ignition_rate": "per condition: ignited primary rows among the 45 expected_no_ignition primary rows / 45",
+        "mean_top_coalition_score": "per condition: arithmetic mean of decision.score over 50 primary rows; for G0 and no-coalition this is the consumed probability score 0.72 and candidate_terms remains empty",
+        "mean_score_delta_from_independent_support": "per condition: G1 is the arithmetic mean over five independent_multi_source_support primary rows of decision.score minus comparators.primary_support_only.decision.score; G0 and no-coalition are exactly 0.0 with numerator 0.0 and denominator 5",
+        "mean_score_delta_from_contradiction": "per condition: G1 is the arithmetic mean over five strong_contradiction primary rows of decision.score minus comparators.independent_support_baseline.decision.score; G0 and no-coalition are exactly 0.0 with numerator 0.0 and denominator 5",
+        "g1_vs_g0_decision_difference_rate": "same cross-condition scalar repeated in all three condition rows: count of 50 paired primary blocks where G1 decision_difference from G0 / 50",
+        "g1_vs_no_coalition_decision_difference_rate": "same cross-condition scalar repeated in all three condition rows: count of 50 paired primary blocks where G1 decision_difference from no-coalition / 50",
+        "seed_level_application": "apply the same formula after restricting raw and comparator observations to exactly one seed: coverage and the two decision-difference rates use denominator 10, false_ignition_rate uses 9, each score delta uses 1, and mean score/covered accuracy use their ordinary restricted denominators; aggregate formulas above use all five seeds",
+        "numerator_policy": "for mean metrics numerator is the unrounded sum and denominator is the contributing row count; for ratios numerator is the count; no metric row is nullable except covered_accuracy numerator/denominator remain numeric even when zero"
       },
       "manifest": {
         "exact_required_fields": ["source_commit", "protocol_hash", "fixed_logit_hash", "fixture_hashes", "protected_hashes", "dependency_hashes", "raw_row_counts", "failed_seeds"],

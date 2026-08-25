@@ -661,3 +661,10 @@ fixed-activation conflict before source editing: `weak_low_score` retains activa
 uses strength-0.05 evidence at time 65, and evaluates at time 100. Its recency passes the hard
 minimum while its bounded score stays below threshold. Only the five full-fixture hashes change;
 the frozen logits, weights, thresholds, seeds, expected reason, and identity hashes do not.
+
+Decision `D-V03-0013` fixes each condition-by-metric formula and retains fresh-loop comparator
+observations inside the existing 360 raw rows. G1 score deltas use those observations; both
+probability controls report exact zero deltas; cross-condition decision-difference values repeat
+unchanged across condition rows. The canonical engineering-gate set now includes both 0.30
+decision-difference gates, while external accuracy remains a claim boundary rather than a gate
+row. This changes no fixture, hash, score, threshold, seed, or expected decision.

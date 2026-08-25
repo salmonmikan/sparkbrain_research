@@ -386,3 +386,25 @@ overriding activation to zero, contradicting the fixed-logit mapping, and that n
 containers were not independently validatable. This pre-source repair restores the intended
 score-specific negative and makes exact artifacts implementable. No threshold, weight, seed,
 expected reason, claim policy, or official result changed.
+
+## D-V03-0013 — Freeze C14 metric placement and retain comparator observations
+
+**Decision:** Before source editing or result observation, define every one of the 24 aggregate
+and 120 seed metric rows by an exact condition-aware formula. Condition-local coverage,
+accuracy, false Ignition, and mean consumed score use their own primary rows. The two G1 score
+deltas are calculated only from retained G1 comparator observations and are exactly zero for both
+probability controls. Each cross-condition decision-difference scalar is repeated unchanged in
+all three condition rows. Numerators and denominators are retained.
+
+Add an exact `comparators` object to every raw row without increasing the frozen 360-row count.
+Only the specified G1 primary rows retain fresh-loop second-evaluation observations for the
+primary-support-only or independent-support baseline; all other comparator slots are null. These
+nested observations use the same decision, candidate-term, and belief schemas, making same-ID,
+independence, correlated-group, and contradiction gates artifact-recalculable. Add the missing
+G1-versus-G0 0.30 gate to the canonical engineering-gate set. Treat external accuracy as claim
+scope, not as a boolean engineering-gate result row.
+
+**Reason:** Independent implementation and reproduction audits found that exact row shapes still
+allowed multiple metric placements and omitted the comparator observations required to audit
+same-ID behavior. This amendment removes those final serialization choices without changing any
+fixture, hash, score, threshold, seed, expected outcome, or claim boundary.
