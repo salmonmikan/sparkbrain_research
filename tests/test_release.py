@@ -14,6 +14,7 @@ from sparkbrain.release import (
     owner_blockers,
     preparation_problems,
     project_license_selected,
+    release_mode,
     release_validation,
     validate_evidence_map,
     validate_generated_release_evidence,
@@ -170,6 +171,10 @@ def test_release_validator_reports_missing_artifacts_and_unselected_license(
     assert "project license has not been selected by the repository owner" in problems
 
 
+@pytest.mark.skipif(
+    release_mode(Path(__file__).resolve().parents[1]) == "archive",
+    reason="pristine archive validation runs before the runtime test phase",
+)
 def test_integrated_release_preparation_passes_but_public_release_is_blocked() -> None:
     root = Path(__file__).resolve().parents[1]
     assert preparation_problems(root) == []
