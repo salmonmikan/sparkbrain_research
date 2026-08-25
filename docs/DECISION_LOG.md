@@ -574,3 +574,34 @@ formula required model-derived pre-assessment state not present in a static targ
 explicit condition adapter preserves duplicate/correlation identity, and the controller replay
 implements the already-frozen recovery formula without checkpoint restoration or prediction-
 derived labels. No official numerical result had been executed or observed.
+
+## D-V03-0019 — Freeze C15 stage-local active evidence scope
+
+**Decision:** During focused source testing, before source pinning or any official train/dev/test
+seed, the frozen recover fixture exposed an omitted composition boundary: evidence from the B
+context stage remained active when the A recovery assessment reached the unchanged C14 gate. The
+old A-contradiction rows therefore exceeded C14's frozen contradiction ceiling before the learned
+recovery head could be evaluated.
+
+For every C15 context or assessment stage, `RevisionController` keeps the same append-only C13
+ledger and audit history but limits the C14 active candidate scope to the current stage. On a trial
+ledger, before adding the current deliveries, it deactivates active rows for the evaluated entity
+whose adapted evidence IDs are not present in the current stage, using the frozen stage settle time
+as the intervention time. It then performs the existing deterministic lineage registration and
+delivery sequence. An exact same-ID duplicate within the current stage remains a byte-identical
+ledger redelivery no-op. Other entities are untouched. Belief history, residual activations,
+citations, model hidden state, and the C14 gate instance remain continuous within the episode.
+
+This stage-scope operation occurs before the already-frozen two C14 settle passes. It does not
+change the fixture documents or hashes, evidence values, model inputs, targets, thresholds, C13 or
+C14 protected source, objective weights, seeds, selection order, or result gates. A fixture that
+would require restoring an inactive ID from an earlier stage is non-compliant; the frozen generator
+does not create that case.
+
+**Reason:** Accumulating mutually superseded observations as simultaneously active propositions
+made the preregistered A-to-B-to-A world structurally unable to reach its recovery decision. An
+audited stage-local active view preserves immutable evidence history while making each observation
+stage, rather than the whole episode's superseded evidence, the attributable input to C14. This
+closes an implementation boundary discovered by an acceptance test without tuning against any
+official model seed or result. No official training, checkpoint selection, calibration, E0
+evaluation, or test evaluation had been executed or observed.
