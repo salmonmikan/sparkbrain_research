@@ -1,0 +1,145 @@
+{
+  "all_checks_passed": true,
+  "audit_trust_boundary": "semantic replay detects internal state-transition tampering, but the audit chain is not an externally anchored signature",
+  "checks": {
+    "cited_lineage_resolution_rate": true,
+    "correlated_effective_marginal_ratio": true,
+    "correlated_group_count_delta": true,
+    "correlated_prediction_change": true,
+    "fixed_time_restore_exact": true,
+    "identity_reassignment_rejected": true,
+    "orphan_citations_after_remove_restore": true,
+    "same_id_independent_count_delta": true,
+    "same_id_prediction_change": true,
+    "same_id_state_unchanged": true,
+    "same_id_summary_delta": true
+  },
+  "observations": {
+    "correlation": {
+      "correlation_group": "cg:invariant",
+      "effective_marginal": 0.19999999999999996,
+      "effective_marginal_ratio": 0.19999999999999996,
+      "effective_support_after": 1.2,
+      "effective_support_before": 1.0,
+      "independent_group_count_after": 1,
+      "independent_group_count_before": 1,
+      "positive_probability_after": 0.7685247834990175,
+      "positive_probability_before": 0.7310585786300049,
+      "positive_probability_delta": 0.03746620486901264
+    },
+    "identity_mutation": {
+      "attempted_fields": [
+        "polarity"
+      ],
+      "attempted_polarity": "contradict",
+      "rejected": true,
+      "state_hash_after": "a97b25ad5b92894d1c08b9c9bd2e30aad72182240f07c76f5ec515e6a051e8c2",
+      "state_hash_before": "a97b25ad5b92894d1c08b9c9bd2e30aad72182240f07c76f5ec515e6a051e8c2"
+    },
+    "lineage": {
+      "resolution_denominator": 2,
+      "resolution_numerator": 2,
+      "resolution_rate": 1.0
+    },
+    "remove_restore": {
+      "active_state_hash_after_restore": "a97b25ad5b92894d1c08b9c9bd2e30aad72182240f07c76f5ec515e6a051e8c2",
+      "active_state_hash_before_remove": "a97b25ad5b92894d1c08b9c9bd2e30aad72182240f07c76f5ec515e6a051e8c2",
+      "active_state_hash_removed": "4e4d4c3e24db71c36995ade443725cd95778d10f2df199e3985b35c0732b10bb",
+      "citations_after_restore": [
+        "ev-invariant-correlated",
+        "ev-invariant-primary"
+      ],
+      "citations_before_remove": [
+        "ev-invariant-correlated",
+        "ev-invariant-primary"
+      ],
+      "decision_after_restore": {
+        "abstained": false,
+        "citations": [
+          "ev-invariant-correlated",
+          "ev-invariant-primary"
+        ],
+        "confidence": 0.7544722239362472,
+        "positive_probability": 0.7544722239362472,
+        "probability_margin": 0.5089444478724945,
+        "winner": "state-left"
+      },
+      "decision_before_remove": {
+        "abstained": false,
+        "citations": [
+          "ev-invariant-correlated",
+          "ev-invariant-primary"
+        ],
+        "confidence": 0.7544722239362472,
+        "positive_probability": 0.7544722239362472,
+        "probability_margin": 0.5089444478724945,
+        "winner": "state-left"
+      },
+      "orphan_count_after_restore": 0,
+      "positive_probability_after_restore": 0.7544722239362472,
+      "positive_probability_before_remove": 0.7544722239362472,
+      "summary_after_restore": {
+        "contradiction_ids": [],
+        "effective_contradiction": 0.0,
+        "effective_support": 1.1226083820379413,
+        "independent_group_count": 1,
+        "redundancy": 0.7484055880252942,
+        "source_count": 2,
+        "support_ids": [
+          "ev-invariant-correlated",
+          "ev-invariant-primary"
+        ],
+        "unique_evidence_count": 2
+      },
+      "summary_before_remove": {
+        "contradiction_ids": [],
+        "effective_contradiction": 0.0,
+        "effective_support": 1.1226083820379413,
+        "independent_group_count": 1,
+        "redundancy": 0.7484055880252942,
+        "source_count": 2,
+        "support_ids": [
+          "ev-invariant-correlated",
+          "ev-invariant-primary"
+        ],
+        "unique_evidence_count": 2
+      }
+    },
+    "same_id_redelivery": {
+      "active_state_hash_after": "f65e89b695c799d387392f2ff8e58db688f66ac0ac077aff5ef67586bb0f7764",
+      "active_state_hash_before": "f65e89b695c799d387392f2ff8e58db688f66ac0ac077aff5ef67586bb0f7764",
+      "independent_group_count_after": 1,
+      "independent_group_count_before": 1,
+      "independent_group_count_delta": 0,
+      "positive_probability_after": 0.7310585786300049,
+      "positive_probability_before": 0.7310585786300049,
+      "positive_probability_delta": 0.0,
+      "summary_after": {
+        "contradiction_ids": [],
+        "effective_contradiction": 0.0,
+        "effective_support": 1.0,
+        "independent_group_count": 1,
+        "redundancy": 0.0,
+        "source_count": 1,
+        "support_ids": [
+          "ev-invariant-primary"
+        ],
+        "unique_evidence_count": 1
+      },
+      "summary_before": {
+        "contradiction_ids": [],
+        "effective_contradiction": 0.0,
+        "effective_support": 1.0,
+        "independent_group_count": 1,
+        "redundancy": 0.0,
+        "source_count": 1,
+        "support_ids": [
+          "ev-invariant-primary"
+        ],
+        "unique_evidence_count": 1
+      },
+      "unique_evidence_count_after": 1,
+      "unique_evidence_count_before": 1
+    }
+  }
+}

@@ -1,0 +1,445 @@
+{
+  "schema_version": "0.3",
+  "protocol_id": "c13-evidence-entity-v1",
+  "run_id": "c13-evidence-entity-main-v1",
+  "preregistered_at": "2026-08-26T03:45:22+09:00",
+  "status": "preregistered_not_run",
+  "dependencies": {
+    "c11": "accepted",
+    "c12_contract": "280516fb61eab7c7a96c109baefc82b333fcc367",
+    "source_implementation_allowed": true,
+    "source_implementation_unblocks_after": "satisfied by accepted C12 merge and this preregistration amendment"
+  },
+  "preregistration_amendment": {
+    "amended_at": "2026-08-26T04:31:00+09:00",
+    "accepted_c12_merge": "280516fb61eab7c7a96c109baefc82b333fcc367",
+    "accepted_c12_head": "50c2e67be73292b3a51737455597cd7aac4d8659",
+    "scope": "dependency hash-pin and exact C12 canonical field inventory only",
+    "thresholds_seeds_conditions_and_claim_policy_changed": false
+  },
+  "shared_boundary": {
+    "sensory_sample_fields": [
+      "schema_version",
+      "sample_id",
+      "time",
+      "source_id",
+      "modality",
+      "values",
+      "correlation_group",
+      "entity_hint",
+      "metadata",
+      "omitted_channels"
+    ],
+    "perceptual_spark_fields": [
+      "schema_version",
+      "spark_id",
+      "feature_id",
+      "time",
+      "activation",
+      "salience",
+      "prediction_error",
+      "threshold",
+      "evidence_id",
+      "source_id",
+      "correlation_group",
+      "entity_slot",
+      "parents"
+    ],
+    "evidence_fields": [
+      "schema_version",
+      "evidence_id",
+      "source_id",
+      "entity_key",
+      "hypothesis_id",
+      "time",
+      "polarity",
+      "strength",
+      "correlation_group",
+      "parent_evidence_ids",
+      "parent_spark_ids",
+      "metadata"
+    ],
+    "entity_transition": [
+      "entity_hint:diagnostic_input",
+      "entity_slot:perceptual_assignment",
+      "entity_key:evidence_scope"
+    ],
+    "polarity_values": [
+      "support",
+      "contradict",
+      "neutral"
+    ],
+    "serialization": {
+      "canonical_json": true,
+      "strict_required_keys": true,
+      "reject_unknown_keys": true,
+      "reject_nonfinite_numbers": true,
+      "sorted_unique_parent_ids": true,
+      "v0_2_contracts_unchanged": true
+    }
+  },
+  "entity_binding_interface": {
+    "stage_names_are_not_unified": true,
+    "states": [
+      "assigned",
+      "unassigned",
+      "uncertain"
+    ],
+    "required_trace": [
+      "entity_hint",
+      "entity_slot",
+      "entity_key",
+      "assignment_status",
+      "confidence"
+    ],
+    "e0_entity_key": "__global__",
+    "e1_requires_nonempty_entity_slot": true,
+    "e2_implementation_allowed": false
+  },
+  "conditions": [
+    "I2_symbolic_oracle__G0_probability__E0_global",
+    "I2_symbolic_oracle__G0_probability__E1_oracle_entity"
+  ],
+  "frozen_controls": [
+    "input_frontend",
+    "episode_inputs",
+    "labels",
+    "cognitive_core",
+    "evaluator",
+    "budget",
+    "seed_list"
+  ],
+  "seeds": [
+    2601,
+    2602,
+    2603,
+    2604,
+    2605
+  ],
+  "statistics": {
+    "paired": true,
+    "bootstrap_resamples": 10000,
+    "bootstrap_seed": 4313,
+    "confidence_interval": 0.95,
+    "retain_seed_level_rows": true,
+    "retain_failed_seeds": true
+  },
+  "ledger": {
+    "correlation_discount": 0.2,
+    "recency_tau": 30.0,
+    "same_id_redelivery": "exact_no_op",
+    "identity_mismatch": "reject_fail_closed",
+    "removal": "append_only_deactivate",
+    "restore": "reactivate_same_immutable_record"
+  },
+  "gates": {
+    "G02": {
+      "same_id_independent_count_delta": 0,
+      "same_id_summary_delta": 0.0,
+      "same_id_prediction_change_max": 0.01,
+      "correlated_group_count_delta": 0,
+      "correlated_effective_marginal_ratio_max": 0.2,
+      "correlated_prediction_change_max": 0.05,
+      "identity_reassignment_rejection_rate": 1.0,
+      "cited_lineage_resolution_rate": 1.0,
+      "orphan_citations_after_remove_restore": 0,
+      "fixed_time_restore_exact": true
+    },
+    "G05": {
+      "e1_cross_talk_rate_max": 0.02,
+      "e1_evidence_misassignment_rate_max": 0.01,
+      "e1_oracle_entity_coverage_min": 1.0,
+      "e0_minus_e1_cross_talk_min_for_scientific_support": 0.1,
+      "gap_is_engineering_acceptance": false
+    }
+  },
+  "permutation_metric": {
+    "matching": "optimal_bipartite_permutation_invariant",
+    "pure_slot_rename_metric_delta": 0.0,
+    "report_separately": [
+      "assigned_coverage",
+      "unassigned_rate",
+      "uncertain_rate",
+      "slot_switch_rate"
+    ],
+    "e2_run_allowed": false
+  },
+  "design_clarification_before_evaluation": {
+    "decision_id": "D-V03-0006",
+    "timing": "two uncommitted contract/ledger drafts existed; no test, runner, experiment, artifact, metric, or threshold result had been executed or observed",
+    "state_hashes": {
+      "active_state_hash": "canonical config, immutable records, and explicit active flags only; audit rows and delivery counters excluded",
+      "audit_chain_hash": "append-only hash chain over strict audit rows; must advance on add, exact redelivery, rejection, deactivate, and restore",
+      "restore_rule": "restore returns active_state_hash, fixed-time summary, probability, decision, and citations exactly; audit_chain_hash must not rewind"
+    },
+    "g0_probability_control": {
+      "uses_coalition_gate": false,
+      "effective_logit": "effective_support - effective_contradiction",
+      "positive_probability": "sigmoid(effective_logit)",
+      "confidence": "max(positive_probability, 1 - positive_probability)",
+      "probability_margin": "abs(2 * positive_probability - 1)",
+      "positive_threshold": 0.5,
+      "confidence_min": 0.5,
+      "margin_min": 0.08,
+      "budget": 1,
+      "abstain_when_margin_below_min": true,
+      "frozen_fixture": {
+        "world": "relation-free deterministic MultiObjectWorld",
+        "episodes_per_seed": 24,
+        "objects": [
+          "object-a",
+          "object-b"
+        ],
+        "hypotheses": [
+          "state-left",
+          "state-right"
+        ],
+        "required_event_classes": [
+          "support",
+          "correlated_variant",
+          "contradiction",
+          "late_exact_redelivery",
+          "deactivate",
+          "restore"
+        ],
+        "explicit_relations": 0
+      }
+    },
+    "metric_definitions": {
+      "prediction_change": "absolute positive_probability delta at the same fixed snapshot time",
+      "cross_talk_opportunity": "one directed relation-free intervention on entity A paired with one non-target entity B hypothesis snapshot",
+      "cross_talk_event": "absolute B probability delta greater than 1e-12 or any change to B canonical summary, active citations, or active-state projection",
+      "cross_talk_rate": "cross_talk_events / cross_talk_opportunities",
+      "evidence_misassignment_rate": "E1 rows whose entity_key differs from the explicit oracle entity_slot / all E1 evidence rows eligible for assignment",
+      "oracle_entity_coverage": "E1 eligible sparks with a nonempty assigned entity_key / all E1 eligible sparks",
+      "scientific_gap": "E0 cross_talk point estimate minus E1 cross_talk point estimate; paired bootstrap interval is reported but is not an engineering gate"
+    },
+    "descendant_semantics": {
+      "record_mutation_on_parent_deactivate": false,
+      "effective_active": "record active flag and every transitive parent_evidence_id active",
+      "summary_and_decision": "exclude records that are not effectively active",
+      "restore": "reactivating the immutable ancestor automatically restores eligible descendants without rewriting them",
+      "citation_resolution": "inactive records remain resolvable; unknown parent, self-parent, and cycles fail closed"
+    },
+    "contract_fields": {
+      "entity_binding": [
+        "schema_version",
+        "binding_id",
+        "entity_hint",
+        "entity_slot",
+        "entity_key",
+        "assignment_status",
+        "confidence",
+        "time",
+        "parent_spark_id"
+      ],
+      "evidence_audit_row": [
+        "schema_version",
+        "audit_id",
+        "sequence",
+        "branch_id",
+        "action",
+        "evidence_id",
+        "event_time",
+        "reason",
+        "before_active",
+        "after_active",
+        "payload_hash",
+        "active_state_hash_before",
+        "active_state_hash_after",
+        "previous_audit_hash",
+        "audit_hash"
+      ],
+      "correlation_group": "nullable immutable canonical value; null uses a unique evidence-ID group for summary discounting; null-to-value and value-to-null redelivery are identity mutations"
+    },
+    "lineage_registry": {
+      "parent_spark_ids_required": true,
+      "spark_to_sample_resolution_required": true,
+      "resolution_rate_required": 1.0,
+      "condition_id_required_on_every_execution_row": true,
+      "ungrouped_e0_e1_aggregation": "reject"
+    },
+    "artifact_content": {
+      "run_manifest_requires": [
+        "source_commit",
+        "protocol_hash",
+        "input_hash",
+        "protected_hashes",
+        "condition_row_counts",
+        "failed_seeds"
+      ],
+      "metric_files_require": [
+        "seed_level_rows",
+        "numerators",
+        "denominators",
+        "failed_seeds"
+      ],
+      "paired_statistics_requires": [
+        "paired",
+        "bootstrap_resamples",
+        "bootstrap_seed",
+        "confidence_interval",
+        "effect",
+        "ci_low",
+        "ci_high"
+      ],
+      "e2_execution_rows_allowed": 0
+    }
+  },
+  "final_pre_execution_freeze": {
+    "decision_id": "D-V03-0007",
+    "fixture_generator": {
+      "canonical_document": "UTF-8 JSON with sort_keys=true, separators comma/colon, fields schema_version, seed, episodes",
+      "canonical_shape": {
+        "document_fields_exact": [
+          "schema_version",
+          "seed",
+          "episodes"
+        ],
+        "episode_fields_exact": [
+          "episode_id",
+          "episode_index",
+          "target_entity",
+          "target_hypothesis",
+          "events"
+        ],
+        "add_event_fields_exact": [
+          "kind",
+          "event_time",
+          "observed_time",
+          "source_id",
+          "polarity",
+          "strength",
+          "correlation_group"
+        ],
+        "redelivery_event_fields_exact": [
+          "kind",
+          "event_time",
+          "redelivers"
+        ],
+        "intervention_event_fields_exact": [
+          "kind",
+          "event_time",
+          "target"
+        ],
+        "kind_values_exact": [
+          "add_primary",
+          "add_correlated_variant",
+          "late_exact_redelivery",
+          "add_contradiction",
+          "deactivate_primary",
+          "restore_primary"
+        ],
+        "reference_values": {
+          "schema_version": "0.3",
+          "seed": "integer",
+          "episode_index": "integer 0 through 23",
+          "event_time_and_observed_time": "integer",
+          "strength": "JSON number 1.0 or 0.4",
+          "late_exact_redelivery.redelivers": "add_primary",
+          "deactivate_primary.target": "add_primary",
+          "restore_primary.target": "add_primary"
+        },
+        "serialization": "json.dumps(value, sort_keys=True, separators=(',', ':')); all content is ASCII; hash the UTF-8 bytes"
+      },
+      "episodes_per_seed": 24,
+      "episode_id": "seed-{seed}-episode-{episode_index:02d}",
+      "target_entity": "object-a when (episode_index + seed) modulo 2 is zero, otherwise object-b",
+      "target_hypothesis": "state-left when (floor(episode_index / 2) + seed) modulo 2 is zero, otherwise state-right",
+      "base_time": "episode_index * 10",
+      "event_order": [
+        "add_primary",
+        "add_correlated_variant",
+        "late_exact_redelivery",
+        "add_contradiction",
+        "deactivate_primary",
+        "restore_primary"
+      ],
+      "events": {
+        "add_primary": "event/observed offset 0; source-primary; support 1.0; group cg:{seed}:{episode_index:02d}:support",
+        "add_correlated_variant": "event/observed offset 1; source-correlated; support 1.0; same support group",
+        "late_exact_redelivery": "event offset 2; byte-exact redelivery of add_primary with its original observed time",
+        "add_contradiction": "event/observed offset 3; source-contradiction; contradict 0.4; group cg:{seed}:{episode_index:02d}:contradiction",
+        "deactivate_primary": "event offset 4; target add_primary",
+        "restore_primary": "event offset 5; target add_primary"
+      },
+      "event_class_count_per_seed": {
+        "add_primary": 24,
+        "add_correlated_variant": 24,
+        "late_exact_redelivery": 24,
+        "add_contradiction": 24,
+        "deactivate_primary": 24,
+        "restore_primary": 24
+      },
+      "fixture_sha256_by_seed": {
+        "2601": "9b0ea285b09f736910f868d4dbbcdfcb7f87209f673a1da33c5634f54d99135a",
+        "2602": "116d71f4509e23f43806e1d3838b1dd2151fe366c0e8ea7258cba7e1d5960371",
+        "2603": "79b1926328f5c1109d1b868344a5e2152a6cd5db59a7e88db1e5859d9e33d3bb",
+        "2604": "45ea4f2c9a614fb93abb81366703ae1e4e54b79fef4347cc5999972a757cabb8",
+        "2605": "e6fb2a8758b5d2e8f0c0aa2d32e50917d4aad47be9f9f14a5ceb8e82b561f827"
+      }
+    },
+    "g0_decision": {
+      "candidate_order": "hypothesis_id lexicographic",
+      "eligible": "positive_probability >= 0.5 and confidence >= 0.5 and probability_margin >= 0.08",
+      "winner": "eligible hypothesis with maximum positive_probability; lexicographically smallest hypothesis_id on an exact tie",
+      "both_below_or_no_eligible": "abstain with no winner and empty citations",
+      "both_eligible": "select exactly one winner because budget is one",
+      "citations": "sorted effectively-active support and contradict evidence IDs from the winner summary; neutral IDs remain traceable but are not decision citations"
+    },
+    "identity": {
+      "immutable_payload": "the exact strict canonical EvidenceRecord bytes, including schema_version, metadata, correlation null/value, time, strength, polarity, both parent lists, entity, hypothesis, source, and evidence_id",
+      "evidence_id": "ev- plus full sha256 of canonical JSON array [schema_version, spark.evidence_id, hypothesis_id, polarity]",
+      "binding_id": "bind- plus full sha256 of canonical JSON array [schema_version, parent_spark_id, entity_hint, entity_slot, assignment_status]",
+      "multi_hypothesis_or_polarity": "each distinct hypothesis/polarity tuple receives its deterministic ID; exact tuple redelivery receives the same ID"
+    },
+    "rejection_envelope_hash": {
+      "purpose": "deterministic audit hash even when the attempted payload is non-JSON or nonfinite",
+      "envelope_fields": [
+        "evidence_id_if_string_else_empty",
+        "stable_reason_code",
+        "sorted_string_top_level_keys",
+        "fully_qualified_value_type",
+        "sorted_top_level_field_type_names"
+      ],
+      "hash": "sha256 of strict canonical JSON envelope; raw invalid values and repr output are never hashed",
+      "state_effect": "rejection advances only audit_chain_hash; active_state_hash is unchanged"
+    },
+    "slot_metric": {
+      "population": "assigned rows only for matching; unassigned and uncertain rows are excluded and reported separately",
+      "weight": "integer contingency count for predicted_slot and oracle_entity",
+      "optimization": "maximum-total-weight bipartite matching",
+      "rectangular": "pad the smaller sorted side with zero-weight dummy labels",
+      "tie_break": "lexicographically smallest sorted predicted-slot to oracle-entity mapping among maximum-weight mappings",
+      "matched_accuracy": "matched assigned rows / all assigned rows, or 0.0 when there are no assigned rows",
+      "assigned_coverage": "assigned eligible rows / all eligible rows",
+      "unassigned_rate": "unassigned eligible rows / all eligible rows",
+      "uncertain_rate": "uncertain eligible rows / all eligible rows",
+      "slot_switch_rate": "for consecutive assigned observations of the same oracle entity, mapped-slot changes / all such consecutive assigned pairs; 0.0 when denominator is zero",
+      "pure_rename": "renaming predicted slots bijectively must leave every metric unchanged"
+    }
+  },
+  "stop_conditions": [
+    "production entity assignment depends on evaluator truth",
+    "evidence citation cannot be resolved, removed, restored, or traced",
+    "frozen input, core, budget, evaluator, or seed list differs between E0 and E1",
+    "test results change a threshold or mapping",
+    "E0, E1, or E2 rows are merged",
+    "E2 implementation or evaluation begins before E1 freeze"
+  ],
+  "expected_files": [
+    "protocol.json",
+    "run_manifest.json",
+    "evidence_invariant_tests.json",
+    "entity_condition_metrics.json",
+    "paired_statistics.json",
+    "cross_talk_examples.jsonl",
+    "causal_removal_examples.jsonl",
+    "report.md"
+  ],
+  "claim_policy": {
+    "engineering_completion_separate_from_scientific_support": true,
+    "oracle_entity_is_not_autonomous_binding": true,
+    "negative_or_inconclusive_gap_is_valid": true
+  }
+}

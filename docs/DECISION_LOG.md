@@ -176,3 +176,120 @@ are directly tested, while `channels_inspected`, `features_scored`, and `state_u
 dense. The narrow acceptance is therefore reproducible without overstating what emission
 suppression demonstrates. Accepted v0.2.1 protected results and release/schema contracts remain
 unchanged.
+
+## D-V03-0005 — Freeze the C12-to-C13 lineage boundary and E0/E1 diagnosis
+
+**Decision:** Preregister protocol `c13-evidence-entity-v1` and run
+`c13-evidence-entity-main-v1` before implementing or evaluating C13. Preserve the C12 public
+field names from `SensorySample` through `PerceptualSpark`: diagnostic `entity_hint` becomes
+perceptual `entity_slot`. Convert that output explicitly at the C13 boundary into a versioned
+evidence contract using `entity_key`, `hypothesis_id`, `polarity`, `strength`,
+`parent_evidence_ids`, and `parent_spark_ids`. The conversion and every entity transition must
+remain traceable. Do not replace these stage-specific names with one unified entity object.
+
+C13 first compares `E0_global` with `E1_oracle_entity` using the same frozen input frontend,
+G0 downstream path, episode inputs, seeds 2601--2605, cognitive core, budget, and evaluator.
+Correlation discount is fixed at 0.20 and recency tau at 30.0. Same-ID redelivery must be an
+exact no-op; identity-changing redelivery must fail closed. Removal and restoration use an
+append-only immutable audit trail rather than deleting lineage. The E0/E1 scientific gap is
+frozen before any `E2_learned_slots` implementation or run. Learned slots are only an interface
+in C13 and must expose assigned, unassigned, and uncertain states with permutation-invariant
+evaluation.
+
+The C12 contract is pending an accepted merge. After that merge and before any C13 source
+implementation, add a separate preregistration-amendment commit that pins the accepted C12 merge
+hash without changing the frozen thresholds, seeds, conditions, or claim policy.
+
+**Preregistration amendment (before source implementation):** C12 was accepted and merged as
+`280516fb61eab7c7a96c109baefc82b333fcc367` from head
+`50c2e67be73292b3a51737455597cd7aac4d8659`. The exact shared canonical inventory additionally
+includes `schema_version` on both records and `omitted_channels` on `SensorySample`. This
+dependency hash-pin and field-inventory correction changes no threshold, seed, condition, or
+claim policy.
+
+**Reason:** C12 and C13 share a serialization boundary, but entity meaning changes by stage.
+Freezing the names, adapter, invariants, thresholds, seeds, and stop rules before results prevents
+silent lineage reassignment, duplicate evidence inflation, post-hoc entity tuning, and an Oracle
+entity result being mistaken for autonomous binding.
+
+## D-V03-0006 — Clarify C13 state, control, metric, and lineage semantics before evaluation
+
+**Decision:** Before any C13 test, runner, experiment, artifact generation, metric observation, or
+threshold result, separate the restorable `active_state_hash` from the append-only
+`audit_chain_hash`; freeze G0 as a non-Coalition probability control using
+`sigmoid(effective_support - effective_contradiction)`, probability threshold 0.5, confidence
+minimum 0.5, margin minimum 0.08, and budget one; and freeze a relation-free 24-episode-per-seed
+MultiObjectWorld over two objects, two hypotheses, and the six event classes in the protocol.
+Define prediction change as fixed-time absolute probability delta. Define cross-talk over directed
+relation-free non-target intervention opportunities, misassignment over E1 evidence rows eligible
+for assignment, and coverage over E1 eligible Sparks. The scientific E0-minus-E1 cross-talk gap
+uses the point estimate with a descriptive paired interval and remains separate from engineering
+acceptance.
+
+Parent deactivation does not rewrite descendants. A row is effectively active only when its own
+flag and every transitive parent flag are active; summary and decision exclude other rows, while
+inactive lineage remains resolvable. Restore re-enables eligible descendants without mutation.
+Unknown parents, self-parenting, and cycles fail closed. Strict `EntityBinding` and
+`EvidenceAuditRow` field inventories, nullable-but-immutable correlation semantics, complete
+Spark-to-sample lineage, condition-separated aggregation, and required artifact contents are
+frozen in `artifacts/v03/c13_evidence_entity/protocol.json`.
+
+**Reason:** The first implementation review found ambiguity in how an exact restored state could
+coexist with a growing audit, what C13's pre-C14 G0 meant, how rates were denominated, and what
+causal parent removal did to descendants. At that point only two uncommitted source drafts existed;
+no test, runner, experiment, artifact, metric, or threshold result had been run or observed. This
+clarification therefore prevents result-driven semantics rather than reacting to results, and it
+changes no preregistered threshold, seed, E0/E1 condition, or claim policy.
+
+## D-V03-0007 — Freeze the final C13 fixture, decision, identity, rejection, and slot rules
+
+**Decision:** Still before any C13 test, runner, experiment, artifact, or numerical result, freeze
+the 24 episodes per seed to the exact deterministic generator and per-seed SHA-256 values in the
+protocol. Every episode has one target selected by the frozen seed/index parity rules and exactly
+six ordered events: primary support, correlated support, exact late redelivery, contradiction,
+primary deactivation, and exact restore, with frozen times, strengths, sources, and correlation
+groups.
+
+G0 sorts hypotheses lexicographically, keeps candidates meeting probability 0.5, confidence 0.5,
+and margin 0.08, chooses the highest probability with lexical tie-break under budget one, and
+otherwise abstains. Evidence identity is the exact canonical record, including schema, metadata,
+nullable correlation, lineage, entity, and hypothesis. Evidence and binding IDs use the frozen
+canonical SHA-256 derivations. Invalid payload rejection hashes a canonical type/reason envelope,
+never raw invalid values or runtime `repr`. Slot scoring uses maximum-weight contingency matching,
+zero-weight rectangular padding, lexical tie-break, assigned-only accuracy, separately reported
+unassigned/uncertain/coverage, and an exact consecutive-assigned-pair switch denominator.
+
+**Reason:** A read-only design audit found five remaining choices that could otherwise be selected
+after seeing behavior: fixture distribution, multi-hypothesis selection, ID scope, hashing of
+non-JSON rejection, and permutation matching. Freezing them now closes those degrees of freedom.
+No test or result had yet been executed or observed, and no earlier threshold, seed, condition, or
+claim policy is changed.
+
+Before the first fixture test, the protocol additionally records the exact canonical document,
+episode, add-event, redelivery-event, and intervention-event key sets and JSON serialization call
+used by the already-frozen per-seed hashes. This is a reconstructibility clarification only: no
+fixture value, ordering rule, distribution, seed, threshold, metric, or expected hash changes.
+
+## D-V03-0008 — Accept C13 at the oracle entity-scope diagnostic boundary
+
+**Decision:** Accept C13 G02/G05 for protocol `c13-evidence-entity-v1`, run
+`c13-evidence-entity-main-v1`, and source commit
+`03b26591c653592ec501177d9628bd2bea9b8ec4`. Freeze the exact eight artifacts under
+`artifacts/v03/c13_evidence_entity/`. Preserve strict immutable evidence identity, transitive
+effective-active lineage, append-only deactivate/restore, semantic audit replay, fixed G0,
+condition-separated E0/E1 rows, deterministic fixture hashes, and E2 execution row count zero.
+Do not start E2 learned binding under this decision.
+
+**Reason:** All frozen G02/G05 engineering gates passed over seeds 2601--2605 with no failed
+seed. E1 cross-talk and misassignment were 0 and oracle coverage was 1.0; E0-minus-E1 cross-talk
+was 1.0 with paired interval [1.0, 1.0]. The gap is narrow evidence that explicit Oracle entity
+scope removes cross-talk in this constructed relation-free fixture. It is not autonomous entity
+discovery, semantic understanding, biological fidelity, or external generalization. The audit
+chain is not an external trust anchor. Independent regeneration under a different
+`PYTHONHASHSEED` matched all eight artifacts byte-for-byte. Existing negative results, scientific
+claim grades, protected hashes, package/schema, and release metadata remain unchanged.
+
+**Raw-evidence correction:** Final acceptance additionally requires all 1,440 ordered execution
+rows and the numeric/canonical G02 before/after observations to remain in the exact eight
+artifacts. This correction changes no protocol, threshold, fixture, seed, metric definition, or
+result; it makes the existing acceptance independently recalculable instead of boolean-only.
