@@ -4,9 +4,10 @@ import copy
 import hashlib
 import json
 import math
+from collections.abc import Mapping
 from dataclasses import asdict, dataclass, fields
 from types import MappingProxyType
-from typing import Any, Mapping
+from typing import Any
 
 from .contracts import PerceptualSpark, SensorySample
 
@@ -322,7 +323,7 @@ class AdaptiveSensoryField:
             )
             candidate = (bypass and not omission) or final_salience >= state.threshold
             digest = hashlib.sha256(
-                f"{sample.sample_id}:{feature_id}:{working_sequence}".encode("utf-8")
+                f"{sample.sample_id}:{feature_id}:{working_sequence}".encode()
             ).hexdigest()[:16]
             rows.append(
                 {
