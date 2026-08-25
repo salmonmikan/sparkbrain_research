@@ -545,3 +545,32 @@ constructs schema-0.3 `EvidenceRecord` with empty metadata/parent evidence and t
 Spark. Exact same-ID redelivery reuses the identical record. This adds no fixture value, target,
 threshold, condition, seed, or result and closes the existing strict-ledger lineage boundary before
 C15 source implementation.
+
+## D-V03-0018 — Freeze C15 E0/E1 ledger scope and model-derived recovery floor
+
+**Decision:** During source integration review, after pure fixture/model/controller drafts and
+non-official self-checks but before any official train/dev/test seed, E0 evaluation, checkpoint
+selection, calibration, or C15 result, close two composition boundaries without changing the
+frozen fixture documents or their hashes.
+
+`E1_oracle_entity` copies the fixture entity and evidence IDs. `E0_global` maps entity scope to
+`__global__` and maps each fixture evidence ID deterministically to
+`ev-<H(c15-e0|fixture_evidence_id)>`; all other evidence fields remain paired. Sample/Spark lineage
+is then derived from the adapted ID. Same-ID redelivery therefore remains the same adapted ID,
+while a distinct correlated-copy ID remains distinct. Attribution targets undergo the identical
+ID mapping. This is the sole allowed entity-condition adapter and applies consistently to model
+runtime, ledger, controller, citations, and raw trace.
+
+For the recovery objective, `restored_prior_activation` is not a fixture constant and cannot be
+set to zero. The runner's frozen training target builder replays that episode's visible context
+and model head outputs through `RevisionController`, captures the target-truth activation from the
+entity snapshot immediately before assessment delivery, and supplies only that detached numeric
+value to the loss. The existing evaluator transition/truth target remains separate and model
+predictions never define it.
+
+**Reason:** The first integration review found that the strict fixture-ledger adapter copied the
+E1 entity while the preregistered E0 diagnostic required global scope, and that the recovery-floor
+formula required model-derived pre-assessment state not present in a static target envelope. The
+explicit condition adapter preserves duplicate/correlation identity, and the controller replay
+implements the already-frozen recovery formula without checkpoint restoration or prediction-
+derived labels. No official numerical result had been executed or observed.
