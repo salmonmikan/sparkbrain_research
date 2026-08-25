@@ -1,0 +1,543 @@
+{
+  "acceptance": {
+    "engineering_requirements": [
+      "continuous_recovery_observed_for_every_seed_without_checkpoint_restore",
+      "maintain_update_and_four_class_confusions_recalculable_from_raw",
+      "unnecessary_and_missed_revision_reported_separately",
+      "explicit_no_ignition_training_evaluation_and_reason",
+      "calibration_grouped_by_input_track_and_entity_condition",
+      "all_nine_objectives_have_independent_ablation_rows",
+      "official_belief_r_not_accessed",
+      "exact_eight_artifacts_and_byte_deterministic_reproduction"
+    ],
+    "scientific_support_gates": {
+      "gate_cell": ["test", "full_separated", "I1_local_compositional", "E1_oracle_entity"],
+      "variant_change_indicator": "within the same model_seed and episode_id, variant tuple (predicted_belief,predicted_transition,ignited) differs from base tuple; point rate is changed pairs divided by all 160 seed-episode pairs; probability-only changes do not count",
+      "correlated_copy_prediction_change_rate_max": 0.05,
+      "distractor_prediction_change_rate_max": 0.05,
+      "full_recovery_rate_strictly_greater_than_no_residual": true,
+      "same_id_duplicate_prediction_change_rate_max": 0.01,
+      "weighted_ce_noninferiority_margins": {
+        "ece_max_increase": 0.03,
+        "missed_revision_rate_max_increase": 0.05,
+        "no_ignition_f1_max_decrease": 0.05,
+        "recovery_rate_max_decrease": 0.05,
+        "unnecessary_revision_rate_max_increase": 0.05
+      },
+      "weighted_ce_strict_improvement_required_on_at_least_one_dimension": 0.02
+    },
+    "attribution_engineering": {
+      "citation_resolvability_required": 1.0,
+      "metric_policy": "threshold attribution probability at 0.5; report micro precision and recall against attribution_targets with exact TP/FP/FN denominators; no minimum scientific support threshold is imposed and negative values remain visible",
+      "target_coverage_required": 1.0
+    },
+    "status_categories": [
+      "supported",
+      "not_supported",
+      "inconclusive",
+      "implementation_failure",
+      "protocol_violation",
+      "resource_limited"
+    ]
+  },
+  "artifacts": {
+    "directory": "artifacts/v03/c15_revision",
+    "exact_files": [
+      "calibration_by_input_track.json",
+      "confusion_matrices.json",
+      "loss_ablation_metrics.json",
+      "objective_config.json",
+      "pareto_frontier.json",
+      "per_transition_predictions.jsonl",
+      "protocol.json",
+      "report.md"
+    ],
+    "raw_row_count": 21760,
+    "raw_sort": [
+      "split",
+      "condition_id",
+      "input_track",
+      "entity_condition",
+      "model_seed",
+      "episode_id",
+      "variant_id"
+    ],
+    "required_raw_fields": [
+      "schema_version",
+      "split",
+      "condition_id",
+      "input_track",
+      "entity_condition",
+      "model_seed",
+      "episode_id",
+      "episode_seed",
+      "family_id",
+      "world",
+      "variant_id",
+      "evaluated_entity_key",
+      "truth_belief",
+      "previous_truth_belief",
+      "transition_target",
+      "sufficient_information",
+      "recovery_opportunity",
+      "predicted_belief",
+      "predicted_transition",
+      "ignited",
+      "no_ignition_probability",
+      "belief_probabilities",
+      "transition_probabilities",
+      "reason",
+      "cited_evidence_ids",
+      "attribution_targets",
+      "attribution_probabilities",
+      "state_before",
+      "state_after",
+      "stage_trace",
+      "state_lineage_hash",
+      "checkpoint_restored",
+      "recovery_latency_steps",
+      "input_hash",
+      "target_hash",
+      "protocol_compliant"
+    ],
+    "unknown_key_policy": "reject at every nested canonical object",
+    "derived_outputs_must_recalculate_from_raw": "confusion, calibration, Pareto, variant, residual, attribution and support gates recalculate from per_transition_predictions; loss/objective/gradient aggregates recalculate from loss_ablation_metrics.training_step_rows",
+    "failed_seeds_must_remain_visible": true,
+    "derived_contracts": {
+      "objective_config.json": {
+        "condition_rows": 12,
+        "condition_row_fields": ["condition_id", "objective_weights", "residual_retention", "baseline_kind", "parameter_count", "optimizer_steps"],
+        "exact_top_level_fields": ["schema_version", "protocol_id", "source_commit", "model", "training", "selection", "conditions", "failed_seeds"],
+        "model_fields": ["active_k", "belief_order", "candidate_slots", "hidden_dim", "module_count"],
+        "selection_fields": ["checkpoint_epochs", "checkpoint_dev_indices", "calibration_dev_indices", "temperature_grid", "abstention_threshold_grid", "test_evaluations"],
+        "sort": ["condition_id"],
+        "training_fields": ["epochs", "learning_rate", "optimizer", "batch_size_episodes", "shuffle", "drop_last", "training_cell", "training_variants"]
+      },
+      "confusion_matrices.json": {
+        "aggregate_rows": 34,
+        "aggregate_row_fields": ["split", "condition_id", "input_track", "entity_condition", "row_count", "transition_confusion", "maintain_ovr", "update_ovr", "unnecessary_revision_count", "unnecessary_revision_denominator", "unnecessary_revision_rate", "missed_revision_count", "missed_revision_denominator", "missed_revision_rate", "revision_tp", "revision_fp", "revision_fn", "revision_precision", "revision_recall", "recovery_opportunities", "recovery_successes", "recovery_rate", "recovery_latency_observed_mean", "recovery_latency_censored_mean", "recovery_censored", "no_ignition_tp", "no_ignition_fp", "no_ignition_fn", "no_ignition_precision", "no_ignition_recall", "no_ignition_f1", "accuracy", "coverage"],
+        "exact_top_level_fields": ["schema_version", "protocol_id", "source_commit", "seed_rows", "aggregate_rows", "failed_seeds"],
+        "seed_row_fields": ["split", "condition_id", "input_track", "entity_condition", "model_seed", "row_count", "transition_confusion", "maintain_ovr", "update_ovr", "unnecessary_revision_count", "unnecessary_revision_denominator", "unnecessary_revision_rate", "missed_revision_count", "missed_revision_denominator", "missed_revision_rate", "revision_tp", "revision_fp", "revision_fn", "revision_precision", "revision_recall", "recovery_opportunities", "recovery_successes", "recovery_rate", "recovery_latency_observed_mean", "recovery_latency_censored_mean", "recovery_censored", "no_ignition_tp", "no_ignition_fp", "no_ignition_fn", "no_ignition_precision", "no_ignition_recall", "no_ignition_f1", "accuracy", "coverage"],
+        "confusion_nested": "transition_confusion is an exact object keyed by each frozen target label whose value is an exact object keyed by each frozen predicted label with nonnegative integer counts; maintain_ovr and update_ovr are exact objects with tn,fp,fn,tp nonnegative integer counts",
+        "seed_rows": 170,
+        "sort": ["split", "condition_id", "input_track", "entity_condition", "model_seed"]
+      },
+      "calibration_by_input_track.json": {
+        "aggregate_rows": 34,
+        "aggregate_row_fields": ["split", "condition_id", "input_track", "entity_condition", "row_count", "decided_count", "coverage", "multiclass_brier", "nll", "abstention_brier", "ece", "ece_bins"],
+        "exact_top_level_fields": ["schema_version", "protocol_id", "source_commit", "seed_rows", "aggregate_rows", "failed_seeds"],
+        "ece_bin_fields": ["lower_inclusive", "upper_exclusive", "include_upper", "count", "mean_confidence", "accuracy"],
+        "seed_row_fields": ["split", "condition_id", "input_track", "entity_condition", "model_seed", "row_count", "decided_count", "coverage", "multiclass_brier", "nll", "abstention_brier", "ece", "ece_bins"],
+        "seed_rows": 170,
+        "sort": ["split", "condition_id", "input_track", "entity_condition", "model_seed"]
+      },
+      "pareto_frontier.json": {
+        "aggregate_points": 12,
+        "aggregate_point_fields": ["condition_id", "metrics", "nondominated"],
+        "exact_top_level_fields": ["schema_version", "protocol_id", "source_commit", "dimensions", "seed_points", "aggregate_points", "pairwise_dominance", "scientific_support", "failed_seeds"],
+        "pairwise_dominance_fields": ["left_condition", "right_condition", "left_dominates", "right_dominates", "incomparable_reason"],
+        "pairwise_dominance_rows": 66,
+        "scientific_support_fields": ["status", "variant_gates", "residual_gate", "weighted_ce_noninferiority", "strict_improvement", "all_gates_passed", "bootstrap_intervals"],
+        "metrics_fields": ["unnecessary_revision_rate", "missed_revision_rate", "recovery_latency_censored_mean", "ece", "recovery_rate", "no_ignition_f1"],
+        "variant_gate_fields": "exact object keys distractor_change,same_id_change,correlated_copy_change; each exact value has changed_pairs,denominator,rate,maximum,passed",
+        "bootstrap_interval_fields": "exact object keyed in determinism.bootstrap_algorithm.comparison_order; each exact value has effect,lower,upper,resamples,bootstrap_seed; numeric values are finite or all effect/lower/upper null on failed seed",
+        "seed_point_fields": ["condition_id", "model_seed", "metrics"],
+        "seed_points": 60,
+        "sort": ["condition_id", "model_seed"]
+      },
+      "loss_ablation_metrics.json": {
+        "condition_seed_rows": 60,
+        "condition_seed_row_fields": ["condition_id", "model_seed", "selected_epoch", "temperature", "abstention_threshold", "optimizer_steps", "parameter_count", "training_input_hash", "checkpoint_hash", "protocol_compliant"],
+        "exact_top_level_fields": ["schema_version", "protocol_id", "source_commit", "objective_order", "training_step_rows", "condition_seed_rows", "objective_rows", "engineering_gates", "scientific_gates", "failed_seeds"],
+        "objective_row_fields": ["condition_id", "model_seed", "objective_id", "eligible_count", "mean_raw_loss", "weight", "mean_weighted_contribution", "mean_unweighted_gradient_l2", "mean_weighted_gradient_l2", "ablated"],
+        "objective_rows": 540,
+        "sort": ["condition_id", "model_seed", "objective_id"],
+        "training_step_objective_fields": ["eligible_count", "raw_loss", "weight", "weighted_contribution", "unweighted_gradient_l2", "weighted_gradient_l2"],
+        "training_step_objective_keys": ["belief", "maintain", "update", "recovery", "no_ignition", "calibration", "attribution", "sparsity", "load_balance"],
+        "training_step_row_fields": ["condition_id", "model_seed", "epoch", "optimizer_step", "episode_id", "objectives", "total_loss", "pre_clip_total_gradient_l2", "post_clip_total_gradient_l2"],
+        "training_step_rows": 23040,
+        "training_step_sort": ["condition_id", "model_seed", "optimizer_step"]
+      },
+      "report.md": {
+        "required_sections": ["Engineering status", "Scientific status", "Methods", "Transition metrics", "Calibration", "Objective ablations", "Pareto trade-offs", "Negative findings", "Claim boundary", "Reproduction"]
+      }
+    }
+  },
+  "conditions": {
+    "order": [
+      "full_separated",
+      "no_belief",
+      "no_maintain",
+      "no_update",
+      "no_recovery",
+      "no_no_ignition",
+      "no_calibration",
+      "no_attribution",
+      "no_sparsity",
+      "no_load_balance",
+      "one_weighted_ce",
+      "no_residual"
+    ],
+    "primary_cell": {
+      "entity_condition": "E1_oracle_entity",
+      "input_track": "I1_local_compositional"
+    },
+    "diagnostic_full_only_cells": [
+      ["I0_whole_hash", "E0_global"],
+      ["I0_whole_hash", "E1_oracle_entity"],
+      ["I1_local_compositional", "E0_global"],
+      ["I2_symbolic_oracle", "E0_global"],
+      ["I2_symbolic_oracle", "E1_oracle_entity"]
+    ],
+    "oracle_policy": "I2 is diagnostic-only and forbidden for training, checkpoint selection, calibration, headline support, or autonomous-input/entity claims",
+    "e2_policy": "C13 E2 learned slots remain unimplemented and prohibited"
+  },
+  "dependencies": {
+    "c12_merge": "280516fb61eab7c7a96c109baefc82b333fcc367",
+    "c13_merge": "06e13975b486548bb17924acc3b82786246ad6e1",
+    "c13_source": "03b26591c653592ec501177d9628bd2bea9b8ec4",
+    "c14_artifact_commit": "4c0d26cd0be862da63594f1f32e295127de72304",
+    "c14_merge": "00dccf3dc8f6f70353a536dcf1db9ba0b19fc7b5",
+    "c14_source": "eb7f542963397eba1b7d9b4a66a7873b3ba17ac4",
+    "c14_status_ledger_correction": "14e5214673001c20bd470262896cb023e8e1952e",
+    "c15_source_pin": "pending separate preregistration amendment after source-only commit",
+    "runner_execution_allowed": false
+  },
+  "determinism": {
+    "bootstrap_resamples": 10000,
+    "bootstrap_seed": 4315,
+    "cpu_only": true,
+    "deterministic_algorithms": true,
+    "max_threads": 1,
+    "official_run_timeout_seconds": 120,
+    "paired_bootstrap_unit": "primary test cell only; variants stay paired and are not independently resampled",
+    "bootstrap_algorithm": {
+      "comparison_order": ["distractor_change", "same_id_change", "correlated_copy_change", "recovery_full_minus_no_residual", "full_minus_weighted_ce_unnecessary", "full_minus_weighted_ce_missed", "full_minus_weighted_ce_recovery", "full_minus_weighted_ce_no_ignition_f1", "full_minus_weighted_ce_ece"],
+      "draws": "one random.Random(4315) consumed in comparison_order; for each of 10000 resamples draw 5 seed positions with replacement, then for each drawn seed and each world in frozen world_order draw 8 test fixture indices with replacement; all conditions and variants use the same sampled blocks",
+      "failed_seed": "if any required seed failed, the comparison effect and interval are null and engineering status is implementation_failure; failed seeds are never dropped or imputed",
+      "percentile": "sort 10000 finite effects; rank=(n-1)*p for p=0.025 and 0.975; linearly interpolate floor and ceil ranks"
+    },
+    "pythonhashseed_reproduction": "run twice with distinct values and require all eight files byte-identical",
+    "remote_or_network_runtime": false
+  },
+  "input_and_leakage": {
+    "forbidden_recursive_keys": [
+      "answer",
+      "decision_justified",
+      "evaluator",
+      "expected",
+      "label",
+      "scenario_tags",
+      "split",
+      "target",
+      "test_only",
+      "transition_target",
+      "truth",
+      "update_required"
+    ],
+    "target_separation": "targets are evaluator-side objects unavailable to the model/controller before prediction",
+    "target_permutation_test": "permuting truth and transition targets changes target_hash and loss only; model input bytes, input_hash, and pre-loss predictions remain identical",
+    "causal_prefix_test": "changing a future suffix cannot change any earlier production output",
+    "identifier_policy": "every production-visible episode, family, evidence, source, group, channel, and entity identifier uses the frozen opaque SHA-256 derivation and exposes no readable split, world, transition, truth, or class token; episode_seed and evaluator inventory are never model input",
+    "official_belief_r": "runner rejects any path, cache, argument, metadata, or selection input referring to official Belief-R"
+  },
+  "input_tracks": {
+    "feature_dimension": 12,
+    "I0_whole_hash": "zero vector except index int.from_bytes(sha256(canonical visible evidence object).digest()[0:8],'big')%8 is 1.0 and index 11 is 1.0; evaluator fields excluded",
+    "I1_local_compositional": "indices 0:3 hypothesis alpha/beta/gamma one-hot; 3 support indicator; 4 contradict indicator; 5 strength; 6 clamp(time/25,0,1); 7:10 one-hot stable source bucket int.from_bytes(sha256(source_id).digest()[0:8],'big')%3; 10 same-correlation-as-first-delivery indicator; 11 constant 1.0",
+    "I2_symbolic_oracle": "indices 0:3 evaluator target truth one-hot; 3 sufficient-information indicator; indices 4:11 zero; index 11 constant 1.0; diagnostic-only and isolated from every train/select/calibrate/headline path",
+    "entity_conditions": "E0_global maps every entity to __global__; E1_oracle_entity uses the opaque fixture entity_key; neither implements or evaluates E2 learned slots"
+  },
+  "model_contract": {
+    "architecture": "per-evidence Linear(12,16)+tanh; Linear(16,4) router softmax and deterministic top-2 with lower module-index tie break; four independent Linear(16,16)+tanh module transforms; mean selected module output feeds GRUCell(16,16) with entity-keyed hidden state; separate Linear(16,3) belief head; four separate Linear(16,1) maintain/update/recovery/abstention heads; Linear(16,1) attribution head applied to each of five evidence encodings",
+    "entity_runtime": "hidden state dictionary keyed by evaluated entity; reset only at episode boundary; detach after each optimizer step; no cross-entity reads or writes",
+    "initialization": "torch.manual_seed(model_seed); PyTorch default module initializers in construction order exactly as architecture lists layers; no later reinitialization",
+    "candidate_aggregation": "encode each non-padding assessment evidence, compute router/module output per evidence, mean those outputs in delivery order before GRU; an all-padding row is invalid",
+    "conditional_belief": "softmax of belief logits divided by selected temperature",
+    "transition_logits": "dedicated maintain, update, recovery and abstention scalar heads; no head shares a final Linear parameter tensor with another head"
+  },
+  "objective_config": {
+    "active_k": 2,
+    "checkpoint_epochs": [2, 4, 6],
+    "epochs": 6,
+    "gradient_norm": "arithmetic mean over optimizer steps of the global L2 norm from torch.autograd.grad before backward; missing gradients are zero; weighted norm is exactly zero when lambda is zero",
+    "hidden_dim": 16,
+    "learning_rate": 0.01,
+    "max_grad_norm": 2.0,
+    "module_count": 4,
+    "optimizer": "torch.optim.Adam learning_rate=0.01, betas=(0.9,0.999), eps=1e-8, weight_decay=0.0, amsgrad=false",
+    "optimizer_steps": 384,
+    "training_cell": ["I1_local_compositional", "E1_oracle_entity"],
+    "training_data_order": "base variant only; batch size one episode; 64 manifest rows in frozen order; no shuffle and no drop; one optimizer step per episode per epoch; 64*6=384",
+    "weights": {
+      "attribution": 0.3,
+      "belief": 1.0,
+      "calibration": 0.2,
+      "load_balance": 0.05,
+      "maintain": 0.4,
+      "no_ignition": 0.5,
+      "recovery": 0.8,
+      "sparsity": 0.02,
+      "update": 0.6
+    },
+    "losses": {
+      "attribution": "BCEWithLogits over five candidate slots, reduced as the mean over non-padding slots only, target 1 exactly for attribution_target IDs and 0 otherwise; zero when all slots are padding",
+      "belief": "CrossEntropyLoss with class weights (1,1,1), mean over sufficient assessment rows only, against alpha/beta/gamma truth",
+      "calibration": "mean over sufficient assessment rows of sum over alpha/beta/gamma of (conditional_softmax-one_hot_truth)^2",
+      "load_balance": "for all model calls in the current episode, compute q=mean router softmax per module then mean_j((q_j-0.25)^2); the episode is the optimizer batch",
+      "maintain": "on all sufficient assessment rows, BCEWithLogits(maintain_logit,1[target maintain]) mean plus coefficient 1.0 times mean absolute alpha/beta/gamma conditional-probability change from the detached pre-assessment probabilities on maintain rows only",
+      "no_ignition": "BCEWithLogits(abstention_logit,1[target insufficient_information]) mean over every assessment row",
+      "recovery": "on all sufficient assessment rows, BCEWithLogits(recovery_logit,1[target recover]) mean plus coefficient 1.0 times relu(0.15-state_before.activation[target_truth]) mean on recover rows only; state_before is captured immediately before assessment deliveries",
+      "sparsity": "mean over all episode model calls of -sum_j(router_p_j*log(max(router_p_j,1e-12)))/log(4)",
+      "update": "on all sufficient assessment rows, BCEWithLogits(update_logit,1[target update]) mean plus coefficient 1.0 times softplus(-(truth_logit-previous_truth_logit)) mean on update rows only; logits are the assessment pre-temperature belief logits"
+    },
+    "composite_empty_component": "an empty drift, ranking, or residual-floor component is exactly 0.0; its BCE component remains evaluated on its declared sufficient mask",
+    "gradient_parameter_set": "all model named_parameters with requires_grad true, sorted lexicographically by name; concatenate each available gradient flattened in that order and take sqrt(sum(square)); None contributes no values and an empty vector is 0.0",
+    "zero_eligible_rule": "raw loss and both gradient norms are 0.0 with eligible_count 0",
+    "one_weighted_ce": "same architecture, initialization, data order, optimizer, steps, checkpoint and calibration budget; CrossEntropyLoss with class weights (1,1,1,1) over alpha/beta/gamma/NO_IGNITION has weight 1 and every C15 auxiliary lambda is exactly zero; transition targets are not exposed"
+  },
+  "protocol_id": "c15-revision-objectives-v1",
+  "protected_files": {
+    "PACKAGE_MANIFEST.json": "ab5c9ce3cc65abc3067d84feab2fc228a440d952239b9e26545a2d62990648a3",
+    "RELEASE_METADATA.json": "8e846fe927a6dd3712ec861ced558e11a90a271f80751867553542d47fe4b0f5",
+    "artifacts/external_validation/c06-final-official/belief_r_metrics.json": "2bdd0d88a48c5ed7c02dd7e3f55ceb56520ba42c0731e9c23aa416b09d0c7f43",
+    "artifacts/phase3/structural-plasticity-v1/main/acceptance-matrix.json": "ad6cac143f6d95ce128e982a31542c833b6acfae3e516d4987ba384271e10da6",
+    "artifacts/phase3/structural-plasticity-v1/main/summary.json": "8e4e689be66be55b2bdc7418e55c57120b1692cfd0f15e726fe51eeef0b84ae6",
+    "artifacts/release/primary_subset.json": "8c069b8d679575dc3856ee3267d356395f6be7c2da72838d2eec3af65969c391",
+    "artifacts/v03/c12_sensory_field/ablation_metrics.json": "29196c2feaf202cc8a4ce819c53825f891e603385bdfa7c450b3267fe10b537f",
+    "artifacts/v03/c12_sensory_field/change_recovery_examples.jsonl": "246fbb500b52ac99900e9cda38da4575ff5ed046916b3e96cee1525c8058f0a8",
+    "artifacts/v03/c12_sensory_field/goal_bias_adversarial.json": "6f7f7c5ad38d7fe33235880958f5393ed922226adbd993bcd8bced6ca8b4ed4f",
+    "artifacts/v03/c12_sensory_field/protocol.json": "73ab1dfccf90feebd460b1811edf513e64e8f5cf3cbef107fe7dd1e13ea41de5",
+    "artifacts/v03/c12_sensory_field/raw_trace.jsonl": "341fe3f56d081223cb1f40096096804782140575335d6fd18bcb040bcfca83a6",
+    "artifacts/v03/c12_sensory_field/report.md": "a21c3e2611b339846b8b6fd41ad86047fde68cd20e06f1c26c3c8b0b0e383098",
+    "artifacts/v03/c13_evidence_entity/causal_removal_examples.jsonl": "4135080fd29c2d5d0c13aec2aa1fbb6d2c83c5d0b0b8a0246744e2790f7d23b3",
+    "artifacts/v03/c13_evidence_entity/cross_talk_examples.jsonl": "aff4a6f79df1cc144e1ca6a58ecb18b929efd18fd5fb9921fba757b5a63bbfd7",
+    "artifacts/v03/c13_evidence_entity/entity_condition_metrics.json": "b0206eddde4ebe4c388df1b5819236cbfbd9ce60ea679cea919da032ff1739ca",
+    "artifacts/v03/c13_evidence_entity/evidence_invariant_tests.json": "b59781773bbb6407ef7cf6c3d9568040d7052d0263be4aad7bd7412ef0f8f6dd",
+    "artifacts/v03/c13_evidence_entity/paired_statistics.json": "7eff9c36d3d55c250565cb03dc2687bfa9dea36ec5499ac6dd4fb8f1f4d992af",
+    "artifacts/v03/c13_evidence_entity/protocol.json": "e01330571ef77896356cb12b789ff5706e75f635a2d921c7116465dd53a25095",
+    "artifacts/v03/c13_evidence_entity/report.md": "4f3746c36bad498d57937710208a576050d28afeb92dc9282aeb9757342c6bb3",
+    "artifacts/v03/c13_evidence_entity/run_manifest.json": "a2dd2b76731476712a0964f4c6b8bd81b12e19ef77c45ab493cbb172fd46b7c3",
+    "artifacts/v03/c14_coalition_gate/causal_evidence_removal.jsonl": "f11aa38ac50a23665b7d9f21b87b11352c41842a396a679b1353f05e7b3e3e97",
+    "artifacts/v03/c14_coalition_gate/fixed_logit_interventions.jsonl": "45c66151abed1d25badfa3755ca692256314eb03f1f8b33ef29f6b6f1b15b2ec",
+    "artifacts/v03/c14_coalition_gate/gate_ablation_metrics.json": "b7030b45f79c388d5ba5a2bc422d3b0a744de5ee2bb91d5ca8f8323be65eb514",
+    "artifacts/v03/c14_coalition_gate/no_ignition_reasons.json": "ea4fbd34976a083509253570622691ff81395ea0420bd572dbd121bd2f52dd16",
+    "artifacts/v03/c14_coalition_gate/protocol.json": "aa5e405204832f5b76be2f9d7a1ad648f36b17b8309596c4a105e4d37fd344d0",
+    "artifacts/v03/c14_coalition_gate/report.md": "19a666bd41567fbc60f1c8db94516224606fac2506522290f3217ed0efa966cb",
+    "docs/CLAIMS_REGISTER.md": "5562a4e04ec99ede1f4c8ea15cf1d5e4db306c6b7e71a838eaf90c14f188cc62",
+    "pyproject.toml": "4aea58e32d59ec6c67befd4767310598a60ccd8330726b27ba0e29d73518afcf"
+  },
+  "release_freeze": {
+    "deny_changed_prefixes": ["artifacts/release/", "schemas/"],
+    "package_version": "0.2.1",
+    "persisted_schema": "0.2",
+    "policy": "no package 0.3.0, release manifest regeneration, schema reinterpretation, no-Git archive, or private-bundle work before C20"
+  },
+  "run_id": "c15-revision-objectives-main-v1",
+  "schema_version": "0.3",
+  "metrics": {
+    "prediction_transition": "insufficient_information when ignited is false; otherwise recover when the ignited belief equals an older predicted belief separated by a different ignited belief, update when it differs from the immediately previous ignited belief, maintain otherwise",
+    "revision_positive_labels": ["update", "recover"],
+    "unnecessary_revision_rate": "target maintain and predicted transition update/recover divided by target-maintain rows",
+    "missed_revision_rate": "target update/recover and predicted transition not update/recover divided by target-update/recover rows",
+    "revision_precision_recall": "standard TP/FP/FN over revision_positive_labels; zero denominator is null",
+    "recovery": "denominator is exogenous target-recover rows; success requires predicted belief equals truth, predicted transition recover, and checkpoint_restored false; latency is 1 or 2 assessment settle passes, failures are right-censored at 3 and reported separately",
+    "no_ignition": "positive target is insufficient_information and positive prediction is ignited false; report precision, recall, false ignition, and missed ignition with null zero denominators",
+    "accuracy_coverage": "accuracy is predicted_belief equals truth over all rows; coverage is ignited rows divided by all rows; retained old belief during no-Ignition is not coverage",
+    "calibration": "construct four probabilities: NO_IGNITION=p_abstain and each belief=(1-p_abstain)*softmax_belief; all-row multiclass Brier is sum squared error and NLL is -log(max(target_probability,1e-12)); binary abstention Brier is squared error",
+    "ece": "decided rows only, confidence=max conditional belief probability, correctness=predicted belief equals truth, ten fixed bins [0.0,0.1),...,[0.9,1.0]; weighted absolute accuracy-confidence gap; no decided rows gives null and coverage remains explicit",
+    "confusions": "four-class target/prediction 4x4 counts in frozen transition label order plus maintain and update one-vs-rest TN/FP/FN/TP",
+    "aggregation": "seed rows use exact matching raw stratum; aggregate rows pool all five seeds without macro reweighting; every denominator and count is retained; empty metrics are null",
+    "row_sort": ["split", "condition_id", "input_track", "entity_condition", "model_seed"],
+    "nested_raw_contract": {
+      "attribution_probability_item_fields": ["evidence_id", "probability"],
+      "attribution_probability_items": "exactly five delivery-order slots; padding has evidence_id null and probability null; non-padding has opaque ID and finite [0,1] probability",
+      "attribution_targets": "sorted unique list of zero to two opaque evidence ID strings",
+      "belief_probability_keys": ["alpha", "beta", "gamma"],
+      "belief_probability_semantics": "conditional three-class softmax after selected temperature and before abstention composition; finite [0,1], sum within 1e-12 of 1",
+      "citations": "sorted unique opaque evidence ID strings",
+      "history": "ordered list of prior accepted winner labels from alpha/beta/gamma; repeats retained",
+      "activations": "exact object with alpha,beta,gamma finite nonnegative values",
+      "state_fields": ["activations", "citations", "entity_key", "history", "state_hash", "winner"],
+      "state_nulls": "winner is alpha/beta/gamma or null; entity_key and state_hash are nonempty strings",
+      "stage_trace": "ordered context stages followed by assessment; each exact object has stage_index,stage_role,delivery_rows,input_hash,gate_passes,proposal,learned_decision,state_before,state_after; gate_passes is a length-two list of exact objects with pass_index and proposal, pass_index 1 then 2; every proposal and learned_decision is an exact object with ignited,belief_key,object_key,score,margin,reason,citation_ids; delivery row keys are evidence_id,source_id,correlation_group,entity_key,hypothesis_id,polarity,strength,time,redelivery",
+      "transition_probability_keys": ["insufficient_information", "maintain", "recover", "update"],
+      "transition_probability_semantics": "softmax of abstention, maintain, recover, update logits in the frozen key order; finite [0,1], sum within 1e-12 of 1; veto uses the separately specified sigmoid logits, not this normalization"
+    }
+  },
+  "pareto": {
+    "cell": ["test", "I1_local_compositional", "E1_oracle_entity", "base"],
+    "dimensions": [
+      {"direction": "minimize", "metric": "unnecessary_revision_rate"},
+      {"direction": "minimize", "metric": "missed_revision_rate"},
+      {"direction": "minimize", "metric": "recovery_latency_censored_mean"},
+      {"direction": "minimize", "metric": "ece"},
+      {"direction": "maximize", "metric": "recovery_rate"},
+      {"direction": "maximize", "metric": "no_ignition_f1"}
+    ],
+    "dominance": "A dominates B when A is no worse on every finite dimension within epsilon 1e-12 and strictly better on at least one by more than epsilon; any null makes the pair incomparable; equality is not dominance",
+    "noninferiority": "point estimates only in the frozen cell: for loss metrics full-minus-one_weighted_ce <= the named max-increase margin; for gain metrics full-minus-one_weighted_ce >= negative named max-decrease margin",
+    "strict_improvement": "point estimates only; require at least one of CE-minus-full for unnecessary, missed, or ECE, or full-minus-CE for recovery rate or no-ignition F1, to be >=0.02; no post-hoc dimension selection",
+    "multiplicity": "intervals are descriptive; no p-value or familywise significance claim"
+  },
+  "selection": {
+    "calibration_dev": "dev episode indices 4-7 within each world",
+    "calibration_grid": {
+      "abstention_thresholds": [0.4, 0.5, 0.6],
+      "temperature": [0.75, 1.0, 1.25]
+    },
+    "calibration_metric": "all-row belief Brier plus binary abstention Brier; lexical tie-break temperature then abstention threshold",
+    "checkpoint_selection_dev": "dev episode indices 0-3 within each world",
+    "checkpoint_selection_metric": "weighted objective total; tie-break earlier epoch",
+    "order": [
+      "commit and independently audit source plus focused tests without executing official train/dev/test seeds",
+      "amend only the four authorized protocol pin fields and enable the runner",
+      "train fixed configurations inside the first official runner execution",
+      "select checkpoint on selection-dev",
+      "select temperature and abstention threshold on disjoint calibration-dev",
+      "evaluate official test exactly once"
+    ],
+    "test_reuse": "forbidden; any change after test inspection requires a new Decision ID and protocol"
+  },
+  "source_control": {
+    "c14_protected_source_paths": [
+      "scripts/run_c14_coalition_gate.py",
+      "src/sparkbrain/v03_seed/coalition.py",
+      "src/sparkbrain/v03_seed/contracts.py",
+      "src/sparkbrain/v03_seed/loop.py"
+    ],
+    "c15_authorized_paths_before_pin": [
+      "scripts/run_c15_revision.py",
+      "src/sparkbrain/v03_learned/__init__.py",
+      "src/sparkbrain/v03_learned/model.py",
+      "src/sparkbrain/v03_learned/objectives.py",
+      "src/sparkbrain/v03_learned/training.py",
+      "src/sparkbrain/v03_seed/__init__.py",
+      "src/sparkbrain/v03_seed/revision.py",
+      "src/sparkbrain/v03_seed/revision_worlds.py",
+      "tests/test_c15_revision.py",
+      "tests/test_c15_revision_runner.py"
+    ],
+    "pin_amendment_only_fields": [
+      "dependencies.c15_protocol_base_commit",
+      "dependencies.c15_protocol_base_sha256",
+      "dependencies.c15_source_pin",
+      "dependencies.runner_execution_allowed"
+    ],
+    "v02_deny_paths": ["src/sparkbrain/core/", "src/sparkbrain/learned/", "src/sparkbrain/release.py", "src/sparkbrain/serialization.py"],
+    "preflight": "working bytes equal HEAD; base protocol blob hash and authorized amendment match; git diff preregistration-base..c15-source-pin --name-only is nonempty and an exact subset of c15_authorized_paths_before_pin, with no v02_deny_paths, release, schema, C14 protected, or other path; source pin is an ancestor and all runtime/test authorized paths are unchanged from source pin to HEAD except the separately validated protocol-only pin amendment and later result documentation/artifacts; all protected hashes pass before output creation"
+  },
+  "seeds": {
+    "model": [2801, 2802, 2803, 2804, 2805],
+    "full_fixture_sha256": {
+      "dev": "f32de6e54e1e99e8645eccbcb73764257400b58d038d4cd562504a222179952a",
+      "test": "603d30f6c6d97bdbcc6c16a22c5ce3f841563adefae5818d8ce338d5a0335347",
+      "train": "4ac416ce49752e90513e4f938d1e63c55b6e84ba468685afa985d4299a6a75de"
+    },
+    "split_manifest_sha256": {
+      "dev": "4527968bff5a230cba0c23c844d3944760391ebb5607a2c4e40eec5dcf430fe3",
+      "test": "373fe3c5d808b87b51e9635fdf954cab79640115d94c7d6db48e7a5e43639cd5",
+      "train": "721c51b582cc783d4855f77618a15b95f09a9a324f5a4740874ded301da1789c"
+    }
+  },
+  "splits": {
+    "canonical_manifest_document": "canonical JSON of {rows:[{episode_id,episode_seed,family_id,world}],schema_version:'0.3',split}; keys sorted, UTF-8, no spaces",
+    "generator": {
+      "canonical_json": "json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode('utf-8')",
+      "digest": "H(text)=sha256(UTF8(text)).hexdigest()[0:16]",
+      "row_order": "world outer loop in world_order, integer i inner loop ascending",
+      "row_fields": "episode_seed=base+100*world_index+i; family_id='fam-'+H('c15-family|'+split+'|'+world+'|'+str(i)); episode_id='ep-'+H('c15-episode|'+split+'|'+world+'|'+str(i)+'|'+str(episode_seed))"
+    },
+    "dev": {"episode_seed_base": 250000, "fixtures_per_world": 8},
+    "family_overlap_allowed": false,
+    "test": {"episode_seed_base": 450000, "fixtures_per_world": 8},
+    "train": {"episode_seed_base": 150000, "fixtures_per_world": 16},
+    "world_order": ["maintain", "update", "recover", "insufficient"]
+  },
+  "fixture_generator": {
+    "belief_order": ["alpha", "beta", "gamma"],
+    "belief_assignment": "A=belief_order[episode_seed%3], B=belief_order[(episode_seed+1)%3], C=belief_order[(episode_seed+2)%3]",
+    "entity_id": "'ent-'+H('c15-entity|'+family_id)",
+    "evidence_record": "for stage integer and slot integer: source_id='src-'+H('c15-source|'+family_id+'|'+str(stage)+'|'+str(slot)), correlation_group='grp-'+H('c15-group|'+family_id+'|'+str(stage)+'|'+str(slot)), time=float(stage*10+slot); canonical body keys are correlation_group,entity_key,hypothesis_id,polarity,source_id,strength,time; evidence_id='ev-'+H('c15-evidence|'+canonical_json(body).decode('utf-8'))",
+    "stage_specs": {
+      "establish_A": [[0, "A", "support", 1.0], [1, "A", "support", 0.9]],
+      "establish_B_contradict_A": [[0, "B", "support", 1.0], [1, "B", "support", 0.9], [2, "A", "contradict", 0.85], [3, "A", "contradict", 0.8]],
+      "maintain_A": [[0, "A", "support", 1.0], [1, "A", "support", 0.9]],
+      "recover_A_contradict_B": [[0, "A", "support", 1.0], [1, "A", "support", 0.9], [2, "B", "contradict", 0.85], [3, "B", "contradict", 0.8]],
+      "insufficient_A": [[0, "A", "support", 0.35]]
+    },
+    "world_sequences": {
+      "maintain": {"context": ["establish_A"], "assessment": "maintain_A", "previous_truth": "A", "sufficient": true, "target_truth": "A", "transition": "maintain"},
+      "update": {"context": ["establish_A"], "assessment": "establish_B_contradict_A", "previous_truth": "A", "sufficient": true, "target_truth": "B", "transition": "update"},
+      "recover": {"context": ["establish_A", "establish_B_contradict_A"], "assessment": "recover_A_contradict_B", "previous_truth": "B", "sufficient": true, "target_truth": "A", "transition": "recover"},
+      "insufficient": {"context": ["establish_A"], "assessment": "insufficient_A", "previous_truth": "A", "sufficient": false, "target_truth": "A", "transition": "insufficient_information"}
+    },
+    "stage_numbering": "context stages are numbered from 0; assessment is always stage 2 so its event time and IDs remain paired across worlds",
+    "variants": {
+      "base": "assessment deliveries unchanged",
+      "irrelevant_distractor": "append slot 4 support for C with strength 0.25 and independent frozen source/group derivation",
+      "same_id_duplicate": "append an exact byte-identical redelivery of assessment slot 0; ledger unique candidate set is unchanged",
+      "correlated_copy": "append a byte-identical copy of assessment slot 0 except evidence_id='ev-'+H('c15-correlated|'+original_evidence_id); source_id and correlation_group remain identical"
+    },
+    "attribution_target": "assessment candidate IDs whose unmodified stage spec has hypothesis target_truth and polarity support; exact duplicate, correlated copy, distractor, padding, context evidence, contradiction, and evaluator citation flags are excluded",
+    "candidate_slots": "five slots in delivery order; missing unique records are masked padding; same-ID redelivery is recorded in delivery trace but occupies no new candidate slot",
+    "full_fixture_document": "canonical JSON using the splits.generator canonical_json call; document keys exactly episodes,schema_version,split; episode order equals split manifest and variant order is frozen",
+    "full_fixture_schema": {
+      "document_fields": ["episodes", "schema_version", "split"],
+      "episode_fields": ["context_stages", "entity_key", "episode_id", "episode_seed", "family_id", "previous_truth", "sufficient_information", "target_truth", "transition_target", "variants", "world"],
+      "context_stages": "list of stage delivery lists only, with no stage wrapper; maintain/update/insufficient contain [generated establish_A at stage 0], recover contains [generated establish_A at stage 0, generated establish_B_contradict_A at stage 1]",
+      "evidence_fields": ["correlation_group", "entity_key", "evidence_id", "hypothesis_id", "polarity", "source_id", "strength", "time"],
+      "evidence_types": "all IDs/hypothesis/polarity strings; strength and time finite JSON numbers; polarity support or contradict",
+      "variant_fields": ["assessment_deliveries", "attribution_targets", "variant_id"],
+      "assessment_deliveries": "list of exact evidence objects; build the world assessment stage at stage 2 from stage_specs in listed slot order, then apply exactly one frozen variant rule",
+      "attribution_targets": "list in assessment stage delivery order before variant modification, containing only original target-truth support evidence IDs",
+      "construction_pseudocode": "for manifest row derive A/B/C and entity; generate each named stage by replacing A/B/C symbols, passing the declared stage integer and each [slot,hypothesis,polarity,strength] to evidence_record; choose previous_truth/target/sufficiency from world_sequences; for each variant in variants.order shallow-copy every assessment evidence object, apply its rule, and append exact variant object; append exact episode object; finally canonicalize exact document",
+      "unknown_keys": "forbidden at every document, episode, variant, and evidence object"
+    }
+  },
+  "state_and_gate": {
+    "c14_composition": "C14 bounded gate evaluates attributable EvidenceLedger candidates before any belief mutation; learned abstention may veto but never force ignition",
+    "activation_mapping": "for each alpha/beta/gamma conditional softmax probability p, pass nonnegative activation -log(max(1-p,1e-12)) to unchanged C14; C14's frozen 1-exp(-activation) normalization therefore equals p up to the clamp",
+    "gate_settle": "after all deliveries for each context or assessment stage, call the same entity-local C14 gate twice at now=stage*10+5 with unchanged ledger and activations; pass 1 advances C14 stability only and never mutates belief; pass 2 is the sole proposal eligible for learned veto and belief update",
+    "evaluated_entity_key": "versioned C15 decision field required even when C14 returns object_key null",
+    "learned_veto": "if C14 rejects, preserve its reason. If C14 proposes and sigmoid(abstention_logit)>=calibrated threshold, veto as learned_insufficient_information. Otherwise initial establishment is accepted without a transition-head veto; if proposed belief equals current winner require sigmoid(maintain_logit)>=0.5; if it equals an older winner separated by a different winner require sigmoid(recovery_logit)>=0.5; otherwise require sigmoid(update_logit)>=0.5. Failure reasons are maintain_head_below_threshold, recovery_head_below_threshold, update_head_below_threshold in that priority after abstention",
+    "veto_trace": "a learned veto preserves C14 coalition rows, score, margin, proposed belief, and support/contradiction citations in the trace but emits ignited=false, belief_key=null, object_key=null and performs only the frozen entity-local no-Ignition decay",
+    "no_ignition_update": "decay only the evaluated entity once; retain candidate activations and citations; never clear or force a prediction",
+    "recovery": "within one episode and one in-memory entity state, A establishes, B suppresses, and A returns; no reset, model reinstantiation, checkpoint load, or checkpoint restore after episode start",
+    "residual": "loser activation retained at factor 0.92 after entity-local decay 0.88; no_residual sets loser retention to 0.0 while all future evidence, weights, thresholds, and ordering remain paired",
+    "call_order": [
+      "encode visible evidence",
+      "append attributable evidence ledger rows",
+      "compute learned candidate activations",
+      "evaluate unchanged C14 bounded gate in two mutation-free settle passes",
+      "apply learned abstention and transition-head veto without mutation",
+      "update only evaluated entity belief state",
+      "record prediction and evaluator-only target"
+    ]
+  },
+  "transition_contract": {
+    "first_sufficient_step": "maintain after initial establishment context; assessment rows never use an unestablished first step",
+    "history_scope": "truth history is per episode and evaluated entity only",
+    "precedence": [
+      "insufficient if causal available evidence has fewer than two independent sources or groups",
+      "recover if sufficient truth equals an earlier truth separated by at least one different sufficient truth",
+      "update if sufficient truth differs from the immediately previous sufficient truth",
+      "maintain otherwise"
+    ],
+    "prediction_independence": "derived only from latent world truth history and causal evidence availability before model execution; never from predictions, thresholds, ignition, checkpoints, or learned state",
+    "labels": ["maintain", "update", "recover", "insufficient_information"],
+    "recovery_window": "the entire current episode before the assessment step"
+  },
+  "variants": {
+    "order": ["base", "irrelevant_distractor", "same_id_duplicate", "correlated_copy"],
+    "same_id_duplicate": "exact same EvidenceRecord redelivery and therefore exact ledger no-op",
+    "correlated_copy": "distinct evidence ID in the same correlation group with C13 discount",
+    "irrelevant_distractor": "new attributable evidence for a non-target hypothesis and unrelated source/group"
+  },
+  "worlds": {
+    "insufficient": "established A context followed by an assessment with fewer than two independent causal supports",
+    "maintain": "established A context followed by sufficient consistent A evidence",
+    "recover": "sufficient A then sufficient B then sufficient A assessment with unchanged in-memory state",
+    "update": "established A context followed by sufficient contradictory B evidence"
+  }
+}

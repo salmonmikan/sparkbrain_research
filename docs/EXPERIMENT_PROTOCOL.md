@@ -697,3 +697,93 @@ recalculation matches all derived outputs. This establishes only attributable sy
 control of the isolated v0.3 Ignition call path at fixed logits. It is not evidence of external
 accuracy gain, learned Coalition formation, semantic understanding, biological fidelity, or
 energy efficiency.
+
+## 14. C15 persistent revision-objective protocol
+
+Protocol `c15-revision-objectives-v1`, run `c15-revision-objectives-main-v1`, is frozen by
+D-V03-0017 before C15 source editing or numerical observation. Its machine-readable authority is
+`artifacts/v03/c15_revision/protocol.json`. C14 is an immutable dependency: the C15 controller
+composes the existing bounded Coalition gate and must not edit C14's contracts, Coalition, loop,
+or runner source paths. C14 evaluates attributable ledger evidence before any belief mutation.
+A learned abstention or transition-head decision may veto the proposed Ignition but may never
+create an Ignition that C14 rejected.
+
+### Transition truth and persistent state
+
+The four labels are derived only from the latent world truth history and causally available
+evidence, never from a model prediction, score, threshold, Ignition result, or checkpoint. Fewer
+than two independent causal sources/groups is `insufficient_information`. Otherwise, returning to
+an earlier truth after an intervening different sufficient truth is `recover`; changing from the
+immediately previous sufficient truth is `update`; and the remaining stable case is `maintain`.
+History is episode- and evaluated-entity-local. Every assessment follows an establishment context,
+so the first assessment is not an ambiguous initial classification.
+
+Recovery is executed as A then B then A within one episode, model instance, and in-memory entity
+state. Model reload, state reset, re-instantiation, and checkpoint restoration after episode start
+are forbidden and `checkpoint_restored` is retained in every raw row. Loser retention is 0.92
+after decay 0.88; paired `no_residual` changes only loser retention to zero. A C14 no-Ignition or
+learned veto retains a separate `evaluated_entity_key`, applies one entity-local decay, retains
+citations/residual candidates, and does not force a prediction or clear other entities.
+
+### Data, conditions, and selection
+
+The controlled worlds are maintain, contradictory update, A-to-B-to-A recovery, and explicit
+insufficient information. Train/dev/test contain 16/8/8 fixtures per world, respectively. Their
+episode seeds start at 150000/250000/450000, their template families do not overlap, and canonical
+split-manifest and full-fixture SHA-256 values are frozen in the protocol. Production-visible IDs
+are opaque SHA-256 derivations; the exact event, evidence, stage, variant, and attribution-target
+generator is machine-frozen. Dev indices 0--3 per world select among
+epochs 2, 4, and 6 by weighted objective total with an earlier-epoch tie-break. Disjoint dev
+indices 4--7 select temperature from 0.75/1.0/1.25 and abstention threshold from 0.4/0.5/0.6 by
+belief Brier plus binary abstention Brier. Source and focused tests must first be committed and
+independently audited without running official split seeds; a source-pin-only amendment then
+enables the first official runner. That runner performs training, checkpoint selection,
+calibration, and finally one test evaluation in this order. Test, I2 Oracle, and official Belief-R
+cannot influence either dev choice.
+
+Primary evaluation is I1 local-compositional input with E1 explicit Oracle entity scope. The
+twelve primary conditions are full separated objectives, nine single-objective ablations,
+one-weighted-CE, and no-residual. Full-only diagnostics cover the other five I0/I1/I2 by E0/E1
+cells. I2 stays diagnostic and C13 E2 learned slots remain prohibited. Four paired variants are
+base, irrelevant distractor, exact same-ID redelivery, and a distinct correlated-group copy.
+Across dev and test, 17 condition/cell combinations, five model seeds, 32 fixtures, and four
+variants produce exactly 21,760 canonical raw rows.
+
+### Independent objectives and evaluation
+
+Nine terms are logged separately: belief CE; maintain BCE plus stable-probability drift; update
+BCE plus new-versus-old ranking; recovery BCE plus a restored-residual floor; explicit
+no-Ignition BCE; multiclass Brier calibration; evidence-ID attribution BCE; normalized routing
+entropy sparsity; and load balance. The exact masks, weights, formulas, optimizer budget, zero-row
+behavior, and gradient-norm definition are in the protocol. Each term retains eligible count,
+raw value, weighted contribution, and pre-update unweighted/weighted global L2 gradient norm.
+The matched one-weighted-CE condition has identical architecture, initialization, data order,
+optimizer steps, checkpoint choices, and calibration budget, but receives only the final
+alpha/beta/gamma/NO_IGNITION target and no transition target.
+`loss_ablation_metrics.json` retains all 23,040 ordered optimizer-step rows with each objective's
+eligible count, raw/weighted value, and two gradient norms so every reported training aggregate is
+recalculated from direct evidence rather than prediction rows.
+
+Four-class, maintain, and update confusion matrices; unnecessary and missed revision; revision
+precision/recall; recovery opportunity/rate/latency with censoring; no-Ignition precision/recall;
+false/missed Ignition; accuracy/coverage; all-row Brier/NLL; decided-only ECE with coverage; and
+binary abstention calibration retain exact denominators. Empty groups are null, not zero.
+Calibration is grouped by input track and entity condition. The Pareto dimensions minimize
+unnecessary revision, missed revision, recovery latency, and ECE while maximizing recovery rate
+and no-Ignition F1. Frozen noninferiority margins and a required strict improvement are applied
+against one-weighted-CE without choosing a test-favorable checkpoint.
+
+Engineering acceptance requires observed no-checkpoint recovery for every seed, reconstructible
+matrices and separate metrics, explicit no-Ignition, all objective ablations, no Belief-R access,
+and exact eight-file deterministic reproduction. Narrow scientific support additionally applies
+the preregistered distractor, duplicate, correlated-copy, residual, and weighted-CE Pareto gates.
+Scientific failure does not invalidate engineering completion; it is recorded as `not_supported`
+or another frozen status category and retained in the Results Ledger.
+
+The runner must validate the canonical protocol, authorized source-pin-only amendment, candidate
+source bytes, accepted C12--C14 dependencies, protected hashes, unchanged C14 paths, release/schema
+deny-prefixes, split manifests, configuration set, and output emptiness before evaluation. It
+generates all results in memory, validates raw-to-derived reconstruction and exact schemas before
+writing, uses a same-parent staging directory, publishes exactly eight artifacts atomically, and
+cleans all staging/output on protocol or implementation failure. A different `PYTHONHASHSEED`
+must reproduce every byte. Package/release/schema advancement and no-Git packaging remain C20-only.

@@ -481,3 +481,59 @@ while logits remain fixed. It does not establish external accuracy improvement, 
 coalition formation, semantic understanding, biological fidelity, energy efficiency, or a higher
 scientific claim grade. The accepted C06/C08 negative findings, v0.2 package/schema, release
 metadata, and protected artifacts remain unchanged.
+
+## D-V03-0017 — Preregister C15 persistent revision objectives before source editing
+
+**Decision:** Freeze protocol `c15-revision-objectives-v1` and run
+`c15-revision-objectives-main-v1` before adding C15 source or observing any C15 model result.
+C14 merge `00dccf3dc8f6f70353a536dcf1db9ba0b19fc7b5`, final source
+`eb7f542963397eba1b7d9b4a66a7873b3ba17ac4`, artifact commit `4c0d26c`, and the exact C12--C14
+artifacts are dependencies. The C14 gate and its four pinned source paths remain unchanged.
+
+Transition truth is evaluator-only and prediction-independent. Insufficient information has
+first precedence; recovery is an exogenous A-to-B-to-A return within one entity and one episode;
+update is a sufficient change from the immediately previous truth; maintain is the remaining
+sufficient stable case. Assessment never starts from an unestablished state. Production input
+recursively rejects truth, target, label, expected, evaluator, split, scenario, and test-only
+fields. Identifier strings cannot encode targets or splits, and target permutation and causal
+prefix tests must prove separation.
+
+Use model seeds 2801--2805, bootstrap seed 4315 and 10,000 hierarchical paired resamples. Freeze
+64 train and 32 dev/test episodes, balanced across four worlds, with split-disjoint families.
+The dev set is deterministically divided into checkpoint-selection and calibration halves.
+Source and focused tests are committed and independently audited, then a source-pin-only
+amendment enables the first official runner before any official train/dev/test seed is executed.
+Within that runner, checkpoint selection precedes temperature/abstention calibration; I2 Oracle,
+official Belief-R, and test data are excluded from both. The official test is evaluated once.
+Twelve primary conditions comprise the full separated objective system, each of nine
+single-objective ablations, a matched one-weighted-CE baseline that never receives transition
+targets, and no-residual. Five non-primary input/entity cells run the full condition only. Dev and
+test retain exactly 21,760 prediction rows.
+
+The nine separately logged terms are belief CE, maintain BCE plus temporal drift, update BCE plus
+new-versus-old ranking, recovery BCE plus residual floor, explicit no-Ignition BCE, Brier
+calibration, evidence-ID attribution BCE, routing sparsity, and load balance. Each term records
+eligible count, unweighted and weighted value, and pre-update gradient norms. Zero-weight
+ablations have exact zero weighted contribution and gradient. C14 evaluates before mutation;
+learned abstention or transition heads may veto but never force Ignition. A no-Ignition decision
+retains `evaluated_entity_key`, decays only that entity once, and never clears residual belief.
+
+Engineering completion and scientific support remain separate. Continuous recovery without a
+checkpoint, exact matrices/metrics, explicit abstention, ablations, raw reconstruction, atomic
+failure, and byte determinism are engineering requirements. Distractor/same-ID/correlated-copy
+limits, recovery over no-residual, and the frozen Pareto/noninferiority comparison against weighted
+CE determine narrow synthetic scientific support; failure is retained as a negative result rather
+than changing thresholds. Any test-driven threshold, loss, split, target, denominator, checkpoint,
+or world change requires a new Decision ID and protocol.
+
+Package 0.2.1, persisted schema 0.2, release files, existing schema files, C06/C08 negatives,
+claim grades, official Belief-R, and C13 E2 learned slots remain frozen through C15. The C15
+internal contract may identify itself as schema 0.3, but package 0.3.0, migration/release manifests,
+no-Git archive, and private bundle remain C20 work.
+
+**Reason:** Current v0.2 training implements revision and recovery largely as weights on the same
+belief CE, so reuse would violate C15's stop rule and could hide a maintain/update trade-off.
+Freezing independent targets, objectives, state semantics, selection order, raw cardinalities,
+negative-result policy, and dependency hashes before source editing prevents prediction-derived
+labels, test tuning, checkpoint-based pseudo-recovery, Oracle leakage, and retrospective metric
+selection.
