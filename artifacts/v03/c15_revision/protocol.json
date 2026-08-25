@@ -493,6 +493,15 @@
       "attribution_targets": "list in assessment stage delivery order before variant modification, containing only original target-truth support evidence IDs",
       "construction_pseudocode": "for manifest row derive A/B/C and entity; generate each named stage by replacing A/B/C symbols, passing the declared stage integer and each [slot,hypothesis,polarity,strength] to evidence_record; choose previous_truth/target/sufficiency from world_sequences; for each variant in variants.order shallow-copy every assessment evidence object, apply its rule, and append exact variant object; append exact episode object; finally canonicalize exact document",
       "unknown_keys": "forbidden at every document, episode, variant, and evidence object"
+    },
+    "ledger_adapter": {
+      "purpose": "the frozen eight-field fixture evidence is the model/evaluator document; this adapter alone supplies the existing strict C13 EvidenceRecord lineage fields before ledger insertion",
+      "sample_id": "'sa-'+H('c15-sample|'+evidence_id)",
+      "spark_id": "'sp-'+H('c15-spark|'+evidence_id)",
+      "registration_order": "for each first-seen evidence_id, ledger.register_sample(sample_id), then ledger.register_spark(spark_id,(sample_id,)), then ledger.add(EvidenceRecord); exact same-ID redelivery skips registration and calls ledger.add with the byte-identical previously built EvidenceRecord",
+      "evidence_record_fields": ["correlation_group", "entity_key", "evidence_id", "hypothesis_id", "metadata", "parent_evidence_ids", "parent_spark_ids", "polarity", "schema_version", "source_id", "strength", "time"],
+      "fixed_added_values": "metadata={}, parent_evidence_ids=(), parent_spark_ids=(spark_id,), schema_version='0.3'; the eight fixture fields are copied without reinterpretation",
+      "identity_policy": "the adapter is deterministic, prediction-independent, and identical across condition, input track, entity condition, model seed, and variant except for the already-frozen fixture evidence values"
     }
   },
   "state_and_gate": {

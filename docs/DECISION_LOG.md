@@ -537,3 +537,11 @@ Freezing independent targets, objectives, state semantics, selection order, raw 
 negative-result policy, and dependency hashes before source editing prevents prediction-derived
 labels, test tuning, checkpoint-based pseudo-recovery, Oracle leakage, and retrospective metric
 selection.
+
+**Pre-source reconstructibility clarification:** The frozen eight-field fixture evidence remains
+the hashed model/evaluator document. Before any C13 ledger insertion, a single frozen adapter
+derives opaque sample and Spark IDs from `evidence_id`, registers sample then Spark lineage, and
+constructs schema-0.3 `EvidenceRecord` with empty metadata/parent evidence and that one parent
+Spark. Exact same-ID redelivery reuses the identical record. This adds no fixture value, target,
+threshold, condition, seed, or result and closes the existing strict-ledger lineage boundary before
+C15 source implementation.
