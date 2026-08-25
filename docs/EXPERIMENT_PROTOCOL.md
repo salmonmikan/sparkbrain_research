@@ -620,3 +620,80 @@ The metrics artifact retains all 1,440 ordered execution rows, including add-row
 lineage fields. The invariant artifact retains numeric and canonical before/after observations
 for same-ID, correlation, identity rejection, lineage, orphan, and remove/restore checks so the
 reported aggregates and gates can be independently recalculated from checked-in raw evidence.
+## 13. C14 Coalition-driven Ignition protocol
+
+Protocol `c14-coalition-gate-v1`, run `c14-coalition-gate-main-v1`, is frozen before C14 source
+implementation or evaluation. The paired controls are `G0_probability_margin`,
+`G1_evidence_coalition`, and `G1_no_coalition_ablation`; every intervention uses identical logits
+`hypothesis-alpha=0.72`, `hypothesis-beta=0.28`. G0 retains confidence threshold 0.50 and margin
+threshold 0.08. G1 consumes the bounded evidence-Coalition score and cannot copy confidence.
+
+The exact score transforms, weights, gate thresholds, reason priority, ten intervention cases,
+seeds 2701--2705, 10,000 paired bootstrap resamples, and bootstrap seed 4314 are frozen in
+`artifacts/v03/c14_coalition_gate/protocol.json`. G03 engineering acceptance requires direct code
+and test evidence that the score is consumed, independent support can Ignite, duplicates and
+correlated copies cannot manufacture independence, contradiction and removal causally change the
+gate, restore is exact, fixed logits never change, and G1 differs from the no-Coalition ablation on
+at least 30% of preregistered paired cases. Coverage, covered accuracy, false Ignition, every raw
+row, counterexample, failed seed, and machine-readable no-Ignition reason are retained. External
+accuracy improvement is explicitly outside the engineering gate.
+
+Decision `D-V03-0010`, recorded before source editing or result observation, freezes the actual
+logits and canonical hash, probability-to-activation mapping, post-stability-update score timing,
+diagnostic settle/evaluate/belief-update call path, G0-equivalent no-Coalition rule, exact case
+generator and five fixture hashes, evidence roles, expected case/reason table, comparator stages,
+point-estimate gates, descriptive bootstrap order, and recalculable 360-row artifact schema. The
+legacy gate remains the default, `c14_bounded_v1` is explicit, and the v0.2 learned backend remains
+unchanged. C14 source may be implemented and tested, but the official runner stays disabled until
+a separate preregistration amendment pins the source-only commit.
+
+Decision `D-V03-0011` closes the remaining reconstruction gaps before source editing. The five
+execution fixture hashes cover complete machine-readable evidence content and interventions; the
+older five hashes are identity-only audit markers. Stability advances independently for every
+unchanged candidate before scoring, and every case/condition/replay uses a fresh gate, ledger, and
+belief field. The bootstrap resampling and percentile interpolation are exact, and the nested raw,
+causal, reason, metrics, manifest, ordering, and unknown-key contracts are frozen so the six
+artifacts alone support recalculation of every score, margin, reason, effect, and engineering gate.
+
+Decision `D-V03-0012` fixes every nested artifact key/type/null/cardinality/order contract and
+keeps non-Coalition controls from fabricating C14 candidate terms. It also repairs the sole
+fixed-activation conflict before source editing: `weak_low_score` retains activation 0.72/0.28,
+uses strength-0.05 evidence at time 65, and evaluates at time 100. Its recency passes the hard
+minimum while its bounded score stays below threshold. Only the five full-fixture hashes change;
+the frozen logits, weights, thresholds, seeds, expected reason, and identity hashes do not.
+
+Decision `D-V03-0013` fixes each condition-by-metric formula and retains fresh-loop comparator
+observations inside the existing 360 raw rows. G1 score deltas use those observations; both
+probability controls report exact zero deltas; cross-condition decision-difference values repeat
+unchanged across condition rows. The canonical engineering-gate set now includes both 0.30
+decision-difference gates, while external accuracy remains a claim boundary rather than a gate
+row. This changes no fixture, hash, score, threshold, seed, or expected decision.
+
+Decision `D-V03-0014`, recorded after source and focused-test review but before official runner
+execution, pins source commit `307bcb56f09e88b769cd863b1a6fead73a189936` and authorizes the
+runner. Protocol authenticity is anchored to preregistration commit
+`79dfa6c612e1d3159aae8705be5e14833502ea96` and raw protocol SHA-256
+`ce3fc31531f5ea7689cfcd3b07354508a67af9463ed3b9e1eebb613e0e9c4c8a`;
+only the source pin, execution flag, and base identity fields may differ. Focused mutation,
+tamper, schema, per-seed failure, legacy, and guard tests passed before this authorization.
+
+The first authorized runner attempt stopped atomically with `KeyError: 'ignited'` before any
+artifact or numerical result was published because cross-condition calculation passed raw rows
+instead of their nested decision objects. Decision `D-V03-0015` records that failed attempt and
+the independently audited mechanical correction. The final source pin is
+`eb7f542963397eba1b7d9b4a66a7873b3ba17ac4`; its write-free full calculation regression retains
+exact counts `360 / 15 / 24 / 120 / 4 / 12` and changes no frozen scientific value.
+
+C14 is accepted at final source pin `eb7f542963397eba1b7d9b4a66a7873b3ba17ac4` and artifact
+commit `4c0d26cd0be862da63594f1f32e295127de72304`. The frozen run retains 360 raw rows, 15 causal
+rows, 24 aggregate metrics, 120 seed rows, four paired statistics, 50 reason references, and all
+12 gate results. Every gate passed and failed seeds are empty. Independent-support Ignition,
+removal reversal, and exact restoration are 1.0; same-ID delta is 0.0; correlated-group inflation
+is 0; contradiction score delta is -0.1296997075145081; and G1 differs from both probability
+controls on 90% of paired primary cases. All nine no-Ignition/ignition reasons are covered.
+
+The exact six artifacts reproduce byte-for-byte under a different `PYTHONHASHSEED`, and raw-only
+recalculation matches all derived outputs. This establishes only attributable synthetic Coalition
+control of the isolated v0.3 Ignition call path at fixed logits. It is not evidence of external
+accuracy gain, learned Coalition formation, semantic understanding, biological fidelity, or
+energy efficiency.

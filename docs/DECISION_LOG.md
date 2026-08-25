@@ -293,3 +293,191 @@ claim grades, protected hashes, package/schema, and release metadata remain unch
 rows and the numeric/canonical G02 before/after observations to remain in the exact eight
 artifacts. This correction changes no protocol, threshold, fixture, seed, metric definition, or
 result; it makes the existing acceptance independently recalculable instead of boolean-only.
+## D-V03-0009 — Preregister C14 Coalition-driven Ignition
+
+**Decision:** Before C14 source implementation or evaluation, freeze protocol
+`c14-coalition-gate-v1` and run `c14-coalition-gate-main-v1`. Compare the unchanged G0
+probability/margin control, the G1 evidence-Coalition gate, and a no-Coalition ablation while
+holding logits at `hypothesis-alpha=0.72` and `hypothesis-beta=0.28`. Use seeds 2701--2705 and a
+paired 10,000-resample interval over seed-by-intervention-case blocks with bootstrap seed 4314.
+
+Bound activation, effective support, source/group diversity, temporal stability, recency,
+contradiction, and redundancy to `[0,1]` using the exact transforms and weights in
+`artifacts/v03/c14_coalition_gate/protocol.json`. Freeze threshold 0.55, margin 0.10, minimum two
+sources/groups/evidence, stability two, recency minimum 0.30, contradiction ceiling 0.35, budget
+one, and the machine-readable reason priority. Run the ten frozen independent-support,
+same-ID, same-source, correlated-copy, contradiction, instability, time-decay, low-score,
+low-margin, and remove/restore interventions. Each case uses a fresh gate/ledger; stability uses
+two identical evaluations, and remove/restore compares fresh-gate replays so intervention history
+cannot alter the stability term. Retain every raw row and failed seed.
+
+**Reason:** C14 must show that attributable evidence changes the actual v0.3 Ignition decision
+while logits stay fixed. A probability copy, a post-result threshold reduction, or an ablation
+that changes no decision would not establish Coalition causality. External accuracy improvement
+is not required for engineering completion, and the accepted C06/C08 findings, claim grades,
+package/schema, release metadata, and protected artifacts remain unchanged.
+
+## D-V03-0010 — Freeze final C14 call-path, fixture, ablation, and artifact semantics
+
+**Decision:** Before C14 source editing or any result, close the design ambiguities found by three
+independent read-only audits. Freeze actual logits `ln(0.72)` and `ln(0.28)`, their probabilities,
+canonical SHA-256, activation override, post-stability-update scoring, and the diagnostic actual
+path `V03ReferenceLoop.settle -> CoalitionGate.evaluate -> IgnitionDecision -> belief update`.
+Keep the legacy gate as default and enable `c14_bounded_v1` only explicitly. Do not change the
+v0.2 learned backend.
+
+Define no-Coalition as the exact G0 probability/margin decision with evidence constraints removed
+and identical belief side effect. Freeze the canonical 10-case generator and five fixture hashes,
+the exact evidence roles/strengths/times, each case's primary evaluation and expected reason, the
+four paired comparators, both G1 decision-difference gates at 0.30, point-estimate gate policy,
+360-row raw schema, 15 causal-removal rows, protected/source preflight, and source-pin procedure in
+the protocol. `unstable_first_observation` alone uses evaluation one as primary; remove/restore
+uses the removed stage. C13 decay in effective support and the separate C14 freshness term are
+intentional and must both remain visible.
+
+**Reason:** Without these definitions, an implementation could choose its fixture, stability
+timing, ablation behavior, expected negatives, or aggregation after seeing results. The final
+freeze makes the intervention result reconstructible and preserves an honest negative result if
+the preregistered G03 gates fail. Source implementation may begin, but runner execution remains
+forbidden until a separate amendment pins the source-only commit.
+
+## D-V03-0011 — Close C14 fixture, stability, bootstrap, and artifact reconstruction gaps
+
+**Decision:** Still before C14 source editing, tests, runner execution, artifact generation, or
+numerical result observation, replace the identity-only fixture hash as the execution authority
+with five full-fixture hashes. The canonical payload now includes the document prefix, ID
+templates, every case's entity, time, activation mapping, primary stage/evaluation, expected G1
+decision, complete evidence roles with hypothesis/polarity/strength/source/group/time/lineage and
+metadata, and exact active/remove/restore stages. The earlier five identity hashes remain labeled
+as audit continuity only.
+
+Update an independent stability signature counter for every candidate before computing any score;
+all unchanged candidates, including both candidates in the equal-score case, advance from one to
+two on the second evaluation. Each case, condition, and causal replay starts with a fresh complete
+reference loop, including a fresh belief field. Freeze the paired bootstrap vector membership,
+with-replacement sample size, shared RNG stream, arithmetic estimand, linear percentile
+interpolation, and non-rounded finite JSON serialization. Freeze exact nested candidate/decision,
+causal-removal, no-Ignition-reason, metrics, manifest, sort, and unknown-key contracts so all
+scores, margins, reasons, effects, and gates can be recalculated from the six artifacts.
+
+**Reason:** Independent pre-implementation audits found that the prior identity hash did not bind
+evidence content, equal-case behavior depended on an unstated stability update scope, bootstrap
+percentiles were not byte-reproducible, and nested artifacts could omit recalculation inputs. This
+amendment closes only those pre-result degrees of freedom. It changes no logits, score transform,
+weight, threshold, seed, intervention expectation, claim policy, or source-pin sequence.
+
+## D-V03-0012 — Freeze C14 nested artifacts and repair the weak-case activation conflict
+
+**Decision:** Before source editing or result observation, require exact nested types, null/default
+rules, cardinalities, and ordering for raw candidate terms, decisions, belief snapshots, evidence
+IDs, causal replays, no-Ignition references, aggregate/seed metrics, paired statistics,
+engineering gates, failed seeds, and the manifest. G0 and no-Coalition rows carry an empty
+`candidate_terms` list because they do not consume the C14 score; G1 rows retain every candidate
+term. All conditions still retain a decision and canonical before/after belief snapshot.
+
+Repair `weak_low_score` without changing the frozen probability-to-activation mapping: keep alpha
+and beta activation at 0.72 and 0.28, move the two strength-0.05 evidence records to time 65.0,
+and evaluate at time 100.0. Freshness `exp(-35/30)` remains above the 0.30 hard minimum while the
+bounded top score remains below 0.55. Recompute only the five full-fixture hashes; retain the
+identity-only hashes unchanged for audit continuity.
+
+**Reason:** A final read-only audit found that the previous weak case reached Ignition only by
+overriding activation to zero, contradicting the fixed-logit mapping, and that nested artifact
+containers were not independently validatable. This pre-source repair restores the intended
+score-specific negative and makes exact artifacts implementable. No threshold, weight, seed,
+expected reason, claim policy, or official result changed.
+
+## D-V03-0013 — Freeze C14 metric placement and retain comparator observations
+
+**Decision:** Before source editing or result observation, define every one of the 24 aggregate
+and 120 seed metric rows by an exact condition-aware formula. Condition-local coverage,
+accuracy, false Ignition, and mean consumed score use their own primary rows. The two G1 score
+deltas are calculated only from retained G1 comparator observations and are exactly zero for both
+probability controls. Each cross-condition decision-difference scalar is repeated unchanged in
+all three condition rows. Numerators and denominators are retained.
+
+Add an exact `comparators` object to every raw row without increasing the frozen 360-row count.
+Only the specified G1 primary rows retain fresh-loop second-evaluation observations for the
+primary-support-only or independent-support baseline; all other comparator slots are null. These
+nested observations use the same decision, candidate-term, and belief schemas, making same-ID,
+independence, correlated-group, and contradiction gates artifact-recalculable. Add the missing
+G1-versus-G0 0.30 gate to the canonical engineering-gate set. Treat external accuracy as claim
+scope, not as a boolean engineering-gate result row.
+
+**Reason:** Independent implementation and reproduction audits found that exact row shapes still
+allowed multiple metric placements and omitted the comparator observations required to audit
+same-ID behavior. This amendment removes those final serialization choices without changing any
+fixture, hash, score, threshold, seed, expected outcome, or claim boundary.
+
+## D-V03-0014 — Pin the audited C14 source and authorize the frozen runner
+
+**Decision:** After source implementation and focused tests, and before any official runner
+execution or result observation, pin C14 source commit
+`307bcb56f09e88b769cd863b1a6fead73a189936` and authorize the runner. Anchor protocol
+authenticity to preregistration commit `79dfa6c612e1d3159aae8705be5e14833502ea96`
+and its exact protocol blob SHA-256
+`ce3fc31531f5ea7689cfcd3b07354508a67af9463ed3b9e1eebb613e0e9c4c8a`.
+The runner must reject a noncanonical path, working bytes different from HEAD, a changed base
+blob, any amendment beyond this source pin / execution flag / base identity, or any later change
+to the four frozen source paths before creating an output directory.
+
+The pinned source was independently audited after corrective implementation. Focused coverage
+includes the actual bounded decision helper, a score-only `0.54` to `0.56` causal mutation,
+protocol tampering, exact nested artifact validation, per-seed failure attribution, legacy
+default behavior, fixture hashes, and the disabled-runner guard. The official C14 runner and
+numerical evaluation had not been executed when this decision was recorded.
+
+**Reason:** This separate amendment completes the preregistered source-pin sequence only after
+implementation review closed the protocol-authenticity, call-graph, artifact-schema, and
+failed-seed blockers. It changes no fixture, score, weight, threshold, seed, expected outcome,
+metric definition, protected artifact, or claim boundary.
+
+## D-V03-0015 — Record the stopped C14 attempt and repin the metric wiring fix
+
+**Decision:** The first authorized C14 runner attempt under source pin `307bcb56...` stopped
+before artifact publication when `_metric_rows` passed a complete raw row to a helper that
+requires its nested decision object, raising `KeyError: 'ignited'`. The atomic staging directory
+was removed; the requested output path did not exist afterward; no metric, gate result, report,
+or numerical artifact was printed or committed. Preserve this failed attempt in the decision
+history rather than treating it as an official result.
+
+Repair only the raw-row-to-decision wiring. The initial narrow fix `d040539...` corrected metric
+rows but independent audit found the same error in paired statistics and engineering gates before
+any second official attempt. Final source commit
+`eb7f542963397eba1b7d9b4a66a7873b3ba17ac4` corrects every affected call site. A write-free
+in-memory regression executes raw evaluation, metrics, paired statistics, aggregate and per-seed
+gates, and failed-seed attribution with exact counts `360 / 15 / 24 / 120 / 4 / 12`. Focused
+tests pass and an independent re-audit confirms all seven decision-difference call sites receive
+decision objects. Repin C14 to `eb7f542...` before the next and only remaining official attempt.
+
+**Reason:** This is a mechanical acceptance-calculation correction after a fail-closed attempt,
+not a result-driven protocol change. It changes no fixture, score, weight, threshold, seed,
+expected outcome, metric formula, engineering gate, protected artifact, or claim boundary.
+
+## D-V03-0016 — Accept C14 at the attributable Coalition-gate boundary
+
+**Decision:** Accept C14 G03 for protocol `c14-coalition-gate-v1`, run
+`c14-coalition-gate-main-v1`, final source pin
+`eb7f542963397eba1b7d9b4a66a7873b3ba17ac4`, and artifact commit
+`4c0d26cd0be862da63594f1f32e295127de72304`. Freeze the exact six artifacts under
+`artifacts/v03/c14_coalition_gate/`.
+
+All 360 raw fixed-logit rows, 15 causal removal rows, 24 aggregate metrics, 120 seed-level rows,
+four paired statistics, 50 reason references, and 12 engineering gates are retained. All gates
+passed with no failed seed. Independent support Ignition rate and removal reversal/restore-exact
+rates are 1.0; same-ID score/decision delta is 0.0; correlated-copy independent-group delta is
+0; contradiction score delta is -0.1296997075145081; and both G1-versus-control decision
+difference rates are 0.9. All nine required reasons are represented. Fixed-logit integrity is
+1.0 across every raw row.
+
+The six artifacts reproduced byte-for-byte in a second process with a different
+`PYTHONHASHSEED`. Raw-only recalculation reproduced all aggregate, seed, paired, gate, reason, and
+failed-seed outputs. The complete test suite passed with five explicit frozen-release skips and
+the existing Starlette deprecation warning only.
+
+**Reason:** C14 now demonstrates the narrow engineering claim that an attributable, bounded,
+evidence-bearing Coalition score causally controls the actual isolated v0.3 Ignition decision
+while logits remain fixed. It does not establish external accuracy improvement, learned
+coalition formation, semantic understanding, biological fidelity, energy efficiency, or a higher
+scientific claim grade. The accepted C06/C08 negative findings, v0.2 package/schema, release
+metadata, and protected artifacts remain unchanged.

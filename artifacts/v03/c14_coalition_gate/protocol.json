@@ -1,0 +1,680 @@
+{
+  "schema_version": "0.3",
+  "protocol_id": "c14-coalition-gate-v1",
+  "run_id": "c14-coalition-gate-main-v1",
+  "preregistered_at": "2026-08-26T05:36:00+09:00",
+  "status": "preregistered_not_run",
+  "dependencies": {
+    "c12_merge": "280516fb61eab7c7a96c109baefc82b333fcc367",
+    "c13_merge": "06e13975b486548bb17924acc3b82786246ad6e1",
+    "c13_source_contract": "03b26591c653592ec501177d9628bd2bea9b8ec4",
+    "c14_source_pin": "eb7f542963397eba1b7d9b4a66a7873b3ba17ac4",
+    "c14_protocol_base_commit": "79dfa6c612e1d3159aae8705be5e14833502ea96",
+    "c14_protocol_base_sha256": "ce3fc31531f5ea7689cfcd3b07354508a67af9463ed3b9e1eebb613e0e9c4c8a",
+    "source_implementation_allowed": true,
+    "runner_execution_allowed": true
+  },
+  "conditions": [
+    "G0_probability_margin",
+    "G1_evidence_coalition",
+    "G1_no_coalition_ablation"
+  ],
+  "frozen_logits": {
+    "schema_version": "0.3",
+    "labels": [
+      "hypothesis-alpha",
+      "hypothesis-beta"
+    ],
+    "actual_logits": [
+      -0.3285040669720361,
+      -1.2729656758128873
+    ],
+    "probabilities": [
+      0.72,
+      0.28
+    ],
+    "activation_mapping": "candidate activation equals the corresponding frozen probability without belief-state contribution",
+    "canonical_json": "json.dumps(payload with fields labels, logits, probabilities, schema_version; sort_keys=True, separators=(',', ':'))",
+    "sha256": "03d60e44635d2726675efb1fc7e772a8ece7e6677d83d1997edc11fab2dcd2f9",
+    "g0_confidence_threshold": 0.5,
+    "g0_margin_threshold": 0.08,
+    "g0_winner": "hypothesis-alpha",
+    "g0_ignited": true,
+    "must_be_byte_identical_across_interventions": true
+  },
+  "coalition_terms": {
+    "activation": "clamp(activation, 0, 1)",
+    "effective_support": "1 - exp(-max(effective_support, 0))",
+    "source_diversity": "min(source_count / 2, 1)",
+    "group_diversity": "min(independent_group_count / 2, 1)",
+    "temporal_stability": "min(stability / 2, 1)",
+    "recency": "mean(exp(-max(0, now - evidence_time) / 30)) over effectively-active support evidence, else 0",
+    "contradiction": "1 - exp(-max(effective_contradiction, 0))",
+    "redundancy": "1 - exp(-max(redundancy, 0))",
+    "all_terms_bounded": [
+      0.0,
+      1.0
+    ]
+  },
+  "coalition_score": {
+    "formula": "0.25*activation + 0.25*effective_support + 0.05*source_diversity + 0.05*group_diversity + 0.10*temporal_stability + 0.20*recency - 0.15*contradiction - 0.10*redundancy",
+    "weights": {
+      "activation": 0.25,
+      "effective_support": 0.25,
+      "source_diversity": 0.05,
+      "group_diversity": 0.05,
+      "temporal_stability": 0.1,
+      "recency": 0.2,
+      "contradiction": 0.15,
+      "redundancy": 0.1
+    },
+    "not_trained_to_probability": true,
+    "probability_copy_forbidden": true
+  },
+  "gate": {
+    "ignition_threshold": 0.55,
+    "ignition_margin": 0.1,
+    "minimum_sources": 2,
+    "minimum_independent_groups": 2,
+    "minimum_evidence": 2,
+    "stability_steps": 2,
+    "minimum_recency": 0.3,
+    "contradiction_ceiling": 0.35,
+    "budget": 1,
+    "reason_priority": [
+      "no_candidates",
+      "insufficient_evidence",
+      "insufficient_sources",
+      "insufficient_independent_groups",
+      "excessive_contradiction",
+      "insufficient_stability",
+      "insufficient_recency",
+      "score_below_threshold",
+      "margin_below_threshold",
+      "ignited"
+    ],
+    "tie_break": "highest score, then entity_key lexicographic, then hypothesis_id lexicographic"
+  },
+  "intervention_cases": [
+    "independent_multi_source_support",
+    "same_id_exact_duplicate",
+    "same_source_distinct_groups",
+    "correlated_distinct_copy",
+    "strong_contradiction",
+    "unstable_first_observation",
+    "old_time_decayed_support",
+    "weak_low_score",
+    "equal_coalition_low_margin",
+    "necessary_evidence_remove_restore"
+  ],
+  "case_contract": {
+    "entity_key": "object-a",
+    "primary_hypothesis": "hypothesis-alpha",
+    "secondary_hypothesis": "hypothesis-beta",
+    "fresh_time": 10.0,
+    "old_evidence_time": 0.0,
+    "old_evaluation_time": 100.0,
+    "independent_support": "two support records, strength 1.0 each, distinct source and correlation group",
+    "same_id_duplicate": "byte-exact redelivery of the first support record",
+    "correlated_copy": "distinct ID and source, strength 1.0, same correlation group as first support",
+    "same_source_distinct_groups": "two distinct support IDs and correlation groups, strength 1.0 each, but the same source ID",
+    "strong_contradiction": "independent contradict record with strength 2.0",
+    "weak_low_score": "two independent support records with strength 0.05, frozen activation 0.72/0.28, evidence time 65.0, and evaluation now 100.0; recency remains above the 0.30 hard minimum while score stays below 0.55",
+    "equal_low_margin": "alpha has two independent support records of strength 0.2 each; beta has two independent support records each of strength (-ln(1 - ((1 - exp(-0.4)) + 0.44))) / 2, making the two frozen-logit coalition scores exactly equal",
+    "remove_restore": "deactivate one of two necessary independent support records, then restore the same immutable record",
+    "fixed_logit_hash_required": true
+  },
+  "gate_state_control": {
+    "default": "each case, condition, and remove/restore replay starts from a fresh V03ReferenceLoop containing a fresh CoalitionGate, EvidenceLedger, and PersistentBeliefField",
+    "stability": "evaluate the byte-identical coalition twice at the same now; the second decision is the primary row",
+    "stability_update_scope": "before scoring, update an independent signature counter for every candidate in deterministic entity_key then hypothesis_id order; every unchanged candidate advances 1 to 2 on the second evaluation, including both candidates in equal_coalition_low_margin",
+    "remove_restore": "compare baseline, removed, and restored decisions by replaying each ledger state through a fresh gate for exactly two identical evaluations",
+    "reason": "prevent prior intervention history from changing the frozen stability term"
+  },
+  "actual_call_path": {
+    "entry": "V03ReferenceLoop.settle(now, object_key, activation_overrides, gate_mode)",
+    "gate": "CoalitionGate.evaluate",
+    "consumed_value": "bounded CoalitionState.score",
+    "output": "IgnitionDecision followed by one PersistentBeliefField.update; no separate workspace object is required in C14",
+    "learned_v0_2_backend_changed": false
+  },
+  "seeds": [
+    2701,
+    2702,
+    2703,
+    2704,
+    2705
+  ],
+  "statistics": {
+    "paired": true,
+    "pairing_unit": "seed-by-intervention-case block",
+    "bootstrap_resamples": 10000,
+    "bootstrap_seed": 4314,
+    "confidence_interval": 0.95,
+    "retain_seed_level_rows": true,
+    "retain_all_raw_rows": true,
+    "retain_failed_seeds": true,
+    "bootstrap_algorithm": {
+      "effect_vector": "one scalar per seed-by-intervention-case pairing block, ordered by seed ascending then case_index ascending; effect-specific eligibility is frozen by primary_metrics.bootstrap_effect_vector_membership",
+      "point_estimate": "arithmetic mean of the complete ordered effect vector",
+      "resample": "for a vector of length n, draw n integer indexes independently with replacement using rng.randrange(n), then take the arithmetic mean",
+      "rng": "one random.Random(4314) instance shared across effects in bootstrap_effects_in_order; do not reset between effects",
+      "interval": "sort 10000 resampled means; low is linear interpolation at zero-based position (N-1)*0.025 and high at (N-1)*0.975, where interpolation is lower + fractional_part*(upper-lower)",
+      "serialization": "store Python finite JSON numbers without pre-rounding; canonical artifacts use json.dumps(..., sort_keys=True, separators=(',', ':'), allow_nan=False)"
+    }
+  },
+  "engineering_gates": {
+    "fixed_logit_integrity_rate_min": 1.0,
+    "independent_support_ignition_rate_min": 1.0,
+    "independent_support_score_delta_min": 1e-12,
+    "same_id_score_and_decision_delta_max": 0.0,
+    "correlated_copy_independent_group_delta_max": 0,
+    "contradiction_score_delta_max": -1e-12,
+    "removal_reversal_rate_min": 1.0,
+    "restore_exact_rate_min": 1.0,
+    "g1_vs_g0_decision_difference_rate_min": 0.3,
+    "g1_vs_no_coalition_decision_difference_rate_min": 0.3,
+    "required_reason_coverage": [
+      "insufficient_evidence",
+      "insufficient_sources",
+      "insufficient_independent_groups",
+      "excessive_contradiction",
+      "insufficient_stability",
+      "insufficient_recency",
+      "score_below_threshold",
+      "margin_below_threshold",
+      "ignited"
+    ],
+    "call_graph_requires_coalition_score_consumption": true
+  },
+  "reported_metrics": [
+    "coverage",
+    "covered_accuracy",
+    "false_ignition_rate",
+    "mean_top_coalition_score",
+    "mean_score_delta_from_independent_support",
+    "mean_score_delta_from_contradiction",
+    "g1_vs_g0_decision_difference_rate",
+    "g1_vs_no_coalition_decision_difference_rate"
+  ],
+  "metric_definitions": {
+    "coverage": "ignited primary decision rows / all primary decision rows",
+    "covered_accuracy": "ignited primary rows whose winner equals the frozen expected winner / ignited primary rows; 0 when denominator is zero",
+    "false_ignition_rate": "ignited primary rows among cases frozen as expected_no_ignition / all expected_no_ignition primary rows",
+    "primary_decision": "the evaluation/stage frozen in final_pre_execution_freeze.expected_case_table",
+    "decision_difference": "ignited flag, winner, or machine-readable reason differs",
+    "score_delta": "paired G1 top coalition score difference at fixed logits and fixed now"
+  },
+  "expected_files": [
+    "protocol.json",
+    "fixed_logit_interventions.jsonl",
+    "gate_ablation_metrics.json",
+    "causal_evidence_removal.jsonl",
+    "no_ignition_reasons.json",
+    "report.md"
+  ],
+  "claim_policy": {
+    "engineering_completion_separate_from_external_accuracy": true,
+    "synthetic_causality_does_not_establish_external_improvement": true,
+    "no_energy_or_biological_claim": true,
+    "v0_2_claim_grades_unchanged": true
+  },
+  "final_pre_execution_freeze": {
+    "decision_id": "D-V03-0010",
+    "timing": "recorded before C14 source editing, tests, runner execution, artifact generation, or numerical result observation",
+    "scoring_contract": {
+      "legacy_default": "legacy_v03_seed",
+      "c14_mode": "c14_bounded_v1",
+      "c14_only_changes_legacy_behavior": false,
+      "score_range": [
+        -0.25,
+        0.9
+      ],
+      "stability_timing": "build candidate summaries and signatures, update stability, then compute every normalized term, weighted contribution, score, margin, and gate reason",
+      "stability_signature": "entity_key, hypothesis_id, exact activation, support IDs, contradiction IDs, source count, independent group count, evidence count, effective support, effective contradiction, and redundancy",
+      "double_time_signal_is_intentional": "C13 effective support/contradiction retains recency decay; C14 separately traces support-evidence freshness as a bounded term and hard minimum",
+      "nonfinite_input": "reject atomically before gate state mutation"
+    },
+    "actual_call_path": {
+      "entry": "V03ReferenceLoop.settle(now, object_key, activation_overrides, gate_mode)",
+      "g1_path": "activation_overrides -> CoalitionGate.evaluate(c14_bounded_v1) -> bounded CoalitionState.score -> IgnitionDecision -> PersistentBeliefField.update",
+      "activation_override": "diagnostic-only exact mapping for both frozen probabilities; it registers the two candidates and replaces belief-derived activation on every evaluation",
+      "side_effect_timing": "gate decision is complete before one belief update; the next evaluation again receives the same activation override",
+      "strict_ledger": "a C13 EvidenceLedger with registered sample, Spark, and EvidenceRecord lineage is injected into V03ReferenceLoop",
+      "workspace_object_required": false,
+      "learned_v0_2_backend_changed": false,
+      "call_graph_test": "spy settle -> evaluate -> belief update and mutate only the consumed bounded score across 0.55 while logits, ledger, candidates, now, and other terms stay fixed"
+    },
+    "no_coalition_ablation": {
+      "rule": "exactly the G0 probability-margin decision under a distinct condition_id",
+      "top_probability": 0.72,
+      "second_probability": 0.28,
+      "confidence_threshold": 0.5,
+      "margin_threshold": 0.08,
+      "evidence_source_group_stability_recency_contradiction_constraints_applied": false,
+      "score": "top probability",
+      "margin": "top probability minus second probability",
+      "reason_vocabulary": [
+        "probability_below_threshold",
+        "probability_margin_below_threshold",
+        "ignited"
+      ],
+      "winner_tie_break": "label lexicographic",
+      "budget": 1,
+      "belief_side_effect": "the same one PersistentBeliefField.update call as G1"
+    },
+    "fixture_generator": {
+      "canonical_document_fields": [
+        "schema_version",
+        "seed",
+        "document_id_prefix",
+        "templates",
+        "cases"
+      ],
+      "canonical_case_fields": [
+        "case_id",
+        "case_index",
+        "id_prefix",
+        "entity_key",
+        "now",
+        "activation_overrides",
+        "primary_stage",
+        "primary_evaluation",
+        "expected_g1",
+        "records",
+        "stages"
+      ],
+      "case_order": [
+        "independent_multi_source_support",
+        "same_id_exact_duplicate",
+        "same_source_distinct_groups",
+        "correlated_distinct_copy",
+        "strong_contradiction",
+        "unstable_first_observation",
+        "old_time_decayed_support",
+        "weak_low_score",
+        "equal_coalition_low_margin",
+        "necessary_evidence_remove_restore"
+      ],
+      "document_id_prefix": "c14:{seed}",
+      "id_prefix": "c14:{seed}:{case_index:02d}:{case_id}",
+      "sample_id": "{id_prefix}:{role}:sample",
+      "spark_id": "{id_prefix}:{role}:spark",
+      "spark_evidence_id": "{id_prefix}:{role}:spark-evidence",
+      "evidence_id": "use C13 derive_evidence_id from the registered Spark, hypothesis, and polarity",
+      "serialization": "json.dumps(value, sort_keys=True, separators=(',', ':')); hash UTF-8 bytes",
+      "fixture_identity_hash_algorithm": "historical pre-source identity hash only: canonical JSON of schema_version='0.3', seed, id_prefix='c14:{seed}', and cases containing only case_id, zero-based case_index, and expanded case id_prefix; retained for audit continuity and not sufficient as the execution fixture hash",
+      "fixture_identity_sha256_by_seed": {
+        "2701": "deea7fed2f6c62d94eb7700f89f1329a5574fda66697366d9f74428b04c68826",
+        "2702": "40cbb6a6d57c0d67c2cf3c9769a6b18b9bbff1fbbc90da52b3c8247adf9b84be",
+        "2703": "bc545f3c7e013b57f4bec9114fbdcc1dc5577f14d59913b5c3327790dd693ce1",
+        "2704": "bf504a7cbd258e8d26fe9b353f43f43772b48b00fd4da17e7448541387a64657",
+        "2705": "79156c6ce2fc3635f4e18ade37bf0d0419d6a5bbca0919cbd3221890c5f30b94"
+      },
+      "full_fixture_hash_algorithm": "construct a document with canonical_document_fields: schema_version='0.3', seed, document_id_prefix expanded for seed, templates equal to id_templates below, and cases equal to case_specs entries in case_order augmented with zero-based case_index and expanded id_prefix; hash canonical UTF-8 JSON",
+      "id_templates": {
+        "sample_id": "{id_prefix}:{role}:sample",
+        "spark_id": "{id_prefix}:{role}:spark",
+        "spark_evidence_id": "{id_prefix}:{role}:spark-evidence",
+        "evidence_id": "C13 derive_evidence_id from the registered Spark, hypothesis_id, and polarity"
+      },
+      "full_fixture_sha256_by_seed": {
+        "2701": "d21fe4f02ad6b5d79af4661562ccf8708746efc0ac899b238e4353f5d7ed591d",
+        "2702": "79e1560d19790ea5a611451500ef418ee8345d697ab5dc4c0af064e25da265b4",
+        "2703": "6198e744d6be5645e8bf19a028f536d5ba5da6ef2be35e9b6a8625599cbf1b99",
+        "2704": "fb1a62036cea67c06242d2e3651ed8c1d88d98e77b9cab77a074655838c079e7",
+        "2705": "16b0d90120bc505542a9ed4f4e8e5193777d06073815364550778e15d49bbda1"
+      },
+      "seed_effect": "seed changes only deterministic IDs and pairing keys; numeric evidence, logits, times, and expected outcomes are exact replicates and degenerate between-seed intervals must be reported honestly"
+    },
+    "case_specs": {
+      "independent_multi_source_support": {
+        "entity_key": "object-a", "now": 10.0, "activation_overrides": {"hypothesis-alpha": 0.72, "hypothesis-beta": 0.28}, "primary_stage": "main", "primary_evaluation": 2, "expected_g1": {"ignited": true, "reason": "ignited", "winner": "hypothesis-alpha"},
+        "records": [
+          {"role": "primary_support", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 1.0, "source_id": "source-a", "correlation_group": "group-a", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}},
+          {"role": "secondary_independent_support", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 1.0, "source_id": "source-b", "correlation_group": "group-b", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}}
+        ], "stages": {"main": {"active_roles": ["primary_support", "secondary_independent_support"]}}
+      },
+      "same_id_exact_duplicate": {
+        "entity_key": "object-a", "now": 10.0, "activation_overrides": {"hypothesis-alpha": 0.72, "hypothesis-beta": 0.28}, "primary_stage": "main", "primary_evaluation": 2, "expected_g1": {"ignited": false, "reason": "insufficient_evidence", "winner": "hypothesis-alpha"},
+        "records": [{"role": "primary_support", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 1.0, "source_id": "source-a", "correlation_group": "group-a", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}, "delivery_count": 2, "second_delivery": "byte-exact same immutable record and evidence_id"}], "stages": {"main": {"active_roles": ["primary_support"]}}
+      },
+      "same_source_distinct_groups": {
+        "entity_key": "object-a", "now": 10.0, "activation_overrides": {"hypothesis-alpha": 0.72, "hypothesis-beta": 0.28}, "primary_stage": "main", "primary_evaluation": 2, "expected_g1": {"ignited": false, "reason": "insufficient_sources", "winner": "hypothesis-alpha"},
+        "records": [
+          {"role": "primary_support", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 1.0, "source_id": "source-a", "correlation_group": "group-a", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}},
+          {"role": "same_source_support", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 1.0, "source_id": "source-a", "correlation_group": "group-b", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}}
+        ], "stages": {"main": {"active_roles": ["primary_support", "same_source_support"]}}
+      },
+      "correlated_distinct_copy": {
+        "entity_key": "object-a", "now": 10.0, "activation_overrides": {"hypothesis-alpha": 0.72, "hypothesis-beta": 0.28}, "primary_stage": "main", "primary_evaluation": 2, "expected_g1": {"ignited": false, "reason": "insufficient_independent_groups", "winner": "hypothesis-alpha"},
+        "records": [
+          {"role": "primary_support", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 1.0, "source_id": "source-a", "correlation_group": "group-a", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}},
+          {"role": "correlated_support", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 1.0, "source_id": "source-b", "correlation_group": "group-a", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}}
+        ], "stages": {"main": {"active_roles": ["primary_support", "correlated_support"]}}
+      },
+      "strong_contradiction": {
+        "entity_key": "object-a", "now": 10.0, "activation_overrides": {"hypothesis-alpha": 0.72, "hypothesis-beta": 0.28}, "primary_stage": "main", "primary_evaluation": 2, "expected_g1": {"ignited": false, "reason": "excessive_contradiction", "winner": "hypothesis-alpha"},
+        "records": [
+          {"role": "primary_support", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 1.0, "source_id": "source-a", "correlation_group": "group-a", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}},
+          {"role": "secondary_independent_support", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 1.0, "source_id": "source-b", "correlation_group": "group-b", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}},
+          {"role": "contradiction", "hypothesis_id": "hypothesis-alpha", "polarity": "contradict", "strength": 2.0, "source_id": "source-c", "correlation_group": "group-c", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}}
+        ], "stages": {"main": {"active_roles": ["primary_support", "secondary_independent_support", "contradiction"]}}
+      },
+      "unstable_first_observation": {
+        "entity_key": "object-a", "now": 10.0, "activation_overrides": {"hypothesis-alpha": 0.72, "hypothesis-beta": 0.28}, "primary_stage": "main", "primary_evaluation": 1, "expected_g1": {"ignited": false, "reason": "insufficient_stability", "winner": "hypothesis-alpha"},
+        "records": [
+          {"role": "primary_support", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 1.0, "source_id": "source-a", "correlation_group": "group-a", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}},
+          {"role": "secondary_independent_support", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 1.0, "source_id": "source-b", "correlation_group": "group-b", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}}
+        ], "stages": {"main": {"active_roles": ["primary_support", "secondary_independent_support"]}}
+      },
+      "old_time_decayed_support": {
+        "entity_key": "object-a", "now": 100.0, "activation_overrides": {"hypothesis-alpha": 0.72, "hypothesis-beta": 0.28}, "primary_stage": "main", "primary_evaluation": 2, "expected_g1": {"ignited": false, "reason": "insufficient_recency", "winner": "hypothesis-alpha"},
+        "records": [
+          {"role": "old_primary", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 1.0, "source_id": "source-a", "correlation_group": "group-a", "evidence_time": 0.0, "parent_evidence_roles": [], "metadata": {}},
+          {"role": "old_secondary", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 1.0, "source_id": "source-b", "correlation_group": "group-b", "evidence_time": 0.0, "parent_evidence_roles": [], "metadata": {}}
+        ], "stages": {"main": {"active_roles": ["old_primary", "old_secondary"]}}
+      },
+      "weak_low_score": {
+        "entity_key": "object-a", "now": 100.0, "activation_overrides": {"hypothesis-alpha": 0.72, "hypothesis-beta": 0.28}, "primary_stage": "main", "primary_evaluation": 2, "expected_g1": {"ignited": false, "reason": "score_below_threshold", "winner": "hypothesis-alpha"},
+        "records": [
+          {"role": "weak_primary", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 0.05, "source_id": "source-a", "correlation_group": "group-a", "evidence_time": 65.0, "parent_evidence_roles": [], "metadata": {}},
+          {"role": "weak_secondary", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 0.05, "source_id": "source-b", "correlation_group": "group-b", "evidence_time": 65.0, "parent_evidence_roles": [], "metadata": {}}
+        ], "stages": {"main": {"active_roles": ["weak_primary", "weak_secondary"]}}
+      },
+      "equal_coalition_low_margin": {
+        "entity_key": "object-a", "now": 10.0, "activation_overrides": {"hypothesis-alpha": 0.72, "hypothesis-beta": 0.28}, "primary_stage": "main", "primary_evaluation": 2, "expected_g1": {"ignited": false, "reason": "margin_below_threshold", "winner": "hypothesis-alpha"},
+        "records": [
+          {"role": "equal_alpha_a", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 0.2, "source_id": "source-a", "correlation_group": "group-a", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}},
+          {"role": "equal_alpha_b", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 0.2, "source_id": "source-b", "correlation_group": "group-b", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}},
+          {"role": "equal_beta_a", "hypothesis_id": "hypothesis-beta", "polarity": "support", "strength": 0.7341427164006862, "source_id": "source-c", "correlation_group": "group-c", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}},
+          {"role": "equal_beta_b", "hypothesis_id": "hypothesis-beta", "polarity": "support", "strength": 0.7341427164006862, "source_id": "source-d", "correlation_group": "group-d", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}}
+        ], "stages": {"main": {"active_roles": ["equal_alpha_a", "equal_alpha_b", "equal_beta_a", "equal_beta_b"]}}
+      },
+      "necessary_evidence_remove_restore": {
+        "entity_key": "object-a", "now": 10.0, "activation_overrides": {"hypothesis-alpha": 0.72, "hypothesis-beta": 0.28}, "primary_stage": "removed", "primary_evaluation": 2, "expected_g1": {"ignited": false, "reason": "insufficient_evidence", "winner": "hypothesis-alpha"},
+        "records": [
+          {"role": "primary_support", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 1.0, "source_id": "source-a", "correlation_group": "group-a", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}},
+          {"role": "secondary_independent_support", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 1.0, "source_id": "source-b", "correlation_group": "group-b", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}}
+        ], "stages": {"baseline": {"active_roles": ["primary_support", "secondary_independent_support"]}, "removed": {"active_roles": ["primary_support"], "deactivated_role": "secondary_independent_support"}, "restored": {"active_roles": ["primary_support", "secondary_independent_support"], "restored_role": "secondary_independent_support"}}
+      }
+    },
+    "evidence_roles": {
+      "primary_support": "source-a, group-a, support, strength 1.0, evidence time 10.0",
+      "secondary_independent_support": "source-b, group-b, support, strength 1.0, evidence time 10.0",
+      "same_source_support": "source-a, group-b, support, strength 1.0, evidence time 10.0",
+      "correlated_support": "source-b, group-a, support, strength 1.0, evidence time 10.0",
+      "contradiction": "source-c, group-c, contradict, strength 2.0, evidence time 10.0",
+      "weak_primary": "source-a, group-a, support, strength 0.05, evidence time 65.0, evaluation now 100.0",
+      "weak_secondary": "source-b, group-b, support, strength 0.05, evidence time 65.0, evaluation now 100.0",
+      "equal_alpha": "two independent alpha support rows, strength 0.2 each, evidence time 10.0",
+      "equal_beta": "two independent beta support rows, strength 0.7341427164006862 each, evidence time 10.0",
+      "old_primary_secondary": "two independent support rows, strength 1.0 each, evidence time 0.0, evaluation now 100.0"
+    },
+    "expected_case_table": {
+      "independent_multi_source_support": {
+        "primary_evaluation": 2,
+        "primary_stage": "main",
+        "g1_ignited": true,
+        "g1_reason": "ignited",
+        "expected_winner": "hypothesis-alpha"
+      },
+      "same_id_exact_duplicate": {
+        "primary_evaluation": 2,
+        "primary_stage": "main",
+        "g1_ignited": false,
+        "g1_reason": "insufficient_evidence",
+        "expected_winner": "hypothesis-alpha"
+      },
+      "same_source_distinct_groups": {
+        "primary_evaluation": 2,
+        "primary_stage": "main",
+        "g1_ignited": false,
+        "g1_reason": "insufficient_sources",
+        "expected_winner": "hypothesis-alpha"
+      },
+      "correlated_distinct_copy": {
+        "primary_evaluation": 2,
+        "primary_stage": "main",
+        "g1_ignited": false,
+        "g1_reason": "insufficient_independent_groups",
+        "expected_winner": "hypothesis-alpha"
+      },
+      "strong_contradiction": {
+        "primary_evaluation": 2,
+        "primary_stage": "main",
+        "g1_ignited": false,
+        "g1_reason": "excessive_contradiction",
+        "expected_winner": "hypothesis-alpha"
+      },
+      "unstable_first_observation": {
+        "primary_evaluation": 1,
+        "primary_stage": "main",
+        "g1_ignited": false,
+        "g1_reason": "insufficient_stability",
+        "expected_winner": "hypothesis-alpha"
+      },
+      "old_time_decayed_support": {
+        "primary_evaluation": 2,
+        "primary_stage": "main",
+        "g1_ignited": false,
+        "g1_reason": "insufficient_recency",
+        "expected_winner": "hypothesis-alpha"
+      },
+      "weak_low_score": {
+        "primary_evaluation": 2,
+        "primary_stage": "main",
+        "g1_ignited": false,
+        "g1_reason": "score_below_threshold",
+        "expected_winner": "hypothesis-alpha"
+      },
+      "equal_coalition_low_margin": {
+        "primary_evaluation": 2,
+        "primary_stage": "main",
+        "g1_ignited": false,
+        "g1_reason": "margin_below_threshold",
+        "expected_winner": "hypothesis-alpha"
+      },
+      "necessary_evidence_remove_restore": {
+        "primary_evaluation": 2,
+        "primary_stage": "removed",
+        "g1_ignited": false,
+        "g1_reason": "insufficient_evidence",
+        "expected_winner": "hypothesis-alpha",
+        "baseline_stage": "ignited",
+        "restored_stage": "ignited"
+      }
+    },
+    "paired_comparators": {
+      "independent_support_score_delta": "fresh-gate second evaluation of two independent support rows minus fresh-gate second evaluation of primary support only",
+      "same_id_score_and_decision_delta": "fresh-gate second evaluation after exact redelivery minus primary-support-only replay",
+      "correlated_group_delta": "independent group count after distinct correlated support minus primary-support-only replay",
+      "contradiction_score_delta": "fresh-gate second evaluation of two independent supports plus contradiction minus two-independent-support baseline",
+      "remove_restore": "fresh-gate two-evaluation replays of baseline, removed, and restored immutable ledger states"
+    },
+    "primary_metrics": {
+      "expected_no_ignition_cases": [
+        "same_id_exact_duplicate",
+        "same_source_distinct_groups",
+        "correlated_distinct_copy",
+        "strong_contradiction",
+        "unstable_first_observation",
+        "old_time_decayed_support",
+        "weak_low_score",
+        "equal_coalition_low_margin",
+        "necessary_evidence_remove_restore"
+      ],
+      "g1_vs_g0_decision_difference_rate_min": 0.3,
+      "g1_vs_no_coalition_decision_difference_rate_min": 0.3,
+      "raw_expected_fields": "G1 rows use expected_case_table; G0 and no-coalition rows always expect ignited, reason ignited, winner hypothesis-alpha",
+      "required_reason_coverage_population": "G1 primary rows only",
+      "false_ignition_population": "the nine expected_no_ignition case primary rows for each condition and seed",
+      "covered_accuracy_expected_winner": "hypothesis-alpha for every case; no-ignition rows enter the denominator only when a condition actually ignites",
+      "gate_uses_point_estimates": true,
+      "bootstrap_intervals_are_descriptive": true,
+      "bootstrap_effects_in_order": [
+        "contradiction_score_delta",
+        "g1_vs_g0_decision_difference",
+        "g1_vs_no_coalition_decision_difference",
+        "independent_support_score_delta"
+      ],
+      "bootstrap_rng": "one random.Random(4314), effects processed in the listed order, 10000 paired resamples per effect"
+      ,"bootstrap_effect_vector_membership": {
+        "contradiction_score_delta": "five seed blocks for strong_contradiction, each equal G1 primary top score minus the paired two-independent-support comparator score",
+        "g1_vs_g0_decision_difference": "fifty seed-by-case primary blocks, each 1 when decision_difference holds else 0",
+        "g1_vs_no_coalition_decision_difference": "fifty seed-by-case primary blocks, each 1 when decision_difference holds else 0",
+        "independent_support_score_delta": "five seed blocks for independent_multi_source_support, each equal G1 primary top score minus the paired primary-support-only comparator score"
+      }
+    },
+    "raw_artifact_contract": {
+      "fixed_logit_interventions_required_fields": [
+        "schema_version",
+        "condition_id",
+        "seed",
+        "case_id",
+        "case_index",
+        "stage",
+        "evaluation_index",
+        "primary",
+        "expected_ignited",
+        "expected_reason",
+        "expected_winner",
+        "fixed_logit_sha256",
+        "fixture_sha256",
+        "entity_key",
+        "now",
+        "ledger_active_state_hash",
+        "candidate_terms",
+        "decision",
+        "belief_before",
+        "belief_after",
+        "evidence_ids",
+        "comparators"
+      ],
+      "condition_order": [
+        "G0_probability_margin",
+        "G1_evidence_coalition",
+        "G1_no_coalition_ablation"
+      ],
+      "stage_order": [
+        "main",
+        "baseline",
+        "removed",
+        "restored"
+      ],
+      "sort_key": "condition order, seed, case_index, stage order, evaluation_index",
+      "candidate_terms_required_fields": [
+        "entity_key", "hypothesis_id", "raw_activation", "raw_effective_support", "raw_effective_contradiction", "raw_redundancy", "source_count", "independent_group_count", "evidence_count", "stability", "support_evidence_ids", "contradiction_evidence_ids", "support_evidence_times", "activation", "effective_support", "source_diversity", "group_diversity", "temporal_stability", "recency", "contradiction", "redundancy", "weighted_activation", "weighted_support", "weighted_source_diversity", "weighted_group_diversity", "weighted_temporal_stability", "weighted_recency", "weighted_contradiction", "weighted_redundancy", "score"
+      ],
+      "decision_required_fields": ["ignited", "winner_hypothesis", "winner_entity", "score", "runner_up_score", "margin", "reason", "citations"],
+      "causal_evidence_removal_required_fields": ["schema_version", "condition_id", "seed", "case_id", "fixed_logit_sha256", "fixture_sha256", "immutable_evidence", "baseline_active_state_hash", "removed_active_state_hash", "restored_active_state_hash", "baseline_decision", "removed_decision", "restored_decision", "baseline_terms", "removed_terms", "restored_terms", "restore_state_exact", "restore_terms_exact", "restore_decision_exact", "restore_belief_exact"],
+      "causal_evidence_removal_sort_key": "condition order then seed ascending",
+      "no_ignition_reasons_required_fields": ["schema_version", "protocol_id", "run_id", "required_reasons", "observed_reason_counts", "raw_references", "coverage_passed"],
+      "gate_ablation_metrics_required_fields": ["schema_version", "protocol_id", "run_id", "manifest", "aggregate_metrics", "seed_level_rows", "paired_statistics", "engineering_gates", "failed_seeds"],
+      "unknown_key_policy": "reject unknown keys in every canonical artifact object, candidate_terms object, decision object, causal row, reason reference, seed-level row, paired-statistic row, engineering-gate row, and manifest object",
+      "ordinary_rows_per_condition_seed": 18,
+      "remove_restore_rows_per_condition_seed": 6,
+      "total_rows": 360,
+      "causal_removal_rows": 15,
+      "all_metrics_recalculable_from_artifacts": true
+    },
+    "nested_artifact_schema": {
+      "scalar_policy": "bool is never accepted as int or number; number means finite JSON int or float; all strings are nonempty unless explicitly nullable; JSON serialization uses sort_keys=True, separators=(',', ':'), allow_nan=False and one LF after each JSONL object",
+      "fixed_logit_interventions": {
+        "candidate_terms": "list; G1 contains one object per candidate sorted by entity_key then hypothesis_id; G0 and G1_no_coalition_ablation contain the exact empty list because C14 terms are not consumed",
+        "candidate_term_types": {"entity_key": "string", "hypothesis_id": "string", "raw_activation": "number", "raw_effective_support": "number", "raw_effective_contradiction": "number", "raw_redundancy": "number", "source_count": "int>=0", "independent_group_count": "int>=0", "evidence_count": "int>=0", "stability": "int>=0", "support_evidence_ids": "sorted unique list[string]", "contradiction_evidence_ids": "sorted unique list[string]", "support_evidence_times": "list[number] ordered by corresponding support_evidence_ids", "activation": "number", "effective_support": "number", "source_diversity": "number", "group_diversity": "number", "temporal_stability": "number", "recency": "number", "contradiction": "number", "redundancy": "number", "weighted_activation": "number", "weighted_support": "number", "weighted_source_diversity": "number", "weighted_group_diversity": "number", "weighted_temporal_stability": "number", "weighted_recency": "number", "weighted_contradiction": "number<=0", "weighted_redundancy": "number<=0", "score": "number"},
+        "decision_types": {"ignited": "bool", "winner_hypothesis": "string|null; null when not ignited", "winner_entity": "string|null; null when not ignited", "score": "number", "runner_up_score": "number", "margin": "number", "reason": "string", "citations": "sorted unique list[string]; empty when not ignited or in G0/no-coalition"},
+        "belief_snapshot_required_fields": ["winner", "states"],
+        "belief_snapshot_types": {"winner": "string|null", "states": "list of belief_state objects sorted by entity_key then hypothesis_id"},
+        "belief_state_required_fields": ["entity_key", "hypothesis_id", "activation", "last_score", "last_update_time", "ignition_count", "cited_evidence_ids"],
+        "belief_state_types": {"entity_key": "string", "hypothesis_id": "string", "activation": "number", "last_score": "number", "last_update_time": "number", "ignition_count": "int>=0", "cited_evidence_ids": "sorted unique list[string]"},
+        "evidence_ids": "sorted unique list[string] of every active and inactive record present in the case ledger at this stage",
+        "comparator_required_fields": ["primary_support_only", "independent_support_baseline"],
+        "comparator_observation_required_fields": ["decision", "candidate_terms", "belief_before", "belief_after"],
+        "comparators": "object present on every raw row; values are comparator_observation or null. Only G1 primary rows are non-null: primary_support_only for independent_multi_source_support, same_id_exact_duplicate, and correlated_distinct_copy; independent_support_baseline for strong_contradiction. All other values are null. Comparator candidate_terms is the sorted G1 list and all nested objects use the same decision/belief schemas.",
+        "comparator_replay": "each non-null comparator is a fresh complete loop evaluated twice at the case now and records the second decision; it is diagnostic evidence nested in the primary row and does not add a fixed_logit_interventions JSONL row"
+      },
+      "causal_evidence_removal": {
+        "cardinality": 15,
+        "condition_population": "one row for each condition in condition_order and seed; case_id is necessary_evidence_remove_restore",
+        "immutable_evidence": "string containing the exact EvidenceRecord.to_canonical_json() payload for secondary_independent_support",
+        "terms": "baseline_terms, removed_terms, and restored_terms are the alpha candidate_term object for G1 and null for G0/no-coalition",
+        "decision": "baseline_decision, removed_decision, and restored_decision use the exact decision schema",
+        "active_state_hash": "lowercase 64-character SHA-256 string from C13 active_state_hash",
+        "exact_flags": "restore_state_exact, restore_terms_exact, restore_decision_exact, and restore_belief_exact are bool and equal canonical baseline-versus-restored equality for the named object"
+      },
+      "no_ignition_reasons": {
+        "required_reasons": "exact engineering_gates.required_reason_coverage order",
+        "observed_reason_counts": "object with exactly required_reasons as keys and int>=0 values over G1 primary rows",
+        "raw_reference_required_fields": ["condition_id", "seed", "case_id", "case_index", "stage", "evaluation_index", "reason"],
+        "raw_reference_types": {"condition_id": "string", "seed": "int", "case_id": "string", "case_index": "int", "stage": "string", "evaluation_index": "int", "reason": "string"},
+        "raw_references": "one reference per G1 primary row, sorted by seed then case_index; cardinality 50",
+        "coverage_passed": "bool equal set(observed reasons) == set(required_reasons)"
+      },
+      "gate_ablation_metrics": {
+        "aggregate_metric_required_fields": ["condition_id", "metric", "value", "numerator", "denominator"],
+        "aggregate_metric_types": {"condition_id": "string", "metric": "string", "value": "number", "numerator": "number|null", "denominator": "int|null"},
+        "aggregate_metrics": "24 rows: every condition in condition_order crossed with every reported_metrics entry in listed order; sort by condition order then reported_metrics order",
+        "seed_metric_required_fields": ["condition_id", "seed", "metric", "value", "numerator", "denominator"],
+        "seed_metric_types": {"condition_id": "string", "seed": "int", "metric": "string", "value": "number", "numerator": "number|null", "denominator": "int|null"},
+        "seed_level_rows": "120 rows: condition order, seed ascending, then reported_metrics order",
+        "paired_statistic_required_fields": ["effect_id", "pairing_unit", "n", "point_estimate", "ci_low", "ci_high", "bootstrap_resamples", "bootstrap_seed", "confidence_interval"],
+        "paired_statistic_types": {"effect_id": "string", "pairing_unit": "string", "n": "int>0", "point_estimate": "number", "ci_low": "number", "ci_high": "number", "bootstrap_resamples": "int", "bootstrap_seed": "int", "confidence_interval": "number"},
+        "paired_statistics": "exactly four rows in primary_metrics.bootstrap_effects_in_order",
+        "engineering_gate_required_fields": ["gate_id", "comparison", "threshold", "observed", "passed"],
+        "engineering_gate_types": {"gate_id": "string", "comparison": "one of >=, <=, ==, coverage, call_graph", "threshold": "number|bool|list[string]", "observed": "number|bool|list[string]", "passed": "bool"},
+        "engineering_gates": "one row for every key in top-level engineering_gates insertion order; required_reason_coverage uses comparison coverage, call_graph_requires_coalition_score_consumption uses call_graph, all others use the suffix-indicated >= or <= comparison",
+        "failed_seed_required_fields": ["seed", "reasons"],
+        "failed_seed_types": {"seed": "int", "reasons": "sorted unique nonempty list[string]"},
+        "failed_seeds": "rows sorted by seed; empty is valid and expected only if no seed failed"
+      },
+      "metric_formula_table": {
+        "coverage": "per condition: primary rows with decision.ignited / 50",
+        "covered_accuracy": "per condition: ignited primary rows whose winner_hypothesis equals expected_winner / ignited primary rows; value 0 when denominator is 0",
+        "false_ignition_rate": "per condition: ignited primary rows among the 45 expected_no_ignition primary rows / 45",
+        "mean_top_coalition_score": "per condition: arithmetic mean of decision.score over 50 primary rows; for G0 and no-coalition this is the consumed probability score 0.72 and candidate_terms remains empty",
+        "mean_score_delta_from_independent_support": "per condition: G1 is the arithmetic mean over five independent_multi_source_support primary rows of decision.score minus comparators.primary_support_only.decision.score; G0 and no-coalition are exactly 0.0 with numerator 0.0 and denominator 5",
+        "mean_score_delta_from_contradiction": "per condition: G1 is the arithmetic mean over five strong_contradiction primary rows of decision.score minus comparators.independent_support_baseline.decision.score; G0 and no-coalition are exactly 0.0 with numerator 0.0 and denominator 5",
+        "g1_vs_g0_decision_difference_rate": "same cross-condition scalar repeated in all three condition rows: count of 50 paired primary blocks where G1 decision_difference from G0 / 50",
+        "g1_vs_no_coalition_decision_difference_rate": "same cross-condition scalar repeated in all three condition rows: count of 50 paired primary blocks where G1 decision_difference from no-coalition / 50",
+        "seed_level_application": "apply the same formula after restricting raw and comparator observations to exactly one seed: coverage and the two decision-difference rates use denominator 10, false_ignition_rate uses 9, each score delta uses 1, and mean score/covered accuracy use their ordinary restricted denominators; aggregate formulas above use all five seeds",
+        "numerator_policy": "for mean metrics numerator is the unrounded sum and denominator is the contributing row count; for ratios numerator is the count; no metric row is nullable except covered_accuracy numerator/denominator remain numeric even when zero"
+      },
+      "manifest": {
+        "exact_required_fields": ["source_commit", "protocol_hash", "fixed_logit_hash", "fixture_hashes", "protected_hashes", "dependency_hashes", "raw_row_counts", "failed_seeds"],
+        "types": {"source_commit": "lowercase 40-character Git hash", "protocol_hash": "lowercase 64-character SHA-256", "fixed_logit_hash": "lowercase 64-character SHA-256", "fixture_hashes": "object with exactly seed strings 2701..2705 mapped to full fixture SHA-256", "protected_hashes": "object with exactly the five protected relative paths mapped to SHA-256", "dependency_hashes": "object with exactly c12_merge, c13_merge, c13_source_contract", "raw_row_counts": "object with exactly fixed_logit_interventions_jsonl=360 and causal_evidence_removal_jsonl=15", "failed_seeds": "same canonical list as top-level failed_seeds"}
+      }
+    },
+    "manifest_contract": {
+      "location": "gate_ablation_metrics.json manifest object",
+      "required_fields": [
+        "source_commit",
+        "protocol_hash",
+        "fixed_logit_hash",
+        "fixture_hashes",
+        "protected_hashes",
+        "dependency_hashes",
+        "raw_row_counts",
+        "failed_seeds"
+      ],
+      "protected_manifest": "artifacts/v03/c11_input_diagnosis/frozen_baseline_hashes.json",
+      "protected_files": 5,
+      "runner_preflight": "verify protocol bytes/hash, accepted C12/C13 merges, source pin and source diff scope, fixed-logit hash, five fixture hashes, and all protected hashes before calculation or staging writes",
+      "source_diff_scope": [
+        "src/sparkbrain/v03_seed/contracts.py",
+        "src/sparkbrain/v03_seed/coalition.py",
+        "src/sparkbrain/v03_seed/loop.py",
+        "scripts/run_c14_coalition_gate.py"
+      ],
+      "source_pin_procedure": "after source and focused tests are committed, add a separate preregistration amendment with the full source commit and set runner_execution_allowed true before the first runner execution"
+    }
+  },
+  "stop_conditions": [
+    "G1 output is copied from probability confidence",
+    "threshold, weight, seed, fixture, or reason priority changes after any result",
+    "no-coalition ablation leaves every preregistered decision unchanged",
+    "fixed logits differ between paired interventions",
+    "raw rows, failed seeds, counterexamples, or no-ignition reasons are omitted",
+    "C06 or C08 negative findings, package 0.2.1, schema 0.2, release metadata, or protected hashes change"
+  ]
+}
