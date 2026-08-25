@@ -290,6 +290,58 @@
     "decision_id": "D-V03-0007",
     "fixture_generator": {
       "canonical_document": "UTF-8 JSON with sort_keys=true, separators comma/colon, fields schema_version, seed, episodes",
+      "canonical_shape": {
+        "document_fields_exact": [
+          "schema_version",
+          "seed",
+          "episodes"
+        ],
+        "episode_fields_exact": [
+          "episode_id",
+          "episode_index",
+          "target_entity",
+          "target_hypothesis",
+          "events"
+        ],
+        "add_event_fields_exact": [
+          "kind",
+          "event_time",
+          "observed_time",
+          "source_id",
+          "polarity",
+          "strength",
+          "correlation_group"
+        ],
+        "redelivery_event_fields_exact": [
+          "kind",
+          "event_time",
+          "redelivers"
+        ],
+        "intervention_event_fields_exact": [
+          "kind",
+          "event_time",
+          "target"
+        ],
+        "kind_values_exact": [
+          "add_primary",
+          "add_correlated_variant",
+          "late_exact_redelivery",
+          "add_contradiction",
+          "deactivate_primary",
+          "restore_primary"
+        ],
+        "reference_values": {
+          "schema_version": "0.3",
+          "seed": "integer",
+          "episode_index": "integer 0 through 23",
+          "event_time_and_observed_time": "integer",
+          "strength": "JSON number 1.0 or 0.4",
+          "late_exact_redelivery.redelivers": "add_primary",
+          "deactivate_primary.target": "add_primary",
+          "restore_primary.target": "add_primary"
+        },
+        "serialization": "json.dumps(value, sort_keys=True, separators=(',', ':')); all content is ASCII; hash the UTF-8 bytes"
+      },
       "episodes_per_seed": 24,
       "episode_id": "seed-{seed}-episode-{episode_index:02d}",
       "target_entity": "object-a when (episode_index + seed) modulo 2 is zero, otherwise object-b",

@@ -264,3 +264,8 @@ after seeing behavior: fixture distribution, multi-hypothesis selection, ID scop
 non-JSON rejection, and permutation matching. Freezing them now closes those degrees of freedom.
 No test or result had yet been executed or observed, and no earlier threshold, seed, condition, or
 claim policy is changed.
+
+Before the first fixture test, the protocol additionally records the exact canonical document,
+episode, add-event, redelivery-event, and intervention-event key sets and JSON serialization call
+used by the already-frozen per-seed hashes. This is a reconstructibility clarification only: no
+fixture value, ordering rule, distribution, seed, threshold, metric, or expected hash changes.

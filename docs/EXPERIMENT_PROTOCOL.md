@@ -604,3 +604,7 @@ immutable identity surface; a type-and-reason rejection envelope for non-JSON in
 exact maximum-weight slot matching, rectangular padding, tie-break, coverage, status-rate, and
 slot-switch denominators. These are operational definitions only and do not alter C13's seeds,
 thresholds, conditions, or claim policy.
+
+Before the first fixture test, the exact canonical JSON key sets and serialization call were added
+to the protocol so the already-frozen five fixture hashes can be independently reconstructed. No
+fixture value, order, distribution, seed, threshold, metric, or hash was changed.
