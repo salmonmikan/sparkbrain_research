@@ -517,8 +517,8 @@ preparation validation, and pytest commands without manually supplied cache-cont
 - the private review builder retains 433 manifest-listed members plus its self-excluded manifest,
   exact-content validation, deterministic timestamp/order/mode, Unicode, CRC, traversal,
   duplicate, symlink, cache, external-data, and tamper checks;
-- `tests/test_scientific_integrity.py` freezes the reviewed C06, C08, primary-subset, and claim
-  register SHA-256 values.
+- `tests/test_release.py` freezes the reviewed C06, C08, primary-subset, and claim-register
+  SHA-256 values.
 
 ### Boundary and blocker
 

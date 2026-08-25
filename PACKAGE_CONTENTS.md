@@ -50,8 +50,7 @@
 - `scripts/validate_bundle.py`
 - `scripts/validate_release.py`
 - `scripts/build_review_bundle.py`
-- `tests/test_release_validation_cli.py`
-- `tests/test_scientific_integrity.py`
+- `tests/test_release.py` includes validator classification and scientific integrity fixtures
 - `.github/workflows/ci.yml` as an optional mirror of local checks
 
 ## Visualizer and evidence

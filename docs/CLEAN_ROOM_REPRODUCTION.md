@@ -44,8 +44,8 @@ and the completed output is published atomically. A failure does not leave a par
 `status: pass` run manifest.
 
 The order is part of the contract. The validator checks a pristine extracted tree before the
-runtime pytest phase. Pytest disables its cache provider and puts `tmp_path` data in a
-process-specific sibling directory without requiring a manual environment variable. Python may
+runtime pytest phase. Pytest disables its cache provider and puts `tmp_path` data in a sibling
+directory without requiring a manual environment variable. Python may
 still create an interpreter cache while importing the test bootstrap, so a later pristine audit
 must use a newly extracted copy. Initial archive cache content remains forbidden; runtime cache
 is never included in `PACKAGE_MANIFEST.json` or a release ZIP.
