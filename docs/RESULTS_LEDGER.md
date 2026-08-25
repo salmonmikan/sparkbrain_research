@@ -561,10 +561,10 @@ contract correction only.
 - Independent reproduction: run 003 matched all eight final artifact SHA-256 values exactly
 - Run 001 is retained as an engineering preview before executable Oracle-audit reporting was added
 - Focused v0.3 tests: 46 passed; Ruff and compileall passed
-- Repository collection: 278 tests
-- C11 development tree: 273 passed after separating five release-manifest-bound tests
-- The five release tests fail closed because tracked C11 files are intentionally absent from the
-  frozen v0.2.1 release manifest. The accepted baseline suite passed before editing; release
+- Repository collection: 279 tests; full C11 tree result: 274 passed, 5 skipped
+- Five frozen-release runtime tests are skipped only in the explicit v0.3 development tree. A new
+  replacement test proves the unchanged v0.2.1 manifest remains internally bound and the validator
+  fails closed on tracked C11 files. The accepted baseline suite passed before editing; release
   manifests remain unchanged until C20 rather than weakening the integrity validator.
 - Local readiness, bundle validation, and prior-art validation passed. The generated v0.2.1
   validation manifest was not retained because C11 must not rewrite release evidence.

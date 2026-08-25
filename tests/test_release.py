@@ -27,6 +27,7 @@ from sparkbrain.release import (
 )
 
 ROOT = Path(__file__).resolve().parents[1]
+V03_DEVELOPMENT = (ROOT / "artifacts/v03/c11_input_diagnosis/protocol.json").is_file()
 
 SCIENTIFIC_HASHES = {
     "artifacts/external_validation/c06-final-official/belief_r_metrics.json": (
@@ -206,8 +207,8 @@ def test_release_validator_reports_missing_artifacts_and_unselected_license(
 
 
 @pytest.mark.skipif(
-    release_mode(Path(__file__).resolve().parents[1]) == "archive",
-    reason="pristine archive validation runs before the runtime test phase",
+    release_mode(Path(__file__).resolve().parents[1]) == "archive" or V03_DEVELOPMENT,
+    reason="pristine archive or frozen-manifest v0.3 development tree",
 )
 def test_integrated_release_preparation_passes_but_public_release_is_blocked() -> None:
     root = Path(__file__).resolve().parents[1]
@@ -225,6 +226,24 @@ def test_integrated_release_preparation_passes_but_public_release_is_blocked() -
         ],
         "evidence_blockers": [],
     }
+
+
+@pytest.mark.skipif(
+    not V03_DEVELOPMENT or release_mode(ROOT) == "archive",
+    reason="repository-only v0.3 development contract check",
+)
+def test_v03_development_tree_preserves_v02_manifest_and_fails_closed() -> None:
+    metadata = json.loads((ROOT / "RELEASE_METADATA.json").read_text(encoding="utf-8"))
+    assert metadata["package_version"] == "0.2.1"
+    assert metadata["source_revision"] == "6aef0911dc9e363478c23f98241d80d60ac4fd71"
+    assert sha256_file(ROOT / "PACKAGE_MANIFEST.json") == metadata["manifest_sha256"]
+    validation = release_validation(ROOT)
+    assert validation["preparation_problems"] == []
+    assert validation["integrity_problems"]
+    assert any(
+        "release manifest omits tracked files" in item
+        for item in validation["integrity_problems"]
+    )
 
 
 def test_evidence_map_has_existing_artifacts_and_pending_gates() -> None:
