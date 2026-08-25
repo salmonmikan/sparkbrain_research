@@ -340,3 +340,28 @@ timing, ablation behavior, expected negatives, or aggregation after seeing resul
 freeze makes the intervention result reconstructible and preserves an honest negative result if
 the preregistered G03 gates fail. Source implementation may begin, but runner execution remains
 forbidden until a separate amendment pins the source-only commit.
+
+## D-V03-0011 — Close C14 fixture, stability, bootstrap, and artifact reconstruction gaps
+
+**Decision:** Still before C14 source editing, tests, runner execution, artifact generation, or
+numerical result observation, replace the identity-only fixture hash as the execution authority
+with five full-fixture hashes. The canonical payload now includes the document prefix, ID
+templates, every case's entity, time, activation mapping, primary stage/evaluation, expected G1
+decision, complete evidence roles with hypothesis/polarity/strength/source/group/time/lineage and
+metadata, and exact active/remove/restore stages. The earlier five identity hashes remain labeled
+as audit continuity only.
+
+Update an independent stability signature counter for every candidate before computing any score;
+all unchanged candidates, including both candidates in the equal-score case, advance from one to
+two on the second evaluation. Each case, condition, and causal replay starts with a fresh complete
+reference loop, including a fresh belief field. Freeze the paired bootstrap vector membership,
+with-replacement sample size, shared RNG stream, arithmetic estimand, linear percentile
+interpolation, and non-rounded finite JSON serialization. Freeze exact nested candidate/decision,
+causal-removal, no-Ignition-reason, metrics, manifest, sort, and unknown-key contracts so all
+scores, margins, reasons, effects, and gates can be recalculated from the six artifacts.
+
+**Reason:** Independent pre-implementation audits found that the prior identity hash did not bind
+evidence content, equal-case behavior depended on an unstated stability update scope, bootstrap
+percentiles were not byte-reproducible, and nested artifacts could omit recalculation inputs. This
+amendment closes only those pre-result degrees of freedom. It changes no logits, score transform,
+weight, threshold, seed, intervention expectation, claim policy, or source-pin sequence.

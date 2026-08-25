@@ -646,3 +646,11 @@ point-estimate gates, descriptive bootstrap order, and recalculable 360-row arti
 legacy gate remains the default, `c14_bounded_v1` is explicit, and the v0.2 learned backend remains
 unchanged. C14 source may be implemented and tested, but the official runner stays disabled until
 a separate preregistration amendment pins the source-only commit.
+
+Decision `D-V03-0011` closes the remaining reconstruction gaps before source editing. The five
+execution fixture hashes cover complete machine-readable evidence content and interventions; the
+older five hashes are identity-only audit markers. Stability advances independently for every
+unchanged candidate before scoring, and every case/condition/replay uses a fresh gate, ledger, and
+belief field. The bootstrap resampling and percentile interpolation are exact, and the nested raw,
+causal, reason, metrics, manifest, ordering, and unknown-key contracts are frozen so the six
+artifacts alone support recalculation of every score, margin, reason, effect, and engineering gate.

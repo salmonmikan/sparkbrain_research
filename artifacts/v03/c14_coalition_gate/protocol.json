@@ -123,8 +123,9 @@
     "fixed_logit_hash_required": true
   },
   "gate_state_control": {
-    "default": "each case and condition starts from a fresh gate and ledger",
+    "default": "each case, condition, and remove/restore replay starts from a fresh V03ReferenceLoop containing a fresh CoalitionGate, EvidenceLedger, and PersistentBeliefField",
     "stability": "evaluate the byte-identical coalition twice at the same now; the second decision is the primary row",
+    "stability_update_scope": "before scoring, update an independent signature counter for every candidate in deterministic entity_key then hypothesis_id order; every unchanged candidate advances 1 to 2 on the second evaluation, including both candidates in equal_coalition_low_margin",
     "remove_restore": "compare baseline, removed, and restored decisions by replaying each ledger state through a fresh gate for exactly two identical evaluations",
     "reason": "prevent prior intervention history from changing the frozen stability term"
   },
@@ -150,7 +151,15 @@
     "confidence_interval": 0.95,
     "retain_seed_level_rows": true,
     "retain_all_raw_rows": true,
-    "retain_failed_seeds": true
+    "retain_failed_seeds": true,
+    "bootstrap_algorithm": {
+      "effect_vector": "one scalar per seed-by-intervention-case pairing block, ordered by seed ascending then case_index ascending; effect-specific eligibility is frozen by primary_metrics.bootstrap_effect_vector_membership",
+      "point_estimate": "arithmetic mean of the complete ordered effect vector",
+      "resample": "for a vector of length n, draw n integer indexes independently with replacement using rng.randrange(n), then take the arithmetic mean",
+      "rng": "one random.Random(4314) instance shared across effects in bootstrap_effects_in_order; do not reset between effects",
+      "interval": "sort 10000 resampled means; low is linear interpolation at zero-based position (N-1)*0.025 and high at (N-1)*0.975, where interpolation is lower + fractional_part*(upper-lower)",
+      "serialization": "store Python finite JSON numbers without pre-rounding; canonical artifacts use json.dumps(..., sort_keys=True, separators=(',', ':'), allow_nan=False)"
+    }
   },
   "engineering_gates": {
     "fixed_logit_integrity_rate_min": 1.0,
@@ -256,13 +265,22 @@
       "canonical_document_fields": [
         "schema_version",
         "seed",
-        "id_prefix",
+        "document_id_prefix",
+        "templates",
         "cases"
       ],
       "canonical_case_fields": [
         "case_id",
         "case_index",
-        "id_prefix"
+        "id_prefix",
+        "entity_key",
+        "now",
+        "activation_overrides",
+        "primary_stage",
+        "primary_evaluation",
+        "expected_g1",
+        "records",
+        "stages"
       ],
       "case_order": [
         "independent_multi_source_support",
@@ -276,20 +294,108 @@
         "equal_coalition_low_margin",
         "necessary_evidence_remove_restore"
       ],
+      "document_id_prefix": "c14:{seed}",
       "id_prefix": "c14:{seed}:{case_index:02d}:{case_id}",
       "sample_id": "{id_prefix}:{role}:sample",
       "spark_id": "{id_prefix}:{role}:spark",
       "spark_evidence_id": "{id_prefix}:{role}:spark-evidence",
       "evidence_id": "use C13 derive_evidence_id from the registered Spark, hypothesis, and polarity",
       "serialization": "json.dumps(value, sort_keys=True, separators=(',', ':')); hash UTF-8 bytes",
-      "fixture_sha256_by_seed": {
+      "fixture_identity_hash_algorithm": "historical pre-source identity hash only: canonical JSON of schema_version='0.3', seed, id_prefix='c14:{seed}', and cases containing only case_id, zero-based case_index, and expanded case id_prefix; retained for audit continuity and not sufficient as the execution fixture hash",
+      "fixture_identity_sha256_by_seed": {
         "2701": "deea7fed2f6c62d94eb7700f89f1329a5574fda66697366d9f74428b04c68826",
         "2702": "40cbb6a6d57c0d67c2cf3c9769a6b18b9bbff1fbbc90da52b3c8247adf9b84be",
         "2703": "bc545f3c7e013b57f4bec9114fbdcc1dc5577f14d59913b5c3327790dd693ce1",
         "2704": "bf504a7cbd258e8d26fe9b353f43f43772b48b00fd4da17e7448541387a64657",
         "2705": "79156c6ce2fc3635f4e18ade37bf0d0419d6a5bbca0919cbd3221890c5f30b94"
       },
+      "full_fixture_hash_algorithm": "construct a document with canonical_document_fields: schema_version='0.3', seed, document_id_prefix expanded for seed, templates equal to id_templates below, and cases equal to case_specs entries in case_order augmented with zero-based case_index and expanded id_prefix; hash canonical UTF-8 JSON",
+      "id_templates": {
+        "sample_id": "{id_prefix}:{role}:sample",
+        "spark_id": "{id_prefix}:{role}:spark",
+        "spark_evidence_id": "{id_prefix}:{role}:spark-evidence",
+        "evidence_id": "C13 derive_evidence_id from the registered Spark, hypothesis_id, and polarity"
+      },
+      "full_fixture_sha256_by_seed": {
+        "2701": "7933e782d5ce6c2e0929ee8a3dfd2a23b15e681488bffc662d7d446871bd6426",
+        "2702": "caf9c5c66213c48c48cf8c210b942dcc2381380c6b216609635c49fe094effe3",
+        "2703": "ed8bf3026f1aad5c176d5c6b8f34761e5edc3c7293f89f741eeeaa964d274e7b",
+        "2704": "fb106abed485cf7715db5fa3929223b696bea66a7ed403ab53587809008e4436",
+        "2705": "41e713311fde0c795384e061272fe69020ffb540e65ddbf1ed5fb100fbc6d951"
+      },
       "seed_effect": "seed changes only deterministic IDs and pairing keys; numeric evidence, logits, times, and expected outcomes are exact replicates and degenerate between-seed intervals must be reported honestly"
+    },
+    "case_specs": {
+      "independent_multi_source_support": {
+        "entity_key": "object-a", "now": 10.0, "activation_overrides": {"hypothesis-alpha": 0.72, "hypothesis-beta": 0.28}, "primary_stage": "main", "primary_evaluation": 2, "expected_g1": {"ignited": true, "reason": "ignited", "winner": "hypothesis-alpha"},
+        "records": [
+          {"role": "primary_support", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 1.0, "source_id": "source-a", "correlation_group": "group-a", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}},
+          {"role": "secondary_independent_support", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 1.0, "source_id": "source-b", "correlation_group": "group-b", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}}
+        ], "stages": {"main": {"active_roles": ["primary_support", "secondary_independent_support"]}}
+      },
+      "same_id_exact_duplicate": {
+        "entity_key": "object-a", "now": 10.0, "activation_overrides": {"hypothesis-alpha": 0.72, "hypothesis-beta": 0.28}, "primary_stage": "main", "primary_evaluation": 2, "expected_g1": {"ignited": false, "reason": "insufficient_evidence", "winner": "hypothesis-alpha"},
+        "records": [{"role": "primary_support", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 1.0, "source_id": "source-a", "correlation_group": "group-a", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}, "delivery_count": 2, "second_delivery": "byte-exact same immutable record and evidence_id"}], "stages": {"main": {"active_roles": ["primary_support"]}}
+      },
+      "same_source_distinct_groups": {
+        "entity_key": "object-a", "now": 10.0, "activation_overrides": {"hypothesis-alpha": 0.72, "hypothesis-beta": 0.28}, "primary_stage": "main", "primary_evaluation": 2, "expected_g1": {"ignited": false, "reason": "insufficient_sources", "winner": "hypothesis-alpha"},
+        "records": [
+          {"role": "primary_support", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 1.0, "source_id": "source-a", "correlation_group": "group-a", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}},
+          {"role": "same_source_support", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 1.0, "source_id": "source-a", "correlation_group": "group-b", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}}
+        ], "stages": {"main": {"active_roles": ["primary_support", "same_source_support"]}}
+      },
+      "correlated_distinct_copy": {
+        "entity_key": "object-a", "now": 10.0, "activation_overrides": {"hypothesis-alpha": 0.72, "hypothesis-beta": 0.28}, "primary_stage": "main", "primary_evaluation": 2, "expected_g1": {"ignited": false, "reason": "insufficient_independent_groups", "winner": "hypothesis-alpha"},
+        "records": [
+          {"role": "primary_support", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 1.0, "source_id": "source-a", "correlation_group": "group-a", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}},
+          {"role": "correlated_support", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 1.0, "source_id": "source-b", "correlation_group": "group-a", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}}
+        ], "stages": {"main": {"active_roles": ["primary_support", "correlated_support"]}}
+      },
+      "strong_contradiction": {
+        "entity_key": "object-a", "now": 10.0, "activation_overrides": {"hypothesis-alpha": 0.72, "hypothesis-beta": 0.28}, "primary_stage": "main", "primary_evaluation": 2, "expected_g1": {"ignited": false, "reason": "excessive_contradiction", "winner": "hypothesis-alpha"},
+        "records": [
+          {"role": "primary_support", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 1.0, "source_id": "source-a", "correlation_group": "group-a", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}},
+          {"role": "secondary_independent_support", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 1.0, "source_id": "source-b", "correlation_group": "group-b", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}},
+          {"role": "contradiction", "hypothesis_id": "hypothesis-alpha", "polarity": "contradict", "strength": 2.0, "source_id": "source-c", "correlation_group": "group-c", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}}
+        ], "stages": {"main": {"active_roles": ["primary_support", "secondary_independent_support", "contradiction"]}}
+      },
+      "unstable_first_observation": {
+        "entity_key": "object-a", "now": 10.0, "activation_overrides": {"hypothesis-alpha": 0.72, "hypothesis-beta": 0.28}, "primary_stage": "main", "primary_evaluation": 1, "expected_g1": {"ignited": false, "reason": "insufficient_stability", "winner": "hypothesis-alpha"},
+        "records": [
+          {"role": "primary_support", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 1.0, "source_id": "source-a", "correlation_group": "group-a", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}},
+          {"role": "secondary_independent_support", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 1.0, "source_id": "source-b", "correlation_group": "group-b", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}}
+        ], "stages": {"main": {"active_roles": ["primary_support", "secondary_independent_support"]}}
+      },
+      "old_time_decayed_support": {
+        "entity_key": "object-a", "now": 100.0, "activation_overrides": {"hypothesis-alpha": 0.72, "hypothesis-beta": 0.28}, "primary_stage": "main", "primary_evaluation": 2, "expected_g1": {"ignited": false, "reason": "insufficient_recency", "winner": "hypothesis-alpha"},
+        "records": [
+          {"role": "old_primary", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 1.0, "source_id": "source-a", "correlation_group": "group-a", "evidence_time": 0.0, "parent_evidence_roles": [], "metadata": {}},
+          {"role": "old_secondary", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 1.0, "source_id": "source-b", "correlation_group": "group-b", "evidence_time": 0.0, "parent_evidence_roles": [], "metadata": {}}
+        ], "stages": {"main": {"active_roles": ["old_primary", "old_secondary"]}}
+      },
+      "weak_low_score": {
+        "entity_key": "object-a", "now": 10.0, "activation_overrides": {"hypothesis-alpha": 0.0, "hypothesis-beta": 0.0}, "primary_stage": "main", "primary_evaluation": 2, "expected_g1": {"ignited": false, "reason": "score_below_threshold", "winner": "hypothesis-alpha"},
+        "records": [
+          {"role": "weak_primary", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 0.05, "source_id": "source-a", "correlation_group": "group-a", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}},
+          {"role": "weak_secondary", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 0.05, "source_id": "source-b", "correlation_group": "group-b", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}}
+        ], "stages": {"main": {"active_roles": ["weak_primary", "weak_secondary"]}}
+      },
+      "equal_coalition_low_margin": {
+        "entity_key": "object-a", "now": 10.0, "activation_overrides": {"hypothesis-alpha": 0.72, "hypothesis-beta": 0.28}, "primary_stage": "main", "primary_evaluation": 2, "expected_g1": {"ignited": false, "reason": "margin_below_threshold", "winner": "hypothesis-alpha"},
+        "records": [
+          {"role": "equal_alpha_a", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 0.2, "source_id": "source-a", "correlation_group": "group-a", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}},
+          {"role": "equal_alpha_b", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 0.2, "source_id": "source-b", "correlation_group": "group-b", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}},
+          {"role": "equal_beta_a", "hypothesis_id": "hypothesis-beta", "polarity": "support", "strength": 0.7341427164006862, "source_id": "source-c", "correlation_group": "group-c", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}},
+          {"role": "equal_beta_b", "hypothesis_id": "hypothesis-beta", "polarity": "support", "strength": 0.7341427164006862, "source_id": "source-d", "correlation_group": "group-d", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}}
+        ], "stages": {"main": {"active_roles": ["equal_alpha_a", "equal_alpha_b", "equal_beta_a", "equal_beta_b"]}}
+      },
+      "necessary_evidence_remove_restore": {
+        "entity_key": "object-a", "now": 10.0, "activation_overrides": {"hypothesis-alpha": 0.72, "hypothesis-beta": 0.28}, "primary_stage": "removed", "primary_evaluation": 2, "expected_g1": {"ignited": false, "reason": "insufficient_evidence", "winner": "hypothesis-alpha"},
+        "records": [
+          {"role": "primary_support", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 1.0, "source_id": "source-a", "correlation_group": "group-a", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}},
+          {"role": "secondary_independent_support", "hypothesis_id": "hypothesis-alpha", "polarity": "support", "strength": 1.0, "source_id": "source-b", "correlation_group": "group-b", "evidence_time": 10.0, "parent_evidence_roles": [], "metadata": {}}
+        ], "stages": {"baseline": {"active_roles": ["primary_support", "secondary_independent_support"]}, "removed": {"active_roles": ["primary_support"], "deactivated_role": "secondary_independent_support"}, "restored": {"active_roles": ["primary_support", "secondary_independent_support"], "restored_role": "secondary_independent_support"}}
+      }
     },
     "evidence_roles": {
       "primary_support": "source-a, group-a, support, strength 1.0, evidence time 10.0",
@@ -411,6 +517,12 @@
         "independent_support_score_delta"
       ],
       "bootstrap_rng": "one random.Random(4314), effects processed in the listed order, 10000 paired resamples per effect"
+      ,"bootstrap_effect_vector_membership": {
+        "contradiction_score_delta": "five seed blocks for strong_contradiction, each equal G1 primary top score minus the paired two-independent-support comparator score",
+        "g1_vs_g0_decision_difference": "fifty seed-by-case primary blocks, each 1 when decision_difference holds else 0",
+        "g1_vs_no_coalition_decision_difference": "fifty seed-by-case primary blocks, each 1 when decision_difference holds else 0",
+        "independent_support_score_delta": "five seed blocks for independent_multi_source_support, each equal G1 primary top score minus the paired primary-support-only comparator score"
+      }
     },
     "raw_artifact_contract": {
       "fixed_logit_interventions_required_fields": [
@@ -448,6 +560,15 @@
         "restored"
       ],
       "sort_key": "condition order, seed, case_index, stage order, evaluation_index",
+      "candidate_terms_required_fields": [
+        "entity_key", "hypothesis_id", "raw_activation", "raw_effective_support", "raw_effective_contradiction", "raw_redundancy", "source_count", "independent_group_count", "evidence_count", "stability", "support_evidence_ids", "contradiction_evidence_ids", "support_evidence_times", "activation", "effective_support", "source_diversity", "group_diversity", "temporal_stability", "recency", "contradiction", "redundancy", "weighted_activation", "weighted_support", "weighted_source_diversity", "weighted_group_diversity", "weighted_temporal_stability", "weighted_recency", "weighted_contradiction", "weighted_redundancy", "score"
+      ],
+      "decision_required_fields": ["ignited", "winner_hypothesis", "winner_entity", "score", "runner_up_score", "margin", "reason", "citations"],
+      "causal_evidence_removal_required_fields": ["schema_version", "condition_id", "seed", "case_id", "fixed_logit_sha256", "fixture_sha256", "immutable_evidence", "baseline_active_state_hash", "removed_active_state_hash", "restored_active_state_hash", "baseline_decision", "removed_decision", "restored_decision", "baseline_terms", "removed_terms", "restored_terms", "restore_state_exact", "restore_terms_exact", "restore_decision_exact", "restore_belief_exact"],
+      "causal_evidence_removal_sort_key": "condition order then seed ascending",
+      "no_ignition_reasons_required_fields": ["schema_version", "protocol_id", "run_id", "required_reasons", "observed_reason_counts", "raw_references", "coverage_passed"],
+      "gate_ablation_metrics_required_fields": ["schema_version", "protocol_id", "run_id", "manifest", "aggregate_metrics", "seed_level_rows", "paired_statistics", "engineering_gates", "failed_seeds"],
+      "unknown_key_policy": "reject unknown keys in every canonical artifact object, candidate_terms object, decision object, causal row, reason reference, seed-level row, paired-statistic row, engineering-gate row, and manifest object",
       "ordinary_rows_per_condition_seed": 18,
       "remove_restore_rows_per_condition_seed": 6,
       "total_rows": 360,
