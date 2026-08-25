@@ -6,7 +6,6 @@ from collections.abc import Mapping
 from dataclasses import dataclass, field
 from typing import Any
 
-
 SENSORY_CONTRACT_VERSION = "0.3"
 _FORBIDDEN_SENSORY_FIELDS = {
     "answer",
