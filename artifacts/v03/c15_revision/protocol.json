@@ -246,7 +246,7 @@
     "I0_whole_hash": "zero vector except index int.from_bytes(sha256(canonical visible evidence object).digest()[0:8],'big')%8 is 1.0 and index 11 is 1.0; evaluator fields excluded",
     "I1_local_compositional": "indices 0:3 hypothesis alpha/beta/gamma one-hot; 3 support indicator; 4 contradict indicator; 5 strength; 6 clamp(time/25,0,1); 7:10 one-hot stable source bucket int.from_bytes(sha256(source_id).digest()[0:8],'big')%3; 10 same-correlation-as-first-delivery indicator; 11 constant 1.0",
     "I2_symbolic_oracle": "indices 0:3 evaluator target truth one-hot; 3 sufficient-information indicator; indices 4:11 zero; index 11 constant 1.0; diagnostic-only and isolated from every train/select/calibrate/headline path",
-    "entity_conditions": "E0_global maps every entity to __global__; E1_oracle_entity uses the opaque fixture entity_key; neither implements or evaluates E2 learned slots"
+    "entity_conditions": "E0_global applies fixture_generator.ledger_adapter E0 mapping to evidence IDs, model runtime, ledger and controller scope; E1_oracle_entity copies the opaque fixture evidence/entity IDs; neither implements or evaluates E2 learned slots"
   },
   "model_contract": {
     "architecture": "per-evidence Linear(12,16)+tanh; Linear(16,4) router softmax and deterministic top-2 with lower module-index tie break; four independent Linear(16,16)+tanh module transforms; mean selected module output feeds GRUCell(16,16) with entity-keyed hidden state; separate Linear(16,3) belief head; four separate Linear(16,1) maintain/update/recovery/abstention heads; Linear(16,1) attribution head applied to each of five evidence encodings",
@@ -496,12 +496,14 @@
     },
     "ledger_adapter": {
       "purpose": "the frozen eight-field fixture evidence is the model/evaluator document; this adapter alone supplies the existing strict C13 EvidenceRecord lineage fields before ledger insertion",
-      "sample_id": "'sa-'+H('c15-sample|'+evidence_id)",
-      "spark_id": "'sp-'+H('c15-spark|'+evidence_id)",
+      "entity_condition_mapping": "adapter requires entity_condition. E1_oracle_entity copies fixture entity_key and evidence_id. E0_global sets entity_key='__global__' and evidence_id='ev-'+H('c15-e0|'+fixture_evidence_id). Every other fixture field is copied exactly. The same fixture ID always maps to the same E0 ID; distinct correlated-copy IDs remain distinct",
+      "attribution_mapping": "map every fixture attribution target ID through the same E0/E1 evidence-ID rule before loss and evaluation",
+      "sample_id": "after entity-condition mapping, 'sa-'+H('c15-sample|'+adapted_evidence_id)",
+      "spark_id": "after entity-condition mapping, 'sp-'+H('c15-spark|'+adapted_evidence_id)",
       "registration_order": "for each first-seen evidence_id, ledger.register_sample(sample_id), then ledger.register_spark(spark_id,(sample_id,)), then ledger.add(EvidenceRecord); exact same-ID redelivery skips registration and calls ledger.add with the byte-identical previously built EvidenceRecord",
       "evidence_record_fields": ["correlation_group", "entity_key", "evidence_id", "hypothesis_id", "metadata", "parent_evidence_ids", "parent_spark_ids", "polarity", "schema_version", "source_id", "strength", "time"],
-      "fixed_added_values": "metadata={}, parent_evidence_ids=(), parent_spark_ids=(spark_id,), schema_version='0.3'; the eight fixture fields are copied without reinterpretation",
-      "identity_policy": "the adapter is deterministic, prediction-independent, and identical across condition, input track, entity condition, model seed, and variant except for the already-frozen fixture evidence values"
+      "fixed_added_values": "metadata={}, parent_evidence_ids=(), parent_spark_ids=(spark_id,), schema_version='0.3'; after the explicit entity-condition mapping, the other seven fixture fields are copied without reinterpretation",
+      "identity_policy": "the adapter is deterministic and prediction-independent; only the preregistered E0/E1 mapping may change entity_key/evidence_id, while condition, input track, model seed and variant may not"
     }
   },
   "state_and_gate": {

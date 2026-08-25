@@ -747,6 +747,14 @@ and constructs the existing strict schema-0.3 `EvidenceRecord` with empty metada
 evidence tuple. Same-ID redelivery reuses the byte-identical record. No condition may invent a
 different lineage adapter or add evaluator fields at this boundary.
 
+D-V03-0018 closes the entity-condition composition before official execution. E1 copies fixture
+entity/evidence IDs. E0 alone maps entity scope to `__global__` and derives a deterministic adapted
+evidence ID from the fixture ID before deriving sample/Spark lineage; all other evidence fields
+stay paired, duplicate IDs stay equal, and correlated-copy IDs stay distinct. Attribution IDs use
+the same mapping. The recovery residual-floor input is captured by replaying visible context and
+model head outputs through the C15 controller and reading the target-truth activation immediately
+before assessment. It is never a static zero/default fixture value.
+
 Primary evaluation is I1 local-compositional input with E1 explicit Oracle entity scope. The
 twelve primary conditions are full separated objectives, nine single-objective ablations,
 one-weighted-CE, and no-residual. Full-only diagnostics cover the other five I0/I1/I2 by E0/E1
