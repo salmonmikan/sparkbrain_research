@@ -103,14 +103,18 @@ The non-license C10 package now pins the tested local environment, freezes a bou
 smoke subset, regenerates its table/SVG/report/negative appendix/SBOM deterministically, maps
 claims to exact run/artifact evidence, and emits an offline machine run manifest. Repository
 mode retains tracked-file and Git-ancestry checks. Standalone archive mode uses fixed release
-metadata and manifest hashes, invokes no Git command, and passes after extraction without
-`.git`. The private review bundle has its own exact-content manifest and ZIP SHA-256 rather
+metadata and manifest hashes, invokes no Git command, and fails closed for content, revision,
+metadata, provenance, and tree tampering. The documented plain readiness, reproduction,
+preparation validation, and pytest commands pass after extraction without `.git` or manually
+supplied cache-control environment variables. Pristine integrity validation precedes the runtime
+pytest phase. The private review bundle has its own exact-content manifest and ZIP SHA-256 rather
 than treating `PACKAGE_MANIFEST.json` as an implicit exception list.
 
 This is non-license release preparation, not public readiness. C05 checkpoint-matched encoder
 evidence, the final C06 negative external run, and the C08 negative specialization result remain
 integrated as negative evidence. CL-007 and CL-008 remain E0. Public validation remains blocked
-by the owner license decision. The smoke subset is explicitly not the full evaluation.
+only by the owner license decision after the non-owner integrity, preparation, and evidence
+classes pass. The smoke subset is explicitly not the full evaluation.
 
 ## 7. Exit criteria for the core final system
 

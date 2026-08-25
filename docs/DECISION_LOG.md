@@ -97,3 +97,18 @@ implicit exceptions into public release validation.
 validation failure made standalone reproduction impossible, while treating it as success would
 weaken provenance. Explicit modes preserve fail-closed evidence checks and keep private review
 packaging separate from the owner-controlled public license gate.
+
+## D-016 — Validate pristine integrity before archive runtime
+
+**Decision:** Release validation classifies integrity, preparation, owner, and evidence problems.
+Preparation-only success permits only the owner license blocker. Reproduction runs the shared
+non-public integrity preflight before reading a revision, rendering, or creating staging/output.
+For a no-`.git` package, pristine integrity validation precedes the runtime pytest phase; another
+pristine audit requires a fresh extraction. Pytest cache output is disabled or placed outside the
+archive root, and repository-only integration tests do not recursively invoke Git from archive
+mode.
+
+**Reason:** Package hashes must fail closed before a `status: pass` artifact can exist, while
+ordinary documented Python commands must not be mistaken for content originally shipped in the
+archive. The two phases preserve strict package integrity without requiring hidden user-supplied
+environment variables or weakening the ban on cache files in a pristine release.

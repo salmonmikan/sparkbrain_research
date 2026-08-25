@@ -98,6 +98,10 @@ C06の外部評価基盤、Belief-Rのtest-only/ライセンス境界、取得�
 C10の再現検証は、Git履歴を検査できるrepository modeと、`.git`を含まない配布物を
 固定metadataとmanifestで検査するarchive modeを分離しています。どちらも同じ限定的な
 primary smoke subsetを再生成するもので、C02–C08のfull evaluationの代替ではありません。
+archive modeでは、改変・欠落・予期しないファイル・revision不一致をowner license blockerと
+分離してfail-closedに判定します。展開直後のpristine integrity検証を済ませてからruntime
+pytestへ進む二段階契約で、利用者がbytecodeやpytest cache用の環境変数を手動設定する必要は
+ありません。
 手順は [`docs/CLEAN_ROOM_REPRODUCTION.md`](docs/CLEAN_ROOM_REPRODUCTION.md) を参照してください。
 private review ZIPは `scripts/build_review_bundle.py` が専用manifestと外部SHA-256を生成します。
 これはpublic releaseではなく、プロジェクトライセンスのowner decisionを解除しません。

@@ -50,6 +50,8 @@
 - `scripts/validate_bundle.py`
 - `scripts/validate_release.py`
 - `scripts/build_review_bundle.py`
+- `tests/test_release_validation_cli.py`
+- `tests/test_scientific_integrity.py`
 - `.github/workflows/ci.yml` as an optional mirror of local checks
 
 ## Visualizer and evidence
@@ -98,6 +100,7 @@ Current packaging validation:
 - Ruff: PASS
 - bundle validation: PASS
 - offline primary-subset reproduction: PASS with exact table/SVG hashes
+- integrity/preparation/evidence validation: PASS
 - public release validation: blocked only by owner license selection
 
 ## C10 release-candidate evidence
@@ -114,6 +117,8 @@ Current packaging validation:
   license gate remains blocked.
 - repository mode checks tracked-file completeness and Git ancestry; archive mode checks the
   fixed release metadata and packaged file hashes without invoking Git.
+- archive validation is fail-closed before runtime tests; the later plain pytest phase writes
+  temporary test data outside the archive root and disables the pytest cache provider.
 - `scripts/build_review_bundle.py` builds the separately scoped private review ZIP. Its embedded
   `REVIEW_BUNDLE_MANIFEST.json` lists every ZIP member except itself, and the adjacent
   `.sha256` file authenticates the ZIP byte stream.
