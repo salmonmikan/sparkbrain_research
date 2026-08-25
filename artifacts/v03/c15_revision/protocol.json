@@ -509,6 +509,7 @@
   "state_and_gate": {
     "c14_composition": "C14 bounded gate evaluates attributable EvidenceLedger candidates before any belief mutation; learned abstention may veto but never force ignition",
     "activation_mapping": "for each alpha/beta/gamma conditional softmax probability p, pass nonnegative activation -log(max(1-p,1e-12)) to unchanged C14; C14's frozen 1-exp(-activation) normalization therefore equals p up to the clamp",
+    "stage_evidence_scope": "before each context or assessment stage insertion, on the trial ledger deactivate every active row for the evaluated entity whose adapted evidence_id is absent from the current stage, using that stage's frozen settle time as the intervention time; preserve immutable records and audit history, leave other entities untouched, reject any fixture requiring restore of an earlier-stage inactive ID, then insert current deliveries in frozen order; an exact same-ID duplicate within the stage remains a byte-identical redelivery no-op",
     "gate_settle": "after all deliveries for each context or assessment stage, call the same entity-local C14 gate twice at now=stage*10+5 with unchanged ledger and activations; pass 1 advances C14 stability only and never mutates belief; pass 2 is the sole proposal eligible for learned veto and belief update",
     "evaluated_entity_key": "versioned C15 decision field required even when C14 returns object_key null",
     "learned_veto": "if C14 rejects, preserve its reason. If C14 proposes and sigmoid(abstention_logit)>=calibrated threshold, veto as learned_insufficient_information. Otherwise initial establishment is accepted without a transition-head veto; if proposed belief equals current winner require sigmoid(maintain_logit)>=0.5; if it equals an older winner separated by a different winner require sigmoid(recovery_logit)>=0.5; otherwise require sigmoid(update_logit)>=0.5. Failure reasons are maintain_head_below_threshold, recovery_head_below_threshold, update_head_below_threshold in that priority after abstention",
@@ -518,6 +519,7 @@
     "residual": "loser activation retained at factor 0.92 after entity-local decay 0.88; no_residual sets loser retention to 0.0 while all future evidence, weights, thresholds, and ordering remain paired",
     "call_order": [
       "encode visible evidence",
+      "deactivate prior-stage active evidence for the evaluated entity on the trial ledger",
       "append attributable evidence ledger rows",
       "compute learned candidate activations",
       "evaluate unchanged C14 bounded gate in two mutation-free settle passes",

@@ -755,6 +755,14 @@ the same mapping. The recovery residual-floor input is captured by replaying vis
 model head outputs through the C15 controller and reading the target-truth activation immediately
 before assessment. It is never a static zero/default fixture value.
 
+D-V03-0019 closes the stage evidence-lifecycle boundary before source pinning or any official
+seed. The C13 ledger and audit history remain continuous, but before each stage's deliveries the
+controller deactivates prior active rows for the evaluated entity that are absent from the current
+stage. C14 therefore evaluates the current stage's attributable active evidence in its two frozen
+settle passes. Belief history, residual activation, citations, model hidden state, and the gate
+instance remain continuous; other entities are untouched. Same-ID duplication within a stage is
+still an exact redelivery no-op, and the frozen generator never restores an earlier-stage ID.
+
 Primary evaluation is I1 local-compositional input with E1 explicit Oracle entity scope. The
 twelve primary conditions are full separated objectives, nine single-objective ablations,
 one-weighted-CE, and no-residual. Full-only diagnostics cover the other five I0/I1/I2 by E0/E1
