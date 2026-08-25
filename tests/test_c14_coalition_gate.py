@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import math
+from dataclasses import replace
 
 import pytest
 
@@ -11,6 +12,7 @@ from sparkbrain.v03_seed import (
     V03ReferenceLoop,
     derive_evidence_id,
 )
+from sparkbrain.v03_seed import coalition as coalition_module
 from sparkbrain.v03_seed.coalition import C14_BOUNDED_MODE
 
 
@@ -79,14 +81,7 @@ def test_c14_scores_all_candidates_after_stability_update() -> None:
     assert second.ignited and second.belief_key == "hypothesis-alpha"
     assert [row.stability for row in second.coalitions] == [2, 2]
     top = second.coalitions[0]
-    expected = (
-        0.25 * 0.72
-        + 0.25 * (1.0 - math.exp(-2.0))
-        + 0.05
-        + 0.05
-        + 0.10
-        + 0.20
-    )
+    expected = 0.25 * 0.72 + 0.25 * (1.0 - math.exp(-2.0)) + 0.05 + 0.05 + 0.10 + 0.20
     assert top.score == pytest.approx(expected)
     assert top.score == pytest.approx(
         top.weighted_activation
@@ -143,6 +138,32 @@ def test_nonfinite_rejection_is_atomic_for_c14_gate_state() -> None:
 
     second = gate.evaluate(activations(), ledger, now=10.0, mode=C14_BOUNDED_MODE)
     assert second.coalitions[0].stability == 2
+
+
+def test_actual_c14_evaluate_calls_side_effect_free_decision_helper(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    ledger = EvidenceLedger()
+    add_record(ledger, "alpha-a")
+    add_record(ledger, "alpha-b")
+    gate = CoalitionGate()
+    calls = []
+    original = coalition_module.decide_c14
+
+    def traced(coalitions):
+        calls.append(coalitions)
+        return original(coalitions)
+
+    monkeypatch.setattr(coalition_module, "decide_c14", traced)
+    gate.evaluate(activations(), ledger, now=10.0, mode=C14_BOUNDED_MODE)
+    result = gate.evaluate(activations(), ledger, now=10.0, mode=C14_BOUNDED_MODE)
+    assert len(calls) == 2
+    assert result == original(calls[-1])
+
+    low = replace(calls[-1][0], score=0.54)
+    high = replace(low, score=0.56)
+    assert original((low,)).reason == "score_below_threshold"
+    assert original((high,)).ignited
 
 
 def test_reason_priority_checks_evidence_before_score() -> None:
@@ -209,9 +230,7 @@ def test_frozen_structural_contradiction_recency_and_score_reasons() -> None:
 def test_remove_and_exact_restore_recover_decision_and_terms() -> None:
     ledger = EvidenceLedger()
     add_record(ledger, "necessary-a", source="source-a", group="group-a")
-    removed_record = add_record(
-        ledger, "necessary-b", source="source-b", group="group-b"
-    )
+    removed_record = add_record(ledger, "necessary-b", source="source-b", group="group-b")
     baseline_hash = ledger.active_state_hash()
     baseline = settled(ledger)
     ledger.deactivate(removed_record.evidence_id, at_time=10.0)
@@ -250,9 +269,7 @@ def test_settle_override_replaces_belief_activation_on_every_evaluation() -> Non
     assert [row.activation for row in first.coalitions] == [0.72, 0.28]
     assert [row.activation for row in second.coalitions] == [0.72, 0.28]
     alpha = next(
-        row
-        for row in loop.belief_field.ranked("object-a")
-        if row.belief_key == "hypothesis-alpha"
+        row for row in loop.belief_field.ranked("object-a") if row.belief_key == "hypothesis-alpha"
     )
     assert alpha.activation > 0.0
     assert alpha.ignition_count == 1
