@@ -85,7 +85,7 @@ def test_duplicate_evidence_id_is_not_an_independent_vote() -> None:
     ledger = EvidenceLedger()
     row = EvidenceContribution("e1", "vision", "cat", 0.0, support=1.0)
     ledger.add(row)
-    ledger.add(EvidenceContribution("e1", "vision", "cat", 1.0, support=1.0))
+    ledger.add(row, delivered_at=1.0)
     summary = ledger.summary("cat", object_key=None, now=1.0)
     assert summary.unique_evidence_count == 1
     assert summary.independent_group_count == 1
