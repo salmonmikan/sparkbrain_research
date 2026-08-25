@@ -668,3 +668,32 @@ amendment makes failure reporting reconstructible without inventing predictions,
 failure silently, or mixing incomplete seeds into a scientific conclusion. No official v2 seed,
 training result, checkpoint, calibration result, diagnostic, or test result had been executed or
 observed.
+
+## D-V03-0022 — Freeze the exact C15 implementation-failure objects
+
+**Decision:** Before source pinning and while failure-path tests remain synthetic, make the
+D-V03-0021 failure bundle byte-reconstructible. `pareto_frontier.scientific_support` retains its
+normal seven fields. `status` is `not_evaluated_implementation_failure`. `variant_gates` retains
+the exact three variant keys with zero changed pairs and denominator, null rate, the frozen
+maximum, and `passed=false`. `residual_gate` retains null full/no-residual recovery rates and
+`passed=false`. Each of the exact five weighted-CE noninferiority rows keeps its margin and
+direction, uses a null effect, and fails. `strict_improvement` retains the exact five effect keys
+as null plus the frozen minimum and `passed=false`. `all_gates_passed=false`. All nine bootstrap
+entries keep resamples 10000 and seed 4365 with null effect/lower/upper.
+
+`loss_ablation_metrics.scientific_gates` is byte-equal to that scientific-support object. Its
+normal eight engineering-gate rows remain present; partial observations remain visible,
+unavailable denominators are null, and the raw-count, training-step-count, and all-seed recovery
+requirements fail, fixing overall engineering status to `implementation_failure`.
+
+When no seed succeeds, `per_transition_predictions.jsonl` is exactly zero bytes. Prediction,
+training, condition-seed, objective, confusion/calibration, Pareto point, and pairwise arrays are
+empty. The normal dimensions and twelve static objective-configuration rows remain, with
+parameter count 3132 and optimizer steps 384, and every JSON artifact repeats the common failure
+list. Exception text is not included.
+
+**Reason:** D-V03-0021 fixed seed atomicity and cardinality scaling but left multiple valid JSON
+shapes for the required seven-field scientific object and empty JSONL. Freezing one representation
+prevents implementation-dependent failure artifacts and makes zero-success behavior testable. No
+official v2 source pin, seed, training result, checkpoint, calibration result, diagnostic, or test
+result had been executed or observed.

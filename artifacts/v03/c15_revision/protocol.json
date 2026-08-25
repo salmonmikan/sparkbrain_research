@@ -241,7 +241,19 @@
     "failed_run_status": "if any required model seed fails, engineering status is implementation_failure; successful rows and descriptive aggregates remain visible but no scientific gate is evaluated",
     "failed_bootstrap": "every comparison retains resamples and bootstrap_seed but effect, lower, and upper are null",
     "failed_scientific_status": "not_evaluated_implementation_failure",
-    "no_successful_seed": "retain the exact eight files with empty prediction/training/derived row arrays, static objective configuration, the common failed_seeds list, implementation_failure status, and null bootstrap effects"
+    "failure_scientific_support": {
+      "status": "not_evaluated_implementation_failure",
+      "variant_gates": "retain exact distractor_change,same_id_change,correlated_copy_change keys; each value has changed_pairs=0, denominator=0, rate=null, its frozen maximum, and passed=false",
+      "residual_gate": "exact keys full_recovery_rate,no_residual_recovery_rate,passed with both rates null and passed=false",
+      "weighted_ce_noninferiority": "retain the exact five normal metric keys; each value keeps the frozen margin and direction, uses effect_full_minus_weighted_ce=null, and passed=false",
+      "strict_improvement": "exact keys effects,minimum,passed; effects retains the exact five normal metric keys all null, minimum is frozen, and passed=false",
+      "all_gates_passed": false,
+      "bootstrap_intervals": "retain all nine comparison keys with effect/lower/upper null, resamples=10000, bootstrap_seed=4365"
+    },
+    "failure_engineering_gates": "retain the normal eight engineering gate rows and exact fields; partial observations remain visible, every unavailable denominator is null, and at least raw_row_count, training_step_count, and continuous_recovery_all_seeds are false so overall engineering status is implementation_failure",
+    "failure_loss_scientific_gates": "loss_ablation_metrics.scientific_gates is byte-equal to pareto_frontier.scientific_support",
+    "empty_jsonl": "when no model seed succeeds, per_transition_predictions.jsonl is exactly zero bytes with no newline",
+    "no_successful_seed": "retain the exact eight files with empty prediction/training/condition-seed/objective/confusion/calibration/Pareto point/pairwise arrays, twelve static objective-config condition rows with parameter_count=3132 and optimizer_steps=384, the common failed_seeds list, the normal dimensions list, implementation_failure status, and the exact failure_scientific_support object"
   },
   "input_and_leakage": {
     "forbidden_recursive_keys": [
