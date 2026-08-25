@@ -112,3 +112,29 @@ mode.
 ordinary documented Python commands must not be mistaken for content originally shipped in the
 archive. The two phases preserve strict package integrity without requiring hidden user-supplied
 environment variables or weakening the ban on cache files in a pristine release.
+
+## D-V03-0001 — Preregister the C11 input-bottleneck diagnosis
+
+**Decision:** Freeze protocol `c11-input-bottleneck-v1` before adding v0.3 source. Compare
+`I0_whole_hash`, `I1_local_compositional`, and diagnostic-only `I2_symbolic_oracle` on the same
+six pairs, deterministic seed, feature budget, frozen cosine evaluator, labels, and threshold.
+The Oracle rejects ordinary text, unknown fields, and evaluator/target metadata, remains disabled
+by default, and is excluded from autonomous-input claims. The official Belief-R test is not read.
+
+**Reason:** C11 must localize information loss without tuning the production model or allowing
+an Oracle result to be mistaken for language understanding. Any post-result protocol change
+requires a new decision ID and a new protocol run.
+
+## D-V03-0002 — Supersede C11 v1 with a five-seed statistical audit
+
+**Decision:** Before accepting C11, supersede protocol `c11-input-bottleneck-v1` with
+`c11-input-bottleneck-v2`. Keep the six pairs, input tracks, threshold, diagnosis rule, and
+Oracle policy unchanged, but execute preregistered seeds 1729–1733. Report paired effect sizes
+and 95% nonparametric bootstrap intervals over diagnostic-pair blocks using bootstrap seed 4311.
+The deterministic frontends and evaluator are expected to be seed-invariant; that invariance is
+reported explicitly rather than treating duplicate seeded executions as independent evidence.
+
+**Reason:** Independent C11 review found that v1 met the task-specific criteria but did not meet
+the v0.3 global rule requiring at least five seeds and an interval for a primary synthetic
+comparison. This is a new protocol and run recorded before execution; it does not tune any
+feature, threshold, pair, label, diagnosis gate, or checkpoint after seeing v1 results.

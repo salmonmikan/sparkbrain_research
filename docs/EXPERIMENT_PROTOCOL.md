@@ -446,3 +446,32 @@ reported separately and are not energy evidence.
 - physical energy measured on an actual dedicated target
 - workload, accuracy, latency, instrumentation, and platform are disclosed
 - result remains separate from core completion
+
+## 10. C11 input-bottleneck diagnostic protocol
+
+Protocol `c11-input-bottleneck-v1` freezes the v0.3 G1 input-axis diagnosis before source
+integration. It compares legacy whole-string hashing, local token/bigram/character features, and
+an explicit structured-event Oracle through one deterministic pair evaluator. All conditions use
+seed 1729, the same six examples, labels, call count, cosine calculation, and threshold 0.5.
+
+The six preregistered families are paraphrase, local change, unrelated text, synonym limitation,
+high-overlap negation, and unseen composition. Raw features, collisions, similarities, predictions,
+coverage, and feature-work counters are retained. The Oracle receives only a fail-closed structured
+event allowlist; evaluator labels, truth, answer, split, test-only metadata, and unknown fields are
+rejected recursively. It cannot be selected by the default production configuration.
+
+The input path is `implicated` only when Oracle accuracy exceeds the whole-hash control by at
+least 0.25, reaches at least 0.80, passes leakage checks, and the local track retains at least 0.15
+more similar-pair surface similarity than whole hashing. A gap of at most 0.05 is `not implicated`;
+other complete outcomes are `inconclusive`. Missing conditions or protocol violations fail closed.
+The official Belief-R test is outside C11 and must not be inspected or used for tuning.
+
+### C11 statistical-completeness amendment
+
+Protocol `c11-input-bottleneck-v2` supersedes v1 for C11 acceptance. It preserves all six
+diagnostic pairs, conditions, labels, features, threshold 0.5, and diagnosis gates, and adds the
+preregistered seed list 1729–1733. Because the three frontends and frozen evaluator are
+deterministic, seeds audit execution invariance rather than stochastic model variation. Primary
+effect sizes and 95% intervals use 10,000 paired bootstrap resamples of diagnostic-pair blocks
+with bootstrap seed 4311. Seeded rows remain visible in raw artifacts, and a degenerate
+between-seed spread is reported as such rather than promoted as independent replication.

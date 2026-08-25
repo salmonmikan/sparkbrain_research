@@ -529,3 +529,107 @@ negative, CL-007 and CL-008 remain E0, and the primary subset remains explicitly
 
 **Claim impact:** no scientific evidence grade increase. This is a release-integrity and command
 contract correction only.
+
+## 2026-08-26 — R-V03-0001 — Accepted v0.2.1 baseline freeze for C11
+
+- Engineering status: complete
+- Scientific status: not evaluated
+- Accepted Git baseline: `f692c984d6f3b15d883ced92f11a6f6ad491d4a7`
+- Release source revision: `6aef0911dc9e363478c23f98241d80d60ac4fd71`
+- Review archive SHA-256: `217771f2b602b32d8161017cd10c9db28206fcf35bd85c9a1ef9f71e88653313`
+- Package/schema: `0.2.1` / `0.2`
+- Protected C06, C08, primary subset, and claim-register hashes: all matched
+- Existing full tests, local readiness, offline reproduction, and release preparation passed
+- Release preparation retained the project-license owner blocker and no other problem
+- C06 and C08 negative results and existing claim grades remain unchanged
+
+## 2026-08-26 — R-V03-0002 — C11 input-bottleneck diagnosis
+
+- Protocol: `c11-input-bottleneck-v1`, seed 1729, six preregistered synthetic pair families
+- Engineering status: complete
+- Scientific result: supported for the narrow statement that the input path is implicated
+- I0 whole-hash: accuracy 0.5, coverage 1.0, mean similar-pair similarity 0.0
+- I1 local-compositional: accuracy 0.5, coverage 1.0, mean similar-pair similarity 0.559798
+- I2 symbolic Oracle: accuracy 1.0, coverage 1.0, mean similar-pair similarity 1.0
+- Oracle gap over I0: 0.5; Oracle leakage/default-selection audit: pass
+- Negative result: I1 did not improve frozen downstream accuracy over I0
+- Strongest counterexample: I1 assigned similarity 0.737984 to the high-overlap negation pair
+- Interpretation: local surface structure is recoverable, but the current I1 diagnostic does not
+  establish meaning, solve rough-input processing, validate the cognitive core, or change C06
+- Official Belief-R test: not read, evaluated, or used for tuning
+- Final run: `artifacts/v03/c11_runs/c11-input-bottleneck-v1-run-004`
+- Independent reproduction: run 005 matched all eight final artifact SHA-256 values exactly with
+  a different `PYTHONHASHSEED`; sparse cosine accumulation now uses canonical sorted feature keys
+- Runs 001–003 are retained as engineering previews before the executable Oracle audit and the
+  cross-Python hash-order regression fix were finalized
+- Focused v0.3 tests: 46 passed; Ruff and compileall passed
+- Repository collection: 279 tests; full C11 tree result: 274 passed, 5 skipped
+- Five frozen-release runtime tests are skipped only in the explicit v0.3 development tree. A new
+  replacement test proves the unchanged v0.2.1 manifest remains internally bound and the validator
+  fails closed on tracked C11 files. The accepted baseline suite passed before editing; release
+  manifests remain unchanged until C20 rather than weakening the integrity validator.
+- Local readiness, bundle validation, and prior-art validation passed. The generated v0.2.1
+  validation manifest was not retained because C11 must not rewrite release evidence.
+- Final artifact hashes:
+  - `diagnosis.md`: `5393bc01666cce4a912981dfba61ac51d7bc82dcf96b5668381c9e7a9268638a`
+  - `diagnostic_manifest.json`: `e85abecf0b9258a9448227f3720747b0db8aa631fd40a4aabf6d9e23ceda68ea`
+  - `failure_examples.jsonl`: `417d1c65764ff2a93ff54fe2a5e55b69dae1805209b5f2c211cda6e176b64075`
+  - `frozen_baseline_hashes.json`: `f12406a826b0143c7ccc28f84f6b480a19b6e1e85fa5c7dc0649a1e429458097`
+  - `metrics_by_input_track.json`: `ea240709b09fcf59efb26bf5c663553e78cedeba2eee1890c27c45f86ff0c733`
+  - `protocol.json`: `4652a53cac9549a8f8aa96091a1d99af79568fa92b0642f98885b328fd311d4f`
+  - `raw_features.jsonl`: `3937e5198d5d73bad18a5df07019e6f8f60cb7b764c88703e7120d02bc5ca757`
+  - `raw_predictions.jsonl`: `a8a0f6e1e3b9a549d1f786f281220c3585e8b089bb3a08ba0c2c7862359e373a`
+- Protected C06/C08/primary/claim hashes: unchanged after C11
+- Claim impact: none; `docs/CLAIMS_REGISTER.md` remains byte-identical
+
+---
+
+## 2026-08-26 — R-V03-0003 — C11 five-seed statistical-completeness audit
+
+- Protocol: `c11-input-bottleneck-v2`; seeds 1729, 1730, 1731, 1732, 1733
+- Reason: independent acceptance review found that v1 met the C11 task criteria but omitted the
+  v0.3 global minimum-five-seed and interval requirements for a primary synthetic comparison
+- Frozen from v1: all six pairs, input tracks, features, labels, threshold 0.5, diagnosis rule,
+  Oracle policy, downstream evaluator, and the exclusion of official Belief-R data
+- Statistical method: 10,000 paired nonparametric bootstrap resamples over diagnostic-pair
+  blocks, 95% interval, bootstrap seeds 4311 and 4312
+- Seed audit: all five deterministic seeded executions produced identical predictions and
+  similarities; this is reported as invariance, not five independent stochastic replications
+- I0/I1/I2 accuracy: 0.5 / 0.5 / 1.0; coverage 1.0 for every track and seed
+- Oracle accuracy gap over I0: effect 0.5, 95% pair-block interval [0.166667, 0.833333]
+- I1 similar-pair retention delta over I0: effect 0.559798, 95% pair-block interval
+  [0.355270, 0.734712]
+- Negative result retained: I1 did not improve accuracy and still misclassified the
+  high-overlap negation pair at similarity 0.737984
+- Oracle audit directly refuses evaluator `label`, `test_only`, recursive forbidden and unknown
+  fields; ordinary text and default Oracle selection remain refused
+- Final run: `artifacts/v03/c11_runs/c11-input-bottleneck-v2-run-003`
+- Independent reproduction: run 004 used a different `PYTHONHASHSEED` and matched all eight
+  checked-in final artifacts byte-for-byte
+- Runs 001–002 are retained as engineering previews before the explicit label/test-only audit
+  fields were added
+- Focused C11/v0.3 tests: 47 passed; full development tree: 280 collected, 275 passed, 5
+  explicit frozen-release skips; Ruff, compileall, local readiness, and prior-art validation passed
+- Direct G00 rollback evidence: the clean accepted `f692c98` main worktree contains no v0.3
+  namespace and its full 232-test suite passed independently
+- Accepted baseline archive SHA-256 was re-read from the original ZIP as
+  `217771f2b602b32d8161017cd10c9db28206fcf35bd85c9a1ef9f71e88653313`; the handoff baseline
+  verifier passed package 0.2.1, schema 0.2, revision `6aef0911dc9e363478c23f98241d80d60ac4fd71`,
+  and all five protected artifacts against the C11 tree
+- Correction to R-V03-0002: its statement that run 005 matched all eight checked-in artifacts
+  was too strong. Independent review found three semantically equal but differently formatted
+  JSON contract files. v2 stores the runner-generated canonical files directly and proves 8/8
+  byte identity.
+- Final artifact SHA-256:
+  - `diagnosis.md`: `c62c8dfdc403ca4f4de9baafed9bf3ef62af6536260444ea067d31d1e843c4f1`
+  - `diagnostic_manifest.json`: `2a363f0e18512544103c5f5922ce5957360456f6288e13a5ad2be32664505a15`
+  - `failure_examples.jsonl`: `2d7bd37db66e193f5d77400bbebcf603dcef4bd8f3d0a70b37cdc9f585a33e29`
+  - `frozen_baseline_hashes.json`: `063465680f8e8e79aa1260b1acbaef44a5405bb012b1671b74cd59050c10bf8b`
+  - `metrics_by_input_track.json`: `061791f784788aba78a89c75013c1720b57c2677376aba5d2564525e96ec66b2`
+  - `protocol.json`: `b774783ffb1fc7e1a67e2234c9544a1013f003a7cc44d9458dbd8cc5298147d6`
+  - `raw_features.jsonl`: `d88bef45dd25d88e8ed8439d004b4e5241a0009fe5f9a9cb7bc5c8952f25227c`
+  - `raw_predictions.jsonl`: `d97d983fdaab2c08b78584090ba72ffb0eff379a3e9e702c5dbe63cfa49cc488`
+- Scientific support remains narrow: the input path is implicated in this synthetic diagnostic;
+  semantic understanding, autonomous rough-input success, cognitive-core validity, concepts,
+  organs, biological fidelity, and external generalization remain unsupported or unevaluated
+- Protected hashes and claim grades: unchanged

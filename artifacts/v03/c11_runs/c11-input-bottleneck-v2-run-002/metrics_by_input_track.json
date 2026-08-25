@@ -1,0 +1,302 @@
+{
+  "I0_whole_hash": {
+    "accuracy": 0.5,
+    "by_seed": {
+      "1729": {
+        "accuracy": 0.5,
+        "coverage": 1.0,
+        "feature_hash_collisions_for_distinct_text": 0,
+        "feature_work": {
+          "encoded_examples": 12,
+          "prediction_calls": 6,
+          "total_features": 12,
+          "total_input_bytes": 409
+        },
+        "mean_different_pair_similarity": 0.0,
+        "mean_similar_pair_similarity": 0.0,
+        "pair_count": 6
+      },
+      "1730": {
+        "accuracy": 0.5,
+        "coverage": 1.0,
+        "feature_hash_collisions_for_distinct_text": 0,
+        "feature_work": {
+          "encoded_examples": 12,
+          "prediction_calls": 6,
+          "total_features": 12,
+          "total_input_bytes": 409
+        },
+        "mean_different_pair_similarity": 0.0,
+        "mean_similar_pair_similarity": 0.0,
+        "pair_count": 6
+      },
+      "1731": {
+        "accuracy": 0.5,
+        "coverage": 1.0,
+        "feature_hash_collisions_for_distinct_text": 0,
+        "feature_work": {
+          "encoded_examples": 12,
+          "prediction_calls": 6,
+          "total_features": 12,
+          "total_input_bytes": 409
+        },
+        "mean_different_pair_similarity": 0.0,
+        "mean_similar_pair_similarity": 0.0,
+        "pair_count": 6
+      },
+      "1732": {
+        "accuracy": 0.5,
+        "coverage": 1.0,
+        "feature_hash_collisions_for_distinct_text": 0,
+        "feature_work": {
+          "encoded_examples": 12,
+          "prediction_calls": 6,
+          "total_features": 12,
+          "total_input_bytes": 409
+        },
+        "mean_different_pair_similarity": 0.0,
+        "mean_similar_pair_similarity": 0.0,
+        "pair_count": 6
+      },
+      "1733": {
+        "accuracy": 0.5,
+        "coverage": 1.0,
+        "feature_hash_collisions_for_distinct_text": 0,
+        "feature_work": {
+          "encoded_examples": 12,
+          "prediction_calls": 6,
+          "total_features": 12,
+          "total_input_bytes": 409
+        },
+        "mean_different_pair_similarity": 0.0,
+        "mean_similar_pair_similarity": 0.0,
+        "pair_count": 6
+      }
+    },
+    "coverage": 1.0,
+    "feature_hash_collisions_for_distinct_text": 0,
+    "feature_work": {
+      "encoded_examples": 60,
+      "prediction_calls": 30,
+      "total_features": 60,
+      "total_input_bytes": 2045
+    },
+    "mean_different_pair_similarity": 0.0,
+    "mean_similar_pair_similarity": 0.0,
+    "pair_count": 30
+  },
+  "I1_local_compositional": {
+    "accuracy": 0.5,
+    "by_seed": {
+      "1729": {
+        "accuracy": 0.5,
+        "coverage": 1.0,
+        "feature_hash_collisions_for_distinct_text": 0,
+        "feature_work": {
+          "encoded_examples": 12,
+          "prediction_calls": 6,
+          "total_features": 1201,
+          "total_input_bytes": 409
+        },
+        "mean_different_pair_similarity": 0.581014686618775,
+        "mean_similar_pair_similarity": 0.5597979353934118,
+        "pair_count": 6
+      },
+      "1730": {
+        "accuracy": 0.5,
+        "coverage": 1.0,
+        "feature_hash_collisions_for_distinct_text": 0,
+        "feature_work": {
+          "encoded_examples": 12,
+          "prediction_calls": 6,
+          "total_features": 1201,
+          "total_input_bytes": 409
+        },
+        "mean_different_pair_similarity": 0.581014686618775,
+        "mean_similar_pair_similarity": 0.5597979353934118,
+        "pair_count": 6
+      },
+      "1731": {
+        "accuracy": 0.5,
+        "coverage": 1.0,
+        "feature_hash_collisions_for_distinct_text": 0,
+        "feature_work": {
+          "encoded_examples": 12,
+          "prediction_calls": 6,
+          "total_features": 1201,
+          "total_input_bytes": 409
+        },
+        "mean_different_pair_similarity": 0.581014686618775,
+        "mean_similar_pair_similarity": 0.5597979353934118,
+        "pair_count": 6
+      },
+      "1732": {
+        "accuracy": 0.5,
+        "coverage": 1.0,
+        "feature_hash_collisions_for_distinct_text": 0,
+        "feature_work": {
+          "encoded_examples": 12,
+          "prediction_calls": 6,
+          "total_features": 1201,
+          "total_input_bytes": 409
+        },
+        "mean_different_pair_similarity": 0.581014686618775,
+        "mean_similar_pair_similarity": 0.5597979353934118,
+        "pair_count": 6
+      },
+      "1733": {
+        "accuracy": 0.5,
+        "coverage": 1.0,
+        "feature_hash_collisions_for_distinct_text": 0,
+        "feature_work": {
+          "encoded_examples": 12,
+          "prediction_calls": 6,
+          "total_features": 1201,
+          "total_input_bytes": 409
+        },
+        "mean_different_pair_similarity": 0.581014686618775,
+        "mean_similar_pair_similarity": 0.5597979353934118,
+        "pair_count": 6
+      }
+    },
+    "coverage": 1.0,
+    "feature_hash_collisions_for_distinct_text": 0,
+    "feature_work": {
+      "encoded_examples": 60,
+      "prediction_calls": 30,
+      "total_features": 6005,
+      "total_input_bytes": 2045
+    },
+    "mean_different_pair_similarity": 0.581014686618775,
+    "mean_similar_pair_similarity": 0.5597979353934118,
+    "pair_count": 30
+  },
+  "I2_symbolic_oracle": {
+    "accuracy": 1.0,
+    "by_seed": {
+      "1729": {
+        "accuracy": 1.0,
+        "coverage": 1.0,
+        "feature_hash_collisions_for_distinct_text": 3,
+        "feature_work": {
+          "encoded_examples": 12,
+          "prediction_calls": 6,
+          "total_features": 60,
+          "total_input_bytes": 409
+        },
+        "mean_different_pair_similarity": 0.1333333333333333,
+        "mean_similar_pair_similarity": 0.9999999999999998,
+        "pair_count": 6
+      },
+      "1730": {
+        "accuracy": 1.0,
+        "coverage": 1.0,
+        "feature_hash_collisions_for_distinct_text": 3,
+        "feature_work": {
+          "encoded_examples": 12,
+          "prediction_calls": 6,
+          "total_features": 60,
+          "total_input_bytes": 409
+        },
+        "mean_different_pair_similarity": 0.1333333333333333,
+        "mean_similar_pair_similarity": 0.9999999999999998,
+        "pair_count": 6
+      },
+      "1731": {
+        "accuracy": 1.0,
+        "coverage": 1.0,
+        "feature_hash_collisions_for_distinct_text": 3,
+        "feature_work": {
+          "encoded_examples": 12,
+          "prediction_calls": 6,
+          "total_features": 60,
+          "total_input_bytes": 409
+        },
+        "mean_different_pair_similarity": 0.1333333333333333,
+        "mean_similar_pair_similarity": 0.9999999999999998,
+        "pair_count": 6
+      },
+      "1732": {
+        "accuracy": 1.0,
+        "coverage": 1.0,
+        "feature_hash_collisions_for_distinct_text": 3,
+        "feature_work": {
+          "encoded_examples": 12,
+          "prediction_calls": 6,
+          "total_features": 60,
+          "total_input_bytes": 409
+        },
+        "mean_different_pair_similarity": 0.1333333333333333,
+        "mean_similar_pair_similarity": 0.9999999999999998,
+        "pair_count": 6
+      },
+      "1733": {
+        "accuracy": 1.0,
+        "coverage": 1.0,
+        "feature_hash_collisions_for_distinct_text": 3,
+        "feature_work": {
+          "encoded_examples": 12,
+          "prediction_calls": 6,
+          "total_features": 60,
+          "total_input_bytes": 409
+        },
+        "mean_different_pair_similarity": 0.1333333333333333,
+        "mean_similar_pair_similarity": 0.9999999999999998,
+        "pair_count": 6
+      }
+    },
+    "coverage": 1.0,
+    "feature_hash_collisions_for_distinct_text": 3,
+    "feature_work": {
+      "encoded_examples": 60,
+      "prediction_calls": 30,
+      "total_features": 300,
+      "total_input_bytes": 2045
+    },
+    "mean_different_pair_similarity": 0.1333333333333333,
+    "mean_similar_pair_similarity": 0.9999999999999998,
+    "pair_count": 30
+  },
+  "oracle_audit": {
+    "default_selection_refused": true,
+    "label_shuffle_invariant": true,
+    "ordinary_text_refused": true,
+    "passed": true,
+    "recursive_forbidden_fields_refused": true,
+    "unknown_fields_refused": true
+  },
+  "statistical_analysis": {
+    "comparisons": {
+      "i1_similar_pair_retention_delta_over_i0": {
+        "bootstrap_repetitions": 10000,
+        "bootstrap_seed": 4312,
+        "ci_high": 0.7347120950980249,
+        "ci_low": 0.35527005642823917,
+        "confidence_level": 0.95,
+        "effect_size": 0.5597979353934118,
+        "pair_block_count": 3
+      },
+      "oracle_accuracy_gap_over_i0": {
+        "bootstrap_repetitions": 10000,
+        "bootstrap_seed": 4311,
+        "ci_high": 0.8333333333333334,
+        "ci_low": 0.16666666666666666,
+        "confidence_level": 0.95,
+        "effect_size": 0.5,
+        "pair_block_count": 6
+      }
+    },
+    "interpretation": "The frontends and evaluator are deterministic; repeated seeds audit invariance, while pair-block bootstrap intervals describe diagnostic-pair uncertainty.",
+    "method": "paired nonparametric bootstrap over diagnostic-pair blocks",
+    "paired_unit": "diagnostic_pair_block_with_all_preregistered_seeds",
+    "seed_count": 5,
+    "seed_invariant": true,
+    "seeds": [
+      1729,
+      1730,
+      1731,
+      1732,
+      1733
+    ]
+  }
+}

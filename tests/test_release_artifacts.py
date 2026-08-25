@@ -20,6 +20,8 @@ from sparkbrain.release_artifacts import (
 
 ROOT = Path(__file__).resolve().parents[1]
 ARCHIVE_RUNTIME = release_mode(ROOT) == "archive"
+V03_DEVELOPMENT = (ROOT / "artifacts/v03/c11_input_diagnosis/protocol.json").is_file()
+RELEASE_RUNTIME_UNAVAILABLE = ARCHIVE_RUNTIME or V03_DEVELOPMENT
 
 
 def test_primary_subset_is_deterministic_and_keeps_negative_result() -> None:
@@ -60,8 +62,8 @@ def test_claim_audit_and_evidence_gate() -> None:
 
 
 @pytest.mark.skipif(
-    ARCHIVE_RUNTIME,
-    reason="repository suite and pristine archive preflight cover reproduction",
+    RELEASE_RUNTIME_UNAVAILABLE,
+    reason="repository baseline and pristine archive preflight cover frozen release reproduction",
 )
 def test_clean_room_reproduction_does_not_open_socket(tmp_path: Path, monkeypatch) -> None:
     from scripts.reproduce_release import reproduce
@@ -94,8 +96,8 @@ def test_reproduction_rejects_non_empty_output_without_touching_it(tmp_path: Pat
 
 
 @pytest.mark.skipif(
-    ARCHIVE_RUNTIME,
-    reason="repository suite covers injected failures after pristine archive validation",
+    RELEASE_RUNTIME_UNAVAILABLE,
+    reason="repository baseline covers injected failures for the frozen v0.2.1 release",
 )
 def test_revision_preflight_failure_leaves_no_output_or_staging(
     tmp_path: Path, monkeypatch
@@ -166,8 +168,8 @@ def test_output_hash_failure_leaves_no_output_or_staging(tmp_path: Path, monkeyp
 
 
 @pytest.mark.skipif(
-    ARCHIVE_RUNTIME,
-    reason="repository suite covers injected failures after pristine archive validation",
+    RELEASE_RUNTIME_UNAVAILABLE,
+    reason="repository baseline covers injected failures for the frozen v0.2.1 release",
 )
 def test_atomic_rename_failure_cleans_staging(tmp_path: Path, monkeypatch) -> None:
     import scripts.reproduce_release as reproduction
@@ -189,8 +191,8 @@ def test_atomic_rename_failure_cleans_staging(tmp_path: Path, monkeypatch) -> No
 
 
 @pytest.mark.skipif(
-    ARCHIVE_RUNTIME,
-    reason="repository suite covers injected failures after pristine archive validation",
+    RELEASE_RUNTIME_UNAVAILABLE,
+    reason="repository baseline covers injected failures for the frozen v0.2.1 release",
 )
 def test_staged_hash_failure_is_not_published(tmp_path: Path, monkeypatch) -> None:
     import scripts.reproduce_release as reproduction

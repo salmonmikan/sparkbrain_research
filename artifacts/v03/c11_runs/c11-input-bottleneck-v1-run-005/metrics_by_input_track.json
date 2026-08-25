@@ -1,0 +1,52 @@
+{
+  "I0_whole_hash": {
+    "accuracy": 0.5,
+    "coverage": 1.0,
+    "feature_hash_collisions_for_distinct_text": 0,
+    "feature_work": {
+      "encoded_examples": 12,
+      "prediction_calls": 6,
+      "total_features": 12,
+      "total_input_bytes": 409
+    },
+    "mean_different_pair_similarity": 0.0,
+    "mean_similar_pair_similarity": 0.0,
+    "pair_count": 6
+  },
+  "I1_local_compositional": {
+    "accuracy": 0.5,
+    "coverage": 1.0,
+    "feature_hash_collisions_for_distinct_text": 0,
+    "feature_work": {
+      "encoded_examples": 12,
+      "prediction_calls": 6,
+      "total_features": 1201,
+      "total_input_bytes": 409
+    },
+    "mean_different_pair_similarity": 0.581014686618775,
+    "mean_similar_pair_similarity": 0.5597979353934118,
+    "pair_count": 6
+  },
+  "I2_symbolic_oracle": {
+    "accuracy": 1.0,
+    "coverage": 1.0,
+    "feature_hash_collisions_for_distinct_text": 3,
+    "feature_work": {
+      "encoded_examples": 12,
+      "prediction_calls": 6,
+      "total_features": 60,
+      "total_input_bytes": 409
+    },
+    "mean_different_pair_similarity": 0.1333333333333333,
+    "mean_similar_pair_similarity": 0.9999999999999998,
+    "pair_count": 6
+  },
+  "oracle_audit": {
+    "default_selection_refused": true,
+    "label_shuffle_invariant": true,
+    "ordinary_text_refused": true,
+    "passed": true,
+    "recursive_forbidden_fields_refused": true,
+    "unknown_fields_refused": true
+  }
+}
