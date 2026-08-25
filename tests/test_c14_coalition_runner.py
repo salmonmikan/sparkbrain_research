@@ -37,10 +37,14 @@ def test_runner_guard_refuses_before_output_or_git_access(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
     output = tmp_path / "official-output"
+    disabled_protocol = protocol()
+    disabled_protocol["dependencies"]["runner_execution_allowed"] = False
 
     def forbidden_git(*args, **kwargs):
         raise AssertionError("source-pin-disabled runner must not access Git")
 
+    disabled_bytes = json.dumps(disabled_protocol).encode("utf-8")
+    monkeypatch.setattr(Path, "read_bytes", lambda self: disabled_bytes)
     monkeypatch.setattr(runner, "_git", forbidden_git)
     with pytest.raises(RuntimeError, match="disabled until the source-pin amendment"):
         runner.run(
@@ -73,7 +77,14 @@ def test_runner_rejects_noncanonical_protocol_path_before_git(
 
 
 def test_protocol_amendment_allows_only_pin_fields() -> None:
-    base = protocol()
+    base = copy.deepcopy(protocol())
+    base["dependencies"].pop("c14_protocol_base_commit")
+    base["dependencies"].pop("c14_protocol_base_sha256")
+    base["dependencies"]["c14_source_pin"] = (
+        "pending separate preregistration amendment after source-only commit "
+        "and before any runner execution"
+    )
+    base["dependencies"]["runner_execution_allowed"] = False
     current = copy.deepcopy(base)
     current["dependencies"]["c14_protocol_base_commit"] = "79dfa6c" + "0" * 33
     current["dependencies"]["c14_protocol_base_sha256"] = "1" * 64
@@ -166,6 +177,80 @@ def test_failed_seed_rows_recalculate_each_seed_independently(
 
 def test_runtime_call_graph_probe_depends_on_score_mutation() -> None:
     assert runner._call_graph_probe()
+
+
+def test_metric_rows_use_nested_decisions_for_cross_condition_metrics() -> None:
+    value = protocol()
+    rows: list[dict[str, object]] = []
+    case_order = value["final_pre_execution_freeze"]["fixture_generator"]["case_order"]
+    decisions = {
+        "G1_evidence_coalition": {
+            "ignited": True,
+            "reason": "ignited",
+            "score": 0.8,
+            "winner_hypothesis": "hypothesis-alpha",
+        },
+        "G0_probability_margin": {
+            "ignited": False,
+            "reason": "score_below_threshold",
+            "score": 0.3,
+            "winner_hypothesis": None,
+        },
+        "G1_no_coalition_ablation": {
+            "ignited": False,
+            "reason": "no_coalitions",
+            "score": 0.0,
+            "winner_hypothesis": None,
+        },
+    }
+    for condition in value["conditions"]:
+        for seed in value["seeds"]:
+            for case_id in case_order:
+                rows.append(
+                    {
+                        "case_id": case_id,
+                        "comparators": {
+                            "independent_support_baseline": {"decision": {"score": 0.4}},
+                            "primary_support_only": {"decision": {"score": 0.5}},
+                        },
+                        "condition_id": condition,
+                        "decision": decisions[condition],
+                        "expected_winner": "hypothesis-alpha",
+                        "primary": True,
+                        "seed": seed,
+                    }
+                )
+
+    aggregate, seed_rows = runner._metric_rows(rows, value)
+
+    assert len(aggregate) == 24
+    assert len(seed_rows) == 120
+    aggregate_cross = [
+        row
+        for row in aggregate
+        if row["metric"]
+        in {
+            "g1_vs_g0_decision_difference_rate",
+            "g1_vs_no_coalition_decision_difference_rate",
+        }
+    ]
+    seed_cross = [
+        row
+        for row in seed_rows
+        if row["metric"]
+        in {
+            "g1_vs_g0_decision_difference_rate",
+            "g1_vs_no_coalition_decision_difference_rate",
+        }
+    ]
+    assert len(aggregate_cross) == 6
+    assert len(seed_cross) == 30
+    assert all(row["value"] == 1.0 for row in aggregate_cross + seed_cross)
+    assert all(
+        row["denominator"] == len(case_order) * len(value["seeds"])
+        for row in aggregate_cross
+    )
+    assert all(row["denominator"] == len(case_order) for row in seed_cross)
 
 
 def test_expected_source_scope_and_exact_six_files_are_frozen() -> None:
