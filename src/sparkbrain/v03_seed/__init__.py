@@ -37,7 +37,21 @@ from .input_diagnosis import (
 )
 from .loop import PerceptualInterpreter, V03ReferenceLoop, V03StepResult
 from .organs import OrganGateConfig, assess_organ_candidate
-from .sensory_field import AdaptiveSensoryField, SensoryFieldConfig
+from .sensory_field import (
+    AdaptiveSensoryField,
+    SensoryChannelTrace,
+    SensoryFieldConfig,
+    SensoryObservation,
+    SensoryWorkCounters,
+)
+from .sensory_worlds import (
+    DistractorNoiseWorld,
+    GoalTargetWorld,
+    HabituationWorld,
+    SensoryWorldStep,
+    StimulusSpecificityWorld,
+    UnexpectedChangeWorld,
+)
 from .text_frontend import (
     compositional_text_features,
     normalize_text,
@@ -59,6 +73,7 @@ __all__ = [
     "EvidenceLedger",
     "EvidenceLedgerConfig",
     "EvidenceSummary",
+    "DistractorNoiseWorld",
     "AUTONOMOUS_INPUT_TRACKS",
     "DEFAULT_INPUT_TRACK",
     "ORACLE_INPUT_TRACK",
@@ -72,6 +87,8 @@ __all__ = [
     "WholeHashFrontend",
     "create_frontend",
     "IgnitionDecision",
+    "GoalTargetWorld",
+    "HabituationWorld",
     "OnlineConceptFormer",
     "OrganAssessment",
     "OrganEvidence",
@@ -80,7 +97,13 @@ __all__ = [
     "PerceptualSpark",
     "PersistentBeliefField",
     "SensoryFieldConfig",
+    "SensoryChannelTrace",
+    "SensoryObservation",
     "SensorySample",
+    "SensoryWorkCounters",
+    "SensoryWorldStep",
+    "StimulusSpecificityWorld",
+    "UnexpectedChangeWorld",
     "V03ReferenceLoop",
     "V03StepResult",
     "assess_organ_candidate",

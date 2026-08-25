@@ -1,0 +1,486 @@
+{
+  "acceptance": {
+    "change_or_omission_recall": true,
+    "goal_adversarial_audit": true,
+    "goal_relevant_low_salience_recall": true,
+    "irrelevant_false_activation": true,
+    "predictable_repetition_active_sparks": true,
+    "predictable_repetition_downstream_work": true,
+    "stimulus_specificity": true
+  },
+  "acceptance_passed": true,
+  "conditions": {
+    "bypass": {
+      "metrics": {
+        "change_or_omission_recall": 0.5,
+        "goal_relevant_recall_delta": 0.0,
+        "irrelevant_false_activation_increase_percentage_points": 0.0,
+        "predictable_repetition_active_spark_reduction": 0.0,
+        "predictable_repetition_downstream_work_reduction": 0.0,
+        "stimulus_specificity_recall": 1.0
+      },
+      "paired_intervals": {
+        "change_or_omission_recall": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 0.8,
+          "ci_low": 0.2,
+          "confidence_level": 0.95,
+          "effect_size": 0.5,
+          "paired_block_count": 10
+        },
+        "goal_relevant_recall_delta": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "confidence_level": 0.95,
+          "effect_size": 0.0,
+          "paired_block_count": 5
+        },
+        "irrelevant_false_activation_increase_percentage_points": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "confidence_level": 0.95,
+          "effect_size": 0.0,
+          "paired_block_count": 5
+        },
+        "predictable_repetition_active_spark_reduction": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "confidence_level": 0.95,
+          "effect_size": 0.0,
+          "paired_block_count": 5
+        },
+        "predictable_repetition_downstream_work_reduction": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "confidence_level": 0.95,
+          "effect_size": 0.0,
+          "paired_block_count": 5
+        },
+        "stimulus_specificity_recall": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence_level": 0.95,
+          "effect_size": 1.0,
+          "paired_block_count": 5
+        }
+      }
+    },
+    "full": {
+      "metrics": {
+        "change_or_omission_recall": 1.0,
+        "goal_relevant_recall_delta": 1.0,
+        "irrelevant_false_activation_increase_percentage_points": 0.0,
+        "predictable_repetition_active_spark_reduction": 1.0,
+        "predictable_repetition_downstream_work_reduction": 1.0,
+        "stimulus_specificity_recall": 1.0
+      },
+      "paired_intervals": {
+        "change_or_omission_recall": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence_level": 0.95,
+          "effect_size": 1.0,
+          "paired_block_count": 10
+        },
+        "goal_relevant_recall_delta": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence_level": 0.95,
+          "effect_size": 1.0,
+          "paired_block_count": 5
+        },
+        "irrelevant_false_activation_increase_percentage_points": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "confidence_level": 0.95,
+          "effect_size": 0.0,
+          "paired_block_count": 5
+        },
+        "predictable_repetition_active_spark_reduction": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence_level": 0.95,
+          "effect_size": 1.0,
+          "paired_block_count": 5
+        },
+        "predictable_repetition_downstream_work_reduction": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence_level": 0.95,
+          "effect_size": 1.0,
+          "paired_block_count": 5
+        },
+        "stimulus_specificity_recall": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence_level": 0.95,
+          "effect_size": 1.0,
+          "paired_block_count": 5
+        }
+      }
+    },
+    "no_goal": {
+      "metrics": {
+        "change_or_omission_recall": 1.0,
+        "goal_relevant_recall_delta": 0.0,
+        "irrelevant_false_activation_increase_percentage_points": 0.0,
+        "predictable_repetition_active_spark_reduction": 1.0,
+        "predictable_repetition_downstream_work_reduction": 1.0,
+        "stimulus_specificity_recall": 1.0
+      },
+      "paired_intervals": {
+        "change_or_omission_recall": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence_level": 0.95,
+          "effect_size": 1.0,
+          "paired_block_count": 10
+        },
+        "goal_relevant_recall_delta": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "confidence_level": 0.95,
+          "effect_size": 0.0,
+          "paired_block_count": 5
+        },
+        "irrelevant_false_activation_increase_percentage_points": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "confidence_level": 0.95,
+          "effect_size": 0.0,
+          "paired_block_count": 5
+        },
+        "predictable_repetition_active_spark_reduction": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence_level": 0.95,
+          "effect_size": 1.0,
+          "paired_block_count": 5
+        },
+        "predictable_repetition_downstream_work_reduction": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence_level": 0.95,
+          "effect_size": 1.0,
+          "paired_block_count": 5
+        },
+        "stimulus_specificity_recall": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence_level": 0.95,
+          "effect_size": 1.0,
+          "paired_block_count": 5
+        }
+      }
+    },
+    "no_habituation": {
+      "metrics": {
+        "change_or_omission_recall": 1.0,
+        "goal_relevant_recall_delta": 1.0,
+        "irrelevant_false_activation_increase_percentage_points": 0.0,
+        "predictable_repetition_active_spark_reduction": 1.0,
+        "predictable_repetition_downstream_work_reduction": 1.0,
+        "stimulus_specificity_recall": 1.0
+      },
+      "paired_intervals": {
+        "change_or_omission_recall": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence_level": 0.95,
+          "effect_size": 1.0,
+          "paired_block_count": 10
+        },
+        "goal_relevant_recall_delta": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence_level": 0.95,
+          "effect_size": 1.0,
+          "paired_block_count": 5
+        },
+        "irrelevant_false_activation_increase_percentage_points": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "confidence_level": 0.95,
+          "effect_size": 0.0,
+          "paired_block_count": 5
+        },
+        "predictable_repetition_active_spark_reduction": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence_level": 0.95,
+          "effect_size": 1.0,
+          "paired_block_count": 5
+        },
+        "predictable_repetition_downstream_work_reduction": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence_level": 0.95,
+          "effect_size": 1.0,
+          "paired_block_count": 5
+        },
+        "stimulus_specificity_recall": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence_level": 0.95,
+          "effect_size": 1.0,
+          "paired_block_count": 5
+        }
+      }
+    },
+    "no_magnitude": {
+      "metrics": {
+        "change_or_omission_recall": 1.0,
+        "goal_relevant_recall_delta": 0.0,
+        "irrelevant_false_activation_increase_percentage_points": 0.0,
+        "predictable_repetition_active_spark_reduction": 1.0,
+        "predictable_repetition_downstream_work_reduction": 1.0,
+        "stimulus_specificity_recall": 1.0
+      },
+      "paired_intervals": {
+        "change_or_omission_recall": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence_level": 0.95,
+          "effect_size": 1.0,
+          "paired_block_count": 10
+        },
+        "goal_relevant_recall_delta": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "confidence_level": 0.95,
+          "effect_size": 0.0,
+          "paired_block_count": 5
+        },
+        "irrelevant_false_activation_increase_percentage_points": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "confidence_level": 0.95,
+          "effect_size": 0.0,
+          "paired_block_count": 5
+        },
+        "predictable_repetition_active_spark_reduction": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence_level": 0.95,
+          "effect_size": 1.0,
+          "paired_block_count": 5
+        },
+        "predictable_repetition_downstream_work_reduction": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence_level": 0.95,
+          "effect_size": 1.0,
+          "paired_block_count": 5
+        },
+        "stimulus_specificity_recall": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence_level": 0.95,
+          "effect_size": 1.0,
+          "paired_block_count": 5
+        }
+      }
+    },
+    "no_novelty": {
+      "metrics": {
+        "change_or_omission_recall": 0.5,
+        "goal_relevant_recall_delta": 0.0,
+        "irrelevant_false_activation_increase_percentage_points": 0.0,
+        "predictable_repetition_active_spark_reduction": 1.0,
+        "predictable_repetition_downstream_work_reduction": 1.0,
+        "stimulus_specificity_recall": 1.0
+      },
+      "paired_intervals": {
+        "change_or_omission_recall": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 0.8,
+          "ci_low": 0.2,
+          "confidence_level": 0.95,
+          "effect_size": 0.5,
+          "paired_block_count": 10
+        },
+        "goal_relevant_recall_delta": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "confidence_level": 0.95,
+          "effect_size": 0.0,
+          "paired_block_count": 5
+        },
+        "irrelevant_false_activation_increase_percentage_points": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "confidence_level": 0.95,
+          "effect_size": 0.0,
+          "paired_block_count": 5
+        },
+        "predictable_repetition_active_spark_reduction": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence_level": 0.95,
+          "effect_size": 1.0,
+          "paired_block_count": 5
+        },
+        "predictable_repetition_downstream_work_reduction": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence_level": 0.95,
+          "effect_size": 1.0,
+          "paired_block_count": 5
+        },
+        "stimulus_specificity_recall": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence_level": 0.95,
+          "effect_size": 1.0,
+          "paired_block_count": 5
+        }
+      }
+    },
+    "no_prediction_error": {
+      "metrics": {
+        "change_or_omission_recall": 0.5,
+        "goal_relevant_recall_delta": 0.0,
+        "irrelevant_false_activation_increase_percentage_points": 0.0,
+        "predictable_repetition_active_spark_reduction": 1.0,
+        "predictable_repetition_downstream_work_reduction": 1.0,
+        "stimulus_specificity_recall": 1.0
+      },
+      "paired_intervals": {
+        "change_or_omission_recall": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 0.8,
+          "ci_low": 0.2,
+          "confidence_level": 0.95,
+          "effect_size": 0.5,
+          "paired_block_count": 10
+        },
+        "goal_relevant_recall_delta": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "confidence_level": 0.95,
+          "effect_size": 0.0,
+          "paired_block_count": 5
+        },
+        "irrelevant_false_activation_increase_percentage_points": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "confidence_level": 0.95,
+          "effect_size": 0.0,
+          "paired_block_count": 5
+        },
+        "predictable_repetition_active_spark_reduction": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence_level": 0.95,
+          "effect_size": 1.0,
+          "paired_block_count": 5
+        },
+        "predictable_repetition_downstream_work_reduction": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence_level": 0.95,
+          "effect_size": 1.0,
+          "paired_block_count": 5
+        },
+        "stimulus_specificity_recall": {
+          "bootstrap_repetitions": 10000,
+          "bootstrap_seed": 4312,
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "confidence_level": 0.95,
+          "effect_size": 1.0,
+          "paired_block_count": 5
+        }
+      }
+    }
+  },
+  "protocol_id": "c12-sensory-field-v1",
+  "run_id": "c12-sensory-field-main-v1",
+  "seed_list": [
+    2601,
+    2602,
+    2603,
+    2604,
+    2605
+  ],
+  "work_interpretation": "channels_inspected/features_scored/state_updates are dense sensory work; only sparks_emitted/downstream_active_work are active downstream work"
+}

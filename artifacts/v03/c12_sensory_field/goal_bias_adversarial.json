@@ -1,0 +1,280 @@
+{
+  "acceptance_passed": true,
+  "all_checks_passed": true,
+  "checks": [
+    {
+      "check_id": "metadata_top:answer",
+      "error": "forbidden sensory field at metadata.answer",
+      "passed": true,
+      "refused": true,
+      "state_hash_after": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_hash_before": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_unchanged": true
+    },
+    {
+      "check_id": "metadata_nested:answer",
+      "error": "forbidden sensory field at metadata.outer[0].answer",
+      "passed": true,
+      "refused": true,
+      "state_hash_after": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_hash_before": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_unchanged": true
+    },
+    {
+      "check_id": "goal_key:answer",
+      "error": "forbidden goal field: answer",
+      "passed": true,
+      "refused": true,
+      "state_hash_after": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_hash_before": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_unchanged": true
+    },
+    {
+      "check_id": "metadata_top:contradiction",
+      "error": "forbidden sensory field at metadata.contradiction",
+      "passed": true,
+      "refused": true,
+      "state_hash_after": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_hash_before": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_unchanged": true
+    },
+    {
+      "check_id": "metadata_nested:contradiction",
+      "error": "forbidden sensory field at metadata.outer[0].contradiction",
+      "passed": true,
+      "refused": true,
+      "state_hash_after": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_hash_before": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_unchanged": true
+    },
+    {
+      "check_id": "goal_key:contradiction",
+      "error": "forbidden goal field: contradiction",
+      "passed": true,
+      "refused": true,
+      "state_hash_after": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_hash_before": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_unchanged": true
+    },
+    {
+      "check_id": "metadata_top:evaluator",
+      "error": "forbidden sensory field at metadata.evaluator",
+      "passed": true,
+      "refused": true,
+      "state_hash_after": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_hash_before": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_unchanged": true
+    },
+    {
+      "check_id": "metadata_nested:evaluator",
+      "error": "forbidden sensory field at metadata.outer[0].evaluator",
+      "passed": true,
+      "refused": true,
+      "state_hash_after": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_hash_before": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_unchanged": true
+    },
+    {
+      "check_id": "goal_key:evaluator",
+      "error": "forbidden goal field: evaluator",
+      "passed": true,
+      "refused": true,
+      "state_hash_after": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_hash_before": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_unchanged": true
+    },
+    {
+      "check_id": "metadata_top:gold",
+      "error": "forbidden sensory field at metadata.gold",
+      "passed": true,
+      "refused": true,
+      "state_hash_after": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_hash_before": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_unchanged": true
+    },
+    {
+      "check_id": "metadata_nested:gold",
+      "error": "forbidden sensory field at metadata.outer[0].gold",
+      "passed": true,
+      "refused": true,
+      "state_hash_after": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_hash_before": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_unchanged": true
+    },
+    {
+      "check_id": "goal_key:gold",
+      "error": "forbidden goal field: gold",
+      "passed": true,
+      "refused": true,
+      "state_hash_after": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_hash_before": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_unchanged": true
+    },
+    {
+      "check_id": "metadata_top:label",
+      "error": "forbidden sensory field at metadata.label",
+      "passed": true,
+      "refused": true,
+      "state_hash_after": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_hash_before": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_unchanged": true
+    },
+    {
+      "check_id": "metadata_nested:label",
+      "error": "forbidden sensory field at metadata.outer[0].label",
+      "passed": true,
+      "refused": true,
+      "state_hash_after": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_hash_before": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_unchanged": true
+    },
+    {
+      "check_id": "goal_key:label",
+      "error": "forbidden goal field: label",
+      "passed": true,
+      "refused": true,
+      "state_hash_after": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_hash_before": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_unchanged": true
+    },
+    {
+      "check_id": "metadata_top:split",
+      "error": "forbidden sensory field at metadata.split",
+      "passed": true,
+      "refused": true,
+      "state_hash_after": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_hash_before": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_unchanged": true
+    },
+    {
+      "check_id": "metadata_nested:split",
+      "error": "forbidden sensory field at metadata.outer[0].split",
+      "passed": true,
+      "refused": true,
+      "state_hash_after": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_hash_before": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_unchanged": true
+    },
+    {
+      "check_id": "goal_key:split",
+      "error": "forbidden goal field: split",
+      "passed": true,
+      "refused": true,
+      "state_hash_after": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_hash_before": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_unchanged": true
+    },
+    {
+      "check_id": "metadata_top:target",
+      "error": "forbidden sensory field at metadata.target",
+      "passed": true,
+      "refused": true,
+      "state_hash_after": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_hash_before": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_unchanged": true
+    },
+    {
+      "check_id": "metadata_nested:target",
+      "error": "forbidden sensory field at metadata.outer[0].target",
+      "passed": true,
+      "refused": true,
+      "state_hash_after": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_hash_before": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_unchanged": true
+    },
+    {
+      "check_id": "goal_key:target",
+      "error": "forbidden goal field: target",
+      "passed": true,
+      "refused": true,
+      "state_hash_after": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_hash_before": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_unchanged": true
+    },
+    {
+      "check_id": "metadata_top:test_only",
+      "error": "forbidden sensory field at metadata.test_only",
+      "passed": true,
+      "refused": true,
+      "state_hash_after": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_hash_before": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_unchanged": true
+    },
+    {
+      "check_id": "metadata_nested:test_only",
+      "error": "forbidden sensory field at metadata.outer[0].test_only",
+      "passed": true,
+      "refused": true,
+      "state_hash_after": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_hash_before": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_unchanged": true
+    },
+    {
+      "check_id": "goal_key:test_only",
+      "error": "forbidden goal field: test_only",
+      "passed": true,
+      "refused": true,
+      "state_hash_after": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_hash_before": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_unchanged": true
+    },
+    {
+      "check_id": "metadata_top:truth",
+      "error": "forbidden sensory field at metadata.truth",
+      "passed": true,
+      "refused": true,
+      "state_hash_after": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_hash_before": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_unchanged": true
+    },
+    {
+      "check_id": "metadata_nested:truth",
+      "error": "forbidden sensory field at metadata.outer[0].truth",
+      "passed": true,
+      "refused": true,
+      "state_hash_after": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_hash_before": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_unchanged": true
+    },
+    {
+      "check_id": "goal_key:truth",
+      "error": "forbidden goal field: truth",
+      "passed": true,
+      "refused": true,
+      "state_hash_after": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_hash_before": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_unchanged": true
+    },
+    {
+      "check_id": "goal_value:nan",
+      "error": "goal bias values must be finite",
+      "passed": true,
+      "refused": true,
+      "state_hash_after": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_hash_before": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_unchanged": true
+    },
+    {
+      "check_id": "goal_value:positive_inf",
+      "error": "goal bias values must be finite",
+      "passed": true,
+      "refused": true,
+      "state_hash_after": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_hash_before": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_unchanged": true
+    },
+    {
+      "applied": 0.35,
+      "check_id": "goal_value:finite_extreme_cap",
+      "passed": true,
+      "requested": 1e+300,
+      "state_hash_after": "828b8b29f4afa26afe9313d2ae18c5d1c258154771f1f9cdff7ec916ed42c467",
+      "state_hash_before": "27aa20e9a59359a2eef2068d9d39c8978c632d700b7817c42525db0051eda829",
+      "state_unchanged": false
+    }
+  ],
+  "goal_bias_applied_maximum": 0.35,
+  "irrelevant_false_activation_increase_percentage_points": 0.0,
+  "note": "An exact noise-channel request is capped and does not force every noise probe to emit.",
+  "protocol_id": "c12-sensory-field-v1"
+}

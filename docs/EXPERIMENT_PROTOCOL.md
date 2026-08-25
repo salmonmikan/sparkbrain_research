@@ -475,3 +475,51 @@ deterministic, seeds audit execution invariance rather than stochastic model var
 effect sizes and 95% intervals use 10,000 paired bootstrap resamples of diagnostic-pair blocks
 with bootstrap seed 4311. Seeded rows remain visible in raw artifacts, and a degenerate
 between-seed spread is reported as such rather than promoted as independent replication.
+
+## 11. C12 adaptive sensory-field protocol
+
+Protocol `c12-sensory-field-v1` and run `c12-sensory-field-main-v1` are frozen before
+implementing or evaluating C12. The primary synthetic evaluation uses seeds 2601--2605 and
+paired episode/world blocks. It compares the full computational sensory gate with no-goal,
+no-habituation, no-prediction-error, no-novelty, no-magnitude, and bypass conditions. The
+bootstrap interval is a deterministic 95% paired nonparametric interval over episode/world
+blocks with 10,000 resamples and bootstrap seed 4312. The official Belief-R test is outside C12.
+
+For each continuous input channel, the preregistered salience terms are bounded magnitude
+(`0.15 * min(abs(value), 2.0)`), normalized prediction error / novelty (`1.20 * error / scale`),
+onset (`1.25` only before local initialization), habituation (`-1.25 * habituation`), and bounded
+goal contribution (`0.90 * clamp(request, 0.0, 0.35)`). Final salience is the non-negative sum.
+The trace records requested and applied goal bias separately. The base threshold is `0.90`,
+increases by `0.20` after emission, and relaxes by `0.12` toward base after suppression.
+Prediction, variability, habituation, and release rates remain `0.25`, `0.15`, `0.22`, and
+`0.55`; stable error ratio is `0.35`, minimum scale is `0.10`, and at most eight channels emit
+per sample. Any change to these frozen values requires a new protocol and Decision ID.
+
+G04 passes only when predictable repetition reduces both emitted active Sparks and downstream
+active work by at least 50% relative to the first presentation; unexpected change or omission
+recall is at least 90%; a relevant bounded goal improves low-salience recall over the paired
+no-goal condition; irrelevant false activation rises by no more than 10 percentage points; and
+at least one dishabituation / stimulus-specificity example is retained. No-emission is valid.
+Omission is an explicit adapter observation that a previously expected channel is absent, not
+the mere absence of a key from a partial sample and not evaluator truth. The goal request is a
+channel-local numeric hint only. Evaluator truth, target, label, test-only, contradiction, and
+answer fields are rejected recursively before mutation; any invalid channel or forbidden field
+rejects the whole multi-channel sample atomically.
+
+Every accepted and suppressed channel retains magnitude, prediction error, normalized novelty,
+habituation, requested/applied goal, onset, threshold, final salience, and ablation state.
+`channels_inspected` counts every input/explicit-omission channel read, `features_scored` every
+scored channel, `state_updates` every committed local-state update, `candidate_channels` the
+channels above threshold before top-k, `sparks_emitted` and `downstream_active_work` only emitted
+Sparks, and `suppressed_channels` non-emitted channels. G04's active-work reduction therefore is
+not a claim that dense sensory scoring or total compute became sparse, nor an energy claim.
+Inspection must be state-neutral. Serialization/replay must reproduce Spark IDs,
+accepted/suppressed rows, counters, and state hashes exactly.
+
+The required primary worlds are predictable `HabituationWorld`, `UnexpectedChangeWorld`
+(including explicit omission), a weak goal-target world, and distractor/noise adversarial worlds.
+Stop on a protected-hash change, fewer than five unique seeds, a non-empty output directory,
+goal/sample label leakage, non-atomic rejection, inspection mutation, replay mismatch, missing
+score/ablation trace, or dense work reported as active work. C12 supports only computational
+sensory-gate behavior; it does not establish biological sensory reproduction, semantic
+understanding, or an improved scientific claim grade.
