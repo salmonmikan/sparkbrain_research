@@ -1,5 +1,26 @@
 # Project Status — SparkBrain v0.2.1
 
+## v0.3 C14 — attributable Coalition-driven Ignition
+
+C14 is accepted under preregistered protocol `c14-coalition-gate-v1`, using accepted C13
+merge `06e13975b486548bb17924acc3b82786246ad6e1` and final source commit
+`eb7f542963397eba1b7d9b4a66a7873b3ba17ac4`. The isolated `v03_seed` call path now evaluates
+an attributable bounded Coalition before belief mutation while preserving the legacy gate as
+the default and leaving the v0.2 learned backend unchanged.
+
+Across seeds 2701--2705, all 12 frozen G03 engineering gates passed with no failed seed. The
+run retained 360 raw rows, 15 causal-removal rows, 24 aggregate metrics, 120 seed rows, four
+paired statistics, and 50 machine-resolvable reason references. Independent support Ignition,
+removal reversal, and exact restoration were 1.0; same-ID and correlated-group inflation were
+0; contradiction reduced the score by 0.1296997075145081; and G1 differed from both frozen
+probability controls on 90% of paired primary cases. All six artifacts reproduced byte-for-byte
+under a different `PYTHONHASHSEED`, and their derived results were recalculated from raw rows.
+
+This accepts only attributable synthetic Coalition control at fixed logits. It does not show
+external accuracy gain, learned Coalition formation, semantic understanding, biological
+fidelity, or energy efficiency. C06/C08 negative findings, scientific claim grades, protected
+hashes, package 0.2.1, persisted schema 0.2, and release metadata remain unchanged.
+
 ## v0.3 C13 — evidence ledger and oracle entity-scope diagnosis
 
 C13 is locally accepted under preregistered protocol `c13-evidence-entity-v1`, using accepted

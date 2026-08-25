@@ -707,3 +707,32 @@ contract correction only.
   - `run_manifest.json`: `a2dd2b76731476712a0964f4c6b8bd81b12e19ef77c45ab493cbb172fd46b7c3`
 - Claim-grade impact: unchanged. C06/C08 negative results, protected hashes, package 0.2.1,
   persisted schema 0.2, and release metadata remain unchanged.
+
+## 2026-08-26 — R-V03-0006 — C14 attributable Coalition-gate acceptance
+
+- Dependency/source: accepted C13 merge `06e13975b486548bb17924acc3b82786246ad6e1`;
+  final C14 source `eb7f542963397eba1b7d9b4a66a7873b3ba17ac4`
+- Protocol/run: `c14-coalition-gate-v1` / `c14-coalition-gate-main-v1`
+- Seeds/statistics: 2701--2705; 10,000 paired bootstrap resamples; bootstrap seed 4314
+- Engineering result: all 12 frozen G03 gates passed; failed seeds 0
+- Raw retention: 360 raw rows, 15 causal-removal rows, 24 aggregate metrics, 120 seed rows,
+  four paired statistics, and 50 reason references
+- Causal/invariance results: independent-support Ignition 1.0; removal reversal 1.0; exact
+  restoration 1.0; same-ID score delta 0.0; correlated-group inflation 0.0;
+  contradiction score delta -0.1296997075145081
+- Comparator result: G1 differed from both `G0_probability_margin` and
+  `G1_no_coalition_ablation` on 0.9 of paired primary cases; fixed logits were unchanged
+- Reproduction: all six checked-in artifacts reproduced byte-for-byte under a different
+  `PYTHONHASHSEED`, and independent raw-only recalculation matched every derived output
+- Artifact SHA-256:
+  - `causal_evidence_removal.jsonl`: `f11aa38ac50a23665b7d9f21b87b11352c41842a396a679b1353f05e7b3e3e97`
+  - `fixed_logit_interventions.jsonl`: `45c66151abed1d25badfa3755ca692256314eb03f1f8b33ef29f6b6f1b15b2ec`
+  - `gate_ablation_metrics.json`: `b7030b45f79c388d5ba5a2bc422d3b0a744de5ee2bb91d5ca8f8323be65eb514`
+  - `no_ignition_reasons.json`: `ea4fbd34976a083509253570622691ff81395ea0420bd572dbd121bd2f52dd16`
+  - `protocol.json`: `aa5e405204832f5b76be2f9d7a1ad648f36b17b8309596c4a105e4d37fd344d0`
+  - `report.md`: `19a666bd41567fbc60f1c8db94516224606fac2506522290f3217ed0efa966cb`
+- Negative/boundary result: this is a fixed-logit, controlled-synthetic engineering result.
+  It does not establish external accuracy improvement, learned Coalition formation, semantic
+  understanding, biological fidelity, or energy efficiency.
+- Claim-grade impact: unchanged. C06/C08 negative results, protected hashes, package 0.2.1,
+  persisted schema 0.2, and release metadata remain unchanged.
