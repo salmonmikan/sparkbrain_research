@@ -431,3 +431,25 @@ numerical evaluation had not been executed when this decision was recorded.
 implementation review closed the protocol-authenticity, call-graph, artifact-schema, and
 failed-seed blockers. It changes no fixture, score, weight, threshold, seed, expected outcome,
 metric definition, protected artifact, or claim boundary.
+
+## D-V03-0015 — Record the stopped C14 attempt and repin the metric wiring fix
+
+**Decision:** The first authorized C14 runner attempt under source pin `307bcb56...` stopped
+before artifact publication when `_metric_rows` passed a complete raw row to a helper that
+requires its nested decision object, raising `KeyError: 'ignited'`. The atomic staging directory
+was removed; the requested output path did not exist afterward; no metric, gate result, report,
+or numerical artifact was printed or committed. Preserve this failed attempt in the decision
+history rather than treating it as an official result.
+
+Repair only the raw-row-to-decision wiring. The initial narrow fix `d040539...` corrected metric
+rows but independent audit found the same error in paired statistics and engineering gates before
+any second official attempt. Final source commit
+`eb7f542963397eba1b7d9b4a66a7873b3ba17ac4` corrects every affected call site. A write-free
+in-memory regression executes raw evaluation, metrics, paired statistics, aggregate and per-seed
+gates, and failed-seed attribution with exact counts `360 / 15 / 24 / 120 / 4 / 12`. Focused
+tests pass and an independent re-audit confirms all seven decision-difference call sites receive
+decision objects. Repin C14 to `eb7f542...` before the next and only remaining official attempt.
+
+**Reason:** This is a mechanical acceptance-calculation correction after a fail-closed attempt,
+not a result-driven protocol change. It changes no fixture, score, weight, threshold, seed,
+expected outcome, metric formula, engineering gate, protected artifact, or claim boundary.

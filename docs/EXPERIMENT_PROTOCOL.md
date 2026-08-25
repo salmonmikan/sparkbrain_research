@@ -676,3 +676,10 @@ runner. Protocol authenticity is anchored to preregistration commit
 `ce3fc31531f5ea7689cfcd3b07354508a67af9463ed3b9e1eebb613e0e9c4c8a`;
 only the source pin, execution flag, and base identity fields may differ. Focused mutation,
 tamper, schema, per-seed failure, legacy, and guard tests passed before this authorization.
+
+The first authorized runner attempt stopped atomically with `KeyError: 'ignited'` before any
+artifact or numerical result was published because cross-condition calculation passed raw rows
+instead of their nested decision objects. Decision `D-V03-0015` records that failed attempt and
+the independently audited mechanical correction. The final source pin is
+`eb7f542963397eba1b7d9b4a66a7873b3ba17ac4`; its write-free full calculation regression retains
+exact counts `360 / 15 / 24 / 120 / 4 / 12` and changes no frozen scientific value.
