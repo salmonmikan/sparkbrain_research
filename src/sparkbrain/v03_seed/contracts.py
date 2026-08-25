@@ -169,7 +169,7 @@ class PerceptualSpark:
             ("evidence_id", self.evidence_id),
             ("source_id", self.source_id),
         ):
-            if not isinstance(value, str) or not value:
+            if not isinstance(value, str) or not value.strip():
                 raise ValueError(f"{name} must be a non-empty string")
         for name, value in (
             ("time", self.time),
@@ -281,8 +281,8 @@ class EvidenceRecord:
             ("entity_key", self.entity_key),
             ("hypothesis_id", self.hypothesis_id),
         ):
-            if not value:
-                raise ValueError(f"{name} must not be empty")
+            if not isinstance(value, str) or not value.strip():
+                raise ValueError(f"{name} must be a non-empty string")
         if self.polarity not in {"support", "contradict", "neutral"}:
             raise ValueError("polarity must be support, contradict, or neutral")
         if (
@@ -300,7 +300,8 @@ class EvidenceRecord:
         ):
             raise ValueError("evidence strength must be finite and non-negative")
         if self.correlation_group is not None and (
-            not isinstance(self.correlation_group, str) or not self.correlation_group
+            not isinstance(self.correlation_group, str)
+            or not self.correlation_group.strip()
         ):
             raise ValueError("correlation_group must be a non-empty string when present")
         for name, values in (
@@ -313,7 +314,7 @@ class EvidenceRecord:
                 raise ValueError(f"{name} must be a tuple of strings")
             if tuple(sorted(values)) != values or len(set(values)) != len(values):
                 raise ValueError(f"{name} must be sorted and unique")
-            if any(not value for value in values):
+            if any(not value.strip() for value in values):
                 raise ValueError(f"{name} must not contain empty IDs")
         if not self.parent_spark_ids:
             raise ValueError("parent_spark_ids requires at least one resolvable Spark")
@@ -433,7 +434,7 @@ class EvidenceAuditRow:
         if self.action not in {"add", "redelivery_noop", "rejection", "deactivate", "restore"}:
             raise ValueError("invalid evidence audit action")
         if any(
-            not isinstance(value, str) or not value
+            not isinstance(value, str) or not value.strip()
             for value in (self.branch_id, self.evidence_id, self.reason)
         ):
             raise ValueError("audit branch, evidence, and reason must not be empty")
@@ -451,7 +452,9 @@ class EvidenceAuditRow:
             ("previous_audit_hash", self.previous_audit_hash),
             ("audit_hash", self.audit_hash),
         ):
-            if len(value) != 64 or any(character not in "0123456789abcdef" for character in value):
+            if not isinstance(value, str) or len(value) != 64 or any(
+                character not in "0123456789abcdef" for character in value
+            ):
                 raise ValueError(f"{name} must be a lowercase SHA-256")
 
     def to_canonical_json(self) -> str:
@@ -529,7 +532,7 @@ class EntityBinding:
         if self.schema_version != SENSORY_CONTRACT_VERSION:
             raise ValueError(f"unsupported entity schema version: {self.schema_version}")
         if any(
-            not isinstance(value, str) or not value
+            not isinstance(value, str) or not value.strip()
             for value in (self.binding_id, self.parent_spark_id)
         ):
             raise ValueError("binding_id and parent_spark_id must not be empty")
@@ -538,7 +541,9 @@ class EntityBinding:
             ("entity_slot", self.entity_slot),
             ("entity_key", self.entity_key),
         ):
-            if value is not None and (not isinstance(value, str) or not value):
+            if value is not None and (
+                not isinstance(value, str) or not value.strip()
+            ):
                 raise ValueError(f"{name} must be a non-empty string when present")
         if self.assignment_status not in {"assigned", "unassigned", "uncertain"}:
             raise ValueError("invalid entity assignment status")

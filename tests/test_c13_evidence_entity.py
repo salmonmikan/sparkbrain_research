@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 from dataclasses import replace
 
@@ -107,6 +108,10 @@ def test_strict_contract_round_trips_and_identity_derivations() -> None:
         {"time": 1.0},
         {"strength": 2.0},
         {"metadata": {"fixture": "changed"}},
+        {"source_id": "source-changed"},
+        {"entity_key": "object-b"},
+        {"hypothesis_id": "state-right"},
+        {"parent_spark_ids": ("spark-changed",)},
     ],
 )
 def test_same_id_payload_mutations_are_rejected_atomically(
@@ -155,6 +160,54 @@ def test_invalid_payload_rejection_hash_uses_only_deterministic_envelope() -> No
         assert audit.active_state_hash_after == state_before
         assert ledger.active_state_hash() == state_before
     assert payload_hashes[0] == payload_hashes[1]
+
+
+def test_legacy_unknown_parent_rejection_changes_only_audit() -> None:
+    from sparkbrain.v03_seed import EvidenceContribution
+
+    ledger = EvidenceLedger()
+    before = json.loads(ledger.serialize_state())
+    with pytest.raises(ValueError, match="unknown parent evidence"):
+        ledger.add(
+            EvidenceContribution(
+                "legacy-child",
+                "legacy-source",
+                "state-left",
+                0.0,
+                support=1.0,
+                parent_ids=("missing-parent",),
+            )
+        )
+    after = json.loads(ledger.serialize_state())
+    for key in (
+        "active",
+        "duplicate_deliveries",
+        "records",
+        "sample_ids",
+        "spark_to_samples",
+    ):
+        assert after[key] == before[key]
+    assert len(after["audit"]) == len(before["audit"]) + 1
+
+
+@pytest.mark.parametrize(
+    ("field", "invalid"),
+    [
+        ("evidence_id", 1),
+        ("evidence_id", "   "),
+        ("source_id", 1),
+        ("source_id", "\t"),
+        ("entity_key", 1),
+        ("entity_key", " "),
+        ("hypothesis_id", 1),
+        ("hypothesis_id", "\n"),
+    ],
+)
+def test_evidence_identity_fields_require_nonblank_strings(
+    field: str, invalid: object
+) -> None:
+    with pytest.raises(ValueError):
+        replace(record("ev-1"), **{field: invalid}).validate()
 
 
 def test_unknown_self_and_cycle_lineage_fail_closed() -> None:
@@ -242,6 +295,33 @@ def test_audit_rows_have_exact_fields_and_strict_hash_chain_round_trip() -> None
         previous = row.audit_hash
     restored = EvidenceLedger.from_serialized_state(ledger.serialize_state())
     assert restored.serialize_state() == ledger.serialize_state()
+
+
+def test_serialized_record_key_must_equal_nested_evidence_id() -> None:
+    ledger = ledger_with_lineage()
+    ledger.add(record("ev-1"))
+    state = json.loads(ledger.serialize_state())
+    state["records"]["ev-other"] = state["records"].pop("ev-1")
+    state["active"]["ev-other"] = state["active"].pop("ev-1")
+    payload = json.dumps(state, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    with pytest.raises(ValueError, match="invalid EvidenceLedger state"):
+        EvidenceLedger.from_serialized_state(payload)
+
+
+def test_rehashed_semantic_audit_tamper_is_rejected() -> None:
+    ledger = ledger_with_lineage()
+    ledger.add(record("ev-1"))
+    ledger.deactivate("ev-1", at_time=1.0)
+    state = json.loads(ledger.serialize_state())
+    audit = state["audit"][-1]
+    audit["before_active"] = False
+    unsigned = {key: value for key, value in audit.items() if key != "audit_hash"}
+    audit["audit_hash"] = hashlib.sha256(
+        json.dumps(unsigned, sort_keys=True, separators=(",", ":")).encode()
+    ).hexdigest()
+    payload = json.dumps(state, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    with pytest.raises(ValueError, match="invalid EvidenceLedger state"):
+        EvidenceLedger.from_serialized_state(payload)
 
 
 def test_binding_conditions_are_separate_and_e2_is_rejected() -> None:

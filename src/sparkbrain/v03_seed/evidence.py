@@ -92,7 +92,12 @@ class EvidenceLedgerConfig:
 
 
 class EvidenceLedger:
-    """Immutable records, transitive active state, and an append-only audit chain."""
+    """C13 immutable ledger with a semantic audit chain.
+
+    ``EvidenceContribution`` input is a v0.2 compatibility boundary. New C13
+    adapters must construct strict ``EvidenceRecord`` values and deterministic
+    IDs before calling this ledger.
+    """
 
     def __init__(self, config: EvidenceLedgerConfig | None = None) -> None:
         self.config = config or EvidenceLedgerConfig()
@@ -171,11 +176,6 @@ class EvidenceLedger:
             )
             raise ValueError(str(exc) or reason_code) from exc
 
-        if isinstance(row, EvidenceContribution):
-            sample_id = f"legacy-sample:{record.evidence_id}"
-            spark_id = record.parent_spark_ids[0]
-            self.register_sample(sample_id)
-            self.register_spark(spark_id, (sample_id,))
         previous = self._records.get(record.evidence_id)
         payload_hash = _sha256(record.to_canonical_json())
         if previous is not None:
@@ -207,7 +207,14 @@ class EvidenceLedger:
             return
 
         try:
-            self._validate_lineage(record)
+            allowed_sparks = (
+                {record.parent_spark_ids[0]}
+                if isinstance(row, EvidenceContribution)
+                else set()
+            )
+            self._validate_lineage(record, allowed_sparks=allowed_sparks)
+            if isinstance(row, EvidenceContribution):
+                self._preflight_legacy_registry(record)
         except EvidenceRejection as exc:
             self._audit_rejection(
                 attempted=row,
@@ -219,6 +226,11 @@ class EvidenceLedger:
                 state_hash=self.active_state_hash(),
             )
             raise
+        if isinstance(row, EvidenceContribution):
+            sample_id = f"legacy-sample:{record.evidence_id}"
+            spark_id = record.parent_spark_ids[0]
+            self.register_sample(sample_id)
+            self.register_spark(spark_id, (sample_id,))
         before = self.active_state_hash()
         self._records[record.evidence_id] = record
         self._active[record.evidence_id] = True
@@ -409,10 +421,14 @@ class EvidenceLedger:
             ledger._spark_to_samples = {
                 key: tuple(parents) for key, parents in value["spark_to_samples"].items()
             }
-            ledger._records = {
-                key: EvidenceRecord.from_canonical_json(_canonical_json(record))
-                for key, record in value["records"].items()
-            }
+            ledger._records = {}
+            for key, record_value in value["records"].items():
+                record = EvidenceRecord.from_canonical_json(
+                    _canonical_json(record_value)
+                )
+                if key != record.evidence_id:
+                    raise ValueError("record map key must equal nested evidence_id")
+                ledger._records[key] = record
             ledger._active = dict(value["active"])
             ledger._audit = [
                 EvidenceAuditRow.from_canonical_json(_canonical_json(row))
@@ -551,7 +567,9 @@ class EvidenceLedger:
             state_hash_after=state_hash,
         )
 
-    def _validate_lineage(self, record: EvidenceRecord) -> None:
+    def _validate_lineage(
+        self, record: EvidenceRecord, *, allowed_sparks: set[str] | None = None
+    ) -> None:
         if record.evidence_id in record.parent_evidence_ids:
             raise EvidenceRejection(
                 "self_parent", "evidence cannot cite itself as a parent"
@@ -561,7 +579,11 @@ class EvidenceLedger:
             raise EvidenceRejection(
                 "unknown_parent_evidence", "unknown parent evidence IDs"
             )
-        unknown_sparks = set(record.parent_spark_ids) - self._spark_to_samples.keys()
+        unknown_sparks = (
+            set(record.parent_spark_ids)
+            - self._spark_to_samples.keys()
+            - (allowed_sparks or set())
+        )
         if unknown_sparks:
             raise EvidenceRejection("unknown_parent_spark", "unknown parent Spark IDs")
         self._assert_acyclic(extra=record)
@@ -619,6 +641,8 @@ class EvidenceLedger:
                 or any(item not in self._sample_ids for item in sample_ids)
             ):
                 raise ValueError("invalid Spark-to-sample lineage")
+        if any(key != record.evidence_id for key, record in self._records.items()):
+            raise ValueError("record map key must equal nested evidence_id")
         self._assert_acyclic()
         for record in self._records.values():
             self._validate_lineage(record)
@@ -631,6 +655,94 @@ class EvidenceLedger:
             if audit_hash != _sha256(_canonical_json(payload)):
                 raise ValueError("invalid evidence audit hash")
             previous = row.audit_hash
+        self._replay_audit_semantics()
+
+    def _replay_audit_semantics(self) -> None:
+        replay_records: dict[str, EvidenceRecord] = {}
+        replay_active: dict[str, bool] = {}
+
+        def state_hash() -> str:
+            return _sha256(
+                _canonical_json(
+                    {
+                        "active": {
+                            key: replay_active[key] for key in sorted(replay_active)
+                        },
+                        "config": asdict(self.config),
+                        "records": {
+                            key: json.loads(replay_records[key].to_canonical_json())
+                            for key in sorted(replay_records)
+                        },
+                        "schema_version": EVIDENCE_LEDGER_SCHEMA_VERSION,
+                    }
+                )
+            )
+
+        for row in self._audit:
+            before_hash = state_hash()
+            if row.active_state_hash_before != before_hash:
+                raise ValueError("audit active_state_hash_before is not replayable")
+            current = replay_active.get(row.evidence_id)
+            if row.action == "add":
+                if (
+                    current is not None
+                    or row.before_active is not None
+                    or row.after_active is not True
+                ):
+                    raise ValueError("invalid add audit transition")
+                record = self._records.get(row.evidence_id)
+                if record is None or row.payload_hash != _sha256(
+                    record.to_canonical_json()
+                ):
+                    raise ValueError("add audit payload is unresolved")
+                replay_records[row.evidence_id] = record
+                replay_active[row.evidence_id] = True
+            elif row.action == "redelivery_noop":
+                if (
+                    current is None
+                    or row.before_active is not current
+                    or row.after_active is not current
+                ):
+                    raise ValueError("invalid redelivery audit transition")
+                if row.payload_hash != _sha256(
+                    replay_records[row.evidence_id].to_canonical_json()
+                ):
+                    raise ValueError("redelivery audit payload mismatch")
+            elif row.action == "deactivate":
+                if (
+                    current is not True
+                    or row.before_active is not True
+                    or row.after_active is not False
+                ):
+                    raise ValueError("invalid deactivate audit transition")
+                if row.payload_hash != _sha256(
+                    replay_records[row.evidence_id].to_canonical_json()
+                ):
+                    raise ValueError("deactivate audit payload mismatch")
+                replay_active[row.evidence_id] = False
+            elif row.action == "restore":
+                if (
+                    current is not False
+                    or row.before_active is not False
+                    or row.after_active is not True
+                ):
+                    raise ValueError("invalid restore audit transition")
+                if row.payload_hash != _sha256(
+                    replay_records[row.evidence_id].to_canonical_json()
+                ):
+                    raise ValueError("restore audit payload mismatch")
+                replay_active[row.evidence_id] = True
+            elif row.action == "rejection":
+                if row.before_active is not row.after_active:
+                    raise ValueError("rejection audit must not change active state")
+                if current is not None and row.before_active is not current:
+                    raise ValueError("rejection audit active state mismatch")
+            else:
+                raise ValueError("unknown audit action")
+            if row.active_state_hash_after != state_hash():
+                raise ValueError("audit active_state_hash_after is not replayable")
+        if replay_records != self._records or replay_active != self._active:
+            raise ValueError("audit replay does not reconstruct final active state")
 
     @staticmethod
     def _validate_intervention_time(at_time: float, record: EvidenceRecord) -> None:
@@ -655,6 +767,16 @@ class EvidenceLedger:
         except (TypeError, ValueError):
             return 0.0
         return event_time if math.isfinite(event_time) and event_time >= 0 else 0.0
+
+    def _preflight_legacy_registry(self, record: EvidenceRecord) -> None:
+        sample_id = f"legacy-sample:{record.evidence_id}"
+        spark_id = record.parent_spark_ids[0]
+        previous = self._spark_to_samples.get(spark_id)
+        if previous is not None and previous != (sample_id,):
+            raise EvidenceRejection(
+                "legacy_lineage_conflict",
+                "legacy synthetic Spark lineage conflicts with existing registry",
+            )
 
     @staticmethod
     def _legacy_record(row: EvidenceContribution) -> EvidenceRecord:
