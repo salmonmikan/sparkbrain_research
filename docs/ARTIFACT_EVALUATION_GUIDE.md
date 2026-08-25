@@ -14,11 +14,14 @@ specialization also remains negative, and CL-007/CL-008 remain E0.
 
 1. Acquire/install the pinned environment while network access is allowed.
 2. Disconnect or block network access.
-3. Run python scripts/reproduce_release.py --offline --output <LOCAL_OUTPUT>.
-4. Confirm run_manifest.json status is pass, offline_mode is true, and network_operations is empty.
-5. Confirm primary_subset_is_full_evaluation is false.
-6. Run python scripts/validate_release.py --preparation-only and confirm preparation_status is
-   pass while public status is blocked only by the owner license decision.
+3. Run python scripts/local_readiness_check.py.
+4. Run python scripts/reproduce_release.py --offline --output <LOCAL_OUTPUT>.
+5. Confirm run_manifest.json status is pass, offline_mode is true, and network_operations is empty.
+6. Confirm primary_subset_is_full_evaluation is false.
+7. Run python scripts/validate_release.py --preparation-only and confirm integrity,
+   preparation, and evidence problem arrays are empty; the owner license array is the sole blocker.
+8. Run python -m pytest -q as the runtime phase. For another pristine integrity audit, re-extract
+   the archive rather than validating the runtime-used tree.
 
 ## Evidence review
 

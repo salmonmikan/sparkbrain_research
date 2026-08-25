@@ -7,6 +7,7 @@ import sys
 import tomllib
 from pathlib import Path
 
+sys.dont_write_bytecode = True
 ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / "src"
 EXPECTED_PACKAGE_VERSION = "0.2.1"

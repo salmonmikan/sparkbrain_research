@@ -18,6 +18,7 @@ Generated from the append-only results ledger. This index does not replace the f
 | R0012 | C06 official external zero-shot evaluation | Spark BREU was below direct/chance on the official zero-shot run. |
 | R0013 | C01-C10 integrated non-license release candidate | No grade increase inferred. |
 | R0014 | C10 standalone archive and private review correction | No grade increase inferred. |
+| R0015 | C10 final fail-closed integrity correction | No grade increase inferred. |
 
 ## Pending integration
 

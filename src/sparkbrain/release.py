@@ -56,6 +56,7 @@ REQUIRED_PREPARATION_FILES = (
     "artifacts/release/sbom.spdx.json",
 )
 REQUIRED_PUBLIC_FILES = ("LICENSE",)
+OWNER_LICENSE_BLOCKER = "project license has not been selected by the repository owner"
 # Backward-compatible name used by the initial C10 tests.
 REQUIRED_RELEASE_FILES = (*REQUIRED_PUBLIC_FILES, *REQUIRED_PREPARATION_FILES)
 
@@ -699,6 +700,10 @@ def validate_generated_release_evidence(root: Path) -> list[str]:
     return problems
 
 
+def _unique_problems(problems: Iterable[str]) -> list[str]:
+    return list(dict.fromkeys(problems))
+
+
 def preparation_problems(root: Path) -> list[str]:
     problems = [
         f"missing required release artifact: {relative}"
@@ -714,61 +719,101 @@ def preparation_problems(root: Path) -> list[str]:
         else:
             problems.extend(validate_evidence_map(root, evidence_map))
             problems.extend(validate_source_revision(root, evidence_map, label="evidence map"))
+    if all((root / relative).is_file() for relative in REQUIRED_PREPARATION_FILES):
+        problems.extend(validate_generated_release_evidence(root))
+    return _unique_problems(problems)
+
+
+def integrity_problems(root: Path) -> list[str]:
+    problems: list[str] = []
     if (root / RELEASE_METADATA_PATH).is_file() or release_mode(root) == "archive":
         problems.extend(validate_release_metadata(root))
     problems.extend(validate_release_revision_consistency(root))
-    if all((root / relative).is_file() for relative in REQUIRED_PREPARATION_FILES):
-        problems.extend(validate_generated_release_evidence(root))
-    return problems
 
-
-def validate_release_tree(root: Path, *, require_public: bool = True) -> list[str]:
-    problems = preparation_problems(root)
-    selected = project_license_selected(root)
-    evidence_path = root / "artifacts/release/evidence_map.json"
-    if require_public and evidence_path.is_file():
-        try:
-            evidence = json.loads(evidence_path.read_text(encoding="utf-8"))
-        except (UnicodeDecodeError, json.JSONDecodeError):
-            pass
-        else:
-            problems.extend(
-                f"pending release evidence gate: {entry['id']}"
-                for entry in evidence.get("entries", [])
-                if isinstance(entry, dict) and entry.get("status") == "pending"
-            )
-    if require_public and selected:
+    manifest_path = root / MANIFEST_PATH
+    if not manifest_path.is_file():
+        problems.append(f"missing required release artifact: {MANIFEST_PATH}")
+        return _unique_problems(problems)
+    manifest, read_problems = _read_json_object(manifest_path, label="release manifest")
+    problems.extend(read_problems)
+    if manifest is not None:
         problems.extend(
+            verify_release_manifest(root, manifest, require_complete_tracked_tree=True)
+        )
+        manifest_paths = {
+            row.get("path") for row in manifest.get("files", []) if isinstance(row, dict)
+        }
+        leaked = sorted(
+            path
+            for path in manifest_paths
+            if isinstance(path, str) and path.startswith("data/external/")
+        )
+        if leaked:
+            problems.append(f"external dataset cache is included in release: {leaked}")
+    return _unique_problems(problems)
+
+
+def owner_blockers(root: Path) -> list[str]:
+    return [] if project_license_selected(root) else [OWNER_LICENSE_BLOCKER]
+
+
+def evidence_blockers(root: Path) -> list[str]:
+    evidence_path = root / "artifacts/release/evidence_map.json"
+    if not evidence_path.is_file():
+        return []
+    evidence, read_problems = _read_json_object(evidence_path, label="evidence map")
+    if read_problems or evidence is None:
+        return []
+    return [
+        f"pending release evidence gate: {entry['id']}"
+        for entry in evidence.get("entries", [])
+        if isinstance(entry, dict) and entry.get("status") == "pending"
+    ]
+
+
+def release_validation(
+    root: Path, *, require_public: bool = True
+) -> dict[str, list[str]]:
+    integrity = integrity_problems(root)
+    preparation = preparation_problems(root)
+    owners = owner_blockers(root)
+    evidence = evidence_blockers(root) if require_public else []
+    if require_public and not owners:
+        integrity.extend(
             f"missing required release artifact: {relative}"
             for relative in REQUIRED_PUBLIC_FILES
             if not (root / relative).is_file()
         )
-    if not selected:
-        problems.append("project license has not been selected by the repository owner")
-    elif require_public:
-        problems.extend(validate_project_license_metadata(root))
+        integrity.extend(validate_project_license_metadata(root))
+    return {
+        "integrity_problems": _unique_problems(integrity),
+        "preparation_problems": _unique_problems(preparation),
+        "owner_blockers": _unique_problems(owners),
+        "evidence_blockers": _unique_problems(evidence),
+    }
 
-    manifest_path = root / MANIFEST_PATH
-    if manifest_path.is_file():
-        try:
-            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-        except (UnicodeDecodeError, json.JSONDecodeError) as exc:
-            problems.append(f"release manifest is not valid UTF-8 JSON: {exc}")
-        else:
-            problems.extend(
-                verify_release_manifest(root, manifest, require_complete_tracked_tree=True)
-            )
-            manifest_paths = {
-                row.get("path") for row in manifest.get("files", []) if isinstance(row, dict)
-            }
-            leaked = sorted(
-                path
-                for path in manifest_paths
-                if isinstance(path, str) and path.startswith("data/external/")
-            )
-            if leaked:
-                problems.append(f"external dataset cache is included in release: {leaked}")
-    return problems
+
+def non_public_integrity_problems(root: Path) -> list[str]:
+    validation = release_validation(root, require_public=False)
+    return _unique_problems(
+        [
+            *validation["integrity_problems"],
+            *validation["preparation_problems"],
+            *validation["evidence_blockers"],
+        ]
+    )
+
+
+def validate_release_tree(root: Path, *, require_public: bool = True) -> list[str]:
+    validation = release_validation(root, require_public=require_public)
+    return _unique_problems(
+        [
+            *validation["integrity_problems"],
+            *validation["preparation_problems"],
+            *validation["owner_blockers"],
+            *validation["evidence_blockers"],
+        ]
+    )
 
 
 def build_release_archive(root: Path, output: Path, *, source_date_epoch: int) -> dict[str, Any]:

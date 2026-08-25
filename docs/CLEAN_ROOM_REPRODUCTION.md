@@ -19,6 +19,11 @@ Archive mode is a deliberate validation mode, not a fallback that suppresses Git
 Missing or malformed metadata, revision disagreement, unexpected files, cache files, symlinks,
 or hash mismatches fail with a human-readable error.
 
+Validation reports four explicit classes: `integrity_problems`, `preparation_problems`,
+`owner_blockers`, and `evidence_blockers`. `--preparation-only` exits zero only when the first,
+second, and fourth classes are empty. The unselected owner license may remain as the sole
+`owner_blockers` entry with `status: blocked` and `preparation_status: pass`.
+
 ## Offline command
 
 Run from either the repository root or the extracted `sparkbrain_research_v0_2/` directory:
@@ -38,13 +43,32 @@ Reproduction preflight completes before publication, generation occurs in a temp
 and the completed output is published atomically. A failure does not leave a partial
 `status: pass` run manifest.
 
+The order is part of the contract. The validator checks a pristine extracted tree before the
+runtime pytest phase. Pytest disables its cache provider and puts `tmp_path` data in a sibling
+directory without requiring a manual environment variable. Python may
+still create an interpreter cache while importing the test bootstrap, so a later pristine audit
+must use a newly extracted copy. Initial archive cache content remains forbidden; runtime cache
+is never included in `PACKAGE_MANIFEST.json` or a release ZIP.
+
+Before output or staging creation, reproduction performs this preflight order:
+
+1. output-path guard;
+2. metadata schema/hash/version/count validation;
+3. manifest hashes and repository/archive completeness;
+4. cross-file source-revision agreement;
+5. required generated-evidence and primary-subset validation;
+6. primary input hash validation;
+7. local readiness, in-memory rendering, staged hash validation, and atomic rename.
+
 ## Expected result
 
 `reproduce_release.py` exits zero and emits `status: pass`. The primary Markdown table and SVG
 hashes exactly match `artifacts/release/primary_subset.json`. Timing and platform fields are
 descriptive and are not hash-frozen. `validate_release.py --preparation-only` reports preparation
-PASS while public status remains `blocked`; before the owner chooses a license, the sole public
-blocker is the owner license decision.
+PASS with empty integrity/preparation/evidence classes while public status remains `blocked`;
+before the owner chooses a license, the sole public blocker is the owner license decision. Any
+manifest, metadata, revision, provenance, or tree tamper returns `status: invalid`, preparation
+FAIL, exit 1, and no traceback.
 
 ## Private review bundle
 

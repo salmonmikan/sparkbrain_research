@@ -52,8 +52,8 @@
     {
       "artifact_class": "documentation",
       "path": "PACKAGE_CONTENTS.md",
-      "sha256": "108d6ef5a13de68f128e3422d1868d43b76958e8451afc8516d9a927579a1bbe",
-      "size": 4278
+      "sha256": "bc4e60550dd63c585cc9ec319a9b629e4cfbe4925ca449ae6dca018a3c6f1822",
+      "size": 4603
     },
     {
       "artifact_class": "documentation",
@@ -64,8 +64,8 @@
     {
       "artifact_class": "documentation",
       "path": "README.md",
-      "sha256": "81f7066982f45ec3c743ee2c287e4753e4759c70c89cbe2d1fe31528cf941c16",
-      "size": 11013
+      "sha256": "9927617e72816f1aac42d0407e571ed0a1c46e3780c2cad8125878ccfd25f1be",
+      "size": 11378
     },
     {
       "artifact_class": "package-metadata",
@@ -1168,7 +1168,7 @@
     {
       "artifact_class": "generated-release-evidence",
       "path": "artifacts/release/evidence_map.json",
-      "sha256": "03250b57888348ede7e4f57f1a1adf99773a0298b0d7052f561361c233676758",
+      "sha256": "209cb8a7eae2a79ba636aeb8f2166ea85c806942524fdfce385c4a07245b5e09",
       "size": 4931
     },
     {
@@ -1192,13 +1192,13 @@
     {
       "artifact_class": "generated-release-evidence",
       "path": "artifacts/release/provenance.json",
-      "sha256": "f58845b1b268dc5097f56d7034778f2584acdae93509f55a51e129fd9caf9104",
+      "sha256": "9d2b49d48bf592c50d01c2bfa18256d8402f65e69aaff3e91f0b9240caf45e64",
       "size": 1022
     },
     {
       "artifact_class": "generated-release-evidence",
       "path": "artifacts/release/sbom.spdx.json",
-      "sha256": "e218377a4fb67e0ee6f68f40bc230859cd50403b0291c2623badda0ab48592b8",
+      "sha256": "079976f4476aed02aa4212f4fc4264f4df3c313f88a2994cbddbf7599b518d0e",
       "size": 9864
     },
     {
@@ -1324,8 +1324,8 @@
     {
       "artifact_class": "documentation",
       "path": "docs/ARTIFACT_EVALUATION_GUIDE.md",
-      "sha256": "51febe60c465559e6a39ae741708835d672cdd9a18c3611be8a550e657c1ee87",
-      "size": 2335
+      "sha256": "f1af8ed9620a6f6bf12c8e9dffd446096a6dee66eb03ca08af88f83d56a3cfaf",
+      "size": 2556
     },
     {
       "artifact_class": "documentation",
@@ -1366,8 +1366,8 @@
     {
       "artifact_class": "documentation",
       "path": "docs/CLEAN_ROOM_REPRODUCTION.md",
-      "sha256": "be5c65ae2dccaf0a4d8e7391da5ba08101ad486a4b38a88257e1b9717762f940",
-      "size": 3500
+      "sha256": "d4d1d4cd0c1c5447b1b86e9de95cd9c92c6fea7539cdd8bac32932593a656a89",
+      "size": 4979
     },
     {
       "artifact_class": "documentation",
@@ -1378,8 +1378,8 @@
     {
       "artifact_class": "documentation",
       "path": "docs/DECISION_LOG.md",
-      "sha256": "ced3af7076a1b6c2965b6709ae2dd8e86a361bf92dafd6e4fb638846fd11e75f",
-      "size": 5124
+      "sha256": "a86efe386b28f444ea3aeccd1a70bbf74b07de15f1d9a8cb8931ae0c08a315e1",
+      "size": 6144
     },
     {
       "artifact_class": "documentation",
@@ -1438,8 +1438,8 @@
     {
       "artifact_class": "documentation",
       "path": "docs/NEGATIVE_RESULTS_APPENDIX.md",
-      "sha256": "54d529e068edf5b20661ac9dccb887b6c23fe4b3f777700c1f28d73439696440",
-      "size": 1770
+      "sha256": "c620e8c5d8b7c78003d78782dd5b2a5bc36923c88149605a41f6d3e4fa882e69",
+      "size": 1855
     },
     {
       "artifact_class": "documentation",
@@ -1462,14 +1462,14 @@
     {
       "artifact_class": "documentation",
       "path": "docs/PROJECT_STATUS.md",
-      "sha256": "3edf3e6b2f55a90ff4fdfe314185f3156eb24e6d12a474d68eec9aeb6bade038",
-      "size": 11857
+      "sha256": "0e652889163ef0be1d3d37189235b61d2698856a61d7ae89c695712b25862e81",
+      "size": 12220
     },
     {
       "artifact_class": "documentation",
       "path": "docs/RESULTS_LEDGER.md",
-      "sha256": "c50bca7bdabd8e745d7a372715720d37e9040df888ad86d3deed8b7aab70d19b",
-      "size": 25572
+      "sha256": "2196045612c3d1a6b8dfe9684141c340424d884c0b98db4cf3706e4f1347a035",
+      "size": 28079
     },
     {
       "artifact_class": "documentation",
@@ -1756,8 +1756,8 @@
     {
       "artifact_class": "package-metadata",
       "path": "pyproject.toml",
-      "sha256": "59904b227aae7b637601dcc8382b0949c227df7b6e249ffe3d9e8f0d1cf8addd",
-      "size": 1204
+      "sha256": "4aea58e32d59ec6c67befd4767310598a60ccd8330726b27ba0e29d73518afcf",
+      "size": 1280
     },
     {
       "artifact_class": "package-metadata",
@@ -1900,8 +1900,8 @@
     {
       "artifact_class": "reproduction-tooling",
       "path": "scripts/local_readiness_check.py",
-      "sha256": "b1be84f49ee787737fbc9b4b713d355b412917ed0ad3e3f313d8f1fe10378556",
-      "size": 4819
+      "sha256": "5015bbe1b8657dfa18da75ecfb0f4c19397a92ad07ed23838df9129a3002fa21",
+      "size": 4850
     },
     {
       "artifact_class": "reproduction-tooling",
@@ -1924,8 +1924,8 @@
     {
       "artifact_class": "reproduction-tooling",
       "path": "scripts/reproduce_release.py",
-      "sha256": "1ea4bf6258ae39e6fa8ac5d8f3235e4be07635b985986fb7d6f9c0f613966e4f",
-      "size": 5289
+      "sha256": "7361276984d8f6501a2430e9a362e281d09d36c264ecfe30bb3636216281b380",
+      "size": 5618
     },
     {
       "artifact_class": "reproduction-tooling",
@@ -1972,8 +1972,8 @@
     {
       "artifact_class": "reproduction-tooling",
       "path": "scripts/validate_release.py",
-      "sha256": "17f104c26630526bc74e6157810e9bf5de10a8f9e11fdc4bb54d664d2849457e",
-      "size": 1067
+      "sha256": "ccb44073d8d8a32816f1d6010f271ea8d2973a923c6a1c394e94d32f4f9289df",
+      "size": 1435
     },
     {
       "artifact_class": "software",
@@ -2284,8 +2284,8 @@
     {
       "artifact_class": "software",
       "path": "src/sparkbrain/release.py",
-      "sha256": "95e86f0df88c444e749ab705a5a051d6783821c306dfee568186f2c8bdc4f19d",
-      "size": 34931
+      "sha256": "49e5cf1a77c236ecfb0868b06a1c5cbf7331229428ed412429d106aadb7d1a95",
+      "size": 36260
     },
     {
       "artifact_class": "software",
@@ -2452,8 +2452,8 @@
     {
       "artifact_class": "software",
       "path": "tests/test_clean_room_release.py",
-      "sha256": "8b4aed1e690b50e9f618697e43333ac500e1f9b9b602d421aac9fa18a2a2db2d",
-      "size": 5493
+      "sha256": "53820f3019b7c4ec98b8efcfaacef2d988c6355a3deb54e3fc4e0e3f6a36562b",
+      "size": 10254
     },
     {
       "artifact_class": "software",
@@ -2530,8 +2530,8 @@
     {
       "artifact_class": "software",
       "path": "tests/test_release.py",
-      "sha256": "7b96fbb7415db1230c23ddfc4f5a4b06169d686673c672df07e38fa01d3f7cc3",
-      "size": 7388
+      "sha256": "f47db20e96d51ffb3c150e7885e4de29585f3f355023ca313d048fa8b6467a08",
+      "size": 12643
     },
     {
       "artifact_class": "software",
@@ -2542,8 +2542,8 @@
     {
       "artifact_class": "software",
       "path": "tests/test_release_artifacts.py",
-      "sha256": "c37a83b7826317e2bcc8ae03b85369eff1b6ceaa9878f372cceb3615bddcf786",
-      "size": 6696
+      "sha256": "1508cc44939fbee043566bd0aece4cf7fd96bb0184296df0ac6f5803794bfe45",
+      "size": 8521
     },
     {
       "artifact_class": "software",
@@ -2588,7 +2588,7 @@
       "size": 4109
     }
   ],
-  "generated_at": "2026-08-23T16:28:23Z",
+  "generated_at": "2026-08-25T13:30:00+00:00",
   "manifest_excludes": [
     "PACKAGE_MANIFEST.json",
     "RELEASE_METADATA.json",
@@ -2601,6 +2601,6 @@
     "release": "11",
     "system": "Windows"
   },
-  "source_revision": "679f9ff9fc90e88206028d48e8fc69469750e104",
-  "uncompressed_bytes_excluding_manifest": 22355496
+  "source_revision": "6aef0911dc9e363478c23f98241d80d60ac4fd71",
+  "uncompressed_bytes_excluding_manifest": 22375835
 }

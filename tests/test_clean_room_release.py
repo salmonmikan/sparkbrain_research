@@ -10,7 +10,12 @@ from pathlib import Path
 
 import pytest
 
-from sparkbrain.release import RELEASE_METADATA_PATH, sha256_file, tracked_release_paths
+from sparkbrain.release import (
+    RELEASE_METADATA_PATH,
+    release_mode,
+    sha256_file,
+    tracked_release_paths,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 CHILD_SENTINEL = "SPARKBRAIN_CLEAN_ROOM_CHILD"
@@ -31,6 +36,22 @@ def _run(
         f"command failed ({result.returncode}): {command!r}\n"
         f"stdout:\n{result.stdout}\nstderr:\n{result.stderr}"
     )
+    assert "Traceback" not in result.stderr
+    return result
+
+
+def _run_failure(
+    command: list[str], *, cwd: Path, expected: str
+) -> subprocess.CompletedProcess[str]:
+    result = subprocess.run(
+        command,
+        cwd=cwd,
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    assert result.returncode != 0
+    assert expected in result.stdout + result.stderr
     assert "Traceback" not in result.stderr
     return result
 
@@ -72,9 +93,33 @@ def _build_fixture_archive(repository: Path, archive_path: Path) -> None:
             archive.write(repository / relative, arcname=relative)
 
 
+def _tampered_copy(source: Path, parent: Path, name: str) -> Path:
+    destination = parent / name
+    shutil.copytree(source, destination)
+    return destination
+
+
+def _assert_reproduction_preflight_failure(
+    root: Path, output: Path, *, expected: str
+) -> None:
+    _run_failure(
+        [
+            sys.executable,
+            "scripts/reproduce_release.py",
+            "--offline",
+            "--output",
+            str(output),
+        ],
+        cwd=root,
+        expected=expected,
+    )
+    assert not output.exists()
+    assert list(output.parent.glob(f".{output.name}.staging-*")) == []
+
+
 @pytest.mark.skipif(
-    os.environ.get(CHILD_SENTINEL) == "1",
-    reason="the outer clean-room test already verifies the extracted child suite",
+    os.environ.get(CHILD_SENTINEL) == "1" or release_mode(ROOT) == "archive",
+    reason="the outer repository test already verifies the extracted archive suite",
 )
 def test_no_git_archive_runs_full_clean_room_contract(tmp_path: Path) -> None:
     fixture_repo = tmp_path / "fixture-repository"
@@ -117,8 +162,6 @@ def test_no_git_archive_runs_full_clean_room_contract(tmp_path: Path) -> None:
     output = tmp_path / "reproduced-release"
     child_env = {
         **os.environ,
-        CHILD_SENTINEL: "1",
-        "PYTHONDONTWRITEBYTECODE": "1",
         "NO_PROXY": "*",
         "no_proxy": "*",
     }
@@ -149,10 +192,91 @@ def test_no_git_archive_runs_full_clean_room_contract(tmp_path: Path) -> None:
         env=child_env,
     )
     validation_payload = json.loads(validation.stdout)
-    assert validation_payload == {
-        "status": "blocked",
-        "preparation_status": "pass",
-        "problems": ["project license has not been selected by the repository owner"],
-    }
+    assert validation_payload["status"] == "blocked"
+    assert validation_payload["preparation_status"] == "pass"
+    assert validation_payload["integrity_problems"] == []
+    assert validation_payload["preparation_problems"] == []
+    assert validation_payload["evidence_blockers"] == []
+    assert validation_payload["owner_blockers"] == [
+        "project license has not been selected by the repository owner"
+    ]
+    assert validation_payload["problems"] == validation_payload["owner_blockers"]
+
+    readme_tamper = _tampered_copy(extracted, tmp_path, "tamper-readme")
+    with (readme_tamper / "README.md").open("ab") as handle:
+        handle.write(b"tamper")
+    _run_failure(
+        [sys.executable, "scripts/validate_release.py", "--preparation-only"],
+        cwd=readme_tamper,
+        expected="sha256 mismatch: README.md",
+    )
+
+    missing_file = _tampered_copy(extracted, tmp_path, "tamper-missing")
+    (missing_file / "README.md").unlink()
+    _run_failure(
+        [sys.executable, "scripts/validate_release.py", "--preparation-only"],
+        cwd=missing_file,
+        expected="missing or non-regular release file: README.md",
+    )
+
+    unexpected_file = _tampered_copy(extracted, tmp_path, "tamper-unexpected")
+    (unexpected_file / "unexpected.txt").write_text("unexpected\n", encoding="utf-8")
+    _run_failure(
+        [sys.executable, "scripts/validate_release.py", "--preparation-only"],
+        cwd=unexpected_file,
+        expected="archive tree contains unexpected files",
+    )
+
+    metadata_revision = _tampered_copy(extracted, tmp_path, "tamper-metadata-revision")
+    metadata_path = metadata_revision / RELEASE_METADATA_PATH
+    metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+    metadata["source_revision"] = "b" * 40
+    metadata_path.write_text(json.dumps(metadata), encoding="utf-8")
+    _run_failure(
+        [sys.executable, "scripts/validate_release.py", "--preparation-only"],
+        cwd=metadata_revision,
+        expected="release metadata source_revision does not match PACKAGE_MANIFEST.json",
+    )
+    _assert_reproduction_preflight_failure(
+        metadata_revision,
+        tmp_path / "metadata-revision-output",
+        expected="release metadata source_revision does not match PACKAGE_MANIFEST.json",
+    )
+
+    metadata_hash = _tampered_copy(extracted, tmp_path, "tamper-metadata-hash")
+    metadata_path = metadata_hash / RELEASE_METADATA_PATH
+    metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+    metadata["manifest_sha256"] = "0" * 64
+    metadata_path.write_text(json.dumps(metadata), encoding="utf-8")
+    _run_failure(
+        [sys.executable, "scripts/validate_release.py", "--preparation-only"],
+        cwd=metadata_hash,
+        expected="release metadata manifest_sha256 does not match PACKAGE_MANIFEST.json",
+    )
+    _assert_reproduction_preflight_failure(
+        metadata_hash,
+        tmp_path / "metadata-hash-output",
+        expected="release metadata manifest_sha256 does not match PACKAGE_MANIFEST.json",
+    )
+
+    evidence_revision = _tampered_copy(extracted, tmp_path, "tamper-evidence-revision")
+    evidence_path = evidence_revision / "artifacts/release/evidence_map.json"
+    evidence = json.loads(evidence_path.read_text(encoding="utf-8"))
+    evidence["source_revision"] = "b" * 40
+    evidence_path.write_text(json.dumps(evidence), encoding="utf-8")
+    _assert_reproduction_preflight_failure(
+        evidence_revision,
+        tmp_path / "evidence-revision-output",
+        expected="release source_revision values do not match",
+    )
+
+    primary_input = _tampered_copy(extracted, tmp_path, "tamper-primary-input")
+    with (primary_input / "artifacts/benchmarks/benchmark_aggregate.csv").open("ab") as handle:
+        handle.write(b"tamper")
+    _assert_reproduction_preflight_failure(
+        primary_input,
+        tmp_path / "primary-input-output",
+        expected="primary subset input hash mismatch",
+    )
 
     _run([sys.executable, "-m", "pytest", "-q"], cwd=extracted, env=child_env)

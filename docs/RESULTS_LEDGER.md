@@ -485,3 +485,47 @@ external result: Spark BREU is `0.0643`, the language-encoder-only ablation is u
 attribution is N/A. C08 decisiveness, fertility, and specificity remain failed. CL-007 and CL-008
 remain E0. No scientific artifact, negative result, or evidence grade is changed by this packaging
 correction.
+
+---
+
+## 2026-08-25 — R0015 — C10 final fail-closed integrity correction
+
+**Code/base:** final integrity branch from merged corrective `87aa538`; package `0.2.1`, schema
+`0.2`
+
+**Repository commands:** `python -m ruff check .`, `python -m pytest -q`,
+`python scripts/local_readiness_check.py`, `python scripts/validate_bundle.py`,
+`python scripts/validate_prior_art_audit.py`, and
+`python scripts/validate_release.py --preparation-only`
+
+**Archive contract:** fresh no-`.git` extraction; plain local readiness, offline reproduction,
+preparation validation, and pytest commands without manually supplied cache-control variables
+
+### Integrity correction and acceptance
+
+- release results separate integrity, preparation, owner, and evidence problem classes;
+- preparation-only validation exits nonzero for content, tree, metadata, revision, provenance,
+  or generated-evidence tampering; only the owner license blocker may coexist with exit zero;
+- reproduction calls the shared non-public integrity preflight before reading the accepted
+  revision, rendering, or creating its staging/output directory;
+- README byte tamper, bound-file deletion, unexpected file, metadata revision/hash mismatch,
+  evidence revision mismatch, and primary-input tamper all fail without traceback or output;
+- the repository test suite retains injected rename and staged-hash failures to prove that no
+  partial `status: pass` output survives;
+- the repository-side outer integration builds a fresh archive and proves the documented plain
+  no-Git command sequence; repository-only recursive Git setup is skipped in archive mode;
+- the private review builder retains 433 manifest-listed members plus its self-excluded manifest,
+  exact-content validation, deterministic timestamp/order/mode, Unicode, CRC, traversal,
+  duplicate, symlink, cache, external-data, and tamper checks;
+- `tests/test_release.py` freezes the reviewed C06, C08, primary-subset, and claim-register
+  SHA-256 values.
+
+### Boundary and blocker
+
+The runtime pytest phase follows pristine archive validation; a second pristine audit uses a new
+extraction. Cache files remain forbidden in the shipped tree and are not added to the manifest.
+The owner has not selected a license, so no public archive or tag is produced. C06 and C08 remain
+negative, CL-007 and CL-008 remain E0, and the primary subset remains explicitly non-full.
+
+**Claim impact:** no scientific evidence grade increase. This is a release-integrity and command
+contract correction only.

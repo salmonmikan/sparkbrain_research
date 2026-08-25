@@ -12,16 +12,21 @@ import tempfile
 import time
 from pathlib import Path
 
+sys.dont_write_bytecode = True
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from sparkbrain.release import _canonical_json, sha256_file  # noqa: E402
+from sparkbrain.release import (  # noqa: E402
+    _canonical_json,
+    non_public_integrity_problems,
+    sha256_file,
+    source_revision,
+)
 from sparkbrain.release_artifacts import (  # noqa: E402
     PRIMARY_INPUTS,
     primary_rows,
     render_primary_figure,
     render_primary_table,
-    source_revision,
 )
 
 
@@ -38,6 +43,10 @@ def reproduce(root: Path, output: Path, *, offline: bool = True) -> dict[str, ob
             "reproduction output directory must not already exist; "
             "provide a new empty path so the result can be committed atomically"
         )
+
+    integrity = non_public_integrity_problems(root)
+    if integrity:
+        raise ValueError("release integrity preflight failed: " + "; ".join(integrity))
 
     frozen = json.loads(
         (root / "artifacts/release/primary_subset.json").read_text(encoding="utf-8")
@@ -62,7 +71,12 @@ def reproduce(root: Path, output: Path, *, offline: bool = True) -> dict[str, ob
         check=False,
         capture_output=True,
         text=True,
-        env={**os.environ, "NO_PROXY": "*", "no_proxy": "*"},
+        env={
+            **os.environ,
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "NO_PROXY": "*",
+            "no_proxy": "*",
+        },
     )
     if readiness.returncode:
         raise RuntimeError("local readiness failed: " + readiness.stdout + readiness.stderr)

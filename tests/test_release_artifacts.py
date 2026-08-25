@@ -9,7 +9,7 @@ from types import SimpleNamespace
 
 import pytest
 
-from sparkbrain.release import sha256_file
+from sparkbrain.release import release_mode, sha256_file
 from sparkbrain.release_artifacts import (
     build_evidence_map,
     claim_audit,
@@ -19,6 +19,7 @@ from sparkbrain.release_artifacts import (
 )
 
 ROOT = Path(__file__).resolve().parents[1]
+ARCHIVE_RUNTIME = release_mode(ROOT) == "archive"
 
 
 def test_primary_subset_is_deterministic_and_keeps_negative_result() -> None:
@@ -58,6 +59,10 @@ def test_claim_audit_and_evidence_gate() -> None:
     assert audit["pending_evidence_entries"] == []
 
 
+@pytest.mark.skipif(
+    ARCHIVE_RUNTIME,
+    reason="repository suite and pristine archive preflight cover reproduction",
+)
 def test_clean_room_reproduction_does_not_open_socket(tmp_path: Path, monkeypatch) -> None:
     from scripts.reproduce_release import reproduce
 
@@ -88,6 +93,10 @@ def test_reproduction_rejects_non_empty_output_without_touching_it(tmp_path: Pat
     assert sorted(path.name for path in output.iterdir()) == ["keep.txt"]
 
 
+@pytest.mark.skipif(
+    ARCHIVE_RUNTIME,
+    reason="repository suite covers injected failures after pristine archive validation",
+)
 def test_revision_preflight_failure_leaves_no_output_or_staging(
     tmp_path: Path, monkeypatch
 ) -> None:
@@ -106,10 +115,41 @@ def test_revision_preflight_failure_leaves_no_output_or_staging(
     assert list(tmp_path.glob(f".{output.name}.staging-*")) == []
 
 
+def test_integrity_preflight_stops_before_revision_readiness_or_render(
+    tmp_path: Path, monkeypatch
+) -> None:
+    import scripts.reproduce_release as reproduction
+
+    output = tmp_path / "integrity-failure"
+    monkeypatch.setattr(
+        reproduction,
+        "non_public_integrity_problems",
+        lambda root: ["release metadata source_revision does not match PACKAGE_MANIFEST.json"],
+    )
+
+    def should_not_run(*args, **kwargs):  # type: ignore[no-untyped-def]
+        raise AssertionError("reproduction continued after integrity failure")
+
+    monkeypatch.setattr(reproduction, "source_revision", should_not_run)
+    monkeypatch.setattr(reproduction.subprocess, "run", should_not_run)
+    monkeypatch.setattr(reproduction, "primary_rows", should_not_run)
+
+    with pytest.raises(ValueError, match="release integrity preflight failed"):
+        reproduction.reproduce(ROOT, output, offline=True)
+
+    assert not output.exists()
+    assert list(tmp_path.glob(f".{output.name}.staging-*")) == []
+
+
+@pytest.mark.skipif(
+    ARCHIVE_RUNTIME,
+    reason="repository suite covers injected failures after pristine archive validation",
+)
 def test_output_hash_failure_leaves_no_output_or_staging(tmp_path: Path, monkeypatch) -> None:
     import scripts.reproduce_release as reproduction
 
     output = tmp_path / "hash-failure"
+    monkeypatch.setattr(reproduction, "non_public_integrity_problems", lambda root: [])
     monkeypatch.setattr(reproduction, "source_revision", lambda root: "a" * 40)
     monkeypatch.setattr(
         reproduction.subprocess,
@@ -125,6 +165,10 @@ def test_output_hash_failure_leaves_no_output_or_staging(tmp_path: Path, monkeyp
     assert list(tmp_path.glob(f".{output.name}.staging-*")) == []
 
 
+@pytest.mark.skipif(
+    ARCHIVE_RUNTIME,
+    reason="repository suite covers injected failures after pristine archive validation",
+)
 def test_atomic_rename_failure_cleans_staging(tmp_path: Path, monkeypatch) -> None:
     import scripts.reproduce_release as reproduction
 
@@ -144,6 +188,10 @@ def test_atomic_rename_failure_cleans_staging(tmp_path: Path, monkeypatch) -> No
     assert list(tmp_path.glob(f".{output.name}.staging-*")) == []
 
 
+@pytest.mark.skipif(
+    ARCHIVE_RUNTIME,
+    reason="repository suite covers injected failures after pristine archive validation",
+)
 def test_staged_hash_failure_is_not_published(tmp_path: Path, monkeypatch) -> None:
     import scripts.reproduce_release as reproduction
 
