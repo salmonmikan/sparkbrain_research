@@ -176,7 +176,8 @@ are directly tested, while `channels_inspected`, `features_scored`, and `state_u
 dense. The narrow acceptance is therefore reproducible without overstating what emission
 suppression demonstrates. Accepted v0.2.1 protected results and release/schema contracts remain
 unchanged.
-## D-V03-0003 — Freeze the C12-to-C13 lineage boundary and E0/E1 diagnosis
+
+## D-V03-0005 — Freeze the C12-to-C13 lineage boundary and E0/E1 diagnosis
 
 **Decision:** Preregister protocol `c13-evidence-entity-v1` and run
 `c13-evidence-entity-main-v1` before implementing or evaluating C13. Preserve the C12 public
@@ -194,6 +195,10 @@ append-only immutable audit trail rather than deleting lineage. The E0/E1 scient
 frozen before any `E2_learned_slots` implementation or run. Learned slots are only an interface
 in C13 and must expose assigned, unassigned, and uncertain states with permutation-invariant
 evaluation.
+
+The C12 contract is pending an accepted merge. After that merge and before any C13 source
+implementation, add a separate preregistration-amendment commit that pins the accepted C12 merge
+hash without changing the frozen thresholds, seeds, conditions, or claim policy.
 
 **Reason:** C12 and C13 share a serialization boundary, but entity meaning changes by stage.
 Freezing the names, adapter, invariants, thresholds, seeds, and stop rules before results prevents

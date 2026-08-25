@@ -523,7 +523,8 @@ goal/sample label leakage, non-atomic rejection, inspection mutation, replay mis
 score/ablation trace, or dense work reported as active work. C12 supports only computational
 sensory-gate behavior; it does not establish biological sensory reproduction, semantic
 understanding, or an improved scientific claim grade.
-## 11. C13 evidence and entity-binding diagnostic protocol
+
+## 12. C13 evidence and entity-binding diagnostic protocol
 
 Protocol `c13-evidence-entity-v1`, run `c13-evidence-entity-main-v1`, freezes the shared C12/C13
 lineage boundary and the first entity diagnosis before C13 implementation or evaluation. C12

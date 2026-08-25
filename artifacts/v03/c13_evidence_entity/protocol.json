@@ -6,9 +6,9 @@
   "status": "preregistered_not_run",
   "dependencies": {
     "c11": "accepted",
-    "c12_contract": "fbdb1b7",
+    "c12_contract": "pending accepted C12 merge; hash-pin in a preregistration amendment before source implementation",
     "source_implementation_allowed": false,
-    "source_implementation_unblocks_after": "C12 contract integration"
+    "source_implementation_unblocks_after": "accepted C12 merge and separate preregistration amendment pinning its merge hash"
   },
   "shared_boundary": {
     "sensory_sample_fields": [
