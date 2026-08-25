@@ -783,6 +783,16 @@ the protocol; partial seed rows are never published or imputed. All JSON artifac
 failed-seed list and the report names it. Even zero successful seeds produce the exact eight-file
 failure bundle with static configuration and empty data arrays.
 
+D-V03-0022 fixes the exact failure representation. The seven-field scientific-support object
+keeps its normal keys: three variant gates use zero counts, null rates, frozen maxima, and false
+passes; residual rates are null; all five noninferiority effects and all five strict-improvement
+effects are null while margins/directions/minimum remain frozen; `all_gates_passed` is false; and
+all nine bootstrap entries retain 10,000/4365 with null effect/lower/upper. The loss artifact's
+`scientific_gates` is byte-equal to that object. Normal eight engineering-gate rows remain, with
+unavailable observations null and required completion gates false. With zero successful seeds,
+the JSONL is exactly zero bytes, data/derived arrays are empty, model dimensions and the twelve
+static objective configurations remain, and parameter count/optimizer steps are 3132/384.
+
 Primary evaluation is I1 local-compositional input with E1 explicit Oracle entity scope. The
 twelve primary conditions are full separated objectives, nine single-objective ablations,
 one-weighted-CE, and no-residual. Full-only diagnostics cover the other five I0/I1/I2 by E0/E1
