@@ -203,7 +203,7 @@ def _evaluate_condition(
                     "channel_rows": event_rows,
                 }
             )
-        change_recalls.append(mean(recovered))
+        change_recalls.extend(recovered)
 
         goal_outcomes: list[float] = []
         for with_goal in (False, True):

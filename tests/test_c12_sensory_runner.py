@@ -83,7 +83,10 @@ def test_c12_runner_is_deterministic_and_meets_preregistered_g04(tmp_path: Path)
     assert full["metrics"]["stimulus_specificity_recall"] > 0.0
     for interval in full["paired_intervals"].values():
         assert interval["bootstrap_repetitions"] == 10000
-        assert interval["paired_block_count"] == 5
+        assert interval["paired_block_count"] >= 5
+    assert full["paired_intervals"]["change_or_omission_recall"][
+        "paired_block_count"
+    ] == 10
 
 
 def test_raw_trace_separates_dense_and_active_work_and_keeps_all_channels(
