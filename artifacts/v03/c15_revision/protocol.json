@@ -205,7 +205,7 @@
   },
   "determinism": {
     "bootstrap_resamples": 10000,
-    "bootstrap_seed": 4315,
+    "bootstrap_seed": 4365,
     "cpu_only": true,
     "deterministic_algorithms": true,
     "max_threads": 1,
@@ -213,7 +213,7 @@
     "paired_bootstrap_unit": "primary test cell only; variants stay paired and are not independently resampled",
     "bootstrap_algorithm": {
       "comparison_order": ["distractor_change", "same_id_change", "correlated_copy_change", "recovery_full_minus_no_residual", "full_minus_weighted_ce_unnecessary", "full_minus_weighted_ce_missed", "full_minus_weighted_ce_recovery", "full_minus_weighted_ce_no_ignition_f1", "full_minus_weighted_ce_ece"],
-      "draws": "one random.Random(4315) consumed in comparison_order; for each of 10000 resamples draw 5 seed positions with replacement, then for each drawn seed and each world in frozen world_order draw 8 test fixture indices with replacement; all conditions and variants use the same sampled blocks",
+      "draws": "one random.Random(4365) consumed in comparison_order; for each of 10000 resamples draw 5 seed positions with replacement, then for each drawn seed and each world in frozen world_order draw 8 test fixture indices with replacement; all conditions and variants use the same sampled blocks",
       "failed_seed": "if any required seed failed, the comparison effect and interval are null and engineering status is implementation_failure; failed seeds are never dropped or imputed",
       "percentile": "sort 10000 finite effects; rank=(n-1)*p for p=0.025 and 0.975; linearly interpolate floor and ceil ranks"
     },
@@ -296,7 +296,7 @@
     "zero_eligible_rule": "raw loss and both gradient norms are 0.0 with eligible_count 0",
     "one_weighted_ce": "same architecture, initialization, data order, optimizer, steps, checkpoint and calibration budget; CrossEntropyLoss with class weights (1,1,1,1) over alpha/beta/gamma/NO_IGNITION has weight 1 and every C15 auxiliary lambda is exactly zero; transition targets are not exposed"
   },
-  "protocol_id": "c15-revision-objectives-v1",
+  "protocol_id": "c15-revision-objectives-v2",
   "protected_files": {
     "PACKAGE_MANIFEST.json": "ab5c9ce3cc65abc3067d84feab2fc228a440d952239b9e26545a2d62990648a3",
     "RELEASE_METADATA.json": "8e846fe927a6dd3712ec861ced558e11a90a271f80751867553542d47fe4b0f5",
@@ -333,7 +333,7 @@
     "persisted_schema": "0.2",
     "policy": "no package 0.3.0, release manifest regeneration, schema reinterpretation, no-Git archive, or private-bundle work before C20"
   },
-  "run_id": "c15-revision-objectives-main-v1",
+  "run_id": "c15-revision-objectives-main-v2",
   "schema_version": "0.3",
   "metrics": {
     "prediction_transition": "insufficient_information when ignited is false; otherwise recover when the ignited belief equals an older predicted belief separated by a different ignited belief, update when it differs from the immediately previous ignited belief, maintain otherwise",
@@ -428,16 +428,16 @@
     "preflight": "working bytes equal HEAD; base protocol blob hash and authorized amendment match; git diff preregistration-base..c15-source-pin --name-only is nonempty and an exact subset of c15_authorized_paths_before_pin, with no v02_deny_paths, release, schema, C14 protected, or other path; source pin is an ancestor and all runtime/test authorized paths are unchanged from source pin to HEAD except the separately validated protocol-only pin amendment and later result documentation/artifacts; all protected hashes pass before output creation"
   },
   "seeds": {
-    "model": [2801, 2802, 2803, 2804, 2805],
+    "model": [2851, 2852, 2853, 2854, 2855],
     "full_fixture_sha256": {
-      "dev": "f32de6e54e1e99e8645eccbcb73764257400b58d038d4cd562504a222179952a",
-      "test": "603d30f6c6d97bdbcc6c16a22c5ce3f841563adefae5818d8ce338d5a0335347",
-      "train": "4ac416ce49752e90513e4f938d1e63c55b6e84ba468685afa985d4299a6a75de"
+      "dev": "1714829588a605bfa6a38b443f452dc86b2bdcb71929631e7cc26e2c24b975d8",
+      "test": "6cf39d823996bd37c9bec4ee9bc7fd235b51da3e2931d3337190d50c60bfef64",
+      "train": "2d5de7eef61a4d92f8e1a83cf92670e42688f32ac0abe0295d0d736dbce2ff2b"
     },
     "split_manifest_sha256": {
-      "dev": "4527968bff5a230cba0c23c844d3944760391ebb5607a2c4e40eec5dcf430fe3",
-      "test": "373fe3c5d808b87b51e9635fdf954cab79640115d94c7d6db48e7a5e43639cd5",
-      "train": "721c51b582cc783d4855f77618a15b95f09a9a324f5a4740874ded301da1789c"
+      "dev": "e161c6bb652fd35a82e17e22003c792b3001f6b8a9d5c608c2e3e0caffb2b0b6",
+      "test": "e4dc44af60c268ac57ea38904cefd4f31bf6f35ac40178a319aa5d8688648fd5",
+      "train": "0f33808ba39613c998a3015d1cf0aa2adbe2808d0c4c455a8da63dc6fe45489e"
     }
   },
   "splits": {
@@ -448,10 +448,10 @@
       "row_order": "world outer loop in world_order, integer i inner loop ascending",
       "row_fields": "episode_seed=base+100*world_index+i; family_id='fam-'+H('c15-family|'+split+'|'+world+'|'+str(i)); episode_id='ep-'+H('c15-episode|'+split+'|'+world+'|'+str(i)+'|'+str(episode_seed))"
     },
-    "dev": {"episode_seed_base": 250000, "fixtures_per_world": 8},
+    "dev": {"episode_seed_base": 251000, "fixtures_per_world": 8},
     "family_overlap_allowed": false,
-    "test": {"episode_seed_base": 450000, "fixtures_per_world": 8},
-    "train": {"episode_seed_base": 150000, "fixtures_per_world": 16},
+    "test": {"episode_seed_base": 451000, "fixtures_per_world": 8},
+    "train": {"episode_seed_base": 151000, "fixtures_per_world": 16},
     "world_order": ["maintain", "update", "recover", "insufficient"]
   },
   "fixture_generator": {
