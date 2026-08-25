@@ -673,7 +673,7 @@ contract correction only.
 ## 2026-08-26 — R-V03-0005 — C13 evidence/entity engineering acceptance
 
 - Dependency/source: accepted C12 merge `280516fb61eab7c7a96c109baefc82b333fcc367`;
-  frozen C13 source `c56fb85a3e88c39d70a426302d7f7ff6bc66ee2b`
+  frozen C13 source `03b26591c653592ec501177d9628bd2bea9b8ec4`
 - Protocol/run: `c13-evidence-entity-v1` / `c13-evidence-entity-main-v1`
 - Seeds/fixture: 2601--2605; 24 episodes and six ordered events per seed; all five preregistered
   fixture SHA-256 values matched
@@ -693,14 +693,17 @@ contract correction only.
   externally anchored signature or independent trust root
 - Reproduction: a different `PYTHONHASHSEED` reproduced all eight checked-in artifacts
   byte-for-byte
+- Raw retention: `entity_condition_metrics.json` stores all 1,440 ordered execution rows and
+  `evidence_invariant_tests.json` stores the before/after observations used to independently
+  recalculate condition counts, E2 row count, E1 assignment/coverage, lineage, G02, and G05
 - Artifact SHA-256:
   - `causal_removal_examples.jsonl`: `4135080fd29c2d5d0c13aec2aa1fbb6d2c83c5d0b0b8a0246744e2790f7d23b3`
   - `cross_talk_examples.jsonl`: `aff4a6f79df1cc144e1ca6a58ecb18b929efd18fd5fb9921fba757b5a63bbfd7`
-  - `entity_condition_metrics.json`: `c12b33b099545fbc0bc310722a1ac8c02a96a0e57d75400cf0ffa2d384c3e2f2`
-  - `evidence_invariant_tests.json`: `b36ce3a6901be1018880358048d35fbd930cec0c479ac815303f5906c742d5aa`
+  - `entity_condition_metrics.json`: `b0206eddde4ebe4c388df1b5819236cbfbd9ce60ea679cea919da032ff1739ca`
+  - `evidence_invariant_tests.json`: `b59781773bbb6407ef7cf6c3d9568040d7052d0263be4aad7bd7412ef0f8f6dd`
   - `paired_statistics.json`: `7eff9c36d3d55c250565cb03dc2687bfa9dea36ec5499ac6dd4fb8f1f4d992af`
   - `protocol.json`: `e01330571ef77896356cb12b789ff5706e75f635a2d921c7116465dd53a25095`
-  - `report.md`: `a383e52e9ae1ffc78e8949c5e36fcd26857ab6f960f76a9ed3d38ebe3bb1b2f8`
-  - `run_manifest.json`: `9b5b31e46f34a0e44dbc7f890ffc406f974069376bdfbfa003914998f7df6c6c`
+  - `report.md`: `4f3746c36bad498d57937710208a576050d28afeb92dc9282aeb9757342c6bb3`
+  - `run_manifest.json`: `a2dd2b76731476712a0964f4c6b8bd81b12e19ef77c45ab493cbb172fd46b7c3`
 - Claim-grade impact: unchanged. C06/C08 negative results, protected hashes, package 0.2.1,
   persisted schema 0.2, and release metadata remain unchanged.

@@ -3,7 +3,7 @@
 ## v0.3 C13 — evidence ledger and oracle entity-scope diagnosis
 
 C13 is locally accepted under preregistered protocol `c13-evidence-entity-v1`, using accepted
-C12 merge `280516fb` and source commit `c56fb85`. The isolated `v03_seed` path now has strict
+C12 merge `280516fb` and source commit `03b2659`. The isolated `v03_seed` path now has strict
 canonical `EvidenceRecord`, `EntityBinding`, and `EvidenceAuditRow` contracts; deterministic
 evidence/binding identities; correlation-aware immutable evidence; append-only deactivate and
 restore; transitive effective-active lineage; complete Spark-to-sample resolution; semantic
@@ -18,6 +18,9 @@ does not demonstrate autonomous entity discovery, learned binding, semantic unde
 biological fidelity, or external generalization. The audit chain is semantically replayed but is
 not an externally anchored signature. C06/C08 negative findings, scientific claim grades,
 protected hashes, package 0.2.1, schema 0.2, and release metadata remain unchanged.
+The canonical metrics artifact retains all 1,440 condition-separated execution rows, and the
+invariant artifact retains the before/after observations needed to recalculate G02/G05 rather
+than relying on acceptance booleans alone.
 
 ## v0.3 C12 — computational sensory gate
 

@@ -609,10 +609,14 @@ Before the first fixture test, the exact canonical JSON key sets and serializati
 to the protocol so the already-frozen five fixture hashes can be independently reconstructed. No
 fixture value, order, distribution, seed, threshold, metric, or hash was changed.
 
-The frozen run is accepted at source commit `c56fb85a3e88c39d70a426302d7f7ff6bc66ee2b`.
+The frozen run is accepted at source commit `03b26591c653592ec501177d9628bd2bea9b8ec4`.
 All five fixture hashes matched before evaluation; every condition retained 720 execution rows
 and failed-seed lists were empty. G02/G05 passed with E1 cross-talk 0.0, E1 misassignment 0.0,
 and E1 oracle coverage 1.0. E0 cross-talk was 1.0, giving a paired E0-minus-E1 effect and 95%
 bootstrap interval of 1.0 and [1.0, 1.0]. This is the frozen relation-free Oracle diagnosis, not
 autonomous binding. The checked-in eight artifacts reproduced byte-for-byte under a different
 `PYTHONHASHSEED`. E2 remains unimplemented and prohibited until a later preregistered task.
+The metrics artifact retains all 1,440 ordered execution rows, including add-row assignment and
+lineage fields. The invariant artifact retains numeric and canonical before/after observations
+for same-ID, correlation, identity rejection, lineage, orphan, and remove/restore checks so the
+reported aggregates and gates can be independently recalculated from checked-in raw evidence.

@@ -274,7 +274,7 @@ fixture value, ordering rule, distribution, seed, threshold, metric, or expected
 
 **Decision:** Accept C13 G02/G05 for protocol `c13-evidence-entity-v1`, run
 `c13-evidence-entity-main-v1`, and source commit
-`c56fb85a3e88c39d70a426302d7f7ff6bc66ee2b`. Freeze the exact eight artifacts under
+`03b26591c653592ec501177d9628bd2bea9b8ec4`. Freeze the exact eight artifacts under
 `artifacts/v03/c13_evidence_entity/`. Preserve strict immutable evidence identity, transitive
 effective-active lineage, append-only deactivate/restore, semantic audit replay, fixed G0,
 condition-separated E0/E1 rows, deterministic fixture hashes, and E2 execution row count zero.
@@ -288,3 +288,8 @@ discovery, semantic understanding, biological fidelity, or external generalizati
 chain is not an external trust anchor. Independent regeneration under a different
 `PYTHONHASHSEED` matched all eight artifacts byte-for-byte. Existing negative results, scientific
 claim grades, protected hashes, package/schema, and release metadata remain unchanged.
+
+**Raw-evidence correction:** Final acceptance additionally requires all 1,440 ordered execution
+rows and the numeric/canonical G02 before/after observations to remain in the exact eight
+artifacts. This correction changes no protocol, threshold, fixture, seed, metric definition, or
+result; it makes the existing acceptance independently recalculable instead of boolean-only.
