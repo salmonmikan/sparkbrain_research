@@ -578,3 +578,21 @@ are merged; or E2 implementation/evaluation begins before E1 freeze. Mandatory o
 `artifacts/v03/c13_evidence_entity/` are `protocol.json`, `run_manifest.json`,
 `evidence_invariant_tests.json`, `entity_condition_metrics.json`, `paired_statistics.json`,
 `cross_talk_examples.jsonl`, `causal_removal_examples.jsonl`, and `report.md`.
+
+Decision `D-V03-0006`, recorded before any C13 execution or result observation, freezes the
+remaining operational semantics. `active_state_hash` excludes audit/delivery history and must
+return exactly after restore; the append-only `audit_chain_hash` must advance. C13 G0 does not use
+the C14 Coalition gate: it maps effective support minus contradiction through a sigmoid, uses
+positive threshold 0.5, confidence minimum 0.5, probability-margin minimum 0.08, and budget one.
+The relation-free fixture has 24 episodes per seed, two objects, two hypotheses, and balanced
+support, correlated-variant, contradiction, late-redelivery, deactivate, and restore events.
+
+Prediction change is the fixed-time absolute positive-probability delta. Cross-talk counts a
+directed A intervention as affecting non-target B when B probability changes by more than
+`1e-12` or B's canonical summary, active citations, or active-state projection changes. Its
+denominator is all such relation-free directed opportunities. E1 misassignment and coverage use
+eligible evidence rows and eligible Sparks respectively. The E0-minus-E1 scientific gap is a
+point estimate with a descriptive paired bootstrap interval, not an engineering gate. Descendant
+records are not mutated when a parent is deactivated; they are excluded while any transitive
+ancestor is inactive and become eligible again after exact ancestor restore. Full strict contract,
+lineage-registry, aggregation, and artifact-content fields are frozen in the protocol JSON.

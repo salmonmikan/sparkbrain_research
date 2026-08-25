@@ -211,3 +211,32 @@ claim policy.
 Freezing the names, adapter, invariants, thresholds, seeds, and stop rules before results prevents
 silent lineage reassignment, duplicate evidence inflation, post-hoc entity tuning, and an Oracle
 entity result being mistaken for autonomous binding.
+
+## D-V03-0006 — Clarify C13 state, control, metric, and lineage semantics before evaluation
+
+**Decision:** Before any C13 test, runner, experiment, artifact generation, metric observation, or
+threshold result, separate the restorable `active_state_hash` from the append-only
+`audit_chain_hash`; freeze G0 as a non-Coalition probability control using
+`sigmoid(effective_support - effective_contradiction)`, probability threshold 0.5, confidence
+minimum 0.5, margin minimum 0.08, and budget one; and freeze a relation-free 24-episode-per-seed
+MultiObjectWorld over two objects, two hypotheses, and the six event classes in the protocol.
+Define prediction change as fixed-time absolute probability delta. Define cross-talk over directed
+relation-free non-target intervention opportunities, misassignment over E1 evidence rows eligible
+for assignment, and coverage over E1 eligible Sparks. The scientific E0-minus-E1 cross-talk gap
+uses the point estimate with a descriptive paired interval and remains separate from engineering
+acceptance.
+
+Parent deactivation does not rewrite descendants. A row is effectively active only when its own
+flag and every transitive parent flag are active; summary and decision exclude other rows, while
+inactive lineage remains resolvable. Restore re-enables eligible descendants without mutation.
+Unknown parents, self-parenting, and cycles fail closed. Strict `EntityBinding` and
+`EvidenceAuditRow` field inventories, nullable-but-immutable correlation semantics, complete
+Spark-to-sample lineage, condition-separated aggregation, and required artifact contents are
+frozen in `artifacts/v03/c13_evidence_entity/protocol.json`.
+
+**Reason:** The first implementation review found ambiguity in how an exact restored state could
+coexist with a growing audit, what C13's pre-C14 G0 meant, how rates were denominated, and what
+causal parent removal did to descendants. At that point only two uncommitted source drafts existed;
+no test, runner, experiment, artifact, metric, or threshold result had been run or observed. This
+clarification therefore prevents result-driven semantics rather than reacting to results, and it
+changes no preregistered threshold, seed, E0/E1 condition, or claim policy.
