@@ -741,6 +741,12 @@ enables the first official runner. That runner performs training, checkpoint sel
 calibration, and finally one test evaluation in this order. Test, I2 Oracle, and official Belief-R
 cannot influence either dev choice.
 
+The hashed fixture keeps its exact eight-field evidence rows. A frozen boundary adapter derives
+one opaque sample ID and one opaque parent Spark ID per unique evidence ID, registers that lineage,
+and constructs the existing strict schema-0.3 `EvidenceRecord` with empty metadata and parent-
+evidence tuple. Same-ID redelivery reuses the byte-identical record. No condition may invent a
+different lineage adapter or add evaluator fields at this boundary.
+
 Primary evaluation is I1 local-compositional input with E1 explicit Oracle entity scope. The
 twelve primary conditions are full separated objectives, nine single-objective ablations,
 one-weighted-CE, and no-residual. Full-only diagnostics cover the other five I0/I1/I2 by E0/E1
