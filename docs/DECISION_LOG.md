@@ -160,3 +160,19 @@ tuning after evaluation or relabeling dense sensory computation as sparse active
 bounded local hint may alter threshold crossing but cannot manufacture semantic evidence. This
 is a computational sensory-gate test only and does not change accepted v0.2.1 results, protected
 hashes, release/package/schema 0.2 contract, or scientific claim grades.
+
+## D-V03-0004 — Accept C12 at the computational sensory-gate boundary
+
+**Decision:** Accept C12 G04 for protocol `c12-sensory-field-v1` and run
+`c12-sensory-field-main-v1`. Preserve the exact six artifacts under
+`artifacts/v03/c12_sensory_field/`, including all five seeds, paired bootstrap intervals,
+accepted/suppressed channel trace, ablations, explicit omission examples, and bounded-goal
+adversarial rows. Stop C12 here. Do not infer reduced dense total work, energy efficiency,
+biological sensory reproduction, semantic understanding, or a higher claim grade from the
+passed gate.
+
+**Reason:** All preregistered G04 thresholds passed and replay / atomicity / inspection contracts
+are directly tested, while `channels_inspected`, `features_scored`, and `state_updates` remain
+dense. The narrow acceptance is therefore reproducible without overstating what emission
+suppression demonstrates. Accepted v0.2.1 protected results and release/schema contracts remain
+unchanged.

@@ -1,5 +1,25 @@
 # Project Status — SparkBrain v0.2.1
 
+## v0.3 C12 — computational sensory gate
+
+C12 is locally accepted under preregistered protocol `c12-sensory-field-v1` after the accepted
+C11 dependency merge `5bf5050`. The isolated `v03_seed` path now has versioned continuous
+`SensorySample` / `PerceptualSpark` contracts, an adaptive multi-channel sensory gate, bounded
+channel-local goal modulation, explicit omission, complete accepted/suppressed salience trace,
+term ablations, current-input bypass, atomic failure, canonical state serialization, exact replay,
+and state-neutral inspection. Habituation, unexpected change/omission, goal-target,
+distractor/noise, and stimulus-specificity worlds execute locally on CPU.
+
+Across primary seeds 2601--2605, predictable repetition reduced emitted Sparks and downstream
+active work by 100%, change/explicit-omission recall was 100%, bounded-goal recall delta was
++1.0, irrelevant false-activation increase was 0 percentage points, and stimulus-specificity
+recall was 100%. The frozen G04 gates passed. Every channel is still inspected and scored, so
+this is not evidence of reduced dense total work or energy efficiency. It is a computational
+sensory-gate result, not biological sensory reproduction or semantic understanding. C06/C08
+negative findings, scientific claim grades, protected hashes, package 0.2.1, persisted schema
+0.2, and release metadata remain unchanged. C12 stops at this boundary; later tasks require
+their own accepted dependency and preregistration.
+
 ## v0.3 C11 — baseline freeze and input-bottleneck diagnosis
 
 The accepted v0.2.1 baseline is frozen at Git commit `f692c98`, release source revision
@@ -11,8 +31,9 @@ synthetic diagnosis implicates the input path: I2 Oracle accuracy was 1.0 versus
 an Oracle-gap effect of 0.5 and 95% pair-block interval [0.166667, 0.833333]. I1 retained local
 surface structure but did not improve frozen downstream accuracy over I0 and failed the
 high-overlap negation case. This is not evidence of semantic understanding or cognitive-core
-validity. C12 and later tasks remain blocked until v2 is reviewed and accepted. Existing C06/C08
-negative results, claim grades, package/schema, and release metadata are unchanged.
+validity. C11 v2 was reviewed and accepted in merge `5bf5050`, satisfying the C12 dependency.
+Existing C06/C08 negative results, claim grades, package/schema, and release metadata are
+unchanged.
 
 Status date: 2026-08-26
 

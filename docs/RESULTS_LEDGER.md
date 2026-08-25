@@ -633,3 +633,38 @@ contract correction only.
   semantic understanding, autonomous rough-input success, cognitive-core validity, concepts,
   organs, biological fidelity, and external generalization remain unsupported or unevaluated
 - Protected hashes and claim grades: unchanged
+
+## 2026-08-26 — R-V03-0004 — C12 computational sensory-gate acceptance
+
+- Dependency: accepted C11 merge `5bf5050`
+- Protocol/run: `c12-sensory-field-v1` / `c12-sensory-field-main-v1`
+- Seeds: 2601, 2602, 2603, 2604, 2605
+- Statistical method: paired seed/world blocks; 10,000 nonparametric bootstrap resamples;
+  bootstrap seed 4312; 95% intervals
+- Worlds: HabituationWorld, UnexpectedChangeWorld with explicit omission, GoalTargetWorld,
+  DistractorNoiseWorld, and StimulusSpecificityWorld
+- Full-condition result: predictable-repetition emitted-Spark reduction 1.0; downstream-active-
+  work reduction 1.0; change/explicit-omission recall 1.0; bounded-goal low-salience recall delta
+  1.0; irrelevant false-activation increase 0.0 percentage points; stimulus-specificity recall
+  1.0. All frozen G04 gates passed.
+- Omission contract: a previously observed expected channel is explicitly marked absent, scored
+  as value zero against its prediction, then value zero is committed as the latest local value.
+  It is not inferred from a missing key and is not evaluator truth.
+- Engineering evidence: schema-versioned strict canonical sample/Spark contracts; complete
+  per-channel score trace; goal requested/applied cap trace; recursive truth/label/test-only
+  refusal; atomic multi-channel failure; direct bypass; state-neutral inspection; canonical
+  serialization and exact Spark ID/state-hash replay.
+- Negative / limiting evidence retained: bypass eliminates repetition suppression; no-goal
+  removes the goal recall gain; several ablations remain synthetic diagnostics. Every channel is
+  still inspected/scored/updated, so only downstream active work decreased. No total-compute,
+  latency, energy, biological, semantic, or external-generalization claim is supported.
+- Raw rows: 2,590 trace rows and 70 change-recovery example rows under
+  `artifacts/v03/c12_sensory_field/`.
+- Artifact SHA-256:
+  - `ablation_metrics.json`: `08d311e202e06452ec8a742320da9d32421fd047273f5747c3c2bb1f1693c4ec`
+  - `change_recovery_examples.jsonl`: `246fbb500b52ac99900e9cda38da4575ff5ed046916b3e96cee1525c8058f0a8`
+  - `goal_bias_adversarial.json`: `6f7f7c5ad38d7fe33235880958f5393ed922226adbd993bcd8bced6ca8b4ed4f`
+  - `protocol.json`: `73ab1dfccf90feebd460b1811edf513e64e8f5cf3cbef107fe7dd1e13ea41de5`
+  - `raw_trace.jsonl`: `341fe3f56d081223cb1f40096096804782140575335d6fd18bcb040bcfca83a6`
+  - `report.md`: `a21c3e2611b339846b8b6fd41ad86047fde68cd20e06f1c26c3c8b0b0e383098`
+- Claim-grade impact: unchanged. This accepts only the C12 computational sensory gate.
