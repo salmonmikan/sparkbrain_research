@@ -147,6 +147,18 @@ def test_c11_runner_is_deterministic_and_retains_negative_examples(tmp_path: Pat
         "I0_whole_hash"
     ]["mean_similar_pair_similarity"]
     assert metrics["oracle_audit"]["passed"] is True
+    assert metrics["oracle_audit"]["evaluator_label_field_refused"] is True
+    assert metrics["oracle_audit"]["test_only_field_refused"] is True
+    assert metrics["oracle_audit"]["record_id_invariant"] is True
+    statistics = metrics["statistical_analysis"]
+    assert statistics["seed_count"] == 5
+    assert statistics["seed_invariant"] is True
+    assert statistics["seeds"] == [1729, 1730, 1731, 1732, 1733]
+    oracle_gap = statistics["comparisons"]["oracle_accuracy_gap_over_i0"]
+    assert oracle_gap["effect_size"] == 0.5
+    assert oracle_gap["ci_low"] <= oracle_gap["effect_size"] <= oracle_gap["ci_high"]
+    assert len((first / "raw_predictions.jsonl").read_text(encoding="utf-8").splitlines()) == 90
+    assert len((first / "raw_features.jsonl").read_text(encoding="utf-8").splitlines()) == 180
     diagnosis = (first / "diagnosis.md").read_text(encoding="utf-8")
     assert "**implicated**" in diagnosis
     failures = [
@@ -167,3 +179,38 @@ def test_c11_runner_refuses_existing_output(tmp_path: Path) -> None:
     result = _run(output)
     assert result.returncode != 0
     assert (output / "keep.txt").read_text(encoding="utf-8") == "do not overwrite"
+
+
+def test_c11_runner_rejects_fewer_than_five_primary_seeds(tmp_path: Path) -> None:
+    contracts = tmp_path / "contracts"
+    contracts.mkdir()
+    for name in ("protocol.json", "frozen_baseline_hashes.json", "diagnostic_manifest.json"):
+        (contracts / name).write_bytes((CONTRACTS / name).read_bytes())
+    protocol_path = contracts / "protocol.json"
+    protocol = json.loads(protocol_path.read_text(encoding="utf-8"))
+    protocol["seed_list"] = [1729, 1730, 1731, 1732]
+    protocol_path.write_text(json.dumps(protocol), encoding="utf-8")
+    diagnostic_path = contracts / "diagnostic_manifest.json"
+    diagnostic = json.loads(diagnostic_path.read_text(encoding="utf-8"))
+    diagnostic["seed_list"] = protocol["seed_list"]
+    diagnostic_path.write_text(json.dumps(diagnostic), encoding="utf-8")
+    result = subprocess.run(
+        [
+            sys.executable,
+            str(ROOT / "scripts" / "run_c11_input_diagnosis.py"),
+            "--root",
+            str(ROOT),
+            "--contracts",
+            str(contracts),
+            "--output",
+            str(tmp_path / "output"),
+        ],
+        cwd=ROOT,
+        check=False,
+        capture_output=True,
+        env={**os.environ, "PYTHONPATH": str(ROOT / "src")},
+        text=True,
+        encoding="utf-8",
+    )
+    assert result.returncode != 0
+    assert "at least five unique seeds" in result.stderr

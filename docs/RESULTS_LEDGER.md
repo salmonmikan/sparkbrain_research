@@ -581,3 +581,55 @@ contract correction only.
   - `raw_predictions.jsonl`: `a8a0f6e1e3b9a549d1f786f281220c3585e8b089bb3a08ba0c2c7862359e373a`
 - Protected C06/C08/primary/claim hashes: unchanged after C11
 - Claim impact: none; `docs/CLAIMS_REGISTER.md` remains byte-identical
+
+---
+
+## 2026-08-26 — R-V03-0003 — C11 five-seed statistical-completeness audit
+
+- Protocol: `c11-input-bottleneck-v2`; seeds 1729, 1730, 1731, 1732, 1733
+- Reason: independent acceptance review found that v1 met the C11 task criteria but omitted the
+  v0.3 global minimum-five-seed and interval requirements for a primary synthetic comparison
+- Frozen from v1: all six pairs, input tracks, features, labels, threshold 0.5, diagnosis rule,
+  Oracle policy, downstream evaluator, and the exclusion of official Belief-R data
+- Statistical method: 10,000 paired nonparametric bootstrap resamples over diagnostic-pair
+  blocks, 95% interval, bootstrap seeds 4311 and 4312
+- Seed audit: all five deterministic seeded executions produced identical predictions and
+  similarities; this is reported as invariance, not five independent stochastic replications
+- I0/I1/I2 accuracy: 0.5 / 0.5 / 1.0; coverage 1.0 for every track and seed
+- Oracle accuracy gap over I0: effect 0.5, 95% pair-block interval [0.166667, 0.833333]
+- I1 similar-pair retention delta over I0: effect 0.559798, 95% pair-block interval
+  [0.355270, 0.734712]
+- Negative result retained: I1 did not improve accuracy and still misclassified the
+  high-overlap negation pair at similarity 0.737984
+- Oracle audit directly refuses evaluator `label`, `test_only`, recursive forbidden and unknown
+  fields; ordinary text and default Oracle selection remain refused
+- Final run: `artifacts/v03/c11_runs/c11-input-bottleneck-v2-run-003`
+- Independent reproduction: run 004 used a different `PYTHONHASHSEED` and matched all eight
+  checked-in final artifacts byte-for-byte
+- Runs 001–002 are retained as engineering previews before the explicit label/test-only audit
+  fields were added
+- Focused C11/v0.3 tests: 47 passed; full development tree: 280 collected, 275 passed, 5
+  explicit frozen-release skips; Ruff, compileall, local readiness, and prior-art validation passed
+- Direct G00 rollback evidence: the clean accepted `f692c98` main worktree contains no v0.3
+  namespace and its full 232-test suite passed independently
+- Accepted baseline archive SHA-256 was re-read from the original ZIP as
+  `217771f2b602b32d8161017cd10c9db28206fcf35bd85c9a1ef9f71e88653313`; the handoff baseline
+  verifier passed package 0.2.1, schema 0.2, revision `6aef0911dc9e363478c23f98241d80d60ac4fd71`,
+  and all five protected artifacts against the C11 tree
+- Correction to R-V03-0002: its statement that run 005 matched all eight checked-in artifacts
+  was too strong. Independent review found three semantically equal but differently formatted
+  JSON contract files. v2 stores the runner-generated canonical files directly and proves 8/8
+  byte identity.
+- Final artifact SHA-256:
+  - `diagnosis.md`: `c62c8dfdc403ca4f4de9baafed9bf3ef62af6536260444ea067d31d1e843c4f1`
+  - `diagnostic_manifest.json`: `2a363f0e18512544103c5f5922ce5957360456f6288e13a5ad2be32664505a15`
+  - `failure_examples.jsonl`: `2d7bd37db66e193f5d77400bbebcf603dcef4bd8f3d0a70b37cdc9f585a33e29`
+  - `frozen_baseline_hashes.json`: `063465680f8e8e79aa1260b1acbaef44a5405bb012b1671b74cd59050c10bf8b`
+  - `metrics_by_input_track.json`: `061791f784788aba78a89c75013c1720b57c2677376aba5d2564525e96ec66b2`
+  - `protocol.json`: `b774783ffb1fc7e1a67e2234c9544a1013f003a7cc44d9458dbd8cc5298147d6`
+  - `raw_features.jsonl`: `d88bef45dd25d88e8ed8439d004b4e5241a0009fe5f9a9cb7bc5c8952f25227c`
+  - `raw_predictions.jsonl`: `d97d983fdaab2c08b78584090ba72ffb0eff379a3e9e702c5dbe63cfa49cc488`
+- Scientific support remains narrow: the input path is implicated in this synthetic diagnostic;
+  semantic understanding, autonomous rough-input success, cognitive-core validity, concepts,
+  organs, biological fidelity, and external generalization remain unsupported or unevaluated
+- Protected hashes and claim grades: unchanged

@@ -259,12 +259,10 @@
   },
   "oracle_audit": {
     "default_selection_refused": true,
-    "evaluator_label_field_refused": true,
+    "label_shuffle_invariant": true,
     "ordinary_text_refused": true,
     "passed": true,
-    "record_id_invariant": true,
     "recursive_forbidden_fields_refused": true,
-    "test_only_field_refused": true,
     "unknown_fields_refused": true
   },
   "statistical_analysis": {

@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import random
 import shutil
 from collections import defaultdict
 from dataclasses import asdict
@@ -48,14 +49,22 @@ def verify_protected_hashes(root: Path, frozen: dict[str, Any]) -> None:
             raise RuntimeError(f"protected baseline hash changed: {relative}")
 
 
-def _input_record(pair: dict[str, Any], side: str) -> InputRecord:
+def _input_record(pair: dict[str, Any], side: str, *, seed: int) -> InputRecord:
     value = pair[side]
     metadata = {"symbolic_event": value["symbolic_event"]}
-    return InputRecord(f"{pair['pair_id']}:{side}", value["text"], metadata)
+    return InputRecord(f"{seed}:{pair['pair_id']}:{side}", value["text"], metadata)
 
 
-def _feature_row(record: InputRecord, encoded: Any, *, pair_id: str, side: str) -> dict[str, Any]:
+def _feature_row(
+    record: InputRecord,
+    encoded: Any,
+    *,
+    pair_id: str,
+    side: str,
+    seed: int,
+) -> dict[str, Any]:
     return {
+        "seed": seed,
         "pair_id": pair_id,
         "side": side,
         "record_id": record.record_id,
@@ -66,6 +75,108 @@ def _feature_row(record: InputRecord, encoded: Any, *, pair_id: str, side: str) 
         "feature_count": len(encoded.features),
         "input_bytes": encoded.input_bytes,
         "features": dict(encoded.features),
+    }
+
+
+def _percentile(values: list[float], probability: float) -> float:
+    ordered = sorted(values)
+    position = (len(ordered) - 1) * probability
+    lower = int(position)
+    upper = min(lower + 1, len(ordered) - 1)
+    fraction = position - lower
+    return ordered[lower] * (1.0 - fraction) + ordered[upper] * fraction
+
+
+def _paired_block_interval(
+    block_values: dict[str, list[float]],
+    *,
+    repetitions: int,
+    bootstrap_seed: int,
+    confidence_level: float,
+) -> dict[str, Any]:
+    if not block_values:
+        raise ValueError("paired comparison requires at least one pair block")
+    block_effects = [mean(block_values[key]) for key in sorted(block_values)]
+    generator = random.Random(bootstrap_seed)
+    samples = [
+        mean(generator.choice(block_effects) for _ in block_effects)
+        for _ in range(repetitions)
+    ]
+    tail = (1.0 - confidence_level) / 2.0
+    return {
+        "effect_size": mean(block_effects),
+        "confidence_level": confidence_level,
+        "ci_low": _percentile(samples, tail),
+        "ci_high": _percentile(samples, 1.0 - tail),
+        "pair_block_count": len(block_effects),
+        "bootstrap_repetitions": repetitions,
+        "bootstrap_seed": bootstrap_seed,
+    }
+
+
+def _statistical_analysis(
+    prediction_rows: list[dict[str, Any]], protocol: dict[str, Any]
+) -> dict[str, Any]:
+    specification = protocol["statistical_analysis"]
+    seeds = [int(seed) for seed in protocol["seed_list"]]
+    indexed = {
+        (row["condition_id"], int(row["seed"]), row["pair_id"]): row
+        for row in prediction_rows
+    }
+    pair_ids = sorted({row["pair_id"] for row in prediction_rows})
+    accuracy_gap: dict[str, list[float]] = {}
+    retention_delta: dict[str, list[float]] = {}
+    for pair_id in pair_ids:
+        accuracy_gap[pair_id] = [
+            float(indexed[("I2_symbolic_oracle", seed, pair_id)]["correct"])
+            - float(indexed[("I0_whole_hash", seed, pair_id)]["correct"])
+            for seed in seeds
+        ]
+        expected = indexed[("I0_whole_hash", seeds[0], pair_id)]["expected_relation"]
+        if expected == "similar":
+            retention_delta[pair_id] = [
+                float(indexed[("I1_local_compositional", seed, pair_id)]["similarity"])
+                - float(indexed[("I0_whole_hash", seed, pair_id)]["similarity"])
+                for seed in seeds
+            ]
+    repetitions = int(specification["bootstrap_repetitions"])
+    bootstrap_seed = int(specification["bootstrap_seed"])
+    confidence_level = float(specification["confidence_level"])
+    seed_signatures = {
+        seed: tuple(
+            (
+                row["condition_id"],
+                row["pair_id"],
+                row["predicted_relation"],
+                row["similarity"],
+                row["correct"],
+            )
+            for row in prediction_rows
+            if int(row["seed"]) == seed
+        )
+        for seed in seeds
+    }
+    return {
+        "method": specification["interval_method"],
+        "paired_unit": specification["paired_unit"],
+        "seeds": seeds,
+        "seed_count": len(seeds),
+        "seed_invariant": len(set(seed_signatures.values())) == 1,
+        "comparisons": {
+            "oracle_accuracy_gap_over_i0": _paired_block_interval(
+                accuracy_gap,
+                repetitions=repetitions,
+                bootstrap_seed=bootstrap_seed,
+                confidence_level=confidence_level,
+            ),
+            "i1_similar_pair_retention_delta_over_i0": _paired_block_interval(
+                retention_delta,
+                repetitions=repetitions,
+                bootstrap_seed=bootstrap_seed + 1,
+                confidence_level=confidence_level,
+            ),
+        },
+        "interpretation": specification["interpretation"],
     }
 
 
@@ -178,15 +289,35 @@ def _oracle_audit() -> dict[str, bool]:
             )
         )
     )
+    evaluator_label_field_refused = refused(
+        lambda: oracle.encode(
+            InputRecord(
+                "label-field",
+                "plain text",
+                {**valid_metadata, "label": "similar"},
+            )
+        )
+    )
+    test_only_field_refused = refused(
+        lambda: oracle.encode(
+            InputRecord(
+                "test-only-field",
+                "plain text",
+                {**valid_metadata, "test_only": {"fixture": True}},
+            )
+        )
+    )
     first = oracle.encode(InputRecord("label-a", "plain text", valid_metadata))
     second = oracle.encode(InputRecord("label-b", "plain text", valid_metadata))
-    label_shuffle_invariant = first.features == second.features
+    record_id_invariant = first.features == second.features
     checks = {
         "ordinary_text_refused": ordinary_text_refused,
         "unknown_fields_refused": unknown_fields_refused,
         "recursive_forbidden_fields_refused": recursive_forbidden_fields_refused,
+        "evaluator_label_field_refused": evaluator_label_field_refused,
+        "test_only_field_refused": test_only_field_refused,
         "default_selection_refused": default_selection_refused,
-        "label_shuffle_invariant": label_shuffle_invariant,
+        "record_id_invariant": record_id_invariant,
     }
     return {**checks, "passed": all(checks.values())}
 
@@ -219,6 +350,11 @@ def run(*, root: Path, contracts: Path, output: Path) -> dict[str, Any]:
         raise RuntimeError("official Belief-R material is forbidden in C11")
     if tuple(item["condition_id"] for item in protocol["input_tracks"]) != TRACKS:
         raise RuntimeError("input tracks differ from the preregistered order")
+    seeds = [int(seed) for seed in protocol.get("seed_list", [])]
+    if len(seeds) < 5 or len(set(seeds)) != len(seeds):
+        raise RuntimeError("primary C11 comparison requires at least five unique seeds")
+    if diagnostic.get("seed_list") != protocol["seed_list"]:
+        raise RuntimeError("protocol and diagnostic seed lists do not match")
     verify_protected_hashes(root, frozen)
     evaluator = FrozenPairEvaluator(
         similarity_threshold=float(protocol["downstream"]["similarity_threshold"])
@@ -233,27 +369,52 @@ def run(*, root: Path, contracts: Path, output: Path) -> dict[str, Any]:
         )
         track_predictions: list[PairPrediction] = []
         track_features: list[dict[str, Any]] = []
-        for pair in diagnostic["pairs"]:
-            left_input = _input_record(pair, "left")
-            right_input = _input_record(pair, "right")
-            left = frontend.encode(left_input)
-            right = frontend.encode(right_input)
-            left_row = _feature_row(left_input, left, pair_id=pair["pair_id"], side="left")
-            right_row = _feature_row(right_input, right, pair_id=pair["pair_id"], side="right")
-            track_features.extend((left_row, right_row))
-            prediction = evaluator.evaluate(
-                pair_id=pair["pair_id"],
-                expected_relation=pair["expected_relation"],
-                left=left,
-                right=right,
-            )
-            track_predictions.append(prediction)
-            prediction_row = {**asdict(prediction), "family": pair["family"]}
-            raw_predictions.append(prediction_row)
-            if not prediction.correct:
-                failures.append(prediction_row)
+        by_seed: dict[str, Any] = {}
+        for seed in seeds:
+            seed_predictions: list[PairPrediction] = []
+            seed_features: list[dict[str, Any]] = []
+            for pair in diagnostic["pairs"]:
+                left_input = _input_record(pair, "left", seed=seed)
+                right_input = _input_record(pair, "right", seed=seed)
+                left = frontend.encode(left_input)
+                right = frontend.encode(right_input)
+                left_row = _feature_row(
+                    left_input,
+                    left,
+                    pair_id=pair["pair_id"],
+                    side="left",
+                    seed=seed,
+                )
+                right_row = _feature_row(
+                    right_input,
+                    right,
+                    pair_id=pair["pair_id"],
+                    side="right",
+                    seed=seed,
+                )
+                seed_features.extend((left_row, right_row))
+                prediction = evaluator.evaluate(
+                    pair_id=pair["pair_id"],
+                    expected_relation=pair["expected_relation"],
+                    left=left,
+                    right=right,
+                )
+                seed_predictions.append(prediction)
+                prediction_row = {
+                    **asdict(prediction),
+                    "family": pair["family"],
+                    "seed": seed,
+                }
+                raw_predictions.append(prediction_row)
+                if not prediction.correct:
+                    failures.append(prediction_row)
+            track_predictions.extend(seed_predictions)
+            track_features.extend(seed_features)
+            by_seed[str(seed)] = _track_metrics(seed_predictions, seed_features)
         raw_features.extend(track_features)
         metrics[condition_id] = _track_metrics(track_predictions, track_features)
+        metrics[condition_id]["by_seed"] = by_seed
+    metrics["statistical_analysis"] = _statistical_analysis(raw_predictions, protocol)
     metrics["oracle_audit"] = _oracle_audit()
     conclusion, reasons = _diagnose(metrics, protocol)
     negation_failures = [
@@ -265,6 +426,7 @@ def run(*, root: Path, contracts: Path, output: Path) -> dict[str, Any]:
         "conclusion": conclusion,
         "scientific_result": "supported" if conclusion == "implicated" else conclusion,
         "reasons": reasons,
+        "statistical_analysis": metrics["statistical_analysis"],
         "strongest_counterexample": strongest,
         "limitations": [
             "I1 measures local surface overlap, not semantic understanding",
@@ -307,6 +469,8 @@ def run(*, root: Path, contracts: Path, output: Path) -> dict[str, Any]:
                     "- Engineering status: complete",
                     "- Official Belief-R test used: no",
                     "- Oracle leakage audit: pass",
+                    f"- Seeds: {', '.join(str(seed) for seed in seeds)}",
+                    "- Paired interval method: diagnostic-pair block bootstrap",
                     f"- Strongest counterexample: {strongest_text}",
                     "",
                     "## Interpretation",

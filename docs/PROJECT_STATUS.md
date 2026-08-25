@@ -4,12 +4,15 @@
 
 The accepted v0.2.1 baseline is frozen at Git commit `f692c98`, release source revision
 `6aef091`, package `0.2.1`, and persisted schema `0.2`. Protocol
-`c11-input-bottleneck-v1` was preregistered before v0.3 source integration. C11 engineering is
-complete and the synthetic diagnosis implicates the input path: I2 Oracle accuracy was 1.0 versus
-0.5 for I0. I1 retained local surface structure but did not improve frozen downstream accuracy
-over I0 and failed the high-overlap negation case. This is not evidence of semantic understanding
-or cognitive-core validity. C12 and later tasks remain blocked until C11 is reviewed and accepted.
-Existing C06/C08 negative results, claim grades, package/schema, and release metadata are unchanged.
+`c11-input-bottleneck-v2` supersedes the one-seed v1 engineering run for acceptance. It preserves
+the frozen pairs, tracks, threshold, and diagnosis rule while executing seeds 1729–1733 and
+reporting paired diagnostic-pair bootstrap intervals. C11 engineering is complete and the
+synthetic diagnosis implicates the input path: I2 Oracle accuracy was 1.0 versus 0.5 for I0, with
+an Oracle-gap effect of 0.5 and 95% pair-block interval [0.166667, 0.833333]. I1 retained local
+surface structure but did not improve frozen downstream accuracy over I0 and failed the
+high-overlap negation case. This is not evidence of semantic understanding or cognitive-core
+validity. C12 and later tasks remain blocked until v2 is reviewed and accepted. Existing C06/C08
+negative results, claim grades, package/schema, and release metadata are unchanged.
 
 Status date: 2026-08-26
 
