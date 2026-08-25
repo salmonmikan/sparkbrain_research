@@ -639,8 +639,9 @@ contract correction only.
 - Dependency: accepted C11 merge `5bf5050`
 - Protocol/run: `c12-sensory-field-v1` / `c12-sensory-field-main-v1`
 - Seeds: 2601, 2602, 2603, 2604, 2605
-- Statistical method: paired seed/world blocks; 10,000 nonparametric bootstrap resamples;
-  bootstrap seed 4312; 95% intervals
+- Statistical method: paired seed/world episode blocks (10 change/omission blocks; at least five
+  blocks for every primary comparison); 10,000 nonparametric bootstrap resamples; bootstrap
+  seed 4312; 95% intervals
 - Worlds: HabituationWorld, UnexpectedChangeWorld with explicit omission, GoalTargetWorld,
   DistractorNoiseWorld, and StimulusSpecificityWorld
 - Full-condition result: predictable-repetition emitted-Spark reduction 1.0; downstream-active-
@@ -661,7 +662,7 @@ contract correction only.
 - Raw rows: 2,590 trace rows and 70 change-recovery example rows under
   `artifacts/v03/c12_sensory_field/`.
 - Artifact SHA-256:
-  - `ablation_metrics.json`: `08d311e202e06452ec8a742320da9d32421fd047273f5747c3c2bb1f1693c4ec`
+  - `ablation_metrics.json`: `29196c2feaf202cc8a4ce819c53825f891e603385bdfa7c450b3267fe10b537f`
   - `change_recovery_examples.jsonl`: `246fbb500b52ac99900e9cda38da4575ff5ed046916b3e96cee1525c8058f0a8`
   - `goal_bias_adversarial.json`: `6f7f7c5ad38d7fe33235880958f5393ed922226adbd993bcd8bced6ca8b4ed4f`
   - `protocol.json`: `73ab1dfccf90feebd460b1811edf513e64e8f5cf3cbef107fe7dd1e13ea41de5`
