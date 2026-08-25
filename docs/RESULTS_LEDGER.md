@@ -542,3 +542,40 @@ contract correction only.
 - Existing full tests, local readiness, offline reproduction, and release preparation passed
 - Release preparation retained the project-license owner blocker and no other problem
 - C06 and C08 negative results and existing claim grades remain unchanged
+
+## 2026-08-26 — R-V03-0002 — C11 input-bottleneck diagnosis
+
+- Protocol: `c11-input-bottleneck-v1`, seed 1729, six preregistered synthetic pair families
+- Engineering status: complete
+- Scientific result: supported for the narrow statement that the input path is implicated
+- I0 whole-hash: accuracy 0.5, coverage 1.0, mean similar-pair similarity 0.0
+- I1 local-compositional: accuracy 0.5, coverage 1.0, mean similar-pair similarity 0.559798
+- I2 symbolic Oracle: accuracy 1.0, coverage 1.0, mean similar-pair similarity 1.0
+- Oracle gap over I0: 0.5; Oracle leakage/default-selection audit: pass
+- Negative result: I1 did not improve frozen downstream accuracy over I0
+- Strongest counterexample: I1 assigned similarity 0.737984 to the high-overlap negation pair
+- Interpretation: local surface structure is recoverable, but the current I1 diagnostic does not
+  establish meaning, solve rough-input processing, validate the cognitive core, or change C06
+- Official Belief-R test: not read, evaluated, or used for tuning
+- Final run: `artifacts/v03/c11_runs/c11-input-bottleneck-v1-run-002`
+- Independent reproduction: run 003 matched all eight final artifact SHA-256 values exactly
+- Run 001 is retained as an engineering preview before executable Oracle-audit reporting was added
+- Focused v0.3 tests: 46 passed; Ruff and compileall passed
+- Repository collection: 278 tests
+- C11 development tree: 273 passed after separating five release-manifest-bound tests
+- The five release tests fail closed because tracked C11 files are intentionally absent from the
+  frozen v0.2.1 release manifest. The accepted baseline suite passed before editing; release
+  manifests remain unchanged until C20 rather than weakening the integrity validator.
+- Local readiness, bundle validation, and prior-art validation passed. The generated v0.2.1
+  validation manifest was not retained because C11 must not rewrite release evidence.
+- Final artifact hashes:
+  - `diagnosis.md`: `5393bc01666cce4a912981dfba61ac51d7bc82dcf96b5668381c9e7a9268638a`
+  - `diagnostic_manifest.json`: `e85abecf0b9258a9448227f3720747b0db8aa631fd40a4aabf6d9e23ceda68ea`
+  - `failure_examples.jsonl`: `417d1c65764ff2a93ff54fe2a5e55b69dae1805209b5f2c211cda6e176b64075`
+  - `frozen_baseline_hashes.json`: `f12406a826b0143c7ccc28f84f6b480a19b6e1e85fa5c7dc0649a1e429458097`
+  - `metrics_by_input_track.json`: `ea240709b09fcf59efb26bf5c663553e78cedeba2eee1890c27c45f86ff0c733`
+  - `protocol.json`: `4652a53cac9549a8f8aa96091a1d99af79568fa92b0642f98885b328fd311d4f`
+  - `raw_features.jsonl`: `3937e5198d5d73bad18a5df07019e6f8f60cb7b764c88703e7120d02bc5ca757`
+  - `raw_predictions.jsonl`: `a8a0f6e1e3b9a549d1f786f281220c3585e8b089bb3a08ba0c2c7862359e373a`
+- Protected C06/C08/primary/claim hashes: unchanged after C11
+- Claim impact: none; `docs/CLAIMS_REGISTER.md` remains byte-identical
