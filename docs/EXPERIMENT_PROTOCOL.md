@@ -637,3 +637,12 @@ gate, restore is exact, fixed logits never change, and G1 differs from the no-Co
 at least 30% of preregistered paired cases. Coverage, covered accuracy, false Ignition, every raw
 row, counterexample, failed seed, and machine-readable no-Ignition reason are retained. External
 accuracy improvement is explicitly outside the engineering gate.
+
+Decision `D-V03-0010`, recorded before source editing or result observation, freezes the actual
+logits and canonical hash, probability-to-activation mapping, post-stability-update score timing,
+diagnostic settle/evaluate/belief-update call path, G0-equivalent no-Coalition rule, exact case
+generator and five fixture hashes, evidence roles, expected case/reason table, comparator stages,
+point-estimate gates, descriptive bootstrap order, and recalculable 360-row artifact schema. The
+legacy gate remains the default, `c14_bounded_v1` is explicit, and the v0.2 learned backend remains
+unchanged. C14 source may be implemented and tested, but the official runner stays disabled until
+a separate preregistration amendment pins the source-only commit.

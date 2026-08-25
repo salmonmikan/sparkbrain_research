@@ -316,3 +316,27 @@ while logits stay fixed. A probability copy, a post-result threshold reduction, 
 that changes no decision would not establish Coalition causality. External accuracy improvement
 is not required for engineering completion, and the accepted C06/C08 findings, claim grades,
 package/schema, release metadata, and protected artifacts remain unchanged.
+
+## D-V03-0010 — Freeze final C14 call-path, fixture, ablation, and artifact semantics
+
+**Decision:** Before C14 source editing or any result, close the design ambiguities found by three
+independent read-only audits. Freeze actual logits `ln(0.72)` and `ln(0.28)`, their probabilities,
+canonical SHA-256, activation override, post-stability-update scoring, and the diagnostic actual
+path `V03ReferenceLoop.settle -> CoalitionGate.evaluate -> IgnitionDecision -> belief update`.
+Keep the legacy gate as default and enable `c14_bounded_v1` only explicitly. Do not change the
+v0.2 learned backend.
+
+Define no-Coalition as the exact G0 probability/margin decision with evidence constraints removed
+and identical belief side effect. Freeze the canonical 10-case generator and five fixture hashes,
+the exact evidence roles/strengths/times, each case's primary evaluation and expected reason, the
+four paired comparators, both G1 decision-difference gates at 0.30, point-estimate gate policy,
+360-row raw schema, 15 causal-removal rows, protected/source preflight, and source-pin procedure in
+the protocol. `unstable_first_observation` alone uses evaluation one as primary; remove/restore
+uses the removed stage. C13 decay in effective support and the separate C14 freshness term are
+intentional and must both remain visible.
+
+**Reason:** Without these definitions, an implementation could choose its fixture, stability
+timing, ablation behavior, expected negatives, or aggregation after seeing results. The final
+freeze makes the intervention result reconstructible and preserves an honest negative result if
+the preregistered G03 gates fail. Source implementation may begin, but runner execution remains
+forbidden until a separate amendment pins the source-only commit.
