@@ -240,3 +240,27 @@ causal parent removal did to descendants. At that point only two uncommitted sou
 no test, runner, experiment, artifact, metric, or threshold result had been run or observed. This
 clarification therefore prevents result-driven semantics rather than reacting to results, and it
 changes no preregistered threshold, seed, E0/E1 condition, or claim policy.
+
+## D-V03-0007 — Freeze the final C13 fixture, decision, identity, rejection, and slot rules
+
+**Decision:** Still before any C13 test, runner, experiment, artifact, or numerical result, freeze
+the 24 episodes per seed to the exact deterministic generator and per-seed SHA-256 values in the
+protocol. Every episode has one target selected by the frozen seed/index parity rules and exactly
+six ordered events: primary support, correlated support, exact late redelivery, contradiction,
+primary deactivation, and exact restore, with frozen times, strengths, sources, and correlation
+groups.
+
+G0 sorts hypotheses lexicographically, keeps candidates meeting probability 0.5, confidence 0.5,
+and margin 0.08, chooses the highest probability with lexical tie-break under budget one, and
+otherwise abstains. Evidence identity is the exact canonical record, including schema, metadata,
+nullable correlation, lineage, entity, and hypothesis. Evidence and binding IDs use the frozen
+canonical SHA-256 derivations. Invalid payload rejection hashes a canonical type/reason envelope,
+never raw invalid values or runtime `repr`. Slot scoring uses maximum-weight contingency matching,
+zero-weight rectangular padding, lexical tie-break, assigned-only accuracy, separately reported
+unassigned/uncertain/coverage, and an exact consecutive-assigned-pair switch denominator.
+
+**Reason:** A read-only design audit found five remaining choices that could otherwise be selected
+after seeing behavior: fixture distribution, multi-hypothesis selection, ID scope, hashing of
+non-JSON rejection, and permutation matching. Freezing them now closes those degrees of freedom.
+No test or result had yet been executed or observed, and no earlier threshold, seed, condition, or
+claim policy is changed.

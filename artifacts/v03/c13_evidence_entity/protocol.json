@@ -286,6 +286,87 @@
       "e2_execution_rows_allowed": 0
     }
   },
+  "final_pre_execution_freeze": {
+    "decision_id": "D-V03-0007",
+    "fixture_generator": {
+      "canonical_document": "UTF-8 JSON with sort_keys=true, separators comma/colon, fields schema_version, seed, episodes",
+      "episodes_per_seed": 24,
+      "episode_id": "seed-{seed}-episode-{episode_index:02d}",
+      "target_entity": "object-a when (episode_index + seed) modulo 2 is zero, otherwise object-b",
+      "target_hypothesis": "state-left when (floor(episode_index / 2) + seed) modulo 2 is zero, otherwise state-right",
+      "base_time": "episode_index * 10",
+      "event_order": [
+        "add_primary",
+        "add_correlated_variant",
+        "late_exact_redelivery",
+        "add_contradiction",
+        "deactivate_primary",
+        "restore_primary"
+      ],
+      "events": {
+        "add_primary": "event/observed offset 0; source-primary; support 1.0; group cg:{seed}:{episode_index:02d}:support",
+        "add_correlated_variant": "event/observed offset 1; source-correlated; support 1.0; same support group",
+        "late_exact_redelivery": "event offset 2; byte-exact redelivery of add_primary with its original observed time",
+        "add_contradiction": "event/observed offset 3; source-contradiction; contradict 0.4; group cg:{seed}:{episode_index:02d}:contradiction",
+        "deactivate_primary": "event offset 4; target add_primary",
+        "restore_primary": "event offset 5; target add_primary"
+      },
+      "event_class_count_per_seed": {
+        "add_primary": 24,
+        "add_correlated_variant": 24,
+        "late_exact_redelivery": 24,
+        "add_contradiction": 24,
+        "deactivate_primary": 24,
+        "restore_primary": 24
+      },
+      "fixture_sha256_by_seed": {
+        "2601": "9b0ea285b09f736910f868d4dbbcdfcb7f87209f673a1da33c5634f54d99135a",
+        "2602": "116d71f4509e23f43806e1d3838b1dd2151fe366c0e8ea7258cba7e1d5960371",
+        "2603": "79b1926328f5c1109d1b868344a5e2152a6cd5db59a7e88db1e5859d9e33d3bb",
+        "2604": "45ea4f2c9a614fb93abb81366703ae1e4e54b79fef4347cc5999972a757cabb8",
+        "2605": "e6fb2a8758b5d2e8f0c0aa2d32e50917d4aad47be9f9f14a5ceb8e82b561f827"
+      }
+    },
+    "g0_decision": {
+      "candidate_order": "hypothesis_id lexicographic",
+      "eligible": "positive_probability >= 0.5 and confidence >= 0.5 and probability_margin >= 0.08",
+      "winner": "eligible hypothesis with maximum positive_probability; lexicographically smallest hypothesis_id on an exact tie",
+      "both_below_or_no_eligible": "abstain with no winner and empty citations",
+      "both_eligible": "select exactly one winner because budget is one",
+      "citations": "sorted effectively-active support and contradict evidence IDs from the winner summary; neutral IDs remain traceable but are not decision citations"
+    },
+    "identity": {
+      "immutable_payload": "the exact strict canonical EvidenceRecord bytes, including schema_version, metadata, correlation null/value, time, strength, polarity, both parent lists, entity, hypothesis, source, and evidence_id",
+      "evidence_id": "ev- plus full sha256 of canonical JSON array [schema_version, spark.evidence_id, hypothesis_id, polarity]",
+      "binding_id": "bind- plus full sha256 of canonical JSON array [schema_version, parent_spark_id, entity_hint, entity_slot, assignment_status]",
+      "multi_hypothesis_or_polarity": "each distinct hypothesis/polarity tuple receives its deterministic ID; exact tuple redelivery receives the same ID"
+    },
+    "rejection_envelope_hash": {
+      "purpose": "deterministic audit hash even when the attempted payload is non-JSON or nonfinite",
+      "envelope_fields": [
+        "evidence_id_if_string_else_empty",
+        "stable_reason_code",
+        "sorted_string_top_level_keys",
+        "fully_qualified_value_type",
+        "sorted_top_level_field_type_names"
+      ],
+      "hash": "sha256 of strict canonical JSON envelope; raw invalid values and repr output are never hashed",
+      "state_effect": "rejection advances only audit_chain_hash; active_state_hash is unchanged"
+    },
+    "slot_metric": {
+      "population": "assigned rows only for matching; unassigned and uncertain rows are excluded and reported separately",
+      "weight": "integer contingency count for predicted_slot and oracle_entity",
+      "optimization": "maximum-total-weight bipartite matching",
+      "rectangular": "pad the smaller sorted side with zero-weight dummy labels",
+      "tie_break": "lexicographically smallest sorted predicted-slot to oracle-entity mapping among maximum-weight mappings",
+      "matched_accuracy": "matched assigned rows / all assigned rows, or 0.0 when there are no assigned rows",
+      "assigned_coverage": "assigned eligible rows / all eligible rows",
+      "unassigned_rate": "unassigned eligible rows / all eligible rows",
+      "uncertain_rate": "uncertain eligible rows / all eligible rows",
+      "slot_switch_rate": "for consecutive assigned observations of the same oracle entity, mapped-slot changes / all such consecutive assigned pairs; 0.0 when denominator is zero",
+      "pure_rename": "renaming predicted slots bijectively must leave every metric unchanged"
+    }
+  },
   "stop_conditions": [
     "production entity assignment depends on evaluator truth",
     "evidence citation cannot be resolved, removed, restored, or traced",

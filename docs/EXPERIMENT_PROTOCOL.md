@@ -596,3 +596,11 @@ point estimate with a descriptive paired bootstrap interval, not an engineering 
 records are not mutated when a parent is deactivated; they are excluded while any transitive
 ancestor is inactive and become eligible again after exact ancestor restore. Full strict contract,
 lineage-registry, aggregation, and artifact-content fields are frozen in the protocol JSON.
+
+Decision `D-V03-0007` closes the final pre-execution degrees of freedom. It fixes the complete
+24-episode generator and per-seed fixture hashes; the G0 winner/abstention, budget, lexical
+tie-break, and citation rules; canonical SHA-256 evidence/binding ID derivation and the complete
+immutable identity surface; a type-and-reason rejection envelope for non-JSON inputs; and the
+exact maximum-weight slot matching, rectangular padding, tie-break, coverage, status-rate, and
+slot-switch denominators. These are operational definitions only and do not alter C13's seeds,
+thresholds, conditions, or claim policy.
