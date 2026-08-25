@@ -22,6 +22,38 @@ _C14_WEIGHTS = {
 }
 
 
+def decide_c14(coalitions: tuple[CoalitionState, ...]) -> IgnitionDecision:
+    """Apply the frozen C14 gate to already-scored candidates without side effects."""
+
+    if not coalitions:
+        return IgnitionDecision(False, None, None, 0.0, 0.0, "no_candidates", ())
+    top = coalitions[0]
+    runner_up = coalitions[1].score if len(coalitions) > 1 else 0.0
+    margin = top.score - runner_up
+    conditions = (
+        (top.evidence_count >= 2, "insufficient_evidence"),
+        (top.source_count >= 2, "insufficient_sources"),
+        (top.independent_group_count >= 2, "insufficient_independent_groups"),
+        (top.normalized_contradiction <= 0.35, "excessive_contradiction"),
+        (top.stability >= 2, "insufficient_stability"),
+        (top.normalized_recency >= 0.30, "insufficient_recency"),
+        (top.score >= 0.55, "score_below_threshold"),
+        (margin >= 0.10, "margin_below_threshold"),
+    )
+    for passed, reason in conditions:
+        if not passed:
+            return IgnitionDecision(False, None, None, top.score, margin, reason, coalitions)
+    return IgnitionDecision(
+        True,
+        top.belief_key,
+        top.object_key,
+        top.score,
+        margin,
+        "ignited",
+        coalitions,
+    )
+
+
 @dataclass(frozen=True, slots=True)
 class CoalitionGateConfig:
     ignition_threshold: float = 1.60
@@ -338,29 +370,5 @@ class CoalitionGate:
 
         self._c14_signatures = next_signatures
         self._c14_stability = next_stability
-        top = coalitions[0]
-        runner_up = coalitions[1].score if len(coalitions) > 1 else 0.0
-        margin = top.score - runner_up
-        conditions = (
-            (top.evidence_count >= 2, "insufficient_evidence"),
-            (top.source_count >= 2, "insufficient_sources"),
-            (top.independent_group_count >= 2, "insufficient_independent_groups"),
-            (top.normalized_contradiction <= 0.35, "excessive_contradiction"),
-            (top.stability >= 2, "insufficient_stability"),
-            (top.normalized_recency >= 0.30, "insufficient_recency"),
-            (top.score >= 0.55, "score_below_threshold"),
-            (margin >= 0.10, "margin_below_threshold"),
-        )
         result = tuple(coalitions)
-        for passed, reason in conditions:
-            if not passed:
-                return IgnitionDecision(False, None, None, top.score, margin, reason, result)
-        return IgnitionDecision(
-            True,
-            top.belief_key,
-            top.object_key,
-            top.score,
-            margin,
-            "ignited",
-            result,
-        )
+        return decide_c14(result)
