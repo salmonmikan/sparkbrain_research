@@ -37,6 +37,18 @@ from .evidence import (
     derive_evidence_id,
     rejection_envelope_hash,
 )
+from .evidence_reasoning import (
+    G0_HYPOTHESES,
+    aggregate_condition_rows,
+    decide_g0,
+    probability_snapshot,
+)
+from .evidence_worlds import (
+    G0Decision,
+    build_evidence_fixture,
+    canonical_fixture_json,
+    fixture_sha256,
+)
 from .input_diagnosis import (
     AUTONOMOUS_INPUT_TRACKS,
     DEFAULT_INPUT_TRACK,
@@ -92,6 +104,8 @@ __all__ = [
     "EvidenceLedgerConfig",
     "EvidenceRecord",
     "EvidenceSummary",
+    "G0Decision",
+    "G0_HYPOTHESES",
     "DistractorNoiseWorld",
     "AUTONOMOUS_INPUT_TRACKS",
     "DEFAULT_INPUT_TRACK",
@@ -131,10 +145,16 @@ __all__ = [
     "V03ReferenceLoop",
     "V03StepResult",
     "assess_organ_candidate",
+    "aggregate_condition_rows",
     "bind_entity",
+    "build_evidence_fixture",
+    "canonical_fixture_json",
     "compositional_text_features",
+    "decide_g0",
+    "fixture_sha256",
     "normalize_text",
     "permutation_invariant_slot_metrics",
+    "probability_snapshot",
     "rejection_envelope_hash",
     "sparse_cosine_similarity",
     "symbolic_metadata_features",
