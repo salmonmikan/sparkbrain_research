@@ -535,6 +535,12 @@ record with stable `evidence_id`, `source_id`, `correlation_group`, `entity_key`
 `hypothesis_id`, `polarity`, `strength`, `parent_evidence_ids`, and `parent_spark_ids`. Existing
 v0.2 readers and schemas are not changed.
 
+Before source implementation, the accepted C12 merge is pinned to
+`280516fb61eab7c7a96c109baefc82b333fcc367` (head
+`50c2e67be73292b3a51737455597cd7aac4d8659`). The exact canonical C12 inventory includes
+`schema_version` on `SensorySample` and `PerceptualSpark`, plus `omitted_channels` on
+`SensorySample`; this amendment changes no threshold, seed, condition, or claim policy.
+
 The primary paired comparison is `E0_global` versus `E1_oracle_entity` under the same frozen
 input frontend, G0 downstream path, inputs, labels, cognitive core, evaluator, budget, and seeds
 2601, 2602, 2603, 2604, and 2605. `E0_global` maps evidence to the reserved global scope;

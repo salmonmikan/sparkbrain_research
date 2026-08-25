@@ -200,6 +200,13 @@ The C12 contract is pending an accepted merge. After that merge and before any C
 implementation, add a separate preregistration-amendment commit that pins the accepted C12 merge
 hash without changing the frozen thresholds, seeds, conditions, or claim policy.
 
+**Preregistration amendment (before source implementation):** C12 was accepted and merged as
+`280516fb61eab7c7a96c109baefc82b333fcc367` from head
+`50c2e67be73292b3a51737455597cd7aac4d8659`. The exact shared canonical inventory additionally
+includes `schema_version` on both records and `omitted_channels` on `SensorySample`. This
+dependency hash-pin and field-inventory correction changes no threshold, seed, condition, or
+claim policy.
+
 **Reason:** C12 and C13 share a serialization boundary, but entity meaning changes by stage.
 Freezing the names, adapter, invariants, thresholds, seeds, and stop rules before results prevents
 silent lineage reassignment, duplicate evidence inflation, post-hoc entity tuning, and an Oracle

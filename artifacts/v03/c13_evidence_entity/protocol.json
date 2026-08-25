@@ -6,12 +6,20 @@
   "status": "preregistered_not_run",
   "dependencies": {
     "c11": "accepted",
-    "c12_contract": "pending accepted C12 merge; hash-pin in a preregistration amendment before source implementation",
-    "source_implementation_allowed": false,
-    "source_implementation_unblocks_after": "accepted C12 merge and separate preregistration amendment pinning its merge hash"
+    "c12_contract": "280516fb61eab7c7a96c109baefc82b333fcc367",
+    "source_implementation_allowed": true,
+    "source_implementation_unblocks_after": "satisfied by accepted C12 merge and this preregistration amendment"
+  },
+  "preregistration_amendment": {
+    "amended_at": "2026-08-26T04:31:00+09:00",
+    "accepted_c12_merge": "280516fb61eab7c7a96c109baefc82b333fcc367",
+    "accepted_c12_head": "50c2e67be73292b3a51737455597cd7aac4d8659",
+    "scope": "dependency hash-pin and exact C12 canonical field inventory only",
+    "thresholds_seeds_conditions_and_claim_policy_changed": false
   },
   "shared_boundary": {
     "sensory_sample_fields": [
+      "schema_version",
       "sample_id",
       "time",
       "source_id",
@@ -19,9 +27,11 @@
       "values",
       "correlation_group",
       "entity_hint",
-      "metadata"
+      "metadata",
+      "omitted_channels"
     ],
     "perceptual_spark_fields": [
+      "schema_version",
       "spark_id",
       "feature_id",
       "time",
