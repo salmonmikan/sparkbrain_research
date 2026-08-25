@@ -668,3 +668,11 @@ probability controls report exact zero deltas; cross-condition decision-differen
 unchanged across condition rows. The canonical engineering-gate set now includes both 0.30
 decision-difference gates, while external accuracy remains a claim boundary rather than a gate
 row. This changes no fixture, hash, score, threshold, seed, or expected decision.
+
+Decision `D-V03-0014`, recorded after source and focused-test review but before official runner
+execution, pins source commit `307bcb56f09e88b769cd863b1a6fead73a189936` and authorizes the
+runner. Protocol authenticity is anchored to preregistration commit
+`79dfa6c612e1d3159aae8705be5e14833502ea96` and raw protocol SHA-256
+`ce3fc31531f5ea7689cfcd3b07354508a67af9463ed3b9e1eebb613e0e9c4c8a`;
+only the source pin, execution flag, and base identity fields may differ. Focused mutation,
+tamper, schema, per-seed failure, legacy, and guard tests passed before this authorization.

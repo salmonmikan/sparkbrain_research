@@ -408,3 +408,26 @@ scope, not as a boolean engineering-gate result row.
 allowed multiple metric placements and omitted the comparator observations required to audit
 same-ID behavior. This amendment removes those final serialization choices without changing any
 fixture, hash, score, threshold, seed, expected outcome, or claim boundary.
+
+## D-V03-0014 — Pin the audited C14 source and authorize the frozen runner
+
+**Decision:** After source implementation and focused tests, and before any official runner
+execution or result observation, pin C14 source commit
+`307bcb56f09e88b769cd863b1a6fead73a189936` and authorize the runner. Anchor protocol
+authenticity to preregistration commit `79dfa6c612e1d3159aae8705be5e14833502ea96`
+and its exact protocol blob SHA-256
+`ce3fc31531f5ea7689cfcd3b07354508a67af9463ed3b9e1eebb613e0e9c4c8a`.
+The runner must reject a noncanonical path, working bytes different from HEAD, a changed base
+blob, any amendment beyond this source pin / execution flag / base identity, or any later change
+to the four frozen source paths before creating an output directory.
+
+The pinned source was independently audited after corrective implementation. Focused coverage
+includes the actual bounded decision helper, a score-only `0.54` to `0.56` causal mutation,
+protocol tampering, exact nested artifact validation, per-seed failure attribution, legacy
+default behavior, fixture hashes, and the disabled-runner guard. The official C14 runner and
+numerical evaluation had not been executed when this decision was recorded.
+
+**Reason:** This separate amendment completes the preregistered source-pin sequence only after
+implementation review closed the protocol-authenticity, call-graph, artifact-schema, and
+failed-seed blockers. It changes no fixture, score, weight, threshold, seed, expected outcome,
+metric definition, protected artifact, or claim boundary.

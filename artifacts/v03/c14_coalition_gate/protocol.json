@@ -8,9 +8,11 @@
     "c12_merge": "280516fb61eab7c7a96c109baefc82b333fcc367",
     "c13_merge": "06e13975b486548bb17924acc3b82786246ad6e1",
     "c13_source_contract": "03b26591c653592ec501177d9628bd2bea9b8ec4",
-    "c14_source_pin": "pending separate preregistration amendment after source-only commit and before any runner execution",
+    "c14_source_pin": "307bcb56f09e88b769cd863b1a6fead73a189936",
+    "c14_protocol_base_commit": "79dfa6c612e1d3159aae8705be5e14833502ea96",
+    "c14_protocol_base_sha256": "ce3fc31531f5ea7689cfcd3b07354508a67af9463ed3b9e1eebb613e0e9c4c8a",
     "source_implementation_allowed": true,
-    "runner_execution_allowed": false
+    "runner_execution_allowed": true
   },
   "conditions": [
     "G0_probability_margin",
