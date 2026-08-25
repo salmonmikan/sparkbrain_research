@@ -176,3 +176,26 @@ are directly tested, while `channels_inspected`, `features_scored`, and `state_u
 dense. The narrow acceptance is therefore reproducible without overstating what emission
 suppression demonstrates. Accepted v0.2.1 protected results and release/schema contracts remain
 unchanged.
+## D-V03-0003 — Freeze the C12-to-C13 lineage boundary and E0/E1 diagnosis
+
+**Decision:** Preregister protocol `c13-evidence-entity-v1` and run
+`c13-evidence-entity-main-v1` before implementing or evaluating C13. Preserve the C12 public
+field names from `SensorySample` through `PerceptualSpark`: diagnostic `entity_hint` becomes
+perceptual `entity_slot`. Convert that output explicitly at the C13 boundary into a versioned
+evidence contract using `entity_key`, `hypothesis_id`, `polarity`, `strength`,
+`parent_evidence_ids`, and `parent_spark_ids`. The conversion and every entity transition must
+remain traceable. Do not replace these stage-specific names with one unified entity object.
+
+C13 first compares `E0_global` with `E1_oracle_entity` using the same frozen input frontend,
+G0 downstream path, episode inputs, seeds 2601--2605, cognitive core, budget, and evaluator.
+Correlation discount is fixed at 0.20 and recency tau at 30.0. Same-ID redelivery must be an
+exact no-op; identity-changing redelivery must fail closed. Removal and restoration use an
+append-only immutable audit trail rather than deleting lineage. The E0/E1 scientific gap is
+frozen before any `E2_learned_slots` implementation or run. Learned slots are only an interface
+in C13 and must expose assigned, unassigned, and uncertain states with permutation-invariant
+evaluation.
+
+**Reason:** C12 and C13 share a serialization boundary, but entity meaning changes by stage.
+Freezing the names, adapter, invariants, thresholds, seeds, and stop rules before results prevents
+silent lineage reassignment, duplicate evidence inflation, post-hoc entity tuning, and an Oracle
+entity result being mistaken for autonomous binding.

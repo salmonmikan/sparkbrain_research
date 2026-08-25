@@ -523,3 +523,51 @@ goal/sample label leakage, non-atomic rejection, inspection mutation, replay mis
 score/ablation trace, or dense work reported as active work. C12 supports only computational
 sensory-gate behavior; it does not establish biological sensory reproduction, semantic
 understanding, or an improved scientific claim grade.
+## 11. C13 evidence and entity-binding diagnostic protocol
+
+Protocol `c13-evidence-entity-v1`, run `c13-evidence-entity-main-v1`, freezes the shared C12/C13
+lineage boundary and the first entity diagnosis before C13 implementation or evaluation. C12
+retains the existing `SensorySample` and `PerceptualSpark` field names and supplies strict,
+canonical versioned serialization. In particular, `entity_hint` is diagnostic input and
+`entity_slot` is perceptual output. C13 converts that output explicitly into a versioned evidence
+record with stable `evidence_id`, `source_id`, `correlation_group`, `entity_key`,
+`hypothesis_id`, `polarity`, `strength`, `parent_evidence_ids`, and `parent_spark_ids`. Existing
+v0.2 readers and schemas are not changed.
+
+The primary paired comparison is `E0_global` versus `E1_oracle_entity` under the same frozen
+input frontend, G0 downstream path, inputs, labels, cognitive core, evaluator, budget, and seeds
+2601, 2602, 2603, 2604, and 2605. `E0_global` maps evidence to the reserved global scope;
+`E1_oracle_entity` requires an explicit nonempty perceptual entity slot and never derives it from
+truth, target, answer, evaluator, label, split, or test-only metadata. Correlation discount is
+0.20 and recency tau is 30.0. Seed-level paired rows and failed seeds are retained. Primary
+effects use 10,000 paired bootstrap resamples with seed 4313 and a 95% interval.
+
+Engineering gate G02 requires exact same-ID no-op behavior, no independent-count inflation,
+100% rejection of source, correlation, entity, hypothesis, polarity, strength, time, or parent
+reassignment for an existing evidence ID, complete cited-lineage resolution, and zero orphaned
+citations after removal and restoration. A distinct ID in an existing correlation group may add
+at most 0.20 times the effective marginal of otherwise identical independent evidence; the final
+prediction change is capped at 0.05. Removal deactivates but does not erase evidence, restoration
+reactivates the same immutable record, and the fixed-time summary, decision, and state hash must
+return exactly to their pre-removal values.
+
+Engineering gate G05 requires `E1_oracle_entity` cross-talk no greater than 0.02, evidence
+misassignment no greater than 0.01, and oracle entity coverage equal to 1.00. Object accuracy,
+belief contamination, coverage, cross-talk, and misassignment remain separate metrics. An
+absolute reduction of at least 0.10 from E0 cross-talk to E1 cross-talk is the preregistered
+scientific-support threshold, not an engineering-completion requirement. Failure to meet it is a
+valid negative or inconclusive result and triggers a core entity-scope audit.
+
+`E2_learned_slots` is forbidden until the E0/E1 results and gap are frozen. C13 defines only its
+exchangeable interface: assignment status is `assigned`, `unassigned`, or `uncertain`, and slot
+quality is evaluated by optimal permutation-invariant matching. The metric must be unchanged by
+a pure slot-label permutation; assigned coverage, uncertain rate, unassigned rate, and slot-switch
+rate are reported separately.
+
+Stop and invalidate the run if evaluator truth influences production entity assignment; an
+evidence citation cannot be resolved, removed, restored, or traced; any condition changes the
+frozen inputs/core/budget/evaluator; a test result changes a threshold or mapping; E0/E1/E2 rows
+are merged; or E2 implementation/evaluation begins before E1 freeze. Mandatory outputs under
+`artifacts/v03/c13_evidence_entity/` are `protocol.json`, `run_manifest.json`,
+`evidence_invariant_tests.json`, `entity_condition_metrics.json`, `paired_statistics.json`,
+`cross_talk_examples.jsonl`, `causal_removal_examples.jsonl`, and `report.md`.

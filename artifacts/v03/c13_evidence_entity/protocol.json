@@ -1,0 +1,180 @@
+{
+  "schema_version": "0.3",
+  "protocol_id": "c13-evidence-entity-v1",
+  "run_id": "c13-evidence-entity-main-v1",
+  "preregistered_at": "2026-08-26T03:45:22+09:00",
+  "status": "preregistered_not_run",
+  "dependencies": {
+    "c11": "accepted",
+    "c12_contract": "fbdb1b7",
+    "source_implementation_allowed": false,
+    "source_implementation_unblocks_after": "C12 contract integration"
+  },
+  "shared_boundary": {
+    "sensory_sample_fields": [
+      "sample_id",
+      "time",
+      "source_id",
+      "modality",
+      "values",
+      "correlation_group",
+      "entity_hint",
+      "metadata"
+    ],
+    "perceptual_spark_fields": [
+      "spark_id",
+      "feature_id",
+      "time",
+      "activation",
+      "salience",
+      "prediction_error",
+      "threshold",
+      "evidence_id",
+      "source_id",
+      "correlation_group",
+      "entity_slot",
+      "parents"
+    ],
+    "evidence_fields": [
+      "schema_version",
+      "evidence_id",
+      "source_id",
+      "entity_key",
+      "hypothesis_id",
+      "time",
+      "polarity",
+      "strength",
+      "correlation_group",
+      "parent_evidence_ids",
+      "parent_spark_ids",
+      "metadata"
+    ],
+    "entity_transition": [
+      "entity_hint:diagnostic_input",
+      "entity_slot:perceptual_assignment",
+      "entity_key:evidence_scope"
+    ],
+    "polarity_values": [
+      "support",
+      "contradict",
+      "neutral"
+    ],
+    "serialization": {
+      "canonical_json": true,
+      "strict_required_keys": true,
+      "reject_unknown_keys": true,
+      "reject_nonfinite_numbers": true,
+      "sorted_unique_parent_ids": true,
+      "v0_2_contracts_unchanged": true
+    }
+  },
+  "entity_binding_interface": {
+    "stage_names_are_not_unified": true,
+    "states": [
+      "assigned",
+      "unassigned",
+      "uncertain"
+    ],
+    "required_trace": [
+      "entity_hint",
+      "entity_slot",
+      "entity_key",
+      "assignment_status",
+      "confidence"
+    ],
+    "e0_entity_key": "__global__",
+    "e1_requires_nonempty_entity_slot": true,
+    "e2_implementation_allowed": false
+  },
+  "conditions": [
+    "I2_symbolic_oracle__G0_probability__E0_global",
+    "I2_symbolic_oracle__G0_probability__E1_oracle_entity"
+  ],
+  "frozen_controls": [
+    "input_frontend",
+    "episode_inputs",
+    "labels",
+    "cognitive_core",
+    "evaluator",
+    "budget",
+    "seed_list"
+  ],
+  "seeds": [
+    2601,
+    2602,
+    2603,
+    2604,
+    2605
+  ],
+  "statistics": {
+    "paired": true,
+    "bootstrap_resamples": 10000,
+    "bootstrap_seed": 4313,
+    "confidence_interval": 0.95,
+    "retain_seed_level_rows": true,
+    "retain_failed_seeds": true
+  },
+  "ledger": {
+    "correlation_discount": 0.2,
+    "recency_tau": 30.0,
+    "same_id_redelivery": "exact_no_op",
+    "identity_mismatch": "reject_fail_closed",
+    "removal": "append_only_deactivate",
+    "restore": "reactivate_same_immutable_record"
+  },
+  "gates": {
+    "G02": {
+      "same_id_independent_count_delta": 0,
+      "same_id_summary_delta": 0.0,
+      "same_id_prediction_change_max": 0.01,
+      "correlated_group_count_delta": 0,
+      "correlated_effective_marginal_ratio_max": 0.2,
+      "correlated_prediction_change_max": 0.05,
+      "identity_reassignment_rejection_rate": 1.0,
+      "cited_lineage_resolution_rate": 1.0,
+      "orphan_citations_after_remove_restore": 0,
+      "fixed_time_restore_exact": true
+    },
+    "G05": {
+      "e1_cross_talk_rate_max": 0.02,
+      "e1_evidence_misassignment_rate_max": 0.01,
+      "e1_oracle_entity_coverage_min": 1.0,
+      "e0_minus_e1_cross_talk_min_for_scientific_support": 0.1,
+      "gap_is_engineering_acceptance": false
+    }
+  },
+  "permutation_metric": {
+    "matching": "optimal_bipartite_permutation_invariant",
+    "pure_slot_rename_metric_delta": 0.0,
+    "report_separately": [
+      "assigned_coverage",
+      "unassigned_rate",
+      "uncertain_rate",
+      "slot_switch_rate"
+    ],
+    "e2_run_allowed": false
+  },
+  "stop_conditions": [
+    "production entity assignment depends on evaluator truth",
+    "evidence citation cannot be resolved, removed, restored, or traced",
+    "frozen input, core, budget, evaluator, or seed list differs between E0 and E1",
+    "test results change a threshold or mapping",
+    "E0, E1, or E2 rows are merged",
+    "E2 implementation or evaluation begins before E1 freeze"
+  ],
+  "expected_files": [
+    "protocol.json",
+    "run_manifest.json",
+    "evidence_invariant_tests.json",
+    "entity_condition_metrics.json",
+    "paired_statistics.json",
+    "cross_talk_examples.jsonl",
+    "causal_removal_examples.jsonl",
+    "report.md"
+  ],
+  "claim_policy": {
+    "engineering_completion_separate_from_scientific_support": true,
+    "oracle_entity_is_not_autonomous_binding": true,
+    "negative_or_inconclusive_gap_is_valid": true
+  }
+}
