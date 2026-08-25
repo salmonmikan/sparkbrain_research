@@ -269,3 +269,22 @@ Before the first fixture test, the protocol additionally records the exact canon
 episode, add-event, redelivery-event, and intervention-event key sets and JSON serialization call
 used by the already-frozen per-seed hashes. This is a reconstructibility clarification only: no
 fixture value, ordering rule, distribution, seed, threshold, metric, or expected hash changes.
+
+## D-V03-0008 — Accept C13 at the oracle entity-scope diagnostic boundary
+
+**Decision:** Accept C13 G02/G05 for protocol `c13-evidence-entity-v1`, run
+`c13-evidence-entity-main-v1`, and source commit
+`c56fb85a3e88c39d70a426302d7f7ff6bc66ee2b`. Freeze the exact eight artifacts under
+`artifacts/v03/c13_evidence_entity/`. Preserve strict immutable evidence identity, transitive
+effective-active lineage, append-only deactivate/restore, semantic audit replay, fixed G0,
+condition-separated E0/E1 rows, deterministic fixture hashes, and E2 execution row count zero.
+Do not start E2 learned binding under this decision.
+
+**Reason:** All frozen G02/G05 engineering gates passed over seeds 2601--2605 with no failed
+seed. E1 cross-talk and misassignment were 0 and oracle coverage was 1.0; E0-minus-E1 cross-talk
+was 1.0 with paired interval [1.0, 1.0]. The gap is narrow evidence that explicit Oracle entity
+scope removes cross-talk in this constructed relation-free fixture. It is not autonomous entity
+discovery, semantic understanding, biological fidelity, or external generalization. The audit
+chain is not an external trust anchor. Independent regeneration under a different
+`PYTHONHASHSEED` matched all eight artifacts byte-for-byte. Existing negative results, scientific
+claim grades, protected hashes, package/schema, and release metadata remain unchanged.

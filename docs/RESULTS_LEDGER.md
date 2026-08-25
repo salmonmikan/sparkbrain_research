@@ -669,3 +669,38 @@ contract correction only.
   - `raw_trace.jsonl`: `341fe3f56d081223cb1f40096096804782140575335d6fd18bcb040bcfca83a6`
   - `report.md`: `a21c3e2611b339846b8b6fd41ad86047fde68cd20e06f1c26c3c8b0b0e383098`
 - Claim-grade impact: unchanged. This accepts only the C12 computational sensory gate.
+
+## 2026-08-26 — R-V03-0005 — C13 evidence/entity engineering acceptance
+
+- Dependency/source: accepted C12 merge `280516fb61eab7c7a96c109baefc82b333fcc367`;
+  frozen C13 source `c56fb85a3e88c39d70a426302d7f7ff6bc66ee2b`
+- Protocol/run: `c13-evidence-entity-v1` / `c13-evidence-entity-main-v1`
+- Seeds/fixture: 2601--2605; 24 episodes and six ordered events per seed; all five preregistered
+  fixture SHA-256 values matched
+- Statistical method: five paired seed effects, 10,000 bootstrap resamples, bootstrap seed 4313,
+  95% interval
+- Engineering result: all G02/G05 gates passed; failed seeds 0; E2 execution rows 0
+- E1 result: cross-talk 0/60, evidence misassignment 0/360, oracle entity coverage 360/360
+- E0 result: cross-talk 60/60; E0-minus-E1 effect 1.0, 95% paired interval [1.0, 1.0]
+- Invariants: exact late redelivery, immutable same-ID rejection, correlation discount, complete
+  lineage, append-only deactivate/restore, fixed-time state/summary/probability/decision/citation
+  restoration, orphan-free citations, condition separation, and permutation-invariant slot
+  metrics passed focused tests
+- Strongest counterexample/boundary: E0's reserved global scope produced cross-talk on every
+  constructed directed opportunity. E1 uses explicit Oracle entity slots and therefore is not
+  autonomous entity discovery or learned binding.
+- Audit boundary: audit rows are hash-chained and semantically replayed, but the chain is not an
+  externally anchored signature or independent trust root
+- Reproduction: a different `PYTHONHASHSEED` reproduced all eight checked-in artifacts
+  byte-for-byte
+- Artifact SHA-256:
+  - `causal_removal_examples.jsonl`: `4135080fd29c2d5d0c13aec2aa1fbb6d2c83c5d0b0b8a0246744e2790f7d23b3`
+  - `cross_talk_examples.jsonl`: `aff4a6f79df1cc144e1ca6a58ecb18b929efd18fd5fb9921fba757b5a63bbfd7`
+  - `entity_condition_metrics.json`: `c12b33b099545fbc0bc310722a1ac8c02a96a0e57d75400cf0ffa2d384c3e2f2`
+  - `evidence_invariant_tests.json`: `b36ce3a6901be1018880358048d35fbd930cec0c479ac815303f5906c742d5aa`
+  - `paired_statistics.json`: `7eff9c36d3d55c250565cb03dc2687bfa9dea36ec5499ac6dd4fb8f1f4d992af`
+  - `protocol.json`: `e01330571ef77896356cb12b789ff5706e75f635a2d921c7116465dd53a25095`
+  - `report.md`: `a383e52e9ae1ffc78e8949c5e36fcd26857ab6f960f76a9ed3d38ebe3bb1b2f8`
+  - `run_manifest.json`: `9b5b31e46f34a0e44dbc7f890ffc406f974069376bdfbfa003914998f7df6c6c`
+- Claim-grade impact: unchanged. C06/C08 negative results, protected hashes, package 0.2.1,
+  persisted schema 0.2, and release metadata remain unchanged.

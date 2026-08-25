@@ -1,0 +1,32 @@
+{
+  "bootstrap_resamples": 10000,
+  "bootstrap_seed": 4313,
+  "ci_high": 1.0,
+  "ci_low": 1.0,
+  "confidence_interval": 0.95,
+  "effect": 1.0,
+  "failed_seeds": [],
+  "paired": true,
+  "seed_level_effects": [
+    {
+      "effect": 1.0,
+      "seed": 2601
+    },
+    {
+      "effect": 1.0,
+      "seed": 2602
+    },
+    {
+      "effect": 1.0,
+      "seed": 2603
+    },
+    {
+      "effect": 1.0,
+      "seed": 2604
+    },
+    {
+      "effect": 1.0,
+      "seed": 2605
+    }
+  ]
+}

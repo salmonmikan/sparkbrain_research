@@ -1,5 +1,24 @@
 # Project Status — SparkBrain v0.2.1
 
+## v0.3 C13 — evidence ledger and oracle entity-scope diagnosis
+
+C13 is locally accepted under preregistered protocol `c13-evidence-entity-v1`, using accepted
+C12 merge `280516fb` and source commit `c56fb85`. The isolated `v03_seed` path now has strict
+canonical `EvidenceRecord`, `EntityBinding`, and `EvidenceAuditRow` contracts; deterministic
+evidence/binding identities; correlation-aware immutable evidence; append-only deactivate and
+restore; transitive effective-active lineage; complete Spark-to-sample resolution; semantic
+audit replay; fixed G0 probability decisions; and condition-separated E0/E1 execution. E2
+learned slots remain an interface only and have zero execution rows.
+
+Across seeds 2601--2605, all G02/G05 engineering gates passed. E1 oracle-entity cross-talk and
+misassignment were 0, oracle coverage was 1.0, and E0-minus-E1 cross-talk was 1.0 with the frozen
+paired-bootstrap interval [1.0, 1.0]. This supports only the preregistered relation-free synthetic
+diagnosis that explicit oracle entity scope removes the constructed global-scope cross-talk. It
+does not demonstrate autonomous entity discovery, learned binding, semantic understanding,
+biological fidelity, or external generalization. The audit chain is semantically replayed but is
+not an externally anchored signature. C06/C08 negative findings, scientific claim grades,
+protected hashes, package 0.2.1, schema 0.2, and release metadata remain unchanged.
+
 ## v0.3 C12 — computational sensory gate
 
 C12 is locally accepted under preregistered protocol `c12-sensory-field-v1` after the accepted

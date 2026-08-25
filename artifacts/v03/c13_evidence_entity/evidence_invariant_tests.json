@@ -1,0 +1,17 @@
+{
+  "all_checks_passed": true,
+  "audit_trust_boundary": "semantic replay detects internal state-transition tampering, but the audit chain is not an externally anchored signature",
+  "checks": {
+    "cited_lineage_resolution_rate": true,
+    "correlated_effective_marginal_ratio": true,
+    "correlated_group_count_delta": true,
+    "correlated_prediction_change": true,
+    "fixed_time_restore_exact": true,
+    "identity_reassignment_rejected": true,
+    "orphan_citations_after_remove_restore": true,
+    "same_id_independent_count_delta": true,
+    "same_id_prediction_change": true,
+    "same_id_state_unchanged": true,
+    "same_id_summary_delta": true
+  }
+}
