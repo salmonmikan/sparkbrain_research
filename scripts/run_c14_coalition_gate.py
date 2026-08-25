@@ -672,8 +672,8 @@ def _paired_statistics(
         "g1_vs_g0_decision_difference": [
             float(
                 _decision_diff(
-                    by_key[("G1_evidence_coalition", int(seed), case)],
-                    by_key[("G0_probability_margin", int(seed), case)],
+                    by_key[("G1_evidence_coalition", int(seed), case)]["decision"],
+                    by_key[("G0_probability_margin", int(seed), case)]["decision"],
                 )
             )
             for seed in protocol["seeds"]
@@ -682,8 +682,8 @@ def _paired_statistics(
         "g1_vs_no_coalition_decision_difference": [
             float(
                 _decision_diff(
-                    by_key[("G1_evidence_coalition", int(seed), case)],
-                    by_key[("G1_no_coalition_ablation", int(seed), case)],
+                    by_key[("G1_evidence_coalition", int(seed), case)]["decision"],
+                    by_key[("G1_no_coalition_ablation", int(seed), case)]["decision"],
                 )
             )
             for seed in protocol["seeds"]
@@ -881,16 +881,16 @@ def _engineering_gates(
     case_order = protocol["final_pre_execution_freeze"]["fixture_generator"]["case_order"]
     g1_g0 = mean(
         _decision_diff(
-            by_key[("G1_evidence_coalition", int(seed), case)],
-            by_key[("G0_probability_margin", int(seed), case)],
+            by_key[("G1_evidence_coalition", int(seed), case)]["decision"],
+            by_key[("G0_probability_margin", int(seed), case)]["decision"],
         )
         for seed in seeds
         for case in case_order
     )
     g1_no = mean(
         _decision_diff(
-            by_key[("G1_evidence_coalition", int(seed), case)],
-            by_key[("G1_no_coalition_ablation", int(seed), case)],
+            by_key[("G1_evidence_coalition", int(seed), case)]["decision"],
+            by_key[("G1_no_coalition_ablation", int(seed), case)]["decision"],
         )
         for seed in seeds
         for case in case_order
