@@ -106,6 +106,32 @@ def test_revision_preflight_failure_leaves_no_output_or_staging(
     assert list(tmp_path.glob(f".{output.name}.staging-*")) == []
 
 
+def test_integrity_preflight_stops_before_revision_readiness_or_render(
+    tmp_path: Path, monkeypatch
+) -> None:
+    import scripts.reproduce_release as reproduction
+
+    output = tmp_path / "integrity-failure"
+    monkeypatch.setattr(
+        reproduction,
+        "non_public_integrity_problems",
+        lambda root: ["release metadata source_revision does not match PACKAGE_MANIFEST.json"],
+    )
+
+    def should_not_run(*args, **kwargs):  # type: ignore[no-untyped-def]
+        raise AssertionError("reproduction continued after integrity failure")
+
+    monkeypatch.setattr(reproduction, "source_revision", should_not_run)
+    monkeypatch.setattr(reproduction.subprocess, "run", should_not_run)
+    monkeypatch.setattr(reproduction, "primary_rows", should_not_run)
+
+    with pytest.raises(ValueError, match="release integrity preflight failed"):
+        reproduction.reproduce(ROOT, output, offline=True)
+
+    assert not output.exists()
+    assert list(tmp_path.glob(f".{output.name}.staging-*")) == []
+
+
 def test_output_hash_failure_leaves_no_output_or_staging(tmp_path: Path, monkeypatch) -> None:
     import scripts.reproduce_release as reproduction
 

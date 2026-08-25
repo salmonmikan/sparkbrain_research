@@ -10,8 +10,11 @@ from sparkbrain.release import (
     build_release_archive,
     build_release_manifest,
     declared_project_license,
+    integrity_problems,
+    owner_blockers,
     preparation_problems,
     project_license_selected,
+    release_validation,
     validate_evidence_map,
     validate_generated_release_evidence,
     validate_project_license_metadata,
@@ -40,6 +43,40 @@ def test_release_manifest_is_stable_and_detects_tampering(tmp_path: Path) -> Non
     problems = verify_release_manifest(tmp_path, manifest)
     assert "size mismatch: docs/result.md" in problems
     assert "sha256 mismatch: docs/result.md" in problems
+
+
+def test_release_validation_classifies_integrity_and_owner_separately(
+    tmp_path: Path,
+) -> None:
+    (tmp_path / "docs").mkdir()
+    (tmp_path / "docs/result.md").write_text("evidence\n", encoding="utf-8")
+    (tmp_path / "pyproject.toml").write_text(
+        '[project]\nname = "fixture"\nversion = "1.0"\n', encoding="utf-8"
+    )
+    manifest = build_release_manifest(
+        tmp_path,
+        generated_at="2026-08-25T00:00:00+00:00",
+        source_revision="a" * 40,
+        paths=["docs/result.md", "pyproject.toml"],
+    )
+    from sparkbrain.release import build_release_metadata, write_release_metadata
+
+    (tmp_path / "PACKAGE_MANIFEST.json").write_text(
+        json.dumps(manifest), encoding="utf-8"
+    )
+    metadata = build_release_metadata(tmp_path, tmp_path / "PACKAGE_MANIFEST.json")
+    write_release_metadata(tmp_path / "RELEASE_METADATA.json", metadata)
+    (tmp_path / "docs/result.md").write_text("tampered content\n", encoding="utf-8")
+
+    validation = release_validation(tmp_path, require_public=False)
+
+    assert "size mismatch: docs/result.md" in validation["integrity_problems"]
+    assert "sha256 mismatch: docs/result.md" in validation["integrity_problems"]
+    assert validation["owner_blockers"] == [
+        "project license has not been selected by the repository owner"
+    ]
+    assert owner_blockers(tmp_path) == validation["owner_blockers"]
+    assert set(integrity_problems(tmp_path)).issubset(validation["integrity_problems"])
 
 
 def test_release_manifest_rejects_parent_traversal(tmp_path: Path) -> None:
@@ -140,6 +177,15 @@ def test_integrated_release_preparation_passes_but_public_release_is_blocked() -
     assert validate_release_tree(root) == [
         "project license has not been selected by the repository owner",
     ]
+    validation = release_validation(root)
+    assert validation == {
+        "integrity_problems": [],
+        "preparation_problems": [],
+        "owner_blockers": [
+            "project license has not been selected by the repository owner"
+        ],
+        "evidence_blockers": [],
+    }
 
 
 def test_evidence_map_has_existing_artifacts_and_pending_gates() -> None:

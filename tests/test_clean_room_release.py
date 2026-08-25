@@ -10,7 +10,12 @@ from pathlib import Path
 
 import pytest
 
-from sparkbrain.release import RELEASE_METADATA_PATH, sha256_file, tracked_release_paths
+from sparkbrain.release import (
+    RELEASE_METADATA_PATH,
+    release_mode,
+    sha256_file,
+    tracked_release_paths,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 CHILD_SENTINEL = "SPARKBRAIN_CLEAN_ROOM_CHILD"
@@ -73,8 +78,8 @@ def _build_fixture_archive(repository: Path, archive_path: Path) -> None:
 
 
 @pytest.mark.skipif(
-    os.environ.get(CHILD_SENTINEL) == "1",
-    reason="the outer clean-room test already verifies the extracted child suite",
+    os.environ.get(CHILD_SENTINEL) == "1" or release_mode(ROOT) == "archive",
+    reason="the outer repository test already verifies the extracted archive suite",
 )
 def test_no_git_archive_runs_full_clean_room_contract(tmp_path: Path) -> None:
     fixture_repo = tmp_path / "fixture-repository"
@@ -117,8 +122,6 @@ def test_no_git_archive_runs_full_clean_room_contract(tmp_path: Path) -> None:
     output = tmp_path / "reproduced-release"
     child_env = {
         **os.environ,
-        CHILD_SENTINEL: "1",
-        "PYTHONDONTWRITEBYTECODE": "1",
         "NO_PROXY": "*",
         "no_proxy": "*",
     }
@@ -149,10 +152,14 @@ def test_no_git_archive_runs_full_clean_room_contract(tmp_path: Path) -> None:
         env=child_env,
     )
     validation_payload = json.loads(validation.stdout)
-    assert validation_payload == {
-        "status": "blocked",
-        "preparation_status": "pass",
-        "problems": ["project license has not been selected by the repository owner"],
-    }
+    assert validation_payload["status"] == "blocked"
+    assert validation_payload["preparation_status"] == "pass"
+    assert validation_payload["integrity_problems"] == []
+    assert validation_payload["preparation_problems"] == []
+    assert validation_payload["evidence_blockers"] == []
+    assert validation_payload["owner_blockers"] == [
+        "project license has not been selected by the repository owner"
+    ]
+    assert validation_payload["problems"] == validation_payload["owner_blockers"]
 
     _run([sys.executable, "-m", "pytest", "-q"], cwd=extracted, env=child_env)
