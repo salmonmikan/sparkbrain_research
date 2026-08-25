@@ -557,9 +557,11 @@ contract correction only.
 - Interpretation: local surface structure is recoverable, but the current I1 diagnostic does not
   establish meaning, solve rough-input processing, validate the cognitive core, or change C06
 - Official Belief-R test: not read, evaluated, or used for tuning
-- Final run: `artifacts/v03/c11_runs/c11-input-bottleneck-v1-run-002`
-- Independent reproduction: run 003 matched all eight final artifact SHA-256 values exactly
-- Run 001 is retained as an engineering preview before executable Oracle-audit reporting was added
+- Final run: `artifacts/v03/c11_runs/c11-input-bottleneck-v1-run-004`
+- Independent reproduction: run 005 matched all eight final artifact SHA-256 values exactly with
+  a different `PYTHONHASHSEED`; sparse cosine accumulation now uses canonical sorted feature keys
+- Runs 001–003 are retained as engineering previews before the executable Oracle audit and the
+  cross-Python hash-order regression fix were finalized
 - Focused v0.3 tests: 46 passed; Ruff and compileall passed
 - Repository collection: 279 tests; full C11 tree result: 274 passed, 5 skipped
 - Five frozen-release runtime tests are skipped only in the explicit v0.3 development tree. A new

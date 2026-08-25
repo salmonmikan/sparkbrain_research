@@ -95,7 +95,7 @@ def sparse_cosine_similarity(
 ) -> float:
     """Cosine similarity for small sparse feature dictionaries."""
 
-    keys = set(left) | set(right)
+    keys = sorted(set(left) | set(right))
     dot = sum(float(left.get(key, 0.0)) * float(right.get(key, 0.0)) for key in keys)
     left_norm = math.sqrt(sum(float(value) ** 2 for value in left.values()))
     right_norm = math.sqrt(sum(float(value) ** 2 for value in right.values()))

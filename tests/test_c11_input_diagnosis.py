@@ -49,7 +49,7 @@ def _symbolic_record(**literal_overrides: object) -> InputRecord:
     )
 
 
-def _run(output: Path) -> subprocess.CompletedProcess[str]:
+def _run(output: Path, *, hash_seed: str = "random") -> subprocess.CompletedProcess[str]:
     return subprocess.run(
         [
             sys.executable,
@@ -64,7 +64,11 @@ def _run(output: Path) -> subprocess.CompletedProcess[str]:
         cwd=ROOT,
         check=False,
         capture_output=True,
-        env={**os.environ, "PYTHONPATH": str(ROOT / "src")},
+        env={
+            **os.environ,
+            "PYTHONHASHSEED": hash_seed,
+            "PYTHONPATH": str(ROOT / "src"),
+        },
         text=True,
         encoding="utf-8",
     )
@@ -126,8 +130,8 @@ def test_pair_evaluator_rejects_cross_track_features() -> None:
 def test_c11_runner_is_deterministic_and_retains_negative_examples(tmp_path: Path) -> None:
     first = tmp_path / "first"
     second = tmp_path / "second"
-    first_result = _run(first)
-    second_result = _run(second)
+    first_result = _run(first, hash_seed="1")
+    second_result = _run(second, hash_seed="2")
     assert first_result.returncode == 0, first_result.stderr
     assert second_result.returncode == 0, second_result.stderr
     assert {path.name for path in first.iterdir()} == EXPECTED_OUTPUTS
