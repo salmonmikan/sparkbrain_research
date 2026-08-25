@@ -38,10 +38,12 @@ def test_repetition_is_suppressed_and_change_recovers_salience() -> None:
 
 def test_goal_bias_can_select_an_otherwise_quiet_feature() -> None:
     field = AdaptiveSensoryField()
-    field.observe(sample(0, 0.0, feature="black_dot"))
-    quiet = field.observe(sample(1, 0.0, feature="black_dot"))
-    biased = field.observe(
-        sample(2, 0.0, feature="black_dot"), goal_bias={"audio:black_dot": 2.0}
+    field.observe(sample(0, 1.0, feature="black_dot"))
+    field.observe(sample(1, 1.0, feature="black_dot"))
+    comparison = AdaptiveSensoryField.from_serialized_state(field.serialize_state())
+    quiet = field.observe(sample(2, 0.4, feature="black_dot"))
+    biased = comparison.observe(
+        sample(2, 0.4, feature="black_dot"), goal_bias={"audio:black_dot": 2.0}
     )
     assert quiet == ()
     assert biased and biased[0].feature_id == "audio:black_dot"

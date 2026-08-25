@@ -37,7 +37,13 @@ from .input_diagnosis import (
 )
 from .loop import PerceptualInterpreter, V03ReferenceLoop, V03StepResult
 from .organs import OrganGateConfig, assess_organ_candidate
-from .sensory_field import AdaptiveSensoryField, SensoryFieldConfig
+from .sensory_field import (
+    AdaptiveSensoryField,
+    SensoryChannelTrace,
+    SensoryFieldConfig,
+    SensoryObservation,
+    SensoryWorkCounters,
+)
 from .text_frontend import (
     compositional_text_features,
     normalize_text,
@@ -80,7 +86,10 @@ __all__ = [
     "PerceptualSpark",
     "PersistentBeliefField",
     "SensoryFieldConfig",
+    "SensoryChannelTrace",
+    "SensoryObservation",
     "SensorySample",
+    "SensoryWorkCounters",
     "V03ReferenceLoop",
     "V03StepResult",
     "assess_organ_candidate",
