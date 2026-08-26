@@ -536,3 +536,24 @@ separately from attractive clusters or names. Freezing resource bounds, raw deno
 controls, leakage boundaries, failure semantics and source snapshots before implementation
 prevents retrospective promotion. This decision registers an experiment, not a C16 result or
 an increase in any existing scientific claim grade.
+
+## D-V03-0025 — Accept the bounded C16 synthetic result at its registered boundary
+
+**Decision (2026-08-27):** Accept C16 protocol `c16-proto-concepts-v1`, run
+`c16-proto-concepts-main-v1`, source commit
+`4933a6059240875d0548fe602f114d768a49ef28`, and the exact-eight artifact bundle under
+`artifacts/v03/c16_proto_concepts/`. The recorded execution lineage is source-only commit
+`4933a60`, pin `b1c83e6`, and integration branch `codex/c16-proto-concepts` pre-artifact head
+`3dd9593`.
+
+All eight engineering gates passed with zero failed seeds. The retained raw cardinalities are 990
+lineage rows, 90 bank rows, 5 learned checkpoints, 5,760 held-out episode rows, 60 control banks,
+1,920 causal rows, and 60 counterexample rows; utility and paired-control aggregates retain 72 and
+48 rows respectively. CC0 is supported for 109 candidates and CC1 for 6; CC2 and CC3 are not
+supported with zero qualified candidates. A full independent audit passed, and
+`PYTHONHASHSEED=1` versus `PYTHONHASHSEED=37` reproduced all eight artifact bytes exactly.
+
+**Reason:** The result supports only the preregistered synthetic recurrence/stability boundary and
+next-channel-MSE result. It does not establish human semantic understanding, an organ, biological
+equivalence, energy efficiency, or a higher claim grade. Existing C06/C08 negative findings,
+protected evidence, package/schema, release manifests, and release metadata remain unchanged.

@@ -1,5 +1,25 @@
 # Project Status — SparkBrain v0.2.1
 
+## v0.3 C16 — bounded proto-concept formation
+
+C16 is accepted for the preregistered synthetic protocol `c16-proto-concepts-v1` and run
+`c16-proto-concepts-main-v1`. The official exact-eight artifact bundle is retained under
+`artifacts/v03/c16_proto_concepts/` from source commit
+`4933a6059240875d0548fe602f114d768a49ef28`; the recorded integration branch is
+`codex/c16-proto-concepts`, whose pre-artifact head `3dd9593` merges the source-only lineage
+through pin commit `b1c83e6`. All eight engineering gates passed with zero failed seeds. The raw
+bundle retains 990 lineage rows, 90 bank rows, 5 learned checkpoints, 5,760 held-out episode rows,
+360 seed summaries, 72 utility aggregates, 60 control banks, 240 seed comparisons, 48 aggregate
+comparisons, 1,920 causal rows, and 60 counterexample rows.
+
+CC0 is supported for 109 recurring synthetic candidates and CC1 for 6 held-out stable candidates.
+CC2 and CC3 are not supported (0 qualified candidates each). An independent full audit passed, and
+reproductions with `PYTHONHASHSEED=1` and `PYTHONHASHSEED=37` matched all eight artifact bytes.
+This is limited to unlabeled recurring structure and next-channel MSE in fixed synthetic streams;
+it does not establish human semantic understanding, an organ, biological equivalence, or energy
+efficiency. C06/C08 negative findings, claim grades, package version 0.2.1, persisted schema 0.2,
+release manifests, and release metadata remain unchanged.
+
 ## v0.3 C13 — evidence ledger and oracle entity-scope diagnosis
 
 C13 is locally accepted under preregistered protocol `c13-evidence-entity-v1`, using accepted
@@ -57,7 +77,7 @@ validity. C11 v2 was reviewed and accepted in merge `5bf5050`, satisfying the C1
 Existing C06/C08 negative results, claim grades, package/schema, and release metadata are
 unchanged.
 
-Status date: 2026-08-26
+Status date: 2026-08-27
 
 ## 1. Current maturity
 
