@@ -19,6 +19,8 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 runner = importlib.import_module("scripts.run_c16_concepts")
+release_mode = importlib.import_module("sparkbrain.release").release_mode
+
 PIN = "a" * 40
 
 
@@ -200,6 +202,10 @@ def test_source_exact_scope_and_working_pin(tmp_path, monkeypatch, tamper) -> No
             runner._validate_source_scope(root=tmp_path, protocol=value, source_commit=PIN)
 
 
+@pytest.mark.skipif(
+    release_mode(ROOT) == "archive",
+    reason="C16 source-commit hash pins require the retained stage checkout",
+)
 def test_protected_manifests_and_tamper(tmp_path) -> None:
     value = protocol()["source_control"]
     runner._validate_hash_manifest(ROOT, value["protected_hash_manifest"], count=29)
