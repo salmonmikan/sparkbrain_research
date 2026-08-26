@@ -12,7 +12,7 @@ from types import SimpleNamespace
 import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
-PROTOCOL_PATH = ROOT / "artifacts" / "v03" / "c15_revision" / "protocol.json"
+PROTOCOL_PATH = ROOT / "artifacts" / "v03" / "c15_revision_v4" / "protocol.json"
 RUNNER_PATH = ROOT / "scripts" / "run_c15_revision.py"
 SPEC = importlib.util.spec_from_file_location("run_c15_revision", RUNNER_PATH)
 assert SPEC is not None and SPEC.loader is not None
@@ -215,14 +215,17 @@ def test_source_scope_and_protected_hash_tamper_fail_closed(
         )
 
     protected = {}
-    for index in range(28):
+    for index in range(31):
         relative = f"protected/file-{index}.txt"
         path = tmp_path / relative
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(str(index), encoding="utf-8")
         protected[relative] = runner._sha256_file(path)
-    minimal = {"protected_files": protected}
-    assert len(runner._validate_protected_hashes(tmp_path, minimal)) == 28
+    minimal = {
+        "protected_files": protected,
+        "source_control": {"protected_inventory_count": 31},
+    }
+    assert len(runner._validate_protected_hashes(tmp_path, minimal)) == 31
     (tmp_path / "protected" / "file-3.txt").write_text("tampered", encoding="utf-8")
     with pytest.raises(RuntimeError, match="protected file hash changed"):
         runner._validate_protected_hashes(tmp_path, minimal)

@@ -19,9 +19,9 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
-PROTOCOL_RELATIVE = "artifacts/v03/c15_revision/protocol.json"
+PROTOCOL_RELATIVE = "artifacts/v03/c15_revision_v4/protocol.json"
 DEFAULT_PROTOCOL = ROOT / PROTOCOL_RELATIVE
-BASE_PROTOCOL_COMMIT = "cd241a898cc20b6b5696baea14147051ef126ad3"
+BASE_PROTOCOL_COMMIT = "099bf668d96ece5e85807448dd464bd6ed0fab2d"
 EXPECTED_FILES = {
     "calibration_by_input_track.json",
     "confusion_matrices.json",
@@ -306,7 +306,8 @@ def _validate_source_scope(
         "docs/RESULTS_LEDGER.md",
     }
     permitted_after_pin.update(
-        f"artifacts/v03/c15_revision/{name}" for name in EXPECTED_FILES - {"protocol.json"}
+        f"artifacts/v03/c15_revision_v4/{name}"
+        for name in EXPECTED_FILES - {"protocol.json"}
     )
     changed_authorized = sorted(set(after_pin) & set(authorized))
     if changed_authorized:
@@ -340,8 +341,15 @@ def _validate_source_scope(
 
 def _validate_protected_hashes(root: Path, protocol: dict[str, Any]) -> dict[str, str]:
     protected = dict(protocol["protected_files"])
-    if len(protected) != 28:
-        raise RuntimeError("C15 protected inventory must contain exactly 28 files")
+    expected_count = _require_int(
+        protocol["source_control"]["protected_inventory_count"],
+        "source_control.protected_inventory_count",
+        minimum=1,
+    )
+    if len(protected) != expected_count:
+        raise RuntimeError(
+            f"C15 protected inventory must contain exactly {expected_count} files"
+        )
     actual: dict[str, str] = {}
     for relative, expected in protected.items():
         path = root / relative
@@ -1725,7 +1733,7 @@ def _replay_context_activation(
             evidence=tuple(deliveries),
             heads=_head_output(outputs.outputs[stage_index], temperature=1.0),
         )
-        controller.process_stage(observation)
+        controller.process_stage(observation, stage_role="context")
     evaluated = adapt_fixture_entity_key(fixture.entity_key, entity_condition=entity_condition)
     snapshot = controller.belief_field.snapshot(evaluated)
     return float(snapshot.activations[fixture.target_truth])
@@ -1973,7 +1981,7 @@ def _evaluate_episode(
             evidence=tuple(deliveries),
             heads=_head_output(model_outputs[model_output_index], temperature=temperature),
         )
-        decision = controller.process_stage(observation)
+        decision = controller.process_stage(observation, stage_role=stage_role)
         decisions.append(decision)
         trace.append(
             {

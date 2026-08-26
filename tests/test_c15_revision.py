@@ -314,10 +314,13 @@ def _zero_model_output() -> tuple[C15RevisionModel, RevisionModelOutput]:
 
 def test_frozen_split_and_full_fixture_hashes_match_protocol() -> None:
     protocol = json.loads(
-        (Path(__file__).resolve().parents[1] / "artifacts/v03/c15_revision/protocol.json")
+        (
+            Path(__file__).resolve().parents[1]
+            / "artifacts/v03/c15_revision_v4/protocol.json"
+        )
         .read_text(encoding="utf-8")
     )
-    assert protocol["protocol_id"] == "c15-revision-objectives-v3"
+    assert protocol["protocol_id"] == "c15-revision-objectives-v4"
     assert EXPECTED_SPLIT_MANIFEST_SHA256 == protocol["seeds"]["split_manifest_sha256"]
     assert EXPECTED_FULL_FIXTURE_SHA256 == protocol["seeds"]["full_fixture_sha256"]
     assert_frozen_fixture_hashes()
@@ -329,7 +332,7 @@ def test_frozen_split_and_full_fixture_hashes_match_protocol() -> None:
         ]
     assert len(build_full_fixture("train")) == 64
     assert len(build_full_fixture("dev")) == len(build_full_fixture("test")) == 32
-    assert MODEL_SEEDS == tuple(protocol["seeds"]["model"]) == (2901, 2902, 2903, 2904, 2905)
+    assert MODEL_SEEDS == tuple(protocol["seeds"]["model"]) == (2951, 2952, 2953, 2954, 2955)
 
 
 @pytest.mark.parametrize(
@@ -671,6 +674,50 @@ def test_c14_proposal_precedes_veto_and_no_ignition_retains_entity() -> None:
     assert decision.state_before.state_hash == decision.state_after.state_hash
 
 
+def test_context_uses_c14_proposal_while_assessment_retains_learned_veto() -> None:
+    episode = _reserved_episode()
+    observation = _observation(
+        episode,
+        episode.context_stages[0],
+        _heads(episode.target_truth, abstention=1.0),
+        time=5.0,
+    )
+
+    context = RevisionController().process_stage(observation, stage_role="context")
+    assessment = RevisionController().process_stage(observation, stage_role="assessment")
+
+    assert context.proposal.ignited and context.ignited
+    assert context.belief_key == episode.target_truth
+    assert context.state_after.history == (episode.target_truth,)
+    assert assessment.proposal.ignited and not assessment.ignited
+    assert assessment.reason == "learned_insufficient_information"
+    assert assessment.state_before.state_hash == assessment.state_after.state_hash
+    assert context.input_hash == assessment.input_hash == observation.input_hash
+
+
+def test_invalid_stage_role_is_rejected_before_controller_mutation() -> None:
+    episode = _reserved_episode()
+    controller = RevisionController()
+    ledger_before = controller.ledger.serialize_state()
+    belief_before = controller.belief_field.serialize_state()
+
+    with pytest.raises(ValueError, match="stage_role must be context or assessment"):
+        controller.process_stage(
+            _observation(
+                episode,
+                episode.context_stages[0],
+                _heads(episode.target_truth),
+                time=5.0,
+            ),
+            stage_role="invalid",
+        )
+
+    assert controller.ledger.serialize_state() == ledger_before
+    assert controller.belief_field.serialize_state() == belief_before
+    assert controller.gate._c14_stability == {}
+    assert controller.gate._c14_signatures == {}
+
+
 def test_transition_head_veto_decays_once_without_clearing_winner() -> None:
     episode = _reserved_episode()
     controller = RevisionController()
@@ -997,7 +1044,7 @@ def test_transition_veto_boundary_is_049_reject_05_accept(
     assert accepted.proposal.ignited and accepted.ignited
 
 
-def test_c14_rejection_cannot_be_forced_by_learned_heads() -> None:
+def test_context_cannot_force_a_c14_rejection_with_learned_heads() -> None:
     episode = _reserved_episode("insufficient")
     decision = RevisionController().process_stage(
         _observation(
@@ -1011,7 +1058,8 @@ def test_c14_rejection_cannot_be_forced_by_learned_heads() -> None:
                 abstention=0.0,
             ),
             time=25.0,
-        )
+        ),
+        stage_role="context",
     )
     assert not decision.proposal.ignited
     assert not decision.ignited

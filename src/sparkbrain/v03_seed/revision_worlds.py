@@ -22,19 +22,19 @@ VARIANT_ORDER = (
 )
 
 _SPLIT_CONFIG = {
-    "train": (152_000, 16),
-    "dev": (252_000, 8),
-    "test": (452_000, 8),
+    "train": (153_000, 16),
+    "dev": (253_000, 8),
+    "test": (453_000, 8),
 }
 EXPECTED_SPLIT_MANIFEST_SHA256 = {
-    "dev": "345b3d30f64017799329edeb9ec90afb6c994ffcae2160d0dc5be5300bdc00a8",
-    "test": "c8c1ae76d103b0d375903f56d4089bf9fca62d597abaaba6507720fdcae71806",
-    "train": "70d8b6a0ddd0aad7adeefbe4473c93cb74c25316f5435cc7ba09ebdd837b236d",
+    "dev": "e4f7cc4ab4c2fa5c81a6d17c927424a3575431f0a6578ab87146c130ab87d6f7",
+    "test": "66d580f4e63a55f4a26441709caf8b443bfe701fdac548ff22867a60b7a31cf6",
+    "train": "bfd3e031edcc9d0c23a55bac1f5797420f1f85d7fca0a0e689ca4ff414fc3266",
 }
 EXPECTED_FULL_FIXTURE_SHA256 = {
-    "dev": "77a6e6644220e7654dd8ab94eca27639e23a984e7fc674e529a1df6709113587",
-    "test": "76f7945ff02b8689a8c341353278fa43354194963e344ed3e88d7930e4108510",
-    "train": "6e3c82e943b52d4f5b140b60c871bfdbd962c930a0470f015e27e760d4aafd36",
+    "dev": "8cec9458524b467c54927ba46a3055754e59aa531de21d8a8037bec993c04589",
+    "test": "cd27e177476f5c0adba37bf7c4e5284996f6155dd4d61ed1547be2bf1a7051c6",
+    "train": "4bb90acded764199b912b712becc16252c791086dbddc9f80259dd99de5ea455",
 }
 
 _STAGE_SPECS = {
@@ -245,11 +245,11 @@ def build_split_manifest(split: str) -> tuple[SplitManifestRow, ...]:
     for world_index, world in enumerate(WORLD_ORDER):
         for index in range(fixtures_per_world):
             episode_seed = base + 100 * world_index + index
-            family_id = f"fam-{_digest16(f'c15-family|{split}|{world}|{index}')}"
+            family_id = f"fam-{_digest16(f'c15v4-family|{split}|{world}|{index}')}"
             episode_id = (
                 "ep-"
                 + _digest16(
-                    f"c15-episode|{split}|{world}|{index}|{episode_seed}"
+                    f"c15v4-episode|{split}|{world}|{index}|{episode_seed}"
                 )
             )
             rows.append(SplitManifestRow(episode_id, episode_seed, family_id, world))
@@ -288,8 +288,8 @@ def _make_evidence(
     stage: int,
     slot: int,
 ) -> FixtureEvidence:
-    source_id = f"src-{_digest16(f'c15-source|{family_id}|{stage}|{slot}')}"
-    group_id = f"grp-{_digest16(f'c15-group|{family_id}|{stage}|{slot}')}"
+    source_id = f"src-{_digest16(f'c15v4-source|{family_id}|{stage}|{slot}')}"
+    group_id = f"grp-{_digest16(f'c15v4-group|{family_id}|{stage}|{slot}')}"
     body: dict[str, object] = {
         "correlation_group": group_id,
         "entity_key": entity_key,
@@ -299,7 +299,7 @@ def _make_evidence(
         "strength": strength,
         "time": float(stage * 10 + slot),
     }
-    evidence_id = f"ev-{_digest16('c15-evidence|' + canonical_json_bytes(body).decode())}"
+    evidence_id = f"ev-{_digest16('c15v4-evidence|' + canonical_json_bytes(body).decode())}"
     return FixtureEvidence(evidence_id=evidence_id, **body)  # type: ignore[arg-type]
 
 
@@ -327,7 +327,7 @@ def _make_stage(
 
 def _build_episode(row: SplitManifestRow) -> RevisionFixtureEpisode:
     beliefs = _belief_assignment(row.episode_seed)
-    entity_key = f"ent-{_digest16('c15-entity|' + row.family_id)}"
+    entity_key = f"ent-{_digest16('c15v4-entity|' + row.family_id)}"
     context_names, assessment_name, previous, sufficient, target, transition = (
         _WORLD_SEQUENCES[row.world]
     )
@@ -378,7 +378,7 @@ def _build_episode(row: SplitManifestRow) -> RevisionFixtureEpisode:
                     entity_key=original.entity_key,
                     evidence_id=(
                         "ev-"
-                        + _digest16("c15-correlated|" + original.evidence_id)
+                        + _digest16("c15v4-correlated|" + original.evidence_id)
                     ),
                     hypothesis_id=original.hypothesis_id,
                     polarity=original.polarity,
@@ -428,7 +428,7 @@ def adapt_fixture_evidence_id(evidence_id: str, *, entity_condition: str) -> str
     if entity_condition == C15_E1_ORACLE_ENTITY:
         return evidence_id
     if entity_condition == C15_E0_GLOBAL:
-        return f"ev-{_digest16('c15-e0|' + evidence_id)}"
+        return f"ev-{_digest16('c15v4-e0|' + evidence_id)}"
     raise ValueError("entity_condition must be E0_global or E1_oracle_entity")
 
 
@@ -460,8 +460,8 @@ def fixture_lineage_ids(
         evidence_id, entity_condition=entity_condition
     )
     return (
-        f"sa-{_digest16('c15-sample|' + adapted_evidence_id)}",
-        f"sp-{_digest16('c15-spark|' + adapted_evidence_id)}",
+        f"sa-{_digest16('c15v4-sample|' + adapted_evidence_id)}",
+        f"sp-{_digest16('c15v4-spark|' + adapted_evidence_id)}",
     )
 
 

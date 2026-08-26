@@ -588,9 +588,16 @@ class RevisionController:
         self.belief_field.reset()
         self._seen_evidence_ids.clear()
 
-    def process_stage(self, observation: RevisionObservation) -> RevisionDecision:
+    def process_stage(
+        self,
+        observation: RevisionObservation,
+        *,
+        stage_role: str = "assessment",
+    ) -> RevisionDecision:
         if not isinstance(observation, RevisionObservation):
             raise ValueError("observation must use RevisionObservation")
+        if stage_role not in {"context", "assessment"}:
+            raise ValueError("stage_role must be context or assessment")
         # Validate all immutable records before mutating ledger, gate, or belief state.
         records = tuple(
             fixture_evidence_to_record(
@@ -654,7 +661,11 @@ class RevisionController:
             now=float(observation.time),
             mode=C14_BOUNDED_MODE,
         )
-        final = self._apply_veto(second, observation.heads, state_before)
+        final = (
+            second
+            if stage_role == "context"
+            else self._apply_veto(second, observation.heads, state_before)
+        )
         citations = self._proposal_citations(second)
         proposal_activation = (
             observation.heads.belief_probabilities[second.belief_key]
