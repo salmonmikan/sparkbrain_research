@@ -185,6 +185,10 @@ def test_noncanonical_protocol_is_rejected_before_git(
 
 def test_protocol_amendment_allows_exactly_four_dependency_fields() -> None:
     base = protocol()
+    base["dependencies"].pop("c15_protocol_base_commit", None)
+    base["dependencies"].pop("c15_protocol_base_sha256", None)
+    base["dependencies"]["c15_source_pin"] = "pending synthetic source pin"
+    base["dependencies"]["runner_execution_allowed"] = False
     current = copy.deepcopy(base)
     current["dependencies"]["c15_protocol_base_commit"] = runner.BASE_PROTOCOL_COMMIT
     current["dependencies"]["c15_protocol_base_sha256"] = "1" * 64
