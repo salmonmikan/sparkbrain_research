@@ -1,0 +1,92 @@
+{
+  "administrative_test_fix_commit": "d465adf39570e303cd18b41b6e6c39181bf61d13",
+  "authorized_execution_commit": "6860c2ec4133a9debefdec0b92e33ab0e09b430f",
+  "canonical_inventory": [
+    {
+      "path": "calibration_by_input_track.json",
+      "sha256": "034071adcc6efb1f6d4376f4b972b40622003c5aa774063cc8bea902f6e20d6c",
+      "size_bytes": 312082
+    },
+    {
+      "path": "confusion_matrices.json",
+      "sha256": "924d1da54bcf48bdf059b1f521bdc23e20b26b0addc40b2c2c8eca37139629f9",
+      "size_bytes": 256011
+    },
+    {
+      "path": "loss_ablation_metrics.json",
+      "sha256": "e621d22308b4f6e21758678a3efffcba4d4b4e5f811e651469591cdbea6ae665",
+      "size_bytes": 46162478
+    },
+    {
+      "path": "objective_config.json",
+      "sha256": "3637ec85a070985bdbf2e6a2e495d8b454f33e703a7bde9b0d5dca9a2d10a996",
+      "size_bytes": 4507
+    },
+    {
+      "path": "pareto_frontier.json",
+      "sha256": "fdd6ccea1a88fde5d082753b320c3c5ca4b6dfa0526b5f92bf9386ee9b6487db",
+      "size_bytes": 29425
+    },
+    {
+      "path": "per_transition_predictions.jsonl",
+      "sha256": "03869b0379d89b2809bc60cd756d7d8ed33f3b87e2bbf8057de877823468153f",
+      "size_bytes": 157444296
+    },
+    {
+      "path": "protocol.json",
+      "sha256": "821894be0e1305d13551e8d4dd2114853e11dd83313f40d6ab784d79873c17fc",
+      "size_bytes": 53783
+    },
+    {
+      "path": "report.md",
+      "sha256": "c70889f80441b203c9b55cd09f7c5130528c6506c11f80fb34554882f476c67e",
+      "size_bytes": 1407
+    }
+  ],
+  "purpose": "Evidence transport only; not a canonical artifact directory, release, or scientific source checkout.",
+  "reproduction": {
+    "comparison": "size and SHA256 identical",
+    "exact_artifacts_matched": 8,
+    "independent_pythonhashseed": "37",
+    "official_pythonhashseed": "1"
+  },
+  "result": {
+    "c15_accepted": false,
+    "c17_blocked": true,
+    "engineering_gates_passed": 7,
+    "engineering_gates_total": 8,
+    "engineering_status": "fail",
+    "failed_gate": "continuous_recovery_all_seeds",
+    "failed_seeds": [],
+    "scientific_status": "not_supported"
+  },
+  "schema": "sparkbrain-c15-evidence-transport-v1",
+  "scientific_source_commit": "eedb8b426f326c5dcb70bd548008695eb1652aee",
+  "source_test_disclosure": "The execution tree has the disclosed post-pin synthetic fixture CI failure. The integration-only four-line test repair does not change runtime, protocol, or these eight output bytes.",
+  "transport": {
+    "comments": "none",
+    "compression": "ZIP_DEFLATED",
+    "compression_level": 9,
+    "create_system": 3,
+    "entry_order": "lexicographic filename",
+    "extra_fields": "none",
+    "path": "c15_revision_v3_exact8.zip",
+    "sha256": "1ef3ef26334c0854bc6d9e4695da4fd6a380930dece80ba4659364bf36000f32",
+    "size_bytes": 17301391,
+    "timestamp": [
+      1980,
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    "unix_mode_octal": "100644"
+  },
+  "unpack_contract": "Extract the eight root entries into a new empty directory outside the repository; verify each size_bytes and sha256 against canonical_inventory. index.json is not a ninth canonical artifact. Scientific reruns require authorized_execution_commit, not the later integration tree.",
+  "verification": {
+    "crc_all_entries_pass": true,
+    "independent_pack_builds_byte_equal": true,
+    "unpacked_exact8_sizes_and_sha256_match": true
+  }
+}
