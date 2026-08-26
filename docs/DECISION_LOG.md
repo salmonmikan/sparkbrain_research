@@ -1,5 +1,24 @@
 # Decision Log
 
+## D-V03-0027 — Accept C15 v4 at the registered engineering boundary
+
+**Decision (2026-08-27):** Accept C15 v4's engineering result from the exact-eight bundle under
+source `1072a484f36fc8981622ed3de39d796b654698b9` and execution-pin head
+`49b40cee605d48e5f9dca243e2c23de43491c64e`. All eight frozen engineering gates pass with no
+failed seed; each of seeds 2951--2955 completes all 8/8 primary recovery opportunities without
+checkpoint restoration. The completed independent audit includes all nine 10,000-draw paired
+bootstrap recalculations and byte-identical `PYTHONHASHSEED=1`/`37` reproductions.
+
+Scientific status remains `not_supported`: full and no-residual recovery are both 1.0, and the
+weighted-CE ECE comparison is undefined under the registered null contract. These outcomes do not
+block the separate engineering acceptance and are not reclassified as scientific support. C17's
+C15 engineering-acceptance dependency is therefore unblocked, while C15 v3's completed negative
+artifacts and transport remain immutable.
+
+**Scope:** No threshold, seed, loss, fixture, source, release manifest, package/schema, C06/C08
+finding, or claim grade changed. This decision does not assert semantic understanding, organ or
+biological fidelity, energy efficiency, or external generalization.
+
 ## D-001 — Treat SparkBrain as brain-inspired, not a brain replica
 
 **Decision:** Until anatomical and neurophysiological validation exists, describe the project as a brain-inspired dynamic cognitive system / artificial brain experiment environment, not a reproduction of the human brain.

@@ -2,6 +2,35 @@
 
 Append entries; do not rewrite prior outcomes to match later interpretations.
 
+## 2026-08-27 — R-V03-0009 — C15 v4 completed evaluation; engineering accepted
+
+- Protocol/run: `c15-revision-objectives-v4` / `c15-revision-objectives-main-v4`.
+- Source/pin: `1072a484f36fc8981622ed3de39d796b654698b9`; execution-pin head
+  `49b40cee605d48e5f9dca243e2c23de43491c64e`; model seeds 2951--2955; bootstrap seed 4465.
+- Status: engineering `pass` (8/8), scientific `not_supported`, `failed_seeds=[]`. The official
+  bundle contains exactly eight artifacts and no failed seed was omitted.
+- Retention: 21,760 prediction rows, 23,040 training-step rows, 540 independent objective rows,
+  60 condition-seed rows, 170 seed and 34 aggregate confusion/calibration rows, 60 Pareto seed
+  points, 12 aggregate points, and 66 pairwise comparisons.
+- Engineering: each primary full/I1/E1/base seed 2951--2955 has 8/8 recovery successes without
+  checkpoint restoration. The other seven engineering gates also pass, including explicit
+  no-Ignition, exact-zero objective ablations, attribution-target coverage, and citation
+  resolvability.
+- Scientific boundary: `not_supported`. Full and no-residual recovery rates are both 1.0, so the
+  registered strict residual-superiority gate is false. The full-minus-weighted-CE ECE effect and
+  interval remain null because ECE is undefined; the paired bootstrap preserves 0 defined and
+  10,000 undefined resamples rather than dropping or imputing them. Engineering acceptance does
+  not convert this scientific result into support.
+- Independent evidence: an external standard-library audit passed exact inventory, canonical
+  JSON/JSONL, source/protocol pin and four-field amendment, protected 31/31, v3 evidence/transport
+  hashes, pure fixture hashes, raw cardinalities, raw-to-confusion/calibration/engineering gates,
+  context boundary, and all nine 10,000-draw paired bootstraps. A `PYTHONHASHSEED=37`
+  reproduction is byte-identical to `PYTHONHASHSEED=1` for all eight files.
+- Disposition: C15 is accepted for its registered engineering dependency, unblocking C17's
+  C15-acceptance prerequisite. C15 v3 negative artifacts/transport remain immutable and are not
+  superseded. Package 0.2.1, persisted schema 0.2, release manifests, C06/C08 findings, and
+  claim grades remain unchanged.
+
 ## 2026-08-22 — R0001 — Phase-0 SwitchWorld software validation
 
 **Code/version:** SparkBrain prototype v0.2 bundle  

@@ -1,5 +1,30 @@
 # Project Status — SparkBrain v0.2.1
 
+## v0.3 C15 v4 — engineering accepted; scientific support not supported
+
+C15 v4 is accepted at the registered **engineering** boundary under protocol
+`c15-revision-objectives-v4`, source `1072a484f36fc8981622ed3de39d796b654698b9`, and
+execution-pin head `49b40cee605d48e5f9dca243e2c23de43491c64e`.  It published the exact eight
+canonical artifacts with no failed seed. All eight engineering gates pass: the 21,760 retained
+prediction rows and 23,040 training-step rows have been independently recalculated; every seed
+2951--2955 completed 8/8 primary full/I1/E1/base recovery opportunities without checkpoint
+restoration; no-Ignition, objective-ablation, attribution, and citation gates also pass.
+
+Scientific status remains `not_supported`, and is retained rather than relaxed: full and
+no-residual recovery rates are both 1.0, so strict residual superiority is false. Weighted-CE
+ECE remains undefined in the primary comparison; its null semantics are retained in the
+10,000-draw paired bootstrap. The other registered point/interval outputs remain available in
+the raw and derived artifacts. This engineering acceptance unblocks the C17 dependency only; it
+does not establish semantic understanding, biological fidelity, energy efficiency, or any claim
+beyond the registered synthetic engineering evidence.
+
+An independent full audit revalidated exact-eight inventory, canonical serialization,
+source/protocol pins, protected 31/31 and immutable v3 transport evidence, pure fixture hashes,
+raw-to-derived aggregates, context/assessment boundary, all engineering gates, and all nine
+10,000-draw paired bootstraps. `PYTHONHASHSEED=1` and `PYTHONHASHSEED=37` reproductions are
+byte-identical for all eight files. C15 v3 negative artifacts and transport, package 0.2.1,
+persisted schema 0.2, and release metadata remain unchanged.
+
 ## v0.3 C15 v3 — completed evaluation, engineering acceptance blocked
 
 The frozen C15 v3 execution completed all five seeds and published all eight artifacts, but
@@ -111,7 +136,7 @@ validity. C11 v2 was reviewed and accepted in merge `5bf5050`, satisfying the C1
 Existing C06/C08 negative results, claim grades, package/schema, and release metadata are
 unchanged.
 
-Status date: 2026-08-26
+Status date: 2026-08-27
 
 ## 1. Current maturity
 
