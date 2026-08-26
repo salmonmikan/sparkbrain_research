@@ -200,7 +200,9 @@
     "c14_merge": "00dccf3dc8f6f70353a536dcf1db9ba0b19fc7b5",
     "c14_source": "eb7f542963397eba1b7d9b4a66a7873b3ba17ac4",
     "c14_status_ledger_correction": "14e5214673001c20bd470262896cb023e8e1952e",
-    "c15_source_pin": null,
+    "c15_protocol_base_commit": "099bf668d96ece5e85807448dd464bd6ed0fab2d",
+    "c15_protocol_base_sha256": "87a81a4f7c4aa6ece0c5b190554116d6a469fbd346c585a4a66362579da520fb",
+    "c15_source_pin": "1072a484f36fc8981622ed3de39d796b654698b9",
     "c15_v3_execution": "6860c2ec4133a9debefdec0b92e33ab0e09b430f",
     "c15_v3_protocol_sha256": "821894be0e1305d13551e8d4dd2114853e11dd83313f40d6ab784d79873c17fc",
     "c15_v3_source": "eedb8b426f326c5dcb70bd548008695eb1652aee",
@@ -211,7 +213,7 @@
     },
     "c15_v3_transport_index_sha256": "b28e6e47690d974f0e8506a64828b514a91343006019245b6092b2cfbcad3ec6",
     "c15_v3_transport_zip_sha256": "1ef3ef26334c0854bc6d9e4695da4fd6a380930dece80ba4659364bf36000f32",
-    "runner_execution_allowed": false
+    "runner_execution_allowed": true
   },
   "determinism": {
     "bootstrap_resamples": 10000,
