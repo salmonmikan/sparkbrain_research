@@ -1000,3 +1000,71 @@ independent source audit without official seed execution; four-field protocol pi
 verification; one official train, split dev selection/calibration, and test evaluation; independent
 raw reconstruction; and distinct-`PYTHONHASHSEED` byte reproduction. Test inspection cannot be used
 to revise v4 source or thresholds.
+
+## 16. C17 label-blind functional-organ protocol
+
+Protocol `c17-functional-organs-v1`, run `c17-functional-organs-main-v1`, tests whether a bounded
+group of C16 online-prototype candidates shows reproducible functional specialization under
+separable, interacting temporal-memory, entity-tracking, contradiction-integration, and
+action-selection demands. C15 v4 and C16 are engineering-accepted dependencies; their negative
+scientific boundaries remain unchanged. The machine-readable authority is
+`artifacts/v03/c17_functional_organs/preregistration.json`.
+
+### Discovery, proposal and assessment boundaries
+
+Each run seed forms a C16 online-prototype primary bank from 288 train frames. Development, test,
+and related-unseen held-out evaluation query the frozen bank without mutation. Discovery receives
+only opaque candidate IDs, activation, message endpoints/weights, opaque episode IDs, and time.
+Function/world/split names, truth, targets, rewards, expected outputs, labels, C15 assessment
+outcomes, and test metadata are excluded. It enumerates size-two-to-four groups, applies frozen
+train-only activity/episode-support requirements, ranks structural cohesion deterministically,
+and retains at most one primary candidate per seed/resource cell. No eligible candidate is a valid
+negative result. Development activation maps the candidate to one evaluator function; ties use the
+frozen function order. Test and held-out data cannot alter discovery or that mapping.
+
+C14's accepted bounded Coalition remains the sole proposal source. Context-stage C14 Ignition
+constructs history as fixed by C15 v4. Learned assessment applies only after a proposal and returns
+allow, veto, or abstain. A C14 rejection is final, no proposal means no assessment, and C15 cannot
+create or replace a hypothesis/action. Proposal canonical bytes must be unchanged by assessment.
+
+### Resource cells, fixtures and controls
+
+The primary cell uses Spark/module capacity 8, communication bandwidth 2, workspace capacity 2,
+and task compositionality 2. Four secondary cells reduce capacity, bandwidth, or workspace one at
+a time, or raise compositionality to 3. A validator requires each secondary cell to differ from
+the primary in exactly one numeric factor. Secondary effects are reported but cannot substitute
+for the primary organ hypothesis.
+
+Official seeds are 4701--4705; bootstrap seed is 5717. Split seed bases are train 171000, dev
+271000, test 471000, and heldout 571000. Each seed/cell retains 24/12/12/12 episodes with 12 frames.
+Composition-two cells share primitive fixtures; the composition-three cell changes only the
+registered composition schedule. IDs use a fresh `c17-*` SHA-256 namespace. Two independent
+standard-library fixture constructions agreed on all corpus/manifest hashes without importing a
+model or controller. Exact formulas, hashes, evaluator-only fields and counts are frozen in the
+machine protocol.
+
+Branches are unablated, targeted, random-unmatched, size-matched, degree-matched, load-matched,
+and activity-matched in that order. Comparator membership is selected from train traces only and
+never test performance. A missing comparator fails scientific support. Repeated comparator subsets
+remain separate control types and raw rows. Each branch restores C16, C14 and C15 state exactly.
+
+### Gates, statistics and outputs
+
+G08 requires at least three independently qualifying seeds mapped to the same function,
+cohesion at least 0.55, selectivity at least 0.20, related-unseen causal reuse at least 0.20,
+targeted impairment at least 0.05, targeted-minus-each-control impairment at least 0.03, and
+unrelated collateral at most 0.02. The primary cell additionally applies the registered 10,000-draw
+paired hierarchical bootstrap bounds. All five controls are an intersection requirement; no
+best-control selection is allowed. Secondary intervals are descriptive.
+
+The exact-nine output is preregistration, resource conditions, candidate-discovery JSONL,
+structural metrics, functional selectivity, matched ablations, held-out reuse, acceptance matrix,
+and report. Raw cardinalities scale only with complete seed buffers and every aggregate/gate must
+recalculate from those rows. Any failed required seed makes engineering an implementation failure
+and disables scientific bootstrap; zero successful seeds still produce the registered exact-nine
+failure bundle. Global preflight, serialization, integrity, or timeout failure publishes nothing.
+
+C08's `(9, 14)` pair, failed specificity/selectivity, E0 grade, and all negative artifacts remain
+protected historical evidence. C16 CC2/CC3 remain not supported. Until a source-only commit,
+independent audit, separate four-field pin amendment, and post-pin verification complete, the C17
+runner remains disabled and official fixtures may be hashed only by pure fixture code.

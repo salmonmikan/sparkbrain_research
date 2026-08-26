@@ -939,3 +939,53 @@ a new Decision ID, new namespace/seeds/splits/bootstrap, and a new protocol.
 repairs a pre-test mechanism mismatch without forcing recovery, weakening C14, altering scientific
 gates, or discarding the completed v3 negative result. Fresh identities prevent hidden reuse across
 experiments.
+
+## D-V03-0029 — Preregister label-blind C17 functional-organ evaluation
+
+**Decision (2026-08-27):** Preregister protocol `c17-functional-organs-v1`, run
+`c17-functional-organs-main-v1`, from accepted C15 v4 and C16 integration commit
+`74fbf5c880d49291b087c9beecc255d838da49dd`. The machine-readable authority is
+`artifacts/v03/c17_functional_organs/preregistration.json`, raw SHA-256
+`736c122c4eb50e35d84bca548ccdea97d920ee75c860799a29003caa4fd71c5c`. This first commit has a
+null source pin and disabled runner; it authorizes no official model, controller, train, dev,
+test, held-out, or artifact-result execution.
+
+Candidate discovery is train-only and blind to evaluator function names, truth, targets, rewards,
+C15 decisions, and test metadata. It operates on opaque C16 online-prototype candidate activity
+and message flow, then locks one structurally ranked candidate per seed/resource cell. Development
+data maps that candidate to one evaluator function before any test or related-unseen held-out
+evaluation. Candidate identities are never aligned across seeds.
+
+The primary cell is capacity/bandwidth/workspace/compositionality `8/2/2/2`. Four secondary cells
+change exactly one factor: `4/2/2/2`, `8/1/2/2`, `8/2/1/2`, and `8/2/2/3`. Secondary cells are
+moderator analyses and cannot rescue a failed primary result. Targeted ablation is paired with
+unablated, random-unmatched, size-, degree-, load-, and activity-matched branches selected from
+train traces only. Every control is mandatory.
+
+Freeze official run seeds 4701--4705, reserved test seeds 9901701--9901702, bootstrap seed 5717,
+and split bases 171000/271000/471000/571000. Two independent pure-fixture implementations, neither
+importing nor executing a model or controller, agreed exactly. The per-seed manifest hashes are
+fixed for all five seeds together with the five full-fixture SHA-256 values in the preregistration
+file; each corpus contains all five resource cells and all four splits.
+
+Retain the G08 minima: seed consistency 3, structural cohesion 0.55, functional selectivity 0.20,
+held-out causal reuse 0.20, targeted impairment 0.05, targeted-minus-each-control impairment 0.03,
+and unrelated collateral 0.02 maximum. The primary result additionally requires the registered
+paired bootstrap bounds. Candidate absence or a failed scientific gate is `not_supported`, not an
+implementation failure; engineering completion remains possible with negative science.
+
+C14 remains the only proposal source. The C15 v4 learned path can assess a C14 proposal only as
+allow, veto, or abstain; it cannot create, replace, or revive a rejected proposal. C08's candidate
+pair `(9, 14)`, unavailable development target, E0 grade, negative artifacts, and prohibited
+"organs emerged" wording remain immutable and are not C17 labels or controls. C16 CC2/CC3 remain
+not supported and are not promoted by dependency reuse.
+
+Implementation may change only the eight preregistered C17 source/test paths. A separate
+source-only commit, independent audit, and exact four-field protocol amendment must precede the
+first official execution. Package 0.2.1, persisted schema 0.2, release manifests, C06/C08/C15
+negative evidence, accepted C14--C16 source/artifacts, and claim grades remain frozen.
+
+**Reason:** Label-blind structural discovery, a locked development mapping, all required matched
+controls, fresh identities, causal held-out reuse, and an explicit proposal/assessment boundary
+are the minimum falsifiable test that distinguishes a functional-organ candidate from the C08
+router/cluster negative or incidental C16 recurrence.
