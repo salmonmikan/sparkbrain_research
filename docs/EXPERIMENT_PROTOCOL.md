@@ -1068,3 +1068,23 @@ C08's `(9, 14)` pair, failed specificity/selectivity, E0 grade, and all negative
 protected historical evidence. C16 CC2/CC3 remain not supported. Until a source-only commit,
 independent audit, separate four-field pin amendment, and post-pin verification complete, the C17
 runner remains disabled and official fixtures may be hashed only by pure fixture code.
+
+### 16.1 C17 preregistration reproducibility amendment
+
+D-V03-0030 corrects two preregistration-integrity defects before source acceptance or official
+execution. The C16 dependency pin is the resolved commit
+`b1c83e619e3c05215bb8878b8294367615b8e058`, not its seven-character display abbreviation. The
+machine preregistration now contains a complete pure-fixture generation contract sufficient to
+reconstruct the already frozen corpus and manifest bytes independently: exact nested schemas and
+array order; canonical JSON and floating-point semantics; all episode, sample, source, correlation,
+entity, hypothesis, and action ID preimages; the episode/composition/evaluator formulas; ordered
+function, context, and amplitude writes to `base_values`; scoring fields; and the manifest
+projection.
+
+This is a specification-only correction. The five official run seeds, two reserved seeds, split
+bases, all ten frozen fixture/manifest hashes, thresholds, controls, resource cells, artifact
+cardinalities, scientific boundaries, and failure behavior do not change. The corrected
+preregistration raw SHA-256 is
+`5722f4cdc1feb99e7213546365601c168499e5d2bbe31db49721e59350d069bf`. The runner remains disabled,
+the source pin remains null, and no model, controller, official run, or test is executed by this
+amendment.

@@ -989,3 +989,24 @@ negative evidence, accepted C14--C16 source/artifacts, and claim grades remain f
 controls, fresh identities, causal held-out reuse, and an explicit proposal/assessment boundary
 are the minimum falsifiable test that distinguishes a functional-organ candidate from the C08
 router/cluster negative or incidental C16 recurrence.
+
+## D-V03-0030 — Correct C17 dependency pin and pure-fixture specification
+
+**Decision (2026-08-27):** Amend only the disabled C17 preregistration contract after independent
+audit found that the abbreviated C16 pin and prose-only full-fixture description were insufficient
+for a third party to reproduce the frozen hashes from the preregistration alone. Resolve `c16_pin`
+to `b1c83e619e3c05215bb8878b8294367615b8e058` and add the complete standard-library construction
+contract: exact object keys and types, array order, every SHA-256 identifier preimage and prefix
+length, episode and frame formulas, entity/hypothesis/action fields, binary64 amplitude calculation,
+ordered `base_values` writes, manifest transform, and canonical hash bytes.
+
+The corrected machine-readable authority has raw SHA-256
+`5722f4cdc1feb99e7213546365601c168499e5d2bbe31db49721e59350d069bf`. It supersedes only the raw
+preregistration hash recorded by D-V03-0029. Protocol ID, run ID, seeds, split bases, resource cells,
+thresholds, controls, exact-nine outputs, all five manifest hashes, all five full-fixture hashes,
+claim boundaries, `source_commit=null`, and `runner_execution_allowed=false` are unchanged. No C17
+source, test, model, controller, or official fixture execution is authorized by this amendment.
+
+**Reason:** A frozen digest is auditable only when the hashed document is reconstructible without
+consulting a future implementation. Expanding the machine contract removes that ambiguity without
+changing experimental degrees of freedom or converting C08/C15/C16 negative evidence into support.
