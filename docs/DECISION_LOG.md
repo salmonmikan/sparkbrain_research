@@ -697,3 +697,57 @@ shapes for the required seven-field scientific object and empty JSONL. Freezing 
 prevents implementation-dependent failure artifacts and makes zero-success behavior testable. No
 official v2 source pin, seed, training result, checkpoint, calibration result, diagnostic, or test
 result had been executed or observed.
+
+## D-V03-0023 — Supersede failed C15 v2 with nullable statistics and a hard worker deadline
+
+**Decision (2026-08-26):** Preserve R-V03-0007 and v2 source
+`bb89797c92a8a5f38216dac00f48cfa59f66381f` as failed execution history. The official v2 run
+reached global aggregation, where a nullable metric was coerced to float; its traceback does not
+identify whether F1 or ECE was the first undefined operand. No final bundle or numerical evidence
+was accepted. The run also exceeded the frozen 120-second limit, which the source did not enforce.
+These are implementation failure and protocol noncompliance, not scientific negatives. Do not
+rerun v2 or relabel global failure as a failed model seed.
+
+Preregister protocol `c15-revision-objectives-v3`, run `c15-revision-objectives-main-v3` before
+source correction. Model seeds are 2901--2905, bootstrap seed 4415, and train/dev/test episode
+bases 152000/252000/452000. Pure fixture reconstruction, independently repeated without model or
+controller execution, gives manifest SHA-256 train
+`70d8b6a0ddd0aad7adeefbe4473c93cb74c25316f5435cc7ba09ebdd837b236d`, dev
+`345b3d30f64017799329edeb9ec90afb6c994ffcae2160d0dc5be5300bdc00a8`, test
+`c8c1ae76d103b0d375903f56d4089bf9fca62d597abaaba6507720fdcae71806`; full-fixture SHA-256 train
+`6e3c82e943b52d4f5b140b60c871bfdbd962c930a0470f015e27e760d4aafd36`, dev
+`77a6e6644220e7654dd8ab94eca27639e23a984e7fc674e529a1df6709113587`, test
+`76f7945ff02b8689a8c341353278fa43354194963e344ed3e88d7930e4108510`.
+
+Preserve the existing no-ignition F1 formula: harmonic mean of precision and recall, null when
+either is undefined or their sum is zero. ECE remains null without decided rows. Paired effects
+are null if either operand is null. Consume all 10,000 bootstrap draws without dropping,
+redrawing, or imputing any undefined effect. Every interval has exactly effect/lower/upper,
+resamples/bootstrap_seed, and defined_resamples/undefined_resamples. Counts are integers summing
+to 10,000 on a completed bootstrap. Any undefined draw or point effect makes both bounds null;
+a finite point effect remains visible. Failed-seed rules prevent bootstrap execution and leave
+all five effect/bounds/count fields null. Null point effects fail their required residual or
+noninferiority gate; strict improvement considers only finite effects. All required point gates
+must pass for supported; otherwise the completed scientific result is not_supported. Descriptive
+interval availability does not change a finite point-estimate gate.
+
+Freeze a 3,600-second hard worker budget. Parent preflight is excluded; monotonic timing starts
+immediately before spawning one worker. The parent must confirm worker exit by the deadline.
+The worker performs training, selection, calibration, evaluation, aggregation, validation, and
+staging writes; only the parent publishes after successful worker exit and exact eight-file
+inventory validation. On timeout terminate/join for five seconds, then kill/join for five seconds
+if alive. Even a later normal exit does not permit publication. Cleanup requires confirmed worker
+termination; otherwise retain quarantined staging and report its absolute path on stderr. A new
+output stays absent; an existing empty output stays empty. Raise `C15RunTimeoutError`, CLI exit
+124, for global timeout including a surviving worker; other global failures exit 1. No local
+path, exception message, or elapsed time enters scientific artifacts. Record any global timeout
+as a resource-limited implementation failure, never a failed model seed.
+
+All world formulas, architecture, losses, optimization, selection, calibration, scientific
+thresholds, C14 dependency, protected hashes, package/schema freeze, and negative-result policy
+remain unchanged. Tests use reserved synthetic data and non-official seeds until a source-only
+commit and separate pin amendment authorize the new official execution.
+
+**Reason:** Explicit nullable statistics repair a contract contradiction without inventing
+observations. An enforceable worker deadline repairs resource control; the larger budget is not
+a scientific threshold change. Fresh seeds isolate the failed execution from the new procedure.
