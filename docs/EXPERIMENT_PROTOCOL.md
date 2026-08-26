@@ -890,3 +890,44 @@ are stored in a deterministic ZIP under `artifacts/v03/c15_revision_transport/`.
 records all entry sizes and hashes, the ZIP hash, the frozen source/execution commits, and the
 failed acceptance status. This transport directory is not the canonical C15 artifact directory,
 does not add a ninth scientific artifact, and is not a release or a substitute execution tree.
+
+### 14.2 Preregistered C15 v4 correction
+
+D-V03-0026 defines protocol `c15-revision-objectives-v4` and run
+`c15-revision-objectives-main-v4` as a fresh experiment. The machine-readable authority is
+`artifacts/v03/c15_revision_v4/protocol.json`. Its preregistration has a null source pin and a
+disabled runner. The v3 protocol, source/execution commits, exact-eight transport, engineering
+failure, scientific negative, and R-V03-0008 remain immutable historical evidence.
+
+The correction uses retained v3 dev diagnostics only. Across 200 primary full/I1/E1/base context
+stages, unchanged C14 proposed an Ignition 200 times, while the learned abstention calibrated only
+on assessment rows vetoed 136 context stages. All 40 recovery-dev sequences contained correct
+C14 A-to-B-to-A proposals, and every reconstructed recovery-head sigmoid was at least
+0.9204247345397955. V4 aligns mechanism and supervision scope: learned belief probabilities still
+feed C14 on context and assessment, and C14 rejection can never be overridden; context C14
+Ignitions construct persistent history without learned abstention/transition veto, while assessment
+alone retains the calibrated learned veto. Stage role is fixed scheduler metadata, not model input.
+
+V4 uses model seeds 2951--2955, bootstrap seed 4465, and train/dev/test bases
+153000/253000/453000. All generated identities use a new `c15v4-*` namespace. This namespace change
+is necessary because the prior family formula did not contain episode seed. It prevents reuse of
+v1/v2/v3 family, episode, entity, evidence, source, group, E0, sample, or Spark identities. The
+independently reconstructed manifest hashes are train
+`bfd3e031edcc9d0c23a55bac1f5797420f1f85d7fca0a0e689ca4ff414fc3266`, dev
+`e4f7cc4ab4c2fa5c81a6d17c927424a3575431f0a6578ab87146c130ab87d6f7`, test
+`66d580f4e63a55f4a26441709caf8b443bfe701fdac548ff22867a60b7a31cf6`; full-fixture hashes are
+train `4bb90acded764199b912b712becc16252c791086dbddc9f80259dd99de5ea455`, dev
+`8cec9458524b467c54927ba46a3055754e59aa531de21d8a8037bec993c04589`, and test
+`cd27e177476f5c0adba37bf7c4e5284996f6155dd4d61ed1547be2bf1a7051c6`.
+
+The v3 eight engineering gates and all scientific point thresholds are unchanged. V4 neither
+guarantees nor requires a positive residual-superiority result: science may remain
+`not_supported`. Engineering acceptance still requires all-seed continuous A-to-B-to-A recovery
+without checkpoint restore plus the other seven gates. Package/release/schema advancement remains
+C20-only.
+
+The enforced order is preregistration commit; authorized source-only commit and reserved tests;
+independent source audit without official seed execution; four-field protocol pin; post-pin full
+verification; one official train, split dev selection/calibration, and test evaluation; independent
+raw reconstruction; and distinct-`PYTHONHASHSEED` byte reproduction. Test inspection cannot be used
+to revise v4 source or thresholds.

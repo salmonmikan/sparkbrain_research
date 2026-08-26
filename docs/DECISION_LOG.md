@@ -785,3 +785,63 @@ Independent byte reproduction is still pending at the time of this administrativ
 **Scope:** No runner/runtime, world, objective, threshold, seed, protocol, release manifest,
 package/schema, protected artifact, or canonical report changes. No public release or upload is
 authorized by this decision.
+
+## D-V03-0026 — Preregister C15 v4 assessment-only learned veto with fresh identities
+
+**Decision (2026-08-27):** Preserve R-V03-0008, C15 v3 source
+`eedb8b426f326c5dcb70bd548008695eb1652aee`, execution tree
+`6860c2ec4133a9debefdec0b92e33ab0e09b430f`, protocol bytes, exact-eight transport, engineering
+`fail` and scientific `not_supported` interpretations without amendment. V4 is a new experiment,
+not a rerun, replacement, or favorable reinterpretation of v3. Its separate machine authority is
+`artifacts/v03/c15_revision_v4/protocol.json`, initially with `c15_source_pin=null` and
+`runner_execution_allowed=false`.
+
+The correction was selected from retained v3 **dev rows only**. In the primary
+full/I1/E1/base dev cell, all 200 context-stage C14 proposals ignited, but assessment-calibrated
+learned abstention vetoed 136 of those 200 context stages. In the 40 recovery dev rows, all C14
+proposal sequences were the correct A-to-B-to-A sequence. The recovery-head sigmoid reconstructed
+from the retained abstention sigmoid and four-way transition-softmax log ratio was at least
+`0.9204247345397955` for every row. Thus the observed blocker was a scope mismatch: supervision and
+calibration covered assessment decisions, while the same veto was also applied to context state
+construction. No v3 test row or v4 official seed informed this correction.
+
+V4 therefore keeps learned belief probabilities as the input to unchanged C14 on every stage and
+keeps every C14 rejection final. A context-stage C14 Ignition constructs persistent history without
+an additional learned abstention or transition-head veto. The assessment stage alone retains the
+development-calibrated learned abstention and maintain/update/recovery-head vetoes. Stage role is
+fixed scheduler metadata and is not a model input; truth, transition labels, split, episode seed,
+and test metadata remain unavailable to the model/controller.
+
+Freeze model seeds 2951--2955, bootstrap seed 4465, and train/dev/test episode bases
+153000/253000/453000. Merely changing episode bases would reuse v3 family IDs because the earlier
+family derivation omitted the episode seed. V4 therefore freezes the distinct `c15v4-*` namespace
+for family, episode, entity, evidence, source, group, correlated-copy, E0 mapping, sample, and Spark
+derivations. Independent pure-fixture implementations, neither importing nor executing a model or
+controller, agree on manifest SHA-256 train
+`bfd3e031edcc9d0c23a55bac1f5797420f1f85d7fca0a0e689ca4ff414fc3266`, dev
+`e4f7cc4ab4c2fa5c81a6d17c927424a3575431f0a6578ab87146c130ab87d6f7`, test
+`66d580f4e63a55f4a26441709caf8b443bfe701fdac548ff22867a60b7a31cf6`; full-fixture SHA-256 train
+`4bb90acded764199b912b712becc16252c791086dbddc9f80259dd99de5ea455`, dev
+`8cec9458524b467c54927ba46a3055754e59aa531de21d8a8037bec993c04589`, test
+`cd27e177476f5c0adba37bf7c4e5284996f6155dd4d61ed1547be2bf1a7051c6`.
+
+All eight engineering gates, their denominators, the twelve conditions, objective weights,
+training/selection/calibration budgets, exact-eight artifact inventory, failure semantics,
+10,000-draw paired bootstrap, scientific thresholds, C12--C14 dependencies, package 0.2.1,
+persisted schema 0.2, and C06/C08/C15-v3 negative-result boundaries remain unchanged. In
+particular, no all-seed recovery, residual-superiority, ECE, or weighted-CE margin is relaxed.
+Scientific `not_supported` remains compatible with engineering acceptance only if all eight
+engineering gates independently pass.
+
+Execution order is mandatory: commit this disabled preregistration; implement and commit only the
+authorized source/test paths using reserved synthetic fixtures; complete focused/full/readiness and
+independent source audit without executing v4 official train/dev/test seeds; amend exactly the four
+source-pin fields and enable the runner; rerun full verification; execute the official train/dev/test
+sequence once; independently recalculate raw-to-derived results; then require all eight files to be
+byte-identical under a distinct `PYTHONHASHSEED`. Any source change after v4 test inspection requires
+a new Decision ID, new namespace/seeds/splits/bootstrap, and a new protocol.
+
+**Reason:** Restricting a development-calibrated veto to the decision scope on which it was trained
+repairs a pre-test mechanism mismatch without forcing recovery, weakening C14, altering scientific
+gates, or discarding the completed v3 negative result. Fresh identities prevent hidden reuse across
+experiments.
