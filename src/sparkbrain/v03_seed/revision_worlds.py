@@ -22,19 +22,19 @@ VARIANT_ORDER = (
 )
 
 _SPLIT_CONFIG = {
-    "train": (151_000, 16),
-    "dev": (251_000, 8),
-    "test": (451_000, 8),
+    "train": (152_000, 16),
+    "dev": (252_000, 8),
+    "test": (452_000, 8),
 }
 EXPECTED_SPLIT_MANIFEST_SHA256 = {
-    "dev": "e161c6bb652fd35a82e17e22003c792b3001f6b8a9d5c608c2e3e0caffb2b0b6",
-    "test": "e4dc44af60c268ac57ea38904cefd4f31bf6f35ac40178a319aa5d8688648fd5",
-    "train": "0f33808ba39613c998a3015d1cf0aa2adbe2808d0c4c455a8da63dc6fe45489e",
+    "dev": "345b3d30f64017799329edeb9ec90afb6c994ffcae2160d0dc5be5300bdc00a8",
+    "test": "c8c1ae76d103b0d375903f56d4089bf9fca62d597abaaba6507720fdcae71806",
+    "train": "70d8b6a0ddd0aad7adeefbe4473c93cb74c25316f5435cc7ba09ebdd837b236d",
 }
 EXPECTED_FULL_FIXTURE_SHA256 = {
-    "dev": "1714829588a605bfa6a38b443f452dc86b2bdcb71929631e7cc26e2c24b975d8",
-    "test": "6cf39d823996bd37c9bec4ee9bc7fd235b51da3e2931d3337190d50c60bfef64",
-    "train": "2d5de7eef61a4d92f8e1a83cf92670e42688f32ac0abe0295d0d736dbce2ff2b",
+    "dev": "77a6e6644220e7654dd8ab94eca27639e23a984e7fc674e529a1df6709113587",
+    "test": "76f7945ff02b8689a8c341353278fa43354194963e344ed3e88d7930e4108510",
+    "train": "6e3c82e943b52d4f5b140b60c871bfdbd962c930a0470f015e27e760d4aafd36",
 }
 
 _STAGE_SPECS = {

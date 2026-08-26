@@ -4,18 +4,24 @@ import argparse
 import hashlib
 import json
 import math
+import multiprocessing
+import os
 import random
 import shutil
 import subprocess
+import sys
 import tempfile
+import time
 from collections.abc import Iterable, Mapping, Sequence
+from multiprocessing.connection import Connection
+from multiprocessing.process import BaseProcess
 from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 PROTOCOL_RELATIVE = "artifacts/v03/c15_revision/protocol.json"
 DEFAULT_PROTOCOL = ROOT / PROTOCOL_RELATIVE
-BASE_PROTOCOL_COMMIT = "45b58a6a9a92911483dd36086f960b2d208b8d34"
+BASE_PROTOCOL_COMMIT = "cd241a898cc20b6b5696baea14147051ef126ad3"
 EXPECTED_FILES = {
     "calibration_by_input_track.json",
     "confusion_matrices.json",
@@ -235,6 +241,8 @@ def _failure_scientific_support(protocol: dict[str, Any]) -> dict[str, object]:
                 "upper": None,
                 "resamples": protocol["determinism"]["bootstrap_resamples"],
                 "bootstrap_seed": protocol["determinism"]["bootstrap_seed"],
+                "defined_resamples": None,
+                "undefined_resamples": None,
             }
             for comparison in comparisons
         },
@@ -773,12 +781,16 @@ def _variant_change(
     return changed, len(pairs), changed / len(pairs)
 
 
+def _nullable_difference(left: float | None, right: float | None) -> float | None:
+    return None if left is None or right is None else float(left) - float(right)
+
+
 def _comparison_effect(
     comparison: str,
     rows: Sequence[Mapping[str, object]],
     *,
     protocol: dict[str, Any],
-) -> float:
+) -> float | None:
     if comparison.endswith("_change"):
         variant = {
             "distractor_change": "irrelevant_distractor",
@@ -789,7 +801,7 @@ def _comparison_effect(
     full = _pareto_metrics(_primary_base_rows(rows, "full_separated"), protocol=protocol)
     if comparison == "recovery_full_minus_no_residual":
         other = _pareto_metrics(_primary_base_rows(rows, "no_residual"), protocol=protocol)
-        return float(full["recovery_rate"]) - float(other["recovery_rate"])
+        return _nullable_difference(full["recovery_rate"], other["recovery_rate"])
     other = _pareto_metrics(_primary_base_rows(rows, "one_weighted_ce"), protocol=protocol)
     metric = {
         "full_minus_weighted_ce_unnecessary": "unnecessary_revision_rate",
@@ -798,7 +810,7 @@ def _comparison_effect(
         "full_minus_weighted_ce_no_ignition_f1": "no_ignition_f1",
         "full_minus_weighted_ce_ece": "ece",
     }[comparison]
-    return float(full[metric]) - float(other[metric])
+    return _nullable_difference(full[metric], other[metric])
 
 
 def _percentile(values: Sequence[float], probability: float) -> float:
@@ -861,13 +873,21 @@ def _bootstrap_intervals(
                     for _fixture_index in range(8):
                         episode_id = ordered[rng.randrange(8)]
                         sampled.extend(by_block[(seed, episode_id)])
-            effects.append(_comparison_effect(comparison, sampled, protocol=protocol))
+            effect = _comparison_effect(comparison, sampled, protocol=protocol)
+            if effect is not None:
+                effects.append(effect)
+        observed = _comparison_effect(comparison, eligible, protocol=protocol)
+        undefined = resamples - len(effects)
+        # Undefined draws still consume their complete paired sample; no conditional CI.
+        bounds_defined = undefined == 0 and observed is not None
         result[comparison] = {
-            "effect": _comparison_effect(comparison, eligible, protocol=protocol),
-            "lower": _percentile(effects, 0.025),
-            "upper": _percentile(effects, 0.975),
+            "effect": observed,
+            "lower": _percentile(effects, 0.025) if bounds_defined else None,
+            "upper": _percentile(effects, 0.975) if bounds_defined else None,
             "resamples": resamples,
             "bootstrap_seed": int(protocol["determinism"]["bootstrap_seed"]),
+            "defined_resamples": len(effects),
+            "undefined_resamples": undefined,
         }
     return result
 
@@ -906,32 +926,36 @@ def _scientific_support(
     residual_gate = {
         "full_recovery_rate": full["recovery_rate"],
         "no_residual_recovery_rate": no_residual["recovery_rate"],
-        "passed": float(full["recovery_rate"]) > float(no_residual["recovery_rate"]),
+        "passed": full["recovery_rate"] is not None
+        and no_residual["recovery_rate"] is not None
+        and full["recovery_rate"] > no_residual["recovery_rate"],
     }
     margins = thresholds["weighted_ce_noninferiority_margins"]
     checks = {
         "unnecessary_revision_rate": (
-            float(full["unnecessary_revision_rate"]) - float(weighted["unnecessary_revision_rate"]),
+            _nullable_difference(
+                full["unnecessary_revision_rate"], weighted["unnecessary_revision_rate"]
+            ),
             float(margins["unnecessary_revision_rate_max_increase"]),
             "max_increase",
         ),
         "missed_revision_rate": (
-            float(full["missed_revision_rate"]) - float(weighted["missed_revision_rate"]),
+            _nullable_difference(full["missed_revision_rate"], weighted["missed_revision_rate"]),
             float(margins["missed_revision_rate_max_increase"]),
             "max_increase",
         ),
         "recovery_rate": (
-            float(full["recovery_rate"]) - float(weighted["recovery_rate"]),
+            _nullable_difference(full["recovery_rate"], weighted["recovery_rate"]),
             float(margins["recovery_rate_max_decrease"]),
             "max_decrease",
         ),
         "no_ignition_f1": (
-            float(full["no_ignition_f1"]) - float(weighted["no_ignition_f1"]),
+            _nullable_difference(full["no_ignition_f1"], weighted["no_ignition_f1"]),
             float(margins["no_ignition_f1_max_decrease"]),
             "max_decrease",
         ),
         "ece": (
-            float(full["ece"]) - float(weighted["ece"]),
+            _nullable_difference(full["ece"], weighted["ece"]),
             float(margins["ece_max_increase"]),
             "max_increase",
         ),
@@ -941,18 +965,21 @@ def _scientific_support(
             "effect_full_minus_weighted_ce": effect,
             "margin": margin,
             "direction": direction,
-            "passed": effect <= margin if direction == "max_increase" else effect >= -margin,
+            "passed": effect is not None
+            and (effect <= margin if direction == "max_increase" else effect >= -margin),
         }
         for name, (effect, margin, direction) in checks.items()
     }
     improvements = {
-        "unnecessary_revision_rate": float(weighted["unnecessary_revision_rate"])
-        - float(full["unnecessary_revision_rate"]),
-        "missed_revision_rate": float(weighted["missed_revision_rate"])
-        - float(full["missed_revision_rate"]),
-        "recovery_rate": float(full["recovery_rate"]) - float(weighted["recovery_rate"]),
-        "no_ignition_f1": float(full["no_ignition_f1"]) - float(weighted["no_ignition_f1"]),
-        "ece": float(weighted["ece"]) - float(full["ece"]),
+        "unnecessary_revision_rate": _nullable_difference(
+            weighted["unnecessary_revision_rate"], full["unnecessary_revision_rate"]
+        ),
+        "missed_revision_rate": _nullable_difference(
+            weighted["missed_revision_rate"], full["missed_revision_rate"]
+        ),
+        "recovery_rate": _nullable_difference(full["recovery_rate"], weighted["recovery_rate"]),
+        "no_ignition_f1": _nullable_difference(full["no_ignition_f1"], weighted["no_ignition_f1"]),
+        "ece": _nullable_difference(weighted["ece"], full["ece"]),
     }
     required = float(
         thresholds["weighted_ce_strict_improvement_required_on_at_least_one_dimension"]
@@ -960,7 +987,7 @@ def _scientific_support(
     strict_improvement = {
         "effects": improvements,
         "minimum": required,
-        "passed": any(value >= required for value in improvements.values()),
+        "passed": any(value is not None and value >= required for value in improvements.values()),
     }
     intervals = _bootstrap_intervals(rows, protocol=protocol)
     all_passed = (
@@ -2885,10 +2912,17 @@ def _validate_pareto(value: object, protocol: dict[str, Any]) -> None:
     )
     for name in ("full_recovery_rate", "no_residual_recovery_rate"):
         _require_number(
-            residual[name], f"pareto.residual_gate.{name}", nullable=bool(failed_seeds)
+            residual[name], f"pareto.residual_gate.{name}", nullable=True
         )
     if not isinstance(residual["passed"], bool):
         raise RuntimeError("pareto.residual_gate.passed must be bool")
+    expected_residual = (
+        residual["full_recovery_rate"] is not None
+        and residual["no_residual_recovery_rate"] is not None
+        and residual["full_recovery_rate"] > residual["no_residual_recovery_rate"]
+    )
+    if residual["passed"] is not expected_residual:
+        raise RuntimeError("pareto residual gate does not recalculate")
     noninferiority = _require_exact_keys(
         support["weighted_ce_noninferiority"],
         (
@@ -2909,13 +2943,21 @@ def _validate_pareto(value: object, protocol: dict[str, Any]) -> None:
         _require_number(
             check["effect_full_minus_weighted_ce"],
             f"pareto noninferiority {name} effect",
-            nullable=bool(failed_seeds),
+            nullable=True,
         )
         _require_number(check["margin"], f"pareto noninferiority {name} margin")
         if check["direction"] not in {"max_increase", "max_decrease"} or not isinstance(
             check["passed"], bool
         ):
             raise RuntimeError(f"pareto noninferiority {name} decision is invalid")
+        effect = check["effect_full_minus_weighted_ce"]
+        expected_pass = effect is not None and (
+            effect <= check["margin"]
+            if check["direction"] == "max_increase"
+            else effect >= -check["margin"]
+        )
+        if check["passed"] is not expected_pass:
+            raise RuntimeError(f"pareto noninferiority {name} does not recalculate")
     strict = _require_exact_keys(
         support["strict_improvement"],
         ("effects", "minimum", "passed"),
@@ -2928,26 +2970,52 @@ def _validate_pareto(value: object, protocol: dict[str, Any]) -> None:
         _require_number(
             effect,
             f"pareto.strict_improvement.effects.{name}",
-            nullable=bool(failed_seeds),
+            nullable=True,
         )
     _require_number(strict["minimum"], "pareto.strict_improvement.minimum")
     if not isinstance(strict["passed"], bool) or not isinstance(
         support["all_gates_passed"], bool
     ):
         raise RuntimeError("Pareto support pass flags must be bool")
+    if strict["passed"] is not any(
+        effect is not None and effect >= strict["minimum"] for effect in effects.values()
+    ):
+        raise RuntimeError("Pareto strict improvement does not recalculate")
+    expected_all = (
+        all(gate["passed"] for gate in support["variant_gates"].values())
+        and residual["passed"]
+        and all(check["passed"] for check in noninferiority.values())
+        and strict["passed"]
+    )
+    if support["all_gates_passed"] is not expected_all:
+        raise RuntimeError("Pareto all-gates decision does not recalculate")
     if support["status"] not in {
         "supported",
         "not_supported",
         protocol["failure_contract"]["failed_scientific_status"],
     }:
         raise RuntimeError("Pareto scientific support status is invalid")
-    intervals = support["bootstrap_intervals"]
+    if not failed_seeds and support["status"] != (
+        "supported" if expected_all else "not_supported"
+    ):
+        raise RuntimeError("Pareto scientific support status does not recalculate")
+    _validate_bootstrap_intervals(
+        support["bootstrap_intervals"], protocol=protocol, failed=bool(failed_seeds)
+    )
+
+
+def _validate_bootstrap_intervals(
+    value: object, *, protocol: dict[str, Any], failed: bool
+) -> None:
     expected_comparisons = protocol["determinism"]["bootstrap_algorithm"]["comparison_order"]
-    _require_exact_keys(intervals, expected_comparisons, "pareto.bootstrap_intervals")
+    intervals = _require_exact_keys(value, expected_comparisons, "pareto.bootstrap_intervals")
     for comparison, interval in intervals.items():
         item = _require_exact_keys(
             interval,
-            ("effect", "lower", "upper", "resamples", "bootstrap_seed"),
+            (
+                "effect", "lower", "upper", "resamples", "bootstrap_seed",
+                "defined_resamples", "undefined_resamples",
+            ),
             f"pareto.bootstrap_intervals.{comparison}",
         )
         for name in ("effect", "lower", "upper"):
@@ -2958,6 +3026,24 @@ def _validate_pareto(value: object, protocol: dict[str, Any]) -> None:
             "bootstrap_seed"
         ] != protocol["determinism"]["bootstrap_seed"]:
             raise RuntimeError(f"pareto interval {comparison} parameters differ from protocol")
+        if failed:
+            if any(item[name] is not None for name in (
+                "effect", "lower", "upper", "defined_resamples", "undefined_resamples"
+            )):
+                raise RuntimeError(f"pareto interval {comparison} failure fields must be null")
+            continue
+        for name in ("defined_resamples", "undefined_resamples"):
+            _require_int(item[name], f"pareto interval {comparison}.{name}")
+        if item["defined_resamples"] + item["undefined_resamples"] != item["resamples"]:
+            raise RuntimeError(f"pareto interval {comparison} counts do not sum to resamples")
+        bounds_defined = item["undefined_resamples"] == 0 and item["effect"] is not None
+        if bounds_defined:
+            if item["lower"] is None or item["upper"] is None or item["lower"] > item["upper"]:
+                raise RuntimeError(f"pareto interval {comparison} requires ordered finite bounds")
+        elif item["lower"] is not None or item["upper"] is not None:
+            raise RuntimeError(
+                f"pareto interval {comparison} undefined effects require null bounds"
+            )
 
 
 def _validate_generated_artifacts(
@@ -3208,6 +3294,124 @@ def _generate(
     }
 
 
+class C15WorkerError(RuntimeError):
+    """Global worker failure; live workers keep their staging directory quarantined."""
+
+    def __init__(self, message: str, *, worker_alive: bool = False) -> None:
+        super().__init__(message)
+        self.worker_alive = worker_alive
+
+
+class C15RunTimeoutError(C15WorkerError):
+    """The parent did not confirm worker exit within the preregistered budget."""
+
+
+def _worker_alive(worker: BaseProcess) -> bool:
+    try:
+        return worker.is_alive()
+    except (OSError, ValueError):
+        # Failed process inspection is not evidence of termination.
+        return True
+
+
+def _stop_worker(worker: BaseProcess, *, grace_seconds: float) -> None:
+    for stop in (worker.terminate, worker.kill):
+        if not _worker_alive(worker):
+            return
+        try:
+            stop()
+        except (OSError, ValueError):
+            pass
+        try:
+            worker.join(grace_seconds)
+        except (OSError, ValueError):
+            pass
+
+
+def _wait_for_worker(
+    worker: BaseProcess, *, deadline: float, grace_seconds: float
+) -> None:
+    try:
+        worker.join(max(0.0, deadline - time.monotonic()))
+    except (OSError, ValueError) as exc:
+        _stop_worker(worker, grace_seconds=grace_seconds)
+        raise C15WorkerError(
+            "C15 worker exit could not be inspected", worker_alive=_worker_alive(worker)
+        ) from exc
+    confirmed_at = time.monotonic()
+    if worker.exitcode is not None and confirmed_at <= deadline:
+        return
+    # A normal exit observed only after the deadline cannot authorize publication.
+    _stop_worker(worker, grace_seconds=grace_seconds)
+    raise C15RunTimeoutError(
+        "C15RunTimeoutError: worker exit was not confirmed by the deadline",
+        worker_alive=_worker_alive(worker),
+    )
+
+
+def _generation_worker(connection: Connection, arguments: dict[str, Any]) -> None:
+    try:
+        connection.send(_generate(**arguments))
+    finally:
+        connection.close()
+
+
+def _generate_isolated(
+    *, output: Path, protocol: dict[str, Any], protocol_bytes: bytes, source_commit: str
+) -> dict[str, object]:
+    context = multiprocessing.get_context("spawn")
+    receiver, sender = context.Pipe(duplex=False)
+    worker = context.Process(
+        target=_generation_worker,
+        args=(sender, {
+            "output": output,
+            "protocol": protocol,
+            "protocol_bytes": protocol_bytes,
+            "source_commit": source_commit,
+        }),
+        daemon=True,
+    )
+    grace = float(protocol["determinism"]["timeout_contract"]["termination_grace_seconds"])
+    started = False
+    timed_out = False
+    try:
+        deadline = time.monotonic() + float(
+            protocol["determinism"]["official_run_timeout_seconds"]
+        )
+        worker.start()
+        started = True
+        sender.close()
+        try:
+            _wait_for_worker(worker, deadline=deadline, grace_seconds=grace)
+        except C15RunTimeoutError:
+            timed_out = True
+            raise
+        if worker.exitcode != 0:
+            raise C15WorkerError(f"C15 worker failed with exit code {worker.exitcode}")
+        if not receiver.poll():
+            raise C15WorkerError("C15 worker exited without a result")
+        try:
+            result = receiver.recv()
+        except EOFError as exc:
+            raise C15WorkerError("C15 worker exited without a result") from exc
+        if not isinstance(result, dict):
+            raise C15WorkerError("C15 worker returned an invalid result")
+        return result
+    finally:
+        sender.close()
+        receiver.close()
+        if started and _worker_alive(worker) and not timed_out:
+            _stop_worker(worker, grace_seconds=grace)
+        if started and _worker_alive(worker):
+            # Do not let run() remove files a surviving worker can still write.
+            error_type = C15RunTimeoutError if timed_out else C15WorkerError
+            raise error_type(
+                f"{error_type.__name__}: quarantined staging retained at {output.resolve()}",
+                worker_alive=True,
+            )
+        worker.close()
+
+
 def run(*, root: Path, protocol_path: Path, output: Path, source_commit: str) -> dict[str, object]:
     protocol, protocol_bytes, _protected, _fixture_hashes = _preflight(
         root=root,
@@ -3219,21 +3423,30 @@ def run(*, root: Path, protocol_path: Path, output: Path, source_commit: str) ->
         raise RuntimeError("output directory must be new or empty")
     output.parent.mkdir(parents=True, exist_ok=True)
     staging = Path(tempfile.mkdtemp(prefix=f".{output.name}.staging-", dir=output.parent))
+    cleanup_allowed = True
     try:
-        result = _generate(
+        result = _generate_isolated(
             output=staging,
             protocol=protocol,
             protocol_bytes=protocol_bytes,
             source_commit=source_commit,
         )
-        if {path.name for path in staging.iterdir()} != EXPECTED_FILES:
+        if (
+            {path.name for path in staging.iterdir()} != EXPECTED_FILES
+            or any(not path.is_file() for path in staging.iterdir())
+        ):
             raise RuntimeError("C15 staging output is incomplete or contains extra files")
         if output.exists():
             output.rmdir()
         staging.replace(output)
         return result
+    except C15WorkerError as exc:
+        cleanup_allowed = not exc.worker_alive
+        if exc.worker_alive:
+            print(f"Quarantined C15 staging: {staging.resolve()}", file=sys.stderr)
+        raise
     finally:
-        if staging.exists():
+        if cleanup_allowed and staging.exists():
             shutil.rmtree(staging, ignore_errors=True)
 
 
@@ -3244,12 +3457,26 @@ def main() -> int:
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--source-commit", required=True)
     args = parser.parse_args()
-    result = run(
-        root=args.root.resolve(),
-        protocol_path=args.protocol.resolve(),
-        output=args.output.resolve(),
-        source_commit=args.source_commit,
-    )
+    try:
+        result = run(
+            root=args.root.resolve(),
+            protocol_path=args.protocol.resolve(),
+            output=args.output.resolve(),
+            source_commit=args.source_commit,
+        )
+    except C15RunTimeoutError as exc:
+        print(str(exc), file=sys.stderr)
+        if exc.worker_alive:
+            # multiprocessing's atexit hook otherwise joins surviving children indefinitely.
+            sys.stderr.flush()
+            os._exit(124)
+        return 124
+    except C15WorkerError as exc:
+        print(str(exc), file=sys.stderr)
+        if exc.worker_alive:
+            sys.stderr.flush()
+            os._exit(1)
+        return 1
     print(_canonical(result))
     return 0 if result["engineering_passed"] else 2
 
