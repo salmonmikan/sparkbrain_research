@@ -1,6 +1,30 @@
 # Project Status — SparkBrain v0.2.1
 
-## v0.3 C15 — not yet accepted
+## v0.3 C15 v3 — completed evaluation, engineering acceptance blocked
+
+The frozen C15 v3 execution completed all five seeds and published all eight artifacts, but
+engineering passed only 7/8 gates and scientific support is `not_supported`. C15 is not accepted;
+C17 remains blocked on its accepted-C15 dependency. Valid negative evidence is not a waiver of
+an unmet engineering gate. R-V03-0008 records the full result without changing thresholds.
+
+Primary full/I1/E1/base test recovery was 0/8, 0/8, 8/8, 0/8, and 0/8 for seeds 2901--2905.
+Only seed 2903 showed the required continuous A-to-B-to-A recovery without checkpoint restoration.
+Full and no-residual recovery rates were both 0.2; full ECE exceeded weighted CE by 0.4053612360,
+failing the registered 0.03 noninferiority margin. These are retained failures, not missing seeds.
+Independent raw-to-derived validation, including all nine 10,000-draw bootstraps, passed;
+independent execution with `PYTHONHASHSEED=37` reproduced all eight files byte-for-byte from the
+`PYTHONHASHSEED=1` original.
+
+Scientific source remains `eedb8b426f326c5dcb70bd548008695eb1652aee` at execution tree
+`6860c2ec4133a9debefdec0b92e33ab0e09b430f`. D-V03-0025 records a separate four-line synthetic
+test-fixture correction after that tree's CI failure. The integration tree is deliberately
+rejected by the unchanged official-runner post-pin guard; it is not a replacement execution pin.
+No package/schema, claim grade, C06/C08 result, or accepted C11--C14 evidence changes.
+The 17,301,391-byte deterministic evidence-transport ZIP is stored outside the canonical artifact
+directory at `artifacts/v03/c15_revision_transport/`; it is neither a ninth canonical artifact nor
+a release. Its index binds the exact-eight hashes, execution/source commits, and negative status.
+
+## v0.3 C15 v2 — historical failed execution, superseded by v3
 
 C15 v2 source `bb89797` passed focused and full source verification, but its official run
 failed during bootstrap aggregation on an undefined metric and exceeded an unenforced

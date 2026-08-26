@@ -864,3 +864,29 @@ generates all results in memory, validates raw-to-derived reconstruction and exa
 writing, uses a same-parent staging directory, publishes exactly eight artifacts atomically, and
 cleans all staging/output on protocol or implementation failure. A different `PYTHONHASHSEED`
 must reproduce every byte. Package/release/schema advancement and no-Git packaging remain C20-only.
+
+### 14.1 Recorded C15 v3 execution versus administrative integration
+
+The v3 scientific source is `eedb8b426f326c5dcb70bd548008695eb1652aee`, authorized by execution
+commit `6860c2ec4133a9debefdec0b92e33ab0e09b430f`. Reproduce from a separate checkout/worktree
+of that exact execution commit, with its `src` directory explicitly selected by `PYTHONPATH`,
+the unchanged source-commit argument, and a fresh output path outside the repository. Do not
+execute from the later integration tree or silently substitute a newer main checkout.
+
+D-V03-0025 changes a synthetic test fixture only. The unchanged source-scope guard intentionally
+rejects the integration tree because its test differs from the scientific pin. This does not
+amend any experimental gate or invalidate retained output bytes. Conversely, the known failing
+fixture test on the original execution tree must remain disclosed; later green integration tests
+are distinct evidence. Raw/statistical reproduction and full test-suite status are not synonyms.
+
+R-V03-0008 records engineering failure of the all-seed recovery gate and scientific negative
+residual/noninferiority findings. No current protocol rule allows those engineering failures to
+be waived to satisfy C17's accepted-C15 dependency.
+
+The frozen execution was repeated independently with `PYTHONHASHSEED=37`; every one of the eight
+output files is byte-identical to the `PYTHONHASHSEED=1` original. For durable transport without
+placing the 157,444,296-byte raw JSONL in ordinary Git history, the exact eight unmodified files
+are stored in a deterministic ZIP under `artifacts/v03/c15_revision_transport/`. Its `index.json`
+records all entry sizes and hashes, the ZIP hash, the frozen source/execution commits, and the
+failed acceptance status. This transport directory is not the canonical C15 artifact directory,
+does not add a ninth scientific artifact, and is not a release or a substitute execution tree.

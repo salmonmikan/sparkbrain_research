@@ -763,3 +763,62 @@ contract correction only.
   requires a new Decision/protocol, fresh unused seeds, a newly audited source pin, explicit
   nullable-bootstrap behavior, and an enforced execution-budget contract.
 - Claim-grade impact: none. C06/C08 negatives and accepted C11--C14 evidence remain unchanged.
+
+## 2026-08-26 — R-V03-0008 — C15 v3 completed negative evaluation; engineering not accepted
+
+- Protocol/run: `c15-revision-objectives-v3` / `c15-revision-objectives-main-v3`.
+- Source: `eedb8b426f326c5dcb70bd548008695eb1652aee`; authorized execution tree:
+  `6860c2ec4133a9debefdec0b92e33ab0e09b430f`; model seeds 2901--2905; bootstrap seed 4415.
+- Status: engineering `fail` (7/8 gates), scientific `not_supported`, `failed_seeds=[]`.
+  The runner completed and published exactly eight artifacts; no failed seed was omitted.
+- Retention: 21,760 prediction rows, 23,040 training-step rows, 540 independent objective rows,
+  60 condition-seed rows, 170 seed and 34 aggregate confusion/calibration rows, 60 Pareto seed
+  points, 12 aggregate points, and 66 pairwise comparisons.
+- Failed engineering gate: `continuous_recovery_all_seeds`. Primary full/I1/E1/base recovery
+  successes/opportunities for seeds 2901--2905 were respectively 0/8, 0/8, 8/8, 0/8, 0/8 in
+  both dev and test. Test stage histories show actual A-to-B-to-A recovery only for seed 2903
+  (8/8); no checkpoint was restored. Seed 2905 reaches the final truth belief in 8/8 cases but
+  predicts `update`, not `recover`, and has no A-to-B-to-A history. This is not counted as recovery.
+- Limited positive observation: seed 2903, episode `ep-3da465ebad16b6d7`, retains beta activation
+  0.30634395227432254 while gamma is the winner, then recovers beta with history
+  `[beta, gamma, beta]`, latency 2, and no checkpoint restoration. This establishes an observed
+  capability on that slice, not every-seed engineering acceptance or residual superiority.
+- Seven passing engineering gates: raw/training cardinality, zero checkpoint restores, explicit
+  no-Ignition (17,824 raw rows), exact-zero objective ablations, attribution-target coverage 1.0,
+  and citation resolvability 1.0. Every one of the nine full-condition objectives has nonzero
+  weighted-gradient observations. Zero-weight contributions and gradients remain exactly zero.
+- Failed scientific gates: full recovery rate 0.2 equals no-residual 0.2, so strict residual
+  superiority is false. ECE is 0.5228200732591222 for full versus 0.1174588372476693 for weighted
+  CE; increase 0.40536123601145285 exceeds the registered maximum 0.03.
+- Other scientific point gates pass: distractor changed predictions 4/160, same-ID 0/160,
+  correlated-copy 1/160; the other four weighted-CE noninferiority dimensions; at least one
+  required strict improvement. Passing these does not override either failed scientific gate.
+- Nullable statistics: full-minus-weighted-CE ECE has 9,992 defined and 8 undefined resamples;
+  its finite point effect is retained and both bounds are null. Each other comparison has
+  10,000 defined and zero undefined resamples. No undefined draw was dropped or imputed.
+- Independent audit: exact-eight inventory, canonical serialization, nested schemas, raw grids,
+  source/protocol/fixture hashes and all 28 protected hashes pass. Confusion, calibration,
+  objective gradients, engineering gates, report, Pareto/scientific point gates and all nine
+  10,000-draw bootstraps recalculate exactly from retained rows without model/controller replay.
+  A second execution from the same frozen execution tree with `PYTHONHASHSEED=37` reproduced all
+  eight files byte-for-byte against the `PYTHONHASHSEED=1` original. The deterministic exact-eight
+  transport ZIP is 17,301,391 bytes with SHA-256
+  `1ef3ef26334c0854bc6d9e4695da4fd6a380930dece80ba4659364bf36000f32`. Its separate index
+  preserves each uncompressed size/hash and explicitly excludes the transport from the canonical
+  artifact directory and release surface.
+- Canonical report limitation: the frozen report's generic sentence about scientific failures
+  not invalidating separately passing engineering is conditional; engineering did not pass in
+  this run. Preserve the report bytes and this explicit interpretation rather than editing it.
+- CI/provenance: execution tree `6860c2e` has a known amendment-test fixture failure, reproduced
+  locally and in CI run `32914883175` on Python 3.11/3.13. The real committed protocol amendment
+  passes the production guard. D-V03-0025 and integration-only test fix `d465adf` normalize the
+  synthetic fixture without changing runtime/protocol/artifacts; a green integration suite must
+  not be reported as a green full suite or clean-room phase on the original execution tree.
+  On integration source `d465adf`, all 50 runner tests pass and the full suite has 471 passed,
+  five skipped (476 collected); Ruff and diff/UTF-8 checks pass. The post-pin guard rejects
+  official execution on this integration tree before model evaluation or output creation.
+- Disposition: retain a completed negative evaluation, but C15 engineering acceptance and its
+  C17 dependency remain blocked. No threshold, loss, fixture, seed, target, or denominator is
+  relaxed after inspection. C16's independently accepted C12/C13 prerequisites are unaffected.
+- Claim-grade impact: none. C06/C08 negatives, accepted C11--C14 outputs, package 0.2.1,
+  persisted schema 0.2, and release manifests remain unchanged.
