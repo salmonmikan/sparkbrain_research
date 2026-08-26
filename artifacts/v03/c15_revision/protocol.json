@@ -140,7 +140,7 @@
         "scientific_support_fields": ["status", "variant_gates", "residual_gate", "weighted_ce_noninferiority", "strict_improvement", "all_gates_passed", "bootstrap_intervals"],
         "metrics_fields": ["unnecessary_revision_rate", "missed_revision_rate", "recovery_latency_censored_mean", "ece", "recovery_rate", "no_ignition_f1"],
         "variant_gate_fields": "exact object keys distractor_change,same_id_change,correlated_copy_change; each exact value has changed_pairs,denominator,rate,maximum,passed",
-        "bootstrap_interval_fields": "exact object keyed in determinism.bootstrap_algorithm.comparison_order; each exact value has effect,lower,upper,resamples,bootstrap_seed; numeric values are finite or all effect/lower/upper null on failed seed",
+        "bootstrap_interval_fields": "exact object keyed in determinism.bootstrap_algorithm.comparison_order; each exact value has effect,lower,upper,resamples,bootstrap_seed,defined_resamples,undefined_resamples; effect is finite or null; bounds are both finite only when all draws and the point effect are defined, otherwise both null; no failed seed means integer counts summing to resamples; failed seed means all effect/bounds/counts null and no bootstrap execution",
         "seed_point_fields": ["condition_id", "model_seed", "metrics"],
         "seed_points": 60,
         "sort": ["condition_id", "model_seed"]
@@ -200,24 +200,31 @@
     "c14_merge": "00dccf3dc8f6f70353a536dcf1db9ba0b19fc7b5",
     "c14_source": "eb7f542963397eba1b7d9b4a66a7873b3ba17ac4",
     "c14_status_ledger_correction": "14e5214673001c20bd470262896cb023e8e1952e",
-    "c15_protocol_base_commit": "45b58a6a9a92911483dd36086f960b2d208b8d34",
-    "c15_protocol_base_sha256": "feb49fe6c28a35015e5b1fe7b316309a413c174c11a81a7e6753a9f15bc029c9",
-    "c15_source_pin": "bb89797c92a8a5f38216dac00f48cfa59f66381f",
-    "runner_execution_allowed": true
+    "c15_source_pin": "pending separate preregistration amendment after source-only commit",
+    "runner_execution_allowed": false
   },
   "determinism": {
     "bootstrap_resamples": 10000,
-    "bootstrap_seed": 4365,
+    "bootstrap_seed": 4415,
     "cpu_only": true,
     "deterministic_algorithms": true,
     "max_threads": 1,
-    "official_run_timeout_seconds": 120,
+    "official_run_timeout_seconds": 3600,
+    "timeout_contract": {
+      "budget_boundary": "parent preflight is outside the budget; the 3600-second monotonic budget starts immediately before spawning one worker; unless the parent confirms worker exit by the deadline the run times out, even if termination or kill later observes a normal exit; worker performs all training, selection, calibration, evaluation, aggregation, validation, and staging writes; parent alone may publish",
+      "termination_grace_seconds": 5,
+      "termination": "on timeout terminate and join for 5 seconds; if still alive kill and join for 5 seconds; never publish and never convert a global timeout to a failed model seed",
+      "cleanup": "remove staging only after worker termination is confirmed; if the worker remains alive, retain quarantined staging and report its absolute path on stderr; never publish on timeout: a new output remains absent and a pre-existing empty output stays empty; successful output requires worker success and the exact eight-file inventory",
+      "error_contract": "global timeout raises C15RunTimeoutError and CLI exits 124, including a worker surviving termination; stderr identifies C15RunTimeoutError and any retained quarantined staging path; other global implementation failures exit 1; no error message or local path enters scientific artifacts",
+      "artifact_policy": "wall-clock observations are not scientific artifact fields; timeout is a global resource-limited implementation failure recorded in the ledger"
+    },
     "paired_bootstrap_unit": "primary test cell only; variants stay paired and are not independently resampled",
     "bootstrap_algorithm": {
       "comparison_order": ["distractor_change", "same_id_change", "correlated_copy_change", "recovery_full_minus_no_residual", "full_minus_weighted_ce_unnecessary", "full_minus_weighted_ce_missed", "full_minus_weighted_ce_recovery", "full_minus_weighted_ce_no_ignition_f1", "full_minus_weighted_ce_ece"],
-      "draws": "one random.Random(4365) consumed in comparison_order; for each of 10000 resamples draw 5 seed positions with replacement, then for each drawn seed and each world in frozen world_order draw 8 test fixture indices with replacement; all conditions and variants use the same sampled blocks",
+      "draws": "one random.Random(4415) consumed in comparison_order; for each of 10000 resamples draw 5 seed positions with replacement, then for each drawn seed and each world in frozen world_order draw 8 test fixture indices with replacement; all conditions and variants use the same sampled blocks",
       "failed_seed": "if any required seed failed, the comparison effect and interval are null and engineering status is implementation_failure; failed seeds are never dropped or imputed",
-      "percentile": "sort 10000 finite effects; rank=(n-1)*p for p=0.025 and 0.975; linearly interpolate floor and ceil ranks"
+      "undefined_effect": "a paired metric difference is null if either operand is null; consume all 10000 draws without dropping, redrawing, or imputing undefined effects; retain defined_resamples and undefined_resamples whose sum is 10000; if any draw or the observed point effect is undefined, both interval bounds are null while a finite observed effect is retained",
+      "percentile": "only when all 10000 effects and the observed point effect are finite, sort all effects; rank=(n-1)*p for p=0.025 and 0.975; linearly interpolate floor and ceil ranks"
     },
     "pythonhashseed_reproduction": "run twice with distinct values and require all eight files byte-identical",
     "remote_or_network_runtime": false
@@ -241,7 +248,7 @@
       "pairwise_rows_when_any_seed_succeeds": 66
     },
     "failed_run_status": "if any required model seed fails, engineering status is implementation_failure; successful rows and descriptive aggregates remain visible but no scientific gate is evaluated",
-    "failed_bootstrap": "every comparison retains resamples and bootstrap_seed but effect, lower, and upper are null",
+    "failed_bootstrap": "every comparison retains resamples and bootstrap_seed but effect, lower, upper, defined_resamples, and undefined_resamples are null; bootstrap is not executed",
     "failed_scientific_status": "not_evaluated_implementation_failure",
     "failure_scientific_support": {
       "status": "not_evaluated_implementation_failure",
@@ -250,7 +257,7 @@
       "weighted_ce_noninferiority": "retain the exact five normal metric keys; each value keeps the frozen margin and direction, uses effect_full_minus_weighted_ce=null, and passed=false",
       "strict_improvement": "exact keys effects,minimum,passed; effects retains the exact five normal metric keys all null, minimum is frozen, and passed=false",
       "all_gates_passed": false,
-      "bootstrap_intervals": "retain all nine comparison keys with effect/lower/upper null, resamples=10000, bootstrap_seed=4365"
+      "bootstrap_intervals": "retain all nine comparison keys with effect/lower/upper/defined_resamples/undefined_resamples null, resamples=10000, bootstrap_seed=4415"
     },
     "failure_engineering_gates": "retain the normal eight engineering gate rows and exact fields; partial observations remain visible, every unavailable denominator is null, and at least raw_row_count, training_step_count, and continuous_recovery_all_seeds are false so overall engineering status is implementation_failure",
     "failure_loss_scientific_gates": "loss_ablation_metrics.scientific_gates is byte-equal to pareto_frontier.scientific_support",
@@ -333,7 +340,7 @@
     "zero_eligible_rule": "raw loss and both gradient norms are 0.0 with eligible_count 0",
     "one_weighted_ce": "same architecture, initialization, data order, optimizer, steps, checkpoint and calibration budget; CrossEntropyLoss with class weights (1,1,1,1) over alpha/beta/gamma/NO_IGNITION has weight 1 and every C15 auxiliary lambda is exactly zero; transition targets are not exposed"
   },
-  "protocol_id": "c15-revision-objectives-v2",
+  "protocol_id": "c15-revision-objectives-v3",
   "protected_files": {
     "PACKAGE_MANIFEST.json": "ab5c9ce3cc65abc3067d84feab2fc228a440d952239b9e26545a2d62990648a3",
     "RELEASE_METADATA.json": "8e846fe927a6dd3712ec861ced558e11a90a271f80751867553542d47fe4b0f5",
@@ -370,7 +377,7 @@
     "persisted_schema": "0.2",
     "policy": "no package 0.3.0, release manifest regeneration, schema reinterpretation, no-Git archive, or private-bundle work before C20"
   },
-  "run_id": "c15-revision-objectives-main-v2",
+  "run_id": "c15-revision-objectives-main-v3",
   "schema_version": "0.3",
   "metrics": {
     "prediction_transition": "insufficient_information when ignited is false; otherwise recover when the ignited belief equals an older predicted belief separated by a different ignited belief, update when it differs from the immediately previous ignited belief, maintain otherwise",
@@ -380,6 +387,7 @@
     "revision_precision_recall": "standard TP/FP/FN over revision_positive_labels; zero denominator is null",
     "recovery": "denominator is exogenous target-recover rows; success requires predicted belief equals truth, predicted transition recover, and checkpoint_restored false; latency is 1 or 2 assessment settle passes, failures are right-censored at 3 and reported separately",
     "no_ignition": "positive target is insufficient_information and positive prediction is ignited false; report precision, recall, false ignition, and missed ignition with null zero denominators",
+    "no_ignition_f1": "preserve the v2 implementation: 2*precision*recall/(precision+recall) when both are defined and their sum is positive; otherwise null; do not replace this with a count-based zero-division convention",
     "accuracy_coverage": "accuracy is predicted_belief equals truth over all rows; coverage is ignited rows divided by all rows; retained old belief during no-Ignition is not coverage",
     "calibration": "construct four probabilities: NO_IGNITION=p_abstain and each belief=(1-p_abstain)*softmax_belief; all-row multiclass Brier is sum squared error and NLL is -log(max(target_probability,1e-12)); binary abstention Brier is squared error",
     "ece": "decided rows only, confidence=max conditional belief probability, correctness=predicted belief equals truth, ten fixed bins [0.0,0.1),...,[0.9,1.0]; weighted absolute accuracy-confidence gap; no decided rows gives null and coverage remains explicit",
@@ -415,6 +423,7 @@
     "dominance": "A dominates B when A is no worse on every finite dimension within epsilon 1e-12 and strictly better on at least one by more than epsilon; any null makes the pair incomparable; equality is not dominance",
     "noninferiority": "point estimates only in the frozen cell: for loss metrics full-minus-one_weighted_ce <= the named max-increase margin; for gain metrics full-minus-one_weighted_ce >= negative named max-decrease margin",
     "strict_improvement": "point estimates only; require at least one of CE-minus-full for unnecessary, missed, or ECE, or full-minus-CE for recovery rate or no-ignition F1, to be >=0.02; no post-hoc dimension selection",
+    "null_scientific_gate_policy": "a null point effect is retained and makes its residual or noninferiority gate false; strict improvement considers only finite effects and is false if none reaches the frozen minimum; all required point gates must pass for supported, otherwise not_supported; undefined descriptive intervals do not change a finite point-estimate gate",
     "multiplicity": "intervals are descriptive; no p-value or familywise significance claim"
   },
   "selection": {
@@ -465,16 +474,16 @@
     "preflight": "working bytes equal HEAD; base protocol blob hash and authorized amendment match; git diff preregistration-base..c15-source-pin --name-only is nonempty and an exact subset of c15_authorized_paths_before_pin, with no v02_deny_paths, release, schema, C14 protected, or other path; source pin is an ancestor and all runtime/test authorized paths are unchanged from source pin to HEAD except the separately validated protocol-only pin amendment and later result documentation/artifacts; all protected hashes pass before output creation"
   },
   "seeds": {
-    "model": [2851, 2852, 2853, 2854, 2855],
+    "model": [2901, 2902, 2903, 2904, 2905],
     "full_fixture_sha256": {
-      "dev": "1714829588a605bfa6a38b443f452dc86b2bdcb71929631e7cc26e2c24b975d8",
-      "test": "6cf39d823996bd37c9bec4ee9bc7fd235b51da3e2931d3337190d50c60bfef64",
-      "train": "2d5de7eef61a4d92f8e1a83cf92670e42688f32ac0abe0295d0d736dbce2ff2b"
+      "dev": "77a6e6644220e7654dd8ab94eca27639e23a984e7fc674e529a1df6709113587",
+      "test": "76f7945ff02b8689a8c341353278fa43354194963e344ed3e88d7930e4108510",
+      "train": "6e3c82e943b52d4f5b140b60c871bfdbd962c930a0470f015e27e760d4aafd36"
     },
     "split_manifest_sha256": {
-      "dev": "e161c6bb652fd35a82e17e22003c792b3001f6b8a9d5c608c2e3e0caffb2b0b6",
-      "test": "e4dc44af60c268ac57ea38904cefd4f31bf6f35ac40178a319aa5d8688648fd5",
-      "train": "0f33808ba39613c998a3015d1cf0aa2adbe2808d0c4c455a8da63dc6fe45489e"
+      "dev": "345b3d30f64017799329edeb9ec90afb6c994ffcae2160d0dc5be5300bdc00a8",
+      "test": "c8c1ae76d103b0d375903f56d4089bf9fca62d597abaaba6507720fdcae71806",
+      "train": "70d8b6a0ddd0aad7adeefbe4473c93cb74c25316f5435cc7ba09ebdd837b236d"
     }
   },
   "splits": {
@@ -485,10 +494,10 @@
       "row_order": "world outer loop in world_order, integer i inner loop ascending",
       "row_fields": "episode_seed=base+100*world_index+i; family_id='fam-'+H('c15-family|'+split+'|'+world+'|'+str(i)); episode_id='ep-'+H('c15-episode|'+split+'|'+world+'|'+str(i)+'|'+str(episode_seed))"
     },
-    "dev": {"episode_seed_base": 251000, "fixtures_per_world": 8},
+    "dev": {"episode_seed_base": 252000, "fixtures_per_world": 8},
     "family_overlap_allowed": false,
-    "test": {"episode_seed_base": 451000, "fixtures_per_world": 8},
-    "train": {"episode_seed_base": 151000, "fixtures_per_world": 16},
+    "test": {"episode_seed_base": 452000, "fixtures_per_world": 8},
+    "train": {"episode_seed_base": 152000, "fixtures_per_world": 16},
     "world_order": ["maintain", "update", "recover", "insufficient"]
   },
   "fixture_generator": {

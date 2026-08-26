@@ -700,9 +700,10 @@ energy efficiency.
 
 ## 14. C15 persistent revision-objective protocol
 
-Protocol `c15-revision-objectives-v2`, run `c15-revision-objectives-main-v2`, supersedes the
-unevaluated v1 procedure under D-V03-0020 and carries forward the substantive contracts frozen by
-D-V03-0017 through D-V03-0019. Its machine-readable authority is
+Protocol `c15-revision-objectives-v3`, run `c15-revision-objectives-main-v3`, supersedes the
+failed v2 execution under D-V03-0023 and carries forward the substantive contracts frozen by
+D-V03-0017 through D-V03-0022 except the explicit v3 execution/nullable-statistic amendments.
+Its machine-readable authority is
 `artifacts/v03/c15_revision/protocol.json`. C14 is an immutable dependency: the C15 controller
 composes the existing bounded Coalition gate and must not edit C14's contracts, Coalition, loop,
 or runner source paths. C14 evaluates attributable ledger evidence before any belief mutation.
@@ -730,7 +731,7 @@ citations/residual candidates, and does not force a prediction or clear other en
 
 The controlled worlds are maintain, contradictory update, A-to-B-to-A recovery, and explicit
 insufficient information. Train/dev/test contain 16/8/8 fixtures per world, respectively. Their
-episode seeds start at 151000/251000/451000, their template families do not overlap, and canonical
+episode seeds start at 152000/252000/452000, their template families do not overlap, and canonical
 split-manifest and full-fixture SHA-256 values are frozen in the protocol. Production-visible IDs
 are opaque SHA-256 derivations; the exact event, evidence, stage, variant, and attribution-target
 generator is machine-frozen. Dev indices 0--3 per world select among
@@ -792,6 +793,30 @@ all nine bootstrap entries retain 10,000/4365 with null effect/lower/upper. The 
 unavailable observations null and required completion gates false. With zero successful seeds,
 the JSONL is exactly zero bytes, data/derived arrays are empty, model dimensions and the twelve
 static objective configurations remain, and parameter count/optimizer steps are 3132/384.
+
+D-V03-0023 records v2's global aggregation failure and unenforced 120-second timeout without
+accepting numerical evidence. V3 uses fresh model seeds 2901--2905, episode bases
+152000/252000/452000, bootstrap seed 4415, and independently reconstructed fixture hashes.
+The existing F1 convention is now explicit: the harmonic mean of precision and recall is null
+if either is undefined or their sum is zero. ECE remains null without decided rows. A paired
+effect is null if either operand is null. All 10,000 bootstrap draws are consumed unchanged;
+undefined draws are counted, never dropped, redrawn, or imputed. If any draw or the point effect
+is undefined, both interval bounds are null, while a finite point effect remains visible.
+Each interval adds `defined_resamples` and `undefined_resamples`; they sum to 10,000 on a
+completed bootstrap and are both null when failed-seed rules prevent bootstrap execution.
+An undefined point effect makes its required scientific gate false; strict improvement uses
+finite effects only. Descriptive interval availability does not alter finite point-estimate gates.
+
+V3 enforces a 3,600-second worker budget, starting immediately before spawn and excluding parent
+preflight. The worker owns training through validated staging writes; only the parent publishes.
+On timeout the parent terminates and joins for five seconds, then kills and joins for five seconds
+if necessary. The parent must confirm worker exit by its monotonic deadline; observing a normal
+exit only after timeout cannot authorize publication. Staging is removed only after confirmed
+worker exit; a surviving worker leaves quarantined staging whose absolute path is reported on
+stderr. A new output remains absent and a pre-existing empty output remains empty. Timeout raises
+`C15RunTimeoutError` and the CLI exits 124 (other global failures exit 1). A timeout is a global resource-limited implementation
+failure, never a failed model seed or a scientific negative. No elapsed time enters scientific
+artifacts. The larger budget corrects the execution contract, not any scientific threshold.
 
 Primary evaluation is I1 local-compositional input with E1 explicit Oracle entity scope. The
 twelve primary conditions are full separated objectives, nine single-objective ablations,
