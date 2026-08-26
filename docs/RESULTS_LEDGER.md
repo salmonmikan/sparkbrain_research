@@ -2,6 +2,35 @@
 
 Append entries; do not rewrite prior outcomes to match later interpretations.
 
+## 2026-08-27 — R-V03-0009 — C15 v4 completed evaluation; engineering accepted
+
+- Protocol/run: `c15-revision-objectives-v4` / `c15-revision-objectives-main-v4`.
+- Source/pin: `1072a484f36fc8981622ed3de39d796b654698b9`; execution-pin head
+  `49b40cee605d48e5f9dca243e2c23de43491c64e`; model seeds 2951--2955; bootstrap seed 4465.
+- Status: engineering `pass` (8/8), scientific `not_supported`, `failed_seeds=[]`. The official
+  bundle contains exactly eight artifacts and no failed seed was omitted.
+- Retention: 21,760 prediction rows, 23,040 training-step rows, 540 independent objective rows,
+  60 condition-seed rows, 170 seed and 34 aggregate confusion/calibration rows, 60 Pareto seed
+  points, 12 aggregate points, and 66 pairwise comparisons.
+- Engineering: each primary full/I1/E1/base seed 2951--2955 has 8/8 recovery successes without
+  checkpoint restoration. The other seven engineering gates also pass, including explicit
+  no-Ignition, exact-zero objective ablations, attribution-target coverage, and citation
+  resolvability.
+- Scientific boundary: `not_supported`. Full and no-residual recovery rates are both 1.0, so the
+  registered strict residual-superiority gate is false. The full-minus-weighted-CE ECE effect and
+  interval remain null because ECE is undefined; the paired bootstrap preserves 0 defined and
+  10,000 undefined resamples rather than dropping or imputing them. Engineering acceptance does
+  not convert this scientific result into support.
+- Independent evidence: an external standard-library audit passed exact inventory, canonical
+  JSON/JSONL, source/protocol pin and four-field amendment, protected 31/31, v3 evidence/transport
+  hashes, pure fixture hashes, raw cardinalities, raw-to-confusion/calibration/engineering gates,
+  context boundary, and all nine 10,000-draw paired bootstraps. A `PYTHONHASHSEED=37`
+  reproduction is byte-identical to `PYTHONHASHSEED=1` for all eight files.
+- Disposition: C15 is accepted for its registered engineering dependency, unblocking C17's
+  C15-acceptance prerequisite. C15 v3 negative artifacts/transport remain immutable and are not
+  superseded. Package 0.2.1, persisted schema 0.2, release manifests, C06/C08 findings, and
+  claim grades remain unchanged.
+
 ## 2026-08-22 — R0001 — Phase-0 SwitchWorld software validation
 
 **Code/version:** SparkBrain prototype v0.2 bundle  
@@ -708,7 +737,7 @@ contract correction only.
 - Claim-grade impact: unchanged. C06/C08 negative results, protected hashes, package 0.2.1,
   persisted schema 0.2, and release metadata remain unchanged.
 
-## 2026-08-27 — R-V03-0006 — C16 bounded proto-concept formation acceptance
+## 2026-08-27 — R-V03-0010 — C16 bounded proto-concept formation acceptance
 
 - Protocol/run: `c16-proto-concepts-v1` / `c16-proto-concepts-main-v1`; source
   `4933a6059240875d0548fe602f114d768a49ef28`
@@ -735,3 +764,117 @@ contract correction only.
 - Claim boundary: this is not evidence of semantic understanding, an organ, biological equivalence,
   energy efficiency, or a claim-grade increase. Package/schema, release manifests, and metadata are
   unchanged.
+## 2026-08-26 — R-V03-0006 — C14 attributable Coalition-gate acceptance
+
+- Dependency/source: accepted C13 merge `06e13975b486548bb17924acc3b82786246ad6e1`;
+  final C14 source `eb7f542963397eba1b7d9b4a66a7873b3ba17ac4`
+- Protocol/run: `c14-coalition-gate-v1` / `c14-coalition-gate-main-v1`
+- Seeds/statistics: 2701--2705; 10,000 paired bootstrap resamples; bootstrap seed 4314
+- Engineering result: all 12 frozen G03 gates passed; failed seeds 0
+- Raw retention: 360 raw rows, 15 causal-removal rows, 24 aggregate metrics, 120 seed rows,
+  four paired statistics, and 50 reason references
+- Causal/invariance results: independent-support Ignition 1.0; removal reversal 1.0; exact
+  restoration 1.0; same-ID score delta 0.0; correlated-group inflation 0.0;
+  contradiction score delta -0.1296997075145081
+- Comparator result: G1 differed from both `G0_probability_margin` and
+  `G1_no_coalition_ablation` on 0.9 of paired primary cases; fixed logits were unchanged
+- Reproduction: all six checked-in artifacts reproduced byte-for-byte under a different
+  `PYTHONHASHSEED`, and independent raw-only recalculation matched every derived output
+- Artifact SHA-256:
+  - `causal_evidence_removal.jsonl`: `f11aa38ac50a23665b7d9f21b87b11352c41842a396a679b1353f05e7b3e3e97`
+  - `fixed_logit_interventions.jsonl`: `45c66151abed1d25badfa3755ca692256314eb03f1f8b33ef29f6b6f1b15b2ec`
+  - `gate_ablation_metrics.json`: `b7030b45f79c388d5ba5a2bc422d3b0a744de5ee2bb91d5ca8f8323be65eb514`
+  - `no_ignition_reasons.json`: `ea4fbd34976a083509253570622691ff81395ea0420bd572dbd121bd2f52dd16`
+  - `protocol.json`: `aa5e405204832f5b76be2f9d7a1ad648f36b17b8309596c4a105e4d37fd344d0`
+  - `report.md`: `19a666bd41567fbc60f1c8db94516224606fac2506522290f3217ed0efa966cb`
+- Negative/boundary result: this is a fixed-logit, controlled-synthetic engineering result.
+  It does not establish external accuracy improvement, learned Coalition formation, semantic
+  understanding, biological fidelity, or energy efficiency.
+- Claim-grade impact: unchanged. C06/C08 negative results, protected hashes, package 0.2.1,
+  persisted schema 0.2, and release metadata remain unchanged.
+
+## 2026-08-26 — R-V03-0007 — C15 v2 global aggregation failure and timeout noncompliance
+
+- Protocol/run: `c15-revision-objectives-v2` / `c15-revision-objectives-main-v2`
+- Audited source: `bb89797c92a8a5f38216dac00f48cfa59f66381f`; source-pin amendment:
+  `b521249`; model seeds 2851--2855; bootstrap seed 4365
+- Pre-run verification: 439 tests passed and five were skipped, including the clean-room
+  archive suite; local readiness, Ruff, source-scope audit, and all 28 protected hashes passed.
+- Environment correction: the first invocation stopped in preflight because the shared
+  editable environment pointed to the main worktree. No model ran in that invocation. The
+  subsequent invocation explicitly set `PYTHONPATH` to the C15 worktree's `src` directory.
+- Failure: training/evaluation returned to global aggregation without a recorded failed seed,
+  then `_comparison_effect` attempted `float(None)` inside `_bootstrap_intervals` and raised
+  `TypeError`. No scientific metrics or support decision were printed or accepted.
+- Contract gap: empty prediction-dependent metrics are frozen as null, whereas the bootstrap
+  contract requires 10,000 finite effects and does not specify undefined resamples. Dropping,
+  redrawing, or imputing such resamples is not authorized by v2.
+- Additional protocol violation: the run exceeded the frozen 120-second timeout, which the
+  source did not enforce. The elapsed execution is not a compliant v2 run.
+- Artifact boundary: global aggregation failed before publication. The atomic runner removed
+  staging and published no final eight-file bundle. In-memory prediction/training rows were
+  not retained and are not claimed as validated evidence.
+- Disposition: implementation failure plus protocol noncompliance, not a scientific negative
+  or an inconclusive scientific finding. C15 is not accepted. Any corrected official execution
+  requires a new Decision/protocol, fresh unused seeds, a newly audited source pin, explicit
+  nullable-bootstrap behavior, and an enforced execution-budget contract.
+- Claim-grade impact: none. C06/C08 negatives and accepted C11--C14 evidence remain unchanged.
+
+## 2026-08-26 — R-V03-0008 — C15 v3 completed negative evaluation; engineering not accepted
+
+- Protocol/run: `c15-revision-objectives-v3` / `c15-revision-objectives-main-v3`.
+- Source: `eedb8b426f326c5dcb70bd548008695eb1652aee`; authorized execution tree:
+  `6860c2ec4133a9debefdec0b92e33ab0e09b430f`; model seeds 2901--2905; bootstrap seed 4415.
+- Status: engineering `fail` (7/8 gates), scientific `not_supported`, `failed_seeds=[]`.
+  The runner completed and published exactly eight artifacts; no failed seed was omitted.
+- Retention: 21,760 prediction rows, 23,040 training-step rows, 540 independent objective rows,
+  60 condition-seed rows, 170 seed and 34 aggregate confusion/calibration rows, 60 Pareto seed
+  points, 12 aggregate points, and 66 pairwise comparisons.
+- Failed engineering gate: `continuous_recovery_all_seeds`. Primary full/I1/E1/base recovery
+  successes/opportunities for seeds 2901--2905 were respectively 0/8, 0/8, 8/8, 0/8, 0/8 in
+  both dev and test. Test stage histories show actual A-to-B-to-A recovery only for seed 2903
+  (8/8); no checkpoint was restored. Seed 2905 reaches the final truth belief in 8/8 cases but
+  predicts `update`, not `recover`, and has no A-to-B-to-A history. This is not counted as recovery.
+- Limited positive observation: seed 2903, episode `ep-3da465ebad16b6d7`, retains beta activation
+  0.30634395227432254 while gamma is the winner, then recovers beta with history
+  `[beta, gamma, beta]`, latency 2, and no checkpoint restoration. This establishes an observed
+  capability on that slice, not every-seed engineering acceptance or residual superiority.
+- Seven passing engineering gates: raw/training cardinality, zero checkpoint restores, explicit
+  no-Ignition (17,824 raw rows), exact-zero objective ablations, attribution-target coverage 1.0,
+  and citation resolvability 1.0. Every one of the nine full-condition objectives has nonzero
+  weighted-gradient observations. Zero-weight contributions and gradients remain exactly zero.
+- Failed scientific gates: full recovery rate 0.2 equals no-residual 0.2, so strict residual
+  superiority is false. ECE is 0.5228200732591222 for full versus 0.1174588372476693 for weighted
+  CE; increase 0.40536123601145285 exceeds the registered maximum 0.03.
+- Other scientific point gates pass: distractor changed predictions 4/160, same-ID 0/160,
+  correlated-copy 1/160; the other four weighted-CE noninferiority dimensions; at least one
+  required strict improvement. Passing these does not override either failed scientific gate.
+- Nullable statistics: full-minus-weighted-CE ECE has 9,992 defined and 8 undefined resamples;
+  its finite point effect is retained and both bounds are null. Each other comparison has
+  10,000 defined and zero undefined resamples. No undefined draw was dropped or imputed.
+- Independent audit: exact-eight inventory, canonical serialization, nested schemas, raw grids,
+  source/protocol/fixture hashes and all 28 protected hashes pass. Confusion, calibration,
+  objective gradients, engineering gates, report, Pareto/scientific point gates and all nine
+  10,000-draw bootstraps recalculate exactly from retained rows without model/controller replay.
+  A second execution from the same frozen execution tree with `PYTHONHASHSEED=37` reproduced all
+  eight files byte-for-byte against the `PYTHONHASHSEED=1` original. The deterministic exact-eight
+  transport ZIP is 17,301,391 bytes with SHA-256
+  `1ef3ef26334c0854bc6d9e4695da4fd6a380930dece80ba4659364bf36000f32`. Its separate index
+  preserves each uncompressed size/hash and explicitly excludes the transport from the canonical
+  artifact directory and release surface.
+- Canonical report limitation: the frozen report's generic sentence about scientific failures
+  not invalidating separately passing engineering is conditional; engineering did not pass in
+  this run. Preserve the report bytes and this explicit interpretation rather than editing it.
+- CI/provenance: execution tree `6860c2e` has a known amendment-test fixture failure, reproduced
+  locally and in CI run `32914883175` on Python 3.11/3.13. The real committed protocol amendment
+  passes the production guard. D-V03-0025 and integration-only test fix `d465adf` normalize the
+  synthetic fixture without changing runtime/protocol/artifacts; a green integration suite must
+  not be reported as a green full suite or clean-room phase on the original execution tree.
+  On integration source `d465adf`, all 50 runner tests pass and the full suite has 471 passed,
+  five skipped (476 collected); Ruff and diff/UTF-8 checks pass. The post-pin guard rejects
+  official execution on this integration tree before model evaluation or output creation.
+- Disposition: retain a completed negative evaluation, but C15 engineering acceptance and its
+  C17 dependency remain blocked. No threshold, loss, fixture, seed, target, or denominator is
+  relaxed after inspection. C16's independently accepted C12/C13 prerequisites are unaffected.
+- Claim-grade impact: none. C06/C08 negatives, accepted C11--C14 outputs, package 0.2.1,
+  persisted schema 0.2, and release manifests remain unchanged.

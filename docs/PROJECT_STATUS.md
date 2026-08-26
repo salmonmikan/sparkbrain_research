@@ -19,6 +19,85 @@ This is limited to unlabeled recurring structure and next-channel MSE in fixed s
 it does not establish human semantic understanding, an organ, biological equivalence, or energy
 efficiency. C06/C08 negative findings, claim grades, package version 0.2.1, persisted schema 0.2,
 release manifests, and release metadata remain unchanged.
+## v0.3 C15 v4 — engineering accepted; scientific support not supported
+
+C15 v4 is accepted at the registered **engineering** boundary under protocol
+`c15-revision-objectives-v4`, source `1072a484f36fc8981622ed3de39d796b654698b9`, and
+execution-pin head `49b40cee605d48e5f9dca243e2c23de43491c64e`.  It published the exact eight
+canonical artifacts with no failed seed. All eight engineering gates pass: the 21,760 retained
+prediction rows and 23,040 training-step rows have been independently recalculated; every seed
+2951--2955 completed 8/8 primary full/I1/E1/base recovery opportunities without checkpoint
+restoration; no-Ignition, objective-ablation, attribution, and citation gates also pass.
+
+Scientific status remains `not_supported`, and is retained rather than relaxed: full and
+no-residual recovery rates are both 1.0, so strict residual superiority is false. Weighted-CE
+ECE remains undefined in the primary comparison; its null semantics are retained in the
+10,000-draw paired bootstrap. The other registered point/interval outputs remain available in
+the raw and derived artifacts. This engineering acceptance unblocks the C17 dependency only; it
+does not establish semantic understanding, biological fidelity, energy efficiency, or any claim
+beyond the registered synthetic engineering evidence.
+
+An independent full audit revalidated exact-eight inventory, canonical serialization,
+source/protocol pins, protected 31/31 and immutable v3 transport evidence, pure fixture hashes,
+raw-to-derived aggregates, context/assessment boundary, all engineering gates, and all nine
+10,000-draw paired bootstraps. `PYTHONHASHSEED=1` and `PYTHONHASHSEED=37` reproductions are
+byte-identical for all eight files. C15 v3 negative artifacts and transport, package 0.2.1,
+persisted schema 0.2, and release metadata remain unchanged.
+
+## v0.3 C15 v3 — completed evaluation, engineering acceptance blocked
+
+The frozen C15 v3 execution completed all five seeds and published all eight artifacts, but
+engineering passed only 7/8 gates and scientific support is `not_supported`. C15 v3 is not
+accepted; its result had kept C17 blocked until the separate C15 v4 engineering acceptance. Valid
+negative evidence is not a waiver of an unmet engineering gate. R-V03-0008 records the full
+result without changing thresholds.
+
+Primary full/I1/E1/base test recovery was 0/8, 0/8, 8/8, 0/8, and 0/8 for seeds 2901--2905.
+Only seed 2903 showed the required continuous A-to-B-to-A recovery without checkpoint restoration.
+Full and no-residual recovery rates were both 0.2; full ECE exceeded weighted CE by 0.4053612360,
+failing the registered 0.03 noninferiority margin. These are retained failures, not missing seeds.
+Independent raw-to-derived validation, including all nine 10,000-draw bootstraps, passed;
+independent execution with `PYTHONHASHSEED=37` reproduced all eight files byte-for-byte from the
+`PYTHONHASHSEED=1` original.
+
+Scientific source remains `eedb8b426f326c5dcb70bd548008695eb1652aee` at execution tree
+`6860c2ec4133a9debefdec0b92e33ab0e09b430f`. D-V03-0025 records a separate four-line synthetic
+test-fixture correction after that tree's CI failure. The integration tree is deliberately
+rejected by the unchanged official-runner post-pin guard; it is not a replacement execution pin.
+No package/schema, claim grade, C06/C08 result, or accepted C11--C14 evidence changes.
+The 17,301,391-byte deterministic evidence-transport ZIP is stored outside the canonical artifact
+directory at `artifacts/v03/c15_revision_transport/`; it is neither a ninth canonical artifact nor
+a release. Its index binds the exact-eight hashes, execution/source commits, and negative status.
+
+## v0.3 C15 v2 — historical failed execution, superseded by v3
+
+C15 v2 source `bb89797` passed focused and full source verification, but its official run
+failed during bootstrap aggregation on an undefined metric and exceeded an unenforced
+120-second protocol timeout. No final artifact bundle or scientific support decision was
+published. R-V03-0007 retains this implementation/protocol failure. A corrected preregistration
+and fresh unused seeds were required before another official execution; at that time C14 was the
+latest accepted stage.
+
+## v0.3 C14 — attributable Coalition-driven Ignition
+
+C14 is accepted under preregistered protocol `c14-coalition-gate-v1`, using accepted C13
+merge `06e13975b486548bb17924acc3b82786246ad6e1` and final source commit
+`eb7f542963397eba1b7d9b4a66a7873b3ba17ac4`. The isolated `v03_seed` call path now evaluates
+an attributable bounded Coalition before belief mutation while preserving the legacy gate as
+the default and leaving the v0.2 learned backend unchanged.
+
+Across seeds 2701--2705, all 12 frozen G03 engineering gates passed with no failed seed. The
+run retained 360 raw rows, 15 causal-removal rows, 24 aggregate metrics, 120 seed rows, four
+paired statistics, and 50 machine-resolvable reason references. Independent support Ignition,
+removal reversal, and exact restoration were 1.0; same-ID and correlated-group inflation were
+0; contradiction reduced the score by 0.1296997075145081; and G1 differed from both frozen
+probability controls on 90% of paired primary cases. All six artifacts reproduced byte-for-byte
+under a different `PYTHONHASHSEED`, and their derived results were recalculated from raw rows.
+
+This accepts only attributable synthetic Coalition control at fixed logits. It does not show
+external accuracy gain, learned Coalition formation, semantic understanding, biological
+fidelity, or energy efficiency. C06/C08 negative findings, scientific claim grades, protected
+hashes, package 0.2.1, persisted schema 0.2, and release metadata remain unchanged.
 
 ## v0.3 C13 — evidence ledger and oracle entity-scope diagnosis
 

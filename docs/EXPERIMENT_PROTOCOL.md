@@ -767,3 +767,236 @@ remain safe without Git. Reproduction uses the recorded C16 execution/artifact c
 strict post-pin source guards; later main integration is not silently treated as the same runtime.
 No C16 scientific result is asserted here. Null grades and negative outcomes are acceptable;
 v0.2.1, existing claim grades, C06/C08 negatives, schemas and release manifests remain unchanged.
+## 14. C15 persistent revision-objective protocol
+
+Protocol `c15-revision-objectives-v3`, run `c15-revision-objectives-main-v3`, supersedes the
+failed v2 execution under D-V03-0023 and carries forward the substantive contracts frozen by
+D-V03-0017 through D-V03-0022 except the explicit v3 execution/nullable-statistic amendments.
+Its machine-readable authority is
+`artifacts/v03/c15_revision/protocol.json`. C14 is an immutable dependency: the C15 controller
+composes the existing bounded Coalition gate and must not edit C14's contracts, Coalition, loop,
+or runner source paths. C14 evaluates attributable ledger evidence before any belief mutation.
+A learned abstention or transition-head decision may veto the proposed Ignition but may never
+create an Ignition that C14 rejected.
+
+### Transition truth and persistent state
+
+The four labels are derived only from the latent world truth history and causally available
+evidence, never from a model prediction, score, threshold, Ignition result, or checkpoint. Fewer
+than two independent causal sources/groups is `insufficient_information`. Otherwise, returning to
+an earlier truth after an intervening different sufficient truth is `recover`; changing from the
+immediately previous sufficient truth is `update`; and the remaining stable case is `maintain`.
+History is episode- and evaluated-entity-local. Every assessment follows an establishment context,
+so the first assessment is not an ambiguous initial classification.
+
+Recovery is executed as A then B then A within one episode, model instance, and in-memory entity
+state. Model reload, state reset, re-instantiation, and checkpoint restoration after episode start
+are forbidden and `checkpoint_restored` is retained in every raw row. Loser retention is 0.92
+after decay 0.88; paired `no_residual` changes only loser retention to zero. A C14 no-Ignition or
+learned veto retains a separate `evaluated_entity_key`, applies one entity-local decay, retains
+citations/residual candidates, and does not force a prediction or clear other entities.
+
+### Data, conditions, and selection
+
+The controlled worlds are maintain, contradictory update, A-to-B-to-A recovery, and explicit
+insufficient information. Train/dev/test contain 16/8/8 fixtures per world, respectively. Their
+episode seeds start at 152000/252000/452000, their template families do not overlap, and canonical
+split-manifest and full-fixture SHA-256 values are frozen in the protocol. Production-visible IDs
+are opaque SHA-256 derivations; the exact event, evidence, stage, variant, and attribution-target
+generator is machine-frozen. Dev indices 0--3 per world select among
+epochs 2, 4, and 6 by weighted objective total with an earlier-epoch tie-break. Disjoint dev
+indices 4--7 select temperature from 0.75/1.0/1.25 and abstention threshold from 0.4/0.5/0.6 by
+belief Brier plus binary abstention Brier. Source and focused tests must first be committed and
+independently audited without running official split seeds; a source-pin-only amendment then
+enables the first official runner. That runner performs training, checkpoint selection,
+calibration, and finally one test evaluation in this order. Test, I2 Oracle, and official Belief-R
+cannot influence either dev choice.
+
+The hashed fixture keeps its exact eight-field evidence rows. A frozen boundary adapter derives
+one opaque sample ID and one opaque parent Spark ID per unique evidence ID, registers that lineage,
+and constructs the existing strict schema-0.3 `EvidenceRecord` with empty metadata and parent-
+evidence tuple. Same-ID redelivery reuses the byte-identical record. No condition may invent a
+different lineage adapter or add evaluator fields at this boundary.
+
+D-V03-0018 closes the entity-condition composition before official execution. E1 copies fixture
+entity/evidence IDs. E0 alone maps entity scope to `__global__` and derives a deterministic adapted
+evidence ID from the fixture ID before deriving sample/Spark lineage; all other evidence fields
+stay paired, duplicate IDs stay equal, and correlated-copy IDs stay distinct. Attribution IDs use
+the same mapping. The recovery residual-floor input is captured by replaying visible context and
+model head outputs through the C15 controller and reading the target-truth activation immediately
+before assessment. It is never a static zero/default fixture value.
+
+D-V03-0019 closes the stage evidence-lifecycle boundary before source pinning or any official
+seed. The C13 ledger and audit history remain continuous, but before each stage's deliveries the
+controller deactivates prior active rows for the evaluated entity that are absent from the current
+stage. C14 therefore evaluates the current stage's attributable active evidence in its two frozen
+settle passes. Belief history, residual activation, citations, model hidden state, and the gate
+instance remain continuous; other entities are untouched. Same-ID duplication within a stage is
+still an exact redelivery no-op, and the frozen generator never restores an earlier-stage ID.
+
+D-V03-0020 invalidates the unevaluated v1 procedure after focused tests accidentally executed
+deterministic controller probes on v1 split episodes before the source pin. No training,
+checkpoint selection, calibration, E0 evaluation, test evaluation, or artifact generation had
+occurred. Protocol `c15-revision-objectives-v2` and run `c15-revision-objectives-main-v2`
+supersede v1 with fresh episode seeds 151000/251000/451000, model seeds 2851--2855, bootstrap seed
+4365, and newly frozen manifest/full-fixture hashes. Focused runtime tests use reserved synthetic
+fixtures and a non-official model seed; reconstructing fixture bytes for hash verification is not
+model/controller execution. All other C15 scientific and engineering contracts remain unchanged.
+
+D-V03-0021 closes the failed-seed artifact boundary before source pinning. A model seed is atomic
+across all twelve conditions: its rows are buffered, discarded on its first failure without retry,
+and replaced by one exact failed-seed record while later seeds continue. Successful seed rows stay
+visible, but any failed seed makes engineering status `implementation_failure`, sets scientific
+status to `not_evaluated_implementation_failure`, and makes every bootstrap effect and interval
+null. Derived cardinalities scale only with complete successful seeds according to the formulas in
+the protocol; partial seed rows are never published or imputed. All JSON artifacts repeat the same
+failed-seed list and the report names it. Even zero successful seeds produce the exact eight-file
+failure bundle with static configuration and empty data arrays.
+
+D-V03-0022 fixes the exact failure representation. The seven-field scientific-support object
+keeps its normal keys: three variant gates use zero counts, null rates, frozen maxima, and false
+passes; residual rates are null; all five noninferiority effects and all five strict-improvement
+effects are null while margins/directions/minimum remain frozen; `all_gates_passed` is false; and
+all nine bootstrap entries retain 10,000/4365 with null effect/lower/upper. The loss artifact's
+`scientific_gates` is byte-equal to that object. Normal eight engineering-gate rows remain, with
+unavailable observations null and required completion gates false. With zero successful seeds,
+the JSONL is exactly zero bytes, data/derived arrays are empty, model dimensions and the twelve
+static objective configurations remain, and parameter count/optimizer steps are 3132/384.
+
+D-V03-0023 records v2's global aggregation failure and unenforced 120-second timeout without
+accepting numerical evidence. V3 uses fresh model seeds 2901--2905, episode bases
+152000/252000/452000, bootstrap seed 4415, and independently reconstructed fixture hashes.
+The existing F1 convention is now explicit: the harmonic mean of precision and recall is null
+if either is undefined or their sum is zero. ECE remains null without decided rows. A paired
+effect is null if either operand is null. All 10,000 bootstrap draws are consumed unchanged;
+undefined draws are counted, never dropped, redrawn, or imputed. If any draw or the point effect
+is undefined, both interval bounds are null, while a finite point effect remains visible.
+Each interval adds `defined_resamples` and `undefined_resamples`; they sum to 10,000 on a
+completed bootstrap and are both null when failed-seed rules prevent bootstrap execution.
+An undefined point effect makes its required scientific gate false; strict improvement uses
+finite effects only. Descriptive interval availability does not alter finite point-estimate gates.
+
+V3 enforces a 3,600-second worker budget, starting immediately before spawn and excluding parent
+preflight. The worker owns training through validated staging writes; only the parent publishes.
+On timeout the parent terminates and joins for five seconds, then kills and joins for five seconds
+if necessary. The parent must confirm worker exit by its monotonic deadline; observing a normal
+exit only after timeout cannot authorize publication. Staging is removed only after confirmed
+worker exit; a surviving worker leaves quarantined staging whose absolute path is reported on
+stderr. A new output remains absent and a pre-existing empty output remains empty. Timeout raises
+`C15RunTimeoutError` and the CLI exits 124 (other global failures exit 1). A timeout is a global resource-limited implementation
+failure, never a failed model seed or a scientific negative. No elapsed time enters scientific
+artifacts. The larger budget corrects the execution contract, not any scientific threshold.
+
+Primary evaluation is I1 local-compositional input with E1 explicit Oracle entity scope. The
+twelve primary conditions are full separated objectives, nine single-objective ablations,
+one-weighted-CE, and no-residual. Full-only diagnostics cover the other five I0/I1/I2 by E0/E1
+cells. I2 stays diagnostic and C13 E2 learned slots remain prohibited. Four paired variants are
+base, irrelevant distractor, exact same-ID redelivery, and a distinct correlated-group copy.
+Across dev and test, 17 condition/cell combinations, five model seeds, 32 fixtures, and four
+variants produce exactly 21,760 canonical raw rows.
+
+### Independent objectives and evaluation
+
+Nine terms are logged separately: belief CE; maintain BCE plus stable-probability drift; update
+BCE plus new-versus-old ranking; recovery BCE plus a restored-residual floor; explicit
+no-Ignition BCE; multiclass Brier calibration; evidence-ID attribution BCE; normalized routing
+entropy sparsity; and load balance. The exact masks, weights, formulas, optimizer budget, zero-row
+behavior, and gradient-norm definition are in the protocol. Each term retains eligible count,
+raw value, weighted contribution, and pre-update unweighted/weighted global L2 gradient norm.
+The matched one-weighted-CE condition has identical architecture, initialization, data order,
+optimizer steps, checkpoint choices, and calibration budget, but receives only the final
+alpha/beta/gamma/NO_IGNITION target and no transition target.
+`loss_ablation_metrics.json` retains all 23,040 ordered optimizer-step rows with each objective's
+eligible count, raw/weighted value, and two gradient norms so every reported training aggregate is
+recalculated from direct evidence rather than prediction rows.
+
+Four-class, maintain, and update confusion matrices; unnecessary and missed revision; revision
+precision/recall; recovery opportunity/rate/latency with censoring; no-Ignition precision/recall;
+false/missed Ignition; accuracy/coverage; all-row Brier/NLL; decided-only ECE with coverage; and
+binary abstention calibration retain exact denominators. Empty groups are null, not zero.
+Calibration is grouped by input track and entity condition. The Pareto dimensions minimize
+unnecessary revision, missed revision, recovery latency, and ECE while maximizing recovery rate
+and no-Ignition F1. Frozen noninferiority margins and a required strict improvement are applied
+against one-weighted-CE without choosing a test-favorable checkpoint.
+
+Engineering acceptance requires observed no-checkpoint recovery for every seed, reconstructible
+matrices and separate metrics, explicit no-Ignition, all objective ablations, no Belief-R access,
+and exact eight-file deterministic reproduction. Narrow scientific support additionally applies
+the preregistered distractor, duplicate, correlated-copy, residual, and weighted-CE Pareto gates.
+Scientific failure does not invalidate engineering completion; it is recorded as `not_supported`
+or another frozen status category and retained in the Results Ledger.
+
+The runner must validate the canonical protocol, authorized source-pin-only amendment, candidate
+source bytes, accepted C12--C14 dependencies, protected hashes, unchanged C14 paths, release/schema
+deny-prefixes, split manifests, configuration set, and output emptiness before evaluation. It
+generates all results in memory, validates raw-to-derived reconstruction and exact schemas before
+writing, uses a same-parent staging directory, publishes exactly eight artifacts atomically, and
+cleans all staging/output on protocol or implementation failure. A different `PYTHONHASHSEED`
+must reproduce every byte. Package/release/schema advancement and no-Git packaging remain C20-only.
+
+### 14.1 Recorded C15 v3 execution versus administrative integration
+
+The v3 scientific source is `eedb8b426f326c5dcb70bd548008695eb1652aee`, authorized by execution
+commit `6860c2ec4133a9debefdec0b92e33ab0e09b430f`. Reproduce from a separate checkout/worktree
+of that exact execution commit, with its `src` directory explicitly selected by `PYTHONPATH`,
+the unchanged source-commit argument, and a fresh output path outside the repository. Do not
+execute from the later integration tree or silently substitute a newer main checkout.
+
+D-V03-0025 changes a synthetic test fixture only. The unchanged source-scope guard intentionally
+rejects the integration tree because its test differs from the scientific pin. This does not
+amend any experimental gate or invalidate retained output bytes. Conversely, the known failing
+fixture test on the original execution tree must remain disclosed; later green integration tests
+are distinct evidence. Raw/statistical reproduction and full test-suite status are not synonyms.
+
+R-V03-0008 records engineering failure of the all-seed recovery gate and scientific negative
+residual/noninferiority findings. No current protocol rule allows those engineering failures to
+be waived to satisfy C17's accepted-C15 dependency.
+
+The frozen execution was repeated independently with `PYTHONHASHSEED=37`; every one of the eight
+output files is byte-identical to the `PYTHONHASHSEED=1` original. For durable transport without
+placing the 157,444,296-byte raw JSONL in ordinary Git history, the exact eight unmodified files
+are stored in a deterministic ZIP under `artifacts/v03/c15_revision_transport/`. Its `index.json`
+records all entry sizes and hashes, the ZIP hash, the frozen source/execution commits, and the
+failed acceptance status. This transport directory is not the canonical C15 artifact directory,
+does not add a ninth scientific artifact, and is not a release or a substitute execution tree.
+
+### 14.2 Preregistered C15 v4 correction
+
+D-V03-0026 defines protocol `c15-revision-objectives-v4` and run
+`c15-revision-objectives-main-v4` as a fresh experiment. The machine-readable authority is
+`artifacts/v03/c15_revision_v4/protocol.json`. Its preregistration has a null source pin and a
+disabled runner. The v3 protocol, source/execution commits, exact-eight transport, engineering
+failure, scientific negative, and R-V03-0008 remain immutable historical evidence.
+
+The correction uses retained v3 dev diagnostics only. Across 200 primary full/I1/E1/base context
+stages, unchanged C14 proposed an Ignition 200 times, while the learned abstention calibrated only
+on assessment rows vetoed 136 context stages. All 40 recovery-dev sequences contained correct
+C14 A-to-B-to-A proposals, and every reconstructed recovery-head sigmoid was at least
+0.9204247345397955. V4 aligns mechanism and supervision scope: learned belief probabilities still
+feed C14 on context and assessment, and C14 rejection can never be overridden; context C14
+Ignitions construct persistent history without learned abstention/transition veto, while assessment
+alone retains the calibrated learned veto. Stage role is fixed scheduler metadata, not model input.
+
+V4 uses model seeds 2951--2955, bootstrap seed 4465, and train/dev/test bases
+153000/253000/453000. All generated identities use a new `c15v4-*` namespace. This namespace change
+is necessary because the prior family formula did not contain episode seed. It prevents reuse of
+v1/v2/v3 family, episode, entity, evidence, source, group, E0, sample, or Spark identities. The
+independently reconstructed manifest hashes are train
+`bfd3e031edcc9d0c23a55bac1f5797420f1f85d7fca0a0e689ca4ff414fc3266`, dev
+`e4f7cc4ab4c2fa5c81a6d17c927424a3575431f0a6578ab87146c130ab87d6f7`, test
+`66d580f4e63a55f4a26441709caf8b443bfe701fdac548ff22867a60b7a31cf6`; full-fixture hashes are
+train `4bb90acded764199b912b712becc16252c791086dbddc9f80259dd99de5ea455`, dev
+`8cec9458524b467c54927ba46a3055754e59aa531de21d8a8037bec993c04589`, and test
+`cd27e177476f5c0adba37bf7c4e5284996f6155dd4d61ed1547be2bf1a7051c6`.
+
+The v3 eight engineering gates and all scientific point thresholds are unchanged. V4 neither
+guarantees nor requires a positive residual-superiority result: science may remain
+`not_supported`. Engineering acceptance still requires all-seed continuous A-to-B-to-A recovery
+without checkpoint restore plus the other seven gates. Package/release/schema advancement remains
+C20-only.
+
+The enforced order is preregistration commit; authorized source-only commit and reserved tests;
+independent source audit without official seed execution; four-field protocol pin; post-pin full
+verification; one official train, split dev selection/calibration, and test evaluation; independent
+raw reconstruction; and distinct-`PYTHONHASHSEED` byte reproduction. Test inspection cannot be used
+to revise v4 source or thresholds.

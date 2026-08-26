@@ -1,5 +1,24 @@
 # Decision Log
 
+## D-V03-0027 — Accept C15 v4 at the registered engineering boundary
+
+**Decision (2026-08-27):** Accept C15 v4's engineering result from the exact-eight bundle under
+source `1072a484f36fc8981622ed3de39d796b654698b9` and execution-pin head
+`49b40cee605d48e5f9dca243e2c23de43491c64e`. All eight frozen engineering gates pass with no
+failed seed; each of seeds 2951--2955 completes all 8/8 primary recovery opportunities without
+checkpoint restoration. The completed independent audit includes all nine 10,000-draw paired
+bootstrap recalculations and byte-identical `PYTHONHASHSEED=1`/`37` reproductions.
+
+Scientific status remains `not_supported`: full and no-residual recovery are both 1.0, and the
+weighted-CE ECE comparison is undefined under the registered null contract. These outcomes do not
+block the separate engineering acceptance and are not reclassified as scientific support. C17's
+C15 engineering-acceptance dependency is therefore unblocked, while C15 v3's completed negative
+artifacts and transport remain immutable.
+
+**Scope:** No threshold, seed, loss, fixture, source, release manifest, package/schema, C06/C08
+finding, or claim grade changed. This decision does not assert semantic understanding, organ or
+biological fidelity, energy efficiency, or external generalization.
+
 ## D-001 — Treat SparkBrain as brain-inspired, not a brain replica
 
 **Decision:** Until anatomical and neurophysiological validation exists, describe the project as a brain-inspired dynamic cognitive system / artificial brain experiment environment, not a reproduction of the human brain.
@@ -537,7 +556,7 @@ controls, leakage boundaries, failure semantics and source snapshots before impl
 prevents retrospective promotion. This decision registers an experiment, not a C16 result or
 an increase in any existing scientific claim grade.
 
-## D-V03-0025 — Accept the bounded C16 synthetic result at its registered boundary
+## D-V03-0028 — Accept the bounded C16 synthetic result at its registered boundary
 
 **Decision (2026-08-27):** Accept C16 protocol `c16-proto-concepts-v1`, run
 `c16-proto-concepts-main-v1`, source commit
@@ -557,3 +576,366 @@ supported with zero qualified candidates. A full independent audit passed, and
 next-channel-MSE result. It does not establish human semantic understanding, an organ, biological
 equivalence, energy efficiency, or a higher claim grade. Existing C06/C08 negative findings,
 protected evidence, package/schema, release manifests, and release metadata remain unchanged.
+## D-V03-0017 — Preregister C15 persistent revision objectives before source editing
+
+**Decision:** Freeze protocol `c15-revision-objectives-v1` and run
+`c15-revision-objectives-main-v1` before adding C15 source or observing any C15 model result.
+C14 merge `00dccf3dc8f6f70353a536dcf1db9ba0b19fc7b5`, final source
+`eb7f542963397eba1b7d9b4a66a7873b3ba17ac4`, artifact commit `4c0d26c`, and the exact C12--C14
+artifacts are dependencies. The C14 gate and its four pinned source paths remain unchanged.
+
+Transition truth is evaluator-only and prediction-independent. Insufficient information has
+first precedence; recovery is an exogenous A-to-B-to-A return within one entity and one episode;
+update is a sufficient change from the immediately previous truth; maintain is the remaining
+sufficient stable case. Assessment never starts from an unestablished state. Production input
+recursively rejects truth, target, label, expected, evaluator, split, scenario, and test-only
+fields. Identifier strings cannot encode targets or splits, and target permutation and causal
+prefix tests must prove separation.
+
+Use model seeds 2801--2805, bootstrap seed 4315 and 10,000 hierarchical paired resamples. Freeze
+64 train and 32 dev/test episodes, balanced across four worlds, with split-disjoint families.
+The dev set is deterministically divided into checkpoint-selection and calibration halves.
+Source and focused tests are committed and independently audited, then a source-pin-only
+amendment enables the first official runner before any official train/dev/test seed is executed.
+Within that runner, checkpoint selection precedes temperature/abstention calibration; I2 Oracle,
+official Belief-R, and test data are excluded from both. The official test is evaluated once.
+Twelve primary conditions comprise the full separated objective system, each of nine
+single-objective ablations, a matched one-weighted-CE baseline that never receives transition
+targets, and no-residual. Five non-primary input/entity cells run the full condition only. Dev and
+test retain exactly 21,760 prediction rows.
+
+The nine separately logged terms are belief CE, maintain BCE plus temporal drift, update BCE plus
+new-versus-old ranking, recovery BCE plus residual floor, explicit no-Ignition BCE, Brier
+calibration, evidence-ID attribution BCE, routing sparsity, and load balance. Each term records
+eligible count, unweighted and weighted value, and pre-update gradient norms. Zero-weight
+ablations have exact zero weighted contribution and gradient. C14 evaluates before mutation;
+learned abstention or transition heads may veto but never force Ignition. A no-Ignition decision
+retains `evaluated_entity_key`, decays only that entity once, and never clears residual belief.
+
+Engineering completion and scientific support remain separate. Continuous recovery without a
+checkpoint, exact matrices/metrics, explicit abstention, ablations, raw reconstruction, atomic
+failure, and byte determinism are engineering requirements. Distractor/same-ID/correlated-copy
+limits, recovery over no-residual, and the frozen Pareto/noninferiority comparison against weighted
+CE determine narrow synthetic scientific support; failure is retained as a negative result rather
+than changing thresholds. Any test-driven threshold, loss, split, target, denominator, checkpoint,
+or world change requires a new Decision ID and protocol.
+
+Package 0.2.1, persisted schema 0.2, release files, existing schema files, C06/C08 negatives,
+claim grades, official Belief-R, and C13 E2 learned slots remain frozen through C15. The C15
+internal contract may identify itself as schema 0.3, but package 0.3.0, migration/release manifests,
+no-Git archive, and private bundle remain C20 work.
+
+**Reason:** Current v0.2 training implements revision and recovery largely as weights on the same
+belief CE, so reuse would violate C15's stop rule and could hide a maintain/update trade-off.
+Freezing independent targets, objectives, state semantics, selection order, raw cardinalities,
+negative-result policy, and dependency hashes before source editing prevents prediction-derived
+labels, test tuning, checkpoint-based pseudo-recovery, Oracle leakage, and retrospective metric
+selection.
+
+**Pre-source reconstructibility clarification:** The frozen eight-field fixture evidence remains
+the hashed model/evaluator document. Before any C13 ledger insertion, a single frozen adapter
+derives opaque sample and Spark IDs from `evidence_id`, registers sample then Spark lineage, and
+constructs schema-0.3 `EvidenceRecord` with empty metadata/parent evidence and that one parent
+Spark. Exact same-ID redelivery reuses the identical record. This adds no fixture value, target,
+threshold, condition, seed, or result and closes the existing strict-ledger lineage boundary before
+C15 source implementation.
+
+## D-V03-0018 — Freeze C15 E0/E1 ledger scope and model-derived recovery floor
+
+**Decision:** During source integration review, after pure fixture/model/controller drafts and
+non-official self-checks but before any official train/dev/test seed, E0 evaluation, checkpoint
+selection, calibration, or C15 result, close two composition boundaries without changing the
+frozen fixture documents or their hashes.
+
+`E1_oracle_entity` copies the fixture entity and evidence IDs. `E0_global` maps entity scope to
+`__global__` and maps each fixture evidence ID deterministically to
+`ev-<H(c15-e0|fixture_evidence_id)>`; all other evidence fields remain paired. Sample/Spark lineage
+is then derived from the adapted ID. Same-ID redelivery therefore remains the same adapted ID,
+while a distinct correlated-copy ID remains distinct. Attribution targets undergo the identical
+ID mapping. This is the sole allowed entity-condition adapter and applies consistently to model
+runtime, ledger, controller, citations, and raw trace.
+
+For the recovery objective, `restored_prior_activation` is not a fixture constant and cannot be
+set to zero. The runner's frozen training target builder replays that episode's visible context
+and model head outputs through `RevisionController`, captures the target-truth activation from the
+entity snapshot immediately before assessment delivery, and supplies only that detached numeric
+value to the loss. The existing evaluator transition/truth target remains separate and model
+predictions never define it.
+
+**Reason:** The first integration review found that the strict fixture-ledger adapter copied the
+E1 entity while the preregistered E0 diagnostic required global scope, and that the recovery-floor
+formula required model-derived pre-assessment state not present in a static target envelope. The
+explicit condition adapter preserves duplicate/correlation identity, and the controller replay
+implements the already-frozen recovery formula without checkpoint restoration or prediction-
+derived labels. No official numerical result had been executed or observed.
+
+## D-V03-0019 — Freeze C15 stage-local active evidence scope
+
+**Decision:** During focused source testing, before source pinning or any official train/dev/test
+seed, the frozen recover fixture exposed an omitted composition boundary: evidence from the B
+context stage remained active when the A recovery assessment reached the unchanged C14 gate. The
+old A-contradiction rows therefore exceeded C14's frozen contradiction ceiling before the learned
+recovery head could be evaluated.
+
+For every C15 context or assessment stage, `RevisionController` keeps the same append-only C13
+ledger and audit history but limits the C14 active candidate scope to the current stage. On a trial
+ledger, before adding the current deliveries, it deactivates active rows for the evaluated entity
+whose adapted evidence IDs are not present in the current stage, using the frozen stage settle time
+as the intervention time. It then performs the existing deterministic lineage registration and
+delivery sequence. An exact same-ID duplicate within the current stage remains a byte-identical
+ledger redelivery no-op. Other entities are untouched. Belief history, residual activations,
+citations, model hidden state, and the C14 gate instance remain continuous within the episode.
+
+This stage-scope operation occurs before the already-frozen two C14 settle passes. It does not
+change the fixture documents or hashes, evidence values, model inputs, targets, thresholds, C13 or
+C14 protected source, objective weights, seeds, selection order, or result gates. A fixture that
+would require restoring an inactive ID from an earlier stage is non-compliant; the frozen generator
+does not create that case.
+
+**Reason:** Accumulating mutually superseded observations as simultaneously active propositions
+made the preregistered A-to-B-to-A world structurally unable to reach its recovery decision. An
+audited stage-local active view preserves immutable evidence history while making each observation
+stage, rather than the whole episode's superseded evidence, the attributable input to C14. This
+closes an implementation boundary discovered by an acceptance test without tuning against any
+official model seed or result. No official training, checkpoint selection, calibration, E0
+evaluation, or test evaluation had been executed or observed.
+
+## D-V03-0020 — Supersede unevaluated C15 v1 after a pre-pin fixture probe
+
+**Decision:** Invalidate the C15 v1 execution procedure before source pinning. During focused
+source testing, tests used v1 split episodes as inputs to deterministic `RevisionController`
+probes. This violated the frozen order requiring focused tests to avoid official train/dev/test
+seeds before the source-only commit, even though no learned training, checkpoint selection,
+calibration, E0 diagnostic, test evaluation, artifact generation, or result-driven tuning had
+occurred.
+
+Protocol `c15-revision-objectives-v2` and run `c15-revision-objectives-main-v2` supersede v1.
+Freeze fresh train/dev/test episode-seed bases 151000/251000/451000, model seeds 2851--2855, and
+bootstrap seed 4365. Freeze the independently reconstructed split-manifest SHA-256 values as
+train `0f33808ba39613c998a3015d1cf0aa2adbe2808d0c4c455a8da63dc6fe45489e`, dev
+`e161c6bb652fd35a82e17e22003c792b3001f6b8a9d5c608c2e3e0caffb2b0b6`, and test
+`e4dc44af60c268ac57ea38904cefd4f31bf6f35ac40178a319aa5d8688648fd5`; freeze full-fixture
+SHA-256 as train `2d5de7eef61a4d92f8e1a83cf92670e42688f32ac0abe0295d0d736dbce2ff2b`, dev
+`1714829588a605bfa6a38b443f452dc86b2bdcb71929631e7cc26e2c24b975d8`, and test
+`6cf39d823996bd37c9bec4ee9bc7fd235b51da3e2931d3337190d50c60bfef64`.
+
+All focused runtime/controller tests must use explicitly reserved synthetic fixtures and a
+non-official model seed. Pure reconstruction of the frozen fixture documents for hash checks is
+allowed and does not execute the model or controller. Carry forward D-V03-0017 through
+D-V03-0019, every condition, objective, threshold, metric, gate, cardinality, output schema,
+protected hash, and negative-result policy unchanged.
+
+**Reason:** Replacing the unpinned, unevaluated seed surface restores a clean preregistered order
+without hiding the procedural breach or reusing observed fixture-controller combinations. The
+change is contamination control, not a response to learned performance or test metrics. v1 must
+not be source-pinned or executed.
+
+## D-V03-0021 — Freeze C15 failed-seed artifact semantics
+
+**Decision:** Before the source-only commit or any official v2 execution, close the gap between
+the requirement to retain failed seeds and the success-only fixed cardinalities. Treat one model
+seed as the atomic execution unit across all twelve conditions. Buffer all rows for that seed. On
+the first failure, discard its whole buffer, do not retry it, record exactly one row with fields
+`model_seed`, `phase`, `condition_id`, `error_type`, and `error_hash`, then continue with the next
+frozen seed. `error_hash` is SHA-256 of canonical `[phase, condition_id, error_type]`; exception
+messages and machine-local paths are not artifacts.
+
+Every JSON artifact with `failed_seeds` repeats the same list sorted by model seed. The raw JSONL
+contains only complete successful prediction rows, and `report.md` names each failure. For S
+complete seeds, raw, training-step, condition-seed, objective, confusion-seed, calibration-seed,
+and Pareto-seed cardinalities are respectively `4352*S`, `4608*S`, `12*S`, `108*S`, `34*S`,
+`34*S`, and `12*S`. When S is positive, descriptive aggregate/confusion, aggregate/Pareto, and
+pairwise row counts remain 34, 12, and 66; when S is zero they are empty. No partial seed row is
+published or imputed.
+
+Any failed required seed fixes engineering status to `implementation_failure` and scientific
+status to `not_evaluated_implementation_failure`. All nine bootstrap rows retain the frozen
+resample count and bootstrap seed but use null effect/lower/upper. Successful rows and descriptive
+aggregates remain inspectable but cannot support a scientific gate. If every seed fails, publish
+the same exact eight files with static objective configuration, empty data/derived arrays, the
+common failed-seed list, implementation-failure status, and null bootstrap results.
+
+**Reason:** The preregistered v2 artifact schemas named `failed_seeds` and required null bootstrap
+effects, but did not define an exact failure row or how fixed success cardinalities shrink. A
+source review found the runner could only abort atomically and emit no failure evidence. This
+amendment makes failure reporting reconstructible without inventing predictions, dropping a
+failure silently, or mixing incomplete seeds into a scientific conclusion. No official v2 seed,
+training result, checkpoint, calibration result, diagnostic, or test result had been executed or
+observed.
+
+## D-V03-0022 — Freeze the exact C15 implementation-failure objects
+
+**Decision:** Before source pinning and while failure-path tests remain synthetic, make the
+D-V03-0021 failure bundle byte-reconstructible. `pareto_frontier.scientific_support` retains its
+normal seven fields. `status` is `not_evaluated_implementation_failure`. `variant_gates` retains
+the exact three variant keys with zero changed pairs and denominator, null rate, the frozen
+maximum, and `passed=false`. `residual_gate` retains null full/no-residual recovery rates and
+`passed=false`. Each of the exact five weighted-CE noninferiority rows keeps its margin and
+direction, uses a null effect, and fails. `strict_improvement` retains the exact five effect keys
+as null plus the frozen minimum and `passed=false`. `all_gates_passed=false`. All nine bootstrap
+entries keep resamples 10000 and seed 4365 with null effect/lower/upper.
+
+`loss_ablation_metrics.scientific_gates` is byte-equal to that scientific-support object. Its
+normal eight engineering-gate rows remain present; partial observations remain visible,
+unavailable denominators are null, and the raw-count, training-step-count, and all-seed recovery
+requirements fail, fixing overall engineering status to `implementation_failure`.
+
+When no seed succeeds, `per_transition_predictions.jsonl` is exactly zero bytes. Prediction,
+training, condition-seed, objective, confusion/calibration, Pareto point, and pairwise arrays are
+empty. The normal dimensions and twelve static objective-configuration rows remain, with
+parameter count 3132 and optimizer steps 384, and every JSON artifact repeats the common failure
+list. Exception text is not included.
+
+**Reason:** D-V03-0021 fixed seed atomicity and cardinality scaling but left multiple valid JSON
+shapes for the required seven-field scientific object and empty JSONL. Freezing one representation
+prevents implementation-dependent failure artifacts and makes zero-success behavior testable. No
+official v2 source pin, seed, training result, checkpoint, calibration result, diagnostic, or test
+result had been executed or observed.
+
+## D-V03-0023 — Supersede failed C15 v2 with nullable statistics and a hard worker deadline
+
+**Decision (2026-08-26):** Preserve R-V03-0007 and v2 source
+`bb89797c92a8a5f38216dac00f48cfa59f66381f` as failed execution history. The official v2 run
+reached global aggregation, where a nullable metric was coerced to float; its traceback does not
+identify whether F1 or ECE was the first undefined operand. No final bundle or numerical evidence
+was accepted. The run also exceeded the frozen 120-second limit, which the source did not enforce.
+These are implementation failure and protocol noncompliance, not scientific negatives. Do not
+rerun v2 or relabel global failure as a failed model seed.
+
+Preregister protocol `c15-revision-objectives-v3`, run `c15-revision-objectives-main-v3` before
+source correction. Model seeds are 2901--2905, bootstrap seed 4415, and train/dev/test episode
+bases 152000/252000/452000. Pure fixture reconstruction, independently repeated without model or
+controller execution, gives manifest SHA-256 train
+`70d8b6a0ddd0aad7adeefbe4473c93cb74c25316f5435cc7ba09ebdd837b236d`, dev
+`345b3d30f64017799329edeb9ec90afb6c994ffcae2160d0dc5be5300bdc00a8`, test
+`c8c1ae76d103b0d375903f56d4089bf9fca62d597abaaba6507720fdcae71806`; full-fixture SHA-256 train
+`6e3c82e943b52d4f5b140b60c871bfdbd962c930a0470f015e27e760d4aafd36`, dev
+`77a6e6644220e7654dd8ab94eca27639e23a984e7fc674e529a1df6709113587`, test
+`76f7945ff02b8689a8c341353278fa43354194963e344ed3e88d7930e4108510`.
+
+Preserve the existing no-ignition F1 formula: harmonic mean of precision and recall, null when
+either is undefined or their sum is zero. ECE remains null without decided rows. Paired effects
+are null if either operand is null. Consume all 10,000 bootstrap draws without dropping,
+redrawing, or imputing any undefined effect. Every interval has exactly effect/lower/upper,
+resamples/bootstrap_seed, and defined_resamples/undefined_resamples. Counts are integers summing
+to 10,000 on a completed bootstrap. Any undefined draw or point effect makes both bounds null;
+a finite point effect remains visible. Failed-seed rules prevent bootstrap execution and leave
+all five effect/bounds/count fields null. Null point effects fail their required residual or
+noninferiority gate; strict improvement considers only finite effects. All required point gates
+must pass for supported; otherwise the completed scientific result is not_supported. Descriptive
+interval availability does not change a finite point-estimate gate.
+
+Freeze a 3,600-second hard worker budget. Parent preflight is excluded; monotonic timing starts
+immediately before spawning one worker. The parent must confirm worker exit by the deadline.
+The worker performs training, selection, calibration, evaluation, aggregation, validation, and
+staging writes; only the parent publishes after successful worker exit and exact eight-file
+inventory validation. On timeout terminate/join for five seconds, then kill/join for five seconds
+if alive. Even a later normal exit does not permit publication. Cleanup requires confirmed worker
+termination; otherwise retain quarantined staging and report its absolute path on stderr. A new
+output stays absent; an existing empty output stays empty. Raise `C15RunTimeoutError`, CLI exit
+124, for global timeout including a surviving worker; other global failures exit 1. No local
+path, exception message, or elapsed time enters scientific artifacts. Record any global timeout
+as a resource-limited implementation failure, never a failed model seed.
+
+All world formulas, architecture, losses, optimization, selection, calibration, scientific
+thresholds, C14 dependency, protected hashes, package/schema freeze, and negative-result policy
+remain unchanged. Tests use reserved synthetic data and non-official seeds until a source-only
+commit and separate pin amendment authorize the new official execution.
+
+**Reason:** Explicit nullable statistics repair a contract contradiction without inventing
+observations. An enforceable worker deadline repairs resource control; the larger budget is not
+a scientific threshold change. Fresh seeds isolate the failed execution from the new procedure.
+
+## D-V03-0025 — Isolate the C15 post-pin test-fixture repair from scientific execution
+
+**Decision (2026-08-26):** Preserve C15 v3 source
+`eedb8b426f326c5dcb70bd548008695eb1652aee`, authorized execution tree
+`6860c2ec4133a9debefdec0b92e33ab0e09b430f`, its protocol, and every generated artifact byte.
+Repair only the synthetic base fixture in
+`test_protocol_amendment_allows_exactly_four_dependency_fields` on a separate integration branch.
+Remove the two base-provenance fields from that fixture and restore a pending synthetic source pin
+and disabled execution guard before constructing the four-field amendment under test.
+
+CI run `32914883175` failed on Python 3.11 and 3.13 after the execution-pin amendment. The same
+single test fails locally on the unchanged execution tree: it reads the already-amended current
+protocol as if it were the unamended base, while the production validator correctly removes the
+two amendment-only provenance fields before comparing with the base. The real committed
+preregistration-to-execution amendment passes validation; in-memory fixture normalization makes
+both the permitted-amendment and forbidden-protocol-change assertions pass. No model, controller,
+training, or scientific metric execution was needed for this diagnosis.
+
+This is an administrative test-harness correction, not a scientific protocol amendment or a new
+source pin. It does not authorize execution from the integration tree: the existing post-pin
+source/test guard must reject that tree. Scientific reproduction must check out execution commit
+`6860c2ec4133a9debefdec0b92e33ab0e09b430f` and use the unchanged source pin above. A later green
+integration test suite must not be described as a green full suite or clean-room test phase on
+the original execution tree; the original tree retains this known fixture failure.
+
+The completed official v3 run reports engineering `fail`, scientific `not_supported`, and no
+failed model seeds. Preserve those results independently of this fixture repair. In particular,
+do not relax the all-seed recovery gate, reclassify C15 as accepted, or unblock the C17 dependency.
+Independent byte reproduction is still pending at the time of this administrative decision.
+
+**Scope:** No runner/runtime, world, objective, threshold, seed, protocol, release manifest,
+package/schema, protected artifact, or canonical report changes. No public release or upload is
+authorized by this decision.
+
+## D-V03-0026 — Preregister C15 v4 assessment-only learned veto with fresh identities
+
+**Decision (2026-08-27):** Preserve R-V03-0008, C15 v3 source
+`eedb8b426f326c5dcb70bd548008695eb1652aee`, execution tree
+`6860c2ec4133a9debefdec0b92e33ab0e09b430f`, protocol bytes, exact-eight transport, engineering
+`fail` and scientific `not_supported` interpretations without amendment. V4 is a new experiment,
+not a rerun, replacement, or favorable reinterpretation of v3. Its separate machine authority is
+`artifacts/v03/c15_revision_v4/protocol.json`, initially with `c15_source_pin=null` and
+`runner_execution_allowed=false`.
+
+The correction was selected from retained v3 **dev rows only**. In the primary
+full/I1/E1/base dev cell, all 200 context-stage C14 proposals ignited, but assessment-calibrated
+learned abstention vetoed 136 of those 200 context stages. In the 40 recovery dev rows, all C14
+proposal sequences were the correct A-to-B-to-A sequence. The recovery-head sigmoid reconstructed
+from the retained abstention sigmoid and four-way transition-softmax log ratio was at least
+`0.9204247345397955` for every row. Thus the observed blocker was a scope mismatch: supervision and
+calibration covered assessment decisions, while the same veto was also applied to context state
+construction. No v3 test row or v4 official seed informed this correction.
+
+V4 therefore keeps learned belief probabilities as the input to unchanged C14 on every stage and
+keeps every C14 rejection final. A context-stage C14 Ignition constructs persistent history without
+an additional learned abstention or transition-head veto. The assessment stage alone retains the
+development-calibrated learned abstention and maintain/update/recovery-head vetoes. Stage role is
+fixed scheduler metadata and is not a model input; truth, transition labels, split, episode seed,
+and test metadata remain unavailable to the model/controller.
+
+Freeze model seeds 2951--2955, bootstrap seed 4465, and train/dev/test episode bases
+153000/253000/453000. Merely changing episode bases would reuse v3 family IDs because the earlier
+family derivation omitted the episode seed. V4 therefore freezes the distinct `c15v4-*` namespace
+for family, episode, entity, evidence, source, group, correlated-copy, E0 mapping, sample, and Spark
+derivations. Independent pure-fixture implementations, neither importing nor executing a model or
+controller, agree on manifest SHA-256 train
+`bfd3e031edcc9d0c23a55bac1f5797420f1f85d7fca0a0e689ca4ff414fc3266`, dev
+`e4f7cc4ab4c2fa5c81a6d17c927424a3575431f0a6578ab87146c130ab87d6f7`, test
+`66d580f4e63a55f4a26441709caf8b443bfe701fdac548ff22867a60b7a31cf6`; full-fixture SHA-256 train
+`4bb90acded764199b912b712becc16252c791086dbddc9f80259dd99de5ea455`, dev
+`8cec9458524b467c54927ba46a3055754e59aa531de21d8a8037bec993c04589`, test
+`cd27e177476f5c0adba37bf7c4e5284996f6155dd4d61ed1547be2bf1a7051c6`.
+
+All eight engineering gates, their denominators, the twelve conditions, objective weights,
+training/selection/calibration budgets, exact-eight artifact inventory, failure semantics,
+10,000-draw paired bootstrap, scientific thresholds, C12--C14 dependencies, package 0.2.1,
+persisted schema 0.2, and C06/C08/C15-v3 negative-result boundaries remain unchanged. In
+particular, no all-seed recovery, residual-superiority, ECE, or weighted-CE margin is relaxed.
+Scientific `not_supported` remains compatible with engineering acceptance only if all eight
+engineering gates independently pass.
+
+Execution order is mandatory: commit this disabled preregistration; implement and commit only the
+authorized source/test paths using reserved synthetic fixtures; complete focused/full/readiness and
+independent source audit without executing v4 official train/dev/test seeds; amend exactly the four
+source-pin fields and enable the runner; rerun full verification; execute the official train/dev/test
+sequence once; independently recalculate raw-to-derived results; then require all eight files to be
+byte-identical under a distinct `PYTHONHASHSEED`. Any source change after v4 test inspection requires
+a new Decision ID, new namespace/seeds/splits/bootstrap, and a new protocol.
+
+**Reason:** Restricting a development-calibrated veto to the decision scope on which it was trained
+repairs a pre-test mechanism mismatch without forcing recovery, weakening C14, altering scientific
+gates, or discarding the completed v3 negative result. Fresh identities prevent hidden reuse across
+experiments.
