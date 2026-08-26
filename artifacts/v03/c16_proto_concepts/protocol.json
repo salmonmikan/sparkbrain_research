@@ -7,7 +7,7 @@
   "runner_execution_allowed": true,
   "decision_id": "D-V03-0024",
   "experiment_protocol_section": 15,
-  "source_commit": "f1b831f91cfa98c8c10dbe5d1b826aa3af3c8fe8",
+  "source_commit": "4933a6059240875d0548fe602f114d768a49ef28",
   "scientific_claim": "Unlabeled recurring assemblies and functional proto-concept candidates in fixed synthetic streams; no human semantic name, biological equivalence, organ claim, or cross-seed candidate-identity claim.",
   "scope": {
     "primary_representations": ["cc0_assembly", "online_prototype", "learned_local_prototype"],
