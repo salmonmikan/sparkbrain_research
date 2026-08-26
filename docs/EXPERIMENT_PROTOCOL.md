@@ -697,3 +697,73 @@ recalculation matches all derived outputs. This establishes only attributable sy
 control of the isolated v0.3 Ignition call path at fixed logits. It is not evidence of external
 accuracy gain, learned Coalition formation, semantic understanding, biological fidelity, or
 energy efficiency.
+
+## 15. C16 bounded proto-concept formation protocol
+
+Decision `D-V03-0024` (2026-08-26) freezes `c16-proto-concepts-v1` and
+`c16-proto-concepts-main-v1` before implementation or official evaluation. Section 14 is reserved
+for the independent C15 branch. C16 starts from accepted C14 merge
+`00dccf3dc8f6f70353a536dcf1db9ba0b19fc7b5`, uses accepted C12 sensory processing, C13
+sample/Spark lineage registration and the immutable CC0 seed, and consumes no C15 runtime.
+The authoritative formulas, schemas, hashes, thresholds and source allowlist are in
+`artifacts/v03/c16_proto_concepts/protocol.json`.
+
+This is a preregistered five-run-seed synthetic diagnostic, not the general 30-seed evaluation
+described in section 6. Seeds 3601--3605 affect fixtures and initialization; each has four worlds
+and 32/16/16 train/dev/test episodes of nine frames. All 30 manifest/full-fixture hashes were
+independently reproduced with pure generators only. Test introduces held-out motif/context
+combinations and a reversed decoy association. No world, context, split, target or human concept
+label enters discovery. The twelve-dimensional input scatters actual C12 Spark activations;
+default top-eight sensory selection and quiet/no-match frames remain valid.
+
+Nine cells cross CC0 assembly, online prototype and learned-local prototype with primary,
+matched-random and frequency-top-K banks. Discovery runs in canonical and episode-shuffled train
+order only; amplitude perturbation and irrelevant distractor variants query frozen banks.
+The learned representation is a tied linear 12-to-4-to-12 autoencoder with 48 weights, twenty
+full-batch train-only SGD updates and no selection. Every bank uses the same frozen eight-slot
+one-hot plus intercept ridge predictor, fitted on 256 canonical train transitions. Only
+next-channel MSE is evaluated; no auxiliary utility task or hyperparameter search is introduced.
+
+Bank capacity is eight, total births at most 32, retained exemplars at most 32 per candidate,
+and the identity registry at most 288 observations. Duplicate identity is a complete no-op;
+changed content or a 289th unique observation fails before mutation. Merge requires prototype
+cosine at least 0.95 and complete-link cosine at least 0.8 over the full retained union.
+Split requires dispersion greater than 0.2, deterministic farthest-pair partition and at least
+four exemplars per child. Structural operations respect capacity/birth budgets atomically.
+The observation's pre-structural winner remains its recorded winner even if retired that frame.
+CC0 and static controls explicitly report unsupported lifecycle operations rather than fabricating
+equivalent behavior.
+
+Every primary candidate has an explicit nullable grade. CC0 requires at least three independent
+train episodes and two contexts from actual discovery winners. CC1 additionally requires held-out
+reuse and Jaccard stability at least 0.8 for both perturbation controls. CC2 requires at least
+eight candidate-active test steps and MSE improvement at least 0.01 over both matched controls
+on those exact indices; an incomplete matched bank prevents promotion. CC3 additionally requires
+targeted impairment at least 0.05, targeted-minus-usage-matched-random impairment at least 0.03,
+unrelated collateral at most 0.02, exact state/prediction restoration and replication in at least
+three seeds for the same fixed evaluation world. No candidate identity is aligned across seeds.
+Train query rows make usage, target-world and comparator selection independently reconstructible.
+
+The exact eight artifacts retain 990 lineage rows, 90 bank records, 5,760 held-out episode rows,
+360 seed summaries, 72 utility aggregates, 240 seed control comparisons, 48 control aggregates,
+1,920 causal episode/slot rows and 60 counterexample-audit rows when all five seeds complete.
+Dynamic candidate arrays are bounded but never padded with invented candidates. Bootstrap uses
+10,000 paired seed/episode draws with seed 4366 and descriptive 95% intervals. Empty denominators
+are null; undefined draws are not dropped, redrawn or imputed. Candidate grades use frozen point
+criteria and make no familywise significance claim.
+
+Failed run seeds are atomic and visible. Partial successful rows remain descriptive, while any
+required seed failure disables scientific support and bootstrap evaluation. Zero successful seeds
+still yield the exact eight-file failure bundle with empty raw JSONL. Global failures and timeout
+abort publication rather than inventing a failed seed. The parent enforces a 3,600-second budget
+from worker spawn through termination, terminates/kills before cleanup, and quarantines staging if
+the child remains alive. Only the parent may atomically publish a validated eight-file bundle.
+
+The eight new C16 source/test paths, 29 baseline protected hashes and four runtime source pins
+are frozen. Source-only commit and independent audit precede a separate four-field pin amendment.
+The complete reserved-synthetic/pure-fixture suite runs before source commit and again after pin,
+before any official evaluation; protocol fixtures cover both amended and unamended states and
+remain safe without Git. Reproduction uses the recorded C16 execution/artifact checkout, with
+strict post-pin source guards; later main integration is not silently treated as the same runtime.
+No C16 scientific result is asserted here. Null grades and negative outcomes are acceptable;
+v0.2.1, existing claim grades, C06/C08 negatives, schemas and release manifests remain unchanged.

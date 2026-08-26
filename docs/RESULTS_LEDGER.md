@@ -707,3 +707,31 @@ contract correction only.
   - `run_manifest.json`: `a2dd2b76731476712a0964f4c6b8bd81b12e19ef77c45ab493cbb172fd46b7c3`
 - Claim-grade impact: unchanged. C06/C08 negative results, protected hashes, package 0.2.1,
   persisted schema 0.2, and release metadata remain unchanged.
+
+## 2026-08-27 — R-V03-0006 — C16 bounded proto-concept formation acceptance
+
+- Protocol/run: `c16-proto-concepts-v1` / `c16-proto-concepts-main-v1`; source
+  `4933a6059240875d0548fe602f114d768a49ef28`
+- Execution lineage: `codex/c16-proto-concepts` pre-artifact head `3dd9593`, retaining source pin
+  `b1c83e6` and source-only commit `4933a60`
+- Seeds/statistics: run seeds 3601--3605; paired hierarchical bootstrap with 10,000 resamples and
+  bootstrap seed 4366; failed seeds 0
+- Engineering: 8/8 gates passed; raw retention is 990 lineage, 90 bank, 5 checkpoint, 5,760 held-out
+  episode, 360 seed-summary, 72 utility-aggregate, 60 control-bank, 240 seed-comparison, 48
+  aggregate-comparison, 1,920 causal, and 60 counterexample rows
+- Scientific stages: CC0 supported (109 candidates); CC1 supported (6); CC2 not supported (0); CC3
+  not supported (0). Counterexamples retain 46 `utility_regret` and 14 `no_failure_observed` rows.
+- Independent audit: full audit PASS. Reproductions with `PYTHONHASHSEED=1` and
+  `PYTHONHASHSEED=37` were byte-identical for the exact-eight bundle.
+- Artifact SHA-256:
+  - `protocol.json`: `122d3013ff859bba41314f2217f209b5573e1d3ae207b11132963cd7bb034174`
+  - `candidate_lineage.jsonl`: `963d5f9c7d436b7d00c7310eb56502b0f907de3c1df2f6daa0580cee7ec46aa2`
+  - `candidate_metrics.json`: `97ddf6d7a14e54456bbaa4f53e672cb955c672acbb8c79917e548e894878f9f6`
+  - `held_out_utility.json`: `21ff8947dc9b82026f32d692f6299dfab1154026caf8a9a5d619860d04ca5c2b`
+  - `causal_interventions.jsonl`: `1ae153d3f5b8f9e0aa064ce8118a8a8db3ad702b267bb10add16fe411ea4fff7`
+  - `matched_controls.json`: `e7b48fd3df30206294985a5e0def1a7edb4af4c7e4516b74d4926d30f86d2baf`
+  - `failure_examples.jsonl`: `223c21e6ca972e2795a0e1cf87c9508a8e1a34e681e9d4ca4232965915a054be`
+  - `report.md`: `3c53f8cc435ec32240763a66e4c6af2a7c919aa463acb553f29c17e6d4b7b9ee`
+- Claim boundary: this is not evidence of semantic understanding, an organ, biological equivalence,
+  energy efficiency, or a claim-grade increase. Package/schema, release manifests, and metadata are
+  unchanged.

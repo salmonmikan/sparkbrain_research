@@ -481,3 +481,79 @@ while logits remain fixed. It does not establish external accuracy improvement, 
 coalition formation, semantic understanding, biological fidelity, energy efficiency, or a higher
 scientific claim grade. The accepted C06/C08 negative findings, v0.2 package/schema, release
 metadata, and protected artifacts remain unchanged.
+
+## D-V03-0024 — Preregister bounded C16 proto-concept formation
+
+**Decision (2026-08-26):** Freeze protocol `c16-proto-concepts-v1`, run
+`c16-proto-concepts-main-v1`, in `artifacts/v03/c16_proto_concepts/protocol.json` before C16
+source implementation or official sensory/model/controller evaluation. This independent stage
+starts from accepted C14 merge `00dccf3dc8f6f70353a536dcf1db9ba0b19fc7b5` and consumes accepted
+C12 sensory processing, C13 sample/Spark parent registration, and the unchanged CC0 concept seed.
+It does not consume C15 runtime. Decision IDs D-V03-0017 through D-V03-0023 and experimental
+section 14 belong to the separate C15 branch; C16 uses section 15 without rewriting that history.
+
+Run seeds 3601--3605 determine both fixture phase/amplitude and initialization; bootstrap seed
+4366 determines 10,000 paired hierarchical resamples. Four worlds expose recurrence across held-out
+contexts, transitive bridge overmerge, frequency/distractor shortcuts, and decoy reversal.
+Each seed has 32 train, 16 dev, and 16 test episodes of nine frames. Two independent pure
+generators agreed on all 30 manifest/full-fixture hashes without running sensory, concept,
+learned, or controller code. Those hashes and exact formulas are frozen in the protocol.
+
+Compare immutable CC0, online prototypes, and a tied linear 12-to-4-to-12 autoencoder against
+their matched-random and frequency-top-K controls. The encoder has exactly 48 weights and twenty
+train-only full-batch SGD steps; no nonlinearities, biases, dev selection, or test adaptation.
+Banks are bounded by eight live candidates, 32 lifetime births, 32 retained exemplars per
+candidate, and 288 unique train observation identities. Same-ID redelivery is an exact state
+no-op, including the CC0 wrapper. Merge/split, competition, dormancy, deletion, lineage and
+unsupported-control no-ops are explicit. Bank input is only a numeric emitted vector and opaque
+observation ID; independent episode/context recurrence remains evaluator-only.
+
+Freeze next-channel MSE as the sole utility, the same eight-slot plus intercept ridge budget,
+candidate-active held-out comparisons, and train-selected usage-matched interventions. A
+candidate below three independent episodes/two contexts has null grade, not automatic CC0.
+Control shortfalls prevent CC2/CC3. CC3 needs bounded collateral and the same functional-world
+effect in at least three run seeds, not a cross-seed candidate-identity claim. Null grades,
+clusters without utility, and negative scientific outcomes remain valid deliverables.
+
+Freeze exactly eight new source/test paths, 29 inherited baseline/CC0 protected hashes, and four
+direct runtime source pins. C16 source may be implemented only after this preregistration;
+official execution remains disabled until an audited source-only commit and a separate amendment
+of exactly the four root pin fields. Run the complete reserved-synthetic/pure-fixture suite both
+before the source commit and after the pin amendment, before the first official evaluation.
+Protocol tests must handle amended/unamended and no-Git contexts without treating the mutable
+current protocol as its own unchanged base.
+
+Freeze the exact eight-file artifact bundle and successful-seed-scaled cardinalities. Seed
+failure discards that seed's whole buffer, remains visible, and disables scientific promotion;
+missing results are never imputed. A parent-enforced 3,600-second worker deadline includes all
+computation, validation, and staging writes after preflight. Only the parent publishes. Timeout
+termination precedes cleanup; a surviving child leaves quarantined staging and never a published
+result. Reproduction uses the recorded stage execution/artifact checkout: post-pin changes are
+limited to the exact C16 artifacts and four named documents, not arbitrary later-stage source.
+
+**Reason:** Candidate recurrence, stability, held-out reuse and causal contribution must be tested
+separately from attractive clusters or names. Freezing resource bounds, raw denominators,
+controls, leakage boundaries, failure semantics and source snapshots before implementation
+prevents retrospective promotion. This decision registers an experiment, not a C16 result or
+an increase in any existing scientific claim grade.
+
+## D-V03-0025 — Accept the bounded C16 synthetic result at its registered boundary
+
+**Decision (2026-08-27):** Accept C16 protocol `c16-proto-concepts-v1`, run
+`c16-proto-concepts-main-v1`, source commit
+`4933a6059240875d0548fe602f114d768a49ef28`, and the exact-eight artifact bundle under
+`artifacts/v03/c16_proto_concepts/`. The recorded execution lineage is source-only commit
+`4933a60`, pin `b1c83e6`, and integration branch `codex/c16-proto-concepts` pre-artifact head
+`3dd9593`.
+
+All eight engineering gates passed with zero failed seeds. The retained raw cardinalities are 990
+lineage rows, 90 bank rows, 5 learned checkpoints, 5,760 held-out episode rows, 60 control banks,
+1,920 causal rows, and 60 counterexample rows; utility and paired-control aggregates retain 72 and
+48 rows respectively. CC0 is supported for 109 candidates and CC1 for 6; CC2 and CC3 are not
+supported with zero qualified candidates. A full independent audit passed, and
+`PYTHONHASHSEED=1` versus `PYTHONHASHSEED=37` reproduced all eight artifact bytes exactly.
+
+**Reason:** The result supports only the preregistered synthetic recurrence/stability boundary and
+next-channel-MSE result. It does not establish human semantic understanding, an organ, biological
+equivalence, energy efficiency, or a higher claim grade. Existing C06/C08 negative findings,
+protected evidence, package/schema, release manifests, and release metadata remain unchanged.
