@@ -15,6 +15,7 @@ from sparkbrain.v03_organs.contracts import (
 from sparkbrain.v03_organs.discovery import (
     assess_proposal,
     discover_primary_candidate,
+    execute_c14_c15_boundary,
     select_controls,
 )
 from sparkbrain.v03_organs.worlds import fixture_document, fixture_hashes, fixture_manifest
@@ -29,11 +30,13 @@ def protocol():
 
 def _independent_fixture(run_seed: int, p: dict) -> dict:
     """Second stdlib-only construction; intentionally does not import C17 worlds."""
+
     def sha(text: str) -> str:
         return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
     def ids(prefix: str, text: str) -> str:
         return prefix + sha(text)[:24]
+
     cells = []
     for cell_spec in p["fixtures"]["generation_contract"]["constants_and_array_order"][
         "cell_order"
@@ -243,6 +246,23 @@ def test_c14_proposal_bytes_are_invariant_and_c15_cannot_create_one():
     assert assess_proposal(None, "allow")["assessment"] == "not_called"
 
 
+def test_actual_c14_proposal_and_c15_v4_assessment_only_boundary():
+    rows = [
+        execute_c14_c15_boundary(proposal_belief="beta", outcome=outcome)
+        for outcome in ("allow", "veto", "abstain")
+    ]
+    assert rows[0]["assessment_allowed"] is True
+    assert rows[1]["assessment_allowed"] is rows[2]["assessment_allowed"] is False
+    assert len({row["c14_proposal_sha256"] for row in rows}) == 1
+    assert all(row["replacement_possible"] is False for row in rows)
+    with pytest.raises(ValueError, match="unrepresentable"):
+        execute_c14_c15_boundary(
+            proposal_belief="beta",
+            outcome="allow",
+            alternate_proposal={"belief": "gamma"},
+        )
+
+
 @pytest.fixture(scope="module")
 def reserved_bundle(protocol):
     from sparkbrain.v03_organs.evaluation import generate_bundle, validate_bundle
@@ -258,7 +278,11 @@ def reserved_bundle(protocol):
 def test_reserved_bundle_exact_cardinality_restore_and_negative_science(reserved_bundle):
     _, bundle = reserved_bundle
     acceptance = bundle["acceptance_matrix.json"]
-    assert acceptance["engineering_status"] == "accepted"
+    assert acceptance["engineering_status"] == "implementation_failure"
+    reproduction = next(
+        row for row in acceptance["engineering_gates"] if row["gate_id"] == "reproduction_exact"
+    )
+    assert reproduction["passed"] is False
     assert acceptance["scientific_status"] in {"supported", "not_supported"}
     assert acceptance["cardinalities"] == {
         "candidate_discovery": 5,
@@ -288,4 +312,112 @@ def test_bundle_validator_recalculates_inventory_and_cardinality(reserved_bundle
     broken["candidate_discovery.jsonl"].pop()
     broken["acceptance_matrix.json"]["cardinalities"]["candidate_discovery"] -= 1
     with pytest.raises(ValueError, match="cardinality"):
+        validate_bundle(broken, protocol, "a" * 40)
+
+
+def test_resource_interventions_share_bank_but_change_evaluation(reserved_bundle):
+    _, bundle = reserved_bundle
+    rows = {row["condition_id"]: row for row in bundle["resource_conditions.json"]["seed_counters"]}
+    assert (
+        rows["R0_baseline"]["pre_resource_bank_sha256"]
+        == rows["R2_bandwidth_low"]["pre_resource_bank_sha256"]
+        == rows["R3_workspace_low"]["pre_resource_bank_sha256"]
+    )
+    assert (
+        rows["R0_baseline"]["evaluation_behavior_sha256"]
+        != rows["R2_bandwidth_low"]["evaluation_behavior_sha256"]
+    )
+    assert (
+        rows["R0_baseline"]["evaluation_behavior_sha256"]
+        != rows["R3_workspace_low"]["evaluation_behavior_sha256"]
+    )
+
+
+def test_cross_seed_consistency_counts_same_locked_function(protocol):
+    from sparkbrain.v03_organs.evaluation import _apply_seed_consistency
+
+    cells = [
+        {
+            "run_seed": seed,
+            "condition_id": "R0_baseline",
+            "target_function_index": function,
+            "local_gates_except_seed_consistency": True,
+        }
+        for seed, function in ((1, 2), (2, 2), (3, 2), (4, 1), (5, 1))
+    ]
+    gates = [
+        {
+            "run_seed": row["run_seed"],
+            "condition_id": "R0_baseline",
+            "gate_id": "seed_consistency",
+            "passed": False,
+        }
+        for row in cells
+    ]
+    value = copy.deepcopy(protocol)
+    value["resource_conditions"]["condition_order"] = ["R0_baseline"]
+    result = _apply_seed_consistency(cells, gates, value)
+    assert result["R0_baseline"]["function_index"] == 2
+    assert result["R0_baseline"]["qualifying_seed_count"] == 3
+    assert [row["passed"] for row in gates] == [True, True, True, False, False]
+
+
+def test_hierarchical_bootstrap_inventory_and_registered_bounds(reserved_bundle):
+    protocol, bundle = reserved_bundle
+    intervals = bundle["matched_ablations.json"]["bootstrap_intervals"]
+    assert set(intervals) == {
+        "held_out_reuse",
+        "targeted_impairment",
+        *(f"control_margin:{name}" for name in protocol["controls"]["control_order"]),
+        "unrelated_collateral",
+    }
+    assert all(row["resamples"] == 30 for row in intervals.values())
+    assert all(
+        row["bootstrap_seed"] == protocol["statistics"]["bootstrap_seed"]
+        for row in intervals.values()
+    )
+
+
+def test_discovery_final_tie_break_is_single_member_list_hash(protocol):
+    import itertools
+
+    rows = _observations()
+    for row in rows:
+        row["message_source_id"] = None
+        row["message_target_id"] = None
+        row["message_weight"] = 0.0
+    result = discover_primary_candidate(
+        rows, protocol=protocol, run_seed=9901701, condition_id="R0_baseline"
+    )
+    pairs = list(itertools.combinations(sorted("abcdef"), 2))
+    expected = min(
+        pairs,
+        key=lambda members: hashlib.sha256(canonical(list(members)).encode()).hexdigest(),
+    )
+    assert result["primary_candidate"]["member_ids"] == list(expected)
+
+
+@pytest.mark.parametrize(
+    "tamper,match",
+    [
+        ("metric", "effects"),
+        ("bootstrap", "bootstrap"),
+        ("science_gate", "scientific gates"),
+        ("engineering_gate", "engineering gates"),
+    ],
+)
+def test_validator_rejects_metric_and_gate_tamper(reserved_bundle, tamper, match):
+    from sparkbrain.v03_organs.evaluation import validate_bundle
+
+    protocol, original = reserved_bundle
+    broken = copy.deepcopy(original)
+    if tamper == "metric":
+        broken["matched_ablations.json"]["seed_effect_rows"][0]["impairment"] = 1.0
+    elif tamper == "bootstrap":
+        broken["matched_ablations.json"]["bootstrap_intervals"]["held_out_reuse"]["effect"] = 1.0
+    elif tamper == "science_gate":
+        broken["acceptance_matrix.json"]["primary_scientific_gates"][0]["passed"] ^= True
+    else:
+        broken["acceptance_matrix.json"]["engineering_gates"][0]["passed"] ^= True
+    with pytest.raises(ValueError, match=match):
         validate_bundle(broken, protocol, "a" * 40)

@@ -113,7 +113,7 @@ def discover_primary_candidate(
             -(row["cohesion"] if row["cohesion"] is not None else -1.0),
             -row["within_weight"],
             row["member_count"],
-            text_hash(digest(row["member_ids"])),
+            text_hash(canonical(row["member_ids"])),
         )
     )
     primary = eligible[0] if eligible else None
@@ -192,3 +192,89 @@ def assess_proposal(proposal: dict[str, Any] | None, outcome: str) -> dict[str, 
     if digest(proposal) != before:
         raise ValueError("assessment mutated the C14 proposal")
     return {"proposal": retained, "proposal_sha256": before, "assessment": outcome}
+
+
+def execute_c14_c15_boundary(
+    *, proposal_belief: str, outcome: str, alternate_proposal: object | None = None
+) -> dict[str, Any]:
+    """Run the accepted C14 proposal through C15 v4's assessment-only veto.
+
+    C17 cannot pass an alternate proposal into this boundary. C15 receives one
+    already-created C14 ``IgnitionDecision`` and can return either those exact
+    proposal bytes or a no-Ignition veto; it has no proposal factory/replacement
+    input or output.
+    """
+    if alternate_proposal is not None:
+        raise ValueError("alternate proposals are unrepresentable at the C15 boundary")
+    if outcome not in {"allow", "veto", "abstain"}:
+        raise ValueError("unregistered C15 assessment outcome")
+    from types import MappingProxyType
+
+    from sparkbrain.v03_seed.coalition import decide_c14
+    from sparkbrain.v03_seed.contracts import CoalitionState
+    from sparkbrain.v03_seed.revision import (
+        RevisionBeliefSnapshot,
+        RevisionController,
+        RevisionHeadOutput,
+    )
+
+    coalition = CoalitionState(
+        belief_key=proposal_belief,
+        object_key="c17-opaque-entity",
+        score=0.8,
+        activation=1.0,
+        effective_support=2.0,
+        effective_contradiction=0.0,
+        redundancy=0.0,
+        source_count=2,
+        independent_group_count=2,
+        evidence_count=2,
+        stability=2,
+        support_ids=("c17-opaque-support-a", "c17-opaque-support-b"),
+        contradiction_ids=(),
+        normalized_recency=1.0,
+    )
+    proposal = decide_c14((coalition,))
+    if not proposal.ignited:
+        raise ValueError("registered C14 proposal construction failed")
+    proposal_body = {
+        "belief_key": proposal.belief_key,
+        "object_key": proposal.object_key,
+        "score": proposal.score,
+        "margin": proposal.margin,
+        "reason": proposal.reason,
+        "coalitions": [
+            {name: getattr(row, name) for name in row.__dataclass_fields__}
+            for row in proposal.coalitions
+        ],
+    }
+    before = digest(proposal_body)
+    heads = RevisionHeadOutput(
+        belief_probabilities=MappingProxyType({"alpha": 0.05, "beta": 0.9, "gamma": 0.05}),
+        maintain_probability=1.0,
+        update_probability=1.0 if outcome == "allow" else 0.0,
+        recovery_probability=1.0 if outcome == "allow" else 0.0,
+        abstention_probability=1.0 if outcome == "abstain" else 0.0,
+    )
+    state = RevisionBeliefSnapshot(
+        activations=MappingProxyType({"alpha": 1.0, "beta": 0.0, "gamma": 0.0}),
+        citations=(),
+        entity_key="c17-opaque-entity",
+        history=("alpha",),
+        state_hash="0" * 64,
+        winner="alpha",
+    )
+    assessed = RevisionController()._apply_veto(proposal, heads, state)
+    if digest(proposal_body) != before:
+        raise ValueError("C15 assessment mutated the C14 proposal")
+    if assessed.ignited and assessed != proposal:
+        raise ValueError("C15 replaced the C14 proposal")
+    return {
+        "c14_proposal_sha256": before,
+        "c14_ignited": proposal.ignited,
+        "assessment": outcome,
+        "assessment_allowed": assessed == proposal,
+        "assessment_reason": assessed.reason,
+        "output_proposal_sha256": before if assessed == proposal else None,
+        "replacement_possible": False,
+    }
