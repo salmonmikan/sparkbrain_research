@@ -200,8 +200,10 @@
     "c14_merge": "00dccf3dc8f6f70353a536dcf1db9ba0b19fc7b5",
     "c14_source": "eb7f542963397eba1b7d9b4a66a7873b3ba17ac4",
     "c14_status_ledger_correction": "14e5214673001c20bd470262896cb023e8e1952e",
-    "c15_source_pin": "pending separate preregistration amendment after source-only commit",
-    "runner_execution_allowed": false
+    "c15_protocol_base_commit": "cd241a898cc20b6b5696baea14147051ef126ad3",
+    "c15_protocol_base_sha256": "00aaba2560eb0bb5b02e3ad6049b0ba3a2aa95d1ae5139320968fd88feb058c7",
+    "c15_source_pin": "eedb8b426f326c5dcb70bd548008695eb1652aee",
+    "runner_execution_allowed": true
   },
   "determinism": {
     "bootstrap_resamples": 10000,
