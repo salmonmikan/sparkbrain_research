@@ -751,3 +751,37 @@ commit and separate pin amendment authorize the new official execution.
 **Reason:** Explicit nullable statistics repair a contract contradiction without inventing
 observations. An enforceable worker deadline repairs resource control; the larger budget is not
 a scientific threshold change. Fresh seeds isolate the failed execution from the new procedure.
+
+## D-V03-0025 — Isolate the C15 post-pin test-fixture repair from scientific execution
+
+**Decision (2026-08-26):** Preserve C15 v3 source
+`eedb8b426f326c5dcb70bd548008695eb1652aee`, authorized execution tree
+`6860c2ec4133a9debefdec0b92e33ab0e09b430f`, its protocol, and every generated artifact byte.
+Repair only the synthetic base fixture in
+`test_protocol_amendment_allows_exactly_four_dependency_fields` on a separate integration branch.
+Remove the two base-provenance fields from that fixture and restore a pending synthetic source pin
+and disabled execution guard before constructing the four-field amendment under test.
+
+CI run `32914883175` failed on Python 3.11 and 3.13 after the execution-pin amendment. The same
+single test fails locally on the unchanged execution tree: it reads the already-amended current
+protocol as if it were the unamended base, while the production validator correctly removes the
+two amendment-only provenance fields before comparing with the base. The real committed
+preregistration-to-execution amendment passes validation; in-memory fixture normalization makes
+both the permitted-amendment and forbidden-protocol-change assertions pass. No model, controller,
+training, or scientific metric execution was needed for this diagnosis.
+
+This is an administrative test-harness correction, not a scientific protocol amendment or a new
+source pin. It does not authorize execution from the integration tree: the existing post-pin
+source/test guard must reject that tree. Scientific reproduction must check out execution commit
+`6860c2ec4133a9debefdec0b92e33ab0e09b430f` and use the unchanged source pin above. A later green
+integration test suite must not be described as a green full suite or clean-room test phase on
+the original execution tree; the original tree retains this known fixture failure.
+
+The completed official v3 run reports engineering `fail`, scientific `not_supported`, and no
+failed model seeds. Preserve those results independently of this fixture repair. In particular,
+do not relax the all-seed recovery gate, reclassify C15 as accepted, or unblock the C17 dependency.
+Independent byte reproduction is still pending at the time of this administrative decision.
+
+**Scope:** No runner/runtime, world, objective, threshold, seed, protocol, release manifest,
+package/schema, protected artifact, or canonical report changes. No public release or upload is
+authorized by this decision.
