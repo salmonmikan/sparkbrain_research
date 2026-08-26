@@ -3,6 +3,9 @@ from __future__ import annotations
 import copy
 import importlib.util
 import json
+import multiprocessing
+import sys
+import time
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -545,6 +548,299 @@ def test_bootstrap_blocks_and_pareto_directions(monkeypatch: pytest.MonkeyPatch)
     )
 
 
+def _synthetic_statistics_rows(value: dict, *, mode: str = "normal") -> list[dict]:
+    rows = []
+    for world in value["splits"]["world_order"]:
+        for index in range(8):
+            target = "insufficient_information" if world == "insufficient" else world
+            for condition in value["conditions"]["order"]:
+                for variant in value["variants"]["order"]:
+                    ignited = target != "insufficient_information"
+                    if mode == "all_abstain":
+                        ignited = False
+                    elif mode == "zero_tp":
+                        ignited = target == "insufficient_information"
+                    elif mode == "single_decision":
+                        ignited = world == "maintain" and index == 0
+                    rows.append({
+                        "split": "test",
+                        "input_track": "I1_local_compositional",
+                        "entity_condition": "E1_oracle_entity",
+                        "model_seed": 99001,
+                        "world": world,
+                        "episode_id": f"reserved-{world}-{index}",
+                        "episode_seed": 990100 + index,
+                        "condition_id": condition,
+                        "variant_id": variant,
+                        "transition_target": target,
+                        "predicted_transition": (
+                            target if ignited and target != "insufficient_information"
+                            else "maintain" if ignited else "insufficient_information"
+                        ),
+                        "predicted_belief": "alpha" if ignited else None,
+                        "truth_belief": "alpha",
+                        "ignited": ignited,
+                        "checkpoint_restored": False,
+                        "recovery_latency_steps": 1 if ignited and target == "recover" else None,
+                        "no_ignition_probability": 0.25 if ignited else 0.75,
+                        "belief_probabilities": {"alpha": 0.6, "beta": 0.3, "gamma": 0.1},
+                    })
+    return rows
+
+
+def _statistics_protocol(*, resamples: int = 8) -> dict:
+    value = protocol()
+    value["seeds"]["model"] = [99001]
+    value["determinism"]["bootstrap_resamples"] = resamples
+    return value
+
+
+def test_nullable_statistics_preserve_all_abstain_and_zero_tp_formulas() -> None:
+    value = _statistics_protocol()
+    abstain = _synthetic_statistics_rows(value, mode="all_abstain")
+    base = runner._primary_base_rows(abstain, "full_separated")
+    confusion = runner._confusion_row(base, protocol=value, identity={})
+    calibration = runner._calibration_row(base, identity={})
+    assert confusion["no_ignition_precision"] == 0.25
+    assert confusion["no_ignition_recall"] == 1.0
+    assert confusion["no_ignition_f1"] == 0.4
+    assert calibration["decided_count"] == 0
+    assert calibration["coverage"] == 0.0
+    assert calibration["ece"] is None
+    assert runner._comparison_effect(
+        "full_minus_weighted_ce_ece", abstain, protocol=value
+    ) is None
+
+    zero_tp = _synthetic_statistics_rows(value, mode="zero_tp")
+    confusion = runner._confusion_row(
+        runner._primary_base_rows(zero_tp, "full_separated"), protocol=value, identity={}
+    )
+    assert confusion["no_ignition_tp"] == 0
+    assert confusion["no_ignition_fp"] == 24
+    assert confusion["no_ignition_fn"] == 8
+    assert confusion["no_ignition_precision"] == confusion["no_ignition_recall"] == 0.0
+    assert confusion["no_ignition_f1"] is None
+    assert runner._comparison_effect(
+        "full_minus_weighted_ce_no_ignition_f1", zero_tp, protocol=value
+    ) is None
+    no_abstention = [dict(row, ignited=True) for row in base]
+    confusion = runner._confusion_row(no_abstention, protocol=value, identity={})
+    assert confusion["no_ignition_precision"] is None
+    assert confusion["no_ignition_recall"] == 0.0
+    assert confusion["no_ignition_f1"] is None
+
+
+@pytest.mark.parametrize("left,right", [(None, 0.5), (0.5, None), (None, None)])
+def test_nullable_paired_effect_rejects_either_undefined_operand(left, right) -> None:
+    assert runner._nullable_difference(left, right) is None
+
+
+def test_bootstrap_finite_point_with_undefined_resamples_keeps_point_only() -> None:
+    import random
+
+    value = _statistics_protocol(resamples=64)
+    value["conditions"]["order"] = ["full_separated", "one_weighted_ce"]
+    value["determinism"]["bootstrap_algorithm"]["comparison_order"] = [
+        "full_minus_weighted_ce_ece"
+    ]
+    rows = _synthetic_statistics_rows(value, mode="single_decision")
+    result = runner._bootstrap_intervals(rows, protocol=value)
+    interval = result["full_minus_weighted_ce_ece"]
+    rng = random.Random(value["determinism"]["bootstrap_seed"])
+    undefined = 0
+    for _ in range(64):
+        rng.randrange(1)
+        has_decision = False
+        for world in value["splits"]["world_order"]:
+            selected = [rng.randrange(8) for _ in range(8)]
+            has_decision |= world == "maintain" and 0 in selected
+        undefined += not has_decision
+    assert 0 < undefined < 64
+    assert interval == {
+        "effect": 0.0, "lower": None, "upper": None,
+        "resamples": 64, "bootstrap_seed": value["determinism"]["bootstrap_seed"],
+        "defined_resamples": 64 - undefined, "undefined_resamples": undefined,
+    }
+    runner._validate_bootstrap_intervals(result, protocol=value, failed=False)
+
+
+def test_bootstrap_consumes_all_10000_draws_and_shared_rng_after_undefined(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    import random
+
+    value = _statistics_protocol(resamples=10000)
+    value["splits"]["world_order"] = ["reserved"]
+    comparisons = ["synthetic_first", "synthetic_second"]
+    value["determinism"]["bootstrap_algorithm"]["comparison_order"] = comparisons
+    rows = [{
+        "split": "test", "input_track": "I1_local_compositional",
+        "entity_condition": "E1_oracle_entity", "model_seed": 99001,
+        "world": "reserved", "episode_id": str(index), "episode_seed": index,
+    } for index in range(8)]
+    seen = {name: [] for name in comparisons}
+
+    def effect(name, selected, *, protocol):
+        indices = tuple(int(row["episode_id"]) for row in selected)
+        seen[name].append(indices)
+        if name == comparisons[0] and len(seen[name]) == 1:
+            return None
+        return sum(indices) / len(indices)
+
+    monkeypatch.setattr(runner, "_comparison_effect", effect)
+    result = runner._bootstrap_intervals(rows, protocol=value)
+    rng = random.Random(value["determinism"]["bootstrap_seed"])
+    for name in comparisons:
+        expected = []
+        for _ in range(10000):
+            rng.randrange(1)
+            expected.append(tuple(rng.randrange(8) for _ in range(8)))
+        assert seen[name][:-1] == expected
+        assert seen[name][-1] == tuple(range(8))
+    first, second = (result[name] for name in comparisons)
+    assert first["effect"] == second["effect"] == 3.5
+    assert first["defined_resamples"] == 9999
+    assert first["undefined_resamples"] == 1
+    assert first["lower"] is first["upper"] is None
+    assert second["defined_resamples"] == 10000
+    assert second["undefined_resamples"] == 0
+    effects = sorted(sum(indices) / 8 for indices in seen[comparisons[1]][:-1])
+    assert second["lower"] == runner._percentile(effects, 0.025)
+    assert second["upper"] == runner._percentile(effects, 0.975)
+    runner._validate_bootstrap_intervals(result, protocol=value, failed=False)
+
+
+def test_bootstrap_undefined_point_nulls_bounds_even_if_draws_defined(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    value = _statistics_protocol(resamples=3)
+    value["determinism"]["bootstrap_algorithm"]["comparison_order"] = ["synthetic"]
+    rows = _synthetic_statistics_rows(value)
+    effects = iter([0.1, 0.2, 0.3, None])
+    monkeypatch.setattr(runner, "_comparison_effect", lambda *_args, **_kwargs: next(effects))
+    result = runner._bootstrap_intervals(rows, protocol=value)
+    assert result["synthetic"]["effect"] is None
+    assert result["synthetic"]["lower"] is result["synthetic"]["upper"] is None
+    assert result["synthetic"]["defined_resamples"] == 3
+    assert result["synthetic"]["undefined_resamples"] == 0
+    runner._validate_bootstrap_intervals(result, protocol=value, failed=False)
+
+
+@pytest.mark.parametrize("finite_improvement", [False, True])
+def test_null_point_gates_fail_and_strict_improvement_uses_finite_only(
+    monkeypatch: pytest.MonkeyPatch, finite_improvement: bool,
+) -> None:
+    value = _statistics_protocol()
+    rows = _synthetic_statistics_rows(value)
+    metric_keys = value["artifacts"]["derived_contracts"]["pareto_frontier.json"]["metrics_fields"]
+
+    def metrics(selected, *, protocol):
+        result = dict.fromkeys(metric_keys)
+        if finite_improvement:
+            result["unnecessary_revision_rate"] = (
+                0.0 if selected[0]["condition_id"] == "full_separated" else 0.1
+            )
+        return result
+
+    monkeypatch.setattr(runner, "_pareto_metrics", metrics)
+    monkeypatch.setattr(runner, "_bootstrap_intervals", lambda *_args, **_kwargs: {})
+    support = runner._scientific_support(rows, protocol=value)
+    assert support["residual_gate"] == {
+        "full_recovery_rate": None, "no_residual_recovery_rate": None, "passed": False,
+    }
+    assert support["weighted_ce_noninferiority"]["ece"]["effect_full_minus_weighted_ce"] is None
+    assert support["weighted_ce_noninferiority"]["ece"]["passed"] is False
+    assert support["strict_improvement"]["effects"]["ece"] is None
+    assert support["strict_improvement"]["passed"] is finite_improvement
+    assert support["all_gates_passed"] is False
+    assert support["status"] == "not_supported"
+
+
+def test_all_abstain_statistics_validate_with_null_intervals() -> None:
+    value = _statistics_protocol(resamples=2)
+    artifact = runner._pareto_artifact(
+        _synthetic_statistics_rows(value, mode="all_abstain"),
+        protocol=value, source_commit="0" * 40,
+    )
+    runner._validate_pareto(artifact, value)
+    support = artifact["scientific_support"]
+    assert support["weighted_ce_noninferiority"]["ece"]["passed"] is False
+    assert support["status"] == "not_supported"
+    interval = support["bootstrap_intervals"]["full_minus_weighted_ce_ece"]
+    assert interval["defined_resamples"] == 0
+    assert interval["undefined_resamples"] == 2
+
+    tampered = copy.deepcopy(artifact)
+    tampered["scientific_support"]["weighted_ce_noninferiority"]["ece"]["passed"] = True
+    with pytest.raises(RuntimeError, match="does not recalculate"):
+        runner._validate_pareto(tampered, value)
+
+
+@pytest.mark.parametrize("change", [
+    {"defined_resamples": -1}, {"defined_resamples": True},
+    {"defined_resamples": 7}, {"defined_resamples": None},
+    {"undefined_resamples": None}, {"lower": 0.0}, {"extra": 0},
+])
+def test_nullable_interval_validator_rejects_bad_counts_bounds_and_keys(change: dict) -> None:
+    value = _statistics_protocol(resamples=8)
+    value["determinism"]["bootstrap_algorithm"]["comparison_order"] = ["synthetic"]
+    interval = {
+        "effect": 0.1, "lower": None, "upper": None,
+        "resamples": 8, "bootstrap_seed": value["determinism"]["bootstrap_seed"],
+        "defined_resamples": 5, "undefined_resamples": 3,
+    }
+    runner._validate_bootstrap_intervals({"synthetic": interval}, protocol=value, failed=False)
+    interval.update(change)
+    with pytest.raises(RuntimeError):
+        runner._validate_bootstrap_intervals({"synthetic": interval}, protocol=value, failed=False)
+
+
+def test_failed_seed_intervals_have_exact_seven_fields_without_bootstrap(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    value = _statistics_protocol()
+
+    def forbidden(*_args, **_kwargs):
+        pytest.fail("failed seeds must not execute bootstrap")
+
+    monkeypatch.setattr(runner, "_bootstrap_intervals", forbidden)
+    failed = [{
+        "model_seed": 99001, "phase": "training", "condition_id": "full_separated",
+        "error_type": "SyntheticFailure",
+        "error_hash": runner._sha256_bytes(
+            runner._canonical(["training", "full_separated", "SyntheticFailure"]).encode()
+        ),
+    }]
+    artifact = runner._pareto_artifact(
+        [], protocol=value, source_commit="0" * 40, failed_seeds=failed
+    )
+    runner._validate_pareto(artifact, value)
+    intervals = artifact["scientific_support"]["bootstrap_intervals"]
+    for interval in intervals.values():
+        assert interval == {
+            "effect": None, "lower": None, "upper": None,
+            "resamples": 8, "bootstrap_seed": value["determinism"]["bootstrap_seed"],
+            "defined_resamples": None, "undefined_resamples": None,
+        }
+    broken = copy.deepcopy(intervals)
+    next(iter(broken.values()))["defined_resamples"] = 0
+    with pytest.raises(RuntimeError, match="failure fields must be null"):
+        runner._validate_bootstrap_intervals(broken, protocol=value, failed=True)
+
+
+@pytest.mark.parametrize("bounds", [(None, None), (None, 0.2), (0.3, 0.2)])
+def test_defined_bootstrap_requires_both_ordered_finite_bounds(bounds) -> None:
+    value = _statistics_protocol(resamples=8)
+    value["determinism"]["bootstrap_algorithm"]["comparison_order"] = ["synthetic"]
+    interval = {
+        "effect": 0.1, "lower": bounds[0], "upper": bounds[1],
+        "resamples": 8, "bootstrap_seed": value["determinism"]["bootstrap_seed"],
+        "defined_resamples": 8, "undefined_resamples": 0,
+    }
+    with pytest.raises(RuntimeError, match="requires ordered finite bounds"):
+        runner._validate_bootstrap_intervals({"synthetic": interval}, protocol=value, failed=False)
+
+
 def test_seed_failures_are_atomic_sorted_and_message_free(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
@@ -736,7 +1032,7 @@ def test_forced_failure_cleans_staging(
         (output / "partial.json").write_text("{}", encoding="utf-8")
         raise RuntimeError("injected failure")
 
-    monkeypatch.setattr(runner, "_generate", fail)
+    monkeypatch.setattr(runner, "_generate_isolated", fail)
     with pytest.raises(RuntimeError, match="injected failure"):
         runner.run(
             root=ROOT,
@@ -764,7 +1060,7 @@ def test_exact_eight_files_are_published_atomically(
             "failed_seeds": [],
         }
 
-    monkeypatch.setattr(runner, "_generate", generate)
+    monkeypatch.setattr(runner, "_generate_isolated", generate)
     result = runner.run(
         root=ROOT,
         protocol_path=PROTOCOL_PATH,
@@ -774,3 +1070,174 @@ def test_exact_eight_files_are_published_atomically(
     assert result["engineering_passed"] is True
     assert {path.name for path in output.iterdir()} == runner.EXPECTED_FILES
     assert list(tmp_path.glob(".result.staging-*")) == []
+
+
+@pytest.mark.parametrize("existing_empty", [False, True])
+def test_real_spawn_timeout_never_publishes_and_cleans_only_after_exit(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, existing_empty: bool
+) -> None:
+    output = tmp_path / "timeout"
+    if existing_empty:
+        output.mkdir()
+    context = multiprocessing.get_context("spawn")
+    workers = []
+
+    def sleeping_process(**_kwargs: object) -> object:
+        # Use a picklable stdlib target; no official fixture/model/controller is executed.
+        worker = context.Process(target=time.sleep, args=(30,), daemon=True)
+        workers.append(worker)
+        return worker
+
+    monkeypatch.setattr(
+        runner.multiprocessing, "get_context",
+        lambda _method: SimpleNamespace(Pipe=context.Pipe, Process=sleeping_process),
+    )
+    value = protocol()
+    value["determinism"]["official_run_timeout_seconds"] = 0.1
+    monkeypatch.setattr(
+        runner, "_preflight", lambda **_kwargs: (value, b"{}", {}, {})
+    )
+    started = time.monotonic()
+    with pytest.raises(runner.C15RunTimeoutError, match="deadline"):
+        runner.run(
+            root=ROOT, protocol_path=PROTOCOL_PATH, output=output, source_commit="0" * 40
+        )
+    assert time.monotonic() - started < 15
+    assert len(workers) == 1
+    assert workers[0]._closed  # Process.close refuses a live worker.
+    assert output.exists() is existing_empty
+    if existing_empty:
+        assert list(output.iterdir()) == []
+    assert list(tmp_path.glob(".timeout.staging-*")) == []
+
+
+def test_deadline_rejects_exit_confirmed_late_and_uses_frozen_escalation(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    calls = []
+    worker = SimpleNamespace(
+        exitcode=None,
+        join=lambda seconds: calls.append(("join", seconds)),
+        is_alive=lambda: True,
+        terminate=lambda: calls.append(("terminate",)),
+        kill=lambda: calls.append(("kill",)),
+    )
+    clock = iter([10.0, 11.0])
+    monkeypatch.setattr(runner.time, "monotonic", lambda: next(clock))
+    with pytest.raises(runner.C15RunTimeoutError) as error:
+        runner._wait_for_worker(worker, deadline=10.5, grace_seconds=5)
+    assert error.value.worker_alive is True
+    assert calls == [("join", 0.5), ("terminate",), ("join", 5), ("kill",), ("join", 5)]
+
+    calls.clear()
+    worker.exitcode = 0
+    worker.is_alive = lambda: False
+    clock = iter([10.0, 11.0])
+    with pytest.raises(runner.C15RunTimeoutError):
+        runner._wait_for_worker(worker, deadline=10.5, grace_seconds=5)
+    assert calls == [("join", 0.5)]
+
+
+def test_live_worker_staging_is_quarantined_and_reported(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    output = tmp_path / "quarantine"
+    monkeypatch.setattr(runner, "_preflight", _stub_preflight)
+
+    def fail(**kwargs: object) -> dict[str, object]:
+        (kwargs["output"] / "partial.json").write_text("{}", encoding="utf-8")
+        raise runner.C15RunTimeoutError("C15RunTimeoutError", worker_alive=True)
+
+    monkeypatch.setattr(runner, "_generate_isolated", fail)
+    with pytest.raises(runner.C15RunTimeoutError):
+        runner.run(
+            root=ROOT, protocol_path=PROTOCOL_PATH, output=output, source_commit="0" * 40
+        )
+    stages = list(tmp_path.glob(".quarantine.staging-*"))
+    assert len(stages) == 1
+    assert (stages[0] / "partial.json").is_file()
+    assert str(stages[0].resolve()) in capsys.readouterr().err
+    assert not output.exists()
+
+
+def test_timeout_cli_exit_code_is_124(
+    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    def fail(**_kwargs: object) -> dict[str, object]:
+        raise runner.C15RunTimeoutError("C15RunTimeoutError: deadline")
+
+    monkeypatch.setattr(runner, "run", fail)
+    monkeypatch.setattr(sys, "argv", ["runner", "--output", "unused", "--source-commit", "0" * 40])
+    assert runner.main() == 124
+    assert "C15RunTimeoutError" in capsys.readouterr().err
+
+
+@pytest.mark.parametrize("broken_method", ["terminate", "kill", "join", "is_alive"])
+def test_process_control_errors_preserve_unconfirmed_worker_staging(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, broken_method: str
+) -> None:
+    def fail(*_args: object) -> None:
+        raise OSError("injected process control error")
+
+    worker = SimpleNamespace(
+        start=lambda: None, exitcode=None, join=lambda _seconds: None,
+        terminate=lambda: None, kill=lambda: None, is_alive=lambda: True,
+    )
+    setattr(worker, broken_method, fail)
+    connection = SimpleNamespace(close=lambda: None)
+    context = SimpleNamespace(
+        Process=lambda **_kwargs: worker, Pipe=lambda **_kwargs: (connection, connection)
+    )
+    monkeypatch.setattr(runner.multiprocessing, "get_context", lambda _method: context)
+    monkeypatch.setattr(runner, "_preflight", _stub_preflight)
+    output = tmp_path / "control-error"
+    with pytest.raises(runner.C15WorkerError) as error:
+        runner.run(
+            root=ROOT, protocol_path=PROTOCOL_PATH, output=output, source_commit="0" * 40
+        )
+    assert error.value.worker_alive is True
+    assert not output.exists()
+    assert len(list(tmp_path.glob(".control-error.staging-*"))) == 1
+
+
+def test_surviving_worker_cli_bypasses_unbounded_atexit_join(
+    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    def fail(**_kwargs: object) -> dict[str, object]:
+        raise runner.C15RunTimeoutError("C15RunTimeoutError: quarantined", worker_alive=True)
+
+    def exit_now(code: int) -> None:
+        raise SystemExit(code)
+
+    monkeypatch.setattr(runner, "run", fail)
+    monkeypatch.setattr(runner.os, "_exit", exit_now)
+    monkeypatch.setattr(sys, "argv", ["runner", "--output", "unused", "--source-commit", "0" * 40])
+    with pytest.raises(SystemExit) as result:
+        runner.main()
+    assert result.value.code == 124
+    assert "quarantined" in capsys.readouterr().err
+
+
+def test_actual_generation_worker_is_spawn_importable_without_evaluation(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.syspath_prepend(str(ROOT))
+    module = importlib.import_module("scripts.run_c15_revision")
+    context = multiprocessing.get_context("spawn")
+    receiver, sender = context.Pipe(duplex=False)
+    # Missing required arguments fail before _generate enters any fixture/model code.
+    worker = context.Process(target=module._generation_worker, args=(sender, {}), daemon=True)
+    try:
+        deadline = time.monotonic() + 10
+        worker.start()
+        sender.close()
+        module._wait_for_worker(worker, deadline=deadline, grace_seconds=5)
+        assert worker.exitcode == 1
+        assert not worker.is_alive()
+        with pytest.raises((EOFError, OSError)):
+            receiver.recv()
+    finally:
+        module._stop_worker(worker, grace_seconds=5)
+        worker.close()
+        sender.close()
+        receiver.close()

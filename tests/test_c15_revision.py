@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import hashlib
+import json
 import math
+from pathlib import Path
 
 import pytest
 import torch
@@ -311,13 +313,23 @@ def _zero_model_output() -> tuple[C15RevisionModel, RevisionModelOutput]:
 
 
 def test_frozen_split_and_full_fixture_hashes_match_protocol() -> None:
+    protocol = json.loads(
+        (Path(__file__).resolve().parents[1] / "artifacts/v03/c15_revision/protocol.json")
+        .read_text(encoding="utf-8")
+    )
+    assert protocol["protocol_id"] == "c15-revision-objectives-v3"
+    assert EXPECTED_SPLIT_MANIFEST_SHA256 == protocol["seeds"]["split_manifest_sha256"]
+    assert EXPECTED_FULL_FIXTURE_SHA256 == protocol["seeds"]["full_fixture_sha256"]
     assert_frozen_fixture_hashes()
     for split in ("train", "dev", "test"):
         assert split_manifest_sha256(split) == EXPECTED_SPLIT_MANIFEST_SHA256[split]
         assert full_fixture_sha256(split) == EXPECTED_FULL_FIXTURE_SHA256[split]
+        assert build_full_fixture(split)[0].episode_seed == protocol["splits"][split][
+            "episode_seed_base"
+        ]
     assert len(build_full_fixture("train")) == 64
     assert len(build_full_fixture("dev")) == len(build_full_fixture("test")) == 32
-    assert MODEL_SEEDS == (2851, 2852, 2853, 2854, 2855)
+    assert MODEL_SEEDS == tuple(protocol["seeds"]["model"]) == (2901, 2902, 2903, 2904, 2905)
 
 
 @pytest.mark.parametrize(
