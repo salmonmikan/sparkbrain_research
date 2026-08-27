@@ -1873,38 +1873,104 @@ def _prefinal_from_final(bundle: dict[str, Any]) -> dict[str, Any]:
     return prefinal
 
 
+_WORKER_ATTESTATION_KEYS = {
+    "challenge_nonce",
+    "combined_sha256",
+    "file_sha256",
+    "observed_pid",
+    "os_pid",
+    "output_directory",
+    "prefinal_inventory",
+    "preregistration_sha256",
+    "process_id",
+    "protocol_sha256",
+    "pythonhashseed",
+    "returncode",
+    "source_commit",
+}
+
+
+def _attested_reproduction_runs(
+    staging_a: dict[str, Any],
+    staging_b: dict[str, Any],
+    protocol: dict[str, Any],
+    source_commit: str,
+    attestations: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    inventory = _prefinal_inventory(protocol)
+    process_contracts = protocol["reproduction"]["staging_processes"]
+    if len(attestations) != 2 or len(process_contracts) != 2:
+        raise ValueError("C17 finalization requires two worker attestations")
+    runs = []
+    challenges = set()
+    pids = set()
+    outputs = set()
+    for staging, attestation, expected in zip(
+        (staging_a, staging_b), attestations, process_contracts, strict=True
+    ):
+        exact_keys(attestation, _WORKER_ATTESTATION_KEYS, "worker attestation")
+        file_sha256 = {
+            name: digest_bytes(artifact_bytes(name, staging[name])) for name in inventory
+        }
+        preregistration_sha256 = file_sha256["preregistration.json"]
+        if (
+            attestation["process_id"] != expected["process_id"]
+            or isinstance(attestation["pythonhashseed"], bool)
+            or attestation["pythonhashseed"] != expected["pythonhashseed"]
+            or isinstance(attestation["os_pid"], bool)
+            or not isinstance(attestation["os_pid"], int)
+            or attestation["os_pid"] <= 0
+            or isinstance(attestation["observed_pid"], bool)
+            or not isinstance(attestation["observed_pid"], int)
+            or attestation["observed_pid"] != attestation["os_pid"]
+            or isinstance(attestation["returncode"], bool)
+            or attestation["returncode"] != 0
+            or attestation["source_commit"] != source_commit
+            or attestation["protocol_sha256"] != preregistration_sha256
+            or attestation["preregistration_sha256"] != preregistration_sha256
+            or attestation["prefinal_inventory"] != inventory
+            or attestation["file_sha256"] != file_sha256
+            or attestation["combined_sha256"]
+            != digest([[name, file_sha256[name]] for name in inventory])
+            or not isinstance(attestation["challenge_nonce"], str)
+            or re.fullmatch(r"[0-9a-f]{32}", attestation["challenge_nonce"]) is None
+            or not isinstance(attestation["output_directory"], str)
+            or not Path(attestation["output_directory"]).is_absolute()
+        ):
+            raise ValueError("C17 worker attestation does not verify")
+        challenges.add(attestation["challenge_nonce"])
+        pids.add(attestation["os_pid"])
+        outputs.add(attestation["output_directory"])
+        runs.append(
+            {
+                "combined_sha256": attestation["combined_sha256"],
+                "file_sha256": file_sha256,
+                "process_id": attestation["process_id"],
+                "protocol_sha256": attestation["protocol_sha256"],
+                "pythonhashseed": attestation["pythonhashseed"],
+                "source_commit": attestation["source_commit"],
+            }
+        )
+    if len(challenges) != 2 or len(pids) != 2 or len(outputs) != 2:
+        raise ValueError("C17 worker attestations are not independent")
+    return runs
+
+
 def finalize_bundles(
     staging_a: dict[str, Any],
     staging_b: dict[str, Any],
     protocol: dict[str, Any],
     source_commit: str,
+    *,
+    attestations: list[dict[str, Any]],
 ) -> dict[str, Any]:
     """Externally compare isolated exact-nine bundles and create exact ten."""
     validate_bundle(staging_a, protocol, source_commit)
     validate_bundle(staging_b, protocol, source_commit)
     inventory = _prefinal_inventory(protocol)
-    runs = []
-    for process_id, pythonhashseed, staging in (
-        ("A", 11801, staging_a),
-        ("B", 21801, staging_b),
-    ):
-        file_sha256 = {
-            name: digest_bytes(artifact_bytes(name, staging[name])) for name in inventory
-        }
-        runs.append(
-            {
-                "combined_sha256": digest(
-                    [[name, file_sha256[name]] for name in inventory]
-                ),
-                "file_sha256": file_sha256,
-                "process_id": process_id,
-                "protocol_sha256": digest_bytes(
-                    artifact_bytes("preregistration.json", staging["preregistration.json"])
-                ),
-                "pythonhashseed": pythonhashseed,
-                "source_commit": source_commit,
-            }
-        )
+    runs = _attested_reproduction_runs(
+        staging_a, staging_b, protocol, source_commit, attestations
+    )
     if any(
         runs[0]["file_sha256"][name] != runs[1]["file_sha256"][name]
         for name in inventory
@@ -1937,8 +2003,8 @@ def finalize_bundles(
             artifact_bytes("reproduction_compare_manifest.json", manifest)
         ),
         "prefinal_exact9_equal": True,
-        "process_ids": ["A", "B"],
-        "pythonhashseeds": [11801, 21801],
+        "process_ids": [row["process_id"] for row in runs],
+        "pythonhashseeds": [row["pythonhashseed"] for row in runs],
         "status": "externally_compared",
     }
     gate = next(
@@ -2062,9 +2128,10 @@ def _validate_reproduction_manifest(
     run_schema = protocol["artifact_schema_contract"]["row_schemas"]["reproduction_run"]
     if len(manifest["runs"]) != 2:
         raise ValueError("C17 reproduction manifest requires exactly two runs")
-    for row, process_id, pythonhashseed in zip(
-        manifest["runs"], ("A", "B"), (11801, 21801), strict=True
-    ):
+    process_contracts = protocol["reproduction"]["staging_processes"]
+    if len(process_contracts) != 2:
+        raise ValueError("C17 reproduction process contract must have two rows")
+    for row, process_contract in zip(manifest["runs"], process_contracts, strict=True):
         exact_keys(row, set(run_schema["exact_keys"]), "reproduction run")
         if set(row["file_sha256"]) != set(inventory):
             raise ValueError("C17 reproduction file hash inventory mismatch")
@@ -2072,9 +2139,9 @@ def _validate_reproduction_manifest(
             name: digest_bytes(artifact_bytes(name, prefinal[name])) for name in inventory
         }
         if (
-            row["process_id"] != process_id
+            row["process_id"] != process_contract["process_id"]
             or isinstance(row["pythonhashseed"], bool)
-            or row["pythonhashseed"] != pythonhashseed
+            or row["pythonhashseed"] != process_contract["pythonhashseed"]
             or row["source_commit"] != source_commit
             or row["protocol_sha256"] != expected_protocol_sha
             or row["file_sha256"] != expected_hashes
@@ -2097,8 +2164,8 @@ def _validate_reproduction_manifest(
             artifact_bytes("reproduction_compare_manifest.json", manifest)
         ),
         "prefinal_exact9_equal": True,
-        "process_ids": ["A", "B"],
-        "pythonhashseeds": [11801, 21801],
+        "process_ids": [row["process_id"] for row in process_contracts],
+        "pythonhashseeds": [row["pythonhashseed"] for row in process_contracts],
         "status": "externally_compared",
     }
     if evidence != expected_evidence:

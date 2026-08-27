@@ -296,6 +296,40 @@ def reserved_bundle(protocol):
     return value, bundle
 
 
+def _worker_attestations(protocol, bundle):
+    from sparkbrain.v03_organs.evaluation import artifact_bytes, digest_bytes
+
+    inventory = list(protocol["reproduction"]["prefinal_inventory"])
+    file_sha256 = {
+        name: digest_bytes(artifact_bytes(name, bundle[name])) for name in inventory
+    }
+    combined_sha256 = digest([[name, file_sha256[name]] for name in inventory])
+    attestations = []
+    for index, process_contract in enumerate(
+        protocol["reproduction"]["staging_processes"], start=1
+    ):
+        attestations.append(
+            {
+                "challenge_nonce": format(index, "032x"),
+                "combined_sha256": combined_sha256,
+                "file_sha256": copy.deepcopy(file_sha256),
+                "observed_pid": 1000 + index,
+                "os_pid": 1000 + index,
+                "output_directory": str(
+                    (ROOT.parent / f"c17-v2-prefinal-{index}").resolve()
+                ),
+                "prefinal_inventory": inventory,
+                "preregistration_sha256": file_sha256["preregistration.json"],
+                "process_id": process_contract["process_id"],
+                "protocol_sha256": file_sha256["preregistration.json"],
+                "pythonhashseed": process_contract["pythonhashseed"],
+                "returncode": 0,
+                "source_commit": "a" * 40,
+            }
+        )
+    return attestations
+
+
 def test_reserved_bundle_exact_cardinality_restore_and_negative_science(reserved_bundle):
     _, bundle = reserved_bundle
     acceptance = bundle["acceptance_matrix.json"]
@@ -366,7 +400,16 @@ def test_external_exact_nine_compare_is_only_reproduction_authority(reserved_bun
     protocol, prefinal = reserved_bundle
     with pytest.raises(TypeError):
         generate_bundle(protocol, "a" * 40, reproduction_exact=True)
-    final = finalize_bundles(prefinal, copy.deepcopy(prefinal), protocol, "a" * 40)
+    with pytest.raises(TypeError):
+        finalize_bundles(prefinal, copy.deepcopy(prefinal), protocol, "a" * 40)
+    attestations = _worker_attestations(protocol, prefinal)
+    final = finalize_bundles(
+        prefinal,
+        copy.deepcopy(prefinal),
+        protocol,
+        "a" * 40,
+        attestations=attestations,
+    )
     validate_bundle(final, protocol, "a" * 40)
     assert set(final) == set(protocol["artifacts"]["exact_files"])
     reproduction = next(
@@ -385,6 +428,57 @@ def test_external_exact_nine_compare_is_only_reproduction_authority(reserved_bun
     ] = "0" * 64
     with pytest.raises(ValueError, match="reproduction"):
         validate_bundle(broken, protocol, "a" * 40)
+
+
+@pytest.mark.parametrize(
+    "tamper",
+    [
+        "returncode",
+        "pid_binding",
+        "duplicate_pid",
+        "duplicate_challenge",
+        "duplicate_output",
+        "copied_attestation",
+        "pythonhashseed",
+        "source_commit",
+        "protocol_sha256",
+        "prefinal_hash",
+    ],
+)
+def test_external_finalizer_rejects_attestation_tamper(reserved_bundle, tamper):
+    from sparkbrain.v03_organs.evaluation import finalize_bundles
+
+    protocol, prefinal = reserved_bundle
+    attestations = _worker_attestations(protocol, prefinal)
+    if tamper == "returncode":
+        attestations[0]["returncode"] = 1
+    elif tamper == "pid_binding":
+        attestations[0]["observed_pid"] += 1
+    elif tamper == "duplicate_pid":
+        attestations[1]["os_pid"] = attestations[0]["os_pid"]
+        attestations[1]["observed_pid"] = attestations[0]["observed_pid"]
+    elif tamper == "duplicate_challenge":
+        attestations[1]["challenge_nonce"] = attestations[0]["challenge_nonce"]
+    elif tamper == "duplicate_output":
+        attestations[1]["output_directory"] = attestations[0]["output_directory"]
+    elif tamper == "copied_attestation":
+        attestations[1] = copy.deepcopy(attestations[0])
+    elif tamper == "pythonhashseed":
+        attestations[0]["pythonhashseed"] = attestations[1]["pythonhashseed"]
+    elif tamper == "source_commit":
+        attestations[0]["source_commit"] = "b" * 40
+    elif tamper == "protocol_sha256":
+        attestations[0]["protocol_sha256"] = "0" * 64
+    else:
+        attestations[0]["file_sha256"]["report.md"] = "0" * 64
+    with pytest.raises(ValueError, match="attestation"):
+        finalize_bundles(
+            prefinal,
+            copy.deepcopy(prefinal),
+            protocol,
+            "a" * 40,
+            attestations=attestations,
+        )
 
 
 def test_resource_interventions_share_bank_but_change_evaluation(reserved_bundle):
@@ -500,7 +594,11 @@ def test_candidate_absence_is_engineering_success_and_scientific_negative(
     value["source_commit"] = "a" * 40
     prefinal = evaluation.generate_bundle(value, "a" * 40)
     bundle = evaluation.finalize_bundles(
-        prefinal, copy.deepcopy(prefinal), value, "a" * 40
+        prefinal,
+        copy.deepcopy(prefinal),
+        value,
+        "a" * 40,
+        attestations=_worker_attestations(value, prefinal),
     )
     acceptance = bundle["acceptance_matrix.json"]
     assert acceptance["engineering_status"] == "accepted", [

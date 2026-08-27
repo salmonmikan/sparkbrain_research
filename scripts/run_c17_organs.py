@@ -213,29 +213,88 @@ def _write_bundle(output: Path, bundle: dict[str, Any]) -> None:
         path.write_bytes(payload)
 
 
-def _generation_worker(connection: Any, arguments: dict[str, Any]) -> None:
-    try:
-        from sparkbrain.v03_organs.evaluation import generate_bundle, validate_bundle
+_WORKER_SIDECAR_KEYS = {
+    "challenge_nonce",
+    "combined_sha256",
+    "file_sha256",
+    "os_pid",
+    "output_directory",
+    "prefinal_inventory",
+    "preregistration_sha256",
+    "process_id",
+    "protocol_sha256",
+    "pythonhashseed",
+    "source_commit",
+}
 
-        expected_hashseed = {"A": "11801", "B": "21801"}[arguments["process_id"]]
-        if os.environ.get("PYTHONHASHSEED") != expected_hashseed:
-            raise RuntimeError("C17 worker PYTHONHASHSEED mismatch")
-        bundle = generate_bundle(arguments["protocol"], arguments["source_commit"])
-        validate_bundle(bundle, arguments["protocol"], arguments["source_commit"])
-        _write_bundle(arguments["staging"], bundle)
-        connection.send(
-            {
-                "ok": True,
-                "engineering_status": bundle["acceptance_matrix.json"]["engineering_status"],
-                "scientific_status": bundle["acceptance_matrix.json"]["scientific_status"],
-                "failed_seeds": bundle["acceptance_matrix.json"]["failed_seeds"],
-            }
-        )
-    except BaseException as error:
-        connection.send({"ok": False, "error_type": type(error).__name__, "error": str(error)})
-        raise
-    finally:
-        connection.close()
+
+def _prefinal_hashes(directory: Path, inventory: list[str]) -> tuple[dict[str, str], str]:
+    if not directory.is_dir() or {path.name for path in directory.iterdir()} != set(
+        inventory
+    ):
+        raise RuntimeError("C17 staging inventory mismatch")
+    file_sha256 = {name: _sha((directory / name).read_bytes()) for name in inventory}
+    combined = _sha(
+        _canonical([[name, file_sha256[name]] for name in inventory]).encode("utf-8")
+    )
+    return file_sha256, combined
+
+
+def _write_worker_sidecar(path: Path, payload: dict[str, Any]) -> None:
+    if set(payload) != _WORKER_SIDECAR_KEYS:
+        raise RuntimeError("C17 worker sidecar schema mismatch")
+    with path.open("xb") as handle:
+        handle.write((_canonical(payload) + "\n").encode("utf-8"))
+
+
+def _read_worker_sidecar(path: Path) -> dict[str, Any]:
+    raw = path.read_bytes()
+    payload = json.loads(raw)
+    if set(payload) != _WORKER_SIDECAR_KEYS:
+        raise RuntimeError("C17 worker sidecar schema mismatch")
+    if raw != (_canonical(payload) + "\n").encode("utf-8"):
+        raise RuntimeError("C17 worker sidecar is not canonical")
+    return payload
+
+
+def _generation_worker(arguments: dict[str, Any]) -> None:
+    from sparkbrain.v03_organs.evaluation import generate_bundle, validate_bundle
+
+    protocol_path = Path(arguments["protocol_path"])
+    protocol_raw = protocol_path.read_bytes()
+    protocol = json.loads(protocol_raw)
+    if protocol_raw != (_canonical(protocol) + "\n").encode("utf-8"):
+        raise RuntimeError("C17 worker protocol is not canonical")
+    process_contract = next(
+        row
+        for row in protocol["reproduction"]["staging_processes"]
+        if row["process_id"] == arguments["process_id"]
+    )
+    actual_hashseed = os.environ.get("PYTHONHASHSEED")
+    if actual_hashseed != str(process_contract["pythonhashseed"]):
+        raise RuntimeError("C17 worker PYTHONHASHSEED mismatch")
+    bundle = generate_bundle(protocol, arguments["source_commit"])
+    validate_bundle(bundle, protocol, arguments["source_commit"])
+    staging = Path(arguments["staging"])
+    _write_bundle(staging, bundle)
+    inventory = list(protocol["reproduction"]["prefinal_inventory"])
+    file_sha256, combined_sha256 = _prefinal_hashes(staging, inventory)
+    _write_worker_sidecar(
+        Path(arguments["sidecar"]),
+        {
+            "challenge_nonce": arguments["challenge_nonce"],
+            "combined_sha256": combined_sha256,
+            "file_sha256": file_sha256,
+            "os_pid": os.getpid(),
+            "output_directory": str(staging.resolve()),
+            "prefinal_inventory": inventory,
+            "preregistration_sha256": file_sha256["preregistration.json"],
+            "process_id": arguments["process_id"],
+            "protocol_sha256": _sha(protocol_raw),
+            "pythonhashseed": int(actual_hashseed),
+            "source_commit": arguments["source_commit"],
+        },
+    )
 
 
 def _wait_for_worker(worker: Any, *, deadline: float, grace_seconds: float) -> None:
@@ -255,74 +314,58 @@ def _wait_for_worker(worker: Any, *, deadline: float, grace_seconds: float) -> N
         raise C17RunTimeoutError("C17 worker exceeded the registered deadline", worker_alive=alive)
 
 
-def run(
-    *,
-    output: Path,
-    source_commit: str,
-    process_id: str,
-    root: Path = ROOT,
-) -> dict[str, Any]:
-    if process_id not in {"A", "B"}:
-        raise ValueError("C17 pre-final process_id must be A or B")
-    protocol_path = root / PROTOCOL_RELATIVE
-    protocol = _preflight(
-        root=root, protocol_path=protocol_path, output=output, source_commit=source_commit
-    )
-    expected_hashseed = {"A": "11801", "B": "21801"}[process_id]
-    if os.environ.get("PYTHONHASHSEED") != expected_hashseed:
-        raise RuntimeError("C17 parent PYTHONHASHSEED mismatch")
-    existed_empty = output.exists()
-    staging = output.parent / f".{output.name}.staging-{uuid.uuid4().hex}"
-    context = multiprocessing.get_context("spawn")
-    receiver, sender = context.Pipe(duplex=False)
-    worker = context.Process(
-        target=_generation_worker,
-        args=(
-            sender,
-            {
-                "protocol": protocol,
-                "source_commit": source_commit,
-                "staging": staging,
-                "process_id": process_id,
-            },
-        ),
-        daemon=True,
-    )
-    timeout = protocol["determinism"]["official_run_timeout_seconds"]
-    deadline = time.monotonic() + timeout
+def _start_worker_with_hashseed(
+    context: Any, arguments: dict[str, Any], pythonhashseed: int
+) -> Any:
+    worker = context.Process(target=_generation_worker, args=(arguments,), daemon=False)
+    previous = os.environ.get("PYTHONHASHSEED")
     try:
+        os.environ["PYTHONHASHSEED"] = str(pythonhashseed)
         worker.start()
-        sender.close()
-        _wait_for_worker(worker, deadline=deadline, grace_seconds=5)
-        status = receiver.recv()
-        if worker.exitcode != 0 or not status.get("ok"):
-            raise C17WorkerError(f"C17 generation failed: {status}")
-        if set(path.name for path in staging.iterdir()) != PREFINAL_FILES:
-            raise RuntimeError("C17 staging inventory mismatch")
-        if output.exists() and (not output.is_dir() or any(output.iterdir())):
-            raise RuntimeError("C17 output became nonempty during execution")
-        if output.exists():
-            output.rmdir()
-        staging.replace(output)
-        return status
-    except BaseException as error:
-        alive = worker.is_alive() if worker.pid is not None else False
-        if staging.exists() and not alive:
-            shutil.rmtree(staging)
-        elif staging.exists():
-            print(str(staging.resolve()), file=sys.stderr)
-        if existed_empty and not output.exists():
-            output.mkdir()
-        if not existed_empty and output.exists() and output.is_dir() and not any(output.iterdir()):
-            output.rmdir()
-        if alive and not isinstance(error, (C17RunTimeoutError, C17WorkerError)):
-            raise C17WorkerError(str(error), worker_alive=True) from error
-        raise
     finally:
-        receiver.close()
-        sender.close()
-        if worker.pid is not None and not worker.is_alive():
-            worker.close()
+        if previous is None:
+            os.environ.pop("PYTHONHASHSEED", None)
+        else:
+            os.environ["PYTHONHASHSEED"] = previous
+    return worker
+
+
+def _verify_worker_attestation(
+    *,
+    sidecar: Path,
+    staging: Path,
+    protocol: dict[str, Any],
+    protocol_sha256: str,
+    source_commit: str,
+    process_contract: dict[str, Any],
+    challenge_nonce: str,
+    observed_pid: int | None,
+    returncode: int | None,
+) -> dict[str, Any]:
+    payload = _read_worker_sidecar(sidecar)
+    inventory = list(protocol["reproduction"]["prefinal_inventory"])
+    file_sha256, combined_sha256 = _prefinal_hashes(staging, inventory)
+    if (
+        observed_pid is None
+        or isinstance(observed_pid, bool)
+        or observed_pid <= 0
+        or returncode != 0
+        or payload["os_pid"] != observed_pid
+        or payload["process_id"] != process_contract["process_id"]
+        or isinstance(payload["pythonhashseed"], bool)
+        or payload["pythonhashseed"] != process_contract["pythonhashseed"]
+        or payload["challenge_nonce"] != challenge_nonce
+        or re.fullmatch(r"[0-9a-f]{32}", challenge_nonce) is None
+        or payload["source_commit"] != source_commit
+        or payload["protocol_sha256"] != protocol_sha256
+        or payload["preregistration_sha256"] != file_sha256["preregistration.json"]
+        or payload["output_directory"] != str(staging.resolve())
+        or payload["prefinal_inventory"] != inventory
+        or payload["file_sha256"] != file_sha256
+        or payload["combined_sha256"] != combined_sha256
+    ):
+        raise RuntimeError("C17 worker attestation mismatch")
+    return {**payload, "observed_pid": observed_pid, "returncode": returncode}
 
 
 def _read_bundle(directory: Path, expected_files: set[str]) -> dict[str, Any]:
@@ -348,28 +391,110 @@ def _read_bundle(directory: Path, expected_files: set[str]) -> dict[str, Any]:
     return bundle
 
 
-def finalize(
-    *,
-    output: Path,
-    staging_a: Path,
-    staging_b: Path,
-    source_commit: str,
-    root: Path = ROOT,
-) -> dict[str, Any]:
-    resolved = [path.resolve() for path in (output, staging_a, staging_b)]
-    if len(set(resolved)) != 3:
-        raise RuntimeError("C17 finalization paths must be distinct")
+def reproduce(*, output: Path, source_commit: str, root: Path = ROOT) -> dict[str, Any]:
+    protocol_path = root / PROTOCOL_RELATIVE
     protocol = _preflight(
-        root=root,
-        protocol_path=root / PROTOCOL_RELATIVE,
-        output=output,
-        source_commit=source_commit,
+        root=root, protocol_path=protocol_path, output=output, source_commit=source_commit
     )
+    process_contracts = protocol["reproduction"]["staging_processes"]
+    if (
+        len(process_contracts) != 2
+        or len({row["process_id"] for row in process_contracts}) != 2
+        or len({row["pythonhashseed"] for row in process_contracts}) != 2
+    ):
+        raise RuntimeError("C17 reproduction process contract is not independent")
+    challenges = [uuid.uuid4().hex, uuid.uuid4().hex]
+    if challenges[0] == challenges[1]:
+        raise RuntimeError("C17 worker challenges are not distinct")
+    staging_paths = [
+        output.parent / f"{output.name}.prefinal-{row['process_id']}"
+        for row in process_contracts
+    ]
+    sidecars = [
+        path.with_name(f"{path.name}.attestation.json") for path in staging_paths
+    ]
+    if any(path.exists() for path in staging_paths + sidecars):
+        raise RuntimeError("C17 reproduction staging or sidecar already exists")
+    protocol_sha256 = _sha(protocol_path.read_bytes())
+    context = multiprocessing.get_context("spawn")
+    workers = []
+    try:
+        for process_contract, challenge_nonce, staging, sidecar in zip(
+            process_contracts, challenges, staging_paths, sidecars, strict=True
+        ):
+            arguments = {
+                "challenge_nonce": challenge_nonce,
+                "process_id": process_contract["process_id"],
+                "protocol_path": protocol_path,
+                "sidecar": sidecar,
+                "source_commit": source_commit,
+                "staging": staging,
+            }
+            workers.append(
+                _start_worker_with_hashseed(
+                    context, arguments, process_contract["pythonhashseed"]
+                )
+            )
+    except BaseException:
+        for worker in workers:
+            if worker.is_alive():
+                worker.terminate()
+                worker.join(5)
+        raise
+    timeout = protocol["determinism"]["official_run_timeout_seconds"]
+    deadline = time.monotonic() + timeout
+    try:
+        for worker in workers:
+            _wait_for_worker(worker, deadline=deadline, grace_seconds=5)
+        if any(worker.exitcode != 0 for worker in workers):
+            raise C17WorkerError("C17 generation worker returned nonzero")
+        if any(worker.pid is None for worker in workers) or len(
+            {worker.pid for worker in workers}
+        ) != 2:
+            raise C17WorkerError("C17 generation worker PIDs are not distinct")
+        attestations = [
+            _verify_worker_attestation(
+                sidecar=sidecar,
+                staging=staging,
+                protocol=protocol,
+                protocol_sha256=protocol_sha256,
+                source_commit=source_commit,
+                process_contract=process_contract,
+                challenge_nonce=challenge_nonce,
+                observed_pid=worker.pid,
+                returncode=worker.exitcode,
+            )
+            for worker, process_contract, challenge_nonce, staging, sidecar in zip(
+                workers,
+                process_contracts,
+                challenges,
+                staging_paths,
+                sidecars,
+                strict=True,
+            )
+        ]
+        if len({row["observed_pid"] for row in attestations}) != 2:
+            raise RuntimeError("C17 worker PIDs are not distinct")
+    except BaseException:
+        for worker in workers:
+            if worker.is_alive():
+                worker.terminate()
+                worker.join(5)
+        for path in staging_paths + sidecars:
+            if path.exists():
+                print(str(path.resolve()), file=sys.stderr)
+        raise
     from sparkbrain.v03_organs.evaluation import finalize_bundles
 
-    bundle_a = _read_bundle(staging_a, PREFINAL_FILES)
-    bundle_b = _read_bundle(staging_b, PREFINAL_FILES)
-    final_bundle = finalize_bundles(bundle_a, bundle_b, protocol, source_commit)
+    bundle_a = _read_bundle(staging_paths[0], PREFINAL_FILES)
+    bundle_b = _read_bundle(staging_paths[1], PREFINAL_FILES)
+    final_bundle = finalize_bundles(
+        bundle_a,
+        bundle_b,
+        protocol,
+        source_commit,
+        attestations=attestations,
+    )
     temporary = output.parent / f".{output.name}.finalizing-{uuid.uuid4().hex}"
     existed_empty = output.exists()
     try:
@@ -388,50 +513,33 @@ def finalize(
             output.mkdir()
         raise
     acceptance = final_bundle["acceptance_matrix.json"]
-    return {
+    status = {
         "ok": True,
         "engineering_status": acceptance["engineering_status"],
         "scientific_status": acceptance["scientific_status"],
         "successful_seeds": acceptance["successful_seeds"],
         "failed_seeds": acceptance["failed_seeds"],
     }
+    for worker in workers:
+        if worker.pid is not None and not worker.is_alive():
+            worker.close()
+    return status
 
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--mode", required=True, choices=("generate", "finalize"))
+    parser.add_argument("--mode", required=True, choices=("reproduce",))
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--source-commit", required=True)
-    parser.add_argument("--process-id", choices=("A", "B"))
-    parser.add_argument("--staging-a", type=Path)
-    parser.add_argument("--staging-b", type=Path)
     args = parser.parse_args()
     try:
-        if args.mode == "generate":
-            if args.process_id is None or args.staging_a is not None or args.staging_b is not None:
-                parser.error("generate requires --process-id only")
-            status = run(
-                output=args.output,
-                source_commit=args.source_commit,
-                process_id=args.process_id,
-            )
-        else:
-            if args.process_id is not None or args.staging_a is None or args.staging_b is None:
-                parser.error("finalize requires --staging-a and --staging-b")
-            status = finalize(
-                output=args.output,
-                staging_a=args.staging_a,
-                staging_b=args.staging_b,
-                source_commit=args.source_commit,
-            )
+        status = reproduce(output=args.output, source_commit=args.source_commit)
     except C17RunTimeoutError:
         return 124
     except Exception as error:
         print(f"{type(error).__name__}: {error}", file=sys.stderr)
         return 1
     print(_canonical(status))
-    if args.mode == "generate":
-        return 0
     return 0 if status["engineering_status"] == "accepted" else 2
 
 
