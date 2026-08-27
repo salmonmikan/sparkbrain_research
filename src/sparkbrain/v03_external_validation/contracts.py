@@ -65,6 +65,7 @@ class C18TraceCheckpointAdapter(Protocol):
         self,
         kind: str,
         payload: Mapping[str, Any],
+        *,
         state_delta: Mapping[str, Any],
     ) -> V03TraceEvent: ...
 

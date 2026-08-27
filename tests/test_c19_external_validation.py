@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import inspect
 import json
 from pathlib import Path
 
@@ -7,6 +8,7 @@ import pytest
 
 from sparkbrain.v03_external_validation.contracts import (
     EXACT_NINE_ARTIFACTS,
+    C18TraceCheckpointAdapter,
     autonomous_aggregate_rows,
     validate_attribution_row,
     validate_baseline_matching,
@@ -19,6 +21,18 @@ from sparkbrain.v03_external_validation.proxy import (
 )
 
 ROOT = Path(__file__).parents[1]
+
+
+def test_c18_trace_adapter_record_signature_matches_v6_contract() -> None:
+    signature = inspect.signature(C18TraceCheckpointAdapter.record)
+    parameters = signature.parameters
+    assert tuple(parameters) == ("self", "kind", "payload", "state_delta")
+    assert parameters["self"].kind is inspect.Parameter.POSITIONAL_OR_KEYWORD
+    assert parameters["kind"].kind is inspect.Parameter.POSITIONAL_OR_KEYWORD
+    assert parameters["payload"].kind is inspect.Parameter.POSITIONAL_OR_KEYWORD
+    assert parameters["state_delta"].kind is inspect.Parameter.KEYWORD_ONLY
+    assert parameters["state_delta"].default is inspect.Parameter.empty
+    assert signature.return_annotation == "V03TraceEvent"
 
 
 def test_disabled_preregistration_freezes_exact_nine_and_c18_boundary() -> None:
