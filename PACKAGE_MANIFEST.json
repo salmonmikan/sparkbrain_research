@@ -3592,8 +3592,8 @@
     {
       "artifact_class": "software",
       "path": "src/sparkbrain/release.py",
-      "sha256": "4d5b8eb147d92fb78d1cf29b3c90f4a981627afcd93c82c73dd81d0d7834c67b",
-      "size": 43367
+      "sha256": "425dc96344d9c222851c3202cbd98267449d6b0af1d2c6e8b0a8bd3be30be544",
+      "size": 43379
     },
     {
       "artifact_class": "software",
@@ -4252,8 +4252,8 @@
     {
       "artifact_class": "software",
       "path": "tests/test_v03_release_artifacts.py",
-      "sha256": "e7e442c6f08b5d730fe48b81bc4c824bf894de91806f23f49880efb1f4b29285",
-      "size": 6853
+      "sha256": "5d918015d64614925c13db74f95badfbe6a0fb004e627ee03b7ae85f409bbdb9",
+      "size": 7085
     },
     {
       "artifact_class": "software",
@@ -4288,5 +4288,5 @@
     "system": "Windows"
   },
   "source_revision": "c0ea99bb42ff7a7be5c8a76e2cfbc0a3192c6faf",
-  "uncompressed_bytes_excluding_manifest": 456284538
+  "uncompressed_bytes_excluding_manifest": 456284782
 }
