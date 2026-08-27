@@ -1193,3 +1193,24 @@ target size `m`. Completeness means compliance with the applicable type rule.
 `comparison_input_sha256` now refers only to the exact-key canonical object defined by
 `comparison_input_sha256_preimage`; the earlier array shorthand is superseded. No key, type,
 ordering, nullability, serialization, fixture, metric, threshold, resource cell, or claim changes.
+
+### 16.6 C17 v2 official disposition
+
+The first official execution completed seeds 4801--4805 once from execution-pin head
+`f2e635a2b488f66b7bb696a0618c7be2b97180b9`. All 16 engineering gates passed and no seed failed.
+All 25 seed/condition cells recorded primary-candidate absence: 20
+`no_activity_eligible_candidate` and five `no_control_feasible_candidate`. Per the frozen absence
+contract, this is engineering-complete and science is `not_supported`, not
+`not_evaluated_implementation_failure`.
+
+The separately spawned A/B workers used fixed `PYTHONHASHSEED` values 11801 and 21801 and produced
+byte-identical exact-nine pre-final bundles, combined SHA-256
+`177aca36f3f2def1b1b49f6760fd32c84418cfdda4f94415fc64b9ead3533d1a`. After validating both
+workers and byte streams, the parent wrote one final exact-ten bundle with comparison-manifest
+SHA-256 `a9bf16cc3d29f250fec18cac0e9821ba1f7ae02f6a7b9fe793f95419dfecc7c2`. The protocol does not
+produce or compare two final exact-ten directories.
+
+All eight primary scientific gates are false and CL-008 remains E0. The result supports only that
+the registered local pipeline and its candidate-absence boundary completed reproducibly. It does
+not support a functional-organ, emergent-organ, semantic, biological, external-generalization, or
+energy claim.

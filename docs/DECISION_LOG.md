@@ -1141,3 +1141,32 @@ not alter that object's keys, types, ordering, serialization, or digest rule.
 **Reason:** Contradictory summaries can cause a conforming implementation to reject valid random
 controls or hash a different reproduction preimage. Removing them changes no experiment degree of
 freedom.
+
+## D-V03-0035 — Accept C17 v2 engineering evidence and retain the negative organ result
+
+**Decision (2026-08-28):** Accept the independently audited C17 v2 official execution at its
+registered engineering boundary and retain its final exact-ten bundle under
+`artifacts/v03/c17_functional_organs_v2/`. The run completed official seeds 4801--4805 with no failed
+seed and passed all 16 engineering gates. Every one of the 25 seed/condition cells recorded primary
+candidate absence: 20 because no group passed the frozen activity filter and five because no
+activity-eligible group also satisfied the train-only control-feasibility predicate. The
+preregistered candidate-absence contract therefore makes this an engineering-complete scientific
+negative. Scientific status is `not_supported`, all eight primary scientific gates remain false,
+and CL-008 remains E0.
+
+Two separately spawned staging workers, with fixed `PYTHONHASHSEED` values 11801 and 21801, produced
+byte-identical registered exact-nine bundles. Their combined SHA-256 is
+`177aca36f3f2def1b1b49f6760fd32c84418cfdda4f94415fc64b9ead3533d1a`. The runner validated worker
+provenance and both pre-final bundles before emitting the canonical comparison manifest, raw
+SHA-256 `a9bf16cc3d29f250fec18cac0e9821ba1f7ae02f6a7b9fe793f95419dfecc7c2`, and one final exact-ten
+bundle. This decision does not assert byte equality between two final exact-ten directories.
+
+C17 v1 remains immutable implementation-failure evidence. No v2 threshold, fixture, seed, resource
+cell, metric, proposal/assessment boundary, or control rule is changed after inspection. Package
+0.2.1, persisted schema 0.2, release files, C06/C08 evidence, accepted C14--C16 evidence, and all
+other claim grades remain unchanged.
+
+**Reason:** The corrected feasibility contract ran exactly as preregistered and preserved
+candidate absence as a falsifiable negative result. Recording engineering acceptance separately
+from scientific support prevents a completed pipeline from being mistaken for evidence that a
+functional organ formed.
