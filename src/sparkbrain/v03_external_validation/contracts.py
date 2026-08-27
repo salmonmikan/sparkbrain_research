@@ -12,7 +12,10 @@ import json
 import math
 from collections.abc import Mapping
 from dataclasses import dataclass
-from typing import Any, Protocol
+from typing import TYPE_CHECKING, Any, Protocol
+
+if TYPE_CHECKING:
+    from sparkbrain.v03_integration import V03Checkpoint, V03TraceEvent, V03TraceSession
 
 EXACT_NINE_ARTIFACTS = frozenset(
     {
@@ -56,20 +59,20 @@ def _exact_keys(row: Mapping[str, Any], expected: set[str], name: str) -> None:
 class C18TraceCheckpointAdapter(Protocol):
     """Boundary C18 must satisfy after its accepted public contract exists."""
 
-    def inspect(self) -> Mapping[str, object]: ...
+    def inspect(self) -> dict[str, Any]: ...
 
     def record(
         self,
         kind: str,
         payload: Mapping[str, object],
         state_delta: Mapping[str, object],
-    ) -> object: ...
+    ) -> V03TraceEvent: ...
 
-    def checkpoint(self, checkpoint_id: str) -> object: ...
+    def checkpoint(self, checkpoint_id: str) -> V03Checkpoint: ...
 
     def fork(
         self, checkpoint: object, *, branch_id: str, intervention: Mapping[str, object]
-    ) -> object: ...
+    ) -> V03TraceSession: ...
 
 
 @dataclass(frozen=True, slots=True)
@@ -116,11 +119,17 @@ def validate_disabled_preregistration(protocol: Mapping[str, Any]) -> None:
     if set(protocol["baseline_kinds"]) != BASELINE_KINDS:
         raise ValueError("C19 baseline inventory is incomplete")
     selection = protocol["checkpoint_selection"]
-    if (
-        selection.get("selection_split") != "dev"
-        or selection.get("calibration_split") != "dev"
-        or selection.get("official_test_fit_or_tuning") is not False
-    ):
+    _exact_keys(
+        selection,
+        {"calibration_split", "official_test_fit_or_tuning", "selection_split", "status"},
+        "checkpoint selection",
+    )
+    if selection != {
+        "calibration_split": "dev",
+        "official_test_fit_or_tuning": False,
+        "selection_split": "dev",
+        "status": "preregistered",
+    }:
         raise ValueError("checkpoint selection and calibration must exclude official test")
     seeds = protocol["fresh_seed_contract"]
     required_seed_keys = {
@@ -128,6 +137,7 @@ def validate_disabled_preregistration(protocol: Mapping[str, Any]) -> None:
         "proxy_seed_range",
         "reserved_test_seed_range",
         "split_seed",
+        "bootstrap_seed",
     }
     _exact_keys(seeds, required_seed_keys, "fresh seed contract")
     groups = [
@@ -135,11 +145,14 @@ def validate_disabled_preregistration(protocol: Mapping[str, Any]) -> None:
         seeds["proxy_seed_range"],
         seeds["reserved_test_seed_range"],
     ]
-    values = [value for group in groups for value in group]
+    values = [value for group in groups for value in group] + [
+        seeds["split_seed"],
+        seeds["bootstrap_seed"],
+    ]
+    expected = [5901, 5902, 5903, 5904, 5905, 6901, 6902, 6903, 6904, 6905, 8901, 8902, 7901, 9901]
     if (
         any(isinstance(value, bool) or not isinstance(value, int) for value in values)
-        or len(set(values)) != len(values)
-        or seeds["split_seed"] in values
+        or values != expected
     ):
         raise ValueError("official, proxy, reserved, and split seeds must not overlap")
     cache = protocol["cache_hash_contract"]
@@ -182,6 +195,7 @@ def validate_baseline_matching(row: Mapping[str, Any]) -> None:
     )
     if row["baseline_kind"] not in BASELINE_KINDS:
         raise ValueError("unknown baseline kind")
+    _reject_nested_target_leakage(row)
     all_matched = all(
         row[key] is True for key in ("compute_match", "data_match", "parameter_match")
     )
@@ -230,13 +244,18 @@ def validate_prediction_row(row: Mapping[str, Any]) -> None:
         raise ValueError("unknown input track")
     if not str(row["condition_id"]).startswith(f"{row['input_track']}/"):
         raise ValueError("condition_id must begin with the input track")
-    if row["oracle_diagnostic"] != (row["input_track"] == ORACLE_INPUT):
+    oracle = row["condition_id"].split("/", 1)[0] == ORACLE_INPUT
+    if row["oracle_diagnostic"] != oracle or (row["input_track"] == ORACLE_INPUT) != oracle:
         raise ValueError("Oracle rows must be diagnostic-only")
-    if row["evaluator_only"] != (row["input_track"] == ORACLE_INPUT):
+    if row["evaluator_only"] != oracle:
         raise ValueError("Oracle inputs must remain evaluator-only")
     if row["split"] != "synthetic_proxy":
         raise ValueError("source-only C19 may retain only synthetic proxy rows")
-    if not isinstance(row["entity_count"], int) or row["entity_count"] < 1:
+    if (
+        isinstance(row["entity_count"], bool)
+        or not isinstance(row["entity_count"], int)
+        or row["entity_count"] < 1
+    ):
         raise ValueError("entity_count must be positive")
     if not isinstance(row["probabilities"], Mapping) or not row["probabilities"]:
         raise ValueError("probabilities are required")
@@ -245,7 +264,7 @@ def validate_prediction_row(row: Mapping[str, Any]) -> None:
         raise ValueError("probabilities must be numeric")
     if not math.isclose(sum(float(value) for value in values), 1.0, abs_tol=1e-9):
         raise ValueError("probabilities must sum to one")
-    _reject_nested_target_leakage(row["work_counters"], path="work_counters")
+    _reject_nested_target_leakage({key: value for key, value in row.items() if key != "truth"})
 
 
 def validate_attribution_row(row: Mapping[str, Any]) -> None:
@@ -263,8 +282,17 @@ def validate_attribution_row(row: Mapping[str, Any]) -> None:
         },
         "attribution row",
     )
+    _reject_nested_target_leakage(row)
+    if (
+        isinstance(row["entity_count"], bool)
+        or not isinstance(row["entity_count"], int)
+        or row["entity_count"] < 1
+    ):
+        raise ValueError("entity_count must be a positive integer")
     if row["entity_count"] == 1 and (
-        row["status"] != "inconclusive" or row["available"] is not False
+        row["status"] != "inconclusive"
+        or row["available"] is not False
+        or row["dominant_component"] is not None
     ):
         raise ValueError("single-entity Belief-R attribution must remain inconclusive")
     if row["status"] == "inconclusive" and row["dominant_component"] is not None:
@@ -274,6 +302,9 @@ def validate_attribution_row(row: Mapping[str, Any]) -> None:
 def autonomous_aggregate_rows(rows: list[Mapping[str, Any]]) -> list[Mapping[str, Any]]:
     """Fail closed if a diagnostic Oracle row reaches autonomous aggregation."""
 
-    if any(row.get("oracle_diagnostic") is True for row in rows):
+    if any(
+        row.get("input_track") == ORACLE_INPUT or row.get("oracle_diagnostic") is True
+        for row in rows
+    ):
         raise ValueError("Oracle rows must be excluded from autonomous aggregation")
     return rows
