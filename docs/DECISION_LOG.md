@@ -1,5 +1,20 @@
 # Decision Log
 
+## D-V03-0030 — Retain C18 v6 as engineering-only observability evidence
+
+**Decision (2026-08-28):** Integrate the independently audited C18 v6
+exact-seven official bundle from execution pin
+`c0c242d848588d76015734a309f72fed0bd1d380` with fixed seed `1802`.
+
+**Reason:** The retained preflight evidence, strict schema validation,
+deterministic replay, parent-bound fork lineage, and static offline export
+support the engineering observability/replay contract. They do not evaluate
+scientific efficacy.
+
+**Scope:** Engineering is `accepted`; science is `not_supported`. No claim
+grade, v0.2 contract, C17 v1 artifact, C06/C08 finding, package version,
+persisted schema, or release metadata changes.
+
 ## D-V03-0029 — Keep C18 trace/checkpoint integration isolated from v0.2
 
 **Decision (2026-08-28):** Add C18 under `sparkbrain.v03_integration` with

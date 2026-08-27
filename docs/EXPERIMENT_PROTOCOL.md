@@ -18,6 +18,18 @@ SparkBrain の目的は「脳っぽく見えるアニメーション」を作る
 
 Core experiments must run on one general-purpose local computer. A CPU reference configuration is mandatory; local GPU acceleration is optional. Runtime cloud services, remote model APIs, hosted experiment trackers, and remote storage must not be required. External datasets may be acquired during setup, but final evaluation must run from a versioned local cache.
 
+### C18 v6 deterministic observability/replay boundary
+
+C18 v6's official run is fixed to seed `1802` and executes only from the
+commit-pinned clean-room boundary. Its exact-seven artifact inventory retains
+the pinned preregistration, replay and intervention cases, checkpoint manifest,
+preflight evidence, report, and CDN-free static export. Preflight evidence,
+strict JSON-schema validation, deterministic replay, and parent-bound fork
+lineage are engineering gates. Passing those gates supports only the
+observability/replay contract; scientific status is `not_supported` and no
+efficacy, semantic, biological, energy, or external-performance inference is
+permitted.
+
 Dedicated hardware and physical energy measurement are outside the core phase gates and are tracked only under Extension H.
 
 ## 2. Experimental layers

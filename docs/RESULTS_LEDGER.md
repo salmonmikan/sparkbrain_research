@@ -2,6 +2,19 @@
 
 Append entries; do not rewrite prior outcomes to match later interpretations.
 
+## 2026-08-28 — R-V03-0012 — C18 v6 official deterministic observability bundle
+
+- Protocol/pin: `c18-trace-checkpoint-brain-lab-v6`; execution pin
+  `c0c242d848588d76015734a309f72fed0bd1d380`; fixed official seed `1802`.
+- Status: engineering `accepted`; scientific `not_supported`.
+- Evidence: exact-seven inventory contains the pinned preregistration, replay
+  and intervention cases, checkpoint manifest, preflight evidence, report, and
+  CDN-free static Brain Lab export. Preflight, strict schema, replay, citation,
+  and parent-bound fork-lineage checks are retained as deterministic artifacts.
+- Boundary: this validates an observability/replay contract only. It provides
+  no scientific support for efficacy, semantic understanding, biological
+  fidelity, energy efficiency, or external task performance.
+
 ## 2026-08-28 — R-V03-0011 — C18 trace/checkpoint/Brain Lab contract smoke artifact
 
 - Protocol/source: `c18-trace-checkpoint-brain-lab-v1`; source

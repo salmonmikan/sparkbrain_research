@@ -2,6 +2,14 @@
 
 ## v0.3 C18 — trace, checkpoint and Brain Lab integration
 
+C18 v6 retains the independently audited official exact-seven bundle under
+`artifacts/v03/c18_brain_lab_v6/`, pinned by
+`c0c242d848588d76015734a309f72fed0bd1d380` and fixed official seed `1802`.
+The bundle records preflight evidence, strict schema validation, deterministic
+checkpoint replay, parent-bound fork lineage, and a CDN-free static Brain Lab
+export. Engineering status is `accepted` only for this deterministic
+observability/replay contract; scientific status remains `not_supported`.
+
 C18 adds a separately versioned `v03_integration` trace/checkpoint/replay
 contract without changing accepted v0.2 readers, `/api` paths, or the existing
 Brain Lab. The pinned smoke artifact records accepted and suppressed sensory
