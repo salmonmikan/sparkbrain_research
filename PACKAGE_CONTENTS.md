@@ -1,7 +1,8 @@
-# SparkBrain v0.2.1 Package Contents
+# SparkBrain v0.3.0 Package Contents
 
-- Package version: `0.2.1`
-- Persisted config/state/trace schema: `0.2`
+- Package version: `0.3.0`
+- Persisted v0.2 config/state/trace schema: `0.2` (historical compatibility)
+- Additive v0.3 trace/checkpoint schema: `0.3`
 - Main entry point: `README.md`
 - First reader guide: `docs/START_HERE.md`
 - Current status: `docs/PROJECT_STATUS.md`
@@ -9,7 +10,18 @@
 - File-level hashes: `PACKAGE_MANIFEST.json`
 - Archive-mode hash binding: `RELEASE_METADATA.json`
 
-## v0.2.1 expansion
+## v0.3 release boundary
+
+- C01--C10 release evidence is retained as v0.2.1 historical evidence.
+- C11--C18 evidence is recorded under `artifacts/v03/` with its individual engineering and
+  scientific boundaries preserved.
+- C19 is a blocked external-validation readiness record, not an accepted external result.
+- `artifacts/release/v0.3/` is the final source manifest, evidence map, report, figure, and SBOM
+  layer for this private release candidate.
+- The project license is not selected; public tag, public archive, and public release remain
+  prohibited.
+
+## v0.2.1 historical expansion
 
 - formalized single-machine local completion condition
 - CPU reference path required; local GPU optional
@@ -102,7 +114,7 @@ Current packaging validation:
 - integrity/preparation/evidence validation: PASS
 - public release validation: blocked only by owner license selection
 
-## C10 release-candidate evidence
+## C10 historical release-candidate evidence
 
 - `requirements-release.lock` and its provenance record pin the tested Windows/Python 3.13
   candidate snapshot; they do not claim a universal wheel lock.

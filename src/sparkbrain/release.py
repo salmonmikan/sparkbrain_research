@@ -55,10 +55,43 @@ REQUIRED_PREPARATION_FILES = (
     "artifacts/release/claim_audit.json",
     "artifacts/release/sbom.spdx.json",
 )
+V03_REQUIRED_PREPARATION_FILES = (
+    "PACKAGE_MANIFEST.json",
+    "RELEASE_METADATA.json",
+    "PACKAGE_CONTENTS.md",
+    "requirements-release.lock",
+    "requirements-release-provenance.json",
+    "scripts/build_v03_private_review_bundle.py",
+    "scripts/generate_v03_release_artifacts.py",
+    "scripts/generate_v03_root_manifest.py",
+    "scripts/reproduce_release.py",
+    "docs/CLEAN_ROOM_REPRODUCTION.md",
+    "docs/NEGATIVE_RESULTS_APPENDIX.md",
+    "docs/V03_CLAIM_BOUNDARIES_AND_RISKS.md",
+    "docs/V03_MIGRATION_AND_COMPATIBILITY.md",
+    "artifacts/release/v0.3/evidence_map.json",
+    "artifacts/release/v0.3/release_report.md",
+    "artifacts/release/v0.3/release_figure.svg",
+    "artifacts/release/v0.3/sbom.spdx.json",
+    "artifacts/release/v0.3/source_manifest.json",
+)
 REQUIRED_PUBLIC_FILES = ("LICENSE",)
 OWNER_LICENSE_BLOCKER = "project license has not been selected by the repository owner"
 # Backward-compatible name used by the initial C10 tests.
 REQUIRED_RELEASE_FILES = (*REQUIRED_PUBLIC_FILES, *REQUIRED_PREPARATION_FILES)
+
+
+def _is_v03_package(root: Path) -> bool:
+    try:
+        return package_version(root) == "0.3.0"
+    except (OSError, UnicodeDecodeError, tomllib.TOMLDecodeError, KeyError):
+        return False
+
+
+def required_preparation_files(root: Path) -> tuple[str, ...]:
+    """Select the release contract from package metadata, not Git history."""
+
+    return V03_REQUIRED_PREPARATION_FILES if _is_v03_package(root) else REQUIRED_PREPARATION_FILES
 
 
 def _canonical_json(value: Any) -> str:
@@ -486,7 +519,14 @@ def validate_project_license_metadata(root: Path) -> list[str]:
         return ["pyproject project.license must contain the selected SPDX expression"]
     try:
         sbom = json.loads(
-            (root / "artifacts/release/sbom.spdx.json").read_text(encoding="utf-8")
+            (
+                root
+                / (
+                    "artifacts/release/v0.3/sbom.spdx.json"
+                    if _is_v03_package(root)
+                    else "artifacts/release/sbom.spdx.json"
+                )
+            ).read_text(encoding="utf-8")
         )
     except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
         return [f"release SBOM is unreadable for license validation: {exc}"]
@@ -584,11 +624,17 @@ def validate_source_revision(root: Path, payload: dict[str, Any], *, label: str)
 
 def validate_release_revision_consistency(root: Path) -> list[str]:
     payloads: dict[str, dict[str, Any]] = {}
+    evidence_path = (
+        root / "artifacts/release/v0.3/evidence_map.json"
+        if _is_v03_package(root)
+        else root / "artifacts/release/evidence_map.json"
+    )
     paths = {
         "package manifest": root / MANIFEST_PATH,
-        "release evidence map": root / "artifacts/release/evidence_map.json",
-        "release provenance": root / "artifacts/release/provenance.json",
+        "release evidence map": evidence_path,
     }
+    if not _is_v03_package(root):
+        paths["release provenance"] = root / "artifacts/release/provenance.json"
     if (root / RELEASE_METADATA_PATH).is_file() or release_mode(root) == "archive":
         paths["release metadata"] = root / RELEASE_METADATA_PATH
     problems: list[str] = []
@@ -611,6 +657,8 @@ def validate_release_revision_consistency(root: Path) -> list[str]:
 
 
 def validate_generated_release_evidence(root: Path) -> list[str]:
+    if _is_v03_package(root):
+        return validate_v03_generated_release_evidence(root)
     problems: list[str] = []
     release_dir = root / "artifacts/release"
     try:
@@ -700,26 +748,107 @@ def validate_generated_release_evidence(root: Path) -> list[str]:
     return problems
 
 
+def validate_v03_generated_release_evidence(root: Path) -> list[str]:
+    """Validate generated C20 artifacts without reclassifying their evidence."""
+
+    from sparkbrain import release_v03_artifacts
+
+    release_dir = root / release_v03_artifacts.V03_RELEASE_RELATIVE
+    try:
+        evidence = json.loads((release_dir / "evidence_map.json").read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        return [f"v0.3 evidence map is unreadable: {exc}"]
+    problems = release_v03_artifacts.validate_v03_evidence_map(root, evidence)
+    problems.extend(validate_source_revision(root, evidence, label="v0.3 evidence map"))
+    revision = evidence.get("source_revision")
+    if not isinstance(revision, str):
+        return _unique_problems(problems)
+
+    expected_text = {
+        "release_report.md": release_v03_artifacts._render_results_table(evidence),
+        "release_figure.svg": release_v03_artifacts._render_results_figure(evidence),
+        "sbom.spdx.json": release_v03_artifacts._canonical_json(
+            release_v03_artifacts.build_v03_sbom(root, source_revision=revision)
+        ),
+    }
+    for name, expected in expected_text.items():
+        path = release_dir / name
+        try:
+            actual = path.read_text(encoding="utf-8")
+        except (OSError, UnicodeDecodeError) as exc:
+            problems.append(f"v0.3 generated artifact is unreadable: {name}: {exc}")
+        else:
+            if actual != expected:
+                problems.append(f"v0.3 generated artifact does not match evidence map: {name}")
+
+    try:
+        source_manifest = json.loads(
+            (release_dir / "source_manifest.json").read_text(encoding="utf-8")
+        )
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        problems.append(f"v0.3 source manifest is unreadable: {exc}")
+        return _unique_problems(problems)
+    expected_files = {
+        f"{release_v03_artifacts.V03_RELEASE_RELATIVE}/{name}"
+        for name in ("evidence_map.json", *expected_text)
+    }
+    if (
+        not isinstance(source_manifest, dict)
+        or source_manifest.get("schema_version")
+        != release_v03_artifacts.V03_SOURCE_MANIFEST_SCHEMA
+        or source_manifest.get("package_version") != "0.3.0"
+        or source_manifest.get("source_revision") != revision
+        or not isinstance(source_manifest.get("files"), list)
+    ):
+        problems.append("v0.3 source manifest does not match fixed schema")
+        return _unique_problems(problems)
+    rows = source_manifest["files"]
+    paths = [row.get("path") for row in rows if isinstance(row, dict)]
+    if paths != sorted(expected_files) or len(rows) != len(expected_files):
+        problems.append("v0.3 source manifest files do not match generated artifacts")
+    for row in rows:
+        if not isinstance(row, dict) or set(row) != {"path", "sha256"}:
+            problems.append("v0.3 source manifest row does not match fixed schema")
+            continue
+        relative = row["path"]
+        if not isinstance(relative, str) or relative not in expected_files:
+            problems.append("v0.3 source manifest contains an unexpected path")
+            continue
+        if row["sha256"] != sha256_file(root / relative):
+            problems.append(f"v0.3 source manifest hash mismatch: {relative}")
+    return _unique_problems(problems)
+
+
 def _unique_problems(problems: Iterable[str]) -> list[str]:
     return list(dict.fromkeys(problems))
 
 
 def preparation_problems(root: Path) -> list[str]:
+    required = required_preparation_files(root)
     problems = [
         f"missing required release artifact: {relative}"
-        for relative in REQUIRED_PREPARATION_FILES
+        for relative in required
         if not (root / relative).is_file()
     ]
-    evidence_path = root / "artifacts/release/evidence_map.json"
+    evidence_path = (
+        root / "artifacts/release/v0.3/evidence_map.json"
+        if _is_v03_package(root)
+        else root / "artifacts/release/evidence_map.json"
+    )
     if evidence_path.is_file():
         try:
             evidence_map = json.loads(evidence_path.read_text(encoding="utf-8"))
         except (UnicodeDecodeError, json.JSONDecodeError) as exc:
             problems.append(f"evidence map is not valid UTF-8 JSON: {exc}")
         else:
-            problems.extend(validate_evidence_map(root, evidence_map))
+            if _is_v03_package(root):
+                from sparkbrain.release_v03_artifacts import validate_v03_evidence_map
+
+                problems.extend(validate_v03_evidence_map(root, evidence_map))
+            else:
+                problems.extend(validate_evidence_map(root, evidence_map))
             problems.extend(validate_source_revision(root, evidence_map, label="evidence map"))
-    if all((root / relative).is_file() for relative in REQUIRED_PREPARATION_FILES):
+    if all((root / relative).is_file() for relative in required):
         problems.extend(validate_generated_release_evidence(root))
     return _unique_problems(problems)
 
@@ -758,7 +887,11 @@ def owner_blockers(root: Path) -> list[str]:
 
 
 def evidence_blockers(root: Path) -> list[str]:
-    evidence_path = root / "artifacts/release/evidence_map.json"
+    evidence_path = (
+        root / "artifacts/release/v0.3/evidence_map.json"
+        if _is_v03_package(root)
+        else root / "artifacts/release/evidence_map.json"
+    )
     if not evidence_path.is_file():
         return []
     evidence, read_problems = _read_json_object(evidence_path, label="evidence map")
