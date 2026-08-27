@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import subprocess
 from pathlib import Path
 
@@ -53,6 +54,21 @@ def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def _require_tracked_clean() -> None:
+    for args in (("diff", "--quiet"), ("diff", "--cached", "--quiet")):
+        result = subprocess.run(
+            ["git", "-c", f"safe.directory={ROOT}", *args], cwd=ROOT, check=False
+        )
+        if result.returncode:
+            raise RuntimeError("C18 tracked worktree or index is not clean")
+
+
+def _require_clean_room() -> None:
+    if os.environ.get("C18_CLEAN_ROOM_COMMIT") != _git("rev-parse", "HEAD"):
+        raise RuntimeError("C18 official artifacts require a commit-pinned clean room")
+    _require_tracked_clean()
+
+
 def _runner_validation_probe() -> dict[str, bool | str]:
     probe = V03TraceSession({"seed": 1802, "mode": "validation_probe"})
     probe.record("no_ignition", {"cited_evidence_ids": []}, state_delta={})
@@ -65,7 +81,12 @@ def _runner_validation_probe() -> dict[str, bool | str]:
     }
 
 
-def preflight(protocol: dict, *, protocol_path: Path | None = None) -> dict:
+def preflight(
+    protocol: dict, *, mode: str = "source", protocol_path: Path | None = None
+) -> dict:
+    if mode not in {"source", "integration"}:
+        raise RuntimeError("C18 preflight mode is invalid")
+    _require_tracked_clean()
     source = protocol.get("source_commit")
     base = protocol.get("execution_base_commit")
     expected = protocol.get("source_control", {}).get("expected_runtime_runner_and_test_paths")
@@ -77,11 +98,16 @@ def preflight(protocol: dict, *, protocol_path: Path | None = None) -> dict:
     ):
         raise RuntimeError("C18 source/base ancestry invalid")
     source_diff_paths = sorted(filter(None, _git("diff", "--name-only", base, source).splitlines()))
-    if source_diff_paths != sorted(expected) or len(source_diff_paths) != 5:
+    if source_diff_paths != sorted(expected) or len(source_diff_paths) != len(expected):
         raise RuntimeError("C18 source allowlist mismatch")
-    if set(filter(None, _git("diff", "--name-only", source, "HEAD").splitlines())) - {
-        PROTOCOL_RELATIVE
-    }:
+    post_source_paths = set(filter(None, _git("diff", "--name-only", source, "HEAD").splitlines()))
+    allowed_post_source = set()
+    if mode == "integration":
+        allowed_post_source = {
+            PROTOCOL_RELATIVE,
+            "artifacts/v03/c18_brain_lab_v6/preregistration_hashes.json",
+        }
+    if post_source_paths - allowed_post_source:
         raise RuntimeError("C18 post-source scope invalid")
     raw = (protocol_path or ROOT / PROTOCOL_RELATIVE).read_bytes()
     if raw != (_canonical(protocol) + "\n").encode("utf-8"):
@@ -240,10 +266,11 @@ def _canonical(value: object) -> str:
 def write_artifacts(output: Path, *, seed: int) -> dict:
     if output.exists() and any(output.iterdir()):
         raise RuntimeError("C18 output must be new or empty")
+    _require_clean_room()
     protocol = load_protocol(ROOT / PROTOCOL_RELATIVE, require_enabled=True)
     if seed != protocol["execution"]["official_seed"]:
         raise RuntimeError("C18 write_artifacts rejects a non-preregistered seed")
-    preflight_evidence = preflight(protocol)
+    preflight_evidence = preflight(protocol, mode="integration")
     replay, intervention, export = build_cases(seed)
     output.mkdir(parents=True, exist_ok=True)
     static = output / "screenshots_or_static_exports"
@@ -285,7 +312,7 @@ def write_artifacts(output: Path, *, seed: int) -> dict:
     )
     if actual_files != sorted(protocol["artifacts"]["exact_files"]):
         raise RuntimeError("C18 exact artifact inventory mismatch")
-    citation_probe = V03TraceSession({"seed": seed})
+    citation_probe = V03TraceSession({"seed": seed, "mode": "citation_probe"})
     try:
         citation_probe.record(
             "evidence_added",

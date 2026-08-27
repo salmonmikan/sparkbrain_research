@@ -106,6 +106,29 @@ def test_record_requires_keyword_state_delta_and_empty_trace_is_bound() -> None:
         V03Checkpoint.from_dict(value)
 
 
+def test_session_rejects_non_schema_equivalent_config_and_state() -> None:
+    for config in (
+        {"seed": True, "mode": "test"},
+        {"seed": 1802, "mode": "test", "extra": True},
+    ):
+        with pytest.raises(ValueError):
+            V03TraceSession(config)
+    with pytest.raises(ValueError):
+        V03TraceSession(
+            {"seed": 1802, "mode": "test"},
+            state={
+                "evidence": {
+                    "": {"active": True, "entity": "a", "polarity": "p", "source_id": "s"}
+                }
+            },
+        )
+    with pytest.raises(ValueError):
+        V03TraceSession(
+            {"seed": 1802, "mode": "test"},
+            state={"concept_candidates": {"c": {"activation": True, "label": "c"}}},
+        )
+
+
 def test_schema_rejects_missing_payload_and_nested_type() -> None:
     value = make().checkpoint("one").as_dict()
     value["trace"][0]["payload"].pop("cited_evidence_ids")

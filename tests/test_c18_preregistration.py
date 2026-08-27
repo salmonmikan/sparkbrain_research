@@ -37,3 +37,8 @@ def test_v6_runner_defaults_to_the_preregistered_official_seed() -> None:
     parser.add_argument("--seed", default=1802, type=int)
     assert parser.parse_args([]).seed == 1802
     assert runner.PROTOCOL_RELATIVE.endswith("c18_brain_lab_v6/preregistration.json")
+
+
+def test_write_artifacts_rejects_non_clean_room_before_protocol_read(tmp_path: Path) -> None:
+    with pytest.raises(RuntimeError, match="clean room"):
+        runner.write_artifacts(tmp_path / "official", seed=1802)
