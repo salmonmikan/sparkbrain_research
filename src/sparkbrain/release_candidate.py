@@ -32,7 +32,9 @@ CANDIDATE_MANIFEST_SCHEMA = "sparkbrain-candidate-release-v1"
 REVIEW_MANIFEST_SCHEMA = "sparkbrain-review-bundle-v2"
 RELEASE_GROUP_SCHEMA = "sparkbrain-release-group-v1"
 NETWORK_PREFIXES = {"aiohttp", "http", "httpx", "requests", "socket", "urllib", "urllib3"}
-ALLOWED_DYNAMIC_IMPORT_PREFIXES = {"torch"}
+DYNAMIC_IMPORT_SOURCE_ALLOWLIST = {
+    "src/sparkbrain/evaluation/run_baselines.py": ("__import__", "torch"),
+}
 STATIC_NETWORK_IMPORT_ALLOWLIST = {
     "src/sparkbrain/external_validation/belief_r.py": {"urllib"},
     "src/sparkbrain/external_validation/evaluation.py": {"socket"},
@@ -309,64 +311,102 @@ def _dynamic_import_primitive_kind(
         owner = node.value.id if isinstance(node.value, ast.Name) else None
         expected = importlib_names if node.attr == "import_module" else builtins_names
         return "proven" if owner in expected and owner not in shadowed else "ambiguous"
-    if (
-        isinstance(node, ast.Call)
-        and isinstance(node.func, ast.Name)
-        and node.func.id == "getattr"
-        and len(node.args) >= 2
-    ):
-        owner = node.args[0].id if isinstance(node.args[0], ast.Name) else None
-        attribute = (
-            node.args[1].value
-            if isinstance(node.args[1], ast.Constant)
-            and isinstance(node.args[1].value, str)
-            else None
-        )
-        expected = (
-            "import_module"
-            if owner in importlib_names
-            else "__import__"
-            if owner in builtins_names
-            else None
-        )
-        if expected is None and attribute not in {"import_module", "__import__"}:
-            return None
-        if expected == attribute and owner not in shadowed and "getattr" not in shadowed:
-            return "proven"
-        return "ambiguous"
-    if isinstance(node, ast.Subscript):
-        key = _subscript_key(node)
-        owner = node.value
-        if isinstance(owner, ast.Name) and owner.id == "__builtins__":
-            if key not in {None, "__import__"}:
-                return None
-            return "proven" if key == "__import__" and owner.id not in shadowed else "ambiguous"
-        if isinstance(owner, ast.Attribute) and owner.attr == "__dict__":
-            module_name = owner.value.id if isinstance(owner.value, ast.Name) else None
-            expected = (
-                "import_module"
-                if module_name in importlib_names
-                else "__import__"
-                if module_name in builtins_names
-                else None
-            )
-            if expected is None and key not in {"import_module", "__import__"}:
-                return None
-            if expected == key and module_name not in shadowed:
-                return "proven"
-            return "ambiguous"
     return None
 
 
-def _is_direct_literal_torch_call(node: ast.AST, parent: ast.AST | None) -> bool:
-    if not isinstance(parent, ast.Call) or parent.func is not node or not parent.args:
+def _is_allowlisted_dynamic_import_call(
+    relative: str,
+    node: ast.AST,
+    parent: ast.AST | None,
+    shadowed: set[str],
+) -> bool:
+    permitted = DYNAMIC_IMPORT_SOURCE_ALLOWLIST.get(relative)
+    if (
+        permitted is None
+        or not isinstance(node, ast.Name)
+        or node.id != permitted[0]
+        or node.id in shadowed
+        or not isinstance(parent, ast.Call)
+        or parent.func is not node
+        or len(parent.args) != 1
+        or parent.keywords
+    ):
         return False
     target = parent.args[0]
     return (
         isinstance(target, ast.Constant)
         and isinstance(target.value, str)
-        and target.value.split(".")[0] in ALLOWED_DYNAMIC_IMPORT_PREFIXES
+        and target.value == permitted[1]
     )
+
+
+def _name_in(node: ast.AST, names: set[str]) -> bool:
+    return any(isinstance(child, ast.Name) and child.id in names for child in ast.walk(node))
+
+
+def _is_forbidden_reflection(
+    node: ast.AST,
+    *,
+    parent: ast.AST | None,
+    importlib_names: set[str],
+    builtins_names: set[str],
+) -> bool:
+    module_names = {*importlib_names, *builtins_names, "__builtins__"}
+    dynamic_names = {"import_module", "__import__"}
+    if (
+        isinstance(node, ast.Name)
+        and isinstance(node.ctx, ast.Load)
+        and node.id in module_names
+    ):
+        return True
+    if (
+        isinstance(node, ast.Constant)
+        and node.value in dynamic_names
+        and isinstance(parent, (ast.Call, ast.Subscript))
+    ):
+        return True
+    if isinstance(node, ast.Call):
+        if isinstance(node.func, ast.Name) and node.func.id in {
+            "eval",
+            "exec",
+            "compile",
+            "globals",
+            "vars",
+        }:
+            return True
+        if isinstance(node.func, ast.Name) and node.func.id == "getattr":
+            attribute = (
+                node.args[1].value
+                if len(node.args) >= 2
+                and isinstance(node.args[1], ast.Constant)
+                and isinstance(node.args[1].value, str)
+                else None
+            )
+            return bool(
+                node.args
+                and (
+                    _name_in(node.args[0], module_names)
+                    or attribute in {"__dict__", "__getattribute__", *dynamic_names}
+                )
+            )
+        if isinstance(node.func, ast.Attribute) and node.func.attr == "__getattribute__":
+            return _name_in(node.func.value, module_names) or any(
+                isinstance(argument, ast.Constant) and argument.value in dynamic_names
+                for argument in node.args
+            )
+    if isinstance(node, ast.Attribute) and node.attr in {"__dict__", "__getattribute__"}:
+        return _name_in(node.value, module_names)
+    if isinstance(node, ast.Subscript):
+        return (
+            _subscript_key(node) in dynamic_names
+            or _name_in(node.value, module_names)
+            and (
+                isinstance(node.value, ast.Name)
+                or isinstance(node.value, ast.Attribute)
+                and node.value.attr in {"__dict__", "__getattribute__"}
+            )
+        )
+    return False
 
 
 def validate_network_client_boundary(root: Path) -> list[str]:
@@ -417,9 +457,18 @@ def validate_network_client_boundary(root: Path) -> list[str]:
             )
             if primitive_kind is not None and (
                 primitive_kind == "ambiguous"
-                or not _is_direct_literal_torch_call(node, parents.get(node))
+                or not _is_allowlisted_dynamic_import_call(
+                    relative, node, parents.get(node), shadowed
+                )
             ):
                 problems.append(f"unproven or network dynamic import is forbidden: {path}")
+            if _is_forbidden_reflection(
+                node,
+                parent=parents.get(node),
+                importlib_names=importlib_names,
+                builtins_names=builtins_names,
+            ):
+                problems.append(f"dynamic import reflection is forbidden: {path}")
     return sorted(set(problems))
 
 

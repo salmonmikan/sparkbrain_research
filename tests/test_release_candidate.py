@@ -78,6 +78,7 @@ def test_manifest_uses_real_commit_and_rejects_bool_and_payload_drift(tmp_path: 
     [
         "import httpx\n",
         "__import__('socket')\n",
+        "__import__('torch')\n",
         "import importlib\nimportlib.import_module('socket')\n",
         "import importlib\nimportlib.import_module('arbitrary_plugin')\n",
         "from importlib import import_module\nimport_module('socket')\n",
@@ -122,6 +123,16 @@ def test_manifest_uses_real_commit_and_rejects_bool_and_payload_drift(tmp_path: 
         "from importlib import import_module as load\ndef f(load):\n    load('torch')\n",
         "import importlib\nimport fake as importlib\nimportlib.import_module('torch')\n",
         "from importlib import import_module as load\nimport fake as load\nload('torch')\n",
+        "eval('1 + 1')\n",
+        "exec('value = 1')\n",
+        "compile('1 + 1', '<fixture>', 'eval')\n",
+        "globals()\n",
+        "vars()\n",
+        "import importlib\nimportlib.__getattribute__('import_module')('torch')\n",
+        "import importlib\nimportlib.__dict__['import_module']('torch')\n",
+        "import builtins\nbuiltins.__dict__['__import__']('torch')\n",
+        "__builtins__.__getitem__('__import__')('torch')\n",
+        "import importlib\nname = 'safe'\ngetattr(importlib, name)\n",
     ],
 )
 def test_network_boundary_scans_package_and_fails_closed(tmp_path: Path, source: str) -> None:
@@ -130,28 +141,38 @@ def test_network_boundary_scans_package_and_fails_closed(tmp_path: Path, source:
     assert validate_network_client_boundary(tmp_path)
 
 
+def test_network_boundary_allows_only_actual_repo_dynamic_torch_shape(tmp_path: Path) -> None:
+    fixture(tmp_path)
+    allowed = tmp_path / "src" / "sparkbrain" / "evaluation" / "run_baselines.py"
+    allowed.parent.mkdir()
+    allowed.write_text('torch = __import__("torch")\n', encoding="utf-8")
+    assert validate_network_client_boundary(tmp_path) == []
+
+
 @pytest.mark.parametrize(
     "source",
     [
-        "__import__('torch')\n",
-        "import importlib\nimportlib.import_module('torch.nn')\n",
+        "__import__('torch.nn')\n",
+        "__import__('torch', globals(), locals(), [], 0)\n",
+        "name = 'torch'\n__import__(name)\n",
+        "import importlib\nimportlib.import_module('torch')\n",
         "from importlib import import_module as load\nload('torch')\n",
         "import importlib\ngetattr(importlib, 'import_module')('torch')\n",
         "__builtins__['__import__']('torch')\n",
-        "import importlib as il\nil.import_module('torch')\n",
-        "import builtins as bi\nbi.__import__('torch')\n",
-        "import builtins as bi\ngetattr(bi, '__import__')('torch')\n",
         "import builtins as bi\nbi.__dict__['__import__']('torch')\n",
-        "import importlib as il\nil.__dict__['import_module']('torch')\n",
-        "from builtins import __import__ as load\nload('torch')\n",
+        "import importlib\n(load := importlib.import_module)('torch')\n",
+        "import importlib\n(load,) = (importlib.import_module,)\nload('torch')\n",
+        "import importlib\ndef f(load=importlib.import_module):\n    load('torch')\n",
     ],
 )
-def test_network_boundary_allows_proven_torch_dynamic_import(
+def test_network_boundary_rejects_nonexact_dynamic_import_in_allowlisted_path(
     tmp_path: Path, source: str
 ) -> None:
     fixture(tmp_path)
-    (tmp_path / "src" / "sparkbrain" / "runtime.py").write_text(source, encoding="utf-8")
-    assert validate_network_client_boundary(tmp_path) == []
+    allowed = tmp_path / "src" / "sparkbrain" / "evaluation" / "run_baselines.py"
+    allowed.parent.mkdir()
+    allowed.write_text(source, encoding="utf-8")
+    assert validate_network_client_boundary(tmp_path)
 
 
 def test_network_boundary_allows_only_audited_static_stdlib_imports(tmp_path: Path) -> None:
