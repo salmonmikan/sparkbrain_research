@@ -127,12 +127,19 @@ def test_manifest_uses_real_commit_and_rejects_bool_and_payload_drift(tmp_path: 
         "exec('value = 1')\n",
         "compile('1 + 1', '<fixture>', 'eval')\n",
         "globals()\n",
+        "locals()\n",
         "vars()\n",
         "import importlib\nimportlib.__getattribute__('import_module')('torch')\n",
         "import importlib\nimportlib.__dict__['import_module']('torch')\n",
         "import builtins\nbuiltins.__dict__['__import__']('torch')\n",
         "__builtins__.__getitem__('__import__')('torch')\n",
         "import importlib\nname = 'safe'\ngetattr(importlib, name)\n",
+        "locals()['__' + 'import__']('torch')\n",
+        "mapping['import_' + 'module']\n",
+        "getattr(loader, '__' + 'import__')('torch')\n",
+        "import sys\nsys.modules['builtins'].__dict__['__import__']('torch')\n",
+        "import sys as system\nsystem.modules['builtins']\n",
+        "from sys import modules as loaded\nloaded['builtins']\n",
     ],
 )
 def test_network_boundary_scans_package_and_fails_closed(tmp_path: Path, source: str) -> None:
@@ -141,11 +148,15 @@ def test_network_boundary_scans_package_and_fails_closed(tmp_path: Path, source:
     assert validate_network_client_boundary(tmp_path)
 
 
-def test_network_boundary_allows_only_actual_repo_dynamic_torch_shape(tmp_path: Path) -> None:
+def test_network_boundary_allows_actual_repo_function_local_static_torch_import(
+    tmp_path: Path,
+) -> None:
     fixture(tmp_path)
     allowed = tmp_path / "src" / "sparkbrain" / "evaluation" / "run_baselines.py"
     allowed.parent.mkdir()
-    allowed.write_text('torch = __import__("torch")\n', encoding="utf-8")
+    allowed.write_text(
+        "def run():\n    import torch\n    return torch.tensor([1])\n", encoding="utf-8"
+    )
     assert validate_network_client_boundary(tmp_path) == []
 
 
@@ -165,7 +176,7 @@ def test_network_boundary_allows_only_actual_repo_dynamic_torch_shape(tmp_path: 
         "import importlib\ndef f(load=importlib.import_module):\n    load('torch')\n",
     ],
 )
-def test_network_boundary_rejects_nonexact_dynamic_import_in_allowlisted_path(
+def test_network_boundary_rejects_dynamic_import_in_previous_torch_path(
     tmp_path: Path, source: str
 ) -> None:
     fixture(tmp_path)

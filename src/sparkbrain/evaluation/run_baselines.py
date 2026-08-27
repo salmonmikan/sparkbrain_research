@@ -269,7 +269,8 @@ def run(config_path: Path, output: Path) -> dict[str, Any]:
             profile["family_training_operations_estimate"] = (
                 family_forward * 3 * training.steps_completed
             )
-            torch = __import__("torch")
+            import torch
+
             sample = torch.tensor([encoder.encode_episode(train[0]).features], dtype=torch.float32)
             profile.update(
                 profile_calls(

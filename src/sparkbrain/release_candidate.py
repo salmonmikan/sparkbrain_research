@@ -32,9 +32,6 @@ CANDIDATE_MANIFEST_SCHEMA = "sparkbrain-candidate-release-v1"
 REVIEW_MANIFEST_SCHEMA = "sparkbrain-review-bundle-v2"
 RELEASE_GROUP_SCHEMA = "sparkbrain-release-group-v1"
 NETWORK_PREFIXES = {"aiohttp", "http", "httpx", "requests", "socket", "urllib", "urllib3"}
-DYNAMIC_IMPORT_SOURCE_ALLOWLIST = {
-    "src/sparkbrain/evaluation/run_baselines.py": ("__import__", "torch"),
-}
 STATIC_NETWORK_IMPORT_ALLOWLIST = {
     "src/sparkbrain/external_validation/belief_r.py": {"urllib"},
     "src/sparkbrain/external_validation/evaluation.py": {"socket"},
@@ -268,6 +265,21 @@ def _dynamic_import_aliases(tree: ast.AST) -> tuple[set[str], set[str], set[str]
     return importlib_names, builtins_names, direct_names
 
 
+def _sys_module_aliases(tree: ast.AST) -> tuple[set[str], set[str]]:
+    sys_names = {"sys"}
+    module_names: set[str] = set()
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Import):
+            for alias in node.names:
+                if alias.name == "sys":
+                    sys_names.add(alias.asname or alias.name)
+        elif isinstance(node, ast.ImportFrom) and node.module == "sys":
+            for alias in node.names:
+                if alias.name == "modules":
+                    module_names.add(alias.asname or alias.name)
+    return sys_names, module_names
+
+
 def _shadowed_import_aliases(tree: ast.AST, tracked: set[str]) -> set[str]:
     shadowed: set[str] = set()
     for node in ast.walk(tree):
@@ -314,34 +326,19 @@ def _dynamic_import_primitive_kind(
     return None
 
 
-def _is_allowlisted_dynamic_import_call(
-    relative: str,
-    node: ast.AST,
-    parent: ast.AST | None,
-    shadowed: set[str],
-) -> bool:
-    permitted = DYNAMIC_IMPORT_SOURCE_ALLOWLIST.get(relative)
-    if (
-        permitted is None
-        or not isinstance(node, ast.Name)
-        or node.id != permitted[0]
-        or node.id in shadowed
-        or not isinstance(parent, ast.Call)
-        or parent.func is not node
-        or len(parent.args) != 1
-        or parent.keywords
-    ):
-        return False
-    target = parent.args[0]
-    return (
-        isinstance(target, ast.Constant)
-        and isinstance(target.value, str)
-        and target.value == permitted[1]
-    )
-
-
 def _name_in(node: ast.AST, names: set[str]) -> bool:
     return any(isinstance(child, ast.Name) and child.id in names for child in ast.walk(node))
+
+
+def _folded_string(node: ast.AST) -> str | None:
+    if isinstance(node, ast.Constant) and isinstance(node.value, str):
+        return node.value
+    if isinstance(node, ast.BinOp) and isinstance(node.op, ast.Add):
+        left = _folded_string(node.left)
+        right = _folded_string(node.right)
+        if left is not None and right is not None:
+            return left + right
+    return None
 
 
 def _is_forbidden_reflection(
@@ -350,19 +347,31 @@ def _is_forbidden_reflection(
     parent: ast.AST | None,
     importlib_names: set[str],
     builtins_names: set[str],
+    sys_names: set[str],
+    sys_module_names: set[str],
 ) -> bool:
     module_names = {*importlib_names, *builtins_names, "__builtins__"}
-    dynamic_names = {"import_module", "__import__"}
+    dynamic_names = {"import_module", "__import__", "__builtins__"}
     if (
         isinstance(node, ast.Name)
         and isinstance(node.ctx, ast.Load)
-        and node.id in module_names
+        and (node.id in module_names or node.id in sys_module_names)
     ):
         return True
     if (
-        isinstance(node, ast.Constant)
-        and node.value in dynamic_names
+        _folded_string(node) in dynamic_names
         and isinstance(parent, (ast.Call, ast.Subscript))
+    ):
+        return True
+    if (
+        isinstance(node, ast.Name)
+        and isinstance(node.ctx, ast.Load)
+        and node.id in sys_names
+        and not (
+            isinstance(parent, ast.Attribute)
+            and parent.value is node
+            and parent.attr != "modules"
+        )
     ):
         return True
     if isinstance(node, ast.Call):
@@ -371,6 +380,7 @@ def _is_forbidden_reflection(
             "exec",
             "compile",
             "globals",
+            "locals",
             "vars",
         }:
             return True
@@ -386,6 +396,8 @@ def _is_forbidden_reflection(
                 node.args
                 and (
                     _name_in(node.args[0], module_names)
+                    or _name_in(node.args[0], sys_names)
+                    and attribute in {None, "modules", "__dict__", "__getattribute__"}
                     or attribute in {"__dict__", "__getattribute__", *dynamic_names}
                 )
             )
@@ -395,7 +407,13 @@ def _is_forbidden_reflection(
                 for argument in node.args
             )
     if isinstance(node, ast.Attribute) and node.attr in {"__dict__", "__getattribute__"}:
-        return _name_in(node.value, module_names)
+        return _name_in(node.value, module_names) or _name_in(node.value, sys_names)
+    if (
+        isinstance(node, ast.Attribute)
+        and node.attr == "modules"
+        and _name_in(node.value, sys_names)
+    ):
+        return True
     if isinstance(node, ast.Subscript):
         return (
             _subscript_key(node) in dynamic_names
@@ -426,6 +444,7 @@ def validate_network_client_boundary(root: Path) -> list[str]:
         relative = path.relative_to(root).as_posix()
         allowed_static = STATIC_NETWORK_IMPORT_ALLOWLIST.get(relative, set())
         importlib_names, builtins_names, direct_names = _dynamic_import_aliases(tree)
+        sys_names, sys_module_names = _sys_module_aliases(tree)
         tracked = {*importlib_names, *builtins_names, *direct_names, "__builtins__", "getattr"}
         shadowed = _shadowed_import_aliases(tree, tracked)
         parents = {
@@ -455,18 +474,15 @@ def validate_network_client_boundary(root: Path) -> list[str]:
                 direct_names=direct_names,
                 shadowed=shadowed,
             )
-            if primitive_kind is not None and (
-                primitive_kind == "ambiguous"
-                or not _is_allowlisted_dynamic_import_call(
-                    relative, node, parents.get(node), shadowed
-                )
-            ):
+            if primitive_kind is not None:
                 problems.append(f"unproven or network dynamic import is forbidden: {path}")
             if _is_forbidden_reflection(
                 node,
                 parent=parents.get(node),
                 importlib_names=importlib_names,
                 builtins_names=builtins_names,
+                sys_names=sys_names,
+                sys_module_names=sys_module_names,
             ):
                 problems.append(f"dynamic import reflection is forbidden: {path}")
     return sorted(set(problems))
