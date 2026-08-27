@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import itertools
+import math
 from collections import defaultdict
 from collections.abc import Iterable
 from typing import Any
@@ -45,6 +46,14 @@ def _candidate_id(
     return "oc-" + text_hash(f"{protocol_id}|{run_seed}|{condition_id}|" + canonical(ordered))[:24]
 
 
+def _control_feasibility_sha256(protocol: dict[str, Any]) -> str:
+    contract = protocol["controls"]["control_feasibility_contract"]
+    actual = digest(contract["exact_preimage"])
+    if actual != contract["sha256"]:
+        raise ValueError("control feasibility contract digest mismatch")
+    return actual
+
+
 def discover_primary_candidate(
     observations: list[dict[str, Any]],
     *,
@@ -71,7 +80,7 @@ def discover_primary_candidate(
         "minimum_active_distinct_train_episodes_per_member"
     ]
     minimum_group = protocol["discovery"]["eligibility"]["minimum_group_train_episode_coverage"]
-    eligible: list[dict[str, Any]] = []
+    activity_eligible: list[dict[str, Any]] = []
     for size in protocol["discovery"]["candidate_subset_sizes"]:
         for members_tuple in itertools.combinations(candidate_ids, size):
             members = set(members_tuple)
@@ -92,7 +101,9 @@ def discover_primary_candidate(
             )
             denominator = within + boundary
             cohesion = None if denominator == 0 else within / denominator
-            eligible.append(
+            pool = [candidate for candidate in candidate_ids if candidate not in members]
+            subset_count = math.comb(len(pool), len(members))
+            activity_eligible.append(
                 {
                     "candidate_id": _candidate_id(
                         protocol["protocol_id"], run_seed, condition_id, members
@@ -106,8 +117,13 @@ def discover_primary_candidate(
                     "member_active_episode_counts": {
                         member: len(active_episodes[member]) for member in sorted(members)
                     },
+                    "non_target_pool_count": len(pool),
+                    "same_size_control_subset_count": subset_count,
+                    "all_control_types_constructible": subset_count >= 1,
+                    "control_pool_member_ids_sha256": digest(pool),
                 }
             )
+    eligible = [row for row in activity_eligible if row["all_control_types_constructible"]]
     eligible.sort(
         key=lambda row: (
             -(row["cohesion"] if row["cohesion"] is not None else -1.0),
@@ -117,12 +133,22 @@ def discover_primary_candidate(
         )
     )
     primary = eligible[0] if eligible else None
+    absence_reason = None
+    if not activity_eligible:
+        absence_reason = "no_activity_eligible_candidate"
+    elif not eligible:
+        absence_reason = "no_control_feasible_candidate"
     return {
+        "absence_reason": absence_reason,
+        "activity_eligible_candidate_count": len(activity_eligible),
         "run_seed": run_seed,
         "condition_id": condition_id,
         "primary_candidate": primary,
         "eligible_candidates": eligible,
         "candidate_count": len(candidate_ids),
+        "control_feasibility_contract_sha256": _control_feasibility_sha256(protocol),
+        "control_feasible_candidate_count": len(eligible),
+        "infeasible_control_pool_candidate_count": len(activity_eligible) - len(eligible),
         "observation_count": len(rows),
         "discovery_input_sha256": digest(rows),
     }
@@ -136,12 +162,50 @@ def select_controls(
     run_seed: int,
     condition_id: str,
 ) -> dict[str, list[str] | None]:
+    selections, _ = select_control_memberships(
+        observations,
+        target_members,
+        candidate_id=None,
+        protocol=protocol,
+        run_seed=run_seed,
+        condition_id=condition_id,
+    )
+    return selections
+
+
+def select_control_memberships(
+    observations: list[dict[str, Any]],
+    target_members: list[str],
+    *,
+    candidate_id: str | None,
+    protocol: dict[str, Any],
+    run_seed: int,
+    condition_id: str,
+) -> tuple[dict[str, list[str] | None], list[dict[str, Any]]]:
     rows = [validate_observation(row) for row in observations]
     all_ids = sorted({row["opaque_candidate_id"] for row in rows})
-    target = set(target_members)
+    ordered_target = sorted(target_members)
+    target = set(ordered_target)
     pool = [candidate for candidate in all_ids if candidate not in target]
-    if not target or not pool:
-        return {name: None for name in protocol["controls"]["control_order"]}
+    control_order = protocol["controls"]["control_order"]
+    if not target:
+        selections = {name: None for name in control_order}
+        return selections, [
+            {
+                "candidate_id": None,
+                "complete": False,
+                "condition_id": condition_id,
+                "control_type": name,
+                "member_ids": None,
+                "non_target_pool_count": None,
+                "run_seed": run_seed,
+                "same_size_subset_count": None,
+                "selection_input_sha256": None,
+                "status": "not_applicable_candidate_absent",
+                "target_member_count": None,
+            }
+            for name in control_order
+        ]
     active_steps: dict[str, int] = defaultdict(int)
     mass: dict[str, float] = defaultdict(float)
     degree: dict[str, float] = defaultdict(float)
@@ -165,21 +229,71 @@ def select_controls(
                 exact,
                 key=lambda subset: (
                     abs(sum(metric[item] for item in subset) - target_value),
-                    text_hash(digest(sorted(subset))),
+                    digest(sorted(subset)),
                 ),
             )
         )
 
-    random_size = 1 + int(text_hash(f"c17|control|{run_seed}|{condition_id}")[:8], 16) % 4
+    random_size = 1 + int(
+        text_hash(f"c17v2|control|{run_seed}|{condition_id}")[:8], 16
+    ) % 4
     random_options = list(itertools.combinations(pool, min(random_size, len(pool))))
-    random_subset = list(min(random_options, key=lambda subset: text_hash(digest(sorted(subset)))))
-    return {
+    if not random_options:
+        raise ValueError("selected candidate has no random-control pool")
+    random_subset = list(
+        min(random_options, key=lambda subset: text_hash(digest(sorted(subset))))
+    )
+    selections = {
         "random_unmatched": random_subset,
         "size_matched": choose(defaultdict(float), 0.0),
         "degree_matched": choose(degree, sum(degree[item] for item in target)),
         "load_matched": choose(mass, sum(mass[item] for item in target)),
         "activity_matched": choose(active_steps, sum(active_steps[item] for item in target)),
     }
+    if any(value is None for value in selections.values()):
+        raise ValueError("selected candidate is missing a registered control")
+    metric_sources: dict[str, dict[str, float] | None] = {
+        "random_unmatched": None,
+        "size_matched": {item: 0.0 for item in all_ids},
+        "degree_matched": {item: float(degree[item]) for item in all_ids},
+        "load_matched": {item: float(mass[item]) for item in all_ids},
+        "activity_matched": {item: float(active_steps[item]) for item in all_ids},
+    }
+    memberships = []
+    same_size_count = math.comb(len(pool), len(target))
+    for name in control_order:
+        metric = metric_sources[name]
+        preimage = {
+            "candidate_id": candidate_id,
+            "condition_id": condition_id,
+            "control_type": name,
+            "metric_by_member": metric,
+            "non_target_pool_member_ids": pool,
+            "protocol_id": protocol["protocol_id"],
+            "random_requested_size": random_size if name == "random_unmatched" else None,
+            "run_seed": run_seed,
+            "target_member_count": len(target),
+            "target_member_ids": ordered_target,
+            "target_metric_total": None
+            if metric is None
+            else sum(metric[item] for item in ordered_target),
+        }
+        memberships.append(
+            {
+                "candidate_id": candidate_id,
+                "complete": True,
+                "condition_id": condition_id,
+                "control_type": name,
+                "member_ids": selections[name],
+                "non_target_pool_count": len(pool),
+                "run_seed": run_seed,
+                "same_size_subset_count": same_size_count,
+                "selection_input_sha256": digest(preimage),
+                "status": "complete",
+                "target_member_count": len(target),
+            }
+        )
+    return selections, memberships
 
 
 def assess_proposal(proposal: dict[str, Any] | None, outcome: str) -> dict[str, Any]:

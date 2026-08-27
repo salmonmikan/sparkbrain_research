@@ -63,7 +63,7 @@ def _frame(
     for j, value in enumerate(values):
         if value:
             key = (
-                f"c17|amplitude|{run_seed}|{split}|composition{compositionality}|"
+                f"c17v2|amplitude|{run_seed}|{split}|composition{compositionality}|"
                 f"{episode_index}|{t}|{j}"
             )
             values[j] = min(1.0, max(0.0, value + 0.02 * (2 * _uniform(key) - 1)))
@@ -103,12 +103,12 @@ def fixture_document(
                 episode_id = (
                     "ep-"
                     + text_hash(
-                        f"c17|episode|{run_seed}|{split}|composition{compositionality}|{episode_index}"
+                        f"c17v2|episode|{run_seed}|{split}|composition{compositionality}|{episode_index}"
                     )[:24]
                 )
                 episode_seed = (
                     spec["split_seed_bases"][split]
-                    + 1000 * (run_seed - 4701)
+                    + 1000 * (run_seed - spec["run_seeds"][0])
                     + 100 * (compositionality - 2)
                     + episode_index
                 )

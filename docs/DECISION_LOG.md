@@ -1,5 +1,32 @@
 # Decision Log
 
+## D-V03-0030 — Retain C18 v6 as engineering-only observability evidence
+
+**Decision (2026-08-28):** Integrate the independently audited C18 v6
+exact-seven official bundle from execution pin
+`c0c242d848588d76015734a309f72fed0bd1d380` with fixed seed `1802`.
+
+**Reason:** The retained preflight evidence, strict schema validation,
+deterministic replay, parent-bound fork lineage, and static offline export
+support the engineering observability/replay contract. They do not evaluate
+scientific efficacy.
+
+**Scope:** Engineering is `accepted`; science is `not_supported`. No claim
+grade, v0.2 contract, C17 v1 artifact, C06/C08 finding, package version,
+persisted schema, or release metadata changes.
+
+## D-V03-0029 — Keep C18 trace/checkpoint integration isolated from v0.2
+
+**Decision (2026-08-28):** Add C18 under `sparkbrain.v03_integration` with
+schema `0.3`, explicit branch/checkpoint lineage, and state-hash replay. Do not
+modify v0.2 schemas, readers, `/api` routes, existing Brain Lab, package
+version, release manifests, C06/C08 findings, or C17 v1 artifacts.
+
+**Reason:** C17 v2 is independently in progress. C18 can inspect only the
+stable public C17-v1 contract without private restoration or reinterpretation.
+Fail-closed evidence citations prevent the UI from presenting inferred
+attribution as stored state.
+
 ## D-V03-0027 — Accept C15 v4 at the registered engineering boundary
 
 **Decision (2026-08-27):** Accept C15 v4's engineering result from the exact-eight bundle under
@@ -1033,3 +1060,140 @@ metadata, C06/C08 evidence, and accepted dependency evidence remain unchanged.
 **Reason:** The observed failure is a design-level control-construction defect, not a failed seed
 and not evidence for or against the preregistered organ hypothesis. Preserving the bytes and
 separating a future correction prevents retrospective repair of the inspected v1 result.
+
+## D-V03-0032 — Preregister the C17 v2 control-feasibility correction
+
+**Decision (2026-08-28):** Preregister protocol `c17-functional-organs-v2`, run
+`c17-functional-organs-main-v2`, as a new engineering correction under
+`artifacts/v03/c17_functional_organs_v2/`. The machine-readable authority is the disabled
+`preregistration.json`, raw SHA-256
+`8c970b69fd2ded26d8eb49df9c88654d0991868d174ae081f253a4b57df25491`. Its base and source pins
+are null and its runner is disabled. This decision authorizes no official model, controller, or
+reserved-fixture model execution.
+
+C17 v1 remains immutable engineering-failure evidence. Its empty R4 comparator pool is treated
+only as `engineering_feasibility_failure`; v1 science is
+`not_evaluated_implementation_failure`, not positive or negative organ evidence. V2 does not
+change any scientific metric, threshold, primary/secondary resource cell, proposal/assessment
+boundary, bootstrap method, claim boundary, package version, or persisted schema.
+
+V2 adds one train-only candidate-eligibility invariant. A candidate of size `m` is rankable only
+when the non-target pool has at least `m` members, equivalently when
+`comb(non_target_pool_count, m) >= 1`. All five controls select exactly `m` members from this
+same domain. The existing permission for different control types to reuse one subset remains;
+requiring five distinct or disjoint subsets would introduce an unregistered scientific change.
+Candidate absence remains a valid scientific negative and may be engineering-complete. Once a
+candidate is selected, a missing, wrong-size, overlapping, or out-of-pool control fails the seed
+closed before development, test, or held-out evaluation and leaves science unevaluated.
+
+Freeze official seeds 4801--4805, reserved pure-fixture seeds 9901801--9901802, bootstrap seed
+5817, split bases 181000/281000/481000/581000, and the distinct `c17v2` identity namespace.
+Two independent standard-library implementations reproduced all five full-corpus and all five
+manifest SHA-256 values without importing or executing model/controller code.
+
+The final artifact inventory is exact-ten. Two isolated workers first generate pre-final
+exact-nine staging bundles under `PYTHONHASHSEED=11801` and `21801`; neither worker may assert
+reproduction. A separate compare/finalize mode validates both bundles, compares the nine raw byte
+streams, emits `reproduction_compare_manifest.json`, and only then regenerates the final
+acceptance matrix and report. The comparison manifest hashes neither itself nor those final two
+files. The validator reconstructs their pending pre-final forms in memory, so reproduction
+evidence is bound without a self-hash cycle.
+
+The preregistration also freezes exact artifact and nested-row schemas, nullability, enums,
+ordering, uniqueness, raw-row scaling, dynamic feasibility equations, zero-success behavior, and
+external-finalization evidence. C17 v1 exact-nine and source bytes are directly protected; its
+recursive protected manifest continues to bind C06/C08, accepted dependencies, package/schema,
+release metadata, and claim boundaries.
+
+Implementation may change only seven paths: C17 contracts, worlds, discovery, evaluation, the
+existing runner, and its two test files. `v03_organs/__init__.py` is protected because no public API
+change is required. After source-only implementation and independent audit, a separate amendment
+may change exactly `base_commit`, `base_sha256`, `source_commit`, and
+`runner_execution_allowed`. Any other preregistration change requires another protocol.
+
+**Reason:** Train-only construction feasibility repairs the specific v1 engineering defect while
+preserving the negative-result boundary and all scientific degrees of freedom. External evidence,
+rather than a worker-controlled flag, is the minimum non-circular basis for byte-reproduction
+acceptance.
+
+## D-V03-0033 — Complete the disabled C17 v2 integrity schemas
+
+**Decision (2026-08-28):** Correct only integrity omissions in the still-disabled C17 v2
+preregistration. The corrected canonical raw SHA-256 is
+`b9e4dcda26d5d85064b3fbf6d453a8ed9efe0b7541fd5cb617ef37868be918ca`.
+Base/source pins remain null and the runner remains disabled; no source, model, test, controller,
+reserved model fixture, or official execution is authorized.
+
+Add `secondary_cell_status_rows` to the exact acceptance-matrix top-level schema. It contains
+exactly four rows, ordered R1 through R4, with exact fields `condition_id`,
+`primary_rescue_allowed`, `role`, and `scientific_status`; every row is secondary and cannot rescue
+R0. Add `not_evaluated_implementation_failure` to the registered status categories so the v1 and
+selected-candidate failure contracts use an explicitly valid status.
+
+Complete the external comparison schema with exact top-level and nested keys, types, values,
+nullability, enums, array order, and no-extra-key rules. `protocol_sha256` is the digest of the raw
+pinned preregistration bytes, including exactly one LF. It is not the disabled preregistration hash.
+The pinned preregistration contains no comparison-manifest or final acceptance/report hash, so both
+staging runs and the final exact-ten bundle can share this byte string without a hash cycle.
+
+Freeze the control-feasibility preimage and its SHA-256
+`7a893c4f898e7bd560181e028efcaa4da790c6edab12ef2a5bc13ac4b638abd0`, plus the exact canonical
+preimage for each `selection_input_sha256`. The feasibility requirement `n >= m` exists for the
+four matched controls. Correct the earlier D-V03-0032 shorthand: random-unmatched is not
+target-size matched. It retains the v1 size-hash behavior with a fresh `c17v2` preimage, requests
+size one through four, clips that size to the non-target pool, and hash-ranks combinations. Size-,
+degree-, load-, and activity-matched controls each retain target size `m`.
+
+**Reason:** A validator cannot enforce cardinality, evidence provenance, or external reproduction
+from prose-only or incomplete nested schemas. These additions remove ambiguity without changing a
+science metric, threshold, resource cell, fixture, rank, proposal/assessment boundary, or claim.
+
+## D-V03-0034 — Remove the final C17 v2 preregistration contradictions
+
+**Decision (2026-08-28):** Correct two residual prose contradictions in the disabled C17 v2
+machine preregistration. The corrected canonical raw SHA-256 is
+`89773ca193e18784187926424a1490c9551b11d7511e51dd370d36aaa026d6ca`.
+Base/source pins remain null and the runner remains disabled; no source, test, model, controller,
+reserved model fixture, or official execution is authorized.
+
+The validator and stop-condition wording now use one type-specific control rule. Random-unmatched
+requests a hash-derived size from one through four and clips it to non-target pool length. The four
+matched controls each require target size `m`. A complete row must satisfy its own registered size
+rule, not a universal same-size rule.
+
+The obsolete comparison-input summary that described an array preimage is replaced by a reference
+to the already frozen exact-key object in `comparison_input_sha256_preimage`. This correction does
+not alter that object's keys, types, ordering, serialization, or digest rule.
+
+**Reason:** Contradictory summaries can cause a conforming implementation to reject valid random
+controls or hash a different reproduction preimage. Removing them changes no experiment degree of
+freedom.
+
+## D-V03-0035 — Accept C17 v2 engineering evidence and retain the negative organ result
+
+**Decision (2026-08-28):** Accept the independently audited C17 v2 official execution at its
+registered engineering boundary and retain its final exact-ten bundle under
+`artifacts/v03/c17_functional_organs_v2/`. The run completed official seeds 4801--4805 with no failed
+seed and passed all 16 engineering gates. Every one of the 25 seed/condition cells recorded primary
+candidate absence: 20 because no group passed the frozen activity filter and five because no
+activity-eligible group also satisfied the train-only control-feasibility predicate. The
+preregistered candidate-absence contract therefore makes this an engineering-complete scientific
+negative. Scientific status is `not_supported`, all eight primary scientific gates remain false,
+and CL-008 remains E0.
+
+Two separately spawned staging workers, with fixed `PYTHONHASHSEED` values 11801 and 21801, produced
+byte-identical registered exact-nine bundles. Their combined SHA-256 is
+`177aca36f3f2def1b1b49f6760fd32c84418cfdda4f94415fc64b9ead3533d1a`. The runner validated worker
+provenance and both pre-final bundles before emitting the canonical comparison manifest, raw
+SHA-256 `a9bf16cc3d29f250fec18cac0e9821ba1f7ae02f6a7b9fe793f95419dfecc7c2`, and one final exact-ten
+bundle. This decision does not assert byte equality between two final exact-ten directories.
+
+C17 v1 remains immutable implementation-failure evidence. No v2 threshold, fixture, seed, resource
+cell, metric, proposal/assessment boundary, or control rule is changed after inspection. Package
+0.2.1, persisted schema 0.2, release files, C06/C08 evidence, accepted C14--C16 evidence, and all
+other claim grades remain unchanged.
+
+**Reason:** The corrected feasibility contract ran exactly as preregistered and preserved
+candidate absence as a falsifiable negative result. Recording engineering acceptance separately
+from scientific support prevents a completed pipeline from being mistaken for evidence that a
+functional organ formed.
