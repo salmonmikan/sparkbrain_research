@@ -15,6 +15,8 @@ ROOT = Path(__file__).resolve().parents[1]
 PROTOCOL_RELATIVE = "artifacts/v03/c18_brain_lab_v6/preregistration.json"
 P_PREREGISTRATION_COMMIT = "43e5b3c154a389feb047d74258248916d5b4a414"
 P_PREREGISTRATION_SIDECAR = "artifacts/v03/c18_brain_lab_v6/preregistration_hashes.json"
+V5_PREREGISTRATION = "artifacts/v03/c18_brain_lab_v5/preregistration.json"
+V5_PREREGISTRATION_SIDECAR = "artifacts/v03/c18_brain_lab_v5/preregistration_hashes.json"
 
 
 def load_protocol(path: Path, *, require_enabled: bool) -> dict:
@@ -177,10 +179,28 @@ def preflight(
     post_source_paths = set(filter(None, _git("diff", "--name-only", source, "HEAD").splitlines()))
     allowed_post_source = set()
     if mode == "integration":
-        allowed_post_source = {
-            PROTOCOL_RELATIVE,
-            "artifacts/v03/c18_brain_lab_v6/preregistration_hashes.json",
+        historical = set(
+            filter(
+                None,
+                _git("diff", "--name-only", source, P_PREREGISTRATION_COMMIT).splitlines(),
+            )
+        ) - set(expected) - {
+            "schemas/checkpoint-v0.3.schema.json",
+            "schemas/trace-v0.3.schema.json",
         }
+        allowed_post_source = {
+            V5_PREREGISTRATION,
+            V5_PREREGISTRATION_SIDECAR,
+            PROTOCOL_RELATIVE,
+            P_PREREGISTRATION_SIDECAR,
+        }
+        if historical != allowed_post_source:
+            raise RuntimeError("C18 integration historical docs mismatch")
+        for path in (V5_PREREGISTRATION, V5_PREREGISTRATION_SIDECAR):
+            if _git("rev-parse", f"HEAD:{path}") != _git(
+                "rev-parse", f"{P_PREREGISTRATION_COMMIT}:{path}"
+            ):
+                raise RuntimeError("C18 integration v5 preregistration blobs mismatch")
     if post_source_paths - allowed_post_source:
         raise RuntimeError("C18 post-source scope invalid")
     source_hashes = _require_source_tree_hashes(protocol, source_diff_paths)
