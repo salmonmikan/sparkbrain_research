@@ -28,7 +28,7 @@ def main() -> None:
             output_root=args.output_root.resolve(),
             source_revision=args.source_revision,
             c19_status=args.c19_status,
-            c19_artifacts=args.c19_artifact,
+            c19_artifacts=args.c19_artifact or None,
         )
     except (OSError, ValueError) as exc:
         raise SystemExit(str(exc)) from exc
