@@ -195,48 +195,83 @@ def assess_proposal(proposal: dict[str, Any] | None, outcome: str) -> dict[str, 
 
 
 def execute_c14_c15_boundary(
-    *, proposal_belief: str, outcome: str, alternate_proposal: object | None = None
+    *,
+    heads: Any,
+    entity_key: str,
+    evidence_prefix: str,
+    abstention_threshold: float,
+    route: str = "proposal",
 ) -> dict[str, Any]:
-    """Run the accepted C14 proposal through C15 v4's assessment-only veto.
+    """Exercise the public C14-before-C15 controller with learned heads.
 
-    C17 cannot pass an alternate proposal into this boundary. C15 receives one
-    already-created C14 ``IgnitionDecision`` and can return either those exact
-    proposal bytes or a no-Ignition veto; it has no proposal factory/replacement
-    input or output.
+    The only inputs are a frozen checkpoint's actual head output and the C14
+    evidence route.  There is intentionally no alternate-proposal argument.
     """
-    if alternate_proposal is not None:
-        raise ValueError("alternate proposals are unrepresentable at the C15 boundary")
-    if outcome not in {"allow", "veto", "abstain"}:
-        raise ValueError("unregistered C15 assessment outcome")
-    from types import MappingProxyType
-
-    from sparkbrain.v03_seed.coalition import decide_c14
-    from sparkbrain.v03_seed.contracts import CoalitionState
     from sparkbrain.v03_seed.revision import (
-        RevisionBeliefSnapshot,
+        BELIEF_ORDER,
         RevisionController,
         RevisionHeadOutput,
+        RevisionObservation,
     )
+    from sparkbrain.v03_seed.revision_worlds import FixtureEvidence
 
-    coalition = CoalitionState(
-        belief_key=proposal_belief,
-        object_key="c17-opaque-entity",
-        score=0.8,
-        activation=1.0,
-        effective_support=2.0,
-        effective_contradiction=0.0,
-        redundancy=0.0,
-        source_count=2,
-        independent_group_count=2,
-        evidence_count=2,
-        stability=2,
-        support_ids=("c17-opaque-support-a", "c17-opaque-support-b"),
-        contradiction_ids=(),
-        normalized_recency=1.0,
+    if not isinstance(heads, RevisionHeadOutput):
+        raise ValueError("C17 assessment requires actual C15 RevisionHeadOutput")
+    if route not in {"proposal", "none", "rejection"}:
+        raise ValueError("unregistered C14 route")
+    if route == "none":
+        return {
+            "route": route,
+            "c14_proposal_sha256": None,
+            "c14_ignited": False,
+            "c14_reason": "no_proposal",
+            "assessment": "not_called",
+            "assessment_allowed": False,
+            "assessment_reason": "not_called",
+            "output_proposal_sha256": None,
+            "replacement_possible": False,
+        }
+    belief = min(BELIEF_ORDER, key=lambda key: (-heads.belief_probabilities[key], key))
+
+    def evidence(stage: str, count: int, time: float) -> tuple[FixtureEvidence, ...]:
+        return tuple(
+            FixtureEvidence(
+                correlation_group=f"{evidence_prefix}-{stage}-group-{index}",
+                entity_key=entity_key,
+                evidence_id=f"{evidence_prefix}-{stage}-evidence-{index}",
+                hypothesis_id=belief,
+                polarity="support",
+                source_id=f"{evidence_prefix}-{stage}-source-{index}",
+                strength=1.0,
+                time=time,
+            )
+            for index in range(count)
+        )
+
+    controller = RevisionController(abstention_threshold=abstention_threshold)
+    if route == "proposal":
+        context = RevisionObservation(
+            entity_key=entity_key,
+            time=0.0,
+            evidence=evidence("context", 2, 0.0),
+            entity_condition="E1_oracle_entity",
+            heads=heads,
+        )
+        context_decision = controller.process_stage(context, stage_role="context")
+        if not context_decision.ignited:
+            raise ValueError("learned C17 heads failed the registered C14 context route")
+        assessment_evidence = evidence("assessment", 2, 1.0)
+    else:
+        assessment_evidence = evidence("rejection", 1, 0.0)
+    observation = RevisionObservation(
+        entity_key=entity_key,
+        time=1.0 if route == "proposal" else 0.0,
+        evidence=assessment_evidence,
+        entity_condition="E1_oracle_entity",
+        heads=heads,
     )
-    proposal = decide_c14((coalition,))
-    if not proposal.ignited:
-        raise ValueError("registered C14 proposal construction failed")
+    decision = controller.process_stage(observation, stage_role="assessment")
+    proposal = decision.proposal
     proposal_body = {
         "belief_key": proposal.belief_key,
         "object_key": proposal.object_key,
@@ -248,33 +283,31 @@ def execute_c14_c15_boundary(
             for row in proposal.coalitions
         ],
     }
-    before = digest(proposal_body)
-    heads = RevisionHeadOutput(
-        belief_probabilities=MappingProxyType({"alpha": 0.05, "beta": 0.9, "gamma": 0.05}),
-        maintain_probability=1.0,
-        update_probability=1.0 if outcome == "allow" else 0.0,
-        recovery_probability=1.0 if outcome == "allow" else 0.0,
-        abstention_probability=1.0 if outcome == "abstain" else 0.0,
-    )
-    state = RevisionBeliefSnapshot(
-        activations=MappingProxyType({"alpha": 1.0, "beta": 0.0, "gamma": 0.0}),
-        citations=(),
-        entity_key="c17-opaque-entity",
-        history=("alpha",),
-        state_hash="0" * 64,
-        winner="alpha",
-    )
-    assessed = RevisionController()._apply_veto(proposal, heads, state)
-    if digest(proposal_body) != before:
-        raise ValueError("C15 assessment mutated the C14 proposal")
-    if assessed.ignited and assessed != proposal:
+    proposal_hash = digest(proposal_body)
+    if not proposal.ignited:
+        assessment = "not_called"
+    elif decision.ignited:
+        assessment = "allow"
+    elif decision.reason == "learned_insufficient_information":
+        assessment = "abstain"
+    else:
+        assessment = "veto"
+    if decision.ignited and (
+        decision.belief_key != proposal.belief_key
+        or decision.object_key != proposal.object_key
+        or decision.score != proposal.score
+        or decision.margin != proposal.margin
+        or decision.gate_passes[-1] != proposal
+    ):
         raise ValueError("C15 replaced the C14 proposal")
     return {
-        "c14_proposal_sha256": before,
+        "route": route,
+        "c14_proposal_sha256": proposal_hash,
         "c14_ignited": proposal.ignited,
-        "assessment": outcome,
-        "assessment_allowed": assessed == proposal,
-        "assessment_reason": assessed.reason,
-        "output_proposal_sha256": before if assessed == proposal else None,
+        "c14_reason": proposal.reason,
+        "assessment": assessment,
+        "assessment_allowed": decision.ignited,
+        "assessment_reason": decision.reason,
+        "output_proposal_sha256": proposal_hash if decision.ignited else None,
         "replacement_possible": False,
     }

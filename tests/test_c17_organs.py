@@ -15,7 +15,6 @@ from sparkbrain.v03_organs.contracts import (
 from sparkbrain.v03_organs.discovery import (
     assess_proposal,
     discover_primary_candidate,
-    execute_c14_c15_boundary,
     select_controls,
 )
 from sparkbrain.v03_organs.worlds import fixture_document, fixture_hashes, fixture_manifest
@@ -246,21 +245,20 @@ def test_c14_proposal_bytes_are_invariant_and_c15_cannot_create_one():
     assert assess_proposal(None, "allow")["assessment"] == "not_called"
 
 
-def test_actual_c14_proposal_and_c15_v4_assessment_only_boundary():
-    rows = [
-        execute_c14_c15_boundary(proposal_belief="beta", outcome=outcome)
-        for outcome in ("allow", "veto", "abstain")
-    ]
-    assert rows[0]["assessment_allowed"] is True
-    assert rows[1]["assessment_allowed"] is rows[2]["assessment_allowed"] is False
-    assert len({row["c14_proposal_sha256"] for row in rows}) == 1
-    assert all(row["replacement_possible"] is False for row in rows)
-    with pytest.raises(ValueError, match="unrepresentable"):
-        execute_c14_c15_boundary(
-            proposal_belief="beta",
-            outcome="allow",
-            alternate_proposal={"belief": "gamma"},
-        )
+def test_actual_c14_proposal_and_c15_v4_assessment_only_boundary(reserved_bundle):
+    _, bundle = reserved_bundle
+    checkpoint = bundle["structural_metrics.json"]["assessment_checkpoints"][0]
+    rows = checkpoint["boundary_rows"]
+    assert {(row["boundary"]["route"], row["boundary"]["assessment"]) for row in rows} == {
+        ("proposal", "allow"),
+        ("proposal", "veto"),
+        ("proposal", "abstain"),
+        ("none", "not_called"),
+        ("rejection", "not_called"),
+    }
+    proposal_rows = [row["boundary"] for row in rows if row["boundary"]["route"] == "proposal"]
+    assert all(row["c14_ignited"] for row in proposal_rows)
+    assert all(row["replacement_possible"] is False for row in proposal_rows)
 
 
 @pytest.fixture(scope="module")
@@ -318,6 +316,7 @@ def test_bundle_validator_recalculates_inventory_and_cardinality(reserved_bundle
 def test_resource_interventions_share_bank_but_change_evaluation(reserved_bundle):
     _, bundle = reserved_bundle
     rows = {row["condition_id"]: row for row in bundle["resource_conditions.json"]["seed_counters"]}
+    assert len({row["assessment_checkpoint_sha256"] for row in rows.values()}) == 1
     assert (
         rows["R0_baseline"]["pre_resource_bank_sha256"]
         == rows["R2_bandwidth_low"]["pre_resource_bank_sha256"]
@@ -330,6 +329,58 @@ def test_resource_interventions_share_bank_but_change_evaluation(reserved_bundle
     assert (
         rows["R0_baseline"]["evaluation_behavior_sha256"]
         != rows["R3_workspace_low"]["evaluation_behavior_sha256"]
+    )
+
+
+def test_checkpoint_uses_disjoint_r0_train_dev_and_is_artifact_verifiable(reserved_bundle):
+    _, bundle = reserved_bundle
+    checkpoint = bundle["structural_metrics.json"]["assessment_checkpoints"][0]
+    assert (
+        checkpoint["training_condition_id"]
+        == checkpoint["selection_condition_id"]
+        == "R0_baseline"
+    )
+    assert checkpoint["training_split"] == "train"
+    assert checkpoint["selection_split"] == "dev"
+    assert not set(checkpoint["training_episode_ids"]) & set(checkpoint["selection_episode_ids"])
+    assert checkpoint["selected_epoch"] in {2, 4, 6}
+    assert len(checkpoint["calibration_scores"]) == 9
+
+
+def test_candidate_absence_is_engineering_success_and_scientific_negative(
+    protocol, monkeypatch
+):
+    from sparkbrain.v03_organs import evaluation
+
+    original = evaluation.discover_primary_candidate
+
+    def absent(*args, **kwargs):
+        row = original(*args, **kwargs)
+        return {**row, "primary_candidate": None, "eligible_candidates": []}
+
+    monkeypatch.setattr(evaluation, "discover_primary_candidate", absent)
+    value = copy.deepcopy(protocol)
+    value["fixtures"]["run_seeds"] = [9901701]
+    value["statistics"]["bootstrap_resamples"] = 5
+    value["runner_execution_allowed"] = True
+    value["base_commit"] = "b" * 40
+    value["base_sha256"] = "c" * 64
+    value["source_commit"] = "a" * 40
+    for manifest in value["protected_hash_manifest"].values():
+        for relative in manifest:
+            manifest[relative] = evaluation.digest_bytes((ROOT / relative).read_bytes())
+    bundle = evaluation.generate_bundle(value, "a" * 40, reproduction_exact=True)
+    evaluation.validate_bundle(
+        bundle, value, "a" * 40, reproduction_exact=True
+    )
+    acceptance = bundle["acceptance_matrix.json"]
+    assert acceptance["engineering_status"] == "accepted"
+    assert acceptance["scientific_status"] == "not_supported"
+    assert acceptance["failed_seeds"] == []
+    assert all(row["primary_candidate"] is None for row in bundle["candidate_discovery.jsonl"])
+    assert all(
+        row["member_ids"] is None and row["complete"] is False
+        for row in bundle["matched_ablations.json"]["control_membership_rows"]
     )
 
 
@@ -404,6 +455,7 @@ def test_discovery_final_tie_break_is_single_member_list_hash(protocol):
         ("bootstrap", "bootstrap"),
         ("science_gate", "scientific gates"),
         ("engineering_gate", "engineering gates"),
+        ("checkpoint", "engineering gates"),
     ],
 )
 def test_validator_rejects_metric_and_gate_tamper(reserved_bundle, tamper, match):
@@ -418,6 +470,11 @@ def test_validator_rejects_metric_and_gate_tamper(reserved_bundle, tamper, match
     elif tamper == "science_gate":
         broken["acceptance_matrix.json"]["primary_scientific_gates"][0]["passed"] ^= True
     else:
-        broken["acceptance_matrix.json"]["engineering_gates"][0]["passed"] ^= True
+        if tamper == "engineering_gate":
+            broken["acceptance_matrix.json"]["engineering_gates"][0]["passed"] ^= True
+        else:
+            broken["structural_metrics.json"]["assessment_checkpoints"][0][
+                "checkpoint_sha256"
+            ] = "0" * 64
     with pytest.raises(ValueError, match=match):
         validate_bundle(broken, protocol, "a" * 40)

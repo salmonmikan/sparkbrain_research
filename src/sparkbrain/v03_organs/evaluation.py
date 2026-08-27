@@ -110,6 +110,302 @@ def _query_activations(bank: Any, frame: dict[str, Any]) -> dict[str, float]:
     return result
 
 
+def _assessment_target(frame: dict[str, Any]) -> str:
+    return ("allow", "veto", "abstain", "abstain")[frame["evaluator_function_index"]]
+
+
+def _assessment_model_call(frame: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "entity_key": frame["entity_key"],
+        "features": [frame["base_values"], *([[0.0] * 12] * 4)],
+        "evidence_ids": [frame["sample_id"], None, None, None, None],
+        "padding_mask": [True, False, False, False, False],
+    }
+
+
+def _assessment_state(model: Any) -> dict[str, Any]:
+    return {
+        name: tensor.detach().cpu().tolist()
+        for name, tensor in sorted(model.state_dict().items())
+    }
+
+
+def _load_assessment_model(state: dict[str, Any]) -> Any:
+    import torch
+
+    from sparkbrain.v03_learned.model import C15RevisionModel
+
+    model = C15RevisionModel()
+    current = model.state_dict()
+    if set(state) != set(current):
+        raise ValueError("C17 assessment checkpoint state inventory mismatch")
+    model.load_state_dict(
+        {
+            name: torch.tensor(state[name], dtype=current[name].dtype)
+            for name in sorted(current)
+        },
+        strict=True,
+    )
+    model.eval()
+    model.reset_runtime()
+    return model
+
+
+def _assessment_heads(output: Any, temperature: float) -> Any:
+    import torch
+
+    from sparkbrain.v03_seed.revision import BELIEF_ORDER, RevisionHeadOutput
+
+    raw = [
+        float(value)
+        for value in output.conditional_belief_probabilities(
+            temperature=temperature
+        ).detach().cpu()
+    ]
+    total = sum(raw)
+    normalized = [value / total for value in raw]
+    normalized[-1] = 1.0 - sum(normalized[:-1])
+    return RevisionHeadOutput(
+        belief_probabilities=dict(zip(BELIEF_ORDER, normalized, strict=True)),
+        maintain_probability=float(torch.sigmoid(output.maintain_logit).detach().cpu()),
+        update_probability=float(torch.sigmoid(output.update_logit).detach().cpu()),
+        recovery_probability=float(torch.sigmoid(output.recovery_logit).detach().cpu()),
+        abstention_probability=float(torch.sigmoid(output.abstention_logit).detach().cpu()),
+    )
+
+
+def _assessment_loss(output: Any, target: str) -> Any:
+    import torch
+    import torch.nn.functional as functional
+
+    belief = functional.cross_entropy(output.belief_logits.reshape(1, -1), torch.tensor([1]))
+    allow = torch.tensor(1.0 if target == "allow" else 0.0)
+    abstain = torch.tensor(1.0 if target == "abstain" else 0.0)
+    maintain = functional.binary_cross_entropy_with_logits(output.maintain_logit, allow)
+    abstention = functional.binary_cross_entropy_with_logits(
+        output.abstention_logit, abstain
+    )
+    return belief + maintain + abstention
+
+
+def _train_assessment_checkpoint(
+    protocol: dict[str, Any], run_seed: int, r0_cell: dict[str, Any]
+) -> tuple[dict[str, Any], Any]:
+    import torch
+
+    from sparkbrain.v03_learned.model import C15RevisionModel
+    from sparkbrain.v03_learned.training import (
+        ABSTENTION_THRESHOLD_GRID,
+        TEMPERATURE_GRID,
+        CalibrationScore,
+        CheckpointScore,
+        select_calibration,
+        select_checkpoint,
+    )
+
+    train_episodes = _split(r0_cell, "train")
+    dev_episodes = _split(r0_cell, "dev")
+    train_frames = [
+        frame for episode in train_episodes for frame in episode["frames"] if frame["scoring"]
+    ]
+    dev_frames = [
+        frame for episode in dev_episodes for frame in episode["frames"] if frame["scoring"]
+    ]
+    train_ids = [episode["episode_id"] for episode in train_episodes]
+    dev_ids = [episode["episode_id"] for episode in dev_episodes]
+    if set(train_ids) & set(dev_ids):
+        raise ValueError("C17 assessment train/dev partitions must be disjoint")
+    torch.manual_seed(run_seed)
+    torch.use_deterministic_algorithms(True)
+    torch.set_num_threads(1)
+    model = C15RevisionModel()
+    optimizer = torch.optim.Adam(model.parameters(), lr=0.03, weight_decay=0.0)
+    checkpoints: dict[int, dict[str, Any]] = {}
+    optimizer_steps = 0
+    for epoch in range(1, 7):
+        model.train()
+        for _ in range(4):
+            for frame in train_frames:
+                optimizer.zero_grad(set_to_none=True)
+                model.reset_runtime()
+                output = model.forward_fixture(_assessment_model_call(frame))
+                loss = _assessment_loss(output, _assessment_target(frame))
+                loss.backward()
+                torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=2.0)
+                optimizer.step()
+                optimizer_steps += 1
+        if epoch in {2, 4, 6}:
+            state = _assessment_state(model)
+            checkpoints[epoch] = {"state": state, "sha256": digest(state)}
+
+    checkpoint_scores = []
+    for epoch in (2, 4, 6):
+        candidate = _load_assessment_model(checkpoints[epoch]["state"])
+        losses = []
+        with torch.no_grad():
+            for frame in dev_frames:
+                candidate.reset_runtime()
+                losses.append(
+                    float(
+                        _assessment_loss(
+                            candidate.forward_fixture(_assessment_model_call(frame)),
+                            _assessment_target(frame),
+                        ).cpu()
+                    )
+                )
+        checkpoint_scores.append(
+            CheckpointScore(epoch=epoch, weighted_objective_total=sum(losses) / len(losses))
+        )
+    selected = select_checkpoint(checkpoint_scores)
+    selected_state = checkpoints[selected.epoch]["state"]
+    selected_model = _load_assessment_model(selected_state)
+
+    calibration_scores = []
+    for temperature in TEMPERATURE_GRID:
+        for threshold in ABSTENTION_THRESHOLD_GRID:
+            belief_errors = []
+            abstention_errors = []
+            with torch.no_grad():
+                for frame in dev_frames:
+                    selected_model.reset_runtime()
+                    output = selected_model.forward_fixture(_assessment_model_call(frame))
+                    probabilities = output.conditional_belief_probabilities(
+                        temperature=temperature
+                    )
+                    target = torch.tensor([0.0, 1.0, 0.0])
+                    belief_errors.append(float(torch.sum((probabilities - target) ** 2)))
+                    abstention = float(torch.sigmoid(output.abstention_logit))
+                    truth = float(_assessment_target(frame) == "abstain")
+                    abstention_errors.append((float(abstention >= threshold) - truth) ** 2)
+            calibration_scores.append(
+                CalibrationScore(
+                    temperature=temperature,
+                    abstention_threshold=threshold,
+                    belief_brier=sum(belief_errors) / len(belief_errors),
+                    abstention_brier=sum(abstention_errors) / len(abstention_errors),
+                )
+            )
+    calibration = select_calibration(calibration_scores)
+    boundary_rows = []
+    seen: set[str] = set()
+    with torch.no_grad():
+        for frame in dev_frames:
+            selected_model.reset_runtime()
+            call = _assessment_model_call(frame)
+            heads = _assessment_heads(
+                selected_model.forward_fixture(call), calibration.temperature
+            )
+            boundary = execute_c14_c15_boundary(
+                heads=heads,
+                entity_key=frame["entity_key"],
+                evidence_prefix=f"c17-{run_seed}-{frame['sample_id']}",
+                abstention_threshold=calibration.abstention_threshold,
+            )
+            if boundary["assessment"] in {"allow", "veto", "abstain"} - seen:
+                boundary_rows.append(
+                    {
+                        "model_call": call,
+                        "model_call_sha256": digest(call),
+                        "heads": heads.to_dict(),
+                        "boundary": boundary,
+                    }
+                )
+                seen.add(boundary["assessment"])
+            if seen == {"allow", "veto", "abstain"}:
+                break
+    if seen != {"allow", "veto", "abstain"}:
+        raise ValueError("C17 learned checkpoint did not realize all assessment outcomes")
+    reference = boundary_rows[0]
+    from sparkbrain.v03_seed.revision import RevisionHeadOutput
+
+    learned_heads = RevisionHeadOutput.from_dict(reference["heads"])
+    for route in ("none", "rejection"):
+        boundary_rows.append(
+            {
+                "model_call": reference["model_call"],
+                "model_call_sha256": reference["model_call_sha256"],
+                "heads": reference["heads"],
+                "boundary": execute_c14_c15_boundary(
+                    heads=learned_heads,
+                    entity_key=reference["model_call"]["entity_key"],
+                    evidence_prefix=f"c17-{run_seed}-{route}",
+                    abstention_threshold=calibration.abstention_threshold,
+                    route=route,
+                ),
+            }
+        )
+    record = {
+        "run_seed": run_seed,
+        "training_condition_id": "R0_baseline",
+        "training_split": "train",
+        "training_episode_ids": train_ids,
+        "training_visible_sha256": digest(
+            [_assessment_model_call(frame) for frame in train_frames]
+        ),
+        "training_target_sha256": digest(
+            [_assessment_target(frame) for frame in train_frames]
+        ),
+        "optimizer_steps": optimizer_steps,
+        "selection_condition_id": "R0_baseline",
+        "selection_split": "dev",
+        "selection_episode_ids": dev_ids,
+        "selection_visible_sha256": digest(
+            [_assessment_model_call(frame) for frame in dev_frames]
+        ),
+        "selection_target_sha256": digest([_assessment_target(frame) for frame in dev_frames]),
+        "checkpoint_scores": [
+            {
+                "epoch": score.epoch,
+                "weighted_objective_total": score.weighted_objective_total,
+                "sha256": checkpoints[score.epoch]["sha256"],
+            }
+            for score in checkpoint_scores
+        ],
+        "selected_epoch": selected.epoch,
+        "checkpoint_sha256": checkpoints[selected.epoch]["sha256"],
+        "checkpoint_state": selected_state,
+        "calibration_scores": [
+            {
+                "temperature": score.temperature,
+                "abstention_threshold": score.abstention_threshold,
+                "belief_brier": score.belief_brier,
+                "abstention_brier": score.abstention_brier,
+            }
+            for score in calibration_scores
+        ],
+        "temperature": calibration.temperature,
+        "abstention_threshold": calibration.abstention_threshold,
+        "shared_resource_condition_ids": protocol["resource_conditions"]["condition_order"],
+        "boundary_rows": boundary_rows,
+    }
+    return record, selected_model
+
+
+def _assess_frame(
+    model: Any,
+    checkpoint: dict[str, Any],
+    frame: dict[str, Any],
+    cache: dict[str, dict[str, Any]],
+) -> dict[str, Any]:
+    call = _assessment_model_call(frame)
+    key = digest(call)
+    if key not in cache:
+        import torch
+
+        with torch.no_grad():
+            model.reset_runtime()
+            heads = _assessment_heads(
+                model.forward_fixture(call), checkpoint["temperature"]
+            )
+        cache[key] = execute_c14_c15_boundary(
+            heads=heads,
+            entity_key=frame["entity_key"],
+            evidence_prefix=f"c17-eval-{frame['sample_id']}",
+            abstention_threshold=checkpoint["abstention_threshold"],
+        )
+    return cache[key]
+
+
 def _map_function(
     bank: Any, candidate: dict[str, Any] | None, episodes: list[dict[str, Any]]
 ) -> tuple[int | None, dict[int, float]]:
@@ -142,6 +438,9 @@ def _branch_episode(
     split: str,
     communication_bandwidth: int,
     workspace_capacity: int,
+    assessment_checkpoint: dict[str, Any],
+    assessment_model: Any,
+    assessment_cache: dict[str, dict[str, Any]],
 ) -> dict[str, Any]:
     members = [] if candidate is None else candidate["member_ids"]
     ablated = members if branch == "targeted" else (controls.get(branch) or [])
@@ -172,11 +471,13 @@ def _branch_episode(
         if is_related:
             related += 1
         ablation_active = bool(ablated) and any(item in retained for item in ablated)
-        assessment = ("allow", "veto", "abstain")[
-            int(digest([episode["episode_id"], frame["t"]])[:8], 16) % 3
-        ]
+        boundary = _assess_frame(
+            assessment_model, assessment_checkpoint, frame, assessment_cache
+        )
+        assessment = boundary["assessment"]
+        if assessment not in assessment_counts:
+            raise ValueError("C17 evaluation expected a learned proposal assessment")
         assessment_counts[assessment] += 1
-        boundary = execute_c14_c15_boundary(proposal_belief="beta", outcome=assessment)
         proposal_allowed = boundary["assessment_allowed"]
         wrong = (not proposal_allowed) or (ablation_active and candidate_active and is_related)
         if wrong:
@@ -452,12 +753,153 @@ def _hierarchical_bootstrap(
     return result
 
 
+def _assessment_checkpoint_evidence_valid(
+    protocol: dict[str, Any],
+    combined: dict[str, list[dict[str, Any]]],
+    successful: list[int],
+) -> bool:
+    from sparkbrain.v03_learned.training import (
+        CalibrationScore,
+        CheckpointScore,
+        select_calibration,
+        select_checkpoint,
+    )
+
+    try:
+        if not successful:
+            return False
+        records = combined["assessment_checkpoints"]
+        if len(records) != len(successful):
+            return False
+        resources = combined["resource"]
+        for record in records:
+            run_seed = record["run_seed"]
+            if run_seed not in successful:
+                return False
+            corpus = fixture_document(run_seed, protocol)
+            r0 = next(
+                cell for cell in corpus["cells"] if cell["condition_id"] == "R0_baseline"
+            )
+            train_episodes = _split(r0, "train")
+            dev_episodes = _split(r0, "dev")
+            train_frames = [
+                frame
+                for episode in train_episodes
+                for frame in episode["frames"]
+                if frame["scoring"]
+            ]
+            dev_frames = [
+                frame
+                for episode in dev_episodes
+                for frame in episode["frames"]
+                if frame["scoring"]
+            ]
+            train_ids = [episode["episode_id"] for episode in train_episodes]
+            dev_ids = [episode["episode_id"] for episode in dev_episodes]
+            if (
+                record["training_condition_id"] != "R0_baseline"
+                or record["training_split"] != "train"
+                or record["training_episode_ids"] != train_ids
+                or record["selection_condition_id"] != "R0_baseline"
+                or record["selection_split"] != "dev"
+                or record["selection_episode_ids"] != dev_ids
+                or set(train_ids) & set(dev_ids)
+                or record["training_visible_sha256"]
+                != digest([_assessment_model_call(frame) for frame in train_frames])
+                or record["training_target_sha256"]
+                != digest([_assessment_target(frame) for frame in train_frames])
+                or record["selection_visible_sha256"]
+                != digest([_assessment_model_call(frame) for frame in dev_frames])
+                or record["selection_target_sha256"]
+                != digest([_assessment_target(frame) for frame in dev_frames])
+                or record["checkpoint_sha256"] != digest(record["checkpoint_state"])
+                or record["shared_resource_condition_ids"]
+                != protocol["resource_conditions"]["condition_order"]
+            ):
+                return False
+            selected = select_checkpoint(
+                [
+                    CheckpointScore(
+                        epoch=row["epoch"],
+                        weighted_objective_total=row["weighted_objective_total"],
+                    )
+                    for row in record["checkpoint_scores"]
+                ]
+            )
+            selected_row = next(
+                row for row in record["checkpoint_scores"] if row["epoch"] == selected.epoch
+            )
+            if (
+                selected.epoch != record["selected_epoch"]
+                or selected_row["sha256"] != record["checkpoint_sha256"]
+            ):
+                return False
+            calibration = select_calibration(
+                [CalibrationScore(**row) for row in record["calibration_scores"]]
+            )
+            if (
+                calibration.temperature != record["temperature"]
+                or calibration.abstention_threshold != record["abstention_threshold"]
+            ):
+                return False
+            model = _load_assessment_model(record["checkpoint_state"])
+            observed_routes = []
+            for row in record["boundary_rows"]:
+                call = row["model_call"]
+                if row["model_call_sha256"] != digest(call):
+                    return False
+                model.reset_runtime()
+                heads = _assessment_heads(
+                    model.forward_fixture(call), record["temperature"]
+                )
+                if heads.to_dict() != row["heads"]:
+                    return False
+                route = row["boundary"]["route"]
+                prefix = (
+                    f"c17-{run_seed}-{route}"
+                    if route in {"none", "rejection"}
+                    else f"c17-{run_seed}-{call['evidence_ids'][0]}"
+                )
+                boundary = execute_c14_c15_boundary(
+                    heads=heads,
+                    entity_key=call["entity_key"],
+                    evidence_prefix=prefix,
+                    abstention_threshold=record["abstention_threshold"],
+                    route=route,
+                )
+                if boundary != row["boundary"]:
+                    return False
+                observed_routes.append(
+                    (boundary["route"], boundary["assessment"], boundary["c14_ignited"])
+                )
+            if set(observed_routes) != {
+                ("proposal", "allow", True),
+                ("proposal", "veto", True),
+                ("proposal", "abstain", True),
+                ("none", "not_called", False),
+                ("rejection", "not_called", False),
+            }:
+                return False
+            seed_resources = [row for row in resources if row["run_seed"] == run_seed]
+            if len(seed_resources) != len(protocol["resource_conditions"]["condition_order"]):
+                return False
+            if any(
+                row["assessment_checkpoint_sha256"] != record["checkpoint_sha256"]
+                for row in seed_resources
+            ):
+                return False
+    except (KeyError, StopIteration, TypeError, ValueError):
+        return False
+    return True
+
+
 def _engineering_evidence(
     protocol: dict[str, Any],
     source_commit: str,
     combined: dict[str, list[dict[str, Any]]],
     cardinality_pass: bool,
     successful: list[int],
+    reproduction_exact: bool,
 ) -> dict[str, bool]:
     root = Path(__file__).resolve().parents[3]
     protected_ok = all(
@@ -477,21 +919,46 @@ def _engineering_evidence(
         for seed in protocol["fixtures"]["run_seeds"]
         if str(seed) in protocol["fixtures"]["fixture_sha256_by_run_seed"]
     )
-    boundary_rows = [
-        execute_c14_c15_boundary(proposal_belief="beta", outcome=outcome)
-        for outcome in ("allow", "veto", "abstain")
-    ]
-    resources = {row["condition_id"]: row for row in combined["resource"]}
+    discovery = {
+        (row["run_seed"], row["condition_id"]): row
+        for row in combined["discovery"]
+    }
+    controls_by_cell: dict[tuple[int, str], list[dict[str, Any]]] = defaultdict(list)
+    for row in combined["controls"]:
+        controls_by_cell[(row["run_seed"], row["condition_id"])].append(row)
+    controls_ok = True
+    for key, discovered in discovery.items():
+        rows = controls_by_cell[key]
+        if len(rows) != len(protocol["controls"]["control_order"]):
+            controls_ok = False
+            break
+        if discovered["primary_candidate"] is None:
+            controls_ok = controls_ok and discovered["eligible_candidates"] == [] and all(
+                row["member_ids"] is None and row["complete"] is False for row in rows
+            )
+        else:
+            controls_ok = controls_ok and all(row["complete"] for row in rows)
     required_resources = {"R0_baseline", "R2_bandwidth_low", "R3_workspace_low"}
-    resource_ok = required_resources <= resources.keys() and (
-        resources["R0_baseline"]["pre_resource_bank_sha256"]
-        == resources["R2_bandwidth_low"]["pre_resource_bank_sha256"]
-        == resources["R3_workspace_low"]["pre_resource_bank_sha256"]
-        and resources["R0_baseline"]["evaluation_behavior_sha256"]
-        != resources["R2_bandwidth_low"]["evaluation_behavior_sha256"]
-        and resources["R0_baseline"]["evaluation_behavior_sha256"]
-        != resources["R3_workspace_low"]["evaluation_behavior_sha256"]
-    )
+    resource_ok = bool(successful)
+    for run_seed in successful:
+        resources = {
+            row["condition_id"]: row
+            for row in combined["resource"]
+            if row["run_seed"] == run_seed
+        }
+        resource_ok = resource_ok and required_resources <= resources.keys() and (
+            resources["R0_baseline"]["pre_resource_bank_sha256"]
+            == resources["R2_bandwidth_low"]["pre_resource_bank_sha256"]
+            == resources["R3_workspace_low"]["pre_resource_bank_sha256"]
+            and resources["R0_baseline"]["evaluation_behavior_sha256"]
+            != resources["R2_bandwidth_low"]["evaluation_behavior_sha256"]
+            and resources["R0_baseline"]["evaluation_behavior_sha256"]
+            != resources["R3_workspace_low"]["evaluation_behavior_sha256"]
+            and len(
+                {row["assessment_checkpoint_sha256"] for row in resources.values()}
+            )
+            == 1
+        )
     return {
         "dependency_pins": protocol["dependencies"]["c15_engineering_status"] == "accepted"
         and protocol["dependencies"]["c16_engineering_status"] == "accepted",
@@ -503,25 +970,31 @@ def _engineering_evidence(
         "fixture_hashes": fixture_ok,
         "one_factor_cells": True,
         "label_blindness": all(row["discovery_input_sha256"] for row in combined["discovery"]),
-        "proposal_assessment_boundary": boundary_rows[0]["assessment_allowed"]
-        and not boundary_rows[1]["assessment_allowed"]
-        and not boundary_rows[2]["assessment_allowed"]
-        and not any(row["replacement_possible"] for row in boundary_rows),
+        "proposal_assessment_boundary": _assessment_checkpoint_evidence_valid(
+            protocol, combined, successful
+        ),
         "frozen_query_restore": all(
             row["restore_exact"] for row in combined["matched"] + combined["heldout"]
         ),
-        "control_completeness": all(row["complete"] for row in combined["controls"]),
+        "control_completeness": controls_ok,
         "raw_cardinality": cardinality_pass,
         "metric_recalculation": True,
         "all_required_seeds": successful == protocol["fixtures"]["run_seeds"],
         "exact_inventory": True,
-        "reproduction_exact": False,
+        "reproduction_exact": reproduction_exact,
         "resource_bounds": resource_ok,
     }
 
 
 def _run_seed(protocol: dict[str, Any], run_seed: int) -> dict[str, list[dict[str, Any]]]:
     corpus = fixture_document(run_seed, protocol)
+    r0_cell = next(
+        cell for cell in corpus["cells"] if cell["condition_id"] == "R0_baseline"
+    )
+    assessment_checkpoint, assessment_model = _train_assessment_checkpoint(
+        protocol, run_seed, r0_cell
+    )
+    assessment_cache: dict[str, dict[str, Any]] = {}
     discovery_rows: list[dict[str, Any]] = []
     structural: list[dict[str, Any]] = []
     selectivity: list[dict[str, Any]] = []
@@ -633,6 +1106,9 @@ def _run_seed(protocol: dict[str, Any], run_seed: int) -> dict[str, list[dict[st
                             split=split_name,
                             communication_bandwidth=condition["communication_bandwidth"],
                             workspace_capacity=condition["workspace_capacity"],
+                            assessment_checkpoint=assessment_checkpoint,
+                            assessment_model=assessment_model,
+                            assessment_cache=assessment_cache,
                         )
                     )
         cell_rows = [
@@ -665,6 +1141,9 @@ def _run_seed(protocol: dict[str, Any], run_seed: int) -> dict[str, list[dict[st
                 "candidate_count": discovered["candidate_count"],
                 "observation_count": discovered["observation_count"],
                 "pre_resource_bank_sha256": bank_hash,
+                "assessment_checkpoint_sha256": assessment_checkpoint[
+                    "checkpoint_sha256"
+                ],
                 "evaluation_behavior_sha256": digest(
                     [
                         {
@@ -768,10 +1247,16 @@ def _run_seed(protocol: dict[str, Any], run_seed: int) -> dict[str, list[dict[st
         "effects": seed_effects,
         "seed_gates": seed_gates,
         "cell_metrics": cell_metrics,
+        "assessment_checkpoints": [assessment_checkpoint],
     }
 
 
-def generate_bundle(protocol: dict[str, Any], source_commit: str) -> dict[str, Any]:
+def generate_bundle(
+    protocol: dict[str, Any],
+    source_commit: str,
+    *,
+    reproduction_exact: bool = False,
+) -> dict[str, Any]:
     validate_resource_conditions(protocol)
     combined = {
         key: []
@@ -786,6 +1271,7 @@ def generate_bundle(protocol: dict[str, Any], source_commit: str) -> dict[str, A
             "effects",
             "seed_gates",
             "cell_metrics",
+            "assessment_checkpoints",
         )
     }
     failures = []
@@ -881,7 +1367,12 @@ def generate_bundle(protocol: dict[str, Any], source_commit: str) -> dict[str, A
         else ("supported" if all(row["passed"] for row in primary_gates) else "not_supported")
     )
     gate_evidence = _engineering_evidence(
-        protocol, source_commit, combined, cardinality_pass, successful
+        protocol,
+        source_commit,
+        combined,
+        cardinality_pass,
+        successful,
+        reproduction_exact,
     )
     engineering = [
         {
@@ -906,6 +1397,7 @@ def generate_bundle(protocol: dict[str, Any], source_commit: str) -> dict[str, A
         "protocol_id": protocol["protocol_id"],
         "seed_split_rows": combined["structural"],
         "cell_metric_rows": combined["cell_metrics"],
+        "assessment_checkpoints": combined["assessment_checkpoints"],
         "failed_seeds": failures,
     }
     selectivity = {
@@ -972,7 +1464,13 @@ def report_text(acceptance: dict[str, Any]) -> str:
     )
 
 
-def validate_bundle(bundle: dict[str, Any], protocol: dict[str, Any], source_commit: str) -> None:
+def validate_bundle(
+    bundle: dict[str, Any],
+    protocol: dict[str, Any],
+    source_commit: str,
+    *,
+    reproduction_exact: bool = False,
+) -> None:
     expected_files = set(protocol["artifacts"]["exact_files"])
     if set(bundle) != expected_files:
         raise ValueError("C17 exact-nine inventory mismatch")
@@ -1220,6 +1718,9 @@ def validate_bundle(bundle: dict[str, Any], protocol: dict[str, Any], source_com
         "heldout": heldout_rows,
         "controls": bundle["matched_ablations.json"]["control_membership_rows"],
         "resource": bundle["resource_conditions.json"]["seed_counters"],
+        "assessment_checkpoints": bundle["structural_metrics.json"][
+            "assessment_checkpoints"
+        ],
     }
     expected_gate_evidence = _engineering_evidence(
         protocol,
@@ -1227,6 +1728,7 @@ def validate_bundle(bundle: dict[str, Any], protocol: dict[str, Any], source_com
         combined_for_gates,
         all(actual_counts[key] == successful * value for key, value in expected_counts.items()),
         acceptance["successful_seeds"],
+        reproduction_exact,
     )
     expected_gates = [
         {
@@ -1239,7 +1741,7 @@ def validate_bundle(bundle: dict[str, Any], protocol: dict[str, Any], source_com
     if gates != expected_gates:
         raise ValueError("C17 engineering gates do not recalculate from evidence")
     reproduction = next(row for row in gates if row["gate_id"] == "reproduction_exact")
-    if reproduction["passed"] is not False:
+    if reproduction["passed"] is not reproduction_exact:
         raise ValueError("first C17 generation cannot self-claim exact reproduction")
     expected_engineering = (
         "accepted" if all(row["passed"] for row in gates) else "implementation_failure"
