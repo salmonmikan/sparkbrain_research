@@ -71,6 +71,24 @@ def _require_clean_room() -> None:
     _require_tracked_clean()
 
 
+def _require_source_tree_hashes(protocol: dict, paths: list[str]) -> dict[str, dict[str, str]]:
+    source = protocol["source_commit"]
+    declared = protocol.get("source_tree_hashes")
+    if not isinstance(declared, dict) or set(declared) != set(paths):
+        raise RuntimeError("C18 source tree hashes are missing or have extra paths")
+    evidence: dict[str, dict[str, str]] = {}
+    for path in paths:
+        blob = _git("rev-parse", f"{source}:{path}")
+        if not isinstance(declared[path], str) or declared[path] != blob:
+            raise RuntimeError("C18 source tree hash is forged")
+        source_bytes = _git_bytes("show", f"{source}:{path}")
+        worktree_bytes = (ROOT / path).read_bytes()
+        if source_bytes != worktree_bytes:
+            raise RuntimeError("C18 source/worktree bytes mismatch")
+        evidence[path] = {"git_blob": blob, "sha256": hashlib.sha256(source_bytes).hexdigest()}
+    return evidence
+
+
 def _require_integration_preregistration_amendment(protocol: dict, raw: bytes) -> None:
     original_raw = _git_bytes("show", f"{P_PREREGISTRATION_COMMIT}:{PROTOCOL_RELATIVE}")
     original_sidecar_raw = _git_bytes(
@@ -92,9 +110,9 @@ def _require_integration_preregistration_amendment(protocol: dict, raw: bytes) -
         raise RuntimeError("C18 integration preregistration has unknown fields")
     if any(protocol.get(key) != original.get(key) for key in set(original) - allowed):
         raise RuntimeError("C18 integration preregistration changed unauthorized fields")
-    if not isinstance(protocol.get("source_commit"), str) or not protocol.get(
+    if not isinstance(protocol.get("source_commit"), str) or protocol.get(
         "runner_execution_allowed"
-    ):
+    ) is not True:
         raise RuntimeError("C18 integration preregistration is not pinned")
     expected_sidecar_fields = {
         "canonical_raw_match",
@@ -165,6 +183,7 @@ def preflight(
         }
     if post_source_paths - allowed_post_source:
         raise RuntimeError("C18 post-source scope invalid")
+    source_hashes = _require_source_tree_hashes(protocol, source_diff_paths)
     raw = (protocol_path or ROOT / PROTOCOL_RELATIVE).read_bytes()
     if raw != (_canonical(protocol) + "\n").encode("utf-8"):
         raise RuntimeError("C18 protocol is not canonical")
@@ -183,14 +202,6 @@ def preflight(
         or schema_hashes["trace_schema"] != schema_contract.get("trace_schema_sha256")
     ):
         raise RuntimeError("C18 schema hash mismatch")
-    source_hashes = {}
-    for path in source_diff_paths:
-        blob = _git("rev-parse", f"{source}:{path}")
-        source_bytes = _git_bytes("show", f"{source}:{path}")
-        worktree_bytes = (ROOT / path).read_bytes()
-        if source_bytes != worktree_bytes:
-            raise RuntimeError("C18 source/worktree bytes mismatch")
-        source_hashes[path] = {"git_blob": blob, "sha256": hashlib.sha256(source_bytes).hexdigest()}
     pin = protocol.get("pin_contract", {})
     for path, blob in pin.get("required_schema_git_blobs", {}).items():
         base_blob = _git("rev-parse", f"{base}:{path}")

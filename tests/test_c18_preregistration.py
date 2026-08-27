@@ -82,3 +82,30 @@ def test_integration_allows_only_semantic_pin_amendment(
     monkeypatch.setattr(runner, "_git_bytes", lambda *_args: next(responses))
     with pytest.raises(RuntimeError, match="stale or forged"):
         runner._require_integration_preregistration_amendment(current, raw)
+
+
+def test_source_tree_hashes_are_exact_and_match_blobs(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path
+) -> None:
+    paths = ["one.py", "two.py"]
+    contents = {"one.py": b"one", "two.py": b"two"}
+    blobs = {"one.py": "a" * 40, "two.py": "b" * 40}
+    for path, content in contents.items():
+        (tmp_path / path).write_bytes(content)
+    monkeypatch.setattr(runner, "ROOT", tmp_path)
+    monkeypatch.setattr(runner, "_git", lambda _cmd, revision: blobs[revision.split(":", 1)[1]])
+    monkeypatch.setattr(
+        runner, "_git_bytes", lambda _cmd, revision: contents[revision.split(":", 1)[1]]
+    )
+    protocol = {"source_commit": "source", "source_tree_hashes": dict(blobs)}
+    assert set(runner._require_source_tree_hashes(protocol, paths)) == set(paths)
+    for bad in (
+        {"one.py": blobs["one.py"]},
+        {**blobs, "extra.py": "c" * 40},
+        {"one.py": True, "two.py": blobs["two.py"]},
+        {"one.py": "0" * 40, "two.py": blobs["two.py"]},
+    ):
+        with pytest.raises(RuntimeError):
+            runner._require_source_tree_hashes(
+                {"source_commit": "source", "source_tree_hashes": bad}, paths
+            )
