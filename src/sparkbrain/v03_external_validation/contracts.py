@@ -17,30 +17,31 @@ from typing import TYPE_CHECKING, Any, Protocol
 if TYPE_CHECKING:
     from sparkbrain.v03_integration import V03Checkpoint, V03TraceEvent, V03TraceSession
 
-EXACT_NINE_ARTIFACTS = frozenset(
-    {
-        "frozen_protocol.json",
-        "run_manifest.jsonl",
-        "raw_predictions.jsonl",
-        "attribution_rows.jsonl",
-        "metrics_by_condition.json",
-        "paired_statistics.json",
-        "baseline_matching.json",
-        "failure_examples.jsonl",
-        "report.md",
-    }
+EXACT_NINE_ARTIFACT_ORDER = (
+    "attribution_rows.jsonl",
+    "baseline_matching.json",
+    "failure_examples.jsonl",
+    "frozen_protocol.json",
+    "metrics_by_condition.json",
+    "paired_statistics.json",
+    "raw_predictions.jsonl",
+    "report.md",
+    "run_manifest.jsonl",
 )
-AUTONOMOUS_INPUTS = frozenset({"I0_whole_hash", "I1_local_compositional"})
+EXACT_NINE_ARTIFACTS = frozenset(EXACT_NINE_ARTIFACT_ORDER)
+INPUT_TRACK_ORDER = ("I0_whole_hash", "I1_local_compositional", "I2_symbolic_oracle")
+AUTONOMOUS_INPUTS = frozenset(INPUT_TRACK_ORDER[:2])
 ORACLE_INPUT = "I2_symbolic_oracle"
-BASELINE_KINDS = frozenset(
-    {
-        "direct_stateless",
-        "explicit_state_probabilistic",
-        "recurrent",
-        "transformer",
-        "modular_rim_like",
-    }
+GATE_ORDER = ("G0_probability_margin", "G1_coalition")
+ENTITY_ORDER = ("E0_global", "E1_oracle_entity")
+BASELINE_KIND_ORDER = (
+    "direct_stateless",
+    "explicit_state_probabilistic",
+    "modular_rim_like",
+    "recurrent",
+    "transformer",
 )
+BASELINE_KINDS = frozenset(BASELINE_KIND_ORDER)
 
 
 def canonical(value: object) -> str:
@@ -54,6 +55,21 @@ def digest(value: object) -> str:
 def _exact_keys(row: Mapping[str, Any], expected: set[str], name: str) -> None:
     if set(row) != expected:
         raise ValueError(f"{name} must have exact keys {sorted(expected)}")
+
+
+def _validate_condition_id(value: object, *, input_track: object | None = None) -> None:
+    if not isinstance(value, str):
+        raise ValueError("condition_id must be a string")
+    segments = value.split("/")
+    if (
+        len(segments) != 3
+        or segments[0] not in INPUT_TRACK_ORDER
+        or segments[1] not in GATE_ORDER
+        or segments[2] not in ENTITY_ORDER
+    ):
+        raise ValueError("condition_id must use the frozen input/gate/entity matrix")
+    if input_track is not None and segments[0] != input_track:
+        raise ValueError("condition_id must begin with the input track")
 
 
 class C18TraceCheckpointAdapter(Protocol):
@@ -119,9 +135,9 @@ def validate_disabled_preregistration(protocol: Mapping[str, Any]) -> None:
         or protocol["source_commit"] is not None
     ):
         raise ValueError("C19 source preregistration must remain disabled and unpinned")
-    if set(protocol["artifact_inventory"]) != EXACT_NINE_ARTIFACTS:
+    if protocol["artifact_inventory"] != list(EXACT_NINE_ARTIFACT_ORDER):
         raise ValueError("C19 requires the exact-nine artifact inventory")
-    if set(protocol["baseline_kinds"]) != BASELINE_KINDS:
+    if protocol["baseline_kinds"] != list(BASELINE_KIND_ORDER):
         raise ValueError("C19 baseline inventory is incomplete")
     selection = protocol["checkpoint_selection"]
     _exact_keys(
@@ -168,11 +184,12 @@ def validate_disabled_preregistration(protocol: Mapping[str, Any]) -> None:
     }:
         raise ValueError("C19 cache hash contract is not source-only")
     matrix = protocol["condition_matrix"]
-    if matrix["inputs"] != ["I0_whole_hash", "I1_local_compositional", ORACLE_INPUT]:
+    _exact_keys(matrix, {"inputs", "gates", "entities"}, "condition matrix")
+    if matrix["inputs"] != list(INPUT_TRACK_ORDER):
         raise ValueError("C19 input conditions are not frozen")
-    if matrix["gates"] != ["G0_probability_margin", "G1_coalition"]:
+    if matrix["gates"] != list(GATE_ORDER):
         raise ValueError("C19 gate conditions are not frozen")
-    if matrix["entities"] != ["E0_global", "E1_oracle_entity"]:
+    if matrix["entities"] != list(ENTITY_ORDER):
         raise ValueError("C19 entity conditions are not frozen")
     trace = protocol["trace_checkpoint_contract"]
     _exact_keys(trace, {"available", "provider", "required_methods"}, "trace contract")
@@ -206,6 +223,9 @@ def validate_baseline_matching(row: Mapping[str, Any]) -> None:
     if row["checkpoint_selection_split"] != "dev":
         raise ValueError("baseline checkpoint selection must use preregistered dev")
     _reject_nested_target_leakage(row)
+    boolean_keys = ("compute_match", "data_match", "parameter_match", "winner_claim_allowed")
+    if any(type(row[key]) is not bool for key in boolean_keys):
+        raise ValueError("baseline matching flags must be exact booleans")
     all_matched = all(
         row[key] is True for key in ("compute_match", "data_match", "parameter_match")
     )
@@ -253,10 +273,11 @@ def validate_prediction_row(row: Mapping[str, Any]) -> None:
     )
     if row["input_track"] not in AUTONOMOUS_INPUTS | {ORACLE_INPUT}:
         raise ValueError("unknown input track")
-    if not str(row["condition_id"]).startswith(f"{row['input_track']}/"):
-        raise ValueError("condition_id must begin with the input track")
+    _validate_condition_id(row["condition_id"], input_track=row["input_track"])
     condition_track = row["condition_id"].split("/", 1)[0]
     oracle = condition_track == ORACLE_INPUT
+    if type(row["oracle_diagnostic"]) is not bool or type(row["evaluator_only"]) is not bool:
+        raise ValueError("Oracle boundary flags must be exact booleans")
     if row["oracle_diagnostic"] != oracle or (row["input_track"] == ORACLE_INPUT) != oracle:
         raise ValueError("Oracle rows must be diagnostic-only")
     if row["evaluator_only"] != oracle:
@@ -297,20 +318,32 @@ def validate_attribution_row(row: Mapping[str, Any]) -> None:
         "attribution row",
     )
     _reject_nested_target_leakage(row)
+    _validate_condition_id(row["condition_id"])
     if (
         isinstance(row["entity_count"], bool)
         or not isinstance(row["entity_count"], int)
         or row["entity_count"] < 1
     ):
         raise ValueError("entity_count must be a positive integer")
+    if row["status"] not in {"attributed", "inconclusive"}:
+        raise ValueError("unknown attribution status")
+    if type(row["available"]) is not bool:
+        raise ValueError("attribution availability must be an exact boolean")
     if row["entity_count"] == 1 and (
         row["status"] != "inconclusive"
         or row["available"] is not False
         or row["dominant_component"] is not None
     ):
         raise ValueError("single-entity Belief-R attribution must remain inconclusive")
-    if row["status"] == "inconclusive" and row["dominant_component"] is not None:
-        raise ValueError("inconclusive attribution cannot name a dominant component")
+    if row["status"] == "attributed" and (
+        row["available"] is not True
+        or row["dominant_component"] not in {"input", "gate", "state", "objective"}
+    ):
+        raise ValueError("attributed status requires one registered dominant component")
+    if row["status"] == "inconclusive" and (
+        row["available"] is not False or row["dominant_component"] is not None
+    ):
+        raise ValueError("inconclusive attribution must be unavailable and non-dominant")
 
 
 def autonomous_aggregate_rows(rows: list[Mapping[str, Any]]) -> list[Mapping[str, Any]]:

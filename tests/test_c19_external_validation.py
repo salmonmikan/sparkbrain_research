@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import inspect
 import json
+from copy import deepcopy
 from pathlib import Path
 
 import pytest
@@ -13,6 +14,7 @@ from sparkbrain.v03_external_validation.contracts import (
     validate_attribution_row,
     validate_baseline_matching,
     validate_disabled_preregistration,
+    validate_prediction_row,
 )
 from sparkbrain.v03_external_validation.proxy import (
     attribute_fault,
@@ -62,6 +64,30 @@ def test_preregistration_rejects_official_selection_and_seed_overlap() -> None:
         validate_disabled_preregistration(protocol)
 
 
+def test_preregistration_rejects_duplicate_inventory_and_matrix_extensions() -> None:
+    protocol = json.loads(
+        (ROOT / "artifacts/v03/c19_external_validation/preregistration.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    duplicate = deepcopy(protocol)
+    duplicate["artifact_inventory"].append(duplicate["artifact_inventory"][0])
+    with pytest.raises(ValueError, match="exact-nine"):
+        validate_disabled_preregistration(duplicate)
+    reordered = deepcopy(protocol)
+    reordered["artifact_inventory"].reverse()
+    with pytest.raises(ValueError, match="exact-nine"):
+        validate_disabled_preregistration(reordered)
+    duplicate_baseline = deepcopy(protocol)
+    duplicate_baseline["baseline_kinds"].append(duplicate_baseline["baseline_kinds"][0])
+    with pytest.raises(ValueError, match="baseline inventory"):
+        validate_disabled_preregistration(duplicate_baseline)
+    extended = deepcopy(protocol)
+    extended["condition_matrix"]["unauthorized"] = True
+    with pytest.raises(ValueError, match="condition matrix"):
+        validate_disabled_preregistration(extended)
+
+
 def test_proxy_splits_are_fresh_disjoint_and_do_not_include_official_test() -> None:
     splits = fresh_proxy_splits(seed=7901)
     assert fresh_proxy_splits(seed=7901) == splits
@@ -103,7 +129,7 @@ def test_strict_attribution_schema_rejects_single_entity_overclaim() -> None:
         validate_attribution_row(
             {
                 "available": True,
-                "condition_id": "I1/G0/E0",
+                "condition_id": "I1_local_compositional/G0_probability_margin/E0_global",
                 "dominant_component": "entity",
                 "entity_count": 1,
                 "episode_id_hash": "x",
@@ -119,7 +145,7 @@ def test_single_entity_available_claim_is_rejected_even_when_inconclusive() -> N
         validate_attribution_row(
             {
                 "available": True,
-                "condition_id": "I1/G0/E0",
+                "condition_id": "I1_local_compositional/G0_probability_margin/E0_global",
                 "dominant_component": None,
                 "entity_count": 1,
                 "episode_id_hash": "x",
@@ -171,14 +197,30 @@ def test_fully_matched_baseline_can_still_make_no_winner_claim() -> None:
     )
 
 
+@pytest.mark.parametrize(
+    "key",
+    ("compute_match", "data_match", "parameter_match", "winner_claim_allowed"),
+)
+def test_baseline_matching_flags_require_exact_booleans(key: str) -> None:
+    row = {
+        "baseline_kind": "transformer",
+        "checkpoint_selection_split": "dev",
+        "compute_match": False,
+        "data_match": False,
+        "parameter_match": False,
+        "winner_claim_allowed": False,
+    }
+    row[key] = 1
+    with pytest.raises(ValueError, match="exact booleans"):
+        validate_baseline_matching(row)
+
+
 def test_nested_target_leakage_in_work_counters_is_rejected() -> None:
     row, _ = synthetic_proxy_row(
         seed=6901, episode_id="proxy-a", input_track="I1_local_compositional"
     )
     row["work_counters"]["nested"] = {"target_label": "retain"}
     with pytest.raises(ValueError, match="target leakage"):
-        from sparkbrain.v03_external_validation.contracts import validate_prediction_row
-
         validate_prediction_row(row)
 
 
@@ -189,3 +231,48 @@ def test_condition_oracle_cannot_spoof_autonomous_flags() -> None:
     row["track"] = "autonomous"
     with pytest.raises(ValueError, match="diagnostic"):
         autonomous_aggregate_rows([row])
+
+
+def test_prediction_rejects_unknown_condition_axes_and_integer_oracle_flags() -> None:
+    row, _ = synthetic_proxy_row(
+        seed=6901, episode_id="proxy-a", input_track="I0_whole_hash"
+    )
+    row["condition_id"] = "I0_whole_hash/UNKNOWN/UNKNOWN"
+    with pytest.raises(ValueError, match="frozen input/gate/entity"):
+        validate_prediction_row(row)
+
+    oracle, _ = synthetic_proxy_row(
+        seed=6901, episode_id="proxy-o", input_track="I2_symbolic_oracle"
+    )
+    oracle["oracle_diagnostic"] = 1
+    oracle["evaluator_only"] = 1
+    with pytest.raises(ValueError, match="exact booleans"):
+        validate_prediction_row(oracle)
+
+
+@pytest.mark.parametrize(
+    ("status", "available", "dominant_component"),
+    (
+        ("fabricated", False, None),
+        ("attributed", False, "input"),
+        ("attributed", True, "entity"),
+        ("inconclusive", True, None),
+        ("inconclusive", False, "gate"),
+    ),
+)
+def test_multi_entity_attribution_requires_registered_consistent_state(
+    status: str, available: bool, dominant_component: str | None
+) -> None:
+    with pytest.raises(ValueError):
+        validate_attribution_row(
+            {
+                "available": available,
+                "condition_id": "I1_local_compositional/G0_probability_margin/E1_oracle_entity",
+                "dominant_component": dominant_component,
+                "entity_count": 2,
+                "episode_id_hash": "x",
+                "reason": "adversarial",
+                "seed": 6901,
+                "status": status,
+            }
+        )
