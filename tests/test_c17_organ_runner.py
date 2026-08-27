@@ -2,21 +2,16 @@ from __future__ import annotations
 
 import copy
 import hashlib
-import importlib.util
 import json
 import os
-import sys
 from pathlib import Path
 
 import pytest
 
+import scripts.run_c17_organs as runner
 from sparkbrain.release import release_mode
 
 ROOT = Path(__file__).resolve().parents[1]
-SPEC = importlib.util.spec_from_file_location("c17_runner", ROOT / "scripts/run_c17_organs.py")
-runner = importlib.util.module_from_spec(SPEC)
-sys.modules[SPEC.name] = runner
-SPEC.loader.exec_module(runner)
 
 
 def protocol():
@@ -135,7 +130,7 @@ def test_worker_hashseed_is_set_before_spawn_and_parent_environment_restored(mon
     assert os.environ["PYTHONHASHSEED"] == "parent-value"
 
 
-def test_worker_sidecar_binds_pid_hashseed_challenge_source_protocol_and_output(tmp_path):
+def test_worker_sidecar_verifier_rejects_missing_and_forged_bindings(tmp_path):
     value = protocol()
     inventory = list(value["reproduction"]["prefinal_inventory"])
     staging = tmp_path / "prefinal-A"
@@ -158,19 +153,6 @@ def test_worker_sidecar_binds_pid_hashseed_challenge_source_protocol_and_output(
         "source_commit": "a" * 40,
     }
     runner._write_worker_sidecar(sidecar, payload)
-    verified = runner._verify_worker_attestation(
-        sidecar=sidecar,
-        staging=staging,
-        protocol=value,
-        protocol_sha256="2" * 64,
-        source_commit="a" * 40,
-        process_contract=value["reproduction"]["staging_processes"][0],
-        challenge_nonce="1" * 32,
-        observed_pid=1234,
-        returncode=0,
-    )
-    assert verified["observed_pid"] == 1234
-    assert verified["returncode"] == 0
     with pytest.raises(FileNotFoundError):
         runner._verify_worker_attestation(
             sidecar=tmp_path / "missing.attestation.json",
@@ -214,8 +196,6 @@ def test_worker_sidecar_binds_pid_hashseed_challenge_source_protocol_and_output(
     reason="C17 v1 source-commit hash pins require the retained stage checkout",
 )
 def test_reproduce_parent_orchestrates_two_attested_workers(tmp_path, monkeypatch):
-    from sparkbrain.v03_organs.evaluation import generate_bundle
-
     value = protocol()
     value["fixtures"]["run_seeds"] = [9901801]
     value["statistics"]["bootstrap_resamples"] = 5
@@ -226,65 +206,7 @@ def test_reproduce_parent_orchestrates_two_attested_workers(tmp_path, monkeypatc
     protocol_path = tmp_path / runner.PROTOCOL_RELATIVE
     protocol_path.parent.mkdir(parents=True)
     protocol_path.write_bytes((runner._canonical(value) + "\n").encode("utf-8"))
-    prefinal = generate_bundle(value, "a" * 40)
-    created = []
-
-    class Worker:
-        def __init__(self, arguments, pid):
-            self.arguments = arguments
-            self.pid = pid
-            self.exitcode = None
-
-        def start(self):
-            process_contract = next(
-                row
-                for row in value["reproduction"]["staging_processes"]
-                if row["process_id"] == self.arguments["process_id"]
-            )
-            assert os.environ["PYTHONHASHSEED"] == str(
-                process_contract["pythonhashseed"]
-            )
-            staging = Path(self.arguments["staging"])
-            runner._write_bundle(staging, copy.deepcopy(prefinal))
-            inventory = list(value["reproduction"]["prefinal_inventory"])
-            file_sha256, combined_sha256 = runner._prefinal_hashes(staging, inventory)
-            runner._write_worker_sidecar(
-                Path(self.arguments["sidecar"]),
-                {
-                    "challenge_nonce": self.arguments["challenge_nonce"],
-                    "combined_sha256": combined_sha256,
-                    "file_sha256": file_sha256,
-                    "os_pid": self.pid,
-                    "output_directory": str(staging.resolve()),
-                    "prefinal_inventory": inventory,
-                    "preregistration_sha256": file_sha256["preregistration.json"],
-                    "process_id": self.arguments["process_id"],
-                    "protocol_sha256": hashlib.sha256(protocol_path.read_bytes()).hexdigest(),
-                    "pythonhashseed": process_contract["pythonhashseed"],
-                    "source_commit": "a" * 40,
-                },
-            )
-            self.exitcode = 0
-
-        def join(self, timeout=None):
-            return None
-
-        def is_alive(self):
-            return False
-
-        def close(self):
-            return None
-
-    class Context:
-        def Process(self, *, target, args, daemon):
-            assert target is runner._generation_worker
-            assert daemon is False
-            worker = Worker(args[0], 7001 + len(created))
-            created.append(worker)
-            return worker
-
     monkeypatch.setattr(runner, "_preflight", lambda **kwargs: value)
-    monkeypatch.setattr(runner.multiprocessing, "get_context", lambda method: Context())
     output = tmp_path / "final"
     status = runner.reproduce(
         output=output,
@@ -292,15 +214,56 @@ def test_reproduce_parent_orchestrates_two_attested_workers(tmp_path, monkeypatc
         root=tmp_path,
     )
     assert status["engineering_status"] == "accepted"
-    assert len(created) == 2
-    assert len({worker.pid for worker in created}) == 2
     assert {path.name for path in output.iterdir()} == runner.EXPECTED_FILES
     sidecars = sorted(tmp_path.glob("final.prefinal-*.attestation.json"))
     assert len(sidecars) == 2
-    challenges = {
-        json.loads(path.read_bytes())["challenge_nonce"] for path in sidecars
-    }
-    assert len(challenges) == 2
+    payloads = [json.loads(path.read_bytes()) for path in sidecars]
+    assert len({payload["os_pid"] for payload in payloads}) == 2
+    assert len({payload["challenge_nonce"] for payload in payloads}) == 2
+    assert {payload["pythonhashseed"] for payload in payloads} == {11801, 21801}
+    assert {payload["process_id"] for payload in payloads} == {"A", "B"}
+    assert len({payload["output_directory"] for payload in payloads}) == 2
+
+    manifest = json.loads((output / "reproduction_compare_manifest.json").read_bytes())
+    assert manifest["all_equal"] is True
+    assert {row["process_id"] for row in manifest["runs"]} == {"A", "B"}
+    assert {row["pythonhashseed"] for row in manifest["runs"]} == {11801, 21801}
+
+    first = payloads[0]
+    first_contract = next(
+        row
+        for row in value["reproduction"]["staging_processes"]
+        if row["process_id"] == first["process_id"]
+    )
+    first_staging = Path(first["output_directory"])
+    forged = copy.deepcopy(first)
+    forged["file_sha256"]["report.md"] = "0" * 64
+    forged_sidecar = tmp_path / "forged.attestation.json"
+    runner._write_worker_sidecar(forged_sidecar, forged)
+    with pytest.raises(RuntimeError, match="attestation"):
+        runner._verify_worker_attestation(
+            sidecar=forged_sidecar,
+            staging=first_staging,
+            protocol=value,
+            protocol_sha256=hashlib.sha256(protocol_path.read_bytes()).hexdigest(),
+            source_commit="a" * 40,
+            process_contract=first_contract,
+            challenge_nonce=first["challenge_nonce"],
+            observed_pid=first["os_pid"],
+            returncode=0,
+        )
+    with pytest.raises(RuntimeError, match="attestation"):
+        runner._verify_worker_attestation(
+            sidecar=sidecars[0],
+            staging=first_staging,
+            protocol=value,
+            protocol_sha256=hashlib.sha256(protocol_path.read_bytes()).hexdigest(),
+            source_commit="a" * 40,
+            process_contract=first_contract,
+            challenge_nonce=first["challenge_nonce"],
+            observed_pid=first["os_pid"],
+            returncode=1,
+        )
 
 
 def test_nonempty_output_fails_before_disabled_gate(tmp_path):

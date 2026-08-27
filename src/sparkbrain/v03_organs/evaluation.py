@@ -1873,153 +1873,17 @@ def _prefinal_from_final(bundle: dict[str, Any]) -> dict[str, Any]:
     return prefinal
 
 
-_WORKER_ATTESTATION_KEYS = {
-    "challenge_nonce",
-    "combined_sha256",
-    "file_sha256",
-    "observed_pid",
-    "os_pid",
-    "output_directory",
-    "prefinal_inventory",
-    "preregistration_sha256",
-    "process_id",
-    "protocol_sha256",
-    "pythonhashseed",
-    "returncode",
-    "source_commit",
-}
-
-
-def _attested_reproduction_runs(
-    staging_a: dict[str, Any],
-    staging_b: dict[str, Any],
-    protocol: dict[str, Any],
-    source_commit: str,
-    attestations: list[dict[str, Any]],
-) -> list[dict[str, Any]]:
-    inventory = _prefinal_inventory(protocol)
-    process_contracts = protocol["reproduction"]["staging_processes"]
-    if len(attestations) != 2 or len(process_contracts) != 2:
-        raise ValueError("C17 finalization requires two worker attestations")
-    runs = []
-    challenges = set()
-    pids = set()
-    outputs = set()
-    for staging, attestation, expected in zip(
-        (staging_a, staging_b), attestations, process_contracts, strict=True
-    ):
-        exact_keys(attestation, _WORKER_ATTESTATION_KEYS, "worker attestation")
-        file_sha256 = {
-            name: digest_bytes(artifact_bytes(name, staging[name])) for name in inventory
-        }
-        preregistration_sha256 = file_sha256["preregistration.json"]
-        if (
-            attestation["process_id"] != expected["process_id"]
-            or isinstance(attestation["pythonhashseed"], bool)
-            or attestation["pythonhashseed"] != expected["pythonhashseed"]
-            or isinstance(attestation["os_pid"], bool)
-            or not isinstance(attestation["os_pid"], int)
-            or attestation["os_pid"] <= 0
-            or isinstance(attestation["observed_pid"], bool)
-            or not isinstance(attestation["observed_pid"], int)
-            or attestation["observed_pid"] != attestation["os_pid"]
-            or isinstance(attestation["returncode"], bool)
-            or attestation["returncode"] != 0
-            or attestation["source_commit"] != source_commit
-            or attestation["protocol_sha256"] != preregistration_sha256
-            or attestation["preregistration_sha256"] != preregistration_sha256
-            or attestation["prefinal_inventory"] != inventory
-            or attestation["file_sha256"] != file_sha256
-            or attestation["combined_sha256"]
-            != digest([[name, file_sha256[name]] for name in inventory])
-            or not isinstance(attestation["challenge_nonce"], str)
-            or re.fullmatch(r"[0-9a-f]{32}", attestation["challenge_nonce"]) is None
-            or not isinstance(attestation["output_directory"], str)
-            or not Path(attestation["output_directory"]).is_absolute()
-        ):
-            raise ValueError("C17 worker attestation does not verify")
-        challenges.add(attestation["challenge_nonce"])
-        pids.add(attestation["os_pid"])
-        outputs.add(attestation["output_directory"])
-        runs.append(
-            {
-                "combined_sha256": attestation["combined_sha256"],
-                "file_sha256": file_sha256,
-                "process_id": attestation["process_id"],
-                "protocol_sha256": attestation["protocol_sha256"],
-                "pythonhashseed": attestation["pythonhashseed"],
-                "source_commit": attestation["source_commit"],
-            }
-        )
-    if len(challenges) != 2 or len(pids) != 2 or len(outputs) != 2:
-        raise ValueError("C17 worker attestations are not independent")
-    return runs
-
-
 def finalize_bundles(
     staging_a: dict[str, Any],
     staging_b: dict[str, Any],
     protocol: dict[str, Any],
     source_commit: str,
-    *,
-    attestations: list[dict[str, Any]],
 ) -> dict[str, Any]:
-    """Externally compare isolated exact-nine bundles and create exact ten."""
-    validate_bundle(staging_a, protocol, source_commit)
-    validate_bundle(staging_b, protocol, source_commit)
-    inventory = _prefinal_inventory(protocol)
-    runs = _attested_reproduction_runs(
-        staging_a, staging_b, protocol, source_commit, attestations
+    """Reject public attempts to manufacture a reproduction claim."""
+    raise RuntimeError(
+        "C17 reproduction finalization is available only inside the runner's "
+        "verified live-process control flow"
     )
-    if any(
-        runs[0]["file_sha256"][name] != runs[1]["file_sha256"][name]
-        for name in inventory
-    ):
-        raise ValueError("C17 pre-final exact-nine bytes differ")
-    comparison_input = {
-        "comparison_contract_id": protocol["reproduction"]["comparison_contract_id"],
-        "prefinal_inventory": inventory,
-        "runs": runs,
-    }
-    manifest = {
-        "all_equal": True,
-        "comparison_contract_id": protocol["reproduction"]["comparison_contract_id"],
-        "comparison_input_sha256": digest(comparison_input),
-        "equal_files": inventory,
-        "prefinal_inventory": inventory,
-        "protocol_id": protocol["protocol_id"],
-        "run_id": protocol["run_id"],
-        "runs": runs,
-        "schema_version": protocol["schema_version"],
-        "source_commit": source_commit,
-    }
-    final = copy.deepcopy(staging_a)
-    final["reproduction_compare_manifest.json"] = manifest
-    acceptance = final["acceptance_matrix.json"]
-    acceptance["reproduction_evidence"] = {
-        "comparison_contract_id": protocol["reproduction"]["comparison_contract_id"],
-        "manifest_file": "reproduction_compare_manifest.json",
-        "manifest_sha256": digest_bytes(
-            artifact_bytes("reproduction_compare_manifest.json", manifest)
-        ),
-        "prefinal_exact9_equal": True,
-        "process_ids": [row["process_id"] for row in runs],
-        "pythonhashseeds": [row["pythonhashseed"] for row in runs],
-        "status": "externally_compared",
-    }
-    gate = next(
-        row for row in acceptance["engineering_gates"] if row["gate_id"] == "reproduction_exact"
-    )
-    gate["passed"] = True
-    gate["observed"] = True
-    acceptance["engineering_status"] = (
-        "accepted"
-        if all(row["passed"] for row in acceptance["engineering_gates"])
-        else "implementation_failure"
-    )
-    final["report.md"] = report_text(acceptance)
-    validate_bundle(final, protocol, source_commit)
-    return final
 
 
 def _validate_exact_schemas(bundle: dict[str, Any], protocol: dict[str, Any]) -> None:

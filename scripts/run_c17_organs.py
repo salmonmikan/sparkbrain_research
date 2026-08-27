@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import hashlib
 import json
 import multiprocessing
@@ -13,6 +14,7 @@ import subprocess
 import sys
 import time
 import uuid
+from multiprocessing.process import BaseProcess
 from pathlib import Path
 from typing import Any
 
@@ -446,6 +448,8 @@ def reproduce(*, output: Path, source_commit: str, root: Path = ROOT) -> dict[st
     try:
         for worker in workers:
             _wait_for_worker(worker, deadline=deadline, grace_seconds=5)
+        if any(not isinstance(worker, BaseProcess) for worker in workers):
+            raise C17WorkerError("C17 generation worker is not a live Process handle")
         if any(worker.exitcode != 0 for worker in workers):
             raise C17WorkerError("C17 generation worker returned nonzero")
         if any(worker.pid is None for worker in workers) or len(
@@ -484,17 +488,119 @@ def reproduce(*, output: Path, source_commit: str, root: Path = ROOT) -> dict[st
             if path.exists():
                 print(str(path.resolve()), file=sys.stderr)
         raise
-    from sparkbrain.v03_organs.evaluation import finalize_bundles
+    from sparkbrain.v03_organs import evaluation
 
     bundle_a = _read_bundle(staging_paths[0], PREFINAL_FILES)
     bundle_b = _read_bundle(staging_paths[1], PREFINAL_FILES)
-    final_bundle = finalize_bundles(
-        bundle_a,
-        bundle_b,
-        protocol,
-        source_commit,
-        attestations=attestations,
+    live_capability = object()
+    live_receipt = tuple(
+        (worker, attestation, staging.resolve())
+        for worker, attestation, staging in zip(
+            workers, attestations, staging_paths, strict=True
+        )
     )
+
+    def finalize_verified_reproduction(capability: object, receipt: object) -> dict[str, Any]:
+        if capability is not live_capability or receipt is not live_receipt:
+            raise RuntimeError("C17 reproduction capability is not valid")
+        if any(
+            not isinstance(worker, BaseProcess)
+            or worker.is_alive()
+            or worker.pid is None
+            or worker.pid != attestation["observed_pid"]
+            or worker.exitcode != attestation["returncode"]
+            or worker.exitcode != 0
+            or staging != Path(attestation["output_directory"])
+            for worker, attestation, staging in live_receipt
+        ):
+            raise RuntimeError("C17 live worker receipt does not verify")
+        if (
+            len({worker.pid for worker, _, _ in live_receipt}) != 2
+            or len({attestation["challenge_nonce"] for _, attestation, _ in live_receipt})
+            != 2
+            or len({staging for _, _, staging in live_receipt}) != 2
+        ):
+            raise RuntimeError("C17 live worker receipts are not independent")
+
+        inventory = list(protocol["reproduction"]["prefinal_inventory"])
+        runs = []
+        for bundle, (_, attestation, _) in zip(
+            (bundle_a, bundle_b), live_receipt, strict=True
+        ):
+            file_sha256 = {
+                name: evaluation.digest_bytes(evaluation.artifact_bytes(name, bundle[name]))
+                for name in inventory
+            }
+            if (
+                file_sha256 != attestation["file_sha256"]
+                or evaluation.digest([[name, file_sha256[name]] for name in inventory])
+                != attestation["combined_sha256"]
+            ):
+                raise RuntimeError("C17 live worker bundle hash does not verify")
+            runs.append(
+                {
+                    "combined_sha256": attestation["combined_sha256"],
+                    "file_sha256": file_sha256,
+                    "process_id": attestation["process_id"],
+                    "protocol_sha256": attestation["protocol_sha256"],
+                    "pythonhashseed": attestation["pythonhashseed"],
+                    "source_commit": attestation["source_commit"],
+                }
+            )
+        if any(
+            runs[0]["file_sha256"][name] != runs[1]["file_sha256"][name]
+            for name in inventory
+        ):
+            raise RuntimeError("C17 pre-final exact-nine bytes differ")
+
+        comparison_input = {
+            "comparison_contract_id": protocol["reproduction"]["comparison_contract_id"],
+            "prefinal_inventory": inventory,
+            "runs": runs,
+        }
+        manifest = {
+            "all_equal": True,
+            "comparison_contract_id": protocol["reproduction"]["comparison_contract_id"],
+            "comparison_input_sha256": evaluation.digest(comparison_input),
+            "equal_files": inventory,
+            "prefinal_inventory": inventory,
+            "protocol_id": protocol["protocol_id"],
+            "run_id": protocol["run_id"],
+            "runs": runs,
+            "schema_version": protocol["schema_version"],
+            "source_commit": source_commit,
+        }
+        final = copy.deepcopy(bundle_a)
+        final["reproduction_compare_manifest.json"] = manifest
+        acceptance = final["acceptance_matrix.json"]
+        acceptance["reproduction_evidence"] = {
+            "comparison_contract_id": protocol["reproduction"]["comparison_contract_id"],
+            "manifest_file": "reproduction_compare_manifest.json",
+            "manifest_sha256": evaluation.digest_bytes(
+                evaluation.artifact_bytes("reproduction_compare_manifest.json", manifest)
+            ),
+            "prefinal_exact9_equal": True,
+            "process_ids": [row["process_id"] for row in runs],
+            "pythonhashseeds": [row["pythonhashseed"] for row in runs],
+            "status": "externally_compared",
+        }
+        gate = next(
+            row
+            for row in acceptance["engineering_gates"]
+            if row["gate_id"] == "reproduction_exact"
+        )
+        gate["passed"] = True
+        gate["observed"] = True
+        acceptance["engineering_status"] = (
+            "accepted"
+            if all(row["passed"] for row in acceptance["engineering_gates"])
+            else "implementation_failure"
+        )
+        final["report.md"] = evaluation.report_text(acceptance)
+        evaluation.validate_bundle(final, protocol, source_commit)
+        return final
+
+    final_bundle = finalize_verified_reproduction(live_capability, live_receipt)
     temporary = output.parent / f".{output.name}.finalizing-{uuid.uuid4().hex}"
     existed_empty = output.exists()
     try:
