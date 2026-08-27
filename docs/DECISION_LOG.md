@@ -1088,3 +1088,35 @@ may change exactly `base_commit`, `base_sha256`, `source_commit`, and
 preserving the negative-result boundary and all scientific degrees of freedom. External evidence,
 rather than a worker-controlled flag, is the minimum non-circular basis for byte-reproduction
 acceptance.
+
+## D-V03-0033 — Complete the disabled C17 v2 integrity schemas
+
+**Decision (2026-08-28):** Correct only integrity omissions in the still-disabled C17 v2
+preregistration. The corrected canonical raw SHA-256 is
+`b9e4dcda26d5d85064b3fbf6d453a8ed9efe0b7541fd5cb617ef37868be918ca`.
+Base/source pins remain null and the runner remains disabled; no source, model, test, controller,
+reserved model fixture, or official execution is authorized.
+
+Add `secondary_cell_status_rows` to the exact acceptance-matrix top-level schema. It contains
+exactly four rows, ordered R1 through R4, with exact fields `condition_id`,
+`primary_rescue_allowed`, `role`, and `scientific_status`; every row is secondary and cannot rescue
+R0. Add `not_evaluated_implementation_failure` to the registered status categories so the v1 and
+selected-candidate failure contracts use an explicitly valid status.
+
+Complete the external comparison schema with exact top-level and nested keys, types, values,
+nullability, enums, array order, and no-extra-key rules. `protocol_sha256` is the digest of the raw
+pinned preregistration bytes, including exactly one LF. It is not the disabled preregistration hash.
+The pinned preregistration contains no comparison-manifest or final acceptance/report hash, so both
+staging runs and the final exact-ten bundle can share this byte string without a hash cycle.
+
+Freeze the control-feasibility preimage and its SHA-256
+`7a893c4f898e7bd560181e028efcaa4da790c6edab12ef2a5bc13ac4b638abd0`, plus the exact canonical
+preimage for each `selection_input_sha256`. The feasibility requirement `n >= m` exists for the
+four matched controls. Correct the earlier D-V03-0032 shorthand: random-unmatched is not
+target-size matched. It retains the v1 size-hash behavior with a fresh `c17v2` preimage, requests
+size one through four, clips that size to the non-target pool, and hash-ranks combinations. Size-,
+degree-, load-, and activity-matched controls each retain target size `m`.
+
+**Reason:** A validator cannot enforce cardinality, evidence provenance, or external reproduction
+from prose-only or incomplete nested schemas. These additions remove ambiguity without changing a
+science metric, threshold, resource cell, fixture, rank, proposal/assessment boundary, or claim.

@@ -1151,3 +1151,34 @@ source/test paths may change. A source-only commit and independent audit precede
 four-field pin amendment. Official execution remains prohibited until that pin and post-pin
 verification pass. Package 0.2.1, persisted schema 0.2, release files, C06/C08 evidence, accepted
 C14--C16 evidence, C17 v1, and all claim grades remain protected.
+
+### 16.4 C17 v2 disabled-preregistration integrity appendix
+
+D-V03-0033 completes validator-facing schemas before source work. The acceptance matrix has an
+explicit `secondary_cell_status_rows` array with exactly four rows in R1/R2/R3/R4 order. Each row
+has exactly `condition_id`, `primary_rescue_allowed`, `role`, and `scientific_status`; role is
+`secondary`, primary rescue is false, and status uses a registered enum that now includes
+`not_evaluated_implementation_failure`.
+
+The reproduction comparison manifest and both run rows reject null, missing, extra, mistyped, or
+misordered data. `prefinal_inventory` and `equal_files` are the registered exact-nine order, the
+run order is A then B, each file-hash object has exactly those nine names, and publication requires
+`all_equal=true`. Combined and comparison-input digests have exact canonical preimage objects.
+Each run's `protocol_sha256` hashes the same raw, four-field-pinned preregistration bytes including
+one LF. The disabled preregistration digest is never substituted. Because the pinned preregistration
+does not contain output hashes, the later manifest and final acceptance/report cannot feed back into
+that protocol digest.
+
+Every discovery row carries the frozen control-feasibility-contract digest
+`7a893c4f898e7bd560181e028efcaa4da790c6edab12ef2a5bc13ac4b638abd0`. Every complete control row
+carries a `selection_input_sha256` over the exact canonical object containing candidate, condition,
+control type, sorted target and pool IDs, target size, run seed, protocol ID, the applicable
+train-only metric map/target total, and the random requested size or registered nulls. Candidate
+absence keeps selection input null.
+
+The candidate feasibility predicate remains `non_target_pool_count >= target_member_count` for the
+four matched controls. The D-V03-0032 phrase saying all five controls have size `m` is superseded.
+Random-unmatched retains v1 semantics with fresh namespace: derive a requested size in one through
+four from the registered hash, clip it to pool length, enumerate that size, and select by hash rank.
+Only size-, degree-, load-, and activity-matched controls require exact target size. Scientific
+metrics, thresholds, fixtures, one-factor cells, and claims remain unchanged.
