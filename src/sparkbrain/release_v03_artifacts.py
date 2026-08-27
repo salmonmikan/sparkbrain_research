@@ -20,6 +20,17 @@ V03_EVIDENCE_SCHEMA = "sparkbrain-v03-evidence-map-v1"
 V03_SOURCE_MANIFEST_SCHEMA = "sparkbrain-v03-release-source-manifest-v1"
 V03_RELEASE_REPORT_SCHEMA = "sparkbrain-v03-release-report-v1"
 C19Status = Literal["accepted", "blocked", "negative"]
+C19_BLOCKED_ARTIFACTS = (
+    "artifacts/v03/c19_external_validation/blocked-readiness-v1/attribution_rows.jsonl",
+    "artifacts/v03/c19_external_validation/blocked-readiness-v1/baseline_matching.json",
+    "artifacts/v03/c19_external_validation/blocked-readiness-v1/failure_examples.jsonl",
+    "artifacts/v03/c19_external_validation/blocked-readiness-v1/frozen_protocol.json",
+    "artifacts/v03/c19_external_validation/blocked-readiness-v1/metrics_by_condition.json",
+    "artifacts/v03/c19_external_validation/blocked-readiness-v1/paired_statistics.json",
+    "artifacts/v03/c19_external_validation/blocked-readiness-v1/raw_predictions.jsonl",
+    "artifacts/v03/c19_external_validation/blocked-readiness-v1/report.md",
+    "artifacts/v03/c19_external_validation/blocked-readiness-v1/run_manifest.jsonl",
+)
 
 _V03_ENTRIES = (
     (
@@ -159,14 +170,14 @@ def build_v03_evidence_map(
     *,
     source_revision: str,
     c19_status: C19Status = "blocked",
-    c19_artifacts: Iterable[str] = (),
+    c19_artifacts: Iterable[str] | None = None,
 ) -> dict[str, Any]:
     revision = _revision(source_revision)
-    c19_paths = tuple(sorted(c19_artifacts))
+    c19_paths = tuple(sorted(C19_BLOCKED_ARTIFACTS if c19_artifacts is None else c19_artifacts))
     if c19_status not in {"accepted", "blocked", "negative"}:
         raise ValueError("C19 release status must be accepted, blocked, or negative")
-    if c19_status == "blocked" and c19_paths:
-        raise ValueError("blocked C19 evidence must not carry unpinned artifacts")
+    if c19_status == "blocked" and c19_paths != C19_BLOCKED_ARTIFACTS:
+        raise ValueError("blocked C19 evidence must carry the exact-nine readiness artifact pin")
     if c19_status != "blocked" and not c19_paths:
         raise ValueError("integrated C19 evidence requires pinned artifacts")
     entries = []
@@ -239,8 +250,8 @@ def validate_v03_evidence_map(root: Path, payload: Any) -> list[str]:
             isinstance(value, str) for value in entry["artifacts"]
         ):
             problems.append(f"v0.3 evidence {entry_id} artifacts must be a string array")
-        elif entry["status"] == "blocked" and entry["artifacts"]:
-            problems.append("blocked C19 evidence must not carry unpinned artifacts")
+        elif entry["status"] == "blocked" and tuple(entry["artifacts"]) != C19_BLOCKED_ARTIFACTS:
+            problems.append("blocked C19 evidence must carry the exact-nine readiness artifact pin")
         else:
             for relative in entry["artifacts"]:
                 if not (root / relative).is_file():
@@ -370,7 +381,7 @@ def generate_v03_release_artifacts(
     output_root: Path,
     source_revision: str,
     c19_status: C19Status = "blocked",
-    c19_artifacts: Iterable[str] = (),
+    c19_artifacts: Iterable[str] | None = None,
 ) -> dict[str, str]:
     """Generate v0.3 release evidence into a clean staging root."""
 

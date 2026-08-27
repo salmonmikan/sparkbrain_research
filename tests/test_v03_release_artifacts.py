@@ -6,6 +6,7 @@ from pathlib import Path
 import pytest
 
 from sparkbrain.release_v03_artifacts import (
+    C19_BLOCKED_ARTIFACTS,
     V03_RELEASE_RELATIVE,
     build_v03_evidence_map,
     build_v03_root_manifest,
@@ -28,16 +29,16 @@ def test_v03_evidence_map_retains_negative_boundaries_and_blocks_unpinned_c19() 
         "id": "EV-V03-C19",
         "status": "blocked",
         "claim_ids": ["CL-007"],
-        "artifacts": [],
+        "artifacts": list(C19_BLOCKED_ARTIFACTS),
         "boundary": (
             "C19 is release-blocked pending an independently pinned external validation result."
         ),
     }
-    with pytest.raises(ValueError, match="unpinned"):
+    with pytest.raises(ValueError, match="exact-nine"):
         build_v03_evidence_map(
             ROOT,
             source_revision=REVISION,
-            c19_artifacts=("artifacts/v03/c18_brain_lab_v6/report.md",),
+            c19_artifacts=(),
         )
 
 
