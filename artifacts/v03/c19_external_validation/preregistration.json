@@ -23,6 +23,7 @@
     "official_cache_pin_required_before_execution": true
   },
   "checkpoint_selection": {
+    "calibration_split": "dev",
     "official_test_fit_or_tuning": false,
     "selection_split": "dev",
     "status": "frozen_before_official_evaluation"
@@ -35,6 +36,7 @@
   "fresh_seed_contract": {
     "official_seed_range": [5901, 5902, 5903, 5904, 5905],
     "proxy_seed_range": [6901, 6902, 6903, 6904, 6905],
+    "reserved_test_seed_range": [8901, 8902],
     "split_seed": 7901
   },
   "official_evaluation_allowed": false,
@@ -43,7 +45,7 @@
   "source_commit": null,
   "trace_checkpoint_contract": {
     "available": false,
-    "provider": "C18 accepted public contract",
-    "required_methods": ["reset", "step", "export_trace_checkpoint"]
+    "provider": "V03TraceSession",
+    "required_methods": ["inspect", "record", "checkpoint", "fork"]
   }
 }

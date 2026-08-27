@@ -74,6 +74,7 @@ def synthetic_proxy_row(
     row = {
         "condition_id": f"{input_track}/G0_probability_margin/E1_oracle_entity",
         "entity_count": 2,
+        "evaluator_only": input_track == "I2_symbolic_oracle",
         "episode_id_hash": episode_hash,
         "fault_attribution": fault.to_dict(),
         "input_track": input_track,
