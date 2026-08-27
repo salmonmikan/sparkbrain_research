@@ -19,6 +19,7 @@ __all__ = [
     "V03TraceEvent",
     "V03TraceSession",
     "canonical_json",
+    "V03Checkpoint",
     "replay_checkpoint",
     "replay_trace",
 ]

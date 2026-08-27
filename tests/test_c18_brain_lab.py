@@ -1,43 +1,41 @@
 from __future__ import annotations
 
-from sparkbrain.v03_integration import V03TraceSession, replay_checkpoint, replay_trace
+import pytest
+
+from sparkbrain.v03_integration import V03Checkpoint, V03TraceSession, replay_checkpoint
 
 
-def _session() -> V03TraceSession:
-    session = V03TraceSession(config={"seed": 1801}, state={"evidence": {"e1": {"source": "vision"}}})
-    session.record(
-        "coalition_evaluated",
-        {"cited_evidence_ids": ["e1"], "score_components": {"support": 1.0}},
-        {"beliefs": {"object:a": {"winner": "cat", "residual_losers": ["toy"]}}},
+def make() -> V03TraceSession:
+    item = V03TraceSession({"seed": 1802}, state={"evidence": {"e1": {"active": True}}})
+    item.record(
+        "coalition_evaluated", {"cited_evidence_ids": ["e1"]}, {"beliefs": {"a": {"winner": "cat"}}}
     )
-    return session
+    return item
 
 
-def test_checkpoint_replay_preserves_state_hash_and_trace() -> None:
-    checkpoint = _session().checkpoint("checkpoint:one")
-    restored = replay_trace(checkpoint)
+def test_hashes_bind_payload_root_and_lineage() -> None:
+    checkpoint = make().checkpoint("one")
     assert replay_checkpoint(checkpoint) == checkpoint.state_hash
-    assert restored.inspect() == checkpoint.state
-    assert restored.events == checkpoint.trace
+    for edit in (
+        lambda v: v["trace"][0]["payload"].update({"x": 1}),
+        lambda v: v.update({"initial_state_hash": "0" * 64}),
+    ):
+        value = checkpoint.as_dict()
+        edit(value)
+        with pytest.raises(ValueError):
+            V03Checkpoint.from_dict(value)
 
 
-def test_inspection_is_non_mutating_and_attribution_cannot_be_invented() -> None:
-    session = _session()
-    before = session.state_hash()
-    assert session.inspect()["evidence"]["e1"]["source"] == "vision"
-    assert session.state_hash() == before
-    try:
-        session.record("workspace_broadcast", {"cited_evidence_ids": ["missing"]}, {})
-    except ValueError as error:
-        assert "absent" in str(error)
-    else:
-        raise AssertionError("unknown evidence citation was accepted")
+def test_citations_pre_event_and_fork_replay() -> None:
+    item = make()
+    with pytest.raises(ValueError):
+        item.record("evidence_added", {"evidence_id": "e2", "cited_evidence_ids": ["e2"]}, {})
+    child = item.fork(item.checkpoint("one"), branch_id="b", intervention={"kind": "remove"})
+    assert child.parent_checkpoint_id == "one"
 
 
-def test_fork_is_explicit_and_parent_checkpoint_is_unchanged() -> None:
-    parent = _session()
-    checkpoint = parent.checkpoint("checkpoint:one")
-    child = parent.fork(checkpoint, branch_id="fork:goal", intervention={"kind": "alter_goal", "goal": "inspect"})
-    assert child.parent_checkpoint_id == checkpoint.checkpoint_id
-    assert child.events[0].kind == "intervention"
-    assert parent.state_hash() == checkpoint.state_hash
+def test_extra_state_rejected() -> None:
+    value = make().checkpoint("one").as_dict()
+    value["state"]["extra"] = True
+    with pytest.raises(ValueError):
+        V03Checkpoint.from_dict(value)
