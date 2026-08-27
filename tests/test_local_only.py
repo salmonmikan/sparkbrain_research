@@ -32,7 +32,7 @@ def _imports(path: Path) -> set[str]:
 
 
 def test_package_and_schema_patch_versions_are_distinct() -> None:
-    assert sparkbrain.__version__ == "0.2.1"
+    assert sparkbrain.__version__ == "0.3.0"
     assert sparkbrain.SCHEMA_VERSION == "0.2"
 
 

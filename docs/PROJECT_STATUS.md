@@ -1,4 +1,13 @@
-# Project Status — SparkBrain v0.2.1
+# Project Status — SparkBrain v0.3.0
+
+## v0.3 release migration boundary
+
+The package version is now `0.3.0`. The accepted v0.2.1 reference engine retains
+persisted config/state/trace schema `0.2`; it is not silently migrated or reinterpreted.
+The additive C18 trace/checkpoint interface uses schema `0.3` only for its own explicit
+payloads. Historical v0.2.1 artifacts, protected hashes, and C06/C08 negative evidence remain
+available while the v0.3 release manifest is prepared. C19 external validation is not counted
+as accepted release evidence until its independently pinned status is integrated.
 
 ## v0.3 C18 — trace, checkpoint and Brain Lab integration
 
