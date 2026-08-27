@@ -213,6 +213,9 @@ def main() -> int:
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--seed", default=1801, type=int)
     args = parser.parse_args()
+    protocol = load_protocol(ROOT / PROTOCOL_RELATIVE, require_enabled=True)
+    if args.seed != protocol["execution"]["official_seed"]:
+        raise RuntimeError("C18 official runner rejects a non-preregistered seed")
     print(_canonical(write_artifacts(args.output, seed=args.seed)))
     return 0
 
