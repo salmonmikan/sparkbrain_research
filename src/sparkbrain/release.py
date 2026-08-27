@@ -89,7 +89,7 @@ REQUIRED_RELEASE_FILES = (*REQUIRED_PUBLIC_FILES, *REQUIRED_PREPARATION_FILES)
 def _is_v03_package(root: Path) -> bool:
     try:
         return package_version(root) == "0.3.0"
-    except (OSError, UnicodeDecodeError, tomllib.TOMLDecodeError, KeyError):
+    except (OSError, UnicodeDecodeError, tomllib.TOMLDecodeError, KeyError, ValueError):
         return False
 
 

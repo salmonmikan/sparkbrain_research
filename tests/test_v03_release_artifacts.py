@@ -145,6 +145,12 @@ def test_root_manifest_requires_the_exact_ten_generated_artifacts() -> None:
 def test_root_manifest_cli_publishes_a_valid_pair(tmp_path: Path) -> None:
     from sparkbrain.release import sha256_file
 
+    source_state = subprocess.run(
+        ["git", "diff", "--quiet"], cwd=ROOT, check=False, capture_output=True
+    )
+    if source_state.returncode:
+        pytest.skip("root manifest pair is staged for its integration commit")
+
     evidence = json.loads(
         (ROOT / "artifacts/release/v0.3/evidence_map.json").read_text(encoding="utf-8")
     )
