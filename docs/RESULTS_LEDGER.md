@@ -2,6 +2,33 @@
 
 Append entries; do not rewrite prior outcomes to match later interpretations.
 
+## 2026-08-28 — R-V03-0012 — C18 v6 official deterministic observability bundle
+
+- Protocol/pin: `c18-trace-checkpoint-brain-lab-v6`; execution pin
+  `c0c242d848588d76015734a309f72fed0bd1d380`; fixed official seed `1802`.
+- Status: engineering `accepted`; scientific `not_supported`.
+- Evidence: exact-seven inventory contains the pinned preregistration, replay
+  and intervention cases, checkpoint manifest, preflight evidence, report, and
+  CDN-free static Brain Lab export. Preflight, strict schema, replay, citation,
+  and parent-bound fork-lineage checks are retained as deterministic artifacts.
+- Boundary: this validates an observability/replay contract only. It provides
+  no scientific support for efficacy, semantic understanding, biological
+  fidelity, energy efficiency, or external task performance.
+
+## 2026-08-28 — R-V03-0011 — C18 trace/checkpoint/Brain Lab contract smoke artifact
+
+- Protocol/source: `c18-trace-checkpoint-brain-lab-v1`; source
+  `f569cd3a1772e5c3240392e720825314f30e0bf3`; pin
+  `5806d1758cc6bcbe521b216338b58283b137038d`.
+- Status: engineering `accepted`; scientific `not_supported`.
+- Evidence: the official and `PYTHONHASHSEED=1` reproduction have equal SHA-256
+  values for all six exact files. Both replay the primary checkpoint to state
+  hash `d779e559be9ac576bfe5ec1206780c27342c4ebfdc7c3b15ee11257caa3c5175`.
+- Boundary: the export never invents attribution; missing evidence citations
+  fail closed, inspection is state-neutral, and a fork retains parent lineage.
+  This is no evidence of semantic understanding, organ formation, biological
+  fidelity, energy efficiency, or external task performance.
+
 ## 2026-08-27 — R-V03-0009 — C15 v4 completed evaluation; engineering accepted
 
 - Protocol/run: `c15-revision-objectives-v4` / `c15-revision-objectives-main-v4`.
@@ -906,3 +933,35 @@ contract correction only.
 - Disposition: v1 is immutable. A C17 v2 engineering correction requires a separate preregistration
   and audit; v1 source, thresholds, and evidence are not repaired in place.
 - Claim-grade impact: none. Package/schema/release metadata and C06/C08 evidence remain unchanged.
+
+## 2026-08-28 — R-V03-0012 — C17 v2 accepted engineering run; functional-organ hypothesis not supported
+
+- Protocol/run: `c17-functional-organs-v2` / `c17-functional-organs-main-v2`; source
+  `2bc251cc95c40bbea2b2e00b08d440b7ee23e059`; execution-pin head
+  `f2e635a2b488f66b7bb696a0618c7be2b97180b9`; official seeds 4801--4805; bootstrap seed 5817.
+- Status: engineering `accepted` (16/16 gates), scientific `not_supported` (0/8 primary gates),
+  `failed_seeds=[]`. All five official seeds completed and are retained.
+- Primary result: no seed/condition cell selected a primary candidate. All 25 discovery rows are
+  valid candidate absences: 20 `no_activity_eligible_candidate` and five
+  `no_control_feasible_candidate`. Under the preregistered v2 absence contract this is a successful
+  engineering case and a scientific negative, not an implementation failure.
+- Raw cardinalities: 25 discovery rows, 100 structural seed/split rows, 600 selectivity episode
+  rows, 2,100 matched episode/branch rows, 2,100 held-out episode/branch rows, 125 explicit
+  not-applicable control rows, 150 matched seed-effect rows, and 25 resource counters.
+- Reproduction: two separately spawned pre-final workers used `PYTHONHASHSEED=11801` and `21801`.
+  Their registered exact-nine outputs were byte-identical with combined SHA-256
+  `177aca36f3f2def1b1b49f6760fd32c84418cfdda4f94415fc64b9ead3533d1a`. Only after live-process,
+  nonce, path, source, protocol, and raw-byte validation did the runner emit the comparison manifest
+  and one final exact-ten bundle. The comparison-manifest SHA-256 is
+  `a9bf16cc3d29f250fec18cac0e9821ba1f7ae02f6a7b9fe793f95419dfecc7c2`. No second final exact-ten
+  comparison is claimed.
+- Validation: independent source/pin and official artifact audits passed. The final exact-ten
+  bundle passed strict schema, raw-cardinality, raw-preimage, metric, gate, and reproduction-manifest
+  recalculation. Its ordered inventory combined SHA-256 is
+  `9fe4223c4392db18512037383b0cf8d90d0384da7fd7995b0e03a4fb8c797302`.
+- Disposition: retain the negative result without changing thresholds, fixtures, resource cells, or
+  claim boundaries. CL-008 remains E0; no candidate reached structural, selectivity, reuse, or
+  causal-control evaluation, and no functional-organ, emergent-organ, semantic, biological,
+  external-generalization, or energy claim is permitted.
+- Protection: C17 v1 source/artifacts, package 0.2.1, persisted schema 0.2, release metadata,
+  C06/C08 evidence, and accepted C14--C16 evidence remain unchanged.

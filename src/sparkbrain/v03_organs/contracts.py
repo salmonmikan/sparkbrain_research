@@ -29,7 +29,7 @@ def text_hash(value: str) -> str:
 
 def protocol_document() -> dict[str, Any]:
     root = Path(__file__).resolve().parents[3]
-    path = root / "artifacts/v03/c17_functional_organs/preregistration.json"
+    path = root / "artifacts/v03/c17_functional_organs_v2/preregistration.json"
     return json.loads(path.read_text(encoding="utf-8"))
 
 
