@@ -83,6 +83,15 @@ def test_manifest_uses_real_commit_and_rejects_bool_and_payload_drift(tmp_path: 
         "from importlib import import_module\nimport_module('socket')\n",
         "from builtins import __import__ as load\nload('socket')\n",
         "import importlib\nname = 'torch'\nimportlib.import_module(name)\n",
+        "import importlib\nload = importlib.import_module\nload('socket')\n",
+        "import importlib\ngetattr(importlib, 'import_module')('socket')\n",
+        "__builtins__['__import__']('socket')\n",
+        "import importlib as il\nload = il.import_module\nload('socket')\n",
+        "import builtins as bi\nload = bi.__import__\nload('socket')\n",
+        "import importlib as il\nload = getattr(il, 'import_module')\nload('unknown')\n",
+        "name = '__import__'\n__builtins__[name]('torch')\n",
+        "load = __builtins__['__import__']\nload('socket')\n",
+        "from importlib import import_module as load\nalias = load\nalias('socket')\n",
     ],
 )
 def test_network_boundary_scans_package_and_fails_closed(tmp_path: Path, source: str) -> None:
@@ -97,6 +106,15 @@ def test_network_boundary_scans_package_and_fails_closed(tmp_path: Path, source:
         "__import__('torch')\n",
         "import importlib\nimportlib.import_module('torch.nn')\n",
         "from importlib import import_module as load\nload('torch')\n",
+        "import importlib\nload = importlib.import_module\nload('torch')\n",
+        "import importlib\ngetattr(importlib, 'import_module')('torch')\n",
+        "__builtins__['__import__']('torch')\n",
+        "import importlib as il\nload = il.import_module\nload('torch')\n",
+        "import builtins as bi\nload = bi.__import__\nload('torch')\n",
+        "import builtins as bi\nbi.__dict__['__import__']('torch')\n",
+        "import importlib as il\nil.__dict__['import_module']('torch')\n",
+        "load = __builtins__['__import__']\nload('torch')\n",
+        "from importlib import import_module as load\nalias = load\nalias('torch')\n",
     ],
 )
 def test_network_boundary_allows_proven_torch_dynamic_import(

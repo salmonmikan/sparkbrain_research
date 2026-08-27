@@ -238,6 +238,96 @@ def validate_canonical_reproduction_manifest(
     return problems
 
 
+def _subscript_key(node: ast.Subscript) -> str | None:
+    if isinstance(node.slice, ast.Constant) and isinstance(node.slice.value, str):
+        return node.slice.value
+    return None
+
+
+def _dynamic_import_callable_kind(
+    node: ast.expr,
+    *,
+    dynamic_names: set[str],
+    ambiguous_names: set[str],
+    importlib_names: set[str],
+    builtins_names: set[str],
+) -> str | None:
+    if isinstance(node, ast.Name):
+        if node.id in dynamic_names:
+            return "proven"
+        if node.id in ambiguous_names:
+            return "ambiguous"
+        return None
+    if isinstance(node, ast.Attribute) and node.attr in {"import_module", "__import__"}:
+        expected = importlib_names if node.attr == "import_module" else builtins_names
+        return (
+            "proven"
+            if isinstance(node.value, ast.Name) and node.value.id in expected
+            else "ambiguous"
+        )
+    if (
+        isinstance(node, ast.Call)
+        and isinstance(node.func, ast.Name)
+        and node.func.id == "getattr"
+        and len(node.args) >= 2
+    ):
+        owner = node.args[0]
+        attribute = (
+            node.args[1].value
+            if isinstance(node.args[1], ast.Constant)
+            and isinstance(node.args[1].value, str)
+            else None
+        )
+        owner_name = owner.id if isinstance(owner, ast.Name) else None
+        if owner_name in importlib_names:
+            if attribute == "import_module":
+                return "proven"
+            return "ambiguous" if attribute is None else None
+        if owner_name in builtins_names:
+            if attribute == "__import__":
+                return "proven"
+            return "ambiguous" if attribute is None else None
+        if attribute in {"import_module", "__import__"}:
+            return "ambiguous"
+        return None
+    if isinstance(node, ast.Subscript):
+        key = _subscript_key(node)
+        owner = node.value
+        if isinstance(owner, ast.Name) and owner.id == "__builtins__":
+            if key == "__import__":
+                return "proven"
+            return "ambiguous" if key is None else None
+        if isinstance(owner, ast.Attribute) and owner.attr == "__dict__":
+            module_name = owner.value.id if isinstance(owner.value, ast.Name) else None
+            expected = (
+                "import_module"
+                if module_name in importlib_names
+                else "__import__"
+                if module_name in builtins_names
+                else None
+            )
+            if expected is not None and key == expected:
+                return "proven"
+            if expected is not None and key is None:
+                return "ambiguous"
+            if key in {"import_module", "__import__"}:
+                return "ambiguous"
+        return None
+    return None
+
+
+def _assigned_name(node: ast.AST) -> tuple[str, ast.expr] | None:
+    if (
+        isinstance(node, ast.Assign)
+        and len(node.targets) == 1
+        and isinstance(node.targets[0], ast.Name)
+    ):
+        return node.targets[0].id, node.value
+    if isinstance(node, ast.AnnAssign) and isinstance(node.target, ast.Name) and node.value:
+        return node.target.id, node.value
+    return None
+
+
 def validate_network_client_boundary(root: Path) -> list[str]:
     package = root / "src" / "sparkbrain"
     if not package.is_dir():
@@ -254,9 +344,18 @@ def validate_network_client_boundary(root: Path) -> list[str]:
             continue
         relative = path.relative_to(root).as_posix()
         allowed_static = STATIC_NETWORK_IMPORT_ALLOWLIST.get(relative, set())
+        importlib_names = {"importlib"}
+        builtins_names = {"builtins"}
         dynamic_import_names = {"__import__"}
+        ambiguous_dynamic_names: set[str] = set()
         for node in ast.walk(tree):
-            if isinstance(node, ast.ImportFrom) and node.module == "importlib":
+            if isinstance(node, ast.Import):
+                for alias in node.names:
+                    if alias.name == "importlib":
+                        importlib_names.add(alias.asname or alias.name)
+                    elif alias.name == "builtins":
+                        builtins_names.add(alias.asname or alias.name)
+            elif isinstance(node, ast.ImportFrom) and node.module == "importlib":
                 for alias in node.names:
                     if alias.name == "import_module":
                         dynamic_import_names.add(alias.asname or alias.name)
@@ -264,6 +363,42 @@ def validate_network_client_boundary(root: Path) -> list[str]:
                 for alias in node.names:
                     if alias.name == "__import__":
                         dynamic_import_names.add(alias.asname or alias.name)
+        assignments = [
+            assignment
+            for node in ast.walk(tree)
+            if (assignment := _assigned_name(node))
+        ]
+        changed = True
+        while changed:
+            changed = False
+            for target, value in assignments:
+                if isinstance(value, ast.Name) and value.id in importlib_names:
+                    if target not in importlib_names:
+                        importlib_names.add(target)
+                        changed = True
+                    continue
+                if isinstance(value, ast.Name) and value.id in builtins_names:
+                    if target not in builtins_names:
+                        builtins_names.add(target)
+                        changed = True
+                    continue
+                kind = _dynamic_import_callable_kind(
+                    value,
+                    dynamic_names=dynamic_import_names,
+                    ambiguous_names=ambiguous_dynamic_names,
+                    importlib_names=importlib_names,
+                    builtins_names=builtins_names,
+                )
+                target_set = (
+                    dynamic_import_names
+                    if kind == "proven"
+                    else ambiguous_dynamic_names
+                    if kind == "ambiguous"
+                    else None
+                )
+                if target_set is not None and target not in target_set:
+                    target_set.add(target)
+                    changed = True
         for node in ast.walk(tree):
             names = (
                 [a.name for a in node.names]
@@ -279,15 +414,17 @@ def validate_network_client_boundary(root: Path) -> list[str]:
             }
             if imported_network - allowed_static:
                 problems.append(f"network client import is forbidden: {path}")
-            dynamic_call = False
             if isinstance(node, ast.Call):
-                dynamic_call = (
-                    isinstance(node.func, ast.Name) and node.func.id in dynamic_import_names
-                ) or (
-                    isinstance(node.func, ast.Attribute)
-                    and node.func.attr == "import_module"
+                dynamic_kind = _dynamic_import_callable_kind(
+                    node.func,
+                    dynamic_names=dynamic_import_names,
+                    ambiguous_names=ambiguous_dynamic_names,
+                    importlib_names=importlib_names,
+                    builtins_names=builtins_names,
                 )
-            if isinstance(node, ast.Call) and dynamic_call:
+            else:
+                dynamic_kind = None
+            if isinstance(node, ast.Call) and dynamic_kind is not None:
                 target = (
                     node.args[0].value
                     if node.args
@@ -296,7 +433,10 @@ def validate_network_client_boundary(root: Path) -> list[str]:
                     else None
                 )
                 prefix = target.split(".")[0] if target is not None else None
-                if prefix not in ALLOWED_DYNAMIC_IMPORT_PREFIXES:
+                if (
+                    dynamic_kind == "ambiguous"
+                    or prefix not in ALLOWED_DYNAMIC_IMPORT_PREFIXES
+                ):
                     problems.append(f"unproven or network dynamic import is forbidden: {path}")
     return sorted(set(problems))
 
