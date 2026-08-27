@@ -1,0 +1,110 @@
+{
+  "artifact_inventory": [
+    "attribution_rows.jsonl",
+    "baseline_matching.json",
+    "failure_examples.jsonl",
+    "frozen_protocol.json",
+    "metrics_by_condition.json",
+    "paired_statistics.json",
+    "raw_predictions.jsonl",
+    "report.md",
+    "run_manifest.jsonl"
+  ],
+  "baseline_kinds": [
+    "direct_stateless",
+    "explicit_state_probabilistic",
+    "modular_rim_like",
+    "recurrent",
+    "transformer"
+  ],
+  "belief_r_contract": {
+    "cache_content_read": false,
+    "cache_sha256": "b584c18328965cf3eb3d36f2f9ef145c1e15c9bf57bba084982ba18df1fa4153",
+    "cache_size_bytes": 2230828,
+    "expected_pairs": 1744,
+    "expected_rows": 3656,
+    "expected_update_pairs": 1074,
+    "filename": "test.csv",
+    "license": "CC-BY-SA-4.0",
+    "repository_id": "CAiRE/belief_r",
+    "revision": "3719f5804c63318037465fecf298a7fd78d99121",
+    "spec_path": "configs/external_validation/belief_r.json",
+    "spec_sha256": "ed092dd97a176813f011cdf007d4e34a0b9bcc7c855c22983a31ff82e7b0d63c",
+    "split": "test"
+  },
+  "blocker": {
+    "component": "I2_symbolic_oracle",
+    "phase": "preflight",
+    "reason_code": "missing_truth_free_belief_r_symbolic_adapter"
+  },
+  "c18_contract": {
+    "accepted_source_commit": "3f561254dc7bd2f97cb4784f0632fe0be48093cd",
+    "available": true,
+    "contract_path": "src/sparkbrain/v03_integration/contracts.py",
+    "contract_sha256": "567724ab1088e5e9259c9bb2151ae513eb0ef579fbce6b287c3f6850ed328df8",
+    "execution_pin_commit": "c0c242d848588d76015734a309f72fed0bd1d380",
+    "provider": "V03TraceSession",
+    "required_methods": [
+      "inspect",
+      "record",
+      "checkpoint",
+      "fork"
+    ]
+  },
+  "checkpoint_selection": {
+    "calibration_split": "dev",
+    "official_test_fit_or_tuning": false,
+    "selection_split": "dev",
+    "status": "preregistered"
+  },
+  "condition_matrix": {
+    "entities": [
+      "E0_global",
+      "E1_oracle_entity"
+    ],
+    "gates": [
+      "G0_probability_margin",
+      "G1_coalition"
+    ],
+    "inputs": [
+      "I0_whole_hash",
+      "I1_local_compositional",
+      "I2_symbolic_oracle"
+    ]
+  },
+  "fresh_seed_contract": {
+    "bootstrap_seed": 9901,
+    "official_seed_range": [
+      5901,
+      5902,
+      5903,
+      5904,
+      5905
+    ],
+    "proxy_seed_range": [
+      6901,
+      6902,
+      6903,
+      6904,
+      6905
+    ],
+    "reserved_test_seed_range": [
+      8901,
+      8902
+    ],
+    "split_seed": 7901
+  },
+  "initial_preregistration_path": "artifacts/v03/c19_external_validation/preregistration.json",
+  "initial_preregistration_sha256": "97a2448e2918f3b0a4583520ad2f35d5d47d99813585be7bb3fae32e0b340cfe",
+  "official_data_access": {
+    "cache_verified": false,
+    "examples_read": false,
+    "policy": "blocked_before_cache_open"
+  },
+  "official_evaluation_allowed": false,
+  "protocol_id": "c19-external-v1",
+  "run_id": "c19-external-blocked-readiness-v1",
+  "schema_version": "0.3",
+  "source_commit": "052413136229dcfa63f08cebe19585134f7cfb98",
+  "status": "blocked_engineering_readiness"
+}

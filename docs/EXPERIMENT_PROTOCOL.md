@@ -1226,3 +1226,33 @@ All eight primary scientific gates are false and CL-008 remains E0. The result s
 the registered local pipeline and its candidate-absence boundary completed reproducibly. It does
 not support a functional-organ, emergent-organ, semantic, biological, external-generalization, or
 energy claim.
+
+## 17. C19 blocked external-validation readiness protocol
+
+C19 protocol `c19-external-v1` retains a disabled initial preregistration and a deterministic
+blocked-readiness bundle. Source `052413136229dcfa63f08cebe19585134f7cfb98` may read only the
+versioned preregistration, Belief-R specification, and accepted C18 contract source when building
+this bundle. It has no official-cache argument or dataset loader. The official cache is neither
+opened nor verified, and no example, label, prediction, attribution, metric, or statistic is read
+or manufactured.
+
+The canonical inventory is exact-nine in registered order. Its manifest contains exactly 60
+condition rows—three input tracks by two gates by two entity conditions by five official seeds—then
+25 baseline rows—five registered families by the same five seeds. Every row is a preflight block
+with reason `missing_truth_free_belief_r_symbolic_adapter`, `official_examples_read=false`, and
+zero outputs. Raw prediction and attribution files are empty. Metrics, autonomous and Oracle
+aggregates, paired comparisons, and the planned 10,000 bootstrap resamples remain unexecuted and
+null. Baseline compute, data, optimization, and parameter matching are all false, so no winner
+claim is permitted.
+
+The writer validates all nine staged files before atomic directory publication, rejects an
+existing destination, and validates the published directory again. The validator reconstructs the
+entire expected bundle from frozen pins, requires exact inventory and ordered manifest equality,
+and rejects nonempty raw/attribution rows or any claim escalation.
+
+This protocol completes engineering readiness only. It does not accept C19 or G09 and its
+scientific status is `not_evaluated`. C06 remains the existing negative external result. A
+truth-free Belief-R-to-I2 adapter and any subsequent official execution require a new protocol;
+this blocked bundle cannot be upgraded retrospectively. Initial C19 preregistration bytes, package
+0.2.1, persisted schema 0.2, schemas, release files, C06/C08 evidence, and claim grades remain
+unchanged.

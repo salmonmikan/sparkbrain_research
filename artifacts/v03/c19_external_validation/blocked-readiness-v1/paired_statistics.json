@@ -1,0 +1,11 @@
+{
+  "bootstrap_seed": 9901,
+  "comparisons": null,
+  "executed_resamples": 0,
+  "planned_resamples": 10000,
+  "protocol_id": "c19-external-v1",
+  "reason_code": "missing_truth_free_belief_r_symbolic_adapter",
+  "schema_version": "0.3",
+  "source_commit": "052413136229dcfa63f08cebe19585134f7cfb98",
+  "status": "not_evaluated"
+}
