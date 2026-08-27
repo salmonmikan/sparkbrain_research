@@ -878,3 +878,31 @@ contract correction only.
   relaxed after inspection. C16's independently accepted C12/C13 prerequisites are unaffected.
 - Claim-grade impact: none. C06/C08 negatives, accepted C11--C14 outputs, package 0.2.1,
   persisted schema 0.2, and release manifests remain unchanged.
+
+## 2026-08-28 — R-V03-0011 — C17 v1 control-pool implementation failure
+
+- Protocol/run: `c17-functional-organs-v1` / `c17-functional-organs-main-v1`; source
+  `d407663bdfeb10a29ac5791d34bace6dfa7fbbef`; execution-pin head
+  `4744ff7335ffcb1ad7510555db3b8b9ad4be383a`
+- Execution: official seeds 4701--4705 all completed; `failed_seeds=[]`; exactly nine canonical
+  artifacts were published; bundle-manifest SHA-256
+  `9a3c50f3773d6dc40652adce06db6158a0aaeb3867fb0945078878614e58374f`
+- Engineering result: `implementation_failure`. Fourteen of sixteen gates passed;
+  `control_completeness` and the first-run `reproduction_exact` evidence gate did not. The later
+  reproduction establishes byte identity but does not retroactively change the immutable v1
+  acceptance matrix.
+- Failure cause: all five candidate-present cells were R4. Each had candidate-bank size 2 and
+  target-member count 2, hence eligible non-target control-pool size 0. Five required control
+  types per seed were missing, for 25 missing slots. The other 20 cells had no primary candidate
+  and are valid scientific-negative cells, not engineering failures.
+- Scientific interpretation: the bundle displays `not_supported`, but the valid disposition is
+  `not_evaluated_implementation_failure`; mandatory matched controls were unavailable, so the
+  scientific hypothesis was not evaluated.
+- Raw cardinalities: 25 candidate-discovery rows, 100 structural seed/split rows, 600 selectivity
+  episode rows, 2,100 matched episode/branch rows, 2,100 held-out episode/branch rows, 125 control
+  membership rows, 150 matched seed-effect rows, and 25 resource counters.
+- Reproduction: a second run with `PYTHONHASHSEED=8675309` matched every exact-nine byte. The
+  official hashseed was not recorded, so distinct hashseeds are not claimed.
+- Disposition: v1 is immutable. A C17 v2 engineering correction requires a separate preregistration
+  and audit; v1 source, thresholds, and evidence are not repaired in place.
+- Claim-grade impact: none. Package/schema/release metadata and C06/C08 evidence remain unchanged.

@@ -1,5 +1,21 @@
 # Project Status — SparkBrain v0.2.1
 
+## v0.3 C17 v1 — immutable implementation failure
+
+C17 v1 completed official seeds 4701--4705 and published the exact-nine bundle under
+`artifacts/v03/c17_functional_organs/`, with no failed seed. Engineering status is
+`implementation_failure`: the R4 candidate in every seed used both members of its two-candidate
+bank, leaving a zero-member non-target pool and 25 missing mandatory matched-control slots. The
+bundle's displayed `not_supported` scientific status is retained byte-for-byte, but the valid
+interpretation is `not_evaluated_implementation_failure` because control completeness failed.
+
+The bundle-manifest SHA-256 is
+`9a3c50f3773d6dc40652adce06db6158a0aaeb3867fb0945078878614e58374f`; a reproduction with
+`PYTHONHASHSEED=8675309` matched all nine files. The official hashseed was not recorded, so no
+distinct-hashseed claim is made. C17 v1 is immutable. A C17 v2 engineering correction is planned
+under a separate protocol and audit. Package 0.2.1, schema 0.2, release metadata, C06/C08 evidence,
+and accepted C14--C16 evidence remain unchanged.
+
 ## v0.3 C16 — bounded proto-concept formation
 
 C16 is accepted for the preregistered synthetic protocol `c16-proto-concepts-v1` and run

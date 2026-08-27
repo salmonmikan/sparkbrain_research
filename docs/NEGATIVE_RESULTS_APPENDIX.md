@@ -19,6 +19,7 @@ Generated from the append-only results ledger. This index does not replace the f
 | R0013 | C01-C10 integrated non-license release candidate | No grade increase inferred. |
 | R0014 | C10 standalone archive and private review correction | No grade increase inferred. |
 | R0015 | C10 final fail-closed integrity correction | No grade increase inferred. |
+| R-V03-0011 | C17 v1 control-pool implementation failure | Science not evaluated: R4 target exhausted the two-candidate bank, leaving 25 mandatory control slots missing. |
 
 ## Pending integration
 

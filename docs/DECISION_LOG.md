@@ -1010,3 +1010,26 @@ source, test, model, controller, or official fixture execution is authorized by 
 **Reason:** A frozen digest is auditable only when the hashed document is reconstructible without
 consulting a future implementation. Expanding the machine contract removes that ambiguity without
 changing experimental degrees of freedom or converting C08/C15/C16 negative evidence into support.
+
+## D-V03-0031 — Preserve the C17 v1 implementation failure and separate its correction
+
+**Decision (2026-08-28):** Preserve run `c17-functional-organs-main-v1` and its exact-nine
+bundle as immutable failure evidence. The run completed all five official seeds with no failed
+seed, but engineering status is `implementation_failure`: `control_completeness` failed because
+each R4 seed discovered a two-member target from a two-candidate bank, leaving a zero-member
+non-target pool for all five required controls (25 missing control slots in total). The artifact
+reports scientific status `not_supported`; the valid scientific interpretation is instead
+`not_evaluated_implementation_failure`, because incomplete mandatory controls prevent a scientific
+evaluation.
+
+The canonical bundle-manifest SHA-256 is
+`9a3c50f3773d6dc40652adce06db6158a0aaeb3867fb0945078878614e58374f`. A second execution with
+`PYTHONHASHSEED=8675309` matched all nine artifact bytes. The official execution's hashseed was not
+recorded, so no distinct-hashseed claim is made. C17 v1 source, protocol, thresholds, and artifacts
+must not be revised after inspection. Any engineering correction belongs to C17 v2 with a separate
+decision, protocol identity, audit, and execution. Package 0.2.1, persisted schema 0.2, release
+metadata, C06/C08 evidence, and accepted dependency evidence remain unchanged.
+
+**Reason:** The observed failure is a design-level control-construction defect, not a failed seed
+and not evidence for or against the preregistered organ hypothesis. Preserving the bytes and
+separating a future correction prevents retrospective repair of the inspected v1 result.

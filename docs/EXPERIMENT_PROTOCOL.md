@@ -1088,3 +1088,19 @@ preregistration raw SHA-256 is
 `5722f4cdc1feb99e7213546365601c168499e5d2bbe31db49721e59350d069bf`. The runner remains disabled,
 the source pin remains null, and no model, controller, official run, or test is executed by this
 amendment.
+
+### 16.2 C17 v1 post-run disposition
+
+The official v1 execution completed seeds 4701--4705 and published the exact-nine bundle. It is
+retained as immutable evidence with engineering status `implementation_failure`. In every R4 seed,
+the discovered target contained both members of the two-candidate bank; the eligible non-target
+pool was therefore empty, and all five mandatory matched-control memberships were missing. This
+produced 25 missing required control slots across five seeds.
+
+The canonical artifact displays scientific status `not_supported`. Because control completeness
+is an engineering prerequisite, the effective scientific disposition is
+`not_evaluated_implementation_failure`; no C17 organ support or negative scientific result is
+accepted from v1. A reproduction using `PYTHONHASHSEED=8675309` matched all nine artifact bytes,
+while the official run's hashseed was not recorded. The reproduction does not rewrite the original
+acceptance matrix. Any correction is a separately preregistered C17 v2 engineering experiment;
+v1 source, thresholds, protocol, and artifact bytes remain frozen.
