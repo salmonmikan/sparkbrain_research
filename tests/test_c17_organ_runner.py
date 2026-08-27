@@ -33,11 +33,24 @@ def test_disabled_preregistration_rejects_before_execution(tmp_path):
     assert not (tmp_path / "out").exists()
 
 
-def test_disabled_preregistration_precedes_source_pin_check(tmp_path):
+def test_preregistration_gate_precedes_source_pin_check(tmp_path):
+    value = protocol()
+    value["runner_execution_allowed"] = False
+    protocol_path = tmp_path / "preregistration.json"
+    protocol_path.write_bytes((runner._canonical(value) + "\n").encode("utf-8"))
     with pytest.raises(RuntimeError, match="remains disabled"):
         runner._preflight(
             root=ROOT,
-            protocol_path=ROOT / runner.PROTOCOL_RELATIVE,
+            protocol_path=protocol_path,
+            output=tmp_path / "out",
+            source_commit="a" * 40,
+        )
+    value["runner_execution_allowed"] = True
+    protocol_path.write_bytes((runner._canonical(value) + "\n").encode("utf-8"))
+    with pytest.raises(RuntimeError, match="source pin mismatch"):
+        runner._preflight(
+            root=ROOT,
+            protocol_path=protocol_path,
             output=tmp_path / "out",
             source_commit="a" * 40,
         )
