@@ -244,67 +244,103 @@ def _subscript_key(node: ast.Subscript) -> str | None:
     return None
 
 
-def _dynamic_import_callable_kind(
-    node: ast.expr,
+def _dynamic_import_aliases(tree: ast.AST) -> tuple[set[str], set[str], set[str]]:
+    importlib_names = {"importlib"}
+    builtins_names = {"builtins"}
+    direct_names = {"__import__"}
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Import):
+            for alias in node.names:
+                if alias.name == "importlib":
+                    importlib_names.add(alias.asname or alias.name)
+                elif alias.name == "builtins":
+                    builtins_names.add(alias.asname or alias.name)
+        elif isinstance(node, ast.ImportFrom) and node.module == "importlib":
+            for alias in node.names:
+                if alias.name == "import_module":
+                    direct_names.add(alias.asname or alias.name)
+        elif isinstance(node, ast.ImportFrom) and node.module == "builtins":
+            for alias in node.names:
+                if alias.name == "__import__":
+                    direct_names.add(alias.asname or alias.name)
+    return importlib_names, builtins_names, direct_names
+
+
+def _shadowed_import_aliases(tree: ast.AST, tracked: set[str]) -> set[str]:
+    shadowed: set[str] = set()
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Name) and isinstance(node.ctx, ast.Store) and node.id in tracked:
+            shadowed.add(node.id)
+        elif isinstance(node, ast.arg) and node.arg in tracked:
+            shadowed.add(node.arg)
+        elif isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)):
+            if node.name in tracked:
+                shadowed.add(node.name)
+        elif isinstance(node, ast.Import):
+            for alias in node.names:
+                bound = alias.asname or alias.name.split(".")[0]
+                if bound in tracked and alias.name not in {"importlib", "builtins"}:
+                    shadowed.add(bound)
+        elif isinstance(node, ast.ImportFrom):
+            for alias in node.names:
+                bound = alias.asname or alias.name
+                allowed = (node.module, alias.name) in {
+                    ("importlib", "import_module"),
+                    ("builtins", "__import__"),
+                }
+                if bound in tracked and not allowed:
+                    shadowed.add(bound)
+        elif isinstance(node, ast.ExceptHandler) and node.name in tracked:
+            shadowed.add(node.name)
+    return shadowed
+
+
+def _dynamic_import_primitive_kind(
+    node: ast.AST,
     *,
-    dynamic_names: set[str],
-    ambiguous_names: set[str],
     importlib_names: set[str],
     builtins_names: set[str],
+    direct_names: set[str],
+    shadowed: set[str],
 ) -> str | None:
-    if isinstance(node, ast.NamedExpr):
-        return _dynamic_import_callable_kind(
-            node.value,
-            dynamic_names=dynamic_names,
-            ambiguous_names=ambiguous_names,
-            importlib_names=importlib_names,
-            builtins_names=builtins_names,
-        )
-    if isinstance(node, ast.Name):
-        if node.id in dynamic_names:
-            return "proven"
-        if node.id in ambiguous_names:
-            return "ambiguous"
-        return None
+    if isinstance(node, ast.Name) and node.id in direct_names:
+        return "ambiguous" if node.id in shadowed else "proven"
     if isinstance(node, ast.Attribute) and node.attr in {"import_module", "__import__"}:
+        owner = node.value.id if isinstance(node.value, ast.Name) else None
         expected = importlib_names if node.attr == "import_module" else builtins_names
-        return (
-            "proven"
-            if isinstance(node.value, ast.Name) and node.value.id in expected
-            else "ambiguous"
-        )
+        return "proven" if owner in expected and owner not in shadowed else "ambiguous"
     if (
         isinstance(node, ast.Call)
         and isinstance(node.func, ast.Name)
         and node.func.id == "getattr"
         and len(node.args) >= 2
     ):
-        owner = node.args[0]
+        owner = node.args[0].id if isinstance(node.args[0], ast.Name) else None
         attribute = (
             node.args[1].value
             if isinstance(node.args[1], ast.Constant)
             and isinstance(node.args[1].value, str)
             else None
         )
-        owner_name = owner.id if isinstance(owner, ast.Name) else None
-        if owner_name in importlib_names:
-            if attribute == "import_module":
-                return "proven"
-            return "ambiguous" if attribute is None else None
-        if owner_name in builtins_names:
-            if attribute == "__import__":
-                return "proven"
-            return "ambiguous" if attribute is None else None
-        if attribute in {"import_module", "__import__"}:
-            return "ambiguous"
-        return None
+        expected = (
+            "import_module"
+            if owner in importlib_names
+            else "__import__"
+            if owner in builtins_names
+            else None
+        )
+        if expected is None and attribute not in {"import_module", "__import__"}:
+            return None
+        if expected == attribute and owner not in shadowed and "getattr" not in shadowed:
+            return "proven"
+        return "ambiguous"
     if isinstance(node, ast.Subscript):
         key = _subscript_key(node)
         owner = node.value
         if isinstance(owner, ast.Name) and owner.id == "__builtins__":
-            if key == "__import__":
-                return "proven"
-            return "ambiguous" if key is None else None
+            if key not in {None, "__import__"}:
+                return None
+            return "proven" if key == "__import__" and owner.id not in shadowed else "ambiguous"
         if isinstance(owner, ast.Attribute) and owner.attr == "__dict__":
             module_name = owner.value.id if isinstance(owner.value, ast.Name) else None
             expected = (
@@ -314,114 +350,23 @@ def _dynamic_import_callable_kind(
                 if module_name in builtins_names
                 else None
             )
-            if expected is not None and key == expected:
+            if expected is None and key not in {"import_module", "__import__"}:
+                return None
+            if expected == key and module_name not in shadowed:
                 return "proven"
-            if expected is not None and key is None:
-                return "ambiguous"
-            if key in {"import_module", "__import__"}:
-                return "ambiguous"
-        return None
-    return None
-
-
-def _dynamic_import_expression_kind(
-    node: ast.expr,
-    *,
-    dynamic_names: set[str],
-    ambiguous_names: set[str],
-    importlib_names: set[str],
-    builtins_names: set[str],
-) -> str | None:
-    direct = _dynamic_import_callable_kind(
-        node,
-        dynamic_names=dynamic_names,
-        ambiguous_names=ambiguous_names,
-        importlib_names=importlib_names,
-        builtins_names=builtins_names,
-    )
-    if direct is not None:
-        return direct
-    pending = [(node, child) for child in ast.iter_child_nodes(node)]
-    while pending:
-        parent, child = pending.pop()
-        if isinstance(parent, ast.Call) and parent.func is child:
-            continue
-        if (
-            isinstance(child, ast.expr)
-            and
-            _dynamic_import_callable_kind(
-                child,
-                dynamic_names=dynamic_names,
-                ambiguous_names=ambiguous_names,
-                importlib_names=importlib_names,
-                builtins_names=builtins_names,
-            )
-            is not None
-        ):
             return "ambiguous"
-        pending.extend((child, nested) for nested in ast.iter_child_nodes(child))
     return None
 
 
-def _target_names(target: ast.expr) -> list[str]:
-    if isinstance(target, ast.Name):
-        return [target.id]
-    if isinstance(target, ast.Starred):
-        return _target_names(target.value)
-    if isinstance(target, (ast.Tuple, ast.List)):
-        return [name for element in target.elts for name in _target_names(element)]
-    return []
-
-
-def _target_bindings(target: ast.expr, value: ast.expr) -> list[tuple[str, ast.expr]]:
-    if isinstance(target, ast.Name):
-        return [(target.id, value)]
-    if (
-        isinstance(target, (ast.Tuple, ast.List))
-        and isinstance(value, (ast.Tuple, ast.List))
-        and len(target.elts) == len(value.elts)
-        and not any(isinstance(element, ast.Starred) for element in target.elts)
-    ):
-        return [
-            binding
-            for target_element, value_element in zip(target.elts, value.elts, strict=True)
-            for binding in _target_bindings(target_element, value_element)
-        ]
-    return [(name, value) for name in _target_names(target)]
-
-
-def _default_bindings(arguments: ast.arguments) -> list[tuple[str, ast.expr]]:
-    positional = [*arguments.posonlyargs, *arguments.args]
-    defaulted_arguments = (
-        positional[-len(arguments.defaults) :] if arguments.defaults else []
+def _is_direct_literal_torch_call(node: ast.AST, parent: ast.AST | None) -> bool:
+    if not isinstance(parent, ast.Call) or parent.func is not node or not parent.args:
+        return False
+    target = parent.args[0]
+    return (
+        isinstance(target, ast.Constant)
+        and isinstance(target.value, str)
+        and target.value.split(".")[0] in ALLOWED_DYNAMIC_IMPORT_PREFIXES
     )
-    defaults = [
-        (argument.arg, default)
-        for argument, default in zip(
-            defaulted_arguments, arguments.defaults, strict=True
-        )
-    ]
-    defaults.extend(
-        (argument.arg, default)
-        for argument, default in zip(arguments.kwonlyargs, arguments.kw_defaults, strict=True)
-        if default is not None
-    )
-    return defaults
-
-
-def _binding_rows(tree: ast.AST) -> list[tuple[str, ast.expr]]:
-    bindings: list[tuple[str, ast.expr]] = []
-    for node in ast.walk(tree):
-        if isinstance(node, ast.Assign):
-            for target in node.targets:
-                bindings.extend(_target_bindings(target, node.value))
-        elif isinstance(node, ast.AnnAssign) and node.value is not None:
-            bindings.extend(_target_bindings(node.target, node.value))
-        elif isinstance(node, ast.NamedExpr):
-            bindings.extend(_target_bindings(node.target, node.value))
-        elif isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef, ast.Lambda)):
-            bindings.extend(_default_bindings(node.args))
-    return bindings
 
 
 def validate_network_client_boundary(root: Path) -> list[str]:
@@ -440,57 +385,14 @@ def validate_network_client_boundary(root: Path) -> list[str]:
             continue
         relative = path.relative_to(root).as_posix()
         allowed_static = STATIC_NETWORK_IMPORT_ALLOWLIST.get(relative, set())
-        importlib_names = {"importlib"}
-        builtins_names = {"builtins"}
-        dynamic_import_names = {"__import__"}
-        ambiguous_dynamic_names: set[str] = set()
-        for node in ast.walk(tree):
-            if isinstance(node, ast.Import):
-                for alias in node.names:
-                    if alias.name == "importlib":
-                        importlib_names.add(alias.asname or alias.name)
-                    elif alias.name == "builtins":
-                        builtins_names.add(alias.asname or alias.name)
-            elif isinstance(node, ast.ImportFrom) and node.module == "importlib":
-                for alias in node.names:
-                    if alias.name == "import_module":
-                        dynamic_import_names.add(alias.asname or alias.name)
-            elif isinstance(node, ast.ImportFrom) and node.module == "builtins":
-                for alias in node.names:
-                    if alias.name == "__import__":
-                        dynamic_import_names.add(alias.asname or alias.name)
-        assignments = _binding_rows(tree)
-        changed = True
-        while changed:
-            changed = False
-            for target, value in assignments:
-                if isinstance(value, ast.Name) and value.id in importlib_names:
-                    if target not in importlib_names:
-                        importlib_names.add(target)
-                        changed = True
-                    continue
-                if isinstance(value, ast.Name) and value.id in builtins_names:
-                    if target not in builtins_names:
-                        builtins_names.add(target)
-                        changed = True
-                    continue
-                kind = _dynamic_import_expression_kind(
-                    value,
-                    dynamic_names=dynamic_import_names,
-                    ambiguous_names=ambiguous_dynamic_names,
-                    importlib_names=importlib_names,
-                    builtins_names=builtins_names,
-                )
-                target_set = (
-                    dynamic_import_names
-                    if kind == "proven"
-                    else ambiguous_dynamic_names
-                    if kind == "ambiguous"
-                    else None
-                )
-                if target_set is not None and target not in target_set:
-                    target_set.add(target)
-                    changed = True
+        importlib_names, builtins_names, direct_names = _dynamic_import_aliases(tree)
+        tracked = {*importlib_names, *builtins_names, *direct_names, "__builtins__", "getattr"}
+        shadowed = _shadowed_import_aliases(tree, tracked)
+        parents = {
+            child: parent
+            for parent in ast.walk(tree)
+            for child in ast.iter_child_nodes(parent)
+        }
         for node in ast.walk(tree):
             names = (
                 [a.name for a in node.names]
@@ -506,30 +408,18 @@ def validate_network_client_boundary(root: Path) -> list[str]:
             }
             if imported_network - allowed_static:
                 problems.append(f"network client import is forbidden: {path}")
-            if isinstance(node, ast.Call):
-                dynamic_kind = _dynamic_import_expression_kind(
-                    node.func,
-                    dynamic_names=dynamic_import_names,
-                    ambiguous_names=ambiguous_dynamic_names,
-                    importlib_names=importlib_names,
-                    builtins_names=builtins_names,
-                )
-            else:
-                dynamic_kind = None
-            if isinstance(node, ast.Call) and dynamic_kind is not None:
-                target = (
-                    node.args[0].value
-                    if node.args
-                    and isinstance(node.args[0], ast.Constant)
-                    and isinstance(node.args[0].value, str)
-                    else None
-                )
-                prefix = target.split(".")[0] if target is not None else None
-                if (
-                    dynamic_kind == "ambiguous"
-                    or prefix not in ALLOWED_DYNAMIC_IMPORT_PREFIXES
-                ):
-                    problems.append(f"unproven or network dynamic import is forbidden: {path}")
+            primitive_kind = _dynamic_import_primitive_kind(
+                node,
+                importlib_names=importlib_names,
+                builtins_names=builtins_names,
+                direct_names=direct_names,
+                shadowed=shadowed,
+            )
+            if primitive_kind is not None and (
+                primitive_kind == "ambiguous"
+                or not _is_direct_literal_torch_call(node, parents.get(node))
+            ):
+                problems.append(f"unproven or network dynamic import is forbidden: {path}")
     return sorted(set(problems))
 
 
