@@ -174,9 +174,12 @@ def validate_disabled_preregistration(protocol: Mapping[str, Any]) -> None:
     if matrix["entities"] != ["E0_global", "E1_oracle_entity"]:
         raise ValueError("C19 entity conditions are not frozen")
     trace = protocol["trace_checkpoint_contract"]
+    _exact_keys(trace, {"available", "provider", "required_methods"}, "trace contract")
     if (
         trace["provider"] != "V03TraceSession"
         or trace["available"] is not False
+        or not isinstance(trace["available"], bool)
+        or not isinstance(trace["required_methods"], list)
         or trace["required_methods"] != ["inspect", "record", "checkpoint", "fork"]
     ):
         raise ValueError("C19 must not fabricate a C18 trace/checkpoint API")
