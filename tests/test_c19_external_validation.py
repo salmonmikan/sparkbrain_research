@@ -156,18 +156,23 @@ def test_single_entity_available_claim_is_rejected_even_when_inconclusive() -> N
         )
 
 
-def test_baseline_winner_claim_requires_all_matching_dimensions() -> None:
+@pytest.mark.parametrize(
+    "mismatch_key",
+    ("compute_match", "data_match", "optimization_match", "parameter_match"),
+)
+def test_baseline_winner_claim_requires_all_matching_dimensions(mismatch_key: str) -> None:
+    row = {
+        "baseline_kind": "transformer",
+        "checkpoint_selection_split": "dev",
+        "compute_match": True,
+        "data_match": True,
+        "optimization_match": True,
+        "parameter_match": True,
+        "winner_claim_allowed": True,
+    }
+    row[mismatch_key] = False
     with pytest.raises(ValueError, match="winner claims"):
-        validate_baseline_matching(
-            {
-                "baseline_kind": "transformer",
-                "checkpoint_selection_split": "dev",
-                "compute_match": False,
-                "data_match": True,
-                "parameter_match": True,
-                "winner_claim_allowed": True,
-            }
-        )
+        validate_baseline_matching(row)
 
 
 def test_baseline_rejects_official_test_selection_even_without_winner_claim() -> None:
@@ -175,10 +180,11 @@ def test_baseline_rejects_official_test_selection_even_without_winner_claim() ->
         validate_baseline_matching(
             {
                 "baseline_kind": "transformer",
-                "checkpoint_selection_split": "official_test",
-                "compute_match": True,
-                "data_match": True,
-                "parameter_match": True,
+            "checkpoint_selection_split": "official_test",
+            "compute_match": True,
+            "data_match": True,
+            "optimization_match": True,
+            "parameter_match": True,
                 "winner_claim_allowed": False,
             }
         )
@@ -191,15 +197,35 @@ def test_fully_matched_baseline_can_still_make_no_winner_claim() -> None:
             "checkpoint_selection_split": "dev",
             "compute_match": True,
             "data_match": True,
+            "optimization_match": True,
             "parameter_match": True,
             "winner_claim_allowed": False,
         }
     )
 
 
+def test_baseline_matching_requires_optimization_dimension() -> None:
+    row = {
+        "baseline_kind": "transformer",
+        "checkpoint_selection_split": "dev",
+        "compute_match": True,
+        "data_match": True,
+        "parameter_match": True,
+        "winner_claim_allowed": False,
+    }
+    with pytest.raises(ValueError, match="exact keys"):
+        validate_baseline_matching(row)
+
+
 @pytest.mark.parametrize(
     "key",
-    ("compute_match", "data_match", "parameter_match", "winner_claim_allowed"),
+    (
+        "compute_match",
+        "data_match",
+        "optimization_match",
+        "parameter_match",
+        "winner_claim_allowed",
+    ),
 )
 def test_baseline_matching_flags_require_exact_booleans(key: str) -> None:
     row = {
@@ -207,6 +233,7 @@ def test_baseline_matching_flags_require_exact_booleans(key: str) -> None:
         "checkpoint_selection_split": "dev",
         "compute_match": False,
         "data_match": False,
+        "optimization_match": False,
         "parameter_match": False,
         "winner_claim_allowed": False,
     }

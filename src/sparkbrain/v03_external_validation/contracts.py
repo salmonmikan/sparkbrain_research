@@ -213,6 +213,7 @@ def validate_baseline_matching(row: Mapping[str, Any]) -> None:
             "checkpoint_selection_split",
             "compute_match",
             "data_match",
+            "optimization_match",
             "parameter_match",
             "winner_claim_allowed",
         },
@@ -223,14 +224,15 @@ def validate_baseline_matching(row: Mapping[str, Any]) -> None:
     if row["checkpoint_selection_split"] != "dev":
         raise ValueError("baseline checkpoint selection must use preregistered dev")
     _reject_nested_target_leakage(row)
-    boolean_keys = ("compute_match", "data_match", "parameter_match", "winner_claim_allowed")
+    matching_keys = ("compute_match", "data_match", "optimization_match", "parameter_match")
+    boolean_keys = (*matching_keys, "winner_claim_allowed")
     if any(type(row[key]) is not bool for key in boolean_keys):
         raise ValueError("baseline matching flags must be exact booleans")
-    all_matched = all(
-        row[key] is True for key in ("compute_match", "data_match", "parameter_match")
-    )
+    all_matched = all(row[key] is True for key in matching_keys)
     if row["winner_claim_allowed"] is True and not all_matched:
-        raise ValueError("winner claims require parameter, data, and compute matching")
+        raise ValueError(
+            "winner claims require parameter, data, optimization, and compute matching"
+        )
 
 
 _FORBIDDEN_NESTED_TARGET_KEYS = frozenset({"target", "target_label", "truth", "label"})
