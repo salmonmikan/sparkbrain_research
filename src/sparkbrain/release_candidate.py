@@ -32,6 +32,21 @@ CANDIDATE_MANIFEST_SCHEMA = "sparkbrain-candidate-release-v1"
 REVIEW_MANIFEST_SCHEMA = "sparkbrain-review-bundle-v2"
 RELEASE_GROUP_SCHEMA = "sparkbrain-release-group-v1"
 NETWORK_PREFIXES = {"aiohttp", "http", "httpx", "requests", "socket", "urllib", "urllib3"}
+FORBIDDEN_DYNAMIC_RESOLVER_MODULES = {
+    "pkg_resources",
+    "pkgutil",
+    "pydoc",
+    "runpy",
+    "zipimport",
+}
+FORBIDDEN_DYNAMIC_RESOLVER_CALLS = {
+    "load_entry_point",
+    "locate",
+    "resolve_name",
+    "run_module",
+    "run_path",
+    "zipimporter",
+}
 STATIC_NETWORK_IMPORT_ALLOWLIST = {
     "src/sparkbrain/external_validation/belief_r.py": {"urllib"},
     "src/sparkbrain/external_validation/evaluation.py": {"socket"},
@@ -427,6 +442,21 @@ def _is_forbidden_reflection(
     return False
 
 
+def _is_forbidden_dynamic_resolver(node: ast.AST) -> bool:
+    if isinstance(node, ast.Import):
+        return any(
+            alias.name.split(".")[0] in FORBIDDEN_DYNAMIC_RESOLVER_MODULES
+            for alias in node.names
+        )
+    if isinstance(node, ast.ImportFrom) and node.module:
+        return node.module.split(".")[0] in FORBIDDEN_DYNAMIC_RESOLVER_MODULES
+    if not isinstance(node, ast.Call):
+        return False
+    if isinstance(node.func, ast.Attribute):
+        return node.func.attr in FORBIDDEN_DYNAMIC_RESOLVER_CALLS
+    return isinstance(node.func, ast.Name) and node.func.id in FORBIDDEN_DYNAMIC_RESOLVER_CALLS
+
+
 def validate_network_client_boundary(root: Path) -> list[str]:
     package = root / "src" / "sparkbrain"
     if not package.is_dir():
@@ -485,6 +515,8 @@ def validate_network_client_boundary(root: Path) -> list[str]:
                 sys_module_names=sys_module_names,
             ):
                 problems.append(f"dynamic import reflection is forbidden: {path}")
+            if _is_forbidden_dynamic_resolver(node):
+                problems.append(f"dynamic resolver or loader is forbidden: {path}")
     return sorted(set(problems))
 
 

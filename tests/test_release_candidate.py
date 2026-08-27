@@ -140,6 +140,11 @@ def test_manifest_uses_real_commit_and_rejects_bool_and_payload_drift(tmp_path: 
         "import sys\nsys.modules['builtins'].__dict__['__import__']('torch')\n",
         "import sys as system\nsystem.modules['builtins']\n",
         "from sys import modules as loaded\nloaded['builtins']\n",
+        "import pkgutil\npkgutil.resolve_name('socket.socket')\n",
+        "import pydoc\npydoc.locate('socket.socket')\n",
+        "import runpy\nrunpy.run_module('socket')\n",
+        "from zipimport import zipimporter\nzipimporter('payload.zip')\n",
+        "import pkg_resources\n",
     ],
 )
 def test_network_boundary_scans_package_and_fails_closed(tmp_path: Path, source: str) -> None:
