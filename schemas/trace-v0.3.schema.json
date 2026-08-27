@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","additionalProperties":false,"properties":{"branch_id":{"type":"string"},"config":{"type":"object"},"schema_version":{"const":"0.3"},"state":{"type":"object"},"trace":{"items":{"type":"object"},"type":"array"}},"required":["branch_id","config","schema_version","state","trace"],"type":"object"}

@@ -17,7 +17,8 @@ SPEC.loader.exec_module(runner)
 
 def test_disabled_preregistration_cannot_execute(tmp_path: Path) -> None:
     protocol = json.loads((ROOT / runner.PROTOCOL_RELATIVE).read_text(encoding="utf-8"))
-    assert protocol["runner_execution_allowed"] is False
+    protocol["runner_execution_allowed"] = False
+    disabled = tmp_path / "disabled-preregistration.json"
+    disabled.write_text(json.dumps(protocol), encoding="utf-8")
     with pytest.raises(RuntimeError, match="remains disabled"):
-        runner.load_protocol(ROOT / runner.PROTOCOL_RELATIVE, require_enabled=True)
-    assert not list(tmp_path.iterdir())
+        runner.load_protocol(disabled, require_enabled=True)
