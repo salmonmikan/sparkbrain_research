@@ -2,8 +2,10 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -26,11 +28,15 @@ def main() -> None:
     parser.add_argument("--generated-at", required=True)
     parser.add_argument("--output", type=Path, default=ROOT / "PACKAGE_MANIFEST.json")
     parser.add_argument("--metadata-output", type=Path, default=ROOT / "RELEASE_METADATA.json")
+    parser.add_argument(
+        "--replace-existing",
+        action="store_true",
+        help="replace the historical root manifests only after final C20 source is fixed",
+    )
     args = parser.parse_args()
-    if args.output.exists() or args.metadata_output.exists():
-        raise SystemExit("final v0.3 root manifest outputs must not already exist")
-    staging = args.output.parent / ".v03-root-manifest-stage"
-    staging.mkdir(exist_ok=False)
+    if (args.output.exists() or args.metadata_output.exists()) and not args.replace_existing:
+        raise SystemExit("existing root manifests require --replace-existing")
+    staging = Path(tempfile.mkdtemp(prefix=".v03-root-manifest-stage-", dir=args.output.parent))
     try:
         for path in _tracked_paths():
             if path in {"PACKAGE_MANIFEST.json", "RELEASE_METADATA.json"}:
@@ -45,8 +51,22 @@ def main() -> None:
             generated_at=args.generated_at,
             paths=_tracked_paths(),
         )
-        write_release_manifest(args.output, manifest)
-        write_release_metadata(args.metadata_output, metadata)
+        with tempfile.NamedTemporaryFile(
+            prefix=".v03-package-manifest-", dir=args.output.parent, delete=False
+        ) as temporary:
+            manifest_output = Path(temporary.name)
+        with tempfile.NamedTemporaryFile(
+            prefix=".v03-release-metadata-", dir=args.metadata_output.parent, delete=False
+        ) as temporary:
+            metadata_output = Path(temporary.name)
+        try:
+            write_release_manifest(manifest_output, manifest)
+            write_release_metadata(metadata_output, metadata)
+            os.replace(manifest_output, args.output)
+            os.replace(metadata_output, args.metadata_output)
+        finally:
+            manifest_output.unlink(missing_ok=True)
+            metadata_output.unlink(missing_ok=True)
     finally:
         for path in sorted(staging.rglob("*"), reverse=True):
             if path.is_file():
