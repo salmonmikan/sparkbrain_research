@@ -23,14 +23,17 @@ def load_protocol(path: Path, *, require_enabled: bool) -> dict:
 
 
 def _git(*args: str) -> str:
-    return subprocess.run(
-        ["git", "-c", f"safe.directory={ROOT}", *args],
-        cwd=ROOT,
-        check=True,
-        capture_output=True,
-        text=True,
-        encoding="utf-8",
-    ).stdout.strip()
+    try:
+        return subprocess.run(
+            ["git", "-c", f"safe.directory={ROOT}", *args],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+        ).stdout.strip()
+    except subprocess.CalledProcessError as error:
+        raise RuntimeError("C18 Git preflight rejected source lineage") from error
 
 
 def preflight(protocol: dict) -> None:
