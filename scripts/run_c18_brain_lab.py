@@ -11,12 +11,12 @@ from pathlib import Path
 from sparkbrain.v03_integration import V03Checkpoint, V03TraceSession, replay_checkpoint
 
 ROOT = Path(__file__).resolve().parents[1]
-PROTOCOL_RELATIVE = "artifacts/v03/c18_brain_lab_v4/preregistration.json"
+PROTOCOL_RELATIVE = "artifacts/v03/c18_brain_lab_v6/preregistration.json"
 
 
 def load_protocol(path: Path, *, require_enabled: bool) -> dict:
     value = json.loads(path.read_text(encoding="utf-8"))
-    if value.get("protocol_id") != "c18-trace-checkpoint-brain-lab-v4":
+    if value.get("protocol_id") != "c18-trace-checkpoint-brain-lab-v6":
         raise RuntimeError("unexpected C18 protocol")
     if require_enabled and not value.get("runner_execution_allowed"):
         raise RuntimeError("C18 runner remains disabled")
@@ -37,38 +37,53 @@ def _git(*args: str) -> str:
         raise RuntimeError("C18 Git preflight rejected source lineage") from error
 
 
+def _git_bytes(*args: str) -> bytes:
+    try:
+        return subprocess.run(
+            ["git", "-c", f"safe.directory={ROOT}", *args],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+        ).stdout
+    except subprocess.CalledProcessError as error:
+        raise RuntimeError("C18 Git preflight rejected source bytes") from error
+
+
 def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 def _runner_validation_probe() -> dict[str, bool | str]:
     probe = V03TraceSession({"seed": 1802, "mode": "validation_probe"})
+    probe.record("no_ignition", {"cited_evidence_ids": []}, state_delta={})
     checkpoint = probe.checkpoint("checkpoint:validation-probe")
     decoded = V03Checkpoint.from_dict(checkpoint.as_dict())
     return {
         "checkpoint_round_trip": decoded.as_dict() == checkpoint.as_dict(),
+        "substantive_replay": replay_checkpoint(decoded) == decoded.state_hash,
         "validator": "jsonschema.Draft202012Validator",
     }
 
 
-def preflight(protocol: dict) -> dict:
+def preflight(protocol: dict, *, protocol_path: Path | None = None) -> dict:
     source = protocol.get("source_commit")
-    base = protocol.get("source_control", {}).get("execution_base_commit")
-    expected = set(protocol["source_control"]["expected_source_and_test_paths"])
+    base = protocol.get("execution_base_commit")
+    expected = protocol.get("source_control", {}).get("expected_runtime_runner_and_test_paths")
     if (
         not isinstance(source, str)
         or not isinstance(base, str)
+        or not isinstance(expected, list)
         or _git("merge-base", "--is-ancestor", base, source) != ""
     ):
         raise RuntimeError("C18 source/base ancestry invalid")
     source_diff_paths = sorted(filter(None, _git("diff", "--name-only", base, source).splitlines()))
-    if source_diff_paths != sorted(expected) or len(source_diff_paths) != 7:
+    if source_diff_paths != sorted(expected) or len(source_diff_paths) != 5:
         raise RuntimeError("C18 source allowlist mismatch")
     if set(filter(None, _git("diff", "--name-only", source, "HEAD").splitlines())) - {
         PROTOCOL_RELATIVE
     }:
         raise RuntimeError("C18 post-source scope invalid")
-    raw = (ROOT / PROTOCOL_RELATIVE).read_bytes()
+    raw = (protocol_path or ROOT / PROTOCOL_RELATIVE).read_bytes()
     if raw != (_canonical(protocol) + "\n").encode("utf-8"):
         raise RuntimeError("C18 protocol is not canonical")
     schema_contract = protocol.get("schema_contract", {})
@@ -84,15 +99,26 @@ def preflight(protocol: dict) -> dict:
         or schema_hashes["trace_schema"] != schema_contract.get("trace_schema_sha256")
     ):
         raise RuntimeError("C18 schema hash mismatch")
-    source_hashes = {
-        path: _sha256(ROOT / path)
-        for path in source_diff_paths
-    }
+    source_hashes = {}
+    for path in source_diff_paths:
+        blob = _git("rev-parse", f"{source}:{path}")
+        source_bytes = _git_bytes("show", f"{source}:{path}")
+        worktree_bytes = (ROOT / path).read_bytes()
+        if source_bytes != worktree_bytes:
+            raise RuntimeError("C18 source/worktree bytes mismatch")
+        source_hashes[path] = {"git_blob": blob, "sha256": hashlib.sha256(source_bytes).hexdigest()}
+    pin = protocol.get("pin_contract", {})
+    for path, blob in pin.get("required_schema_git_blobs", {}).items():
+        base_blob = _git("rev-parse", f"{base}:{path}")
+        source_blob = _git("rev-parse", f"{source}:{path}")
+        if base_blob != blob or source_blob != blob:
+            raise RuntimeError("C18 source schema tree mismatch")
     evidence = {
         "base_commit": base,
         "source_commit": source,
         "source_diff_paths": source_diff_paths,
-        "source_hashes": source_hashes,
+        "source_blob_hashes": source_hashes,
+        "worktree_hashes": {path: _sha256(ROOT / path) for path in source_diff_paths},
         "schema_hashes": schema_hashes,
         "runner_validation": _runner_validation_probe(),
         "status": "pass",
@@ -133,7 +159,7 @@ def build_cases(seed: int) -> tuple[dict, dict, dict]:
             "sample_id": "sample:vision",
             "salience_terms": {"novelty": 0.8, "goal": 0.0, "habituation": 0.1},
         },
-        {"evidence": {"ev:vision": evidence["ev:vision"]}},
+        state_delta={"evidence": {"ev:vision": evidence["ev:vision"]}},
     )
     session.record(
         "sensory_suppressed",
@@ -142,12 +168,12 @@ def build_cases(seed: int) -> tuple[dict, dict, dict]:
             "sample_id": "sample:repeat",
             "salience_terms": {"novelty": 0.0, "goal": 0.0, "habituation": 0.8},
         },
-        {},
+        state_delta={},
     )
     session.record(
         "evidence_added",
         {"evidence_id": "ev:audio", "cited_evidence_ids": ["ev:vision"]},
-        {"evidence": evidence},
+        state_delta={"evidence": evidence},
     )
     session.record(
         "coalition_evaluated",
@@ -155,7 +181,7 @@ def build_cases(seed: int) -> tuple[dict, dict, dict]:
             "cited_evidence_ids": ["ev:vision", "ev:audio"],
             "score_components": {"support": 1.0, "contradiction": 0.0, "stability": 1.0},
         },
-        {"beliefs": {"object:a": {"winner": "cat", "residual_losers": ["toy"]}}},
+        state_delta={"beliefs": {"object:a": {"winner": "cat", "residual_losers": ["toy"]}}},
     )
     session.record(
         "workspace_broadcast",
@@ -164,7 +190,7 @@ def build_cases(seed: int) -> tuple[dict, dict, dict]:
             "entity": "object:a",
             "hypothesis": "cat",
         },
-        {},
+        state_delta={},
     )
     checkpoint = session.checkpoint("checkpoint:primary")
     if replay_checkpoint(checkpoint) != checkpoint.state_hash:
@@ -179,12 +205,12 @@ def build_cases(seed: int) -> tuple[dict, dict, dict]:
     child.record(
         "evidence_removed",
         {"evidence_id": "ev:audio", "cited_evidence_ids": []},
-        {"evidence": child_evidence},
+        state_delta={"evidence": child_evidence},
     )
     child.record(
         "no_ignition",
         {"reason": "insufficient_sources", "cited_evidence_ids": ["ev:vision"]},
-        {"beliefs": {"object:a": {"winner": None, "residual_losers": ["cat", "toy"]}}},
+        state_delta={"beliefs": {"object:a": {"winner": None, "residual_losers": ["cat", "toy"]}}},
     )
     child_checkpoint = child.checkpoint("checkpoint:fork-remove-audio")
     return (
@@ -215,6 +241,8 @@ def write_artifacts(output: Path, *, seed: int) -> dict:
     if output.exists() and any(output.iterdir()):
         raise RuntimeError("C18 output must be new or empty")
     protocol = load_protocol(ROOT / PROTOCOL_RELATIVE, require_enabled=True)
+    if seed != protocol["execution"]["official_seed"]:
+        raise RuntimeError("C18 write_artifacts rejects a non-preregistered seed")
     preflight_evidence = preflight(protocol)
     replay, intervention, export = build_cases(seed)
     output.mkdir(parents=True, exist_ok=True)
@@ -252,12 +280,17 @@ def write_artifacts(output: Path, *, seed: int) -> dict:
         "</script>"
     )
     (static / "brain_lab.html").write_text(static_html, encoding="utf-8", newline="\n")
+    actual_files = sorted(
+        path.relative_to(output).as_posix() for path in output.rglob("*") if path.is_file()
+    )
+    if actual_files != sorted(protocol["artifacts"]["exact_files"]):
+        raise RuntimeError("C18 exact artifact inventory mismatch")
     citation_probe = V03TraceSession({"seed": seed})
     try:
         citation_probe.record(
             "evidence_added",
             {"evidence_id": "same-event", "cited_evidence_ids": ["same-event"]},
-            {},
+            state_delta={},
         )
     except ValueError:
         citation_boundary = True

@@ -14,9 +14,23 @@ from sparkbrain.v03_integration import (
 
 
 def make() -> V03TraceSession:
-    item = V03TraceSession({"seed": 1802}, state={"evidence": {"e1": {"active": True}}})
+    item = V03TraceSession(
+        {"seed": 1802, "mode": "test"},
+        state={
+            "evidence": {
+                "e1": {
+                    "active": True,
+                    "entity": "object:a",
+                    "polarity": "support",
+                    "source_id": "test",
+                }
+            }
+        },
+    )
     item.record(
-        "coalition_evaluated", {"cited_evidence_ids": ["e1"]}, {"beliefs": {"a": {"winner": "cat"}}}
+        "coalition_evaluated",
+        {"cited_evidence_ids": ["e1"]},
+        state_delta={"beliefs": {"a": {"winner": "cat", "residual_losers": []}}},
     )
     return item
 
@@ -37,8 +51,14 @@ def test_hashes_bind_payload_root_and_lineage() -> None:
 def test_citations_pre_event_and_fork_replay() -> None:
     item = make()
     with pytest.raises(ValueError):
-        item.record("evidence_added", {"evidence_id": "e2", "cited_evidence_ids": ["e2"]}, {})
-    child = item.fork(item.checkpoint("one"), branch_id="b", intervention={"kind": "remove"})
+        item.record(
+            "evidence_added", {"evidence_id": "e2", "cited_evidence_ids": ["e2"]}, state_delta={}
+        )
+    child = item.fork(
+        item.checkpoint("one"),
+        branch_id="b",
+        intervention={"kind": "remove", "evidence_id": "e1"},
+    )
     assert child.parent_checkpoint_id == "one"
     parent = item.checkpoint("one")
     child_checkpoint = child.checkpoint("child")
@@ -53,7 +73,7 @@ def test_public_trace_session_signatures_are_stable() -> None:
         "self",
         "kind",
         "payload",
-        "delta",
+        "state_delta",
     )
     assert tuple(inspect.signature(V03TraceSession.checkpoint).parameters) == (
         "self",
@@ -74,6 +94,18 @@ def test_extra_state_rejected() -> None:
         V03Checkpoint.from_dict(value)
 
 
+def test_record_requires_keyword_state_delta_and_empty_trace_is_bound() -> None:
+    item = V03TraceSession({"seed": 1802, "mode": "test"})
+    with pytest.raises(TypeError):
+        item.record("no_ignition", {"cited_evidence_ids": []}, {})  # type: ignore[call-arg]
+    checkpoint = item.checkpoint("empty")
+    assert replay_checkpoint(checkpoint) == checkpoint.initial_state_hash
+    value = checkpoint.as_dict()
+    value["state_hash"] = "0" * 64
+    with pytest.raises(ValueError):
+        V03Checkpoint.from_dict(value)
+
+
 def test_schema_rejects_missing_payload_and_nested_type() -> None:
     value = make().checkpoint("one").as_dict()
     value["trace"][0]["payload"].pop("cited_evidence_ids")
@@ -83,7 +115,9 @@ def test_schema_rejects_missing_payload_and_nested_type() -> None:
 
 def test_fork_rejects_parent_and_child_binding_tampering() -> None:
     parent = make().checkpoint("parent")
-    child = make().fork(parent, branch_id="child", intervention={"kind": "remove"})
+    child = make().fork(
+        parent, branch_id="child", intervention={"kind": "remove", "evidence_id": "e1"}
+    )
     child_checkpoint = child.checkpoint("child")
     for edit in (
         lambda value: value["trace"][0]["payload"].update({"parent_state_hash": "0" * 64}),
@@ -124,7 +158,11 @@ def test_fork_rejects_tampered_parent_state_event_payload_and_hash() -> None:
     item = make()
     for checkpoint in direct_tampered:
         with pytest.raises(ValueError):
-            item.fork(checkpoint, branch_id="tampered", intervention={"kind": "remove"})
+            item.fork(
+                checkpoint,
+                branch_id="tampered",
+                intervention={"kind": "remove", "evidence_id": "e1"},
+            )
     value = make().checkpoint("one").as_dict()
     value["state"]["suppressed_modules"] = "not-an-array"
     with pytest.raises(ValueError):

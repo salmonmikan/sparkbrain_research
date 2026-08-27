@@ -36,10 +36,25 @@ def replay_trace(
             raise ValueError("trace lineage is broken")
         event.as_dict()
         parent, before = event.event_hash, event.state_hash_after
-    if checkpoint.trace and before != checkpoint.state_hash:
-        raise ValueError("trace terminal hash mismatch")
-    if _hash(checkpoint.state) != checkpoint.state_hash:
-        raise ValueError("checkpoint state hash mismatch")
+    if checkpoint.trace:
+        if before != checkpoint.state_hash or _hash(checkpoint.state) != checkpoint.state_hash:
+            raise ValueError("trace terminal hash mismatch")
+    elif (
+        checkpoint.state != checkpoint.initial_state
+        or checkpoint.state_hash != checkpoint.initial_state_hash
+    ):
+        raise ValueError("empty trace terminal hash mismatch")
+    if checkpoint.parent_checkpoint_id is not None:
+        first = checkpoint.trace[0] if checkpoint.trace else None
+        if (
+            first is None
+            or first.kind != "intervention"
+            or first.payload.get("parent_checkpoint_hash")
+            != checkpoint.parent_checkpoint_hash
+            or first.payload.get("parent_state_hash") != checkpoint.parent_state_hash
+            or _hash(first.payload.get("intervention")) != checkpoint.intervention_hash
+        ):
+            raise ValueError("fork intervention binding is broken")
     result = V03TraceSession(
         checkpoint.config,
         checkpoint.branch_id,

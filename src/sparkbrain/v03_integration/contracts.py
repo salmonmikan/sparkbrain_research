@@ -65,16 +65,49 @@ def validate_schema_document(kind: str, document: Mapping[str, Any]) -> None:
 def _state(value: object) -> dict[str, Any]:
     if not isinstance(value, dict) or set(value) != STATE_KEYS:
         raise ValueError("state has unexpected fields")
-    if not all(
-        isinstance(value[key], expected)
-        for key, expected in (
-            ("evidence", dict),
-            ("beliefs", dict),
-            ("concept_candidates", dict),
-            ("suppressed_modules", list),
-        )
+    if not isinstance(value["goal"], (str, type(None))) or not isinstance(
+        value["suppressed_modules"], list
     ):
         raise ValueError("state has invalid nested type")
+    if any(not isinstance(item, str) for item in value["suppressed_modules"]):
+        raise ValueError("suppressed modules have invalid items")
+    if value["intervention"] is not None:
+        intervention = value["intervention"]
+        if (
+            not isinstance(intervention, dict)
+            or set(intervention) != {"evidence_id", "kind"}
+            or not all(isinstance(intervention[key], str) for key in intervention)
+        ):
+            raise ValueError("intervention has invalid fields")
+    exact_values = (
+        ("evidence", {"active", "entity", "polarity", "source_id"}),
+        ("beliefs", {"residual_losers", "winner"}),
+        ("concept_candidates", {"activation", "label"}),
+    )
+    for name, fields in exact_values:
+        values = value[name]
+        if not isinstance(values, dict):
+            raise ValueError("state has invalid nested type")
+        for entry in values.values():
+            if not isinstance(entry, dict) or set(entry) != fields:
+                raise ValueError(f"{name} has invalid fields")
+    for entry in value["evidence"].values():
+        if (
+            not isinstance(entry["active"], bool)
+            or not all(isinstance(entry[key], str) for key in ("entity", "polarity", "source_id"))
+        ):
+            raise ValueError("evidence has invalid types")
+    for entry in value["beliefs"].values():
+        if not isinstance(entry["winner"], (str, type(None))) or (
+            not isinstance(entry["residual_losers"], list)
+            or any(not isinstance(item, str) for item in entry["residual_losers"])
+        ):
+            raise ValueError("belief has invalid types")
+    for entry in value["concept_candidates"].values():
+        if not isinstance(entry["activation"], (int, float)) or not isinstance(
+            entry["label"], str
+        ):
+            raise ValueError("concept candidate has invalid types")
     return _copy(value)
 
 
@@ -221,7 +254,13 @@ class V03Checkpoint:
                 fork_point_event_hash=self.fork_point_event_hash,
                 intervention_hash=self.intervention_hash,
             ) != self.initial_state_hash
-            or _hash(state) != self.state_hash
+            or (
+                (
+                    not self.trace
+                    and (state != initial or self.state_hash != self.initial_state_hash)
+                )
+                or (bool(self.trace) and _hash(state) != self.state_hash)
+            )
         ):
             raise ValueError("checkpoint root or state hash mismatch")
         return {
@@ -343,7 +382,7 @@ class V03TraceSession:
         return _copy(self.state)
 
     def record(
-        self, kind: str, payload: Mapping[str, Any], delta: Mapping[str, Any]
+        self, kind: str, payload: Mapping[str, Any], *, state_delta: Mapping[str, Any]
     ) -> V03TraceEvent:
         if kind not in EVENTS:
             raise ValueError("unsupported event")
@@ -359,7 +398,7 @@ class V03TraceSession:
             raise ValueError("same-event evidence citation is forbidden")
         before = self.state_hash()
         candidate = self.inspect()
-        candidate.update(_copy(delta))
+        candidate.update(_copy(state_delta))
         candidate = _state(candidate)
         parent = self.initial_hash if not self._events else self._events[-1].event_hash
         material = {
@@ -395,7 +434,7 @@ class V03TraceSession:
             self.initial_state,
             self.initial_hash,
             self.inspect(),
-            _hash(self.state),
+            self.state_hash(),
             self.events,
             self.parent_checkpoint_id,
             self.parent_checkpoint_hash,
@@ -439,6 +478,6 @@ class V03TraceSession:
                 "parent_checkpoint_hash": parent_hash,
                 "parent_state_hash": checkpoint.state_hash,
             },
-            {"intervention": intervention_copy},
+            state_delta={"intervention": intervention_copy},
         )
         return child
