@@ -71,12 +71,54 @@ def _require_clean_room() -> None:
     _require_tracked_clean()
 
 
-def _require_integration_preregistration_blobs() -> None:
-    for path in (PROTOCOL_RELATIVE, P_PREREGISTRATION_SIDECAR):
-        preregistration_blob = _git("rev-parse", f"{P_PREREGISTRATION_COMMIT}:{path}")
-        integration_blob = _git("rev-parse", f"HEAD:{path}")
-        if preregistration_blob != integration_blob:
-            raise RuntimeError("C18 integration preregistration blobs mismatch")
+def _require_integration_preregistration_amendment(protocol: dict, raw: bytes) -> None:
+    original_raw = _git_bytes("show", f"{P_PREREGISTRATION_COMMIT}:{PROTOCOL_RELATIVE}")
+    original_sidecar_raw = _git_bytes(
+        "show", f"{P_PREREGISTRATION_COMMIT}:{P_PREREGISTRATION_SIDECAR}"
+    )
+    _git("rev-parse", f"{P_PREREGISTRATION_COMMIT}:{PROTOCOL_RELATIVE}")
+    _git("rev-parse", f"{P_PREREGISTRATION_COMMIT}:{P_PREREGISTRATION_SIDECAR}")
+    if _git_bytes("show", f"HEAD:{PROTOCOL_RELATIVE}") != raw:
+        raise RuntimeError("C18 integration preregistration worktree mismatch")
+    sidecar_path = ROOT / P_PREREGISTRATION_SIDECAR
+    sidecar_raw = sidecar_path.read_bytes()
+    if _git_bytes("show", f"HEAD:{P_PREREGISTRATION_SIDECAR}") != sidecar_raw:
+        raise RuntimeError("C18 integration sidecar worktree mismatch")
+    original = json.loads(original_raw)
+    original_sidecar = json.loads(original_sidecar_raw)
+    sidecar = json.loads(sidecar_raw)
+    allowed = {"source_commit", "runner_execution_allowed", "source_tree_hashes"}
+    if set(protocol) - set(original) - {"source_tree_hashes"}:
+        raise RuntimeError("C18 integration preregistration has unknown fields")
+    if any(protocol.get(key) != original.get(key) for key in set(original) - allowed):
+        raise RuntimeError("C18 integration preregistration changed unauthorized fields")
+    if not isinstance(protocol.get("source_commit"), str) or not protocol.get(
+        "runner_execution_allowed"
+    ):
+        raise RuntimeError("C18 integration preregistration is not pinned")
+    expected_sidecar_fields = {
+        "canonical_raw_match",
+        "canonical_sha256",
+        "p_original_canonical_sha256",
+        "p_original_commit",
+        "p_original_raw_sha256",
+        "protocol",
+        "raw_sha256",
+    }
+    if set(sidecar) != expected_sidecar_fields:
+        raise RuntimeError("C18 integration sidecar has unknown fields")
+    current_hash = hashlib.sha256(raw).hexdigest()
+    original_hash = hashlib.sha256(original_raw).hexdigest()
+    if (
+        sidecar.get("protocol") != "preregistration.json"
+        or sidecar.get("raw_sha256") != current_hash
+        or sidecar.get("canonical_sha256") != current_hash
+        or sidecar.get("canonical_raw_match") is not True
+        or sidecar.get("p_original_commit") != P_PREREGISTRATION_COMMIT
+        or sidecar.get("p_original_raw_sha256") != original_hash
+        or sidecar.get("p_original_canonical_sha256") != original_sidecar.get("canonical_sha256")
+    ):
+        raise RuntimeError("C18 integration sidecar is stale or forged")
 
 
 def _runner_validation_probe() -> dict[str, bool | str]:
@@ -97,8 +139,10 @@ def preflight(
     if mode not in {"source", "integration"}:
         raise RuntimeError("C18 preflight mode is invalid")
     _require_tracked_clean()
-    if mode == "integration":
-        _require_integration_preregistration_blobs()
+    if mode == "source" and (
+        protocol.get("source_commit") is not None or protocol.get("runner_execution_allowed")
+    ):
+        raise RuntimeError("C18 source preflight requires a disabled protocol")
     source = protocol.get("source_commit")
     base = protocol.get("execution_base_commit")
     expected = protocol.get("source_control", {}).get("expected_runtime_runner_and_test_paths")
@@ -124,6 +168,8 @@ def preflight(
     raw = (protocol_path or ROOT / PROTOCOL_RELATIVE).read_bytes()
     if raw != (_canonical(protocol) + "\n").encode("utf-8"):
         raise RuntimeError("C18 protocol is not canonical")
+    if mode == "integration":
+        _require_integration_preregistration_amendment(protocol, raw)
     schema_contract = protocol.get("schema_contract", {})
     schema_paths = {
         "checkpoint_schema": schema_contract.get("checkpoint_schema"),

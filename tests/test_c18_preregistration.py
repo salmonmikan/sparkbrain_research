@@ -44,11 +44,41 @@ def test_write_artifacts_rejects_non_clean_room_before_protocol_read(tmp_path: P
         runner.write_artifacts(tmp_path / "official", seed=1802)
 
 
-def test_integration_requires_both_preregistration_blobs(monkeypatch: pytest.MonkeyPatch) -> None:
-    responses = iter(("protocol", "protocol", "sidecar", "sidecar"))
-    monkeypatch.setattr(runner, "_git", lambda *_args: next(responses))
-    runner._require_integration_preregistration_blobs()
-    responses = iter(("protocol", "protocol", "sidecar", "wrong"))
-    monkeypatch.setattr(runner, "_git", lambda *_args: next(responses))
-    with pytest.raises(RuntimeError, match="preregistration blobs"):
-        runner._require_integration_preregistration_blobs()
+def test_integration_allows_only_semantic_pin_amendment(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path
+) -> None:
+    original = {"base_commit": "S", "runner_execution_allowed": False, "source_commit": None}
+    original_raw = runner._canonical(original).encode("utf-8") + b"\n"
+    original_hash = runner.hashlib.sha256(original_raw).hexdigest()
+    original_sidecar = {"canonical_sha256": original_hash}
+    original_sidecar_raw = runner._canonical(original_sidecar).encode() + b"\n"
+    current = {**original, "runner_execution_allowed": True, "source_commit": "a" * 40}
+    raw = runner._canonical(current).encode("utf-8") + b"\n"
+    sidecar = {
+        "canonical_raw_match": True,
+        "canonical_sha256": runner.hashlib.sha256(raw).hexdigest(),
+        "p_original_canonical_sha256": original_hash,
+        "p_original_commit": runner.P_PREREGISTRATION_COMMIT,
+        "p_original_raw_sha256": original_hash,
+        "protocol": "preregistration.json",
+        "raw_sha256": runner.hashlib.sha256(raw).hexdigest(),
+    }
+    monkeypatch.setattr(runner, "ROOT", tmp_path)
+    sidecar_path = tmp_path / runner.P_PREREGISTRATION_SIDECAR
+    sidecar_path.parent.mkdir(parents=True)
+    sidecar_path.write_text(runner._canonical(sidecar) + "\n", encoding="utf-8")
+    monkeypatch.setattr(runner, "_git", lambda *_args: "blob")
+    responses = iter((original_raw, original_sidecar_raw, raw, sidecar_path.read_bytes()))
+    monkeypatch.setattr(runner, "_git_bytes", lambda *_args: next(responses))
+    runner._require_integration_preregistration_amendment(current, raw)
+    forged = {**current, "base_commit": "forged"}
+    responses = iter((original_raw, original_sidecar_raw, raw, sidecar_path.read_bytes()))
+    monkeypatch.setattr(runner, "_git_bytes", lambda *_args: next(responses))
+    with pytest.raises(RuntimeError, match="unauthorized"):
+        runner._require_integration_preregistration_amendment(forged, raw)
+    sidecar["raw_sha256"] = "0" * 64
+    sidecar_path.write_text(runner._canonical(sidecar) + "\n", encoding="utf-8")
+    responses = iter((original_raw, original_sidecar_raw, raw, sidecar_path.read_bytes()))
+    monkeypatch.setattr(runner, "_git_bytes", lambda *_args: next(responses))
+    with pytest.raises(RuntimeError, match="stale or forged"):
+        runner._require_integration_preregistration_amendment(current, raw)
