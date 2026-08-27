@@ -13,6 +13,8 @@ from sparkbrain.v03_integration import V03Checkpoint, V03TraceSession, replay_ch
 
 ROOT = Path(__file__).resolve().parents[1]
 PROTOCOL_RELATIVE = "artifacts/v03/c18_brain_lab_v6/preregistration.json"
+P_PREREGISTRATION_COMMIT = "43e5b3c154a389feb047d74258248916d5b4a414"
+P_PREREGISTRATION_SIDECAR = "artifacts/v03/c18_brain_lab_v6/preregistration_hashes.json"
 
 
 def load_protocol(path: Path, *, require_enabled: bool) -> dict:
@@ -69,6 +71,14 @@ def _require_clean_room() -> None:
     _require_tracked_clean()
 
 
+def _require_integration_preregistration_blobs() -> None:
+    for path in (PROTOCOL_RELATIVE, P_PREREGISTRATION_SIDECAR):
+        preregistration_blob = _git("rev-parse", f"{P_PREREGISTRATION_COMMIT}:{path}")
+        integration_blob = _git("rev-parse", f"HEAD:{path}")
+        if preregistration_blob != integration_blob:
+            raise RuntimeError("C18 integration preregistration blobs mismatch")
+
+
 def _runner_validation_probe() -> dict[str, bool | str]:
     probe = V03TraceSession({"seed": 1802, "mode": "validation_probe"})
     probe.record("no_ignition", {"cited_evidence_ids": []}, state_delta={})
@@ -87,6 +97,8 @@ def preflight(
     if mode not in {"source", "integration"}:
         raise RuntimeError("C18 preflight mode is invalid")
     _require_tracked_clean()
+    if mode == "integration":
+        _require_integration_preregistration_blobs()
     source = protocol.get("source_commit")
     base = protocol.get("execution_base_commit")
     expected = protocol.get("source_control", {}).get("expected_runtime_runner_and_test_paths")

@@ -42,3 +42,13 @@ def test_v6_runner_defaults_to_the_preregistered_official_seed() -> None:
 def test_write_artifacts_rejects_non_clean_room_before_protocol_read(tmp_path: Path) -> None:
     with pytest.raises(RuntimeError, match="clean room"):
         runner.write_artifacts(tmp_path / "official", seed=1802)
+
+
+def test_integration_requires_both_preregistration_blobs(monkeypatch: pytest.MonkeyPatch) -> None:
+    responses = iter(("protocol", "protocol", "sidecar", "sidecar"))
+    monkeypatch.setattr(runner, "_git", lambda *_args: next(responses))
+    runner._require_integration_preregistration_blobs()
+    responses = iter(("protocol", "protocol", "sidecar", "wrong"))
+    monkeypatch.setattr(runner, "_git", lambda *_args: next(responses))
+    with pytest.raises(RuntimeError, match="preregistration blobs"):
+        runner._require_integration_preregistration_blobs()
