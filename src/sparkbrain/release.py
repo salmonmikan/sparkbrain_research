@@ -72,8 +72,13 @@ V03_REQUIRED_PREPARATION_FILES = (
     "artifacts/release/v0.3/evidence_map.json",
     "artifacts/release/v0.3/release_report.md",
     "artifacts/release/v0.3/release_figure.svg",
+    "artifacts/release/v0.3/claim_boundary_figure.svg",
     "artifacts/release/v0.3/sbom.spdx.json",
+    "artifacts/release/v0.3/source_license_inventory.json",
+    "artifacts/release/v0.3/primary_subset.json",
     "artifacts/release/v0.3/source_manifest.json",
+    "artifacts/release/v0.3/reproduction_manifest.json",
+    "artifacts/release/v0.3/release_metadata.json",
 )
 REQUIRED_PUBLIC_FILES = ("LICENSE",)
 OWNER_LICENSE_BLOCKER = "project license has not been selected by the repository owner"
@@ -767,8 +772,19 @@ def validate_v03_generated_release_evidence(root: Path) -> list[str]:
     expected_text = {
         "release_report.md": release_v03_artifacts._render_results_table(evidence),
         "release_figure.svg": release_v03_artifacts._render_results_figure(evidence),
+        "claim_boundary_figure.svg": release_v03_artifacts._render_claim_boundary_figure(
+            evidence
+        ),
         "sbom.spdx.json": release_v03_artifacts._canonical_json(
             release_v03_artifacts.build_v03_sbom(root, source_revision=revision)
+        ),
+        "primary_subset.json": release_v03_artifacts._canonical_json(
+            release_v03_artifacts.build_v03_primary_subset(evidence)
+        ),
+        "source_license_inventory.json": release_v03_artifacts._canonical_json(
+            release_v03_artifacts.build_v03_source_license_inventory(
+                root, source_revision=revision
+            )
         ),
     }
     for name, expected in expected_text.items():
@@ -816,6 +832,22 @@ def validate_v03_generated_release_evidence(root: Path) -> list[str]:
             continue
         if row["sha256"] != sha256_file(root / relative):
             problems.append(f"v0.3 source manifest hash mismatch: {relative}")
+    expected_linked = {
+        "reproduction_manifest.json": release_v03_artifacts._canonical_json(
+            release_v03_artifacts.build_v03_reproduction_manifest(source_manifest)
+        ),
+        "release_metadata.json": release_v03_artifacts._canonical_json(
+            release_v03_artifacts.build_v03_release_metadata(source_manifest)
+        ),
+    }
+    for name, expected in expected_linked.items():
+        try:
+            actual = (release_dir / name).read_text(encoding="utf-8")
+        except (OSError, UnicodeDecodeError) as exc:
+            problems.append(f"v0.3 generated artifact is unreadable: {name}: {exc}")
+        else:
+            if actual != expected:
+                problems.append(f"v0.3 generated artifact does not match source manifest: {name}")
     return _unique_problems(problems)
 
 

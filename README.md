@@ -237,11 +237,13 @@ sparkbrain_research_v0_2/
 
 ## バージョン互換性
 
-- package / documentation version: `0.2.1`
-- persisted config / state / trace schema: `0.2`
+- package / documentation version: `0.3.0`
+- persisted v0.2 config / state / trace schema: `0.2`; additive v0.3 trace/checkpoint schema: `0.3`
 - Phase-0 dynamics: v0.2から意図的変更なし
 
-v0.2.1は、ローカル条件と説明文書を追加したpatch releaseです。v0.2のcheckpointとtraceを互換対象として維持します。
+v0.3.0はv0.2のcheckpointとtraceを互換対象として維持し、C11--C18の境界付き証跡とC19
+blocked readinessを追加します。C06/C08/C17のnegative結果とclaim gradeは変更しません。license
+owner decision前のため、公開tag、archive、releaseは作成しません。
 
 ## Codexへ続きを依頼する
 

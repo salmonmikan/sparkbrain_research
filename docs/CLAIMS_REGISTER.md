@@ -140,3 +140,13 @@ Any grade change must include:
 - known confounds;
 - reviewer or reproduction status;
 - exact wording permitted after the upgrade.
+
+## C20 v0.3 release-candidate boundary (2026-08-28)
+
+- No claim grade changes. CL-007 and CL-008 remain E0; C06, C08, C15, and C17 counterevidence
+  remains retained in the release evidence map.
+- C19 is `blocked` engineering readiness, not an external evaluation outcome. Its exact-nine
+  artifacts contain no official examples, predictions, attribution rows, metrics, or winner claim.
+- The v0.3 report and figures index only preregistered artifact status. They do not establish
+  semantic understanding, organ formation, general superiority, biological fidelity, energy
+  efficiency, or an independently reproduced external result.

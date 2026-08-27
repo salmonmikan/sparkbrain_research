@@ -9,6 +9,14 @@ payloads. Historical v0.2.1 artifacts, protected hashes, and C06/C08 negative ev
 available while the v0.3 release manifest is prepared. C19 external validation is not counted
 as accepted release evidence until its independently pinned status is integrated.
 
+## v0.3 C20 — private release-candidate integration
+
+C20 binds the final v0.3 source manifest, evidence map, bounded primary index, reproduction
+contract, source-license inventory, SBOM, report, and figures under `artifacts/release/v0.3/`.
+These release artifacts retain C06/C08/C17 negative outcomes and C19 as `blocked`; they do not
+raise a claim grade. Root metadata binds the tracked source tree. The owner has not selected a
+license, so this is a private review candidate only: no public tag, archive, or release exists.
+
 ## v0.3 C19 — engineering readiness complete; evaluation blocked
 
 C19 completed the preregistered engineering-readiness work at source

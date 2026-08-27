@@ -11,7 +11,7 @@ import json
 import re
 from collections.abc import Iterable
 from pathlib import Path
-from typing import Any, Literal
+from typing import Any
 
 from sparkbrain.release import build_release_manifest, build_release_metadata, sha256_file
 
@@ -19,7 +19,10 @@ V03_RELEASE_RELATIVE = "artifacts/release/v0.3"
 V03_EVIDENCE_SCHEMA = "sparkbrain-v03-evidence-map-v1"
 V03_SOURCE_MANIFEST_SCHEMA = "sparkbrain-v03-release-source-manifest-v1"
 V03_RELEASE_REPORT_SCHEMA = "sparkbrain-v03-release-report-v1"
-C19Status = Literal["accepted", "blocked", "negative"]
+V03_RELEASE_METADATA_SCHEMA = "sparkbrain-v03-release-metadata-v1"
+V03_PRIMARY_SUBSET_SCHEMA = "sparkbrain-v03-primary-subset-v1"
+V03_REPRODUCTION_MANIFEST_SCHEMA = "sparkbrain-v03-reproduction-manifest-v1"
+V03_SOURCE_LICENSE_INVENTORY_SCHEMA = "sparkbrain-v03-source-license-inventory-v1"
 C19_BLOCKED_ARTIFACTS = (
     "artifacts/v03/c19_external_validation/blocked-readiness-v1/attribution_rows.jsonl",
     "artifacts/v03/c19_external_validation/blocked-readiness-v1/baseline_matching.json",
@@ -169,17 +172,17 @@ def build_v03_evidence_map(
     root: Path,
     *,
     source_revision: str,
-    c19_status: C19Status = "blocked",
-    c19_artifacts: Iterable[str] | None = None,
 ) -> dict[str, Any]:
     revision = _revision(source_revision)
-    c19_paths = tuple(sorted(C19_BLOCKED_ARTIFACTS if c19_artifacts is None else c19_artifacts))
-    if c19_status not in {"accepted", "blocked", "negative"}:
-        raise ValueError("C19 release status must be accepted, blocked, or negative")
-    if c19_status == "blocked" and c19_paths != C19_BLOCKED_ARTIFACTS:
-        raise ValueError("blocked C19 evidence must carry the exact-nine readiness artifact pin")
-    if c19_status != "blocked" and not c19_paths:
-        raise ValueError("integrated C19 evidence requires pinned artifacts")
+    from sparkbrain.v03_external_validation.readiness import validate_bundle
+
+    c19_paths = C19_BLOCKED_ARTIFACTS
+    try:
+        validate_bundle(
+            root / "artifacts/v03/c19_external_validation/blocked-readiness-v1", root=root
+        )
+    except (OSError, ValueError) as exc:
+        raise ValueError(f"C19 blocked readiness semantic pin is invalid: {exc}") from exc
     entries = []
     for entry_id, status, boundary, claim_ids, artifacts in _V03_ENTRIES:
         _require_files(root, artifacts)
@@ -192,18 +195,15 @@ def build_v03_evidence_map(
                 "boundary": boundary,
             }
         )
-    if c19_paths:
-        _require_files(root, c19_paths)
+    _require_files(root, c19_paths)
     entries.append(
         {
             "id": "EV-V03-C19",
-            "status": c19_status,
+            "status": "blocked",
             "claim_ids": ["CL-007"],
             "artifacts": list(c19_paths),
             "boundary": (
                 "C19 is release-blocked pending an independently pinned external validation result."
-                if c19_status == "blocked"
-                else "C19 status is limited to its pinned external-validation artifacts."
             ),
         }
     )
@@ -250,7 +250,10 @@ def validate_v03_evidence_map(root: Path, payload: Any) -> list[str]:
             isinstance(value, str) for value in entry["artifacts"]
         ):
             problems.append(f"v0.3 evidence {entry_id} artifacts must be a string array")
-        elif entry["status"] == "blocked" and tuple(entry["artifacts"]) != C19_BLOCKED_ARTIFACTS:
+        elif entry_id == "EV-V03-C19" and (
+            entry["status"] != "blocked"
+            or tuple(entry["artifacts"]) != C19_BLOCKED_ARTIFACTS
+        ):
             problems.append("blocked C19 evidence must carry the exact-nine readiness artifact pin")
         else:
             for relative in entry["artifacts"]:
@@ -260,6 +263,14 @@ def validate_v03_evidence_map(root: Path, payload: Any) -> list[str]:
             problems.append(f"v0.3 evidence {entry_id} boundary must be non-empty")
     if seen != expected_ids:
         problems.append("v0.3 evidence ids do not match the fixed C11-C19 inventory")
+    try:
+        from sparkbrain.v03_external_validation.readiness import validate_bundle
+
+        validate_bundle(
+            root / "artifacts/v03/c19_external_validation/blocked-readiness-v1", root=root
+        )
+    except (OSError, ValueError) as exc:
+        problems.append(f"C19 blocked readiness semantic pin is invalid: {exc}")
     return sorted(set(problems))
 
 
@@ -293,6 +304,90 @@ def _render_results_figure(evidence: dict[str, Any]) -> str:
         'viewBox="0 0 460 '
         f'{height}"><title>SparkBrain v0.3 evidence status</title>{"".join(bars)}</svg>\n'
     )
+
+
+def _render_claim_boundary_figure(evidence: dict[str, Any]) -> str:
+    rows = [
+        entry
+        for entry in evidence["entries"]
+        if entry["status"] in {"blocked", "negative"}
+    ]
+    height = 48 + 28 * len(rows)
+    labels = "".join(
+        f'<text x="8" y="{24 + index * 28}" font-size="12">'
+        f'{entry["id"]}: {entry["status"]}</text>'
+        for index, entry in enumerate(rows)
+    )
+    return (
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="460" height="{height}" '
+        f'viewBox="0 0 460 {height}"><title>SparkBrain v0.3 claim boundaries</title>'
+        f'{labels}</svg>\n'
+    )
+
+
+def build_v03_primary_subset(evidence: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "schema_version": V03_PRIMARY_SUBSET_SCHEMA,
+        "source_revision": evidence["source_revision"],
+        "full_evaluation": False,
+        "entries": [
+            {
+                "id": entry["id"],
+                "status": entry["status"],
+                "claim_ids": entry["claim_ids"],
+            }
+            for entry in evidence["entries"]
+        ],
+        "boundary": "This is a release index, not a performance evaluation or claim-grade upgrade.",
+    }
+
+
+def build_v03_reproduction_manifest(source_manifest: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "schema_version": V03_REPRODUCTION_MANIFEST_SCHEMA,
+        "package_version": "0.3.0",
+        "source_revision": source_manifest["source_revision"],
+        "source_manifest": f"{V03_RELEASE_RELATIVE}/source_manifest.json",
+        "source_manifest_sha256": _hash_bytes(_canonical_json(source_manifest).encode("utf-8")),
+        "network_operations": [],
+        "public_archive_created": False,
+        "commands": [
+            "python scripts/local_readiness_check.py",
+            "python scripts/build_v03_private_review_bundle.py --output <PATH> "
+            "--source-date-epoch <EPOCH> --source-revision <HEAD>",
+        ],
+    }
+
+
+def build_v03_source_license_inventory(root: Path, *, source_revision: str) -> dict[str, Any]:
+    dependency_names = []
+    for raw in (root / "requirements-release.lock").read_text(encoding="utf-8").splitlines():
+        line = raw.strip()
+        if line and not line.startswith("#") and "==" in line:
+            dependency_names.append(line.split("==", 1)[0])
+    return {
+        "schema_version": V03_SOURCE_LICENSE_INVENTORY_SCHEMA,
+        "package_version": "0.3.0",
+        "source_revision": _revision(source_revision),
+        "project_license_status": "owner-decision-pending",
+        "packages": [
+            {"name": "sparkbrain-research", "license": "NOASSERTION"},
+            *[{"name": name, "license": "NOASSERTION"} for name in dependency_names],
+        ],
+    }
+
+
+def build_v03_release_metadata(source_manifest: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "schema_version": V03_RELEASE_METADATA_SCHEMA,
+        "package_version": "0.3.0",
+        "source_revision": source_manifest["source_revision"],
+        "source_manifest": f"{V03_RELEASE_RELATIVE}/source_manifest.json",
+        "source_manifest_sha256": _hash_bytes(_canonical_json(source_manifest).encode("utf-8")),
+        "distribution": "private-review-candidate",
+        "public_release_blocked": True,
+        "blocker": "project license has not been selected by the repository owner",
+    }
 
 
 def build_v03_sbom(root: Path, *, source_revision: str) -> dict[str, Any]:
@@ -380,8 +475,6 @@ def generate_v03_release_artifacts(
     *,
     output_root: Path,
     source_revision: str,
-    c19_status: C19Status = "blocked",
-    c19_artifacts: Iterable[str] | None = None,
 ) -> dict[str, str]:
     """Generate v0.3 release evidence into a clean staging root."""
 
@@ -390,31 +483,74 @@ def generate_v03_release_artifacts(
     evidence = build_v03_evidence_map(
         root,
         source_revision=source_revision,
-        c19_status=c19_status,
-        c19_artifacts=c19_artifacts,
     )
     evidence_path = release_dir / "evidence_map.json"
     table_path = release_dir / "release_report.md"
     figure_path = release_dir / "release_figure.svg"
+    boundary_figure_path = release_dir / "claim_boundary_figure.svg"
     sbom_path = release_dir / "sbom.spdx.json"
+    primary_subset_path = release_dir / "primary_subset.json"
+    license_inventory_path = release_dir / "source_license_inventory.json"
     evidence_path.write_text(_canonical_json(evidence), encoding="utf-8", newline="\n")
     table_path.write_text(_render_results_table(evidence), encoding="utf-8", newline="\n")
     figure_path.write_text(_render_results_figure(evidence), encoding="utf-8", newline="\n")
+    boundary_figure_path.write_text(
+        _render_claim_boundary_figure(evidence), encoding="utf-8", newline="\n"
+    )
     sbom_path.write_text(
         _canonical_json(build_v03_sbom(root, source_revision=source_revision)),
+        encoding="utf-8",
+        newline="\n",
+    )
+    primary_subset_path.write_text(
+        _canonical_json(build_v03_primary_subset(evidence)), encoding="utf-8", newline="\n"
+    )
+    license_inventory_path.write_text(
+        _canonical_json(build_v03_source_license_inventory(root, source_revision=source_revision)),
         encoding="utf-8",
         newline="\n",
     )
     source_manifest = build_v03_source_manifest(
         output_root,
         source_revision=source_revision,
-        generated_files=(evidence_path, table_path, figure_path, sbom_path),
+        generated_files=(
+            evidence_path,
+            table_path,
+            figure_path,
+            boundary_figure_path,
+            sbom_path,
+            primary_subset_path,
+            license_inventory_path,
+        ),
     )
     source_manifest_path = release_dir / "source_manifest.json"
     source_manifest_path.write_text(
         _canonical_json(source_manifest), encoding="utf-8", newline="\n"
     )
+    reproduction_manifest_path = release_dir / "reproduction_manifest.json"
+    reproduction_manifest_path.write_text(
+        _canonical_json(build_v03_reproduction_manifest(source_manifest)),
+        encoding="utf-8",
+        newline="\n",
+    )
+    release_metadata_path = release_dir / "release_metadata.json"
+    release_metadata_path.write_text(
+        _canonical_json(build_v03_release_metadata(source_manifest)),
+        encoding="utf-8",
+        newline="\n",
+    )
     return {
         path.relative_to(output_root).as_posix(): sha256_file(path)
-        for path in (evidence_path, table_path, figure_path, sbom_path, source_manifest_path)
+        for path in (
+            evidence_path,
+            table_path,
+            figure_path,
+            boundary_figure_path,
+            sbom_path,
+            primary_subset_path,
+            license_inventory_path,
+            source_manifest_path,
+            reproduction_manifest_path,
+            release_metadata_path,
+        )
     }

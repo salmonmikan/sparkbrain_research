@@ -1256,3 +1256,11 @@ truth-free Belief-R-to-I2 adapter and any subsequent official execution require 
 this blocked bundle cannot be upgraded retrospectively. Initial C19 preregistration bytes, package
 0.2.1, persisted schema 0.2, schemas, release files, C06/C08 evidence, and claim grades remain
 unchanged.
+
+## 18. C20 release-candidate packaging protocol
+
+C20 runs only after source completion. It generates deterministic v0.3 evidence metadata from
+tracked source and does not execute C19 official evaluation. The generated layer records retained
+negative boundaries and C19 blocked readiness, exposes a no-Git private-review verification
+contract, and preserves v0.2 artifacts. Public distribution remains prohibited until the repository
+owner selects a license.

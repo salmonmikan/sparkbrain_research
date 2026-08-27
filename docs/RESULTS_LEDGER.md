@@ -994,3 +994,11 @@ contract correction only.
   `not_evaluated`. A future official evaluation requires a new protocol. C06 remains the existing
   negative external result; C06/C08 evidence, initial preregistration, package/schema/release files,
   and claim grades remain unchanged.
+
+## 2026-08-28 — R-V03-0014 — C20 private release-candidate integration
+
+- Scope: source-only v0.3 manifest and private-review contract; no public tag, archive, or release.
+- Evidence: `artifacts/release/v0.3/` binds C11--C18 status, retained C06/C08/C17 negatives, and
+  the C19 exact-nine blocked readiness bundle.
+- Claim impact: none. CL-007 and CL-008 remain E0; C19 is not an evaluation result.
+- Owner gate: project license selection remains pending and is the public-distribution blocker.

@@ -20,6 +20,20 @@ def _tracked_paths() -> list[str]:
     return [path for path in result.stdout.decode("utf-8").split("\0") if path]
 
 
+def _require_source_head(source_revision: str) -> None:
+    result = subprocess.run(
+        ["git", "rev-parse", "HEAD"], cwd=ROOT, check=False, capture_output=True
+    )
+    if result.returncode or result.stdout.decode("ascii").strip() != source_revision:
+        raise ValueError("v0.3 root manifest requires source_revision equal to Git HEAD")
+    for command in (("git", "diff", "--quiet"), ("git", "diff", "--cached", "--quiet")):
+        state = subprocess.run(command, cwd=ROOT, check=False, capture_output=True)
+        if state.returncode not in {0, 1}:
+            raise ValueError("v0.3 root manifest could not inspect tracked source state")
+        if state.returncode:
+            raise ValueError("v0.3 root manifest requires a clean tracked source tree")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Write final v0.3 root release manifest and metadata"
@@ -34,6 +48,10 @@ def main() -> None:
         help="replace the historical root manifests only after final C20 source is fixed",
     )
     args = parser.parse_args()
+    try:
+        _require_source_head(args.source_revision)
+    except ValueError as exc:
+        raise SystemExit(str(exc)) from exc
     if (args.output.exists() or args.metadata_output.exists()) and not args.replace_existing:
         raise SystemExit("existing root manifests require --replace-existing")
     staging = Path(tempfile.mkdtemp(prefix=".v03-root-manifest-stage-", dir=args.output.parent))

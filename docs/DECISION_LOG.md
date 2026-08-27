@@ -1216,3 +1216,11 @@ other claim grades remain unchanged.
 candidate absence as a falsifiable negative result. Recording engineering acceptance separately
 from scientific support prevents a completed pipeline from being mistaken for evidence that a
 functional organ formed.
+
+## D-V03-0036 — C20 private release-candidate evidence boundary
+
+**Decision (2026-08-28):** Generate v0.3 release evidence only after the final source commit.
+The artifact layer must bind source manifest, artifact metadata, evidence map, bounded primary
+index, reproduction contract, SBOM, source-license inventory, report, and figures. C19 remains
+the exact-nine blocked readiness record. No claim grade changes, public tag, public archive, or
+public release are authorized while the owner license decision is pending.

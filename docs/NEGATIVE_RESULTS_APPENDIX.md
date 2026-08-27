@@ -25,3 +25,5 @@ Generated from the append-only results ledger. This index does not replace the f
 ## Pending integration
 
 - The owner has not selected a project license; public release remains blocked.
+- C19 is retained as blocked external-validation readiness, not converted into a positive or
+  negative external-result claim; C06 remains the recorded external negative.

@@ -3,8 +3,6 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-import pytest
-
 from sparkbrain.release_v03_artifacts import (
     C19_BLOCKED_ARTIFACTS,
     V03_RELEASE_RELATIVE,
@@ -34,12 +32,6 @@ def test_v03_evidence_map_retains_negative_boundaries_and_blocks_unpinned_c19() 
             "C19 is release-blocked pending an independently pinned external validation result."
         ),
     }
-    with pytest.raises(ValueError, match="exact-nine"):
-        build_v03_evidence_map(
-            ROOT,
-            source_revision=REVISION,
-            c19_artifacts=(),
-        )
 
 
 def test_v03_release_artifact_generation_is_staged_and_deterministic(tmp_path: Path) -> None:
@@ -62,9 +54,18 @@ def test_v03_release_artifact_generation_is_staged_and_deterministic(tmp_path: P
         "artifacts/release/v0.3/evidence_map.json",
         "artifacts/release/v0.3/release_report.md",
         "artifacts/release/v0.3/release_figure.svg",
+        "artifacts/release/v0.3/claim_boundary_figure.svg",
         "artifacts/release/v0.3/sbom.spdx.json",
+        "artifacts/release/v0.3/source_license_inventory.json",
+        "artifacts/release/v0.3/primary_subset.json",
         "artifacts/release/v0.3/source_manifest.json",
+        "artifacts/release/v0.3/reproduction_manifest.json",
+        "artifacts/release/v0.3/release_metadata.json",
     }
+    primary_subset = json.loads((release / "primary_subset.json").read_text(encoding="utf-8"))
+    metadata = json.loads((release / "release_metadata.json").read_text(encoding="utf-8"))
+    assert primary_subset["full_evaluation"] is False
+    assert metadata["public_release_blocked"] is True
 
 
 def test_v03_root_manifest_is_computed_in_a_staging_root_without_self_hashing(
