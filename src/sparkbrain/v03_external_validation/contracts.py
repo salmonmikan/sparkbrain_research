@@ -64,14 +64,18 @@ class C18TraceCheckpointAdapter(Protocol):
     def record(
         self,
         kind: str,
-        payload: Mapping[str, object],
-        state_delta: Mapping[str, object],
+        payload: Mapping[str, Any],
+        state_delta: Mapping[str, Any],
     ) -> V03TraceEvent: ...
 
     def checkpoint(self, checkpoint_id: str) -> V03Checkpoint: ...
 
     def fork(
-        self, checkpoint: object, *, branch_id: str, intervention: Mapping[str, object]
+        self,
+        checkpoint: V03Checkpoint,
+        *,
+        branch_id: str,
+        intervention: Mapping[str, Any],
     ) -> V03TraceSession: ...
 
 
@@ -195,6 +199,8 @@ def validate_baseline_matching(row: Mapping[str, Any]) -> None:
     )
     if row["baseline_kind"] not in BASELINE_KINDS:
         raise ValueError("unknown baseline kind")
+    if row["checkpoint_selection_split"] != "dev":
+        raise ValueError("baseline checkpoint selection must use preregistered dev")
     _reject_nested_target_leakage(row)
     all_matched = all(
         row[key] is True for key in ("compute_match", "data_match", "parameter_match")
@@ -234,6 +240,7 @@ def validate_prediction_row(row: Mapping[str, Any]) -> None:
             "seed",
             "split",
             "step_index",
+            "track",
             "trace_checkpoint_hash",
             "truth",
             "work_counters",
@@ -244,11 +251,14 @@ def validate_prediction_row(row: Mapping[str, Any]) -> None:
         raise ValueError("unknown input track")
     if not str(row["condition_id"]).startswith(f"{row['input_track']}/"):
         raise ValueError("condition_id must begin with the input track")
-    oracle = row["condition_id"].split("/", 1)[0] == ORACLE_INPUT
+    condition_track = row["condition_id"].split("/", 1)[0]
+    oracle = condition_track == ORACLE_INPUT
     if row["oracle_diagnostic"] != oracle or (row["input_track"] == ORACLE_INPUT) != oracle:
         raise ValueError("Oracle rows must be diagnostic-only")
     if row["evaluator_only"] != oracle:
         raise ValueError("Oracle inputs must remain evaluator-only")
+    if row["track"] != ("oracle" if oracle else "autonomous"):
+        raise ValueError("track must be derived from the condition input")
     if row["split"] != "synthetic_proxy":
         raise ValueError("source-only C19 may retain only synthetic proxy rows")
     if (
@@ -302,9 +312,10 @@ def validate_attribution_row(row: Mapping[str, Any]) -> None:
 def autonomous_aggregate_rows(rows: list[Mapping[str, Any]]) -> list[Mapping[str, Any]]:
     """Fail closed if a diagnostic Oracle row reaches autonomous aggregation."""
 
-    if any(
-        row.get("input_track") == ORACLE_INPUT or row.get("oracle_diagnostic") is True
-        for row in rows
-    ):
-        raise ValueError("Oracle rows must be excluded from autonomous aggregation")
-    return rows
+    validated = []
+    for row in rows:
+        validate_prediction_row(row)
+        if row["track"] != "autonomous":
+            raise ValueError("Oracle rows must be excluded from autonomous aggregation")
+        validated.append(row)
+    return validated

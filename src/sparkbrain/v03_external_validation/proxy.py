@@ -87,6 +87,7 @@ def synthetic_proxy_row(
         "seed": seed,
         "split": "synthetic_proxy",
         "step_index": 0,
+        "track": "oracle" if input_track == "I2_symbolic_oracle" else "autonomous",
         "trace_checkpoint_hash": None,
         "truth": truth,
         "work_counters": {"active_sparks": 0, "edge_evaluations": 0, "state_updates": 0},

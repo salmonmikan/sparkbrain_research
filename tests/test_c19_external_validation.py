@@ -130,6 +130,20 @@ def test_baseline_winner_claim_requires_all_matching_dimensions() -> None:
         )
 
 
+def test_baseline_rejects_official_test_selection_even_without_winner_claim() -> None:
+    with pytest.raises(ValueError, match="preregistered dev"):
+        validate_baseline_matching(
+            {
+                "baseline_kind": "transformer",
+                "checkpoint_selection_split": "official_test",
+                "compute_match": True,
+                "data_match": True,
+                "parameter_match": True,
+                "winner_claim_allowed": False,
+            }
+        )
+
+
 def test_fully_matched_baseline_can_still_make_no_winner_claim() -> None:
     validate_baseline_matching(
         {
@@ -152,3 +166,12 @@ def test_nested_target_leakage_in_work_counters_is_rejected() -> None:
         from sparkbrain.v03_external_validation.contracts import validate_prediction_row
 
         validate_prediction_row(row)
+
+
+def test_condition_oracle_cannot_spoof_autonomous_flags() -> None:
+    row, _ = synthetic_proxy_row(seed=6901, episode_id="proxy-o", input_track="I2_symbolic_oracle")
+    row["oracle_diagnostic"] = False
+    row["evaluator_only"] = False
+    row["track"] = "autonomous"
+    with pytest.raises(ValueError, match="diagnostic"):
+        autonomous_aggregate_rows([row])
