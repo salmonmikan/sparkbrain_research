@@ -11,8 +11,31 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from sparkbrain.release import write_release_manifest, write_release_metadata  # noqa: E402
-from sparkbrain.release_v03_artifacts import build_v03_root_manifest  # noqa: E402
+from sparkbrain.release import (  # noqa: E402
+    validate_v03_generated_release_evidence,
+    write_release_manifest,
+    write_release_metadata,
+)
+from sparkbrain.release_v03_artifacts import (  # noqa: E402
+    V03_RELEASE_RELATIVE,
+    build_v03_root_manifest,
+)
+
+V03_GENERATED_ARTIFACTS = {
+    f"{V03_RELEASE_RELATIVE}/{name}"
+    for name in (
+        "evidence_map.json",
+        "release_report.md",
+        "release_figure.svg",
+        "claim_boundary_figure.svg",
+        "sbom.spdx.json",
+        "source_license_inventory.json",
+        "primary_subset.json",
+        "source_manifest.json",
+        "reproduction_manifest.json",
+        "release_metadata.json",
+    )
+}
 
 
 def _tracked_paths() -> list[str]:
@@ -20,18 +43,37 @@ def _tracked_paths() -> list[str]:
     return [path for path in result.stdout.decode("utf-8").split("\0") if path]
 
 
-def _require_source_head(source_revision: str) -> None:
+def _require_artifact_integration(source_revision: str) -> None:
     result = subprocess.run(
         ["git", "rev-parse", "HEAD"], cwd=ROOT, check=False, capture_output=True
     )
-    if result.returncode or result.stdout.decode("ascii").strip() != source_revision:
-        raise ValueError("v0.3 root manifest requires source_revision equal to Git HEAD")
+    if result.returncode:
+        raise ValueError("v0.3 root manifest requires a readable Git HEAD")
+    ancestor = subprocess.run(
+        ["git", "merge-base", "--is-ancestor", source_revision, "HEAD"],
+        cwd=ROOT,
+        check=False,
+        capture_output=True,
+    )
+    if ancestor.returncode:
+        raise ValueError("v0.3 root manifest source_revision must be an ancestor of Git HEAD")
     for command in (("git", "diff", "--quiet"), ("git", "diff", "--cached", "--quiet")):
         state = subprocess.run(command, cwd=ROOT, check=False, capture_output=True)
         if state.returncode not in {0, 1}:
             raise ValueError("v0.3 root manifest could not inspect tracked source state")
         if state.returncode:
             raise ValueError("v0.3 root manifest requires a clean tracked source tree")
+    tracked = set(_tracked_paths())
+    missing = sorted(V03_GENERATED_ARTIFACTS - tracked)
+    if missing:
+        raise ValueError(
+            "v0.3 root manifest requires tracked generated artifacts: " + ", ".join(missing)
+        )
+    problems = validate_v03_generated_release_evidence(ROOT)
+    if problems:
+        raise ValueError(
+            "v0.3 root manifest generated artifacts are invalid: " + "; ".join(problems)
+        )
 
 
 def _restore(path: Path, original: bytes | None) -> None:
@@ -88,7 +130,7 @@ def main() -> None:
     )
     args = parser.parse_args()
     try:
-        _require_source_head(args.source_revision)
+        _require_artifact_integration(args.source_revision)
     except ValueError as exc:
         raise SystemExit(str(exc)) from exc
     if (args.output.exists() or args.metadata_output.exists()) and not args.replace_existing:

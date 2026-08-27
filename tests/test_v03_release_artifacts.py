@@ -117,3 +117,20 @@ def test_root_manifest_group_publish_restores_both_files_on_second_replace_failu
         )
     assert manifest.read_bytes() == b"old-manifest"
     assert metadata.read_bytes() == b"old-metadata"
+
+
+def test_root_manifest_requires_the_exact_ten_generated_artifacts() -> None:
+    from scripts.generate_v03_root_manifest import V03_GENERATED_ARTIFACTS
+
+    assert V03_GENERATED_ARTIFACTS == {
+        "artifacts/release/v0.3/evidence_map.json",
+        "artifacts/release/v0.3/release_report.md",
+        "artifacts/release/v0.3/release_figure.svg",
+        "artifacts/release/v0.3/claim_boundary_figure.svg",
+        "artifacts/release/v0.3/sbom.spdx.json",
+        "artifacts/release/v0.3/source_license_inventory.json",
+        "artifacts/release/v0.3/primary_subset.json",
+        "artifacts/release/v0.3/source_manifest.json",
+        "artifacts/release/v0.3/reproduction_manifest.json",
+        "artifacts/release/v0.3/release_metadata.json",
+    }
