@@ -34,6 +34,45 @@ def _require_source_head(source_revision: str) -> None:
             raise ValueError("v0.3 root manifest requires a clean tracked source tree")
 
 
+def _restore(path: Path, original: bytes | None) -> None:
+    if original is None:
+        path.unlink(missing_ok=True)
+        return
+    with tempfile.NamedTemporaryFile(
+        prefix=".v03-restore-", dir=path.parent, delete=False
+    ) as handle:
+        staged = Path(handle.name)
+        handle.write(original)
+    try:
+        os.replace(staged, path)
+    finally:
+        staged.unlink(missing_ok=True)
+
+
+def _publish_manifest_group(
+    manifest_staged: Path,
+    manifest_output: Path,
+    metadata_staged: Path,
+    metadata_output: Path,
+) -> None:
+    """Publish both root bindings or restore their pre-generation byte pair."""
+
+    originals = {
+        manifest_output: manifest_output.read_bytes() if manifest_output.exists() else None,
+        metadata_output: metadata_output.read_bytes() if metadata_output.exists() else None,
+    }
+    try:
+        os.replace(manifest_staged, manifest_output)
+        os.replace(metadata_staged, metadata_output)
+    except OSError as exc:
+        try:
+            _restore(manifest_output, originals[manifest_output])
+            _restore(metadata_output, originals[metadata_output])
+        except OSError as restore_exc:
+            raise RuntimeError("v0.3 root manifest group restore failed") from restore_exc
+        raise RuntimeError("v0.3 root manifest group publish failed and was restored") from exc
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Write final v0.3 root release manifest and metadata"
@@ -80,8 +119,12 @@ def main() -> None:
         try:
             write_release_manifest(manifest_output, manifest)
             write_release_metadata(metadata_output, metadata)
-            os.replace(manifest_output, args.output)
-            os.replace(metadata_output, args.metadata_output)
+            _publish_manifest_group(
+                manifest_output,
+                args.output,
+                metadata_output,
+                args.metadata_output,
+            )
         finally:
             manifest_output.unlink(missing_ok=True)
             metadata_output.unlink(missing_ok=True)

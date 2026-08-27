@@ -1,7 +1,10 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
+
+import pytest
 
 from sparkbrain.release_v03_artifacts import (
     C19_BLOCKED_ARTIFACTS,
@@ -29,7 +32,8 @@ def test_v03_evidence_map_retains_negative_boundaries_and_blocks_unpinned_c19() 
         "claim_ids": ["CL-007"],
         "artifacts": list(C19_BLOCKED_ARTIFACTS),
         "boundary": (
-            "C19 is release-blocked pending an independently pinned external validation result."
+            "C19/G09 is not accepted and science is not_evaluated: the truth-free "
+            "Belief-R-to-I2 adapter and a new official-evaluation protocol are absent."
         ),
     }
 
@@ -84,3 +88,32 @@ def test_v03_root_manifest_is_computed_in_a_staging_root_without_self_hashing(
     assert manifest["source_revision"] == REVISION
     assert metadata["package_version"] == "0.3.0"
     assert not (tmp_path / "PACKAGE_MANIFEST.json").exists()
+
+
+def test_root_manifest_group_publish_restores_both_files_on_second_replace_failure(
+    tmp_path: Path, monkeypatch
+) -> None:
+    from scripts import generate_v03_root_manifest as generator
+
+    manifest = tmp_path / "PACKAGE_MANIFEST.json"
+    metadata = tmp_path / "RELEASE_METADATA.json"
+    manifest.write_bytes(b"old-manifest")
+    metadata.write_bytes(b"old-metadata")
+    staged_manifest = tmp_path / "new-manifest"
+    staged_metadata = tmp_path / "new-metadata"
+    staged_manifest.write_bytes(b"new-manifest")
+    staged_metadata.write_bytes(b"new-metadata")
+    original_replace = os.replace
+
+    def fail_second(source: str | Path, target: str | Path) -> None:
+        if Path(target) == metadata and Path(source) == staged_metadata:
+            raise OSError("injected second publish failure")
+        original_replace(source, target)
+
+    monkeypatch.setattr(generator.os, "replace", fail_second)
+    with pytest.raises(RuntimeError, match="was restored"):
+        generator._publish_manifest_group(
+            staged_manifest, manifest, staged_metadata, metadata
+        )
+    assert manifest.read_bytes() == b"old-manifest"
+    assert metadata.read_bytes() == b"old-metadata"

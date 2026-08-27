@@ -203,7 +203,8 @@ def build_v03_evidence_map(
             "claim_ids": ["CL-007"],
             "artifacts": list(c19_paths),
             "boundary": (
-                "C19 is release-blocked pending an independently pinned external validation result."
+                "C19/G09 is not accepted and science is not_evaluated: the truth-free "
+                "Belief-R-to-I2 adapter and a new official-evaluation protocol are absent."
             ),
         }
     )

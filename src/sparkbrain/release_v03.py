@@ -291,6 +291,23 @@ def validate_private_review_bundle(path: Path) -> list[str]:
             problems.append("private review notice mismatch")
         if review.get("source_revision") != source.get("source_revision"):
             problems.append("private review source revision mismatch")
+        source_fields = {
+            "schema_version",
+            "package_version",
+            "source_revision",
+            "files",
+            "file_count",
+            "total_bytes",
+        }
+        if not isinstance(source, dict) or set(source) != source_fields:
+            problems.append("private review source manifest fields do not match fixed schema")
+            return sorted(set(problems))
+        if source.get("schema_version") != SOURCE_MANIFEST_SCHEMA:
+            problems.append("private review source manifest schema mismatch")
+        try:
+            _revision(source.get("source_revision"))
+        except ValueError:
+            problems.append("private review source manifest revision is invalid")
         if source.get("package_version") != "0.3.0":
             problems.append("private review source manifest package version mismatch")
         files = source.get("files") if isinstance(source, dict) else None
@@ -298,14 +315,24 @@ def validate_private_review_bundle(path: Path) -> list[str]:
         if not isinstance(files, list):
             problems.append("private review source manifest files must be an array")
         else:
+            paths: list[str] = []
+            total_bytes = 0
             for row in files:
-                if not isinstance(row, dict) or not isinstance(row.get("path"), str):
+                if not isinstance(row, dict) or set(row) != {"path", "size", "sha256"}:
                     problems.append("private review source manifest row is invalid")
                     continue
                 try:
                     relative = _path(row["path"])
                 except ValueError:
                     problems.append("private review source manifest row has unsafe path")
+                    continue
+                paths.append(relative)
+                if relative != row["path"] or not _plain_int(row["size"]) or row["size"] < 0:
+                    problems.append("private review source manifest row has invalid fields")
+                    continue
+                total_bytes += row["size"]
+                if not _valid_sha256(row["sha256"]):
+                    problems.append("private review source manifest row has invalid sha256")
                     continue
                 member = f"{ARCHIVE_ROOT}/{relative}"
                 expected_names.add(member)
@@ -316,6 +343,12 @@ def validate_private_review_bundle(path: Path) -> list[str]:
                     continue
                 if row.get("size") != len(content) or row.get("sha256") != _sha256(content):
                     problems.append(f"private review source file hash mismatch: {relative}")
+            if paths != sorted(paths) or len(paths) != len(set(paths)):
+                problems.append("private review source manifest paths must be sorted and unique")
+            if source.get("file_count") != len(files):
+                problems.append("private review source manifest file_count mismatch")
+            if source.get("total_bytes") != total_bytes:
+                problems.append("private review source manifest total_bytes mismatch")
         if set(names) != expected_names or len(names) != len(expected_names):
             problems.append("private review manifest does not exactly match ZIP contents")
     checksum_path = path.with_suffix(path.suffix + ".sha256")
