@@ -341,10 +341,56 @@ def test_checkpoint_uses_disjoint_r0_train_dev_and_is_artifact_verifiable(reserv
         == "R0_baseline"
     )
     assert checkpoint["training_split"] == "train"
-    assert checkpoint["selection_split"] == "dev"
-    assert not set(checkpoint["training_episode_ids"]) & set(checkpoint["selection_episode_ids"])
+    assert checkpoint["selection_split"] == "dev_selection"
+    assert checkpoint["calibration_split"] == "dev_calibration"
+    assert checkpoint["dev_partition_rule"] == "episode_index_even_selection_odd_calibration"
+    selection = set(checkpoint["selection_episode_ids"])
+    calibration = set(checkpoint["calibration_episode_ids"])
+    assert not selection & calibration
+    assert not set(checkpoint["training_episode_ids"]) & (selection | calibration)
+    assert len(checkpoint["candidate_checkpoints"]) == 3
+    assert {row["epoch"] for row in checkpoint["candidate_checkpoints"]} == {2, 4, 6}
+    assert all(
+        row["state"] and len(row["sha256"]) == 64
+        for row in checkpoint["candidate_checkpoints"]
+    )
     assert checkpoint["selected_epoch"] in {2, 4, 6}
+    assert checkpoint["selection_raw_rows"]
+    assert checkpoint["calibration_raw_rows"]
     assert len(checkpoint["calibration_scores"]) == 9
+
+
+@pytest.mark.parametrize(
+    "tamper",
+    [
+        "candidate_state",
+        "selection_raw",
+        "checkpoint_score",
+        "calibration_raw",
+        "calibration_score",
+        "partition_hash",
+    ],
+)
+def test_checkpoint_validator_rejects_micro_tamper(reserved_bundle, tamper):
+    from sparkbrain.v03_organs.evaluation import validate_bundle
+
+    protocol, original = reserved_bundle
+    broken = copy.deepcopy(original)
+    checkpoint = broken["structural_metrics.json"]["assessment_checkpoints"][0]
+    if tamper == "candidate_state":
+        checkpoint["candidate_checkpoints"][0]["state"]["abstention_head.bias"][0] += 1e-7
+    elif tamper == "selection_raw":
+        checkpoint["selection_raw_rows"][0]["weighted_objective_total"] += 1e-12
+    elif tamper == "checkpoint_score":
+        checkpoint["checkpoint_scores"][0]["weighted_objective_total"] += 1e-12
+    elif tamper == "calibration_raw":
+        checkpoint["calibration_raw_rows"][0]["belief_squared_error"] += 1e-12
+    elif tamper == "calibration_score":
+        checkpoint["calibration_scores"][0]["belief_brier"] += 1e-12
+    else:
+        checkpoint["selection_episode_sha256"] = "0" * 64
+    with pytest.raises(ValueError, match="engineering gates"):
+        validate_bundle(broken, protocol, "a" * 40)
 
 
 def test_candidate_absence_is_engineering_success_and_scientific_negative(

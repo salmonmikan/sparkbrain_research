@@ -188,33 +188,39 @@ def _assessment_loss(output: Any, target: str) -> Any:
     return belief + maintain + abstention
 
 
-def _train_assessment_checkpoint(
-    protocol: dict[str, Any], run_seed: int, r0_cell: dict[str, Any]
-) -> tuple[dict[str, Any], Any]:
+def _assessment_dev_subsets(
+    episodes: list[dict[str, Any]],
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    selection = [row for row in episodes if row["episode_index"] % 2 == 0]
+    calibration = [row for row in episodes if row["episode_index"] % 2 == 1]
+    if (
+        not selection
+        or not calibration
+        or set(row["episode_id"] for row in selection)
+        & set(row["episode_id"] for row in calibration)
+    ):
+        raise ValueError("C17 fixed dev selection/calibration partition is invalid")
+    return selection, calibration
+
+
+def _assessment_scoring_rows(
+    episodes: list[dict[str, Any]],
+) -> list[tuple[str, dict[str, Any]]]:
+    return [
+        (episode["episode_id"], frame)
+        for episode in episodes
+        for frame in episode["frames"]
+        if frame["scoring"]
+    ]
+
+
+def _fit_assessment_candidates(
+    run_seed: int, train_rows: list[tuple[str, dict[str, Any]]]
+) -> tuple[dict[int, dict[str, Any]], int]:
     import torch
 
     from sparkbrain.v03_learned.model import C15RevisionModel
-    from sparkbrain.v03_learned.training import (
-        ABSTENTION_THRESHOLD_GRID,
-        TEMPERATURE_GRID,
-        CalibrationScore,
-        CheckpointScore,
-        select_calibration,
-        select_checkpoint,
-    )
 
-    train_episodes = _split(r0_cell, "train")
-    dev_episodes = _split(r0_cell, "dev")
-    train_frames = [
-        frame for episode in train_episodes for frame in episode["frames"] if frame["scoring"]
-    ]
-    dev_frames = [
-        frame for episode in dev_episodes for frame in episode["frames"] if frame["scoring"]
-    ]
-    train_ids = [episode["episode_id"] for episode in train_episodes]
-    dev_ids = [episode["episode_id"] for episode in dev_episodes]
-    if set(train_ids) & set(dev_ids):
-        raise ValueError("C17 assessment train/dev partitions must be disjoint")
     torch.manual_seed(run_seed)
     torch.use_deterministic_algorithms(True)
     torch.set_num_threads(1)
@@ -225,7 +231,7 @@ def _train_assessment_checkpoint(
     for epoch in range(1, 7):
         model.train()
         for _ in range(4):
-            for frame in train_frames:
+            for _, frame in train_rows:
                 optimizer.zero_grad(set_to_none=True)
                 model.reset_runtime()
                 output = model.forward_fixture(_assessment_model_call(frame))
@@ -237,46 +243,94 @@ def _train_assessment_checkpoint(
         if epoch in {2, 4, 6}:
             state = _assessment_state(model)
             checkpoints[epoch] = {"state": state, "sha256": digest(state)}
+    return checkpoints, optimizer_steps
 
+
+def _selection_raw(
+    checkpoints: dict[int, dict[str, Any]],
+    rows: list[tuple[str, dict[str, Any]]],
+) -> tuple[list[dict[str, Any]], list[Any]]:
+    import torch
+
+    from sparkbrain.v03_learned.training import CheckpointScore
+
+    raw = []
     checkpoint_scores = []
     for epoch in (2, 4, 6):
         candidate = _load_assessment_model(checkpoints[epoch]["state"])
         losses = []
         with torch.no_grad():
-            for frame in dev_frames:
+            for episode_id, frame in rows:
                 candidate.reset_runtime()
-                losses.append(
-                    float(
-                        _assessment_loss(
-                            candidate.forward_fixture(_assessment_model_call(frame)),
-                            _assessment_target(frame),
-                        ).cpu()
-                    )
+                call = _assessment_model_call(frame)
+                loss = float(
+                    _assessment_loss(
+                        candidate.forward_fixture(call), _assessment_target(frame)
+                    ).cpu()
+                )
+                losses.append(loss)
+                raw.append(
+                    {
+                        "epoch": epoch,
+                        "episode_id": episode_id,
+                        "sample_id": frame["sample_id"],
+                        "model_call_sha256": digest(call),
+                        "target": _assessment_target(frame),
+                        "weighted_objective_total": loss,
+                    }
                 )
         checkpoint_scores.append(
             CheckpointScore(epoch=epoch, weighted_objective_total=sum(losses) / len(losses))
         )
-    selected = select_checkpoint(checkpoint_scores)
-    selected_state = checkpoints[selected.epoch]["state"]
-    selected_model = _load_assessment_model(selected_state)
+    return raw, checkpoint_scores
 
+
+def _calibration_raw(model: Any, rows: list[tuple[str, dict[str, Any]]]) -> tuple[list, list]:
+    import torch
+
+    from sparkbrain.v03_learned.training import (
+        ABSTENTION_THRESHOLD_GRID,
+        TEMPERATURE_GRID,
+        CalibrationScore,
+    )
+
+    raw = []
     calibration_scores = []
     for temperature in TEMPERATURE_GRID:
         for threshold in ABSTENTION_THRESHOLD_GRID:
             belief_errors = []
             abstention_errors = []
             with torch.no_grad():
-                for frame in dev_frames:
-                    selected_model.reset_runtime()
-                    output = selected_model.forward_fixture(_assessment_model_call(frame))
+                for episode_id, frame in rows:
+                    model.reset_runtime()
+                    call = _assessment_model_call(frame)
+                    output = model.forward_fixture(call)
                     probabilities = output.conditional_belief_probabilities(
                         temperature=temperature
                     )
                     target = torch.tensor([0.0, 1.0, 0.0])
-                    belief_errors.append(float(torch.sum((probabilities - target) ** 2)))
+                    belief_error = float(torch.sum((probabilities - target) ** 2))
+                    belief_errors.append(belief_error)
                     abstention = float(torch.sigmoid(output.abstention_logit))
                     truth = float(_assessment_target(frame) == "abstain")
-                    abstention_errors.append((float(abstention >= threshold) - truth) ** 2)
+                    abstention_error = (float(abstention >= threshold) - truth) ** 2
+                    abstention_errors.append(abstention_error)
+                    raw.append(
+                        {
+                            "temperature": temperature,
+                            "abstention_threshold": threshold,
+                            "episode_id": episode_id,
+                            "sample_id": frame["sample_id"],
+                            "model_call_sha256": digest(call),
+                            "target": _assessment_target(frame),
+                            "belief_probabilities": [
+                                float(value) for value in probabilities.detach().cpu()
+                            ],
+                            "abstention_probability": abstention,
+                            "belief_squared_error": belief_error,
+                            "abstention_squared_error": abstention_error,
+                        }
+                    )
             calibration_scores.append(
                 CalibrationScore(
                     temperature=temperature,
@@ -285,11 +339,40 @@ def _train_assessment_checkpoint(
                     abstention_brier=sum(abstention_errors) / len(abstention_errors),
                 )
             )
+    return raw, calibration_scores
+
+
+def _train_assessment_checkpoint(
+    protocol: dict[str, Any], run_seed: int, r0_cell: dict[str, Any]
+) -> tuple[dict[str, Any], Any]:
+    import torch
+
+    from sparkbrain.v03_learned.training import select_calibration, select_checkpoint
+
+    train_episodes = _split(r0_cell, "train")
+    dev_episodes = _split(r0_cell, "dev")
+    selection_episodes, calibration_episodes = _assessment_dev_subsets(dev_episodes)
+    train_rows = _assessment_scoring_rows(train_episodes)
+    selection_rows = _assessment_scoring_rows(selection_episodes)
+    calibration_rows = _assessment_scoring_rows(calibration_episodes)
+    train_ids = [episode["episode_id"] for episode in train_episodes]
+    selection_ids = [episode["episode_id"] for episode in selection_episodes]
+    calibration_ids = [episode["episode_id"] for episode in calibration_episodes]
+    if set(train_ids) & (set(selection_ids) | set(calibration_ids)):
+        raise ValueError("C17 assessment train/dev partitions must be disjoint")
+    checkpoints, optimizer_steps = _fit_assessment_candidates(run_seed, train_rows)
+    selection_raw, checkpoint_scores = _selection_raw(checkpoints, selection_rows)
+    selected = select_checkpoint(checkpoint_scores)
+    selected_state = checkpoints[selected.epoch]["state"]
+    selected_model = _load_assessment_model(selected_state)
+    calibration_raw, calibration_scores = _calibration_raw(
+        selected_model, calibration_rows
+    )
     calibration = select_calibration(calibration_scores)
     boundary_rows = []
     seen: set[str] = set()
     with torch.no_grad():
-        for frame in dev_frames:
+        for _, frame in calibration_rows:
             selected_model.reset_runtime()
             call = _assessment_model_call(frame)
             heads = _assessment_heads(
@@ -339,20 +422,34 @@ def _train_assessment_checkpoint(
         "training_condition_id": "R0_baseline",
         "training_split": "train",
         "training_episode_ids": train_ids,
+        "training_episode_sha256": digest(train_episodes),
         "training_visible_sha256": digest(
-            [_assessment_model_call(frame) for frame in train_frames]
+            [_assessment_model_call(frame) for _, frame in train_rows]
         ),
         "training_target_sha256": digest(
-            [_assessment_target(frame) for frame in train_frames]
+            [_assessment_target(frame) for _, frame in train_rows]
         ),
         "optimizer_steps": optimizer_steps,
+        "dev_partition_rule": "episode_index_even_selection_odd_calibration",
         "selection_condition_id": "R0_baseline",
-        "selection_split": "dev",
-        "selection_episode_ids": dev_ids,
+        "selection_split": "dev_selection",
+        "selection_episode_ids": selection_ids,
+        "selection_episode_sha256": digest(selection_episodes),
         "selection_visible_sha256": digest(
-            [_assessment_model_call(frame) for frame in dev_frames]
+            [_assessment_model_call(frame) for _, frame in selection_rows]
         ),
-        "selection_target_sha256": digest([_assessment_target(frame) for frame in dev_frames]),
+        "selection_target_sha256": digest(
+            [_assessment_target(frame) for _, frame in selection_rows]
+        ),
+        "selection_raw_rows": selection_raw,
+        "candidate_checkpoints": [
+            {
+                "epoch": epoch,
+                "sha256": checkpoints[epoch]["sha256"],
+                "state": checkpoints[epoch]["state"],
+            }
+            for epoch in (2, 4, 6)
+        ],
         "checkpoint_scores": [
             {
                 "epoch": score.epoch,
@@ -364,6 +461,17 @@ def _train_assessment_checkpoint(
         "selected_epoch": selected.epoch,
         "checkpoint_sha256": checkpoints[selected.epoch]["sha256"],
         "checkpoint_state": selected_state,
+        "calibration_condition_id": "R0_baseline",
+        "calibration_split": "dev_calibration",
+        "calibration_episode_ids": calibration_ids,
+        "calibration_episode_sha256": digest(calibration_episodes),
+        "calibration_visible_sha256": digest(
+            [_assessment_model_call(frame) for _, frame in calibration_rows]
+        ),
+        "calibration_target_sha256": digest(
+            [_assessment_target(frame) for _, frame in calibration_rows]
+        ),
+        "calibration_raw_rows": calibration_raw,
         "calibration_scores": [
             {
                 "temperature": score.temperature,
@@ -759,8 +867,6 @@ def _assessment_checkpoint_evidence_valid(
     successful: list[int],
 ) -> bool:
     from sparkbrain.v03_learned.training import (
-        CalibrationScore,
-        CheckpointScore,
         select_calibration,
         select_checkpoint,
     )
@@ -782,67 +888,114 @@ def _assessment_checkpoint_evidence_valid(
             )
             train_episodes = _split(r0, "train")
             dev_episodes = _split(r0, "dev")
-            train_frames = [
-                frame
-                for episode in train_episodes
-                for frame in episode["frames"]
-                if frame["scoring"]
-            ]
-            dev_frames = [
-                frame
-                for episode in dev_episodes
-                for frame in episode["frames"]
-                if frame["scoring"]
-            ]
+            selection_episodes, calibration_episodes = _assessment_dev_subsets(
+                dev_episodes
+            )
+            train_rows = _assessment_scoring_rows(train_episodes)
+            selection_rows = _assessment_scoring_rows(selection_episodes)
+            calibration_rows = _assessment_scoring_rows(calibration_episodes)
             train_ids = [episode["episode_id"] for episode in train_episodes]
-            dev_ids = [episode["episode_id"] for episode in dev_episodes]
+            selection_ids = [episode["episode_id"] for episode in selection_episodes]
+            calibration_ids = [episode["episode_id"] for episode in calibration_episodes]
             if (
                 record["training_condition_id"] != "R0_baseline"
                 or record["training_split"] != "train"
                 or record["training_episode_ids"] != train_ids
+                or record["training_episode_sha256"] != digest(train_episodes)
+                or record["dev_partition_rule"]
+                != "episode_index_even_selection_odd_calibration"
                 or record["selection_condition_id"] != "R0_baseline"
-                or record["selection_split"] != "dev"
-                or record["selection_episode_ids"] != dev_ids
-                or set(train_ids) & set(dev_ids)
+                or record["selection_split"] != "dev_selection"
+                or record["selection_episode_ids"] != selection_ids
+                or record["selection_episode_sha256"] != digest(selection_episodes)
+                or record["calibration_condition_id"] != "R0_baseline"
+                or record["calibration_split"] != "dev_calibration"
+                or record["calibration_episode_ids"] != calibration_ids
+                or record["calibration_episode_sha256"] != digest(calibration_episodes)
+                or set(selection_ids) & set(calibration_ids)
+                or set(train_ids) & (set(selection_ids) | set(calibration_ids))
                 or record["training_visible_sha256"]
-                != digest([_assessment_model_call(frame) for frame in train_frames])
+                != digest([_assessment_model_call(frame) for _, frame in train_rows])
                 or record["training_target_sha256"]
-                != digest([_assessment_target(frame) for frame in train_frames])
+                != digest([_assessment_target(frame) for _, frame in train_rows])
                 or record["selection_visible_sha256"]
-                != digest([_assessment_model_call(frame) for frame in dev_frames])
+                != digest([_assessment_model_call(frame) for _, frame in selection_rows])
                 or record["selection_target_sha256"]
-                != digest([_assessment_target(frame) for frame in dev_frames])
-                or record["checkpoint_sha256"] != digest(record["checkpoint_state"])
+                != digest([_assessment_target(frame) for _, frame in selection_rows])
+                or record["calibration_visible_sha256"]
+                != digest([_assessment_model_call(frame) for _, frame in calibration_rows])
+                or record["calibration_target_sha256"]
+                != digest([_assessment_target(frame) for _, frame in calibration_rows])
                 or record["shared_resource_condition_ids"]
                 != protocol["resource_conditions"]["condition_order"]
             ):
                 return False
-            selected = select_checkpoint(
-                [
-                    CheckpointScore(
-                        epoch=row["epoch"],
-                        weighted_objective_total=row["weighted_objective_total"],
-                    )
-                    for row in record["checkpoint_scores"]
-                ]
+            replayed, replayed_steps = _fit_assessment_candidates(run_seed, train_rows)
+            expected_candidates = [
+                {
+                    "epoch": epoch,
+                    "sha256": replayed[epoch]["sha256"],
+                    "state": replayed[epoch]["state"],
+                }
+                for epoch in (2, 4, 6)
+            ]
+            if (
+                record["optimizer_steps"] != replayed_steps
+                or record["candidate_checkpoints"] != expected_candidates
+            ):
+                return False
+            expected_selection_raw, expected_checkpoint_scores = _selection_raw(
+                replayed, selection_rows
             )
-            selected_row = next(
-                row for row in record["checkpoint_scores"] if row["epoch"] == selected.epoch
+            expected_score_rows = [
+                {
+                    "epoch": score.epoch,
+                    "weighted_objective_total": score.weighted_objective_total,
+                    "sha256": replayed[score.epoch]["sha256"],
+                }
+                for score in expected_checkpoint_scores
+            ]
+            if (
+                record["selection_raw_rows"] != expected_selection_raw
+                or record["checkpoint_scores"] != expected_score_rows
+            ):
+                return False
+            selected = select_checkpoint(
+                expected_checkpoint_scores
             )
             if (
                 selected.epoch != record["selected_epoch"]
-                or selected_row["sha256"] != record["checkpoint_sha256"]
+                or record["checkpoint_sha256"] != replayed[selected.epoch]["sha256"]
+                or record["checkpoint_state"] != replayed[selected.epoch]["state"]
+                or record["checkpoint_sha256"] != digest(record["checkpoint_state"])
+            ):
+                return False
+            model = _load_assessment_model(replayed[selected.epoch]["state"])
+            expected_calibration_raw, expected_calibration_scores = _calibration_raw(
+                model, calibration_rows
+            )
+            expected_calibration_score_rows = [
+                {
+                    "temperature": score.temperature,
+                    "abstention_threshold": score.abstention_threshold,
+                    "belief_brier": score.belief_brier,
+                    "abstention_brier": score.abstention_brier,
+                }
+                for score in expected_calibration_scores
+            ]
+            if (
+                record["calibration_raw_rows"] != expected_calibration_raw
+                or record["calibration_scores"] != expected_calibration_score_rows
             ):
                 return False
             calibration = select_calibration(
-                [CalibrationScore(**row) for row in record["calibration_scores"]]
+                expected_calibration_scores
             )
             if (
                 calibration.temperature != record["temperature"]
                 or calibration.abstention_threshold != record["abstention_threshold"]
             ):
                 return False
-            model = _load_assessment_model(record["checkpoint_state"])
             observed_routes = []
             for row in record["boundary_rows"]:
                 call = row["model_call"]
