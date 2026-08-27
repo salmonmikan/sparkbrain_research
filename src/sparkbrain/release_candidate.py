@@ -24,7 +24,7 @@ CANDIDATE_MANIFEST_NAME = "CANDIDATE_RELEASE_MANIFEST.json"
 REVIEW_MANIFEST_NAME = "REVIEW_BUNDLE_MANIFEST.json"
 RELEASE_GROUP_MANIFEST_NAME = "RELEASE_GROUP_MANIFEST.json"
 CANDIDATE_MANIFEST_SCHEMA = "sparkbrain-candidate-release-v1"
-REVIEW_MANIFEST_SCHEMA = "sparkbrain-review-bundle-v1"
+REVIEW_MANIFEST_SCHEMA = "sparkbrain-review-bundle-v2"
 RELEASE_GROUP_SCHEMA = "sparkbrain-release-group-v1"
 NETWORK_PREFIXES = {"aiohttp", "http", "httpx", "requests", "socket", "urllib", "urllib3"}
 
@@ -74,10 +74,19 @@ def _bound_revision(root: Path, revision: str, base: str | None) -> None:
     _git(root, "merge-base", "--is-ancestor", revision, target)
 
 
+def _git_blob(root: Path, revision: str, relative: str) -> bytes:
+    result = subprocess.run(["git", "show", f"{revision}:{relative}"], cwd=root, capture_output=True, check=False)
+    if result.returncode:
+        raise ValueError(f"payload path is not bound to source_revision: {relative}")
+    return result.stdout
+
+
 def _bound_payload(root: Path, revision: str, paths: Iterable[str]) -> None:
     for relative in paths:
-        result = subprocess.run(["git", "show", f"{revision}:{relative}"], cwd=root, capture_output=True, check=False)
-        if result.returncode or result.stdout != (root / relative).read_bytes():
+        blob = _git_blob(root, revision, relative)
+        clean = _git(root, "hash-object", "--path", relative, "--", relative)
+        expected = _git(root, "rev-parse", f"{revision}:{relative}")
+        if clean != expected:
             raise ValueError(f"payload content is not bound to source_revision: {relative}")
 
 
@@ -93,7 +102,8 @@ def build_canonical_reproduction_manifest(root: Path, *, source_revision: str, p
         source = root / relative
         if source.is_symlink() or not source.is_file():
             raise ValueError(f"candidate input is not a regular file: {relative}")
-        files.append({"path": relative, "size": source.stat().st_size, "sha256": sha256_file(source)})
+        blob = _git_blob(root, revision, relative)
+        files.append({"path": relative, "size": len(blob), "sha256": hashlib.sha256(blob).hexdigest()})
     return {"schema_version": CANDIDATE_MANIFEST_SCHEMA, "source_revision": revision, "files": files, "file_count": len(files), "total_bytes": sum(row["size"] for row in files)}
 
 
@@ -136,7 +146,9 @@ def validate_network_client_boundary(root: Path) -> list[str]:
         for node in ast.walk(tree):
             names = [a.name for a in node.names] if isinstance(node, ast.Import) else [node.module] if isinstance(node, ast.ImportFrom) and node.module else []
             if any(name.split(".")[0] in NETWORK_PREFIXES for name in names): problems.append(f"network client import is forbidden: {path}")
-            if isinstance(node, ast.Call) and ((isinstance(node.func, ast.Name) and node.func.id == "__import__") or (isinstance(node.func, ast.Attribute) and node.func.attr == "import_module")): problems.append(f"dynamic import is forbidden: {path}")
+            if isinstance(node, ast.Call) and ((isinstance(node.func, ast.Name) and node.func.id == "__import__") or (isinstance(node.func, ast.Attribute) and node.func.attr == "import_module")):
+                target = node.args[0].value if node.args and isinstance(node.args[0], ast.Constant) and isinstance(node.args[0].value, str) else None
+                if target is None or target.split(".")[0] in NETWORK_PREFIXES: problems.append(f"unproven or network dynamic import is forbidden: {path}")
     return sorted(set(problems))
 
 
@@ -154,7 +166,7 @@ def build_candidate_and_review_archives(root: Path, *, source_revision: str, pat
     try:
         candidate = staging / "candidate.zip"
         with zipfile.ZipFile(candidate, "w") as archive:
-            for row in manifest["files"]: _zip(archive, row["path"], (root / row["path"]).read_bytes(), source_date_epoch)
+            for row in manifest["files"]: _zip(archive, row["path"], _git_blob(root, manifest["source_revision"], row["path"]), source_date_epoch)
             _zip(archive, CANDIDATE_MANIFEST_NAME, _json(manifest), source_date_epoch)
         if validate_canonical_reproduction_manifest(root, manifest, revision_base=revision_base): raise ValueError("candidate manifest validation failed")
         candidate_hash = f"{sha256_file(candidate)}  {candidate.name}\n".encode(); (staging / "candidate.zip.sha256").write_bytes(candidate_hash)
