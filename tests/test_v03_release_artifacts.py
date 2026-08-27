@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import json
 import os
+import subprocess
+import sys
 from pathlib import Path
 
 import pytest
@@ -134,3 +136,39 @@ def test_root_manifest_requires_the_exact_ten_generated_artifacts() -> None:
         "artifacts/release/v0.3/reproduction_manifest.json",
         "artifacts/release/v0.3/release_metadata.json",
     }
+
+
+@pytest.mark.skipif(
+    not (ROOT / "artifacts/release/v0.3/evidence_map.json").is_file(),
+    reason="final artifact integration has not yet been committed",
+)
+def test_root_manifest_cli_publishes_a_valid_pair(tmp_path: Path) -> None:
+    from sparkbrain.release import sha256_file
+
+    evidence = json.loads(
+        (ROOT / "artifacts/release/v0.3/evidence_map.json").read_text(encoding="utf-8")
+    )
+    manifest = tmp_path / "PACKAGE_MANIFEST.json"
+    metadata = tmp_path / "RELEASE_METADATA.json"
+    result = subprocess.run(
+        [
+            sys.executable,
+            "scripts/generate_v03_root_manifest.py",
+            "--source-revision",
+            evidence["source_revision"],
+            "--generated-at",
+            "2026-08-28T00:00:00+00:00",
+            "--output",
+            str(manifest),
+            "--metadata-output",
+            str(metadata),
+        ],
+        cwd=ROOT,
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    assert result.returncode == 0, result.stderr
+    payload = json.loads(metadata.read_text(encoding="utf-8"))
+    assert payload["manifest_sha256"] == sha256_file(manifest)
+    assert payload["package_version"] == "0.3.0"

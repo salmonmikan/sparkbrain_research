@@ -352,6 +352,7 @@ def build_v03_reproduction_manifest(source_manifest: dict[str, Any]) -> dict[str
         "source_manifest_sha256": _hash_bytes(_canonical_json(source_manifest).encode("utf-8")),
         "network_operations": [],
         "public_archive_created": False,
+        "source_checkout": {"core.autocrlf": "false"},
         "commands": [
             "python scripts/local_readiness_check.py",
             "python scripts/build_v03_private_review_bundle.py --output <PATH> "

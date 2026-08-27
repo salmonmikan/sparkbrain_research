@@ -178,3 +178,7 @@ def main() -> None:
                 path.rmdir()
         staging.rmdir()
     print(json.dumps({"manifest": str(args.output), "metadata": str(args.metadata_output)}))
+
+
+if __name__ == "__main__":
+    main()

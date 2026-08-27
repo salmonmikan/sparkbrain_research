@@ -88,6 +88,11 @@ gate.
 
 ### v0.3 source review bundle
 
+For a Git checkout used to regenerate v0.3 source bytes, set `core.autocrlf=false` before
+checkout. The source manifest and deterministic private-review ZIP bind actual file bytes; line
+ending conversion would create a different source snapshot. This setting is not needed to inspect
+an already extracted no-Git review bundle.
+
 Before the final v0.3 package manifest is generated, the source-only private review layer uses:
 
 ```bash
