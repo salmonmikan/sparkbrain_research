@@ -1120,3 +1120,24 @@ degree-, load-, and activity-matched controls each retain target size `m`.
 **Reason:** A validator cannot enforce cardinality, evidence provenance, or external reproduction
 from prose-only or incomplete nested schemas. These additions remove ambiguity without changing a
 science metric, threshold, resource cell, fixture, rank, proposal/assessment boundary, or claim.
+
+## D-V03-0034 — Remove the final C17 v2 preregistration contradictions
+
+**Decision (2026-08-28):** Correct two residual prose contradictions in the disabled C17 v2
+machine preregistration. The corrected canonical raw SHA-256 is
+`89773ca193e18784187926424a1490c9551b11d7511e51dd370d36aaa026d6ca`.
+Base/source pins remain null and the runner remains disabled; no source, test, model, controller,
+reserved model fixture, or official execution is authorized.
+
+The validator and stop-condition wording now use one type-specific control rule. Random-unmatched
+requests a hash-derived size from one through four and clips it to non-target pool length. The four
+matched controls each require target size `m`. A complete row must satisfy its own registered size
+rule, not a universal same-size rule.
+
+The obsolete comparison-input summary that described an array preimage is replaced by a reference
+to the already frozen exact-key object in `comparison_input_sha256_preimage`. This correction does
+not alter that object's keys, types, ordering, serialization, or digest rule.
+
+**Reason:** Contradictory summaries can cause a conforming implementation to reject valid random
+controls or hash a different reproduction preimage. Removing them changes no experiment degree of
+freedom.

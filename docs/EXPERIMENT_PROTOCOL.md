@@ -1182,3 +1182,14 @@ Random-unmatched retains v1 semantics with fresh namespace: derive a requested s
 four from the registered hash, clip it to pool length, enumerate that size, and select by hash rank.
 Only size-, degree-, load-, and activity-matched controls require exact target size. Scientific
 metrics, thresholds, fixtures, one-factor cells, and claims remain unchanged.
+
+### 16.5 C17 v2 final disabled-preregistration consistency appendix
+
+D-V03-0034 removes the last two inconsistent summaries. All validator, integrity, and stop
+conditions now apply the registered control-specific sizes: random-unmatched uses its hash-derived
+one-to-four request clipped to pool length, while size-, degree-, load-, and activity-matched use
+target size `m`. Completeness means compliance with the applicable type rule.
+
+`comparison_input_sha256` now refers only to the exact-key canonical object defined by
+`comparison_input_sha256_preimage`; the earlier array shorthand is superseded. No key, type,
+ordering, nullability, serialization, fixture, metric, threshold, resource cell, or claim changes.
