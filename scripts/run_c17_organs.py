@@ -6,6 +6,8 @@ import argparse
 import hashlib
 import json
 import multiprocessing
+import os
+import re
 import shutil
 import subprocess
 import sys
@@ -15,8 +17,8 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
-PROTOCOL_RELATIVE = "artifacts/v03/c17_functional_organs/preregistration.json"
-EXPECTED_FILES = {
+PROTOCOL_RELATIVE = "artifacts/v03/c17_functional_organs_v2/preregistration.json"
+PREFINAL_FILES = {
     "preregistration.json",
     "resource_conditions.json",
     "candidate_discovery.jsonl",
@@ -27,6 +29,7 @@ EXPECTED_FILES = {
     "acceptance_matrix.json",
     "report.md",
 }
+EXPECTED_FILES = PREFINAL_FILES | {"reproduction_compare_manifest.json"}
 
 
 class C17RunTimeoutError(RuntimeError):
@@ -72,10 +75,19 @@ def _git_bytes(root: Path, *args: str) -> bytes:
     ).stdout
 
 
-def _validate_hash_manifest(root: Path, manifest: dict[str, str]) -> None:
+def _validate_hash_manifest(
+    root: Path, manifest: dict[str, str], *, commit: str | None = None
+) -> None:
     for relative, expected in manifest.items():
-        path = root / relative
-        if not path.is_file() or _sha(path.read_bytes()) != expected:
+        if commit is None:
+            path = root / relative
+            actual = path.read_bytes() if path.is_file() else b""
+        else:
+            try:
+                actual = _git_bytes(root, "show", f"{commit}:{relative}")
+            except subprocess.CalledProcessError:
+                actual = b""
+        if _sha(actual) != expected:
             raise RuntimeError(f"protected hash mismatch: {relative}")
 
 
@@ -123,7 +135,7 @@ def _preflight(
     if raw != (_canonical(protocol) + "\n").encode("utf-8"):
         raise RuntimeError("C17 protocol is not canonical JSON plus LF")
     if (
-        protocol["protocol_id"] != "c17-functional-organs-v1"
+        protocol["protocol_id"] != "c17-functional-organs-v2"
         or set(protocol["artifacts"]["exact_files"]) != EXPECTED_FILES
     ):
         raise RuntimeError("unexpected C17 protocol or inventory")
@@ -132,7 +144,7 @@ def _preflight(
     if (
         protocol["source_commit"] != source_commit
         or not isinstance(source_commit, str)
-        or len(source_commit) != 40
+        or re.fullmatch(r"[0-9a-f]{40}", source_commit) is None
     ):
         raise RuntimeError("C17 source pin mismatch")
     if not isinstance(protocol["base_commit"], str) or len(protocol["base_commit"]) != 40:
@@ -160,7 +172,22 @@ def _preflight(
     if _git(root, "merge-base", "--is-ancestor", protocol["base_commit"], source_commit) != "":
         raise RuntimeError("C17 source pin does not descend from preregistration")
     _validate_source_scope(root, protocol, source_commit)
-    for manifest in protocol["protected_hash_manifest"].values():
+    for manifest_name, manifest in protocol["protected_hash_manifest"].items():
+        if not isinstance(manifest, dict):
+            continue
+        _validate_hash_manifest(
+            root,
+            manifest,
+            commit=protocol["dependencies"]["c17_v1"]["source_commit"]
+            if manifest_name == "c17_v1_source"
+            else None,
+        )
+    v1_protocol = json.loads(
+        (root / "artifacts/v03/c17_functional_organs/preregistration.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    for manifest in v1_protocol["protected_hash_manifest"].values():
         _validate_hash_manifest(root, manifest)
     _validate_fixture_hashes(protocol)
     from sparkbrain.v03_organs.contracts import validate_resource_conditions
@@ -171,7 +198,10 @@ def _preflight(
 
 def _write_bundle(output: Path, bundle: dict[str, Any]) -> None:
     output.mkdir(parents=False, exist_ok=False)
-    for name in sorted(EXPECTED_FILES):
+    expected = EXPECTED_FILES if "reproduction_compare_manifest.json" in bundle else PREFINAL_FILES
+    if set(bundle) != expected:
+        raise RuntimeError("C17 bundle inventory mismatch before write")
+    for name in sorted(expected):
         value = bundle[name]
         path = output / name
         if name.endswith(".jsonl"):
@@ -187,6 +217,9 @@ def _generation_worker(connection: Any, arguments: dict[str, Any]) -> None:
     try:
         from sparkbrain.v03_organs.evaluation import generate_bundle, validate_bundle
 
+        expected_hashseed = {"A": "11801", "B": "21801"}[arguments["process_id"]]
+        if os.environ.get("PYTHONHASHSEED") != expected_hashseed:
+            raise RuntimeError("C17 worker PYTHONHASHSEED mismatch")
         bundle = generate_bundle(arguments["protocol"], arguments["source_commit"])
         validate_bundle(bundle, arguments["protocol"], arguments["source_commit"])
         _write_bundle(arguments["staging"], bundle)
@@ -222,18 +255,37 @@ def _wait_for_worker(worker: Any, *, deadline: float, grace_seconds: float) -> N
         raise C17RunTimeoutError("C17 worker exceeded the registered deadline", worker_alive=alive)
 
 
-def run(*, output: Path, source_commit: str, root: Path = ROOT) -> dict[str, Any]:
+def run(
+    *,
+    output: Path,
+    source_commit: str,
+    process_id: str,
+    root: Path = ROOT,
+) -> dict[str, Any]:
+    if process_id not in {"A", "B"}:
+        raise ValueError("C17 pre-final process_id must be A or B")
     protocol_path = root / PROTOCOL_RELATIVE
     protocol = _preflight(
         root=root, protocol_path=protocol_path, output=output, source_commit=source_commit
     )
+    expected_hashseed = {"A": "11801", "B": "21801"}[process_id]
+    if os.environ.get("PYTHONHASHSEED") != expected_hashseed:
+        raise RuntimeError("C17 parent PYTHONHASHSEED mismatch")
     existed_empty = output.exists()
     staging = output.parent / f".{output.name}.staging-{uuid.uuid4().hex}"
     context = multiprocessing.get_context("spawn")
     receiver, sender = context.Pipe(duplex=False)
     worker = context.Process(
         target=_generation_worker,
-        args=(sender, {"protocol": protocol, "source_commit": source_commit, "staging": staging}),
+        args=(
+            sender,
+            {
+                "protocol": protocol,
+                "source_commit": source_commit,
+                "staging": staging,
+                "process_id": process_id,
+            },
+        ),
         daemon=True,
     )
     timeout = protocol["determinism"]["official_run_timeout_seconds"]
@@ -245,7 +297,7 @@ def run(*, output: Path, source_commit: str, root: Path = ROOT) -> dict[str, Any
         status = receiver.recv()
         if worker.exitcode != 0 or not status.get("ok"):
             raise C17WorkerError(f"C17 generation failed: {status}")
-        if set(path.name for path in staging.iterdir()) != EXPECTED_FILES:
+        if set(path.name for path in staging.iterdir()) != PREFINAL_FILES:
             raise RuntimeError("C17 staging inventory mismatch")
         if output.exists() and (not output.is_dir() or any(output.iterdir())):
             raise RuntimeError("C17 output became nonempty during execution")
@@ -273,19 +325,113 @@ def run(*, output: Path, source_commit: str, root: Path = ROOT) -> dict[str, Any
             worker.close()
 
 
+def _read_bundle(directory: Path, expected_files: set[str]) -> dict[str, Any]:
+    if not directory.is_dir() or {path.name for path in directory.iterdir()} != expected_files:
+        raise RuntimeError("C17 staging inventory mismatch")
+    bundle: dict[str, Any] = {}
+    for name in sorted(expected_files):
+        raw = (directory / name).read_bytes()
+        if name == "report.md":
+            value: Any = raw.decode("utf-8")
+        elif name == "candidate_discovery.jsonl":
+            text = raw.decode("utf-8")
+            if text and not text.endswith("\n"):
+                raise RuntimeError("C17 JSONL must end in LF")
+            value = [json.loads(line) for line in text.splitlines()]
+            if raw != b"".join((_canonical(row) + "\n").encode("utf-8") for row in value):
+                raise RuntimeError("C17 JSONL is not canonical")
+        else:
+            value = json.loads(raw)
+            if raw != (_canonical(value) + "\n").encode("utf-8"):
+                raise RuntimeError(f"C17 artifact is not canonical: {name}")
+        bundle[name] = value
+    return bundle
+
+
+def finalize(
+    *,
+    output: Path,
+    staging_a: Path,
+    staging_b: Path,
+    source_commit: str,
+    root: Path = ROOT,
+) -> dict[str, Any]:
+    resolved = [path.resolve() for path in (output, staging_a, staging_b)]
+    if len(set(resolved)) != 3:
+        raise RuntimeError("C17 finalization paths must be distinct")
+    protocol = _preflight(
+        root=root,
+        protocol_path=root / PROTOCOL_RELATIVE,
+        output=output,
+        source_commit=source_commit,
+    )
+    from sparkbrain.v03_organs.evaluation import finalize_bundles
+
+    bundle_a = _read_bundle(staging_a, PREFINAL_FILES)
+    bundle_b = _read_bundle(staging_b, PREFINAL_FILES)
+    final_bundle = finalize_bundles(bundle_a, bundle_b, protocol, source_commit)
+    temporary = output.parent / f".{output.name}.finalizing-{uuid.uuid4().hex}"
+    existed_empty = output.exists()
+    try:
+        _write_bundle(temporary, final_bundle)
+        if {path.name for path in temporary.iterdir()} != EXPECTED_FILES:
+            raise RuntimeError("C17 final exact-ten inventory mismatch")
+        if output.exists() and (not output.is_dir() or any(output.iterdir())):
+            raise RuntimeError("C17 output became nonempty during finalization")
+        if output.exists():
+            output.rmdir()
+        temporary.replace(output)
+    except BaseException:
+        if temporary.exists():
+            shutil.rmtree(temporary)
+        if existed_empty and not output.exists():
+            output.mkdir()
+        raise
+    acceptance = final_bundle["acceptance_matrix.json"]
+    return {
+        "ok": True,
+        "engineering_status": acceptance["engineering_status"],
+        "scientific_status": acceptance["scientific_status"],
+        "successful_seeds": acceptance["successful_seeds"],
+        "failed_seeds": acceptance["failed_seeds"],
+    }
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
+    parser.add_argument("--mode", required=True, choices=("generate", "finalize"))
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--source-commit", required=True)
+    parser.add_argument("--process-id", choices=("A", "B"))
+    parser.add_argument("--staging-a", type=Path)
+    parser.add_argument("--staging-b", type=Path)
     args = parser.parse_args()
     try:
-        status = run(output=args.output, source_commit=args.source_commit)
+        if args.mode == "generate":
+            if args.process_id is None or args.staging_a is not None or args.staging_b is not None:
+                parser.error("generate requires --process-id only")
+            status = run(
+                output=args.output,
+                source_commit=args.source_commit,
+                process_id=args.process_id,
+            )
+        else:
+            if args.process_id is not None or args.staging_a is None or args.staging_b is None:
+                parser.error("finalize requires --staging-a and --staging-b")
+            status = finalize(
+                output=args.output,
+                staging_a=args.staging_a,
+                staging_b=args.staging_b,
+                source_commit=args.source_commit,
+            )
     except C17RunTimeoutError:
         return 124
     except Exception as error:
         print(f"{type(error).__name__}: {error}", file=sys.stderr)
         return 1
     print(_canonical(status))
+    if args.mode == "generate":
+        return 0
     return 0 if status["engineering_status"] == "accepted" else 2
 
 

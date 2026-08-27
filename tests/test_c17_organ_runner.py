@@ -34,8 +34,8 @@ def test_disabled_preregistration_rejects_before_execution(tmp_path):
     assert not (tmp_path / "out").exists()
 
 
-def test_source_pin_mismatch_rejects_before_execution(tmp_path):
-    with pytest.raises(RuntimeError, match="source pin mismatch"):
+def test_disabled_preregistration_precedes_source_pin_check(tmp_path):
+    with pytest.raises(RuntimeError, match="remains disabled"):
         runner._preflight(
             root=ROOT,
             protocol_path=ROOT / runner.PROTOCOL_RELATIVE,
@@ -48,7 +48,7 @@ def test_source_pin_mismatch_rejects_before_execution(tmp_path):
 def test_frozen_fixture_hash_validator_and_tamper():
     value = protocol()
     runner._validate_fixture_hashes(value)
-    value["fixtures"]["fixture_sha256_by_run_seed"]["4701"] = "0" * 64
+    value["fixtures"]["fixture_sha256_by_run_seed"]["4801"] = "0" * 64
     with pytest.raises(RuntimeError, match="fixture hash"):
         runner._validate_fixture_hashes(value)
 
@@ -89,7 +89,7 @@ def test_source_scope_requires_exact_allowlist_and_clean_pin(tmp_path, monkeypat
         runner._validate_source_scope(tmp_path, value, "a" * 40)
 
 
-def test_exact_nine_canonical_writer_and_zero_byte_jsonl(tmp_path):
+def test_exact_ten_canonical_writer_and_zero_byte_jsonl(tmp_path):
     value = protocol()
     bundle = {
         name: (
@@ -131,7 +131,7 @@ def test_failure_bundle_is_exact_nine_with_zero_success(monkeypatch):
     from sparkbrain.v03_organs import evaluation
 
     value = protocol()
-    value["fixtures"]["run_seeds"] = [9901701]
+    value["fixtures"]["run_seeds"] = [9901801]
     value["statistics"]["bootstrap_resamples"] = 5
     monkeypatch.setattr(
         evaluation,
@@ -145,4 +145,4 @@ def test_failure_bundle_is_exact_nine_with_zero_success(monkeypatch):
     assert acceptance["scientific_status"] == "not_evaluated_implementation_failure"
     assert acceptance["successful_seeds"] == []
     assert bundle["candidate_discovery.jsonl"] == []
-    assert set(bundle) == runner.EXPECTED_FILES
+    assert set(bundle) == runner.PREFINAL_FILES

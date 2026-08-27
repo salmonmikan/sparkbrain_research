@@ -6,6 +6,7 @@ from pathlib import Path
 
 import pytest
 
+from sparkbrain.release import release_mode
 from sparkbrain.v03_organs.contracts import (
     canonical,
     digest,
@@ -15,6 +16,7 @@ from sparkbrain.v03_organs.contracts import (
 from sparkbrain.v03_organs.discovery import (
     assess_proposal,
     discover_primary_candidate,
+    select_control_memberships,
     select_controls,
 )
 from sparkbrain.v03_organs.worlds import fixture_document, fixture_hashes, fixture_manifest
@@ -37,14 +39,10 @@ def _independent_fixture(run_seed: int, p: dict) -> dict:
         return prefix + sha(text)[:24]
 
     cells = []
-    for cell_spec in p["fixtures"]["generation_contract"]["constants_and_array_order"][
-        "cell_order"
-    ]:
-        condition_id, comp = cell_spec["condition_id"], cell_spec["compositionality"]
+    for cell_spec in p["resource_conditions"]["rows"]:
+        condition_id, comp = cell_spec["condition_id"], cell_spec["task_compositionality"]
         splits = []
-        for split_spec in p["fixtures"]["generation_contract"]["constants_and_array_order"][
-            "split_order"
-        ]:
+        for split_spec in p["fixtures"]["generation_contract"]["split_order"]:
             split, count, base = (
                 split_spec["split"],
                 split_spec["episode_count"],
@@ -62,7 +60,9 @@ def _independent_fixture(run_seed: int, p: dict) -> dict:
                         (f + (3 if split == "heldout" else 2)) % 4,
                     ]
                 variant = f"composition{comp}"
-                episode_id = ids("ep-", f"c17|episode|{run_seed}|{split}|{variant}|{episode_index}")
+                episode_id = ids(
+                    "ep-", f"c17v2|episode|{run_seed}|{split}|{variant}|{episode_index}"
+                )
                 frames = []
                 segment = 12 // comp
                 for t in range(12):
@@ -87,7 +87,7 @@ def _independent_fixture(run_seed: int, p: dict) -> dict:
                     for j, value in enumerate(values):
                         if value:
                             preimage = (
-                                f"c17|amplitude|{run_seed}|{split}|{variant}|"
+                                f"c17v2|amplitude|{run_seed}|{split}|{variant}|"
                                 f"{episode_index}|{t}|{j}"
                             )
                             uniform = int(sha(preimage)[:13], 16) / float(2**52)
@@ -117,7 +117,7 @@ def _independent_fixture(run_seed: int, p: dict) -> dict:
                         "fixture_variant": variant,
                         "episode_index": episode_index,
                         "episode_seed": base
-                        + 1000 * (run_seed - 4701)
+                        + 1000 * (run_seed - 4801)
                         + 100 * (comp - 2)
                         + episode_index,
                         "episode_id": episode_id,
@@ -152,7 +152,7 @@ def test_two_independent_pure_fixture_implementations_match_all_frozen_hashes(pr
 
 
 def test_fixture_schema_identity_and_cell_repetition(protocol):
-    corpus = fixture_document(9901701, protocol)
+    corpus = fixture_document(9901801, protocol)
     assert len(corpus["cells"]) == 5
     first = corpus["cells"][0]["splits"][0]["episodes"][0]
     assert set(first) == {
@@ -204,34 +204,57 @@ def _observations() -> list[dict]:
 def test_discovery_is_exact_schema_label_blind_deterministic_and_has_absence(protocol):
     rows = _observations()
     first = discover_primary_candidate(
-        rows, protocol=protocol, run_seed=9901701, condition_id="R0_baseline"
+        rows, protocol=protocol, run_seed=9901801, condition_id="R0_baseline"
     )
     assert first == discover_primary_candidate(
-        copy.deepcopy(rows), protocol=protocol, run_seed=9901701, condition_id="R0_baseline"
+        copy.deepcopy(rows), protocol=protocol, run_seed=9901801, condition_id="R0_baseline"
     )
     assert {"a", "b"}.issubset(first["primary_candidate"]["member_ids"])
     leaked = copy.deepcopy(rows)
     leaked[0]["function"] = "renamed-label"
     with pytest.raises(ValueError, match="exact label-blind"):
         discover_primary_candidate(
-            leaked, protocol=protocol, run_seed=9901701, condition_id="R0_baseline"
+            leaked, protocol=protocol, run_seed=9901801, condition_id="R0_baseline"
         )
     absent = discover_primary_candidate(
-        rows[:2], protocol=protocol, run_seed=9901701, condition_id="R0_baseline"
+        rows[:2], protocol=protocol, run_seed=9901801, condition_id="R0_baseline"
     )
     assert absent["primary_candidate"] is None and absent["eligible_candidates"] == []
 
 
 def test_all_five_controls_are_train_only_deterministic_and_exclude_target(protocol):
     controls = select_controls(
-        _observations(), ["a", "b"], protocol=protocol, run_seed=9901701, condition_id="R0_baseline"
+        _observations(), ["a", "b"], protocol=protocol, run_seed=9901801, condition_id="R0_baseline"
     )
     assert list(controls) == protocol["controls"]["control_order"]
     assert all(
         value is not None and not {"a", "b"}.intersection(value) for value in controls.values()
     )
     assert controls == select_controls(
-        _observations(), ["a", "b"], protocol=protocol, run_seed=9901701, condition_id="R0_baseline"
+        _observations(), ["a", "b"], protocol=protocol, run_seed=9901801, condition_id="R0_baseline"
+    )
+
+
+def test_control_type_sizes_and_selection_preimage_hashes(protocol):
+    selections, memberships = select_control_memberships(
+        _observations(),
+        ["a", "b"],
+        candidate_id="candidate",
+        protocol=protocol,
+        run_seed=9901801,
+        condition_id="R0_baseline",
+    )
+    requested = 1 + int(
+        hashlib.sha256(b"c17v2|control|9901801|R0_baseline").hexdigest()[:8], 16
+    ) % 4
+    assert len(selections["random_unmatched"]) == min(requested, 4)
+    assert all(
+        len(selections[name]) == 2 for name in protocol["controls"]["control_order"][1:]
+    )
+    assert [row["control_type"] for row in memberships] == protocol["controls"]["control_order"]
+    assert all(
+        row["status"] == "complete" and row["selection_input_sha256"]
+        for row in memberships
     )
 
 
@@ -266,7 +289,7 @@ def reserved_bundle(protocol):
     from sparkbrain.v03_organs.evaluation import generate_bundle, validate_bundle
 
     value = copy.deepcopy(protocol)
-    value["fixtures"]["run_seeds"] = [9901701]
+    value["fixtures"]["run_seeds"] = [9901801]
     value["statistics"]["bootstrap_resamples"] = 30
     bundle = generate_bundle(value, "a" * 40)
     validate_bundle(bundle, value, "a" * 40)
@@ -286,10 +309,14 @@ def test_reserved_bundle_exact_cardinality_restore_and_negative_science(reserved
         "candidate_discovery": 5,
         "structural_seed_split": 20,
         "selectivity_episode": 120,
+        "functional_selectivity_seed": 5,
         "matched_episode_branch": 420,
         "heldout_episode_branch": 420,
+        "heldout_seed": 5,
+        "heldout_condition_aggregate": 5,
         "matched_control_membership": 25,
         "matched_seed_effect": 30,
+        "matched_condition_aggregate_effect": 30,
         "resource_seed_counter": 5,
     }
     all_rows = (
@@ -310,6 +337,53 @@ def test_bundle_validator_recalculates_inventory_and_cardinality(reserved_bundle
     broken["candidate_discovery.jsonl"].pop()
     broken["acceptance_matrix.json"]["cardinalities"]["candidate_discovery"] -= 1
     with pytest.raises(ValueError, match="cardinality"):
+        validate_bundle(broken, protocol, "a" * 40)
+
+
+def test_validator_rejects_control_preimage_and_dynamic_count_tamper(reserved_bundle):
+    from sparkbrain.v03_organs.evaluation import validate_bundle
+
+    protocol, original = reserved_bundle
+    broken = copy.deepcopy(original)
+    broken["matched_ablations.json"]["control_membership_rows"][0][
+        "selection_input_sha256"
+    ] = "0" * 64
+    with pytest.raises(ValueError, match="controls"):
+        validate_bundle(broken, protocol, "a" * 40)
+    broken = copy.deepcopy(original)
+    broken["candidate_discovery.jsonl"][0]["control_feasible_candidate_count"] += 1
+    with pytest.raises(ValueError, match="discovery"):
+        validate_bundle(broken, protocol, "a" * 40)
+    broken = copy.deepcopy(original)
+    broken["candidate_discovery.jsonl"][0]["candidate_count"] = True
+    with pytest.raises(ValueError, match="integer, not bool"):
+        validate_bundle(broken, protocol, "a" * 40)
+
+
+def test_external_exact_nine_compare_is_only_reproduction_authority(reserved_bundle):
+    from sparkbrain.v03_organs.evaluation import finalize_bundles, generate_bundle, validate_bundle
+
+    protocol, prefinal = reserved_bundle
+    with pytest.raises(TypeError):
+        generate_bundle(protocol, "a" * 40, reproduction_exact=True)
+    final = finalize_bundles(prefinal, copy.deepcopy(prefinal), protocol, "a" * 40)
+    validate_bundle(final, protocol, "a" * 40)
+    assert set(final) == set(protocol["artifacts"]["exact_files"])
+    reproduction = next(
+        row
+        for row in final["acceptance_matrix.json"]["engineering_gates"]
+        if row["gate_id"] == "reproduction_exact"
+    )
+    assert reproduction == {
+        "gate_id": "reproduction_exact",
+        "observed": True,
+        "passed": True,
+    }
+    broken = copy.deepcopy(final)
+    broken["reproduction_compare_manifest.json"]["runs"][0]["file_sha256"][
+        "report.md"
+    ] = "0" * 64
+    with pytest.raises(ValueError, match="reproduction"):
         validate_bundle(broken, protocol, "a" * 40)
 
 
@@ -389,10 +463,14 @@ def test_checkpoint_validator_rejects_micro_tamper(reserved_bundle, tamper):
         checkpoint["calibration_scores"][0]["belief_brier"] += 1e-12
     else:
         checkpoint["selection_episode_sha256"] = "0" * 64
-    with pytest.raises(ValueError, match="engineering gates"):
+    with pytest.raises(ValueError, match="raw evidence"):
         validate_bundle(broken, protocol, "a" * 40)
 
 
+@pytest.mark.skipif(
+    release_mode(ROOT) == "archive",
+    reason="C17 v1 source-commit hash pins require the retained stage checkout",
+)
 def test_candidate_absence_is_engineering_success_and_scientific_negative(
     protocol, monkeypatch
 ):
@@ -402,25 +480,32 @@ def test_candidate_absence_is_engineering_success_and_scientific_negative(
 
     def absent(*args, **kwargs):
         row = original(*args, **kwargs)
-        return {**row, "primary_candidate": None, "eligible_candidates": []}
+        return {
+            **row,
+            "absence_reason": "no_activity_eligible_candidate",
+            "activity_eligible_candidate_count": 0,
+            "control_feasible_candidate_count": 0,
+            "infeasible_control_pool_candidate_count": 0,
+            "primary_candidate": None,
+            "eligible_candidates": [],
+        }
 
     monkeypatch.setattr(evaluation, "discover_primary_candidate", absent)
     value = copy.deepcopy(protocol)
-    value["fixtures"]["run_seeds"] = [9901701]
+    value["fixtures"]["run_seeds"] = [9901801]
     value["statistics"]["bootstrap_resamples"] = 5
     value["runner_execution_allowed"] = True
     value["base_commit"] = "b" * 40
     value["base_sha256"] = "c" * 64
     value["source_commit"] = "a" * 40
-    for manifest in value["protected_hash_manifest"].values():
-        for relative in manifest:
-            manifest[relative] = evaluation.digest_bytes((ROOT / relative).read_bytes())
-    bundle = evaluation.generate_bundle(value, "a" * 40, reproduction_exact=True)
-    evaluation.validate_bundle(
-        bundle, value, "a" * 40, reproduction_exact=True
+    prefinal = evaluation.generate_bundle(value, "a" * 40)
+    bundle = evaluation.finalize_bundles(
+        prefinal, copy.deepcopy(prefinal), value, "a" * 40
     )
     acceptance = bundle["acceptance_matrix.json"]
-    assert acceptance["engineering_status"] == "accepted"
+    assert acceptance["engineering_status"] == "accepted", [
+        row for row in acceptance["engineering_gates"] if not row["passed"]
+    ]
     assert acceptance["scientific_status"] == "not_supported"
     assert acceptance["failed_seeds"] == []
     assert all(row["primary_candidate"] is None for row in bundle["candidate_discovery.jsonl"])
@@ -484,7 +569,7 @@ def test_discovery_final_tie_break_is_single_member_list_hash(protocol):
         row["message_target_id"] = None
         row["message_weight"] = 0.0
     result = discover_primary_candidate(
-        rows, protocol=protocol, run_seed=9901701, condition_id="R0_baseline"
+        rows, protocol=protocol, run_seed=9901801, condition_id="R0_baseline"
     )
     pairs = list(itertools.combinations(sorted("abcdef"), 2))
     expected = min(
@@ -501,7 +586,7 @@ def test_discovery_final_tie_break_is_single_member_list_hash(protocol):
         ("bootstrap", "bootstrap"),
         ("science_gate", "scientific gates"),
         ("engineering_gate", "engineering gates"),
-        ("checkpoint", "engineering gates"),
+        ("checkpoint", "raw evidence"),
     ],
 )
 def test_validator_rejects_metric_and_gate_tamper(reserved_bundle, tamper, match):

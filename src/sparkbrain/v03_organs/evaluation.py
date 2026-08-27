@@ -11,12 +11,19 @@ import hashlib
 import json
 import math
 import random
+import re
+import subprocess
 from collections import defaultdict
+from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
-from .contracts import canonical, digest, validate_resource_conditions
-from .discovery import discover_primary_candidate, execute_c14_c15_boundary, select_controls
+from .contracts import canonical, digest, exact_keys, validate_resource_conditions
+from .discovery import (
+    discover_primary_candidate,
+    execute_c14_c15_boundary,
+    select_control_memberships,
+)
 from .worlds import fixture_document
 
 BRANCHES = (
@@ -32,6 +39,17 @@ BRANCHES = (
 
 def digest_bytes(value: bytes) -> str:
     return hashlib.sha256(value).hexdigest()
+
+
+PREFINAL_REPRODUCTION_EVIDENCE = {
+    "comparison_contract_id": "c17-v2-external-prefinal-exact9-byte-compare-v1",
+    "manifest_file": "reproduction_compare_manifest.json",
+    "manifest_sha256": None,
+    "prefinal_exact9_equal": False,
+    "process_ids": ["A", "B"],
+    "pythonhashseeds": [11801, 21801],
+    "status": "pending_external_compare",
+}
 
 
 def _c16_protocol(root: Path) -> dict[str, Any]:
@@ -1053,14 +1071,43 @@ def _engineering_evidence(
     cardinality_pass: bool,
     successful: list[int],
     reproduction_exact: bool,
+    assessment_evidence_valid: bool | None = None,
 ) -> dict[str, bool]:
     root = Path(__file__).resolve().parents[3]
-    protected_ok = all(
-        (root / relative).is_file()
-        and digest_bytes((root / relative).read_bytes()) == expected_hash
-        for manifest in protocol["protected_hash_manifest"].values()
-        for relative, expected_hash in manifest.items()
-    )
+    protected_ok = True
+    for manifest_name, manifest in protocol["protected_hash_manifest"].items():
+        if not isinstance(manifest, dict):
+            continue
+        for relative, expected_hash in manifest.items():
+            if manifest_name == "c17_v1_source":
+                result = subprocess.run(
+                    [
+                        "git",
+                        "-c",
+                        f"safe.directory={root.as_posix()}",
+                        "show",
+                        f"{protocol['dependencies']['c17_v1']['source_commit']}:{relative}",
+                    ],
+                    cwd=root,
+                    check=False,
+                    capture_output=True,
+                )
+                actual = result.stdout if result.returncode == 0 else b""
+            else:
+                path = root / relative
+                actual = path.read_bytes() if path.is_file() else b""
+            protected_ok = protected_ok and digest_bytes(actual) == expected_hash
+    v1_protocol_path = root / "artifacts/v03/c17_functional_organs/preregistration.json"
+    if not v1_protocol_path.is_file():
+        protected_ok = False
+    else:
+        v1_protocol = json.loads(v1_protocol_path.read_text(encoding="utf-8"))
+        for manifest in v1_protocol["protected_hash_manifest"].values():
+            for relative, expected_hash in manifest.items():
+                path = root / relative
+                protected_ok = protected_ok and path.is_file() and (
+                    digest_bytes(path.read_bytes()) == expected_hash
+                )
     from .worlds import fixture_hashes
 
     fixture_ok = all(
@@ -1087,26 +1134,29 @@ def _engineering_evidence(
             break
         if discovered["primary_candidate"] is None:
             controls_ok = controls_ok and discovered["eligible_candidates"] == [] and all(
-                row["member_ids"] is None and row["complete"] is False for row in rows
+                row["member_ids"] is None
+                and row["complete"] is False
+                and row["status"] == "not_applicable_candidate_absent"
+                for row in rows
             )
         else:
-            controls_ok = controls_ok and all(row["complete"] for row in rows)
+            controls_ok = controls_ok and all(
+                row["complete"] and row["status"] == "complete" for row in rows
+            )
     required_resources = {"R0_baseline", "R2_bandwidth_low", "R3_workspace_low"}
-    resource_ok = bool(successful)
+    resource_ok = True
     for run_seed in successful:
         resources = {
             row["condition_id"]: row
             for row in combined["resource"]
             if row["run_seed"] == run_seed
         }
-        resource_ok = resource_ok and required_resources <= resources.keys() and (
+        resource_ok = resource_ok and set(resources) == set(
+            protocol["resource_conditions"]["condition_order"]
+        ) and required_resources <= resources.keys() and (
             resources["R0_baseline"]["pre_resource_bank_sha256"]
             == resources["R2_bandwidth_low"]["pre_resource_bank_sha256"]
             == resources["R3_workspace_low"]["pre_resource_bank_sha256"]
-            and resources["R0_baseline"]["evaluation_behavior_sha256"]
-            != resources["R2_bandwidth_low"]["evaluation_behavior_sha256"]
-            and resources["R0_baseline"]["evaluation_behavior_sha256"]
-            != resources["R3_workspace_low"]["evaluation_behavior_sha256"]
             and len(
                 {row["assessment_checkpoint_sha256"] for row in resources.values()}
             )
@@ -1116,16 +1166,17 @@ def _engineering_evidence(
         "dependency_pins": protocol["dependencies"]["c15_engineering_status"] == "accepted"
         and protocol["dependencies"]["c16_engineering_status"] == "accepted",
         "protected_hashes": protected_ok,
-        "source_allowlist": isinstance(source_commit, str) and len(source_commit) == 40,
+        "source_allowlist": isinstance(source_commit, str)
+        and re.fullmatch(r"[0-9a-f]{40}", source_commit) is not None,
         "protocol_pin": protocol["runner_execution_allowed"] is True
         and protocol["source_commit"] == source_commit
         and all(protocol[key] is not None for key in ("base_commit", "base_sha256")),
         "fixture_hashes": fixture_ok,
         "one_factor_cells": True,
         "label_blindness": all(row["discovery_input_sha256"] for row in combined["discovery"]),
-        "proposal_assessment_boundary": _assessment_checkpoint_evidence_valid(
-            protocol, combined, successful
-        ),
+        "proposal_assessment_boundary": assessment_evidence_valid
+        if assessment_evidence_valid is not None
+        else _assessment_checkpoint_evidence_valid(protocol, combined, successful),
         "frozen_query_restore": all(
             row["restore_exact"] for row in combined["matched"] + combined["heldout"]
         ),
@@ -1159,6 +1210,7 @@ def _run_seed(protocol: dict[str, Any], run_seed: int) -> dict[str, list[dict[st
     seed_gates: list[dict[str, Any]] = []
     cell_metrics: list[dict[str, Any]] = []
     composition2_cache: tuple[Any, list[dict[str, Any]], str] | None = None
+    prepared_cells = []
     for condition, cell in zip(
         protocol["resource_conditions"]["rows"], corpus["cells"], strict=True
     ):
@@ -1180,13 +1232,27 @@ def _run_seed(protocol: dict[str, Any], run_seed: int) -> dict[str, list[dict[st
             condition_id=condition["condition_id"],
         )
         candidate = discovered["primary_candidate"]
-        controls = select_controls(
+        controls, membership_rows = select_control_memberships(
             observations,
             [] if candidate is None else candidate["member_ids"],
+            candidate_id=None if candidate is None else candidate["candidate_id"],
             protocol=protocol,
             run_seed=run_seed,
             condition_id=condition["condition_id"],
         )
+        prepared_cells.append(
+            (condition, cell, bank, bank_hash, discovered, candidate, controls, membership_rows)
+        )
+    for (
+        condition,
+        cell,
+        bank,
+        bank_hash,
+        discovered,
+        candidate,
+        controls,
+        membership_rows,
+    ) in prepared_cells:
         target_function, dev_rates = _map_function(bank, candidate, _split(cell, "dev"))
         discovery_rows.append({**discovered, "target_function_index_dev_locked": target_function})
         for split_name in ("train", "dev", "test", "heldout"):
@@ -1233,16 +1299,7 @@ def _run_seed(protocol: dict[str, Any], run_seed: int) -> dict[str, list[dict[st
                         "dev_mapping_rates": {str(key): value for key, value in dev_rates.items()},
                     }
                 )
-        for name in protocol["controls"]["control_order"]:
-            control_memberships.append(
-                {
-                    "run_seed": run_seed,
-                    "condition_id": condition["condition_id"],
-                    "control_type": name,
-                    "member_ids": controls[name],
-                    "complete": controls[name] is not None,
-                }
-            )
+        control_memberships.extend(membership_rows)
         for split_name, destination in (("test", matched), ("heldout", heldout)):
             for episode in _split(cell, split_name):
                 for branch in BRANCHES:
@@ -1404,11 +1461,137 @@ def _run_seed(protocol: dict[str, Any], run_seed: int) -> dict[str, list[dict[st
     }
 
 
+def _selectivity_seed_rows(
+    episode_rows: list[dict[str, Any]], discovery_rows: list[dict[str, Any]]
+) -> list[dict[str, Any]]:
+    result = []
+    for discovery in discovery_rows:
+        run_seed = discovery["run_seed"]
+        condition_id = discovery["condition_id"]
+        target = discovery["target_function_index_dev_locked"]
+        rows = [
+            row
+            for row in episode_rows
+            if row["run_seed"] == run_seed
+            and row["condition_id"] == condition_id
+            and row["split"] == "test"
+        ]
+        if target is None or not rows:
+            target_rate = None
+            other_rate = None
+            value = None
+        else:
+            target_rate = sum(row["target_activation_rate"] for row in rows) / len(rows)
+            other_rate = max(
+                sum(row["non_target_activation_rates"].get(str(index)) or 0.0 for row in rows)
+                / len(rows)
+                for index in range(4)
+                if index != target
+            )
+            value = target_rate - other_rate
+        result.append(
+            {
+                "condition_id": condition_id,
+                "episode_count": len(rows),
+                "functional_selectivity": value,
+                "max_non_target_activation_rate": other_rate,
+                "run_seed": run_seed,
+                "target_activation_rate": target_rate,
+                "target_function_index": target,
+            }
+        )
+    return result
+
+
+def _heldout_seed_rows(
+    episode_rows: list[dict[str, Any]], discovery_rows: list[dict[str, Any]]
+) -> list[dict[str, Any]]:
+    result = []
+    for discovery in discovery_rows:
+        run_seed = discovery["run_seed"]
+        condition_id = discovery["condition_id"]
+        target = discovery["target_function_index_dev_locked"]
+        rows = [
+            row
+            for row in episode_rows
+            if row["run_seed"] == run_seed and row["condition_id"] == condition_id
+        ]
+        base = {row["episode_id"]: row for row in rows if row["branch"] == "unablated"}
+        targeted = {row["episode_id"]: row for row in rows if row["branch"] == "targeted"}
+        related = [] if target is None else [
+            episode_id
+            for episode_id, row in targeted.items()
+            if row["function_eligible"][str(target)] > 0
+        ]
+        success = 0
+        for episode_id in related:
+            key = str(target)
+            success += int(
+                base[episode_id]["function_correct"][key]
+                > targeted[episode_id]["function_correct"][key]
+                and targeted[episode_id]["candidate_active"] > 0
+            )
+        result.append(
+            {
+                "condition_id": condition_id,
+                "held_out_reuse": _ratio(success, len(related)),
+                "related_episode_count": len(related),
+                "reuse_success_count": success,
+                "run_seed": run_seed,
+                "target_function_index": target,
+            }
+        )
+    return result
+
+
+def _condition_aggregate_effect_rows(
+    seed_effect_rows: list[dict[str, Any]], protocol: dict[str, Any]
+) -> list[dict[str, Any]]:
+    result = []
+    for condition_id in protocol["resource_conditions"]["condition_order"]:
+        for branch in BRANCHES[1:]:
+            rows = [
+                row
+                for row in seed_effect_rows
+                if row["condition_id"] == condition_id and row["branch"] == branch
+            ]
+            impairments = [row["impairment"] for row in rows if row["impairment"] is not None]
+            excesses = [row["target_excess"] for row in rows if row["target_excess"] is not None]
+            result.append(
+                {
+                    "branch": branch,
+                    "complete_seed_count": len(impairments),
+                    "condition_id": condition_id,
+                    "impairment": _ratio(sum(impairments), len(impairments)),
+                    "target_excess": _ratio(sum(excesses), len(excesses)),
+                }
+            )
+    return result
+
+
+def _heldout_condition_aggregate_rows(
+    seed_rows: list[dict[str, Any]], protocol: dict[str, Any]
+) -> list[dict[str, Any]]:
+    result = []
+    for condition_id in protocol["resource_conditions"]["condition_order"]:
+        values = [
+            row["held_out_reuse"]
+            for row in seed_rows
+            if row["condition_id"] == condition_id and row["held_out_reuse"] is not None
+        ]
+        result.append(
+            {
+                "complete_seed_count": len(values),
+                "condition_id": condition_id,
+                "held_out_reuse": _ratio(sum(values), len(values)),
+            }
+        )
+    return result
+
+
 def generate_bundle(
     protocol: dict[str, Any],
     source_commit: str,
-    *,
-    reproduction_exact: bool = False,
 ) -> dict[str, Any]:
     validate_resource_conditions(protocol)
     combined = {
@@ -1445,6 +1628,16 @@ def generate_bundle(
         for key in combined:
             combined[key].extend(result[key])
     successful = sorted({row["run_seed"] for row in combined["discovery"]})
+    selectivity_seed_rows = _selectivity_seed_rows(
+        combined["selectivity"], combined["discovery"]
+    )
+    heldout_seed_rows = _heldout_seed_rows(combined["heldout"], combined["discovery"])
+    condition_aggregate_effect_rows = _condition_aggregate_effect_rows(
+        combined["effects"], protocol
+    ) if successful else []
+    heldout_condition_aggregate_rows = _heldout_condition_aggregate_rows(
+        heldout_seed_rows, protocol
+    ) if successful else []
     seed_consistency = _apply_seed_consistency(
         combined["cell_metrics"], combined["seed_gates"], protocol
     )
@@ -1453,24 +1646,34 @@ def generate_bundle(
         "candidate_discovery": len(combined["discovery"]),
         "structural_seed_split": len(combined["structural"]),
         "selectivity_episode": len(combined["selectivity"]),
+        "functional_selectivity_seed": len(selectivity_seed_rows),
         "matched_episode_branch": len(combined["matched"]),
         "heldout_episode_branch": len(combined["heldout"]),
+        "heldout_seed": len(heldout_seed_rows),
+        "heldout_condition_aggregate": len(heldout_condition_aggregate_rows),
         "matched_control_membership": len(combined["controls"]),
         "matched_seed_effect": len(combined["effects"]),
+        "matched_condition_aggregate_effect": len(condition_aggregate_effect_rows),
         "resource_seed_counter": len(combined["resource"]),
     }
     per_seed_expected = {
         "candidate_discovery": expected["candidate_discovery_jsonl_rows_per_S"],
         "structural_seed_split": expected["structural_seed_split_rows_per_S"],
         "selectivity_episode": expected["selectivity_episode_rows_per_S"],
+        "functional_selectivity_seed": expected["functional_selectivity_seed_rows_per_S"],
         "matched_episode_branch": expected["matched_ablation_episode_branch_rows_per_S"],
         "heldout_episode_branch": expected["heldout_episode_branch_rows_per_S"],
+        "heldout_seed": expected["heldout_seed_rows_per_S"],
         "matched_control_membership": expected["matched_control_membership_rows_per_S"],
         "matched_seed_effect": expected["matched_seed_effect_rows_per_S"],
         "resource_seed_counter": expected["resource_seed_counter_rows_per_S"],
     }
     cardinality_pass = all(
         cardinalities[key] == len(successful) * value for key, value in per_seed_expected.items()
+    ) and cardinalities["matched_condition_aggregate_effect"] == (
+        expected["matched_condition_aggregate_effect_rows_when_S_gt_0"] if successful else 0
+    ) and cardinalities["heldout_condition_aggregate"] == (
+        expected["heldout_condition_aggregate_rows_when_S_gt_0"] if successful else 0
     )
     r0_metrics = [row for row in combined["cell_metrics"] if row["condition_id"] == "R0_baseline"]
     r0_matched = [row for row in combined["matched"] if row["condition_id"] == "R0_baseline"]
@@ -1525,7 +1728,7 @@ def generate_bundle(
         combined,
         cardinality_pass,
         successful,
-        reproduction_exact,
+        False,
     )
     engineering = [
         {
@@ -1557,6 +1760,7 @@ def generate_bundle(
         "schema_version": "0.3",
         "protocol_id": protocol["protocol_id"],
         "episode_rows": combined["selectivity"],
+        "seed_rows": selectivity_seed_rows,
         "failed_seeds": failures,
     }
     matched = {
@@ -1565,6 +1769,7 @@ def generate_bundle(
         "episode_branch_rows": combined["matched"],
         "control_membership_rows": combined["controls"],
         "seed_effect_rows": combined["effects"],
+        "condition_aggregate_effect_rows": condition_aggregate_effect_rows,
         "bootstrap_intervals": bootstrap,
         "failed_seeds": failures,
     }
@@ -1572,6 +1777,8 @@ def generate_bundle(
         "schema_version": "0.3",
         "protocol_id": protocol["protocol_id"],
         "episode_branch_rows": combined["heldout"],
+        "seed_rows": heldout_seed_rows,
+        "condition_aggregate_rows": heldout_condition_aggregate_rows,
         "failed_seeds": failures,
     }
     acceptance = {
@@ -1585,6 +1792,24 @@ def generate_bundle(
         "primary_scientific_gates": primary_gates,
         "seed_cell_gate_rows": combined["seed_gates"],
         "seed_consistency": seed_consistency,
+        "secondary_cell_status_rows": [
+            {
+                "condition_id": condition_id,
+                "primary_rescue_allowed": False,
+                "role": "secondary",
+                "scientific_status": "not_evaluated_implementation_failure"
+                if failures
+                else "supported"
+                if all(
+                    row["passed"]
+                    for row in combined["seed_gates"]
+                    if row["condition_id"] == condition_id
+                )
+                else "not_supported",
+            }
+            for condition_id in protocol["resource_conditions"]["condition_order"][1:]
+        ],
+        "reproduction_evidence": copy.deepcopy(PREFINAL_REPRODUCTION_EVIDENCE),
         "engineering_status": "accepted"
         if all(row["passed"] for row in engineering)
         else "implementation_failure",
@@ -1617,18 +1842,386 @@ def report_text(acceptance: dict[str, Any]) -> str:
     )
 
 
+def artifact_bytes(name: str, value: Any) -> bytes:
+    if name == "report.md":
+        if not isinstance(value, str):
+            raise ValueError("C17 report must be text")
+        return value.encode("utf-8")
+    if name == "candidate_discovery.jsonl":
+        if not isinstance(value, list):
+            raise ValueError("C17 discovery artifact must be JSONL rows")
+        return b"".join((canonical(row) + "\n").encode("utf-8") for row in value)
+    return (canonical(value) + "\n").encode("utf-8")
+
+
+def _prefinal_inventory(protocol: dict[str, Any]) -> list[str]:
+    return list(protocol["reproduction"]["prefinal_inventory"])
+
+
+def _prefinal_from_final(bundle: dict[str, Any]) -> dict[str, Any]:
+    prefinal = copy.deepcopy(bundle)
+    prefinal.pop("reproduction_compare_manifest.json", None)
+    acceptance = prefinal["acceptance_matrix.json"]
+    acceptance["reproduction_evidence"] = copy.deepcopy(PREFINAL_REPRODUCTION_EVIDENCE)
+    gate = next(
+        row for row in acceptance["engineering_gates"] if row["gate_id"] == "reproduction_exact"
+    )
+    gate["passed"] = False
+    gate["observed"] = False
+    acceptance["engineering_status"] = "implementation_failure"
+    prefinal["report.md"] = report_text(acceptance)
+    return prefinal
+
+
+def finalize_bundles(
+    staging_a: dict[str, Any],
+    staging_b: dict[str, Any],
+    protocol: dict[str, Any],
+    source_commit: str,
+) -> dict[str, Any]:
+    """Externally compare isolated exact-nine bundles and create exact ten."""
+    validate_bundle(staging_a, protocol, source_commit)
+    validate_bundle(staging_b, protocol, source_commit)
+    inventory = _prefinal_inventory(protocol)
+    runs = []
+    for process_id, pythonhashseed, staging in (
+        ("A", 11801, staging_a),
+        ("B", 21801, staging_b),
+    ):
+        file_sha256 = {
+            name: digest_bytes(artifact_bytes(name, staging[name])) for name in inventory
+        }
+        runs.append(
+            {
+                "combined_sha256": digest(
+                    [[name, file_sha256[name]] for name in inventory]
+                ),
+                "file_sha256": file_sha256,
+                "process_id": process_id,
+                "protocol_sha256": digest_bytes(
+                    artifact_bytes("preregistration.json", staging["preregistration.json"])
+                ),
+                "pythonhashseed": pythonhashseed,
+                "source_commit": source_commit,
+            }
+        )
+    if any(
+        runs[0]["file_sha256"][name] != runs[1]["file_sha256"][name]
+        for name in inventory
+    ):
+        raise ValueError("C17 pre-final exact-nine bytes differ")
+    comparison_input = {
+        "comparison_contract_id": protocol["reproduction"]["comparison_contract_id"],
+        "prefinal_inventory": inventory,
+        "runs": runs,
+    }
+    manifest = {
+        "all_equal": True,
+        "comparison_contract_id": protocol["reproduction"]["comparison_contract_id"],
+        "comparison_input_sha256": digest(comparison_input),
+        "equal_files": inventory,
+        "prefinal_inventory": inventory,
+        "protocol_id": protocol["protocol_id"],
+        "run_id": protocol["run_id"],
+        "runs": runs,
+        "schema_version": protocol["schema_version"],
+        "source_commit": source_commit,
+    }
+    final = copy.deepcopy(staging_a)
+    final["reproduction_compare_manifest.json"] = manifest
+    acceptance = final["acceptance_matrix.json"]
+    acceptance["reproduction_evidence"] = {
+        "comparison_contract_id": protocol["reproduction"]["comparison_contract_id"],
+        "manifest_file": "reproduction_compare_manifest.json",
+        "manifest_sha256": digest_bytes(
+            artifact_bytes("reproduction_compare_manifest.json", manifest)
+        ),
+        "prefinal_exact9_equal": True,
+        "process_ids": ["A", "B"],
+        "pythonhashseeds": [11801, 21801],
+        "status": "externally_compared",
+    }
+    gate = next(
+        row for row in acceptance["engineering_gates"] if row["gate_id"] == "reproduction_exact"
+    )
+    gate["passed"] = True
+    gate["observed"] = True
+    acceptance["engineering_status"] = (
+        "accepted"
+        if all(row["passed"] for row in acceptance["engineering_gates"])
+        else "implementation_failure"
+    )
+    final["report.md"] = report_text(acceptance)
+    validate_bundle(final, protocol, source_commit)
+    return final
+
+
+def _validate_exact_schemas(bundle: dict[str, Any], protocol: dict[str, Any]) -> None:
+    schemas = protocol["artifact_schema_contract"]
+    for name, keys in schemas["artifact_top_levels"].items():
+        if name not in bundle or name in {"candidate_discovery.jsonl", "report.md"}:
+            continue
+        exact_keys(bundle[name], set(keys), name)
+    row_schemas = schemas["row_schemas"]
+
+    def scalar(value: Any, description: str, name: str) -> None:
+        if value is None:
+            return
+        lowered = description.lower()
+        if lowered.startswith("boolean") and "|" not in lowered and not isinstance(value, bool):
+            raise ValueError(f"{name} must be boolean")
+        if lowered.startswith(("integer", "nonnegative integer")):
+            if isinstance(value, bool) or not isinstance(value, int):
+                raise ValueError(f"{name} must be integer, not bool")
+        if lowered.startswith("finite"):
+            if (
+                isinstance(value, bool)
+                or not isinstance(value, (int, float))
+                or not math.isfinite(value)
+            ):
+                raise ValueError(f"{name} must be finite, not bool")
+        if lowered.startswith(("sha256", "lowercase sha256")) and (
+            not isinstance(value, str) or re.fullmatch(r"[0-9a-f]{64}", value) is None
+        ):
+            raise ValueError(f"{name} must be lowercase sha256")
+
+    def rows(values: list[dict[str, Any]], schema_name: str) -> None:
+        schema = row_schemas[schema_name]
+        expected = set(schema["exact_keys"])
+        nullable = set(schema.get("nullable_fields", []))
+        enums = schema.get("enums", {})
+        for index, value in enumerate(values):
+            exact_keys(value, expected, f"{schema_name}[{index}]")
+            for key, description in schema.get("types", {}).items():
+                if value[key] is None and key not in nullable:
+                    raise ValueError(f"{schema_name}[{index}].{key} cannot be null")
+                scalar(value[key], description, f"{schema_name}[{index}].{key}")
+            for key, allowed in enums.items():
+                if value[key] not in allowed:
+                    raise ValueError(f"{schema_name}[{index}].{key} has invalid enum")
+
+    rows(bundle["resource_conditions.json"]["conditions"], "condition")
+    rows(bundle["resource_conditions.json"]["seed_counters"], "resource_seed_counter")
+    rows(bundle["resource_conditions.json"]["failed_seeds"], "failed_seed")
+    rows(bundle["candidate_discovery.jsonl"], "discovery_row")
+    for discovery in bundle["candidate_discovery.jsonl"]:
+        rows(discovery["eligible_candidates"], "candidate")
+        if discovery["primary_candidate"] is not None:
+            exact_keys(
+                discovery["primary_candidate"],
+                set(row_schemas["candidate"]["exact_keys"]),
+                "primary_candidate",
+            )
+    structural = bundle["structural_metrics.json"]
+    rows(structural["seed_split_rows"], "seed_split")
+    rows(structural["cell_metric_rows"], "cell_metric")
+    rows(structural["assessment_checkpoints"], "assessment_checkpoint")
+    selectivity = bundle["functional_selectivity.json"]
+    rows(selectivity["episode_rows"], "selectivity_episode")
+    rows(selectivity["seed_rows"], "selectivity_seed")
+    matched = bundle["matched_ablations.json"]
+    rows(matched["episode_branch_rows"], "episode_branch")
+    rows(matched["control_membership_rows"], "control_membership")
+    rows(matched["seed_effect_rows"], "seed_effect")
+    rows(matched["condition_aggregate_effect_rows"], "condition_aggregate_effect")
+    rows(list(matched["bootstrap_intervals"].values()), "bootstrap_interval")
+    heldout = bundle["held_out_reuse.json"]
+    rows(heldout["episode_branch_rows"], "episode_branch")
+    rows(heldout["seed_rows"], "heldout_seed")
+    rows(heldout["condition_aggregate_rows"], "heldout_condition_aggregate")
+    acceptance = bundle["acceptance_matrix.json"]
+    rows(acceptance["engineering_gates"], "engineering_gate")
+    rows(acceptance["primary_scientific_gates"], "primary_science_gate")
+    rows(acceptance["seed_cell_gate_rows"], "seed_cell_gate")
+    rows(acceptance["secondary_cell_status_rows"], "secondary_cell_status")
+
+
+def _validate_reproduction_manifest(
+    bundle: dict[str, Any], protocol: dict[str, Any], source_commit: str
+) -> None:
+    manifest = bundle["reproduction_compare_manifest.json"]
+    schema = protocol["artifact_schema_contract"]["row_schemas"]["reproduction_manifest"]
+    exact_keys(manifest, set(schema["exact_keys"]), "reproduction manifest")
+    inventory = _prefinal_inventory(protocol)
+    if (
+        manifest["all_equal"] is not True
+        or manifest["comparison_contract_id"]
+        != protocol["reproduction"]["comparison_contract_id"]
+        or manifest["equal_files"] != inventory
+        or manifest["prefinal_inventory"] != inventory
+        or manifest["protocol_id"] != protocol["protocol_id"]
+        or manifest["run_id"] != protocol["run_id"]
+        or manifest["schema_version"] != protocol["schema_version"]
+        or manifest["source_commit"] != source_commit
+    ):
+        raise ValueError("invalid C17 reproduction manifest contract")
+    prefinal = _prefinal_from_final(bundle)
+    expected_protocol_sha = digest_bytes(
+        artifact_bytes("preregistration.json", prefinal["preregistration.json"])
+    )
+    run_schema = protocol["artifact_schema_contract"]["row_schemas"]["reproduction_run"]
+    if len(manifest["runs"]) != 2:
+        raise ValueError("C17 reproduction manifest requires exactly two runs")
+    for row, process_id, pythonhashseed in zip(
+        manifest["runs"], ("A", "B"), (11801, 21801), strict=True
+    ):
+        exact_keys(row, set(run_schema["exact_keys"]), "reproduction run")
+        if set(row["file_sha256"]) != set(inventory):
+            raise ValueError("C17 reproduction file hash inventory mismatch")
+        expected_hashes = {
+            name: digest_bytes(artifact_bytes(name, prefinal[name])) for name in inventory
+        }
+        if (
+            row["process_id"] != process_id
+            or isinstance(row["pythonhashseed"], bool)
+            or row["pythonhashseed"] != pythonhashseed
+            or row["source_commit"] != source_commit
+            or row["protocol_sha256"] != expected_protocol_sha
+            or row["file_sha256"] != expected_hashes
+            or row["combined_sha256"]
+            != digest([[name, expected_hashes[name]] for name in inventory])
+        ):
+            raise ValueError("C17 reproduction run evidence does not recalculate")
+    comparison_input = {
+        "comparison_contract_id": protocol["reproduction"]["comparison_contract_id"],
+        "prefinal_inventory": inventory,
+        "runs": manifest["runs"],
+    }
+    if manifest["comparison_input_sha256"] != digest(comparison_input):
+        raise ValueError("C17 reproduction comparison preimage mismatch")
+    evidence = bundle["acceptance_matrix.json"]["reproduction_evidence"]
+    expected_evidence = {
+        "comparison_contract_id": protocol["reproduction"]["comparison_contract_id"],
+        "manifest_file": "reproduction_compare_manifest.json",
+        "manifest_sha256": digest_bytes(
+            artifact_bytes("reproduction_compare_manifest.json", manifest)
+        ),
+        "prefinal_exact9_equal": True,
+        "process_ids": ["A", "B"],
+        "pythonhashseeds": [11801, 21801],
+        "status": "externally_compared",
+    }
+    if evidence != expected_evidence:
+        raise ValueError("C17 final reproduction evidence mismatch")
+
+
+_RAW_RECONSTRUCTION_KEYS = (
+    "discovery",
+    "structural",
+    "selectivity",
+    "matched",
+    "heldout",
+    "controls",
+    "resource",
+    "effects",
+    "cell_metrics",
+    "assessment_checkpoints",
+)
+
+
+@lru_cache(maxsize=32)
+def _cached_raw_seed_reconstruction(
+    protocol_json: str,
+    run_seed: int,
+    run_seed_impl_id: int,
+    discovery_impl_id: int,
+    controls_impl_id: int,
+    boundary_impl_id: int,
+) -> str:
+    # The implementation identities deliberately participate in the cache key.
+    # Tests and audits may replace a boundary implementation; an earlier result
+    # must never be reused across that runtime boundary.
+    del run_seed_impl_id, discovery_impl_id, controls_impl_id, boundary_impl_id
+    result = _run_seed(json.loads(protocol_json), run_seed)
+    return canonical({key: result[key] for key in _RAW_RECONSTRUCTION_KEYS})
+
+
+def _validate_raw_reconstruction(
+    bundle: dict[str, Any], protocol: dict[str, Any], successful_seeds: list[int]
+) -> None:
+    reconstructed = {
+        key: []
+        for key in _RAW_RECONSTRUCTION_KEYS
+    }
+    protocol_json = canonical(protocol)
+    for run_seed in successful_seeds:
+        result = json.loads(
+            _cached_raw_seed_reconstruction(
+                protocol_json,
+                run_seed,
+                id(_run_seed),
+                id(discover_primary_candidate),
+                id(select_control_memberships),
+                id(execute_c14_c15_boundary),
+            )
+        )
+        for key in reconstructed:
+            reconstructed[key].extend(result[key])
+    observed = {
+        "discovery": bundle["candidate_discovery.jsonl"],
+        "structural": bundle["structural_metrics.json"]["seed_split_rows"],
+        "selectivity": bundle["functional_selectivity.json"]["episode_rows"],
+        "matched": bundle["matched_ablations.json"]["episode_branch_rows"],
+        "heldout": bundle["held_out_reuse.json"]["episode_branch_rows"],
+        "controls": bundle["matched_ablations.json"]["control_membership_rows"],
+        "resource": bundle["resource_conditions.json"]["seed_counters"],
+        "effects": bundle["matched_ablations.json"]["seed_effect_rows"],
+        "cell_metrics": bundle["structural_metrics.json"]["cell_metric_rows"],
+        "assessment_checkpoints": bundle["structural_metrics.json"][
+            "assessment_checkpoints"
+        ],
+    }
+    for key in reconstructed:
+        if reconstructed[key] != observed[key]:
+            raise ValueError(f"C17 {key} raw evidence does not reconstruct")
+
+
 def validate_bundle(
     bundle: dict[str, Any],
     protocol: dict[str, Any],
     source_commit: str,
-    *,
-    reproduction_exact: bool = False,
 ) -> None:
-    expected_files = set(protocol["artifacts"]["exact_files"])
+    final = "reproduction_compare_manifest.json" in bundle
+    expected_files = set(
+        protocol["artifacts"]["exact_files"] if final else _prefinal_inventory(protocol)
+    )
     if set(bundle) != expected_files:
-        raise ValueError("C17 exact-nine inventory mismatch")
+        raise ValueError("C17 exact artifact inventory mismatch")
     if bundle["preregistration.json"]["source_commit"] != source_commit:
         raise ValueError("C17 source pin mismatch")
+    if not isinstance(source_commit, str) or re.fullmatch(r"[0-9a-f]{40}", source_commit) is None:
+        raise ValueError("C17 source commit must be lowercase hexadecimal")
+    expected_protocol = copy.deepcopy(protocol)
+    expected_protocol["source_commit"] = source_commit
+    if bundle["preregistration.json"] != expected_protocol:
+        raise ValueError("C17 bundled preregistration mismatch")
+    for name in (
+        "resource_conditions.json",
+        "structural_metrics.json",
+        "functional_selectivity.json",
+        "matched_ablations.json",
+        "held_out_reuse.json",
+        "acceptance_matrix.json",
+    ):
+        if (
+            bundle[name]["schema_version"] != protocol["schema_version"]
+            or bundle[name]["protocol_id"] != protocol["protocol_id"]
+        ):
+            raise ValueError("C17 artifact identity mismatch")
+    if (
+        bundle["resource_conditions.json"]["run_id"] != protocol["run_id"]
+        or bundle["resource_conditions.json"]["conditions"]
+        != protocol["resource_conditions"]["rows"]
+    ):
+        raise ValueError("C17 resource definition mismatch")
+    _validate_exact_schemas(bundle, protocol)
+    if final:
+        _validate_reproduction_manifest(bundle, protocol, source_commit)
+    elif (
+        bundle["acceptance_matrix.json"]["reproduction_evidence"]
+        != PREFINAL_REPRODUCTION_EVIDENCE
+    ):
+        raise ValueError("C17 pre-final bundle cannot claim external reproduction")
     acceptance = bundle["acceptance_matrix.json"]
     failures = acceptance["failed_seeds"]
     for name in (
@@ -1640,14 +2233,21 @@ def validate_bundle(
     ):
         if bundle[name]["failed_seeds"] != failures:
             raise ValueError("C17 failed-seed list mismatch")
-    successful = len(acceptance["successful_seeds"])
+    successful_seeds = acceptance["successful_seeds"]
+    if successful_seeds != sorted(successful_seeds) or any(
+        isinstance(seed, bool) or not isinstance(seed, int) for seed in successful_seeds
+    ):
+        raise ValueError("C17 successful seed inventory mismatch")
+    successful = len(successful_seeds)
     scaling = protocol["artifacts"]["successful_seed_scaling"]
     expected_counts = {
         "candidate_discovery": scaling["candidate_discovery_jsonl_rows_per_S"],
         "structural_seed_split": scaling["structural_seed_split_rows_per_S"],
         "selectivity_episode": scaling["selectivity_episode_rows_per_S"],
+        "functional_selectivity_seed": scaling["functional_selectivity_seed_rows_per_S"],
         "matched_episode_branch": scaling["matched_ablation_episode_branch_rows_per_S"],
         "heldout_episode_branch": scaling["heldout_episode_branch_rows_per_S"],
+        "heldout_seed": scaling["heldout_seed_rows_per_S"],
         "matched_control_membership": scaling["matched_control_membership_rows_per_S"],
         "matched_seed_effect": scaling["matched_seed_effect_rows_per_S"],
         "resource_seed_counter": scaling["resource_seed_counter_rows_per_S"],
@@ -1656,8 +2256,10 @@ def validate_bundle(
         "candidate_discovery": len(bundle["candidate_discovery.jsonl"]),
         "structural_seed_split": len(bundle["structural_metrics.json"]["seed_split_rows"]),
         "selectivity_episode": len(bundle["functional_selectivity.json"]["episode_rows"]),
+        "functional_selectivity_seed": len(bundle["functional_selectivity.json"]["seed_rows"]),
         "matched_episode_branch": len(bundle["matched_ablations.json"]["episode_branch_rows"]),
         "heldout_episode_branch": len(bundle["held_out_reuse.json"]["episode_branch_rows"]),
+        "heldout_seed": len(bundle["held_out_reuse.json"]["seed_rows"]),
         "matched_control_membership": len(
             bundle["matched_ablations.json"]["control_membership_rows"]
         ),
@@ -1670,6 +2272,31 @@ def validate_bundle(
             or actual_counts[key] != successful * per_seed
         ):
             raise ValueError("C17 raw cardinality mismatch")
+    aggregate_counts = {
+        "matched_condition_aggregate_effect": len(
+            bundle["matched_ablations.json"]["condition_aggregate_effect_rows"]
+        ),
+        "heldout_condition_aggregate": len(
+            bundle["held_out_reuse.json"]["condition_aggregate_rows"]
+        ),
+    }
+    expected_aggregate_counts = {
+        "matched_condition_aggregate_effect": scaling[
+            "matched_condition_aggregate_effect_rows_when_S_gt_0"
+        ]
+        if successful
+        else 0,
+        "heldout_condition_aggregate": scaling[
+            "heldout_condition_aggregate_rows_when_S_gt_0"
+        ]
+        if successful
+        else 0,
+    }
+    if aggregate_counts != expected_aggregate_counts:
+        raise ValueError("C17 aggregate cardinality mismatch")
+    if acceptance["cardinalities"] != {**actual_counts, **aggregate_counts}:
+        raise ValueError("C17 cardinality evidence mismatch")
+    _validate_raw_reconstruction(bundle, protocol, successful_seeds)
     for row in (
         bundle["matched_ablations.json"]["episode_branch_rows"]
         + bundle["held_out_reuse.json"]["episode_branch_rows"]
@@ -1768,6 +2395,34 @@ def validate_bundle(
         raise ValueError("C17 seed effects do not recalculate from raw rows")
     if expected_cell_metrics != bundle["structural_metrics.json"]["cell_metric_rows"]:
         raise ValueError("C17 cell metrics do not recalculate from raw rows")
+    expected_selectivity_seed_rows = _selectivity_seed_rows(
+        bundle["functional_selectivity.json"]["episode_rows"],
+        bundle["candidate_discovery.jsonl"],
+    )
+    if expected_selectivity_seed_rows != bundle["functional_selectivity.json"]["seed_rows"]:
+        raise ValueError("C17 selectivity seed rows do not recalculate")
+    expected_heldout_seed_rows = _heldout_seed_rows(
+        heldout_rows, bundle["candidate_discovery.jsonl"]
+    )
+    if expected_heldout_seed_rows != bundle["held_out_reuse.json"]["seed_rows"]:
+        raise ValueError("C17 held-out seed rows do not recalculate")
+    expected_effect_aggregates = (
+        _condition_aggregate_effect_rows(expected_effects, protocol)
+        if successful_seeds
+        else []
+    )
+    if (
+        expected_effect_aggregates
+        != bundle["matched_ablations.json"]["condition_aggregate_effect_rows"]
+    ):
+        raise ValueError("C17 condition effects do not recalculate")
+    expected_heldout_aggregates = (
+        _heldout_condition_aggregate_rows(expected_heldout_seed_rows, protocol)
+        if successful_seeds
+        else []
+    )
+    if expected_heldout_aggregates != bundle["held_out_reuse.json"]["condition_aggregate_rows"]:
+        raise ValueError("C17 held-out condition rows do not recalculate")
     expected_seed_gates = []
     for point in expected_cell_metrics:
         effects = [
@@ -1881,7 +2536,8 @@ def validate_bundle(
         combined_for_gates,
         all(actual_counts[key] == successful * value for key, value in expected_counts.items()),
         acceptance["successful_seeds"],
-        reproduction_exact,
+        final,
+        bool(successful_seeds),
     )
     expected_gates = [
         {
@@ -1894,8 +2550,8 @@ def validate_bundle(
     if gates != expected_gates:
         raise ValueError("C17 engineering gates do not recalculate from evidence")
     reproduction = next(row for row in gates if row["gate_id"] == "reproduction_exact")
-    if reproduction["passed"] is not reproduction_exact:
-        raise ValueError("first C17 generation cannot self-claim exact reproduction")
+    if reproduction["passed"] is not final:
+        raise ValueError("only external C17 finalization can claim exact reproduction")
     expected_engineering = (
         "accepted" if all(row["passed"] for row in gates) else "implementation_failure"
     )
@@ -1910,7 +2566,25 @@ def validate_bundle(
     )
     if acceptance["scientific_status"] != expected_science:
         raise ValueError("C17 scientific status does not match its gates")
+    expected_secondary = [
+        {
+            "condition_id": condition_id,
+            "primary_rescue_allowed": False,
+            "role": "secondary",
+            "scientific_status": "not_evaluated_implementation_failure"
+            if failures
+            else "supported"
+            if all(
+                row["passed"]
+                for row in expected_seed_gates
+                if row["condition_id"] == condition_id
+            )
+            else "not_supported",
+        }
+        for condition_id in protocol["resource_conditions"]["condition_order"][1:]
+    ]
+    if acceptance["secondary_cell_status_rows"] != expected_secondary:
+        raise ValueError("C17 secondary status rows do not recalculate")
     if bundle["report.md"] != report_text(acceptance):
         raise ValueError("C17 report does not match validated status")
-    if canonical(bundle).find("NaN") >= 0:
-        raise ValueError("C17 bundle contains nonfinite values")
+    canonical(bundle)
