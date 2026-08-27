@@ -2,6 +2,20 @@
 
 Append entries; do not rewrite prior outcomes to match later interpretations.
 
+## 2026-08-28 — R-V03-0011 — C18 trace/checkpoint/Brain Lab contract smoke artifact
+
+- Protocol/source: `c18-trace-checkpoint-brain-lab-v1`; source
+  `f569cd3a1772e5c3240392e720825314f30e0bf3`; pin
+  `5806d1758cc6bcbe521b216338b58283b137038d`.
+- Status: engineering `accepted`; scientific `not_supported`.
+- Evidence: the official and `PYTHONHASHSEED=1` reproduction have equal SHA-256
+  values for all six exact files. Both replay the primary checkpoint to state
+  hash `d779e559be9ac576bfe5ec1206780c27342c4ebfdc7c3b15ee11257caa3c5175`.
+- Boundary: the export never invents attribution; missing evidence citations
+  fail closed, inspection is state-neutral, and a fork retains parent lineage.
+  This is no evidence of semantic understanding, organ formation, biological
+  fidelity, energy efficiency, or external task performance.
+
 ## 2026-08-27 — R-V03-0009 — C15 v4 completed evaluation; engineering accepted
 
 - Protocol/run: `c15-revision-objectives-v4` / `c15-revision-objectives-main-v4`.

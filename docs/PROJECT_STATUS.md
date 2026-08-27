@@ -1,5 +1,19 @@
 # Project Status — SparkBrain v0.2.1
 
+## v0.3 C18 — trace, checkpoint and Brain Lab integration
+
+C18 adds a separately versioned `v03_integration` trace/checkpoint/replay
+contract without changing accepted v0.2 readers, `/api` paths, or the existing
+Brain Lab. The pinned smoke artifact records accepted and suppressed sensory
+events, evidence citations, Coalition components, workspace broadcast, an
+explicit evidence-removal fork, and a resulting no-ignition. Official and
+`PYTHONHASHSEED=1` reproductions match byte-for-byte for all six exact files.
+Engineering status is `accepted`; scientific status is `not_supported`, because
+this is observability infrastructure rather than a scientific efficacy result.
+
+The C17 v1 immutable failure bundle remains untouched. C17 v2 remains an
+independent future audit boundary; C18 uses only its stable public v1 contracts.
+
 ## v0.3 C17 v1 — immutable implementation failure
 
 C17 v1 completed official seeds 4701--4705 and published the exact-nine bundle under

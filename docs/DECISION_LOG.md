@@ -1,5 +1,17 @@
 # Decision Log
 
+## D-V03-0029 — Keep C18 trace/checkpoint integration isolated from v0.2
+
+**Decision (2026-08-28):** Add C18 under `sparkbrain.v03_integration` with
+schema `0.3`, explicit branch/checkpoint lineage, and state-hash replay. Do not
+modify v0.2 schemas, readers, `/api` routes, existing Brain Lab, package
+version, release manifests, C06/C08 findings, or C17 v1 artifacts.
+
+**Reason:** C17 v2 is independently in progress. C18 can inspect only the
+stable public C17-v1 contract without private restoration or reinterpretation.
+Fail-closed evidence citations prevent the UI from presenting inferred
+attribution as stored state.
+
 ## D-V03-0027 — Accept C15 v4 at the registered engineering boundary
 
 **Decision (2026-08-27):** Accept C15 v4's engineering result from the exact-eight bundle under
