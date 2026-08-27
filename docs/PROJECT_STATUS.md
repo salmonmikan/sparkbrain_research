@@ -10,17 +10,27 @@ checkpoint replay, parent-bound fork lineage, and a CDN-free static Brain Lab
 export. Engineering status is `accepted` only for this deterministic
 observability/replay contract; scientific status remains `not_supported`.
 
-C18 adds a separately versioned `v03_integration` trace/checkpoint/replay
-contract without changing accepted v0.2 readers, `/api` paths, or the existing
-Brain Lab. The pinned smoke artifact records accepted and suppressed sensory
-events, evidence citations, Coalition components, workspace broadcast, an
-explicit evidence-removal fork, and a resulting no-ignition. Official and
-`PYTHONHASHSEED=1` reproductions match byte-for-byte for all six exact files.
-Engineering status is `accepted`; scientific status is `not_supported`, because
-this is observability infrastructure rather than a scientific efficacy result.
+## v0.3 C17 v2 — engineering accepted; scientific support not supported
 
-The C17 v1 immutable failure bundle remains untouched. C17 v2 remains an
-independent future audit boundary; C18 uses only its stable public v1 contracts.
+C17 v2 completed the preregistered official seeds 4801--4805 once under protocol
+`c17-functional-organs-v2` and published the final exact-ten bundle under
+`artifacts/v03/c17_functional_organs_v2/`. All 16 engineering gates passed, no seed failed, and the
+registered candidate-absence contract was exercised in all 25 seed/condition cells: 20 recorded
+`no_activity_eligible_candidate` and five recorded `no_control_feasible_candidate`. Candidate
+absence is an engineering-complete scientific negative, so the engineering status is `accepted`
+while the scientific status is `not_supported`.
+
+Two separately spawned pre-final workers used fixed `PYTHONHASHSEED` values 11801 and 21801. Their
+exact-nine bundles were byte-identical with combined SHA-256
+`177aca36f3f2def1b1b49f6760fd32c84418cfdda4f94415fc64b9ead3533d1a`; the validated comparison
+then produced the single final exact-ten bundle and
+`reproduction_compare_manifest.json` (SHA-256
+`a9bf16cc3d29f250fec18cac0e9821ba1f7ae02f6a7b9fe793f95419dfecc7c2`). This is not a claim that
+two final exact-ten directories were compared. Independent source, pin, execution, and artifact
+audits passed. CL-008 remains E0: no primary candidate was selected, all eight primary scientific
+gates failed, and no functional-organ or emergent-organ claim is permitted. C17 v1, package 0.2.1,
+persisted schema 0.2, release metadata, C06/C08 evidence, and accepted C14--C16 evidence remain
+unchanged.
 
 ## v0.3 C17 v1 — immutable implementation failure
 

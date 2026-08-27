@@ -1116,3 +1116,113 @@ accepted from v1. A reproduction using `PYTHONHASHSEED=8675309` matched all nine
 while the official run's hashseed was not recorded. The reproduction does not rewrite the original
 acceptance matrix. Any correction is a separately preregistered C17 v2 engineering experiment;
 v1 source, thresholds, protocol, and artifact bytes remain frozen.
+
+### 16.3 C17 v2 control-feasibility and external-finalization protocol
+
+D-V03-0032 preregisters `c17-functional-organs-v2` as a fresh experiment. C17 v1's empty R4
+non-target pool is an engineering-feasibility defect only. Its exact-nine bundle, source,
+thresholds, and `not_evaluated_implementation_failure` interpretation remain immutable; no v1
+observation is reused as scientific threshold or metric evidence.
+
+Discovery remains label-blind and train-only. After the unchanged activity and episode-support
+filters, a size-`m` group is eligible only if its sorted non-target bank contains at least `m`
+members and therefore at least one same-size combination. This predicate is applied before the
+unchanged structural rank. Random-unmatched, size-, degree-, load-, and activity-matched controls
+all select `m` members from that common train-only domain. Membership reuse between control types
+remains allowed, but all five typed rows are retained. If no candidate passes, the cell records a
+normal scientific negative plus five explicit not-applicable control rows. If a selected candidate
+cannot satisfy the invariant, the seed fails before frozen-query evaluation and science is not
+evaluated.
+
+V2 keeps the five one-factor resource cells and every v1 science gate unchanged: seed consistency
+3, cohesion 0.55, selectivity 0.20, held-out reuse 0.20, targeted impairment 0.05, every
+target-minus-control margin 0.03, and unrelated collateral 0.02 maximum. The 10,000-draw paired
+hierarchical bootstrap is unchanged apart from fresh seed 5817. Official seeds are 4801--4805,
+reserved pure-fixture seeds are 9901801--9901802, split bases are
+181000/281000/481000/581000, and every generated identity uses the fresh `c17v2` namespace. The
+machine preregistration fixes all ten independently reconstructed fixture hashes.
+
+Output is exact-ten. Each of two isolated staging workers produces the same pending-reproduction
+exact-nine under fixed distinct hashseeds 11801 and 21801. Generation APIs cannot accept a
+self-asserted reproduction pass. An external compare/finalize mode validates exact schemas and raw
+bytes in both roots, creates the canonical comparison manifest, then derives final acceptance and
+report bytes from validated core plus manifest evidence. The manifest excludes its own hash and
+the final acceptance/report hashes. Validation reconstructs the pending forms of those two files
+to verify the pre-final hashes, avoiding circular evidence.
+
+Exact top-level and nested schemas, types, nullability, enums, compound order, uniqueness,
+referential integrity, row-count formulas, dynamic candidate equations, failed-seed behavior, and
+zero-success output are part of the preregistration. For `S` complete seeds, discovery scales `5S`,
+structural seed/split rows `20S`, selectivity episodes `120S`, matched and held-out branch rows
+`420S` each, control rows `25S`, matched seed effects `30S`, and seed/cell gate rows `40S`; static
+and condition aggregates use their exact registered counts. The external manifest contains one
+object, exactly two run rows, and nine file hashes per run.
+
+The disabled preregistration precedes any source work. Only the exact seven registered C17
+source/test paths may change. A source-only commit and independent audit precede the exact
+four-field pin amendment. Official execution remains prohibited until that pin and post-pin
+verification pass. Package 0.2.1, persisted schema 0.2, release files, C06/C08 evidence, accepted
+C14--C16 evidence, C17 v1, and all claim grades remain protected.
+
+### 16.4 C17 v2 disabled-preregistration integrity appendix
+
+D-V03-0033 completes validator-facing schemas before source work. The acceptance matrix has an
+explicit `secondary_cell_status_rows` array with exactly four rows in R1/R2/R3/R4 order. Each row
+has exactly `condition_id`, `primary_rescue_allowed`, `role`, and `scientific_status`; role is
+`secondary`, primary rescue is false, and status uses a registered enum that now includes
+`not_evaluated_implementation_failure`.
+
+The reproduction comparison manifest and both run rows reject null, missing, extra, mistyped, or
+misordered data. `prefinal_inventory` and `equal_files` are the registered exact-nine order, the
+run order is A then B, each file-hash object has exactly those nine names, and publication requires
+`all_equal=true`. Combined and comparison-input digests have exact canonical preimage objects.
+Each run's `protocol_sha256` hashes the same raw, four-field-pinned preregistration bytes including
+one LF. The disabled preregistration digest is never substituted. Because the pinned preregistration
+does not contain output hashes, the later manifest and final acceptance/report cannot feed back into
+that protocol digest.
+
+Every discovery row carries the frozen control-feasibility-contract digest
+`7a893c4f898e7bd560181e028efcaa4da790c6edab12ef2a5bc13ac4b638abd0`. Every complete control row
+carries a `selection_input_sha256` over the exact canonical object containing candidate, condition,
+control type, sorted target and pool IDs, target size, run seed, protocol ID, the applicable
+train-only metric map/target total, and the random requested size or registered nulls. Candidate
+absence keeps selection input null.
+
+The candidate feasibility predicate remains `non_target_pool_count >= target_member_count` for the
+four matched controls. The D-V03-0032 phrase saying all five controls have size `m` is superseded.
+Random-unmatched retains v1 semantics with fresh namespace: derive a requested size in one through
+four from the registered hash, clip it to pool length, enumerate that size, and select by hash rank.
+Only size-, degree-, load-, and activity-matched controls require exact target size. Scientific
+metrics, thresholds, fixtures, one-factor cells, and claims remain unchanged.
+
+### 16.5 C17 v2 final disabled-preregistration consistency appendix
+
+D-V03-0034 removes the last two inconsistent summaries. All validator, integrity, and stop
+conditions now apply the registered control-specific sizes: random-unmatched uses its hash-derived
+one-to-four request clipped to pool length, while size-, degree-, load-, and activity-matched use
+target size `m`. Completeness means compliance with the applicable type rule.
+
+`comparison_input_sha256` now refers only to the exact-key canonical object defined by
+`comparison_input_sha256_preimage`; the earlier array shorthand is superseded. No key, type,
+ordering, nullability, serialization, fixture, metric, threshold, resource cell, or claim changes.
+
+### 16.6 C17 v2 official disposition
+
+The first official execution completed seeds 4801--4805 once from execution-pin head
+`f2e635a2b488f66b7bb696a0618c7be2b97180b9`. All 16 engineering gates passed and no seed failed.
+All 25 seed/condition cells recorded primary-candidate absence: 20
+`no_activity_eligible_candidate` and five `no_control_feasible_candidate`. Per the frozen absence
+contract, this is engineering-complete and science is `not_supported`, not
+`not_evaluated_implementation_failure`.
+
+The separately spawned A/B workers used fixed `PYTHONHASHSEED` values 11801 and 21801 and produced
+byte-identical exact-nine pre-final bundles, combined SHA-256
+`177aca36f3f2def1b1b49f6760fd32c84418cfdda4f94415fc64b9ead3533d1a`. After validating both
+workers and byte streams, the parent wrote one final exact-ten bundle with comparison-manifest
+SHA-256 `a9bf16cc3d29f250fec18cac0e9821ba1f7ae02f6a7b9fe793f95419dfecc7c2`. The protocol does not
+produce or compare two final exact-ten directories.
+
+All eight primary scientific gates are false and CL-008 remains E0. The result supports only that
+the registered local pipeline and its candidate-absence boundary completed reproducibly. It does
+not support a functional-organ, emergent-organ, semantic, biological, external-generalization, or
+energy claim.
