@@ -252,6 +252,14 @@ def _dynamic_import_callable_kind(
     importlib_names: set[str],
     builtins_names: set[str],
 ) -> str | None:
+    if isinstance(node, ast.NamedExpr):
+        return _dynamic_import_callable_kind(
+            node.value,
+            dynamic_names=dynamic_names,
+            ambiguous_names=ambiguous_names,
+            importlib_names=importlib_names,
+            builtins_names=builtins_names,
+        )
     if isinstance(node, ast.Name):
         if node.id in dynamic_names:
             return "proven"
@@ -316,16 +324,104 @@ def _dynamic_import_callable_kind(
     return None
 
 
-def _assigned_name(node: ast.AST) -> tuple[str, ast.expr] | None:
-    if (
-        isinstance(node, ast.Assign)
-        and len(node.targets) == 1
-        and isinstance(node.targets[0], ast.Name)
-    ):
-        return node.targets[0].id, node.value
-    if isinstance(node, ast.AnnAssign) and isinstance(node.target, ast.Name) and node.value:
-        return node.target.id, node.value
+def _dynamic_import_expression_kind(
+    node: ast.expr,
+    *,
+    dynamic_names: set[str],
+    ambiguous_names: set[str],
+    importlib_names: set[str],
+    builtins_names: set[str],
+) -> str | None:
+    direct = _dynamic_import_callable_kind(
+        node,
+        dynamic_names=dynamic_names,
+        ambiguous_names=ambiguous_names,
+        importlib_names=importlib_names,
+        builtins_names=builtins_names,
+    )
+    if direct is not None:
+        return direct
+    pending = [(node, child) for child in ast.iter_child_nodes(node)]
+    while pending:
+        parent, child = pending.pop()
+        if isinstance(parent, ast.Call) and parent.func is child:
+            continue
+        if (
+            isinstance(child, ast.expr)
+            and
+            _dynamic_import_callable_kind(
+                child,
+                dynamic_names=dynamic_names,
+                ambiguous_names=ambiguous_names,
+                importlib_names=importlib_names,
+                builtins_names=builtins_names,
+            )
+            is not None
+        ):
+            return "ambiguous"
+        pending.extend((child, nested) for nested in ast.iter_child_nodes(child))
     return None
+
+
+def _target_names(target: ast.expr) -> list[str]:
+    if isinstance(target, ast.Name):
+        return [target.id]
+    if isinstance(target, ast.Starred):
+        return _target_names(target.value)
+    if isinstance(target, (ast.Tuple, ast.List)):
+        return [name for element in target.elts for name in _target_names(element)]
+    return []
+
+
+def _target_bindings(target: ast.expr, value: ast.expr) -> list[tuple[str, ast.expr]]:
+    if isinstance(target, ast.Name):
+        return [(target.id, value)]
+    if (
+        isinstance(target, (ast.Tuple, ast.List))
+        and isinstance(value, (ast.Tuple, ast.List))
+        and len(target.elts) == len(value.elts)
+        and not any(isinstance(element, ast.Starred) for element in target.elts)
+    ):
+        return [
+            binding
+            for target_element, value_element in zip(target.elts, value.elts, strict=True)
+            for binding in _target_bindings(target_element, value_element)
+        ]
+    return [(name, value) for name in _target_names(target)]
+
+
+def _default_bindings(arguments: ast.arguments) -> list[tuple[str, ast.expr]]:
+    positional = [*arguments.posonlyargs, *arguments.args]
+    defaulted_arguments = (
+        positional[-len(arguments.defaults) :] if arguments.defaults else []
+    )
+    defaults = [
+        (argument.arg, default)
+        for argument, default in zip(
+            defaulted_arguments, arguments.defaults, strict=True
+        )
+    ]
+    defaults.extend(
+        (argument.arg, default)
+        for argument, default in zip(arguments.kwonlyargs, arguments.kw_defaults, strict=True)
+        if default is not None
+    )
+    return defaults
+
+
+def _binding_rows(tree: ast.AST) -> list[tuple[str, ast.expr]]:
+    bindings: list[tuple[str, ast.expr]] = []
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Assign):
+            for target in node.targets:
+                bindings.extend(_target_bindings(target, node.value))
+        elif isinstance(node, ast.AnnAssign) and node.value is not None:
+            bindings.extend(_target_bindings(node.target, node.value))
+        elif isinstance(node, ast.NamedExpr):
+            bindings.extend(_target_bindings(node.target, node.value))
+        elif isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef, ast.Lambda)):
+            bindings.extend(_default_bindings(node.args))
+    return bindings
 
 
 def validate_network_client_boundary(root: Path) -> list[str]:
@@ -363,11 +459,7 @@ def validate_network_client_boundary(root: Path) -> list[str]:
                 for alias in node.names:
                     if alias.name == "__import__":
                         dynamic_import_names.add(alias.asname or alias.name)
-        assignments = [
-            assignment
-            for node in ast.walk(tree)
-            if (assignment := _assigned_name(node))
-        ]
+        assignments = _binding_rows(tree)
         changed = True
         while changed:
             changed = False
@@ -382,7 +474,7 @@ def validate_network_client_boundary(root: Path) -> list[str]:
                         builtins_names.add(target)
                         changed = True
                     continue
-                kind = _dynamic_import_callable_kind(
+                kind = _dynamic_import_expression_kind(
                     value,
                     dynamic_names=dynamic_import_names,
                     ambiguous_names=ambiguous_dynamic_names,
@@ -415,7 +507,7 @@ def validate_network_client_boundary(root: Path) -> list[str]:
             if imported_network - allowed_static:
                 problems.append(f"network client import is forbidden: {path}")
             if isinstance(node, ast.Call):
-                dynamic_kind = _dynamic_import_callable_kind(
+                dynamic_kind = _dynamic_import_expression_kind(
                     node.func,
                     dynamic_names=dynamic_import_names,
                     ambiguous_names=ambiguous_dynamic_names,

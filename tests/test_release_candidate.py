@@ -92,6 +92,16 @@ def test_manifest_uses_real_commit_and_rejects_bool_and_payload_drift(tmp_path: 
         "name = '__import__'\n__builtins__[name]('torch')\n",
         "load = __builtins__['__import__']\nload('socket')\n",
         "from importlib import import_module as load\nalias = load\nalias('socket')\n",
+        "import importlib\n(load := importlib.import_module)('socket')\n",
+        "import importlib\n(load,) = (importlib.import_module,)\nload('socket')\n",
+        "import importlib\n[[load]] = [[importlib.import_module]]\nload('socket')\n",
+        "import importlib\ndef f(load=importlib.import_module):\n    load('socket')\n",
+        "import importlib\ndef f(*, load=importlib.import_module):\n    load('socket')\n",
+        "import importlib\nf = lambda load=importlib.import_module: load('socket')\n",
+        "import importlib\n(load,) = [safe, importlib.import_module]\nload('torch')\n",
+        "import importlib\n"
+        "def f(load=importlib.import_module if flag else safe):\n"
+        "    load('torch')\n",
     ],
 )
 def test_network_boundary_scans_package_and_fails_closed(tmp_path: Path, source: str) -> None:
@@ -115,6 +125,12 @@ def test_network_boundary_scans_package_and_fails_closed(tmp_path: Path, source:
         "import importlib as il\nil.__dict__['import_module']('torch')\n",
         "load = __builtins__['__import__']\nload('torch')\n",
         "from importlib import import_module as load\nalias = load\nalias('torch')\n",
+        "import importlib\n(load := importlib.import_module)('torch')\n",
+        "import importlib\n(load,) = (importlib.import_module,)\nload('torch')\n",
+        "import importlib\n[[load]] = [[importlib.import_module]]\nload('torch')\n",
+        "import importlib\ndef f(load=importlib.import_module):\n    load('torch')\n",
+        "import importlib\ndef f(*, load=importlib.import_module):\n    load('torch')\n",
+        "import importlib\nf = lambda load=importlib.import_module: load('torch')\n",
     ],
 )
 def test_network_boundary_allows_proven_torch_dynamic_import(
