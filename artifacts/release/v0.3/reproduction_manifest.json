@@ -1,0 +1,16 @@
+{
+  "commands": [
+    "python scripts/local_readiness_check.py",
+    "python scripts/build_v03_private_review_bundle.py --output <PATH> --source-date-epoch <EPOCH> --source-revision <HEAD>"
+  ],
+  "network_operations": [],
+  "package_version": "0.3.0",
+  "public_archive_created": false,
+  "schema_version": "sparkbrain-v03-reproduction-manifest-v1",
+  "source_checkout": {
+    "core.autocrlf": "false"
+  },
+  "source_manifest": "artifacts/release/v0.3/source_manifest.json",
+  "source_manifest_sha256": "32342d2cd719a199fe7d2b14ac137532c8350ec6d62396a95a97705aa2260c86",
+  "source_revision": "c0ea99bb42ff7a7be5c8a76e2cfbc0a3192c6faf"
+}

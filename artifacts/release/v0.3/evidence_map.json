@@ -1,0 +1,154 @@
+{
+  "entries": [
+    {
+      "artifacts": [
+        "artifacts/v03/c11_input_diagnosis/diagnostic_manifest.json",
+        "artifacts/v03/c11_input_diagnosis/metrics_by_input_track.json",
+        "artifacts/v03/c11_input_diagnosis/failure_examples.jsonl"
+      ],
+      "boundary": "C11 five-seed input-bottleneck diagnosis; no evidence-grade upgrade.",
+      "claim_ids": [
+        "CL-003",
+        "CL-004"
+      ],
+      "id": "EV-V03-C11",
+      "status": "accepted"
+    },
+    {
+      "artifacts": [
+        "artifacts/v03/c12_sensory_field/protocol.json",
+        "artifacts/v03/c12_sensory_field/ablation_metrics.json",
+        "artifacts/v03/c12_sensory_field/report.md"
+      ],
+      "boundary": "Synthetic sensory-gate engineering evidence only; no biological perception claim.",
+      "claim_ids": [
+        "CL-011"
+      ],
+      "id": "EV-V03-C12",
+      "status": "accepted"
+    },
+    {
+      "artifacts": [
+        "artifacts/v03/c13_evidence_entity/protocol.json",
+        "artifacts/v03/c13_evidence_entity/entity_condition_metrics.json",
+        "artifacts/v03/c13_evidence_entity/evidence_invariant_tests.json"
+      ],
+      "boundary": "Oracle entity scope is a condition-separated synthetic diagnosis, not autonomous binding.",
+      "claim_ids": [
+        "CL-001"
+      ],
+      "id": "EV-V03-C13",
+      "status": "accepted"
+    },
+    {
+      "artifacts": [
+        "artifacts/v03/c14_coalition_gate/protocol.json",
+        "artifacts/v03/c14_coalition_gate/gate_ablation_metrics.json",
+        "artifacts/v03/c14_coalition_gate/causal_evidence_removal.jsonl"
+      ],
+      "boundary": "Fixed-logit Coalition intervention evidence only; no external-performance claim.",
+      "claim_ids": [
+        "CL-002"
+      ],
+      "id": "EV-V03-C14",
+      "status": "accepted"
+    },
+    {
+      "artifacts": [
+        "artifacts/v03/c15_revision_v4/protocol.json",
+        "artifacts/v03/c15_revision_v4/loss_ablation_metrics.json",
+        "artifacts/v03/c15_revision_v4/report.md"
+      ],
+      "boundary": "Engineering acceptance does not support residual superiority or a claim-grade increase.",
+      "claim_ids": [
+        "CL-003",
+        "CL-004",
+        "CL-006"
+      ],
+      "id": "EV-V03-C15",
+      "status": "negative"
+    },
+    {
+      "artifacts": [
+        "artifacts/v03/c16_proto_concepts/protocol.json",
+        "artifacts/v03/c16_proto_concepts/candidate_metrics.json",
+        "artifacts/v03/c16_proto_concepts/failure_examples.jsonl"
+      ],
+      "boundary": "Bounded synthetic candidate evidence; no semantic or biological interpretation.",
+      "claim_ids": [],
+      "id": "EV-V03-C16",
+      "status": "accepted"
+    },
+    {
+      "artifacts": [
+        "artifacts/v03/c17_functional_organs_v2/preregistration.json",
+        "artifacts/v03/c17_functional_organs_v2/acceptance_matrix.json",
+        "artifacts/v03/c17_functional_organs_v2/report.md"
+      ],
+      "boundary": "C17 v2 engineering completion is a candidate-absence scientific negative; CL-008 remains E0.",
+      "claim_ids": [
+        "CL-008"
+      ],
+      "id": "EV-V03-C17",
+      "status": "negative"
+    },
+    {
+      "artifacts": [
+        "artifacts/v03/c18_brain_lab_v6/preregistration.json",
+        "artifacts/v03/c18_brain_lab_v6/checkpoint_manifest.json",
+        "artifacts/v03/c18_brain_lab_v6/report.md"
+      ],
+      "boundary": "Deterministic trace/checkpoint observability only; no scientific support claim.",
+      "claim_ids": [
+        "CL-011"
+      ],
+      "id": "EV-V03-C18",
+      "status": "accepted"
+    },
+    {
+      "artifacts": [
+        "artifacts/external_validation/c06-final-official/run_manifest.json",
+        "artifacts/external_validation/c06-final-official/belief_r_metrics.json"
+      ],
+      "boundary": "Retained official external negative result; no measured frontier improvement.",
+      "claim_ids": [
+        "CL-007"
+      ],
+      "id": "EV-V02-C06-NEGATIVE",
+      "status": "negative"
+    },
+    {
+      "artifacts": [
+        "artifacts/phase3/structural-plasticity-v1/main/gate-matrix.json",
+        "artifacts/phase3/structural-plasticity-v1/main/negative-findings.json"
+      ],
+      "boundary": "Retained structural-plasticity negative; no emergent-organ claim.",
+      "claim_ids": [
+        "CL-008"
+      ],
+      "id": "EV-V02-C08-NEGATIVE",
+      "status": "negative"
+    },
+    {
+      "artifacts": [
+        "artifacts/v03/c19_external_validation/blocked-readiness-v1/attribution_rows.jsonl",
+        "artifacts/v03/c19_external_validation/blocked-readiness-v1/baseline_matching.json",
+        "artifacts/v03/c19_external_validation/blocked-readiness-v1/failure_examples.jsonl",
+        "artifacts/v03/c19_external_validation/blocked-readiness-v1/frozen_protocol.json",
+        "artifacts/v03/c19_external_validation/blocked-readiness-v1/metrics_by_condition.json",
+        "artifacts/v03/c19_external_validation/blocked-readiness-v1/paired_statistics.json",
+        "artifacts/v03/c19_external_validation/blocked-readiness-v1/raw_predictions.jsonl",
+        "artifacts/v03/c19_external_validation/blocked-readiness-v1/report.md",
+        "artifacts/v03/c19_external_validation/blocked-readiness-v1/run_manifest.jsonl"
+      ],
+      "boundary": "C19/G09 is not accepted and science is not_evaluated: the truth-free Belief-R-to-I2 adapter and a new official-evaluation protocol are absent.",
+      "claim_ids": [
+        "CL-007"
+      ],
+      "id": "EV-V03-C19",
+      "status": "blocked"
+    }
+  ],
+  "schema_version": "sparkbrain-v03-evidence-map-v1",
+  "source_revision": "c0ea99bb42ff7a7be5c8a76e2cfbc0a3192c6faf"
+}

@@ -1,0 +1,168 @@
+{
+  "package_version": "0.3.0",
+  "packages": [
+    {
+      "license": "NOASSERTION",
+      "name": "sparkbrain-research"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "annotated-doc"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "annotated-types"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "anyio"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "attrs"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "certifi"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "click"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "colorama"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "fastapi"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "filelock"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "fsspec"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "h11"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "httpcore"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "httpx"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "idna"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "iniconfig"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "Jinja2"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "jsonschema"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "jsonschema-specifications"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "MarkupSafe"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "mpmath"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "networkx"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "numpy"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "packaging"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "pluggy"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "pydantic"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "pydantic_core"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "Pygments"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "pytest"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "referencing"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "rpds-py"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "ruff"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "setuptools"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "snntorch"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "starlette"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "sympy"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "torch"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "typing-inspection"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "typing_extensions"
+    },
+    {
+      "license": "NOASSERTION",
+      "name": "uvicorn"
+    }
+  ],
+  "project_license_status": "owner-decision-pending",
+  "schema_version": "sparkbrain-v03-source-license-inventory-v1",
+  "source_revision": "c0ea99bb42ff7a7be5c8a76e2cfbc0a3192c6faf"
+}

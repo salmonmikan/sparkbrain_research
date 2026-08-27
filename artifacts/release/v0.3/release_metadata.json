@@ -1,0 +1,10 @@
+{
+  "blocker": "project license has not been selected by the repository owner",
+  "distribution": "private-review-candidate",
+  "package_version": "0.3.0",
+  "public_release_blocked": true,
+  "schema_version": "sparkbrain-v03-release-metadata-v1",
+  "source_manifest": "artifacts/release/v0.3/source_manifest.json",
+  "source_manifest_sha256": "32342d2cd719a199fe7d2b14ac137532c8350ec6d62396a95a97705aa2260c86",
+  "source_revision": "c0ea99bb42ff7a7be5c8a76e2cfbc0a3192c6faf"
+}

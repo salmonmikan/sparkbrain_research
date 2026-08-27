@@ -1,0 +1,86 @@
+{
+  "boundary": "This is a release index, not a performance evaluation or claim-grade upgrade.",
+  "entries": [
+    {
+      "claim_ids": [
+        "CL-003",
+        "CL-004"
+      ],
+      "id": "EV-V03-C11",
+      "status": "accepted"
+    },
+    {
+      "claim_ids": [
+        "CL-011"
+      ],
+      "id": "EV-V03-C12",
+      "status": "accepted"
+    },
+    {
+      "claim_ids": [
+        "CL-001"
+      ],
+      "id": "EV-V03-C13",
+      "status": "accepted"
+    },
+    {
+      "claim_ids": [
+        "CL-002"
+      ],
+      "id": "EV-V03-C14",
+      "status": "accepted"
+    },
+    {
+      "claim_ids": [
+        "CL-003",
+        "CL-004",
+        "CL-006"
+      ],
+      "id": "EV-V03-C15",
+      "status": "negative"
+    },
+    {
+      "claim_ids": [],
+      "id": "EV-V03-C16",
+      "status": "accepted"
+    },
+    {
+      "claim_ids": [
+        "CL-008"
+      ],
+      "id": "EV-V03-C17",
+      "status": "negative"
+    },
+    {
+      "claim_ids": [
+        "CL-011"
+      ],
+      "id": "EV-V03-C18",
+      "status": "accepted"
+    },
+    {
+      "claim_ids": [
+        "CL-007"
+      ],
+      "id": "EV-V02-C06-NEGATIVE",
+      "status": "negative"
+    },
+    {
+      "claim_ids": [
+        "CL-008"
+      ],
+      "id": "EV-V02-C08-NEGATIVE",
+      "status": "negative"
+    },
+    {
+      "claim_ids": [
+        "CL-007"
+      ],
+      "id": "EV-V03-C19",
+      "status": "blocked"
+    }
+  ],
+  "full_evaluation": false,
+  "schema_version": "sparkbrain-v03-primary-subset-v1",
+  "source_revision": "c0ea99bb42ff7a7be5c8a76e2cfbc0a3192c6faf"
+}
