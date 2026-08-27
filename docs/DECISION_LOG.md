@@ -1,5 +1,24 @@
 # Decision Log
 
+## D-V03-0035 — Retain C19 as completed readiness, not accepted evaluation
+
+**Decision (2026-08-28):** Retain the deterministic C19 blocked-readiness exact-nine bundle from
+source `052413136229dcfa63f08cebe19585134f7cfb98`. The bundle records the exact ordered 85-row
+official execution plan, dependency pins, strict validators, and atomic writer. It records no
+official predictions or attribution and does not open or verify official Belief-R examples.
+
+**Disposition:** Engineering readiness is complete, but C19 and G09 are not accepted. Scientific
+status is `not_evaluated`, not a positive or negative C19 result. The preflight blocker is
+`missing_truth_free_belief_r_symbolic_adapter`; evaluator truth must not be used to manufacture the
+I2 symbolic representation. All four baseline matching axes remain false and winner claims remain
+prohibited.
+
+**Scope:** C06 remains the existing negative external result and is neither replaced nor upgraded.
+Any official evaluation after the missing adapter is designed requires a new preregistration and
+protocol; this blocked bundle is not amended in place. Initial C19 preregistration bytes, package
+0.2.1, persisted schema 0.2, schemas, release files, C06/C08 evidence, and claim grades remain
+unchanged.
+
 ## D-V03-0030 — Retain C18 v6 as engineering-only observability evidence
 
 **Decision (2026-08-28):** Integrate the independently audited C18 v6

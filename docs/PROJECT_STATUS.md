@@ -1,5 +1,25 @@
 # Project Status — SparkBrain v0.2.1
 
+## v0.3 C19 — engineering readiness complete; evaluation blocked
+
+C19 completed the preregistered engineering-readiness work at source
+`052413136229dcfa63f08cebe19585134f7cfb98`. The deterministic exact-nine bundle under
+`artifacts/v03/c19_external_validation/blocked-readiness-v1/` contains the exact ordered plan of
+60 condition/seed rows and 25 baseline/seed rows. Every planned row is blocked at preflight with
+zero output rows; `raw_predictions.jsonl` and `attribution_rows.jsonl` are empty. The bundle pins
+the disabled C19 preregistration, accepted C18 trace contract, and frozen Belief-R specification
+without opening or verifying the official cache.
+
+This completes engineering readiness only. C19 and G09 are **not accepted**, and scientific
+status is `not_evaluated`. The blocking reason is
+`missing_truth_free_belief_r_symbolic_adapter`: no preregistered adapter maps Belief-R natural
+language to the I2 symbolic-event contract without evaluator truth. Autonomous, Oracle,
+attribution, paired-statistical, and baseline outcomes therefore remain null; all four baseline
+matching axes are false and no winner claim is allowed. C06 remains the existing negative external
+result. Any future official C19 evaluation requires a new protocol and may not reinterpret this
+blocked bundle. Package 0.2.1, persisted schema 0.2, release metadata, C06/C08 evidence, initial C19
+preregistration, and claim grades remain unchanged.
+
 ## v0.3 C18 — trace, checkpoint and Brain Lab integration
 
 C18 v6 retains the independently audited official exact-seven bundle under

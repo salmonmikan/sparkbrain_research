@@ -1,0 +1,55 @@
+{
+  "protocol_id": "c19-external-v1",
+  "reason_code": "missing_truth_free_belief_r_symbolic_adapter",
+  "rows": [
+    {
+      "baseline_kind": "direct_stateless",
+      "checkpoint_selection_split": "dev",
+      "compute_match": false,
+      "data_match": false,
+      "optimization_match": false,
+      "parameter_match": false,
+      "winner_claim_allowed": false
+    },
+    {
+      "baseline_kind": "explicit_state_probabilistic",
+      "checkpoint_selection_split": "dev",
+      "compute_match": false,
+      "data_match": false,
+      "optimization_match": false,
+      "parameter_match": false,
+      "winner_claim_allowed": false
+    },
+    {
+      "baseline_kind": "modular_rim_like",
+      "checkpoint_selection_split": "dev",
+      "compute_match": false,
+      "data_match": false,
+      "optimization_match": false,
+      "parameter_match": false,
+      "winner_claim_allowed": false
+    },
+    {
+      "baseline_kind": "recurrent",
+      "checkpoint_selection_split": "dev",
+      "compute_match": false,
+      "data_match": false,
+      "optimization_match": false,
+      "parameter_match": false,
+      "winner_claim_allowed": false
+    },
+    {
+      "baseline_kind": "transformer",
+      "checkpoint_selection_split": "dev",
+      "compute_match": false,
+      "data_match": false,
+      "optimization_match": false,
+      "parameter_match": false,
+      "winner_claim_allowed": false
+    }
+  ],
+  "schema_version": "0.3",
+  "source_commit": "052413136229dcfa63f08cebe19585134f7cfb98",
+  "status": "not_evaluated",
+  "winner_claim": false
+}

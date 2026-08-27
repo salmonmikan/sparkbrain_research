@@ -965,3 +965,32 @@ contract correction only.
   external-generalization, or energy claim is permitted.
 - Protection: C17 v1 source/artifacts, package 0.2.1, persisted schema 0.2, release metadata,
   C06/C08 evidence, and accepted C14--C16 evidence remain unchanged.
+
+## 2026-08-28 — R-V03-0013 — C19 blocked external-validation readiness
+
+- Protocol/run: `c19-external-v1` / `c19-external-blocked-readiness-v1`; source
+  `052413136229dcfa63f08cebe19585134f7cfb98`.
+- Artifact: exact-nine bundle at
+  `artifacts/v03/c19_external_validation/blocked-readiness-v1/`. Strict validation and independent
+  regeneration matched all retained bytes.
+- Planned cardinality: exactly 85 ordered preflight rows: 60 condition rows from 12 frozen
+  input/gate/entity conditions across official seeds 5901--5905, followed by 25 rows from five
+  baseline families across the same seeds. Every row records `status=blocked`, zero output rows,
+  and `official_examples_read=false`.
+- Data boundary: the official Belief-R examples and cache contents were not opened, read, verified,
+  evaluated, fitted, or tuned. Both `raw_predictions.jsonl` and `attribution_rows.jsonl` are empty.
+- Dependency pins: initial C19 preregistration SHA-256
+  `97a2448e2918f3b0a4583520ad2f35d5d47d99813585be7bb3fae32e0b340cfe`; accepted C18 source
+  `3f561254dc7bd2f97cb4784f0632fe0be48093cd`; C18 execution pin
+  `c0c242d848588d76015734a309f72fed0bd1d380`; Belief-R revision
+  `3719f5804c63318037465fecf298a7fd78d99121` and specification SHA-256
+  `ed092dd97a176813f011cdf007d4e34a0b9bcc7c855c22983a31ff82e7b0d63c`.
+- Blocker: `missing_truth_free_belief_r_symbolic_adapter`. The repository has no preregistered
+  truth-free mapping from Belief-R natural language to I2 symbolic events; evaluator truth is not
+  substituted. Autonomous, Oracle, attribution, metrics, paired statistics, and baseline outcomes
+  are `not_evaluated`/null. Compute, data, optimization, and parameter matching are all false, and
+  winner claims are prohibited.
+- Disposition: engineering readiness is complete, but C19/G09 is not accepted and science is
+  `not_evaluated`. A future official evaluation requires a new protocol. C06 remains the existing
+  negative external result; C06/C08 evidence, initial preregistration, package/schema/release files,
+  and claim grades remain unchanged.
