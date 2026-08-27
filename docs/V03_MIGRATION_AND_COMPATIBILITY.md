@@ -36,3 +36,11 @@ equivalent version field.
 - v0.3 schema validation never accepts a v0.2 payload by implicit conversion;
 - the deterministic CPU/offline reference path remains available; and
 - package/release changes do not promote negative C06, C08, C17, or unintegrated C19 evidence.
+
+## Private review boundary
+
+`scripts/build_v03_private_review_bundle.py` creates a deterministic private review source ZIP
+from a clean, tracked source revision. The ZIP carries its own source manifest, checksum, fixed
+timestamps, and owner-decision-pending notice, so its contents can be verified after extraction
+without Git metadata. It is not a public archive, a public tag, or a substitute for the final
+no-Git release manifest. The owner license blocker remains in force.

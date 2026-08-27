@@ -86,6 +86,20 @@ timestamp and file mode, Unicode filenames, duplicates, traversal, symlinks, CRC
 hashes. A private review bundle is not a public release and does not bypass the project-license
 gate.
 
+### v0.3 source review bundle
+
+Before the final v0.3 package manifest is generated, the source-only private review layer uses:
+
+```bash
+python scripts/build_v03_private_review_bundle.py --output <REVIEW_ZIP> --source-date-epoch <UTC_EPOCH> --source-revision <FULL_GIT_SHA>
+```
+
+The bundle embeds `SOURCE_MANIFEST.json`, `REVIEW_BUNDLE_MANIFEST.json`, and the private-review
+notice under `sparkbrain_research_v0_3/`. Its manifest is sufficient to verify every selected
+file after extraction without `.git`; it does not make the snapshot a public release. The final
+v0.3 no-Git reproduction archive remains a separate C20 artifact generated only after the source
+revision and release evidence are fixed.
+
 ## Full versus smoke
 
 The frozen primary subset is deliberately small. It is not the full C02 suite, C04 training,
