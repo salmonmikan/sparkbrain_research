@@ -33,6 +33,7 @@ REVIEW_MANIFEST_SCHEMA = "sparkbrain-review-bundle-v2"
 RELEASE_GROUP_SCHEMA = "sparkbrain-release-group-v1"
 NETWORK_PREFIXES = {"aiohttp", "http", "httpx", "requests", "socket", "urllib", "urllib3"}
 FORBIDDEN_DYNAMIC_RESOLVER_MODULES = {
+    "importlib",
     "pkg_resources",
     "pkgutil",
     "pydoc",
@@ -40,8 +41,11 @@ FORBIDDEN_DYNAMIC_RESOLVER_MODULES = {
     "zipimport",
 }
 FORBIDDEN_DYNAMIC_RESOLVER_CALLS = {
+    "exec_module",
+    "find_spec",
     "load_entry_point",
     "locate",
+    "module_from_spec",
     "resolve_name",
     "run_module",
     "run_path",

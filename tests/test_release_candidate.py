@@ -145,6 +145,12 @@ def test_manifest_uses_real_commit_and_rejects_bool_and_payload_drift(tmp_path: 
         "import runpy\nrunpy.run_module('socket')\n",
         "from zipimport import zipimporter\nzipimporter('payload.zip')\n",
         "import pkg_resources\n",
+        "from importlib.metadata import EntryPoint\nEntryPoint(name='x').load()\n",
+        "import importlib.util\n"
+        "spec = importlib.util.find_spec('socket')\n"
+        "module = importlib.util.module_from_spec(spec)\n"
+        "spec.loader.exec_module(module)\n",
+        "from importlib import resources\nresources.files('sparkbrain')\n",
     ],
 )
 def test_network_boundary_scans_package_and_fails_closed(tmp_path: Path, source: str) -> None:
