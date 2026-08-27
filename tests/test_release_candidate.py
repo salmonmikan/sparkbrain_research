@@ -21,9 +21,7 @@ def git(root: Path, *args: str) -> str:
 
 def fixture(root: Path) -> str:
     (root / "src" / "sparkbrain").mkdir(parents=True)
-    (root / "src" / "sparkbrain" / "runtime.py").write_text(
-        "import json\n", encoding="utf-8"
-    )
+    (root / "src" / "sparkbrain" / "runtime.py").write_text("import json\n", encoding="utf-8")
     (root / "docs").mkdir()
     (root / "docs" / "result.md").write_text("evidence\n", encoding="utf-8")
     git(root, "init", "--quiet")
