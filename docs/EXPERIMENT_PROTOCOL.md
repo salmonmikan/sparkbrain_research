@@ -1104,3 +1104,50 @@ accepted from v1. A reproduction using `PYTHONHASHSEED=8675309` matched all nine
 while the official run's hashseed was not recorded. The reproduction does not rewrite the original
 acceptance matrix. Any correction is a separately preregistered C17 v2 engineering experiment;
 v1 source, thresholds, protocol, and artifact bytes remain frozen.
+
+### 16.3 C17 v2 control-feasibility and external-finalization protocol
+
+D-V03-0032 preregisters `c17-functional-organs-v2` as a fresh experiment. C17 v1's empty R4
+non-target pool is an engineering-feasibility defect only. Its exact-nine bundle, source,
+thresholds, and `not_evaluated_implementation_failure` interpretation remain immutable; no v1
+observation is reused as scientific threshold or metric evidence.
+
+Discovery remains label-blind and train-only. After the unchanged activity and episode-support
+filters, a size-`m` group is eligible only if its sorted non-target bank contains at least `m`
+members and therefore at least one same-size combination. This predicate is applied before the
+unchanged structural rank. Random-unmatched, size-, degree-, load-, and activity-matched controls
+all select `m` members from that common train-only domain. Membership reuse between control types
+remains allowed, but all five typed rows are retained. If no candidate passes, the cell records a
+normal scientific negative plus five explicit not-applicable control rows. If a selected candidate
+cannot satisfy the invariant, the seed fails before frozen-query evaluation and science is not
+evaluated.
+
+V2 keeps the five one-factor resource cells and every v1 science gate unchanged: seed consistency
+3, cohesion 0.55, selectivity 0.20, held-out reuse 0.20, targeted impairment 0.05, every
+target-minus-control margin 0.03, and unrelated collateral 0.02 maximum. The 10,000-draw paired
+hierarchical bootstrap is unchanged apart from fresh seed 5817. Official seeds are 4801--4805,
+reserved pure-fixture seeds are 9901801--9901802, split bases are
+181000/281000/481000/581000, and every generated identity uses the fresh `c17v2` namespace. The
+machine preregistration fixes all ten independently reconstructed fixture hashes.
+
+Output is exact-ten. Each of two isolated staging workers produces the same pending-reproduction
+exact-nine under fixed distinct hashseeds 11801 and 21801. Generation APIs cannot accept a
+self-asserted reproduction pass. An external compare/finalize mode validates exact schemas and raw
+bytes in both roots, creates the canonical comparison manifest, then derives final acceptance and
+report bytes from validated core plus manifest evidence. The manifest excludes its own hash and
+the final acceptance/report hashes. Validation reconstructs the pending forms of those two files
+to verify the pre-final hashes, avoiding circular evidence.
+
+Exact top-level and nested schemas, types, nullability, enums, compound order, uniqueness,
+referential integrity, row-count formulas, dynamic candidate equations, failed-seed behavior, and
+zero-success output are part of the preregistration. For `S` complete seeds, discovery scales `5S`,
+structural seed/split rows `20S`, selectivity episodes `120S`, matched and held-out branch rows
+`420S` each, control rows `25S`, matched seed effects `30S`, and seed/cell gate rows `40S`; static
+and condition aggregates use their exact registered counts. The external manifest contains one
+object, exactly two run rows, and nine file hashes per run.
+
+The disabled preregistration precedes any source work. Only the exact seven registered C17
+source/test paths may change. A source-only commit and independent audit precede the exact
+four-field pin amendment. Official execution remains prohibited until that pin and post-pin
+verification pass. Package 0.2.1, persisted schema 0.2, release files, C06/C08 evidence, accepted
+C14--C16 evidence, C17 v1, and all claim grades remain protected.
