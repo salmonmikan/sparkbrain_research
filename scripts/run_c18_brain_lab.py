@@ -3,19 +3,20 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import subprocess
 from pathlib import Path
 
-from sparkbrain.v03_integration import V03TraceSession, replay_checkpoint
+from sparkbrain.v03_integration import V03Checkpoint, V03TraceSession, replay_checkpoint
 
 ROOT = Path(__file__).resolve().parents[1]
-PROTOCOL_RELATIVE = "artifacts/v03/c18_brain_lab_v2/preregistration.json"
+PROTOCOL_RELATIVE = "artifacts/v03/c18_brain_lab_v4/preregistration.json"
 
 
 def load_protocol(path: Path, *, require_enabled: bool) -> dict:
     value = json.loads(path.read_text(encoding="utf-8"))
-    if value.get("protocol_id") != "c18-trace-checkpoint-brain-lab-v2":
+    if value.get("protocol_id") != "c18-trace-checkpoint-brain-lab-v4":
         raise RuntimeError("unexpected C18 protocol")
     if require_enabled and not value.get("runner_execution_allowed"):
         raise RuntimeError("C18 runner remains disabled")
@@ -36,7 +37,21 @@ def _git(*args: str) -> str:
         raise RuntimeError("C18 Git preflight rejected source lineage") from error
 
 
-def preflight(protocol: dict) -> None:
+def _sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def _runner_validation_probe() -> dict[str, bool | str]:
+    probe = V03TraceSession({"seed": 1802, "mode": "validation_probe"})
+    checkpoint = probe.checkpoint("checkpoint:validation-probe")
+    decoded = V03Checkpoint.from_dict(checkpoint.as_dict())
+    return {
+        "checkpoint_round_trip": decoded.as_dict() == checkpoint.as_dict(),
+        "validator": "jsonschema.Draft202012Validator",
+    }
+
+
+def preflight(protocol: dict) -> dict:
     source = protocol.get("source_commit")
     base = protocol.get("source_control", {}).get("execution_base_commit")
     expected = set(protocol["source_control"]["expected_source_and_test_paths"])
@@ -46,7 +61,8 @@ def preflight(protocol: dict) -> None:
         or _git("merge-base", "--is-ancestor", base, source) != ""
     ):
         raise RuntimeError("C18 source/base ancestry invalid")
-    if set(filter(None, _git("diff", "--name-only", base, source).splitlines())) != expected:
+    source_diff_paths = sorted(filter(None, _git("diff", "--name-only", base, source).splitlines()))
+    if source_diff_paths != sorted(expected) or len(source_diff_paths) != 7:
         raise RuntimeError("C18 source allowlist mismatch")
     if set(filter(None, _git("diff", "--name-only", source, "HEAD").splitlines())) - {
         PROTOCOL_RELATIVE
@@ -55,6 +71,42 @@ def preflight(protocol: dict) -> None:
     raw = (ROOT / PROTOCOL_RELATIVE).read_bytes()
     if raw != (_canonical(protocol) + "\n").encode("utf-8"):
         raise RuntimeError("C18 protocol is not canonical")
+    schema_contract = protocol.get("schema_contract", {})
+    schema_paths = {
+        "checkpoint_schema": schema_contract.get("checkpoint_schema"),
+        "trace_schema": schema_contract.get("trace_schema"),
+    }
+    if any(not isinstance(path, str) for path in schema_paths.values()):
+        raise RuntimeError("C18 schema contract is invalid")
+    schema_hashes = {name: _sha256(ROOT / path) for name, path in schema_paths.items()}
+    if (
+        schema_hashes["checkpoint_schema"] != schema_contract.get("checkpoint_schema_sha256")
+        or schema_hashes["trace_schema"] != schema_contract.get("trace_schema_sha256")
+    ):
+        raise RuntimeError("C18 schema hash mismatch")
+    source_hashes = {
+        path: _sha256(ROOT / path)
+        for path in source_diff_paths
+    }
+    evidence = {
+        "base_commit": base,
+        "source_commit": source,
+        "source_diff_paths": source_diff_paths,
+        "source_hashes": source_hashes,
+        "schema_hashes": schema_hashes,
+        "runner_validation": _runner_validation_probe(),
+        "status": "pass",
+    }
+    if set(evidence) != set(protocol["preflight_evidence"]["exact_fields"]):
+        raise RuntimeError("C18 preflight evidence schema mismatch")
+    validation_values = (
+        value
+        for key, value in evidence["runner_validation"].items()
+        if key != "validator"
+    )
+    if not all(value is True for value in validation_values):
+        raise RuntimeError("C18 runner validation failed")
+    return evidence
 
 
 def build_cases(seed: int) -> tuple[dict, dict, dict]:
@@ -77,6 +129,7 @@ def build_cases(seed: int) -> tuple[dict, dict, dict]:
     session.record(
         "sensory_accepted",
         {
+            "cited_evidence_ids": [],
             "sample_id": "sample:vision",
             "salience_terms": {"novelty": 0.8, "goal": 0.0, "habituation": 0.1},
         },
@@ -85,6 +138,7 @@ def build_cases(seed: int) -> tuple[dict, dict, dict]:
     session.record(
         "sensory_suppressed",
         {
+            "cited_evidence_ids": [],
             "sample_id": "sample:repeat",
             "salience_terms": {"novelty": 0.0, "goal": 0.0, "habituation": 0.8},
         },
@@ -132,6 +186,7 @@ def build_cases(seed: int) -> tuple[dict, dict, dict]:
         {"reason": "insufficient_sources", "cited_evidence_ids": ["ev:vision"]},
         {"beliefs": {"object:a": {"winner": None, "residual_losers": ["cat", "toy"]}}},
     )
+    child_checkpoint = child.checkpoint("checkpoint:fork-remove-audio")
     return (
         {
             "seed": seed,
@@ -140,7 +195,9 @@ def build_cases(seed: int) -> tuple[dict, dict, dict]:
         },
         {
             "parent_checkpoint": checkpoint.checkpoint_id,
+            "parent_checkpoint_hash": checkpoint.canonical_hash(),
             "branch_id": child.branch_id,
+            "checkpoint": child_checkpoint.as_dict(),
             "trace": [event.as_dict() for event in child.events],
             "state_hash": child.state_hash(),
         },
@@ -158,7 +215,7 @@ def write_artifacts(output: Path, *, seed: int) -> dict:
     if output.exists() and any(output.iterdir()):
         raise RuntimeError("C18 output must be new or empty")
     protocol = load_protocol(ROOT / PROTOCOL_RELATIVE, require_enabled=True)
-    preflight(protocol)
+    preflight_evidence = preflight(protocol)
     replay, intervention, export = build_cases(seed)
     output.mkdir(parents=True, exist_ok=True)
     static = output / "screenshots_or_static_exports"
@@ -174,6 +231,9 @@ def write_artifacts(output: Path, *, seed: int) -> dict:
     }
     for name, value in values.items():
         (output / name).write_text(_canonical(value) + "\n", encoding="utf-8", newline="\n")
+    (output / protocol["preflight_evidence"]["path"]).write_text(
+        _canonical(preflight_evidence) + "\n", encoding="utf-8", newline="\n"
+    )
     (output / "report.md").write_text(
         "# C18 trace/checkpoint/Brain Lab artifact\n\n"
         "Engineering result: accepted deterministic contract smoke artifact.\n\n"
@@ -192,11 +252,28 @@ def write_artifacts(output: Path, *, seed: int) -> dict:
         "</script>"
     )
     (static / "brain_lab.html").write_text(static_html, encoding="utf-8", newline="\n")
+    citation_probe = V03TraceSession({"seed": seed})
+    try:
+        citation_probe.record(
+            "evidence_added",
+            {"evidence_id": "same-event", "cited_evidence_ids": ["same-event"]},
+            {},
+        )
+    except ValueError:
+        citation_boundary = True
+    else:
+        citation_boundary = False
+    child_checkpoint = V03Checkpoint.from_dict(intervention["checkpoint"])
     gates = {
         "checkpoint_replay": replay["replay_state_hash"] == replay["checkpoint"]["state_hash"],
-        "fork_lineage": intervention["parent_checkpoint"] == replay["checkpoint"]["checkpoint_id"],
-        "citation_boundary": True,
-        "schema_round_trip": True,
+        "fork_lineage": (
+            intervention["parent_checkpoint"] == replay["checkpoint"]["checkpoint_id"]
+            and intervention["parent_checkpoint_hash"]
+            == V03Checkpoint.from_dict(replay["checkpoint"]).canonical_hash()
+            and child_checkpoint.parent_checkpoint_hash == intervention["parent_checkpoint_hash"]
+        ),
+        "citation_boundary": citation_boundary,
+        "schema_round_trip": child_checkpoint.as_dict() == intervention["checkpoint"],
     }
     if not all(gates.values()):
         raise RuntimeError("C18 engineering gate failed")
@@ -211,7 +288,7 @@ def write_artifacts(output: Path, *, seed: int) -> dict:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", required=True, type=Path)
-    parser.add_argument("--seed", default=1801, type=int)
+    parser.add_argument("--seed", default=1802, type=int)
     args = parser.parse_args()
     protocol = load_protocol(ROOT / PROTOCOL_RELATIVE, require_enabled=True)
     if args.seed != protocol["execution"]["official_seed"]:

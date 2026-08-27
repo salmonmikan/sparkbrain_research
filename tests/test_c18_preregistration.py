@@ -25,3 +25,12 @@ def test_disabled_and_tampered_source_fail_closed(tmp_path: Path) -> None:
     protocol["source_commit"] = "0" * 40
     with pytest.raises(RuntimeError):
         runner.preflight(protocol)
+
+
+def test_v4_runner_defaults_to_the_preregistered_official_seed() -> None:
+    parser = runner.argparse.ArgumentParser()
+    parser.add_argument("--seed", default=1802, type=int)
+    assert parser.parse_args([]).seed == 1802
+    protocol = json.loads((ROOT / runner.PROTOCOL_RELATIVE).read_text(encoding="utf-8"))
+    assert protocol["protocol_id"] == "c18-trace-checkpoint-brain-lab-v4"
+    assert protocol["preflight_evidence"]["path"] == "preflight_evidence.json"

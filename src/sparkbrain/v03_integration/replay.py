@@ -3,8 +3,28 @@ from __future__ import annotations
 from .contracts import V03Checkpoint, V03TraceSession, _hash
 
 
-def replay_trace(checkpoint: V03Checkpoint) -> V03TraceSession:
+def replay_trace(
+    checkpoint: V03Checkpoint, *, parent_checkpoint: V03Checkpoint | None = None
+) -> V03TraceSession:
     checkpoint.as_dict()
+    if checkpoint.parent_checkpoint_id is not None:
+        if parent_checkpoint is None:
+            pass
+        else:
+            replay_trace(parent_checkpoint)
+            parent_hash = parent_checkpoint.canonical_hash()
+            fork_point = (
+                parent_checkpoint.trace[-1].event_hash
+                if parent_checkpoint.trace
+                else parent_checkpoint.initial_state_hash
+            )
+            if (
+                checkpoint.parent_checkpoint_id != parent_checkpoint.checkpoint_id
+                or checkpoint.parent_checkpoint_hash != parent_hash
+                or checkpoint.parent_state_hash != parent_checkpoint.state_hash
+                or checkpoint.fork_point_event_hash != fork_point
+            ):
+                raise ValueError("fork parent binding is broken")
     parent = before = checkpoint.initial_state_hash
     for index, event in enumerate(checkpoint.trace):
         if (
@@ -25,6 +45,10 @@ def replay_trace(checkpoint: V03Checkpoint) -> V03TraceSession:
         checkpoint.branch_id,
         dict(checkpoint.initial_state),
         checkpoint.parent_checkpoint_id,
+        checkpoint.parent_checkpoint_hash,
+        checkpoint.parent_state_hash,
+        checkpoint.fork_point_event_hash,
+        checkpoint.intervention_hash,
     )
     result.initial_state = dict(checkpoint.initial_state)
     result.initial_hash = checkpoint.initial_state_hash
