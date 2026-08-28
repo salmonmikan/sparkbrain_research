@@ -24,7 +24,7 @@ jobs:
               for path in sorted(Path('.v05-bootstrap').glob('chunk_*.b64'))
           )
           data = base64.b64decode(encoded)
-          expected = 'e596fd91a227671b3729e750f51f1d935cc7d0137e3c82226bea65e38a5414c3'
+          expected = 'c32aa24e58d6438f9a5369e7ed81eb6138afdb06b4174063a630531652e42439'
           actual = hashlib.sha256(data).hexdigest()
           if actual != expected:
               raise SystemExit(f'payload hash mismatch: {actual}')
