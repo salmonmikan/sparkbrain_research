@@ -57,8 +57,8 @@ run in both environments; installing `.[learned]` activates the real I3 integrat
 - Release runs every marker category. It is the required path for clean-room/reproduction tests;
   it must be run from a source/hash-compatible integration head before treating protected-artifact
   assertions as release failures.
-- The v0.3.2 development collection contains 892 tests: Fast 469, Engineering/default 502,
-  Scientific 156, and Release 892. The new metric and input-semantics contracts remain Fast;
+- The v0.3.2 development collection contains 893 tests: Fast 469, Engineering/default 502,
+  Scientific 156, and Release 893. The new metric and input-semantics contracts remain Fast;
   runtime/direct-checkpoint tests are Integration; native release publication tests are Slow +
   Reproduction. Fast passed 469 with 423 deselected in 47.06s and Engineering passed 502 with 390
   deselected in 48.44s on 2026-08-28. Scientific and Release were collected but not fully executed

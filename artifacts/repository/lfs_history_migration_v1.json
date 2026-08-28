@@ -1,0 +1,62 @@
+{
+  "base_revision": "00dccf3dc8f6f70353a536dcf1db9ba0b19fc7b5",
+  "migrated_head": "9cf12edab54b01e6ab1d3d425f294104d05792f0",
+  "old_head": "40049598253dd70b162300be02bf5bc960eb90b2",
+  "paths": [
+    {
+      "path": "artifacts/v03/c15_revision_v4/per_transition_predictions.jsonl",
+      "sha256": "a2553940f7e129defdd8f40e52adbc61e85ed7dc496398a1ee63609a6735825d"
+    },
+    {
+      "path": "artifacts/v03/c16_proto_concepts/candidate_lineage.jsonl",
+      "sha256": "963d5f9c7d436b7d00c7310eb56502b0f907de3c1df2f6daa0580cee7ec46aa2"
+    },
+    {
+      "path": "artifacts/v03/c16_proto_concepts/held_out_utility.json",
+      "sha256": "21ff8947dc9b82026f32d692f6299dfab1154026caf8a9a5d619860d04ca5c2b"
+    }
+  ],
+  "revision_map": [
+    {
+      "new": "288b3f47581fbcf06a833ac83630c50864f720a7",
+      "old": "1072a484f36fc8981622ed3de39d796b654698b9"
+    },
+    {
+      "new": "71b9f24148a01642f6ef65bb8cd90bb7cc04dd45",
+      "old": "4933a6059240875d0548fe602f114d768a49ef28"
+    },
+    {
+      "new": "34df00984af7ded0e69cb0b0a2c2dac7e467017f",
+      "old": "2bc251cc95c40bbea2b2e00b08d440b7ee23e059"
+    },
+    {
+      "new": "cc26551edf16fa47a67fc2782814e91e39aa0083",
+      "old": "d407663bdfeb10a29ac5791d34bace6dfa7fbbef"
+    },
+    {
+      "new": "7151f3507547742c5a0b74c6bcecc9db1900b76b",
+      "old": "14743380d74026c27e4b8a87d7c18a52d2cba49e"
+    },
+    {
+      "new": "a701146c2d2f518c023247e97fec9588776fa13e",
+      "old": "3f561254dc7bd2f97cb4784f0632fe0be48093cd"
+    },
+    {
+      "new": "fbeee672f1bb04edfe2c74f85a2dc876584c4b5d",
+      "old": "f569cd3a1772e5c3240392e720825314f30e0bf3"
+    },
+    {
+      "new": "c6e49ef219aca9de97870488ef1437bbeabb5e3b",
+      "old": "052413136229dcfa63f08cebe19585134f7cfb98"
+    },
+    {
+      "new": "cb9c777be26ddd42523dc156489b2d439f525c34",
+      "old": "c0ea99bb42ff7a7be5c8a76e2cfbc0a3192c6faf"
+    },
+    {
+      "new": "b380fe213c97a80611ff0f3b4bf3127efb62939f",
+      "old": "b991d78dd81bd98cfe65e10dfb46db2c96b798be"
+    }
+  ],
+  "schema": "sparkbrain.repository.lfs-history-migration.v1"
+}

@@ -46,8 +46,8 @@ integrated commit; stale delivery manifests are never used as release evidence.
 
 Fast and Engineering remain the normal development gates. v0.3.2 runtime and direct-checkpoint
 tests are marked Integration; native publication tests are marked Slow + Reproduction; metric and
-input-semantics contracts remain Fast. The current collection has 892 tests (Fast 469,
-Engineering 502, Scientific 156, Release 892).
+input-semantics contracts remain Fast. The current collection has 893 tests (Fast 469,
+Engineering 502, Scientific 156, Release 893).
 
 Three protected scientific artifacts exceed GitHub's ordinary object-size guidance or hard limit.
 Their exact paths are tracked with Git LFS so their checked-out bytes and scientific hashes remain

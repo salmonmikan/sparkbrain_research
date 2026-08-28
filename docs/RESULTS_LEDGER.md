@@ -13,7 +13,7 @@ entry receives the next unused identifier; protected artifacts are not renumbere
   facade, pure C15 loser-retention control, trusted-local direct checkpoint, and native
   no-clobber directory publication.
 - Verification: Fast 469 passed/423 deselected in 47.06s; Engineering 502 passed/390 deselected in
-  48.44s; current collection 892 with Scientific 156. Focused release/checkpoint/runtime checks,
+  48.44s; current collection 893 with Scientific 156. Focused release/checkpoint/runtime checks,
   Ruff, compileall, local readiness, protected-scope audit, and final root binding are required
   before repository delivery.
 - Boundary: no official science or artifact regeneration was run. v0.3.1 evidence, C06/C08

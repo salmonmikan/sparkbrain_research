@@ -16,6 +16,14 @@ MANIFEST_SCHEMA_VERSION = "3"
 MANIFEST_PATH = "PACKAGE_MANIFEST.json"
 RELEASE_METADATA_SCHEMA_VERSION = "1"
 RELEASE_METADATA_PATH = "RELEASE_METADATA.json"
+LFS_HISTORY_MIGRATION_PATH = "artifacts/repository/lfs_history_migration_v1.json"
+LFS_MIGRATED_PATHS = frozenset(
+    {
+        "artifacts/v03/c15_revision_v4/per_transition_predictions.jsonl",
+        "artifacts/v03/c16_proto_concepts/candidate_lineage.jsonl",
+        "artifacts/v03/c16_proto_concepts/held_out_utility.json",
+    }
+)
 EXCLUDED_PREFIXES = (
     ".git/",
     ".mypy_cache/",
@@ -625,6 +633,57 @@ def validate_evidence_map(root: Path, evidence_map: dict[str, Any]) -> list[str]
     return problems
 
 
+def _translated_lfs_revision(root: Path, revision: str) -> tuple[str | None, str | None]:
+    path = root / LFS_HISTORY_MIGRATION_PATH
+    if not path.is_file():
+        return None, None
+    payload, problems = _read_json_object(path, label="LFS history migration map")
+    if problems or payload is None:
+        return None, "; ".join(problems)
+    if set(payload) != {
+        "base_revision",
+        "migrated_head",
+        "old_head",
+        "paths",
+        "revision_map",
+        "schema",
+    } or payload.get("schema") != "sparkbrain.repository.lfs-history-migration.v1":
+        return None, "LFS history migration map has unexpected fields"
+    for field in ("base_revision", "migrated_head", "old_head"):
+        if re.fullmatch(r"[0-9a-f]{40}", str(payload.get(field))) is None:
+            return None, f"LFS history migration map {field} is invalid"
+    path_rows = payload.get("paths")
+    if not isinstance(path_rows, list) or {
+        row.get("path") for row in path_rows if isinstance(row, dict)
+    } != LFS_MIGRATED_PATHS:
+        return None, "LFS history migration map path inventory is invalid"
+    for row in path_rows:
+        if not isinstance(row, dict) or set(row) != {"path", "sha256"}:
+            return None, "LFS history migration map path row is invalid"
+        if re.fullmatch(r"[0-9a-f]{64}", str(row["sha256"])) is None:
+            return None, "LFS history migration map content hash is invalid"
+        artifact = root / row["path"]
+        if not artifact.is_file() or sha256_file(artifact) != row["sha256"]:
+            return None, f"LFS migrated artifact hash mismatch: {row['path']}"
+    rows = payload.get("revision_map")
+    if not isinstance(rows, list) or not rows:
+        return None, "LFS history migration revision map is invalid"
+    translations: dict[str, str] = {}
+    for row in rows:
+        if not isinstance(row, dict) or set(row) != {"old", "new"}:
+            return None, "LFS history migration revision row is invalid"
+        old, new = row["old"], row["new"]
+        if (
+            re.fullmatch(r"[0-9a-f]{40}", str(old)) is None
+            or re.fullmatch(r"[0-9a-f]{40}", str(new)) is None
+            or old in translations
+            or new in translations.values()
+        ):
+            return None, "LFS history migration revision mapping is invalid"
+        translations[old] = new
+    return translations.get(revision), None
+
+
 def validate_source_revision(
     root: Path,
     payload: dict[str, Any],
@@ -659,7 +718,19 @@ def validate_source_revision(
     except OSError as exc:
         return [f"{label} source_revision ancestry check failed: {exc}"]
     if result.returncode != 0:
-        return [f"{label} source_revision is not an ancestor of HEAD"]
+        translated, translation_problem = _translated_lfs_revision(root, revision)
+        if translation_problem is not None:
+            return [translation_problem]
+        if translated is None:
+            return [f"{label} source_revision is not an ancestor of HEAD"]
+        translated_result = subprocess.run(
+            ["git", "merge-base", "--is-ancestor", translated, "HEAD"],
+            cwd=root,
+            capture_output=True,
+            check=False,
+        )
+        if translated_result.returncode != 0:
+            return [f"{label} translated source_revision is not an ancestor of HEAD"]
     return []
 
 

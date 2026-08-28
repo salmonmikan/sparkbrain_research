@@ -4,8 +4,9 @@ import json
 import tomllib
 from pathlib import Path
 
+import pytest
 import sparkbrain
-from sparkbrain.release import required_preparation_files
+from sparkbrain.release import required_preparation_files, validate_source_revision
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -31,6 +32,17 @@ def test_v032_missing_v031_evidence_does_not_fall_back_to_v030(tmp_path: Path) -
     required = required_preparation_files(tmp_path)
     assert "artifacts/release/v0.3.1/evidence_map.json" in required
     assert "artifacts/release/v0.3/evidence_map.json" not in required
+
+
+@pytest.mark.slow
+@pytest.mark.reproduction
+def test_pre_lfs_evidence_revision_resolves_through_the_audited_map() -> None:
+    assert validate_source_revision(
+        ROOT,
+        {"source_revision": "b991d78dd81bd98cfe65e10dfb46db2c96b798be"},
+        label="v0.3.1 evidence",
+        independent_lineage=True,
+    ) == []
 
 
 def test_v03_trace_and_checkpoint_schemas_are_explicit_and_additive() -> None:
