@@ -1210,13 +1210,13 @@
     {
       "artifact_class": "generated-release-evidence",
       "path": "artifacts/release/v0.3.1/evidence_map.json",
-      "sha256": "bb061becbac7c05a7ef03f106d3e3d1c8e682a28585f5af96608e2abf1560896",
+      "sha256": "46c467857bb76c2a88b0cbb41b59415a8b453d7702426f50924ff188c94d0771",
       "size": 7901
     },
     {
       "artifact_class": "generated-release-evidence",
       "path": "artifacts/release/v0.3.1/primary_subset.json",
-      "sha256": "a4aa4b88d31c56cf4b6955ba903687afa5d705dc21bf599d480925d463faa508",
+      "sha256": "f269b8682dc8c00537e7cf249c8c47f2a1206aec578962d2bc364f5c6cf276bd",
       "size": 1902
     },
     {
@@ -1228,7 +1228,7 @@
     {
       "artifact_class": "generated-release-evidence",
       "path": "artifacts/release/v0.3.1/release_metadata.json",
-      "sha256": "986989bfd52a3a66ab9bd6d3889a9a2a7af5a8809f22d1d9798d166d900125ec",
+      "sha256": "8ddd4b5f14d1d17f0f905a80e076c69d6861033359c1207836bbce08bd32f8c1",
       "size": 481
     },
     {
@@ -1240,25 +1240,25 @@
     {
       "artifact_class": "generated-release-evidence",
       "path": "artifacts/release/v0.3.1/reproduction_manifest.json",
-      "sha256": "4a53dbb7c42c8c5d93f36a1a4db91e080b17c7dd04df5c6dd4da569c7c7b9c37",
+      "sha256": "0ee0d31838059f5465fa671f2c56781fd20cc17e2661dbd24a61f76bf80da38c",
       "size": 641
     },
     {
       "artifact_class": "generated-release-evidence",
       "path": "artifacts/release/v0.3.1/sbom.spdx.json",
-      "sha256": "ebfe8520a4d5c402c68c5bbfaeffced019295e424a5a835728a8f61b2d02d8b8",
+      "sha256": "98c3b4d36435e0e0be4f77981eb8c55aae56d9991cda92599c70afe65f3aaf44",
       "size": 9872
     },
     {
       "artifact_class": "generated-release-evidence",
       "path": "artifacts/release/v0.3.1/source_license_inventory.json",
-      "sha256": "5ebb635277d9be1f42c85b58e21933abb309912fccbd7854068f7d49c2bf793f",
+      "sha256": "8a951c61afe572e687548c0d8e368f7730b014f4d05c76f497db48354a0f926e",
       "size": 3066
     },
     {
       "artifact_class": "generated-release-evidence",
       "path": "artifacts/release/v0.3.1/source_manifest.json",
-      "sha256": "2f7a64316cd53ee8665abb111a2221db99b89e42f1a073cb64adb1eb8030f4fa",
+      "sha256": "db3ced406e6e8dfc0559771511ab2661a940d5e028d5b6ba6fcef46aa9e1a052",
       "size": 1293
     },
     {
@@ -2794,8 +2794,8 @@
     {
       "artifact_class": "documentation",
       "path": "docs/TEST_TIERS.md",
-      "sha256": "8d89c6552c65a8ed0a777eacb1c11eee93eed399cb7a58fa7822c718afd26d73",
-      "size": 3582
+      "sha256": "15416f54e7b6b948f2bc96de1d7c294126a5204fcff3d19323689299313d5e05",
+      "size": 3869
     },
     {
       "artifact_class": "documentation",
@@ -4467,6 +4467,6 @@
     "release": "11",
     "system": "Windows"
   },
-  "source_revision": "4aa80633d9f5887c6b0d758a447a42c16b2dc873",
-  "uncompressed_bytes_excluding_manifest": 456640295
+  "source_revision": "9fedbfe4797455a0d56b07dc0d4bf4d3cde89d41",
+  "uncompressed_bytes_excluding_manifest": 456640582
 }
