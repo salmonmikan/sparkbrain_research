@@ -1,8 +1,8 @@
 {
   "file_count": 742,
   "generated_at": "2026-08-28T00:00:00+00:00",
-  "manifest_sha256": "08544b40c2f3102ea8ca4dc6a02e60d9f087956f082535bf4bb490a24c58dc7c",
+  "manifest_sha256": "e168aa28aaf9aee79a4159b33837dac50a1dc5517af164cb4b93968aff562709",
   "package_version": "0.3.1",
   "release_metadata_schema_version": "1",
-  "source_revision": "c63b79a4bdacad44747ee32c7747cd33223e6a48"
+  "source_revision": "d23150f0c961c9535e1c977f39b1aa78becc663a"
 }
