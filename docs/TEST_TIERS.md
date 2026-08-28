@@ -40,17 +40,17 @@ run in both environments; installing `.[learned]` activates the real I3 integrat
 - The original shared `--basetemp=../.sparkbrain-pytest-runtime` caused concurrently launched
   pytest processes to contend; that run is recorded as invalid for pass/fail timing rather than
   treated as a product regression. The configuration no longer has this cross-worktree collision.
-- After v0.3.1 integration and tier classification, collection found 853 tests. Fast executes 453,
-  Engineering/default 473, Scientific 156, and Release all 853. The Fast tier is 20 local
+- After the final v0.3.1 audit corrections, collection found 855 tests. Fast executes 454,
+  Engineering/default 475, Scientific 156, and Release all 855. The Fast tier is 21 local
   integration tests smaller than Engineering.
 - Focused selector/classification tests: 8 passed.
-- Fast: 453 passed, 400 deselected in 47.67s. Engineering/default: 473 passed, 380 deselected in
-  47.64s. Both runs used the same local checkout and optional Torch was available.
+- Fast: 454 passed, 401 deselected in 42.68s. Engineering/default: 475 passed, 380 deselected in
+  46.53s. Both runs used the same local checkout and optional Torch was available.
 - Scientific collection remains 156 tests; the last full run passed 156 with 697 deselected in
   158.59s. The C17 candidate-absence fixture remains a
   scientific negative; its test also asserts the separate historical protected-hash and external
   reproduction gates rather than treating either as scientific support.
-- Release collection remains 853 tests; the last full run passed all 853 in 485.42s. This includes
+- Release collected and passed all 855 tests in 501.98s. This includes
   all scientific, reproduction, external-boundary,
   private-bundle, and no-Git clean-room checks. The Windows clean-room fixture uses a short,
   session-unique system temporary root so path-length limits do not weaken the archive contract.
