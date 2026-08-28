@@ -210,6 +210,7 @@ def test_protected_manifests_and_tamper(tmp_path) -> None:
     pinned_protocol = json.loads(runner.DEFAULT_PROTOCOL.read_text(encoding="utf-8"))
     source_commit = pinned_protocol["source_commit"]
     assert isinstance(source_commit, str)
+    source_commit = runner._resolve_repository_revision(ROOT, source_commit)
     value = pinned_protocol["source_control"]
     snapshot = tmp_path / "c16-source-snapshot"
     manifests = (value["protected_hash_manifest"], value["runtime_source_pins"])
