@@ -11,6 +11,6 @@
     "core.autocrlf": "false"
   },
   "source_manifest": "artifacts/release/v0.3.1/source_manifest.json",
-  "source_manifest_sha256": "766eb8ff1c853f84e2e5d6e3e1e7a4f946509e04d614c762daa20100bb600b49",
-  "source_revision": "00a4a0533a8b89d2335b7bb3b4bb2c114dbee920"
+  "source_manifest_sha256": "7a83758d1416713bfc00e6444313ff71ac8f2e3242b582906b24860e99182bc5",
+  "source_revision": "c63b79a4bdacad44747ee32c7747cd33223e6a48"
 }
