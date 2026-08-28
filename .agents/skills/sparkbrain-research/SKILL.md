@@ -38,7 +38,7 @@ description: Implement, test, review, or document the local-first SparkBrain the
 ## Task invocation examples
 
 ```text
-Use $sparkbrain-research. Execute C01 from docs/codex/C01_ENGINE_HARDENING.md completely. Preserve the local-only contract and do not start dependent tasks.
+Use $sparkbrain-research. Audit the current v0.3.1 integration against docs/PROJECT_STATUS.md and docs/THEORY_SPEC_v0.3.md. Treat C01--C20 as recorded history, preserve scientific boundaries, and implement only the explicitly assigned follow-up.
 ```
 
 ```text

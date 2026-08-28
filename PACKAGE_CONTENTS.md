@@ -1,6 +1,6 @@
-# SparkBrain v0.3.0 Package Contents
+# SparkBrain v0.3.1 Package Contents
 
-- Package version: `0.3.0`
+- Package version: `0.3.1`
 - Persisted v0.2 config/state/trace schema: `0.2` (historical compatibility)
 - Additive v0.3 trace/checkpoint schema: `0.3`
 - Main entry point: `README.md`
@@ -10,14 +10,16 @@
 - File-level hashes: `PACKAGE_MANIFEST.json`
 - Archive-mode hash binding: `RELEASE_METADATA.json`
 
-## v0.3 release boundary
+## v0.3.1 release boundary
 
 - C01--C10 release evidence is retained as v0.2.1 historical evidence.
 - C11--C18 evidence is recorded under `artifacts/v03/` with its individual engineering and
   scientific boundaries preserved.
 - C19 is a blocked external-validation readiness record, not an accepted external result.
 - `artifacts/release/v0.3/` is the final source manifest, evidence map, report, figure, and SBOM
-  layer for this private release candidate.
+  layer for the immutable v0.3.0 private release candidate.
+- `artifacts/release/v0.3.1/` separately binds the corrective packaging work and accepted
+  integrated-runtime engineering evidence without reclassifying C11--C19 science.
 - The project license is not selected; public tag, public archive, and public release remain
   prohibited.
 
@@ -39,6 +41,7 @@
 - `docs/GLOSSARY.md`
 - `docs/LOCAL_EXECUTION_POLICY.md`
 - `docs/PROJECT_CHARTER.md`
+- `docs/THEORY_SPEC_v0.3.md`
 - `docs/THEORY_SPEC_v0.2.1.md`
 - `docs/HYPOTHESES_AND_FALSIFICATION.md`
 - `docs/PRIOR_ART_GAP_ANALYSIS.md`
@@ -54,6 +57,12 @@
 - `src/sparkbrain/serialization.py`
 - `src/sparkbrain/replay.py`
 - `src/sparkbrain/validation.py`
+- `src/sparkbrain/v03/runtime.py`
+- `src/sparkbrain/v03/evaluation.py`
+- `src/sparkbrain/lab/v03_service.py`
+
+The legacy root `SparkBrain` API and `/api/runs*` remain available. The integrated engineering
+backend is imported from `sparkbrain.v03`, and the live Brain Lab uses `/api/v03/*`.
 
 ## Local validation
 
@@ -61,6 +70,7 @@
 - `tests/test_local_only.py`
 - `scripts/validate_bundle.py`
 - `scripts/validate_release.py`
+- `scripts/run_tests.py` with explicit `fast`, `engineering`, `scientific`, and `release` tiers
 - `scripts/build_review_bundle.py`
 - `tests/test_release.py` includes validator classification and scientific integrity fixtures
 - `.github/workflows/ci.yml` as an optional mirror of local checks
@@ -88,12 +98,17 @@
 - `archive/v0.1/` preserves the first minimal prototype
 - `archive/v0.2/` preserves the original v0.2 release materials and source ZIP
 - `CHANGELOG.md` summarizes the v0.2.1 patch
+- `artifacts/release/v0.3/` preserves v0.3.0 release evidence
+- `artifacts/release/v0.3.1/` records the separate v0.3.1 corrective/integration evidence layer
 
 ## Verified commands
 
 ```bash
 python scripts/local_readiness_check.py
 python -m pytest -q
+python scripts/run_tests.py fast
+python scripts/run_tests.py scientific
+python scripts/run_tests.py release
 python scripts/run_demo.py
 python scripts/checkpoint_demo.py
 python scripts/replay_trace.py

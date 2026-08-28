@@ -14,6 +14,9 @@ from sparkbrain.lab.v03_service import V03LabManager  # noqa: E402
 from sparkbrain.v03 import V03BrainConfig  # noqa: E402
 from sparkbrain.v03_seed import SensorySample  # noqa: E402
 
+PARENT_RUN_ID = "b9a76f8735b246859da1722ef301e521"
+CHILD_RUN_ID = "625663dccb3a4a1382069fcd4562061e"
+
 
 def _sample(index: int) -> SensorySample:
     return SensorySample(
@@ -29,7 +32,7 @@ def _sample(index: int) -> SensorySample:
 
 def build_artifact() -> dict:
     manager = V03LabManager()
-    parent = manager.create_run(V03BrainConfig())
+    parent = manager.create_run(V03BrainConfig(), run_id=PARENT_RUN_ID)
     parent.step(_sample(0), goal_bias={}, world_feedback={})
     parent_state = parent.step(
         _sample(1),
@@ -46,6 +49,7 @@ def build_artifact() -> dict:
         evidence_id=evidence_id,
         at_time=2.0,
         reason="static Brain Lab causal observation",
+        child_run_id=CHILD_RUN_ID,
     )
     document = {
         "comparison": manager.compare(parent.run_id, child.run_id),

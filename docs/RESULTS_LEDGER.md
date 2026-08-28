@@ -2,7 +2,11 @@
 
 Append entries; do not rewrite prior outcomes to match later interpretations.
 
-## 2026-08-28 — R-V03-0012 — C18 v6 official deterministic observability bundle
+Identifiers embedded in immutable experiment contracts retain their original
+meaning. If a collision is discovered, the later documentation or observability
+entry receives the next unused identifier; protected artifacts are not renumbered.
+
+## 2026-08-28 — R-V03-0018 — C18 v6 official deterministic observability bundle
 
 - Protocol/pin: `c18-trace-checkpoint-brain-lab-v6`; execution pin
   `c0c242d848588d76015734a309f72fed0bd1d380`; fixed official seed `1802`.
@@ -15,7 +19,7 @@ Append entries; do not rewrite prior outcomes to match later interpretations.
   no scientific support for efficacy, semantic understanding, biological
   fidelity, energy efficiency, or external task performance.
 
-## 2026-08-28 — R-V03-0011 — C18 trace/checkpoint/Brain Lab contract smoke artifact
+## 2026-08-28 — R-V03-0017 — C18 trace/checkpoint/Brain Lab contract smoke artifact
 
 - Protocol/source: `c18-trace-checkpoint-brain-lab-v1`; source
   `f569cd3a1772e5c3240392e720825314f30e0bf3`; pin
@@ -1015,7 +1019,7 @@ contract correction only.
 - Artifact impact: no saved scientific artifact, release artifact, or public release was generated
   by this documentation entry.
 
-## 2026-08-28 — R-V03-0015 — v0.3.1 integrated runtime engineering acceptance
+## 2026-08-28 — R-V03-0016 — v0.3.1 integrated runtime engineering acceptance
 
 - Scope: local/offline engineering integration only; no scientific or external evaluation rerun.
 - Runtime: `sparkbrain.v03.IntegratedV03Brain` connects Sensory Field, Evidence Ledger, entity

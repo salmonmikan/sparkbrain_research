@@ -1,8 +1,10 @@
 from __future__ import annotations
 
+import pytest
 from fastapi.testclient import TestClient
 
 from sparkbrain.lab.app import create_app
+from sparkbrain.v03 import V03BrainConfig
 
 
 def client(tmp_path) -> TestClient:
@@ -26,6 +28,8 @@ def test_v03_brain_lab_observes_live_runtime_trace_and_boundaries(tmp_path) -> N
         created = api.post("/api/v03/runs", json={})
         assert created.status_code == 201
         run = created.json()
+        assert len(run["run_id"]) == 32
+        assert api.post("/api/v03/runs", json={}).json()["run_id"] != run["run_id"]
         assert run["backend"] == "integrated-v03-reference"
         assert run["oracle_autonomous_boundary"] == {
             "classification": "autonomous_local_reference",
@@ -64,6 +68,15 @@ def test_v03_brain_lab_observes_live_runtime_trace_and_boundaries(tmp_path) -> N
             "mode": "observation_only",
             "status": "not_evaluated",
         }
+
+
+def test_v03_lab_run_id_override_is_explicit_and_collision_safe(tmp_path) -> None:
+    app = create_app(artifact_root=tmp_path)
+    manager = app.state.v03_manager
+    first = manager.create_run(V03BrainConfig(), run_id="fixed-test-run")
+    assert first.run_id == "fixed-test-run"
+    with pytest.raises(ValueError, match="already exists"):
+        manager.create_run(V03BrainConfig(), run_id="fixed-test-run")
 
 
 def test_v03_oracle_requires_explicit_diagnostic_permission(tmp_path) -> None:

@@ -46,7 +46,7 @@ Input modes remain distinguishable:
 | I0 | whole-string/hash diagnostic | information-loss control, not semantics |
 | I1 | local compositional diagnostic | local structure retention, not semantic understanding |
 | I2 | symbolic oracle diagnostic | upper-bound condition, excluded from autonomous claims |
-| I3 | truth-free local adapter | not accepted until separately implemented and audited |
+| I3 | truth-free local revision track | implemented as a local C15-backed engineering track; not a Belief-R/C19 adapter |
 
 ## 3. Sensory Field and Perceptual Sparks
 
@@ -125,7 +125,10 @@ effects, and multiple-seed criteria.
 A functional-organ candidate is a proposed structural group, not an accepted organ. Acceptance
 requires the registered conjunction of structural cohesion, selective activation, held-out reuse,
 targeted impairment, matched-control excess, bounded collateral damage, and seed consistency.
-C17 is an engineering-complete scientific negative: no functional-organ claim is supported.
+C17 v1 is an immutable `implementation_failure`, with the effective scientific disposition
+`not_evaluated_implementation_failure`, because its mandatory disjoint controls were incomplete.
+C17 v2 is engineering-accepted candidate-absence evidence with scientific status `not_supported`.
+Neither result supports a functional-organ claim.
 
 In a first integrated runtime, concept and organ components are observer-only and cannot alter
 Coalition, belief, action, or scoring decisions.

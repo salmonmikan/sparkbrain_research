@@ -128,4 +128,4 @@
 | Proto-concept Candidate | 反復patternの再利用候補 | label-free candidate observation | 意味概念や因果的有用性を意味しない |
 | Functional Organ Candidate | 機能群かもしれない候補 | structure、reuse、causal controlで別途評価する対象 | C17のnegative結果を器官形成と呼ばない |
 | v0.3 Trace / Fork | 明示状態のhash連鎖と分岐記録 | schema `0.3` のcheckpoint/replay contract | C18手動traceはlive統合runtimeの証拠ではない |
-| IntegratedV03Brain | 将来の統合backend名 | `sparkbrain.v03` の明示的versioned facade | 現時点で統合人工脳が完成した意味ではない |
+| IntegratedV03Brain | v0.3.1の統合engineering backend | `sparkbrain.v03` の明示的versioned facade。C12--C15、observer-only C16/C17、action/feedback、trace/checkpointを接続する | 科学的優位性、意味概念、器官形成、外部一般化が成立した意味ではない |

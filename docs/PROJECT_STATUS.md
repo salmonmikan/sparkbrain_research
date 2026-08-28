@@ -295,7 +295,7 @@ See `docs/LOCAL_EXECUTION_POLICY.md`.
 | Deliverable | State | Evidence |
 |---|---|---|
 | Project charter | complete v0.2.1 | `docs/PROJECT_CHARTER.md` |
-| Theory specification | working v0.2.1 | `docs/THEORY_SPEC_v0.2.1.md` |
+| Theory specification | working v0.3; v0.2.1 retained as legacy reference | `docs/THEORY_SPEC_v0.3.md`, `docs/THEORY_SPEC_v0.2.1.md` |
 | Beginner foundation guide | complete | `docs/FOUNDATIONS_FOR_BEGINNERS.md` |
 | Plain-language glossary | expanded | `docs/GLOSSARY.md` |
 | Local execution policy | complete | `docs/LOCAL_EXECUTION_POLICY.md` |

@@ -1,6 +1,10 @@
 # Decision Log
 
-## D-V03-0035 — Retain C19 as completed readiness, not accepted evaluation
+Identifiers embedded in immutable experiment contracts retain their original
+meaning. If a collision is discovered, the later documentation or observability
+entry receives the next unused identifier; protected artifacts are not renumbered.
+
+## D-V03-0042 — Retain C19 as completed readiness, not accepted evaluation
 
 **Decision (2026-08-28):** Retain the deterministic C19 blocked-readiness exact-nine bundle from
 source `052413136229dcfa63f08cebe19585134f7cfb98`. The bundle records the exact ordered 85-row
@@ -19,7 +23,7 @@ protocol; this blocked bundle is not amended in place. Initial C19 preregistrati
 0.2.1, persisted schema 0.2, schemas, release files, C06/C08 evidence, and claim grades remain
 unchanged.
 
-## D-V03-0030 — Retain C18 v6 as engineering-only observability evidence
+## D-V03-0041 — Retain C18 v6 as engineering-only observability evidence
 
 **Decision (2026-08-28):** Integrate the independently audited C18 v6
 exact-seven official bundle from execution pin
@@ -34,7 +38,7 @@ scientific efficacy.
 grade, v0.2 contract, C17 v1 artifact, C06/C08 finding, package version,
 persisted schema, or release metadata changes.
 
-## D-V03-0029 — Keep C18 trace/checkpoint integration isolated from v0.2
+## D-V03-0040 — Keep C18 trace/checkpoint integration isolated from v0.2
 
 **Decision (2026-08-28):** Add C18 under `sparkbrain.v03_integration` with
 schema `0.3`, explicit branch/checkpoint lineage, and state-hash replay. Do not

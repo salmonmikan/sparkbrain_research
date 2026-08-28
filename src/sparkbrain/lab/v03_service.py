@@ -114,8 +114,15 @@ class V03LabRun:
     causal_evidence_removal: dict[str, Any] | None = None
 
     @classmethod
-    def create(cls, config: V03BrainConfig) -> V03LabRun:
-        return cls(run_id=uuid.uuid4().hex, config=config, brain=IntegratedV03Brain(config))
+    def create(cls, config: V03BrainConfig, *, run_id: str | None = None) -> V03LabRun:
+        resolved_run_id = uuid.uuid4().hex if run_id is None else run_id
+        if not isinstance(resolved_run_id, str) or not resolved_run_id:
+            raise ValueError("run_id must be a non-empty string")
+        return cls(
+            run_id=resolved_run_id,
+            config=config,
+            brain=IntegratedV03Brain(config),
+        )
 
     def step(
         self,
@@ -173,8 +180,12 @@ class V03LabManager:
     def __init__(self) -> None:
         self.runs: dict[str, V03LabRun] = {}
 
-    def create_run(self, config: V03BrainConfig) -> V03LabRun:
-        run = V03LabRun.create(config)
+    def create_run(
+        self, config: V03BrainConfig, *, run_id: str | None = None
+    ) -> V03LabRun:
+        run = V03LabRun.create(config, run_id=run_id)
+        if run.run_id in self.runs:
+            raise ValueError(f"v0.3 run already exists: {run.run_id}")
         self.runs[run.run_id] = run
         return run
 
@@ -185,12 +196,23 @@ class V03LabManager:
             raise KeyError(f"Unknown v0.3 run: {run_id}") from exc
 
     def fork_with_evidence_removal(
-        self, run_id: str, *, evidence_id: str, at_time: float, reason: str
+        self,
+        run_id: str,
+        *,
+        evidence_id: str,
+        at_time: float,
+        reason: str,
+        child_run_id: str | None = None,
     ) -> V03LabRun:
         parent = self.get(run_id)
+        resolved_child_run_id = uuid.uuid4().hex if child_run_id is None else child_run_id
+        if not isinstance(resolved_child_run_id, str) or not resolved_child_run_id:
+            raise ValueError("child_run_id must be a non-empty string")
+        if resolved_child_run_id in self.runs:
+            raise ValueError(f"v0.3 run already exists: {resolved_child_run_id}")
         checkpoint = parent.brain.checkpoint(f"brain-lab:{parent.run_id}")
         child = V03LabRun(
-            run_id=uuid.uuid4().hex,
+            run_id=resolved_child_run_id,
             config=parent.config,
             brain=IntegratedV03Brain.restore(checkpoint),
             parent_run_id=parent.run_id,
