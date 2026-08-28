@@ -9,6 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
+from sparkbrain.release import package_version  # noqa: E402
 from sparkbrain.release_v03_artifacts import generate_v03_release_artifacts  # noqa: E402
 
 
@@ -28,7 +29,7 @@ def _require_clean_head(source_revision: str) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Generate v0.3 release evidence into a staging root"
+        description="Generate versioned v0.3 release evidence into a staging root"
     )
     parser.add_argument("--output-root", type=Path, required=True)
     parser.add_argument("--source-revision", required=True)
@@ -39,6 +40,7 @@ def main() -> None:
             ROOT,
             output_root=args.output_root.resolve(),
             source_revision=args.source_revision,
+            release_version=package_version(ROOT),
         )
     except (OSError, ValueError) as exc:
         raise SystemExit(str(exc)) from exc

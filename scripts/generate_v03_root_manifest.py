@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from sparkbrain.release import (  # noqa: E402
+    package_version,
     validate_v03_generated_release_evidence,
     write_release_manifest,
     write_release_metadata,
@@ -19,6 +20,7 @@ from sparkbrain.release import (  # noqa: E402
 from sparkbrain.release_v03_artifacts import (  # noqa: E402
     V03_RELEASE_RELATIVE,
     build_v03_root_manifest,
+    generated_artifact_paths_for_version,
 )
 
 V03_GENERATED_ARTIFACTS = {
@@ -36,6 +38,10 @@ V03_GENERATED_ARTIFACTS = {
         "release_metadata.json",
     )
 }
+
+
+def _generated_artifacts() -> set[str]:
+    return generated_artifact_paths_for_version(package_version(ROOT))
 
 
 def _tracked_paths() -> list[str]:
@@ -64,12 +70,15 @@ def _require_artifact_integration(source_revision: str) -> None:
         if state.returncode:
             raise ValueError("v0.3 root manifest requires a clean tracked source tree")
     tracked = set(_tracked_paths())
-    missing = sorted(V03_GENERATED_ARTIFACTS - tracked)
+    release_version = package_version(ROOT)
+    missing = sorted(_generated_artifacts() - tracked)
     if missing:
         raise ValueError(
             "v0.3 root manifest requires tracked generated artifacts: " + ", ".join(missing)
         )
-    problems = validate_v03_generated_release_evidence(ROOT)
+    problems = validate_v03_generated_release_evidence(
+        ROOT, release_version=release_version
+    )
     if problems:
         raise ValueError(
             "v0.3 root manifest generated artifacts are invalid: " + "; ".join(problems)

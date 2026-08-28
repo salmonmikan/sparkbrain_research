@@ -80,6 +80,10 @@ V03_REQUIRED_PREPARATION_FILES = (
     "artifacts/release/v0.3/reproduction_manifest.json",
     "artifacts/release/v0.3/release_metadata.json",
 )
+V031_REQUIRED_PREPARATION_FILES = tuple(
+    path.replace("artifacts/release/v0.3/", "artifacts/release/v0.3.1/")
+    for path in V03_REQUIRED_PREPARATION_FILES
+)
 REQUIRED_PUBLIC_FILES = ("LICENSE",)
 OWNER_LICENSE_BLOCKER = "project license has not been selected by the repository owner"
 # Backward-compatible name used by the initial C10 tests.
@@ -93,9 +97,26 @@ def _is_v03_package(root: Path) -> bool:
         return False
 
 
+def _v03_release_version(root: Path) -> str | None:
+    try:
+        value = package_version(root)
+    except (OSError, UnicodeDecodeError, tomllib.TOMLDecodeError, KeyError, ValueError):
+        return None
+    return value if value in {"0.3.0", "0.3.1"} else None
+
+
+def _v03_release_relative(root: Path) -> str:
+    v031 = root / "artifacts/release/v0.3.1/evidence_map.json"
+    if _v03_release_version(root) == "0.3.1" and v031.is_file():
+        return "artifacts/release/v0.3.1"
+    return "artifacts/release/v0.3"
+
+
 def required_preparation_files(root: Path) -> tuple[str, ...]:
     """Select the release contract from package metadata, not Git history."""
 
+    if _v03_release_relative(root) == "artifacts/release/v0.3.1":
+        return V031_REQUIRED_PREPARATION_FILES
     return V03_REQUIRED_PREPARATION_FILES if _is_v03_package(root) else REQUIRED_PREPARATION_FILES
 
 
@@ -527,7 +548,7 @@ def validate_project_license_metadata(root: Path) -> list[str]:
             (
                 root
                 / (
-                    "artifacts/release/v0.3/sbom.spdx.json"
+                    f"{_v03_release_relative(root)}/sbom.spdx.json"
                     if _is_v03_package(root)
                     else "artifacts/release/sbom.spdx.json"
                 )
@@ -630,7 +651,7 @@ def validate_source_revision(root: Path, payload: dict[str, Any], *, label: str)
 def validate_release_revision_consistency(root: Path) -> list[str]:
     payloads: dict[str, dict[str, Any]] = {}
     evidence_path = (
-        root / "artifacts/release/v0.3/evidence_map.json"
+        root / f"{_v03_release_relative(root)}/evidence_map.json"
         if _is_v03_package(root)
         else root / "artifacts/release/evidence_map.json"
     )
@@ -753,17 +774,27 @@ def validate_generated_release_evidence(root: Path) -> list[str]:
     return problems
 
 
-def validate_v03_generated_release_evidence(root: Path) -> list[str]:
+def validate_v03_generated_release_evidence(
+    root: Path, *, release_version: str | None = None
+) -> list[str]:
     """Validate generated C20 artifacts without reclassifying their evidence."""
 
     from sparkbrain import release_v03_artifacts
 
-    release_dir = root / release_v03_artifacts.V03_RELEASE_RELATIVE
+    selected_version = release_version or (
+        "0.3.1" if _v03_release_relative(root) == "artifacts/release/v0.3.1" else "0.3.0"
+    )
+    if selected_version not in {"0.3.0", "0.3.1"}:
+        return ["unsupported v0.3 release evidence package version"]
+    release_relative = release_v03_artifacts.release_relative_for_version(selected_version)
+    release_dir = root / release_relative
     try:
         evidence = json.loads((release_dir / "evidence_map.json").read_text(encoding="utf-8"))
     except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
         return [f"v0.3 evidence map is unreadable: {exc}"]
-    problems = release_v03_artifacts.validate_v03_evidence_map(root, evidence)
+    problems = release_v03_artifacts.validate_v03_evidence_map(
+        root, evidence, release_version=selected_version
+    )
     problems.extend(validate_source_revision(root, evidence, label="v0.3 evidence map"))
     revision = evidence.get("source_revision")
     if not isinstance(revision, str):
@@ -776,14 +807,16 @@ def validate_v03_generated_release_evidence(root: Path) -> list[str]:
             evidence
         ),
         "sbom.spdx.json": release_v03_artifacts._canonical_json(
-            release_v03_artifacts.build_v03_sbom(root, source_revision=revision)
+            release_v03_artifacts.build_v03_sbom(
+                root, source_revision=revision, release_version=selected_version
+            )
         ),
         "primary_subset.json": release_v03_artifacts._canonical_json(
             release_v03_artifacts.build_v03_primary_subset(evidence)
         ),
         "source_license_inventory.json": release_v03_artifacts._canonical_json(
             release_v03_artifacts.build_v03_source_license_inventory(
-                root, source_revision=revision
+                root, source_revision=revision, release_version=selected_version
             )
         ),
     }
@@ -805,14 +838,14 @@ def validate_v03_generated_release_evidence(root: Path) -> list[str]:
         problems.append(f"v0.3 source manifest is unreadable: {exc}")
         return _unique_problems(problems)
     expected_files = {
-        f"{release_v03_artifacts.V03_RELEASE_RELATIVE}/{name}"
+        f"{release_relative}/{name}"
         for name in ("evidence_map.json", *expected_text)
     }
     if (
         not isinstance(source_manifest, dict)
         or source_manifest.get("schema_version")
-        != release_v03_artifacts.V03_SOURCE_MANIFEST_SCHEMA
-        or source_manifest.get("package_version") != "0.3.0"
+        != release_v03_artifacts._release_contract(selected_version)["source_manifest_schema"]
+        or source_manifest.get("package_version") != selected_version
         or source_manifest.get("source_revision") != revision
         or not isinstance(source_manifest.get("files"), list)
     ):
@@ -863,7 +896,7 @@ def preparation_problems(root: Path) -> list[str]:
         if not (root / relative).is_file()
     ]
     evidence_path = (
-        root / "artifacts/release/v0.3/evidence_map.json"
+        root / f"{_v03_release_relative(root)}/evidence_map.json"
         if _is_v03_package(root)
         else root / "artifacts/release/evidence_map.json"
     )
@@ -920,7 +953,7 @@ def owner_blockers(root: Path) -> list[str]:
 
 def evidence_blockers(root: Path) -> list[str]:
     evidence_path = (
-        root / "artifacts/release/v0.3/evidence_map.json"
+        root / f"{_v03_release_relative(root)}/evidence_map.json"
         if _is_v03_package(root)
         else root / "artifacts/release/evidence_map.json"
     )
