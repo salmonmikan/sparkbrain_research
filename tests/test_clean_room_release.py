@@ -3,8 +3,10 @@ from __future__ import annotations
 import json
 import os
 import shutil
+import stat
 import subprocess
 import sys
+import tempfile
 import zipfile
 from pathlib import Path
 
@@ -21,6 +23,11 @@ from sparkbrain.release_v03_artifacts import release_relative_for_version
 
 ROOT = Path(__file__).resolve().parents[1]
 CHILD_SENTINEL = "SPARKBRAIN_CLEAN_ROOM_CHILD"
+
+
+def _remove_readonly(function, path, _exc_info) -> None:
+    os.chmod(path, stat.S_IWRITE)
+    function(path)
 
 
 def _run(
@@ -123,9 +130,17 @@ def _assert_reproduction_preflight_failure(
     os.environ.get(CHILD_SENTINEL) == "1" or release_mode(ROOT) == "archive",
     reason="the outer repository test already verifies the extracted archive suite",
 )
-def test_no_git_archive_runs_full_clean_room_contract(tmp_path: Path) -> None:
-    fixture_repo = tmp_path / "fixture-repository"
+def test_no_git_archive_runs_full_clean_room_contract() -> None:
+    work_root = Path(tempfile.mkdtemp(prefix="sb-cr-"))
+    fixture_repo = work_root / "repo"
     fixture_repo.mkdir()
+    try:
+        _run_clean_room_contract(work_root, fixture_repo)
+    finally:
+        shutil.rmtree(work_root, onerror=_remove_readonly)
+
+
+def _run_clean_room_contract(work_root: Path, fixture_repo: Path) -> None:
     _copy_tracked_worktree(ROOT, fixture_repo)
 
     _run(["git", "init", "--quiet"], cwd=fixture_repo)
@@ -195,9 +210,9 @@ def test_no_git_archive_runs_full_clean_room_contract(tmp_path: Path) -> None:
     assert fixture_payload["preparation_problems"] == []
     assert fixture_payload["evidence_blockers"] == []
 
-    archive_path = tmp_path / "fixture-release.zip"
+    archive_path = work_root / "fixture-release.zip"
     _build_fixture_archive(fixture_repo, archive_path)
-    extracted = tmp_path / "extracted-release"
+    extracted = work_root / "extracted-release"
     extracted.mkdir()
     with zipfile.ZipFile(archive_path) as archive:
         assert archive.testzip() is None
@@ -206,7 +221,7 @@ def test_no_git_archive_runs_full_clean_room_contract(tmp_path: Path) -> None:
 
     assert not (extracted / ".git").exists()
 
-    output = tmp_path / "reproduced-release"
+    output = work_root / "reproduced-release"
     child_env = {
         **os.environ,
         "NO_PROXY": "*",
@@ -250,7 +265,7 @@ def test_no_git_archive_runs_full_clean_room_contract(tmp_path: Path) -> None:
     ]
     assert validation_payload["problems"] == validation_payload["owner_blockers"]
 
-    readme_tamper = _tampered_copy(extracted, tmp_path, "tamper-readme")
+    readme_tamper = _tampered_copy(extracted, work_root, "tamper-readme")
     with (readme_tamper / "README.md").open("ab") as handle:
         handle.write(b"tamper")
     _run_failure(
@@ -259,7 +274,7 @@ def test_no_git_archive_runs_full_clean_room_contract(tmp_path: Path) -> None:
         expected="sha256 mismatch: README.md",
     )
 
-    missing_file = _tampered_copy(extracted, tmp_path, "tamper-missing")
+    missing_file = _tampered_copy(extracted, work_root, "tamper-missing")
     (missing_file / "README.md").unlink()
     _run_failure(
         [sys.executable, "scripts/validate_release.py", "--preparation-only"],
@@ -267,7 +282,7 @@ def test_no_git_archive_runs_full_clean_room_contract(tmp_path: Path) -> None:
         expected="missing or non-regular release file: README.md",
     )
 
-    unexpected_file = _tampered_copy(extracted, tmp_path, "tamper-unexpected")
+    unexpected_file = _tampered_copy(extracted, work_root, "tamper-unexpected")
     (unexpected_file / "unexpected.txt").write_text("unexpected\n", encoding="utf-8")
     _run_failure(
         [sys.executable, "scripts/validate_release.py", "--preparation-only"],
@@ -275,7 +290,7 @@ def test_no_git_archive_runs_full_clean_room_contract(tmp_path: Path) -> None:
         expected="archive tree contains unexpected files",
     )
 
-    metadata_revision = _tampered_copy(extracted, tmp_path, "tamper-metadata-revision")
+    metadata_revision = _tampered_copy(extracted, work_root, "tamper-metadata-revision")
     metadata_path = metadata_revision / RELEASE_METADATA_PATH
     metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
     metadata["source_revision"] = "b" * 40
@@ -287,11 +302,11 @@ def test_no_git_archive_runs_full_clean_room_contract(tmp_path: Path) -> None:
     )
     _assert_reproduction_preflight_failure(
         metadata_revision,
-        tmp_path / "metadata-revision-output",
+        work_root / "metadata-revision-output",
         expected="release metadata source_revision does not match PACKAGE_MANIFEST.json",
     )
 
-    metadata_hash = _tampered_copy(extracted, tmp_path, "tamper-metadata-hash")
+    metadata_hash = _tampered_copy(extracted, work_root, "tamper-metadata-hash")
     metadata_path = metadata_hash / RELEASE_METADATA_PATH
     metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
     metadata["manifest_sha256"] = "0" * 64
@@ -303,29 +318,30 @@ def test_no_git_archive_runs_full_clean_room_contract(tmp_path: Path) -> None:
     )
     _assert_reproduction_preflight_failure(
         metadata_hash,
-        tmp_path / "metadata-hash-output",
+        work_root / "metadata-hash-output",
         expected="release metadata manifest_sha256 does not match PACKAGE_MANIFEST.json",
     )
 
-    evidence_revision = _tampered_copy(extracted, tmp_path, "tamper-evidence-revision")
+    evidence_revision = _tampered_copy(extracted, work_root, "tamper-evidence-revision")
     evidence_path = evidence_revision / "artifacts/release/evidence_map.json"
-    if (evidence_revision / "artifacts/release/v0.3/evidence_map.json").is_file():
-        evidence_path = evidence_revision / "artifacts/release/v0.3/evidence_map.json"
+    versioned_evidence = evidence_revision / release_relative / "evidence_map.json"
+    if versioned_evidence.is_file():
+        evidence_path = versioned_evidence
     evidence = json.loads(evidence_path.read_text(encoding="utf-8"))
     evidence["source_revision"] = "b" * 40
     evidence_path.write_text(json.dumps(evidence), encoding="utf-8")
     _assert_reproduction_preflight_failure(
         evidence_revision,
-        tmp_path / "evidence-revision-output",
+        work_root / "evidence-revision-output",
         expected="release source_revision values do not match",
     )
 
-    primary_input = _tampered_copy(extracted, tmp_path, "tamper-primary-input")
+    primary_input = _tampered_copy(extracted, work_root, "tamper-primary-input")
     with (primary_input / "artifacts/benchmarks/benchmark_aggregate.csv").open("ab") as handle:
         handle.write(b"tamper")
     _assert_reproduction_preflight_failure(
         primary_input,
-        tmp_path / "primary-input-output",
+        work_root / "primary-input-output",
         expected="sha256 mismatch: artifacts/benchmarks/benchmark_aggregate.csv",
     )
 
