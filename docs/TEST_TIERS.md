@@ -44,6 +44,9 @@ concurrent worktrees can otherwise turn cleanup into a permission failure before
 - Scientific: 156 passed, 697 deselected in 158.59s. The C17 candidate-absence fixture remains a
   scientific negative; its test also asserts the separate historical protected-hash and external
   reproduction gates rather than treating either as scientific support.
+- Release: 853 passed in 485.42s. This includes all scientific, reproduction, external-boundary,
+  private-bundle, and no-Git clean-room checks. The Windows clean-room fixture uses a short,
+  session-unique system temporary root so path-length limits do not weaken the archive contract.
 - Release runs every marker category. It is the required path for clean-room/reproduction tests;
   it must be run from a source/hash-compatible integration head before treating protected-artifact
   assertions as release failures.
