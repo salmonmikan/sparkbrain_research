@@ -6,7 +6,7 @@
     ]
   },
   "dataLicense": "CC0-1.0",
-  "documentNamespace": "urn:sparkbrain:v03:sbom:c63b79a4bdacad44747ee32c7747cd33223e6a48",
+  "documentNamespace": "urn:sparkbrain:v03:sbom:d23150f0c961c9535e1c977f39b1aa78becc663a",
   "name": "sparkbrain-research-v0.3.1-release-candidate",
   "packages": [
     {
