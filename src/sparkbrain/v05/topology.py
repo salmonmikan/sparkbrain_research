@@ -67,11 +67,7 @@ def layered_reservoir_topology(
                 )
             )
 
-    coords = {
-        unit.unit_id: (unit.x, unit.y)
-        for unit in units
-        if unit.unit_id >= reservoir_start
-    }
+    coords = {unit.unit_id: (unit.x, unit.y) for unit in units if unit.unit_id >= reservoir_start}
     for source_id in reservoir_ids:
         sx, sy = coords[source_id]
         source = units[source_id]

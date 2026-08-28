@@ -157,9 +157,7 @@ def training_episodes(
     cursor = start_ms
     for index in range(count):
         motif = MOTIF_X if index % 2 == 0 else MOTIF_Y
-        episodes.append(
-            make_episode(seed=seed, index=index, motif=motif, start_ms=cursor)
-        )
+        episodes.append(make_episode(seed=seed, index=index, motif=motif, start_ms=cursor))
         cursor += 220.0
     return tuple(episodes)
 

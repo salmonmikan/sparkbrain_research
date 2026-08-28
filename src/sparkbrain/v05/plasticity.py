@@ -1,8 +1,9 @@
 from __future__ import annotations
 
 import math
+from collections.abc import Iterable
 from dataclasses import asdict, dataclass, field
-from typing import Any, Iterable
+from typing import Any
 
 from sparkbrain.v04.contracts import SpikeEvent
 from sparkbrain.v04.field import TemporalExcitableField
@@ -85,22 +86,16 @@ class V05PlasticityController:
                     self.config.min_weight,
                     min(
                         self.config.max_weight,
-                        edge.weight
-                        + self.config.learning_rate * self.reward_trace * eligibility,
+                        edge.weight + self.config.learning_rate * self.reward_trace * eligibility,
                     ),
                 )
-            if (
-                self.config.enable_delay_learning
-                and causal_lags
-                and edge.weight > 0
-            ):
+            if self.config.enable_delay_learning and causal_lags and edge.weight > 0:
                 desired = sum(causal_lags) / len(causal_lags)
                 edge.delay_ms = max(
                     self.config.min_delay_ms,
                     min(
                         self.config.max_delay_ms,
-                        edge.delay_ms
-                        + self.config.delay_learning_rate * (desired - edge.delay_ms),
+                        edge.delay_ms + self.config.delay_learning_rate * (desired - edge.delay_ms),
                     ),
                 )
             updates += 1

@@ -2,9 +2,10 @@ from __future__ import annotations
 
 import hashlib
 import json
+from collections.abc import Iterable
 from dataclasses import asdict, dataclass
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any
 
 from sparkbrain.v04.brain import IntegratedV04Brain, V04BrainConfig
 from sparkbrain.v04.contracts import SignalPulse, canonical_json
@@ -233,11 +234,13 @@ class IntegratedV05Brain:
             metadata={"episode_id": resolved_episode_id, **dict(metadata or {})},
         )
         self.results.append(result)
-        self.trace.append({
-            "episode_id": resolved_episode_id,
-            "episode_index": self._episode_index,
-            "result": result.as_dict(),
-        })
+        self.trace.append(
+            {
+                "episode_id": resolved_episode_id,
+                "episode_index": self._episode_index,
+                "result": result.as_dict(),
+            }
+        )
         self._episode_index += 1
         return result
 
@@ -265,7 +268,6 @@ class IntegratedV05Brain:
     def clear_unit_suppression(self) -> None:
         self.suppressed_unit_ids.clear()
 
-
     def _base_checkpoint(self) -> dict[str, Any]:
         """Return the operational v0.4 state without duplicating immutable results."""
         wrapper = self.base.checkpoint_dict()
@@ -285,9 +287,7 @@ class IntegratedV05Brain:
                 self.pending_action.as_dict() if self.pending_action is not None else None
             ),
             "pending_activation": (
-                self.pending_activation.as_dict()
-                if self.pending_activation is not None
-                else None
+                self.pending_activation.as_dict() if self.pending_activation is not None else None
             ),
             "plasticity": self.plasticity.state_dict(),
             "predictor": self.predictor.state_dict(),
@@ -325,9 +325,7 @@ class IntegratedV05Brain:
             raise ValueError("nested v0.4 checkpoint hash mismatch")
         brain.base.field = TemporalExcitableField.from_state_dict(base_payload["field"])
         memory = base_payload["assembly_memory"]
-        brain.base.assembly_memory.counts = {
-            str(k): int(v) for k, v in memory["counts"].items()
-        }
+        brain.base.assembly_memory.counts = {str(k): int(v) for k, v in memory["counts"].items()}
         brain.base.assembly_memory.last_seen_ms = {
             str(k): float(v) for k, v in memory["last_seen_ms"].items()
         }
@@ -352,9 +350,7 @@ class IntegratedV05Brain:
         if pending_activation is not None:
             activation_row = dict(pending_activation)
             activation_row["unit_ids"] = tuple(activation_row["unit_ids"])
-            activation_row.setdefault(
-                "episode_count", int(activation_row.get("occurrences", 0))
-            )
+            activation_row.setdefault("episode_count", int(activation_row.get("occurrences", 0)))
             brain.pending_activation = AssemblyActivation(**activation_row)
         pending_action = payload.get("pending_action")
         if pending_action is not None:

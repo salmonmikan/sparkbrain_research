@@ -3,8 +3,9 @@ from __future__ import annotations
 import copy
 import random
 import statistics
+from collections.abc import Iterable
 from dataclasses import asdict, dataclass
-from typing import Any, Iterable
+from typing import Any
 
 from .assemblies import AssemblyActivation
 from .brain import IntegratedV05Brain, V05BrainConfig
@@ -262,9 +263,7 @@ def causal_ablation(
         }
     )
     random_pool = sorted(
-        set(trained.base.field.units)
-        - set(trained.base.field.receptor_ids)
-        - set(target_units)
+        set(trained.base.field.units) - set(trained.base.field.receptor_ids) - set(target_units)
     )
     rng.shuffle(random_pool)
     random_units = sorted(random_pool[: len(target_units)])
@@ -306,9 +305,7 @@ def causal_ablation(
     baseline_score = score(copy.deepcopy(baseline), target_episodes)
     assembly_targeted_score = score(assembly_targeted, target_episodes)
     assembly_random_score = score(assembly_random, target_episodes)
-    assembly_collateral_score = score(
-        collateral_assembly_targeted, collateral_episodes
-    )
+    assembly_collateral_score = score(collateral_assembly_targeted, collateral_episodes)
     unit_targeted_score = score(unit_targeted, target_episodes)
     unit_random_score = score(unit_random, target_episodes)
     collateral_baseline = score(copy.deepcopy(baseline), collateral_episodes)
@@ -329,28 +326,23 @@ def causal_ablation(
         "collateral_baseline": collateral_baseline,
         "collateral_targeted": collateral_targeted,
         "assembly_targeted_impairment": (
-            baseline_score["prediction_accuracy"]
-            - assembly_targeted_score["prediction_accuracy"]
+            baseline_score["prediction_accuracy"] - assembly_targeted_score["prediction_accuracy"]
         ),
         "assembly_random_impairment": (
-            baseline_score["prediction_accuracy"]
-            - assembly_random_score["prediction_accuracy"]
+            baseline_score["prediction_accuracy"] - assembly_random_score["prediction_accuracy"]
         ),
         "assembly_collateral_damage": (
             collateral_baseline["prediction_accuracy"]
             - assembly_collateral_score["prediction_accuracy"]
         ),
         "unit_targeted_impairment": (
-            baseline_score["prediction_accuracy"]
-            - unit_targeted_score["prediction_accuracy"]
+            baseline_score["prediction_accuracy"] - unit_targeted_score["prediction_accuracy"]
         ),
         "unit_random_impairment": (
-            baseline_score["prediction_accuracy"]
-            - unit_random_score["prediction_accuracy"]
+            baseline_score["prediction_accuracy"] - unit_random_score["prediction_accuracy"]
         ),
         "unit_collateral_damage": (
-            collateral_baseline["prediction_accuracy"]
-            - collateral_targeted["prediction_accuracy"]
+            collateral_baseline["prediction_accuracy"] - collateral_targeted["prediction_accuracy"]
         ),
     }
 
@@ -459,14 +451,12 @@ def run_plasticity_ablation(
     return {"seed": seed, "modes": rows}
 
 
-
 def _compact_seed_result(value: dict[str, Any]) -> dict[str, Any]:
     return {
         "ablation": value["ablation"],
         "assembly_count": value["assembly_count"],
         "conditions": {
-            key: {"summary": row["summary"]}
-            for key, row in value["conditions"].items()
+            key: {"summary": row["summary"]} for key, row in value["conditions"].items()
         },
         "null_noise_training": {
             "candidate_count": value["null_noise_training"]["candidate_count"],
@@ -477,12 +467,9 @@ def _compact_seed_result(value: dict[str, Any]) -> dict[str, Any]:
         "train": {"summary": value["train"]["summary"]},
     }
 
-def _mean_seed_metric(
-    seed_results: list[dict[str, Any]], condition: str, metric: str
-) -> float:
-    return statistics.fmean(
-        row["conditions"][condition]["summary"][metric] for row in seed_results
-    )
+
+def _mean_seed_metric(seed_results: list[dict[str, Any]], condition: str, metric: str) -> float:
+    return statistics.fmean(row["conditions"][condition]["summary"][metric] for row in seed_results)
 
 
 def _aggregate(seed_results: list[dict[str, Any]]) -> dict[str, Any]:
@@ -507,8 +494,7 @@ def _aggregate(seed_results: list[dict[str, Any]]) -> dict[str, Any]:
     )
     return {
         condition: {
-            metric: _mean_seed_metric(seed_results, condition, metric)
-            for metric in metrics
+            metric: _mean_seed_metric(seed_results, condition, metric) for metric in metrics
         }
         for condition in conditions
     }
@@ -520,9 +506,7 @@ def _ablation_aggregate(rows: list[dict[str, Any]]) -> dict[str, Any]:
     modes = rows[0]["modes"]
     return {
         mode: {
-            metric: statistics.fmean(
-                row["modes"][mode]["jitter"][metric] for row in rows
-            )
+            metric: statistics.fmean(row["modes"][mode]["jitter"][metric] for row in rows)
             for metric in (
                 "prediction_accuracy",
                 "action_accuracy",
@@ -546,8 +530,7 @@ def aggregate_v05_results(
         raise ValueError("at least one confirmatory seed result is required")
     aggregate = _aggregate(confirmatory_results)
     null_noise_mature_candidates = statistics.fmean(
-        row["null_noise_training"]["mature_candidate_count"]
-        for row in confirmatory_results
+        row["null_noise_training"]["mature_candidate_count"] for row in confirmatory_results
     )
     ablation_aggregate = _ablation_aggregate(ablation_rows)
 
@@ -565,9 +548,7 @@ def aggregate_v05_results(
     unit_random = causal_values("unit_random_impairment")
     unit_collateral = causal_values("unit_collateral_damage")
 
-    gate_a = all(
-        aggregate[condition]["runaway_rate"] == 0.0 for condition in aggregate
-    ) and all(
+    gate_a = all(aggregate[condition]["runaway_rate"] == 0.0 for condition in aggregate) and all(
         aggregate[condition]["dead_rate"] <= 0.10 for condition in aggregate
     )
     gate_b = (
@@ -585,18 +566,14 @@ def aggregate_v05_results(
         and aggregate["distractor"]["prediction_accuracy"] >= 0.65
         and aggregate["one_event_omission"]["prediction_accuracy"] >= 0.25
     )
-    no_assembly_accuracy = (
-        ablation_aggregate.get("no_assembly", {}).get("prediction_accuracy", 0.0)
-    )
+    no_assembly_accuracy = ablation_aggregate.get("no_assembly", {}).get("prediction_accuracy", 0.0)
     gate_d = (
         aggregate["jitter"]["prediction_accuracy"] >= 0.70
-        and aggregate["jitter"]["prediction_accuracy"]
-        > no_assembly_accuracy + 0.20
+        and aggregate["jitter"]["prediction_accuracy"] > no_assembly_accuracy + 0.20
     )
     gate_e = (
         bool(assembly_targeted)
-        and statistics.fmean(assembly_targeted)
-        > statistics.fmean(assembly_random) + 0.10
+        and statistics.fmean(assembly_targeted) > statistics.fmean(assembly_random) + 0.10
         and statistics.fmean(assembly_collateral) <= 0.25
     )
     plasticity_dependency = bool(ablation_aggregate) and (
@@ -718,13 +695,15 @@ def render_v05_report(payload: dict[str, Any]) -> str:
     ]
     for name, value in payload["gates"].items():
         lines.append(f"| `{name}` | {'PASS' if value else 'FAIL'} |")
-    lines.extend([
-        "",
-        "## Confirmatory aggregate",
-        "",
-        "| Condition | Prediction | Action | Assembly activation | Purity |",
-        "|---|---:|---:|---:|---:|",
-    ])
+    lines.extend(
+        [
+            "",
+            "## Confirmatory aggregate",
+            "",
+            "| Condition | Prediction | Action | Assembly activation | Purity |",
+            "|---|---:|---:|---:|---:|",
+        ]
+    )
     for condition, row in payload["aggregate"].items():
         lines.append(
             f"| {condition} | {row['prediction_accuracy']:.3f} | "
@@ -732,33 +711,41 @@ def render_v05_report(payload: dict[str, Any]) -> str:
             f"{row['assembly_purity']:.3f} |"
         )
     causal = payload["causal_aggregate"]
-    lines.extend([
-        "",
-        "## Causal intervention aggregate",
-        "",
-        f"- Targeted Assembly impairment: `{causal['assembly_targeted_impairment']:.3f}`",
-        f"- Matched random Assembly impairment: `{causal['assembly_random_impairment']:.3f}`",
-        f"- Assembly collateral damage: `{causal['assembly_collateral_damage']:.3f}`",
-        f"- Targeted physical-unit impairment (diagnostic): `{causal['unit_targeted_impairment']:.3f}`",
-        f"- Physical-unit collateral damage (diagnostic): `{causal['unit_collateral_damage']:.3f}`",
-        "",
-        "## Interpretation",
-        "",
-    ])
+    lines.extend(
+        [
+            "",
+            "## Causal intervention aggregate",
+            "",
+            f"- Targeted Assembly impairment: `{causal['assembly_targeted_impairment']:.3f}`",
+            f"- Matched random Assembly impairment: `{causal['assembly_random_impairment']:.3f}`",
+            f"- Assembly collateral damage: `{causal['assembly_collateral_damage']:.3f}`",
+            f"- Targeted physical-unit impairment (diagnostic): `{causal['unit_targeted_impairment']:.3f}`",
+            f"- Physical-unit collateral damage (diagnostic): `{causal['unit_collateral_damage']:.3f}`",
+            "",
+            "## Interpretation",
+            "",
+        ]
+    )
     if payload["completion"] == "positive_completion":
         lines.append(
             "All preregistered engineering/scientific gates passed in this bounded synthetic protocol; the strongest permitted phrase is **causal functional temporal Assembly support under the retained controlled conditions**."
         )
     else:
-        failed = [name for name, value in payload["gates"].items() if not value and not name.startswith("P_")]
+        failed = [
+            name
+            for name, value in payload["gates"].items()
+            if not value and not name.startswith("P_")
+        ]
         lines.append(
             "The implementation completed the protocol, but the full functional-Assembly hypothesis was not supported. Failed primary gates: "
             + ", ".join(f"`{name}`" for name in failed)
             + "."
         )
-    lines.extend([
-        "",
-        "The plasticity-dependency gate is diagnostic and does not upgrade a claim by itself.",
-        "",
-    ])
+    lines.extend(
+        [
+            "",
+            "The plasticity-dependency gate is diagnostic and does not upgrade a claim by itself.",
+            "",
+        ]
+    )
     return "\n".join(lines)

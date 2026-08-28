@@ -2,7 +2,12 @@ from __future__ import annotations
 
 import pytest
 
-from sparkbrain.v05.evaluation import V05ProtocolConfig, render_v05_report, run_v05_reference_experiments, summarize_rows
+from sparkbrain.v05.evaluation import (
+    V05ProtocolConfig,
+    render_v05_report,
+    run_v05_reference_experiments,
+    summarize_rows,
+)
 from sparkbrain.v05.worlds import MOTIF_X, MOTIF_Y, make_episode
 
 
@@ -14,19 +19,11 @@ def test_hidden_generators_share_elements_but_differ_in_order() -> None:
 
 def test_order_control_changes_order_without_label_leakage() -> None:
     ordered = make_episode(seed=1, index=1, motif=MOTIF_X, condition="motif")
-    ordered_channels = [
-        p.channel for p in ordered.pulses if p.source_id == "temporal-input-stream"
-    ]
+    ordered_channels = [p.channel for p in ordered.pulses if p.source_id == "temporal-input-stream"]
     canonical = {MOTIF_X.channels, MOTIF_Y.channels}
     for index in range(1, 8):
-        shuffled = make_episode(
-            seed=1, index=index, motif=MOTIF_X, condition="order_shuffle"
-        )
-        channels = [
-            p.channel
-            for p in shuffled.pulses
-            if p.source_id == "temporal-input-stream"
-        ]
+        shuffled = make_episode(seed=1, index=index, motif=MOTIF_X, condition="order_shuffle")
+        channels = [p.channel for p in shuffled.pulses if p.source_id == "temporal-input-stream"]
         assert sorted(ordered_channels) == sorted(channels)
         assert tuple(channels) not in canonical
     for pulse in ordered.pulses:

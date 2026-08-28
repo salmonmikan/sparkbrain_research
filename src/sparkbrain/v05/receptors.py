@@ -1,8 +1,9 @@
 from __future__ import annotations
 
 import math
+from collections.abc import Iterable
 from dataclasses import asdict, dataclass, field
-from typing import Any, Iterable
+from typing import Any
 
 from sparkbrain.v04.contracts import SignalPulse
 
@@ -137,16 +138,12 @@ class MultiTimescaleReceptorBank:
 
     def state_dict(self) -> dict[str, Any]:
         return {
-            "channels": {
-                name: asdict(state) for name, state in sorted(self.channels.items())
-            },
+            "channels": {name: asdict(state) for name, state in sorted(self.channels.items())},
             "config": asdict(self.config),
         }
 
     @classmethod
     def from_state_dict(cls, value: dict[str, Any]) -> MultiTimescaleReceptorBank:
         bank = cls(ReceptorConfig(**value["config"]))
-        bank.channels = {
-            str(name): _ChannelState(**row) for name, row in value["channels"].items()
-        }
+        bank.channels = {str(name): _ChannelState(**row) for name, row in value["channels"].items()}
         return bank

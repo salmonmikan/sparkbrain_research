@@ -50,7 +50,6 @@ def test_training_and_held_out_episode_run() -> None:
     assert result.state_hash
 
 
-
 def test_primary_patterns_exclude_receptor_units() -> None:
     brain = IntegratedV05Brain()
     episode = training_episodes(seed=501, count=1)[0]
@@ -59,6 +58,7 @@ def test_primary_patterns_exclude_receptor_units() -> None:
     assert result.patterns
     assert all(pattern.source_kind == "internal_reservoir" for pattern in result.patterns)
     assert all(not (set(pattern.unit_ids) & receptor_ids) for pattern in result.patterns)
+
 
 def test_checkpoint_restores_pending_state_and_detects_tamper(tmp_path: Path) -> None:
     brain = trained_brain(4)

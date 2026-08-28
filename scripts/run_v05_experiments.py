@@ -21,7 +21,17 @@ def main() -> int:
     args.output.write_text(canonical_json(payload) + "\n", encoding="utf-8")
     write_v05_html(args.html, payload)
     args.report.write_text(render_v05_report(payload) + "\n", encoding="utf-8")
-    print(json.dumps({"completion": payload["completion"], "gates": payload["gates"], "output": str(args.output), "report": str(args.report)}, indent=2))
+    print(
+        json.dumps(
+            {
+                "completion": payload["completion"],
+                "gates": payload["gates"],
+                "output": str(args.output),
+                "report": str(args.report),
+            },
+            indent=2,
+        )
+    )
     return 0
 
 

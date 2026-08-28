@@ -1,6 +1,11 @@
 from __future__ import annotations
 
-from sparkbrain.v05 import ActivityPattern, AssemblyConfig, TemporalAssemblyMemory, pattern_similarity
+from sparkbrain.v05 import (
+    ActivityPattern,
+    AssemblyConfig,
+    TemporalAssemblyMemory,
+    pattern_similarity,
+)
 
 
 def pattern(name: str, ordered: tuple[int, ...], bins: tuple[int, ...]) -> ActivityPattern:
@@ -18,10 +23,7 @@ def pattern(name: str, ordered: tuple[int, ...], bins: tuple[int, ...]) -> Activ
 def test_repeated_pattern_matures_only_across_distinct_episodes() -> None:
     memory = TemporalAssemblyMemory(AssemblyConfig(mature_episodes=3))
     p = pattern("p", (1, 2, 3), (0, 2, 4))
-    same_episode = [
-        memory.observe(p, time_ms=float(i), episode_id="episode-a")
-        for i in range(3)
-    ]
+    same_episode = [memory.observe(p, time_ms=float(i), episode_id="episode-a") for i in range(3)]
     assert same_episode[-1] is not None
     assert not same_episode[-1].mature
     assert same_episode[-1].occurrences == 3

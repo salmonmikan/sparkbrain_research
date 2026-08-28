@@ -29,7 +29,9 @@ def test_homeostasis_raises_frequently_active_threshold() -> None:
 
 def test_plasticity_separates_weight_and_delay_modes() -> None:
     weight_field = field()
-    weight_only = V05PlasticityController(V05PlasticityConfig(enable_weight_learning=True, enable_delay_learning=False))
+    weight_only = V05PlasticityController(
+        V05PlasticityConfig(enable_weight_learning=True, enable_delay_learning=False)
+    )
     before_weight = weight_field.connections[(0, 1)].weight
     before_delay = weight_field.connections[(0, 1)].delay_ms
     weight_only.apply(weight_field, [spike(0.0, 0), spike(3.0, 1)])
@@ -37,7 +39,9 @@ def test_plasticity_separates_weight_and_delay_modes() -> None:
     assert weight_field.connections[(0, 1)].delay_ms == before_delay
 
     delay_field = field()
-    delay_only = V05PlasticityController(V05PlasticityConfig(enable_weight_learning=False, enable_delay_learning=True))
+    delay_only = V05PlasticityController(
+        V05PlasticityConfig(enable_weight_learning=False, enable_delay_learning=True)
+    )
     before_weight = delay_field.connections[(0, 1)].weight
     before_delay = delay_field.connections[(0, 1)].delay_ms
     delay_only.apply(delay_field, [spike(0.0, 0), spike(3.0, 1)])

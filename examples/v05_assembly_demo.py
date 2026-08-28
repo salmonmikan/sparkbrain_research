@@ -18,13 +18,19 @@ def main() -> int:
         learn_assembly=False,
         learn_field=False,
     )
-    print(json.dumps({
-        "action": result.action.as_dict(),
-        "assemblies": [row.as_dict() for row in result.assembly_activations],
-        "expected_action": episode.rewarded_action,
-        "expected_prediction": episode.future_event,
-        "prediction": result.prediction.as_dict(),
-    }, ensure_ascii=False, indent=2))
+    print(
+        json.dumps(
+            {
+                "action": result.action.as_dict(),
+                "assemblies": [row.as_dict() for row in result.assembly_activations],
+                "expected_action": episode.rewarded_action,
+                "expected_prediction": episode.future_event,
+                "prediction": result.prediction.as_dict(),
+            },
+            ensure_ascii=False,
+            indent=2,
+        )
+    )
     return 0
 
 

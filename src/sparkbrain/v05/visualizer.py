@@ -8,7 +8,10 @@ from typing import Any
 
 def _seed_rows(payload: dict[str, Any]) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
-    for key, phase in (("development_results", "development"), ("confirmatory_results", "confirmatory")):
+    for key, phase in (
+        ("development_results", "development"),
+        ("confirmatory_results", "confirmatory"),
+    ):
         for row in payload.get(key, []):
             item = dict(row)
             item["protocol_phase"] = phase

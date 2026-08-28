@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import asdict, dataclass, field
+from dataclasses import dataclass, field
 from typing import Any
 
 from .contracts import AssemblyActivation, PredictionDecision
@@ -25,12 +25,7 @@ class AssemblyPredictor:
         )
 
     def observe(self, activation: AssemblyActivation | None, value: str | None) -> None:
-        if (
-            activation is None
-            or activation.suppressed
-            or not activation.mature
-            or value is None
-        ):
+        if activation is None or activation.suppressed or not activation.mature or value is None:
             return
         table = self.counts.setdefault(activation.assembly_id, {})
         table[value] = table.get(value, 0) + 1

@@ -38,7 +38,10 @@ class AssemblyActionPolicy:
         if explore and visits < self.config.exploration_visits:
             action = self.config.actions[visits % len(self.config.actions)]
         else:
-            action = max(self.config.actions, key=lambda item: (table[item], -self.config.actions.index(item)))
+            action = max(
+                self.config.actions,
+                key=lambda item: (table[item], -self.config.actions.index(item)),
+            )
         self.visits[assembly_id] = visits + 1
         self.pending = (assembly_id, action)
         values = sorted(table.values(), reverse=True)

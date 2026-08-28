@@ -2,8 +2,9 @@ from __future__ import annotations
 
 import hashlib
 import math
+from collections.abc import Iterable
 from dataclasses import asdict, dataclass, field
-from typing import Any, Iterable
+from typing import Any
 
 from sparkbrain.v04.contracts import CascadeEvent, SpikeEvent, canonical_json
 
@@ -54,12 +55,13 @@ def _timing_similarity(left: ActivityPattern, right: ActivityPattern) -> float:
         return 0.0
     if len(left.relative_bins) == len(right.relative_bins):
         error = sum(
-            abs(a - b)
-            for a, b in zip(left.relative_bins, right.relative_bins, strict=True)
+            abs(a - b) for a, b in zip(left.relative_bins, right.relative_bins, strict=True)
         ) / len(left.relative_bins)
         return math.exp(-error / 2.0)
 
-    short, long = (left, right) if len(left.ordered_units) < len(right.ordered_units) else (right, left)
+    short, long = (
+        (left, right) if len(left.ordered_units) < len(right.ordered_units) else (right, left)
+    )
     if len(short.ordered_units) < 2:
         return 0.0
     from itertools import combinations
@@ -71,9 +73,7 @@ def _timing_similarity(left: ActivityPattern, right: ActivityPattern) -> float:
         selected = tuple(long.relative_bins[i] for i in indices)
         selected = tuple(value - selected[0] for value in selected)
         short_bins = tuple(value - short.relative_bins[0] for value in short.relative_bins)
-        error = sum(
-            abs(a - b) for a, b in zip(selected, short_bins, strict=True)
-        ) / len(short_bins)
+        error = sum(abs(a - b) for a, b in zip(selected, short_bins, strict=True)) / len(short_bins)
         best = max(best, math.exp(-error / 4.0))
     return best
 
@@ -98,10 +98,7 @@ def pattern_from_spikes(
     if len(rows) < 2:
         return None
     start = rows[0].time_ms
-    sequence = [
-        [row.unit_id, int(round((row.time_ms - start) / temporal_bin_ms))]
-        for row in rows
-    ]
+    sequence = [[row.unit_id, int(round((row.time_ms - start) / temporal_bin_ms))] for row in rows]
     payload = {
         "sequence": sequence,
         "source_cascade_id": source_cascade_id,
@@ -303,9 +300,7 @@ class TemporalAssemblyMemory:
 
     def state_dict(self) -> dict[str, Any]:
         return {
-            "candidates": {
-                key: value.as_dict() for key, value in sorted(self.candidates.items())
-            },
+            "candidates": {key: value.as_dict() for key, value in sorted(self.candidates.items())},
             "config": asdict(self.config),
             "next_id": self.next_id,
             "suppressed": sorted(self.suppressed),
@@ -318,9 +313,7 @@ class TemporalAssemblyMemory:
         if "mature_occurrences" in config:
             config["mature_episodes"] = config.pop("mature_occurrences")
         if "immature_stale_occurrences" in config:
-            config["immature_stale_episodes"] = config.pop(
-                "immature_stale_occurrences"
-            )
+            config["immature_stale_episodes"] = config.pop("immature_stale_occurrences")
         row = cls(AssemblyConfig(**config))
         row.next_id = int(value["next_id"])
         row.suppressed = set(value["suppressed"])

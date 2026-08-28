@@ -1,7 +1,8 @@
 from __future__ import annotations
 
+from collections.abc import Iterable
 from dataclasses import asdict, dataclass, field
-from typing import Any, Iterable
+from typing import Any
 
 from sparkbrain.v04.contracts import SpikeEvent
 from sparkbrain.v04.field import TemporalExcitableField
@@ -43,9 +44,7 @@ class HomeostaticController:
             current = float(counts.get(unit_id, 0))
             rate = self.config.rate_decay * previous + (1.0 - self.config.rate_decay) * current
             self.rate_ema[unit_id] = rate
-            delta = self.config.learning_rate * (
-                rate - self.config.target_spikes_per_window
-            )
+            delta = self.config.learning_rate * (rate - self.config.target_spikes_per_window)
             unit.base_threshold = max(
                 self.config.min_threshold,
                 min(self.config.max_threshold, unit.base_threshold + delta),
@@ -68,7 +67,6 @@ class HomeostaticController:
             mean_threshold=mean_threshold,
         )
 
-
     def snapshot(
         self,
         field: TemporalExcitableField,
@@ -89,6 +87,7 @@ class HomeostaticController:
             dead=False,
             mean_threshold=mean_threshold,
         )
+
     def state_dict(self) -> dict[str, Any]:
         return {
             "config": asdict(self.config),
