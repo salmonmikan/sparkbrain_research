@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import copy
+import importlib.util
 
 import pytest
 
@@ -11,6 +12,12 @@ from sparkbrain.v03 import (
     V03StepResult,
 )
 from sparkbrain.v03_seed import EvidenceContribution
+
+TORCH_AVAILABLE = importlib.util.find_spec("torch") is not None
+requires_torch = pytest.mark.skipif(
+    not TORCH_AVAILABLE,
+    reason="I3 integration requires the optional learned torch runtime",
+)
 
 
 def sample(
@@ -239,6 +246,7 @@ def test_oracle_tracks_are_separated_and_e2_is_not_fabricated() -> None:
         )
 
 
+@requires_torch
 def test_i3_is_truth_free_and_exposes_revision_and_attribution() -> None:
     brain = IntegratedV03Brain(V03BrainConfig(input_track="I3_truth_free_revision"))
     first = brain.step(sample("i3", 0, source="source-a", metadata={}))

@@ -35,6 +35,7 @@ INTEGRATION_MODULES = {
     "test_brain_lab_api.py",
     "test_brain_lab_e2e.py",
     "test_brain_lab_service.py",
+    "test_v031_brain_lab_api.py",
 }
 
 REPRODUCTION_NODEIDS = {

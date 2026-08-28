@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import builtins
 import copy
+import importlib.util
 import json
 import subprocess
 import sys
@@ -21,6 +22,12 @@ from sparkbrain.v03 import (
 )
 from sparkbrain.v03.runtime import ABLATIONS, ACTION_TYPES
 from sparkbrain.v03_seed import EvidenceContribution
+
+TORCH_AVAILABLE = importlib.util.find_spec("torch") is not None
+requires_torch = pytest.mark.skipif(
+    not TORCH_AVAILABLE,
+    reason="I3 integration requires the optional learned torch runtime",
+)
 
 
 def sample(index: int, *, text: str = "stable target", channel: str | None = None) -> SensorySample:
@@ -162,6 +169,7 @@ def test_all_six_action_types_are_distinguishable() -> None:
     assert seen == set(ACTION_TYPES)
 
 
+@requires_torch
 def test_i3_uses_actual_c15_revision_controller_state() -> None:
     brain = IntegratedV03Brain(V03BrainConfig(input_track="I3_truth_free_revision"))
     brain.step(sample(0))
@@ -175,6 +183,7 @@ def test_i3_uses_actual_c15_revision_controller_state() -> None:
     assert controller["seen_evidence_ids"]
 
 
+@requires_torch
 def test_i3_objective_and_structural_ablations_reach_actual_controller_boundary() -> None:
     no_revision = IntegratedV03Brain(
         V03BrainConfig(
