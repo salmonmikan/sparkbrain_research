@@ -45,4 +45,4 @@ def test_external_and_local_service_boundaries_are_distinguished() -> None:
         text=True,
     )
     assert collected.returncode == 0
-    assert "4 tests collected" in collected.stdout
+    assert "5 tests collected" in collected.stdout
