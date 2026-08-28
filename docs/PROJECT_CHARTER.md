@@ -2,11 +2,11 @@
 
 ## v0.3 status boundary
 
-The current package is `0.3.0`; `0.3.1` denotes corrective work until package metadata is advanced.
+The current package is `0.3.1`.
 The legacy persisted schema remains `0.2`, while C18 owns an additive explicit schema `0.3`.
 C11--C18 are accepted only at their individual registered boundaries. C19 is blocked and not
-evaluated. The integrated v0.3 runtime described below remains a completion target, not evidence
-that an integrated artificial brain already exists.
+evaluated. The integrated v0.3 runtime and live Brain Lab are accepted as engineering evidence,
+not evidence that a scientifically supported integrated artificial brain already exists.
 
 ## 1. 目的
 
@@ -204,7 +204,7 @@ Level Dとは独立。実機へ移す場合のみ実施する。
 | Learned routing | implemented | controlled evidence; no general claim upgrade |
 | GRU/Transformer/RIM | implemented | reduced matched-baseline quality/compute boundary retained |
 | Legacy local Brain Lab | accepted locally | v0.2 reference engine only |
-| Live integrated v0.3 Brain Lab | 未完了 | versioned runtime/API required |
+| Live integrated v0.3 Brain Lab | engineering accepted | versioned runtime/API; no scientific claim upgrade |
 | Local spiking backend | reduced hybrid boundary | broader equivalence remains open |
 | Structural plasticity | completed negative result | C08 / C17 do not support organ formation |
 | C19 external validation | blocked | truth-free adapter and new protocol required |

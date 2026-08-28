@@ -19,9 +19,7 @@ def build_command(tier: str, pytest_args: Sequence[str] = ()) -> list[str]:
     """Return the pytest command for *tier*; release intentionally includes every marker."""
     command = [sys.executable, "-m", "pytest"]
     if tier == "release":
-        command.extend(
-            ["-o", "addopts=-q -p no:cacheprovider --assert=plain --basetemp=.pytest-tmp"]
-        )
+        command.extend(["-o", "addopts=-q -p no:cacheprovider --assert=plain"])
     else:
         command.extend(["-m", TIER_SELECTORS[tier]])
     command.extend(pytest_args)

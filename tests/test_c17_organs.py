@@ -525,7 +525,8 @@ def test_candidate_absence_is_engineering_success_and_scientific_negative(
     acceptance = bundle["acceptance_matrix.json"]
     failed_gates = [row for row in acceptance["engineering_gates"] if not row["passed"]]
     assert failed_gates == [
-        {"gate_id": "reproduction_exact", "observed": False, "passed": False}
+        {"gate_id": "protected_hashes", "observed": False, "passed": False},
+        {"gate_id": "reproduction_exact", "observed": False, "passed": False},
     ]
     assert acceptance["engineering_status"] == "implementation_failure"
     assert acceptance["scientific_status"] == "not_supported"

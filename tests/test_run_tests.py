@@ -28,7 +28,7 @@ def test_release_overrides_default_exclusions() -> None:
         "-m",
         "pytest",
         "-o",
-        "addopts=-q -p no:cacheprovider --assert=plain --basetemp=.pytest-tmp",
+        "addopts=-q -p no:cacheprovider --assert=plain",
     ]
 
 

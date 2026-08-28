@@ -16,9 +16,9 @@ scientific-result reproduction or release-artifact regeneration.
 | Release | `python scripts/run_tests.py release` | Complete marker-inclusive validation, including release/reproduction and external-boundary guards. |
 
 `python -m pytest -q` is the engineering default: it excludes `scientific`, `reproduction`, and
-`external`. Each worktree uses its own ignored `.pytest-tmp` base directory, so concurrent
-worktrees do not contend for the previous shared `../.sparkbrain-pytest-runtime` directory or the
-global user temporary directory.
+`external`. Pytest chooses its normal collision-safe, per-session temporary directory. The suite
+does not force a shared or repository-local `--basetemp`, because stale Windows ownership and
+concurrent worktrees can otherwise turn cleanup into a permission failure before a test runs.
 
 ## Classification
 
@@ -35,16 +35,15 @@ global user temporary directory.
 - The original shared `--basetemp=../.sparkbrain-pytest-runtime` caused concurrently launched
   pytest processes to contend; that run is recorded as invalid for pass/fail timing rather than
   treated as a product regression. The configuration no longer has this cross-worktree collision.
-- After classification and the eight selector/classification unit tests, collection found 812 tests:
-  Fast 420, Engineering/default 436, Scientific 156, Reproduction 163, External 57, and Release
-  812. The Fast tier is 16 local integration tests smaller than Engineering.
-- Focused selector/classification tests: 8 passed in 0.03s.
-- Fast: 414 passed, 6 failed, 392 deselected in 22.85s. Engineering/default: 430 passed, 6 failed,
-  376 deselected in 22.71s. The six failures are the known C11/C12 fail-closed protected-hash
-  mismatch for `docs/CLAIMS_REGISTER.md`; no marker masks them.
-- Scientific: 155 passed, 1 failed, 656 deselected in 172.34s. The failure is the retained C17
-  candidate-absence negative-result assertion on this integration head; it remains visible in the
-  scientific tier and is not reclassified as a passing result.
+- After v0.3.1 integration and tier classification, collection found 853 tests. Fast executes 457,
+  Engineering/default 473, Scientific 156, and Release all 853. The Fast tier is 16 local
+  integration tests smaller than Engineering.
+- Focused selector/classification tests: 8 passed.
+- Fast: 457 passed, 396 deselected in 43.71s. Engineering/default: 473 passed, 380 deselected in
+  43.88s.
+- Scientific: 156 passed, 697 deselected in 158.59s. The C17 candidate-absence fixture remains a
+  scientific negative; its test also asserts the separate historical protected-hash and external
+  reproduction gates rather than treating either as scientific support.
 - Release runs every marker category. It is the required path for clean-room/reproduction tests;
   it must be run from a source/hash-compatible integration head before treating protected-artifact
   assertions as release failures.
