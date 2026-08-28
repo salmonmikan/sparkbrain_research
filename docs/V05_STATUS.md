@@ -29,6 +29,10 @@ This statement is limited by the following negative and diagnostic results:
 - targeted physical-unit ablation caused high collateral damage (`0.719` aggregate), so localized physical-unit substrate specificity is not supported;
 - the cleaner causal result is at the Assembly-path intervention level, where targeted impairment was `1.000`, matched-random impairment was `0.000`, and collateral damage was `0.000`.
 
+## Validation contract
+
+The v0.4 and v0.5 source trees are normalized against the current Ruff contract. The branch is accepted for promotion only after the ordinary repository CI passes on both Python 3.11 and Python 3.13; the CI result, not this sentence, is authoritative.
+
 ## Interpretation boundary
 
 This is a controlled, synthetic, pre-semantic local experiment. It does not establish semantic concepts, human-like concept formation, organs, consciousness, AGI, biological equivalence, external-task superiority, or physical energy efficiency.
