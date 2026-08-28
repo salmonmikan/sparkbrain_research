@@ -1,5 +1,5 @@
 {
-  "file_count": 712,
+  "file_count": 742,
   "files": [
     {
       "artifact_class": "documentation",
@@ -16,8 +16,8 @@
     {
       "artifact_class": "package-metadata",
       "path": ".gitignore",
-      "sha256": "d2ff285fd30632d1dfc06da7e09e42212ef476138625832d0481cafe3077b2db",
-      "size": 629
+      "sha256": "d4283b1c918907adbd37115d5a09196159f1603147995275486adc7e8f989131",
+      "size": 657
     },
     {
       "artifact_class": "documentation",
@@ -28,8 +28,8 @@
     {
       "artifact_class": "documentation",
       "path": "CHANGELOG.md",
-      "sha256": "e247dba245bf389da94c52b7c33a8f4d299a60845f3cc6b081743de6844fe8cc",
-      "size": 1122
+      "sha256": "fcbe322bc2ce06783e2419a4a56623640ebb4e14a5887c517a2d69ec47ef8933",
+      "size": 2733
     },
     {
       "artifact_class": "documentation",
@@ -64,8 +64,8 @@
     {
       "artifact_class": "documentation",
       "path": "README.md",
-      "sha256": "b438f5a94bad4efdbcddccfbd7fc06c8ecd077ebc176f4c583397f88eb76c6e4",
-      "size": 11661
+      "sha256": "a92215003436043ca3ed0de60f08cb5c4568e1674278d064f7021a2e3f3c5b90",
+      "size": 13028
     },
     {
       "artifact_class": "package-metadata",
@@ -1200,6 +1200,66 @@
       "path": "artifacts/release/sbom.spdx.json",
       "sha256": "079976f4476aed02aa4212f4fc4264f4df3c313f88a2994cbddbf7599b518d0e",
       "size": 9864
+    },
+    {
+      "artifact_class": "generated-release-evidence",
+      "path": "artifacts/release/v0.3.1/claim_boundary_figure.svg",
+      "sha256": "f4b58a74343188820cdde32c5709e489d5a3ed9a521af7109e35c11bd585527f",
+      "size": 559
+    },
+    {
+      "artifact_class": "generated-release-evidence",
+      "path": "artifacts/release/v0.3.1/evidence_map.json",
+      "sha256": "59cb211c0bbac63bb2867930031a832b5f8f809e9eab14fe4079fd6e6fda9f72",
+      "size": 7901
+    },
+    {
+      "artifact_class": "generated-release-evidence",
+      "path": "artifacts/release/v0.3.1/primary_subset.json",
+      "sha256": "9735d24fba4cdee01628d2d53f03725f39b55adf3d8cc1965b4bd1d4eabb8fd7",
+      "size": 1902
+    },
+    {
+      "artifact_class": "generated-release-evidence",
+      "path": "artifacts/release/v0.3.1/release_figure.svg",
+      "sha256": "def5ce4254ca910020835825a6359eead1da0bfb9a2bd4fd30a05e1a98e0bd80",
+      "size": 2528
+    },
+    {
+      "artifact_class": "generated-release-evidence",
+      "path": "artifacts/release/v0.3.1/release_metadata.json",
+      "sha256": "ed9a192c9767bc370ecf5f343bff6568eae0c7a1a70183bb03157782fd00cc72",
+      "size": 481
+    },
+    {
+      "artifact_class": "generated-release-evidence",
+      "path": "artifacts/release/v0.3.1/release_report.md",
+      "sha256": "5b6176b494e170c62cb65ce3a0535642d1867ef6c157d801e72be6cffccab953",
+      "size": 2246
+    },
+    {
+      "artifact_class": "generated-release-evidence",
+      "path": "artifacts/release/v0.3.1/reproduction_manifest.json",
+      "sha256": "97ed37b95c446a7deb8edfd1b66a110bdebccdd81aadc3e67497c9fa80c3b563",
+      "size": 641
+    },
+    {
+      "artifact_class": "generated-release-evidence",
+      "path": "artifacts/release/v0.3.1/sbom.spdx.json",
+      "sha256": "f7c24945490bad2fc38bfe13e9ce911267869d3d799db848e372416c9ddb1c4d",
+      "size": 9872
+    },
+    {
+      "artifact_class": "generated-release-evidence",
+      "path": "artifacts/release/v0.3.1/source_license_inventory.json",
+      "sha256": "688c05c384039814047c15721396fc5c70a582d5e9dba02c1094f737c44000cf",
+      "size": 3066
+    },
+    {
+      "artifact_class": "generated-release-evidence",
+      "path": "artifacts/release/v0.3.1/source_manifest.json",
+      "sha256": "7a83758d1416713bfc00e6444313ff71ac8f2e3242b582906b24860e99182bc5",
+      "size": 1293
     },
     {
       "artifact_class": "generated-release-evidence",
@@ -2408,6 +2468,18 @@
       "size": 1497
     },
     {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/v03/v031_integrated_runtime/brain_lab_static_observation.json",
+      "sha256": "246a287a8e31d6b43177a72b5dd4467a871d63b24989bb6a1430944eb58e505a",
+      "size": 37044
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/v03/v031_integrated_runtime/v031_integrated_engineering_evaluation.json",
+      "sha256": "f27e10af7d44c7d619438590bc742a0fe4b04e0a8abb1bc68b1a5aab61037552",
+      "size": 86683
+    },
+    {
       "artifact_class": "configuration-or-schema",
       "path": "configs/experiments/phase1/main.json",
       "sha256": "9b91c86e34966f479fa6bb8b0011ff4a5a8fc189f8ddc5bb3413f73f2cec7b9d",
@@ -2518,8 +2590,8 @@
     {
       "artifact_class": "documentation",
       "path": "docs/BRAIN_LAB.md",
-      "sha256": "b5e27243494693803aca981d7842a03581fb2d3ff1173b85bfc9e0f8065fc143",
-      "size": 5656
+      "sha256": "954519afa48797eab32fced100ff9cba18ea602b1c0a55a8bf81ffc809f43042",
+      "size": 7480
     },
     {
       "artifact_class": "documentation",
@@ -2566,14 +2638,14 @@
     {
       "artifact_class": "documentation",
       "path": "docs/CODEX_EXECUTION_BRIEF.md",
-      "sha256": "c48caec7b92bae044840f8341a3acda3635d51a3bcfef9b9b8c51645184c5b25",
-      "size": 4967
+      "sha256": "cfa7b04a6a72ee9bf85eee840cf44d6aca3fc85a7a077ba22d972e899c663a91",
+      "size": 5647
     },
     {
       "artifact_class": "documentation",
       "path": "docs/DECISION_LOG.md",
-      "sha256": "c1df3b3cc15c6864d892242b1bf0a10c33d8212d0d2c5f0c3915e2327ed907e7",
-      "size": 85922
+      "sha256": "89b81e38414a5ec96c3222393de654fdb291c1c11dba1b7d364619e1c1cd2172",
+      "size": 88463
     },
     {
       "artifact_class": "documentation",
@@ -2584,8 +2656,8 @@
     {
       "artifact_class": "documentation",
       "path": "docs/EXPERIMENT_PROTOCOL.md",
-      "sha256": "56ca807a3079f49cad83af61279b61b8148a520aa787aa591df20aff3dff1ac7",
-      "size": 78396
+      "sha256": "48ebfed29a6b32986fad9fd05fab95ac3911390ef17b420e25d37acbec198ed6",
+      "size": 79635
     },
     {
       "artifact_class": "documentation",
@@ -2602,8 +2674,8 @@
     {
       "artifact_class": "documentation",
       "path": "docs/GLOSSARY.md",
-      "sha256": "148bec6b8bf814543a1e485c5dfb21c03bb7f42f2c84605c521689abedfd176a",
-      "size": 11792
+      "sha256": "e0846d756e3638e15993389b9ecde0af55b29c87f0d5864bf00a139b7b54bce3",
+      "size": 13515
     },
     {
       "artifact_class": "documentation",
@@ -2620,8 +2692,8 @@
     {
       "artifact_class": "documentation",
       "path": "docs/MASTER_ROADMAP.md",
-      "sha256": "9c7d749a313df8a5eeaa8df6c3f0e98ce37d50810f20f6872ae2f51fc542f9c7",
-      "size": 9713
+      "sha256": "a6be45d2f34708b6762308f992947df938fd50a743330f085ee66c77ad54b394",
+      "size": 10580
     },
     {
       "artifact_class": "documentation",
@@ -2650,20 +2722,20 @@
     {
       "artifact_class": "documentation",
       "path": "docs/PROJECT_CHARTER.md",
-      "sha256": "e0bc371c4bad2dae26d753bdc3239c4a9e11a689f41bfa73e43a0bc6e5db877a",
-      "size": 8706
+      "sha256": "775ed015b2862641d64516cf62888df5bb7eff6a0969dd646e582cfef9dd643d",
+      "size": 9845
     },
     {
       "artifact_class": "documentation",
       "path": "docs/PROJECT_STATUS.md",
-      "sha256": "d8fdd4218d9d4731b3532c96623ae1f501500df5cd025e84eaa0ac36fbdd4b84",
-      "size": 29248
+      "sha256": "8729cb41a1a32dc2829528812b5fa3911b6642f24a4fa9341818180701cc5805",
+      "size": 30644
     },
     {
       "artifact_class": "documentation",
       "path": "docs/RESULTS_LEDGER.md",
-      "sha256": "9ccdb9718c0111134b99ce1f1eac808d7af6000fe018ea128ced41477f0b6be6",
-      "size": 63812
+      "sha256": "f7747de6ff2207d3352e442200789b34a7b1f170f70e97595ad931619ad520b4",
+      "size": 66281
     },
     {
       "artifact_class": "documentation",
@@ -2674,8 +2746,8 @@
     {
       "artifact_class": "documentation",
       "path": "docs/SOFTWARE_ARCHITECTURE.md",
-      "sha256": "d17b3883c41315c9fa4a11204014e89d4cf10c9a2c85e800956d0b953f371fa0",
-      "size": 20484
+      "sha256": "e1435b1f227f1cd28ae23e79479e395952ed26b6122552bf541933b5169c13a8",
+      "size": 21672
     },
     {
       "artifact_class": "documentation",
@@ -2686,8 +2758,8 @@
     {
       "artifact_class": "documentation",
       "path": "docs/START_HERE.md",
-      "sha256": "a6a3023b3b515c338f4b5cec88275c3dfc9708e184787f836c25e7a6f1d1f8ab",
-      "size": 3603
+      "sha256": "0d7fd436f2608769eb00e2b1cf3ad7bd2a6b3a22dbfab8d0e03c3a0d43451818",
+      "size": 4787
     },
     {
       "artifact_class": "documentation",
@@ -2721,6 +2793,12 @@
     },
     {
       "artifact_class": "documentation",
+      "path": "docs/TEST_TIERS.md",
+      "sha256": "8d89c6552c65a8ed0a777eacb1c11eee93eed399cb7a58fa7822c718afd26d73",
+      "size": 3582
+    },
+    {
+      "artifact_class": "documentation",
       "path": "docs/THEORY_SPEC_v0.2.1.md",
       "sha256": "7a1425ed3aa194136022dcbf9ec43f93fd07b002e9282eee138c0a54ae8ce4e3",
       "size": 16087
@@ -2730,6 +2808,12 @@
       "path": "docs/THEORY_SPEC_v0.2.md",
       "sha256": "c0651b686c4a13bad7541e1bce1a7cdd94af339c81aca9dd40e4b8927e78648a",
       "size": 13997
+    },
+    {
+      "artifact_class": "documentation",
+      "path": "docs/THEORY_SPEC_v0.3.md",
+      "sha256": "3263b28586f314c4eba0a123a01787d644b182650307214f120dc429671a667f",
+      "size": 10121
     },
     {
       "artifact_class": "documentation",
@@ -2746,14 +2830,14 @@
     {
       "artifact_class": "documentation",
       "path": "docs/V03_MIGRATION_AND_COMPATIBILITY.md",
-      "sha256": "45c564cb6013a886ea19dd158120f785096d833d65ac1c169b97c4d4d64d3fe1",
-      "size": 2354
+      "sha256": "19cd83153380ddbed465c0acc8ae972823f1e05656e59dbb76b38a3be5f07b4b",
+      "size": 2881
     },
     {
       "artifact_class": "documentation",
       "path": "docs/V03_TRACE_CHECKPOINT_BRAIN_LAB.md",
-      "sha256": "4540e8ba6455c0e06c3d251ff532fee779a15a2997209faeb3f38b557593a169",
-      "size": 1681
+      "sha256": "2d385da77fcdd40826d5e0d5ae400f937f985faa61079c1b9b505a8391d5a716",
+      "size": 2275
     },
     {
       "artifact_class": "documentation",
@@ -2937,6 +3021,12 @@
     },
     {
       "artifact_class": "documentation",
+      "path": "docs/plans/v031-release-evidence-plan.md",
+      "sha256": "fed05849872c7f159fb4b2e8cbe69705317a4dc346ea0797d4146d7f35b261da",
+      "size": 3323
+    },
+    {
+      "artifact_class": "documentation",
       "path": "docs/research/claim_challenge_report.md",
       "sha256": "52ac8fedcf337589849ec9bafc3b0b2bdd2849c13f76eb15012890aba161e4aa",
       "size": 2726
@@ -2974,14 +3064,14 @@
     {
       "artifact_class": "package-metadata",
       "path": "examples/v03_seed_demo.py",
-      "sha256": "3b1d5f627930f1245e00176cccc79f0c4ddc93e795f50fca976f026ddff5a930",
-      "size": 2447
+      "sha256": "f789db46125914585fd874cfa6fb4efa46134c3ea190548b33683b3ff6c63f3d",
+      "size": 2453
     },
     {
       "artifact_class": "package-metadata",
       "path": "pyproject.toml",
-      "sha256": "49f79fd7799b43533554b3fc77e4e0df97e0e6a61fad80e46d002a6f4d6ae5c3",
-      "size": 1280
+      "sha256": "174c41a4a32bdae6ce4b290c4bfa62fe5d6da7fad9693533a82c3a179327974c",
+      "size": 1667
     },
     {
       "artifact_class": "package-metadata",
@@ -3142,19 +3232,19 @@
     {
       "artifact_class": "reproduction-tooling",
       "path": "scripts/generate_v03_release_artifacts.py",
-      "sha256": "8b98dafb476c8dfa18b111cb8cd020d7198e2e67c1b4ae81e12f0bf8fc79c886",
-      "size": 1814
+      "sha256": "98554f091c462eb813a92f093e611de86e1a1877788f5ad255a82d9393439d24",
+      "size": 1936
     },
     {
       "artifact_class": "reproduction-tooling",
       "path": "scripts/generate_v03_root_manifest.py",
-      "sha256": "d944c13f16e038b04345808553b3235ed21b7f77490544f52fd9cf9cbe7eac85",
-      "size": 6757
+      "sha256": "ad5393c6885a09a83db5b533d8665fa1265ac933906f8d084d320d7002658c9e",
+      "size": 7023
     },
     {
       "artifact_class": "reproduction-tooling",
       "path": "scripts/local_readiness_check.py",
-      "sha256": "2a93604732d9a0826d963e15ccc32b3706bb94ea6c3d7393a6810ce3a3ea63e4",
+      "sha256": "82f850652c23184551a6a4c867eef5aef26f596f0fb419067da38c340fafe2ce",
       "size": 4850
     },
     {
@@ -3267,6 +3357,24 @@
     },
     {
       "artifact_class": "reproduction-tooling",
+      "path": "scripts/run_tests.py",
+      "sha256": "f4d9685a68c6b79025ca23d31829da04adc385b6a970263fb2dc9a6f7b99a8cb",
+      "size": 1421
+    },
+    {
+      "artifact_class": "reproduction-tooling",
+      "path": "scripts/run_v031_brain_lab_artifact.py",
+      "sha256": "ca50921928372a0bf1510320582be5e40f09fbc8e1d84fb53de4f033d5f27ea0",
+      "size": 3348
+    },
+    {
+      "artifact_class": "reproduction-tooling",
+      "path": "scripts/run_v031_integrated_evaluation.py",
+      "sha256": "bf6ea6fed9c362683bc3a1b365740a1a6b948746634cedf19c4a3282adc0b870",
+      "size": 2186
+    },
+    {
+      "artifact_class": "reproduction-tooling",
       "path": "scripts/validate_bundle.py",
       "sha256": "e8d3d19b3ba758677352774a36282454c634f69384ae2efdcbefc15e738a9906",
       "size": 10297
@@ -3286,7 +3394,7 @@
     {
       "artifact_class": "software",
       "path": "src/sparkbrain/__init__.py",
-      "sha256": "0337d9e5d07b32fb524eb60d49afee44a0cf75c29093326d80bcfa97352eef41",
+      "sha256": "a49b63339dcb16680ccd14b13f0346362a9e619e0dd4a59e7667fed0e46c39a3",
       "size": 908
     },
     {
@@ -3490,14 +3598,14 @@
     {
       "artifact_class": "software",
       "path": "src/sparkbrain/lab/app.py",
-      "sha256": "d379295db77b68907064611ee357b29cc04b079f0c948cd4395cda49debf1e2b",
-      "size": 4551
+      "sha256": "b00145ce7da1656462404450d9355f22931650da7f1337947e0451fbe1ba3128",
+      "size": 7972
     },
     {
       "artifact_class": "software",
       "path": "src/sparkbrain/lab/models.py",
-      "sha256": "5a9b2a54493198f2ddb072e22bb5b4c176dbf0e2e17342e1521d9d82f709d603",
-      "size": 1741
+      "sha256": "272ada415db3298698a35db0701dd0c8802fcb07a15ae5cc62bc01b0597b17b9",
+      "size": 2843
     },
     {
       "artifact_class": "software",
@@ -3508,20 +3616,26 @@
     {
       "artifact_class": "software",
       "path": "src/sparkbrain/lab/static/app.js",
-      "sha256": "97fb61914605a04724595c8bbe65e879050c7227b5558ff9d515cb972073b27a",
-      "size": 7034
+      "sha256": "1d8d7f91938338e3cba9ab0dad5865660212f4d347f0e5f9de78ae53d62ab603",
+      "size": 9172
     },
     {
       "artifact_class": "software",
       "path": "src/sparkbrain/lab/static/index.html",
-      "sha256": "bca141d6fd2eec55aefd843ad3e5dfbca146299ed08974c9766ff5df6e198af4",
-      "size": 4522
+      "sha256": "2b035799fbb6b32c6729fa599af491767b8561a6f6621c565dbd7f0fa690d675",
+      "size": 5187
     },
     {
       "artifact_class": "software",
       "path": "src/sparkbrain/lab/static/styles.css",
       "sha256": "ab304f413fcaa708a8a12103af465310f141dab81e3d08f712b6d7de9020c6c0",
       "size": 1819
+    },
+    {
+      "artifact_class": "software",
+      "path": "src/sparkbrain/lab/v03_service.py",
+      "sha256": "afc1ee1a62620bb20621aa7fc009d567a850d173b93472cda43269ef77dfa39a",
+      "size": 8032
     },
     {
       "artifact_class": "software",
@@ -3592,8 +3706,8 @@
     {
       "artifact_class": "software",
       "path": "src/sparkbrain/release.py",
-      "sha256": "425dc96344d9c222851c3202cbd98267449d6b0af1d2c6e8b0a8bd3be30be544",
-      "size": 43379
+      "sha256": "2429e244ca97bb7d05897afe1939e75d9b389a5c1dc0521f947f309de63fe0dc",
+      "size": 44755
     },
     {
       "artifact_class": "software",
@@ -3610,14 +3724,14 @@
     {
       "artifact_class": "software",
       "path": "src/sparkbrain/release_v03.py",
-      "sha256": "8f607b8bee1681d7d70e293b88950f4927fa55d3ed9bbd3d3c285d14e7e116a5",
-      "size": 18953
+      "sha256": "d10267af52dd6ffb1a3ef90518db9d274df8de2dc215354b4afff106fcb7f0b2",
+      "size": 20474
     },
     {
       "artifact_class": "software",
       "path": "src/sparkbrain/release_v03_artifacts.py",
-      "sha256": "ac094f8577ba1b93b17a569a7b0a9bf173d2df77ec7cd6d9b96eea95eedeadb4",
-      "size": 21797
+      "sha256": "561f50fde76d8c92bde28390858e7d77c01629300e77ed08a29c071ebbd3aea7",
+      "size": 30068
     },
     {
       "artifact_class": "software",
@@ -3732,6 +3846,24 @@
       "path": "src/sparkbrain/tasks/worlds.py",
       "sha256": "4c6e1df46dbbb860bf05b5378184c56c79f46ec7c08d1d706926e33115b28af1",
       "size": 9784
+    },
+    {
+      "artifact_class": "software",
+      "path": "src/sparkbrain/v03/__init__.py",
+      "sha256": "75a49fee6c79ad147791f4eb86338ed6aa269a2e7a46462219ab6cd60ce1639b",
+      "size": 722
+    },
+    {
+      "artifact_class": "software",
+      "path": "src/sparkbrain/v03/evaluation.py",
+      "sha256": "6f20efd4a656b6d50e9c39f4e2f4c16608cdeb110af11f78112d471a1eea0857",
+      "size": 26594
+    },
+    {
+      "artifact_class": "software",
+      "path": "src/sparkbrain/v03/runtime.py",
+      "sha256": "74374965dbf7989505cc50f6dedc0741677159a5261940747dbbdea225071ea1",
+      "size": 50726
     },
     {
       "artifact_class": "software",
@@ -3981,6 +4113,12 @@
     },
     {
       "artifact_class": "software",
+      "path": "tests/conftest.py",
+      "sha256": "0344d941c86c33ba225bed06c2eb4a5df21ab909f65e226747acd844327228ca",
+      "size": 1963
+    },
+    {
+      "artifact_class": "software",
       "path": "tests/test_baseline_package.py",
       "sha256": "d8db6b79179f62372fbe4596952a41bdc561f1bde4be450ef88b051fa970691a",
       "size": 1389
@@ -4060,8 +4198,8 @@
     {
       "artifact_class": "software",
       "path": "tests/test_c16_concept_runner.py",
-      "sha256": "4b537ddb8c9b6b2aa14b20bd0276cbaf964cc7dae9978921650cb52bd84edfd6",
-      "size": 24849
+      "sha256": "0815270f09a3bdbc0ee820d0dc79f9fad49fb257c9bb9621ba23991cbcd8d0a8",
+      "size": 25455
     },
     {
       "artifact_class": "software",
@@ -4072,14 +4210,14 @@
     {
       "artifact_class": "software",
       "path": "tests/test_c17_organ_runner.py",
-      "sha256": "a28cfadc32f4861a6754ae09aee2709cf486e9c7af5192c8bcb79c96856dfb65",
-      "size": 12072
+      "sha256": "5b77afe85202eaa3384c46ceeb141097e75279bdb0cf8c9b6e894936ac81e3cd",
+      "size": 12582
     },
     {
       "artifact_class": "software",
       "path": "tests/test_c17_organs.py",
-      "sha256": "aaf5a0d6c6b45ea0ac3e1152c06f4577c3365b91d3f012c414024551705e6fd3",
-      "size": 24918
+      "sha256": "24ee18e9a1e84e950629f41874faf40d596ef455e238a4ec57029aaaa23c5e62",
+      "size": 24996
     },
     {
       "artifact_class": "software",
@@ -4144,7 +4282,7 @@
     {
       "artifact_class": "software",
       "path": "tests/test_local_only.py",
-      "sha256": "dca8b79d2d9e2ce05e55fd5e16ed881d8722c1aa27236c7045f293965904a94f",
+      "sha256": "976e28686b60014e21519ee109f76116aa35b3de76fa7153f15e5c43476d0bf0",
       "size": 1793
     },
     {
@@ -4215,6 +4353,12 @@
     },
     {
       "artifact_class": "software",
+      "path": "tests/test_run_tests.py",
+      "sha256": "5acf77e6dfd1751b661379040e8eeca5aea1be3c22b81e18e2429373bade24d3",
+      "size": 1130
+    },
+    {
+      "artifact_class": "software",
       "path": "tests/test_schemas.py",
       "sha256": "fb611709fba44f14f708c970874a850aa63fa77827ef1164766521ee8d863c3c",
       "size": 1627
@@ -4245,21 +4389,57 @@
     },
     {
       "artifact_class": "software",
+      "path": "tests/test_test_tiers.py",
+      "sha256": "665d9db20f85d0cd60bc4736e24f52af9d02ecfdb15d7511b484f856372cc581",
+      "size": 897
+    },
+    {
+      "artifact_class": "software",
+      "path": "tests/test_v031_brain_lab_api.py",
+      "sha256": "3cd3f0a664967c4dd7055486ae272368e69d1a8e19a82037d59770c2a56d5528",
+      "size": 4666
+    },
+    {
+      "artifact_class": "software",
+      "path": "tests/test_v031_brain_lab_artifact.py",
+      "sha256": "c84f852ca7f5688de31aea54b3508929e5c67e7f102f20f39f11e51817488ccc",
+      "size": 731
+    },
+    {
+      "artifact_class": "software",
+      "path": "tests/test_v031_corrective_runtime.py",
+      "sha256": "4a0ec78ac96b43e9e23e7765ed7ccf14d87be854e876b830431f546e4acedf25",
+      "size": 13006
+    },
+    {
+      "artifact_class": "software",
+      "path": "tests/test_v031_integrated_runtime.py",
+      "sha256": "16d8d37de56b4adb41ea8da00bc380e67bf611ad9b9a7f40021ed40a9736e34c",
+      "size": 13338
+    },
+    {
+      "artifact_class": "software",
       "path": "tests/test_v03_private_review_bundle.py",
-      "sha256": "b2435a70ec360e1fc5d151b47e61be6b5f35cf93640c379a5e194f0a26936c54",
-      "size": 4621
+      "sha256": "6442f0615cf83026c5c3ac8b3ced97c5529d103c729738f3ac5d7feaf469414e",
+      "size": 9395
     },
     {
       "artifact_class": "software",
       "path": "tests/test_v03_release_artifacts.py",
-      "sha256": "5d918015d64614925c13db74f95badfbe6a0fb004e627ee03b7ae85f409bbdb9",
-      "size": 7085
+      "sha256": "ba03941658efcde250743f7bcddf7a0a35f9b7db842f2c10377b47e8a3af7af5",
+      "size": 12174
     },
     {
       "artifact_class": "software",
       "path": "tests/test_v03_release_compatibility.py",
-      "sha256": "1e3ca4642ddd727e337e7701ad82e635be4430e6f1bbbc0a580d3c7a8c0688fd",
+      "sha256": "ef097315da0e167ef04ccf5b07fb72ae75deb7e40ff01615c9a1af12a92bc387",
       "size": 1612
+    },
+    {
+      "artifact_class": "software",
+      "path": "tests/test_v03_seed_demo.py",
+      "sha256": "e292650c3d60a5fc5476882618f83e1e067eaf0ac25affab90daa33bdeee548d",
+      "size": 2050
     },
     {
       "artifact_class": "software",
@@ -4287,6 +4467,6 @@
     "release": "11",
     "system": "Windows"
   },
-  "source_revision": "c0ea99bb42ff7a7be5c8a76e2cfbc0a3192c6faf",
-  "uncompressed_bytes_excluding_manifest": 456286948
+  "source_revision": "75a8d196b29c34a7b28c2c76bf2aadd890351db7",
+  "uncompressed_bytes_excluding_manifest": 456639709
 }
