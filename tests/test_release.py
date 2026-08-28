@@ -14,6 +14,7 @@ from sparkbrain.release import (
     declared_project_license,
     integrity_problems,
     owner_blockers,
+    package_version,
     preparation_problems,
     project_license_selected,
     release_validation,
@@ -224,7 +225,7 @@ def test_integrated_release_preparation_passes_but_public_release_is_blocked() -
 
 def test_v03_final_manifest_replaces_the_historical_root_manifest() -> None:
     metadata = json.loads((ROOT / "RELEASE_METADATA.json").read_text(encoding="utf-8"))
-    assert metadata["package_version"] == "0.3.0"
+    assert metadata["package_version"] == package_version(ROOT)
     assert sha256_file(ROOT / "PACKAGE_MANIFEST.json") == metadata["manifest_sha256"]
     validation = release_validation(ROOT)
     assert validation["preparation_problems"] == []

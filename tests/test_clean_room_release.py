@@ -12,10 +12,12 @@ import pytest
 
 from sparkbrain.release import (
     RELEASE_METADATA_PATH,
+    package_version,
     release_mode,
     sha256_file,
     tracked_release_paths,
 )
+from sparkbrain.release_v03_artifacts import release_relative_for_version
 
 ROOT = Path(__file__).resolve().parents[1]
 CHILD_SENTINEL = "SPARKBRAIN_CLEAN_ROOM_CHILD"
@@ -134,8 +136,9 @@ def test_no_git_archive_runs_full_clean_room_contract(tmp_path: Path) -> None:
     _run(["git", "add", "--force", "--all"], cwd=fixture_repo)
     _run(["git", "commit", "--quiet", "-m", "clean-room fixture"], cwd=fixture_repo)
 
-    if (fixture_repo / "artifacts/release/v0.3/evidence_map.json").is_file():
-        shutil.rmtree(fixture_repo / "artifacts/release/v0.3")
+    release_relative = release_relative_for_version(package_version(fixture_repo))
+    if (fixture_repo / release_relative / "evidence_map.json").is_file():
+        shutil.rmtree(fixture_repo / release_relative)
         _run(["git", "add", "--update"], cwd=fixture_repo)
         _run(["git", "commit", "--quiet", "-m", "fixture source pin"], cwd=fixture_repo)
         revision = _run(["git", "rev-parse", "HEAD"], cwd=fixture_repo).stdout.strip()
@@ -150,7 +153,7 @@ def test_no_git_archive_runs_full_clean_room_contract(tmp_path: Path) -> None:
             ],
             cwd=fixture_repo,
         )
-        _run(["git", "add", "--force", "artifacts/release/v0.3"], cwd=fixture_repo)
+        _run(["git", "add", "--force", release_relative], cwd=fixture_repo)
         _run(["git", "commit", "--quiet", "-m", "fixture v0.3 artifacts"], cwd=fixture_repo)
         _run(
             [
