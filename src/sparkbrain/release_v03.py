@@ -363,6 +363,23 @@ def validate_private_review_bundle(path: Path) -> list[str]:
     return sorted(set(problems))
 
 
+def _publish_no_clobber(staging: Path, destination: Path) -> None:
+    """Atomically publish a staged file without replacing an existing path."""
+
+    os.link(staging, destination)
+
+
+def _unlink_published_if_ours(staging: Path, destination: Path) -> None:
+    """Rollback only while the destination still names the staged file."""
+
+    try:
+        is_ours = os.path.samefile(staging, destination)
+    except OSError:
+        return
+    if is_ours:
+        destination.unlink(missing_ok=True)
+
+
 def build_private_review_bundle(
     root: Path,
     *,
@@ -373,7 +390,13 @@ def build_private_review_bundle(
 ) -> dict[str, str]:
     if not _plain_int(source_date_epoch):
         raise ValueError("source_date_epoch must be an integer")
-    if output.exists() or output.is_symlink():
+    checksum_output = output.with_suffix(output.suffix + ".sha256")
+    if (
+        output.exists()
+        or output.is_symlink()
+        or checksum_output.exists()
+        or checksum_output.is_symlink()
+    ):
         raise ValueError("private review output already exists")
     source = build_source_manifest(root, source_revision=source_revision, paths=paths)
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -381,6 +404,7 @@ def build_private_review_bundle(
         prefix=".v03-private-review-", suffix=".zip", dir=output.parent, delete=False
     ) as temporary:
         staging = Path(temporary.name)
+    staging_checksum: Path | None = None
     published_bundle = False
     published_checksum = False
     try:
@@ -424,25 +448,36 @@ def build_private_review_bundle(
                 source_date_epoch,
             )
         checksum = f"{sha256_file(staging)}  {output.name}\n".encode("ascii")
-        staging_checksum = staging.with_suffix(staging.suffix + ".sha256")
-        staging_checksum.write_bytes(checksum)
-        os.rename(staging, output)
+        with tempfile.NamedTemporaryFile(
+            prefix=".v03-private-review-",
+            suffix=".zip.sha256",
+            dir=output.parent,
+            delete=False,
+        ) as temporary:
+            staging_checksum = Path(temporary.name)
+            temporary.write(checksum)
+        _publish_no_clobber(staging, output)
         published_bundle = True
-        os.rename(staging_checksum, output.with_suffix(output.suffix + ".sha256"))
+        _publish_no_clobber(staging_checksum, checksum_output)
         published_checksum = True
         problems = validate_private_review_bundle(output)
         if problems:
             raise ValueError("published private review validation failed: " + "; ".join(problems))
     except BaseException:
-        staging.unlink(missing_ok=True)
-        staging.with_suffix(staging.suffix + ".sha256").unlink(missing_ok=True)
-        if published_checksum:
-            output.with_suffix(output.suffix + ".sha256").unlink(missing_ok=True)
+        if published_checksum and staging_checksum is not None:
+            _unlink_published_if_ours(staging_checksum, checksum_output)
         if published_bundle:
-            output.unlink(missing_ok=True)
+            _unlink_published_if_ours(staging, output)
+        staging.unlink(missing_ok=True)
+        if staging_checksum is not None:
+            staging_checksum.unlink(missing_ok=True)
         raise
+    staging.unlink()
+    if staging_checksum is None:
+        raise RuntimeError("private review checksum staging was not created")
+    staging_checksum.unlink()
     return {
         "review": str(output),
         "sha256": sha256_file(output),
-        "checksum_file": str(output.with_suffix(output.suffix + ".sha256")),
+        "checksum_file": str(checksum_output),
     }

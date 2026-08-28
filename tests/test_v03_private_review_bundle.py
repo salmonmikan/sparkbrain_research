@@ -103,20 +103,40 @@ def test_private_review_bundle_keeps_license_blocker_and_refuses_existing_output
         )
 
 
+def test_private_review_bundle_refuses_existing_checksum_without_publishing_zip(
+    tmp_path: Path,
+) -> None:
+    root = tmp_path / "source"
+    output = tmp_path / "review.zip"
+    checksum = output.with_suffix(".zip.sha256")
+    checksum.write_bytes(b"competitor-checksum")
+
+    with pytest.raises(ValueError, match="already exists"):
+        build_private_review_bundle(
+            root,
+            source_revision="d" * 40,
+            paths=_fixture(root),
+            output=output,
+            source_date_epoch=1_700_000_000,
+        )
+    assert not output.exists()
+    assert checksum.read_bytes() == b"competitor-checksum"
+
+
 def test_private_review_bundle_never_removes_a_racing_output(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
     root = tmp_path / "source"
     output = tmp_path / "review.zip"
-    original_rename = os.rename
+    original_link = os.link
 
-    def racing_rename(source: str | Path, target: str | Path) -> None:
+    def racing_link(source: str | Path, target: str | Path) -> None:
         if Path(target) == output:
             output.write_bytes(b"competitor")
-        original_rename(source, target)
+        original_link(source, target)
 
-    monkeypatch.setattr("sparkbrain.release_v03.os.rename", racing_rename)
-    with pytest.raises(OSError):
+    monkeypatch.setattr("sparkbrain.release_v03.os.link", racing_link)
+    with pytest.raises(FileExistsError):
         build_private_review_bundle(
             root,
             source_revision="d" * 40,
@@ -126,3 +146,89 @@ def test_private_review_bundle_never_removes_a_racing_output(
         )
     assert output.read_bytes() == b"competitor"
     assert not list(tmp_path.glob(".v03-private-review-*.zip"))
+
+
+def test_private_review_bundle_rolls_back_its_zip_on_checksum_publish_race(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    root = tmp_path / "source"
+    output = tmp_path / "review.zip"
+    checksum = output.with_suffix(".zip.sha256")
+    original_link = os.link
+
+    def racing_link(source: str | Path, target: str | Path) -> None:
+        if Path(target) == checksum:
+            checksum.write_bytes(b"competitor-checksum")
+        original_link(source, target)
+
+    monkeypatch.setattr("sparkbrain.release_v03.os.link", racing_link)
+    with pytest.raises(FileExistsError):
+        build_private_review_bundle(
+            root,
+            source_revision="e" * 40,
+            paths=_fixture(root),
+            output=output,
+            source_date_epoch=1_700_000_000,
+        )
+    assert not output.exists()
+    assert checksum.read_bytes() == b"competitor-checksum"
+    assert not list(tmp_path.glob(".v03-private-review-*.zip"))
+    assert not list(tmp_path.glob(".v03-private-review-*.zip.sha256"))
+
+
+def test_private_review_bundle_rolls_back_both_files_on_validation_failure(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    root = tmp_path / "source"
+    output = tmp_path / "review.zip"
+    checksum = output.with_suffix(".zip.sha256")
+    monkeypatch.setattr(
+        "sparkbrain.release_v03.validate_private_review_bundle",
+        lambda _path: ["injected validation failure"],
+    )
+
+    with pytest.raises(ValueError, match="injected validation failure"):
+        build_private_review_bundle(
+            root,
+            source_revision="f" * 40,
+            paths=_fixture(root),
+            output=output,
+            source_date_epoch=1_700_000_000,
+        )
+    assert not output.exists()
+    assert not checksum.exists()
+    assert not list(tmp_path.glob(".v03-private-review-*.zip"))
+    assert not list(tmp_path.glob(".v03-private-review-*.zip.sha256"))
+
+
+def test_private_review_bundle_rollback_preserves_replaced_competitor_files(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    root = tmp_path / "source"
+    output = tmp_path / "review.zip"
+    checksum = output.with_suffix(".zip.sha256")
+
+    def replace_before_failure(_path: Path) -> list[str]:
+        replacement_zip = tmp_path / "competitor.zip"
+        replacement_checksum = tmp_path / "competitor.zip.sha256"
+        replacement_zip.write_bytes(b"competitor-zip")
+        replacement_checksum.write_bytes(b"competitor-checksum")
+        os.replace(replacement_zip, output)
+        os.replace(replacement_checksum, checksum)
+        return ["injected validation failure"]
+
+    monkeypatch.setattr(
+        "sparkbrain.release_v03.validate_private_review_bundle", replace_before_failure
+    )
+    with pytest.raises(ValueError, match="injected validation failure"):
+        build_private_review_bundle(
+            root,
+            source_revision="1" * 40,
+            paths=_fixture(root),
+            output=output,
+            source_date_epoch=1_700_000_000,
+        )
+    assert output.read_bytes() == b"competitor-zip"
+    assert checksum.read_bytes() == b"competitor-checksum"
+    assert not list(tmp_path.glob(".v03-private-review-*.zip"))
+    assert not list(tmp_path.glob(".v03-private-review-*.zip.sha256"))

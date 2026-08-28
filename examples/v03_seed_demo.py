@@ -32,7 +32,7 @@ def main() -> None:
                 "time": index,
                 "value": value,
                 "sparks": [spark.feature_id for spark in sparks],
-                "state": field.feature_state("audio:tick"),
+                "state": dict(field.feature_state("audio:tick")),
             }
         )
 
