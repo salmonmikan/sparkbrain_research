@@ -6,11 +6,11 @@
     },
     {
       "path": "artifacts/release/v0.3.1/evidence_map.json",
-      "sha256": "bb061becbac7c05a7ef03f106d3e3d1c8e682a28585f5af96608e2abf1560896"
+      "sha256": "46c467857bb76c2a88b0cbb41b59415a8b453d7702426f50924ff188c94d0771"
     },
     {
       "path": "artifacts/release/v0.3.1/primary_subset.json",
-      "sha256": "a4aa4b88d31c56cf4b6955ba903687afa5d705dc21bf599d480925d463faa508"
+      "sha256": "f269b8682dc8c00537e7cf249c8c47f2a1206aec578962d2bc364f5c6cf276bd"
     },
     {
       "path": "artifacts/release/v0.3.1/release_figure.svg",
@@ -22,14 +22,14 @@
     },
     {
       "path": "artifacts/release/v0.3.1/sbom.spdx.json",
-      "sha256": "ebfe8520a4d5c402c68c5bbfaeffced019295e424a5a835728a8f61b2d02d8b8"
+      "sha256": "98c3b4d36435e0e0be4f77981eb8c55aae56d9991cda92599c70afe65f3aaf44"
     },
     {
       "path": "artifacts/release/v0.3.1/source_license_inventory.json",
-      "sha256": "5ebb635277d9be1f42c85b58e21933abb309912fccbd7854068f7d49c2bf793f"
+      "sha256": "8a951c61afe572e687548c0d8e368f7730b014f4d05c76f497db48354a0f926e"
     }
   ],
   "package_version": "0.3.1",
   "schema_version": "sparkbrain-v031-release-source-manifest-v1",
-  "source_revision": "4aa80633d9f5887c6b0d758a447a42c16b2dc873"
+  "source_revision": "9fedbfe4797455a0d56b07dc0d4bf4d3cde89d41"
 }
