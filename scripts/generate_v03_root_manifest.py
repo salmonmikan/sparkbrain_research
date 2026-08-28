@@ -71,7 +71,13 @@ def _require_artifact_integration(source_revision: str) -> None:
     )
     if state.returncode:
         raise ValueError("v0.3 root manifest could not inspect source state")
-    if state.stdout:
+    dirty_paths = {
+        line[3:].decode("utf-8")
+        for line in state.stdout.splitlines()
+        if len(line) >= 4
+    }
+    unexpected = dirty_paths - {"PACKAGE_MANIFEST.json", "RELEASE_METADATA.json"}
+    if unexpected:
         raise ValueError("v0.3 root manifest requires a clean source tree")
     tracked = set(_tracked_paths())
     release_version = _evidence_release_version()
