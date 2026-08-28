@@ -26,8 +26,8 @@ Current queue:
 
 | Task | Scope | Boundary |
 |---|---|---|
-| v0.3.1 corrective | no-clobber private review, demo, documentation/theory synchronization | no science-artifact or claim-grade change |
-| v0.3 integrated runtime | explicit `sparkbrain.v03` backend and live versioned Brain Lab | C16/C17 observer-only until separately evaluated |
+| v0.3.1 corrective | completed no-clobber private review, demo, documentation/theory synchronization | no science-artifact or claim-grade change |
+| v0.3 integrated runtime | implemented `sparkbrain.v03` backend and live versioned Brain Lab | C16/C17 observer-only until separately evaluated |
 | C19 follow-on | truth-free adapter and a new preregistered official protocol | C19 remains blocked until then |
 
 | Task | Purpose | Depends on | Parallel notes |

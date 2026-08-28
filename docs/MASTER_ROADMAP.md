@@ -4,10 +4,10 @@
 
 C11--C18 are retained as independently scoped research modules: input diagnosis, sensory
 selection, evidence/entity scope, Coalition-driven ignition, revision objectives, proto-concept
-candidates, functional-organ evaluation, and observability/replay. This is not yet a single
-continuous brain runtime. C19 remains blocked and C20 is a private release candidate. v0.3.1
-corrects packaging/demo/documentation defects without changing those results; the subsequent
-integrated-runtime work remains separately falsifiable.
+candidates, functional-organ evaluation, and observability/replay. v0.3.1 composes their permitted
+engineering paths into a persistent `IntegratedV03Brain` and live versioned Brain Lab while keeping
+concept/organ outputs observer-only. C19 remains blocked and C20 is a private release candidate.
+The integration changes no scientific result or claim grade and remains separately falsifiable.
 
 ## 1. Strategy
 

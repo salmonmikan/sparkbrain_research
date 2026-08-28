@@ -4,12 +4,12 @@
 
 ## 現在の版と読む境界
 
-package versionは現在 `0.3.0` です。v0.3.1は是正patchの作業名であり、この文書だけでpackage
-versionを先取りしません。persisted legacy config/state/trace schemaは `0.2` のまま、C18の明示的な
+package versionは現在 `0.3.1` です。persisted legacy config/state/trace schemaは `0.2` のまま、C18の明示的な
 trace/checkpoint payloadだけが additive schema `0.3` です。
 
-v0.3はC11--C18を反証可能な研究モジュールとして追加しましたが、C12--C18を一つの常時稼働する
-人工脳として接続した版ではありません。C19は `blocked` / `not_evaluated` です。
+v0.3.1はC11--C18の研究モジュールを明示的な持続runtimeとlive Brain Labへ接続しました。
+ただしC15の科学的優位性、C16の機能的概念形成、C17の器官形成、外部一般化は示していません。
+C19は `blocked` / `not_evaluated` です。
 
 ## SparkBrainを一文で
 
@@ -124,11 +124,12 @@ Workspaceへ共有
 - ローカル準備状態を検査するスクリプトを追加した
 - C11 input diagnosis、C12 sensory field、C13 evidence/entity、C14 Coalition gateの
   境界付き研究経路を追加した
-- C15のscientific non-support、C16のcandidate-only結果、C17のnegative result、C18の
+- C15のscientific non-support、C16のcandidate-only結果、C17の境界付き結果、C18の
   observability/replay contract、C19 blocked readinessを明示した
+- `sparkbrain.v03.IntegratedV03Brain` と `/api/v03/*` のlive Brain Labを追加した
 
-これらは一つの統合runtimeの完成を意味しません。既存のlocalhost Brain Labはlegacy v0.2
-reference engineを操作します。将来のv0.3 runtimeは明示的なversioned APIとして追加します。
+統合runtimeはengineering referenceです。既存のlocalhost Brain Labのlegacy v0.2 routeも維持し、
+v0.3 runtimeは別のversioned APIとして提供します。concept/organはobserver-onlyです。
 
 ## 迷ったときの基準
 

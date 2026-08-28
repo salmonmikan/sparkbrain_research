@@ -1,4 +1,4 @@
-# SparkBrain Research Prototype v0.3.0
+# SparkBrain Research Prototype v0.3.1
 
 SparkBrainは、局所的で持続的な活動単位 **Spark** が、イベントに応じて発生・減衰・発火・競争・連合し、十分に安定したCoalitionだけがGlobal Workspaceへ昇格する、脳型情報処理の研究プロトタイプです。
 
@@ -7,7 +7,7 @@ SparkBrainは、局所的で持続的な活動単位 **Spark** が、イベン�
 1. Sparkを基礎単位とする動的認知モデルの理論形成
 2. 内部状態をリアルタイム観察・操作・比較できる人工脳実験環境の実装
 
-> **v0.3.0の正式条件:** コア成果物は、一台の一般的なローカルPCで完結させます。CPU参照実装を必須とし、実行時のクラウドサービス、遠隔LLM API、外部DB、SaaSログインを必要としません。専用ニューロモーフィックハードウェアは別枠のExtension Hです。v0.2.1のpackage、schema、artifactは歴史的証跡として保持します。
+> **v0.3.1の正式条件:** コア成果物は、一台の一般的なローカルPCで完結させます。CPU参照実装を必須とし、実行時のクラウドサービス、遠隔LLM API、外部DB、SaaSログインを必要としません。専用ニューロモーフィックハードウェアは別枠のExtension Hです。v0.3.0以前のpackage、schema、artifactは歴史的証跡として保持します。
 
 > **重要:** SparkBrainは「人間の脳を再現したシステム」ではありません。v0.2.1 legacy referenceとv0.3研究モジュールは、手書き・synthetic・oracle条件を明示的に分けた機能実証です。生物学的等価性、意識、汎用知能、既存モデルへの一般的優位性、実ハードウェア上の省電力性は未実証です。
 
@@ -49,6 +49,8 @@ SparkBrainは、局所的で持続的な活動単位 **Spark** が、イベン�
 - ローカル完結条件を検査するreadiness checker
 - loopback限定でpause/step/reset、介入fork、比較、blind export/importを行うBrain Lab
 - pinned Belief-R全testをofflineで評価するC06 adapter、記号的非単調stream、target-blind変換、負の外部評価結果
+- `sparkbrain.v03.IntegratedV03Brain` による、知覚・証拠・Coalition・belief・Workspace・action/feedback・trace/checkpointの持続runtime
+- legacy APIを維持したまま `/api/v03/*` でlive runtimeを観察するlocalhost Brain Lab
 
 ## ローカルで動かす
 
@@ -79,7 +81,10 @@ python scripts/run_demo.py
 python scripts/checkpoint_demo.py
 python scripts/replay_trace.py
 python scripts/run_benchmark.py --episodes 40 --steps 30
-python -m pytest -q
+python -m pytest -q                       # engineering default
+python scripts/run_tests.py fast
+python scripts/run_tests.py scientific
+python scripts/run_tests.py release       # 全markerを含むrelease検証
 python scripts/validate_bundle.py
 ```
 
@@ -197,9 +202,9 @@ sparkbrain_research/
 
 > 持続する複数仮説、証拠の連合、明示的なIgnition gate、敗者のresidual retentionを備えたイベント駆動状態系を、通常のPythonだけで実装・観察・反証可能な形にできる。
 
-v0.3では、知覚選択、evidence/entity、Coalition gate、revision、candidate observation、
-observabilityを個別に検証できます。ただし、これらはまだ一つの持続runtime・action・world feedbackへ
-接続されていません。
+v0.3.1では、知覚選択、evidence/entity、Coalition gate、revision、candidate observation、
+observabilityを一つの持続runtimeへ接続しました。concept/organはobserver-only、I2/E1は明示的な
+Oracle diagnostic、E2は未実装です。このengineering統合は科学的優位性や外部一般化を意味しません。
 
 まだ主張できないこと:
 
@@ -245,14 +250,14 @@ observabilityを個別に検証できます。ただし、これらはまだ一�
 
 ## バージョン互換性
 
-- package / documentation version: `0.3.0`
+- package / documentation version: `0.3.1`
 - persisted v0.2 config / state / trace schema: `0.2`; additive v0.3 trace/checkpoint schema: `0.3`
 - Phase-0 dynamics: v0.2から意図的変更なし
 
-v0.3.0はv0.2のcheckpointとtraceを互換対象として維持し、C11--C18の境界付き証跡とC19
-blocked readinessを追加したprivate review candidateです。v0.3.1は、既知の配布処理・demo・
-導線を是正する予定のpatchであり、この時点でpackage versionを先取りしてはいけません。C06/C08/
-C15/C17のnegative結果、C16のcandidate-level結果、C19のblocked status、claim gradeは変更しません。
+v0.3.1はv0.2のcheckpointとtraceを互換対象として維持し、既知の配布処理・demo・導線を是正し、
+明示的なv0.3 runtimeとlive Brain Labを追加したprivate review candidateです。C06/C08のnegative結果、
+C15のscientific non-support、C16のcandidate-level結果、C17の境界付き結果、C19のblocked status、
+claim gradeは変更しません。
 license owner decision前のため、公開tag、archive、releaseは作成しません。
 
 ## Codexへ続きを依頼する

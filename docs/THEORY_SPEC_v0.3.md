@@ -2,8 +2,8 @@
 
 > **Status:** working, falsifiable engineering specification
 >
-> **Package boundary:** the checked-in package is `0.3.0`; `v0.3.1` is corrective work until
-> versioned implementation and release evidence are complete.
+> **Package boundary:** the checked-in package is `0.3.1`; v0.3.0 remains immutable historical
+> release evidence.
 >
 > **Compatibility boundary:** persisted v0.2 config/state/trace payloads remain schema `0.2`.
 > This specification adds explicit v0.3 contracts; it never silently upgrades a v0.2 payload.
@@ -106,11 +106,11 @@ retention to a general advantage without a new preregistered evaluation.
 
 A Workspace broadcast is an explicit post-ignition state transition. Action is distinct from a
 belief: the minimum action vocabulary is `observe`, `withhold`, `inspect`, `commit_belief`,
-`revise`, and a task-specific action. World feedback, when implemented, must return as a new local
+`revise`, and a task-specific action. World feedback must return as a new local
 sensory/evidence event rather than silently changing belief state.
 
-At this revision, action selection and world feedback are not integrated v0.3 runtime evidence.
-They are required future contracts, not implied by a final classification output.
+The v0.3.1 reference runtime implements this vocabulary and feedback loop as engineering behavior.
+It does not establish action optimality, semantic understanding, or external task performance.
 
 ## 9. Proto-concept candidates
 
@@ -147,25 +147,26 @@ that a live integrated brain emitted that trace.
 
 ## 12. Integrated runtime contract
 
-The future stable entrypoint is:
+The stable engineering entrypoint is:
 
 ```python
 from sparkbrain.v03 import IntegratedV03Brain, SensorySample, V03BrainConfig, V03StepResult
 ```
 
-`IntegratedV03Brain` must be stateful and own an explicit configuration, local input interpreter,
+`IntegratedV03Brain` is stateful and owns an explicit configuration, local input interpreter,
 entity mode, Sensory Field, Evidence Ledger, Coalition Gate, persistent belief state, workspace,
-trace session, checkpoint state, and RNG state. The initial live reference path connects C12--C14.
-C15 controller integration, action/world feedback, and learned modes require their own accepted
-contracts. Legacy `SparkBrain` remains the v0.2-compatible root API.
+trace session, checkpoint state, and RNG state. I3 uses the actual C15 `RevisionController` API;
+I0/I1 remain deterministic reference tracks, I2/E1 require explicit Oracle-diagnostic permission,
+and E2 remains unavailable. Concept and organ outputs remain observer-only. Legacy `SparkBrain`
+remains the v0.2-compatible root API.
 
 ## 13. Brain Lab boundary
 
-Legacy `sparkbrain.lab` and `/api/runs*` remain the v0.2 reference UI. The live v0.3 runtime must
-use `sparkbrain.v03` and `/api/v03/*`, with explicit schema `0.3` payloads. It must show stored
+Legacy `sparkbrain.lab` and `/api/runs*` remain the v0.2 reference UI. The live v0.3 runtime uses
+`sparkbrain.v03` and `/api/v03/*`, with explicit schema `0.3` payloads. It shows stored
 raw/local input, accepted/suppressed Sparks, entity assignment, evidence IDs and correlations,
 Coalition decomposition, no-ignition reason, belief transition, observer-only candidates, action
-when implemented, feedback when implemented, checkpoint lineage, and fork comparison.
+and feedback, checkpoint lineage, and fork comparison.
 
 The UI must not infer hidden state or turn a missing trace field into a positive attribution.
 

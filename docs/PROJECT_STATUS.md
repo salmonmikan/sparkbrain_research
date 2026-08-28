@@ -1,8 +1,8 @@
-# Project Status — SparkBrain v0.3.0
+# Project Status — SparkBrain v0.3.1
 
 ## v0.3 release migration boundary
 
-The package version is now `0.3.0`. The accepted v0.2.1 reference engine retains
+The package version is now `0.3.1`. The accepted v0.2.1 reference engine retains
 persisted config/state/trace schema `0.2`; it is not silently migrated or reinterpreted.
 The additive C18 trace/checkpoint interface uses schema `0.3` only for its own explicit
 payloads. Historical v0.2.1 artifacts, protected hashes, and C06/C08 negative evidence remain
@@ -11,12 +11,23 @@ accepted release evidence.
 
 ## v0.3.1 corrective and integrated-runtime boundary
 
-The checked-in package remains `0.3.0`; `v0.3.1` names corrective work until its versioned
-implementation and release binding are complete. The corrective scope fixes private-review
-publication, the v0.3 seed demo, and reader-facing documentation without changing science
-artifacts or claim grades. A later `sparkbrain.v03` runtime is planned to expose
-`IntegratedV03Brain` and `V03BrainConfig` through an explicit v0.3 API while preserving legacy
-`/api/runs*`. It is not present evidence that C12--C18 form one completed artificial brain.
+The checked-in package is `0.3.1`. The corrective scope fixes private-review publication, the v0.3
+seed demo, and reader-facing documentation, and adds `sparkbrain.v03.IntegratedV03Brain` plus the
+explicit `/api/v03/*` live Brain Lab while preserving legacy `/api/runs*`. The runtime connects
+sensory, evidence, entity, Coalition, belief, Workspace, action/feedback, observer-only concept and
+organ outputs, trace, checkpoint, restore, and replay. This is engineering integration evidence,
+not evidence of scientific superiority, autonomous semantic concepts, functional organs, external
+generalization, consciousness, biological equivalence, or energy efficiency.
+
+The engineering evaluator runs the exact eight registered worlds over full, legacy, baseline, and
+seven ablation variants: 80 rows with one shared input-sequence hash per world. It reports the 15
+registered metric groups and explicitly remains `engineering_only_not_scientific`. The canonical
+evaluation SHA-256 is `f27e10af7d44c7d619438590bc742a0fe4b04e0a8abb1bc68b1a5aab61037552`.
+The live Brain Lab static observation SHA-256 is
+`246a287a8e31d6b43177a72b5dd4467a871d63b24989bb6a1430944eb58e505a`. Causal evidence-removal
+and comparison outputs identify themselves as Lab observer counterfactuals when they are not
+runtime-trace events. This acceptance changes no C06, C15, C16, C17, C19, CL-007, or CL-008
+scientific boundary.
 
 ## v0.3 C20 — private release-candidate integration
 

@@ -1,24 +1,32 @@
 # Changelog
 
-## v0.3.1 — corrective patch in progress
+## v0.3.1 — 2026-08-28
 
-This entry reserves the corrective boundary; the package metadata remains `0.3.0` until the
-versioned release implementation is completed. No scientific artifact, claim grade, or external
-evaluation result is changed by documentation synchronization.
+Corrective private-review and engineering-integration patch. No scientific artifact, claim grade,
+or external-evaluation result is upgraded.
 
-### Planned corrective scope
+### Added
 
-- make the private-review ZIP and checksum publication no-clobber across competing writers;
-- make `examples/v03_seed_demo.py` emit JSON-safe state;
-- add the v0.3 theory specification and synchronize reader and Codex entrypoints;
-- define, without claiming completion, the versioned `sparkbrain.v03` integrated-runtime boundary.
+- stateful `sparkbrain.v03.IntegratedV03Brain` with explicit I0--I3 and E0--E2 boundaries;
+- actual C15 `RevisionController` integration for I3, registered ablations, action/feedback,
+  full-state checkpoint/restore/replay, and engineering-only eight-world evaluation;
+- live `/api/v03/*` Brain Lab observer while preserving legacy `/api/runs*`;
+- fast, engineering, scientific, reproduction, external, and release test tiers;
+- separate version-aware `artifacts/release/v0.3.1/` generation contract.
+
+### Fixed
+
+- private-review ZIP/checksum no-clobber publication across competing writers;
+- JSON-safe `examples/v03_seed_demo.py` output;
+- reader, theory, architecture, status, migration, Brain Lab, and Codex entrypoints;
+- C17 v1 control-gap classification as engineering failure/science not evaluated.
 
 ### Not changed
 
 - persisted legacy config/state/trace schema `0.2`;
 - additive C18 trace/checkpoint schema `0.3`;
-- C06 external negative result; C15/C17 negative scientific findings; C16 candidate-only result;
-- C19 `blocked` / `not_evaluated` status; project-license public-release gate.
+- C06/C08 negative findings, C15 residual non-support, C16 candidate-level result, C17 claim
+  boundary, C19 blocked status, CL-007/CL-008 grades, or the owner-license blocker.
 
 ## v0.3.0 — 2026-08-28
 

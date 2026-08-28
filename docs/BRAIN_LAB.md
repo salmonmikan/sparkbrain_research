@@ -6,10 +6,10 @@ The routes documented below, including `/api/runs*`, are the legacy v0.2 referen
 Lab. They remain supported and must not be silently redirected to v0.3. The C18 static export is a
 separate observability/replay artifact and is not a live C12--C18 execution.
 
-The planned integrated surface is `sparkbrain.v03` with `IntegratedV03Brain`, `V03BrainConfig`,
-`SensorySample`, and `V03StepResult`, exposed only through explicit `/api/v03/*` routes. At first,
-concept and organ monitors are observer-only. Until that runtime and its tests are merged, this
-document does not claim a completed integrated v0.3 Brain Lab.
+The integrated surface is `sparkbrain.v03` with `IntegratedV03Brain`, `V03BrainConfig`,
+`SensorySample`, and `V03StepResult`, exposed only through explicit `/api/v03/*` routes. Concept
+and organ monitors are observer-only. This is a live engineering observer over the integrated
+runtime; it is not scientific support for concepts, organs, or external generalization.
 
 Brain Labは、C01の決定論的な参照エンジンを、ローカルPC上で観察・介入・比較するC03の実験UIである。コア参照実装のruntime dependencyは増やさず、Web UI用の依存はoptional extra `lab` に分離する。
 
@@ -96,13 +96,32 @@ GET  /api/runs/{run_id}/events/stream
 
 不明ID、不正な数値、範囲外値、未知のpatch kindは4xxで拒否する。SSEは現在frameを1件通知する有限streamであり、background simulation queueではない。
 
-### Planned v0.3 API contract
+### Live v0.3 API contract
 
-`/api/v03/*` must use explicit schema `0.3` payloads and reject v0.2 payloads rather than
-converting them implicitly. A live v0.3 run must display raw/local input, accepted and suppressed
-perceptual Sparks, entity assignment, evidence identity/correlation, Coalition decomposition,
-no-ignition reason, belief transition, observer-only concept/organ candidates, and trace/fork
-lineage. It must preserve the legacy route contract above.
+`/api/v03/*` uses explicit schema `0.3` payloads and rejects v0.2 payloads rather than converting
+them implicitly. A live v0.3 run displays raw/local input, explicit omitted channels, perceptual
+Sparks, entity assignment, evidence identity/support/contradiction/correlation, Coalition
+decomposition, no-ignition reason, current and residual beliefs, revision transition,
+observer-only concept/organ candidates, action, world feedback, live trace, causal evidence-removal
+observation, and fork comparison. Causal removal and comparison are labeled as Lab observer
+counterfactuals when they are not runtime-trace events. The legacy route contract above is
+preserved.
+
+Main versioned endpoints:
+
+```text
+POST /api/v03/runs
+GET  /api/v03/runs/{run_id}
+POST /api/v03/runs/{run_id}/step
+POST /api/v03/runs/{run_id}/events
+POST /api/v03/runs/{run_id}/pause
+POST /api/v03/runs/{run_id}/reset
+POST /api/v03/runs/{run_id}/fork
+POST /api/v03/comparisons
+```
+
+The UI backend selector separates Legacy, Integrated v0.3, and optional local I3 learned mode.
+Oracle entity/input modes require explicit diagnostic permission; E2 remains unavailable.
 
 ## 性能境界
 

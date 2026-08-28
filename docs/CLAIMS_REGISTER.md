@@ -132,9 +132,8 @@ See `docs/research/literature_matrix.csv` for source-level verdicts and `docs/re
 
 ## v0.3.1 synchronization boundary
 
-- Package `0.3.0` remains the checked-in version; the name `v0.3.1` denotes corrective work until
-  versioned release evidence is generated.
-- A future `sparkbrain.v03` / `IntegratedV03Brain` runtime is engineering integration work, not
+- Package `0.3.1` is the checked-in corrective version; v0.3.0 release evidence remains immutable.
+- The `sparkbrain.v03` / `IntegratedV03Brain` runtime is engineering integration work, not
   evidence of semantic understanding, autonomous concept formation, functional organs, external
   generalization, consciousness, biological equivalence, or energy efficiency.
 - C06 remains the negative official external result. C15 residual superiority and C17 functional

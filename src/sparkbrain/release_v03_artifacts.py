@@ -185,6 +185,29 @@ _V031_C17_V1_CONTROL_GAP_ENTRY = (
     ),
 )
 
+_V031_INTEGRATED_RUNTIME_ENTRY = (
+    "EV-V031-INTEGRATED-RUNTIME",
+    "accepted",
+    "Local engineering integration only: exact eight worlds across full, legacy, baseline, and "
+    "seven ablations; live Brain Lab observation; no scientific superiority, external "
+    "generalization, concept, organ, consciousness, biological, or energy claim.",
+    (),
+    (
+        "src/sparkbrain/v03/__init__.py",
+        "src/sparkbrain/v03/runtime.py",
+        "src/sparkbrain/v03/evaluation.py",
+        "src/sparkbrain/lab/v03_service.py",
+        "scripts/run_v031_integrated_evaluation.py",
+        "scripts/run_v031_brain_lab_artifact.py",
+        "artifacts/v03/v031_integrated_runtime/v031_integrated_engineering_evaluation.json",
+        "artifacts/v03/v031_integrated_runtime/brain_lab_static_observation.json",
+        "tests/test_v031_integrated_runtime.py",
+        "tests/test_v031_corrective_runtime.py",
+        "tests/test_v031_brain_lab_api.py",
+        "tests/test_v031_brain_lab_artifact.py",
+    ),
+)
+
 _RELEASE_CONTRACTS = {
     "0.3.0": {
         "relative": V03_RELEASE_RELATIVE,
@@ -210,6 +233,7 @@ _RELEASE_CONTRACTS = {
         "additional_entries": (
             _V031_C17_V1_CONTROL_GAP_ENTRY,
             _V031_CORRECTIVE_ENTRY,
+            _V031_INTEGRATED_RUNTIME_ENTRY,
         ),
     },
 }

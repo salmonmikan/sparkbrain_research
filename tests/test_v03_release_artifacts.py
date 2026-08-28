@@ -141,6 +141,14 @@ def test_v031_release_artifacts_use_separate_versioned_evidence(tmp_path: Path) 
             "claim-grade increase, or integrated-runtime acceptance."
         ),
     }
+    integrated = by_id["EV-V031-INTEGRATED-RUNTIME"]
+    assert integrated["status"] == "accepted"
+    assert integrated["claim_ids"] == []
+    assert integrated["artifacts"][-2:] == [
+        "tests/test_v031_brain_lab_api.py",
+        "tests/test_v031_brain_lab_artifact.py",
+    ]
+    assert "engineering integration only" in integrated["boundary"]
     source_manifest = json.loads((release / "source_manifest.json").read_text(encoding="utf-8"))
     metadata = json.loads((release / "release_metadata.json").read_text(encoding="utf-8"))
     sbom = json.loads((release / "sbom.spdx.json").read_text(encoding="utf-8"))
@@ -151,13 +159,13 @@ def test_v031_release_artifacts_use_separate_versioned_evidence(tmp_path: Path) 
     assert project["versionInfo"] == "0.3.1"
 
 
-def test_v031_evidence_map_rejects_unregistered_runtime_entry() -> None:
+def test_v031_evidence_map_rejects_unregistered_entry() -> None:
     evidence = build_v03_evidence_map(
         ROOT, source_revision=REVISION, release_version="0.3.1"
     )
     evidence["entries"].append(
         {
-            "id": "EV-V031-INTEGRATED-RUNTIME",
+            "id": "EV-V031-UNREGISTERED",
             "status": "accepted",
             "claim_ids": [],
             "artifacts": ["src/sparkbrain/v03/__init__.py"],

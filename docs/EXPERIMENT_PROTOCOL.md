@@ -1271,11 +1271,13 @@ The v0.3.1 corrective patch does not rerun or rewrite C11--C19 science. Its pack
 tests cover no-clobber ZIP/checksum publication, competing output preservation, cleanup after a
 failed publish, JSON-safe v0.3 seed-demo output, and documentation/claim-boundary consistency.
 
-The future `sparkbrain.v03` runtime requires a separate engineering protocol. It must demonstrate
-that a `SensorySample` drives live C12--C14 state and produces a C18-compatible trace without
-manual `V03TraceSession.record` fabrication; inspection must be non-mutating; checkpoint
-continuation, replay, fork lineage, causal evidence removal, cross-entity isolation, CPU/offline
-operation, and legacy `/api/runs*` compatibility must be tested. Concept and organ monitors are
-observer-only, so their presence cannot be aggregated as a decision improvement or scientific
-support. C15 revision/controller integration, action/world feedback, and every C19 official run
-need their own preregistered conditions and must not be inferred from this engineering protocol.
+The v0.3.1 `sparkbrain.v03` engineering protocol demonstrates that a `SensorySample` drives live
+C12--C15 state and produces a C18-compatible trace without manual `V03TraceSession.record`
+fabrication. Inspection is non-mutating; checkpoint continuation, replay, causal evidence-removal
+observation, cross-entity isolation, CPU/offline operation, and legacy `/api/runs*` compatibility
+are tested. The same eight fixture worlds are evaluated across the full path, legacy/baseline
+references, and the seven registered ablations. These are wiring and failure-behavior metrics, not
+scientific superiority evidence. Concept and organ monitors are observer-only, so their presence
+cannot be aggregated as a decision improvement or scientific support. Every C19 official run still
+needs a new preregistered truth-free adapter protocol and must not be inferred from this engineering
+protocol.

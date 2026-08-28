@@ -551,14 +551,14 @@ broadcast, and Workspace remain the deterministic rate engine. State serializati
 membrane, filtered-spike, spike/message counters, and raw spike events. Both traces retain
 schema `0.2`; per-frame spiking counts are extra allowed statistics.
 
-## 18. v0.3 isolated modules and planned integrated runtime
+## 18. v0.3 modules and integrated runtime
 
-`sparkbrain.v03_seed` contains the C11--C17 research primitives. `V03ReferenceLoop` currently
+`sparkbrain.v03_seed` contains the C11--C17 research primitives. `V03ReferenceLoop`
 connects Sensory Field, an injectable interpreter, Evidence Ledger, Coalition Gate, and persistent
 belief state. `sparkbrain.v03_integration` provides the additive schema-`0.3` trace, checkpoint,
-replay, and fork contract. Neither namespace currently replaces the legacy `SparkBrain` engine.
+replay, and fork contract. Neither namespace replaces the legacy `SparkBrain` engine.
 
-The planned public facade is `sparkbrain.v03`:
+The implemented engineering facade is `sparkbrain.v03`:
 
 ```text
 SensorySample -> IntegratedV03Brain -> V03StepResult
@@ -567,7 +567,9 @@ SensorySample -> IntegratedV03Brain -> V03StepResult
                          \----> observer-only concept and organ monitors
 ```
 
-`IntegratedV03Brain` and `V03BrainConfig` are contract names for the later implementation, not
-current evidence of a completed integrated brain. The first live path must keep C16 concept and
-C17 organ outputs observational and must not let them alter decisions. It must retain the legacy
-engine and expose its UI through a separate `/api/v03/*` boundary rather than changing `/api/runs*`.
+`IntegratedV03Brain` and `V03BrainConfig` compose sensory, evidence, entity, Coalition, revision,
+belief, Workspace, action/feedback, trace, checkpoint, restore, and replay state. I3 calls the
+actual C15 `RevisionController`; explicit ablations alter only their registered paths. C16 concept
+and C17 organ outputs remain observational and cannot alter decisions. The legacy engine is
+retained, and live inspection uses a separate `/api/v03/*` boundary rather than changing
+`/api/runs*`.

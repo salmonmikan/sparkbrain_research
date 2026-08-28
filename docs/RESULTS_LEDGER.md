@@ -1014,3 +1014,24 @@ contract correction only.
   C16 remains candidate-level; C19 remains `blocked` / `not_evaluated`; CL-007 and CL-008 remain E0.
 - Artifact impact: no saved scientific artifact, release artifact, or public release was generated
   by this documentation entry.
+
+## 2026-08-28 — R-V03-0015 — v0.3.1 integrated runtime engineering acceptance
+
+- Scope: local/offline engineering integration only; no scientific or external evaluation rerun.
+- Runtime: `sparkbrain.v03.IntegratedV03Brain` connects Sensory Field, Evidence Ledger, entity
+  boundary, Coalition Gate, persistent belief, actual C15 `RevisionController` in I3, Workspace,
+  six action types, truth-free world feedback, observer-only concept/organ output, C18 trace,
+  checkpoint, restore, and replay.
+- Ablations: exact seven registered variants — no residual, no maintain objective, no revision
+  objective, no recovery objective, one weighted CE, no attribution, and no Coalition.
+- Evaluation: eight fixed worlds × full/legacy/baseline/seven ablations = 80 deterministic rows.
+  Every variant uses the same input-sequence hash within a world. The 15 metric groups are derived
+  from runtime events/state and are labeled `engineering_only_not_scientific`.
+- Evaluation artifact: `artifacts/v03/v031_integrated_runtime/
+  v031_integrated_engineering_evaluation.json`; SHA-256
+  `f27e10af7d44c7d619438590bc742a0fe4b04e0a8abb1bc68b1a5aab61037552`.
+- Brain Lab artifact: `artifacts/v03/v031_integrated_runtime/brain_lab_static_observation.json`;
+  SHA-256 `246a287a8e31d6b43177a72b5dd4467a871d63b24989bb6a1430944eb58e505a`.
+- Claim impact: none. C06 remains negative; C15 residual superiority remains unsupported; C16
+  remains candidate-level; C17 v1 remains an implementation failure and C17 v2 remains
+  scientifically unsupported; C19 remains blocked/not evaluated; CL-007 and CL-008 remain E0.
