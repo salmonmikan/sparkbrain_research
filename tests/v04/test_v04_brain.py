@@ -16,9 +16,7 @@ def test_temporal_order_produces_distinct_reference_signatures() -> None:
 
 def test_aligned_weak_inputs_outperform_dispersed_inputs() -> None:
     result = run_reference_experiments()
-    row = next(
-        item for item in result["experiments"] if item["name"] == "temporal_coincidence"
-    )
+    row = next(item for item in result["experiments"] if item["name"] == "temporal_coincidence")
     metrics = row["metrics"]
     assert metrics["aligned"]["convergence_unit_spikes"] == 1
     assert metrics["dispersed"]["convergence_unit_spikes"] == 0
@@ -27,9 +25,7 @@ def test_aligned_weak_inputs_outperform_dispersed_inputs() -> None:
 
 def test_repetition_adapts_and_omission_emits_prediction_error() -> None:
     result = run_reference_experiments()
-    row = next(
-        item for item in result["experiments"] if item["name"] == "repetition_omission"
-    )
+    row = next(item for item in result["experiments"] if item["name"] == "repetition_omission")
     metrics = row["metrics"]
     assert metrics["late_spikes"] < metrics["early_spikes"]
     assert metrics["omission_prediction_error_pulses"] == 1

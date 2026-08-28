@@ -1,0 +1,31 @@
+{
+  "ablation_seeds": [
+    601,
+    602,
+    603
+  ],
+  "assembly_similarity_threshold": 0.66,
+  "assembly_source": "internal_reservoir_only",
+  "confirmatory_seeds": [
+    601,
+    602,
+    603,
+    604
+  ],
+  "delay_learning_rate": 0.004,
+  "development_seeds": [
+    501,
+    502
+  ],
+  "height": 8,
+  "homeostasis": true,
+  "homeostasis_learning_rate": 0.004,
+  "homeostasis_target_spikes_per_window": 0.35,
+  "pattern_temporal_bin_ms": 0.25,
+  "receptor_rows": 1,
+  "runtime": "local_cpu_reference",
+  "same_symbol_different_order": true,
+  "version": "0.5.0.dev0",
+  "weight_learning_rate": 0.001,
+  "width": 8
+}

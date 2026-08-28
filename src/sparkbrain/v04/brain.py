@@ -2,9 +2,10 @@ from __future__ import annotations
 
 import hashlib
 import json
+from collections.abc import Iterable, Sequence
 from dataclasses import asdict, dataclass
 from pathlib import Path
-from typing import Any, Iterable, Sequence
+from typing import Any
 
 from .action import ActionAssociator
 from .contracts import SignalPulse, V04StepResult, canonical_json
@@ -91,8 +92,7 @@ class IntegratedV04Brain:
         self.assembly_memory = AssemblyMemory()
         self.burst_detector = BurstDetector(burst_config)
         self.cascade_tracker = CascadeTracker(
-            cascade_config
-            or CascadeTrackerConfig(max_gap_ms=self.config.max_cascade_gap_ms),
+            cascade_config or CascadeTrackerConfig(max_gap_ms=self.config.max_cascade_gap_ms),
             memory=self.assembly_memory,
         )
         self.ignition_gate = IgnitionGate(

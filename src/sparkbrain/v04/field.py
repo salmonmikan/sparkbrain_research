@@ -4,8 +4,9 @@ import hashlib
 import heapq
 import json
 import math
+from collections.abc import Iterable
 from dataclasses import asdict, dataclass
-from typing import Any, Iterable
+from typing import Any
 
 from .contracts import SignalPulse, SpikeEvent, SynapticArrival, canonical_json
 from .topology import Connection, FieldTopology, UnitState
@@ -137,8 +138,7 @@ class TemporalExcitableField:
         key = f"{pulse.channel}|polarity={pulse.polarity}"
         start = _stable_index(key, len(self.receptor_ids))
         return tuple(
-            self.receptor_ids[(start + offset) % len(self.receptor_ids)]
-            for offset in range(fanout)
+            self.receptor_ids[(start + offset) % len(self.receptor_ids)] for offset in range(fanout)
         )
 
     def schedule_pulse(self, pulse: SignalPulse) -> tuple[int, ...]:
@@ -299,9 +299,7 @@ class TemporalExcitableField:
     def state_dict(self) -> dict[str, Any]:
         return {
             "config": asdict(self.config),
-            "connections": [
-                asdict(self.connections[key]) for key in sorted(self.connections)
-            ],
+            "connections": [asdict(self.connections[key]) for key in sorted(self.connections)],
             "counter": self._counter,
             "current_time_ms": self.current_time_ms,
             "queue": [

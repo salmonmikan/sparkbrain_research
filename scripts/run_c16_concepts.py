@@ -20,6 +20,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 PROTOCOL_RELATIVE = "artifacts/v03/c16_proto_concepts/protocol.json"
 DEFAULT_PROTOCOL = ROOT / PROTOCOL_RELATIVE
+HISTORY_MIGRATION_RELATIVE = "artifacts/repository/lfs_history_migration_v1.json"
 BASE_PROTOCOL_COMMIT = "4dc6142424dbd32edf0c427b776262a119bdfe8e"
 BASE_PROTOCOL_SHA256 = "56032858ea25b486d8ff7e76c7070fbfd86fcae57ca5c3c5b28531b8e25401f6"
 EXPECTED_FILES = {
@@ -76,6 +77,55 @@ def _git(root: Path, *args: str) -> str:
     return _git_bytes(root, *args).decode("utf-8").strip()
 
 
+def _resolve_repository_revision(root: Path, revision: str) -> str:
+    """Resolve a historical source pin after a recorded repository rewrite.
+
+    The protocol keeps the original commit identity.  A rewrite is accepted
+    only when the tracked migration ledger maps that exact old SHA to a
+    reachable new commit; protected file hashes are still validated by the
+    caller, so the mapping never substitutes content trust.
+    """
+
+    _require_hash(revision, length=40, label="repository revision")
+    try:
+        _git(root, "cat-file", "-e", f"{revision}^{{commit}}")
+    except subprocess.CalledProcessError:
+        pass
+    else:
+        return revision
+
+    migration_path = root / HISTORY_MIGRATION_RELATIVE
+    try:
+        migration = _decode(migration_path.read_bytes())
+    except (OSError, UnicodeDecodeError, ValueError) as exc:
+        raise RuntimeError(
+            "C16 source pin is unreachable and history migration is invalid"
+        ) from exc
+    if migration.get("schema") != "sparkbrain.repository.lfs-history-migration.v1":
+        raise RuntimeError("C16 history migration schema is invalid")
+    rows = migration.get("revision_map")
+    if not isinstance(rows, list):
+        raise RuntimeError("C16 history migration revision_map is invalid")
+
+    mapping: dict[str, str] = {}
+    for row in rows:
+        if not isinstance(row, dict) or set(row) != {"old", "new"}:
+            raise RuntimeError("C16 history migration row is invalid")
+        old = _require_hash(row["old"], length=40, label="old migrated revision")
+        new = _require_hash(row["new"], length=40, label="new migrated revision")
+        if old in mapping:
+            raise RuntimeError("C16 history migration contains duplicate old revisions")
+        mapping[old] = new
+    resolved = mapping.get(revision)
+    if resolved is None:
+        raise RuntimeError("C16 source pin is unreachable and has no migration mapping")
+    try:
+        _git(root, "cat-file", "-e", f"{resolved}^{{commit}}")
+    except subprocess.CalledProcessError as exc:
+        raise RuntimeError("C16 migrated source pin is unreachable") from exc
+    return resolved
+
+
 def _require_hash(value: object, *, length: int, label: str) -> str:
     if (
         not isinstance(value, str)
@@ -109,6 +159,7 @@ def _validate_protocol_amendment(current: dict[str, Any], base: dict[str, Any]) 
 
 
 def _validate_source_scope(*, root: Path, protocol: dict[str, Any], source_commit: str) -> None:
+    source_commit = _resolve_repository_revision(root, source_commit)
     control = protocol["source_control"]
     authorized = set(control["expected_new_source_and_test_paths"])
     if len(authorized) != 8:

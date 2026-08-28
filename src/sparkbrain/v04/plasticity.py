@@ -1,8 +1,8 @@
 from __future__ import annotations
 
 import math
+from collections.abc import Iterable
 from dataclasses import dataclass
-from typing import Iterable
 
 from .contracts import SpikeEvent
 from .field import TemporalExcitableField
@@ -71,8 +71,7 @@ class TimingPlasticityRule:
                 self.config.min_weight,
                 min(
                     self.config.max_weight,
-                    edge.weight
-                    + self.config.learning_rate * self.reward_trace * delta,
+                    edge.weight + self.config.learning_rate * self.reward_trace * delta,
                 ),
             )
             if pairs and edge.weight > 0:
@@ -80,8 +79,7 @@ class TimingPlasticityRule:
                     self.config.min_delay_ms,
                     min(
                         self.config.max_delay_ms,
-                        edge.delay_ms
-                        + self.config.delay_learning_rate * (delay_delta / pairs),
+                        edge.delay_ms + self.config.delay_learning_rate * (delay_delta / pairs),
                     ),
                 )
             updates += 1
