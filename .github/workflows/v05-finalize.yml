@@ -34,10 +34,26 @@ jobs:
       - name: Install
         run: python -m pip install -e ".[dev]"
 
-      - name: Compile and lint v0.5
+      - name: Normalize, compile, and lint v0.5
         run: |
+          TARGETS=(
+            src/sparkbrain/v05
+            tests/v05
+            scripts/run_v05_experiments.py
+            examples/v05_assembly_demo.py
+          )
+          python -m ruff check --fix --exit-zero "${TARGETS[@]}"
+          python -m ruff format "${TARGETS[@]}"
+          python -m ruff check "${TARGETS[@]}"
           python -m compileall -q src/sparkbrain/v05 tests/v05
-          python -m ruff check src/sparkbrain/v05 tests/v05 scripts/run_v05_experiments.py examples/v05_assembly_demo.py
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add pyproject.toml "${TARGETS[@]}"
+          if ! git diff --cached --quiet; then
+            git commit -m "style(v05): normalize implementation and tests"
+            git push origin HEAD:v05
+          fi
 
       - name: Focused regression tests
         run: python -m pytest -q tests/v04 tests/v05
@@ -59,12 +75,15 @@ jobs:
         run: |
           python - <<'PY'
           from __future__ import annotations
+
           import hashlib
           import json
           import subprocess
           from pathlib import Path
 
-          source_sha = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
+          source_sha = subprocess.check_output(
+              ["git", "rev-parse", "HEAD"], text=True
+          ).strip()
           result_path = Path("artifacts/v05/reference_results.json")
           payload = json.loads(result_path.read_text(encoding="utf-8"))
           gates = payload.get("gates", {})
@@ -97,7 +116,9 @@ jobs:
 
           Failed gates and negative sub-results are retained as first-class results. In particular, omission completion and the necessity of low-level weight/delay plasticity must not be inferred unless the recorded controls support them.
           """
-          Path("docs/V05_STATUS.md").write_text(status.replace("          ", "") + "\n", encoding="utf-8")
+          Path("docs/V05_STATUS.md").write_text(
+              status.replace("          ", "") + "\n", encoding="utf-8"
+          )
 
           binding = f"""# SparkBrain v0.5 source binding
 
@@ -111,7 +132,9 @@ jobs:
 
           The artifact commit is a documentation/result child of that source commit; it does not alter the evaluated runtime before generation.
           """
-          Path("docs/V05_SOURCE_BINDING.md").write_text(binding.replace("          ", "") + "\n", encoding="utf-8")
+          Path("docs/V05_SOURCE_BINDING.md").write_text(
+              binding.replace("          ", "") + "\n", encoding="utf-8"
+          )
 
           report = f"""# SparkBrain v0.5 completion report
 
@@ -139,7 +162,9 @@ jobs:
 
           The experiment is CPU-runnable and local/offline after dependencies are installed. Raw aggregate evidence, report, static visualization, source binding, seeds, and SHA-256 checksums are retained in the repository.
           """
-          Path("docs/V05_COMPLETION_REPORT.md").write_text(report.replace("          ", "") + "\n", encoding="utf-8")
+          Path("docs/V05_COMPLETION_REPORT.md").write_text(
+              report.replace("          ", "") + "\n", encoding="utf-8"
+          )
 
           artifact_files = [
               Path("artifacts/v05/reference_results.json"),
@@ -148,16 +173,23 @@ jobs:
           ]
           checksum_lines = []
           for path in artifact_files:
-              checksum_lines.append(f"{hashlib.sha256(path.read_bytes()).hexdigest()}  {path.name}")
-          Path("artifacts/v05/SHA256SUMS.txt").write_text("\n".join(checksum_lines) + "\n", encoding="utf-8")
+              checksum = hashlib.sha256(path.read_bytes()).hexdigest()
+              checksum_lines.append(f"{checksum}  {path.name}")
+          Path("artifacts/v05/SHA256SUMS.txt").write_text(
+              "\n".join(checksum_lines) + "\n", encoding="utf-8"
+          )
           PY
 
-      - name: Remove obsolete transfer/shard helpers
+      - name: Remove obsolete transfer and shard helpers
         run: |
           rm -f scripts/run_v05_shard.py scripts/aggregate_v05_shards.py
           rm -f tests/v05/test_v05_shard_runner.py
-          rm -rf artifacts/v05/development_seeds artifacts/v05/retained_seeds artifacts/v05/plasticity_ablations
-          rm -f docs/V05_DECISION_ADDENDUM.md docs/V05_RESULTS.md docs/V05_RESULTS_LEDGER_ADDENDUM.md
+          rm -rf artifacts/v05/development_seeds
+          rm -rf artifacts/v05/retained_seeds
+          rm -rf artifacts/v05/plasticity_ablations
+          rm -f docs/V05_DECISION_ADDENDUM.md
+          rm -f docs/V05_RESULTS.md
+          rm -f docs/V05_RESULTS_LEDGER_ADDENDUM.md
           rm -f .github/workflows/v05-finalize.yml
 
       - name: Commit finalized v0.5 branch
