@@ -60,6 +60,8 @@ run in both environments; installing `.[learned]` activates the real I3 integrat
 - The v0.3.2 development collection contains 893 tests: Fast 469, Engineering/default 502,
   Scientific 156, and Release 893. The new metric and input-semantics contracts remain Fast;
   runtime/direct-checkpoint tests are Integration; native release publication tests are Slow +
-  Reproduction. Fast passed 469 with 423 deselected in 47.06s and Engineering passed 502 with 390
-  deselected in 48.44s on 2026-08-28. Scientific and Release were collected but not fully executed
-  for this engineering development commit.
+  Reproduction. Before the final LFS provenance-map test was added, Fast passed 469 with 423
+  deselected in 47.06s and Engineering passed 502 with 390 deselected in 48.44s on 2026-08-28.
+  The final additional test is Reproduction-only, so final selector collection is Fast 469 with
+  424 deselected and Engineering 502 with 391 deselected. Scientific and Release were collected
+  but not fully executed for this engineering development commit.
