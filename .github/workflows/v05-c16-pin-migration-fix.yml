@@ -61,7 +61,7 @@ jobs:
 
       - name: Format and run focused C16 tests
         run: |
-          python -m pip install -e ".[dev]"
+          python -m pip install -e ".[dev]" "numpy>=2.0"
           python -m ruff format scripts/run_c16_concepts.py tests/test_c16_concept_runner.py
           python -m ruff check scripts/run_c16_concepts.py tests/test_c16_concept_runner.py
           python -m pytest -q tests/test_c16_concept_runner.py
