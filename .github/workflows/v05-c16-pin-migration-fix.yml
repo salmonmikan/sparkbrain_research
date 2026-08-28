@@ -1,0 +1,76 @@
+name: fix-c16-history-pin-for-v05
+
+on:
+  push:
+    branches: [v05]
+    paths:
+      - .github/workflows/v05-c16-pin-migration-fix.yml
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v05
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Patch C16 source pin resolution through the retained history map
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          runner_path = Path("scripts/run_c16_concepts.py")
+          runner = runner_path.read_text(encoding="utf-8")
+
+          old_constants = '''PROTOCOL_RELATIVE = "artifacts/v03/c16_proto_concepts/protocol.json"\nDEFAULT_PROTOCOL = ROOT / PROTOCOL_RELATIVE\nBASE_PROTOCOL_COMMIT = "4dc6142424dbd32edf0c427b776262a119bdfe8e"\n'''
+          new_constants = '''PROTOCOL_RELATIVE = "artifacts/v03/c16_proto_concepts/protocol.json"\nDEFAULT_PROTOCOL = ROOT / PROTOCOL_RELATIVE\nHISTORY_MIGRATION_RELATIVE = "artifacts/repository/lfs_history_migration_v1.json"\nBASE_PROTOCOL_COMMIT = "4dc6142424dbd32edf0c427b776262a119bdfe8e"\n'''
+          if old_constants not in runner:
+              raise SystemExit("C16 constants insertion point not found")
+          runner = runner.replace(old_constants, new_constants, 1)
+
+          old_helper = '''def _git(root: Path, *args: str) -> str:\n    return _git_bytes(root, *args).decode("utf-8").strip()\n\n\ndef _require_hash'''
+          new_helper = '''def _git(root: Path, *args: str) -> str:\n    return _git_bytes(root, *args).decode("utf-8").strip()\n\n\ndef _resolve_repository_revision(root: Path, revision: str) -> str:\n    """Resolve a historical source pin after a recorded repository rewrite.\n\n    The protocol keeps the original commit identity.  A rewrite is accepted\n    only when the tracked migration ledger maps that exact old SHA to a\n    reachable new commit; protected file hashes are still validated by the\n    caller, so the mapping never substitutes content trust.\n    """\n\n    _require_hash(revision, length=40, label="repository revision")\n    try:\n        _git(root, "cat-file", "-e", f"{revision}^{{commit}}")\n    except subprocess.CalledProcessError:\n        pass\n    else:\n        return revision\n\n    migration_path = root / HISTORY_MIGRATION_RELATIVE\n    try:\n        migration = _decode(migration_path.read_bytes())\n    except (OSError, UnicodeDecodeError, ValueError) as exc:\n        raise RuntimeError("C16 source pin is unreachable and history migration is invalid") from exc\n    if migration.get("schema") != "sparkbrain.repository.lfs-history-migration.v1":\n        raise RuntimeError("C16 history migration schema is invalid")\n    rows = migration.get("revision_map")\n    if not isinstance(rows, list):\n        raise RuntimeError("C16 history migration revision_map is invalid")\n\n    mapping: dict[str, str] = {}\n    for row in rows:\n        if not isinstance(row, dict) or set(row) != {"old", "new"}:\n            raise RuntimeError("C16 history migration row is invalid")\n        old = _require_hash(row["old"], length=40, label="old migrated revision")\n        new = _require_hash(row["new"], length=40, label="new migrated revision")\n        if old in mapping:\n            raise RuntimeError("C16 history migration contains duplicate old revisions")\n        mapping[old] = new\n    resolved = mapping.get(revision)\n    if resolved is None:\n        raise RuntimeError("C16 source pin is unreachable and has no migration mapping")\n    try:\n        _git(root, "cat-file", "-e", f"{resolved}^{{commit}}")\n    except subprocess.CalledProcessError as exc:\n        raise RuntimeError("C16 migrated source pin is unreachable") from exc\n    return resolved\n\n\ndef _require_hash'''
+          if old_helper not in runner:
+              raise SystemExit("C16 helper insertion point not found")
+          runner = runner.replace(old_helper, new_helper, 1)
+
+          old_scope = '''def _validate_source_scope(*, root: Path, protocol: dict[str, Any], source_commit: str) -> None:\n    control = protocol["source_control"]\n'''
+          new_scope = '''def _validate_source_scope(*, root: Path, protocol: dict[str, Any], source_commit: str) -> None:\n    source_commit = _resolve_repository_revision(root, source_commit)\n    control = protocol["source_control"]\n'''
+          if old_scope not in runner:
+              raise SystemExit("C16 source scope insertion point not found")
+          runner = runner.replace(old_scope, new_scope, 1)
+          runner_path.write_text(runner, encoding="utf-8")
+
+          test_path = Path("tests/test_c16_concept_runner.py")
+          test = test_path.read_text(encoding="utf-8")
+          old_test = '''    source_commit = pinned_protocol["source_commit"]\n    assert isinstance(source_commit, str)\n    value = pinned_protocol["source_control"]\n'''
+          new_test = '''    source_commit = pinned_protocol["source_commit"]\n    assert isinstance(source_commit, str)\n    source_commit = runner._resolve_repository_revision(ROOT, source_commit)\n    value = pinned_protocol["source_control"]\n'''
+          if old_test not in test:
+              raise SystemExit("C16 protected snapshot insertion point not found")
+          test = test.replace(old_test, new_test, 1)
+          test_path.write_text(test, encoding="utf-8")
+          PY
+
+      - name: Format and run focused C16 tests
+        run: |
+          python -m pip install -e ".[dev]"
+          python -m ruff format scripts/run_c16_concepts.py tests/test_c16_concept_runner.py
+          python -m ruff check scripts/run_c16_concepts.py tests/test_c16_concept_runner.py
+          python -m pytest -q tests/test_c16_concept_runner.py
+
+      - name: Commit the fail-closed migration-aware fix
+        run: |
+          rm -f .github/workflows/v05-c16-pin-migration-fix.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "fix(c16): resolve source pin through recorded history migration"
+          git push origin HEAD:v05
