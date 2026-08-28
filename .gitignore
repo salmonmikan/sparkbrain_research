@@ -1,6 +1,8 @@
 __pycache__/
 *.py[cod]
 .pytest_cache/
+.pytest-tmp/
+.test-results/
 .ruff_cache/
 
 # C02 retains full per-episode rows locally; the 37,000-episode run is about

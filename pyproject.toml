@@ -44,7 +44,14 @@ where = ["src"]
 [tool.pytest.ini_options]
 pythonpath = ["src"]
 testpaths = ["tests"]
-addopts = "-q -p no:cacheprovider --assert=plain --basetemp=../.sparkbrain-pytest-runtime"
+addopts = "-q -p no:cacheprovider --assert=plain --basetemp=.pytest-tmp -m 'not (scientific or reproduction or external)'"
+markers = [
+  "slow: noticeably slower test that is not part of the fast developer loop",
+  "scientific: controlled-science implementation or result-contract test",
+  "reproduction: clean-room, release, or generated-artifact reproduction test",
+  "external: external-validation boundary or adapter test",
+  "integration: multi-component local API or service regression test",
+]
 
 [tool.ruff]
 line-length = 100
