@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import math
 import random
+from collections.abc import Iterable
 from dataclasses import dataclass
-from typing import Iterable
 
 
 @dataclass(slots=True)
@@ -112,9 +112,7 @@ def grid_topology(
                 delay_ms=base_delay_ms + conduction_ms_per_unit * distance,
             )
 
-    receptor_ids = tuple(
-        unit.unit_id for unit in units if int(unit.y) < min(receptor_rows, height)
-    )
+    receptor_ids = tuple(unit.unit_id for unit in units if int(unit.y) < min(receptor_rows, height))
     return FieldTopology(
         units=tuple(units),
         connections=tuple(connections.values()),

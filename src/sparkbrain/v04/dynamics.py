@@ -3,8 +3,8 @@ from __future__ import annotations
 import hashlib
 import math
 from collections import deque
+from collections.abc import Iterable
 from dataclasses import dataclass, field
-from typing import Iterable
 
 from .contracts import (
     BurstEvent,
@@ -24,9 +24,7 @@ def _spatial_spread(spikes: Iterable[SpikeEvent]) -> float:
     if len(rows) < 2:
         return 0.0
     return max(
-        math.hypot(a.x - b.x, a.y - b.y)
-        for index, a in enumerate(rows)
-        for b in rows[index + 1 :]
+        math.hypot(a.x - b.x, a.y - b.y) for index, a in enumerate(rows) for b in rows[index + 1 :]
     )
 
 

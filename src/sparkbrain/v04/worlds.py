@@ -1,8 +1,8 @@
 from __future__ import annotations
 
 import random
+from collections.abc import Iterable
 from dataclasses import dataclass
-from typing import Iterable
 
 from .contracts import SignalPulse
 from .transduction import pulse_train

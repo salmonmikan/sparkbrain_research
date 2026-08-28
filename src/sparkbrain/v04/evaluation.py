@@ -1,7 +1,8 @@
 from __future__ import annotations
 
+from collections.abc import Callable
 from dataclasses import dataclass
-from typing import Any, Callable
+from typing import Any
 
 from .brain import IntegratedV04Brain, V04BrainConfig
 from .dynamics import BurstDetectorConfig, CascadeTrackerConfig, IgnitionGateConfig
@@ -212,7 +213,9 @@ def run_reference_experiments(
     *,
     config: V04BrainConfig | None = None,
 ) -> dict[str, Any]:
-    factory = lambda: IntegratedV04Brain(config or V04BrainConfig())
+    def factory():
+        return IntegratedV04Brain(config or V04BrainConfig())
+
     rows = (
         evaluate_temporal_order(factory),
         evaluate_coincidence(),
