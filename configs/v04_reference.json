@@ -1,0 +1,11 @@
+{
+  "enable_expectations": true,
+  "enable_plasticity": true,
+  "height": 8,
+  "ignition_threshold": 4.2,
+  "max_cascade_gap_ms": 6.0,
+  "receptor_rows": 1,
+  "settle_ms": 35.0,
+  "topology_seed": 41,
+  "width": 8
+}
