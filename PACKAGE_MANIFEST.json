@@ -1,11 +1,17 @@
 {
-  "file_count": 742,
+  "file_count": 760,
   "files": [
     {
       "artifact_class": "documentation",
       "path": ".agents/skills/sparkbrain-research/SKILL.md",
-      "sha256": "362c93126a85b68fb134dd806c9fda9b8e84e0bacdb307ce7b9b9f39e401dfc3",
-      "size": 2602
+      "sha256": "2aaec592f49b18b514f120cf028565a7c26d1b9aa7aec7d8ea02540e98691728",
+      "size": 2634
+    },
+    {
+      "artifact_class": "package-metadata",
+      "path": ".gitattributes",
+      "sha256": "32fc01f38c95d138683f5719398264a298bf769bcc6a6b91a28bb8f6a640007e",
+      "size": 283
     },
     {
       "artifact_class": "package-metadata",
@@ -28,8 +34,8 @@
     {
       "artifact_class": "documentation",
       "path": "CHANGELOG.md",
-      "sha256": "fcbe322bc2ce06783e2419a4a56623640ebb4e14a5887c517a2d69ec47ef8933",
-      "size": 2733
+      "sha256": "ab2e49b10599623e653d08d41e4dfd6db615e555e4f8a31eb47338a635427075",
+      "size": 3874
     },
     {
       "artifact_class": "documentation",
@@ -52,8 +58,8 @@
     {
       "artifact_class": "documentation",
       "path": "PACKAGE_CONTENTS.md",
-      "sha256": "37557b3faded6ec1bb57f67d9549ebb8d763329f105e786d4d7c19752cdac974",
-      "size": 6137
+      "sha256": "d4b874c15e1cc2b51f026c4243dfca740b34359bf5b4a552a2fa4e2c52e40e35",
+      "size": 6558
     },
     {
       "artifact_class": "documentation",
@@ -64,8 +70,8 @@
     {
       "artifact_class": "documentation",
       "path": "README.md",
-      "sha256": "a92215003436043ca3ed0de60f08cb5c4568e1674278d064f7021a2e3f3c5b90",
-      "size": 13028
+      "sha256": "2e0bd9e0a42da4245097154d078d7af7cf0ac7aa85d302099e8327f419f06b1b",
+      "size": 13686
     },
     {
       "artifact_class": "package-metadata",
@@ -1320,6 +1326,12 @@
       "path": "artifacts/release/v0.3/source_manifest.json",
       "sha256": "32342d2cd719a199fe7d2b14ac137532c8350ec6d62396a95a97705aa2260c86",
       "size": 1278
+    },
+    {
+      "artifact_class": "research-artifact",
+      "path": "artifacts/repository/lfs_history_migration_v1.json",
+      "sha256": "3b78141f8285877659801292b83c4c702136f0c27b41adff71a5ab997114926d",
+      "size": 2064
     },
     {
       "artifact_class": "research-artifact",
@@ -2631,6 +2643,12 @@
     },
     {
       "artifact_class": "documentation",
+      "path": "docs/CLAIMS_REGISTER_v0.3_ADDENDUM.md",
+      "sha256": "898203b7dd9288c761b1f88b057fc43ad29ccf14cabd781b46b24f925c2581f2",
+      "size": 1680
+    },
+    {
+      "artifact_class": "documentation",
       "path": "docs/CLEAN_ROOM_REPRODUCTION.md",
       "sha256": "5412925c221fe73e038e697ca8ad544dab72cb046f56aca7dd907a01e5e83439",
       "size": 6010
@@ -2644,8 +2662,8 @@
     {
       "artifact_class": "documentation",
       "path": "docs/DECISION_LOG.md",
-      "sha256": "afda394afd783a4d5b1805cf579203cdf85ec422f496ab658342715cca08a7ba",
-      "size": 88704
+      "sha256": "a87828c7b2ee371f73066b9f6fa1b92ea825d6d32241fd298edb798dba61e233",
+      "size": 90079
     },
     {
       "artifact_class": "documentation",
@@ -2656,8 +2674,8 @@
     {
       "artifact_class": "documentation",
       "path": "docs/EXPERIMENT_PROTOCOL.md",
-      "sha256": "48ebfed29a6b32986fad9fd05fab95ac3911390ef17b420e25d37acbec198ed6",
-      "size": 79635
+      "sha256": "ef5fe4a6116d4b65baea81d556c934a8eb5aaf8ab9747396728598d72d25c4b2",
+      "size": 80993
     },
     {
       "artifact_class": "documentation",
@@ -2722,20 +2740,20 @@
     {
       "artifact_class": "documentation",
       "path": "docs/PROJECT_CHARTER.md",
-      "sha256": "775ed015b2862641d64516cf62888df5bb7eff6a0969dd646e582cfef9dd643d",
-      "size": 9845
+      "sha256": "e874f054bf175630490b0712a58bb2712f3bed53b7d391311351971d2386159f",
+      "size": 9962
     },
     {
       "artifact_class": "documentation",
       "path": "docs/PROJECT_STATUS.md",
-      "sha256": "d7f010b0782c6a40a513fe39af31d566767fd185b75a1712955996ba67f42051",
-      "size": 30707
+      "sha256": "78a3efdf6eb528862222e46616d497686f289831a2134b74dd2219bfa2b37730",
+      "size": 31403
     },
     {
       "artifact_class": "documentation",
       "path": "docs/RESULTS_LEDGER.md",
-      "sha256": "842961bce681bde58402a1f2e29aff9422b5af107291b64d8010ed77310c75cb",
-      "size": 66522
+      "sha256": "97e45835350085d9bf89683c17707f8dc1676b1aafa013b7da030a640cd32584",
+      "size": 67520
     },
     {
       "artifact_class": "documentation",
@@ -2746,8 +2764,8 @@
     {
       "artifact_class": "documentation",
       "path": "docs/SOFTWARE_ARCHITECTURE.md",
-      "sha256": "e1435b1f227f1cd28ae23e79479e395952ed26b6122552bf541933b5169c13a8",
-      "size": 21672
+      "sha256": "a307d8e9f42889b9e85a80bdab76612200ad44a8c1b146770bd5e221c7f2c09b",
+      "size": 22957
     },
     {
       "artifact_class": "documentation",
@@ -2758,8 +2776,8 @@
     {
       "artifact_class": "documentation",
       "path": "docs/START_HERE.md",
-      "sha256": "0d7fd436f2608769eb00e2b1cf3ad7bd2a6b3a22dbfab8d0e03c3a0d43451818",
-      "size": 4787
+      "sha256": "511c27bb941d396c2acea80efbe4379e74a1d072bc3153996742acc27e6aaec3",
+      "size": 4950
     },
     {
       "artifact_class": "documentation",
@@ -2794,8 +2812,8 @@
     {
       "artifact_class": "documentation",
       "path": "docs/TEST_TIERS.md",
-      "sha256": "2bdb845c41032e49c40e8eb0021d27171d84118ed56a5450b4564a7989d09366",
-      "size": 4465
+      "sha256": "97fef8f4014794a3fe9aa639954527e173289dace786a8e116b1e8cfadc20393",
+      "size": 5028
     },
     {
       "artifact_class": "documentation",
@@ -2812,14 +2830,20 @@
     {
       "artifact_class": "documentation",
       "path": "docs/THEORY_SPEC_v0.3.md",
-      "sha256": "c91e83024929ce80af24f252eb684c8262140d7b35eba65a320eeeca28f566be",
-      "size": 10398
+      "sha256": "b7560fb390d49cf2f79913558249bfa89cb59d0b062a013d30bd620270b13c7b",
+      "size": 10403
     },
     {
       "artifact_class": "documentation",
       "path": "docs/THIRD_PARTY_NOTICES.md",
       "sha256": "0beb4fdfcea521061c0bccad0fa2b6f480069c2f0a51be01bc417fae18bba2b4",
       "size": 3541
+    },
+    {
+      "artifact_class": "documentation",
+      "path": "docs/V032_IMPLEMENTATION_STATUS.md",
+      "sha256": "d5e9253ee517db90ae3072c76450135fcea3be13b7a2eb6376f7ec2a40f39570",
+      "size": 3477
     },
     {
       "artifact_class": "documentation",
@@ -2830,8 +2854,8 @@
     {
       "artifact_class": "documentation",
       "path": "docs/V03_MIGRATION_AND_COMPATIBILITY.md",
-      "sha256": "19cd83153380ddbed465c0acc8ae972823f1e05656e59dbb76b38a3be5f07b4b",
-      "size": 2881
+      "sha256": "633b2a0985de30de098baa080a5781ed5cb2e76ffec0d0f17306c556a6e7d5d5",
+      "size": 2997
     },
     {
       "artifact_class": "documentation",
@@ -2902,8 +2926,8 @@
     {
       "artifact_class": "documentation",
       "path": "docs/codex/PROMPTS.md",
-      "sha256": "5c99cf0c7c07d5e5e5ee64380ab6be46163df0f1aac0d0de5160d801f83572d9",
-      "size": 1516
+      "sha256": "5741428d043f74c66496d1beeec2e898f676856da1b6b94174784517b51a1b59",
+      "size": 1538
     },
     {
       "artifact_class": "documentation",
@@ -3070,8 +3094,8 @@
     {
       "artifact_class": "package-metadata",
       "path": "pyproject.toml",
-      "sha256": "174c41a4a32bdae6ce4b290c4bfa62fe5d6da7fad9693533a82c3a179327974c",
-      "size": 1667
+      "sha256": "dcefd30a09f6f0908778fd27080bd9b7bc3a2fc231b42c5e6e2128f29a13200d",
+      "size": 1672
     },
     {
       "artifact_class": "package-metadata",
@@ -3232,20 +3256,20 @@
     {
       "artifact_class": "reproduction-tooling",
       "path": "scripts/generate_v03_release_artifacts.py",
-      "sha256": "98554f091c462eb813a92f093e611de86e1a1877788f5ad255a82d9393439d24",
-      "size": 1936
+      "sha256": "3915f419676b0d3fecde8b3d4786857487b5a354e2bdc86da8ac3f75a4c092a2",
+      "size": 2079
     },
     {
       "artifact_class": "reproduction-tooling",
       "path": "scripts/generate_v03_root_manifest.py",
-      "sha256": "ad5393c6885a09a83db5b533d8665fa1265ac933906f8d084d320d7002658c9e",
-      "size": 7023
+      "sha256": "f789aa5b44a7c646cf25dde4c3d3c31c37725833cfb6137cf1d95cf08e81144d",
+      "size": 7195
     },
     {
       "artifact_class": "reproduction-tooling",
       "path": "scripts/local_readiness_check.py",
-      "sha256": "82f850652c23184551a6a4c867eef5aef26f596f0fb419067da38c340fafe2ce",
-      "size": 4850
+      "sha256": "d43371c162a60d6ea6999de87089c8cb5281381e7a502103cff3a00d87d1722d",
+      "size": 4855
     },
     {
       "artifact_class": "reproduction-tooling",
@@ -3394,8 +3418,8 @@
     {
       "artifact_class": "software",
       "path": "src/sparkbrain/__init__.py",
-      "sha256": "a49b63339dcb16680ccd14b13f0346362a9e619e0dd4a59e7667fed0e46c39a3",
-      "size": 908
+      "sha256": "c3d4ccc1ed07e0984e4cd1e37bcd88c6f6bb692d76ebda41c14046f0e2be8b32",
+      "size": 913
     },
     {
       "artifact_class": "software",
@@ -3706,8 +3730,8 @@
     {
       "artifact_class": "software",
       "path": "src/sparkbrain/release.py",
-      "sha256": "2429e244ca97bb7d05897afe1939e75d9b389a5c1dc0521f947f309de63fe0dc",
-      "size": 44755
+      "sha256": "43247263343bb02c5a21154713886bc011ef6685a8a7e5a944a3414f2c485dfb",
+      "size": 49003
     },
     {
       "artifact_class": "software",
@@ -3717,9 +3741,15 @@
     },
     {
       "artifact_class": "software",
+      "path": "src/sparkbrain/release_atomic.py",
+      "sha256": "80bddf14ea95a8a68d79c956d585d726a0027b7e16a3eba8c36d6a0a325bb1a6",
+      "size": 3576
+    },
+    {
+      "artifact_class": "software",
       "path": "src/sparkbrain/release_candidate.py",
-      "sha256": "a381a9150828690630ecc76be09af51c0d4321a6291df2b6b92bcc8b3929a650",
-      "size": 40189
+      "sha256": "93aa7fe45a7a315feafd37f6f5575b4d3f6a13ddc1856da80fdd370c84226929",
+      "size": 39975
     },
     {
       "artifact_class": "software",
@@ -3864,6 +3894,54 @@
       "path": "src/sparkbrain/v03/runtime.py",
       "sha256": "74374965dbf7989505cc50f6dedc0741677159a5261940747dbbdea225071ea1",
       "size": 50726
+    },
+    {
+      "artifact_class": "software",
+      "path": "src/sparkbrain/v032/__init__.py",
+      "sha256": "0459307eef8ab8a5d9f0a4dcdad536cacc9ab5a461877a8d5380ef6b9c3cc6cb",
+      "size": 1213
+    },
+    {
+      "artifact_class": "software",
+      "path": "src/sparkbrain/v032/checkpoint.py",
+      "sha256": "7a7f597ad7698a55ebe5e32c31062dd81ad06e93d06192a6c117c915b0e1d25b",
+      "size": 16351
+    },
+    {
+      "artifact_class": "software",
+      "path": "src/sparkbrain/v032/contracts.py",
+      "sha256": "51eaa1f082187ef64a507ecf1776fbcc00291a1a4b734ac2d6faaf4b709f7458",
+      "size": 1351
+    },
+    {
+      "artifact_class": "software",
+      "path": "src/sparkbrain/v032/input_semantics.py",
+      "sha256": "611d13e05c342716251ddea45d2a1b4890d13b7798f31d3586cd4f8a0fd9cb59",
+      "size": 4873
+    },
+    {
+      "artifact_class": "software",
+      "path": "src/sparkbrain/v032/jsonsafe.py",
+      "sha256": "878c6d5911666393e4c0dd503a77aad7451e5c6f5b9aef3fc5cebea48b93c2f6",
+      "size": 2666
+    },
+    {
+      "artifact_class": "software",
+      "path": "src/sparkbrain/v032/metrics.py",
+      "sha256": "bcd2689f9ecbc038942a82247378924d8226a28e429784871dddb6f3abe20cf0",
+      "size": 6389
+    },
+    {
+      "artifact_class": "software",
+      "path": "src/sparkbrain/v032/residual.py",
+      "sha256": "2af172831386a7d2dc78cfef28aa70304acdb986ac0a560b98c77554d2361a67",
+      "size": 2733
+    },
+    {
+      "artifact_class": "software",
+      "path": "src/sparkbrain/v032/runtime.py",
+      "sha256": "66fc7ae494ba37396fdf99eb1625239c7b8d910ff7a2e00b323748facff9114e",
+      "size": 6262
     },
     {
       "artifact_class": "software",
@@ -4246,8 +4324,8 @@
     {
       "artifact_class": "software",
       "path": "tests/test_clean_room_release.py",
-      "sha256": "c24b0583be2cf4e1ffdb1560d788f42b775d6e7bc1f25c33fd255f61e8f20931",
-      "size": 12956
+      "sha256": "159714758e98e00f3358f1bd4bae2a1fe336da347bd9ee0ac95c0ac7db2b71b2",
+      "size": 12928
     },
     {
       "artifact_class": "software",
@@ -4282,8 +4360,8 @@
     {
       "artifact_class": "software",
       "path": "tests/test_local_only.py",
-      "sha256": "976e28686b60014e21519ee109f76116aa35b3de76fa7153f15e5c43476d0bf0",
-      "size": 1793
+      "sha256": "b28aae806f9bc15a6b67be24bb793ef1bbe536b59d82f7c81d3a4d1f7a5d7e75",
+      "size": 1798
     },
     {
       "artifact_class": "software",
@@ -4342,8 +4420,8 @@
     {
       "artifact_class": "software",
       "path": "tests/test_release_candidate.py",
-      "sha256": "eb893afdebacdfe229d99c595f22bec3a5a5edb8bd06cdcf470f78d9853cb712",
-      "size": 17462
+      "sha256": "5f56977592f90cc0f723b1c016212176057cf2c8eda5fd81a5469df99e3369e7",
+      "size": 17716
     },
     {
       "artifact_class": "software",
@@ -4419,6 +4497,36 @@
     },
     {
       "artifact_class": "software",
+      "path": "tests/test_v032_direct_checkpoint.py",
+      "sha256": "b4ad7ded4d76cf37e4d61d4dda56340d8d3dc0d2b12d356003b1f0f4767165a5",
+      "size": 4336
+    },
+    {
+      "artifact_class": "software",
+      "path": "tests/test_v032_input_semantics.py",
+      "sha256": "f64f03839a6006527e882123b965e25fa26b51d94ebce2c59b4945b62022725e",
+      "size": 2139
+    },
+    {
+      "artifact_class": "software",
+      "path": "tests/test_v032_metrics.py",
+      "sha256": "0d943efeffe249cc82c67552c2929c31554b91d2aaf6c8a9399a214b84961cb5",
+      "size": 3076
+    },
+    {
+      "artifact_class": "software",
+      "path": "tests/test_v032_release_atomic.py",
+      "sha256": "7991e2bc369a1d5902e7a556ea9184b690262f932f78dec4383f4d973aa601ca",
+      "size": 3911
+    },
+    {
+      "artifact_class": "software",
+      "path": "tests/test_v032_runtime.py",
+      "sha256": "c9a73ede19e57c88b0cdc00249cb38cb1e91aaf2031e06c3d38e6b213730a4d3",
+      "size": 3919
+    },
+    {
+      "artifact_class": "software",
       "path": "tests/test_v03_private_review_bundle.py",
       "sha256": "6442f0615cf83026c5c3ac8b3ced97c5529d103c729738f3ac5d7feaf469414e",
       "size": 9395
@@ -4426,14 +4534,14 @@
     {
       "artifact_class": "software",
       "path": "tests/test_v03_release_artifacts.py",
-      "sha256": "ba03941658efcde250743f7bcddf7a0a35f9b7db842f2c10377b47e8a3af7af5",
-      "size": 12174
+      "sha256": "e78a48cc9c8acadd61c4ac4c1574809e8b96ddf8a5eed51d7c33d56d5b760cd9",
+      "size": 12172
     },
     {
       "artifact_class": "software",
       "path": "tests/test_v03_release_compatibility.py",
-      "sha256": "ef097315da0e167ef04ccf5b07fb72ae75deb7e40ff01615c9a1af12a92bc387",
-      "size": 1612
+      "sha256": "445ed2dcb24e87c93e178a443687fa7bc22ff4c1b666bd226d60fff7add23cb1",
+      "size": 2756
     },
     {
       "artifact_class": "software",
@@ -4454,7 +4562,7 @@
       "size": 4109
     }
   ],
-  "generated_at": "2026-08-28T00:00:00+00:00",
+  "generated_at": "2026-08-28T14:24:00+00:00",
   "manifest_excludes": [
     "PACKAGE_MANIFEST.json",
     "RELEASE_METADATA.json",
@@ -4467,6 +4575,6 @@
     "release": "11",
     "system": "Windows"
   },
-  "source_revision": "b991d78dd81bd98cfe65e10dfb46db2c96b798be",
-  "uncompressed_bytes_excluding_manifest": 456642802
+  "source_revision": "930146f2cc8bce736f69726f5a32ab7d11fa5f4f",
+  "uncompressed_bytes_excluding_manifest": 456727788
 }
