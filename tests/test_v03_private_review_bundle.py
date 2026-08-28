@@ -103,6 +103,28 @@ def test_private_review_bundle_keeps_license_blocker_and_refuses_existing_output
         )
 
 
+def test_private_review_bundle_preserves_corrective_package_version(tmp_path: Path) -> None:
+    root = tmp_path / "source"
+    paths = _fixture(root)
+    (root / "pyproject.toml").write_text(
+        "[project]\nname = 'sparkbrain-research'\nversion = '0.3.1'\n", encoding="utf-8"
+    )
+    output = tmp_path / "review.zip"
+    build_private_review_bundle(
+        root,
+        source_revision="3" * 40,
+        paths=paths,
+        output=output,
+        source_date_epoch=1_700_000_000,
+    )
+    with zipfile.ZipFile(output) as archive:
+        review = json.loads(archive.read(f"{ARCHIVE_ROOT}/{REVIEW_MANIFEST_NAME}"))
+        source = json.loads(archive.read(f"{ARCHIVE_ROOT}/{SOURCE_MANIFEST_NAME}"))
+    assert review["package_version"] == "0.3.1"
+    assert source["package_version"] == "0.3.1"
+    assert validate_private_review_bundle(output) == []
+
+
 def test_private_review_bundle_refuses_existing_checksum_without_publishing_zip(
     tmp_path: Path,
 ) -> None:

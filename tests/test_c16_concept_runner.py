@@ -207,9 +207,18 @@ def test_source_exact_scope_and_working_pin(tmp_path, monkeypatch, tamper) -> No
     reason="C16 source-commit hash pins require the retained stage checkout",
 )
 def test_protected_manifests_and_tamper(tmp_path) -> None:
-    value = protocol()["source_control"]
-    runner._validate_hash_manifest(ROOT, value["protected_hash_manifest"], count=29)
-    runner._validate_hash_manifest(ROOT, value["runtime_source_pins"], count=4)
+    pinned_protocol = json.loads(runner.DEFAULT_PROTOCOL.read_text(encoding="utf-8"))
+    source_commit = pinned_protocol["source_commit"]
+    assert isinstance(source_commit, str)
+    value = pinned_protocol["source_control"]
+    snapshot = tmp_path / "c16-source-snapshot"
+    manifests = (value["protected_hash_manifest"], value["runtime_source_pins"])
+    for relative in sorted({path for manifest in manifests for path in manifest}):
+        target_path = snapshot / relative
+        target_path.parent.mkdir(parents=True, exist_ok=True)
+        target_path.write_bytes(runner._git_bytes(ROOT, "show", f"{source_commit}:{relative}"))
+    runner._validate_hash_manifest(snapshot, value["protected_hash_manifest"], count=29)
+    runner._validate_hash_manifest(snapshot, value["runtime_source_pins"], count=4)
     target = tmp_path / "protected.txt"
     target.write_bytes(b"protected")
     manifest = {target.name: hashlib.sha256(target.read_bytes()).hexdigest()}

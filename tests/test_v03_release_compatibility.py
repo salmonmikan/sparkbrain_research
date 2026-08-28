@@ -11,8 +11,8 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def test_v03_package_keeps_the_v02_persisted_schema_boundary() -> None:
     pyproject = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))
-    assert pyproject["project"]["version"] == "0.3.0"
-    assert sparkbrain.__version__ == "0.3.0"
+    assert pyproject["project"]["version"] == "0.3.1"
+    assert sparkbrain.__version__ == "0.3.1"
     assert sparkbrain.SCHEMA_VERSION == "0.2"
 
 

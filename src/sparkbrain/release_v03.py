@@ -27,6 +27,7 @@ REVIEW_MANIFEST_NAME = "REVIEW_BUNDLE_MANIFEST.json"
 PRIVATE_NOTICE_NAME = "PRIVATE_REVIEW_NOTICE.txt"
 SOURCE_MANIFEST_SCHEMA = "sparkbrain-v03-source-manifest-v1"
 REVIEW_MANIFEST_SCHEMA = "sparkbrain-v03-private-review-v1"
+SUPPORTED_PRIVATE_REVIEW_VERSIONS = frozenset({"0.3.0", "0.3.1"})
 PRIVATE_NOTICE = (
     b"PRIVATE CHATGPT REVIEW BUNDLE\n"
     b"This archive is for private review, not a public release.\n"
@@ -100,8 +101,8 @@ def _package_version(root: Path) -> str:
     except (OSError, UnicodeDecodeError, tomllib.TOMLDecodeError) as exc:
         raise ValueError(f"project metadata is unreadable: {exc}") from exc
     version = payload.get("project", {}).get("version")
-    if not isinstance(version, str) or version != "0.3.0":
-        raise ValueError("private v0.3 bundle requires package version 0.3.0")
+    if not isinstance(version, str) or version not in SUPPORTED_PRIVATE_REVIEW_VERSIONS:
+        raise ValueError("private v0.3 bundle requires a supported v0.3 package version")
     return version
 
 
@@ -145,8 +146,8 @@ def validate_source_manifest(root: Path, manifest: Any) -> list[str]:
         problems.append("source manifest fields do not match fixed schema")
     if manifest.get("schema_version") != SOURCE_MANIFEST_SCHEMA:
         problems.append("unsupported source manifest schema version")
-    if manifest.get("package_version") != "0.3.0":
-        problems.append("source manifest package_version must be 0.3.0")
+    if manifest.get("package_version") not in SUPPORTED_PRIVATE_REVIEW_VERSIONS:
+        problems.append("source manifest package_version must be a supported v0.3 version")
     try:
         _revision(manifest.get("source_revision"))
     except ValueError as exc:
@@ -280,11 +281,12 @@ def validate_private_review_bundle(path: Path) -> list[str]:
             "source_manifest": SOURCE_MANIFEST_NAME,
             "private_notice": PRIVATE_NOTICE_NAME,
             "license_status": "owner-decision-pending",
-            "package_version": "0.3.0",
         }
         for field, expected in expected_values.items():
             if review.get(field) != expected:
                 problems.append(f"private review manifest {field} mismatch")
+        if review.get("package_version") not in SUPPORTED_PRIVATE_REVIEW_VERSIONS:
+            problems.append("private review manifest package_version mismatch")
         if review.get("source_manifest_sha256") != _sha256(source_raw):
             problems.append("private review source manifest hash mismatch")
         if review.get("private_notice_sha256") != _sha256(notice) or notice != PRIVATE_NOTICE:
@@ -308,8 +310,10 @@ def validate_private_review_bundle(path: Path) -> list[str]:
             _revision(source.get("source_revision"))
         except ValueError:
             problems.append("private review source manifest revision is invalid")
-        if source.get("package_version") != "0.3.0":
+        if source.get("package_version") not in SUPPORTED_PRIVATE_REVIEW_VERSIONS:
             problems.append("private review source manifest package version mismatch")
+        if review.get("package_version") != source.get("package_version"):
+            problems.append("private review package version does not match source manifest")
         files = source.get("files") if isinstance(source, dict) else None
         expected_names = {manifest_path, source_path, notice_path}
         if not isinstance(files, list):

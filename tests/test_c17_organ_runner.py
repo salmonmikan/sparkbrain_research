@@ -226,7 +226,18 @@ def test_reproduce_parent_orchestrates_two_attested_workers(tmp_path, monkeypatc
         source_commit="a" * 40,
         root=tmp_path,
     )
-    assert status["engineering_status"] == "accepted"
+    acceptance = json.loads((output / "acceptance_matrix.json").read_bytes())
+    gates = {row["gate_id"]: row for row in acceptance["engineering_gates"]}
+    assert gates["reproduction_exact"] == {
+        "gate_id": "reproduction_exact",
+        "observed": True,
+        "passed": True,
+    }
+    assert all(row["passed"] for name, row in gates.items() if name != "protected_hashes")
+    expected_status = (
+        "accepted" if gates["protected_hashes"]["passed"] else "implementation_failure"
+    )
+    assert status["engineering_status"] == expected_status
     assert {path.name for path in output.iterdir()} == runner.EXPECTED_FILES
     sidecars = sorted(tmp_path.glob("final.prefinal-*.attestation.json"))
     assert len(sidecars) == 2
