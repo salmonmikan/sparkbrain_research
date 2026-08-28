@@ -13,9 +13,10 @@ entry receives the next unused identifier; protected artifacts are not renumbere
   facade, pure C15 loser-retention control, trusted-local direct checkpoint, and native
   no-clobber directory publication.
 - Verification: Fast 469 passed/423 deselected in 47.06s; Engineering 502 passed/390 deselected in
-  48.44s; current collection 893 with Scientific 156. Focused release/checkpoint/runtime checks,
-  Ruff, compileall, local readiness, protected-scope audit, and final root binding are required
-  before repository delivery.
+  48.44s; current collection 893 with Scientific 156. The focused release/checkpoint/runtime set
+  passed 143 with 2 skips in 48.35s. Ruff, compileall, local readiness, Git LFS object fsck,
+  protected-scope audit, and root preparation/integrity validation passed. The only release blocker
+  remains the pre-existing owner license decision.
 - Boundary: no official science or artifact regeneration was run. v0.3.1 evidence, C06/C08
   negative results, C19 blocked readiness, persisted schemas, and historical claim grades are
   unchanged.

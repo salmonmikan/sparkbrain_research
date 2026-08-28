@@ -5,6 +5,7 @@ import tomllib
 from pathlib import Path
 
 import pytest
+
 import sparkbrain
 from sparkbrain.release import required_preparation_files, validate_source_revision
 
