@@ -5,24 +5,34 @@ import json
 import math
 import random
 from collections.abc import Mapping, Sequence
+from copy import deepcopy
 from dataclasses import asdict, dataclass, replace
 from typing import Any
 
 from sparkbrain.v03_integration import V03TraceSession
 from sparkbrain.v03_seed import (
+    C15_E0_GLOBAL,
+    C15_E1_ORACLE_ENTITY,
     CoalitionGate,
     CoalitionGateConfig,
     EvidenceContribution,
     EvidenceLedger,
+    FixtureEvidence,
     IgnitionDecision,
     InputRecord,
     LocalCompositionalFrontend,
     OnlineConceptFormer,
     PerceptualSpark,
     PersistentBeliefField,
+    RevisionBeliefField,
+    RevisionController,
+    RevisionDecision,
+    RevisionHeadOutput,
+    RevisionObservation,
     SensorySample,
     StrictSymbolicOracleFrontend,
     WholeHashFrontend,
+    adapt_fixture_evidence_id,
 )
 
 I0 = "I0_whole_hash"
@@ -35,6 +45,23 @@ E2 = "E2_learned_slots"
 _INPUT_TRACKS = frozenset({I0, I1, I2, I3})
 _ENTITY_TRACKS = frozenset({E0, E1, E2})
 _CHECKPOINT_VERSION = "0.3.1"
+ABLATIONS = (
+    "no_residual",
+    "no_maintain_objective",
+    "no_revision_objective",
+    "no_recovery_objective",
+    "one_weighted_ce",
+    "no_attribution",
+    "no_coalition",
+)
+ACTION_TYPES = (
+    "observe",
+    "withhold",
+    "inspect",
+    "commit_belief",
+    "revise",
+    "task_specific",
+)
 _EVALUATOR_KEYS = frozenset(
     {"answer", "evaluator", "gold", "label", "split", "target", "test_only", "truth"}
 )
@@ -90,6 +117,7 @@ class V03BrainConfig:
     ignition_margin: float = 0.20
     stability_steps: int = 1
     action_prefix: str = "broadcast"
+    ablations: tuple[str, ...] = ()
 
     def validate(self) -> None:
         if self.input_track not in _INPUT_TRACKS:
@@ -122,10 +150,21 @@ class V03BrainConfig:
             raise ValueError("stability_steps must be a positive integer")
         if not isinstance(self.action_prefix, str) or not self.action_prefix.strip():
             raise ValueError("action_prefix must be a non-empty string")
+        if not isinstance(self.ablations, tuple):
+            raise ValueError("ablations must be a tuple")
+        if any(not isinstance(item, str) or not item for item in self.ablations):
+            raise ValueError("ablations must contain non-empty strings")
+        if len(set(self.ablations)) != len(self.ablations):
+            raise ValueError("ablations must be unique")
+        unknown = set(self.ablations) - set(ABLATIONS)
+        if unknown:
+            raise ValueError(f"unsupported ablations: {sorted(unknown)}")
 
     def as_dict(self) -> dict[str, Any]:
         self.validate()
-        return asdict(self)
+        result = asdict(self)
+        result["ablations"] = list(self.ablations)
+        return result
 
     @classmethod
     def from_dict(cls, value: object) -> V03BrainConfig:
@@ -133,7 +172,11 @@ class V03BrainConfig:
         if not isinstance(value, dict) or set(value) != expected:
             raise ValueError("v0.3.1 config has unexpected fields")
         try:
-            result = cls(**value)
+            normalized = dict(value)
+            if not isinstance(normalized["ablations"], list):
+                raise ValueError("v0.3.1 config ablations must be a list")
+            normalized["ablations"] = tuple(normalized["ablations"])
+            result = cls(**normalized)
         except TypeError as exc:
             raise ValueError("v0.3.1 config is invalid") from exc
         result.validate()
@@ -153,6 +196,7 @@ class V03StepResult:
     beliefs: Mapping[str, str | None]
     workspace: tuple[Mapping[str, Any], ...]
     action: str | None
+    action_type: str
     world_feedback: Mapping[str, Any]
     concept_observations: tuple[Mapping[str, Any], ...]
     organ_observation: Mapping[str, Any]
@@ -165,6 +209,7 @@ class V03StepResult:
     def as_dict(self) -> dict[str, Any]:
         return {
             "action": self.action,
+            "action_type": self.action_type,
             "beliefs": dict(self.beliefs),
             "concept_observations": [dict(item) for item in self.concept_observations],
             "decisions": [asdict(item) for item in self.decisions],
@@ -190,10 +235,11 @@ class IntegratedV03Brain:
     """Stateful v0.3.1 reference composition.
 
     Concept, organ, and trace outputs are observers: none is read while making
-    evidence, ignition, workspace, or action decisions. The I3 generic adapter
-    uses the existing C15 revision heads with truth-free sensory features; it
-    does not instantiate ``RevisionController``. The default weights are
-    deterministic reference weights and are explicitly not claimed as trained.
+    evidence, ignition, workspace, or action decisions. I3 adapts truth-free
+    sensory features to the existing C15 revision heads and then calls the real
+    C15 ``RevisionController`` production API. Other input tracks use the
+    explicit generic transition adapter. The default weights are deterministic
+    reference weights and are explicitly not claimed as trained.
     """
 
     def __init__(
@@ -230,10 +276,12 @@ class IntegratedV03Brain:
         self._last_concepts: list[dict[str, Any]] = []
         self._last_no_ignition: dict[str, bool] = {}
         self._pending_i3: dict[str, dict[str, Any]] = {}
+        self._i3_evidence: dict[str, dict[str, FixtureEvidence]] = {}
         self._history: list[dict[str, Any]] = []
         self._results: list[V03StepResult] = []
         self._rng = random.Random(self.config.random_seed)
         self._revision_model = None
+        self._revision_controller: RevisionController | None = None
         self._model_status = "not_used"
         if self.config.input_track == I3:
             self._revision_model = self._provided_revision_model or self._new_reference_model()
@@ -244,8 +292,26 @@ class IntegratedV03Brain:
                 "provided_c15_model" if self._provided_revision_model is not None
                 else "deterministic_untrained_c15_reference"
             )
+            self._revision_controller = RevisionController()
         self._model_hash = self._parameter_hash(self._revision_model)
         self.trace = V03TraceSession(config=self._trace_config())
+
+    def _revision_controller_status(self) -> str:
+        if self._revision_controller is not None:
+            return "connected_actual_c15_revision_controller"
+        return "not_applicable_generic_transition_adapter"
+
+    def _revision_controller_inventory(self) -> dict[str, Any] | None:
+        controller = self._revision_controller
+        if controller is None:
+            return None
+        evidence = json.loads(controller.ledger.serialize_state())
+        return {
+            "abstention_threshold": controller.abstention_threshold,
+            "belief": json.loads(controller.belief_field.serialize_state()),
+            "evidence": evidence,
+            "seen_evidence_ids": sorted(evidence["records"]),
+        }
 
     def _trace_config(self) -> dict[str, Any]:
         return {
@@ -313,7 +379,7 @@ class IntegratedV03Brain:
                 "history_length": len(self._history),
                 "model_hash": self._model_hash,
                 "model_status": self._model_status,
-                "revision_controller_status": "not_connected_generic_adapter",
+                "revision_controller_status": self._revision_controller_status(),
                 "revision_transitions": self._last_revisions,
                 "attributions": self._last_attributions,
                 "sensory_state_hash": _digest(json.loads(self.sensory_field.serialize_state())),
@@ -349,7 +415,8 @@ class IntegratedV03Brain:
                 "evidence": json.loads(self.ledger.serialize_state()),
                 "model": {
                     "hash": self._model_hash,
-                    "revision_controller_status": "not_connected_generic_adapter",
+                    "revision_controller_state": self._revision_controller_inventory(),
+                    "revision_controller_status": self._revision_controller_status(),
                     "status": self._model_status,
                 },
                 "organ": {"mode": "observation_only", "status": "not_evaluated"},
@@ -403,6 +470,10 @@ class IntegratedV03Brain:
         sample.validate()
         bias = self._finite_bias(goal_bias)
         feedback = self._feedback(world_feedback)
+        if "no_residual" in self.config.ablations:
+            self.belief_field.reset()
+            if self._revision_controller is not None:
+                self._revision_controller.belief_field.reset()
         before_events = len(self.trace.events)
         observation = self.sensory_field.observe_with_trace(sample, goal_bias=bias)
         for spark in observation.sparks:
@@ -433,6 +504,7 @@ class IntegratedV03Brain:
         )
         revisions, attributions = self._revise(decisions, now=sample.time)
         action = self._broadcast(decisions, revisions, sample.time)
+        action_type = self._action_type(observation.sparks, decisions, revisions, action)
         self._last_action = action
         self._last_feedback = feedback
 
@@ -475,6 +547,7 @@ class IntegratedV03Brain:
             beliefs=beliefs,
             workspace=tuple(_json_copy(self._workspace)),
             action=action,
+            action_type=action_type,
             world_feedback=feedback,
             concept_observations=concepts,
             organ_observation=organ,
@@ -482,7 +555,7 @@ class IntegratedV03Brain:
             state_hash="pending",
             model_hash=self._model_hash,
             model_status=self._model_status,
-            revision_controller_status="not_connected_generic_adapter",
+            revision_controller_status=self._revision_controller_status(),
         )
         final = replace(result, state_hash=self.state_hash())
         self._results.append(final)
@@ -599,7 +672,36 @@ class IntegratedV03Brain:
             },
         }
         index = int(probabilities.argmax().item())
-        return BELIEF_ORDER[index], float(probabilities[index].item())
+        belief = BELIEF_ORDER[index]
+        self._pending_i3[entity]["belief"] = belief
+        belief_values = [float(probabilities[position].item()) for position in range(3)]
+        total = sum(belief_values)
+        normalized_beliefs = [belief_values[0] / total, belief_values[1] / total]
+        normalized_beliefs.append(1.0 - sum(normalized_beliefs))
+        self._pending_i3[entity]["heads"] = {
+            "abstention_probability": float(transition_probabilities[0].item()),
+            "belief_probabilities": {
+                key: normalized_beliefs[position]
+                for position, key in enumerate(BELIEF_ORDER)
+            },
+            "maintain_probability": float(transition_probabilities[1].item()),
+            "recovery_probability": float(transition_probabilities[2].item()),
+            "update_probability": float(transition_probabilities[3].item()),
+        }
+        evidence = self._i3_evidence.setdefault(entity, {})
+        raw_entity = "runtime-global" if entity == "__global__" else entity
+        for spark in sparks:
+            evidence[spark.evidence_id] = FixtureEvidence(
+                correlation_group=spark.correlation_group or spark.evidence_id,
+                entity_key=raw_entity,
+                evidence_id=spark.evidence_id,
+                hypothesis_id=belief,
+                polarity="support",
+                source_id=spark.source_id,
+                strength=min(1.0, 0.5 + float(probabilities[index].item())),
+                time=spark.time,
+            )
+        return belief, float(probabilities[index].item())
 
     @staticmethod
     def _i3_features(spark: PerceptualSpark) -> list[float]:
@@ -633,6 +735,10 @@ class IntegratedV03Brain:
         return tuple(sorted(values, key=lambda item: item or ""))
 
     def _decide(self, entity: str | None, *, now: float) -> IgnitionDecision:
+        if "no_coalition" in self.config.ablations:
+            return IgnitionDecision(
+                False, None, None, 0.0, 0.0, "coalition_ablation", ()
+            )
         activations = {
             (candidate_entity, belief): self.belief_field.activation(candidate_entity, belief)
             for candidate_entity, belief in sorted(
@@ -641,6 +747,42 @@ class IntegratedV03Brain:
             if candidate_entity == entity
         }
         return self.coalition_gate.evaluate(activations, self.ledger, now=now)
+
+    def _actual_revision(
+        self,
+        entity: str,
+        *,
+        controller: RevisionController,
+        stage_role: str,
+    ) -> RevisionDecision:
+        if self._revision_controller is None:
+            raise RuntimeError("actual RevisionController is unavailable outside I3")
+        pending = self._pending_i3[entity]
+        raw_entity = "runtime-global" if entity == "__global__" else entity
+        condition = C15_E0_GLOBAL if entity == "__global__" else C15_E1_ORACLE_ENTITY
+        observation = RevisionObservation(
+            entity_key=raw_entity,
+            time=max(row.time for row in self._i3_evidence[entity].values()),
+            evidence=tuple(
+                row
+                for _, row in sorted(self._i3_evidence[entity].items())
+            ),
+            entity_condition=condition,
+            heads=RevisionHeadOutput.from_dict(pending["heads"]),
+            metadata={"adapter": "v031_truth_free_revision_controller"},
+        )
+        return controller.process_stage(observation, stage_role=stage_role)
+
+    def _remove_revision_attribution(self) -> None:
+        controller = self._revision_controller
+        if controller is None:
+            return
+        belief = json.loads(controller.belief_field.serialize_state())
+        for state in belief["states"].values():
+            state["citations"] = []
+        controller.belief_field = RevisionBeliefField.from_canonical_json(
+            _canonical(belief)
+        )
 
     def _revise(
         self, decisions: Sequence[IgnitionDecision], *, now: float
@@ -651,10 +793,33 @@ class IntegratedV03Brain:
             entity = decision.object_key or "__global__"
             previous = self.belief_field.winner(decision.object_key)
             cited = list(decision.coalitions[0].support_ids) if decision.coalitions else []
-            if not decision.ignited or decision.belief_key is None:
-                transition = "insufficient_information"
+            controller_accepted = decision.ignited
+            controller_citations = cited
+            trial_controller = None
+            actual = None
+            if self.config.input_track == I3 and "no_coalition" not in self.config.ablations:
+                trial_controller = deepcopy(self._revision_controller)
+                actual = self._actual_revision(
+                    entity,
+                    controller=trial_controller,
+                    stage_role=(
+                        "context" if "one_weighted_ce" in self.config.ablations else "assessment"
+                    ),
+                )
+                transition = {
+                    "insufficient_information": "insufficient_information",
+                    "maintain": "maintain",
+                    "recover": "recover",
+                    "update": "revise",
+                }[actual.predicted_transition.value]
+                controller_accepted = actual.ignited
+                controller_citations = list(actual.citation_ids)
             elif self.config.input_track == I3:
-                transition = self._pending_i3[entity]["transition"]
+                transition = "insufficient_information"
+                controller_accepted = False
+                controller_citations = []
+            elif not decision.ignited or decision.belief_key is None:
+                transition = "insufficient_information"
             elif (
                 self._last_no_ignition.get(entity, False)
                 and previous is not None
@@ -665,18 +830,65 @@ class IntegratedV03Brain:
                 transition = "maintain"
             else:
                 transition = "revise"
-            accepted = decision.ignited and transition != "insufficient_information"
+            if "one_weighted_ce" in self.config.ablations:
+                transition = "revise" if decision.ignited else "insufficient_information"
+                controller_accepted = decision.ignited
+            disabled_transition = {
+                "maintain": "no_maintain_objective",
+                "revise": "no_revision_objective",
+                "recover": "no_recovery_objective",
+            }.get(transition)
+            accepted = (
+                controller_accepted
+                and transition != "insufficient_information"
+                and disabled_transition not in self.config.ablations
+                and "no_coalition" not in self.config.ablations
+            )
+            if trial_controller is not None and disabled_transition not in self.config.ablations:
+                self._revision_controller = trial_controller
             if accepted:
-                self.belief_field.update(decision, time=now)
+                belief_decision = (
+                    replace(decision, coalitions=())
+                    if "no_attribution" in self.config.ablations
+                    else decision
+                )
+                self.belief_field.update(belief_decision, time=now)
+            if actual is not None and "no_attribution" in self.config.ablations:
+                self._remove_revision_attribution()
             revision = {
                 "accepted": accepted,
                 "belief_key": decision.belief_key if accepted else previous,
                 "entity_key": entity,
                 "previous_belief": previous,
                 "transition": transition,
+                "controller_status": self._revision_controller_status(),
             }
             if self.config.input_track == I3:
-                attribution_rows = self._pending_i3[entity]["attribution"]
+                condition = (
+                    C15_E0_GLOBAL if entity == "__global__" else C15_E1_ORACLE_ENTITY
+                )
+                allowed = {
+                    row["evidence_id"]
+                    for row in self._pending_i3[entity]["attribution"]
+                    if adapt_fixture_evidence_id(
+                        row["evidence_id"], entity_condition=condition
+                    )
+                    in controller_citations
+                }
+                attribution_rows = [
+                    row
+                    for row in self._pending_i3[entity]["attribution"]
+                    if row["evidence_id"] in allowed
+                ]
+                attribution_total = sum(row["weight"] for row in attribution_rows)
+                if attribution_total:
+                    attribution_rows = [
+                        {
+                            "evidence_id": row["evidence_id"],
+                            "weight": row["weight"] / attribution_total,
+                        }
+                        for row in attribution_rows
+                    ]
                 revision["transition_probabilities"] = self._pending_i3[entity][
                     "transition_probabilities"
                 ]
@@ -686,6 +898,8 @@ class IntegratedV03Brain:
                     {"evidence_id": evidence_id, "weight": weight}
                     for evidence_id in cited
                 ]
+            if not accepted or "no_attribution" in self.config.ablations:
+                attribution_rows = []
             revisions.append(revision)
             attributions.append(
                 {"entity_key": entity, "rows": attribution_rows, "source": self.config.input_track}
@@ -694,6 +908,26 @@ class IntegratedV03Brain:
         self._last_revisions = _json_copy(revisions)
         self._last_attributions = _json_copy(attributions)
         return revisions, attributions
+
+    def _action_type(
+        self,
+        sparks: Sequence[PerceptualSpark],
+        decisions: Sequence[IgnitionDecision],
+        revisions: Sequence[Mapping[str, Any]],
+        action: str | None,
+    ) -> str:
+        if self.config.input_track == I2 or self.config.entity_track == E1:
+            return "inspect"
+        if action is not None and self.config.action_prefix == "task_specific":
+            return "task_specific"
+        if not sparks or not decisions:
+            return "observe"
+        accepted = [row for row in revisions if row["accepted"] is True]
+        if not accepted:
+            return "withhold"
+        if all(row["transition"] == "maintain" for row in accepted):
+            return "commit_belief"
+        return "revise"
 
     def _broadcast(
         self,

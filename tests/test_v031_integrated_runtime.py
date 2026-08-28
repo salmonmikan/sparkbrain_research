@@ -245,7 +245,7 @@ def test_i3_is_truth_free_and_exposes_revision_and_attribution() -> None:
     second = brain.step(sample("i3", 1, source="source-b", metadata={}))
 
     assert first.model_status == "deterministic_untrained_c15_reference"
-    assert first.revision_controller_status == "not_connected_generic_adapter"
+    assert first.revision_controller_status == "connected_actual_c15_revision_controller"
     assert len(first.model_hash) == 64
     assert second.revision_transitions[0]["transition"] in {
         "maintain",
@@ -260,7 +260,10 @@ def test_i3_is_truth_free_and_exposes_revision_and_attribution() -> None:
         "revise",
     }
     rows = second.attributions[0]["rows"]
-    assert rows and sum(row["weight"] for row in rows) == pytest.approx(1.0)
+    if second.revision_transitions[0]["accepted"]:
+        assert rows and sum(row["weight"] for row in rows) == pytest.approx(1.0)
+    else:
+        assert rows == []
 
     assert second.oracle_diagnostic is False
 
