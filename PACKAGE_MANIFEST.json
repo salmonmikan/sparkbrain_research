@@ -4090,8 +4090,8 @@
     {
       "artifact_class": "software",
       "path": "tests/test_c18_preregistration.py",
-      "sha256": "bec5a43f3c5126ef757800f2696cdb64aade45f28eff685b106a28a6b71d53a8",
-      "size": 5177
+      "sha256": "127510d778008b84802787281c5c4b9c1c9af54f351f2831e93e9d5abb702f14",
+      "size": 5192
     },
     {
       "artifact_class": "software",
@@ -4108,8 +4108,8 @@
     {
       "artifact_class": "software",
       "path": "tests/test_clean_room_release.py",
-      "sha256": "53820f3019b7c4ec98b8efcfaacef2d988c6355a3deb54e3fc4e0e3f6a36562b",
-      "size": 10254
+      "sha256": "2eae364b800a08e1df823ed42642b056a3f5760d2bd904c05eb491ae6bf847ef",
+      "size": 12405
     },
     {
       "artifact_class": "software",
@@ -4288,5 +4288,5 @@
     "system": "Windows"
   },
   "source_revision": "c0ea99bb42ff7a7be5c8a76e2cfbc0a3192c6faf",
-  "uncompressed_bytes_excluding_manifest": 456284782
+  "uncompressed_bytes_excluding_manifest": 456286948
 }
