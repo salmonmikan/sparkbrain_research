@@ -40,7 +40,7 @@ def test_v6_runner_defaults_to_the_preregistered_official_seed() -> None:
 
 
 def test_write_artifacts_rejects_non_clean_room_before_protocol_read(tmp_path: Path) -> None:
-    with pytest.raises(RuntimeError, match="clean room"):
+    with pytest.raises(RuntimeError, match="clean room|source lineage"):
         runner.write_artifacts(tmp_path / "official", seed=1802)
 
 

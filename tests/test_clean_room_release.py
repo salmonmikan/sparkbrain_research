@@ -134,19 +134,63 @@ def test_no_git_archive_runs_full_clean_room_contract(tmp_path: Path) -> None:
     _run(["git", "add", "--force", "--all"], cwd=fixture_repo)
     _run(["git", "commit", "--quiet", "-m", "clean-room fixture"], cwd=fixture_repo)
 
-    revision = _run(["git", "rev-parse", "HEAD"], cwd=fixture_repo).stdout.strip()
-    _run([sys.executable, "scripts/generate_release_artifacts.py"], cwd=fixture_repo)
-    _run(
-        [
-            sys.executable,
-            "scripts/generate_release_manifest.py",
-            "--generated-at",
-            "2026-08-24T00:00:00+00:00",
-            "--source-revision",
-            revision,
-        ],
+    if (fixture_repo / "artifacts/release/v0.3/evidence_map.json").is_file():
+        shutil.rmtree(fixture_repo / "artifacts/release/v0.3")
+        _run(["git", "add", "--update"], cwd=fixture_repo)
+        _run(["git", "commit", "--quiet", "-m", "fixture source pin"], cwd=fixture_repo)
+        revision = _run(["git", "rev-parse", "HEAD"], cwd=fixture_repo).stdout.strip()
+        _run(
+            [
+                sys.executable,
+                "scripts/generate_v03_release_artifacts.py",
+                "--output-root",
+                str(fixture_repo),
+                "--source-revision",
+                revision,
+            ],
+            cwd=fixture_repo,
+        )
+        _run(["git", "add", "--force", "artifacts/release/v0.3"], cwd=fixture_repo)
+        _run(["git", "commit", "--quiet", "-m", "fixture v0.3 artifacts"], cwd=fixture_repo)
+        _run(
+            [
+                sys.executable,
+                "scripts/generate_v03_root_manifest.py",
+                "--source-revision",
+                revision,
+                "--generated-at",
+                "2026-08-28T00:00:00+00:00",
+                "--replace-existing",
+            ],
+            cwd=fixture_repo,
+        )
+        _run(
+            ["git", "add", "PACKAGE_MANIFEST.json", RELEASE_METADATA_PATH], cwd=fixture_repo
+        )
+        _run(["git", "commit", "--quiet", "-m", "fixture v0.3 root bindings"], cwd=fixture_repo)
+    else:
+        revision = _run(["git", "rev-parse", "HEAD"], cwd=fixture_repo).stdout.strip()
+        _run([sys.executable, "scripts/generate_release_artifacts.py"], cwd=fixture_repo)
+        _run(
+            [
+                sys.executable,
+                "scripts/generate_release_manifest.py",
+                "--generated-at",
+                "2026-08-24T00:00:00+00:00",
+                "--source-revision",
+                revision,
+            ],
+            cwd=fixture_repo,
+        )
+
+    fixture_validation = _run(
+        [sys.executable, "scripts/validate_release.py", "--preparation-only"],
         cwd=fixture_repo,
     )
+    fixture_payload = json.loads(fixture_validation.stdout)
+    assert fixture_payload["integrity_problems"] == []
+    assert fixture_payload["preparation_problems"] == []
+    assert fixture_payload["evidence_blockers"] == []
 
     archive_path = tmp_path / "fixture-release.zip"
     _build_fixture_archive(fixture_repo, archive_path)
@@ -164,6 +208,7 @@ def test_no_git_archive_runs_full_clean_room_contract(tmp_path: Path) -> None:
         **os.environ,
         "NO_PROXY": "*",
         "no_proxy": "*",
+        "PYTHONDONTWRITEBYTECODE": "1",
     }
     _run([sys.executable, "scripts/local_readiness_check.py"], cwd=extracted, env=child_env)
     reproduction = _run(
@@ -261,6 +306,8 @@ def test_no_git_archive_runs_full_clean_room_contract(tmp_path: Path) -> None:
 
     evidence_revision = _tampered_copy(extracted, tmp_path, "tamper-evidence-revision")
     evidence_path = evidence_revision / "artifacts/release/evidence_map.json"
+    if (evidence_revision / "artifacts/release/v0.3/evidence_map.json").is_file():
+        evidence_path = evidence_revision / "artifacts/release/v0.3/evidence_map.json"
     evidence = json.loads(evidence_path.read_text(encoding="utf-8"))
     evidence["source_revision"] = "b" * 40
     evidence_path.write_text(json.dumps(evidence), encoding="utf-8")
@@ -276,7 +323,11 @@ def test_no_git_archive_runs_full_clean_room_contract(tmp_path: Path) -> None:
     _assert_reproduction_preflight_failure(
         primary_input,
         tmp_path / "primary-input-output",
-        expected="primary subset input hash mismatch",
+        expected="sha256 mismatch: artifacts/benchmarks/benchmark_aggregate.csv",
     )
 
-    _run([sys.executable, "-m", "pytest", "-q"], cwd=extracted, env=child_env)
+    _run(
+        [sys.executable, "-m", "pytest", "-q", "-p", "no:cacheprovider"],
+        cwd=extracted,
+        env=child_env,
+    )
