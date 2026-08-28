@@ -1,4 +1,4 @@
-# Codex Execution Brief — Local-First v0.2.1
+# Codex Execution Brief — Local-First v0.3
 
 ## 1. Purpose
 
@@ -7,12 +7,28 @@ This document is the operator entrypoint for handing unfinished SparkBrain work 
 ## 2. First command to give Codex
 
 ```text
-Use $sparkbrain-research. Read AGENTS.md, docs/LOCAL_EXECUTION_POLICY.md, docs/PROJECT_STATUS.md, and docs/CODEX_EXECUTION_BRIEF.md. Execute C01 from docs/codex/C01_ENGINE_HARDENING.md completely. Work only within that task's scope. Run all acceptance tests and update the project status and results ledger before reporting completion.
+Read AGENTS.md, docs/START_HERE.md, docs/PROJECT_STATUS.md,
+docs/THEORY_SPEC_v0.3.md, docs/EXPERIMENT_PROTOCOL.md, and this brief.
+Confirm the assigned scope before editing. C01--C20 are historical records;
+preserve their artifacts, boundaries, and legacy compatibility. Do not run C19
+official evaluation without a new truth-free adapter and preregistered protocol.
 ```
 
-After C01 is accepted, assign one task per Codex thread/worktree. Do not ask several agents to edit shared contracts simultaneously.
+Use one task/worktree for shared-contract changes. The old C01-start instruction is retired.
 
 ## 3. Task queue
+
+The C01--C10 table below is retained as historical provenance, not the current starting queue.
+The recorded C11--C20 outcome is in `PROJECT_STATUS.md`, `EXPERIMENT_PROTOCOL.md`,
+`RESULTS_LEDGER.md`, and `DECISION_LOG.md`.
+
+Current queue:
+
+| Task | Scope | Boundary |
+|---|---|---|
+| v0.3.1 corrective | no-clobber private review, demo, documentation/theory synchronization | no science-artifact or claim-grade change |
+| v0.3 integrated runtime | explicit `sparkbrain.v03` backend and live versioned Brain Lab | C16/C17 observer-only until separately evaluated |
+| C19 follow-on | truth-free adapter and a new preregistered official protocol | C19 remains blocked until then |
 
 | Task | Purpose | Depends on | Parallel notes |
 |---|---|---|---|

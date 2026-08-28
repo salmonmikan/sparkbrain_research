@@ -27,8 +27,18 @@ records no-ignition because the independent-source condition is no longer met.
 ## Artifact and claim boundary
 
 The exact official/reproduction artifacts are under
-`artifacts/v03/c18_brain_lab/{official,reproduction}`. The static export is
+`artifacts/v03/c18_brain_lab_v6/`. The static export is
 local and has no CDN, remote API or hosted assets. This validates deterministic
 observability/replay plumbing only. It does not support semantic understanding,
 functional-organ formation, biological equivalence, energy efficiency or an
 external-performance claim.
+
+## Future live-runtime boundary
+
+The C18 runner's fixed `V03TraceSession.record(...)` sequence is an engineering smoke artifact,
+not a trace emitted by a continuous v0.3 cognitive runtime. The future `sparkbrain.v03`
+`IntegratedV03Brain` must derive its trace from actual `SensorySample` processing and retain the
+same strict citation, checkpoint, replay, and fork rules. It must expose this only through
+versioned `/api/v03/*` routes, preserve legacy `/api/runs*`, and keep concept/organ outputs
+observer-only. Completion of that work requires its own runtime and API tests; no such completion
+is asserted here.

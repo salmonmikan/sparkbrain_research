@@ -1,6 +1,15 @@
-# Start Here — SparkBrain v0.2.1
+# Start Here — SparkBrain v0.3
 
 この文書は、SparkBrainを初めて読む人の入口です。
+
+## 現在の版と読む境界
+
+package versionは現在 `0.3.0` です。v0.3.1は是正patchの作業名であり、この文書だけでpackage
+versionを先取りしません。persisted legacy config/state/trace schemaは `0.2` のまま、C18の明示的な
+trace/checkpoint payloadだけが additive schema `0.3` です。
+
+v0.3はC11--C18を反証可能な研究モジュールとして追加しましたが、C12--C18を一つの常時稼働する
+人工脳として接続した版ではありません。C19は `blocked` / `not_evaluated` です。
 
 ## SparkBrainを一文で
 
@@ -29,9 +38,10 @@ SparkBrainは、現在のところ次ではありません。
 ### 理論を確認したい
 
 1. `docs/FOUNDATIONS_FOR_BEGINNERS.md`
-2. `docs/THEORY_SPEC_v0.2.1.md`
-3. `docs/HYPOTHESES_AND_FALSIFICATION.md`
-4. `docs/PRIOR_ART_GAP_ANALYSIS.md`
+2. `docs/THEORY_SPEC_v0.3.md`
+3. `docs/THEORY_SPEC_v0.2.1.md`（legacy reference）
+4. `docs/HYPOTHESES_AND_FALSIFICATION.md`
+5. `docs/PRIOR_ART_GAP_ANALYSIS.md`
 
 ### 実装を触りたい
 
@@ -44,9 +54,10 @@ SparkBrainは、現在のところ次ではありません。
 ### Codexへ続きを依頼したい
 
 1. `AGENTS.md`
-2. `docs/CODEX_EXECUTION_BRIEF.md`
-3. 対象の `docs/codex/Cxx_*.md`
-4. `docs/codex/PROMPTS.md`
+2. `docs/PROJECT_STATUS.md`
+3. `docs/THEORY_SPEC_v0.3.md`
+4. `docs/EXPERIMENT_PROTOCOL.md`
+5. `docs/CODEX_EXECUTION_BRIEF.md`
 
 ## 10分で見るデモ
 
@@ -103,7 +114,7 @@ Workspaceへ共有
 
 つまり、答えを一回で計算するというより、**内部状態が時間の中で変化し続けること自体を思考として扱う**のが中心です。
 
-## v0.2.1で追加されたこと
+## v0.3で追加されたこと
 
 - ローカルPC完結を正式な完成条件にした
 - 専用ハードウェアを独立拡張トラックへ分離した
@@ -111,6 +122,13 @@ Workspaceへ共有
 - 用語集を平易な説明つきで拡張した
 - Codex指示にローカル実行制約を追加した
 - ローカル準備状態を検査するスクリプトを追加した
+- C11 input diagnosis、C12 sensory field、C13 evidence/entity、C14 Coalition gateの
+  境界付き研究経路を追加した
+- C15のscientific non-support、C16のcandidate-only結果、C17のnegative result、C18の
+  observability/replay contract、C19 blocked readinessを明示した
+
+これらは一つの統合runtimeの完成を意味しません。既存のlocalhost Brain Labはlegacy v0.2
+reference engineを操作します。将来のv0.3 runtimeは明示的なversioned APIとして追加します。
 
 ## 迷ったときの基準
 

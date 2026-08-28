@@ -1,4 +1,13 @@
-# Master Roadmap — Local-First v0.2.1
+# Master Roadmap — Local-First v0.3
+
+## v0.3 research milestone and remaining integration work
+
+C11--C18 are retained as independently scoped research modules: input diagnosis, sensory
+selection, evidence/entity scope, Coalition-driven ignition, revision objectives, proto-concept
+candidates, functional-organ evaluation, and observability/replay. This is not yet a single
+continuous brain runtime. C19 remains blocked and C20 is a private release candidate. v0.3.1
+corrects packaging/demo/documentation defects without changing those results; the subsequent
+integrated-runtime work remains separately falsifiable.
 
 ## 1. Strategy
 
@@ -353,8 +362,8 @@ Entry requires completion of M7 and fixed measurement methodology. Failure or no
 
 | Artifact | v0.2.1 | Next gate |
 |---|---|---|
-| Project Charter | complete | revise at theory v0.3 |
-| Theory Specification | working draft | formal conformance tests |
+| Project Charter | v0.3 boundary synchronized | keep runtime completion separate |
+| Theory Specification | v0.3 working specification | formal conformance tests |
 | Beginner Guide | complete | update with theory changes |
 | Glossary | expanded | keep synchronized |
 | Local Policy | complete | enforce in all tasks |
@@ -364,10 +373,10 @@ Entry requires completion of M7 and fixed measurement methodology. Failure or no
 | Static Visualizer | functional complete | M3 live lab |
 | Phase-0 Baselines | functional complete | M5 matched baselines |
 | Benchmark Report | generated | confidence intervals and matched models |
-| Learned Routing | absent | M4 |
-| Local Spiking Backend | absent | M7 |
-| Structural Plasticity | absent | M8 |
-| Local Final Package | partial | M9 |
+| Learned Routing | implemented with retained boundaries | matched/generalization evidence |
+| Local Spiking Backend | reduced hybrid boundary | M7 broader equivalence |
+| Structural Plasticity | negative evidence retained | new falsifiable hypothesis only |
+| Local Final Package | v0.3 private candidate | v0.3.1 separate evidence binding |
 | Dedicated Hardware | outside core | Extension H only |
 | Codex instructions | complete | update after each merged task |
 

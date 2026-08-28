@@ -1264,3 +1264,18 @@ tracked source and does not execute C19 official evaluation. The generated layer
 negative boundaries and C19 blocked readiness, exposes a no-Git private-review verification
 contract, and preserves v0.2 artifacts. Public distribution remains prohibited until the repository
 owner selects a license.
+
+## 19. v0.3.1 corrective and future integrated-runtime protocol
+
+The v0.3.1 corrective patch does not rerun or rewrite C11--C19 science. Its packaging acceptance
+tests cover no-clobber ZIP/checksum publication, competing output preservation, cleanup after a
+failed publish, JSON-safe v0.3 seed-demo output, and documentation/claim-boundary consistency.
+
+The future `sparkbrain.v03` runtime requires a separate engineering protocol. It must demonstrate
+that a `SensorySample` drives live C12--C14 state and produces a C18-compatible trace without
+manual `V03TraceSession.record` fabrication; inspection must be non-mutating; checkpoint
+continuation, replay, fork lineage, causal evidence removal, cross-entity isolation, CPU/offline
+operation, and legacy `/api/runs*` compatibility must be tested. Concept and organ monitors are
+observer-only, so their presence cannot be aggregated as a decision improvement or scientific
+support. C15 revision/controller integration, action/world feedback, and every C19 official run
+need their own preregistered conditions and must not be inferred from this engineering protocol.

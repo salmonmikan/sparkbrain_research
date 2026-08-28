@@ -1002,3 +1002,15 @@ contract correction only.
   the C19 exact-nine blocked readiness bundle.
 - Claim impact: none. CL-007 and CL-008 remain E0; C19 is not an evaluation result.
 - Owner gate: project license selection remains pending and is the public-distribution blocker.
+
+## 2026-08-28 — R-V03-0015 — v0.3.1 documentation and integration-contract synchronization
+
+- Scope: documentation and public-contract planning only. The checked-in package remains `0.3.0`;
+  `v0.3.1` is not a scientific rerun or a new external evaluation.
+- Boundary: `sparkbrain.v03`, `IntegratedV03Brain`, `V03BrainConfig`, and `/api/v03/*` name the
+  future explicit integration surface. The legacy `/api/runs*` Brain Lab and C18's manual trace
+  artifact remain separate until runtime implementation and its own tests are integrated.
+- Claim impact: none. C06 remains negative; C15 and C17 remain scientifically not supported;
+  C16 remains candidate-level; C19 remains `blocked` / `not_evaluated`; CL-007 and CL-008 remain E0.
+- Artifact impact: no saved scientific artifact, release artifact, or public release was generated
+  by this documentation entry.

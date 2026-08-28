@@ -1,5 +1,16 @@
 # Brain Lab — localhost interactive experiment UI
 
+## Version boundary
+
+The routes documented below, including `/api/runs*`, are the legacy v0.2 reference-engine Brain
+Lab. They remain supported and must not be silently redirected to v0.3. The C18 static export is a
+separate observability/replay artifact and is not a live C12--C18 execution.
+
+The planned integrated surface is `sparkbrain.v03` with `IntegratedV03Brain`, `V03BrainConfig`,
+`SensorySample`, and `V03StepResult`, exposed only through explicit `/api/v03/*` routes. At first,
+concept and organ monitors are observer-only. Until that runtime and its tests are merged, this
+document does not claim a completed integrated v0.3 Brain Lab.
+
 Brain Labは、C01の決定論的な参照エンジンを、ローカルPC上で観察・介入・比較するC03の実験UIである。コア参照実装のruntime dependencyは増やさず、Web UI用の依存はoptional extra `lab` に分離する。
 
 ## 導入と起動
@@ -84,6 +95,14 @@ GET  /api/runs/{run_id}/events/stream
 ```
 
 不明ID、不正な数値、範囲外値、未知のpatch kindは4xxで拒否する。SSEは現在frameを1件通知する有限streamであり、background simulation queueではない。
+
+### Planned v0.3 API contract
+
+`/api/v03/*` must use explicit schema `0.3` payloads and reject v0.2 payloads rather than
+converting them implicitly. A live v0.3 run must display raw/local input, accepted and suppressed
+perceptual Sparks, entity assignment, evidence identity/correlation, Coalition decomposition,
+no-ignition reason, belief transition, observer-only concept/organ candidates, and trace/fork
+lineage. It must preserve the legacy route contract above.
 
 ## 性能境界
 

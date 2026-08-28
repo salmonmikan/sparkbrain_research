@@ -6,8 +6,17 @@ The package version is now `0.3.0`. The accepted v0.2.1 reference engine retains
 persisted config/state/trace schema `0.2`; it is not silently migrated or reinterpreted.
 The additive C18 trace/checkpoint interface uses schema `0.3` only for its own explicit
 payloads. Historical v0.2.1 artifacts, protected hashes, and C06/C08 negative evidence remain
-available while the v0.3 release manifest is prepared. C19 external validation is not counted
-as accepted release evidence until its independently pinned status is integrated.
+available in the completed private-release binding. C19 external validation is not counted as
+accepted release evidence.
+
+## v0.3.1 corrective and integrated-runtime boundary
+
+The checked-in package remains `0.3.0`; `v0.3.1` names corrective work until its versioned
+implementation and release binding are complete. The corrective scope fixes private-review
+publication, the v0.3 seed demo, and reader-facing documentation without changing science
+artifacts or claim grades. A later `sparkbrain.v03` runtime is planned to expose
+`IntegratedV03Brain` and `V03BrainConfig` through an explicit v0.3 API while preserving legacy
+`/api/runs*`. It is not present evidence that C12--C18 form one completed artificial brain.
 
 ## v0.3 C20 — private release-candidate integration
 

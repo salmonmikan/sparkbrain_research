@@ -1,4 +1,12 @@
-# SparkBrain Project Charter — v0.2.1
+# SparkBrain Project Charter — v0.3 research boundary
+
+## v0.3 status boundary
+
+The current package is `0.3.0`; `0.3.1` denotes corrective work until package metadata is advanced.
+The legacy persisted schema remains `0.2`, while C18 owns an additive explicit schema `0.3`.
+C11--C18 are accepted only at their individual registered boundaries. C19 is blocked and not
+evaluated. The integrated v0.3 runtime described below remains a completion target, not evidence
+that an integrated artificial brain already exists.
 
 ## 1. 目的
 
@@ -14,7 +22,8 @@ Spark、Event、Connection、Organ、Coalition、Ignition、Workspace、Memory�
 
 形式仕様と平易な説明を分離しつつ対応づける。
 
-- 厳密な仕様: `THEORY_SPEC_v0.2.1.md`
+- 厳密な仕様: `THEORY_SPEC_v0.3.md`
+- legacy reference specification: `THEORY_SPEC_v0.2.1.md`
 - 入門解説: `FOUNDATIONS_FOR_BEGINNERS.md`
 - 用語単位の説明: `GLOSSARY.md`
 
@@ -47,6 +56,10 @@ Spark、Event、Connection、Organ、Coalition、Ignition、Workspace、Memory�
 - 記憶形成、接続強度変化、器官・群の形成
 
 UIは静的HTMLまたはlocalhost上で動作し、外部CDNやSaaSを必須としない。
+
+The existing `/api/runs*` Brain Lab is the legacy v0.2 reference UI. A v0.3 runtime must use an
+explicit versioned API, preserve the legacy surface, and derive trace data from a live runtime
+rather than treating the C18 manual trace artifact as live-brain evidence.
 
 ### D5. Experimental Suite
 
@@ -172,11 +185,11 @@ H6は高リスク仮説であり、v0.xの最低成立条件には含めない�
 
 Level Dとは独立。実機へ移す場合のみ実施する。
 
-## 7. v0.2.1 現在地
+## 7. v0.3 現在地
 
 | 項目 | 状態 | 備考 |
 |---|---|---|
-| Theory draft | 部分完成 | 形式定義と仮説を文書化 |
+| Theory v0.3 | working specification | v0.2.1 legacy definitions plus C11--C18 contracts |
 | Beginner foundations | 完成 | 基礎理論を平易に説明 |
 | Expanded glossary | 完成 | 主要用語の意味と非含意を整理 |
 | Local-only policy | 完成 | コア完成条件へ固定 |
@@ -188,12 +201,13 @@ Level Dとは独立。実機へ移す場合のみ実施する。
 | SwitchWorld | 完成 | canonical + random episode |
 | Phase-0 baseline | 完成 | scalar baselinesのみ |
 | Local readiness check | 完成 | 環境・依存・必須成果物の検査 |
-| Learned routing | 未着手 | Codex C04 |
-| GRU/Transformer/RIM | 未着手 | Codex C05 |
-| Rich local Brain Lab | 未着手 | Codex C03 |
-| Local spiking backend | 未着手 | Codex C07 |
-| Structural plasticity | 未着手 | Codex C08 |
-| External datasets | 未着手 | Codex C06 |
+| Learned routing | implemented | controlled evidence; no general claim upgrade |
+| GRU/Transformer/RIM | implemented | reduced matched-baseline quality/compute boundary retained |
+| Legacy local Brain Lab | accepted locally | v0.2 reference engine only |
+| Live integrated v0.3 Brain Lab | 未完了 | versioned runtime/API required |
+| Local spiking backend | reduced hybrid boundary | broader equivalence remains open |
+| Structural plasticity | completed negative result | C08 / C17 do not support organ formation |
+| C19 external validation | blocked | truth-free adapter and new protocol required |
 | Scientific novelty confirmation | 継続 | Codex C09 / systematic review |
 | Dedicated hardware | 別枠 | Extension H。コア完成に不要 |
 

@@ -6,6 +6,11 @@ The package version is `0.3.0`. The accepted v0.2.1 persisted config/state/trace
 `0.2` and is read-only compatibility evidence. New v0.3 trace and checkpoint payloads use
 schema `0.3`. A package-version change does not rewrite a persisted schema.
 
+`v0.3.1` is the corrective version boundary. Its evidence must be generated under its own release
+directory and source pin; it must not rewrite `artifacts/release/v0.3/` or reclassify C11--C19.
+Until package metadata and its validators are updated together, the checked-in package remains
+`0.3.0`.
+
 ## Reference compatibility
 
 The `v02_reference` condition continues to use the accepted v0.2.1 engine, configuration, and
@@ -29,6 +34,10 @@ v0.3 artifacts are additive under `artifacts/v03/`; C01--C10 artifacts are retai
 historical evidence. The C18 static Brain Lab export is local-only and does not change the
 existing `/api` surface. Any future v0.3 endpoint must use an explicit `/api/v03/` path or an
 equivalent version field.
+
+The chosen future path is `/api/v03/*`. It will sit beside legacy `/api/runs*`, not reinterpret
+legacy `SparkBrain` exports. The `sparkbrain.v03` facade is a planned integration contract; its
+concept and organ monitors are observer-only until a separate protocol permits decision use.
 
 ## Release compatibility criteria
 

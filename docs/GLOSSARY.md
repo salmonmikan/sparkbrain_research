@@ -115,3 +115,17 @@
 | CPU Reference Path | GPUなしで動く基準実装 | 正しさと説明可能性の標準経路 | 大規模学習が高速という意味ではない |
 | Localhost UI | 自分のPCだけで開く画面 | 127.0.0.1または静的HTMLで動くVisualizer | 公開Webサービスではない |
 | Dedicated Hardware Track | 専用チップ等の別研究 | コア完成後のExtension H | コア成果物の必須条件ではない |
+
+## 9. v0.3の知覚・証跡・統合境界
+
+| 用語 | やさしい説明 | 厳密な扱い | 注意 |
+|---|---|---|---|
+| Raw / Local Sensory Sample | ローカルで受け取る観測値 | `SensorySample` の明示的な時刻・source・modality・values | 正解ラベルや評価者truthを含めてよいわけではない |
+| Sensory Field | 反復を抑え変化やgoalに反応する入口 | habituation、novelty、prediction error、bounded goal biasを記録する処理 | 全input inspectionや電力が疎になる主張ではない |
+| Perceptual Spark | Sensory Fieldが発行する知覚上の活動単位 | accepted/suppressedを含むversioned record | 人間の感覚細胞ではない |
+| Evidence Identity | 同じ証拠を重複計上しないためのID | source、correlation group、lineage、entity scopeを伴うrecord | 独立証拠であることをIDだけから推論しない |
+| Entity Scope | 証拠がどの対象に属するか | E0/E1/E2を区別するbinding contract | E1 oracle bindingは自律発見ではない |
+| Proto-concept Candidate | 反復patternの再利用候補 | label-free candidate observation | 意味概念や因果的有用性を意味しない |
+| Functional Organ Candidate | 機能群かもしれない候補 | structure、reuse、causal controlで別途評価する対象 | C17のnegative結果を器官形成と呼ばない |
+| v0.3 Trace / Fork | 明示状態のhash連鎖と分岐記録 | schema `0.3` のcheckpoint/replay contract | C18手動traceはlive統合runtimeの証拠ではない |
+| IntegratedV03Brain | 将来の統合backend名 | `sparkbrain.v03` の明示的versioned facade | 現時点で統合人工脳が完成した意味ではない |

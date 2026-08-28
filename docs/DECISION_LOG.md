@@ -1224,3 +1224,25 @@ The artifact layer must bind source manifest, artifact metadata, evidence map, b
 index, reproduction contract, SBOM, source-license inventory, report, and figures. C19 remains
 the exact-nine blocked readiness record. No claim grade changes, public tag, public archive, or
 public release are authorized while the owner license decision is pending.
+
+## D-V03-0037 — Keep v0.3.1 corrective evidence separate from v0.3.0 release evidence
+
+**Decision (2026-08-28):** Treat v0.3.1 as a future corrective version boundary, not as a reason
+to rewrite `artifacts/release/v0.3/`. A later v0.3.1 source commit must generate a separately
+versioned evidence directory and bind it only after its own source and artifact integration commits.
+
+**Scope:** C11--C19 evidence retains its recorded disposition. In particular C19 remains blocked
+until a truth-free adapter and a new preregistered protocol exist. No public archive, tag, release,
+license selection, claim-grade increase, or modification of saved scientific outputs is authorized.
+
+## D-V03-0038 — Version the future integrated Brain Lab surface
+
+**Decision (2026-08-28):** Preserve legacy `sparkbrain.lab` and `/api/runs*` as the v0.2 reference
+Brain Lab. The future v0.3 runtime surface is `sparkbrain.v03` with an explicit `/api/v03/*` API;
+its intended names are `IntegratedV03Brain`, `V03BrainConfig`, `SensorySample`, and
+`V03StepResult`.
+
+**Reason:** Replacing the legacy UI or presenting the C18 manually recorded trace as a live C12--C18
+execution would erase the compatibility and scientific-boundary distinction. C16 concept and C17
+organ signals are observer-only until separately preregistered causal evidence permits a decision
+role.

@@ -9,7 +9,7 @@ SparkBrainは、局所的で持続的な活動単位 **Spark** が、イベン�
 
 > **v0.3.0の正式条件:** コア成果物は、一台の一般的なローカルPCで完結させます。CPU参照実装を必須とし、実行時のクラウドサービス、遠隔LLM API、外部DB、SaaSログインを必要としません。専用ニューロモーフィックハードウェアは別枠のExtension Hです。v0.2.1のpackage、schema、artifactは歴史的証跡として保持します。
 
-> **重要:** 現在のv0.2.1は「人間の脳を再現したシステム」ではありません。手書きの証拠経路を使った、rate-based・event-drivenな機能実証です。生物学的等価性、意識、汎用知能、既存モデルへの一般的優位性、実ハードウェア上の省電力性は未実証です。
+> **重要:** SparkBrainは「人間の脳を再現したシステム」ではありません。v0.2.1 legacy referenceとv0.3研究モジュールは、手書き・synthetic・oracle条件を明示的に分けた機能実証です。生物学的等価性、意識、汎用知能、既存モデルへの一般的優位性、実ハードウェア上の省電力性は未実証です。
 
 ## 初めて読む場合
 
@@ -18,7 +18,8 @@ SparkBrainは、局所的で持続的な活動単位 **Spark** が、イベン�
 1. [`docs/START_HERE.md`](docs/START_HERE.md)
 2. [`docs/FOUNDATIONS_FOR_BEGINNERS.md`](docs/FOUNDATIONS_FOR_BEGINNERS.md)
 3. [`docs/GLOSSARY.md`](docs/GLOSSARY.md)
-4. [`docs/THEORY_SPEC_v0.2.1.md`](docs/THEORY_SPEC_v0.2.1.md)
+4. [`docs/THEORY_SPEC_v0.3.md`](docs/THEORY_SPEC_v0.3.md)（v0.3の規範仕様）
+5. [`docs/THEORY_SPEC_v0.2.1.md`](docs/THEORY_SPEC_v0.2.1.md)（互換性を保つ歴史的参照仕様）
 
 完成条件は [`docs/PROJECT_CHARTER.md`](docs/PROJECT_CHARTER.md)、ローカル制約は [`docs/LOCAL_EXECUTION_POLICY.md`](docs/LOCAL_EXECUTION_POLICY.md) にあります。
 
@@ -150,7 +151,7 @@ artifacts/benchmarks/benchmark_results.json
 ## リポジトリ構成
 
 ```text
-sparkbrain_research_v0_2/
+sparkbrain_research/
 ├── README.md
 ├── CHANGELOG.md
 ├── docs/
@@ -159,6 +160,7 @@ sparkbrain_research_v0_2/
 │   ├── GLOSSARY.md
 │   ├── LOCAL_EXECUTION_POLICY.md
 │   ├── PROJECT_CHARTER.md
+│   ├── THEORY_SPEC_v0.3.md
 │   ├── THEORY_SPEC_v0.2.1.md
 │   ├── PRIOR_ART_GAP_ANALYSIS.md
 │   ├── SOFTWARE_ARCHITECTURE.md
@@ -178,7 +180,9 @@ sparkbrain_research_v0_2/
 │   ├── serialization.py
 │   ├── replay.py
 │   ├── protocols.py
-│   └── validation.py
+│   ├── validation.py
+│   ├── v03_seed/         # C11--C17 bounded research primitives
+│   └── v03_integration/  # explicit schema-0.3 trace/checkpoint contracts
 ├── schemas/
 ├── scripts/
 │   └── local_readiness_check.py
@@ -192,6 +196,10 @@ sparkbrain_research_v0_2/
 現段階で主張できるのは次の範囲です。
 
 > 持続する複数仮説、証拠の連合、明示的なIgnition gate、敗者のresidual retentionを備えたイベント駆動状態系を、通常のPythonだけで実装・観察・反証可能な形にできる。
+
+v0.3では、知覚選択、evidence/entity、Coalition gate、revision、candidate observation、
+observabilityを個別に検証できます。ただし、これらはまだ一つの持続runtime・action・world feedbackへ
+接続されていません。
 
 まだ主張できないこと:
 
@@ -242,20 +250,22 @@ sparkbrain_research_v0_2/
 - Phase-0 dynamics: v0.2から意図的変更なし
 
 v0.3.0はv0.2のcheckpointとtraceを互換対象として維持し、C11--C18の境界付き証跡とC19
-blocked readinessを追加します。C06/C08/C17のnegative結果とclaim gradeは変更しません。license
-owner decision前のため、公開tag、archive、releaseは作成しません。
+blocked readinessを追加したprivate review candidateです。v0.3.1は、既知の配布処理・demo・
+導線を是正する予定のpatchであり、この時点でpackage versionを先取りしてはいけません。C06/C08/
+C15/C17のnegative結果、C16のcandidate-level結果、C19のblocked status、claim gradeは変更しません。
+license owner decision前のため、公開tag、archive、releaseは作成しません。
 
 ## Codexへ続きを依頼する
 
 最初の依頼文:
 
 ```text
-Use $sparkbrain-research. Read AGENTS.md, docs/LOCAL_EXECUTION_POLICY.md,
-docs/PROJECT_STATUS.md, and docs/CODEX_EXECUTION_BRIEF.md.
-Execute C01 from docs/codex/C01_ENGINE_HARDENING.md completely.
-Preserve the local-only contract, run the local readiness check and all
-acceptance tests, update the status/results/decision documents, and do not
-start dependent tasks.
+Read AGENTS.md, docs/START_HERE.md, docs/PROJECT_STATUS.md,
+docs/THEORY_SPEC_v0.3.md, docs/EXPERIMENT_PROTOCOL.md, and
+docs/CODEX_EXECUTION_BRIEF.md. Confirm the assigned scope before editing.
+Treat C01--C20 as recorded research history, preserve the local-only contract
+and claim boundaries, and do not begin C19 official evaluation without its
+separate truth-free adapter and preregistered protocol.
 ```
 
 詳細な順序と各タスクの受入条件は [`docs/CODEX_EXECUTION_BRIEF.md`](docs/CODEX_EXECUTION_BRIEF.md) と [`docs/codex/`](docs/codex/) にあります。
