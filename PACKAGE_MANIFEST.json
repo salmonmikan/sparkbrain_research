@@ -2752,8 +2752,8 @@
     {
       "artifact_class": "documentation",
       "path": "docs/RESULTS_LEDGER.md",
-      "sha256": "97e45835350085d9bf89683c17707f8dc1676b1aafa013b7da030a640cd32584",
-      "size": 67520
+      "sha256": "ea87d12c528d361bf1ab37b67e672c7c8328a383816aaddb0dfe04615f08af17",
+      "size": 67605
     },
     {
       "artifact_class": "documentation",
@@ -2812,8 +2812,8 @@
     {
       "artifact_class": "documentation",
       "path": "docs/TEST_TIERS.md",
-      "sha256": "97fef8f4014794a3fe9aa639954527e173289dace786a8e116b1e8cfadc20393",
-      "size": 5028
+      "sha256": "b08bbd53f7627e6cd2b1a4ed9cbe6f6d230aafdaaad968f8bd796c37b079e062",
+      "size": 5234
     },
     {
       "artifact_class": "documentation",
@@ -4562,7 +4562,7 @@
       "size": 4109
     }
   ],
-  "generated_at": "2026-08-28T14:24:00+00:00",
+  "generated_at": "2026-08-28T14:31:00+00:00",
   "manifest_excludes": [
     "PACKAGE_MANIFEST.json",
     "RELEASE_METADATA.json",
@@ -4575,6 +4575,6 @@
     "release": "11",
     "system": "Windows"
   },
-  "source_revision": "930146f2cc8bce736f69726f5a32ab7d11fa5f4f",
-  "uncompressed_bytes_excluding_manifest": 456727788
+  "source_revision": "127171f8d087350b71c75164c419be5d83c3012f",
+  "uncompressed_bytes_excluding_manifest": 456728079
 }
