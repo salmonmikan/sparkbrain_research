@@ -5,6 +5,6 @@
   "public_release_blocked": true,
   "schema_version": "sparkbrain-v031-release-metadata-v1",
   "source_manifest": "artifacts/release/v0.3.1/source_manifest.json",
-  "source_manifest_sha256": "2e6e069b0036a6e09edef70ac984dcf140c4b13a8b2b95d7b07b6979416fca5c",
-  "source_revision": "dfb3354239c29ad5ad5b0d372c9360785b770af0"
+  "source_manifest_sha256": "b8f689da2ebac6c6a2eca70f13326c31136b83449e3888cb0777d8c70436d013",
+  "source_revision": "4434091559d6126e17b8ead7c3e2843f2664162a"
 }
