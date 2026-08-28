@@ -2,13 +2,14 @@
 
 ## Version boundary
 
-The package version is `0.3.1`. The accepted v0.2.1 persisted config/state/trace schema remains
+The package version is `0.3.2.dev0`. The accepted v0.2.1 persisted config/state/trace schema remains
 `0.2` and is read-only compatibility evidence. New v0.3 trace and checkpoint payloads use
 schema `0.3`. A package-version change does not rewrite a persisted schema.
 
-`v0.3.1` is the corrective and integrated-runtime version boundary. Its evidence is generated under
+`v0.3.1` remains the accepted corrective and integrated-runtime evidence boundary. Its evidence is generated under
 its own release directory and source pin; it does not rewrite `artifacts/release/v0.3/` or
-reclassify C11--C19.
+reclassify C11--C19. The additive `v0.3.2.dev0` engineering APIs do not create or amend scientific
+release evidence.
 
 ## Reference compatibility
 

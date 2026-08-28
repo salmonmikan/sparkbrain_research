@@ -333,7 +333,7 @@ def _run_clean_room_contract(work_root: Path, fixture_repo: Path) -> None:
     _assert_reproduction_preflight_failure(
         evidence_revision,
         work_root / "evidence-revision-output",
-        expected="release source_revision values do not match",
+        expected="sha256 mismatch",
     )
 
     primary_input = _tampered_copy(extracted, work_root, "tamper-primary-input")

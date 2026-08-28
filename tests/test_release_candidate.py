@@ -335,20 +335,24 @@ def test_archive_validators_reject_candidate_review_and_group_tampering(tmp_path
     )
 
 
-def test_publish_revalidates_after_rename_and_retracts_raced_tamper(
+def test_publish_revalidates_after_rename_and_preserves_failed_output_for_audit(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
     root = tmp_path / "source"
     revision = fixture(root)
     destination = tmp_path / "release"
-    original_rename = release_candidate.os.rename
+    original_publish = release_candidate.atomic_publish_directory_noreplace
 
-    def tampering_rename(source: str | Path, target: str | Path) -> None:
+    def tampering_publish(source: str | Path, target: str | Path) -> None:
         candidate = Path(source) / "candidate.zip"
         candidate.write_bytes(candidate.read_bytes() + b"tamper")
-        original_rename(source, target)
+        original_publish(source, target)
 
-    monkeypatch.setattr(release_candidate.os, "rename", tampering_rename)
+    monkeypatch.setattr(
+        release_candidate,
+        "atomic_publish_directory_noreplace",
+        tampering_publish,
+    )
     with pytest.raises(ValueError, match="published release group validation failed"):
         build_candidate_and_review_archives(
             root,
@@ -357,7 +361,8 @@ def test_publish_revalidates_after_rename_and_retracts_raced_tamper(
             release_directory=destination,
             source_date_epoch=1_700_000_000,
         )
-    assert not destination.exists()
+    assert destination.exists()
+    assert (destination / "candidate.zip").read_bytes().endswith(b"tamper")
     assert not list(tmp_path.glob(".candidate-release-staging-*"))
 
 
@@ -367,15 +372,19 @@ def test_publish_race_never_replaces_a_competing_destination(
     root = tmp_path / "source"
     revision = fixture(root)
     destination = tmp_path / "release"
-    original_rename = release_candidate.os.rename
+    original_publish = release_candidate.atomic_publish_directory_noreplace
 
-    def racing_rename(source: str | Path, target: str | Path) -> None:
+    def racing_publish(source: str | Path, target: str | Path) -> None:
         target_path = Path(target)
         target_path.mkdir()
         (target_path / "competing.txt").write_text("preserve\n", encoding="utf-8")
-        original_rename(source, target)
+        original_publish(source, target)
 
-    monkeypatch.setattr(release_candidate.os, "rename", racing_rename)
+    monkeypatch.setattr(
+        release_candidate,
+        "atomic_publish_directory_noreplace",
+        racing_publish,
+    )
     with pytest.raises(OSError):
         build_candidate_and_review_archives(
             root,

@@ -13,6 +13,11 @@ from sparkbrain.release import package_version  # noqa: E402
 from sparkbrain.release_v03_artifacts import generate_v03_release_artifacts  # noqa: E402
 
 
+def _evidence_release_version() -> str:
+    current = package_version(ROOT)
+    return "0.3.1" if current == "0.3.2.dev0" else current
+
+
 def _require_clean_head(source_revision: str) -> None:
     head = subprocess.run(
         ["git", "rev-parse", "HEAD"], cwd=ROOT, check=False, capture_output=True
@@ -40,7 +45,7 @@ def main() -> None:
             ROOT,
             output_root=args.output_root.resolve(),
             source_revision=args.source_revision,
-            release_version=package_version(ROOT),
+            release_version=_evidence_release_version(),
         )
     except (OSError, ValueError) as exc:
         raise SystemExit(str(exc)) from exc

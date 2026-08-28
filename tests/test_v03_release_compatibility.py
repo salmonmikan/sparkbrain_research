@@ -5,15 +5,32 @@ import tomllib
 from pathlib import Path
 
 import sparkbrain
+from sparkbrain.release import required_preparation_files
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_v03_package_keeps_the_v02_persisted_schema_boundary() -> None:
     pyproject = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))
-    assert pyproject["project"]["version"] == "0.3.1"
-    assert sparkbrain.__version__ == "0.3.1"
+    assert pyproject["project"]["version"] == "0.3.2.dev0"
+    assert sparkbrain.__version__ == "0.3.2.dev0"
     assert sparkbrain.SCHEMA_VERSION == "0.2"
+
+
+def test_v032_development_package_keeps_v031_release_evidence_boundary() -> None:
+    required = required_preparation_files(ROOT)
+    assert "artifacts/release/v0.3.1/evidence_map.json" in required
+    assert "artifacts/release/v0.3.2/evidence_map.json" not in required
+
+
+def test_v032_missing_v031_evidence_does_not_fall_back_to_v030(tmp_path: Path) -> None:
+    (tmp_path / "pyproject.toml").write_text(
+        "[project]\nname = 'sparkbrain-research'\nversion = '0.3.2.dev0'\n",
+        encoding="utf-8",
+    )
+    required = required_preparation_files(tmp_path)
+    assert "artifacts/release/v0.3.1/evidence_map.json" in required
+    assert "artifacts/release/v0.3/evidence_map.json" not in required
 
 
 def test_v03_trace_and_checkpoint_schemas_are_explicit_and_additive() -> None:

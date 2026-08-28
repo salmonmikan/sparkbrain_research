@@ -2,7 +2,8 @@
 
 ## v0.3 status boundary
 
-The current package is `0.3.1`.
+The current package is `0.3.2.dev0`. The v0.3.2 additions are corrective engineering APIs and do
+not change the accepted v0.3.1 scientific boundary.
 The legacy persisted schema remains `0.2`, while C18 owns an additive explicit schema `0.3`.
 C11--C18 are accepted only at their individual registered boundaries. C19 is blocked and not
 evaluated. The integrated v0.3 runtime and live Brain Lab are accepted as engineering evidence,

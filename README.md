@@ -1,4 +1,4 @@
-# SparkBrain Research Prototype v0.3.1
+# SparkBrain Research Prototype v0.3.2.dev0
 
 SparkBrainは、局所的で持続的な活動単位 **Spark** が、イベントに応じて発生・減衰・発火・競争・連合し、十分に安定したCoalitionだけがGlobal Workspaceへ昇格する、脳型情報処理の研究プロトタイプです。
 
@@ -7,7 +7,7 @@ SparkBrainは、局所的で持続的な活動単位 **Spark** が、イベン�
 1. Sparkを基礎単位とする動的認知モデルの理論形成
 2. 内部状態をリアルタイム観察・操作・比較できる人工脳実験環境の実装
 
-> **v0.3.1の正式条件:** コア成果物は、一台の一般的なローカルPCで完結させます。CPU参照実装を必須とし、実行時のクラウドサービス、遠隔LLM API、外部DB、SaaSログインを必要としません。専用ニューロモーフィックハードウェアは別枠のExtension Hです。v0.3.0以前のpackage、schema、artifactは歴史的証跡として保持します。
+> **v0.3.2.dev0の開発境界:** コア成果物は、一台の一般的なローカルPCで完結させます。CPU参照実装を必須とし、実行時のクラウドサービス、遠隔LLM API、外部DB、SaaSログインを必要としません。専用ニューロモーフィックハードウェアは別枠のExtension Hです。v0.3.1以前のpackage、schema、artifactは歴史的証跡として保持します。
 
 > **重要:** SparkBrainは「人間の脳を再現したシステム」ではありません。v0.2.1 legacy referenceとv0.3研究モジュールは、手書き・synthetic・oracle条件を明示的に分けた機能実証です。生物学的等価性、意識、汎用知能、既存モデルへの一般的優位性、実ハードウェア上の省電力性は未実証です。
 
@@ -250,7 +250,7 @@ Oracle diagnostic、E2は未実装です。このengineering統合は科学的�
 
 ## バージョン互換性
 
-- package / documentation version: `0.3.1`
+- package / documentation version: `0.3.2.dev0`
 - persisted v0.2 config / state / trace schema: `0.2`; additive v0.3 trace/checkpoint schema: `0.3`
 - Phase-0 dynamics: v0.2から意図的変更なし
 
@@ -278,3 +278,13 @@ separate truth-free adapter and preregistered protocol.
 ## 名称
 
 `SparkBrain`はプロジェクトのコードネームです。理論名と略称は未確定です。`SFA`は別分野でも使われるため、公開前に先行商標・論文・パッケージ名を確認して正式決定します。
+
+## v0.3.2 corrective development APIs
+
+`sparkbrain.v032` は、v0.3.1 runtimeを維持したまま、attribution/revision metric、
+sensory channel診断、C15 loser-residual ablation、direct checkpoint、truth-freeな局所入力
+scaffoldを追加します。release directoryのpublicationはOS nativeのno-clobber renameを使います。
+
+これはengineering development境界です。意味理解、residual superiority、機能的概念・器官形成、
+外部一般化の科学的主張を更新しません。詳細は
+`docs/V032_IMPLEMENTATION_STATUS.md` と `docs/CLAIMS_REGISTER_v0.3_ADDENDUM.md` を参照してください。

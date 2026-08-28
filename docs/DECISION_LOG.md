@@ -4,6 +4,27 @@ Identifiers embedded in immutable experiment contracts retain their original
 meaning. If a collision is discovered, the later documentation or observability
 entry receives the next unused identifier; protected artifacts are not renumbered.
 
+## D-V03-0043 — Integrate v0.3.2 as a corrective engineering development boundary
+
+**Decision (2026-08-28):** Integrate the audited `sparkbrain.v032` metric, input-diagnostic,
+runtime facade, trusted-local direct-checkpoint, residual-control, and native no-clobber release
+APIs as package `0.3.2.dev0`. Keep persisted schema `0.2`, additive C18 schema `0.3`, and all
+accepted v0.3.1 scientific/release evidence immutable.
+
+**Release lineage:** The current root `PACKAGE_MANIFEST.json` and `RELEASE_METADATA.json` pair
+binds the new development source commit. Versioned v0.3.1 evidence retains its own historical
+source pin and is validated as an independent lineage; it must not impersonate the v0.3.2 source
+revision. Manifest generation requires an exact clean `HEAD`, and the final binding commit may
+change only the root manifest pair.
+
+**Repository transport:** Preserve the exact bytes and worktree paths of the three scientific
+artifacts rejected by GitHub's large-file gate, but store their Git objects through exact-path Git
+LFS rules. Rewrite only the local `main` history above `origin/main`; other worktree branches and
+accepted artifact contents are not reclassified.
+
+**Claim boundary:** This is engineering evidence only. It does not upgrade residual superiority,
+semantic understanding, functional concept/organ formation, external generalization, or C19.
+
 ## D-V03-0042 — Retain C19 as completed readiness, not accepted evaluation
 
 **Decision (2026-08-28):** Retain the deterministic C19 blocked-readiness exact-nine bundle from

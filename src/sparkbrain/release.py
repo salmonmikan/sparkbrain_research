@@ -92,7 +92,7 @@ REQUIRED_RELEASE_FILES = (*REQUIRED_PUBLIC_FILES, *REQUIRED_PREPARATION_FILES)
 
 def _is_v03_package(root: Path) -> bool:
     try:
-        return package_version(root) in {"0.3.0", "0.3.1"}
+        return package_version(root) in {"0.3.0", "0.3.1", "0.3.2.dev0"}
     except (OSError, UnicodeDecodeError, tomllib.TOMLDecodeError, KeyError, ValueError):
         return False
 
@@ -102,12 +102,16 @@ def _v03_release_version(root: Path) -> str | None:
         value = package_version(root)
     except (OSError, UnicodeDecodeError, tomllib.TOMLDecodeError, KeyError, ValueError):
         return None
+    if value == "0.3.2.dev0":
+        # v0.3.2 is an engineering development snapshot.  Its release-evidence
+        # boundary remains the accepted v0.3.1 bundle until a distinct release
+        # contract is preregistered and generated.
+        return "0.3.1"
     return value if value in {"0.3.0", "0.3.1"} else None
 
 
 def _v03_release_relative(root: Path) -> str:
-    v031 = root / "artifacts/release/v0.3.1/evidence_map.json"
-    if _v03_release_version(root) == "0.3.1" and v031.is_file():
+    if _v03_release_version(root) == "0.3.1":
         return "artifacts/release/v0.3.1"
     return "artifacts/release/v0.3"
 
@@ -621,11 +625,22 @@ def validate_evidence_map(root: Path, evidence_map: dict[str, Any]) -> list[str]
     return problems
 
 
-def validate_source_revision(root: Path, payload: dict[str, Any], *, label: str) -> list[str]:
+def validate_source_revision(
+    root: Path,
+    payload: dict[str, Any],
+    *,
+    label: str,
+    independent_lineage: bool = False,
+) -> list[str]:
     revision = payload.get("source_revision")
     if not isinstance(revision, str) or re.fullmatch(r"[0-9a-f]{40}", revision) is None:
         return [f"{label} source_revision must be a full lowercase Git SHA"]
     if release_mode(root) == "archive":
+        if independent_lineage:
+            # The current root manifest hashes the immutable versioned evidence
+            # bytes. Historical evidence retains its own source pin instead of
+            # impersonating a newer package snapshot in a Git-free archive.
+            return []
         metadata, problems = _read_json_object(
             root / RELEASE_METADATA_PATH, label="release metadata"
         )
@@ -655,11 +670,15 @@ def validate_release_revision_consistency(root: Path) -> list[str]:
         if _is_v03_package(root)
         else root / "artifacts/release/evidence_map.json"
     )
-    paths = {
-        "package manifest": root / MANIFEST_PATH,
-        "release evidence map": evidence_path,
-    }
-    if not _is_v03_package(root):
+    paths = {"package manifest": root / MANIFEST_PATH}
+    if _is_v03_package(root):
+        # The root pair identifies the current package snapshot.  Versioned v0.3
+        # evidence has its own immutable lineage and is validated independently.
+        # A development package must not pretend that old scientific evidence was
+        # produced from its newer engineering source commit.
+        pass
+    else:
+        paths["release evidence map"] = evidence_path
         paths["release provenance"] = root / "artifacts/release/provenance.json"
     if (root / RELEASE_METADATA_PATH).is_file() or release_mode(root) == "archive":
         paths["release metadata"] = root / RELEASE_METADATA_PATH
@@ -795,7 +814,14 @@ def validate_v03_generated_release_evidence(
     problems = release_v03_artifacts.validate_v03_evidence_map(
         root, evidence, release_version=selected_version
     )
-    problems.extend(validate_source_revision(root, evidence, label="v0.3 evidence map"))
+    problems.extend(
+        validate_source_revision(
+            root,
+            evidence,
+            label="v0.3 evidence map",
+            independent_lineage=True,
+        )
+    )
     revision = evidence.get("source_revision")
     if not isinstance(revision, str):
         return _unique_problems(problems)

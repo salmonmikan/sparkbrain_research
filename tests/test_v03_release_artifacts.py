@@ -267,9 +267,9 @@ def test_root_manifest_cli_publishes_a_valid_pair(tmp_path: Path) -> None:
     if source_state.returncode:
         pytest.skip("root manifest pair is staged for its integration commit")
 
-    evidence = json.loads(
-        (ROOT / "artifacts/release/v0.3.1/evidence_map.json").read_text(encoding="utf-8")
-    )
+    head = subprocess.run(
+        ["git", "rev-parse", "HEAD"], cwd=ROOT, check=True, capture_output=True, text=True
+    ).stdout.strip()
     manifest = tmp_path / "PACKAGE_MANIFEST.json"
     metadata = tmp_path / "RELEASE_METADATA.json"
     result = subprocess.run(
@@ -277,7 +277,7 @@ def test_root_manifest_cli_publishes_a_valid_pair(tmp_path: Path) -> None:
             sys.executable,
             "scripts/generate_v03_root_manifest.py",
             "--source-revision",
-            evidence["source_revision"],
+            head,
             "--generated-at",
             "2026-08-28T00:00:00+00:00",
             "--output",
@@ -293,4 +293,4 @@ def test_root_manifest_cli_publishes_a_valid_pair(tmp_path: Path) -> None:
     assert result.returncode == 0, result.stderr
     payload = json.loads(metadata.read_text(encoding="utf-8"))
     assert payload["manifest_sha256"] == sha256_file(manifest)
-    assert payload["package_version"] == "0.3.1"
+    assert payload["package_version"] == "0.3.2.dev0"

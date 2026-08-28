@@ -38,7 +38,7 @@ description: Implement, test, review, or document the local-first SparkBrain the
 ## Task invocation examples
 
 ```text
-Use $sparkbrain-research. Audit the current v0.3.1 integration against docs/PROJECT_STATUS.md and docs/THEORY_SPEC_v0.3.md. Treat C01--C20 as recorded history, preserve scientific boundaries, and implement only the explicitly assigned follow-up.
+Use $sparkbrain-research. Audit the current v0.3.2.dev0 integration against docs/PROJECT_STATUS.md and docs/THEORY_SPEC_v0.3.md. Treat C01--C20 as recorded history, preserve the accepted v0.3.1 scientific evidence boundary, and implement only the explicitly assigned follow-up.
 ```
 
 ```text

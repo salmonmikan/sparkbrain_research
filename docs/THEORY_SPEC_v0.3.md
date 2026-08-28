@@ -2,7 +2,7 @@
 
 > **Status:** working, falsifiable engineering specification
 >
-> **Package boundary:** the checked-in package is `0.3.1`; v0.3.0 remains immutable historical
+> **Package boundary:** the checked-in package is `0.3.2.dev0`; v0.3.1 and v0.3.0 remain historical
 > release evidence.
 >
 > **Compatibility boundary:** persisted v0.2 config/state/trace payloads remain schema `0.2`.

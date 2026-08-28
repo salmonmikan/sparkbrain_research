@@ -40,8 +40,13 @@ V03_GENERATED_ARTIFACTS = {
 }
 
 
+def _evidence_release_version() -> str:
+    current = package_version(ROOT)
+    return "0.3.1" if current == "0.3.2.dev0" else current
+
+
 def _generated_artifacts() -> set[str]:
-    return generated_artifact_paths_for_version(package_version(ROOT))
+    return generated_artifact_paths_for_version(_evidence_release_version())
 
 
 def _tracked_paths() -> list[str]:
@@ -55,22 +60,21 @@ def _require_artifact_integration(source_revision: str) -> None:
     )
     if result.returncode:
         raise ValueError("v0.3 root manifest requires a readable Git HEAD")
-    ancestor = subprocess.run(
-        ["git", "merge-base", "--is-ancestor", source_revision, "HEAD"],
+    head = result.stdout.decode("ascii").strip()
+    if source_revision != head:
+        raise ValueError("v0.3 root manifest source_revision must equal Git HEAD")
+    state = subprocess.run(
+        ["git", "status", "--porcelain=v1", "--untracked-files=all"],
         cwd=ROOT,
         check=False,
         capture_output=True,
     )
-    if ancestor.returncode:
-        raise ValueError("v0.3 root manifest source_revision must be an ancestor of Git HEAD")
-    for command in (("git", "diff", "--quiet"), ("git", "diff", "--cached", "--quiet")):
-        state = subprocess.run(command, cwd=ROOT, check=False, capture_output=True)
-        if state.returncode not in {0, 1}:
-            raise ValueError("v0.3 root manifest could not inspect tracked source state")
-        if state.returncode:
-            raise ValueError("v0.3 root manifest requires a clean tracked source tree")
+    if state.returncode:
+        raise ValueError("v0.3 root manifest could not inspect source state")
+    if state.stdout:
+        raise ValueError("v0.3 root manifest requires a clean source tree")
     tracked = set(_tracked_paths())
-    release_version = package_version(ROOT)
+    release_version = _evidence_release_version()
     missing = sorted(_generated_artifacts() - tracked)
     if missing:
         raise ValueError(

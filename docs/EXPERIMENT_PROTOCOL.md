@@ -1281,3 +1281,23 @@ scientific superiority evidence. Concept and organ monitors are observer-only, s
 cannot be aggregated as a decision improvement or scientific support. Every C19 official run still
 needs a new preregistered truth-free adapter protocol and must not be inferred from this engineering
 protocol.
+
+## 20. v0.3.2 corrective measurement protocol
+
+The v0.3.2 helper metrics are software contracts, not new experiment results. Attribution reports
+eligible decisions, cited decisions, citation IDs, active citation IDs, causal-removal decisions,
+and decision-changing removals separately. Missing citations produce unavailable validity/fidelity,
+not a perfect score. Duplicate IDs, inactive IDs outside the cited set, invalid denominators, and
+causal flags without citations fail closed.
+
+Revision reporting separates a revise proposal from an accepted revision and rejects inconsistent
+proposal/transition rows. Action mismatch requires equal-length sequences and never truncates an
+input silently. A zero-length pair has mismatch rate `0.0` by explicit convention.
+
+The loser-retention helper is valid only for the actual C15 `RevisionBeliefField`, where the factor
+is applied only to non-winning states. The generic integrated belief field is rejected because its
+current update rule cannot isolate that intervention. A future scientific residual evaluation still
+requires preregistration, matched conditions, multiple seeds, raw outputs, and protected artifacts.
+
+Direct checkpoints and sensory diagnostics are engineering tests. They do not replace exact
+scientific reproduction, external evaluation, or C18's explicit trace/checkpoint evidence contract.

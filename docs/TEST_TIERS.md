@@ -25,7 +25,7 @@ concurrent worktrees can otherwise turn cleanup into a permission failure before
 | Category | Tests | Rationale |
 | --- | --- | --- |
 | Fast / engineering | Core dynamics, invariants, serialization, C11--C14, C18 guards, and C15--C17 runner fixture checks | Software correctness; no official-science execution or artifact regeneration. |
-| Engineering integration | Brain Lab API/service and end-to-end modules, including the v0.3.1 API | Multi-component local regressions are retained in Engineering and excluded from Fast. |
+| Engineering integration | Brain Lab API/service and end-to-end modules, including the v0.3.1 API and v0.3.2 runtime/direct-checkpoint facade | Multi-component local regressions are retained in Engineering and excluded from Fast. |
 | Scientific + slow | `test_c15_revision.py`, `test_c16_concepts.py`, `test_c17_organs.py` | Controlled-science implementation and result-contract coverage is preserved but separated from ordinary regression. |
 | Reproduction + slow | Clean-room/release/artifact/review bundle modules | These exercise generated artifacts, git/archive contracts, and release reproduction rather than normal behavior. |
 | External + slow | C19 and external-validation modules | External-validation adapters and blocked-readiness boundaries remain explicit and excluded from routine regression. |
@@ -57,3 +57,9 @@ run in both environments; installing `.[learned]` activates the real I3 integrat
 - Release runs every marker category. It is the required path for clean-room/reproduction tests;
   it must be run from a source/hash-compatible integration head before treating protected-artifact
   assertions as release failures.
+- The v0.3.2 development collection contains 892 tests: Fast 469, Engineering/default 502,
+  Scientific 156, and Release 892. The new metric and input-semantics contracts remain Fast;
+  runtime/direct-checkpoint tests are Integration; native release publication tests are Slow +
+  Reproduction. Fast passed 469 with 423 deselected in 47.06s and Engineering passed 502 with 390
+  deselected in 48.44s on 2026-08-28. Scientific and Release were collected but not fully executed
+  for this engineering development commit.

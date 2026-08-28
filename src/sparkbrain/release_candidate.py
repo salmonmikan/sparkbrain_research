@@ -1,6 +1,6 @@
 """Fail-closed source-only candidate/review release primitives for C20 integration.
 
-Each publication is a unique Windows directory renamed from validated staging.  The group
+Each publication is a unique directory atomically renamed from validated staging. The group
 directory contains both ZIP/checksum pairs and its binding manifest; no external pointer is
 published. A process kill before/within rename is not recoverable and must not be reported as a
 successful release.
@@ -12,7 +12,6 @@ import ast
 import hashlib
 import io
 import json
-import os
 import shutil
 import stat
 import subprocess
@@ -23,6 +22,8 @@ from collections import Counter
 from collections.abc import Iterable
 from pathlib import Path, PurePosixPath, PureWindowsPath
 from typing import Any
+
+from sparkbrain.release_atomic import atomic_publish_directory_noreplace
 
 CANDIDATE_MANIFEST_NAME = "CANDIDATE_RELEASE_MANIFEST.json"
 REVIEW_MANIFEST_NAME = "REVIEW_BUNDLE_MANIFEST.json"
@@ -863,7 +864,6 @@ def build_candidate_and_review_archives(
     staging = Path(
         tempfile.mkdtemp(prefix=".candidate-release-staging-", dir=release_directory.parent)
     )
-    published = False
     try:
         candidate = staging / "candidate.zip"
         with zipfile.ZipFile(candidate, "w") as archive:
@@ -924,19 +924,12 @@ def build_candidate_and_review_archives(
         group_problems = validate_release_group(root, staging, revision_base=revision_base)
         if group_problems:
             raise ValueError("release group validation failed: " + "; ".join(group_problems))
-        if os.name != "nt":
-            raise OSError("candidate group publish requires Windows no-replace directory rename")
-        if release_directory.exists() or release_directory.is_symlink():
-            raise FileExistsError(
-                f"candidate release directory already exists: {release_directory}"
-            )
         final_problems = validate_release_group(root, staging, revision_base=revision_base)
         if final_problems:
             raise ValueError(
                 "release group pre-publish validation failed: " + "; ".join(final_problems)
             )
-        os.rename(staging, release_directory)
-        published = True
+        atomic_publish_directory_noreplace(staging, release_directory)
         published_problems = validate_release_group(
             root, release_directory, revision_base=revision_base
         )
@@ -945,8 +938,9 @@ def build_candidate_and_review_archives(
                 "published release group validation failed: " + "; ".join(published_problems)
             )
     except BaseException:
-        if published and release_directory.exists() and not release_directory.is_symlink():
-            shutil.rmtree(release_directory, ignore_errors=True)
+        # Once published, leave a failed post-publish validation directory in
+        # place. Removing by path could delete a competitor that replaced it
+        # after publication; failed output is never returned as a release.
         if staging.exists():
             shutil.rmtree(staging, ignore_errors=True)
         raise

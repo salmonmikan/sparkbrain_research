@@ -4,10 +4,12 @@
 
 ## 現在の版と読む境界
 
-package versionは現在 `0.3.1` です。persisted legacy config/state/trace schemaは `0.2` のまま、C18の明示的な
+package versionは現在 `0.3.2.dev0` です。persisted legacy config/state/trace schemaは `0.2` のまま、C18の明示的な
 trace/checkpoint payloadだけが additive schema `0.3` です。
 
 v0.3.1はC11--C18の研究モジュールを明示的な持続runtimeとlive Brain Labへ接続しました。
+v0.3.2.dev0はその科学境界を変えず、metric、診断、trusted-local direct checkpoint、
+release publicationのcorrective APIを追加します。
 ただしC15の科学的優位性、C16の機能的概念形成、C17の器官形成、外部一般化は示していません。
 C19は `blocked` / `not_evaluated` です。
 

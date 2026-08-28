@@ -1,5 +1,32 @@
 # Changelog
 
+## v0.3.2.dev0 — 2026-08-28
+
+Corrective engineering development snapshot. No scientific artifact, claim grade, or external
+evaluation result is upgraded.
+
+### Added
+
+- strict attribution/revision/action metric helpers under `sparkbrain.v032`;
+- exact sensory-channel diagnostics over the accepted v0.3 runtime;
+- pure loser-retention control for the actual C15 `RevisionBeliefField`;
+- trusted-local direct JSON checkpointing without history replay;
+- truth-free relation/negation-aware local input scaffold;
+- native Linux/macOS/Windows no-clobber release-directory publication.
+
+### Fixed during integration
+
+- actual runtime checkpoint restoration and continuation equality;
+- v0.3 keyword-argument compatibility and instance-local sensory capture;
+- metric length, type, denominator, citation-ID, and transition consistency validation;
+- publish-race cleanup so a post-publication failure cannot delete a replaced directory.
+
+### Not changed
+
+- persisted legacy schema `0.2` or additive C18 schema `0.3`;
+- protected science artifacts and v0.3.1 release evidence;
+- C15/C16/C17/C19 scientific boundaries or the owner-license blocker.
+
 ## v0.3.1 — 2026-08-28
 
 Corrective private-review and engineering-integration patch. No scientific artifact, claim grade,

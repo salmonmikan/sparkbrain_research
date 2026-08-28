@@ -1,17 +1,28 @@
-# Project Status — SparkBrain v0.3.1
+# Project Status — SparkBrain v0.3.2.dev0
 
 ## v0.3 release migration boundary
 
-The package version is now `0.3.1`. The accepted v0.2.1 reference engine retains
+The package version is now `0.3.2.dev0`. The accepted v0.2.1 reference engine retains
 persisted config/state/trace schema `0.2`; it is not silently migrated or reinterpreted.
 The additive C18 trace/checkpoint interface uses schema `0.3` only for its own explicit
 payloads. Historical v0.2.1 artifacts, protected hashes, and C06/C08 negative evidence remain
 available in the completed private-release binding. C19 external validation is not counted as
 accepted release evidence.
 
+## v0.3.2 corrective development boundary
+
+The additive `sparkbrain.v032` surface corrects metric edge cases, exposes exact sensory-channel
+diagnostics, provides a pure C15 loser-retention control, adds trusted-local direct checkpointing,
+and makes release-group no-clobber publication native on Linux, macOS, and Windows. The existing
+`sparkbrain.v03` API and v0.3.1 release evidence remain available and are not rewritten.
+
+This is an engineering development snapshot. It does not upgrade residual superiority, semantic
+understanding, concept/organ formation, or external-generalization claims. C19 remains blocked.
+See `docs/V032_IMPLEMENTATION_STATUS.md` and `docs/CLAIMS_REGISTER_v0.3_ADDENDUM.md`.
+
 ## v0.3.1 corrective and integrated-runtime boundary
 
-The checked-in package is `0.3.1`. The corrective scope fixes private-review publication, the v0.3
+The accepted v0.3.1 release boundary fixes private-review publication, the v0.3
 seed demo, and reader-facing documentation, and adds `sparkbrain.v03.IntegratedV03Brain` plus the
 explicit `/api/v03/*` live Brain Lab while preserving legacy `/api/runs*`. The runtime connects
 sensory, evidence, entity, Coalition, belief, Workspace, action/feedback, observer-only concept and

@@ -1,4 +1,4 @@
-# Current Codex Prompts — SparkBrain v0.3.1
+# Current Codex Prompts — SparkBrain v0.3.2.dev0
 
 C01--C20 are completed or retained as bounded historical records. Do not use an old phase-start
 prompt to restart them. Their original task files remain in this directory as provenance and
@@ -9,10 +9,10 @@ no mandatory remote runtime service, and no dedicated-hardware acceptance criter
 `docs/PROJECT_STATUS.md`, `docs/THEORY_SPEC_v0.3.md`, and `docs/CODEX_EXECUTION_BRIEF.md` before
 selecting a follow-up.
 
-## v0.3.1 maintenance or audit
+## v0.3.2 development maintenance or audit
 
 ```text
-Use $sparkbrain-research. Start from the current v0.3.1 status rather than restarting C01--C20.
+Use $sparkbrain-research. Start from the current v0.3.2.dev0 status rather than restarting C01--C20.
 Audit the explicitly assigned follow-up against docs/PROJECT_STATUS.md and
 docs/THEORY_SPEC_v0.3.md, preserve saved scientific artifacts and claim grades, keep C19 blocked
 until a new truth-free adapter protocol is preregistered, and run the applicable test tier plus

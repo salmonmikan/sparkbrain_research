@@ -573,3 +573,21 @@ actual C15 `RevisionController`; explicit ablations alter only their registered 
 and C17 organ outputs remain observational and cannot alter decisions. The legacy engine is
 retained, and live inspection uses a separate `/api/v03/*` boundary rather than changing
 `/api/runs*`.
+
+## 19. v0.3.2 corrective facade and release publication
+
+`sparkbrain.v032.IntegratedV032Brain` wraps the accepted `IntegratedV03Brain` without changing its
+state model or keyword arguments. It captures the single `SensoryObservation` through an
+instance-local method override that is restored in `finally`; it never patches the sensory class
+globally. The public result exposes immutable channel decisions and the original v0.3 result.
+
+`DirectCheckpointManager` serializes the default integrated runtime's current object state into
+strict canonical JSON. Loading uses a fixed class registry, exact node/envelope shapes, bounded
+file/depth/node counts, an envelope digest, restored state-hash validation, and atomic no-clobber
+file publication. This is a trusted-local persistence contract, not a hostile-input loader or an
+authenticity signature. Unsupported learned-runtime object graphs fail closed.
+
+`sparkbrain.release_atomic.atomic_publish_directory_noreplace` dispatches to native no-replace
+rename primitives on Linux, macOS, and Windows. Candidate release groups are fully staged and
+validated before that single publication operation. Post-publication validation failure raises
+without deleting the published path, preventing path-based cleanup from removing a replacement.

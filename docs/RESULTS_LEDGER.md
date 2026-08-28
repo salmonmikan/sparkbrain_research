@@ -6,6 +6,20 @@ Identifiers embedded in immutable experiment contracts retain their original
 meaning. If a collision is discovered, the later documentation or observability
 entry receives the next unused identifier; protected artifacts are not renumbered.
 
+## 2026-08-28 — R-V03-0019 — v0.3.2 corrective engineering integration
+
+- Status: engineering `accepted`; scientific `not_evaluated`.
+- Scope: strict metric edge cases, truth-free diagnostic input scaffold, v0.3-compatible runtime
+  facade, pure C15 loser-retention control, trusted-local direct checkpoint, and native
+  no-clobber directory publication.
+- Verification: Fast 469 passed/423 deselected in 47.06s; Engineering 502 passed/390 deselected in
+  48.44s; current collection 892 with Scientific 156. Focused release/checkpoint/runtime checks,
+  Ruff, compileall, local readiness, protected-scope audit, and final root binding are required
+  before repository delivery.
+- Boundary: no official science or artifact regeneration was run. v0.3.1 evidence, C06/C08
+  negative results, C19 blocked readiness, persisted schemas, and historical claim grades are
+  unchanged.
+
 ## 2026-08-28 — R-V03-0018 — C18 v6 official deterministic observability bundle
 
 - Protocol/pin: `c18-trace-checkpoint-brain-lab-v6`; execution pin
