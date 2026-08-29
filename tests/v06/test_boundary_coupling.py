@@ -146,7 +146,7 @@ def test_internal_event_cannot_be_used_as_external_consistency() -> None:
 def test_canonical_boundary_suite_has_selective_boundary_and_world_effect() -> None:
     suite = run_canonical_boundary_suite()
     result = suite.assessment
-    assert result.engineering_candidate is True
+    assert result.engineering_candidate is True, suite.state_dict()
     assert result.sham_main_boundary_count == 3
     assert result.targeted_main_boundary_count == 0
     assert result.matched_random_main_boundary_count == 3
@@ -163,7 +163,7 @@ def test_canonical_boundary_suite_has_selective_boundary_and_world_effect() -> N
 def test_sham_stabilizes_links_only_after_external_world_events() -> None:
     suite = run_canonical_boundary_suite()
     sham = suite.sham
-    assert sham.main_link_consistent_count == 3
+    assert sham.main_link_consistent_count == 3, sham.state_dict()
     assert sham.control_link_consistent_count == 3
     assert sham.main_link_reliability == pytest.approx(0.8)
     assert sham.control_link_reliability == pytest.approx(0.8)
@@ -174,7 +174,7 @@ def test_sham_stabilizes_links_only_after_external_world_events() -> None:
 def test_internal_only_boundary_events_do_not_create_positive_link_state() -> None:
     suite = run_canonical_boundary_suite()
     internal = suite.internal_only
-    assert internal.main_boundary_count == 3
+    assert internal.main_boundary_count == 3, internal.state_dict()
     assert internal.control_boundary_count == 3
     assert internal.main_external_count == 0
     assert internal.control_external_count == 0
