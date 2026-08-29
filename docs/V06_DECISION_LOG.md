@@ -201,3 +201,40 @@ runtime stages.
 The current Primary implementation stores anonymous target/time/magnitude/polarity transitions,
 provenance, reinjection, and external consistency. It has not yet introduced typed functional
 relation objects. Future V06-09/V06-10 work must preserve that boundary.
+
+## D-V06-0035 — Every downstream chain step requires an actual Field Spark
+
+A local proposal is not counted as a downstream event. The next proposal is created only after a
+reinjected arrival crosses the retained Field threshold and produces a `SpikeEvent`.
+
+## D-V06-0036 — Future chain steps are sequentially created, not preloaded
+
+The external cue schedules only the first endogenous proposal. Every later proposal is created at
+the preceding endogenous Spark time and records that proposal as a causal parent. A complete future
+sequence is not inserted into the queue at the root.
+
+## D-V06-0037 — V06-09 interventions target anonymous execution structure
+
+Primary interventions suppress an anonymous physical expansion unit or an anonymous local
+reinjection path. Assembly IDs, predictive labels, action labels, memory labels, and functional-role
+objects are not used to choose the target.
+
+## D-V06-0038 — The matched-random control is active and stage-matched
+
+The canonical world includes a disjoint active control chain. The matched-random condition
+suppresses the same expansion stage on that chain rather than selecting an inactive or nonexistent
+path.
+
+## D-V06-0039 — Internal recurrence remains ineligible for self-confirmation
+
+External silence may permit sequential proposal creation and Field Sparks, but it does not increment
+external observation counts or commit positive transition updates. Repetition inside the Field is
+not external consistency.
+
+## D-V06-0040 — V06-09 is a Level-2 engineering candidate, not Level 3
+
+In the canonical world, preserving the root Spark while suppressing its expansion removes later
+anonymous Sparks, whereas the stage-matched active control intervention leaves the target chain
+intact. This is a single-world engineering candidate for causal participation in later anonymous
+internal events. It is not a confirmatory Gate-D/Gate-E result and does not establish an externally
+stabilized or revisable anonymous causal relation.
