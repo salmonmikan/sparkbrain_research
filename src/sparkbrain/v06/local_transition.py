@@ -184,11 +184,13 @@ class SparseLocalTransitionAdaptation:
         *,
         origin_state_hash: str,
     ) -> tuple[PreparedLocalTransition, ...]:
+        proposal_count_before = self.expectation.proposal_count
         base_rows = self.expectation.proposals_for(
             source,
             origin_state_hash=origin_state_hash,
         )
         if len(self._pending) + len(base_rows) > self.config.maximum_pending:
+            self.expectation.proposal_count = proposal_count_before
             raise RuntimeError("G2 pending transition budget exceeded")
 
         prepared: list[PreparedLocalTransition] = []
@@ -276,6 +278,9 @@ class SparseLocalTransitionAdaptation:
         if external.origin is not EventOrigin.EXTERNAL:
             raise ValueError("G2 resolution requires an external observation")
         pending = self._pending[proposal_id]
+        if external.time_ms > pending.valid_until_ms:
+            self.expire_pending(external.time_ms)
+            raise ValueError("G2 external observation arrived after eligibility expiry")
         proposal = self.ledger.proposals[proposal_id]
         self._ensure_external_registered(external)
 
