@@ -29,7 +29,7 @@ Missing-middle remains one strict forward-validity assay.
 - V06-06 bounded normal-rule Field reinjection;
 - V06-07 external-authoritative reality correction and stale-branch cancellation;
 - V06-08 non-copy origin and persistent-state-dependence evidence contracts;
-- V06-08 canonical persistent-transition-state probe;
+- V06-08 canonical persistent-transition-state Field probe;
 - an early Assembly-free forward/missing-middle validity harness, retained as a later diagnostic;
 - focused and adversarial foundation/G0/G1/G2/reinjection/reality/evidence/state-probe tests.
 
@@ -62,7 +62,7 @@ shuffled queue
 ```
 
 In the minimal canonical topology, the intact condition produces two later spikes, while the fully
-drained condition produces zero. The current interpretation is:
+drained condition produces zero. The current interpretation is therefore:
 
 ```text
 status: not_observed_after_queue_drain
@@ -145,9 +145,9 @@ The behavioural response signature excludes run-specific event IDs and the `orig
 This prevents different bookkeeping identities from being misreported as a history-dependent
 cognitive difference.
 
-## V06-08 canonical state probe
+## V06-08 canonical Field state probe
 
-The first connected probe presents exactly the same current external input in every condition:
+The connected probe presents exactly the same current external input in every condition:
 
 ```text
 unit:0 at 100 ms
@@ -162,27 +162,37 @@ alternate:        unit:0 -> unit:2 after 5 ms, repeated three times
 no-history:       no learned transition
 ```
 
+For each trained condition, the current external event is first processed, the ordinary Field queue
+is verified empty, and a clone with no reinjection is advanced to the same horizon. The no-reinjection
+control produces no later Spark. The G1 proposal is separately registered and passed through the
+normal `FieldReinjectionGate`; only the retained Field threshold may then create the endogenous
+Spark.
+
 The engineering result is:
 
 ```text
-reference endogenous target:       unit:1
-reference replay endogenous target: unit:1
-alternate endogenous target:       unit:2
-no-history endogenous event count: 0
-same-state replay deterministic:   true
-prior-state hashes distinct:       true
-response changed with history:     true
-origin audits passed:              true
-engineering candidate:             true
+reference Field Spark target:         unit:1
+reference replay Field Spark target:  unit:1
+alternate-history Field Spark target: unit:2
+no-history endogenous event count:    0
+no-reinjection control spike count:   0
+normal-rule reinjection accepted:     true
+same-state replay deterministic:      true
+prior-state hashes distinct:         true
+response changed with history:       true
+origin audits passed:                true
+engineering candidate:               true
 ```
 
-The candidate is not a direct copy of the current input, is not a known fixed-delay echo of the same
-target, does not depend on a pending Field queue, receives no evaluator target, and carries the prior
-state hash from which it was produced.
+The candidate is not a direct copy of the current input, is not a known same-target fixed-delay echo,
+does not depend on a pre-existing pending Field queue, receives no evaluator target, and carries the
+prior state hash from which it was produced. The resulting event is an actual thresholded Field
+Spark caused by an ordinary reinjected arrival rather than a proposal object reported as a Spark.
 
-This is a positive engineering candidate for non-copy proposal origin and persistent local-
-transition-state dependence. It does **not** yet establish a causally participating Field Spark,
-membrane-state memory, autonomous chain, held-out prediction, or Level-2/Level-3 cognition.
+This is a positive **single-world engineering candidate** for non-copy Field-Spark origin and
+persistent local-transition-state dependence. It does **not** establish Level 2 prediction,
+autonomous multi-step continuation, downstream causal function, held-out generality, or Level 3
+functional relation.
 
 ## Early forward-validity harness
 
@@ -233,11 +243,18 @@ non-copy/state-dependence focused tests: 12 added
 GitHub Actions run 33249776658: PASS on Python 3.11 and 3.13
 ```
 
-V06-08 canonical state probe:
+V06-08 proposal-only canonical probe, retained in history:
 
 ```text
 state-probe focused tests: 6 added
 GitHub Actions run 33249930145: PASS on Python 3.11 and 3.13
+```
+
+V06-08 actual Field-reinjection probe:
+
+```text
+state-probe focused tests: 7
+GitHub Actions run 33250148222: PASS on Python 3.11 and 3.13
 Install: PASS
 Ruff lint: PASS
 Local readiness: PASS
@@ -284,7 +301,8 @@ contradiction, relation stability, memory components, and observer artifacts wit
 
 ## Scientific status
 
-The current branch provides engineering foundation and one controlled state-dependence candidate:
+The current branch provides engineering foundation and one controlled Field-level state-dependence
+candidate:
 
 - Assembly-free provenance-safe internal proposals;
 - one negative G0 diagnostic;
@@ -293,13 +311,14 @@ The current branch provides engineering foundation and one controlled state-depe
 - normal-rule Field reinjection;
 - external-authoritative correction and stale-chain cancellation;
 - fail-closed non-copy and state-dependence evidence contracts;
-- deterministic same-input/different-history local-transition-state response candidate;
+- deterministic same-input/different-history Field-Spark response candidate;
+- actual thresholded Field reinjection versus a no-reinjection control;
 - no-history no-generation control;
 - early forward-validity harness retained without scientific claim upgrade.
 
 The following remain unevaluated or unsupported:
 
-- a scientifically accepted non-copy Field Spark across multiple controlled worlds;
+- a scientifically accepted non-copy Field Spark across multiple controlled worlds and seeds;
 - autonomous internal Spark chains;
 - causal downstream participation beyond the engineered harness;
 - stable prediction/action/memory relations;
