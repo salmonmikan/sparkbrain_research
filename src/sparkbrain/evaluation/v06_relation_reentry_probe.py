@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import math
 from dataclasses import asdict, dataclass
 from typing import Any
 
@@ -227,6 +228,16 @@ def _run_probe(
     )
 
 
+def _currents_match(
+    observed: tuple[float, ...],
+    expected: tuple[float, ...],
+) -> bool:
+    return len(observed) == len(expected) and all(
+        math.isclose(left, right, rel_tol=1e-12, abs_tol=1e-12)
+        for left, right in zip(observed, expected, strict=True)
+    )
+
+
 def run_canonical_relation_reentry_suite() -> CanonicalRelationReentrySuite:
     acquisition = _run_probe(
         condition_id="acquisition",
@@ -297,7 +308,7 @@ def run_canonical_relation_reentry_suite() -> CanonicalRelationReentrySuite:
     same_projection = (
         reversal.relation_record_targets == ("unit:8", "unit:9")
         and reversal.accepted_count == 2
-        and reversal.effective_currents == (0.45, 0.72)
+        and _currents_match(reversal.effective_currents, (0.45, 0.72))
     )
     assessment = RelationReentryAssessment(
         acquisition_changes_field=acquisition.generated_units == (8,),
