@@ -2,6 +2,13 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import pytest
+
+from sparkbrain.baselines.v06.common import (
+    QUALIFICATION_FAMILIES,
+    QUALIFICATION_SEEDS,
+    world_parameters as comparator_world_parameters,
+)
 from sparkbrain.baselines.v06.g3_recurrent import (
     GenericRecurrentPredictor,
     evaluate_world,
@@ -12,6 +19,20 @@ from sparkbrain.evaluation.v06_confirmatory import (
     ConfirmatoryCondition,
     EvidenceDomain,
 )
+from sparkbrain.evaluation.v06_confirmatory_primary_adapter import (
+    world_parameters as primary_world_parameters,
+)
+
+
+@pytest.mark.parametrize("family_id", QUALIFICATION_FAMILIES)
+@pytest.mark.parametrize("seed", QUALIFICATION_SEEDS)
+def test_g3_uses_exact_primary_qualification_world_specification(
+    family_id: str,
+    seed: int,
+) -> None:
+    assert comparator_world_parameters(family_id, seed).state_dict() == (
+        primary_world_parameters(family_id, seed).state_dict()
+    )
 
 
 def test_generated_tokens_never_train_the_recurrent_comparator() -> None:
@@ -48,6 +69,8 @@ def test_g3_world_exposes_selective_effect_and_zero_self_confirmation() -> None:
     assert metrics["g3_boundary_targeted_impairment"] == 1.0
     assert metrics["g3_boundary_matched_impairment"] == 0.0
     assert metrics["g3_boundary_selective_effect"] == 1.0
+    assert metrics["external_predictor_field_threshold_count"] == 0.0
+    assert metrics["g3_generation_preserved_learned_state"] == 1.0
     assert metrics["taxonomy_hash_match"] == 1.0
     assert metrics["self_confirmation_violations"] == 0.0
 
@@ -79,3 +102,4 @@ def test_g3_comparator_package_does_not_import_primary_runtime() -> None:
         source = path.read_text(encoding="utf-8")
         assert "from sparkbrain.v06" not in source
         assert "import sparkbrain.v06" not in source
+        assert "v06_confirmatory_primary" not in source
