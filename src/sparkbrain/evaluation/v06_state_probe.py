@@ -219,7 +219,6 @@ def _runtime_event(
 def _proposal_for_spike(
     spike: SpikeEvent,
     decisions: tuple[ReinjectionDecision, ...],
-    model: LocalTemporalExpectation,
 ) -> str:
     accepted = [
         decision.proposal_id
@@ -231,12 +230,7 @@ def _proposal_for_spike(
     ]
     if len(accepted) != 1:
         raise RuntimeError("an endogenous Spark must map to exactly one accepted proposal")
-    proposal_id = accepted[0]
-    if proposal_id not in {row.proposal_id for rows in model._transitions.values() for row in ()}:
-        # No-op expression keeps the evaluator from depending on a hidden target table. The actual
-        # proposal content is resolved from the provenance ledger by the caller.
-        pass
-    return proposal_id
+    return accepted[0]
 
 
 def run_state_condition(
@@ -302,7 +296,7 @@ def run_state_condition(
 
     events: list[RuntimePulse] = []
     for spike in field_spikes:
-        proposal_id = _proposal_for_spike(spike, decision_rows, model)
+        proposal_id = _proposal_for_spike(spike, decision_rows)
         proposal = ledger.proposals[proposal_id]
         events.append(
             _runtime_event(
