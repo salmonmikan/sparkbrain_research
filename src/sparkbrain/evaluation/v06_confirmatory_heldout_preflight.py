@@ -3,8 +3,9 @@ from __future__ import annotations
 import hashlib
 import json
 from collections import defaultdict
+from collections.abc import Callable
 from dataclasses import asdict, dataclass
-from typing import Any, Callable
+from typing import Any
 
 from sparkbrain.baselines.v06.heldout_dryrun import (
     COMPARATOR_DRY_RUN_ADAPTERS,
