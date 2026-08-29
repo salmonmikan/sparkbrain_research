@@ -9,7 +9,7 @@ from .v06_confirmatory import (
     build_draft_confirmatory_manifest,
 )
 
-_READY_ADAPTERS = {
+_QUALIFIED_ADAPTERS = {
     ConfirmatoryCondition.PRIMARY: (
         "sparkbrain.evaluation.v06_confirmatory_primary_adapter.run_condition",
         "Parameterized Primary adapter passed the 3x3 qualification grid across all nine "
@@ -38,30 +38,52 @@ _READY_ADAPTERS = {
 }
 
 
+def _qualification_registration(row):
+    adapter_path, notes = _QUALIFIED_ADAPTERS[row.condition]
+    return replace(
+        row,
+        adapter_path=adapter_path,
+        adapter_ready=True,
+        isolated_from_primary=True,
+        engineering_evidence_available=True,
+        notes=notes,
+    )
+
+
+def _heldout_registration(row):
+    adapter_path, notes = _QUALIFIED_ADAPTERS[row.condition]
+    return replace(
+        row,
+        adapter_path=adapter_path,
+        adapter_ready=False,
+        isolated_from_primary=True,
+        engineering_evidence_available=True,
+        notes=(
+            f"{notes} The adapter has not yet passed the five-family held-out world "
+            "parameter contract and is therefore not confirmatory-ready."
+        ),
+    )
+
+
 def build_current_confirmatory_manifest(
     phase: ConfirmatoryPhase,
     *,
     code_ref: str = "UNFROZEN",
 ) -> ConfirmatoryManifest:
-    """Build the fail-closed manifest with reviewed adapters marked ready.
+    """Build the current phase-specific fail-closed manifest.
 
-    Primary and the four required non-comparator controls are currently
-    qualified. G3, G4, and G5 remain unavailable, so neither qualification nor
-    confirmatory execution is ready and ``code_ref`` remains unfrozen.
+    Primary and four non-comparator controls are ready only for the 3x3
+    qualification phase. No adapter is yet marked ready for the five-family
+    held-out confirmatory phase. G3, G4, and G5 remain unavailable in both.
     """
 
     base = build_draft_confirmatory_manifest(phase, code_ref=code_ref)
-    conditions = tuple(
-        replace(
-            row,
-            adapter_path=_READY_ADAPTERS[row.condition][0],
-            adapter_ready=True,
-            isolated_from_primary=True,
-            engineering_evidence_available=True,
-            notes=_READY_ADAPTERS[row.condition][1],
-        )
-        if row.condition in _READY_ADAPTERS
-        else row
-        for row in base.conditions
-    )
-    return replace(base, conditions=conditions)
+    conditions = []
+    for row in base.conditions:
+        if row.condition not in _QUALIFIED_ADAPTERS:
+            conditions.append(row)
+        elif phase is ConfirmatoryPhase.QUALIFICATION:
+            conditions.append(_qualification_registration(row))
+        else:
+            conditions.append(_heldout_registration(row))
+    return replace(base, conditions=tuple(conditions))
