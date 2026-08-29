@@ -103,7 +103,7 @@ def world_parameters(family_id: str, seed: int) -> ComparatorWorldParameters:
         boundary_lag_ms=boundary_lag_ms,
         threshold=threshold,
         cue_magnitude=cue_magnitude,
-        relation_reentry_gain=threshold / 0.65,
+        relation_reentry_gain=threshold / 0.60,
         episode_spacing_ms=spacing,
     )
 
