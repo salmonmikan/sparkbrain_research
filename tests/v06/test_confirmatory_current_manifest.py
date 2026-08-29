@@ -9,7 +9,7 @@ from sparkbrain.evaluation.v06_confirmatory_current_manifest import (
     build_current_confirmatory_manifest,
 )
 
-_READY_CONDITIONS = {
+_QUALIFICATION_READY_CONDITIONS = {
     ConfirmatoryCondition.PRIMARY,
     ConfirmatoryCondition.NO_ENDOGENOUS,
     ConfirmatoryCondition.RANDOM_MATCHED,
@@ -36,7 +36,7 @@ _EXPECTED_PATHS = {
 }
 
 
-def test_current_manifest_marks_primary_and_four_controls_ready() -> None:
+def test_qualification_marks_primary_and_four_controls_ready() -> None:
     manifest = build_current_confirmatory_manifest(
         ConfirmatoryPhase.QUALIFICATION
     )
@@ -45,15 +45,15 @@ def test_current_manifest_marks_primary_and_four_controls_ready() -> None:
         condition
         for condition, row in registrations.items()
         if row.adapter_ready
-    } == _READY_CONDITIONS
-    for condition in _READY_CONDITIONS:
+    } == _QUALIFICATION_READY_CONDITIONS
+    for condition in _QUALIFICATION_READY_CONDITIONS:
         row = registrations[condition]
         assert row.isolated_from_primary is True
         assert row.engineering_evidence_available is True
         assert row.adapter_path == _EXPECTED_PATHS[condition]
 
 
-def test_current_manifest_remains_fail_closed_and_unfrozen() -> None:
+def test_qualification_manifest_remains_fail_closed_and_unfrozen() -> None:
     manifest = build_current_confirmatory_manifest(
         ConfirmatoryPhase.QUALIFICATION
     )
@@ -67,7 +67,7 @@ def test_current_manifest_remains_fail_closed_and_unfrozen() -> None:
     }
 
 
-def test_confirmatory_manifest_uses_held_out_shape_but_is_not_ready() -> None:
+def test_confirmatory_manifest_does_not_reuse_qualification_readiness() -> None:
     manifest = build_current_confirmatory_manifest(
         ConfirmatoryPhase.CONFIRMATORY
     )
@@ -77,7 +77,12 @@ def test_confirmatory_manifest_uses_held_out_shape_but_is_not_ready() -> None:
     assert all(row.held_out for row in manifest.world_families)
     assert readiness.ready is False
     assert set(readiness.unavailable_adapters) == {
-        "g3-recurrent",
-        "g4-assembly-conditioned",
-        "g5-typed-functional-heads",
+        row.value for row in ConfirmatoryCondition
     }
+    registrations = {row.condition: row for row in manifest.conditions}
+    for condition in _QUALIFICATION_READY_CONDITIONS:
+        row = registrations[condition]
+        assert row.adapter_ready is False
+        assert row.engineering_evidence_available is True
+        assert row.adapter_path == _EXPECTED_PATHS[condition]
+        assert "held-out" in row.notes
