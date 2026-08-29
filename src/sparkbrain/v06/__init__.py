@@ -1,11 +1,11 @@
 """SparkBrain v0.6 Assembly-free and taxonomy-free endogenous Dynamics.
 
 The package initializer installs Protocol-Amendment-002 runtime guards before
-exposing the Primary modules. V06-00 through V06-10 establish provenance,
+exposing the Primary modules. V06-00 through V06-12 establish provenance,
 anti-self-confirmation, observer isolation, G0/G1/G2 Dynamics, normal-rule
 reinjection, external correction, state-dependence probes, autonomous
-endogenous chains, anonymous outbound boundary events, and externally gated
-untyped boundary consistency.
+endogenous chains, anonymous outbound boundary events, externally gated
+untyped consistency, and relation re-entry into later Field Dynamics.
 """
 
 from .taxonomy import (
@@ -106,6 +106,11 @@ from .reinjection import (  # noqa: E402
     ReinjectionConfig,
     ReinjectionDecision,
 )
+from .relation_reentry import (  # noqa: E402
+    AnonymousRelationReentry,
+    RelationReentryConfig,
+    RelationReentryRecord,
+)
 from .world_boundary import (  # noqa: E402
     AnonymousBoundaryWorld,
     AnonymousWorldLink,
@@ -121,6 +126,7 @@ __all__ = [
     "AnonymousConsistencyConfig",
     "AnonymousConsistencyResolution",
     "AnonymousLinkState",
+    "AnonymousRelationReentry",
     "AnonymousWorldLink",
     "AssemblyFreeForwardRuntime",
     "AssemblyFreeRuntimeState",
@@ -168,6 +174,8 @@ __all__ = [
     "RealityMatchRecord",
     "ReinjectionConfig",
     "ReinjectionDecision",
+    "RelationReentryConfig",
+    "RelationReentryRecord",
     "RuntimeObserver",
     "RuntimePulse",
     "SparseLocalTransitionAdaptation",
