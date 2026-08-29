@@ -73,7 +73,10 @@ views from immutable traces. View renaming, deletion, or permutation must not ch
 - V06-10 raw external world feedback without reward or correct-action labels;
 - V06-10 externally gated untyped boundary consistency;
 - V06-10 observer-taxonomy permutation non-interference test;
-- repeated-episode per-arrival causal-lineage isolation;
+- V06-10 repeated-episode per-arrival causal-lineage isolation;
+- V06-11 anonymous world-contingency reversal;
+- V06-11 old-link retention, new-link stabilization, and old-link reacquisition;
+- V06-11 stable-world no-proliferation control;
 - early forward/missing-middle harness retained as a validity diagnostic.
 
 ## 4. Current engineering findings
@@ -193,9 +196,9 @@ active matched-random port:9 suppression:
   external unit:8 events                 3
 ```
 
-When the world responses are suppressed after boundary emission, internal boundary events still
-occur but no anonymous positive link state is created. Internal recurrence therefore cannot
-stabilize the world relation by itself.
+When world responses are suppressed after boundary emission, internal boundary events still occur
+but no anonymous positive link state is created. Internal recurrence cannot stabilize the world
+relation by itself.
 
 ```text
 targeted boundary impairment:       1.0
@@ -207,9 +210,59 @@ selective external-stream effect:   1.0
 Observer descriptions of the ports can be renamed or permuted while the Primary state hash remains
 unchanged.
 
-This is a single-world **partial Level-3 engineering candidate** for external stabilization and a
-selective anonymous boundary/world effect. It is not completed Level 3 because relation revision,
-held-out worlds/seeds, and memory-locus analysis remain outstanding.
+### V06-11 single-world Level-3 engineering candidate
+
+The internal chain and anonymous `port:7` remain fixed while only the raw world response changes.
+
+#### Acquisition
+
+```text
+port:7 -> external unit:8
+consistent count:   3
+inconsistent count: 0
+reliability:        0.8
+```
+
+#### Reversal
+
+```text
+port:7 -> external unit:9
+old unit:8 reliability: 0.5
+new unit:9 reliability: 0.8
+```
+
+The new link first exceeds the old link after the second reversal episode.
+
+#### Return to the original contingency
+
+```text
+port:7 -> external unit:8
+old unit:8 reliability: 7/11 ~= 0.6364
+new unit:9 reliability: 0.5
+```
+
+The original link first exceeds the reversal link again after the second return episode. Its earlier
+history is retained rather than erased.
+
+#### Stable control
+
+```text
+nine unit:8 responses
+link count:              1
+consistent count:        9
+inconsistent count:      0
+reliability:             10/11 ~= 0.9091
+```
+
+The stable world does not create an unnecessary competing link.
+
+This completes the *shape* of an externally stabilized and revisable anonymous relation in one
+canonical engineering world. It remains a single-world Level-3 engineering candidate, not a
+confirmatory Level-3 result.
+
+Important limitation: the revised anonymous consistency state is not yet used to change future
+Field or boundary behaviour. V06-11 establishes relation-state revision, not adaptive exploitation
+of the revised relation.
 
 ## 5. Provenance correction made during V06-10
 
@@ -245,37 +298,36 @@ observer reports and does not define runtime types.
 - evidence foundation: `33249776658`, Python 3.11/3.13 PASS;
 - actual Field state probe: `33250148222`, Python 3.11/3.13 PASS;
 - V06-09 endogenous chain: `33251088862`, Python 3.11/3.13 PASS;
-- V06-10 clean post-provenance-fix integration: `33252273946`, Python 3.11/3.13 PASS.
+- V06-10 clean post-provenance-fix integration: `33252273946`, Python 3.11/3.13 PASS;
+- V06-10 public API synchronization: `33252440763`, Python 3.11/3.13 PASS;
+- V06-11 relation reversal and reacquisition: `33252757980`, Python 3.11/3.13 PASS.
 
 These runs passed installation, Ruff, local readiness, the default test suite, and bundle validation.
-The public-API synchronization run is tracked separately after its completion.
 
 ## 8. Current next work
-
-### V06-11 — External revision and observer projections
-
-- reverse an anonymous world link without changing the outbound port identity;
-- measure old-link inconsistency and new-link stabilization;
-- distinguish revision from uncontrolled proliferation;
-- restore the old contingency and measure reacquisition;
-- verify stable controls do not revise;
-- compare physically different trajectories by causal signature only;
-- keep all view labels outside runtime.
 
 ### V06-12 — Missing-middle and other validity assays
 
 Run forward missing-middle, prefix continuation, branching, omission, and retrospective inference as
-separate diagnostics.
+separate diagnostics. These assays support the broader claim but do not define it.
 
 ### V06-13 — Persistence locus and causal dynamic-path analysis
 
-Reset, transplant, and intervene on candidate state components. `Memory` remains an observer
-interpretation of persistent effects.
+Reset, transplant, and intervene on candidate state components. Determine separately which
+components carry:
+
+- same-input/different-history endogenous response;
+- autonomous chain continuation;
+- anonymous boundary coupling;
+- externally stabilized consistency;
+- revision and reacquisition.
+
+`Memory` remains an observer interpretation of delayed, reset-sensitive, transplantable effects.
 
 ### V06-14 — Brain Lab, taxonomy audit, and local release
 
 Visualize raw events, state, boundary crossings, provenance, causal lineage, external consistency,
-and post-hoc views without feeding categories into runtime.
+revision, and post-hoc views without feeding categories into runtime.
 
 ## 9. Taxonomy-independence requirements
 
@@ -297,15 +349,16 @@ Currently supported only as engineering foundation/candidates:
 - local externally gated transition state;
 - normal-rule reinjection;
 - external correction;
-- one same-input/different-history Field-Spark candidate;
-- one autonomous anonymous-chain causal-participation candidate;
-- one externally stabilized anonymous boundary relation candidate.
+- one same-input/different-history Field-Spark Level-1 candidate;
+- one autonomous anonymous-chain Level-2 candidate;
+- one selectively world-coupled anonymous boundary candidate;
+- one externally stabilized and revisable anonymous relation Level-3 candidate.
 
 Not yet established:
 
-- multi-world confirmatory Level 1 or Level 2;
-- completed Level 3;
-- contingency revision and reacquisition;
+- multi-world/multi-seed confirmatory Level 1, 2, or 3;
+- held-out relation generalization;
+- adaptive use of revised relation state;
 - physical-trajectory causal equivalence;
 - confirmatory missing-middle validity;
 - persistence locus outside explicit local transition/consistency state;
