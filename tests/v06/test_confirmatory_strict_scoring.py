@@ -190,7 +190,7 @@ def test_subthreshold_selective_effect_rejects_primary_support() -> None:
     assert outcome.primary_supported is False
 
 
-def test_any_taxonomy_hash_mismatch_fails_the_one_point_zero_gate() -> None:
+def test_any_primary_taxonomy_hash_mismatch_fails_the_one_point_zero_gate() -> None:
     manifest = _manifest()
     records = _replace_group_metrics(
         _records(),
@@ -204,18 +204,62 @@ def test_any_taxonomy_hash_mismatch_fails_the_one_point_zero_gate() -> None:
     assert outcome.primary_supported is False
 
 
-def test_one_self_confirmation_violation_fails_closed() -> None:
+def test_one_primary_self_confirmation_violation_fails_closed() -> None:
     manifest = _manifest()
     records = _replace_group_metrics(
         _records(),
+        family_id=manifest.world_families[0].family_id,
+        seed=manifest.seeds[0].seed,
+        condition=ConfirmatoryCondition.PRIMARY,
+        changes={"self_confirmation_violations": 1.0},
+    )
+    outcome = score_strict_confirmatory_results(manifest, records)
+    assert outcome.self_confirmation_violations == 1
+    assert outcome.primary_supported is False
+
+
+def test_one_control_self_confirmation_violation_fails_primary_safety() -> None:
+    manifest = _manifest()
+    records = _replace_group_metrics(
+        _records(),
+        family_id=manifest.world_families[0].family_id,
+        seed=manifest.seeds[0].seed,
+        condition=ConfirmatoryCondition.RANDOM_MATCHED,
+        changes={"self_confirmation_violations": 1.0},
+    )
+    outcome = score_strict_confirmatory_results(manifest, records)
+    assert outcome.self_confirmation_violations == 1
+    assert outcome.primary_supported is False
+
+
+def test_comparator_self_confirmation_failure_does_not_veto_clean_primary() -> None:
+    manifest = _manifest()
+    records = _replace_group_metrics(
+        _records(comparator_passed=ConfirmatoryCondition.G3_RECURRENT),
         family_id=manifest.world_families[0].family_id,
         seed=manifest.seeds[0].seed,
         condition=ConfirmatoryCondition.G3_RECURRENT,
         changes={"self_confirmation_violations": 1.0},
     )
     outcome = score_strict_confirmatory_results(manifest, records)
-    assert outcome.self_confirmation_violations == 1
-    assert outcome.primary_supported is False
+    assert outcome.self_confirmation_violations == 0
+    assert outcome.primary_supported is True
+    assert outcome.supported_comparators == ()
+
+
+def test_comparator_taxonomy_failure_does_not_veto_clean_primary() -> None:
+    manifest = _manifest()
+    records = _replace_group_metrics(
+        _records(comparator_passed=ConfirmatoryCondition.G5_TYPED),
+        family_id=manifest.world_families[0].family_id,
+        seed=manifest.seeds[0].seed,
+        condition=ConfirmatoryCondition.G5_TYPED,
+        changes={"taxonomy_hash_match": 0.0},
+    )
+    outcome = score_strict_confirmatory_results(manifest, records)
+    assert outcome.taxonomy_hash_match_fraction == 1.0
+    assert outcome.primary_supported is True
+    assert outcome.supported_comparators == ()
 
 
 def test_failed_control_contract_rejects_primary_support() -> None:
