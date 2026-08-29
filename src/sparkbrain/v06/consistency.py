@@ -93,6 +93,51 @@ class AnonymousLinkState:
         value["reliability"] = self.reliability(config)
         return value
 
+    def learned_state_dict(self) -> dict[str, Any]:
+        """Return persistent learned quantities without derived or working state."""
+
+        return asdict(self)
+
+    @classmethod
+    def from_learned_state_dict(cls, value: dict[str, Any]) -> AnonymousLinkState:
+        row = cls(
+            port_id=str(value["port_id"]),
+            target=str(value["target"]),
+            polarity=int(value["polarity"]),
+            consistent_count=int(value["consistent_count"]),
+            inconsistent_count=int(value["inconsistent_count"]),
+            mean_lag_ms=float(value["mean_lag_ms"]),
+            lag_m2=float(value["lag_m2"]),
+            mean_magnitude_ratio=float(value["mean_magnitude_ratio"]),
+            last_boundary_event_id=(
+                str(value["last_boundary_event_id"])
+                if value.get("last_boundary_event_id") is not None
+                else None
+            ),
+            last_external_event_id=(
+                str(value["last_external_event_id"])
+                if value.get("last_external_event_id") is not None
+                else None
+            ),
+        )
+        if not row.port_id or not row.target:
+            raise ValueError("learned anonymous link identifiers must be non-empty")
+        if row.polarity not in (-1, 1):
+            raise ValueError("learned anonymous link polarity must be -1 or 1")
+        if row.consistent_count < 0 or row.inconsistent_count < 0:
+            raise ValueError("learned anonymous link counts must be non-negative")
+        for name in ("mean_lag_ms", "lag_m2", "mean_magnitude_ratio"):
+            number = float(getattr(row, name))
+            if not math.isfinite(number) or number < 0:
+                raise ValueError(f"learned anonymous link {name} must be non-negative")
+        if row.consistent_count == 0 and (
+            row.mean_lag_ms != 0.0
+            or row.lag_m2 != 0.0
+            or row.mean_magnitude_ratio != 0.0
+        ):
+            raise ValueError("unobserved anonymous link cannot carry learned moments")
+        return row
+
 
 @dataclass(slots=True)
 class PortExposureState:
@@ -201,7 +246,11 @@ class UntypedBoundaryConsistency:
         boundary = pending.event
         key = (boundary.port_id, external.target, external.polarity)
         state = self._links.get(key)
-        before = state.reliability(self.config) if state is not None else self._prior_reliability()
+        before = (
+            state.reliability(self.config)
+            if state is not None
+            else self._prior_reliability()
+        )
 
         if self.config.single_external_per_boundary:
             for other_key, other_state in self._links.items():
@@ -267,6 +316,42 @@ class UntypedBoundaryConsistency:
         state = self.link_state(port_id=port_id, target=target, polarity=polarity)
         return state.reliability(self.config) if state is not None else None
 
+    def learned_state_dict(self) -> dict[str, Any]:
+        """Return persistent relation state without queues, exposures, or reports."""
+
+        value = {
+            "config": asdict(self.config),
+            "links": {
+                self._link_id(key): state.learned_state_dict()
+                for key, state in sorted(self._links.items())
+            },
+        }
+        validate_runtime_mapping(value, path="v06.anonymous_consistency.learned")
+        return value
+
+    @classmethod
+    def from_learned_state_dict(
+        cls,
+        value: dict[str, Any],
+        *,
+        ledger: ProvenanceLedger,
+    ) -> UntypedBoundaryConsistency:
+        validate_runtime_mapping(value, path="v06.anonymous_consistency.learned")
+        model = cls(
+            ledger,
+            AnonymousConsistencyConfig(**value["config"]),
+        )
+        for stored_link_id, row_value in value["links"].items():
+            state = AnonymousLinkState.from_learned_state_dict(dict(row_value))
+            key = (state.port_id, state.target, state.polarity)
+            expected_link_id = model._link_id(key)
+            if str(stored_link_id) != expected_link_id:
+                raise ValueError("anonymous learned link ID does not match its content")
+            if key in model._links:
+                raise ValueError("duplicate anonymous learned link")
+            model._links[key] = state
+        return model
+
     def _candidate_boundary_ids(self, external: RuntimePulse) -> tuple[str, ...]:
         parent_ids = set(external.parent_event_ids)
         exact = tuple(
@@ -301,7 +386,9 @@ class UntypedBoundaryConsistency:
 
     @staticmethod
     def _link_id(key: tuple[str, str, int]) -> str:
-        return f"link:{digest({'port_id': key[0], 'target': key[1], 'polarity': key[2]})[:24]}"
+        return (
+            f"link:{digest({'port_id': key[0], 'target': key[1], 'polarity': key[2]})[:24]}"
+        )
 
     def state_dict(self) -> dict[str, Any]:
         value = {
