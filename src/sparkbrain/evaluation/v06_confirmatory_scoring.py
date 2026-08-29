@@ -32,6 +32,12 @@ _COMPARATOR_CONDITIONS = (
     ConfirmatoryCondition.G4_ASSEMBLY,
     ConfirmatoryCondition.G5_TYPED,
 )
+_PRIMARY_SAFETY_CONDITIONS = frozenset(
+    {
+        ConfirmatoryCondition.PRIMARY,
+        *_CONTROL_CONDITIONS,
+    }
+)
 _CAPABILITY_DOMAINS = tuple(
     row
     for row in EvidenceDomain
@@ -215,6 +221,17 @@ def _minimum_selective_effect(
     return min(effects)
 
 
+def _condition_metrics(
+    metrics_by_group: dict[_GROUP_KEY, dict[str, float]],
+    conditions: frozenset[ConfirmatoryCondition],
+) -> dict[_GROUP_KEY, dict[str, float]]:
+    return {
+        key: metrics
+        for key, metrics in metrics_by_group.items()
+        if key[2] in conditions
+    }
+
+
 def _metric_fraction(
     metrics_by_group: dict[_GROUP_KEY, dict[str, float]],
     metric_name: str,
@@ -279,7 +296,13 @@ def score_strict_confirmatory_results(
     manifest: ConfirmatoryManifest,
     records: tuple[ConfirmatoryResultRecord, ...],
 ) -> StrictConfirmatoryOutcome:
-    """Score only a complete, frozen, metric-complete confirmatory matrix."""
+    """Score only a complete, frozen, metric-complete confirmatory matrix.
+
+    Primary support is gated by the Primary and its four null/control
+    conditions. Comparator taxonomy or self-confirmation failures invalidate
+    that comparator only; an isolated comparator cannot veto otherwise clean
+    Primary evidence.
+    """
 
     readiness = assess_confirmatory_readiness(manifest)
     if not readiness.ready:
@@ -304,11 +327,15 @@ def score_strict_confirmatory_results(
     )
     null_fraction = _null_false_positive_fraction(records)
     minimum_selective_effect = _minimum_selective_effect(metrics_by_group)
-    taxonomy_fraction = _metric_fraction(
+    primary_safety_metrics = _condition_metrics(
         metrics_by_group,
+        _PRIMARY_SAFETY_CONDITIONS,
+    )
+    taxonomy_fraction = _metric_fraction(
+        primary_safety_metrics,
         "taxonomy_hash_match",
     )
-    violations = _self_confirmation_violations(metrics_by_group)
+    violations = _self_confirmation_violations(primary_safety_metrics)
     control_fraction = _control_contract_fraction(metrics_by_group)
     control_and_safety_gates_passed = (
         null_fraction
@@ -344,8 +371,8 @@ def score_strict_confirmatory_results(
         )
     elif primary_raw_supported and not control_and_safety_gates_passed:
         interpretation = (
-            "Primary raw success is rejected because at least one null, selectivity, taxonomy, "
-            "self-confirmation, or control-contract gate failed."
+            "Primary raw success is rejected because at least one null, selectivity, Primary/control "
+            "taxonomy, Primary/control self-confirmation, or control-contract gate failed."
         )
     else:
         interpretation = "The tested capability is unsupported under the frozen scope."
