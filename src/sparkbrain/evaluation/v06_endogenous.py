@@ -120,6 +120,22 @@ def audit_endogenous_origin(
     )
 
 
+def _response_signature_rows(events: tuple[RuntimePulse, ...]) -> list[dict[str, Any]]:
+    """Return behavioural event rows without run-specific identity metadata."""
+
+    return [
+        {
+            "generation_depth": event.generation_depth,
+            "magnitude": event.magnitude,
+            "polarity": event.polarity,
+            "source_path_ids": list(event.source_path_ids),
+            "target": event.target,
+            "time_ms": event.time_ms,
+        }
+        for event in events
+    ]
+
+
 @dataclass(frozen=True, slots=True)
 class StateConditionResponse:
     """One response to a matched current input under a specific prior state."""
@@ -147,12 +163,11 @@ class StateConditionResponse:
         for event in events:
             if not event.origin.is_endogenous:
                 raise ValueError("state response events must be endogenous")
-        event_rows = [event.as_dict() for event in events]
         value = cls(
             condition_id=condition_id,
             current_input_hash=digest(current_input),
             prior_state_hash=prior_state_hash,
-            response_trace_hash=digest(event_rows),
+            response_trace_hash=digest(_response_signature_rows(events)),
             final_state_hash=final_state_hash,
             endogenous_event_ids=tuple(event.event_id for event in events),
             endogenous_targets=tuple(event.target for event in events),
