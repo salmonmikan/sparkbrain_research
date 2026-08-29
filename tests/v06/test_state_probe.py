@@ -32,6 +32,23 @@ def test_same_current_input_produces_different_targets_after_different_histories
     assert result.reference.prior_state_hash != result.alternate_history.prior_state_hash
 
 
+def test_probe_uses_real_field_reinjection_and_no_reinjection_control() -> None:
+    result = run_canonical_state_probe()
+    for condition in (result.reference, result.reference_replay, result.alternate_history):
+        assert condition.queue_drained is True
+        assert condition.no_reinjection_spike_count == 0
+        assert condition.reinjection_accepted_count == 1
+        assert condition.field_spike_count == 1
+        assert condition.reinjection_decisions[0]["accepted"] is True
+        assert condition.reinjection_decisions[0]["reason"] == (
+            "scheduled_normal_rule_arrival"
+        )
+        event = condition.endogenous_events[0]
+        assert event["origin"] == "endogenous-unconfirmed"
+        assert event["parent_event_ids"]
+        assert event["parent_event_ids"][0].startswith("endo:g1-")
+
+
 def test_origin_audits_exclude_copy_echo_queue_and_target_leakage() -> None:
     result = run_canonical_state_probe()
     assert result.all_origin_audits_passed is True
@@ -77,3 +94,6 @@ def test_insufficient_history_fails_to_create_a_proposal() -> None:
     assert condition.endogenous_events == ()
     assert condition.origin_audits == ()
     assert condition.response.endogenous_targets == ()
+    assert condition.reinjection_accepted_count == 0
+    assert condition.field_spike_count == 0
+    assert condition.no_reinjection_spike_count == 0
