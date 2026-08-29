@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import math
-from collections.abc import Iterable
+from collections.abc import Iterable, Mapping
 from dataclasses import asdict, dataclass
 from typing import Any
 
@@ -178,9 +178,10 @@ class AutonomousEndogenousChainRuntime:
                 prediction_error=float(external.metadata.get("prediction_error", 0.0)),
             )
         )
+        arrivals = self._arrival_pulse_ids_at(external.time_ms)
         spikes = self.field.run_until(external.time_ms)
-        self._observe_spikes(spikes)
-        if self._external_caused_spike(external, spikes):
+        self._observe_spikes(spikes, arrivals)
+        if self._external_caused_spike(external, spikes, arrivals):
             self._prepare_and_maybe_reinject(external)
         return spikes
 
@@ -200,16 +201,33 @@ class AutonomousEndogenousChainRuntime:
             self._internal_step_count += 1
             if self._internal_step_count > self.config.maximum_internal_steps:
                 raise RuntimeError("maximum_internal_steps exceeded")
+            arrivals = self._arrival_pulse_ids_at(next_time)
             spikes = self.field.run_until(next_time)
-            self._observe_spikes(spikes)
+            self._observe_spikes(spikes, arrivals)
         if include_endpoint and self.field.current_time_ms < end_ms:
             self.field.run_until(end_ms)
         self.transition.expire_pending(end_ms)
         return tuple(self.generated_sparks[before:])
 
-    def _observe_spikes(self, spikes: Iterable[SpikeEvent]) -> None:
+    def _arrival_pulse_ids_at(self, time_ms: float) -> dict[int, tuple[str, ...]]:
+        grouped: dict[int, list[str]] = {}
+        for arrival_time, _, arrival in self.field._queue:  # noqa: SLF001
+            if arrival_time != time_ms:
+                continue
+            grouped.setdefault(arrival.target_id, []).append(arrival.pulse_id)
+        return {
+            target_id: tuple(dict.fromkeys(pulse_ids))
+            for target_id, pulse_ids in grouped.items()
+        }
+
+    def _observe_spikes(
+        self,
+        spikes: Iterable[SpikeEvent],
+        arrival_pulse_ids: Mapping[int, tuple[str, ...]],
+    ) -> None:
         for spike in spikes:
-            roots = self._proposal_roots(spike)
+            current_sources = arrival_pulse_ids.get(spike.unit_id, ())
+            roots = self._proposal_roots(current_sources)
             spike_id = self._spike_id(spike)
             self._pulse_proposal_roots[spike_id] = frozenset(roots)
             if not roots:
@@ -235,7 +253,7 @@ class AutonomousEndogenousChainRuntime:
                     generation_depth=depth,
                     proposal_ids=roots,
                     parent_proposal_ids=parent_ids,
-                    source_pulse_ids=spike.source_pulse_ids,
+                    source_pulse_ids=current_sources,
                     external_observation_count=self.ledger.external_observation_count,
                     committed_positive_updates=self.ledger.committed_positive_updates,
                 )
@@ -343,9 +361,9 @@ class AutonomousEndogenousChainRuntime:
                 return record.parent_proposal_ids
         return self.ledger.proposals[proposal_id].parent_proposal_ids
 
-    def _proposal_roots(self, spike: SpikeEvent) -> tuple[str, ...]:
+    def _proposal_roots(self, pulse_ids: Iterable[str]) -> tuple[str, ...]:
         roots: set[str] = set()
-        for pulse_id in spike.source_pulse_ids:
+        for pulse_id in pulse_ids:
             if pulse_id.startswith("endo:"):
                 proposal_id = pulse_id.removeprefix("endo:")
                 if proposal_id in self.ledger.proposals:
@@ -374,11 +392,12 @@ class AutonomousEndogenousChainRuntime:
     def _external_caused_spike(
         external: RuntimePulse,
         spikes: Iterable[SpikeEvent],
+        arrival_pulse_ids: Mapping[int, tuple[str, ...]],
     ) -> bool:
         target_id = int(external.target.removeprefix("unit:"))
-        return any(
-            spike.unit_id == target_id and external.event_id in spike.source_pulse_ids
-            for spike in spikes
+        return (
+            external.event_id in arrival_pulse_ids.get(target_id, ())
+            and any(spike.unit_id == target_id for spike in spikes)
         )
 
     def state_dict(self) -> dict[str, Any]:
