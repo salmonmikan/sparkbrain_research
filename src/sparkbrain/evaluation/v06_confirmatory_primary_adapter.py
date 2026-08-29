@@ -18,6 +18,8 @@ from .v06_confirmatory_primary import (
     _relation_reentry_and_persistence,
     _revision_states,
     _state_and_origin,
+)
+from .v06_confirmatory_primary import (
     world_parameters as _base_world_parameters,
 )
 
