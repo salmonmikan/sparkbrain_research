@@ -165,12 +165,13 @@ def _condition_success(
 ) -> tuple[float, float]:
     rows = tuple(record for record in records if record.condition is condition)
     overall = sum(row.passed for row in rows) / len(rows)
-    family_values: list[float] = []
-    for family_id in sorted({row.family_id for row in rows}):
-        family_rows = tuple(row for row in rows if row.family_id == family_id)
-        family_values.append(
-            sum(row.passed for row in family_rows) / len(family_rows)
-        )
+    by_family: defaultdict[str, list[ConfirmatoryResultRecord]] = defaultdict(list)
+    for row in rows:
+        by_family[row.family_id].append(row)
+    family_values = tuple(
+        sum(row.passed for row in family_rows) / len(family_rows)
+        for _, family_rows in sorted(by_family.items())
+    )
     return overall, min(family_values)
 
 
