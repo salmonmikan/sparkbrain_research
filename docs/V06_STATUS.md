@@ -13,7 +13,8 @@
 - additive `0.6-dev1` checkpoint integrity contract;
 - V06-03 G0 Field-only queue-control probe;
 - V06-04 G1 local temporal expectation memory;
-- focused and adversarial foundation/G0/G1 tests.
+- V06-05 G2 sparse local transition adaptation;
+- focused and adversarial foundation/G0/G1/G2 tests.
 
 ## G0 canonical engineering diagnostic
 
@@ -52,22 +53,45 @@ The following boundaries are tested:
 - state serialization is deterministic;
 - no Assembly or evaluator label appears in G1 state.
 
-G1 is not yet reinjected into the Field and is not a forward-completion result. It is the local,
-Assembly-free transition-memory substrate required by the next slice.
+## G2 engineering slice
+
+G2 wraps G1 proposals in a sparse path-specific adaptation layer and registers every proposal as a
+provenance chain with an uncommitted `LearningEligibility` record.
+
+The path state is not changed when a proposal is generated or reinjected. A matching external event
+is required before the eligibility can commit and before timing, magnitude, or reliability
+corrections are applied to that local path. An endogenous event cannot resolve a proposal or raise
+path confidence. A contradictory external event may reduce path reliability, but cannot create a
+positive committed update.
+
+G2 state remains keyed only by local path identifiers such as `local:unit:1->unit:2`; it contains no
+Assembly ID, motif ID, global sequence representation, or evaluator answer label. Pending state is
+bounded and fails closed before partial registration when its budget is exhausted.
+
+G2 is not yet reinjected into the Field and is not a forward-completion result. It establishes the
+confirmation-gated local transition substrate required by V06-06.
 
 ## Validation
 
-The G1 head passed GitHub Actions on Python 3.11 and 3.13, including Ruff, local readiness, the
-default test suite, and bundle validation.
+Local focused validation before push:
+
+```text
+G2 focused tests: 11 passed
+compileall: PASS
+line-length audit: PASS
+```
+
+The complete branch CI result is recorded after the GitHub Actions run for the G2 commit.
 
 ## Next vertical slice
 
-V06-05 implements G2 sparse local transition adaptation and connects G1 proposals to the existing
-provenance ledger through two-phase eligibility. Positive transition updates must remain pending
-until matching external confirmation; internal-only activity must not increase confidence.
+V06-06 connects accepted G1/G2 proposals to normal-rule Field reinjection with confidence, energy,
+depth, lifetime, and branch budgets. Endogenous pulses must pass ordinary membrane integration,
+inhibition, threshold, refractory, and adaptation rules; they may not force a Spark.
 
 ## Scientific status
 
-Engineering foundation, one negative G0 diagnostic, and the G1 local expectation component only.
-No v0.6 forward-completion, branching, reality-correction, functional-utility, causal-pathway, or
-memory-locus scientific gate has been evaluated.
+Engineering foundation, one negative G0 diagnostic, G1 local expectation, and G2
+confirmation-gated local adaptation only. No v0.6 forward-completion, branching,
+reality-correction, functional-utility, causal-pathway, or memory-locus scientific gate has been
+evaluated.
