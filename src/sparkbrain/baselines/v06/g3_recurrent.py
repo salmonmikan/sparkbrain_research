@@ -36,9 +36,9 @@ class RecurrentPredictorConfig:
 class GenericRecurrentPredictor:
     """Small external autoregressive comparator with generic transition state.
 
-    This comparator is intentionally not a Field and does not use Assembly or
-    typed functional heads. It learns generic token-to-token transition scores,
-    updates a recurrent token state, and can roll itself out autoregressively.
+    This comparator is intentionally not a Field, a neural GRU, an Assembly
+    system, or a typed functional head. It learns generic token-to-token scores,
+    updates a recurrent token state during rollout, and emits future tokens.
     Generated tokens never train the model; only calls to ``observe`` do.
     """
 
@@ -58,7 +58,12 @@ class GenericRecurrentPredictor:
         row[target] = row.get(target, 0.0) + 1.0
         self.observation_count += 1
 
-    def observe_sequence(self, tokens: tuple[str, ...], *, repetitions: int = 1) -> None:
+    def observe_sequence(
+        self,
+        tokens: tuple[str, ...],
+        *,
+        repetitions: int = 1,
+    ) -> None:
         if repetitions < 1:
             raise ValueError("repetitions must be positive")
         if len(tokens) < 2:
@@ -175,14 +180,15 @@ def _unit(unit_id: int) -> str:
     return f"unit:{unit_id}"
 
 
-def _path_tokens(path: tuple[int, int, int, int]) -> tuple[str, ...]:
+def _path_tokens(path: tuple[int, ...]) -> tuple[str, ...]:
     return tuple(_unit(unit_id) for unit_id in path)
 
 
 def _trained_paths(
     parameters: ComparatorWorldParameters,
-    paths: tuple[tuple[int, int, int, int], ...],
+    paths: tuple[tuple[int, ...], ...],
 ) -> GenericRecurrentPredictor:
+    _ = parameters
     model = GenericRecurrentPredictor()
     for path in paths:
         model.observe_sequence(_path_tokens(path), repetitions=3)
@@ -447,6 +453,24 @@ def _relation(
     )
 
 
+def _generation_safety(
+    parameters: ComparatorWorldParameters,
+) -> tuple[int, bool]:
+    model = _trained_paths(
+        parameters,
+        (parameters.main_path, parameters.control_path),
+    )
+    before = model.learned_state_dict()
+    observation_count_before = model.observation_count
+    model.rollout(_unit(parameters.main_path[0]), steps=3)
+    model.rollout(_unit(parameters.control_path[0]), steps=3)
+    observation_count_after = model.observation_count
+    return (
+        observation_count_after - observation_count_before,
+        model.learned_state_dict() == before,
+    )
+
+
 def _taxonomy_passed(model_state: dict[str, Any]) -> bool:
     before = json.dumps(model_state, sort_keys=True, separators=(",", ":"))
     view_a = {
@@ -468,6 +492,7 @@ def evaluate_world(family_id: str, seed: int) -> ComparatorWorldEvidence:
     chain, chain_metrics = _chain(parameters)
     boundary, boundary_metrics = _boundary(parameters)
     relation = _relation(parameters)
+    violations, learned_state_unchanged = _generation_safety(parameters)
     taxonomy = _taxonomy_passed(relation.acquisition_state)
     domain_values = {
         EvidenceDomain.ENDOGENOUS_ORIGIN: origin,
@@ -480,16 +505,16 @@ def evaluate_world(family_id: str, seed: int) -> ComparatorWorldEvidence:
         EvidenceDomain.PERSISTENCE_LOCUS: relation.persistence_passed,
         EvidenceDomain.TAXONOMY_NON_INTERFERENCE: taxonomy,
     }
-    generated_before = 0
-    generated_after = 0
-    no_self_confirmation = generated_before == generated_after
     metrics = {
         **origin_metrics,
         **chain_metrics,
         **boundary_metrics,
         **relation.metrics,
         "external_predictor_field_threshold_count": 0.0,
-        "self_confirmation_violations": float(not no_self_confirmation),
+        "g3_generation_preserved_learned_state": float(
+            learned_state_unchanged
+        ),
+        "self_confirmation_violations": float(violations),
         "taxonomy_hash_match": float(taxonomy),
     }
     return ComparatorWorldEvidence(
