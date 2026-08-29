@@ -11,10 +11,10 @@ from sparkbrain.v06 import (
     EventOrigin,
     RuntimePulse,
     audit_runtime_source_tree,
+    foundation,
     validate_runtime_mapping,
     verify_taxonomy_variant_runtime_equality,
 )
-from sparkbrain.v06 import foundation
 
 
 def test_functional_taxonomy_fields_extend_the_foundation_guard() -> None:
