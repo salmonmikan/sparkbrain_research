@@ -15,7 +15,8 @@
 - V06-04 G1 local temporal expectation memory;
 - V06-05 G2 sparse local transition adaptation;
 - V06-06 bounded normal-rule Field reinjection;
-- focused and adversarial foundation/G0/G1/G2/reinjection tests.
+- V06-07 external-authoritative reality correction and stale-branch cancellation;
+- focused and adversarial foundation/G0/G1/G2/reinjection/reality tests.
 
 ## G0 canonical engineering diagnostic
 
@@ -87,9 +88,26 @@ Reinjection does not change the provenance event from `endogenous-unconfirmed`, 
 external observations, and does not commit positive learning. Unknown targets and unsafe proposals
 fail before queue mutation.
 
-This is an engineering integration result, not yet evidence of forward completion. The current
-slice demonstrates that an internal proposal can enter the real Field path without bypassing its
-dynamics.
+## V06-07 reality-correction slice
+
+`RealityCorrectionEngine` accepts only `external` observations. It compares a new external event
+against live pending G2 proposals, expires predictions whose lifetime has elapsed, confirms at most
+one matching proposal, marks incompatible due predictions as contradicted, and schedules the
+external event into the Field as the authoritative current.
+
+A matching external event cancels the queued endogenous root arrival before the external arrival is
+scheduled, so the prediction and observation are not double-counted. A contradiction cancels the
+root arrival and, when an endogenous Spark has already propagated, also cancels tracked descendant
+arrivals. Descendant cancellation uses a runtime provenance index reconstructed from the retained
+Field's deterministic Spark pulse hashes; it does not use Assembly IDs or observer output.
+
+The reality engine rejects endogenous events presented as observations, duplicate external-event
+processing, observations in the Field past, and unknown target units before correction begins.
+External confirmation remains the only positive G2 commit route.
+
+This slice establishes correction mechanics and provenance-safe queue cancellation. It does not yet
+establish forward missing-middle completion, because no canonical prefix/missing-middle experiment
+has been evaluated.
 
 ## Validation
 
@@ -113,19 +131,27 @@ Default test suite: PASS
 Bundle validation: PASS
 ```
 
+V06-07 validation:
+
+```text
+reality-correction focused tests: 8 added
+GitHub Actions run 33249195833: PASS on Python 3.11 and 3.13
+Ruff lint: PASS
+Local readiness: PASS
+Default test suite: PASS
+Bundle validation: PASS
+```
+
 ## Next vertical slice
 
-V06-07 implements reality matching and correction across live pending chains. It must match,
-contradict, or expire externally visible predictions, cancel stale queued branches, preserve the
-external event as authoritative, and keep self-confirmation violations at zero.
-
-After V06-07, V06-08 will run forward prefix and missing-middle experiments. The Primary
-missing-middle criterion remains `t(C_endo) < t(D_external)`; after-the-fact reconstruction will be
-reported separately.
+V06-08 will connect external observations, G1/G2 proposals, normal-rule reinjection, intermediate
+endogenous Sparks, and external reality into a canonical prefix and missing-middle runner. The
+Primary missing-middle criterion remains `t(C_endo) < t(D_external)`; after-the-fact reconstruction
+will be reported separately and cannot satisfy the forward-completion gate.
 
 ## Scientific status
 
 Engineering foundation, one negative G0 diagnostic, G1 local expectation, G2
-confirmation-gated local adaptation, and normal-rule reinjection only. No v0.6
-forward-completion, branching, reality-correction, functional-utility, causal-pathway, or
-memory-locus scientific gate has been evaluated.
+confirmation-gated local adaptation, normal-rule reinjection, and external-authoritative correction
+only. No v0.6 forward-completion, branching, functional-utility, causal-pathway, or memory-locus
+scientific gate has been evaluated.
