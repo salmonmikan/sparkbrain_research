@@ -1,12 +1,21 @@
 """SparkBrain v0.6 assembly-free endogenous-dynamics foundation.
 
-V06-00 through V06-08 establish provenance, anti-self-confirmation,
+V06-00 through V06-09 establish provenance, anti-self-confirmation,
 Assembly-free runtime state, observer isolation, checkpoints, the G0
 queue-drain diagnostic, G1 local timing expectations, G2 sparse local
 transition adaptation, bounded normal-rule Field reinjection,
-external-authoritative correction, and a canonical forward-completion flow.
+external-authoritative correction, a canonical forward-validity flow, and
+an intervention-ready autonomous endogenous-chain runtime.
 """
 
+from .endogenous_chain import (
+    AutonomousEndogenousChainRuntime,
+    EndogenousChainConfig,
+    EndogenousChainIntervention,
+    EndogenousChainSpark,
+    EndogenousInterventionRecord,
+    EndogenousProposalRecord,
+)
 from .forward import (
     AssemblyFreeForwardRuntime,
     EndogenousSparkRecord,
@@ -71,8 +80,14 @@ __version__ = "0.6.0.dev0"
 __all__ = [
     "AssemblyFreeForwardRuntime",
     "AssemblyFreeRuntimeState",
+    "AutonomousEndogenousChainRuntime",
+    "EndogenousChainConfig",
+    "EndogenousChainIntervention",
     "EndogenousChainRecord",
+    "EndogenousChainSpark",
+    "EndogenousInterventionRecord",
     "EndogenousLineageIndex",
+    "EndogenousProposalRecord",
     "EndogenousPulseProposal",
     "EndogenousSparkRecord",
     "EventOrigin",
