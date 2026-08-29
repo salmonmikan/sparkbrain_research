@@ -1,12 +1,18 @@
 from __future__ import annotations
 
+from collections.abc import Iterable
 from dataclasses import asdict, dataclass
-from typing import Any, Iterable
+from typing import Any
 
 from sparkbrain.v04.contracts import SpikeEvent
 from sparkbrain.v04.field import TemporalExcitableField
 
-from .foundation import EventOrigin, ProvenanceLedger, RuntimePulse, validate_runtime_mapping
+from .foundation import (
+    EventOrigin,
+    ProvenanceLedger,
+    RuntimePulse,
+    validate_runtime_mapping,
+)
 from .local_expectation import LocalTemporalExpectation
 from .local_transition import PreparedLocalTransition, SparseLocalTransitionAdaptation
 from .reality import RealityCorrectionEngine, RealityCorrectionResult
@@ -204,7 +210,10 @@ class AssemblyFreeForwardRuntime:
         )
         self._prepare_and_schedule(source)
 
-    def _prepare_and_schedule(self, source: RuntimePulse) -> tuple[PreparedLocalTransition, ...]:
+    def _prepare_and_schedule(
+        self,
+        source: RuntimePulse,
+    ) -> tuple[PreparedLocalTransition, ...]:
         prepared = self.transition.prepare(
             source,
             origin_state_hash=self.field.state_hash(),
@@ -234,7 +243,10 @@ class AssemblyFreeForwardRuntime:
         return tuple(sorted(roots))
 
     @staticmethod
-    def _external_caused_spike(external: RuntimePulse, spikes: Iterable[SpikeEvent]) -> bool:
+    def _external_caused_spike(
+        external: RuntimePulse,
+        spikes: Iterable[SpikeEvent],
+    ) -> bool:
         target_id = int(external.target.removeprefix("unit:"))
         return any(
             spike.unit_id == target_id and external.event_id in spike.source_pulse_ids
@@ -288,7 +300,7 @@ def evaluate_forward_completion(
         and match.status in {"matched", "downstream-confirmed"}
     ]
     forward_generated = generated_time is not None
-    result = ForwardCompletionEvaluation(
+    return ForwardCompletionEvaluation(
         expected_target=expected_target,
         later_external_event_id=later_external_event_id,
         later_external_time_ms=later_external_time_ms,
@@ -300,4 +312,3 @@ def evaluate_forward_completion(
         later_prediction_matched=bool(later_matches),
         retrospective_only=not forward_generated,
     )
-    return result
