@@ -371,8 +371,9 @@ def score_strict_confirmatory_results(
         )
     elif primary_raw_supported and not control_and_safety_gates_passed:
         interpretation = (
-            "Primary raw success is rejected because at least one null, selectivity, Primary/control "
-            "taxonomy, Primary/control self-confirmation, or control-contract gate failed."
+            "Primary raw success is rejected because at least one null, selectivity, "
+            "Primary/control taxonomy, Primary/control self-confirmation, or control-contract "
+            "gate failed."
         )
     else:
         interpretation = "The tested capability is unsupported under the frozen scope."
