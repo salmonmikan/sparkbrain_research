@@ -28,7 +28,8 @@ Missing-middle remains one strict forward-validity assay.
 - V06-05 G2 sparse local transition adaptation;
 - V06-06 bounded normal-rule Field reinjection;
 - V06-07 external-authoritative reality correction and stale-branch cancellation;
-- focused and adversarial foundation/G0/G1/G2/reinjection/reality tests.
+- V06-08 non-copy origin and persistent-state-dependence evidence contracts;
+- focused and adversarial foundation/G0/G1/G2/reinjection/reality/evidence tests.
 
 These components remain valid after the amendment. They are the substrate for Level 1–3 endogenous
 Spark experiments rather than a pipeline whose scientific purpose is only missing-middle
@@ -119,6 +120,33 @@ This slice is directly relevant to the amended direction: no later functional re
 accepted unless the originating endogenous path can be confirmed, contradicted, expired, and
 revised by external reality without self-confirmation.
 
+## V06-08 evidence-contract slice
+
+The first amended V06-08 code is deliberately located in the evaluation layer rather than the
+Primary runtime.
+
+`audit_endogenous_origin(...)` rejects a putative endogenous-event result when it can still be
+explained as:
+
+- an external event;
+- a direct copy of current external target, polarity, magnitude, and time;
+- a preregistered fixed-delay echo;
+- pending-queue replay not excluded by a queue-drained control;
+- an evaluator-supplied target;
+- an event lacking the persistent origin-state hash required for a state-grounded claim.
+
+`assess_persistent_state_dependence(...)` compares a reference history, a deterministic replay of
+that same history, and an alternate valid history under the exact same current input. A candidate
+requires deterministic same-state replay, distinct prior-state hashes, and a changed behavioural
+endogenous response under the alternate history.
+
+The behavioural response signature intentionally excludes run-specific event IDs and the
+`origin_state_hash`. This prevents different bookkeeping identities from being misreported as a
+history-dependent cognitive difference.
+
+These are fail-closed evidence contracts. No canonical Field world has yet produced an accepted
+non-copy or persistent-state-dependence scientific result.
+
 ## Validation
 
 G2 hardening:
@@ -150,14 +178,30 @@ Default test suite: PASS
 Bundle validation: PASS
 ```
 
+V06-08 evidence foundation:
+
+```text
+non-copy/state-dependence focused tests: 12 added
+GitHub Actions run 33249776658: PASS on Python 3.11 and 3.13
+Install: PASS
+Ruff lint: PASS
+Local readiness: PASS
+Default test suite: PASS
+Bundle validation: PASS
+```
+
+The superseded pre-fix run `33249652371` failed one test because its response signature included
+run-specific event identities. That defect was corrected before the passing run above; the failed
+run remains part of the audit trail.
+
 ## Revised next vertical slices
 
-### V06-08 — Endogenous origin, non-copy, and persistent-state dependence
+### V06-08 — Canonical non-copy and persistent-state worlds
 
-Build controlled worlds that distinguish internally generated activity from copied current input,
-fixed-delay echo, pending queue replay, random pulse, and evaluator target leakage. Present the same
-current external input under different valid Field histories and test whether the internal response
-depends on persistent state.
+Connect the accepted evidence contracts to controlled Field worlds. Distinguish internally generated
+activity from copied current input, fixed-delay echo, pending queue replay, random pulse, and
+evaluator target leakage. Present the same current external input under different valid Field
+histories and test whether the internal response depends on persistent state.
 
 ### V06-09 — Autonomous endogenous chains and causal participation
 
@@ -199,11 +243,13 @@ The current branch provides engineering foundation only:
 - G1 local expectation;
 - G2 externally gated adaptation;
 - normal-rule Field reinjection;
-- external-authoritative correction and stale-chain cancellation.
+- external-authoritative correction and stale-chain cancellation;
+- fail-closed non-copy and state-dependence evidence contracts.
 
 The following remain unevaluated:
 
-- non-copy state-dependent endogenous cognition;
+- an accepted non-copy endogenous Spark in a canonical Field world;
+- persistent-state-dependent endogenous cognition;
 - autonomous internal Spark chains;
 - causal downstream participation;
 - stable prediction/action/memory relations;
