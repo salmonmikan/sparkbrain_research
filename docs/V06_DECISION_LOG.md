@@ -62,7 +62,7 @@ expired; they cannot reuse the same external event as independent positive evide
 ## D-V06-0011 — External input is authoritative but not a total reset
 
 Reality correction removes incompatible pending branches and then schedules the actual external
-current through normal Field rules. It does not reset all Field, memory, or transition state.
+current through normal Field rules. It does not reset all Field or transition state.
 
 ## D-V06-0012 — Forward completion remains unclaimed
 
@@ -78,71 +78,126 @@ SparkBrain result because a conventional transition predictor can solve that tas
 
 ## D-V06-0014 — The Primary target is a functionally relational endogenous Spark
 
-The central target is an internally originated Spark that is not a direct copy of current input,
-causally changes later internal Dynamics, prediction, action, or memory, forms stable relations with
-later external consequences, and remains externally correctable.
+The central target is an internally originated Spark that is not a direct copy of current input and
+that participates causally in later Dynamics and externally revisable relations.
 
 ## D-V06-0015 — Meaning is not stored as an attribute
 
 The runtime must not attach a human-readable meaning value to a Spark. A candidate functional
-meaning is discussed only as a relation pattern among endogenous activity, later internal events,
-predictions, actions, memory changes, external consequences, and corrections.
+meaning is discussed only as a post-hoc causal relation signature.
 
 ## D-V06-0016 — Endogenous evidence levels are reported separately
 
-The project distinguishes:
-
-```text
-Level 1  endogenous origin
-Level 2  predictive validity
-Level 3  stable causal functional relation
-```
-
-Level 1 must not be reported as Level 2, and Level 2 must not be reported as Level 3.
+The initial amended programme distinguished endogenous origin, predictive validity, and stable
+causal functional relation. Protocol Amendment 002 refines the latter levels to avoid turning
+predictive, action, or memory categories into runtime types.
 
 ## D-V06-0017 — Non-copy and state dependence precede missing-middle science
 
-The next confirmatory worlds first exclude direct-copy, fixed-delay echo, pending-queue, random, and
-evaluator-target explanations. They also compare the same current input under different persistent
-Field histories before evaluating missing-middle.
+Confirmatory worlds first exclude direct-copy, fixed-delay echo, pending-queue, random, and
+evaluator-target explanations. They compare the same current input under different persistent
+histories before treating missing-middle as evidence.
 
 ## D-V06-0018 — Causal participation is measured before post-hoc interpretation
 
 The Primary intervention targets the endogenous event or responsible dynamic path. Only after the
-functional effect is measured may an observer describe overlap with a recurring trajectory or
-Assembly. An Assembly ID is not the Primary causal target.
+functional effect is measured may an observer describe overlap with a recurring trajectory,
+Assembly, predictive view, boundary effect, or persistence effect.
 
-## D-V06-0019 — Physical identity is not required for a functional-relation candidate
+## D-V06-0019 — Physical identity is not required for a relation candidate
 
-Physically different unit trajectories may be compared as functional-equivalence candidates only if
-they have matched causal relations across prediction, action, memory, external consequence, and
-correction. Surface or Assembly similarity alone is insufficient.
+Physically different unit trajectories may be compared as post-hoc equivalence candidates only if
+they have matched causal relation signatures under intervention and external revision. Surface or
+Assembly similarity alone is insufficient.
 
-## D-V06-0020 — The existing V06-00–V06-07 implementation remains valid
+## D-V06-0020 — Existing V06-00–V06-07 implementation remains valid
 
 Provenance, observer isolation, G0 diagnostics, G1/G2 local transition state, normal-rule
-reinjection, and reality correction are retained. Their purpose is broadened from missing-middle
-completion to the study of Level 1–3 endogenous Spark function.
+reinjection, and reality correction remain valid foundations.
 
 ## D-V06-0021 — Behavioural state-response signatures exclude run identity
 
 State-dependence comparison uses target, time, magnitude, polarity, generation depth, and local path
 but excludes event IDs, condition IDs, and the origin-state hash from the behavioural trace hash.
-Different bookkeeping identities cannot therefore create a false history-dependence result.
+Different bookkeeping identities cannot create a false history-dependence result.
 
 ## D-V06-0022 — The first positive state-dependence result is localized to G1 state
 
-The canonical V06-08 probe holds the current external input fixed and changes only the externally
-learned local-transition history. It produces `unit:1` after the reference history, `unit:2` after an
-alternate history, the same response on an independently reconstructed reference replay, and no
-endogenous proposal without sufficient history.
+The canonical V06-08 probe holds current external input fixed and changes only externally learned
+local-transition history. It is a positive single-world engineering candidate for persistent local-
+transition-state dependence, not proof that membrane state, topology, Assembly, or a self-sustaining
+Field trajectory stores the experience.
 
-This is a positive engineering candidate for persistent **local-transition-state** dependence. It is
-not evidence that membrane potential, adaptation, topology, an Assembly, or a self-sustaining Field
-trajectory stores the experience.
+## D-V06-0023 — Missing-middle code remains a validity harness
 
-## D-V06-0023 — Missing-middle code is retained as a validity harness
+The Assembly-free forward harness enforces `t(C_endo) < t(D_external)` and separates reinjection from
+readout-only prediction. It cannot establish the complete v0.6 claim by itself.
 
-The Assembly-free forward harness is useful for enforcing `t(C_endo) < t(D_external)` and for
-separating reinjection from readout-only prediction. Under Protocol Amendment 001 it remains a later
-validity assay and cannot, by itself, establish Level-2 or Level-3 endogenous cognition.
+## D-V06-0024 — Functional evaluation categories are observer-only
+
+Protocol Amendment 002 extends the observer-only principle beyond Assembly. Prediction, action,
+memory, reward, role, and meaning may name post-hoc scientific views but must not become Primary
+runtime relation types.
+
+## D-V06-0025 — Runtime is category-free, not structure-free
+
+The runtime may retain event direction, anonymous unit/channel/port identity, time, magnitude,
+polarity, causal parentage, local transition state, persistence, eligibility, reliability, and
+external consistency. These are execution structures, not functional semantics.
+
+## D-V06-0026 — The Primary runtime uses untyped local causal state
+
+A local relation may contain anonymous source, target, lag, signed influence, reliability,
+provenance, and external-consistency state. It may not contain `relation_type=prediction`,
+`relation_type=action`, `relation_type=memory`, `relation_type=reward`, or an equivalent hidden field.
+
+## D-V06-0027 — No privileged scalar reward enters v0.6 Primary experiments
+
+A scalar reward or correct-action signal would define value before relation formation. The Primary
+world supplies raw external events only. Reward-driven systems are isolated comparators.
+
+## D-V06-0028 — Outbound boundary events are not predefined actions
+
+The Field may emit through anonymous outbound ports. The world adapter implements their physical
+effects. Runtime receives no action name or correctness label. The observer may later report a
+boundary-effect or action-related view.
+
+## D-V06-0029 — Persistence is not a runtime memory relation
+
+The runtime changes ordinary Field, trace, transition, eligibility, or boundary state. A memory-like
+claim requires delayed effect, reset, transplant, and matched controls and remains an observer
+interpretation.
+
+## D-V06-0030 — Observer views are non-exclusive
+
+One endogenous lineage may be predictive, boundary-influencing, persistent, world-coupled, and
+externally correctable at the same time. Runtime must not assign it to exactly one class.
+
+## D-V06-0031 — G5 is the typed-functional comparator
+
+A separate G5 comparator may use explicit prediction/action/memory/reward heads. G5 must remain
+outside the Primary import graph. G5-only success is a negative result for taxonomy-independent
+relation formation.
+
+## D-V06-0032 — Taxonomy changes must not alter runtime
+
+Deleting evaluator packages, renaming view labels, permuting outbound-port descriptions, or removing
+reward/action terminology must leave Field trace, queues, boundary events, local updates, RNG state,
+state hash, and checkpoint continuation unchanged.
+
+## D-V06-0033 — Evidence levels are revised after Amendment 002
+
+```text
+Level 1  endogenous origin
+Level 2  causal participation in later anonymous state or boundary events
+Level 3  externally stabilized and revisable anonymous causal relation
+```
+
+Prediction, action, and memory are optional observer projections over Level-2/Level-3 evidence, not
+runtime stages.
+
+## D-V06-0034 — Existing V06-08 code does not yet violate Amendment 002
+
+The current Primary implementation stores anonymous target/time/magnitude/polarity transitions,
+provenance, reinjection, and external consistency. It has not yet introduced typed functional
+relation objects. Future V06-09/V06-10 work must preserve that boundary.
