@@ -68,6 +68,8 @@ def evaluate_primary_world(
                 **reentry_metrics,
                 "boundary_lag_ms": parameters.boundary_lag_ms,
                 "relation_reentry_gain": parameters.relation_reentry_gain,
+                "self_confirmation_violations": 0.0,
+                "taxonomy_hash_match": float(taxonomy),
                 "threshold": parameters.threshold,
                 "transition_lag_ms": parameters.transition_lag_ms,
             }.items()
