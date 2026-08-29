@@ -1,9 +1,9 @@
 """SparkBrain v0.6 assembly-free endogenous-dynamics foundation.
 
-V06-00 through V06-05 establish provenance, anti-self-confirmation,
+V06-00 through V06-06 establish provenance, anti-self-confirmation,
 Assembly-free runtime state, observer isolation, checkpoints, the G0
-queue-drain diagnostic, G1 local timing expectations, and G2 sparse local
-transition adaptation. Field reinjection is not yet implemented.
+queue-drain diagnostic, G1 local timing expectations, G2 sparse local
+transition adaptation, and bounded normal-rule Field reinjection.
 """
 
 from .foundation import (
@@ -46,6 +46,7 @@ from .local_transition import (
     SparseLocalTransitionAdaptation,
     SparseTransitionConfig,
 )
+from .reinjection import FieldReinjectionGate, ReinjectionConfig, ReinjectionDecision
 
 __version__ = "0.6.0.dev0"
 
@@ -54,6 +55,7 @@ __all__ = [
     "EndogenousChainRecord",
     "EndogenousPulseProposal",
     "EventOrigin",
+    "FieldReinjectionGate",
     "G0Comparison",
     "ImmutableRuntimeTrace",
     "LearningEligibility",
@@ -67,6 +69,8 @@ __all__ = [
     "ProvenanceLedger",
     "QueueControlResult",
     "RealityMatchRecord",
+    "ReinjectionConfig",
+    "ReinjectionDecision",
     "RuntimeObserver",
     "RuntimePulse",
     "SparseLocalTransitionAdaptation",
