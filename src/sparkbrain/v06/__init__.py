@@ -1,8 +1,9 @@
 """SparkBrain v0.6 assembly-free endogenous-dynamics foundation.
 
-V06-00 through V06-03 establish provenance, anti-self-confirmation,
-Assembly-free runtime state, observer isolation, checkpoints, and the first G0
-queue-drain diagnostic. G1/G2 endogenous dynamics are not yet implemented.
+V06-00 through V06-04 establish provenance, anti-self-confirmation,
+Assembly-free runtime state, observer isolation, checkpoints, the G0
+queue-drain diagnostic, and local G1 timing expectations. G2 and Field
+reinjection are not yet implemented.
 """
 
 from .foundation import (
@@ -32,6 +33,11 @@ from .g0 import (
     field_with_queue_mode,
     run_queue_condition,
 )
+from .local_expectation import (
+    LocalExpectationConfig,
+    LocalTemporalExpectation,
+    LocalTransitionStats,
+)
 
 __version__ = "0.6.0.dev0"
 
@@ -43,6 +49,9 @@ __all__ = [
     "G0Comparison",
     "ImmutableRuntimeTrace",
     "LearningEligibility",
+    "LocalExpectationConfig",
+    "LocalTemporalExpectation",
+    "LocalTransitionStats",
     "ProvenanceLedger",
     "QueueControlResult",
     "RealityMatchRecord",
