@@ -3,8 +3,8 @@
 ## Scope
 
 This report records the V06-08 evidence contracts and their first canonical persistent-transition-
-state probe after Protocol Amendment 001. It does not report a scientific Level-2 or Level-3 result
-and does not establish a Field-causal endogenous Spark.
+state Field probe after Protocol Amendment 001. It reports a positive **engineering Level-1
+candidate**, not a confirmatory scientific Level-2 or Level-3 result.
 
 ## Why the evaluator is separate
 
@@ -34,7 +34,7 @@ the following applies:
 - the event lacks the persistent origin-state hash required for a state-grounded claim.
 
 Passing this audit means only that several shortcut explanations have been excluded. It does not
-establish prediction, utility, causal participation, functional relation, or meaning.
+establish predictive validity, downstream utility, a functional relation, or meaning.
 
 ## Persistent-state dependence assessment
 
@@ -57,9 +57,9 @@ Run-specific event IDs are excluded from the behavioural response signature. Thi
 identifiers, different inputs, or nondeterministic replay from being reported as persistent-state
 dependence.
 
-## Canonical engineering probe
+## Canonical engineering Field probe
 
-The first connected probe uses the same current external event in every condition:
+The connected probe uses the same current external event in every condition:
 
 ```text
 current input: unit:0 at 100 ms
@@ -74,39 +74,65 @@ alternate history: unit:0 -> unit:2 after 5 ms, repeated three times
 no-history control: no learned transition
 ```
 
+For each learned condition, the probe:
+
+1. constructs a fresh three-unit Field;
+2. presents the shared current external input;
+3. verifies that the external-input queue is drained;
+4. generates a local G1 endogenous proposal from prior transition state;
+5. registers the proposal with endogenous provenance;
+6. reinjects it through `FieldReinjectionGate` as ordinary current;
+7. lets the retained membrane, threshold, refractory, and adaptation rules decide whether a Spark
+   occurs;
+8. runs a cloned no-reinjection control to exclude a remaining Field queue as the cause.
+
 Observed engineering result:
 
 ```text
-reference response target:       unit:1
-reference replay response target: unit:1
-alternate response target:       unit:2
-no-history endogenous events:    0
-same-state replay deterministic:  true
-prior-state hashes distinct:      true
-response changed with history:    true
-origin audits passed:             true
-engineering candidate:            true
+reference Field Spark target:       unit:1
+reference replay Field Spark target: unit:1
+alternate Field Spark target:       unit:2
+no-history endogenous event count:  0
+no-reinjection Field Spark count:   0
+accepted reinjections per learned condition: 1
+Field Sparks per learned condition:          1
+same-state replay deterministic:    true
+prior-state hashes distinct:        true
+response changed with history:      true
+origin audits passed:               true
+engineering candidate:              true
 ```
 
-The proposal target is learned from prior external transitions rather than supplied by the evaluator.
-It differs from the current external target, survives a queue-free construction, carries its origin-
-state hash, and is rejected by the audit if direct-copy, fixed-delay echo, queue, or evaluator-target
-controls are violated.
+The emitted response is constructed from the actual Field `SpikeEvent`, retains
+`endogenous-unconfirmed` provenance, and cites the reinjected `endo:g1-...` proposal as its parent.
+It is not merely the proposal object being treated as a Spark.
+
+The target is learned from prior external transitions rather than supplied by the evaluator. It
+differs from the current external target, appears only after normal-rule reinjection, disappears in
+the no-reinjection and no-history controls, carries its origin-state hash, and is rejected by the
+audit if direct-copy, fixed-delay echo, queue, or evaluator-target boundaries are violated.
 
 ## Important limitation
 
-This probe localizes the observed dependence to persistent G1 local-transition state. It does not yet
-show that membrane potential, adaptation, recurrent Field state, or a self-sustaining Field trajectory
-stores the experience. The generated value is an endogenous proposal; the probe does not by itself
-show a causally effective Field Spark or autonomous internal chain.
+The observed history dependence is currently localized to persistent G1 local-transition state. The
+result does not yet show that membrane potential, adaptation, recurrent Field state, topology, or a
+self-sustaining Field trajectory stores the experience.
 
-Accordingly, this is a positive **engineering candidate** for non-copy proposal origin and persistent
-transition-state dependence, not a scientific Level-2 predictive-cognition or Level-3 functional-
-relation result.
+The Field Spark is internally originated and state-dependent in this controlled construction, but it
+has not yet been shown to:
+
+- predict held-out external consequences across multiple worlds and seeds;
+- cause a longer autonomous internal chain;
+- improve action, memory, or net utility;
+- participate in a stable externally correctable functional relation;
+- survive targeted versus matched-random causal intervention.
+
+Accordingly, this is a positive engineering Level-1 candidate, not a scientific Level-2 predictive-
+cognition or Level-3 functionally relational result.
 
 ## Focused test scope
 
-The evaluator and canonical probe suites cover:
+The evaluator and canonical Field-probe suites cover:
 
 - clean non-copy candidates;
 - external-event rejection;
@@ -122,31 +148,35 @@ The evaluator and canonical probe suites cover:
 - mismatched current-input rejection;
 - external response-event rejection;
 - identity-independent behavioural signatures;
-- same input with different learned histories;
+- same current input with different learned histories;
+- real normal-rule Field reinjection;
+- a matched no-reinjection Field control;
+- parent provenance from proposal to Field Spark;
 - no-history no-generation control;
 - insufficient-history no-generation control;
 - Assembly/motif/answer-field absence.
 
 ## CI
 
-GitHub Actions run `33249930145` passed on Python 3.11 and Python 3.13. Both jobs passed installation,
+GitHub Actions run `33250148222` passed on Python 3.11 and Python 3.13. Both jobs passed installation,
 Ruff, local readiness, the default test suite, and bundle validation.
 
 ## Claim boundary
 
 This engineering slice supports only:
 
-> A canonical Assembly-free local-transition probe can generate a non-copy endogenous proposal whose
-> response is deterministic for the same learned state, changes under a different learned history,
-> and disappears when that transition history is absent.
+> In a canonical Assembly-free local-transition probe, the same current external input can produce a
+> real, normally thresholded, non-copy endogenous Field Spark whose target is deterministic for the
+> same learned state, changes under a different learned history, and disappears without transition
+> history or without reinjection.
 
 It does not support:
 
-- a scientifically established internally originated Field Spark;
+- confirmatory Level-1 evidence across multiple preregistered worlds and seeds;
 - autonomous internal continuation;
-- predictive validity in held-out worlds;
+- Level-2 predictive validity;
 - causal downstream participation;
-- functional relation acquisition;
+- Level-3 functional relation acquisition;
 - functional or semantic meaning;
-- memory localization beyond the explicit G1 transition state;
-- missing-middle completion as a primary scientific result.
+- memory localization beyond explicit G1 transition state;
+- missing-middle completion as the definition of v0.6 success.
