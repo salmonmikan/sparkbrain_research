@@ -123,3 +123,26 @@ correction. Surface or Assembly similarity alone is insufficient.
 Provenance, observer isolation, G0 diagnostics, G1/G2 local transition state, normal-rule
 reinjection, and reality correction are retained. Their purpose is broadened from missing-middle
 completion to the study of Level 1–3 endogenous Spark function.
+
+## D-V06-0021 — Behavioural state-response signatures exclude run identity
+
+State-dependence comparison uses target, time, magnitude, polarity, generation depth, and local path
+but excludes event IDs, condition IDs, and the origin-state hash from the behavioural trace hash.
+Different bookkeeping identities cannot therefore create a false history-dependence result.
+
+## D-V06-0022 — The first positive state-dependence result is localized to G1 state
+
+The canonical V06-08 probe holds the current external input fixed and changes only the externally
+learned local-transition history. It produces `unit:1` after the reference history, `unit:2` after an
+alternate history, the same response on an independently reconstructed reference replay, and no
+endogenous proposal without sufficient history.
+
+This is a positive engineering candidate for persistent **local-transition-state** dependence. It is
+not evidence that membrane potential, adaptation, topology, an Assembly, or a self-sustaining Field
+trajectory stores the experience.
+
+## D-V06-0023 — Missing-middle code is retained as a validity harness
+
+The Assembly-free forward harness is useful for enforcing `t(C_endo) < t(D_external)` and for
+separating reinjection from readout-only prediction. Under Protocol Amendment 001 it remains a later
+validity assay and cannot, by itself, establish Level-2 or Level-3 endogenous cognition.
