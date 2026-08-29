@@ -12,8 +12,8 @@ from .v06_confirmatory import (
 _QUALIFIED_ADAPTERS = {
     ConfirmatoryCondition.PRIMARY: (
         "sparkbrain.evaluation.v06_confirmatory_primary_adapter.run_condition",
-        "Parameterized Primary adapter passed the 3x3 qualification grid across all nine "
-        "required evidence domains.",
+        "Parameterized Primary adapter passed the complete 3x3 qualification matrix across "
+        "all nine required evidence domains.",
     ),
     ConfirmatoryCondition.NO_ENDOGENOUS: (
         "sparkbrain.evaluation.v06_confirmatory_controls.run_no_endogenous",
@@ -34,6 +34,21 @@ _QUALIFIED_ADAPTERS = {
         "sparkbrain.evaluation.v06_confirmatory_controls.run_shuffled_relation",
         "Shuffled anonymous relation-state adapter preserves early Primary Dynamics while "
         "redirecting relation re-entry and passed the 3x3 qualification control grid.",
+    ),
+    ConfirmatoryCondition.G3_RECURRENT: (
+        "sparkbrain.baselines.v06.g3_recurrent.run_condition",
+        "Isolated generic recurrent/transition comparator passed all 9 development worlds and "
+        "81 evidence records under the shared world specification.",
+    ),
+    ConfirmatoryCondition.G4_ASSEMBLY: (
+        "sparkbrain.baselines.v06.g4_assembly.run_condition",
+        "Isolated explicit Assembly-conditioned comparator passed all 9 development worlds "
+        "and 81 evidence records under the shared world specification.",
+    ),
+    ConfirmatoryCondition.G5_TYPED: (
+        "sparkbrain.baselines.v06.g5_typed.run_condition",
+        "Isolated typed prediction/action/reward/memory-head comparator passed all 9 "
+        "development worlds and 81 evidence records under the shared world specification.",
     ),
 }
 
@@ -72,18 +87,17 @@ def build_current_confirmatory_manifest(
 ) -> ConfirmatoryManifest:
     """Build the current phase-specific fail-closed manifest.
 
-    Primary and four non-comparator controls are ready only for the 3x3
-    qualification phase. No adapter is yet marked ready for the five-family
-    held-out confirmatory phase. G3, G4, and G5 remain unavailable in both.
+    All eight adapters are ready only for the 3x3 qualification phase. No
+    adapter is yet marked ready for the five-family held-out confirmatory phase.
+    A qualification manifest remains non-executable while ``code_ref`` is
+    ``UNFROZEN``.
     """
 
     base = build_draft_confirmatory_manifest(phase, code_ref=code_ref)
-    conditions = []
-    for row in base.conditions:
-        if row.condition not in _QUALIFIED_ADAPTERS:
-            conditions.append(row)
-        elif phase is ConfirmatoryPhase.QUALIFICATION:
-            conditions.append(_qualification_registration(row))
-        else:
-            conditions.append(_heldout_registration(row))
-    return replace(base, conditions=tuple(conditions))
+    conditions = tuple(
+        _qualification_registration(row)
+        if phase is ConfirmatoryPhase.QUALIFICATION
+        else _heldout_registration(row)
+        for row in base.conditions
+    )
+    return replace(base, conditions=conditions)
