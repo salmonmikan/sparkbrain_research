@@ -29,7 +29,9 @@ Missing-middle remains one strict forward-validity assay.
 - V06-06 bounded normal-rule Field reinjection;
 - V06-07 external-authoritative reality correction and stale-branch cancellation;
 - V06-08 non-copy origin and persistent-state-dependence evidence contracts;
-- focused and adversarial foundation/G0/G1/G2/reinjection/reality/evidence tests.
+- V06-08 canonical persistent-transition-state probe;
+- an early Assembly-free forward/missing-middle validity harness, retained as a later diagnostic;
+- focused and adversarial foundation/G0/G1/G2/reinjection/reality/evidence/state-probe tests.
 
 These components remain valid after the amendment. They are the substrate for Level 1–3 endogenous
 Spark experiments rather than a pipeline whose scientific purpose is only missing-middle
@@ -120,10 +122,9 @@ This slice is directly relevant to the amended direction: no later functional re
 accepted unless the originating endogenous path can be confirmed, contradicted, expired, and
 revised by external reality without self-confirmation.
 
-## V06-08 evidence-contract slice
+## V06-08 evidence contracts
 
-The first amended V06-08 code is deliberately located in the evaluation layer rather than the
-Primary runtime.
+The V06-08 evaluation code is deliberately located outside the Primary runtime.
 
 `audit_endogenous_origin(...)` rejects a putative endogenous-event result when it can still be
 explained as:
@@ -140,12 +141,59 @@ that same history, and an alternate valid history under the exact same current i
 requires deterministic same-state replay, distinct prior-state hashes, and a changed behavioural
 endogenous response under the alternate history.
 
-The behavioural response signature intentionally excludes run-specific event IDs and the
-`origin_state_hash`. This prevents different bookkeeping identities from being misreported as a
-history-dependent cognitive difference.
+The behavioural response signature excludes run-specific event IDs and the `origin_state_hash`.
+This prevents different bookkeeping identities from being misreported as a history-dependent
+cognitive difference.
 
-These are fail-closed evidence contracts. No canonical Field world has yet produced an accepted
-non-copy or persistent-state-dependence scientific result.
+## V06-08 canonical state probe
+
+The first connected probe presents exactly the same current external input in every condition:
+
+```text
+unit:0 at 100 ms
+```
+
+Only the prior externally learned local-transition history differs:
+
+```text
+reference:        unit:0 -> unit:1 after 5 ms, repeated three times
+reference replay: same history reconstructed independently
+alternate:        unit:0 -> unit:2 after 5 ms, repeated three times
+no-history:       no learned transition
+```
+
+The engineering result is:
+
+```text
+reference endogenous target:       unit:1
+reference replay endogenous target: unit:1
+alternate endogenous target:       unit:2
+no-history endogenous event count: 0
+same-state replay deterministic:   true
+prior-state hashes distinct:       true
+response changed with history:     true
+origin audits passed:              true
+engineering candidate:             true
+```
+
+The candidate is not a direct copy of the current input, is not a known fixed-delay echo of the same
+target, does not depend on a pending Field queue, receives no evaluator target, and carries the prior
+state hash from which it was produced.
+
+This is a positive engineering candidate for non-copy proposal origin and persistent local-
+transition-state dependence. It does **not** yet establish a causally participating Field Spark,
+membrane-state memory, autonomous chain, held-out prediction, or Level-2/Level-3 cognition.
+
+## Early forward-validity harness
+
+An Assembly-free prefix/missing-middle harness is present on the branch. In its deterministic smoke
+world, an internal `unit:2` Spark can occur before a later external `unit:3` cue, while a readout-only
+condition does not produce the Field Spark.
+
+Under Protocol Amendment 001, this remains a diagnostic implementation rather than a Primary
+scientific success. It must still be subjected to non-copy, state-dependence, queue, causal-
+participation, matched-control, and multiple-seed requirements before it can support a higher-level
+claim.
 
 ## Validation
 
@@ -183,6 +231,13 @@ V06-08 evidence foundation:
 ```text
 non-copy/state-dependence focused tests: 12 added
 GitHub Actions run 33249776658: PASS on Python 3.11 and 3.13
+```
+
+V06-08 canonical state probe:
+
+```text
+state-probe focused tests: 6 added
+GitHub Actions run 33249930145: PASS on Python 3.11 and 3.13
 Install: PASS
 Ruff lint: PASS
 Local readiness: PASS
@@ -191,17 +246,10 @@ Bundle validation: PASS
 ```
 
 The superseded pre-fix run `33249652371` failed one test because its response signature included
-run-specific event identities. That defect was corrected before the passing run above; the failed
-run remains part of the audit trail.
+run-specific event identities. That defect was corrected before the passing evidence-foundation run;
+the failed run remains part of the audit trail.
 
 ## Revised next vertical slices
-
-### V06-08 — Canonical non-copy and persistent-state worlds
-
-Connect the accepted evidence contracts to controlled Field worlds. Distinguish internally generated
-activity from copied current input, fixed-delay echo, pending queue replay, random pulse, and
-evaluator target leakage. Present the same current external input under different valid Field
-histories and test whether the internal response depends on persistent state.
 
 ### V06-09 — Autonomous endogenous chains and causal participation
 
@@ -236,7 +284,7 @@ contradiction, relation stability, memory components, and observer artifacts wit
 
 ## Scientific status
 
-The current branch provides engineering foundation only:
+The current branch provides engineering foundation and one controlled state-dependence candidate:
 
 - Assembly-free provenance-safe internal proposals;
 - one negative G0 diagnostic;
@@ -244,19 +292,21 @@ The current branch provides engineering foundation only:
 - G2 externally gated adaptation;
 - normal-rule Field reinjection;
 - external-authoritative correction and stale-chain cancellation;
-- fail-closed non-copy and state-dependence evidence contracts.
+- fail-closed non-copy and state-dependence evidence contracts;
+- deterministic same-input/different-history local-transition-state response candidate;
+- no-history no-generation control;
+- early forward-validity harness retained without scientific claim upgrade.
 
-The following remain unevaluated:
+The following remain unevaluated or unsupported:
 
-- an accepted non-copy endogenous Spark in a canonical Field world;
-- persistent-state-dependent endogenous cognition;
+- a scientifically accepted non-copy Field Spark across multiple controlled worlds;
 - autonomous internal Spark chains;
-- causal downstream participation;
+- causal downstream participation beyond the engineered harness;
 - stable prediction/action/memory relations;
 - functional relation revision;
 - physical-trajectory functional equivalence;
-- forward missing-middle validity;
+- confirmatory forward missing-middle validity;
 - net functional utility;
 - causal Field pathways;
-- memory locus;
+- memory locus outside explicit local transition state;
 - semantic meaning, concepts, or organs.
