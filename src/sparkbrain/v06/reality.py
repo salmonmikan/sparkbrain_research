@@ -2,13 +2,20 @@ from __future__ import annotations
 
 import heapq
 import math
+from collections.abc import Iterable
 from dataclasses import asdict, dataclass
-from typing import Any, Iterable
+from typing import Any
 
 from sparkbrain.v04.contracts import SpikeEvent, SynapticArrival
 from sparkbrain.v04.field import TemporalExcitableField
 
-from .foundation import EventOrigin, ProvenanceLedger, RuntimePulse, digest, validate_runtime_mapping
+from .foundation import (
+    EventOrigin,
+    ProvenanceLedger,
+    RuntimePulse,
+    digest,
+    validate_runtime_mapping,
+)
 from .local_transition import LocalTransitionResolution, SparseLocalTransitionAdaptation
 
 
@@ -62,7 +69,7 @@ class RealityCorrectionResult:
 class EndogenousLineageIndex:
     """Maps Field-generated pulse IDs back to endogenous proposal roots.
 
-    The retained v0.4 Field hashes every emitted Spike into a new pulse ID for
+    The retained v0.4 Field hashes every emitted Spark into a new pulse ID for
     recurrent delivery. This runtime index reconstructs that hash and records
     which endogenous root proposal(s) contributed to each descendant pulse.
     It is not an Assembly observer and it participates only in provenance and
@@ -153,11 +160,12 @@ class RealityCorrectionEngine:
         field_before = field.state_hash()
         pending_before = self._pending_proposal_ids()
         expired = self.transition_model.expire_pending(external.time_ms)
+        pending_after_expiry = self.transition_model.state_dict()["pending"]
         due_ids = tuple(
             proposal_id
             for proposal_id in pending_before
             if proposal_id not in expired
-            and proposal_id in self.transition_model.state_dict()["pending"]
+            and proposal_id in pending_after_expiry
             and abs(
                 self.ledger.proposals[proposal_id].predicted_arrival_ms
                 - external.time_ms
@@ -169,7 +177,11 @@ class RealityCorrectionEngine:
             for proposal_id in due_ids
             if self._matches(self.ledger.proposals[proposal_id], external)
         )
-        matched_id = min(matching, key=lambda row: self._match_score(row, external)) if matching else None
+        matched_id = (
+            min(matching, key=lambda row: self._match_score(row, external))
+            if matching
+            else None
+        )
 
         contradicted: list[str] = []
         unresolved_competing: list[str] = []
@@ -191,7 +203,7 @@ class RealityCorrectionEngine:
             contradicted.extend(due_ids)
 
         cancellation_ids = tuple(
-            dict.fromkeys((*expired, *contradicted, *unresolved_competing, *(matching or ())))
+            dict.fromkeys((*expired, *contradicted, *unresolved_competing, *matching))
         )
         cancellation = self.cancel_proposals(cancellation_ids, field)
 
@@ -237,7 +249,7 @@ class RealityCorrectionEngine:
             return QueueCancellation(ordered, (), 0, before, before)
         kept = []
         removed = 0
-        for item in field._queue:  # noqa: SLF001 - v0.6 adapter for retained field queue
+        for item in field._queue:  # noqa: SLF001 - retained Field adapter
             if item[2].pulse_id in pulse_ids:
                 removed += 1
             else:
@@ -265,7 +277,11 @@ class RealityCorrectionEngine:
             <= self.transition_model.config.maximum_magnitude_error
         )
 
-    def _match_score(self, proposal_id: str, external: RuntimePulse) -> tuple[float, float, str]:
+    def _match_score(
+        self,
+        proposal_id: str,
+        external: RuntimePulse,
+    ) -> tuple[float, float, str]:
         proposal = self.ledger.proposals[proposal_id]
         return (
             abs(proposal.predicted_arrival_ms - external.time_ms),
