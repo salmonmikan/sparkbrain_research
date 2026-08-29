@@ -1,10 +1,11 @@
 """SparkBrain v0.6 Assembly-free and taxonomy-free endogenous Dynamics.
 
 The package initializer installs Protocol-Amendment-002 runtime guards before
-exposing the Primary modules. V06-00 through V06-09 establish provenance,
+exposing the Primary modules. V06-00 through V06-10 establish provenance,
 anti-self-confirmation, observer isolation, G0/G1/G2 Dynamics, normal-rule
-reinjection, external correction, state-dependence probes, and an
-intervention-ready autonomous endogenous-chain runtime.
+reinjection, external correction, state-dependence probes, autonomous
+endogenous chains, anonymous outbound boundary events, and externally gated
+untyped boundary consistency.
 """
 
 from .taxonomy import (
@@ -19,6 +20,22 @@ from .taxonomy import (
 
 install_runtime_taxonomy_guard()
 
+from .boundary import (  # noqa: E402
+    AnonymousBoundaryEmitter,
+    BoundaryCoupling,
+    BoundaryDirection,
+    BoundaryEvent,
+    BoundaryIntervention,
+    BoundarySuppressionRecord,
+)
+from .consistency import (  # noqa: E402
+    AnonymousConsistencyConfig,
+    AnonymousConsistencyResolution,
+    AnonymousLinkState,
+    PendingBoundaryEvent,
+    PortExposureState,
+    UntypedBoundaryConsistency,
+)
 from .endogenous_chain import (  # noqa: E402
     AutonomousEndogenousChainRuntime,
     EndogenousChainConfig,
@@ -89,14 +106,30 @@ from .reinjection import (  # noqa: E402
     ReinjectionConfig,
     ReinjectionDecision,
 )
+from .world_boundary import (  # noqa: E402
+    AnonymousBoundaryWorld,
+    AnonymousWorldLink,
+    WorldBoundaryIntervention,
+)
 
 __version__ = "0.6.0.dev0"
 
 __all__ = [
     "ALLOWED_STRUCTURAL_EXAMPLES",
+    "AnonymousBoundaryEmitter",
+    "AnonymousBoundaryWorld",
+    "AnonymousConsistencyConfig",
+    "AnonymousConsistencyResolution",
+    "AnonymousLinkState",
+    "AnonymousWorldLink",
     "AssemblyFreeForwardRuntime",
     "AssemblyFreeRuntimeState",
     "AutonomousEndogenousChainRuntime",
+    "BoundaryCoupling",
+    "BoundaryDirection",
+    "BoundaryEvent",
+    "BoundaryIntervention",
+    "BoundarySuppressionRecord",
     "EndogenousChainConfig",
     "EndogenousChainIntervention",
     "EndogenousChainRecord",
@@ -121,7 +154,9 @@ __all__ = [
     "LocalTemporalExpectation",
     "LocalTransitionResolution",
     "LocalTransitionStats",
+    "PendingBoundaryEvent",
     "PendingLocalTransition",
+    "PortExposureState",
     "PreparedLocalTransition",
     "ProposalScheduleRecord",
     "ProvenanceLedger",
@@ -137,6 +172,8 @@ __all__ = [
     "RuntimePulse",
     "SparseLocalTransitionAdaptation",
     "SparseTransitionConfig",
+    "UntypedBoundaryConsistency",
+    "WorldBoundaryIntervention",
     "audit_runtime_source_tree",
     "build_checkpoint",
     "classify_g0_support",
