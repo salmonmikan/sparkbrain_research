@@ -7,6 +7,8 @@ import pytest
 from sparkbrain.baselines.v06.common import (
     QUALIFICATION_FAMILIES,
     QUALIFICATION_SEEDS,
+)
+from sparkbrain.baselines.v06.common import (
     world_parameters as comparator_world_parameters,
 )
 from sparkbrain.baselines.v06.g3_recurrent import (
