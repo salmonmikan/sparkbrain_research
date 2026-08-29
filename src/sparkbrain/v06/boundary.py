@@ -69,6 +69,8 @@ class BoundaryEvent:
     source_state_hash: str
 
     def __post_init__(self) -> None:
+        if not isinstance(self.direction, BoundaryDirection):
+            object.__setattr__(self, "direction", BoundaryDirection(self.direction))
         if not self.event_id or not self.port_id or not self.source_spark_id:
             raise ValueError("boundary identifiers must be non-empty")
         if not self.source_state_hash:
