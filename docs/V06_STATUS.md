@@ -66,7 +66,9 @@ positive committed update.
 
 G2 state remains keyed only by local path identifiers such as `local:unit:1->unit:2`; it contains no
 Assembly ID, motif ID, global sequence representation, or evaluator answer label. Pending state is
-bounded and fails closed before partial registration when its budget is exhausted.
+bounded and fails closed before partial registration when its budget is exhausted. An external event
+that arrives after the eligibility lifetime expires is rejected before it can partially confirm the
+proposal or enter the ledger.
 
 G2 is not yet reinjected into the Field and is not a forward-completion result. It establishes the
 confirmation-gated local transition substrate required by V06-06.
@@ -76,12 +78,20 @@ confirmation-gated local transition substrate required by V06-06.
 Local focused validation before push:
 
 ```text
-G2 focused tests: 11 passed
+G2 focused tests: 12 passed
 compileall: PASS
 line-length audit: PASS
 ```
 
-The complete branch CI result is recorded after the GitHub Actions run for the G2 commit.
+GitHub Actions run `33247919075` passed on both Python 3.11 and Python 3.13. Each job completed:
+
+```text
+Install: PASS
+Ruff lint: PASS
+Local readiness: PASS
+Default test suite: PASS
+Bundle validation: PASS
+```
 
 ## Next vertical slice
 
