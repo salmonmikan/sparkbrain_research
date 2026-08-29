@@ -1,30 +1,35 @@
 # SparkBrain v0.6 Experiment Protocol
-## Amended Foundation Preregistration for Functional Endogenous Sparks
+## Untyped Functional Endogenous Dynamics
 
-## Frozen baseline
+## 1. Frozen baseline and amendments
 
-- source: `main@03a5c662a5ea100fac3288b6aa3e82c1d41f0546`;
+- source baseline: `main@03a5c662a5ea100fac3288b6aa3e82c1d41f0546`;
 - v0.5 artifacts, claims, and negative findings remain immutable;
 - v0.6 uses a separate namespace and additive checkpoint schema;
-- Protocol Amendment 001 was adopted before confirmatory v0.6 Gate evaluation;
-- the pre-amendment protocol remains in Git history.
+- Protocol Amendment 001 re-centred v0.6 on functional endogenous Sparks;
+- Protocol Amendment 002 makes Prediction, Action, Memory, Reward, Role, and Meaning observer
+  projections rather than Primary runtime types;
+- both amendments were adopted before confirmatory Level-2/Level-3 evaluation;
+- pre-amendment versions remain in Git history.
 
-Normative amendment:
+Normative documents:
 
 ```text
 docs/V06_PROTOCOL_AMENDMENT_001_ENDOGENOUS_SPARK_FUNCTION.md
+docs/V06_PROTOCOL_AMENDMENT_002_UNTYPED_RELATIONAL_DYNAMICS.md
+docs/V06_RUNTIME_INVARIANTS.md
 ```
 
-## Revised primary question
+## 2. Primary question
 
-> Can the persistent Dynamic Field generate endogenous Sparks that are not direct copies of current
-> external input, let them causally participate in later internal Dynamics, prediction, action, and
-> memory, and form stable externally correctable functional relations without an explicit Assembly
-> or semantic unit in runtime?
+> Can a persistent Dynamic Field generate endogenous Sparks not directly supplied by current input,
+> let them causally alter later anonymous Field states and boundary-crossing events, and stabilize or
+> revise those relations through external interaction, while prediction, action, memory, reward,
+> role, and meaning remain observer-derived descriptions rather than runtime types?
 
-Missing-middle is one validity assay and is not the sole Primary Goal.
+Missing-middle is one validity assay, not the Primary definition.
 
-## Primary architecture order
+## 3. Primary and comparator architectures
 
 ```text
 G0  Field-only spontaneous continuation       Primary
@@ -32,302 +37,375 @@ G1  local temporal expectation traces         Primary
 G2  sparse/local transition adaptation        Primary
 G3  generic recurrent predictor               Comparator
 G4  explicit Assembly-conditioned predictor   Comparator
+G5  typed functional-head system               Comparator
 ```
 
-G3-only success means the external predictor supplied the function. G4-only success means explicit
-Assembly memory was useful and the observer-only hypothesis was not supported.
+G5 is the only track permitted to contain explicit prediction/action/memory/reward heads. It must be
+isolated from the Primary import graph.
 
-## Required distinctions
+## 4. Runtime/evaluator separation
 
-Every experiment must separate:
+### Primary runtime may receive
 
-- external observation from endogenous prediction;
-- internally originated activity from copied input, fixed-delay echo, queue replay, and random pulse;
-- current external input from persistent internal-state effects;
-- an endogenous event from its downstream causal participation;
-- a stable functional relation from a human semantic label;
-- eligibility creation from externally confirmed learning commit;
-- observer description from runtime computation;
-- forward completion before a future cue from retrospective reconstruction;
-- readout-only prediction from normal-rule Field reinjection;
-- G0/G1/G2 Primary mechanisms from G3/G4 comparators.
+- anonymous world-to-field pulses;
+- anonymous unit/channel/region/boundary-port IDs;
+- time, magnitude, polarity, duration, provenance, and causal lineage;
+- local transition and persistent state;
+- external consistency, contradiction, or expiry;
+- bounded generation and execution resources.
 
-## Endogenous Spark evidence levels
+### Primary runtime may not receive
+
+- Assembly or motif identity;
+- prediction/action/memory/reward relation type;
+- semantic or functional role;
+- correct action or utility target;
+- scalar reward or punishment;
+- goal label or outcome class;
+- evaluator projection identity;
+- hidden world state or answer key.
+
+### Evaluator-only views
+
+- predictive view;
+- boundary-effect view;
+- persistence view;
+- world-coupling view;
+- correction view;
+- physical-trajectory relation equivalence.
+
+The views are non-exclusive queries over traces. They cannot change runtime.
+
+## 5. Revised evidence levels
 
 ### L1 — Endogenous origin
 
-A Spark is internally originated. This is insufficient by itself.
+A normally thresholded Field Spark occurred without direct external supply at its target/time.
 
-### L2 — Predictive validity
+### L2 — Causally participating endogenous Spark
 
-The Spark precedes and predicts a later Field or external event better than matched controls.
+Targeted suppression of the Spark or responsible path changes a later anonymous internal state,
+endogenous event, outbound boundary event, or external event stream more than matched random or sham
+suppression.
 
-### L3 — Functional relation
+### L3 — Externally stabilized relational endogenous Spark
 
-The Spark or lineage changes later Dynamics, prediction, action, or memory; forms an externally
-confirmed stable relation; remains correctable; and has selective causal effects under intervention.
+The Spark or lineage participates in a stable, externally confirmable and revisable pattern of
+anonymous causal relations across held-out conditions. Observer projections may report its measured
+properties afterward.
 
-The confirmatory programme targets L3.
+L1 must not be reported as L2. L2 must not be reported as L3.
 
-## Amended experiment families
+## 6. Required distinctions
 
-### E06-0 Internal-Noise and Direct-Echo Null
+Every experiment must separate:
 
-Run externally silent, random-pulse, copied-target, fixed-delay echo, pending-queue, and
-frequency-only controls.
+- external observation from endogenous hypothesis;
+- current input from persistent-state effects;
+- non-copy origin from direct copy, fixed echo, queue replay, frequency, and noise;
+- an internal proposal from an actual normally thresholded Field Spark;
+- autonomous continuation from scheduled queue drain;
+- downstream causal effect from mere correlation;
+- anonymous local relation state from observer functional categories;
+- external consistency from scalar reward;
+- boundary crossing from a predefined action role;
+- persistence from a predefined memory role;
+- forward completion from retrospective reconstruction;
+- G0/G1/G2 Primary paths from G3/G4/G5 comparators.
 
-Measure:
+## 7. Experiment families
 
-- endogenous event rate;
-- direct-copy rate;
-- queue dependency;
-- false relation formation;
-- internal-only confidence growth;
-- bounded termination.
+### E06-0 — Null, direct-copy, fixed-echo, and typed-leak controls
 
-### E06-1 Internally Originated Non-Copy Spark
+Run:
 
-Supply a controlled external prefix, then determine whether the Field produces an endogenous Spark
-at a target/time not directly supplied by the current input.
+- external silence;
+- random internal pulses;
+- copied current targets;
+- preregistered fixed-delay echoes;
+- intact/drained/shuffled pending queues;
+- frequency-only transitions;
+- forbidden functional-type field injection;
+- scalar reward and correct-action injection attempts.
 
-Required exclusions:
+Measure false endogenous events, self-confirmation, typed-field rejection, bounded termination, and
+queue dependence.
 
-- same-target immediate copy;
-- fixed-delay echo;
-- retained scheduled event;
-- evaluator-specified target;
-- random-noise coincidence.
+### E06-1 — Non-copy endogenous Field Spark
 
-### E06-2 Persistent-State Dependence
+Hold current input fixed and vary valid prior state. Require:
 
-Present the same current external pulse to Fields with different valid histories while matching
-current visible input and runtime budgets.
+- actual Field threshold crossing;
+- no direct external event at the generated target/time;
+- no evaluator-supplied target;
+- no queue-replay or fixed-echo explanation;
+- deterministic identical-state replay;
+- no-history and no-reinjection controls.
 
-Primary question:
+### E06-2 — Persistent-state dependence
 
-```text
-Does prior Field state change the endogenous response?
-```
-
-Controls:
-
-- history reset;
-- trace reset;
-- local-transition reset;
-- queue reset;
-- shuffled history;
-- identical-state replay.
-
-### E06-3 Autonomous Endogenous Chain
-
-After a first endogenous Spark, allow bounded external silence and test whether it causally produces
-later endogenous Sparks or Cascades through normal Field rules.
-
-Measure:
-
-- chain depth;
-- later-event precision;
-- branch count;
-- energy use;
-- false-chain rate;
-- queue-replay dependence;
-- effect of suppressing the root event.
-
-### E06-4 Prediction Participation
-
-Compare prediction with and without the endogenous event or responsible path.
-
-The target is raw Field or external event/time/polarity, not a human outcome label.
-
-### E06-5 Action Participation
-
-Expose primitive action channels whose external effects are initially unknown to the runtime.
-Determine whether an endogenous Spark changes action probability or choice and whether later
-external consequences confirm or contradict that relation.
-
-Controls:
-
-- no endogenous event;
-- random endogenous event;
-- action-shuffle;
-- consequence-shuffle;
-- readout-only;
-- matched action cost.
-
-### E06-6 Memory Participation
-
-Determine whether an endogenous event changes an eligibility, externally committed transition,
-persistent trace, or later recall-like response.
-
-An internal event alone must not commit a positive update.
-
-### E06-7 External Confirmation and Contradiction
-
-Match, contradict, or expire live pending endogenous chains. Measure cancellation, external
-following, path recalibration, and self-confirmation violations.
-
-### E06-8 Functional-Relation Revision
-
-After a stable Spark-to-consequence or Spark-to-action relation is acquired, reverse the external
-contingency.
-
-Measure:
-
-- change detection;
-- relation revision latency;
-- stale action or prediction;
-- unnecessary revision in stable controls;
-- recovery if the old rule returns;
-- catastrophic overwrite.
-
-### E06-9 Causal Endogenous-Path Intervention
-
-Intervene on:
-
-- the endogenous root event;
-- local temporal trace;
-- transition path;
-- Field-state projection;
-- queue branch;
-- reinjection path;
-- downstream eligibility or action-bias path.
-
-Compare targeted, matched-random, and sham intervention. Assembly overlap is described only after
-measuring the functional effect.
-
-### E06-10 Physical-Trajectory Functional Equivalence
-
-Create or observe physically different Spark trajectories. Determine post-hoc whether they have
-matched causal relations to later prediction, action, memory, external consequence, and correction.
-
-Surface or Assembly similarity alone cannot establish equivalence.
-
-This is an observer-level scientific analysis and does not feed a role label into runtime.
-
-### E06-11 Missing-Middle Validity Assay
-
-Test `A → B → [C omitted] → D_external`.
-
-C counts as forward completion only when:
-
-```text
-created_at(C_endogenous) < arrival_at(D_external)
-```
-
-Retrospective reconstruction after D is reported separately. Passing this assay alone does not pass
-L3 or the full v0.6 programme.
-
-### E06-12 Memory Component Reset and Transplant
-
-Reset or transplant one of:
+Use identical current external input under distinct valid histories. Reset candidate state components
+one at a time:
 
 - weight/delay;
 - threshold/adaptation;
 - persistent trace;
 - local transition state;
-- externally gated relation state;
-- endogenous queue.
+- pending queue;
+- external consistency state.
 
-Determine which component carries experience-dependent endogenous behaviour.
+A behavioural difference must disappear or change under the relevant reset and remain deterministic
+for identical full state.
 
-### E06-13 Observer and Self-Confirmation Adversarial Suite
+### E06-3 — Autonomous endogenous chain
 
-Required attacks:
+After an internally originated root Spark, impose bounded external silence and measure later anonymous
+internal events.
 
-- observer ON/OFF;
-- observer mutation attempt;
-- internal-only recurrence;
-- endogenous event counted as external;
-- evaluator target leakage;
-- action/outcome label leakage;
-- pending queue shortcut;
-- G3/G4 hidden-path shortcut;
-- generation-depth runaway.
+Controls:
 
-## Revised core Gate order
+- root suppression;
+- local-path suppression;
+- reinjection suppression;
+- persistent-state reset;
+- queue-drained clone;
+- matched random and sham suppression.
 
-1. **Gate A — Runtime integrity and observer independence**
+Measure chain depth, branch count, energy, lifetime, false chain, and downstream trace difference.
+
+### E06-4 — Untyped downstream causal participation
+
+Run paired interventions:
+
+```text
+do(root present)
+do(root suppressed)
+```
+
+Compare the full anonymous trace:
+
+- later Field states;
+- later endogenous events;
+- outbound boundary events;
+- later world-to-field events;
+- local transition and eligibility changes.
+
+Do not ask the runtime whether the effect is predictive, action-related, or memory-related.
+
+### E06-5 — Anonymous boundary coupling
+
+Expose arbitrary outbound ports without names or correct targets. Test whether endogenous Dynamics
+changes port-event distributions and whether port events change later raw external streams.
+
+Controls:
+
+- no endogenous path;
+- random endogenous path;
+- port permutation;
+- world-response shuffle;
+- readout-only path;
+- G3/G4/G5 comparator paths.
+
+The Primary runtime receives no reward.
+
+### E06-6 — Delayed persistence
+
+Test whether an endogenous lineage changes later state after a delay or quiet interval. Use:
+
+- component reset;
+- component transplant;
+- matched unrelated-state transplant;
+- delay variation;
+- interference episodes.
+
+The evaluator may report a persistence or memory-like effect. The runtime contains no memory type.
+
+### E06-7 — Untyped relation stabilization
+
+Repeatedly expose an anonymous source lineage and later raw external consistency or contradiction.
+Measure:
+
+- anonymous source-to-target effect stability;
+- held-out perturbation survival;
+- external-confirmation dependence;
+- internal-only no-growth;
+- causal intervention effect;
+- frequency/readout/random/no-endogenous baselines.
+
+No `relation_type` is stored.
+
+### E06-8 — External contingency reversal
+
+Change the mapping among anonymous boundary events and later raw external events. Measure:
+
+- change detection;
+- anonymous path revision latency;
+- stale boundary events;
+- unnecessary revision in stable controls;
+- reacquisition if the old mapping returns;
+- catastrophic overwrite.
+
+No scalar reward or correct action directs the change.
+
+### E06-9 — Physical-trajectory relation equivalence
+
+Create or observe physically different Spark trajectories. Post-hoc, compare complete causal
+signatures under intervention and external revision.
+
+Unit overlap, timing similarity, or Assembly similarity alone is insufficient. No equivalence class
+returns to runtime.
+
+### E06-10 — Missing-middle validity assay
+
+Test:
+
+```text
+A -> B -> [C omitted] -> D_external
+```
+
+Forward completion requires:
+
+```text
+created_at(C_endogenous) < arrival_at(D_external)
+```
+
+Retrospective inference after D is reported separately. Passing this assay alone does not pass L3.
+
+### E06-11 — Observer and taxonomy non-interference
+
+For identical seed, initial state, and world stream:
+
+1. run with Observer/evaluator package present;
+2. run with it absent;
+3. rename all evaluator views;
+4. permute which outbound ports the evaluator calls actions;
+5. remove prediction, memory, reward, action, outcome, and goal terminology from artifacts;
+6. remove scalar reward/correct-action files;
+7. verify identical Field trace, queues, boundary events, local updates, RNG state, and checkpoints.
+
+Only observer artifacts may differ.
+
+### E06-12 — Typed comparator
+
+Run G5 with explicit prediction/action/memory/reward heads under matched input and resource budget
+where feasible.
+
+Interpretation:
+
+- Primary-only success supports taxonomy-independent relation formation;
+- G5-only success is a negative result for the Primary hypothesis;
+- both success requires comparison of held-out generality, intervention specificity, stability, and
+  resource cost.
+
+### E06-13 — Persistence-locus reset and transplant
+
+Reset or transplant each candidate component independently. Determine whether experience-dependent
+behaviour moves with it and whether the effect is necessary, sufficient in part, distributed, or
+unresolved.
+
+## 8. Scientific Gate order
+
+1. **Gate A — Runtime, observer, and taxonomy independence**
 2. **Gate B — Endogenous origin and non-copy**
 3. **Gate C — Persistent-state dependence**
 4. **Gate D — Autonomous internal continuation**
-5. **Gate E — Causal downstream participation**
-6. **Gate F — Functional relation acquisition**
+5. **Gate E — Untyped causal participation**
+6. **Gate F — Untyped relation stabilization**
 7. **Gate G — External correction and revision**
-8. **Gate H — Memory-locus and relation stability**
+8. **Gate H — Persistence locus and observer equivalence**
 
-Missing-middle results are reported under E06-11 and contribute supporting evidence to Gates B–G,
-but they are not a standalone required definition of success.
-
-## Gate A — Runtime integrity and observer independence
+## 9. Gate A — Runtime, observer, and taxonomy independence
 
 - local deterministic reference;
 - provenance and checkpoint integrity;
-- forbidden-field audit;
-- observer ON/OFF equality;
+- explicit Assembly and functional-type source/schema scan;
+- Observer present/absent runtime equality;
+- evaluator category rename/permutation equality;
+- no scalar reward, correct action, outcome class, or goal label;
+- no G3/G4/G5 import on the Primary path;
 - zero self-confirmation violations.
 
-## Gate B — Endogenous origin and non-copy
+## 10. Gate B — Endogenous origin and non-copy
 
-- internally originated Spark;
+- actual normally thresholded internal Spark;
 - no direct current-input copy;
-- no fixed-delay echo explanation;
+- no fixed-delay echo;
 - no pending-queue explanation;
 - no evaluator target;
-- false-generation ceiling under null controls.
+- null false-generation ceiling;
+- multiple seeds and controlled worlds.
 
-## Gate C — Persistent-state dependence
+## 11. Gate C — Persistent-state dependence
 
-- identical current external input produces history-appropriate differences;
-- identical full runtime state reproduces identical response;
-- removing candidate memory state reduces the history effect.
+- same current input, different valid prior state, different appropriate internal response;
+- identical full state, identical response;
+- candidate-state reset weakens the effect;
+- no hidden context label.
 
-## Gate D — Autonomous internal continuation
+## 12. Gate D — Autonomous internal continuation
 
-- endogenous root changes later internal activity under silence;
-- later activity exceeds queue replay and matched random controls;
-- bounded safety constraints remain active.
+- root endogenous Spark changes later internal events under silence;
+- queue-drained and matched random controls are exceeded;
+- bounded safety remains active;
+- root/path suppression reduces the later chain.
 
-## Gate E — Causal downstream participation
+## 13. Gate E — Untyped causal participation
 
-- targeted root/path intervention changes later Dynamics, prediction, action, or memory;
-- targeted effect exceeds matched random and sham;
+- targeted intervention changes the complete anonymous downstream trace;
+- effect exceeds matched random and sham;
+- effect reaches a persistent state, boundary event, or later external stream;
+- no typed functional head is involved;
 - collateral damage remains bounded.
 
-## Gate F — Functional relation acquisition
+## 14. Gate F — Untyped relation stabilization
 
-- externally confirmed Spark relations improve held-out prediction, action, or memory;
-- internal-only recurrence does not increase relation confidence;
-- frequency, surface, readout-only, and no-endogenous controls are exceeded;
-- no human semantic label enters runtime.
+- anonymous causal effect recurs across episodes;
+- held-out perturbation survival;
+- external consistency strengthens or maintains it;
+- internal-only recurrence does not;
+- contradiction weakens or redirects it;
+- no runtime `relation_type` or global reward target;
+- comparator baselines are exceeded.
 
-## Gate G — External correction and revision
+## 15. Gate G — External correction and revision
 
-- contradiction cancels or redirects stale paths;
-- the external event remains authoritative;
-- reversal updates behaviour without requiring unconditional full reset;
-- stable controls avoid excessive revision.
+- stale paths cancel or redirect on mismatch;
+- external input remains authoritative;
+- changed world contingency changes future anonymous Dynamics/boundary coupling;
+- stable controls avoid excessive revision;
+- old mapping can be reacquired without hidden answer labels.
 
-## Gate H — Memory-locus and relation stability
+## 16. Gate H — Persistence locus and observer equivalence
 
-- reset/transplant identifies at least one candidate experience carrier;
-- functional relations persist across held-out conditions;
-- physically different trajectories may be grouped only by matched causal relations;
-- hidden evaluator or external-predictor memory is excluded.
+- reset/transplant identifies at least one candidate experience carrier or honestly reports a
+  distributed/unresolved result;
+- evaluator and external comparator memory are excluded;
+- physically different trajectories are grouped only by matched causal signatures;
+- the grouping remains observer-only;
+- taxonomy permutation leaves runtime unchanged.
 
-## Confirmatory reporting rules
+## 17. Confirmatory reporting rules
 
 - report L1, L2, and L3 separately;
-- report each causal effect with matched random and sham controls;
+- publish anonymous runtime traces before observer interpretation;
+- maintain separate inventories for runtime ontology and evaluator taxonomy;
+- report every targeted effect with matched random and sham controls;
 - report null and negative results as first-class artifacts;
-- report missing-middle separately from the full functional programme;
-- do not call an internal event meaningful because it recurs;
-- do not call a relation semantic because it changes an action;
-- preserve raw runtime trace and evaluator metadata separately;
-- cite Protocol Amendment 001 in every confirmatory report.
+- do not call recurrence meaning;
+- do not call boundary influence action understanding;
+- do not call delayed persistence memory understanding;
+- do not call raw external consistency reward;
+- report missing-middle separately;
+- cite both Protocol Amendments.
 
-## Current implementation boundary
+## 18. Current implementation boundary
 
-V06-00–V06-06 implement provenance, observer isolation, G0 diagnostic, G1 local expectation, G2
-external-confirmation-gated local adaptation, and normal-rule reinjection. They do not yet establish
-L2 or L3, live external correction, autonomous endogenous chains, functional relations,
-missing-middle completion, or memory location.
+Engineering work currently includes provenance, Assembly-free runtime, observer isolation, G0
+negative queue diagnostic, G1 local expectation, G2 external-confirmation-gated adaptation,
+normal-rule reinjection, reality correction, evaluator evidence contracts, and one single-world,
+history-dependent Field-Spark candidate.
+
+It does not yet establish an autonomous chain, untyped downstream causal function, boundary coupling,
+stable anonymous relations, relation revision, taxonomy-independent full functionality, multi-world
+Level-1 evidence, Level-2/Level-3 evidence, or a persistence locus outside explicit local transition
+state.
