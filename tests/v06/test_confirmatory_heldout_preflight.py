@@ -28,6 +28,28 @@ def preflight():
     return run_heldout_preflight()
 
 
+def _imported_modules(tree: ast.AST) -> tuple[str, ...]:
+    modules: list[str] = []
+    for node in ast.walk(tree):
+        if isinstance(node, ast.ImportFrom):
+            modules.append(node.module or "")
+        elif isinstance(node, ast.Import):
+            modules.extend(alias.name for alias in node.names)
+    return tuple(modules)
+
+
+def _called_function_names(tree: ast.AST) -> tuple[str, ...]:
+    names: list[str] = []
+    for node in ast.walk(tree):
+        if not isinstance(node, ast.Call):
+            continue
+        if isinstance(node.func, ast.Name):
+            names.append(node.func.id)
+        elif isinstance(node.func, ast.Attribute):
+            names.append(node.func.attr)
+    return tuple(names)
+
+
 def test_preflight_covers_all_worlds_adapters_and_schema_rows(preflight) -> None:
     matrix, report = preflight
     assert report.world_count == 50
@@ -121,7 +143,9 @@ def test_parameter_changes_produce_distinct_adapter_configurations(preflight) ->
         if row.condition is ConfirmatoryCondition.PRIMARY
         and row.family_id == "heldout-threshold-band"
     )
-    assert len({row.architecture_projection["field_threshold"] for row in threshold_rows}) == 10
+    assert len(
+        {row.architecture_projection["field_threshold"] for row in threshold_rows}
+    ) == 10
 
     lag_rows = tuple(
         row
@@ -270,7 +294,7 @@ def test_safety_and_privilege_guards_fail_closed(preflight) -> None:
         replace(g5.safety, scalar_reward_observations=0).validate(g5.condition)
 
 
-def test_dry_run_modules_do_not_call_capability_entrypoints() -> None:
+def test_dry_run_modules_do_not_import_or_call_capability_entrypoints() -> None:
     root = Path(__file__).parents[2]
     paths = (
         root
@@ -285,14 +309,17 @@ def test_dry_run_modules_do_not_call_capability_entrypoints() -> None:
         / "v06"
         / "heldout_dryrun.py",
     )
+    forbidden_modules = {
+        "sparkbrain.evaluation.v06_confirmatory_primary_adapter",
+        "sparkbrain.evaluation.v06_confirmatory_controls",
+        "sparkbrain.baselines.v06.g3_recurrent",
+        "sparkbrain.baselines.v06.g4_assembly",
+        "sparkbrain.baselines.v06.g5_typed",
+    }
     for path in paths:
-        source = path.read_text(encoding="utf-8")
-        assert "v06_confirmatory_primary_adapter" not in source
-        assert "v06_confirmatory_controls" not in source
-        assert "g3_recurrent" not in source
-        assert "g4_assembly" not in source
-        assert "g5_typed" not in source
-        assert "run_condition" not in source
+        tree = ast.parse(path.read_text(encoding="utf-8"))
+        assert forbidden_modules.isdisjoint(_imported_modules(tree))
+        assert "run_condition" not in _called_function_names(tree)
 
 
 def test_comparator_sources_do_not_import_primary_runtime_or_internal_adapter() -> None:
@@ -311,15 +338,9 @@ def test_comparator_sources_do_not_import_primary_runtime_or_internal_adapter() 
         "heldout_dryrun.py",
     ):
         tree = ast.parse((root / filename).read_text(encoding="utf-8"))
-        for node in ast.walk(tree):
-            if isinstance(node, ast.ImportFrom):
-                module = node.module or ""
-                assert not module.startswith("sparkbrain.v06")
-                assert "v06_confirmatory_primary" not in module
-            elif isinstance(node, ast.Import):
-                for alias in node.names:
-                    assert not alias.name.startswith("sparkbrain.v06")
-                    assert "v06_confirmatory_primary" not in alias.name
+        for module in _imported_modules(tree):
+            assert not module.startswith("sparkbrain.v06")
+            assert "v06_confirmatory_primary" not in module
 
 
 def test_building_preflight_twice_is_byte_stable() -> None:
