@@ -7,15 +7,31 @@ confirmatory records. They must not be imported by the Primary v0.6 runtime.
 from .g3_recurrent import (
     G3QualificationGrid,
     GenericRecurrentPredictor,
-    evaluate_world,
-    run_condition,
-    run_qualification_grid,
+    evaluate_world as evaluate_g3_world,
+    run_condition as run_g3_condition,
+    run_qualification_grid as run_g3_qualification_grid,
+)
+from .g4_assembly import (
+    AssemblyComparatorConfig,
+    ExplicitAssemblyComparator,
+    ExplicitAssemblyPrototype,
+    G4QualificationGrid,
+    evaluate_world as evaluate_g4_world,
+    run_condition as run_g4_condition,
+    run_qualification_grid as run_g4_qualification_grid,
 )
 
 __all__ = [
+    "AssemblyComparatorConfig",
+    "ExplicitAssemblyComparator",
+    "ExplicitAssemblyPrototype",
     "G3QualificationGrid",
+    "G4QualificationGrid",
     "GenericRecurrentPredictor",
-    "evaluate_world",
-    "run_condition",
-    "run_qualification_grid",
+    "evaluate_g3_world",
+    "evaluate_g4_world",
+    "run_g3_condition",
+    "run_g3_qualification_grid",
+    "run_g4_condition",
+    "run_g4_qualification_grid",
 ]
