@@ -1,12 +1,22 @@
 """SparkBrain v0.6 assembly-free endogenous-dynamics foundation.
 
-V06-00 through V06-07 establish provenance, anti-self-confirmation,
+V06-00 through V06-08 establish provenance, anti-self-confirmation,
 Assembly-free runtime state, observer isolation, checkpoints, the G0
 queue-drain diagnostic, G1 local timing expectations, G2 sparse local
-transition adaptation, bounded normal-rule Field reinjection, and
-external-authoritative reality correction.
+transition adaptation, bounded normal-rule Field reinjection,
+external-authoritative correction, and a canonical forward-completion flow.
 """
 
+from .forward import (
+    AssemblyFreeForwardRuntime,
+    EndogenousSparkRecord,
+    ExternalStepRecord,
+    ForwardCompletionEvaluation,
+    ForwardRuntimeConfig,
+    ProposalScheduleRecord,
+    evaluate_forward_completion,
+    train_external_sequences,
+)
 from .foundation import (
     AssemblyFreeRuntimeState,
     EndogenousChainRecord,
@@ -59,12 +69,17 @@ from .reinjection import FieldReinjectionGate, ReinjectionConfig, ReinjectionDec
 __version__ = "0.6.0.dev0"
 
 __all__ = [
+    "AssemblyFreeForwardRuntime",
     "AssemblyFreeRuntimeState",
     "EndogenousChainRecord",
     "EndogenousLineageIndex",
     "EndogenousPulseProposal",
+    "EndogenousSparkRecord",
     "EventOrigin",
+    "ExternalStepRecord",
     "FieldReinjectionGate",
+    "ForwardCompletionEvaluation",
+    "ForwardRuntimeConfig",
     "G0Comparison",
     "ImmutableRuntimeTrace",
     "LearningEligibility",
@@ -75,6 +90,7 @@ __all__ = [
     "LocalTransitionStats",
     "PendingLocalTransition",
     "PreparedLocalTransition",
+    "ProposalScheduleRecord",
     "ProvenanceLedger",
     "QueueCancellation",
     "QueueControlResult",
@@ -91,11 +107,13 @@ __all__ = [
     "build_checkpoint",
     "classify_g0_support",
     "compare_queue_controls",
+    "evaluate_forward_completion",
     "field_with_queue_mode",
     "load_checkpoint",
     "run_observer",
     "run_queue_condition",
     "save_checkpoint",
+    "train_external_sequences",
     "validate_checkpoint",
     "validate_runtime_mapping",
     "verify_non_interference",
