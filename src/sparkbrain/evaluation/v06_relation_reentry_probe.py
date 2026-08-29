@@ -105,7 +105,7 @@ def _train_phases(
     episode_index = 0
     for target, episodes in phases:
         world = _world(port_id, target)
-        for local_index in range(episodes):
+        for _ in range(episodes):
             start_ms = 100.0 + episode_index * 70.0
             _run_episode(
                 runtime,
@@ -114,7 +114,7 @@ def _train_phases(
                 consistency,
                 cue_unit_id=cue_unit_id,
                 start_ms=start_ms,
-                episode_id=f"train:{port_id}:{target}:{local_index}",
+                episode_id=f"train:{port_id}:{target}:{episode_index}",
             )
             episode_index += 1
     return runtime, emitter, consistency, 100.0 + episode_index * 70.0
