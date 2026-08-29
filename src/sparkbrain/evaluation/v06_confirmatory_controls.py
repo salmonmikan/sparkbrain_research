@@ -3,8 +3,9 @@ from __future__ import annotations
 import copy
 import math
 import random
+from collections.abc import Callable
 from dataclasses import dataclass
-from typing import Any, Callable
+from typing import Any
 
 from sparkbrain.v04.contracts import SynapticArrival
 from sparkbrain.v06.endogenous_chain import EndogenousChainIntervention
