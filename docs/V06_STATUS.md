@@ -1,43 +1,42 @@
 # SparkBrain v0.6 Status
 
-## 1. Active direction and execution order
+## 1. Active programme order
 
 Three protocol amendments are normative.
 
 1. **Amendment 001 — Functional endogenous Sparks**  
-   Missing-middle is one validity assay rather than the Primary objective.
+   Missing-middle is a validity assay rather than the Primary objective.
 2. **Amendment 002 — Untyped relational Dynamics**  
    Prediction, action, memory, reward, role, and meaning remain observer/evaluator projections rather
    than Primary runtime types.
 3. **Amendment 003 — Relation re-entry and confirmatory order**  
-   The remaining order is fixed as:
+   Learned anonymous relation state must alter later normal-rule Dynamics before release, and formal
+   multi-world/multi-seed qualification must precede Brain Lab/release work.
+
+The remaining execution order is:
 
 ```text
-V06-12  Relation re-entry and closed-loop causal use
-V06-13  Persistence-locus reset and transplant
-V06-14  Validity assays
-V06-15  Confirmatory multi-world/multi-seed and comparator suite
-V06-16  Brain Lab, taxonomy audit, reproduction, and release review
+V06-12  Relation re-entry and closed-loop causal use       implemented
+V06-13  Persistence-locus reset and transplant            implemented
+V06-14  Supporting validity assays                        implemented
+V06-15  Qualification and held-out confirmatory suite     qualification complete
+V06-16  Brain Lab, taxonomy audit, reproduction, release  blocked
 ```
 
-The current central question is:
+The central question is:
 
 > Can a persistent Dynamic Field generate endogenous Sparks not directly supplied by current input,
 > let them causally alter later anonymous Field and boundary states, stabilize and revise anonymous
 > external relations, and let those learned relations re-enter later normal-rule Dynamics while all
 > human functional categories remain observer-derived?
 
-## 2. Runtime/observer boundary
+## 2. Runtime boundary
 
-### Primary runtime may contain
+The Primary runtime may contain anonymous unit/path/port IDs, event timing, magnitude, polarity,
+provenance, causal lineage, Field state, local-transition state, consistency state, eligibility,
+queue state, and bounded execution resources.
 
-- anonymous unit, channel, path, region, and boundary-port IDs;
-- event timing, magnitude, polarity, direction, and provenance;
-- causal parentage;
-- Field, transition, consistency, eligibility, queue, and bounded resource state;
-- anonymous relation re-entry through existing proposal and reinjection mechanisms.
-
-### Primary runtime must not contain
+It must not contain:
 
 ```text
 Assembly state
@@ -53,76 +52,51 @@ outcome class
 goal label
 ```
 
-### Observer/evaluator
+G3/G4/G5 comparators are isolated under `sparkbrain.baselines.v06` and must not enter the Primary
+import graph.
 
-May derive non-exclusive predictive, boundary-effect, persistence, world-coupling, correction, and
-transplant views from immutable runtime artifacts. View names and mappings must not alter runtime.
+## 3. Implemented engineering path
 
-## 3. Implemented engineering foundation
+Implemented through V06-14:
 
-- V06-00 baseline/protocol foundation;
-- V06-01 external/endogenous provenance and two-phase eligibility;
-- external-confirmation-only positive commit;
-- V06-02 Assembly-free runtime and immutable observer boundary;
-- observer/taxonomy non-interference guards;
-- `0.6-dev1` checkpoint integrity contract;
-- V06-03 G0 queue-drain diagnostic;
-- V06-04 G1 anonymous local temporal expectation;
-- V06-05 G2 externally gated sparse local transition adaptation;
-- V06-06 bounded normal-rule Field reinjection;
-- V06-07 external-authoritative reality correction and stale-branch cancellation;
-- V06-08 non-copy and state-dependence evidence contracts;
-- V06-08 canonical same-input/different-history Field probe;
-- V06-09 sequential endogenous-chain runtime and causal interventions;
-- V06-10 anonymous Field-to-world boundary events and raw external feedback;
-- V06-10 externally gated untyped boundary consistency;
-- V06-11 world-contingency reversal and reacquisition;
-- V06-12 anonymous relation re-entry into later Field Dynamics;
-- V06-13 direct local-transition and consistency reset/transplant probes;
-- early forward/missing-middle harness retained as a supporting validity diagnostic.
+- external/endogenous provenance and two-phase learning;
+- Assembly-free runtime and observer/taxonomy guards;
+- G0 queue-drain diagnostic;
+- G1 anonymous local temporal expectation;
+- G2 externally gated sparse transition adaptation;
+- bounded normal-rule Field reinjection;
+- external-authoritative reality correction;
+- same-input/different-history endogenous Field Spark;
+- sequential endogenous chain and causal interventions;
+- anonymous Field-to-world boundary events;
+- raw external feedback without reward/correct-action labels;
+- external relation stabilization, reversal, and reacquisition;
+- anonymous relation re-entry into later Field Dynamics;
+- direct reset/transplant persistence-locus probes;
+- forward missing-middle, prefix, branching, omission, retrospective, and shortcut validity assays.
 
-## 4. Current engineering findings
+## 4. Core engineering findings
 
-### G0 remains a negative diagnostic
+### G0 remains negative
 
 ```text
 intact pending queue  -> later activity
 fully drained queue   -> no later activity
 ```
 
-The inherited Field does not spontaneously continue after all scheduled arrivals are removed. G0
-remains unsupported.
+The inherited Field does not spontaneously continue after every scheduled arrival is removed.
+Field-only spontaneous continuation remains unsupported.
 
-### V06-08 — single-world Level-1 candidate
+### Level-1 candidate
 
-With identical current external input:
+The same current external input produces different normally thresholded endogenous Field Sparks after
+different learned local-transition histories. No-history and no-reinjection controls produce none.
 
-```text
-prior state unit:0 -> unit:1  => endogenous Field Spark at unit:1
-prior state unit:0 -> unit:2  => endogenous Field Spark at unit:2
-no learned history             => no endogenous Spark
-no reinjection                 => no endogenous Spark
-```
+### Level-2 candidate
 
-The response is a normally thresholded Field Spark and is deterministic for reconstructed identical
-state. This remains a single-world engineering candidate.
-
-### V06-09 — single-world Level-2 candidate
-
-```text
-main anonymous chain:    0 -> 1 -> 2 -> 3
-control anonymous chain: 4 -> 5 -> 6 -> 7
-```
-
-During external silence:
-
-```text
-sham main chain:                    1 -> 2 -> 3
-targeted expansion suppression:    1
-active matched-random suppression: main remains 1 -> 2 -> 3
-root reinjection suppression:       no main chain
-downstream reinjection suppression: 1
-```
+A cue can produce a sequential anonymous internal chain under external silence. Preserving the root
+Spark while suppressing its expansion removes later Sparks; a stage-matched active intervention on a
+disjoint chain leaves the target chain intact.
 
 ```text
 targeted downstream impairment: 1.0
@@ -130,218 +104,257 @@ matched-random impairment:       0.0
 selective effect:                1.0
 ```
 
-Each later proposal is created only after the preceding actual Field Spark. Internal recurrence
-creates neither external observations nor positive learning commits.
+### External relation and revision candidate
 
-### V06-10/V06-11 — externally stabilized and revisable relation-state candidate
+A terminal endogenous Spark reaches an anonymous outbound port and changes the raw external stream.
+Returned external events stabilize an anonymous relation. Internal boundary recurrence alone cannot
+strengthen it. World contingency reversal shifts relation dominance, and return of the old
+contingency restores it.
 
-The terminal Sparks reach anonymous outbound ports:
+### Relation re-entry candidate
 
-```text
-unit:3 -> port:7 -> raw external unit:8
-unit:7 -> port:9 -> raw external unit:9
-```
+The learned anonymous consistency state is projected through one category-free rule into an
+`EndogenousPulseProposal`, then passes through the existing reinjection and ordinary Field threshold.
+Acquired, reversed, and reacquired relations produce different later Field Sparks. Reset, unrelated,
+internal-only, no-reentry, and suppression controls remove the effect.
 
-Targeted `port:7` suppression preserves the internal terminal Spark but removes the corresponding raw
-external stream. Active suppression of disjoint `port:9` does not damage the target stream.
-
-```text
-targeted boundary impairment:       1.0
-matched-random boundary impairment: 0.0
-selective external-stream effect:   1.0
-```
-
-Three externally returned events stabilize an anonymous link to reliability `0.8`; boundary
-recurrence without returned external events creates no positive link.
-
-When the world changes `port:7` from raw `unit:8` to raw `unit:9`, the new link becomes dominant.
-When the original world rule returns, the old link becomes dominant again. A nine-episode stable
-control maintains one link and creates no false revision.
-
-### V06-12 — closed-loop relation re-entry candidate
-
-The previously missing loop is now implemented:
+The loop is therefore closed in the engineering construction:
 
 ```text
-external consistency state
-        ↓
-read-only category-free structural projection
-        ↓
-EndogenousPulseProposal
-        ↓
-existing FieldReinjectionGate
-        ↓
-ordinary Field threshold
-        ↓
-later Field Spark or no Spark
+Brain state
+  -> anonymous boundary event
+  -> world
+  -> raw external event
+  -> anonymous consistency state
+  -> relation re-entry
+  -> later normal-rule Field Dynamics
 ```
 
-Canonical results:
+### Persistence-locus limitation
+
+Direct reset/transplant gives an important limiting result:
 
 ```text
-acquired port:7 -> unit:8, reliability 0.8
-    projected current 0.72
-    later Spark unit:8
+G1 local-transition transplant      -> learned endogenous response transfers
+G1 local-transition reset           -> learned response disappears
+matched donor Field state alone     -> learned response does not transfer
 
-reversed state
-    old unit:8 reliability 0.5, current 0.45
-    new unit:9 reliability 0.8, current 0.72
-    later Spark unit:9
-
-return to original contingency
-    unit:8 reliability 7/11, current 6.3/11
-    unit:9 reliability 0.5, current 0.45
-    later Spark unit:8
-
-stable relation unit:8, reliability 10/11
-    later Spark unit:8
+boundary-consistency transplant     -> relation re-entry transfers
+boundary-consistency reset          -> relation re-entry disappears
+matched Field state alone           -> relation re-entry does not transfer
 ```
 
-All eligible links use the same projection rule. The evaluator does not choose an `argmax`; ordinary
-Field current and threshold determine the response.
-
-Required controls pass:
-
-- no re-entry -> no later Spark;
-- consistency reset -> no later Spark;
-- learned relation on unrelated `port:9` -> no target effect on `port:7`;
-- internal-only boundary exposure -> no relation-driven response;
-- relation suppression -> acquired and reversed conditions return to the same baseline;
-- zero new external observations and zero positive self-confirming updates.
-
-This closes the causal re-entry loop in one canonical engineering construction. It is not a
-confirmatory Level-3 result.
-
-### V06-13 — explicit-state-dominant persistence-locus candidate
-
-Direct reset/transplant gives a limiting result.
-
-#### G1 local-transition state
+The honest current architecture description is:
 
 ```text
-transplant unit:0 -> unit:1 learned state -> generated Spark unit:1
-reset G1 state                         -> no generated Spark
-matched donor Field state + empty G1   -> no generated Spark
-unrelated unit:0 -> unit:2 state        -> generated Spark unit:2
+Dynamic Field
++ explicit anonymous local-transition memory
++ explicit anonymous external-consistency memory
++ normal-rule reinjection and boundary coupling
 ```
-
-#### Anonymous consistency state
 
 ```text
-transplant port:7 -> unit:8 state -> relation re-entry Spark unit:8
-reset consistency state           -> no generated Spark
-unrelated port:9 state             -> no target effect on port:7
-alternate port:7 -> unit:9 state   -> relation re-entry Spark unit:9
+explicit-state dominant candidate:       true
+distributed Field persistence supported: false
 ```
 
-Recipient Field states are matched and no positive self-confirmation occurs.
+No new persistent state may be added merely to rescue a distributed-Field interpretation of this
+negative result.
 
-The honest current interpretation is:
+## 5. V06-15 qualification result
 
-> The demonstrated experience-dependent effects are principally carried by explicit anonymous G1
-> local-transition state and anonymous boundary-consistency state. The Dynamic Field executes and
-> thresholds their consequences, but this initial suite does not support the matched Field state
-> itself as the learned carrier.
+### Matrix completeness
 
 ```text
-explicit-state dominant candidate:        true
-distributed Field persistence supported:  false
+3 development world families
+× 3 seeds
+× 8 conditions
+× 9 evidence domains
+= 648 / 648 complete unique records
 ```
 
-This limitation must be preserved in the final report. New memory-state types must not be added to
-rescue the stronger claim.
+All eight adapters share the same normalized family/seed/evidence interface.
 
-## 5. Validation
-
-Key accepted runs include:
-
-- G2 hardening: `33247919075`, Python 3.11/3.13 PASS;
-- reinjection: `33248216849`, PASS;
-- reality correction: `33249195833`, PASS;
-- evidence foundation: `33249776658`, PASS;
-- actual Field state probe: `33250148222`, PASS;
-- endogenous chain: `33251088862`, PASS;
-- boundary relation after provenance fix: `33252273946`, PASS;
-- relation reversal: `33252757980`, PASS;
-- relation re-entry series: PASS on the current branch history;
-- persistence-locus head: `33259017964`, Python 3.11/3.13 PASS.
-
-The latest persistence run passed installation, Ruff, local readiness, the default test suite, and
-bundle validation.
-
-## 6. Current next work
-
-### V06-14 — Validity assays
-
-Supporting diagnostics, not the project definition:
-
-- strict forward missing-middle;
-- prefix continuation;
-- branching alternatives;
-- omission and retrospective inference;
-- fixed-delay echo rejection;
-- queue-drain and no-history controls;
-- noise and random-event controls.
-
-### V06-15 — Confirmatory generalization and comparators
-
-Before execution, freeze code, metrics, thresholds, world generators, seeds, and exclusions.
-
-Qualification:
+### Strict gates
 
 ```text
-3 world families × 3 perturbation seeds
+Primary overall success fraction:        1.00
+Primary minimum family fraction:         1.00
+null false-positive fraction:            0.00
+minimum targeted-minus-matched effect:   1.00
+taxonomy hash match fraction:            1.00
+self-confirmation violations:               0
+control contract fraction:               1.00
 ```
 
-Frozen confirmatory minimum:
+A missing metric, duplicate/missing result, null-control failure, insufficient selective effect,
+taxonomy mismatch, self-confirmation violation, or failed control-matching contract blocks support.
+
+### Primary
 
 ```text
-5 held-out world families × 10 perturbation seeds
+9 / 9 worlds passed
+81 / 81 evidence records passed
 ```
 
-Required conditions:
+### Required controls
 
-- Primary G0/G1/G2 route;
-- no-endogenous generation;
-- count/energy/time-matched random endogenous events;
-- readout-only without Field reinjection;
-- shuffled relation state;
-- G3 generic recurrent predictor;
-- G4 explicit Assembly-conditioned predictor;
-- G5 typed functional-head comparator.
+```text
+36 / 36 control worlds satisfied their contracts
+324 / 324 control evidence records present
+```
 
-Comparator-only success is a negative result for the Primary hypothesis.
+- no-endogenous: no later endogenous Field capability;
+- readout-only: structural proposal without Field effect;
+- matched-random: Primary event count, time, current, energy, and depth matched without learned
+  sequential lineage;
+- shuffled relation: earlier Dynamics preserved while correct relation re-entry and persistence
+  transfer fail.
 
-### V06-16 — Audit and release
+### G3 generic recurrent comparator
 
-- complete component interaction reset/transplant;
-- freeze and reproduce artifacts locally;
-- perform observer/evaluator removal and taxonomy permutation audits;
-- add Brain Lab views without runtime feedback;
-- review claim boundaries and strongest counterexamples;
-- keep PR #10 Draft and keep `main` unchanged until blockers are closed.
+```text
+9 / 9 worlds passed
+81 / 81 records passed
+```
 
-## 7. Current scientific boundary
+A simple isolated autoregressive transition predictor reproduces the current development evidence.
+The current worlds do not establish that excitable Field Dynamics are necessary.
 
-Engineering foundation/candidates now include:
+### G4 explicit Assembly comparator
 
-- Assembly-free and taxonomy-guarded runtime;
-- provenance-safe endogenous proposals;
-- one negative G0 result;
-- same-input/different-history Level-1 candidate;
-- autonomous anonymous-chain Level-2 candidate;
-- anonymous boundary/world causal candidate;
-- externally stabilized and revisable relation-state candidate;
-- relation state that re-enters and changes later normal-rule Field Dynamics;
-- explicit-state-dominant persistence-locus candidate.
+```text
+9 / 9 worlds passed
+81 / 81 records passed
+```
+
+An isolated system with explicit Assembly IDs and Assembly-conditioned rollout/relation state also
+solves the current development worlds.
+
+### G5 typed functional-head comparator
+
+```text
+9 / 9 worlds passed
+81 / 81 records passed
+```
+
+An isolated system with explicit prediction/action/reward/memory heads and privileged scalar reward
+also solves the current development worlds.
+
+### Qualification interpretation
+
+> Primary and all three comparators are supported in the development grid; architectural uniqueness
+> is not established.
+
+This is not a failure of the Primary implementation. It is a failure of the current development
+worlds to discriminate which architecture is necessary.
+
+## 6. Validation
+
+The first complete-matrix run correctly failed because the comparator world specification used a
+different relation-reentry gain from Primary. The shared comparator specification was changed to the
+exact Primary normalization rather than weakening the equality test.
+
+The corrected complete matrix passed GitHub Actions run `33268619204` on Python 3.11 and Python 3.13:
+
+```text
+Install: PASS
+Ruff lint: PASS
+Local readiness: PASS
+Default test suite: PASS
+Bundle validation: PASS
+```
+
+Additional accepted runs include the earlier relation-reentry, persistence-locus, validity,
+Primary-only, control-only, and strict-scoring suites documented in their engineering reports.
+
+## 7. Current manifest state
+
+### Qualification
+
+All eight adapter paths are qualification-ready. The manifest remains intentionally:
+
+```text
+code_ref = UNFROZEN
+```
+
+Therefore formal execution readiness remains false until a reviewed SHA is frozen.
+
+### Held-out confirmatory
+
+Qualification readiness is not reused. All adapters remain held-out-not-ready because the five
+confirmatory world-family contracts have not been implemented and qualified.
+
+## 8. Remaining work before release
+
+### Held-out world contract
+
+Implement for all eight conditions:
+
+1. sparse identity/topology permutation;
+2. lag dispersion;
+3. threshold/magnitude bands;
+4. genuine branch competition;
+5. repeated contingency cycles.
+
+The families must not be renamed copies of the deterministic development chain. Branch competition
+must contain real simultaneous alternatives.
+
+### Comparator fairness
+
+Record, per world and condition:
+
+- observed training events;
+- generated internal events;
+- persistent state size;
+- intervention count;
+- wall-clock time;
+- privileged information;
+- whether ordinary Field thresholds are used or bypassed.
+
+### Freeze and confirmatory execution
+
+After held-out adapter qualification:
+
+```text
+freeze full Git SHA
+freeze manifest hash
+freeze thresholds and exclusions
+freeze result/artifact schema
+run 5 families × 10 seeds × 8 conditions × 9 domains
+= 3,600 fresh records
+```
+
+Development records cannot be relabelled as held-out evidence.
+
+### V06-16
+
+Only after the complete held-out result review:
+
+- final observer/taxonomy removal and permutation audit;
+- Brain Lab read-only visualization;
+- local clean-room reproduction;
+- claim-boundary and strongest-counterexample review;
+- release decision.
+
+## 9. Current scientific boundary
+
+Supported only as engineering foundation/candidates:
+
+- Assembly-free and taxonomy-guarded Primary runtime;
+- closed-loop relation re-entry;
+- explicit-state-dominant persistence locus;
+- complete development qualification interface and strict controls;
+- Primary capability in three development families;
+- comparator capability in the same families.
 
 Not yet established:
 
-- multi-world/multi-seed confirmatory Level 1, 2, or 3;
-- held-out relation generalization;
+- held-out multi-world/multi-seed Level 1, 2, or 3;
+- architectural uniqueness;
 - distributed Field persistence;
-- full component-interaction persistence locus;
-- completed G3/G4/G5 comparator interpretation;
-- confirmatory validity assays;
+- genuine branch-competition superiority;
 - physical-trajectory causal equivalence;
 - semantic meaning, concepts, autonomous value formation, organs, consciousness, or AGI.
+
+`main` remains unchanged and PR #10 remains Draft.
