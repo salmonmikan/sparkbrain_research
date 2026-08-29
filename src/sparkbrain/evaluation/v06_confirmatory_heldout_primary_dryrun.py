@@ -1,6 +1,7 @@
 from __future__ import annotations
 
-from typing import Any, Callable
+from collections.abc import Callable
+from typing import Any
 
 from .v06_confirmatory import ConfirmatoryCondition
 from .v06_confirmatory_heldout_dryrun_contract import (
