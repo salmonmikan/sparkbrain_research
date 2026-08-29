@@ -63,9 +63,9 @@ def test_qualification_manifest_is_adapter_complete_but_unfrozen() -> None:
     readiness = assess_confirmatory_readiness(manifest)
     assert readiness.ready is False
     assert readiness.code_ref_frozen is False
-    assert readiness.adapter_isolation_complete is True
-    assert readiness.engineering_evidence_complete is True
+    assert readiness.isolation_violations == ()
     assert readiness.unavailable_adapters == ()
+    assert readiness.shape_errors == ()
 
 
 def test_confirmatory_manifest_does_not_reuse_qualification_readiness() -> None:
