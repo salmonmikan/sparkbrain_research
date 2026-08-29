@@ -1,218 +1,269 @@
-# SparkBrain Theory Specification v0.6 — Endogenous Spark Function
+# SparkBrain Theory Specification v0.6
+## Untyped Functional Endogenous Dynamics
 
-Status: **V06-00–V06-06 engineering foundation implemented; Protocol Amendment 001 adopted before confirmatory science**  
+Status: **V06-00–V06-08 engineering work in progress; no confirmatory Level-2/Level-3 claim**  
 Target namespace: `sparkbrain.v06`  
 Baseline: `main@03a5c662a5ea100fac3288b6aa3e82c1d41f0546`  
-Normative amendment: `docs/V06_PROTOCOL_AMENDMENT_001_ENDOGENOUS_SPARK_FUNCTION.md`
+Normative amendments:
+
+1. `docs/V06_PROTOCOL_AMENDMENT_001_ENDOGENOUS_SPARK_FUNCTION.md`
+2. `docs/V06_PROTOCOL_AMENDMENT_002_UNTYPED_RELATIONAL_DYNAMICS.md`
 
 ## 1. Central hypothesis
 
-The Primary runtime must not require an explicit Assembly state or semantic unit.
+The Primary runtime must not require an explicit Assembly, semantic unit, or predeclared functional
+relation type.
 
 v0.6 tests whether a persistent Dynamic Field can generate endogenous Sparks that are not direct
-copies of current external input, allow those Sparks to participate causally in subsequent internal
-Dynamics, prediction, action, and memory, and form stable externally correctable functional
-relations through continued interaction with the world.
+copies of current external input, let those Sparks causally alter later anonymous Field states and
+boundary-crossing events, and stabilize or revise those relations through external interaction.
 
 ```text
-external signal
+world-to-field event
       ↓
 persistent Dynamic Field
       ↓
 endogenous Spark X
       ↓
-subsequent Spark / Cascade / prediction / action / memory effect
+later anonymous internal state / event / boundary crossing
       ↓
-external consequence
+changed external stream
       ↓
-confirmation, contradiction, or revision of the responsible path
+external consistency or contradiction changes the responsible path
 ```
 
-Missing-middle completion is one controlled assay of this capacity. It is not the central definition
-of v0.6.
+Prediction, action, memory, reward, role, and meaning are not runtime types. They are possible
+post-hoc descriptions of causal trace properties.
 
-## 2. Meaning is not a Spark attribute
+## 2. Runtime ontology and observer taxonomy
 
-The runtime must not attach a human semantic value to a Spark:
+### 2.1 Runtime ontology
+
+The runtime contains execution-level structure only:
+
+- anonymous unit/channel/region/boundary-port identity;
+- time, magnitude, polarity, and duration;
+- event origin and boundary direction;
+- causal parent and local path identity;
+- current and persistent Field state;
+- local lag and signed influence state;
+- eligibility and external consistency state;
+- bounded transition reliability;
+- generation and safety budgets.
+
+This ontology states **where, when, how strongly, and through which path** an event occurred. It does
+not state why the event matters or which human functional category it belongs to.
+
+### 2.2 Observer taxonomy
+
+An evaluator may later ask whether an endogenous lineage:
+
+- preceded a later event and improved future estimation;
+- changed an anonymous outbound boundary-port event;
+- changed persistent state after a gap;
+- changed the later world-to-field stream;
+- changed its future behaviour after contradiction.
+
+These may be reported as predictive, boundary-effect, persistence, world-coupling, and correction
+views. They are queries over the same trace, not separate runtime relation classes.
+
+### 2.3 Non-reification rule
+
+The Primary runtime must not contain:
+
+```text
+PredictionRelation
+ActionRelation
+MemoryRelation
+RewardRelation
+FunctionalRole
+MeaningState
+```
+
+A lineage may satisfy several observer views. No one-hot functional class is required or permitted.
+
+## 3. Meaning is not an attribute
+
+The runtime must not attach:
 
 ```text
 meaning = "danger"
 semantic_state = "food"
+role_type = "prediction"
 concept_label = "cat"
 ```
 
-A candidate functional meaning is treated only as an observed relation pattern:
+The most primitive relation available to runtime is category-neutral:
 
 \[
-FunctionalRelation(X) \approx Relations(
-    X,
-    OtherInternalEvents,
-    Predictions,
-    Actions,
-    MemoryChanges,
-    ExternalConsequences,
-    Corrections
-)
+U(i,j)=
+\left(
+source_i,
+ target_j,
+ \Delta t,
+ signed\ influence,
+ reliability,
+ provenance,
+ external\ consistency
+\right)
 \]
 
-The Primary runtime may contain causal transition state, eligibility, action bias, and externally
-confirmed local relation state. It must not contain a human-readable meaning field. A post-hoc
-observer may describe recurring functional relations but may not feed them back into runtime.
-
-## 3. Observer boundary
-
-Assembly remains an observer concept:
-
-```text
-immutable runtime trace
-      ↓
-post-hoc Assembly / trajectory / functional-relation observer
-```
-
-The runtime path is:
-
-```text
-persistent Field state
-      ↓
-G0/G1/G2 endogenous transition
-      ↓
-internal pulse proposal
-      ↓
-normal-rule Field reinjection
-      ↓
-later internal and external consequences
-```
-
-For identical initial state, seed, and external input:
+An observer may estimate a wider causal signature:
 
 \[
-Runtime(Observer=ON)=Runtime(Observer=OFF)
+R_X=
+\left\{
+(X \rightarrow Y_k),
+\Delta t_k,
+\Delta P(Y_k\mid do(X)),
+stability_k,
+consistency_k
+\right\}
 \]
 
-Field traces, queues, predictions, actions, learning updates, RNG state, and state hashes must be
-identical. Only observer artifacts may differ.
+`Y_k` may be an anonymous internal event, state component, outbound boundary event, or external
+event. The signature contains no human semantic label and need not exist as one global runtime object.
+
+A functional meaning candidate is, at most, an observer conclusion that a stable causal signature
+has formed and remains externally revisable. It is not semantic understanding.
 
 ## 4. Runtime state
 
-The Primary runtime state is:
+The Primary state is:
 
 \[
-B_t=(F_t,Q_t^{ext},Q_t^{endo},Z_t,T_t,H_t,R_t,C_t,L_t)
+B_t=(F_t,Q_t^{in},Q_t^{endo},Q_t^{out},Z_t,T_t,H_t,R_t,C_t,L_t)
 \]
 
-- `F`: current excitable-Field state;
-- `Q_ext`: external event queue;
-- `Q_endo`: endogenous proposal queue;
-- `Z`: persistent local traces;
-- `T`: local transition state;
-- `H`: homeostatic and adaptation state;
-- `R`: generation budgets;
-- `C`: reality-matching state;
-- `L`: externally gated local eligibility and relation updates.
+- `F_t`: current excitable-Field state;
+- `Q_in`: world-to-field event queue;
+- `Q_endo`: endogenous proposal and reinjection queue;
+- `Q_out`: anonymous field-to-world boundary events;
+- `Z_t`: persistent local traces;
+- `T_t`: local anonymous transition state;
+- `H_t`: homeostatic and adaptation state;
+- `R_t`: generation and resource budgets;
+- `C_t`: external consistency state;
+- `L_t`: externally gated eligibility and local relation updates.
 
-No Assembly ID, prototype, membership, semantic label, hidden world-state label, or correct action
-belongs to `B_t`.
+No Assembly ID, motif label, semantic label, hidden world-state label, correct-action identity,
+relation type, reward value, or functional role belongs to `B_t`.
 
-## 5. Endogenous Spark levels
+## 5. Event directions and provenance
 
-### Level 1 — Endogenous Event
+Every pulse has execution-relevant direction and provenance.
 
-A Spark is internally originated rather than directly supplied by an external pulse.
+Direction candidates:
 
-This is necessary but weak. Random noise or a delayed echo may satisfy it.
+- world-to-field;
+- field-internal;
+- field-to-world boundary.
 
-### Level 2 — Predictive Endogenous Spark
+Endogenous status candidates:
 
-An internally originated Spark is generated from persistent state before a later external event and
-predicts a future Field or world transition better than matched random, echo, queue, and
-frequency-only controls.
+- external;
+- endogenous-unconfirmed;
+- endogenous-confirmed;
+- endogenous-contradicted;
+- endogenous-expired.
 
-### Level 3 — Functionally Relational Endogenous Spark
+Only a world-to-field external event counts as an observation. An internally generated event remains
+endogenous even if it causes a normal Field Spark or outbound boundary event.
 
-An endogenous Spark or causal lineage:
+## 6. Two-phase learning and external authority
 
-- changes later internal Dynamics;
-- changes a prediction;
-- changes an action or action bias;
-- changes a memory or eligibility update;
-- forms a stable relation with later external consequences;
-- remains externally correctable;
-- loses the relevant function under targeted dynamic-path intervention beyond matched random
-  controls.
-
-Level 3 is the central v0.6 target. It remains a functional relation claim, not semantic
-understanding.
-
-## 6. Provenance
-
-Every runtime pulse has exactly one origin:
-
-- `external`;
-- `endogenous-unconfirmed`;
-- `endogenous-confirmed`;
-- `endogenous-contradicted`;
-- `endogenous-expired`.
-
-Only `external` counts as an observation. A prediction that causes a Field Spark remains a
-prediction until later external confirmation.
-
-## 7. Two-phase learning
-
-An endogenous path may create a temporary eligibility record, but it cannot commit a positive
-update.
+An endogenous path may create temporary eligibility but cannot commit a positive update from its own
+activity.
 
 ```text
-endogenous generation
+endogenous lineage
       ↓
-uncommitted eligibility
+uncommitted local eligibility
       ↓
-later registered external consequence
+later external consistency
       ↓
 commit, contradict, or expire
 ```
 
-Positive learning is committed only after a registered external event or externally grounded
-consequence confirms the responsible path. Contradiction and expiry cannot increase confidence.
+Positive strengthening requires a later registered external event or externally observed world-loop
+consistency. Internal recurrence cannot count as confirmation.
 
 This rejects:
 
 ```text
-predict X
-  → internally fire X
-  → count X as observed
-  → increase confidence
+internally produce X
+  → internally observe X
+  → increase confidence in X
 ```
 
-## 8. Functional relation without a meaning field
+External mismatch may weaken, redirect, or retire the responsible anonymous path. The external event
+is authoritative but need not cause a full Field reset.
 
-For an endogenous event or lineage `X`, the scientifically relevant object is not a label but a
-relation profile measured over experience:
+## 7. No privileged reward
 
-\[
-R(X)=
-\left(
-P(Y_{internal}|X),
-P(Y_{external}|X),
-P(Y_{external}|X,a),
-\Delta Prediction,
-\Delta Action,
-\Delta Memory,
-Correction(X)
-\right)
-\]
+A global scalar reward supplied by an experimenter would predefine value and therefore does not
+belong to the Primary v0.6 track.
 
-- `Y_internal`: later Sparks, Cascades, or persistent-state changes;
-- `Y_external`: later raw external events;
-- `a`: action primitive;
-- `Delta Prediction`: causal change in prediction;
-- `Delta Action`: causal change in action probability or choice;
-- `Delta Memory`: causal change in eligible or committed memory state;
-- `Correction(X)`: response to later confirmation or contradiction.
+The world may emit raw external pulses. Anonymous homeostatic variables may exist as ordinary state
+components, but the runtime must not receive `good`, `bad`, `reward`, `punishment`, `goal`, or correct-
+action labels.
 
-The runtime may embody these relations in local transitions and path state. The observer may estimate
-and compare `R(X)` after the run. Neither side assigns a human word to X.
+Reward-driven or typed value systems belong only to isolated comparators.
 
-## 9. Generator hierarchy
+## 8. Boundary coupling without an action type
+
+The Field may emit through an anonymous outbound port:
+
+```text
+internal Dynamics
+      ↓
+outbound port:k
+      ↓
+world transition
+      ↓
+later world-to-field events
+```
+
+The runtime stores the boundary crossing and causal lineage. It does not store `action_type`, action
+meaning, or correctness. The observer may later report that the lineage influenced behaviour.
+
+## 9. Persistence without a memory type
+
+Experience may alter:
+
+- weights or delays;
+- thresholds or adaptation;
+- persistent traces;
+- local transition state;
+- eligibility;
+- boundary-coupling state;
+- pending working state.
+
+The runtime does not create a `MemoryRelation`. A memory-like conclusion requires delayed effect,
+reset, transplant, and matched-control evidence.
+
+## 10. Revised endogenous evidence levels
+
+### Level 1 — Endogenous origin
+
+A normally thresholded Field Spark is generated without a direct external event at that target/time.
+This remains compatible with noise, echo, or useless activity until controls exclude them.
+
+### Level 2 — Causally Participating Endogenous Spark
+
+The Spark changes a later anonymous internal state, endogenous event, boundary event, or external
+event stream. Targeted intervention must exceed matched random and sham controls.
+
+### Level 3 — Externally Stabilized Relational Endogenous Spark
+
+The Spark or lineage participates in a stable, externally confirmable and revisable pattern of
+anonymous causal relations across held-out conditions. The observer may derive multiple functional
+views afterward.
+
+Level 3 is the central v0.6 target. It is not a claim of subjective, linguistic, or human semantic
+meaning.
+
+## 11. Generator hierarchy
 
 ```text
 G0  Field-only spontaneous continuation       Primary
@@ -220,91 +271,106 @@ G1  local temporal expectation traces         Primary
 G2  sparse/local transition adaptation        Primary
 G3  generic recurrent predictor               Comparator
 G4  explicit Assembly-conditioned predictor   Comparator
+G5  typed functional-head system               Comparator
 ```
 
-G0–G2 are the SparkBrain Primary mechanisms. G3 and G4 are alternative explanations and performance
-comparators.
+G0–G2 are the Primary SparkBrain mechanisms.
 
-- G3-only success means an external recurrent predictor supplied the cognition.
-- G4-only success means explicit Assembly state was useful and the observer-only hypothesis was not
-  supported.
+- G3-only success means a generic external predictor supplied the function.
+- G4-only success means explicit Assembly state was required.
+- G5-only success means predeclared human functional categories were required.
 
-## 10. Non-copy and state-dependence requirements
+## 12. Non-copy and persistent-state requirements
 
-An endogenous Spark is not considered a meaningful research result merely because its origin flag is
-internal.
+An endogenous Spark is not accepted merely because its origin flag is internal. Primary evidence
+must distinguish it from:
 
-Primary evidence must distinguish it from:
-
-- a direct copy of the current external target;
+- a direct copy of current input;
 - a fixed-delay echo;
-- a remaining scheduled queue event;
-- a random noise pulse;
+- a pending queue event;
+- random noise;
 - a frequency-only response;
-- a hidden evaluator cue.
+- an evaluator-supplied target;
+- a typed comparator leaking into the Primary path.
 
-The same external input under different persistent Field states should be able to produce different
-endogenous responses when history warrants it.
+The same current external input under different valid prior states may produce different internal
+responses when history warrants it. Identical full state must reproduce identically.
 
-## 11. Internal causal participation
+## 13. Untyped causal participation
 
-An endogenous Spark becomes a candidate cognitive material only when it changes later computation.
-Required intervention targets include:
+An endogenous Spark becomes candidate cognitive material only when it changes later computation.
+The Primary measurement is the complete anonymous trace difference:
 
-- the endogenous event itself;
-- its local transition path;
-- its persistent trace source;
-- its reinjection branch;
-- its downstream eligibility or action-bias path.
+\[
+\Delta Trace_X = Trace(do(X=present)) - Trace(do(X=suppressed))
+\]
 
-The intervention order is:
+The trace may include:
 
-```text
-intervene on Dynamics
-      ↓
-measure lost or changed function
-      ↓
-use the observer afterward to describe recurring trajectories
-```
+- later internal events;
+- later state components;
+- outbound boundary events;
+- later external events;
+- anonymous local transition or eligibility changes.
 
-An Assembly ID must not be chosen first as the Primary intervention target.
+The runtime does not label any component as prediction, action, memory, or reward. Observer views are
+derived after causal measurement.
 
-## 12. External correction
+## 14. Untyped relation stabilization
 
-A functionally useful endogenous Spark remains a hypothesis, not an observation.
+A candidate relation is stabilized when:
 
-When external reality agrees:
+- the anonymous source-to-target causal effect recurs across episodes;
+- it survives held-out perturbations where appropriate;
+- external consistency raises its local reliability;
+- contradiction lowers or redirects it;
+- internal-only recurrence does not strengthen it;
+- targeted intervention removes the effect;
+- no typed relation field is needed.
 
-- the responsible eligibility may commit;
-- timing, magnitude, or local relation confidence may update;
-- repeated confirmed relations may stabilize.
+The relation may remain distributed across local state rather than becoming a named object.
 
-When external reality disagrees:
+## 15. Functional observer projections
 
-- stale branches are cancelled or suppressed;
-- confidence decreases;
-- the external event is processed as authoritative input;
-- the whole Field must not be unconditionally reset unless a matched control proves that necessary;
-- the internal chain may not self-confirm.
+The observer may apply several projections to a stable relation signature.
 
-## 13. Missing-middle as a validity assay
+### Predictive view
 
-For an external sequence `A → B → [C omitted] → D`, forward completion requires:
+Did the lineage precede and improve estimation of a later event?
+
+### Boundary-effect view
+
+Did the lineage change anonymous outbound-port events?
+
+### Persistence view
+
+Did the lineage leave a delayed state effect that survives the required controls?
+
+### World-coupling view
+
+Did boundary activity change the later external stream?
+
+### Correction view
+
+Did external mismatch revise the responsible anonymous path?
+
+These are non-exclusive measurements. Renaming, deleting, or permuting them must not change runtime.
+
+## 16. Missing-middle as one validity assay
+
+For `A → B → [C omitted] → D`, forward completion requires:
 
 \[
 t(C_{endo}) < t(D_{external})
 \]
 
-Inferring C after D arrives is retrospective reconstruction and is scored separately.
+Inference after D is retrospective reconstruction. Passing this assay supports one form of temporal
+validity but does not by itself establish Level 2 or Level 3.
 
-Passing this assay does not by itself establish Level 3 functionality. Failing it does not by itself
-invalidate all forms of functionally relational endogenous activity.
+## 17. Physical trajectory and observer equivalence
 
-## 14. Physical trajectory versus functional relation
-
-A functional relation need not be tied to exactly the same physical unit sequence.
-
-For example:
+Physically different trajectories may be post-hoc functional-equivalence candidates only if they
+have matched causal relation signatures under intervention and external revision.
 
 ```text
 Episode 1: 13 -> 27 -> 41
@@ -312,67 +378,72 @@ Episode 2: 14 -> 29 -> 38
 Episode 3: 12 -> 27 -> 42
 ```
 
-may be considered a post-hoc functional-equivalence candidate only if the trajectories have matched
-causal consequences across prediction, action, memory, and correction. Surface similarity alone is
-insufficient.
+Unit similarity or Assembly similarity alone is insufficient. No equivalence label returns to the
+Primary runtime in v0.6.
 
-This equivalence is an observer-level scientific conclusion unless and until a future version tests
-whether the runtime itself requires such a role representation.
+## 18. Taxonomy-independence requirement
 
-## 15. Memory location
+For identical seed, initial state, and external stream, runtime output must remain identical when:
 
-v0.6 tests where experience-dependent changes reside:
+- observer/evaluator packages are absent;
+- observer view names are changed;
+- the evaluator permutes which outbound ports it describes as actions;
+- prediction, memory, reward, and outcome terminology is removed from artifacts;
+- the typed G5 comparator is disabled.
 
-- weight or delay;
-- threshold or adaptation baseline;
-- persistent multi-timescale state;
-- local transition state;
-- endogenous queue and working continuation state;
-- externally gated eligibility and relation state.
+The following must match:
 
-Reset and transplant experiments must distinguish temporary pending state from persistent learned
-state.
+- Field trace;
+- internal and outbound queues;
+- local updates;
+- boundary events;
+- RNG state;
+- state hash;
+- checkpoint continuation.
 
-## 16. Revised scientific evidence order
+Only observer artifacts may differ.
 
-1. runtime integrity and observer independence;
-2. internally originated, non-copy Spark generation;
-3. dependence on persistent internal state rather than only current input;
+## 19. Scientific evidence order
+
+1. runtime, observer, and taxonomy independence;
+2. non-copy endogenous Field Spark;
+3. persistent-state dependence;
 4. bounded autonomous internal continuation;
-5. causal participation in later Dynamics;
-6. stable externally confirmed relations to prediction, action, or memory;
-7. external correction and relation revision;
-8. memory-locus and causal-path analysis;
-9. missing-middle and other controlled validity assays.
+5. untyped causal participation;
+6. externally stabilized anonymous relation;
+7. external correction and revision;
+8. persistence-locus and physical-trajectory analysis;
+9. missing-middle and other validity assays;
+10. G3/G4/G5 comparator interpretation.
 
-## 17. Current implemented contracts
+## 20. Current implementation and current limits
 
-- external/endogenous event provenance;
-- endogenous proposals and chains;
+Implemented engineering foundation includes:
+
+- external/endogenous provenance;
 - two-phase eligibility;
-- external-confirmation-only positive learning;
-- Assembly-free runtime-state validation;
+- Assembly-free runtime validation;
 - immutable observer trace;
-- observer ON/OFF equality helper;
-- fail-closed development checkpoint integrity;
 - G0 queue-drain diagnostic;
 - G1 local temporal expectation;
 - G2 externally gated sparse local adaptation;
-- confidence- and budget-bounded normal-rule Field reinjection.
+- normal-rule reinjection;
+- external-authoritative reality correction;
+- non-copy and state-dependence evaluation contracts;
+- one single-world, history-dependent, normally thresholded Field-Spark candidate.
 
-## 18. Current non-claims
+Not yet established:
 
-The implemented foundation does not yet establish:
+- multi-world Level-1 evidence;
+- autonomous endogenous chains;
+- untyped causal participation;
+- anonymous boundary coupling;
+- externally stabilized relations;
+- relation revision;
+- taxonomy independence under full future functionality;
+- persistence locus outside explicit local transition state;
+- physical-trajectory causal equivalence;
+- confirmatory missing-middle validity;
+- semantic meaning, concepts, value formation, organs, consciousness, AGI, or biological equivalence.
 
-- non-copy state-dependent endogenous cognition;
-- autonomous endogenous Spark chains;
-- causal downstream participation;
-- stable prediction/action/memory relations;
-- relation equivalence across physical trajectories;
-- live reality correction;
-- forward missing-middle completion;
-- a resolved memory locus;
-- semantic meaning, concepts, organs, consciousness, AGI, or biological equivalence.
-
-`docs/V06_RUNTIME_INVARIANTS.md` remains normative for implementation safety. Protocol Amendment 001
-is normative for scientific scope after V06-06.
+`docs/V06_RUNTIME_INVARIANTS.md` and both Protocol Amendments are normative.
