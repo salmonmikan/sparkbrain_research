@@ -117,11 +117,6 @@ def _snapshot(
     old = consistency.link_state(port_id="port:7", target="unit:8")
     new = consistency.link_state(port_id="port:7", target="unit:9")
     consistency_state = consistency.state_dict()
-    primary_state = {
-        "boundary": emitter.state_dict(),
-        "chain": runtime.state_dict(),
-        "consistency": consistency_state,
-    }
     return RevisionSnapshot(
         phase_id=phase_id,
         episode_count=episode_count,
