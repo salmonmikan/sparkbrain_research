@@ -9,13 +9,7 @@ from sparkbrain.evaluation.v06_confirmatory_current_manifest import (
     build_current_confirmatory_manifest,
 )
 
-_QUALIFICATION_READY_CONDITIONS = {
-    ConfirmatoryCondition.PRIMARY,
-    ConfirmatoryCondition.NO_ENDOGENOUS,
-    ConfirmatoryCondition.RANDOM_MATCHED,
-    ConfirmatoryCondition.READOUT_ONLY,
-    ConfirmatoryCondition.SHUFFLED_RELATION,
-}
+_QUALIFICATION_READY_CONDITIONS = set(ConfirmatoryCondition)
 
 _EXPECTED_PATHS = {
     ConfirmatoryCondition.PRIMARY: (
@@ -33,10 +27,19 @@ _EXPECTED_PATHS = {
     ConfirmatoryCondition.SHUFFLED_RELATION: (
         "sparkbrain.evaluation.v06_confirmatory_controls.run_shuffled_relation"
     ),
+    ConfirmatoryCondition.G3_RECURRENT: (
+        "sparkbrain.baselines.v06.g3_recurrent.run_condition"
+    ),
+    ConfirmatoryCondition.G4_ASSEMBLY: (
+        "sparkbrain.baselines.v06.g4_assembly.run_condition"
+    ),
+    ConfirmatoryCondition.G5_TYPED: (
+        "sparkbrain.baselines.v06.g5_typed.run_condition"
+    ),
 }
 
 
-def test_qualification_marks_primary_and_four_controls_ready() -> None:
+def test_qualification_marks_all_eight_adapters_ready() -> None:
     manifest = build_current_confirmatory_manifest(
         ConfirmatoryPhase.QUALIFICATION
     )
@@ -53,18 +56,16 @@ def test_qualification_marks_primary_and_four_controls_ready() -> None:
         assert row.adapter_path == _EXPECTED_PATHS[condition]
 
 
-def test_qualification_manifest_remains_fail_closed_and_unfrozen() -> None:
+def test_qualification_manifest_is_adapter_complete_but_unfrozen() -> None:
     manifest = build_current_confirmatory_manifest(
         ConfirmatoryPhase.QUALIFICATION
     )
     readiness = assess_confirmatory_readiness(manifest)
     assert readiness.ready is False
     assert readiness.code_ref_frozen is False
-    assert set(readiness.unavailable_adapters) == {
-        "g3-recurrent",
-        "g4-assembly-conditioned",
-        "g5-typed-functional-heads",
-    }
+    assert readiness.adapter_isolation_complete is True
+    assert readiness.engineering_evidence_complete is True
+    assert readiness.unavailable_adapters == ()
 
 
 def test_confirmatory_manifest_does_not_reuse_qualification_readiness() -> None:
