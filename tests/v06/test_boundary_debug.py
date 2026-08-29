@@ -3,7 +3,7 @@ from sparkbrain.evaluation.v06_boundary_probe import run_canonical_boundary_suit
 
 def test_boundary_probe_diagnostic() -> None:
     suite = run_canonical_boundary_suite()
-    assert False, {
+    details = {
         "assessment": suite.assessment.state_dict(),
         "sham": {
             "main_boundary": suite.sham.main_boundary_count,
@@ -35,3 +35,4 @@ def test_boundary_probe_diagnostic() -> None:
             "link_count": suite.assessment.internal_only_link_count,
         },
     }
+    raise AssertionError(details)
