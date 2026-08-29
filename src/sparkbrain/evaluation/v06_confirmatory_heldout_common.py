@@ -12,6 +12,17 @@ from .v06_confirmatory_heldout_spec import HeldoutWorldParameters
 from .v06_confirmatory_resources import ConditionResourceRecord
 
 
+def result_record_state(row: ConfirmatoryResultRecord) -> dict[str, Any]:
+    return {
+        "condition": row.condition.value,
+        "evidence_domain": row.evidence_domain.value,
+        "family_id": row.family_id,
+        "metrics": dict(row.metrics),
+        "passed": row.passed,
+        "seed": row.seed,
+    }
+
+
 @dataclass(frozen=True, slots=True)
 class HeldoutConditionExecution:
     """One condition's complete result/resource payload for one held-out world.
@@ -58,7 +69,7 @@ class HeldoutConditionExecution:
             "condition": self.condition.value,
             "family_id": self.family_id,
             "passed_domains": [row.value for row in self.passed_domains],
-            "records": [row.state_dict() for row in self.records],
+            "records": [result_record_state(row) for row in self.records],
             "resource": self.resource.state_dict(),
             "seed": self.seed,
             "semantic_hash": self.semantic_hash,
