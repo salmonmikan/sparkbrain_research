@@ -67,5 +67,59 @@ current through normal Field rules. It does not reset all Field, memory, or tran
 ## D-V06-0012 — Forward completion remains unclaimed
 
 Reality correction is a prerequisite but not proof of forward continuation or missing-middle
-completion. Primary completion will require a correct endogenous event before the later external
-cue, with retrospective reconstruction reported separately.
+completion. A missing-middle success still requires a correct endogenous event before the later
+external cue, with retrospective reconstruction reported separately.
+
+## D-V06-0013 — Missing-middle is a validity assay, not the v0.6 definition
+
+Protocol Amendment 001 moves missing-middle from the centre of the programme to one controlled test
+of endogenous validity. Passing `A B [C omitted] D` is insufficient to establish the broader
+SparkBrain result because a conventional transition predictor can solve that task.
+
+## D-V06-0014 — The Primary target is a functionally relational endogenous Spark
+
+The central target is an internally originated Spark that is not a direct copy of current input,
+causally changes later internal Dynamics, prediction, action, or memory, forms stable relations with
+later external consequences, and remains externally correctable.
+
+## D-V06-0015 — Meaning is not stored as an attribute
+
+The runtime must not attach a human-readable meaning value to a Spark. A candidate functional
+meaning is discussed only as a relation pattern among endogenous activity, later internal events,
+predictions, actions, memory changes, external consequences, and corrections.
+
+## D-V06-0016 — Endogenous evidence levels are reported separately
+
+The project distinguishes:
+
+```text
+Level 1  endogenous origin
+Level 2  predictive validity
+Level 3  stable causal functional relation
+```
+
+Level 1 must not be reported as Level 2, and Level 2 must not be reported as Level 3.
+
+## D-V06-0017 — Non-copy and state dependence precede missing-middle science
+
+The next confirmatory worlds first exclude direct-copy, fixed-delay echo, pending-queue, random, and
+evaluator-target explanations. They also compare the same current input under different persistent
+Field histories before evaluating missing-middle.
+
+## D-V06-0018 — Causal participation is measured before post-hoc interpretation
+
+The Primary intervention targets the endogenous event or responsible dynamic path. Only after the
+functional effect is measured may an observer describe overlap with a recurring trajectory or
+Assembly. An Assembly ID is not the Primary causal target.
+
+## D-V06-0019 — Physical identity is not required for a functional-relation candidate
+
+Physically different unit trajectories may be compared as functional-equivalence candidates only if
+they have matched causal relations across prediction, action, memory, external consequence, and
+correction. Surface or Assembly similarity alone is insufficient.
+
+## D-V06-0020 — The existing V06-00–V06-07 implementation remains valid
+
+Provenance, observer isolation, G0 diagnostics, G1/G2 local transition state, normal-rule
+reinjection, and reality correction are retained. Their purpose is broadened from missing-middle
+completion to the study of Level 1–3 endogenous Spark function.
