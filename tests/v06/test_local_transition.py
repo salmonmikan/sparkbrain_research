@@ -144,10 +144,12 @@ def test_pending_budget_fails_closed_before_partial_registration() -> None:
     )
     first = g2.prepare(pulse("source-1", 100, "unit:1"), origin_state_hash="s" * 64)
     assert len(first) == 1
-    before = ledger.state_hash()
+    ledger_before = ledger.state_hash()
+    g2_before = g2.state_hash()
     with pytest.raises(RuntimeError, match="budget"):
         g2.prepare(pulse("source-2", 200, "unit:1"), origin_state_hash="t" * 64)
-    assert ledger.state_hash() == before
+    assert ledger.state_hash() == ledger_before
+    assert g2.state_hash() == g2_before
 
 
 def test_pending_transition_expires_without_path_adaptation() -> None:
@@ -173,3 +175,20 @@ def test_pending_state_restore_requires_matching_provenance_ledger() -> None:
             g2.state_dict(),
             ledger=ProvenanceLedger(),
         )
+
+
+def test_late_external_event_expires_without_partial_confirmation() -> None:
+    ledger = ProvenanceLedger()
+    g2 = SparseLocalTransitionAdaptation(trained(), ledger)
+    row = g2.prepare(
+        pulse("source", 100, "unit:1"),
+        origin_state_hash="s" * 64,
+    )[0]
+    with pytest.raises(ValueError, match="after eligibility expiry"):
+        g2.resolve_external(
+            row.proposal.proposal_id,
+            pulse("external-late", row.proposal.valid_until_ms + 1, "unit:2"),
+        )
+    assert "external-late" not in ledger.events
+    assert ledger.committed_positive_updates == 0
+    assert g2.state_dict()["paths"] == {}
