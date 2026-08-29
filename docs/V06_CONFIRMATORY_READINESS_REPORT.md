@@ -3,131 +3,82 @@
 ## Current decision
 
 ```text
-qualification execution-ready: false
-confirmatory execution-ready:  false
-PR #10 merge-ready for v0.6 release: false
+qualification adapter-complete:    true
+qualification execution-ready:     false
+confirmatory execution-ready:      false
+PR #10 merge-ready for release:    false
 ```
 
-This is an intentional fail-closed result, not a failed Primary result.
+Qualification remains non-executable through the manifest only because `code_ref` is intentionally
+`UNFROZEN`. The complete matrix has nevertheless been exercised as an engineering test at the branch
+commit recorded by CI.
 
-## Programme order implemented before confirmatory work
+Confirmatory execution remains blocked because none of the eight adapters has passed the five-family
+held-out world contract.
 
-The revised research order has been implemented through:
+## Programme order completed before confirmatory work
+
+The revised order requested after V06-11 has been implemented:
 
 ```text
 V06-12  relation re-entry into later normal-rule Field Dynamics
 V06-13  direct persistence-locus reset/transplant
 V06-14  supporting validity assays
-V06-15  Primary and four required control qualification adapters
+V06-15  complete eight-condition development qualification
 ```
 
 Current engineering findings include:
 
-- relation re-entry changes later normally thresholded Field Dynamics after acquisition, reversal,
-  and reacquisition;
-- demonstrated experience effects transfer with explicit anonymous G1 local-transition state and
-  boundary-consistency state, not with matched Field state alone;
-- forward missing-middle, prefix, branching, omission, and shortcut-control assays exist as supporting
-  diagnostics;
-- the parameterized Primary passes 9/9 development worlds and 81/81 evidence-domain records;
-- four non-comparator controls satisfy their expected positive and negative patterns over 36/36
-  development control worlds and 324/324 complete evidence records.
+- learned anonymous relation state re-enters and changes later normally thresholded Field Dynamics;
+- reversal and reacquisition change that later Dynamics;
+- demonstrated experience effects follow explicit anonymous G1 local-transition state and boundary-
+  consistency state, not matched Field state alone;
+- forward missing-middle, prefix, branching, omission, retrospective, and shortcut-control assays
+  exist as supporting diagnostics;
+- Primary and all required controls/comparators now implement one normalized nine-domain interface;
+- strict scoring enforces null, intervention-selectivity, taxonomy, self-confirmation, and control-
+  contract thresholds.
 
-None of these are the frozen 5 × 10 held-out confirmatory execution.
+None of this is the frozen 5 × 10 held-out confirmatory execution.
 
-## Confirmatory software contract
-
-`src/sparkbrain/evaluation/v06_confirmatory.py` defines:
-
-- qualification and confirmatory phases;
-- required world-family and seed counts;
-- all Primary/control/comparator conditions;
-- nine required evidence domains;
-- frozen thresholds and exclusions;
-- immutable manifest hashing;
-- full family × seed × condition × evidence coverage checks;
-- duplicate, missing, and unexpected result rejection;
-- Primary/comparator interpretation rules;
-- explicit comparator-only negative interpretation;
-- full Git-SHA freeze requirement.
-
-## World and seed shape
-
-### Qualification
+## Complete development qualification matrix
 
 ```text
-3 development world families × 3 perturbation seeds
+3 world families × 3 seeds × 8 conditions × 9 evidence domains
+= 648 / 648 complete unique records
 ```
 
-Families:
-
-- identifier permutation;
-- temporal perturbation;
-- Field threshold/magnitude perturbation.
-
-### Confirmatory
+Condition coverage:
 
 ```text
-5 held-out world families × 10 perturbation seeds
+Primary:                  81 records
+no-endogenous:            81 records
+random endogenous matched:81 records
+readout-only:             81 records
+shuffled relation:        81 records
+G3 recurrent:             81 records
+G4 explicit Assembly:     81 records
+G5 typed functional heads:81 records
 ```
 
-Held-out family contracts:
+The complete matrix and deterministic replay passed on Python 3.11 and 3.13.
 
-- sparse identity/topology permutation;
-- lag dispersion;
-- threshold/magnitude bands;
-- branch competition;
-- contingency cycles.
-
-## Required condition matrix
-
-All eight conditions must emit one record for every required evidence domain:
-
-1. Primary G0/G1/G2 route;
-2. no-endogenous generation;
-3. count/time/current/energy-matched random endogenous events;
-4. readout-only without Field reinjection;
-5. shuffled anonymous relation state;
-6. G3 generic recurrent comparator;
-7. G4 explicit Assembly-conditioned comparator;
-8. G5 typed functional-head comparator.
-
-Qualification requires:
+## Strict engineering score
 
 ```text
-3 × 3 × 8 × 9 = 648 records
+Primary overall success fraction:        1.00
+Primary minimum family fraction:         1.00
+null false-positive fraction:            0.00
+minimum targeted-minus-matched effect:   1.00
+taxonomy hash match fraction:            1.00
+self-confirmation violations:               0
+control contract fraction:               1.00
 ```
 
-Current normalized qualification coverage:
+The strict scorer rejects Primary raw success if any control or safety gate fails. Missing or
+inconsistent metrics also block scoring.
 
-```text
-Primary:          9 worlds × 9 domains =  81 records
-four controls:   36 worlds × 9 domains = 324 records
-current total:                            405 records
-missing G3–G5:   27 worlds × 9 domains = 243 records
-```
-
-Confirmatory requires:
-
-```text
-5 × 10 × 8 × 9 = 3,600 fresh records
-```
-
-A missing, duplicate, or unexpected record blocks scoring.
-
-## Adapters currently accepted by the manifest
-
-The current fail-closed manifest marks the following adapters ready:
-
-- `sparkbrain.evaluation.v06_confirmatory_primary_adapter.run_condition`;
-- `sparkbrain.evaluation.v06_confirmatory_controls.run_no_endogenous`;
-- `sparkbrain.evaluation.v06_confirmatory_controls.run_random_matched`;
-- `sparkbrain.evaluation.v06_confirmatory_controls.run_readout_only`;
-- `sparkbrain.evaluation.v06_confirmatory_controls.run_shuffled_relation`.
-
-Their shared interface emits all nine evidence-domain records, including explicit negative records.
-
-## Primary qualification result
+## Primary qualification
 
 ```text
 worlds passed:          9 / 9
@@ -135,92 +86,161 @@ records passed:        81 / 81
 deterministic replay:  PASS
 ```
 
-This result spans identifier, timing, and Field-gain perturbations. It preserves rather than hides the
-persistence limitation: local-transition transplant transfers the learned response; local-transition
-reset removes it.
+The result spans identifier permutation, timing perturbation, and Field threshold/magnitude
+perturbation.
 
-## Control qualification result
+The result preserves the persistence limitation:
+
+```text
+local-transition transplant  -> learned endogenous response transfers
+local-transition reset       -> learned endogenous response disappears
+matched Field state alone    -> learned response does not transfer
+
+boundary-consistency transplant -> relation re-entry transfers
+boundary-consistency reset      -> relation re-entry disappears
+```
+
+## Control qualification
 
 ```text
 control worlds contract-complete: 36 / 36
-control result records present:   324 / 324
-self-confirmation violations:       0
-taxonomy hash mismatch:             0
+control records complete:        324 / 324
+self-confirmation violations:      0
+taxonomy mismatch:                 0
 ```
 
-Expected result pattern:
+Expected patterns:
 
-| Condition | Intended positive domains |
+| Condition | Positive evidence allowed in qualification |
 |---|---|
 | no-endogenous | taxonomy non-interference only |
 | random endogenous matched | taxonomy non-interference only |
 | readout-only | taxonomy non-interference only |
-| shuffled relation | early Primary domains plus taxonomy; relation re-entry and persistence must fail |
+| shuffled relation | early Primary domains plus taxonomy; re-entry and persistence fail |
 
-The random condition matches Primary reinjection count, scheduled time, effective current, total
-energy, and generation-depth profile while removing learned sequential parentage.
+The matched-random condition matches Primary proposal count, scheduled time, effective current,
+total energy, and generation-depth profile while removing learned sequential parentage.
 
-## Current blockers
+## Comparator qualification
 
-### 1. G3 generic recurrent comparator
-
-Generic neural/recurrent building blocks exist under `sparkbrain.baselines.neural`, but no reviewed G3
-adapter yet consumes the V06-15 world specification and emits the shared nine-domain result schema.
-
-### 2. G4 explicit Assembly comparator
-
-The v0.5 codebase contains explicit Assembly machinery, but no isolated G4 adapter yet maps it to the
-same world, intervention, relation re-entry, persistence, and result interface.
-
-### 3. G5 typed functional-head comparator
-
-A typed prediction/action/memory/reward-head comparator has not yet been qualified. It must remain
-under `sparkbrain.baselines` and outside the Primary dependency graph.
-
-### 4. Threshold wiring review
-
-The manifest preregisters:
+### G3 — generic recurrent/transition predictor
 
 ```text
-minimum overall success fraction:       0.80
-minimum each-family success fraction:   0.70
-maximum null false-positive fraction:   0.10
-minimum targeted-minus-control effect:  0.50
-required taxonomy hash match fraction:  1.00
-maximum self-confirmation violations:   0
+worlds passed:  9 / 9
+records passed: 81 / 81
 ```
 
-Before freeze, the final scoring path must be reviewed to ensure that null-control false positives,
-selective-effect metrics, taxonomy equality, and self-confirmation counts are enforced rather than
-merely stored in result metadata.
+A much simpler external transition predictor can reproduce the current development evidence. This
+means the qualification worlds do not establish that excitable Field Dynamics are necessary.
 
-### 5. Code and manifest freeze
+### G4 — explicit Assembly-conditioned system
 
-The current manifest still uses:
+```text
+worlds passed:  9 / 9
+records passed: 81 / 81
+```
+
+An isolated comparator with explicit Assembly IDs and Assembly-conditioned rollout/relation state
+also solves the development worlds. Observer-only Assembly is therefore not established as a
+performance requirement.
+
+### G5 — typed functional-head system
+
+```text
+worlds passed:  9 / 9
+records passed: 81 / 81
+```
+
+An isolated system with explicit prediction, action, reward, and memory heads plus privileged scalar
+reward also solves the development worlds.
+
+## Development interpretation
+
+The strict scorer returns:
+
+> Primary and at least one comparator are supported; architectural uniqueness is not established.
+
+All three comparators are supported in the current development grid.
+
+This is not a failure of the Primary implementation. It is a failure of the current development
+worlds to discriminate architectural necessity.
+
+## Manifest state
+
+### Qualification phase
+
+All eight adapter paths are registered and marked qualification-ready. The manifest remains:
 
 ```text
 code_ref = UNFROZEN
 ```
 
-A full lowercase 40-character Git SHA is allowed only after all eight adapters, scoring rules,
-schemas, and exclusions pass qualification review.
+Therefore readiness remains false until a reviewed commit is frozen.
 
-## Interpretation remains fail-closed
+### Confirmatory phase
 
-- Primary passes, comparators fail: Primary supported under frozen scope.
-- Primary and comparators pass: Primary supported; architectural uniqueness is not established.
-- Primary fails, comparator passes: comparator-only success; negative for the Primary hypothesis.
-- all fail: tested capability unsupported.
+Qualification readiness is not reused. All eight adapters remain `adapter_ready = false` for the
+five-family held-out phase until each implements and passes that world contract.
 
-No control or comparator result may be relabelled as Primary success.
+## Confirmatory target
+
+```text
+5 held-out families × 10 seeds × 8 conditions × 9 evidence domains
+= 3,600 fresh records
+```
+
+Held-out family contracts:
+
+1. sparse identity/topology permutation;
+2. lag dispersion;
+3. threshold/magnitude bands;
+4. genuine branch competition;
+5. repeated contingency cycles.
+
+## Remaining blockers
+
+### 1. Held-out world implementation
+
+Current adapters accept only the three qualification families. The five held-out families must be
+implemented for Primary, controls, G3, G4, and G5 without silently reducing them to renamed versions
+of the development worlds.
+
+Branch competition is especially important: it must contain real simultaneous alternatives rather
+than a single deterministic stored chain.
+
+### 2. Comparator fairness and resource accounting
+
+Before freeze, the shared report must include at least:
+
+- observed training events;
+- generated internal events;
+- persistent state size;
+- intervention count;
+- wall-clock time;
+- condition-specific privileged information;
+- whether normal Field thresholds are present or bypassed.
+
+G5's scalar reward and typed heads must remain explicit rather than being hidden as ordinary
+external events.
+
+### 3. Code and manifest freeze
+
+After held-out adapter qualification:
+
+- freeze a full lowercase 40-character Git SHA;
+- freeze the manifest hash;
+- freeze thresholds and exclusions;
+- freeze result/artifact schemas;
+- prohibit post-outcome threshold or world changes.
+
+### 4. Fresh held-out execution
+
+The 3,600-record matrix must be generated after freeze. Development/qualification records cannot be
+relabelled as held-out evidence.
 
 ## Persistence limitation carried into confirmatory work
 
-The direct reset/transplant suite indicates that demonstrated experience effects follow explicit
-anonymous G1 local-transition state and anonymous boundary-consistency state. Matched Field state
-alone does not transfer them.
-
-The current system is therefore best described as:
+The current architecture is best described as:
 
 ```text
 Dynamic Field
@@ -229,20 +249,30 @@ Dynamic Field
 + normal-rule reinjection and boundary coupling
 ```
 
-Qualification and confirmatory work must test this architecture as it exists. It must not add a new
-persistent state merely to rescue a distributed-Field interpretation after observing a negative
-result.
+Confirmatory work must test this architecture honestly. It must not add a new persistent mechanism
+merely to rescue a distributed-Field interpretation after the direct reset/transplant result.
+
+## Interpretation remains fail-closed
+
+- Primary passes, comparators fail: Primary supported under the frozen scope.
+- Primary and comparators pass: Primary capability supported; architectural uniqueness not
+  established.
+- Primary fails, comparator passes: comparator-only success; negative for the Primary hypothesis.
+- all fail: tested capability unsupported.
+- Primary raw success with any null/safety/control failure: Primary support rejected.
+
+No control or comparator result may be relabelled as Primary success.
 
 ## Next implementation work
 
-1. enforce every frozen threshold in the scoring path;
-2. implement and qualify isolated G3, G4, and G5 adapters;
-3. complete and review the 648-record qualification matrix;
-4. freeze code SHA, manifest hash, thresholds, exclusions, and artifact schema;
-5. execute the fresh 5 × 10 × 8 × 9 held-out matrix;
-6. preserve all negative results, strongest counterexamples, and comparator interpretations;
-7. proceed to V06-16 only after the complete matrix and final taxonomy audit.
+1. implement a common five-family held-out world specification;
+2. adapt all eight conditions without tuning against held-out outcomes;
+3. qualify the held-out adapter contract and resource accounting;
+4. freeze code SHA, manifest, thresholds, exclusions, and schemas;
+5. execute the fresh 3,600-record matrix;
+6. preserve all negative results and strongest counterexamples;
+7. proceed to V06-16 Brain Lab/audit/release only after the complete result review.
 
 ## Release boundary
 
-`main` must remain unchanged and PR #10 must remain Draft while readiness is false.
+`main` remains unchanged and PR #10 remains Draft while confirmatory readiness is false.
