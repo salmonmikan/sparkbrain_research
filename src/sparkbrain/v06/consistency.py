@@ -5,7 +5,13 @@ from dataclasses import asdict, dataclass
 from typing import Any, Literal
 
 from .boundary import BoundaryEvent
-from .foundation import EventOrigin, ProvenanceLedger, RuntimePulse, digest, validate_runtime_mapping
+from .foundation import (
+    EventOrigin,
+    ProvenanceLedger,
+    RuntimePulse,
+    digest,
+    validate_runtime_mapping,
+)
 
 
 @dataclass(frozen=True, slots=True)
