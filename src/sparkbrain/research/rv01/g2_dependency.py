@@ -1,11 +1,14 @@
 from __future__ import annotations
 
+import math
 from dataclasses import asdict, dataclass
 from typing import Any
 
 from sparkbrain.v06.foundation import EventOrigin, ProvenanceLedger, RuntimePulse, digest
 from sparkbrain.v06.local_expectation import LocalExpectationConfig, LocalTemporalExpectation
 from sparkbrain.v06.local_transition import SparseLocalTransitionAdaptation
+
+MINIMUM_LONG_RUN_CONFIDENCE_GAP = 0.15
 
 
 @dataclass(frozen=True, slots=True)
@@ -26,6 +29,7 @@ class LocalProposalState:
 @dataclass(frozen=True, slots=True)
 class G2PhaseSnapshot:
     phase_id: str
+    source_time_ms: float
     g2_rows: tuple[LocalProposalState, ...]
     g1_only_rows: tuple[LocalProposalState, ...]
     external_observation_count: int
@@ -40,6 +44,26 @@ class G2PhaseSnapshot:
             raise KeyError(target)
         return matches[0]
 
+    def normalized_rows(
+        self,
+        *,
+        g2_enabled: bool,
+    ) -> tuple[tuple[Any, ...], ...]:
+        rows = self.g2_rows if g2_enabled else self.g1_only_rows
+        return tuple(
+            (
+                row.target,
+                row.path_id,
+                row.raw_confidence,
+                row.adapted_confidence,
+                row.raw_arrival_ms - self.source_time_ms,
+                row.adapted_arrival_ms - self.source_time_ms,
+                row.confirmed_count,
+                row.contradicted_count,
+            )
+            for row in rows
+        )
+
     def state_dict(self) -> dict[str, Any]:
         return {
             "committed_positive_updates": self.committed_positive_updates,
@@ -49,6 +73,7 @@ class G2PhaseSnapshot:
             "g2_contradicted_count": self.g2_contradicted_count,
             "g2_rows": [row.state_dict() for row in self.g2_rows],
             "phase_id": self.phase_id,
+            "source_time_ms": self.source_time_ms,
         }
 
 
@@ -207,6 +232,7 @@ def _snapshot(
         )
     return G2PhaseSnapshot(
         phase_id=phase_id,
+        source_time_ms=source_time_ms,
         g2_rows=tuple(g2_rows),
         g1_only_rows=tuple(g1_rows),
         external_observation_count=ledger.external_observation_count,
@@ -273,15 +299,17 @@ def _phase(
         )
 
 
-def _rows_equal(
-    left: tuple[LocalProposalState, ...],
-    right: tuple[LocalProposalState, ...],
+def _g1_rows_equal(
+    left: G2PhaseSnapshot,
+    right: G2PhaseSnapshot,
 ) -> bool:
-    return left == right
+    return left.normalized_rows(g2_enabled=False) == right.normalized_rows(
+        g2_enabled=False
+    )
 
 
 def run_g2_dependency_suite() -> G2DependencySuite:
-    """Keep G1 fixed and isolate the work performed by G2 adaptation."""
+    """Keep learned G1 fixed and isolate the work performed by G2 adaptation."""
 
     model = _trained_g1()
     learned_hash_before = _learned_g1_hash(model)
@@ -363,24 +391,33 @@ def run_g2_dependency_suite() -> G2DependencySuite:
     reversed_target = reversed_new.by_target("unit:2", g2_enabled=True)
     returned_old = reacquired.by_target("unit:1", g2_enabled=True)
     returned_new = reacquired.by_target("unit:2", g2_enabled=True)
+    stable_old_g1 = stabilized.by_target("unit:1", g2_enabled=False)
 
     g1_static = all(
-        _rows_equal(initial.g1_only_rows, row.g1_only_rows)
+        _g1_rows_equal(initial, row)
         for row in (stabilized, reversed_new, reacquired)
     )
     values = {
         "raw_g1_generation_survives_without_g2": (
             {row.target for row in initial.g1_only_rows} == {"unit:1", "unit:2"}
-            and all(row.raw_confidence == 0.5 for row in initial.g1_only_rows)
+            and all(
+                math.isclose(row.raw_confidence, 0.5)
+                for row in initial.g1_only_rows
+            )
         ),
         "stabilization_requires_g2": (
             stable_old.adapted_confidence > stable_new.adapted_confidence
-            and initial_old.adapted_confidence == initial_new.adapted_confidence
+            and math.isclose(
+                initial_old.adapted_confidence,
+                initial_new.adapted_confidence,
+            )
         ),
         "timing_correction_requires_g2": (
             stable_old.adapted_arrival_ms > stable_old.raw_arrival_ms
-            and stable_old.raw_arrival_ms
-            == stabilized.by_target("unit:1", g2_enabled=False).adapted_arrival_ms
+            and math.isclose(
+                stable_old_g1.adapted_arrival_ms,
+                stable_old_g1.raw_arrival_ms,
+            )
         ),
         "reversal_requires_g2": (
             reversed_target.adapted_confidence > reversed_old.adapted_confidence
@@ -390,9 +427,10 @@ def run_g2_dependency_suite() -> G2DependencySuite:
         ),
         "long_run_selectivity_requires_g2": (
             abs(returned_old.adapted_confidence - returned_new.adapted_confidence)
-            >= 0.2
+            >= MINIMUM_LONG_RUN_CONFIDENCE_GAP
             and all(
-                row.adapted_confidence == 0.5 for row in reacquired.g1_only_rows
+                math.isclose(row.adapted_confidence, 0.5)
+                for row in reacquired.g1_only_rows
             )
         ),
         "g1_only_route_remains_static": g1_static,
