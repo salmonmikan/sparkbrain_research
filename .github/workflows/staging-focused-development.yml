@@ -1,0 +1,37 @@
+name: staging-focused-development
+
+on:
+  push:
+    branches: ["v06-capability-staging-20260830"]
+    paths:
+      - ".github/workflows/staging-focused-development.yml"
+      - "src/sparkbrain/evaluation/v06_confirmatory_heldout_common.py"
+      - "src/sparkbrain/evaluation/v06_confirmatory_heldout_primary.py"
+      - "src/sparkbrain/evaluation/v06_confirmatory_heldout_controls.py"
+      - "src/sparkbrain/evaluation/v06_confirmatory_heldout_comparators.py"
+      - "tests/v06/test_capability_staging_development_fixture.py"
+
+permissions:
+  contents: read
+
+jobs:
+  development-only:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install core development dependencies
+        run: python -m pip install -e ".[dev]"
+      - name: Lint staging sources
+        run: >-
+          python -m ruff check
+          src/sparkbrain/evaluation/v06_confirmatory_heldout_common.py
+          src/sparkbrain/evaluation/v06_confirmatory_heldout_primary.py
+          src/sparkbrain/evaluation/v06_confirmatory_heldout_controls.py
+          src/sparkbrain/evaluation/v06_confirmatory_heldout_comparators.py
+          tests/v06/test_capability_staging_development_fixture.py
+      - name: Execute development-only adapter fixture
+        run: python -m pytest -q tests/v06/test_capability_staging_development_fixture.py
