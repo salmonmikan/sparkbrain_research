@@ -28,6 +28,11 @@ from .g2_dependency import (
     G2DependencySuite,
     run_g2_dependency_suite,
 )
+from .physical_continuation import (
+    PhysicalContinuationAssessment,
+    PhysicalContinuationSuite,
+    run_physical_continuation_suite,
+)
 
 __all__ = [
     "FROZEN_V06_CODE_SHA",
@@ -42,10 +47,13 @@ __all__ = [
     "G2DependencyAssessment",
     "G2DependencySuite",
     "PhysicalConnectionUpdate",
+    "PhysicalContinuationAssessment",
+    "PhysicalContinuationSuite",
     "UnitExternalTrace",
     "run_direct_plasticity_suite",
     "run_frozen_v06_baseline",
     "run_g1_dependency_suite",
     "run_g2_dependency_suite",
+    "run_physical_continuation_suite",
     "verify_frozen_runtime_fingerprints",
 ]
