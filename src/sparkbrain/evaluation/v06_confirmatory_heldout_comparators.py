@@ -21,6 +21,9 @@ from .v06_confirmatory_resources import (
     ConditionResourceRecord,
     PrivilegedInformation,
 )
+from .v06_confirmatory_training_schedule import (
+    build_balanced_training_schedule,
+)
 
 
 def _unit(unit_id: int) -> str:
@@ -483,11 +486,17 @@ def _train_paths(
     parameters: HeldoutWorldParameters,
     paths: tuple[tuple[int, int, int, int], ...],
 ) -> None:
-    for path in dict.fromkeys(paths):
+    path_rows = tuple(dict.fromkeys(paths))
+    schedule = build_balanced_training_schedule(
+        tuple(_exposure_count(parameters, path) for path in path_rows),
+        lag_profile_count=len(parameters.training_lag_profiles_ms),
+    )
+    for episode in schedule.episodes:
+        path = path_rows[episode.path_index]
         facade.observe_path(
             _context("sequence", path),
             path,
-            _exposure_count(parameters, path),
+            1,
         )
 
 

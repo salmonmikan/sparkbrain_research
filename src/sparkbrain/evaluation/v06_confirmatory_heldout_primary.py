@@ -56,6 +56,9 @@ from .v06_confirmatory_heldout_common import (
 )
 from .v06_confirmatory_heldout_spec import HeldoutWorldParameters
 from .v06_confirmatory_resources import ConditionResourceRecord
+from .v06_confirmatory_training_schedule import (
+    build_balanced_training_schedule,
+)
 
 
 @dataclass(frozen=True, slots=True)
@@ -159,27 +162,38 @@ def _train_expectation(
     paths: Iterable[tuple[int, int, int, int]],
 ) -> LocalTemporalExpectation:
     model = LocalTemporalExpectation(_expectation_config(parameters))
-    exposures = _path_exposures(parameters, paths)
-    for path_index, (path, count) in enumerate(sorted(exposures.items())):
-        for episode in range(count):
-            profile = parameters.training_lag_profiles_ms[
-                episode % len(parameters.training_lag_profiles_ms)
-            ]
-            start = float(path_index * 10000 + episode * 100)
-            times = [start]
-            for lag in profile:
-                times.append(times[-1] + lag)
-            pulses = tuple(
-                _pulse(
-                    parameters,
-                    f"train:{path_index}:{episode}:{index}",
-                    times[index],
-                    unit_id,
-                )
-                for index, unit_id in enumerate(path)
+    path_rows = tuple(dict.fromkeys(paths))
+    if not path_rows:
+        return model
+    exposures = _path_exposures(parameters, path_rows)
+    schedule = build_balanced_training_schedule(
+        tuple(exposures[path] for path in path_rows),
+        lag_profile_count=len(parameters.training_lag_profiles_ms),
+    )
+    for episode in schedule.episodes:
+        path = path_rows[episode.path_index]
+        profile = parameters.training_lag_profiles_ms[
+            episode.lag_profile_index
+        ]
+        start = float(episode.episode_index * 100)
+        times = [start]
+        for lag in profile:
+            times.append(times[-1] + lag)
+        pulses = tuple(
+            _pulse(
+                parameters,
+                (
+                    f"train:{episode.episode_index}:"
+                    f"{episode.path_index}:"
+                    f"{episode.exposure_index}:{index}"
+                ),
+                times[index],
+                unit_id,
             )
-            for source, target in zip(pulses, pulses[1:], strict=False):
-                model.observe_external_transition(source, target)
+            for index, unit_id in enumerate(path)
+        )
+        for source, target in zip(pulses, pulses[1:], strict=False):
+            model.observe_external_transition(source, target)
     return model
 
 
