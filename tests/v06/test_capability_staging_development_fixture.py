@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import ast
 import hashlib
 import json
 import math
@@ -274,9 +275,25 @@ def test_semantic_replay_is_deterministic_for_all_eight_adapters(
 
 
 def test_development_fixture_test_imports_no_candidate_world_builder() -> None:
-    source = Path(__file__).read_text(encoding="utf-8")
-    assert "v06_confirmatory_heldout_spec" not in source
-    assert "heldout_world_parameters" not in source
-    assert "build_heldout_world_grid" not in source
-    assert "HELDOUT_SEEDS" not in source
-    assert "WORLD_GENERATION_ID" not in source
+    tree = ast.parse(Path(__file__).read_text(encoding="utf-8"))
+    imported_modules = {
+        node.module or ""
+        for node in ast.walk(tree)
+        if isinstance(node, ast.ImportFrom)
+    }
+    imported_names = {
+        alias.name
+        for node in ast.walk(tree)
+        if isinstance(node, ast.ImportFrom)
+        for alias in node.names
+    }
+    assert not any(
+        module.endswith("v06_confirmatory_heldout_spec")
+        for module in imported_modules
+    )
+    assert {
+        "HELDOUT_SEEDS",
+        "WORLD_GENERATION_ID",
+        "build_heldout_world_grid",
+        "heldout_world_parameters",
+    }.isdisjoint(imported_names)
