@@ -6,7 +6,12 @@ from .v06_confirmatory import (
     ConfirmatoryCondition,
     ConfirmatoryManifest,
     ConfirmatoryPhase,
+    PerturbationSeedSpec,
     build_draft_confirmatory_manifest,
+)
+from .v06_confirmatory_heldout_spec import (
+    HELDOUT_SEEDS,
+    WORLD_GENERATION_ID,
 )
 
 _QUALIFIED_ADAPTERS = {
@@ -74,9 +79,19 @@ def _heldout_registration(row):
         isolated_from_primary=True,
         engineering_evidence_available=True,
         notes=(
-            f"{notes} The adapter has not yet passed the five-family held-out world "
-            "parameter contract and is therefore not confirmatory-ready."
+            f"{notes} This development adapter has not passed the fresh "
+            f"{WORLD_GENERATION_ID} capability contract and remains confirmatory-sealed."
         ),
+    )
+
+
+def _fresh_confirmatory_seed_specs() -> tuple[PerturbationSeedSpec, ...]:
+    return tuple(
+        PerturbationSeedSpec(
+            seed=seed,
+            structural_token=f"{WORLD_GENERATION_ID}:{seed}",
+        )
+        for seed in HELDOUT_SEEDS
     )
 
 
@@ -85,12 +100,11 @@ def build_current_confirmatory_manifest(
     *,
     code_ref: str = "UNFROZEN",
 ) -> ConfirmatoryManifest:
-    """Build the current phase-specific fail-closed manifest.
+    """Build the phase-specific fail-closed manifest.
 
-    All eight adapters are ready only for the 3x3 qualification phase. No
-    adapter is yet marked ready for the five-family held-out confirmatory phase.
-    A qualification manifest remains non-executable while ``code_ref`` is
-    ``UNFROZEN``.
+    All eight adapters are ready only for development qualification. The
+    confirmatory manifest points at the fresh candidate generation but leaves
+    every real capability adapter unready and the code reference unfrozen.
     """
 
     base = build_draft_confirmatory_manifest(phase, code_ref=code_ref)
@@ -100,4 +114,18 @@ def build_current_confirmatory_manifest(
         else _heldout_registration(row)
         for row in base.conditions
     )
-    return replace(base, conditions=conditions)
+    if phase is ConfirmatoryPhase.QUALIFICATION:
+        return replace(base, conditions=conditions)
+    return replace(
+        base,
+        protocol_version="v06-amendment-005-candidate-2",
+        seeds=_fresh_confirmatory_seed_specs(),
+        conditions=conditions,
+        exclusions=(
+            *base.exclusions,
+            "Quarantined 100-series capability observations are development-only.",
+            "Only the fresh candidate-002 world generation may enter the next freeze.",
+            "Schema/preflight readiness cannot set a capability adapter ready.",
+            "No capability entrypoint may run before an execution seal is issued.",
+        ),
+    )
