@@ -732,7 +732,7 @@ def run_condition(
         + relation_model.parameter_count(),
         wall_clock_ms=(time.perf_counter() - started) * 1000.0,
         normal_field_threshold_present=False,
-        ordinary_field_threshold_crossings=0,
+        normal_field_threshold_crossings=0,
         threshold_bypassed=True,
         explicit_assembly_entries=max(
             chain_model.assembly_entries(),

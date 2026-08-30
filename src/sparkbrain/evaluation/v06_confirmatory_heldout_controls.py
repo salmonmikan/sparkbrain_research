@@ -205,7 +205,7 @@ def run_no_endogenous(
         parameter_count=parameters.unit_count * 3 + _leaf_count(state),
         wall_clock_ms=(time.perf_counter() - started) * 1000.0,
         normal_field_threshold_present=True,
-        ordinary_field_threshold_crossings=generated,
+        normal_field_threshold_crossings=generated,
         threshold_bypassed=False,
         explicit_assembly_entries=0,
         typed_head_count=0,
@@ -313,7 +313,7 @@ def run_readout_only(
         parameter_count=_leaf_count(state),
         wall_clock_ms=(time.perf_counter() - started) * 1000.0,
         normal_field_threshold_present=True,
-        ordinary_field_threshold_crossings=0,
+        normal_field_threshold_crossings=0,
         threshold_bypassed=False,
         explicit_assembly_entries=0,
         typed_head_count=0,
@@ -501,7 +501,7 @@ def run_random_matched(
         parameter_count=parameters.unit_count * 3 + _leaf_count(state),
         wall_clock_ms=(time.perf_counter() - started) * 1000.0,
         normal_field_threshold_present=True,
-        ordinary_field_threshold_crossings=len(random_spikes),
+        normal_field_threshold_crossings=len(random_spikes),
         threshold_bypassed=False,
         explicit_assembly_entries=0,
         typed_head_count=0,
@@ -598,8 +598,8 @@ def run_shuffled_relation(
         parameter_count=primary.resource.parameter_count,
         wall_clock_ms=(time.perf_counter() - started) * 1000.0,
         normal_field_threshold_present=True,
-        ordinary_field_threshold_crossings=(
-            primary.resource.ordinary_field_threshold_crossings
+        normal_field_threshold_crossings=(
+            primary.resource.normal_field_threshold_crossings
             + sum(len(response) for response in responses)
         ),
         threshold_bypassed=False,

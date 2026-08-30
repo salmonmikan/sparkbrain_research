@@ -1117,7 +1117,7 @@ def run_condition(
         parameter_count=parameters.unit_count * 3 + _leaf_count(persistent_state),
         wall_clock_ms=(time.perf_counter() - started) * 1000.0,
         normal_field_threshold_present=True,
-        ordinary_field_threshold_crossings=generated_count,
+        normal_field_threshold_crossings=generated_count,
         threshold_bypassed=False,
         explicit_assembly_entries=0,
         typed_head_count=0,
