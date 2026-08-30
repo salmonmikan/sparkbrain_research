@@ -1,0 +1,173 @@
+name: staging-shared-schedule-fix
+
+on:
+  push:
+    branches: ["v06-capability-staging-20260830"]
+    paths: [".github/workflows/staging-shared-schedule-fix.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v06-capability-staging-20260830
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Integrate one balanced schedule across Primary and comparators
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          primary = Path("src/sparkbrain/evaluation/v06_confirmatory_heldout_primary.py")
+          source = primary.read_text(encoding="utf-8")
+          import_anchor = "from .v06_confirmatory_heldout_spec import HeldoutWorldParameters\n"
+          import_row = (
+              import_anchor
+              + "from .v06_confirmatory_training_schedule import (\n"
+              + "    build_balanced_training_schedule,\n"
+              + ")\n"
+          )
+          if source.count(import_anchor) != 1:
+              raise SystemExit("unexpected Primary schedule import anchor")
+          source = source.replace(import_anchor, import_row)
+          old = '''def _train_expectation(
+              parameters: HeldoutWorldParameters,
+              paths: Iterable[tuple[int, int, int, int]],
+          ) -> LocalTemporalExpectation:
+              model = LocalTemporalExpectation(_expectation_config(parameters))
+              exposures = _path_exposures(parameters, paths)
+              for path_index, (path, count) in enumerate(sorted(exposures.items())):
+                  for episode in range(count):
+                      profile = parameters.training_lag_profiles_ms[
+                          episode % len(parameters.training_lag_profiles_ms)
+                      ]
+                      start = float(path_index * 10000 + episode * 100)
+                      times = [start]
+                      for lag in profile:
+                          times.append(times[-1] + lag)
+                      pulses = tuple(
+                          _pulse(
+                              parameters,
+                              f"train:{path_index}:{episode}:{index}",
+                              times[index],
+                              unit_id,
+                          )
+                          for index, unit_id in enumerate(path)
+                      )
+                      for source, target in zip(pulses, pulses[1:], strict=False):
+                          model.observe_external_transition(source, target)
+              return model
+          '''
+          new = '''def _train_expectation(
+              parameters: HeldoutWorldParameters,
+              paths: Iterable[tuple[int, int, int, int]],
+          ) -> LocalTemporalExpectation:
+              model = LocalTemporalExpectation(_expectation_config(parameters))
+              path_rows = tuple(dict.fromkeys(paths))
+              if not path_rows:
+                  return model
+              exposures = _path_exposures(parameters, path_rows)
+              schedule = build_balanced_training_schedule(
+                  tuple(exposures[path] for path in path_rows),
+                  lag_profile_count=len(parameters.training_lag_profiles_ms),
+              )
+              for episode in schedule.episodes:
+                  path = path_rows[episode.path_index]
+                  profile = parameters.training_lag_profiles_ms[
+                      episode.lag_profile_index
+                  ]
+                  start = float(episode.episode_index * 100)
+                  times = [start]
+                  for lag in profile:
+                      times.append(times[-1] + lag)
+                  pulses = tuple(
+                      _pulse(
+                          parameters,
+                          (
+                              f"train:{episode.episode_index}:"
+                              f"{episode.path_index}:"
+                              f"{episode.exposure_index}:{index}"
+                          ),
+                          times[index],
+                          unit_id,
+                      )
+                      for index, unit_id in enumerate(path)
+                  )
+                  for source, target in zip(pulses, pulses[1:], strict=False):
+                      model.observe_external_transition(source, target)
+              return model
+          '''
+          if source.count(old) != 1:
+              raise SystemExit(f"unexpected Primary training block: {source.count(old)}")
+          primary.write_text(source.replace(old, new), encoding="utf-8")
+
+          comparator = Path(
+              "src/sparkbrain/evaluation/v06_confirmatory_heldout_comparators.py"
+          )
+          source = comparator.read_text(encoding="utf-8")
+          import_anchor = "from .v06_confirmatory_heldout_spec import HeldoutWorldParameters\n"
+          import_row = (
+              import_anchor
+              + "from .v06_confirmatory_training_schedule import (\n"
+              + "    build_balanced_training_schedule,\n"
+              + ")\n"
+          )
+          if source.count(import_anchor) != 1:
+              raise SystemExit("unexpected comparator schedule import anchor")
+          source = source.replace(import_anchor, import_row)
+          old = '''def _train_paths(
+              facade: _Facade,
+              parameters: HeldoutWorldParameters,
+              paths: tuple[tuple[int, int, int, int], ...],
+          ) -> None:
+              for path in dict.fromkeys(paths):
+                  facade.observe_path(
+                      _context("sequence", path),
+                      path,
+                      _exposure_count(parameters, path),
+                  )
+          '''
+          new = '''def _train_paths(
+              facade: _Facade,
+              parameters: HeldoutWorldParameters,
+              paths: tuple[tuple[int, int, int, int], ...],
+          ) -> None:
+              path_rows = tuple(dict.fromkeys(paths))
+              schedule = build_balanced_training_schedule(
+                  tuple(_exposure_count(parameters, path) for path in path_rows),
+                  lag_profile_count=len(parameters.training_lag_profiles_ms),
+              )
+              for episode in schedule.episodes:
+                  path = path_rows[episode.path_index]
+                  facade.observe_path(
+                      _context("sequence", path),
+                      path,
+                      1,
+                  )
+          '''
+          if source.count(old) != 1:
+              raise SystemExit(f"unexpected comparator training block: {source.count(old)}")
+          comparator.write_text(source.replace(old, new), encoding="utf-8")
+          PY
+      - name: Format and verify
+        run: |
+          python -m pip install "ruff>=0.9"
+          python -m ruff check --fix \
+            src/sparkbrain/evaluation/v06_confirmatory_training_schedule.py \
+            src/sparkbrain/evaluation/v06_confirmatory_heldout_primary.py \
+            src/sparkbrain/evaluation/v06_confirmatory_heldout_comparators.py
+      - name: Commit shared schedule integration
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            src/sparkbrain/evaluation/v06_confirmatory_training_schedule.py \
+            src/sparkbrain/evaluation/v06_confirmatory_heldout_primary.py \
+            src/sparkbrain/evaluation/v06_confirmatory_heldout_comparators.py
+          git commit -m "fix(v06): share balanced branch exposure schedule"
+          git push origin HEAD:v06-capability-staging-20260830
