@@ -5,18 +5,23 @@ import json
 from pathlib import Path
 from typing import Any
 
-from sparkbrain.evaluation.v06_confirmatory import (
-    ConfirmatoryCondition,
-    EvidenceDomain,
-)
 from test_capability_staging_development_fixture import (
     DevelopmentCapabilityWorld,
+)
+from test_capability_staging_development_fixture import (
     _run as run_baseline,
 )
 from test_capability_staging_development_variants import (
     DevelopmentVariantWorld,
-    _run as run_variant,
     development_variants,
+)
+from test_capability_staging_development_variants import (
+    _run as run_variant,
+)
+
+from sparkbrain.evaluation.v06_confirmatory import (
+    ConfirmatoryCondition,
+    EvidenceDomain,
 )
 
 
