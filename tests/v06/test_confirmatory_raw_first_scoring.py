@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import inspect
 from dataclasses import replace
 from pathlib import Path
 
@@ -33,6 +34,7 @@ from sparkbrain.evaluation.v06_confirmatory_resources import (
 from sparkbrain.evaluation.v06_confirmatory_score_raw import (
     analysis_contract_hash,
     build_analysis_summary,
+    score_raw_cli,
 )
 from sparkbrain.v06.foundation import digest
 
@@ -178,12 +180,12 @@ def _normalized(raw: ConditionResourceRecord) -> NormalizedConditionResourceReco
         condition=raw.condition,
         accounting_version=RESOURCE_ACCOUNTING_VERSION,
         decision_use=ResourceDecisionUse.DESCRIPTIVE_ONLY,
-        observed_external_events=raw.observed_training_events,
-        logical_generated_events=raw.generated_internal_events,
-        intervention_events=raw.intervention_count,
-        mutable_state_scalar_proxy=raw.parameter_count,
-        persistent_state_entry_proxy=raw.persistent_state_entries,
-        logical_operation_proxy_units=operation_proxy,
+        adapter_observed_training_event_proxy=raw.observed_training_events,
+        adapter_generated_event_proxy=raw.generated_internal_events,
+        adapter_intervention_event_proxy=raw.intervention_count,
+        adapter_mutable_state_scalar_proxy=raw.parameter_count,
+        adapter_persistent_state_entry_proxy=raw.persistent_state_entries,
+        adapter_logical_operation_proxy_units=operation_proxy,
         wall_clock_ns=1_000,
         process_cpu_ns=900,
         peak_traced_memory_bytes=2_000,
@@ -286,6 +288,7 @@ def test_preregistered_analysis_scores_only_verified_complete_raw_records() -> N
     )
     assert summary["resource_accounting"]["affects_capability_result"] is False
     assert summary["resource_accounting"]["decision_use"] == "descriptive-only"
+    assert len(summary["resource_accounting"]["policy_hash"]) == 64
     assert summary["analysis_contract_hash"] == analysis_contract_hash()
 
 
@@ -314,7 +317,8 @@ def test_raw_first_scorer_source_has_no_capability_adapter_or_world_execution() 
     assert "run_registered_condition" not in source
     assert "build_heldout_world_grid" not in source
     assert "v06_confirmatory_heldout_primary" not in source
-    assert source.index("load_verified_raw_evidence(") < source.index(
-        "write_analysis_transaction("
+    cli_source = inspect.getsource(score_raw_cli)
+    assert cli_source.index("evidence = load_verified_raw_evidence(") < (
+        cli_source.index("return write_analysis_transaction(")
     )
     assert "raw evidence changed during scoring" in source
