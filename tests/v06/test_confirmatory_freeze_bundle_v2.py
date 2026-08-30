@@ -11,15 +11,15 @@ from pathlib import Path
 import pytest
 
 from sparkbrain.evaluation.v06_confirmatory import ConfirmatoryPhase
+from sparkbrain.evaluation.v06_confirmatory_candidate_manifest import (
+    build_candidate_manifest,
+)
 from sparkbrain.evaluation.v06_confirmatory_current_manifest import (
     build_current_confirmatory_manifest,
 )
 from sparkbrain.evaluation.v06_confirmatory_environment_lock_v2 import (
     capture_environment_lock_v2,
     environment_locks_equal,
-)
-from sparkbrain.evaluation.v06_confirmatory_execution_seal import (
-    frozen_manifest_for_test,
 )
 from sparkbrain.evaluation.v06_confirmatory_external_freeze import (
     ExternalArtifactLayout,
@@ -61,9 +61,11 @@ def _environment_or_skip():
 
 def _candidate(tmp_path: Path, *, ready: bool, builder: str = "builder-a"):
     environment = _environment_or_skip()
-    manifest = build_current_confirmatory_manifest(ConfirmatoryPhase.CONFIRMATORY)
-    if ready:
-        manifest = frozen_manifest_for_test(manifest, code_ref=_FAKE_SHA)
+    manifest = (
+        build_candidate_manifest(source_code_sha=_FAKE_SHA)
+        if ready
+        else build_current_confirmatory_manifest(ConfirmatoryPhase.CONFIRMATORY)
+    )
     return build_external_freeze_bundle_v2(
         manifest,
         source_root=_source_root(),
@@ -132,13 +134,13 @@ def test_bundle_binds_full_world_schedule_adapter_environment_and_paths(
         "field-threshold-bypassed"
     )
     assert bundle.normalized_resource_contract_hash
-    assert bundle.execution_command[0:3] == (
-        "python",
+    assert bundle.execution_command[0] == bundle.environment_lock["python_executable"]
+    assert bundle.execution_command[1:3] == (
         "-m",
         "sparkbrain.evaluation.v06_confirmatory_execute_external_v2",
     )
-    assert bundle.scoring_command[0:3] == (
-        "python",
+    assert bundle.scoring_command[0] == bundle.environment_lock["python_executable"]
+    assert bundle.scoring_command[1:3] == (
         "-m",
         "sparkbrain.evaluation.v06_confirmatory_score_external_v2",
     )
