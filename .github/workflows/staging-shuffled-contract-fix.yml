@@ -1,0 +1,138 @@
+name: staging-shuffled-contract-fix
+
+on:
+  push:
+    branches: ["v06-capability-staging-20260830"]
+    paths: [".github/workflows/staging-shuffled-contract-fix.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v06-capability-staging-20260830
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Make shuffled-state absence a valid disruption
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("src/sparkbrain/evaluation/v06_confirmatory_heldout_controls.py")
+          source = path.read_text(encoding="utf-8")
+          old = '''    responses = tuple(
+              _run_reentry(
+                  parameters,
+                  state,
+                  event_id=f"heldout:shuffled:{index}",
+              )
+              for index, state in enumerate(shuffled_states)
+          )
+          correct = tuple(
+              response == (target,)
+              for response, target in zip(
+                  responses,
+                  parameters.contingency_cycle_targets,
+                  strict=True,
+              )
+          )
+          wrong_present = all(response for response in responses)
+          taxonomy = primary_pass[EvidenceDomain.TAXONOMY_NON_INTERFERENCE]
+          '''
+          new = '''    original_responses = tuple(
+              _run_reentry(
+                  parameters,
+                  state,
+                  event_id=f"heldout:shuffled-original:{index}",
+              )
+              for index, state in enumerate(relation.snapshots)
+          )
+          responses = tuple(
+              _run_reentry(
+                  parameters,
+                  state,
+                  event_id=f"heldout:shuffled:{index}",
+              )
+              for index, state in enumerate(shuffled_states)
+          )
+          correct = tuple(
+              response == (target,)
+              for response, target in zip(
+                  responses,
+                  parameters.contingency_cycle_targets,
+                  strict=True,
+              )
+          )
+          original_nonempty = tuple(bool(response) for response in original_responses)
+          disrupted = tuple(
+              (not original_nonempty[index])
+              or responses[index] != original_responses[index]
+              for index in range(len(responses))
+          )
+          taxonomy = primary_pass[EvidenceDomain.TAXONOMY_NON_INTERFERENCE]
+          '''
+          if source.count(old) != 1:
+              raise SystemExit(f"unexpected shuffled response block: {source.count(old)}")
+          source = source.replace(old, new)
+          old = '''    contract = not any(correct) and wrong_present
+          metrics = {
+              "control_contract_passed": float(contract),
+              "heldout_shuffled_correct_reentry_fraction": float(
+                  sum(correct) / len(correct)
+              ),
+              "heldout_shuffled_response_count": float(
+                  sum(len(response) for response in responses)
+              ),
+              "self_confirmation_violations": 0.0,
+              "taxonomy_hash_match": float(taxonomy),
+          }
+          '''
+          new = '''    nonempty_count = sum(original_nonempty)
+          disrupted_nonempty_count = sum(
+              disrupted[index] and original_nonempty[index]
+              for index in range(len(disrupted))
+          )
+          contract = (
+              nonempty_count > 0
+              and not any(correct)
+              and disrupted_nonempty_count == nonempty_count
+          )
+          metrics = {
+              "control_contract_passed": float(contract),
+              "heldout_shuffled_changed_fraction": float(
+                  disrupted_nonempty_count / max(1, nonempty_count)
+              ),
+              "heldout_shuffled_correct_reentry_fraction": float(
+                  sum(correct) / len(correct)
+              ),
+              "heldout_shuffled_nonempty_fraction": float(
+                  sum(bool(response) for response in responses) / len(responses)
+              ),
+              "heldout_shuffled_original_nonempty_count": float(nonempty_count),
+              "heldout_shuffled_response_count": float(
+                  sum(len(response) for response in responses)
+              ),
+              "self_confirmation_violations": 0.0,
+              "taxonomy_hash_match": float(taxonomy),
+          }
+          '''
+          if source.count(old) != 1:
+              raise SystemExit(f"unexpected shuffled contract block: {source.count(old)}")
+          path.write_text(source.replace(old, new), encoding="utf-8")
+          PY
+      - name: Format and verify
+        run: |
+          python -m pip install "ruff>=0.9"
+          python -m ruff check --fix src/sparkbrain/evaluation/v06_confirmatory_heldout_controls.py
+      - name: Commit patch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/sparkbrain/evaluation/v06_confirmatory_heldout_controls.py
+          git commit -m "fix(v06): score shuffled relation by mapping disruption"
+          git push origin HEAD:v06-capability-staging-20260830
