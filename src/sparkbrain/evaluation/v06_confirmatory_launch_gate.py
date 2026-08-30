@@ -19,6 +19,14 @@ from .v06_confirmatory_execution_seal import (
     validate_execution_seal,
 )
 
+_ALLOWED_PRELAUNCH_CONTROL_FILES = frozenset(
+    {
+        "environment_lock.json",
+        "freeze_record.json",
+        "freeze_verification.json",
+    }
+)
+
 
 @dataclass(frozen=True, slots=True)
 class GitWorkspaceState:
@@ -88,8 +96,23 @@ def inspect_git_workspace(repository_root: Path) -> GitWorkspaceState:
     )
 
 
-def _directory_empty(path: Path) -> bool:
-    return not path.exists() or not any(path.iterdir())
+def _prelaunch_output_clean(path: Path) -> bool:
+    """Allow immutable control inputs but no prior raw/analysis payload."""
+
+    if not path.exists():
+        return True
+    if not path.is_dir():
+        return False
+    root_entries = {row.name for row in path.iterdir()}
+    if root_entries - {"control"}:
+        return False
+    control = path / "control"
+    if not control.exists():
+        return True
+    if not control.is_dir():
+        return False
+    control_entries = {row.name for row in control.iterdir()}
+    return control_entries.issubset(_ALLOWED_PRELAUNCH_CONTROL_FILES)
 
 
 def _execution_counter_zero(path: Path) -> bool:
@@ -132,7 +155,7 @@ def validate_launch_gate(
         "current_sha_matches_source": (
             workspace_state.head_sha == freeze_record.source_code_sha
         ),
-        "output_directory_empty": _directory_empty(output_root),
+        "output_directory_empty": _prelaunch_output_clean(output_root),
         "execution_counter_zero": _execution_counter_zero(
             execution_counter_path
         ),
