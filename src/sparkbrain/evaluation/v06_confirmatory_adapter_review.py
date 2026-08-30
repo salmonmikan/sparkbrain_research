@@ -12,12 +12,17 @@ from .v06_confirmatory import ConfirmatoryCondition
 from .v06_confirmatory_heldout_spec import HeldoutWorldParameters
 from .v06_confirmatory_resources import PrivilegedInformation
 
-ADAPTER_REVIEW_VERSION = "v06-adapter-review-1"
+ADAPTER_REVIEW_VERSION = "v06-adapter-review-2"
 
 _PRIMARY_PATH = "src/sparkbrain/evaluation/v06_confirmatory_heldout_primary.py"
 _CONTROL_PATH = "src/sparkbrain/evaluation/v06_confirmatory_heldout_controls.py"
 _COMPARATOR_PATH = "src/sparkbrain/evaluation/v06_confirmatory_heldout_comparators.py"
 _COMMON_PATH = "src/sparkbrain/evaluation/v06_confirmatory_heldout_common.py"
+_COMPARATOR_ENTRYPOINT_PATH = "src/sparkbrain/baselines/v06/heldout_adapters.py"
+_BASELINE_COMMON_PATH = "src/sparkbrain/baselines/v06/common.py"
+_G3_MODEL_PATH = "src/sparkbrain/baselines/v06/g3_recurrent.py"
+_G4_MODEL_PATH = "src/sparkbrain/baselines/v06/g4_assembly.py"
+_G5_MODEL_PATH = "src/sparkbrain/baselines/v06/g5_typed.py"
 
 ADAPTER_SOURCE_PATHS: dict[ConfirmatoryCondition, tuple[str, ...]] = {
     ConfirmatoryCondition.PRIMARY: (_COMMON_PATH, _PRIMARY_PATH),
@@ -29,9 +34,44 @@ ADAPTER_SOURCE_PATHS: dict[ConfirmatoryCondition, tuple[str, ...]] = {
         _PRIMARY_PATH,
         _CONTROL_PATH,
     ),
-    ConfirmatoryCondition.G3_RECURRENT: (_COMMON_PATH, _COMPARATOR_PATH),
-    ConfirmatoryCondition.G4_ASSEMBLY: (_COMMON_PATH, _COMPARATOR_PATH),
-    ConfirmatoryCondition.G5_TYPED: (_COMMON_PATH, _COMPARATOR_PATH),
+    ConfirmatoryCondition.G3_RECURRENT: (
+        _COMMON_PATH,
+        _COMPARATOR_PATH,
+        _COMPARATOR_ENTRYPOINT_PATH,
+        _BASELINE_COMMON_PATH,
+        _G3_MODEL_PATH,
+    ),
+    ConfirmatoryCondition.G4_ASSEMBLY: (
+        _COMMON_PATH,
+        _COMPARATOR_PATH,
+        _COMPARATOR_ENTRYPOINT_PATH,
+        _BASELINE_COMMON_PATH,
+        _G4_MODEL_PATH,
+    ),
+    ConfirmatoryCondition.G5_TYPED: (
+        _COMMON_PATH,
+        _COMPARATOR_PATH,
+        _COMPARATOR_ENTRYPOINT_PATH,
+        _BASELINE_COMMON_PATH,
+        _G5_MODEL_PATH,
+    ),
+}
+
+# World-field reads are extracted only from the held-out execution wrappers.
+# Baseline model sources are still hashed and import-audited, but their local
+# qualification helpers use a different ComparatorWorldParameters contract.
+ADAPTER_PARAMETER_SCAN_PATHS: dict[
+    ConfirmatoryCondition,
+    tuple[str, ...],
+] = {
+    ConfirmatoryCondition.PRIMARY: (_PRIMARY_PATH,),
+    ConfirmatoryCondition.NO_ENDOGENOUS: (_PRIMARY_PATH, _CONTROL_PATH),
+    ConfirmatoryCondition.RANDOM_MATCHED: (_PRIMARY_PATH, _CONTROL_PATH),
+    ConfirmatoryCondition.READOUT_ONLY: (_PRIMARY_PATH, _CONTROL_PATH),
+    ConfirmatoryCondition.SHUFFLED_RELATION: (_PRIMARY_PATH, _CONTROL_PATH),
+    ConfirmatoryCondition.G3_RECURRENT: (_COMPARATOR_PATH,),
+    ConfirmatoryCondition.G4_ASSEMBLY: (_COMPARATOR_PATH,),
+    ConfirmatoryCondition.G5_TYPED: (_COMPARATOR_PATH,),
 }
 
 EXPECTED_PRIVILEGES: dict[
@@ -143,6 +183,7 @@ _COMPARATOR_CONDITIONS = frozenset(
 class AdapterSourceInventory:
     condition: ConfirmatoryCondition
     source_paths: tuple[str, ...]
+    parameter_scan_paths: tuple[str, ...]
     source_hashes: tuple[tuple[str, str], ...]
     parameter_fields_read: tuple[str, ...]
     parameter_fields_not_directly_read: tuple[str, ...]
@@ -170,6 +211,7 @@ class AdapterSourceInventory:
                 self.parameter_fields_not_directly_read
             ),
             "parameter_fields_read": list(self.parameter_fields_read),
+            "parameter_scan_paths": list(self.parameter_scan_paths),
             "required_parameter_fields": list(self.required_parameter_fields),
             "source_hashes": dict(self.source_hashes),
             "source_paths": list(self.source_paths),
@@ -213,13 +255,18 @@ class AdapterReviewReport:
 
 
 class _SourceVisitor(ast.NodeVisitor):
-    def __init__(self) -> None:
+    def __init__(self, *, collect_parameter_members: bool) -> None:
+        self.collect_parameter_members = collect_parameter_members
         self.parameter_members: set[str] = set()
         self.imported_modules: set[str] = set()
         self.imported_names: set[str] = set()
 
     def visit_Attribute(self, node: ast.Attribute) -> None:
-        if isinstance(node.value, ast.Name) and node.value.id == "parameters":
+        if (
+            self.collect_parameter_members
+            and isinstance(node.value, ast.Name)
+            and node.value.id == "parameters"
+        ):
             self.parameter_members.add(node.attr)
         self.generic_visit(node)
 
@@ -249,11 +296,14 @@ def _inspect_sources(
     condition: ConfirmatoryCondition,
 ) -> AdapterSourceInventory:
     source_paths = ADAPTER_SOURCE_PATHS[condition]
+    parameter_scan_paths = set(ADAPTER_PARAMETER_SCAN_PATHS[condition])
     visitors: list[_SourceVisitor] = []
     hashes: list[tuple[str, str]] = []
     for relative_path in source_paths:
         path = repository_root / relative_path
-        visitor = _SourceVisitor()
+        visitor = _SourceVisitor(
+            collect_parameter_members=relative_path in parameter_scan_paths
+        )
         visitor.visit(ast.parse(path.read_text(encoding="utf-8")))
         visitors.append(visitor)
         hashes.append((relative_path, _source_hash(path)))
@@ -276,6 +326,7 @@ def _inspect_sources(
     return AdapterSourceInventory(
         condition=condition,
         source_paths=source_paths,
+        parameter_scan_paths=tuple(sorted(parameter_scan_paths)),
         source_hashes=tuple(hashes),
         parameter_fields_read=tuple(sorted(members)),
         parameter_fields_not_directly_read=tuple(sorted(world_fields - members)),
