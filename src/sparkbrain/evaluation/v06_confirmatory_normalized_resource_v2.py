@@ -5,8 +5,9 @@ import json
 import math
 import time
 import tracemalloc
+from collections.abc import Callable
 from dataclasses import asdict, dataclass, fields
-from typing import Any, Callable, TypeVar
+from typing import Any, TypeVar
 
 from .v06_confirmatory import ConfirmatoryCondition
 from .v06_confirmatory_heldout_common import HeldoutConditionExecution
