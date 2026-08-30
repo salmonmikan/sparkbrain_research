@@ -579,7 +579,7 @@ def _boundary_condition(
         start_ms=100.0,
         event_id="heldout:boundary:control",
     )
-    main_start = 100.0 + parameters.episode_spacings_ms[1]
+    main_start = 100.0 + parameters.episode_spacings_ms[0]
     _boundary_episode(
         parameters,
         runtime,
