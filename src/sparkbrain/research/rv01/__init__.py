@@ -63,6 +63,16 @@ from .physical_revision import (
     PhysicalRevisionSuite,
     run_physical_revision_suite,
 )
+from .reservoir_baseline import (
+    FixedEchoStateAutoregressor,
+    ReservoirConfig,
+    ReservoirPrediction,
+)
+from .reservoir_comparison import (
+    ReservoirComparisonAssessment,
+    ReservoirComparisonSuite,
+    run_reservoir_comparison_suite,
+)
 
 __all__ = [
     "FROZEN_V06_CODE_SHA",
@@ -76,6 +86,7 @@ __all__ = [
     "ExternalGatedCompetitiveFieldPlasticity",
     "ExternalGatedDirectFieldPlasticity",
     "ExternalSequenceReadout",
+    "FixedEchoStateAutoregressor",
     "FrozenBaselineReport",
     "G1DependencyAssessment",
     "G1DependencySuite",
@@ -92,6 +103,10 @@ __all__ = [
     "PhysicalPersistenceLocusSuite",
     "PhysicalRevisionAssessment",
     "PhysicalRevisionSuite",
+    "ReservoirComparisonAssessment",
+    "ReservoirComparisonSuite",
+    "ReservoirConfig",
+    "ReservoirPrediction",
     "UnitExternalTrace",
     "run_anti_reservoir_suite",
     "run_direct_plasticity_suite",
@@ -103,5 +118,6 @@ __all__ = [
     "run_physical_missing_middle_suite",
     "run_physical_persistence_locus_suite",
     "run_physical_revision_suite",
+    "run_reservoir_comparison_suite",
     "verify_frozen_runtime_fingerprints",
 ]
