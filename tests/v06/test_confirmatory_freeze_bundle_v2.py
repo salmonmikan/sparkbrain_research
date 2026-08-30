@@ -180,7 +180,10 @@ def test_builder_cannot_self_approve_and_any_bound_hash_change_fails(
     with pytest.raises(ValueError, match="reviewer must differ"):
         verify_independent_rebuild(first, second, reviewer="builder-a")
     changed = replace(second, training_schedule_hash="0" * 64)
-    with pytest.raises(ValueError, match="independent freeze bundle rebuild differs"):
+    with pytest.raises(
+        ValueError,
+        match="training schedule hash mismatch|independent freeze bundle rebuild differs",
+    ):
         verify_independent_rebuild(first, changed, reviewer="reviewer-b")
 
 
