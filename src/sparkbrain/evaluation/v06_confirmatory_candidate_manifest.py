@@ -8,9 +8,9 @@ from .v06_confirmatory import (
     ConfirmatoryPhase,
     assess_confirmatory_readiness,
 )
-from .v06_confirmatory_adapter_registry import (
-    ADAPTER_PATHS,
-    validate_adapter_registry,
+from .v06_confirmatory_adapter_registry_v2 import (
+    ADAPTER_PATHS_V2,
+    validate_adapter_registry_v2,
 )
 from .v06_confirmatory_current_manifest import (
     build_current_confirmatory_manifest,
@@ -31,7 +31,7 @@ def build_candidate_manifest(
 
     if not _SOURCE_SHA_PATTERN.fullmatch(source_code_sha):
         raise ValueError("source_code_sha must be a full lowercase Git SHA")
-    validate_adapter_registry()
+    validate_adapter_registry_v2()
     base = build_current_confirmatory_manifest(
         ConfirmatoryPhase.CONFIRMATORY,
         code_ref=source_code_sha,
@@ -39,7 +39,7 @@ def build_candidate_manifest(
     conditions = tuple(
         replace(
             row,
-            adapter_path=ADAPTER_PATHS[row.condition],
+            adapter_path=ADAPTER_PATHS_V2[row.condition],
             adapter_ready=True,
             isolated_from_primary=True,
             engineering_evidence_available=True,
