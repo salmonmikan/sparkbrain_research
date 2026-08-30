@@ -1,0 +1,8 @@
+{
+  "candidate_id": "v06-confirmatory-candidate-003",
+  "execution_policy": "one-way-no-rerun",
+  "expected_evidence_records": 3600,
+  "expected_executions": 400,
+  "expected_resource_records": 400,
+  "source_git_sha": "3177c2725f8fc08f23ca5fd2fa9bed4d5845bf5b"
+}
