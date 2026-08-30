@@ -109,6 +109,7 @@ class ConfirmatoryFreezeRecord:
 class ExecutionSealReport:
     manifest_ready: bool
     code_ref_matches: bool
+    manifest_hash_matches: bool
     world_generation_matches: bool
     world_grid_matches: bool
     seeds_fresh_and_exact: bool
@@ -172,6 +173,7 @@ def validate_execution_seal(
         bool(_SHA_PATTERN.fullmatch(record.code_ref))
         and record.code_ref == manifest.code_ref
     )
+    manifest_hash_matches = record.manifest_hash == manifest.manifest_hash()
     world_generation_matches = record.world_generation_id == WORLD_GENERATION_ID
     world_grid_matches = record.world_grid_hash == heldout_world_grid_hash()
     manifest_seed_values = tuple(row.seed for row in manifest.seeds)
@@ -199,6 +201,7 @@ def validate_execution_seal(
         (
             manifest_ready,
             code_ref_matches,
+            manifest_hash_matches,
             world_generation_matches,
             world_grid_matches,
             seeds_fresh_and_exact,
@@ -209,6 +212,7 @@ def validate_execution_seal(
     return ExecutionSealReport(
         manifest_ready=manifest_ready,
         code_ref_matches=code_ref_matches,
+        manifest_hash_matches=manifest_hash_matches,
         world_generation_matches=world_generation_matches,
         world_grid_matches=world_grid_matches,
         seeds_fresh_and_exact=seeds_fresh_and_exact,
@@ -242,9 +246,8 @@ def frozen_manifest_for_test(
 ) -> ConfirmatoryManifest:
     """Create a synthetic ready manifest for seal unit tests only.
 
-    The helper does not exist in the execution dispatcher and performs no
-    capability work. Production freeze records must use the reviewed current
-    manifest and actual branch SHA.
+    The helper performs no capability work. Production freeze records must use
+    the reviewed current manifest and actual branch SHA.
     """
 
     return replace(
