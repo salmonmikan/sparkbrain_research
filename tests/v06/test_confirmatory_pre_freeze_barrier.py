@@ -4,6 +4,7 @@ import ast
 from pathlib import Path
 
 import pytest
+
 from sparkbrain.evaluation.v06_confirmatory import ConfirmatoryPhase
 from sparkbrain.evaluation.v06_confirmatory_current_manifest import (
     build_current_confirmatory_manifest,
@@ -12,7 +13,6 @@ from sparkbrain.evaluation.v06_confirmatory_execution_seal import (
     build_freeze_record,
     require_execution_seal,
 )
-
 
 _UNSEALED_CAPABILITY_PATHS = (
     "src/sparkbrain/evaluation/v06_confirmatory_heldout_common.py",
