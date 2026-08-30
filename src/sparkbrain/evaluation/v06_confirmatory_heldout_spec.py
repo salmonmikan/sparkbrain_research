@@ -7,6 +7,8 @@ import random
 from dataclasses import asdict, dataclass
 from typing import Any
 
+WORLD_GENERATION_ID = "v06-confirmatory-candidate-002"
+QUARANTINED_HELDOUT_SEEDS = tuple(range(100, 110))
 HELDOUT_FAMILIES = (
     "heldout-sparse-permutation",
     "heldout-lag-dispersion",
@@ -14,7 +16,7 @@ HELDOUT_FAMILIES = (
     "heldout-branch-competition",
     "heldout-contingency-cycles",
 )
-HELDOUT_SEEDS = tuple(range(100, 110))
+HELDOUT_SEEDS = tuple(range(1000, 1010))
 
 
 def _canonical_json(value: object) -> str:
@@ -33,11 +35,11 @@ def _digest(value: object) -> str:
 
 @dataclass(frozen=True, slots=True)
 class HeldoutWorldParameters:
-    """Pure data contract shared by every held-out condition adapter.
+    """Pure shared data contract for one candidate confirmatory world.
 
-    The contract contains execution-level structure only. It does not import
-    the Primary runtime and does not contain a correct condition, reward,
-    semantic role, or evaluator-selected winner.
+    The contract contains execution-level structure only. It imports no
+    capability adapter and contains no correct condition, reward, semantic role,
+    evaluator-selected winner, or observed capability result.
     """
 
     family_id: str
@@ -71,8 +73,10 @@ class HeldoutWorldParameters:
             raise ValueError("unknown held-out world family")
         if self.seed not in HELDOUT_SEEDS:
             raise ValueError("unsupported held-out seed")
-        if not self.structural_token:
-            raise ValueError("structural_token must be non-empty")
+        if self.seed in QUARANTINED_HELDOUT_SEEDS:
+            raise ValueError("quarantined held-out seed cannot enter candidate grid")
+        if not self.structural_token.startswith(f"{WORLD_GENERATION_ID}:"):
+            raise ValueError("structural token must identify the fresh world generation")
         if self.unit_count < 16:
             raise ValueError("held-out worlds require at least 16 units")
         if len(set(self.active_unit_ids)) != len(self.active_unit_ids):
@@ -201,21 +205,32 @@ def _lag_profile(
     )
 
 
+def _seed_index(seed: int) -> int:
+    try:
+        return HELDOUT_SEEDS.index(seed)
+    except ValueError as exc:
+        raise ValueError(f"unsupported held-out seed: {seed}") from exc
+
+
 def heldout_world_parameters(
     family_id: str,
     seed: int,
 ) -> HeldoutWorldParameters:
-    """Generate one deterministic held-out world specification.
-
-    This function defines world shape only. It does not run any Primary or
-    comparator condition and therefore does not expose confirmatory outcomes.
-    """
+    """Generate one deterministic, outcome-unopened world specification."""
 
     if family_id not in HELDOUT_FAMILIES:
         raise ValueError(f"unknown held-out world family: {family_id}")
-    if seed not in HELDOUT_SEEDS:
-        raise ValueError(f"unsupported held-out seed: {seed}")
-    rng_seed = int(_digest({"family_id": family_id, "seed": seed})[:16], 16)
+    seed_index = _seed_index(seed)
+    rng_seed = int(
+        _digest(
+            {
+                "family_id": family_id,
+                "generation": WORLD_GENERATION_ID,
+                "seed": seed,
+            }
+        )[:16],
+        16,
+    )
     rng = random.Random(rng_seed)
     unit_count = 64
     roles = list(range(unit_count))
@@ -237,17 +252,17 @@ def heldout_world_parameters(
     }
 
     base_lags = (
-        round(3.75 + rng.random() * 2.5, 6),
-        round(4.25 + rng.random() * 3.0, 6),
-        round(3.50 + rng.random() * 3.5, 6),
+        round(3.60 + rng.random() * 2.8, 6),
+        round(4.05 + rng.random() * 3.2, 6),
+        round(3.35 + rng.random() * 3.8, 6),
     )
     profiles = tuple(
         _lag_profile(
             base_lags,
             (
-                rng.uniform(-0.85, 0.85),
-                rng.uniform(-1.10, 1.10),
-                rng.uniform(-0.70, 0.70),
+                rng.uniform(-0.90, 0.90),
+                rng.uniform(-1.15, 1.15),
+                rng.uniform(-0.75, 0.75),
             ),
         )
         for _ in range(5)
@@ -256,22 +271,22 @@ def heldout_world_parameters(
         round(sum(profile[index] for profile in profiles) / len(profiles), 6)
         for index in range(3)
     )
-    threshold = round(0.40 + rng.random() * 0.24, 6)
-    cue_magnitude = round(threshold + 0.32 + rng.random() * 0.18, 6)
-    boundary_lag = round(7.0 + rng.random() * 8.0, 6)
+    threshold = round(0.395 + rng.random() * 0.25, 6)
+    cue_magnitude = round(threshold + 0.31 + rng.random() * 0.19, 6)
+    boundary_lag = round(7.25 + rng.random() * 8.5, 6)
     spacings = tuple(
         round(
             max(
                 58.0,
                 sum(evaluation_lags) + boundary_lag + 22.0,
             )
-            + rng.uniform(0.0, 19.0),
+            + rng.uniform(0.0, 20.0),
             6,
         )
         for _ in range(12)
     )
-    main_port = f"port:{300 + roles[17]}"
-    control_port = f"port:{500 + roles[18]}"
+    main_port = f"port:{700 + roles[17]}"
+    control_port = f"port:{900 + roles[18]}"
     competition_paths = (main_path, alternate_path)
     branch_counts = (5, 4)
     contingency_targets = (
@@ -292,12 +307,12 @@ def heldout_world_parameters(
             _lag_profile(
                 base_lags,
                 (
-                    (-1.4, 0.6, 1.7)[index % 3]
-                    + rng.uniform(-0.25, 0.25),
-                    (1.3, -1.1, 0.8)[index % 3]
-                    + rng.uniform(-0.25, 0.25),
-                    (0.9, 1.6, -1.3)[index % 3]
-                    + rng.uniform(-0.25, 0.25),
+                    (-1.45, 0.65, 1.75)[index % 3]
+                    + rng.uniform(-0.28, 0.28),
+                    (1.35, -1.15, 0.85)[index % 3]
+                    + rng.uniform(-0.28, 0.28),
+                    (0.95, 1.65, -1.35)[index % 3]
+                    + rng.uniform(-0.28, 0.28),
                 ),
             )
             for index in range(6)
@@ -309,7 +324,7 @@ def heldout_world_parameters(
         spacings = tuple(
             round(
                 max(60.0, sum(profile) + boundary_lag + 22.0)
-                + rng.uniform(0.0, 31.0),
+                + rng.uniform(0.0, 32.0),
                 6,
             )
             for profile in (profiles * 2)[:12]
@@ -317,13 +332,16 @@ def heldout_world_parameters(
     elif family_id == "heldout-threshold-band":
         active_ids = tuple(sorted(core_active.union(roles[19:31])))
         distractors = tuple(sorted(roles[31:41]))
-        threshold = round(0.34 + (seed - 100) * 0.038, 6)
-        cue_magnitude = round(threshold + 0.28 + (seed % 3) * 0.035, 6)
+        threshold = round(0.34 + seed_index * 0.038, 6)
+        cue_magnitude = round(
+            threshold + 0.28 + (seed_index % 3) * 0.035,
+            6,
+        )
     elif family_id == "heldout-branch-competition":
         active_ids = tuple(sorted(core_active.union(roles[19:35])))
         distractors = tuple(sorted(roles[35:47]))
         competition_paths = (main_path, alternate_path, branch_three)
-        strongest = 6 + (seed % 2)
+        strongest = 6 + (seed_index % 2)
         branch_counts = (strongest, strongest - 1, strongest - 2)
     else:
         active_ids = tuple(sorted(core_active.union(roles[19:31])))
@@ -336,12 +354,14 @@ def heldout_world_parameters(
             new_target,
             old_target,
         )
-        contingency_lengths = tuple(2 + ((seed + index) % 3) for index in range(6))
+        contingency_lengths = tuple(
+            2 + ((seed_index + index) % 3) for index in range(6)
+        )
 
     parameters = HeldoutWorldParameters(
         family_id=family_id,
         seed=seed,
-        structural_token=f"confirmatory-{seed}",
+        structural_token=f"{WORLD_GENERATION_ID}:{seed}",
         unit_count=unit_count,
         active_unit_ids=active_ids,
         distractor_unit_ids=distractors,
@@ -378,4 +398,9 @@ def build_heldout_world_grid() -> tuple[HeldoutWorldParameters, ...]:
 
 
 def heldout_world_grid_hash() -> str:
-    return _digest([row.state_dict() for row in build_heldout_world_grid()])
+    return _digest(
+        {
+            "generation": WORLD_GENERATION_ID,
+            "worlds": [row.state_dict() for row in build_heldout_world_grid()],
+        }
+    )
