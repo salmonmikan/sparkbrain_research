@@ -21,59 +21,53 @@ jobs:
       - name: Align freeze bundle with v2 execution contracts
         run: |
           python - <<'PY'
+          from __future__ import annotations
+
+          import ast
+          import re
           from pathlib import Path
 
           path = Path("src/sparkbrain/evaluation/v06_confirmatory_freeze_bundle_v2.py")
           source = path.read_text(encoding="utf-8")
 
-          replacements = []
+          def replace_once(old: str, new: str) -> None:
+              global source
+              count = source.count(old)
+              if count != 1:
+                  raise SystemExit(f"expected one literal target, got {count}: {old[:80]!r}")
+              source = source.replace(old, new)
 
-          old_imports = '''from .v06_confirmatory_environment_lock_v2 import ExecutionEnvironmentLockV2
-          from .v06_confirmatory_external_freeze import ExternalArtifactLayout
-          from .v06_confirmatory_heldout_spec import (
-          '''
-          new_imports = '''from .v06_confirmatory_adapter_registry_v2 import (
-              ADAPTER_PATHS_V2,
-              validate_adapter_registry_v2,
+          def sub_once(pattern: str, replacement: str) -> None:
+              global source
+              source, count = re.subn(pattern, replacement, source, flags=re.MULTILINE | re.DOTALL)
+              if count != 1:
+                  raise SystemExit(f"expected one regex target, got {count}: {pattern[:80]!r}")
+
+          replace_once(
+              "from .v06_confirmatory_environment_lock_v2 import ExecutionEnvironmentLockV2\n",
+              "from .v06_confirmatory_adapter_registry_v2 import (\n"
+              "    ADAPTER_PATHS_V2,\n"
+              "    validate_adapter_registry_v2,\n"
+              ")\n"
+              "from .v06_confirmatory_environment_lock_v2 import ExecutionEnvironmentLockV2\n",
           )
-          from .v06_confirmatory_environment_lock_v2 import ExecutionEnvironmentLockV2
-          from .v06_confirmatory_external_freeze import ExternalArtifactLayout
-          from .v06_confirmatory_heldout_spec import (
-          '''
-          replacements.append((old_imports, new_imports))
-
-          old_resource_imports = '''from .v06_confirmatory_resources import ConditionResourceRecord
-          from .v06_confirmatory_training_schedule import build_balanced_training_schedule
-          '''
-          new_resource_imports = '''from .v06_confirmatory_normalized_resource_v2 import (
-              NormalizedResourceRecordV2,
-              ResourceDecisionPolicyV2,
-              normalized_resource_schema_hash_v2,
+          replace_once(
+              "from .v06_confirmatory_resources import ConditionResourceRecord\n"
+              "from .v06_confirmatory_training_schedule import build_balanced_training_schedule\n",
+              "from .v06_confirmatory_normalized_resource_v2 import (\n"
+              "    NormalizedResourceRecordV2,\n"
+              "    ResourceDecisionPolicyV2,\n"
+              "    normalized_resource_schema_hash_v2,\n"
+              ")\n"
+              "from .v06_confirmatory_resources import ConditionResourceRecord\n"
+              "from .v06_confirmatory_schedule_contract import training_schedule_grid_hash\n",
           )
-          from .v06_confirmatory_resources import ConditionResourceRecord
-          from .v06_confirmatory_schedule_contract import training_schedule_grid_hash
-          '''
-          replacements.append((old_resource_imports, new_resource_imports))
-
-          replacements.append((
+          replace_once(
               '"src/sparkbrain/evaluation/v06_confirmatory_adapter_registry.py",',
               '"src/sparkbrain/evaluation/v06_confirmatory_adapter_registry_v2.py",',
-          ))
-
-          old_contract_paths = '''_CONTRACT_SOURCE_PATHS = (
-              "src/sparkbrain/evaluation/v06_confirmatory_resource_accounting.py",
-              "src/sparkbrain/evaluation/v06_confirmatory_training_schedule.py",
-              "src/sparkbrain/evaluation/v06_confirmatory_schedule_contract.py",
-              "src/sparkbrain/evaluation/v06_confirmatory_adapter_review.py",
-              "src/sparkbrain/evaluation/v06_confirmatory_artifacts.py",
-              "src/sparkbrain/evaluation/v06_confirmatory_external_control_package_v2.py",
-              "src/sparkbrain/evaluation/v06_confirmatory_external_raw_store.py",
-              "src/sparkbrain/evaluation/v06_confirmatory_raw_evidence.py",
-              "src/sparkbrain/evaluation/v06_confirmatory_scoring.py",
-              "src/sparkbrain/evaluation/v06_confirmatory_score_raw.py",
           )
-          '''
-          new_contract_paths = '''_CONTRACT_SOURCE_PATHS = (
+
+          contract_paths = """_CONTRACT_SOURCE_PATHS = (
               "src/sparkbrain/evaluation/v06_confirmatory.py",
               "src/sparkbrain/evaluation/v06_confirmatory_current_manifest.py",
               "src/sparkbrain/evaluation/v06_confirmatory_candidate_manifest.py",
@@ -95,92 +89,58 @@ jobs:
               "src/sparkbrain/evaluation/v06_confirmatory_locked_scoring.py",
               "src/sparkbrain/evaluation/v06_confirmatory_score_external_v2.py",
           )
-          '''
-          replacements.append((old_contract_paths, new_contract_paths))
-
-          old_schedule = '''def _combined_schedule_state() -> tuple[dict[str, Any], ...]:
-              rows: list[dict[str, Any]] = []
-              for world in build_heldout_world_grid():
-                  paths = tuple(dict.fromkeys((*world.competition_paths, world.control_path)))
-                  branch_counts = dict(
-                      zip(
-                          world.competition_paths,
-                          world.branch_exposure_counts,
-                          strict=True,
-                      )
-                  )
-                  counts = tuple(
-                      branch_counts.get(path, max(3, len(world.training_lag_profiles_ms)))
-                      for path in paths
-                  )
-                  schedule = build_balanced_training_schedule(
-                      counts,
-                      lag_profile_count=len(world.training_lag_profiles_ms),
-                  )
-                  rows.append(
-                      {
-                          "family_id": world.family_id,
-                          "paths": [list(path) for path in paths],
-                          "schedule": schedule.state_dict(),
-                          "schedule_hash": schedule.schedule_hash(),
-                          "seed": world.seed,
-                          "world_specification_hash": world.specification_hash(),
-                      }
-                  )
-              return tuple(rows)
-
-
-          def combined_training_schedule_hash() -> str:
-              return _digest(list(_combined_schedule_state()))
-          '''
-          new_schedule = '''def combined_training_schedule_hash() -> str:
-              return training_schedule_grid_hash()
-          '''
-          replacements.append((old_schedule, new_schedule))
-
-          old_validation = '''        if self.adapter_inventory_hash != _digest(list(self.adapter_inventory)):
-              raise ValueError("adapter inventory hash mismatch")
-          '''
-          new_validation = '''        if self.adapter_inventory_hash != _digest(list(self.adapter_inventory)):
-              raise ValueError("adapter inventory hash mismatch")
-          registered_paths = {
-              condition.value: adapter_path
-              for condition, adapter_path in ADAPTER_PATHS_V2.items()
-          }
-          inventory_paths = {
-              str(row["condition"]): str(row["adapter_path"])
-              for row in self.adapter_inventory
-          }
-          if inventory_paths != registered_paths:
-              raise ValueError("frozen adapter paths differ from v2 execution registry")
-          '''
-          replacements.append((old_validation, new_validation))
-
-          old_build_prefix = '''    readiness = assess_confirmatory_readiness(manifest)
-              adapter_sources = _source_inventory(source, _ADAPTER_SOURCE_PATHS)
-          '''
-          new_build_prefix = '''    readiness = assess_confirmatory_readiness(manifest)
-              validate_adapter_registry_v2()
-              registered_paths = {
-                  row.condition: row.adapter_path for row in manifest.conditions
-              }
-              if registered_paths != ADAPTER_PATHS_V2:
-                  raise ValueError("manifest adapter paths differ from v2 execution registry")
-              adapter_sources = _source_inventory(source, _ADAPTER_SOURCE_PATHS)
-          '''
-          replacements.append((old_build_prefix, new_build_prefix))
-
-          old_resource_contract = '''    resource_contract_hash = _digest(
-              {
-                  "resource_accounting_source": contract_sources[
-                      "src/sparkbrain/evaluation/v06_confirmatory_resource_accounting.py"
-                  ],
-                  "resource_schema": [row.name for row in fields(ConditionResourceRecord)],
-                  "decision_use": "descriptive-only",
-              }
+          """
+          sub_once(
+              r"_CONTRACT_SOURCE_PATHS = \(\n(?:    \"[^\n]+\",\n)+\)\n",
+              contract_paths,
           )
-          '''
-          new_resource_contract = '''    resource_policy = ResourceDecisionPolicyV2()
+          sub_once(
+              r"def _combined_schedule_state\(\) -> tuple\[dict\[str, Any\], \.\.\.\]:\n.*?"
+              r"def combined_training_schedule_hash\(\) -> str:\n"
+              r"    return _digest\(list\(_combined_schedule_state\(\)\)\)\n",
+              "def combined_training_schedule_hash() -> str:\n"
+              "    return training_schedule_grid_hash()\n",
+          )
+
+          old_validation = (
+              "        if self.adapter_inventory_hash != _digest(list(self.adapter_inventory)):\n"
+              "            raise ValueError(\"adapter inventory hash mismatch\")\n"
+          )
+          new_validation = old_validation + (
+              "        registered_paths = {\n"
+              "            condition.value: adapter_path\n"
+              "            for condition, adapter_path in ADAPTER_PATHS_V2.items()\n"
+              "        }\n"
+              "        inventory_paths = {\n"
+              "            str(row[\"condition\"]): str(row[\"adapter_path\"])\n"
+              "            for row in self.adapter_inventory\n"
+              "        }\n"
+              "        if inventory_paths != registered_paths:\n"
+              "            raise ValueError(\n"
+              "                \"frozen adapter paths differ from v2 execution registry\"\n"
+              "            )\n"
+          )
+          replace_once(old_validation, new_validation)
+
+          old_build = (
+              "    readiness = assess_confirmatory_readiness(manifest)\n"
+              "    adapter_sources = _source_inventory(source, _ADAPTER_SOURCE_PATHS)\n"
+          )
+          new_build = (
+              "    readiness = assess_confirmatory_readiness(manifest)\n"
+              "    validate_adapter_registry_v2()\n"
+              "    registered_paths = {\n"
+              "        row.condition: row.adapter_path for row in manifest.conditions\n"
+              "    }\n"
+              "    if registered_paths != ADAPTER_PATHS_V2:\n"
+              "        raise ValueError(\n"
+              "            \"manifest adapter paths differ from v2 execution registry\"\n"
+              "        )\n"
+              "    adapter_sources = _source_inventory(source, _ADAPTER_SOURCE_PATHS)\n"
+          )
+          replace_once(old_build, new_build)
+
+          resource_contract = """    resource_policy = ResourceDecisionPolicyV2()
               resource_policy.validate()
               resource_contract_hash = _digest(
                   {
@@ -199,16 +159,19 @@ jobs:
                       "policy_hash": resource_policy.policy_hash(),
                   }
               )
-          '''
-          replacements.append((old_resource_contract, new_resource_contract))
+          """
+          sub_once(
+              r"    resource_contract_hash = _digest\(\n.*?\n    \)\n(?=    layout = ExternalArtifactLayout)",
+              resource_contract,
+          )
 
-          for old, new in replacements:
-              if source.count(old) != 1:
-                  raise SystemExit(f"expected exactly one replacement target, got {source.count(old)}")
-              source = source.replace(old, new)
-
+          ast.parse(source)
           path.write_text(source, encoding="utf-8")
           PY
+      - name: Validate patched module
+        run: |
+          python -m compileall -q src/sparkbrain/evaluation/v06_confirmatory_freeze_bundle_v2.py
+          python -m ruff check src/sparkbrain/evaluation/v06_confirmatory_freeze_bundle_v2.py
       - name: Commit exact binding repair
         run: |
           git config user.name "github-actions[bot]"
