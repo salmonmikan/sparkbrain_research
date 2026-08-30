@@ -1,31 +1,42 @@
 from __future__ import annotations
 
-from sparkbrain.evaluation.v06_confirmatory import (
-    ConfirmatoryPhase,
-    build_draft_confirmatory_manifest,
+from sparkbrain.evaluation.v06_confirmatory import ConfirmatoryPhase
+from sparkbrain.evaluation.v06_confirmatory_current_manifest import (
+    build_current_confirmatory_manifest,
 )
 from sparkbrain.evaluation.v06_confirmatory_heldout_spec import (
     HELDOUT_FAMILIES,
     HELDOUT_SEEDS,
+    QUARANTINED_HELDOUT_SEEDS,
+    WORLD_GENERATION_ID,
     build_heldout_world_grid,
     heldout_world_grid_hash,
     heldout_world_parameters,
 )
 
 
-def test_heldout_grid_matches_manifest_shape_without_running_conditions() -> None:
-    manifest = build_draft_confirmatory_manifest(
+def test_fresh_grid_matches_current_manifest_without_running_conditions() -> None:
+    manifest = build_current_confirmatory_manifest(
         ConfirmatoryPhase.CONFIRMATORY
     )
     grid = build_heldout_world_grid()
     assert tuple(row.family_id for row in manifest.world_families) == HELDOUT_FAMILIES
     assert tuple(row.seed for row in manifest.seeds) == HELDOUT_SEEDS
+    assert tuple(row.structural_token for row in manifest.seeds) == tuple(
+        f"{WORLD_GENERATION_ID}:{seed}" for seed in HELDOUT_SEEDS
+    )
     assert len(grid) == 50
     assert {(row.family_id, row.seed) for row in grid} == {
         (family_id, seed)
         for family_id in HELDOUT_FAMILIES
         for seed in HELDOUT_SEEDS
     }
+
+
+def test_fresh_seed_set_is_disjoint_from_quarantined_capability_seeds() -> None:
+    assert set(HELDOUT_SEEDS).isdisjoint(QUARANTINED_HELDOUT_SEEDS)
+    assert HELDOUT_SEEDS == tuple(range(1000, 1010))
+    assert QUARANTINED_HELDOUT_SEEDS == tuple(range(100, 110))
 
 
 def test_heldout_world_generation_is_deterministic_and_hashable() -> None:
@@ -35,6 +46,10 @@ def test_heldout_world_generation_is_deterministic_and_hashable() -> None:
     assert heldout_world_grid_hash() == heldout_world_grid_hash()
     assert len(heldout_world_grid_hash()) == 64
     assert len({row.specification_hash() for row in first}) == 50
+    assert all(
+        row.structural_token == f"{WORLD_GENERATION_ID}:{row.seed}"
+        for row in first
+    )
 
 
 def test_sparse_permutation_worlds_use_a_sparse_active_subset() -> None:
