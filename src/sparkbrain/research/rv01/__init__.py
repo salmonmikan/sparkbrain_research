@@ -33,6 +33,11 @@ from .physical_continuation import (
     PhysicalContinuationSuite,
     run_physical_continuation_suite,
 )
+from .physical_missing_middle import (
+    PhysicalMissingMiddleAssessment,
+    PhysicalMissingMiddleSuite,
+    run_physical_missing_middle_suite,
+)
 
 __all__ = [
     "FROZEN_V06_CODE_SHA",
@@ -49,11 +54,14 @@ __all__ = [
     "PhysicalConnectionUpdate",
     "PhysicalContinuationAssessment",
     "PhysicalContinuationSuite",
+    "PhysicalMissingMiddleAssessment",
+    "PhysicalMissingMiddleSuite",
     "UnitExternalTrace",
     "run_direct_plasticity_suite",
     "run_frozen_v06_baseline",
     "run_g1_dependency_suite",
     "run_g2_dependency_suite",
     "run_physical_continuation_suite",
+    "run_physical_missing_middle_suite",
     "verify_frozen_runtime_fingerprints",
 ]
