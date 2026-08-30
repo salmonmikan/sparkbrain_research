@@ -527,8 +527,32 @@ def _rotate_relation_state(
         f"unit:{parameters.new_target}": f"unit:{parameters.third_target}",
         f"unit:{parameters.third_target}": f"unit:{parameters.old_target}",
     }
+    links: dict[str, Any] = {}
     for row in value["links"].values():
-        row["target"] = rotation.get(str(row["target"]), str(row["target"]))
+        changed = dict(row)
+        changed["target"] = rotation.get(
+            str(changed["target"]),
+            str(changed["target"]),
+        )
+        key = (
+            str(changed["port_id"]),
+            str(changed["target"]),
+            int(changed["polarity"]),
+        )
+        link_id = (
+            "link:"
+            + digest(
+                {
+                    "port_id": key[0],
+                    "target": key[1],
+                    "polarity": key[2],
+                }
+            )[:24]
+        )
+        if link_id in links:
+            raise RuntimeError("relation rotation produced a duplicate link")
+        links[link_id] = changed
+    value["links"] = links
     return value
 
 
