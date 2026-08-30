@@ -738,7 +738,13 @@ def _relation_cycles(
             internal_consistency,
             internal_world,
             cue_unit_id=parameters.main_path[0],
-            start_ms=100.0 + episode * parameters.episode_spacings_ms[episode],
+            start_ms=100.0
+            + sum(
+                parameters.episode_spacings_ms[
+                    prior % len(parameters.episode_spacings_ms)
+                ]
+                for prior in range(episode)
+            ),
             event_id=f"heldout:relation:internal-only:{episode}",
         )
     internal_links = internal_consistency.learned_state_dict()["links"]
