@@ -4,198 +4,129 @@
 
 ```text
 complete development qualification:       PASS
-held-out world shape contract:            IMPLEMENTED
+former 100-series capability calls:       QUARANTINED
+fresh world generation:                   v06-confirmatory-candidate-002
+fresh candidate seeds:                    1000 through 1009
+fresh world specifications:               50
 resource/privilege schema:                IMPLEMENTED
 outcome-blind dry-run adapters:            8 / 8
 adapter declarations:                   400 / 400
 resource schema declarations:           400 / 400
 unscored domain schema declarations:  3,600 / 3,600
-preflight capability executions:            0
-real held-out capability adapters:       NOT READY
+candidate capability executions:            0
+real candidate capability adapters:      NOT READY
 held-out manifest ready:                 NO
 code SHA frozen:                         NO
 world-grid hash frozen:                  NO
 manifest hash frozen:                    NO
-3,600-record capability run:             NOT EXECUTED
+execution seal issued:                   NO
+formal 3,600-record capability run:       NOT EXECUTED
 PR #10 release-ready:                    NO
 ```
 
-## Protocol boundary
+## Correction to the earlier status
 
-Protocol Amendment 004 makes preflight and capability evaluation separate phases:
+A repository review found that an older file named as an adapter preflight called actual capability entrypoints for a subset of held-out-labelled 100-series worlds. It created real Boolean result fields and dynamic resource measurements before the freeze boundary.
 
-```text
-docs/V06_PROTOCOL_AMENDMENT_004_HELDOUT_PREFLIGHT_AND_ONE_WAY_EXECUTION.md
-```
+Those calls were not the complete formal 3,600-record run, but they were still capability exposure. They are therefore ineligible as confirmatory evidence.
 
-Preflight may run repeatedly before freeze. Held-out capability may execute once only after all real
-adapters, resource emission, thresholds, exclusions, schemas, code SHA, world-grid hash, manifest
-hash, adapter inventory, command, and artifact paths are reviewed and frozen.
-
-## What changed after development qualification
-
-The complete 648-record development matrix showed that Primary, G3, G4, and G5 all solve the three
-qualification families. Those worlds demonstrate capability but do not establish architectural
-uniqueness.
-
-The next work is therefore not another feature layer and not an early peek at held-out performance.
-It is an outcome-blind pre-execution contract for a harder shared comparison.
-
-## Pure held-out world specification
-
-`src/sparkbrain/evaluation/v06_confirmatory_heldout_spec.py` defines 50 deterministic pure-data world
-specifications:
+The historical code is preserved at:
 
 ```text
-5 held-out families × 10 seeds
+archive/v06-pre-freeze-capability-exposure-20260830
 ```
 
-The generator runs no architecture and exposes no capability outcome.
+The active `v06` branch removes the unsealed capability dispatcher, capability adapters, and execution tests. Ordinary CI now exercises development tests and schema-only candidate preflight only.
 
-The families are:
+Normative correction:
 
-1. sparse identity/support permutation;
-2. edge-lag dispersion and nonuniform episode spacing;
-3. broad ordinary Field threshold/magnitude bands;
-4. genuine three-branch competition with close exposure counts;
-5. six-phase external contingency cycles with five changes.
+```text
+docs/V06_PROTOCOL_AMENDMENT_005_CAPABILITY_EXPOSURE_QUARANTINE.md
+```
 
-Every condition must consume the exact same world specification for a given `(family, seed)`.
+## Fresh candidate world generation
 
-## Outcome-blind preflight matrix
+The contaminated 100-series seed range is excluded. The replacement candidate set is:
 
-The preflight constructs configuration declarations only:
+```text
+generation: v06-confirmatory-candidate-002
+seeds:      1000 through 1009
+families:   5
+worlds:     50
+```
+
+The new generation uses a new RNG salt and new unit/port identities, topology support, timing values, thresholds, branches, and contingency details. It may be built and hashed before freeze, but no capability runtime may consume it.
+
+## Accepted outcome-blind preflight
+
+The current preflight constructs configuration and schema declarations only:
 
 ```text
 50 worlds × 8 conditions = 400 adapter declarations
-400 adapters × 9 domains = 3,600 unscored schema declarations
+400 adapters × 9 domains = 3,600 unscored domain schemas
 ```
 
-Every domain declaration has:
+Every domain schema remains:
 
 ```text
 status = unscored
 capability_result_present = false
 ```
 
-There is no `passed` value, capability metric, success fraction, selective-effect score, architecture
-ranking, or partial held-out family result.
-
-The held-out manifest deliberately remains:
+Every resource schema remains:
 
 ```text
-adapter_ready = false  for all 8 conditions
-code_ref = UNFROZEN
-ready = false
+measurements_present = false
 ```
 
-## Preflight validation completed
+Preflight validates:
 
-The current suite checks:
+- exact deterministic world reconstruction;
+- identical canonical world input across all eight condition declarations;
+- propagation of topology/support, threshold, magnitude, lag, episode spacing, ports, branches, exposure counts, and contingency cycles;
+- genuine three-way branch preservation;
+- complete result/resource schemas;
+- comparator isolation from Primary runtime;
+- explicit comparator privilege and Field-threshold-bypass disclosure;
+- fail-closed taxonomy, self-confirmation, observation, learning, and privilege guards;
+- held-out manifest readiness remaining false.
 
-- complete 50-world deterministic replay;
-- one adapter declaration for every world and condition;
-- byte-equivalent canonical world input across all eight conditions;
-- complete consumption of all `HeldoutWorldParameters` fields;
-- reflection of topology/support, threshold, magnitude, lag profiles, episode spacing, paths, ports,
-  branches, relation re-entry gain, and contingency cycles;
-- genuine three-way branch preservation for every condition;
-- one complete resource-schema declaration per future world/condition cell;
-- static G3/G4/G5 isolation from Primary runtime and Primary adapter imports;
-- explicit threshold-bypass, Assembly, typed-head, and scalar-reward disclosure;
-- fail-closed taxonomy, self-confirmation, Primary-inspection, capability-execution, and privilege
-  guards;
-- future result-schema shape without producing a result;
-- independent full-matrix rebuild with identical hash.
+It does not instantiate a capability result or dynamic resource measurement.
 
-GitHub Actions run `33271388509` passed installation, Ruff, local readiness, the default test suite,
-and bundle validation on Python 3.11 and Python 3.13.
+## Execution seal
 
-## Resource and privileged-information contract
-
-`src/sparkbrain/evaluation/v06_confirmatory_resources.py` defines one mandatory evaluator-side
-resource record per future `(family, seed, condition)`.
-
-Required inventory:
-
-- observed training events;
-- generated internal events;
-- persistent state entries;
-- intervention count;
-- parameter/state count;
-- wall-clock time;
-- ordinary Field threshold presence and crossings;
-- explicit threshold bypass;
-- explicit Assembly entries;
-- typed-head count;
-- scalar-reward observation count;
-- complete privileged-information inventory.
-
-Condition-specific disclosure rules remain fail-closed:
-
-- Primary and four controls: no Assembly, typed head, reward, or other privileged input;
-- G3: external predictor and ordinary Field-threshold bypass disclosed;
-- G4: explicit Assembly state and threshold bypass disclosed;
-- G5: typed heads, scalar reward, and threshold bypass disclosed;
-- missing, duplicate, or invalid records block completion.
-
-The preflight declares the complete resource schema but does not invent dynamic measurements. Actual
-values remain unavailable until frozen capability execution.
-
-## Why capability outcomes remain sealed
-
-Running held-out capability before all adapters and the full freeze would turn the held-out phase into
-another development grid. A failure could influence threshold, gain, lag tolerance, branch policy,
-resource budget, world shape, or scoring even without deliberate tuning.
-
-The required order is:
-
-1. validate and review the 50 pure worlds;
-2. implement all eight real capability adapters against the shared contract;
-3. validate shape, deterministic replay, isolation, input equality, parameter reflection, complete
-   resource emission, output schema, and fail-closed guards without scoring outcomes;
-4. perform code/protocol review;
-5. freeze SHA, hashes, thresholds, exclusions, schemas, inventory, commands, and artifact paths;
-6. cross the no-change boundary;
-7. execute one fresh 3,600-record capability matrix;
-8. preserve every Primary failure and comparator success without post-hoc edits.
-
-## Remaining held-out blockers
-
-### Primary capability adapter
-
-Must actually consume per-edge lag profiles, sparse active support, genuine simultaneous
-alternatives, broad threshold bands, and repeated contingency cycles without replacing them with
-qualification defaults.
-
-### Null/control capability adapters
-
-- no-endogenous must remove all internal generation while preserving the same raw world;
-- random-matched must match Primary event/time/current/energy profiles in each world;
-- readout-only must retain structural proposals but never generate a Field Spark;
-- shuffled-relation must preserve earlier Dynamics while breaking learned relation-to-reentry
-  mapping.
-
-### G3/G4/G5 capability adapters
-
-Each must execute against the same held-out world and emit the same nine-domain and resource schemas.
-Comparator privilege remains explicit. No comparator may inspect Primary runtime state.
-
-### Freeze
-
-Still unfrozen:
+`src/sparkbrain/evaluation/v06_confirmatory_execution_seal.py` defines the future hard gate. A valid freeze record must bind:
 
 - full Git SHA;
-- held-out world-grid hash as a normative artifact;
-- confirmatory manifest hash;
-- thresholds and exclusions;
-- adapter version inventory;
-- result and resource artifact schemas;
-- execution command and artifact paths;
-- local reproduction bundle.
+- exact manifest hash;
+- world-generation ID;
+- 50-world grid hash;
+- threshold hash;
+- exclusion hash;
+- result-schema hash;
+- resource-schema hash;
+- adapter-inventory hash;
+- execution-command hash;
+- artifact-path hash;
+- explicit approval.
+
+Any mismatch keeps execution prohibited. The current manifest remains `UNFROZEN`, all eight candidate capability adapters remain unready, and no seal exists.
+
+## Remaining sequence
+
+```text
+1. Keep candidate-002 capability outcomes sealed.
+2. Complete outcome-blind preflight and static review.
+3. Rework/review the eight real adapters on development-only fixtures or an isolated staging branch.
+4. Verify interface and resource-emitter shape without candidate execution.
+5. Review code and protocol.
+6. Freeze SHA, world-grid hash, manifest hash, thresholds, exclusions, schemas, inventory, command, and artifact paths.
+7. Commit and verify the execution seal.
+──────── no-change boundary ────────
+8. Execute one fresh 5 × 10 × 8 × 9 = 3,600-record candidate matrix.
+9. Preserve every Primary failure and comparator success without post-hoc edits.
+```
 
 ## Scientific boundary
 
-Passing the outcome-blind preflight establishes consistent experimental wiring only. It does not
-upgrade the scientific claim, reveal held-out performance, or establish Level 1–3 generalization,
-architectural superiority, or necessity.
+The current repository contains development qualification evidence and outcome-blind preflight infrastructure. It contains no scientifically valid held-out capability result for candidate-002 and no established architectural superiority or necessity.
