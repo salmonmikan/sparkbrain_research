@@ -18,6 +18,11 @@ jobs:
         with:
           fetch-depth: 0
           lfs: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install validation tool
+        run: python -m pip install ruff
       - name: Align freeze bundle with v2 execution contracts
         run: |
           python - <<'PY'
