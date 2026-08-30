@@ -10,14 +10,14 @@ from pathlib import Path
 import pytest
 
 from sparkbrain.evaluation.v06_confirmatory import ConfirmatoryPhase
+from sparkbrain.evaluation.v06_confirmatory_candidate_manifest import (
+    build_candidate_manifest,
+)
 from sparkbrain.evaluation.v06_confirmatory_current_manifest import (
     build_current_confirmatory_manifest,
 )
 from sparkbrain.evaluation.v06_confirmatory_environment_lock_v2 import (
     capture_environment_lock_v2,
-)
-from sparkbrain.evaluation.v06_confirmatory_execution_seal import (
-    frozen_manifest_for_test,
 )
 from sparkbrain.evaluation.v06_confirmatory_external_control_package_v2 import (
     write_external_control_package_v2,
@@ -61,10 +61,7 @@ def _approved_bundle(tmp_path: Path):
         raw_root=str((tmp_path / "raw").resolve()),
         analysis_root=str((tmp_path / "analysis").resolve()),
     )
-    manifest = frozen_manifest_for_test(
-        build_current_confirmatory_manifest(ConfirmatoryPhase.CONFIRMATORY),
-        code_ref=_FAKE_SHA,
-    )
+    manifest = build_candidate_manifest(source_code_sha=_FAKE_SHA)
     first = build_external_freeze_bundle_v2(
         manifest,
         source_root=source_root,
