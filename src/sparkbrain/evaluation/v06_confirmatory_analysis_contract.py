@@ -22,10 +22,8 @@ def analysis_contract_hash() -> str:
     return digest(
         {
             "analysis_after_raw_complete": True,
-            "capability_scorer": SCORER_CALLABLE,
-            "raw_mutation_allowed": False,
+            "capability_scorer": "score_strict_confirmatory_results",
             "resource_decision_use": ResourceDecisionUse.DESCRIPTIVE_ONLY.value,
-            "scoring_command": SCORING_COMMAND,
             "version": ANALYSIS_CONTRACT_VERSION,
         }
     )
