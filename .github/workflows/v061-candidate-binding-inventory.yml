@@ -1,0 +1,47 @@
+name: v061-candidate-binding-inventory
+
+on:
+  push:
+    branches:
+      - v061-timing-contract-correction-20260831
+    paths:
+      - .github/workflows/v061-candidate-binding-inventory.yml
+
+permissions:
+  contents: read
+
+jobs:
+  inventory:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v061-timing-contract-correction-20260831
+          fetch-depth: 0
+          lfs: false
+
+      - name: Inventory candidate and held-out bindings
+        shell: bash
+        run: |
+          set -euo pipefail
+          git grep -n -E \
+            'candidate-002|WORLD_GENERATION_ID|HELDOUT_SEEDS|build_heldout_world_grid|heldout_world_parameters' \
+            -- '*.py' '*.yml' '*.yaml' '*.md' \
+            | tee candidate-binding-inventory.txt
+
+      - name: Export source snapshot
+        shell: bash
+        run: |
+          set -euo pipefail
+          git archive --format=tar.gz \
+            --output=sparkbrain-v061-source.tar.gz \
+            HEAD
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v061-candidate-binding-inventory-${{ github.run_id }}
+          path: |
+            candidate-binding-inventory.txt
+            sparkbrain-v061-source.tar.gz
+          compression-level: 0
+          retention-days: 7
