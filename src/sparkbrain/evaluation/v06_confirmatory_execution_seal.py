@@ -37,6 +37,9 @@ from .v06_confirmatory_resource_accounting import (
 from .v06_confirmatory_schedule_contract import training_schedule_grid_hash
 
 _SOURCE_SHA_PATTERN = re.compile(r"^[0-9a-f]{40}$")
+_APPROVAL_PATTERN = re.compile(
+    r"^APPROVED:[A-Za-z0-9_.@-]+:[0-9a-f]{16}$"
+)
 FREEZE_RECORD_VERSION = "v06-confirmatory-freeze-record-2"
 SEAL_STORAGE_MODE = "external-or-later-commit-with-detached-source-checkout"
 EXECUTION_COMMAND = (
@@ -165,6 +168,43 @@ class ExecutionSealReport:
         return asdict(self)
 
 
+def freeze_record_from_state(
+    state: dict[str, Any],
+) -> ConfirmatoryFreezeRecord:
+    record = ConfirmatoryFreezeRecord(
+        record_version=str(state["record_version"]),
+        seal_storage_mode=str(state["seal_storage_mode"]),
+        source_code_sha=str(state["source_code_sha"]),
+        manifest_hash=str(state["manifest_hash"]),
+        world_generation_id=str(state["world_generation_id"]),
+        world_grid_hash=str(state["world_grid_hash"]),
+        training_schedule_grid_hash=str(state["training_schedule_grid_hash"]),
+        thresholds_hash=str(state["thresholds_hash"]),
+        exclusions_hash=str(state["exclusions_hash"]),
+        result_schema_hash=str(state["result_schema_hash"]),
+        raw_resource_schema_hash=str(state["raw_resource_schema_hash"]),
+        normalized_resource_schema_hash=str(
+            state["normalized_resource_schema_hash"]
+        ),
+        resource_policy_hash=str(state["resource_policy_hash"]),
+        adapter_registration_hash=str(state["adapter_registration_hash"]),
+        adapter_source_inventory_hash=str(
+            state["adapter_source_inventory_hash"]
+        ),
+        privilege_inventory_hash=str(state["privilege_inventory_hash"]),
+        threshold_mode_hash=str(state["threshold_mode_hash"]),
+        artifact_contract_hash=str(state["artifact_contract_hash"]),
+        execution_command_hash=str(state["execution_command_hash"]),
+        artifact_path_hash=str(state["artifact_path_hash"]),
+        environment_lock_hash=str(state["environment_lock_hash"]),
+        rng_contract_hash=str(state["rng_contract_hash"]),
+        approval_id=str(state["approval_id"]),
+    )
+    if set(record.state_dict()) != set(state):
+        raise ValueError("freeze record contains missing or unexpected fields")
+    return record
+
+
 def build_freeze_record(
     manifest: ConfirmatoryManifest,
     *,
@@ -282,7 +322,7 @@ def validate_execution_seal(
         ),
         "storage_mode_matches": record.seal_storage_mode == SEAL_STORAGE_MODE,
     }
-    approval_present = bool(record.approval_id.strip())
+    approval_present = bool(_APPROVAL_PATTERN.fullmatch(record.approval_id))
     execution_allowed = all(
         (
             manifest_ready,
