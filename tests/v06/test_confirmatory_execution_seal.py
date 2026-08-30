@@ -19,6 +19,7 @@ from sparkbrain.evaluation.v06_confirmatory_execution_seal import (
     EXECUTION_COMMAND,
     SEAL_STORAGE_MODE,
     build_freeze_record,
+    freeze_record_from_state,
     require_execution_seal,
     validate_execution_seal,
 )
@@ -30,6 +31,7 @@ from sparkbrain.evaluation.v06_confirmatory_heldout_spec import (
 from sparkbrain.v06.foundation import digest
 
 _FAKE_SOURCE_SHA = "a" * 40
+_APPROVAL_ID = "APPROVED:unit-test:0123456789abcdef"
 
 
 def _repository_root() -> Path:
@@ -70,7 +72,7 @@ def _record():
         source_code_sha=_FAKE_SOURCE_SHA,
         repository_root=_repository_root(),
         environment_lock=_environment_lock(),
-        approval_id="independent-freeze-review:test",
+        approval_id=_APPROVAL_ID,
     )
 
 
@@ -120,6 +122,27 @@ def test_seal_solves_self_reference_by_pointing_to_detached_source_sha() -> None
     assert "detached-source-checkout" in record.seal_storage_mode
     assert "seal_commit_sha" not in record.state_dict()
     assert _manifest().code_ref == record.source_code_sha
+
+
+def test_freeze_record_round_trips_exactly() -> None:
+    record = _record()
+    assert freeze_record_from_state(record.state_dict()) == record
+    with pytest.raises(ValueError, match="missing or unexpected"):
+        freeze_record_from_state({**record.state_dict(), "unexpected": True})
+
+
+def test_approval_must_have_structured_independent_format() -> None:
+    for invalid in (
+        "",
+        "approved",
+        "APPROVED",
+        "APPROVED:reviewer",
+        "APPROVED:reviewer:not-a-hash",
+        "PENDING:reviewer:0123456789abcdef",
+    ):
+        report = _validate(replace(_record(), approval_id=invalid))
+        assert report.approval_present is False
+        assert report.execution_allowed is False
 
 
 def test_any_frozen_hash_change_fails_closed() -> None:
@@ -191,7 +214,7 @@ def test_quarantined_seed_set_can_never_validate_as_fresh() -> None:
         source_code_sha=_FAKE_SOURCE_SHA,
         repository_root=_repository_root(),
         environment_lock=_environment_lock(),
-        approval_id="independent-freeze-review:test",
+        approval_id=_APPROVAL_ID,
     )
     report = validate_execution_seal(
         contaminated,
