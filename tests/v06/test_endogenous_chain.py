@@ -116,3 +116,27 @@ def test_internal_chain_does_not_create_external_observations_or_positive_update
         and spark.committed_positive_updates == 0
         for spark in runtime.generated_sparks
     )
+
+
+def test_drain_events_stops_at_last_actual_event() -> None:
+    runtime = build_runtime()
+    runtime.present_external(pulse("drain-cue", 100.0, 0))
+    generated = runtime.drain_scheduled_events(120.0)
+    assert tuple(row.unit_id for row in generated) == (1, 2, 3)
+    assert runtime.field.current_time_ms == 115.0
+
+    runtime.advance_silence(120.0)
+    assert runtime.field.current_time_ms == 120.0
+
+
+def test_external_time_reversal_guard_remains_strict() -> None:
+    import pytest
+
+    runtime = build_runtime()
+    runtime.present_external(pulse("strict-cue", 100.0, 0))
+    runtime.advance_silence(120.0)
+    with pytest.raises(
+        ValueError,
+        match="cannot move Field time backwards",
+    ):
+        runtime.present_external(pulse("past-cue", 119.0, 0))

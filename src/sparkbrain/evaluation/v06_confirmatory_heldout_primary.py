@@ -267,12 +267,17 @@ def _run_cue(
     cue_unit_id: int,
     start_ms: float,
     event_id: str,
+    settle_to_horizon: bool = True,
 ) -> _ChainResult:
     before = len(runtime.generated_sparks)
     runtime.present_external(
         _pulse(parameters, event_id, start_ms, cue_unit_id)
     )
-    runtime.advance_silence(_horizon(parameters, start_ms))
+    horizon = _horizon(parameters, start_ms)
+    if settle_to_horizon:
+        runtime.advance_silence(horizon)
+    else:
+        runtime.drain_scheduled_events(horizon)
     sparks = tuple(runtime.generated_sparks[before:])
     return _ChainResult(
         units=tuple(row.unit_id for row in sparks),
@@ -556,6 +561,7 @@ def _boundary_episode(
         cue_unit_id=cue_unit_id,
         start_ms=start_ms,
         event_id=event_id,
+        settle_to_horizon=False,
     )
     sparks = tuple(runtime.generated_sparks[before_sparks:])
     boundaries = emitter.emit(sparks, source_state_hash=runtime.state_hash())
