@@ -146,7 +146,9 @@ def _build_expectation(
 
 def _transition_count(model: LocalTemporalExpectation) -> int:
     return sum(
-        int(row["count"]) for row in model.state_dict()["transitions"].values()
+        int(row["count"])
+        for table in model.state_dict()["transitions"].values()
+        for row in table.values()
     )
 
 
