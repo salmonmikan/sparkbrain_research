@@ -36,11 +36,11 @@ from sparkbrain.v06.local_expectation import (
     LocalTemporalExpectation,
 )
 from sparkbrain.v06.local_transition import SparseLocalTransitionAdaptation
+from sparkbrain.v06.reinjection import FieldReinjectionGate, ReinjectionConfig
 from sparkbrain.v06.relation_reentry import (
     AnonymousRelationReentry,
     RelationReentryConfig,
 )
-from sparkbrain.v06.reinjection import FieldReinjectionGate, ReinjectionConfig
 from sparkbrain.v06.taxonomy import verify_taxonomy_variant_runtime_equality
 from sparkbrain.v06.world_boundary import (
     AnonymousBoundaryWorld,

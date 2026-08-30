@@ -32,11 +32,12 @@ from .v06_confirmatory_heldout_primary import (
     _run_reentry,
     _runtime,
     _train_expectation,
+)
+from .v06_confirmatory_heldout_primary import (
     run_condition as run_primary_condition,
 )
 from .v06_confirmatory_heldout_spec import HeldoutWorldParameters
 from .v06_confirmatory_resources import ConditionResourceRecord
-
 
 _CONTROL_CONDITIONS = (
     ConfirmatoryCondition.NO_ENDOGENOUS,
