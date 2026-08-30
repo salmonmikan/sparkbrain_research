@@ -7,7 +7,11 @@ from dataclasses import asdict, dataclass, replace
 from pathlib import Path
 from typing import Any
 
+from .v06_confirmatory import ConfirmatoryPhase
 from .v06_confirmatory_candidate_manifest import build_candidate_manifest
+from .v06_confirmatory_current_manifest import (
+    build_current_confirmatory_manifest,
+)
 from .v06_confirmatory_environment_lock_v2 import (
     ExecutionEnvironmentLockV2,
     RNGContractV2,
@@ -163,7 +167,14 @@ def independently_verify_external_bundle_v2(
     if reviewer == expected.builder:
         raise ValueError("independent reviewer must differ from builder")
     layout = ExternalArtifactLayout(**expected.artifact_layout)
-    manifest = build_candidate_manifest(source_code_sha=expected.source_git_sha)
+    manifest = (
+        build_candidate_manifest(source_code_sha=expected.source_git_sha)
+        if expected.manifest_execution_ready
+        else build_current_confirmatory_manifest(
+            ConfirmatoryPhase.CONFIRMATORY,
+            code_ref=expected.source_git_sha,
+        )
+    )
     observed = build_external_freeze_bundle_v2(
         manifest,
         source_root=source_root,

@@ -122,7 +122,7 @@ def test_bundle_binds_full_world_schedule_adapter_environment_and_paths(
     assert set(bundle.heldout_seeds).isdisjoint(bundle.quarantined_seeds)
     assert bundle.training_schedule_hash == combined_training_schedule_hash()
     assert len(bundle.adapter_inventory) == 8
-    assert len(bundle.adapter_source_hashes) == 8
+    assert len(bundle.adapter_source_hashes) == 9
     assert bundle.world_field_read_inventory
     assert bundle.privilege_inventory["g4-assembly-conditioned"] == (
         "explicit-assembly-state",

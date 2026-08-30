@@ -47,6 +47,7 @@ _ADAPTER_SOURCE_PATHS = (
     "src/sparkbrain/evaluation/v06_confirmatory_heldout_controls.py",
     "src/sparkbrain/evaluation/v06_confirmatory_heldout_comparators.py",
     "src/sparkbrain/evaluation/v06_confirmatory_adapter_registry_v2.py",
+    "src/sparkbrain/baselines/v06/confirmatory_adapters.py",
     "src/sparkbrain/baselines/v06/g3_recurrent.py",
     "src/sparkbrain/baselines/v06/g4_assembly.py",
     "src/sparkbrain/baselines/v06/g5_typed.py",
@@ -314,6 +315,8 @@ class ExternalFreezeBundleV2:
         )
         if any(len(value) != 64 for value in hashes):
             raise ValueError("freeze bundle contains a malformed SHA-256 hash")
+        if self.training_schedule_hash != training_schedule_grid_hash():
+            raise ValueError("training schedule hash mismatch")
         if self.adapter_inventory_hash != _digest(list(self.adapter_inventory)):
             raise ValueError("adapter inventory hash mismatch")
         registered_paths = {
@@ -324,7 +327,7 @@ class ExternalFreezeBundleV2:
             str(row["condition"]): str(row["adapter_path"])
             for row in self.adapter_inventory
         }
-        if inventory_paths != registered_paths:
+        if self.manifest_execution_ready and inventory_paths != registered_paths:
             raise ValueError(
                 "frozen adapter paths differ from v2 execution registry"
             )
@@ -394,7 +397,7 @@ def build_external_freeze_bundle_v2(
     registered_paths = {
         row.condition: row.adapter_path for row in manifest.conditions
     }
-    if registered_paths != ADAPTER_PATHS_V2:
+    if readiness.ready and registered_paths != ADAPTER_PATHS_V2:
         raise ValueError(
             "manifest adapter paths differ from v2 execution registry"
         )

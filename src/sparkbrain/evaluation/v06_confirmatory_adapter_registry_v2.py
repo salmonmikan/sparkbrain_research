@@ -2,9 +2,14 @@ from __future__ import annotations
 
 from collections.abc import Callable
 
+from sparkbrain.baselines.v06.confirmatory_adapters import (
+    run_g3_recurrent_candidate,
+    run_g4_assembly_candidate,
+    run_g5_typed_candidate,
+)
+
 from .v06_confirmatory import ConfirmatoryCondition
 from .v06_confirmatory_heldout_common import HeldoutConditionExecution
-from .v06_confirmatory_heldout_comparators import run_condition as run_comparator
 from .v06_confirmatory_heldout_controls import run_condition as run_control
 from .v06_confirmatory_heldout_primary import run_condition as run_primary
 from .v06_confirmatory_heldout_spec import HeldoutWorldParameters
@@ -40,33 +45,15 @@ def run_shuffled_relation_v2(
     return run_control(world, ConfirmatoryCondition.SHUFFLED_RELATION)
 
 
-def run_g3_recurrent_v2(
-    world: HeldoutWorldParameters,
-) -> HeldoutConditionExecution:
-    return run_comparator(world, ConfirmatoryCondition.G3_RECURRENT)
-
-
-def run_g4_assembly_v2(
-    world: HeldoutWorldParameters,
-) -> HeldoutConditionExecution:
-    return run_comparator(world, ConfirmatoryCondition.G4_ASSEMBLY)
-
-
-def run_g5_typed_v2(
-    world: HeldoutWorldParameters,
-) -> HeldoutConditionExecution:
-    return run_comparator(world, ConfirmatoryCondition.G5_TYPED)
-
-
 ADAPTERS_V2: dict[ConfirmatoryCondition, Adapter] = {
     ConfirmatoryCondition.PRIMARY: run_primary_v2,
     ConfirmatoryCondition.NO_ENDOGENOUS: run_no_endogenous_v2,
     ConfirmatoryCondition.RANDOM_MATCHED: run_random_matched_v2,
     ConfirmatoryCondition.READOUT_ONLY: run_readout_only_v2,
     ConfirmatoryCondition.SHUFFLED_RELATION: run_shuffled_relation_v2,
-    ConfirmatoryCondition.G3_RECURRENT: run_g3_recurrent_v2,
-    ConfirmatoryCondition.G4_ASSEMBLY: run_g4_assembly_v2,
-    ConfirmatoryCondition.G5_TYPED: run_g5_typed_v2,
+    ConfirmatoryCondition.G3_RECURRENT: run_g3_recurrent_candidate,
+    ConfirmatoryCondition.G4_ASSEMBLY: run_g4_assembly_candidate,
+    ConfirmatoryCondition.G5_TYPED: run_g5_typed_candidate,
 }
 
 ADAPTER_PATHS_V2: dict[ConfirmatoryCondition, str] = {
@@ -88,6 +75,13 @@ def validate_adapter_registry_v2() -> None:
         expected = f"{adapter.__module__}.{adapter.__name__}"
         if ADAPTER_PATHS_V2[condition] != expected:
             raise RuntimeError("v2 adapter path differs from executed callable")
+    for condition in (
+        ConfirmatoryCondition.G3_RECURRENT,
+        ConfirmatoryCondition.G4_ASSEMBLY,
+        ConfirmatoryCondition.G5_TYPED,
+    ):
+        if not ADAPTER_PATHS_V2[condition].startswith("sparkbrain.baselines."):
+            raise RuntimeError("comparator adapter path escaped sparkbrain.baselines")
 
 
 def run_registered_adapter_v2(
