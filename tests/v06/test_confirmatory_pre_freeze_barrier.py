@@ -12,7 +12,6 @@ from sparkbrain.evaluation.v06_confirmatory_current_manifest import (
 )
 
 _FORBIDDEN_EXECUTION_PATHS = (
-    "src/sparkbrain/evaluation/v06_confirmatory_execute.py",
     "src/sparkbrain/evaluation/v06_confirmatory_heldout_matrix.py",
     "tests/v06/test_confirmatory_heldout_adapters.py",
 )
@@ -54,7 +53,7 @@ def _call_name(node: ast.Call) -> str | None:
     return None
 
 
-def test_staging_branch_contains_no_dispatcher_or_candidate_execution_test() -> None:
+def test_staging_branch_contains_no_legacy_dispatcher_or_candidate_test() -> None:
     root = _repository_root()
     assert all(not (root / path).exists() for path in _FORBIDDEN_EXECUTION_PATHS)
 
@@ -94,6 +93,28 @@ def test_staging_capability_modules_cannot_construct_candidate_worlds() -> None:
             for alias in node.names
         }
         assert _FORBIDDEN_CANDIDATE_IMPORT_NAMES.isdisjoint(imported_names), path
+
+
+def test_new_runner_is_gate_first_and_raw_only() -> None:
+    path = (
+        _repository_root()
+        / "src"
+        / "sparkbrain"
+        / "evaluation"
+        / "v06_confirmatory_execute.py"
+    )
+    source = path.read_text(encoding="utf-8")
+    assert "v06_confirmatory_scoring" not in source
+    assert "score_confirmatory_results" not in source
+    assert "score_strict_confirmatory_results" not in source
+    gate_index = source.index("require_launch_gate(")
+    claim_index = source.index("claim_one_way_execution(")
+    world_index = source.index("build_heldout_world_grid()")
+    adapter_index = source.index("run_registered_condition(")
+    finalize_index = source.index("writer.finalize()")
+    assert gate_index < claim_index < world_index < adapter_index < finalize_index
+    assert "RAW_COMMITTED" in source
+    assert "AtomicRawRunWriter" in source
 
 
 def test_current_confirmatory_manifest_remains_unfrozen_and_unready() -> None:
