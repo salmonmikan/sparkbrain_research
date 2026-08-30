@@ -1,0 +1,162 @@
+name: staging-freeze-v2-final-bindings
+
+on:
+  push:
+    branches: ["v06-capability-staging-20260830"]
+    paths: [".github/workflows/staging-freeze-v2-final-bindings.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  bind:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v06-capability-staging-20260830
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Bind exact Python executable and control-package source
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          path = Path("src/sparkbrain/evaluation/v06_confirmatory_freeze_bundle_v2.py")
+          source = path.read_text(encoding="utf-8")
+
+          control_source = (
+              '    "src/sparkbrain/evaluation/'
+              'v06_confirmatory_external_control_package_v2.py",\n'
+          )
+          if control_source not in source:
+              anchors = (
+                  '    "src/sparkbrain/evaluation/v06_confirmatory_external_raw_store.py",\n',
+                  '    "src/sparkbrain/evaluation/v06_confirmatory_external_freeze.py",\n',
+              )
+              for anchor in anchors:
+                  if anchor in source:
+                      source = source.replace(anchor, control_source + anchor, 1)
+                      break
+              else:
+                  raise SystemExit("cannot find freeze contract inventory anchor")
+
+          source = source.replace(
+              "def _execution_command(layout: ExternalArtifactLayout) -> tuple[str, ...]:",
+              "def _execution_command(\n"
+              "    layout: ExternalArtifactLayout,\n"
+              "    *,\n"
+              "    python_executable: str,\n"
+              ") -> tuple[str, ...]:",
+          )
+          source = source.replace(
+              "def _scoring_command(layout: ExternalArtifactLayout) -> tuple[str, ...]:",
+              "def _scoring_command(\n"
+              "    layout: ExternalArtifactLayout,\n"
+              "    *,\n"
+              "    python_executable: str,\n"
+              ") -> tuple[str, ...]:",
+          )
+
+          source = re.sub(
+              r'(def _execution_command\([\s\S]*?return \(\n\s*)"python",',
+              r'\1python_executable,',
+              source,
+              count=1,
+          )
+          source = re.sub(
+              r'(def _scoring_command\([\s\S]*?return \(\n\s*)"python",',
+              r'\1python_executable,',
+              source,
+              count=1,
+          )
+
+          source = source.replace(
+              "execution_command = _execution_command(artifact_layout)",
+              "execution_command = _execution_command(\n"
+              "        artifact_layout,\n"
+              "        python_executable=environment_lock.python_executable,\n"
+              "    )",
+          )
+          source = source.replace(
+              "scoring_command = _scoring_command(artifact_layout)",
+              "scoring_command = _scoring_command(\n"
+              "        artifact_layout,\n"
+              "        python_executable=environment_lock.python_executable,\n"
+              "    )",
+          )
+
+          validation_anchor = (
+              '        if self.environment_lock_hash != _digest(self.environment_lock):\n'
+              '            raise ValueError("environment lock hash mismatch")\n'
+          )
+          command_validation = (
+              validation_anchor
+              + '        expected_python = str(self.environment_lock.get("python_executable", ""))\n'
+              + '        if not expected_python:\n'
+              + '            raise ValueError("environment lock lacks Python executable")\n'
+              + '        if self.execution_command[0] != expected_python:\n'
+              + '            raise ValueError("execution command Python differs from environment lock")\n'
+              + '        if self.scoring_command[0] != expected_python:\n'
+              + '            raise ValueError("scoring command Python differs from environment lock")\n'
+          )
+          if "execution command Python differs from environment lock" not in source:
+              if validation_anchor not in source:
+                  raise SystemExit("cannot find environment validation anchor")
+              source = source.replace(validation_anchor, command_validation, 1)
+
+          path.write_text(source, encoding="utf-8")
+
+          test = Path("tests/v06/test_confirmatory_freeze_bundle_v2.py")
+          text = test.read_text(encoding="utf-8")
+          old_execution = '''    assert bundle.execution_command[0:3] == (
+              "python",
+              "-m",
+              "sparkbrain.evaluation.v06_confirmatory_execute_external_v2",
+          )
+          '''
+          new_execution = '''    assert bundle.execution_command[0] == bundle.environment_lock[
+              "python_executable"
+          ]
+          assert bundle.execution_command[1:3] == (
+              "-m",
+              "sparkbrain.evaluation.v06_confirmatory_execute_external_v2",
+          )
+          '''
+          if old_execution in text:
+              text = text.replace(old_execution, new_execution, 1)
+          old_scoring = '''    assert bundle.scoring_command[0:3] == (
+              "python",
+              "-m",
+              "sparkbrain.evaluation.v06_confirmatory_score_external_v2",
+          )
+          '''
+          new_scoring = '''    assert bundle.scoring_command[0] == bundle.environment_lock[
+              "python_executable"
+          ]
+          assert bundle.scoring_command[1:3] == (
+              "-m",
+              "sparkbrain.evaluation.v06_confirmatory_score_external_v2",
+          )
+          '''
+          if old_scoring in text:
+              text = text.replace(old_scoring, new_scoring, 1)
+          test.write_text(text, encoding="utf-8")
+          PY
+      - name: Format and verify bindings
+        run: |
+          python -m pip install "ruff>=0.9"
+          python -m ruff check --fix \
+            src/sparkbrain/evaluation/v06_confirmatory_freeze_bundle_v2.py \
+            tests/v06/test_confirmatory_freeze_bundle_v2.py
+      - name: Commit final binding
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            src/sparkbrain/evaluation/v06_confirmatory_freeze_bundle_v2.py \
+            tests/v06/test_confirmatory_freeze_bundle_v2.py
+          git commit -m "fix(v06): bind freeze to exact Python and control package"
+          git push origin HEAD:v06-capability-staging-20260830
