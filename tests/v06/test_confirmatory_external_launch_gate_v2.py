@@ -8,15 +8,11 @@ from pathlib import Path
 
 import pytest
 
-from sparkbrain.evaluation.v06_confirmatory import ConfirmatoryPhase
-from sparkbrain.evaluation.v06_confirmatory_current_manifest import (
-    build_current_confirmatory_manifest,
+from sparkbrain.evaluation.v06_confirmatory_candidate_manifest import (
+    build_candidate_manifest,
 )
 from sparkbrain.evaluation.v06_confirmatory_environment_lock_v2 import (
     capture_environment_lock_v2,
-)
-from sparkbrain.evaluation.v06_confirmatory_execution_seal import (
-    frozen_manifest_for_test,
 )
 from sparkbrain.evaluation.v06_confirmatory_external_control_package_v2 import (
     write_external_control_package_v2,
@@ -71,10 +67,7 @@ def _detached_clone(tmp_path: Path) -> tuple[Path, str]:
 def _sealed_package(tmp_path: Path):
     environment = _environment_or_skip()
     source, sha = _detached_clone(tmp_path)
-    manifest = frozen_manifest_for_test(
-        build_current_confirmatory_manifest(ConfirmatoryPhase.CONFIRMATORY),
-        code_ref=sha,
-    )
+    manifest = build_candidate_manifest(source_code_sha=sha)
     layout = ExternalArtifactLayout(
         control_root=str((tmp_path / "control").resolve()),
         raw_root=str((tmp_path / "raw").resolve()),
