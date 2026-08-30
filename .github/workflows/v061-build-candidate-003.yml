@@ -1,0 +1,588 @@
+name: v061-build-candidate-003
+
+on:
+  push:
+    branches:
+      - v061-timing-contract-correction-20260831
+    paths:
+      - .github/workflows/v061-build-candidate-003.yml
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    env:
+      TARGET_BRANCH: v061-candidate-003-20260831
+      PYTHONHASHSEED: "0"
+      TZ: UTC
+      LC_ALL: C.UTF-8
+      LANG: C.UTF-8
+      GIT_LFS_SKIP_SMUDGE: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v061-timing-contract-correction-20260831
+          fetch-depth: 0
+          lfs: false
+
+      - name: Refuse an existing candidate-003 branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "${TARGET_BRANCH}"; then
+            echo "Candidate-003 branch already exists; refusing replacement." >&2
+            exit 1
+          fi
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11.16"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+
+      - name: Construct fresh candidate-003 source
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          root = Path.cwd()
+
+          def replace_once(path: str, old: str, new: str) -> None:
+              target = root / path
+              text = target.read_text(encoding="utf-8")
+              if text.count(old) != 1:
+                  raise SystemExit(
+                      f"{path}: expected exactly one occurrence of {old!r}"
+                  )
+              target.write_text(text.replace(old, new), encoding="utf-8")
+
+          spec_path = root / (
+              "src/sparkbrain/evaluation/v06_confirmatory_heldout_spec.py"
+          )
+          spec = spec_path.read_text(encoding="utf-8")
+          old = '''WORLD_GENERATION_ID = "v06-confirmatory-candidate-002"
+          QUARANTINED_HELDOUT_SEEDS = tuple(range(100, 110))
+          HELDOUT_FAMILIES = (
+          '''
+          new = '''WORLD_GENERATION_ID = "v06-confirmatory-candidate-003"
+          RETIRED_CANDIDATE_002_GENERATION_ID = "v06-confirmatory-candidate-002"
+          QUALIFICATION_HELDOUT_SEEDS = tuple(range(100, 110))
+          RETIRED_CANDIDATE_002_SEEDS = tuple(range(1000, 1010))
+          QUARANTINED_HELDOUT_SEEDS = (
+              *QUALIFICATION_HELDOUT_SEEDS,
+              *RETIRED_CANDIDATE_002_SEEDS,
+          )
+          HELDOUT_FAMILIES = (
+          '''
+          if spec.count(old) != 1:
+              raise SystemExit("held-out generation constants did not match")
+          spec = spec.replace(old, new)
+          if spec.count("HELDOUT_SEEDS = tuple(range(1000, 1010))") != 1:
+              raise SystemExit("candidate-002 held-out seed declaration did not match")
+          spec = spec.replace(
+              "HELDOUT_SEEDS = tuple(range(1000, 1010))",
+              "HELDOUT_SEEDS = tuple(range(2000, 2010))",
+          )
+
+          old = '''        if self.family_id not in HELDOUT_FAMILIES:
+                      raise ValueError("unknown held-out world family")
+                  if self.seed not in HELDOUT_SEEDS:
+                      raise ValueError("unsupported held-out seed")
+                  if self.seed in QUARANTINED_HELDOUT_SEEDS:
+                      raise ValueError("quarantined held-out seed cannot enter candidate grid")
+                  if not self.structural_token.startswith(f"{WORLD_GENERATION_ID}:"):
+                      raise ValueError("structural token must identify the fresh world generation")
+          '''
+          new = '''        if self.family_id not in HELDOUT_FAMILIES:
+                      raise ValueError("unknown held-out world family")
+                  current_token = f"{WORLD_GENERATION_ID}:{self.seed}"
+                  retired_token = f"{RETIRED_CANDIDATE_002_GENERATION_ID}:{self.seed}"
+                  if self.structural_token == current_token:
+                      allowed_seeds = HELDOUT_SEEDS
+                      current_candidate = True
+                  elif self.structural_token == retired_token:
+                      allowed_seeds = RETIRED_CANDIDATE_002_SEEDS
+                      current_candidate = False
+                  else:
+                      raise ValueError("structural token identifies an unsupported generation")
+                  if self.seed not in allowed_seeds:
+                      raise ValueError("unsupported held-out seed for world generation")
+                  if current_candidate and self.seed in QUARANTINED_HELDOUT_SEEDS:
+                      raise ValueError("quarantined held-out seed cannot enter candidate grid")
+          '''
+          if spec.count(old) != 1:
+              raise SystemExit("held-out validation block did not match")
+          spec = spec.replace(old, new)
+
+          old = '''def _seed_index(seed: int) -> int:
+              try:
+                  return HELDOUT_SEEDS.index(seed)
+              except ValueError as exc:
+                  raise ValueError(f"unsupported held-out seed: {seed}") from exc
+          
+          
+          def heldout_world_parameters(
+              family_id: str,
+              seed: int,
+          ) -> HeldoutWorldParameters:
+              """Generate one deterministic, outcome-unopened world specification."""
+          
+              if family_id not in HELDOUT_FAMILIES:
+                  raise ValueError(f"unknown held-out world family: {family_id}")
+              seed_index = _seed_index(seed)
+              rng_seed = int(
+                  _digest(
+                      {
+                          "family_id": family_id,
+                          "generation": WORLD_GENERATION_ID,
+                          "seed": seed,
+                      }
+                  )[:16],
+                  16,
+              )
+          '''
+          new = '''def _seed_index(seed: int, seeds: tuple[int, ...]) -> int:
+              try:
+                  return seeds.index(seed)
+              except ValueError as exc:
+                  raise ValueError(f"unsupported held-out seed: {seed}") from exc
+          
+          
+          def _world_parameters(
+              family_id: str,
+              seed: int,
+              *,
+              generation_id: str,
+              seeds: tuple[int, ...],
+          ) -> HeldoutWorldParameters:
+              if family_id not in HELDOUT_FAMILIES:
+                  raise ValueError(f"unknown held-out world family: {family_id}")
+              seed_index = _seed_index(seed, seeds)
+              rng_seed = int(
+                  _digest(
+                      {
+                          "family_id": family_id,
+                          "generation": generation_id,
+                          "seed": seed,
+                      }
+                  )[:16],
+                  16,
+              )
+          '''
+          if spec.count(old) != 1:
+              raise SystemExit("held-out generator header did not match")
+          spec = spec.replace(old, new)
+          if spec.count('structural_token=f"{WORLD_GENERATION_ID}:{seed}"') != 1:
+              raise SystemExit("held-out structural token did not match")
+          spec = spec.replace(
+              'structural_token=f"{WORLD_GENERATION_ID}:{seed}"',
+              'structural_token=f"{generation_id}:{seed}"',
+          )
+
+          old = '''    parameters.validate()
+              return parameters
+          
+          
+          def build_heldout_world_grid() -> tuple[HeldoutWorldParameters, ...]:
+          '''
+          new = '''    parameters.validate()
+              return parameters
+          
+          
+          def heldout_world_parameters(
+              family_id: str,
+              seed: int,
+          ) -> HeldoutWorldParameters:
+              """Generate one deterministic, outcome-unopened candidate-003 world."""
+          
+              return _world_parameters(
+                  family_id,
+                  seed,
+                  generation_id=WORLD_GENERATION_ID,
+                  seeds=HELDOUT_SEEDS,
+              )
+          
+          
+          def retired_candidate_002_world_parameters(
+              family_id: str,
+              seed: int,
+          ) -> HeldoutWorldParameters:
+              """Rebuild retired candidate-002 worlds for regression testing only."""
+          
+              return _world_parameters(
+                  family_id,
+                  seed,
+                  generation_id=RETIRED_CANDIDATE_002_GENERATION_ID,
+                  seeds=RETIRED_CANDIDATE_002_SEEDS,
+              )
+          
+          
+          def build_heldout_world_grid() -> tuple[HeldoutWorldParameters, ...]:
+          '''
+          if spec.count(old) != 1:
+              raise SystemExit("held-out current/retired generator insertion did not match")
+          spec = spec.replace(old, new)
+
+          old = '''def heldout_world_grid_hash() -> str:
+              return _digest(
+                  {
+                      "generation": WORLD_GENERATION_ID,
+                      "worlds": [row.state_dict() for row in build_heldout_world_grid()],
+                  }
+              )
+          '''
+          new = '''def build_retired_candidate_002_world_grid() -> tuple[HeldoutWorldParameters, ...]:
+              """Return the consumed candidate-002 grid outside the current candidate path."""
+          
+              return tuple(
+                  retired_candidate_002_world_parameters(family_id, seed)
+                  for family_id in HELDOUT_FAMILIES
+                  for seed in RETIRED_CANDIDATE_002_SEEDS
+              )
+          
+          
+          def heldout_world_grid_hash() -> str:
+              return _digest(
+                  {
+                      "generation": WORLD_GENERATION_ID,
+                      "worlds": [row.state_dict() for row in build_heldout_world_grid()],
+                  }
+              )
+          
+          
+          def retired_candidate_002_world_grid_hash() -> str:
+              return _digest(
+                  {
+                      "generation": RETIRED_CANDIDATE_002_GENERATION_ID,
+                      "worlds": [
+                          row.state_dict()
+                          for row in build_retired_candidate_002_world_grid()
+                      ],
+                  }
+              )
+          '''
+          if spec.count(old) != 1:
+              raise SystemExit("held-out retired-grid insertion did not match")
+          spec_path.write_text(spec.replace(old, new), encoding="utf-8")
+
+          replace_once(
+              "src/sparkbrain/evaluation/v06_confirmatory_current_manifest.py",
+              'protocol_version="v06-amendment-005-candidate-2"',
+              'protocol_version="v06-amendment-007-candidate-3"',
+          )
+          replace_once(
+              "src/sparkbrain/evaluation/v06_confirmatory_current_manifest.py",
+              '"Quarantined 100-series capability observations are development-only."',
+              '"Qualification seeds 100-109 and retired candidate-002 seeds "\n'
+              '            "1000-1009 are quarantined."',
+          )
+          replace_once(
+              "src/sparkbrain/evaluation/v06_confirmatory_current_manifest.py",
+              '"Only the fresh candidate-002 world generation may enter the next freeze."',
+              '"Only the fresh candidate-003 world generation may enter the next freeze."',
+          )
+          replace_once(
+              "src/sparkbrain/evaluation/v06_confirmatory_candidate_manifest.py",
+              'protocol_version="v06-amendment-006-freeze-candidate-1"',
+              'protocol_version="v06-amendment-008-freeze-candidate-3"',
+          )
+          replace_once(
+              "src/sparkbrain/evaluation/v06_confirmatory_candidate_manifest.py",
+              '"Real candidate adapter reviewed on development-only fixtures; "',
+              '"Real candidate-003 adapter reviewed on development-only fixtures; "',
+          )
+
+          for path in (
+              "src/sparkbrain/evaluation/v06_confirmatory_execute_external_v2.py",
+              "src/sparkbrain/evaluation/v06_confirmatory_verify_external_raw_v2.py",
+          ):
+              target = root / path
+              text = target.read_text(encoding="utf-8")
+              if "candidate-002" not in text:
+                  raise SystemExit(f"{path}: candidate-002 namespace was absent")
+              target.write_text(
+                  text.replace("candidate-002", "candidate-003"),
+                  encoding="utf-8",
+              )
+          replace_once(
+              "src/sparkbrain/evaluation/v06_confirmatory_external_launch_gate_v2.py",
+              "candidate-002 launch gate remains closed",
+              "candidate-003 launch gate remains closed",
+          )
+
+          regression = root / (
+              "tests/v06/test_confirmatory_candidate_002_timing_regression.py"
+          )
+          text = regression.read_text(encoding="utf-8")
+          old = '''from sparkbrain.evaluation.v06_confirmatory_heldout_spec import (
+              WORLD_GENERATION_ID,
+              build_heldout_world_grid,
+              heldout_world_parameters,
+          )
+          '''
+          new = '''from sparkbrain.evaluation.v06_confirmatory_heldout_spec import (
+              RETIRED_CANDIDATE_002_GENERATION_ID,
+              build_retired_candidate_002_world_grid,
+              retired_candidate_002_world_parameters,
+          )
+          '''
+          if text.count(old) != 1:
+              raise SystemExit("candidate-002 regression import block did not match")
+          text = text.replace(old, new)
+          text = text.replace(
+              "for parameters in build_heldout_world_grid()",
+              "for parameters in build_retired_candidate_002_world_grid()",
+          )
+          text = text.replace(
+              'assert WORLD_GENERATION_ID == "v06-confirmatory-candidate-002"',
+              'assert RETIRED_CANDIDATE_002_GENERATION_ID == (\n'
+              '        "v06-confirmatory-candidate-002"\n'
+              '    )',
+          )
+          text = text.replace(
+              "parameters = heldout_world_parameters(",
+              "parameters = retired_candidate_002_world_parameters(",
+          )
+          regression.write_text(text, encoding="utf-8")
+
+          heldout_test = root / "tests/v06/test_confirmatory_heldout_spec.py"
+          text = heldout_test.read_text(encoding="utf-8")
+          old = '''from sparkbrain.evaluation.v06_confirmatory_heldout_spec import (
+              HELDOUT_FAMILIES,
+              HELDOUT_SEEDS,
+              QUARANTINED_HELDOUT_SEEDS,
+              WORLD_GENERATION_ID,
+              build_heldout_world_grid,
+              heldout_world_grid_hash,
+              heldout_world_parameters,
+          )
+          '''
+          new = '''from sparkbrain.evaluation.v06_confirmatory_heldout_spec import (
+              HELDOUT_FAMILIES,
+              HELDOUT_SEEDS,
+              QUALIFICATION_HELDOUT_SEEDS,
+              QUARANTINED_HELDOUT_SEEDS,
+              RETIRED_CANDIDATE_002_GENERATION_ID,
+              RETIRED_CANDIDATE_002_SEEDS,
+              WORLD_GENERATION_ID,
+              build_heldout_world_grid,
+              build_retired_candidate_002_world_grid,
+              heldout_world_grid_hash,
+              heldout_world_parameters,
+              retired_candidate_002_world_grid_hash,
+          )
+          '''
+          if text.count(old) != 1:
+              raise SystemExit("held-out test import block did not match")
+          text = text.replace(old, new)
+          old = '''def test_fresh_seed_set_is_disjoint_from_quarantined_capability_seeds() -> None:
+              assert set(HELDOUT_SEEDS).isdisjoint(QUARANTINED_HELDOUT_SEEDS)
+              assert HELDOUT_SEEDS == tuple(range(1000, 1010))
+              assert QUARANTINED_HELDOUT_SEEDS == tuple(range(100, 110))
+          '''
+          new = '''def test_fresh_seed_set_is_disjoint_from_every_consumed_seed_set() -> None:
+              assert set(HELDOUT_SEEDS).isdisjoint(QUARANTINED_HELDOUT_SEEDS)
+              assert set(HELDOUT_SEEDS).isdisjoint(RETIRED_CANDIDATE_002_SEEDS)
+              assert HELDOUT_SEEDS == tuple(range(2000, 2010))
+              assert QUALIFICATION_HELDOUT_SEEDS == tuple(range(100, 110))
+              assert RETIRED_CANDIDATE_002_SEEDS == tuple(range(1000, 1010))
+              assert QUARANTINED_HELDOUT_SEEDS == (
+                  *QUALIFICATION_HELDOUT_SEEDS,
+                  *RETIRED_CANDIDATE_002_SEEDS,
+              )
+          
+          
+          def test_candidate_003_and_retired_candidate_002_are_distinct_generations() -> None:
+              current = build_heldout_world_grid()
+              retired = build_retired_candidate_002_world_grid()
+              assert WORLD_GENERATION_ID == "v06-confirmatory-candidate-003"
+              assert RETIRED_CANDIDATE_002_GENERATION_ID == (
+                  "v06-confirmatory-candidate-002"
+              )
+              assert len(current) == len(retired) == 50
+              assert heldout_world_grid_hash() != retired_candidate_002_world_grid_hash()
+              assert {row.seed for row in current} == set(HELDOUT_SEEDS)
+              assert {row.seed for row in retired} == set(RETIRED_CANDIDATE_002_SEEDS)
+              assert not {row.specification_hash() for row in current}.intersection(
+                  row.specification_hash() for row in retired
+              )
+          '''
+          if text.count(old) != 1:
+              raise SystemExit("held-out freshness test block did not match")
+          heldout_test.write_text(text.replace(old, new), encoding="utf-8")
+
+          replace_once(
+              "tests/v06/test_confirmatory_execution_seal.py",
+              "assert HELDOUT_SEEDS == tuple(range(1000, 1010))",
+              "assert HELDOUT_SEEDS == tuple(range(2000, 2010))",
+          )
+          replace_once(
+              "tests/v06/test_confirmatory_execution_seal.py",
+              'assert WORLD_GENERATION_ID == "v06-confirmatory-candidate-002"',
+              'assert WORLD_GENERATION_ID == "v06-confirmatory-candidate-003"',
+          )
+          replace_once(
+              "tests/v06/test_confirmatory_raw_first_scoring.py",
+              'world_generation_id="v06-confirmatory-candidate-002"',
+              'world_generation_id="v06-confirmatory-candidate-003"',
+          )
+
+          ci_path = root / ".github/workflows/ci.yml"
+          ci = ci_path.read_text(encoding="utf-8")
+          old = "on:\n  push:\n  pull_request:\n"
+          new = (
+              "on:\n"
+              "  push:\n"
+              "    paths-ignore:\n"
+              '      - ".github/confirmatory/**"\n'
+              "  pull_request:\n"
+          )
+          if ci.count(old) != 1:
+              raise SystemExit("normal CI trigger block did not match")
+          ci_path.write_text(ci.replace(old, new), encoding="utf-8")
+
+          old_formal = root / ".github/workflows/v06-candidate-002-final-execution.yml"
+          formal = old_formal.read_text(encoding="utf-8")
+          formal = formal.replace("candidate-002", "candidate-003")
+          formal = formal.replace("Candidate-002", "Candidate-003")
+          formal = formal.replace(
+              "v06-capability-staging-20260830",
+              "v061-candidate-003-20260831",
+          )
+          formal = formal.replace(
+              ".github/confirmatory/v06-candidate-003-execute-v2.json",
+              ".github/confirmatory/v06-candidate-003-execute-v1.json",
+          )
+          (root / ".github/workflows/v06-candidate-003-final-execution.yml").write_text(
+              formal,
+              encoding="utf-8",
+          )
+
+          for name in (
+              "v061-apply-timing-contract-correction.yml",
+              "v061-apply-timing-contract-correction-v2.yml",
+              "v061-candidate-binding-inventory.yml",
+              "v061-candidate-binding-inventory-lite.yml",
+              "v061-export-code-snapshot.yml",
+          ):
+              path = root / ".github/workflows" / name
+              if path.exists():
+                  path.unlink()
+
+          (root / "docs/V061_CANDIDATE_003_PREEXECUTION.md").write_text(
+              """# v0.6.1 Candidate-003 Pre-execution Contract
+          
+          ## Purpose
+          
+          Candidate-003 is the first fresh confirmatory generation after the candidate-002 one-way execution failure. Candidate-002 remains permanently retired and is used only by explicit regression tests.
+          
+          ## Freshness boundary
+          
+          ```text
+          world generation: v06-confirmatory-candidate-003
+          confirmatory seeds: 2000-2009
+          qualification quarantine: 100-109
+          retired candidate-002 quarantine: 1000-1009
+          world families: 5
+          conditions: 8
+          evidence domains: 9
+          expected executions: 400
+          expected evidence records: 3600
+          expected resource records: 400
+          ```
+          
+          The candidate-003 generator derives every deterministic world from the new generation identifier and fresh seed. Its world-grid hash must differ from the retired candidate-002 grid hash.
+          
+          ## Timing correction
+          
+          The anonymous boundary path processes scheduled internal events without forcing the Field clock to an evaluator horizon before external world consequences are returned. Ordinary silence advancement and strict rejection of backwards external timestamps remain unchanged.
+          
+          Regression tests verify the complete 22-world candidate-002 timing-risk set and the original seed-1001 failure path. Those retired worlds are not part of candidate-003 evidence.
+          
+          ## One-way execution
+          
+          Normal CI ignores `.github/confirmatory/**` push-only marker commits. The formal candidate-003 workflow is triggered only by the first marker at:
+          
+          ```text
+          .github/confirmatory/v06-candidate-003-execute-v1.json
+          ```
+          
+          The marker must be the sole change in a direct child of the frozen source commit. The workflow rejects reruns, validates the detached source SHA, independently rebuilds and approves the freeze bundle, writes `STARTED.json`, executes the 400-cell matrix once, locks raw evidence before scoring, and uploads all success or failure artifacts.
+          
+          No candidate-003 capability adapter may be executed before this one-way marker. Structural world-generation, hashing, manifest, schedule, schema, and source-contract tests remain candidate-blind.
+          """,
+              encoding="utf-8",
+          )
+          PY
+
+      - name: Remove construction-only workflow from candidate tree
+        run: rm .github/workflows/v061-build-candidate-003.yml
+
+      - name: Install exact validation dependencies
+        run: python -m pip install -e ".[dev,learned,spiking]"
+
+      - name: Lint complete candidate source
+        run: python -m ruff check .
+
+      - name: Run candidate-blind readiness and complete regression suite
+        run: |
+          python scripts/local_readiness_check.py
+          python -m pytest -q
+          python scripts/validate_bundle.py
+
+      - name: Audit current and retired candidate boundaries
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from sparkbrain.evaluation.v06_confirmatory import ConfirmatoryPhase
+          from sparkbrain.evaluation.v06_confirmatory_current_manifest import (
+              build_current_confirmatory_manifest,
+          )
+          from sparkbrain.evaluation.v06_confirmatory_heldout_spec import (
+              HELDOUT_SEEDS,
+              QUARANTINED_HELDOUT_SEEDS,
+              RETIRED_CANDIDATE_002_SEEDS,
+              WORLD_GENERATION_ID,
+              build_heldout_world_grid,
+              build_retired_candidate_002_world_grid,
+              heldout_world_grid_hash,
+              retired_candidate_002_world_grid_hash,
+          )
+
+          assert WORLD_GENERATION_ID == "v06-confirmatory-candidate-003"
+          assert HELDOUT_SEEDS == tuple(range(2000, 2010))
+          assert RETIRED_CANDIDATE_002_SEEDS == tuple(range(1000, 1010))
+          assert set(HELDOUT_SEEDS).isdisjoint(QUARANTINED_HELDOUT_SEEDS)
+          assert len(build_heldout_world_grid()) == 50
+          assert len(build_retired_candidate_002_world_grid()) == 50
+          assert heldout_world_grid_hash() != retired_candidate_002_world_grid_hash()
+          manifest = build_current_confirmatory_manifest(
+              ConfirmatoryPhase.CONFIRMATORY
+          )
+          assert tuple(row.seed for row in manifest.seeds) == HELDOUT_SEEDS
+          assert not manifest.execution_ready
+          PY
+          test ! -e .github/confirmatory/v06-candidate-003-execute-v1.json
+          test -e .github/workflows/v06-candidate-003-final-execution.yml
+          test ! -e .github/workflows/v061-build-candidate-003.yml
+          git diff --check
+
+      - name: Commit immutable candidate-003 source branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "${TARGET_BRANCH}"; then
+            echo "Candidate-003 branch appeared during validation; refusing overwrite." >&2
+            exit 1
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "feat(v061): freeze fresh candidate-003 source"
+          git push origin "HEAD:refs/heads/${TARGET_BRANCH}"
