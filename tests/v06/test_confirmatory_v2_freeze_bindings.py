@@ -1,8 +1,8 @@
 from __future__ import annotations
 
 from sparkbrain.evaluation.v06_confirmatory_adapter_registry_v2 import (
-    ADAPTERS_V2,
     ADAPTER_PATHS_V2,
+    ADAPTERS_V2,
     validate_adapter_registry_v2,
 )
 from sparkbrain.evaluation.v06_confirmatory_candidate_manifest import (
