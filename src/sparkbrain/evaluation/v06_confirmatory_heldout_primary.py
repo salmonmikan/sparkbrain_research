@@ -530,6 +530,7 @@ def _boundary_episode(
     *,
     cue_unit_id: int,
     start_ms: float,
+    episode_spacing_ms: float,
     event_id: str,
 ) -> tuple[int, int]:
     before_sparks = len(runtime.generated_sparks)
@@ -549,7 +550,7 @@ def _boundary_episode(
         for external in world.receive(event):
             runtime.present_external(external)
             consistency.observe_external(external)
-    next_time = start_ms + parameters.episode_spacings_ms[0] - 1.0
+    next_time = start_ms + episode_spacing_ms - 1.0
     if next_time > runtime.field.current_time_ms:
         runtime.advance_silence(next_time)
     consistency.expire(next_time)
@@ -577,6 +578,7 @@ def _boundary_condition(
         world,
         cue_unit_id=parameters.control_path[0],
         start_ms=100.0,
+        episode_spacing_ms=parameters.episode_spacings_ms[0],
         event_id="heldout:boundary:control",
     )
     main_start = 100.0 + parameters.episode_spacings_ms[0]
@@ -588,6 +590,7 @@ def _boundary_condition(
         world,
         cue_unit_id=parameters.main_path[0],
         start_ms=main_start,
+        episode_spacing_ms=parameters.episode_spacings_ms[1],
         event_id="heldout:boundary:main",
     )
     return (
@@ -717,10 +720,10 @@ def _relation_cycles(
                 world,
                 cue_unit_id=parameters.main_path[0],
                 start_ms=start,
+                episode_spacing_ms=spacing,
                 event_id=f"heldout:relation:{phase_index}:{local_index}",
             )
             episode_index += 1
-            _ = spacing
         snapshots.append(consistency.learned_state_dict())
         dominant_targets.append(_dominant_target(parameters, consistency))
 
@@ -745,6 +748,9 @@ def _relation_cycles(
                 ]
                 for prior in range(episode)
             ),
+            episode_spacing_ms=parameters.episode_spacings_ms[
+                episode % len(parameters.episode_spacings_ms)
+            ],
             event_id=f"heldout:relation:internal-only:{episode}",
         )
     internal_links = internal_consistency.learned_state_dict()["links"]
@@ -767,6 +773,9 @@ def _relation_cycles(
             stable_world,
             cue_unit_id=parameters.main_path[0],
             start_ms=start,
+            episode_spacing_ms=parameters.episode_spacings_ms[
+                episode % len(parameters.episode_spacings_ms)
+            ],
             event_id=f"heldout:relation:stable:{episode}",
         )
     stable_state = stable_consistency.learned_state_dict()
