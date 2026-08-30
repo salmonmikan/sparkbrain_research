@@ -6,6 +6,7 @@ from pathlib import Path
 import pytest
 
 from sparkbrain.evaluation.v06_confirmatory import PerturbationSeedSpec
+from sparkbrain.evaluation.v06_confirmatory_analysis_contract import SCORING_COMMAND
 from sparkbrain.evaluation.v06_confirmatory_candidate_manifest import (
     build_candidate_manifest,
 )
@@ -105,7 +106,9 @@ def test_complete_freeze_record_binds_every_protocol_component() -> None:
     assert report.privilege_inventory_matches is True
     assert report.threshold_mode_matches is True
     assert report.artifact_contract_matches is True
+    assert report.analysis_contract_matches is True
     assert report.execution_command_matches is True
+    assert report.scoring_command_matches is True
     assert report.artifact_paths_match is True
     assert report.environment_lock_matches is True
     assert report.rng_contract_matches is True
@@ -162,7 +165,9 @@ def test_any_frozen_hash_change_fails_closed() -> None:
         replace(record, privilege_inventory_hash="0" * 64),
         replace(record, threshold_mode_hash="0" * 64),
         replace(record, artifact_contract_hash="0" * 64),
+        replace(record, analysis_contract_hash="0" * 64),
         replace(record, execution_command_hash="0" * 64),
+        replace(record, scoring_command_hash="0" * 64),
         replace(record, artifact_path_hash="0" * 64),
         replace(record, environment_lock_hash="0" * 64),
         replace(record, rng_contract_hash="0" * 64),
@@ -226,12 +231,14 @@ def test_quarantined_seed_set_can_never_validate_as_fresh() -> None:
     assert report.execution_allowed is False
 
 
-def test_freeze_contract_names_command_and_raw_then_analysis_paths() -> None:
+def test_freeze_contract_names_commands_and_raw_then_analysis_paths() -> None:
     assert HELDOUT_SEEDS == tuple(range(1000, 1010))
     assert WORLD_GENERATION_ID == "v06-confirmatory-candidate-002"
     assert EXECUTION_COMMAND.startswith("python -m ")
     assert "--freeze-record" in EXECUTION_COMMAND
     assert "--environment-lock" in EXECUTION_COMMAND
+    assert SCORING_COMMAND.startswith("python -m ")
+    assert "--raw-directory" in SCORING_COMMAND
     assert len(set(ARTIFACT_PATH_TEMPLATES)) == len(ARTIFACT_PATH_TEMPLATES)
     assert any(path.startswith("raw/") for path in ARTIFACT_PATH_TEMPLATES)
     assert any(path.startswith("analysis/") for path in ARTIFACT_PATH_TEMPLATES)
