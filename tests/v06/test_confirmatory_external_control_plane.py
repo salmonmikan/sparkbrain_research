@@ -33,12 +33,14 @@ def test_current_manifest_stays_fail_closed_until_candidate_builder() -> None:
 
     candidate = build_candidate_manifest(source_code_sha=_FAKE_SHA)
     candidate_readiness = assess_confirmatory_readiness(candidate)
+    expected_exclusion = (
+        "Seal storage may occur after the source commit; "
+        "execution uses detached source SHA."
+    )
     assert candidate.code_ref == _FAKE_SHA
     assert candidate_readiness.ready is True
     assert all(row.adapter_ready is True for row in candidate.conditions)
-    assert "Seal storage may occur after the source commit; execution uses detached source SHA." in (
-        candidate.exclusions
-    )
+    assert expected_exclusion in candidate.exclusions
 
 
 @pytest.mark.parametrize(
