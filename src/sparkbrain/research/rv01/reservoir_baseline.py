@@ -72,7 +72,10 @@ class FixedEchoStateAutoregressor:
 
     def _fixed_weights(
         self,
-    ) -> tuple[tuple[tuple[float, ...], ...], tuple[tuple[float, ...], ...]]:
+    ) -> tuple[
+        tuple[tuple[float, ...], ...],
+        tuple[tuple[float, ...], ...],
+    ]:
         rng = random.Random(self.config.seed)
         input_rows = tuple(
             tuple(
@@ -162,6 +165,7 @@ class FixedEchoStateAutoregressor:
             raise ValueError("every training sequence must contain at least two tokens")
         features: list[tuple[float, ...]] = []
         targets: list[int] = []
+        self.observation_count = 0
         for _ in range(repetitions):
             for sequence in sequences:
                 state = self.zero_state()
@@ -224,7 +228,6 @@ class FixedEchoStateAutoregressor:
             raise RuntimeError("fit_sequences must be called before rollout")
         state = self.encode_prefix(prefix)
         generated: list[int] = []
-        current_prefix = list(prefix)
         for _ in range(steps):
             feature = self._features(state)
             scores = tuple(
@@ -239,7 +242,6 @@ class FixedEchoStateAutoregressor:
                 key=lambda candidate: (-scores[candidate], candidate),
             )
             generated.append(token)
-            current_prefix.append(token)
             self.generated_token_count += 1
             state = self.advance(state, token)
         return tuple(generated)
