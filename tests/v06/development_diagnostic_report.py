@@ -18,7 +18,6 @@ from sparkbrain.evaluation.v06_confirmatory_heldout_controls import (
     _rotate_relation_state,
 )
 from sparkbrain.evaluation.v06_confirmatory_heldout_primary import (
-    _dominant_target,
     _relation_cycles,
     _run_reentry,
 )
