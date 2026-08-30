@@ -157,8 +157,7 @@ def test_dirty_attached_or_wrong_source_closes_gate(tmp_path: Path) -> None:
     assert dirty.execution_allowed is False
     source.joinpath("dirty.txt").unlink()
 
-    branch = _git(source, "branch", "--format=%(refname:short)").splitlines()[0]
-    _git(source, "checkout", "--quiet", branch)
+    _git(source, "switch", "--quiet", "-c", "attached-test")
     attached = validate_external_launch_gate_v2(bundle)
     assert attached.source_is_detached is False
     assert attached.execution_allowed is False
