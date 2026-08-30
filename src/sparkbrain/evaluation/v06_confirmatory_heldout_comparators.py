@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import time
 from dataclasses import dataclass, field
@@ -8,7 +9,6 @@ from typing import Any, Protocol
 from sparkbrain.baselines.v06.g3_recurrent import GenericRecurrentPredictor
 from sparkbrain.baselines.v06.g4_assembly import ExplicitAssemblyComparator
 from sparkbrain.baselines.v06.g5_typed import TypedFunctionalHeadComparator
-from sparkbrain.v06.foundation import digest
 
 from .v06_confirmatory import ConfirmatoryCondition, EvidenceDomain
 from .v06_confirmatory_heldout_common import (
@@ -24,6 +24,17 @@ from .v06_confirmatory_resources import (
 from .v06_confirmatory_training_schedule import (
     build_balanced_training_schedule,
 )
+
+
+def _digest(value: object) -> str:
+    encoded = json.dumps(
+        value,
+        allow_nan=False,
+        ensure_ascii=False,
+        separators=(",", ":"),
+        sort_keys=True,
+    ).encode("utf-8")
+    return hashlib.sha256(encoded).hexdigest()
 
 
 def _unit(unit_id: int) -> str:
@@ -835,7 +846,7 @@ def run_condition(
         ),
         privileged_information=relation_model.privileged_information(),
     )
-    semantic_hash = digest(
+    semantic_hash = _digest(
         {
             "model_state": model_state,
             "records": [result_record_state(row) for row in records],
