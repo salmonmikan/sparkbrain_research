@@ -13,6 +13,7 @@ on:
       - "tests/v06/test_capability_staging_development_fixture.py"
       - "tests/v06/test_capability_staging_development_variants.py"
       - "tests/v06/test_confirmatory_training_schedule.py"
+      - "tests/v06/test_shuffled_control_development_contract.py"
       - "tests/v06/development_experiment_report.py"
       - "tests/v06/development_diagnostic_report.py"
 
@@ -41,6 +42,7 @@ jobs:
           tests/v06/test_capability_staging_development_fixture.py
           tests/v06/test_capability_staging_development_variants.py
           tests/v06/test_confirmatory_training_schedule.py
+          tests/v06/test_shuffled_control_development_contract.py
           tests/v06/development_experiment_report.py
           tests/v06/development_diagnostic_report.py
       - name: Execute development-only adapter fixtures
@@ -49,6 +51,7 @@ jobs:
           tests/v06/test_capability_staging_development_fixture.py
           tests/v06/test_capability_staging_development_variants.py
           tests/v06/test_confirmatory_training_schedule.py
+          tests/v06/test_shuffled_control_development_contract.py
       - name: Build development-only reports
         run: |
           python tests/v06/development_experiment_report.py \
