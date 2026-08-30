@@ -185,10 +185,11 @@ def test_candidate_round_trip_and_external_control_package_are_atomic(
     candidate = _candidate()
     candidate_path = tmp_path / "freeze_candidate.json"
     write_freeze_candidate(candidate_path, candidate)
-    assert read_freeze_candidate(candidate_path) == candidate
-    assert freeze_candidate_from_state(
-        json.loads(candidate_path.read_text("utf-8"))
-    ) == candidate
+    serialized_state = json.loads(candidate_path.read_text("utf-8"))
+    loaded = read_freeze_candidate(candidate_path)
+    assert loaded.state_dict() == serialized_state
+    assert loaded.candidate_hash() == candidate.candidate_hash()
+    assert freeze_candidate_from_state(serialized_state) == loaded
     with pytest.raises(FileExistsError):
         write_freeze_candidate(candidate_path, candidate)
 
