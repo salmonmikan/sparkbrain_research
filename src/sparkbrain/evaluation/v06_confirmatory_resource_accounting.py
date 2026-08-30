@@ -16,7 +16,7 @@ from .v06_confirmatory import ConfirmatoryCondition, ConfirmatoryManifest
 from .v06_confirmatory_heldout_common import HeldoutConditionExecution
 from .v06_confirmatory_resources import ConditionResourceRecord
 
-RESOURCE_ACCOUNTING_VERSION = "v06-resource-accounting-1"
+RESOURCE_ACCOUNTING_VERSION = "v06-resource-accounting-2"
 
 
 class ResourceDecisionUse(StrEnum):
@@ -25,11 +25,16 @@ class ResourceDecisionUse(StrEnum):
 
 @dataclass(frozen=True, slots=True)
 class ResourceAccountingPolicy:
-    """Frozen interpretation of resource measurements.
+    """Frozen interpretation and taxonomy of resource measurements.
 
-    Resource values are descriptive in v0.6. They cannot change a capability
-    pass/fail result. Completeness, finite values, measurement-method identity,
-    and privilege disclosure remain hard execution-integrity requirements.
+    Only evaluator-owned timing, traced-memory, and canonical-output values are
+    treated as directly common measurements. Adapter-reported event/state counts
+    remain explicitly named proxies because their physical granularity differs
+    across Field, transition-table, Assembly, and typed-head architectures.
+
+    Every resource value is descriptive in v0.6. Resource efficiency cannot
+    change a capability pass/fail result. Missing, non-finite, method-mismatched,
+    or privilege-incomplete records remain hard execution-integrity failures.
     """
 
     version: str = RESOURCE_ACCOUNTING_VERSION
@@ -38,13 +43,38 @@ class ResourceAccountingPolicy:
     wall_clock_method: str = "time.perf_counter_ns"
     cpu_time_method: str = "time.process_time_ns"
     peak_memory_method: str = "tracemalloc.get_traced_memory.peak"
+    output_size_method: str = "canonical semantic execution JSON UTF-8 bytes"
     operation_proxy_formula: str = (
-        "observed_training_events + generated_internal_events + "
-        "intervention_count + normal_field_threshold_crossings"
+        "adapter_observed_training_event_proxy + "
+        "adapter_generated_event_proxy + "
+        "adapter_intervention_event_proxy + "
+        "normal_field_threshold_crossings"
     )
     mutable_state_scalar_method: str = "adapter-declared parameter_count proxy"
     persistent_state_method: str = "adapter-declared persistent_state_entries proxy"
-    output_size_method: str = "canonical semantic execution JSON UTF-8 bytes"
+    common_evaluator_measurements: tuple[str, ...] = (
+        "wall_clock_ns",
+        "process_cpu_ns",
+        "peak_traced_memory_bytes",
+        "canonical_output_bytes",
+    )
+    descriptive_adapter_proxies: tuple[str, ...] = (
+        "adapter_observed_training_event_proxy",
+        "adapter_generated_event_proxy",
+        "adapter_intervention_event_proxy",
+        "adapter_mutable_state_scalar_proxy",
+        "adapter_persistent_state_entry_proxy",
+        "adapter_logical_operation_proxy_units",
+    )
+    architecture_specific_measurements: tuple[str, ...] = (
+        "normal_field_threshold_present",
+        "normal_field_threshold_crossings",
+        "threshold_bypassed",
+        "explicit_assembly_entries",
+        "typed_head_count",
+        "scalar_reward_observations",
+        "privileged_information_count",
+    )
 
     def validate(self) -> None:
         if self.version != RESOURCE_ACCOUNTING_VERSION:
@@ -57,13 +87,23 @@ class ResourceAccountingPolicy:
             "wall_clock_method",
             "cpu_time_method",
             "peak_memory_method",
+            "output_size_method",
             "operation_proxy_formula",
             "mutable_state_scalar_method",
             "persistent_state_method",
-            "output_size_method",
         ):
             if not str(getattr(self, name)).strip():
                 raise ValueError(f"{name} must be non-empty")
+        groups = (
+            self.common_evaluator_measurements,
+            self.descriptive_adapter_proxies,
+            self.architecture_specific_measurements,
+        )
+        if any(not group or len(set(group)) != len(group) for group in groups):
+            raise ValueError("resource accounting groups must be non-empty and unique")
+        flattened = tuple(value for group in groups for value in group)
+        if len(set(flattened)) != len(flattened):
+            raise ValueError("resource accounting groups must be disjoint")
 
     def state_dict(self) -> dict[str, Any]:
         value = asdict(self)
@@ -85,12 +125,12 @@ class NormalizedConditionResourceRecord:
     condition: ConfirmatoryCondition
     accounting_version: str
     decision_use: ResourceDecisionUse
-    observed_external_events: int
-    logical_generated_events: int
-    intervention_events: int
-    mutable_state_scalar_proxy: int
-    persistent_state_entry_proxy: int
-    logical_operation_proxy_units: int
+    adapter_observed_training_event_proxy: int
+    adapter_generated_event_proxy: int
+    adapter_intervention_event_proxy: int
+    adapter_mutable_state_scalar_proxy: int
+    adapter_persistent_state_entry_proxy: int
+    adapter_logical_operation_proxy_units: int
     wall_clock_ns: int
     process_cpu_ns: int
     peak_traced_memory_bytes: int
@@ -115,12 +155,12 @@ class NormalizedConditionResourceRecord:
         if self.decision_use is not ResourceDecisionUse.DESCRIPTIVE_ONLY:
             raise ValueError("normalized resource values must remain descriptive-only")
         integer_fields = (
-            "observed_external_events",
-            "logical_generated_events",
-            "intervention_events",
-            "mutable_state_scalar_proxy",
-            "persistent_state_entry_proxy",
-            "logical_operation_proxy_units",
+            "adapter_observed_training_event_proxy",
+            "adapter_generated_event_proxy",
+            "adapter_intervention_event_proxy",
+            "adapter_mutable_state_scalar_proxy",
+            "adapter_persistent_state_entry_proxy",
+            "adapter_logical_operation_proxy_units",
             "wall_clock_ns",
             "process_cpu_ns",
             "peak_traced_memory_bytes",
@@ -134,12 +174,12 @@ class NormalizedConditionResourceRecord:
         if any(getattr(self, name) < 0 for name in integer_fields):
             raise ValueError("normalized resource counts must be non-negative")
         expected_proxy = (
-            self.observed_external_events
-            + self.logical_generated_events
-            + self.intervention_events
+            self.adapter_observed_training_event_proxy
+            + self.adapter_generated_event_proxy
+            + self.adapter_intervention_event_proxy
             + self.normal_field_threshold_crossings
         )
-        if self.logical_operation_proxy_units != expected_proxy:
+        if self.adapter_logical_operation_proxy_units != expected_proxy:
             raise ValueError("logical operation proxy does not match the frozen formula")
         if self.canonical_output_bytes < 1:
             raise ValueError("canonical output size must be positive")
@@ -227,12 +267,12 @@ def normalize_resource_record(
         condition=raw.condition,
         accounting_version=RESOURCE_ACCOUNTING_VERSION,
         decision_use=ResourceDecisionUse.DESCRIPTIVE_ONLY,
-        observed_external_events=raw.observed_training_events,
-        logical_generated_events=raw.generated_internal_events,
-        intervention_events=raw.intervention_count,
-        mutable_state_scalar_proxy=raw.parameter_count,
-        persistent_state_entry_proxy=raw.persistent_state_entries,
-        logical_operation_proxy_units=operation_proxy,
+        adapter_observed_training_event_proxy=raw.observed_training_events,
+        adapter_generated_event_proxy=raw.generated_internal_events,
+        adapter_intervention_event_proxy=raw.intervention_count,
+        adapter_mutable_state_scalar_proxy=raw.parameter_count,
+        adapter_persistent_state_entry_proxy=raw.persistent_state_entries,
+        adapter_logical_operation_proxy_units=operation_proxy,
         wall_clock_ns=wall_clock_ns,
         process_cpu_ns=process_cpu_ns,
         peak_traced_memory_bytes=peak_traced_memory_bytes,
@@ -358,7 +398,7 @@ def validate_finite_normalized_metrics(
         float(record.wall_clock_ns),
         float(record.process_cpu_ns),
         float(record.peak_traced_memory_bytes),
-        float(record.logical_operation_proxy_units),
+        float(record.adapter_logical_operation_proxy_units),
     )
     if not all(math.isfinite(value) for value in numeric):
         raise ValueError("normalized resource metrics must be finite")
