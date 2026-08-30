@@ -4,6 +4,8 @@ import inspect
 from collections import Counter
 
 import pytest
+from test_capability_staging_development_fixture import DevelopmentCapabilityWorld
+from test_capability_staging_development_variants import development_variants
 
 from sparkbrain.evaluation.v06_confirmatory import ConfirmatoryCondition
 from sparkbrain.evaluation.v06_confirmatory_heldout_comparators import (
@@ -17,9 +19,6 @@ from sparkbrain.evaluation.v06_confirmatory_heldout_primary import (
 from sparkbrain.evaluation.v06_confirmatory_training_schedule import (
     build_balanced_training_schedule,
 )
-
-from test_capability_staging_development_fixture import DevelopmentCapabilityWorld
-from test_capability_staging_development_variants import development_variants
 
 _COMPARATORS = (
     ConfirmatoryCondition.G3_RECURRENT,
