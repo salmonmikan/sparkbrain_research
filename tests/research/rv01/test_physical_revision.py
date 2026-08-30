@@ -57,7 +57,12 @@ def test_intermediate_reversal_and_reacquisition_steps_are_preserved() -> None:
     assert suite.reversal_steps[3].generated_units == NEW_SEQUENCE[1:]
 
     assert suite.reacquisition_steps[0].generated_units == NEW_SEQUENCE[1:]
-    assert suite.reacquisition_steps[1].new_path_completed is True
+    # After two return episodes, local competition has already pushed the new
+    # gateway below threshold while the old gateway has not yet recovered.
+    # The transient no-route interval is preserved as a real revision cost.
+    assert suite.reacquisition_steps[1].generated_units == (1,)
+    assert suite.reacquisition_steps[1].old_path_completed is False
+    assert suite.reacquisition_steps[1].new_path_completed is False
     assert suite.reacquisition_steps[2].generated_units == OLD_SEQUENCE[1:]
     assert suite.reacquisition_steps[3].generated_units == OLD_SEQUENCE[1:]
 
