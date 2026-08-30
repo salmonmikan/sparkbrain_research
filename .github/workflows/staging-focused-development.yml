@@ -40,3 +40,5 @@ jobs:
           python -m pytest -q
           tests/v06/test_capability_staging_development_fixture.py
           tests/v06/test_capability_staging_development_variants.py
+
+# Rerun marker: cumulative boundary timing fixed on development-only staging.
