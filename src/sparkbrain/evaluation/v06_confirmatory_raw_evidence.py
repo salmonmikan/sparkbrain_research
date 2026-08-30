@@ -174,15 +174,23 @@ def normalized_resource_from_state(
         condition=ConfirmatoryCondition(str(state["condition"])),
         accounting_version=str(state["accounting_version"]),
         decision_use=ResourceDecisionUse(str(state["decision_use"])),
-        observed_external_events=int(state["observed_external_events"]),
-        logical_generated_events=int(state["logical_generated_events"]),
-        intervention_events=int(state["intervention_events"]),
-        mutable_state_scalar_proxy=int(state["mutable_state_scalar_proxy"]),
-        persistent_state_entry_proxy=int(
-            state["persistent_state_entry_proxy"]
+        adapter_observed_training_event_proxy=int(
+            state["adapter_observed_training_event_proxy"]
         ),
-        logical_operation_proxy_units=int(
-            state["logical_operation_proxy_units"]
+        adapter_generated_event_proxy=int(
+            state["adapter_generated_event_proxy"]
+        ),
+        adapter_intervention_event_proxy=int(
+            state["adapter_intervention_event_proxy"]
+        ),
+        adapter_mutable_state_scalar_proxy=int(
+            state["adapter_mutable_state_scalar_proxy"]
+        ),
+        adapter_persistent_state_entry_proxy=int(
+            state["adapter_persistent_state_entry_proxy"]
+        ),
+        adapter_logical_operation_proxy_units=int(
+            state["adapter_logical_operation_proxy_units"]
         ),
         wall_clock_ns=int(state["wall_clock_ns"]),
         process_cpu_ns=int(state["process_cpu_ns"]),
