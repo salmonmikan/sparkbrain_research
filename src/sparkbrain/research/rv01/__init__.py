@@ -28,6 +28,11 @@ from .g2_dependency import (
     G2DependencySuite,
     run_g2_dependency_suite,
 )
+from .physical_branching import (
+    PhysicalBranchingAssessment,
+    PhysicalBranchingSuite,
+    run_physical_branching_suite,
+)
 from .physical_continuation import (
     PhysicalContinuationAssessment,
     PhysicalContinuationSuite,
@@ -51,6 +56,8 @@ __all__ = [
     "G1DependencySuite",
     "G2DependencyAssessment",
     "G2DependencySuite",
+    "PhysicalBranchingAssessment",
+    "PhysicalBranchingSuite",
     "PhysicalConnectionUpdate",
     "PhysicalContinuationAssessment",
     "PhysicalContinuationSuite",
@@ -61,6 +68,7 @@ __all__ = [
     "run_frozen_v06_baseline",
     "run_g1_dependency_suite",
     "run_g2_dependency_suite",
+    "run_physical_branching_suite",
     "run_physical_continuation_suite",
     "run_physical_missing_middle_suite",
     "verify_frozen_runtime_fingerprints",
