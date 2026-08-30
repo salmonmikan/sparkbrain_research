@@ -79,7 +79,7 @@ def _heldout_registration(row):
         isolated_from_primary=True,
         engineering_evidence_available=True,
         notes=(
-            f"{notes} This development adapter has not passed the fresh "
+            f"{notes} This development adapter has not passed the fresh held-out "
             f"{WORLD_GENERATION_ID} capability contract and remains confirmatory-sealed."
         ),
     )
