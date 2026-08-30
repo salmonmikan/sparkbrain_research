@@ -18,6 +18,10 @@ from .v06_confirmatory_adapter_review import (
     expected_privilege_inventory_hash,
     expected_threshold_mode_hash,
 )
+from .v06_confirmatory_analysis_contract import (
+    analysis_contract_hash,
+    scoring_command_hash,
+)
 from .v06_confirmatory_artifacts import artifact_contract_hash
 from .v06_confirmatory_environment import (
     RNG_CONTRACT,
@@ -40,7 +44,7 @@ _SOURCE_SHA_PATTERN = re.compile(r"^[0-9a-f]{40}$")
 _APPROVAL_PATTERN = re.compile(
     r"^APPROVED:[A-Za-z0-9_.@-]+:[0-9a-f]{16}$"
 )
-FREEZE_RECORD_VERSION = "v06-confirmatory-freeze-record-2"
+FREEZE_RECORD_VERSION = "v06-confirmatory-freeze-record-3"
 SEAL_STORAGE_MODE = "external-or-later-commit-with-detached-source-checkout"
 EXECUTION_COMMAND = (
     "python -m sparkbrain.evaluation.v06_confirmatory_execute "
@@ -51,12 +55,15 @@ EXECUTION_COMMAND = (
 ARTIFACT_PATH_TEMPLATES = (
     "control/freeze_record.json",
     "control/environment_lock.json",
+    "control/freeze_verification.json",
     "control/launch_report.json",
+    "control/execution_state.json",
     "raw/<run_id>/raw_manifest.json",
     "raw/<run_id>/checksums.json",
     "raw/<run_id>/RAW_COMPLETE",
     "analysis/<run_id>/summary.json",
     "analysis/<run_id>/checksums.json",
+    "analysis/<run_id>/ANALYSIS_COMPLETE",
 )
 
 
@@ -122,7 +129,9 @@ class ConfirmatoryFreezeRecord:
     privilege_inventory_hash: str
     threshold_mode_hash: str
     artifact_contract_hash: str
+    analysis_contract_hash: str
     execution_command_hash: str
+    scoring_command_hash: str
     artifact_path_hash: str
     environment_lock_hash: str
     rng_contract_hash: str
@@ -155,7 +164,9 @@ class ExecutionSealReport:
     privilege_inventory_matches: bool
     threshold_mode_matches: bool
     artifact_contract_matches: bool
+    analysis_contract_matches: bool
     execution_command_matches: bool
+    scoring_command_matches: bool
     artifact_paths_match: bool
     environment_lock_matches: bool
     rng_contract_matches: bool
@@ -194,7 +205,9 @@ def freeze_record_from_state(
         privilege_inventory_hash=str(state["privilege_inventory_hash"]),
         threshold_mode_hash=str(state["threshold_mode_hash"]),
         artifact_contract_hash=str(state["artifact_contract_hash"]),
+        analysis_contract_hash=str(state["analysis_contract_hash"]),
         execution_command_hash=str(state["execution_command_hash"]),
+        scoring_command_hash=str(state["scoring_command_hash"]),
         artifact_path_hash=str(state["artifact_path_hash"]),
         environment_lock_hash=str(state["environment_lock_hash"]),
         rng_contract_hash=str(state["rng_contract_hash"]),
@@ -242,7 +255,9 @@ def build_freeze_record(
         privilege_inventory_hash=expected_privilege_inventory_hash(),
         threshold_mode_hash=expected_threshold_mode_hash(),
         artifact_contract_hash=artifact_contract_hash(),
+        analysis_contract_hash=analysis_contract_hash(),
         execution_command_hash=execution_command_hash(),
+        scoring_command_hash=scoring_command_hash(),
         artifact_path_hash=artifact_path_hash(),
         environment_lock_hash=environment_lock.environment_hash(),
         rng_contract_hash=RNG_CONTRACT.contract_hash(),
@@ -310,8 +325,14 @@ def validate_execution_seal(
         "artifact_contract_matches": (
             record.artifact_contract_hash == artifact_contract_hash()
         ),
+        "analysis_contract_matches": (
+            record.analysis_contract_hash == analysis_contract_hash()
+        ),
         "execution_command_matches": (
             record.execution_command_hash == execution_command_hash()
+        ),
+        "scoring_command_matches": (
+            record.scoring_command_hash == scoring_command_hash()
         ),
         "artifact_paths_match": record.artifact_path_hash == artifact_path_hash(),
         "environment_lock_matches": (
@@ -358,7 +379,9 @@ def validate_execution_seal(
         privilege_inventory_matches=checks["privilege_inventory_matches"],
         threshold_mode_matches=checks["threshold_mode_matches"],
         artifact_contract_matches=checks["artifact_contract_matches"],
+        analysis_contract_matches=checks["analysis_contract_matches"],
         execution_command_matches=checks["execution_command_matches"],
+        scoring_command_matches=checks["scoring_command_matches"],
         artifact_paths_match=checks["artifact_paths_match"],
         environment_lock_matches=checks["environment_lock_matches"],
         rng_contract_matches=checks["rng_contract_matches"],
