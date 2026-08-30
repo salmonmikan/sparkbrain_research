@@ -1,0 +1,76 @@
+name: staging-episode-spacing-fix
+
+on:
+  push:
+    branches: ["v06-capability-staging-20260830"]
+    paths: [".github/workflows/staging-episode-spacing-fix.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v06-capability-staging-20260830
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Propagate each episode spacing through the boundary runtime
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("src/sparkbrain/evaluation/v06_confirmatory_heldout_primary.py")
+          source = path.read_text(encoding="utf-8")
+          replacements = (
+              (
+                  "    start_ms: float,\n    event_id: str,\n) -> tuple[int, int]:",
+                  "    start_ms: float,\n    episode_spacing_ms: float,\n    event_id: str,\n) -> tuple[int, int]:",
+              ),
+              (
+                  "    next_time = start_ms + parameters.episode_spacings_ms[0] - 1.0",
+                  "    next_time = start_ms + episode_spacing_ms - 1.0",
+              ),
+              (
+                  "        start_ms=100.0,\n        event_id=\"heldout:boundary:control\",",
+                  "        start_ms=100.0,\n        episode_spacing_ms=parameters.episode_spacings_ms[0],\n        event_id=\"heldout:boundary:control\",",
+              ),
+              (
+                  "        start_ms=main_start,\n        event_id=\"heldout:boundary:main\",",
+                  "        start_ms=main_start,\n        episode_spacing_ms=parameters.episode_spacings_ms[1],\n        event_id=\"heldout:boundary:main\",",
+              ),
+              (
+                  "                start_ms=start,\n                event_id=f\"heldout:relation:{phase_index}:{local_index}\",",
+                  "                start_ms=start,\n                episode_spacing_ms=spacing,\n                event_id=f\"heldout:relation:{phase_index}:{local_index}\",",
+              ),
+              (
+                  "            ),\n            event_id=f\"heldout:relation:internal-only:{episode}\",",
+                  "            ),\n            episode_spacing_ms=parameters.episode_spacings_ms[\n                episode % len(parameters.episode_spacings_ms)\n            ],\n            event_id=f\"heldout:relation:internal-only:{episode}\",",
+              ),
+              (
+                  "            start_ms=start,\n            event_id=f\"heldout:relation:stable:{episode}\",",
+                  "            start_ms=start,\n            episode_spacing_ms=parameters.episode_spacings_ms[\n                episode % len(parameters.episode_spacings_ms)\n            ],\n            event_id=f\"heldout:relation:stable:{episode}\",",
+              ),
+          )
+          for old, new in replacements:
+              count = source.count(old)
+              if count != 1:
+                  raise SystemExit(f"unexpected replacement count {count}: {old!r}")
+              source = source.replace(old, new)
+          source = source.replace("            _ = spacing\n", "")
+          path.write_text(source, encoding="utf-8")
+          PY
+      - name: Format and verify source
+        run: |
+          python -m pip install "ruff>=0.9"
+          python -m ruff check --fix src/sparkbrain/evaluation/v06_confirmatory_heldout_primary.py
+      - name: Commit patch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/sparkbrain/evaluation/v06_confirmatory_heldout_primary.py
+          git commit -m "fix(v06): propagate nonuniform per-episode spacings [skip ci]"
+          git push origin HEAD:v06-capability-staging-20260830
