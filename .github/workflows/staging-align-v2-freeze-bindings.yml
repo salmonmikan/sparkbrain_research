@@ -161,7 +161,7 @@ jobs:
               )
           """
           sub_once(
-              r"    resource_contract_hash = _digest\(\n.*?\n    \)\n(?=    layout = ExternalArtifactLayout)",
+              r"    resource_contract_hash = _digest\(\n.*?\n    \)\n(?=    bundle = ExternalFreezeBundleV2)",
               resource_contract,
           )
 
