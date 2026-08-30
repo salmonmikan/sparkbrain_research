@@ -33,18 +33,11 @@ jobs:
           text = text.replace(old_marker, new_marker)
 
           runner_expr = '$' + '{{ runner.temp }}'
-          replacements = {
-              f'{runner_expr}/sparkbrain-v06-build-source': '/tmp/sparkbrain-v06-build-source',
-              f'{runner_expr}/sparkbrain-v06-candidate-002': '/tmp/sparkbrain-v06-candidate-002',
-              f'{runner_expr}/sparkbrain-v06-candidate-002/final/control': '/tmp/sparkbrain-v06-candidate-002/final/control',
-              f'{runner_expr}/sparkbrain-v06-candidate-002/final/raw': '/tmp/sparkbrain-v06-candidate-002/final/raw',
-              f'{runner_expr}/sparkbrain-v06-candidate-002/final/analysis': '/tmp/sparkbrain-v06-candidate-002/final/analysis',
-              f'{runner_expr}/sparkbrain-v06-candidate-002/reports': '/tmp/sparkbrain-v06-candidate-002/reports',
-          }
-          for old, new in replacements.items():
-              if old not in text:
-                  raise SystemExit(f'missing launcher expression: {old}')
-              text = text.replace(old, new)
+          if runner_expr not in text:
+              raise SystemExit('runner.temp expression not found in final launcher')
+          text = text.replace(runner_expr, '/tmp')
+          if runner_expr in text:
+              raise SystemExit('runner.temp expression remained after launcher patch')
           path.write_text(text, encoding='utf-8')
 
           report = Path('docs/V06_CANDIDATE_002_LAUNCHER_ATTEMPT_001.md')
