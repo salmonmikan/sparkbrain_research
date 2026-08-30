@@ -1,0 +1,75 @@
+name: staging-pre-freeze-test-fix
+
+on:
+  push:
+    branches: ["v06-capability-staging-20260830"]
+    paths: [".github/workflows/staging-pre-freeze-test-fix.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v06-capability-staging-20260830
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Correct AST receiver scope and CI detached-checkout assertion
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          review = Path("src/sparkbrain/evaluation/v06_confirmatory_adapter_review.py")
+          source = review.read_text(encoding="utf-8")
+          old = '''        if isinstance(node.value, ast.Name) and node.value.id in {
+              "parameters",
+              "world",
+          }:
+              self.parameter_members.add(node.attr)
+          '''
+          new = '''        if isinstance(node.value, ast.Name) and node.value.id == "parameters":
+              self.parameter_members.add(node.attr)
+          '''
+          if source.count(old) != 1:
+              raise SystemExit(f"unexpected AST receiver block count: {source.count(old)}")
+          review.write_text(source.replace(old, new), encoding="utf-8")
+
+          launch_test = Path("tests/v06/test_confirmatory_launch_gate.py")
+          source = launch_test.read_text(encoding="utf-8")
+          old = '''def test_current_review_branch_is_not_mistaken_for_detached_source() -> None:
+              state = inspect_git_workspace(_repository_root())
+              assert len(state.head_sha) == 40
+              assert state.detached_head is False
+          '''
+          new = '''def test_current_review_checkout_is_not_the_sealed_source_identity() -> None:
+              state = inspect_git_workspace(_repository_root())
+              assert len(state.head_sha) == 40
+              assert not (
+                  state.detached_head
+                  and state.clean
+                  and state.head_sha == _SOURCE_SHA
+              )
+          '''
+          if source.count(old) != 1:
+              raise SystemExit(f"unexpected launch assertion block count: {source.count(old)}")
+          launch_test.write_text(source.replace(old, new), encoding="utf-8")
+          PY
+      - name: Format and verify
+        run: |
+          python -m pip install "ruff>=0.9"
+          python -m ruff check --fix \
+            src/sparkbrain/evaluation/v06_confirmatory_adapter_review.py \
+            tests/v06/test_confirmatory_launch_gate.py
+      - name: Commit correction
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            src/sparkbrain/evaluation/v06_confirmatory_adapter_review.py \
+            tests/v06/test_confirmatory_launch_gate.py
+          git commit -m "fix(v06): scope adapter field audit and CI checkout test [skip ci]"
+          git push origin HEAD:v06-capability-staging-20260830
