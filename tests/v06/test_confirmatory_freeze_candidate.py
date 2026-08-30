@@ -86,7 +86,7 @@ def test_freeze_candidate_is_unsigned_and_non_executable() -> None:
     assert candidate.builder_id == "builder-1"
     assert candidate.unsigned_freeze_record_state["approval_id"] == ""
     assert len(candidate.candidate_hash()) == 64
-    assert candidate.manifest_hash == candidate.manifest_state["code_ref"][:0] + candidate.manifest_hash
+    assert candidate.manifest_state["code_ref"] == _SOURCE_SHA
 
 
 def test_freeze_candidate_requires_a_clean_matching_source_checkout() -> None:
