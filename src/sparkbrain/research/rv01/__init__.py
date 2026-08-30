@@ -1,5 +1,11 @@
 """RV01 — Endogenous Transition Substrate research package."""
 
+from .anti_reservoir import (
+    AntiReservoirAssessment,
+    AntiReservoirSuite,
+    ExternalSequenceReadout,
+    run_anti_reservoir_suite,
+)
 from .baseline import (
     FROZEN_V06_CODE_SHA,
     FrozenBaselineReport,
@@ -61,12 +67,15 @@ from .physical_revision import (
 __all__ = [
     "FROZEN_V06_CODE_SHA",
     "MINIMUM_LONG_RUN_CONFIDENCE_GAP",
+    "AntiReservoirAssessment",
+    "AntiReservoirSuite",
     "CompetitiveFieldPlasticityConfig",
     "DirectFieldPlasticityConfig",
     "DirectPlasticityAssessment",
     "DirectPlasticitySuite",
     "ExternalGatedCompetitiveFieldPlasticity",
     "ExternalGatedDirectFieldPlasticity",
+    "ExternalSequenceReadout",
     "FrozenBaselineReport",
     "G1DependencyAssessment",
     "G1DependencySuite",
@@ -84,6 +93,7 @@ __all__ = [
     "PhysicalRevisionAssessment",
     "PhysicalRevisionSuite",
     "UnitExternalTrace",
+    "run_anti_reservoir_suite",
     "run_direct_plasticity_suite",
     "run_frozen_v06_baseline",
     "run_g1_dependency_suite",
