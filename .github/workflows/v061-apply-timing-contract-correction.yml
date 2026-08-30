@@ -1,0 +1,364 @@
+name: v061-apply-timing-contract-correction
+
+on:
+  push:
+    branches:
+      - v061-timing-contract-correction-20260831
+    paths:
+      - .github/workflows/v061-apply-timing-contract-correction.yml
+
+permissions:
+  contents: write
+
+jobs:
+  patch-and-verify:
+    runs-on: ubuntu-24.04
+    env:
+      PYTHONHASHSEED: "0"
+      TZ: UTC
+      LC_ALL: C.UTF-8
+      LANG: C.UTF-8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v061-timing-contract-correction-20260831
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Apply monotonic boundary timing correction
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          runtime_path = Path("src/sparkbrain/v06/endogenous_chain.py")
+          runtime = runtime_path.read_text(encoding="utf-8")
+          old_runtime = '''    def advance_silence(
+              self,
+              end_ms: float,
+              *,
+              include_endpoint: bool = True,
+          ) -> tuple[EndogenousChainSpark, ...]:
+              if end_ms < self.field.current_time_ms:
+                  raise ValueError("end_ms cannot move backwards")
+              before = len(self.generated_sparks)
+              while self.field._queue:  # noqa: SLF001 - retained Field event-loop adapter
+                  next_time = self.field._queue[0][0]  # noqa: SLF001
+                  if next_time > end_ms or (next_time == end_ms and not include_endpoint):
+                      break
+                  self._internal_step_count += 1
+                  if self._internal_step_count > self.config.maximum_internal_steps:
+                      raise RuntimeError("maximum_internal_steps exceeded")
+                  arrivals = self._arrival_pulse_ids_at(next_time)
+                  spikes = self.field.run_until(next_time)
+                  self._observe_spikes(spikes, arrivals)
+              if include_endpoint and self.field.current_time_ms < end_ms:
+                  self.field.run_until(end_ms)
+              self.transition.expire_pending(end_ms)
+              return tuple(self.generated_sparks[before:])
+          '''
+          new_runtime = '''    def drain_scheduled_events(
+              self,
+              end_ms: float,
+              *,
+              include_endpoint: bool = True,
+          ) -> tuple[EndogenousChainSpark, ...]:
+              """Process scheduled events without fabricating passage to ``end_ms``.
+
+              This is used when an external world may return a consequence before
+              the evaluator's observation horizon.  The Field clock stops at the
+              last event that actually occurred, so a later external consequence
+              is still presented in monotonic time.
+              """
+
+              if end_ms < self.field.current_time_ms:
+                  raise ValueError("end_ms cannot move backwards")
+              before = len(self.generated_sparks)
+              while self.field._queue:  # noqa: SLF001 - retained Field event-loop adapter
+                  next_time = self.field._queue[0][0]  # noqa: SLF001
+                  if next_time > end_ms or (next_time == end_ms and not include_endpoint):
+                      break
+                  self._internal_step_count += 1
+                  if self._internal_step_count > self.config.maximum_internal_steps:
+                      raise RuntimeError("maximum_internal_steps exceeded")
+                  arrivals = self._arrival_pulse_ids_at(next_time)
+                  spikes = self.field.run_until(next_time)
+                  self._observe_spikes(spikes, arrivals)
+              self.transition.expire_pending(self.field.current_time_ms)
+              return tuple(self.generated_sparks[before:])
+
+              def advance_silence(
+                  self,
+                  end_ms: float,
+                  *,
+                  include_endpoint: bool = True,
+              ) -> tuple[EndogenousChainSpark, ...]:
+                  if end_ms < self.field.current_time_ms:
+                      raise ValueError("end_ms cannot move backwards")
+                  before = len(self.generated_sparks)
+                  self.drain_scheduled_events(
+                      end_ms,
+                      include_endpoint=include_endpoint,
+                  )
+                  if include_endpoint and self.field.current_time_ms < end_ms:
+                      self.field.run_until(end_ms)
+                  self.transition.expire_pending(end_ms)
+                  return tuple(self.generated_sparks[before:])
+          '''.replace("\n              def advance_silence", "\n    def advance_silence").replace("\n                  self,", "\n        self,").replace("\n                  end_ms:", "\n        end_ms:").replace("\n                  *,", "\n        *,").replace("\n                  include_endpoint:", "\n        include_endpoint:").replace("\n              ) -> tuple[EndogenousChainSpark, ...]:", "\n    ) -> tuple[EndogenousChainSpark, ...]:", 1)
+          # Construct the second method explicitly to avoid indentation ambiguity.
+          new_runtime = '''    def drain_scheduled_events(
+              self,
+              end_ms: float,
+              *,
+              include_endpoint: bool = True,
+          ) -> tuple[EndogenousChainSpark, ...]:
+              """Process scheduled events without fabricating passage to ``end_ms``.
+
+              This is used when an external world may return a consequence before
+              the evaluator's observation horizon. The Field clock stops at the
+              last event that actually occurred, so a later external consequence
+              is still presented in monotonic time.
+              """
+
+              if end_ms < self.field.current_time_ms:
+                  raise ValueError("end_ms cannot move backwards")
+              before = len(self.generated_sparks)
+              while self.field._queue:  # noqa: SLF001 - retained Field event-loop adapter
+                  next_time = self.field._queue[0][0]  # noqa: SLF001
+                  if next_time > end_ms or (next_time == end_ms and not include_endpoint):
+                      break
+                  self._internal_step_count += 1
+                  if self._internal_step_count > self.config.maximum_internal_steps:
+                      raise RuntimeError("maximum_internal_steps exceeded")
+                  arrivals = self._arrival_pulse_ids_at(next_time)
+                  spikes = self.field.run_until(next_time)
+                  self._observe_spikes(spikes, arrivals)
+              self.transition.expire_pending(self.field.current_time_ms)
+              return tuple(self.generated_sparks[before:])
+
+              def advance_silence(
+                  self,
+                  end_ms: float,
+                  *,
+                  include_endpoint: bool = True,
+              ) -> tuple[EndogenousChainSpark, ...]:
+                  if end_ms < self.field.current_time_ms:
+                      raise ValueError("end_ms cannot move backwards")
+                  before = len(self.generated_sparks)
+                  self.drain_scheduled_events(
+                      end_ms,
+                      include_endpoint=include_endpoint,
+                  )
+                  if include_endpoint and self.field.current_time_ms < end_ms:
+                      self.field.run_until(end_ms)
+                  self.transition.expire_pending(end_ms)
+                  return tuple(self.generated_sparks[before:])
+          '''
+          new_runtime = new_runtime.replace("\n              def advance_silence", "\n    def advance_silence")
+          new_runtime = new_runtime.replace("\n                  self,", "\n        self,")
+          new_runtime = new_runtime.replace("\n                  end_ms: float,", "\n        end_ms: float,")
+          new_runtime = new_runtime.replace("\n                  *,", "\n        *,")
+          new_runtime = new_runtime.replace("\n                  include_endpoint: bool = True,", "\n        include_endpoint: bool = True,")
+          new_runtime = new_runtime.replace("\n              ) -> tuple[EndogenousChainSpark, ...]:", "\n    ) -> tuple[EndogenousChainSpark, ...]:", 1)
+          new_runtime = new_runtime.replace("\n                  if end_ms", "\n        if end_ms")
+          new_runtime = new_runtime.replace("\n                      raise ValueError", "\n            raise ValueError")
+          new_runtime = new_runtime.replace("\n                  before =", "\n        before =")
+          new_runtime = new_runtime.replace("\n                  self.drain_scheduled_events(", "\n        self.drain_scheduled_events(")
+          new_runtime = new_runtime.replace("\n                      end_ms,", "\n            end_ms,")
+          new_runtime = new_runtime.replace("\n                      include_endpoint=include_endpoint,", "\n            include_endpoint=include_endpoint,")
+          new_runtime = new_runtime.replace("\n                  )", "\n        )")
+          new_runtime = new_runtime.replace("\n                  if include_endpoint", "\n        if include_endpoint")
+          new_runtime = new_runtime.replace("\n                      self.field.run_until(end_ms)", "\n            self.field.run_until(end_ms)")
+          new_runtime = new_runtime.replace("\n                  self.transition.expire_pending(end_ms)", "\n        self.transition.expire_pending(end_ms)")
+          new_runtime = new_runtime.replace("\n                  return tuple", "\n        return tuple")
+          if runtime.count(old_runtime) != 1:
+              raise SystemExit("runtime advance_silence block did not match exactly once")
+          runtime_path.write_text(runtime.replace(old_runtime, new_runtime), encoding="utf-8")
+
+          primary_path = Path(
+              "src/sparkbrain/evaluation/v06_confirmatory_heldout_primary.py"
+          )
+          primary = primary_path.read_text(encoding="utf-8")
+          old_cue = '''def _run_cue(
+              runtime: AutonomousEndogenousChainRuntime,
+              parameters: HeldoutWorldParameters,
+              *,
+              cue_unit_id: int,
+              start_ms: float,
+              event_id: str,
+          ) -> _ChainResult:
+              before = len(runtime.generated_sparks)
+              runtime.present_external(
+                  _pulse(parameters, event_id, start_ms, cue_unit_id)
+              )
+              runtime.advance_silence(_horizon(parameters, start_ms))
+              sparks = tuple(runtime.generated_sparks[before:])
+          '''
+          new_cue = '''def _run_cue(
+              runtime: AutonomousEndogenousChainRuntime,
+              parameters: HeldoutWorldParameters,
+              *,
+              cue_unit_id: int,
+              start_ms: float,
+              event_id: str,
+              settle_to_horizon: bool = True,
+          ) -> _ChainResult:
+              before = len(runtime.generated_sparks)
+              runtime.present_external(
+                  _pulse(parameters, event_id, start_ms, cue_unit_id)
+              )
+              horizon = _horizon(parameters, start_ms)
+              if settle_to_horizon:
+                  runtime.advance_silence(horizon)
+              else:
+                  runtime.drain_scheduled_events(horizon)
+              sparks = tuple(runtime.generated_sparks[before:])
+          '''
+          if primary.count(old_cue) != 1:
+              raise SystemExit("Primary _run_cue block did not match exactly once")
+          primary = primary.replace(old_cue, new_cue)
+          old_boundary_call = '''    _run_cue(
+              runtime,
+              parameters,
+              cue_unit_id=cue_unit_id,
+              start_ms=start_ms,
+              event_id=event_id,
+          )
+              sparks = tuple(runtime.generated_sparks[before_sparks:])
+          '''
+          new_boundary_call = '''    _run_cue(
+              runtime,
+              parameters,
+              cue_unit_id=cue_unit_id,
+              start_ms=start_ms,
+              event_id=event_id,
+              settle_to_horizon=False,
+          )
+              sparks = tuple(runtime.generated_sparks[before_sparks:])
+          '''
+          if primary.count(old_boundary_call) != 1:
+              raise SystemExit("boundary _run_cue call did not match exactly once")
+          primary_path.write_text(
+              primary.replace(old_boundary_call, new_boundary_call),
+              encoding="utf-8",
+          )
+
+          test_path = Path("tests/v06/test_endogenous_chain.py")
+          tests = test_path.read_text(encoding="utf-8")
+          addition = '''
+
+          def test_drain_scheduled_events_does_not_force_field_to_observation_horizon() -> None:
+              runtime = build_runtime()
+              runtime.present_external(pulse("drain-cue", 100.0, 0))
+              generated = runtime.drain_scheduled_events(120.0)
+              assert tuple(row.unit_id for row in generated) == (1, 2, 3)
+              assert runtime.field.current_time_ms == 115.0
+
+              runtime.advance_silence(120.0)
+              assert runtime.field.current_time_ms == 120.0
+
+
+          def test_external_time_reversal_guard_remains_strict_after_drain_split() -> None:
+              import pytest
+
+              runtime = build_runtime()
+              runtime.present_external(pulse("strict-cue", 100.0, 0))
+              runtime.advance_silence(120.0)
+              with pytest.raises(ValueError, match="cannot move Field time backwards"):
+                  runtime.present_external(pulse("past-cue", 119.0, 0))
+          '''
+          if "test_drain_scheduled_events_does_not_force_field" not in tests:
+              test_path.write_text(tests + addition, encoding="utf-8")
+
+          regression_path = Path(
+              "tests/v06/test_confirmatory_candidate_002_timing_regression.py"
+          )
+          regression_path.write_text(
+              '''from __future__ import annotations
+
+          from sparkbrain.evaluation.v06_confirmatory import EvidenceDomain
+          from sparkbrain.evaluation.v06_confirmatory_heldout_primary import (
+              _boundary_condition,
+              run_condition,
+          )
+          from sparkbrain.evaluation.v06_confirmatory_heldout_spec import (
+              WORLD_GENERATION_ID,
+              build_heldout_world_grid,
+              heldout_world_parameters,
+          )
+
+
+          def _candidate_002_backward_risk_worlds():
+              return tuple(
+                  parameters
+                  for parameters in build_heldout_world_grid()
+                  if parameters.boundary_lag_ms
+                  < max(parameters.evaluation_lags_ms) + 5.0
+              )
+
+
+          def test_retired_candidate_002_risk_set_is_the_reproduced_22_world_set() -> None:
+              assert WORLD_GENERATION_ID == "v06-confirmatory-candidate-002"
+              risky = _candidate_002_backward_risk_worlds()
+              assert len(risky) == 22
+              assert any(
+                  row.family_id == "heldout-sparse-permutation" and row.seed == 1001
+                  for row in risky
+              )
+
+
+          def test_every_retired_candidate_002_risk_world_completes_boundary_path() -> None:
+              for parameters in _candidate_002_backward_risk_worlds():
+                  main_count, _, external_count, runtime, _ = _boundary_condition(
+                      parameters
+                  )
+                  assert main_count == 1
+                  assert external_count == 1
+                  assert runtime.field.current_time_ms >= 0.0
+
+
+          def test_original_seed_1001_primary_now_finishes_all_evidence_domains() -> None:
+              parameters = heldout_world_parameters(
+                  "heldout-sparse-permutation",
+                  1001,
+              )
+              execution = run_condition(parameters)
+              assert len(execution.records) == len(EvidenceDomain) == 9
+              execution.validate()
+          ''',
+              encoding="utf-8",
+          )
+          PY
+
+      - name: Install development dependencies
+        run: python -m pip install -e ".[dev]"
+
+      - name: Verify focused timing and retired-candidate regressions
+        run: |
+          python -m ruff check \
+            src/sparkbrain/v06/endogenous_chain.py \
+            src/sparkbrain/evaluation/v06_confirmatory_heldout_primary.py \
+            tests/v06/test_endogenous_chain.py \
+            tests/v06/test_confirmatory_candidate_002_timing_regression.py
+          python -m pytest -q \
+            tests/v06/test_endogenous_chain.py \
+            tests/v06/test_confirmatory_candidate_002_timing_regression.py
+
+      - name: Commit verified correction
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            src/sparkbrain/v06/endogenous_chain.py \
+            src/sparkbrain/evaluation/v06_confirmatory_heldout_primary.py \
+            tests/v06/test_endogenous_chain.py \
+            tests/v06/test_confirmatory_candidate_002_timing_regression.py
+          git commit -m "fix(v061): preserve monotonic time across boundary feedback"
+          git push origin HEAD:v061-timing-contract-correction-20260831
