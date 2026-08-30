@@ -54,9 +54,12 @@ def _environment_or_skip():
 def _detached_clone(tmp_path: Path) -> tuple[Path, str]:
     repository = Path(__file__).parents[2].resolve()
     source = tmp_path / "detached-source"
+    clone_environment = os.environ.copy()
+    clone_environment["GIT_LFS_SKIP_SMUDGE"] = "1"
     subprocess.run(
         ("git", "clone", "--no-local", "--quiet", str(repository), str(source)),
         check=True,
+        env=clone_environment,
     )
     sha = _git(source, "rev-parse", "HEAD")
     _git(source, "checkout", "--quiet", "--detach", sha)
