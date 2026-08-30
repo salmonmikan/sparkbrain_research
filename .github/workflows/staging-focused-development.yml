@@ -9,8 +9,10 @@ on:
       - "src/sparkbrain/evaluation/v06_confirmatory_heldout_primary.py"
       - "src/sparkbrain/evaluation/v06_confirmatory_heldout_controls.py"
       - "src/sparkbrain/evaluation/v06_confirmatory_heldout_comparators.py"
+      - "src/sparkbrain/evaluation/v06_confirmatory_training_schedule.py"
       - "tests/v06/test_capability_staging_development_fixture.py"
       - "tests/v06/test_capability_staging_development_variants.py"
+      - "tests/v06/test_confirmatory_training_schedule.py"
       - "tests/v06/development_experiment_report.py"
       - "tests/v06/development_diagnostic_report.py"
 
@@ -35,8 +37,10 @@ jobs:
           src/sparkbrain/evaluation/v06_confirmatory_heldout_primary.py
           src/sparkbrain/evaluation/v06_confirmatory_heldout_controls.py
           src/sparkbrain/evaluation/v06_confirmatory_heldout_comparators.py
+          src/sparkbrain/evaluation/v06_confirmatory_training_schedule.py
           tests/v06/test_capability_staging_development_fixture.py
           tests/v06/test_capability_staging_development_variants.py
+          tests/v06/test_confirmatory_training_schedule.py
           tests/v06/development_experiment_report.py
           tests/v06/development_diagnostic_report.py
       - name: Execute development-only adapter fixtures
@@ -44,6 +48,7 @@ jobs:
           python -m pytest -q
           tests/v06/test_capability_staging_development_fixture.py
           tests/v06/test_capability_staging_development_variants.py
+          tests/v06/test_confirmatory_training_schedule.py
       - name: Build development-only reports
         run: |
           python tests/v06/development_experiment_report.py \
