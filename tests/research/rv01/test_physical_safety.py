@@ -178,8 +178,16 @@ def test_safety_guard_has_no_learning_or_cognitive_taxonomy() -> None:
         "assembly_id",
     ):
         assert forbidden not in source
-    assert "observe_external" not in source.split("def run_bounded_physical_field", 1)[1].split("def _trained_field", 1)[0]
-    assert run_physical_safety_suite().assessment.safety_layer_has_no_learned_cognitive_state is True
+    bounded_runner = source.split("def run_bounded_physical_field", 1)[1].split(
+        "def _trained_field",
+        1,
+    )[0]
+    assert "observe_external" not in bounded_runner
+    assert (
+        run_physical_safety_suite()
+        .assessment.safety_layer_has_no_learned_cognitive_state
+        is True
+    )
 
 
 def test_r01_11_reports_external_guard_not_intrinsic_safety() -> None:
