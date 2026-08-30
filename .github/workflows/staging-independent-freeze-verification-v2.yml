@@ -1,0 +1,42 @@
+name: staging-independent-freeze-verification-v2
+
+on:
+  push:
+    branches: ["v06-capability-staging-20260830"]
+    paths:
+      - ".github/workflows/staging-independent-freeze-verification-v2.yml"
+      - "src/sparkbrain/evaluation/v06_confirmatory_environment_lock_v2.py"
+      - "src/sparkbrain/evaluation/v06_confirmatory_freeze_bundle_v2.py"
+      - "src/sparkbrain/evaluation/v06_confirmatory_external_verification_v2.py"
+      - "src/sparkbrain/evaluation/v06_confirmatory_verify_external_freeze_v2.py"
+      - "tests/v06/test_confirmatory_external_verification_v2.py"
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONHASHSEED: "0"
+      TZ: UTC
+      LC_ALL: C.UTF-8
+      LANG: C.UTF-8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install development dependencies
+        run: python -m pip install -e ".[dev]"
+      - name: Lint independent verifier
+        run: >-
+          python -m ruff check
+          src/sparkbrain/evaluation/v06_confirmatory_external_verification_v2.py
+          src/sparkbrain/evaluation/v06_confirmatory_verify_external_freeze_v2.py
+          tests/v06/test_confirmatory_external_verification_v2.py
+      - name: Test independent rebuild and approval refusal
+        run: python -m pytest -q tests/v06/test_confirmatory_external_verification_v2.py
+
+# Current manifest is unready; tests require verification to pass while seal issuance remains blocked.

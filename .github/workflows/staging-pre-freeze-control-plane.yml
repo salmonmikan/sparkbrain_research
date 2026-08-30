@@ -1,0 +1,41 @@
+name: staging-pre-freeze-control-plane
+
+on:
+  push:
+    branches: ["v06-capability-staging-20260830"]
+    paths:
+      - ".github/workflows/staging-pre-freeze-control-plane.yml"
+      - "src/sparkbrain/evaluation/v06_confirmatory_external_freeze.py"
+      - "src/sparkbrain/evaluation/v06_confirmatory_external_launch_gate.py"
+      - "src/sparkbrain/evaluation/v06_confirmatory_execution_seal.py"
+      - "tests/v06/test_confirmatory_external_control_plane.py"
+
+permissions:
+  contents: read
+
+jobs:
+  control-plane:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONHASHSEED: "0"
+      TZ: UTC
+      LC_ALL: C.UTF-8
+      LANG: C.UTF-8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install development dependencies
+        run: python -m pip install -e ".[dev]"
+      - name: Lint external control plane
+        run: >-
+          python -m ruff check
+          src/sparkbrain/evaluation/v06_confirmatory_external_freeze.py
+          src/sparkbrain/evaluation/v06_confirmatory_external_launch_gate.py
+          tests/v06/test_confirmatory_external_control_plane.py
+      - name: Test self-reference-free external freeze and launch gate
+        run: python -m pytest -q tests/v06/test_confirmatory_external_control_plane.py
+
+# No candidate world builder or capability adapter is imported by this workflow.

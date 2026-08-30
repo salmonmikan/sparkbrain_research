@@ -1,0 +1,33 @@
+name: staging-normalized-resource-v2
+
+on:
+  push:
+    branches: ["v06-capability-staging-20260830"]
+    paths:
+      - ".github/workflows/staging-normalized-resource-v2.yml"
+      - "src/sparkbrain/evaluation/v06_confirmatory_normalized_resource_v2.py"
+      - "tests/v06/test_confirmatory_normalized_resource_v2.py"
+
+permissions:
+  contents: read
+
+jobs:
+  normalized-resource:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install development dependencies
+        run: python -m pip install -e ".[dev]"
+      - name: Lint normalized resource contract
+        run: >-
+          python -m ruff check
+          src/sparkbrain/evaluation/v06_confirmatory_normalized_resource_v2.py
+          tests/v06/test_confirmatory_normalized_resource_v2.py
+      - name: Test descriptive-only resource policy
+        run: python -m pytest -q tests/v06/test_confirmatory_normalized_resource_v2.py
+
+# Synthetic/development payloads only; no candidate capability execution.

@@ -1,0 +1,72 @@
+name: prepare-external-freeze-candidate-v2
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONHASHSEED: "0"
+      TZ: UTC
+      LC_ALL: C.UTF-8
+      LANG: C.UTF-8
+      CONTROL_ROOT: /tmp/sparkbrain-v06-freeze-control
+      RAW_ROOT: /tmp/sparkbrain-v06-confirmatory-raw
+      ANALYSIS_ROOT: /tmp/sparkbrain-v06-confirmatory-analysis
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v06-capability-staging-20260830
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Require a clean source checkout
+        run: test -z "$(git status --porcelain)"
+      - name: Install frozen-candidate dependencies
+        run: python -m pip install -e ".[dev]"
+      - name: Prepare empty external roots
+        run: |
+          rm -rf "$CONTROL_ROOT" "$RAW_ROOT" "$ANALYSIS_ROOT"
+          mkdir -p "$CONTROL_ROOT"
+      - name: Build unsigned external freeze bundle
+        run: >-
+          python -m sparkbrain.evaluation.v06_confirmatory_prepare_external_freeze_v2
+          --source-root "$GITHUB_WORKSPACE"
+          --source-sha "$GITHUB_SHA"
+          --control-root "$CONTROL_ROOT"
+          --raw-root "$RAW_ROOT"
+          --analysis-root "$ANALYSIS_ROOT"
+          --builder "github:${GITHUB_ACTOR}"
+      - name: Verify candidate capability remains unopened
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          root = Path(os.environ["CONTROL_ROOT"])
+          summary = json.loads(
+              (root / "unsigned_freeze_summary.json").read_text(encoding="utf-8")
+          )
+          assert summary["state"] == "UNSIGNED_CANDIDATE"
+          assert summary["candidate_execution_counter_initial"] == 0
+          assert summary["approval"] is None
+          assert summary["reviewer"] is None
+          assert not Path(os.environ["RAW_ROOT"]).exists()
+          assert not Path(os.environ["ANALYSIS_ROOT"]).exists()
+          PY
+      - name: Upload unsigned control package
+        uses: actions/upload-artifact@v4
+        with:
+          name: v06-unsigned-external-freeze-candidate-${{ github.sha }}
+          path: /tmp/sparkbrain-v06-freeze-control
+          if-no-files-found: error
+
+# This workflow builds and hashes world/schedule/schema contracts only.
+# It never imports or executes a capability adapter against candidate-002.
