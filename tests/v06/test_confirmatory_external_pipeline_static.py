@@ -98,6 +98,16 @@ def test_scorer_does_not_import_candidate_world_or_capability_adapter() -> None:
     assert "build_heldout_world_grid" not in source
 
 
+def test_scorer_rebuilds_the_frozen_candidate_manifest() -> None:
+    source = (
+        _root()
+        / "src/sparkbrain/evaluation/v06_confirmatory_score_external_v2.py"
+    ).read_text(encoding="utf-8")
+    assert "build_candidate_manifest" in source
+    assert "build_current_confirmatory_manifest" not in source
+    assert "candidate manifest differs from frozen bundle" in source
+
+
 def test_raw_verification_precedes_strict_scoring_and_is_repeated() -> None:
     tree = _tree(
         "src/sparkbrain/evaluation/v06_confirmatory_score_external_v2.py"
