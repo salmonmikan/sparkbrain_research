@@ -31,13 +31,15 @@ jobs:
           if text.count(old_marker) != 2:
               raise SystemExit(f'unexpected old marker count: {text.count(old_marker)}')
           text = text.replace(old_marker, new_marker)
+
+          runner_expr = '$' + '{{ runner.temp }}'
           replacements = {
-              '${{ runner.temp }}/sparkbrain-v06-build-source': '/tmp/sparkbrain-v06-build-source',
-              '${{ runner.temp }}/sparkbrain-v06-candidate-002': '/tmp/sparkbrain-v06-candidate-002',
-              '${{ runner.temp }}/sparkbrain-v06-candidate-002/final/control': '/tmp/sparkbrain-v06-candidate-002/final/control',
-              '${{ runner.temp }}/sparkbrain-v06-candidate-002/final/raw': '/tmp/sparkbrain-v06-candidate-002/final/raw',
-              '${{ runner.temp }}/sparkbrain-v06-candidate-002/final/analysis': '/tmp/sparkbrain-v06-candidate-002/final/analysis',
-              '${{ runner.temp }}/sparkbrain-v06-candidate-002/reports': '/tmp/sparkbrain-v06-candidate-002/reports',
+              f'{runner_expr}/sparkbrain-v06-build-source': '/tmp/sparkbrain-v06-build-source',
+              f'{runner_expr}/sparkbrain-v06-candidate-002': '/tmp/sparkbrain-v06-candidate-002',
+              f'{runner_expr}/sparkbrain-v06-candidate-002/final/control': '/tmp/sparkbrain-v06-candidate-002/final/control',
+              f'{runner_expr}/sparkbrain-v06-candidate-002/final/raw': '/tmp/sparkbrain-v06-candidate-002/final/raw',
+              f'{runner_expr}/sparkbrain-v06-candidate-002/final/analysis': '/tmp/sparkbrain-v06-candidate-002/final/analysis',
+              f'{runner_expr}/sparkbrain-v06-candidate-002/reports': '/tmp/sparkbrain-v06-candidate-002/reports',
           }
           for old, new in replacements.items():
               if old not in text:
