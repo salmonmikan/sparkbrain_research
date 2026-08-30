@@ -47,6 +47,11 @@ from .physical_missing_middle import (
     PhysicalMissingMiddleSuite,
     run_physical_missing_middle_suite,
 )
+from .physical_persistence_locus import (
+    PhysicalPersistenceLocusAssessment,
+    PhysicalPersistenceLocusSuite,
+    run_physical_persistence_locus_suite,
+)
 from .physical_revision import (
     PhysicalRevisionAssessment,
     PhysicalRevisionSuite,
@@ -74,6 +79,8 @@ __all__ = [
     "PhysicalContinuationSuite",
     "PhysicalMissingMiddleAssessment",
     "PhysicalMissingMiddleSuite",
+    "PhysicalPersistenceLocusAssessment",
+    "PhysicalPersistenceLocusSuite",
     "PhysicalRevisionAssessment",
     "PhysicalRevisionSuite",
     "UnitExternalTrace",
@@ -84,6 +91,7 @@ __all__ = [
     "run_physical_branching_suite",
     "run_physical_continuation_suite",
     "run_physical_missing_middle_suite",
+    "run_physical_persistence_locus_suite",
     "run_physical_revision_suite",
     "verify_frozen_runtime_fingerprints",
 ]
