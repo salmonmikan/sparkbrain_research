@@ -35,3 +35,5 @@ jobs:
           tests/v06/test_capability_staging_development_fixture.py
       - name: Execute development-only adapter fixture
         run: python -m pytest -q tests/v06/test_capability_staging_development_fixture.py
+
+# Development-only rerun marker: anonymous shuffled-link identity fix reviewed.
