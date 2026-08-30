@@ -1,0 +1,170 @@
+name: v061-build-candidate-003-v4
+
+on:
+  push:
+    branches:
+      - v061-timing-contract-correction-20260831
+    paths:
+      - .github/workflows/v061-build-candidate-003-v4.yml
+
+permissions:
+  contents: write
+
+jobs:
+  build-validate-publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    env:
+      TARGET_BRANCH: v061-candidate-003-20260831
+      PYTHONHASHSEED: "0"
+      TZ: UTC
+      LC_ALL: C.UTF-8
+      LANG: C.UTF-8
+      GIT_LFS_SKIP_SMUDGE: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v061-timing-contract-correction-20260831
+          fetch-depth: 0
+          lfs: false
+
+      - name: Refuse an existing candidate-003 branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "${TARGET_BRANCH}"; then
+            echo "Candidate-003 branch already exists; refusing replacement." >&2
+            exit 1
+          fi
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11.16"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+
+      - name: Reuse the audited candidate-003 construction program
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          workflow = Path(
+              ".github/workflows/v061-build-candidate-003.yml"
+          ).read_text(encoding="utf-8").splitlines()
+          start = next(
+              index
+              for index, line in enumerate(workflow)
+              if line.strip() == "python - <<'PY'"
+          )
+          end = next(
+              index
+              for index in range(start + 1, len(workflow))
+              if workflow[index].strip() == "PY"
+          )
+          indent = len(workflow[start]) - len(workflow[start].lstrip())
+          source = "\n".join(
+              line[indent:] if line.startswith(" " * indent) else line
+              for line in workflow[start + 1 : end]
+          )
+          target = Path("/tmp/build_candidate_003.py")
+          target.write_text(source + "\n", encoding="utf-8")
+          compile(source, str(target), "exec")
+          PY
+          python /tmp/build_candidate_003.py
+
+      - name: Remove construction-only workflows
+        run: |
+          rm -f \
+            .github/workflows/v061-build-candidate-003.yml \
+            .github/workflows/v061-build-candidate-003-v2.yml \
+            .github/workflows/v061-build-candidate-003-v3.yml \
+            .github/workflows/v061-build-candidate-003-v4.yml
+
+      - name: Install exact validation dependencies
+        run: python -m pip install -e ".[dev,learned,spiking]"
+
+      - name: Materialize deterministic bundle validation manifest
+        run: python scripts/validate_bundle.py
+
+      - name: Create clean local candidate source commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git commit -m "feat(v061): freeze fresh candidate-003 source"
+          test -z "$(git status --porcelain)"
+
+      - name: Lint complete committed candidate source
+        run: python -m ruff check .
+
+      - name: Run readiness and complete regression suite
+        run: |
+          python scripts/local_readiness_check.py
+          python -m pytest -q
+          test -z "$(git status --porcelain)"
+
+      - name: Prove deterministic bundle validation from the committed tree
+        run: |
+          python scripts/validate_bundle.py
+          test -z "$(git status --porcelain)"
+
+      - name: Audit current and retired candidate boundaries
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from sparkbrain.evaluation.v06_confirmatory import (
+              ConfirmatoryPhase,
+              assess_confirmatory_readiness,
+          )
+          from sparkbrain.evaluation.v06_confirmatory_current_manifest import (
+              build_current_confirmatory_manifest,
+          )
+          from sparkbrain.evaluation.v06_confirmatory_heldout_spec import (
+              HELDOUT_SEEDS,
+              QUARANTINED_HELDOUT_SEEDS,
+              RETIRED_CANDIDATE_002_SEEDS,
+              WORLD_GENERATION_ID,
+              build_heldout_world_grid,
+              build_retired_candidate_002_world_grid,
+              heldout_world_grid_hash,
+              retired_candidate_002_world_grid_hash,
+          )
+
+          assert WORLD_GENERATION_ID == "v06-confirmatory-candidate-003"
+          assert HELDOUT_SEEDS == tuple(range(2000, 2010))
+          assert RETIRED_CANDIDATE_002_SEEDS == tuple(range(1000, 1010))
+          assert set(HELDOUT_SEEDS).isdisjoint(QUARANTINED_HELDOUT_SEEDS)
+          assert len(build_heldout_world_grid()) == 50
+          assert len(build_retired_candidate_002_world_grid()) == 50
+          assert heldout_world_grid_hash() != retired_candidate_002_world_grid_hash()
+          manifest = build_current_confirmatory_manifest(
+              ConfirmatoryPhase.CONFIRMATORY
+          )
+          readiness = assess_confirmatory_readiness(manifest)
+          assert tuple(row.seed for row in manifest.seeds) == HELDOUT_SEEDS
+          assert not readiness.code_ref_frozen
+          assert not readiness.ready
+          PY
+          test ! -e .github/confirmatory/v06-candidate-003-execute-v1.json
+          test -e .github/workflows/v06-candidate-003-final-execution.yml
+          test ! -e .github/workflows/v061-build-candidate-003.yml
+          test ! -e .github/workflows/v061-build-candidate-003-v2.yml
+          test ! -e .github/workflows/v061-build-candidate-003-v3.yml
+          test ! -e .github/workflows/v061-build-candidate-003-v4.yml
+          test -z "$(git status --porcelain)"
+
+      - name: Publish the already-validated immutable source commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "${TARGET_BRANCH}"; then
+            echo "Candidate-003 branch appeared during validation; refusing overwrite." >&2
+            exit 1
+          fi
+          git push origin "HEAD:refs/heads/${TARGET_BRANCH}"
