@@ -10,6 +10,7 @@ on:
       - "src/sparkbrain/evaluation/v06_confirmatory_heldout_controls.py"
       - "src/sparkbrain/evaluation/v06_confirmatory_heldout_comparators.py"
       - "tests/v06/test_capability_staging_development_fixture.py"
+      - "tests/v06/test_capability_staging_development_variants.py"
 
 permissions:
   contents: read
@@ -33,7 +34,9 @@ jobs:
           src/sparkbrain/evaluation/v06_confirmatory_heldout_controls.py
           src/sparkbrain/evaluation/v06_confirmatory_heldout_comparators.py
           tests/v06/test_capability_staging_development_fixture.py
-      - name: Execute development-only adapter fixture
-        run: python -m pytest -q tests/v06/test_capability_staging_development_fixture.py
-
-# Development-only rerun marker: anonymous shuffled-link identity fix reviewed.
+          tests/v06/test_capability_staging_development_variants.py
+      - name: Execute development-only adapter fixtures
+        run: >-
+          python -m pytest -q
+          tests/v06/test_capability_staging_development_fixture.py
+          tests/v06/test_capability_staging_development_variants.py
