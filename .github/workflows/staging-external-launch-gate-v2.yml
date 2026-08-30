@@ -5,8 +5,10 @@ on:
     branches: ["v06-capability-staging-20260830"]
     paths:
       - ".github/workflows/staging-external-launch-gate-v2.yml"
+      - "src/sparkbrain/evaluation/v06_confirmatory_candidate_manifest.py"
       - "src/sparkbrain/evaluation/v06_confirmatory_external_control_package_v2.py"
       - "src/sparkbrain/evaluation/v06_confirmatory_external_launch_gate_v2.py"
+      - "src/sparkbrain/evaluation/v06_confirmatory_freeze_bundle_v2.py"
       - "tests/v06/test_confirmatory_external_launch_gate_v2.py"
 
 permissions:
@@ -23,7 +25,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          python-version: "3.11"
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
