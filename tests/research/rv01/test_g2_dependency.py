@@ -54,7 +54,9 @@ def test_timing_correction_is_carried_by_g2_not_raw_g1() -> None:
     old_g1 = phase.by_target("unit:1", g2_enabled=False)
 
     assert old.raw_arrival_ms - phase.source_time_ms == pytest.approx(5.0)
-    assert old.adapted_arrival_ms - phase.source_time_ms == pytest.approx(5.976)
+    # G2 updates its correction from the residual error of an already-corrected
+    # proposal. With lr=0.2, three +2 ms observations produce +0.784 ms.
+    assert old.adapted_arrival_ms - phase.source_time_ms == pytest.approx(5.784)
     assert old_g1.raw_arrival_ms - phase.source_time_ms == pytest.approx(5.0)
     assert old_g1.adapted_arrival_ms - phase.source_time_ms == pytest.approx(5.0)
     assert suite.assessment.timing_correction_requires_g2 is True
