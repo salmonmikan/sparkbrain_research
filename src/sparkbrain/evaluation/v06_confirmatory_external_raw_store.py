@@ -5,9 +5,10 @@ import json
 import os
 import shutil
 import stat
+from collections.abc import Iterable
 from dataclasses import asdict, dataclass
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any
 
 from .v06_confirmatory_external_freeze import ExternalArtifactLayout
 
