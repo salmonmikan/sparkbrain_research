@@ -175,8 +175,9 @@ jobs:
           PY
       - name: Validate patched module
         run: |
-          python -m compileall -q src/sparkbrain/evaluation/v06_confirmatory_freeze_bundle_v2.py
+          python -m ruff check --fix src/sparkbrain/evaluation/v06_confirmatory_freeze_bundle_v2.py
           python -m ruff check src/sparkbrain/evaluation/v06_confirmatory_freeze_bundle_v2.py
+          python -m compileall -q src/sparkbrain/evaluation/v06_confirmatory_freeze_bundle_v2.py
       - name: Commit exact binding repair
         run: |
           git config user.name "github-actions[bot]"
