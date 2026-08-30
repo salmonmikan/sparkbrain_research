@@ -4,7 +4,7 @@ on:
   push:
     branches: ["v06-capability-staging-20260830"]
     paths:
-      - ".github/confirmatory/v06-candidate-002-execute.json"
+      - ".github/confirmatory/v06-candidate-002-execute-v2.json"
 
 permissions:
   contents: read
@@ -19,14 +19,14 @@ jobs:
     timeout-minutes: 360
     env:
       CANDIDATE_ID: v06-confirmatory-candidate-002
-      MARKER_PATH: .github/confirmatory/v06-candidate-002-execute.json
+      MARKER_PATH: .github/confirmatory/v06-candidate-002-execute-v2.json
       FROZEN_SOURCE: ${{ github.workspace }}/frozen-source
-      BUILD_SOURCE: ${{ runner.temp }}/sparkbrain-v06-build-source
-      WORK_ROOT: ${{ runner.temp }}/sparkbrain-v06-candidate-002
-      CONTROL_ROOT: ${{ runner.temp }}/sparkbrain-v06-candidate-002/final/control
-      RAW_ROOT: ${{ runner.temp }}/sparkbrain-v06-candidate-002/final/raw
-      ANALYSIS_ROOT: ${{ runner.temp }}/sparkbrain-v06-candidate-002/final/analysis
-      REPORT_ROOT: ${{ runner.temp }}/sparkbrain-v06-candidate-002/reports
+      BUILD_SOURCE: /tmp/sparkbrain-v06-build-source
+      WORK_ROOT: /tmp/sparkbrain-v06-candidate-002
+      CONTROL_ROOT: /tmp/sparkbrain-v06-candidate-002/final/control
+      RAW_ROOT: /tmp/sparkbrain-v06-candidate-002/final/raw
+      ANALYSIS_ROOT: /tmp/sparkbrain-v06-candidate-002/final/analysis
+      REPORT_ROOT: /tmp/sparkbrain-v06-candidate-002/reports
       PYTHONHASHSEED: "0"
       TZ: UTC
       LC_ALL: C.UTF-8
