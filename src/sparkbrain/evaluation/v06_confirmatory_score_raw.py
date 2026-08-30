@@ -13,9 +13,11 @@ from pathlib import Path
 from statistics import fmean, median
 from typing import Any
 
-from sparkbrain.v06.foundation import digest
-
 from .v06_confirmatory import ConfirmatoryCondition, ConfirmatoryManifest
+from .v06_confirmatory_analysis_contract import (
+    ANALYSIS_CONTRACT_VERSION,
+    analysis_contract_hash,
+)
 from .v06_confirmatory_candidate_manifest import build_candidate_manifest
 from .v06_confirmatory_environment import (
     environment_lock_from_state,
@@ -31,13 +33,15 @@ from .v06_confirmatory_raw_evidence import (
     VerifiedRawEvidence,
     load_verified_raw_evidence,
 )
-from .v06_confirmatory_resource_accounting import ResourceDecisionUse
+from .v06_confirmatory_resource_accounting import (
+    RESOURCE_POLICY,
+    ResourceDecisionUse,
+    resource_policy_hash,
+)
 from .v06_confirmatory_scoring import (
     StrictConfirmatoryOutcome,
     score_strict_confirmatory_results,
 )
-
-ANALYSIS_CONTRACT_VERSION = "v06-raw-first-analysis-1"
 
 
 def _canonical_json_bytes(value: object) -> bytes:
@@ -100,17 +104,6 @@ class AnalysisReceipt:
         return asdict(self)
 
 
-def analysis_contract_hash() -> str:
-    return digest(
-        {
-            "analysis_after_raw_complete": True,
-            "capability_scorer": "score_strict_confirmatory_results",
-            "resource_decision_use": ResourceDecisionUse.DESCRIPTIVE_ONLY.value,
-            "version": ANALYSIS_CONTRACT_VERSION,
-        }
-    )
-
-
 def _distribution(values: list[int]) -> dict[str, float | int]:
     if not values:
         raise ValueError("resource distribution cannot be empty")
@@ -163,23 +156,23 @@ def _resource_summary(evidence: VerifiedRawEvidence) -> dict[str, Any]:
                 ),
             },
             "descriptive_adapter_proxies": {
-                "intervention_events": _distribution(
-                    [row.intervention_events for row in rows]
+                "adapter_generated_event_proxy": _distribution(
+                    [row.adapter_generated_event_proxy for row in rows]
                 ),
-                "logical_generated_events": _distribution(
-                    [row.logical_generated_events for row in rows]
+                "adapter_intervention_event_proxy": _distribution(
+                    [row.adapter_intervention_event_proxy for row in rows]
                 ),
-                "logical_operation_proxy_units": _distribution(
-                    [row.logical_operation_proxy_units for row in rows]
+                "adapter_logical_operation_proxy_units": _distribution(
+                    [row.adapter_logical_operation_proxy_units for row in rows]
                 ),
-                "mutable_state_scalar_proxy": _distribution(
-                    [row.mutable_state_scalar_proxy for row in rows]
+                "adapter_mutable_state_scalar_proxy": _distribution(
+                    [row.adapter_mutable_state_scalar_proxy for row in rows]
                 ),
-                "observed_external_events": _distribution(
-                    [row.observed_external_events for row in rows]
+                "adapter_observed_training_event_proxy": _distribution(
+                    [row.adapter_observed_training_event_proxy for row in rows]
                 ),
-                "persistent_state_entry_proxy": _distribution(
-                    [row.persistent_state_entry_proxy for row in rows]
+                "adapter_persistent_state_entry_proxy": _distribution(
+                    [row.adapter_persistent_state_entry_proxy for row in rows]
                 ),
             },
             "execution_count": len(rows),
@@ -209,6 +202,7 @@ def build_analysis_summary(
     freeze_record: ConfirmatoryFreezeRecord,
 ) -> tuple[dict[str, Any], StrictConfirmatoryOutcome]:
     evidence.validate(manifest)
+    RESOURCE_POLICY.validate()
     outcome = score_strict_confirmatory_results(manifest, evidence.results)
     summary = {
         "analysis_contract_hash": analysis_contract_hash(),
@@ -222,10 +216,29 @@ def build_analysis_summary(
             "affects_capability_result": False,
             "decision_use": ResourceDecisionUse.DESCRIPTIVE_ONLY.value,
             "per_condition": _resource_summary(evidence),
+            "policy_hash": resource_policy_hash(),
         },
         "source_code_sha": freeze_record.source_code_sha,
     }
     return summary, outcome
+
+
+def _raw_matches(
+    evidence: VerifiedRawEvidence,
+    *,
+    manifest: ConfirmatoryManifest,
+    freeze_record: ConfirmatoryFreezeRecord,
+) -> bool:
+    verified = load_verified_raw_evidence(
+        Path(evidence.raw_directory),
+        manifest=manifest,
+        freeze_record=freeze_record,
+    )
+    return (
+        verified.receipt.raw_manifest_hash == evidence.receipt.raw_manifest_hash
+        and verified.receipt.run_checksums_hash
+        == evidence.receipt.run_checksums_hash
+    )
 
 
 def write_analysis_transaction(
@@ -237,7 +250,6 @@ def write_analysis_transaction(
 ) -> AnalysisReceipt:
     """Write analysis only after raw verification; never modify raw evidence."""
 
-    raw_directory = Path(evidence.raw_directory)
     raw_manifest_before = evidence.receipt.raw_manifest_hash
     raw_checksums_before = evidence.receipt.run_checksums_hash
     summary, _ = build_analysis_summary(evidence, manifest, freeze_record)
@@ -282,22 +294,24 @@ def write_analysis_transaction(
             ),
         )
         _fsync_directory(transaction)
+        if not _raw_matches(
+            evidence,
+            manifest=manifest,
+            freeze_record=freeze_record,
+        ):
+            raise RuntimeError("raw evidence changed before analysis commit")
         os.rename(transaction, final_directory)
         _fsync_directory(analysis_root)
     except BaseException:
         shutil.rmtree(transaction, ignore_errors=True)
         raise
 
-    raw_after = load_verified_raw_evidence(
-        raw_directory,
+    if not _raw_matches(
+        evidence,
         manifest=manifest,
         freeze_record=freeze_record,
-    )
-    raw_unchanged = (
-        raw_after.receipt.raw_manifest_hash == raw_manifest_before
-        and raw_after.receipt.run_checksums_hash == raw_checksums_before
-    )
-    if not raw_unchanged:
+    ):
+        shutil.rmtree(final_directory, ignore_errors=True)
         raise RuntimeError("raw evidence changed during scoring")
     _make_read_only(final_directory)
     return AnalysisReceipt(
