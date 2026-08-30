@@ -16,6 +16,10 @@ from .v06_confirmatory import (
     ConfirmatoryResultRecord,
     assess_confirmatory_readiness,
 )
+from .v06_confirmatory_adapter_registry_v2 import (
+    ADAPTER_PATHS_V2,
+    validate_adapter_registry_v2,
+)
 from .v06_confirmatory_environment_lock_v2 import ExecutionEnvironmentLockV2
 from .v06_confirmatory_external_freeze import ExternalArtifactLayout
 from .v06_confirmatory_heldout_spec import (
@@ -23,11 +27,15 @@ from .v06_confirmatory_heldout_spec import (
     QUARANTINED_HELDOUT_SEEDS,
     WORLD_GENERATION_ID,
     HeldoutWorldParameters,
-    build_heldout_world_grid,
     heldout_world_grid_hash,
 )
+from .v06_confirmatory_normalized_resource_v2 import (
+    NormalizedResourceRecordV2,
+    ResourceDecisionPolicyV2,
+    normalized_resource_schema_hash_v2,
+)
 from .v06_confirmatory_resources import ConditionResourceRecord
-from .v06_confirmatory_training_schedule import build_balanced_training_schedule
+from .v06_confirmatory_schedule_contract import training_schedule_grid_hash
 
 _FREEZE_BUNDLE_VERSION = "v06-external-freeze-bundle-2"
 _SHA_PATTERN = re.compile(r"^[0-9a-f]{40}$")
@@ -38,22 +46,32 @@ _ADAPTER_SOURCE_PATHS = (
     "src/sparkbrain/evaluation/v06_confirmatory_heldout_primary.py",
     "src/sparkbrain/evaluation/v06_confirmatory_heldout_controls.py",
     "src/sparkbrain/evaluation/v06_confirmatory_heldout_comparators.py",
-    "src/sparkbrain/evaluation/v06_confirmatory_adapter_registry.py",
+    "src/sparkbrain/evaluation/v06_confirmatory_adapter_registry_v2.py",
     "src/sparkbrain/baselines/v06/g3_recurrent.py",
     "src/sparkbrain/baselines/v06/g4_assembly.py",
     "src/sparkbrain/baselines/v06/g5_typed.py",
 )
 _CONTRACT_SOURCE_PATHS = (
-    "src/sparkbrain/evaluation/v06_confirmatory_resource_accounting.py",
+    "src/sparkbrain/evaluation/v06_confirmatory.py",
+    "src/sparkbrain/evaluation/v06_confirmatory_current_manifest.py",
+    "src/sparkbrain/evaluation/v06_confirmatory_candidate_manifest.py",
+    "src/sparkbrain/evaluation/v06_confirmatory_heldout_spec.py",
+    "src/sparkbrain/evaluation/v06_confirmatory_resources.py",
     "src/sparkbrain/evaluation/v06_confirmatory_training_schedule.py",
     "src/sparkbrain/evaluation/v06_confirmatory_schedule_contract.py",
-    "src/sparkbrain/evaluation/v06_confirmatory_adapter_review.py",
-    "src/sparkbrain/evaluation/v06_confirmatory_artifacts.py",
+    "src/sparkbrain/evaluation/v06_confirmatory_normalized_resource_v2.py",
+    "src/sparkbrain/evaluation/v06_confirmatory_environment_lock_v2.py",
+    "src/sparkbrain/evaluation/v06_confirmatory_external_freeze.py",
+    "src/sparkbrain/evaluation/v06_confirmatory_freeze_bundle_v2.py",
+    "src/sparkbrain/evaluation/v06_confirmatory_external_verification_v2.py",
     "src/sparkbrain/evaluation/v06_confirmatory_external_control_package_v2.py",
+    "src/sparkbrain/evaluation/v06_confirmatory_external_launch_gate_v2.py",
+    "src/sparkbrain/evaluation/v06_confirmatory_execute_external_v2.py",
     "src/sparkbrain/evaluation/v06_confirmatory_external_raw_store.py",
-    "src/sparkbrain/evaluation/v06_confirmatory_raw_evidence.py",
+    "src/sparkbrain/evaluation/v06_confirmatory_verify_external_raw_v2.py",
     "src/sparkbrain/evaluation/v06_confirmatory_scoring.py",
-    "src/sparkbrain/evaluation/v06_confirmatory_score_raw.py",
+    "src/sparkbrain/evaluation/v06_confirmatory_locked_scoring.py",
+    "src/sparkbrain/evaluation/v06_confirmatory_score_external_v2.py",
 )
 
 _EXPECTED_PRIVILEGES = {
@@ -149,40 +167,8 @@ def _adapter_inventory(manifest: ConfirmatoryManifest) -> tuple[dict[str, Any], 
     )
 
 
-def _combined_schedule_state() -> tuple[dict[str, Any], ...]:
-    rows: list[dict[str, Any]] = []
-    for world in build_heldout_world_grid():
-        paths = tuple(dict.fromkeys((*world.competition_paths, world.control_path)))
-        branch_counts = dict(
-            zip(
-                world.competition_paths,
-                world.branch_exposure_counts,
-                strict=True,
-            )
-        )
-        counts = tuple(
-            branch_counts.get(path, max(3, len(world.training_lag_profiles_ms)))
-            for path in paths
-        )
-        schedule = build_balanced_training_schedule(
-            counts,
-            lag_profile_count=len(world.training_lag_profiles_ms),
-        )
-        rows.append(
-            {
-                "family_id": world.family_id,
-                "paths": [list(path) for path in paths],
-                "schedule": schedule.state_dict(),
-                "schedule_hash": schedule.schedule_hash(),
-                "seed": world.seed,
-                "world_specification_hash": world.specification_hash(),
-            }
-        )
-    return tuple(rows)
-
-
 def combined_training_schedule_hash() -> str:
-    return _digest(list(_combined_schedule_state()))
+    return training_schedule_grid_hash()
 
 
 def _schema_hash(model: type[Any]) -> str:
@@ -330,6 +316,18 @@ class ExternalFreezeBundleV2:
             raise ValueError("freeze bundle contains a malformed SHA-256 hash")
         if self.adapter_inventory_hash != _digest(list(self.adapter_inventory)):
             raise ValueError("adapter inventory hash mismatch")
+        registered_paths = {
+            condition.value: adapter_path
+            for condition, adapter_path in ADAPTER_PATHS_V2.items()
+        }
+        inventory_paths = {
+            str(row["condition"]): str(row["adapter_path"])
+            for row in self.adapter_inventory
+        }
+        if inventory_paths != registered_paths:
+            raise ValueError(
+                "frozen adapter paths differ from v2 execution registry"
+            )
         if self.adapter_source_inventory_hash != _digest(self.adapter_source_hashes):
             raise ValueError("adapter source inventory hash mismatch")
         if self.contract_source_inventory_hash != _digest(self.contract_source_hashes):
@@ -392,6 +390,14 @@ def build_external_freeze_bundle_v2(
     artifact_layout.validate(source_checkout=source)
     environment_lock.validate()
     readiness = assess_confirmatory_readiness(manifest)
+    validate_adapter_registry_v2()
+    registered_paths = {
+        row.condition: row.adapter_path for row in manifest.conditions
+    }
+    if registered_paths != ADAPTER_PATHS_V2:
+        raise ValueError(
+            "manifest adapter paths differ from v2 execution registry"
+        )
     adapter_sources = _source_inventory(source, _ADAPTER_SOURCE_PATHS)
     contract_sources = _source_inventory(source, _CONTRACT_SOURCE_PATHS)
     field_reads = _world_field_reads(source)
@@ -405,13 +411,23 @@ def build_external_freeze_bundle_v2(
         artifact_layout,
         python_executable=environment_lock.python_executable,
     )
+    resource_policy = ResourceDecisionPolicyV2()
+    resource_policy.validate()
     resource_contract_hash = _digest(
         {
-            "resource_accounting_source": contract_sources[
-                "src/sparkbrain/evaluation/v06_confirmatory_resource_accounting.py"
-            ],
-            "resource_schema": [row.name for row in fields(ConditionResourceRecord)],
             "decision_use": "descriptive-only",
+            "normalized_resource_fields": [
+                row.name for row in fields(NormalizedResourceRecordV2)
+            ],
+            "normalized_resource_schema_hash": (
+                normalized_resource_schema_hash_v2()
+            ),
+            "normalized_resource_source": contract_sources[
+                "src/sparkbrain/evaluation/"
+                "v06_confirmatory_normalized_resource_v2.py"
+            ],
+            "policy": resource_policy.state_dict(),
+            "policy_hash": resource_policy.policy_hash(),
         }
     )
     bundle = ExternalFreezeBundleV2(
