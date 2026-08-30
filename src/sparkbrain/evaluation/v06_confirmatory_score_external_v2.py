@@ -10,11 +10,10 @@ from typing import Any
 
 from .v06_confirmatory import (
     ConfirmatoryCondition,
-    ConfirmatoryPhase,
     ConfirmatoryResultRecord,
     EvidenceDomain,
 )
-from .v06_confirmatory_current_manifest import build_current_confirmatory_manifest
+from .v06_confirmatory_candidate_manifest import build_candidate_manifest
 from .v06_confirmatory_external_verification_v2 import (
     load_external_freeze_bundle_v2,
 )
@@ -189,12 +188,9 @@ def score_external_raw_v2(bundle: ExternalFreezeBundleV2) -> Path:
 
     bundle.validate_for_execution()
     raw_before = verify_external_raw_evidence_v2(bundle)
-    manifest = build_current_confirmatory_manifest(
-        ConfirmatoryPhase.CONFIRMATORY,
-        code_ref=bundle.source_git_sha,
-    )
+    manifest = build_candidate_manifest(source_code_sha=bundle.source_git_sha)
     if manifest.manifest_hash() != bundle.manifest_hash:
-        raise RuntimeError("current manifest differs from frozen bundle")
+        raise RuntimeError("candidate manifest differs from frozen bundle")
     records = _load_results(raw_before)
     outcome = score_strict_confirmatory_results(manifest, records)
     resources = _resource_description(raw_before)
