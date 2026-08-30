@@ -25,6 +25,19 @@ def test_resource_policy_is_frozen_as_descriptive_only() -> None:
     RESOURCE_POLICY.validate()
     assert RESOURCE_POLICY.decision_use is ResourceDecisionUse.DESCRIPTIVE_ONLY
     assert RESOURCE_POLICY.efficiency_affects_capability_result is False
+    assert RESOURCE_POLICY.common_evaluator_measurements == (
+        "wall_clock_ns",
+        "process_cpu_ns",
+        "peak_traced_memory_bytes",
+        "canonical_output_bytes",
+    )
+    assert all(
+        name.startswith("adapter_")
+        for name in RESOURCE_POLICY.descriptive_adapter_proxies
+    )
+    assert set(RESOURCE_POLICY.common_evaluator_measurements).isdisjoint(
+        RESOURCE_POLICY.descriptive_adapter_proxies
+    )
     assert len(resource_policy_hash()) == 64
     assert len(raw_resource_schema_hash()) == 64
     assert len(normalized_resource_schema_hash()) == 64
@@ -43,12 +56,18 @@ def test_one_evaluator_measurement_path_covers_all_eight_conditions(
     raw = measured.execution.resource
     assert normalized.key == raw.key
     assert normalized.decision_use is ResourceDecisionUse.DESCRIPTIVE_ONLY
-    assert normalized.observed_external_events == raw.observed_training_events
-    assert normalized.logical_generated_events == raw.generated_internal_events
-    assert normalized.intervention_events == raw.intervention_count
-    assert normalized.mutable_state_scalar_proxy == raw.parameter_count
-    assert normalized.persistent_state_entry_proxy == raw.persistent_state_entries
-    assert normalized.logical_operation_proxy_units == (
+    assert (
+        normalized.adapter_observed_training_event_proxy
+        == raw.observed_training_events
+    )
+    assert normalized.adapter_generated_event_proxy == raw.generated_internal_events
+    assert normalized.adapter_intervention_event_proxy == raw.intervention_count
+    assert normalized.adapter_mutable_state_scalar_proxy == raw.parameter_count
+    assert (
+        normalized.adapter_persistent_state_entry_proxy
+        == raw.persistent_state_entries
+    )
+    assert normalized.adapter_logical_operation_proxy_units == (
         raw.observed_training_events
         + raw.generated_internal_events
         + raw.intervention_count
@@ -60,7 +79,7 @@ def test_one_evaluator_measurement_path_covers_all_eight_conditions(
     assert normalized.canonical_output_bytes > 0
 
 
-def test_architecture_specific_values_are_separate_from_common_proxies() -> None:
+def test_architecture_specific_values_are_separate_from_common_measurements() -> None:
     world = DevelopmentCapabilityWorld()
     primary = measure_condition_execution(
         lambda: run_development_condition(world, ConfirmatoryCondition.PRIMARY)
