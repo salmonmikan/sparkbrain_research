@@ -49,6 +49,7 @@ _CONTRACT_SOURCE_PATHS = (
     "src/sparkbrain/evaluation/v06_confirmatory_schedule_contract.py",
     "src/sparkbrain/evaluation/v06_confirmatory_adapter_review.py",
     "src/sparkbrain/evaluation/v06_confirmatory_artifacts.py",
+    "src/sparkbrain/evaluation/v06_confirmatory_external_control_package_v2.py",
     "src/sparkbrain/evaluation/v06_confirmatory_external_raw_store.py",
     "src/sparkbrain/evaluation/v06_confirmatory_raw_evidence.py",
     "src/sparkbrain/evaluation/v06_confirmatory_scoring.py",
@@ -193,10 +194,14 @@ def _schema_hash(model: type[Any]) -> str:
     )
 
 
-def _execution_command(layout: ExternalArtifactLayout) -> tuple[str, ...]:
+def _execution_command(
+    layout: ExternalArtifactLayout,
+    *,
+    python_executable: str,
+) -> tuple[str, ...]:
     control_root, raw_root, _ = layout.resolved()
     return (
-        "python",
+        python_executable,
         "-m",
         "sparkbrain.evaluation.v06_confirmatory_execute_external_v2",
         "--freeze-bundle",
@@ -206,10 +211,14 @@ def _execution_command(layout: ExternalArtifactLayout) -> tuple[str, ...]:
     )
 
 
-def _scoring_command(layout: ExternalArtifactLayout) -> tuple[str, ...]:
+def _scoring_command(
+    layout: ExternalArtifactLayout,
+    *,
+    python_executable: str,
+) -> tuple[str, ...]:
     control_root, raw_root, analysis_root = layout.resolved()
     return (
-        "python",
+        python_executable,
         "-m",
         "sparkbrain.evaluation.v06_confirmatory_score_external_v2",
         "--freeze-bundle",
@@ -339,6 +348,13 @@ class ExternalFreezeBundleV2:
             raise ValueError("threshold-mode inventory hash mismatch")
         if self.environment_lock_hash != _digest(self.environment_lock):
             raise ValueError("environment lock hash mismatch")
+        expected_python = str(self.environment_lock.get("python_executable", ""))
+        if not expected_python:
+            raise ValueError("environment lock lacks Python executable")
+        if self.execution_command[0] != expected_python:
+            raise ValueError("execution command Python differs from environment lock")
+        if self.scoring_command[0] != expected_python:
+            raise ValueError("scoring command Python differs from environment lock")
         if self.artifact_layout_hash != _digest(self.artifact_layout):
             raise ValueError("artifact layout hash mismatch")
         if self.execution_command_hash != _digest(list(self.execution_command)):
@@ -381,8 +397,14 @@ def build_external_freeze_bundle_v2(
     field_reads = _world_field_reads(source)
     adapter_inventory = _adapter_inventory(manifest)
     layout_state = artifact_layout.state_dict()
-    execution_command = _execution_command(artifact_layout)
-    scoring_command = _scoring_command(artifact_layout)
+    execution_command = _execution_command(
+        artifact_layout,
+        python_executable=environment_lock.python_executable,
+    )
+    scoring_command = _scoring_command(
+        artifact_layout,
+        python_executable=environment_lock.python_executable,
+    )
     resource_contract_hash = _digest(
         {
             "resource_accounting_source": contract_sources[
