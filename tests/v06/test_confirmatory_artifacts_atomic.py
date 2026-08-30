@@ -156,7 +156,7 @@ def test_checksum_tampering_is_detected_before_raw_lock(tmp_path: Path) -> None:
     bundle = writer.add(_identity(world), measured)
     resource_path = bundle / "normalized_resource.json"
     value = json.loads(resource_path.read_text("utf-8"))
-    value["adapter_generated_internal_events_proxy"] += 1
+    value["adapter_generated_event_proxy"] += 1
     resource_path.write_text(json.dumps(value), encoding="utf-8")
     verification = verify_execution_bundle(bundle)
     assert verification.checksum_match is False
