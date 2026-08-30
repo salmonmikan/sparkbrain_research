@@ -1,7 +1,8 @@
 from __future__ import annotations
 
 import re
-from dataclasses import asdict, dataclass, fields, replace
+from dataclasses import asdict, dataclass
+from pathlib import Path
 from typing import Any
 
 from sparkbrain.v06.foundation import digest
@@ -12,44 +13,57 @@ from .v06_confirmatory import (
     ConfirmatoryResultRecord,
     assess_confirmatory_readiness,
 )
+from .v06_confirmatory_adapter_review import (
+    adapter_source_inventory_hash,
+    expected_privilege_inventory_hash,
+    expected_threshold_mode_hash,
+)
+from .v06_confirmatory_artifacts import artifact_contract_hash
+from .v06_confirmatory_environment import (
+    RNG_CONTRACT,
+    ConfirmatoryEnvironmentLock,
+)
 from .v06_confirmatory_heldout_spec import (
     HELDOUT_SEEDS,
     QUARANTINED_HELDOUT_SEEDS,
     WORLD_GENERATION_ID,
     heldout_world_grid_hash,
 )
-from .v06_confirmatory_resources import ConditionResourceRecord
+from .v06_confirmatory_resource_accounting import (
+    normalized_resource_schema_hash,
+    raw_resource_schema_hash,
+    resource_policy_hash,
+)
+from .v06_confirmatory_schedule_contract import training_schedule_grid_hash
 
-_SHA_PATTERN = re.compile(r"^[0-9a-f]{40}$")
-FREEZE_RECORD_VERSION = "v06-confirmatory-freeze-record-1"
+_SOURCE_SHA_PATTERN = re.compile(r"^[0-9a-f]{40}$")
+FREEZE_RECORD_VERSION = "v06-confirmatory-freeze-record-2"
+SEAL_STORAGE_MODE = "external-or-later-commit-with-detached-source-checkout"
 EXECUTION_COMMAND = (
     "python -m sparkbrain.evaluation.v06_confirmatory_execute "
-    "--freeze-record artifacts/v06/confirmatory/freeze_record.json"
+    "--freeze-record control/freeze_record.json "
+    "--environment-lock control/environment_lock.json "
+    "--output-root artifacts/v06/confirmatory"
 )
-ARTIFACT_PATHS = (
-    "artifacts/v06/confirmatory/freeze_record.json",
-    "artifacts/v06/confirmatory/results.jsonl",
-    "artifacts/v06/confirmatory/resources.jsonl",
-    "artifacts/v06/confirmatory/summary.json",
-    "artifacts/v06/confirmatory/checksums.json",
+ARTIFACT_PATH_TEMPLATES = (
+    "control/freeze_record.json",
+    "control/environment_lock.json",
+    "control/launch_report.json",
+    "raw/<run_id>/raw_manifest.json",
+    "raw/<run_id>/checksums.json",
+    "raw/<run_id>/RAW_COMPLETE",
+    "analysis/<run_id>/summary.json",
+    "analysis/<run_id>/checksums.json",
 )
-
-
-def _schema_hash(model: type[Any]) -> str:
-    return digest(
-        {
-            "model": model.__name__,
-            "fields": [row.name for row in fields(model)],
-        }
-    )
 
 
 def result_schema_hash() -> str:
-    return _schema_hash(ConfirmatoryResultRecord)
-
-
-def resource_schema_hash() -> str:
-    return _schema_hash(ConditionResourceRecord)
+    return digest(
+        {
+            "model": ConfirmatoryResultRecord.__name__,
+            "fields": list(ConfirmatoryResultRecord.__dataclass_fields__),
+        }
+    )
 
 
 def thresholds_hash(manifest: ConfirmatoryManifest) -> str:
@@ -60,13 +74,16 @@ def exclusions_hash(manifest: ConfirmatoryManifest) -> str:
     return digest(list(manifest.exclusions))
 
 
-def adapter_inventory_hash(manifest: ConfirmatoryManifest) -> str:
+def adapter_registration_hash(manifest: ConfirmatoryManifest) -> str:
     return digest(
         [
             {
                 "adapter_path": row.adapter_path,
                 "adapter_ready": row.adapter_ready,
                 "condition": row.condition.value,
+                "engineering_evidence_available": (
+                    row.engineering_evidence_available
+                ),
                 "isolated_from_primary": row.isolated_from_primary,
             }
             for row in manifest.conditions
@@ -79,24 +96,34 @@ def execution_command_hash() -> str:
 
 
 def artifact_path_hash() -> str:
-    return digest(list(ARTIFACT_PATHS))
+    return digest(list(ARTIFACT_PATH_TEMPLATES))
 
 
 @dataclass(frozen=True, slots=True)
 class ConfirmatoryFreezeRecord:
     record_version: str
-    code_ref: str
+    seal_storage_mode: str
+    source_code_sha: str
     manifest_hash: str
     world_generation_id: str
     world_grid_hash: str
+    training_schedule_grid_hash: str
     thresholds_hash: str
     exclusions_hash: str
     result_schema_hash: str
-    resource_schema_hash: str
-    adapter_inventory_hash: str
+    raw_resource_schema_hash: str
+    normalized_resource_schema_hash: str
+    resource_policy_hash: str
+    adapter_registration_hash: str
+    adapter_source_inventory_hash: str
+    privilege_inventory_hash: str
+    threshold_mode_hash: str
+    artifact_contract_hash: str
     execution_command_hash: str
     artifact_path_hash: str
-    approval: str
+    environment_lock_hash: str
+    rng_contract_hash: str
+    approval_id: str
 
     def state_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -108,18 +135,28 @@ class ConfirmatoryFreezeRecord:
 @dataclass(frozen=True, slots=True)
 class ExecutionSealReport:
     manifest_ready: bool
-    code_ref_matches: bool
+    source_code_sha_matches: bool
     manifest_hash_matches: bool
     world_generation_matches: bool
     world_grid_matches: bool
     seeds_fresh_and_exact: bool
+    training_schedule_matches: bool
     thresholds_match: bool
     exclusions_match: bool
     result_schema_matches: bool
-    resource_schema_matches: bool
-    adapter_inventory_matches: bool
+    raw_resource_schema_matches: bool
+    normalized_resource_schema_matches: bool
+    resource_policy_matches: bool
+    adapter_registration_matches: bool
+    adapter_source_inventory_matches: bool
+    privilege_inventory_matches: bool
+    threshold_mode_matches: bool
+    artifact_contract_matches: bool
     execution_command_matches: bool
     artifact_paths_match: bool
+    environment_lock_matches: bool
+    rng_contract_matches: bool
+    storage_mode_matches: bool
     approval_present: bool
     seal_hash: str
     execution_allowed: bool
@@ -131,37 +168,56 @@ class ExecutionSealReport:
 def build_freeze_record(
     manifest: ConfirmatoryManifest,
     *,
-    approval: str,
+    source_code_sha: str,
+    repository_root: Path,
+    environment_lock: ConfirmatoryEnvironmentLock,
+    approval_id: str,
 ) -> ConfirmatoryFreezeRecord:
-    """Build a candidate record without executing any capability.
+    """Build an external seal for one detached source commit.
 
-    A caller may serialize this record only after independent review. Building
-    it does not make an unready manifest executable; ``validate_execution_seal``
-    remains the authoritative gate.
+    The JSON seal is intentionally not required to live in ``source_code_sha``.
+    A later seal commit or immutable artifact may carry it. The launcher must
+    detached-checkout this source SHA and verify it before capability execution.
     """
 
+    environment_lock.validate()
     return ConfirmatoryFreezeRecord(
         record_version=FREEZE_RECORD_VERSION,
-        code_ref=manifest.code_ref,
+        seal_storage_mode=SEAL_STORAGE_MODE,
+        source_code_sha=source_code_sha,
         manifest_hash=manifest.manifest_hash(),
         world_generation_id=WORLD_GENERATION_ID,
         world_grid_hash=heldout_world_grid_hash(),
+        training_schedule_grid_hash=training_schedule_grid_hash(),
         thresholds_hash=thresholds_hash(manifest),
         exclusions_hash=exclusions_hash(manifest),
         result_schema_hash=result_schema_hash(),
-        resource_schema_hash=resource_schema_hash(),
-        adapter_inventory_hash=adapter_inventory_hash(manifest),
+        raw_resource_schema_hash=raw_resource_schema_hash(),
+        normalized_resource_schema_hash=normalized_resource_schema_hash(),
+        resource_policy_hash=resource_policy_hash(),
+        adapter_registration_hash=adapter_registration_hash(manifest),
+        adapter_source_inventory_hash=adapter_source_inventory_hash(
+            repository_root
+        ),
+        privilege_inventory_hash=expected_privilege_inventory_hash(),
+        threshold_mode_hash=expected_threshold_mode_hash(),
+        artifact_contract_hash=artifact_contract_hash(),
         execution_command_hash=execution_command_hash(),
         artifact_path_hash=artifact_path_hash(),
-        approval=approval,
+        environment_lock_hash=environment_lock.environment_hash(),
+        rng_contract_hash=RNG_CONTRACT.contract_hash(),
+        approval_id=approval_id,
     )
 
 
 def validate_execution_seal(
     manifest: ConfirmatoryManifest,
     record: ConfirmatoryFreezeRecord,
+    *,
+    repository_root: Path,
+    environment_lock: ConfirmatoryEnvironmentLock,
 ) -> ExecutionSealReport:
-    """Validate every frozen input before a capability dispatcher may run."""
+    """Validate every frozen protocol component without running capability."""
 
     readiness = assess_confirmatory_readiness(manifest)
     manifest_ready = (
@@ -169,9 +225,9 @@ def validate_execution_seal(
         and readiness.ready
         and record.record_version == FREEZE_RECORD_VERSION
     )
-    code_ref_matches = (
-        bool(_SHA_PATTERN.fullmatch(record.code_ref))
-        and record.code_ref == manifest.code_ref
+    source_matches = (
+        bool(_SOURCE_SHA_PATTERN.fullmatch(record.source_code_sha))
+        and record.source_code_sha == manifest.code_ref
     )
     manifest_hash_matches = record.manifest_hash == manifest.manifest_hash()
     world_generation_matches = record.world_generation_id == WORLD_GENERATION_ID
@@ -182,25 +238,55 @@ def validate_execution_seal(
         and set(manifest_seed_values).isdisjoint(QUARANTINED_HELDOUT_SEEDS)
     )
     checks = {
+        "training_schedule_matches": (
+            record.training_schedule_grid_hash == training_schedule_grid_hash()
+        ),
         "thresholds_match": record.thresholds_hash == thresholds_hash(manifest),
         "exclusions_match": record.exclusions_hash == exclusions_hash(manifest),
         "result_schema_matches": record.result_schema_hash == result_schema_hash(),
-        "resource_schema_matches": (
-            record.resource_schema_hash == resource_schema_hash()
+        "raw_resource_schema_matches": (
+            record.raw_resource_schema_hash == raw_resource_schema_hash()
         ),
-        "adapter_inventory_matches": (
-            record.adapter_inventory_hash == adapter_inventory_hash(manifest)
+        "normalized_resource_schema_matches": (
+            record.normalized_resource_schema_hash
+            == normalized_resource_schema_hash()
+        ),
+        "resource_policy_matches": (
+            record.resource_policy_hash == resource_policy_hash()
+        ),
+        "adapter_registration_matches": (
+            record.adapter_registration_hash == adapter_registration_hash(manifest)
+        ),
+        "adapter_source_inventory_matches": (
+            record.adapter_source_inventory_hash
+            == adapter_source_inventory_hash(repository_root)
+        ),
+        "privilege_inventory_matches": (
+            record.privilege_inventory_hash == expected_privilege_inventory_hash()
+        ),
+        "threshold_mode_matches": (
+            record.threshold_mode_hash == expected_threshold_mode_hash()
+        ),
+        "artifact_contract_matches": (
+            record.artifact_contract_hash == artifact_contract_hash()
         ),
         "execution_command_matches": (
             record.execution_command_hash == execution_command_hash()
         ),
         "artifact_paths_match": record.artifact_path_hash == artifact_path_hash(),
+        "environment_lock_matches": (
+            record.environment_lock_hash == environment_lock.environment_hash()
+        ),
+        "rng_contract_matches": (
+            record.rng_contract_hash == RNG_CONTRACT.contract_hash()
+        ),
+        "storage_mode_matches": record.seal_storage_mode == SEAL_STORAGE_MODE,
     }
-    approval_present = bool(record.approval.strip())
+    approval_present = bool(record.approval_id.strip())
     execution_allowed = all(
         (
             manifest_ready,
-            code_ref_matches,
+            source_matches,
             manifest_hash_matches,
             world_generation_matches,
             world_grid_matches,
@@ -211,18 +297,32 @@ def validate_execution_seal(
     )
     return ExecutionSealReport(
         manifest_ready=manifest_ready,
-        code_ref_matches=code_ref_matches,
+        source_code_sha_matches=source_matches,
         manifest_hash_matches=manifest_hash_matches,
         world_generation_matches=world_generation_matches,
         world_grid_matches=world_grid_matches,
         seeds_fresh_and_exact=seeds_fresh_and_exact,
+        training_schedule_matches=checks["training_schedule_matches"],
         thresholds_match=checks["thresholds_match"],
         exclusions_match=checks["exclusions_match"],
         result_schema_matches=checks["result_schema_matches"],
-        resource_schema_matches=checks["resource_schema_matches"],
-        adapter_inventory_matches=checks["adapter_inventory_matches"],
+        raw_resource_schema_matches=checks["raw_resource_schema_matches"],
+        normalized_resource_schema_matches=checks[
+            "normalized_resource_schema_matches"
+        ],
+        resource_policy_matches=checks["resource_policy_matches"],
+        adapter_registration_matches=checks["adapter_registration_matches"],
+        adapter_source_inventory_matches=checks[
+            "adapter_source_inventory_matches"
+        ],
+        privilege_inventory_matches=checks["privilege_inventory_matches"],
+        threshold_mode_matches=checks["threshold_mode_matches"],
+        artifact_contract_matches=checks["artifact_contract_matches"],
         execution_command_matches=checks["execution_command_matches"],
         artifact_paths_match=checks["artifact_paths_match"],
+        environment_lock_matches=checks["environment_lock_matches"],
+        rng_contract_matches=checks["rng_contract_matches"],
+        storage_mode_matches=checks["storage_mode_matches"],
         approval_present=approval_present,
         seal_hash=record.seal_hash(),
         execution_allowed=execution_allowed,
@@ -232,33 +332,18 @@ def validate_execution_seal(
 def require_execution_seal(
     manifest: ConfirmatoryManifest,
     record: ConfirmatoryFreezeRecord,
-) -> ExecutionSealReport:
-    report = validate_execution_seal(manifest, record)
-    if not report.execution_allowed:
-        raise RuntimeError("held-out capability execution is not sealed and remains prohibited")
-    return report
-
-
-def frozen_manifest_for_test(
-    manifest: ConfirmatoryManifest,
     *,
-    code_ref: str,
-) -> ConfirmatoryManifest:
-    """Create a synthetic ready manifest for seal unit tests only.
-
-    The helper performs no capability work. Production freeze records must use
-    the reviewed current manifest and actual branch SHA.
-    """
-
-    return replace(
+    repository_root: Path,
+    environment_lock: ConfirmatoryEnvironmentLock,
+) -> ExecutionSealReport:
+    report = validate_execution_seal(
         manifest,
-        code_ref=code_ref,
-        conditions=tuple(
-            replace(
-                row,
-                adapter_ready=True,
-                isolated_from_primary=True,
-            )
-            for row in manifest.conditions
-        ),
+        record,
+        repository_root=repository_root,
+        environment_lock=environment_lock,
     )
+    if not report.execution_allowed:
+        raise RuntimeError(
+            "held-out capability execution is not sealed and remains prohibited"
+        )
+    return report
