@@ -565,6 +565,14 @@ def run_shuffled_relation(
         row.evidence_domain: row.passed for row in primary.records
     }
     relation = _relation_cycles(parameters)
+    original_responses = tuple(
+        _run_reentry(
+            parameters,
+            state,
+            event_id=f"heldout:shuffled-original:{index}",
+        )
+        for index, state in enumerate(relation.snapshots)
+    )
     shuffled_states = tuple(
         _rotate_relation_state(parameters, snapshot)
         for snapshot in relation.snapshots
@@ -585,29 +593,47 @@ def run_shuffled_relation(
             strict=True,
         )
     )
-    wrong_present = all(response for response in responses)
+    original_nonempty = tuple(bool(response) for response in original_responses)
+    disrupted = tuple(
+        responses[index] != original_responses[index]
+        for index in range(len(responses))
+    )
     taxonomy = primary_pass[EvidenceDomain.TAXONOMY_NON_INTERFERENCE]
     passed = {
-        domain: (
-            primary_pass[domain]
-            if domain in _EARLY_DOMAINS
-            else False
-        )
+        domain: primary_pass[domain] if domain in _EARLY_DOMAINS else False
         for domain in EvidenceDomain
     }
     passed[EvidenceDomain.TAXONOMY_NON_INTERFERENCE] = taxonomy
-    contract = not any(correct) and wrong_present
+    nonempty_count = sum(original_nonempty)
+    disrupted_nonempty_count = sum(
+        disrupted[index] and original_nonempty[index]
+        for index in range(len(disrupted))
+    )
+    contract = (
+        nonempty_count > 0
+        and not any(correct)
+        and disrupted_nonempty_count == nonempty_count
+    )
     metrics = {
         "control_contract_passed": float(contract),
+        "heldout_shuffled_changed_fraction": float(
+            disrupted_nonempty_count / max(1, nonempty_count)
+        ),
         "heldout_shuffled_correct_reentry_fraction": float(
             sum(correct) / len(correct)
         ),
+        "heldout_shuffled_nonempty_fraction": float(
+            sum(bool(response) for response in responses) / len(responses)
+        ),
+        "heldout_shuffled_original_nonempty_count": float(nonempty_count),
         "heldout_shuffled_response_count": float(
             sum(len(response) for response in responses)
         ),
         "self_confirmation_violations": 0.0,
         "taxonomy_hash_match": float(taxonomy),
     }
+    generated_reference = sum(len(response) for response in original_responses)
+    generated_shuffled = sum(len(response) for response in responses)
     resource = ConditionResourceRecord(
         family_id=parameters.family_id,
         seed=parameters.seed,
@@ -615,7 +641,8 @@ def run_shuffled_relation(
         observed_training_events=primary.resource.observed_training_events,
         generated_internal_events=(
             primary.resource.generated_internal_events
-            + sum(len(response) for response in responses)
+            + generated_reference
+            + generated_shuffled
         ),
         persistent_state_entries=primary.resource.persistent_state_entries,
         intervention_count=primary.resource.intervention_count + len(responses),
@@ -624,7 +651,8 @@ def run_shuffled_relation(
         normal_field_threshold_present=True,
         normal_field_threshold_crossings=(
             primary.resource.normal_field_threshold_crossings
-            + sum(len(response) for response in responses)
+            + generated_reference
+            + generated_shuffled
         ),
         threshold_bypassed=False,
         explicit_assembly_entries=0,
