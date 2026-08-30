@@ -1,0 +1,398 @@
+name: v06-candidate-003-final-execution
+
+on:
+  push:
+    branches: ["v061-candidate-003-20260831"]
+    paths:
+      - ".github/confirmatory/v06-candidate-003-execute-v1.json"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: v06-candidate-003-formal-execution
+  cancel-in-progress: false
+
+jobs:
+  formal-execution:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    env:
+      CANDIDATE_ID: v06-confirmatory-candidate-003
+      MARKER_PATH: .github/confirmatory/v06-candidate-003-execute-v1.json
+      FROZEN_SOURCE: ${{ github.workspace }}/frozen-source
+      BUILD_SOURCE: /tmp/sparkbrain-v06-build-source
+      WORK_ROOT: /tmp/sparkbrain-v06-candidate-003
+      CONTROL_ROOT: /tmp/sparkbrain-v06-candidate-003/final/control
+      RAW_ROOT: /tmp/sparkbrain-v06-candidate-003/final/raw
+      ANALYSIS_ROOT: /tmp/sparkbrain-v06-candidate-003/final/analysis
+      REPORT_ROOT: /tmp/sparkbrain-v06-candidate-003/reports
+      PYTHONHASHSEED: "0"
+      TZ: UTC
+      LC_ALL: C.UTF-8
+      LANG: C.UTF-8
+      GIT_LFS_SKIP_SMUDGE: "1"
+    steps:
+      - name: Checkout the one-time execution marker
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: false
+
+      - name: Validate one-way marker and freeze source SHA
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "${GITHUB_RUN_ATTEMPT}" != "1" ]]; then
+            echo "Formal candidate execution cannot be re-run." >&2
+            exit 1
+          fi
+          if [[ "${GITHUB_ACTOR}" != "salmonmikan" ]]; then
+            echo "Unexpected formal execution actor: ${GITHUB_ACTOR}" >&2
+            exit 1
+          fi
+          python - <<'PY'
+          import json
+          import os
+          import re
+          import subprocess
+          from pathlib import Path
+
+          marker_path = Path(os.environ["MARKER_PATH"])
+          marker = json.loads(marker_path.read_text(encoding="utf-8"))
+          expected = {
+              "candidate_id": os.environ["CANDIDATE_ID"],
+              "execution_policy": "one-way-no-rerun",
+              "expected_evidence_records": 3600,
+              "expected_executions": 400,
+              "expected_resource_records": 400,
+          }
+          for key, value in expected.items():
+              if marker.get(key) != value:
+                  raise SystemExit(f"marker field mismatch: {key}")
+          source_sha = str(marker.get("source_git_sha", ""))
+          if re.fullmatch(r"[0-9a-f]{40}", source_sha) is None:
+              raise SystemExit("marker source_git_sha is not canonical")
+          head_sha = os.environ["GITHUB_SHA"]
+          parent_sha = subprocess.check_output(
+              ("git", "rev-parse", f"{head_sha}^"), text=True
+          ).strip()
+          if parent_sha != source_sha:
+              raise SystemExit("execution marker must directly follow the frozen source SHA")
+          changed = subprocess.check_output(
+              ("git", "diff", "--name-only", parent_sha, head_sha), text=True
+          ).splitlines()
+          if changed != [str(marker_path)]:
+              raise SystemExit("marker commit must change only the execution marker")
+          history_count = int(
+              subprocess.check_output(
+                  ("git", "rev-list", "--count", "HEAD", "--", str(marker_path)),
+                  text=True,
+              ).strip()
+          )
+          if history_count != 1:
+              raise SystemExit("execution marker has already existed or been changed")
+          exists_before = subprocess.run(
+              ("git", "cat-file", "-e", f"{source_sha}:{marker_path}"),
+              check=False,
+          ).returncode == 0
+          if exists_before:
+              raise SystemExit("execution marker existed inside frozen source")
+          with Path(os.environ["GITHUB_ENV"]).open("a", encoding="utf-8") as stream:
+              stream.write(f"SOURCE_SHA={source_sha}\n")
+          PY
+
+      - name: Checkout exact frozen source in detached mode
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.SOURCE_SHA }}
+          path: frozen-source
+          fetch-depth: 0
+          lfs: false
+
+      - name: Verify detached clean frozen checkout
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C "${FROZEN_SOURCE}" rev-parse HEAD)" = "${SOURCE_SHA}"
+          if git -C "${FROZEN_SOURCE}" symbolic-ref -q HEAD; then
+            echo "Frozen source is not detached." >&2
+            exit 1
+          fi
+          test -z "$(git -C "${FROZEN_SOURCE}" status --porcelain)"
+
+      - name: Set up exact Python runtime
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11.16"
+          cache: pip
+          cache-dependency-path: frozen-source/pyproject.toml
+
+      - name: Install exact source without modifying frozen checkout
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf "${BUILD_SOURCE}"
+          mkdir -p "${BUILD_SOURCE}"
+          cp -a "${FROZEN_SOURCE}/." "${BUILD_SOURCE}/"
+          python -m pip install "${BUILD_SOURCE}[dev]"
+          test -z "$(git -C "${FROZEN_SOURCE}" status --porcelain)"
+
+      - name: Run candidate-blind preflight contracts
+        shell: bash
+        working-directory: frozen-source
+        run: |
+          set -euo pipefail
+          python -m ruff check .
+          python -m pytest -q \
+            tests/v06/test_confirmatory_v2_freeze_bindings.py \
+            tests/v06/test_confirmatory_external_control_package_v2.py \
+            tests/v06/test_confirmatory_freeze_bundle_v2.py \
+            tests/v06/test_confirmatory_external_launch_gate_v2.py \
+            tests/v06/test_confirmatory_external_pipeline_static.py
+          test -z "$(git status --porcelain)"
+
+      - name: Build, independently rebuild, approve, and materialize freeze
+        shell: bash
+        working-directory: frozen-source
+        run: |
+          set -euo pipefail
+          mkdir -p "${REPORT_ROOT}"
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          from sparkbrain.evaluation.v06_confirmatory_candidate_manifest import (
+              build_candidate_manifest,
+          )
+          from sparkbrain.evaluation.v06_confirmatory_environment_lock_v2 import (
+              capture_environment_lock_v2,
+          )
+          from sparkbrain.evaluation.v06_confirmatory_external_control_package_v2 import (
+              write_external_control_package_v2,
+          )
+          from sparkbrain.evaluation.v06_confirmatory_external_freeze import (
+              ExternalArtifactLayout,
+          )
+          from sparkbrain.evaluation.v06_confirmatory_external_launch_gate_v2 import (
+              require_external_launch_gate_v2,
+          )
+          from sparkbrain.evaluation.v06_confirmatory_external_verification_v2 import (
+              independently_verify_external_bundle_v2,
+          )
+          from sparkbrain.evaluation.v06_confirmatory_freeze_bundle_v2 import (
+              build_external_freeze_bundle_v2,
+          )
+
+          source_root = Path(os.environ["FROZEN_SOURCE"]).resolve(strict=True)
+          source_sha = os.environ["SOURCE_SHA"]
+          layout = ExternalArtifactLayout(
+              control_root=str(Path(os.environ["CONTROL_ROOT"]).resolve()),
+              raw_root=str(Path(os.environ["RAW_ROOT"]).resolve()),
+              analysis_root=str(Path(os.environ["ANALYSIS_ROOT"]).resolve()),
+          )
+          environment = capture_environment_lock_v2()
+          manifest = build_candidate_manifest(source_code_sha=source_sha)
+          unsigned = build_external_freeze_bundle_v2(
+              manifest,
+              source_root=source_root,
+              source_git_sha=source_sha,
+              artifact_layout=layout,
+              environment_lock=environment,
+              builder="github-actions-builder",
+          )
+          approved, verification = independently_verify_external_bundle_v2(
+              unsigned,
+              source_root=source_root,
+              environment_lock=environment,
+              reviewer="github-actions-independent-reviewer",
+              issue_approval=True,
+          )
+          if approved is None:
+              raise RuntimeError("independent verifier did not issue approval")
+          package = write_external_control_package_v2(
+              approved,
+              environment,
+              verification,
+          )
+          gate = require_external_launch_gate_v2(approved)
+          if not gate.execution_allowed:
+              raise RuntimeError("machine launch gate did not open")
+          summary = {
+              "approval": approved.approval,
+              "bundle_hash": approved.bundle_hash(),
+              "candidate_id": os.environ["CANDIDATE_ID"],
+              "candidate_execution_counter": package.candidate_execution_counter,
+              "environment_lock_hash": environment.lock_hash(),
+              "execution_allowed": gate.execution_allowed,
+              "manifest_hash": approved.manifest_hash,
+              "source_git_sha": approved.source_git_sha,
+              "state": "SEALED_AND_READY",
+              "training_schedule_hash": approved.training_schedule_hash,
+              "unsigned_hash": approved.unsigned_hash(),
+              "verification_hash": verification.verification_hash()
+              if hasattr(verification, "verification_hash")
+              else None,
+              "world_generation_id": approved.world_generation_id,
+              "world_grid_hash": approved.world_grid_hash,
+          }
+          report_root = Path(os.environ["REPORT_ROOT"])
+          (report_root / "freeze_summary.json").write_text(
+              json.dumps(summary, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          (report_root / "launch_gate.json").write_text(
+              json.dumps(gate.state_dict(), indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          PY
+          test -z "$(git status --porcelain)"
+
+      - name: Execute candidate-003 exactly once
+        shell: bash
+        working-directory: frozen-source
+        run: |
+          set -euo pipefail
+          python - <<'PY' 2>&1 | tee "${REPORT_ROOT}/execution.log"
+          import os
+          import subprocess
+          from pathlib import Path
+
+          from sparkbrain.evaluation.v06_confirmatory_external_verification_v2 import (
+              load_external_freeze_bundle_v2,
+          )
+
+          bundle = load_external_freeze_bundle_v2(
+              Path(os.environ["CONTROL_ROOT"]) / "freeze_bundle.json"
+          )
+          subprocess.run(
+              bundle.execution_command,
+              cwd=bundle.source_checkout,
+              check=True,
+          )
+          PY
+
+      - name: Verify immutable 400-execution raw evidence
+        shell: bash
+        working-directory: frozen-source
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          from sparkbrain.evaluation.v06_confirmatory_external_verification_v2 import (
+              load_external_freeze_bundle_v2,
+          )
+          from sparkbrain.evaluation.v06_confirmatory_verify_external_raw_v2 import (
+              verify_external_raw_evidence_v2,
+          )
+
+          bundle = load_external_freeze_bundle_v2(
+              Path(os.environ["CONTROL_ROOT"]) / "freeze_bundle.json"
+          )
+          report = verify_external_raw_evidence_v2(bundle)
+          if (
+              report.execution_count != 400
+              or report.evidence_record_count != 3600
+              or report.resource_record_count != 400
+          ):
+              raise RuntimeError("formal raw counts differ from preregistration")
+          Path(os.environ["REPORT_ROOT"], "raw_verification.json").write_text(
+              json.dumps(report.state_dict(), indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          PY
+
+      - name: Apply preregistered scorer after raw lock
+        shell: bash
+        working-directory: frozen-source
+        run: |
+          set -euo pipefail
+          python - <<'PY' 2>&1 | tee "${REPORT_ROOT}/scoring.log"
+          import os
+          import subprocess
+          from pathlib import Path
+
+          from sparkbrain.evaluation.v06_confirmatory_external_verification_v2 import (
+              load_external_freeze_bundle_v2,
+          )
+
+          bundle = load_external_freeze_bundle_v2(
+              Path(os.environ["CONTROL_ROOT"]) / "freeze_bundle.json"
+          )
+          subprocess.run(
+              bundle.scoring_command,
+              cwd=bundle.source_checkout,
+              check=True,
+          )
+          PY
+
+      - name: Build immutable-result summary
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p "${REPORT_ROOT}"
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          def load(path: Path):
+              try:
+                  return json.loads(path.read_text(encoding="utf-8"))
+              except (OSError, json.JSONDecodeError):
+                  return None
+
+          control = Path(os.environ["CONTROL_ROOT"])
+          raw = Path(os.environ["RAW_ROOT"])
+          analysis = Path(os.environ["ANALYSIS_ROOT"])
+          reports = Path(os.environ["REPORT_ROOT"])
+          analysis_dirs = sorted(
+              path for path in analysis.glob("analysis-*") if path.is_dir()
+          ) if analysis.exists() else []
+          analysis_dir = analysis_dirs[0] if len(analysis_dirs) == 1 else None
+          summary = {
+              "analysis_complete": bool(
+                  analysis_dir and (analysis_dir / "ANALYSIS_COMPLETE").is_file()
+              ),
+              "analysis_manifest": load(analysis_dir / "analysis_manifest.json")
+              if analysis_dir else None,
+              "candidate_id": os.environ["CANDIDATE_ID"],
+              "execution_log_present": (reports / "execution.log").is_file(),
+              "freeze_summary": load(reports / "freeze_summary.json"),
+              "github_run_attempt": os.environ.get("GITHUB_RUN_ATTEMPT"),
+              "github_run_id": os.environ.get("GITHUB_RUN_ID"),
+              "marker_commit_sha": os.environ.get("GITHUB_SHA"),
+              "outcome": load(analysis_dir / "outcome.json") if analysis_dir else None,
+              "raw_committed": (control / "RAW_COMMITTED.json").is_file(),
+              "raw_commit_marker": load(control / "RAW_COMMITTED.json"),
+              "raw_failed": (control / "RUN_FAILED.json").is_file(),
+              "raw_failure_marker": load(control / "RUN_FAILED.json"),
+              "raw_run_directories": sorted(
+                  path.name for path in raw.glob("candidate-003-*") if path.is_dir()
+              ) if raw.exists() else [],
+              "raw_verification": load(reports / "raw_verification.json"),
+              "scoring_log_present": (reports / "scoring.log").is_file(),
+              "source_git_sha": os.environ.get("SOURCE_SHA"),
+              "started": (control / "STARTED.json").is_file(),
+              "started_marker": load(control / "STARTED.json"),
+          }
+          (reports / "formal_result_summary.json").write_text(
+              json.dumps(summary, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          PY
+
+      - name: Upload sealed control, immutable raw, analysis, and reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v06-candidate-003-formal-${{ github.run_id }}
+          path: ${{ env.WORK_ROOT }}
+          if-no-files-found: error
+          include-hidden-files: true
+          compression-level: 0
+          retention-days: 90

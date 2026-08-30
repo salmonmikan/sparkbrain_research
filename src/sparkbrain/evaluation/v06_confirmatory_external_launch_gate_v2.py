@@ -191,7 +191,7 @@ def require_external_launch_gate_v2(
 ) -> ExternalLaunchGateReportV2:
     report = validate_external_launch_gate_v2(bundle)
     if not report.execution_allowed:
-        raise RuntimeError("candidate-002 launch gate remains closed")
+        raise RuntimeError("candidate-003 launch gate remains closed")
     return report
 
 

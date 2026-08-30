@@ -118,13 +118,14 @@ def build_current_confirmatory_manifest(
         return replace(base, conditions=conditions)
     return replace(
         base,
-        protocol_version="v06-amendment-005-candidate-2",
+        protocol_version="v06-amendment-007-candidate-3",
         seeds=_fresh_confirmatory_seed_specs(),
         conditions=conditions,
         exclusions=(
             *base.exclusions,
-            "Quarantined 100-series capability observations are development-only.",
-            "Only the fresh candidate-002 world generation may enter the next freeze.",
+            "Qualification seeds 100-109 and retired candidate-002 seeds "
+            "1000-1009 are quarantined.",
+            "Only the fresh candidate-003 world generation may enter the next freeze.",
             "Schema/preflight readiness cannot set a capability adapter ready.",
             "No capability entrypoint may run before an execution seal is issued.",
         ),

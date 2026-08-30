@@ -75,7 +75,7 @@ def verify_external_raw_evidence_v2(
     bundle: ExternalFreezeBundleV2,
 ) -> VerifiedExternalRawEvidenceV2:
     bundle.validate_for_execution()
-    run_id = f"candidate-002-{bundle.bundle_hash()[:20]}"
+    run_id = f"candidate-003-{bundle.bundle_hash()[:20]}"
     raw_root = Path(bundle.artifact_layout["raw_root"]) / run_id
     if not raw_root.is_dir() or not (raw_root / "RAW_COMPLETE").is_file():
         raise RuntimeError("immutable RAW_COMPLETE evidence is unavailable")

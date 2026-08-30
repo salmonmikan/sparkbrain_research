@@ -7,8 +7,14 @@ import random
 from dataclasses import asdict, dataclass
 from typing import Any
 
-WORLD_GENERATION_ID = "v06-confirmatory-candidate-002"
-QUARANTINED_HELDOUT_SEEDS = tuple(range(100, 110))
+WORLD_GENERATION_ID = "v06-confirmatory-candidate-003"
+RETIRED_CANDIDATE_002_GENERATION_ID = "v06-confirmatory-candidate-002"
+QUALIFICATION_HELDOUT_SEEDS = tuple(range(100, 110))
+RETIRED_CANDIDATE_002_SEEDS = tuple(range(1000, 1010))
+QUARANTINED_HELDOUT_SEEDS = (
+    *QUALIFICATION_HELDOUT_SEEDS,
+    *RETIRED_CANDIDATE_002_SEEDS,
+)
 HELDOUT_FAMILIES = (
     "heldout-sparse-permutation",
     "heldout-lag-dispersion",
@@ -16,7 +22,7 @@ HELDOUT_FAMILIES = (
     "heldout-branch-competition",
     "heldout-contingency-cycles",
 )
-HELDOUT_SEEDS = tuple(range(1000, 1010))
+HELDOUT_SEEDS = tuple(range(2000, 2010))
 
 
 def _canonical_json(value: object) -> str:
@@ -71,12 +77,20 @@ class HeldoutWorldParameters:
     def validate(self) -> None:
         if self.family_id not in HELDOUT_FAMILIES:
             raise ValueError("unknown held-out world family")
-        if self.seed not in HELDOUT_SEEDS:
-            raise ValueError("unsupported held-out seed")
-        if self.seed in QUARANTINED_HELDOUT_SEEDS:
+        current_token = f"{WORLD_GENERATION_ID}:{self.seed}"
+        retired_token = f"{RETIRED_CANDIDATE_002_GENERATION_ID}:{self.seed}"
+        if self.structural_token == current_token:
+            allowed_seeds = HELDOUT_SEEDS
+            current_candidate = True
+        elif self.structural_token == retired_token:
+            allowed_seeds = RETIRED_CANDIDATE_002_SEEDS
+            current_candidate = False
+        else:
+            raise ValueError("structural token identifies an unsupported generation")
+        if self.seed not in allowed_seeds:
+            raise ValueError("unsupported held-out seed for world generation")
+        if current_candidate and self.seed in QUARANTINED_HELDOUT_SEEDS:
             raise ValueError("quarantined held-out seed cannot enter candidate grid")
-        if not self.structural_token.startswith(f"{WORLD_GENERATION_ID}:"):
-            raise ValueError("structural token must identify the fresh world generation")
         if self.unit_count < 16:
             raise ValueError("held-out worlds require at least 16 units")
         if len(set(self.active_unit_ids)) != len(self.active_unit_ids):
@@ -205,27 +219,28 @@ def _lag_profile(
     )
 
 
-def _seed_index(seed: int) -> int:
+def _seed_index(seed: int, seeds: tuple[int, ...]) -> int:
     try:
-        return HELDOUT_SEEDS.index(seed)
+        return seeds.index(seed)
     except ValueError as exc:
         raise ValueError(f"unsupported held-out seed: {seed}") from exc
 
 
-def heldout_world_parameters(
+def _world_parameters(
     family_id: str,
     seed: int,
+    *,
+    generation_id: str,
+    seeds: tuple[int, ...],
 ) -> HeldoutWorldParameters:
-    """Generate one deterministic, outcome-unopened world specification."""
-
     if family_id not in HELDOUT_FAMILIES:
         raise ValueError(f"unknown held-out world family: {family_id}")
-    seed_index = _seed_index(seed)
+    seed_index = _seed_index(seed, seeds)
     rng_seed = int(
         _digest(
             {
                 "family_id": family_id,
-                "generation": WORLD_GENERATION_ID,
+                "generation": generation_id,
                 "seed": seed,
             }
         )[:16],
@@ -361,7 +376,7 @@ def heldout_world_parameters(
     parameters = HeldoutWorldParameters(
         family_id=family_id,
         seed=seed,
-        structural_token=f"{WORLD_GENERATION_ID}:{seed}",
+        structural_token=f"{generation_id}:{seed}",
         unit_count=unit_count,
         active_unit_ids=active_ids,
         distractor_unit_ids=distractors,
@@ -389,6 +404,34 @@ def heldout_world_parameters(
     return parameters
 
 
+def heldout_world_parameters(
+    family_id: str,
+    seed: int,
+) -> HeldoutWorldParameters:
+    """Generate one deterministic, outcome-unopened candidate-003 world."""
+
+    return _world_parameters(
+        family_id,
+        seed,
+        generation_id=WORLD_GENERATION_ID,
+        seeds=HELDOUT_SEEDS,
+    )
+
+
+def retired_candidate_002_world_parameters(
+    family_id: str,
+    seed: int,
+) -> HeldoutWorldParameters:
+    """Rebuild retired candidate-002 worlds for regression testing only."""
+
+    return _world_parameters(
+        family_id,
+        seed,
+        generation_id=RETIRED_CANDIDATE_002_GENERATION_ID,
+        seeds=RETIRED_CANDIDATE_002_SEEDS,
+    )
+
+
 def build_heldout_world_grid() -> tuple[HeldoutWorldParameters, ...]:
     return tuple(
         heldout_world_parameters(family_id, seed)
@@ -397,10 +440,32 @@ def build_heldout_world_grid() -> tuple[HeldoutWorldParameters, ...]:
     )
 
 
+def build_retired_candidate_002_world_grid() -> tuple[HeldoutWorldParameters, ...]:
+    """Return the consumed candidate-002 grid outside the current candidate path."""
+
+    return tuple(
+        retired_candidate_002_world_parameters(family_id, seed)
+        for family_id in HELDOUT_FAMILIES
+        for seed in RETIRED_CANDIDATE_002_SEEDS
+    )
+
+
 def heldout_world_grid_hash() -> str:
     return _digest(
         {
             "generation": WORLD_GENERATION_ID,
             "worlds": [row.state_dict() for row in build_heldout_world_grid()],
+        }
+    )
+
+
+def retired_candidate_002_world_grid_hash() -> str:
+    return _digest(
+        {
+            "generation": RETIRED_CANDIDATE_002_GENERATION_ID,
+            "worlds": [
+                row.state_dict()
+                for row in build_retired_candidate_002_world_grid()
+            ],
         }
     )

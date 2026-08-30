@@ -44,7 +44,7 @@ def build_candidate_manifest(
             isolated_from_primary=True,
             engineering_evidence_available=True,
             notes=(
-                "Real candidate adapter reviewed on development-only fixtures; "
+                "Real candidate-003 adapter reviewed on development-only fixtures; "
                 "candidate execution remains controlled by the external seal and launch gate."
             ),
         )
@@ -52,7 +52,7 @@ def build_candidate_manifest(
     )
     manifest = replace(
         base,
-        protocol_version="v06-amendment-006-freeze-candidate-1",
+        protocol_version="v06-amendment-008-freeze-candidate-3",
         conditions=conditions,
         exclusions=(
             *base.exclusions,

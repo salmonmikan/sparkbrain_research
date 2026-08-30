@@ -40,7 +40,7 @@ def _write_control_marker(path: Path, value: object) -> None:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="Execute one externally sealed candidate-002 raw run.",
+        description="Execute one externally sealed candidate-003 raw run.",
     )
     parser.add_argument("--freeze-bundle", type=Path, required=True)
     parser.add_argument("--raw-root", type=Path, required=True)
@@ -57,7 +57,7 @@ def main() -> None:
         raise RuntimeError("CLI raw root differs from frozen artifact layout")
 
     # This gate runs before importing the candidate world generator or any real
-    # capability adapter. A failed gate therefore cannot consume candidate-002.
+    # capability adapter. A failed gate therefore cannot consume candidate-003.
     gate = require_external_launch_gate_v2(bundle)
     claim_external_one_way_execution_v2(bundle, gate)
 
@@ -70,7 +70,7 @@ def main() -> None:
     from .v06_confirmatory_heldout_spec import build_heldout_world_grid
 
     layout = ExternalArtifactLayout(**bundle.artifact_layout)
-    run_id = f"candidate-002-{bundle.bundle_hash()[:20]}"
+    run_id = f"candidate-003-{bundle.bundle_hash()[:20]}"
     writer = ExternalAtomicRawRunWriter(
         layout,
         run_id=run_id,

@@ -7,11 +7,16 @@ from sparkbrain.evaluation.v06_confirmatory_current_manifest import (
 from sparkbrain.evaluation.v06_confirmatory_heldout_spec import (
     HELDOUT_FAMILIES,
     HELDOUT_SEEDS,
+    QUALIFICATION_HELDOUT_SEEDS,
     QUARANTINED_HELDOUT_SEEDS,
+    RETIRED_CANDIDATE_002_GENERATION_ID,
+    RETIRED_CANDIDATE_002_SEEDS,
     WORLD_GENERATION_ID,
     build_heldout_world_grid,
+    build_retired_candidate_002_world_grid,
     heldout_world_grid_hash,
     heldout_world_parameters,
+    retired_candidate_002_world_grid_hash,
 )
 
 
@@ -33,10 +38,32 @@ def test_fresh_grid_matches_current_manifest_without_running_conditions() -> Non
     }
 
 
-def test_fresh_seed_set_is_disjoint_from_quarantined_capability_seeds() -> None:
+def test_fresh_seed_set_is_disjoint_from_every_consumed_seed_set() -> None:
     assert set(HELDOUT_SEEDS).isdisjoint(QUARANTINED_HELDOUT_SEEDS)
-    assert HELDOUT_SEEDS == tuple(range(1000, 1010))
-    assert QUARANTINED_HELDOUT_SEEDS == tuple(range(100, 110))
+    assert set(HELDOUT_SEEDS).isdisjoint(RETIRED_CANDIDATE_002_SEEDS)
+    assert HELDOUT_SEEDS == tuple(range(2000, 2010))
+    assert QUALIFICATION_HELDOUT_SEEDS == tuple(range(100, 110))
+    assert RETIRED_CANDIDATE_002_SEEDS == tuple(range(1000, 1010))
+    assert QUARANTINED_HELDOUT_SEEDS == (
+        *QUALIFICATION_HELDOUT_SEEDS,
+        *RETIRED_CANDIDATE_002_SEEDS,
+    )
+
+
+def test_candidate_003_and_retired_candidate_002_are_distinct_generations() -> None:
+    current = build_heldout_world_grid()
+    retired = build_retired_candidate_002_world_grid()
+    assert WORLD_GENERATION_ID == "v06-confirmatory-candidate-003"
+    assert RETIRED_CANDIDATE_002_GENERATION_ID == (
+        "v06-confirmatory-candidate-002"
+    )
+    assert len(current) == len(retired) == 50
+    assert heldout_world_grid_hash() != retired_candidate_002_world_grid_hash()
+    assert {row.seed for row in current} == set(HELDOUT_SEEDS)
+    assert {row.seed for row in retired} == set(RETIRED_CANDIDATE_002_SEEDS)
+    assert not {row.specification_hash() for row in current}.intersection(
+        row.specification_hash() for row in retired
+    )
 
 
 def test_heldout_world_generation_is_deterministic_and_hashable() -> None:

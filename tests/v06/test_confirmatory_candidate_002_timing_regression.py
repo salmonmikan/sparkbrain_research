@@ -8,23 +8,25 @@ from sparkbrain.evaluation.v06_confirmatory_heldout_primary import (
     run_condition,
 )
 from sparkbrain.evaluation.v06_confirmatory_heldout_spec import (
-    WORLD_GENERATION_ID,
-    build_heldout_world_grid,
-    heldout_world_parameters,
+    RETIRED_CANDIDATE_002_GENERATION_ID,
+    build_retired_candidate_002_world_grid,
+    retired_candidate_002_world_parameters,
 )
 
 
 def _backward_risk_worlds():
     return tuple(
         parameters
-        for parameters in build_heldout_world_grid()
+        for parameters in build_retired_candidate_002_world_grid()
         if parameters.boundary_lag_ms
         < max(parameters.evaluation_lags_ms) + 5.0
     )
 
 
 def test_candidate_002_risk_set_has_22_worlds() -> None:
-    assert WORLD_GENERATION_ID == "v06-confirmatory-candidate-002"
+    assert RETIRED_CANDIDATE_002_GENERATION_ID == (
+        "v06-confirmatory-candidate-002"
+    )
     risky = _backward_risk_worlds()
     assert len(risky) == 22
     assert any(
@@ -47,7 +49,7 @@ def test_candidate_002_risk_worlds_finish_monotonically() -> None:
 
 
 def test_candidate_002_seed_1001_primary_finishes() -> None:
-    parameters = heldout_world_parameters(
+    parameters = retired_candidate_002_world_parameters(
         "heldout-sparse-permutation",
         1001,
     )

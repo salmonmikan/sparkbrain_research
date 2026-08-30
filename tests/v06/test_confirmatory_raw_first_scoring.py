@@ -247,7 +247,7 @@ def _evidence():
         freeze_seal_hash="e" * 64,
         source_code_sha=_SOURCE_SHA,
         manifest_hash=manifest.manifest_hash(),
-        world_generation_id="v06-confirmatory-candidate-002",
+        world_generation_id="v06-confirmatory-candidate-003",
         receipt=receipt,
         results=results,
         raw_resources=raw_resources,

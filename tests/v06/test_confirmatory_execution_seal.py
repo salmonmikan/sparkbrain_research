@@ -232,8 +232,8 @@ def test_quarantined_seed_set_can_never_validate_as_fresh() -> None:
 
 
 def test_freeze_contract_names_commands_and_raw_then_analysis_paths() -> None:
-    assert HELDOUT_SEEDS == tuple(range(1000, 1010))
-    assert WORLD_GENERATION_ID == "v06-confirmatory-candidate-002"
+    assert HELDOUT_SEEDS == tuple(range(2000, 2010))
+    assert WORLD_GENERATION_ID == "v06-confirmatory-candidate-003"
     assert EXECUTION_COMMAND.startswith("python -m ")
     assert "--freeze-record" in EXECUTION_COMMAND
     assert "--environment-lock" in EXECUTION_COMMAND
