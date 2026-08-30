@@ -1,0 +1,94 @@
+name: staging-link-id-fix
+
+on:
+  push:
+    branches: ["v06-capability-staging-20260830"]
+    paths: [".github/workflows/staging-link-id-fix.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v06-capability-staging-20260830
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Recompute anonymous link IDs after target rotation
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("src/sparkbrain/evaluation/v06_confirmatory_heldout_controls.py")
+          source = path.read_text(encoding="utf-8")
+          old = '''def _rotate_relation_state(
+              parameters: HeldoutWorldParameters,
+              state: dict[str, Any],
+          ) -> dict[str, Any]:
+              value = copy.deepcopy(state)
+              rotation = {
+                  f"unit:{parameters.old_target}": f"unit:{parameters.new_target}",
+                  f"unit:{parameters.new_target}": f"unit:{parameters.third_target}",
+                  f"unit:{parameters.third_target}": f"unit:{parameters.old_target}",
+              }
+              for row in value["links"].values():
+                  row["target"] = rotation.get(str(row["target"]), str(row["target"]))
+              return value
+          '''
+          new = '''def _rotate_relation_state(
+              parameters: HeldoutWorldParameters,
+              state: dict[str, Any],
+          ) -> dict[str, Any]:
+              value = copy.deepcopy(state)
+              rotation = {
+                  f"unit:{parameters.old_target}": f"unit:{parameters.new_target}",
+                  f"unit:{parameters.new_target}": f"unit:{parameters.third_target}",
+                  f"unit:{parameters.third_target}": f"unit:{parameters.old_target}",
+              }
+              links: dict[str, Any] = {}
+              for row in value["links"].values():
+                  changed = dict(row)
+                  changed["target"] = rotation.get(
+                      str(changed["target"]),
+                      str(changed["target"]),
+                  )
+                  key = (
+                      str(changed["port_id"]),
+                      str(changed["target"]),
+                      int(changed["polarity"]),
+                  )
+                  link_id = (
+                      "link:"
+                      + digest(
+                          {
+                              "port_id": key[0],
+                              "target": key[1],
+                              "polarity": key[2],
+                          }
+                      )[:24]
+                  )
+                  if link_id in links:
+                      raise RuntimeError("relation rotation produced a duplicate link")
+                  links[link_id] = changed
+              value["links"] = links
+              return value
+          '''
+          if source.count(old) != 1:
+              raise SystemExit(f"unexpected rotation source count: {source.count(old)}")
+          path.write_text(source.replace(old, new), encoding="utf-8")
+          PY
+      - name: Format and verify
+        run: |
+          python -m pip install "ruff>=0.9"
+          python -m ruff check --fix src/sparkbrain/evaluation/v06_confirmatory_heldout_controls.py
+      - name: Commit patch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/sparkbrain/evaluation/v06_confirmatory_heldout_controls.py
+          git commit -m "fix(v06): recompute shuffled anonymous link IDs [skip ci]"
+          git push origin HEAD:v06-capability-staging-20260830
