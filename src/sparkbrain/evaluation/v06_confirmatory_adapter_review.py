@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import ast
 import hashlib
-from dataclasses import asdict, dataclass
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
@@ -66,8 +66,9 @@ EXPECTED_THRESHOLD_BYPASS = {
     ConfirmatoryCondition.G5_TYPED: True,
 }
 
-_SENSITIVE_WORLD_FIELDS = frozenset(
+_PRIMARY_REQUIRED_FIELDS = frozenset(
     {
+        "active_unit_ids",
         "alternate_path",
         "boundary_lag_ms",
         "branch_exposure_counts",
@@ -88,6 +89,23 @@ _SENSITIVE_WORLD_FIELDS = frozenset(
         "threshold",
         "training_lag_profiles_ms",
         "unit_count",
+    }
+)
+_COMPARATOR_REQUIRED_FIELDS = frozenset(
+    {
+        "alternate_path",
+        "branch_exposure_counts",
+        "competition_paths",
+        "contingency_cycle_targets",
+        "contingency_phase_lengths",
+        "control_path",
+        "control_port",
+        "main_path",
+        "main_port",
+        "new_target",
+        "old_target",
+        "third_target",
+        "training_lag_profiles_ms",
     }
 )
 _ALLOWED_DERIVED_MEMBERS = frozenset(
@@ -112,6 +130,13 @@ _FORBIDDEN_COMPARATOR_IMPORT_PREFIXES = (
     "sparkbrain.v06",
     "sparkbrain.evaluation.v06_confirmatory_heldout_primary",
 )
+_COMPARATOR_CONDITIONS = frozenset(
+    {
+        ConfirmatoryCondition.G3_RECURRENT,
+        ConfirmatoryCondition.G4_ASSEMBLY,
+        ConfirmatoryCondition.G5_TYPED,
+    }
+)
 
 
 @dataclass(frozen=True, slots=True)
@@ -120,6 +145,8 @@ class AdapterSourceInventory:
     source_paths: tuple[str, ...]
     source_hashes: tuple[tuple[str, str], ...]
     parameter_fields_read: tuple[str, ...]
+    parameter_fields_not_directly_read: tuple[str, ...]
+    required_parameter_fields: tuple[str, ...]
     imported_modules: tuple[str, ...]
     candidate_builder_imports: tuple[str, ...]
     forbidden_comparator_imports: tuple[str, ...]
@@ -139,7 +166,11 @@ class AdapterSourceInventory:
                 self.forbidden_comparator_imports
             ),
             "imported_modules": list(self.imported_modules),
+            "parameter_fields_not_directly_read": list(
+                self.parameter_fields_not_directly_read
+            ),
             "parameter_fields_read": list(self.parameter_fields_read),
+            "required_parameter_fields": list(self.required_parameter_fields),
             "source_hashes": dict(self.source_hashes),
             "source_paths": list(self.source_paths),
             "threshold_bypassed": self.threshold_bypassed,
@@ -152,7 +183,7 @@ class AdapterReviewReport:
     inventories: tuple[AdapterSourceInventory, ...]
     missing_source_paths: tuple[str, ...]
     unknown_parameter_members: tuple[str, ...]
-    missing_sensitive_fields: tuple[str, ...]
+    missing_required_fields: tuple[str, ...]
     candidate_builder_imports: tuple[str, ...]
     forbidden_comparator_imports: tuple[str, ...]
     missing_validation_calls: tuple[str, ...]
@@ -167,7 +198,7 @@ class AdapterReviewReport:
                 self.forbidden_comparator_imports
             ),
             "inventories": [row.state_dict() for row in self.inventories],
-            "missing_sensitive_fields": list(self.missing_sensitive_fields),
+            "missing_required_fields": list(self.missing_required_fields),
             "missing_source_paths": list(self.missing_source_paths),
             "missing_specification_hash_calls": list(
                 self.missing_specification_hash_calls
@@ -210,6 +241,12 @@ def _source_hash(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def _required_fields(condition: ConfirmatoryCondition) -> frozenset[str]:
+    if condition in _COMPARATOR_CONDITIONS:
+        return _COMPARATOR_REQUIRED_FIELDS
+    return _PRIMARY_REQUIRED_FIELDS
+
+
 def _inspect_sources(
     repository_root: Path,
     condition: ConfirmatoryCondition,
@@ -234,19 +271,18 @@ def _inspect_sources(
                 if module.startswith(_FORBIDDEN_COMPARATOR_IMPORT_PREFIXES)
             )
         )
-        if condition
-        in {
-            ConfirmatoryCondition.G3_RECURRENT,
-            ConfirmatoryCondition.G4_ASSEMBLY,
-            ConfirmatoryCondition.G5_TYPED,
-        }
+        if condition in _COMPARATOR_CONDITIONS
         else ()
     )
+    world_fields = set(HeldoutWorldParameters.__dataclass_fields__)
+    required = _required_fields(condition)
     return AdapterSourceInventory(
         condition=condition,
         source_paths=source_paths,
         source_hashes=tuple(hashes),
         parameter_fields_read=tuple(sorted(members)),
+        parameter_fields_not_directly_read=tuple(sorted(world_fields - members)),
+        required_parameter_fields=tuple(sorted(required)),
         imported_modules=tuple(sorted(modules)),
         candidate_builder_imports=tuple(
             sorted(imported_names.intersection(_FORBIDDEN_BUILDER_IMPORTS))
@@ -263,10 +299,12 @@ def review_adapter_sources(repository_root: Path) -> AdapterReviewReport:
     repository_root = repository_root.resolve()
     missing_paths = tuple(
         sorted(
-            relative_path
-            for paths in ADAPTER_SOURCE_PATHS.values()
-            for relative_path in paths
-            if not (repository_root / relative_path).is_file()
+            {
+                relative_path
+                for paths in ADAPTER_SOURCE_PATHS.values()
+                for relative_path in paths
+                if not (repository_root / relative_path).is_file()
+            }
         )
     )
     if missing_paths:
@@ -275,7 +313,7 @@ def review_adapter_sources(repository_root: Path) -> AdapterReviewReport:
             inventories=(),
             missing_source_paths=missing_paths,
             unknown_parameter_members=(),
-            missing_sensitive_fields=(),
+            missing_required_fields=(),
             candidate_builder_imports=(),
             forbidden_comparator_imports=(),
             missing_validation_calls=(),
@@ -297,11 +335,11 @@ def review_adapter_sources(repository_root: Path) -> AdapterReviewReport:
             for member in set(row.parameter_fields_read) - world_members
         )
     )
-    missing_sensitive = tuple(
+    missing_required = tuple(
         sorted(
             f"{row.condition.value}:{member}"
             for row in inventories
-            for member in _SENSITIVE_WORLD_FIELDS
+            for member in row.required_parameter_fields
             if member not in row.parameter_fields_read
         )
     )
@@ -332,7 +370,7 @@ def review_adapter_sources(repository_root: Path) -> AdapterReviewReport:
         inventories=inventories,
         missing_source_paths=(),
         unknown_parameter_members=unknown,
-        missing_sensitive_fields=missing_sensitive,
+        missing_required_fields=missing_required,
         candidate_builder_imports=builder_imports,
         forbidden_comparator_imports=comparator_imports,
         missing_validation_calls=missing_validation,
@@ -340,7 +378,7 @@ def review_adapter_sources(repository_root: Path) -> AdapterReviewReport:
         complete=not any(
             (
                 unknown,
-                missing_sensitive,
+                missing_required,
                 builder_imports,
                 comparator_imports,
                 missing_validation,
