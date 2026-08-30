@@ -893,7 +893,7 @@ def _run_reentry(
             maximum_magnitude=max(2.0, parameters.threshold * 4.0),
             minimum_consistent_count=1,
             minimum_reliability=0.0,
-            maximum_candidates=8,
+            maximum_links_per_boundary=8,
         ),
     )
     reentry.schedule(_probe_boundary(parameters, event_id), field)
