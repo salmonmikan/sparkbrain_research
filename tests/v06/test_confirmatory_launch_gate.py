@@ -25,6 +25,7 @@ from sparkbrain.evaluation.v06_confirmatory_launch_gate import (
 from sparkbrain.v06.foundation import digest
 
 _SOURCE_SHA = "a" * 40
+_APPROVAL_ID = "APPROVED:launch-reviewer:0123456789abcdef"
 
 
 def _repository_root() -> Path:
@@ -65,7 +66,7 @@ def _freeze_record():
         source_code_sha=_SOURCE_SHA,
         repository_root=_repository_root(),
         environment_lock=_environment(),
-        approval_id="independent-launch-review:test",
+        approval_id=_APPROVAL_ID,
     )
 
 
@@ -83,8 +84,14 @@ def _validate(tmp_path: Path, **changes):
     workspace = changes.pop("workspace", _workspace())
     environment = changes.pop("observed_environment", _environment())
     output_root = changes.pop("output_root", tmp_path / "output")
-    counter = changes.pop("execution_counter_path", tmp_path / "control" / "counter.json")
-    marker = changes.pop("start_marker_path", tmp_path / "control" / "STARTED.json")
+    counter = changes.pop(
+        "execution_counter_path",
+        output_root / "control" / "execution_state.json",
+    )
+    marker = changes.pop(
+        "start_marker_path",
+        output_root / "control" / "STARTED.json",
+    )
     assert not changes
     return validate_launch_gate(
         _manifest(),
@@ -114,6 +121,21 @@ def test_clean_detached_matching_workspace_passes_every_launch_gate(
     assert report.launch_allowed is True
 
 
+def test_expected_control_files_are_allowed_before_launch(tmp_path: Path) -> None:
+    output = tmp_path / "output"
+    control = output / "control"
+    control.mkdir(parents=True)
+    for file_name in (
+        "environment_lock.json",
+        "freeze_record.json",
+        "freeze_verification.json",
+    ):
+        control.joinpath(file_name).write_text("{}\n", encoding="utf-8")
+    report = _validate(tmp_path, output_root=output)
+    assert report.output_directory_empty is True
+    assert report.launch_allowed is True
+
+
 @pytest.mark.parametrize(
     "workspace",
     (
@@ -129,15 +151,33 @@ def test_workspace_mismatch_fails_closed(
     assert _validate(tmp_path, workspace=workspace).launch_allowed is False
 
 
-def test_nonempty_output_or_previous_execution_blocks_launch(tmp_path: Path) -> None:
+def test_nonempty_payload_or_unknown_control_file_blocks_launch(
+    tmp_path: Path,
+) -> None:
     output = tmp_path / "output"
     output.mkdir()
     output.joinpath("unexpected.txt").write_text("data", encoding="utf-8")
     assert _validate(tmp_path, output_root=output).launch_allowed is False
 
     output.joinpath("unexpected.txt").unlink()
-    counter = tmp_path / "control" / "counter.json"
-    counter.parent.mkdir(parents=True, exist_ok=True)
+    raw = output / "raw"
+    raw.mkdir()
+    raw.joinpath("old-result.json").write_text("{}\n", encoding="utf-8")
+    assert _validate(tmp_path, output_root=output).launch_allowed is False
+
+    raw.joinpath("old-result.json").unlink()
+    raw.rmdir()
+    control = output / "control"
+    control.mkdir()
+    control.joinpath("unknown.json").write_text("{}\n", encoding="utf-8")
+    assert _validate(tmp_path, output_root=output).launch_allowed is False
+
+
+def test_previous_execution_counter_blocks_launch(tmp_path: Path) -> None:
+    output = tmp_path / "output"
+    control = output / "control"
+    control.mkdir(parents=True)
+    counter = control / "execution_state.json"
     counter.write_text('{"candidate_execution_count":1}\n', encoding="utf-8")
     assert _validate(
         tmp_path,
@@ -154,8 +194,13 @@ def test_environment_mismatch_blocks_launch(tmp_path: Path) -> None:
 
 
 def test_execution_claim_is_exclusive_and_one_way(tmp_path: Path) -> None:
-    marker = tmp_path / "control" / "STARTED.json"
-    report = _validate(tmp_path, start_marker_path=marker)
+    output = tmp_path / "output"
+    marker = output / "control" / "STARTED.json"
+    report = _validate(
+        tmp_path,
+        output_root=output,
+        start_marker_path=marker,
+    )
     claim_one_way_execution(
         marker,
         freeze_record=_freeze_record(),
@@ -168,7 +213,11 @@ def test_execution_claim_is_exclusive_and_one_way(tmp_path: Path) -> None:
             freeze_record=_freeze_record(),
             launch_report=report,
         )
-    assert _validate(tmp_path, start_marker_path=marker).launch_allowed is False
+    assert _validate(
+        tmp_path,
+        output_root=output,
+        start_marker_path=marker,
+    ).launch_allowed is False
 
 
 def test_current_review_checkout_is_not_the_sealed_source_identity() -> None:
