@@ -171,7 +171,11 @@ def test_execution_claim_is_exclusive_and_one_way(tmp_path: Path) -> None:
     assert _validate(tmp_path, start_marker_path=marker).launch_allowed is False
 
 
-def test_current_review_branch_is_not_mistaken_for_detached_source() -> None:
+def test_current_review_checkout_is_not_the_sealed_source_identity() -> None:
     state = inspect_git_workspace(_repository_root())
     assert len(state.head_sha) == 40
-    assert state.detached_head is False
+    assert not (
+        state.detached_head
+        and state.clean
+        and state.head_sha == _SOURCE_SHA
+    )

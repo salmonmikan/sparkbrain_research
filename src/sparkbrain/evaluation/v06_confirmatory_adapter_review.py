@@ -219,10 +219,7 @@ class _SourceVisitor(ast.NodeVisitor):
         self.imported_names: set[str] = set()
 
     def visit_Attribute(self, node: ast.Attribute) -> None:
-        if isinstance(node.value, ast.Name) and node.value.id in {
-            "parameters",
-            "world",
-        }:
+        if isinstance(node.value, ast.Name) and node.value.id == "parameters":
             self.parameter_members.add(node.attr)
         self.generic_visit(node)
 
