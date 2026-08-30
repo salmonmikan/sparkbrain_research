@@ -72,16 +72,26 @@ def _chain_diagnostic(world: Any, condition: ConfirmatoryCondition) -> dict[str,
 
 
 def _link_rows(snapshot: dict[str, Any], port_id: str) -> list[dict[str, Any]]:
-    rows = [
-        {
-            "consistent_count": int(row["consistent_count"]),
-            "inconsistent_count": int(row["inconsistent_count"]),
-            "reliability": float(row["reliability"]),
-            "target": str(row["target"]),
-        }
-        for row in snapshot["links"].values()
-        if row["port_id"] == port_id
-    ]
+    config = snapshot["config"]
+    prior_consistent = float(config["prior_consistent"])
+    prior_inconsistent = float(config["prior_inconsistent"])
+    rows = []
+    for row in snapshot["links"].values():
+        if row["port_id"] != port_id:
+            continue
+        consistent = int(row["consistent_count"])
+        inconsistent = int(row["inconsistent_count"])
+        reliability = (prior_consistent + consistent) / (
+            prior_consistent + prior_inconsistent + consistent + inconsistent
+        )
+        rows.append(
+            {
+                "consistent_count": consistent,
+                "inconsistent_count": inconsistent,
+                "reliability": reliability,
+                "target": str(row["target"]),
+            }
+        )
     return sorted(rows, key=lambda row: (-row["reliability"], row["target"]))
 
 
