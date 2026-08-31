@@ -86,6 +86,29 @@ def claim_one_way_execution(
     return marker
 
 
+def _semantic_execution_hash(
+    *,
+    identity_payload: dict[str, Any],
+    row: dict[str, Any],
+) -> str:
+    """Hash deterministic execution semantics separately from runtime measurements."""
+
+    resource = dict(row["resource"])
+    for field in (
+        "wall_clock_ns",
+        "process_cpu_ns",
+        "peak_traced_memory_bytes",
+    ):
+        resource.pop(field, None)
+    semantic_payload = {
+        **identity_payload,
+        "decision": row["decision"],
+        "evidence": row["evidence"],
+        "resource": resource,
+    }
+    return hashlib.sha256(_canonical_bytes(semantic_payload)).hexdigest()
+
+
 def _formal_execution_row(
     *,
     index: int,
@@ -110,6 +133,10 @@ def _formal_execution_row(
         "execution_id": execution_id,
         "formal_index": index,
         "manifest_hash": manifest.manifest_hash(),
+        "semantic_execution_hash": _semantic_execution_hash(
+            identity_payload=identity_payload,
+            row=row,
+        ),
         **row,
     }
 
