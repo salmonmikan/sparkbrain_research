@@ -1,0 +1,45 @@
+name: cx01-development
+
+on:
+  push:
+    branches:
+      - research/cx01-comparator-extension
+      - research/cx01-g6-vomm
+      - research/cx01-g7-htm
+      - research/cx01-g8-stm
+    paths:
+      - "src/sparkbrain/comparison/cx01/**"
+      - "tests/cx01/**"
+      - "docs/CX01_*.md"
+      - ".github/workflows/cx01-development.yml"
+  pull_request:
+    paths:
+      - "src/sparkbrain/comparison/cx01/**"
+      - "tests/cx01/**"
+      - "docs/CX01_*.md"
+      - ".github/workflows/cx01-development.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Install development dependencies
+        run: python -m pip install -e ".[dev]"
+      - name: Ruff CX01
+        run: python -m ruff check src/sparkbrain/comparison/cx01 tests/cx01
+      - name: CX01 tests
+        run: python -m pytest -q tests/cx01
+
+# Development validation only. This workflow never constructs or executes a
+# formal held-out CX01 candidate and has no permission to publish evidence.
