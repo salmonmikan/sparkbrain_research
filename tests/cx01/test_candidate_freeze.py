@@ -63,6 +63,7 @@ def test_freeze_and_seal_bind_exact_source_and_candidate() -> None:
     source_sha = "a" * 40
     manifest = build_freeze_manifest(
         source_git_sha=source_sha,
+        builder="freeze-builder-fixture",
         candidate=candidate,
         execution_command="python -m sparkbrain.comparison.cx01.formal",
         artifact_root="artifacts/cx01/formal",
@@ -82,6 +83,7 @@ def test_freeze_and_seal_bind_exact_source_and_candidate() -> None:
 def test_seal_refuses_missing_approval() -> None:
     manifest = build_freeze_manifest(
         source_git_sha="c" * 40,
+        builder="freeze-builder-fixture",
         candidate=_candidate(),
         execution_command="formal-fixture",
         artifact_root="artifacts/cx01/formal",
@@ -89,7 +91,24 @@ def test_seal_refuses_missing_approval() -> None:
     with pytest.raises(ValueError):
         issue_execution_seal(
             manifest,
-            reviewer="fixture",
+            reviewer="independent-reviewer-fixture",
             approval_digest=hashlib.sha256(b"fixture").hexdigest(),
             approved=False,
+        )
+
+
+def test_freeze_builder_cannot_self_approve() -> None:
+    manifest = build_freeze_manifest(
+        source_git_sha="d" * 40,
+        builder="same-person",
+        candidate=_candidate(),
+        execution_command="formal-fixture",
+        artifact_root="artifacts/cx01/formal",
+    )
+    with pytest.raises(ValueError, match="self-approve"):
+        issue_execution_seal(
+            manifest,
+            reviewer="same-person",
+            approval_digest=hashlib.sha256(b"fixture").hexdigest(),
+            approved=True,
         )
