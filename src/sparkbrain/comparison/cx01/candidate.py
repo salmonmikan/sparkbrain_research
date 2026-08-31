@@ -9,7 +9,6 @@ from typing import Any
 from .contract import ComparatorKind
 from .worlds import (
     DEVELOPMENT_GENERATION_ID,
-    DEVELOPMENT_SEEDS,
     HISTORICALLY_EXPOSED_SEEDS,
     CX01Family,
     CX01World,
@@ -26,8 +25,13 @@ CX01_COMPARATOR_INVENTORY = (
     ComparatorKind.G8_REPLAY,
 )
 
-# Reserved exclusively for schema/freeze tests. Formal candidates are required
-# to avoid this entire band even if only part of it has been instantiated.
+# The complete CX01 development/test band is permanently non-formal. This
+# deliberately covers development worlds, unit-test worlds, manual diagnostics,
+# and structure-fixture worlds so no already-exposed seed can later return as
+# held-out evidence.
+CX01_NONFORMAL_SEEDS = frozenset(range(3000, 6000))
+
+# Reserved subset for schema/freeze/control-plane fixtures.
 STRUCTURE_FIXTURE_SEEDS = frozenset(range(5000, 5200))
 
 
@@ -62,15 +66,14 @@ class CandidateSpec:
         if any(seed < 0 for seed in self.seeds):
             raise ValueError("candidate seeds must be non-negative")
 
-        exposed = set(DEVELOPMENT_SEEDS).union(HISTORICALLY_EXPOSED_SEEDS)
-        if exposed.intersection(self.seeds):
-            raise ValueError("candidate seeds overlap exposed/development evidence")
+        if set(HISTORICALLY_EXPOSED_SEEDS).intersection(self.seeds):
+            raise ValueError("candidate seeds overlap historical confirmatory evidence")
 
         if self.purpose is CandidatePurpose.FORMAL:
             if not self.generation_id.startswith("cx01-candidate-"):
                 raise ValueError("formal generation id must use cx01-candidate-* namespace")
-            if STRUCTURE_FIXTURE_SEEDS.intersection(self.seeds):
-                raise ValueError("formal candidate cannot reuse structure-fixture seed band")
+            if CX01_NONFORMAL_SEEDS.intersection(self.seeds):
+                raise ValueError("formal candidate cannot reuse CX01 development/test seed band")
         elif self.purpose is CandidatePurpose.STRUCTURE_FIXTURE:
             if not self.generation_id.startswith("cx01-fixture-"):
                 raise ValueError("fixture generation id must use cx01-fixture-* namespace")
