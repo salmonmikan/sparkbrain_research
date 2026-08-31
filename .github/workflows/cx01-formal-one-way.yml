@@ -1,0 +1,125 @@
+name: cx01-formal-one-way
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_sha:
+        description: "Exact frozen source Git SHA"
+        required: true
+        type: string
+      control_branch:
+        description: "Dedicated branch containing candidate, freeze, seal, and STARTED marker"
+        required: true
+        type: string
+      candidate_path:
+        description: "Candidate JSON path on control branch"
+        required: true
+        default: "cx01-control/candidate.json"
+        type: string
+      manifest_path:
+        description: "Freeze manifest path on control branch"
+        required: true
+        default: "cx01-control/freeze_manifest.json"
+        type: string
+      seal_path:
+        description: "Execution seal path on control branch"
+        required: true
+        default: "cx01-control/execution_seal.json"
+        type: string
+      control_marker_path:
+        description: "Precommitted one-way STARTED marker path"
+        required: true
+        default: "cx01-control/STARTED.json"
+        type: string
+      artifact_root:
+        description: "Exact artifact root frozen into the manifest"
+        required: true
+        default: "/tmp/cx01-formal"
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  execute:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONHASHSEED: "0"
+      TZ: UTC
+      LC_ALL: C.UTF-8
+      LANG: C.UTF-8
+      CONTROL_DIR: ${{ github.workspace }}/control
+      SOURCE_DIR: ${{ github.workspace }}/source
+    steps:
+      - name: Checkout preconsumed control branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.control_branch }}
+          path: control
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Require complete precommitted control package
+        env:
+          CANDIDATE_PATH: ${{ inputs.candidate_path }}
+          MANIFEST_PATH: ${{ inputs.manifest_path }}
+          SEAL_PATH: ${{ inputs.seal_path }}
+          CONTROL_MARKER_PATH: ${{ inputs.control_marker_path }}
+        run: |
+          test -f "$CONTROL_DIR/$CANDIDATE_PATH"
+          test -f "$CONTROL_DIR/$MANIFEST_PATH"
+          test -f "$CONTROL_DIR/$SEAL_PATH"
+          test -f "$CONTROL_DIR/$CONTROL_MARKER_PATH"
+
+      - name: Checkout exact frozen source
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.source_sha }}
+          path: source
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Verify exact source identity and cleanliness
+        env:
+          SOURCE_SHA: ${{ inputs.source_sha }}
+        run: |
+          test "$(git -C "$SOURCE_DIR" rev-parse HEAD)" = "$SOURCE_SHA"
+          test -z "$(git -C "$SOURCE_DIR" status --porcelain)"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11.16"
+          cache: pip
+          cache-dependency-path: source/pyproject.toml
+
+      - name: Install exact frozen source
+        run: python -m pip install -e "$SOURCE_DIR"
+
+      - name: Execute sealed preconsumed candidate exactly once
+        env:
+          SOURCE_SHA: ${{ inputs.source_sha }}
+          CANDIDATE_PATH: ${{ inputs.candidate_path }}
+          MANIFEST_PATH: ${{ inputs.manifest_path }}
+          SEAL_PATH: ${{ inputs.seal_path }}
+          CONTROL_MARKER_PATH: ${{ inputs.control_marker_path }}
+          ARTIFACT_ROOT: ${{ inputs.artifact_root }}
+        run: >-
+          python -m sparkbrain.comparison.cx01.formal
+          --candidate "$CONTROL_DIR/$CANDIDATE_PATH"
+          --manifest "$CONTROL_DIR/$MANIFEST_PATH"
+          --seal "$CONTROL_DIR/$SEAL_PATH"
+          --control-marker "$CONTROL_DIR/$CONTROL_MARKER_PATH"
+          --source-sha "$SOURCE_SHA"
+          --artifact-root "$ARTIFACT_ROOT"
+
+      - name: Upload formal evidence or local failure marker
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cx01-formal-${{ inputs.source_sha }}-${{ github.run_id }}
+          path: ${{ inputs.artifact_root }}
+          if-no-files-found: warn
+
+# This workflow has read-only repository permissions. It can execute only after
+# a persistent STARTED marker has already been committed to a dedicated control
+# branch by a separate pre-execution operation.
