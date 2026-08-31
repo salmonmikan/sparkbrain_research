@@ -92,6 +92,16 @@ class LocalTransitionStats:
             raise ValueError("transition counts must be non-negative")
         if row.positive_count + row.negative_count != row.count:
             raise ValueError("polarity counts must equal transition count")
+        for name in ("mean_lag_ms", "lag_m2", "mean_magnitude"):
+            number = float(getattr(row, name))
+            if not math.isfinite(number) or number < 0:
+                raise ValueError(f"transition {name} must be finite and non-negative")
+        if row.count == 0 and (
+            row.mean_lag_ms != 0.0
+            or row.lag_m2 != 0.0
+            or row.mean_magnitude != 0.0
+        ):
+            raise ValueError("unobserved transition cannot carry learned moments")
         return row
 
 
@@ -191,6 +201,48 @@ class LocalTemporalExpectation:
         self.proposal_count += len(proposals)
         return tuple(proposals)
 
+    def learned_state_dict(self) -> dict[str, Any]:
+        """Return learned transitions without run-specific proposal counters."""
+
+        value = {
+            "config": asdict(self.config),
+            "external_transition_count": self.external_transition_count,
+            "transitions": {
+                source: {
+                    target: stats.state_dict()
+                    for target, stats in sorted(table.items())
+                }
+                for source, table in sorted(self._transitions.items())
+            },
+        }
+        validate_runtime_mapping(value, path="g1.local_expectation.learned")
+        return value
+
+    @classmethod
+    def from_learned_state_dict(
+        cls,
+        value: dict[str, Any],
+    ) -> LocalTemporalExpectation:
+        validate_runtime_mapping(value, path="g1.local_expectation.learned")
+        model = cls(LocalExpectationConfig(**value["config"]))
+        model.external_transition_count = int(value["external_transition_count"])
+        model._transitions = {
+            str(source): {
+                str(target): LocalTransitionStats.from_state_dict(dict(stats))
+                for target, stats in table.items()
+            }
+            for source, table in value["transitions"].items()
+        }
+        observed = sum(
+            stats.count
+            for table in model._transitions.values()
+            for stats in table.values()
+        )
+        if observed != model.external_transition_count:
+            raise ValueError("learned transition count does not match transition content")
+        model.proposal_count = 0
+        return model
+
     def state_dict(self) -> dict[str, Any]:
         value = {
             "config": asdict(self.config),
@@ -218,7 +270,7 @@ class LocalTemporalExpectation:
         model.proposal_count = int(value["proposal_count"])
         model._transitions = {
             str(source): {
-                str(target): LocalTransitionStats.from_state_dict(stats)
+                str(target): LocalTransitionStats.from_state_dict(dict(stats))
                 for target, stats in table.items()
             }
             for source, table in value["transitions"].items()

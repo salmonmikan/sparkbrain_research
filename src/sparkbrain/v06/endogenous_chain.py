@@ -185,6 +185,40 @@ class AutonomousEndogenousChainRuntime:
             self._prepare_and_maybe_reinject(external)
         return spikes
 
+    def drain_scheduled_events(
+        self,
+        end_ms: float,
+        *,
+        include_endpoint: bool = True,
+    ) -> tuple[EndogenousChainSpark, ...]:
+        """Process scheduled events without forcing time to ``end_ms``.
+
+        An external world may return a consequence before an
+        evaluator observation horizon. The Field clock therefore
+        stops at the last event that actually occurred.
+        """
+
+        if end_ms < self.field.current_time_ms:
+            raise ValueError("end_ms cannot move backwards")
+        before = len(self.generated_sparks)
+        while self.field._queue:  # noqa: SLF001
+            next_time = self.field._queue[0][0]  # noqa: SLF001
+            if next_time > end_ms or (
+                next_time == end_ms and not include_endpoint
+            ):
+                break
+            self._internal_step_count += 1
+            if (
+                self._internal_step_count
+                > self.config.maximum_internal_steps
+            ):
+                raise RuntimeError("maximum_internal_steps exceeded")
+            arrivals = self._arrival_pulse_ids_at(next_time)
+            spikes = self.field.run_until(next_time)
+            self._observe_spikes(spikes, arrivals)
+        self.transition.expire_pending(self.field.current_time_ms)
+        return tuple(self.generated_sparks[before:])
+
     def advance_silence(
         self,
         end_ms: float,
@@ -194,16 +228,10 @@ class AutonomousEndogenousChainRuntime:
         if end_ms < self.field.current_time_ms:
             raise ValueError("end_ms cannot move backwards")
         before = len(self.generated_sparks)
-        while self.field._queue:  # noqa: SLF001 - retained Field event-loop adapter
-            next_time = self.field._queue[0][0]  # noqa: SLF001
-            if next_time > end_ms or (next_time == end_ms and not include_endpoint):
-                break
-            self._internal_step_count += 1
-            if self._internal_step_count > self.config.maximum_internal_steps:
-                raise RuntimeError("maximum_internal_steps exceeded")
-            arrivals = self._arrival_pulse_ids_at(next_time)
-            spikes = self.field.run_until(next_time)
-            self._observe_spikes(spikes, arrivals)
+        self.drain_scheduled_events(
+            end_ms,
+            include_endpoint=include_endpoint,
+        )
         if include_endpoint and self.field.current_time_ms < end_ms:
             self.field.run_until(end_ms)
         self.transition.expire_pending(end_ms)

@@ -121,6 +121,10 @@ class AnonymousRelationReentry:
         links = self._eligible_links(boundary.port_id)
         if len(links) > self.config.maximum_links_per_boundary:
             raise RuntimeError("relation re-entry link budget exceeded")
+        for _, link in links:
+            target_unit_id = self._target_unit_id(str(link["target"]))
+            if target_unit_id not in field.units:
+                raise KeyError(f"unknown relation re-entry target unit: {target_unit_id}")
 
         self._processed_boundary_event_ids.add(boundary.event_id)
         created: list[RelationReentryRecord] = []
@@ -184,8 +188,8 @@ class AnonymousRelationReentry:
 
     def _eligible_links(self, port_id: str) -> tuple[tuple[str, dict[str, Any]], ...]:
         links = self.consistency.state_dict()["links"]
-        rows = []
-        for link_id, value in sorted(links.items()):
+        rows: list[tuple[str, dict[str, Any]]] = []
+        for link_id, value in links.items():
             link = dict(value)
             if link["port_id"] != port_id:
                 continue
@@ -194,7 +198,23 @@ class AnonymousRelationReentry:
             if float(link["reliability"]) < self.config.minimum_reliability:
                 continue
             rows.append((str(link_id), link))
-        return tuple(rows)
+        return tuple(
+            sorted(
+                rows,
+                key=lambda row: (
+                    str(row[1]["target"]),
+                    int(row[1]["polarity"]),
+                    row[0],
+                ),
+            )
+        )
+
+    @staticmethod
+    def _target_unit_id(target: str) -> int:
+        prefix = "unit:"
+        if not target.startswith(prefix) or not target[len(prefix) :].isdigit():
+            raise ValueError("relation re-entry target must use unit:<non-negative-int>")
+        return int(target[len(prefix) :])
 
     def state_dict(self) -> dict[str, Any]:
         value = {

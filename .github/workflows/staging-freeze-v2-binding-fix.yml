@@ -1,0 +1,103 @@
+name: staging-freeze-v2-binding-fix
+
+on:
+  push:
+    branches: ["v06-capability-staging-20260830"]
+    paths: [".github/workflows/staging-freeze-v2-binding-fix.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v06-capability-staging-20260830
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Bind freeze bundle to the v2 execution pipeline
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("src/sparkbrain/evaluation/v06_confirmatory_freeze_bundle_v2.py")
+          source = path.read_text(encoding="utf-8")
+          source = source.replace(
+              '    "src/sparkbrain/evaluation/v06_confirmatory_adapter_registry.py",',
+              '    "src/sparkbrain/evaluation/v06_confirmatory_adapter_registry_v2.py",',
+          )
+          start = source.index("_CONTRACT_SOURCE_PATHS = (")
+          end = source.index("\n)\n\n_EXPECTED_PRIVILEGES", start) + 2
+          contract_block = '''_CONTRACT_SOURCE_PATHS = (
+              "src/sparkbrain/evaluation/v06_confirmatory_normalized_resource_v2.py",
+              "src/sparkbrain/evaluation/v06_confirmatory_training_schedule.py",
+              "src/sparkbrain/evaluation/v06_confirmatory_schedule_contract.py",
+              "src/sparkbrain/evaluation/v06_confirmatory_adapter_review.py",
+              "src/sparkbrain/evaluation/v06_confirmatory_external_freeze.py",
+              "src/sparkbrain/evaluation/v06_confirmatory_environment_lock_v2.py",
+              "src/sparkbrain/evaluation/v06_confirmatory_freeze_bundle_v2.py",
+              "src/sparkbrain/evaluation/v06_confirmatory_external_verification_v2.py",
+              "src/sparkbrain/evaluation/v06_confirmatory_external_launch_gate_v2.py",
+              "src/sparkbrain/evaluation/v06_confirmatory_external_raw_store.py",
+              "src/sparkbrain/evaluation/v06_confirmatory_verify_external_raw_v2.py",
+              "src/sparkbrain/evaluation/v06_confirmatory_execute_external_v2.py",
+              "src/sparkbrain/evaluation/v06_confirmatory_scoring.py",
+              "src/sparkbrain/evaluation/v06_confirmatory_score_external_v2.py",
+          )'''
+          source = source[:start] + contract_block + source[end:]
+          import_anchor = (
+              "from .v06_confirmatory_heldout_spec import (\n"
+          )
+          resource_import = '''from .v06_confirmatory_normalized_resource_v2 import (
+              ResourceDecisionPolicyV2,
+              normalized_resource_schema_hash_v2,
+          )
+          '''
+          if resource_import not in source:
+              source = source.replace(import_anchor, resource_import + import_anchor, 1)
+          old = '''    resource_contract_hash = _digest(
+              {
+                  "resource_accounting_source": contract_sources[
+                      "src/sparkbrain/evaluation/v06_confirmatory_resource_accounting.py"
+                  ],
+                  "resource_schema": [row.name for row in fields(ConditionResourceRecord)],
+                  "decision_use": "descriptive-only",
+              }
+          )
+          '''
+          new = '''    resource_policy = ResourceDecisionPolicyV2()
+          resource_policy.validate()
+          resource_contract_hash = _digest(
+              {
+                  "decision_policy": resource_policy.state_dict(),
+                  "normalized_resource_schema_hash": (
+                      normalized_resource_schema_hash_v2()
+                  ),
+                  "normalized_resource_source": contract_sources[
+                      "src/sparkbrain/evaluation/"
+                      "v06_confirmatory_normalized_resource_v2.py"
+                  ],
+                  "raw_resource_schema": [
+                      row.name for row in fields(ConditionResourceRecord)
+                  ],
+              }
+          )
+          '''
+          if source.count(old) != 1:
+              raise SystemExit(f"unexpected resource contract block: {source.count(old)}")
+          path.write_text(source.replace(old, new), encoding="utf-8")
+          PY
+      - name: Format and verify
+        run: |
+          python -m pip install "ruff>=0.9"
+          python -m ruff check --fix src/sparkbrain/evaluation/v06_confirmatory_freeze_bundle_v2.py
+      - name: Commit final v2 binding
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/sparkbrain/evaluation/v06_confirmatory_freeze_bundle_v2.py
+          git commit -m "fix(v06): bind freeze bundle to external v2 pipeline"
+          git push origin HEAD:v06-capability-staging-20260830
