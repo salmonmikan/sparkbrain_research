@@ -421,7 +421,7 @@ def _plasticity_stress() -> PlasticityBoundObservation:
                 f"endogenous-stress:{index}",
                 10000.0 + index,
                 index % 4,
-                origin=EventOrigin.ENDOGENOUS,
+                origin=EventOrigin.ENDOGENOUS_UNCONFIRMED,
             )
         )
     after = _connection_hash(field)
