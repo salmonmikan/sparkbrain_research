@@ -37,25 +37,21 @@ def test_candidate_declarations_are_complete_and_unscored() -> None:
     assert not any(row.measurements_present for row in declarations)
 
 
-def test_candidate_rejects_historically_exposed_and_development_seeds() -> None:
+def test_candidate_rejects_historical_confirmatory_seeds() -> None:
     with pytest.raises(ValueError):
         CandidateSpec(
             generation_id="cx01-candidate-illegal",
             seeds=tuple(range(2000, 2010)),
         ).validate()
-    with pytest.raises(ValueError):
-        CandidateSpec(
-            generation_id="cx01-candidate-illegal-dev",
-            seeds=tuple(range(3000, 3010)),
-        ).validate()
 
 
-def test_formal_candidate_rejects_reserved_fixture_seed_band() -> None:
-    with pytest.raises(ValueError):
-        CandidateSpec(
-            generation_id="cx01-candidate-illegal-fixture-reuse",
-            seeds=tuple(range(5000, 5010)),
-        ).validate()
+def test_formal_candidate_rejects_entire_cx01_development_test_band() -> None:
+    for start in (3000, 3998, 4100, 4200, 4300, 4400, 4500, 5000, 5900):
+        with pytest.raises(ValueError, match="development/test seed band"):
+            CandidateSpec(
+                generation_id=f"cx01-candidate-illegal-{start}",
+                seeds=tuple(range(start, start + 10)),
+            ).validate()
 
 
 def test_freeze_and_seal_bind_exact_source_and_candidate() -> None:
