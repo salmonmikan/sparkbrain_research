@@ -85,6 +85,27 @@ class FreezeManifest:
     def manifest_hash(self) -> str:
         return _digest(self.state_dict())
 
+    @classmethod
+    def from_state_dict(cls, state: dict[str, Any]) -> FreezeManifest:
+        manifest = cls(
+            protocol_version=str(state["protocol_version"]),
+            source_git_sha=str(state["source_git_sha"]),
+            candidate_spec_hash=str(state["candidate_spec_hash"]),
+            candidate_grid_hash=str(state["candidate_grid_hash"]),
+            declaration_bundle_hash=str(state["declaration_bundle_hash"]),
+            development_grid_hash=str(state["development_grid_hash"]),
+            comparator_inventory=tuple(str(row) for row in state["comparator_inventory"]),
+            privilege_inventory_hash=str(state["privilege_inventory_hash"]),
+            schedule_policy_hash=str(state["schedule_policy_hash"]),
+            result_schema_hash=str(state["result_schema_hash"]),
+            resource_schema_hash=str(state["resource_schema_hash"]),
+            execution_command=str(state["execution_command"]),
+            artifact_root=str(state["artifact_root"]),
+            status=str(state.get("status", "FROZEN")),
+        )
+        manifest.validate()
+        return manifest
+
 
 @dataclass(frozen=True, slots=True)
 class ExecutionSeal:
@@ -105,13 +126,24 @@ class ExecutionSeal:
         self.validate()
         return asdict(self)
 
+    @classmethod
+    def from_state_dict(cls, state: dict[str, Any]) -> ExecutionSeal:
+        seal = cls(
+            manifest_hash=str(state["manifest_hash"]),
+            source_git_sha=str(state["source_git_sha"]),
+            reviewer=str(state["reviewer"]),
+            approval_digest=str(state["approval_digest"]),
+            approved=bool(state["approved"]),
+        )
+        seal.validate()
+        return seal
+
 
 def _privilege_inventory_hash() -> str:
     return _digest([privilege_profile(kind).state_dict() for kind in CX01_COMPARATOR_INVENTORY])
 
 
 def _schedule_policy_hash() -> str:
-    # Hash a canonical representative shape plus the algorithm version token.
     schedule = build_balanced_exposure_schedule((6, 5, 4))
     return _digest(
         {
