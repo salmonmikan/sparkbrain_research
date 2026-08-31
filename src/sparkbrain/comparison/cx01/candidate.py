@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import json
 from dataclasses import asdict, dataclass
+from enum import StrEnum
 from typing import Any
 
 from .contract import ComparatorKind
@@ -25,6 +26,15 @@ CX01_COMPARATOR_INVENTORY = (
     ComparatorKind.G8_REPLAY,
 )
 
+# Reserved exclusively for schema/freeze tests. Formal candidates are required
+# to avoid this entire band even if only part of it has been instantiated.
+STRUCTURE_FIXTURE_SEEDS = frozenset(range(5000, 5200))
+
+
+class CandidatePurpose(StrEnum):
+    FORMAL = "formal"
+    STRUCTURE_FIXTURE = "structure-fixture"
+
 
 def _digest(value: object) -> str:
     encoded = json.dumps(
@@ -41,31 +51,61 @@ def _digest(value: object) -> str:
 class CandidateSpec:
     generation_id: str
     seeds: tuple[int, ...]
+    purpose: CandidatePurpose = CandidatePurpose.FORMAL
     protocol_version: str = "cx01-comparator-protocol-1"
 
     def validate(self) -> None:
         if not self.generation_id or self.generation_id == DEVELOPMENT_GENERATION_ID:
-            raise ValueError("formal candidate requires a fresh non-development generation")
-        if not self.generation_id.startswith("cx01-candidate-"):
-            raise ValueError("candidate generation id must use cx01-candidate-* namespace")
+            raise ValueError("candidate requires a fresh non-development generation")
         if len(self.seeds) < 10 or len(set(self.seeds)) != len(self.seeds):
-            raise ValueError("formal candidate requires at least ten unique seeds")
-        forbidden = set(DEVELOPMENT_SEEDS).union(HISTORICALLY_EXPOSED_SEEDS)
-        if forbidden.intersection(self.seeds):
-            raise ValueError("candidate seeds overlap exposed/development evidence")
+            raise ValueError("candidate requires at least ten unique seeds")
         if any(seed < 0 for seed in self.seeds):
             raise ValueError("candidate seeds must be non-negative")
+
+        exposed = set(DEVELOPMENT_SEEDS).union(HISTORICALLY_EXPOSED_SEEDS)
+        if exposed.intersection(self.seeds):
+            raise ValueError("candidate seeds overlap exposed/development evidence")
+
+        if self.purpose is CandidatePurpose.FORMAL:
+            if not self.generation_id.startswith("cx01-candidate-"):
+                raise ValueError("formal generation id must use cx01-candidate-* namespace")
+            if STRUCTURE_FIXTURE_SEEDS.intersection(self.seeds):
+                raise ValueError("formal candidate cannot reuse structure-fixture seed band")
+        elif self.purpose is CandidatePurpose.STRUCTURE_FIXTURE:
+            if not self.generation_id.startswith("cx01-fixture-"):
+                raise ValueError("fixture generation id must use cx01-fixture-* namespace")
+            if not set(self.seeds).issubset(STRUCTURE_FIXTURE_SEEDS):
+                raise ValueError("structure fixture must stay inside reserved fixture seed band")
+        else:
+            raise ValueError(f"unsupported candidate purpose: {self.purpose}")
+
+    def require_formal(self) -> None:
+        self.validate()
+        if self.purpose is not CandidatePurpose.FORMAL:
+            raise RuntimeError("structure fixture cannot enter formal capability execution")
 
     def state_dict(self) -> dict[str, Any]:
         self.validate()
         return {
             "generation_id": self.generation_id,
             "protocol_version": self.protocol_version,
+            "purpose": self.purpose.value,
             "seeds": list(self.seeds),
         }
 
     def specification_hash(self) -> str:
         return _digest(self.state_dict())
+
+    @classmethod
+    def from_state_dict(cls, state: dict[str, Any]) -> CandidateSpec:
+        spec = cls(
+            generation_id=str(state["generation_id"]),
+            seeds=tuple(int(seed) for seed in state["seeds"]),
+            purpose=CandidatePurpose(str(state.get("purpose", CandidatePurpose.FORMAL.value))),
+            protocol_version=str(state.get("protocol_version", "cx01-comparator-protocol-1")),
+        )
+        spec.validate()
+        return spec
 
 
 @dataclass(frozen=True, slots=True)
