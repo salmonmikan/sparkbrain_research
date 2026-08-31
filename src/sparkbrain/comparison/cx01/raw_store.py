@@ -70,6 +70,7 @@ class FormalRawStore:
                 if path.is_file():
                     path.chmod(0o444)
             os.replace(temporary, target)
+            target.chmod(0o555)
         except Exception:
             shutil.rmtree(temporary, ignore_errors=True)
             raise
@@ -104,7 +105,7 @@ class FormalRawStore:
             raise RuntimeError(f"formal raw execution {index} result must be an object")
         return row
 
-    def finalize(self, expected_count: int) -> tuple[dict[str, Any], ...]:
+    def _read_expected_rows(self, expected_count: int) -> tuple[dict[str, Any], ...]:
         if expected_count < 1:
             raise ValueError("formal raw expected count must be positive")
         observed = self.completed_indices()
@@ -113,10 +114,16 @@ class FormalRawStore:
             raise RuntimeError(
                 f"formal raw matrix incomplete: observed={len(observed)} expected={expected_count}"
             )
-        rows = tuple(self._verify_cell(index) for index in expected)
-        aggregate_hash = _sha256_bytes(b"".join(_canonical_bytes(row) + b"\n" for row in rows))
+        return tuple(self._verify_cell(index) for index in expected)
+
+    @staticmethod
+    def _aggregate_hash(rows: tuple[dict[str, Any], ...]) -> str:
+        return _sha256_bytes(b"".join(_canonical_bytes(row) + b"\n" for row in rows))
+
+    def finalize(self, expected_count: int) -> tuple[dict[str, Any], ...]:
+        rows = self._read_expected_rows(expected_count)
         marker = {
-            "aggregate_hash": aggregate_hash,
+            "aggregate_hash": self._aggregate_hash(rows),
             "execution_count": expected_count,
             "run_id": self.run_id,
             "state": "RAW_COMPLETE",
@@ -130,6 +137,22 @@ class FormalRawStore:
         complete_path.chmod(0o444)
         (self.root / "STATE.json").chmod(0o444)
         self.root.chmod(0o555)
+        return rows
+
+    def read_finalized(self, expected_count: int) -> tuple[dict[str, Any], ...]:
+        complete_path = self.root / "RAW_COMPLETE.json"
+        if not complete_path.is_file():
+            raise RuntimeError("formal raw evidence is not locked complete")
+        marker = json.loads(complete_path.read_text(encoding="utf-8"))
+        if marker.get("state") != "RAW_COMPLETE":
+            raise RuntimeError("formal raw completion marker has invalid state")
+        if int(marker.get("execution_count", -1)) != expected_count:
+            raise RuntimeError("formal raw completion count mismatch")
+        if marker.get("run_id") != self.run_id:
+            raise RuntimeError("formal raw completion run identity mismatch")
+        rows = self._read_expected_rows(expected_count)
+        if marker.get("aggregate_hash") != self._aggregate_hash(rows):
+            raise RuntimeError("formal raw aggregate hash mismatch")
         return rows
 
     def mark_failed(self, exc: BaseException) -> Path:
