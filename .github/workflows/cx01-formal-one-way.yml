@@ -1,4 +1,5 @@
 name: cx01-formal-one-way
+run-name: cx01-formal-${{ inputs.control_branch }}-${{ inputs.source_sha }}
 
 on:
   workflow_dispatch:
@@ -38,6 +39,7 @@ on:
         type: string
 
 permissions:
+  actions: read
   contents: read
 
 jobs:
@@ -50,7 +52,39 @@ jobs:
       LANG: C.UTF-8
       CONTROL_DIR: ${{ github.workspace }}/control
       SOURCE_DIR: ${{ github.workspace }}/source
+      FORMAL_RUN_NAME: cx01-formal-${{ inputs.control_branch }}-${{ inputs.source_sha }}
     steps:
+      - name: Reject any prior formal workflow run for this control key
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl -fsSL \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "$GITHUB_API_URL/repos/$GITHUB_REPOSITORY/actions/runs?event=workflow_dispatch&per_page=100" \
+            > /tmp/cx01-runs.json
+          python - <<'PY'
+          import json
+          import os
+
+          with open("/tmp/cx01-runs.json", encoding="utf-8") as handle:
+              runs = json.load(handle)["workflow_runs"]
+          current = int(os.environ["GITHUB_RUN_ID"])
+          name = os.environ["FORMAL_RUN_NAME"]
+          prior = [
+              row
+              for row in runs
+              if row["id"] != current
+              and row.get("name") == "cx01-formal-one-way"
+              and row.get("display_title") == name
+          ]
+          if prior:
+              raise SystemExit(
+                  f"formal control key already has a previous workflow run: {prior[0]['id']}"
+              )
+          PY
+
       - name: Checkout preconsumed control branch
         uses: actions/checkout@v4
         with:
@@ -112,7 +146,18 @@ jobs:
           --source-sha "$SOURCE_SHA"
           --artifact-root "$ARTIFACT_ROOT"
 
-      - name: Upload formal evidence or local failure marker
+      - name: Score only after immutable raw completion
+        env:
+          CANDIDATE_PATH: ${{ inputs.candidate_path }}
+          MANIFEST_PATH: ${{ inputs.manifest_path }}
+          ARTIFACT_ROOT: ${{ inputs.artifact_root }}
+        run: >-
+          python -m sparkbrain.comparison.cx01.formal_scoring
+          --candidate "$CONTROL_DIR/$CANDIDATE_PATH"
+          --manifest "$CONTROL_DIR/$MANIFEST_PATH"
+          --artifact-root "$ARTIFACT_ROOT"
+
+      - name: Upload formal evidence, raw partials, or failure markers
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -122,4 +167,5 @@ jobs:
 
 # This workflow has read-only repository permissions. It can execute only after
 # a persistent STARTED marker has already been committed to a dedicated control
-# branch by a separate pre-execution operation.
+# branch by a separate pre-execution operation. A prior workflow run with the
+# same source/control key causes a fail-closed refusal before capability calls.
