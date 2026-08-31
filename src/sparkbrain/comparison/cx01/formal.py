@@ -14,6 +14,7 @@ from .candidate import (
     candidate_grid_hash,
     declaration_bundle_hash,
 )
+from .control import OneWayControlMarker, require_control_marker
 from .development import run_development_execution
 from .freeze import ExecutionSeal, FreezeManifest, require_execution_seal
 
@@ -60,7 +61,7 @@ def claim_one_way_execution(
     candidate: CandidateSpec,
     manifest: FreezeManifest,
 ) -> Path:
-    """Create the irreversible STARTED marker before any capability call."""
+    """Create the local irreversible STARTED marker before capability calls."""
 
     artifact_root.mkdir(parents=True, exist_ok=True)
     target = artifact_root / run_id
@@ -90,12 +91,13 @@ def execute_formal_candidate(
     *,
     current_source_git_sha: str,
     artifact_root: Path,
+    control_marker: OneWayControlMarker | None = None,
 ) -> Path:
-    """Execute one fully sealed CX01 comparator candidate exactly once.
+    """Execute one fully sealed and persistently consumed candidate exactly once.
 
-    Seal/source and candidate bindings are validated before `STARTED` is
-    written. `STARTED` is then created before any comparator is constructed, so
-    a crash or partial result permanently consumes that candidate execution.
+    The externally committed control marker is required before capability. A
+    second local STARTED marker is then created before model construction so a
+    process-level retry also fails closed.
     """
 
     require_execution_seal(
@@ -104,6 +106,14 @@ def execute_formal_candidate(
         current_source_git_sha=current_source_git_sha,
     )
     _validate_formal_binding(candidate, manifest)
+    if control_marker is None:
+        raise RuntimeError("persistent one-way control marker is required")
+    require_control_marker(
+        control_marker,
+        candidate,
+        manifest,
+        current_source_git_sha=current_source_git_sha,
+    )
     if str(artifact_root) != manifest.artifact_root:
         raise RuntimeError("artifact root does not match frozen manifest")
 
@@ -146,6 +156,7 @@ def main() -> None:
     parser.add_argument("--candidate", type=Path, required=True)
     parser.add_argument("--manifest", type=Path, required=True)
     parser.add_argument("--seal", type=Path, required=True)
+    parser.add_argument("--control-marker", type=Path, required=True)
     parser.add_argument("--source-sha", required=True)
     parser.add_argument("--artifact-root", type=Path, required=True)
     args = parser.parse_args()
@@ -153,12 +164,14 @@ def main() -> None:
     candidate = CandidateSpec.from_state_dict(_read_json(args.candidate))
     manifest = FreezeManifest.from_state_dict(_read_json(args.manifest))
     seal = ExecutionSeal.from_state_dict(_read_json(args.seal))
+    control_marker = OneWayControlMarker.from_state_dict(_read_json(args.control_marker))
     output = execute_formal_candidate(
         candidate,
         manifest,
         seal,
         current_source_git_sha=args.source_sha,
         artifact_root=args.artifact_root,
+        control_marker=control_marker,
     )
     print(output)
 
