@@ -6,7 +6,7 @@ from pathlib import Path
 import pytest
 
 from sparkbrain.comparison.cx01.artifacts import write_run_atomic
-from sparkbrain.comparison.cx01.candidate import CandidateSpec
+from sparkbrain.comparison.cx01.candidate import CandidatePurpose, CandidateSpec
 from sparkbrain.comparison.cx01.formal import execute_formal_candidate
 from sparkbrain.comparison.cx01.freeze import (
     ExecutionSeal,
@@ -17,8 +17,9 @@ from sparkbrain.comparison.cx01.freeze import (
 
 def _candidate() -> CandidateSpec:
     return CandidateSpec(
-        generation_id="cx01-candidate-formal-fixture-001",
+        generation_id="cx01-fixture-formal-gate-001",
         seeds=tuple(range(5100, 5110)),
+        purpose=CandidatePurpose.STRUCTURE_FIXTURE,
     )
 
 
@@ -95,6 +96,22 @@ def test_formal_execution_rejects_source_mismatch_before_capability(
             manifest,
             seal,
             current_source_git_sha="e" * 40,
+            artifact_root=tmp_path,
+        )
+    assert list(tmp_path.iterdir()) == []
+
+
+def test_structure_fixture_cannot_execute_even_with_valid_seal(
+    tmp_path: Path,
+) -> None:
+    manifest = _manifest()
+    seal = _seal(manifest)
+    with pytest.raises(RuntimeError, match="structure fixture"):
+        execute_formal_candidate(
+            _candidate(),
+            manifest,
+            seal,
+            current_source_git_sha=manifest.source_git_sha,
             artifact_root=tmp_path,
         )
     assert list(tmp_path.iterdir()) == []
