@@ -6,6 +6,7 @@ import pytest
 
 from sparkbrain.comparison.cx01.candidate import (
     CX01_COMPARATOR_INVENTORY,
+    CandidatePurpose,
     CandidateSpec,
     build_outcome_blind_declarations,
 )
@@ -18,11 +19,10 @@ from sparkbrain.comparison.cx01.worlds import CX01Family
 
 
 def _candidate() -> CandidateSpec:
-    # Structure-only test fixture. These seeds are exposed by this test and
-    # must never be selected for a future formal CX01 candidate.
     return CandidateSpec(
-        generation_id="cx01-candidate-structure-fixture-001",
+        generation_id="cx01-fixture-structure-001",
         seeds=tuple(range(5000, 5010)),
+        purpose=CandidatePurpose.STRUCTURE_FIXTURE,
     )
 
 
@@ -47,6 +47,14 @@ def test_candidate_rejects_historically_exposed_and_development_seeds() -> None:
         CandidateSpec(
             generation_id="cx01-candidate-illegal-dev",
             seeds=tuple(range(3000, 3010)),
+        ).validate()
+
+
+def test_formal_candidate_rejects_reserved_fixture_seed_band() -> None:
+    with pytest.raises(ValueError):
+        CandidateSpec(
+            generation_id="cx01-candidate-illegal-fixture-reuse",
+            seeds=tuple(range(5000, 5010)),
         ).validate()
 
 
