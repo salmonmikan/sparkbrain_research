@@ -41,6 +41,7 @@ def _require_git_sha(value: str) -> None:
 class FreezeManifest:
     protocol_version: str
     source_git_sha: str
+    builder: str
     candidate_spec_hash: str
     candidate_grid_hash: str
     declaration_bundle_hash: str
@@ -56,6 +57,8 @@ class FreezeManifest:
 
     def validate(self) -> None:
         _require_git_sha(self.source_git_sha)
+        if not self.builder.strip():
+            raise ValueError("freeze manifest requires a builder identity")
         for name in (
             "candidate_spec_hash",
             "candidate_grid_hash",
@@ -90,6 +93,7 @@ class FreezeManifest:
         manifest = cls(
             protocol_version=str(state["protocol_version"]),
             source_git_sha=str(state["source_git_sha"]),
+            builder=str(state["builder"]),
             candidate_spec_hash=str(state["candidate_spec_hash"]),
             candidate_grid_hash=str(state["candidate_grid_hash"]),
             declaration_bundle_hash=str(state["declaration_bundle_hash"]),
@@ -193,6 +197,7 @@ def _resource_schema_hash() -> str:
 def build_freeze_manifest(
     *,
     source_git_sha: str,
+    builder: str,
     candidate: CandidateSpec,
     execution_command: str,
     artifact_root: str,
@@ -201,6 +206,7 @@ def build_freeze_manifest(
     manifest = FreezeManifest(
         protocol_version=candidate.protocol_version,
         source_git_sha=source_git_sha,
+        builder=builder,
         candidate_spec_hash=candidate.specification_hash(),
         candidate_grid_hash=candidate_grid_hash(candidate),
         declaration_bundle_hash=declaration_bundle_hash(candidate),
@@ -225,10 +231,13 @@ def issue_execution_seal(
     approved: bool,
 ) -> ExecutionSeal:
     manifest.validate()
+    normalized_reviewer = reviewer.strip()
+    if normalized_reviewer == manifest.builder.strip():
+        raise ValueError("freeze builder cannot self-approve the execution seal")
     seal = ExecutionSeal(
         manifest_hash=manifest.manifest_hash(),
         source_git_sha=manifest.source_git_sha,
-        reviewer=reviewer,
+        reviewer=normalized_reviewer,
         approval_digest=approval_digest,
         approved=approved,
     )
@@ -245,6 +254,8 @@ def require_execution_seal(
     manifest.validate()
     seal.validate()
     _require_git_sha(current_source_git_sha)
+    if seal.reviewer.strip() == manifest.builder.strip():
+        raise RuntimeError("execution seal is not independent of freeze builder")
     if manifest.source_git_sha != current_source_git_sha:
         raise RuntimeError("frozen source SHA does not match current source")
     if seal.source_git_sha != current_source_git_sha:
