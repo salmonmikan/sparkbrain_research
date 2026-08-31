@@ -8,6 +8,7 @@ from .artifacts import write_run_atomic
 from .candidate import (
     CX01_COMPARATOR_INVENTORY,
     CandidateSpec,
+    build_candidate_grid,
     candidate_grid_hash,
     declaration_bundle_hash,
 )
@@ -17,8 +18,9 @@ from .freeze import ExecutionSeal, FreezeManifest, require_execution_seal
 
 def _run_id(manifest: FreezeManifest, candidate: CandidateSpec) -> str:
     payload = (
-        f"{manifest.manifest_hash()}|{candidate.specification_hash()}|{manifest.source_git_sha}"
-    ).encode()
+        f"{manifest.manifest_hash()}|{candidate.specification_hash()}|"
+        f"{manifest.source_git_sha}"
+    ).encode("utf-8")
     return f"cx01-formal-{hashlib.sha256(payload).hexdigest()[:24]}"
 
 
@@ -26,7 +28,7 @@ def _validate_formal_binding(
     candidate: CandidateSpec,
     manifest: FreezeManifest,
 ) -> None:
-    candidate.validate()
+    candidate.require_formal()
     manifest.validate()
     if candidate.specification_hash() != manifest.candidate_spec_hash:
         raise RuntimeError("candidate specification does not match frozen manifest")
@@ -54,20 +56,20 @@ def execute_formal_candidate(
     one-way marker: an existing directory makes same-candidate rerun fail closed.
     """
 
-    _validate_formal_binding(candidate, manifest)
+    # Seal/source validation happens before any capability model is constructed.
     require_execution_seal(
         manifest,
         seal,
         current_source_git_sha=current_source_git_sha,
     )
+    _validate_formal_binding(candidate, manifest)
+
     run_id = _run_id(manifest, candidate)
     target = artifact_root / run_id
     if target.exists():
         raise RuntimeError("formal CX01 candidate has already been executed")
 
     rows: list[dict[str, Any]] = []
-    from .candidate import build_candidate_grid
-
     for world in build_candidate_grid(candidate):
         for kind in CX01_COMPARATOR_INVENTORY:
             execution = run_development_execution(kind, world)
