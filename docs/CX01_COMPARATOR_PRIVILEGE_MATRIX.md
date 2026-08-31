@@ -7,8 +7,8 @@ Privilege metadata is architecture-interpretation information. It does not itsel
 | Capability / privilege | G3 | G4 | G5 | G6 | G7 | G8-P | G8-R |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | anonymous token input | yes | yes | yes | yes | yes | yes | yes |
-| precise event timestamp used | no | no | no | no | no | yes | yes |
-| explicit episode boundary used | no | implicit Assembly segmentation | no | yes | yes | yes | yes |
+| architecture-neutral episode boundary supplied | **yes** | **yes** | **yes** | **yes** | **yes** | **yes** | **yes** |
+| precise event timestamp used for prediction | no | no | no | no | no | yes | yes |
 | higher-order context state | no | explicit sequence Assembly | no | yes | yes | yes | yes |
 | fixed anonymous SDR | no | no | no | no | yes | no | no |
 | explicit Assembly state | no | **yes** | no | no | no | no | no |
@@ -20,6 +20,12 @@ Privilege metadata is architecture-interpretation information. It does not itsel
 | evaluator context ID visible | **no** | **no** | **no** | **no** | **no** | **no** | **no** |
 | correct target visible | **no** | **no** | **no** | **no** | **no** | **no** | **no** |
 
+## Shared episode segmentation
+
+Every CX01 comparator receives the same architecture-neutral `episode_start` flag. G3/G5 use it to prevent accidental transitions across episode boundaries, G4 uses it to delimit explicit sequence Assembly observations, and G6/G7/G8 reset their recent episode context at the same boundary.
+
+The boundary therefore cannot be treated as a G6/G7/G8-only capability. It is a **shared experimental privilege** and is explicitly included in every comparator privilege profile.
+
 ## Interpretation rules
 
 ### G3 vs G6
@@ -28,7 +34,7 @@ A G6-only improvement may be attributed to higher-order recent context only afte
 
 ### G6/G7 vs G8
 
-The TIMING family intentionally holds the anonymous token sequence constant while changing temporal spacing. G6/G7 do not use precise timestamps; G8 does. Therefore G8-only success in TIMING is an intended capability separation rather than an efficiency or global-superiority claim.
+The TIMING family intentionally holds the anonymous token sequence constant while changing temporal spacing. G6/G7 receive timestamps as part of the shared event contract but do not use them to distinguish prediction state; G8 explicitly does. Therefore G8-only success in TIMING is an intended capability separation rather than an efficiency or global-superiority claim.
 
 ### G8-P vs G8-R
 
