@@ -70,14 +70,14 @@ def test_endogenous_observations_cannot_write_connection_state() -> None:
             time_ms=20.0,
             unit_id=0,
             magnitude=1.0,
-            origin=EventOrigin.ENDOGENOUS,
+            origin=EventOrigin.ENDOGENOUS_UNCONFIRMED,
         ),
         runtime_pulse(
             event_id="endogenous:1",
             time_ms=24.0,
             unit_id=1,
             magnitude=1.0,
-            origin=EventOrigin.ENDOGENOUS,
+            origin=EventOrigin.ENDOGENOUS_UNCONFIRMED,
         ),
     )
     assert connection_state_hash(field) == before
