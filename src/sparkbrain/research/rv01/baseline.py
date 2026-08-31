@@ -11,24 +11,24 @@ from sparkbrain.evaluation.v06_revision_probe import run_canonical_revision_suit
 from sparkbrain.evaluation.v06_state_probe import run_canonical_state_probe
 from sparkbrain.v06.foundation import digest
 
-FROZEN_V06_CODE_SHA = "f55f2ad9df1484a7ffb88850097ec5c5a7a41791"
-FROZEN_V06_CI_RUN_ID = 33258287966
+FROZEN_V06_CODE_SHA = "1c89324958ffb3619878a6e0791aaf3c7a14c5da"
+FROZEN_V06_CI_RUN_ID = 33342374956
 
-# Git blob IDs from the frozen v0.6 code tree. RV01 is allowed to import this
-# baseline, but it must not silently rewrite these mechanisms while using them
-# as its comparison condition.
+# Git blob IDs from the post-3600 formal v0.6.1 code tree. RV01 is allowed to
+# import this baseline, but it must not silently rewrite these mechanisms while
+# using them as its comparison condition.
 FROZEN_RUNTIME_BLOBS: dict[str, str] = {
     "src/sparkbrain/v06/boundary.py": "f0683e9bcfad9b54d8d7cdbfc9798bf55100cd9c",
-    "src/sparkbrain/v06/consistency.py": "b2b156335d791d8d72fb2a6232fa742eed9146fb",
+    "src/sparkbrain/v06/consistency.py": "2752b3efc2bd17b35376dbae107cea817041896e",
     "src/sparkbrain/v06/endogenous_chain.py": "10a487cd7f62ba1f6ef651c8f15be1a08d9d8e1c",
     "src/sparkbrain/v06/forward.py": "77051083d52add239e1624e276de7b50fe40737f",
     "src/sparkbrain/v06/foundation.py": "35f9cf7065bd22449375cd315d3047bd0b3e9691",
     "src/sparkbrain/v06/g0.py": "02378aad2c4d87af1a9cb441c4b45d2c3e0fe6e7",
-    "src/sparkbrain/v06/local_expectation.py": "dc823403b301eaa8f7f2505c9e17e5266cedbe68",
+    "src/sparkbrain/v06/local_expectation.py": "caeb0b7ccc07ce9fdf26f56b25b11ba59fbc8594",
     "src/sparkbrain/v06/local_transition.py": "df3ed3b349d6745d165f2e772898783dc472d5f3",
     "src/sparkbrain/v06/reality.py": "4f43d6be7427cb15afaedcbb449d63dfa3b25291",
     "src/sparkbrain/v06/reinjection.py": "4df023a7ea0df53e3e8f4f6bbb44789d904a3cac",
-    "src/sparkbrain/v06/relation_reentry.py": "fb3c6d89785f099b2f0d8ebc99fe411dd57b8ae2",
+    "src/sparkbrain/v06/relation_reentry.py": "0feff95f11809caec51c89eab1308c09f6b6f59b",
     "src/sparkbrain/v06/taxonomy.py": "2be0ffe1a8af4022be30d6af3313be9c0f9c8888",
     "src/sparkbrain/v06/world_boundary.py": "9b62fb46326ad94081e3d6994e935d0362d3e131",
     "src/sparkbrain/evaluation/v06_boundary_probe.py": (
@@ -155,7 +155,7 @@ def _event_targets(events: tuple[dict[str, Any], ...]) -> tuple[str, ...]:
 
 
 def run_frozen_v06_baseline() -> FrozenBaselineReport:
-    """Reproduce the canonical v0.6 evidence without modifying its runtime."""
+    """Reproduce the canonical post-3600 v0.6.1 evidence without modifying it."""
 
     state = run_canonical_state_probe()
     chain = run_canonical_chain_suite()
