@@ -11,7 +11,7 @@ from typing import Any
 
 from .candidate import CX01_COMPARATOR_INVENTORY, CandidateSpec
 from .contract import ComparatorKind
-from .formal import _run_id
+from .formal import _run_id, _semantic_execution_hash
 from .formal_policy import FormalScoringPolicy
 from .freeze import FreezeManifest
 from .privilege import privilege_profile
@@ -66,6 +66,23 @@ class FormalAnalysis:
         }
 
 
+def _validate_semantic_hash(row: dict[str, Any]) -> None:
+    identity_payload = {
+        "candidate_spec_hash": row["candidate_spec_hash"],
+        "family": row["family"],
+        "formal_index": int(row["formal_index"]),
+        "kind": row["kind"],
+        "manifest_hash": row["manifest_hash"],
+        "seed": int(row["seed"]),
+        "training_transcript_hash": row["training_transcript_hash"],
+        "world_hash": row["world_hash"],
+    }
+    expected = _semantic_execution_hash(identity_payload=identity_payload, row=row)
+    observed = str(row.get("semantic_execution_hash", ""))
+    if observed != expected:
+        raise RuntimeError("formal row semantic execution hash mismatch")
+
+
 def _validate_rows(
     rows: tuple[dict[str, Any], ...],
     *,
@@ -116,10 +133,12 @@ def _validate_rows(
         if not isinstance(decision.get("passed"), bool):
             raise RuntimeError("formal row decision must contain a Boolean pass value")
 
+        resource = row.get("resource")
+        if not isinstance(resource, dict):
+            raise RuntimeError("formal row is missing resource metadata")
+        _validate_semantic_hash(row)
+
         if policy.require_privilege_match:
-            resource = row.get("resource")
-            if not isinstance(resource, dict):
-                raise RuntimeError("formal row is missing resource metadata")
             observed_privileges = tuple(str(value) for value in resource.get("privileges", ()))
             expected_privileges = tuple(
                 value.value for value in privilege_profile(kind).privileges
