@@ -31,6 +31,8 @@ class PrivilegeProfile:
     def validate(self) -> None:
         if len(set(self.privileges)) != len(self.privileges):
             raise ValueError("privileges must be unique")
+        if ComparatorPrivilege.EXPLICIT_EPISODE_BOUNDARY not in self.privileges:
+            raise ValueError("all CX01 comparators must disclose shared episode segmentation")
         if self.generated_events_may_train:
             raise ValueError("CX01 comparators must not self-train on generated events")
         if self.evaluator_context_id_visible:
@@ -47,31 +49,26 @@ class PrivilegeProfile:
 
 
 def privilege_profile(kind: ComparatorKind) -> PrivilegeProfile:
-    mapping = {
+    shared = (ComparatorPrivilege.EXPLICIT_EPISODE_BOUNDARY,)
+    architecture_specific = {
         ComparatorKind.G3_FIRST_ORDER: (),
         ComparatorKind.G4_ASSEMBLY: (ComparatorPrivilege.EXPLICIT_ASSEMBLY_STATE,),
         ComparatorKind.G5_TYPED: (
             ComparatorPrivilege.TYPED_FUNCTIONAL_HEADS,
             ComparatorPrivilege.SCALAR_REWARD,
         ),
-        ComparatorKind.G6_VARIABLE_ORDER: (
-            ComparatorPrivilege.EXPLICIT_EPISODE_BOUNDARY,
-            ComparatorPrivilege.HIGH_ORDER_CONTEXT,
-        ),
+        ComparatorKind.G6_VARIABLE_ORDER: (ComparatorPrivilege.HIGH_ORDER_CONTEXT,),
         ComparatorKind.G7_HTM_TEMPORAL_MEMORY: (
-            ComparatorPrivilege.EXPLICIT_EPISODE_BOUNDARY,
             ComparatorPrivilege.HIGH_ORDER_CONTEXT,
             ComparatorPrivilege.FIXED_TOKEN_SDR,
             ComparatorPrivilege.PREDICTIVE_STATE_READOUT,
         ),
         ComparatorKind.G8_PREDICTION: (
-            ComparatorPrivilege.EXPLICIT_EPISODE_BOUNDARY,
             ComparatorPrivilege.HIGH_ORDER_CONTEXT,
             ComparatorPrivilege.PRECISE_TIMESTAMPS,
             ComparatorPrivilege.PREDICTIVE_STATE_READOUT,
         ),
         ComparatorKind.G8_REPLAY: (
-            ComparatorPrivilege.EXPLICIT_EPISODE_BOUNDARY,
             ComparatorPrivilege.HIGH_ORDER_CONTEXT,
             ComparatorPrivilege.PRECISE_TIMESTAMPS,
             ComparatorPrivilege.GLOBAL_REPLAY_MODE_SWITCH,
@@ -79,7 +76,7 @@ def privilege_profile(kind: ComparatorKind) -> PrivilegeProfile:
     }
     profile = PrivilegeProfile(
         kind=kind,
-        privileges=mapping[kind],
+        privileges=shared + architecture_specific[kind],
         generated_events_may_train=False,
         evaluator_context_id_visible=False,
         correct_target_visible=False,
