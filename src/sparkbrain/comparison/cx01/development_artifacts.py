@@ -3,8 +3,14 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
+from typing import Any
 
-from .development import development_summary, run_development_matrix
+from .development import (
+    COMPARATOR_KINDS,
+    DevelopmentExecution,
+    development_summary,
+    run_development_matrix,
+)
 
 
 def _canonical(value: object) -> str:
@@ -15,6 +21,40 @@ def _canonical(value: object) -> str:
         separators=(",", ":"),
         sort_keys=True,
     )
+
+
+def _training_transcript_audit(
+    rows: tuple[DevelopmentExecution, ...],
+) -> dict[str, Any]:
+    grouped: dict[tuple[str, int], list[DevelopmentExecution]] = {}
+    for row in rows:
+        grouped.setdefault((row.family.value, row.seed), []).append(row)
+
+    mismatches: list[str] = []
+    incomplete: list[str] = []
+    for (family, seed), selected in sorted(grouped.items()):
+        key = f"{family}|{seed}"
+        if len(selected) != len(COMPARATOR_KINDS):
+            incomplete.append(key)
+            continue
+        kinds = {row.kind for row in selected}
+        hashes = {row.training_transcript_hash for row in selected}
+        if kinds != set(COMPARATOR_KINDS):
+            incomplete.append(key)
+        if len(hashes) != 1:
+            mismatches.append(key)
+
+    audit = {
+        "architecture_count": len(COMPARATOR_KINDS),
+        "complete_world_count": len(grouped) - len(set(incomplete)),
+        "incomplete_worlds": incomplete,
+        "matching_transcript_world_count": len(grouped) - len(set(mismatches)),
+        "transcript_mismatch_worlds": mismatches,
+        "world_count": len(grouped),
+    }
+    if incomplete or mismatches:
+        raise RuntimeError(f"CX01 development fairness audit failed: {audit}")
+    return audit
 
 
 def write_development_artifacts(output_dir: Path) -> tuple[Path, Path]:
@@ -28,8 +68,10 @@ def write_development_artifacts(output_dir: Path) -> tuple[Path, Path]:
         for row in rows:
             handle.write(_canonical(row.state_dict()))
             handle.write("\n")
+    summary = development_summary(rows)
+    summary["training_transcript_audit"] = _training_transcript_audit(rows)
     summary_path.write_text(
-        json.dumps(development_summary(rows), indent=2, sort_keys=True) + "\n",
+        json.dumps(summary, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",
         newline="\n",
     )
