@@ -15,8 +15,9 @@ from .candidate import (
     declaration_bundle_hash,
 )
 from .control import OneWayControlMarker, require_control_marker
-from .development import run_development_execution
+from .development import DevelopmentExecution, run_development_execution
 from .freeze import ExecutionSeal, FreezeManifest, require_execution_seal
+from .raw_store import FormalRawStore
 
 
 def _run_id(manifest: FreezeManifest, candidate: CandidateSpec) -> str:
@@ -66,7 +67,8 @@ def claim_one_way_execution(
     artifact_root.mkdir(parents=True, exist_ok=True)
     target = artifact_root / run_id
     marker = artifact_root / f"{run_id}.STARTED.json"
-    if target.exists() or marker.exists():
+    raw_root = artifact_root / f"{run_id}.RAW"
+    if target.exists() or marker.exists() or raw_root.exists():
         raise RuntimeError("formal CX01 candidate has already been opened")
     payload = {
         "candidate_spec_hash": candidate.specification_hash(),
@@ -84,6 +86,55 @@ def claim_one_way_execution(
     return marker
 
 
+def _formal_execution_row(
+    *,
+    index: int,
+    execution: DevelopmentExecution,
+    candidate: CandidateSpec,
+    manifest: FreezeManifest,
+) -> dict[str, Any]:
+    row = execution.state_dict()
+    identity_payload = {
+        "candidate_spec_hash": candidate.specification_hash(),
+        "family": execution.family.value,
+        "formal_index": index,
+        "kind": execution.kind.value,
+        "manifest_hash": manifest.manifest_hash(),
+        "seed": execution.seed,
+        "training_transcript_hash": execution.training_transcript_hash,
+        "world_hash": execution.world_hash,
+    }
+    execution_id = hashlib.sha256(_canonical_bytes(identity_payload)).hexdigest()
+    return {
+        "candidate_spec_hash": candidate.specification_hash(),
+        "execution_id": execution_id,
+        "formal_index": index,
+        "manifest_hash": manifest.manifest_hash(),
+        **row,
+    }
+
+
+def _write_finalization_failure(
+    artifact_root: Path,
+    *,
+    run_id: str,
+    exc: BaseException,
+) -> None:
+    marker = artifact_root / f"{run_id}.FINALIZATION_FAILED.json"
+    payload = {
+        "error_message": str(exc),
+        "error_type": type(exc).__name__,
+        "run_id": run_id,
+        "state": "FINALIZATION_FAILED",
+    }
+    try:
+        with marker.open("xb") as handle:
+            handle.write(_canonical_bytes(payload) + b"\n")
+        marker.chmod(0o444)
+    except FileExistsError:
+        pass
+
+
 def execute_formal_candidate(
     candidate: CandidateSpec,
     manifest: FreezeManifest,
@@ -96,8 +147,10 @@ def execute_formal_candidate(
     """Execute one fully sealed and persistently consumed candidate exactly once.
 
     The externally committed control marker is required before capability. A
-    second local STARTED marker is then created before model construction so a
-    process-level retry also fails closed.
+    second local STARTED marker is then created before model construction. Each
+    execution is atomically retained in a raw store before the next comparator
+    call. Aggregate publication occurs only after the complete raw matrix is
+    verified and locked.
     """
 
     require_execution_seal(
@@ -125,23 +178,48 @@ def execute_formal_candidate(
         manifest=manifest,
     )
 
-    rows: list[dict[str, Any]] = []
-    for world in build_candidate_grid(candidate):
-        for kind in CX01_COMPARATOR_INVENTORY:
-            execution = run_development_execution(kind, world)
-            rows.append(execution.state_dict())
-
+    raw_store = FormalRawStore(artifact_root, run_id)
+    raw_store.initialize()
     expected = len(candidate.seeds) * 6 * len(CX01_COMPARATOR_INVENTORY)
-    if len(rows) != expected:
-        raise RuntimeError("formal CX01 execution matrix is incomplete")
+    index = 0
+    try:
+        for world in build_candidate_grid(candidate):
+            for kind in CX01_COMPARATOR_INVENTORY:
+                execution = run_development_execution(kind, world)
+                row = _formal_execution_row(
+                    index=index,
+                    execution=execution,
+                    candidate=candidate,
+                    manifest=manifest,
+                )
+                raw_store.write_execution(index, row)
+                index += 1
+        if index != expected:
+            raise RuntimeError("formal CX01 execution matrix is incomplete")
+        rows = raw_store.finalize(expected)
+    except Exception as exc:
+        if not (raw_store.root / "RAW_COMPLETE.json").exists():
+            try:
+                raw_store.mark_failed(exc)
+            except Exception:
+                pass
+        raise
 
-    return write_run_atomic(
-        artifact_root,
-        run_id=run_id,
-        manifest=manifest,
-        seal=seal,
-        rows=rows,
-    )
+    try:
+        return write_run_atomic(
+            artifact_root,
+            run_id=run_id,
+            manifest=manifest,
+            seal=seal,
+            rows=rows,
+        )
+    except Exception as exc:
+        _write_finalization_failure(
+            artifact_root,
+            run_id=run_id,
+            exc=exc,
+        )
+        raise
 
 
 def _read_json(path: Path) -> dict[str, Any]:
