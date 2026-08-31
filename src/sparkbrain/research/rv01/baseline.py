@@ -20,7 +20,7 @@ FROZEN_V06_CI_RUN_ID = 33342374956
 FROZEN_RUNTIME_BLOBS: dict[str, str] = {
     "src/sparkbrain/v06/boundary.py": "f0683e9bcfad9b54d8d7cdbfc9798bf55100cd9c",
     "src/sparkbrain/v06/consistency.py": "2752b3efc2bd17b35376dbae107cea817041896e",
-    "src/sparkbrain/v06/endogenous_chain.py": "10a487cd7f62ba1f6ef651c8f15be1a08d9d8e1c",
+    "src/sparkbrain/v06/endogenous_chain.py": "2fb07334d394d9b6530b532cfa23392294db3869",
     "src/sparkbrain/v06/forward.py": "77051083d52add239e1624e276de7b50fe40737f",
     "src/sparkbrain/v06/foundation.py": "35f9cf7065bd22449375cd315d3047bd0b3e9691",
     "src/sparkbrain/v06/g0.py": "02378aad2c4d87af1a9cb441c4b45d2c3e0fe6e7",
