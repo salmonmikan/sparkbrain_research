@@ -6,13 +6,13 @@ from typing import Any
 
 from .contract import ComparatorKind, ComparatorProtocol
 from .events import ComparatorEvent, EventOrigin
+from .fairness import TrainingTranscript, build_training_transcript
 from .g3_anchor import G3FirstOrderAnchor
 from .g6_vomm import VariableOrderMarkovPredictor
 from .g7_htm_tm import HTMTemporalMemoryComparator
 from .g8_spiking_tm import SpikingTemporalMemoryComparator
 from .historical_anchors import G4AssemblyAnchor, G5TypedAnchor
 from .resources import ResourceRecord, measure_model_call
-from .schedule import build_balanced_exposure_schedule
 from .scoring import (
     FamilyDecision,
     FamilyEvidence,
@@ -39,6 +39,7 @@ class DevelopmentExecution:
     family: CX01Family
     seed: int
     world_hash: str
+    training_transcript_hash: str
     evidence: FamilyEvidence
     decision: FamilyDecision
     resource: ResourceRecord
@@ -51,6 +52,7 @@ class DevelopmentExecution:
             "kind": self.kind.value,
             "resource": self.resource.state_dict(),
             "seed": self.seed,
+            "training_transcript_hash": self.training_transcript_hash,
             "world_hash": self.world_hash,
         }
 
@@ -89,13 +91,12 @@ def _feed(
     return now + 25.0
 
 
-def _train(model: ComparatorProtocol, world: CX01World, start_ms: float = 0.0) -> float:
-    schedule = build_balanced_exposure_schedule(tuple(row.exposures for row in world.training))
-    now = start_ms
-    for episode in schedule.episodes:
-        row = world.training[episode.sequence_index]
-        now = _feed(model, row.tokens, row.lags_ms, now)
-    return now
+def _train(model: ComparatorProtocol, transcript: TrainingTranscript) -> float:
+    transcript.validate()
+    for event in transcript.events:
+        model.observe_external(event)
+    model.advance(transcript.end_time_ms)
+    return transcript.end_time_ms
 
 
 def _top1(distribution: dict[str, float]) -> str | None:
@@ -256,8 +257,12 @@ def _evaluate_loop(
     )
 
 
-def _evaluate(model: ComparatorProtocol, world: CX01World) -> FamilyEvidence:
-    now = _train(model, world)
+def _evaluate(
+    model: ComparatorProtocol,
+    world: CX01World,
+    transcript: TrainingTranscript,
+) -> FamilyEvidence:
+    now = _train(model, transcript)
     if world.family is CX01Family.CYCLE:
         evidence, _ = _evaluate_cycle(model, world, now)
     elif world.family is CX01Family.SELECTIVITY:
@@ -274,14 +279,21 @@ def run_development_execution(
     kind: ComparatorKind,
     world: CX01World,
 ) -> DevelopmentExecution:
+    # Materialize and hash the complete architecture-neutral training stream
+    # before any comparator instance exists.
+    transcript = build_training_transcript(world)
     model = create_model(kind)
-    evidence, resource = measure_model_call(model, lambda: _evaluate(model, world))
+    evidence, resource = measure_model_call(
+        model,
+        lambda: _evaluate(model, world, transcript),
+    )
     decision = decide_family(evidence)
     return DevelopmentExecution(
         kind=kind,
         family=world.family,
         seed=world.seed,
         world_hash=world.specification_hash(),
+        training_transcript_hash=transcript.transcript_hash(),
         evidence=evidence,
         decision=decision,
         resource=resource,
