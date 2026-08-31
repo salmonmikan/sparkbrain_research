@@ -24,10 +24,11 @@ jobs:
           python-version: "3.11"
       - name: Install Ruff
         run: python -m pip install "ruff>=0.9"
-      - name: Apply safe fixes and formatting
+      - name: Apply formatting and safe fixes
         run: |
-          python -m ruff check --fix src/sparkbrain/comparison/cx01 tests/cx01
           python -m ruff format src/sparkbrain/comparison/cx01 tests/cx01
+          python -m ruff check --fix src/sparkbrain/comparison/cx01 tests/cx01
+          python -m ruff check src/sparkbrain/comparison/cx01 tests/cx01
       - name: Commit mechanical fixes
         run: |
           if git diff --quiet; then
