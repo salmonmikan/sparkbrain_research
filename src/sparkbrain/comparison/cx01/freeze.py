@@ -165,6 +165,7 @@ def _result_schema_hash() -> str:
                 "family",
                 "seed",
                 "world_hash",
+                "training_transcript_hash",
                 "evidence",
                 "decision",
                 "resource",
