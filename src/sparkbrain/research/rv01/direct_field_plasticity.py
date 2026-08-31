@@ -193,6 +193,14 @@ class ExternalGatedDirectFieldPlasticity:
         self.update_count += len(updates)
         return tuple(updates)
 
+    def observe_external(
+        self,
+        pulse: RuntimePulse,
+    ) -> tuple[PhysicalConnectionUpdate, ...]:
+        """Compatibility entry point for callers that explicitly name the boundary."""
+
+        return self.observe(pulse)
+
     def clear_traces(self) -> None:
         self._unit_traces.clear()
 
