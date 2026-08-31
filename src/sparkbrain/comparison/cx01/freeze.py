@@ -11,6 +11,7 @@ from .candidate import (
     candidate_grid_hash,
     declaration_bundle_hash,
 )
+from .formal_policy import FormalScoringPolicy
 from .privilege import privilege_profile
 from .schedule import build_balanced_exposure_schedule
 from .worlds import development_grid_hash
@@ -49,6 +50,7 @@ class FreezeManifest:
     comparator_inventory: tuple[str, ...]
     privilege_inventory_hash: str
     schedule_policy_hash: str
+    scoring_policy_hash: str
     result_schema_hash: str
     resource_schema_hash: str
     execution_command: str
@@ -66,6 +68,7 @@ class FreezeManifest:
             "development_grid_hash",
             "privilege_inventory_hash",
             "schedule_policy_hash",
+            "scoring_policy_hash",
             "result_schema_hash",
             "resource_schema_hash",
         ):
@@ -101,6 +104,7 @@ class FreezeManifest:
             comparator_inventory=tuple(str(row) for row in state["comparator_inventory"]),
             privilege_inventory_hash=str(state["privilege_inventory_hash"]),
             schedule_policy_hash=str(state["schedule_policy_hash"]),
+            scoring_policy_hash=str(state["scoring_policy_hash"]),
             result_schema_hash=str(state["result_schema_hash"]),
             resource_schema_hash=str(state["resource_schema_hash"]),
             execution_command=str(state["execution_command"]),
@@ -161,6 +165,10 @@ def _result_schema_hash() -> str:
     return _digest(
         {
             "fields": [
+                "candidate_spec_hash",
+                "execution_id",
+                "formal_index",
+                "manifest_hash",
                 "kind",
                 "family",
                 "seed",
@@ -215,6 +223,7 @@ def build_freeze_manifest(
         comparator_inventory=tuple(kind.value for kind in CX01_COMPARATOR_INVENTORY),
         privilege_inventory_hash=_privilege_inventory_hash(),
         schedule_policy_hash=_schedule_policy_hash(),
+        scoring_policy_hash=FormalScoringPolicy().policy_hash(),
         result_schema_hash=_result_schema_hash(),
         resource_schema_hash=_resource_schema_hash(),
         execution_command=execution_command,
