@@ -1,11 +1,15 @@
 name: cx01-formal-one-way
-run-name: cx01-formal-${{ inputs.control_branch }}-${{ inputs.source_sha }}
+run-name: cx01-formal-${{ inputs.candidate_spec_hash }}-${{ inputs.source_sha }}
 
 on:
   workflow_dispatch:
     inputs:
       source_sha:
         description: "Exact frozen source Git SHA"
+        required: true
+        type: string
+      candidate_spec_hash:
+        description: "Exact SHA-256 of candidate.json canonical state"
         required: true
         type: string
       control_branch:
@@ -52,39 +56,8 @@ jobs:
       LANG: C.UTF-8
       CONTROL_DIR: ${{ github.workspace }}/control
       SOURCE_DIR: ${{ github.workspace }}/source
-      FORMAL_RUN_NAME: cx01-formal-${{ inputs.control_branch }}-${{ inputs.source_sha }}
+      FORMAL_RUN_NAME: cx01-formal-${{ inputs.candidate_spec_hash }}-${{ inputs.source_sha }}
     steps:
-      - name: Reject any prior formal workflow run for this control key
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          curl -fsSL \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer $GH_TOKEN" \
-            -H "X-GitHub-Api-Version: 2022-11-28" \
-            "$GITHUB_API_URL/repos/$GITHUB_REPOSITORY/actions/runs?event=workflow_dispatch&per_page=100" \
-            > /tmp/cx01-runs.json
-          python - <<'PY'
-          import json
-          import os
-
-          with open("/tmp/cx01-runs.json", encoding="utf-8") as handle:
-              runs = json.load(handle)["workflow_runs"]
-          current = int(os.environ["GITHUB_RUN_ID"])
-          name = os.environ["FORMAL_RUN_NAME"]
-          prior = [
-              row
-              for row in runs
-              if row["id"] != current
-              and row.get("name") == "cx01-formal-one-way"
-              and row.get("display_title") == name
-          ]
-          if prior:
-              raise SystemExit(
-                  f"formal control key already has a previous workflow run: {prior[0]['id']}"
-              )
-          PY
-
       - name: Checkout preconsumed control branch
         uses: actions/checkout@v4
         with:
@@ -104,6 +77,63 @@ jobs:
           test -f "$CONTROL_DIR/$MANIFEST_PATH"
           test -f "$CONTROL_DIR/$SEAL_PATH"
           test -f "$CONTROL_DIR/$CONTROL_MARKER_PATH"
+
+      - name: Verify candidate hash input before capability
+        env:
+          CANDIDATE_PATH: ${{ inputs.candidate_path }}
+          EXPECTED_CANDIDATE_HASH: ${{ inputs.candidate_spec_hash }}
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+
+          path = Path(os.environ["CONTROL_DIR"]) / os.environ["CANDIDATE_PATH"]
+          value = json.loads(path.read_text(encoding="utf-8"))
+          encoded = json.dumps(
+              value,
+              allow_nan=False,
+              ensure_ascii=False,
+              separators=(",", ":"),
+              sort_keys=True,
+          ).encode("utf-8")
+          observed = hashlib.sha256(encoded).hexdigest()
+          expected = os.environ["EXPECTED_CANDIDATE_HASH"].lower()
+          if observed != expected:
+              raise SystemExit(
+                  f"candidate specification hash mismatch: observed={observed} expected={expected}"
+              )
+          PY
+
+      - name: Reject any prior formal workflow run for this candidate/source key
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl -fsSL \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "$GITHUB_API_URL/repos/$GITHUB_REPOSITORY/actions/workflows/cx01-formal-one-way.yml/runs?event=workflow_dispatch&per_page=100" \
+            > /tmp/cx01-runs.json
+          python - <<'PY'
+          import json
+          import os
+
+          with open("/tmp/cx01-runs.json", encoding="utf-8") as handle:
+              runs = json.load(handle)["workflow_runs"]
+          current = int(os.environ["GITHUB_RUN_ID"])
+          name = os.environ["FORMAL_RUN_NAME"]
+          prior = [
+              row
+              for row in runs
+              if row["id"] != current and row.get("display_title") == name
+          ]
+          if prior:
+              raise SystemExit(
+                  f"formal candidate/source key already has a previous workflow run: {prior[0]['id']}"
+              )
+          PY
 
       - name: Checkout exact frozen source
         uses: actions/checkout@v4
@@ -167,5 +197,6 @@ jobs:
 
 # This workflow has read-only repository permissions. It can execute only after
 # a persistent STARTED marker has already been committed to a dedicated control
-# branch by a separate pre-execution operation. A prior workflow run with the
-# same source/control key causes a fail-closed refusal before capability calls.
+# branch by a separate pre-execution operation. The run identity is bound to the
+# candidate specification hash and frozen source SHA, so copying the same
+# candidate to another control branch does not create a new execution identity.
