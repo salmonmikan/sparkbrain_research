@@ -480,14 +480,14 @@ def _endogenous_write_stress(
         time_ms=500000.0,
         unit_id=route.units[0],
         magnitude=world.cue_magnitude,
-        origin=EventOrigin.ENDOGENOUS,
+        origin=EventOrigin.ENDOGENOUS_UNCONFIRMED,
     )
     target = runtime_pulse(
         event_id=f"endo-stress:{world.world_id}:target",
         time_ms=500000.0 + world.lag_ms,
         unit_id=route.units[1],
         magnitude=world.cue_magnitude,
-        origin=EventOrigin.ENDOGENOUS,
+        origin=EventOrigin.ENDOGENOUS_UNCONFIRMED,
     )
     rows = bridge.observe_pair(source, target)
     after = connection_state_hash(field)
