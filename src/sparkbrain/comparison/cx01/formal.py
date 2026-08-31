@@ -22,7 +22,7 @@ def _run_id(manifest: FreezeManifest, candidate: CandidateSpec) -> str:
     payload = (
         f"{manifest.manifest_hash()}|{candidate.specification_hash()}|"
         f"{manifest.source_git_sha}"
-    ).encode("utf-8")
+    ).encode()
     return f"cx01-formal-{hashlib.sha256(payload).hexdigest()[:24]}"
 
 
