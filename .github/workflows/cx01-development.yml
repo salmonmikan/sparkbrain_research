@@ -40,6 +40,18 @@ jobs:
         run: python -m ruff check src/sparkbrain/comparison/cx01 tests/cx01
       - name: CX01 tests
         run: python -m pytest -q tests/cx01
+      - name: Execute development-only comparator matrix
+        if: matrix.python-version == '3.11'
+        run: >-
+          python -m sparkbrain.comparison.cx01.development_artifacts
+          --output-dir /tmp/cx01-development
+      - name: Upload development-only matrix
+        if: matrix.python-version == '3.11'
+        uses: actions/upload-artifact@v4
+        with:
+          name: cx01-development-${{ github.sha }}
+          path: /tmp/cx01-development
+          if-no-files-found: error
 
 # Development validation only. This workflow never constructs or executes a
 # formal held-out CX01 candidate and has no permission to publish evidence.
