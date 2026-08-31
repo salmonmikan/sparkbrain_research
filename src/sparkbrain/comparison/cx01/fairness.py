@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import math
 from dataclasses import dataclass
 from typing import Any
 
@@ -15,12 +16,15 @@ class TrainingTranscript:
     world_hash: str
     schedule_hash: str
     events: tuple[ComparatorEvent, ...]
+    end_time_ms: float
 
     def validate(self) -> None:
         if len(self.world_hash) != 64 or len(self.schedule_hash) != 64:
             raise ValueError("transcript hashes must be SHA-256")
         if not self.events:
             raise ValueError("training transcript must contain external events")
+        if not math.isfinite(self.end_time_ms):
+            raise ValueError("training transcript end time must be finite")
         previous = -1.0
         episode_starts = 0
         for event in self.events:
@@ -31,12 +35,15 @@ class TrainingTranscript:
                 raise ValueError("training transcript must be chronological")
             previous = event.timestamp_ms
             episode_starts += int(event.episode_start)
+        if self.end_time_ms <= previous:
+            raise ValueError("training transcript end time must follow the final event")
         if episode_starts < 1:
             raise ValueError("training transcript requires explicit episode boundaries")
 
     def state_dict(self) -> dict[str, Any]:
         self.validate()
         return {
+            "end_time_ms": self.end_time_ms,
             "events": [event.state_dict() for event in self.events],
             "schedule_hash": self.schedule_hash,
             "world_hash": self.world_hash,
@@ -91,6 +98,7 @@ def build_training_transcript(
         world_hash=world.specification_hash(),
         schedule_hash=schedule.schedule_hash(),
         events=tuple(events),
+        end_time_ms=now,
     )
     transcript.validate()
     return transcript
