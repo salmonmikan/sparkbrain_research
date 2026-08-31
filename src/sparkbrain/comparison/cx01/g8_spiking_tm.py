@@ -91,7 +91,10 @@ class SpikingTemporalMemoryComparator:
         if not token:
             raise ValueError("token must be non-empty")
         base = self._hash_int("population", token) % 10_000_019
-        return tuple(base * self.config.population_size + index for index in range(self.config.population_size))
+        return tuple(
+            base * self.config.population_size + index
+            for index in range(self.config.population_size)
+        )
 
     def _activate_population(self, token: str, timestamp_ms: float) -> None:
         for neuron in self.population(token):
@@ -104,9 +107,13 @@ class SpikingTemporalMemoryComparator:
         if len(times) < 2:
             return ()
         tolerance = self.config.lag_tolerance_ms
-        return tuple(round((right - left) / tolerance) for left, right in zip(times, times[1:], strict=False))
+        return tuple(
+            round((right - left) / tolerance) for left, right in zip(times, times[1:], strict=False)
+        )
 
-    def _context(self, tokens: list[str], times: list[float]) -> tuple[tuple[str, ...], tuple[int, ...]]:
+    def _context(
+        self, tokens: list[str], times: list[float]
+    ) -> tuple[tuple[str, ...], tuple[int, ...]]:
         width = min(self.config.max_context, len(tokens))
         context_tokens = tuple(tokens[-width:])
         context_times = times[-width:]
@@ -174,7 +181,9 @@ class SpikingTemporalMemoryComparator:
         return []
 
     def _scores_for(self, tokens: list[str], times: list[float]) -> dict[str, float]:
-        threshold = self.config.replay_threshold if self.replay_mode else self.config.prediction_threshold
+        threshold = (
+            self.config.replay_threshold if self.replay_mode else self.config.prediction_threshold
+        )
         gain = self.config.replay_excitability_gain if self.replay_mode else 1.0
         scores: dict[str, float] = {}
         for row in self._matching(tokens, times):
@@ -204,9 +213,8 @@ class SpikingTemporalMemoryComparator:
                 break
             target = min(scores, key=lambda candidate: (-scores[candidate], candidate))
             candidate_rows = [row for row in rows if row.target_token == target]
-            lag = (
-                sum(row.mean_target_lag_ms * row.observations for row in candidate_rows)
-                / max(1, sum(row.observations for row in candidate_rows))
+            lag = sum(row.mean_target_lag_ms * row.observations for row in candidate_rows) / max(
+                1, sum(row.observations for row in candidate_rows)
             )
             timestamp = (times[-1] if times else self._time_ms) + max(0.001, lag)
             generated.append(ComparatorEvent(target, timestamp, EventOrigin.GENERATED))
@@ -253,7 +261,9 @@ class SpikingTemporalMemoryComparator:
         }
 
     def restore(self, state: dict[str, Any]) -> None:
-        expected = ComparatorKind.G8_REPLAY if state["replay_mode"] else ComparatorKind.G8_PREDICTION
+        expected = (
+            ComparatorKind.G8_REPLAY if state["replay_mode"] else ComparatorKind.G8_PREDICTION
+        )
         if state.get("kind") != expected.value:
             raise ValueError("snapshot kind mismatch")
         self.config = SpikingTemporalMemoryConfig(**state["config"])

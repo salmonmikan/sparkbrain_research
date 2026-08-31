@@ -4,8 +4,9 @@ import hashlib
 import json
 import os
 import shutil
+from collections.abc import Iterable
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any
 
 from .freeze import ExecutionSeal, FreezeManifest
 

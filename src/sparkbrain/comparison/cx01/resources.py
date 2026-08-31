@@ -3,8 +3,9 @@ from __future__ import annotations
 import math
 import time
 import tracemalloc
+from collections.abc import Callable
 from dataclasses import asdict, dataclass
-from typing import Any, Callable, TypeVar
+from typing import Any, TypeVar
 
 from .contract import ComparatorKind, ComparatorProtocol
 from .privilege import privilege_profile

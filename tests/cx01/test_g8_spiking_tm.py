@@ -5,7 +5,12 @@ from sparkbrain.comparison.cx01.g8_spiking_tm import SpikingTemporalMemoryCompar
 from sparkbrain.comparison.cx01.worlds import CX01Family, build_world
 
 
-def _feed(model: SpikingTemporalMemoryComparator, tokens: tuple[str, ...], lags: tuple[float, ...], start: float) -> float:
+def _feed(
+    model: SpikingTemporalMemoryComparator,
+    tokens: tuple[str, ...],
+    lags: tuple[float, ...],
+    start: float,
+) -> float:
     now = start
     model.observe_external(ComparatorEvent(tokens[0], now, EventOrigin.EXTERNAL, True))
     for token, lag in zip(tokens[1:], lags, strict=True):
@@ -14,7 +19,9 @@ def _feed(model: SpikingTemporalMemoryComparator, tokens: tuple[str, ...], lags:
     return now + 25.0
 
 
-def _train(model: SpikingTemporalMemoryComparator, family: CX01Family, seed: int) -> tuple[object, float]:
+def _train(
+    model: SpikingTemporalMemoryComparator, family: CX01Family, seed: int
+) -> tuple[object, float]:
     world = build_world("cx01-g8-test", family, seed)
     now = 0.0
     for row in world.training:

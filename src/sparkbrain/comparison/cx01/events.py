@@ -79,8 +79,7 @@ class PredictionDistribution:
         if total <= 0.0:
             return cls(())
         rows = tuple(
-            CandidateProbability(token, score / total)
-            for token, score in sorted(positive.items())
+            CandidateProbability(token, score / total) for token, score in sorted(positive.items())
         )
         distribution = cls(rows)
         distribution.validate()

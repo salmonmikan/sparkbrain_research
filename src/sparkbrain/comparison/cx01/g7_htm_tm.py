@@ -26,7 +26,12 @@ class HTMTemporalMemoryConfig:
     def validate(self) -> None:
         if self.active_columns_per_token < 1 or self.cells_per_column < 2:
             raise ValueError("HTM token SDR geometry is invalid")
-        if not 1 <= self.min_threshold <= self.activation_threshold <= self.active_columns_per_token:
+        if (
+            not 1
+            <= self.min_threshold
+            <= self.activation_threshold
+            <= self.active_columns_per_token
+        ):
             raise ValueError("HTM thresholds must fit the token SDR width")
         if self.max_new_synapse_count < self.activation_threshold:
             raise ValueError("max_new_synapse_count cannot undercut activation threshold")
@@ -106,7 +111,9 @@ class HTMTemporalMemoryComparator:
         fingerprint = self._context_fingerprint(previous_cells)
         winners = []
         for column in self.token_columns(token):
-            cell_index = self._hash_int("cell", token, column, fingerprint) % self.config.cells_per_column
+            cell_index = (
+                self._hash_int("cell", token, column, fingerprint) % self.config.cells_per_column
+            )
             winners.append(column * self.config.cells_per_column + cell_index)
         return tuple(sorted(winners))
 
@@ -119,7 +126,9 @@ class HTMTemporalMemoryComparator:
             segment = _Segment(
                 presynaptic_cells=previous_cells[: self.config.max_new_synapse_count],
                 target_token=target,
-                permanence=min(1.0, self.config.initial_permanence + self.config.permanence_increment),
+                permanence=min(
+                    1.0, self.config.initial_permanence + self.config.permanence_increment
+                ),
                 observations=1,
             )
             self._segments[key] = segment
@@ -149,7 +158,9 @@ class HTMTemporalMemoryComparator:
             raise ValueError("time must be finite and monotonic")
         self._time_ms = timestamp_ms
 
-    def _scores_for(self, active_cells: tuple[int, ...], last_token: str | None) -> dict[str, float]:
+    def _scores_for(
+        self, active_cells: tuple[int, ...], last_token: str | None
+    ) -> dict[str, float]:
         if not active_cells or last_token in self._suppressed:
             return {}
         scores: dict[str, float] = {}
@@ -163,7 +174,9 @@ class HTMTemporalMemoryComparator:
         return scores
 
     def distribution(self) -> PredictionDistribution:
-        return PredictionDistribution.from_scores(self._scores_for(self._active_cells, self._last_token))
+        return PredictionDistribution.from_scores(
+            self._scores_for(self._active_cells, self._last_token)
+        )
 
     def generate(self, *, max_steps: int = 1) -> tuple[ComparatorEvent, ...]:
         if max_steps < 0 or max_steps > self.config.maximum_rollout_steps:

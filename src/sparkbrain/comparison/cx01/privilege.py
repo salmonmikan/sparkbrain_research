@@ -49,9 +49,7 @@ class PrivilegeProfile:
 def privilege_profile(kind: ComparatorKind) -> PrivilegeProfile:
     mapping = {
         ComparatorKind.G3_FIRST_ORDER: (),
-        ComparatorKind.G4_ASSEMBLY: (
-            ComparatorPrivilege.EXPLICIT_ASSEMBLY_STATE,
-        ),
+        ComparatorKind.G4_ASSEMBLY: (ComparatorPrivilege.EXPLICIT_ASSEMBLY_STATE,),
         ComparatorKind.G5_TYPED: (
             ComparatorPrivilege.TYPED_FUNCTIONAL_HEADS,
             ComparatorPrivilege.SCALAR_REWARD,

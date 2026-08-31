@@ -5,7 +5,12 @@ from sparkbrain.comparison.cx01.g7_htm_tm import HTMTemporalMemoryComparator
 from sparkbrain.comparison.cx01.worlds import CX01Family, build_world
 
 
-def _feed(model: HTMTemporalMemoryComparator, tokens: tuple[str, ...], lags: tuple[float, ...], start: float) -> float:
+def _feed(
+    model: HTMTemporalMemoryComparator,
+    tokens: tuple[str, ...],
+    lags: tuple[float, ...],
+    start: float,
+) -> float:
     now = start
     model.observe_external(ComparatorEvent(tokens[0], now, EventOrigin.EXTERNAL, True))
     for token, lag in zip(tokens[1:], lags, strict=True):
@@ -14,7 +19,9 @@ def _feed(model: HTMTemporalMemoryComparator, tokens: tuple[str, ...], lags: tup
     return now + 20.0
 
 
-def _train_world(model: HTMTemporalMemoryComparator, family: CX01Family, seed: int) -> tuple[object, float]:
+def _train_world(
+    model: HTMTemporalMemoryComparator, family: CX01Family, seed: int
+) -> tuple[object, float]:
     world = build_world("cx01-g7-test", family, seed)
     now = 0.0
     for row in world.training:

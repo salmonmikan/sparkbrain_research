@@ -2,12 +2,12 @@ from __future__ import annotations
 
 import pytest
 
-from sparkbrain.comparison.cx01.privilege import privilege_profile
 from sparkbrain.comparison.cx01.contract import ComparatorKind
+from sparkbrain.comparison.cx01.privilege import privilege_profile
 from sparkbrain.comparison.cx01.worlds import (
-    CX01Family,
     DEVELOPMENT_SEEDS,
     HISTORICALLY_EXPOSED_SEEDS,
+    CX01Family,
     build_development_grid,
     build_world,
     development_grid_hash,

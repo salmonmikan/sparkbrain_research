@@ -7,14 +7,13 @@ from typing import Any
 
 from .contract import ComparatorKind
 from .worlds import (
-    CX01Family,
     DEVELOPMENT_GENERATION_ID,
     DEVELOPMENT_SEEDS,
     HISTORICALLY_EXPOSED_SEEDS,
+    CX01Family,
     CX01World,
     build_world,
 )
-
 
 CX01_COMPARATOR_INVENTORY = (
     ComparatorKind.G3_FIRST_ORDER,
@@ -134,6 +133,4 @@ def build_outcome_blind_declarations(
 
 
 def declaration_bundle_hash(spec: CandidateSpec) -> str:
-    return _digest(
-        [row.state_dict() for row in build_outcome_blind_declarations(spec)]
-    )
+    return _digest([row.state_dict() for row in build_outcome_blind_declarations(spec)])

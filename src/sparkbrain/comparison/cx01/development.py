@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import json
-from dataclasses import asdict, dataclass
+from dataclasses import dataclass
 from typing import Any
 
 from .contract import ComparatorKind, ComparatorProtocol
@@ -21,7 +21,6 @@ from .scoring import (
     decide_family,
 )
 from .worlds import CX01Family, CX01World, build_development_grid
-
 
 COMPARATOR_KINDS = (
     ComparatorKind.G3_FIRST_ORDER,
@@ -302,9 +301,7 @@ def development_summary(rows: tuple[DevelopmentExecution, ...]) -> dict[str, Any
     for kind in COMPARATOR_KINDS:
         selected = [row for row in rows if row.kind is kind]
         family_pass = {
-            family.value: sum(
-                row.decision.passed for row in selected if row.family is family
-            )
+            family.value: sum(row.decision.passed for row in selected if row.family is family)
             for family in CX01Family
         }
         by_kind[kind.value] = {

@@ -20,9 +20,7 @@ class CX01Family(StrEnum):
 
 DEVELOPMENT_GENERATION_ID = "cx01-development-001"
 DEVELOPMENT_SEEDS = tuple(range(3000, 3005))
-HISTORICALLY_EXPOSED_SEEDS = frozenset(
-    (*range(100, 110), *range(1000, 1010), *range(2000, 2010))
-)
+HISTORICALLY_EXPOSED_SEEDS = frozenset((*range(100, 110), *range(1000, 1010), *range(2000, 2010)))
 
 
 def _digest(value: object) -> str:

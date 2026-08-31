@@ -167,7 +167,9 @@ class G5TypedAnchor:
     def distribution(self) -> PredictionDistribution:
         if self._last_token is None or self._last_token in self._suppressed:
             return PredictionDistribution(())
-        return PredictionDistribution.from_scores(self.model.prediction_head.get(self._last_token, {}))
+        return PredictionDistribution.from_scores(
+            self.model.prediction_head.get(self._last_token, {})
+        )
 
     def generate(self, *, max_steps: int = 1) -> tuple[ComparatorEvent, ...]:
         if self._last_token is None:

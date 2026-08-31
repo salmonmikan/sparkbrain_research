@@ -29,12 +29,8 @@ def test_family_gates_are_non_compensatory() -> None:
     high_order = decide_family(
         FamilyEvidence(CX01Family.HIGH_ORDER, correct_probes=2, total_probes=2)
     )
-    timing = decide_family(
-        FamilyEvidence(CX01Family.TIMING, correct_probes=1, total_probes=2)
-    )
-    selectivity = decide_family(
-        FamilyEvidence(CX01Family.SELECTIVITY, selective_effect=0.49)
-    )
+    timing = decide_family(FamilyEvidence(CX01Family.TIMING, correct_probes=1, total_probes=2))
+    selectivity = decide_family(FamilyEvidence(CX01Family.SELECTIVITY, selective_effect=0.49))
     loop = decide_family(
         FamilyEvidence(
             CX01Family.LOOP,

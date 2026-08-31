@@ -107,12 +107,7 @@ class ExecutionSeal:
 
 
 def _privilege_inventory_hash() -> str:
-    return _digest(
-        [
-            privilege_profile(kind).state_dict()
-            for kind in CX01_COMPARATOR_INVENTORY
-        ]
-    )
+    return _digest([privilege_profile(kind).state_dict() for kind in CX01_COMPARATOR_INVENTORY])
 
 
 def _schedule_policy_hash() -> str:
