@@ -26,6 +26,7 @@ def _candidate() -> CandidateSpec:
 def _manifest(source_sha: str = "d" * 40):
     return build_freeze_manifest(
         source_git_sha=source_sha,
+        builder="freeze-builder-fixture",
         candidate=_candidate(),
         execution_command="python -m sparkbrain.comparison.cx01.formal",
         artifact_root="artifacts/cx01/formal",
