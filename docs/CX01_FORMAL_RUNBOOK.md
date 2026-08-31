@@ -9,14 +9,18 @@ This runbook begins only after CX01 source, shared worlds, scoring, comparator i
 The following are permanently non-confirmatory:
 
 ```text
-v0.6 qualification seeds:      100..109
-candidate-002 seeds:           1000..1009
-candidate-003 seeds:           2000..2009
-CX01 development seeds:        3000..3004
-CX01 structure fixture band:   5000..5199
+v0.6 qualification seeds:       100..109
+candidate-002 seeds:            1000..1009
+candidate-003 seeds:            2000..2009
+CX01 development/test band:     3000..5999
+  development matrix:           3000..3004
+  unit/manual diagnostics:      3998, 3999, 4100+, 4200+, 4300+, 4400+, 4500+
+  structure fixture subset:     5000..5199
 ```
 
-A formal CX01 candidate must use a new `cx01-candidate-*` generation ID and a disjoint seed set of at least ten seeds.
+The whole `3000..5999` range is reserved so that any seed touched by current or future CX01 development/tests in this band can never return as held-out evidence.
+
+A formal CX01 candidate must use a new `cx01-candidate-*` generation ID and a disjoint seed set of at least ten seeds outside all historical and CX01 non-formal ranges.
 
 Do not select a candidate because a development model performs well on it. Outcome inspection is forbidden before the no-change boundary.
 
