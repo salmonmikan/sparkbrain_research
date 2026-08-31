@@ -45,6 +45,9 @@ jobs:
         run: >-
           python -m sparkbrain.comparison.cx01.development_artifacts
           --output-dir /tmp/cx01-development
+      - name: Print audited development summary
+        if: matrix.python-version == '3.11'
+        run: cat /tmp/cx01-development/development_summary.json
       - name: Upload development-only matrix
         if: matrix.python-version == '3.11'
         uses: actions/upload-artifact@v4
