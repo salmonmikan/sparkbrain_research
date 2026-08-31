@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+import argparse
 import hashlib
+import json
 from pathlib import Path
 from typing import Any
 
@@ -41,6 +43,46 @@ def _validate_formal_binding(
         raise RuntimeError("comparator inventory does not match frozen CX01 inventory")
 
 
+def _canonical_bytes(value: object) -> bytes:
+    return json.dumps(
+        value,
+        allow_nan=False,
+        ensure_ascii=False,
+        separators=(",", ":"),
+        sort_keys=True,
+    ).encode("utf-8")
+
+
+def claim_one_way_execution(
+    artifact_root: Path,
+    *,
+    run_id: str,
+    candidate: CandidateSpec,
+    manifest: FreezeManifest,
+) -> Path:
+    """Create the irreversible STARTED marker before any capability call."""
+
+    artifact_root.mkdir(parents=True, exist_ok=True)
+    target = artifact_root / run_id
+    marker = artifact_root / f"{run_id}.STARTED.json"
+    if target.exists() or marker.exists():
+        raise RuntimeError("formal CX01 candidate has already been opened")
+    payload = {
+        "candidate_spec_hash": candidate.specification_hash(),
+        "manifest_hash": manifest.manifest_hash(),
+        "run_id": run_id,
+        "source_git_sha": manifest.source_git_sha,
+        "state": "STARTED",
+    }
+    try:
+        with marker.open("xb") as handle:
+            handle.write(_canonical_bytes(payload) + b"\n")
+        marker.chmod(0o444)
+    except FileExistsError as exc:
+        raise RuntimeError("formal CX01 candidate has already been opened") from exc
+    return marker
+
+
 def execute_formal_candidate(
     candidate: CandidateSpec,
     manifest: FreezeManifest,
@@ -51,23 +93,27 @@ def execute_formal_candidate(
 ) -> Path:
     """Execute one fully sealed CX01 comparator candidate exactly once.
 
-    This function is intentionally unusable without a valid frozen manifest and
-    independently approved execution seal. The deterministic run directory is a
-    one-way marker: an existing directory makes same-candidate rerun fail closed.
+    Seal/source and candidate bindings are validated before `STARTED` is
+    written. `STARTED` is then created before any comparator is constructed, so
+    a crash or partial result permanently consumes that candidate execution.
     """
 
-    # Seal/source validation happens before any capability model is constructed.
     require_execution_seal(
         manifest,
         seal,
         current_source_git_sha=current_source_git_sha,
     )
     _validate_formal_binding(candidate, manifest)
+    if str(artifact_root) != manifest.artifact_root:
+        raise RuntimeError("artifact root does not match frozen manifest")
 
     run_id = _run_id(manifest, candidate)
-    target = artifact_root / run_id
-    if target.exists():
-        raise RuntimeError("formal CX01 candidate has already been executed")
+    claim_one_way_execution(
+        artifact_root,
+        run_id=run_id,
+        candidate=candidate,
+        manifest=manifest,
+    )
 
     rows: list[dict[str, Any]] = []
     for world in build_candidate_grid(candidate):
@@ -86,3 +132,36 @@ def execute_formal_candidate(
         seal=seal,
         rows=rows,
     )
+
+
+def _read_json(path: Path) -> dict[str, Any]:
+    value = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(value, dict):
+        raise ValueError(f"expected JSON object: {path}")
+    return value
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--candidate", type=Path, required=True)
+    parser.add_argument("--manifest", type=Path, required=True)
+    parser.add_argument("--seal", type=Path, required=True)
+    parser.add_argument("--source-sha", required=True)
+    parser.add_argument("--artifact-root", type=Path, required=True)
+    args = parser.parse_args()
+
+    candidate = CandidateSpec.from_state_dict(_read_json(args.candidate))
+    manifest = FreezeManifest.from_state_dict(_read_json(args.manifest))
+    seal = ExecutionSeal.from_state_dict(_read_json(args.seal))
+    output = execute_formal_candidate(
+        candidate,
+        manifest,
+        seal,
+        current_source_git_sha=args.source_sha,
+        artifact_root=args.artifact_root,
+    )
+    print(output)
+
+
+if __name__ == "__main__":
+    main()
