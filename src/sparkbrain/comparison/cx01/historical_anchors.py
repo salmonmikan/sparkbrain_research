@@ -91,9 +91,10 @@ class G4AssemblyAnchor:
         self._suppressed.clear()
 
     def snapshot(self) -> dict[str, Any]:
-        self._commit_pending()
+        # Inspection is pure: an unfinished episode remains pending and is
+        # serialized instead of being silently converted into learned Assembly state.
         return {
-            "episode": [],
+            "episode": list(self._episode),
             "kind": self.kind.value,
             "model": self.model.learned_state_dict(),
             "observed_events": self._observed_events,
