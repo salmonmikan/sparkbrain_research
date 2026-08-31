@@ -169,6 +169,7 @@ def _result_schema_hash() -> str:
                 "execution_id",
                 "formal_index",
                 "manifest_hash",
+                "semantic_execution_hash",
                 "kind",
                 "family",
                 "seed",
