@@ -13,14 +13,14 @@ def test_lag_trajectory_class_moves_with_g1_into_a_fresh_field() -> None:
     rows = {row["family_id"]: row for row in suite["transitions"]}
 
     alternate = rows["diagnostic-lag-resonant-shared"]
-    assert alternate["baseline_units"] == [4, 5, 6]
-    assert alternate["expectation_transplant_units"] == [4, 5, 6]
+    assert alternate["baseline_units"] == (4, 5, 6)
+    assert alternate["expectation_transplant_units"] == (4, 5, 6)
     assert alternate["baseline_trajectory_class"] == "alternate-only-substitution"
     assert alternate["failure_transfers_with_g1"] is True
 
     superposed = rows["diagnostic-lag-main-variance-2"]
-    assert superposed["baseline_units"] == [1, 4, 2, 5, 3, 6]
-    assert superposed["expectation_transplant_units"] == [1, 4, 2, 5, 3, 6]
+    assert superposed["baseline_units"] == (1, 4, 2, 5, 3, 6)
+    assert superposed["expectation_transplant_units"] == (1, 4, 2, 5, 3, 6)
     assert superposed["baseline_trajectory_class"] == (
         "dual-trajectory-superposition"
     )
@@ -34,8 +34,8 @@ def test_g1_reset_and_field_only_transfer_do_not_recreate_trajectory() -> None:
     assert suite["transition_g1_reset_removes_expression_count"] == 3
     assert suite["transition_field_state_alone_transfer_count"] == 0
     for row in suite["transitions"]:
-        assert row["expectation_reset_units"] == []
-        assert row["field_state_only_units"] == []
+        assert row["expectation_reset_units"] == ()
+        assert row["field_state_only_units"] == ()
         assert row["fresh_field_state_hash"] == (
             row["transplanted_fresh_field_state_hash"]
         )
@@ -51,7 +51,7 @@ def test_relation_failure_replays_from_consistency_state_on_fresh_field() -> Non
     abstention = rows["expression-abstention"]
     assert abstention["source_failure_stage"] == "relation-to-field-expression"
     assert abstention["source_expression_status"] == "abstention"
-    assert abstention["source_output_units"] == []
+    assert abstention["source_output_units"] == ()
 
     hysteresis = rows["hysteresis-short-return"]
     assert hysteresis["source_failure_stage"] == "relation-storage"
@@ -64,13 +64,13 @@ def test_relation_failure_replays_from_consistency_state_on_fresh_field() -> Non
     assert superposition["source_expression_status"] == (
         "superposition-including-expected"
     )
-    assert superposition["source_output_units"] == [14, 15]
+    assert superposition["source_output_units"] == (14, 15)
 
     for row in suite["relations"]:
         assert row["source_output_units"] == row[
             "fresh_field_replay_output_units"
         ]
-        assert row["reset_consistency_output_units"] == []
+        assert row["reset_consistency_output_units"] == ()
         assert row["prior_field_state_required"] is False
 
 
