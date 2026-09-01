@@ -88,7 +88,8 @@ def _relation_markdown(relation: dict[str, Any]) -> list[str]:
         "candidate-003 executions: 0",
         "```",
         "",
-        "| Pattern | Storage match | Exact expression | Contains expected | Storage failures | Expression failures |",
+        "| Pattern | Storage match | Exact expression | Contains expected | "
+        "Storage failures | Expression failures |",
         "|---|---:|---:|---:|---:|---:|",
     ]
     for world in relation["worlds"]:

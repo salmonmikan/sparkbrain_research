@@ -7,7 +7,6 @@ from typing import Any
 
 from sparkbrain.v06.endogenous_chain import EndogenousChainIntervention
 
-from .v061_diagnostic_worlds import DiagnosticWorld, lag_factor_worlds
 from .v06_confirmatory_heldout_primary import (
     _chain_paths,
     _estimated_reinjection_gain,
@@ -19,6 +18,7 @@ from .v06_confirmatory_heldout_primary import (
 from .v06_confirmatory_training_schedule import (
     build_balanced_training_schedule,
 )
+from .v061_diagnostic_worlds import DiagnosticWorld, lag_factor_worlds
 
 
 @dataclass(frozen=True, slots=True)

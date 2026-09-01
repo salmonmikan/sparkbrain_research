@@ -11,12 +11,12 @@ from sparkbrain.v06.relation_reentry import (
     RelationReentryConfig,
 )
 
-from .v061_diagnostic_worlds import DiagnosticWorld, relation_factor_worlds
 from .v06_confirmatory_heldout_primary import (
     _field,
     _probe_boundary,
     _relation_cycles,
 )
+from .v061_diagnostic_worlds import DiagnosticWorld, relation_factor_worlds
 
 
 @dataclass(frozen=True, slots=True)
