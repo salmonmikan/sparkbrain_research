@@ -10,12 +10,6 @@ from sparkbrain.v06.local_expectation import LocalTemporalExpectation
 from sparkbrain.v06.local_transition import SparseLocalTransitionAdaptation
 from sparkbrain.v06.reinjection import FieldReinjectionGate, ReinjectionConfig
 
-from .v061_diagnostic_worlds import (
-    DiagnosticWorld,
-    lag_factor_worlds,
-    relation_factor_worlds,
-)
-from .v061_relation_diagnostics import _phase_trace
 from .v06_confirmatory_heldout_primary import (
     _chain_paths,
     _estimated_reinjection_gain,
@@ -25,6 +19,12 @@ from .v06_confirmatory_heldout_primary import (
     _relation_cycles,
     _train_expectation,
 )
+from .v061_diagnostic_worlds import (
+    DiagnosticWorld,
+    lag_factor_worlds,
+    relation_factor_worlds,
+)
+from .v061_relation_diagnostics import _phase_trace
 
 
 @dataclass(frozen=True, slots=True)

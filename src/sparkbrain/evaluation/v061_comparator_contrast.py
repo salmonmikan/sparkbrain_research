@@ -5,8 +5,6 @@ from typing import Any
 
 from sparkbrain.v06.foundation import digest
 
-from .v061_diagnostic_worlds import DiagnosticWorld, lag_factor_worlds
-from .v061_lag_diagnostics import diagnose_lag_world
 from .v06_confirmatory import ConfirmatoryCondition
 from .v06_confirmatory_heldout_comparators import (
     _FACADE_FACTORIES,
@@ -17,7 +15,8 @@ from .v06_confirmatory_heldout_primary import (
     _chain_paths,
     _train_expectation,
 )
-
+from .v061_diagnostic_worlds import DiagnosticWorld, lag_factor_worlds
+from .v061_lag_diagnostics import diagnose_lag_world
 
 _COMPARATORS = (
     ConfirmatoryCondition.G3_RECURRENT,
