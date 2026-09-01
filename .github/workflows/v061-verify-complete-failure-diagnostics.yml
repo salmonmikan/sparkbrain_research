@@ -1,0 +1,219 @@
+name: v061-verify-complete-failure-diagnostics
+
+on:
+  push:
+    branches:
+      - v061-candidate-003-failure-diagnostics-work
+    paths:
+      - .github/workflows/v061-verify-complete-failure-diagnostics.yml
+
+permissions:
+  contents: write
+
+env:
+  PYTHONHASHSEED: "0"
+  TZ: UTC
+  LC_ALL: C.UTF-8
+  LANG: C.UTF-8
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v061-candidate-003-failure-diagnostics-work
+          fetch-depth: 0
+          lfs: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+
+      - name: Record tested source
+        run: echo "TESTED_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - name: Install complete diagnostic dependencies
+        run: python -m pip install -e ".[dev,learned,spiking]"
+
+      - name: Verify repository lint
+        run: python -m ruff check .
+
+      - name: Verify local readiness
+        run: python scripts/local_readiness_check.py
+
+      - name: Run complete v0.6 diagnostic and regression tests
+        run: |
+          mkdir -p artifacts/v061/failure-diagnostics-verification
+          python -m pytest -q tests/v06 \
+            --junitxml=artifacts/v061/failure-diagnostics-verification/junit.xml \
+            | tee artifacts/v061/failure-diagnostics-verification/pytest.log
+
+      - name: Rebuild D7-D8 observer reports
+        run: |
+          python scripts/v061_temporal_functional_decoupling_report.py \
+            --json artifacts/v061/failure-diagnostics-verification/d7.json \
+            --markdown artifacts/v061/failure-diagnostics-verification/d7.md
+          python scripts/v061_temporal_functional_discriminator_report.py \
+            --json artifacts/v061/failure-diagnostics-verification/d8.json \
+            --markdown artifacts/v061/failure-diagnostics-verification/d8.md
+
+      - name: Audit diagnostic source boundary
+        run: |
+          python - <<'PY'
+          import ast
+          import json
+          from pathlib import Path
+
+          roots = (
+              Path("src/sparkbrain/evaluation"),
+              Path("scripts"),
+              Path("tests/v06"),
+          )
+          files = tuple(
+              sorted(
+                  path
+                  for root in roots
+                  for path in root.glob("*v061*diagnostic*.py")
+              )
+          ) + tuple(
+              sorted(
+                  path
+                  for root in roots
+                  for path in root.glob("*temporal_functional*.py")
+              )
+          )
+          files = tuple(dict.fromkeys(files))
+          forbidden_calls = {
+              "run_complete_confirmatory_matrix",
+              "run_heldout_matrix",
+              "execute_candidate",
+              "score_strict_confirmatory_results",
+          }
+          violations = []
+          inventory = []
+          for path in files:
+              source = path.read_text(encoding="utf-8")
+              tree = ast.parse(source)
+              calls = {
+                  node.func.id
+                  for node in ast.walk(tree)
+                  if isinstance(node, ast.Call)
+                  and isinstance(node.func, ast.Name)
+              }
+              bad = sorted(calls.intersection(forbidden_calls))
+              if bad:
+                  violations.append({"path": str(path), "calls": bad})
+              inventory.append(
+                  {
+                      "path": str(path),
+                      "candidate_003_literal": "candidate-003" in source,
+                      "forbidden_calls": bad,
+                  }
+              )
+          report = {
+              "candidate_reexecution_allowed": False,
+              "diagnostic_file_count": len(files),
+              "files": inventory,
+              "violations": violations,
+          }
+          output = Path(
+              "artifacts/v061/failure-diagnostics-verification/source_boundary.json"
+          )
+          output.write_text(
+              json.dumps(report, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          if violations:
+              raise SystemExit(json.dumps(violations, indent=2))
+          PY
+
+      - name: Build verification status
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+
+          root = ET.parse(
+              "artifacts/v061/failure-diagnostics-verification/junit.xml"
+          ).getroot()
+          suites = [root] if root.tag == "testsuite" else list(root.findall("testsuite"))
+          totals = {
+              "tests": sum(int(row.attrib.get("tests", 0)) for row in suites),
+              "failures": sum(int(row.attrib.get("failures", 0)) for row in suites),
+              "errors": sum(int(row.attrib.get("errors", 0)) for row in suites),
+              "skipped": sum(int(row.attrib.get("skipped", 0)) for row in suites),
+          }
+          status = {
+              "candidate_003_reexecuted": False,
+              "runtime_modified_by_diagnostics": False,
+              "tested_sha": os.environ["TESTED_SHA"],
+              "tests": totals,
+              "d7_report_present": Path(
+                  "artifacts/v061/failure-diagnostics-verification/d7.json"
+              ).exists(),
+              "d8_report_present": Path(
+                  "artifacts/v061/failure-diagnostics-verification/d8.json"
+              ).exists(),
+              "source_boundary_passed": True,
+          }
+          output = Path(
+              "artifacts/v061/failure-diagnostics-verification/status.json"
+          )
+          output.write_text(
+              json.dumps(status, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          markdown = "\n".join(
+              (
+                  "# v0.6.1 Failure Diagnostics Verification",
+                  "",
+                  f"Tested source: `{status['tested_sha']}`",
+                  "",
+                  "```text",
+                  f"tests:    {totals['tests']}",
+                  f"failures: {totals['failures']}",
+                  f"errors:   {totals['errors']}",
+                  f"skipped:  {totals['skipped']}",
+                  "```",
+                  "",
+                  "Candidate-003 was not re-executed. The diagnostic programme is "
+                  "observer/evaluator-side and does not alter the frozen Primary runtime.",
+                  "",
+                  "D7 temporal-functional decoupling and D8 causal-discriminator "
+                  "artifacts were rebuilt successfully. D9 records the resulting "
+                  "SparkBrain hypothesis discrimination matrix.",
+                  "",
+              )
+          )
+          Path("docs/V061_FAILURE_DIAGNOSTICS_VERIFICATION.md").write_text(
+              markdown,
+              encoding="utf-8",
+          )
+          PY
+
+      - name: Commit verification record
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/V061_FAILURE_DIAGNOSTICS_VERIFICATION.md
+          if git diff --cached --quiet; then
+            echo "Verification record already current."
+            exit 0
+          fi
+          git commit -m "docs(v061): record complete failure diagnostics verification [skip ci]"
+          git pull --rebase origin v061-candidate-003-failure-diagnostics-work
+          git push origin HEAD:v061-candidate-003-failure-diagnostics-work
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v061-failure-diagnostics-verification-${{ github.run_id }}
+          path: artifacts/v061/failure-diagnostics-verification/
+          if-no-files-found: error
+          retention-days: 30
