@@ -1,0 +1,64 @@
+name: v061-temporal-functional-diagnostic
+
+on:
+  push:
+    branches:
+      - v061-candidate-003-failure-diagnostics-work
+    paths:
+      - src/sparkbrain/evaluation/v061_temporal_functional_decoupling.py
+      - tests/v06/test_temporal_functional_decoupling.py
+      - scripts/v061_temporal_functional_decoupling_report.py
+      - .github/workflows/v061-temporal-functional-diagnostic.yml
+
+permissions:
+  contents: read
+
+jobs:
+  diagnostic:
+    runs-on: ubuntu-24.04
+    env:
+      PYTHONHASHSEED: "0"
+      TZ: UTC
+      LC_ALL: C.UTF-8
+      LANG: C.UTF-8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v061-candidate-003-failure-diagnostics-work
+          fetch-depth: 1
+          lfs: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+
+      - name: Install development dependencies
+        run: python -m pip install -e ".[dev]"
+
+      - name: Lint observer-only diagnostic
+        run: |
+          python -m ruff check \
+            src/sparkbrain/evaluation/v061_temporal_functional_decoupling.py \
+            tests/v06/test_temporal_functional_decoupling.py \
+            scripts/v061_temporal_functional_decoupling_report.py
+
+      - name: Run mechanistic counterfactual tests
+        run: >-
+          python -m pytest -q
+          tests/v06/test_temporal_functional_decoupling.py
+
+      - name: Generate diagnostic artifacts
+        run: |
+          python scripts/v061_temporal_functional_decoupling_report.py \
+            --json artifacts/v061/failure-diagnostics/temporal_functional_decoupling.json \
+            --markdown artifacts/v061/failure-diagnostics/temporal_functional_decoupling.md
+
+      - name: Upload observer-only diagnostics
+        uses: actions/upload-artifact@v4
+        with:
+          name: v061-temporal-functional-diagnostic-${{ github.run_id }}
+          path: artifacts/v061/failure-diagnostics/
+          if-no-files-found: error
+          retention-days: 30
