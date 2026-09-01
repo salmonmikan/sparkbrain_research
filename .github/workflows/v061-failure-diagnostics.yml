@@ -74,3 +74,5 @@ jobs:
           if-no-files-found: error
           compression-level: 0
           retention-days: 30
+
+# Rerun marker: normalized diagnostic sources only; no candidate execution.
