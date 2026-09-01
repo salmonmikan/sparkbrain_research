@@ -71,10 +71,7 @@ class CausalCreditTrial:
         self.matched_lineage.validate()
         if self.causal_lineage.lineage_id == self.matched_lineage.lineage_id:
             raise ValueError("causal and matched lineages must be distinct")
-        if (
-            self.causal_lineage.matching_signature()
-            != self.matched_lineage.matching_signature()
-        ):
+        if self.causal_lineage.matching_signature() != self.matched_lineage.matching_signature():
             raise ValueError("causal and matched lineage resources must be identical")
         if self.evidence_source is EvidenceSource.EXTERNAL_MATCH:
             if (
@@ -156,8 +153,7 @@ def assess_causal_credit_trial(
         raise ValueError("minimum_selective_effect must be positive")
 
     matched_resources = (
-        trial.causal_lineage.matching_signature()
-        == trial.matched_lineage.matching_signature()
+        trial.causal_lineage.matching_signature() == trial.matched_lineage.matching_signature()
     )
     has_external = trial.evidence_source in {
         EvidenceSource.EXTERNAL_MATCH,
@@ -181,15 +177,13 @@ def assess_causal_credit_trial(
     corrective = False
     if trial.evidence_source is EvidenceSource.EXTERNAL_MATCH:
         selective = (
-            observation.causal_lineage_update
-            - observation.matched_lineage_update
+            observation.causal_lineage_update - observation.matched_lineage_update
             >= minimum_selective_effect
             and observation.positive_commit_count_delta > 0
         )
     elif trial.evidence_source is EvidenceSource.EXTERNAL_CONTRADICTION:
         corrective = (
-            observation.causal_lineage_update
-            <= -minimum_selective_effect
+            observation.causal_lineage_update <= -minimum_selective_effect
             and abs(observation.matched_lineage_update) < minimum_selective_effect
         )
     elif trial.evidence_source in {
@@ -272,9 +266,7 @@ def assess_world_relation_permutation(
     trial: WorldRelationPermutationTrial,
 ) -> WorldRelationPermutationAssessment:
     trial.validate()
-    competition_changed = (
-        trial.selected_lineage_before != trial.selected_lineage_after
-    )
+    competition_changed = trial.selected_lineage_before != trial.selected_lineage_after
     return WorldRelationPermutationAssessment(
         trial_id=trial.trial_id,
         local_state_fixed=True,

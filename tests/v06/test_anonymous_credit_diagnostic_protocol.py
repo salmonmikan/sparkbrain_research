@@ -13,9 +13,7 @@ from sparkbrain.evaluation.v061_anonymous_credit_diagnostic_protocol import (
 
 
 def _trial(trial_id: str):
-    return next(
-        row for row in build_causal_credit_protocol_matrix() if row.trial_id == trial_id
-    )
+    return next(row for row in build_causal_credit_protocol_matrix() if row.trial_id == trial_id)
 
 
 def test_protocol_matrix_covers_match_swap_contradiction_absence_and_internal_only() -> None:
@@ -31,10 +29,7 @@ def test_protocol_matrix_covers_match_swap_contradiction_absence_and_internal_on
     }
     for row in matrix:
         row.validate()
-        assert (
-            row.causal_lineage.matching_signature()
-            == row.matched_lineage.matching_signature()
-        )
+        assert row.causal_lineage.matching_signature() == row.matched_lineage.matching_signature()
 
 
 def test_external_match_updates_only_the_causal_lineage() -> None:
