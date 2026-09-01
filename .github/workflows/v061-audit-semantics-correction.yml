@@ -1,0 +1,129 @@
+name: v061-audit-semantics-correction
+
+on:
+  push:
+    branches:
+      - v061-candidate-003-failure-diagnostics-work
+    paths:
+      - .github/workflows/v061-audit-semantics-correction.yml
+
+permissions:
+  contents: write
+
+jobs:
+  correct:
+    runs-on: ubuntu-24.04
+    env:
+      PYTHONHASHSEED: "0"
+      TZ: UTC
+      LC_ALL: C.UTF-8
+      LANG: C.UTF-8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v061-candidate-003-failure-diagnostics-work
+          fetch-depth: 0
+          lfs: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+
+      - name: Correct audit semantics
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          world_path = Path(
+              "src/sparkbrain/evaluation/v061_world_to_transition_audit.py"
+          )
+          source = world_path.read_text(encoding="utf-8")
+          old = '''    transition_learning_call = "observe_external_transition"
+              local_learning_exists = transition_learning_call in local.called_attributes
+          '''
+          new = '''    transition_learning_call = "observe_external_transition"
+              local_function_names = {
+                  function_name for function_name, _ in local.function_calls
+              }
+              local_learning_exists = (
+                  transition_learning_call in local_function_names
+                  or transition_learning_call in local.called_attributes
+              )
+          '''
+          if source.count(old) != 1:
+              raise SystemExit(
+                  "unexpected local-learning audit block count: "
+                  f"{source.count(old)}"
+              )
+          world_path.write_text(source.replace(old, new), encoding="utf-8")
+
+          lineage_path = Path(
+              "src/sparkbrain/evaluation/"
+              "v061_causal_lineage_information_audit.py"
+          )
+          source = lineage_path.read_text(encoding="utf-8")
+          old_line = "    recovers_return_address = bool(reentry_return_addresses)\n"
+          new_line = (
+              "    # Current-boundary lineage references cannot reconstruct the "
+              "historical\n"
+              "    # proposal/path lineage unless consistency state retained that "
+              "address.\n"
+              "    references_current_return_address = bool(reentry_return_addresses)\n"
+              "    recovers_return_address = (\n"
+              "        retains_return_address and references_current_return_address\n"
+              "    )\n"
+          )
+          if old_line in source:
+              source = source.replace(old_line, new_line, 1)
+          old_condition = "        and not recovers_return_address\n"
+          if old_condition in source:
+              source = source.replace(old_condition, "", 1)
+          lineage_path.write_text(source, encoding="utf-8")
+          PY
+
+      - name: Install development dependencies
+        run: python -m pip install -e ".[dev]"
+
+      - name: Format and verify audits
+        run: |
+          python -m ruff format \
+            src/sparkbrain/evaluation/v061_world_to_transition_audit.py \
+            src/sparkbrain/evaluation/v061_causal_lineage_information_audit.py \
+            tests/v06/test_world_to_transition_audit.py \
+            tests/v06/test_causal_lineage_information_audit.py
+          python -m ruff check --fix \
+            src/sparkbrain/evaluation/v061_world_to_transition_audit.py \
+            src/sparkbrain/evaluation/v061_causal_lineage_information_audit.py \
+            tests/v06/test_world_to_transition_audit.py \
+            tests/v06/test_causal_lineage_information_audit.py
+          python -m ruff check \
+            src/sparkbrain/evaluation/v061_world_to_transition_audit.py \
+            src/sparkbrain/evaluation/v061_causal_lineage_information_audit.py \
+            tests/v06/test_world_to_transition_audit.py \
+            tests/v06/test_causal_lineage_information_audit.py
+          python -m pytest -q \
+            tests/v06/test_world_to_transition_audit.py \
+            tests/v06/test_causal_lineage_information_audit.py
+
+      - name: Commit corrected audits
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            src/sparkbrain/evaluation/v061_world_to_transition_audit.py \
+            src/sparkbrain/evaluation/v061_causal_lineage_information_audit.py \
+            tests/v06/test_world_to_transition_audit.py \
+            tests/v06/test_causal_lineage_information_audit.py
+          if git diff --cached --quiet; then
+            echo "Audit semantics already corrected."
+            exit 0
+          fi
+          git commit -m "fix(v061): correct diagnostic audit semantics [skip ci]"
+          git pull --rebase origin v061-candidate-003-failure-diagnostics-work
+          git push origin HEAD:v061-candidate-003-failure-diagnostics-work
