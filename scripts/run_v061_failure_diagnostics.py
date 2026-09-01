@@ -25,6 +25,12 @@ def _candidate_row(world: dict[str, Any], branch: str) -> dict[str, Any] | None:
     )
 
 
+def _candidate_ratio(row: dict[str, Any] | None) -> str:
+    if row is None:
+        return "n/a"
+    return f"{row['current_threshold_ratio']:.4f}"
+
+
 def _lag_markdown(lag: dict[str, Any]) -> list[str]:
     lines = [
         "## D2 — Lag trajectory autopsy",
@@ -52,8 +58,8 @@ def _lag_markdown(lag: dict[str, Any]) -> list[str]:
         lines.append(
             "| "
             f"{world['family_id']} | {world['factor_value']} | "
-            f"{main['current_threshold_ratio']:.4f} | "
-            f"{alternate['current_threshold_ratio']:.4f} | "
+            f"{_candidate_ratio(main)} | "
+            f"{_candidate_ratio(alternate)} | "
             f"{world['sham']['trajectory_class']} | "
             f"{world['causal_baseline']['baseline_status']} |"
         )
