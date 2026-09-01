@@ -9,8 +9,12 @@ on:
       - "src/sparkbrain/evaluation/v061_diagnostic_worlds.py"
       - "src/sparkbrain/evaluation/v061_lag_diagnostics.py"
       - "src/sparkbrain/evaluation/v061_relation_diagnostics.py"
+      - "src/sparkbrain/evaluation/v061_failure_locus_diagnostics.py"
+      - "src/sparkbrain/evaluation/v061_comparator_contrast.py"
       - "tests/v06/test_v061_failure_diagnostics.py"
+      - "tests/v06/test_v061_failure_locus_and_comparator_contrast.py"
       - "scripts/run_v061_failure_diagnostics.py"
+      - "scripts/run_v061_d5_d6_diagnostics.py"
 
 permissions:
   contents: read
@@ -47,7 +51,10 @@ jobs:
             src/sparkbrain/evaluation/v061_diagnostic_worlds.py \
             src/sparkbrain/evaluation/v061_lag_diagnostics.py \
             src/sparkbrain/evaluation/v061_relation_diagnostics.py \
-            scripts/run_v061_failure_diagnostics.py
+            src/sparkbrain/evaluation/v061_failure_locus_diagnostics.py \
+            src/sparkbrain/evaluation/v061_comparator_contrast.py \
+            scripts/run_v061_failure_diagnostics.py \
+            scripts/run_v061_d5_d6_diagnostics.py
 
       - name: Lint diagnostic sources
         run: |
@@ -55,24 +62,33 @@ jobs:
             src/sparkbrain/evaluation/v061_diagnostic_worlds.py \
             src/sparkbrain/evaluation/v061_lag_diagnostics.py \
             src/sparkbrain/evaluation/v061_relation_diagnostics.py \
+            src/sparkbrain/evaluation/v061_failure_locus_diagnostics.py \
+            src/sparkbrain/evaluation/v061_comparator_contrast.py \
             tests/v06/test_v061_failure_diagnostics.py \
-            scripts/run_v061_failure_diagnostics.py
+            tests/v06/test_v061_failure_locus_and_comparator_contrast.py \
+            scripts/run_v061_failure_diagnostics.py \
+            scripts/run_v061_d5_d6_diagnostics.py
 
       - name: Run focused diagnostic tests
-        run: python -m pytest -q tests/v06/test_v061_failure_diagnostics.py
-
-      - name: Generate D2-D4 artifacts
         run: >-
-          python scripts/run_v061_failure_diagnostics.py
-          --output-dir artifacts/v061/failure-diagnostics
+          python -m pytest -q
+          tests/v06/test_v061_failure_diagnostics.py
+          tests/v06/test_v061_failure_locus_and_comparator_contrast.py
+
+      - name: Generate D2-D6 artifacts
+        run: |
+          python scripts/run_v061_failure_diagnostics.py \
+            --output-dir artifacts/v061/failure-diagnostics
+          python scripts/run_v061_d5_d6_diagnostics.py \
+            --output-dir artifacts/v061/failure-diagnostics
 
       - name: Upload diagnostic artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: v061-d2-d4-failure-diagnostics-${{ github.run_id }}
+          name: v061-d2-d6-failure-diagnostics-${{ github.run_id }}
           path: artifacts/v061/failure-diagnostics
           if-no-files-found: error
           compression-level: 0
           retention-days: 30
 
-# Rerun marker: normalized diagnostic sources only; no candidate execution.
+# Development-only failure diagnosis; candidate-003 remains consumed and untouched.
