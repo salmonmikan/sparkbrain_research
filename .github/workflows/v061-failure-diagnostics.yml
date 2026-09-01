@@ -1,0 +1,76 @@
+name: v061-failure-diagnostics
+
+on:
+  push:
+    branches:
+      - v061-candidate-003-failure-diagnostics-work
+    paths:
+      - ".github/workflows/v061-failure-diagnostics.yml"
+      - "src/sparkbrain/evaluation/v061_diagnostic_worlds.py"
+      - "src/sparkbrain/evaluation/v061_lag_diagnostics.py"
+      - "src/sparkbrain/evaluation/v061_relation_diagnostics.py"
+      - "tests/v06/test_v061_failure_diagnostics.py"
+      - "scripts/run_v061_failure_diagnostics.py"
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-24.04
+    env:
+      PYTHONHASHSEED: "0"
+      TZ: UTC
+      LC_ALL: C.UTF-8
+      LANG: C.UTF-8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v061-candidate-003-failure-diagnostics-work
+          fetch-depth: 1
+          lfs: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+
+      - name: Install development dependencies
+        run: python -m pip install -e ".[dev]"
+
+      - name: Verify candidate isolation
+        shell: bash
+        run: |
+          set -euo pipefail
+          ! grep -R "build_heldout_world_grid\|heldout_world_parameters\|HELDOUT_SEEDS" \
+            src/sparkbrain/evaluation/v061_diagnostic_worlds.py \
+            src/sparkbrain/evaluation/v061_lag_diagnostics.py \
+            src/sparkbrain/evaluation/v061_relation_diagnostics.py \
+            scripts/run_v061_failure_diagnostics.py
+
+      - name: Lint diagnostic sources
+        run: |
+          python -m ruff check \
+            src/sparkbrain/evaluation/v061_diagnostic_worlds.py \
+            src/sparkbrain/evaluation/v061_lag_diagnostics.py \
+            src/sparkbrain/evaluation/v061_relation_diagnostics.py \
+            tests/v06/test_v061_failure_diagnostics.py \
+            scripts/run_v061_failure_diagnostics.py
+
+      - name: Run focused diagnostic tests
+        run: python -m pytest -q tests/v06/test_v061_failure_diagnostics.py
+
+      - name: Generate D2-D4 artifacts
+        run: >-
+          python scripts/run_v061_failure_diagnostics.py
+          --output-dir artifacts/v061/failure-diagnostics
+
+      - name: Upload diagnostic artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: v061-d2-d4-failure-diagnostics-${{ github.run_id }}
+          path: artifacts/v061/failure-diagnostics
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 30
