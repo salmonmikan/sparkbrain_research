@@ -12,12 +12,15 @@ on:
       - "src/sparkbrain/evaluation/v061_failure_locus_diagnostics.py"
       - "src/sparkbrain/evaluation/v061_comparator_contrast.py"
       - "src/sparkbrain/evaluation/v061_state_factorization_diagnostics.py"
+      - "src/sparkbrain/evaluation/v061_field_expression_diagnostics.py"
       - "tests/v06/test_v061_failure_diagnostics.py"
       - "tests/v06/test_v061_failure_locus_and_comparator_contrast.py"
       - "tests/v06/test_v061_state_factorization_diagnostics.py"
+      - "tests/v06/test_v061_field_expression_diagnostics.py"
       - "scripts/run_v061_failure_diagnostics.py"
       - "scripts/run_v061_d5_d6_diagnostics.py"
       - "scripts/run_v061_d7_factorization.py"
+      - "scripts/run_v061_d8_field_expression.py"
 
 permissions:
   contents: read
@@ -57,9 +60,11 @@ jobs:
             src/sparkbrain/evaluation/v061_failure_locus_diagnostics.py \
             src/sparkbrain/evaluation/v061_comparator_contrast.py \
             src/sparkbrain/evaluation/v061_state_factorization_diagnostics.py \
+            src/sparkbrain/evaluation/v061_field_expression_diagnostics.py \
             scripts/run_v061_failure_diagnostics.py \
             scripts/run_v061_d5_d6_diagnostics.py \
-            scripts/run_v061_d7_factorization.py
+            scripts/run_v061_d7_factorization.py \
+            scripts/run_v061_d8_field_expression.py
 
       - name: Lint diagnostic sources
         run: |
@@ -70,12 +75,15 @@ jobs:
             src/sparkbrain/evaluation/v061_failure_locus_diagnostics.py \
             src/sparkbrain/evaluation/v061_comparator_contrast.py \
             src/sparkbrain/evaluation/v061_state_factorization_diagnostics.py \
+            src/sparkbrain/evaluation/v061_field_expression_diagnostics.py \
             tests/v06/test_v061_failure_diagnostics.py \
             tests/v06/test_v061_failure_locus_and_comparator_contrast.py \
             tests/v06/test_v061_state_factorization_diagnostics.py \
+            tests/v06/test_v061_field_expression_diagnostics.py \
             scripts/run_v061_failure_diagnostics.py \
             scripts/run_v061_d5_d6_diagnostics.py \
-            scripts/run_v061_d7_factorization.py
+            scripts/run_v061_d7_factorization.py \
+            scripts/run_v061_d8_field_expression.py
 
       - name: Run focused diagnostic tests
         run: >-
@@ -83,8 +91,9 @@ jobs:
           tests/v06/test_v061_failure_diagnostics.py
           tests/v06/test_v061_failure_locus_and_comparator_contrast.py
           tests/v06/test_v061_state_factorization_diagnostics.py
+          tests/v06/test_v061_field_expression_diagnostics.py
 
-      - name: Generate D2-D7 artifacts
+      - name: Generate D2-D8 artifacts
         run: |
           python scripts/run_v061_failure_diagnostics.py \
             --output-dir artifacts/v061/failure-diagnostics
@@ -92,11 +101,13 @@ jobs:
             --output-dir artifacts/v061/failure-diagnostics
           python scripts/run_v061_d7_factorization.py \
             --output-dir artifacts/v061/failure-diagnostics
+          python scripts/run_v061_d8_field_expression.py \
+            --output-dir artifacts/v061/failure-diagnostics
 
       - name: Upload diagnostic artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: v061-d2-d7-failure-diagnostics-${{ github.run_id }}
+          name: v061-d2-d8-failure-diagnostics-${{ github.run_id }}
           path: artifacts/v061/failure-diagnostics
           if-no-files-found: error
           compression-level: 0
