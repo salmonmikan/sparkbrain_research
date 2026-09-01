@@ -54,9 +54,7 @@ class CausalLineageInformationAudit:
         return {
             **asdict(self),
             "boundary_event": self.boundary_event.state_dict(),
-            "consistency_classes": [
-                row.state_dict() for row in self.consistency_classes
-            ],
+            "consistency_classes": [row.state_dict() for row in self.consistency_classes],
         }
 
 
@@ -97,9 +95,7 @@ def _inventory(class_name: str, fields: tuple[str, ...]) -> ClassFieldInventory:
         class_name=class_name,
         fields=fields,
         lineage_fields=tuple(sorted(field_set.intersection(_LINEAGE_FIELDS))),
-        return_address_fields=tuple(
-            sorted(field_set.intersection(_RETURN_ADDRESS_FIELDS))
-        ),
+        return_address_fields=tuple(sorted(field_set.intersection(_RETURN_ADDRESS_FIELDS))),
     )
 
 
@@ -152,31 +148,25 @@ def audit_causal_lineage_information(
         "observe_external",
     )
     reentry_references = tuple(
-        sorted(
-            set(_name_references(reentry_tree)).intersection(_LINEAGE_FIELDS)
-        )
+        sorted(set(_name_references(reentry_tree)).intersection(_LINEAGE_FIELDS))
     )
 
     consistency_return_addresses = {
-        value
-        for row in consistency_classes
-        for value in row.return_address_fields
+        value for row in consistency_classes for value in row.return_address_fields
     }
-    register_return_addresses = set(register_references).intersection(
-        _RETURN_ADDRESS_FIELDS
-    )
-    reentry_return_addresses = set(reentry_references).intersection(
-        _RETURN_ADDRESS_FIELDS
-    )
+    register_return_addresses = set(register_references).intersection(_RETURN_ADDRESS_FIELDS)
+    reentry_return_addresses = set(reentry_references).intersection(_RETURN_ADDRESS_FIELDS)
     boundary_has_lineage = bool(boundary_event.lineage_fields)
     retains_return_address = bool(consistency_return_addresses)
     consumes_return_address = bool(register_return_addresses)
-    recovers_return_address = bool(reentry_return_addresses)
+    # Re-entry may reference lineage on the *current* boundary event. That
+    # does not recover the historical lineage whose externally confirmed relation
+    # was compressed into consistency state. Historical recovery is possible only
+    # if the consistency carrier retained a return address in the first place.
+    references_current_return_address = bool(reentry_return_addresses)
+    recovers_return_address = retains_return_address and references_current_return_address
     information_loss = (
-        boundary_has_lineage
-        and not retains_return_address
-        and not consumes_return_address
-        and not recovers_return_address
+        boundary_has_lineage and not retains_return_address and not consumes_return_address
     )
     if information_loss:
         first_loss = "BoundaryEvent -> PendingBoundaryExposure/AnonymousLinkState"
