@@ -1,0 +1,333 @@
+name: v061-finalize-d7-d11-diagnostics
+
+on:
+  push:
+    branches:
+      - v061-candidate-003-failure-diagnostics-work
+    paths:
+      - .github/workflows/v061-finalize-d7-d11-diagnostics.yml
+
+permissions:
+  contents: write
+
+env:
+  PYTHONHASHSEED: "0"
+  TZ: UTC
+  LC_ALL: C.UTF-8
+  LANG: C.UTF-8
+
+jobs:
+  finalize:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v061-candidate-003-failure-diagnostics-work
+          fetch-depth: 0
+          lfs: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+
+      - name: Record tested source
+        run: echo "TESTED_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - name: Install diagnostic dependencies
+        run: python -m pip install -e ".[dev,learned,spiking]"
+
+      - name: Normalize D7-D11 diagnostic sources
+        run: |
+          python -m ruff format \
+            src/sparkbrain/evaluation/v061_temporal_functional_decoupling.py \
+            src/sparkbrain/evaluation/v061_temporal_functional_discriminators.py \
+            src/sparkbrain/evaluation/v061_anonymous_credit_diagnostic_protocol.py \
+            src/sparkbrain/evaluation/v061_world_to_transition_audit.py \
+            src/sparkbrain/evaluation/v061_causal_lineage_information_audit.py \
+            src/sparkbrain/evaluation/v061_explicit_table_equivalence_audit.py \
+            tests/v06/test_temporal_functional_decoupling.py \
+            tests/v06/test_temporal_functional_discriminators.py \
+            tests/v06/test_anonymous_credit_diagnostic_protocol.py \
+            tests/v06/test_world_to_transition_audit.py \
+            tests/v06/test_causal_lineage_information_audit.py \
+            tests/v06/test_explicit_table_equivalence_audit.py \
+            scripts/v061_temporal_functional_decoupling_report.py \
+            scripts/v061_temporal_functional_discriminator_report.py \
+            scripts/v061_anonymous_credit_protocol_report.py \
+            scripts/v061_world_to_transition_audit_report.py \
+            scripts/v061_causal_lineage_information_audit_report.py
+          python -m ruff check --fix \
+            src/sparkbrain/evaluation/v061_temporal_functional_decoupling.py \
+            src/sparkbrain/evaluation/v061_temporal_functional_discriminators.py \
+            src/sparkbrain/evaluation/v061_anonymous_credit_diagnostic_protocol.py \
+            src/sparkbrain/evaluation/v061_world_to_transition_audit.py \
+            src/sparkbrain/evaluation/v061_causal_lineage_information_audit.py \
+            src/sparkbrain/evaluation/v061_explicit_table_equivalence_audit.py \
+            tests/v06/test_temporal_functional_decoupling.py \
+            tests/v06/test_temporal_functional_discriminators.py \
+            tests/v06/test_anonymous_credit_diagnostic_protocol.py \
+            tests/v06/test_world_to_transition_audit.py \
+            tests/v06/test_causal_lineage_information_audit.py \
+            tests/v06/test_explicit_table_equivalence_audit.py \
+            scripts/v061_temporal_functional_decoupling_report.py \
+            scripts/v061_temporal_functional_discriminator_report.py \
+            scripts/v061_anonymous_credit_protocol_report.py \
+            scripts/v061_world_to_transition_audit_report.py \
+            scripts/v061_causal_lineage_information_audit_report.py
+
+      - name: Lint finalized diagnostic sources
+        run: |
+          python -m ruff check \
+            src/sparkbrain/evaluation/v061_temporal_functional_decoupling.py \
+            src/sparkbrain/evaluation/v061_temporal_functional_discriminators.py \
+            src/sparkbrain/evaluation/v061_anonymous_credit_diagnostic_protocol.py \
+            src/sparkbrain/evaluation/v061_world_to_transition_audit.py \
+            src/sparkbrain/evaluation/v061_causal_lineage_information_audit.py \
+            src/sparkbrain/evaluation/v061_explicit_table_equivalence_audit.py \
+            tests/v06/test_temporal_functional_decoupling.py \
+            tests/v06/test_temporal_functional_discriminators.py \
+            tests/v06/test_anonymous_credit_diagnostic_protocol.py \
+            tests/v06/test_world_to_transition_audit.py \
+            tests/v06/test_causal_lineage_information_audit.py \
+            tests/v06/test_explicit_table_equivalence_audit.py \
+            scripts/v061_temporal_functional_decoupling_report.py \
+            scripts/v061_temporal_functional_discriminator_report.py \
+            scripts/v061_anonymous_credit_protocol_report.py \
+            scripts/v061_world_to_transition_audit_report.py \
+            scripts/v061_causal_lineage_information_audit_report.py
+
+      - name: Run D7-D11 diagnostic tests
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdir -p artifacts/v061/d7-d11-verification
+          python -m pytest -q \
+            tests/v06/test_temporal_functional_decoupling.py \
+            tests/v06/test_temporal_functional_discriminators.py \
+            tests/v06/test_anonymous_credit_diagnostic_protocol.py \
+            tests/v06/test_world_to_transition_audit.py \
+            tests/v06/test_causal_lineage_information_audit.py \
+            tests/v06/test_explicit_table_equivalence_audit.py \
+            --junitxml=artifacts/v061/d7-d11-verification/junit.xml \
+            | tee artifacts/v061/d7-d11-verification/pytest.log
+
+      - name: Materialize observer-only reports
+        run: |
+          mkdir -p docs/diagnostics
+          python scripts/v061_temporal_functional_decoupling_report.py \
+            --json docs/diagnostics/V061_D7_TEMPORAL_FUNCTIONAL_DECOUPLING.json \
+            --markdown docs/V061_D7_TEMPORAL_FUNCTIONAL_DECOUPLING.md
+          python scripts/v061_temporal_functional_discriminator_report.py \
+            --json docs/diagnostics/V061_D8_TEMPORAL_FUNCTIONAL_DISCRIMINATORS.json \
+            --markdown docs/V061_D8_TEMPORAL_FUNCTIONAL_DISCRIMINATORS.md
+          python scripts/v061_anonymous_credit_protocol_report.py \
+            --json docs/diagnostics/V061_P1_P2_ANONYMOUS_CAUSAL_CREDIT.json \
+            --markdown docs/V061_P1_P2_ANONYMOUS_CAUSAL_CREDIT_BASELINE.md
+          python scripts/v061_world_to_transition_audit_report.py \
+            --root . \
+            --json docs/diagnostics/V061_P2_WORLD_TO_TRANSITION_AUDIT.json \
+            --markdown docs/V061_P2_WORLD_TO_TRANSITION_AUDIT.md
+          python scripts/v061_causal_lineage_information_audit_report.py \
+            --root . \
+            --json docs/diagnostics/V061_D10_CAUSAL_LINEAGE_INFORMATION_LOSS.json \
+            --markdown docs/V061_D10_CAUSAL_LINEAGE_INFORMATION_LOSS.md
+          sed -i 's/````/```/g' docs/V061_D10_CAUSAL_LINEAGE_INFORMATION_LOSS.md
+
+      - name: Audit candidate and runtime non-interference
+        run: |
+          python - <<'PY'
+          import ast
+          import json
+          from pathlib import Path
+
+          files = (
+              Path("src/sparkbrain/evaluation/v061_temporal_functional_decoupling.py"),
+              Path("src/sparkbrain/evaluation/v061_temporal_functional_discriminators.py"),
+              Path("src/sparkbrain/evaluation/v061_anonymous_credit_diagnostic_protocol.py"),
+              Path("src/sparkbrain/evaluation/v061_world_to_transition_audit.py"),
+              Path("src/sparkbrain/evaluation/v061_causal_lineage_information_audit.py"),
+              Path("src/sparkbrain/evaluation/v061_explicit_table_equivalence_audit.py"),
+          )
+          forbidden_import_fragments = (
+              "v06_confirmatory_execute",
+              "v06_confirmatory_locked_scoring",
+              "v06_confirmatory_raw_store",
+          )
+          forbidden_calls = {
+              "run_complete_confirmatory_matrix",
+              "run_heldout_matrix",
+              "execute_candidate",
+              "score_strict_confirmatory_results",
+          }
+          rows = []
+          violations = []
+          for path in files:
+              source = path.read_text(encoding="utf-8")
+              tree = ast.parse(source, filename=str(path))
+              imports = {
+                  node.module or ""
+                  for node in ast.walk(tree)
+                  if isinstance(node, ast.ImportFrom)
+              }
+              calls = {
+                  node.func.id
+                  for node in ast.walk(tree)
+                  if isinstance(node, ast.Call)
+                  and isinstance(node.func, ast.Name)
+              }
+              bad_imports = sorted(
+                  value
+                  for value in imports
+                  if any(fragment in value for fragment in forbidden_import_fragments)
+              )
+              bad_calls = sorted(calls.intersection(forbidden_calls))
+              if bad_imports or bad_calls:
+                  violations.append(
+                      {
+                          "path": str(path),
+                          "imports": bad_imports,
+                          "calls": bad_calls,
+                      }
+                  )
+              rows.append(
+                  {
+                      "path": str(path),
+                      "candidate_execution_imports": bad_imports,
+                      "candidate_execution_calls": bad_calls,
+                  }
+              )
+          report = {
+              "candidate_003_reexecuted": False,
+              "runtime_source_modified": False,
+              "files": rows,
+              "violations": violations,
+          }
+          Path("artifacts/v061/d7-d11-verification/boundary.json").write_text(
+              json.dumps(report, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          if violations:
+              raise SystemExit(json.dumps(violations, indent=2))
+          PY
+
+      - name: Record verified milestone
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+
+          xml = Path("artifacts/v061/d7-d11-verification/junit.xml")
+          root = ET.parse(xml).getroot()
+          suites = [root] if root.tag == "testsuite" else list(root.findall("testsuite"))
+          totals = {
+              "tests": sum(int(row.attrib.get("tests", 0)) for row in suites),
+              "failures": sum(int(row.attrib.get("failures", 0)) for row in suites),
+              "errors": sum(int(row.attrib.get("errors", 0)) for row in suites),
+              "skipped": sum(int(row.attrib.get("skipped", 0)) for row in suites),
+          }
+          status = {
+              "tested_sha": os.environ["TESTED_SHA"],
+              "candidate_003_reexecuted": False,
+              "runtime_modified_by_diagnostics": False,
+              "tests": totals,
+              "reports": {
+                  "d7": "docs/V061_D7_TEMPORAL_FUNCTIONAL_DECOUPLING.md",
+                  "d8": "docs/V061_D8_TEMPORAL_FUNCTIONAL_DISCRIMINATORS.md",
+                  "d9": "docs/V061_D9_SPARKBRAIN_HYPOTHESIS_DISCRIMINATION_MATRIX.md",
+                  "d10": "docs/V061_D10_CAUSAL_LINEAGE_INFORMATION_LOSS.md",
+                  "d11": "docs/V061_D11_EXPLICIT_TABLE_EQUIVALENCE_AUDIT.md",
+                  "p1_p2": "docs/V061_P1_P2_ANONYMOUS_CAUSAL_CREDIT_PROTOCOL.md",
+              },
+          }
+          Path("artifacts/v061/d7-d11-verification/status.json").write_text(
+              json.dumps(status, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          text = "\n".join(
+              (
+                  "# v0.6.1 D7–D11 Diagnostic Milestone",
+                  "",
+                  f"Tested source before report commit: `{status['tested_sha']}`",
+                  "",
+                  "```text",
+                  f"diagnostic tests: {totals['tests']}",
+                  f"failures:         {totals['failures']}",
+                  f"errors:           {totals['errors']}",
+                  f"skipped:          {totals['skipped']}",
+                  "candidate-003 rerun: false",
+                  "Primary runtime modified: false",
+                  "```",
+                  "",
+                  "The milestone confirms three separate gaps:",
+                  "",
+                  "1. local temporal stability and world consistency can select different trajectories;",
+                  "2. world consistency has no direct dependency into G1 trajectory learning/competition;",
+                  "3. outbound proposal/path lineage is compressed away before persistent consistency state, so historical external evidence has no retained causal return address.",
+                  "",
+                  "P1–P2 now define the fail-closed observations required of any future anonymous credit mechanism. D11 prevents a lineage-keyed target lookup, typed reward head, Assembly key, or self-confirming score from being relabelled as emergent SparkBrain organization.",
+                  "",
+              )
+          )
+          Path("docs/V061_D7_D11_DIAGNOSTIC_MILESTONE.md").write_text(
+              text,
+              encoding="utf-8",
+          )
+          PY
+
+      - name: Commit verified diagnostic milestone
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            src/sparkbrain/evaluation/v061_temporal_functional_decoupling.py \
+            src/sparkbrain/evaluation/v061_temporal_functional_discriminators.py \
+            src/sparkbrain/evaluation/v061_anonymous_credit_diagnostic_protocol.py \
+            src/sparkbrain/evaluation/v061_world_to_transition_audit.py \
+            src/sparkbrain/evaluation/v061_causal_lineage_information_audit.py \
+            src/sparkbrain/evaluation/v061_explicit_table_equivalence_audit.py \
+            tests/v06/test_temporal_functional_decoupling.py \
+            tests/v06/test_temporal_functional_discriminators.py \
+            tests/v06/test_anonymous_credit_diagnostic_protocol.py \
+            tests/v06/test_world_to_transition_audit.py \
+            tests/v06/test_causal_lineage_information_audit.py \
+            tests/v06/test_explicit_table_equivalence_audit.py \
+            scripts/v061_temporal_functional_decoupling_report.py \
+            scripts/v061_temporal_functional_discriminator_report.py \
+            scripts/v061_anonymous_credit_protocol_report.py \
+            scripts/v061_world_to_transition_audit_report.py \
+            scripts/v061_causal_lineage_information_audit_report.py \
+            docs/V061_D7_TEMPORAL_FUNCTIONAL_DECOUPLING.md \
+            docs/V061_D8_TEMPORAL_FUNCTIONAL_DISCRIMINATORS.md \
+            docs/V061_D9_SPARKBRAIN_HYPOTHESIS_DISCRIMINATION_MATRIX.md \
+            docs/V061_D10_CAUSAL_LINEAGE_INFORMATION_LOSS.md \
+            docs/V061_D11_EXPLICIT_TABLE_EQUIVALENCE_AUDIT.md \
+            docs/V061_P1_P2_ANONYMOUS_CAUSAL_CREDIT_PROTOCOL.md \
+            docs/V061_P1_P2_ANONYMOUS_CAUSAL_CREDIT_BASELINE.md \
+            docs/V061_P2_WORLD_TO_TRANSITION_AUDIT.md \
+            docs/V061_CANDIDATE_003_FAILURE_DIAGNOSTICS_MASTER_REPORT.md \
+            docs/V061_D7_D11_DIAGNOSTIC_MILESTONE.md \
+            docs/diagnostics/V061_D7_TEMPORAL_FUNCTIONAL_DECOUPLING.json \
+            docs/diagnostics/V061_D8_TEMPORAL_FUNCTIONAL_DISCRIMINATORS.json \
+            docs/diagnostics/V061_P1_P2_ANONYMOUS_CAUSAL_CREDIT.json \
+            docs/diagnostics/V061_P2_WORLD_TO_TRANSITION_AUDIT.json \
+            docs/diagnostics/V061_D10_CAUSAL_LINEAGE_INFORMATION_LOSS.json
+          if git diff --cached --quiet; then
+            echo "Diagnostic milestone already current."
+          else
+            git commit -m "docs(v061): finalize D7-D11 failure diagnosis [skip ci]"
+            git pull --rebase origin v061-candidate-003-failure-diagnostics-work
+            git push origin HEAD:v061-candidate-003-failure-diagnostics-work
+          fi
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v061-d7-d11-diagnostic-milestone-${{ github.run_id }}
+          path: artifacts/v061/d7-d11-verification/
+          if-no-files-found: error
+          retention-days: 30
