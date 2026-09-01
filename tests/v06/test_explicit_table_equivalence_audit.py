@@ -11,8 +11,7 @@ from sparkbrain.evaluation.v061_explicit_table_equivalence_audit import (
 
 def _assessments():
     return {
-        row.mechanism_id: audit_table_equivalence(row)
-        for row in canonical_mechanism_descriptors()
+        row.mechanism_id: audit_table_equivalence(row) for row in canonical_mechanism_descriptors()
     }
 
 

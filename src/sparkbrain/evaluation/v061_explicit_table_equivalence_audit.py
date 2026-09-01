@@ -45,7 +45,10 @@ class MechanismDescriptor:
             raise ValueError("value dimensions must be unique")
         if not self.key_dimensions and self.state_locality is StateLocality.CENTRAL_TABLE:
             raise ValueError("central table requires a key")
-        if self.generated_activity_can_positive_update and self.update_gate is not UpdateGate.INTERNAL_ONLY:
+        if (
+            self.generated_activity_can_positive_update
+            and self.update_gate is not UpdateGate.INTERNAL_ONLY
+        ):
             raise ValueError(
                 "generated positive update must be represented as internal-only gating"
             )
@@ -153,10 +156,7 @@ def audit_table_equivalence(
         descriptor.persistent
         and descriptor.direct_query_returns_target
         and target_addressed
-        and (
-            descriptor.state_locality is StateLocality.CENTRAL_TABLE
-            or lineage_addressed
-        )
+        and (descriptor.state_locality is StateLocality.CENTRAL_TABLE or lineage_addressed)
     )
     if explicit_lookup:
         reasons.append("persistent keyed state directly returns a target")
