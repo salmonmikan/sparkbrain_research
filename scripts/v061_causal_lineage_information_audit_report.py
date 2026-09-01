@@ -45,9 +45,7 @@ def _markdown(report: dict[str, object]) -> str:
             "| {name} | {fields} | {return_address} |".format(
                 name=item["class_name"],
                 fields=", ".join(item["fields"]),
-                return_address=(
-                    ", ".join(item["return_address_fields"]) or "—"
-                ),
+                return_address=(", ".join(item["return_address_fields"]) or "—"),
             )
         )
     rows.extend(
@@ -56,16 +54,14 @@ def _markdown(report: dict[str, object]) -> str:
             "## Audit result",
             "",
             "```text",
-            "boundary has causal lineage: "
-            f"{report['boundary_has_causal_lineage']}",
+            f"boundary has causal lineage: {report['boundary_has_causal_lineage']}",
             "consistency retains proposal return address: "
             f"{report['consistency_retains_proposal_return_address']}",
             "register_boundary consumes return address: "
             f"{report['register_boundary_consumes_proposal_return_address']}",
             "re-entry recovers historical return address: "
             f"{report['relation_reentry_recovers_original_return_address']}",
-            "lineage information loss confirmed: "
-            f"{report['lineage_information_loss_confirmed']}",
+            f"lineage information loss confirmed: {report['lineage_information_loss_confirmed']}",
             f"first loss boundary: {report['first_loss_boundary']}",
             "```",
             "",

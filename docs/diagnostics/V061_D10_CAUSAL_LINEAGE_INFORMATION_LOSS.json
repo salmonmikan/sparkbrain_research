@@ -1,0 +1,137 @@
+{
+  "boundary_event": {
+    "class_name": "BoundaryEvent",
+    "fields": [
+      "event_id",
+      "time_ms",
+      "port_id",
+      "magnitude",
+      "polarity",
+      "direction",
+      "source_spark_id",
+      "source_unit_id",
+      "source_proposal_ids",
+      "generation_depth",
+      "source_state_hash"
+    ],
+    "lineage_fields": [
+      "generation_depth",
+      "source_proposal_ids",
+      "source_spark_id",
+      "source_state_hash",
+      "source_unit_id"
+    ],
+    "return_address_fields": [
+      "source_proposal_ids"
+    ]
+  },
+  "boundary_has_causal_lineage": true,
+  "consistency_classes": [
+    {
+      "class_name": "AnonymousLinkState",
+      "fields": [
+        "port_id",
+        "target",
+        "polarity",
+        "consistent_count",
+        "inconsistent_count",
+        "mean_lag_ms",
+        "lag_m2",
+        "mean_magnitude_ratio",
+        "last_boundary_event_id",
+        "last_external_event_id"
+      ],
+      "lineage_fields": [],
+      "return_address_fields": []
+    },
+    {
+      "class_name": "PortExposureState",
+      "fields": [
+        "boundary_count",
+        "externally_paired_count",
+        "expired_count"
+      ],
+      "lineage_fields": [],
+      "return_address_fields": []
+    }
+  ],
+  "consistency_retains_proposal_return_address": false,
+  "first_loss_boundary": "BoundaryEvent -> PendingBoundaryExposure/AnonymousLinkState",
+  "lineage_information_loss_confirmed": true,
+  "observe_external_references": [
+    "AnonymousConsistencyResolution",
+    "AnonymousLinkState",
+    "EXTERNAL",
+    "EventOrigin",
+    "RuntimePulse",
+    "ValueError",
+    "_candidate_boundary_ids",
+    "_link_id",
+    "_links",
+    "_pending",
+    "_ports",
+    "_prior_reliability",
+    "append",
+    "before",
+    "boundary",
+    "boundary_id",
+    "candidates",
+    "config",
+    "event",
+    "event_id",
+    "events",
+    "external",
+    "externally_paired_count",
+    "get",
+    "items",
+    "key",
+    "lag_ms",
+    "ledger",
+    "min",
+    "observe_consistency",
+    "observe_inconsistency",
+    "origin",
+    "other_key",
+    "other_state",
+    "pending",
+    "polarity",
+    "pop",
+    "port_id",
+    "registered",
+    "reliability",
+    "resolution",
+    "resolutions",
+    "self",
+    "single_external_per_boundary",
+    "state",
+    "target",
+    "time_ms"
+  ],
+  "register_boundary_consumes_proposal_return_address": false,
+  "register_boundary_references": [
+    "BoundaryEvent",
+    "PendingBoundaryEvent",
+    "PortExposureState",
+    "RuntimeError",
+    "ValueError",
+    "_pending",
+    "_ports",
+    "boundary_count",
+    "config",
+    "event",
+    "event_id",
+    "len",
+    "maximum_pending",
+    "pending_ttl_ms",
+    "port_id",
+    "self",
+    "setdefault",
+    "time_ms"
+  ],
+  "relation_reentry_recovers_original_return_address": false,
+  "relation_reentry_references": [
+    "generation_depth",
+    "source_proposal_ids",
+    "source_state_hash"
+  ]
+}
