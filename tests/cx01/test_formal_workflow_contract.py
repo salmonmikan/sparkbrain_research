@@ -16,6 +16,14 @@ def test_formal_workflow_uses_direct_frozen_source_runtime() -> None:
     assert "Verify candidate hash input before capability" in text
 
 
+def test_formal_workflow_requires_dispatch_at_exact_frozen_revision() -> None:
+    text = WORKFLOW.read_text(encoding="utf-8")
+
+    assert "Require workflow dispatch at exact frozen revision" in text
+    assert 'test "$GITHUB_SHA" = "$SOURCE_SHA"' in text
+    assert "frozen tag whose commit is exactly" in text
+
+
 def test_formal_workflow_pins_external_action_revisions() -> None:
     text = WORKFLOW.read_text(encoding="utf-8")
 
