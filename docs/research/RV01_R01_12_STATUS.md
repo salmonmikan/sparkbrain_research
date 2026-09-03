@@ -3,19 +3,19 @@
 ## Current decision
 
 ```text
-R01-11 physical resource/safety boundary: complete
+R01-11 physical resource/safety boundary: complete, negative limitation retained
 R01-12A world contract:                   complete
-R01-12B development runner:               next
-R01-12C reset/transplant/order controls:  pending
-R01-12D reservoir comparison:             pending
-R01-12E held-out review/freeze:            pending
+R01-12B development runner:               complete
+R01-12C intervention controls:            complete
+R01-12D resource-matched reservoir:       complete, mixed result fixed
+R01-12E held-out review/freeze:            in progress
 held-out interference capability:         not executed
 main merge:                               blocked
 ```
 
-## R01-12A completed
+## Fixed world programme
 
-The continual-interference programme now has a deterministic pure-data world contract:
+The continual-interference programme remains unchanged:
 
 ```text
 5 families × 3 development seeds = 15 development worlds
@@ -30,56 +30,79 @@ Families:
 2. three shared-cue branches;
 3. three shared-prefix branches;
 4. opposing directed-edge reversal plus disjoint control;
-5. dense route load exceeding the frozen active-edge budget.
+5. dense route load exceeding the registered active-edge budget.
 
-Each world fixes:
+No world definition, threshold, exposure count, route order, probe order, active-edge budget, or seed was changed in response to development failures.
 
-- anonymous route units and exposure counts;
-- training and probe order;
-- ordinary Field threshold and cue magnitude;
-- temporal lag;
-- maximum active outgoing edges;
-- maximum total active edges;
-- reversal route identities where applicable.
+## R01-11 retained limitation
 
-The contract contains no runtime transition model, Assembly, route label available to the runtime,
-correct branch, reward, utility, or semantic field.
+The physical safety suite remains a negative engineering boundary. Under its original queue budget, the disjoint-control probe reaches unit `5` and then halts when queue size reaches `13` against the fixed budget of `12`.
 
-## Held-out boundary
+Therefore:
 
-The 50 held-out worlds may be regenerated, hashed, and shape-validated. They must not be executed for
-capability before R01-12B through R01-12D are complete and the following are frozen:
+```text
+local_path_failure_does_not_destroy_disjoint_path = false
+engineering_candidate = false
+intrinsic_runtime_safety_supported = false
+external_execution_guard_required = true
+```
 
-- physical learner configuration;
-- Field and safety budgets;
-- evaluation metrics and thresholds;
-- comparator configuration and state budget;
-- result/resource schemas;
-- world-grid hash;
-- full Git SHA.
+See `RV01_R01_11_SAFETY_DIAGNOSTIC_ADDENDUM.md`.
 
-No held-out pass/fail, route-retention score, branch-collapse result, or comparator ranking has been
-created at R01-12A.
+## R01-12B and R01-12C
 
-## Scientific purpose
+R01-12B executes only the 15 development worlds using the current external-only physical learner and ordinary Field runtime. R01-12C adds the preregistered reset, weight/delay transplant, structural edge removal, matched disjoint edge removal, training-order reversal, probe-order permutation, deterministic replay, freeze-after-training, and endogenous-write controls.
 
-RV01 currently demonstrates external-only learning in ordinary physical connection weights/delays,
-with real Field continuation and a viable reservoir explanation. R01-12 asks whether that physical
-edge state can coexist under multiple experiences or whether it behaves as a fragile pairwise edge
-table.
+These stages remain development diagnostics. Failures are recorded rather than rescued by changing the world contract.
 
-Passing R01-12A establishes only that the falsification worlds were specified before capability
-inspection. It supplies no new evidence for capacity, low interference, distributed memory, or
-architectural uniqueness.
+## R01-12D fixed development result
 
-## Next implementation
+The resource-matched sparse reservoir comparison completed from source:
 
-R01-12B must:
+```text
+b163117512daca23b613c8a109a544833af7d360
+```
 
-1. reuse the current RV01 physical learner and ordinary Field runtime;
-2. execute only the 15 development worlds;
-3. train routes in the frozen order and probe every route after each phase;
-4. record connection hashes, weights/delays, active-edge counts, branch coverage, contamination,
-   queue/spike/safety status, ignored endogenous writes, persistent-state size, and wall-clock time;
-5. preserve all failures without increasing edge budgets or changing world definitions;
-6. leave the 50 held-out capability worlds untouched.
+Canonical anchors:
+
+```text
+development world grid:
+1d9aed2d3be9cd04460943023321fe519160afb1e3f2ef5622d74949b49e5c48
+
+suite hash:
+16e29a77ffa714adbe8bb93cda1bc0cbf67a4022da135069fe731ca65709e7c6
+
+result payload hash:
+4f07d2f645fc9319647b49775a6186eba95af4cf567f99b6b5f8f64fbe0ff79e
+```
+
+Aggregate development result:
+
+| Measure | Physical Field | Resource-matched reservoir |
+|---|---:|---:|
+| route-weighted ordered retention | 1.000 | 0.900 |
+| exact routes | 24 / 60 | 24 / 60 |
+| contamination | 216 | 177 |
+
+The reservoir matches or exceeds Field mean retention in 6 of 15 worlds. The Field has a repeatable ordered-retention advantage in shared-prefix, reversal, and dense-load worlds, but exact-route recovery is tied and reservoir contamination is lower.
+
+This is a **mixed result**, not architectural superiority. See `RV01_R01_12D_DEVELOPMENT_RESULT.md` and the tracked development manifest.
+
+## R01-12E boundary
+
+R01-12E may regenerate, shape-validate, and hash the 50 held-out world specifications. It may not train the Field, execute held-out route probes, fit the reservoir on held-out routes, or inspect any held-out capability metric before the freeze is sealed.
+
+The freeze review must bind at least:
+
+- the full source Git SHA;
+- all 50 deterministic held-out specification identities and their grid hash;
+- development and held-out seed sets;
+- physical plasticity configuration;
+- Field/evaluator budgets and metric semantics;
+- reservoir comparator configuration and resource contract;
+- expected held-out result cardinalities;
+- critical source-file hashes;
+- the fixed R01-12D development-result hashes;
+- one-way/no-rerun execution policy.
+
+Only after a green source revision and a matching capability-free preflight may an execution seal be written. The seal itself must not execute held-out capability.
