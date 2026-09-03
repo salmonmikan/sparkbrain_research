@@ -118,14 +118,18 @@ def decide_family(evidence: FamilyEvidence) -> FamilyDecision:
 
 
 def brier_score(expected: dict[str, float], observed: dict[str, float]) -> float:
-    tokens = set(expected).union(observed)
+    """Compute the same Brier definition with a canonical token summation order."""
+
+    tokens = sorted(set(expected).union(observed))
     return sum((observed.get(token, 0.0) - expected.get(token, 0.0)) ** 2 for token in tokens)
 
 
 def cross_entropy(expected: dict[str, float], observed: dict[str, float]) -> float:
+    """Compute cross entropy in canonical token order for byte-stable evidence."""
+
     floor = 1e-12
     return -sum(
-        probability * math.log(max(floor, observed.get(token, 0.0)))
-        for token, probability in expected.items()
-        if probability > 0
+        expected[token] * math.log(max(floor, observed.get(token, 0.0)))
+        for token in sorted(expected)
+        if expected[token] > 0
     )
