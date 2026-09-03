@@ -22,11 +22,16 @@ class ComparatorProtocol(Protocol):
 
     Models receive anonymous external tokens and timestamps only. They must not
     receive evaluator context IDs, correct targets, semantic labels, or reward.
+
+    `learn=False` is an explicit evaluation boundary: the external event may
+    update transient inference state but must not change learned parameters.
     """
 
     kind: ComparatorKind
 
-    def observe_external(self, event: ComparatorEvent) -> None: ...
+    def observe_external(self, event: ComparatorEvent, *, learn: bool = True) -> None: ...
+
+    def finalize_episode(self) -> None: ...
 
     def advance(self, timestamp_ms: float) -> None: ...
 
@@ -41,6 +46,8 @@ class ComparatorProtocol(Protocol):
     def snapshot(self) -> dict[str, Any]: ...
 
     def restore(self, state: dict[str, Any]) -> None: ...
+
+    def learned_state_dict(self) -> dict[str, Any]: ...
 
     @property
     def parameter_count(self) -> int: ...
