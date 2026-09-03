@@ -59,6 +59,12 @@ jobs:
       PYTHONPATH: ${{ github.workspace }}/source/src
       FORMAL_RUN_NAME: cx01-formal-${{ inputs.candidate_spec_hash }}-${{ inputs.source_sha }}
     steps:
+      - name: Require workflow dispatch at exact frozen revision
+        env:
+          SOURCE_SHA: ${{ inputs.source_sha }}
+        run: |
+          test "$GITHUB_SHA" = "$SOURCE_SHA"
+
       - name: Checkout preconsumed control branch
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -205,6 +211,7 @@ jobs:
           root.mkdir(parents=True, exist_ok=True)
           payload = {
               "candidate_spec_hash": os.environ["CANDIDATE_SPEC_HASH"],
+              "dispatch_git_sha": os.environ["GITHUB_SHA"],
               "executable": sys.executable,
               "implementation": platform.python_implementation(),
               "machine": platform.machine(),
@@ -265,6 +272,11 @@ jobs:
 # branch by a separate pre-execution operation. The run identity is bound to the
 # candidate specification hash and frozen source SHA, so copying the same
 # candidate to another control branch does not create a new execution identity.
+#
+# The workflow must be dispatched using a frozen tag whose commit is exactly
+# `source_sha`; the first job step fails closed unless GITHUB_SHA == source_sha.
+# A fail-closed registration stub with the same workflow path must exist on the
+# repository default branch so GitHub can receive workflow_dispatch events.
 #
 # STARTED is the normative durable consumption marker. The retained Actions
 # history check is an additional fail-closed guard; it is not treated as the
