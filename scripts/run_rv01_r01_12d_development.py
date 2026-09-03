@@ -7,11 +7,11 @@ from dataclasses import asdict
 from pathlib import Path
 from typing import Any
 
-from sparkbrain.v06.foundation import digest
 from sparkbrain.research.rv01.resource_matched_reservoir import (
     ResourceMatchedReservoirConfig,
     run_development_resource_matched_reservoir_suite,
 )
+from sparkbrain.v06.foundation import digest
 
 SCHEMA = "rv01-r01-12d-development-result-v1"
 
@@ -108,14 +108,22 @@ def main() -> int:
         json.dumps(result, ensure_ascii=False, sort_keys=True, indent=2) + "\n",
         encoding="utf-8",
     )
-    print(json.dumps({
-        "aggregate": result["aggregate"],
-        "execution_source_sha": result["execution_source_sha"],
-        "held_out_capability_executed": result["held_out_capability_executed"],
-        "result_payload_hash": result["result_payload_hash"],
-        "suite_hash": result["suite_hash"],
-        "world_grid_hash": result["world_grid_hash"],
-    }, ensure_ascii=False, sort_keys=True))
+    print(
+        json.dumps(
+            {
+                "aggregate": result["aggregate"],
+                "execution_source_sha": result["execution_source_sha"],
+                "held_out_capability_executed": result[
+                    "held_out_capability_executed"
+                ],
+                "result_payload_hash": result["result_payload_hash"],
+                "suite_hash": result["suite_hash"],
+                "world_grid_hash": result["world_grid_hash"],
+            },
+            ensure_ascii=False,
+            sort_keys=True,
+        )
+    )
     return 0
 
 
