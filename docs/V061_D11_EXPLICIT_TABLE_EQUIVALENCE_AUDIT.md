@@ -144,12 +144,65 @@ Failure of the last condition is not an engineering failure. It is a scientific 
 the system is an explicit anonymous predictive memory rather than the stronger Field-organized
 SparkBrain hypothesis.
 
-## 7. Implementation
+## 7. P5 behavioral extension
+
+D11 static classification is now paired with P5 behavioral table-equivalence. Both the proposed
+mechanism and its smallest explicit predictor must cover the complete intervention set:
+
+```text
+matched causal lineage
+lineage swap
+external contradiction
+external absence
+internal replay only
+world-relation permutation
+state-locus transplant
+bounded ambiguity
+identifier permutation
+physical trajectory substitution
+unseen lineage combination
+```
+
+P5 fails closed when either side omits a challenge.
+
+The behavioral decision is intentionally asymmetric:
+
+```text
+candidate == smaller/equal established-minimal explicit predictor
+    -> classify as behaviorally explicit-table-equivalent
+
+candidate != one tested explicit predictor
+    -> that tested predictor is falsified
+    -> emergence is NOT established
+```
+
+The second rule is essential. Otherwise a sufficiently weak baseline would make any complicated
+mechanism appear emergent. A non-equivalence result must survive progressively smaller and stronger
+explicit baselines, state-locality inspection, and P1-P4 causal tests before a stronger architectural
+claim can even be considered.
+
+Anonymous IDs do not provide an exemption. A persistent lineage-keyed score or transition state that
+reproduces the same behavior as a compact table remains explicit transition memory even when no
+semantic names appear in runtime.
+
+No future causal-credit mechanism has yet established P5 non-reducibility. This is an allowed
+negative/underdetermined diagnostic state.
+
+## 8. Implementation
+
+Static D11 audit:
 
 ```text
 src/sparkbrain/evaluation/v061_explicit_table_equivalence_audit.py
 tests/v06/test_explicit_table_equivalence_audit.py
 ```
 
-This code audits structural descriptors. It does not implement a new learning mechanism and does not
-re-execute candidate-003.
+Behavioral P5 plus P3/P4 protocol:
+
+```text
+src/sparkbrain/evaluation/v061_p3_p5_diagnostic_protocol.py
+tests/v06/test_p3_p5_diagnostic_protocol.py
+```
+
+These files audit descriptors and hypothetical/diagnostic observations. They do not implement a new
+learning mechanism, change Primary runtime, tune thresholds, or re-execute candidate-003.
