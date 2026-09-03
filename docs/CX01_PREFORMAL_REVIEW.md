@@ -30,6 +30,12 @@ Those individual branches were not modified during this review. Shared pre-forma
 - branch: `research/cx01-preformal-boundary-review`
 - PR: #19
 
+Default-branch dispatch registration is intentionally isolated from model/source work:
+
+- branch: `research/cx01-formal-dispatch-registration`
+- PR: #20
+- content: one fail-closed workflow registration stub only.
+
 ## 2. Scope lock
 
 The review intentionally did **not** change the CX01 world generator.
@@ -122,6 +128,19 @@ Closed by:
 - pinned checkout/setup-python/upload-artifact action revisions;
 - environment preflight artifact before capability.
 
+### B7 — GitHub manual dispatch path was not registered on the default branch
+
+The repository default branch is `main`, while the formal workflow implementation lives in the CX01 research source. GitHub requires a `workflow_dispatch` workflow to exist on the default branch before manual/REST dispatch can be received.
+
+Closed structurally by:
+
+- PR #20: a default-branch registration stub at the same workflow path;
+- the stub is fail-closed and always refuses formal capability on `main`;
+- formal execution is required to use a dedicated freeze tag as the workflow dispatch `ref`;
+- the frozen workflow fails before capability unless `GITHUB_SHA == source_sha`.
+
+Therefore the workflow definition used for capability is itself bound to the frozen source revision rather than a moving branch or the registration stub.
+
 ## 4. Fidelity verdicts
 
 ### G3
@@ -208,7 +227,7 @@ Previous audited artifact used for direct comparison:
 - artifact ID: `9904068703`
 - zip digest: `sha256:8585d3a0d461ec21462c31a88cf0e50812eb9ac5ce0f5896d04d0ea3954b4631`
 
-Latest pre-formal audited artifact:
+Pre-formal audited artifact used for the 210-row invariance comparison:
 
 - workflow run: `33783183869`
 - artifact ID: `9904403063`
@@ -235,6 +254,8 @@ Result:
 BOUNDARY-CORRECTION OUTCOME INVARIANCE = PASS
 ```
 
+A final audited development artifact must still be retained for the exact source-freeze SHA after PR #19 is merged into the parent.
+
 ## 8. Formal control-plane review
 
 The source includes fail-closed controls for:
@@ -247,6 +268,8 @@ The source includes fail-closed controls for:
 - independent reviewer seal identity distinct from builder;
 - persistent committed STARTED marker;
 - candidate-spec-hash + source-SHA workflow identity;
+- freeze-tag dispatch whose `GITHUB_SHA` must equal source SHA;
+- fail-closed default-branch workflow registration stub;
 - supplemental duplicate Actions-history scan;
 - local exclusive STARTED marker before capability;
 - per-execution atomic raw cells + checksums;
@@ -286,12 +309,13 @@ training transcript fairness       PASS
 train/eval isolation               PASS
 outcome invariance                 PASS
 formal control-plane static review PASS
+default-branch dispatch stub       PENDING PR #20 MERGE
 independent execution seal         NOT YET AVAILABLE
 formal candidate capability        UNOPENED
 ```
 
 Therefore:
 
-> **CX01 is eligible to become SOURCE-FREEZE READY after this review branch is merged into the parent and the exact merged parent SHA passes both repository CI and the 210-execution audited development workflow.**
+> **CX01 becomes SOURCE-FREEZE READY only after PR #19 is merged into the parent, PR #20 is merged into `main`, and the exact merged parent SHA passes both repository CI and the 210-execution audited development workflow.**
 
 Do not create STARTED or execute formal capability until a genuine independent seal exists.
