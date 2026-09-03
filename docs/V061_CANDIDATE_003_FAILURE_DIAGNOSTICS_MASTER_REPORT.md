@@ -270,7 +270,29 @@ world evidence to reorganize earlier trajectory competition.
 **Current SparkBrain premises may be insufficient.** This must remain available if anonymous/local
 credit mechanisms reduce to explicit predictors or typed reward under another name.
 
-## 12. Revised SparkBrain research question
+## 12. D10–D11 — Historical address loss and anti-table boundary
+
+D10 separates two facts that must not be conflated:
+
+```text
+outbound BoundaryEvent
+    -> still contains Spark/proposal/unit lineage
+
+persistent anonymous consistency state
+    -> does not retain the historical proposal/path return address
+```
+
+The current problem is therefore stronger than a missing update function: after consistency
+compression, the system no longer represents which earlier local temporal lineage should receive a
+selective consequence update.
+
+D11 then prevents an easy but scientifically weak escape. A future mechanism is not considered a
+new SparkBrain principle merely because it stores anonymous identifiers. Persistent lineage/context
+state that acts as a keyed predictor is explicit transition memory; evaluator targets, scalar reward,
+typed functional heads, correct actions/answers, Assembly runtime keys, and self-confirming positive
+updates remain outside the Primary boundary.
+
+## 13. Revised SparkBrain research question
 
 The next question is not whether a threshold can be tuned to recover candidate-003.
 
@@ -280,41 +302,192 @@ It is:
 > future local trajectory competition, while remaining local, externally confirmed, reversible,
 > bounded, observer-independent, and non-equivalent to a hidden explicit sequence predictor?
 
-## 13. Constraints on a future mechanism
+## 14. P1–P2 fail-closed causal-credit contracts
 
-A proposed mechanism must satisfy:
+P1 requires exact resource matching between causal and correlated anonymous lineages. Positive
+credit must follow the actual causal lineage after identity swap; external contradiction must
+selectively correct it; external absence and internal replay cannot create positive credit.
 
-1. no semantic label, role, answer, reward, or correct-action field;
-2. no Assembly runtime key;
-3. only the actual causal lineage can receive external evidence;
-4. internally generated activity cannot confirm itself;
-5. contradiction and reversal weaken or redirect prior influence;
-6. the effect changes future trajectory competition, not merely a final readout;
-7. genuine ambiguity may remain plural until external evidence differentiates it;
-8. eligibility and activity are bounded and expiring;
-9. reset/transplant identifies the effect locus;
-10. explicit-table equivalence is audited and reported honestly.
+P2 holds local transition state byte-identical while changing only the anonymous world relation. The
+required output is a change in later shared-root competition. A changed final relation re-entry is
+not sufficient.
 
-## 14. Next diagnostic programme
+Under the current architecture, P2 remains structurally negative: anonymous consistency can affect
+relation re-entry, but there is no demonstrated path back into G1 competition.
 
-Before implementing any mechanism:
+## 15. P3 — State-locus cross-transplant
+
+P3 separates four independently controlled state loci:
 
 ```text
-P1 causal lineage versus matched correlation
-P2 fixed local evidence plus reversed anonymous world consequence
-P3 local-transition / Field / consistency / re-entry cross-transplant
-P4 bounded ambiguity followed by later external differentiation
-P5 explicit-table equivalence audit
+L = local transition state
+F = Field membrane/adaptation/trace state
+C = anonymous consistency state
+R = transient historical return-address state
 ```
 
-Only after these discriminators are designed should a new SparkBrain mechanism branch begin.
+Every non-transplanted locus must remain byte/hash-identical to the recipient. The protocol records
+future shared-root competition separately from downstream re-entry.
 
-## 15. Final current conclusion
+Existing D5/D10 evidence maps onto this cross as:
 
-> SparkBrain v0.6 formed endogenous and history-dependent activity, but its local temporal
-> regularity, anonymous world consistency, and later Field expression remained separate state
-> processes. Fresh lag dispersion exposed trajectory selection that follows local temporal
-> stability rather than world relevance. Repeated contingency changes exposed a second separation
-> between relation storage and expression. The missing capability is not simply more tolerance or
-> a different threshold, but an anonymous and falsifiable circulation of externally evidenced causal
-> influence back into future local Dynamics.
+```text
+L-only
+    -> demonstrated chain behavior follows explicit local transition state
+
+F-only
+    -> demonstrated long-lived learned chain effect does not follow matched carried Field state
+
+C-only
+    -> downstream relation re-entry follows consistency state
+    -X-> no demonstrated upstream G1 competition transfer
+
+R
+    -> lineage exists transiently on outbound BoundaryEvent
+    -> historical address is not retained by persistent consistency compression
+```
+
+P3 now supplies direct falsifiers rather than treating this localization as final:
+
+- a valid **F-only** donor competition transfer falsifies the strong reading that the demonstrated
+  learned functional effect is not already Field-distributed;
+- a valid **C-only** donor competition transfer falsifies the no relation-to-G1 diagnosis;
+- selective recovery of the correct historical lineage from current persistent state without a
+  retained address falsifies the D10 information-loss interpretation.
+
+R is not manufactured for retrospective v0.6.1 analysis. Adding persistent R would be a future
+mechanism experiment.
+
+## 16. P4 — Bounded ambiguity continuation
+
+Equal local evidence can produce genuinely co-maximal trajectories. P4 therefore forbids an early
+singleton from being treated as success merely because the evaluator wants one answer.
+
+Required shape:
+
+```text
+co-maximal A + B
+    -> preserve bounded plurality
+    -> later independent external evidence
+    -> future local competition differentiates the causally supported lineage
+```
+
+External contradiction must demote or redirect the causal lineage. External absence and internal
+replay must not create positive differentiation.
+
+This preserves the valid portion of the evaluator/ontology-mismatch hypothesis but narrows it:
+plurality can be legitimate initially, yet the system must still use later world evidence to
+reorganize future local competition. Under P2/D8, the current downstream-only architecture is
+expected to fail this continuation requirement. That expected negative is not a tuning target.
+
+A forced winner-take-all mechanism is therefore not assumed to be a solution; it can hide the
+uncertainty without creating causal credit.
+
+## 17. P5 — Behavioral table-equivalence
+
+P5 extends D11 from static descriptors to behavioral reduction. Candidate and explicit baseline must
+both cover the complete intervention set:
+
+```text
+matched causal lineage
+lineage swap
+external contradiction
+external absence
+internal replay only
+world-relation permutation
+state-locus transplant
+bounded ambiguity
+identifier permutation
+physical trajectory substitution
+unseen lineage combination
+```
+
+Missing a challenge fails closed.
+
+For each candidate, construct the smallest explicit predictor that can consume the same admissible
+history and reproduce future competition, boundary/re-entry behavior, and positive external commits.
+Compare state size/locality, global keyed queries, identifier permutation, physical substitution,
+transplant behavior, and unseen combinations.
+
+The decision is deliberately asymmetric:
+
+```text
+candidate == smaller/equal established-minimal explicit predictor
+    -> explicit anonymous predictive/transition memory
+
+candidate != one tested explicit predictor
+    -> that tested predictor is falsified
+    -> emergent Field organization is NOT established
+```
+
+The second rule prevents a weak table baseline from manufacturing an emergence claim. Anonymous IDs,
+decay, or local storage do not exempt persistent transition credit from explicit-memory
+classification.
+
+No future causal-credit mechanism has yet demonstrated P5 non-reducibility.
+
+## 18. What has been rejected or materially weakened
+
+The combined D1–D11 and P1–P5 record now rejects or materially weakens:
+
+```text
+threshold/gain calibration as a sufficient explanation
+explicit Assembly identity as necessary
+evaluator singleton mismatch as a complete explanation
+current demonstrated long-lived learned effect already residing in Field state alone
+anonymous consistency already closing the loop into G1
+forced early winner-take-all as a required ambiguity solution
+anonymous IDs being sufficient to distinguish persistent credit from an explicit table
+static non-lookup source structure being sufficient to claim emergence
+the current Primary already demonstrating anonymous causal-credit circulation
+```
+
+The Field-memory statement remains explicitly falsifiable by a valid future F-only transfer; it is
+not a claim that distributed Field learning is impossible in principle.
+
+## 19. What remains viable
+
+### A. Bounded transient externally gated causal eligibility / return address
+
+Still viable only if actual external evidence follows causal lineage through P1, changes future
+competition under P2, localizes cleanly in P3, preserves bounded ambiguity in P4, and survives P5
+reduction. Internal replay cannot positive-update it.
+
+### B. Genuine distributed Field consequence trace
+
+Still viable, but current D5 does not demonstrate it. It requires independent Field-side functional
+transfer in P3 plus causal-lineage selectivity in P1 and non-reduction in P5.
+
+### C. Joint retained-address plus local/Field update
+
+Still viable as a mechanism class. P3 joint crosses can distinguish it from R-only, C-only, F-only,
+or L-only explanations. No such mechanism is established by this diagnostic PR.
+
+### D. Honest explicit anonymous transition memory
+
+Still viable as an engineering and scientific architecture. If it is the smallest behavioral
+explanation, it should be reported as explicit predictive memory rather than as emergent Field
+organization.
+
+### E. Negative completion
+
+Still fully viable. If all admissible causal-credit candidates either fail P1–P4 or collapse under
+P5 to compact explicit memory / privileged reward-like state, the correct result is that the current
+SparkBrain premises are insufficient for the stronger claim.
+
+## 20. Final current conclusion
+
+> SparkBrain v0.6 formed endogenous and history-dependent activity, but its demonstrated long-lived
+> organization separates into an upstream explicit local temporal-memory locus and a downstream
+> anonymous consistency/re-entry locus. The Field executes physical Dynamics and can carry transient
+> residual state, but current transfer evidence does not show that it alone carries the demonstrated
+> learned functional bias. Externally observed consequence is not demonstrated to return to the
+> historical local lineage before future shared-root competition, and the historical proposal/path
+> return address is discarded by persistence. A future causal-credit mechanism must therefore pass
+> causal-lineage, world-permutation, state-locus, bounded-ambiguity, and explicit-table-equivalence
+> falsifiers. If the surviving mechanism is behaviorally just a compact persistent lineage-keyed
+> predictor, it is explicit transition memory, not evidence for the stronger emergent-Field
+> SparkBrain hypothesis.
+
+This conclusion does not revise candidate-003, authorize threshold tuning, implement a new Primary
+mechanism, or import RV01. Negative completion remains a valid endpoint.
