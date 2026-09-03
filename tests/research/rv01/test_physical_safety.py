@@ -84,7 +84,9 @@ def test_queue_budget_halts_high_fanout_after_cue() -> None:
 def test_local_path_failure_does_not_destroy_disjoint_route() -> None:
     suite = run_physical_safety_suite()
     assert suite.failed_target_path.later_units == (1,)
-    assert suite.unaffected_control_path.later_units == (5, 6, 7)
+    assert suite.unaffected_control_path.later_units == (5, 6, 7), (
+        suite.unaffected_control_path.state_dict()
+    )
     assert (
         suite.assessment.local_path_failure_does_not_destroy_disjoint_path
         is True
