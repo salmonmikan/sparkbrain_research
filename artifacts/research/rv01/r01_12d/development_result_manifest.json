@@ -1,0 +1,54 @@
+{
+  "aggregate": {
+    "deterministic_replay_world_count": 15,
+    "field_contamination_count": 216,
+    "field_exact_route_count": 24,
+    "field_mean_ordered_retention_route_weighted": 1.0,
+    "field_minus_reservoir_retention_route_weighted": 0.1,
+    "reservoir_contamination_count": 177,
+    "reservoir_exact_route_count": 24,
+    "reservoir_matches_or_exceeds_world_count": 6,
+    "reservoir_mean_ordered_retention_route_weighted": 0.9,
+    "resource_match_world_count": 15,
+    "route_count": 60,
+    "world_count": 15
+  },
+  "ci": {
+    "archive_sha256": "1262962d8cda448482ded6919a50417230628bf08c02a453dae968246c792f73",
+    "artifact_id": 9904098682,
+    "run_id": 33781857959
+  },
+  "comparator_config": {
+    "input_scale": 1.0,
+    "leak_rate": 0.8,
+    "maximum_abs_readout_weight": 2.0,
+    "readout_learning_rate": 0.25,
+    "recurrent_scale": 0.75,
+    "seed_offset": 12001
+  },
+  "execution_source_sha": "b163117512daca23b613c8a109a544833af7d360",
+  "experiment_id": "R01-12D",
+  "held_out_capability_executed": false,
+  "phase": "development",
+  "result_payload_hash": "4f07d2f645fc9319647b49775a6186eba95af4cf567f99b6b5f8f64fbe0ff79e",
+  "schema": "rv01-r01-12d-development-result-manifest-v1",
+  "suite_hash": "16e29a77ffa714adbe8bb93cda1bc0cbf67a4022da135069fe731ca65709e7c6",
+  "world_grid_hash": "1d9aed2d3be9cd04460943023321fe519160afb1e3f2ef5622d74949b49e5c48",
+  "world_hashes": [
+    {"semantic_hash":"32f546d7be8aea46733adf249c924e29bc8cf86a3925cb28cc151cfa57427d49","specification_hash":"f12d502abc0a3800768685ed06d7ffa1850797c0caf666bed3091ae26f374ea6","world_id":"development:disjoint-routes:0"},
+    {"semantic_hash":"4d8df3cd7b869a59e959ee52e9d0dfb2ed7d4aaec44362381e3e489ae0f2e420","specification_hash":"db83f46e9b2c68e488d0aee68ab2e00da8c2cf4cd078a83ee25d4f73e59b2ebd","world_id":"development:disjoint-routes:1"},
+    {"semantic_hash":"5623a8cbe6ac23ef02d11fbf1a3e3a1e10ecafd49335149d15a4cbcee075717c","specification_hash":"573f31be3e8540793c59d1bf3a805cbc72bc6445466d071b9f06635041f5ee98","world_id":"development:disjoint-routes:2"},
+    {"semantic_hash":"44310a34f665958153436f61f715ef14af368dc3916b8e43f63fb1672944e34f","specification_hash":"ef61d277e9579475c5a864973c896616768c02ce3e76deac77136490c0163110","world_id":"development:shared-cue-branches:0"},
+    {"semantic_hash":"4e4548891b78664cb7173f009b41cab531aff556d57d15d5eac15784a2aaadbb","specification_hash":"19b811f6ddf1703e52ee6237115e76e3a98ee6a2645ee6c3a344f8c6ccb0d26b","world_id":"development:shared-cue-branches:1"},
+    {"semantic_hash":"3cdfe1dfed0cd23e991966503c6bd61d5ad31aeed009bbf31c030e9ae01e45bc","specification_hash":"96a28d6e0019273e6863910491718e59202970acaa829f45b22941bda0f0aa0b","world_id":"development:shared-cue-branches:2"},
+    {"semantic_hash":"880b8df192a1ba942f71d3da4a9a208e6cae761a4ede4bab74c625384d2580a8","specification_hash":"fbee1932d5274397934673cfebcf6b4a1a8b36f46eb6ff5d15851f1e3961f341","world_id":"development:shared-prefix-branches:0"},
+    {"semantic_hash":"0abd99e20b3735c7a7436c177ce75c0ecf87ff84e1e60b38ce3f814d9f666b98","specification_hash":"d68582bf6e5e061b0219df20dfc95c39d06a264aed38bf7a3b870b980018b934","world_id":"development:shared-prefix-branches:1"},
+    {"semantic_hash":"3cf4a35706114de1494535fb31ae7e9e937d45548f4649e82b0681ed7fe4e87d","specification_hash":"a6b004fd952992ba1c38950c8acd53b39c1cc8861cb7a1be153085c66e8b4a50","world_id":"development:shared-prefix-branches:2"},
+    {"semantic_hash":"eb3b95f279bc1f1270823eea4a019a130c1a5dee704e553cc394d880f2415baf","specification_hash":"88042d64bff0763fba2fb1d5d1600ddd3fdd0f38c4f8e4d93358d9859b2b7f2d","world_id":"development:edge-reversal:0"},
+    {"semantic_hash":"e7b6f522543031108a25f2b37704da5735a86b1b4e7471ee69c4f63795deb804","specification_hash":"e50d104e6efb95a5c531e12b9b62eeacaf85ce6b4b70c1d9628599ce57bf7fe7","world_id":"development:edge-reversal:1"},
+    {"semantic_hash":"112ae0d61d7bd104d2dc2991ed0d7262495faed4ae2ac5f26a2c159f67895779","specification_hash":"e20b1451a9f62c09bc775c838b35648dcb347ee4a6bb7a2936f1abf5f45c9b35","world_id":"development:edge-reversal:2"},
+    {"semantic_hash":"b61aa2fc9694309c6003b802768ccd6b0735df81bb490cf600953953cd8bb32d","specification_hash":"258ee19a8bc1a822daac15b3b24ea18c7513288110d8ae91f6da8bc61501d58c","world_id":"development:dense-route-load:0"},
+    {"semantic_hash":"859bba429e81115b8125b199db9742b350caf62ba72314300b093402af9b874f","specification_hash":"67a1e70dfe7e320be0d14cedca5ab8c19503668add3a25dc267d9c939bf26460","world_id":"development:dense-route-load:1"},
+    {"semantic_hash":"e2fef5962a1d64d235ca69853441c984a1ac993a2d837c80d2b76e161f01b3eb","specification_hash":"ea411490dacca6d24c198d8476f707be0f097e23461d9f54fa21fc4ee42055e4","world_id":"development:dense-route-load:2"}
+  ]
+}
