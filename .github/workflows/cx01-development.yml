@@ -24,13 +24,18 @@ permissions:
 
 jobs:
   validate:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    env:
+      PYTHONHASHSEED: "0"
+      TZ: UTC
+      LC_ALL: C.UTF-8
+      LANG: C.UTF-8
     strategy:
       matrix:
-        python-version: ["3.11", "3.13"]
+        python-version: ["3.11.16", "3.13"]
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: ${{ matrix.python-version }}
           cache: pip
@@ -41,16 +46,16 @@ jobs:
       - name: CX01 tests
         run: python -m pytest -q tests/cx01
       - name: Execute development-only comparator matrix
-        if: matrix.python-version == '3.11'
+        if: matrix.python-version == '3.11.16'
         run: >-
           python -m sparkbrain.comparison.cx01.development_artifacts
           --output-dir /tmp/cx01-development
       - name: Print audited development summary
-        if: matrix.python-version == '3.11'
+        if: matrix.python-version == '3.11.16'
         run: cat /tmp/cx01-development/development_summary.json
       - name: Upload development-only matrix
-        if: matrix.python-version == '3.11'
-        uses: actions/upload-artifact@v4
+        if: matrix.python-version == '3.11.16'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: cx01-development-${{ github.sha }}
           path: /tmp/cx01-development
