@@ -8,8 +8,8 @@ from sparkbrain.research.rv01.interference_contract import held_out_worlds, worl
 from sparkbrain.research.rv01.interference_formal import (
     CANDIDATE_ID,
     SEAL_SCHEMA,
-    _SealedHeldOutWorldView,
     _seal_hash,
+    _SealedHeldOutWorldView,
     validate_held_out_execution_seal,
 )
 from sparkbrain.research.rv01.interference_freeze import (
