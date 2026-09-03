@@ -21,7 +21,8 @@ def test_formal_workflow_requires_dispatch_at_exact_frozen_revision() -> None:
 
     assert "Require workflow dispatch at exact frozen revision" in text
     assert 'test "$GITHUB_SHA" = "$SOURCE_SHA"' in text
-    assert "frozen tag whose commit is exactly" in text
+    assert "dedicated frozen ref (branch or tag)" in text
+    assert "freeze/cx01-*" in text
 
 
 def test_formal_workflow_pins_external_action_revisions() -> None:
