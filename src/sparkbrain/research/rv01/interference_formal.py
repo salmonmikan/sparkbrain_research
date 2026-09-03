@@ -16,6 +16,7 @@ from .interference_freeze import (
     R01_12D_EXECUTION_SOURCE_SHA,
     R01_12D_RESULT_PAYLOAD_HASH,
     R01_12D_SUITE_HASH,
+    build_r01_12e_preflight,
 )
 from .interference_runner import run_interference_world
 from .resource_matched_reservoir import run_resource_matched_reservoir_world
@@ -121,6 +122,11 @@ def validate_held_out_execution_seal(
     preflight_hash = str(payload.get("preflight_payload_hash", ""))
     if len(preflight_hash) != 64:
         raise RuntimeError("preflight payload hash is missing from the seal")
+    preflight = build_r01_12e_preflight(source_git_sha=checked_out_source_sha)
+    if preflight["preflight_payload_hash"] != preflight_hash:
+        raise RuntimeError("checked-out source does not reproduce the sealed preflight")
+    if preflight["held_out_world_grid_hash"] != grid_hash:
+        raise RuntimeError("reproduced preflight held-out grid mismatch")
     observed_seal_hash = _seal_hash(payload)
     if payload.get("seal_payload_hash") != observed_seal_hash:
         raise RuntimeError("execution seal payload hash mismatch")
