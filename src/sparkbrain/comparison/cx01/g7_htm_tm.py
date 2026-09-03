@@ -62,11 +62,13 @@ class _Segment:
 
 
 class HTMTemporalMemoryComparator:
-    """Minimal independent Temporal-Memory comparator for CX01.
+    """Minimal independent Temporal-Memory capability reference for CX01.
 
     This is not `htm.core` and does not implement Spatial Pooling. Anonymous
     tokens map deterministically to fixed sparse columns. Context-dependent
     winner cells and distal-like segments provide high-order sequence state.
+    Evaluation observations may advance sparse context without changing learned
+    segment state.
     """
 
     kind = ComparatorKind.G7_HTM_TEMPORAL_MEMORY
@@ -91,7 +93,6 @@ class HTMTemporalMemoryComparator:
     def token_columns(self, token: str) -> tuple[int, ...]:
         if not token:
             raise ValueError("token must be non-empty")
-        # A very large virtual column space makes accidental overlap negligible.
         columns: list[int] = []
         nonce = 0
         while len(columns) < self.config.active_columns_per_token:
@@ -136,7 +137,7 @@ class HTMTemporalMemoryComparator:
             segment.permanence = min(1.0, segment.permanence + self.config.permanence_increment)
             segment.observations += 1
 
-    def observe_external(self, event: ComparatorEvent) -> None:
+    def observe_external(self, event: ComparatorEvent, *, learn: bool = True) -> None:
         event.validate()
         if event.origin is not EventOrigin.EXTERNAL:
             raise ValueError("G7 accepts external observations only")
@@ -146,12 +147,17 @@ class HTMTemporalMemoryComparator:
             self._active_cells = ()
             self._last_token = None
         previous = self._active_cells
-        self._learn(previous, event.token)
+        if learn:
+            self._learn(previous, event.token)
         self._active_cells = self._winner_cells(event.token, previous)
         self._last_token = event.token
         self._known_tokens.add(event.token)
         self._time_ms = event.timestamp_ms
         self._observed_events += 1
+
+    def finalize_episode(self) -> None:
+        self._active_cells = ()
+        self._last_token = None
 
     def advance(self, timestamp_ms: float) -> None:
         if not math.isfinite(timestamp_ms) or timestamp_ms < self._time_ms:
@@ -211,6 +217,20 @@ class HTMTemporalMemoryComparator:
     def clear_suppression(self) -> None:
         self._suppressed.clear()
 
+    def _segment_rows(self) -> list[dict[str, Any]]:
+        return [
+            {
+                "observations": segment.observations,
+                "permanence": segment.permanence,
+                "presynaptic_cells": list(segment.presynaptic_cells),
+                "target_token": segment.target_token,
+            }
+            for _, segment in sorted(self._segments.items())
+        ]
+
+    def learned_state_dict(self) -> dict[str, Any]:
+        return {"segments": self._segment_rows()}
+
     def snapshot(self) -> dict[str, Any]:
         return {
             "active_cells": list(self._active_cells),
@@ -220,15 +240,7 @@ class HTMTemporalMemoryComparator:
             "known_tokens": sorted(self._known_tokens),
             "last_token": self._last_token,
             "observed_events": self._observed_events,
-            "segments": [
-                {
-                    "observations": segment.observations,
-                    "permanence": segment.permanence,
-                    "presynaptic_cells": list(segment.presynaptic_cells),
-                    "target_token": segment.target_token,
-                }
-                for _, segment in sorted(self._segments.items())
-            ],
+            "segments": self._segment_rows(),
             "suppressed": sorted(self._suppressed),
             "time_ms": self._time_ms,
         }
