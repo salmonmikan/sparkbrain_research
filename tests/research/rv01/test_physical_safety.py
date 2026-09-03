@@ -81,15 +81,18 @@ def test_queue_budget_halts_high_fanout_after_cue() -> None:
     assert suite.assessment.queue_budget_halts_safe_fanout_execution is True
 
 
-def test_local_path_failure_does_not_destroy_disjoint_route() -> None:
+def test_frozen_queue_budget_truncates_disjoint_control_route() -> None:
     suite = run_physical_safety_suite()
     assert suite.failed_target_path.later_units == (1,)
-    assert suite.unaffected_control_path.later_units == (5, 6, 7), (
-        suite.unaffected_control_path.state_dict()
-    )
+    row = suite.unaffected_control_path
+    assert row.later_units == (5,)
+    assert row.budget_exceeded is True
+    assert row.halt_reason == "queue_budget_exceeded"
+    assert row.maximum_queue_size_observed == 13
+    assert row.final_queue_size == 13
     assert (
         suite.assessment.local_path_failure_does_not_destroy_disjoint_path
-        is True
+        is False
     )
 
 
@@ -192,8 +195,8 @@ def test_safety_guard_has_no_learning_or_cognitive_taxonomy() -> None:
     )
 
 
-def test_r01_11_reports_external_guard_not_intrinsic_safety() -> None:
+def test_r01_11_reports_guard_requirement_and_negative_engineering_candidate() -> None:
     assessment = run_physical_safety_suite().assessment
-    assert assessment.engineering_candidate is True
+    assert assessment.engineering_candidate is False
     assert assessment.intrinsic_runtime_safety_supported is False
     assert assessment.external_execution_guard_required is True
