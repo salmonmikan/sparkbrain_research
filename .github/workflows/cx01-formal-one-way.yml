@@ -273,8 +273,10 @@ jobs:
 # candidate specification hash and frozen source SHA, so copying the same
 # candidate to another control branch does not create a new execution identity.
 #
-# The workflow must be dispatched using a frozen tag whose commit is exactly
-# `source_sha`; the first job step fails closed unless GITHUB_SHA == source_sha.
+# The workflow must be dispatched using a dedicated frozen ref (branch or tag)
+# whose commit is exactly `source_sha`; the first job step fails closed unless
+# GITHUB_SHA == source_sha. In this automation environment the planned freeze
+# ref is a dedicated `freeze/cx01-*` branch created directly from SOURCE_SHA.
 # A fail-closed registration stub with the same workflow path must exist on the
 # repository default branch so GitHub can receive workflow_dispatch events.
 #
