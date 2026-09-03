@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 from dataclasses import dataclass
 from typing import Any
@@ -30,6 +31,15 @@ COMPARATOR_KINDS = (
     ComparatorKind.G7_HTM_TEMPORAL_MEMORY,
     ComparatorKind.G8_PREDICTION,
     ComparatorKind.G8_REPLAY,
+)
+
+NON_ADAPTIVE_EVALUATION_FAMILIES = frozenset(
+    {
+        CX01Family.HIGH_ORDER,
+        CX01Family.TIMING,
+        CX01Family.BRANCH,
+        CX01Family.SELECTIVITY,
+    }
 )
 
 
@@ -80,23 +90,46 @@ def _feed(
     tokens: tuple[str, ...],
     lags_ms: tuple[float, ...],
     start_ms: float,
+    *,
+    learn: bool = True,
 ) -> float:
     if len(lags_ms) != max(0, len(tokens) - 1):
         raise ValueError("feed lags must align with tokens")
     now = start_ms
-    model.observe_external(ComparatorEvent(tokens[0], now, EventOrigin.EXTERNAL, True))
+    model.observe_external(
+        ComparatorEvent(tokens[0], now, EventOrigin.EXTERNAL, True),
+        learn=learn,
+    )
     for token, lag in zip(tokens[1:], lags_ms, strict=True):
         now += lag
-        model.observe_external(ComparatorEvent(token, now, EventOrigin.EXTERNAL))
+        model.observe_external(
+            ComparatorEvent(token, now, EventOrigin.EXTERNAL),
+            learn=learn,
+        )
     return now + 25.0
 
 
 def _train(model: ComparatorProtocol, transcript: TrainingTranscript) -> float:
     transcript.validate()
     for event in transcript.events:
-        model.observe_external(event)
+        model.observe_external(event, learn=True)
+    # Training must be complete before the first probe. This is material for
+    # sequence-level anchors such as G4, whose final episode otherwise remained
+    # pending until the next episode_start event.
+    model.finalize_episode()
     model.advance(transcript.end_time_ms)
     return transcript.end_time_ms
+
+
+def _learning_state_hash(model: ComparatorProtocol) -> str:
+    encoded = json.dumps(
+        model.learned_state_dict(),
+        allow_nan=False,
+        ensure_ascii=False,
+        separators=(",", ":"),
+        sort_keys=True,
+    ).encode("utf-8")
+    return hashlib.sha256(encoded).hexdigest()
 
 
 def _top1(distribution: dict[str, float]) -> str | None:
@@ -115,7 +148,7 @@ def _evaluate_probes(
     brier_values: list[float] = []
     log_losses: list[float] = []
     for probe in world.probes:
-        now = _feed(model, probe.prefix, probe.lags_ms, now)
+        now = _feed(model, probe.prefix, probe.lags_ms, now, learn=False)
         observed = model.distribution().as_dict()
         expected = dict(probe.expected_distribution)
         total += 1
@@ -124,6 +157,7 @@ def _evaluate_probes(
         correct += int(observed_top == expected_top)
         brier_values.append(brier_score(expected, observed))
         log_losses.append(cross_entropy(expected, observed))
+        model.finalize_episode()
     evidence = FamilyEvidence(
         family=world.family,
         correct_probes=correct,
@@ -147,12 +181,15 @@ def _evaluate_cycle(
         first_correct: int | None = None
         final_correct = False
         for exposure_index in range(1, phase.exposures + 1):
-            now = _feed(model, (world.cycle_cue, phase.target), (6.0,), now)
-            now = _feed(model, (world.cycle_cue,), (), now)
+            # CYCLE is intentionally an online-adaptation family. Only the
+            # phase exposure learns; the cue-only readout is inference-only.
+            now = _feed(model, (world.cycle_cue, phase.target), (6.0,), now, learn=True)
+            now = _feed(model, (world.cycle_cue,), (), now, learn=False)
             predicted = _top1(model.distribution().as_dict())
             final_correct = predicted == phase.target
             if final_correct and first_correct is None:
                 first_correct = exposure_index
+            model.finalize_episode()
         correct_phases += int(final_correct)
         reacquisition.append(first_correct if first_correct is not None else phase.exposures + 1)
     return (
@@ -176,8 +213,9 @@ def _rollout_from_cue(
     model.clear_suppression()
     if suppressed is not None:
         model.suppress(suppressed)
-    now = _feed(model, (cue,), (), now)
+    now = _feed(model, (cue,), (), now, learn=False)
     generated = tuple(row.token for row in model.generate(max_steps=max_steps))
+    model.finalize_episode()
     model.clear_suppression()
     return generated, now
 
@@ -228,7 +266,15 @@ def _evaluate_loop(
 ) -> tuple[FamilyEvidence, float]:
     if world.loop is None:
         raise ValueError("loop world is missing loop specification")
-    now = _feed(model, world.loop.cue_prefix, (5.0,) * (len(world.loop.cue_prefix) - 1), now)
+    # The cue is a read-only query. Only the later external consequence is
+    # permitted to become new evidence; the generated proposal itself never is.
+    now = _feed(
+        model,
+        world.loop.cue_prefix,
+        (5.0,) * (len(world.loop.cue_prefix) - 1),
+        now,
+        learn=False,
+    )
     before_observed = model.observed_external_events
     generated = model.generate(max_steps=1)
     after_generated_observed = model.observed_external_events
@@ -244,8 +290,10 @@ def _evaluate_loop(
             external_time,
             EventOrigin.EXTERNAL,
             False,
-        )
+        ),
+        learn=True,
     )
+    model.finalize_episode()
     return (
         FamilyEvidence(
             family=world.family,
@@ -263,6 +311,7 @@ def _evaluate(
     transcript: TrainingTranscript,
 ) -> FamilyEvidence:
     now = _train(model, transcript)
+    learned_before = _learning_state_hash(model)
     if world.family is CX01Family.CYCLE:
         evidence, _ = _evaluate_cycle(model, world, now)
     elif world.family is CX01Family.SELECTIVITY:
@@ -272,6 +321,12 @@ def _evaluate(
     else:
         evidence, _ = _evaluate_probes(model, world, now)
     evidence.validate()
+    if world.family in NON_ADAPTIVE_EVALUATION_FAMILIES:
+        learned_after = _learning_state_hash(model)
+        if learned_after != learned_before:
+            raise RuntimeError(
+                f"evaluation mutated learned state for non-adaptive family {world.family.value}"
+            )
     return evidence
 
 
@@ -279,8 +334,6 @@ def run_development_execution(
     kind: ComparatorKind,
     world: CX01World,
 ) -> DevelopmentExecution:
-    # Materialize and hash the complete architecture-neutral training stream
-    # before any comparator instance exists.
     transcript = build_training_transcript(world)
     model = create_model(kind)
     evidence, resource = measure_model_call(
