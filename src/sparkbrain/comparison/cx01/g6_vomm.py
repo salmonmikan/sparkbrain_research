@@ -26,8 +26,10 @@ class VariableOrderConfig:
 class VariableOrderMarkovPredictor:
     """External-only variable-order suffix predictor with deterministic backoff.
 
-    Every external transition updates all available suffix contexts up to
-    `max_order`. Generated events are never fed back into the learned tables.
+    Training observations update all available suffix contexts up to
+    `max_order`. Evaluation observations may update transient suffix history
+    without changing learned tables. Generated events are never fed back into
+    the learned tables.
     """
 
     kind = ComparatorKind.G6_VARIABLE_ORDER
@@ -48,7 +50,7 @@ class VariableOrderMarkovPredictor:
             row[candidate] *= self.config.retention
         row[target] = row.get(target, 0.0) + 1.0
 
-    def observe_external(self, event: ComparatorEvent) -> None:
+    def observe_external(self, event: ComparatorEvent, *, learn: bool = True) -> None:
         event.validate()
         if event.origin is not EventOrigin.EXTERNAL:
             raise ValueError("G6 accepts external observations only")
@@ -56,7 +58,7 @@ class VariableOrderMarkovPredictor:
             raise ValueError("events must be chronological")
         if event.episode_start:
             self._history.clear()
-        if self._history:
+        if learn and self._history:
             upper = min(self.config.max_order, len(self._history))
             for order in range(1, upper + 1):
                 self._update_row(tuple(self._history[-order:]), event.token)
@@ -65,6 +67,9 @@ class VariableOrderMarkovPredictor:
             del self._history[: len(self._history) - self.config.max_order]
         self._time_ms = event.timestamp_ms
         self._observed_events += 1
+
+    def finalize_episode(self) -> None:
+        self._history.clear()
 
     def advance(self, timestamp_ms: float) -> None:
         if not math.isfinite(timestamp_ms) or timestamp_ms < self._time_ms:
@@ -118,6 +123,18 @@ class VariableOrderMarkovPredictor:
     def clear_suppression(self) -> None:
         self._suppressed.clear()
 
+    def _score_rows(self) -> list[dict[str, Any]]:
+        return [
+            {
+                "context": list(context),
+                "targets": dict(sorted(row.items())),
+            }
+            for context, row in sorted(self._scores.items())
+        ]
+
+    def learned_state_dict(self) -> dict[str, Any]:
+        return {"scores": self._score_rows()}
+
     def snapshot(self) -> dict[str, Any]:
         return {
             "config": asdict(self.config),
@@ -125,13 +142,7 @@ class VariableOrderMarkovPredictor:
             "history": list(self._history),
             "kind": self.kind.value,
             "observed_events": self._observed_events,
-            "scores": [
-                {
-                    "context": list(context),
-                    "targets": dict(sorted(row.items())),
-                }
-                for context, row in sorted(self._scores.items())
-            ],
+            "scores": self._score_rows(),
             "suppressed": sorted(self._suppressed),
             "time_ms": self._time_ms,
         }
