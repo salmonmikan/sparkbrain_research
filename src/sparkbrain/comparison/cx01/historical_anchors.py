@@ -25,16 +25,18 @@ class G4AssemblyAnchor:
     def __init__(self) -> None:
         self.model = ExplicitAssemblyComparator()
         self._episode: list[str] = []
+        self._episode_learnable = False
         self._time_ms = 0.0
         self._suppressed: set[str] = set()
         self._observed_events = 0
 
     def _commit_pending(self) -> None:
-        if len(self._episode) >= 2:
+        if self._episode_learnable and len(self._episode) >= 2:
             self.model.observe_sequence(tuple(self._episode), repetitions=1)
         self._episode.clear()
+        self._episode_learnable = False
 
-    def observe_external(self, event: ComparatorEvent) -> None:
+    def observe_external(self, event: ComparatorEvent, *, learn: bool = True) -> None:
         event.validate()
         if event.origin is not EventOrigin.EXTERNAL:
             raise ValueError("G4 anchor accepts external observations only")
@@ -43,8 +45,12 @@ class G4AssemblyAnchor:
         if event.episode_start:
             self._commit_pending()
         self._episode.append(event.token)
+        self._episode_learnable = self._episode_learnable or learn
         self._time_ms = event.timestamp_ms
         self._observed_events += 1
+
+    def finalize_episode(self) -> None:
+        self._commit_pending()
 
     def advance(self, timestamp_ms: float) -> None:
         if timestamp_ms < self._time_ms:
@@ -90,11 +96,13 @@ class G4AssemblyAnchor:
     def clear_suppression(self) -> None:
         self._suppressed.clear()
 
+    def learned_state_dict(self) -> dict[str, Any]:
+        return self.model.learned_state_dict()
+
     def snapshot(self) -> dict[str, Any]:
-        # Inspection is pure: an unfinished episode remains pending and is
-        # serialized instead of being silently converted into learned Assembly state.
         return {
             "episode": list(self._episode),
+            "episode_learnable": self._episode_learnable,
             "kind": self.kind.value,
             "model": self.model.learned_state_dict(),
             "observed_events": self._observed_events,
@@ -107,6 +115,7 @@ class G4AssemblyAnchor:
             raise ValueError("snapshot kind mismatch")
         self.model = ExplicitAssemblyComparator.from_learned_state_dict(state["model"])
         self._episode = [str(token) for token in state.get("episode", [])]
+        self._episode_learnable = bool(state.get("episode_learnable", False))
         self._observed_events = int(state["observed_events"])
         self._suppressed = set(str(token) for token in state["suppressed"])
         self._time_ms = float(state["time_ms"])
@@ -145,7 +154,7 @@ class G5TypedAnchor:
         self._suppressed: set[str] = set()
         self._observed_events = 0
 
-    def observe_external(self, event: ComparatorEvent) -> None:
+    def observe_external(self, event: ComparatorEvent, *, learn: bool = True) -> None:
         event.validate()
         if event.origin is not EventOrigin.EXTERNAL:
             raise ValueError("G5 anchor accepts external observations only")
@@ -153,11 +162,14 @@ class G5TypedAnchor:
             raise ValueError("events must be chronological")
         if event.episode_start:
             self._last_token = None
-        if self._last_token is not None:
+        if learn and self._last_token is not None:
             self.model.train_prediction_sequence((self._last_token, event.token), repetitions=1)
         self._last_token = event.token
         self._time_ms = event.timestamp_ms
         self._observed_events += 1
+
+    def finalize_episode(self) -> None:
+        self._last_token = None
 
     def advance(self, timestamp_ms: float) -> None:
         if timestamp_ms < self._time_ms:
@@ -191,6 +203,9 @@ class G5TypedAnchor:
 
     def clear_suppression(self) -> None:
         self._suppressed.clear()
+
+    def learned_state_dict(self) -> dict[str, Any]:
+        return self.model.learned_state_dict()
 
     def snapshot(self) -> dict[str, Any]:
         return {
