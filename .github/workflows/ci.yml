@@ -31,3 +31,20 @@ jobs:
         run: python -m pytest -q
       - name: Validate bundle
         run: python scripts/validate_bundle.py
+      - name: R01-12D development evidence
+        if: >-
+          github.ref == 'refs/heads/research/rv01-endogenous-transition' &&
+          matrix.python-version == '3.11'
+        run: >-
+          python scripts/run_rv01_r01_12d_development.py
+          --output artifacts/research/rv01/r01_12d/development_result.json
+          --execution-source-sha "$GITHUB_SHA"
+      - name: Upload R01-12D development evidence
+        if: >-
+          github.ref == 'refs/heads/research/rv01-endogenous-transition' &&
+          matrix.python-version == '3.11'
+        uses: actions/upload-artifact@v4
+        with:
+          name: rv01-r01-12d-development-${{ github.sha }}
+          path: artifacts/research/rv01/r01_12d/development_result.json
+          if-no-files-found: error
