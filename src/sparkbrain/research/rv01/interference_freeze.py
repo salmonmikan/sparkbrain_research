@@ -32,12 +32,16 @@ CRITICAL_FREEZE_PATHS = (
     "src/sparkbrain/research/rv01/direct_field_plasticity.py",
     "src/sparkbrain/research/rv01/interference_contract.py",
     "src/sparkbrain/research/rv01/interference_controls.py",
+    "src/sparkbrain/research/rv01/interference_freeze.py",
     "src/sparkbrain/research/rv01/interference_runner.py",
     "src/sparkbrain/research/rv01/physical_learner_bridge.py",
     "src/sparkbrain/research/rv01/physical_safety.py",
     "src/sparkbrain/research/rv01/resource_matched_reservoir.py",
     "docs/research/RV01_CONTINUAL_INTERFERENCE_PROTOCOL.md",
+    "docs/research/RV01_R01_11_SAFETY_DIAGNOSTIC_ADDENDUM.md",
     "docs/research/RV01_R01_12D_COMPARATOR_CONTRACT.md",
+    "docs/research/RV01_R01_12D_DEVELOPMENT_RESULT.md",
+    "docs/research/RV01_R01_12E_HELDOUT_FREEZE_REVIEW.md",
     "artifacts/research/rv01/r01_12d/development_result_manifest.json",
 )
 
