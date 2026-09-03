@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from sparkbrain.research.rv01.interference_contract import HELD_OUT_SEEDS
 from sparkbrain.research.rv01.interference_freeze import (
     CRITICAL_FREEZE_PATHS,
     R01_12D_DEVELOPMENT_GRID_HASH,
@@ -10,7 +11,6 @@ from sparkbrain.research.rv01.interference_freeze import (
     R01_12D_SUITE_HASH,
     build_r01_12e_preflight,
 )
-from sparkbrain.research.rv01.interference_contract import HELD_OUT_SEEDS
 
 _SOURCE_SHA = "1" * 40
 
