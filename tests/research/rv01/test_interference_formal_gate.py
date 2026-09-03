@@ -17,10 +17,18 @@ from sparkbrain.research.rv01.interference_freeze import (
     R01_12D_EXECUTION_SOURCE_SHA,
     R01_12D_RESULT_PAYLOAD_HASH,
     R01_12D_SUITE_HASH,
+    build_r01_12e_preflight,
 )
 
 _SOURCE_SHA = "2" * 40
-_PREFLIGHT_HASH = "3" * 64
+
+
+def _preflight_hash() -> str:
+    return str(
+        build_r01_12e_preflight(source_git_sha=_SOURCE_SHA)[
+            "preflight_payload_hash"
+        ]
+    )
 
 
 def _valid_seal() -> dict[str, object]:
@@ -30,7 +38,7 @@ def _valid_seal() -> dict[str, object]:
         "status": "sealed-not-executed",
         "execution_policy": "one-way-no-rerun",
         "source_git_sha": _SOURCE_SHA,
-        "preflight_payload_hash": _PREFLIGHT_HASH,
+        "preflight_payload_hash": _preflight_hash(),
         "held_out_world_grid_hash": world_grid_hash(held_out_worlds()),
         "held_out_world_count": 50,
         "held_out_capability_executed": False,
@@ -58,7 +66,7 @@ def test_valid_seal_can_be_verified_without_executing_capability() -> None:
         checked_out_source_sha=_SOURCE_SHA,
     )
     assert validated.source_git_sha == _SOURCE_SHA
-    assert validated.preflight_payload_hash == _PREFLIGHT_HASH
+    assert validated.preflight_payload_hash == _preflight_hash()
     assert validated.held_out_world_grid_hash == world_grid_hash(held_out_worlds())
 
 
