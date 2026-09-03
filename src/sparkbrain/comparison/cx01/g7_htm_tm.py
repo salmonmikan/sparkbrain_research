@@ -14,33 +14,23 @@ class HTMTemporalMemoryConfig:
     active_columns_per_token: int = 16
     cells_per_column: int = 32
     activation_threshold: int = 12
-    min_threshold: int = 10
     max_new_synapse_count: int = 16
     initial_permanence: float = 0.21
     connected_permanence: float = 0.50
     permanence_increment: float = 0.10
-    permanence_decrement: float = 0.10
-    predicted_decrement: float = 0.01
     maximum_rollout_steps: int = 8
 
     def validate(self) -> None:
         if self.active_columns_per_token < 1 or self.cells_per_column < 2:
             raise ValueError("HTM token SDR geometry is invalid")
-        if (
-            not 1
-            <= self.min_threshold
-            <= self.activation_threshold
-            <= self.active_columns_per_token
-        ):
-            raise ValueError("HTM thresholds must fit the token SDR width")
+        if not 1 <= self.activation_threshold <= self.active_columns_per_token:
+            raise ValueError("HTM activation threshold must fit the token SDR width")
         if self.max_new_synapse_count < self.activation_threshold:
             raise ValueError("max_new_synapse_count cannot undercut activation threshold")
         for value in (
             self.initial_permanence,
             self.connected_permanence,
             self.permanence_increment,
-            self.permanence_decrement,
-            self.predicted_decrement,
         ):
             if not math.isfinite(value) or value < 0:
                 raise ValueError("permanence values must be finite and non-negative")
@@ -69,6 +59,10 @@ class HTMTemporalMemoryComparator:
     winner cells and distal-like segments provide high-order sequence state.
     Evaluation observations may advance sparse context without changing learned
     segment state.
+
+    Only parameters that are actually active in this compact implementation are
+    exposed. Full HTM bursting/matching-segment punishment and predicted-segment
+    decrement mechanisms are outside this comparator's fidelity claim.
     """
 
     kind = ComparatorKind.G7_HTM_TEMPORAL_MEMORY
