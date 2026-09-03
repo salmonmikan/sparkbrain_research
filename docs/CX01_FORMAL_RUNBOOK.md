@@ -36,11 +36,12 @@ Before choosing any formal candidate, retain evidence that:
 - G6/G7/G8 fidelity claims are capability-level and do not overstate official implementation fidelity;
 - no shared world/gate was tuned to repair the rapid contingency-cycle development failure;
 - Python 3.11.16 development matrix completes under deterministic process settings;
-- repository CI is green.
+- repository CI is green;
+- the fail-closed `workflow_dispatch` registration stub exists on the default branch.
 
 Only then choose the exact source commit.
 
-## 2. Freeze the implementation source
+## 2. Freeze the implementation source and dispatch ref
 
 Choose the exact reviewed source commit:
 
@@ -48,7 +49,25 @@ Choose the exact reviewed source commit:
 SOURCE_SHA=<40-character Git SHA>
 ```
 
-After this point, any source change requires a new freeze. Do not reuse an old manifest with a new SHA.
+Create a dedicated immutable-intent freeze tag that points to exactly that commit, for example:
+
+```text
+cx01-freeze-001
+```
+
+Before any candidate capability is opened, verify:
+
+```text
+git rev-parse cx01-freeze-001 == SOURCE_SHA
+```
+
+The formal workflow must be dispatched with this **tag as the workflow `ref`**, not with `main` and not with a moving development branch. The frozen workflow itself fails closed unless:
+
+```text
+GITHUB_SHA == SOURCE_SHA
+```
+
+After this point, any source change requires a new source SHA and a new freeze tag. Do not move/reuse an old tag or reuse an old manifest with a new SHA.
 
 The source SHA binds, among other files:
 
@@ -63,6 +82,8 @@ The source SHA binds, among other files:
 - formal workflow, including pinned GitHub Action revisions and Python runtime policy.
 
 The formal workflow executes the frozen source directly through `PYTHONPATH=<source>/src`; it does **not** resolve or install changing Python package dependencies before capability execution.
+
+GitHub requires a `workflow_dispatch` workflow to exist on the repository default branch. The default branch therefore contains only a **fail-closed registration stub** at the same workflow path. That stub always refuses capability execution. The real formal workflow is the version loaded from the freeze tag.
 
 ## 3. Create a dedicated control branch
 
@@ -117,6 +138,7 @@ Commit the candidate, declarations, and freeze manifest to the dedicated control
 A reviewer other than the freeze builder checks at minimum:
 
 - exact source SHA;
+- freeze tag resolves exactly to that source SHA;
 - candidate generation and disjoint seeds;
 - candidate/world/declaration hashes;
 - comparator inventory;
@@ -185,25 +207,34 @@ Dispatch:
 .github/workflows/cx01-formal-one-way.yml
 ```
 
-with:
+using the frozen tag as the dispatch `ref`, for example:
 
-- exact `source_sha`;
+```text
+ref = cx01-freeze-001
+```
+
+and supply:
+
+- exact `source_sha` matching the tag commit;
 - exact canonical `candidate_spec_hash`;
 - dedicated `control_branch`;
 - committed candidate/manifest/seal/STARTED paths;
 - exact artifact root frozen in the manifest.
 
-Before capability, the workflow:
+**Never dispatch formal with `ref=main`.** The default-branch copy is a registration-only fail-closed stub. Never dispatch with a moving research branch either.
 
-1. checks out the preconsumed control branch using a pinned checkout action revision;
-2. requires candidate, freeze, seal, and STARTED files;
-3. verifies the supplied candidate hash against `candidate.json`;
-4. scans all retained pages of this formal workflow's dispatch history for the same candidate/source identity and fails closed on a duplicate;
-5. checks out the exact frozen source SHA using the pinned checkout revision;
-6. verifies source identity and cleanliness;
-7. provisions exact CPython 3.11.16 using a pinned setup-python revision;
-8. imports CX01 directly from the frozen source tree through `PYTHONPATH`, with no project/package installation;
-9. writes an environment preflight record before capability.
+Before capability, the frozen workflow:
+
+1. requires `GITHUB_SHA == source_sha`, proving the workflow definition itself came from the exact frozen source revision;
+2. checks out the preconsumed control branch using a pinned checkout action revision;
+3. requires candidate, freeze, seal, and STARTED files;
+4. verifies the supplied candidate hash against `candidate.json`;
+5. scans all retained pages of this formal workflow's dispatch history for the same candidate/source identity and fails closed on a duplicate;
+6. checks out the exact frozen source SHA using the pinned checkout revision;
+7. verifies source identity and cleanliness;
+8. provisions exact CPython 3.11.16 using a pinned setup-python revision;
+9. imports CX01 directly from the frozen source tree through `PYTHONPATH`, with no project/package installation;
+10. writes an environment preflight record before capability.
 
 The formal runtime then:
 
@@ -218,7 +249,7 @@ The formal runtime then:
 9. on complete execution, verifies every expected raw cell and writes `RAW_COMPLETE.json`;
 10. only after raw lock, publishes the complete aggregate result.
 
-The workflow uploads evidence using a pinned upload-artifact revision. Platform runner-image metadata is recorded; resource timings remain descriptive-only and are excluded from semantic execution hashes.
+The workflow uploads evidence using a pinned upload-artifact revision. Platform runner-image metadata and the dispatch Git SHA are recorded; resource timings remain descriptive-only and are excluded from semantic execution hashes.
 
 ## 9. Score only locked raw evidence
 
@@ -267,6 +298,7 @@ A correction requires:
 
 - a new model/protocol revision if applicable;
 - a new frozen source SHA if source changed;
+- a new freeze tag if source changed;
 - a new disjoint candidate generation;
 - a new independent seal;
 - a new one-way STARTED marker.
