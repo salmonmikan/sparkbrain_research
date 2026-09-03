@@ -112,8 +112,10 @@ class ExternalGatedCompetitiveFieldPlasticity(
         return tuple((*base_updates, *competing_updates))
 
     def state_dict(self) -> dict[str, Any]:
+        state = super().state_dict()
         return {
-            **super().state_dict(),
+            **state,
             "competition_config": asdict(self.competition_config),
             "competitive_update_count": self.competitive_update_count,
+            "ignored_endogenous_observations": state["ignored_endogenous_count"],
         }
