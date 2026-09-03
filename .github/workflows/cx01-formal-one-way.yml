@@ -1,0 +1,61 @@
+name: cx01-formal-one-way
+run-name: cx01-formal-registration-guard
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_sha:
+        description: "Exact frozen source Git SHA"
+        required: true
+        type: string
+      candidate_spec_hash:
+        description: "Exact SHA-256 of candidate.json canonical state"
+        required: true
+        type: string
+      control_branch:
+        description: "Dedicated branch containing candidate, freeze, seal, and STARTED marker"
+        required: true
+        type: string
+      candidate_path:
+        description: "Candidate JSON path on control branch"
+        required: true
+        default: "cx01-control/candidate.json"
+        type: string
+      manifest_path:
+        description: "Freeze manifest path on control branch"
+        required: true
+        default: "cx01-control/freeze_manifest.json"
+        type: string
+      seal_path:
+        description: "Execution seal path on control branch"
+        required: true
+        default: "cx01-control/execution_seal.json"
+        type: string
+      control_marker_path:
+        description: "Precommitted one-way STARTED marker path"
+        required: true
+        default: "cx01-control/STARTED.json"
+        type: string
+      artifact_root:
+        description: "Exact artifact root frozen into the manifest"
+        required: true
+        default: "/tmp/cx01-formal"
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  registration-guard:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Refuse default-branch formal execution
+        run: |
+          echo "This default-branch file only registers workflow_dispatch."
+          echo "Formal CX01 must be dispatched at a frozen tag whose GITHUB_SHA equals source_sha."
+          exit 1
+
+# GitHub requires a workflow_dispatch workflow to exist on the default branch.
+# This file is intentionally fail-closed. The formal implementation lives in
+# the frozen CX01 source revision and verifies GITHUB_SHA == source_sha before
+# capability. Never execute formal capability from main.
