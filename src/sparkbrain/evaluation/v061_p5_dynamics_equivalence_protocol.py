@@ -4,7 +4,7 @@ from dataclasses import asdict, dataclass
 from enum import StrEnum
 from typing import Any
 
-from .v061_p3_p5_diagnostic_protocol import BehavioralChallenge, P5_REQUIRED_CHALLENGES
+from .v061_p3_p5_diagnostic_protocol import P5_REQUIRED_CHALLENGES, BehavioralChallenge
 
 
 class UpdateLocus(StrEnum):
@@ -37,7 +37,10 @@ class DynamicBehavioralOutcome:
             raise ValueError("ambiguity cardinality trace must be non-empty")
         if any(value < 0 for value in self.ambiguity_cardinality_trace):
             raise ValueError("ambiguity cardinality values must be non-negative")
-        if self.external_effect_latency_steps is not None and self.external_effect_latency_steps < 0:
+        if (
+            self.external_effect_latency_steps is not None
+            and self.external_effect_latency_steps < 0
+        ):
             raise ValueError("external effect latency must be non-negative")
         if len(set(self.state_update_loci)) != len(self.state_update_loci):
             raise ValueError("state update loci must be unique")
