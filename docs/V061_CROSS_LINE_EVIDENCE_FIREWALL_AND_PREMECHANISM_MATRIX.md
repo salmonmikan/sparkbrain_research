@@ -1,11 +1,11 @@
 # v0.6.1 Cross-Line Evidence Firewall and Pre-Mechanism Matrix
 
-## 1. Purpose
+## Purpose
 
-This document allows the candidate-003 failure-diagnostics programme to learn from parallel research
-without contaminating the frozen v0.6.1 formal conclusion.
+Parallel research may sharpen null hypotheses and discriminator design, but it must not contaminate
+the consumed candidate-003 formal result.
 
-The formal candidate-003 result remains:
+The frozen candidate-003 decision remains:
 
 ```text
 Primary supported: false
@@ -14,55 +14,87 @@ G4 supported:      true
 G5 supported:      true
 ```
 
-Nothing in RV01 or CX01 changes, rescues, reruns, or rescales that result.
-
-## 2. Evidence firewall
-
-Four evidence classes are kept separate.
+## Evidence classes
 
 | Class | Meaning | May change candidate-003 formal result? | May change diagnostic priorities? |
 |---|---|---:|---:|
-| F0 | consumed candidate-003 formal evidence | only its frozen scorer already did | yes, as the fixed target of explanation |
-| D | D1-D11 and P1-P5 observer/evaluator diagnostics | no | yes |
-| X | CX01 comparator development and pre-formal review | no | yes, as explicit/hierarchical predictor nulls |
-| R | RV01 independent development and freeze/preflight work | no | yes, as recurrent/physical-dynamics nulls |
+| F0 | consumed candidate-003 formal evidence | no | fixed target of explanation |
+| D | D1-D12 and P1-P5 diagnostics | no | yes |
+| X | CX01 comparator research | no | yes, as explicit/contextual null design |
+| R | RV01 endogenous-transition research | no | yes, as recurrent/physical-dynamics null design |
 
-Cross-line information may strengthen a falsifier or a null model. It may not be pooled into F0,
-used to retune v0.6.1, or reported as a candidate-003 replication.
+Cross-line results are never pooled into F0 and never used to retune candidate-003.
 
-## 3. CX01 status and admissible use
+## CX01 status — 2026-09-05
 
-CX01 PR #17 implemented G3-G8 under a common comparison contract and historically completed a
-30-world x 7-comparator development matrix. The historical development matrix is useful evidence
-that stronger explicit/contextual comparators are plausible nulls and that rapid contingency
-adaptation is a difficult discriminator.
+CX01 pre-formal source/fidelity/fairness review is complete and merged.
 
-However, PR #19 subsequently found pre-formal train/eval boundary problems: non-adaptive evaluation
-prefixes could flow through a learning API, G4 final training completion was not aligned before the
-first probe, and the G8 fidelity description overstated the causal role of its spiking state.
-The corrected contract adds inference-only observations, explicit episode finalization, learned-state
-hash invariants, and narrower G8 claims. The complete 30 x 7 development matrix must therefore be
-rerun before the corrected source is considered freeze-ready.
-
-Consequences for this branch:
+Corrected review closed the train/eval and fidelity blockers, including:
 
 ```text
-old CX01 development totals
-    -> historical development context only
-
-CX01 architecture classes
-    -> valid P5 null-model families
-
-CX01 formal evidence
-    -> unopened / unavailable here
+inference-only non-adaptive observations
+explicit episode finalization before probes
+learned-state invariance in non-adaptive families
+narrowed G8 timing-context/replay claim
+removed inert G7 configuration surface
+deterministic metric accumulation
+frozen-source direct formal runtime
+exact-ref dispatch checks
 ```
 
-No CX01 development total is used as v0.6.1 evidence.
+The corrected 30-world x 7-comparator matrix completed:
 
-## 4. RV01 status and admissible use
+```text
+210 / 210 executions
+training-transcript fairness: 30 / 30
+transcript mismatches: 0
+incomplete fairness worlds: 0
+```
 
-RV01 R01-12D compared the G1/G2-free physical Field with a preregistered resource-matched recurrent
-reservoir over development worlds. The result was mixed rather than a clean architectural win:
+Corrected development totals remain:
+
+```text
+G3:   15 / 30
+G4:   15 / 30
+G5:   15 / 30
+G6:   20 / 30
+G7:   20 / 30
+G8-P: 20 / 30
+G8-R: 25 / 30
+```
+
+Rapid contingency-cycle remains:
+
+```text
+G3/G4/G5/G6/G7/G8-P/G8-R = 0 / 5
+```
+
+Current exact source-freeze candidate:
+
+```text
+f2c5ead5afda7d731033d585511ea68dc066a162
+```
+
+Repository CI and corrected development matrix pass at that SHA. The real formal candidate is still
+unopened; independent seal, persistent STARTED and formal execution have not occurred.
+
+### Admissible use in D/A01
+
+CX01 contributes strong null-model classes and protocol discipline:
+
+```text
+variable-order/context predictor
+HTM-style temporal-memory capability reference
+timing-context/replay capability reference
+strict train/eval state boundary
+```
+
+CX01 formal evidence contributes nothing because no formal candidate has been opened.
+
+## RV01 status — 2026-09-05
+
+R01-12D remains mixed development evidence against a preregistered resource-matched recurrent
+reservoir:
 
 ```text
 route-weighted ordered retention:
@@ -78,191 +110,182 @@ contamination:
     reservoir  177
 ```
 
-The Field retained more ordered continuation in several interference families, while the recurrent
-reservoir was cleaner and tied exact-route recovery. This keeps generic recurrence viable for part of
-the observed capability and prevents P5 from using a weak recurrent strawman.
+The Field retains more ordered continuation under several interference families, while the reservoir
+is cleaner and ties exact-route recovery. Generic recurrence therefore remains a serious null.
 
-The RV01 branch has progressed into R01-12E held-out freeze/preflight and seal-gated execution
-plumbing. Those independent held-out procedures remain outside F0 and D. This branch does not import
-an RV01 formal result.
-
-## 5. Candidate-class x P1-P5 matrix
-
-### A. Transient historical-return-address eligibility
-
-Candidate form:
+R01-12E freeze review has now closed. Current held-out state:
 
 ```text
-outbound causal lineage
-    -> bounded expiring eligibility
-    -> independent external consequence
-    -> selective local influence
+source SHA:
+83d2c77d8ae3878727d2ed4e9e78bc169ce064b8
+
+held-out worlds: 50
+status: sealed-not-executed
+held-out capability executed: false
 ```
+
+### Admissible use in D/A01
+
+RV01 strengthens the requirement that A01 face a resource-matched recurrent causal-trace null.
+No RV01 held-out result exists to import.
+
+## D12 consequence
+
+D12 separates two previously conflated statements:
+
+```text
+A. transient causal address unavailable at external pairing
+B. persistent state cannot recover the address later
+```
+
+A is false for the current runtime: the complete `BoundaryEvent` remains inside the pending boundary
+object through exact external pairing, including `source_proposal_ids`, while the provenance ledger
+retains proposal ancestry and local path IDs.
+
+B remains true after consistency persistence compresses the event history.
+
+Therefore the immediate missing edge is:
+
+```text
+exact external consequence
+    -> existing transient causal lineage
+    -X-> historical local transition update
+```
+
+This motivates A01 without changing F0.
+
+## Candidate family x discriminator matrix
+
+### A. Transient return-address bridge
 
 Required:
 
-- P1: credit follows actual lineage after lineage swap;
-- P2: world relation changes later shared-root competition;
-- P3: R-containing transplant localizes the effect without undeclared state;
-- P4: co-maximal alternatives remain bounded until external differentiation;
-- P5: no established-minimal explicit lineage-memory model reproduces both endpoint and dynamic/state signatures.
+```text
+P1 credit follows actual exact-parent causal lineage
+P1 contradiction selectively corrects that lineage
+P2 world evidence changes future shared-root competition
+P3 transient R attributes the event while persistent L carries the later bias
+P4 unresolved plurality is not hidden by ID-based winner selection
+P5 explicit and recurrent null ladder remains adversarial
+```
 
-Falsified or reclassified when persistent lineage-keyed scores are sufficient and the trace is
-behaviorally and dynamically reducible to explicit transition memory.
+A01 is the first preregistered candidate in this family.
 
 ### B. Distributed Field consequence trace
 
-Candidate form:
-
-```text
-causal physical activity
-    -> decaying distributed Field state
-    -> external confirmation modifies local Field influence
-```
-
 Required:
 
-- P1 causal-lineage selectivity despite matched resources;
-- P2 future local competition changes after world-relation permutation;
-- P3 F-only transfer of the relevant learned competition effect;
-- P4 plurality is bounded without forced singleton collapse;
-- P5 temporal response, update locus, transplant behavior, and unseen combinations resist an established-minimal explicit predictor.
-
-A Field label is not sufficient. Failure of F-only P3 transfer is strong evidence against this class.
-
-### C. Explicit local transition credit
-
-Candidate form:
-
 ```text
-local transition / lineage key
-    -> externally updated persistent influence
+P1 causal selectivity under matched resources
+P2 world-to-local competition circulation
+P3 valid F-only transfer of the learned functional effect
+P4 bounded plurality and later causal differentiation
+P5 non-reduction against explicit and recurrent nulls
 ```
 
-This may pass P1-P4 and still be a valid architecture. P5 decides its scientific classification.
-If a smaller explicit local predictor reproduces the full behavior and dynamics, report it as explicit
-anonymous transition memory rather than emergent Field organization.
+Failure of valid F-only P3 transfer is strong negative evidence for this family.
 
-### D. Generic recurrent / reservoir dynamics
+### C. Joint return-address + local/Field update
 
-RV01 R01-12D makes this a serious null rather than a toy baseline. P5 comparisons should preserve
-resource comparability and include interference, trajectory substitution, identifier permutation,
-state persistence, and contamination/ambiguity traces.
+This family remains available if transient addressability alone is insufficient and a distributed or
+joint update process is required. P3 joint crosses must separate carrier from readout/update effects.
 
-If a generic recurrent model reproduces the candidate under comparable state and locality contracts,
-architectural uniqueness is not established.
+### D. Explicit anonymous transition memory
 
-### E. Hierarchical/context explicit predictors
+This remains a scientifically valid architecture. If an established-minimal explicit mechanism
+reproduces the complete P1-P5 behavior/dynamics with no larger state or greater lookup privilege, the
+correct classification is explicit anonymous predictive/transition memory rather than emergent Field
+organization.
 
-CX01 G6/G7/G8-like classes motivate stronger nulls for variable-order context, temporal memory, and
-timing-sensitive associations. Their implementation details or historical development scores are not
-v0.6.1 evidence, but their computational classes should be represented in P5 whenever they are a
-smaller plausible explanation.
+### E. Generic recurrent dynamics
 
-Any comparison must maintain strict train/eval separation and prohibit probe-time state mutation
-unless the protocol explicitly defines online external learning.
+RV01 makes this a serious null. Resource matching, interference, ambiguity/contamination and temporal
+response must be considered rather than comparing only a final winner.
 
-### F. Typed / Assembly / reward mechanisms
+### F. Typed / Assembly / evaluator-privileged mechanisms
 
-Mechanisms requiring:
+These remain outside the present Primary boundary when they require:
 
 ```text
 Assembly runtime keys
 typed prediction/action/reward/memory heads
-correct action or answer
+correct action/answer
 evaluator target
 scalar reward
 semantic role
 ```
 
-are comparator-only for the present Primary boundary. They are not admitted as anonymous causal
-credit merely by renaming the fields.
+Renaming such fields does not make them anonymous causal credit.
 
-## 6. Pre-implementation admission rule
+## A01 active preregistration
 
-No new causal-credit mechanism should be implemented merely because it sounds biologically or
-architecturally plausible.
-
-Before implementation, its protocol must state all of the following without using frozen outcomes to
-choose parameters:
-
-1. how causal lineage swap is tested;
-2. why only independent external observation can create positive influence;
-3. how contradiction/reversal removes or redirects influence;
-4. how world evidence changes future local competition rather than only final readout;
-5. how ambiguity remains bounded and plural before evidence resolves it;
-6. why no typed/semantic/evaluator privilege enters runtime;
-7. which P3 state locus must carry the effect and which loci must not;
-8. what the smallest explicit predictor and strongest generic recurrent null are;
-9. which observation would end the mechanism as a negative result.
-
-A proposal that cannot state these items is not ready for implementation.
-
-## 7. Strengthened P5 comparison rule
-
-Final output equality is insufficient.
-
-A reduction claim must compare at least:
+Active generation:
 
 ```text
-future competition endpoint
-boundary endpoint
-positive external commit behavior
-competition trajectory over time
-ambiguity-cardinality trajectory
-latency from external observation to local effect
-state-update locus
-state-update count
-global indexed-lookup use
-persistent and transient state size
-identifier permutation
-physical trajectory substitution
-state transplant
-unseen lineage combinations
+v061-credit-a01-transient-return-address-v2
 ```
 
-Thus two systems that return the same winner but achieve it with different causal timing or different
-state loci are not yet structurally equivalent.
-
-Conversely, failure to match one explicit baseline does not prove emergence. It only rejects that
-particular null.
-
-## 8. Prospective negative-completion stop rule
-
-Negative completion is an explicit future decision rule, not the current formal result.
-
-The stronger claim — emergent Field-organized anonymous causal credit under the current research
-premises — should be terminated if the pre-registered programme reaches either of these conditions:
+Proposal SHA-256:
 
 ```text
-A. no admissible candidate survives P1-P4 without forbidden privilege
-
-or
-
-B. every surviving candidate is reducible under strengthened P5 to an
-   established-minimal explicit anonymous transition/predictive memory
+c31e7c4148a2940e09c65960b8f208242e9e1d4c19f01929fcdc81b7b7379147
 ```
 
-Additional strong negative evidence would include:
-
-- all distributed-Field candidates fail valid F-only P3 transfer;
-- all return-address candidates require persistent keyed state whose endpoint, temporal response,
-  update locality, and transplant behavior are equivalent to explicit transition memory.
-
-That conclusion would not mean that SparkBrain as a whole is impossible. It would mean that the
-stronger Field-organized causal-credit claim has not survived its discriminators, while an explicit
-anonymous predictive-memory architecture may remain scientifically and practically valid.
-
-## 9. Current decision
-
-No new mechanism is admitted by this document.
-
-Current next step remains discriminator-first:
+Mechanism/null bundle source:
 
 ```text
-candidate hypothesis
-    -> P1-P4 admissibility
-    -> strengthened P5 against explicit + recurrent null ladder
-    -> mechanism experiment only if the hypothesis remains genuinely discriminable
-    -> otherwise negative completion / honest explicit-memory classification
+92c2ead081844861847d679315639da6de401e1b
 ```
+
+A01 v1 is preserved as superseded before implementation. A01 v2 is preregistered but not implemented.
+
+Its null ladder is intentionally strong:
+
+```text
+N1 minimal explicit local eligibility memory
+N2 compact explicit relation-to-path table
+N3 resource-matched recurrent causal trace
+N4 relation-only downstream control
+```
+
+If A01 passes P1-P4 but N1/N2 reproduce its endpoint and causal-dynamic behavior under strengthened
+P5, the correct endpoint is explicit anonymous transition memory.
+
+## Negative-completion stop rule
+
+The stronger Field-organized causal-credit claim cannot be terminated merely because A01 fails.
+Before prospective negative completion, all registered non-privileged candidate families must be
+completed:
+
+```text
+transient-return-address
+distributed-field-trace
+joint-return-and-local-field-update
+```
+
+Then termination is permitted only if either:
+
+```text
+no candidate survives P1-P4
+```
+
+or:
+
+```text
+every P1-P4 survivor completes strengthened P5
+and every survivor reduces to established-minimal explicit anonymous memory
+```
+
+A non-reduced survivor keeps the stronger claim open but does not by itself prove emergence.
+
+## Current decision
+
+No parallel formal result is available for import. Current cross-line use is limited to:
+
+```text
+CX01 -> stronger explicit/contextual nulls + train/eval discipline
+RV01 -> strong resource-matched recurrent null + physical/recurrent trade-off awareness
+```
+
+A01 remains the next minimal discriminator candidate because D12 shows the transient causal address
+already exists before persistence loses it.
