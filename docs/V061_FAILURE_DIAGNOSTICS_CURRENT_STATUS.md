@@ -39,7 +39,7 @@ G5 supported:      true
 | P2 world-to-local circulation | current architecture remains negative: changed world relation does not reorganize future G1 competition with local state fixed |
 | P3 state-locus cross transplant | L/F/C/R loci separated; Field-only and consistency-only upstream transfer are explicit falsifiers |
 | P4 bounded ambiguity continuation | co-maximal plurality is allowed initially; later external evidence must causally differentiate future competition; forced early singleton fails |
-| P5 explicit-memory reduction | original 11-challenge endpoint comparison implemented and now strengthened with temporal/state-structural equivalence |
+| P5 explicit-memory reduction | original 11-challenge endpoint comparison implemented and strengthened with temporal/state-structural equivalence |
 
 No proposed future mechanism has passed P1-P5. P1-P5 are evaluators, not a new learning rule.
 
@@ -155,6 +155,56 @@ require equivalent global lookup.
 Conversely, failure of one explicit baseline remains only a falsification of that baseline. P5 never
 returns `emergent Field organization = true` by itself.
 
+## Pre-mechanism admission gate
+
+New mechanisms are now blocked before implementation unless they predeclare all of:
+
+```text
+causal lineage-swap test
+external-confirmation-only positive update
+contradiction/reversal correction
+future local-competition effect
+bounded ambiguity behavior
+no forbidden typed/semantic/evaluator privilege
+expected P3 carrier locus
+smallest explicit-memory null
+strong generic recurrent null
+negative stopping observation
+```
+
+The evaluator is implemented in:
+
+```text
+src/sparkbrain/evaluation/v061_premechanism_admission.py
+```
+
+Missing any declaration fails closed. This prevents a new idea from being implemented simply because
+it could raise a frozen score.
+
+## Negative-completion family coverage
+
+A single failed mechanism is not sufficient to terminate the stronger claim. Before a prospective
+negative completion, the candidate programme must be explicitly complete and cover all currently
+registered non-privileged mechanism families:
+
+```text
+transient-return-address
+distributed-field-trace
+joint-return-and-local-field-update
+```
+
+Even after family coverage is complete, negative completion is permitted only if:
+
+```text
+no non-privileged candidate survives P1-P4
+or
+every P1-P4 survivor has completed strengthened P5
+and every survivor reduces to established-minimal explicit anonymous memory
+```
+
+An incomplete programme, incomplete family coverage, or an unevaluated P5 survivor cannot trigger
+termination.
+
 ## Cross-line evidence firewall
 
 Parallel work is separated into four evidence classes:
@@ -217,45 +267,8 @@ D. honest explicit anonymous transition memory
    -> remains a valid architecture if P5 reduction wins, but is not the stronger emergent-Field claim
 
 E. negative completion
-   -> valid if no admissible candidate survives P1-P4 or every survivor reduces under strengthened P5
+   -> valid only after required family coverage and the fail-closed stop rule
 ```
-
-## Pre-implementation decision rule
-
-A mechanism is not ready merely because it could improve lag or contingency scores. Before any new
-implementation it must predeclare:
-
-1. causal lineage-swap behavior;
-2. external-confirmation-only positive update;
-3. contradiction/reversal correction;
-4. effect on future local competition;
-5. bounded ambiguity behavior;
-6. absence of typed/semantic/evaluator privilege;
-7. expected P3 carrier locus;
-8. smallest explicit predictor and strongest generic recurrent null;
-9. a negative stopping observation.
-
-If the proposal cannot state these before implementation, it is not admitted.
-
-## Prospective negative-completion rule
-
-The stronger claim of emergent Field-organized anonymous causal credit under the current premises
-should terminate if either:
-
-```text
-A. no non-privileged candidate survives P1-P4
-or
-B. every survivor is behaviorally and dynamically reducible to an established-minimal explicit
-   anonymous transition/predictive memory under P5
-```
-
-Strong supporting negative evidence would include repeated failure of valid F-only P3 transfer for
-all distributed-Field candidates, or return-address candidates whose complete endpoint/dynamics/state
-behavior is reducible to explicit keyed transition memory.
-
-This would not establish that SparkBrain as a whole is impossible. It would terminate the stronger
-Field-organized causal-credit claim while leaving explicit anonymous predictive memory as a distinct
-possible architecture.
 
 ## Claim boundary
 
