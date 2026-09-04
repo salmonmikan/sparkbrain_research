@@ -62,9 +62,13 @@ class StateLocusCrossTransplantTrial:
             observed_value = self.transplanted_state.hash_for(locus)
             if locus in transplanted:
                 if donor_value is None:
-                    raise ValueError(f"donor state unavailable for transplanted locus: {locus.value}")
+                    raise ValueError(
+                        f"donor state unavailable for transplanted locus: {locus.value}"
+                    )
                 if donor_value == baseline_value:
-                    raise ValueError(f"donor and baseline must differ at transplanted locus: {locus.value}")
+                    raise ValueError(
+                        f"donor and baseline must differ at transplanted locus: {locus.value}"
+                    )
                 if observed_value != donor_value:
                     raise ValueError(f"transplanted state must match donor at locus: {locus.value}")
             elif observed_value != baseline_value:
