@@ -44,6 +44,45 @@ and its tests are:
 tests/v06/test_premechanism_admission.py
 ```
 
+## Immutable proposal specification binding
+
+The checklist above is not accepted as a set of free-floating booleans. An admitted proposal must
+also identify the concrete discriminator and null specifications it commits to:
+
+```text
+lineage-swap protocol ID
+contradiction protocol ID
+future-competition protocol ID
+bounded-ambiguity protocol ID
+P3 cross-transplant protocol ID
+explicit-memory null ID
+recurrent/reservoir null ID
+negative stopping-observation ID
+```
+
+Together with the mechanism family, declaration flags, forbidden-privilege declaration, and expected
+P3 carrier loci, these fields form a canonical JSON proposal specification. The evaluator computes a
+SHA-256 digest over that specification.
+
+Admission requires the proposal's stored binding hash to match the recomputed digest exactly:
+
+```text
+bound proposal specification
+    -> implementation / diagnostic execution
+
+changed protocol, null, carrier expectation, or declaration
+    -> hash mismatch
+    -> proposal-specification-binding-invalid
+    -> register a new proposal generation instead
+```
+
+This does not prove scientific adequacy. It prevents a proposal from silently changing its
+falsifiers or null models after results are visible.
+
+Every later `CandidateDisposition` used by the negative-completion evaluator also carries a valid
+proposal-specification SHA-256, so terminal accounting remains tied to a preregistered proposal
+identity rather than an unbound candidate label.
+
 ## Registered mechanism families
 
 Negative completion cannot be declared by testing only one favored mechanism. The current stronger
@@ -66,6 +105,8 @@ nulls rather than evidence for the stronger Field-organized claim.
 For negative-completion accounting, every implemented candidate receives a fail-closed disposition:
 
 ```text
+proposal specification hash
+mechanism family
 non-privileged
 P1 passed
 P2 passed
@@ -79,7 +120,8 @@ A candidate is a P1-P4 survivor only if it is non-privileged and passes all four
 discriminators. A typed, semantic, evaluator-keyed, or otherwise privileged mechanism does not count
 as a survivor even if it performs well.
 
-P5 reduction cannot be recorded before P5 has actually been assessed.
+P5 reduction cannot be recorded before P5 has actually been assessed. An invalid or missing proposal
+SHA-256 also fails closed before terminal accounting.
 
 ## Stop rule
 
@@ -89,6 +131,8 @@ The stronger claim of emergent Field-organized anonymous causal credit may be te
 candidate programme explicitly complete
 AND
 all registered mechanism families completed
+AND
+all candidate dispositions are bound to registered proposal specifications
 AND
 (
     no non-privileged candidate survives P1-P4
