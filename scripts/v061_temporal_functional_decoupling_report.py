@@ -88,13 +88,19 @@ def _markdown(report: dict[str, Any]) -> str:
             "",
             "## Relation storage and expression counterfactuals",
             "",
-            "| Case | Stored dominant | Expressed targets | Storage correct | Abstention | Superposition |",
+            (
+                "| Case | Stored dominant | Expressed targets | Storage correct | "
+                "Abstention | Superposition |"
+            ),
             "|---|---|---|---|---|---|",
         )
     )
     for key, value in relation.items():
         rows.append(
-            "| {case} | {dominant} | {expressed} | {stored} | {abstention} | {superposition} |".format(
+            (
+                "| {case} | {dominant} | {expressed} | {stored} | {abstention} | "
+                "{superposition} |"
+            ).format(
                 case=key,
                 dominant=value["dominant_target"],
                 expressed=", ".join(value["expressed_targets"]) or "—",
@@ -108,7 +114,10 @@ def _markdown(report: dict[str, Any]) -> str:
             "",
             "## Mechanistic conclusion",
             "",
-            "The current Primary has two locally meaningful but disconnected anonymous state systems:",
+            (
+                "The current Primary has two locally meaningful but disconnected "
+                "anonymous state systems:"
+            ),
             "",
             "```text",
             "local transition frequency + lag stability",
@@ -121,9 +130,9 @@ def _markdown(report: dict[str, Any]) -> str:
             "",
             "World consistency does not reorganize the earlier shared-root trajectory competition. "
             "Conversely, relation re-entry can abstain or co-express multiple links after storage. "
-            "The central failure is therefore not merely a bad threshold: it is a missing endogenous "
-            "coordination process between temporal trajectory formation, anonymous world relation, "
-            "and subsequent Field expression.",
+            "The central failure is therefore not merely a bad threshold: it is a missing "
+            "endogenous coordination process between temporal trajectory formation, anonymous "
+            "world relation, and subsequent Field expression.",
             "",
             "## Claim boundary",
             "",
