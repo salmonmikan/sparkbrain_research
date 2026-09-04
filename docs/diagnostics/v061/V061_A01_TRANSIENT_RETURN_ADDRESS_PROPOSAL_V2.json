@@ -1,0 +1,35 @@
+{
+  "schema": "v061-premechanism-proposal-v2",
+  "proposal": {
+    "proposal_id": "v061-credit-a01-transient-return-address-v2",
+    "mechanism_family": "transient-return-address",
+    "lineage_swap_test_declared": true,
+    "external_confirmation_only_positive": true,
+    "contradiction_correction_declared": true,
+    "future_local_competition_effect_declared": true,
+    "bounded_ambiguity_declared": true,
+    "uses_forbidden_privilege": false,
+    "expected_p3_carrier_loci": [
+      "local-transition",
+      "transient-return-address"
+    ],
+    "explicit_null_declared": true,
+    "recurrent_null_declared": true,
+    "negative_stop_observation_declared": true,
+    "lineage_swap_protocol_id": "v061-p1-lineage-swap-v1",
+    "contradiction_protocol_id": "v061-p1-contradiction-v1",
+    "future_competition_protocol_id": "v061-p2-world-to-local-competition-v1",
+    "bounded_ambiguity_protocol_id": "v061-p4-bounded-ambiguity-v1",
+    "p3_protocol_id": "v061-p3-state-locus-cross-v1",
+    "explicit_null_id": "v061-p5-minimal-explicit-local-eligibility-v1",
+    "recurrent_null_id": "v061-p5-resource-matched-recurrent-credit-v1",
+    "negative_stop_observation_id": "v061-a01-stop-lineage-return-or-reduction-v1",
+    "protocol_bundle_source_sha": "92c2ead081844861847d679315639da6de401e1b",
+    "mechanism_rule_spec_path": "docs/V061_A01_TRANSIENT_RETURN_ADDRESS_PROTOCOL.md",
+    "null_ladder_spec_path": "docs/V061_A01_NULL_LADDER.md",
+    "bound_specification_hash": "c31e7c4148a2940e09c65960b8f208242e9e1d4c19f01929fcdc81b7b7379147"
+  },
+  "status": "PREREGISTERED_NOT_IMPLEMENTED",
+  "candidate_003_reexecuted": false,
+  "primary_runtime_modified": false
+}
