@@ -1,0 +1,37 @@
+{
+  "candidate_id": "rv01-r01-12-interference-heldout-v1",
+  "development_result": {
+    "execution_source_sha": "b163117512daca23b613c8a109a544833af7d360",
+    "result_payload_hash": "4f07d2f645fc9319647b49775a6186eba95af4cf567f99b6b5f8f64fbe0ff79e",
+    "suite_hash": "16e29a77ffa714adbe8bb93cda1bc0cbf67a4022da135069fe731ca65709e7c6",
+    "world_grid_hash": "1d9aed2d3be9cd04460943023321fe519160afb1e3f2ef5622d74949b49e5c48"
+  },
+  "execution_policy": "one-way-no-rerun",
+  "expected_held_out_records": {
+    "field_probe_matrix_record_count": 1000,
+    "reservoir_final_probe_record_count": 200,
+    "training_phase_count": 200,
+    "world_count": 50
+  },
+  "freeze_review": {
+    "ci_conclusion": "success",
+    "ci_python_versions": [
+      "3.11",
+      "3.13"
+    ],
+    "ci_run_id": 33784345793,
+    "closed_at": "2026-09-05T07:10:00+09:00",
+    "preflight_artifact_digest": "sha256:e1b2016a824ee1a737a4d2ebbaba7d4562c8d3dc59f6d6e5a678f59064272061",
+    "preflight_artifact_id": 9904975471,
+    "preflight_artifact_name": "rv01-r01-12e-preflight-83d2c77d8ae3878727d2ed4e9e78bc169ce064b8",
+    "status": "closed"
+  },
+  "held_out_capability_executed": false,
+  "held_out_world_count": 50,
+  "held_out_world_grid_hash": "4b828e544741552b9ce4759507cfaea285b2a36fc6f2cd7da8ac8aa4b0788229",
+  "preflight_payload_hash": "9b6fd4541196cdad297f1f92e3316da92503db46c12bb17ff6abc4fd643963dd",
+  "schema": "rv01-r01-12-heldout-execution-seal-v1",
+  "seal_payload_hash": "aff4df1a8cbe61294645c8f43464c1d198b9a599153ced49f00d47be7571e9d5",
+  "source_git_sha": "83d2c77d8ae3878727d2ed4e9e78bc169ce064b8",
+  "status": "sealed-not-executed"
+}
