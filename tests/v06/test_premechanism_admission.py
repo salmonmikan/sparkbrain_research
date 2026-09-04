@@ -7,6 +7,7 @@ import pytest
 from sparkbrain.evaluation.v061_p3_p5_diagnostic_protocol import StateLocus
 from sparkbrain.evaluation.v061_premechanism_admission import (
     CandidateDisposition,
+    MechanismFamily,
     NegativeCompletionProgramme,
     PreMechanismProposal,
     assess_negative_completion,
@@ -14,9 +15,14 @@ from sparkbrain.evaluation.v061_premechanism_admission import (
 )
 
 
+def _all_families() -> tuple[MechanismFamily, ...]:
+    return tuple(MechanismFamily)
+
+
 def _proposal(**changes: object) -> PreMechanismProposal:
     base = PreMechanismProposal(
         proposal_id="candidate-a",
+        mechanism_family=MechanismFamily.DISTRIBUTED_FIELD_TRACE,
         lineage_swap_test_declared=True,
         external_confirmation_only_positive=True,
         contradiction_correction_declared=True,
@@ -37,6 +43,7 @@ def _disposition(
 ) -> CandidateDisposition:
     base = CandidateDisposition(
         candidate_id=candidate_id,
+        mechanism_family=MechanismFamily.DISTRIBUTED_FIELD_TRACE,
         non_privileged=True,
         p1_passed=True,
         p2_passed=True,
@@ -92,6 +99,7 @@ def test_admission_requires_declared_p3_carrier_locus() -> None:
 def test_incomplete_candidate_programme_never_triggers_negative_completion() -> None:
     programme = NegativeCompletionProgramme(
         candidate_programme_complete=False,
+        completed_families=(),
         dispositions=(
             _disposition(
                 "failed",
@@ -105,15 +113,31 @@ def test_incomplete_candidate_programme_never_triggers_negative_completion() -> 
     assert assessment.classification == "programme-incomplete"
 
 
+def test_complete_programme_requires_all_preregistered_mechanism_families() -> None:
+    programme = NegativeCompletionProgramme(
+        candidate_programme_complete=True,
+        completed_families=(MechanismFamily.DISTRIBUTED_FIELD_TRACE,),
+        dispositions=(
+            _disposition("p1-fail", p1_passed=False, p5_assessed=False),
+        ),
+    )
+    assessment = assess_negative_completion(programme)
+    assert assessment.required_family_coverage_passed is False
+    assert assessment.stop_stronger_field_claim is False
+    assert assessment.classification == "mechanism-family-coverage-incomplete"
+
+
 def test_complete_programme_with_no_p1_p4_survivor_stops_stronger_claim() -> None:
     programme = NegativeCompletionProgramme(
         candidate_programme_complete=True,
+        completed_families=_all_families(),
         dispositions=(
             _disposition("p1-fail", p1_passed=False, p5_assessed=False),
             _disposition("privileged", non_privileged=False, p5_assessed=False),
         ),
     )
     assessment = assess_negative_completion(programme)
+    assert assessment.required_family_coverage_passed is True
     assert assessment.p1_p4_survivor_ids == ()
     assert assessment.stop_stronger_field_claim is True
     assert assessment.classification == "negative-completion-no-p1-p4-survivor"
@@ -122,6 +146,7 @@ def test_complete_programme_with_no_p1_p4_survivor_stops_stronger_claim() -> Non
 def test_complete_programme_waits_until_every_survivor_has_p5_assessment() -> None:
     programme = NegativeCompletionProgramme(
         candidate_programme_complete=True,
+        completed_families=_all_families(),
         dispositions=(
             _disposition(
                 "survivor",
@@ -140,6 +165,7 @@ def test_complete_programme_waits_until_every_survivor_has_p5_assessment() -> No
 def test_all_survivors_reduced_under_p5_stops_stronger_claim() -> None:
     programme = NegativeCompletionProgramme(
         candidate_programme_complete=True,
+        completed_families=_all_families(),
         dispositions=(
             _disposition("a", p5_reduced_to_explicit_memory=True),
             _disposition("b", p5_reduced_to_explicit_memory=True),
@@ -159,6 +185,7 @@ def test_all_survivors_reduced_under_p5_stops_stronger_claim() -> None:
 def test_one_nonreduced_survivor_keeps_stronger_claim_open() -> None:
     programme = NegativeCompletionProgramme(
         candidate_programme_complete=True,
+        completed_families=_all_families(),
         dispositions=(
             _disposition("reduced", p5_reduced_to_explicit_memory=True),
             _disposition("not-reduced"),
@@ -172,6 +199,7 @@ def test_one_nonreduced_survivor_keeps_stronger_claim_open() -> None:
 def test_p5_reduction_cannot_precede_p5_assessment() -> None:
     programme = NegativeCompletionProgramme(
         candidate_programme_complete=False,
+        completed_families=(),
         dispositions=(
             _disposition(
                 "invalid",
@@ -189,6 +217,7 @@ def test_complete_programme_cannot_be_empty() -> None:
         assess_negative_completion(
             NegativeCompletionProgramme(
                 candidate_programme_complete=True,
+                completed_families=_all_families(),
                 dispositions=(),
             )
         )
