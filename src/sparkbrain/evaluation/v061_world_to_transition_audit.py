@@ -11,6 +11,7 @@ class ModuleDependencyEvidence:
     relative_path: str
     imported_modules: tuple[str, ...]
     referenced_names: tuple[str, ...]
+    defined_functions: tuple[str, ...]
     called_attributes: tuple[str, ...]
     function_calls: tuple[tuple[str, tuple[str, ...]], ...]
 
@@ -49,6 +50,7 @@ def _module_evidence(root: Path, relative_path: str) -> ModuleDependencyEvidence
     tree = ast.parse(source, filename=str(path))
     imports = []
     names = set()
+    defined_functions = set()
     calls = set()
     function_calls = []
     for node in ast.walk(tree):
@@ -56,6 +58,8 @@ def _module_evidence(root: Path, relative_path: str) -> ModuleDependencyEvidence
             imports.append(node.module or "")
         elif isinstance(node, ast.Import):
             imports.extend(alias.name for alias in node.names)
+        elif isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
+            defined_functions.add(node.name)
         elif isinstance(node, ast.Name):
             names.add(node.id)
         elif isinstance(node, ast.Attribute):
@@ -79,6 +83,7 @@ def _module_evidence(root: Path, relative_path: str) -> ModuleDependencyEvidence
         relative_path=relative_path,
         imported_modules=tuple(sorted(set(imports))),
         referenced_names=tuple(sorted(names)),
+        defined_functions=tuple(sorted(defined_functions)),
         called_attributes=tuple(sorted(calls)),
         function_calls=tuple(sorted(function_calls)),
     )
@@ -118,7 +123,7 @@ def audit_world_to_transition_dependency(
     ]
 
     transition_learning_call = "observe_external_transition"
-    local_learning_exists = transition_learning_call in local.called_attributes
+    local_learning_exists = transition_learning_call in local.defined_functions
     relation_rows = (consistency, reentry)
     relation_references_local = any(
         any("local_expectation" in module for module in row.imported_modules)
