@@ -12,6 +12,7 @@ from sparkbrain.v06.local_expectation import LocalExpectationConfig
 from sparkbrain.v061_a01 import (
     A01CausalCreditStatus,
     A01LocalTemporalExpectation,
+    A01SparseLocalTransitionAdaptation,
     A01TransientCreditBridge,
 )
 
@@ -162,6 +163,22 @@ def test_a01_local_state_roundtrip_preserves_causal_support() -> None:
     assert restored.state_dict() == model.state_dict()
     assert restored.learned_state_dict() == model.learned_state_dict()
     assert restored.causal_reliability("local:A->B") == 0.5
+
+
+def test_a01_g2_roundtrip_retains_augmented_g1_state() -> None:
+    expectation = _expectation()
+    expectation.observe_causal_evidence(("local:A->B",), matched=True)
+    ledger = ProvenanceLedger()
+    transition = A01SparseLocalTransitionAdaptation(expectation, ledger)
+
+    restored = A01SparseLocalTransitionAdaptation.from_state_dict(
+        transition.state_dict(),
+        ledger=ledger,
+    )
+
+    assert isinstance(restored.expectation, A01LocalTemporalExpectation)
+    assert restored.state_dict() == transition.state_dict()
+    assert restored.expectation.causal_reliability("local:A->B") == 2.0 / 3.0
 
 
 def test_a01_exact_parent_match_updates_actual_historical_path() -> None:
