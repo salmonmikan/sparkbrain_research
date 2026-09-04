@@ -8,7 +8,6 @@ from sparkbrain.v06.boundary import BoundaryEvent
 from sparkbrain.v06.consistency import (
     AnonymousConsistencyResolution,
     AnonymousLinkState,
-    UntypedBoundaryConsistency,
 )
 from sparkbrain.v06.foundation import (
     LearningEligibility,
