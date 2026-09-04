@@ -51,7 +51,9 @@ def test_p3_local_transition_only_can_be_classified_as_competition_carrier() -> 
     assessment = assess_state_locus_cross_transplant(trial)
     assert assessment.local_transition_carries_competition is True
     assert assessment.field_state_independently_carries_competition is False
-    assert assessment.interpretation == "explicit_local_transition_state_transfers_future_competition"
+    assert assessment.interpretation == (
+        "explicit_local_transition_state_transfers_future_competition"
+    )
 
 
 def test_p3_consistency_only_reentry_change_does_not_count_as_g1_transfer() -> None:
@@ -180,7 +182,11 @@ def test_p4_internal_replay_cannot_break_the_tie_or_positive_commit() -> None:
 def _outcomes(*, unseen_suffix: str = "same") -> tuple[BehavioralOutcome, ...]:
     rows: list[BehavioralOutcome] = []
     for challenge in BehavioralChallenge:
-        suffix = unseen_suffix if challenge is BehavioralChallenge.UNSEEN_LINEAGE_COMBINATION else "same"
+        suffix = (
+            unseen_suffix
+            if challenge is BehavioralChallenge.UNSEEN_LINEAGE_COMBINATION
+            else "same"
+        )
         rows.append(
             BehavioralOutcome(
                 challenge=challenge,
