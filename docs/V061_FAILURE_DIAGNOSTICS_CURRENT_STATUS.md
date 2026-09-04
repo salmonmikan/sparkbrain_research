@@ -1,12 +1,12 @@
 # v0.6.1 Failure Diagnostics — Current Status
 
-## Role and fixed formal boundary
+## Fixed formal boundary
 
-This branch analyzes the complete negative candidate-003 result. It does not reopen candidate-003,
-tune frozen thresholds, alter Primary runtime, maximize pass counts, or mix RV01/CX01 results into
-the v0.6.1 formal interpretation.
+This branch analyzes the consumed candidate-003 result. It does not reopen candidate-003, retune
+frozen thresholds, modify the frozen Primary runtime, or pool RV01/CX01 evidence into the v0.6.1
+formal decision.
 
-The formal result remains fixed:
+The formal result remains:
 
 ```text
 Primary supported: false
@@ -15,149 +15,72 @@ G4 supported:      true
 G5 supported:      true
 ```
 
-## Completed diagnostic layers
+## D1-D12 diagnostic status
 
 | Stage | Current result |
 |---|---|
 | D1 | 30 clean worlds; lag and contingency failures split into seven mechanistic classes |
-| D2 | branch-specific lag variance changes G1 confidence and can defeat the more exposed world-facing branch |
-| D3 | five zero-selectivity worlds lack a valid main sham baseline; formal zero remains unchanged |
-| D4 | relation storage and Field expression are distinct; correct storage may abstain, old storage may dominate, several links may co-express |
-| D5 | chain follows explicit local-transition state; re-entry follows consistency state; carried Field state alone does not transfer the demonstrated long-lived chain effect |
+| D2 | branch-specific lag variance can override exposure frequency at shared roots |
+| D3 | five zero-selectivity worlds lack a valid main sham baseline; formal zeros remain unchanged |
+| D4 | relation storage and Field expression are distinct; correct storage can abstain and multiple links can co-express |
+| D5 | chain behavior follows explicit local-transition state; re-entry follows consistency state; carried Field state alone does not transfer the demonstrated long-lived chain effect |
 | D6 | explicit comparators solve more frozen cells but abstract much of the physical lag process |
 | D7 | temporal stability and anonymous world relevance are separable |
 | D8 | lag ownership flips G1 selection; world-relation permutation with local evidence fixed does not |
-| D9 | missing anonymous causal-credit circulation is the strongest integrated diagnosis; negative completion remains viable |
-| D10 | BoundaryEvent retains lineage, but persistent consistency compression loses the historical proposal/path return address |
-| D11 | explicit lookup, typed privilege, self-confirmation, explicit transition memory, transient eligibility, and distributed Field candidates are separated |
+| D9 | missing anonymous causal-credit circulation remains the strongest integrated diagnosis |
+| D10 | persistent consistency compression does not retain the historical proposal/path return address |
+| D11 | explicit lookup, typed privilege, self-confirmation, explicit transition memory, transient eligibility and distributed-Field candidates are separated |
+| D12 | the causal return address is still present at exact external pairing time inside the pending BoundaryEvent; the immediate gap is that this transient address is not used to update the historical local lineage before compression |
+
+D12 sharpens D10 rather than reversing it:
+
+```text
+exact external pairing time:
+    causal address available transiently = yes
+    world -> local-transition update      = no
+
+later persistent consistency state:
+    historical proposal/path address     = no
+```
+
+Therefore the first prospective mechanism does not need to invent a second persistent return-address
+queue merely to test immediate causal attribution.
+
+## Current mechanistic picture
+
+```text
+local temporal evidence
+    -> G1 shared-root trajectory competition
+    -> Field integration / BoundaryEvent
+       [Spark / proposal / unit lineage still present]
+    -> pending exact external pairing
+       [historical causal address still available]
+    -X-> local transition learning
+    -> anonymous consistency persistence
+       [proposal/path return address compressed away]
+    -> relation re-entry
+```
+
+The strongest present diagnosis is a missing **world-to-historical-lineage learning edge while the
+causal address still exists**, plus a later persistent information-loss boundary.
 
 ## P1-P5 discriminator status
 
 | Protocol | Current status |
 |---|---|
-| P1 causal lineage | fail-closed lineage-swap, contradiction, external-absence and internal-replay contracts implemented |
-| P2 world-to-local circulation | current architecture remains negative: changed world relation does not reorganize future G1 competition with local state fixed |
-| P3 state-locus cross transplant | L/F/C/R loci separated; Field-only and consistency-only upstream transfer are explicit falsifiers |
-| P4 bounded ambiguity continuation | co-maximal plurality is allowed initially; later external evidence must causally differentiate future competition; forced early singleton fails |
-| P5 explicit-memory reduction | original 11-challenge endpoint comparison implemented and strengthened with temporal/state-structural equivalence |
+| P1 causal lineage | lineage swap, contradiction, absence and internal-replay fail-closed contracts implemented |
+| P2 world-to-local circulation | current Primary remains negative: world-relation change does not reorganize future G1 competition with local evidence fixed |
+| P3 state-locus cross transplant | L/F/C/R loci separated; Field-only and consistency-only upstream transfer are direct falsifiers |
+| P4 bounded ambiguity | genuine co-maximal plurality is allowed initially; later external evidence must differentiate future competition; forced early singleton fails |
+| P5 explicit-memory reduction | original 11 behavioral challenges strengthened with temporal response, update locus, state size and lookup-privilege equivalence |
 
-No proposed future mechanism has passed P1-P5. P1-P5 are evaluators, not a new learning rule.
+Strengthened P5 never proves emergence by defeating one table. It can classify a candidate as
+explicit anonymous memory when an established-minimal explicit predictor reproduces both endpoint
+behavior and causal dynamics/state structure with no larger state and no greater lookup privilege.
 
-## Current mechanistic picture
+## Pre-mechanism admission and negative-completion guard
 
-```text
-anonymous local transition evidence
-    -> G1 frequency x temporal-stability competition
-    -> Field integration / boundary event
-       [historical Spark/proposal/unit lineage exists here]
-    -> anonymous world relation evidence
-    -> persistent consistency state
-       [historical proposal/path return address no longer retained]
-    -> relation re-entry
-    -X-> future G1 competition
-```
-
-The strongest current diagnosis is therefore not simply "one feedback function is missing".
-The demonstrated long-lived state is split across explicit loci while the address required to route a
-later consequence back to its historical local cause is lost during persistence.
-
-## P3 state-locus interpretation
-
-```text
-L = explicit local-transition state
-F = Field membrane/adaptation/trace state
-C = anonymous consistency state
-R = transient historical return address
-```
-
-Existing evidence supports:
-
-```text
-L-only -> demonstrated chain/competition behavior follows L
-F-only -> demonstrated long-lived chain behavior has not followed F alone
-C-only -> relation re-entry follows C
-C-only -X-> no demonstrated transfer into future G1 competition
-R      -> exists on outbound lineage, but is not retained in persistent consistency state
-```
-
-Direct falsifiers remain registered:
-
-- valid F-only donor competition transfer revises the current rejection of already-present distributed learned Field memory;
-- valid C-only donor competition transfer falsifies the no relation-to-G1 diagnosis;
-- selective historical lineage recovery without retained R falsifies the D10 information-loss interpretation.
-
-## P4 bounded ambiguity interpretation
-
-P4 preserves the valid part of the evaluator-mismatch hypothesis without allowing it to explain away
-the negative result.
-
-```text
-co-maximal A + B
-    -> bounded plurality remains active
-    -> independent external evidence arrives
-    -> future local competition differentiates the causally supported lineage
-```
-
-External contradiction must correct prior influence. External absence and internal replay must not
-create positive differentiation. A deterministic early winner is not evidence of resolution.
-
-Current P2/D8 evidence predicts that v0.6.1 Primary cannot complete this circulation even when
-plurality itself is legitimate.
-
-## Strengthened P5 — endpoint plus causal dynamics
-
-The original P5 requires all 11 interventions:
-
-```text
-matched causal lineage
-lineage swap
-external contradiction
-external absence
-internal replay only
-world-relation permutation
-state-locus transplant
-bounded ambiguity
-identifier permutation
-physical trajectory substitution
-unseen lineage combination
-```
-
-The reduction test now additionally compares, per intervention:
-
-```text
-competition trace over time
-ambiguity-cardinality trace
-latency from external observation to local effect
-state-update locus
-state-update count
-global indexed-lookup use
-```
-
-and, per mechanism:
-
-```text
-persistent state units / bytes
-peak transient state units
-global keyed-query requirement
-direct keyed-target-query requirement
-minimality evidence
-P1-P4 status
-```
-
-A candidate is classified as explicit anonymous memory only if an established-minimal explicit
-predictor reproduces both endpoint behavior and these dynamic/state signatures without requiring
-larger state or more lookup privilege.
-
-Matching endpoints with different causal timing or state loci is not structural equivalence.
-Matching outputs through a central lookup table is also not enough when the candidate itself does not
-require equivalent global lookup.
-
-Conversely, failure of one explicit baseline remains only a falsification of that baseline. P5 never
-returns `emergent Field organization = true` by itself.
-
-## Pre-mechanism admission gate
-
-New mechanisms are now blocked before implementation unless they predeclare all of:
+A new mechanism is not implementation-ready until it predeclares:
 
 ```text
 causal lineage-swap test
@@ -172,20 +95,12 @@ strong generic recurrent null
 negative stopping observation
 ```
 
-The evaluator is implemented in:
+Proposal declarations are bound by canonical SHA-256. Active proposal generations also bind their
+mechanism/null specification paths to a concrete Git source revision so the discriminator or null can
+not be silently changed after results are visible.
 
-```text
-src/sparkbrain/evaluation/v061_premechanism_admission.py
-```
-
-Missing any declaration fails closed. This prevents a new idea from being implemented simply because
-it could raise a frozen score.
-
-## Negative-completion family coverage
-
-A single failed mechanism is not sufficient to terminate the stronger claim. Before a prospective
-negative completion, the candidate programme must be explicitly complete and cover all currently
-registered non-privileged mechanism families:
+Prospective negative completion is fail-closed. It requires the programme to be declared complete and
+all three registered non-privileged mechanism families to have been covered:
 
 ```text
 transient-return-address
@@ -193,85 +108,139 @@ distributed-field-trace
 joint-return-and-local-field-update
 ```
 
-Even after family coverage is complete, negative completion is permitted only if:
+Only then can the stronger Field-organized causal-credit claim terminate if either no candidate
+survives P1-P4 or every P1-P4 survivor completes strengthened P5 and reduces to established-minimal
+explicit anonymous memory.
+
+## A01 — first admitted prospective mechanism hypothesis
+
+A01 tests the minimal D12 implication:
 
 ```text
-no non-privileged candidate survives P1-P4
-or
-every P1-P4 survivor has completed strengthened P5
-and every survivor reduces to established-minimal explicit anonymous memory
+existing exact-parent BoundaryEvent lineage
+    -> signed anonymous external evidence
+    -> actual historical local path ancestry
+    -> future local competition
 ```
 
-An incomplete programme, incomplete family coverage, or an unevaluated P5 survivor cannot trigger
-termination.
+A01 adds no second return-address queue. Positive or negative upstream causal credit is allowed only
+for an exact parent boundary named by `external.parent_event_ids`; temporal fallback pairing remains
+valid for ordinary relation statistics but cannot create upstream causal credit.
 
-## Cross-line evidence firewall
+The mechanism rule and null ladder were frozen together at:
 
-Parallel work is separated into four evidence classes:
+```text
+protocol bundle source SHA:
+92c2ead081844861847d679315639da6de401e1b
+```
+
+Active proposal generation:
+
+```text
+proposal: v061-credit-a01-transient-return-address-v2
+proposal SHA-256:
+c31e7c4148a2940e09c65960b8f208242e9e1d4c19f01929fcdc81b7b7379147
+status: PREREGISTERED_NOT_IMPLEMENTED
+```
+
+A01 v1 is preserved as `SUPERSEDED_BEFORE_IMPLEMENTATION`.
+
+A01 is deliberately allowed to end as explicit anonymous transition memory. Passing P1-P4 would show
+that transient causal address use is sufficient to close the loop; strengthened P5 still decides
+whether the persistent learned effect is reducible to explicit local eligibility memory.
+
+The null ladder includes:
+
+```text
+N1 minimal explicit local eligibility memory
+N2 compact explicit relation-to-path table
+N3 resource-matched recurrent causal trace
+N4 relation-only downstream control
+```
+
+## Cross-line evidence firewall — 2026-09-05
+
+Evidence classes remain separate:
 
 ```text
 F0 = immutable candidate-003 formal evidence
-D  = this failure-diagnostics programme
-X  = CX01 comparator development / pre-formal work
-R  = RV01 independent development / freeze work
+D  = this diagnostics programme
+X  = CX01 comparator line
+R  = RV01 endogenous-transition line
 ```
 
-X and R may strengthen null hypotheses and discriminator design. They may not alter F0.
+X/R may strengthen null design and protocol discipline. They do not modify F0.
 
 ### CX01
 
-CX01 historically completed a 30 x 7 development matrix for G3-G8, but its later pre-formal review
-found train/eval-boundary and fidelity issues. The corrected source requires the full matrix to be
-rerun before freeze-ready status. Therefore historical CX01 totals are context only, not current
-corrected evidence. Its variable-order/context/temporal-memory architecture classes remain valuable
-explicit nulls for P5.
+The pre-formal source/fidelity/fairness review is now complete and merged. The corrected 30-world x
+7-comparator development matrix completed 210/210 executions with the same family totals as the
+historical matrix, and rapid contingency-cycle remains 0/5 for every comparator.
+
+Current source-freeze candidate:
+
+```text
+f2c5ead5afda7d731033d585511ea68dc066a162
+```
+
+Repository CI and the corrected CX01 development matrix pass at that exact SHA. The real formal
+candidate remains unopened; independent seal, persistent STARTED and formal execution have not
+occurred.
+
+Consequences here:
+
+- G6/G7/G8-like context/temporal-memory classes remain serious explicit null families;
+- corrected CX01 development evidence confirms that rapid contingency adaptation is a hard
+  discriminator across the current comparator ladder;
+- no CX01 formal result is imported into candidate-003 or A01.
 
 ### RV01
 
-R01-12D produced mixed development evidence against a resource-matched recurrent reservoir:
-Field ordered retention was higher, exact-route recovery tied, and reservoir contamination was lower.
-Generic recurrence therefore remains a serious null rather than a strawman. RV01 has separately
-progressed into R01-12E freeze/preflight and seal-gated held-out execution plumbing; that independent
-line is not imported into candidate-003.
-
-See `V061_CROSS_LINE_EVIDENCE_FIREWALL_AND_PREMECHANISM_MATRIX.md`.
-
-## What is rejected or materially weakened
+R01-12D remains mixed development evidence against a resource-matched recurrent reservoir:
 
 ```text
-threshold/gain calibration as a sufficient explanation
-Assembly identity as necessary
-evaluator singleton mismatch as a complete explanation
-current demonstrated long-lived functional bias already residing in Field state alone
-anonymous consistency already closing the loop into G1
-forced early winner-take-all as a required ambiguity solution
-anonymous IDs being sufficient to escape explicit-memory classification
-static source inspection being sufficient to claim emergence
-endpoint-only equivalence being sufficient for structural reduction
-the current Primary already demonstrating anonymous causal-credit circulation
+ordered retention: Field 1.000 vs reservoir 0.900
+exact routes:      24/60 vs 24/60
+contamination:     Field 216 vs reservoir 177
 ```
 
-## What remains viable
+R01-12E freeze review has now closed. Fifty held-out interference worlds are sealed under source
+`83d2c77d8ae3878727d2ed4e9e78bc169ce064b8`, but held-out capability has not been executed.
+
+Consequences here:
+
+- generic recurrence remains a serious P5 null rather than a strawman;
+- RV01 currently contributes no new held-out/formal outcome to A01.
+
+## CI status
+
+Diagnostic head `44798cbfc85cce3239d490bf37bfd4a9ca1f4b58` passed GitHub Actions run
+`33926818301` on Python 3.11 and Python 3.13:
 
 ```text
-A. bounded transient externally gated causal eligibility / historical return address
-   -> only if it survives P1-P5 without becoming persistent keyed memory
-
-B. genuinely distributed decaying Field consequence trace
-   -> only if valid P3 F-only transfer and P1 causal selectivity are demonstrated
-
-C. joint retained-address + local/Field update process
-   -> still hypothetical; joint P3 crosses localize the carrier/update dependency
-
-D. honest explicit anonymous transition memory
-   -> remains a valid architecture if P5 reduction wins, but is not the stronger emergent-Field claim
-
-E. negative completion
-   -> valid only after required family coverage and the fail-closed stop rule
+Ruff:             PASS
+Local readiness: PASS
+Full pytest:      PASS
+Bundle validation: PASS
 ```
 
-## Claim boundary
+This includes the strengthened P5 evaluator, pre-mechanism admission/negative-completion evaluator,
+D12/A01 registration tests, proposal hash/source binding, and the corrected world-to-transition AST
+audit.
 
-The frozen candidate-003 conclusion is unchanged. No formal evidence was rerun, no threshold was
-tuned, no Primary runtime was modified, and no RV01/CX01 result was merged into the v0.6.1 formal
-record.
+## Current decision
+
+No new capability result has been consumed by this branch.
+
+The next valid research transition is:
+
+```text
+accepted diagnostic/A01 protocol state
+    -> separate prospective A01 implementation branch
+    -> development-only P1-P5 discriminator execution
+    -> explicit + recurrent null ladder
+    -> classify A01 honestly
+```
+
+Do not implement A01 by editing the frozen candidate-003 Primary or by using candidate-003 outcomes as
+a tuning target.
