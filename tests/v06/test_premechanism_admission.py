@@ -14,7 +14,6 @@ from sparkbrain.evaluation.v061_premechanism_admission import (
     assess_premechanism_admission,
 )
 
-
 PROTOCOL_SOURCE_SHA = "92c2ead081844861847d679315639da6de401e1b"
 MECHANISM_SPEC_PATH = "docs/V061_A01_TRANSIENT_RETURN_ADDRESS_PROTOCOL.md"
 NULL_SPEC_PATH = "docs/V061_A01_NULL_LADDER.md"
