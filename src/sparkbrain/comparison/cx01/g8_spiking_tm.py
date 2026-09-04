@@ -50,16 +50,18 @@ class _Association:
 
 
 class SpikingTemporalMemoryComparator:
-    """Small timing-sensitive recurrent spiking comparator for CX01.
+    """Timing-sensitive spiking-inspired temporal-memory reference for CX01.
 
-    Anonymous tokens map to deterministic neuron populations. Learned recurrent
-    associations are indexed by population history and quantized inter-spike
-    timing. G8-P exposes the next predictive population only. G8-R uses the same
-    learned state with an explicit global replay/excitability mode and may chain
-    generated populations without training on them.
+    Anonymous tokens map to deterministic neuron populations. Learned temporal
+    associations are indexed by recent token/population context and quantized
+    inter-event timing. G8-P exposes one predictive continuation. G8-R uses the
+    same learned association state with an explicit global replay/excitability
+    privilege and may chain generated populations without training on them.
 
-    This is a local reference comparator for the CX01 contract, not a claim of
-    bit-for-bit reproduction of the published NEST/NESTML sTM implementation.
+    The compact reference is intentionally not a NEST/NESTML reproduction. Its
+    membrane/population state is spiking-inspired transient instrumentation;
+    formal interpretation is limited to the explicit timing-context and replay
+    capability boundaries, not biological spiking-dynamics fidelity.
     """
 
     def __init__(
@@ -138,7 +140,7 @@ class SpikingTemporalMemoryComparator:
             association.observations += 1
             association.target_lag_sum_ms += target_lag
 
-    def observe_external(self, event: ComparatorEvent) -> None:
+    def observe_external(self, event: ComparatorEvent, *, learn: bool = True) -> None:
         event.validate()
         if event.origin is not EventOrigin.EXTERNAL:
             raise ValueError("G8 accepts external observations only")
@@ -147,7 +149,8 @@ class SpikingTemporalMemoryComparator:
         if event.episode_start:
             self._history_tokens.clear()
             self._history_times.clear()
-        self._learn_target(event.token, event.timestamp_ms)
+        if learn:
+            self._learn_target(event.token, event.timestamp_ms)
         self._activate_population(event.token, event.timestamp_ms)
         self._history_tokens.append(event.token)
         self._history_times.append(event.timestamp_ms)
@@ -158,6 +161,10 @@ class SpikingTemporalMemoryComparator:
         self._known_tokens.add(event.token)
         self._time_ms = event.timestamp_ms
         self._observed_events += 1
+
+    def finalize_episode(self) -> None:
+        self._history_tokens.clear()
+        self._history_times.clear()
 
     def advance(self, timestamp_ms: float) -> None:
         if not math.isfinite(timestamp_ms) or timestamp_ms < self._time_ms:
@@ -236,18 +243,24 @@ class SpikingTemporalMemoryComparator:
     def clear_suppression(self) -> None:
         self._suppressed.clear()
 
+    def _association_rows(self) -> list[dict[str, Any]]:
+        return [
+            {
+                "context_tokens": list(row.context_tokens),
+                "lag_signature": list(row.lag_signature),
+                "observations": row.observations,
+                "target_lag_sum_ms": row.target_lag_sum_ms,
+                "target_token": row.target_token,
+            }
+            for _, row in sorted(self._associations.items())
+        ]
+
+    def learned_state_dict(self) -> dict[str, Any]:
+        return {"associations": self._association_rows()}
+
     def snapshot(self) -> dict[str, Any]:
         return {
-            "associations": [
-                {
-                    "context_tokens": list(row.context_tokens),
-                    "lag_signature": list(row.lag_signature),
-                    "observations": row.observations,
-                    "target_lag_sum_ms": row.target_lag_sum_ms,
-                    "target_token": row.target_token,
-                }
-                for _, row in sorted(self._associations.items())
-            ],
+            "associations": self._association_rows(),
             "config": asdict(self.config),
             "generated_events": self._generated_events,
             "history_times": list(self._history_times),

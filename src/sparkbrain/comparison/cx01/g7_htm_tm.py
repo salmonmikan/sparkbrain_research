@@ -14,33 +14,23 @@ class HTMTemporalMemoryConfig:
     active_columns_per_token: int = 16
     cells_per_column: int = 32
     activation_threshold: int = 12
-    min_threshold: int = 10
     max_new_synapse_count: int = 16
     initial_permanence: float = 0.21
     connected_permanence: float = 0.50
     permanence_increment: float = 0.10
-    permanence_decrement: float = 0.10
-    predicted_decrement: float = 0.01
     maximum_rollout_steps: int = 8
 
     def validate(self) -> None:
         if self.active_columns_per_token < 1 or self.cells_per_column < 2:
             raise ValueError("HTM token SDR geometry is invalid")
-        if (
-            not 1
-            <= self.min_threshold
-            <= self.activation_threshold
-            <= self.active_columns_per_token
-        ):
-            raise ValueError("HTM thresholds must fit the token SDR width")
+        if not 1 <= self.activation_threshold <= self.active_columns_per_token:
+            raise ValueError("HTM activation threshold must fit the token SDR width")
         if self.max_new_synapse_count < self.activation_threshold:
             raise ValueError("max_new_synapse_count cannot undercut activation threshold")
         for value in (
             self.initial_permanence,
             self.connected_permanence,
             self.permanence_increment,
-            self.permanence_decrement,
-            self.predicted_decrement,
         ):
             if not math.isfinite(value) or value < 0:
                 raise ValueError("permanence values must be finite and non-negative")
@@ -62,11 +52,17 @@ class _Segment:
 
 
 class HTMTemporalMemoryComparator:
-    """Minimal independent Temporal-Memory comparator for CX01.
+    """Minimal independent Temporal-Memory capability reference for CX01.
 
     This is not `htm.core` and does not implement Spatial Pooling. Anonymous
     tokens map deterministically to fixed sparse columns. Context-dependent
     winner cells and distal-like segments provide high-order sequence state.
+    Evaluation observations may advance sparse context without changing learned
+    segment state.
+
+    Only parameters that are actually active in this compact implementation are
+    exposed. Full HTM bursting/matching-segment punishment and predicted-segment
+    decrement mechanisms are outside this comparator's fidelity claim.
     """
 
     kind = ComparatorKind.G7_HTM_TEMPORAL_MEMORY
@@ -91,7 +87,6 @@ class HTMTemporalMemoryComparator:
     def token_columns(self, token: str) -> tuple[int, ...]:
         if not token:
             raise ValueError("token must be non-empty")
-        # A very large virtual column space makes accidental overlap negligible.
         columns: list[int] = []
         nonce = 0
         while len(columns) < self.config.active_columns_per_token:
@@ -136,7 +131,7 @@ class HTMTemporalMemoryComparator:
             segment.permanence = min(1.0, segment.permanence + self.config.permanence_increment)
             segment.observations += 1
 
-    def observe_external(self, event: ComparatorEvent) -> None:
+    def observe_external(self, event: ComparatorEvent, *, learn: bool = True) -> None:
         event.validate()
         if event.origin is not EventOrigin.EXTERNAL:
             raise ValueError("G7 accepts external observations only")
@@ -146,12 +141,17 @@ class HTMTemporalMemoryComparator:
             self._active_cells = ()
             self._last_token = None
         previous = self._active_cells
-        self._learn(previous, event.token)
+        if learn:
+            self._learn(previous, event.token)
         self._active_cells = self._winner_cells(event.token, previous)
         self._last_token = event.token
         self._known_tokens.add(event.token)
         self._time_ms = event.timestamp_ms
         self._observed_events += 1
+
+    def finalize_episode(self) -> None:
+        self._active_cells = ()
+        self._last_token = None
 
     def advance(self, timestamp_ms: float) -> None:
         if not math.isfinite(timestamp_ms) or timestamp_ms < self._time_ms:
@@ -211,6 +211,20 @@ class HTMTemporalMemoryComparator:
     def clear_suppression(self) -> None:
         self._suppressed.clear()
 
+    def _segment_rows(self) -> list[dict[str, Any]]:
+        return [
+            {
+                "observations": segment.observations,
+                "permanence": segment.permanence,
+                "presynaptic_cells": list(segment.presynaptic_cells),
+                "target_token": segment.target_token,
+            }
+            for _, segment in sorted(self._segments.items())
+        ]
+
+    def learned_state_dict(self) -> dict[str, Any]:
+        return {"segments": self._segment_rows()}
+
     def snapshot(self) -> dict[str, Any]:
         return {
             "active_cells": list(self._active_cells),
@@ -220,15 +234,7 @@ class HTMTemporalMemoryComparator:
             "known_tokens": sorted(self._known_tokens),
             "last_token": self._last_token,
             "observed_events": self._observed_events,
-            "segments": [
-                {
-                    "observations": segment.observations,
-                    "permanence": segment.permanence,
-                    "presynaptic_cells": list(segment.presynaptic_cells),
-                    "target_token": segment.target_token,
-                }
-                for _, segment in sorted(self._segments.items())
-            ],
+            "segments": self._segment_rows(),
             "suppressed": sorted(self._suppressed),
             "time_ms": self._time_ms,
         }

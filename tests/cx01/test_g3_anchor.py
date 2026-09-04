@@ -19,9 +19,11 @@ def test_g3_anchor_remains_first_order_and_external_only() -> None:
     assert model.observed_external_events == before
 
     model.observe_external(_event("a", 20.0, start=True))
+    after_external_cue = model.observed_external_events
+    assert after_external_cue == before + 1
     prediction = model.generate(max_steps=2)
     assert tuple(row.token for row in prediction) == ("b", "c")
-    assert model.observed_external_events == before
+    assert model.observed_external_events == after_external_cue
 
 
 def test_g3_anchor_snapshot_round_trip() -> None:

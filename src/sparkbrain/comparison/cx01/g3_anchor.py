@@ -15,8 +15,8 @@ class G3FirstOrderAnchor:
     """CX01 adapter over the historically used first-order G3 model.
 
     This preserves G3 semantics instead of silently upgrading it into a neural
-    RNN. Episode boundaries and timestamps are ignored because historical G3
-    did not use them.
+    RNN. Timestamps are ignored by the learned transition model. Episode
+    boundaries only delimit architecture-neutral CX01 sequences.
     """
 
     kind = ComparatorKind.G3_FIRST_ORDER
@@ -28,8 +28,9 @@ class G3FirstOrderAnchor:
         self._last_token: str | None = None
         self._time_ms = 0.0
         self._suppressed: set[str] = set()
+        self._observed_events = 0
 
-    def observe_external(self, event: ComparatorEvent) -> None:
+    def observe_external(self, event: ComparatorEvent, *, learn: bool = True) -> None:
         event.validate()
         if event.origin is not EventOrigin.EXTERNAL:
             raise ValueError("G3 anchor accepts external observations only")
@@ -37,10 +38,14 @@ class G3FirstOrderAnchor:
             raise ValueError("events must be chronological")
         if event.episode_start:
             self._last_token = None
-        if self._last_token is not None:
+        if learn and self._last_token is not None:
             self.model.observe(self._last_token, event.token)
         self._last_token = event.token
         self._time_ms = event.timestamp_ms
+        self._observed_events += 1
+
+    def finalize_episode(self) -> None:
+        self._last_token = None
 
     def advance(self, timestamp_ms: float) -> None:
         if timestamp_ms < self._time_ms:
@@ -83,6 +88,7 @@ class G3FirstOrderAnchor:
             "kind": self.kind.value,
             "last_token": self._last_token,
             "model": self.model.learned_state_dict(),
+            "observed_events": self._observed_events,
             "suppressed": sorted(self._suppressed),
             "time_ms": self._time_ms,
         }
@@ -92,8 +98,12 @@ class G3FirstOrderAnchor:
             raise ValueError("snapshot kind mismatch")
         self.model = GenericRecurrentPredictor.from_learned_state_dict(state["model"])
         self._last_token = state["last_token"]
+        self._observed_events = int(state.get("observed_events", self.model.observation_count))
         self._suppressed = set(state["suppressed"])
         self._time_ms = float(state["time_ms"])
+
+    def learned_state_dict(self) -> dict[str, Any]:
+        return self.model.learned_state_dict()
 
     @property
     def parameter_count(self) -> int:
@@ -105,7 +115,7 @@ class G3FirstOrderAnchor:
 
     @property
     def observed_external_events(self) -> int:
-        return self.model.observation_count
+        return self._observed_events
 
     @property
     def generated_internal_events(self) -> int:
