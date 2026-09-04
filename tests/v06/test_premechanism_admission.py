@@ -33,8 +33,16 @@ def _proposal(**changes: object) -> PreMechanismProposal:
         explicit_null_declared=True,
         recurrent_null_declared=True,
         negative_stop_observation_declared=True,
+        lineage_swap_protocol_id="P1-lineage-swap-v1",
+        contradiction_protocol_id="P1-contradiction-v1",
+        future_competition_protocol_id="P2-world-to-local-v1",
+        bounded_ambiguity_protocol_id="P4-bounded-ambiguity-v1",
+        p3_protocol_id="P3-state-locus-cross-v1",
+        explicit_null_id="P5-minimal-explicit-memory-v1",
+        recurrent_null_id="P5-resource-matched-recurrent-v1",
+        negative_stop_observation_id="NEG-stop-observation-v1",
     )
-    return replace(base, **changes)
+    return replace(base, **changes).bind()
 
 
 def _disposition(
@@ -44,6 +52,7 @@ def _disposition(
     base = CandidateDisposition(
         candidate_id=candidate_id,
         mechanism_family=MechanismFamily.DISTRIBUTED_FIELD_TRACE,
+        proposal_specification_hash="a" * 64,
         non_privileged=True,
         p1_passed=True,
         p2_passed=True,
@@ -56,7 +65,10 @@ def _disposition(
 
 
 def test_complete_premechanism_contract_is_admitted() -> None:
-    assessment = assess_premechanism_admission(_proposal())
+    proposal = _proposal()
+    assessment = assess_premechanism_admission(proposal)
+    assert assessment.specification_binding_valid is True
+    assert assessment.specification_hash == proposal.bound_specification_hash
     assert assessment.admitted_for_implementation is True
     assert assessment.missing_requirements == ()
     assert assessment.classification == "admitted-for-discriminator-first-implementation"
@@ -94,6 +106,29 @@ def test_admission_requires_declared_p3_carrier_locus() -> None:
     )
     assert assessment.admitted_for_implementation is False
     assert "p3-carrier-locus" in assessment.missing_requirements
+
+
+def test_post_binding_specification_edit_is_rejected() -> None:
+    tampered = replace(_proposal(), recurrent_null_id="changed-after-binding")
+    assessment = assess_premechanism_admission(tampered)
+    assert assessment.specification_binding_valid is False
+    assert assessment.admitted_for_implementation is False
+    assert "proposal-specification-binding" in assessment.missing_requirements
+    assert assessment.classification == "proposal-specification-binding-invalid"
+
+
+def test_admission_requires_concrete_protocol_and_null_ids() -> None:
+    assessment = assess_premechanism_admission(
+        _proposal(
+            future_competition_protocol_id="",
+            explicit_null_id="",
+            recurrent_null_id="",
+        )
+    )
+    assert assessment.admitted_for_implementation is False
+    assert "future-competition-protocol-id" in assessment.missing_requirements
+    assert "explicit-null-id" in assessment.missing_requirements
+    assert "recurrent-null-id" in assessment.missing_requirements
 
 
 def test_incomplete_candidate_programme_never_triggers_negative_completion() -> None:
@@ -194,6 +229,18 @@ def test_one_nonreduced_survivor_keeps_stronger_claim_open() -> None:
     assessment = assess_negative_completion(programme)
     assert assessment.stop_stronger_field_claim is False
     assert assessment.classification == "stronger-field-claim-remains-open"
+
+
+def test_candidate_disposition_requires_registered_proposal_hash() -> None:
+    programme = NegativeCompletionProgramme(
+        candidate_programme_complete=False,
+        completed_families=(),
+        dispositions=(
+            _disposition("invalid-hash", proposal_specification_hash="not-a-hash"),
+        ),
+    )
+    with pytest.raises(ValueError, match="SHA-256"):
+        assess_negative_completion(programme)
 
 
 def test_p5_reduction_cannot_precede_p5_assessment() -> None:
