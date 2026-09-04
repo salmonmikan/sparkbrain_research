@@ -3,13 +3,12 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+from sparkbrain.evaluation.v061_p3_p5_diagnostic_protocol import StateLocus
 from sparkbrain.evaluation.v061_premechanism_admission import (
     MechanismFamily,
     PreMechanismProposal,
     assess_premechanism_admission,
 )
-from sparkbrain.evaluation.v061_p3_p5_diagnostic_protocol import StateLocus
-
 
 A01_V1_HASH = "2794d1596227eab17c68c46d6874662c3669656edb49e28425f1ef613b66c5dc"
 A01_V2_HASH = "c31e7c4148a2940e09c65960b8f208242e9e1d4c19f01929fcdc81b7b7379147"
