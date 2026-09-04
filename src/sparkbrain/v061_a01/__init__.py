@@ -6,6 +6,7 @@ from .credit_bridge import (
     A01PriorRelation,
     A01TransientCreditBridge,
 )
+from .transition import A01SparseLocalTransitionAdaptation
 
 __all__ = [
     "A01CausalCreditResolution",
@@ -13,5 +14,6 @@ __all__ = [
     "A01CausalSupportState",
     "A01LocalTemporalExpectation",
     "A01PriorRelation",
+    "A01SparseLocalTransitionAdaptation",
     "A01TransientCreditBridge",
 ]
