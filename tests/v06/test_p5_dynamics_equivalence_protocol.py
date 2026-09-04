@@ -45,7 +45,12 @@ def _outcomes(
                     ("co-maximal", challenge.value),
                     ("settled", challenge.value, suffix),
                 ),
-                ambiguity_cardinality_trace=(2, 2 if challenge is BehavioralChallenge.BOUNDED_AMBIGUITY else 1),
+                ambiguity_cardinality_trace=(
+                    2,
+                    2
+                    if challenge is BehavioralChallenge.BOUNDED_AMBIGUITY
+                    else 1,
+                ),
                 external_effect_latency_steps=latency_override.get(
                     challenge,
                     1
