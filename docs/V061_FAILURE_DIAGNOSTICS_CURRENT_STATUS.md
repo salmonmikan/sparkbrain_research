@@ -30,7 +30,7 @@ G5 supported:      true
 | D9 | missing anonymous causal-credit circulation remains the strongest integrated diagnosis |
 | D10 | persistent consistency compression does not retain the historical proposal/path return address |
 | D11 | explicit lookup, typed privilege, self-confirmation, explicit transition memory, transient eligibility and distributed-Field candidates are separated |
-| D12 | the causal return address is still present at exact external pairing time inside the pending BoundaryEvent; the immediate gap is that this transient address is not used to update the historical local lineage before compression |
+| D12 | the causal return address remains present at exact external pairing time inside the pending BoundaryEvent; the immediate gap is that this transient address is not used to update the historical local lineage before compression |
 
 D12 sharpens D10 rather than reversing it:
 
@@ -42,9 +42,6 @@ exact external pairing time:
 later persistent consistency state:
     historical proposal/path address     = no
 ```
-
-Therefore the first prospective mechanism does not need to invent a second persistent return-address
-queue merely to test immediate causal attribution.
 
 ## Current mechanistic picture
 
@@ -61,8 +58,8 @@ local temporal evidence
     -> relation re-entry
 ```
 
-The strongest present diagnosis is a missing **world-to-historical-lineage learning edge while the
-causal address still exists**, plus a later persistent information-loss boundary.
+The strongest present diagnosis is a missing world-to-historical-lineage learning edge while the
+causal address still exists, plus a later persistent information-loss boundary.
 
 ## P1-P5 discriminator status
 
@@ -75,8 +72,8 @@ causal address still exists**, plus a later persistent information-loss boundary
 | P5 explicit-memory reduction | original 11 behavioral challenges strengthened with temporal response, update locus, state size and lookup-privilege equivalence |
 
 Strengthened P5 never proves emergence by defeating one table. It can classify a candidate as
-explicit anonymous memory when an established-minimal explicit predictor reproduces both endpoint
-behavior and causal dynamics/state structure with no larger state and no greater lookup privilege.
+explicit anonymous memory when an established-minimal explicit predictor reproduces endpoint behavior
+and causal dynamics/state structure with no larger state and no greater lookup privilege.
 
 ## Pre-mechanism admission and negative-completion guard
 
@@ -96,11 +93,11 @@ negative stopping observation
 ```
 
 Proposal declarations are bound by canonical SHA-256. Active proposal generations also bind their
-mechanism/null specification paths to a concrete Git source revision so the discriminator or null can
-not be silently changed after results are visible.
+mechanism/null specification paths to a concrete Git source revision so the discriminator or null
+cannot be silently changed after results are visible.
 
-Prospective negative completion is fail-closed. It requires the programme to be declared complete and
-all three registered non-privileged mechanism families to have been covered:
+Prospective negative completion requires all three registered non-privileged mechanism families to be
+covered:
 
 ```text
 transient-return-address
@@ -108,9 +105,8 @@ distributed-field-trace
 joint-return-and-local-field-update
 ```
 
-Only then can the stronger Field-organized causal-credit claim terminate if either no candidate
-survives P1-P4 or every P1-P4 survivor completes strengthened P5 and reduces to established-minimal
-explicit anonymous memory.
+Only then can the stronger claim terminate if no candidate survives P1-P4, or if every survivor
+completes strengthened P5 and reduces to established-minimal explicit anonymous memory.
 
 ## A01 — first admitted prospective mechanism hypothesis
 
@@ -123,14 +119,13 @@ existing exact-parent BoundaryEvent lineage
     -> future local competition
 ```
 
-A01 adds no second return-address queue. Positive or negative upstream causal credit is allowed only
-for an exact parent boundary named by `external.parent_event_ids`; temporal fallback pairing remains
-valid for ordinary relation statistics but cannot create upstream causal credit.
+A01 adds no second return-address queue. Upstream causal credit is allowed only for an exact parent
+boundary named by `external.parent_event_ids`; temporal fallback pairing may still support ordinary
+relation statistics but cannot create upstream causal credit.
 
-The mechanism rule and null ladder were frozen together at:
+Frozen mechanism/null bundle:
 
 ```text
-protocol bundle source SHA:
 92c2ead081844861847d679315639da6de401e1b
 ```
 
@@ -145,10 +140,6 @@ status: PREREGISTERED_NOT_IMPLEMENTED
 
 A01 v1 is preserved as `SUPERSEDED_BEFORE_IMPLEMENTATION`.
 
-A01 is deliberately allowed to end as explicit anonymous transition memory. Passing P1-P4 would show
-that transient causal address use is sufficient to close the loop; strengthened P5 still decides
-whether the persistent learned effect is reducible to explicit local eligibility memory.
-
 The null ladder includes:
 
 ```text
@@ -157,6 +148,10 @@ N2 compact explicit relation-to-path table
 N3 resource-matched recurrent causal trace
 N4 relation-only downstream control
 ```
+
+Passing P1-P4 would show that transient causal address use is sufficient to close the loop;
+strengthened P5 still decides whether the persistent learned effect is reducible to explicit local
+eligibility memory.
 
 ## Cross-line evidence firewall — 2026-09-05
 
@@ -169,13 +164,11 @@ X  = CX01 comparator line
 R  = RV01 endogenous-transition line
 ```
 
-X/R may strengthen null design and protocol discipline. They do not modify F0.
-
 ### CX01
 
-The pre-formal source/fidelity/fairness review is now complete and merged. The corrected 30-world x
-7-comparator development matrix completed 210/210 executions with the same family totals as the
-historical matrix, and rapid contingency-cycle remains 0/5 for every comparator.
+The pre-formal source/fidelity/fairness review is complete and merged. The corrected 30-world x
+7-comparator development matrix completed 210/210 executions with the same family totals, and rapid
+contingency-cycle remains 0/5 for every comparator.
 
 Current source-freeze candidate:
 
@@ -183,20 +176,12 @@ Current source-freeze candidate:
 f2c5ead5afda7d731033d585511ea68dc066a162
 ```
 
-Repository CI and the corrected CX01 development matrix pass at that exact SHA. The real formal
-candidate remains unopened; independent seal, persistent STARTED and formal execution have not
-occurred.
-
-Consequences here:
-
-- G6/G7/G8-like context/temporal-memory classes remain serious explicit null families;
-- corrected CX01 development evidence confirms that rapid contingency adaptation is a hard
-  discriminator across the current comparator ladder;
-- no CX01 formal result is imported into candidate-003 or A01.
+Repository CI and corrected CX01 development matrix pass at that SHA. The real formal candidate
+remains unopened; independent seal, persistent STARTED and formal execution have not occurred.
 
 ### RV01
 
-R01-12D remains mixed development evidence against a resource-matched recurrent reservoir:
+R01-12D remains mixed development evidence:
 
 ```text
 ordered retention: Field 1.000 vs reservoir 0.900
@@ -204,17 +189,15 @@ exact routes:      24/60 vs 24/60
 contamination:     Field 216 vs reservoir 177
 ```
 
-R01-12E freeze review has now closed. Fifty held-out interference worlds are sealed under source
+R01-12E freeze review is closed. Fifty held-out interference worlds are sealed under source
 `83d2c77d8ae3878727d2ed4e9e78bc169ce064b8`, but held-out capability has not been executed.
 
-Consequences here:
-
-- generic recurrence remains a serious P5 null rather than a strawman;
-- RV01 currently contributes no new held-out/formal outcome to A01.
+Therefore neither parallel line currently contributes a new formal outcome to candidate-003/A01.
+They strengthen null design and protocol discipline only.
 
 ## CI status
 
-Diagnostic head `44798cbfc85cce3239d490bf37bfd4a9ca1f4b58` passed GitHub Actions run
+Code/evaluator head `44798cbfc85cce3239d490bf37bfd4a9ca1f4b58` passed GitHub Actions run
 `33926818301` on Python 3.11 and Python 3.13:
 
 ```text
@@ -224,9 +207,8 @@ Full pytest:      PASS
 Bundle validation: PASS
 ```
 
-This includes the strengthened P5 evaluator, pre-mechanism admission/negative-completion evaluator,
-D12/A01 registration tests, proposal hash/source binding, and the corrected world-to-transition AST
-audit.
+Subsequent commits through this status synchronization are documentation-only. They do not change the
+validated evaluator/runtime code.
 
 ## Current decision
 
