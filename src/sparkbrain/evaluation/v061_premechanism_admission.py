@@ -18,14 +18,22 @@ class MechanismFamily(StrEnum):
 REQUIRED_NEGATIVE_COMPLETION_FAMILIES = frozenset(MechanismFamily)
 
 
-def _is_sha256(value: str) -> bool:
-    if len(value) != 64:
+def _is_hex_digest(value: str, *, length: int) -> bool:
+    if len(value) != length:
         return False
     try:
         int(value, 16)
     except ValueError:
         return False
     return True
+
+
+def _is_sha256(value: str) -> bool:
+    return _is_hex_digest(value, length=64)
+
+
+def _is_git_sha(value: str) -> bool:
+    return _is_hex_digest(value, length=40)
 
 
 @dataclass(frozen=True, slots=True)
@@ -50,6 +58,9 @@ class PreMechanismProposal:
     explicit_null_id: str
     recurrent_null_id: str
     negative_stop_observation_id: str
+    protocol_bundle_source_sha: str
+    mechanism_rule_spec_path: str
+    null_ladder_spec_path: str
     bound_specification_hash: str = ""
 
     def validate(self) -> None:
@@ -92,6 +103,9 @@ class PreMechanismProposal:
             "explicit_null_id": self.explicit_null_id,
             "recurrent_null_id": self.recurrent_null_id,
             "negative_stop_observation_id": self.negative_stop_observation_id,
+            "protocol_bundle_source_sha": self.protocol_bundle_source_sha,
+            "mechanism_rule_spec_path": self.mechanism_rule_spec_path,
+            "null_ladder_spec_path": self.null_ladder_spec_path,
         }
 
     def specification_hash(self) -> str:
@@ -113,6 +127,7 @@ class PreMechanismAdmissionAssessment:
     mechanism_family: MechanismFamily
     specification_hash: str
     specification_binding_valid: bool
+    protocol_source_binding_valid: bool
     admitted_for_implementation: bool
     missing_requirements: tuple[str, ...]
     classification: str
@@ -132,6 +147,7 @@ def assess_premechanism_admission(
         _is_sha256(proposal.bound_specification_hash)
         and proposal.bound_specification_hash == specification_hash
     )
+    source_binding_valid = _is_git_sha(proposal.protocol_bundle_source_sha)
     requirements = (
         ("lineage-swap-test", proposal.lineage_swap_test_declared),
         (
@@ -165,6 +181,9 @@ def assess_premechanism_admission(
             "negative-stop-observation-id",
             bool(proposal.negative_stop_observation_id),
         ),
+        ("protocol-bundle-source-sha", source_binding_valid),
+        ("mechanism-rule-spec-path", bool(proposal.mechanism_rule_spec_path)),
+        ("null-ladder-spec-path", bool(proposal.null_ladder_spec_path)),
         ("proposal-specification-binding", binding_valid),
     )
     missing = tuple(name for name, satisfied in requirements if not satisfied)
@@ -174,6 +193,8 @@ def assess_premechanism_admission(
     admitted = not missing
     if not binding_valid:
         classification = "proposal-specification-binding-invalid"
+    elif not source_binding_valid:
+        classification = "protocol-source-binding-invalid"
     else:
         classification = (
             "admitted-for-discriminator-first-implementation"
@@ -185,6 +206,7 @@ def assess_premechanism_admission(
         mechanism_family=proposal.mechanism_family,
         specification_hash=specification_hash,
         specification_binding_valid=binding_valid,
+        protocol_source_binding_valid=source_binding_valid,
         admitted_for_implementation=admitted,
         missing_requirements=missing,
         classification=classification,
