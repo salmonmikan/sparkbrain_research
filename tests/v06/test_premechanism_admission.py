@@ -15,6 +15,11 @@ from sparkbrain.evaluation.v061_premechanism_admission import (
 )
 
 
+PROTOCOL_SOURCE_SHA = "92c2ead081844861847d679315639da6de401e1b"
+MECHANISM_SPEC_PATH = "docs/V061_A01_TRANSIENT_RETURN_ADDRESS_PROTOCOL.md"
+NULL_SPEC_PATH = "docs/V061_A01_NULL_LADDER.md"
+
+
 def _all_families() -> tuple[MechanismFamily, ...]:
     return tuple(MechanismFamily)
 
@@ -41,6 +46,9 @@ def _proposal(**changes: object) -> PreMechanismProposal:
         explicit_null_id="P5-minimal-explicit-memory-v1",
         recurrent_null_id="P5-resource-matched-recurrent-v1",
         negative_stop_observation_id="NEG-stop-observation-v1",
+        protocol_bundle_source_sha=PROTOCOL_SOURCE_SHA,
+        mechanism_rule_spec_path=MECHANISM_SPEC_PATH,
+        null_ladder_spec_path=NULL_SPEC_PATH,
     )
     return replace(base, **changes).bind()
 
@@ -68,6 +76,7 @@ def test_complete_premechanism_contract_is_admitted() -> None:
     proposal = _proposal()
     assessment = assess_premechanism_admission(proposal)
     assert assessment.specification_binding_valid is True
+    assert assessment.protocol_source_binding_valid is True
     assert assessment.specification_hash == proposal.bound_specification_hash
     assert assessment.admitted_for_implementation is True
     assert assessment.missing_requirements == ()
@@ -129,6 +138,25 @@ def test_admission_requires_concrete_protocol_and_null_ids() -> None:
     assert "future-competition-protocol-id" in assessment.missing_requirements
     assert "explicit-null-id" in assessment.missing_requirements
     assert "recurrent-null-id" in assessment.missing_requirements
+
+
+def test_admission_rejects_invalid_protocol_source_sha() -> None:
+    assessment = assess_premechanism_admission(
+        _proposal(protocol_bundle_source_sha="not-a-git-sha")
+    )
+    assert assessment.protocol_source_binding_valid is False
+    assert assessment.admitted_for_implementation is False
+    assert "protocol-bundle-source-sha" in assessment.missing_requirements
+    assert assessment.classification == "protocol-source-binding-invalid"
+
+
+def test_admission_requires_bound_mechanism_and_null_spec_paths() -> None:
+    assessment = assess_premechanism_admission(
+        _proposal(mechanism_rule_spec_path="", null_ladder_spec_path="")
+    )
+    assert assessment.admitted_for_implementation is False
+    assert "mechanism-rule-spec-path" in assessment.missing_requirements
+    assert "null-ladder-spec-path" in assessment.missing_requirements
 
 
 def test_incomplete_candidate_programme_never_triggers_negative_completion() -> None:
