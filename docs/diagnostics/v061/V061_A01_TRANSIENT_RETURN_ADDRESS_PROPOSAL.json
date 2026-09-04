@@ -26,7 +26,8 @@
     "negative_stop_observation_id": "v061-a01-stop-lineage-return-or-reduction-v1",
     "bound_specification_hash": "2794d1596227eab17c68c46d6874662c3669656edb49e28425f1ef613b66c5dc"
   },
-  "status": "PREREGISTERED_NOT_IMPLEMENTED",
+  "status": "SUPERSEDED_BEFORE_IMPLEMENTATION",
+  "superseded_by": "V061_A01_TRANSIENT_RETURN_ADDRESS_PROPOSAL_V2.json",
   "candidate_003_reexecuted": false,
   "primary_runtime_modified": false
 }
