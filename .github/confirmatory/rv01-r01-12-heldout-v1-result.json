@@ -1,0 +1,57 @@
+{
+  "schema": "rv01-r01-12-heldout-result-binding-v1",
+  "candidate_id": "rv01-r01-12-interference-heldout-v1",
+  "status": "executed-fixed-no-rerun",
+  "execution_policy": "one-way-no-rerun",
+  "held_out_capability_executed": true,
+  "seal": {
+    "seal_commit_sha": "003cc0c390d53ab3a09420b4ad61fc7bb5e9a059",
+    "seal_payload_hash": "aff4df1a8cbe61294645c8f43464c1d198b9a599153ced49f00d47be7571e9d5",
+    "frozen_source_git_sha": "83d2c77d8ae3878727d2ed4e9e78bc169ce064b8",
+    "preflight_payload_hash": "9b6fd4541196cdad297f1f92e3316da92503db46c12bb17ff6abc4fd643963dd",
+    "held_out_world_grid_hash": "4b828e544741552b9ce4759507cfaea285b2a36fc6f2cd7da8ac8aa4b0788229"
+  },
+  "execution": {
+    "workflow_run_id": 33953949771,
+    "workflow_run_attempt": 1,
+    "workflow_conclusion": "success",
+    "orchestration_commit_sha": "2d1d44e1b99e25749b0220625759df2b5543dc5d",
+    "sentinel_artifact_id": 9965749551,
+    "sentinel_artifact_zip_digest": "sha256:dc4fae3b5111e76a218d2ea65525b53c6e2564d7642456002928609e6460714d",
+    "result_artifact_id": 9965780771,
+    "result_artifact_zip_digest": "sha256:dd495ca0f0fbc57e7d730e6e39be2d1f05d72c9ac9d56dc894de7c71da30e8d2",
+    "capability_started_at_utc": "2026-09-05T07:58:59Z",
+    "result_emitted_at_utc": "2026-09-05T08:01:20Z"
+  },
+  "result": {
+    "raw_result_file_sha256": "e3f0cef5428c1b9a550c986404c1435952bd23fd0bdc0cc24a73b8e0c9f70ff4",
+    "canonical_result_payload_hash": "c014c0513f113e48ddcf5322579106a318f220236d05f25d39c3bd47e88f0673",
+    "field_suite_hash": "bec4c50bd792afcb5fb902a128dcf161191e83057892713e82eec5bc9d076618",
+    "reservoir_suite_hash": "87e673c9964f5513976521af34527f484f28685fbe7efd546b405c220a8e175e",
+    "field_route_weighted_ordered_retention": 1.0,
+    "reservoir_route_weighted_ordered_retention": 0.9016666666666667,
+    "field_exact_routes_recovered": 80,
+    "reservoir_exact_routes_recovered": 80,
+    "field_contamination_count": 720,
+    "reservoir_contamination_count": 589
+  },
+  "tracked_records": {
+    "manifest_path": "artifacts/research/rv01/r01_12f/formal_result_manifest.json",
+    "manifest_commit_sha": "24e0c9c0a7d779ab497511af497d036f8d7d2239",
+    "report_path": "docs/research/RV01_R01_12F_FORMAL_HELDOUT_RESULT.md",
+    "report_commit_sha": "c53122345fd027b7f1f9b4057e8a0c2b1db96d30"
+  },
+  "claim_boundary": {
+    "held_out_sequence_retention_profile_difference_replicated": true,
+    "architectural_uniqueness_established": false,
+    "general_superiority_established": false,
+    "clean_branch_selection_established": false,
+    "generic_recurrent_explanation_remains_viable": true
+  },
+  "immutability": {
+    "original_seal_must_remain_unchanged": true,
+    "formal_result_must_not_be_rerun": true,
+    "no_threshold_or_comparator_rescue": true,
+    "correction_requires_new_protocol_source_seal_and_fresh_held_out_seed_set": true
+  }
+}
