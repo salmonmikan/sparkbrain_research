@@ -1,0 +1,147 @@
+name: rv01-r01-12-formal-oneway
+
+on:
+  push:
+    branches:
+      - research/rv01-endogenous-transition
+    paths:
+      - ".github/workflows/rv01-r01-12-formal-oneway.yml"
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: rv01-r01-12-formal-oneway
+  cancel-in-progress: false
+
+env:
+  SOURCE_SHA: 83d2c77d8ae3878727d2ed4e9e78bc169ce064b8
+  SEAL_COMMIT_SHA: 003cc0c390d53ab3a09420b4ad61fc7bb5e9a059
+  SEAL_PAYLOAD_HASH: aff4df1a8cbe61294645c8f43464c1d198b9a599153ced49f00d47be7571e9d5
+  SENTINEL_NAME: rv01-r01-12-formal-started-aff4df1a8cbe61294645c8f43464c1d198b9a599153ced49f00d47be7571e9d5
+  RESULT_ARTIFACT_NAME: rv01-r01-12-formal-aff4df1a8cbe61294645c8f43464c1d198b9a599153ced49f00d47be7571e9d5
+
+jobs:
+  formal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout frozen experiment source
+        uses: actions/checkout@v4
+        with:
+          ref: 83d2c77d8ae3878727d2ed4e9e78bc169ce064b8
+          fetch-depth: 1
+
+      - name: Verify frozen checkout
+        shell: bash
+        run: |
+          set -euo pipefail
+          actual="$(git rev-parse HEAD)"
+          test "$actual" = "$SOURCE_SHA"
+          test ! -e artifacts/research/rv01/r01_12f/heldout_formal_result.json
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install frozen source dependencies
+        run: python -m pip install -e ".[dev,learned,spiking]"
+
+      - name: Materialize exact execution seal
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fsSL \
+            "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${SEAL_COMMIT_SHA}/.github/confirmatory/rv01-r01-12-heldout-v1.json" \
+            -o /tmp/rv01-r01-12-heldout-v1.json
+
+      - name: Capability-free seal gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          from sparkbrain.research.rv01.interference_formal import validate_held_out_execution_seal
+
+          payload = json.loads(Path('/tmp/rv01-r01-12-heldout-v1.json').read_text(encoding='utf-8'))
+          validated = validate_held_out_execution_seal(
+              payload,
+              checked_out_source_sha=os.environ['SOURCE_SHA'],
+          )
+          if validated.seal_payload_hash != os.environ['SEAL_PAYLOAD_HASH']:
+              raise RuntimeError('seal payload hash mismatch after validation')
+          print('capability-free seal gate: PASS')
+          PY
+
+      - name: Refuse any repeated execution attempt
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          response="$(curl -fsSL \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/artifacts?name=${SENTINEL_NAME}&per_page=100")"
+          count="$(printf '%s' "$response" | python -c 'import json,sys; print(json.load(sys.stdin)["total_count"])')"
+          if [ "$count" != "0" ]; then
+            echo "Refusing formal rerun: execution sentinel already exists." >&2
+            exit 1
+          fi
+
+      - name: Create one-way execution sentinel
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/rv01-formal-sentinel
+          cat > /tmp/rv01-formal-sentinel/execution_started.json <<EOF
+          {
+            "schema": "rv01-r01-12-formal-execution-started-v1",
+            "candidate_id": "rv01-r01-12-interference-heldout-v1",
+            "execution_policy": "one-way-no-rerun",
+            "source_git_sha": "${SOURCE_SHA}",
+            "seal_payload_hash": "${SEAL_PAYLOAD_HASH}",
+            "workflow_run_id": "${GITHUB_RUN_ID}",
+            "workflow_run_attempt": "${GITHUB_RUN_ATTEMPT}"
+          }
+          EOF
+
+      - name: Persist one-way execution sentinel
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.SENTINEL_NAME }}
+          path: /tmp/rv01-formal-sentinel/execution_started.json
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Execute sealed held-out capability exactly once
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/run_rv01_r01_12_formal.py \
+            --seal /tmp/rv01-r01-12-heldout-v1.json \
+            --source-git-sha "$SOURCE_SHA" \
+            --output artifacts/research/rv01/r01_12f/heldout_formal_result.json
+
+      - name: Hash formal result
+        shell: bash
+        run: |
+          set -euo pipefail
+          sha256sum artifacts/research/rv01/r01_12f/heldout_formal_result.json \
+            | tee artifacts/research/rv01/r01_12f/heldout_formal_result.sha256
+
+      - name: Upload immutable formal result
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.RESULT_ARTIFACT_NAME }}
+          path: |
+            artifacts/research/rv01/r01_12f/heldout_formal_result.json
+            artifacts/research/rv01/r01_12f/heldout_formal_result.sha256
+          if-no-files-found: error
+          retention-days: 90
