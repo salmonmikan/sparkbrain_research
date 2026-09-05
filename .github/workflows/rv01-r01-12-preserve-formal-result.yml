@@ -1,0 +1,110 @@
+name: rv01-r01-12-preserve-formal-result
+
+on:
+  push:
+    branches:
+      - research/rv01-endogenous-transition
+    paths:
+      - ".github/workflows/rv01-r01-12-preserve-formal-result.yml"
+
+permissions:
+  actions: read
+  contents: write
+
+concurrency:
+  group: rv01-r01-12-preserve-formal-result
+  cancel-in-progress: false
+
+env:
+  FORMAL_RUN_ID: "33953949771"
+  RESULT_ARTIFACT_NAME: rv01-r01-12-formal-aff4df1a8cbe61294645c8f43464c1d198b9a599153ced49f00d47be7571e9d5
+  EXPECTED_RAW_SHA256: e3f0cef5428c1b9a550c986404c1435952bd23fd0bdc0cc24a73b8e0c9f70ff4
+  EXPECTED_SOURCE_SHA: 83d2c77d8ae3878727d2ed4e9e78bc169ce064b8
+  EXPECTED_SEAL_HASH: aff4df1a8cbe61294645c8f43464c1d198b9a599153ced49f00d47be7571e9d5
+  EXPECTED_FIELD_SUITE_HASH: bec4c50bd792afcb5fb902a128dcf161191e83057892713e82eec5bc9d076618
+  EXPECTED_RESERVOIR_SUITE_HASH: 87e673c9964f5513976521af34527f484f28685fbe7efd546b405c220a8e175e
+
+jobs:
+  preserve:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout result-record branch
+        uses: actions/checkout@v4
+        with:
+          ref: research/rv01-endogenous-transition
+          fetch-depth: 0
+
+      - name: Refuse overwrite of an already tracked raw result
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git ls-files --error-unmatch artifacts/research/rv01/r01_12f/heldout_formal_result.json >/dev/null 2>&1; then
+            echo "Tracked formal raw result already exists; refusing overwrite." >&2
+            exit 1
+          fi
+
+      - name: Download the already-completed formal artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/rv01-formal-result
+          mkdir -p /tmp/rv01-formal-result
+          gh run download "$FORMAL_RUN_ID" \
+            --repo "$GITHUB_REPOSITORY" \
+            --name "$RESULT_ARTIFACT_NAME" \
+            --dir /tmp/rv01-formal-result
+
+      - name: Verify immutable result binding
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f /tmp/rv01-formal-result/heldout_formal_result.json
+          actual_sha="$(sha256sum /tmp/rv01-formal-result/heldout_formal_result.json | awk '{print $1}')"
+          test "$actual_sha" = "$EXPECTED_RAW_SHA256"
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          result = json.loads(Path('/tmp/rv01-formal-result/heldout_formal_result.json').read_text(encoding='utf-8'))
+          expected = {
+              'source_git_sha': os.environ['EXPECTED_SOURCE_SHA'],
+              'seal_payload_hash': os.environ['EXPECTED_SEAL_HASH'],
+              'field_suite_hash': os.environ['EXPECTED_FIELD_SUITE_HASH'],
+              'reservoir_suite_hash': os.environ['EXPECTED_RESERVOIR_SUITE_HASH'],
+          }
+          for key, value in expected.items():
+              if result.get(key) != value:
+                  raise RuntimeError(f'{key} mismatch while preserving formal result')
+          if result.get('held_out_capability_executed') is not True:
+              raise RuntimeError('formal result is not marked executed')
+          if len(result.get('field_worlds', [])) != 50 or len(result.get('reservoir_worlds', [])) != 50:
+              raise RuntimeError('formal world cardinality mismatch')
+          print('immutable formal result binding: PASS')
+          PY
+
+      - name: Copy exact raw bytes into tracked evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/research/rv01/r01_12f
+          cp /tmp/rv01-formal-result/heldout_formal_result.json \
+            artifacts/research/rv01/r01_12f/heldout_formal_result.json
+          printf '%s  %s\n' "$EXPECTED_RAW_SHA256" \
+            artifacts/research/rv01/r01_12f/heldout_formal_result.json \
+            > artifacts/research/rv01/r01_12f/heldout_formal_result.sha256
+
+      - name: Commit fixed raw evidence without re-execution
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            artifacts/research/rv01/r01_12f/heldout_formal_result.json \
+            artifacts/research/rv01/r01_12f/heldout_formal_result.sha256
+          git diff --cached --check
+          git commit -m "record(rv01): persist fixed R01-12F raw result [skip ci]"
+          git push origin HEAD:research/rv01-endogenous-transition
