@@ -41,6 +41,16 @@
     "report_path": "docs/research/RV01_R01_12F_FORMAL_HELDOUT_RESULT.md",
     "report_commit_sha": "c53122345fd027b7f1f9b4057e8a0c2b1db96d30"
   },
+  "tracked_raw_result": {
+    "raw_result_path": "artifacts/research/rv01/r01_12f/heldout_formal_result.json",
+    "sha256_path": "artifacts/research/rv01/r01_12f/heldout_formal_result.sha256",
+    "raw_result_file_sha256": "e3f0cef5428c1b9a550c986404c1435952bd23fd0bdc0cc24a73b8e0c9f70ff4",
+    "preservation_workflow_run_id": 33954409829,
+    "preservation_commit_sha": "53ad73b",
+    "preserved_from_formal_workflow_run_id": 33953949771,
+    "preserved_from_result_artifact_id": 9965780771,
+    "capability_reexecuted_during_preservation": false
+  },
   "claim_boundary": {
     "held_out_sequence_retention_profile_difference_replicated": true,
     "architectural_uniqueness_established": false,
