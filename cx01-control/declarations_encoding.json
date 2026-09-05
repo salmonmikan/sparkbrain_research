@@ -1,0 +1,16 @@
+{
+  "canonical_declaration_bundle_hash": "c77ff6cb90207d9ce02be328fff245926d1f40e196bb86f9b5eeb5d533404613",
+  "compression": "gzip level 9, mtime=0",
+  "declaration_count": 420,
+  "expanded_filename": "declarations.jsonl",
+  "expanded_sha256": "1765b6ca5b335e982f52fdcf1a8eb245a7b7908f03913966e9dbb4b7bc965e7b",
+  "generation_id": "cx01-candidate-001",
+  "gzip_filename": "declarations.jsonl.gz",
+  "gzip_sha256": "1faecd946e701501f0ff74672df0b0425bd1ae8a2bb2e792059f80914672f8f0",
+  "outcome_blind": true,
+  "row_contract": {
+    "capability_result_present": false,
+    "measurements_present": false,
+    "status": "unscored"
+  }
+}

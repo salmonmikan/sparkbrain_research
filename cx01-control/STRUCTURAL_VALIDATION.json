@@ -1,0 +1,18 @@
+{
+  "candidate_generation_id": "cx01-candidate-001",
+  "candidate_grid_hash": "6c81390a785deb0ea8fe30e35186361621dc31bb1e42fe09d7c63ab221575db7",
+  "candidate_spec_hash": "aba791ade53feb89950ef0f0b673c68f9ef91b82b1ed9f0560ab9f2576e2fc30",
+  "capability_execution_performed": false,
+  "declaration_bundle_hash": "c77ff6cb90207d9ce02be328fff245926d1f40e196bb86f9b5eeb5d533404613",
+  "declaration_count": 420,
+  "freeze_manifest_hash": "e440dbb6fb6ba06e0196380d04c3c177f647a071a0a7c564fa2e817d6eebc915",
+  "freeze_ref": "freeze/cx01-001",
+  "outcome_inspected": false,
+  "source_git_sha": "f2c5ead5afda7d731033d585511ea68dc066a162",
+  "structural_validation_pr": 21,
+  "structural_validation_pr_merged": false,
+  "validation_head_sha": "68396c463135c067a109299df969f669b2fd5b24",
+  "validation_scope": "CandidateSpec, 420 outcome-blind declarations, grid/declaration/privilege/schedule/scoring/schema hashes, FreezeManifest only; no comparator candidate capability",
+  "validation_status": "PASS",
+  "validation_workflow_run": 33954328780
+}

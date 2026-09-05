@@ -1,0 +1,30 @@
+{
+  "candidate_generation_id": "cx01-candidate-001",
+  "candidate_seeds": [
+    269810,
+    269811,
+    269812,
+    269813,
+    269814,
+    269815,
+    269816,
+    269817,
+    269818,
+    269819
+  ],
+  "capability_execution_performed": false,
+  "cx01_nonformal": "3000..5999",
+  "derivation_rule": "start = 100000 + (int(source_sha[:8], 16) % 80000) * 10; seeds = start..start+9",
+  "freeze_ref": "freeze/cx01-001",
+  "historical_exposed": [
+    "100..109",
+    "1000..1009",
+    "2000..2009"
+  ],
+  "outcome_inspected": false,
+  "repo_exact_search": {
+    "269810": "no exact match",
+    "269819": "no exact match"
+  },
+  "source_git_sha": "f2c5ead5afda7d731033d585511ea68dc066a162"
+}
