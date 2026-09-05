@@ -1,0 +1,124 @@
+{
+  "schema": "rv01-r01-12f-formal-result-manifest-v1",
+  "candidate_id": "rv01-r01-12-interference-heldout-v1",
+  "status": "formal-held-out-executed-fixed",
+  "execution_policy": "one-way-no-rerun",
+  "execution": {
+    "workflow_run_id": 33953949771,
+    "workflow_run_attempt": 1,
+    "workflow_conclusion": "success",
+    "orchestration_commit_sha": "2d1d44e1b99e25749b0220625759df2b5543dc5d",
+    "frozen_source_git_sha": "83d2c77d8ae3878727d2ed4e9e78bc169ce064b8",
+    "seal_commit_sha": "003cc0c390d53ab3a09420b4ad61fc7bb5e9a059",
+    "seal_payload_hash": "aff4df1a8cbe61294645c8f43464c1d198b9a599153ced49f00d47be7571e9d5",
+    "preflight_payload_hash": "9b6fd4541196cdad297f1f92e3316da92503db46c12bb17ff6abc4fd643963dd",
+    "held_out_world_grid_hash": "4b828e544741552b9ce4759507cfaea285b2a36fc6f2cd7da8ac8aa4b0788229",
+    "held_out_capability_executed": true,
+    "capability_started_at_utc": "2026-09-05T07:58:59Z",
+    "result_emitted_at_utc": "2026-09-05T08:01:20Z"
+  },
+  "result_binding": {
+    "raw_result_file_sha256": "e3f0cef5428c1b9a550c986404c1435952bd23fd0bdc0cc24a73b8e0c9f70ff4",
+    "canonical_result_payload_hash": "c014c0513f113e48ddcf5322579106a318f220236d05f25d39c3bd47e88f0673",
+    "field_suite_hash": "bec4c50bd792afcb5fb902a128dcf161191e83057892713e82eec5bc9d076618",
+    "reservoir_suite_hash": "87e673c9964f5513976521af34527f484f28685fbe7efd546b405c220a8e175e",
+    "result_artifact_id": 9965780771,
+    "result_artifact_zip_digest": "sha256:dd495ca0f0fbc57e7d730e6e39be2d1f05d72c9ac9d56dc894de7c71da30e8d2",
+    "sentinel_artifact_id": 9965749551,
+    "sentinel_artifact_zip_digest": "sha256:dc4fae3b5111e76a218d2ea65525b53c6e2564d7642456002928609e6460714d"
+  },
+  "cardinality": {
+    "world_count": 50,
+    "training_phase_count": 200,
+    "field_probe_matrix_record_count": 1000,
+    "reservoir_final_probe_record_count": 200,
+    "final_route_probe_count": 200
+  },
+  "resource_and_replay_checks": {
+    "resource_match_passed_world_count": 50,
+    "deterministic_replay_state_hash_passed_world_count": 50,
+    "deterministic_replay_probe_hash_passed_world_count": 50
+  },
+  "aggregate": {
+    "field_route_weighted_ordered_retention": 1.0,
+    "reservoir_route_weighted_ordered_retention": 0.9016666666666667,
+    "field_minus_reservoir_ordered_retention": 0.09833333333333327,
+    "field_exact_routes_recovered": 80,
+    "reservoir_exact_routes_recovered": 80,
+    "field_contamination_count": 720,
+    "reservoir_contamination_count": 589,
+    "field_higher_mean_retention_world_count": 29,
+    "tied_mean_retention_world_count": 21,
+    "field_lower_mean_retention_world_count": 0,
+    "reservoir_matched_or_exceeded_field_mean_retention_world_count": 21
+  },
+  "families": {
+    "disjoint-routes": {
+      "world_count": 10,
+      "final_route_probe_count": 30,
+      "field_route_weighted_ordered_retention": 1.0,
+      "reservoir_route_weighted_ordered_retention": 1.0,
+      "field_exact_routes_recovered": 30,
+      "reservoir_exact_routes_recovered": 30,
+      "field_contamination_count": 0,
+      "reservoir_contamination_count": 0,
+      "field_mean_first_hop_coverage": 1.0,
+      "reservoir_mean_first_hop_coverage": 1.0
+    },
+    "shared-cue-branches": {
+      "world_count": 10,
+      "final_route_probe_count": 30,
+      "field_route_weighted_ordered_retention": 1.0,
+      "reservoir_route_weighted_ordered_retention": 1.0,
+      "field_exact_routes_recovered": 0,
+      "reservoir_exact_routes_recovered": 0,
+      "field_contamination_count": 180,
+      "reservoir_contamination_count": 180,
+      "field_mean_first_hop_coverage": 1.0,
+      "reservoir_mean_first_hop_coverage": 1.0
+    },
+    "shared-prefix-branches": {
+      "world_count": 10,
+      "final_route_probe_count": 30,
+      "field_route_weighted_ordered_retention": 1.0,
+      "reservoir_route_weighted_ordered_retention": 0.7777777777777778,
+      "field_exact_routes_recovered": 0,
+      "reservoir_exact_routes_recovered": 0,
+      "field_contamination_count": 120,
+      "reservoir_contamination_count": 100,
+      "field_mean_first_hop_coverage": 1.0,
+      "reservoir_mean_first_hop_coverage": 1.0
+    },
+    "edge-reversal": {
+      "world_count": 10,
+      "final_route_probe_count": 30,
+      "field_route_weighted_ordered_retention": 1.0,
+      "reservoir_route_weighted_ordered_retention": 0.9,
+      "field_exact_routes_recovered": 10,
+      "reservoir_exact_routes_recovered": 10,
+      "field_contamination_count": 60,
+      "reservoir_contamination_count": 39,
+      "field_mean_first_hop_coverage": 1.0,
+      "reservoir_mean_first_hop_coverage": 1.0
+    },
+    "dense-route-load": {
+      "world_count": 10,
+      "final_route_probe_count": 80,
+      "field_route_weighted_ordered_retention": 1.0,
+      "reservoir_route_weighted_ordered_retention": 0.875,
+      "field_exact_routes_recovered": 40,
+      "reservoir_exact_routes_recovered": 40,
+      "field_contamination_count": 360,
+      "reservoir_contamination_count": 270,
+      "field_mean_first_hop_coverage": 1.0,
+      "reservoir_mean_first_hop_coverage": 0.875
+    }
+  },
+  "claim_boundary": {
+    "architectural_uniqueness_established": false,
+    "general_superiority_established": false,
+    "clean_branch_selection_established": false,
+    "held_out_sequence_retention_profile_difference_replicated": true,
+    "generic_recurrent_explanation_remains_viable": true
+  }
+}
