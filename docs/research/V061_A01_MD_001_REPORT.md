@@ -17,6 +17,12 @@ A01-MD-001 is a fixed development diagnostic, not a replacement formal candidate
 
 The discriminator was executed after implementation was fixed. Subsequent interpretation does not alter its runtime, thresholds, or observations.
 
+### Evidence-notation correction
+
+The fixed raw artifact reports `155` serialized persistent-state bytes for both A01 and the N1 baseline. An earlier version of this report transcribed that value as `95`; the raw artifact, its SHA-256, and the internal result digest were not changed.
+
+The raw fields `global_keyed_query_count=0` and `direct_keyed_target_query=false` mean that neither mechanism performs a global or direct world-target lookup. They do **not** mean that keyed access is absent: both mechanisms read and update an explicit local path-addressed support record. This report-only correction does not change any P1-P5 verdict and makes the explicit-memory reduction boundary more precise.
+
 ## Executive verdict
 
 | required item | verdict |
@@ -138,10 +144,10 @@ The comparison covered endpoint behavior and the required dynamic/state signatur
 | update locus | local transition path | local transition path |
 | update count | matched | matched |
 | persistent state units | 4 in peak compared episode | 4 |
-| persistent serialized bytes | 95 | 95 |
+| persistent serialized bytes | 155 | 155 |
 | transient peak units | 6 | 6 |
-| global indexed target query | none | none |
-| direct keyed target query | none | none |
+| global/direct world-target lookup | none | none |
+| local path-keyed support lookup | required | required |
 | identifier permutation | equivalent | equivalent |
 | physical trajectory substitution | equivalent when provenance resolves to the same path | equivalent |
 | unseen lineage combination | equivalent path-local updates | equivalent |
