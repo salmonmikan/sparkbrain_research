@@ -64,15 +64,21 @@ def _audit_cycle(world: CX01World) -> dict[str, bool]:
     for row in world.training:
         if row.tokens and row.tokens[0] == world.cycle_cue:
             historical[row.tokens[-1]] += row.exposures
+
+    # The relevant leakage question is whether the *new contingency at phase
+    # entry* can be predicted from cumulative pre-phase majority alone. Count
+    # current-phase exposures only after making that check; otherwise the audit
+    # grants the baseline the evidence whose reacquisition is under test.
     global_majority_conflict = False
     for phase in world.cycle_phases:
-        historical[phase.target] += phase.exposures
         maximum = max(historical.values(), default=0)
-        if historical[phase.target] < maximum:
+        if maximum > 0 and historical[phase.target] < maximum:
             global_majority_conflict = True
+        historical[phase.target] += phase.exposures
+
     _require(
         global_majority_conflict,
-        "cycle world can be followed by global historical majority at every phase",
+        "cycle world can be followed by pre-phase global historical majority at every phase",
     )
     return {
         "global_majority_conflict": True,
