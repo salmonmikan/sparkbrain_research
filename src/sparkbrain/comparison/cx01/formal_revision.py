@@ -131,11 +131,10 @@ def _revise_shared_context(world: CX01World, role: str) -> CX01World:
 
 def _revise_cycle(world: CX01World) -> CX01World:
     fourth_target = _fresh_token(world, "cycle-fourth-target")
-    insertion_index = len(world.cycle_phases) // 2
     phases = (
-        *world.cycle_phases[:insertion_index],
-        CyclePhase(target=fourth_target, exposures=2 + world.seed % 3),
-        *world.cycle_phases[insertion_index:],
+        world.cycle_phases[0],
+        CyclePhase(target=fourth_target, exposures=1),
+        *world.cycle_phases[1:],
     )
     return CX01World(
         generation_id=world.generation_id,
