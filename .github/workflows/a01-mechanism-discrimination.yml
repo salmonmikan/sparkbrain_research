@@ -35,6 +35,7 @@ jobs:
 
       - name: Generate immutable raw result candidate
         run: |
+          mkdir -p artifacts/v061/a01
           python scripts/run_v061_a01_mechanism_discrimination.py \
             --source-sha "${GITHUB_SHA}" \
             --output artifacts/v061/a01/A01_MD_001.json \
