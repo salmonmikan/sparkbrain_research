@@ -1,0 +1,292 @@
+name: CX01 Candidate-002 Approval Preflight
+
+on:
+  push:
+    branches:
+      - "automation/cx01-candidate-002-review-gate"
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+  pull-requests: read
+
+jobs:
+  approval-preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+      SOURCE_FREEZE_BRANCH: freeze/cx01-002-source
+      PACKAGE_BRANCH: prepare/cx01-candidate-002
+      BASE_BRANCH: research/cx01-comparator-extension
+      PACKAGE_ROOT: artifacts/research/cx01/candidate_002/prestart_package
+      TRIGGER_FILE: .cx01_candidate_002_request_approval_preflight
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          ref: automation/cx01-candidate-002-review-gate
+
+      - name: Require an explicit post-review trigger
+        id: trigger
+        shell: bash
+        run: |
+          if [[ -f "${TRIGGER_FILE}" ]]; then
+            echo "run=true" >> "${GITHUB_OUTPUT}"
+          else
+            echo "run=false" >> "${GITHUB_OUTPUT}"
+            echo "No approval-preflight trigger exists. No seal or STARTED marker will be created."
+          fi
+
+      - name: Resolve immutable refs and review PR
+        if: steps.trigger.outputs.run == 'true'
+        id: refs
+        shell: bash
+        run: |
+          source_sha="$(gh api \
+            "repos/${GITHUB_REPOSITORY}/git/ref/heads/${SOURCE_FREEZE_BRANCH}" \
+            --jq '.object.sha')"
+          package_sha="$(gh api \
+            "repos/${GITHUB_REPOSITORY}/git/ref/heads/${PACKAGE_BRANCH}" \
+            --jq '.object.sha')"
+          pr_number="$(gh pr list \
+            --repo "${GITHUB_REPOSITORY}" \
+            --head "${PACKAGE_BRANCH}" \
+            --base "${BASE_BRANCH}" \
+            --state all \
+            --json number,headRefOid \
+            --jq '[.[] | select(.headRefOid == env.package_sha)][0].number // empty' \
+            --jq 2>/dev/null || true)"
+          # gh's jq environment binding differs by release; use a stable fallback.
+          if [[ -z "${pr_number}" ]]; then
+            pr_number="$(gh pr list \
+              --repo "${GITHUB_REPOSITORY}" \
+              --head "${PACKAGE_BRANCH}" \
+              --base "${BASE_BRANCH}" \
+              --state all \
+              --json number,headRefOid \
+              | python -c 'import json,os,sys; rows=json.load(sys.stdin); sha=os.environ["PACKAGE_SHA_FALLBACK"]; print(next((str(r["number"]) for r in rows if r.get("headRefOid")==sha), ""))' \
+              PACKAGE_SHA_FALLBACK="${package_sha}" 2>/dev/null || true)"
+          fi
+          if [[ -z "${pr_number}" ]]; then
+            echo "No review PR binds the exact package commit ${package_sha}" >&2
+            exit 1
+          fi
+          {
+            echo "source_sha=${source_sha}"
+            echo "package_sha=${package_sha}"
+            echo "pr_number=${pr_number}"
+          } >> "${GITHUB_OUTPUT}"
+
+      - name: Check out exact package commit
+        if: steps.trigger.outputs.run == 'true'
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ steps.refs.outputs.package_sha }}
+
+      - uses: actions/setup-python@v5
+        if: steps.trigger.outputs.run == 'true'
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Verify package/source binding and pre-start purity
+        if: steps.trigger.outputs.run == 'true'
+        env:
+          SOURCE_SHA: ${{ steps.refs.outputs.source_sha }}
+          PACKAGE_SHA: ${{ steps.refs.outputs.package_sha }}
+        shell: bash
+        run: |
+          python -m pip install -e ".[dev,learned,spiking]"
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          from sparkbrain.comparison.cx01.prepare import verify_outcome_blind_bundle
+
+          root = Path(os.environ["PACKAGE_ROOT"])
+          verification = verify_outcome_blind_bundle(root)
+          expected = {
+              "candidate_generation_id": "cx01-candidate-002",
+              "declaration_count": 420,
+              "execution_seal_status": "NOT_ISSUED",
+              "formal_status": "NOT_STARTED",
+              "source_git_sha": os.environ["SOURCE_SHA"],
+              "verified": True,
+              "world_count": 60,
+          }
+          if verification != expected:
+              raise SystemExit(
+                  f"package/source verification mismatch: {verification!r} != {expected!r}"
+              )
+
+          forbidden_names = {
+              "execution_seal.json",
+              "STARTED",
+              "results.jsonl",
+              "formal_score.json",
+              "score.json",
+          }
+          found = [
+              str(path)
+              for path in root.rglob("*")
+              if path.is_file() and path.name in forbidden_names
+          ]
+          if found:
+              raise SystemExit(f"pre-start package contains forbidden evidence: {found}")
+
+          provenance_path = root.parent / "prestart_provenance.json"
+          provenance = json.loads(provenance_path.read_text(encoding="utf-8"))
+          required = {
+              "candidate_id": "cx01-candidate-002",
+              "candidate_seed_band": "370110..370119",
+              "candidate_consumed": False,
+              "execution_seal_status": "NOT_ISSUED",
+              "formal_capability_executed": False,
+              "formal_score_present": False,
+              "formal_status": "NOT_STARTED",
+              "independent_review_status": "PENDING",
+              "source_git_sha": os.environ["SOURCE_SHA"],
+          }
+          for key, value in required.items():
+              if provenance.get(key) != value:
+                  raise SystemExit(
+                      f"prestart provenance mismatch for {key}: "
+                      f"{provenance.get(key)!r} != {value!r}"
+                  )
+          PY
+          test ! -e "${PACKAGE_ROOT}/execution_seal.json"
+          test ! -e "${PACKAGE_ROOT}/STARTED"
+
+      - name: Verify exact-source successful CI
+        if: steps.trigger.outputs.run == 'true'
+        env:
+          SOURCE_SHA: ${{ steps.refs.outputs.source_sha }}
+        shell: bash
+        run: |
+          gh api --paginate \
+            "repos/${GITHUB_REPOSITORY}/actions/runs?head_sha=${SOURCE_SHA}&per_page=100" \
+            --jq '.workflow_runs[] | {name, head_sha, status, conclusion, id, html_url}' \
+            > /tmp/source-runs.jsonl
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          runs = [
+              json.loads(line)
+              for line in Path("/tmp/source-runs.jsonl").read_text().splitlines()
+              if line.strip()
+          ]
+          required = {
+              "CX01 Candidate-002 Pre-start Freeze",
+          }
+          passed = {
+              run["name"]
+              for run in runs
+              if run.get("status") == "completed"
+              and run.get("conclusion") == "success"
+          }
+          missing = sorted(required - passed)
+          if missing:
+              raise SystemExit(
+                  f"exact frozen source lacks successful required workflow(s): {missing}; "
+                  f"observed={sorted(passed)}"
+              )
+          PY
+
+      - name: Verify genuine exact-commit independent approval
+        if: steps.trigger.outputs.run == 'true'
+        env:
+          PACKAGE_SHA: ${{ steps.refs.outputs.package_sha }}
+          PR_NUMBER: ${{ steps.refs.outputs.pr_number }}
+        shell: bash
+        run: |
+          gh api --paginate \
+            "repos/${GITHUB_REPOSITORY}/pulls/${PR_NUMBER}/reviews?per_page=100" \
+            > /tmp/reviews.json
+          gh api "repos/${GITHUB_REPOSITORY}/pulls/${PR_NUMBER}" > /tmp/pr.json
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          reviews = json.loads(Path("/tmp/reviews.json").read_text())
+          pr = json.loads(Path("/tmp/pr.json").read_text())
+          package_sha = os.environ["PACKAGE_SHA"]
+          pr_author = pr["user"]["login"]
+
+          by_reviewer = {}
+          for review in reviews:
+              login = review.get("user", {}).get("login")
+              if login:
+                  by_reviewer[login] = review
+
+          approved = []
+          for login, review in by_reviewer.items():
+              body = review.get("body") or ""
+              is_human = not login.endswith("[bot]")
+              if (
+                  is_human
+                  and login != pr_author
+                  and review.get("state") == "APPROVED"
+                  and review.get("commit_id") == package_sha
+                  and "APPROVE_PRESTART" in body
+              ):
+                  approved.append(
+                      {
+                          "review_id": review["id"],
+                          "reviewer": login,
+                          "commit_id": review["commit_id"],
+                          "submitted_at": review.get("submitted_at"),
+                      }
+                  )
+
+          if not approved:
+              raise SystemExit(
+                  "no genuine human APPROVE_PRESTART review binds the exact package commit"
+              )
+
+          result = {
+              "candidate_id": "cx01-candidate-002",
+              "source_sha": os.environ["SOURCE_SHA"],
+              "package_sha": package_sha,
+              "pull_request_number": int(os.environ["PR_NUMBER"]),
+              "valid_approvals": approved,
+              "preflight_verdict": "APPROVED_FOR_SEAL_CONSTRUCTION_ONLY",
+              "execution_seal_issued": False,
+              "started": False,
+              "formal_capability_executed": False,
+          }
+          Path("/tmp/cx01_candidate_002_approval_preflight.json").write_text(
+              json.dumps(result, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          PY
+
+      - name: Upload approval-preflight evidence
+        if: steps.trigger.outputs.run == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: cx01-candidate-002-approval-preflight-${{ steps.refs.outputs.package_sha }}
+          path: |
+            /tmp/cx01_candidate_002_approval_preflight.json
+            /tmp/source-runs.jsonl
+            /tmp/reviews.json
+            /tmp/pr.json
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Reassert no formal transition
+        if: steps.trigger.outputs.run == 'true'
+        shell: bash
+        run: |
+          {
+            echo "### CX01 candidate-002 approval preflight"
+            echo "- verdict: **APPROVED FOR SEAL CONSTRUCTION ONLY**"
+            echo "- execution seal: **NOT ISSUED**"
+            echo "- persistent STARTED: **ABSENT**"
+            echo "- formal capability: **NOT EXECUTED**"
+          } >> "${GITHUB_STEP_SUMMARY}"
