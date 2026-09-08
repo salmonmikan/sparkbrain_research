@@ -1,0 +1,7 @@
+candidate_id=cx01-candidate-002
+source_stabilized_sha=39d09c598a8da2ecbc89efbbfcf21dc02185de14
+request_scope=outcome-blind-package-and-source-freeze-only
+independent_review_required=true
+execution_seal_issued=false
+formal_started=false
+comparator_outcomes_observed=false
