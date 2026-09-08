@@ -1,0 +1,286 @@
+name: cx01-formal-one-way
+run-name: cx01-formal-${{ inputs.candidate_spec_hash }}-${{ inputs.source_sha }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_sha:
+        description: "Exact frozen source Git SHA"
+        required: true
+        type: string
+      candidate_spec_hash:
+        description: "Exact SHA-256 of candidate.json canonical state"
+        required: true
+        type: string
+      control_branch:
+        description: "Dedicated branch containing candidate, freeze, seal, and STARTED marker"
+        required: true
+        type: string
+      candidate_path:
+        description: "Candidate JSON path on control branch"
+        required: true
+        default: "cx01-control/candidate.json"
+        type: string
+      manifest_path:
+        description: "Freeze manifest path on control branch"
+        required: true
+        default: "cx01-control/freeze_manifest.json"
+        type: string
+      seal_path:
+        description: "Execution seal path on control branch"
+        required: true
+        default: "cx01-control/execution_seal.json"
+        type: string
+      control_marker_path:
+        description: "Precommitted one-way STARTED marker path"
+        required: true
+        default: "cx01-control/STARTED.json"
+        type: string
+      artifact_root:
+        description: "Exact artifact root frozen into the manifest"
+        required: true
+        default: "/tmp/cx01-formal"
+        type: string
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  execute:
+    runs-on: ubuntu-24.04
+    env:
+      PYTHONHASHSEED: "0"
+      TZ: UTC
+      LC_ALL: C.UTF-8
+      LANG: C.UTF-8
+      CONTROL_DIR: ${{ github.workspace }}/control
+      SOURCE_DIR: ${{ github.workspace }}/source
+      PYTHONPATH: ${{ github.workspace }}/source/src
+      FORMAL_RUN_NAME: cx01-formal-${{ inputs.candidate_spec_hash }}-${{ inputs.source_sha }}
+    steps:
+      - name: Require workflow dispatch at exact frozen revision
+        env:
+          SOURCE_SHA: ${{ inputs.source_sha }}
+        run: |
+          test "$GITHUB_SHA" = "$SOURCE_SHA"
+
+      - name: Checkout preconsumed control branch
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ inputs.control_branch }}
+          path: control
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Require complete precommitted control package
+        env:
+          CANDIDATE_PATH: ${{ inputs.candidate_path }}
+          MANIFEST_PATH: ${{ inputs.manifest_path }}
+          SEAL_PATH: ${{ inputs.seal_path }}
+          CONTROL_MARKER_PATH: ${{ inputs.control_marker_path }}
+        run: |
+          test -f "$CONTROL_DIR/$CANDIDATE_PATH"
+          test -f "$CONTROL_DIR/$MANIFEST_PATH"
+          test -f "$CONTROL_DIR/$SEAL_PATH"
+          test -f "$CONTROL_DIR/$CONTROL_MARKER_PATH"
+
+      - name: Verify candidate hash input before capability
+        env:
+          CANDIDATE_PATH: ${{ inputs.candidate_path }}
+          EXPECTED_CANDIDATE_HASH: ${{ inputs.candidate_spec_hash }}
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+
+          path = Path(os.environ["CONTROL_DIR"]) / os.environ["CANDIDATE_PATH"]
+          value = json.loads(path.read_text(encoding="utf-8"))
+          encoded = json.dumps(
+              value,
+              allow_nan=False,
+              ensure_ascii=False,
+              separators=(",", ":"),
+              sort_keys=True,
+          ).encode("utf-8")
+          observed = hashlib.sha256(encoded).hexdigest()
+          expected = os.environ["EXPECTED_CANDIDATE_HASH"].lower()
+          if observed != expected:
+              raise SystemExit(
+                  f"candidate specification hash mismatch: observed={observed} expected={expected}"
+              )
+          PY
+
+      - name: Reject any retained prior formal run for this candidate/source key
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          : > /tmp/cx01-runs.jsonl
+          page=1
+          while true; do
+            curl -fsSL \
+              -H "Accept: application/vnd.github+json" \
+              -H "Authorization: Bearer $GH_TOKEN" \
+              -H "X-GitHub-Api-Version: 2022-11-28" \
+              "$GITHUB_API_URL/repos/$GITHUB_REPOSITORY/actions/workflows/cx01-formal-one-way.yml/runs?event=workflow_dispatch&per_page=100&page=$page" \
+              > /tmp/cx01-page.json
+            python - <<'PY' >> /tmp/cx01-runs.jsonl
+          import json
+          with open("/tmp/cx01-page.json", encoding="utf-8") as handle:
+              for row in json.load(handle)["workflow_runs"]:
+                  print(json.dumps(row, separators=(",", ":"), sort_keys=True))
+          PY
+            count=$(python - <<'PY'
+          import json
+          with open("/tmp/cx01-page.json", encoding="utf-8") as handle:
+              print(len(json.load(handle)["workflow_runs"]))
+          PY
+          )
+            if [ "$count" -lt 100 ]; then
+              break
+            fi
+            page=$((page + 1))
+            if [ "$page" -gt 1000 ]; then
+              echo "refusing formal execution: Actions history pagination exceeded safety bound" >&2
+              exit 1
+            fi
+          done
+          python - <<'PY'
+          import json
+          import os
+
+          with open("/tmp/cx01-runs.jsonl", encoding="utf-8") as handle:
+              runs = [json.loads(line) for line in handle if line.strip()]
+          current = int(os.environ["GITHUB_RUN_ID"])
+          name = os.environ["FORMAL_RUN_NAME"]
+          prior = [
+              row
+              for row in runs
+              if row["id"] != current and row.get("display_title") == name
+          ]
+          if prior:
+              raise SystemExit(
+                  f"formal candidate/source key already has a retained previous workflow run: {prior[0]['id']}"
+              )
+          PY
+
+      - name: Checkout exact frozen source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ inputs.source_sha }}
+          path: source
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Verify exact source identity and cleanliness
+        env:
+          SOURCE_SHA: ${{ inputs.source_sha }}
+        run: |
+          test "$(git -C "$SOURCE_DIR" rev-parse HEAD)" = "$SOURCE_SHA"
+          test -z "$(git -C "$SOURCE_DIR" status --porcelain)"
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.11.16"
+          update-environment: true
+
+      - name: Verify direct-source runtime and record environment
+        env:
+          SOURCE_SHA: ${{ inputs.source_sha }}
+          CANDIDATE_SPEC_HASH: ${{ inputs.candidate_spec_hash }}
+          ARTIFACT_ROOT: ${{ inputs.artifact_root }}
+        run: |
+          test "$(python -c 'import sys; print(".".join(map(str, sys.version_info[:3])))')" = "3.11.16"
+          python - <<'PY'
+          import json
+          import os
+          import platform
+          import sys
+          from pathlib import Path
+
+          import sparkbrain.comparison.cx01.formal as formal_module
+
+          source_dir = Path(os.environ["SOURCE_DIR"]).resolve()
+          module_path = Path(formal_module.__file__).resolve()
+          if source_dir not in module_path.parents:
+              raise SystemExit(f"formal module did not load from frozen source: {module_path}")
+
+          root = Path(os.environ["ARTIFACT_ROOT"])
+          root.mkdir(parents=True, exist_ok=True)
+          payload = {
+              "candidate_spec_hash": os.environ["CANDIDATE_SPEC_HASH"],
+              "dispatch_git_sha": os.environ["GITHUB_SHA"],
+              "executable": sys.executable,
+              "implementation": platform.python_implementation(),
+              "machine": platform.machine(),
+              "platform": platform.platform(),
+              "python_version": platform.python_version(),
+              "runner_arch": os.environ.get("RUNNER_ARCH"),
+              "runner_environment": os.environ.get("RUNNER_ENVIRONMENT"),
+              "runner_name": os.environ.get("RUNNER_NAME"),
+              "runner_os": os.environ.get("RUNNER_OS"),
+              "source_git_sha": os.environ["SOURCE_SHA"],
+              "source_module": str(module_path),
+          }
+          target = root / "environment_preflight.json"
+          with target.open("x", encoding="utf-8", newline="\n") as handle:
+              json.dump(payload, handle, indent=2, sort_keys=True)
+              handle.write("\n")
+          target.chmod(0o444)
+          PY
+
+      - name: Execute sealed preconsumed candidate exactly once
+        env:
+          SOURCE_SHA: ${{ inputs.source_sha }}
+          CANDIDATE_PATH: ${{ inputs.candidate_path }}
+          MANIFEST_PATH: ${{ inputs.manifest_path }}
+          SEAL_PATH: ${{ inputs.seal_path }}
+          CONTROL_MARKER_PATH: ${{ inputs.control_marker_path }}
+          ARTIFACT_ROOT: ${{ inputs.artifact_root }}
+        run: >-
+          python -m sparkbrain.comparison.cx01.formal
+          --candidate "$CONTROL_DIR/$CANDIDATE_PATH"
+          --manifest "$CONTROL_DIR/$MANIFEST_PATH"
+          --seal "$CONTROL_DIR/$SEAL_PATH"
+          --control-marker "$CONTROL_DIR/$CONTROL_MARKER_PATH"
+          --source-sha "$SOURCE_SHA"
+          --artifact-root "$ARTIFACT_ROOT"
+
+      - name: Score only after immutable raw completion
+        env:
+          CANDIDATE_PATH: ${{ inputs.candidate_path }}
+          MANIFEST_PATH: ${{ inputs.manifest_path }}
+          ARTIFACT_ROOT: ${{ inputs.artifact_root }}
+        run: >-
+          python -m sparkbrain.comparison.cx01.formal_scoring
+          --candidate "$CONTROL_DIR/$CANDIDATE_PATH"
+          --manifest "$CONTROL_DIR/$MANIFEST_PATH"
+          --artifact-root "$ARTIFACT_ROOT"
+
+      - name: Upload formal evidence, raw partials, or failure markers
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: cx01-formal-${{ inputs.source_sha }}-${{ github.run_id }}
+          path: ${{ inputs.artifact_root }}
+          if-no-files-found: warn
+
+# This workflow has read-only repository permissions. It can execute only after
+# a persistent STARTED marker has already been committed to a dedicated control
+# branch by a separate pre-execution operation. The run identity is bound to the
+# candidate specification hash and frozen source SHA, so copying the same
+# candidate to another control branch does not create a new execution identity.
+#
+# The workflow must be dispatched using a dedicated frozen ref (branch or tag)
+# whose commit is exactly `source_sha`; the first job step fails closed unless
+# GITHUB_SHA == source_sha. In this automation environment the planned freeze
+# ref is a dedicated `freeze/cx01-*` branch created directly from SOURCE_SHA.
+# A fail-closed registration stub with the same workflow path must exist on the
+# repository default branch so GitHub can receive workflow_dispatch events.
+#
+# STARTED is the normative durable consumption marker. The retained Actions
+# history check is an additional fail-closed guard; it is not treated as the
+# sole source of irreversibility because Actions history can be subject to
+# platform retention/administrative deletion.
