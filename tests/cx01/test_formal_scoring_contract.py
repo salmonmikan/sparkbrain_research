@@ -8,13 +8,18 @@ from sparkbrain.comparison.cx01.candidate import (
     CX01_COMPARATOR_INVENTORY,
     CandidatePurpose,
     CandidateSpec,
+    build_candidate_grid,
 )
+from sparkbrain.comparison.cx01.fairness import build_training_transcript
 from sparkbrain.comparison.cx01.formal import _semantic_execution_hash
 from sparkbrain.comparison.cx01.formal_policy import FormalScoringPolicy
 from sparkbrain.comparison.cx01.formal_scoring import _validate_rows
-from sparkbrain.comparison.cx01.freeze import build_freeze_manifest
+from sparkbrain.comparison.cx01.freeze import (
+    build_freeze_manifest,
+    formal_identifiability_audit_hash,
+    formal_structure_audit_hash,
+)
 from sparkbrain.comparison.cx01.privilege import privilege_profile
-from sparkbrain.comparison.cx01.worlds import CX01Family
 
 
 def _candidate() -> CandidateSpec:
@@ -58,45 +63,45 @@ def _add_semantic_hash(row: dict[str, object]) -> dict[str, object]:
 def _rows(candidate: CandidateSpec, manifest) -> tuple[dict[str, object], ...]:
     rows: list[dict[str, object]] = []
     index = 0
-    for family in CX01Family:
-        for seed in candidate.seeds:
-            transcript_hash = hashlib.sha256(f"{family.value}:{seed}".encode()).hexdigest()
-            world_hash = hashlib.sha256(f"world:{family.value}:{seed}".encode()).hexdigest()
-            for kind in CX01_COMPARATOR_INVENTORY:
-                row: dict[str, object] = {
-                    "candidate_spec_hash": candidate.specification_hash(),
-                    "decision": {"family": family.value, "gates": [], "passed": True},
-                    "evidence": {"family": family.value},
-                    "execution_id": hashlib.sha256(f"execution:{index}".encode()).hexdigest(),
-                    "family": family.value,
-                    "formal_index": index,
-                    "kind": kind.value,
-                    "manifest_hash": manifest.manifest_hash(),
-                    "resource": {
-                        "decision_use": "descriptive-only",
-                        "generated_internal_events": 0,
-                        "observed_external_events": 0,
-                        "parameter_count": 0,
-                        "peak_traced_memory_bytes": 100,
-                        "privileges": [
-                            value.value for value in privilege_profile(kind).privileges
-                        ],
-                        "process_cpu_ns": 100,
-                        "state_entry_count": 0,
-                        "wall_clock_ns": 100,
-                    },
-                    "seed": seed,
-                    "training_transcript_hash": transcript_hash,
-                    "world_hash": world_hash,
-                }
-                rows.append(_add_semantic_hash(row))
-                index += 1
+    for world in build_candidate_grid(candidate):
+        transcript_hash = build_training_transcript(world).transcript_hash()
+        world_hash = world.specification_hash()
+        for kind in CX01_COMPARATOR_INVENTORY:
+            row: dict[str, object] = {
+                "candidate_spec_hash": candidate.specification_hash(),
+                "decision": {"family": world.family.value, "gates": [], "passed": True},
+                "evidence": {"family": world.family.value},
+                "execution_id": hashlib.sha256(f"execution:{index}".encode()).hexdigest(),
+                "family": world.family.value,
+                "formal_index": index,
+                "kind": kind.value,
+                "manifest_hash": manifest.manifest_hash(),
+                "resource": {
+                    "decision_use": "descriptive-only",
+                    "generated_internal_events": 0,
+                    "observed_external_events": 0,
+                    "parameter_count": 0,
+                    "peak_traced_memory_bytes": 100,
+                    "privileges": [value.value for value in privilege_profile(kind).privileges],
+                    "process_cpu_ns": 100,
+                    "state_entry_count": 0,
+                    "wall_clock_ns": 100,
+                },
+                "seed": world.seed,
+                "training_transcript_hash": transcript_hash,
+                "world_hash": world_hash,
+            }
+            rows.append(_add_semantic_hash(row))
+            index += 1
     return tuple(rows)
 
 
-def test_manifest_binds_exact_formal_scoring_policy() -> None:
-    manifest = _manifest(_candidate())
+def test_manifest_binds_exact_formal_scoring_and_world_audit_policies() -> None:
+    candidate = _candidate()
+    manifest = _manifest(candidate)
     assert manifest.scoring_policy_hash == FormalScoringPolicy().policy_hash()
+    assert manifest.formal_structure_audit_hash == formal_structure_audit_hash(candidate)
+    assert manifest.formal_identifiability_audit_hash == formal_identifiability_audit_hash(candidate)
 
 
 def test_formal_row_validator_requires_complete_equal_transcripts_and_privileges() -> None:
@@ -117,7 +122,22 @@ def test_formal_row_validator_rejects_transcript_mismatch() -> None:
     rows = list(_rows(candidate, manifest))
     changed = {**rows[1], "training_transcript_hash": "f" * 64}
     rows[1] = _add_semantic_hash(changed)
-    with pytest.raises(RuntimeError, match="identical training transcripts"):
+    with pytest.raises(RuntimeError, match="transcript hash does not match frozen candidate"):
+        _validate_rows(
+            tuple(rows),
+            candidate=candidate,
+            manifest=manifest,
+            policy=FormalScoringPolicy(),
+        )
+
+
+def test_formal_row_validator_rejects_world_mismatch() -> None:
+    candidate = _candidate()
+    manifest = _manifest(candidate)
+    rows = list(_rows(candidate, manifest))
+    changed = {**rows[0], "world_hash": "f" * 64}
+    rows[0] = _add_semantic_hash(changed)
+    with pytest.raises(RuntimeError, match="world hash does not match frozen candidate"):
         _validate_rows(
             tuple(rows),
             candidate=candidate,
