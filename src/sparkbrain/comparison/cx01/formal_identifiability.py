@@ -184,5 +184,6 @@ def audit_formal_grid_identifiability(worlds: Iterable[CX01World]) -> dict[str, 
     return {
         "family_pass_counts": by_family,
         "family_world_counts": counts,
+        "passed": True,
         "world_count": len(rows),
     }

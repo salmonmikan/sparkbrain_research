@@ -381,6 +381,7 @@ def audit_formal_grid_structure(worlds: Iterable[CX01World]) -> dict[str, Any]:
 
     return {
         "family_rows": family_rows,
+        "passed": True,
         "policy_version": FORMAL_STRUCTURE_POLICY_VERSION,
         "world_count": sum(len(values) for values in grouped.values()),
     }

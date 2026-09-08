@@ -266,19 +266,31 @@ def _evaluate_loop(
 ) -> tuple[FamilyEvidence, float]:
     if world.loop is None:
         raise ValueError("loop world is missing loop specification")
-    # The cue is a read-only query. Only the later external consequence is
-    # permitted to become new evidence; the generated proposal itself never is.
+    if len(world.probes) != 1:
+        raise ValueError("loop world requires exactly one declared cue probe")
+    probe = world.probes[0]
+    if probe.prefix != world.loop.cue_prefix:
+        raise ValueError("loop probe prefix must match the provenance cue")
+    if probe.expected_distribution != ((world.loop.expected_generated, 1.0),):
+        raise ValueError("loop probe target must match the generated proposal")
+    # The cue is read-only. Only the later external consequence may
+    # become evidence; the generated proposal itself never does.
+    # Feed the declared lags so a timing-aware comparator receives the
+    # same anonymous temporal context that was present in training.
     now = _feed(
         model,
-        world.loop.cue_prefix,
-        (5.0,) * (len(world.loop.cue_prefix) - 1),
+        probe.prefix,
+        probe.lags_ms,
         now,
         learn=False,
     )
     before_observed = model.observed_external_events
     generated = model.generate(max_steps=1)
     after_generated_observed = model.observed_external_events
-    correct = int(bool(generated) and generated[0].token == world.loop.expected_generated)
+    correct = int(
+        bool(generated)
+        and generated[0].token == world.loop.expected_generated
+    )
     violations = int(after_generated_observed != before_observed)
     external_time = max(
         now,
