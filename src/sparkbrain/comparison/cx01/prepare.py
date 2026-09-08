@@ -11,6 +11,10 @@ from .candidate import (
     candidate_identifiability_audit,
     candidate_structure_audit,
 )
+from .formal_seed_selection import (
+    FORMAL_SEED_SELECTION_POLICY,
+    select_outcome_blind_formal_seeds,
+)
 from .freeze import build_freeze_manifest
 
 
@@ -37,8 +41,8 @@ def prepare_outcome_blind_bundle(
 
     This operation constructs world structure and hashes only. It never creates
     a comparator model, capability result, dynamic resource measurement, or
-    execution seal. Structural and identifiability audit files are review aids
-    whose exact canonical content is bound by hashes in the freeze manifest.
+    execution seal. Structural, identifiability, and seed-selection files are
+    review aids whose exact semantics are bound by hashes in the freeze manifest.
     """
 
     candidate = CandidateSpec(
@@ -50,6 +54,20 @@ def prepare_outcome_blind_bundle(
     declarations = build_outcome_blind_declarations(candidate)
     structure_audit = candidate_structure_audit(candidate)
     identifiability_audit = candidate_identifiability_audit(candidate)
+    if purpose is CandidatePurpose.FORMAL:
+        seed_selection = select_outcome_blind_formal_seeds(
+            source_git_sha=source_git_sha,
+            generation_id=generation_id,
+            count=len(seeds),
+        ).state_dict()
+        if tuple(seed_selection["seeds"]) != seeds:
+            raise RuntimeError("prepared formal seeds do not match deterministic selection")
+    else:
+        seed_selection = {
+            "candidate_spec_hash": candidate.specification_hash(),
+            "policy_version": FORMAL_SEED_SELECTION_POLICY,
+            "purpose": "structure-fixture-not-formal-seed-selected",
+        }
     manifest = build_freeze_manifest(
         source_git_sha=source_git_sha,
         builder=builder,
@@ -62,6 +80,7 @@ def prepare_outcome_blind_bundle(
     candidate_path = output_dir / "candidate.json"
     declarations_path = output_dir / "declarations.jsonl"
     manifest_path = output_dir / "freeze_manifest.json"
+    seed_selection_path = output_dir / "formal_seed_selection.json"
     structure_audit_path = output_dir / "formal_structure_audit.json"
     identifiability_audit_path = output_dir / "formal_identifiability_audit.json"
     _write_json(candidate_path, candidate.state_dict())
@@ -69,6 +88,7 @@ def prepare_outcome_blind_bundle(
         for row in declarations:
             handle.write(json.dumps(row.state_dict(), sort_keys=True))
             handle.write("\n")
+    _write_json(seed_selection_path, seed_selection)
     _write_json(structure_audit_path, structure_audit)
     _write_json(identifiability_audit_path, identifiability_audit)
     _write_json(manifest_path, manifest.state_dict())
