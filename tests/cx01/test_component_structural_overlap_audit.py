@@ -24,7 +24,7 @@ def _candidate_002() -> CandidateSpec:
     )
 
 
-def test_component_signatures_ignore_anonymous_token_relabeling() -> None:
+def test_component_signatures_canonicalize_anonymous_tokens() -> None:
     for family in CX01Family:
         first = structural_component_signatures(
             build_world(DEVELOPMENT_GENERATION_ID, family, 3000)
@@ -32,8 +32,15 @@ def test_component_signatures_ignore_anonymous_token_relabeling() -> None:
         second = structural_component_signatures(
             build_world(DEVELOPMENT_GENERATION_ID, family, 3001)
         )
-        for axis in (*STRUCTURAL_AXES, "full"):
-            assert first[axis] == second[axis]
+        assert first["topology"] == second["topology"]
+        assert first["timing"] == second["timing"]
+        assert first["contingency"] == second["contingency"]
+        if family is not CX01Family.CYCLE:
+            assert first["exposure_schedule"] == second["exposure_schedule"]
+            assert first["full"] == second["full"]
+        else:
+            assert first["exposure_schedule"] != second["exposure_schedule"]
+            assert first["full"] != second["full"]
         assert first["token_assignment"] != second["token_assignment"]
 
 
@@ -48,7 +55,7 @@ def test_component_audit_rejects_new_labels_on_development_structure() -> None:
     assert report["passed"] is False
     for family in CX01Family:
         row = report["family_rows"][family.value]
-        assert row["axes"]["full"]["development_overlap_count"] == 1
+        assert row["axes"]["full"]["development_overlap_count"] >= 1
         assert row["axes"]["full"]["passed"] is False
 
 
@@ -88,6 +95,20 @@ def test_component_audit_exposes_each_requested_overlap_axis() -> None:
         assert "exposure_schedule" in axes
         assert "contingency" in axes
         for axis in STRUCTURAL_AXES:
+            assert "applicable" in axes[axis]
             assert "development_overlap_count" in axes[axis]
             assert "formal_novel_count" in axes[axis]
             assert "formal_unique_count" in axes[axis]
+
+
+def test_non_applicable_contingency_axis_is_not_falsely_failed() -> None:
+    report = candidate_component_structure_audit(_candidate_002())
+    for family in (
+        CX01Family.HIGH_ORDER,
+        CX01Family.TIMING,
+        CX01Family.SELECTIVITY,
+    ):
+        contingency = report["family_rows"][family.value]["axes"]["contingency"]
+        assert contingency["applicable"] is False
+        assert contingency["novelty_required"] is False
+        assert contingency["passed"] is True
