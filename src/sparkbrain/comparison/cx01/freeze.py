@@ -7,11 +7,15 @@ from typing import Any
 
 from .candidate import (
     CX01_COMPARATOR_INVENTORY,
+    CandidatePurpose,
     CandidateSpec,
     candidate_grid_hash,
+    candidate_identifiability_audit,
+    candidate_structure_audit,
     declaration_bundle_hash,
 )
 from .formal_policy import FormalScoringPolicy
+from .formal_seed_selection import select_outcome_blind_formal_seeds
 from .privilege import privilege_profile
 from .schedule import build_balanced_exposure_schedule
 from .worlds import development_grid_hash
@@ -47,6 +51,9 @@ class FreezeManifest:
     candidate_grid_hash: str
     declaration_bundle_hash: str
     development_grid_hash: str
+    formal_seed_selection_hash: str
+    formal_structure_audit_hash: str
+    formal_identifiability_audit_hash: str
     comparator_inventory: tuple[str, ...]
     privilege_inventory_hash: str
     schedule_policy_hash: str
@@ -66,6 +73,9 @@ class FreezeManifest:
             "candidate_grid_hash",
             "declaration_bundle_hash",
             "development_grid_hash",
+            "formal_seed_selection_hash",
+            "formal_structure_audit_hash",
+            "formal_identifiability_audit_hash",
             "privilege_inventory_hash",
             "schedule_policy_hash",
             "scoring_policy_hash",
@@ -101,6 +111,9 @@ class FreezeManifest:
             candidate_grid_hash=str(state["candidate_grid_hash"]),
             declaration_bundle_hash=str(state["declaration_bundle_hash"]),
             development_grid_hash=str(state["development_grid_hash"]),
+            formal_seed_selection_hash=str(state["formal_seed_selection_hash"]),
+            formal_structure_audit_hash=str(state["formal_structure_audit_hash"]),
+            formal_identifiability_audit_hash=str(state["formal_identifiability_audit_hash"]),
             comparator_inventory=tuple(str(row) for row in state["comparator_inventory"]),
             privilege_inventory_hash=str(state["privilege_inventory_hash"]),
             schedule_policy_hash=str(state["schedule_policy_hash"]),
@@ -204,6 +217,33 @@ def _resource_schema_hash() -> str:
     )
 
 
+def formal_seed_selection_hash(source_git_sha: str, candidate: CandidateSpec) -> str:
+    candidate.validate()
+    if candidate.purpose is CandidatePurpose.FORMAL:
+        selection = select_outcome_blind_formal_seeds(
+            source_git_sha=source_git_sha,
+            generation_id=candidate.generation_id,
+            count=len(candidate.seeds),
+        )
+        if selection.seeds != candidate.seeds:
+            raise RuntimeError("formal candidate seeds do not match frozen deterministic selection")
+        return selection.selection_hash()
+    return _digest(
+        {
+            "candidate_spec_hash": candidate.specification_hash(),
+            "policy": "structure-fixture-not-formal-seed-selected",
+        }
+    )
+
+
+def formal_structure_audit_hash(candidate: CandidateSpec) -> str:
+    return _digest(candidate_structure_audit(candidate))
+
+
+def formal_identifiability_audit_hash(candidate: CandidateSpec) -> str:
+    return _digest(candidate_identifiability_audit(candidate))
+
+
 def build_freeze_manifest(
     *,
     source_git_sha: str,
@@ -221,6 +261,9 @@ def build_freeze_manifest(
         candidate_grid_hash=candidate_grid_hash(candidate),
         declaration_bundle_hash=declaration_bundle_hash(candidate),
         development_grid_hash=development_grid_hash(),
+        formal_seed_selection_hash=formal_seed_selection_hash(source_git_sha, candidate),
+        formal_structure_audit_hash=formal_structure_audit_hash(candidate),
+        formal_identifiability_audit_hash=formal_identifiability_audit_hash(candidate),
         comparator_inventory=tuple(kind.value for kind in CX01_COMPARATOR_INVENTORY),
         privilege_inventory_hash=_privilege_inventory_hash(),
         schedule_policy_hash=_schedule_policy_hash(),

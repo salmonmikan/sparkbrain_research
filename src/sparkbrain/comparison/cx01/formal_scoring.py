@@ -9,11 +9,23 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-from .candidate import CX01_COMPARATOR_INVENTORY, CandidateSpec
+from .candidate import (
+    CX01_COMPARATOR_INVENTORY,
+    CandidateSpec,
+    build_candidate_grid,
+    candidate_grid_hash,
+    declaration_bundle_hash,
+)
 from .contract import ComparatorKind
+from .fairness import build_training_transcript
 from .formal import _run_id, _semantic_execution_hash
 from .formal_policy import FormalScoringPolicy
-from .freeze import FreezeManifest
+from .freeze import (
+    FreezeManifest,
+    formal_identifiability_audit_hash,
+    formal_seed_selection_hash,
+    formal_structure_audit_hash,
+)
 from .privilege import privilege_profile
 from .raw_store import FormalRawStore
 from .worlds import CX01Family
@@ -83,6 +95,19 @@ def _validate_semantic_hash(row: dict[str, Any]) -> None:
         raise RuntimeError("formal row semantic execution hash mismatch")
 
 
+def _expected_world_bindings(candidate: CandidateSpec) -> dict[tuple[str, int], tuple[str, str]]:
+    bindings: dict[tuple[str, int], tuple[str, str]] = {}
+    for world in build_candidate_grid(candidate):
+        key = (world.family.value, world.seed)
+        if key in bindings:
+            raise RuntimeError("candidate grid contains duplicate family/seed world identity")
+        bindings[key] = (
+            world.specification_hash(),
+            build_training_transcript(world).transcript_hash(),
+        )
+    return bindings
+
+
 def _validate_rows(
     rows: tuple[dict[str, Any], ...],
     *,
@@ -96,6 +121,7 @@ def _validate_rows(
 
     candidate_hash = candidate.specification_hash()
     manifest_hash = manifest.manifest_hash()
+    expected_bindings = _expected_world_bindings(candidate)
     seen_ids: set[str] = set()
     seen_keys: set[tuple[str, int, str]] = set()
     transcript_by_world: dict[tuple[str, int], set[str]] = {}
@@ -122,10 +148,15 @@ def _validate_rows(
             raise RuntimeError("formal raw matrix contains a duplicate architecture/world cell")
         seen_keys.add(key)
 
+        world_key = (family.value, seed)
+        expected_world_hash, expected_transcript_hash = expected_bindings[world_key]
+        observed_world_hash = str(row.get("world_hash", ""))
+        if observed_world_hash != expected_world_hash:
+            raise RuntimeError("formal row world hash does not match frozen candidate world")
         transcript_hash = str(row.get("training_transcript_hash", ""))
-        if len(transcript_hash) != 64:
-            raise RuntimeError("formal row training transcript hash is invalid")
-        transcript_by_world.setdefault((family.value, seed), set()).add(transcript_hash)
+        if transcript_hash != expected_transcript_hash:
+            raise RuntimeError("formal row transcript hash mismatch")
+        transcript_by_world.setdefault(world_key, set()).add(transcript_hash)
 
         decision = row.get("decision")
         if not isinstance(decision, dict) or decision.get("family") != family.value:
@@ -160,6 +191,31 @@ def _validate_rows(
         raise RuntimeError("comparators did not consume identical training transcripts")
 
 
+def _validate_manifest_candidate_binding(
+    *,
+    candidate: CandidateSpec,
+    manifest: FreezeManifest,
+) -> None:
+    if candidate.specification_hash() != manifest.candidate_spec_hash:
+        raise RuntimeError("analysis candidate does not match frozen manifest")
+    if candidate_grid_hash(candidate) != manifest.candidate_grid_hash:
+        raise RuntimeError("analysis candidate grid does not match frozen manifest")
+    if declaration_bundle_hash(candidate) != manifest.declaration_bundle_hash:
+        raise RuntimeError("analysis declarations do not match frozen manifest")
+    if (
+        formal_seed_selection_hash(manifest.source_git_sha, candidate)
+        != manifest.formal_seed_selection_hash
+    ):
+        raise RuntimeError("analysis seed selection does not match frozen manifest")
+    if formal_structure_audit_hash(candidate) != manifest.formal_structure_audit_hash:
+        raise RuntimeError("analysis structural audit does not match frozen manifest")
+    if (
+        formal_identifiability_audit_hash(candidate)
+        != manifest.formal_identifiability_audit_hash
+    ):
+        raise RuntimeError("analysis identifiability audit does not match frozen manifest")
+
+
 def score_finalized_candidate(
     *,
     artifact_root: Path,
@@ -173,8 +229,7 @@ def score_finalized_candidate(
     decision_policy.validate()
     if decision_policy.policy_hash() != manifest.scoring_policy_hash:
         raise RuntimeError("formal scoring policy does not match frozen manifest")
-    if candidate.specification_hash() != manifest.candidate_spec_hash:
-        raise RuntimeError("analysis candidate does not match frozen manifest")
+    _validate_manifest_candidate_binding(candidate=candidate, manifest=manifest)
     if str(artifact_root) != manifest.artifact_root:
         raise RuntimeError("analysis artifact root does not match frozen manifest")
 

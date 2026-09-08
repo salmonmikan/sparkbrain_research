@@ -6,6 +6,7 @@ from pathlib import Path
 import pytest
 
 from sparkbrain.comparison.cx01.candidate import CandidatePurpose
+from sparkbrain.comparison.cx01.formal_seed_selection import select_outcome_blind_formal_seeds
 from sparkbrain.comparison.cx01.prepare import prepare_outcome_blind_bundle
 from sparkbrain.comparison.cx01.seal_candidate import issue_seal_file
 
@@ -28,12 +29,36 @@ def test_prepare_bundle_contains_structure_only(tmp_path: Path) -> None:
         for line in declarations_path.read_text(encoding="utf-8").splitlines()
     ]
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    seed_selection = json.loads(
+        (output / "formal_seed_selection.json").read_text(encoding="utf-8")
+    )
+    structure_audit = json.loads(
+        (output / "formal_structure_audit.json").read_text(encoding="utf-8")
+    )
+    identifiability_audit = json.loads(
+        (output / "formal_identifiability_audit.json").read_text(encoding="utf-8")
+    )
     assert candidate["purpose"] == CandidatePurpose.STRUCTURE_FIXTURE.value
     assert declarations
     assert all(row["status"] == "unscored" for row in declarations)
     assert not any(row["capability_result_present"] for row in declarations)
     assert not any(row["measurements_present"] for row in declarations)
     assert manifest["builder"] == "fixture-builder"
+    assert len(manifest["formal_seed_selection_hash"]) == 64
+    assert len(manifest["formal_structure_audit_hash"]) == 64
+    assert len(manifest["formal_identifiability_audit_hash"]) == 64
+    assert seed_selection["purpose"] == "structure-fixture-not-formal-seed-selected"
+    assert structure_audit["world_count"] == 60
+    assert identifiability_audit["world_count"] == 60
+    assert all(
+        row["development_overlap_count"] == 0
+        for row in structure_audit["family_rows"].values()
+    )
+    assert all(
+        identifiability_audit["family_pass_counts"][family]
+        == identifiability_audit["family_world_counts"][family]
+        for family in identifiability_audit["family_world_counts"]
+    )
     with pytest.raises(FileExistsError):
         prepare_outcome_blind_bundle(
             generation_id="cx01-fixture-prepare-001",
@@ -45,6 +70,43 @@ def test_prepare_bundle_contains_structure_only(tmp_path: Path) -> None:
             artifact_root="artifacts/cx01/formal",
             output_dir=output,
         )
+
+
+def test_prepare_formal_bundle_requires_deterministically_selected_seeds(tmp_path: Path) -> None:
+    source_sha = "1" * 40
+    generation_id = "cx01-candidate-002"
+    selection = select_outcome_blind_formal_seeds(
+        source_git_sha=source_sha,
+        generation_id=generation_id,
+    )
+    output = tmp_path / "formal-prepared"
+    candidate_path, declarations_path, manifest_path = prepare_outcome_blind_bundle(
+        generation_id=generation_id,
+        seeds=selection.seeds,
+        purpose=CandidatePurpose.FORMAL,
+        source_git_sha=source_sha,
+        builder="fixture-builder",
+        execution_command="formal-fixture",
+        artifact_root="artifacts/cx01/formal",
+        output_dir=output,
+    )
+    candidate = json.loads(candidate_path.read_text(encoding="utf-8"))
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    seed_selection = json.loads(
+        (output / "formal_seed_selection.json").read_text(encoding="utf-8")
+    )
+    declarations = [
+        json.loads(line)
+        for line in declarations_path.read_text(encoding="utf-8").splitlines()
+    ]
+    assert tuple(candidate["seeds"]) == selection.seeds
+    assert tuple(seed_selection["seeds"]) == selection.seeds
+    assert seed_selection["attempt_index"] == selection.attempt_index
+    assert len(manifest["formal_seed_selection_hash"]) == 64
+    assert len(declarations) == 420
+    assert all(row["status"] == "unscored" for row in declarations)
+    assert not any(row["capability_result_present"] for row in declarations)
+    assert not any(row["measurements_present"] for row in declarations)
 
 
 def test_independent_seal_file_is_immutable_and_refuses_self_review(tmp_path: Path) -> None:

@@ -1,119 +1,169 @@
 # CX01 Formal Comparator Runbook
 
-Status: **procedure only — no formal candidate selected or opened**
+Status: **protocol v2 procedure — no new formal candidate selected or opened**
 
-This runbook begins only after CX01 source, shared worlds, scoring, comparator implementations, fidelity boundaries, and fairness controls have completed review.
+This runbook is normative for the next CX01 formal attempt. Historical Candidate-003 and rejected Candidate-001 remain immutable prior evidence and are never reused.
 
-## 0. Hard boundary
+## 0. Permanent exclusions
 
 The following are permanently non-confirmatory:
 
 ```text
-v0.6 qualification seeds:       100..109
-candidate-002 seeds:            1000..1009
-candidate-003 seeds:            2000..2009
-CX01 development/test band:     3000..5999
-  development matrix:           3000..3004
-  unit/manual diagnostics:      3998, 3999, 4100+, 4200+, 4300+, 4400+, 4500+
-  structure fixture subset:     5000..5199
+v0.6 qualification:          100..109
+candidate-002:              1000..1009
+candidate-003:              2000..2009
+CX01 development/test band: 3000..5999
+rejected CX01 candidate-001: 269810..269819
 ```
 
-The whole `3000..5999` range is reserved so that any seed touched by current or future CX01 development/tests in this band can never return as held-out evidence.
+The generation ID `cx01-candidate-001` is also permanently rejected.
 
-A formal CX01 candidate must use a new `cx01-candidate-*` generation ID and a disjoint seed set of at least ten seeds outside all historical and CX01 non-formal ranges.
-
-Do not select a candidate because a development model performs well on it. Outcome inspection is forbidden before the no-change boundary.
-
----
-
-## 1. Complete pre-formal review
-
-Before choosing any formal candidate, retain evidence that:
-
-- source/fidelity review is closed;
-- non-adaptive evaluation cannot mutate learned model state;
-- all seven conditions consume one identical training transcript per world;
-- G6/G7/G8 fidelity claims are capability-level and do not overstate official implementation fidelity;
-- no shared world/gate was tuned to repair the rapid contingency-cycle development failure;
-- Python 3.11.16 development matrix completes under deterministic process settings;
-- repository CI is green;
-- the fail-closed `workflow_dispatch` registration stub exists on the default branch.
-
-Only then choose the exact source commit.
-
-## 2. Freeze the implementation source and dispatch ref
-
-Choose the exact reviewed source commit:
+The rejected source freeze remains:
 
 ```text
-SOURCE_SHA=<40-character Git SHA>
+freeze/cx01-001
+f2c5ead5afda7d731033d585511ea68dc066a162
 ```
 
-Create a dedicated immutable-intent freeze tag that points to exactly that commit, for example:
+Do not move, reuse, or reinterpret it as a successful formal freeze.
+
+## 1. Source qualification before the new freeze
+
+Before a new source SHA is frozen, require all of the following:
+
+- repository CI green;
+- CX01 tests green on Python 3.11.16 and 3.13;
+- unchanged 30-world × 7-comparator development matrix completes;
+- training-transcript fairness remains 30/30 with zero mismatches;
+- development world grid hash remains unchanged;
+- development evidence/decision/world/transcript fields remain identical to the accepted pre-v2 baseline;
+- no threshold, development world, comparator, or development schedule was changed to improve observed outcomes.
+
+Only the formal candidate generation/control path may differ from the rejected freeze.
+
+## 2. Create the exact source freeze
+
+After qualification, choose the exact merged source SHA:
 
 ```text
-cx01-freeze-001
+SOURCE_SHA=<40-character reviewed Git SHA>
 ```
 
-Before any candidate capability is opened, verify:
+Create a dedicated freeze ref from exactly that SHA:
 
 ```text
-git rev-parse cx01-freeze-001 == SOURCE_SHA
+freeze/cx01-002
 ```
 
-The formal workflow must be dispatched with this **tag as the workflow `ref`**, not with `main` and not with a moving development branch. The frozen workflow itself fails closed unless:
+Verify:
+
+```text
+freeze/cx01-002 -> SOURCE_SHA
+```
+
+The freeze ref is immutable-intent. If it is moved or source changes, abandon it and create a new freeze ref. Never repair an existing formal freeze in place.
+
+The formal workflow fails closed unless:
 
 ```text
 GITHUB_SHA == SOURCE_SHA
 ```
 
-After this point, any source change requires a new source SHA and a new freeze tag. Do not move/reuse an old tag or reuse an old manifest with a new SHA.
+The default branch contains only the fail-closed `workflow_dispatch` registration stub. Formal capability must never run from `main` or a moving research branch.
 
-The source SHA binds, among other files:
+## 3. Deterministically select the formal seed block
 
-- G3/G4/G5 historical anchors;
-- G6/G7/G8 local capability comparators;
-- train/evaluation event contract;
-- exact six-family generator;
-- balanced schedule and training transcript logic;
-- privilege contract;
-- non-compensatory scoring policy;
-- raw-evidence writer and locked scorer;
-- formal workflow, including pinned GitHub Action revisions and Python runtime policy.
+Formal seeds are not manually selected.
 
-The formal workflow executes the frozen source directly through `PYTHONPATH=<source>/src`; it does **not** resolve or install changing Python package dependencies before capability execution.
-
-GitHub requires a `workflow_dispatch` workflow to exist on the repository default branch. The default branch therefore contains only a **fail-closed registration stub** at the same workflow path. That stub always refuses capability execution. The real formal workflow is the version loaded from the freeze tag.
-
-## 3. Create a dedicated control branch
-
-Create one control branch for one formal candidate, for example:
+For the new formal generation:
 
 ```text
-cx01-control/candidate-001
+cx01-candidate-002
 ```
 
-The branch is not a model-development branch. It holds immutable control-plane files only.
-
-Recommended directory:
+run the source-bound outcome-blind selector from the exact frozen source:
 
 ```text
-cx01-control/
-  candidate.json
-  declarations.jsonl
-  freeze_manifest.json
-  execution_seal.json
-  STARTED.json
+PYTHONPATH="$PWD/src" python - <<'PY'
+from sparkbrain.comparison.cx01.formal_seed_selection import (
+    select_outcome_blind_formal_seeds,
+)
+
+selection = select_outcome_blind_formal_seeds(
+    source_git_sha="<SOURCE_SHA>",
+    generation_id="cx01-candidate-002",
+)
+print(selection.state_dict())
+PY
 ```
 
-## 4. Prepare the outcome-blind candidate bundle
+The selector derives candidate seed blocks deterministically from:
 
-Using the exact frozen source checkout, run:
+- exact source SHA;
+- generation ID;
+- frozen seed-selection policy.
+
+A block may be skipped only when pre-capability validation fails:
+
+- CandidateSpec exclusion;
+- structural-heldout audit;
+- analytical identifiability audit.
+
+No comparator is instantiated and no capability or resource result is available during selection.
+
+## 4. Structural-heldout requirements
+
+Formal worlds are generated only through the formal v2 generator. Development `worlds.py` remains unchanged.
+
+For every family, require:
+
+```text
+development structural overlap = 0
+unique formal structures        >= 5 of 10 seeds
+```
+
+Structural signatures are invariant to anonymous token renaming. Therefore fresh token names alone cannot qualify a candidate.
+
+The formal generator must vary the preregistered discriminating structure:
+
+- HIGH_ORDER: history topology / lag / exposure;
+- TIMING: longer aliased prefix / matched-duration timing pattern;
+- CYCLE: contingency order / phase count / exposure schedule;
+- BRANCH: prefix topology / branch ratios / lag values;
+- SELECTIVITY: path topology / matched timing / exposure;
+- LOOP: cue/provenance topology / timing / exposure.
+
+Any development-equivalent formal structure fails before capability.
+
+## 5. Outcome-blind identifiability requirements
+
+Every formal world must pass the analytical, model-free identifiability audit.
+
+Required checks include:
+
+- HIGH_ORDER: immediate/current-token information remains aliased while longer history identifies the target;
+- TIMING: alternatives have identical token prefix, different timing, and matched total prefix duration;
+- CYCLE: recurrent multi-target schedule includes at least one pre-phase conflict with cumulative global-majority prediction;
+- BRANCH: one shared prefix genuinely supports three distinct futures with exposure-bound probabilities;
+- SELECTIVITY: target/control paths are disjoint and matched in path length, exposure, and timing;
+- LOOP: generated proposal and later external consequence remain distinct and ordered by provenance.
+
+These audits do not execute G3-G8.
+
+## 6. Prepare the outcome-blind freeze package
+
+Create a dedicated control branch for the new candidate, for example:
+
+```text
+cx01-control/candidate-002
+```
+
+Using the exact frozen source and the deterministic seed block, run:
 
 ```text
 PYTHONPATH="$PWD/src" python -m sparkbrain.comparison.cx01.prepare \
-  --generation-id <fresh-cx01-candidate-id> \
-  --seeds <comma-separated-fresh-seeds> \
+  --generation-id cx01-candidate-002 \
+  --seeds <exact-deterministically-selected-seeds> \
   --purpose formal \
   --source-sha "$SOURCE_SHA" \
   --builder <freeze-builder-identity> \
@@ -122,41 +172,79 @@ PYTHONPATH="$PWD/src" python -m sparkbrain.comparison.cx01.prepare \
   --output-dir <new-empty-output-dir>
 ```
 
-The preparation step is allowed to create only:
+The prepared package must contain only outcome-blind control data:
 
-- candidate structure;
-- deterministic world hashes;
-- unscored declarations;
-- freeze hashes and manifest.
+```text
+candidate.json
+declarations.jsonl
+formal_seed_selection.json
+formal_structure_audit.json
+formal_identifiability_audit.json
+freeze_manifest.json
+```
 
-It must not instantiate comparator capability results or dynamic resource measurements.
+All declarations must remain:
 
-Commit the candidate, declarations, and freeze manifest to the dedicated control branch.
+```text
+status = unscored
+capability_result_present = false
+measurements_present = false
+```
 
-## 5. Independent freeze review
+The preparation path must not instantiate comparator capability.
 
-A reviewer other than the freeze builder checks at minimum:
+## 7. Freeze-manifest bindings
+
+The manifest binds at least:
 
 - exact source SHA;
-- freeze tag resolves exactly to that source SHA;
-- candidate generation and disjoint seeds;
-- candidate/world/declaration hashes;
+- candidate specification hash;
+- candidate world-grid hash;
+- declaration bundle hash;
+- development grid hash;
+- deterministic seed-selection hash;
+- structural-heldout audit hash;
+- identifiability audit hash;
 - comparator inventory;
-- common training schedule and transcript policy;
-- privilege inventory;
-- formal scoring policy hash;
-- result/resource schema hashes;
+- privilege inventory hash;
+- schedule-policy hash;
+- formal scoring-policy hash;
+- result schema hash;
+- resource schema hash;
 - execution command;
-- artifact root;
-- no result-bearing candidate artifact exists.
+- artifact root.
 
-The review evidence is retained as a file outside candidate runtime output.
+The formal runner recomputes these candidate-side bindings before capability. The scorer independently recomputes them again from locked evidence.
 
-**Do not substitute the freeze builder, model author, or this assistant as the independent reviewer.** If genuine independent approval is unavailable, stop here. No formal evidence should be opened.
+## 8. Independent freeze review
 
-## 6. Issue the independent execution seal
+A genuinely separate reviewer—not the freeze builder, model author acting under another label, or this assistant lineage—must review the exact package.
 
-The independent reviewer runs:
+The reviewer verifies at minimum:
+
+- freeze ref still equals exact SOURCE_SHA;
+- deterministic seed selection reproduces exactly;
+- no historical/development/rejected seed overlaps;
+- structure audit: zero development overlap and required diversity;
+- identifiability audit: all worlds pass;
+- all 420 declarations are outcome-blind;
+- candidate/grid/declaration/audit/manifest hashes recompute;
+- comparator privileges are exactly disclosed;
+- schedule/scoring/result/resource schemas are frozen;
+- no seal or STARTED exists before approval;
+- no candidate capability result or formal workflow run exists.
+
+If genuine independent approval is unavailable, stop here.
+
+## 9. Issue the independent seal
+
+Only the independent reviewer may produce approval evidence and issue:
+
+```text
+cx01-control/execution_seal.json
+```
+
+using:
 
 ```text
 PYTHONPATH="$PWD/src" python -m sparkbrain.comparison.cx01.seal_candidate \
@@ -166,17 +254,11 @@ PYTHONPATH="$PWD/src" python -m sparkbrain.comparison.cx01.seal_candidate \
   --output cx01-control/execution_seal.json
 ```
 
-The tool rejects:
+The builder cannot self-approve.
 
-- missing approval evidence;
-- output overwrite;
-- a reviewer identity equal to the freeze builder.
+## 10. Cross the irreversible boundary with STARTED
 
-Commit `execution_seal.json` to the control branch.
-
-## 7. Cross the no-change boundary by committing STARTED
-
-Only after the independent seal exists, generate the persistent one-way control marker:
+Only after the valid independent seal exists:
 
 ```text
 PYTHONPATH="$PWD/src" python -m sparkbrain.comparison.cx01.control \
@@ -187,126 +269,107 @@ PYTHONPATH="$PWD/src" python -m sparkbrain.comparison.cx01.control \
   --output cx01-control/STARTED.json
 ```
 
-Commit `STARTED.json` to the dedicated control branch **before any capability call**.
+Commit `STARTED.json` before any comparator construction.
 
-This commit means:
-
-```text
-candidate status = CONSUMED / execution authorized once
-```
-
-If any later preflight or formal run fails, the candidate remains consumed. Do not delete, replace, amend, or reinterpret STARTED to justify a retry.
-
-STARTED is the normative durable one-way marker. GitHub Actions history is an additional technical duplicate-run guard, not the source of scientific irreversibility.
-
-## 8. Execute the read-only GitHub formal workflow once
-
-Dispatch:
+Once STARTED exists:
 
 ```text
-.github/workflows/cx01-formal-one-way.yml
+candidate = CONSUMED
+same candidate rerun = PROHIBITED
 ```
 
-using the frozen tag as the dispatch `ref`, for example:
+A later preflight, capability, upload, or publication failure does not make the candidate reusable.
+
+## 11. One-way formal execution
+
+Dispatch the frozen `.github/workflows/cx01-formal-one-way.yml` using:
 
 ```text
-ref = cx01-freeze-001
+ref = freeze/cx01-002
+source_sha = SOURCE_SHA
+candidate_spec_hash = <exact hash>
+control_branch = cx01-control/candidate-002
 ```
 
-and supply:
+Before capability the workflow/frozen runner requires:
 
-- exact `source_sha` matching the tag commit;
-- exact canonical `candidate_spec_hash`;
-- dedicated `control_branch`;
-- committed candidate/manifest/seal/STARTED paths;
-- exact artifact root frozen in the manifest.
+1. dispatch SHA exactly equals SOURCE_SHA;
+2. candidate/manifest/seal/STARTED are committed;
+3. candidate hash input matches candidate.json;
+4. no retained prior run has the same candidate/source identity;
+5. exact frozen source is checked out and clean;
+6. exact CPython 3.11.16 is provisioned;
+7. deterministic seed-selection hash matches;
+8. structural-heldout audit hash matches;
+9. identifiability audit hash matches;
+10. candidate grid/declaration/comparator inventory bindings match.
 
-**Never dispatch formal with `ref=main`.** The default-branch copy is a registration-only fail-closed stub. Never dispatch with a moving research branch either.
+Only then may comparator capability be instantiated.
 
-Before capability, the frozen workflow:
+## 12. Immutable raw evidence
 
-1. requires `GITHUB_SHA == source_sha`, proving the workflow definition itself came from the exact frozen source revision;
-2. checks out the preconsumed control branch using a pinned checkout action revision;
-3. requires candidate, freeze, seal, and STARTED files;
-4. verifies the supplied candidate hash against `candidate.json`;
-5. scans all retained pages of this formal workflow's dispatch history for the same candidate/source identity and fails closed on a duplicate;
-6. checks out the exact frozen source SHA using the pinned checkout revision;
-7. verifies source identity and cleanliness;
-8. provisions exact CPython 3.11.16 using a pinned setup-python revision;
-9. imports CX01 directly from the frozen source tree through `PYTHONPATH`, with no project/package installation;
-10. writes an environment preflight record before capability.
+Each architecture/world cell is committed atomically to the append-only raw store before the next capability call.
 
-The formal runtime then:
-
-1. validates the seal and independent reviewer binding;
-2. validates candidate/grid/declaration bindings;
-3. validates the persistent STARTED marker;
-4. writes a local exclusive STARTED marker;
-5. creates the append-only raw store;
-6. executes each comparator/world cell exactly once;
-7. atomically commits each raw result cell with checksum before the next capability call;
-8. on failure, retains completed raw cells and writes `RUN_FAILED.json`;
-9. on complete execution, verifies every expected raw cell and writes `RAW_COMPLETE.json`;
-10. only after raw lock, publishes the complete aggregate result.
-
-The workflow uploads evidence using a pinned upload-artifact revision. Platform runner-image metadata and the dispatch Git SHA are recorded; resource timings remain descriptive-only and are excluded from semantic execution hashes.
-
-## 9. Score only locked raw evidence
-
-The workflow runs formal scoring only after raw completion:
+On capability failure:
 
 ```text
-PYTHONPATH="$SOURCE_DIR/src" python -m sparkbrain.comparison.cx01.formal_scoring \
-  --candidate <candidate.json> \
-  --manifest <freeze_manifest.json> \
-  --artifact-root <frozen-artifact-root>
+partial cells retained
+RUN_FAILED.json written
+candidate remains consumed
+aggregate scoring prohibited
 ```
 
-The scorer refuses to proceed unless:
+On completion:
 
-- raw execution count is complete;
-- every cell checksum verifies;
-- formal indices are contiguous;
-- execution IDs are unique;
-- semantic execution hashes verify;
-- candidate and manifest hashes match every row;
-- all architecture/world cells are present exactly once;
-- all comparators share one training-transcript hash per world;
-- resource privilege metadata exactly matches the frozen privilege profiles;
-- the scorer policy hash equals the policy frozen in the manifest.
+```text
+all expected cells verified
+RAW_COMPLETE.json written
+raw tree locked read-only
+```
 
-Formal support is non-compensatory:
+Capability is never rerun merely to repair aggregate publication.
+
+## 13. Frozen scoring
+
+Scoring begins only from locked complete raw evidence.
+
+The scorer independently verifies:
+
+- raw count/checksums/indices/unique IDs;
+- candidate and manifest hashes;
+- deterministic seed-selection binding;
+- structural and identifiability audit bindings;
+- exact architecture × family × seed coverage;
+- raw `world_hash` equals the world reconstructed from the frozen candidate;
+- raw `training_transcript_hash` equals the transcript reconstructed from that world;
+- all seven comparators share the same transcript per world;
+- exact privilege inventory;
+- semantic execution hash;
+- scoring-policy hash.
+
+Formal support remains non-compensatory:
 
 ```text
 minimum pass fraction in EACH family >= 0.80
 ```
 
-A perfect result in one family cannot rescue failure in another.
+No strong family may rescue failure in another.
 
-## 10. Failure handling
+## 14. Post-STARTED prohibition
 
-### Any failure after STARTED
+After STARTED, do not:
 
-```text
-candidate = consumed
-same candidate rerun = prohibited
-```
+- tune thresholds;
+- change worlds;
+- change comparators;
+- change schedules;
+- change privilege declarations;
+- repair capability runtime and rerun the same candidate;
+- discard an unfavorable result;
+- reinterpret a failed family out of the formal protocol.
 
-If capability began, partial raw evidence is retained and aggregate scoring is prohibited unless the complete raw matrix locked successfully.
+Any source correction requires a new source SHA, a new freeze ref, a new generation, new deterministic seeds, a new independent seal, and a new STARTED marker.
 
-A correction requires:
+## 15. Scientific interpretation boundary
 
-- a new model/protocol revision if applicable;
-- a new frozen source SHA if source changed;
-- a new freeze tag if source changed;
-- a new disjoint candidate generation;
-- a new independent seal;
-- a new one-way STARTED marker.
-
-### Aggregate publication failure after RAW_COMPLETE
-
-The locked raw matrix remains authoritative. A publication-layer error must not cause capability rerun. Repair must operate only on the already locked raw bytes and must be documented as analysis/publishing repair.
-
-## 11. Scientific interpretation
-
-CX01 formal evidence compares **local comparator capabilities** only. It does not rescue Candidate-003, does not establish official HTM/sTM benchmark performance, and does not constitute a new SparkBrain Primary result unless a future Primary architecture is separately frozen and added under a preregistered extension protocol.
+CX01 formal Wave 1 compares local comparator capabilities only. It does not rescue Candidate-003 and does not itself provide a new SparkBrain Primary result. G7/G8 remain local capability references, not official HTM/sTM benchmark implementations.
