@@ -3,9 +3,9 @@ from __future__ import annotations
 import pytest
 
 from sparkbrain.comparison.cx01.candidate import (
+    REJECTED_PREFORMAL_SEEDS,
     CandidatePurpose,
     CandidateSpec,
-    REJECTED_PREFORMAL_SEEDS,
     build_candidate_grid,
     candidate_structure_audit,
 )
@@ -14,10 +14,7 @@ from sparkbrain.comparison.cx01.formal_worlds import (
     development_structure_signatures,
     world_structure_signature,
 )
-from sparkbrain.comparison.cx01.worlds import (
-    CX01Family,
-    development_grid_hash,
-)
+from sparkbrain.comparison.cx01.worlds import CX01Family, development_grid_hash
 
 
 EXPECTED_DEVELOPMENT_GRID_HASH = (
