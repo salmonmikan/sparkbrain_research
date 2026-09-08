@@ -1,0 +1,14 @@
+{
+  "artifact_archive_digest": "sha256:c20fc6c4b96ba9a208cef9870202a12f36726439054eeb7bb322b0fbaf7e849e",
+  "artifact_name": "a01-md-001-e5882c060bf3029415d49c22d9130d59ecbadd00",
+  "candidate_003_touched": false,
+  "formal_candidate": false,
+  "mechanism_or_threshold_modified_after_result": false,
+  "preservation_status": "fixed-development-diagnostic-no-rerun",
+  "raw_result_path": "raw_result.json",
+  "raw_result_sha256": "361cc46b60ad9f09be7d71e69ecaabd82e9dada828dc64da46772c110e9f18f6",
+  "result_digest": "dbae940526222f72d3f5d1cb0d446db57addf578d4ec96e5df8641d4f357d7b4",
+  "source_git_sha": "e5882c060bf3029415d49c22d9130d59ecbadd00",
+  "threshold_tuning_performed": false,
+  "workflow_run_id": 34234838728
+}
