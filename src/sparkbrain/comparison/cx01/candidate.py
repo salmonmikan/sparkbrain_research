@@ -7,6 +7,7 @@ from enum import StrEnum
 from typing import Any
 
 from .contract import ComparatorKind
+from .formal_identifiability import audit_formal_grid_identifiability
 from .formal_worlds import audit_formal_grid_structure, build_formal_world
 from .worlds import (
     DEVELOPMENT_GENERATION_ID,
@@ -148,6 +149,13 @@ class CandidateDeclaration:
         return value
 
 
+def _candidate_audits(worlds: tuple[CX01World, ...]) -> dict[str, Any]:
+    return {
+        "identifiability": audit_formal_grid_identifiability(worlds),
+        "structure": audit_formal_grid_structure(worlds),
+    }
+
+
 def build_candidate_grid(spec: CandidateSpec) -> tuple[CX01World, ...]:
     spec.validate()
     worlds = tuple(
@@ -155,20 +163,26 @@ def build_candidate_grid(spec: CandidateSpec) -> tuple[CX01World, ...]:
         for family in CX01Family
         for seed in spec.seeds
     )
-    audit_formal_grid_structure(worlds)
+    _candidate_audits(worlds)
     return worlds
 
 
 def candidate_structure_audit(spec: CandidateSpec) -> dict[str, Any]:
-    return audit_formal_grid_structure(build_candidate_grid(spec))
+    worlds = build_candidate_grid(spec)
+    return audit_formal_grid_structure(worlds)
+
+
+def candidate_identifiability_audit(spec: CandidateSpec) -> dict[str, Any]:
+    worlds = build_candidate_grid(spec)
+    return audit_formal_grid_identifiability(worlds)
 
 
 def candidate_grid_hash(spec: CandidateSpec) -> str:
     worlds = build_candidate_grid(spec)
     return _digest(
         {
+            "audits": _candidate_audits(worlds),
             "candidate": spec.state_dict(),
-            "structure_audit": audit_formal_grid_structure(worlds),
             "worlds": [world.state_dict() for world in worlds],
         }
     )
