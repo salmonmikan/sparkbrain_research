@@ -16,7 +16,6 @@ from sparkbrain.comparison.cx01.formal_worlds import (
 )
 from sparkbrain.comparison.cx01.worlds import CX01Family, development_grid_hash
 
-
 EXPECTED_DEVELOPMENT_GRID_HASH = (
     "d93b362ce672fffd233973b8f27521f9d6a5fbdf4f3d4cba9369495635a33c9f"
 )
