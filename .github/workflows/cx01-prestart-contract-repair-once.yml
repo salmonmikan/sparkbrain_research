@@ -1,0 +1,327 @@
+name: CX01 Pre-start Contract Repair Once
+
+on:
+  push:
+    branches:
+      - "research/cx01-candidate-002-prestart"
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/cx01-candidate-002-prestart
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Repair pre-start contracts without capability inspection
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          def replace_once(path: Path, old: str, new: str) -> None:
+              text = path.read_text(encoding="utf-8")
+              if text.count(old) != 1:
+                  raise SystemExit(
+                      f"expected exactly one replacement in {path}: found {text.count(old)}"
+                  )
+              path.write_text(text.replace(old, new, 1), encoding="utf-8")
+
+          revision = Path("src/sparkbrain/comparison/cx01/formal_revision.py")
+          replace_once(
+              revision,
+              'FORMAL_GENERATOR_REVISION = "cx01-formal-structural-revision-v3"',
+              'FORMAL_GENERATOR_REVISION = "cx01-formal-structural-revision-v4"',
+          )
+          cycle_anchor = '''def _revise_selectivity(world: CX01World) -> CX01World:
+          '''
+          cycle_helpers = '''def _has_global_historical_majority_conflict(world: CX01World) -> bool:
+              """Mirror the outcome-blind CYCLE identifiability predicate.
+
+              This inspects only the declared training and contingency schedule. It
+              never instantiates a comparator or reads a capability result.
+              """
+
+              if world.family is not CX01Family.CYCLE or world.cycle_cue is None:
+                  raise ValueError("cycle identifiability requires a CYCLE world")
+              historical: dict[str, int] = {}
+              for row in world.training:
+                  if row.tokens and row.tokens[0] == world.cycle_cue:
+                      target = row.tokens[-1]
+                      historical[target] = historical.get(target, 0) + row.exposures
+              for phase in world.cycle_phases:
+                  historical[phase.target] = (
+                      historical.get(phase.target, 0) + phase.exposures
+                  )
+                  if historical[phase.target] < max(historical.values(), default=0):
+                      return True
+              return False
+
+
+          def _ensure_cycle_identifiability(world: CX01World) -> CX01World:
+              """Fail closed by making the preregistered CYCLE family identifiable.
+
+              Some valid source/seed namespaces produced schedules that a global
+              historical-majority rule could follow at every phase. Before any
+              capability execution, insert one anonymous low-exposure contingency
+              only when that structural defect is present. This is a family-contract
+              repair, not comparator-specific tuning.
+              """
+
+              if _has_global_historical_majority_conflict(world):
+                  return world
+              if not world.cycle_phases:
+                  raise RuntimeError("cycle revision requires contingency phases")
+              target = _fresh_token(world, "cycle-identifiability-contingency")
+              phases = (
+                  world.cycle_phases[0],
+                  CyclePhase(target=target, exposures=1),
+                  *world.cycle_phases[1:],
+              )
+              revised = CX01World(
+                  generation_id=world.generation_id,
+                  family=world.family,
+                  seed=world.seed,
+                  training=world.training,
+                  probes=world.probes,
+                  cycle_cue=world.cycle_cue,
+                  cycle_phases=phases,
+              )
+              revised.validate()
+              if not _has_global_historical_majority_conflict(revised):
+                  raise RuntimeError("cycle identifiability repair did not establish conflict")
+              return revised
+
+
+          def _revise_selectivity(world: CX01World) -> CX01World:
+          '''
+          replace_once(revision, cycle_anchor, cycle_helpers)
+          old_tail = '''    world = build_formal_world(generation_id, family, seed)
+              if seed % 2 == 0:
+                  return world
+
+              revisers = {
+                  CX01Family.HIGH_ORDER: _revise_high_order,
+                  CX01Family.TIMING: lambda value: _revise_shared_context(value, "timing"),
+                  CX01Family.CYCLE: _revise_cycle,
+                  CX01Family.BRANCH: lambda value: _revise_shared_context(value, "branch"),
+                  CX01Family.SELECTIVITY: _revise_selectivity,
+                  CX01Family.LOOP: _revise_loop,
+              }
+              revised = revisers[family](world)
+              revised.validate()
+              return revised
+          '''
+          new_tail = '''    world = build_formal_world(generation_id, family, seed)
+              revisers = {
+                  CX01Family.HIGH_ORDER: _revise_high_order,
+                  CX01Family.TIMING: lambda value: _revise_shared_context(value, "timing"),
+                  CX01Family.CYCLE: _revise_cycle,
+                  CX01Family.BRANCH: lambda value: _revise_shared_context(value, "branch"),
+                  CX01Family.SELECTIVITY: _revise_selectivity,
+                  CX01Family.LOOP: _revise_loop,
+              }
+              revised = world if seed % 2 == 0 else revisers[family](world)
+              if family is CX01Family.CYCLE:
+                  revised = _ensure_cycle_identifiability(revised)
+              revised.validate()
+              return revised
+          '''
+          replace_once(revision, old_tail, new_tail)
+
+          formal_worlds = Path("src/sparkbrain/comparison/cx01/formal_worlds.py")
+          replace_once(
+              formal_worlds,
+              '''    return {
+                  "family_rows": family_rows,
+                  "policy_version": FORMAL_STRUCTURE_POLICY_VERSION,
+                  "world_count": sum(len(values) for values in grouped.values()),
+              }
+          ''',
+              '''    return {
+                  "family_rows": family_rows,
+                  "passed": True,
+                  "policy_version": FORMAL_STRUCTURE_POLICY_VERSION,
+                  "world_count": sum(len(values) for values in grouped.values()),
+              }
+          ''',
+          )
+
+          identifiability = Path(
+              "src/sparkbrain/comparison/cx01/formal_identifiability.py"
+          )
+          replace_once(
+              identifiability,
+              '''    return {
+                  "family_pass_counts": by_family,
+                  "family_world_counts": counts,
+                  "world_count": len(rows),
+              }
+          ''',
+              '''    return {
+                  "family_pass_counts": by_family,
+                  "family_world_counts": counts,
+                  "passed": True,
+                  "world_count": len(rows),
+              }
+          ''',
+          )
+
+          development = Path("src/sparkbrain/comparison/cx01/development.py")
+          replace_once(
+              development,
+              '''    # The cue is a read-only query. Only the later external consequence is
+              # permitted to become new evidence; the generated proposal itself never is.
+              now = _feed(
+                  model,
+                  world.loop.cue_prefix,
+                  (5.0,) * (len(world.loop.cue_prefix) - 1),
+                  now,
+                  learn=False,
+              )
+          ''',
+              '''    if len(world.probes) != 1:
+                  raise ValueError("loop world requires exactly one declared cue probe")
+              probe = world.probes[0]
+              if probe.prefix != world.loop.cue_prefix:
+                  raise ValueError("loop probe prefix must match the provenance cue")
+              if probe.expected_distribution != ((world.loop.expected_generated, 1.0),):
+                  raise ValueError("loop probe target must match the generated proposal")
+              # The cue is a read-only query. Only the later external consequence is
+              # permitted to become new evidence; the generated proposal itself never is.
+              # Use the world's declared timing rather than a development-only 5 ms
+              # constant, so timing-sensitive comparators receive the trained context.
+              now = _feed(
+                  model,
+                  probe.prefix,
+                  probe.lags_ms,
+                  now,
+                  learn=False,
+              )
+          ''',
+          )
+
+          regression = Path("tests/cx01/test_prestart_contract_regressions.py")
+          if regression.exists():
+              raise SystemExit(f"regression file already exists: {regression}")
+          regression.write_text(
+              '''from __future__ import annotations
+
+          from types import SimpleNamespace
+
+          from sparkbrain.comparison.cx01.development import _evaluate_loop
+          from sparkbrain.comparison.cx01.formal_identifiability import (
+              audit_formal_world_identifiability,
+          )
+          from sparkbrain.comparison.cx01.formal_revision import build_revised_formal_world
+          from sparkbrain.comparison.cx01.worlds import CX01Family
+
+
+          class _RecordingLoopModel:
+              def __init__(self, expected_generated: str) -> None:
+                  self.expected_generated = expected_generated
+                  self.events: list[tuple[object, bool]] = []
+                  self.observed_external_events = 0
+
+              def observe_external(self, event: object, *, learn: bool = True) -> None:
+                  self.events.append((event, learn))
+                  self.observed_external_events += 1
+
+              def generate(self, *, max_steps: int):
+                  assert max_steps == 1
+                  timestamp = self.events[-1][0].timestamp_ms + 1.0
+                  return (
+                      SimpleNamespace(
+                          token=self.expected_generated,
+                          timestamp_ms=timestamp,
+                      ),
+                  )
+
+              def finalize_episode(self) -> None:
+                  return None
+
+
+          def test_cycle_known_even_seed_is_structurally_identifiable() -> None:
+              world = build_revised_formal_world(
+                  "cx01-fixture-scoring-001",
+                  CX01Family.CYCLE,
+                  5004,
+              )
+              audit = audit_formal_world_identifiability(world)
+              assert audit["passed"] is True
+              assert audit["gates"]["global_majority_conflict"] is True
+
+
+          def test_loop_evaluation_uses_declared_probe_timing() -> None:
+              world = build_revised_formal_world(
+                  "cx01-fixture-loop-timing-regression",
+                  CX01Family.LOOP,
+                  5001,
+              )
+              assert world.loop is not None
+              probe = world.probes[0]
+              assert probe.lags_ms
+              assert probe.lags_ms != (5.0,) * len(probe.lags_ms)
+
+              model = _RecordingLoopModel(world.loop.expected_generated)
+              evidence, _ = _evaluate_loop(model, world, 100.0)
+
+              cue_events = [event for event, _ in model.events[: len(probe.prefix)]]
+              observed_lags = tuple(
+                  right.timestamp_ms - left.timestamp_ms
+                  for left, right in zip(cue_events, cue_events[1:], strict=True)
+              )
+              assert observed_lags == probe.lags_ms
+              assert evidence.correct_probes == 1
+              assert evidence.self_confirmation_violations == 0
+          ''',
+              encoding="utf-8",
+          )
+          PY
+
+      - name: Validate CX01 source revision and unchanged development contract
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e .
+          python -m pip install "ruff==0.16.6" pytest
+          ruff check src/sparkbrain/comparison/cx01 tests/cx01
+          pytest -q tests/cx01
+          python -m sparkbrain.comparison.cx01.development > /tmp/cx01-development.json
+          python - <<'PY'
+          from sparkbrain.comparison.cx01.candidate import (
+              CandidateSpec,
+              candidate_component_structure_audit,
+              candidate_identifiability_audit,
+              candidate_structure_audit,
+          )
+
+          candidate = CandidateSpec(
+              generation_id="cx01-candidate-002",
+              seeds=tuple(range(370110, 370120)),
+          )
+          assert candidate_structure_audit(candidate)["passed"] is True
+          assert candidate_component_structure_audit(candidate)["passed"] is True
+          assert candidate_identifiability_audit(candidate)["passed"] is True
+          PY
+
+      - name: Commit repaired pre-start source
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/cx01-prestart-contract-repair-once.yml
+          git add \
+            src/sparkbrain/comparison/cx01/development.py \
+            src/sparkbrain/comparison/cx01/formal_identifiability.py \
+            src/sparkbrain/comparison/cx01/formal_revision.py \
+            src/sparkbrain/comparison/cx01/formal_worlds.py \
+            tests/cx01/test_prestart_contract_regressions.py
+          git commit -m "fix(cx01): close pre-start structural contract blockers"
+          git push origin HEAD:research/cx01-candidate-002-prestart
