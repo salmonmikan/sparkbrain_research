@@ -7,12 +7,12 @@ from enum import StrEnum
 from typing import Any
 
 from .contract import ComparatorKind
+from .formal_worlds import audit_formal_grid_structure, build_formal_world
 from .worlds import (
     DEVELOPMENT_GENERATION_ID,
     HISTORICALLY_EXPOSED_SEEDS,
     CX01Family,
     CX01World,
-    build_world,
 )
 
 CX01_COMPARATOR_INVENTORY = (
@@ -30,6 +30,12 @@ CX01_COMPARATOR_INVENTORY = (
 # and structure-fixture worlds so no already-exposed seed can later return as
 # held-out evidence.
 CX01_NONFORMAL_SEEDS = frozenset(range(3000, 6000))
+
+# Candidate-001 was rejected during independent pre-start review because its
+# seeds changed anonymous labels without sufficient held-out world structure.
+# Both the candidate namespace and seed band are now permanently exposed.
+REJECTED_PREFORMAL_GENERATIONS = frozenset({"cx01-candidate-001"})
+REJECTED_PREFORMAL_SEEDS = frozenset(range(269810, 269820))
 
 # Reserved subset for schema/freeze/control-plane fixtures.
 STRUCTURE_FIXTURE_SEEDS = frozenset(range(5000, 5200))
@@ -56,7 +62,7 @@ class CandidateSpec:
     generation_id: str
     seeds: tuple[int, ...]
     purpose: CandidatePurpose = CandidatePurpose.FORMAL
-    protocol_version: str = "cx01-comparator-protocol-1"
+    protocol_version: str = "cx01-comparator-protocol-2"
 
     def validate(self) -> None:
         if not self.generation_id or self.generation_id == DEVELOPMENT_GENERATION_ID:
@@ -72,8 +78,12 @@ class CandidateSpec:
         if self.purpose is CandidatePurpose.FORMAL:
             if not self.generation_id.startswith("cx01-candidate-"):
                 raise ValueError("formal generation id must use cx01-candidate-* namespace")
+            if self.generation_id in REJECTED_PREFORMAL_GENERATIONS:
+                raise ValueError("formal candidate generation was already exposed pre-start")
             if CX01_NONFORMAL_SEEDS.intersection(self.seeds):
                 raise ValueError("formal candidate cannot reuse CX01 development/test seed band")
+            if REJECTED_PREFORMAL_SEEDS.intersection(self.seeds):
+                raise ValueError("formal candidate cannot reuse rejected pre-start seed band")
         elif self.purpose is CandidatePurpose.STRUCTURE_FIXTURE:
             if not self.generation_id.startswith("cx01-fixture-"):
                 raise ValueError("fixture generation id must use cx01-fixture-* namespace")
@@ -105,7 +115,7 @@ class CandidateSpec:
             generation_id=str(state["generation_id"]),
             seeds=tuple(int(seed) for seed in state["seeds"]),
             purpose=CandidatePurpose(str(state.get("purpose", CandidatePurpose.FORMAL.value))),
-            protocol_version=str(state.get("protocol_version", "cx01-comparator-protocol-1")),
+            protocol_version=str(state.get("protocol_version", "cx01-comparator-protocol-2")),
         )
         spec.validate()
         return spec
@@ -140,18 +150,26 @@ class CandidateDeclaration:
 
 def build_candidate_grid(spec: CandidateSpec) -> tuple[CX01World, ...]:
     spec.validate()
-    return tuple(
-        build_world(spec.generation_id, family, seed)
+    worlds = tuple(
+        build_formal_world(spec.generation_id, family, seed)
         for family in CX01Family
         for seed in spec.seeds
     )
+    audit_formal_grid_structure(worlds)
+    return worlds
+
+
+def candidate_structure_audit(spec: CandidateSpec) -> dict[str, Any]:
+    return audit_formal_grid_structure(build_candidate_grid(spec))
 
 
 def candidate_grid_hash(spec: CandidateSpec) -> str:
+    worlds = build_candidate_grid(spec)
     return _digest(
         {
             "candidate": spec.state_dict(),
-            "worlds": [world.state_dict() for world in build_candidate_grid(spec)],
+            "structure_audit": audit_formal_grid_structure(worlds),
+            "worlds": [world.state_dict() for world in worlds],
         }
     )
 
