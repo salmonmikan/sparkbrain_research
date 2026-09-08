@@ -155,7 +155,7 @@ def _validate_rows(
             raise RuntimeError("formal row world hash does not match frozen candidate world")
         transcript_hash = str(row.get("training_transcript_hash", ""))
         if transcript_hash != expected_transcript_hash:
-            raise RuntimeError("formal row transcript hash does not match frozen candidate transcript")
+            raise RuntimeError("formal row transcript hash mismatch")
         transcript_by_world.setdefault(world_key, set()).add(transcript_hash)
 
         decision = row.get("decision")
