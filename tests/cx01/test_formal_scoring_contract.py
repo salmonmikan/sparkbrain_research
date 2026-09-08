@@ -130,7 +130,7 @@ def test_formal_row_validator_rejects_transcript_mismatch() -> None:
     rows = list(_rows(candidate, manifest))
     changed = {**rows[1], "training_transcript_hash": "f" * 64}
     rows[1] = _add_semantic_hash(changed)
-    with pytest.raises(RuntimeError, match="transcript hash does not match frozen candidate"):
+    with pytest.raises(RuntimeError, match="formal row transcript hash mismatch"):
         _validate_rows(
             tuple(rows),
             candidate=candidate,
