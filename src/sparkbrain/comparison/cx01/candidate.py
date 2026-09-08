@@ -8,7 +8,9 @@ from typing import Any
 
 from .contract import ComparatorKind
 from .formal_identifiability import audit_formal_grid_identifiability
-from .formal_worlds import audit_formal_grid_structure, build_formal_world
+from .formal_revision import build_revised_formal_world
+from .formal_worlds import audit_formal_grid_structure
+from .structural_components import audit_formal_grid_components
 from .worlds import (
     DEVELOPMENT_GENERATION_ID,
     HISTORICALLY_EXPOSED_SEEDS,
@@ -151,6 +153,7 @@ class CandidateDeclaration:
 
 def _candidate_audits(worlds: tuple[CX01World, ...]) -> dict[str, Any]:
     return {
+        "component_structure": audit_formal_grid_components(worlds),
         "identifiability": audit_formal_grid_identifiability(worlds),
         "structure": audit_formal_grid_structure(worlds),
     }
@@ -159,7 +162,7 @@ def _candidate_audits(worlds: tuple[CX01World, ...]) -> dict[str, Any]:
 def build_candidate_grid(spec: CandidateSpec) -> tuple[CX01World, ...]:
     spec.validate()
     worlds = tuple(
-        build_formal_world(spec.generation_id, family, seed)
+        build_revised_formal_world(spec.generation_id, family, seed)
         for family in CX01Family
         for seed in spec.seeds
     )
@@ -170,6 +173,11 @@ def build_candidate_grid(spec: CandidateSpec) -> tuple[CX01World, ...]:
 def candidate_structure_audit(spec: CandidateSpec) -> dict[str, Any]:
     worlds = build_candidate_grid(spec)
     return audit_formal_grid_structure(worlds)
+
+
+def candidate_component_structure_audit(spec: CandidateSpec) -> dict[str, Any]:
+    worlds = build_candidate_grid(spec)
+    return audit_formal_grid_components(worlds)
 
 
 def candidate_identifiability_audit(spec: CandidateSpec) -> dict[str, Any]:
