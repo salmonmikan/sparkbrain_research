@@ -1,0 +1,112 @@
+name: Preserve A01-MD-001 Once
+
+on:
+  push:
+    branches:
+      - "ops/a01-md-001-preserve-once"
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  preserve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      SOURCE_SHA: e5882c060bf3029415d49c22d9130d59ecbadd00
+      RUN_ID: "34234838728"
+      ARTIFACT_NAME: a01-md-001-e5882c060bf3029415d49c22d9130d59ecbadd00
+      RAW_SHA256: 361cc46b60ad9f09be7d71e69ecaabd82e9dada828dc64da46772c110e9f18f6
+      RESULT_DIGEST: dbae940526222f72d3f5d1cb0d446db57addf578d4ec96e5df8641d4f357d7b4
+      ARTIFACT_ARCHIVE_DIGEST: sha256:c20fc6c4b96ba9a208cef9870202a12f36726439054eeb7bb322b0fbaf7e849e
+      PRESERVATION_BRANCH: preserve/v061-a01-md-001
+      PRESERVATION_ROOT: artifacts/v061/a01/A01_MD_001
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download source-bound artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          rm -rf /tmp/a01-md-001
+          mkdir -p /tmp/a01-md-001
+          gh run download "${RUN_ID}" \
+            --repo "${GITHUB_REPOSITORY}" \
+            --name "${ARTIFACT_NAME}" \
+            --dir /tmp/a01-md-001
+
+      - name: Verify raw evidence before preservation
+        run: |
+          echo "${RAW_SHA256}  /tmp/a01-md-001/A01_MD_001.json" | sha256sum --check --strict
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          path = Path("/tmp/a01-md-001/A01_MD_001.json")
+          result = json.loads(path.read_text(encoding="utf-8"))
+          if result["source_sha"] != os.environ["SOURCE_SHA"]:
+              raise SystemExit("source SHA mismatch")
+          if result["result_digest"] != os.environ["RESULT_DIGEST"]:
+              raise SystemExit("result digest mismatch")
+          expected = {
+              "p1_verdict": "SUPPORTED",
+              "p2_verdict": "SUPPORTED",
+              "lineage_selectivity": True,
+              "contradiction_correction": True,
+              "absence_replay_leakage": False,
+              "future_competition_change": True,
+              "actual_carrier_locus": "L.local-transition.a01-causal-support",
+              "explicit_anonymous_memory_reduction": (
+                  "behaviorally-and-dynamically-explicit-memory-equivalent"
+              ),
+          }
+          for key, value in expected.items():
+              if result["summary"].get(key) != value:
+                  raise SystemExit(f"unexpected frozen summary {key}")
+          PY
+
+      - name: Create immutable preservation commit from executed source
+        run: |
+          if git ls-remote --exit-code --heads origin "${PRESERVATION_BRANCH}" >/dev/null 2>&1; then
+            echo "Preservation branch already exists; refusing overwrite" >&2
+            exit 1
+          fi
+          git checkout --detach "${SOURCE_SHA}"
+          git switch -c "${PRESERVATION_BRANCH}"
+          mkdir -p "${PRESERVATION_ROOT}"
+          cp /tmp/a01-md-001/A01_MD_001.json "${PRESERVATION_ROOT}/raw_result.json"
+          cp /tmp/a01-md-001/A01_MD_001.sha256 "${PRESERVATION_ROOT}/raw_result.sha256"
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          manifest = {
+              "artifact_archive_digest": os.environ["ARTIFACT_ARCHIVE_DIGEST"],
+              "artifact_name": os.environ["ARTIFACT_NAME"],
+              "candidate_003_touched": False,
+              "formal_candidate": False,
+              "mechanism_or_threshold_modified_after_result": False,
+              "preservation_status": "fixed-development-diagnostic-no-rerun",
+              "raw_result_path": "raw_result.json",
+              "raw_result_sha256": os.environ["RAW_SHA256"],
+              "result_digest": os.environ["RESULT_DIGEST"],
+              "source_git_sha": os.environ["SOURCE_SHA"],
+              "threshold_tuning_performed": False,
+              "workflow_run_id": int(os.environ["RUN_ID"]),
+          }
+          root = Path(os.environ["PRESERVATION_ROOT"])
+          (root / "preservation_manifest.json").write_text(
+              json.dumps(manifest, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "${PRESERVATION_ROOT}"
+          git commit -m "preserve(a01): fix A01-MD-001 source-bound diagnostic"
+          git push origin "HEAD:refs/heads/${PRESERVATION_BRANCH}"
