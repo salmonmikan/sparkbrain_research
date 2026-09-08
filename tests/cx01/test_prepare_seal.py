@@ -28,12 +28,31 @@ def test_prepare_bundle_contains_structure_only(tmp_path: Path) -> None:
         for line in declarations_path.read_text(encoding="utf-8").splitlines()
     ]
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    structure_audit = json.loads(
+        (output / "formal_structure_audit.json").read_text(encoding="utf-8")
+    )
+    identifiability_audit = json.loads(
+        (output / "formal_identifiability_audit.json").read_text(encoding="utf-8")
+    )
     assert candidate["purpose"] == CandidatePurpose.STRUCTURE_FIXTURE.value
     assert declarations
     assert all(row["status"] == "unscored" for row in declarations)
     assert not any(row["capability_result_present"] for row in declarations)
     assert not any(row["measurements_present"] for row in declarations)
     assert manifest["builder"] == "fixture-builder"
+    assert len(manifest["formal_structure_audit_hash"]) == 64
+    assert len(manifest["formal_identifiability_audit_hash"]) == 64
+    assert structure_audit["world_count"] == 60
+    assert identifiability_audit["world_count"] == 60
+    assert all(
+        row["development_overlap_count"] == 0
+        for row in structure_audit["family_rows"].values()
+    )
+    assert all(
+        identifiability_audit["family_pass_counts"][family]
+        == identifiability_audit["family_world_counts"][family]
+        for family in identifiability_audit["family_world_counts"]
+    )
     with pytest.raises(FileExistsError):
         prepare_outcome_blind_bundle(
             generation_id="cx01-fixture-prepare-001",
