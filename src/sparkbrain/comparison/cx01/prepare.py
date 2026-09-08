@@ -8,6 +8,8 @@ from .candidate import (
     CandidatePurpose,
     CandidateSpec,
     build_outcome_blind_declarations,
+    candidate_identifiability_audit,
+    candidate_structure_audit,
 )
 from .freeze import build_freeze_manifest
 
@@ -31,11 +33,12 @@ def prepare_outcome_blind_bundle(
     artifact_root: str,
     output_dir: Path,
 ) -> tuple[Path, Path, Path]:
-    """Create candidate declarations and an unsigned frozen manifest.
+    """Create candidate declarations, world audits, and an unsigned frozen manifest.
 
     This operation constructs world structure and hashes only. It never creates
     a comparator model, capability result, dynamic resource measurement, or
-    execution seal.
+    execution seal. Structural and identifiability audit files are review aids
+    whose exact canonical content is bound by hashes in the freeze manifest.
     """
 
     candidate = CandidateSpec(
@@ -45,6 +48,8 @@ def prepare_outcome_blind_bundle(
     )
     candidate.validate()
     declarations = build_outcome_blind_declarations(candidate)
+    structure_audit = candidate_structure_audit(candidate)
+    identifiability_audit = candidate_identifiability_audit(candidate)
     manifest = build_freeze_manifest(
         source_git_sha=source_git_sha,
         builder=builder,
@@ -57,11 +62,15 @@ def prepare_outcome_blind_bundle(
     candidate_path = output_dir / "candidate.json"
     declarations_path = output_dir / "declarations.jsonl"
     manifest_path = output_dir / "freeze_manifest.json"
+    structure_audit_path = output_dir / "formal_structure_audit.json"
+    identifiability_audit_path = output_dir / "formal_identifiability_audit.json"
     _write_json(candidate_path, candidate.state_dict())
     with declarations_path.open("w", encoding="utf-8", newline="\n") as handle:
         for row in declarations:
             handle.write(json.dumps(row.state_dict(), sort_keys=True))
             handle.write("\n")
+    _write_json(structure_audit_path, structure_audit)
+    _write_json(identifiability_audit_path, identifiability_audit)
     _write_json(manifest_path, manifest.state_dict())
     return candidate_path, declarations_path, manifest_path
 
