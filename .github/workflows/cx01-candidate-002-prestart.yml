@@ -1,0 +1,316 @@
+name: CX01 Candidate-002 Pre-start Freeze
+
+on:
+  push:
+    branches:
+      - "research/cx01-candidate-002-prestart"
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  validate-package-freeze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      CANDIDATE_ID: cx01-candidate-002
+      CANDIDATE_SEEDS: 370110,370111,370112,370113,370114,370115,370116,370117,370118,370119
+      SOURCE_FREEZE_BRANCH: freeze/cx01-002-source
+      PACKAGE_BRANCH: prepare/cx01-candidate-002
+      PACKAGE_ROOT: artifacts/research/cx01/candidate_002/prestart_package
+      REJECTED_FREEZE_REF: refs/remotes/origin/freeze/cx01-001
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: research/cx01-candidate-002-prestart
+
+      - name: Check stabilized-source marker
+        id: readiness
+        shell: bash
+        run: |
+          if [[ -f .cx01_candidate_002_source_stabilized ]]; then
+            echo "ready=true" >> "${GITHUB_OUTPUT}"
+          else
+            echo "ready=false" >> "${GITHUB_OUTPUT}"
+            echo "Source stabilization has not completed; no package or freeze will be created."
+          fi
+
+      - uses: actions/setup-python@v5
+        if: steps.readiness.outputs.ready == 'true'
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install fixed source
+        if: steps.readiness.outputs.ready == 'true'
+        run: python -m pip install -e ".[dev,learned,spiking]"
+
+      - name: Verify candidate and rejected-candidate guards
+        if: steps.readiness.outputs.ready == 'true'
+        run: |
+          git fetch origin "refs/heads/freeze/cx01-001:${REJECTED_FREEZE_REF}"
+          python - <<'PY'
+          from sparkbrain.comparison.cx01.candidate import CandidateSpec
+
+          candidate = CandidateSpec(
+              generation_id="cx01-candidate-002",
+              seeds=tuple(range(370110, 370120)),
+          )
+          candidate.require_formal()
+
+          rejected = CandidateSpec(
+              generation_id="cx01-candidate-001",
+              seeds=tuple(range(269810, 269820)),
+          )
+          try:
+              rejected.require_formal()
+          except ValueError:
+              pass
+          else:
+              raise SystemExit("rejected candidate-001 was accepted by validation")
+          PY
+
+      - name: Recover unchanged execution contract from rejected freeze
+        if: steps.readiness.outputs.ready == 'true'
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          import subprocess
+          from pathlib import Path
+
+          ref = "refs/remotes/origin/freeze/cx01-001"
+          paths = subprocess.check_output(
+              ["git", "ls-tree", "-r", "--name-only", ref],
+              text=True,
+          ).splitlines()
+          manifest_paths = [
+              path for path in paths if path.endswith("freeze_manifest.json")
+          ]
+          selected = None
+          for path in manifest_paths:
+              raw = subprocess.check_output(
+                  ["git", "show", f"{ref}:{path}"],
+              )
+              try:
+                  value = json.loads(raw)
+              except (json.JSONDecodeError, UnicodeDecodeError):
+                  continue
+              source_sha = str(value.get("source_git_sha", ""))
+              if source_sha.startswith("f2c5ead5"):
+                  selected = (path, raw, value)
+                  break
+          if selected is None:
+              raise SystemExit(
+                  "could not identify candidate-001 freeze manifest without mutation"
+              )
+
+          path, raw, value = selected
+          execution_command = str(value["execution_command"])
+          artifact_root = str(value["artifact_root"])
+          replacements = (
+              ("cx01-candidate-001", "cx01-candidate-002"),
+              ("cx01-001", "cx01-002"),
+              ("candidate_001", "candidate_002"),
+          )
+          for old, new in replacements:
+              execution_command = execution_command.replace(old, new)
+              artifact_root = artifact_root.replace(old, new)
+
+          contract = {
+              "artifact_root": artifact_root,
+              "candidate_001_freeze_commit": subprocess.check_output(
+                  ["git", "rev-parse", ref],
+                  text=True,
+              ).strip(),
+              "candidate_001_manifest_path": path,
+              "candidate_001_manifest_sha256": hashlib.sha256(raw).hexdigest(),
+              "candidate_001_source_sha": value["source_git_sha"],
+              "execution_command": execution_command,
+              "source_contract_reused_without_scoring_change": True,
+          }
+          Path("/tmp/cx01_candidate_002_contract.json").write_text(
+              json.dumps(contract, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          PY
+
+      - name: Static checks
+        if: steps.readiness.outputs.ready == 'true'
+        run: |
+          ruff check src/sparkbrain/comparison/cx01
+          ruff check tests/cx01
+
+      - name: Ordinary CX01 CI and development validation
+        if: steps.readiness.outputs.ready == 'true'
+        run: |
+          pytest -q tests/cx01
+          python - <<'PY'
+          from sparkbrain.comparison.cx01.candidate import (
+              CandidateSpec,
+              build_candidate_grid,
+              candidate_component_structure_audit,
+              candidate_identifiability_audit,
+              candidate_structure_audit,
+          )
+          from sparkbrain.comparison.cx01.worlds import build_development_grid
+
+          development = build_development_grid()
+          for world in development:
+              world.validate()
+
+          candidate = CandidateSpec(
+              generation_id="cx01-candidate-002",
+              seeds=tuple(range(370110, 370120)),
+          )
+          worlds = build_candidate_grid(candidate)
+          if len(worlds) != 60:
+              raise SystemExit("candidate world cardinality is not 60")
+          candidate_structure_audit(candidate)
+          candidate_component_structure_audit(candidate)
+          candidate_identifiability_audit(candidate)
+          print(
+              f"validated development_worlds={len(development)} "
+              f"candidate_worlds={len(worlds)}"
+          )
+          PY
+
+      - name: Build and verify complete outcome-blind package
+        if: steps.readiness.outputs.ready == 'true'
+        env:
+          REVIEW_BUNDLE: ${{ runner.temp }}/cx01-candidate-002-prestart
+        run: |
+          rm -rf "${REVIEW_BUNDLE}"
+          mkdir -p "${REVIEW_BUNDLE}"
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          from sparkbrain.comparison.cx01.candidate import CandidatePurpose
+          from sparkbrain.comparison.cx01.prepare import (
+              prepare_outcome_blind_bundle,
+              verify_outcome_blind_bundle,
+          )
+
+          contract = json.loads(
+              Path("/tmp/cx01_candidate_002_contract.json").read_text(
+                  encoding="utf-8"
+              )
+          )
+          root = Path(os.environ["REVIEW_BUNDLE"])
+          package = root / "outcome_blind_package"
+          prepare_outcome_blind_bundle(
+              generation_id=os.environ["CANDIDATE_ID"],
+              seeds=tuple(range(370110, 370120)),
+              purpose=CandidatePurpose.FORMAL,
+              source_git_sha=os.environ["GITHUB_SHA"],
+              builder="cx01-candidate-002-prestart-workflow-v1",
+              execution_command=contract["execution_command"],
+              artifact_root=contract["artifact_root"],
+              output_dir=package,
+          )
+          verification = verify_outcome_blind_bundle(package)
+          expected = {
+              "candidate_generation_id": "cx01-candidate-002",
+              "declaration_count": 420,
+              "execution_seal_status": "NOT_ISSUED",
+              "formal_status": "NOT_STARTED",
+              "source_git_sha": os.environ["GITHUB_SHA"],
+              "verified": True,
+              "world_count": 60,
+          }
+          if verification != expected:
+              raise SystemExit(
+                  f"unexpected package verification: {verification!r}"
+              )
+
+          provenance = {
+              "candidate_id": os.environ["CANDIDATE_ID"],
+              "candidate_seed_band": "370110..370119",
+              "candidate_001_reference": contract,
+              "candidate_consumed": False,
+              "execution_seal_status": "NOT_ISSUED",
+              "formal_capability_executed": False,
+              "formal_score_present": False,
+              "formal_status": "NOT_STARTED",
+              "independent_review_status": "PENDING",
+              "package_verification": verification,
+              "source_freeze_branch": os.environ["SOURCE_FREEZE_BRANCH"],
+              "source_git_sha": os.environ["GITHUB_SHA"],
+              "workflow_run_id": int(os.environ["GITHUB_RUN_ID"]),
+          }
+          (root / "prestart_provenance.json").write_text(
+              json.dumps(provenance, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          (root / "INDEPENDENT_REVIEW_REQUIRED").write_text(
+              "No execution seal or STARTED marker exists. Independent review is required.\n",
+              encoding="utf-8",
+          )
+          PY
+          test ! -e "${REVIEW_BUNDLE}/outcome_blind_package/execution_seal.json"
+          test ! -e "${REVIEW_BUNDLE}/outcome_blind_package/STARTED"
+          test ! -e "${REVIEW_BUNDLE}/outcome_blind_package/results.jsonl"
+
+      - name: Upload pre-start review artifact
+        if: steps.readiness.outputs.ready == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: cx01-candidate-002-prestart-${{ github.sha }}
+          path: ${{ runner.temp }}/cx01-candidate-002-prestart
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Freeze exact source SHA without moving candidate-001
+        if: steps.readiness.outputs.ready == 'true'
+        shell: bash
+        run: |
+          existing="$(git ls-remote --heads origin "refs/heads/${SOURCE_FREEZE_BRANCH}" | awk '{print $1}')"
+          if [[ -n "${existing}" ]]; then
+            if [[ "${existing}" != "${GITHUB_SHA}" ]]; then
+              echo "Source freeze already exists at a different SHA; refusing movement" >&2
+              exit 1
+            fi
+            echo "Source freeze already points to the executed SHA"
+          else
+            git push origin "${GITHUB_SHA}:refs/heads/${SOURCE_FREEZE_BRANCH}"
+          fi
+
+      - name: Preserve package on a new immutable pre-start branch
+        if: steps.readiness.outputs.ready == 'true'
+        env:
+          REVIEW_BUNDLE: ${{ runner.temp }}/cx01-candidate-002-prestart
+        shell: bash
+        run: |
+          if git ls-remote --exit-code --heads origin "refs/heads/${PACKAGE_BRANCH}" >/dev/null 2>&1; then
+            echo "Package branch already exists; refusing regeneration or replacement" >&2
+            exit 1
+          fi
+          git switch --detach "${GITHUB_SHA}"
+          git switch -c "${PACKAGE_BRANCH}"
+          mkdir -p "$(dirname "${PACKAGE_ROOT}")"
+          cp -a "${REVIEW_BUNDLE}/outcome_blind_package" "${PACKAGE_ROOT}"
+          cp "${REVIEW_BUNDLE}/prestart_provenance.json" \
+            "$(dirname "${PACKAGE_ROOT}")/prestart_provenance.json"
+          cp "${REVIEW_BUNDLE}/INDEPENDENT_REVIEW_REQUIRED" \
+            "$(dirname "${PACKAGE_ROOT}")/INDEPENDENT_REVIEW_REQUIRED"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$(dirname "${PACKAGE_ROOT}")"
+          git commit -m "freeze(cx01): preserve candidate-002 outcome-blind pre-start package"
+          package_sha="$(git rev-parse HEAD)"
+          git push origin "HEAD:refs/heads/${PACKAGE_BRANCH}"
+          {
+            echo "### CX01 candidate-002 pre-start package"
+            echo "- source SHA: \`${GITHUB_SHA}\`"
+            echo "- source freeze: \`${SOURCE_FREEZE_BRANCH}\`"
+            echo "- package branch: \`${PACKAGE_BRANCH}\`"
+            echo "- package commit: \`${package_sha}\`"
+            echo "- execution seal: **NOT ISSUED**"
+            echo "- formal status: **NOT STARTED**"
+            echo "- independent review: **PENDING**"
+          } >> "${GITHUB_STEP_SUMMARY}"
