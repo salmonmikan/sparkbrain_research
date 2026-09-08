@@ -1,0 +1,141 @@
+name: CX01 Candidate-002 Pre-start Diagnostic
+
+on:
+  push:
+    branches:
+      - "automation/cx01-candidate-002-review-gate"
+
+permissions:
+  actions: read
+  contents: read
+  issues: write
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+      SOURCE_BRANCH: research/cx01-candidate-002-prestart
+      SOURCE_FREEZE_BRANCH: freeze/cx01-002-source
+      PACKAGE_BRANCH: prepare/cx01-candidate-002
+      DIAGNOSTIC_TITLE: "[CX01 PRE-START BLOCKED] candidate-002 package not produced"
+    steps:
+      - name: Inspect current pre-start refs and runs
+        id: inspect
+        shell: bash
+        run: |
+          source_sha="$(gh api \
+            "repos/${GITHUB_REPOSITORY}/git/ref/heads/${SOURCE_FREEZE_BRANCH}" \
+            --jq '.object.sha' 2>/dev/null || true)"
+          package_sha="$(gh api \
+            "repos/${GITHUB_REPOSITORY}/git/ref/heads/${PACKAGE_BRANCH}" \
+            --jq '.object.sha' 2>/dev/null || true)"
+          echo "source_sha=${source_sha}" >> "${GITHUB_OUTPUT}"
+          echo "package_sha=${package_sha}" >> "${GITHUB_OUTPUT}"
+          gh run list \
+            --repo "${GITHUB_REPOSITORY}" \
+            --branch "${SOURCE_BRANCH}" \
+            --limit 20 \
+            --json databaseId,name,status,conclusion,headSha,createdAt,updatedAt,url \
+            > /tmp/source-runs.json
+          cat /tmp/source-runs.json
+
+      - name: Close stale diagnostic when package exists
+        if: steps.inspect.outputs.source_sha != '' && steps.inspect.outputs.package_sha != ''
+        shell: bash
+        run: |
+          number="$(gh issue list \
+            --repo "${GITHUB_REPOSITORY}" \
+            --state open \
+            --search "${DIAGNOSTIC_TITLE} in:title" \
+            --json number,title \
+            --jq '.[] | select(.title == env.DIAGNOSTIC_TITLE) | .number' \
+            | head -1)"
+          if [[ -n "${number}" ]]; then
+            gh issue comment "${number}" \
+              --repo "${GITHUB_REPOSITORY}" \
+              --body "Pre-start source freeze and package now exist. Source: \`${{ steps.inspect.outputs.source_sha }}\`; package: \`${{ steps.inspect.outputs.package_sha }}\`. Closing this diagnostic; formal remains NOT STARTED."
+            gh issue close "${number}" --repo "${GITHUB_REPOSITORY}"
+          fi
+          echo "Package exists; no blocking diagnostic required."
+
+      - name: Collect failed logs when package is absent
+        if: steps.inspect.outputs.source_sha == '' || steps.inspect.outputs.package_sha == ''
+        shell: bash
+        run: |
+          failed_id="$(python - <<'PY'
+          import json
+          from pathlib import Path
+          runs = json.loads(Path('/tmp/source-runs.json').read_text())
+          for run in runs:
+              if run.get('conclusion') in {'failure', 'cancelled', 'timed_out', 'action_required'}:
+                  print(run['databaseId'])
+                  break
+          PY
+          )"
+          : > /tmp/failed-log.txt
+          if [[ -n "${failed_id}" ]]; then
+            gh run view "${failed_id}" \
+              --repo "${GITHUB_REPOSITORY}" \
+              --log-failed > /tmp/failed-log.txt 2>&1 || true
+          fi
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          runs = json.loads(Path('/tmp/source-runs.json').read_text())
+          lines = [
+              '## Machine-generated pre-start diagnostic',
+              '',
+              'The source freeze or complete outcome-blind package is absent, so no review PR, execution seal, or formal STARTED marker may be created.',
+              '',
+              '### Recent source-branch workflows',
+              '',
+              '| run | workflow | status | conclusion | head SHA |',
+              '|---:|---|---|---|---|',
+          ]
+          for run in runs[:20]:
+              lines.append(
+                  f"| {run['databaseId']} | {run['name']} | {run['status']} | "
+                  f"{run.get('conclusion')} | `{run['headSha'][:12]}` |"
+              )
+          log = Path('/tmp/failed-log.txt').read_text(errors='replace')
+          if log:
+              lines += [
+                  '',
+                  '### Latest failed-job log excerpt',
+                  '',
+                  '```text',
+                  log[-30000:],
+                  '```',
+              ]
+          lines += [
+              '',
+              'Formal status remains **NOT STARTED**. This issue is diagnostic only and does not authorize source repair against comparator outcomes.',
+          ]
+          Path('/tmp/diagnostic.md').write_text('\n'.join(lines) + '\n')
+          PY
+
+      - name: Create or update blocking diagnostic
+        if: steps.inspect.outputs.source_sha == '' || steps.inspect.outputs.package_sha == ''
+        shell: bash
+        run: |
+          number="$(gh issue list \
+            --repo "${GITHUB_REPOSITORY}" \
+            --state open \
+            --search "${DIAGNOSTIC_TITLE} in:title" \
+            --json number,title \
+            --jq '.[] | select(.title == env.DIAGNOSTIC_TITLE) | .number' \
+            | head -1)"
+          if [[ -z "${number}" ]]; then
+            gh issue create \
+              --repo "${GITHUB_REPOSITORY}" \
+              --title "${DIAGNOSTIC_TITLE}" \
+              --body-file /tmp/diagnostic.md
+          else
+            gh issue edit "${number}" \
+              --repo "${GITHUB_REPOSITORY}" \
+              --body-file /tmp/diagnostic.md
+          fi
+          exit 1
