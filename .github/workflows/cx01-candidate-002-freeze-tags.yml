@@ -1,0 +1,99 @@
+name: CX01 Candidate-002 Pre-start Freeze Tags
+
+on:
+  push:
+    branches:
+      - "automation/cx01-candidate-002-review-gate"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  freeze-tags:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      SOURCE_BRANCH: freeze/cx01-002-source
+      PACKAGE_BRANCH: prepare/cx01-candidate-002
+      SOURCE_TAG: freeze/cx01-002-source-v1
+      PACKAGE_TAG: freeze/cx01-002-prestart-package-v1
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: automation/cx01-candidate-002-review-gate
+
+      - name: Wait for both immutable pre-start refs
+        id: refs
+        shell: bash
+        run: |
+          for attempt in $(seq 1 40); do
+            source_sha="$(git ls-remote --heads origin "refs/heads/${SOURCE_BRANCH}" | awk '{print $1}')"
+            package_sha="$(git ls-remote --heads origin "refs/heads/${PACKAGE_BRANCH}" | awk '{print $1}')"
+            if [[ -n "${source_sha}" && -n "${package_sha}" ]]; then
+              {
+                echo "source_sha=${source_sha}"
+                echo "package_sha=${package_sha}"
+              } >> "${GITHUB_OUTPUT}"
+              exit 0
+            fi
+            echo "source/package refs not both present (attempt ${attempt}/40)"
+            sleep 15
+          done
+          echo "Pre-start refs are incomplete; no tag was created" >&2
+          exit 1
+
+      - name: Create source and package freeze tags exactly once
+        env:
+          SOURCE_SHA: ${{ steps.refs.outputs.source_sha }}
+          PACKAGE_SHA: ${{ steps.refs.outputs.package_sha }}
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin "${SOURCE_SHA}" "${PACKAGE_SHA}"
+
+          create_or_verify_tag() {
+            local tag="$1"
+            local expected="$2"
+            local message="$3"
+            local existing
+            local peeled
+            existing="$(git ls-remote --tags origin "refs/tags/${tag}" | awk '{print $1}')"
+            peeled="$(git ls-remote --tags origin "refs/tags/${tag}^{}" | awk '{print $1}')"
+            if [[ -n "${existing}" ]]; then
+              if [[ -z "${peeled}" ]]; then
+                peeled="${existing}"
+              fi
+              if [[ "${peeled}" != "${expected}" ]]; then
+                echo "Tag ${tag} exists at ${peeled}, expected ${expected}; refusing movement" >&2
+                exit 1
+              fi
+              echo "Verified existing tag ${tag} -> ${expected}"
+              return
+            fi
+            git tag -a "${tag}" "${expected}" -m "${message}"
+            git push origin "refs/tags/${tag}"
+          }
+
+          create_or_verify_tag \
+            "${SOURCE_TAG}" \
+            "${SOURCE_SHA}" \
+            "CX01 candidate-002 exact pre-start source; no execution seal, no STARTED, no formal result"
+          create_or_verify_tag \
+            "${PACKAGE_TAG}" \
+            "${PACKAGE_SHA}" \
+            "CX01 candidate-002 outcome-blind pre-start package; independent review pending; no formal result"
+
+      - name: Record non-execution boundary
+        shell: bash
+        run: |
+          {
+            echo "### CX01 candidate-002 pre-start freeze tags"
+            echo "- source tag: \`${SOURCE_TAG}\` -> \`${{ steps.refs.outputs.source_sha }}\`"
+            echo "- package tag: \`${PACKAGE_TAG}\` -> \`${{ steps.refs.outputs.package_sha }}\`"
+            echo "- execution seal: **NOT ISSUED**"
+            echo "- persistent STARTED: **ABSENT**"
+            echo "- formal capability: **NOT EXECUTED**"
+          } >> "${GITHUB_STEP_SUMMARY}"
