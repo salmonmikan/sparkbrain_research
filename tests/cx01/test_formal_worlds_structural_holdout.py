@@ -7,8 +7,10 @@ from sparkbrain.comparison.cx01.candidate import (
     CandidatePurpose,
     CandidateSpec,
     build_candidate_grid,
+    candidate_identifiability_audit,
     candidate_structure_audit,
 )
+from sparkbrain.comparison.cx01.formal_identifiability import audit_formal_world_identifiability
 from sparkbrain.comparison.cx01.formal_worlds import (
     build_formal_world,
     development_structure_signatures,
@@ -46,6 +48,15 @@ def test_candidate_grid_is_structurally_disjoint_from_development() -> None:
         assert row["unique_structure_count"] >= 5
 
 
+def test_candidate_grid_passes_outcome_blind_identifiability_audit() -> None:
+    candidate = _fixture()
+    audit = candidate_identifiability_audit(candidate)
+    assert audit["world_count"] == len(CX01Family) * len(candidate.seeds)
+    for family in CX01Family:
+        assert audit["family_pass_counts"][family.value] == len(candidate.seeds)
+        assert audit["family_world_counts"][family.value] == len(candidate.seeds)
+
+
 def test_formal_structure_signature_ignores_anonymous_token_identity() -> None:
     development = development_structure_signatures()
     for family in CX01Family:
@@ -78,8 +89,10 @@ def test_branch_holdout_uses_new_prefix_topology_and_nondevelopment_ratio() -> N
 
 def test_cycle_holdout_changes_contingency_schedule_shape() -> None:
     world = build_formal_world("cx01-fixture-direct-v2", CX01Family.CYCLE, 5303)
+    audit = audit_formal_world_identifiability(world)
     assert len(world.cycle_phases) == 7
     assert tuple(phase.exposures for phase in world.cycle_phases) != (2, 3, 2, 3, 2, 3)
+    assert audit["gates"]["global_majority_conflict"]
 
 
 def test_rejected_candidate001_seed_band_cannot_be_reused() -> None:
