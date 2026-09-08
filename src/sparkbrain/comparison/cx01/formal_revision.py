@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+from collections import Counter
 
 from .formal_worlds import build_formal_world
 from .worlds import (
@@ -13,7 +14,7 @@ from .worlds import (
     SequenceExposure,
 )
 
-FORMAL_GENERATOR_REVISION = "cx01-formal-structural-revision-v3"
+FORMAL_GENERATOR_REVISION = "cx01-formal-structural-revision-v4"
 
 
 def _digest(value: object) -> str:
@@ -129,6 +130,25 @@ def _revise_shared_context(world: CX01World, role: str) -> CX01World:
     )
 
 
+def _cycle_has_global_majority_conflict(world: CX01World) -> bool:
+    """Mirror the family-identifiability condition without consulting outcomes."""
+
+    if world.family is not CX01Family.CYCLE or world.cycle_cue is None:
+        raise RuntimeError("cycle conflict check requires a cycle world")
+
+    historical = Counter[str]()
+    for row in world.training:
+        if row.tokens and row.tokens[0] == world.cycle_cue:
+            historical[row.tokens[-1]] += row.exposures
+
+    for phase in world.cycle_phases:
+        historical[phase.target] += phase.exposures
+        maximum = max(historical.values(), default=0)
+        if historical[phase.target] < maximum:
+            return True
+    return False
+
+
 def _revise_cycle(world: CX01World) -> CX01World:
     fourth_target = _fresh_token(world, "cycle-fourth-target")
     phases = (
@@ -196,19 +216,35 @@ def build_revised_formal_world(
 ) -> CX01World:
     """Build the pre-formal revision with seed-conditioned topology variation.
 
-    The base structural generator remains intact for audit history. This source
-    revision deterministically changes one family-valid topological degree of
-    freedom on odd seeds, without reading comparator outcomes or scores.
+    Odd seeds deterministically change one family-valid topological degree of
+    freedom. A cycle world that would otherwise lack the preregistered
+    historical-majority conflict receives the same outcome-blind fourth-target
+    construction even on an even seed. This is a generator-domain correction:
+    it depends only on the generated world structure and never on comparator
+    results, scores, thresholds, or rapid-cycle performance.
     """
 
     world = build_formal_world(generation_id, family, seed)
+
+    if family is CX01Family.CYCLE:
+        needs_topology_revision = seed % 2 != 0
+        needs_identifiability_revision = not _cycle_has_global_majority_conflict(world)
+        if needs_topology_revision or needs_identifiability_revision:
+            revised = _revise_cycle(world)
+            revised.validate()
+            if not _cycle_has_global_majority_conflict(revised):
+                raise RuntimeError(
+                    "cycle revision failed to establish family identifiability"
+                )
+            return revised
+        return world
+
     if seed % 2 == 0:
         return world
 
     revisers = {
         CX01Family.HIGH_ORDER: _revise_high_order,
         CX01Family.TIMING: lambda value: _revise_shared_context(value, "timing"),
-        CX01Family.CYCLE: _revise_cycle,
         CX01Family.BRANCH: lambda value: _revise_shared_context(value, "branch"),
         CX01Family.SELECTIVITY: _revise_selectivity,
         CX01Family.LOOP: _revise_loop,
