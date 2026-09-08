@@ -20,6 +20,7 @@ from .freeze import (
     ExecutionSeal,
     FreezeManifest,
     formal_identifiability_audit_hash,
+    formal_seed_selection_hash,
     formal_structure_audit_hash,
     require_execution_seal,
 )
@@ -46,6 +47,11 @@ def _validate_formal_binding(
         raise RuntimeError("candidate world grid does not match frozen manifest")
     if declaration_bundle_hash(candidate) != manifest.declaration_bundle_hash:
         raise RuntimeError("candidate declarations do not match frozen manifest")
+    if (
+        formal_seed_selection_hash(manifest.source_git_sha, candidate)
+        != manifest.formal_seed_selection_hash
+    ):
+        raise RuntimeError("candidate seed selection does not match frozen manifest")
     if formal_structure_audit_hash(candidate) != manifest.formal_structure_audit_hash:
         raise RuntimeError("candidate structural holdout audit does not match frozen manifest")
     if (
