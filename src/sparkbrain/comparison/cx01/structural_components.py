@@ -10,7 +10,7 @@ from typing import Any
 from .formal_revision import FORMAL_GENERATOR_REVISION
 from .worlds import CX01Family, CX01World, build_development_grid
 
-COMPONENT_AUDIT_POLICY_VERSION = "cx01-component-structural-audit-v1"
+COMPONENT_AUDIT_POLICY_VERSION = "cx01-component-structural-audit-v2"
 STRUCTURAL_AXES = (
     "topology",
     "timing",
@@ -18,6 +18,14 @@ STRUCTURAL_AXES = (
     "contingency",
 )
 ALL_AXES = (*STRUCTURAL_AXES, "token_assignment", "full")
+
+_CONTINGENCY_APPLICABLE_FAMILIES = frozenset(
+    {
+        CX01Family.CYCLE,
+        CX01Family.BRANCH,
+        CX01Family.LOOP,
+    }
+)
 
 _REQUIRED_SEED_DIVERSITY: dict[CX01Family, tuple[str, ...]] = {
     CX01Family.HIGH_ORDER: (
@@ -257,10 +265,7 @@ def structural_component_states(world: CX01World) -> dict[str, Any]:
 
 def structural_component_signatures(world: CX01World) -> dict[str, str]:
     states = structural_component_states(world)
-    return {
-        axis: _digest(states[axis])
-        for axis in ALL_AXES
-    }
+    return {axis: _digest(states[axis]) for axis in ALL_AXES}
 
 
 def development_component_signatures() -> dict[
@@ -282,6 +287,13 @@ def development_component_signatures() -> dict[
         }
         for family, axes in grouped.items()
     }
+
+
+def _axis_applicable(family: CX01Family, axis: str) -> bool:
+    return not (
+        axis == "contingency"
+        and family not in _CONTINGENCY_APPLICABLE_FAMILIES
+    )
 
 
 def component_structural_report(
@@ -317,16 +329,26 @@ def component_structural_report(
             unique_values = set(values)
             overlap = unique_values.intersection(development[family][axis])
             novel = unique_values.difference(development[family][axis])
-            required_seed_diversity = axis in _REQUIRED_SEED_DIVERSITY[family]
+            applicable = _axis_applicable(family, axis)
+            required_seed_diversity = (
+                applicable and axis in _REQUIRED_SEED_DIVERSITY[family]
+            )
             minimum_unique = 2 if required_seed_diversity else 1
             if axis == "full":
                 minimum_unique = min(5, len(family_worlds))
-            axis_passed = (
-                len(novel) >= 1
-                and len(unique_values) >= minimum_unique
-            )
-            if axis == "full":
-                axis_passed = axis_passed and not overlap
+
+            if not applicable:
+                axis_passed = True
+                novelty_required = False
+            else:
+                novelty_required = True
+                axis_passed = (
+                    len(novel) >= 1
+                    and len(unique_values) >= minimum_unique
+                )
+                if axis == "full":
+                    axis_passed = axis_passed and not overlap
+
             if not axis_passed:
                 violations.append(
                     f"axis:{family.value}:{axis}:"
@@ -335,10 +357,12 @@ def component_structural_report(
                     f"overlap={len(overlap)}"
                 )
             axis_rows[axis] = {
+                "applicable": applicable,
                 "development_overlap_count": len(overlap),
                 "formal_novel_count": len(novel),
                 "formal_unique_count": len(unique_values),
                 "minimum_unique_required": minimum_unique,
+                "novelty_required": novelty_required,
                 "passed": axis_passed,
                 "required_seed_diversity": required_seed_diversity,
             }
@@ -352,7 +376,12 @@ def component_structural_report(
                 axis: signatures[axis] not in development[family][axis]
                 for axis in STRUCTURAL_AXES
             }
-            novelty_count = sum(novelty.values())
+            applicable_novelty = {
+                axis: value
+                for axis, value in novelty.items()
+                if _axis_applicable(family, axis)
+            }
+            novelty_count = sum(applicable_novelty.values())
             row_passed = (
                 signatures["full"] not in development[family]["full"]
                 and novelty_count >= 2
