@@ -21,6 +21,10 @@ jobs:
       PACKAGE_BRANCH: prepare/cx01-candidate-002
       PACKAGE_ROOT: artifacts/research/cx01/candidate_002/prestart_package
       REJECTED_FREEZE_REF: refs/remotes/origin/freeze/cx01-001
+      REJECTED_FREEZE_COMMIT: 97d47af0b98ce4e34918aeed63b8e9d975e37838
+      REJECTED_PACKAGE_COMMIT: e1a1d9c1435de8aaf875aa40b5e62a7f40de9732
+      REJECTED_MANIFEST_PATH: cx01-control/freeze_manifest.json
+      REJECTED_SOURCE_SHA: f2c5ead5afda7d731033d585511ea68dc066a162
     steps:
       - uses: actions/checkout@v4
         with:
@@ -50,8 +54,16 @@ jobs:
 
       - name: Verify candidate and rejected-candidate guards
         if: steps.readiness.outputs.ready == 'true'
+        shell: bash
         run: |
           git fetch origin "refs/heads/freeze/cx01-001:${REJECTED_FREEZE_REF}"
+          git fetch origin "${REJECTED_PACKAGE_COMMIT}"
+          actual_rejected_freeze="$(git rev-parse "${REJECTED_FREEZE_REF}")"
+          if [[ "${actual_rejected_freeze}" != "${REJECTED_FREEZE_COMMIT}" ]]; then
+            echo "Rejected candidate-001 freeze moved; refusing to continue" >&2
+            exit 1
+          fi
+          git cat-file -e "${REJECTED_PACKAGE_COMMIT}^{commit}"
           python - <<'PY'
           from sparkbrain.comparison.cx01.candidate import CandidateSpec
 
@@ -73,63 +85,54 @@ jobs:
               raise SystemExit("rejected candidate-001 was accepted by validation")
           PY
 
-      - name: Recover unchanged execution contract from rejected freeze
+      - name: Recover unchanged execution contract from rejected package record
         if: steps.readiness.outputs.ready == 'true'
         run: |
           python - <<'PY'
           import hashlib
           import json
+          import os
           import subprocess
           from pathlib import Path
 
-          ref = "refs/remotes/origin/freeze/cx01-001"
-          paths = subprocess.check_output(
-              ["git", "ls-tree", "-r", "--name-only", ref],
-              text=True,
-          ).splitlines()
-          manifest_paths = [
-              path for path in paths if path.endswith("freeze_manifest.json")
-          ]
-          selected = None
-          for path in manifest_paths:
-              raw = subprocess.check_output(
-                  ["git", "show", f"{ref}:{path}"],
-              )
-              try:
-                  value = json.loads(raw)
-              except (json.JSONDecodeError, UnicodeDecodeError):
-                  continue
-              source_sha = str(value.get("source_git_sha", ""))
-              if source_sha.startswith("f2c5ead5"):
-                  selected = (path, raw, value)
-                  break
-          if selected is None:
-              raise SystemExit(
-                  "could not identify candidate-001 freeze manifest without mutation"
-              )
-
-          path, raw, value = selected
-          execution_command = str(value["execution_command"])
-          artifact_root = str(value["artifact_root"])
-          replacements = (
-              ("cx01-candidate-001", "cx01-candidate-002"),
-              ("cx01-001", "cx01-002"),
-              ("candidate_001", "candidate_002"),
+          package_commit = os.environ["REJECTED_PACKAGE_COMMIT"]
+          manifest_path = os.environ["REJECTED_MANIFEST_PATH"]
+          raw = subprocess.check_output(
+              ["git", "show", f"{package_commit}:{manifest_path}"],
           )
-          for old, new in replacements:
-              execution_command = execution_command.replace(old, new)
-              artifact_root = artifact_root.replace(old, new)
+          value = json.loads(raw)
+          if value.get("source_git_sha") != os.environ["REJECTED_SOURCE_SHA"]:
+              raise SystemExit("candidate-001 package manifest source SHA mismatch")
+          if value.get("status") != "FROZEN":
+              raise SystemExit("candidate-001 package manifest is not frozen")
 
+          rejected_freeze_commit = subprocess.check_output(
+              ["git", "rev-parse", os.environ["REJECTED_FREEZE_REF"]],
+              text=True,
+          ).strip()
+          if rejected_freeze_commit != os.environ["REJECTED_FREEZE_COMMIT"]:
+              raise SystemExit("candidate-001 rejected freeze moved")
+
+          immutable_fields = (
+              "protocol_version",
+              "development_grid_hash",
+              "comparator_inventory",
+              "privilege_inventory_hash",
+              "schedule_policy_hash",
+              "scoring_policy_hash",
+              "result_schema_hash",
+              "resource_schema_hash",
+              "execution_command",
+              "artifact_root",
+          )
+          immutable_contract = {name: value[name] for name in immutable_fields}
           contract = {
-              "artifact_root": artifact_root,
-              "candidate_001_freeze_commit": subprocess.check_output(
-                  ["git", "rev-parse", ref],
-                  text=True,
-              ).strip(),
-              "candidate_001_manifest_path": path,
+              "candidate_001_freeze_commit": rejected_freeze_commit,
+              "candidate_001_manifest_path": manifest_path,
               "candidate_001_manifest_sha256": hashlib.sha256(raw).hexdigest(),
+              "candidate_001_package_commit": package_commit,
               "candidate_001_source_sha": value["source_git_sha"],
-              "execution_command": execution_command,
+              "immutable_contract": immutable_contract,
               "source_contract_reused_without_scoring_change": True,
           }
           Path("/tmp/cx01_candidate_002_contract.json").write_text(
@@ -169,9 +172,13 @@ jobs:
           worlds = build_candidate_grid(candidate)
           if len(worlds) != 60:
               raise SystemExit("candidate world cardinality is not 60")
-          candidate_structure_audit(candidate)
-          candidate_component_structure_audit(candidate)
-          candidate_identifiability_audit(candidate)
+          audits = (
+              candidate_structure_audit(candidate),
+              candidate_component_structure_audit(candidate),
+              candidate_identifiability_audit(candidate),
+          )
+          if not all(bool(row.get("passed")) for row in audits):
+              raise SystemExit("candidate structural audit did not pass")
           print(
               f"validated development_worlds={len(development)} "
               f"candidate_worlds={len(worlds)}"
@@ -201,6 +208,7 @@ jobs:
                   encoding="utf-8"
               )
           )
+          immutable = contract["immutable_contract"]
           root = Path(os.environ["REVIEW_BUNDLE"])
           package = root / "outcome_blind_package"
           prepare_outcome_blind_bundle(
@@ -208,9 +216,9 @@ jobs:
               seeds=tuple(range(370110, 370120)),
               purpose=CandidatePurpose.FORMAL,
               source_git_sha=os.environ["GITHUB_SHA"],
-              builder="cx01-candidate-002-prestart-workflow-v1",
-              execution_command=contract["execution_command"],
-              artifact_root=contract["artifact_root"],
+              builder="cx01-candidate-002-prestart-workflow-v2",
+              execution_command=immutable["execution_command"],
+              artifact_root=immutable["artifact_root"],
               output_dir=package,
           )
           verification = verify_outcome_blind_bundle(package)
@@ -228,6 +236,23 @@ jobs:
                   f"unexpected package verification: {verification!r}"
               )
 
+          new_manifest = json.loads(
+              (package / "freeze_manifest.json").read_text(encoding="utf-8")
+          )
+          mismatches = {
+              name: {
+                  "candidate_001": expected_value,
+                  "candidate_002": new_manifest.get(name),
+              }
+              for name, expected_value in immutable.items()
+              if new_manifest.get(name) != expected_value
+          }
+          if mismatches:
+              raise SystemExit(
+                  "immutable execution/scoring contract changed: "
+                  + json.dumps(mismatches, sort_keys=True)
+              )
+
           provenance = {
               "candidate_id": os.environ["CANDIDATE_ID"],
               "candidate_seed_band": "370110..370119",
@@ -237,6 +262,7 @@ jobs:
               "formal_capability_executed": False,
               "formal_score_present": False,
               "formal_status": "NOT_STARTED",
+              "immutable_execution_contract_verified": True,
               "independent_review_status": "PENDING",
               "package_verification": verification,
               "source_freeze_branch": os.environ["SOURCE_FREEZE_BRANCH"],
@@ -310,6 +336,7 @@ jobs:
             echo "- source freeze: \`${SOURCE_FREEZE_BRANCH}\`"
             echo "- package branch: \`${PACKAGE_BRANCH}\`"
             echo "- package commit: \`${package_sha}\`"
+            echo "- immutable execution/scoring contract: **VERIFIED**"
             echo "- execution seal: **NOT ISSUED**"
             echo "- formal status: **NOT STARTED**"
             echo "- independent review: **PENDING**"
