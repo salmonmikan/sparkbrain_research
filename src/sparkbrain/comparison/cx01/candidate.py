@@ -16,6 +16,8 @@ from .worlds import (
     CX01World,
 )
 
+CX01_PROTOCOL_VERSION = "cx01-comparator-protocol-2"
+
 CX01_COMPARATOR_INVENTORY = (
     ComparatorKind.G3_FIRST_ORDER,
     ComparatorKind.G4_ASSEMBLY,
@@ -63,9 +65,14 @@ class CandidateSpec:
     generation_id: str
     seeds: tuple[int, ...]
     purpose: CandidatePurpose = CandidatePurpose.FORMAL
-    protocol_version: str = "cx01-comparator-protocol-2"
+    protocol_version: str = CX01_PROTOCOL_VERSION
 
     def validate(self) -> None:
+        if self.protocol_version != CX01_PROTOCOL_VERSION:
+            raise ValueError(
+                f"candidate protocol must be {CX01_PROTOCOL_VERSION}; "
+                f"observed={self.protocol_version}"
+            )
         if not self.generation_id or self.generation_id == DEVELOPMENT_GENERATION_ID:
             raise ValueError("candidate requires a fresh non-development generation")
         if len(self.seeds) < 10 or len(set(self.seeds)) != len(self.seeds):
@@ -116,7 +123,7 @@ class CandidateSpec:
             generation_id=str(state["generation_id"]),
             seeds=tuple(int(seed) for seed in state["seeds"]),
             purpose=CandidatePurpose(str(state.get("purpose", CandidatePurpose.FORMAL.value))),
-            protocol_version=str(state.get("protocol_version", "cx01-comparator-protocol-2")),
+            protocol_version=str(state.get("protocol_version", CX01_PROTOCOL_VERSION)),
         )
         spec.validate()
         return spec
