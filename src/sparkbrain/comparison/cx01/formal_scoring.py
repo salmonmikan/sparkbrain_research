@@ -23,6 +23,7 @@ from .formal_policy import FormalScoringPolicy
 from .freeze import (
     FreezeManifest,
     formal_identifiability_audit_hash,
+    formal_seed_selection_hash,
     formal_structure_audit_hash,
 )
 from .privilege import privilege_profile
@@ -201,6 +202,11 @@ def _validate_manifest_candidate_binding(
         raise RuntimeError("analysis candidate grid does not match frozen manifest")
     if declaration_bundle_hash(candidate) != manifest.declaration_bundle_hash:
         raise RuntimeError("analysis declarations do not match frozen manifest")
+    if (
+        formal_seed_selection_hash(manifest.source_git_sha, candidate)
+        != manifest.formal_seed_selection_hash
+    ):
+        raise RuntimeError("analysis seed selection does not match frozen manifest")
     if formal_structure_audit_hash(candidate) != manifest.formal_structure_audit_hash:
         raise RuntimeError("analysis structural audit does not match frozen manifest")
     if (
