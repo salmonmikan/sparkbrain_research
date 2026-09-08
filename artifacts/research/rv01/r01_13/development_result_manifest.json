@@ -1,0 +1,19 @@
+{
+  "artifact_id": 10059084120,
+  "artifact_name": "rv01-r01-13-development-241669c92a0fd93b1f98ffe5e5dcaf8fd97c4de2",
+  "artifact_zip_sha256": "84f393e25af3de848cf517872592885649801be2e0a3d3e98ccbc9f14a6c3bd5",
+  "development_result_json_sha256": "1ab43a8950be572b163e7bba4950b23d5258933e5463dc3d944f41eaea2adf60",
+  "execution_source_git_sha": "241669c92a0fd93b1f98ffe5e5dcaf8fd97c4de2",
+  "held_out_capability_executed": false,
+  "phase": "development",
+  "probe_count": 100,
+  "protocol_id": "rv01-r01-13-activity-matched-discrimination-v1",
+  "r01_12f_canonical_payload_hash": "c014c0513f113e48ddcf5322579106a318f220236d05f25d39c3bd47e88f0673",
+  "r01_12f_raw_result_sha256": "e3f0cef5428c1b9a550c986404c1435952bd23fd0bdc0cc24a73b8e0c9f70ff4",
+  "status": "development-fixed-heldout-closed",
+  "suite_hash": "ec6228563d5060872345c582b87c18cae03af4ad36895d08f4ee9f4b18b0178e",
+  "workflow_run_id": 34233875594,
+  "workflow_run_number": 1,
+  "world_count": 25,
+  "world_grid_hash": "30e40c0bf036383923fd83fa22e83aa3626a92f6cf3946d1a388f37c5103a2dd"
+}
