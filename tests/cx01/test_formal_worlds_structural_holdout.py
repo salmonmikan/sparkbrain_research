@@ -112,3 +112,15 @@ def test_rejected_candidate001_generation_id_cannot_be_reused() -> None:
             seeds=tuple(range(700000, 700010)),
             purpose=CandidatePurpose.FORMAL,
         ).validate()
+
+
+def test_protocol_v1_candidate_state_cannot_enter_structural_holdout_source() -> None:
+    with pytest.raises(ValueError, match="protocol must be cx01-comparator-protocol-2"):
+        CandidateSpec.from_state_dict(
+            {
+                "generation_id": "cx01-candidate-002",
+                "protocol_version": "cx01-comparator-protocol-1",
+                "purpose": "formal",
+                "seeds": list(range(700000, 700010)),
+            }
+        )
