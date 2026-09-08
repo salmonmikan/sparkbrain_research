@@ -1,0 +1,316 @@
+name: CX01 Pre-start Source Repair Once
+
+on:
+  push:
+    branches:
+      - "research/cx01-candidate-002-prestart"
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    if: >-
+      github.actor != 'github-actions[bot]' &&
+      !contains(github.event.head_commit.message, 'close remaining pre-start source blockers')
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/cx01-candidate-002-prestart
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Repair source contracts without capability inspection
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          def replace_once(path: Path, old: str, new: str) -> None:
+              text = path.read_text(encoding="utf-8")
+              if text.count(old) != 1:
+                  raise SystemExit(
+                      f"expected exactly one replacement in {path}: "
+                      f"found {text.count(old)}"
+                  )
+              path.write_text(
+                  text.replace(old, new, 1),
+                  encoding="utf-8",
+                  newline="\n",
+              )
+
+          formal_worlds = Path(
+              "src/sparkbrain/comparison/cx01/formal_worlds.py"
+          )
+          replace_once(
+              formal_worlds,
+              '''    return {
+                  "family_rows": family_rows,
+                  "policy_version": FORMAL_STRUCTURE_POLICY_VERSION,
+                  "world_count": sum(len(values) for values in grouped.values()),
+              }
+          ''',
+              '''    return {
+                  "family_rows": family_rows,
+                  "passed": True,
+                  "policy_version": FORMAL_STRUCTURE_POLICY_VERSION,
+                  "world_count": sum(len(values) for values in grouped.values()),
+              }
+          ''',
+          )
+
+          identifiability = Path(
+              "src/sparkbrain/comparison/cx01/formal_identifiability.py"
+          )
+          replace_once(
+              identifiability,
+              '''    return {
+                  "family_pass_counts": by_family,
+                  "family_world_counts": counts,
+                  "world_count": len(rows),
+              }
+          ''',
+              '''    return {
+                  "family_pass_counts": by_family,
+                  "family_world_counts": counts,
+                  "passed": True,
+                  "world_count": len(rows),
+              }
+          ''',
+          )
+
+          development = Path(
+              "src/sparkbrain/comparison/cx01/development.py"
+          )
+          old_loop = '''def _evaluate_loop(
+              model: ComparatorProtocol,
+              world: CX01World,
+              now: float,
+          ) -> tuple[FamilyEvidence, float]:
+              if world.loop is None:
+                  raise ValueError("loop world is missing loop specification")
+              # The cue is a read-only query. Only the later external consequence is
+              # permitted to become new evidence; the generated proposal itself never is.
+              now = _feed(
+                  model,
+                  world.loop.cue_prefix,
+                  (5.0,) * (len(world.loop.cue_prefix) - 1),
+                  now,
+                  learn=False,
+              )
+              before_observed = model.observed_external_events
+              generated = model.generate(max_steps=1)
+              after_generated_observed = model.observed_external_events
+              correct = int(bool(generated) and generated[0].token == world.loop.expected_generated)
+              violations = int(after_generated_observed != before_observed)
+              external_time = max(
+                  now,
+                  generated[0].timestamp_ms + 8.0 if generated else now + 8.0,
+              )
+              model.observe_external(
+                  ComparatorEvent(
+                      world.loop.external_consequence,
+                      external_time,
+                      EventOrigin.EXTERNAL,
+                      False,
+                  ),
+                  learn=True,
+              )
+              model.finalize_episode()
+              return (
+                  FamilyEvidence(
+                      family=world.family,
+                      correct_probes=correct,
+                      total_probes=1,
+                      self_confirmation_violations=violations,
+                  ),
+                  external_time + 25.0,
+              )
+          '''
+          new_loop = '''def _evaluate_loop(
+              model: ComparatorProtocol,
+              world: CX01World,
+              now: float,
+          ) -> tuple[FamilyEvidence, float]:
+              if world.loop is None:
+                  raise ValueError("loop world is missing loop specification")
+              if len(world.probes) != 1:
+                  raise ValueError("loop world requires exactly one declared cue probe")
+              probe = world.probes[0]
+              if probe.prefix != world.loop.cue_prefix:
+                  raise ValueError("loop probe prefix must match the provenance cue")
+              if probe.expected_distribution != ((world.loop.expected_generated, 1.0),):
+                  raise ValueError("loop probe target must match the generated proposal")
+              # The cue is read-only. Only the later external consequence may
+              # become evidence; the generated proposal itself never does.
+              # Feed the declared lags so a timing-aware comparator receives the
+              # same anonymous temporal context that was present in training.
+              now = _feed(
+                  model,
+                  probe.prefix,
+                  probe.lags_ms,
+                  now,
+                  learn=False,
+              )
+              before_observed = model.observed_external_events
+              generated = model.generate(max_steps=1)
+              after_generated_observed = model.observed_external_events
+              correct = int(
+                  bool(generated)
+                  and generated[0].token == world.loop.expected_generated
+              )
+              violations = int(after_generated_observed != before_observed)
+              external_time = max(
+                  now,
+                  generated[0].timestamp_ms + 8.0 if generated else now + 8.0,
+              )
+              model.observe_external(
+                  ComparatorEvent(
+                      world.loop.external_consequence,
+                      external_time,
+                      EventOrigin.EXTERNAL,
+                      False,
+                  ),
+                  learn=True,
+              )
+              model.finalize_episode()
+              return (
+                  FamilyEvidence(
+                      family=world.family,
+                      correct_probes=correct,
+                      total_probes=1,
+                      self_confirmation_violations=violations,
+                  ),
+                  external_time + 25.0,
+              )
+          '''
+          replace_once(development, old_loop, new_loop)
+
+          regression = Path(
+              "tests/cx01/test_prestart_contract_regressions.py"
+          )
+          if regression.exists():
+              raise SystemExit(f"regression file already exists: {regression}")
+          regression.write_text(
+              '''from __future__ import annotations
+
+          from types import SimpleNamespace
+          from typing import Any
+
+          from sparkbrain.comparison.cx01.development import _evaluate_loop
+          from sparkbrain.comparison.cx01.formal_revision import (
+              build_revised_formal_world,
+          )
+          from sparkbrain.comparison.cx01.worlds import CX01Family
+
+
+          class _RecordingLoopModel:
+              def __init__(self, expected_generated: str) -> None:
+                  self.expected_generated = expected_generated
+                  self.events: list[tuple[Any, bool]] = []
+                  self.observed_external_events = 0
+
+              def observe_external(
+                  self,
+                  event: Any,
+                  *,
+                  learn: bool = True,
+              ) -> None:
+                  self.events.append((event, learn))
+                  self.observed_external_events += 1
+
+              def generate(
+                  self,
+                  *,
+                  max_steps: int,
+              ) -> tuple[SimpleNamespace, ...]:
+                  assert max_steps == 1
+                  timestamp = self.events[-1][0].timestamp_ms + 1.0
+                  return (
+                      SimpleNamespace(
+                          token=self.expected_generated,
+                          timestamp_ms=timestamp,
+                      ),
+                  )
+
+              def finalize_episode(self) -> None:
+                  pass
+
+
+          def test_loop_evaluation_uses_declared_probe_timing() -> None:
+              world = build_revised_formal_world(
+                  "cx01-fixture-loop-timing-regression",
+                  CX01Family.LOOP,
+                  5001,
+              )
+              assert world.loop is not None
+              probe = world.probes[0]
+              assert probe.lags_ms
+              assert probe.lags_ms != (5.0,) * len(probe.lags_ms)
+
+              model = _RecordingLoopModel(world.loop.expected_generated)
+              evidence, _ = _evaluate_loop(model, world, 100.0)
+
+              cue_events = [
+                  event
+                  for event, _ in model.events[: len(probe.prefix)]
+              ]
+              observed_lags = tuple(
+                  right.timestamp_ms - left.timestamp_ms
+                  for left, right in zip(
+                      cue_events,
+                      cue_events[1:],
+                      strict=False,
+                  )
+              )
+              assert observed_lags == probe.lags_ms
+              assert evidence.correct_probes == 1
+              assert evidence.self_confirmation_violations == 0
+          ''',
+              encoding="utf-8",
+              newline="\n",
+          )
+          PY
+
+      - name: Validate source, development contract, and outcome-blind audits
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e .
+          python -m pip install "ruff==0.16.6" pytest
+          ruff check src/sparkbrain/comparison/cx01 tests/cx01
+          pytest -q tests/cx01
+          python -m sparkbrain.comparison.cx01.development \
+            > /tmp/cx01-development.json
+          python - <<'PY'
+          from sparkbrain.comparison.cx01.candidate import (
+              CandidateSpec,
+              candidate_component_structure_audit,
+              candidate_identifiability_audit,
+              candidate_structure_audit,
+          )
+
+          candidate = CandidateSpec(
+              generation_id="cx01-candidate-002",
+              seeds=tuple(range(370110, 370120)),
+          )
+          assert candidate_structure_audit(candidate)["passed"] is True
+          assert candidate_component_structure_audit(candidate)["passed"] is True
+          assert candidate_identifiability_audit(candidate)["passed"] is True
+          PY
+
+      - name: Commit repaired source only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            src/sparkbrain/comparison/cx01/development.py \
+            src/sparkbrain/comparison/cx01/formal_identifiability.py \
+            src/sparkbrain/comparison/cx01/formal_worlds.py \
+            tests/cx01/test_prestart_contract_regressions.py
+          git commit -m \
+            "fix(cx01): close remaining pre-start source blockers"
+          git push origin HEAD:research/cx01-candidate-002-prestart
