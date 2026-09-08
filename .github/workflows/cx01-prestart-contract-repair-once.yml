@@ -27,28 +27,30 @@ jobs:
           python - <<'PY'
           from pathlib import Path
 
-          def replace_once(path: Path, old: str, new: str) -> None:
-              text = path.read_text(encoding="utf-8")
-              if text.count(old) != 1:
-                  raise SystemExit(
-                      f"expected exactly one replacement in {path}: found {text.count(old)}"
-                  )
-              path.write_text(text.replace(old, new, 1), encoding="utf-8")
+          def load(path: str) -> tuple[Path, str]:
+              target = Path(path)
+              return target, target.read_text(encoding="utf-8")
 
-          revision = Path("src/sparkbrain/comparison/cx01/formal_revision.py")
-          replace_once(
-              revision,
-              'FORMAL_GENERATOR_REVISION = "cx01-formal-structural-revision-v3"',
-              'FORMAL_GENERATOR_REVISION = "cx01-formal-structural-revision-v4"',
+          def store(path: Path, text: str) -> None:
+              path.write_text(text, encoding="utf-8", newline="\n")
+
+          revision_path, revision = load(
+              "src/sparkbrain/comparison/cx01/formal_revision.py"
           )
-          cycle_anchor = '''def _revise_selectivity(world: CX01World) -> CX01World:
-          '''
-          cycle_helpers = '''def _has_global_historical_majority_conflict(world: CX01World) -> bool:
-              """Mirror the outcome-blind CYCLE identifiability predicate.
-
-              This inspects only the declared training and contingency schedule. It
-              never instantiates a comparator or reads a capability result.
-              """
+          old_revision = 'FORMAL_GENERATOR_REVISION = "cx01-formal-structural-revision-v3"'
+          if revision.count(old_revision) != 1:
+              raise SystemExit("unexpected formal generator revision")
+          revision = revision.replace(
+              old_revision,
+              'FORMAL_GENERATOR_REVISION = "cx01-formal-structural-revision-v4"',
+              1,
+          )
+          selectivity_marker = "\ndef _revise_selectivity(world: CX01World) -> CX01World:\n"
+          if revision.count(selectivity_marker) != 1:
+              raise SystemExit("selectivity insertion boundary not found")
+          cycle_helpers = '''
+          def _has_global_historical_majority_conflict(world: CX01World) -> bool:
+              """Mirror the outcome-blind CYCLE identifiability predicate."""
 
               if world.family is not CX01Family.CYCLE or world.cycle_cue is None:
                   raise ValueError("cycle identifiability requires a CYCLE world")
@@ -67,13 +69,10 @@ jobs:
 
 
           def _ensure_cycle_identifiability(world: CX01World) -> CX01World:
-              """Fail closed by making the preregistered CYCLE family identifiable.
+              """Enforce the preregistered family gate before capability execution.
 
-              Some valid source/seed namespaces produced schedules that a global
-              historical-majority rule could follow at every phase. Before any
-              capability execution, insert one anonymous low-exposure contingency
-              only when that structural defect is present. This is a family-contract
-              repair, not comparator-specific tuning.
+              This inspects only anonymous training/schedule structure. It neither
+              instantiates a comparator nor reads scores or capability outcomes.
               """
 
               if _has_global_historical_majority_conflict(world):
@@ -97,30 +96,33 @@ jobs:
               )
               revised.validate()
               if not _has_global_historical_majority_conflict(revised):
-                  raise RuntimeError("cycle identifiability repair did not establish conflict")
+                  raise RuntimeError("cycle identifiability gate remains unsatisfied")
               return revised
 
-
-          def _revise_selectivity(world: CX01World) -> CX01World:
           '''
-          replace_once(revision, cycle_anchor, cycle_helpers)
-          old_tail = '''    world = build_formal_world(generation_id, family, seed)
-              if seed % 2 == 0:
-                  return world
+          revision = revision.replace(
+              selectivity_marker,
+              "\n" + cycle_helpers + "def _revise_selectivity(world: CX01World) -> CX01World:\n",
+              1,
+          )
+          build_marker = "def build_revised_formal_world(\n"
+          prefix, marker, _ = revision.partition(build_marker)
+          if not marker:
+              raise SystemExit("revised formal-world builder boundary not found")
+          revised_builder = '''def build_revised_formal_world(
+              generation_id: str,
+              family: CX01Family,
+              seed: int,
+          ) -> CX01World:
+              """Build the pre-formal revision with seed-conditioned variation.
 
-              revisers = {
-                  CX01Family.HIGH_ORDER: _revise_high_order,
-                  CX01Family.TIMING: lambda value: _revise_shared_context(value, "timing"),
-                  CX01Family.CYCLE: _revise_cycle,
-                  CX01Family.BRANCH: lambda value: _revise_shared_context(value, "branch"),
-                  CX01Family.SELECTIVITY: _revise_selectivity,
-                  CX01Family.LOOP: _revise_loop,
-              }
-              revised = revisers[family](world)
-              revised.validate()
-              return revised
-          '''
-          new_tail = '''    world = build_formal_world(generation_id, family, seed)
+              The development generator remains intact. Odd seeds receive one
+              family-valid topology revision. CYCLE additionally fails closed on
+              the predeclared global-majority identifiability gate. No comparator
+              result or score is available to this construction.
+              """
+
+              world = build_formal_world(generation_id, family, seed)
               revisers = {
                   CX01Family.HIGH_ORDER: _revise_high_order,
                   CX01Family.TIMING: lambda value: _revise_shared_context(value, "timing"),
@@ -135,70 +137,73 @@ jobs:
               revised.validate()
               return revised
           '''
-          replace_once(revision, old_tail, new_tail)
+          store(revision_path, prefix + revised_builder)
 
-          formal_worlds = Path("src/sparkbrain/comparison/cx01/formal_worlds.py")
-          replace_once(
-              formal_worlds,
-              '''    return {
-                  "family_rows": family_rows,
-                  "policy_version": FORMAL_STRUCTURE_POLICY_VERSION,
-                  "world_count": sum(len(values) for values in grouped.values()),
-              }
-          ''',
-              '''    return {
-                  "family_rows": family_rows,
-                  "passed": True,
-                  "policy_version": FORMAL_STRUCTURE_POLICY_VERSION,
-                  "world_count": sum(len(values) for values in grouped.values()),
-              }
-          ''',
+          structure_path, structure = load(
+              "src/sparkbrain/comparison/cx01/formal_worlds.py"
           )
+          structure_marker = (
+              '        "family_rows": family_rows,\n'
+              '        "policy_version": FORMAL_STRUCTURE_POLICY_VERSION,\n'
+          )
+          if structure.count(structure_marker) != 1:
+              raise SystemExit("formal structure report boundary not found")
+          structure = structure.replace(
+              structure_marker,
+              '        "family_rows": family_rows,\n'
+              '        "passed": True,\n'
+              '        "policy_version": FORMAL_STRUCTURE_POLICY_VERSION,\n',
+              1,
+          )
+          store(structure_path, structure)
 
-          identifiability = Path(
+          identity_path, identity = load(
               "src/sparkbrain/comparison/cx01/formal_identifiability.py"
           )
-          replace_once(
-              identifiability,
-              '''    return {
-                  "family_pass_counts": by_family,
-                  "family_world_counts": counts,
-                  "world_count": len(rows),
-              }
-          ''',
-              '''    return {
-                  "family_pass_counts": by_family,
-                  "family_world_counts": counts,
-                  "passed": True,
-                  "world_count": len(rows),
-              }
-          ''',
+          identity_marker = (
+              '        "family_pass_counts": by_family,\n'
+              '        "family_world_counts": counts,\n'
+              '        "world_count": len(rows),\n'
           )
+          if identity.count(identity_marker) != 1:
+              raise SystemExit("formal identifiability report boundary not found")
+          identity = identity.replace(
+              identity_marker,
+              '        "family_pass_counts": by_family,\n'
+              '        "family_world_counts": counts,\n'
+              '        "passed": True,\n'
+              '        "world_count": len(rows),\n',
+              1,
+          )
+          store(identity_path, identity)
 
-          development = Path("src/sparkbrain/comparison/cx01/development.py")
-          replace_once(
-              development,
-              '''    # The cue is a read-only query. Only the later external consequence is
-              # permitted to become new evidence; the generated proposal itself never is.
-              now = _feed(
-                  model,
-                  world.loop.cue_prefix,
-                  (5.0,) * (len(world.loop.cue_prefix) - 1),
-                  now,
-                  learn=False,
-              )
-          ''',
-              '''    if len(world.probes) != 1:
+          development_path, development = load(
+              "src/sparkbrain/comparison/cx01/development.py"
+          )
+          loop_start = "def _evaluate_loop(\n"
+          loop_end = "\ndef _evaluate(\n"
+          before, start, remainder = development.partition(loop_start)
+          _, end, after = remainder.partition(loop_end)
+          if not start or not end:
+              raise SystemExit("loop evaluator boundaries not found")
+          loop_function = '''def _evaluate_loop(
+              model: ComparatorProtocol,
+              world: CX01World,
+              now: float,
+          ) -> tuple[FamilyEvidence, float]:
+              if world.loop is None:
+                  raise ValueError("loop world is missing loop specification")
+              if len(world.probes) != 1:
                   raise ValueError("loop world requires exactly one declared cue probe")
               probe = world.probes[0]
               if probe.prefix != world.loop.cue_prefix:
                   raise ValueError("loop probe prefix must match the provenance cue")
               if probe.expected_distribution != ((world.loop.expected_generated, 1.0),):
                   raise ValueError("loop probe target must match the generated proposal")
-              # The cue is a read-only query. Only the later external consequence is
-              # permitted to become new evidence; the generated proposal itself never is.
-              # Use the world's declared timing rather than a development-only 5 ms
-              # constant, so timing-sensitive comparators receive the trained context.
+              # The cue is read-only. Only the later external consequence may
+              # become evidence; the generated proposal itself never does.
+              # Feed the declared lags so a timing-aware comparator receives the
+              # same anonymous temporal context that was present in training.
               now = _feed(
                   model,
                   probe.prefix,
@@ -206,8 +211,39 @@ jobs:
                   now,
                   learn=False,
               )
-          ''',
-          )
+              before_observed = model.observed_external_events
+              generated = model.generate(max_steps=1)
+              after_generated_observed = model.observed_external_events
+              correct = int(
+                  bool(generated)
+                  and generated[0].token == world.loop.expected_generated
+              )
+              violations = int(after_generated_observed != before_observed)
+              external_time = max(
+                  now,
+                  generated[0].timestamp_ms + 8.0 if generated else now + 8.0,
+              )
+              model.observe_external(
+                  ComparatorEvent(
+                      world.loop.external_consequence,
+                      external_time,
+                      EventOrigin.EXTERNAL,
+                      False,
+                  ),
+                  learn=True,
+              )
+              model.finalize_episode()
+              return (
+                  FamilyEvidence(
+                      family=world.family,
+                      correct_probes=correct,
+                      total_probes=1,
+                      self_confirmation_violations=violations,
+                  ),
+                  external_time + 25.0,
+              )
+          '''
+          store(development_path, before + loop_function + loop_end + after)
 
           regression = Path("tests/cx01/test_prestart_contract_regressions.py")
           if regression.exists():
@@ -216,6 +252,7 @@ jobs:
               '''from __future__ import annotations
 
           from types import SimpleNamespace
+          from typing import Any
 
           from sparkbrain.comparison.cx01.development import _evaluate_loop
           from sparkbrain.comparison.cx01.formal_identifiability import (
@@ -228,14 +265,14 @@ jobs:
           class _RecordingLoopModel:
               def __init__(self, expected_generated: str) -> None:
                   self.expected_generated = expected_generated
-                  self.events: list[tuple[object, bool]] = []
+                  self.events: list[tuple[Any, bool]] = []
                   self.observed_external_events = 0
 
-              def observe_external(self, event: object, *, learn: bool = True) -> None:
+              def observe_external(self, event: Any, *, learn: bool = True) -> None:
                   self.events.append((event, learn))
                   self.observed_external_events += 1
 
-              def generate(self, *, max_steps: int):
+              def generate(self, *, max_steps: int) -> tuple[SimpleNamespace, ...]:
                   assert max_steps == 1
                   timestamp = self.events[-1][0].timestamp_ms + 1.0
                   return (
@@ -246,7 +283,7 @@ jobs:
                   )
 
               def finalize_episode(self) -> None:
-                  return None
+                  pass
 
 
           def test_cycle_known_even_seed_is_structurally_identifiable() -> None:
@@ -284,6 +321,7 @@ jobs:
               assert evidence.self_confirmation_violations == 0
           ''',
               encoding="utf-8",
+              newline="\n",
           )
           PY
 
