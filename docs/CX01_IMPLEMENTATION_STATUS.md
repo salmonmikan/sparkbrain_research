@@ -1,95 +1,155 @@
 # CX01 Implementation Status
 
-Status: **PRE-FORMAL REVIEW CLOSED — formal held-out candidate not opened**
+Status: **STRUCTURAL HELD-OUT CORRECTION UNDER REVIEW — no new formal candidate opened**
 
-| Stage | Status |
+## Current scientific boundary
+
+Historical evidence remains unchanged:
+
+```text
+v0.6.1 Candidate-003: CONSUMED
+Primary:              NOT SUPPORTED
+G3/G4/G5:             SUPPORTED
+```
+
+CX01 development evidence also remains development-only:
+
+```text
+30 worlds × 7 comparators = 210 executions
+G3    15 / 30
+G4    15 / 30
+G5    15 / 30
+G6    20 / 30
+G7    20 / 30
+G8-P  20 / 30
+G8-R  25 / 30
+CYCLE all comparators 0 / 5
+```
+
+No threshold, comparator, development world, or development training schedule has been changed to improve those outcomes.
+
+## Candidate-001 disposition
+
+The first CX01 outcome-blind package was rejected before STARTED:
+
+```text
+freeze ref:    freeze/cx01-001
+source SHA:    f2c5ead5afda7d731033d585511ea68dc066a162
+candidate:     cx01-candidate-001
+seeds:         269810..269819
+verdict:       REJECTED PRE-START
+seal:          NOT ISSUED
+STARTED:       NOT CREATED
+formal run:    NOT EXECUTED
+```
+
+Reason: fresh numerical seeds mostly produced development-equivalent world structures under anonymous token relabeling. Candidate-001 and seeds `269810..269819` are permanently non-formal and may never be reused as confirmatory evidence.
+
+`freeze/cx01-001` remains unchanged as the auditable rejected freeze record.
+
+## Structural-heldout protocol v2
+
+Current implementation branch:
+
+```text
+research/cx01-structural-heldout-generator
+PR #23
+```
+
+Protocol version:
+
+```text
+cx01-comparator-protocol-2
+```
+
+The correction is formal-only. `src/sparkbrain/comparison/cx01/worlds.py` and the historical development grid remain unchanged.
+
+Implemented v2 controls:
+
+| Control | Status |
 |---|---|
-| Common event / comparator contract | IMPLEMENTED |
-| Train/evaluation learning boundary | REVIEWED / CLOSED |
-| Balanced fairness schedule | IMPLEMENTED |
-| Six-family world generator | IMPLEMENTED / UNCHANGED BY PRE-FORMAL REVIEW |
-| Non-compensatory family scoring | IMPLEMENTED / THRESHOLDS UNCHANGED |
-| Privilege disclosure | IMPLEMENTED |
-| Descriptive resource accounting | IMPLEMENTED |
-| G3 frozen first-order anchor | IMPLEMENTED |
-| G4 historical Assembly anchor | IMPLEMENTED |
-| G5 historical typed-head anchor | IMPLEMENTED |
-| G6 variable-order comparator | IMPLEMENTED |
-| G7 HTM-style Temporal Memory capability reference | IMPLEMENTED / FIDELITY BOUNDARY REVIEWED |
-| G8-P timing-context prediction capability reference | IMPLEMENTED / FIDELITY BOUNDARY REVIEWED |
-| G8-R timing-context replay/excitability capability reference | IMPLEMENTED / FIDELITY BOUNDARY REVIEWED |
-| Shared development runner | IMPLEMENTED |
-| Development artifact writer | IMPLEMENTED |
-| Corrected 30-world × 7-comparator development matrix | **COMPLETE — 210/210** |
-| Training-transcript fairness audit | **PASS — 30/30 worlds, 0 mismatches** |
-| Pre-formal source/fidelity/fairness review | **CLOSED — PR #19 MERGED** |
-| Default-branch formal dispatch registration guard | **IMPLEMENTED — PR #20 MERGED** |
-| Outcome-blind candidate declaration generator | IMPLEMENTED |
-| Structure-fixture / formal-candidate separation | IMPLEMENTED |
-| Freeze manifest | IMPLEMENTED |
-| Independent-review execution seal | IMPLEMENTED, NOT ISSUED |
-| Builder/self-review prohibition | IMPLEMENTED |
-| Persistent one-way control marker | IMPLEMENTED, NOT CREATED FOR FORMAL |
-| Atomic immutable raw/result artifact writer | IMPLEMENTED |
-| Sealed formal runner | IMPLEMENTED, NOT EXECUTED |
-| Read-only one-way GitHub formal workflow | IMPLEMENTED, NOT EXECUTED |
-| Fresh formal candidate | **NOT SELECTED / NOT OPENED** |
-| Formal held-out execution | **PROHIBITED until exact source freeze + genuine independent seal** |
+| Separate formal-only world generator | IMPLEMENTED |
+| Token-renaming-invariant structural signature | IMPLEMENTED |
+| Development-structure overlap rejection | IMPLEMENTED |
+| Minimum five unique structures/family | IMPLEMENTED |
+| Outcome-blind analytical identifiability audit | IMPLEMENTED |
+| Deterministic exact-source-SHA-bound seed selection | IMPLEMENTED |
+| Candidate-001 generation/seed rejection | IMPLEMENTED |
+| Protocol-v1 candidate rejection | IMPLEMENTED |
+| Structure audit hash in freeze manifest | IMPLEMENTED |
+| Identifiability audit hash in freeze manifest | IMPLEMENTED |
+| Seed-selection hash in freeze manifest | IMPLEMENTED |
+| Formal runner revalidates all three before capability | IMPLEMENTED |
+| Frozen scorer revalidates candidate world hashes | IMPLEMENTED |
+| Frozen scorer recomputes training transcript hashes | IMPLEMENTED |
+| Prepare bundle emits seed/structure/identifiability audit files | IMPLEMENTED |
+| New formal candidate | **NOT SELECTED / NOT OPENED** |
+| Independent seal | **NOT ISSUED** |
+| STARTED | **NOT CREATED** |
+| Formal capability | **NOT EXECUTED** |
 
-## Corrected pre-formal checkpoint
+## Formal-only structural variation
 
-Pre-formal review PR:
+The v2 generator varies more than anonymous labels:
 
-```text
-PR:          #19
-review head: 148c05d9ad580ca7d9981e3737c5730ac08793f8
-merged into: research/cx01-comparator-extension
-merge SHA:   d7cd6b18e4250e553c8f101cee48338f48357292
-```
+- HIGH_ORDER: history topology, lag values, exposure counts;
+- TIMING: longer token prefix plus seed-dependent matched-duration timing signatures;
+- CYCLE: new seven-phase recurrent contingency schedules and exposure counts;
+- BRANCH: longer prefix topology, new exposure ratios, new lags;
+- SELECTIVITY: longer matched disjoint paths, new timing/exposure values;
+- LOOP: longer cue/provenance topology, new timing/exposure values.
 
-Corrected development validation before merge:
+Any candidate world token-renaming-equivalent to a development world fails closed before capability.
 
-```text
-workflow run: 33784252958
-artifact:     9904803250
-artifact SHA: 9e261149335bd8eaf44a7b15dae9de2888c27c9df36566bf1a8aed764313374b
-records:      210 / 210
-Python 3.11.16: Ruff PASS / CX01 tests PASS / matrix PASS
-Python 3.13:    Ruff PASS / CX01 tests PASS
-fairness:       30 / 30 worlds
-mismatches:     0
-```
+## Formal candidate selection contract
 
-Comparator family totals remain:
+Future formal seeds are not chosen manually. For a fixed source SHA and generation ID, the selector deterministically derives high-range seed blocks and may skip a block only if:
+
+- CandidateSpec validation fails;
+- structural-heldout audit fails; or
+- analytical identifiability audit fails.
+
+Comparator models and capability outcomes are unavailable to this selection procedure.
+
+The selected block and selection hash are retained in `formal_seed_selection.json` and `freeze_manifest.json`.
+
+## Development invariance checkpoint
+
+At source commit `94dfbf286362e75460b593acd96299b938d1458d`, the unchanged development workflow completed successfully and the resulting 210 rows were compared directly with the exact-parent baseline artifact.
+
+For all 210 records, the following were identical:
 
 ```text
-G3:   15 / 30
-G4:   15 / 30
-G5:   15 / 30
-G6:   20 / 30
-G7:   20 / 30
-G8-P: 20 / 30
-G8-R: 25 / 30
+kind
+family
+seed
+world_hash
+training_transcript_hash
+evidence
+decision
 ```
 
-Rapid contingency-cycle remains `0/5` for every comparator. This negative development result was retained; no world, exposure schedule, or scoring threshold was changed to repair it.
+Resource wall/CPU/memory measurements remain descriptive and are intentionally not byte-stability requirements.
 
-## Pre-formal verdict
+A final invariance comparison is still required for the exact PR #23 merge SHA before a new source freeze is declared.
+
+## Next boundary
+
+The required sequence is:
 
 ```text
-source review                  PASS
-fidelity-boundary review       PASS
-train/eval isolation           PASS
-world semantics unchanged      PASS
-scoring thresholds unchanged   PASS
-training transcript fairness   PASS
-corrected development matrix   PASS
-formal control-plane review    PASS
-pre-formal review              CLOSED
-formal candidate               UNOPENED
-independent execution seal     NOT ISSUED
+PR #23 review + green CI
+  -> merge to research/cx01-comparator-extension
+  -> exact merged SHA: repository CI + 210 development matrix + semantic invariance
+  -> create freeze/cx01-002 at that exact SHA
+  -> deterministic source-SHA-bound selection for cx01-candidate-002
+  -> prepare outcome-blind candidate/audit/manifest package
+  -> independent review by a genuinely separate reviewer
+  -> independent execution seal
+  -> persistent STARTED
+  -> one-way formal execution
+  -> immutable raw lock
+  -> frozen scoring
 ```
 
-The commit containing this status update must itself pass repository CI and the audited 210-execution CX01 development workflow before its exact SHA can be declared the source-freeze candidate.
-
-Historical Candidate-003 remains consumed and is not a CX01 candidate. The entire CX01 development/test/fixture seed band `3000..5999` remains permanently non-formal.
+No formal capability may be opened before the independent seal. After STARTED there is no repair, retuning, threshold change, world change, comparator change, or same-candidate rerun.
