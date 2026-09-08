@@ -16,7 +16,13 @@ from .candidate import (
 )
 from .control import OneWayControlMarker, require_control_marker
 from .development import DevelopmentExecution, run_development_execution
-from .freeze import ExecutionSeal, FreezeManifest, require_execution_seal
+from .freeze import (
+    ExecutionSeal,
+    FreezeManifest,
+    formal_identifiability_audit_hash,
+    formal_structure_audit_hash,
+    require_execution_seal,
+)
 from .raw_store import FormalRawStore
 
 
@@ -40,6 +46,13 @@ def _validate_formal_binding(
         raise RuntimeError("candidate world grid does not match frozen manifest")
     if declaration_bundle_hash(candidate) != manifest.declaration_bundle_hash:
         raise RuntimeError("candidate declarations do not match frozen manifest")
+    if formal_structure_audit_hash(candidate) != manifest.formal_structure_audit_hash:
+        raise RuntimeError("candidate structural holdout audit does not match frozen manifest")
+    if (
+        formal_identifiability_audit_hash(candidate)
+        != manifest.formal_identifiability_audit_hash
+    ):
+        raise RuntimeError("candidate identifiability audit does not match frozen manifest")
     expected_inventory = tuple(kind.value for kind in CX01_COMPARATOR_INVENTORY)
     if manifest.comparator_inventory != expected_inventory:
         raise RuntimeError("comparator inventory does not match frozen CX01 inventory")
