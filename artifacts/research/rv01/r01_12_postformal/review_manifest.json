@@ -1,0 +1,225 @@
+{
+  "analysis_boundary": {
+    "architecture_modified": false,
+    "formal_candidate_consumed": true,
+    "formal_rerun_permitted": false,
+    "raw_result_modified": false,
+    "threshold_tuning_performed": false
+  },
+  "development": {
+    "execution_source_sha": "b163117512daca23b613c8a109a544833af7d360",
+    "experiment_id": "R01-12D",
+    "raw_sha256": "8abc7fc462ed18cc7a57aa24365c9118d0e94579ec32f8b53d3bb1da368d8c67",
+    "route_probe_count": 60,
+    "world_count": 15
+  },
+  "formal": {
+    "candidate_id": "rv01-r01-12-interference-heldout-v1",
+    "raw_sha256": "e3f0cef5428c1b9a550c986404c1435952bd23fd0bdc0cc24a73b8e0c9f70ff4",
+    "route_probe_count": 200,
+    "source_git_sha": "83d2c77d8ae3878727d2ed4e9e78bc169ce064b8",
+    "world_count": 50
+  },
+  "aggregate": {
+    "development": {
+      "field": {
+        "contamination_count": 216,
+        "contamination_per_route": 3.6,
+        "exact_route_count": 24,
+        "exact_route_recovery_rate": 0.4,
+        "first_hop_coverage": 1.0,
+        "ordered_retention": 1.0
+      },
+      "reservoir": {
+        "contamination_count": 177,
+        "contamination_per_route": 2.95,
+        "exact_route_count": 24,
+        "exact_route_recovery_rate": 0.4,
+        "first_hop_coverage": 0.95,
+        "ordered_retention": 0.9
+      },
+      "world_outcomes": {
+        "field_higher_retention": 9,
+        "field_lower_retention": 0,
+        "tied_retention": 6
+      }
+    },
+    "formal": {
+      "field": {
+        "contamination_count": 720,
+        "contamination_per_route": 3.6,
+        "exact_route_count": 80,
+        "exact_route_recovery_rate": 0.4,
+        "first_hop_coverage": 1.0,
+        "ordered_retention": 1.0
+      },
+      "reservoir": {
+        "contamination_count": 589,
+        "contamination_per_route": 2.945,
+        "exact_route_count": 80,
+        "exact_route_recovery_rate": 0.4,
+        "first_hop_coverage": 0.95,
+        "ordered_retention": 0.9016666666666667
+      },
+      "world_outcomes": {
+        "field_higher_retention": 29,
+        "field_lower_retention": 0,
+        "tied_retention": 21
+      }
+    }
+  },
+  "formal_family_metrics": {
+    "dense-route-load": {
+      "field": {
+        "contamination_per_route": 4.5,
+        "exact_route_recovery_rate": 0.5,
+        "first_hop_coverage": 1.0,
+        "ordered_retention": 1.0
+      },
+      "reservoir": {
+        "contamination_per_route": 3.375,
+        "exact_route_recovery_rate": 0.5,
+        "first_hop_coverage": 0.875,
+        "ordered_retention": 0.875
+      }
+    },
+    "disjoint-routes": {
+      "field": {
+        "contamination_per_route": 0.0,
+        "exact_route_recovery_rate": 1.0,
+        "first_hop_coverage": 1.0,
+        "ordered_retention": 1.0
+      },
+      "reservoir": {
+        "contamination_per_route": 0.0,
+        "exact_route_recovery_rate": 1.0,
+        "first_hop_coverage": 1.0,
+        "ordered_retention": 1.0
+      }
+    },
+    "edge-reversal": {
+      "field": {
+        "contamination_per_route": 2.0,
+        "exact_route_recovery_rate": 0.3333333333333333,
+        "first_hop_coverage": 1.0,
+        "ordered_retention": 1.0
+      },
+      "reservoir": {
+        "contamination_per_route": 1.3,
+        "exact_route_recovery_rate": 0.3333333333333333,
+        "first_hop_coverage": 1.0,
+        "ordered_retention": 0.9
+      }
+    },
+    "shared-cue-branches": {
+      "field": {
+        "contamination_per_route": 6.0,
+        "exact_route_recovery_rate": 0.0,
+        "first_hop_coverage": 1.0,
+        "ordered_retention": 1.0
+      },
+      "reservoir": {
+        "contamination_per_route": 6.0,
+        "exact_route_recovery_rate": 0.0,
+        "first_hop_coverage": 1.0,
+        "ordered_retention": 1.0
+      }
+    },
+    "shared-prefix-branches": {
+      "field": {
+        "contamination_per_route": 4.0,
+        "exact_route_recovery_rate": 0.0,
+        "first_hop_coverage": 1.0,
+        "ordered_retention": 1.0
+      },
+      "reservoir": {
+        "contamination_per_route": 3.3333333333333335,
+        "exact_route_recovery_rate": 0.0,
+        "first_hop_coverage": 1.0,
+        "ordered_retention": 0.7777777777777779
+      }
+    }
+  },
+  "formal_field_training_role_diagnostics": {
+    "dense-route-load": {
+      "current": {
+        "contamination_per_route": 2.25,
+        "exact_route_recovery_rate": 0.625,
+        "first_hop_coverage": 0.8125,
+        "ordered_retention": 1.0
+      },
+      "future_untrained": {
+        "contamination_per_route": 1.8535714285714286,
+        "exact_route_recovery_rate": 0.0,
+        "first_hop_coverage": 0.15446428571428572,
+        "ordered_retention": 0.0
+      },
+      "prior": {
+        "contamination_per_route": 3.3214285714285716,
+        "exact_route_recovery_rate": 0.5392857142857143,
+        "first_hop_coverage": 0.8991071428571429,
+        "ordered_retention": 1.0
+      }
+    },
+    "shared-cue-branches": {
+      "current": {
+        "contamination_per_route": 3.0,
+        "exact_route_recovery_rate": 0.3333333333333333,
+        "first_hop_coverage": 0.6666666666666666,
+        "ordered_retention": 1.0
+      },
+      "future_untrained": {
+        "contamination_per_route": 4.0,
+        "exact_route_recovery_rate": 0.0,
+        "first_hop_coverage": 0.4444444444444444,
+        "ordered_retention": 0.0
+      },
+      "prior": {
+        "contamination_per_route": 5.0,
+        "exact_route_recovery_rate": 0.0,
+        "first_hop_coverage": 0.888888888888889,
+        "ordered_retention": 1.0
+      }
+    },
+    "shared-prefix-branches": {
+      "current": {
+        "contamination_per_route": 2.0,
+        "exact_route_recovery_rate": 0.3333333333333333,
+        "first_hop_coverage": 1.0,
+        "ordered_retention": 1.0
+      },
+      "future_untrained": {
+        "contamination_per_route": 2.6666666666666665,
+        "exact_route_recovery_rate": 0.0,
+        "first_hop_coverage": 1.0,
+        "ordered_retention": 0.3333333333333333
+      },
+      "prior": {
+        "contamination_per_route": 3.3333333333333335,
+        "exact_route_recovery_rate": 0.0,
+        "first_hop_coverage": 1.0,
+        "ordered_retention": 1.0
+      }
+    }
+  },
+  "hypothesis_verdicts": {
+    "A_field_is_generally_stronger_memory_substrate": "NOT_SUPPORTED_AS_GENERAL_SELECTIVE_MEMORY_SUPERIORITY",
+    "B_field_has_high_coverage_but_low_precision": "SUPPORTED_BEST_FIT",
+    "C_difference_is_only_overactivation": "PARTIALLY_SUPPORTED_NOT_IDENTIFIED"
+  },
+  "trace_availability": {
+    "development_intermediate_phase_trace": false,
+    "direct_phase_by_phase_architecture_comparison": false,
+    "formal_field_intermediate_phase_trace": true,
+    "formal_reservoir_intermediate_phase_trace": false
+  },
+  "a01_connection": {
+    "a01_tuning_from_rv01_formal_performed": false,
+    "interpretation_only": true,
+    "jointly_tested": false,
+    "rv01_role": "broad continuation-candidate substrate",
+    "current_a01_role": "explicit external-evidence selector and corrector"
+  },
+  "one_sentence_conclusion": "RV01のFieldはresource-matched reservoirより干渉下の順序付きcontinuationと一部のfirst-hop候補を多く保持するが、exact routeをより正確には回復できず、より大きなcontaminationを伴うため、現時点では選択的記憶ではなく広い候補保持substrateとして解釈するのが妥当である。",
+  "schema_version": "rv01-r01-12-postformal-review-v1"
+}
