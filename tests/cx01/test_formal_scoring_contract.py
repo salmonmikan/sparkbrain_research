@@ -17,6 +17,7 @@ from sparkbrain.comparison.cx01.formal_scoring import _validate_rows
 from sparkbrain.comparison.cx01.freeze import (
     build_freeze_manifest,
     formal_identifiability_audit_hash,
+    formal_seed_selection_hash,
     formal_structure_audit_hash,
 )
 from sparkbrain.comparison.cx01.privilege import privilege_profile
@@ -100,8 +101,15 @@ def test_manifest_binds_exact_formal_scoring_and_world_audit_policies() -> None:
     candidate = _candidate()
     manifest = _manifest(candidate)
     assert manifest.scoring_policy_hash == FormalScoringPolicy().policy_hash()
+    assert manifest.formal_seed_selection_hash == formal_seed_selection_hash(
+        manifest.source_git_sha,
+        candidate,
+    )
     assert manifest.formal_structure_audit_hash == formal_structure_audit_hash(candidate)
-    assert manifest.formal_identifiability_audit_hash == formal_identifiability_audit_hash(candidate)
+    assert (
+        manifest.formal_identifiability_audit_hash
+        == formal_identifiability_audit_hash(candidate)
+    )
 
 
 def test_formal_row_validator_requires_complete_equal_transcripts_and_privileges() -> None:
