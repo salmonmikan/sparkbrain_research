@@ -57,7 +57,6 @@ from .development_protocol import (
     competition_signature,
 )
 
-
 SCHEMA_VERSION = "v061-a01-mechanism-discrimination-v1"
 RUN_ID = "A01-MD-001"
 LINEAGE_A = "lineage-a"
@@ -1703,7 +1702,8 @@ def _run_p5(*, p1_p4_passed: bool) -> dict[str, Any]:
         },
         "reduction_scope_note": (
             "The explicit null reuses the same exact-parent provenance and anonymous relation "
-            "classification. It replaces only A01's path-attached support record, as preregistered N1."
+            "classification. It replaces only A01's path-attached support record, "
+            "as preregistered N1."
         ),
     }
 
