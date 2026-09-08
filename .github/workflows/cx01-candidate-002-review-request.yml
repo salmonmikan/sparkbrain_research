@@ -1,0 +1,119 @@
+name: CX01 Candidate-002 Independent Review Request
+
+on:
+  push:
+    branches:
+      - "automation/cx01-candidate-002-review-gate"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  request-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      GH_TOKEN: ${{ github.token }}
+      SOURCE_FREEZE_BRANCH: freeze/cx01-002-source
+      PACKAGE_BRANCH: prepare/cx01-candidate-002
+      BASE_BRANCH: research/cx01-comparator-extension
+    steps:
+      - name: Wait only for the pre-start source and package branches
+        shell: bash
+        run: |
+          for attempt in $(seq 1 40); do
+            source_sha="$(gh api \
+              "repos/${GITHUB_REPOSITORY}/git/ref/heads/${SOURCE_FREEZE_BRANCH}" \
+              --jq '.object.sha' 2>/dev/null || true)"
+            package_sha="$(gh api \
+              "repos/${GITHUB_REPOSITORY}/git/ref/heads/${PACKAGE_BRANCH}" \
+              --jq '.object.sha' 2>/dev/null || true)"
+            if [[ -n "${source_sha}" && -n "${package_sha}" ]]; then
+              echo "SOURCE_SHA=${source_sha}" >> "${GITHUB_ENV}"
+              echo "PACKAGE_SHA=${package_sha}" >> "${GITHUB_ENV}"
+              exit 0
+            fi
+            echo "pre-start package not ready (attempt ${attempt}/40)"
+            sleep 15
+          done
+          echo "Source freeze or package branch did not materialize; no PR created" >&2
+          exit 1
+
+      - name: Build outcome-blind review request
+        shell: bash
+        run: |
+          cat > /tmp/cx01-review-body.md <<EOF
+          ## Review boundary
+
+          This is an outcome-blind pre-start review request for \`cx01-candidate-002\` (seed band \`370110..370119\`). It is not an execution seal and it does not authorize formal execution.
+
+          ## Frozen inputs
+
+          - exact source freeze: \`${SOURCE_FREEZE_BRANCH}\`
+          - exact source SHA: \`${SOURCE_SHA}\`
+          - preserved package branch: \`${PACKAGE_BRANCH}\`
+          - preserved package commit: \`${PACKAGE_SHA}\`
+          - rejected candidate-001 freeze: \`freeze/cx01-001\` (unchanged)
+          - rejected seed band \`269810..269819\`: not reused
+
+          ## Required review
+
+          Review the canonicalized topology, timing, exposure/schedule, and contingency signatures; family identifiability; the complete 60-world / 420-declaration package; source/package hashes; comparator fairness; and the candidate-001 rejection guard.
+
+          The complete checklist is in \`docs/research/CX01_CANDIDATE_002_PRESTART_REVIEW.md\`.
+
+          ## Status at request creation
+
+          - independent review: **PENDING**
+          - execution seal: **NOT ISSUED**
+          - persistent \`STARTED\`: **ABSENT**
+          - formal capability: **NOT EXECUTED**
+          - formal score: **NONE**
+          - candidate consumed: **NO**
+
+          The reviewer must record exactly one of \`APPROVE_PRESTART\`, \`REJECT_PRESTART\`, or \`RETURN_SOURCE_ONLY\`. No success prediction or outcome-directed adjustment is requested.
+          EOF
+
+      - name: Create or update draft review PR
+        id: pr
+        shell: bash
+        run: |
+          number="$(gh pr list \
+            --repo "${GITHUB_REPOSITORY}" \
+            --head "${PACKAGE_BRANCH}" \
+            --base "${BASE_BRANCH}" \
+            --state open \
+            --json number \
+            --jq '.[0].number // empty')"
+          if [[ -z "${number}" ]]; then
+            url="$(gh pr create \
+              --repo "${GITHUB_REPOSITORY}" \
+              --head "${PACKAGE_BRANCH}" \
+              --base "${BASE_BRANCH}" \
+              --title "[PRE-START REVIEW] CX01 candidate-002 structural held-out package" \
+              --body-file /tmp/cx01-review-body.md \
+              --draft)"
+            number="${url##*/}"
+          else
+            gh pr edit "${number}" \
+              --repo "${GITHUB_REPOSITORY}" \
+              --title "[PRE-START REVIEW] CX01 candidate-002 structural held-out package" \
+              --body-file /tmp/cx01-review-body.md
+          fi
+          echo "number=${number}" >> "${GITHUB_OUTPUT}"
+
+      - name: Request human independent review
+        shell: bash
+        run: |
+          gh pr edit "${{ steps.pr.outputs.number }}" \
+            --repo "${GITHUB_REPOSITORY}" \
+            --add-reviewer salmonmikan || true
+          {
+            echo "### CX01 candidate-002 review gate"
+            echo "- PR: #${{ steps.pr.outputs.number }}"
+            echo "- source SHA: \`${SOURCE_SHA}\`"
+            echo "- package SHA: \`${PACKAGE_SHA}\`"
+            echo "- formal status: **NOT STARTED**"
+          } >> "${GITHUB_STEP_SUMMARY}"
