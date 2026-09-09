@@ -23,6 +23,18 @@ PACKAGE_SCHEMA_VERSION = "cx01-outcome-blind-package-v2"
 PACKAGE_STATUS = "OUTCOME_BLIND_UNSIGNED_PRESTART"
 
 
+def _audit_envelope(report: dict[str, Any]) -> dict[str, Any]:
+    """Wrap a successful raise-on-failure audit without changing its report.
+
+    Some auditors return only measurements after raising on failure. Others
+    also return a boolean passed field. Never overwrite an explicit failure.
+    This packaging wrapper must not enter candidate or freeze hash preimages.
+    """
+    if "passed" in report and report["passed"] is not True:
+        raise RuntimeError("candidate structural audit explicitly did not pass")
+    return {"passed": True, "report": report}
+
+
 def _canonical_bytes(value: object) -> bytes:
     return json.dumps(
         value,
@@ -141,9 +153,9 @@ def prepare_outcome_blind_bundle(
     declaration_rows = tuple(row.state_dict() for row in declarations)
     world_rows = tuple(world.state_dict() for world in worlds)
     audits = {
-        "canonical_structure": audit_formal_grid_structure(worlds),
-        "component_structure": audit_formal_grid_components(worlds),
-        "family_identifiability": audit_formal_grid_identifiability(worlds),
+        "canonical_structure": _audit_envelope(audit_formal_grid_structure(worlds)),
+        "component_structure": _audit_envelope(audit_formal_grid_components(worlds)),
+        "family_identifiability": _audit_envelope(audit_formal_grid_identifiability(worlds)),
     }
     if not all(bool(row.get("passed")) for row in audits.values()):
         raise RuntimeError("candidate structural audits must pass before packaging")
