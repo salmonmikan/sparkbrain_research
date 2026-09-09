@@ -1,0 +1,37 @@
+{
+  "all_auditors_returned_without_exception": true,
+  "comparator_imports": 0,
+  "fixture": "cx01-fixture-prepare-001",
+  "fixture_seeds": [
+    5000,
+    5001,
+    5002,
+    5003,
+    5004,
+    5005,
+    5006,
+    5007,
+    5008,
+    5009
+  ],
+  "formal_capability_calls": 0,
+  "limitations": "Executes original AST audit assignment and guard only, not full package preparation.",
+  "observed_error": "candidate structural audits must pass before packaging",
+  "package_writes": 0,
+  "passed_key_present": {
+    "canonical_structure": false,
+    "component_structure": true,
+    "family_identifiability": false
+  },
+  "source_git_sha": "10490ee302d3e6c540a5acc886d530250745143e",
+  "source_sha256": {
+    "formal_identifiability.py": "1d2d8ede56d479baaa79d6bad4c224780a0788b2fdec6e44d77ecbf7f0dcf9a4",
+    "formal_revision.py": "4e76a265a8f501f21cad7bd73660602d78ecf487357102429be60155c4701436",
+    "formal_worlds.py": "7e54a2909ea487bd2ac109846ec4164ff37ca8f17e3d4e83677272cc6a1eb044",
+    "prepare.py": "2b78cb045139a1f910eed6935ebffa3a919b28128810d1429314a7d48172a5b0",
+    "structural_components.py": "5aa5ae1192e5744d110777505fb5ad58800f0d6d2928cf22274f3182b43634cc",
+    "worlds.py": "34f6063773eec1fd8d21646ecc3131d273ae2d2073053e7c3ac53bb58c047e0a"
+  },
+  "status": "BLOCKER_REPRODUCED",
+  "world_count": 60
+}
