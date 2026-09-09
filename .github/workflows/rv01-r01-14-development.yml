@@ -1,0 +1,40 @@
+name: rv01-r01-14-development
+
+on:
+  push:
+    branches:
+      - research/rv01-r01-14-traversal-dynamics
+    paths:
+      - .github/workflows/rv01-r01-14-development.yml
+
+permissions:
+  contents: read
+
+jobs:
+  development:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: python -m pip install -e '.[dev,learned,spiking]'
+      - name: R01-14 focused tests
+        run: python -m pytest -q tests/research/rv01/test_traversal_dynamics.py
+      - name: Execute R01-14 development suite
+        run: |
+          mkdir -p artifacts/research/rv01/r01_14
+          python scripts/run_rv01_r01_14_development.py \
+            --output artifacts/research/rv01/r01_14/development_result.json \
+            | tee artifacts/research/rv01/r01_14/development_stdout.json
+          sha256sum artifacts/research/rv01/r01_14/development_result.json \
+            | tee artifacts/research/rv01/r01_14/development_result.sha256
+          git rev-parse HEAD \
+            | tee artifacts/research/rv01/r01_14/execution_source_git_sha.txt
+      - name: Upload R01-14 development evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: rv01-r01-14-development-${{ github.sha }}
+          path: artifacts/research/rv01/r01_14/
+          if-no-files-found: error
