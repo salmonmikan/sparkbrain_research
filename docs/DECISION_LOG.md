@@ -1289,3 +1289,15 @@ feedback may re-enter only as truth-free sensory/evidence and must reject evalua
 repair C15's unsupported residual advantage, promote C16 candidates or C17 organs, or unblock C19.
 Keeping those boundaries explicit prevents engineering completion from becoming a scientific
 claim upgrade.
+
+## D-RV02-RD002 — Retain input-gain recruitment and negative task utility
+
+**Decision (2026-09-09):** Preserve the single preregistered 1/2/4 boundary-input
+gain grid and its 468 completed probes. Gain 4 recruits hidden spiking and changes
+some visible final states, but has no visible spike-sequence or task-score effect.
+Do not reinterpret recruitment as useful computation or alter the unchanged learner,
+threshold, old evidence, or formal-candidate status. Exact execution source is
+`58f196b006020b144cf62c695ca1c1fff8e7087e`; see `research/RV02_RD002_RESULT.md`.
+
+**Reason:** Separating hidden spiking, causal state influence and task utility retains
+a falsifiable negative useful-effect result while localizing the input-access mechanism.

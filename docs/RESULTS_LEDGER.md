@@ -1055,3 +1055,15 @@ contract correction only.
 - Claim impact: none. C06 remains negative; C15 residual superiority remains unsupported; C16
   remains candidate-level; C17 v1 remains an implementation failure and C17 v2 remains
   scientifically unsupported; C19 remains blocked/not evaluated; CL-007 and CL-008 remain E0.
+
+## 2026-09-09 — RV02-RD002 — hidden recruitment without task improvement
+
+The preregistered post-training visible-to-hidden gain grid (1, 2, 4) completed
+18 cells and 468 probes from source `58f196b006020b144cf62c695ca1c1fff8e7087e`.
+Gain 4 produced 83 hidden spikes across 35/78 natural probes and a causal visible
+final-state difference in 33/78, but no visible spike-sequence or task-score change.
+Gains 1/2 produced no hidden spikes. Useful effect is not supported at either
+nonbaseline gain. All adverse/null observations and raw rows are retained under
+`artifacts/research/rv02/rd002/`; see `research/RV02_RD002_RESULT.md` and the
+independent acceptance/interpretation reports. This is exposed-development mechanism
+evidence only; no claim grade, formal candidate, held-out gate or older result changes.

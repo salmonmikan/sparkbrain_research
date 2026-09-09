@@ -454,3 +454,12 @@ network-blocked official run evaluated all 1,744 Belief-R pairs without test fit
 tuning. Spark BU/BM/BREU were 0.0391/0.0896/0.0643, below direct and chance BREU 0.25. The C05
 external feature path maps unseen categorical tokens to UNK, parameter/compute matching is
 false, and evidence attribution is unavailable. Gate P3 and CL-007 therefore remain unmet.
+
+## 2026-09-09 scoped update — RV02-RD002 development diagnosis
+
+The separate RV02-RD002 boundary-input gain diagnosis completed 18/18 cells and
+468/468 probes. Fourfold visible-to-hidden gain recruits hidden spikes and can alter
+visible final subthreshold/provenance state, but yields no visible output or task
+improvement. Gains 2 and 4 fail the preregistered useful-effect criterion. See
+`research/RV02_RD002_RESULT.md` for exact source/raw bindings and independent audits.
+Formal RV02 evaluation remains blocked; no main integration or claim-grade upgrade.

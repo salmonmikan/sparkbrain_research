@@ -1,0 +1,119 @@
+{
+  "attempted_probes": 468,
+  "complete_cells": 18,
+  "complete_probes": 468,
+  "compressed_sha256": "8f5e2929d8f4ed9b4a91ecf9eef6434ef8812240220379c16db190fddb106257",
+  "formal_execution_allowed": false,
+  "raw_sha256": "3548b20d3e8e0003ffd6f5964888b948a9d3cf39c28b2167385ea9ff5a433ee4",
+  "scientific_status": "not_evaluated_development_diagnosis",
+  "statuses": [
+    {
+      "family": "disjoint-routes",
+      "scale": 1,
+      "status": "complete",
+      "wall_seconds": 0.6996212390004075
+    },
+    {
+      "family": "disjoint-routes",
+      "scale": 3,
+      "status": "complete",
+      "wall_seconds": 1.3830863420007518
+    },
+    {
+      "family": "disjoint-routes",
+      "scale": 10,
+      "status": "complete",
+      "wall_seconds": 3.8743387979993713
+    },
+    {
+      "family": "shared-cue",
+      "scale": 1,
+      "status": "complete",
+      "wall_seconds": 0.5566228459992999
+    },
+    {
+      "family": "shared-cue",
+      "scale": 3,
+      "status": "complete",
+      "wall_seconds": 1.238410111000121
+    },
+    {
+      "family": "shared-cue",
+      "scale": 10,
+      "status": "complete",
+      "wall_seconds": 3.860084702999302
+    },
+    {
+      "family": "shared-prefix",
+      "scale": 1,
+      "status": "complete",
+      "wall_seconds": 0.5963678629996139
+    },
+    {
+      "family": "shared-prefix",
+      "scale": 3,
+      "status": "complete",
+      "wall_seconds": 1.2495783679987653
+    },
+    {
+      "family": "shared-prefix",
+      "scale": 10,
+      "status": "complete",
+      "wall_seconds": 3.842437819001134
+    },
+    {
+      "family": "opposing-reversal",
+      "scale": 1,
+      "status": "complete",
+      "wall_seconds": 0.6082780300002923
+    },
+    {
+      "family": "opposing-reversal",
+      "scale": 3,
+      "status": "complete",
+      "wall_seconds": 1.257508530999985
+    },
+    {
+      "family": "opposing-reversal",
+      "scale": 10,
+      "status": "complete",
+      "wall_seconds": 3.7862609029998566
+    },
+    {
+      "family": "dense-load",
+      "scale": 1,
+      "status": "complete",
+      "wall_seconds": 1.1519948469995143
+    },
+    {
+      "family": "dense-load",
+      "scale": 3,
+      "status": "complete",
+      "wall_seconds": 2.919113747000665
+    },
+    {
+      "family": "dense-load",
+      "scale": 10,
+      "status": "complete",
+      "wall_seconds": 10.237765617999685
+    },
+    {
+      "family": "capacity-pressure",
+      "scale": 1,
+      "status": "complete",
+      "wall_seconds": 1.0973983329986368
+    },
+    {
+      "family": "capacity-pressure",
+      "scale": 3,
+      "status": "complete",
+      "wall_seconds": 2.418366922998757
+    },
+    {
+      "family": "capacity-pressure",
+      "scale": 10,
+      "status": "complete",
+      "wall_seconds": 7.672424287000467
+    }
+  ]
+}
