@@ -1,0 +1,262 @@
+{
+  "comparative_capability_claim_allowed": false,
+  "complete_cell_count": 36,
+  "formal_execution_allowed": false,
+  "planned_cell_count": 36,
+  "raw_sha256": "9640f5ca7fd98b8eaa85b81863a4c59c7b370045742b449cefd66fc413e95d53",
+  "scientific_status": "not_evaluated_development_feasibility",
+  "statuses": [
+    {
+      "architecture": "field",
+      "engineering_wall_seconds": 0.265679039999668,
+      "family": "disjoint-routes",
+      "scale": 1,
+      "status": "complete"
+    },
+    {
+      "architecture": "reservoir",
+      "engineering_wall_seconds": 0.2401621310000337,
+      "family": "disjoint-routes",
+      "scale": 1,
+      "status": "complete"
+    },
+    {
+      "architecture": "field",
+      "engineering_wall_seconds": 0.30860670899983234,
+      "family": "disjoint-routes",
+      "scale": 3,
+      "status": "complete"
+    },
+    {
+      "architecture": "reservoir",
+      "engineering_wall_seconds": 0.22137669600033405,
+      "family": "disjoint-routes",
+      "scale": 3,
+      "status": "complete"
+    },
+    {
+      "architecture": "field",
+      "engineering_wall_seconds": 0.6485010129999864,
+      "family": "disjoint-routes",
+      "scale": 10,
+      "status": "complete"
+    },
+    {
+      "architecture": "reservoir",
+      "engineering_wall_seconds": 0.33887363400026516,
+      "family": "disjoint-routes",
+      "scale": 10,
+      "status": "complete"
+    },
+    {
+      "architecture": "field",
+      "engineering_wall_seconds": 0.29680320199986454,
+      "family": "shared-cue",
+      "scale": 1,
+      "status": "complete"
+    },
+    {
+      "architecture": "reservoir",
+      "engineering_wall_seconds": 0.24151772999994137,
+      "family": "shared-cue",
+      "scale": 1,
+      "status": "complete"
+    },
+    {
+      "architecture": "field",
+      "engineering_wall_seconds": 0.3338453140004276,
+      "family": "shared-cue",
+      "scale": 3,
+      "status": "complete"
+    },
+    {
+      "architecture": "reservoir",
+      "engineering_wall_seconds": 0.22856732699983695,
+      "family": "shared-cue",
+      "scale": 3,
+      "status": "complete"
+    },
+    {
+      "architecture": "field",
+      "engineering_wall_seconds": 0.5962409160001698,
+      "family": "shared-cue",
+      "scale": 10,
+      "status": "complete"
+    },
+    {
+      "architecture": "reservoir",
+      "engineering_wall_seconds": 0.2985931610000989,
+      "family": "shared-cue",
+      "scale": 10,
+      "status": "complete"
+    },
+    {
+      "architecture": "field",
+      "engineering_wall_seconds": 0.2113257099999828,
+      "family": "shared-prefix",
+      "scale": 1,
+      "status": "complete"
+    },
+    {
+      "architecture": "reservoir",
+      "engineering_wall_seconds": 0.1971312340001532,
+      "family": "shared-prefix",
+      "scale": 1,
+      "status": "complete"
+    },
+    {
+      "architecture": "field",
+      "engineering_wall_seconds": 0.29076105000058305,
+      "family": "shared-prefix",
+      "scale": 3,
+      "status": "complete"
+    },
+    {
+      "architecture": "reservoir",
+      "engineering_wall_seconds": 0.2086583749996862,
+      "family": "shared-prefix",
+      "scale": 3,
+      "status": "complete"
+    },
+    {
+      "architecture": "field",
+      "engineering_wall_seconds": 0.5347767820003355,
+      "family": "shared-prefix",
+      "scale": 10,
+      "status": "complete"
+    },
+    {
+      "architecture": "reservoir",
+      "engineering_wall_seconds": 0.3012497150002673,
+      "family": "shared-prefix",
+      "scale": 10,
+      "status": "complete"
+    },
+    {
+      "architecture": "field",
+      "engineering_wall_seconds": 0.24312300400015374,
+      "family": "opposing-reversal",
+      "scale": 1,
+      "status": "complete"
+    },
+    {
+      "architecture": "reservoir",
+      "engineering_wall_seconds": 0.19117854999967676,
+      "family": "opposing-reversal",
+      "scale": 1,
+      "status": "complete"
+    },
+    {
+      "architecture": "field",
+      "engineering_wall_seconds": 0.32086976600021444,
+      "family": "opposing-reversal",
+      "scale": 3,
+      "status": "complete"
+    },
+    {
+      "architecture": "reservoir",
+      "engineering_wall_seconds": 0.20740446800027712,
+      "family": "opposing-reversal",
+      "scale": 3,
+      "status": "complete"
+    },
+    {
+      "architecture": "field",
+      "engineering_wall_seconds": 0.6308146249994024,
+      "family": "opposing-reversal",
+      "scale": 10,
+      "status": "complete"
+    },
+    {
+      "architecture": "reservoir",
+      "engineering_wall_seconds": 0.3171294929998112,
+      "family": "opposing-reversal",
+      "scale": 10,
+      "status": "complete"
+    },
+    {
+      "architecture": "field",
+      "engineering_wall_seconds": 0.27223899599994184,
+      "family": "dense-load",
+      "scale": 1,
+      "status": "complete"
+    },
+    {
+      "architecture": "reservoir",
+      "engineering_wall_seconds": 0.21468722200006596,
+      "family": "dense-load",
+      "scale": 1,
+      "status": "complete"
+    },
+    {
+      "architecture": "field",
+      "engineering_wall_seconds": 0.45427710300009494,
+      "family": "dense-load",
+      "scale": 3,
+      "status": "complete"
+    },
+    {
+      "architecture": "reservoir",
+      "engineering_wall_seconds": 0.2371645739995074,
+      "family": "dense-load",
+      "scale": 3,
+      "status": "complete"
+    },
+    {
+      "architecture": "field",
+      "engineering_wall_seconds": 1.078197079000347,
+      "family": "dense-load",
+      "scale": 10,
+      "status": "complete"
+    },
+    {
+      "architecture": "reservoir",
+      "engineering_wall_seconds": 0.4273399060002703,
+      "family": "dense-load",
+      "scale": 10,
+      "status": "complete"
+    },
+    {
+      "architecture": "field",
+      "engineering_wall_seconds": 0.24877005300004384,
+      "family": "capacity-pressure",
+      "scale": 1,
+      "status": "complete"
+    },
+    {
+      "architecture": "reservoir",
+      "engineering_wall_seconds": 0.1974581730000864,
+      "family": "capacity-pressure",
+      "scale": 1,
+      "status": "complete"
+    },
+    {
+      "architecture": "field",
+      "engineering_wall_seconds": 0.3954403469997487,
+      "family": "capacity-pressure",
+      "scale": 3,
+      "status": "complete"
+    },
+    {
+      "architecture": "reservoir",
+      "engineering_wall_seconds": 0.24467427799936559,
+      "family": "capacity-pressure",
+      "scale": 3,
+      "status": "complete"
+    },
+    {
+      "architecture": "field",
+      "engineering_wall_seconds": 0.8752948159999505,
+      "family": "capacity-pressure",
+      "scale": 10,
+      "status": "complete"
+    },
+    {
+      "architecture": "reservoir",
+      "engineering_wall_seconds": 0.34985353499996563,
+      "family": "capacity-pressure",
+      "scale": 10,
+      "status": "complete"
+    }
+  ]
+}

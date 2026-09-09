@@ -1,0 +1,52 @@
+{
+  "comparative_capability_claim_allowed": false,
+  "complete_cell_count": 6,
+  "formal_execution_allowed": false,
+  "planned_cell_count": 6,
+  "raw_sha256": "2c54496a657f95b949c598c37491a51224b6a38038deb80f254e11cfe87f3748",
+  "scientific_status": "not_evaluated_development_feasibility",
+  "statuses": [
+    {
+      "architecture": "field",
+      "engineering_wall_seconds": 0.23961391500051832,
+      "family": "disjoint-routes",
+      "scale": 1,
+      "status": "complete"
+    },
+    {
+      "architecture": "reservoir",
+      "engineering_wall_seconds": 0.23924915199950192,
+      "family": "disjoint-routes",
+      "scale": 1,
+      "status": "complete"
+    },
+    {
+      "architecture": "field",
+      "engineering_wall_seconds": 0.29277625099985016,
+      "family": "disjoint-routes",
+      "scale": 3,
+      "status": "complete"
+    },
+    {
+      "architecture": "reservoir",
+      "engineering_wall_seconds": 0.26178412299941556,
+      "family": "disjoint-routes",
+      "scale": 3,
+      "status": "complete"
+    },
+    {
+      "architecture": "field",
+      "engineering_wall_seconds": 0.6131326389995593,
+      "family": "disjoint-routes",
+      "scale": 10,
+      "status": "complete"
+    },
+    {
+      "architecture": "reservoir",
+      "engineering_wall_seconds": 0.3553515009998591,
+      "family": "disjoint-routes",
+      "scale": 10,
+      "status": "complete"
+    }
+  ]
+}
