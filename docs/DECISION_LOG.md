@@ -1289,3 +1289,12 @@ feedback may re-enter only as truth-free sensory/evidence and must reject evalua
 repair C15's unsupported residual advantage, promote C16 candidates or C17 organs, or unblock C19.
 Keeping those boundaries explicit prevents engineering completion from becoming a scientific
 claim upgrade.
+
+## D-A01-N3-DEV001 — Freeze and implement a descriptive recurrent adapter
+
+2026-09-09: Freeze source-adjacent N3-DEV-001 equations and 36 paired development
+cases before implementation/outcomes. Use live hidden-state readout and shared
+exact-parent routing. Independent review precedes source-pin authorization.
+Resource matching is NOT_EVALUATED because exact shared operations/transient
+measurement is unavailable; fixed/learned/hidden capacity is explicitly unequal.
+This is not full MD-002, a replacement of MD-001, or Field-emergence evidence.

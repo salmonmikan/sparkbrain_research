@@ -454,3 +454,14 @@ network-blocked official run evaluated all 1,744 Belief-R pairs without test fit
 tuning. Spark BU/BM/BREU were 0.0391/0.0896/0.0643, below direct and chance BREU 0.25. The C05
 external feature path maps unseen categorical tokens to UNK, parameter/compute matching is
 false, and evidence attribution is unavailable. Gate P3 and CL-007 therefore remain unmet.
+
+## 2026-09-09 N3 adapter development
+
+N3-DEV-001 implements a signed recurrent causal-input comparator under a new
+prospective development protocol. Source review/execution are separately pinned;
+full MD-002 P2/P3/P4 and matched P5 remain unevaluated. MD-001 is unchanged.
+
+N3-DEV-001 subsequently completed72 rows/36cases with independent source and raw
+acceptance. The live recurrent adapter differs under signed evidence and preserves
+absence/replay learned state. Its delayed merged-ancestry output is asymmetric,
+a documented limitation. Full MD-002 and resource-matched P5 remain unevaluated.

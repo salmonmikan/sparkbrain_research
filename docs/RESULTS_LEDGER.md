@@ -1055,3 +1055,15 @@ contract correction only.
 - Claim impact: none. C06 remains negative; C15 residual superiority remains unsupported; C16
   remains candidate-level; C17 v1 remains an implementation failure and C17 v2 remains
   scientifically unsupported; C19 remains blocked/not evaluated; CL-007 and CL-008 remain E0.
+
+## R-A01-N3-DEV001 — Fixed recurrent adapter development result (2026-09-09)
+
+One source-pinned development run completed 72 arm rows / 36 paired cases.
+All paired input hashes match; absence/replay learned-state controls unchanged.
+A01/N3 confidence differs for all 18 signed-evidence cases and matches all18
+negative-control cases. N3 exhibits elapsed-delay response and unequal merged
+ancestry confidence at delay4 (0.5815312/0.5508413 versus A01 equal0.6666667),
+a retained ambiguity-preservation limitation. Shared routing and unequal state
+capacity prevent any superiority or full matched-null conclusion.
+Resource matching/full MD-002 NOT_EVALUATED; no claim-grade change.
+See docs/research/V061_A01_N3_DEV_001_REPORT.md and the exact-four raw bundle.

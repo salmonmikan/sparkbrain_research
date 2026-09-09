@@ -591,3 +591,12 @@ authenticity signature. Unsupported learned-runtime object graphs fail closed.
 rename primitives on Linux, macOS, and Windows. Candidate release groups are fully staged and
 validated before that single publication operation. Post-publication validation failure raises
 without deleting the published path, preventing path-based cleanup from removing a replacement.
+
+## N3-DEV-001 isolated adapter
+
+`v061_a01/recurrent_adapter.py` reuses the local temporal proposal interface but
+replaces A01 causal support with a two-unit fixed recurrent state and two learned
+signed readout weights. Current hidden state participates in pure confidence
+readout. The unchanged exact-parent bridge supplies anonymous evidence; no world
+labels enter the adapter. Full checkpoint restore is required; learned-only
+restore is rejected because hidden state affects current output.
