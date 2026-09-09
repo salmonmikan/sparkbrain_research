@@ -1,0 +1,118 @@
+{
+  "complete_cells": 18,
+  "complete_probes": 252,
+  "compressed_sha256": "d6507a988a3a2763742714993d2b420f735bf9fc76b45c308ce26b397d96e07e",
+  "formal_execution_allowed": false,
+  "raw_sha256": "d786fd242c1c6621b39a6700096536a96109a67333222304412be90e5e510d9d",
+  "scientific_status": "not_evaluated_development_diagnosis",
+  "statuses": [
+    {
+      "family": "disjoint-routes",
+      "scale": 1,
+      "status": "complete",
+      "wall_seconds": 0.3389587550000215
+    },
+    {
+      "family": "disjoint-routes",
+      "scale": 3,
+      "status": "complete",
+      "wall_seconds": 0.623999033000473
+    },
+    {
+      "family": "disjoint-routes",
+      "scale": 10,
+      "status": "complete",
+      "wall_seconds": 1.8166909880001185
+    },
+    {
+      "family": "shared-cue",
+      "scale": 1,
+      "status": "complete",
+      "wall_seconds": 0.3556092290000379
+    },
+    {
+      "family": "shared-cue",
+      "scale": 3,
+      "status": "complete",
+      "wall_seconds": 0.709995655000057
+    },
+    {
+      "family": "shared-cue",
+      "scale": 10,
+      "status": "complete",
+      "wall_seconds": 1.8107338159998108
+    },
+    {
+      "family": "shared-prefix",
+      "scale": 1,
+      "status": "complete",
+      "wall_seconds": 0.33932354699936695
+    },
+    {
+      "family": "shared-prefix",
+      "scale": 3,
+      "status": "complete",
+      "wall_seconds": 0.7435359410001183
+    },
+    {
+      "family": "shared-prefix",
+      "scale": 10,
+      "status": "complete",
+      "wall_seconds": 2.558701912000288
+    },
+    {
+      "family": "opposing-reversal",
+      "scale": 1,
+      "status": "complete",
+      "wall_seconds": 0.41181405699990137
+    },
+    {
+      "family": "opposing-reversal",
+      "scale": 3,
+      "status": "complete",
+      "wall_seconds": 0.7170669349998207
+    },
+    {
+      "family": "opposing-reversal",
+      "scale": 10,
+      "status": "complete",
+      "wall_seconds": 1.807474025999909
+    },
+    {
+      "family": "dense-load",
+      "scale": 1,
+      "status": "complete",
+      "wall_seconds": 0.5745192619997397
+    },
+    {
+      "family": "dense-load",
+      "scale": 3,
+      "status": "complete",
+      "wall_seconds": 1.4979321109994999
+    },
+    {
+      "family": "dense-load",
+      "scale": 10,
+      "status": "complete",
+      "wall_seconds": 4.224109924000004
+    },
+    {
+      "family": "capacity-pressure",
+      "scale": 1,
+      "status": "complete",
+      "wall_seconds": 0.524601463000181
+    },
+    {
+      "family": "capacity-pressure",
+      "scale": 3,
+      "status": "complete",
+      "wall_seconds": 1.0962635730002148
+    },
+    {
+      "family": "capacity-pressure",
+      "scale": 10,
+      "status": "complete",
+      "wall_seconds": 3.294383356999788
+    }
+  ]
+}
