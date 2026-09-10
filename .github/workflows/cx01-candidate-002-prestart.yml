@@ -21,7 +21,7 @@ jobs:
       PACKAGE_BRANCH: prepare/cx01-candidate-002
       PACKAGE_ROOT: artifacts/research/cx01/candidate_002/prestart_package
       REJECTED_FREEZE_REF: refs/remotes/origin/freeze/cx01-001
-      REJECTED_FREEZE_COMMIT: 97d47af0b98ce4e34918aeed63b8e9d975e37838
+      REJECTED_FREEZE_COMMIT: f2c5ead5afda7d731033d585511ea68dc066a162
       REJECTED_PACKAGE_COMMIT: e1a1d9c1435de8aaf875aa40b5e62a7f40de9732
       REJECTED_MANIFEST_PATH: cx01-control/freeze_manifest.json
       REJECTED_SOURCE_SHA: f2c5ead5afda7d731033d585511ea68dc066a162
