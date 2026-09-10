@@ -2,9 +2,8 @@
 
 import copy
 import json
-from collections import Counter, defaultdict
-
 import unittest
+from collections import Counter, defaultdict
 
 from sparkbrain.research.rv02_scale import (
     ScaleStudyConfig,
@@ -33,8 +32,12 @@ def test_invalid_or_incomplete_scale_matrix_is_rejected():
 
 def test_invalid_resource_bounds_are_rejected():
     for field, value in [
-        ("base_units", True), ("base_units", 0), ("degree", 0),
-        ("degree", 48), ("probe_steps", 0), ("max_events", 0),
+        ("base_units", True),
+        ("base_units", 0),
+        ("degree", 0),
+        ("degree", 48),
+        ("probe_steps", 0),
+        ("max_events", 0),
     ]:
         with unittest.TestCase().assertRaises((TypeError, ValueError)):
             ScaleStudyConfig(**{field: value}).validate()

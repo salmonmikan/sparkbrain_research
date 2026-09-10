@@ -3,6 +3,7 @@
 No RV01 source or learning rule is modified. Expanded connectivity, fixed external
 ports and residual resource mismatches are explicit development adaptations.
 """
+
 from __future__ import annotations
 
 import hashlib
@@ -15,8 +16,9 @@ from typing import Any
 
 
 def digest(value: object) -> str:
-    return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(",", ":"),
-                                    allow_nan=False).encode()).hexdigest()
+    return hashlib.sha256(
+        json.dumps(value, sort_keys=True, separators=(",", ":"), allow_nan=False).encode()
+    ).hexdigest()
 
 
 @dataclass(frozen=True)
@@ -54,14 +56,15 @@ class ScaleStudyConfig:
 
 
 def build_topology(
-    config: ScaleStudyConfig, scale: int,
+    config: ScaleStudyConfig,
+    scale: int,
     required_edges: tuple[tuple[int, int], ...] = (),
 ) -> tuple[tuple[int, int], ...]:
     """A ring plus exposed transitions, filled to fixed outgoing degree.
 
-The mean incoming degree is exact; its dispersion is not assumed constant.
-The exposed-edge privilege is inherited from RV01 and shared by both models.
-"""
+    The mean incoming degree is exact; its dispersion is not assumed constant.
+    The exposed-edge privilege is inherited from RV01 and shared by both models.
+    """
     config.validate()
     if type(scale) is not int or scale not in config.scales:
         raise ValueError("unsupported development scale")
@@ -79,8 +82,9 @@ The exposed-edge privilege is inherited from RV01 and shared by both models.
             raise ValueError("required topology exceeds fixed degree")
         choices = [target for target in range(n) if target != source and target not in targets]
         targets.update(rng.sample(choices, config.degree - len(targets)))
-    return tuple((source, target) for source, targets in enumerate(outgoing)
-                 for target in sorted(targets))
+    return tuple(
+        (source, target) for source, targets in enumerate(outgoing) for target in sorted(targets)
+    )
 
 
 def development_worlds(config: ScaleStudyConfig) -> tuple[dict[str, Any], ...]:
@@ -90,9 +94,10 @@ def development_worlds(config: ScaleStudyConfig) -> tuple[dict[str, Any], ...]:
         "shared-cue": ((0, 1, 2, 3), (0, 4, 5, 6), (0, 7, 8, 9)),
         "shared-prefix": ((0, 1, 2, 3), (0, 1, 4, 5), (0, 1, 6, 7)),
         "opposing-reversal": ((0, 1, 2, 3), (4, 2, 1, 5), (6, 7, 8, 9)),
-        "dense-load": tuple((0 if i < 4 else i, 10+3*i, 11+3*i, 12+3*i)
-                            for i in range(8)),
-        "capacity-pressure": tuple((0, 1+3*i, 2+3*i, 3+3*i) for i in range(6)),
+        "dense-load": tuple(
+            (0 if i < 4 else i, 10 + 3 * i, 11 + 3 * i, 12 + 3 * i) for i in range(8)
+        ),
+        "capacity-pressure": tuple((0, 1 + 3 * i, 2 + 3 * i, 3 + 3 * i) for i in range(6)),
     }
     rng = random.Random(config.seed)
     mapping = list(range(36))
@@ -101,9 +106,13 @@ def development_worlds(config: ScaleStudyConfig) -> tuple[dict[str, Any], ...]:
     for family, templates_for_family in templates.items():
         routes = tuple(tuple(mapping[u] for u in route) for route in templates_for_family)
         # Per-world evidence is fixed across scales, not necessarily across families.
-        world = {"world_id": f"rv02-development:{config.seed}:{family}",
-                 "family": family, "routes": routes,
-                 "exposures": tuple(4 for _ in routes), "ports": tuple(range(36))}
+        world = {
+            "world_id": f"rv02-development:{config.seed}:{family}",
+            "family": family,
+            "routes": routes,
+            "exposures": tuple(4 for _ in routes),
+            "ports": tuple(range(36)),
+        }
         world["evidence_hash"] = digest(world)
         worlds.append(world)
     return tuple(worlds)
@@ -114,8 +123,9 @@ def audit_scale(config: ScaleStudyConfig, world: dict[str, Any], scale: int) -> 
     # unseen route, stale digest or zero-exposure probe may seed the topology.
     if digest(world) not in {digest(w) for w in development_worlds(config)}:
         raise ValueError("world must match an unmodified RV02 development fixture")
-    required = tuple(sorted({edge for route in world["routes"]
-                             for edge in zip(route, route[1:])}))
+    required = tuple(
+        sorted({edge for route in world["routes"] for edge in zip(route, route[1:], strict=True)})
+    )
     edges = build_topology(config, scale, required)
     n = config.base_units * scale
     outgoing: dict[int, list[int]] = {i: [] for i in range(n)}
@@ -131,21 +141,30 @@ def audit_scale(config: ScaleStudyConfig, world: dict[str, Any], scale: int) -> 
                 distance[target] = distance[source] + 1
                 queue.append(target)
     return {
-        "world_id": world["world_id"], "scale": scale, "unit_count": n,
-        "connection_count": len(edges), "average_out_degree": len(edges)/n,
-        "average_in_degree": len(edges)/n,
+        "world_id": world["world_id"],
+        "scale": scale,
+        "unit_count": n,
+        "connection_count": len(edges),
+        "average_out_degree": len(edges) / n,
+        "average_in_degree": len(edges) / n,
         "minimum_in_degree": min(incoming.values()),
         "maximum_in_degree": max(incoming.values()),
-        "evidence_hash": world["evidence_hash"], "input_ports": world["ports"],
-        "readout_ports": world["ports"], "input_fanout": 1,
-        "external_observation_count": sum(len(r)*e for r, e in
-                                           zip(world["routes"], world["exposures"], strict=True)),
-        "probe_count": len(world["routes"]), "reachable_unit_count": len(distance),
+        "evidence_hash": world["evidence_hash"],
+        "input_ports": world["ports"],
+        "readout_ports": world["ports"],
+        "input_fanout": 1,
+        "external_observation_count": sum(
+            len(r) * e for r, e in zip(world["routes"], world["exposures"], strict=True)
+        ),
+        "probe_count": len(world["routes"]),
+        "reachable_unit_count": len(distance),
         "maximum_port_distance": max(distance.values()),
         "reachable_within_probe_steps": sum(d <= config.probe_steps for d in distance.values()),
-        "topology_hash": digest(edges), "edges": edges,
+        "topology_hash": digest(edges),
+        "edges": edges,
         "topology_privilege": "observed_transition_edges_present_before_training",
-        "formal_execution_allowed": False, "comparative_capability_claim_allowed": False,
+        "formal_execution_allowed": False,
+        "comparative_capability_claim_allowed": False,
         "resource_match_passed": False,
         "resource_match_reason": (
             "units_edges_evidence_paired_but_adaptive_state_and_work_not_matched"
@@ -153,8 +172,9 @@ def audit_scale(config: ScaleStudyConfig, world: dict[str, Any], scale: int) -> 
     }
 
 
-def project_behavior(generated: tuple[int, ...], ports: tuple[int, ...],
-                     route: tuple[int, ...], unit_count: int) -> dict[str, Any]:
+def project_behavior(
+    generated: tuple[int, ...], ports: tuple[int, ...], route: tuple[int, ...], unit_count: int
+) -> dict[str, Any]:
     """Hidden activity is never counted as a wrong external symbol."""
     visible = tuple(u for u in generated if u in ports)
     expected = route[1:]
@@ -163,31 +183,39 @@ def project_behavior(generated: tuple[int, ...], ports: tuple[int, ...],
         if position < len(expected) and unit == expected[position]:
             position += 1
     contamination = sum(u not in route for u in visible)
-    return {"generated_units": visible, "ordered_retention": position/len(expected),
-            "exact_sequence_recovered": visible == expected,
-            "rv01_compatible_exact_route": position == len(expected) and contamination == 0,
-            "raw_contamination": contamination,
-            "contamination_per_active_unit": (
-                contamination/len(set(generated)) if generated else None
-            ),
-            "contamination_per_total_unit": contamination/unit_count,
-            "contamination_per_recovered_route_unit": contamination/position if position else None,
-            "contamination_per_candidate_activity": contamination/len(visible) if visible else None}
+    return {
+        "generated_units": visible,
+        "ordered_retention": position / len(expected),
+        "exact_sequence_recovered": visible == expected,
+        "rv01_compatible_exact_route": position == len(expected) and contamination == 0,
+        "raw_contamination": contamination,
+        "contamination_per_active_unit": (
+            contamination / len(set(generated)) if generated else None
+        ),
+        "contamination_per_total_unit": contamination / unit_count,
+        "contamination_per_recovered_route_unit": contamination / position if position else None,
+        "contamination_per_candidate_activity": contamination / len(visible) if visible else None,
+    }
 
 
 def geometry(active_sets: tuple[tuple[int, ...], ...], unit_count: int) -> dict[str, Any]:
     counts = Counter(u for active in active_sets for u in set(active))
     total = sum(counts.values())
-    entropy = -sum((c/total)*math.log(c/total) for c in counts.values()) if total else 0.0
-    return {"active_sets": active_sets, "active_counts": tuple(len(set(a)) for a in active_sets),
-            "active_fractions": tuple(len(set(a))/unit_count for a in active_sets),
-            "unique_occupied_units": len(counts),
-            "unique_occupied_fraction": len(counts)/unit_count,
-            "state_reuse_count": total-len(counts), "activation_entropy_nats": entropy}
+    entropy = -sum((c / total) * math.log(c / total) for c in counts.values()) if total else 0.0
+    return {
+        "active_sets": active_sets,
+        "active_counts": tuple(len(set(a)) for a in active_sets),
+        "active_fractions": tuple(len(set(a)) / unit_count for a in active_sets),
+        "unique_occupied_units": len(counts),
+        "unique_occupied_fraction": len(counts) / unit_count,
+        "state_reuse_count": total - len(counts),
+        "activation_entropy_nats": entropy,
+    }
 
 
-def run_development_cell(config: ScaleStudyConfig, world: dict[str, Any], scale: int,
-                         architecture: str) -> dict[str, Any]:
+def run_development_cell(
+    config: ScaleStudyConfig, world: dict[str, Any], scale: int, architecture: str
+) -> dict[str, Any]:
     """Execute unchanged learning rules on a new connected development substrate.
 
     Reservoir fixed-port readout is an explicit adapter, not an RV01 reproduction.
@@ -197,7 +225,9 @@ def run_development_cell(config: ScaleStudyConfig, world: dict[str, Any], scale:
         raise ValueError("architecture must be field or reservoir")
     audit = audit_scale(config, world, scale)
     from sparkbrain.research.rv01.physical_learner_bridge import (
-        build_physical_field, connection_snapshots, runtime_pulse,
+        build_physical_field,
+        connection_snapshots,
+        runtime_pulse,
     )
     from sparkbrain.research.rv01.physical_plasticity import ExternalOnlyPhysicalPlasticity
     from sparkbrain.research.rv01.resource_matched_reservoir import ResourceMatchedSparseReservoir
@@ -207,11 +237,19 @@ def run_development_cell(config: ScaleStudyConfig, world: dict[str, Any], scale:
     n, edges, ports = audit["unit_count"], audit["edges"], world["ports"]
     probes = []
     if architecture == "field":
-        field = build_physical_field(unit_count=n, directed_edges=edges, threshold=0.5,
-                                     initial_weight=0.05, initial_delay_ms=5.0)
+        field = build_physical_field(
+            unit_count=n,
+            directed_edges=edges,
+            threshold=0.5,
+            initial_weight=0.05,
+            initial_delay_ms=5.0,
+        )
         field.receptor_ids = ports
-        field.config = replace(field.config, max_events_per_run=config.max_events*config.degree,
-                               max_spikes_per_run=config.max_events)
+        field.config = replace(
+            field.config,
+            max_events_per_run=config.max_events * config.degree,
+            max_spikes_per_run=config.max_events,
+        )
         before = connection_snapshots(field)
         updates = 0
         parameter_updates = 0
@@ -220,72 +258,109 @@ def run_development_cell(config: ScaleStudyConfig, world: dict[str, Any], scale:
             for episode in range(exposures):
                 learner = ExternalOnlyPhysicalPlasticity(field)
                 for index, unit in enumerate(route):
-                    changed = learner.observe_external(runtime_pulse(
-                        event_id=f"{world['world_id']}:{route_index}:{episode}:{index}",
-                        time_ms=float(route_index*10000 + episode*100 + index*5),
-                        unit_id=unit, magnitude=1.0))
+                    changed = learner.observe_external(
+                        runtime_pulse(
+                            event_id=f"{world['world_id']}:{route_index}:{episode}:{index}",
+                            time_ms=float(route_index * 10000 + episode * 100 + index * 5),
+                            unit_id=unit,
+                            magnitude=1.0,
+                        )
+                    )
                     updates += 1
                     parameter_updates += len(changed)
         after = connection_snapshots(field)
-        changed_hidden = sum(a.weight != b.weight or a.delay_ms != b.delay_ms
-                             for a, b in zip(before, after, strict=True)
-                             if a.source_id not in ports or a.target_id not in ports)
+        changed_hidden = sum(
+            a.weight != b.weight or a.delay_ms != b.delay_ms
+            for a, b in zip(before, after, strict=True)
+            if a.source_id not in ports or a.target_id not in ports
+        )
         for route in world["routes"]:
             probe = TemporalExcitableField.from_state_dict(field.state_dict())
             connection_hash_before_probe = digest([asdict(c) for c in connection_snapshots(probe)])
-            probe.schedule_arrival(SynapticArrival(time_ms=100., target_id=route[0], current=1.,
-                source_id=None, pulse_id="rv02-cue", novelty=0., prediction_error=0.))
+            probe.schedule_arrival(
+                SynapticArrival(
+                    time_ms=100.0,
+                    target_id=route[0],
+                    current=1.0,
+                    source_id=None,
+                    pulse_id="rv02-cue",
+                    novelty=0.0,
+                    prediction_error=0.0,
+                )
+            )
             spikes, active_sets = [], []
             halt = "horizon_reached"
             for step in range(config.probe_steps):
                 # Native guards enforce remaining aggregate limits inside run_until.
-                probe.config = replace(probe.config,
-                    max_events_per_run=max(1, config.max_events*config.degree-probe.total_arrivals),
-                    max_spikes_per_run=max(1, config.max_events-probe.total_spikes))
-                rows = probe.run_until(100.+5*(step+1))
-                spikes.extend(row for row in rows if row.time_ms > 100.)
+                probe.config = replace(
+                    probe.config,
+                    max_events_per_run=max(
+                        1, config.max_events * config.degree - probe.total_arrivals
+                    ),
+                    max_spikes_per_run=max(1, config.max_events - probe.total_spikes),
+                )
+                rows = probe.run_until(100.0 + 5 * (step + 1))
+                spikes.extend(row for row in rows if row.time_ms > 100.0)
                 active_sets.append(tuple(row.unit_id for row in rows))
-                if (probe.total_spikes >= config.max_events
-                        or probe.total_arrivals >= config.max_events*config.degree):
+                if (
+                    probe.total_spikes >= config.max_events
+                    or probe.total_arrivals >= config.max_events * config.degree
+                ):
                     halt = "event_budget_reached"
                     break
                 if not probe.state_dict()["queue"]:
                     halt = "queue_drained"
                     break
             generated = tuple(row.unit_id for row in spikes)
-            probes.append({"route": route, "behavior": project_behavior(generated, ports, route, n),
-                           "geometry": geometry(tuple(active_sets), n), "halt_reason": halt,
-                           "geometry_definition": "spiking_units_per_5ms_bin",
-                           "final_queue_size": len(probe.state_dict()["queue"]),
-                           "actual_arrival_count": probe.total_arrivals,
-                           "actual_spike_count": probe.total_spikes,
-                           "connection_hash_before_probe": connection_hash_before_probe,
-                           "connection_hash_after_probe": digest([
-                               asdict(c) for c in connection_snapshots(probe)])})
-        resource = {"learning_observe_calls": updates, "changed_hidden_connections": changed_hidden,
-                    "parameter_update_count": parameter_updates,
-                    "adaptive_connection_scalar_slots": 2*len(edges),
-                    "serialized_state_bytes": len(json.dumps(field.state_dict()).encode())}
+            probes.append(
+                {
+                    "route": route,
+                    "behavior": project_behavior(generated, ports, route, n),
+                    "geometry": geometry(tuple(active_sets), n),
+                    "halt_reason": halt,
+                    "geometry_definition": "spiking_units_per_5ms_bin",
+                    "final_queue_size": len(probe.state_dict()["queue"]),
+                    "actual_arrival_count": probe.total_arrivals,
+                    "actual_spike_count": probe.total_spikes,
+                    "connection_hash_before_probe": connection_hash_before_probe,
+                    "connection_hash_after_probe": digest(
+                        [asdict(c) for c in connection_snapshots(probe)]
+                    ),
+                }
+            )
+        resource = {
+            "learning_observe_calls": updates,
+            "changed_hidden_connections": changed_hidden,
+            "parameter_update_count": parameter_updates,
+            "adaptive_connection_scalar_slots": 2 * len(edges),
+            "serialized_state_bytes": len(json.dumps(field.state_dict()).encode()),
+        }
     else:
-        reservoir = ResourceMatchedSparseReservoir(unit_count=n, directed_edges=edges,
-                    maximum_active_outputs=config.degree, seed=config.seed)
+        reservoir = ResourceMatchedSparseReservoir(
+            unit_count=n,
+            directed_edges=edges,
+            maximum_active_outputs=config.degree,
+            seed=config.seed,
+        )
         # Separate visible target interface; never silently train hidden output labels.
         visible_edges = tuple(edge for edge in edges if edge[1] in ports)
         reservoir._readout_sources = {
-            target: sources for target, sources in reservoir._readout_sources.items()
-            if target in ports}
+            target: sources
+            for target, sources in reservoir._readout_sources.items()
+            if target in ports
+        }
         for route, exposures in zip(world["routes"], world["exposures"], strict=True):
             for _ in range(exposures):
                 state = reservoir.zero_state()
                 for index, unit in enumerate(route):
                     state = reservoir.advance_many(state, (unit,))
                     reservoir.observed_external_event_count += 1
-                    if index+1 < len(route):
+                    if index + 1 < len(route):
                         # Same update rule, over explicit fixed-port readout edges only.
                         original_edges = reservoir.directed_edges
                         reservoir.directed_edges = visible_edges
                         try:
-                            reservoir._update_readout(state, route[index+1])
+                            reservoir._update_readout(state, route[index + 1])
                         finally:
                             reservoir.directed_edges = original_edges
         for route in world["routes"]:
@@ -295,33 +370,46 @@ def run_development_cell(config: ScaleStudyConfig, world: dict[str, Any], scale:
             for _ in range(config.probe_steps):
                 state = reservoir.advance_many(state, active)
                 active_sets.append(tuple(i for i, value in enumerate(state) if abs(value) > 1e-9))
-                ranked = sorted(((score, u) for u, score in reservoir._scores(state).items()
-                                 if score > 0), key=lambda row: (-row[0], row[1]))
-                remaining = config.max_events-len(generated)
+                ranked = sorted(
+                    ((score, u) for u, score in reservoir._scores(state).items() if score > 0),
+                    key=lambda row: (-row[0], row[1]),
+                )
+                remaining = config.max_events - len(generated)
                 if remaining <= 0:
                     halt = "event_budget_reached"
                     break
-                active = tuple(u for _, u in ranked[:min(config.degree, remaining)])
+                active = tuple(u for _, u in ranked[: min(config.degree, remaining)])
                 if not active:
                     halt = "no_positive_output"
                     break
                 generated.extend(active)
-            probes.append({"route": route,
-                           "behavior": project_behavior(tuple(generated), ports, route, n),
-                           "geometry": geometry(tuple(active_sets), n), "halt_reason": halt,
-                           "geometry_definition": "abs_recurrent_state_gt_1e-9_per_step",
-                           "readout_hash_before_probe": readout_hash_before_probe,
-                           "readout_hash_after_probe": digest(
-                               sorted(reservoir._readout_weights.items()))})
-        resource = {"parameter_update_count": reservoir.parameter_update_count,
-                    "observed_external_event_count": reservoir.observed_external_event_count,
-                    "fixed_recurrent_scalar_slots": len(edges),
-                    "allocated_readout_scalar_slots": len(edges),
-                    "trainable_visible_readout_scalar_slots": len(visible_edges),
-                    "hidden_readout_scalar_slots_unused": len(edges)-len(visible_edges)}
+            probes.append(
+                {
+                    "route": route,
+                    "behavior": project_behavior(tuple(generated), ports, route, n),
+                    "geometry": geometry(tuple(active_sets), n),
+                    "halt_reason": halt,
+                    "geometry_definition": "abs_recurrent_state_gt_1e-9_per_step",
+                    "readout_hash_before_probe": readout_hash_before_probe,
+                    "readout_hash_after_probe": digest(sorted(reservoir._readout_weights.items())),
+                }
+            )
+        resource = {
+            "parameter_update_count": reservoir.parameter_update_count,
+            "observed_external_event_count": reservoir.observed_external_event_count,
+            "fixed_recurrent_scalar_slots": len(edges),
+            "allocated_readout_scalar_slots": len(edges),
+            "trainable_visible_readout_scalar_slots": len(visible_edges),
+            "hidden_readout_scalar_slots_unused": len(edges) - len(visible_edges),
+        }
     complete = all(p["halt_reason"] != "event_budget_reached" for p in probes)
     for probe in probes:
         probe["complete"] = probe["halt_reason"] != "event_budget_reached"
-    return {"architecture": architecture, "audit": audit, "probes": probes,
-            "complete": complete,
-            "resource": resource, "scientific_status": "not_evaluated_development_feasibility"}
+    return {
+        "architecture": architecture,
+        "audit": audit,
+        "probes": probes,
+        "complete": complete,
+        "resource": resource,
+        "scientific_status": "not_evaluated_development_feasibility",
+    }
