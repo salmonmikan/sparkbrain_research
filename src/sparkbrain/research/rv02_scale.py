@@ -124,7 +124,7 @@ def audit_scale(config: ScaleStudyConfig, world: dict[str, Any], scale: int) -> 
     if digest(world) not in {digest(w) for w in development_worlds(config)}:
         raise ValueError("world must match an unmodified RV02 development fixture")
     required = tuple(
-        sorted({edge for route in world["routes"] for edge in zip(route, route[1:], strict=True)})
+        sorted({edge for route in world["routes"] for edge in zip(route, route[1:], strict=False)})
     )
     edges = build_topology(config, scale, required)
     n = config.base_units * scale
