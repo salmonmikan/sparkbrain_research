@@ -105,6 +105,8 @@ jobs:
               raise SystemExit("candidate-001 package manifest source SHA mismatch")
           if value.get("status") != "FROZEN":
               raise SystemExit("candidate-001 package manifest is not frozen")
+          if value.get("protocol_version") != "cx01-comparator-protocol-1":
+              raise SystemExit("candidate-001 protocol identity mismatch")
 
           rejected_freeze_commit = subprocess.check_output(
               ["git", "rev-parse", os.environ["REJECTED_FREEZE_REF"]],
@@ -114,7 +116,6 @@ jobs:
               raise SystemExit("candidate-001 rejected freeze moved")
 
           immutable_fields = (
-              "protocol_version",
               "development_grid_hash",
               "comparator_inventory",
               "privilege_inventory_hash",
@@ -131,6 +132,7 @@ jobs:
               "candidate_001_manifest_path": manifest_path,
               "candidate_001_manifest_sha256": hashlib.sha256(raw).hexdigest(),
               "candidate_001_package_commit": package_commit,
+              "candidate_001_protocol_version": value["protocol_version"],
               "candidate_001_source_sha": value["source_git_sha"],
               "immutable_contract": immutable_contract,
               "source_contract_reused_without_scoring_change": True,
@@ -239,6 +241,8 @@ jobs:
           new_manifest = json.loads(
               (package / "freeze_manifest.json").read_text(encoding="utf-8")
           )
+          if new_manifest.get("protocol_version") != "cx01-comparator-protocol-2":
+              raise SystemExit("candidate-002 package is not protocol-v2")
           mismatches = {
               name: {
                   "candidate_001": expected_value,
@@ -265,6 +269,11 @@ jobs:
               "immutable_execution_contract_verified": True,
               "independent_review_status": "PENDING",
               "package_verification": verification,
+              "protocol_transition": {
+                  "from": contract["candidate_001_protocol_version"],
+                  "to": new_manifest["protocol_version"],
+                  "reason": "structural-heldout-protocol-v2",
+              },
               "source_freeze_branch": os.environ["SOURCE_FREEZE_BRANCH"],
               "source_git_sha": os.environ["GITHUB_SHA"],
               "workflow_run_id": int(os.environ["GITHUB_RUN_ID"]),
@@ -337,6 +346,7 @@ jobs:
             echo "- package branch: \`${PACKAGE_BRANCH}\`"
             echo "- package commit: \`${package_sha}\`"
             echo "- immutable execution/scoring contract: **VERIFIED**"
+            echo "- protocol transition: **v1 -> v2 (structural-heldout only)**"
             echo "- execution seal: **NOT ISSUED**"
             echo "- formal status: **NOT STARTED**"
             echo "- independent review: **PENDING**"
