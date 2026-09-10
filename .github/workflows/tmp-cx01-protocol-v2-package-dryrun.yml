@@ -1,0 +1,85 @@
+name: Temporary CX01 protocol-v2 package dry-run
+
+on:
+  push:
+    branches:
+      - "fix/cx01-protocol-v2-contract-20260911"
+
+permissions:
+  contents: read
+
+jobs:
+  dry-run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/cx01-protocol-v2-contract-20260911
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install
+        run: python -m pip install -e ".[dev,learned,spiking]"
+      - name: Build outcome-blind package without freeze, seal, STARTED, or capability
+        shell: bash
+        run: |
+          git fetch origin e1a1d9c1435de8aaf875aa40b5e62a7f40de9732
+          python - <<'PY'
+          import json
+          import subprocess
+          import tempfile
+          from pathlib import Path
+
+          from sparkbrain.comparison.cx01.candidate import CandidatePurpose
+          from sparkbrain.comparison.cx01.prepare import (
+              prepare_outcome_blind_bundle,
+              verify_outcome_blind_bundle,
+          )
+
+          rejected = json.loads(subprocess.check_output([
+              "git", "show",
+              "e1a1d9c1435de8aaf875aa40b5e62a7f40de9732:cx01-control/freeze_manifest.json",
+          ]))
+          assert rejected["protocol_version"] == "cx01-comparator-protocol-1"
+          immutable_fields = (
+              "development_grid_hash",
+              "comparator_inventory",
+              "privilege_inventory_hash",
+              "schedule_policy_hash",
+              "scoring_policy_hash",
+              "result_schema_hash",
+              "resource_schema_hash",
+              "execution_command",
+              "artifact_root",
+          )
+          immutable = {name: rejected[name] for name in immutable_fields}
+          with tempfile.TemporaryDirectory() as temp:
+              package = Path(temp) / "package"
+              prepare_outcome_blind_bundle(
+                  generation_id="cx01-candidate-002",
+                  seeds=tuple(range(370110, 370120)),
+                  purpose=CandidatePurpose.FORMAL,
+                  source_git_sha="0" * 40,
+                  builder="cx01-protocol-v2-dry-run",
+                  execution_command=immutable["execution_command"],
+                  artifact_root=immutable["artifact_root"],
+                  output_dir=package,
+              )
+              verification = verify_outcome_blind_bundle(package)
+              assert verification["verified"] is True
+              assert verification["world_count"] == 60
+              assert verification["declaration_count"] == 420
+              assert verification["execution_seal_status"] == "NOT_ISSUED"
+              assert verification["formal_status"] == "NOT_STARTED"
+              manifest = json.loads((package / "freeze_manifest.json").read_text())
+              assert manifest["protocol_version"] == "cx01-comparator-protocol-2"
+              for name, expected in immutable.items():
+                  assert manifest[name] == expected, name
+              assert not (package / "execution_seal.json").exists()
+              assert not (package / "STARTED").exists()
+              assert not (package / "results.jsonl").exists()
+          print("protocol-v2 transition isolated; immutable execution/scoring fields preserved")
+          PY
