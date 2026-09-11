@@ -9,9 +9,11 @@ score P3, or open held-out/formal authority.
 
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass
 from typing import Literal
 
+from .md002_fixtures import FrozenPartitionBytes
 from .md002_p3_development_plan import (
     P3DevelopmentConditionInput,
     build_p3_development_plan,
@@ -27,9 +29,52 @@ from .md002_protocol import (
 P3Direction = Literal["A-to-B", "B-to-A"]
 
 
+def _active_route_target(partitions: FrozenPartitionBytes) -> str:
+    """Read the route identity actually referenced by the live boundary R slice."""
+
+    partitions.validate()
+    if partitions.return_address is None:
+        raise ValueError("P3 route semantics require observed return-address state")
+    try:
+        state = json.loads(partitions.return_address.decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ValueError("P3 return-address bytes are not canonical JSON") from exc
+    if not isinstance(state, dict):
+        raise ValueError("P3 return-address state must be a mapping")
+    proposals = state.get("proposals")
+    boundary = state.get("boundary")
+    if not isinstance(proposals, list) or not isinstance(boundary, dict):
+        raise ValueError("P3 return-address state is missing proposals/boundary")
+    source_ids = boundary.get("source_proposal_ids")
+    if not isinstance(source_ids, list) or len(source_ids) != 1:
+        raise ValueError(
+            "P3 direction binding requires exactly one active boundary source proposal"
+        )
+    source_id = source_ids[0]
+    if not isinstance(source_id, str) or not source_id:
+        raise ValueError("P3 active boundary source proposal ID must be non-empty")
+    by_id: dict[str, dict[str, object]] = {}
+    for proposal in proposals:
+        if not isinstance(proposal, dict):
+            raise ValueError("P3 proposal row must be a mapping")
+        proposal_id = proposal.get("proposal_id")
+        if not isinstance(proposal_id, str) or not proposal_id:
+            raise ValueError("P3 proposal ID must be non-empty")
+        if proposal_id in by_id:
+            raise ValueError("P3 proposal IDs must be unique")
+        by_id[proposal_id] = proposal
+    active = by_id.get(source_id)
+    if active is None:
+        raise ValueError("P3 boundary source proposal is absent from retained R state")
+    target = active.get("target")
+    if not isinstance(target, str) or not target:
+        raise ValueError("P3 active route target must be a non-empty string")
+    return target
+
+
 @dataclass(frozen=True, slots=True)
 class P3DirectionalFixture:
-    """One preregistered P3 direction bound to its execution-disabled fixture."""
+    """One preregistered P3 direction bound to verifiable live-R semantics."""
 
     direction: P3Direction
     fixture: P3ReturnAddressFixture
@@ -38,6 +83,18 @@ class P3DirectionalFixture:
         if self.direction not in ("A-to-B", "B-to-A"):
             raise ValueError("P3 direction must be A-to-B or B-to-A")
         self.fixture.validate()
+        baseline_route = _active_route_target(self.fixture.baseline)
+        donor_route = _active_route_target(self.fixture.donor)
+        expected = {
+            "A-to-B": ("A", "B"),
+            "B-to-A": ("B", "A"),
+        }[self.direction]
+        if (baseline_route, donor_route) != expected:
+            raise ValueError(
+                "P3 direction does not match baseline/donor active R lineage: "
+                f"expected {expected[0]}->{expected[1]}, "
+                f"observed {baseline_route}->{donor_route}"
+            )
 
 
 @dataclass(frozen=True, slots=True)
@@ -107,6 +164,8 @@ def _fixture_digest(directional: P3DirectionalFixture) -> str:
     return canonical_sha256(
         {
             "direction": directional.direction,
+            "baseline_active_route": _active_route_target(directional.fixture.baseline),
+            "donor_active_route": _active_route_target(directional.fixture.donor),
             "fixture_content_sha256": _fixture_content_digest(directional.fixture),
         }
     )
