@@ -21,6 +21,7 @@ from sparkbrain.v06.local_expectation import LocalExpectationConfig
 from sparkbrain.v061_a01.credit_bridge import A01LocalTemporalExpectation
 from sparkbrain.v061_a01.md002_p3_fixture import P3ReturnAddressFixture
 from sparkbrain.v061_a01.md002_p3_harness import (
+    P3DirectionalFixture,
     prepare_p3_harness,
     prepare_p3_matrix,
     require_p3_execution_authority,
@@ -123,13 +124,22 @@ def _fixture(direction: str = "ab") -> P3ReturnAddressFixture:
     )
 
 
+def _directional(direction: str, fixture_label: str) -> P3DirectionalFixture:
+    return P3DirectionalFixture(  # type: ignore[arg-type]
+        direction=direction,
+        fixture=_fixture(fixture_label),
+    )
+
+
 def test_p3_harness_prepares_three_actual_restorable_arms_without_capability() -> None:
-    prepared = prepare_p3_harness(_fixture())
+    prepared = prepare_p3_harness(_directional("A-to-B", "ab"))
 
     assert tuple(row.arm for row in prepared) == ("baseline", "donor", "transplanted")
+    assert {row.direction for row in prepared} == {"A-to-B"}
     assert len({row.fixture_sha256 for row in prepared}) == 1
     assert len({row.prospective_execution_id for row in prepared}) == 3
     assert all(row.fixture_sha256 in row.prospective_execution_id for row in prepared)
+    assert all(row.direction in row.prospective_execution_id for row in prepared)
     assert len({row.admissible_external_evidence_sha256 for row in prepared}) == 1
     assert len({row.observation_schema_sha256 for row in prepared}) == 1
     assert len({row.negative_stop_schema_sha256 for row in prepared}) == 1
@@ -153,23 +163,48 @@ def test_p3_harness_prepares_three_actual_restorable_arms_without_capability() -
     assert transplanted.return_address_sha256 == donor.return_address_sha256
 
 
-def test_p3_matrix_binds_direction_specific_fixture_identity_into_all_six_ids() -> None:
-    prepared = prepare_p3_matrix((_fixture("ab"), _fixture("ba")))
+def test_p3_matrix_requires_and_binds_both_registered_directions() -> None:
+    prepared = prepare_p3_matrix(
+        (
+            _directional("A-to-B", "ab"),
+            _directional("B-to-A", "ba"),
+        )
+    )
 
     assert len(prepared) == 6
+    assert {row.direction for row in prepared} == {"A-to-B", "B-to-A"}
     assert len({row.fixture_sha256 for row in prepared}) == 2
     assert len({row.prospective_execution_id for row in prepared}) == 6
     assert all(row.fixture_sha256 in row.prospective_execution_id for row in prepared)
+    assert all(row.direction in row.prospective_execution_id for row in prepared)
 
 
-def test_p3_matrix_rejects_duplicate_fixture_identity() -> None:
-    fixture = _fixture("ab")
-    with pytest.raises(RuntimeError, match="duplicate fixture identities"):
-        prepare_p3_matrix((fixture, fixture))
+def test_p3_matrix_rejects_missing_or_duplicate_direction() -> None:
+    with pytest.raises(ValueError, match="exactly two directional fixtures"):
+        prepare_p3_matrix((_directional("A-to-B", "ab"),))  # type: ignore[arg-type]
+
+    with pytest.raises(RuntimeError, match="one A-to-B and one B-to-A"):
+        prepare_p3_matrix(
+            (
+                _directional("A-to-B", "ab"),
+                _directional("A-to-B", "ab-second"),
+            )
+        )
+
+
+def test_p3_matrix_rejects_same_fixture_content_across_opposite_directions() -> None:
+    fixture = _fixture("shared")
+    with pytest.raises(RuntimeError, match="cannot reuse the same fixture content"):
+        prepare_p3_matrix(
+            (
+                P3DirectionalFixture("A-to-B", fixture),
+                P3DirectionalFixture("B-to-A", fixture),
+            )
+        )
 
 
 def test_p3_harness_global_execution_gate_remains_fail_closed() -> None:
-    prepare_p3_harness(_fixture())
+    prepare_p3_harness(_directional("A-to-B", "ab"))
 
     with pytest.raises(PermissionError, match="technical-review artifact digest is not pinned"):
         require_p3_execution_authority(MD002ExecutionGate())
