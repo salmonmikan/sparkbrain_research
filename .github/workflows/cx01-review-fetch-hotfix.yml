@@ -1,0 +1,39 @@
+name: CX01 Review Fetch Hotfix
+
+on:
+  push:
+    branches:
+      - "review/cx01-candidate-002-prestart-20260911"
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-actions[bot]'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Patch rejected-package fetch and remove one-shot workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('.github/workflows/cx01-candidate-002-independent-review.yml')
+          text = path.read_text(encoding='utf-8')
+          old = '''          git fetch origin "+refs/heads/*:refs/remotes/origin/*"\n          test "$(git rev-parse refs/remotes/origin/freeze/cx01-001)" = "${REJECTED_FREEZE_COMMIT}"\n          git cat-file -e "${REJECTED_PACKAGE_COMMIT}^{commit}"\n'''
+          new = '''          git fetch origin "+refs/heads/*:refs/remotes/origin/*"\n          git fetch origin "${REJECTED_PACKAGE_COMMIT}"\n          test "$(git rev-parse refs/remotes/origin/freeze/cx01-001)" = "${REJECTED_FREEZE_COMMIT}"\n          git cat-file -e "${REJECTED_PACKAGE_COMMIT}^{commit}"\n'''
+          if old not in text:
+              raise SystemExit('expected review fetch block not found')
+          path.write_text(text.replace(old, new, 1), encoding='utf-8')
+          PY
+          git rm .github/workflows/cx01-review-fetch-hotfix.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/workflows/cx01-candidate-002-independent-review.yml
+          git commit -m "fix(cx01): fetch rejected package explicitly in review"
+          git push origin HEAD:review/cx01-candidate-002-prestart-20260911
