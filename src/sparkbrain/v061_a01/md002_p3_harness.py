@@ -27,14 +27,16 @@ from .md002_protocol import (
 )
 
 P3Direction = Literal["A-to-B", "B-to-A"]
+P3_LINEAGE_PATH_A = "local:A->B"
+P3_LINEAGE_PATH_B = "local:A->C"
 
 
-def _active_route_target(partitions: FrozenPartitionBytes) -> str:
-    """Read the route identity actually referenced by the live boundary R slice."""
+def _active_lineage(partitions: FrozenPartitionBytes) -> str:
+    """Derive A/B from the active proposal's credited local-path lineage."""
 
     partitions.validate()
     if partitions.return_address is None:
-        raise ValueError("P3 route semantics require observed return-address state")
+        raise ValueError("P3 lineage semantics require observed return-address state")
     try:
         state = json.loads(partitions.return_address.decode("utf-8"))
     except (UnicodeDecodeError, json.JSONDecodeError) as exc:
@@ -66,15 +68,32 @@ def _active_route_target(partitions: FrozenPartitionBytes) -> str:
     active = by_id.get(source_id)
     if active is None:
         raise ValueError("P3 boundary source proposal is absent from retained R state")
-    target = active.get("target")
-    if not isinstance(target, str) or not target:
-        raise ValueError("P3 active route target must be a non-empty string")
-    return target
+    paths = active.get("local_path_ids")
+    if not isinstance(paths, list):
+        raise ValueError("P3 active proposal must retain local_path_ids")
+    registered = {
+        "A": P3_LINEAGE_PATH_A,
+        "B": P3_LINEAGE_PATH_B,
+    }
+    matched = tuple(
+        lineage
+        for lineage, path_id in registered.items()
+        if path_id in paths
+    )
+    if len(matched) != 1:
+        raise ValueError(
+            "P3 active proposal must identify exactly one registered A/B local lineage"
+        )
+    lineage = matched[0]
+    expected_target = {"A": "B", "B": "C"}[lineage]
+    if active.get("target") != expected_target:
+        raise ValueError("P3 active proposal target is inconsistent with credited lineage")
+    return lineage
 
 
 @dataclass(frozen=True, slots=True)
 class P3DirectionalFixture:
-    """One preregistered P3 direction bound to verifiable live-R semantics."""
+    """One preregistered P3 direction bound to verifiable live-R lineage semantics."""
 
     direction: P3Direction
     fixture: P3ReturnAddressFixture
@@ -83,17 +102,17 @@ class P3DirectionalFixture:
         if self.direction not in ("A-to-B", "B-to-A"):
             raise ValueError("P3 direction must be A-to-B or B-to-A")
         self.fixture.validate()
-        baseline_route = _active_route_target(self.fixture.baseline)
-        donor_route = _active_route_target(self.fixture.donor)
+        baseline_lineage = _active_lineage(self.fixture.baseline)
+        donor_lineage = _active_lineage(self.fixture.donor)
         expected = {
             "A-to-B": ("A", "B"),
             "B-to-A": ("B", "A"),
         }[self.direction]
-        if (baseline_route, donor_route) != expected:
+        if (baseline_lineage, donor_lineage) != expected:
             raise ValueError(
-                "P3 direction does not match baseline/donor active R lineage: "
+                "P3 direction does not match baseline/donor credited lineage: "
                 f"expected {expected[0]}->{expected[1]}, "
-                f"observed {baseline_route}->{donor_route}"
+                f"observed {baseline_lineage}->{donor_lineage}"
             )
 
 
@@ -164,8 +183,8 @@ def _fixture_digest(directional: P3DirectionalFixture) -> str:
     return canonical_sha256(
         {
             "direction": directional.direction,
-            "baseline_active_route": _active_route_target(directional.fixture.baseline),
-            "donor_active_route": _active_route_target(directional.fixture.donor),
+            "baseline_active_lineage": _active_lineage(directional.fixture.baseline),
+            "donor_active_lineage": _active_lineage(directional.fixture.donor),
             "fixture_content_sha256": _fixture_content_digest(directional.fixture),
         }
     )
