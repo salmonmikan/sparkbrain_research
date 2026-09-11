@@ -47,12 +47,18 @@ def validate_user_review_override(raw: bytes) -> str:
         raise PermissionError("MD-002 user review override exceeds human-review-only scope")
     if record.get("authority") != USER_REVIEW_OVERRIDE_AUTHORITY:
         raise PermissionError("MD-002 user review override authority drifted")
-    if record.get("source_git_sha") != USER_REVIEW_OVERRIDE_SOURCE_GIT_SHA:
+    source_git_sha = record.get("source_git_sha")
+    if source_git_sha != USER_REVIEW_OVERRIDE_SOURCE_GIT_SHA:
         raise PermissionError("MD-002 user review override source binding drifted")
-    if record.get("protocol_sha256") != USER_REVIEW_OVERRIDE_PROTOCOL_SHA256:
-        raise PermissionError("MD-002 user review override protocol binding drifted")
     if record.get("protocol_binding") != "sha256(md002_id+'@'+source_git_sha)":
         raise PermissionError("MD-002 user review override protocol-binding rule drifted")
+    expected_protocol_sha256 = hashlib.sha256(
+        f"{MD002_ID}@{source_git_sha}".encode()
+    ).hexdigest()
+    if expected_protocol_sha256 != USER_REVIEW_OVERRIDE_PROTOCOL_SHA256:
+        raise AssertionError("MD-002 review override protocol constant drifted")
+    if record.get("protocol_sha256") != expected_protocol_sha256:
+        raise PermissionError("MD-002 user review override protocol binding drifted")
     _require_false(record, "independent_human_review_performed")
     _require_false(record, "formal_execution_authority")
     return digest
