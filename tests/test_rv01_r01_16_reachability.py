@@ -10,6 +10,8 @@ from sparkbrain.research.rv01_r01_16_reachability import (
     build_factor_reachability_certificate,
 )
 
+REGISTERED_UNITS = (0, 1, 2, 3, 4, 9)
+
 
 def _construction() -> R01_16FactorizationConstruction:
     pre = (
@@ -27,12 +29,17 @@ def _construction() -> R01_16FactorizationConstruction:
     return R01_16FactorizationConstruction(pre_training=pre, post_training=post)
 
 
-def test_reachability_uses_conservative_pre_post_delay_and_fixed_horizon() -> None:
-    certificate = build_factor_reachability_certificate(
+def _certificate(*, cues: tuple[int, ...], horizon: float):
+    return build_factor_reachability_certificate(
         _construction(),
-        cue_source_ids=(0,),
-        probe_horizon_ms=10.0,
+        registered_unit_ids=REGISTERED_UNITS,
+        cue_source_ids=cues,
+        probe_horizon_ms=horizon,
     )
+
+
+def test_reachability_uses_conservative_pre_post_delay_and_fixed_horizon() -> None:
+    certificate = _certificate(cues=(0,), horizon=10.0)
 
     assert certificate.weight_changed_edges == ((0, 1), (3, 4))
     assert certificate.delay_changed_edges == ((1, 2),)
@@ -51,11 +58,7 @@ def test_reachability_uses_conservative_pre_post_delay_and_fixed_horizon() -> No
 
 
 def test_off_route_changed_edge_is_not_a_behavioral_negative_eligibility_cell() -> None:
-    certificate = build_factor_reachability_certificate(
-        _construction(),
-        cue_source_ids=(1,),
-        probe_horizon_ms=5.0,
-    )
+    certificate = _certificate(cues=(1,), horizon=5.0)
 
     assert certificate.weight_changed_edges == ((0, 1), (3, 4))
     assert certificate.reachable_weight_edges == ()
@@ -66,17 +69,28 @@ def test_off_route_changed_edge_is_not_a_behavioral_negative_eligibility_cell() 
     assert certificate.delay_eligible is True
 
 
+def test_isolated_registered_cue_yields_ineligible_certificate_not_error() -> None:
+    certificate = _certificate(cues=(9,), horizon=10.0)
+
+    assert certificate.cue_source_ids == (9,)
+    assert certificate.reachable_weight_edges == ()
+    assert certificate.reachable_delay_edges == ()
+    assert certificate.combined_eligible is False
+
+
 def test_reachability_fails_closed_on_invalid_cue_or_horizon() -> None:
-    with pytest.raises(ValueError, match="at least one cue source"):
+    with pytest.raises(ValueError, match="requires at least one unit"):
         build_factor_reachability_certificate(
             _construction(),
+            registered_unit_ids=REGISTERED_UNITS,
             cue_source_ids=(),
             probe_horizon_ms=10.0,
         )
 
-    with pytest.raises(ValueError, match="not present"):
+    with pytest.raises(ValueError, match="registered unit inventory"):
         build_factor_reachability_certificate(
             _construction(),
+            registered_unit_ids=REGISTERED_UNITS,
             cue_source_ids=(999,),
             probe_horizon_ms=10.0,
         )
@@ -84,8 +98,19 @@ def test_reachability_fails_closed_on_invalid_cue_or_horizon() -> None:
     with pytest.raises(ValueError, match="finite and positive"):
         build_factor_reachability_certificate(
             _construction(),
+            registered_unit_ids=REGISTERED_UNITS,
             cue_source_ids=(0,),
             probe_horizon_ms=0.0,
+        )
+
+
+def test_reachability_rejects_connection_endpoint_outside_unit_inventory() -> None:
+    with pytest.raises(ValueError, match="connection endpoint"):
+        build_factor_reachability_certificate(
+            _construction(),
+            registered_unit_ids=(0, 1, 2, 3),
+            cue_source_ids=(0,),
+            probe_horizon_ms=10.0,
         )
 
 
@@ -98,11 +123,13 @@ def test_reachability_is_deterministic_under_connection_inventory_order() -> Non
 
     left = build_factor_reachability_certificate(
         original,
+        registered_unit_ids=REGISTERED_UNITS,
         cue_source_ids=(0,),
         probe_horizon_ms=10.0,
     )
     right = build_factor_reachability_certificate(
         reordered,
+        registered_unit_ids=tuple(reversed(REGISTERED_UNITS)),
         cue_source_ids=(0,),
         probe_horizon_ms=10.0,
     )
@@ -112,16 +139,8 @@ def test_reachability_is_deterministic_under_connection_inventory_order() -> Non
 
 
 def test_reachability_canonicalizes_simultaneous_cue_order() -> None:
-    left = build_factor_reachability_certificate(
-        _construction(),
-        cue_source_ids=(0, 3),
-        probe_horizon_ms=10.0,
-    )
-    right = build_factor_reachability_certificate(
-        _construction(),
-        cue_source_ids=(3, 0),
-        probe_horizon_ms=10.0,
-    )
+    left = _certificate(cues=(0, 3), horizon=10.0)
+    right = _certificate(cues=(3, 0), horizon=10.0)
 
     assert left.cue_source_ids == (0, 3)
     assert right.cue_source_ids == (0, 3)
