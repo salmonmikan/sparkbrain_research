@@ -3,7 +3,8 @@
 P4 requires genuinely merged BoundaryEvent ancestry and later runtime-active
 lineages. This module derives those identities only from retained runtime trace
 records and actual BoundaryEvent objects; callers cannot provide expected
-before/after lineage constants separately.
+before/after lineage constants separately or cherry-pick only a favorable
+subset of retained P4 boundary events.
 
 No evidence is applied, no capability is scored, and the MD-002 execution gate
 is not opened here.
@@ -73,14 +74,28 @@ class P4RetainedTraceInput:
         event_ids = tuple(event.event_id for event in self.boundary_events)
         if len(event_ids) != len(set(event_ids)):
             raise ValueError("P4 retained BoundaryEvents must be unique")
-        for event in self.boundary_events:
-            event_state = event.state_dict()
-            expected = {"type": "md002-p4-boundary-event", "event": event_state}
-            matches = [row for row in self.runtime_trace if row == expected]
-            if len(matches) != 1:
-                raise ValueError(
-                    "P4 BoundaryEvent identity is not bound exactly once to the retained trace"
-                )
+
+        retained_boundary_rows = tuple(
+            row for row in self.runtime_trace if row.get("type") == "md002-p4-boundary-event"
+        )
+        if len(retained_boundary_rows) != len(self.boundary_events):
+            raise ValueError(
+                "P4 supplied BoundaryEvents must cover the complete retained boundary-event trace"
+            )
+        expected_boundary_rows = tuple(
+            {"type": "md002-p4-boundary-event", "event": event.state_dict()}
+            for event in self.boundary_events
+        )
+        if len({canonical_sha256(row) for row in retained_boundary_rows}) != len(
+            retained_boundary_rows
+        ):
+            raise ValueError("P4 retained boundary-event trace contains duplicate rows")
+        if {canonical_sha256(row) for row in retained_boundary_rows} != {
+            canonical_sha256(row) for row in expected_boundary_rows
+        }:
+            raise ValueError(
+                "P4 supplied BoundaryEvents do not exactly match the complete retained trace"
+            )
 
         merged_events = tuple(
             event
