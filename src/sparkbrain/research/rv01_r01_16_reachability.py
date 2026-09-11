@@ -119,18 +119,23 @@ def _conservative_delay(
     return max(pre.delay_ms, post.delay_ms)
 
 
-def _earliest_arrivals(
-    construction: R01_16FactorizationConstruction,
-    *,
-    cue_source_ids: tuple[int, ...],
-    probe_horizon_ms: float,
-) -> dict[int, float]:
+def _canonical_cue_ids(cue_source_ids: tuple[int, ...]) -> tuple[int, ...]:
     if not cue_source_ids:
         raise ValueError("R01-16 reachability requires at least one cue source")
     if any(type(unit_id) is not int for unit_id in cue_source_ids):
         raise TypeError("cue source IDs must be integers")
     if len(set(cue_source_ids)) != len(cue_source_ids):
         raise ValueError("cue source IDs must be unique")
+    return tuple(sorted(cue_source_ids))
+
+
+def _earliest_arrivals(
+    construction: R01_16FactorizationConstruction,
+    *,
+    cue_source_ids: tuple[int, ...],
+    probe_horizon_ms: float,
+) -> dict[int, float]:
+    cue_source_ids = _canonical_cue_ids(cue_source_ids)
     horizon = _finite_positive(probe_horizon_ms, name="probe_horizon_ms")
 
     pre = {row.key: row for row in construction.pre_training}
@@ -172,10 +177,11 @@ def build_factor_reachability_certificate(
 ) -> FactorReachabilityCertificate:
     """Bind reachable learned-factor edges without running any capability."""
 
+    canonical_cue_ids = _canonical_cue_ids(cue_source_ids)
     horizon = _finite_positive(probe_horizon_ms, name="probe_horizon_ms")
     arrivals = _earliest_arrivals(
         construction,
-        cue_source_ids=cue_source_ids,
+        cue_source_ids=canonical_cue_ids,
         probe_horizon_ms=horizon,
     )
     pre = {row.key: row for row in construction.pre_training}
@@ -210,7 +216,7 @@ def build_factor_reachability_certificate(
     ]
     return FactorReachabilityCertificate(
         amendment_id=R01_16_REACHABILITY_AMENDMENT_ID,
-        cue_source_ids=tuple(cue_source_ids),
+        cue_source_ids=canonical_cue_ids,
         probe_horizon_ms=horizon,
         pre_training_sha256=summary.pre_training_sha256,
         post_training_sha256=summary.post_training_sha256,
