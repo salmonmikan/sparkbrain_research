@@ -7,6 +7,7 @@ from sparkbrain.v06.foundation import EventOrigin
 from sparkbrain.v061_a01.md002_world_fixture import (
     P2AnonymousWorldPermutation,
     P2AnonymousWorldRelation,
+    P2WorldResponseSchedule,
 )
 
 
@@ -38,32 +39,47 @@ def relation_b() -> P2AnonymousWorldRelation:
     )
 
 
+def pair() -> P2AnonymousWorldPermutation:
+    return P2AnonymousWorldPermutation(relation_a(), relation_b())
+
+
+def schedule() -> P2WorldResponseSchedule:
+    return P2WorldResponseSchedule(event_id="external:paired", time_ms=12.0)
+
+
 def test_world_permutation_changes_only_assignment_inventory() -> None:
-    pair = P2AnonymousWorldPermutation(relation_a(), relation_b())
-    pair.validate()
-    assert set(pair.control.mapping) == set(pair.intervention.mapping)
-    assert set(pair.control.mapping.values()) == set(pair.intervention.mapping.values())
+    permutation = pair()
+    permutation.validate()
+    assert set(permutation.control.mapping) == set(permutation.intervention.mapping)
+    assert set(permutation.control.mapping.values()) == set(
+        permutation.intervention.mapping.values()
+    )
     assert all(
-        pair.control.mapping[key] != pair.intervention.mapping[key]
-        for key in pair.control.mapping
+        permutation.control.mapping[key] != permutation.intervention.mapping[key]
+        for key in permutation.control.mapping
     )
 
 
-def test_world_fixture_generates_exact_parent_external_response() -> None:
-    control = relation_a()
-    intervention = relation_b()
+def test_world_fixture_generates_exact_parent_external_response_with_shared_identity() -> None:
     source = boundary("proposal:a")
-
-    left = control.respond(source, event_id="external:control", time_ms=12.0)
-    right = intervention.respond(source, event_id="external:intervention", time_ms=12.0)
+    left, right = pair().respond_pair(source, source, schedule=schedule())
 
     assert left.origin is EventOrigin.EXTERNAL
     assert right.origin is EventOrigin.EXTERNAL
+    assert left.event_id == right.event_id == "external:paired"
+    assert left.time_ms == right.time_ms == 12.0
     assert left.parent_event_ids == right.parent_event_ids == (source.event_id,)
     assert left.target == "world:x"
     assert right.target == "world:y"
     assert left.magnitude == right.magnitude == source.magnitude
     assert left.polarity == right.polarity == source.polarity
+
+
+def test_world_fixture_rejects_arm_specific_boundary_drift() -> None:
+    source = boundary("proposal:a")
+    drifted = boundary("proposal:a", event_id="boundary:other")
+    with pytest.raises(ValueError, match="differ outside world relation"):
+        pair().respond_pair(source, drifted, schedule=schedule())
 
 
 def test_world_fixture_never_accepts_merged_or_unknown_lineage() -> None:
@@ -82,12 +98,42 @@ def test_world_fixture_never_accepts_merged_or_unknown_lineage() -> None:
         source_state_hash=source.source_state_hash,
     )
     with pytest.raises(ValueError, match="exactly one source proposal"):
-        relation_a().respond(merged, event_id="external:merged", time_ms=12.0)
+        pair().respond_pair(merged, merged, schedule=schedule())
+
+    unknown = boundary("proposal:unknown")
     with pytest.raises(ValueError, match="absent from the world relation"):
-        relation_a().respond(
-            boundary("proposal:unknown"),
-            event_id="external:unknown",
-            time_ms=12.0,
+        pair().respond_pair(unknown, unknown, schedule=schedule())
+
+
+def test_world_relation_rejects_non_string_decoded_identifiers() -> None:
+    invalid = {
+        "schema": "v061-a01-md002-p2-anonymous-world-v1",
+        "responses": [
+            {"proposal_id": 1, "external_target": "world:x"},
+            {"proposal_id": "proposal:b", "external_target": "world:y"},
+        ],
+    }
+    with pytest.raises(ValueError, match="identifiers must be strings"):
+        P2AnonymousWorldRelation.from_state_dict(invalid)
+
+    restored = P2AnonymousWorldRelation.from_state_dict(relation_a().state_dict())
+    assert restored == relation_a()
+    assert restored.state_dict() == relation_a().state_dict()
+
+
+def test_world_response_schedule_fails_closed_on_identity_or_clock_drift() -> None:
+    source = boundary("proposal:a")
+    with pytest.raises(ValueError, match="non-empty string"):
+        pair().respond_pair(
+            source,
+            source,
+            schedule=P2WorldResponseSchedule(event_id="", time_ms=12.0),
+        )
+    with pytest.raises(ValueError, match="must occur after"):
+        pair().respond_pair(
+            source,
+            source,
+            schedule=P2WorldResponseSchedule(event_id="external:paired", time_ms=10.0),
         )
 
 
