@@ -111,27 +111,20 @@ def _ready_cell(
         )
         for ordinal, spike in enumerate(spikes)
     )
-    returns = (
+    # The registered constructor chooses the minimum visible target for each
+    # source. Both sources expose target 2 in this symmetric gate fixture.
+    returns = tuple(
         ExternalReturnEvent(
             event_id=(
-                f"rd005-return:{family}:{scale}:0:"
-                f"{_canonical_sha256(spikes[0])[:16]}"
+                f"rd005-return:{family}:{scale}:{ordinal}:"
+                f"{_canonical_sha256(spike)[:16]}"
             ),
-            eligibility_event_id=eligibility[0].event_id,
+            eligibility_event_id=eligibility[ordinal].event_id,
             target_id=2,
             time_ms=11.0,
             outcome_blind=True,
-        ),
-        ExternalReturnEvent(
-            event_id=(
-                f"rd005-return:{family}:{scale}:1:"
-                f"{_canonical_sha256(spikes[1])[:16]}"
-            ),
-            eligibility_event_id=eligibility[1].event_id,
-            target_id=4,
-            time_ms=11.0,
-            outcome_blind=True,
-        ),
+        )
+        for ordinal, spike in enumerate(spikes)
     )
     mapping = {40: 41, 41: 40}
     connections = tuple(
