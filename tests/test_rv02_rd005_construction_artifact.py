@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from dataclasses import replace
 
 import pytest
 
@@ -160,13 +161,10 @@ def test_rd005_serializes_connection_rows_not_only_their_hash() -> None:
             "plastic": True,
         },
     )
-    cell = _cell(0)
-    cell = RD005ConstructionCell(
-        **{
-            **cell.__dict__,
-            "connection_rows": connection_rows,
-            "connection_rows_sha256": digest(connection_rows),
-        }
+    cell = replace(
+        _cell(0),
+        connection_rows=connection_rows,
+        connection_rows_sha256=digest(connection_rows),
     )
     state = cell.state_dict()
     assert state["connection_rows"] == list(connection_rows)
