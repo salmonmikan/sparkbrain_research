@@ -34,6 +34,7 @@ jobs:
         run: |
           set -euo pipefail
           git fetch origin "+refs/heads/*:refs/remotes/origin/*"
+          git fetch origin "${REJECTED_PACKAGE_COMMIT}"
           test "$(git rev-parse refs/remotes/origin/freeze/cx01-001)" = "${REJECTED_FREEZE_COMMIT}"
           git cat-file -e "${REJECTED_PACKAGE_COMMIT}^{commit}"
           git cat-file -e "${PACKAGE_COMMIT}^{commit}"
@@ -58,6 +59,7 @@ jobs:
         run: |
           set -euo pipefail
           git fetch origin "+refs/heads/*:refs/remotes/origin/*"
+          git fetch origin "${REJECTED_PACKAGE_COMMIT}"
           python - <<'PY'
           import hashlib
           import json
@@ -209,7 +211,7 @@ jobs:
           cat /tmp/generator-source.sha256
 
           # This machine check is intentionally only a fail-closed guard against
-          # direct result/execution material.  It does not claim to replace the
+          # direct result/execution material. It does not claim to replace the
           # required semantic review by an independent human reviewer.
           if grep -REn \
             'results\.jsonl|execution_seal\.json|run_comparator|execute_comparator|formal_score_present[[:space:]]*=[[:space:]]*True' \
