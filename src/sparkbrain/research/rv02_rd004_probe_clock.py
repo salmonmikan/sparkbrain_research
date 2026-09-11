@@ -117,9 +117,7 @@ def run_rd004_probe(
     if cut_hidden_boundary:
         for key, edge in observed.connections.items():
             if (edge.source_id in ports) != (edge.target_id in ports):
-                interventions.append(
-                    {"edge": list(key), "old_weight": edge.weight}
-                )
+                interventions.append({"edge": list(key), "old_weight": edge.weight})
                 edge.weight = 0.0
     reference = PartialReferenceField.from_state_dict(observed.state_dict())
     probe_connection_hash = connection_hash(observed)
@@ -156,6 +154,7 @@ def run_rd004_probe(
             "status": "incomplete_native_guard_probe",
             "error": errors[0],
             "metrics_available": False,
+            "cue_unit": cue_unit,
             "cue_time_ms": cue_time,
             "horizon_ms": horizon_ms,
             "cut_hidden_boundary": cut_hidden_boundary,
@@ -172,8 +171,7 @@ def run_rd004_probe(
     spikes = tuple(observed.delivered_objects)
     reference_spikes = tuple(reference.delivered_objects)
     observer_equivalence = (
-        observed.state_hash() == reference.state_hash()
-        and spikes == reference_spikes
+        observed.state_hash() == reference.state_hash() and spikes == reference_spikes
     )
     if not observer_equivalence or connection_hash(observed) != probe_connection_hash:
         raise RuntimeError("RD004 observer noninterference/probe nonlearning failure")
