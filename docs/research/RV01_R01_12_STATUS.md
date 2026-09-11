@@ -7,11 +7,15 @@ R01-11 physical resource/safety boundary: complete, negative limitation retained
 R01-12A world contract:                   complete
 R01-12B development runner:               complete
 R01-12C intervention controls:            complete
-R01-12D resource-matched reservoir:       complete, mixed result fixed
-R01-12E held-out review/freeze:            in progress
-held-out interference capability:         not executed
-main merge:                               blocked
+R01-12D resource-matched reservoir:       complete, mixed development result fixed
+R01-12E held-out review/freeze:            complete, source/candidate frozen before execution
+R01-12F one-way held-out execution:        complete, consumed, no rerun
+post-formal interpretation:                review in progress
+same-candidate rerun:                      prohibited
+main merge:                                blocked pending review/ledger closure
 ```
+
+R01-12F is fixed historical evidence. This status document does not authorize a rerun, rescore, threshold change, comparator change, or post-outcome repair.
 
 ## Fixed world programme
 
@@ -32,7 +36,7 @@ Families:
 4. opposing directed-edge reversal plus disjoint control;
 5. dense route load exceeding the registered active-edge budget.
 
-No world definition, threshold, exposure count, route order, probe order, active-edge budget, or seed was changed in response to development failures.
+No world definition, threshold, exposure count, route order, probe order, active-edge budget, or seed was changed in response to development failures or held-out outcomes.
 
 ## R01-11 retained limitation
 
@@ -51,9 +55,9 @@ See `RV01_R01_11_SAFETY_DIAGNOSTIC_ADDENDUM.md`.
 
 ## R01-12B and R01-12C
 
-R01-12B executes only the 15 development worlds using the current external-only physical learner and ordinary Field runtime. R01-12C adds the preregistered reset, weight/delay transplant, structural edge removal, matched disjoint edge removal, training-order reversal, probe-order permutation, deterministic replay, freeze-after-training, and endogenous-write controls.
+R01-12B executed only the 15 development worlds using the current external-only physical learner and ordinary Field runtime. R01-12C added the preregistered reset, weight/delay transplant, structural edge removal, matched disjoint edge removal, training-order reversal, probe-order permutation, deterministic replay, freeze-after-training, and endogenous-write controls.
 
-These stages remain development diagnostics. Failures are recorded rather than rescued by changing the world contract.
+Those stages remain development diagnostics. Their failures were retained rather than rescued by changing the world contract.
 
 ## R01-12D fixed development result
 
@@ -86,23 +90,55 @@ Aggregate development result:
 
 The reservoir matches or exceeds Field mean retention in 6 of 15 worlds. The Field has a repeatable ordered-retention advantage in shared-prefix, reversal, and dense-load worlds, but exact-route recovery is tied and reservoir contamination is lower.
 
-This is a **mixed result**, not architectural superiority. See `RV01_R01_12D_DEVELOPMENT_RESULT.md` and the tracked development manifest.
+This is a **mixed result**, not architectural superiority. The retained R01-12D repository evidence supports the aggregate values above; raw per-world/per-probe development rows are not retained locally and must not be represented as independently reproducible from this branch.
 
-## R01-12E boundary
+## R01-12E completed freeze boundary
 
-R01-12E may regenerate, shape-validate, and hash the 50 held-out world specifications. It may not train the Field, execute held-out route probes, fit the reservoir on held-out routes, or inspect any held-out capability metric before the freeze is sealed.
+Before held-out capability execution, R01-12E bound the held-out programme to an exact frozen source and capability-free preflight. The freeze separated development evidence from the 50 held-out worlds and retained the one-way/no-rerun policy.
 
-The freeze review must bind at least:
+The frozen held-out source used by R01-12F is:
 
-- the full source Git SHA;
-- all 50 deterministic held-out specification identities and their grid hash;
-- development and held-out seed sets;
-- physical plasticity configuration;
-- Field/evaluator budgets and metric semantics;
-- reservoir comparator configuration and resource contract;
-- expected held-out result cardinalities;
-- critical source-file hashes;
-- the fixed R01-12D development-result hashes;
-- one-way/no-rerun execution policy.
+```text
+83d2c77d8ae3878727d2ed4e9e78bc169ce064b8
+```
 
-Only after a green source revision and a matching capability-free preflight may an execution seal be written. The seal itself must not execute held-out capability.
+R01-12E is therefore historical freeze provenance, not an in-progress stage.
+
+## R01-12F fixed one-way formal result
+
+R01-12F executed the frozen held-out candidate once and is consumed. The retained raw formal result is bound by SHA-256:
+
+```text
+e3f0cef5428c1b9a550c986404c1435952bd23fd0bdc0cc24a73b8e0c9f70ff4
+```
+
+Fixed aggregate formal values used by the post-formal review are:
+
+| Measure | Physical Field | Resource-matched reservoir |
+|---|---:|---:|
+| route-weighted ordered retention | 1.0000 | 0.9017 |
+| exact-route rate | 0.4000 | 0.4000 |
+| contamination / route | 3.6000 | 2.9450 |
+
+The fixed result supports a narrower continuation/coverage difference, not cleaner or generally superior selective memory. Exact-route recovery remains tied while Field contamination is higher.
+
+The same R01-12F candidate must never be rerun. No post-formal interpretation may alter raw evidence, scoring, worlds, thresholds, resource matching, or comparator behavior.
+
+## Current post-formal boundary
+
+The open review is documentation/verification only. It may:
+
+- verify retained manifest/raw hashes;
+- regenerate derived review summaries from retained evidence;
+- narrow unsupported prose claims;
+- synchronize this status record and the append-only results ledger.
+
+It may **not**:
+
+- rerun R01-12F;
+- reconstruct missing development raw rows as if they had been retained;
+- tune either architecture from the held-out outcome;
+- convert broader continuation into a selective-memory superiority claim;
+- use later development protocols retroactively to rescue R01-12F.
+
+The post-formal review is not merge-ready until its independent review findings and results-ledger bookkeeping are closed.
