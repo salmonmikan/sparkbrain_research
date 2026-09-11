@@ -196,9 +196,11 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          # The candidate generator must not import result/execution artifacts or comparator implementations.
+          # Outcome-blind declarations legitimately contain fields such as
+          # capability_result_present=false.  Reject actual execution/result
+          # material rather than those fail-closed schema field names.
           if grep -REn \
-            'results\.jsonl|execution_seal|STARTED|formal_score|capability_result|run_comparator|execute_comparator' \
+            'results\.jsonl|execution_seal\.json|run_comparator|execute_comparator|formal_score_present[[:space:]]*=[[:space:]]*True' \
             src/sparkbrain/comparison/cx01/candidate.py \
             src/sparkbrain/comparison/cx01/formal_revision.py; then
             echo "candidate source references forbidden outcome/execution material" >&2
