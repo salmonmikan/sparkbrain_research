@@ -18,20 +18,12 @@ R01_16_ARM = Literal["F0", "FW", "FD", "FWD"]
 
 
 def _finite(value: float, *, name: str) -> float:
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        raise TypeError(f"{name} must be a real numeric value")
     number = float(value)
     if not math.isfinite(number):
         raise ValueError(f"{name} must be finite")
     return number
-
-
-def _sha256(value: object) -> str:
-    payload = json.dumps(
-        value,
-        sort_keys=True,
-        separators=(",", ":"),
-        allow_nan=False,
-    ).encode("utf-8")
-    return hashlib.sha256(payload).hexdigest()
 
 
 @dataclass(frozen=True, slots=True)
@@ -49,8 +41,8 @@ class ConnectionState:
             raise TypeError("connection unit IDs must be integers")
         _finite(self.weight, name="connection weight")
         delay = _finite(self.delay_ms, name="connection delay_ms")
-        if delay < 0.0:
-            raise ValueError("connection delay_ms must be non-negative")
+        if delay <= 0.0:
+            raise ValueError("connection delay_ms must be positive")
         if type(self.plastic) is not bool:
             raise TypeError("connection plastic flag must be boolean")
 
@@ -80,8 +72,8 @@ class QueuedPropagationSnapshot:
             raise TypeError("queued propagation unit IDs must be integers")
         _finite(self.queued_weight, name="queued weight")
         delay = _finite(self.queued_delay_ms, name="queued delay_ms")
-        if delay < 0.0:
-            raise ValueError("queued delay_ms must be non-negative")
+        if delay <= 0.0:
+            raise ValueError("queued delay_ms must be positive")
 
     @property
     def key(self) -> tuple[int, int]:
@@ -216,7 +208,8 @@ class R01_16FactorizationConstruction:
 
     @staticmethod
     def inventory_sha256(rows: tuple[ConnectionState, ...]) -> str:
-        return _sha256([row.state_dict() for row in rows])
+        ordered = tuple(sorted(rows, key=lambda row: row.key))
+        return _sha256([row.state_dict() for row in ordered])
 
     def summary(self) -> FactorizationConstructionSummary:
         arms = {
