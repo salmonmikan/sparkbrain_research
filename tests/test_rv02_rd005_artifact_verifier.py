@@ -2,10 +2,11 @@ from __future__ import annotations
 
 import hashlib
 import json
-from dataclasses import replace
+from dataclasses import asdict, replace
 
 import pytest
 
+from sparkbrain.research.rv02_rd003_online import _new_gained_field, _training_schedule
 from sparkbrain.research.rv02_rd005_artifact_verifier import (
     verify_rd005_artifact_for_future_capability,
     verify_rd005_construction_cell,
@@ -23,7 +24,12 @@ from sparkbrain.research.rv02_rd005_gate_construction import (
     ExternalReturnEvent,
     RD005GateConstruction,
 )
-from sparkbrain.research.rv02_scale import ScaleStudyConfig, development_worlds, digest
+from sparkbrain.research.rv02_scale import (
+    ScaleStudyConfig,
+    audit_scale,
+    development_worlds,
+    digest,
+)
 from sparkbrain.v04.contracts import SpikeEvent
 
 
@@ -111,8 +117,6 @@ def _ready_cell(
         )
         for ordinal, spike in enumerate(spikes)
     )
-    # The registered constructor chooses the minimum visible target for each
-    # source. Both sources expose target 2 in this symmetric gate fixture.
     returns = tuple(
         ExternalReturnEvent(
             event_id=(
@@ -166,19 +170,43 @@ def _ready_cell(
     )
 
 
-def _fixed_artifact() -> RD005ConstructionArtifact:
+def _fixed_unreachable_artifact() -> RD005ConstructionArtifact:
     config = ScaleStudyConfig(seed=RD005_FRESH_SEED)
-    cells = tuple(
-        _ready_cell(
-            family=str(world["family"]),
-            scale=int(scale),
-            world_id=str(world["world_id"]),
-            world_sha256=digest(world),
-            evidence_sha256=str(world["evidence_hash"]),
-        )
-        for world in development_worlds(config)
-        for scale in config.scales
-    )
+    cells: list[RD005ConstructionCell] = []
+    for world in development_worlds(config):
+        for scale in config.scales:
+            audit = audit_scale(config, world, scale)
+            field = _new_gained_field(config, world, scale)
+            connection_rows = tuple(
+                asdict(edge) for _, edge in sorted(field.connections.items())
+            )
+            schedule = _training_schedule(world)
+            cells.append(
+                RD005ConstructionCell(
+                    cell_id=f"{world['world_id']}|scale={scale}",
+                    family=str(world["family"]),
+                    scale=int(scale),
+                    world_id=str(world["world_id"]),
+                    world_sha256=digest(world),
+                    evidence_sha256=str(world["evidence_hash"]),
+                    topology_sha256=str(audit["topology_hash"]),
+                    ordinary_schedule=schedule,
+                    ordinary_schedule_sha256=digest(schedule),
+                    connection_rows=connection_rows,
+                    connection_rows_sha256=digest(connection_rows),
+                    inspected_clocks=tuple(
+                        InspectedClock(time_ms=float(row["time_ms"]), spikes=())
+                        for row in schedule
+                    ),
+                    selected_clock_ms=None,
+                    eligibility_events=(),
+                    return_events=(),
+                    es_assignment=(),
+                    e1_certificates=(),
+                    es_certificates=(),
+                    status="D1_UNREACHABLE",
+                )
+            )
     return RD005ConstructionArtifact(
         source_git_sha="a" * 40,
         collision_search=SeedCollisionRecord(
@@ -186,7 +214,7 @@ def _fixed_artifact() -> RD005ConstructionArtifact:
             searched_seed_ids=(92504,),
             searched_world_ids=("prior:92504:world",),
         ),
-        cells=cells,
+        cells=tuple(cells),
     )
 
 
@@ -229,15 +257,40 @@ def test_verifier_rejects_ready_cell_relabelled_unreachable() -> None:
         verify_rd005_construction_cell(relabelled)
 
 
-def test_verifier_accepts_exact_preregistered_matrix_identity() -> None:
-    ready = verify_rd005_artifact_for_future_capability(_fixed_artifact())
-    assert len(ready) == 18
+def test_verifier_accepts_exact_preregistered_matrix_identity_without_ready_cells() -> None:
+    ready = verify_rd005_artifact_for_future_capability(_fixed_unreachable_artifact())
+    assert ready == ()
 
 
 def test_verifier_rejects_substituted_preregistered_matrix_cell() -> None:
-    artifact = _fixed_artifact()
+    artifact = _fixed_unreachable_artifact()
     cells = list(artifact.cells)
     cells[0] = replace(cells[0], cell_id="substituted|scale=1")
     malformed = replace(artifact, cells=tuple(cells))
     with pytest.raises(ValueError, match="exact preregistered 18-cell matrix"):
+        verify_rd005_artifact_for_future_capability(malformed)
+
+
+def test_verifier_rejects_forged_topology_provenance() -> None:
+    artifact = _fixed_unreachable_artifact()
+    cells = list(artifact.cells)
+    cells[0] = replace(cells[0], topology_sha256="c" * 64)
+    malformed = replace(artifact, cells=tuple(cells))
+    with pytest.raises(ValueError, match="topology hash does not match"):
+        verify_rd005_artifact_for_future_capability(malformed)
+
+
+def test_verifier_rejects_forged_connection_provenance() -> None:
+    artifact = _fixed_unreachable_artifact()
+    cells = list(artifact.cells)
+    forged_rows = list(cells[0].connection_rows)
+    forged_rows[0] = {**forged_rows[0], "weight": float(forged_rows[0]["weight"]) + 0.01}
+    forged_tuple = tuple(forged_rows)
+    cells[0] = replace(
+        cells[0],
+        connection_rows=forged_tuple,
+        connection_rows_sha256=digest(forged_tuple),
+    )
+    malformed = replace(artifact, cells=tuple(cells))
+    with pytest.raises(ValueError, match="connection state does not match"):
         verify_rd005_artifact_for_future_capability(malformed)
