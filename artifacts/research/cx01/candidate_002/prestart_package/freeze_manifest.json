@@ -1,0 +1,26 @@
+{
+  "artifact_root": "/tmp/cx01-formal",
+  "builder": "cx01-candidate-002-prestart-workflow-v2",
+  "candidate_grid_hash": "0c6849a823c4befcd5a3071a4755dbcadcdb88ec8fc072da0713415adc12e3ce",
+  "candidate_spec_hash": "5b51b5ac53a66b0ca79939c9eff976b53c75477ba38fd77547e2bd3858d095c8",
+  "comparator_inventory": [
+    "g3-first-order-anchor",
+    "g4-assembly-anchor",
+    "g5-typed-anchor",
+    "g6-variable-order",
+    "g7-htm-temporal-memory",
+    "g8-spiking-temporal-memory-prediction",
+    "g8-spiking-temporal-memory-replay"
+  ],
+  "declaration_bundle_hash": "ca21263f60d6e1c2d78f64ed1d628fde123f48355af3eb3a519b037a3068e537",
+  "development_grid_hash": "d93b362ce672fffd233973b8f27521f9d6a5fbdf4f3d4cba9369495635a33c9f",
+  "execution_command": "python -m sparkbrain.comparison.cx01.formal",
+  "privilege_inventory_hash": "2a59a2cf34782bcbcf8fd135f2e378fef8dfb391215b25ba5ef8dfc8cd8f513a",
+  "protocol_version": "cx01-comparator-protocol-2",
+  "resource_schema_hash": "b452efd1abbd37b581fc064783dfd9da021a1a2a897223fda8b5976e63a248bb",
+  "result_schema_hash": "ecfa7bf1e1b9c9546879176bdb2891d6d4b0f984d146bba37566ab0b20c239dc",
+  "schedule_policy_hash": "b013e667a6f5fbc8910d11f13e19f7e200d790da17689caa672bd3e965452b6c",
+  "scoring_policy_hash": "5cc3fe30c978f95e2ddbd0834eafd8963c37e0ccccb1dcc32915556577fcc76a",
+  "source_git_sha": "e8483968ce43076b4c3fd04c76e62106e2031769",
+  "status": "FROZEN"
+}

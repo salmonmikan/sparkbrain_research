@@ -1,0 +1,40 @@
+{
+  "files": {
+    "OUTCOME_BLIND": {
+      "record_count": null,
+      "sha256": "d0e3ef7a99e15ec1316107c6e4f0e0195c03a0bc679594adf9dad2b212a57e3b",
+      "size_bytes": 41
+    },
+    "candidate.json": {
+      "record_count": null,
+      "sha256": "78b42f03c313378a46e0a33f0cfa31657990353ca321f90e826d46e6d9a38a9a",
+      "size_bytes": 256
+    },
+    "declarations.jsonl": {
+      "record_count": 420,
+      "sha256": "73b5b68f9ecbdc88c81f1ffbb43156705dcd98d6cc08e0feb69a78fcafaec660",
+      "size_bytes": 119680
+    },
+    "freeze_manifest.json": {
+      "record_count": null,
+      "sha256": "3d2297790529610fd85516565e797c5443d7fec1eba5b5542ef75000becb198e",
+      "size_bytes": 1406
+    },
+    "package_status.json": {
+      "record_count": null,
+      "sha256": "4827fa090f9b74983b0c51a09400fcd3a1b8ec3cf292da3897d75d2908aacc48",
+      "size_bytes": 820
+    },
+    "structural_novelty_audit.json": {
+      "record_count": null,
+      "sha256": "7eba92bf13f8cd0cd90396d67fb37b088eb65e56703f6a23add444437f0530ef",
+      "size_bytes": 36350
+    },
+    "world_grid.json": {
+      "record_count": 60,
+      "sha256": "358269a107a812419ce206ded8acc53c830c489a0dd1037d746afc52d7389237",
+      "size_bytes": 93919
+    }
+  },
+  "package_schema_version": "cx01-outcome-blind-package-v2"
+}

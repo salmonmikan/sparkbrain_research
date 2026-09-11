@@ -1,0 +1,5016 @@
+{
+  "generation_id": "cx01-candidate-002",
+  "world_count": 60,
+  "worlds": [
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-high-order-aliasing",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u34",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            6.0,
+            4.0,
+            9.0
+          ],
+          "prefix": [
+            "u10",
+            "u08",
+            "u61",
+            "u63"
+          ],
+          "probe_id": "history-left"
+        },
+        {
+          "expected_distribution": [
+            [
+              "u09",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            6.0,
+            4.0,
+            9.0
+          ],
+          "prefix": [
+            "u12",
+            "u30",
+            "u61",
+            "u63"
+          ],
+          "probe_id": "history-right"
+        }
+      ],
+      "seed": 370110,
+      "training": [
+        {
+          "exposures": 7,
+          "lags_ms": [
+            6.0,
+            4.0,
+            9.0,
+            3.0
+          ],
+          "tokens": [
+            "u10",
+            "u08",
+            "u61",
+            "u63",
+            "u34"
+          ]
+        },
+        {
+          "exposures": 7,
+          "lags_ms": [
+            6.0,
+            4.0,
+            9.0,
+            3.0
+          ],
+          "tokens": [
+            "u12",
+            "u30",
+            "u61",
+            "u63",
+            "u09"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-high-order-aliasing",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u09",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            11.0,
+            9.0,
+            6.0,
+            4.0
+          ],
+          "prefix": [
+            "u01352",
+            "u27",
+            "u19",
+            "u51",
+            "u34"
+          ],
+          "probe_id": "history-left"
+        },
+        {
+          "expected_distribution": [
+            [
+              "u03",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            11.0,
+            9.0,
+            6.0,
+            4.0
+          ],
+          "prefix": [
+            "u09002",
+            "u62",
+            "u61",
+            "u51",
+            "u34"
+          ],
+          "probe_id": "history-right"
+        }
+      ],
+      "seed": 370111,
+      "training": [
+        {
+          "exposures": 7,
+          "lags_ms": [
+            11.0,
+            9.0,
+            6.0,
+            4.0,
+            9.0
+          ],
+          "tokens": [
+            "u01352",
+            "u27",
+            "u19",
+            "u51",
+            "u34",
+            "u09"
+          ]
+        },
+        {
+          "exposures": 7,
+          "lags_ms": [
+            11.0,
+            9.0,
+            6.0,
+            4.0,
+            9.0
+          ],
+          "tokens": [
+            "u09002",
+            "u62",
+            "u61",
+            "u51",
+            "u34",
+            "u03"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-high-order-aliasing",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u29",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            9.0,
+            6.0,
+            3.0,
+            9.0
+          ],
+          "prefix": [
+            "u04",
+            "u53",
+            "u59",
+            "u28",
+            "u43"
+          ],
+          "probe_id": "history-left"
+        },
+        {
+          "expected_distribution": [
+            [
+              "u50",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            9.0,
+            6.0,
+            3.0,
+            9.0
+          ],
+          "prefix": [
+            "u56",
+            "u40",
+            "u44",
+            "u28",
+            "u43"
+          ],
+          "probe_id": "history-right"
+        }
+      ],
+      "seed": 370112,
+      "training": [
+        {
+          "exposures": 7,
+          "lags_ms": [
+            9.0,
+            6.0,
+            3.0,
+            9.0,
+            6.0
+          ],
+          "tokens": [
+            "u04",
+            "u53",
+            "u59",
+            "u28",
+            "u43",
+            "u29"
+          ]
+        },
+        {
+          "exposures": 7,
+          "lags_ms": [
+            9.0,
+            6.0,
+            3.0,
+            9.0,
+            6.0
+          ],
+          "tokens": [
+            "u56",
+            "u40",
+            "u44",
+            "u28",
+            "u43",
+            "u50"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-high-order-aliasing",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u57",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            9.0,
+            8.0,
+            3.0,
+            9.0
+          ],
+          "prefix": [
+            "u03419",
+            "u18",
+            "u41",
+            "u21",
+            "u05"
+          ],
+          "probe_id": "history-left"
+        },
+        {
+          "expected_distribution": [
+            [
+              "u59",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            8.0,
+            8.0,
+            3.0,
+            9.0
+          ],
+          "prefix": [
+            "u01777",
+            "u00",
+            "u27",
+            "u21",
+            "u05"
+          ],
+          "probe_id": "history-right"
+        }
+      ],
+      "seed": 370113,
+      "training": [
+        {
+          "exposures": 4,
+          "lags_ms": [
+            9.0,
+            8.0,
+            3.0,
+            9.0,
+            3.0
+          ],
+          "tokens": [
+            "u03419",
+            "u18",
+            "u41",
+            "u21",
+            "u05",
+            "u57"
+          ]
+        },
+        {
+          "exposures": 4,
+          "lags_ms": [
+            8.0,
+            8.0,
+            3.0,
+            9.0,
+            3.0
+          ],
+          "tokens": [
+            "u01777",
+            "u00",
+            "u27",
+            "u21",
+            "u05",
+            "u59"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-high-order-aliasing",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u57",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            4.0,
+            3.0,
+            8.0
+          ],
+          "prefix": [
+            "u58",
+            "u41",
+            "u35",
+            "u49"
+          ],
+          "probe_id": "history-left"
+        },
+        {
+          "expected_distribution": [
+            [
+              "u56",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            4.0,
+            3.0,
+            8.0
+          ],
+          "prefix": [
+            "u01",
+            "u44",
+            "u35",
+            "u49"
+          ],
+          "probe_id": "history-right"
+        }
+      ],
+      "seed": 370114,
+      "training": [
+        {
+          "exposures": 7,
+          "lags_ms": [
+            4.0,
+            3.0,
+            8.0,
+            3.0
+          ],
+          "tokens": [
+            "u58",
+            "u41",
+            "u35",
+            "u49",
+            "u57"
+          ]
+        },
+        {
+          "exposures": 7,
+          "lags_ms": [
+            4.0,
+            3.0,
+            8.0,
+            3.0
+          ],
+          "tokens": [
+            "u01",
+            "u44",
+            "u35",
+            "u49",
+            "u56"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-high-order-aliasing",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u15",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            8.0,
+            6.0,
+            6.0,
+            8.0,
+            4.0
+          ],
+          "prefix": [
+            "u00486",
+            "u36",
+            "u32",
+            "u22",
+            "u61",
+            "u54"
+          ],
+          "probe_id": "history-left"
+        },
+        {
+          "expected_distribution": [
+            [
+              "u41",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            4.0,
+            6.0,
+            6.0,
+            8.0,
+            4.0
+          ],
+          "prefix": [
+            "u01964",
+            "u59",
+            "u53",
+            "u35",
+            "u61",
+            "u54"
+          ],
+          "probe_id": "history-right"
+        }
+      ],
+      "seed": 370115,
+      "training": [
+        {
+          "exposures": 6,
+          "lags_ms": [
+            8.0,
+            6.0,
+            6.0,
+            8.0,
+            4.0,
+            8.0
+          ],
+          "tokens": [
+            "u00486",
+            "u36",
+            "u32",
+            "u22",
+            "u61",
+            "u54",
+            "u15"
+          ]
+        },
+        {
+          "exposures": 6,
+          "lags_ms": [
+            4.0,
+            6.0,
+            6.0,
+            8.0,
+            4.0,
+            8.0
+          ],
+          "tokens": [
+            "u01964",
+            "u59",
+            "u53",
+            "u35",
+            "u61",
+            "u54",
+            "u41"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-high-order-aliasing",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u50",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            9.0,
+            4.0,
+            3.0,
+            3.0
+          ],
+          "prefix": [
+            "u55",
+            "u14",
+            "u21",
+            "u45",
+            "u13"
+          ],
+          "probe_id": "history-left"
+        },
+        {
+          "expected_distribution": [
+            [
+              "u54",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            9.0,
+            4.0,
+            3.0,
+            3.0
+          ],
+          "prefix": [
+            "u41",
+            "u34",
+            "u61",
+            "u45",
+            "u13"
+          ],
+          "probe_id": "history-right"
+        }
+      ],
+      "seed": 370116,
+      "training": [
+        {
+          "exposures": 6,
+          "lags_ms": [
+            9.0,
+            4.0,
+            3.0,
+            3.0,
+            6.0
+          ],
+          "tokens": [
+            "u55",
+            "u14",
+            "u21",
+            "u45",
+            "u13",
+            "u50"
+          ]
+        },
+        {
+          "exposures": 6,
+          "lags_ms": [
+            9.0,
+            4.0,
+            3.0,
+            3.0,
+            6.0
+          ],
+          "tokens": [
+            "u41",
+            "u34",
+            "u61",
+            "u45",
+            "u13",
+            "u54"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-high-order-aliasing",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u29",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            4.0,
+            3.0,
+            9.0,
+            4.0,
+            3.0
+          ],
+          "prefix": [
+            "u01720",
+            "u02",
+            "u62",
+            "u58",
+            "u51",
+            "u19"
+          ],
+          "probe_id": "history-left"
+        },
+        {
+          "expected_distribution": [
+            [
+              "u00",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            6.0,
+            3.0,
+            9.0,
+            4.0,
+            3.0
+          ],
+          "prefix": [
+            "u07693",
+            "u39",
+            "u23",
+            "u55",
+            "u51",
+            "u19"
+          ],
+          "probe_id": "history-right"
+        }
+      ],
+      "seed": 370117,
+      "training": [
+        {
+          "exposures": 7,
+          "lags_ms": [
+            4.0,
+            3.0,
+            9.0,
+            4.0,
+            3.0,
+            9.0
+          ],
+          "tokens": [
+            "u01720",
+            "u02",
+            "u62",
+            "u58",
+            "u51",
+            "u19",
+            "u29"
+          ]
+        },
+        {
+          "exposures": 7,
+          "lags_ms": [
+            6.0,
+            3.0,
+            9.0,
+            4.0,
+            3.0,
+            9.0
+          ],
+          "tokens": [
+            "u07693",
+            "u39",
+            "u23",
+            "u55",
+            "u51",
+            "u19",
+            "u00"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-high-order-aliasing",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u60",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            3.0,
+            9.0,
+            3.0,
+            4.0
+          ],
+          "prefix": [
+            "u17",
+            "u07",
+            "u20",
+            "u52",
+            "u38"
+          ],
+          "probe_id": "history-left"
+        },
+        {
+          "expected_distribution": [
+            [
+              "u32",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            3.0,
+            9.0,
+            3.0,
+            4.0
+          ],
+          "prefix": [
+            "u40",
+            "u24",
+            "u53",
+            "u52",
+            "u38"
+          ],
+          "probe_id": "history-right"
+        }
+      ],
+      "seed": 370118,
+      "training": [
+        {
+          "exposures": 4,
+          "lags_ms": [
+            3.0,
+            9.0,
+            3.0,
+            4.0,
+            6.0
+          ],
+          "tokens": [
+            "u17",
+            "u07",
+            "u20",
+            "u52",
+            "u38",
+            "u60"
+          ]
+        },
+        {
+          "exposures": 4,
+          "lags_ms": [
+            3.0,
+            9.0,
+            3.0,
+            4.0,
+            6.0
+          ],
+          "tokens": [
+            "u40",
+            "u24",
+            "u53",
+            "u52",
+            "u38",
+            "u32"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-high-order-aliasing",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u62",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            8.0,
+            4.0,
+            9.0,
+            6.0
+          ],
+          "prefix": [
+            "u06384",
+            "u01",
+            "u53",
+            "u07",
+            "u26"
+          ],
+          "probe_id": "history-left"
+        },
+        {
+          "expected_distribution": [
+            [
+              "u57",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            8.0,
+            4.0,
+            9.0,
+            6.0
+          ],
+          "prefix": [
+            "u03443",
+            "u61",
+            "u33",
+            "u07",
+            "u26"
+          ],
+          "probe_id": "history-right"
+        }
+      ],
+      "seed": 370119,
+      "training": [
+        {
+          "exposures": 7,
+          "lags_ms": [
+            8.0,
+            4.0,
+            9.0,
+            6.0,
+            6.0
+          ],
+          "tokens": [
+            "u06384",
+            "u01",
+            "u53",
+            "u07",
+            "u26",
+            "u62"
+          ]
+        },
+        {
+          "exposures": 7,
+          "lags_ms": [
+            8.0,
+            4.0,
+            9.0,
+            6.0,
+            6.0
+          ],
+          "tokens": [
+            "u03443",
+            "u61",
+            "u33",
+            "u07",
+            "u26",
+            "u57"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-timing-aliasing",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u47",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            5.0,
+            20.0,
+            6.0
+          ],
+          "prefix": [
+            "u02",
+            "u50",
+            "u57",
+            "u22"
+          ],
+          "probe_id": "timing-left"
+        },
+        {
+          "expected_distribution": [
+            [
+              "u44",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            20.0,
+            5.0,
+            6.0
+          ],
+          "prefix": [
+            "u02",
+            "u50",
+            "u57",
+            "u22"
+          ],
+          "probe_id": "timing-right"
+        }
+      ],
+      "seed": 370110,
+      "training": [
+        {
+          "exposures": 4,
+          "lags_ms": [
+            5.0,
+            20.0,
+            6.0,
+            6.0
+          ],
+          "tokens": [
+            "u02",
+            "u50",
+            "u57",
+            "u22",
+            "u47"
+          ]
+        },
+        {
+          "exposures": 4,
+          "lags_ms": [
+            20.0,
+            5.0,
+            6.0,
+            6.0
+          ],
+          "tokens": [
+            "u02",
+            "u50",
+            "u57",
+            "u22",
+            "u44"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-timing-aliasing",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u16",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            9.0,
+            4.0,
+            23.0,
+            9.0
+          ],
+          "prefix": [
+            "u03589",
+            "u32",
+            "u06",
+            "u43",
+            "u33"
+          ],
+          "probe_id": "timing-left"
+        },
+        {
+          "expected_distribution": [
+            [
+              "u14",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            9.0,
+            23.0,
+            4.0,
+            9.0
+          ],
+          "prefix": [
+            "u03589",
+            "u32",
+            "u06",
+            "u43",
+            "u33"
+          ],
+          "probe_id": "timing-right"
+        }
+      ],
+      "seed": 370111,
+      "training": [
+        {
+          "exposures": 7,
+          "lags_ms": [
+            9.0,
+            4.0,
+            23.0,
+            9.0,
+            10.0
+          ],
+          "tokens": [
+            "u03589",
+            "u32",
+            "u06",
+            "u43",
+            "u33",
+            "u16"
+          ]
+        },
+        {
+          "exposures": 7,
+          "lags_ms": [
+            9.0,
+            23.0,
+            4.0,
+            9.0,
+            10.0
+          ],
+          "tokens": [
+            "u03589",
+            "u32",
+            "u06",
+            "u43",
+            "u33",
+            "u14"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-timing-aliasing",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u12",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            7.0,
+            19.0,
+            8.0
+          ],
+          "prefix": [
+            "u18",
+            "u14",
+            "u10",
+            "u38"
+          ],
+          "probe_id": "timing-left"
+        },
+        {
+          "expected_distribution": [
+            [
+              "u06",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            19.0,
+            7.0,
+            8.0
+          ],
+          "prefix": [
+            "u18",
+            "u14",
+            "u10",
+            "u38"
+          ],
+          "probe_id": "timing-right"
+        }
+      ],
+      "seed": 370112,
+      "training": [
+        {
+          "exposures": 6,
+          "lags_ms": [
+            7.0,
+            19.0,
+            8.0,
+            8.0
+          ],
+          "tokens": [
+            "u18",
+            "u14",
+            "u10",
+            "u38",
+            "u12"
+          ]
+        },
+        {
+          "exposures": 6,
+          "lags_ms": [
+            19.0,
+            7.0,
+            8.0,
+            8.0
+          ],
+          "tokens": [
+            "u18",
+            "u14",
+            "u10",
+            "u38",
+            "u06"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-timing-aliasing",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u06",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            9.0,
+            5.0,
+            15.0,
+            6.0
+          ],
+          "prefix": [
+            "u03849",
+            "u42",
+            "u59",
+            "u26",
+            "u32"
+          ],
+          "probe_id": "timing-left"
+        },
+        {
+          "expected_distribution": [
+            [
+              "u56",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            9.0,
+            15.0,
+            5.0,
+            6.0
+          ],
+          "prefix": [
+            "u03849",
+            "u42",
+            "u59",
+            "u26",
+            "u32"
+          ],
+          "probe_id": "timing-right"
+        }
+      ],
+      "seed": 370113,
+      "training": [
+        {
+          "exposures": 4,
+          "lags_ms": [
+            9.0,
+            5.0,
+            15.0,
+            6.0,
+            7.0
+          ],
+          "tokens": [
+            "u03849",
+            "u42",
+            "u59",
+            "u26",
+            "u32",
+            "u06"
+          ]
+        },
+        {
+          "exposures": 4,
+          "lags_ms": [
+            9.0,
+            15.0,
+            5.0,
+            6.0,
+            7.0
+          ],
+          "tokens": [
+            "u03849",
+            "u42",
+            "u59",
+            "u26",
+            "u32",
+            "u56"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-timing-aliasing",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u19",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            5.0,
+            17.0,
+            11.0
+          ],
+          "prefix": [
+            "u17",
+            "u00",
+            "u01",
+            "u41"
+          ],
+          "probe_id": "timing-left"
+        },
+        {
+          "expected_distribution": [
+            [
+              "u20",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            17.0,
+            5.0,
+            11.0
+          ],
+          "prefix": [
+            "u17",
+            "u00",
+            "u01",
+            "u41"
+          ],
+          "probe_id": "timing-right"
+        }
+      ],
+      "seed": 370114,
+      "training": [
+        {
+          "exposures": 6,
+          "lags_ms": [
+            5.0,
+            17.0,
+            11.0,
+            7.0
+          ],
+          "tokens": [
+            "u17",
+            "u00",
+            "u01",
+            "u41",
+            "u19"
+          ]
+        },
+        {
+          "exposures": 6,
+          "lags_ms": [
+            17.0,
+            5.0,
+            11.0,
+            7.0
+          ],
+          "tokens": [
+            "u17",
+            "u00",
+            "u01",
+            "u41",
+            "u20"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-timing-aliasing",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u40",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            9.0,
+            6.0,
+            21.0,
+            6.0
+          ],
+          "prefix": [
+            "u03080",
+            "u58",
+            "u49",
+            "u39",
+            "u27"
+          ],
+          "probe_id": "timing-left"
+        },
+        {
+          "expected_distribution": [
+            [
+              "u28",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            9.0,
+            21.0,
+            6.0,
+            6.0
+          ],
+          "prefix": [
+            "u03080",
+            "u58",
+            "u49",
+            "u39",
+            "u27"
+          ],
+          "probe_id": "timing-right"
+        }
+      ],
+      "seed": 370115,
+      "training": [
+        {
+          "exposures": 4,
+          "lags_ms": [
+            9.0,
+            6.0,
+            21.0,
+            6.0,
+            7.0
+          ],
+          "tokens": [
+            "u03080",
+            "u58",
+            "u49",
+            "u39",
+            "u27",
+            "u40"
+          ]
+        },
+        {
+          "exposures": 4,
+          "lags_ms": [
+            9.0,
+            21.0,
+            6.0,
+            6.0,
+            7.0
+          ],
+          "tokens": [
+            "u03080",
+            "u58",
+            "u49",
+            "u39",
+            "u27",
+            "u28"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-timing-aliasing",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u16",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            3.0,
+            15.0,
+            10.0
+          ],
+          "prefix": [
+            "u03",
+            "u42",
+            "u41",
+            "u40"
+          ],
+          "probe_id": "timing-left"
+        },
+        {
+          "expected_distribution": [
+            [
+              "u29",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            15.0,
+            3.0,
+            10.0
+          ],
+          "prefix": [
+            "u03",
+            "u42",
+            "u41",
+            "u40"
+          ],
+          "probe_id": "timing-right"
+        }
+      ],
+      "seed": 370116,
+      "training": [
+        {
+          "exposures": 6,
+          "lags_ms": [
+            3.0,
+            15.0,
+            10.0,
+            8.0
+          ],
+          "tokens": [
+            "u03",
+            "u42",
+            "u41",
+            "u40",
+            "u16"
+          ]
+        },
+        {
+          "exposures": 6,
+          "lags_ms": [
+            15.0,
+            3.0,
+            10.0,
+            8.0
+          ],
+          "tokens": [
+            "u03",
+            "u42",
+            "u41",
+            "u40",
+            "u29"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-timing-aliasing",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u23",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            4.0,
+            6.0,
+            20.0,
+            6.0
+          ],
+          "prefix": [
+            "u00189",
+            "u05",
+            "u36",
+            "u50",
+            "u49"
+          ],
+          "probe_id": "timing-left"
+        },
+        {
+          "expected_distribution": [
+            [
+              "u28",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            4.0,
+            20.0,
+            6.0,
+            6.0
+          ],
+          "prefix": [
+            "u00189",
+            "u05",
+            "u36",
+            "u50",
+            "u49"
+          ],
+          "probe_id": "timing-right"
+        }
+      ],
+      "seed": 370117,
+      "training": [
+        {
+          "exposures": 7,
+          "lags_ms": [
+            4.0,
+            6.0,
+            20.0,
+            6.0,
+            10.0
+          ],
+          "tokens": [
+            "u00189",
+            "u05",
+            "u36",
+            "u50",
+            "u49",
+            "u23"
+          ]
+        },
+        {
+          "exposures": 7,
+          "lags_ms": [
+            4.0,
+            20.0,
+            6.0,
+            6.0,
+            10.0
+          ],
+          "tokens": [
+            "u00189",
+            "u05",
+            "u36",
+            "u50",
+            "u49",
+            "u28"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-timing-aliasing",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u50",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            6.0,
+            15.0,
+            11.0
+          ],
+          "prefix": [
+            "u16",
+            "u02",
+            "u11",
+            "u36"
+          ],
+          "probe_id": "timing-left"
+        },
+        {
+          "expected_distribution": [
+            [
+              "u42",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            15.0,
+            6.0,
+            11.0
+          ],
+          "prefix": [
+            "u16",
+            "u02",
+            "u11",
+            "u36"
+          ],
+          "probe_id": "timing-right"
+        }
+      ],
+      "seed": 370118,
+      "training": [
+        {
+          "exposures": 7,
+          "lags_ms": [
+            6.0,
+            15.0,
+            11.0,
+            5.0
+          ],
+          "tokens": [
+            "u16",
+            "u02",
+            "u11",
+            "u36",
+            "u50"
+          ]
+        },
+        {
+          "exposures": 7,
+          "lags_ms": [
+            15.0,
+            6.0,
+            11.0,
+            5.0
+          ],
+          "tokens": [
+            "u16",
+            "u02",
+            "u11",
+            "u36",
+            "u42"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-timing-aliasing",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u14",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            6.0,
+            7.0,
+            20.0,
+            11.0
+          ],
+          "prefix": [
+            "u03183",
+            "u50",
+            "u23",
+            "u20",
+            "u01"
+          ],
+          "probe_id": "timing-left"
+        },
+        {
+          "expected_distribution": [
+            [
+              "u60",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            6.0,
+            20.0,
+            7.0,
+            11.0
+          ],
+          "prefix": [
+            "u03183",
+            "u50",
+            "u23",
+            "u20",
+            "u01"
+          ],
+          "probe_id": "timing-right"
+        }
+      ],
+      "seed": 370119,
+      "training": [
+        {
+          "exposures": 7,
+          "lags_ms": [
+            6.0,
+            7.0,
+            20.0,
+            11.0,
+            7.0
+          ],
+          "tokens": [
+            "u03183",
+            "u50",
+            "u23",
+            "u20",
+            "u01",
+            "u14"
+          ]
+        },
+        {
+          "exposures": 7,
+          "lags_ms": [
+            6.0,
+            20.0,
+            7.0,
+            11.0,
+            7.0
+          ],
+          "tokens": [
+            "u03183",
+            "u50",
+            "u23",
+            "u20",
+            "u01",
+            "u60"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": "u32",
+      "cycle_phases": [
+        {
+          "exposures": 3,
+          "target": "u33"
+        },
+        {
+          "exposures": 2,
+          "target": "u47"
+        },
+        {
+          "exposures": 4,
+          "target": "u33"
+        },
+        {
+          "exposures": 3,
+          "target": "u04"
+        },
+        {
+          "exposures": 3,
+          "target": "u47"
+        },
+        {
+          "exposures": 2,
+          "target": "u04"
+        },
+        {
+          "exposures": 3,
+          "target": "u33"
+        }
+      ],
+      "family": "cx01-contingency-cycle",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [],
+      "seed": 370110,
+      "training": [
+        {
+          "exposures": 3,
+          "lags_ms": [
+            4.0
+          ],
+          "tokens": [
+            "u32",
+            "u33"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": "u31",
+      "cycle_phases": [
+        {
+          "exposures": 2,
+          "target": "u34"
+        },
+        {
+          "exposures": 1,
+          "target": "u03930"
+        },
+        {
+          "exposures": 4,
+          "target": "u61"
+        },
+        {
+          "exposures": 2,
+          "target": "u38"
+        },
+        {
+          "exposures": 2,
+          "target": "u34"
+        },
+        {
+          "exposures": 2,
+          "target": "u38"
+        },
+        {
+          "exposures": 2,
+          "target": "u61"
+        },
+        {
+          "exposures": 4,
+          "target": "u34"
+        }
+      ],
+      "family": "cx01-contingency-cycle",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [],
+      "seed": 370111,
+      "training": [
+        {
+          "exposures": 3,
+          "lags_ms": [
+            5.0
+          ],
+          "tokens": [
+            "u31",
+            "u34"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": "u20",
+      "cycle_phases": [
+        {
+          "exposures": 4,
+          "target": "u41"
+        },
+        {
+          "exposures": 3,
+          "target": "u62"
+        },
+        {
+          "exposures": 4,
+          "target": "u41"
+        },
+        {
+          "exposures": 3,
+          "target": "u22"
+        },
+        {
+          "exposures": 3,
+          "target": "u62"
+        },
+        {
+          "exposures": 3,
+          "target": "u22"
+        },
+        {
+          "exposures": 4,
+          "target": "u41"
+        }
+      ],
+      "family": "cx01-contingency-cycle",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [],
+      "seed": 370112,
+      "training": [
+        {
+          "exposures": 4,
+          "lags_ms": [
+            5.0
+          ],
+          "tokens": [
+            "u20",
+            "u41"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": "u49",
+      "cycle_phases": [
+        {
+          "exposures": 2,
+          "target": "u29"
+        },
+        {
+          "exposures": 1,
+          "target": "u07679"
+        },
+        {
+          "exposures": 4,
+          "target": "u10"
+        },
+        {
+          "exposures": 2,
+          "target": "u36"
+        },
+        {
+          "exposures": 4,
+          "target": "u29"
+        },
+        {
+          "exposures": 3,
+          "target": "u36"
+        },
+        {
+          "exposures": 2,
+          "target": "u10"
+        },
+        {
+          "exposures": 4,
+          "target": "u29"
+        }
+      ],
+      "family": "cx01-contingency-cycle",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [],
+      "seed": 370113,
+      "training": [
+        {
+          "exposures": 3,
+          "lags_ms": [
+            8.0
+          ],
+          "tokens": [
+            "u49",
+            "u29"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": "u26",
+      "cycle_phases": [
+        {
+          "exposures": 4,
+          "target": "u55"
+        },
+        {
+          "exposures": 2,
+          "target": "u28"
+        },
+        {
+          "exposures": 4,
+          "target": "u55"
+        },
+        {
+          "exposures": 3,
+          "target": "u09"
+        },
+        {
+          "exposures": 2,
+          "target": "u28"
+        },
+        {
+          "exposures": 4,
+          "target": "u09"
+        },
+        {
+          "exposures": 3,
+          "target": "u55"
+        }
+      ],
+      "family": "cx01-contingency-cycle",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [],
+      "seed": 370114,
+      "training": [
+        {
+          "exposures": 1,
+          "lags_ms": [
+            7.0
+          ],
+          "tokens": [
+            "u26",
+            "u55"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": "u11",
+      "cycle_phases": [
+        {
+          "exposures": 2,
+          "target": "u19"
+        },
+        {
+          "exposures": 1,
+          "target": "u08802"
+        },
+        {
+          "exposures": 4,
+          "target": "u12"
+        },
+        {
+          "exposures": 3,
+          "target": "u18"
+        },
+        {
+          "exposures": 3,
+          "target": "u19"
+        },
+        {
+          "exposures": 2,
+          "target": "u18"
+        },
+        {
+          "exposures": 4,
+          "target": "u12"
+        },
+        {
+          "exposures": 3,
+          "target": "u19"
+        }
+      ],
+      "family": "cx01-contingency-cycle",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [],
+      "seed": 370115,
+      "training": [
+        {
+          "exposures": 1,
+          "lags_ms": [
+            4.0
+          ],
+          "tokens": [
+            "u11",
+            "u19"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": "u06",
+      "cycle_phases": [
+        {
+          "exposures": 2,
+          "target": "u44"
+        },
+        {
+          "exposures": 3,
+          "target": "u53"
+        },
+        {
+          "exposures": 3,
+          "target": "u50"
+        },
+        {
+          "exposures": 3,
+          "target": "u44"
+        },
+        {
+          "exposures": 4,
+          "target": "u50"
+        },
+        {
+          "exposures": 4,
+          "target": "u53"
+        },
+        {
+          "exposures": 2,
+          "target": "u44"
+        }
+      ],
+      "family": "cx01-contingency-cycle",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [],
+      "seed": 370116,
+      "training": [
+        {
+          "exposures": 4,
+          "lags_ms": [
+            8.0
+          ],
+          "tokens": [
+            "u06",
+            "u44"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": "u48",
+      "cycle_phases": [
+        {
+          "exposures": 3,
+          "target": "u37"
+        },
+        {
+          "exposures": 1,
+          "target": "u06701"
+        },
+        {
+          "exposures": 4,
+          "target": "u47"
+        },
+        {
+          "exposures": 2,
+          "target": "u06"
+        },
+        {
+          "exposures": 4,
+          "target": "u37"
+        },
+        {
+          "exposures": 3,
+          "target": "u06"
+        },
+        {
+          "exposures": 4,
+          "target": "u47"
+        },
+        {
+          "exposures": 3,
+          "target": "u37"
+        }
+      ],
+      "family": "cx01-contingency-cycle",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [],
+      "seed": 370117,
+      "training": [
+        {
+          "exposures": 1,
+          "lags_ms": [
+            8.0
+          ],
+          "tokens": [
+            "u48",
+            "u37"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": "u32",
+      "cycle_phases": [
+        {
+          "exposures": 4,
+          "target": "u61"
+        },
+        {
+          "exposures": 2,
+          "target": "u11"
+        },
+        {
+          "exposures": 4,
+          "target": "u61"
+        },
+        {
+          "exposures": 2,
+          "target": "u17"
+        },
+        {
+          "exposures": 3,
+          "target": "u11"
+        },
+        {
+          "exposures": 3,
+          "target": "u17"
+        },
+        {
+          "exposures": 3,
+          "target": "u61"
+        }
+      ],
+      "family": "cx01-contingency-cycle",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [],
+      "seed": 370118,
+      "training": [
+        {
+          "exposures": 3,
+          "lags_ms": [
+            4.0
+          ],
+          "tokens": [
+            "u32",
+            "u61"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": "u12",
+      "cycle_phases": [
+        {
+          "exposures": 3,
+          "target": "u06"
+        },
+        {
+          "exposures": 1,
+          "target": "u04035"
+        },
+        {
+          "exposures": 4,
+          "target": "u42"
+        },
+        {
+          "exposures": 2,
+          "target": "u06"
+        },
+        {
+          "exposures": 2,
+          "target": "u55"
+        },
+        {
+          "exposures": 2,
+          "target": "u42"
+        },
+        {
+          "exposures": 2,
+          "target": "u55"
+        },
+        {
+          "exposures": 4,
+          "target": "u06"
+        }
+      ],
+      "family": "cx01-contingency-cycle",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [],
+      "seed": 370119,
+      "training": [
+        {
+          "exposures": 4,
+          "lags_ms": [
+            4.0
+          ],
+          "tokens": [
+            "u12",
+            "u06"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-ambiguous-branch",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u09",
+              0.5
+            ],
+            [
+              "u02",
+              0.3333333333333333
+            ],
+            [
+              "u46",
+              0.16666666666666666
+            ]
+          ],
+          "lags_ms": [
+            6.0,
+            7.0,
+            9.0
+          ],
+          "prefix": [
+            "u32",
+            "u62",
+            "u45",
+            "u40"
+          ],
+          "probe_id": "branch-distribution"
+        }
+      ],
+      "seed": 370110,
+      "training": [
+        {
+          "exposures": 9,
+          "lags_ms": [
+            6.0,
+            7.0,
+            9.0,
+            7.0
+          ],
+          "tokens": [
+            "u32",
+            "u62",
+            "u45",
+            "u40",
+            "u09"
+          ]
+        },
+        {
+          "exposures": 6,
+          "lags_ms": [
+            6.0,
+            7.0,
+            9.0,
+            7.0
+          ],
+          "tokens": [
+            "u32",
+            "u62",
+            "u45",
+            "u40",
+            "u02"
+          ]
+        },
+        {
+          "exposures": 3,
+          "lags_ms": [
+            6.0,
+            7.0,
+            9.0,
+            7.0
+          ],
+          "tokens": [
+            "u32",
+            "u62",
+            "u45",
+            "u40",
+            "u46"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-ambiguous-branch",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u49",
+              0.5
+            ],
+            [
+              "u29",
+              0.3125
+            ],
+            [
+              "u28",
+              0.1875
+            ]
+          ],
+          "lags_ms": [
+            4.0,
+            7.0,
+            7.0,
+            7.0
+          ],
+          "prefix": [
+            "u02610",
+            "u06",
+            "u32",
+            "u58",
+            "u47"
+          ],
+          "probe_id": "branch-distribution"
+        }
+      ],
+      "seed": 370111,
+      "training": [
+        {
+          "exposures": 8,
+          "lags_ms": [
+            4.0,
+            7.0,
+            7.0,
+            7.0,
+            7.0
+          ],
+          "tokens": [
+            "u02610",
+            "u06",
+            "u32",
+            "u58",
+            "u47",
+            "u49"
+          ]
+        },
+        {
+          "exposures": 5,
+          "lags_ms": [
+            4.0,
+            7.0,
+            7.0,
+            7.0,
+            7.0
+          ],
+          "tokens": [
+            "u02610",
+            "u06",
+            "u32",
+            "u58",
+            "u47",
+            "u29"
+          ]
+        },
+        {
+          "exposures": 3,
+          "lags_ms": [
+            4.0,
+            7.0,
+            7.0,
+            7.0,
+            7.0
+          ],
+          "tokens": [
+            "u02610",
+            "u06",
+            "u32",
+            "u58",
+            "u47",
+            "u28"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-ambiguous-branch",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u04",
+              0.4444444444444444
+            ],
+            [
+              "u23",
+              0.3333333333333333
+            ],
+            [
+              "u39",
+              0.2222222222222222
+            ]
+          ],
+          "lags_ms": [
+            9.0,
+            6.0,
+            4.0
+          ],
+          "prefix": [
+            "u01",
+            "u41",
+            "u48",
+            "u00"
+          ],
+          "probe_id": "branch-distribution"
+        }
+      ],
+      "seed": 370112,
+      "training": [
+        {
+          "exposures": 8,
+          "lags_ms": [
+            9.0,
+            6.0,
+            4.0,
+            7.0
+          ],
+          "tokens": [
+            "u01",
+            "u41",
+            "u48",
+            "u00",
+            "u04"
+          ]
+        },
+        {
+          "exposures": 6,
+          "lags_ms": [
+            9.0,
+            6.0,
+            4.0,
+            7.0
+          ],
+          "tokens": [
+            "u01",
+            "u41",
+            "u48",
+            "u00",
+            "u23"
+          ]
+        },
+        {
+          "exposures": 4,
+          "lags_ms": [
+            9.0,
+            6.0,
+            4.0,
+            7.0
+          ],
+          "tokens": [
+            "u01",
+            "u41",
+            "u48",
+            "u00",
+            "u39"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-ambiguous-branch",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u22",
+              0.5
+            ],
+            [
+              "u33",
+              0.2777777777777778
+            ],
+            [
+              "u12",
+              0.2222222222222222
+            ]
+          ],
+          "lags_ms": [
+            3.0,
+            4.0,
+            4.0,
+            7.0
+          ],
+          "prefix": [
+            "u08473",
+            "u09",
+            "u32",
+            "u56",
+            "u46"
+          ],
+          "probe_id": "branch-distribution"
+        }
+      ],
+      "seed": 370113,
+      "training": [
+        {
+          "exposures": 9,
+          "lags_ms": [
+            3.0,
+            4.0,
+            4.0,
+            7.0,
+            8.0
+          ],
+          "tokens": [
+            "u08473",
+            "u09",
+            "u32",
+            "u56",
+            "u46",
+            "u22"
+          ]
+        },
+        {
+          "exposures": 5,
+          "lags_ms": [
+            3.0,
+            4.0,
+            4.0,
+            7.0,
+            8.0
+          ],
+          "tokens": [
+            "u08473",
+            "u09",
+            "u32",
+            "u56",
+            "u46",
+            "u33"
+          ]
+        },
+        {
+          "exposures": 4,
+          "lags_ms": [
+            3.0,
+            4.0,
+            4.0,
+            7.0,
+            8.0
+          ],
+          "tokens": [
+            "u08473",
+            "u09",
+            "u32",
+            "u56",
+            "u46",
+            "u12"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-ambiguous-branch",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u41",
+              0.4444444444444444
+            ],
+            [
+              "u55",
+              0.3333333333333333
+            ],
+            [
+              "u33",
+              0.2222222222222222
+            ]
+          ],
+          "lags_ms": [
+            9.0,
+            9.0,
+            7.0
+          ],
+          "prefix": [
+            "u47",
+            "u30",
+            "u17",
+            "u26"
+          ],
+          "probe_id": "branch-distribution"
+        }
+      ],
+      "seed": 370114,
+      "training": [
+        {
+          "exposures": 8,
+          "lags_ms": [
+            9.0,
+            9.0,
+            7.0,
+            7.0
+          ],
+          "tokens": [
+            "u47",
+            "u30",
+            "u17",
+            "u26",
+            "u41"
+          ]
+        },
+        {
+          "exposures": 6,
+          "lags_ms": [
+            9.0,
+            9.0,
+            7.0,
+            7.0
+          ],
+          "tokens": [
+            "u47",
+            "u30",
+            "u17",
+            "u26",
+            "u55"
+          ]
+        },
+        {
+          "exposures": 4,
+          "lags_ms": [
+            9.0,
+            9.0,
+            7.0,
+            7.0
+          ],
+          "tokens": [
+            "u47",
+            "u30",
+            "u17",
+            "u26",
+            "u33"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-ambiguous-branch",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u33",
+              0.5
+            ],
+            [
+              "u49",
+              0.3333333333333333
+            ],
+            [
+              "u10",
+              0.16666666666666666
+            ]
+          ],
+          "lags_ms": [
+            11.0,
+            7.0,
+            9.0,
+            9.0
+          ],
+          "prefix": [
+            "u04593",
+            "u02",
+            "u19",
+            "u43",
+            "u36"
+          ],
+          "probe_id": "branch-distribution"
+        }
+      ],
+      "seed": 370115,
+      "training": [
+        {
+          "exposures": 9,
+          "lags_ms": [
+            11.0,
+            7.0,
+            9.0,
+            9.0,
+            5.0
+          ],
+          "tokens": [
+            "u04593",
+            "u02",
+            "u19",
+            "u43",
+            "u36",
+            "u33"
+          ]
+        },
+        {
+          "exposures": 6,
+          "lags_ms": [
+            11.0,
+            7.0,
+            9.0,
+            9.0,
+            5.0
+          ],
+          "tokens": [
+            "u04593",
+            "u02",
+            "u19",
+            "u43",
+            "u36",
+            "u49"
+          ]
+        },
+        {
+          "exposures": 3,
+          "lags_ms": [
+            11.0,
+            7.0,
+            9.0,
+            9.0,
+            5.0
+          ],
+          "tokens": [
+            "u04593",
+            "u02",
+            "u19",
+            "u43",
+            "u36",
+            "u10"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-ambiguous-branch",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u12",
+              0.5
+            ],
+            [
+              "u41",
+              0.3333333333333333
+            ],
+            [
+              "u49",
+              0.16666666666666666
+            ]
+          ],
+          "lags_ms": [
+            4.0,
+            4.0,
+            6.0
+          ],
+          "prefix": [
+            "u09",
+            "u02",
+            "u20",
+            "u56"
+          ],
+          "probe_id": "branch-distribution"
+        }
+      ],
+      "seed": 370116,
+      "training": [
+        {
+          "exposures": 9,
+          "lags_ms": [
+            4.0,
+            4.0,
+            6.0,
+            4.0
+          ],
+          "tokens": [
+            "u09",
+            "u02",
+            "u20",
+            "u56",
+            "u12"
+          ]
+        },
+        {
+          "exposures": 6,
+          "lags_ms": [
+            4.0,
+            4.0,
+            6.0,
+            4.0
+          ],
+          "tokens": [
+            "u09",
+            "u02",
+            "u20",
+            "u56",
+            "u41"
+          ]
+        },
+        {
+          "exposures": 3,
+          "lags_ms": [
+            4.0,
+            4.0,
+            6.0,
+            4.0
+          ],
+          "tokens": [
+            "u09",
+            "u02",
+            "u20",
+            "u56",
+            "u49"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-ambiguous-branch",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u18",
+              0.5
+            ],
+            [
+              "u21",
+              0.2777777777777778
+            ],
+            [
+              "u17",
+              0.2222222222222222
+            ]
+          ],
+          "lags_ms": [
+            9.0,
+            6.0,
+            7.0,
+            4.0
+          ],
+          "prefix": [
+            "u09183",
+            "u12",
+            "u56",
+            "u14",
+            "u34"
+          ],
+          "probe_id": "branch-distribution"
+        }
+      ],
+      "seed": 370117,
+      "training": [
+        {
+          "exposures": 9,
+          "lags_ms": [
+            9.0,
+            6.0,
+            7.0,
+            4.0,
+            4.0
+          ],
+          "tokens": [
+            "u09183",
+            "u12",
+            "u56",
+            "u14",
+            "u34",
+            "u18"
+          ]
+        },
+        {
+          "exposures": 5,
+          "lags_ms": [
+            9.0,
+            6.0,
+            7.0,
+            4.0,
+            4.0
+          ],
+          "tokens": [
+            "u09183",
+            "u12",
+            "u56",
+            "u14",
+            "u34",
+            "u21"
+          ]
+        },
+        {
+          "exposures": 4,
+          "lags_ms": [
+            9.0,
+            6.0,
+            7.0,
+            4.0,
+            4.0
+          ],
+          "tokens": [
+            "u09183",
+            "u12",
+            "u56",
+            "u14",
+            "u34",
+            "u17"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-ambiguous-branch",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u46",
+              0.4444444444444444
+            ],
+            [
+              "u24",
+              0.3333333333333333
+            ],
+            [
+              "u15",
+              0.2222222222222222
+            ]
+          ],
+          "lags_ms": [
+            7.0,
+            4.0,
+            9.0
+          ],
+          "prefix": [
+            "u03",
+            "u51",
+            "u02",
+            "u06"
+          ],
+          "probe_id": "branch-distribution"
+        }
+      ],
+      "seed": 370118,
+      "training": [
+        {
+          "exposures": 8,
+          "lags_ms": [
+            7.0,
+            4.0,
+            9.0,
+            7.0
+          ],
+          "tokens": [
+            "u03",
+            "u51",
+            "u02",
+            "u06",
+            "u46"
+          ]
+        },
+        {
+          "exposures": 6,
+          "lags_ms": [
+            7.0,
+            4.0,
+            9.0,
+            7.0
+          ],
+          "tokens": [
+            "u03",
+            "u51",
+            "u02",
+            "u06",
+            "u24"
+          ]
+        },
+        {
+          "exposures": 4,
+          "lags_ms": [
+            7.0,
+            4.0,
+            9.0,
+            7.0
+          ],
+          "tokens": [
+            "u03",
+            "u51",
+            "u02",
+            "u06",
+            "u15"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-ambiguous-branch",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u26",
+              0.5
+            ],
+            [
+              "u62",
+              0.3333333333333333
+            ],
+            [
+              "u46",
+              0.16666666666666666
+            ]
+          ],
+          "lags_ms": [
+            9.0,
+            4.0,
+            9.0,
+            9.0
+          ],
+          "prefix": [
+            "u02693",
+            "u58",
+            "u27",
+            "u41",
+            "u33"
+          ],
+          "probe_id": "branch-distribution"
+        }
+      ],
+      "seed": 370119,
+      "training": [
+        {
+          "exposures": 9,
+          "lags_ms": [
+            9.0,
+            4.0,
+            9.0,
+            9.0,
+            5.0
+          ],
+          "tokens": [
+            "u02693",
+            "u58",
+            "u27",
+            "u41",
+            "u33",
+            "u26"
+          ]
+        },
+        {
+          "exposures": 6,
+          "lags_ms": [
+            9.0,
+            4.0,
+            9.0,
+            9.0,
+            5.0
+          ],
+          "tokens": [
+            "u02693",
+            "u58",
+            "u27",
+            "u41",
+            "u33",
+            "u62"
+          ]
+        },
+        {
+          "exposures": 3,
+          "lags_ms": [
+            9.0,
+            4.0,
+            9.0,
+            9.0,
+            5.0
+          ],
+          "tokens": [
+            "u02693",
+            "u58",
+            "u27",
+            "u41",
+            "u33",
+            "u46"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-selective-interference",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [
+        "u32",
+        "u09",
+        "u31",
+        "u07",
+        "u55",
+        "u29"
+      ],
+      "intervention_main": [
+        "u34",
+        "u21",
+        "u02",
+        "u24",
+        "u08",
+        "u14"
+      ],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u14",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            9.0,
+            8.0,
+            6.0,
+            6.0
+          ],
+          "prefix": [
+            "u34",
+            "u21",
+            "u02",
+            "u24",
+            "u08"
+          ],
+          "probe_id": "main"
+        },
+        {
+          "expected_distribution": [
+            [
+              "u29",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            9.0,
+            8.0,
+            6.0,
+            6.0
+          ],
+          "prefix": [
+            "u32",
+            "u09",
+            "u31",
+            "u07",
+            "u55"
+          ],
+          "probe_id": "control"
+        }
+      ],
+      "seed": 370110,
+      "training": [
+        {
+          "exposures": 6,
+          "lags_ms": [
+            9.0,
+            8.0,
+            6.0,
+            6.0,
+            6.0
+          ],
+          "tokens": [
+            "u34",
+            "u21",
+            "u02",
+            "u24",
+            "u08",
+            "u14"
+          ]
+        },
+        {
+          "exposures": 6,
+          "lags_ms": [
+            9.0,
+            8.0,
+            6.0,
+            6.0,
+            6.0
+          ],
+          "tokens": [
+            "u32",
+            "u09",
+            "u31",
+            "u07",
+            "u55",
+            "u29"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-selective-interference",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [
+        "u06856",
+        "u18",
+        "u21",
+        "u11",
+        "u16",
+        "u10",
+        "u14"
+      ],
+      "intervention_main": [
+        "u06275",
+        "u55",
+        "u36",
+        "u12",
+        "u03",
+        "u37",
+        "u33"
+      ],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u33",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            11.0,
+            8.0,
+            4.0,
+            6.0,
+            6.0
+          ],
+          "prefix": [
+            "u06275",
+            "u55",
+            "u36",
+            "u12",
+            "u03",
+            "u37"
+          ],
+          "probe_id": "main"
+        },
+        {
+          "expected_distribution": [
+            [
+              "u14",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            11.0,
+            8.0,
+            4.0,
+            6.0,
+            6.0
+          ],
+          "prefix": [
+            "u06856",
+            "u18",
+            "u21",
+            "u11",
+            "u16",
+            "u10"
+          ],
+          "probe_id": "control"
+        }
+      ],
+      "seed": 370111,
+      "training": [
+        {
+          "exposures": 4,
+          "lags_ms": [
+            11.0,
+            8.0,
+            4.0,
+            6.0,
+            6.0,
+            8.0
+          ],
+          "tokens": [
+            "u06275",
+            "u55",
+            "u36",
+            "u12",
+            "u03",
+            "u37",
+            "u33"
+          ]
+        },
+        {
+          "exposures": 4,
+          "lags_ms": [
+            11.0,
+            8.0,
+            4.0,
+            6.0,
+            6.0,
+            8.0
+          ],
+          "tokens": [
+            "u06856",
+            "u18",
+            "u21",
+            "u11",
+            "u16",
+            "u10",
+            "u14"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-selective-interference",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [
+        "u22",
+        "u48",
+        "u07",
+        "u18",
+        "u55",
+        "u31"
+      ],
+      "intervention_main": [
+        "u15",
+        "u63",
+        "u34",
+        "u50",
+        "u20",
+        "u09"
+      ],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u09",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            4.0,
+            8.0,
+            8.0,
+            6.0
+          ],
+          "prefix": [
+            "u15",
+            "u63",
+            "u34",
+            "u50",
+            "u20"
+          ],
+          "probe_id": "main"
+        },
+        {
+          "expected_distribution": [
+            [
+              "u31",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            4.0,
+            8.0,
+            8.0,
+            6.0
+          ],
+          "prefix": [
+            "u22",
+            "u48",
+            "u07",
+            "u18",
+            "u55"
+          ],
+          "probe_id": "control"
+        }
+      ],
+      "seed": 370112,
+      "training": [
+        {
+          "exposures": 6,
+          "lags_ms": [
+            4.0,
+            8.0,
+            8.0,
+            6.0,
+            4.0
+          ],
+          "tokens": [
+            "u15",
+            "u63",
+            "u34",
+            "u50",
+            "u20",
+            "u09"
+          ]
+        },
+        {
+          "exposures": 6,
+          "lags_ms": [
+            4.0,
+            8.0,
+            8.0,
+            6.0,
+            4.0
+          ],
+          "tokens": [
+            "u22",
+            "u48",
+            "u07",
+            "u18",
+            "u55",
+            "u31"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-selective-interference",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [
+        "u08641",
+        "u22",
+        "u15",
+        "u06",
+        "u04",
+        "u08",
+        "u16"
+      ],
+      "intervention_main": [
+        "u07060",
+        "u00",
+        "u23",
+        "u52",
+        "u18",
+        "u12",
+        "u61"
+      ],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u61",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            8.0,
+            8.0,
+            9.0,
+            4.0,
+            8.0
+          ],
+          "prefix": [
+            "u07060",
+            "u00",
+            "u23",
+            "u52",
+            "u18",
+            "u12"
+          ],
+          "probe_id": "main"
+        },
+        {
+          "expected_distribution": [
+            [
+              "u16",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            8.0,
+            8.0,
+            9.0,
+            4.0,
+            8.0
+          ],
+          "prefix": [
+            "u08641",
+            "u22",
+            "u15",
+            "u06",
+            "u04",
+            "u08"
+          ],
+          "probe_id": "control"
+        }
+      ],
+      "seed": 370113,
+      "training": [
+        {
+          "exposures": 4,
+          "lags_ms": [
+            8.0,
+            8.0,
+            9.0,
+            4.0,
+            8.0,
+            6.0
+          ],
+          "tokens": [
+            "u07060",
+            "u00",
+            "u23",
+            "u52",
+            "u18",
+            "u12",
+            "u61"
+          ]
+        },
+        {
+          "exposures": 4,
+          "lags_ms": [
+            8.0,
+            8.0,
+            9.0,
+            4.0,
+            8.0,
+            6.0
+          ],
+          "tokens": [
+            "u08641",
+            "u22",
+            "u15",
+            "u06",
+            "u04",
+            "u08",
+            "u16"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-selective-interference",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [
+        "u36",
+        "u55",
+        "u25",
+        "u57",
+        "u05"
+      ],
+      "intervention_main": [
+        "u47",
+        "u30",
+        "u53",
+        "u00",
+        "u61"
+      ],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u61",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            9.0,
+            4.0,
+            9.0
+          ],
+          "prefix": [
+            "u47",
+            "u30",
+            "u53",
+            "u00"
+          ],
+          "probe_id": "main"
+        },
+        {
+          "expected_distribution": [
+            [
+              "u05",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            9.0,
+            4.0,
+            9.0
+          ],
+          "prefix": [
+            "u36",
+            "u55",
+            "u25",
+            "u57"
+          ],
+          "probe_id": "control"
+        }
+      ],
+      "seed": 370114,
+      "training": [
+        {
+          "exposures": 4,
+          "lags_ms": [
+            9.0,
+            4.0,
+            9.0,
+            9.0
+          ],
+          "tokens": [
+            "u47",
+            "u30",
+            "u53",
+            "u00",
+            "u61"
+          ]
+        },
+        {
+          "exposures": 4,
+          "lags_ms": [
+            9.0,
+            4.0,
+            9.0,
+            9.0
+          ],
+          "tokens": [
+            "u36",
+            "u55",
+            "u25",
+            "u57",
+            "u05"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-selective-interference",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [
+        "u01851",
+        "u35",
+        "u40",
+        "u04",
+        "u24",
+        "u12"
+      ],
+      "intervention_main": [
+        "u09452",
+        "u22",
+        "u17",
+        "u41",
+        "u45",
+        "u21"
+      ],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u21",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            9.0,
+            8.0,
+            6.0,
+            9.0
+          ],
+          "prefix": [
+            "u09452",
+            "u22",
+            "u17",
+            "u41",
+            "u45"
+          ],
+          "probe_id": "main"
+        },
+        {
+          "expected_distribution": [
+            [
+              "u12",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            9.0,
+            8.0,
+            6.0,
+            9.0
+          ],
+          "prefix": [
+            "u01851",
+            "u35",
+            "u40",
+            "u04",
+            "u24"
+          ],
+          "probe_id": "control"
+        }
+      ],
+      "seed": 370115,
+      "training": [
+        {
+          "exposures": 4,
+          "lags_ms": [
+            9.0,
+            8.0,
+            6.0,
+            9.0,
+            9.0
+          ],
+          "tokens": [
+            "u09452",
+            "u22",
+            "u17",
+            "u41",
+            "u45",
+            "u21"
+          ]
+        },
+        {
+          "exposures": 4,
+          "lags_ms": [
+            9.0,
+            8.0,
+            6.0,
+            9.0,
+            9.0
+          ],
+          "tokens": [
+            "u01851",
+            "u35",
+            "u40",
+            "u04",
+            "u24",
+            "u12"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-selective-interference",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [
+        "u41",
+        "u21",
+        "u38",
+        "u57",
+        "u27",
+        "u56"
+      ],
+      "intervention_main": [
+        "u10",
+        "u24",
+        "u49",
+        "u29",
+        "u15",
+        "u28"
+      ],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u28",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            6.0,
+            4.0,
+            8.0,
+            6.0
+          ],
+          "prefix": [
+            "u10",
+            "u24",
+            "u49",
+            "u29",
+            "u15"
+          ],
+          "probe_id": "main"
+        },
+        {
+          "expected_distribution": [
+            [
+              "u56",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            6.0,
+            4.0,
+            8.0,
+            6.0
+          ],
+          "prefix": [
+            "u41",
+            "u21",
+            "u38",
+            "u57",
+            "u27"
+          ],
+          "probe_id": "control"
+        }
+      ],
+      "seed": 370116,
+      "training": [
+        {
+          "exposures": 7,
+          "lags_ms": [
+            6.0,
+            4.0,
+            8.0,
+            6.0,
+            9.0
+          ],
+          "tokens": [
+            "u10",
+            "u24",
+            "u49",
+            "u29",
+            "u15",
+            "u28"
+          ]
+        },
+        {
+          "exposures": 7,
+          "lags_ms": [
+            6.0,
+            4.0,
+            8.0,
+            6.0,
+            9.0
+          ],
+          "tokens": [
+            "u41",
+            "u21",
+            "u38",
+            "u57",
+            "u27",
+            "u56"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-selective-interference",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [
+        "u06515",
+        "u39",
+        "u26",
+        "u38",
+        "u44",
+        "u17"
+      ],
+      "intervention_main": [
+        "u05652",
+        "u19",
+        "u15",
+        "u45",
+        "u43",
+        "u03"
+      ],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u03",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            4.0,
+            6.0,
+            4.0,
+            4.0
+          ],
+          "prefix": [
+            "u05652",
+            "u19",
+            "u15",
+            "u45",
+            "u43"
+          ],
+          "probe_id": "main"
+        },
+        {
+          "expected_distribution": [
+            [
+              "u17",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            4.0,
+            6.0,
+            4.0,
+            4.0
+          ],
+          "prefix": [
+            "u06515",
+            "u39",
+            "u26",
+            "u38",
+            "u44"
+          ],
+          "probe_id": "control"
+        }
+      ],
+      "seed": 370117,
+      "training": [
+        {
+          "exposures": 4,
+          "lags_ms": [
+            4.0,
+            6.0,
+            4.0,
+            4.0,
+            6.0
+          ],
+          "tokens": [
+            "u05652",
+            "u19",
+            "u15",
+            "u45",
+            "u43",
+            "u03"
+          ]
+        },
+        {
+          "exposures": 4,
+          "lags_ms": [
+            4.0,
+            6.0,
+            4.0,
+            4.0,
+            6.0
+          ],
+          "tokens": [
+            "u06515",
+            "u39",
+            "u26",
+            "u38",
+            "u44",
+            "u17"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-selective-interference",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [
+        "u22",
+        "u31",
+        "u13",
+        "u34",
+        "u62"
+      ],
+      "intervention_main": [
+        "u38",
+        "u24",
+        "u26",
+        "u57",
+        "u32"
+      ],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u32",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            4.0,
+            6.0,
+            6.0
+          ],
+          "prefix": [
+            "u38",
+            "u24",
+            "u26",
+            "u57"
+          ],
+          "probe_id": "main"
+        },
+        {
+          "expected_distribution": [
+            [
+              "u62",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            4.0,
+            6.0,
+            6.0
+          ],
+          "prefix": [
+            "u22",
+            "u31",
+            "u13",
+            "u34"
+          ],
+          "probe_id": "control"
+        }
+      ],
+      "seed": 370118,
+      "training": [
+        {
+          "exposures": 6,
+          "lags_ms": [
+            4.0,
+            6.0,
+            6.0,
+            9.0
+          ],
+          "tokens": [
+            "u38",
+            "u24",
+            "u26",
+            "u57",
+            "u32"
+          ]
+        },
+        {
+          "exposures": 6,
+          "lags_ms": [
+            4.0,
+            6.0,
+            6.0,
+            9.0
+          ],
+          "tokens": [
+            "u22",
+            "u31",
+            "u13",
+            "u34",
+            "u62"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-selective-interference",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [
+        "u09689",
+        "u51",
+        "u48",
+        "u42",
+        "u30",
+        "u13"
+      ],
+      "intervention_main": [
+        "u03847",
+        "u63",
+        "u50",
+        "u38",
+        "u56",
+        "u27"
+      ],
+      "loop": null,
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u27",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            9.0,
+            8.0,
+            4.0,
+            6.0
+          ],
+          "prefix": [
+            "u03847",
+            "u63",
+            "u50",
+            "u38",
+            "u56"
+          ],
+          "probe_id": "main"
+        },
+        {
+          "expected_distribution": [
+            [
+              "u13",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            9.0,
+            8.0,
+            4.0,
+            6.0
+          ],
+          "prefix": [
+            "u09689",
+            "u51",
+            "u48",
+            "u42",
+            "u30"
+          ],
+          "probe_id": "control"
+        }
+      ],
+      "seed": 370119,
+      "training": [
+        {
+          "exposures": 6,
+          "lags_ms": [
+            9.0,
+            8.0,
+            4.0,
+            6.0,
+            4.0
+          ],
+          "tokens": [
+            "u03847",
+            "u63",
+            "u50",
+            "u38",
+            "u56",
+            "u27"
+          ]
+        },
+        {
+          "exposures": 6,
+          "lags_ms": [
+            9.0,
+            8.0,
+            4.0,
+            6.0,
+            4.0
+          ],
+          "tokens": [
+            "u09689",
+            "u51",
+            "u48",
+            "u42",
+            "u30",
+            "u13"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-reality-provenance-loop",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": {
+        "cue_prefix": [
+          "u42",
+          "u12",
+          "u23"
+        ],
+        "expected_generated": "u30",
+        "external_consequence": "u02"
+      },
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u30",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            6.0,
+            6.0
+          ],
+          "prefix": [
+            "u42",
+            "u12",
+            "u23"
+          ],
+          "probe_id": "loop-cue"
+        }
+      ],
+      "seed": 370110,
+      "training": [
+        {
+          "exposures": 7,
+          "lags_ms": [
+            6.0,
+            6.0,
+            4.0,
+            9.0
+          ],
+          "tokens": [
+            "u42",
+            "u12",
+            "u23",
+            "u30",
+            "u02"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-reality-provenance-loop",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": {
+        "cue_prefix": [
+          "u01924",
+          "u54",
+          "u49",
+          "u27"
+        ],
+        "expected_generated": "u29",
+        "external_consequence": "u28"
+      },
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u29",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            11.0,
+            4.0,
+            4.0
+          ],
+          "prefix": [
+            "u01924",
+            "u54",
+            "u49",
+            "u27"
+          ],
+          "probe_id": "loop-cue"
+        }
+      ],
+      "seed": 370111,
+      "training": [
+        {
+          "exposures": 4,
+          "lags_ms": [
+            11.0,
+            4.0,
+            4.0,
+            7.0,
+            7.0
+          ],
+          "tokens": [
+            "u01924",
+            "u54",
+            "u49",
+            "u27",
+            "u29",
+            "u28"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-reality-provenance-loop",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": {
+        "cue_prefix": [
+          "u34",
+          "u16",
+          "u24",
+          "u28"
+        ],
+        "expected_generated": "u02",
+        "external_consequence": "u46"
+      },
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u02",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            4.0,
+            4.0,
+            6.0
+          ],
+          "prefix": [
+            "u34",
+            "u16",
+            "u24",
+            "u28"
+          ],
+          "probe_id": "loop-cue"
+        }
+      ],
+      "seed": 370112,
+      "training": [
+        {
+          "exposures": 7,
+          "lags_ms": [
+            4.0,
+            4.0,
+            6.0,
+            7.0,
+            4.0
+          ],
+          "tokens": [
+            "u34",
+            "u16",
+            "u24",
+            "u28",
+            "u02",
+            "u46"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-reality-provenance-loop",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": {
+        "cue_prefix": [
+          "u06210",
+          "u35",
+          "u27",
+          "u44"
+        ],
+        "expected_generated": "u36",
+        "external_consequence": "u45"
+      },
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u36",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            6.0,
+            4.0,
+            9.0
+          ],
+          "prefix": [
+            "u06210",
+            "u35",
+            "u27",
+            "u44"
+          ],
+          "probe_id": "loop-cue"
+        }
+      ],
+      "seed": 370113,
+      "training": [
+        {
+          "exposures": 7,
+          "lags_ms": [
+            6.0,
+            4.0,
+            9.0,
+            9.0,
+            7.0
+          ],
+          "tokens": [
+            "u06210",
+            "u35",
+            "u27",
+            "u44",
+            "u36",
+            "u45"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-reality-provenance-loop",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": {
+        "cue_prefix": [
+          "u62",
+          "u54",
+          "u43",
+          "u22"
+        ],
+        "expected_generated": "u48",
+        "external_consequence": "u39"
+      },
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u48",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            4.0,
+            9.0,
+            9.0
+          ],
+          "prefix": [
+            "u62",
+            "u54",
+            "u43",
+            "u22"
+          ],
+          "probe_id": "loop-cue"
+        }
+      ],
+      "seed": 370114,
+      "training": [
+        {
+          "exposures": 6,
+          "lags_ms": [
+            4.0,
+            9.0,
+            9.0,
+            7.0,
+            9.0
+          ],
+          "tokens": [
+            "u62",
+            "u54",
+            "u43",
+            "u22",
+            "u48",
+            "u39"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-reality-provenance-loop",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": {
+        "cue_prefix": [
+          "u00108",
+          "u39",
+          "u63",
+          "u27",
+          "u54"
+        ],
+        "expected_generated": "u21",
+        "external_consequence": "u40"
+      },
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u21",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            4.0,
+            9.0,
+            6.0,
+            6.0
+          ],
+          "prefix": [
+            "u00108",
+            "u39",
+            "u63",
+            "u27",
+            "u54"
+          ],
+          "probe_id": "loop-cue"
+        }
+      ],
+      "seed": 370115,
+      "training": [
+        {
+          "exposures": 6,
+          "lags_ms": [
+            4.0,
+            9.0,
+            6.0,
+            6.0,
+            6.0,
+            4.0
+          ],
+          "tokens": [
+            "u00108",
+            "u39",
+            "u63",
+            "u27",
+            "u54",
+            "u21",
+            "u40"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-reality-provenance-loop",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": {
+        "cue_prefix": [
+          "u05",
+          "u02",
+          "u37",
+          "u60"
+        ],
+        "expected_generated": "u51",
+        "external_consequence": "u14"
+      },
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u51",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            9.0,
+            4.0,
+            7.0
+          ],
+          "prefix": [
+            "u05",
+            "u02",
+            "u37",
+            "u60"
+          ],
+          "probe_id": "loop-cue"
+        }
+      ],
+      "seed": 370116,
+      "training": [
+        {
+          "exposures": 4,
+          "lags_ms": [
+            9.0,
+            4.0,
+            7.0,
+            7.0,
+            9.0
+          ],
+          "tokens": [
+            "u05",
+            "u02",
+            "u37",
+            "u60",
+            "u51",
+            "u14"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-reality-provenance-loop",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": {
+        "cue_prefix": [
+          "u04403",
+          "u45",
+          "u23",
+          "u04",
+          "u33"
+        ],
+        "expected_generated": "u10",
+        "external_consequence": "u42"
+      },
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u10",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            11.0,
+            9.0,
+            4.0,
+            6.0
+          ],
+          "prefix": [
+            "u04403",
+            "u45",
+            "u23",
+            "u04",
+            "u33"
+          ],
+          "probe_id": "loop-cue"
+        }
+      ],
+      "seed": 370117,
+      "training": [
+        {
+          "exposures": 4,
+          "lags_ms": [
+            11.0,
+            9.0,
+            4.0,
+            6.0,
+            4.0,
+            4.0
+          ],
+          "tokens": [
+            "u04403",
+            "u45",
+            "u23",
+            "u04",
+            "u33",
+            "u10",
+            "u42"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-reality-provenance-loop",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": {
+        "cue_prefix": [
+          "u52",
+          "u06",
+          "u33"
+        ],
+        "expected_generated": "u53",
+        "external_consequence": "u25"
+      },
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u53",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            6.0,
+            9.0
+          ],
+          "prefix": [
+            "u52",
+            "u06",
+            "u33"
+          ],
+          "probe_id": "loop-cue"
+        }
+      ],
+      "seed": 370118,
+      "training": [
+        {
+          "exposures": 7,
+          "lags_ms": [
+            6.0,
+            9.0,
+            4.0,
+            6.0
+          ],
+          "tokens": [
+            "u52",
+            "u06",
+            "u33",
+            "u53",
+            "u25"
+          ]
+        }
+      ]
+    },
+    {
+      "cycle_cue": null,
+      "cycle_phases": [],
+      "family": "cx01-reality-provenance-loop",
+      "generation_id": "cx01-candidate-002",
+      "intervention_control": [],
+      "intervention_main": [],
+      "loop": {
+        "cue_prefix": [
+          "u08434",
+          "u15",
+          "u44",
+          "u21"
+        ],
+        "expected_generated": "u03",
+        "external_consequence": "u47"
+      },
+      "probes": [
+        {
+          "expected_distribution": [
+            [
+              "u03",
+              1.0
+            ]
+          ],
+          "lags_ms": [
+            9.0,
+            9.0,
+            6.0
+          ],
+          "prefix": [
+            "u08434",
+            "u15",
+            "u44",
+            "u21"
+          ],
+          "probe_id": "loop-cue"
+        }
+      ],
+      "seed": 370119,
+      "training": [
+        {
+          "exposures": 7,
+          "lags_ms": [
+            9.0,
+            9.0,
+            6.0,
+            4.0,
+            6.0
+          ],
+          "tokens": [
+            "u08434",
+            "u15",
+            "u44",
+            "u21",
+            "u03",
+            "u47"
+          ]
+        }
+      ]
+    }
+  ]
+}

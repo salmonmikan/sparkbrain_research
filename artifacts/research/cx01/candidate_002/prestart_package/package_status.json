@@ -1,0 +1,18 @@
+{
+  "candidate_consumed": false,
+  "candidate_generation_id": "cx01-candidate-002",
+  "candidate_spec_hash": "5b51b5ac53a66b0ca79939c9eff976b53c75477ba38fd77547e2bd3858d095c8",
+  "declaration_bundle_hash": "ca21263f60d6e1c2d78f64ed1d628fde123f48355af3eb3a519b037a3068e537",
+  "declaration_count": 420,
+  "execution_seal_status": "NOT_ISSUED",
+  "formal_capability_executed": false,
+  "formal_score_present": false,
+  "formal_status": "NOT_STARTED",
+  "independent_review_status": "PENDING",
+  "package_schema_version": "cx01-outcome-blind-package-v2",
+  "package_status": "OUTCOME_BLIND_UNSIGNED_PRESTART",
+  "source_git_sha": "e8483968ce43076b4c3fd04c76e62106e2031769",
+  "structural_review_required": true,
+  "world_count": 60,
+  "world_grid_hash": "0c6849a823c4befcd5a3071a4755dbcadcdb88ec8fc072da0713415adc12e3ce"
+}

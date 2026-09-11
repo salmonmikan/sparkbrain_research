@@ -1,0 +1,1246 @@
+{
+  "canonical_structure": {
+    "family_rows": {
+      "cx01-ambiguous-branch": {
+        "development_overlap_count": 0,
+        "unique_structure_count": 10,
+        "world_count": 10
+      },
+      "cx01-contingency-cycle": {
+        "development_overlap_count": 0,
+        "unique_structure_count": 10,
+        "world_count": 10
+      },
+      "cx01-high-order-aliasing": {
+        "development_overlap_count": 0,
+        "unique_structure_count": 10,
+        "world_count": 10
+      },
+      "cx01-reality-provenance-loop": {
+        "development_overlap_count": 0,
+        "unique_structure_count": 10,
+        "world_count": 10
+      },
+      "cx01-selective-interference": {
+        "development_overlap_count": 0,
+        "unique_structure_count": 10,
+        "world_count": 10
+      },
+      "cx01-timing-aliasing": {
+        "development_overlap_count": 0,
+        "unique_structure_count": 10,
+        "world_count": 10
+      }
+    },
+    "passed": true,
+    "policy_version": "cx01-formal-structure-v2",
+    "world_count": 60
+  },
+  "component_structure": {
+    "family_rows": {
+      "cx01-ambiguous-branch": {
+        "axes": {
+          "contingency": {
+            "applicable": true,
+            "development_overlap_count": 0,
+            "formal_novel_count": 4,
+            "formal_unique_count": 4,
+            "minimum_unique_required": 2,
+            "novelty_required": true,
+            "passed": true,
+            "required_seed_diversity": true
+          },
+          "exposure_schedule": {
+            "applicable": true,
+            "development_overlap_count": 0,
+            "formal_novel_count": 4,
+            "formal_unique_count": 4,
+            "minimum_unique_required": 2,
+            "novelty_required": true,
+            "passed": true,
+            "required_seed_diversity": true
+          },
+          "full": {
+            "applicable": true,
+            "development_overlap_count": 0,
+            "formal_novel_count": 10,
+            "formal_unique_count": 10,
+            "minimum_unique_required": 5,
+            "novelty_required": true,
+            "passed": true,
+            "required_seed_diversity": false
+          },
+          "timing": {
+            "applicable": true,
+            "development_overlap_count": 0,
+            "formal_novel_count": 10,
+            "formal_unique_count": 10,
+            "minimum_unique_required": 2,
+            "novelty_required": true,
+            "passed": true,
+            "required_seed_diversity": true
+          },
+          "token_assignment": {
+            "applicable": true,
+            "development_overlap_count": 0,
+            "formal_novel_count": 10,
+            "formal_unique_count": 10,
+            "minimum_unique_required": 2,
+            "novelty_required": true,
+            "passed": true,
+            "required_seed_diversity": true
+          },
+          "topology": {
+            "applicable": true,
+            "development_overlap_count": 0,
+            "formal_novel_count": 2,
+            "formal_unique_count": 2,
+            "minimum_unique_required": 2,
+            "novelty_required": true,
+            "passed": true,
+            "required_seed_diversity": true
+          }
+        },
+        "passed": true,
+        "world_count": 10
+      },
+      "cx01-contingency-cycle": {
+        "axes": {
+          "contingency": {
+            "applicable": true,
+            "development_overlap_count": 0,
+            "formal_novel_count": 4,
+            "formal_unique_count": 4,
+            "minimum_unique_required": 2,
+            "novelty_required": true,
+            "passed": true,
+            "required_seed_diversity": true
+          },
+          "exposure_schedule": {
+            "applicable": true,
+            "development_overlap_count": 0,
+            "formal_novel_count": 10,
+            "formal_unique_count": 10,
+            "minimum_unique_required": 2,
+            "novelty_required": true,
+            "passed": true,
+            "required_seed_diversity": true
+          },
+          "full": {
+            "applicable": true,
+            "development_overlap_count": 0,
+            "formal_novel_count": 10,
+            "formal_unique_count": 10,
+            "minimum_unique_required": 5,
+            "novelty_required": true,
+            "passed": true,
+            "required_seed_diversity": false
+          },
+          "timing": {
+            "applicable": true,
+            "development_overlap_count": 0,
+            "formal_novel_count": 4,
+            "formal_unique_count": 4,
+            "minimum_unique_required": 2,
+            "novelty_required": true,
+            "passed": true,
+            "required_seed_diversity": true
+          },
+          "token_assignment": {
+            "applicable": true,
+            "development_overlap_count": 0,
+            "formal_novel_count": 10,
+            "formal_unique_count": 10,
+            "minimum_unique_required": 2,
+            "novelty_required": true,
+            "passed": true,
+            "required_seed_diversity": true
+          },
+          "topology": {
+            "applicable": true,
+            "development_overlap_count": 1,
+            "formal_novel_count": 1,
+            "formal_unique_count": 2,
+            "minimum_unique_required": 2,
+            "novelty_required": true,
+            "passed": true,
+            "required_seed_diversity": true
+          }
+        },
+        "passed": true,
+        "world_count": 10
+      },
+      "cx01-high-order-aliasing": {
+        "axes": {
+          "contingency": {
+            "applicable": false,
+            "development_overlap_count": 1,
+            "formal_novel_count": 0,
+            "formal_unique_count": 1,
+            "minimum_unique_required": 1,
+            "novelty_required": false,
+            "passed": true,
+            "required_seed_diversity": false
+          },
+          "exposure_schedule": {
+            "applicable": true,
+            "development_overlap_count": 0,
+            "formal_novel_count": 3,
+            "formal_unique_count": 3,
+            "minimum_unique_required": 2,
+            "novelty_required": true,
+            "passed": true,
+            "required_seed_diversity": true
+          },
+          "full": {
+            "applicable": true,
+            "development_overlap_count": 0,
+            "formal_novel_count": 10,
+            "formal_unique_count": 10,
+            "minimum_unique_required": 5,
+            "novelty_required": true,
+            "passed": true,
+            "required_seed_diversity": false
+          },
+          "timing": {
+            "applicable": true,
+            "development_overlap_count": 0,
+            "formal_novel_count": 10,
+            "formal_unique_count": 10,
+            "minimum_unique_required": 2,
+            "novelty_required": true,
+            "passed": true,
+            "required_seed_diversity": true
+          },
+          "token_assignment": {
+            "applicable": true,
+            "development_overlap_count": 0,
+            "formal_novel_count": 10,
+            "formal_unique_count": 10,
+            "minimum_unique_required": 2,
+            "novelty_required": true,
+            "passed": true,
+            "required_seed_diversity": true
+          },
+          "topology": {
+            "applicable": true,
+            "development_overlap_count": 0,
+            "formal_novel_count": 3,
+            "formal_unique_count": 3,
+            "minimum_unique_required": 2,
+            "novelty_required": true,
+            "passed": true,
+            "required_seed_diversity": true
+          }
+        },
+        "passed": true,
+        "world_count": 10
+      },
+      "cx01-reality-provenance-loop": {
+        "axes": {
+          "contingency": {
+            "applicable": true,
+            "development_overlap_count": 0,
+            "formal_novel_count": 3,
+            "formal_unique_count": 3,
+            "minimum_unique_required": 2,
+            "novelty_required": true,
+            "passed": true,
+            "required_seed_diversity": true
+          },
+          "exposure_schedule": {
+            "applicable": true,
+            "development_overlap_count": 0,
+            "formal_novel_count": 3,
+            "formal_unique_count": 3,
+            "minimum_unique_required": 2,
+            "novelty_required": true,
+            "passed": true,
+            "required_seed_diversity": true
+          },
+          "full": {
+            "applicable": true,
+            "development_overlap_count": 0,
+            "formal_novel_count": 10,
+            "formal_unique_count": 10,
+            "minimum_unique_required": 5,
+            "novelty_required": true,
+            "passed": true,
+            "required_seed_diversity": false
+          },
+          "timing": {
+            "applicable": true,
+            "development_overlap_count": 0,
+            "formal_novel_count": 10,
+            "formal_unique_count": 10,
+            "minimum_unique_required": 2,
+            "novelty_required": true,
+            "passed": true,
+            "required_seed_diversity": true
+          },
+          "token_assignment": {
+            "applicable": true,
+            "development_overlap_count": 0,
+            "formal_novel_count": 10,
+            "formal_unique_count": 10,
+            "minimum_unique_required": 2,
+            "novelty_required": true,
+            "passed": true,
+            "required_seed_diversity": true
+          },
+          "topology": {
+            "applicable": true,
+            "development_overlap_count": 0,
+            "formal_novel_count": 3,
+            "formal_unique_count": 3,
+            "minimum_unique_required": 2,
+            "novelty_required": true,
+            "passed": true,
+            "required_seed_diversity": true
+          }
+        },
+        "passed": true,
+        "world_count": 10
+      },
+      "cx01-selective-interference": {
+        "axes": {
+          "contingency": {
+            "applicable": false,
+            "development_overlap_count": 1,
+            "formal_novel_count": 0,
+            "formal_unique_count": 1,
+            "minimum_unique_required": 1,
+            "novelty_required": false,
+            "passed": true,
+            "required_seed_diversity": false
+          },
+          "exposure_schedule": {
+            "applicable": true,
+            "development_overlap_count": 0,
+            "formal_novel_count": 3,
+            "formal_unique_count": 3,
+            "minimum_unique_required": 2,
+            "novelty_required": true,
+            "passed": true,
+            "required_seed_diversity": true
+          },
+          "full": {
+            "applicable": true,
+            "development_overlap_count": 0,
+            "formal_novel_count": 10,
+            "formal_unique_count": 10,
+            "minimum_unique_required": 5,
+            "novelty_required": true,
+            "passed": true,
+            "required_seed_diversity": false
+          },
+          "timing": {
+            "applicable": true,
+            "development_overlap_count": 0,
+            "formal_novel_count": 10,
+            "formal_unique_count": 10,
+            "minimum_unique_required": 2,
+            "novelty_required": true,
+            "passed": true,
+            "required_seed_diversity": true
+          },
+          "token_assignment": {
+            "applicable": true,
+            "development_overlap_count": 0,
+            "formal_novel_count": 10,
+            "formal_unique_count": 10,
+            "minimum_unique_required": 2,
+            "novelty_required": true,
+            "passed": true,
+            "required_seed_diversity": true
+          },
+          "topology": {
+            "applicable": true,
+            "development_overlap_count": 0,
+            "formal_novel_count": 3,
+            "formal_unique_count": 3,
+            "minimum_unique_required": 2,
+            "novelty_required": true,
+            "passed": true,
+            "required_seed_diversity": true
+          }
+        },
+        "passed": true,
+        "world_count": 10
+      },
+      "cx01-timing-aliasing": {
+        "axes": {
+          "contingency": {
+            "applicable": false,
+            "development_overlap_count": 1,
+            "formal_novel_count": 0,
+            "formal_unique_count": 1,
+            "minimum_unique_required": 1,
+            "novelty_required": false,
+            "passed": true,
+            "required_seed_diversity": false
+          },
+          "exposure_schedule": {
+            "applicable": true,
+            "development_overlap_count": 0,
+            "formal_novel_count": 3,
+            "formal_unique_count": 3,
+            "minimum_unique_required": 2,
+            "novelty_required": true,
+            "passed": true,
+            "required_seed_diversity": true
+          },
+          "full": {
+            "applicable": true,
+            "development_overlap_count": 0,
+            "formal_novel_count": 10,
+            "formal_unique_count": 10,
+            "minimum_unique_required": 5,
+            "novelty_required": true,
+            "passed": true,
+            "required_seed_diversity": false
+          },
+          "timing": {
+            "applicable": true,
+            "development_overlap_count": 0,
+            "formal_novel_count": 10,
+            "formal_unique_count": 10,
+            "minimum_unique_required": 2,
+            "novelty_required": true,
+            "passed": true,
+            "required_seed_diversity": true
+          },
+          "token_assignment": {
+            "applicable": true,
+            "development_overlap_count": 0,
+            "formal_novel_count": 10,
+            "formal_unique_count": 10,
+            "minimum_unique_required": 2,
+            "novelty_required": true,
+            "passed": true,
+            "required_seed_diversity": true
+          },
+          "topology": {
+            "applicable": true,
+            "development_overlap_count": 0,
+            "formal_novel_count": 2,
+            "formal_unique_count": 2,
+            "minimum_unique_required": 2,
+            "novelty_required": true,
+            "passed": true,
+            "required_seed_diversity": true
+          }
+        },
+        "passed": true,
+        "world_count": 10
+      }
+    },
+    "formal_generator_revision": "cx01-formal-structural-revision-v4",
+    "passed": true,
+    "policy_version": "cx01-component-structural-audit-v2",
+    "violations": [],
+    "world_count": 60,
+    "world_rows": [
+      {
+        "family": "cx01-high-order-aliasing",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": false,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370110
+      },
+      {
+        "family": "cx01-high-order-aliasing",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": false,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370111
+      },
+      {
+        "family": "cx01-high-order-aliasing",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": false,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370112
+      },
+      {
+        "family": "cx01-high-order-aliasing",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": false,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370113
+      },
+      {
+        "family": "cx01-high-order-aliasing",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": false,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370114
+      },
+      {
+        "family": "cx01-high-order-aliasing",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": false,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370115
+      },
+      {
+        "family": "cx01-high-order-aliasing",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": false,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370116
+      },
+      {
+        "family": "cx01-high-order-aliasing",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": false,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370117
+      },
+      {
+        "family": "cx01-high-order-aliasing",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": false,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370118
+      },
+      {
+        "family": "cx01-high-order-aliasing",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": false,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370119
+      },
+      {
+        "family": "cx01-timing-aliasing",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": false,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370110
+      },
+      {
+        "family": "cx01-timing-aliasing",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": false,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370111
+      },
+      {
+        "family": "cx01-timing-aliasing",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": false,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370112
+      },
+      {
+        "family": "cx01-timing-aliasing",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": false,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370113
+      },
+      {
+        "family": "cx01-timing-aliasing",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": false,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370114
+      },
+      {
+        "family": "cx01-timing-aliasing",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": false,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370115
+      },
+      {
+        "family": "cx01-timing-aliasing",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": false,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370116
+      },
+      {
+        "family": "cx01-timing-aliasing",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": false,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370117
+      },
+      {
+        "family": "cx01-timing-aliasing",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": false,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370118
+      },
+      {
+        "family": "cx01-timing-aliasing",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": false,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370119
+      },
+      {
+        "family": "cx01-contingency-cycle",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": true,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": false
+        },
+        "passed": true,
+        "seed": 370110
+      },
+      {
+        "family": "cx01-contingency-cycle",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 4,
+        "novel_vs_development": {
+          "contingency": true,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370111
+      },
+      {
+        "family": "cx01-contingency-cycle",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": true,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": false
+        },
+        "passed": true,
+        "seed": 370112
+      },
+      {
+        "family": "cx01-contingency-cycle",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 4,
+        "novel_vs_development": {
+          "contingency": true,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370113
+      },
+      {
+        "family": "cx01-contingency-cycle",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": true,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": false
+        },
+        "passed": true,
+        "seed": 370114
+      },
+      {
+        "family": "cx01-contingency-cycle",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 4,
+        "novel_vs_development": {
+          "contingency": true,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370115
+      },
+      {
+        "family": "cx01-contingency-cycle",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": true,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": false
+        },
+        "passed": true,
+        "seed": 370116
+      },
+      {
+        "family": "cx01-contingency-cycle",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 4,
+        "novel_vs_development": {
+          "contingency": true,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370117
+      },
+      {
+        "family": "cx01-contingency-cycle",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": true,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": false
+        },
+        "passed": true,
+        "seed": 370118
+      },
+      {
+        "family": "cx01-contingency-cycle",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 4,
+        "novel_vs_development": {
+          "contingency": true,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370119
+      },
+      {
+        "family": "cx01-ambiguous-branch",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 4,
+        "novel_vs_development": {
+          "contingency": true,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370110
+      },
+      {
+        "family": "cx01-ambiguous-branch",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 4,
+        "novel_vs_development": {
+          "contingency": true,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370111
+      },
+      {
+        "family": "cx01-ambiguous-branch",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 4,
+        "novel_vs_development": {
+          "contingency": true,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370112
+      },
+      {
+        "family": "cx01-ambiguous-branch",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 4,
+        "novel_vs_development": {
+          "contingency": true,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370113
+      },
+      {
+        "family": "cx01-ambiguous-branch",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 4,
+        "novel_vs_development": {
+          "contingency": true,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370114
+      },
+      {
+        "family": "cx01-ambiguous-branch",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 4,
+        "novel_vs_development": {
+          "contingency": true,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370115
+      },
+      {
+        "family": "cx01-ambiguous-branch",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 4,
+        "novel_vs_development": {
+          "contingency": true,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370116
+      },
+      {
+        "family": "cx01-ambiguous-branch",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 4,
+        "novel_vs_development": {
+          "contingency": true,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370117
+      },
+      {
+        "family": "cx01-ambiguous-branch",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 4,
+        "novel_vs_development": {
+          "contingency": true,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370118
+      },
+      {
+        "family": "cx01-ambiguous-branch",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 4,
+        "novel_vs_development": {
+          "contingency": true,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370119
+      },
+      {
+        "family": "cx01-selective-interference",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": false,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370110
+      },
+      {
+        "family": "cx01-selective-interference",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": false,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370111
+      },
+      {
+        "family": "cx01-selective-interference",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": false,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370112
+      },
+      {
+        "family": "cx01-selective-interference",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": false,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370113
+      },
+      {
+        "family": "cx01-selective-interference",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": false,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370114
+      },
+      {
+        "family": "cx01-selective-interference",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": false,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370115
+      },
+      {
+        "family": "cx01-selective-interference",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": false,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370116
+      },
+      {
+        "family": "cx01-selective-interference",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": false,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370117
+      },
+      {
+        "family": "cx01-selective-interference",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": false,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370118
+      },
+      {
+        "family": "cx01-selective-interference",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 3,
+        "novel_vs_development": {
+          "contingency": false,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370119
+      },
+      {
+        "family": "cx01-reality-provenance-loop",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 4,
+        "novel_vs_development": {
+          "contingency": true,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370110
+      },
+      {
+        "family": "cx01-reality-provenance-loop",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 4,
+        "novel_vs_development": {
+          "contingency": true,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370111
+      },
+      {
+        "family": "cx01-reality-provenance-loop",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 4,
+        "novel_vs_development": {
+          "contingency": true,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370112
+      },
+      {
+        "family": "cx01-reality-provenance-loop",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 4,
+        "novel_vs_development": {
+          "contingency": true,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370113
+      },
+      {
+        "family": "cx01-reality-provenance-loop",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 4,
+        "novel_vs_development": {
+          "contingency": true,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370114
+      },
+      {
+        "family": "cx01-reality-provenance-loop",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 4,
+        "novel_vs_development": {
+          "contingency": true,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370115
+      },
+      {
+        "family": "cx01-reality-provenance-loop",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 4,
+        "novel_vs_development": {
+          "contingency": true,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370116
+      },
+      {
+        "family": "cx01-reality-provenance-loop",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 4,
+        "novel_vs_development": {
+          "contingency": true,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370117
+      },
+      {
+        "family": "cx01-reality-provenance-loop",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 4,
+        "novel_vs_development": {
+          "contingency": true,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370118
+      },
+      {
+        "family": "cx01-reality-provenance-loop",
+        "full_structure_novel": true,
+        "non_token_novel_axis_count": 4,
+        "novel_vs_development": {
+          "contingency": true,
+          "exposure_schedule": true,
+          "timing": true,
+          "topology": true
+        },
+        "passed": true,
+        "seed": 370119
+      }
+    ]
+  },
+  "family_identifiability": {
+    "family_pass_counts": {
+      "cx01-ambiguous-branch": 10,
+      "cx01-contingency-cycle": 10,
+      "cx01-high-order-aliasing": 10,
+      "cx01-reality-provenance-loop": 10,
+      "cx01-selective-interference": 10,
+      "cx01-timing-aliasing": 10
+    },
+    "family_world_counts": {
+      "cx01-ambiguous-branch": 10,
+      "cx01-contingency-cycle": 10,
+      "cx01-high-order-aliasing": 10,
+      "cx01-reality-provenance-loop": 10,
+      "cx01-selective-interference": 10,
+      "cx01-timing-aliasing": 10
+    },
+    "passed": true,
+    "world_count": 60
+  }
+}
