@@ -1,0 +1,46 @@
+name: RV01 R01-13 Preserve Fixed Development Raw
+
+on:
+  push:
+    branches:
+      - "research/rv01-r01-13-activity-matched-discrimination"
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  preserve:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-actions[bot]'
+    env:
+      ARTIFACT_ID: "10059084120"
+      EXPECTED_ZIP_SHA256: "84f393e25af3de848cf517872592885649801be2e0a3d3e98ccbc9f14a6c3bd5"
+      EXPECTED_RESULT_SHA256: "1ab43a8950be572b163e7bba4950b23d5258933e5463dc3d944f41eaea2adf60"
+      TARGET: artifacts/research/rv01/r01_13/development_result.json
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Preserve existing fixed artifact without rerunning science
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test ! -e "${TARGET}"
+          gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${ARTIFACT_ID}/zip" > /tmp/r01-13.zip
+          echo "${EXPECTED_ZIP_SHA256}  /tmp/r01-13.zip" | sha256sum -c -
+          mkdir -p /tmp/r01-13
+          unzip -q /tmp/r01-13.zip -d /tmp/r01-13
+          result="$(find /tmp/r01-13 -type f -name development_result.json -print -quit)"
+          test -n "${result}"
+          echo "${EXPECTED_RESULT_SHA256}  ${result}" | sha256sum -c -
+          mkdir -p "$(dirname "${TARGET}")"
+          cp "${result}" "${TARGET}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "${TARGET}"
+          git commit -m "preserve(rv01): retain fixed R01-13 development raw evidence"
+          git push origin HEAD:research/rv01-r01-13-activity-matched-discrimination
