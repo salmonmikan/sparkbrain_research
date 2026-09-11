@@ -21,7 +21,6 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from sparkbrain.research.rv02_rd003_online import _budget_rows  # noqa: E402
 from sparkbrain.research.rv02_rd004_online import (  # noqa: E402
     RD004_PROTOCOL,
     planned_rd004_cells,
@@ -334,8 +333,16 @@ def main() -> int:
                         "status": "incomplete_execution_failure",
                         "result": None,
                         "error": "cell timeout",
-                        "stdout": (exc.stdout or "")[-12000:] if isinstance(exc.stdout, str) else "",
-                        "stderr": (exc.stderr or "")[-12000:] if isinstance(exc.stderr, str) else "",
+                        "stdout": (
+                            (exc.stdout or "")[-12000:]
+                            if isinstance(exc.stdout, str)
+                            else ""
+                        ),
+                        "stderr": (
+                            (exc.stderr or "")[-12000:]
+                            if isinstance(exc.stderr, str)
+                            else ""
+                        ),
                     }
             row["wall_seconds"] = time.monotonic() - begin
             statuses.append({key: value for key, value in row.items() if key != "result"})
