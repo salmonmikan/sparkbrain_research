@@ -41,7 +41,9 @@ RD003_HORIZON_MS = 40.0
 RD003_MODES = ("disabled", "causal", "shuffled")
 
 
-def planned_rd003_cells(config: ScaleStudyConfig | None = None) -> tuple[tuple[str, int], ...]:
+def planned_rd003_cells(
+    config: ScaleStudyConfig | None = None,
+) -> tuple[tuple[str, int], ...]:
     config = config or ScaleStudyConfig()
     return tuple(
         (world["family"], scale)
@@ -50,7 +52,11 @@ def planned_rd003_cells(config: ScaleStudyConfig | None = None) -> tuple[tuple[s
     )
 
 
-def _new_gained_field(config: ScaleStudyConfig, world: dict[str, Any], scale: int) -> TemporalExcitableField:
+def _new_gained_field(
+    config: ScaleStudyConfig,
+    world: dict[str, Any],
+    scale: int,
+) -> TemporalExcitableField:
     audit = audit_scale(config, world, scale)
     field = build_physical_field(
         unit_count=audit["unit_count"],
@@ -82,7 +88,13 @@ def _budget_rows(rows: list[HiddenEligibilityTrace]) -> tuple[tuple[float, float
     )
 
 
-def _schedule_external(field: TemporalExcitableField, *, event_id: str, time_ms: float, unit_id: int) -> None:
+def _schedule_external(
+    field: TemporalExcitableField,
+    *,
+    event_id: str,
+    time_ms: float,
+    unit_id: int,
+) -> None:
     field.schedule_arrival(
         SynapticArrival(
             time_ms=time_ms,
@@ -242,7 +254,10 @@ def run_rd003_cell(
         )
 
     if schedule:
-        final_time = float(schedule[-1]["time_ms"]) + learners["causal"].config.maximum_lag_ms
+        final_time = (
+            float(schedule[-1]["time_ms"])
+            + learners["causal"].config.maximum_lag_ms
+        )
         final_spikes: dict[str, tuple[SpikeEvent, ...]] = {}
         for mode in RD003_MODES:
             spikes = fields[mode].run_until(final_time)
