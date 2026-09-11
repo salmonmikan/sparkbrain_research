@@ -1,0 +1,4 @@
+8f7502606a19110ad2443a0d72190357e7badf337e28095a2f7f81fe0d2b8f6c  artifacts/research/rv02/rd004/development-run/manifest.json
+2c553868031848d7d24a9e39ce0f508de99e2b8ea5dfcf3fffe70d7b6215588c  artifacts/research/rv02/rd004/development-run/raw_cells.jsonl.gz
+29634cbb981daa84d3221f0e96f64268b0e23ce5a247000c4b62da49c65a52fc  artifacts/research/rv02/rd004/development-run/raw_cells.jsonl.tmp
+d101dc668726f9d35c09eace9057e17f9ec5e6ce212136a1a813769f499daae1  artifacts/research/rv02/rd004/development-run/summary.json

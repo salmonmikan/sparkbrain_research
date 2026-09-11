@@ -1,0 +1,15 @@
+{
+  "attempted_cells": 18,
+  "compressed_sha256": "2c553868031848d7d24a9e39ce0f508de99e2b8ea5dfcf3fffe70d7b6215588c",
+  "formal_execution_allowed": false,
+  "raw_sha256": "29634cbb981daa84d3221f0e96f64268b0e23ce5a247000c4b62da49c65a52fc",
+  "scientific_status": "not_scored_development_diagnosis",
+  "status_counts": {
+    "complete": 15,
+    "incomplete_execution_failure": 0,
+    "incomplete_integrity_failure": 0,
+    "incomplete_native_guard_probe": 0,
+    "incomplete_native_guard_training": 3,
+    "incomplete_native_guard_washout": 0
+  }
+}

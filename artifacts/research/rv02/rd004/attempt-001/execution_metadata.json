@@ -1,0 +1,12 @@
+{
+  "protocol": "rv02-rd004-relative-probe-clock-v1",
+  "phase": "development",
+  "frozen_source_git_sha": "75268dd804f0ef113869be172adf575ac22523a0",
+  "freeze_ref": "freeze/rv02-rd004-development-source",
+  "workflow_run_id": "34592080367",
+  "workflow_run_attempt": "1",
+  "python_version": "Python 3.11.15",
+  "formal_execution_allowed": false,
+  "held_out_capability_executed": false,
+  "same_source_rerun_allowed": false
+}
