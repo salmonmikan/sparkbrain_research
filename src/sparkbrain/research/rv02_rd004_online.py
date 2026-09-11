@@ -9,6 +9,7 @@ state with the cue anchored to the snapshot clock.
 
 from __future__ import annotations
 
+from dataclasses import asdict
 from typing import Any
 
 from sparkbrain.research.rv01.physical_learner_bridge import runtime_pulse
@@ -51,6 +52,12 @@ def planned_rd004_cells(
 
 def _is_native_guard(exc: RuntimeError) -> bool:
     return str(exc) in _NATIVE_GUARD_MESSAGES
+
+
+def _connection_rows(field: TemporalExcitableField) -> list[dict[str, Any]]:
+    """Retain an exact replay target for the connection-transition audit."""
+
+    return [asdict(edge) for _, edge in sorted(field.connections.items())]
 
 
 def _probe_arm_from_snapshot(
@@ -110,6 +117,7 @@ def _failure_result(
     audit: dict[str, Any],
     schedule: tuple[dict[str, Any], ...],
     initial_hashes: dict[str, str],
+    initial_connection_state: list[dict[str, Any]],
     training_rows: list[dict[str, Any]],
     actual_hidden: dict[str, list[dict[str, Any]]],
     learners: dict[str, OnlineHiddenEligibilityPlasticity],
@@ -133,8 +141,12 @@ def _failure_result(
         "training_schedule_hash": digest(schedule),
         "training_schedule": schedule,
         "initial_connection_hashes": initial_hashes,
+        "initial_connection_state": initial_connection_state,
         "partial_connection_hashes": {
             mode: connection_hash(learner.field) for mode, learner in learners.items()
+        },
+        "partial_connection_states": {
+            mode: _connection_rows(learner.field) for mode, learner in learners.items()
         },
         "e1_eligibility_budget": [row.state_dict() for row in e1_budget],
         "es_eligibility_budget": [row.state_dict() for row in es_budget],
@@ -186,6 +198,9 @@ def run_rd004_cell(
     initial_hashes = {mode: connection_hash(field) for mode, field in fields.items()}
     if len(set(initial_hashes.values())) != 1:
         raise RuntimeError("RD004 arm connection state differs before training")
+    initial_connection_state = _connection_rows(fields["disabled"])
+    if any(_connection_rows(fields[mode]) != initial_connection_state for mode in RD003_MODES):
+        raise RuntimeError("RD004 arm connection rows differ before training")
 
     training_rows: list[dict[str, Any]] = []
     actual_hidden: dict[str, list[dict[str, Any]]] = {mode: [] for mode in RD003_MODES}
@@ -248,6 +263,7 @@ def run_rd004_cell(
             audit=audit,
             schedule=schedule,
             initial_hashes=initial_hashes,
+            initial_connection_state=initial_connection_state,
             training_rows=training_rows,
             actual_hidden=actual_hidden,
             learners=learners,
@@ -279,6 +295,7 @@ def run_rd004_cell(
             audit=audit,
             schedule=schedule,
             initial_hashes=initial_hashes,
+            initial_connection_state=initial_connection_state,
             training_rows=training_rows,
             actual_hidden=actual_hidden,
             learners=learners,
@@ -318,6 +335,7 @@ def run_rd004_cell(
             audit=audit,
             schedule=schedule,
             initial_hashes=initial_hashes,
+            initial_connection_state=initial_connection_state,
             training_rows=training_rows,
             actual_hidden=actual_hidden,
             learners=learners,
@@ -340,6 +358,7 @@ def run_rd004_cell(
         for mode in RD003_MODES
     }
     trained_hashes = {mode: connection_hash(fields[mode]) for mode in RD003_MODES}
+    trained_states = {mode: _connection_rows(fields[mode]) for mode in RD003_MODES}
 
     try:
         probes = {
@@ -356,6 +375,7 @@ def run_rd004_cell(
                 audit=audit,
                 schedule=schedule,
                 initial_hashes=initial_hashes,
+                initial_connection_state=initial_connection_state,
                 training_rows=training_rows,
                 actual_hidden=actual_hidden,
                 learners=learners,
@@ -364,6 +384,8 @@ def run_rd004_cell(
                 status="incomplete_integrity_failure",
                 error=str(exc),
             ),
+            "trained_connection_hashes": trained_hashes,
+            "trained_connection_states": trained_states,
             "probe_snapshots": {
                 mode: {
                     key: value for key, value in snapshot.items() if key != "snapshot_state"
@@ -389,7 +411,9 @@ def run_rd004_cell(
         "training_schedule_hash": digest(schedule),
         "training_schedule": schedule,
         "initial_connection_hashes": initial_hashes,
+        "initial_connection_state": initial_connection_state,
         "trained_connection_hashes": trained_hashes,
+        "trained_connection_states": trained_states,
         "shuffled_mapping": {str(k): v for k, v in sorted(mapping.items())},
         "e1_eligibility_budget": [row.state_dict() for row in e1_budget],
         "es_eligibility_budget": [row.state_dict() for row in es_budget],
