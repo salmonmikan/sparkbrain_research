@@ -47,6 +47,9 @@ def test_rd005_package_plan_is_deterministic_and_execution_disabled() -> None:
     assert state["fresh_seed"] == 92505
     assert state["overwrite_allowed"] is False
     assert state["retry_same_identity_allowed"] is False
+    assert state["d1_construction_only_stage_required"] is True
+    assert state["d1_retained_and_reviewed_before_capability_required"] is True
+    assert state["construction_and_capability_same_run_allowed"] is False
     assert state["construction_verifier_required_before_capability"] is True
     assert state["construction_integrity_failure_is_terminal"] is True
     assert state["zero_ready_cells_is_terminal"] is True
@@ -54,7 +57,8 @@ def test_rd005_package_plan_is_deterministic_and_execution_disabled() -> None:
     assert state["learner_or_probe_executed"] is False
     assert state["held_out_capability_allowed"] is False
     assert state["formal_execution_allowed"] is False
-    assert state["execution_wrapper_bound"] is False
+    assert state["construction_wrapper_bound"] is False
+    assert state["capability_wrapper_bound"] is False
     assert state["python_runtime_bound"] is False
     assert plan.run_id == plan.run_id
     assert plan.package_plan_sha256 == plan.package_plan_sha256
