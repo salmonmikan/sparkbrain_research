@@ -36,6 +36,15 @@ def canonical_bytes(value: object) -> bytes:
     ).encode("utf-8")
 
 
+def canonical_state(value: object) -> dict[str, Any]:
+    """Return the JSON-normalized object represented by canonical bytes."""
+
+    normalized = json.loads(canonical_bytes(value))
+    if not isinstance(normalized, dict):
+        raise ValueError("canonical A01 partition state must be a mapping")
+    return normalized
+
+
 @dataclass(frozen=True, slots=True)
 class LiveReturnAddressState:
     """Exact live proposal ancestry and BoundaryEvent retained at pairing time."""
@@ -83,7 +92,7 @@ class LiveReturnAddressState:
             "boundary": self.boundary.state_dict(),
         }
         validate_runtime_mapping(row, path="v061_a01.md002.return_address")
-        return row
+        return canonical_state(row)
 
 
 @dataclass(frozen=True, slots=True)
@@ -104,12 +113,16 @@ def freeze_a01_p2_partitions(
 ) -> BoundA01P2State:
     """Serialize one actual L/F/C/R checkpoint without executing capability."""
 
-    local = expectation.learned_state_dict()
-    field = dict(field_state)
-    consistency_row = consistency.learned_state_dict()
-    validate_runtime_mapping(local, path="v061_a01.md002.local")
-    validate_runtime_mapping(field, path="v061_a01.md002.field")
-    validate_runtime_mapping(consistency_row, path="v061_a01.md002.consistency")
+    local_raw = expectation.learned_state_dict()
+    field_raw = dict(field_state)
+    consistency_raw = consistency.learned_state_dict()
+    validate_runtime_mapping(local_raw, path="v061_a01.md002.local")
+    validate_runtime_mapping(field_raw, path="v061_a01.md002.field")
+    validate_runtime_mapping(consistency_raw, path="v061_a01.md002.consistency")
+
+    local = canonical_state(local_raw)
+    field = canonical_state(field_raw)
+    consistency_row = canonical_state(consistency_raw)
     return_row = return_address.state_dict() if return_address is not None else None
     partitions = FrozenPartitionBytes(
         local=canonical_bytes(local),
@@ -182,5 +195,6 @@ __all__ = [
     "LiveReturnAddressState",
     "build_bound_a01_p2_fixture",
     "canonical_bytes",
+    "canonical_state",
     "freeze_a01_p2_partitions",
 ]
