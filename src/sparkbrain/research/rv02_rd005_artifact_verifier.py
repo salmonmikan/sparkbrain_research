@@ -10,16 +10,37 @@ It runs no learner or probe and grants no formal/held-out authority.
 
 from __future__ import annotations
 
+import hashlib
+import json
 import math
+from dataclasses import asdict
+from typing import Any
 
 from .rv02_rd005_construction_artifact import (
+    RD005_FRESH_SEED,
+    RD005_RETURN_OFFSET_MS,
+    InspectedClock,
     RD005ConstructionArtifact,
     RD005ConstructionCell,
 )
 from .rv02_rd005_gate_construction import (
     ConnectionSnapshot,
+    EligibilityEvent,
+    ExternalReturnEvent,
     RD005GateConstruction,
 )
+from .rv02_recruitment import PORTS
+from .rv02_scale import ScaleStudyConfig, development_worlds, digest
+
+
+def _canonical_sha256(value: object) -> str:
+    payload = json.dumps(
+        value,
+        sort_keys=True,
+        separators=(",", ":"),
+        allow_nan=False,
+    ).encode("utf-8")
+    return hashlib.sha256(payload).hexdigest()
 
 
 def _connection_snapshots(cell: RD005ConstructionCell) -> tuple[ConnectionSnapshot, ...]:
@@ -46,7 +67,7 @@ def _connection_snapshots(cell: RD005ConstructionCell) -> tuple[ConnectionSnapsh
             )
         )
     if not rows:
-        raise ValueError("RD005 D1_READY cell requires retained connection rows")
+        raise ValueError("RD005 non-failure cell requires retained connection rows")
     return tuple(rows)
 
 
@@ -60,6 +81,125 @@ def _certificate_states(rows: tuple[object, ...]) -> tuple[dict[str, object], ..
     return tuple(states)
 
 
+def _spike_identity(spike: dict[str, Any]) -> str:
+    return _canonical_sha256(spike)
+
+
+def _selected_batch_from_retained_clock(
+    *,
+    clock: InspectedClock,
+    connections: tuple[ConnectionSnapshot, ...],
+) -> tuple[tuple[dict[str, Any], int], ...]:
+    return_time_ms = float(clock.time_ms) + RD005_RETURN_OFFSET_MS
+    visible_targets: dict[int, tuple[int, ...]] = {}
+    for edge in connections:
+        if edge.target_id not in PORTS or not edge.plastic or edge.initial_weight < 0.0:
+            continue
+        visible_targets.setdefault(edge.source_id, tuple())
+        visible_targets[edge.source_id] = tuple(
+            sorted({*visible_targets[edge.source_id], edge.target_id})
+        )
+
+    by_source: dict[int, list[dict[str, Any]]] = {}
+    for spike in clock.spikes:
+        if "unit_id" not in spike or "time_ms" not in spike:
+            raise ValueError("RD005 retained spike is missing unit/time identity")
+        if type(spike["unit_id"]) is not int:
+            raise TypeError("RD005 retained spike unit_id must be an integer")
+        source_id = spike["unit_id"]
+        if source_id in PORTS or source_id not in visible_targets:
+            continue
+        time_ms = spike["time_ms"]
+        if isinstance(time_ms, bool) or not isinstance(time_ms, int | float):
+            raise TypeError("RD005 retained spike time_ms must be numeric")
+        if not math.isfinite(float(time_ms)):
+            raise ValueError("RD005 retained spike time_ms must be finite")
+        lag = return_time_ms - float(time_ms)
+        if 0.5 <= lag <= 6.5:
+            by_source.setdefault(source_id, []).append(spike)
+
+    selected: list[tuple[dict[str, Any], int]] = []
+    for source_id in sorted(by_source):
+        spike = max(
+            by_source[source_id],
+            key=lambda row: (float(row["time_ms"]), _spike_identity(row)),
+        )
+        selected.append((spike, min(visible_targets[source_id])))
+    if len(selected) < 2:
+        return ()
+    return tuple(selected)
+
+
+def _derive_gate_from_retained_trace(
+    cell: RD005ConstructionCell,
+    connections: tuple[ConnectionSnapshot, ...],
+) -> tuple[
+    float | None,
+    tuple[EligibilityEvent, ...],
+    tuple[ExternalReturnEvent, ...],
+    tuple[tuple[int, int], ...],
+]:
+    schedule_times = tuple(float(row["time_ms"]) for row in cell.ordinary_schedule)
+    inspected_times = tuple(float(row.time_ms) for row in cell.inspected_clocks)
+    if inspected_times != schedule_times[: len(inspected_times)]:
+        raise ValueError("RD005 inspected clocks are not the retained schedule prefix")
+
+    for index, clock in enumerate(cell.inspected_clocks):
+        selected = _selected_batch_from_retained_clock(
+            clock=clock,
+            connections=connections,
+        )
+        if not selected:
+            continue
+        if index != len(cell.inspected_clocks) - 1:
+            raise ValueError("RD005 retained trace continued after the first qualifying batch")
+        return_time_ms = float(clock.time_ms) + RD005_RETURN_OFFSET_MS
+        eligibility: list[EligibilityEvent] = []
+        returns: list[ExternalReturnEvent] = []
+        for ordinal, (spike, target_id) in enumerate(selected):
+            suffix = _spike_identity(spike)[:16]
+            eligibility_id = (
+                f"rd005-eligibility:{cell.family}:{cell.scale}:{ordinal}:{suffix}"
+            )
+            eligibility.append(
+                EligibilityEvent(
+                    event_id=eligibility_id,
+                    observed_source_id=int(spike["unit_id"]),
+                    time_ms=float(spike["time_ms"]),
+                )
+            )
+            returns.append(
+                ExternalReturnEvent(
+                    event_id=(
+                        f"rd005-return:{cell.family}:{cell.scale}:{ordinal}:{suffix}"
+                    ),
+                    eligibility_event_id=eligibility_id,
+                    target_id=int(target_id),
+                    time_ms=return_time_ms,
+                    outcome_blind=True,
+                )
+            )
+        sources = tuple(sorted(row.observed_source_id for row in eligibility))
+        mapping = tuple(
+            (source, sources[(ordinal + 1) % len(sources)])
+            for ordinal, source in enumerate(sources)
+        )
+        return (
+            float(clock.time_ms),
+            tuple(eligibility),
+            tuple(returns),
+            mapping,
+        )
+
+    if len(cell.inspected_clocks) != len(cell.ordinary_schedule):
+        raise ValueError("RD005 no-gate trace does not cover the complete retained schedule")
+    return None, (), (), ()
+
+
+def _event_states(rows: tuple[object, ...]) -> tuple[dict[str, object], ...]:
+    return tuple(asdict(row) for row in rows)
+
+
 def verify_rd005_construction_cell(cell: RD005ConstructionCell) -> None:
     """Verify one retained cell as future-capability input, without executing it."""
 
@@ -67,9 +207,18 @@ def verify_rd005_construction_cell(cell: RD005ConstructionCell) -> None:
     if cell.status == "CONSTRUCTION_INTEGRITY_FAILURE":
         return
 
-    if cell.status == "D1_UNREACHABLE":
-        if cell.error is not None:
-            raise ValueError("RD005 unreachable cell must not carry an integrity error")
+    connections = _connection_snapshots(cell)
+    selected_clock, eligibility, returns, mapping = _derive_gate_from_retained_trace(
+        cell,
+        connections,
+    )
+    expected_status = "D1_READY" if selected_clock is not None else "D1_UNREACHABLE"
+    if cell.status != expected_status:
+        raise ValueError("RD005 cell status does not match retained deterministic gate trace")
+    if cell.error is not None:
+        raise ValueError("RD005 non-failure cell must not carry an integrity error")
+
+    if expected_status == "D1_UNREACHABLE":
         if cell.selected_clock_ms is not None:
             raise ValueError("RD005 unreachable cell cannot select a gate clock")
         if any(
@@ -84,27 +233,22 @@ def verify_rd005_construction_cell(cell: RD005ConstructionCell) -> None:
             raise ValueError("RD005 unreachable cell cannot retain ready-only gate evidence")
         return
 
-    if cell.status != "D1_READY":
-        raise ValueError("RD005 construction cell has an unknown status")
-    if cell.error is not None:
-        raise ValueError("RD005 D1_READY cell cannot carry an integrity error")
-    if cell.selected_clock_ms is None or not math.isfinite(float(cell.selected_clock_ms)):
-        raise ValueError("RD005 D1_READY cell requires a finite selected clock")
-    inspected_times = tuple(float(row.time_ms) for row in cell.inspected_clocks)
-    if float(cell.selected_clock_ms) not in inspected_times:
-        raise ValueError("RD005 selected clock is not retained in inspected construction clocks")
-    if not cell.eligibility_events or not cell.return_events:
-        raise ValueError("RD005 D1_READY cell requires a non-empty shared gate budget")
-    if not cell.es_assignment:
-        raise ValueError("RD005 D1_READY cell requires an ES source assignment")
+    if cell.selected_clock_ms != selected_clock:
+        raise ValueError("RD005 selected clock does not match retained deterministic trace")
+    if _event_states(cell.eligibility_events) != _event_states(eligibility):
+        raise ValueError("RD005 eligibility events do not reconstruct from retained spikes")
+    if _event_states(cell.return_events) != _event_states(returns):
+        raise ValueError("RD005 return events do not reconstruct from retained spikes")
+    if cell.es_assignment != mapping:
+        raise ValueError("RD005 ES assignment does not reconstruct from retained spikes")
     if not cell.e1_certificates or not cell.es_certificates:
         raise ValueError("RD005 D1_READY cell requires retained E1/ES certificates")
 
     gate = RD005GateConstruction(
-        eligibility_events=cell.eligibility_events,
-        return_events=cell.return_events,
-        connections=_connection_snapshots(cell),
-        shuffled_assignment=dict(cell.es_assignment),
+        eligibility_events=eligibility,
+        return_events=returns,
+        connections=connections,
+        shuffled_assignment=dict(mapping),
     )
     gate.assert_development_matrix_reachable()
 
@@ -118,12 +262,43 @@ def verify_rd005_construction_cell(cell: RD005ConstructionCell) -> None:
         raise ValueError("RD005 retained ES certificates do not reconstruct from artifact inputs")
 
 
+def _verify_fixed_matrix_identity(artifact: RD005ConstructionArtifact) -> None:
+    config = ScaleStudyConfig(seed=RD005_FRESH_SEED)
+    config.validate()
+    expected: list[tuple[str, str, int, str, str]] = []
+    for world in development_worlds(config):
+        for scale in config.scales:
+            world_id = str(world["world_id"])
+            expected.append(
+                (
+                    f"{world_id}|scale={scale}",
+                    str(world["family"]),
+                    int(scale),
+                    digest(world),
+                    str(world["evidence_hash"]),
+                )
+            )
+    actual = [
+        (
+            cell.cell_id,
+            cell.family,
+            cell.scale,
+            cell.world_sha256,
+            cell.evidence_sha256,
+        )
+        for cell in artifact.cells
+    ]
+    if actual != expected:
+        raise ValueError("RD005 artifact does not match the exact preregistered 18-cell matrix")
+
+
 def verify_rd005_artifact_for_future_capability(
     artifact: RD005ConstructionArtifact,
 ) -> tuple[str, ...]:
     """Return the exact capability-cell inventory only after independent verification."""
 
     artifact.validate()
+    _verify_fixed_matrix_identity(artifact)
     for cell in artifact.cells:
         verify_rd005_construction_cell(cell)
     if any(cell.status == "CONSTRUCTION_INTEGRITY_FAILURE" for cell in artifact.cells):
