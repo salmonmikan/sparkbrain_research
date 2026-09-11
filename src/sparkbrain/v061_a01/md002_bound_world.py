@@ -51,7 +51,11 @@ def build_typed_a01_p2_world_fixture(
             "typed P2 intervention world does not contain the live boundary proposal"
         )
 
-    state = field_state.state_dict() if isinstance(field_state, TemporalExcitableField) else field_state
+    state = (
+        field_state.state_dict()
+        if isinstance(field_state, TemporalExcitableField)
+        else field_state
+    )
     return build_bound_a01_p2_fixture(
         expectation=expectation,
         field_state=state,
