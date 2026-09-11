@@ -1,0 +1,41 @@
+name: RV01 R01-13 Ledger Sync
+
+on:
+  push:
+    branches:
+      - "research/rv01-r01-13-activity-matched-discrimination"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-actions[bot]'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Append fixed negative result only
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("docs/RESULTS_LEDGER.md")
+          text = path.read_text(encoding="utf-8")
+          marker = "RV01 R01-13A activity-matched development discrimination"
+          if marker not in text:
+              text += '''\n\n## 2026-09-11 — RV01 R01-13A activity-matched development discrimination\n\n- Status: development `completed`; stronger interference-retention interpretation `not_supported`; R01-13B state-locus admission `not_admitted`; held-out `not_executed`.\n- Fixed evidence: execution source `241669c92a0fd93b1f98ffe5e5dcaf8fd97c4de2`; raw SHA-256 `1ab43a8950be572b163e7bba4950b23d5258933e5463dc3d944f41eaea2adf60`; retained locally at `artifacts/research/rv01/r01_13/development_result.json`; runtime bound to CPython 3.11.15.\n- Negative result: equal-event matching was non-specific because a Field advantage also appeared in the disjoint reference family; matching distinct candidate breadth collapsed the registered ordered-retention gap across families. The breadth/structured-over-activation null is therefore sufficient for the registered retention difference.\n- Boundary: exact-route superiority is not supported; near-zero world deltas are reporting ties under the explicit `1e-12` tolerance; historical raw bytes/suite hash are unchanged and are not rerun or rescored.\n'''
+              path.write_text(text, encoding="utf-8")
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/RESULTS_LEDGER.md
+          if git diff --cached --quiet; then
+            echo "ledger already synchronized"
+            exit 0
+          fi
+          git commit -m "docs(rv01): append R01-13 negative result to ledger"
+          git push origin HEAD:research/rv01-r01-13-activity-matched-discrimination
