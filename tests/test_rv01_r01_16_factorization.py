@@ -113,6 +113,59 @@ def test_r01_16_rejects_topology_and_plasticity_drift() -> None:
         )
 
 
+def test_r01_16_rejects_coercible_and_boolean_numeric_fields() -> None:
+    string_weight = replace(_pre()[0], weight="0.10")  # type: ignore[arg-type]
+    with pytest.raises(TypeError, match="real numeric value"):
+        R01_16FactorizationConstruction(
+            pre_training=(string_weight, *_pre()[1:]),
+            post_training=_post(),
+        )
+
+    boolean_delay = replace(_pre()[0], delay_ms=True)  # type: ignore[arg-type]
+    with pytest.raises(TypeError, match="real numeric value"):
+        R01_16FactorizationConstruction(
+            pre_training=(boolean_delay, *_pre()[1:]),
+            post_training=_post(),
+        )
+
+
+def test_r01_16_rejects_zero_connection_and_queued_delays() -> None:
+    zero_delay = replace(_pre()[0], delay_ms=0.0)
+    with pytest.raises(ValueError, match="delay_ms must be positive"):
+        R01_16FactorizationConstruction(
+            pre_training=(zero_delay, *_pre()[1:]),
+            post_training=_post(),
+        )
+
+    queued = (
+        QueuedPropagationSnapshot(
+            event_id="queued-zero-delay",
+            source_id=2,
+            target_id=3,
+            queued_weight=0.30,
+            queued_delay_ms=0.0,
+        ),
+    )
+    with pytest.raises(ValueError, match="queued delay_ms must be positive"):
+        R01_16FactorizationConstruction(
+            pre_training=_pre(),
+            post_training=_post(),
+            queued_propagation=queued,
+        )
+
+
+def test_r01_16_hashes_connection_inventories_in_canonical_edge_order() -> None:
+    construction = R01_16FactorizationConstruction(
+        pre_training=tuple(reversed(_pre())),
+        post_training=tuple(reversed(_post())),
+    )
+
+    summary = construction.summary()
+    assert summary.pre_training_sha256 == construction.inventory_sha256(_pre())
+    assert summary.post_training_sha256 == construction.inventory_sha256(_post())
+    assert summary.arm_sha256["F0"] == summary.post_training_sha256
+
+
 def test_r01_16_stops_when_factorization_is_structurally_noop() -> None:
     construction = R01_16FactorizationConstruction(
         pre_training=_pre(),
