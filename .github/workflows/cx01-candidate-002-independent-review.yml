@@ -192,18 +192,30 @@ jobs:
           print("execution/scoring contract continuity: PASS")
           PY
 
-      - name: Audit source-only tuning boundary
+      - name: Audit complete candidate-generator source boundary
         shell: bash
         run: |
           set -euo pipefail
-          # Outcome-blind declarations legitimately contain fields such as
-          # capability_result_present=false.  Reject actual execution/result
-          # material rather than those fail-closed schema field names.
+          generator_files=(
+            src/sparkbrain/comparison/cx01/candidate.py
+            src/sparkbrain/comparison/cx01/formal_revision.py
+            src/sparkbrain/comparison/cx01/formal_worlds.py
+            src/sparkbrain/comparison/cx01/structural_components.py
+            src/sparkbrain/comparison/cx01/development.py
+            src/sparkbrain/comparison/cx01/prepare.py
+          )
+          printf '%s\n' "${generator_files[@]}" | sha256sum > /tmp/generator-file-list.sha256
+          sha256sum "${generator_files[@]}" > /tmp/generator-source.sha256
+          cat /tmp/generator-source.sha256
+
+          # This machine check is intentionally only a fail-closed guard against
+          # direct result/execution material.  It does not claim to replace the
+          # required semantic review by an independent human reviewer.
           if grep -REn \
             'results\.jsonl|execution_seal\.json|run_comparator|execute_comparator|formal_score_present[[:space:]]*=[[:space:]]*True' \
-            src/sparkbrain/comparison/cx01/candidate.py \
-            src/sparkbrain/comparison/cx01/formal_revision.py; then
-            echo "candidate source references forbidden outcome/execution material" >&2
+            "${generator_files[@]}"; then
+            echo "candidate generator references forbidden outcome/execution material" >&2
             exit 1
           fi
-          echo "source-only outcome-directed tuning scan: PASS"
+          echo "complete generator direct outcome/execution scan: PASS"
+          echo "semantic no-success-directed-tuning review: HUMAN REVIEW STILL REQUIRED"
