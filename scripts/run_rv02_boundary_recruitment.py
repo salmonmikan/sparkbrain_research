@@ -1,4 +1,5 @@
 """Run or verify the fixed, bounded RD002 development diagnosis locally."""
+
 from __future__ import annotations
 
 import argparse
@@ -13,9 +14,16 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
-from sparkbrain.research.rv02_boundary_recruitment import GAINS, run_boundary_cell, score_probe  # noqa: E402
+from sparkbrain.research.rv02_boundary_recruitment import (  # noqa: E402
+    GAINS,
+    run_boundary_cell,
+    score_probe,
+)
 from sparkbrain.research.rv02_scale import (  # noqa: E402
-    ScaleStudyConfig, audit_scale, development_worlds, digest,
+    ScaleStudyConfig,
+    audit_scale,
+    development_worlds,
+    digest,
 )
 
 CONTRACT = "docs/research/RV02_RD002_BOUNDARY_GAIN_CONTRACT.md"
@@ -23,14 +31,20 @@ RUNNER = "scripts/run_rv02_boundary_recruitment.py"
 
 
 def source_inventory(root: Path) -> dict[str, str]:
-    paths = [*sorted((root / "src").rglob("*.py")), *sorted((root / "scripts").glob("*rv02*.py")), root / CONTRACT, *sorted((root / "tests").glob("test_rv02*.py"))]
+    paths = [
+        *sorted((root / "src").rglob("*.py")),
+        *sorted((root / "scripts").glob("*rv02*.py")),
+        root / CONTRACT,
+        *sorted((root / "tests").glob("test_rv02*.py")),
+    ]
     return {str(p.relative_to(root)): hashlib.sha256(p.read_bytes()).hexdigest() for p in paths}
 
 
 def planned_cells() -> list[tuple[str, int]]:
     config = ScaleStudyConfig()
-    return [(world["family"], scale) for world in development_worlds(config)
-            for scale in config.scales]
+    return [
+        (world["family"], scale) for world in development_worlds(config) for scale in config.scales
+    ]
 
 
 def verify_bundle(output: Path, source_root: Path = ROOT) -> dict:
@@ -68,11 +82,15 @@ def verify_bundle(output: Path, source_root: Path = ROOT) -> dict:
                 raise ValueError("missing failure identities")
             continue
         result = row["result"]
-        world = next(w for w in development_worlds(ScaleStudyConfig()) if w["family"] == row["family"])
+        world = next(
+            w for w in development_worlds(ScaleStudyConfig()) if w["family"] == row["family"]
+        )
         if digest(result["audit"]) != digest(audit_scale(ScaleStudyConfig(), world, row["scale"])):
             raise ValueError("world/resource audit mismatch")
         pairs = result["route_probes"]
-        if [(p["gain"], p["route_index"]) for p in pairs] != [(g, i) for g in GAINS for i in range(len(world["routes"]))]:
+        if [(p["gain"], p["route_index"]) for p in pairs] != [
+            (g, i) for g in GAINS for i in range(len(world["routes"]))
+        ]:
             raise ValueError("probe identity mismatch")
         if len(result["training_rows"]) != result["audit"]["external_observation_count"]:
             raise ValueError("training cardinality mismatch")
@@ -83,38 +101,63 @@ def verify_bundle(output: Path, source_root: Path = ROOT) -> dict:
                 attempted += 1
                 probe = pair[key]
                 if probe["status"] != "complete":
-                    if probe["status"] != "incomplete_native_guard" or probe["metrics_available"] is not False:
+                    if (
+                        probe["status"] != "incomplete_native_guard"
+                        or probe["metrics_available"] is not False
+                    ):
                         raise ValueError("invalid failure record")
                     continue
                 probes += 1
-                if probe["horizon_ms"] != 40. or probe["cut_hidden_boundary"] is not cut:
+                if probe["horizon_ms"] != 40.0 or probe["cut_hidden_boundary"] is not cut:
                     raise ValueError("condition mismatch")
                 if probe["cue_unit"] != world["routes"][pair["route_index"]][0]:
                     raise ValueError("cue mismatch")
-                if not probe["observer_equivalence"] or probe["observed_state_hash"] != probe["reference_state_hash"]:
+                if (
+                    not probe["observer_equivalence"]
+                    or probe["observed_state_hash"] != probe["reference_state_hash"]
+                ):
                     raise ValueError("observer mismatch")
                 if probe["probe_connection_hash_before"] != probe["probe_connection_hash_after"]:
                     raise ValueError("probe learning")
                 if probe["actual_arrivals"] >= 4096 or probe["actual_spikes"] >= 512:
                     raise ValueError("native bound reached")
-                if digest(probe["behavior"]) != digest(score_probe(probe["spikes"], world["routes"][pair["route_index"]], result["audit"]["unit_count"])):
+                if digest(probe["behavior"]) != digest(
+                    score_probe(
+                        probe["spikes"],
+                        world["routes"][pair["route_index"]],
+                        result["audit"]["unit_count"],
+                    )
+                ):
                     raise ValueError("score mismatch")
                 if digest(probe["visible_final_state"]) != probe["visible_final_state_hash"]:
                     raise ValueError("visible state mismatch")
-        is_complete = all(p[k]["status"] == "complete" for p in pairs for k in ("natural", "boundary_zero"))
-        if result["complete"] is not is_complete or (row["status"] == "complete") is not is_complete:
+        is_complete = all(
+            p[k]["status"] == "complete" for p in pairs for k in ("natural", "boundary_zero")
+        )
+        if (
+            result["complete"] is not is_complete
+            or (row["status"] == "complete") is not is_complete
+        ):
             raise ValueError("completion mismatch")
     if summary["complete_probes"] != probes or summary["attempted_probes"] != attempted:
         raise ValueError("probe count mismatch")
-    return {"integrity_verified": True, "complete_cells": complete,
-            "complete_probes": probes, "attempted_probes": attempted,
-            "raw_sha256": summary["raw_sha256"]}
+    return {
+        "integrity_verified": True,
+        "complete_cells": complete,
+        "complete_probes": probes,
+        "attempted_probes": attempted,
+        "raw_sha256": summary["raw_sha256"],
+    }
 
 
 def expected_probes(family: str) -> list[dict]:
     world = next(w for w in development_worlds(ScaleStudyConfig()) if w["family"] == family)
-    return [{"gain": g, "route_index": i, "condition": c} for g in GAINS
-            for i in range(len(world["routes"])) for c in ("natural", "boundary_zero")]
+    return [
+        {"gain": g, "route_index": i, "condition": c}
+        for g in GAINS
+        for i in range(len(world["routes"]))
+        for c in ("natural", "boundary_zero")
+    ]
 
 
 def main() -> int:
@@ -128,6 +171,7 @@ def main() -> int:
         return 0
     if args.worker:
         import resource
+
         resource.setrlimit(resource.RLIMIT_AS, (1024**3, 1024**3))
         config = ScaleStudyConfig()
         world = next(w for w in development_worlds(config) if w["family"] == args.worker[0])
@@ -137,16 +181,27 @@ def main() -> int:
         return 0
     if args.output is None:
         raise SystemExit("--output requires a fresh local directory")
-    if subprocess.check_output(["git", "status", "--porcelain", "--", "src", "scripts", "tests", CONTRACT],
-                               cwd=ROOT, text=True):
+    if subprocess.check_output(
+        ["git", "status", "--porcelain", "--", "src", "scripts", "tests", CONTRACT],
+        cwd=ROOT,
+        text=True,
+    ):
         raise SystemExit("commit source/tests before execution")
     git_sha = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     args.output.mkdir(parents=True, exist_ok=False)
-    manifest = {"protocol": "rv02-rd002-development", "source_git_sha": git_sha,
-                "source_hashes": source_inventory(ROOT), "config": ScaleStudyConfig().state_dict(),
-                "planned_cells": planned_cells(), "formal_execution_allowed": False,
-                "cell_timeout_seconds": 60, "total_timeout_seconds": 600,
-                "memory_limit_bytes": 1024**3, "python": sys.version, "platform": sys.platform}
+    manifest = {
+        "protocol": "rv02-rd002-development",
+        "source_git_sha": git_sha,
+        "source_hashes": source_inventory(ROOT),
+        "config": ScaleStudyConfig().state_dict(),
+        "planned_cells": planned_cells(),
+        "formal_execution_allowed": False,
+        "cell_timeout_seconds": 60,
+        "total_timeout_seconds": 600,
+        "memory_limit_bytes": 1024**3,
+        "python": sys.version,
+        "platform": sys.platform,
+    }
     with (args.output / "manifest.json").open("x") as stream:
         json.dump(manifest, stream, sort_keys=True, indent=2)
         stream.write("\n")
@@ -155,31 +210,55 @@ def main() -> int:
     with staging.open("x") as stream:
         for family, scale in planned_cells():
             identity = {"family": family, "scale": scale}
-            remaining = 600-(time.monotonic()-started)
+            remaining = 600 - (time.monotonic() - started)
             if remaining <= 0:
                 row = {**identity, "status": "not_started_total_deadline"}
             else:
                 begin = time.monotonic()
                 try:
-                    worker = subprocess.run([sys.executable, str(Path(__file__).resolve()),
-                                             "--worker", family, str(scale)], capture_output=True,
-                                            text=True, timeout=min(60, remaining), check=False)
+                    worker = subprocess.run(
+                        [
+                            sys.executable,
+                            str(Path(__file__).resolve()),
+                            "--worker",
+                            family,
+                            str(scale),
+                        ],
+                        capture_output=True,
+                        text=True,
+                        timeout=min(60, remaining),
+                        check=False,
+                    )
                     if worker.returncode:
-                        row = {**identity, "status": "incomplete_worker_failure",
-                               "exit_code": worker.returncode, "stderr": worker.stderr[-8000:]}
+                        row = {
+                            **identity,
+                            "status": "incomplete_worker_failure",
+                            "exit_code": worker.returncode,
+                            "stderr": worker.stderr[-8000:],
+                        }
                     else:
                         result = json.loads(worker.stdout)
-                        row = {**identity, "status": "complete" if result["complete"] else "incomplete_native_guard", "result": result}
-                        attempted_count += 2*len(result["route_probes"])
-                        probe_count += sum(p[k]["status"] == "complete" for p in result["route_probes"] for k in ("natural", "boundary_zero"))
+                        row = {
+                            **identity,
+                            "status": "complete"
+                            if result["complete"]
+                            else "incomplete_native_guard",
+                            "result": result,
+                        }
+                        attempted_count += 2 * len(result["route_probes"])
+                        probe_count += sum(
+                            p[k]["status"] == "complete"
+                            for p in result["route_probes"]
+                            for k in ("natural", "boundary_zero")
+                        )
                 except subprocess.TimeoutExpired:
                     row = {**identity, "status": "incomplete_timeout"}
-                row["wall_seconds"] = time.monotonic()-begin
+                row["wall_seconds"] = time.monotonic() - begin
             if "result" not in row:
                 row["missing_probe_identities"] = expected_probes(family)
                 row["metrics_available"] = False
             statuses.append({k: v for k, v in row.items() if k != "result"})
-            stream.write(json.dumps(row, sort_keys=True, allow_nan=False)+"\n")
+            stream.write(json.dumps(row, sort_keys=True, allow_nan=False) + "\n")
             stream.flush()
             os.fsync(stream.fileno())
     raw = staging.read_bytes()
@@ -190,12 +269,16 @@ def main() -> int:
         stream.flush()
         os.fsync(stream.fileno())
     os.link(gzip_staging, args.output / "raw_cells.jsonl.gz")
-    summary = {"statuses": statuses,
-               "complete_cells": sum(r["status"] == "complete" for r in statuses),
-               "complete_probes": probe_count, "attempted_probes": attempted_count, "formal_execution_allowed": False,
-               "raw_sha256": hashlib.sha256(raw).hexdigest(),
-               "compressed_sha256": hashlib.sha256(compressed).hexdigest(),
-               "scientific_status": "not_evaluated_development_diagnosis"}
+    summary = {
+        "statuses": statuses,
+        "complete_cells": sum(r["status"] == "complete" for r in statuses),
+        "complete_probes": probe_count,
+        "attempted_probes": attempted_count,
+        "formal_execution_allowed": False,
+        "raw_sha256": hashlib.sha256(raw).hexdigest(),
+        "compressed_sha256": hashlib.sha256(compressed).hexdigest(),
+        "scientific_status": "not_evaluated_development_diagnosis",
+    }
     with (args.output / "summary.json").open("x") as stream:
         json.dump(summary, stream, sort_keys=True, indent=2)
         stream.write("\n")

@@ -9,7 +9,6 @@ from pathlib import Path
 
 from sparkbrain.research.rv02_scale import ScaleStudyConfig, digest
 
-
 RUNNER_PATH = Path(__file__).resolve().parents[1] / "scripts" / "run_rv02_development.py"
 SPEC = importlib.util.spec_from_file_location("rv02_runner_independent_test", RUNNER_PATH)
 RUNNER = importlib.util.module_from_spec(SPEC)
@@ -32,29 +31,48 @@ class BundleVerifierTests(unittest.TestCase):
         self.output = self.root / "bundle"
         self.output.mkdir()
         config = ScaleStudyConfig().state_dict()
-        planned = [["disjoint-routes", scale, architecture]
-                   for scale in (1, 3, 10) for architecture in ("field", "reservoir")]
+        planned = [
+            ["disjoint-routes", scale, architecture]
+            for scale in (1, 3, 10)
+            for architecture in ("field", "reservoir")
+        ]
         self.manifest = {
-            "protocol": "rv02-development-feasibility-v1", "config": config,
-            "config_hash": digest(config), "planned_cells": planned,
-            "formal_execution_allowed": False, "comparative_capability_claim_allowed": False,
+            "protocol": "rv02-development-feasibility-v1",
+            "config": config,
+            "config_hash": digest(config),
+            "planned_cells": planned,
+            "formal_execution_allowed": False,
+            "comparative_capability_claim_allowed": False,
             "source_hashes": {
                 "scripts/run_rv02_development.py": hashlib.sha256(
-                    self.source_file.read_bytes()).hexdigest(),
-                "src/tiny.py": hashlib.sha256(self.extra_source.read_bytes()).hexdigest()},
+                    self.source_file.read_bytes()
+                ).hexdigest(),
+                "src/tiny.py": hashlib.sha256(self.extra_source.read_bytes()).hexdigest(),
+            },
             "smoke": True,
-            "python": "synthetic-test", "platform": "synthetic-test",
-            "cell_timeout_seconds": 1, "total_timeout_seconds": 6,
+            "python": "synthetic-test",
+            "platform": "synthetic-test",
+            "cell_timeout_seconds": 1,
+            "total_timeout_seconds": 6,
             "memory_limit_bytes": 1024**3,
         }
         # A valid incomplete bundle is integrity-verifiable, but never successful science.
-        self.rows = [{"family": family, "scale": scale, "architecture": architecture,
-                      "status": "not_started_total_deadline"}
-                     for family, scale, architecture in planned]
+        self.rows = [
+            {
+                "family": family,
+                "scale": scale,
+                "architecture": architecture,
+                "status": "not_started_total_deadline",
+            }
+            for family, scale, architecture in planned
+        ]
         self.summary = {
-            "statuses": self.rows.copy(), "complete_cell_count": 0, "planned_cell_count": 6,
+            "statuses": self.rows.copy(),
+            "complete_cell_count": 0,
+            "planned_cell_count": 6,
             "scientific_status": "not_evaluated_development_feasibility",
-            "formal_execution_allowed": False, "comparative_capability_claim_allowed": False,
+            "formal_execution_allowed": False,
+            "comparative_capability_claim_allowed": False,
         }
         self.write_fixture()
 
