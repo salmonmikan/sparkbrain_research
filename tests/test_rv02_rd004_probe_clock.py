@@ -3,13 +3,13 @@ from __future__ import annotations
 import pytest
 
 from sparkbrain.research.rv01.physical_learner_bridge import build_physical_field
-from sparkbrain.research.rv02_recruitment import PORTS
 from sparkbrain.research.rv02_rd004_probe_clock import (
     RD004_HORIZON_MS,
     prepare_rd004_probe_snapshot,
     run_rd004_probe,
     score_rd004_probe,
 )
+from sparkbrain.research.rv02_recruitment import PORTS
 
 
 def probe_field():
