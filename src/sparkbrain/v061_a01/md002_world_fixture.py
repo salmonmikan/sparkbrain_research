@@ -66,7 +66,6 @@ class P2AnonymousWorldRelation:
         return dict(self.responses)
 
     def state_dict(self) -> dict[str, Any]:
-        self.validate()
         return {
             "schema": "v061-a01-md002-p2-anonymous-world-v1",
             "responses": [
