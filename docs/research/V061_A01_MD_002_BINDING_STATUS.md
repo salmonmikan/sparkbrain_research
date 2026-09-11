@@ -23,6 +23,8 @@ The MD-002 construction branch adds fail-closed prospective contracts for four p
 
 Dynamic/resource counters are parsed from retained runtime counter-trace records and checked against the trace digest; declarative counter rows or a caller-controlled `measured=true` flag are not accepted as measurement provenance.
 
+The construction contract now also requires a retained `md002-external-observation` marker and measures external-effect latency from that observation step rather than from the first counter sample. The runtime trace must contain exactly one non-negative observation marker inside the sampled interval, and a measured external effect is rejected if it precedes the observation. This is measurement hardening only; it does not execute capability or provide an MD-002 result.
+
 `MD002ExecutionGate` contains no caller-controlled review/authority booleans. In this construction branch both immutable authority-artifact digest pins are deliberately unset, so execution is impossible even if a caller supplies fabricated approval payloads. A later separately reviewed source revision must pin the exact SHA-256 identities of an independent technical-review artifact and an MD-002-specific execution-authority artifact before the gate can authorize capability.
 
 These are construction invariants, not capability evidence.
