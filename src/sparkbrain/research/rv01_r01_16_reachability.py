@@ -62,6 +62,7 @@ class ReachableEdge:
 @dataclass(frozen=True, slots=True)
 class FactorReachabilityCertificate:
     amendment_id: str
+    registered_unit_ids: tuple[int, ...]
     cue_source_ids: tuple[int, ...]
     probe_horizon_ms: float
     pre_training_sha256: str
@@ -87,6 +88,7 @@ class FactorReachabilityCertificate:
     def state_dict(self) -> dict[str, object]:
         return {
             "amendment_id": self.amendment_id,
+            "registered_unit_ids": list(self.registered_unit_ids),
             "cue_source_ids": list(self.cue_source_ids),
             "probe_horizon_ms": self.probe_horizon_ms,
             "pre_training_sha256": self.pre_training_sha256,
@@ -119,31 +121,36 @@ def _conservative_delay(
     return max(pre.delay_ms, post.delay_ms)
 
 
-def _canonical_cue_ids(cue_source_ids: tuple[int, ...]) -> tuple[int, ...]:
-    if not cue_source_ids:
-        raise ValueError("R01-16 reachability requires at least one cue source")
-    if any(type(unit_id) is not int for unit_id in cue_source_ids):
-        raise TypeError("cue source IDs must be integers")
-    if len(set(cue_source_ids)) != len(cue_source_ids):
-        raise ValueError("cue source IDs must be unique")
-    return tuple(sorted(cue_source_ids))
+def _canonical_ids(ids: tuple[int, ...], *, name: str) -> tuple[int, ...]:
+    if not ids:
+        raise ValueError(f"{name} requires at least one unit")
+    if any(type(unit_id) is not int for unit_id in ids):
+        raise TypeError(f"{name} must contain integers")
+    if len(set(ids)) != len(ids):
+        raise ValueError(f"{name} must be unique")
+    return tuple(sorted(ids))
 
 
 def _earliest_arrivals(
     construction: R01_16FactorizationConstruction,
     *,
+    registered_unit_ids: tuple[int, ...],
     cue_source_ids: tuple[int, ...],
     probe_horizon_ms: float,
 ) -> dict[int, float]:
-    cue_source_ids = _canonical_cue_ids(cue_source_ids)
+    units = _canonical_ids(registered_unit_ids, name="registered_unit_ids")
+    cues = _canonical_ids(cue_source_ids, name="cue_source_ids")
     horizon = _finite_positive(probe_horizon_ms, name="probe_horizon_ms")
 
     pre = {row.key: row for row in construction.pre_training}
     post = {row.key: row for row in construction.post_training}
-    unit_ids = {unit_id for edge in pre for unit_id in edge}
-    missing = set(cue_source_ids) - unit_ids
+    registered = set(units)
+    edge_units = {unit_id for edge in pre for unit_id in edge}
+    if not edge_units.issubset(registered):
+        raise ValueError("connection endpoint is absent from registered unit inventory")
+    missing = set(cues) - registered
     if missing:
-        raise ValueError("cue source is not present in the fixed connection topology")
+        raise ValueError("cue source is not present in registered unit inventory")
 
     outgoing: dict[int, list[tuple[int, float]]] = {}
     for key in sorted(post):
@@ -151,8 +158,8 @@ def _earliest_arrivals(
         delay = _conservative_delay(pre[key], post[key])
         outgoing.setdefault(source_id, []).append((target_id, delay))
 
-    arrivals: dict[int, float] = {unit_id: 0.0 for unit_id in cue_source_ids}
-    queue: list[tuple[float, int]] = [(0.0, unit_id) for unit_id in cue_source_ids]
+    arrivals: dict[int, float] = {unit_id: 0.0 for unit_id in cues}
+    queue: list[tuple[float, int]] = [(0.0, unit_id) for unit_id in cues]
     heapq.heapify(queue)
     while queue:
         time_ms, source_id = heapq.heappop(queue)
@@ -172,16 +179,22 @@ def _earliest_arrivals(
 def build_factor_reachability_certificate(
     construction: R01_16FactorizationConstruction,
     *,
+    registered_unit_ids: tuple[int, ...],
     cue_source_ids: tuple[int, ...],
     probe_horizon_ms: float,
 ) -> FactorReachabilityCertificate:
     """Bind reachable learned-factor edges without running any capability."""
 
-    canonical_cue_ids = _canonical_cue_ids(cue_source_ids)
+    canonical_units = _canonical_ids(
+        registered_unit_ids,
+        name="registered_unit_ids",
+    )
+    canonical_cues = _canonical_ids(cue_source_ids, name="cue_source_ids")
     horizon = _finite_positive(probe_horizon_ms, name="probe_horizon_ms")
     arrivals = _earliest_arrivals(
         construction,
-        cue_source_ids=canonical_cue_ids,
+        registered_unit_ids=canonical_units,
+        cue_source_ids=canonical_cues,
         probe_horizon_ms=horizon,
     )
     pre = {row.key: row for row in construction.pre_training}
@@ -216,7 +229,8 @@ def build_factor_reachability_certificate(
     ]
     return FactorReachabilityCertificate(
         amendment_id=R01_16_REACHABILITY_AMENDMENT_ID,
-        cue_source_ids=canonical_cue_ids,
+        registered_unit_ids=canonical_units,
+        cue_source_ids=canonical_cues,
         probe_horizon_ms=horizon,
         pre_training_sha256=summary.pre_training_sha256,
         post_training_sha256=summary.post_training_sha256,
