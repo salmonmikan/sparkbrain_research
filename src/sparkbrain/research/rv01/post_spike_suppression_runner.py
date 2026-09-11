@@ -2,6 +2,10 @@ from __future__ import annotations
 
 from typing import Any
 
+from sparkbrain.research.rv01_post_spike_suppression import (
+    PostSpikeSuppressionField,
+    PostSpikeSuppressionMode,
+)
 from sparkbrain.v04.contracts import SynapticArrival
 from sparkbrain.v06.foundation import digest
 
@@ -16,16 +20,12 @@ from .interference_runner import (
 )
 from .physical_learner_bridge import build_physical_field, connection_state_hash
 from .post_spike_suppression_contract import (
-    PostSpikeSuppressionWorldSpec,
     R01_15_PROTOCOL_ID,
+    PostSpikeSuppressionWorldSpec,
     development_post_spike_suppression_worlds,
     post_spike_suppression_world_grid_hash,
 )
 from .resource_matched_reservoir import run_resource_matched_reservoir_world
-from sparkbrain.research.rv01_post_spike_suppression import (
-    PostSpikeSuppressionField,
-    PostSpikeSuppressionMode,
-)
 
 _FIELD_MODES: tuple[PostSpikeSuppressionMode, ...] = (
     "intact",
