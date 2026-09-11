@@ -121,6 +121,24 @@ def test_world_relation_rejects_non_string_decoded_identifiers() -> None:
     assert restored.state_dict() == relation_a().state_dict()
 
 
+def test_world_relation_rejects_unknown_fields_and_invalid_direct_serialization() -> None:
+    top_level = relation_a().state_dict()
+    top_level["correct_action"] = "world:x"
+    with pytest.raises(ValueError, match="unexpected fields"):
+        P2AnonymousWorldRelation.from_state_dict(top_level)
+
+    response_level = relation_a().state_dict()
+    response_level["responses"][0]["correct_action"] = True
+    with pytest.raises(ValueError, match="response contains unexpected fields"):
+        P2AnonymousWorldRelation.from_state_dict(response_level)
+
+    invalid_direct = P2AnonymousWorldRelation(
+        responses=(("proposal:a", "world:x"), ("proposal:a", "world:y"))
+    )
+    with pytest.raises(ValueError, match="proposal keys must be unique"):
+        invalid_direct.state_dict()
+
+
 def test_world_response_schedule_fails_closed_on_identity_or_clock_drift() -> None:
     source = boundary("proposal:a")
     with pytest.raises(ValueError, match="non-empty string"):
