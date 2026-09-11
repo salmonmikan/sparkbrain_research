@@ -114,7 +114,6 @@ jobs:
               raise SystemExit("candidate-001 rejected freeze moved")
 
           immutable_fields = (
-              "protocol_version",
               "development_grid_hash",
               "comparator_inventory",
               "privilege_inventory_hash",
@@ -131,10 +130,13 @@ jobs:
               "candidate_001_manifest_path": manifest_path,
               "candidate_001_manifest_sha256": hashlib.sha256(raw).hexdigest(),
               "candidate_001_package_commit": package_commit,
+              "candidate_001_protocol_version": value["protocol_version"],
               "candidate_001_source_sha": value["source_git_sha"],
               "immutable_contract": immutable_contract,
               "source_contract_reused_without_scoring_change": True,
           }
+          if contract["candidate_001_protocol_version"] != "cx01-comparator-protocol-1":
+              raise SystemExit("unexpected candidate-001 protocol version")
           Path("/tmp/cx01_candidate_002_contract.json").write_text(
               json.dumps(contract, indent=2, sort_keys=True) + "\n",
               encoding="utf-8",
@@ -239,6 +241,8 @@ jobs:
           new_manifest = json.loads(
               (package / "freeze_manifest.json").read_text(encoding="utf-8")
           )
+          if new_manifest.get("protocol_version") != "cx01-comparator-protocol-2":
+              raise SystemExit("unexpected candidate-002 protocol version")
           mismatches = {
               name: {
                   "candidate_001": expected_value,
@@ -256,7 +260,9 @@ jobs:
           provenance = {
               "candidate_id": os.environ["CANDIDATE_ID"],
               "candidate_seed_band": "370110..370119",
+              "candidate_001_protocol_version": contract["candidate_001_protocol_version"],
               "candidate_001_reference": contract,
+              "candidate_002_protocol_version": new_manifest["protocol_version"],
               "candidate_consumed": False,
               "execution_seal_status": "NOT_ISSUED",
               "formal_capability_executed": False,
@@ -265,6 +271,7 @@ jobs:
               "immutable_execution_contract_verified": True,
               "independent_review_status": "PENDING",
               "package_verification": verification,
+              "protocol_revision_acknowledged": True,
               "source_freeze_branch": os.environ["SOURCE_FREEZE_BRANCH"],
               "source_git_sha": os.environ["GITHUB_SHA"],
               "workflow_run_id": int(os.environ["GITHUB_RUN_ID"]),
