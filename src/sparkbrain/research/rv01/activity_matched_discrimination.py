@@ -16,6 +16,8 @@ from .interference_contract import InterferenceFamily, InterferencePhase
 from .interference_runner import _ordered_coverage, run_interference_world
 from .resource_matched_reservoir import run_resource_matched_reservoir_world
 
+_RETENTION_DELTA_ABS_TOL = 1e-12
+
 
 @dataclass(frozen=True, slots=True)
 class TraceMetrics:
@@ -320,6 +322,13 @@ def run_activity_matched_world(
     )
 
 
+def _classify_retention_delta(value: float) -> int:
+    """Return -1/0/+1 with a fixed absolute tolerance for reporting-only signs."""
+    if math.isclose(value, 0.0, rel_tol=0.0, abs_tol=_RETENTION_DELTA_ABS_TOL):
+        return 0
+    return 1 if value > 0.0 else -1
+
+
 def _suite_summary(
     worlds: tuple[ActivityMatchedWorldResult, ...],
 ) -> dict[str, float | int]:
@@ -327,15 +336,10 @@ def _suite_summary(
     summary["world_count"] = len(worlds)
     for view in ("raw", "event_matched", "breadth_matched"):
         key = f"{view}_field_minus_reservoir_retention"
-        summary[f"{view}_field_positive_world_count"] = sum(
-            float(world.summary[key]) > 0.0 for world in worlds
-        )
-        summary[f"{view}_field_tied_world_count"] = sum(
-            math.isclose(float(world.summary[key]), 0.0) for world in worlds
-        )
-        summary[f"{view}_field_negative_world_count"] = sum(
-            float(world.summary[key]) < 0.0 for world in worlds
-        )
+        signs = tuple(_classify_retention_delta(float(world.summary[key])) for world in worlds)
+        summary[f"{view}_field_positive_world_count"] = sum(sign > 0 for sign in signs)
+        summary[f"{view}_field_tied_world_count"] = sum(sign == 0 for sign in signs)
+        summary[f"{view}_field_negative_world_count"] = sum(sign < 0 for sign in signs)
     return summary
 
 
