@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from dataclasses import replace
+
 import pytest
 
 from sparkbrain.v061_a01.md002_protocol import (
@@ -27,14 +29,30 @@ def state(*, local="l", field="f", consistency="c", address="r"):
 
 
 def arm(execution_id: str, pre: StatePartitionSnapshot, *, post=None, evidence="evidence"):
+    post_state = post or pre
+    evidence_hash = h(evidence)
+    competition_hash = h(f"competition:{execution_id}")
+    output_hash = h(f"output:{execution_id}")
+    trace = (
+        {
+            "type": "md002-arm-record",
+            "execution_id": execution_id,
+            "pre_attribution": pre.state_dict(),
+            "post_attribution": post_state.state_dict(),
+            "admissible_external_evidence_sha256": evidence_hash,
+            "competition_sha256": competition_hash,
+            "output_sha256": output_hash,
+        },
+    )
     return ExecutedArmRecord(
         execution_id=execution_id,
         pre_attribution=pre,
-        post_attribution=post or pre,
-        admissible_external_evidence_sha256=h(evidence),
-        competition_sha256=h(f"competition:{execution_id}"),
-        output_sha256=h(f"output:{execution_id}"),
-        runtime_trace_sha256=h(f"trace:{execution_id}"),
+        post_attribution=post_state,
+        admissible_external_evidence_sha256=evidence_hash,
+        competition_sha256=competition_hash,
+        output_sha256=output_hash,
+        runtime_trace=trace,
+        runtime_trace_sha256=canonical_sha256(trace),
     )
 
 
@@ -64,36 +82,66 @@ def test_p2_rejects_any_pre_evidence_state_drift(field):
         pair.validate()
 
 
-def test_p3_requires_independently_executed_third_arm_with_only_donor_r():
-    baseline = arm("baseline", state(address="baseline-r"))
-    donor = arm(
-        "donor",
-        state(local="donor-l", field="donor-f", consistency="donor-c", address="donor-r"),
-    )
-    transplanted = arm("transplant", state(address="donor-r"))
+def test_p3_requires_trace_bound_third_arm_with_only_donor_r_and_post_l_update():
+    baseline_pre = state(address="baseline-r")
+    donor_pre = state(address="donor-r")
+    transplant_pre = state(address="donor-r")
+    transplant_post = state(local="updated-l", address="donor-r")
+    baseline = arm("baseline", baseline_pre)
+    donor = arm("donor", donor_pre)
+    transplanted = arm("transplant", transplant_pre, post=transplant_post)
     ReturnAddressTransplant(baseline, donor, transplanted).validate()
 
 
-def test_p3_rejects_donor_execution_substitution():
+def test_p3_rejects_donor_execution_substitution_even_if_id_is_relabelled():
     baseline = arm("baseline", state(address="baseline-r"))
     donor = arm("donor", state(address="donor-r"))
-    transplanted = arm("donor", state(address="donor-r"))
-    with pytest.raises(ValueError, match="three independently identified"):
+    relabelled = replace(donor, execution_id="transplant")
+    with pytest.raises(ValueError, match="retained runtime record"):
+        ReturnAddressTransplant(baseline, donor, relabelled).validate()
+
+
+def test_p3_rejects_donor_with_hidden_lfc_drift():
+    baseline = arm("baseline", state(address="baseline-r"))
+    donor = arm("donor", state(local="donor-l", address="donor-r"))
+    transplanted = arm(
+        "transplant",
+        state(address="donor-r"),
+        post=state(local="updated-l", address="donor-r"),
+    )
+    with pytest.raises(ValueError, match="donor must match baseline"):
         ReturnAddressTransplant(baseline, donor, transplanted).validate()
 
 
-def test_p3_rejects_hidden_lfc_drift():
+def test_p3_rejects_hidden_lfc_drift_in_transplant():
     baseline = arm("baseline", state(address="baseline-r"))
     donor = arm("donor", state(address="donor-r"))
-    transplanted = arm("transplant", state(local="illicit", address="donor-r"))
+    transplanted = arm(
+        "transplant",
+        state(local="illicit", address="donor-r"),
+        post=state(local="updated-l", address="donor-r"),
+    )
     with pytest.raises(ValueError):
+        ReturnAddressTransplant(baseline, donor, transplanted).validate()
+
+
+def test_p3_rejects_missing_post_attribution_l_update():
+    baseline = arm("baseline", state(address="baseline-r"))
+    donor = arm("donor", state(address="donor-r"))
+    transplanted = arm("transplant", state(address="donor-r"))
+    with pytest.raises(ValueError, match="post-attribution L update"):
         ReturnAddressTransplant(baseline, donor, transplanted).validate()
 
 
 def test_p3_rejects_different_external_evidence_between_arms():
     baseline = arm("baseline", state(address="baseline-r"))
     donor = arm("donor", state(address="donor-r"))
-    transplanted = arm("transplant", state(address="donor-r"), evidence="different")
+    transplanted = arm(
+        "transplant",
+        state(address="donor-r"),
+        post=state(local="updated-l", address="donor-r"),
+        evidence="different",
+    )
     with pytest.raises(ValueError, match="byte-identical"):
         ReturnAddressTransplant(baseline, donor, transplanted).validate()
 
@@ -104,11 +152,18 @@ def ancestry_record(boundary, before, after):
         "active_lineages_before": before,
         "active_lineages_after": after,
     }
+    trace = (
+        {
+            "type": "md002-merged-ancestry-measurement",
+            "measurement": payload,
+        },
+    )
     return MergedAncestryObservation(
         boundary_source_proposal_ids=boundary,
         active_lineages_before=before,
         active_lineages_after=after,
-        runtime_trace_sha256=h("runtime-trace"),
+        runtime_trace=trace,
+        runtime_trace_sha256=canonical_sha256(trace),
         measurement_record_sha256=canonical_sha256(payload),
     )
 
@@ -139,15 +194,21 @@ def test_p4_rejects_unbound_lineage_or_tampered_measurement_digest():
         ).validate()
 
     record = ancestry_record(("p:a", "p:b"), ("p:a", "p:b"), ("p:a",))
-    tampered = MergedAncestryObservation(
-        record.boundary_source_proposal_ids,
-        record.active_lineages_before,
-        record.active_lineages_after,
-        record.runtime_trace_sha256,
-        h("not-the-record"),
-    )
-    with pytest.raises(ValueError, match="digest"):
+    tampered = replace(record, measurement_record_sha256=h("not-the-record"))
+    with pytest.raises(ValueError, match="measurement record digest"):
         tampered.validate()
+
+
+def test_p4_rejects_measurement_not_present_in_retained_trace():
+    record = ancestry_record(("p:a", "p:b"), ("p:a", "p:b"), ("p:a",))
+    unrelated_trace = ({"type": "other", "measurement": record.measurement_payload()},)
+    unbound = replace(
+        record,
+        runtime_trace=unrelated_trace,
+        runtime_trace_sha256=canonical_sha256(unrelated_trace),
+    )
+    with pytest.raises(ValueError, match="not bound to the retained runtime trace"):
+        unbound.validate()
 
 
 def test_p5_binds_identical_a01_n1_n3_evidence_without_claim():
@@ -160,14 +221,24 @@ def test_p5_rejects_comparator_input_privilege():
         ComparatorEvidenceBinding(h("a"), h("a"), h("different")).validate()
 
 
-def test_dynamic_metrics_are_derived_from_bound_runtime_trace():
+def counter_trace(samples):
+    return tuple(
+        {
+            "type": "md002-counter-sample",
+            "sample": sample.state_dict(),
+        }
+        for sample in samples
+    )
+
+
+def test_dynamic_metrics_are_parsed_from_bound_runtime_trace():
     samples = (
         DynamicCounterSample(10, False, 100, 200, 155, 16),
         DynamicCounterSample(11, False, 102, 203, 160, 32),
         DynamicCounterSample(12, True, 105, 207, 164, 24),
     )
-    trace = canonical_sha256([sample.state_dict() for sample in samples])
-    measured = MeasuredDynamicCounters(samples, trace)
+    trace = counter_trace(samples)
+    measured = MeasuredDynamicCounters(trace, canonical_sha256(trace))
     measured.validate()
     assert measured.external_effect_latency_steps == 2
     assert measured.state_update_count == 5
@@ -181,20 +252,22 @@ def test_dynamic_metrics_reject_tampered_or_nonmonotonic_trace():
         DynamicCounterSample(0, False, 2, 3, 10, 4),
         DynamicCounterSample(1, True, 1, 4, 10, 5),
     )
+    trace = counter_trace(samples)
     with pytest.raises(ValueError, match="trace digest"):
-        MeasuredDynamicCounters(samples, h("fabricated-trace")).validate()
+        MeasuredDynamicCounters(trace, h("fabricated-trace")).validate()
 
-    trace = canonical_sha256([sample.state_dict() for sample in samples])
     with pytest.raises(ValueError, match="state update counter"):
-        MeasuredDynamicCounters(samples, trace).validate()
+        MeasuredDynamicCounters(trace, canonical_sha256(trace)).validate()
 
 
-def test_execution_is_fail_closed_until_both_reviews_exist():
-    with pytest.raises(PermissionError):
+def test_execution_gate_cannot_be_authorized_by_caller_controlled_flags_or_payloads():
+    with pytest.raises(PermissionError, match="artifact digest is not pinned"):
         MD002ExecutionGate().require_authorized()
-    with pytest.raises(PermissionError):
-        MD002ExecutionGate(independent_technical_review=True).require_authorized()
-    MD002ExecutionGate(
-        independent_technical_review=True,
-        execution_authority=True,
-    ).require_authorized()
+
+    fake_review = b'{"approved":true}'
+    fake_authority = b'{"approved":true}'
+    with pytest.raises(PermissionError, match="artifact digest is not pinned"):
+        MD002ExecutionGate(
+            technical_review_artifact=fake_review,
+            execution_authority_artifact=fake_authority,
+        ).require_authorized()
