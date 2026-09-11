@@ -3,11 +3,11 @@ from __future__ import annotations
 import pytest
 
 from sparkbrain.research.rv02_rd005_development_package import (
+    RD005_REQUIRED_SOURCE_PATHS,
     RD005CollisionRegistry,
     RD005DevelopmentPackagePlan,
     RD005SourceManifest,
     RD005SourceManifestEntry,
-    RD005_REQUIRED_SOURCE_PATHS,
 )
 
 SOURCE_SHA = "a" * 40
