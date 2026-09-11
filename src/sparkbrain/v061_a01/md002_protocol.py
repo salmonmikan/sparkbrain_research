@@ -262,7 +262,7 @@ class MeasuredDynamicCounters:
         rows = [sample.state_dict() for sample in self.samples]
         if self.trace_sha256 != canonical_sha256(rows):
             raise ValueError("runtime counter trace digest mismatch")
-        for previous, current in zip(self.samples, self.samples[1:], strict=True):
+        for previous, current in zip(self.samples, self.samples[1:], strict=False):
             if current.step <= previous.step:
                 raise ValueError("runtime counter steps must be strictly increasing")
             if current.state_update_count < previous.state_update_count:
