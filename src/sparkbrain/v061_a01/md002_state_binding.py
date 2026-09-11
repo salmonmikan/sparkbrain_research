@@ -9,8 +9,9 @@ into the byte-bound P2 reset fixture added after MD-001.
 from __future__ import annotations
 
 import json
+from collections.abc import Mapping
 from dataclasses import dataclass
-from typing import Any, Mapping
+from typing import Any
 
 from sparkbrain.v06.boundary import BoundaryEvent
 from sparkbrain.v06.consistency import UntypedBoundaryConsistency
