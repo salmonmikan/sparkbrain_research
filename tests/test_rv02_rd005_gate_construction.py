@@ -3,11 +3,11 @@ from __future__ import annotations
 import pytest
 
 from sparkbrain.research.rv02_rd005_gate_construction import (
+    INHERITED_MAXIMUM_LAG_MS,
+    INHERITED_MINIMUM_LAG_MS,
     ConnectionSnapshot,
     EligibilityEvent,
     ExternalReturnEvent,
-    INHERITED_MAXIMUM_LAG_MS,
-    INHERITED_MINIMUM_LAG_MS,
     RD005GateConstruction,
 )
 
