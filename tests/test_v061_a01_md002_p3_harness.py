@@ -79,7 +79,7 @@ def _return_address(label: str, target: str) -> LiveReturnAddressState:
         polarity=1,
         confidence=0.5,
         origin_state_hash="shared-field-state",
-        local_path_ids=(f"local:A->{target}",),
+        local_path_ids=(f"local:{target}",),
         generation_depth=1,
         valid_until_ms=60.0,
         energy_cost=0.1,
@@ -110,24 +110,30 @@ def _partitions(return_address: LiveReturnAddressState):
     ).partitions
 
 
-def _fixture(direction: str = "ab") -> P3ReturnAddressFixture:
+def _fixture(label: str, baseline_route: str, donor_route: str) -> P3ReturnAddressFixture:
     evidence = canonical_bytes(
         [
-            _external(f"evidence-1-{direction}", 70.0, "world:x").as_dict(),
-            _external(f"evidence-2-{direction}", 75.0, "world:y").as_dict(),
+            _external(f"evidence-1-{label}", 70.0, "world:x").as_dict(),
+            _external(f"evidence-2-{label}", 75.0, "world:y").as_dict(),
         ]
     )
     return P3ReturnAddressFixture(
-        baseline=_partitions(_return_address(f"baseline-{direction}", "B")),
-        donor=_partitions(_return_address(f"donor-{direction}", "C")),
+        baseline=_partitions(_return_address(f"baseline-{label}", baseline_route)),
+        donor=_partitions(_return_address(f"donor-{label}", donor_route)),
         admissible_external_evidence=evidence,
     )
 
 
 def _directional(direction: str, fixture_label: str) -> P3DirectionalFixture:
+    if direction == "A-to-B":
+        fixture = _fixture(fixture_label, "A", "B")
+    elif direction == "B-to-A":
+        fixture = _fixture(fixture_label, "B", "A")
+    else:
+        fixture = _fixture(fixture_label, "A", "B")
     return P3DirectionalFixture(  # type: ignore[arg-type]
         direction=direction,
-        fixture=_fixture(fixture_label),
+        fixture=fixture,
     )
 
 
@@ -179,28 +185,35 @@ def test_p3_matrix_requires_and_binds_both_registered_directions() -> None:
     assert all(row.direction in row.prospective_execution_id for row in prepared)
 
 
+def test_p3_direction_rejects_mislabeled_live_route_semantics() -> None:
+    mislabeled = P3DirectionalFixture(
+        direction="B-to-A",
+        fixture=_fixture("mislabeled", "A", "B"),
+    )
+    with pytest.raises(ValueError, match="does not match baseline/donor active R lineage"):
+        mislabeled.validate()
+
+
 def test_p3_matrix_rejects_missing_or_duplicate_direction() -> None:
     with pytest.raises(ValueError, match="exactly two directional fixtures"):
         prepare_p3_matrix((_directional("A-to-B", "ab"),))  # type: ignore[arg-type]
 
+    duplicate = (
+        _directional("A-to-B", "ab"),
+        P3DirectionalFixture(
+            direction="A-to-B",
+            fixture=_fixture("ab-second", "A", "B"),
+        ),
+    )
     with pytest.raises(RuntimeError, match="one A-to-B and one B-to-A"):
-        prepare_p3_matrix(
-            (
-                _directional("A-to-B", "ab"),
-                _directional("A-to-B", "ab-second"),
-            )
-        )
+        prepare_p3_matrix(duplicate)
 
 
 def test_p3_matrix_rejects_same_fixture_content_across_opposite_directions() -> None:
-    fixture = _fixture("shared")
-    with pytest.raises(RuntimeError, match="cannot reuse the same fixture content"):
-        prepare_p3_matrix(
-            (
-                P3DirectionalFixture("A-to-B", fixture),
-                P3DirectionalFixture("B-to-A", fixture),
-            )
-        )
+    fixture = _fixture("shared", "A", "B")
+    opposite = P3DirectionalFixture("B-to-A", fixture)
+    with pytest.raises(ValueError, match="does not match baseline/donor active R lineage"):
+        opposite.validate()
 
 
 def test_p3_harness_global_execution_gate_remains_fail_closed() -> None:
