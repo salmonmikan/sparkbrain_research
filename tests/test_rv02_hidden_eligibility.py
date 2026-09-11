@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from sparkbrain.research.rv01.physical_learner_bridge import (
     build_physical_field,
+    connection_snapshots,
     runtime_pulse,
 )
 from sparkbrain.research.rv02_hidden_eligibility import (
@@ -9,6 +10,7 @@ from sparkbrain.research.rv02_hidden_eligibility import (
     deterministic_hidden_permutation,
 )
 from sparkbrain.v04.contracts import SpikeEvent
+from sparkbrain.v06.foundation import EventOrigin
 
 
 def hidden_spike(unit_id: int, time_ms: float, *, magnitude: float = 1.0) -> SpikeEvent:
@@ -24,6 +26,14 @@ def hidden_spike(unit_id: int, time_ms: float, *, magnitude: float = 1.0) -> Spi
         prediction_error=0.0,
         excitatory_drive=magnitude,
         inhibitory_drive=0.0,
+    )
+
+
+def edge_state(field, source_id: int, target_id: int):
+    return next(
+        row
+        for row in connection_snapshots(field)
+        if row.source_id == source_id and row.target_id == target_id
     )
 
 
@@ -60,6 +70,68 @@ def test_hidden_spike_cannot_commit_without_later_external_gate() -> None:
     assert hidden_updates[0].target_id == 1
     assert hidden_updates[0].weight_after > hidden_updates[0].weight_before
     assert learner.connection_state_hash() != before
+
+
+def test_endogenous_pulse_cannot_commit_live_hidden_eligibility() -> None:
+    field = build_physical_field(
+        unit_count=3,
+        directed_edges=((0, 2), (2, 1)),
+        threshold=0.5,
+        initial_weight=0.05,
+        initial_delay_ms=5.0,
+    )
+    learner = OnlineHiddenEligibilityPlasticity(
+        field,
+        visible_units=(0, 1),
+        mode="causal",
+    )
+    learner.record_hidden_spikes((hidden_spike(2, 5.0),))
+    before = learner.connection_state_hash()
+
+    updates = learner.observe_external(
+        runtime_pulse(
+            event_id="endogenous-visible-1",
+            time_ms=10.0,
+            unit_id=1,
+            magnitude=1.0,
+            origin=EventOrigin.ENDOGENOUS_UNCONFIRMED,
+        )
+    )
+
+    assert updates == ()
+    assert learner.hidden_return_updates == []
+    assert learner.connection_state_hash() == before
+
+
+def test_external_gate_updates_hidden_return_not_visible_to_hidden_input() -> None:
+    field = build_physical_field(
+        unit_count=3,
+        directed_edges=((0, 2), (2, 1)),
+        threshold=0.5,
+        initial_weight=0.05,
+        initial_delay_ms=5.0,
+    )
+    learner = OnlineHiddenEligibilityPlasticity(
+        field,
+        visible_units=(0, 1),
+        mode="causal",
+    )
+    visible_to_hidden_before = edge_state(field, 0, 2)
+    hidden_to_visible_before = edge_state(field, 2, 1)
+    learner.record_hidden_spikes((hidden_spike(2, 5.0),))
+    learner.observe_external(
+        runtime_pulse(
+            event_id="external-visible-1",
+            time_ms=10.0,
+            unit_id=1,
+            magnitude=1.0,
+        )
+    )
+    visible_to_hidden_after = edge_state(field, 0, 2)
+    hidden_to_visible_after = edge_state(field, 2, 1)
+
+    assert visible_to_hidden_after == visible_to_hidden_before
+    assert hidden_to_visible_after.weight > hidden_to_visible_before.weight
 
 
 def test_hidden_trace_outside_lag_window_expires_without_update() -> None:
