@@ -36,8 +36,12 @@ def test_reachability_uses_conservative_pre_post_delay_and_fixed_horizon() -> No
 
     assert certificate.weight_changed_edges == ((0, 1), (3, 4))
     assert certificate.delay_changed_edges == ((1, 2),)
-    assert tuple(edge.key for edge in certificate.reachable_weight_edges) == ((0, 1),)
-    assert tuple(edge.key for edge in certificate.reachable_delay_edges) == ((1, 2),)
+    assert tuple(
+        edge.key for edge in certificate.reachable_weight_edges
+    ) == ((0, 1),)
+    assert tuple(
+        edge.key for edge in certificate.reachable_delay_edges
+    ) == ((1, 2),)
     assert certificate.reachable_delay_edges[0].conservative_edge_delay_ms == 4.0
     assert certificate.reachable_delay_edges[0].earliest_target_arrival_ms == 6.0
     assert certificate.weight_eligible is True
@@ -55,7 +59,9 @@ def test_off_route_changed_edge_is_not_a_behavioral_negative_eligibility_cell() 
 
     assert certificate.weight_changed_edges == ((0, 1), (3, 4))
     assert certificate.reachable_weight_edges == ()
-    assert tuple(edge.key for edge in certificate.reachable_delay_edges) == ((1, 2),)
+    assert tuple(
+        edge.key for edge in certificate.reachable_delay_edges
+    ) == ((1, 2),)
     assert certificate.weight_eligible is False
     assert certificate.delay_eligible is True
 
