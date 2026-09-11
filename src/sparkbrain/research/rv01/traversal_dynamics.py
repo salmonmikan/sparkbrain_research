@@ -115,11 +115,10 @@ def _traversal_metrics(trace: tuple[int, ...]) -> TraversalMetrics:
     distinct = len(seen)
     revisits = events - distinct
     observed_area = sum(cumulative_distinct)
-    ideal_area = (
-        distinct * (distinct + 1) / 2
-        + distinct * (events - distinct)
-    )
-    normalized_auc = observed_area / ideal_area if ideal_area else 0.0
+    # Registered R01-14 definition: mean cumulative distinct fraction,
+    # normalized by the trace's final distinct count.
+    registered_area = events * distinct
+    normalized_auc = observed_area / registered_area if registered_area else 0.0
     return TraversalMetrics(
         event_count=events,
         distinct_unit_count=distinct,

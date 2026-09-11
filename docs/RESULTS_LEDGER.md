@@ -1055,3 +1055,12 @@ contract correction only.
 - Claim impact: none. C06 remains negative; C15 residual superiority remains unsupported; C16
   remains candidate-level; C17 v1 remains an implementation failure and C17 v2 remains
   scientifically unsupported; C19 remains blocked/not evaluated; CL-007 and CL-008 remain E0.
+
+
+## 2026-09-11 — RV01 R01-14A traversal-dynamics development diagnosis
+
+- Status: development `completed`; interference-specific traversal hypothesis `not_supported`; held-out `not_executed`.
+- Fixed evidence: source `d0c828dda9faf1ff0d455adf02be4e9ef65030fb`; workflow `34308089316`; raw SHA-256 `4a214059cacc66d473776de7b46455c959ce0ac5c7089c6acfafbc9e0ef91e25`; retained locally at `artifacts/research/rv01/r01_14/development_result.json`.
+- Negative result: the equal-breadth traversal/event advantage was not interference-specific; the strongest signature also appeared in the disjoint reference family, so the registered interference-specific hypothesis is rejected at development.
+- Metric correction: the historical `normalized_discovery_auc` used an unregistered denominator and is invalid for the registered AUC endpoint. The raw artifact is preserved unchanged and is not rerun or rescored; future code uses the registered `events * final_distinct_count` denominator.
+- Boundary: event/revisit/distinct-count observations remain development-only descriptive evidence. No R01-14 held-out capability was executed, and no formal/frozen evidence is modified.

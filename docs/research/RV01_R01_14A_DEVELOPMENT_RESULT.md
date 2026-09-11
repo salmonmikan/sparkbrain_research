@@ -227,3 +227,12 @@ repetition difference itself without reopening ordered retention:
 
 That would require a new protocol and seed boundary. R01-14A is now a fixed development
 result and must not be overwritten or rescued.
+
+
+## 2026-09-11 independent-review correction
+
+The fixed development raw artifact is preserved unchanged. Independent review found that the historical `normalized_discovery_auc` implementation used an ideal-discovery-curve denominator rather than the preregistered `events * final_distinct_count` denominator. Therefore every discovery-AUC value in the fixed R01-14A artifact is **invalid for the registered endpoint and must not be used as scientific evidence**. The implementation is corrected prospectively only; the historical raw JSON and suite hash are not rewritten and this candidate is not rerun.
+
+The non-AUC observations based directly on event counts, distinct counts, revisit counts/rates, ordered retention, exact-route recovery and contamination remain descriptive fixed evidence subject to their existing development-only boundary. The development conclusion that interference specificity was not supported remains a retained negative result. Held-out R01-14 capability remains closed.
+
+The fixed artifact is bound to CPython 3.11.15 and does not claim portable hash reproduction on other interpreters.
