@@ -12,9 +12,14 @@ import json
 from collections.abc import Iterable
 from dataclasses import dataclass
 
-from sparkbrain.research.rv01.interference_contract import InterferenceFamily
-
 R01_16_PROTOCOL_ID = "rv01-r01-16-propagation-factorization-v1"
+R01_16_FAMILIES = (
+    "disjoint-routes",
+    "shared-cue-branches",
+    "shared-prefix-branches",
+    "edge-reversal",
+    "dense-route-load",
+)
 R01_16_DEVELOPMENT_SEEDS = (141700, 141701, 141702, 141703, 141704)
 R01_16_WORLD_SALT = "rv01-r01-16-fresh-world-grid-v1"
 R01_16_UNIT_COUNT = 96
@@ -40,6 +45,10 @@ def _digest(value: object) -> str:
     return hashlib.sha256(payload).hexdigest()
 
 
+def _is_exact_int(value: object) -> bool:
+    return type(value) is int
+
+
 @dataclass(frozen=True, slots=True)
 class R0116DevelopmentIdentity:
     """One prospectively named development world before world construction."""
@@ -49,9 +58,12 @@ class R0116DevelopmentIdentity:
     unit_count: int = R01_16_UNIT_COUNT
 
     def validate(self) -> None:
-        allowed_families = {family.value for family in InterferenceFamily}
-        if self.family not in allowed_families:
-            raise ValueError("R01-16 family is not part of the inherited fixed family set")
+        if self.family not in R01_16_FAMILIES:
+            raise ValueError("R01-16 family is not part of the fixed registered family set")
+        if not _is_exact_int(self.seed):
+            raise TypeError("R01-16 seed must be an exact non-boolean int")
+        if not _is_exact_int(self.unit_count):
+            raise TypeError("R01-16 unit_count must be an exact non-boolean int")
         if self.seed not in R01_16_DEVELOPMENT_SEEDS:
             raise ValueError("R01-16 seed is outside the fixed development namespace")
         if self.seed in R01_16_FIXED_EXCLUSIONS:
@@ -94,16 +106,16 @@ class R0116DevelopmentIdentity:
 
 
 def development_identity_grid() -> tuple[R0116DevelopmentIdentity, ...]:
-    """Return the complete ordered 5-family x 5-seed development identity grid."""
+    """Return the complete ordered fixed-family x fixed-seed development grid."""
 
     rows = tuple(
-        R0116DevelopmentIdentity(family=family.value, seed=seed)
-        for family in InterferenceFamily
+        R0116DevelopmentIdentity(family=family, seed=seed)
+        for family in R01_16_FAMILIES
         for seed in R01_16_DEVELOPMENT_SEEDS
     )
     for row in rows:
         row.validate()
-    if len(rows) != len(tuple(InterferenceFamily)) * len(R01_16_DEVELOPMENT_SEEDS):
+    if len(rows) != len(R01_16_FAMILIES) * len(R01_16_DEVELOPMENT_SEEDS):
         raise RuntimeError("R01-16 development identity grid cardinality drifted")
     if len({row.world_id for row in rows}) != len(rows):
         raise RuntimeError("R01-16 development world IDs are not unique")
@@ -121,6 +133,8 @@ def assert_no_seed_collisions(consumed_or_reserved: Iterable[int]) -> None:
     """
 
     registry = set(consumed_or_reserved)
+    if any(not _is_exact_int(seed) for seed in registry):
+        raise TypeError("retained seed registry must contain exact non-boolean ints")
     collisions = sorted(set(R01_16_DEVELOPMENT_SEEDS).intersection(registry))
     if collisions:
         raise ValueError(f"R01-16 development seed collision(s): {collisions}")
@@ -128,6 +142,7 @@ def assert_no_seed_collisions(consumed_or_reserved: Iterable[int]) -> None:
 
 __all__ = [
     "R01_16_DEVELOPMENT_SEEDS",
+    "R01_16_FAMILIES",
     "R01_16_FIXED_EXCLUSIONS",
     "R01_16_FORMAL_AUTHORITY",
     "R01_16_HELD_OUT_AUTHORITY",
