@@ -4,6 +4,9 @@ This module prepares identity, manifest, collision-registry, and no-clobber
 contracts only. It deliberately does not construct a Field, build an RD005
 artifact, invoke the independent verifier, run a learner/probe, score an
 outcome, write an output directory, or grant held-out/formal authority.
+
+The preregistered stage order is explicit: a construction-only D1 artifact must
+be generated, retained, and reviewed before any later capability runner exists.
 """
 
 from __future__ import annotations
@@ -195,6 +198,9 @@ class RD005DevelopmentPackagePlan:
             "output_relpath": self.output_relpath,
             "overwrite_allowed": False,
             "retry_same_identity_allowed": False,
+            "d1_construction_only_stage_required": True,
+            "d1_retained_and_reviewed_before_capability_required": True,
+            "construction_and_capability_same_run_allowed": False,
             "construction_verifier_required_before_capability": True,
             "construction_integrity_failure_is_terminal": True,
             "zero_ready_cells_is_terminal": True,
@@ -202,7 +208,8 @@ class RD005DevelopmentPackagePlan:
             "learner_or_probe_executed": False,
             "held_out_capability_allowed": False,
             "formal_execution_allowed": False,
-            "execution_wrapper_bound": False,
+            "construction_wrapper_bound": False,
+            "capability_wrapper_bound": False,
             "python_runtime_bound": False,
         }
 
