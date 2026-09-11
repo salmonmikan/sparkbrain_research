@@ -4,11 +4,11 @@ from sparkbrain.research.rv01_post_spike_suppression import PostSpikeSuppression
 from sparkbrain.v04 import (
     Connection,
     ExcitableFieldConfig,
-    SynapticArrival,
     TemporalExcitableField,
     UnitState,
     explicit_topology,
 )
+from sparkbrain.v04.contracts import SynapticArrival
 
 
 def checkpoint() -> dict:
