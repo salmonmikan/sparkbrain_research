@@ -18,12 +18,22 @@ R01_16_ARM = Literal["F0", "FW", "FD", "FWD"]
 
 
 def _finite(value: float, *, name: str) -> float:
-    if isinstance(value, bool) or not isinstance(value, (int, float)):
+    if isinstance(value, bool) or not isinstance(value, int | float):
         raise TypeError(f"{name} must be a real numeric value")
     number = float(value)
     if not math.isfinite(number):
         raise ValueError(f"{name} must be finite")
     return number
+
+
+def _sha256(value: object) -> str:
+    payload = json.dumps(
+        value,
+        sort_keys=True,
+        separators=(",", ":"),
+        allow_nan=False,
+    ).encode("utf-8")
+    return hashlib.sha256(payload).hexdigest()
 
 
 @dataclass(frozen=True, slots=True)
