@@ -1,0 +1,100 @@
+name: RV02 RD004 Frozen Development Execution
+
+on:
+  push:
+    branches:
+      - "ops/rv02-rd004-development-execution-20260911"
+
+permissions:
+  contents: read
+
+env:
+  FREEZE_REF: freeze/rv02-rd004-development-source
+  OUTPUT_DIR: artifacts/research/rv02/rd004/development-run
+
+jobs:
+  execute-development-once:
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    steps:
+      - name: Checkout pushed source
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+
+      - name: Verify exact immutable development source
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin "+refs/heads/${FREEZE_REF}:refs/remotes/origin/${FREEZE_REF}"
+          frozen_sha="$(git rev-parse "refs/remotes/origin/${FREEZE_REF}")"
+          test "$(git rev-parse HEAD)" = "${frozen_sha}"
+          test "${GITHUB_SHA}" = "${frozen_sha}"
+          test -f docs/research/RV02_RD004_RELATIVE_PROBE_CLOCK_PREREG.md
+          test -f scripts/run_rv02_rd004.py
+          test -f src/sparkbrain/research/rv02_rd004_online.py
+          test -f src/sparkbrain/research/rv02_rd004_probe_clock.py
+
+      - name: Set up exact Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11.15"
+          cache: pip
+
+      - name: Install frozen package
+        run: python -m pip install -e .
+
+      - name: Execute fixed exposed-development matrix
+        id: execute
+        shell: bash
+        run: |
+          set -euo pipefail
+          test ! -e "${OUTPUT_DIR}"
+          python scripts/run_rv02_rd004.py --output "${OUTPUT_DIR}"
+
+      - name: Verify preserved bundle independently
+        if: success()
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/run_rv02_rd004.py --verify "${OUTPUT_DIR}"
+
+      - name: Record execution metadata and hashes
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/rv02-rd004-metadata
+          frozen_sha="$(git rev-parse "refs/remotes/origin/${FREEZE_REF}")"
+          cat > /tmp/rv02-rd004-metadata/execution_metadata.json <<EOF
+          {
+            "protocol": "rv02-rd004-relative-probe-clock-v1",
+            "phase": "development",
+            "frozen_source_git_sha": "${frozen_sha}",
+            "freeze_ref": "${FREEZE_REF}",
+            "workflow_run_id": "${GITHUB_RUN_ID}",
+            "workflow_run_attempt": "${GITHUB_RUN_ATTEMPT}",
+            "python_version": "$(python --version 2>&1)",
+            "formal_execution_allowed": false,
+            "held_out_capability_executed": false,
+            "same_source_rerun_allowed": false
+          }
+          EOF
+          if [ -d "${OUTPUT_DIR}" ]; then
+            find "${OUTPUT_DIR}" -maxdepth 1 -type f -print0 \
+              | sort -z \
+              | xargs -0 -r sha256sum \
+              > /tmp/rv02-rd004-metadata/output_sha256.txt
+          fi
+
+      - name: Upload raw development evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rv02-rd004-development-${{ github.run_id }}
+          path: |
+            artifacts/research/rv02/rd004/development-run
+            /tmp/rv02-rd004-metadata
+          if-no-files-found: error
+          retention-days: 90
