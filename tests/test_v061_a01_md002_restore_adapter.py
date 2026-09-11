@@ -1,7 +1,12 @@
 from __future__ import annotations
 
-from sparkbrain.research.rv01.physical_learner_bridge import build_physical_field
-
+from sparkbrain.v04 import (
+    Connection,
+    ExcitableFieldConfig,
+    TemporalExcitableField,
+    UnitState,
+    explicit_topology,
+)
 from sparkbrain.v06.boundary import BoundaryDirection, BoundaryEvent
 from sparkbrain.v06.consistency import UntypedBoundaryConsistency
 from sparkbrain.v06.foundation import (
@@ -39,6 +44,23 @@ def expectation() -> A01LocalTemporalExpectation:
         external("train-target", 5.0, "B"),
     )
     return model
+
+
+def field() -> TemporalExcitableField:
+    topology = explicit_topology(
+        (
+            UnitState(0, 0.0, 0.0, base_threshold=0.5),
+            UnitState(1, 1.0, 0.0, base_threshold=0.5),
+            UnitState(2, 0.5, 1.0, base_threshold=0.5),
+        ),
+        (
+            Connection(0, 2, 0.05, 5.0, plastic=True),
+            Connection(2, 1, 0.05, 5.0, plastic=True),
+            Connection(0, 1, 0.05, 5.0, plastic=True),
+        ),
+        receptor_ids=(0, 1),
+    )
+    return TemporalExcitableField(topology, ExcitableFieldConfig(receptor_fanout=1))
 
 
 def live_return_address() -> LiveReturnAddressState:
@@ -91,16 +113,9 @@ def live_return_address() -> LiveReturnAddressState:
 def fixture():
     model = expectation()
     consistency = UntypedBoundaryConsistency(ProvenanceLedger())
-    field = build_physical_field(
-        unit_count=3,
-        directed_edges=((0, 2), (2, 1), (0, 1)),
-        threshold=0.5,
-        initial_weight=0.05,
-        initial_delay_ms=5.0,
-    )
     return build_bound_a01_p2_fixture(
         expectation=model,
-        field_state=field.state_dict(),
+        field_state=field().state_dict(),
         consistency=consistency,
         return_address=live_return_address(),
         control_world_relation={"port:p": "world:x"},
