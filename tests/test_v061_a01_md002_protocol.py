@@ -221,14 +221,18 @@ def test_p5_rejects_comparator_input_privilege():
         ComparatorEvidenceBinding(h("a"), h("a"), h("different")).validate()
 
 
-def counter_trace(samples):
-    return tuple(
+def counter_trace(samples, *, observation_step=None):
+    rows = []
+    if observation_step is not None:
+        rows.append({"type": "md002-external-observation", "step": observation_step})
+    rows.extend(
         {
             "type": "md002-counter-sample",
             "sample": sample.state_dict(),
         }
         for sample in samples
     )
+    return tuple(rows)
 
 
 def test_dynamic_metrics_are_parsed_from_bound_runtime_trace():
@@ -237,10 +241,10 @@ def test_dynamic_metrics_are_parsed_from_bound_runtime_trace():
         DynamicCounterSample(11, False, 102, 203, 160, 32),
         DynamicCounterSample(12, True, 105, 207, 164, 24),
     )
-    trace = counter_trace(samples)
+    trace = counter_trace(samples, observation_step=11)
     measured = MeasuredDynamicCounters(trace, canonical_sha256(trace))
     measured.validate()
-    assert measured.external_effect_latency_steps == 2
+    assert measured.external_effect_latency_steps == 1
     assert measured.state_update_count == 5
     assert measured.router_operation_count == 7
     assert measured.persistent_state_bytes == 164
@@ -252,11 +256,37 @@ def test_dynamic_metrics_reject_tampered_or_nonmonotonic_trace():
         DynamicCounterSample(0, False, 2, 3, 10, 4),
         DynamicCounterSample(1, True, 1, 4, 10, 5),
     )
-    trace = counter_trace(samples)
+    trace = counter_trace(samples, observation_step=0)
     with pytest.raises(ValueError, match="trace digest"):
         MeasuredDynamicCounters(trace, h("fabricated-trace")).validate()
 
     with pytest.raises(ValueError, match="state update counter"):
+        MeasuredDynamicCounters(trace, canonical_sha256(trace)).validate()
+
+
+def test_dynamic_latency_requires_retained_external_observation_marker():
+    samples = (
+        DynamicCounterSample(10, False, 0, 0, 10, 1),
+        DynamicCounterSample(11, False, 1, 1, 10, 1),
+        DynamicCounterSample(13, True, 2, 2, 10, 1),
+    )
+    no_marker = counter_trace(samples)
+    with pytest.raises(ValueError, match="exactly one external-observation marker"):
+        MeasuredDynamicCounters(no_marker, canonical_sha256(no_marker)).validate()
+
+    observed = counter_trace(samples, observation_step=11)
+    measured = MeasuredDynamicCounters(observed, canonical_sha256(observed))
+    assert measured.external_effect_latency_steps == 2
+
+
+def test_dynamic_latency_rejects_effect_before_external_observation():
+    samples = (
+        DynamicCounterSample(10, False, 0, 0, 10, 1),
+        DynamicCounterSample(11, True, 1, 1, 10, 1),
+        DynamicCounterSample(12, True, 2, 2, 10, 1),
+    )
+    trace = counter_trace(samples, observation_step=12)
+    with pytest.raises(ValueError, match="cannot precede external observation"):
         MeasuredDynamicCounters(trace, canonical_sha256(trace)).validate()
 
 

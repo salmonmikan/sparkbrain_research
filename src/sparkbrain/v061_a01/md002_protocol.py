@@ -376,6 +376,18 @@ class MeasuredDynamicCounters:
             if previous.external_effect_observed and not current.external_effect_observed:
                 raise ValueError("external-effect observation must be cumulative")
 
+        observation_steps = self.external_observation_steps
+        if len(observation_steps) != 1:
+            raise ValueError("runtime trace requires exactly one external-observation marker")
+        observation_step = observation_steps[0]
+        if not samples[0].step <= observation_step <= samples[-1].step:
+            raise ValueError("external-observation marker lies outside counter sample range")
+        effect_steps = tuple(
+            sample.step for sample in samples if sample.external_effect_observed
+        )
+        if effect_steps and effect_steps[0] < observation_step:
+            raise ValueError("external effect cannot precede external observation")
+
     @property
     def samples(self) -> tuple[DynamicCounterSample, ...]:
         rows: list[DynamicCounterSample] = []
@@ -389,13 +401,24 @@ class MeasuredDynamicCounters:
         return tuple(rows)
 
     @property
+    def external_observation_steps(self) -> tuple[int, ...]:
+        rows: list[int] = []
+        for record in self.runtime_trace:
+            if record.get("type") != "md002-external-observation":
+                continue
+            step = record.get("step")
+            if type(step) is not int or step < 0:
+                raise ValueError("external-observation marker requires non-negative integer step")
+            rows.append(step)
+        return tuple(rows)
+
+    @property
     def external_effect_latency_steps(self) -> int | None:
         self.validate()
-        samples = self.samples
-        start = samples[0].step
-        for sample in samples:
+        observation_step = self.external_observation_steps[0]
+        for sample in self.samples:
             if sample.external_effect_observed:
-                return sample.step - start
+                return sample.step - observation_step
         return None
 
     @property
