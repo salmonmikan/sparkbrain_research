@@ -2,9 +2,13 @@
 
 ## Disposition
 
+**PRESTART DISPOSITION: `APPROVE_PRESTART`**
+
 **INDEPENDENT PACKAGE-LEVEL TECHNICAL REVIEW: PASS**
 
 **EXECUTION AUTHORITY: NOT GRANTED**
+
+`APPROVE_PRESTART` means only that the independently reviewed, outcome-blind package is technically acceptable to remain frozen and await a later execution decision. It is not an execution seal and is not authorization to run formal capability.
 
 This review is outcome-blind and does not execute comparator capability, inspect a formal result, issue an execution seal, create `STARTED`, or score candidate-002. It reviews the already preserved pre-start package on `prepare/cx01-candidate-002` and leaves that package unchanged.
 
@@ -120,7 +124,7 @@ This is a package/control-plane review, not a capability review. It cannot know 
 
 The source-only tuning scan is a defensive static guard, not a proof that no conceivable semantic dependence exists anywhere in repository history. The stronger protection is procedural and cryptographic: candidate-002's source SHA, candidate specification, world grid, declaration bundle, execution/scoring contract, and byte-identical pre-start package were all fixed before formal execution and independently reconstructed before any formal result exists.
 
-This review also does not act as the user's single-use execution authorization. The automation/reviewer must not infer authorization from older blanket permissions or from this PASS disposition.
+This review also does not act as the user's single-use execution authorization. The automation/reviewer must not infer authorization from older blanket permissions or from this `APPROVE_PRESTART` disposition.
 
 ## Seal-ready handoff
 
