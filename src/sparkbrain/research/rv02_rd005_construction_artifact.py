@@ -61,6 +61,14 @@ def _require_git_sha(value: str) -> None:
         raise ValueError("source_git_sha must be a 40-character lowercase Git SHA")
 
 
+def _require_sha256(value: str | None, *, name: str) -> str:
+    if value is None:
+        raise ValueError(f"{name} is required for a non-failure RD005 cell")
+    if len(value) != 64 or any(char not in "0123456789abcdef" for char in value):
+        raise ValueError(f"{name} must be a lowercase SHA-256 digest")
+    return value
+
+
 @dataclass(frozen=True, slots=True)
 class SeedCollisionRecord:
     """Explicit pre-D1 fresh-identity collision search record."""
@@ -116,9 +124,11 @@ class RD005ConstructionCell:
     world_id: str
     world_sha256: str
     evidence_sha256: str
-    topology_sha256: str
-    ordinary_schedule_sha256: str
-    connection_rows_sha256: str
+    topology_sha256: str | None
+    ordinary_schedule: tuple[dict[str, Any], ...]
+    ordinary_schedule_sha256: str | None
+    connection_rows: tuple[dict[str, Any], ...]
+    connection_rows_sha256: str | None
     inspected_clocks: tuple[InspectedClock, ...]
     selected_clock_ms: float | None
     eligibility_events: tuple[EligibilityEvent, ...]
@@ -129,7 +139,35 @@ class RD005ConstructionCell:
     status: RD005CellStatus
     error: str | None = None
 
+    def validate(self) -> None:
+        if not self.cell_id or not self.family or not self.world_id:
+            raise ValueError("RD005 construction cell identities must be non-empty")
+        if self.status == "CONSTRUCTION_INTEGRITY_FAILURE":
+            if not self.error:
+                raise ValueError("RD005 integrity-failure cell must retain its error")
+            return
+
+        topology_sha256 = _require_sha256(
+            self.topology_sha256,
+            name="topology_sha256",
+        )
+        schedule_sha256 = _require_sha256(
+            self.ordinary_schedule_sha256,
+            name="ordinary_schedule_sha256",
+        )
+        connection_sha256 = _require_sha256(
+            self.connection_rows_sha256,
+            name="connection_rows_sha256",
+        )
+        if topology_sha256 != self.topology_sha256:
+            raise AssertionError("unreachable topology digest mismatch")
+        if digest(self.ordinary_schedule) != schedule_sha256:
+            raise ValueError("RD005 ordinary schedule hash does not match retained rows")
+        if digest(self.connection_rows) != connection_sha256:
+            raise ValueError("RD005 connection hash does not match retained rows")
+
     def state_dict(self) -> dict[str, object]:
+        self.validate()
         return {
             "cell_id": self.cell_id,
             "family": self.family,
@@ -138,7 +176,9 @@ class RD005ConstructionCell:
             "world_sha256": self.world_sha256,
             "evidence_sha256": self.evidence_sha256,
             "topology_sha256": self.topology_sha256,
+            "ordinary_schedule": list(self.ordinary_schedule),
             "ordinary_schedule_sha256": self.ordinary_schedule_sha256,
+            "connection_rows": list(self.connection_rows),
             "connection_rows_sha256": self.connection_rows_sha256,
             "inspected_clocks": [row.state_dict() for row in self.inspected_clocks],
             "selected_clock_ms": self.selected_clock_ms,
@@ -166,6 +206,8 @@ class RD005ConstructionArtifact:
         identities = tuple(row.cell_id for row in self.cells)
         if len(set(identities)) != 18:
             raise ValueError("RD005 construction cell identities must be unique")
+        for row in self.cells:
+            row.validate()
 
     @property
     def matrix_status(self) -> str:
@@ -216,6 +258,17 @@ def _connection_snapshots(field: Any) -> tuple[ConnectionSnapshot, ...]:
         )
         for _, edge in sorted(field.connections.items())
     )
+
+
+def _rd005_training_schedule(world: dict[str, Any]) -> tuple[dict[str, Any], ...]:
+    """Bind the retained schedule to the exact event identities injected below."""
+
+    rows: list[dict[str, Any]] = []
+    for row in _training_schedule(world):
+        rebound = dict(row)
+        rebound["event_id"] = f"rd005-plan-{int(row['ordinal']):06d}"
+        rows.append(rebound)
+    return tuple(rows)
 
 
 def _spike_identity(spike: SpikeEvent) -> str:
@@ -275,7 +328,7 @@ def _construct_cell(
     field = _new_gained_field(config, world, scale)
     connections = _connection_snapshots(field)
     connection_rows = _connection_rows(field)
-    schedule = _training_schedule(world)
+    schedule = _rd005_training_schedule(world)
     inspected: list[InspectedClock] = []
 
     for row in schedule:
@@ -284,7 +337,11 @@ def _construct_cell(
         inspected.append(
             InspectedClock(
                 time_ms=clock,
-                spikes=tuple(spike.as_dict() for spike in spikes if spike.unit_id not in PORTS),
+                spikes=tuple(
+                    spike.as_dict()
+                    for spike in spikes
+                    if spike.unit_id not in PORTS
+                ),
             )
         )
         return_time = clock + RD005_RETURN_OFFSET_MS
@@ -336,7 +393,9 @@ def _construct_cell(
                 world_sha256=digest(world),
                 evidence_sha256=str(world["evidence_hash"]),
                 topology_sha256=str(audit["topology_hash"]),
+                ordinary_schedule=schedule,
                 ordinary_schedule_sha256=digest(schedule),
+                connection_rows=connection_rows,
                 connection_rows_sha256=digest(connection_rows),
                 inspected_clocks=tuple(inspected),
                 selected_clock_ms=clock,
@@ -350,7 +409,7 @@ def _construct_cell(
 
         _schedule_external(
             field,
-            event_id=f"rd005-plan-{int(row['ordinal']):06d}",
+            event_id=str(row["event_id"]),
             time_ms=clock,
             unit_id=int(row["unit_id"]),
         )
@@ -363,7 +422,9 @@ def _construct_cell(
         world_sha256=digest(world),
         evidence_sha256=str(world["evidence_hash"]),
         topology_sha256=str(audit["topology_hash"]),
+        ordinary_schedule=schedule,
         ordinary_schedule_sha256=digest(schedule),
+        connection_rows=connection_rows,
         connection_rows_sha256=digest(connection_rows),
         inspected_clocks=tuple(inspected),
         selected_clock_ms=None,
@@ -389,24 +450,26 @@ def build_rd005_construction_artifact(
     config.validate()
     cells: list[RD005ConstructionCell] = []
     for world in development_worlds(config):
+        world_id = str(world["world_id"])
+        family = str(world["family"])
+        world_sha256 = digest(world)
+        evidence_sha256 = str(world["evidence_hash"])
         for scale in config.scales:
             try:
                 cell = _construct_cell(config, world, scale)
-            except Exception as exc:  # preserve integrity failures as data
-                audit = audit_scale(config, world, scale)
-                field = _new_gained_field(config, world, scale)
-                schedule = _training_schedule(world)
-                connection_rows = _connection_rows(field)
+            except Exception as exc:  # preserve construction failure as data
                 cell = RD005ConstructionCell(
-                    cell_id=f"{world['world_id']}|scale={scale}",
-                    family=str(world["family"]),
+                    cell_id=f"{world_id}|scale={scale}",
+                    family=family,
                     scale=scale,
-                    world_id=str(world["world_id"]),
-                    world_sha256=digest(world),
-                    evidence_sha256=str(world["evidence_hash"]),
-                    topology_sha256=str(audit["topology_hash"]),
-                    ordinary_schedule_sha256=digest(schedule),
-                    connection_rows_sha256=digest(connection_rows),
+                    world_id=world_id,
+                    world_sha256=world_sha256,
+                    evidence_sha256=evidence_sha256,
+                    topology_sha256=None,
+                    ordinary_schedule=(),
+                    ordinary_schedule_sha256=None,
+                    connection_rows=(),
+                    connection_rows_sha256=None,
                     inspected_clocks=(),
                     selected_clock_ms=None,
                     eligibility_events=(),
