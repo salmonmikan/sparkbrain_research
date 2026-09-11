@@ -4,136 +4,112 @@
 
 - R01-12F is consumed, fixed, and not rerunnable.
 - This review changes no architecture, threshold, comparator, candidate, or raw result.
-- R01-12D contains final summaries only.
-- R01-12F contains intermediate Field probe traces, but the reservoir raw contains final probes only.
-- Consequently, phase-by-phase Field/reservoir superiority is not identifiable from the fixed evidence.
+- R01-12D retains an aggregate development manifest and world identity hashes, but **not the raw per-world/per-probe rows**. Development claims below are therefore restricted to values directly present in that retained manifest.
+- R01-12F retains its formal result manifest and the fixed raw formal result. The formal manifest contains aggregate and family-level final-probe metrics.
+- Only the Field has retained intermediate probe detail in the formal raw result; the reservoir has final probes only. Direct phase-by-phase architecture superiority is therefore not identifiable from the fixed evidence.
+- The `future_untrained` label in a Field probe describes the route being queried. It is not, by itself, evidence that a route-unique unit activated before exposure. No such provenance claim is made here.
 
 ## Evidence binding
 
-| evidence | source | raw SHA-256 | cardinality |
+| evidence | source | retained binding | cardinality |
 |---|---|---|---:|
-| R01-12D | `b163117512daca23b613c8a109a544833af7d360` | `8abc7fc462ed18cc7a57aa24365c9118d0e94579ec32f8b53d3bb1da368d8c67` | 15 worlds / 60 final route probes |
-| R01-12F | `83d2c77d8ae3878727d2ed4e9e78bc169ce064b8` | `e3f0cef5428c1b9a550c986404c1435952bd23fd0bdc0cc24a73b8e0c9f70ff4` | 50 worlds / 200 final route probes |
+| R01-12D | `b163117512daca23b613c8a109a544833af7d360` | development manifest payload hash `4f07d2f645fc9319647b49775a6186eba95af4cf567f99b6b5f8f64fbe0ff79e` | 15 worlds / 60 final route probes |
+| R01-12F | `83d2c77d8ae3878727d2ed4e9e78bc169ce064b8` | raw SHA-256 `e3f0cef5428c1b9a550c986404c1435952bd23fd0bdc0cc24a73b8e0c9f70ff4` | 50 worlds / 200 final route probes |
 
-## Aggregate comparison
+The previously quoted R01-12D raw-file SHA is not used as a local reproducibility claim because that raw file is not retained in the repository.
 
-| phase | architecture | ordered retention | exact-route rate | contamination / route | first-hop coverage |
-|---|---|---:|---:|---:|---:|
-| R01-12D | Field | 1.0000 | 0.4000 | 3.6000 | 1.0000 |
-| R01-12D | reservoir | 0.9000 | 0.4000 | 2.9500 | 0.9500 |
-| R01-12F | Field | 1.0000 | 0.4000 | 3.6000 | 1.0000 |
-| R01-12F | reservoir | 0.9017 | 0.4000 | 2.9450 | 0.9500 |
+## Reproducible aggregate comparison
 
-The exact-route rate is **0.4000 for both architectures in both phases**. Field's higher ordered retention therefore does not establish cleaner route selection. Field has a retention/coverage advantage, but it pays for that breadth with more off-route activation.
+These values are directly recoverable from the two retained result manifests.
 
-## Family comparison
+| phase | architecture | ordered retention | exact-route rate | contamination / route |
+|---|---|---:|---:|---:|
+| R01-12D | Field | 1.0000 | 0.4000 | 3.6000 |
+| R01-12D | reservoir | 0.9000 | 0.4000 | 2.9500 |
+| R01-12F | Field | 1.0000 | 0.4000 | 3.6000 |
+| R01-12F | reservoir | 0.9017 | 0.4000 | 2.9450 |
 
-| family | phase | Field retention | reservoir retention | Field exact | reservoir exact | Field contamination/route | reservoir contamination/route |
-|---|---|---:|---:|---:|---:|---:|---:|
-| disjoint-routes | R01-12D | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 0.0000 | 0.0000 |
-| disjoint-routes | R01-12F | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 0.0000 | 0.0000 |
-| shared-cue-branches | R01-12D | 1.0000 | 1.0000 | 0.0000 | 0.0000 | 6.0000 | 6.0000 |
-| shared-cue-branches | R01-12F | 1.0000 | 1.0000 | 0.0000 | 0.0000 | 6.0000 | 6.0000 |
-| shared-prefix-branches | R01-12D | 1.0000 | 0.7778 | 0.0000 | 0.0000 | 4.0000 | 3.3333 |
-| shared-prefix-branches | R01-12F | 1.0000 | 0.7778 | 0.0000 | 0.0000 | 4.0000 | 3.3333 |
-| edge-reversal | R01-12D | 1.0000 | 0.8889 | 0.3333 | 0.3333 | 2.0000 | 1.3333 |
-| edge-reversal | R01-12F | 1.0000 | 0.9000 | 0.3333 | 0.3333 | 2.0000 | 1.3000 |
-| dense-route-load | R01-12D | 1.0000 | 0.8750 | 0.5000 | 0.5000 | 4.5000 | 3.3750 |
-| dense-route-load | R01-12F | 1.0000 | 0.8750 | 0.5000 | 0.5000 | 4.5000 | 3.3750 |
+The aggregate signature is therefore reproducible from retained manifests: Field ordered retention is higher, exact-route recovery is tied, and Field contamination is higher. That is enough to reject a simple claim of cleaner or generally more selective Field memory.
 
-### Family interpretation
+R01-12D does not retain the raw rows required to independently reconstruct development family tables or phase-role diagnostics. This review no longer presents those unavailable details as independently recalculable development evidence.
 
-- **Disjoint routes:** no Field-specific advantage. Both architectures retain and recover every route without contamination.
-- **Shared cue:** both retain all ordered continuations, both fail exact branch recovery, and both contaminate equally. Retention alone is clearly insufficient for selection.
-- **Shared prefix:** Field retains all continuations while reservoir retention is lower, but exact recovery remains zero and Field contamination is higher.
-- **Edge reversal:** Field retains more under opposing interference, but exact recovery is unchanged and contamination is higher.
-- **Dense load:** Field has better first-hop coverage and retention, but no exact-route advantage and substantially more contamination.
+## Formal R01-12F family comparison
 
-## Replicated and non-replicated signatures
+The formal family values below are directly present in the retained formal manifest.
 
-The following signatures reproduced from R01-12D to R01-12F:
+| family | Field retention | reservoir retention | Field exact | reservoir exact | Field contamination/route | reservoir contamination/route | first-hop F / R |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| disjoint-routes | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 0.0000 | 0.0000 | 1.000 / 1.000 |
+| shared-cue-branches | 1.0000 | 1.0000 | 0.0000 | 0.0000 | 6.0000 | 6.0000 | 1.000 / 1.000 |
+| shared-prefix-branches | 1.0000 | 0.7778 | 0.0000 | 0.0000 | 4.0000 | 3.3333 | 1.000 / 1.000 |
+| edge-reversal | 1.0000 | 0.9000 | 0.3333 | 0.3333 | 2.0000 | 1.3000 | 1.000 / 1.000 |
+| dense-route-load | 1.0000 | 0.8750 | 0.5000 | 0.5000 | 4.5000 | 3.3750 | 1.000 / 0.875 |
 
-1. Field ordered retention remains 1.0000.
-2. Reservoir ordered retention remains approximately 0.90.
-3. Exact-route recovery remains exactly equal overall and within every family.
-4. Field contamination remains higher overall and in the same families.
-5. Field is never lower in mean retention at the world level, but it is tied in all disjoint and shared-cue worlds.
-6. The family-level direction of retention, precision, contamination, and first-hop coverage is unchanged.
+### Formal-family interpretation
 
-The exact numerical values that did not reproduce identically are limited to small reservoir shifts in edge-reversal and the aggregate induced by them: reservoir aggregate retention changes from 0.9000 to 0.9017, and edge-reversal contamination/route changes from 1.3333 to 1.3000. These do not change the qualitative signature.
+- **Disjoint routes:** no Field-specific advantage; both systems recover cleanly.
+- **Shared cue:** both retain continuations, both fail exact branch recovery, and contamination is equal.
+- **Shared prefix:** Field retains more ordered continuation, but exact recovery remains zero and contamination is higher.
+- **Edge reversal:** Field retains more, but exact recovery is unchanged and contamination is higher.
+- **Dense load:** Field has higher retention and first-hop coverage, but no exact-route advantage and substantially more contamination.
 
-## Formal Field phase diagnosis
+The fixed formal evidence therefore supports a broad continuation/coverage difference, not cleaner route isolation.
 
-The fixed R01-12F Field raw allows Field-internal phase analysis. It does **not** permit an intermediate-phase comparison with reservoir.
+## What the fixed evidence does and does not establish
 
-### Learned-position profile
+### Hypothesis A — Field is generally a stronger memory substrate
 
-| family | route position at probe time | ordered retention | exact-route rate | contamination / route | first-hop coverage |
-|---|---|---:|---:|---:|---:|
-| disjoint-routes | current | 1.0000 | 1.0000 | 0.0000 | 1.0000 |
-| disjoint-routes | prior | 1.0000 | 1.0000 | 0.0000 | 1.0000 |
-| shared-cue-branches | current | 1.0000 | 0.3333 | 3.0000 | 0.6667 |
-| shared-cue-branches | prior | 1.0000 | 0.0000 | 5.0000 | 0.8889 |
-| shared-cue-branches | future/untrained | 0.0000 | 0.0000 | 4.0000 | 0.4444 |
-| shared-prefix-branches | current | 1.0000 | 0.3333 | 2.0000 | 1.0000 |
-| shared-prefix-branches | prior | 1.0000 | 0.0000 | 3.3333 | 1.0000 |
-| shared-prefix-branches | future/untrained | 0.3333 | 0.0000 | 2.6667 | 1.0000 |
-| edge-reversal | current | 1.0000 | 0.6667 | 1.0000 | 1.0000 |
-| edge-reversal | prior | 1.0000 | 0.4667 | 1.6000 | 1.0000 |
-| dense-route-load | current | 1.0000 | 0.6250 | 2.2500 | 0.8125 |
-| dense-route-load | prior | 1.0000 | 0.5393 | 3.3214 | 0.8991 |
-| dense-route-load | future/untrained | 0.0000 | 0.0000 | 1.8536 | 0.1545 |
+**Not supported as general selective-memory superiority.**
 
-The decisive phase signature is not forgetting: previously trained routes retain ordered sequence at 1.0000. The failure is selection. In shared-cue and shared-prefix worlds, prior routes remain retained while exact recovery falls to zero and contamination grows. Shared-prefix also shows activation of not-yet-trained routes, including first-hop coverage of 1.0000. That is difficult to describe as precise memory and is compatible with uncontrolled spreading activation.
+A narrower aggregate statement is supported: under this fixed setup, Field retains more ordered continuation while exact-route recovery is unchanged. The higher contamination prevents treating that as a general quality win.
 
-Dense-load phase progression reinforces the same distinction. As trained-route coverage rises from 0.1250 to 1.0000, contamination/route rises from 0.6750 to 4.5000, while exact recovery finishes at only 0.5000. The broadening is real, but it is not equivalent to route precision.
+### Hypothesis B — Field has higher continuation/coverage but lower precision
 
-## Hypothesis verdicts
+**Best-supported R01-12 interpretation.**
 
-### A. Field is simply a stronger memory substrate
+This simultaneously fits the formal family pattern and the aggregate replication: more ordered continuation, no exact-route advantage, and more off-route activation.
 
-**Not supported as a claim of general selective-memory superiority.**
+### Hypothesis C — the difference is only over-activation / broader activity
 
-A narrow statement is supported: Field is a stronger substrate for retaining ordered continuations under interference. But if memory quality includes exact route recovery and exclusion of irrelevant routes, Field is not stronger on the fixed evidence.
+**Viable but unresolved by R01-12 alone.**
 
-### B. Field is stronger in continuation/coverage but lower in precision
+R01-12 shows that retention and contamination rise together, but it does not contain a registered activity/breadth-matched discriminator. The earlier wording that “untrained branches activate before exposure” was too strong: the route-role label is not activation provenance, and route-unique future-unit activation is not established by this review.
 
-**Best-supported interpretation.**
+A later fresh development protocol, R01-13A, was created specifically to test the breadth/activity explanation without reopening R01-12F. Its result belongs to that separate fixed development record, not retroactively to R01-12F.
 
-This hypothesis explains all major signatures simultaneously: higher ordered retention, higher dense first-hop coverage, unchanged exact-route recovery, and higher contamination.
+## Phase-analysis boundary
 
-### C. The difference is merely over-activation / contamination
+The formal Field raw includes intermediate-role probes, but the resource-matched reservoir does not retain corresponding intermediate-role records. Any Field-only phase description is therefore descriptive of Field dynamics only and cannot establish Field-versus-reservoir phase superiority.
 
-**Partially supported and not resolved.**
-
-Over-activation is a viable explanation because retention and contamination rise together, and some untrained branches activate before exposure. However, the fixed experiment does not measure whether the broadened candidate set later provides useful recoverable options. It therefore cannot distinguish useful plural candidate maintenance from uncontrolled spread.
+To avoid turning route labels into causal provenance, this review does not use the `future_untrained` role to infer that an untrained route-specific branch physically activated before exposure. The claim-grade conclusions above rely only on retained aggregate and formal family metrics.
 
 ## A01 connection
 
-A coherent functional decomposition remains possible:
+A functional decomposition remains possible as an interpretation:
 
 ```text
 RV01 Field
-  retains a broad set of continuation candidates
+  provides broad continuation / candidate availability
         ↓
 A01 external-evidence mechanism
-  selects, weakens, or corrects candidates later
+  may later select, weaken, or correct candidates
 ```
 
-This is an interpretation, not a jointly tested result. R01-12F was not used to tune A01. Moreover, A01-MD-001 identifies its persistent carrier as explicit local causal-support state, not as a demonstrated Field-internal carrier. RV01 therefore supplies candidate breadth; current A01 supplies an explicit selector.
+This was not jointly tested by R01-12F and R01-12F was not used to tune A01. It must not be promoted into evidence of causal-lineage specificity.
 
-## Next experiment boundary
+## Preservation and reproducibility
 
-R01-12F remains closed. A follow-on must be a new RV hypothesis and a new candidate that independently measures:
+The derived post-formal manifest is generated only from retained repository manifests by:
 
-- useful candidate-set coverage after delayed evidence,
-- post-evidence selection precision,
-- off-route activity mass and spatial spread,
-- whether broad early activation predicts later correct recoverability,
-- whether the same benefit survives a resource-matched non-Field substrate with matched activity mass.
+```bash
+python scripts/build_rv01_r01_12_postformal_review.py
+python scripts/build_rv01_r01_12_postformal_review.py --check
+```
 
-The purpose would be to discriminate useful plural retention from uncontrolled spreading activation, not to repair or reopen R01-12F.
+The generator intentionally excludes development family rows and the old Field training-role diagnostic table because the former cannot be reconstructed from retained R01-12D raw rows and the latter is not needed for the supported claim boundary.
+
+The repository still needs a dated `docs/RESULTS_LEDGER.md` entry binding the R01-12 negative/selectivity findings to fixed evidence before this review should be considered fully merge-ready.
 
 ## One-sentence conclusion
 
-> RV01のFieldはresource-matched reservoirより干渉下の順序付きcontinuationと一部のfirst-hop候補を多く保持するが、exact routeをより正確には回復できず、より大きなcontaminationを伴うため、現時点では選択的記憶ではなく広い候補保持substrateとして解釈するのが妥当である。
+> RV01のFieldはresource-matched reservoirより順序付きcontinuationを広く保持する一方、exact routeの回復精度は改善せずcontaminationが大きいため、R01-12単独では選択的記憶の優位性ではなく広い候補保持substrateとして解釈するのが妥当である。
