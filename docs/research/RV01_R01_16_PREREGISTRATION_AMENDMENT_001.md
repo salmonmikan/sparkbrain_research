@@ -27,10 +27,18 @@ A learned edge changing somewhere in the graph is not sufficient to open a
 factor contrast. Before capability, each fixed world/probe cell must receive a
 construction-only reachability certificate computed from:
 
+- the complete registered physical unit inventory, including isolated units;
 - the exact pre-training connection inventory;
 - the exact post-training connection inventory;
 - the preregistered cue source unit(s);
 - the preregistered probe horizon.
+
+The unit inventory is part of the certificate identity. A cue ID absent from
+that inventory fails closed. A valid registered cue on an isolated unit is not
+an error: it yields no reachable changed edges and therefore an ineligible
+factor cell unless another simultaneous registered cue supplies causal reach.
+All connection endpoints must themselves belong to the same registered unit
+inventory.
 
 Reachability is structural and outcome-blind. For each physical edge, traversal
 uses the conservative delay `max(pre_training.delay_ms, post_training.delay_ms)`.
@@ -159,6 +167,7 @@ it is not reassigned to either factor.
 
 Every future R01-16 planned cell must retain, before capability exists:
 
+- complete registered physical unit identities;
 - cue source unit identities;
 - fixed probe horizon;
 - exact pre/post connection hashes;
@@ -170,7 +179,7 @@ Every future R01-16 planned cell must retain, before capability exists:
 - factor eligibility status.
 
 The capability runner must fail closed if the certificate does not reconstruct
-from the retained source inventories and registered cue/horizon.
+from the retained unit/connection inventories and registered cue/horizon.
 
 ## 4. Negative stopping rule refinement
 
