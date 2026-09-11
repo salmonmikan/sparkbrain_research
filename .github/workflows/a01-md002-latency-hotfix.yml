@@ -1,0 +1,59 @@
+name: A01 MD-002 Latency Hotfix
+
+on:
+  push:
+    branches:
+      - "research/v061-a01-md-002-development"
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-actions[bot]'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Bind external-effect latency to retained observation marker
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          source = Path("src/sparkbrain/v061_a01/md002_protocol.py")
+          text = source.read_text(encoding="utf-8")
+          old_validate = '''        samples = self.samples\n        if not samples:\n            raise ValueError("MD-002 runtime trace contains no counter samples")\n        for previous, current in zip(samples, samples[1:], strict=False):\n            if current.step <= previous.step:\n                raise ValueError("runtime counter steps must be strictly increasing")\n            if current.state_update_count < previous.state_update_count:\n                raise ValueError("state update counter must be cumulative")\n            if current.router_operation_count < previous.router_operation_count:\n                raise ValueError("router operation counter must be cumulative")\n            if previous.external_effect_observed and not current.external_effect_observed:\n                raise ValueError("external-effect observation must be cumulative")\n'''
+          new_validate = '''        samples = self.samples\n        if not samples:\n            raise ValueError("MD-002 runtime trace contains no counter samples")\n        for previous, current in zip(samples, samples[1:], strict=False):\n            if current.step <= previous.step:\n                raise ValueError("runtime counter steps must be strictly increasing")\n            if current.state_update_count < previous.state_update_count:\n                raise ValueError("state update counter must be cumulative")\n            if current.router_operation_count < previous.router_operation_count:\n                raise ValueError("router operation counter must be cumulative")\n            if previous.external_effect_observed and not current.external_effect_observed:\n                raise ValueError("external-effect observation must be cumulative")\n\n        observation_steps = self.external_observation_steps\n        if len(observation_steps) != 1:\n            raise ValueError("runtime trace requires exactly one external-observation marker")\n        observation_step = observation_steps[0]\n        if not samples[0].step <= observation_step <= samples[-1].step:\n            raise ValueError("external-observation marker lies outside counter sample range")\n        effect_steps = tuple(\n            sample.step for sample in samples if sample.external_effect_observed\n        )\n        if effect_steps and effect_steps[0] < observation_step:\n            raise ValueError("external effect cannot precede external observation")\n'''
+          if old_validate not in text:
+              raise SystemExit("expected MeasuredDynamicCounters validation block not found")
+          text = text.replace(old_validate, new_validate, 1)
+
+          old_samples = '''    @property\n    def samples(self) -> tuple[DynamicCounterSample, ...]:\n        rows: list[DynamicCounterSample] = []\n        for record in self.runtime_trace:\n            if record.get("type") != "md002-counter-sample":\n                continue\n            sample_state = record.get("sample")\n            if not isinstance(sample_state, dict):\n                raise ValueError("counter-sample trace record requires a sample object")\n            rows.append(DynamicCounterSample.from_state_dict(sample_state))\n        return tuple(rows)\n\n    @property\n    def external_effect_latency_steps(self) -> int | None:\n        self.validate()\n        samples = self.samples\n        start = samples[0].step\n        for sample in samples:\n            if sample.external_effect_observed:\n                return sample.step - start\n        return None\n'''
+          new_samples = '''    @property\n    def samples(self) -> tuple[DynamicCounterSample, ...]:\n        rows: list[DynamicCounterSample] = []\n        for record in self.runtime_trace:\n            if record.get("type") != "md002-counter-sample":\n                continue\n            sample_state = record.get("sample")\n            if not isinstance(sample_state, dict):\n                raise ValueError("counter-sample trace record requires a sample object")\n            rows.append(DynamicCounterSample.from_state_dict(sample_state))\n        return tuple(rows)\n\n    @property\n    def external_observation_steps(self) -> tuple[int, ...]:\n        rows: list[int] = []\n        for record in self.runtime_trace:\n            if record.get("type") != "md002-external-observation":\n                continue\n            step = record.get("step")\n            if type(step) is not int or step < 0:\n                raise ValueError("external-observation marker requires non-negative integer step")\n            rows.append(step)\n        return tuple(rows)\n\n    @property\n    def external_effect_latency_steps(self) -> int | None:\n        self.validate()\n        observation_step = self.external_observation_steps[0]\n        for sample in self.samples:\n            if sample.external_effect_observed:\n                return sample.step - observation_step\n        return None\n'''
+          if old_samples not in text:
+              raise SystemExit("expected latency property block not found")
+          source.write_text(text.replace(old_samples, new_samples, 1), encoding="utf-8")
+
+          tests = Path("tests/test_v061_a01_md002_protocol.py")
+          t = tests.read_text(encoding="utf-8")
+          old_helper = '''def counter_trace(samples):\n    return tuple(\n        {\n            "type": "md002-counter-sample",\n            "sample": sample.state_dict(),\n        }\n        for sample in samples\n    )\n'''
+          new_helper = '''def counter_trace(samples, *, observation_step=None):\n    rows = []\n    if observation_step is not None:\n        rows.append({"type": "md002-external-observation", "step": observation_step})\n    rows.extend(\n        {\n            "type": "md002-counter-sample",\n            "sample": sample.state_dict(),\n        }\n        for sample in samples\n    )\n    return tuple(rows)\n'''
+          if old_helper not in t:
+              raise SystemExit("expected counter_trace helper not found")
+          t = t.replace(old_helper, new_helper, 1)
+          t = t.replace('''    trace = counter_trace(samples)\n    measured = MeasuredDynamicCounters(trace, canonical_sha256(trace))\n    measured.validate()\n    assert measured.external_effect_latency_steps == 2\n''', '''    trace = counter_trace(samples, observation_step=11)\n    measured = MeasuredDynamicCounters(trace, canonical_sha256(trace))\n    measured.validate()\n    assert measured.external_effect_latency_steps == 1\n''', 1)
+          t = t.replace('''    trace = counter_trace(samples)\n    with pytest.raises(ValueError, match="trace digest"):\n''', '''    trace = counter_trace(samples, observation_step=0)\n    with pytest.raises(ValueError, match="trace digest"):\n''', 1)
+          insert_after = '''    with pytest.raises(ValueError, match="state update counter"):\n        MeasuredDynamicCounters(trace, canonical_sha256(trace)).validate()\n'''
+          addition = '''\n\ndef test_dynamic_latency_requires_retained_external_observation_marker():\n    samples = (\n        DynamicCounterSample(10, False, 0, 0, 10, 1),\n        DynamicCounterSample(11, False, 1, 1, 10, 1),\n        DynamicCounterSample(13, True, 2, 2, 10, 1),\n    )\n    no_marker = counter_trace(samples)\n    with pytest.raises(ValueError, match="exactly one external-observation marker"):\n        MeasuredDynamicCounters(no_marker, canonical_sha256(no_marker)).validate()\n\n    observed = counter_trace(samples, observation_step=11)\n    measured = MeasuredDynamicCounters(observed, canonical_sha256(observed))\n    assert measured.external_effect_latency_steps == 2\n\n\ndef test_dynamic_latency_rejects_effect_before_external_observation():\n    samples = (\n        DynamicCounterSample(10, False, 0, 0, 10, 1),\n        DynamicCounterSample(11, True, 1, 1, 10, 1),\n        DynamicCounterSample(12, True, 2, 2, 10, 1),\n    )\n    trace = counter_trace(samples, observation_step=12)\n    with pytest.raises(ValueError, match="cannot precede external observation"):\n        MeasuredDynamicCounters(trace, canonical_sha256(trace)).validate()\n'''
+          if insert_after not in t:
+              raise SystemExit("expected dynamic validation test insertion point not found")
+          tests.write_text(t.replace(insert_after, insert_after + addition, 1), encoding="utf-8")
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/sparkbrain/v061_a01/md002_protocol.py tests/test_v061_a01_md002_protocol.py
+          git commit -m "fix(a01): measure MD-002 latency from external observation"
+          git push origin HEAD:research/v061-a01-md-002-development
