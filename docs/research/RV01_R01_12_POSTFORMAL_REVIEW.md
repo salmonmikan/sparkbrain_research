@@ -75,7 +75,7 @@ This simultaneously fits the formal family pattern and the aggregate replication
 
 R01-12 shows that retention and contamination rise together, but it does not contain a registered activity/breadth-matched discriminator. The earlier wording that “untrained branches activate before exposure” was too strong: the route-role label is not activation provenance, and route-unique future-unit activation is not established by this review.
 
-A later fresh development protocol, R01-13A, was created specifically to test the breadth/activity explanation without reopening R01-12F. Its result belongs to that separate fixed development record, not retroactively to R01-12F.
+Any later activity/breadth-matched discriminator must remain a separate development protocol with its own evidence binding; it cannot be used retroactively to reinterpret or tune the consumed R01-12F candidate.
 
 ## Phase-analysis boundary
 
@@ -108,7 +108,7 @@ python scripts/build_rv01_r01_12_postformal_review.py --check
 
 The generator intentionally excludes development family rows and the old Field training-role diagnostic table because the former cannot be reconstructed from retained R01-12D raw rows and the latter is not needed for the supported claim boundary.
 
-The repository still needs a dated `docs/RESULTS_LEDGER.md` entry binding the R01-12 negative/selectivity findings to fixed evidence before this review should be considered fully merge-ready.
+The status record must agree with the consumed R01-12F boundary, and the repository still needs a dated `docs/RESULTS_LEDGER.md` entry binding the R01-12 negative/selectivity findings to fixed evidence before this review should be considered fully merge-ready.
 
 ## One-sentence conclusion
 
