@@ -1,6 +1,6 @@
 """Build the reproducible R01-12 post-formal review manifest.
 
-Only retained repository manifests are consumed.  R01-12D raw rows were not
+Only retained repository manifests are consumed. R01-12D raw rows were not
 preserved locally, so this generator deliberately does not reconstruct or
 invent development family/phase metrics.
 """
@@ -40,15 +40,23 @@ def _formal_family_metrics(formal: dict) -> dict:
         result[family] = {
             "field": {
                 "contamination_per_route": row["field_contamination_count"] / routes,
-                "exact_route_recovery_rate": row["field_exact_routes_recovered"] / routes,
+                "exact_route_recovery_rate": (
+                    row["field_exact_routes_recovered"] / routes
+                ),
                 "first_hop_coverage": row["field_mean_first_hop_coverage"],
                 "ordered_retention": row["field_route_weighted_ordered_retention"],
             },
             "reservoir": {
-                "contamination_per_route": row["reservoir_contamination_count"] / routes,
-                "exact_route_recovery_rate": row["reservoir_exact_routes_recovered"] / routes,
+                "contamination_per_route": (
+                    row["reservoir_contamination_count"] / routes
+                ),
+                "exact_route_recovery_rate": (
+                    row["reservoir_exact_routes_recovered"] / routes
+                ),
                 "first_hop_coverage": row["reservoir_mean_first_hop_coverage"],
-                "ordered_retention": row["reservoir_route_weighted_ordered_retention"],
+                "ordered_retention": (
+                    row["reservoir_route_weighted_ordered_retention"]
+                ),
             },
         }
     return result
@@ -66,8 +74,6 @@ def build_manifest() -> dict:
         raise RuntimeError("unexpected development experiment")
     if formal["candidate_id"] != "rv01-r01-12-interference-heldout-v1":
         raise RuntimeError("unexpected formal candidate")
-    if formal["execution"]["execution_policy"] if "execution_policy" in formal["execution"] else None:
-        raise RuntimeError("execution policy unexpectedly nested")
     if formal["execution_policy"] != "one-way-no-rerun":
         raise RuntimeError("formal evidence is not marked one-way/no-rerun")
 
@@ -76,35 +82,70 @@ def build_manifest() -> dict:
             "development": {
                 "field": {
                     "contamination_count": dev_aggregate["field_contamination_count"],
-                    "contamination_per_route": dev_aggregate["field_contamination_count"] / dev_routes,
+                    "contamination_per_route": (
+                        dev_aggregate["field_contamination_count"] / dev_routes
+                    ),
                     "exact_route_count": dev_aggregate["field_exact_route_count"],
-                    "exact_route_recovery_rate": dev_aggregate["field_exact_route_count"] / dev_routes,
-                    "ordered_retention": dev_aggregate["field_mean_ordered_retention_route_weighted"],
+                    "exact_route_recovery_rate": (
+                        dev_aggregate["field_exact_route_count"] / dev_routes
+                    ),
+                    "ordered_retention": dev_aggregate[
+                        "field_mean_ordered_retention_route_weighted"
+                    ],
                 },
                 "reservoir": {
-                    "contamination_count": dev_aggregate["reservoir_contamination_count"],
-                    "contamination_per_route": dev_aggregate["reservoir_contamination_count"] / dev_routes,
+                    "contamination_count": dev_aggregate[
+                        "reservoir_contamination_count"
+                    ],
+                    "contamination_per_route": (
+                        dev_aggregate["reservoir_contamination_count"] / dev_routes
+                    ),
                     "exact_route_count": dev_aggregate["reservoir_exact_route_count"],
-                    "exact_route_recovery_rate": dev_aggregate["reservoir_exact_route_count"] / dev_routes,
-                    "ordered_retention": dev_aggregate["reservoir_mean_ordered_retention_route_weighted"],
+                    "exact_route_recovery_rate": (
+                        dev_aggregate["reservoir_exact_route_count"] / dev_routes
+                    ),
+                    "ordered_retention": dev_aggregate[
+                        "reservoir_mean_ordered_retention_route_weighted"
+                    ],
                 },
             },
             "formal": {
                 "field": {
-                    "contamination_count": formal_aggregate["field_contamination_count"],
-                    "contamination_per_route": formal_aggregate["field_contamination_count"] / formal_routes,
-                    "exact_route_count": formal_aggregate["field_exact_routes_recovered"],
-                    "exact_route_recovery_rate": formal_aggregate["field_exact_routes_recovered"] / formal_routes,
+                    "contamination_count": formal_aggregate[
+                        "field_contamination_count"
+                    ],
+                    "contamination_per_route": (
+                        formal_aggregate["field_contamination_count"] / formal_routes
+                    ),
+                    "exact_route_count": formal_aggregate[
+                        "field_exact_routes_recovered"
+                    ],
+                    "exact_route_recovery_rate": (
+                        formal_aggregate["field_exact_routes_recovered"] / formal_routes
+                    ),
                     "first_hop_coverage": _weighted_first_hop(formal, "field"),
-                    "ordered_retention": formal_aggregate["field_route_weighted_ordered_retention"],
+                    "ordered_retention": formal_aggregate[
+                        "field_route_weighted_ordered_retention"
+                    ],
                 },
                 "reservoir": {
-                    "contamination_count": formal_aggregate["reservoir_contamination_count"],
-                    "contamination_per_route": formal_aggregate["reservoir_contamination_count"] / formal_routes,
-                    "exact_route_count": formal_aggregate["reservoir_exact_routes_recovered"],
-                    "exact_route_recovery_rate": formal_aggregate["reservoir_exact_routes_recovered"] / formal_routes,
+                    "contamination_count": formal_aggregate[
+                        "reservoir_contamination_count"
+                    ],
+                    "contamination_per_route": (
+                        formal_aggregate["reservoir_contamination_count"] / formal_routes
+                    ),
+                    "exact_route_count": formal_aggregate[
+                        "reservoir_exact_routes_recovered"
+                    ],
+                    "exact_route_recovery_rate": (
+                        formal_aggregate["reservoir_exact_routes_recovered"]
+                        / formal_routes
+                    ),
                     "first_hop_coverage": _weighted_first_hop(formal, "reservoir"),
-                    "ordered_retention": formal_aggregate["reservoir_route_weighted_ordered_retention"],
+                    "ordered_retention": formal_aggregate[
+                        "reservoir_route_weighted_ordered_retention"
+                    ],
                 },
             },
         },
@@ -132,13 +173,19 @@ def build_manifest() -> dict:
         },
         "formal_family_metrics": _formal_family_metrics(formal),
         "hypothesis_verdicts": {
-            "A_field_is_generally_stronger_memory_substrate": "NOT_SUPPORTED_AS_GENERAL_SELECTIVE_MEMORY_SUPERIORITY",
+            "A_field_is_generally_stronger_memory_substrate": (
+                "NOT_SUPPORTED_AS_GENERAL_SELECTIVE_MEMORY_SUPERIORITY"
+            ),
             "B_field_has_high_coverage_but_low_precision": "SUPPORTED_BEST_FIT",
-            "C_difference_is_only_overactivation": "VIABLE_BUT_UNRESOLVED_BY_R01_12",
+            "C_difference_is_only_overactivation": (
+                "VIABLE_BUT_UNRESOLVED_BY_R01_12"
+            ),
         },
         "reproducibility_boundary": {
             "development_family_metrics_generated": False,
-            "development_reason": "raw per-world/per-probe rows are not retained locally",
+            "development_reason": (
+                "raw per-world/per-probe rows are not retained locally"
+            ),
             "formal_family_metrics_source": "retained formal_result_manifest.json",
             "training_role_diagnostics_generated": False,
         },
