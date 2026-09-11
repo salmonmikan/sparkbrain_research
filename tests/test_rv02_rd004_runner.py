@@ -39,13 +39,17 @@ def minimal_result(**overrides):
     return result
 
 
-def probe_pair(status: str) -> dict:
+def probe_pair(status: str, route_index: int = 0) -> dict:
     row = {
         "status": status,
         "shared_snapshot_hash": "same",
         "cue_time_ms": 106.5,
     }
-    return {"natural": dict(row), "boundary_zero": dict(row)}
+    return {
+        "route_index": route_index,
+        "natural": dict(row),
+        "boundary_zero": dict(row),
+    }
 
 
 def test_rd004_matrix_identity_is_same_exposed_18_cells_as_rd003() -> None:
@@ -103,8 +107,30 @@ def test_offline_verifier_rejects_probe_clock_drift() -> None:
         RUNNER.verify_result(result)
 
 
-def test_source_inventory_binds_new_runner_core_contract_and_tests() -> None:
+def test_probe_inventory_rejects_empty_or_missing_registered_routes() -> None:
+    world = RUNNER.world_for_family("disjoint-routes")
+    result = {
+        "status": "complete",
+        "probes": {"disabled": (), "causal": (), "shuffled": ()},
+    }
+    with pytest.raises(ValueError, match="probe route count mismatch"):
+        RUNNER._validate_probe_inventory(result, world)
+
+    count = len(world["routes"])
+    probes = {
+        mode: tuple(probe_pair("complete", index) for index in range(count))
+        for mode in ("disabled", "causal", "shuffled")
+    }
+    probes["causal"] = probes["causal"][:-1]
+    with pytest.raises(ValueError, match="probe route count mismatch"):
+        RUNNER._validate_probe_inventory({"status": "complete", "probes": probes}, world)
+
+
+def test_source_inventory_binds_transitive_runtime_and_new_runner_files() -> None:
     inventory = RUNNER.source_inventory(ROOT)
+    assert "src/sparkbrain/v04/field.py" in inventory
+    assert "src/sparkbrain/v04/topology.py" in inventory
+    assert "src/sparkbrain/research/rv01/direct_field_plasticity.py" in inventory
     assert "src/sparkbrain/research/rv02_rd004_online.py" in inventory
     assert "src/sparkbrain/research/rv02_rd004_probe_clock.py" in inventory
     assert "docs/research/RV02_RD004_RELATIVE_PROBE_CLOCK_PREREG.md" in inventory
