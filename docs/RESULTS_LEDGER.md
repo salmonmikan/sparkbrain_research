@@ -1055,3 +1055,11 @@ contract correction only.
 - Claim impact: none. C06 remains negative; C15 residual superiority remains unsupported; C16
   remains candidate-level; C17 v1 remains an implementation failure and C17 v2 remains
   scientifically unsupported; C19 remains blocked/not evaluated; CL-007 and CL-008 remain E0.
+
+
+## 2026-09-11 — RV01 R01-13A activity-matched development discrimination
+
+- Status: development `completed`; stronger interference-retention interpretation `not_supported`; R01-13B state-locus admission `not_admitted`; held-out `not_executed`.
+- Fixed evidence: execution source `241669c92a0fd93b1f98ffe5e5dcaf8fd97c4de2`; raw SHA-256 `1ab43a8950be572b163e7bba4950b23d5258933e5463dc3d944f41eaea2adf60`; retained locally at `artifacts/research/rv01/r01_13/development_result.json`; runtime bound to CPython 3.11.15.
+- Negative result: equal-event matching was non-specific because a Field advantage also appeared in the disjoint reference family; matching distinct candidate breadth collapsed the registered ordered-retention gap across families. The breadth/structured-over-activation null is therefore sufficient for the registered retention difference.
+- Boundary: exact-route superiority is not supported; near-zero world deltas are reporting ties under the explicit `1e-12` tolerance; historical raw bytes/suite hash are unchanged and are not rerun or rescored.
