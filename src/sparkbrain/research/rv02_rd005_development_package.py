@@ -99,9 +99,13 @@ class RD005SourceManifest:
 
     def state_dict(self) -> dict[str, object]:
         self.validate()
+        entries = [
+            row.state_dict()
+            for row in sorted(self.entries, key=lambda item: item.path)
+        ]
         return {
             "source_git_sha": self.source_git_sha,
-            "entries": [row.state_dict() for row in sorted(self.entries, key=lambda item: item.path)],
+            "entries": entries,
         }
 
     @property
@@ -121,7 +125,9 @@ class RD005CollisionRegistry:
         if not self.registry_id:
             raise ValueError("RD005 collision registry requires a stable registry_id")
         if self.authoritative_complete is not True:
-            raise ValueError("RD005 collision registry must be explicitly authoritative and complete")
+            raise ValueError(
+                "RD005 collision registry must be explicitly authoritative and complete"
+            )
         if not self.source_paths:
             raise ValueError("RD005 collision registry requires retained source paths")
         for path in self.source_paths:
