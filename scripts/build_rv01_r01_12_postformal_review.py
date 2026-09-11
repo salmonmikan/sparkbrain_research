@@ -8,17 +8,32 @@ invent development family/phase metrics.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DEV_PATH = ROOT / "artifacts/research/rv01/r01_12d/development_result_manifest.json"
 FORMAL_PATH = ROOT / "artifacts/research/rv01/r01_12f/formal_result_manifest.json"
+FORMAL_RAW_PATH = ROOT / "artifacts/research/rv01/r01_12f/heldout_formal_result.json"
 OUTPUT_PATH = ROOT / "artifacts/research/rv01/r01_12_postformal/review_manifest.json"
 
 
 def _load(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _verify_formal_raw(formal: dict) -> str:
+    if not FORMAL_RAW_PATH.is_file():
+        raise RuntimeError("retained R01-12F raw result is missing")
+    actual = hashlib.sha256(FORMAL_RAW_PATH.read_bytes()).hexdigest()
+    expected = formal["result_binding"]["raw_result_file_sha256"]
+    if actual != expected:
+        raise RuntimeError(
+            "retained R01-12F raw result hash mismatch: "
+            f"expected={expected} actual={actual}"
+        )
+    return actual
 
 
 def _weighted_first_hop(formal: dict, architecture: str) -> float:
@@ -65,6 +80,7 @@ def _formal_family_metrics(formal: dict) -> dict:
 def build_manifest() -> dict:
     dev = _load(DEV_PATH)
     formal = _load(FORMAL_PATH)
+    formal_raw_sha256 = _verify_formal_raw(formal)
     dev_aggregate = dev["aggregate"]
     formal_aggregate = formal["aggregate"]
     dev_routes = int(dev_aggregate["route_count"])
@@ -166,7 +182,8 @@ def build_manifest() -> dict:
         },
         "formal": {
             "candidate_id": formal["candidate_id"],
-            "raw_sha256": formal["result_binding"]["raw_result_file_sha256"],
+            "raw_sha256": formal_raw_sha256,
+            "raw_sha256_verified_from_retained_file": True,
             "route_probe_count": formal_routes,
             "source_git_sha": formal["execution"]["frozen_source_git_sha"],
             "world_count": formal["cardinality"]["world_count"],
@@ -187,6 +204,7 @@ def build_manifest() -> dict:
                 "raw per-world/per-probe rows are not retained locally"
             ),
             "formal_family_metrics_source": "retained formal_result_manifest.json",
+            "formal_raw_integrity_source": "retained heldout_formal_result.json",
             "training_role_diagnostics_generated": False,
         },
         "schema_version": "rv01-r01-12-postformal-review-v2",
