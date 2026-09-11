@@ -22,7 +22,9 @@ def test_r01_15_world_grid_is_fresh_fixed_and_deterministic() -> None:
     right = development_post_spike_suppression_worlds()
     assert len(left) == len(tuple(InterferenceFamily)) * 5
     assert [row.state_dict() for row in left] == [row.state_dict() for row in right]
-    assert post_spike_suppression_world_grid_hash(left) == post_spike_suppression_world_grid_hash(right)
+    assert post_spike_suppression_world_grid_hash(left) == (
+        post_spike_suppression_world_grid_hash(right)
+    )
     assert all(row.phase is InterferencePhase.DEVELOPMENT for row in left)
     assert all(row.unit_count == 96 for row in left)
 
