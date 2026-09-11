@@ -194,7 +194,8 @@ def restore_a01_p2_arm(arm_input: P2WorldArmInput) -> RestoredA01P2Arm:
             raise ValueError("restored return-address state does not round-trip to frozen bytes")
     if canonical_bytes(world_relation) != arm_input.world_relation:
         raise ValueError("restored world relation does not round-trip to frozen bytes")
-    if canonical_bytes([row.as_dict() for row in evidence]) != arm_input.admissible_external_evidence:
+    evidence_bytes = canonical_bytes([row.as_dict() for row in evidence])
+    if evidence_bytes != arm_input.admissible_external_evidence:
         raise ValueError("restored external evidence does not round-trip to frozen bytes")
 
     return RestoredA01P2Arm(
