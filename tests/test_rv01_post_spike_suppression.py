@@ -121,7 +121,7 @@ def test_refractory_neutralization_affects_later_arrival_without_changing_queue(
             SynapticArrival(
                 time_ms=11.0,
                 target_id=0,
-                current=0.6,
+                current=0.7,
                 source_id=None,
                 pulse_id="second",
                 novelty=0.0,
