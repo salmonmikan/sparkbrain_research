@@ -5,12 +5,8 @@ from pathlib import Path
 
 import pytest
 
+import sparkbrain.research.rv02_rd004_online as rd004
 from sparkbrain.research.rv02_rd003_online import planned_rd003_cells
-from sparkbrain.research.rv02_rd004_online import (
-    RD004_PROTOCOL,
-    _classify_probe_status,
-    planned_rd004_cells,
-)
 from sparkbrain.research.rv02_scale import digest
 
 
@@ -24,7 +20,7 @@ SPEC.loader.exec_module(RUNNER)
 
 def minimal_result(**overrides):
     result = {
-        "protocol": RD004_PROTOCOL,
+        "protocol": rd004.RD004_PROTOCOL,
         "status": "incomplete_native_guard_training",
         "formal_execution_allowed": False,
         "comparative_capability_claim_allowed": False,
@@ -53,8 +49,8 @@ def probe_pair(status: str) -> dict:
 
 
 def test_rd004_matrix_identity_is_same_exposed_18_cells_as_rd003() -> None:
-    assert planned_rd004_cells() == planned_rd003_cells()
-    assert len(planned_rd004_cells()) == 18
+    assert rd004.planned_rd004_cells() == planned_rd003_cells()
+    assert len(rd004.planned_rd004_cells()) == 18
 
 
 def test_rd004_status_classifier_is_fail_closed() -> None:
@@ -62,15 +58,15 @@ def test_rd004_status_classifier_is_fail_closed() -> None:
         mode: (probe_pair("complete"),)
         for mode in ("disabled", "causal", "shuffled")
     }
-    assert _classify_probe_status(complete) == "complete"
+    assert rd004._classify_probe_status(complete) == "complete"
 
     incomplete = {mode: tuple(rows) for mode, rows in complete.items()}
     incomplete["causal"] = (probe_pair("incomplete_native_guard_probe"),)
-    assert _classify_probe_status(incomplete) == "incomplete_native_guard_probe"
+    assert rd004._classify_probe_status(incomplete) == "incomplete_native_guard_probe"
 
     unknown = {mode: tuple(rows) for mode, rows in complete.items()}
     unknown["shuffled"] = (probe_pair("unexpected"),)
-    assert _classify_probe_status(unknown) == "incomplete_integrity_failure"
+    assert rd004._classify_probe_status(unknown) == "incomplete_integrity_failure"
 
 
 def test_offline_verifier_accepts_retained_training_guard_without_scoring() -> None:
