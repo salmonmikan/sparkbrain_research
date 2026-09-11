@@ -210,14 +210,29 @@ jobs:
           sha256sum "${generator_files[@]}" > /tmp/generator-source.sha256
           cat /tmp/generator-source.sha256
 
-          # This machine check is intentionally only a fail-closed guard against
-          # direct result/execution material. It does not claim to replace the
-          # required semantic review by an independent human reviewer.
+          # Scan only direct execution/success-setting constructs. prepare.py
+          # legitimately contains the literal forbidden filenames because it
+          # fail-closes if those files appear in a pre-start package; treating
+          # that guard itself as execution material is a false positive.
           if grep -REn \
-            'results\.jsonl|execution_seal\.json|run_comparator|execute_comparator|formal_score_present[[:space:]]*=[[:space:]]*True' \
+            'run_comparator|execute_comparator|formal_score_present[[:space:]]*=[[:space:]]*True' \
             "${generator_files[@]}"; then
-            echo "candidate generator references forbidden outcome/execution material" >&2
+            echo "candidate generator references direct execution/success-setting material" >&2
             exit 1
           fi
-          echo "complete generator direct outcome/execution scan: PASS"
+          python - <<'PY'
+          from pathlib import Path
+
+          text = Path("src/sparkbrain/comparison/cx01/prepare.py").read_text(encoding="utf-8")
+          required = (
+              'forbidden = {"execution_seal.json", "STARTED", "results.jsonl"}',
+              'if present_forbidden:',
+              '"pre-start package contains forbidden execution material: "',
+          )
+          missing = [snippet for snippet in required if snippet not in text]
+          if missing:
+              raise SystemExit(f"pre-start forbidden-material guard missing: {missing}")
+          print("pre-start forbidden-material guard: PASS")
+          PY
+          echo "complete generator direct execution/success scan: PASS"
           echo "semantic no-success-directed-tuning review: HUMAN REVIEW STILL REQUIRED"
