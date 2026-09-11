@@ -93,7 +93,9 @@ def execute_p2_attribution_subepisode(
     try:
         response_target = relation.mapping[subepisode.proposal_id]
     except KeyError as exc:
-        raise ValueError("P2 scheduled proposal is absent from the anonymous world relation") from exc
+        raise ValueError(
+            "P2 scheduled proposal is absent from the anonymous world relation"
+        ) from exc
 
     boundary = replace(
         restored.boundary,
