@@ -11,7 +11,7 @@ from __future__ import annotations
 import hashlib
 import json
 import math
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, field
 from typing import Any, Literal
 
 from sparkbrain.research.rv02_rd003_online import (
@@ -116,6 +116,16 @@ class InspectedClock:
         return {"time_ms": float(self.time_ms), "spikes": list(self.spikes)}
 
 
+@dataclass(slots=True)
+class _CellConstructionTrace:
+    """Partial construction evidence retained without retrying fallible setup."""
+
+    topology_sha256: str | None = None
+    ordinary_schedule: tuple[dict[str, Any], ...] | None = None
+    connection_rows: tuple[dict[str, Any], ...] | None = None
+    inspected_clocks: list[InspectedClock] = field(default_factory=list)
+
+
 @dataclass(frozen=True, slots=True)
 class RD005ConstructionCell:
     cell_id: str
@@ -145,12 +155,19 @@ class RD005ConstructionCell:
         if self.status == "CONSTRUCTION_INTEGRITY_FAILURE":
             if not self.error:
                 raise ValueError("RD005 integrity-failure cell must retain its error")
+            if self.topology_sha256 is not None:
+                _require_sha256(self.topology_sha256, name="topology_sha256")
+            if self.ordinary_schedule_sha256 is not None:
+                if digest(self.ordinary_schedule) != self.ordinary_schedule_sha256:
+                    raise ValueError("RD005 partial schedule hash does not match retained rows")
+            if self.connection_rows_sha256 is not None:
+                if digest(self.connection_rows) != self.connection_rows_sha256:
+                    raise ValueError("RD005 partial connection hash does not match retained rows")
+            for row in self.inspected_clocks:
+                row.state_dict()
             return
 
-        topology_sha256 = _require_sha256(
-            self.topology_sha256,
-            name="topology_sha256",
-        )
+        _require_sha256(self.topology_sha256, name="topology_sha256")
         schedule_sha256 = _require_sha256(
             self.ordinary_schedule_sha256,
             name="ordinary_schedule_sha256",
@@ -159,8 +176,6 @@ class RD005ConstructionCell:
             self.connection_rows_sha256,
             name="connection_rows_sha256",
         )
-        if topology_sha256 != self.topology_sha256:
-            raise AssertionError("unreachable topology digest mismatch")
         if digest(self.ordinary_schedule) != schedule_sha256:
             raise ValueError("RD005 ordinary schedule hash does not match retained rows")
         if digest(self.connection_rows) != connection_sha256:
@@ -323,27 +338,30 @@ def _construct_cell(
     config: ScaleStudyConfig,
     world: dict[str, Any],
     scale: int,
+    *,
+    trace: _CellConstructionTrace,
 ) -> RD005ConstructionCell:
     audit = audit_scale(config, world, scale)
+    trace.topology_sha256 = str(audit["topology_hash"])
     field = _new_gained_field(config, world, scale)
     connections = _connection_snapshots(field)
     connection_rows = _connection_rows(field)
+    trace.connection_rows = connection_rows
     schedule = _rd005_training_schedule(world)
-    inspected: list[InspectedClock] = []
+    trace.ordinary_schedule = schedule
 
     for row in schedule:
         clock = float(row["time_ms"])
         spikes = tuple(field.run_until(clock))
-        inspected.append(
-            InspectedClock(
-                time_ms=clock,
-                spikes=tuple(
-                    spike.as_dict()
-                    for spike in spikes
-                    if spike.unit_id not in PORTS
-                ),
-            )
+        inspected = InspectedClock(
+            time_ms=clock,
+            spikes=tuple(
+                spike.as_dict()
+                for spike in spikes
+                if spike.unit_id not in PORTS
+            ),
         )
+        trace.inspected_clocks.append(inspected)
         return_time = clock + RD005_RETURN_OFFSET_MS
         selected = _selected_batch(
             spikes=spikes,
@@ -392,12 +410,12 @@ def _construct_cell(
                 world_id=str(world["world_id"]),
                 world_sha256=digest(world),
                 evidence_sha256=str(world["evidence_hash"]),
-                topology_sha256=str(audit["topology_hash"]),
+                topology_sha256=trace.topology_sha256,
                 ordinary_schedule=schedule,
                 ordinary_schedule_sha256=digest(schedule),
                 connection_rows=connection_rows,
                 connection_rows_sha256=digest(connection_rows),
-                inspected_clocks=tuple(inspected),
+                inspected_clocks=tuple(trace.inspected_clocks),
                 selected_clock_ms=clock,
                 eligibility_events=tuple(eligibility),
                 return_events=tuple(returns),
@@ -421,12 +439,12 @@ def _construct_cell(
         world_id=str(world["world_id"]),
         world_sha256=digest(world),
         evidence_sha256=str(world["evidence_hash"]),
-        topology_sha256=str(audit["topology_hash"]),
+        topology_sha256=trace.topology_sha256,
         ordinary_schedule=schedule,
         ordinary_schedule_sha256=digest(schedule),
         connection_rows=connection_rows,
         connection_rows_sha256=digest(connection_rows),
-        inspected_clocks=tuple(inspected),
+        inspected_clocks=tuple(trace.inspected_clocks),
         selected_clock_ms=None,
         eligibility_events=(),
         return_events=(),
@@ -455,9 +473,12 @@ def build_rd005_construction_artifact(
         world_sha256 = digest(world)
         evidence_sha256 = str(world["evidence_hash"])
         for scale in config.scales:
+            trace = _CellConstructionTrace()
             try:
-                cell = _construct_cell(config, world, scale)
-            except Exception as exc:  # preserve construction failure as data
+                cell = _construct_cell(config, world, scale, trace=trace)
+            except Exception as exc:  # preserve partial construction failure evidence
+                schedule = trace.ordinary_schedule or ()
+                connection_rows = trace.connection_rows or ()
                 cell = RD005ConstructionCell(
                     cell_id=f"{world_id}|scale={scale}",
                     family=family,
@@ -465,12 +486,16 @@ def build_rd005_construction_artifact(
                     world_id=world_id,
                     world_sha256=world_sha256,
                     evidence_sha256=evidence_sha256,
-                    topology_sha256=None,
-                    ordinary_schedule=(),
-                    ordinary_schedule_sha256=None,
-                    connection_rows=(),
-                    connection_rows_sha256=None,
-                    inspected_clocks=(),
+                    topology_sha256=trace.topology_sha256,
+                    ordinary_schedule=schedule,
+                    ordinary_schedule_sha256=(
+                        digest(schedule) if trace.ordinary_schedule is not None else None
+                    ),
+                    connection_rows=connection_rows,
+                    connection_rows_sha256=(
+                        digest(connection_rows) if trace.connection_rows is not None else None
+                    ),
+                    inspected_clocks=tuple(trace.inspected_clocks),
                     selected_clock_ms=None,
                     eligibility_events=(),
                     return_events=(),
