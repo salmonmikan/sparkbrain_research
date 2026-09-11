@@ -31,7 +31,7 @@ jobs:
           frozen_sha="$(git rev-parse "refs/remotes/origin/${FREEZE_REF}")"
           test "$(git rev-parse HEAD)" = "${frozen_sha}"
           test "${GITHUB_SHA}" = "${frozen_sha}"
-          test -f docs/research/RV01_R01_15_POST_SPIKE_SUPPRESSION_PREREG.md
+          test -f docs/research/RV01_R01_15_POST_SPIKE_SUPPRESSION_PROTOCOL.md
           test -f scripts/run_rv01_r01_15_development.py
           test -f src/sparkbrain/research/rv01/post_spike_suppression_contract.py
           test -f src/sparkbrain/research/rv01/post_spike_suppression_runner.py
