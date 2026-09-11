@@ -10,6 +10,7 @@ reward, correctness flag, or success-directed input.
 from __future__ import annotations
 
 import hashlib
+import math
 from dataclasses import asdict, dataclass
 from typing import Any, Iterable, Literal
 
@@ -201,7 +202,7 @@ class OnlineHiddenEligibilityPlasticity(ExternalOnlyPhysicalPlasticity):
             if not self._eligible_lag(lag):
                 continue
             modulation = self._modulation(trace.magnitude, pulse.magnitude)
-            factor = __import__("math").exp(-lag / self.config.potentiation_tau_ms)
+            factor = math.exp(-lag / self.config.potentiation_tau_ms)
             weight_delta = self.config.potentiation_rate * modulation * factor
             updates.append(
                 self._update_edge(
