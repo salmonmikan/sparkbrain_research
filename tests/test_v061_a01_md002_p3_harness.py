@@ -21,7 +21,9 @@ from sparkbrain.v06.local_expectation import LocalExpectationConfig
 from sparkbrain.v061_a01.credit_bridge import A01LocalTemporalExpectation
 from sparkbrain.v061_a01.md002_p3_fixture import P3ReturnAddressFixture
 from sparkbrain.v061_a01.md002_p3_harness import (
+    P3DirectionalFixture,
     prepare_p3_harness,
+    prepare_p3_matrix,
     require_p3_execution_authority,
 )
 from sparkbrain.v061_a01.md002_protocol import MD002ExecutionGate
@@ -67,7 +69,8 @@ def _field_state() -> dict[str, object]:
     return field.state_dict()
 
 
-def _return_address(label: str, target: str) -> LiveReturnAddressState:
+def _return_address(label: str, lineage: str) -> LiveReturnAddressState:
+    target = {"A": "B", "B": "C"}[lineage]
     proposal = EndogenousPulseProposal(
         proposal_id=f"proposal-{label}",
         created_at_ms=20.0,
@@ -108,25 +111,44 @@ def _partitions(return_address: LiveReturnAddressState):
     ).partitions
 
 
-def _fixture() -> P3ReturnAddressFixture:
+def _fixture(label: str, baseline_lineage: str, donor_lineage: str) -> P3ReturnAddressFixture:
     evidence = canonical_bytes(
         [
-            _external("evidence-1", 70.0, "world:x").as_dict(),
-            _external("evidence-2", 75.0, "world:y").as_dict(),
+            _external(f"evidence-1-{label}", 70.0, "world:x").as_dict(),
+            _external(f"evidence-2-{label}", 75.0, "world:y").as_dict(),
         ]
     )
     return P3ReturnAddressFixture(
-        baseline=_partitions(_return_address("baseline", "B")),
-        donor=_partitions(_return_address("donor", "C")),
+        baseline=_partitions(
+            _return_address(f"baseline-{label}", baseline_lineage)
+        ),
+        donor=_partitions(_return_address(f"donor-{label}", donor_lineage)),
         admissible_external_evidence=evidence,
     )
 
 
+def _directional(direction: str, fixture_label: str) -> P3DirectionalFixture:
+    if direction == "A-to-B":
+        fixture = _fixture(fixture_label, "A", "B")
+    elif direction == "B-to-A":
+        fixture = _fixture(fixture_label, "B", "A")
+    else:
+        fixture = _fixture(fixture_label, "A", "B")
+    return P3DirectionalFixture(  # type: ignore[arg-type]
+        direction=direction,
+        fixture=fixture,
+    )
+
+
 def test_p3_harness_prepares_three_actual_restorable_arms_without_capability() -> None:
-    prepared = prepare_p3_harness(_fixture())
+    prepared = prepare_p3_harness(_directional("A-to-B", "ab"))
 
     assert tuple(row.arm for row in prepared) == ("baseline", "donor", "transplanted")
+    assert {row.direction for row in prepared} == {"A-to-B"}
+    assert len({row.fixture_sha256 for row in prepared}) == 1
     assert len({row.prospective_execution_id for row in prepared}) == 3
+    assert all(row.fixture_sha256 in row.prospective_execution_id for row in prepared)
+    assert all(row.direction in row.prospective_execution_id for row in prepared)
     assert len({row.admissible_external_evidence_sha256 for row in prepared}) == 1
     assert len({row.observation_schema_sha256 for row in prepared}) == 1
     assert len({row.negative_stop_schema_sha256 for row in prepared}) == 1
@@ -150,8 +172,76 @@ def test_p3_harness_prepares_three_actual_restorable_arms_without_capability() -
     assert transplanted.return_address_sha256 == donor.return_address_sha256
 
 
+def test_p3_matrix_requires_and_binds_both_registered_directions() -> None:
+    prepared = prepare_p3_matrix(
+        (
+            _directional("A-to-B", "ab"),
+            _directional("B-to-A", "ba"),
+        )
+    )
+
+    assert len(prepared) == 6
+    assert {row.direction for row in prepared} == {"A-to-B", "B-to-A"}
+    assert len({row.fixture_sha256 for row in prepared}) == 2
+    assert len({row.prospective_execution_id for row in prepared}) == 6
+    assert all(row.fixture_sha256 in row.prospective_execution_id for row in prepared)
+    assert all(row.direction in row.prospective_execution_id for row in prepared)
+
+
+def test_p3_direction_rejects_mislabeled_credited_lineage() -> None:
+    mislabeled = P3DirectionalFixture(
+        direction="B-to-A",
+        fixture=_fixture("mislabeled", "A", "B"),
+    )
+    with pytest.raises(ValueError, match="does not match baseline/donor credited lineage"):
+        mislabeled.validate()
+
+
+def test_p3_direction_rejects_target_lineage_inconsistency() -> None:
+    malformed = _return_address("malformed", "A")
+    proposal = malformed.proposals[0]
+    inconsistent = EndogenousPulseProposal(
+        proposal_id=proposal.proposal_id,
+        created_at_ms=proposal.created_at_ms,
+        target="C",
+        predicted_arrival_ms=proposal.predicted_arrival_ms,
+        magnitude=proposal.magnitude,
+        polarity=proposal.polarity,
+        confidence=proposal.confidence,
+        origin_state_hash=proposal.origin_state_hash,
+        local_path_ids=proposal.local_path_ids,
+        generation_depth=proposal.generation_depth,
+        valid_until_ms=proposal.valid_until_ms,
+        energy_cost=proposal.energy_cost,
+    )
+    fixture = P3ReturnAddressFixture(
+        baseline=_partitions(LiveReturnAddressState((inconsistent,), malformed.boundary)),
+        donor=_partitions(_return_address("donor-malformed", "B")),
+        admissible_external_evidence=canonical_bytes(
+            [_external("evidence-malformed", 70.0, "world:x").as_dict()]
+        ),
+    )
+    with pytest.raises(ValueError, match="target is inconsistent"):
+        P3DirectionalFixture("A-to-B", fixture).validate()
+
+
+def test_p3_matrix_rejects_missing_or_duplicate_direction() -> None:
+    with pytest.raises(ValueError, match="exactly two directional fixtures"):
+        prepare_p3_matrix((_directional("A-to-B", "ab"),))  # type: ignore[arg-type]
+
+    duplicate = (
+        _directional("A-to-B", "ab"),
+        P3DirectionalFixture(
+            direction="A-to-B",
+            fixture=_fixture("ab-second", "A", "B"),
+        ),
+    )
+    with pytest.raises(RuntimeError, match="one A-to-B and one B-to-A"):
+        prepare_p3_matrix(duplicate)
+
+
 def test_p3_harness_global_execution_gate_remains_fail_closed() -> None:
-    prepare_p3_harness(_fixture())
+    prepare_p3_harness(_directional("A-to-B", "ab"))
 
     with pytest.raises(PermissionError, match="technical-review artifact digest is not pinned"):
         require_p3_execution_authority(MD002ExecutionGate())
