@@ -165,11 +165,14 @@ class R01_16FactorizationConstruction:
                 raise ValueError("queued propagation references missing connection")
             post = self._post[queued.key]
             if queued.queued_weight != post.weight or queued.queued_delay_ms != post.delay_ms:
-                raise ValueError("queued propagation does not match common post-training checkpoint")
+                raise ValueError(
+                    "queued propagation does not match common post-training checkpoint"
+                )
             pre = self._pre[queued.key]
             if pre.weight != post.weight or pre.delay_ms != post.delay_ms:
                 raise RuntimeError(
-                    "R01-16 queue-integrity gate failed: changed connection already has queued propagation"
+                    "R01-16 queue-integrity gate failed: changed connection already "
+                    "has queued propagation"
                 )
 
     @property
