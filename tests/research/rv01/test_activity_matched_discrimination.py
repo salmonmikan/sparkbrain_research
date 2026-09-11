@@ -9,6 +9,7 @@ from sparkbrain.research.rv01.activity_matched_contract import (
     held_out_activity_matched_worlds,
 )
 from sparkbrain.research.rv01.activity_matched_discrimination import (
+    _classify_retention_delta,
     _prefix_for_distinct_budget,
     _trace_metrics,
     run_activity_matched_world,
@@ -67,6 +68,13 @@ def test_trace_metrics_keep_retention_and_contamination_separate() -> None:
     assert metrics.contamination_count == 2
     assert metrics.contamination_rate == 0.4
     assert metrics.exact_route_recovered is False
+
+
+def test_retention_delta_reporting_treats_roundoff_as_a_tie() -> None:
+    assert _classify_retention_delta(-1.11e-16) == 0
+    assert _classify_retention_delta(1.11e-16) == 0
+    assert _classify_retention_delta(1e-6) == 1
+    assert _classify_retention_delta(-1e-6) == -1
 
 
 def test_single_world_integration_preserves_resource_matched_reservoir() -> None:
