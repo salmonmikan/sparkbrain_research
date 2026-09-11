@@ -197,7 +197,13 @@ def main() -> int:
                 begin = time.monotonic()
                 try:
                     worker = subprocess.run(
-                        [sys.executable, str(Path(__file__).resolve()), "--worker", family, str(scale)],
+                        [
+                            sys.executable,
+                            str(Path(__file__).resolve()),
+                            "--worker",
+                            family,
+                            str(scale),
+                        ],
                         capture_output=True,
                         text=True,
                         timeout=min(180, remaining),
@@ -213,9 +219,14 @@ def main() -> int:
                         }
                     else:
                         result = json.loads(worker.stdout)
+                        status = (
+                            "complete"
+                            if result["complete"]
+                            else "incomplete_probe_guard"
+                        )
                         row = {
                             **identity,
-                            "status": "complete" if result["complete"] else "incomplete_probe_guard",
+                            "status": status,
                             "result": result,
                         }
                 except subprocess.TimeoutExpired:
