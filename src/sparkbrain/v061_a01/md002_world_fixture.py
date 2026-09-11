@@ -39,6 +39,15 @@ class P2AnonymousWorldRelation:
 
     responses: tuple[tuple[str, str], ...]
 
+    def _state_dict_unchecked(self) -> dict[str, Any]:
+        return {
+            "schema": "v061-a01-md002-p2-anonymous-world-v1",
+            "responses": [
+                {"proposal_id": proposal_id, "external_target": target}
+                for proposal_id, target in self.responses
+            ],
+        }
+
     def validate(self) -> None:
         if len(self.responses) != 2:
             raise ValueError("P2 world relation requires exactly two response rows")
@@ -58,7 +67,9 @@ class P2AnonymousWorldRelation:
             raise ValueError("P2 world relation external targets must be unique")
         if tuple(sorted(self.responses)) != self.responses:
             raise ValueError("P2 world relation rows must use canonical key order")
-        validate_runtime_mapping(self.state_dict(), path="v061_a01.md002.world_relation")
+        validate_runtime_mapping(
+            self._state_dict_unchecked(), path="v061_a01.md002.world_relation"
+        )
 
     @property
     def mapping(self) -> dict[str, str]:
@@ -66,33 +77,33 @@ class P2AnonymousWorldRelation:
         return dict(self.responses)
 
     def state_dict(self) -> dict[str, Any]:
-        return {
-            "schema": "v061-a01-md002-p2-anonymous-world-v1",
-            "responses": [
-                {"proposal_id": proposal_id, "external_target": target}
-                for proposal_id, target in self.responses
-            ],
-        }
+        self.validate()
+        return self._state_dict_unchecked()
 
     @classmethod
     def from_state_dict(cls, value: dict[str, Any]) -> P2AnonymousWorldRelation:
-        if (
-            not isinstance(value, dict)
-            or value.get("schema") != "v061-a01-md002-p2-anonymous-world-v1"
-        ):
+        if not isinstance(value, dict):
+            raise ValueError("invalid P2 world relation schema")
+        expected_top_keys = {"schema", "responses"}
+        if set(value) != expected_top_keys:
+            raise ValueError("P2 world relation contains unexpected fields")
+        if value.get("schema") != "v061-a01-md002-p2-anonymous-world-v1":
             raise ValueError("invalid P2 world relation schema")
         rows = value.get("responses")
         if not isinstance(rows, list):
             raise ValueError("P2 world relation responses must be a list")
+        expected_row_keys = {"proposal_id", "external_target"}
+        if any(not isinstance(row, dict) or set(row) != expected_row_keys for row in rows):
+            raise ValueError("P2 world relation response contains unexpected fields")
         relation = cls(
             responses=tuple(
-                (row.get("proposal_id"), row.get("external_target"))
-                if isinstance(row, dict)
-                else (None, None)
+                (row["proposal_id"], row["external_target"])
                 for row in rows
             )
         )
         relation.validate()
+        if relation._state_dict_unchecked() != value:
+            raise ValueError("P2 world relation failed canonical round-trip validation")
         return relation
 
     def _respond(
