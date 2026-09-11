@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from sparkbrain.research.rv01.physical_learner_bridge import build_physical_field
+
 from sparkbrain.v06.boundary import BoundaryDirection, BoundaryEvent
 from sparkbrain.v06.consistency import UntypedBoundaryConsistency
 from sparkbrain.v06.foundation import (
