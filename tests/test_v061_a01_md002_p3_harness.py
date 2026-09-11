@@ -69,7 +69,8 @@ def _field_state() -> dict[str, object]:
     return field.state_dict()
 
 
-def _return_address(label: str, target: str) -> LiveReturnAddressState:
+def _return_address(label: str, lineage: str) -> LiveReturnAddressState:
+    target = {"A": "B", "B": "C"}[lineage]
     proposal = EndogenousPulseProposal(
         proposal_id=f"proposal-{label}",
         created_at_ms=20.0,
@@ -79,7 +80,7 @@ def _return_address(label: str, target: str) -> LiveReturnAddressState:
         polarity=1,
         confidence=0.5,
         origin_state_hash="shared-field-state",
-        local_path_ids=(f"local:{target}",),
+        local_path_ids=(f"local:A->{target}",),
         generation_depth=1,
         valid_until_ms=60.0,
         energy_cost=0.1,
@@ -110,7 +111,7 @@ def _partitions(return_address: LiveReturnAddressState):
     ).partitions
 
 
-def _fixture(label: str, baseline_route: str, donor_route: str) -> P3ReturnAddressFixture:
+def _fixture(label: str, baseline_lineage: str, donor_lineage: str) -> P3ReturnAddressFixture:
     evidence = canonical_bytes(
         [
             _external(f"evidence-1-{label}", 70.0, "world:x").as_dict(),
@@ -118,8 +119,10 @@ def _fixture(label: str, baseline_route: str, donor_route: str) -> P3ReturnAddre
         ]
     )
     return P3ReturnAddressFixture(
-        baseline=_partitions(_return_address(f"baseline-{label}", baseline_route)),
-        donor=_partitions(_return_address(f"donor-{label}", donor_route)),
+        baseline=_partitions(
+            _return_address(f"baseline-{label}", baseline_lineage)
+        ),
+        donor=_partitions(_return_address(f"donor-{label}", donor_lineage)),
         admissible_external_evidence=evidence,
     )
 
@@ -185,13 +188,41 @@ def test_p3_matrix_requires_and_binds_both_registered_directions() -> None:
     assert all(row.direction in row.prospective_execution_id for row in prepared)
 
 
-def test_p3_direction_rejects_mislabeled_live_route_semantics() -> None:
+def test_p3_direction_rejects_mislabeled_credited_lineage() -> None:
     mislabeled = P3DirectionalFixture(
         direction="B-to-A",
         fixture=_fixture("mislabeled", "A", "B"),
     )
-    with pytest.raises(ValueError, match="does not match baseline/donor active R lineage"):
+    with pytest.raises(ValueError, match="does not match baseline/donor credited lineage"):
         mislabeled.validate()
+
+
+def test_p3_direction_rejects_target_lineage_inconsistency() -> None:
+    malformed = _return_address("malformed", "A")
+    proposal = malformed.proposals[0]
+    inconsistent = EndogenousPulseProposal(
+        proposal_id=proposal.proposal_id,
+        created_at_ms=proposal.created_at_ms,
+        target="C",
+        predicted_arrival_ms=proposal.predicted_arrival_ms,
+        magnitude=proposal.magnitude,
+        polarity=proposal.polarity,
+        confidence=proposal.confidence,
+        origin_state_hash=proposal.origin_state_hash,
+        local_path_ids=proposal.local_path_ids,
+        generation_depth=proposal.generation_depth,
+        valid_until_ms=proposal.valid_until_ms,
+        energy_cost=proposal.energy_cost,
+    )
+    fixture = P3ReturnAddressFixture(
+        baseline=_partitions(LiveReturnAddressState((inconsistent,), malformed.boundary)),
+        donor=_partitions(_return_address("donor-malformed", "B")),
+        admissible_external_evidence=canonical_bytes(
+            [_external("evidence-malformed", 70.0, "world:x").as_dict()]
+        ),
+    )
+    with pytest.raises(ValueError, match="target is inconsistent"):
+        P3DirectionalFixture("A-to-B", fixture).validate()
 
 
 def test_p3_matrix_rejects_missing_or_duplicate_direction() -> None:
@@ -207,13 +238,6 @@ def test_p3_matrix_rejects_missing_or_duplicate_direction() -> None:
     )
     with pytest.raises(RuntimeError, match="one A-to-B and one B-to-A"):
         prepare_p3_matrix(duplicate)
-
-
-def test_p3_matrix_rejects_same_fixture_content_across_opposite_directions() -> None:
-    fixture = _fixture("shared", "A", "B")
-    opposite = P3DirectionalFixture("B-to-A", fixture)
-    with pytest.raises(ValueError, match="does not match baseline/donor active R lineage"):
-        opposite.validate()
 
 
 def test_p3_harness_global_execution_gate_remains_fail_closed() -> None:
