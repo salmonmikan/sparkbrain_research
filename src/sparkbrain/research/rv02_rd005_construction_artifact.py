@@ -20,12 +20,12 @@ from sparkbrain.research.rv02_rd003_online import (
     _training_schedule,
 )
 from sparkbrain.research.rv02_rd005_gate_construction import (
+    RD005_PROTOCOL_ID,
     ConnectionSnapshot,
     EligibilityEvent,
     ExternalReturnEvent,
     GateReachabilityCertificate,
     RD005GateConstruction,
-    RD005_PROTOCOL_ID,
 )
 from sparkbrain.research.rv02_recruitment import PORTS
 from sparkbrain.research.rv02_scale import (
