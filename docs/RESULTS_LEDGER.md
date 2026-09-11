@@ -1055,3 +1055,12 @@ contract correction only.
 - Claim impact: none. C06 remains negative; C15 residual superiority remains unsupported; C16
   remains candidate-level; C17 v1 remains an implementation failure and C17 v2 remains
   scientifically unsupported; C19 remains blocked/not evaluated; CL-007 and CL-008 remain E0.
+
+
+## 2026-09-11 — A01-MD-001 independent post-run audit
+
+- Status: fixed development evidence `preserved`; full registered P1-P5 completion `not_established`.
+- Evidence: executed source `e5882c060bf3029415d49c22d9130d59ecbadd00`; raw SHA-256 `361cc46b60ad9f09be7d71e69ecaabd82e9dada828dc64da46772c110e9f18f6`. Historical emitted verdict labels remain immutable.
+- Blocking review findings: P2 did not execute the registered world-relation-only intervention; P3 lacked an independently executed third R-only transplant arm; P4 did not exercise measured continuing merged BoundaryEvent ancestry; P5 omitted the required recurrent N3 comparison and independently measured dynamic/resource equivalence.
+- Retained narrow observations: exact-parent provenance routing in the supplied component harness, contradiction correction of path-local support, no positive support leakage in supplied absence/replay cases, L-local transfer of the support bias, and N1 reproduction of those component outputs.
+- Claim boundary: no Field-emergence claim is supported, but the audit also does not establish that the A01 mechanism is false. Corrective work must use the new A01-MD-002 identity; MD-001 must not be rerun, rescored, tuned, or silently repaired.

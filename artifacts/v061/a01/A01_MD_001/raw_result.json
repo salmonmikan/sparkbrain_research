@@ -1,0 +1,2522 @@
+{
+  "candidate_003_touched": false,
+  "forbidden_privilege_used": false,
+  "p1": {
+    "absence_leakage_detected": false,
+    "contradiction_correction": {
+      "competition_trace": [
+        [
+          "B=0.500000000000",
+          "C=0.500000000000"
+        ],
+        [
+          "B=0.666666666667",
+          "C=0.500000000000"
+        ],
+        [
+          "B=0.500000000000",
+          "C=0.500000000000"
+        ]
+      ],
+      "confirmation_status": "exact-match",
+      "contradiction_status": "exact-contradiction",
+      "existing_support_corrected": true,
+      "support_score_trace": [
+        [
+          [
+            "local:A->B",
+            0
+          ],
+          [
+            "local:A->C",
+            0
+          ]
+        ],
+        [
+          [
+            "local:A->B",
+            1
+          ],
+          [
+            "local:A->C",
+            0
+          ]
+        ],
+        [
+          [
+            "local:A->B",
+            0
+          ],
+          [
+            "local:A->C",
+            0
+          ]
+        ]
+      ]
+    },
+    "lineage_swap_passed": true,
+    "minimum_selective_effect": 0.5,
+    "replay_leakage_detected": false,
+    "threshold_tuned": false,
+    "trials": [
+      {
+        "accepted": true,
+        "assessment": {
+          "accepted": true,
+          "causal_selective_update": true,
+          "contradiction_corrective_update": false,
+          "evidence_source": "external-match",
+          "external_evidence_contract_passed": true,
+          "matched_resource_contract_passed": true,
+          "reason": "accepted",
+          "self_confirmation_guard_passed": true,
+          "trial_id": "external-match-a"
+        },
+        "bridge_resolution": {
+          "boundary_event_id": "boundary:external-match-a",
+          "consistency_resolution": {
+            "boundary_event_id": "boundary:external-match-a",
+            "external_event_id": "external:external-match-a",
+            "lag_ms": 2.0,
+            "link_id": "link:fe41885542f878c422cdc44f",
+            "port_id": "port:p",
+            "reliability_after": 0.75,
+            "reliability_before": 0.6666666666666666,
+            "status": "externally-consistent",
+            "target": "world:x"
+          },
+          "external_event_id": "external:external-match-a",
+          "path_ids": [
+            "local:A->B"
+          ],
+          "path_reliability_after": [
+            [
+              "local:A->B",
+              0.6666666666666666
+            ]
+          ],
+          "path_reliability_before": [
+            [
+              "local:A->B",
+              0.5
+            ]
+          ],
+          "prior_relation": {
+            "polarity": 1,
+            "reliability": 0.6666666666666666,
+            "target": "world:x"
+          },
+          "status": "exact-match"
+        },
+        "competition_after": [
+          "B=0.666666666667",
+          "C=0.500000000000"
+        ],
+        "competition_before": [
+          "B=0.500000000000",
+          "C=0.500000000000"
+        ],
+        "observation": {
+          "causal_lineage_update": 1.0,
+          "external_observation_count_delta": 1,
+          "matched_lineage_update": 0.0,
+          "positive_commit_count_delta": 1,
+          "trial_id": "external-match-a"
+        },
+        "replay_rejected": null,
+        "support_after": {
+          "path_scores": [
+            [
+              "local:A->B",
+              1
+            ],
+            [
+              "local:A->C",
+              0
+            ]
+          ]
+        },
+        "support_before": {
+          "path_scores": [
+            [
+              "local:A->B",
+              0
+            ],
+            [
+              "local:A->C",
+              0
+            ]
+          ]
+        },
+        "trial": {
+          "causal_lineage": {
+            "effective_currents": [
+              0.6,
+              0.6,
+              0.6
+            ],
+            "energy_costs": [
+              0.1,
+              0.1,
+              0.1
+            ],
+            "event_count": 3,
+            "event_times_ms": [
+              5.0,
+              10.0,
+              15.0
+            ],
+            "lineage_id": "lineage-a"
+          },
+          "evidence_source": "external-match",
+          "expected_external_target": "external:1",
+          "matched_lineage": {
+            "effective_currents": [
+              0.6,
+              0.6,
+              0.6
+            ],
+            "energy_costs": [
+              0.1,
+              0.1,
+              0.1
+            ],
+            "event_count": 3,
+            "event_times_ms": [
+              5.0,
+              10.0,
+              15.0
+            ],
+            "lineage_id": "lineage-b"
+          },
+          "observed_external_target": "external:1",
+          "trial_id": "external-match-a"
+        }
+      },
+      {
+        "accepted": true,
+        "assessment": {
+          "accepted": true,
+          "causal_selective_update": true,
+          "contradiction_corrective_update": false,
+          "evidence_source": "external-match",
+          "external_evidence_contract_passed": true,
+          "matched_resource_contract_passed": true,
+          "reason": "accepted",
+          "self_confirmation_guard_passed": true,
+          "trial_id": "external-match-b-lineage-swap"
+        },
+        "bridge_resolution": {
+          "boundary_event_id": "boundary:external-match-b-lineage-swap",
+          "consistency_resolution": {
+            "boundary_event_id": "boundary:external-match-b-lineage-swap",
+            "external_event_id": "external:external-match-b-lineage-swap",
+            "lag_ms": 2.0,
+            "link_id": "link:fe41885542f878c422cdc44f",
+            "port_id": "port:p",
+            "reliability_after": 0.75,
+            "reliability_before": 0.6666666666666666,
+            "status": "externally-consistent",
+            "target": "world:x"
+          },
+          "external_event_id": "external:external-match-b-lineage-swap",
+          "path_ids": [
+            "local:A->C"
+          ],
+          "path_reliability_after": [
+            [
+              "local:A->C",
+              0.6666666666666666
+            ]
+          ],
+          "path_reliability_before": [
+            [
+              "local:A->C",
+              0.5
+            ]
+          ],
+          "prior_relation": {
+            "polarity": 1,
+            "reliability": 0.6666666666666666,
+            "target": "world:x"
+          },
+          "status": "exact-match"
+        },
+        "competition_after": [
+          "B=0.500000000000",
+          "C=0.666666666667"
+        ],
+        "competition_before": [
+          "B=0.500000000000",
+          "C=0.500000000000"
+        ],
+        "observation": {
+          "causal_lineage_update": 1.0,
+          "external_observation_count_delta": 1,
+          "matched_lineage_update": 0.0,
+          "positive_commit_count_delta": 1,
+          "trial_id": "external-match-b-lineage-swap"
+        },
+        "replay_rejected": null,
+        "support_after": {
+          "path_scores": [
+            [
+              "local:A->B",
+              0
+            ],
+            [
+              "local:A->C",
+              1
+            ]
+          ]
+        },
+        "support_before": {
+          "path_scores": [
+            [
+              "local:A->B",
+              0
+            ],
+            [
+              "local:A->C",
+              0
+            ]
+          ]
+        },
+        "trial": {
+          "causal_lineage": {
+            "effective_currents": [
+              0.6,
+              0.6,
+              0.6
+            ],
+            "energy_costs": [
+              0.1,
+              0.1,
+              0.1
+            ],
+            "event_count": 3,
+            "event_times_ms": [
+              5.0,
+              10.0,
+              15.0
+            ],
+            "lineage_id": "lineage-b"
+          },
+          "evidence_source": "external-match",
+          "expected_external_target": "external:1",
+          "matched_lineage": {
+            "effective_currents": [
+              0.6,
+              0.6,
+              0.6
+            ],
+            "energy_costs": [
+              0.1,
+              0.1,
+              0.1
+            ],
+            "event_count": 3,
+            "event_times_ms": [
+              5.0,
+              10.0,
+              15.0
+            ],
+            "lineage_id": "lineage-a"
+          },
+          "observed_external_target": "external:1",
+          "trial_id": "external-match-b-lineage-swap"
+        }
+      },
+      {
+        "accepted": true,
+        "assessment": {
+          "accepted": true,
+          "causal_selective_update": false,
+          "contradiction_corrective_update": true,
+          "evidence_source": "external-contradiction",
+          "external_evidence_contract_passed": true,
+          "matched_resource_contract_passed": true,
+          "reason": "causal_lineage_not_selective",
+          "self_confirmation_guard_passed": true,
+          "trial_id": "external-contradiction-a"
+        },
+        "bridge_resolution": {
+          "boundary_event_id": "boundary:external-contradiction-a",
+          "consistency_resolution": {
+            "boundary_event_id": "boundary:external-contradiction-a",
+            "external_event_id": "external:external-contradiction-a",
+            "lag_ms": 2.0,
+            "link_id": "link:80ea87005b7b77d01cafc24c",
+            "port_id": "port:p",
+            "reliability_after": 0.6666666666666666,
+            "reliability_before": 0.5,
+            "status": "externally-consistent",
+            "target": "world:y"
+          },
+          "external_event_id": "external:external-contradiction-a",
+          "path_ids": [
+            "local:A->B"
+          ],
+          "path_reliability_after": [
+            [
+              "local:A->B",
+              0.3333333333333333
+            ]
+          ],
+          "path_reliability_before": [
+            [
+              "local:A->B",
+              0.5
+            ]
+          ],
+          "prior_relation": {
+            "polarity": 1,
+            "reliability": 0.6666666666666666,
+            "target": "world:x"
+          },
+          "status": "exact-contradiction"
+        },
+        "competition_after": [
+          "B=0.333333333333",
+          "C=0.500000000000"
+        ],
+        "competition_before": [
+          "B=0.500000000000",
+          "C=0.500000000000"
+        ],
+        "observation": {
+          "causal_lineage_update": -1.0,
+          "external_observation_count_delta": 1,
+          "matched_lineage_update": 0.0,
+          "positive_commit_count_delta": 0,
+          "trial_id": "external-contradiction-a"
+        },
+        "replay_rejected": null,
+        "support_after": {
+          "path_scores": [
+            [
+              "local:A->B",
+              -1
+            ],
+            [
+              "local:A->C",
+              0
+            ]
+          ]
+        },
+        "support_before": {
+          "path_scores": [
+            [
+              "local:A->B",
+              0
+            ],
+            [
+              "local:A->C",
+              0
+            ]
+          ]
+        },
+        "trial": {
+          "causal_lineage": {
+            "effective_currents": [
+              0.6,
+              0.6,
+              0.6
+            ],
+            "energy_costs": [
+              0.1,
+              0.1,
+              0.1
+            ],
+            "event_count": 3,
+            "event_times_ms": [
+              5.0,
+              10.0,
+              15.0
+            ],
+            "lineage_id": "lineage-a"
+          },
+          "evidence_source": "external-contradiction",
+          "expected_external_target": "external:1",
+          "matched_lineage": {
+            "effective_currents": [
+              0.6,
+              0.6,
+              0.6
+            ],
+            "energy_costs": [
+              0.1,
+              0.1,
+              0.1
+            ],
+            "event_count": 3,
+            "event_times_ms": [
+              5.0,
+              10.0,
+              15.0
+            ],
+            "lineage_id": "lineage-b"
+          },
+          "observed_external_target": "external:2",
+          "trial_id": "external-contradiction-a"
+        }
+      },
+      {
+        "accepted": true,
+        "assessment": {
+          "accepted": true,
+          "causal_selective_update": true,
+          "contradiction_corrective_update": false,
+          "evidence_source": "external-absence",
+          "external_evidence_contract_passed": true,
+          "matched_resource_contract_passed": true,
+          "reason": "accepted",
+          "self_confirmation_guard_passed": true,
+          "trial_id": "external-absence-a"
+        },
+        "bridge_resolution": null,
+        "competition_after": [
+          "B=0.500000000000",
+          "C=0.500000000000"
+        ],
+        "competition_before": [
+          "B=0.500000000000",
+          "C=0.500000000000"
+        ],
+        "observation": {
+          "causal_lineage_update": 0.0,
+          "external_observation_count_delta": 0,
+          "matched_lineage_update": 0.0,
+          "positive_commit_count_delta": 0,
+          "trial_id": "external-absence-a"
+        },
+        "replay_rejected": null,
+        "support_after": {
+          "path_scores": [
+            [
+              "local:A->B",
+              0
+            ],
+            [
+              "local:A->C",
+              0
+            ]
+          ]
+        },
+        "support_before": {
+          "path_scores": [
+            [
+              "local:A->B",
+              0
+            ],
+            [
+              "local:A->C",
+              0
+            ]
+          ]
+        },
+        "trial": {
+          "causal_lineage": {
+            "effective_currents": [
+              0.6,
+              0.6,
+              0.6
+            ],
+            "energy_costs": [
+              0.1,
+              0.1,
+              0.1
+            ],
+            "event_count": 3,
+            "event_times_ms": [
+              5.0,
+              10.0,
+              15.0
+            ],
+            "lineage_id": "lineage-a"
+          },
+          "evidence_source": "external-absence",
+          "expected_external_target": "external:1",
+          "matched_lineage": {
+            "effective_currents": [
+              0.6,
+              0.6,
+              0.6
+            ],
+            "energy_costs": [
+              0.1,
+              0.1,
+              0.1
+            ],
+            "event_count": 3,
+            "event_times_ms": [
+              5.0,
+              10.0,
+              15.0
+            ],
+            "lineage_id": "lineage-b"
+          },
+          "observed_external_target": null,
+          "trial_id": "external-absence-a"
+        }
+      },
+      {
+        "accepted": true,
+        "assessment": {
+          "accepted": true,
+          "causal_selective_update": true,
+          "contradiction_corrective_update": false,
+          "evidence_source": "internal-replay-only",
+          "external_evidence_contract_passed": true,
+          "matched_resource_contract_passed": true,
+          "reason": "accepted",
+          "self_confirmation_guard_passed": true,
+          "trial_id": "internal-replay-only-a"
+        },
+        "bridge_resolution": null,
+        "competition_after": [
+          "B=0.500000000000",
+          "C=0.500000000000"
+        ],
+        "competition_before": [
+          "B=0.500000000000",
+          "C=0.500000000000"
+        ],
+        "observation": {
+          "causal_lineage_update": 0.0,
+          "external_observation_count_delta": 0,
+          "matched_lineage_update": 0.0,
+          "positive_commit_count_delta": 0,
+          "trial_id": "internal-replay-only-a"
+        },
+        "replay_rejected": true,
+        "support_after": {
+          "path_scores": [
+            [
+              "local:A->B",
+              0
+            ],
+            [
+              "local:A->C",
+              0
+            ]
+          ]
+        },
+        "support_before": {
+          "path_scores": [
+            [
+              "local:A->B",
+              0
+            ],
+            [
+              "local:A->C",
+              0
+            ]
+          ]
+        },
+        "trial": {
+          "causal_lineage": {
+            "effective_currents": [
+              0.6,
+              0.6,
+              0.6
+            ],
+            "energy_costs": [
+              0.1,
+              0.1,
+              0.1
+            ],
+            "event_count": 3,
+            "event_times_ms": [
+              5.0,
+              10.0,
+              15.0
+            ],
+            "lineage_id": "lineage-a"
+          },
+          "evidence_source": "internal-replay-only",
+          "expected_external_target": "external:1",
+          "matched_lineage": {
+            "effective_currents": [
+              0.6,
+              0.6,
+              0.6
+            ],
+            "energy_costs": [
+              0.1,
+              0.1,
+              0.1
+            ],
+            "event_count": 3,
+            "event_times_ms": [
+              5.0,
+              10.0,
+              15.0
+            ],
+            "lineage_id": "lineage-b"
+          },
+          "observed_external_target": null,
+          "trial_id": "internal-replay-only-a"
+        }
+      }
+    ],
+    "verdict": "SUPPORTED"
+  },
+  "p2": {
+    "arm_a": {
+      "base_temporal_hash": "082bb0b40e9ba1a12a5826686f9fc599858818a455d7d9dc3d330b10230624a0",
+      "causal_support_hash": "1d90e4a6d2c54ed6df185408fbb23ed4f1b61b43e20bd8737b41987c8952799a",
+      "competition": [
+        "B=0.666666666667",
+        "C=0.500000000000"
+      ],
+      "relation_id": "world-relation-a",
+      "resolution": {
+        "boundary_event_id": "boundary:world-relation-a",
+        "consistency_resolution": {
+          "boundary_event_id": "boundary:world-relation-a",
+          "external_event_id": "external:world-relation-a",
+          "lag_ms": 2.0,
+          "link_id": "link:fe41885542f878c422cdc44f",
+          "port_id": "port:p",
+          "reliability_after": 0.75,
+          "reliability_before": 0.6666666666666666,
+          "status": "externally-consistent",
+          "target": "world:x"
+        },
+        "external_event_id": "external:world-relation-a",
+        "path_ids": [
+          "local:A->B"
+        ],
+        "path_reliability_after": [
+          [
+            "local:A->B",
+            0.6666666666666666
+          ]
+        ],
+        "path_reliability_before": [
+          [
+            "local:A->B",
+            0.5
+          ]
+        ],
+        "prior_relation": {
+          "polarity": 1,
+          "reliability": 0.6666666666666666,
+          "target": "world:x"
+        },
+        "status": "exact-match"
+      },
+      "selected_lineage": "lineage-a"
+    },
+    "arm_b": {
+      "base_temporal_hash": "082bb0b40e9ba1a12a5826686f9fc599858818a455d7d9dc3d330b10230624a0",
+      "causal_support_hash": "cb47df3ac7347f7971ca39deb40f2cdce4e398147e2229d672026a5d44ceaa8e",
+      "competition": [
+        "B=0.500000000000",
+        "C=0.666666666667"
+      ],
+      "relation_id": "world-relation-b",
+      "resolution": {
+        "boundary_event_id": "boundary:world-relation-b",
+        "consistency_resolution": {
+          "boundary_event_id": "boundary:world-relation-b",
+          "external_event_id": "external:world-relation-b",
+          "lag_ms": 2.0,
+          "link_id": "link:fe41885542f878c422cdc44f",
+          "port_id": "port:p",
+          "reliability_after": 0.75,
+          "reliability_before": 0.6666666666666666,
+          "status": "externally-consistent",
+          "target": "world:x"
+        },
+        "external_event_id": "external:world-relation-b",
+        "path_ids": [
+          "local:A->C"
+        ],
+        "path_reliability_after": [
+          [
+            "local:A->C",
+            0.6666666666666666
+          ]
+        ],
+        "path_reliability_before": [
+          [
+            "local:A->C",
+            0.5
+          ]
+        ],
+        "prior_relation": {
+          "polarity": 1,
+          "reliability": 0.6666666666666666,
+          "target": "world:x"
+        },
+        "status": "exact-match"
+      },
+      "selected_lineage": "lineage-b"
+    },
+    "assessment": {
+      "base_temporal_state_fixed": true,
+      "causal_support_changed": true,
+      "future_competition_changed": true,
+      "trial_id": "a01-p2-world-to-local-circulation",
+      "world_relation_changed": true,
+      "world_to_transition_circulation_observed": true
+    },
+    "future_competition_changed": true,
+    "generic_assessment": {
+      "future_competition_changed": true,
+      "local_state_fixed": true,
+      "trial_id": "a01-p2-world-to-local-circulation",
+      "world_relation_changed": true,
+      "world_to_transition_circulation_observed": true
+    },
+    "only_final_reentry_changed": false,
+    "trial": {
+      "base_temporal_hash_after": "082bb0b40e9ba1a12a5826686f9fc599858818a455d7d9dc3d330b10230624a0",
+      "base_temporal_hash_before": "082bb0b40e9ba1a12a5826686f9fc599858818a455d7d9dc3d330b10230624a0",
+      "causal_support_hash_after": "cb47df3ac7347f7971ca39deb40f2cdce4e398147e2229d672026a5d44ceaa8e",
+      "causal_support_hash_before": "1d90e4a6d2c54ed6df185408fbb23ed4f1b61b43e20bd8737b41987c8952799a",
+      "competition_signature_after": [
+        [
+          "B",
+          0.5
+        ],
+        [
+          "C",
+          0.6666666666666666
+        ]
+      ],
+      "competition_signature_before": [
+        [
+          "B",
+          0.6666666666666666
+        ],
+        [
+          "C",
+          0.5
+        ]
+      ],
+      "external_observation_count_delta": 2,
+      "trial_id": "a01-p2-world-to-local-circulation",
+      "world_relation_after": "world-relation-b",
+      "world_relation_before": "world-relation-a"
+    },
+    "verdict": "SUPPORTED"
+  },
+  "p3": {
+    "actual_carrier_locus": "L.local-transition.a01-causal-support",
+    "crosses": {
+      "C_only_post_learning": {
+        "assessment": {
+          "consistency_independently_reaches_competition": false,
+          "donor_competition_effect_transferred": false,
+          "donor_reentry_effect_transferred": true,
+          "field_state_independently_carries_competition": false,
+          "future_competition_changed": false,
+          "interpretation": "transplant_changes_downstream_reentry_without_upstream_competition",
+          "local_transition_carries_competition": false,
+          "relation_reentry_changed": true,
+          "transient_return_address_independently_carries_competition": false,
+          "transplanted_loci": [
+            "consistency"
+          ],
+          "trial_id": "a01-p3-c-only-post-learning"
+        },
+        "competition_after": [
+          "B=0.666666666667",
+          "C=0.500000000000"
+        ],
+        "competition_before": [
+          "B=0.666666666667",
+          "C=0.500000000000"
+        ],
+        "trial": {
+          "baseline_state": {
+            "consistency_hash": "b785712feb6f66ec8942f0bb91c3241e6eedf226d253e3de2d9c114f8684eb7a",
+            "field_state_hash": "8227f546934d59fc5a944f710c4a37f2248896144b9a5b9d926dbd138947510e",
+            "local_transition_hash": "9772e953e9a5890ffbea6736a31965740e8662509d2ceff4df98154b6e9f17c4",
+            "transient_return_address_hash": null
+          },
+          "donor_reentry_signature": [
+            "port:p|world:y|1|1|0"
+          ],
+          "donor_selected_lineage": "lineage-a",
+          "donor_state": {
+            "consistency_hash": "3df632ebc22697cd4eacd21284d716375a8ae58537c3d8d23bbb6430fcf269d1",
+            "field_state_hash": "8227f546934d59fc5a944f710c4a37f2248896144b9a5b9d926dbd138947510e",
+            "local_transition_hash": "9772e953e9a5890ffbea6736a31965740e8662509d2ceff4df98154b6e9f17c4",
+            "transient_return_address_hash": null
+          },
+          "reentry_signature_after": [
+            "port:p|world:y|1|1|0"
+          ],
+          "reentry_signature_before": [
+            "port:p|world:x|1|2|0"
+          ],
+          "selected_lineage_after": "lineage-a",
+          "selected_lineage_before": "lineage-a",
+          "transplanted_loci": [
+            "consistency"
+          ],
+          "transplanted_state": {
+            "consistency_hash": "3df632ebc22697cd4eacd21284d716375a8ae58537c3d8d23bbb6430fcf269d1",
+            "field_state_hash": "8227f546934d59fc5a944f710c4a37f2248896144b9a5b9d926dbd138947510e",
+            "local_transition_hash": "9772e953e9a5890ffbea6736a31965740e8662509d2ceff4df98154b6e9f17c4",
+            "transient_return_address_hash": null
+          },
+          "trial_id": "a01-p3-c-only-post-learning"
+        }
+      },
+      "F_only_post_learning": {
+        "assessment": {
+          "consistency_independently_reaches_competition": false,
+          "donor_competition_effect_transferred": false,
+          "donor_reentry_effect_transferred": false,
+          "field_state_independently_carries_competition": false,
+          "future_competition_changed": false,
+          "interpretation": "transplanted_state_does_not_transfer_donor_behavior",
+          "local_transition_carries_competition": false,
+          "relation_reentry_changed": false,
+          "transient_return_address_independently_carries_competition": false,
+          "transplanted_loci": [
+            "field-state"
+          ],
+          "trial_id": "a01-p3-f-only-post-learning"
+        },
+        "competition_after": [
+          "B=0.666666666667",
+          "C=0.500000000000"
+        ],
+        "competition_before": [
+          "B=0.666666666667",
+          "C=0.500000000000"
+        ],
+        "scope_note": "A01 reads the Field only through proposal provenance/origin metadata; this isolated cross changes that declared input state without changing L or C.",
+        "trial": {
+          "baseline_state": {
+            "consistency_hash": "24f54d7726b00ab44c05dea7865b9a22427a95e77e2da14885f334ae022b6859",
+            "field_state_hash": "8227f546934d59fc5a944f710c4a37f2248896144b9a5b9d926dbd138947510e",
+            "local_transition_hash": "9772e953e9a5890ffbea6736a31965740e8662509d2ceff4df98154b6e9f17c4",
+            "transient_return_address_hash": null
+          },
+          "donor_reentry_signature": [
+            "port:p|world:x|1|2|0"
+          ],
+          "donor_selected_lineage": "lineage-a",
+          "donor_state": {
+            "consistency_hash": "24f54d7726b00ab44c05dea7865b9a22427a95e77e2da14885f334ae022b6859",
+            "field_state_hash": "0ef9eb6ea9b33c0e258c4fcdf080007f7908c7024e2bdd02f373bb42381795ee",
+            "local_transition_hash": "9772e953e9a5890ffbea6736a31965740e8662509d2ceff4df98154b6e9f17c4",
+            "transient_return_address_hash": null
+          },
+          "reentry_signature_after": [
+            "port:p|world:x|1|2|0"
+          ],
+          "reentry_signature_before": [
+            "port:p|world:x|1|2|0"
+          ],
+          "selected_lineage_after": "lineage-a",
+          "selected_lineage_before": "lineage-a",
+          "transplanted_loci": [
+            "field-state"
+          ],
+          "transplanted_state": {
+            "consistency_hash": "24f54d7726b00ab44c05dea7865b9a22427a95e77e2da14885f334ae022b6859",
+            "field_state_hash": "0ef9eb6ea9b33c0e258c4fcdf080007f7908c7024e2bdd02f373bb42381795ee",
+            "local_transition_hash": "9772e953e9a5890ffbea6736a31965740e8662509d2ceff4df98154b6e9f17c4",
+            "transient_return_address_hash": null
+          },
+          "trial_id": "a01-p3-f-only-post-learning"
+        }
+      },
+      "L_only_post_learning": {
+        "assessment": {
+          "consistency_independently_reaches_competition": false,
+          "donor_competition_effect_transferred": true,
+          "donor_reentry_effect_transferred": false,
+          "field_state_independently_carries_competition": false,
+          "future_competition_changed": true,
+          "interpretation": "explicit_local_transition_state_transfers_future_competition",
+          "local_transition_carries_competition": true,
+          "relation_reentry_changed": false,
+          "transient_return_address_independently_carries_competition": false,
+          "transplanted_loci": [
+            "local-transition"
+          ],
+          "trial_id": "a01-p3-l-only-post-learning"
+        },
+        "competition_after": [
+          "B=0.500000000000",
+          "C=0.666666666667"
+        ],
+        "competition_before": [
+          "B=0.666666666667",
+          "C=0.500000000000"
+        ],
+        "trial": {
+          "baseline_state": {
+            "consistency_hash": "cb198f8dbf8ec7de9f84ab5cf66b0bbe713abed5e203aad579a14184db27016c",
+            "field_state_hash": "8227f546934d59fc5a944f710c4a37f2248896144b9a5b9d926dbd138947510e",
+            "local_transition_hash": "9772e953e9a5890ffbea6736a31965740e8662509d2ceff4df98154b6e9f17c4",
+            "transient_return_address_hash": null
+          },
+          "donor_reentry_signature": [
+            "port:p|world:y|1|2|0"
+          ],
+          "donor_selected_lineage": "lineage-b",
+          "donor_state": {
+            "consistency_hash": "c1afbfaea380ae0112a2167e96032caeb55d03c1f41531222198925b254917d2",
+            "field_state_hash": "0ef9eb6ea9b33c0e258c4fcdf080007f7908c7024e2bdd02f373bb42381795ee",
+            "local_transition_hash": "c2f73cdef9fb5bfa2b2f27a7fffc531307b0f6384db0ffb9774a02469103ae29",
+            "transient_return_address_hash": null
+          },
+          "reentry_signature_after": [
+            "port:p|world:x|1|2|0"
+          ],
+          "reentry_signature_before": [
+            "port:p|world:x|1|2|0"
+          ],
+          "selected_lineage_after": "lineage-b",
+          "selected_lineage_before": "lineage-a",
+          "transplanted_loci": [
+            "local-transition"
+          ],
+          "transplanted_state": {
+            "consistency_hash": "cb198f8dbf8ec7de9f84ab5cf66b0bbe713abed5e203aad579a14184db27016c",
+            "field_state_hash": "8227f546934d59fc5a944f710c4a37f2248896144b9a5b9d926dbd138947510e",
+            "local_transition_hash": "c2f73cdef9fb5bfa2b2f27a7fffc531307b0f6384db0ffb9774a02469103ae29",
+            "transient_return_address_hash": null
+          },
+          "trial_id": "a01-p3-l-only-post-learning"
+        }
+      },
+      "R_only_attribution_episode": {
+        "assessment": {
+          "consistency_independently_reaches_competition": false,
+          "donor_competition_effect_transferred": true,
+          "donor_reentry_effect_transferred": false,
+          "field_state_independently_carries_competition": false,
+          "future_competition_changed": true,
+          "interpretation": "transient_return_address_alone_transfers_future_competition",
+          "local_transition_carries_competition": false,
+          "relation_reentry_changed": false,
+          "transient_return_address_independently_carries_competition": true,
+          "transplanted_loci": [
+            "transient-return-address"
+          ],
+          "trial_id": "a01-p3-r-only-attribution-episode"
+        },
+        "baseline_resolution": {
+          "boundary_event_id": "boundary:p3:r:baseline",
+          "consistency_resolution": {
+            "boundary_event_id": "boundary:p3:r:baseline",
+            "external_event_id": "external:p3:r:baseline",
+            "lag_ms": 2.0,
+            "link_id": "link:fe41885542f878c422cdc44f",
+            "port_id": "port:p",
+            "reliability_after": 0.75,
+            "reliability_before": 0.6666666666666666,
+            "status": "externally-consistent",
+            "target": "world:x"
+          },
+          "external_event_id": "external:p3:r:baseline",
+          "path_ids": [
+            "local:A->B"
+          ],
+          "path_reliability_after": [
+            [
+              "local:A->B",
+              0.6666666666666666
+            ]
+          ],
+          "path_reliability_before": [
+            [
+              "local:A->B",
+              0.5
+            ]
+          ],
+          "prior_relation": {
+            "polarity": 1,
+            "reliability": 0.6666666666666666,
+            "target": "world:x"
+          },
+          "status": "exact-match"
+        },
+        "donor_resolution": {
+          "boundary_event_id": "boundary:p3:r:donor",
+          "consistency_resolution": {
+            "boundary_event_id": "boundary:p3:r:donor",
+            "external_event_id": "external:p3:r:donor",
+            "lag_ms": 2.0,
+            "link_id": "link:fe41885542f878c422cdc44f",
+            "port_id": "port:p",
+            "reliability_after": 0.75,
+            "reliability_before": 0.6666666666666666,
+            "status": "externally-consistent",
+            "target": "world:x"
+          },
+          "external_event_id": "external:p3:r:donor",
+          "path_ids": [
+            "local:A->C"
+          ],
+          "path_reliability_after": [
+            [
+              "local:A->C",
+              0.6666666666666666
+            ]
+          ],
+          "path_reliability_before": [
+            [
+              "local:A->C",
+              0.5
+            ]
+          ],
+          "prior_relation": {
+            "polarity": 1,
+            "reliability": 0.6666666666666666,
+            "target": "world:x"
+          },
+          "status": "exact-match"
+        },
+        "interpretation": "R selects which existing L path receives the update while the boundary is live; R is consumed and is not a persistent learned carrier.",
+        "persistent_return_address_available_after_pairing": false,
+        "phase": "external-attribution-episode",
+        "trial": {
+          "baseline_state": {
+            "consistency_hash": "a92f3f2ee8a24a68d51c23581ec2cf0ac470330fff403a3bbd9b37ccdde4fd6d",
+            "field_state_hash": "b7e9840872f6484ddc2273708bda949bd7b16f5ea7679fc66d9a21bfa2024634",
+            "local_transition_hash": "5df4ab983edb077d7c4b4a87960a8afebbc148d4fc27d239bf56a331390eb489",
+            "transient_return_address_hash": "b8d44d138e9ac46fcfaafe9153e261031e543552cbff094caff7c964773180b6"
+          },
+          "donor_reentry_signature": [
+            "port:p|world:x|1|2|0"
+          ],
+          "donor_selected_lineage": "lineage-b",
+          "donor_state": {
+            "consistency_hash": "a92f3f2ee8a24a68d51c23581ec2cf0ac470330fff403a3bbd9b37ccdde4fd6d",
+            "field_state_hash": "b7e9840872f6484ddc2273708bda949bd7b16f5ea7679fc66d9a21bfa2024634",
+            "local_transition_hash": "5df4ab983edb077d7c4b4a87960a8afebbc148d4fc27d239bf56a331390eb489",
+            "transient_return_address_hash": "2109940d40ecef285e6eb7433a67b42e37bafdbfc1f343d2097d2ef2709b159a"
+          },
+          "reentry_signature_after": [
+            "port:p|world:x|1|2|0"
+          ],
+          "reentry_signature_before": [
+            "port:p|world:x|1|2|0"
+          ],
+          "selected_lineage_after": "lineage-b",
+          "selected_lineage_before": "lineage-a",
+          "transplanted_loci": [
+            "transient-return-address"
+          ],
+          "transplanted_state": {
+            "consistency_hash": "a92f3f2ee8a24a68d51c23581ec2cf0ac470330fff403a3bbd9b37ccdde4fd6d",
+            "field_state_hash": "b7e9840872f6484ddc2273708bda949bd7b16f5ea7679fc66d9a21bfa2024634",
+            "local_transition_hash": "5df4ab983edb077d7c4b4a87960a8afebbc148d4fc27d239bf56a331390eb489",
+            "transient_return_address_hash": "2109940d40ecef285e6eb7433a67b42e37bafdbfc1f343d2097d2ef2709b159a"
+          },
+          "trial_id": "a01-p3-r-only-attribution-episode"
+        }
+      }
+    },
+    "field_carrier_observed": false,
+    "interpretation": "L persistently carries the learned competition bias. R is necessary only during attribution, C supplies anonymous match/contradiction classification, and F does not independently transfer the A01 bias.",
+    "persistent_r_transplant_status": "NOT_APPLICABLE_R_CONSUMED_AFTER_PAIRING",
+    "sign_classifier_locus": "C.anonymous-consistency",
+    "transient_router_locus": "R.transient-return-address",
+    "undeclared_state_changes_detected": false,
+    "valid_state_partition": true,
+    "verdict": "SUPPORTED"
+  },
+  "p4": {
+    "forced_early_winner_take_all": false,
+    "minimum_differentiation": 0.5,
+    "threshold_tuned": false,
+    "trials": [
+      {
+        "accepted": true,
+        "assessment": {
+          "accepted": true,
+          "causal_history_changes_later_competition": true,
+          "contradiction_corrects_causal_lineage": false,
+          "external_evidence_contract_passed": true,
+          "initial_plurality_bounded": true,
+          "initial_plurality_preserved": true,
+          "later_plurality_bounded": true,
+          "premature_singleton_avoided": true,
+          "reason": "accepted",
+          "self_confirmation_guard_passed": true,
+          "trial_id": "a01-p4-external-match-lineage-a"
+        },
+        "bridge_resolution": {
+          "boundary_event_id": "boundary:a01-p4-external-match-lineage-a",
+          "consistency_resolution": {
+            "boundary_event_id": "boundary:a01-p4-external-match-lineage-a",
+            "external_event_id": "external:a01-p4-external-match-lineage-a",
+            "lag_ms": 2.0,
+            "link_id": "link:fe41885542f878c422cdc44f",
+            "port_id": "port:p",
+            "reliability_after": 0.75,
+            "reliability_before": 0.6666666666666666,
+            "status": "externally-consistent",
+            "target": "world:x"
+          },
+          "external_event_id": "external:a01-p4-external-match-lineage-a",
+          "path_ids": [
+            "local:A->B"
+          ],
+          "path_reliability_after": [
+            [
+              "local:A->B",
+              0.6666666666666666
+            ]
+          ],
+          "path_reliability_before": [
+            [
+              "local:A->B",
+              0.5
+            ]
+          ],
+          "prior_relation": {
+            "polarity": 1,
+            "reliability": 0.6666666666666666,
+            "target": "world:x"
+          },
+          "status": "exact-match"
+        },
+        "co_maximal_cardinality_trace": [
+          2,
+          1
+        ],
+        "competition_trace": [
+          [
+            "B=0.500000000000",
+            "C=0.500000000000"
+          ],
+          [
+            "B=0.666666666667",
+            "C=0.500000000000"
+          ]
+        ],
+        "replay_rejected": null,
+        "trial": {
+          "candidate_lineages": [
+            "lineage-a",
+            "lineage-b"
+          ],
+          "causal_lineage": "lineage-a",
+          "early_active_lineages": [
+            "lineage-a",
+            "lineage-b"
+          ],
+          "evidence_source": "external-match",
+          "external_observation_count_delta": 1,
+          "initial_competition_strengths": [
+            0.0,
+            0.0
+          ],
+          "later_active_lineages": [
+            "lineage-a",
+            "lineage-b"
+          ],
+          "later_competition_strengths": [
+            1.0,
+            0.0
+          ],
+          "maximum_active_lineages": 2,
+          "positive_commit_count_delta": 1,
+          "trial_id": "a01-p4-external-match-lineage-a"
+        }
+      },
+      {
+        "accepted": true,
+        "assessment": {
+          "accepted": true,
+          "causal_history_changes_later_competition": true,
+          "contradiction_corrects_causal_lineage": false,
+          "external_evidence_contract_passed": true,
+          "initial_plurality_bounded": true,
+          "initial_plurality_preserved": true,
+          "later_plurality_bounded": true,
+          "premature_singleton_avoided": true,
+          "reason": "accepted",
+          "self_confirmation_guard_passed": true,
+          "trial_id": "a01-p4-external-match-lineage-b"
+        },
+        "bridge_resolution": {
+          "boundary_event_id": "boundary:a01-p4-external-match-lineage-b",
+          "consistency_resolution": {
+            "boundary_event_id": "boundary:a01-p4-external-match-lineage-b",
+            "external_event_id": "external:a01-p4-external-match-lineage-b",
+            "lag_ms": 2.0,
+            "link_id": "link:fe41885542f878c422cdc44f",
+            "port_id": "port:p",
+            "reliability_after": 0.75,
+            "reliability_before": 0.6666666666666666,
+            "status": "externally-consistent",
+            "target": "world:x"
+          },
+          "external_event_id": "external:a01-p4-external-match-lineage-b",
+          "path_ids": [
+            "local:A->C"
+          ],
+          "path_reliability_after": [
+            [
+              "local:A->C",
+              0.6666666666666666
+            ]
+          ],
+          "path_reliability_before": [
+            [
+              "local:A->C",
+              0.5
+            ]
+          ],
+          "prior_relation": {
+            "polarity": 1,
+            "reliability": 0.6666666666666666,
+            "target": "world:x"
+          },
+          "status": "exact-match"
+        },
+        "co_maximal_cardinality_trace": [
+          2,
+          1
+        ],
+        "competition_trace": [
+          [
+            "B=0.500000000000",
+            "C=0.500000000000"
+          ],
+          [
+            "B=0.500000000000",
+            "C=0.666666666667"
+          ]
+        ],
+        "replay_rejected": null,
+        "trial": {
+          "candidate_lineages": [
+            "lineage-a",
+            "lineage-b"
+          ],
+          "causal_lineage": "lineage-b",
+          "early_active_lineages": [
+            "lineage-a",
+            "lineage-b"
+          ],
+          "evidence_source": "external-match",
+          "external_observation_count_delta": 1,
+          "initial_competition_strengths": [
+            0.0,
+            0.0
+          ],
+          "later_active_lineages": [
+            "lineage-a",
+            "lineage-b"
+          ],
+          "later_competition_strengths": [
+            0.0,
+            1.0
+          ],
+          "maximum_active_lineages": 2,
+          "positive_commit_count_delta": 1,
+          "trial_id": "a01-p4-external-match-lineage-b"
+        }
+      },
+      {
+        "accepted": true,
+        "assessment": {
+          "accepted": true,
+          "causal_history_changes_later_competition": true,
+          "contradiction_corrects_causal_lineage": true,
+          "external_evidence_contract_passed": true,
+          "initial_plurality_bounded": true,
+          "initial_plurality_preserved": true,
+          "later_plurality_bounded": true,
+          "premature_singleton_avoided": true,
+          "reason": "later_external_evidence_did_not_change_competition",
+          "self_confirmation_guard_passed": true,
+          "trial_id": "a01-p4-external-contradiction-lineage-a"
+        },
+        "bridge_resolution": {
+          "boundary_event_id": "boundary:a01-p4-external-contradiction-lineage-a",
+          "consistency_resolution": {
+            "boundary_event_id": "boundary:a01-p4-external-contradiction-lineage-a",
+            "external_event_id": "external:a01-p4-external-contradiction-lineage-a",
+            "lag_ms": 2.0,
+            "link_id": "link:80ea87005b7b77d01cafc24c",
+            "port_id": "port:p",
+            "reliability_after": 0.6666666666666666,
+            "reliability_before": 0.5,
+            "status": "externally-consistent",
+            "target": "world:y"
+          },
+          "external_event_id": "external:a01-p4-external-contradiction-lineage-a",
+          "path_ids": [
+            "local:A->B"
+          ],
+          "path_reliability_after": [
+            [
+              "local:A->B",
+              0.3333333333333333
+            ]
+          ],
+          "path_reliability_before": [
+            [
+              "local:A->B",
+              0.5
+            ]
+          ],
+          "prior_relation": {
+            "polarity": 1,
+            "reliability": 0.6666666666666666,
+            "target": "world:x"
+          },
+          "status": "exact-contradiction"
+        },
+        "co_maximal_cardinality_trace": [
+          2,
+          1
+        ],
+        "competition_trace": [
+          [
+            "B=0.500000000000",
+            "C=0.500000000000"
+          ],
+          [
+            "B=0.333333333333",
+            "C=0.500000000000"
+          ]
+        ],
+        "replay_rejected": null,
+        "trial": {
+          "candidate_lineages": [
+            "lineage-a",
+            "lineage-b"
+          ],
+          "causal_lineage": "lineage-a",
+          "early_active_lineages": [
+            "lineage-a",
+            "lineage-b"
+          ],
+          "evidence_source": "external-contradiction",
+          "external_observation_count_delta": 1,
+          "initial_competition_strengths": [
+            0.0,
+            0.0
+          ],
+          "later_active_lineages": [
+            "lineage-a",
+            "lineage-b"
+          ],
+          "later_competition_strengths": [
+            -1.0,
+            0.0
+          ],
+          "maximum_active_lineages": 2,
+          "positive_commit_count_delta": 0,
+          "trial_id": "a01-p4-external-contradiction-lineage-a"
+        }
+      },
+      {
+        "accepted": true,
+        "assessment": {
+          "accepted": true,
+          "causal_history_changes_later_competition": true,
+          "contradiction_corrects_causal_lineage": true,
+          "external_evidence_contract_passed": true,
+          "initial_plurality_bounded": true,
+          "initial_plurality_preserved": true,
+          "later_plurality_bounded": true,
+          "premature_singleton_avoided": true,
+          "reason": "later_external_evidence_did_not_change_competition",
+          "self_confirmation_guard_passed": true,
+          "trial_id": "a01-p4-external-contradiction-lineage-b"
+        },
+        "bridge_resolution": {
+          "boundary_event_id": "boundary:a01-p4-external-contradiction-lineage-b",
+          "consistency_resolution": {
+            "boundary_event_id": "boundary:a01-p4-external-contradiction-lineage-b",
+            "external_event_id": "external:a01-p4-external-contradiction-lineage-b",
+            "lag_ms": 2.0,
+            "link_id": "link:80ea87005b7b77d01cafc24c",
+            "port_id": "port:p",
+            "reliability_after": 0.6666666666666666,
+            "reliability_before": 0.5,
+            "status": "externally-consistent",
+            "target": "world:y"
+          },
+          "external_event_id": "external:a01-p4-external-contradiction-lineage-b",
+          "path_ids": [
+            "local:A->C"
+          ],
+          "path_reliability_after": [
+            [
+              "local:A->C",
+              0.3333333333333333
+            ]
+          ],
+          "path_reliability_before": [
+            [
+              "local:A->C",
+              0.5
+            ]
+          ],
+          "prior_relation": {
+            "polarity": 1,
+            "reliability": 0.6666666666666666,
+            "target": "world:x"
+          },
+          "status": "exact-contradiction"
+        },
+        "co_maximal_cardinality_trace": [
+          2,
+          1
+        ],
+        "competition_trace": [
+          [
+            "B=0.500000000000",
+            "C=0.500000000000"
+          ],
+          [
+            "B=0.500000000000",
+            "C=0.333333333333"
+          ]
+        ],
+        "replay_rejected": null,
+        "trial": {
+          "candidate_lineages": [
+            "lineage-a",
+            "lineage-b"
+          ],
+          "causal_lineage": "lineage-b",
+          "early_active_lineages": [
+            "lineage-a",
+            "lineage-b"
+          ],
+          "evidence_source": "external-contradiction",
+          "external_observation_count_delta": 1,
+          "initial_competition_strengths": [
+            0.0,
+            0.0
+          ],
+          "later_active_lineages": [
+            "lineage-a",
+            "lineage-b"
+          ],
+          "later_competition_strengths": [
+            0.0,
+            -1.0
+          ],
+          "maximum_active_lineages": 2,
+          "positive_commit_count_delta": 0,
+          "trial_id": "a01-p4-external-contradiction-lineage-b"
+        }
+      },
+      {
+        "accepted": true,
+        "assessment": {
+          "accepted": true,
+          "causal_history_changes_later_competition": false,
+          "contradiction_corrects_causal_lineage": false,
+          "external_evidence_contract_passed": true,
+          "initial_plurality_bounded": true,
+          "initial_plurality_preserved": true,
+          "later_plurality_bounded": true,
+          "premature_singleton_avoided": true,
+          "reason": "accepted",
+          "self_confirmation_guard_passed": true,
+          "trial_id": "a01-p4-external-absence-lineage-a"
+        },
+        "bridge_resolution": null,
+        "co_maximal_cardinality_trace": [
+          2,
+          2
+        ],
+        "competition_trace": [
+          [
+            "B=0.500000000000",
+            "C=0.500000000000"
+          ],
+          [
+            "B=0.500000000000",
+            "C=0.500000000000"
+          ]
+        ],
+        "replay_rejected": null,
+        "trial": {
+          "candidate_lineages": [
+            "lineage-a",
+            "lineage-b"
+          ],
+          "causal_lineage": "lineage-a",
+          "early_active_lineages": [
+            "lineage-a",
+            "lineage-b"
+          ],
+          "evidence_source": "external-absence",
+          "external_observation_count_delta": 0,
+          "initial_competition_strengths": [
+            0.0,
+            0.0
+          ],
+          "later_active_lineages": [
+            "lineage-a",
+            "lineage-b"
+          ],
+          "later_competition_strengths": [
+            0.0,
+            0.0
+          ],
+          "maximum_active_lineages": 2,
+          "positive_commit_count_delta": 0,
+          "trial_id": "a01-p4-external-absence-lineage-a"
+        }
+      },
+      {
+        "accepted": true,
+        "assessment": {
+          "accepted": true,
+          "causal_history_changes_later_competition": false,
+          "contradiction_corrects_causal_lineage": false,
+          "external_evidence_contract_passed": true,
+          "initial_plurality_bounded": true,
+          "initial_plurality_preserved": true,
+          "later_plurality_bounded": true,
+          "premature_singleton_avoided": true,
+          "reason": "accepted",
+          "self_confirmation_guard_passed": true,
+          "trial_id": "a01-p4-external-absence-lineage-b"
+        },
+        "bridge_resolution": null,
+        "co_maximal_cardinality_trace": [
+          2,
+          2
+        ],
+        "competition_trace": [
+          [
+            "B=0.500000000000",
+            "C=0.500000000000"
+          ],
+          [
+            "B=0.500000000000",
+            "C=0.500000000000"
+          ]
+        ],
+        "replay_rejected": null,
+        "trial": {
+          "candidate_lineages": [
+            "lineage-a",
+            "lineage-b"
+          ],
+          "causal_lineage": "lineage-b",
+          "early_active_lineages": [
+            "lineage-a",
+            "lineage-b"
+          ],
+          "evidence_source": "external-absence",
+          "external_observation_count_delta": 0,
+          "initial_competition_strengths": [
+            0.0,
+            0.0
+          ],
+          "later_active_lineages": [
+            "lineage-a",
+            "lineage-b"
+          ],
+          "later_competition_strengths": [
+            0.0,
+            0.0
+          ],
+          "maximum_active_lineages": 2,
+          "positive_commit_count_delta": 0,
+          "trial_id": "a01-p4-external-absence-lineage-b"
+        }
+      },
+      {
+        "accepted": true,
+        "assessment": {
+          "accepted": true,
+          "causal_history_changes_later_competition": false,
+          "contradiction_corrects_causal_lineage": false,
+          "external_evidence_contract_passed": true,
+          "initial_plurality_bounded": true,
+          "initial_plurality_preserved": true,
+          "later_plurality_bounded": true,
+          "premature_singleton_avoided": true,
+          "reason": "accepted",
+          "self_confirmation_guard_passed": true,
+          "trial_id": "a01-p4-internal-replay-only-lineage-a"
+        },
+        "bridge_resolution": null,
+        "co_maximal_cardinality_trace": [
+          2,
+          2
+        ],
+        "competition_trace": [
+          [
+            "B=0.500000000000",
+            "C=0.500000000000"
+          ],
+          [
+            "B=0.500000000000",
+            "C=0.500000000000"
+          ]
+        ],
+        "replay_rejected": true,
+        "trial": {
+          "candidate_lineages": [
+            "lineage-a",
+            "lineage-b"
+          ],
+          "causal_lineage": "lineage-a",
+          "early_active_lineages": [
+            "lineage-a",
+            "lineage-b"
+          ],
+          "evidence_source": "internal-replay-only",
+          "external_observation_count_delta": 0,
+          "initial_competition_strengths": [
+            0.0,
+            0.0
+          ],
+          "later_active_lineages": [
+            "lineage-a",
+            "lineage-b"
+          ],
+          "later_competition_strengths": [
+            0.0,
+            0.0
+          ],
+          "maximum_active_lineages": 2,
+          "positive_commit_count_delta": 0,
+          "trial_id": "a01-p4-internal-replay-only-lineage-a"
+        }
+      },
+      {
+        "accepted": true,
+        "assessment": {
+          "accepted": true,
+          "causal_history_changes_later_competition": false,
+          "contradiction_corrects_causal_lineage": false,
+          "external_evidence_contract_passed": true,
+          "initial_plurality_bounded": true,
+          "initial_plurality_preserved": true,
+          "later_plurality_bounded": true,
+          "premature_singleton_avoided": true,
+          "reason": "accepted",
+          "self_confirmation_guard_passed": true,
+          "trial_id": "a01-p4-internal-replay-only-lineage-b"
+        },
+        "bridge_resolution": null,
+        "co_maximal_cardinality_trace": [
+          2,
+          2
+        ],
+        "competition_trace": [
+          [
+            "B=0.500000000000",
+            "C=0.500000000000"
+          ],
+          [
+            "B=0.500000000000",
+            "C=0.500000000000"
+          ]
+        ],
+        "replay_rejected": true,
+        "trial": {
+          "candidate_lineages": [
+            "lineage-a",
+            "lineage-b"
+          ],
+          "causal_lineage": "lineage-b",
+          "early_active_lineages": [
+            "lineage-a",
+            "lineage-b"
+          ],
+          "evidence_source": "internal-replay-only",
+          "external_observation_count_delta": 0,
+          "initial_competition_strengths": [
+            0.0,
+            0.0
+          ],
+          "later_active_lineages": [
+            "lineage-a",
+            "lineage-b"
+          ],
+          "later_competition_strengths": [
+            0.0,
+            0.0
+          ],
+          "maximum_active_lineages": 2,
+          "positive_commit_count_delta": 0,
+          "trial_id": "a01-p4-internal-replay-only-lineage-b"
+        }
+      }
+    ],
+    "verdict": "SUPPORTED"
+  },
+  "p5": {
+    "assessment": {
+      "accepted_as_emergent_field_organization": false,
+      "baseline_mechanism_id": "n1-minimal-explicit-local-eligibility-memory",
+      "baseline_minimality_established": true,
+      "baseline_not_larger_than_candidate": true,
+      "baseline_not_more_lookup_privileged": true,
+      "candidate_mechanism_id": "a01-transient-return-address",
+      "candidate_p1_p4_contracts_passed": true,
+      "candidate_reduced_to_explicit_predictor": true,
+      "candidate_uses_forbidden_privilege": false,
+      "classification": "behaviorally-and-dynamically-explicit-memory-equivalent",
+      "dynamics_mismatches": [],
+      "endpoint_behavior_matches": true,
+      "endpoint_mismatches": [],
+      "required_challenge_coverage_passed": true,
+      "temporal_state_signatures_match": true,
+      "tested_explicit_baseline_falsified": false
+    },
+    "baseline": {
+      "direct_keyed_target_query": false,
+      "global_keyed_query_count": 0,
+      "mechanism_id": "n1-minimal-explicit-local-eligibility-memory",
+      "minimality_established": true,
+      "outcomes": [
+        {
+          "ambiguity_cardinality_trace": [
+            2,
+            1
+          ],
+          "boundary_signature": [
+            "exact-match",
+            "local:A->B"
+          ],
+          "challenge": "matched-causal-lineage",
+          "competition_trace": [
+            [
+              "B=0.500000000000",
+              "C=0.500000000000"
+            ],
+            [
+              "B=0.666666666667",
+              "C=0.500000000000"
+            ]
+          ],
+          "external_effect_latency_steps": 1,
+          "future_competition_signature": [
+            "B=0.666666666667",
+            "C=0.500000000000"
+          ],
+          "global_indexed_lookup_count_delta": 0,
+          "positive_commit_count_delta": 1,
+          "state_update_count": 1,
+          "state_update_loci": [
+            "local-transition"
+          ]
+        },
+        {
+          "ambiguity_cardinality_trace": [
+            2,
+            1
+          ],
+          "boundary_signature": [
+            "exact-match",
+            "local:A->C"
+          ],
+          "challenge": "lineage-swap",
+          "competition_trace": [
+            [
+              "B=0.500000000000",
+              "C=0.500000000000"
+            ],
+            [
+              "B=0.500000000000",
+              "C=0.666666666667"
+            ]
+          ],
+          "external_effect_latency_steps": 1,
+          "future_competition_signature": [
+            "B=0.500000000000",
+            "C=0.666666666667"
+          ],
+          "global_indexed_lookup_count_delta": 0,
+          "positive_commit_count_delta": 1,
+          "state_update_count": 1,
+          "state_update_loci": [
+            "local-transition"
+          ]
+        },
+        {
+          "ambiguity_cardinality_trace": [
+            2,
+            1
+          ],
+          "boundary_signature": [
+            "exact-contradiction",
+            "local:A->B"
+          ],
+          "challenge": "external-contradiction",
+          "competition_trace": [
+            [
+              "B=0.500000000000",
+              "C=0.500000000000"
+            ],
+            [
+              "B=0.333333333333",
+              "C=0.500000000000"
+            ]
+          ],
+          "external_effect_latency_steps": 1,
+          "future_competition_signature": [
+            "B=0.333333333333",
+            "C=0.500000000000"
+          ],
+          "global_indexed_lookup_count_delta": 0,
+          "positive_commit_count_delta": 0,
+          "state_update_count": 1,
+          "state_update_loci": [
+            "local-transition"
+          ]
+        },
+        {
+          "ambiguity_cardinality_trace": [
+            2,
+            2
+          ],
+          "boundary_signature": [
+            "external-absence"
+          ],
+          "challenge": "external-absence",
+          "competition_trace": [
+            [
+              "B=0.500000000000",
+              "C=0.500000000000"
+            ],
+            [
+              "B=0.500000000000",
+              "C=0.500000000000"
+            ]
+          ],
+          "external_effect_latency_steps": null,
+          "future_competition_signature": [
+            "B=0.500000000000",
+            "C=0.500000000000"
+          ],
+          "global_indexed_lookup_count_delta": 0,
+          "positive_commit_count_delta": 0,
+          "state_update_count": 0,
+          "state_update_loci": []
+        },
+        {
+          "ambiguity_cardinality_trace": [
+            2,
+            2
+          ],
+          "boundary_signature": [
+            "internal-replay-rejected"
+          ],
+          "challenge": "internal-replay-only",
+          "competition_trace": [
+            [
+              "B=0.500000000000",
+              "C=0.500000000000"
+            ],
+            [
+              "B=0.500000000000",
+              "C=0.500000000000"
+            ]
+          ],
+          "external_effect_latency_steps": null,
+          "future_competition_signature": [
+            "B=0.500000000000",
+            "C=0.500000000000"
+          ],
+          "global_indexed_lookup_count_delta": 0,
+          "positive_commit_count_delta": 0,
+          "state_update_count": 0,
+          "state_update_loci": []
+        },
+        {
+          "ambiguity_cardinality_trace": [
+            2,
+            1
+          ],
+          "boundary_signature": [
+            "exact-match",
+            "local:A->B"
+          ],
+          "challenge": "bounded-ambiguity",
+          "competition_trace": [
+            [
+              "B=0.500000000000",
+              "C=0.500000000000"
+            ],
+            [
+              "B=0.666666666667",
+              "C=0.500000000000"
+            ]
+          ],
+          "external_effect_latency_steps": 1,
+          "future_competition_signature": [
+            "B=0.666666666667",
+            "C=0.500000000000"
+          ],
+          "global_indexed_lookup_count_delta": 0,
+          "positive_commit_count_delta": 1,
+          "state_update_count": 1,
+          "state_update_loci": [
+            "local-transition"
+          ]
+        },
+        {
+          "ambiguity_cardinality_trace": [
+            2,
+            1
+          ],
+          "boundary_signature": [
+            "exact-match",
+            "local:Q->S"
+          ],
+          "challenge": "identifier-permutation",
+          "competition_trace": [
+            [
+              "R=0.500000000000",
+              "S=0.500000000000"
+            ],
+            [
+              "R=0.500000000000",
+              "S=0.666666666667"
+            ]
+          ],
+          "external_effect_latency_steps": 1,
+          "future_competition_signature": [
+            "R=0.500000000000",
+            "S=0.666666666667"
+          ],
+          "global_indexed_lookup_count_delta": 0,
+          "positive_commit_count_delta": 1,
+          "state_update_count": 1,
+          "state_update_loci": [
+            "local-transition"
+          ]
+        },
+        {
+          "ambiguity_cardinality_trace": [
+            2,
+            1
+          ],
+          "boundary_signature": [
+            "exact-match",
+            "local:A->B"
+          ],
+          "challenge": "physical-trajectory-substitution",
+          "competition_trace": [
+            [
+              "B=0.500000000000",
+              "C=0.500000000000"
+            ],
+            [
+              "B=0.666666666667",
+              "C=0.500000000000"
+            ]
+          ],
+          "external_effect_latency_steps": 1,
+          "future_competition_signature": [
+            "B=0.666666666667",
+            "C=0.500000000000"
+          ],
+          "global_indexed_lookup_count_delta": 0,
+          "positive_commit_count_delta": 1,
+          "state_update_count": 1,
+          "state_update_loci": [
+            "local-transition"
+          ]
+        },
+        {
+          "ambiguity_cardinality_trace": [
+            2,
+            2
+          ],
+          "boundary_signature": [
+            "exact-match",
+            "local:A->B",
+            "local:A->C"
+          ],
+          "challenge": "unseen-lineage-combination",
+          "competition_trace": [
+            [
+              "B=0.500000000000",
+              "C=0.500000000000"
+            ],
+            [
+              "B=0.666666666667",
+              "C=0.666666666667"
+            ]
+          ],
+          "external_effect_latency_steps": 1,
+          "future_competition_signature": [
+            "B=0.666666666667",
+            "C=0.666666666667"
+          ],
+          "global_indexed_lookup_count_delta": 0,
+          "positive_commit_count_delta": 1,
+          "state_update_count": 2,
+          "state_update_loci": [
+            "local-transition"
+          ]
+        },
+        {
+          "ambiguity_cardinality_trace": [
+            1,
+            1
+          ],
+          "boundary_signature": [
+            "world-relation-a",
+            "world-relation-b"
+          ],
+          "challenge": "world-relation-permutation",
+          "competition_trace": [
+            [
+              "B=0.666666666667",
+              "C=0.500000000000"
+            ],
+            [
+              "B=0.500000000000",
+              "C=0.666666666667"
+            ]
+          ],
+          "external_effect_latency_steps": 1,
+          "future_competition_signature": [
+            "B=0.500000000000",
+            "C=0.666666666667"
+          ],
+          "global_indexed_lookup_count_delta": 0,
+          "positive_commit_count_delta": 2,
+          "state_update_count": 2,
+          "state_update_loci": [
+            "local-transition"
+          ]
+        },
+        {
+          "ambiguity_cardinality_trace": [
+            2,
+            1
+          ],
+          "boundary_signature": [
+            "L-only",
+            "lineage-b"
+          ],
+          "challenge": "state-locus-transplant",
+          "competition_trace": [
+            [
+              "B=0.500000000000",
+              "C=0.500000000000"
+            ],
+            [
+              "B=0.500000000000",
+              "C=0.666666666667"
+            ]
+          ],
+          "external_effect_latency_steps": null,
+          "future_competition_signature": [
+            "B=0.500000000000",
+            "C=0.666666666667"
+          ],
+          "global_indexed_lookup_count_delta": 0,
+          "positive_commit_count_delta": 0,
+          "state_update_count": 1,
+          "state_update_loci": [
+            "local-transition"
+          ]
+        }
+      ],
+      "persistent_state_bytes": 155,
+      "persistent_state_units": 4,
+      "transient_state_peak_units": 6,
+      "uses_forbidden_privilege": false
+    },
+    "candidate": {
+      "direct_keyed_target_query": false,
+      "global_keyed_query_count": 0,
+      "mechanism_id": "a01-transient-return-address",
+      "outcomes": [
+        {
+          "ambiguity_cardinality_trace": [
+            2,
+            1
+          ],
+          "boundary_signature": [
+            "exact-match",
+            "local:A->B"
+          ],
+          "challenge": "matched-causal-lineage",
+          "competition_trace": [
+            [
+              "B=0.500000000000",
+              "C=0.500000000000"
+            ],
+            [
+              "B=0.666666666667",
+              "C=0.500000000000"
+            ]
+          ],
+          "external_effect_latency_steps": 1,
+          "future_competition_signature": [
+            "B=0.666666666667",
+            "C=0.500000000000"
+          ],
+          "global_indexed_lookup_count_delta": 0,
+          "positive_commit_count_delta": 1,
+          "state_update_count": 1,
+          "state_update_loci": [
+            "local-transition"
+          ]
+        },
+        {
+          "ambiguity_cardinality_trace": [
+            2,
+            1
+          ],
+          "boundary_signature": [
+            "exact-match",
+            "local:A->C"
+          ],
+          "challenge": "lineage-swap",
+          "competition_trace": [
+            [
+              "B=0.500000000000",
+              "C=0.500000000000"
+            ],
+            [
+              "B=0.500000000000",
+              "C=0.666666666667"
+            ]
+          ],
+          "external_effect_latency_steps": 1,
+          "future_competition_signature": [
+            "B=0.500000000000",
+            "C=0.666666666667"
+          ],
+          "global_indexed_lookup_count_delta": 0,
+          "positive_commit_count_delta": 1,
+          "state_update_count": 1,
+          "state_update_loci": [
+            "local-transition"
+          ]
+        },
+        {
+          "ambiguity_cardinality_trace": [
+            2,
+            1
+          ],
+          "boundary_signature": [
+            "exact-contradiction",
+            "local:A->B"
+          ],
+          "challenge": "external-contradiction",
+          "competition_trace": [
+            [
+              "B=0.500000000000",
+              "C=0.500000000000"
+            ],
+            [
+              "B=0.333333333333",
+              "C=0.500000000000"
+            ]
+          ],
+          "external_effect_latency_steps": 1,
+          "future_competition_signature": [
+            "B=0.333333333333",
+            "C=0.500000000000"
+          ],
+          "global_indexed_lookup_count_delta": 0,
+          "positive_commit_count_delta": 0,
+          "state_update_count": 1,
+          "state_update_loci": [
+            "local-transition"
+          ]
+        },
+        {
+          "ambiguity_cardinality_trace": [
+            2,
+            2
+          ],
+          "boundary_signature": [
+            "external-absence"
+          ],
+          "challenge": "external-absence",
+          "competition_trace": [
+            [
+              "B=0.500000000000",
+              "C=0.500000000000"
+            ],
+            [
+              "B=0.500000000000",
+              "C=0.500000000000"
+            ]
+          ],
+          "external_effect_latency_steps": null,
+          "future_competition_signature": [
+            "B=0.500000000000",
+            "C=0.500000000000"
+          ],
+          "global_indexed_lookup_count_delta": 0,
+          "positive_commit_count_delta": 0,
+          "state_update_count": 0,
+          "state_update_loci": []
+        },
+        {
+          "ambiguity_cardinality_trace": [
+            2,
+            2
+          ],
+          "boundary_signature": [
+            "internal-replay-rejected"
+          ],
+          "challenge": "internal-replay-only",
+          "competition_trace": [
+            [
+              "B=0.500000000000",
+              "C=0.500000000000"
+            ],
+            [
+              "B=0.500000000000",
+              "C=0.500000000000"
+            ]
+          ],
+          "external_effect_latency_steps": null,
+          "future_competition_signature": [
+            "B=0.500000000000",
+            "C=0.500000000000"
+          ],
+          "global_indexed_lookup_count_delta": 0,
+          "positive_commit_count_delta": 0,
+          "state_update_count": 0,
+          "state_update_loci": []
+        },
+        {
+          "ambiguity_cardinality_trace": [
+            2,
+            1
+          ],
+          "boundary_signature": [
+            "exact-match",
+            "local:A->B"
+          ],
+          "challenge": "bounded-ambiguity",
+          "competition_trace": [
+            [
+              "B=0.500000000000",
+              "C=0.500000000000"
+            ],
+            [
+              "B=0.666666666667",
+              "C=0.500000000000"
+            ]
+          ],
+          "external_effect_latency_steps": 1,
+          "future_competition_signature": [
+            "B=0.666666666667",
+            "C=0.500000000000"
+          ],
+          "global_indexed_lookup_count_delta": 0,
+          "positive_commit_count_delta": 1,
+          "state_update_count": 1,
+          "state_update_loci": [
+            "local-transition"
+          ]
+        },
+        {
+          "ambiguity_cardinality_trace": [
+            2,
+            1
+          ],
+          "boundary_signature": [
+            "exact-match",
+            "local:Q->S"
+          ],
+          "challenge": "identifier-permutation",
+          "competition_trace": [
+            [
+              "R=0.500000000000",
+              "S=0.500000000000"
+            ],
+            [
+              "R=0.500000000000",
+              "S=0.666666666667"
+            ]
+          ],
+          "external_effect_latency_steps": 1,
+          "future_competition_signature": [
+            "R=0.500000000000",
+            "S=0.666666666667"
+          ],
+          "global_indexed_lookup_count_delta": 0,
+          "positive_commit_count_delta": 1,
+          "state_update_count": 1,
+          "state_update_loci": [
+            "local-transition"
+          ]
+        },
+        {
+          "ambiguity_cardinality_trace": [
+            2,
+            1
+          ],
+          "boundary_signature": [
+            "exact-match",
+            "local:A->B"
+          ],
+          "challenge": "physical-trajectory-substitution",
+          "competition_trace": [
+            [
+              "B=0.500000000000",
+              "C=0.500000000000"
+            ],
+            [
+              "B=0.666666666667",
+              "C=0.500000000000"
+            ]
+          ],
+          "external_effect_latency_steps": 1,
+          "future_competition_signature": [
+            "B=0.666666666667",
+            "C=0.500000000000"
+          ],
+          "global_indexed_lookup_count_delta": 0,
+          "positive_commit_count_delta": 1,
+          "state_update_count": 1,
+          "state_update_loci": [
+            "local-transition"
+          ]
+        },
+        {
+          "ambiguity_cardinality_trace": [
+            2,
+            2
+          ],
+          "boundary_signature": [
+            "exact-match",
+            "local:A->B",
+            "local:A->C"
+          ],
+          "challenge": "unseen-lineage-combination",
+          "competition_trace": [
+            [
+              "B=0.500000000000",
+              "C=0.500000000000"
+            ],
+            [
+              "B=0.666666666667",
+              "C=0.666666666667"
+            ]
+          ],
+          "external_effect_latency_steps": 1,
+          "future_competition_signature": [
+            "B=0.666666666667",
+            "C=0.666666666667"
+          ],
+          "global_indexed_lookup_count_delta": 0,
+          "positive_commit_count_delta": 1,
+          "state_update_count": 2,
+          "state_update_loci": [
+            "local-transition"
+          ]
+        },
+        {
+          "ambiguity_cardinality_trace": [
+            1,
+            1
+          ],
+          "boundary_signature": [
+            "world-relation-a",
+            "world-relation-b"
+          ],
+          "challenge": "world-relation-permutation",
+          "competition_trace": [
+            [
+              "B=0.666666666667",
+              "C=0.500000000000"
+            ],
+            [
+              "B=0.500000000000",
+              "C=0.666666666667"
+            ]
+          ],
+          "external_effect_latency_steps": 1,
+          "future_competition_signature": [
+            "B=0.500000000000",
+            "C=0.666666666667"
+          ],
+          "global_indexed_lookup_count_delta": 0,
+          "positive_commit_count_delta": 2,
+          "state_update_count": 2,
+          "state_update_loci": [
+            "local-transition"
+          ]
+        },
+        {
+          "ambiguity_cardinality_trace": [
+            2,
+            1
+          ],
+          "boundary_signature": [
+            "L-only",
+            "lineage-b"
+          ],
+          "challenge": "state-locus-transplant",
+          "competition_trace": [
+            [
+              "B=0.500000000000",
+              "C=0.500000000000"
+            ],
+            [
+              "B=0.500000000000",
+              "C=0.666666666667"
+            ]
+          ],
+          "external_effect_latency_steps": null,
+          "future_competition_signature": [
+            "B=0.500000000000",
+            "C=0.666666666667"
+          ],
+          "global_indexed_lookup_count_delta": 0,
+          "positive_commit_count_delta": 0,
+          "state_update_count": 1,
+          "state_update_loci": [
+            "local-transition"
+          ]
+        }
+      ],
+      "persistent_state_bytes": 155,
+      "persistent_state_units": 4,
+      "transient_state_peak_units": 6,
+      "uses_forbidden_privilege": false
+    },
+    "minimality_evidence": {
+      "baseline_no_larger": true,
+      "same_admissible_evidence": true,
+      "same_update_and_read_locus": true,
+      "scope": "incremental A01 causal-support mechanism",
+      "sufficient_statistics": "For exact A01 Beta reliability over arbitrary histories, each independently addressable local path requires both consistent and contradicted observation counts, up to a lossless bijective encoding."
+    },
+    "reduction_scope_note": "The explicit null reuses the same exact-parent provenance and anonymous relation classification. It replaces only A01's path-attached support record, as preregistered N1.",
+    "verdict": "behaviorally-and-dynamically-explicit-memory-equivalent"
+  },
+  "result_digest": "dbae940526222f72d3f5d1cb0d446db57addf578d4ec96e5df8641d4f357d7b4",
+  "run_id": "A01-MD-001",
+  "schema_version": "v061-a01-mechanism-discrimination-v1",
+  "source_sha": "e5882c060bf3029415d49c22d9130d59ecbadd00",
+  "summary": {
+    "absence_replay_leakage": false,
+    "actual_carrier_locus": "L.local-transition.a01-causal-support",
+    "contradiction_correction": true,
+    "explicit_anonymous_memory_reduction": "behaviorally-and-dynamically-explicit-memory-equivalent",
+    "future_competition_change": true,
+    "lineage_selectivity": true,
+    "p1_verdict": "SUPPORTED",
+    "p2_verdict": "SUPPORTED",
+    "p3_p5_value": "continue-to-reduction-classification"
+  },
+  "threshold_tuning_performed": false
+}
