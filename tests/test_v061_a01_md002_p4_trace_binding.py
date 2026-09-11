@@ -73,8 +73,25 @@ def test_p4_trace_binding_rejects_boundary_event_not_retained_in_trace() -> None
     different = _event("different", ("p:a", "p:b"))
     forged = replace(retained, boundary_events=(different,))
 
-    with pytest.raises(ValueError, match="BoundaryEvent identity"):
+    with pytest.raises(ValueError, match="do not exactly match"):
         forged.validate()
+
+
+def test_p4_trace_binding_rejects_cherry_picked_boundary_subset() -> None:
+    merged = _event("merged", ("p:a", "p:b"))
+    omitted = _event("omitted", ("p:b", "p:c"))
+    retained = _trace_input(merged)
+    rows = list(retained.runtime_trace)
+    rows.insert(1, {"type": "md002-p4-boundary-event", "event": omitted.state_dict()})
+    trace = tuple(rows)
+    cherry_picked = replace(
+        retained,
+        runtime_trace=trace,
+        runtime_trace_sha256=canonical_sha256(trace),
+    )
+
+    with pytest.raises(ValueError, match="complete retained boundary-event trace"):
+        cherry_picked.validate()
 
 
 def test_p4_trace_binding_rejects_separate_singleton_events_as_merged() -> None:
