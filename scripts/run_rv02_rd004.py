@@ -21,6 +21,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
+from sparkbrain.research.rv02_rd003_online import _training_schedule  # noqa: E402
 from sparkbrain.research.rv02_rd004_online import (  # noqa: E402
     RD004_PROTOCOL,
     planned_rd004_cells,
@@ -34,6 +35,7 @@ from sparkbrain.research.rv02_rd004_probe_clock import (  # noqa: E402
 )
 from sparkbrain.research.rv02_scale import (  # noqa: E402
     ScaleStudyConfig,
+    audit_scale,
     development_worlds,
     digest,
 )
@@ -51,18 +53,34 @@ ALLOWED_STATUSES = {
 
 
 def source_inventory(root: Path) -> dict[str, str]:
+    """Bind the runner to all transitive SparkBrain runtime sources it may execute."""
+
     paths = [
-        *sorted((root / "src" / "sparkbrain" / "research").glob("rv02*.py")),
-        root / "src/sparkbrain/research/rv01/physical_plasticity.py",
-        root / "src/sparkbrain/research/rv01/physical_learner_bridge.py",
+        *sorted((root / "src/sparkbrain/v04").glob("*.py")),
+        *sorted((root / "src/sparkbrain/v06").glob("*.py")),
+        *sorted((root / "src/sparkbrain/research/rv01").glob("*.py")),
+        *sorted((root / "src/sparkbrain/research").glob("rv02*.py")),
         root / CONTRACT,
         root / RUNNER,
         *sorted((root / "tests").glob("test_rv02*.py")),
     ]
+    unique = sorted({path.resolve() for path in paths})
+    missing = [path for path in unique if not path.is_file()]
+    if missing:
+        raise ValueError(f"RD004 source inventory has missing paths: {missing}")
     return {
-        str(path.relative_to(root)): hashlib.sha256(path.read_bytes()).hexdigest()
-        for path in paths
+        str(path.relative_to(root.resolve())): hashlib.sha256(path.read_bytes()).hexdigest()
+        for path in unique
     }
+
+
+def git_head(root: Path) -> str:
+    try:
+        return subprocess.check_output(
+            ["git", "rev-parse", "HEAD"], cwd=root, text=True
+        ).strip()
+    except (OSError, subprocess.CalledProcessError) as exc:
+        raise ValueError("RD004 verification requires an exact Git source checkout") from exc
 
 
 def world_for_family(family: str) -> dict:
@@ -84,6 +102,34 @@ def eligibility_budget(rows: list[dict]) -> tuple[tuple[float, float, int], ...]
     )
 
 
+def _expected_probe_indices(world: dict) -> tuple[int, ...]:
+    return tuple(range(len(world["routes"])))
+
+
+def _validate_probe_inventory(result: dict, world: dict) -> None:
+    probes = result.get("probes")
+    if probes is None:
+        if result["status"] in {"complete", "incomplete_native_guard_probe"}:
+            raise ValueError("RD004 probe-bearing status lacks retained probes")
+        return
+    expected_modes = {"disabled", "causal", "shuffled"}
+    if set(probes) != expected_modes:
+        raise ValueError("RD004 probe mode inventory mismatch")
+    expected_indices = _expected_probe_indices(world)
+    for mode in sorted(expected_modes):
+        rows = probes[mode]
+        if len(rows) != len(expected_indices):
+            raise ValueError(f"RD004 {mode} probe route count mismatch")
+        indices = tuple(int(pair.get("route_index", -1)) for pair in rows)
+        if indices != expected_indices:
+            raise ValueError(f"RD004 {mode} probe route-index inventory mismatch")
+        for pair in rows:
+            if not isinstance(pair.get("natural"), dict) or not isinstance(
+                pair.get("boundary_zero"), dict
+            ):
+                raise ValueError("RD004 probe pair is missing a required arm")
+
+
 def verify_result(result: dict) -> None:
     if result["protocol"] != RD004_PROTOCOL:
         raise ValueError("RD004 protocol mismatch")
@@ -103,8 +149,20 @@ def verify_result(result: dict) -> None:
         raise ValueError("RD004 probe horizon drifted")
     if result["scientific_status"] != "not_scored_development_diagnosis":
         raise ValueError("RD004 result was scored before independent interpretation")
-    if digest(tuple(result["training_schedule"])) != result["training_schedule_hash"]:
+
+    family = str(result["family"])
+    scale = int(result["scale"])
+    world = world_for_family(family)
+    if result.get("world_id") != world["world_id"]:
+        raise ValueError("RD004 result world identity mismatch")
+    expected_schedule = tuple(_training_schedule(world))
+    if tuple(result["training_schedule"]) != expected_schedule:
+        raise ValueError("RD004 result training schedule differs from registered world")
+    if digest(expected_schedule) != result["training_schedule_hash"]:
         raise ValueError("RD004 training schedule hash mismatch")
+    expected_audit = audit_scale(ScaleStudyConfig(), world, scale)
+    if digest(result["audit"]) != digest(expected_audit):
+        raise ValueError("RD004 result audit does not match registered cell")
 
     e1 = eligibility_budget(result.get("e1_eligibility_budget", []))
     es = eligibility_budget(result.get("es_eligibility_budget", []))
@@ -117,12 +175,13 @@ def verify_result(result: dict) -> None:
         raise ValueError("RD004 E0 retained hidden eligibility")
 
     snapshots = result.get("probe_snapshots")
-    probes = result.get("probes")
     if result["status"] in {
         "complete",
         "incomplete_native_guard_probe",
         "incomplete_integrity_failure",
     } and snapshots is not None:
+        if set(snapshots) != {"disabled", "causal", "shuffled"}:
+            raise ValueError("RD004 snapshot mode inventory mismatch")
         for mode, snapshot in snapshots.items():
             source = float(snapshot["source_clock_ms"])
             tail = float(snapshot["tail_end_ms"])
@@ -135,12 +194,11 @@ def verify_result(result: dict) -> None:
             if abs(cue - washout) > 1e-9:
                 raise ValueError(f"RD004 {mode} cue not anchored to snapshot clock")
 
+    _validate_probe_inventory(result, world)
+    probes = result.get("probes")
     if probes is None:
-        if result["status"] in {"complete", "incomplete_native_guard_probe"}:
-            raise ValueError("RD004 probe-bearing status lacks retained probes")
         return
 
-    world = world_for_family(result["family"])
     unit_count = int(result["audit"]["unit_count"])
     for mode in ("disabled", "causal", "shuffled"):
         for pair in probes[mode]:
@@ -192,6 +250,8 @@ def verify_bundle(output: Path, source_root: Path = ROOT) -> dict:
         raise ValueError("RD004 compressed hash mismatch")
     if hashlib.sha256(raw).hexdigest() != summary["raw_sha256"]:
         raise ValueError("RD004 raw hash mismatch")
+    if manifest["source_git_sha"] != git_head(source_root):
+        raise ValueError("RD004 artifact source SHA does not match checked-out source")
     if manifest["source_hashes"] != source_inventory(source_root):
         raise ValueError("RD004 source inventory mismatch")
     if manifest["config"] != ScaleStudyConfig().state_dict():
@@ -202,6 +262,10 @@ def verify_bundle(output: Path, source_root: Path = ROOT) -> dict:
         raise ValueError("RD004 manifest protocol mismatch")
     if manifest["formal_execution_allowed"] is not False:
         raise ValueError("RD004 manifest formal boundary opened")
+    if summary["formal_execution_allowed"] is not False:
+        raise ValueError("RD004 summary formal boundary opened")
+    if summary["scientific_status"] != "not_scored_development_diagnosis":
+        raise ValueError("RD004 summary scientific boundary changed")
 
     rows = [json.loads(line) for line in raw.splitlines()]
     planned = list(planned_rd004_cells())
@@ -211,11 +275,16 @@ def verify_bundle(output: Path, source_root: Path = ROOT) -> dict:
         raise ValueError("RD004 raw matrix cardinality mismatch")
 
     counts = {status: 0 for status in ALLOWED_STATUSES}
-    for row in rows:
+    for row, (family, scale) in zip(rows, planned, strict=True):
         if row["status"] not in ALLOWED_STATUSES:
             raise ValueError("RD004 row status invalid")
         result = row.get("result")
         if result is not None:
+            if result.get("family") != family or int(result.get("scale", -1)) != scale:
+                raise ValueError("RD004 retained result is bound to the wrong matrix cell")
+            expected_world = world_for_family(family)
+            if result.get("world_id") != expected_world["world_id"]:
+                raise ValueError("RD004 retained result world ID does not match wrapper cell")
             verify_result(result)
             if result["status"] != row["status"]:
                 raise ValueError("RD004 wrapper/result status mismatch")
@@ -232,6 +301,7 @@ def verify_bundle(output: Path, source_root: Path = ROOT) -> dict:
         "attempted_cells": len(planned),
         "status_counts": counts,
         "raw_sha256": summary["raw_sha256"],
+        "source_git_sha": manifest["source_git_sha"],
     }
 
 
@@ -263,7 +333,7 @@ def main() -> int:
     ):
         raise SystemExit("commit RD004 source/tests before development execution")
 
-    git_sha = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+    git_sha = git_head(ROOT)
     args.output.mkdir(parents=True, exist_ok=False)
     manifest = {
         "protocol": RD004_PROTOCOL,
