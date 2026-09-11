@@ -11,7 +11,7 @@ from __future__ import annotations
 import hashlib
 import json
 import math
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, field
 from typing import Any, Literal
 
 from sparkbrain.research.rv02_rd003_online import (
@@ -20,12 +20,12 @@ from sparkbrain.research.rv02_rd003_online import (
     _training_schedule,
 )
 from sparkbrain.research.rv02_rd005_gate_construction import (
+    RD005_PROTOCOL_ID,
     ConnectionSnapshot,
     EligibilityEvent,
     ExternalReturnEvent,
     GateReachabilityCertificate,
     RD005GateConstruction,
-    RD005_PROTOCOL_ID,
 )
 from sparkbrain.research.rv02_recruitment import PORTS
 from sparkbrain.research.rv02_scale import (
@@ -59,6 +59,14 @@ def _canonical_sha256(value: object) -> str:
 def _require_git_sha(value: str) -> None:
     if len(value) != 40 or any(char not in "0123456789abcdef" for char in value):
         raise ValueError("source_git_sha must be a 40-character lowercase Git SHA")
+
+
+def _require_sha256(value: str | None, *, name: str) -> str:
+    if value is None:
+        raise ValueError(f"{name} is required for a non-failure RD005 cell")
+    if len(value) != 64 or any(char not in "0123456789abcdef" for char in value):
+        raise ValueError(f"{name} must be a lowercase SHA-256 digest")
+    return value
 
 
 @dataclass(frozen=True, slots=True)
@@ -108,6 +116,16 @@ class InspectedClock:
         return {"time_ms": float(self.time_ms), "spikes": list(self.spikes)}
 
 
+@dataclass(slots=True)
+class _CellConstructionTrace:
+    """Partial construction evidence retained without retrying fallible setup."""
+
+    topology_sha256: str | None = None
+    ordinary_schedule: tuple[dict[str, Any], ...] | None = None
+    connection_rows: tuple[dict[str, Any], ...] | None = None
+    inspected_clocks: list[InspectedClock] = field(default_factory=list)
+
+
 @dataclass(frozen=True, slots=True)
 class RD005ConstructionCell:
     cell_id: str
@@ -116,9 +134,11 @@ class RD005ConstructionCell:
     world_id: str
     world_sha256: str
     evidence_sha256: str
-    topology_sha256: str
-    ordinary_schedule_sha256: str
-    connection_rows_sha256: str
+    topology_sha256: str | None
+    ordinary_schedule: tuple[dict[str, Any], ...]
+    ordinary_schedule_sha256: str | None
+    connection_rows: tuple[dict[str, Any], ...]
+    connection_rows_sha256: str | None
     inspected_clocks: tuple[InspectedClock, ...]
     selected_clock_ms: float | None
     eligibility_events: tuple[EligibilityEvent, ...]
@@ -129,7 +149,40 @@ class RD005ConstructionCell:
     status: RD005CellStatus
     error: str | None = None
 
+    def validate(self) -> None:
+        if not self.cell_id or not self.family or not self.world_id:
+            raise ValueError("RD005 construction cell identities must be non-empty")
+        if self.status == "CONSTRUCTION_INTEGRITY_FAILURE":
+            if not self.error:
+                raise ValueError("RD005 integrity-failure cell must retain its error")
+            if self.topology_sha256 is not None:
+                _require_sha256(self.topology_sha256, name="topology_sha256")
+            if self.ordinary_schedule_sha256 is not None:
+                if digest(self.ordinary_schedule) != self.ordinary_schedule_sha256:
+                    raise ValueError("RD005 partial schedule hash does not match retained rows")
+            if self.connection_rows_sha256 is not None:
+                if digest(self.connection_rows) != self.connection_rows_sha256:
+                    raise ValueError("RD005 partial connection hash does not match retained rows")
+            for row in self.inspected_clocks:
+                row.state_dict()
+            return
+
+        _require_sha256(self.topology_sha256, name="topology_sha256")
+        schedule_sha256 = _require_sha256(
+            self.ordinary_schedule_sha256,
+            name="ordinary_schedule_sha256",
+        )
+        connection_sha256 = _require_sha256(
+            self.connection_rows_sha256,
+            name="connection_rows_sha256",
+        )
+        if digest(self.ordinary_schedule) != schedule_sha256:
+            raise ValueError("RD005 ordinary schedule hash does not match retained rows")
+        if digest(self.connection_rows) != connection_sha256:
+            raise ValueError("RD005 connection hash does not match retained rows")
+
     def state_dict(self) -> dict[str, object]:
+        self.validate()
         return {
             "cell_id": self.cell_id,
             "family": self.family,
@@ -138,7 +191,9 @@ class RD005ConstructionCell:
             "world_sha256": self.world_sha256,
             "evidence_sha256": self.evidence_sha256,
             "topology_sha256": self.topology_sha256,
+            "ordinary_schedule": list(self.ordinary_schedule),
             "ordinary_schedule_sha256": self.ordinary_schedule_sha256,
+            "connection_rows": list(self.connection_rows),
             "connection_rows_sha256": self.connection_rows_sha256,
             "inspected_clocks": [row.state_dict() for row in self.inspected_clocks],
             "selected_clock_ms": self.selected_clock_ms,
@@ -166,6 +221,8 @@ class RD005ConstructionArtifact:
         identities = tuple(row.cell_id for row in self.cells)
         if len(set(identities)) != 18:
             raise ValueError("RD005 construction cell identities must be unique")
+        for row in self.cells:
+            row.validate()
 
     @property
     def matrix_status(self) -> str:
@@ -216,6 +273,17 @@ def _connection_snapshots(field: Any) -> tuple[ConnectionSnapshot, ...]:
         )
         for _, edge in sorted(field.connections.items())
     )
+
+
+def _rd005_training_schedule(world: dict[str, Any]) -> tuple[dict[str, Any], ...]:
+    """Bind the retained schedule to the exact event identities injected below."""
+
+    rows: list[dict[str, Any]] = []
+    for row in _training_schedule(world):
+        rebound = dict(row)
+        rebound["event_id"] = f"rd005-plan-{int(row['ordinal']):06d}"
+        rows.append(rebound)
+    return tuple(rows)
 
 
 def _spike_identity(spike: SpikeEvent) -> str:
@@ -270,23 +338,30 @@ def _construct_cell(
     config: ScaleStudyConfig,
     world: dict[str, Any],
     scale: int,
+    *,
+    trace: _CellConstructionTrace,
 ) -> RD005ConstructionCell:
     audit = audit_scale(config, world, scale)
+    trace.topology_sha256 = str(audit["topology_hash"])
     field = _new_gained_field(config, world, scale)
     connections = _connection_snapshots(field)
     connection_rows = _connection_rows(field)
-    schedule = _training_schedule(world)
-    inspected: list[InspectedClock] = []
+    trace.connection_rows = connection_rows
+    schedule = _rd005_training_schedule(world)
+    trace.ordinary_schedule = schedule
 
     for row in schedule:
         clock = float(row["time_ms"])
         spikes = tuple(field.run_until(clock))
-        inspected.append(
-            InspectedClock(
-                time_ms=clock,
-                spikes=tuple(spike.as_dict() for spike in spikes if spike.unit_id not in PORTS),
-            )
+        inspected = InspectedClock(
+            time_ms=clock,
+            spikes=tuple(
+                spike.as_dict()
+                for spike in spikes
+                if spike.unit_id not in PORTS
+            ),
         )
+        trace.inspected_clocks.append(inspected)
         return_time = clock + RD005_RETURN_OFFSET_MS
         selected = _selected_batch(
             spikes=spikes,
@@ -335,10 +410,12 @@ def _construct_cell(
                 world_id=str(world["world_id"]),
                 world_sha256=digest(world),
                 evidence_sha256=str(world["evidence_hash"]),
-                topology_sha256=str(audit["topology_hash"]),
+                topology_sha256=trace.topology_sha256,
+                ordinary_schedule=schedule,
                 ordinary_schedule_sha256=digest(schedule),
+                connection_rows=connection_rows,
                 connection_rows_sha256=digest(connection_rows),
-                inspected_clocks=tuple(inspected),
+                inspected_clocks=tuple(trace.inspected_clocks),
                 selected_clock_ms=clock,
                 eligibility_events=tuple(eligibility),
                 return_events=tuple(returns),
@@ -350,7 +427,7 @@ def _construct_cell(
 
         _schedule_external(
             field,
-            event_id=f"rd005-plan-{int(row['ordinal']):06d}",
+            event_id=str(row["event_id"]),
             time_ms=clock,
             unit_id=int(row["unit_id"]),
         )
@@ -362,10 +439,12 @@ def _construct_cell(
         world_id=str(world["world_id"]),
         world_sha256=digest(world),
         evidence_sha256=str(world["evidence_hash"]),
-        topology_sha256=str(audit["topology_hash"]),
+        topology_sha256=trace.topology_sha256,
+        ordinary_schedule=schedule,
         ordinary_schedule_sha256=digest(schedule),
+        connection_rows=connection_rows,
         connection_rows_sha256=digest(connection_rows),
-        inspected_clocks=tuple(inspected),
+        inspected_clocks=tuple(trace.inspected_clocks),
         selected_clock_ms=None,
         eligibility_events=(),
         return_events=(),
@@ -389,25 +468,34 @@ def build_rd005_construction_artifact(
     config.validate()
     cells: list[RD005ConstructionCell] = []
     for world in development_worlds(config):
+        world_id = str(world["world_id"])
+        family = str(world["family"])
+        world_sha256 = digest(world)
+        evidence_sha256 = str(world["evidence_hash"])
         for scale in config.scales:
+            trace = _CellConstructionTrace()
             try:
-                cell = _construct_cell(config, world, scale)
-            except Exception as exc:  # preserve integrity failures as data
-                audit = audit_scale(config, world, scale)
-                field = _new_gained_field(config, world, scale)
-                schedule = _training_schedule(world)
-                connection_rows = _connection_rows(field)
+                cell = _construct_cell(config, world, scale, trace=trace)
+            except Exception as exc:  # preserve partial construction failure evidence
+                schedule = trace.ordinary_schedule or ()
+                connection_rows = trace.connection_rows or ()
                 cell = RD005ConstructionCell(
-                    cell_id=f"{world['world_id']}|scale={scale}",
-                    family=str(world["family"]),
+                    cell_id=f"{world_id}|scale={scale}",
+                    family=family,
                     scale=scale,
-                    world_id=str(world["world_id"]),
-                    world_sha256=digest(world),
-                    evidence_sha256=str(world["evidence_hash"]),
-                    topology_sha256=str(audit["topology_hash"]),
-                    ordinary_schedule_sha256=digest(schedule),
-                    connection_rows_sha256=digest(connection_rows),
-                    inspected_clocks=(),
+                    world_id=world_id,
+                    world_sha256=world_sha256,
+                    evidence_sha256=evidence_sha256,
+                    topology_sha256=trace.topology_sha256,
+                    ordinary_schedule=schedule,
+                    ordinary_schedule_sha256=(
+                        digest(schedule) if trace.ordinary_schedule is not None else None
+                    ),
+                    connection_rows=connection_rows,
+                    connection_rows_sha256=(
+                        digest(connection_rows) if trace.connection_rows is not None else None
+                    ),
+                    inspected_clocks=tuple(trace.inspected_clocks),
                     selected_clock_ms=None,
                     eligibility_events=(),
                     return_events=(),
