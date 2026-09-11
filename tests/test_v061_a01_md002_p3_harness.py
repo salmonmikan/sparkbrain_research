@@ -22,6 +22,7 @@ from sparkbrain.v061_a01.credit_bridge import A01LocalTemporalExpectation
 from sparkbrain.v061_a01.md002_p3_fixture import P3ReturnAddressFixture
 from sparkbrain.v061_a01.md002_p3_harness import (
     prepare_p3_harness,
+    prepare_p3_matrix,
     require_p3_execution_authority,
 )
 from sparkbrain.v061_a01.md002_protocol import MD002ExecutionGate
@@ -108,16 +109,16 @@ def _partitions(return_address: LiveReturnAddressState):
     ).partitions
 
 
-def _fixture() -> P3ReturnAddressFixture:
+def _fixture(direction: str = "ab") -> P3ReturnAddressFixture:
     evidence = canonical_bytes(
         [
-            _external("evidence-1", 70.0, "world:x").as_dict(),
-            _external("evidence-2", 75.0, "world:y").as_dict(),
+            _external(f"evidence-1-{direction}", 70.0, "world:x").as_dict(),
+            _external(f"evidence-2-{direction}", 75.0, "world:y").as_dict(),
         ]
     )
     return P3ReturnAddressFixture(
-        baseline=_partitions(_return_address("baseline", "B")),
-        donor=_partitions(_return_address("donor", "C")),
+        baseline=_partitions(_return_address(f"baseline-{direction}", "B")),
+        donor=_partitions(_return_address(f"donor-{direction}", "C")),
         admissible_external_evidence=evidence,
     )
 
@@ -126,7 +127,9 @@ def test_p3_harness_prepares_three_actual_restorable_arms_without_capability() -
     prepared = prepare_p3_harness(_fixture())
 
     assert tuple(row.arm for row in prepared) == ("baseline", "donor", "transplanted")
+    assert len({row.fixture_sha256 for row in prepared}) == 1
     assert len({row.prospective_execution_id for row in prepared}) == 3
+    assert all(row.fixture_sha256 in row.prospective_execution_id for row in prepared)
     assert len({row.admissible_external_evidence_sha256 for row in prepared}) == 1
     assert len({row.observation_schema_sha256 for row in prepared}) == 1
     assert len({row.negative_stop_schema_sha256 for row in prepared}) == 1
@@ -148,6 +151,21 @@ def test_p3_harness_prepares_three_actual_restorable_arms_without_capability() -
     )
     assert baseline.return_address_sha256 != donor.return_address_sha256
     assert transplanted.return_address_sha256 == donor.return_address_sha256
+
+
+def test_p3_matrix_binds_direction_specific_fixture_identity_into_all_six_ids() -> None:
+    prepared = prepare_p3_matrix((_fixture("ab"), _fixture("ba")))
+
+    assert len(prepared) == 6
+    assert len({row.fixture_sha256 for row in prepared}) == 2
+    assert len({row.prospective_execution_id for row in prepared}) == 6
+    assert all(row.fixture_sha256 in row.prospective_execution_id for row in prepared)
+
+
+def test_p3_matrix_rejects_duplicate_fixture_identity() -> None:
+    fixture = _fixture("ab")
+    with pytest.raises(RuntimeError, match="duplicate fixture identities"):
+        prepare_p3_matrix((fixture, fixture))
 
 
 def test_p3_harness_global_execution_gate_remains_fail_closed() -> None:
