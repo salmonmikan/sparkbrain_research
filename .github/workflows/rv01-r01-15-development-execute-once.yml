@@ -1,0 +1,89 @@
+name: RV01 R01-15 Frozen Development Execution
+
+on:
+  push:
+    branches:
+      - "ops/rv01-r01-15-development-execution-20260911"
+
+permissions:
+  contents: read
+
+env:
+  FREEZE_REF: freeze/rv01-r01-15-development-source
+  OUTPUT_FILE: artifacts/research/rv01/r01_15/development-run/development_result.json
+
+jobs:
+  execute-development-once:
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    steps:
+      - name: Checkout pushed source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+
+      - name: Verify exact immutable development source
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin "+refs/heads/${FREEZE_REF}:refs/remotes/origin/${FREEZE_REF}"
+          frozen_sha="$(git rev-parse "refs/remotes/origin/${FREEZE_REF}")"
+          test "$(git rev-parse HEAD)" = "${frozen_sha}"
+          test "${GITHUB_SHA}" = "${frozen_sha}"
+          test -f docs/research/RV01_R01_15_POST_SPIKE_SUPPRESSION_PREREG.md
+          test -f scripts/run_rv01_r01_15_development.py
+          test -f src/sparkbrain/research/rv01/post_spike_suppression_contract.py
+          test -f src/sparkbrain/research/rv01/post_spike_suppression_runner.py
+          test -f src/sparkbrain/research/rv01_post_spike_suppression.py
+
+      - name: Set up exact Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.11.16"
+          cache: pip
+
+      - name: Install frozen package
+        run: python -m pip install -e .
+
+      - name: Execute fixed exposed-development suite
+        shell: bash
+        run: |
+          set -euo pipefail
+          test ! -e "${OUTPUT_FILE}"
+          python scripts/run_rv01_r01_15_development.py --output "${OUTPUT_FILE}"
+
+      - name: Record execution metadata and hashes
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/rv01-r01-15-metadata
+          frozen_sha="$(git rev-parse "refs/remotes/origin/${FREEZE_REF}")"
+          cat > /tmp/rv01-r01-15-metadata/execution_metadata.json <<EOF
+          {
+            "protocol": "rv01-r01-15-post-spike-suppression-v1",
+            "phase": "development",
+            "frozen_source_git_sha": "${frozen_sha}",
+            "freeze_ref": "${FREEZE_REF}",
+            "workflow_run_id": "${GITHUB_RUN_ID}",
+            "workflow_run_attempt": "${GITHUB_RUN_ATTEMPT}",
+            "python_version": "$(python --version 2>&1)",
+            "held_out_capability_executed": false,
+            "same_source_rerun_allowed": false
+          }
+          EOF
+          if [ -f "${OUTPUT_FILE}" ]; then
+            sha256sum "${OUTPUT_FILE}" > /tmp/rv01-r01-15-metadata/output_sha256.txt
+          fi
+
+      - name: Upload raw development evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rv01-r01-15-development-${{ github.run_id }}
+          path: |
+            artifacts/research/rv01/r01_15/development-run
+            /tmp/rv01-r01-15-metadata
+          if-no-files-found: error
+          retention-days: 90
