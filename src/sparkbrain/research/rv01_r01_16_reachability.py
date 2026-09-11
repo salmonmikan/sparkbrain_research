@@ -187,7 +187,8 @@ def build_factor_reachability_certificate(
             source_arrival = arrivals.get(source_id)
             if source_arrival is None:
                 continue
-            edge_delay = _conservative_delay(pre[(source_id, target_id)], post[(source_id, target_id)])
+            edge_key = (source_id, target_id)
+            edge_delay = _conservative_delay(pre[edge_key], post[edge_key])
             target_arrival = source_arrival + edge_delay
             if target_arrival > horizon:
                 continue
