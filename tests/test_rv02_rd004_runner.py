@@ -190,7 +190,7 @@ def test_offline_verifier_rejects_parameter_or_budget_drift() -> None:
     with pytest.raises(ValueError, match="gain drifted"):
         RUNNER.verify_result(minimal_result(gain=8.0))
 
-    with pytest.raises(ValueError, match="eligibility"):
+    with pytest.raises(ValueError, match="trace ledger"):
         RUNNER.verify_result(
             minimal_result(
                 e1_eligibility_budget=[
