@@ -109,3 +109,21 @@ def test_reachability_is_deterministic_under_connection_inventory_order() -> Non
 
     assert left.state_dict() == right.state_dict()
     assert left.sha256 == right.sha256
+
+
+def test_reachability_canonicalizes_simultaneous_cue_order() -> None:
+    left = build_factor_reachability_certificate(
+        _construction(),
+        cue_source_ids=(0, 3),
+        probe_horizon_ms=10.0,
+    )
+    right = build_factor_reachability_certificate(
+        _construction(),
+        cue_source_ids=(3, 0),
+        probe_horizon_ms=10.0,
+    )
+
+    assert left.cue_source_ids == (0, 3)
+    assert right.cue_source_ids == (0, 3)
+    assert left.state_dict() == right.state_dict()
+    assert left.sha256 == right.sha256
