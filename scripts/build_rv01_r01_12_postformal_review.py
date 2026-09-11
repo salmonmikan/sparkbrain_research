@@ -183,7 +183,6 @@ def build_manifest() -> dict:
         "formal": {
             "candidate_id": formal["candidate_id"],
             "raw_sha256": formal_raw_sha256,
-            "raw_sha256_verified_from_retained_file": True,
             "route_probe_count": formal_routes,
             "source_git_sha": formal["execution"]["frozen_source_git_sha"],
             "world_count": formal["cardinality"]["world_count"],
@@ -204,7 +203,6 @@ def build_manifest() -> dict:
                 "raw per-world/per-probe rows are not retained locally"
             ),
             "formal_family_metrics_source": "retained formal_result_manifest.json",
-            "formal_raw_integrity_source": "retained heldout_formal_result.json",
             "training_role_diagnostics_generated": False,
         },
         "schema_version": "rv01-r01-12-postformal-review-v2",
