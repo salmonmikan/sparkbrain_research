@@ -16,12 +16,14 @@ Therefore MD-002 must **not** treat N3 as scientifically matched or use N3-DEV-0
 
 The MD-002 construction branch adds fail-closed prospective contracts for four previously blocking areas:
 
-1. **P2 world-only intervention** — pre-evidence local, Field and return-address state must remain matched while the anonymous world-relation/consistency state genuinely changes.
-2. **P3 actual R transplant** — the transplanted third state must preserve baseline L/F/C and contain the donor R; donor and baseline R must genuinely differ.
-3. **P4 plural ancestry** — merged ancestry and active lineages must come from runtime measurement and must contain genuine plurality.
+1. **P2 world-only intervention** — pre-evidence local, Field, consistency and return-address state must remain matched. Only the anonymous external world-relation mapping may differ before the same admissible external evidence is applied.
+2. **P3 actual R transplant** — baseline and donor must begin with matching L/F/C and genuinely different R; the third arm must carry donor R on the baseline L/F/C state, have a distinct retained runtime trace, and measure the required post-attribution L update. The semantic snapshots and outputs must be present in that retained trace so relabeling a donor record cannot satisfy the contract.
+3. **P4 plural ancestry** — merged ancestry and active lineages must be contained in a retained runtime trace, must contain genuine plurality, and later state must retain at least one lineage from the merged BoundaryEvent source ancestry. A separately supplied lineage tuple or digest is insufficient.
 4. **P5 comparator evidence** — A01, N1 and N3 must receive byte-identical admissible anonymous evidence; resource matching and full MD-002 cannot be predeclared as evaluated.
 
-Dynamic/resource counters are accepted only when runtime-measured. `MD002ExecutionGate` fails closed unless independent technical review and separate execution authority are both present.
+Dynamic/resource counters are parsed from retained runtime counter-trace records and checked against the trace digest; declarative counter rows or a caller-controlled `measured=true` flag are not accepted as measurement provenance.
+
+`MD002ExecutionGate` contains no caller-controlled review/authority booleans. In this construction branch both immutable authority-artifact digest pins are deliberately unset, so execution is impossible even if a caller supplies fabricated approval payloads. A later separately reviewed source revision must pin the exact SHA-256 identities of an independent technical-review artifact and an MD-002-specific execution-authority artifact before the gate can authorize capability.
 
 These are construction invariants, not capability evidence.
 
@@ -34,11 +36,13 @@ The following remain unresolved and execution-blocking:
 - implement and independently validate the actual P2 world fixture/reset/restore execution path;
 - implement full runtime snapshot, R partition, round-trip validation and real third-arm execution for P3;
 - implement continuing merged-ancestry runtime generation and measurement for P4;
+- implement an independently emitted retained instrumentation stream for dynamic/resource counters and verify it from raw artifacts;
 - bind the complete P1-P5 matrix, arm applicability, seeds, budgets, thresholds, expected control directions and exclusions;
 - bind source SHA, protocol digest, source manifest, unique output paths and a source-identity-checked runner;
 - bind raw artifact schema and preservation procedure before scoring can be opened;
 - complete independent technical review of the final executable package;
-- obtain separate candidate/diagnostic-specific execution authority.
+- pin the immutable technical-review artifact digest in a separately reviewed source revision;
+- obtain separate candidate/diagnostic-specific execution authority and pin that immutable authority artifact digest.
 
 No existing broad permission is a substitute for the final MD-002-specific execution authority.
 
@@ -46,4 +50,4 @@ No existing broad permission is a substitute for the final MD-002-specific execu
 
 A01-MD-001 remains immutable and retains its reviewed limitations. N3-DEV-001 remains an accepted narrow development artifact, not a matched comparator result. A01-MD-002 has no capability result.
 
-The safe next step is to review and merge the construction-only contracts, then implement the still-prospective fixture/snapshot/instrumentation layers under the same execution-disabled boundary. Any future capability runner must remain fail-closed until the complete matrix and independent review are frozen.
+The safe next step is to review and merge the construction-only contracts, then implement the still-prospective fixture/snapshot/instrumentation layers under the same execution-disabled boundary. Any future capability runner must remain fail-closed until the complete matrix, source identity, instrumentation provenance, independent review and MD-002-specific authority are frozen.
