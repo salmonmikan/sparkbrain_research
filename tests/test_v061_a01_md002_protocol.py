@@ -6,6 +6,8 @@ import pytest
 
 from sparkbrain.v061_a01.md002_protocol import (
     ComparatorEvidenceBinding,
+    DynamicCounterSample,
+    ExecutedArmRecord,
     MD002ExecutionGate,
     MeasuredDynamicCounters,
     MergedAncestryObservation,
@@ -24,10 +26,22 @@ def state(*, local="l", field="f", consistency="c", address="r"):
     return StatePartitionSnapshot(h(local), h(field), h(consistency), h(address))
 
 
-def test_p2_allows_only_world_relation_consistency_change():
+def arm(execution_id: str, pre: StatePartitionSnapshot, *, post=None, evidence="evidence"):
+    return ExecutedArmRecord(
+        execution_id=execution_id,
+        pre_attribution=pre,
+        post_attribution=post or pre,
+        admissible_external_evidence_sha256=h(evidence),
+        competition_sha256=h(f"competition:{execution_id}"),
+        output_sha256=h(f"output:{execution_id}"),
+        runtime_trace_sha256=h(f"trace:{execution_id}"),
+    )
+
+
+def test_p2_changes_world_relation_while_all_pre_evidence_state_stays_matched():
     pair = WorldOnlyInterventionPair(
-        control=state(consistency="world-a"),
-        intervention=state(consistency="world-b"),
+        control=state(),
+        intervention=state(),
         control_world_relation_sha256=h("relation-a"),
         intervention_world_relation_sha256=h("relation-b"),
         admissible_external_evidence_sha256=h("external-evidence"),
@@ -35,12 +49,12 @@ def test_p2_allows_only_world_relation_consistency_change():
     pair.validate()
 
 
-@pytest.mark.parametrize("field", ["local", "field", "address"])
-def test_p2_rejects_nonworld_state_drift(field):
-    values = dict(local="l", field="f", consistency="world-b", address="r")
+@pytest.mark.parametrize("field", ["local", "field", "consistency", "address"])
+def test_p2_rejects_any_pre_evidence_state_drift(field):
+    values = dict(local="l", field="f", consistency="c", address="r")
     values[field] = f"changed-{field}"
     pair = WorldOnlyInterventionPair(
-        control=state(consistency="world-a"),
+        control=state(),
         intervention=state(**values),
         control_world_relation_sha256=h("relation-a"),
         intervention_world_relation_sha256=h("relation-b"),
@@ -50,38 +64,90 @@ def test_p2_rejects_nonworld_state_drift(field):
         pair.validate()
 
 
-def test_p3_requires_real_third_arm_with_only_donor_r():
-    baseline = state(address="baseline-r")
-    donor = state(local="donor-l", field="donor-f", consistency="donor-c", address="donor-r")
-    transplanted = state(address="donor-r")
+def test_p3_requires_independently_executed_third_arm_with_only_donor_r():
+    baseline = arm("baseline", state(address="baseline-r"))
+    donor = arm(
+        "donor",
+        state(local="donor-l", field="donor-f", consistency="donor-c", address="donor-r"),
+    )
+    transplanted = arm("transplant", state(address="donor-r"))
     ReturnAddressTransplant(baseline, donor, transplanted).validate()
 
 
+def test_p3_rejects_donor_execution_substitution():
+    baseline = arm("baseline", state(address="baseline-r"))
+    donor = arm("donor", state(address="donor-r"))
+    transplanted = arm("donor", state(address="donor-r"))
+    with pytest.raises(ValueError, match="three independently identified"):
+        ReturnAddressTransplant(baseline, donor, transplanted).validate()
+
+
 def test_p3_rejects_hidden_lfc_drift():
-    baseline = state(address="baseline-r")
-    donor = state(address="donor-r")
-    transplanted = state(local="illicit", address="donor-r")
+    baseline = arm("baseline", state(address="baseline-r"))
+    donor = arm("donor", state(address="donor-r"))
+    transplanted = arm("transplant", state(local="illicit", address="donor-r"))
     with pytest.raises(ValueError):
         ReturnAddressTransplant(baseline, donor, transplanted).validate()
 
 
-def test_p4_requires_measured_plural_boundary_ancestry():
-    MergedAncestryObservation(
-        boundary_source_proposal_ids=("p:a", "p:b"),
-        active_lineages_before=("p:a", "p:b", "p:c"),
-        active_lineages_after=("p:b", "p:c"),
-        measured_from_runtime=True,
+def test_p3_rejects_different_external_evidence_between_arms():
+    baseline = arm("baseline", state(address="baseline-r"))
+    donor = arm("donor", state(address="donor-r"))
+    transplanted = arm("transplant", state(address="donor-r"), evidence="different")
+    with pytest.raises(ValueError, match="byte-identical"):
+        ReturnAddressTransplant(baseline, donor, transplanted).validate()
+
+
+def ancestry_record(boundary, before, after):
+    payload = {
+        "boundary_source_proposal_ids": boundary,
+        "active_lineages_before": before,
+        "active_lineages_after": after,
+    }
+    return MergedAncestryObservation(
+        boundary_source_proposal_ids=boundary,
+        active_lineages_before=before,
+        active_lineages_after=after,
+        runtime_trace_sha256=h("runtime-trace"),
+        measurement_record_sha256=canonical_sha256(payload),
+    )
+
+
+def test_p4_requires_measured_plural_boundary_ancestry_to_continue():
+    ancestry_record(
+        ("p:a", "p:b"),
+        ("p:a", "p:b", "p:c"),
+        ("p:b", "p:c"),
     ).validate()
 
 
-def test_p4_rejects_supplied_or_singleton_ancestry():
-    with pytest.raises(ValueError):
-        MergedAncestryObservation(
-            boundary_source_proposal_ids=("p:a",),
-            active_lineages_before=("p:a",),
-            active_lineages_after=("p:a",),
-            measured_from_runtime=False,
+def test_p4_rejects_post_state_that_loses_all_source_ancestry():
+    with pytest.raises(ValueError, match="lost all merged"):
+        ancestry_record(
+            ("p:a", "p:b"),
+            ("p:a", "p:b", "p:c"),
+            ("p:c",),
         ).validate()
+
+
+def test_p4_rejects_unbound_lineage_or_tampered_measurement_digest():
+    with pytest.raises(ValueError, match="unbound unrelated"):
+        ancestry_record(
+            ("p:a", "p:b"),
+            ("p:a", "p:b"),
+            ("p:a", "unrelated"),
+        ).validate()
+
+    record = ancestry_record(("p:a", "p:b"), ("p:a", "p:b"), ("p:a",))
+    tampered = MergedAncestryObservation(
+        record.boundary_source_proposal_ids,
+        record.active_lineages_before,
+        record.active_lineages_after,
+        record.runtime_trace_sha256,
+        h("not-the-record"),
+    )
+    with pytest.raises(ValueError, match="digest"):
+        tampered.validate()
 
 
 def test_p5_binds_identical_a01_n1_n3_evidence_without_claim():
@@ -94,10 +160,33 @@ def test_p5_rejects_comparator_input_privilege():
         ComparatorEvidenceBinding(h("a"), h("a"), h("different")).validate()
 
 
-def test_dynamic_metrics_must_be_measured():
-    MeasuredDynamicCounters(1, 2, 3, 155, 64, True).validate()
-    with pytest.raises(ValueError):
-        MeasuredDynamicCounters(1, 2, 3, 155, 64, False).validate()
+def test_dynamic_metrics_are_derived_from_bound_runtime_trace():
+    samples = (
+        DynamicCounterSample(10, False, 100, 200, 155, 16),
+        DynamicCounterSample(11, False, 102, 203, 160, 32),
+        DynamicCounterSample(12, True, 105, 207, 164, 24),
+    )
+    trace = canonical_sha256([sample.state_dict() for sample in samples])
+    measured = MeasuredDynamicCounters(samples, trace)
+    measured.validate()
+    assert measured.external_effect_latency_steps == 2
+    assert measured.state_update_count == 5
+    assert measured.router_operation_count == 7
+    assert measured.persistent_state_bytes == 164
+    assert measured.peak_transient_state_bytes == 32
+
+
+def test_dynamic_metrics_reject_tampered_or_nonmonotonic_trace():
+    samples = (
+        DynamicCounterSample(0, False, 2, 3, 10, 4),
+        DynamicCounterSample(1, True, 1, 4, 10, 5),
+    )
+    with pytest.raises(ValueError, match="trace digest"):
+        MeasuredDynamicCounters(samples, h("fabricated-trace")).validate()
+
+    trace = canonical_sha256([sample.state_dict() for sample in samples])
+    with pytest.raises(ValueError, match="state update counter"):
+        MeasuredDynamicCounters(samples, trace).validate()
 
 
 def test_execution_is_fail_closed_until_both_reviews_exist():
