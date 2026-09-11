@@ -5,8 +5,8 @@ from pathlib import Path
 
 import pytest
 
-from sparkbrain.research.rv02_rd003_online import planned_rd003_cells
 import sparkbrain.research.rv02_rd004_online as rd004
+from sparkbrain.research.rv02_rd003_online import planned_rd003_cells
 from sparkbrain.research.rv02_scale import digest
 
 
