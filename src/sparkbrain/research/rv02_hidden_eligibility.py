@@ -11,8 +11,9 @@ from __future__ import annotations
 
 import hashlib
 import math
+from collections.abc import Iterable
 from dataclasses import asdict, dataclass
-from typing import Any, Iterable, Literal
+from typing import Any, Literal
 
 from sparkbrain.research.rv01.physical_plasticity import (
     ExternalOnlyPhysicalPlasticity,
