@@ -10,6 +10,7 @@ score P3, or open held-out/formal authority.
 from __future__ import annotations
 
 from dataclasses import dataclass
+from typing import Literal
 
 from .md002_p3_development_plan import (
     P3DevelopmentConditionInput,
@@ -23,12 +24,28 @@ from .md002_protocol import (
     canonical_sha256,
 )
 
+P3Direction = Literal["A-to-B", "B-to-A"]
+
+
+@dataclass(frozen=True, slots=True)
+class P3DirectionalFixture:
+    """One preregistered P3 direction bound to its execution-disabled fixture."""
+
+    direction: P3Direction
+    fixture: P3ReturnAddressFixture
+
+    def validate(self) -> None:
+        if self.direction not in ("A-to-B", "B-to-A"):
+            raise ValueError("P3 direction must be A-to-B or B-to-A")
+        self.fixture.validate()
+
 
 @dataclass(frozen=True, slots=True)
 class P3PreparedArm:
     """One execution-disabled arm bound before any P3 capability call exists."""
 
     condition_id: str
+    direction: P3Direction
     arm: str
     fixture_sha256: str
     prospective_execution_id: str
@@ -45,6 +62,8 @@ class P3PreparedArm:
     def validate(self) -> None:
         if not self.condition_id or not self.prospective_execution_id:
             raise ValueError("P3 prepared arm requires non-empty identities")
+        if self.direction not in ("A-to-B", "B-to-A"):
+            raise ValueError("P3 prepared arm has an invalid direction")
         if self.arm not in ("baseline", "donor", "transplanted"):
             raise ValueError("invalid P3 prepared arm")
         self.pre_attribution.validate()
@@ -60,6 +79,8 @@ class P3PreparedArm:
                 raise ValueError(f"{name} must be a lowercase SHA-256 digest")
         if self.fixture_sha256 not in self.prospective_execution_id:
             raise ValueError("P3 execution identity is not bound to the fixture digest")
+        if self.direction not in self.prospective_execution_id:
+            raise ValueError("P3 execution identity is not bound to the registered direction")
         if self.execution_authority is not False:
             raise PermissionError("P3 preparation cannot carry execution authority")
         if self.runtime_trace_sha256 is not None:
@@ -68,7 +89,7 @@ class P3PreparedArm:
             raise ValueError("P3 preparation cannot contain capability output")
 
 
-def _fixture_digest(fixture: P3ReturnAddressFixture) -> str:
+def _fixture_content_digest(fixture: P3ReturnAddressFixture) -> str:
     fixture.validate()
     return canonical_sha256(
         {
@@ -77,6 +98,16 @@ def _fixture_digest(fixture: P3ReturnAddressFixture) -> str:
             "admissible_external_evidence_sha256": bytes_sha256(
                 fixture.admissible_external_evidence
             ),
+        }
+    )
+
+
+def _fixture_digest(directional: P3DirectionalFixture) -> str:
+    directional.validate()
+    return canonical_sha256(
+        {
+            "direction": directional.direction,
+            "fixture_content_sha256": _fixture_content_digest(directional.fixture),
         }
     )
 
@@ -98,19 +129,22 @@ def _restored_state_digest(condition: P3DevelopmentConditionInput) -> str:
 
 
 def prepare_p3_harness(
-    fixture: P3ReturnAddressFixture,
+    directional: P3DirectionalFixture,
 ) -> tuple[P3PreparedArm, ...]:
-    """Prepare all three exact P3 arms without applying evidence or executing."""
+    """Prepare one registered direction without applying evidence or executing."""
 
-    fixture_sha256 = _fixture_digest(fixture)
-    conditions = build_p3_development_plan(fixture)
+    directional.validate()
+    fixture_sha256 = _fixture_digest(directional)
+    conditions = build_p3_development_plan(directional.fixture)
     prepared = tuple(
         P3PreparedArm(
             condition_id=condition.condition_id,
+            direction=directional.direction,
             arm=condition.arm,
             fixture_sha256=fixture_sha256,
             prospective_execution_id=(
-                f"md002-p3-exec-{fixture_sha256}-{index:02d}-{condition.arm}"
+                "md002-p3-exec-"
+                f"{directional.direction}-{fixture_sha256}-{index:02d}-{condition.arm}"
             ),
             pre_attribution=condition.arm_input.snapshot(),
             admissible_external_evidence_sha256=condition.admissible_external_evidence_sha256,
@@ -127,6 +161,8 @@ def prepare_p3_harness(
         raise RuntimeError("P3 harness requires three distinct prospective execution IDs")
     if len({row.fixture_sha256 for row in prepared}) != 1:
         raise RuntimeError("P3 harness fixture identity drifted across arms")
+    if len({row.direction for row in prepared}) != 1:
+        raise RuntimeError("P3 harness direction drifted across arms")
     if len({row.admissible_external_evidence_sha256 for row in prepared}) != 1:
         raise RuntimeError("P3 harness evidence binding drifted across arms")
     if len({row.observation_schema_sha256 for row in prepared}) != 1:
@@ -152,20 +188,33 @@ def prepare_p3_harness(
 
 
 def prepare_p3_matrix(
-    fixtures: tuple[P3ReturnAddressFixture, ...],
+    fixtures: tuple[P3DirectionalFixture, P3DirectionalFixture],
 ) -> tuple[P3PreparedArm, ...]:
-    """Prepare the complete P3 fixture set and prove global execution-ID uniqueness."""
+    """Prepare exactly the registered A-to-B and B-to-A three-arm matrix."""
 
-    if not fixtures:
-        raise ValueError("P3 matrix requires at least one fixture")
-    groups = tuple(prepare_p3_harness(fixture) for fixture in fixtures)
-    fixture_ids = tuple(group[0].fixture_sha256 for group in groups)
-    if len(set(fixture_ids)) != len(fixture_ids):
-        raise RuntimeError("P3 matrix contains duplicate fixture identities")
+    if len(fixtures) != 2:
+        raise ValueError("P3 matrix requires exactly two directional fixtures")
+    for directional in fixtures:
+        directional.validate()
+    directions = tuple(directional.direction for directional in fixtures)
+    if set(directions) != {"A-to-B", "B-to-A"}:
+        raise RuntimeError("P3 matrix requires one A-to-B and one B-to-A fixture")
+    content_ids = tuple(
+        _fixture_content_digest(directional.fixture) for directional in fixtures
+    )
+    if len(set(content_ids)) != 2:
+        raise RuntimeError("P3 opposite directions cannot reuse the same fixture content")
+
+    ordered = tuple(sorted(fixtures, key=lambda row: row.direction))
+    groups = tuple(prepare_p3_harness(directional) for directional in ordered)
     prepared = tuple(row for group in groups for row in group)
+    if len(prepared) != 6:
+        raise RuntimeError("P3 bidirectional matrix must contain exactly six prepared arms")
     execution_ids = tuple(row.prospective_execution_id for row in prepared)
-    if len(set(execution_ids)) != len(execution_ids):
+    if len(set(execution_ids)) != 6:
         raise RuntimeError("P3 matrix contains duplicate prospective execution IDs")
+    if {row.direction for row in prepared} != {"A-to-B", "B-to-A"}:
+        raise RuntimeError("P3 matrix lost one registered direction")
     return prepared
 
 
@@ -176,6 +225,8 @@ def require_p3_execution_authority(gate: MD002ExecutionGate) -> None:
 
 
 __all__ = [
+    "P3Direction",
+    "P3DirectionalFixture",
     "P3PreparedArm",
     "prepare_p3_harness",
     "prepare_p3_matrix",
