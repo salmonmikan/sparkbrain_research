@@ -5,6 +5,10 @@ prospective hidden-return gate from retained artifact rows and refuses future
 capability eligibility unless every D1_READY cell contains the complete,
 mutually consistent gate evidence fixed by the preregistration.
 
+It additionally regenerates the fixed topology and initial gained connection
+state from the registered world/scale identity. A retained self-hash is never
+accepted as topology/connection provenance by itself.
+
 It runs no learner or probe and grants no formal/held-out authority.
 """
 
@@ -16,6 +20,7 @@ import math
 from dataclasses import asdict
 from typing import Any
 
+from .rv02_rd003_online import _new_gained_field
 from .rv02_rd005_construction_artifact import (
     RD005_FRESH_SEED,
     RD005_RETURN_OFFSET_MS,
@@ -30,7 +35,7 @@ from .rv02_rd005_gate_construction import (
     RD005GateConstruction,
 )
 from .rv02_recruitment import PORTS
-from .rv02_scale import ScaleStudyConfig, development_worlds, digest
+from .rv02_scale import ScaleStudyConfig, audit_scale, development_worlds, digest
 
 
 def _canonical_sha256(value: object) -> str:
@@ -69,6 +74,17 @@ def _connection_snapshots(cell: RD005ConstructionCell) -> tuple[ConnectionSnapsh
     if not rows:
         raise ValueError("RD005 non-failure cell requires retained connection rows")
     return tuple(rows)
+
+
+def _authoritative_connection_rows(
+    config: ScaleStudyConfig,
+    world: dict[str, Any],
+    scale: int,
+) -> tuple[dict[str, Any], ...]:
+    """Regenerate the pre-training gained connection state without running dynamics."""
+
+    field = _new_gained_field(config, world, scale)
+    return tuple(asdict(edge) for _, edge in sorted(field.connections.items()))
 
 
 def _certificate_states(rows: tuple[object, ...]) -> tuple[dict[str, object], ...]:
@@ -265,31 +281,47 @@ def verify_rd005_construction_cell(cell: RD005ConstructionCell) -> None:
 def _verify_fixed_matrix_identity(artifact: RD005ConstructionArtifact) -> None:
     config = ScaleStudyConfig(seed=RD005_FRESH_SEED)
     config.validate()
-    expected: list[tuple[str, str, int, str, str]] = []
+    expected_rows: list[
+        tuple[str, str, int, str, str, str, str, str]
+    ] = []
     for world in development_worlds(config):
         for scale in config.scales:
             world_id = str(world["world_id"])
-            expected.append(
+            audit = audit_scale(config, world, scale)
+            authoritative_connections = _authoritative_connection_rows(config, world, scale)
+            expected_rows.append(
                 (
                     f"{world_id}|scale={scale}",
                     str(world["family"]),
                     int(scale),
+                    world_id,
                     digest(world),
                     str(world["evidence_hash"]),
+                    str(audit["topology_hash"]),
+                    digest(authoritative_connections),
                 )
             )
-    actual = [
-        (
+
+    if len(artifact.cells) != len(expected_rows):
+        raise ValueError("RD005 artifact does not match the exact preregistered 18-cell matrix")
+
+    for cell, expected in zip(artifact.cells, expected_rows, strict=True):
+        base_actual = (
             cell.cell_id,
             cell.family,
             cell.scale,
+            cell.world_id,
             cell.world_sha256,
             cell.evidence_sha256,
         )
-        for cell in artifact.cells
-    ]
-    if actual != expected:
-        raise ValueError("RD005 artifact does not match the exact preregistered 18-cell matrix")
+        if base_actual != expected[:6]:
+            raise ValueError("RD005 artifact does not match the exact preregistered 18-cell matrix")
+        if cell.status == "CONSTRUCTION_INTEGRITY_FAILURE":
+            continue
+        if cell.topology_sha256 != expected[6]:
+            raise ValueError("RD005 topology hash does not match authoritative regeneration")
+        if cell.connection_rows_sha256 != expected[7]:
+            raise ValueError("RD005 connection state does not match authoritative regeneration")
 
 
 def verify_rd005_artifact_for_future_capability(
