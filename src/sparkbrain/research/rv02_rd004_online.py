@@ -11,6 +11,7 @@ from __future__ import annotations
 
 from typing import Any
 
+from sparkbrain.research.rv01.physical_learner_bridge import runtime_pulse
 from sparkbrain.research.rv02_hidden_eligibility import (
     HiddenEligibilityTrace,
     OnlineHiddenEligibilityPlasticity,
@@ -39,6 +40,7 @@ from sparkbrain.v04.contracts import SpikeEvent
 from sparkbrain.v04.field import TemporalExcitableField
 
 RD004_PROTOCOL = "rv02-rd004-relative-probe-clock-v1"
+_NATIVE_GUARD_MESSAGES = ("max_events_per_run exceeded", "max_spikes_per_run exceeded")
 
 
 def planned_rd004_cells(
@@ -47,30 +49,8 @@ def planned_rd004_cells(
     return planned_rd003_cells(config)
 
 
-def _prepare_post_training_snapshot(
-    field: TemporalExcitableField,
-) -> tuple[dict[str, Any], tuple[SpikeEvent, ...], tuple[SpikeEvent, ...]]:
-    """Complete the fixed tail/washout and retain both unscored spike streams."""
-
-    source_clock = float(field.current_time_ms)
-    tail_end = source_clock + RD004_ELIGIBILITY_TAIL_MS
-    tail_spikes = tuple(field.run_until(tail_end))
-    washout_end = tail_end + RD004_WASHOUT_MS
-    washout_spikes = tuple(field.run_until(washout_end))
-    state = field.state_dict()
-    return (
-        {
-            "source_clock_ms": source_clock,
-            "tail_end_ms": tail_end,
-            "washout_end_ms": washout_end,
-            "cue_time_ms": float(field.current_time_ms),
-            "snapshot_state": state,
-            "snapshot_state_hash": field.state_hash(),
-            "connection_hash": connection_hash(field),
-        },
-        tail_spikes,
-        washout_spikes,
-    )
+def _is_native_guard(exc: RuntimeError) -> bool:
+    return str(exc) in _NATIVE_GUARD_MESSAGES
 
 
 def _probe_arm_from_snapshot(
@@ -109,7 +89,7 @@ def _probe_arm_from_snapshot(
     return tuple(rows)
 
 
-def _classify_incomplete(probes: dict[str, tuple[dict[str, Any], ...]]) -> str:
+def _classify_probe_status(probes: dict[str, tuple[dict[str, Any], ...]]) -> str:
     statuses = {
         pair[name]["status"]
         for mode in RD003_MODES
@@ -121,6 +101,51 @@ def _classify_incomplete(probes: dict[str, tuple[dict[str, Any], ...]]) -> str:
     if statuses != {"complete"}:
         return "incomplete_integrity_failure"
     return "complete"
+
+
+def _failure_result(
+    *,
+    world: dict[str, Any],
+    scale: int,
+    audit: dict[str, Any],
+    schedule: tuple[dict[str, Any], ...],
+    initial_hashes: dict[str, str],
+    training_rows: list[dict[str, Any]],
+    actual_hidden: dict[str, list[dict[str, Any]]],
+    learners: dict[str, OnlineHiddenEligibilityPlasticity],
+    e1_budget: list[HiddenEligibilityTrace],
+    es_budget: list[HiddenEligibilityTrace],
+    status: str,
+    error: str,
+) -> dict[str, Any]:
+    return {
+        "protocol": RD004_PROTOCOL,
+        "formal_execution_allowed": False,
+        "comparative_capability_claim_allowed": False,
+        "world_id": world["world_id"],
+        "family": world["family"],
+        "scale": scale,
+        "audit": audit,
+        "gain": RD003_GAIN,
+        "eligibility_tail_ms": RD004_ELIGIBILITY_TAIL_MS,
+        "washout_ms": RD004_WASHOUT_MS,
+        "probe_horizon_ms": RD004_HORIZON_MS,
+        "training_schedule_hash": digest(schedule),
+        "training_schedule": schedule,
+        "initial_connection_hashes": initial_hashes,
+        "partial_connection_hashes": {
+            mode: connection_hash(learner.field) for mode, learner in learners.items()
+        },
+        "e1_eligibility_budget": [row.state_dict() for row in e1_budget],
+        "es_eligibility_budget": [row.state_dict() for row in es_budget],
+        "actual_runtime_hidden_spikes": actual_hidden,
+        "training_rows": training_rows,
+        "learner_states": {mode: learners[mode].state_dict() for mode in RD003_MODES},
+        "status": status,
+        "error": error,
+        "complete": False,
+        "scientific_status": "not_scored_development_diagnosis",
+    }
 
 
 def run_rd004_cell(
@@ -168,106 +193,186 @@ def run_rd004_cell(
     es_budget: list[HiddenEligibilityTrace] = []
     schedule = _training_schedule(world)
 
-    for row in schedule:
-        time_ms = float(row["time_ms"])
-        spikes_by_mode: dict[str, tuple[SpikeEvent, ...]] = {}
-        for mode in RD003_MODES:
-            spikes = tuple(fields[mode].run_until(time_ms))
-            spikes_by_mode[mode] = spikes
-            actual_hidden[mode].extend(_hidden_rows(spikes))
+    try:
+        for row in schedule:
+            time_ms = float(row["time_ms"])
+            spikes_by_mode: dict[str, tuple[SpikeEvent, ...]] = {}
+            for mode in RD003_MODES:
+                spikes = tuple(fields[mode].run_until(time_ms))
+                spikes_by_mode[mode] = spikes
+                actual_hidden[mode].extend(_hidden_rows(spikes))
 
-        causal_eligibility = learners["causal"].record_hidden_spikes(
-            spike for spike in spikes_by_mode["causal"] if spike.unit_id not in PORTS
-        )
-        shuffled_eligibility = learners["shuffled"].record_hidden_spikes(
-            spike for spike in spikes_by_mode["causal"] if spike.unit_id not in PORTS
-        )
-        e1_budget.extend(causal_eligibility)
-        es_budget.extend(shuffled_eligibility)
+            causal_eligibility = learners["causal"].record_hidden_spikes(
+                spike for spike in spikes_by_mode["causal"] if spike.unit_id not in PORTS
+            )
+            shuffled_eligibility = learners["shuffled"].record_hidden_spikes(
+                spike for spike in spikes_by_mode["causal"] if spike.unit_id not in PORTS
+            )
+            e1_budget.extend(causal_eligibility)
+            es_budget.extend(shuffled_eligibility)
 
-        pulse = __import__(
-            "sparkbrain.research.rv01.physical_learner_bridge",
-            fromlist=["runtime_pulse"],
-        ).runtime_pulse(
-            event_id=str(row["event_id"]),
-            time_ms=time_ms,
-            unit_id=int(row["unit_id"]),
-            magnitude=1.0,
-        )
-        updates_by_mode: dict[str, list[dict[str, Any]]] = {}
-        for mode in RD003_MODES:
-            updates = learners[mode].observe_external(pulse)
-            updates_by_mode[mode] = [update.state_dict() for update in updates]
-            _schedule_external(
-                fields[mode],
+            pulse = runtime_pulse(
                 event_id=str(row["event_id"]),
                 time_ms=time_ms,
                 unit_id=int(row["unit_id"]),
+                magnitude=1.0,
             )
-        training_rows.append(
-            {
-                **row,
-                "e1_new_eligibility": [item.state_dict() for item in causal_eligibility],
-                "es_new_eligibility": [item.state_dict() for item in shuffled_eligibility],
-                "updates": updates_by_mode,
-            }
-        )
-
-    snapshots: dict[str, dict[str, Any]] = {}
-    tail_hidden: dict[str, list[dict[str, Any]]] = {mode: [] for mode in RD003_MODES}
-    washout_hidden: dict[str, list[dict[str, Any]]] = {mode: [] for mode in RD003_MODES}
-    try:
-        prepared: dict[str, tuple[dict[str, Any], tuple[SpikeEvent, ...], tuple[SpikeEvent, ...]]] = {}
-        for mode in RD003_MODES:
-            item = _prepare_post_training_snapshot(fields[mode])
-            prepared[mode] = item
-            snapshots[mode] = item[0]
-            tail_hidden[mode].extend(_hidden_rows(item[1]))
-            washout_hidden[mode].extend(_hidden_rows(item[2]))
-            actual_hidden[mode].extend(_hidden_rows(item[1]))
-            actual_hidden[mode].extend(_hidden_rows(item[2]))
-
-        causal_tail = learners["causal"].record_hidden_spikes(
-            spike for spike in prepared["causal"][1] if spike.unit_id not in PORTS
-        )
-        shuffled_tail = learners["shuffled"].record_hidden_spikes(
-            spike for spike in prepared["causal"][1] if spike.unit_id not in PORTS
-        )
-        e1_budget.extend(causal_tail)
-        es_budget.extend(shuffled_tail)
+            updates_by_mode: dict[str, list[dict[str, Any]]] = {}
+            for mode in RD003_MODES:
+                updates = learners[mode].observe_external(pulse)
+                updates_by_mode[mode] = [update.state_dict() for update in updates]
+                _schedule_external(
+                    fields[mode],
+                    event_id=str(row["event_id"]),
+                    time_ms=time_ms,
+                    unit_id=int(row["unit_id"]),
+                )
+            training_rows.append(
+                {
+                    **row,
+                    "e1_new_eligibility": [
+                        item.state_dict() for item in causal_eligibility
+                    ],
+                    "es_new_eligibility": [
+                        item.state_dict() for item in shuffled_eligibility
+                    ],
+                    "updates": updates_by_mode,
+                }
+            )
     except RuntimeError as exc:
-        if str(exc) not in ("max_events_per_run exceeded", "max_spikes_per_run exceeded"):
+        if not _is_native_guard(exc):
             raise
-        return {
-            "protocol": RD004_PROTOCOL,
-            "formal_execution_allowed": False,
-            "comparative_capability_claim_allowed": False,
-            "world_id": world["world_id"],
-            "family": world["family"],
-            "scale": scale,
-            "audit": audit,
-            "gain": RD003_GAIN,
-            "training_schedule_hash": digest(schedule),
-            "training_schedule": schedule,
-            "initial_connection_hashes": initial_hashes,
-            "training_rows": training_rows,
-            "status": "incomplete_native_guard_washout",
-            "error": str(exc),
-            "scientific_status": "not_scored_development_diagnosis",
-            "complete": False,
-        }
+        return _failure_result(
+            world=world,
+            scale=scale,
+            audit=audit,
+            schedule=schedule,
+            initial_hashes=initial_hashes,
+            training_rows=training_rows,
+            actual_hidden=actual_hidden,
+            learners=learners,
+            e1_budget=e1_budget,
+            es_budget=es_budget,
+            status="incomplete_native_guard_training",
+            error=str(exc),
+        )
 
+    tail_hidden: dict[str, list[dict[str, Any]]] = {mode: [] for mode in RD003_MODES}
+    source_clocks = {mode: float(fields[mode].current_time_ms) for mode in RD003_MODES}
+    tail_ends = {
+        mode: source_clocks[mode] + RD004_ELIGIBILITY_TAIL_MS for mode in RD003_MODES
+    }
+    tail_spikes: dict[str, tuple[SpikeEvent, ...]] = {}
+    try:
+        for mode in RD003_MODES:
+            spikes = tuple(fields[mode].run_until(tail_ends[mode]))
+            tail_spikes[mode] = spikes
+            rows = list(_hidden_rows(spikes))
+            tail_hidden[mode].extend(rows)
+            actual_hidden[mode].extend(rows)
+    except RuntimeError as exc:
+        if not _is_native_guard(exc):
+            raise
+        return _failure_result(
+            world=world,
+            scale=scale,
+            audit=audit,
+            schedule=schedule,
+            initial_hashes=initial_hashes,
+            training_rows=training_rows,
+            actual_hidden=actual_hidden,
+            learners=learners,
+            e1_budget=e1_budget,
+            es_budget=es_budget,
+            status="incomplete_native_guard_training",
+            error=str(exc),
+        )
+
+    causal_tail = learners["causal"].record_hidden_spikes(
+        spike for spike in tail_spikes["causal"] if spike.unit_id not in PORTS
+    )
+    shuffled_tail = learners["shuffled"].record_hidden_spikes(
+        spike for spike in tail_spikes["causal"] if spike.unit_id not in PORTS
+    )
+    e1_budget.extend(causal_tail)
+    es_budget.extend(shuffled_tail)
     if _budget_rows(e1_budget) != _budget_rows(es_budget):
         raise RuntimeError("RD004 E1/ES eligibility event budget mismatch")
     if learners["disabled"].hidden_trace_records:
         raise RuntimeError("RD004 E0 unexpectedly retained hidden eligibility")
 
-    trained_hashes = {mode: connection_hash(fields[mode]) for mode in RD003_MODES}
-    probes = {
-        mode: _probe_arm_from_snapshot(snapshots[mode], world, audit["unit_count"])
+    washout_hidden: dict[str, list[dict[str, Any]]] = {mode: [] for mode in RD003_MODES}
+    washout_ends = {mode: tail_ends[mode] + RD004_WASHOUT_MS for mode in RD003_MODES}
+    try:
+        for mode in RD003_MODES:
+            spikes = tuple(fields[mode].run_until(washout_ends[mode]))
+            rows = list(_hidden_rows(spikes))
+            washout_hidden[mode].extend(rows)
+            actual_hidden[mode].extend(rows)
+    except RuntimeError as exc:
+        if not _is_native_guard(exc):
+            raise
+        return _failure_result(
+            world=world,
+            scale=scale,
+            audit=audit,
+            schedule=schedule,
+            initial_hashes=initial_hashes,
+            training_rows=training_rows,
+            actual_hidden=actual_hidden,
+            learners=learners,
+            e1_budget=e1_budget,
+            es_budget=es_budget,
+            status="incomplete_native_guard_washout",
+            error=str(exc),
+        )
+
+    snapshots = {
+        mode: {
+            "source_clock_ms": source_clocks[mode],
+            "tail_end_ms": tail_ends[mode],
+            "washout_end_ms": washout_ends[mode],
+            "cue_time_ms": float(fields[mode].current_time_ms),
+            "snapshot_state": fields[mode].state_dict(),
+            "snapshot_state_hash": fields[mode].state_hash(),
+            "connection_hash": connection_hash(fields[mode]),
+        }
         for mode in RD003_MODES
     }
-    status = _classify_incomplete(probes)
+    trained_hashes = {mode: connection_hash(fields[mode]) for mode in RD003_MODES}
+
+    try:
+        probes = {
+            mode: _probe_arm_from_snapshot(
+                snapshots[mode], world, int(audit["unit_count"])
+            )
+            for mode in RD003_MODES
+        }
+    except (RuntimeError, ValueError) as exc:
+        return {
+            **_failure_result(
+                world=world,
+                scale=scale,
+                audit=audit,
+                schedule=schedule,
+                initial_hashes=initial_hashes,
+                training_rows=training_rows,
+                actual_hidden=actual_hidden,
+                learners=learners,
+                e1_budget=e1_budget,
+                es_budget=es_budget,
+                status="incomplete_integrity_failure",
+                error=str(exc),
+            ),
+            "probe_snapshots": {
+                mode: {
+                    key: value for key, value in snapshot.items() if key != "snapshot_state"
+                }
+                for mode, snapshot in snapshots.items()
+            },
+        }
+
+    status = _classify_probe_status(probes)
     complete = status == "complete"
     return {
         "protocol": RD004_PROTOCOL,
