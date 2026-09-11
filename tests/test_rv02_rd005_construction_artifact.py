@@ -4,14 +4,17 @@ import json
 
 import pytest
 
+import sparkbrain.research.rv02_rd005_construction_artifact as artifact_module
 from sparkbrain.research.rv02_rd005_construction_artifact import (
     RD005ConstructionArtifact,
     RD005ConstructionCell,
     SeedCollisionRecord,
+    _rd005_training_schedule,
     _rotation,
     _selected_batch,
 )
 from sparkbrain.research.rv02_rd005_gate_construction import ConnectionSnapshot
+from sparkbrain.research.rv02_scale import digest
 from sparkbrain.v04.contracts import SpikeEvent
 
 
@@ -32,6 +35,9 @@ def _spike(time_ms: float, unit_id: int, pulse_id: str) -> SpikeEvent:
 
 
 def _cell(index: int, status: str = "D1_READY") -> RD005ConstructionCell:
+    schedule: tuple[dict[str, object], ...] = ()
+    connection_rows: tuple[dict[str, object], ...] = ()
+    is_failure = status == "CONSTRUCTION_INTEGRITY_FAILURE"
     return RD005ConstructionCell(
         cell_id=f"cell-{index:02d}",
         family=f"family-{index // 3}",
@@ -39,9 +45,11 @@ def _cell(index: int, status: str = "D1_READY") -> RD005ConstructionCell:
         world_id=f"world-{index // 3}",
         world_sha256="a" * 64,
         evidence_sha256="b" * 64,
-        topology_sha256="c" * 64,
-        ordinary_schedule_sha256="d" * 64,
-        connection_rows_sha256="e" * 64,
+        topology_sha256=None if is_failure else "c" * 64,
+        ordinary_schedule=schedule,
+        ordinary_schedule_sha256=None if is_failure else digest(schedule),
+        connection_rows=connection_rows,
+        connection_rows_sha256=None if is_failure else digest(connection_rows),
         inspected_clocks=(),
         selected_clock_ms=1.0 if status == "D1_READY" else None,
         eligibility_events=(),
@@ -50,6 +58,7 @@ def _cell(index: int, status: str = "D1_READY") -> RD005ConstructionCell:
         e1_certificates=(),
         es_certificates=(),
         status=status,  # type: ignore[arg-type]
+        error="synthetic construction failure" if is_failure else None,
     )
 
 
@@ -104,6 +113,24 @@ def test_rd005_collision_record_fails_closed() -> None:
         ).validate()
 
 
+def test_rd005_rebinds_and_retains_exact_injected_schedule_ids(monkeypatch) -> None:
+    monkeypatch.setattr(
+        artifact_module,
+        "_training_schedule",
+        lambda world: (
+            {"ordinal": 0, "event_id": "rd003-ext-000000", "time_ms": 1.0, "unit_id": 3},
+            {"ordinal": 1, "event_id": "rd003-ext-000001", "time_ms": 2.0, "unit_id": 4},
+        ),
+    )
+
+    schedule = _rd005_training_schedule({})
+    assert tuple(row["event_id"] for row in schedule) == (
+        "rd005-plan-000000",
+        "rd005-plan-000001",
+    )
+    assert digest(schedule) == digest(tuple(dict(row) for row in schedule))
+
+
 def test_rd005_artifact_derives_ready_cells_without_task_outputs() -> None:
     cells = tuple(
         _cell(index, "D1_UNREACHABLE" if index in (2, 7) else "D1_READY")
@@ -123,6 +150,29 @@ def test_rd005_artifact_derives_ready_cells_without_task_outputs() -> None:
     assert len(artifact.artifact_sha256) == 64
 
 
+def test_rd005_serializes_connection_rows_not_only_their_hash() -> None:
+    connection_rows = (
+        {
+            "source_id": 40,
+            "target_id": 3,
+            "weight": 0.05,
+            "delay_ms": 1.0,
+            "plastic": True,
+        },
+    )
+    cell = _cell(0)
+    cell = RD005ConstructionCell(
+        **{
+            **cell.__dict__,
+            "connection_rows": connection_rows,
+            "connection_rows_sha256": digest(connection_rows),
+        }
+    )
+    state = cell.state_dict()
+    assert state["connection_rows"] == list(connection_rows)
+    assert state["connection_rows_sha256"] == digest(connection_rows)
+
+
 def test_rd005_integrity_failure_blocks_future_capability_cells() -> None:
     cells = tuple(
         _cell(index, "CONSTRUCTION_INTEGRITY_FAILURE" if index == 5 else "D1_READY")
@@ -136,3 +186,24 @@ def test_rd005_integrity_failure_blocks_future_capability_cells() -> None:
 
     assert artifact.matrix_status == "CONSTRUCTION_INTEGRITY_FAILURE"
     assert artifact.future_capability_cell_ids == ()
+
+
+def test_rd005_builder_records_setup_failures_without_retrying_them(monkeypatch) -> None:
+    calls = 0
+
+    def fail_construct(*args, **kwargs):
+        nonlocal calls
+        calls += 1
+        raise RuntimeError("synthetic setup failure")
+
+    monkeypatch.setattr(artifact_module, "_construct_cell", fail_construct)
+    artifact = artifact_module.build_rd005_construction_artifact(
+        source_git_sha="f" * 40,
+        collision_search=_collision(),
+    )
+
+    assert calls == 18
+    assert len(artifact.cells) == 18
+    assert artifact.matrix_status == "CONSTRUCTION_INTEGRITY_FAILURE"
+    assert all(row.status == "CONSTRUCTION_INTEGRITY_FAILURE" for row in artifact.cells)
+    assert all(row.error == "RuntimeError: synthetic setup failure" for row in artifact.cells)
