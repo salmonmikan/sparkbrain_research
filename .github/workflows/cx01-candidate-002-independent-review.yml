@@ -1,0 +1,207 @@
+name: CX01 Candidate-002 Independent Pre-start Review
+
+on:
+  push:
+    branches:
+      - "review/cx01-candidate-002-prestart-20260911"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  independent-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      SOURCE_SHA: e8483968ce43076b4c3fd04c76e62106e2031769
+      PACKAGE_COMMIT: c104be281285d52a732d5366fe36209d5688d973
+      PACKAGE_ROOT: artifacts/research/cx01/candidate_002/prestart_package
+      REJECTED_FREEZE_COMMIT: f2c5ead5afda7d731033d585511ea68dc066a162
+      REJECTED_PACKAGE_COMMIT: e1a1d9c1435de8aaf875aa40b5e62a7f40de9732
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Check immutable refs and exact source
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin "+refs/heads/*:refs/remotes/origin/*"
+          test "$(git rev-parse refs/remotes/origin/freeze/cx01-001)" = "${REJECTED_FREEZE_COMMIT}"
+          git cat-file -e "${REJECTED_PACKAGE_COMMIT}^{commit}"
+          git cat-file -e "${PACKAGE_COMMIT}^{commit}"
+          git cat-file -e "${SOURCE_SHA}^{commit}"
+
+      - name: Checkout exact frozen source
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: e8483968ce43076b4c3fd04c76e62106e2031769
+
+      - name: Install exact source
+        run: python -m pip install -e ".[dev]"
+
+      - name: Exact-source CI and CX01 validation
+        run: |
+          ruff check src/sparkbrain/comparison/cx01 tests/cx01
+          pytest -q tests/cx01
+
+      - name: Independently reconstruct and compare pre-start package
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin "+refs/heads/*:refs/remotes/origin/*"
+          python - <<'PY'
+          import hashlib
+          import json
+          import os
+          import subprocess
+          import tempfile
+          from pathlib import Path
+
+          from sparkbrain.comparison.cx01.candidate import CandidatePurpose, CandidateSpec
+          from sparkbrain.comparison.cx01.prepare import prepare_outcome_blind_bundle, verify_outcome_blind_bundle
+
+          source_sha = os.environ["SOURCE_SHA"]
+          package_commit = os.environ["PACKAGE_COMMIT"]
+          package_root = os.environ["PACKAGE_ROOT"]
+          rejected_commit = os.environ["REJECTED_FREEZE_COMMIT"]
+          rejected_package = os.environ["REJECTED_PACKAGE_COMMIT"]
+
+          def show(commit: str, path: str) -> bytes:
+              return subprocess.check_output(["git", "show", f"{commit}:{path}"])
+
+          if subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip() != source_sha:
+              raise SystemExit("not running exact frozen source")
+          if subprocess.check_output(
+              ["git", "rev-parse", "refs/remotes/origin/freeze/cx01-001"], text=True
+          ).strip() != rejected_commit:
+              raise SystemExit("candidate-001 freeze moved")
+
+          rejected = CandidateSpec(
+              generation_id="cx01-candidate-001",
+              seeds=tuple(range(269810, 269820)),
+          )
+          try:
+              rejected.require_formal()
+          except ValueError:
+              pass
+          else:
+              raise SystemExit("candidate-001 namespace/seed band no longer rejected")
+
+          candidate = CandidateSpec(
+              generation_id="cx01-candidate-002",
+              seeds=tuple(range(370110, 370120)),
+          )
+          candidate.require_formal()
+
+          frozen_manifest = json.loads(show(package_commit, f"{package_root}/freeze_manifest.json"))
+          candidate1_manifest = json.loads(
+              show(rejected_package, "cx01-control/freeze_manifest.json")
+          )
+          if candidate1_manifest["source_git_sha"] != rejected_commit:
+              raise SystemExit("candidate-001 package/source identity mismatch")
+
+          immutable_fields = (
+              "development_grid_hash",
+              "comparator_inventory",
+              "privilege_inventory_hash",
+              "schedule_policy_hash",
+              "scoring_policy_hash",
+              "result_schema_hash",
+              "resource_schema_hash",
+              "execution_command",
+              "artifact_root",
+          )
+          mismatches = {
+              field: (candidate1_manifest.get(field), frozen_manifest.get(field))
+              for field in immutable_fields
+              if candidate1_manifest.get(field) != frozen_manifest.get(field)
+          }
+          if mismatches:
+              raise SystemExit(f"execution/scoring contract changed: {mismatches}")
+          if candidate1_manifest["protocol_version"] != "cx01-comparator-protocol-1":
+              raise SystemExit("unexpected candidate-001 protocol")
+          if frozen_manifest["protocol_version"] != "cx01-comparator-protocol-2":
+              raise SystemExit("unexpected candidate-002 protocol")
+          if frozen_manifest["source_git_sha"] != source_sha:
+              raise SystemExit("candidate-002 package not bound to exact frozen source")
+
+          with tempfile.TemporaryDirectory() as tmp:
+              root = Path(tmp)
+              reconstructed = root / "package"
+              prepare_outcome_blind_bundle(
+                  generation_id="cx01-candidate-002",
+                  seeds=tuple(range(370110, 370120)),
+                  purpose=CandidatePurpose.FORMAL,
+                  source_git_sha=source_sha,
+                  builder=frozen_manifest["builder"],
+                  execution_command=frozen_manifest["execution_command"],
+                  artifact_root=frozen_manifest["artifact_root"],
+                  output_dir=reconstructed,
+              )
+              verification = verify_outcome_blind_bundle(reconstructed)
+              expected_verification = {
+                  "candidate_generation_id": "cx01-candidate-002",
+                  "declaration_count": 420,
+                  "execution_seal_status": "NOT_ISSUED",
+                  "formal_status": "NOT_STARTED",
+                  "source_git_sha": source_sha,
+                  "verified": True,
+                  "world_count": 60,
+              }
+              if verification != expected_verification:
+                  raise SystemExit(f"unexpected verification: {verification!r}")
+
+              expected_names = {
+                  "OUTCOME_BLIND",
+                  "candidate.json",
+                  "declarations.jsonl",
+                  "freeze_manifest.json",
+                  "package_checksums.json",
+                  "package_status.json",
+                  "structural_novelty_audit.json",
+                  "world_grid.json",
+              }
+              actual_names = {path.name for path in reconstructed.iterdir() if path.is_file()}
+              if actual_names != expected_names:
+                  raise SystemExit(f"reconstructed package inventory mismatch: {sorted(actual_names)}")
+              forbidden = {"execution_seal.json", "STARTED", "results.jsonl"}
+              if forbidden.intersection(actual_names):
+                  raise SystemExit("reconstructed package contains execution/result material")
+
+              for name in sorted(expected_names):
+                  reconstructed_bytes = (reconstructed / name).read_bytes()
+                  preserved_bytes = show(package_commit, f"{package_root}/{name}")
+                  if reconstructed_bytes != preserved_bytes:
+                      raise SystemExit(
+                          f"byte mismatch for {name}: "
+                          f"reconstructed={hashlib.sha256(reconstructed_bytes).hexdigest()} "
+                          f"preserved={hashlib.sha256(preserved_bytes).hexdigest()}"
+                      )
+
+          print("candidate-002 exact-source reconstruction: PASS")
+          print("candidate-001 immutable rejection guards: PASS")
+          print("execution/scoring contract continuity: PASS")
+          PY
+
+      - name: Audit source-only tuning boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          # The candidate generator must not import result/execution artifacts or comparator implementations.
+          if grep -REn \
+            'results\.jsonl|execution_seal|STARTED|formal_score|capability_result|run_comparator|execute_comparator' \
+            src/sparkbrain/comparison/cx01/candidate.py \
+            src/sparkbrain/comparison/cx01/formal_revision.py; then
+            echo "candidate source references forbidden outcome/execution material" >&2
+            exit 1
+          fi
+          echo "source-only outcome-directed tuning scan: PASS"
