@@ -2,7 +2,7 @@
 
 P4 asks whether genuinely merged anonymous ancestry can remain plural and later
 respond correctly when external evidence either separates the causal lineages or
-leaves them inseparable.  This module freezes the six preregistered P4 condition
+leaves them inseparable. This module freezes the six preregistered P4 condition
 shapes without supplying runtime-active lineage lists, capability outcomes, or
 scientific scores.
 
@@ -29,11 +29,14 @@ class P4BoundaryAncestrySpec:
     source_proposal_ids: tuple[str, ...]
 
     def validate(self) -> None:
-        if type(self.boundary_id) is not str or not self.boundary_id:
+        if not isinstance(self.boundary_id, str) or not self.boundary_id:
             raise ValueError("P4 boundary ID must be non-empty")
         if not self.source_proposal_ids:
             raise ValueError("P4 boundary ancestry requires proposal IDs")
-        if any(type(value) is not str or not value for value in self.source_proposal_ids):
+        if any(
+            not isinstance(value, str) or not value
+            for value in self.source_proposal_ids
+        ):
             raise ValueError("P4 proposal IDs must be non-empty strings")
         if len(self.source_proposal_ids) != len(set(self.source_proposal_ids)):
             raise ValueError("P4 boundary ancestry proposal IDs must be unique")
@@ -61,7 +64,7 @@ class P4ConditionSpec:
     positive_credit_permitted: bool
 
     def validate(self) -> None:
-        if type(self.condition_id) is not str or not self.condition_id:
+        if not isinstance(self.condition_id, str) or not self.condition_id:
             raise ValueError("P4 condition ID must be non-empty")
         if self.boundary_mode not in ("separate", "merged"):
             raise ValueError("invalid P4 boundary mode")
@@ -72,21 +75,24 @@ class P4ConditionSpec:
             "internal-replay",
         ):
             raise ValueError("invalid P4 evidence mode")
-        if type(self.requires_later_separation) is not bool:
+        if not isinstance(self.requires_later_separation, bool):
             raise TypeError("P4 requires_later_separation must be bool")
-        if type(self.returned_external_evidence) is not bool:
+        if not isinstance(self.returned_external_evidence, bool):
             raise TypeError("P4 returned_external_evidence must be bool")
-        if type(self.positive_credit_permitted) is not bool:
+        if not isinstance(self.positive_credit_permitted, bool):
             raise TypeError("P4 positive_credit_permitted must be bool")
 
         if self.evidence_mode in ("absence", "internal-replay"):
             if self.returned_external_evidence:
                 raise ValueError("P4 absence/replay controls cannot return external evidence")
             if self.positive_credit_permitted:
-                raise ValueError("P4 absence/replay controls cannot permit positive causal credit")
-        else:
-            if not self.returned_external_evidence:
-                raise ValueError("P4 external confirmation/contradiction requires returned evidence")
+                raise ValueError(
+                    "P4 absence/replay controls cannot permit positive causal credit"
+                )
+        elif not self.returned_external_evidence:
+            raise ValueError(
+                "P4 external confirmation/contradiction requires returned evidence"
+            )
 
         if self.evidence_mode == "contradiction" and self.positive_credit_permitted:
             raise ValueError("P4 contradiction cannot be declared positive-credit evidence")
@@ -111,7 +117,7 @@ class P4ProspectiveFixture:
 
     def validate(self) -> None:
         proposal_ids = (self.lineage_a_proposal_id, self.lineage_b_proposal_id)
-        if any(type(value) is not str or not value for value in proposal_ids):
+        if any(not isinstance(value, str) or not value for value in proposal_ids):
             raise ValueError("P4 lineage proposal IDs must be non-empty strings")
         if len(set(proposal_ids)) != 2:
             raise ValueError("P4 requires two distinct proposal lineages")
@@ -120,7 +126,7 @@ class P4ProspectiveFixture:
             self.separate_b_boundary_id,
             self.merged_boundary_id,
         )
-        if any(type(value) is not str or not value for value in boundary_ids):
+        if any(not isinstance(value, str) or not value for value in boundary_ids):
             raise ValueError("P4 boundary IDs must be non-empty strings")
         if len(set(boundary_ids)) != 3:
             raise ValueError("P4 separate and merged BoundaryEvent IDs must be distinct")
