@@ -93,6 +93,10 @@ class P2DevelopmentMatrixRun:
     """Complete raw four-condition attribution matrix, still capability-unscored."""
 
     conditions: tuple[P2DevelopmentConditionRun, ...]
+    expected_subepisode_identities: tuple[
+        tuple[str, str, str],
+        tuple[str, str, str],
+    ]
 
     def validate(self) -> None:
         if tuple(row.condition_id for row in self.conditions) != _EXPECTED_CONDITION_IDS:
@@ -101,6 +105,27 @@ class P2DevelopmentMatrixRun:
             raise ValueError("P2 development matrix requires exactly four conditions")
         for row in self.conditions:
             row.validate()
+
+        if len(self.expected_subepisode_identities) != 2:
+            raise ValueError("P2 matrix requires exactly two fixed subepisode identities")
+        if len(set(self.expected_subepisode_identities)) != 2:
+            raise ValueError("P2 matrix fixed subepisode identities must be distinct")
+        for identity in self.expected_subepisode_identities:
+            if len(identity) != 3 or any(type(value) is not str or not value for value in identity):
+                raise ValueError("P2 fixed subepisode identity must contain three strings")
+
+        actual_identity_orders = tuple(
+            tuple(
+                (result.proposal_id, result.boundary_event_id, result.response_event_id)
+                for result in row.subepisodes
+            )
+            for row in self.conditions
+        )
+        for actual_identities in actual_identity_orders:
+            if actual_identities != self.expected_subepisode_identities:
+                raise RuntimeError(
+                    "P2 result identities drifted from the fixed cloned subepisode schedule"
+                )
 
         proposal_orders = tuple(
             tuple(result.proposal_id for result in row.subepisodes)
@@ -147,6 +172,16 @@ class P2DevelopmentMatrixRun:
         self.validate()
         value: dict[str, Any] = {
             "conditions": [row.state_dict() for row in self.conditions],
+            "expected_subepisode_identities": [
+                {
+                    "proposal_id": proposal_id,
+                    "boundary_event_id": boundary_event_id,
+                    "response_event_id": response_event_id,
+                }
+                for proposal_id, boundary_event_id, response_event_id in (
+                    self.expected_subepisode_identities
+                )
+            ],
             "capability_scored": False,
             "formal_execution_opened": False,
         }
@@ -162,6 +197,10 @@ def execute_p2_development_matrix(
 
     fixture.validate()
     schedule.validate()
+    expected_subepisode_identities = tuple(
+        (row.proposal_id, row.boundary_event_id, row.response_event_id)
+        for row in schedule.subepisodes
+    )
     conditions = build_p2_development_plan(fixture, schedule)
     rows: list[P2DevelopmentConditionRun] = []
     for condition in conditions:
@@ -178,7 +217,10 @@ def execute_p2_development_matrix(
         row.validate()
         rows.append(row)
 
-    result = P2DevelopmentMatrixRun(tuple(rows))
+    result = P2DevelopmentMatrixRun(
+        conditions=tuple(rows),
+        expected_subepisode_identities=expected_subepisode_identities,
+    )
     result.validate()
     return result
 

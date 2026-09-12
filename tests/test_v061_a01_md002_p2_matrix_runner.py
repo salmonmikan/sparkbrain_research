@@ -1,5 +1,9 @@
 from __future__ import annotations
 
+from dataclasses import replace
+
+import pytest
+
 from sparkbrain.v04 import (
     Connection,
     ExcitableFieldConfig,
@@ -218,6 +222,10 @@ def test_p2_development_matrix_runs_all_registered_cloned_subepisodes() -> None:
     )
     assert all(len(row.subepisodes) == 2 for row in result.conditions)
     assert sum(len(row.subepisodes) for row in result.conditions) == 8
+    assert result.expected_subepisode_identities == (
+        ("child", "boundary-child", "response-child"),
+        ("other", "boundary-other", "response-other"),
+    )
 
     by_id = {row.condition_id: row for row in result.conditions}
     assert tuple(row.response_target for row in by_id["p2-w0-returned"].subepisodes) == (
@@ -240,10 +248,62 @@ def test_p2_development_matrix_runs_all_registered_cloned_subepisodes() -> None:
     )
 
 
+def test_p2_development_matrix_rejects_result_identity_drift() -> None:
+    result = execute_p2_development_matrix(_fixture(), _schedule())
+    first_condition = result.conditions[0]
+    drifted_result = replace(
+        first_condition.subepisodes[0],
+        proposal_id="unexpected-clone",
+    )
+    drifted_condition = replace(
+        first_condition,
+        subepisodes=(drifted_result, first_condition.subepisodes[1]),
+    )
+    drifted_matrix = replace(
+        result,
+        conditions=(drifted_condition, *result.conditions[1:]),
+    )
+
+    with pytest.raises(RuntimeError, match="fixed cloned subepisode schedule"):
+        drifted_matrix.validate()
+
+
+def test_p2_development_matrix_rejects_event_identity_drift() -> None:
+    result = execute_p2_development_matrix(_fixture(), _schedule())
+    first_condition = result.conditions[0]
+    drifted_result = replace(
+        first_condition.subepisodes[0],
+        boundary_event_id="unexpected-boundary",
+    )
+    drifted_condition = replace(
+        first_condition,
+        subepisodes=(drifted_result, first_condition.subepisodes[1]),
+    )
+    drifted_matrix = replace(
+        result,
+        conditions=(drifted_condition, *result.conditions[1:]),
+    )
+
+    with pytest.raises(RuntimeError, match="fixed cloned subepisode schedule"):
+        drifted_matrix.validate()
+
+
 def test_p2_development_matrix_serialization_remains_execution_disabled() -> None:
     state = execute_p2_development_matrix(_fixture(), _schedule()).state_dict()
 
     assert state["capability_scored"] is False
     assert state["formal_execution_opened"] is False
+    assert state["expected_subepisode_identities"] == [
+        {
+            "proposal_id": "child",
+            "boundary_event_id": "boundary-child",
+            "response_event_id": "response-child",
+        },
+        {
+            "proposal_id": "other",
+            "boundary_event_id": "boundary-other",
+            "response_event_id": "response-other",
+        },
+    ]
     assert len(state["conditions"]) == 4
     assert all(len(row["subepisodes"]) == 2 for row in state["conditions"])
