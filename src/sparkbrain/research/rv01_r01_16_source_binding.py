@@ -15,6 +15,8 @@ from pathlib import Path
 
 from .rv01_r01_16_development_package import R0116SourceManifest
 
+_SOURCE_BINDING_PATH = "src/sparkbrain/research/rv01_r01_16_source_binding.py"
+
 
 @dataclass(frozen=True, slots=True)
 class R0116VerifiedSourceCheckout:
@@ -57,6 +59,10 @@ def verify_r01_16_source_checkout(
     """Fail closed unless the checkout exactly realizes the bound source manifest."""
 
     manifest.validate()
+    manifest_paths = {row.path for row in manifest.entries}
+    if _SOURCE_BINDING_PATH not in manifest_paths:
+        raise ValueError("R01-16 source manifest must bind the source verifier itself")
+
     root = repo_root.resolve(strict=True)
     if not root.is_dir():
         raise ValueError("R01-16 repository root must be a directory")
