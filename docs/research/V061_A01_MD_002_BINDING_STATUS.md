@@ -25,7 +25,7 @@ Dynamic/resource counters are parsed from retained runtime counter-trace records
 
 The construction contract now also requires a retained `md002-external-observation` marker and measures external-effect latency from that observation step rather than from the first counter sample. The runtime trace must contain exactly one non-negative observation marker inside the sampled interval, and a measured external effect is rejected if it precedes the observation. This is measurement hardening only; it does not execute capability or provide an MD-002 result.
 
-`MD002ExecutionGate` contains no caller-controlled review/authority booleans. In this construction branch both immutable authority-artifact digest pins are deliberately unset, so execution is impossible even if a caller supplies fabricated approval payloads. A later separately reviewed source revision must pin the exact SHA-256 identities of an independent technical-review artifact and the already-recorded 2026-09-12 MD-002 execution-authorization artifact before the gate can authorize capability.
+`MD002ExecutionGate` contains no caller-controlled review/authority booleans. In this construction branch both immutable authority-artifact digest pins are deliberately unset, so execution is impossible even if a caller supplies fabricated approval payloads. A later separately reviewed source revision must pin the exact SHA-256 identities of an independent technical-review JSON artifact and a distinct gate-compatible execution-authority JSON artifact. The execution-authority JSON must be created only after the exact MD-002 source/protocol identity is fixed, must bind that exact identity, and must cite the existing 2026-09-12 user-authorization record as provenance; the Markdown authorization record itself is provenance and is not directly consumable by `MD002ExecutionGate`.
 
 These are construction invariants, not capability evidence.
 
@@ -43,13 +43,13 @@ The following remain unresolved and execution-blocking:
 - bind source SHA, protocol digest, source manifest, unique output paths and a source-identity-checked runner;
 - bind raw artifact schema and preservation procedure before scoring can be opened;
 - complete independent technical review of the final executable package;
-- pin the immutable technical-review artifact digest in a separately reviewed source revision;
-- pin the immutable digest of `docs/research/V061_A01_MD002_EXECUTION_AUTHORIZATION_20260912.md` as the execution-authority artifact in the final reviewed source revision.
+- pin the immutable technical-review JSON artifact digest in a separately reviewed source revision;
+- after the exact source/protocol identity is frozen, generate a gate-compatible `execution-authority` JSON record that binds that exact identity and cites `docs/research/V061_A01_MD002_EXECUTION_AUTHORIZATION_20260912.md` as the user-authorization provenance, then pin the JSON artifact digest in the final separately reviewed source revision.
 
-The user's explicit A01 line-scoped execution authorization dated 2026-09-12 is sufficient user authority for a future exact MD-002 identity once all of the technical, review, freeze, and seal prerequisites above pass. Do not request another user approval solely because the experiment reaches the execution boundary. This authorization does not permit changing the protocol after outcomes, reusing a consumed identity, or bypassing any scientific-integrity gate.
+The user's explicit A01 line-scoped execution authorization dated 2026-09-12 is sufficient user authority for a future exact MD-002 identity once all of the technical, review, freeze, and seal prerequisites above pass. The later gate-compatible JSON artifact is an identity-binding/seal representation of that already-granted authority, not a request for new user approval. Do not request another user approval solely because the experiment reaches the execution boundary. This authorization does not permit changing the protocol after outcomes, reusing a consumed identity, or bypassing any scientific-integrity gate.
 
 ## Current scientific boundary
 
 A01-MD-001 remains immutable and retains its reviewed limitations. N3-DEV-001 remains an accepted narrow development artifact, not a matched comparator result. A01-MD-002 has no capability result.
 
-The safe next step is to continue implementing the still-prospective fixture/snapshot/instrumentation layers under the execution-disabled technical boundary. Any future capability runner must remain fail-closed until the complete matrix, source identity, instrumentation provenance, independent review, freeze/seal conditions, and the immutable digest binding of the existing 2026-09-12 execution authorization are fixed and verified.
+The safe next step is to continue implementing the still-prospective fixture/snapshot/instrumentation layers under the execution-disabled technical boundary. Any future capability runner must remain fail-closed until the complete matrix, source identity, instrumentation provenance, independent review, freeze/seal conditions, and immutable digest bindings for the technical-review artifact and gate-compatible execution-authority artifact are fixed and verified.
