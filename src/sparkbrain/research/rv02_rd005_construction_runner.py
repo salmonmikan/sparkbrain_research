@@ -22,7 +22,7 @@ from .rv02_rd005_construction_artifact import (
     SeedCollisionRecord,
     build_rd005_construction_artifact,
 )
-from .rv02_rd005_development_package import RD005CollisionRegistry
+from .rv02_rd005_development_package import RD005CollisionRegistry, RD005_OUTPUT_ROOT
 
 _INPUT_KEYS = frozenset(
     {
@@ -155,16 +155,27 @@ def _load_input(raw: bytes) -> tuple[dict[str, str], RD005CollisionRegistry]:
     return identities, registry
 
 
-def run_construction(*, input_path: Path, output_dir: Path) -> Path:
-    """Construct and verify RD005 D1 evidence once in a fresh directory."""
+def _output_dir(*, repo_root: Path, input_sha256: str) -> Path:
+    """Return the one canonical output identity for an exact input payload."""
 
-    output_dir.mkdir(parents=True, exist_ok=False)
+    return repo_root / RD005_OUTPUT_ROOT / f"construction-{input_sha256}"
+
+
+def run_construction(*, input_path: Path, repo_root: Path) -> Path:
+    """Construct and verify RD005 D1 evidence once for an exact input identity."""
+
     raw = input_path.read_bytes()
     input_sha256 = _sha256_bytes(raw)
+    output_dir = _output_dir(repo_root=repo_root, input_sha256=input_sha256)
+    output_dir.mkdir(parents=True, exist_ok=False)
     (output_dir / "construction_input.json").write_bytes(raw)
     _write_json(
         output_dir / "input_identity.json",
-        {"construction_input_sha256": input_sha256},
+        {
+            "construction_input_sha256": input_sha256,
+            "output_relpath": output_dir.relative_to(repo_root).as_posix(),
+            "retry_same_input_identity_allowed": False,
+        },
     )
 
     try:
@@ -242,9 +253,9 @@ def main(argv: list[str] | None = None) -> int:
         description="Construct and verify RD005 D1 artifacts without capability execution."
     )
     parser.add_argument("--input", type=Path, required=True)
-    parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--repo-root", type=Path, default=Path("."))
     args = parser.parse_args(argv)
-    run_construction(input_path=args.input, output_dir=args.output)
+    run_construction(input_path=args.input, repo_root=args.repo_root)
     return 0
 
 
