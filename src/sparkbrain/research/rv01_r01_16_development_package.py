@@ -25,6 +25,8 @@ R01_16_REQUIRED_SOURCE_PATHS = frozenset(
         "src/sparkbrain/research/rv01_r01_16_identity.py",
         "src/sparkbrain/research/rv01_r01_16_factorization.py",
         "src/sparkbrain/research/rv01_r01_16_reachability.py",
+        "src/sparkbrain/research/rv01_r01_16_development_package.py",
+        "src/sparkbrain/research/rv01_r01_16_construction.py",
         "docs/research/RV01_R01_16_DEVELOPMENT_IDENTITY_BINDING.md",
         "docs/research/RV01_R01_16_PREREGISTRATION_AMENDMENT_001.md",
         "docs/research/RV01_R01_16_PROPAGATION_FACTORIZATION_PREREGISTRATION.md",
