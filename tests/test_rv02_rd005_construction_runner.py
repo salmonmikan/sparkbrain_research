@@ -54,13 +54,26 @@ def _write_input(path: Path, payload: dict[str, object] | None = None) -> None:
     path.write_text(json.dumps(payload or _payload(), sort_keys=True), encoding="utf-8")
 
 
+def _expected_output(repo_root: Path, input_path: Path) -> Path:
+    input_sha256 = hashlib.sha256(input_path.read_bytes()).hexdigest()
+    return (
+        repo_root
+        / "artifacts"
+        / "rv02"
+        / "rd005"
+        / "development"
+        / f"construction-{input_sha256}"
+    )
+
+
 def test_rd005_runner_writes_verified_fresh_construction_only_artifacts(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     input_path = tmp_path / "input.json"
-    output_dir = tmp_path / "output"
+    repo_root = tmp_path / "repo"
     _write_input(input_path)
+    output_dir = _expected_output(repo_root, input_path)
     fake = _FakeArtifact()
     monkeypatch.setattr(runner, "build_rd005_construction_artifact", lambda **_: fake)
     monkeypatch.setattr(
@@ -69,10 +82,13 @@ def test_rd005_runner_writes_verified_fresh_construction_only_artifacts(
         lambda artifact: ("cell-a", "cell-b") if artifact is fake else (),
     )
 
-    result = runner.run_construction(input_path=input_path, output_dir=output_dir)
+    result = runner.run_construction(input_path=input_path, repo_root=repo_root)
 
     assert result == output_dir
     assert (output_dir / "construction_input.json").read_bytes() == input_path.read_bytes()
+    identity = json.loads((output_dir / "input_identity.json").read_text(encoding="utf-8"))
+    assert identity["retry_same_input_identity_allowed"] is False
+    assert identity["output_relpath"].startswith("artifacts/rv02/rd005/development/")
     complete = json.loads((output_dir / "COMPLETE.json").read_text(encoding="utf-8"))
     assert complete["status"] == "D1_CONSTRUCTION_COMPLETE_CAPABILITY_UNOPENED"
     assert complete["capability_output_opened"] is False
@@ -85,13 +101,14 @@ def test_rd005_runner_writes_verified_fresh_construction_only_artifacts(
     assert not (output_dir / "FAILED.json").exists()
 
 
-def test_rd005_runner_never_clobbers_existing_output(
+def test_rd005_runner_never_retries_same_input_identity_under_another_output(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     input_path = tmp_path / "input.json"
-    output_dir = tmp_path / "output"
+    repo_root = tmp_path / "repo"
     _write_input(input_path)
+    output_dir = _expected_output(repo_root, input_path)
     fake = _FakeArtifact()
     monkeypatch.setattr(runner, "build_rd005_construction_artifact", lambda **_: fake)
     monkeypatch.setattr(
@@ -99,13 +116,15 @@ def test_rd005_runner_never_clobbers_existing_output(
         "verify_rd005_artifact_for_future_capability",
         lambda _: ("cell-a",),
     )
-    runner.run_construction(input_path=input_path, output_dir=output_dir)
+    first = runner.run_construction(input_path=input_path, repo_root=repo_root)
     complete_before = (output_dir / "COMPLETE.json").read_bytes()
 
     with pytest.raises(FileExistsError):
-        runner.run_construction(input_path=input_path, output_dir=output_dir)
+        runner.run_construction(input_path=input_path, repo_root=repo_root)
 
+    assert first == output_dir
     assert (output_dir / "COMPLETE.json").read_bytes() == complete_before
+    assert len(list((repo_root / "artifacts/rv02/rd005/development").iterdir())) == 1
 
 
 def test_rd005_runner_retains_terminal_stop_when_verified_matrix_is_not_ready(
@@ -113,8 +132,9 @@ def test_rd005_runner_retains_terminal_stop_when_verified_matrix_is_not_ready(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     input_path = tmp_path / "input.json"
-    output_dir = tmp_path / "output"
+    repo_root = tmp_path / "repo"
     _write_input(input_path)
+    output_dir = _expected_output(repo_root, input_path)
     fake = _FakeArtifact(matrix_status="D1_ZERO_READY_STOP")
     monkeypatch.setattr(runner, "build_rd005_construction_artifact", lambda **_: fake)
     monkeypatch.setattr(
@@ -124,22 +144,25 @@ def test_rd005_runner_retains_terminal_stop_when_verified_matrix_is_not_ready(
     )
 
     with pytest.raises(RuntimeError, match="verified D1 matrix is not ready"):
-        runner.run_construction(input_path=input_path, output_dir=output_dir)
+        runner.run_construction(input_path=input_path, repo_root=repo_root)
 
     assert (output_dir / "rd005_construction_artifact.json").is_file()
     assert (output_dir / "FAILED.json").is_file()
     assert not (output_dir / "COMPLETE.json").exists()
 
 
-def test_rd005_runner_rejects_registry_digest_mismatch(tmp_path: Path) -> None:
+def test_rd005_runner_rejects_registry_digest_mismatch_terminally(tmp_path: Path) -> None:
     input_path = tmp_path / "input.json"
-    output_dir = tmp_path / "output"
+    repo_root = tmp_path / "repo"
     payload = _payload()
     payload["collision_registry_sha256"] = hashlib.sha256(b"other").hexdigest()
     _write_input(input_path, payload)
+    output_dir = _expected_output(repo_root, input_path)
 
     with pytest.raises(ValueError, match="digest does not match"):
-        runner.run_construction(input_path=input_path, output_dir=output_dir)
+        runner.run_construction(input_path=input_path, repo_root=repo_root)
 
     assert (output_dir / "FAILED.json").is_file()
     assert not (output_dir / "COMPLETE.json").exists()
+    with pytest.raises(FileExistsError):
+        runner.run_construction(input_path=input_path, repo_root=repo_root)
