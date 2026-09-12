@@ -84,7 +84,9 @@ class P4ConditionSpec:
 
         if self.evidence_mode in ("absence", "internal-replay"):
             if self.returned_external_evidence:
-                raise ValueError("P4 absence/replay controls cannot return external evidence")
+                raise ValueError(
+                    "P4 absence/replay controls cannot return external evidence"
+                )
             if self.positive_credit_permitted:
                 raise ValueError(
                     "P4 absence/replay controls cannot permit positive causal credit"
