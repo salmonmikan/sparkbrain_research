@@ -231,7 +231,9 @@ class P4ProspectiveFixture:
         if sum(row.boundary_mode == "separate" for row in rows) != 1:
             raise RuntimeError("P4 matrix requires exactly one separate-event condition")
         if sum(row.requires_later_separation for row in rows) != 2:
-            raise RuntimeError("P4 matrix requires confirmation and contradiction separation assays")
+            raise RuntimeError(
+                "P4 matrix requires confirmation and contradiction separation assays"
+            )
         if sum(row.evidence_mode == "absence" for row in rows) != 1:
             raise RuntimeError("P4 matrix requires exactly one absence control")
         if sum(row.evidence_mode == "internal-replay" for row in rows) != 1:
