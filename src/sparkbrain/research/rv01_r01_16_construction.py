@@ -19,10 +19,10 @@ from pathlib import Path
 from typing import Any
 
 from .rv01_r01_16_factorization import (
+    R01_16_PROTOCOL_ID,
     ConnectionState,
     QueuedPropagationSnapshot,
     R01_16FactorizationConstruction,
-    R01_16_PROTOCOL_ID,
 )
 
 _INPUT_KEYS = frozenset(
