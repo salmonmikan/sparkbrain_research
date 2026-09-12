@@ -22,7 +22,7 @@ from .rv02_rd005_construction_artifact import (
     SeedCollisionRecord,
     build_rd005_construction_artifact,
 )
-from .rv02_rd005_development_package import RD005CollisionRegistry, RD005_OUTPUT_ROOT
+from .rv02_rd005_development_package import RD005_OUTPUT_ROOT, RD005CollisionRegistry
 
 _INPUT_KEYS = frozenset(
     {
