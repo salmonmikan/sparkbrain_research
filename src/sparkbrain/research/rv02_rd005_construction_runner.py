@@ -22,12 +22,19 @@ from .rv02_rd005_construction_artifact import (
     SeedCollisionRecord,
     build_rd005_construction_artifact,
 )
-from .rv02_rd005_development_package import RD005_OUTPUT_ROOT, RD005CollisionRegistry
+from .rv02_rd005_development_package import (
+    RD005_OUTPUT_ROOT,
+    RD005CollisionRegistry,
+    RD005SourceManifest,
+    RD005SourceManifestEntry,
+)
+from .rv02_rd005_source_binding import verify_rd005_source_checkout
 
 _INPUT_KEYS = frozenset(
     {
         "source_git_sha",
         "source_manifest_sha256",
+        "source_manifest",
         "collision_registry_sha256",
         "package_plan_sha256",
         "collision_registry",
@@ -42,6 +49,8 @@ _REGISTRY_KEYS = frozenset(
         "authoritative_complete",
     }
 )
+_SOURCE_MANIFEST_KEYS = frozenset({"source_git_sha", "entries"})
+_SOURCE_MANIFEST_ENTRY_KEYS = frozenset({"path", "sha256"})
 
 
 def _sha256_bytes(raw: bytes) -> str:
@@ -102,12 +111,73 @@ def _int_tuple(value: object, *, label: str) -> tuple[int, ...]:
     return tuple(value)
 
 
-def _load_input(raw: bytes) -> tuple[dict[str, str], RD005CollisionRegistry]:
+def _load_source_manifest(value: object) -> RD005SourceManifest:
+    row = _require_object(
+        value,
+        label="source_manifest",
+        expected_keys=_SOURCE_MANIFEST_KEYS,
+    )
+    entries_value = row["entries"]
+    if not isinstance(entries_value, list):
+        raise TypeError("source_manifest.entries must be a JSON array")
+    entries: list[RD005SourceManifestEntry] = []
+    for index, entry_value in enumerate(entries_value):
+        entry = _require_object(
+            entry_value,
+            label=f"source_manifest.entries[{index}]",
+            expected_keys=_SOURCE_MANIFEST_ENTRY_KEYS,
+        )
+        path = entry["path"]
+        digest = entry["sha256"]
+        if not isinstance(path, str):
+            raise TypeError(f"source_manifest.entries[{index}].path must be a string")
+        entries.append(
+            RD005SourceManifestEntry(
+                path=path,
+                sha256=_require_hash(
+                    digest,
+                    label=f"source_manifest.entries[{index}].sha256",
+                    length=64,
+                ),
+            )
+        )
+    manifest = RD005SourceManifest(
+        source_git_sha=_require_hash(
+            row["source_git_sha"],
+            label="source_manifest.source_git_sha",
+            length=40,
+        ),
+        entries=tuple(entries),
+    )
+    manifest.validate()
+    return manifest
+
+
+def _load_input(
+    raw: bytes,
+) -> tuple[dict[str, str], RD005CollisionRegistry, RD005SourceManifest]:
     try:
         decoded = json.loads(raw)
     except (UnicodeDecodeError, json.JSONDecodeError) as exc:
         raise ValueError("RD005 construction input must be valid UTF-8 JSON") from exc
     payload = _require_object(decoded, label="construction input", expected_keys=_INPUT_KEYS)
+
+    source_manifest = _load_source_manifest(payload["source_manifest"])
+    expected_source_sha = _require_hash(
+        payload["source_git_sha"],
+        label="source_git_sha",
+        length=40,
+    )
+    if source_manifest.source_git_sha != expected_source_sha:
+        raise ValueError("RD005 source Git SHA does not match retained source manifest")
+    expected_manifest_sha = _require_hash(
+        payload["source_manifest_sha256"],
+        label="source_manifest_sha256",
+        length=64,
+    )
+    if source_manifest.manifest_sha256 != expected_manifest_sha:
+        raise ValueError("RD005 source manifest digest does not match retained manifest")
+
     registry_row = _require_object(
         payload["collision_registry"],
         label="collision_registry",
@@ -135,16 +205,8 @@ def _load_input(raw: bytes) -> tuple[dict[str, str], RD005CollisionRegistry]:
     if registry.registry_sha256 != expected_registry_sha:
         raise ValueError("RD005 collision registry digest does not match retained registry")
     identities = {
-        "source_git_sha": _require_hash(
-            payload["source_git_sha"],
-            label="source_git_sha",
-            length=40,
-        ),
-        "source_manifest_sha256": _require_hash(
-            payload["source_manifest_sha256"],
-            label="source_manifest_sha256",
-            length=64,
-        ),
+        "source_git_sha": expected_source_sha,
+        "source_manifest_sha256": expected_manifest_sha,
         "collision_registry_sha256": expected_registry_sha,
         "package_plan_sha256": _require_hash(
             payload["package_plan_sha256"],
@@ -152,7 +214,7 @@ def _load_input(raw: bytes) -> tuple[dict[str, str], RD005CollisionRegistry]:
             length=64,
         ),
     }
-    return identities, registry
+    return identities, registry, source_manifest
 
 
 def _output_dir(*, repo_root: Path, input_sha256: str) -> Path:
@@ -164,8 +226,14 @@ def _output_dir(*, repo_root: Path, input_sha256: str) -> Path:
 def run_construction(*, input_path: Path, repo_root: Path) -> Path:
     """Construct and verify RD005 D1 evidence once for an exact input identity."""
 
+    # Parse the full prospective identity and verify the exact checkout before
+    # consuming any output path. Source/package identity failure therefore does
+    # not create a misleading terminal construction artifact.
     raw = input_path.read_bytes()
     input_sha256 = _sha256_bytes(raw)
+    identities, registry, source_manifest = _load_input(raw)
+    verified_source = verify_rd005_source_checkout(repo_root, source_manifest)
+
     output_dir = _output_dir(repo_root=repo_root, input_sha256=input_sha256)
     output_dir.mkdir(parents=True, exist_ok=False)
     (output_dir / "construction_input.json").write_bytes(raw)
@@ -179,7 +247,6 @@ def run_construction(*, input_path: Path, repo_root: Path) -> Path:
     )
 
     try:
-        identities, registry = _load_input(raw)
         runtime = {
             "python_implementation": platform.python_implementation(),
             "python_version": platform.python_version(),
@@ -187,7 +254,14 @@ def run_construction(*, input_path: Path, repo_root: Path) -> Path:
             "runner_module": "sparkbrain.research.rv02_rd005_construction_runner",
         }
         _write_json(output_dir / "runtime.json", runtime)
-        _write_json(output_dir / "source_binding.json", identities)
+        source_binding = verified_source.state_dict()
+        source_binding.update(
+            {
+                "collision_registry_sha256": identities["collision_registry_sha256"],
+                "package_plan_sha256": identities["package_plan_sha256"],
+            }
+        )
+        _write_json(output_dir / "source_binding.json", source_binding)
 
         collision_search = SeedCollisionRecord(
             seed=RD005_FRESH_SEED,
