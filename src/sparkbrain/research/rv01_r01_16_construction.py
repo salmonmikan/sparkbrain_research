@@ -32,6 +32,7 @@ from .rv01_r01_16_factorization import (
     R01_16FactorizationConstruction,
 )
 from .rv01_r01_16_reachability import build_factor_reachability_certificate
+from .rv01_r01_16_source_binding import verify_r01_16_source_checkout
 
 _INPUT_KEYS = frozenset(
     {
@@ -279,11 +280,14 @@ def _write_json(path: Path, value: object) -> None:
 def run_construction(*, input_path: Path, repo_root: Path) -> Path:
     """Run one package-bound construction into its deterministic fresh path."""
 
-    # Read and validate the identity before consuming the deterministic output
-    # path. Unreadable/unparseable input therefore cannot leave an empty run ID.
+    # Read and validate the complete prospective identity before consuming the
+    # deterministic output path. Source failure therefore cannot create a run
+    # directory or terminal FAILED marker for an identity that never opened.
     raw = input_path.read_bytes()
     input_sha256 = _sha256_bytes(raw)
     plan, construction, registered_ids, cue_ids, horizon = _load_construction(raw)
+    verified_source = verify_r01_16_source_checkout(repo_root, plan.source_manifest)
+
     output_dir = repo_root / plan.output_relpath
     output_dir.mkdir(parents=True, exist_ok=False)
     (output_dir / "construction_input.json").write_bytes(raw)
@@ -312,16 +316,15 @@ def run_construction(*, input_path: Path, repo_root: Path) -> Path:
             "protocol_id": R01_16_PROTOCOL_ID,
         }
         _write_json(output_dir / "runtime.json", runtime)
-        _write_json(
-            output_dir / "source_binding.json",
+        source_binding = verified_source.state_dict()
+        source_binding.update(
             {
-                "source_git_sha": plan.source_manifest.source_git_sha,
-                "source_manifest_sha256": plan.source_manifest.manifest_sha256,
                 "collision_registry_sha256": plan.collision_registry.registry_sha256,
                 "package_plan_sha256": plan.package_plan_sha256,
                 "output_relpath": plan.output_relpath,
-            },
+            }
         )
+        _write_json(output_dir / "source_binding.json", source_binding)
         summary_state = asdict(summary)
         _write_json(output_dir / "construction_summary.json", summary_state)
         certificate_state = certificate.state_dict()
