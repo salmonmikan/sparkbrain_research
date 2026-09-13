@@ -19,6 +19,26 @@ SOURCE_SHA = "a" * 40
 FILE_SHA = "b" * 64
 
 
+class _VerifiedSource:
+    def state_dict(self) -> dict[str, object]:
+        return {
+            "source_git_sha": SOURCE_SHA,
+            "source_manifest_sha256": "c" * 64,
+            "verified_paths": sorted(R01_16_REQUIRED_SOURCE_PATHS),
+            "tracked_checkout_clean": True,
+            "source_bytes_verified": True,
+            "execution_authority_granted": False,
+        }
+
+
+@pytest.fixture(autouse=True)
+def _stub_exact_source_gate(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr(
+        "sparkbrain.research.rv01_r01_16_construction.verify_r01_16_source_checkout",
+        lambda repo_root, manifest: _VerifiedSource(),
+    )
+
+
 def _connection(
     source_id: int,
     target_id: int,
@@ -214,6 +234,27 @@ def test_r01_16_package_digest_mismatch_fails_before_consuming_output(
         run_construction(input_path=input_path, repo_root=tmp_path)
 
     assert not (tmp_path / plan.output_relpath).exists()
+
+
+def test_r01_16_source_gate_failure_does_not_consume_output_identity(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    input_path = tmp_path / "input.json"
+    plan = _write_input(input_path)
+
+    def reject_source(repo_root: Path, manifest: R0116SourceManifest) -> None:
+        raise ValueError("source checkout rejected before construction")
+
+    monkeypatch.setattr(
+        "sparkbrain.research.rv01_r01_16_construction.verify_r01_16_source_checkout",
+        reject_source,
+    )
+    with pytest.raises(ValueError, match="source checkout rejected"):
+        run_construction(input_path=input_path, repo_root=tmp_path)
+
+    assert not (tmp_path / plan.output_relpath).exists()
+    assert not (tmp_path / "artifacts").exists()
 
 
 def test_r01_16_missing_input_does_not_leave_empty_output_directory(
