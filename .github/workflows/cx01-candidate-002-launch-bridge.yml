@@ -1,0 +1,217 @@
+name: CX01 candidate-002 integrity-gated launch bridge
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/cx01-candidate-002-launch-bridge.yml
+
+permissions:
+  actions: write
+  contents: write
+
+jobs:
+  launch-once:
+    runs-on: ubuntu-latest
+    env:
+      SOURCE_SHA: e8483968ce43076b4c3fd04c76e62106e2031769
+      PACKAGE_SHA: c104be281285d52a732d5366fe36209d5688d973
+      CANDIDATE_SPEC_HASH: 5b51b5ac53a66b0ca79939c9eff976b53c75477ba38fd77547e2bd3858d095c8
+      CANDIDATE_GRID_HASH: 0c6849a823c4befcd5a3071a4755dbcadcdb88ec8fc072da0713415adc12e3ce
+      DECLARATION_BUNDLE_HASH: ca21263f60d6e1c2d78f64ed1d628fde123f48355af3eb3a519b037a3068e537
+      MANIFEST_HASH: 18f88a6285b23fef920ee8f040787ffc3543348268b3cd5316f6fb1cf7f0ee6a
+      GLOBAL_AUTH_COMMIT: 33dfd89c141805d49b471b81258997e0ff272103
+      REVIEW_OVERRIDE_COMMIT: 7037bb81a8fb3af95972a8c8fc72aecbba691a91
+      SEAL_READY_COMMIT: 77f4759e0d40037bcb49ab96d48c5fbad020a709
+      CONTROL_BRANCH: control/cx01-candidate-002-started-20260913
+      CANDIDATE_PATH: artifacts/research/cx01/candidate_002/prestart_package/candidate.json
+      MANIFEST_PATH: artifacts/research/cx01/candidate_002/prestart_package/freeze_manifest.json
+      SEAL_PATH: artifacts/research/cx01/candidate_002/execution_seal.json
+      CONTROL_MARKER_PATH: artifacts/research/cx01/candidate_002/STARTED.json
+      AUTHORITY_PATH: artifacts/research/cx01/candidate_002/execution_authority.json
+      ARTIFACT_ROOT: /tmp/cx01-formal
+
+    steps:
+      - name: Checkout exact frozen package
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.PACKAGE_SHA }}
+          fetch-depth: 0
+          token: ${{ github.token }}
+
+      - name: Revalidate immutable refs, governance records, and no prior formal run
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "${PACKAGE_SHA}"
+          test "$(git status --porcelain)" = ""
+
+          api_get() {
+            curl --fail --silent --show-error \
+              --header 'Accept: application/vnd.github+json' \
+              --header "Authorization: Bearer ${GH_TOKEN}" \
+              --header 'X-GitHub-Api-Version: 2022-11-28' \
+              "$1"
+          }
+
+          source_ref="$(api_get "https://api.github.com/repos/${REPOSITORY}/git/ref/heads/freeze/cx01-002-source" | jq -r '.object.sha')"
+          package_ref="$(api_get "https://api.github.com/repos/${REPOSITORY}/git/ref/heads/freeze/cx01-002-package" | jq -r '.object.sha')"
+          test "${source_ref}" = "${SOURCE_SHA}"
+          test "${package_ref}" = "${PACKAGE_SHA}"
+
+          for commit in "${GLOBAL_AUTH_COMMIT}" "${REVIEW_OVERRIDE_COMMIT}" "${SEAL_READY_COMMIT}"; do
+            api_get "https://api.github.com/repos/${REPOSITORY}/commits/${commit}" >/dev/null
+          done
+
+          control_status="$(curl --silent --show-error --output /tmp/control-ref.json --write-out '%{http_code}' \
+            --header 'Accept: application/vnd.github+json' \
+            --header "Authorization: Bearer ${GH_TOKEN}" \
+            --header 'X-GitHub-Api-Version: 2022-11-28' \
+            "https://api.github.com/repos/${REPOSITORY}/git/ref/heads/${CONTROL_BRANCH}")"
+          if [ "${control_status}" != '404' ]; then
+            cat /tmp/control-ref.json
+            echo "control branch already exists; candidate is already opened or launch state is ambiguous" >&2
+            exit 1
+          fi
+
+          run_name="cx01-formal-${CANDIDATE_SPEC_HASH}-${SOURCE_SHA}"
+          api_get "https://api.github.com/repos/${REPOSITORY}/actions/workflows/cx01-formal-one-way.yml/runs?event=workflow_dispatch&per_page=100" \
+            > /tmp/formal-runs.json
+          if jq -e --arg run_name "${run_name}" '.workflow_runs[] | select(.display_title == $run_name)' /tmp/formal-runs.json >/dev/null; then
+            echo "a retained workflow run already exists for this exact formal identity" >&2
+            exit 1
+          fi
+
+      - name: Verify frozen package semantics and issue transparent governance seal plus STARTED marker
+        env:
+          PYTHONPATH: src
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+
+          from sparkbrain.comparison.cx01.candidate import (
+              CandidateSpec,
+              candidate_grid_hash,
+              declaration_bundle_hash,
+          )
+          from sparkbrain.comparison.cx01.control import write_control_marker
+          from sparkbrain.comparison.cx01.freeze import (
+              FreezeManifest,
+              issue_execution_seal,
+          )
+
+          def read_object(path: str) -> dict[str, object]:
+              value = json.loads(Path(path).read_text(encoding="utf-8"))
+              if not isinstance(value, dict):
+                  raise RuntimeError(f"expected JSON object: {path}")
+              return value
+
+          candidate = CandidateSpec.from_state_dict(read_object(os.environ["CANDIDATE_PATH"]))
+          manifest = FreezeManifest.from_state_dict(read_object(os.environ["MANIFEST_PATH"]))
+          candidate.require_formal()
+
+          if manifest.source_git_sha != os.environ["SOURCE_SHA"]:
+              raise RuntimeError("frozen manifest source SHA drifted")
+          if candidate.specification_hash() != os.environ["CANDIDATE_SPEC_HASH"]:
+              raise RuntimeError("candidate specification hash drifted")
+          if candidate_grid_hash(candidate) != os.environ["CANDIDATE_GRID_HASH"]:
+              raise RuntimeError("candidate grid hash drifted")
+          if declaration_bundle_hash(candidate) != os.environ["DECLARATION_BUNDLE_HASH"]:
+              raise RuntimeError("declaration bundle hash drifted")
+          if manifest.manifest_hash() != os.environ["MANIFEST_HASH"]:
+              raise RuntimeError("freeze manifest semantic hash drifted")
+
+          authority = {
+              "authorization": "GLOBAL_EXPERIMENT_FORMAL_EXECUTION_PREAUTHORIZATION_2026-09-13",
+              "candidate": "cx01-candidate-002",
+              "candidate_spec_hash": os.environ["CANDIDATE_SPEC_HASH"],
+              "global_authorization_commit": os.environ["GLOBAL_AUTH_COMMIT"],
+              "human_review": "HUMAN_REVIEW_WAIVED_BY_USER_2026-09-11",
+              "independent_human_reviewer": False,
+              "package_freeze": os.environ["PACKAGE_SHA"],
+              "review_gate_override_commit": os.environ["REVIEW_OVERRIDE_COMMIT"],
+              "seal_ready_commit": os.environ["SEAL_READY_COMMIT"],
+              "source_freeze": os.environ["SOURCE_SHA"],
+              "state": "USER_AUTHORIZED_FOR_EXACTLY_ONCE_FORMAL_EXECUTION",
+          }
+          canonical = json.dumps(
+              authority,
+              allow_nan=False,
+              ensure_ascii=False,
+              separators=(",", ":"),
+              sort_keys=True,
+          ).encode("utf-8")
+          approval_digest = hashlib.sha256(canonical).hexdigest()
+
+          seal = issue_execution_seal(
+              manifest,
+              reviewer="HUMAN_REVIEW_WAIVED_BY_USER_2026-09-11",
+              approval_digest=approval_digest,
+              approved=True,
+          )
+          seal_path = Path(os.environ["SEAL_PATH"])
+          seal_path.parent.mkdir(parents=True, exist_ok=True)
+          seal_path.write_text(
+              json.dumps(seal.state_dict(), indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          Path(os.environ["AUTHORITY_PATH"]).write_text(
+              json.dumps(authority, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          write_control_marker(
+              Path(os.environ["CONTROL_MARKER_PATH"]),
+              candidate,
+              manifest,
+              seal,
+              current_source_git_sha=os.environ["SOURCE_SHA"],
+          )
+          PY
+
+      - name: Persist the one-way control state on a dedicated branch
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch --create "${CONTROL_BRANCH}"
+          git add "${SEAL_PATH}" "${CONTROL_MARKER_PATH}" "${AUTHORITY_PATH}"
+          git commit -m 'control(cx01): consume candidate-002 for authorized formal execution'
+          git push origin "HEAD:refs/heads/${CONTROL_BRANCH}"
+
+      - name: Dispatch the exact frozen formal workflow once
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          payload="$(jq -nc \
+            --arg ref 'freeze/cx01-002-source' \
+            --arg source_sha "${SOURCE_SHA}" \
+            --arg candidate_spec_hash "${CANDIDATE_SPEC_HASH}" \
+            --arg control_branch "${CONTROL_BRANCH}" \
+            --arg candidate_path "${CANDIDATE_PATH}" \
+            --arg manifest_path "${MANIFEST_PATH}" \
+            --arg seal_path "${SEAL_PATH}" \
+            --arg control_marker_path "${CONTROL_MARKER_PATH}" \
+            --arg artifact_root "${ARTIFACT_ROOT}" \
+            '{ref:$ref,inputs:{source_sha:$source_sha,candidate_spec_hash:$candidate_spec_hash,control_branch:$control_branch,candidate_path:$candidate_path,manifest_path:$manifest_path,seal_path:$seal_path,control_marker_path:$control_marker_path,artifact_root:$artifact_root}}')"
+          status="$(curl --silent --show-error --output /tmp/dispatch-response.txt --write-out '%{http_code}' \
+            --request POST \
+            --header 'Accept: application/vnd.github+json' \
+            --header "Authorization: Bearer ${GH_TOKEN}" \
+            --header 'X-GitHub-Api-Version: 2022-11-28' \
+            "https://api.github.com/repos/${REPOSITORY}/actions/workflows/cx01-formal-one-way.yml/dispatches" \
+            --data "${payload}")"
+          if [ "${status}" != '204' ]; then
+            cat /tmp/dispatch-response.txt
+            echo "formal dispatch failed with HTTP ${status}; STARTED remains authoritative and no automatic retry is permitted" >&2
+            exit 1
+          fi
+          echo 'formal dispatch accepted with HTTP 204'
