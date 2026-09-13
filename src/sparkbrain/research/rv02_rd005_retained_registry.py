@@ -132,7 +132,9 @@ def _verify_text_provenance(repo_root: Path) -> None:
 def _verify_ref_spec(spec: dict[str, Any]) -> None:
     anchors = spec.get("immutable_ref_anchors")
     if anchors != _EXPECTED_REF_ANCHORS:
-        raise ValueError("RD005 retained registry immutable-ref anchors differ from reviewed anchors")
+        raise ValueError(
+            "RD005 retained registry immutable-ref anchors differ from reviewed anchors"
+        )
 
 
 def _verify_exact_retained_inventory(repo_root: Path, spec: dict[str, Any]) -> None:
@@ -147,7 +149,9 @@ def _verify_exact_retained_inventory(repo_root: Path, spec: dict[str, Any]) -> N
         )
     declared = spec.get("retained_evidence_root_entries")
     if declared != sorted(_EXPECTED_ROOT_ENTRIES):
-        raise ValueError("RD005 registry spec retained-root inventory is not the reviewed exact set")
+        raise ValueError(
+            "RD005 registry spec retained-root inventory is not the reviewed exact set"
+        )
     bundle = root / "local-execution-history.bundle"
     if not bundle.is_file() or bundle.stat().st_size <= 0:
         raise ValueError("RV02 local execution history bundle is absent or empty")
