@@ -1,0 +1,13 @@
+{
+  "authorization": "GLOBAL_EXPERIMENT_FORMAL_EXECUTION_PREAUTHORIZATION_2026-09-13",
+  "candidate": "cx01-candidate-002",
+  "candidate_spec_hash": "5b51b5ac53a66b0ca79939c9eff976b53c75477ba38fd77547e2bd3858d095c8",
+  "global_authorization_commit": "33dfd89c141805d49b471b81258997e0ff272103",
+  "human_review": "HUMAN_REVIEW_WAIVED_BY_USER_2026-09-11",
+  "independent_human_reviewer": false,
+  "package_freeze": "c104be281285d52a732d5366fe36209d5688d973",
+  "review_gate_override_commit": "7037bb81a8fb3af95972a8c8fc72aecbba691a91",
+  "seal_ready_commit": "77f4759e0d40037bcb49ab96d48c5fbad020a709",
+  "source_freeze": "e8483968ce43076b4c3fd04c76e62106e2031769",
+  "state": "USER_AUTHORIZED_FOR_EXACTLY_ONCE_FORMAL_EXECUTION"
+}

@@ -1,0 +1,9 @@
+{
+  "candidate_grid_hash": "0c6849a823c4befcd5a3071a4755dbcadcdb88ec8fc072da0713415adc12e3ce",
+  "candidate_spec_hash": "5b51b5ac53a66b0ca79939c9eff976b53c75477ba38fd77547e2bd3858d095c8",
+  "declaration_bundle_hash": "ca21263f60d6e1c2d78f64ed1d628fde123f48355af3eb3a519b037a3068e537",
+  "execution_policy": "one-way-no-rerun",
+  "manifest_hash": "18f88a6285b23fef920ee8f040787ffc3543348268b3cd5316f6fb1cf7f0ee6a",
+  "source_git_sha": "e8483968ce43076b4c3fd04c76e62106e2031769",
+  "state": "STARTED"
+}
