@@ -110,5 +110,8 @@ def test_r01_16_source_checkout_requires_verifier_itself_in_manifest(
         entries=tuple(row for row in manifest.entries if row.path != SOURCE_BINDING_PATH),
     )
 
-    with pytest.raises(ValueError, match="bind the source verifier itself"):
+    # The verifier is now part of the package-level required source set, so the
+    # source manifest itself rejects its omission before checkout verification
+    # can proceed. This is stricter than relying only on the verifier-local guard.
+    with pytest.raises(ValueError, match="missing required paths"):
         verify_r01_16_source_checkout(root, without_verifier)
