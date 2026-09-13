@@ -1,0 +1,15 @@
+name: CX01 dispatch capability probe target
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Confirm dispatch reached target
+        run: |
+          echo "CX01 dispatch capability probe reached target workflow."
