@@ -1,0 +1,177 @@
+name: CX01 candidate-002 preserve formal evidence
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/cx01-candidate-002-preserve-evidence.yml
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  preserve:
+    runs-on: ubuntu-latest
+    env:
+      FORMAL_RUN_ID: "34742073336"
+      ARTIFACT_ID: "10313276227"
+      ARTIFACT_SHA256: e8003d0cf85524b5fbc26f2fb1bcab185ef0b4b169916ef23ac7ee977a9bac47
+      SOURCE_SHA: e8483968ce43076b4c3fd04c76e62106e2031769
+      PACKAGE_SHA: c104be281285d52a732d5366fe36209d5688d973
+      CANDIDATE_SPEC_HASH: 5b51b5ac53a66b0ca79939c9eff976b53c75477ba38fd77547e2bd3858d095c8
+      RAW_AGGREGATE_HASH: 015cb66912071cd3ea287cc5bff43e6c77d436edd0a0c6085fa8e93e816f3d5a
+      ANALYSIS_SHA256: eb0bbea9b720316f50e17e455709359d595589a1b3c49c61b7296521fbc0456d
+      PRESERVE_BRANCH: preserve/cx01-candidate-002-formal-34742073336
+      DEST: preserved-evidence/cx01/candidate-002/run-34742073336
+
+    steps:
+      - name: Checkout current control plane
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ github.token }}
+
+      - name: Verify exact completed formal run and preservation branch absence
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error \
+            --header 'Accept: application/vnd.github+json' \
+            --header "Authorization: Bearer ${GH_TOKEN}" \
+            --header 'X-GitHub-Api-Version: 2022-11-28' \
+            "https://api.github.com/repos/${REPOSITORY}/actions/runs/${FORMAL_RUN_ID}" \
+            > /tmp/run.json
+          test "$(jq -r '.event' /tmp/run.json)" = 'workflow_dispatch'
+          test "$(jq -r '.status' /tmp/run.json)" = 'completed'
+          test "$(jq -r '.conclusion' /tmp/run.json)" = 'success'
+          test "$(jq -r '.head_sha' /tmp/run.json)" = "${SOURCE_SHA}"
+          test "$(jq -r '.head_branch' /tmp/run.json)" = 'freeze/cx01-002-source'
+          test "$(jq -r '.display_title' /tmp/run.json)" = "cx01-formal-${CANDIDATE_SPEC_HASH}-${SOURCE_SHA}"
+
+          curl --fail --silent --show-error \
+            --header 'Accept: application/vnd.github+json' \
+            --header "Authorization: Bearer ${GH_TOKEN}" \
+            --header 'X-GitHub-Api-Version: 2022-11-28' \
+            "https://api.github.com/repos/${REPOSITORY}/actions/artifacts/${ARTIFACT_ID}" \
+            > /tmp/artifact.json
+          test "$(jq -r '.workflow_run.id' /tmp/artifact.json)" = "${FORMAL_RUN_ID}"
+          test "$(jq -r '.expired' /tmp/artifact.json)" = 'false'
+          test "$(jq -r '.digest' /tmp/artifact.json)" = "sha256:${ARTIFACT_SHA256}"
+
+          preserve_status="$(curl --silent --show-error --output /tmp/preserve-ref.json --write-out '%{http_code}' \
+            --header 'Accept: application/vnd.github+json' \
+            --header "Authorization: Bearer ${GH_TOKEN}" \
+            --header 'X-GitHub-Api-Version: 2022-11-28' \
+            "https://api.github.com/repos/${REPOSITORY}/git/ref/heads/${PRESERVE_BRANCH}")"
+          if [ "${preserve_status}" != '404' ]; then
+            cat /tmp/preserve-ref.json
+            echo 'preservation branch already exists; refusing to move an evidence anchor' >&2
+            exit 1
+          fi
+
+      - name: Download and verify immutable formal artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          curl --fail --location --silent --show-error \
+            --header 'Accept: application/vnd.github+json' \
+            --header "Authorization: Bearer ${GH_TOKEN}" \
+            --header 'X-GitHub-Api-Version: 2022-11-28' \
+            "https://api.github.com/repos/${REPOSITORY}/actions/artifacts/${ARTIFACT_ID}/zip" \
+            --output /tmp/formal-evidence.zip
+          test "$(sha256sum /tmp/formal-evidence.zip | awk '{print $1}')" = "${ARTIFACT_SHA256}"
+          mkdir /tmp/evidence
+          unzip -q /tmp/formal-evidence.zip -d /tmp/evidence
+
+          python - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+
+          root = Path('/tmp/evidence')
+          checked = 0
+          for checksums_path in root.rglob('checksums.json'):
+              checksums = json.loads(checksums_path.read_text(encoding='utf-8'))
+              if not isinstance(checksums, dict):
+                  raise SystemExit(f'invalid checksum object: {checksums_path}')
+              for relative, expected in checksums.items():
+                  target = checksums_path.parent / relative
+                  if not target.is_file():
+                      raise SystemExit(f'missing checksummed evidence file: {target}')
+                  observed = hashlib.sha256(target.read_bytes()).hexdigest()
+                  if observed != expected:
+                      raise SystemExit(
+                          f'evidence checksum mismatch: {target}: {observed} != {expected}'
+                      )
+                  checked += 1
+          if checked != 424:
+              raise SystemExit(f'unexpected checksummed file count: {checked}')
+
+          raw_dirs = list(root.glob('*.RAW'))
+          analysis_dirs = list(root.glob('*.ANALYSIS'))
+          result_dirs = [p for p in root.iterdir() if p.is_dir() and not p.name.endswith('.RAW') and not p.name.endswith('.ANALYSIS')]
+          if len(raw_dirs) != 1 or len(analysis_dirs) != 1 or len(result_dirs) != 1:
+              raise SystemExit('formal artifact directory identity is ambiguous')
+          raw_dir = raw_dirs[0]
+          analysis_dir = analysis_dirs[0]
+          result_dir = result_dirs[0]
+
+          raw_complete = json.loads((raw_dir / 'RAW_COMPLETE.json').read_text(encoding='utf-8'))
+          analysis = json.loads((analysis_dir / 'analysis.json').read_text(encoding='utf-8'))
+          if raw_complete.get('state') != 'RAW_COMPLETE':
+              raise SystemExit('raw evidence is not marked complete')
+          if raw_complete.get('execution_count') != 420 or analysis.get('execution_count') != 420:
+              raise SystemExit('unexpected formal execution count')
+          if raw_complete.get('aggregate_hash') != os.environ['RAW_AGGREGATE_HASH']:
+              raise SystemExit('raw aggregate hash drifted')
+          if analysis.get('raw_aggregate_hash') != os.environ['RAW_AGGREGATE_HASH']:
+              raise SystemExit('analysis is not bound to the preserved raw aggregate')
+          if hashlib.sha256((analysis_dir / 'analysis.json').read_bytes()).hexdigest() != os.environ['ANALYSIS_SHA256']:
+              raise SystemExit('analysis digest drifted')
+          execution_dirs = sorted(p for p in raw_dir.iterdir() if p.is_dir() and p.name.startswith('execution-'))
+          if len(execution_dirs) != 420 or any(not (p / 'COMPLETE').is_file() for p in execution_dirs):
+              raise SystemExit('raw execution evidence is incomplete')
+          if not (result_dir / 'COMPLETE').is_file() or not (analysis_dir / 'COMPLETE').is_file():
+              raise SystemExit('formal result or analysis completion marker missing')
+          PY
+
+      - name: Create immutable preservation branch containing exact artifact bytes
+        run: |
+          set -euo pipefail
+          mkdir -p "${DEST}"
+          cp /tmp/formal-evidence.zip "${DEST}/formal-evidence.zip"
+          cp /tmp/run.json "${DEST}/workflow-run.json"
+          cp /tmp/artifact.json "${DEST}/actions-artifact.json"
+          cp /tmp/evidence/*.ANALYSIS/analysis.json "${DEST}/analysis.json"
+          cp /tmp/evidence/*.RAW/RAW_COMPLETE.json "${DEST}/RAW_COMPLETE.json"
+          cp /tmp/evidence/*/manifest.json "${DEST}/formal-manifest.json"
+          cp /tmp/evidence/*/seal.json "${DEST}/formal-seal.json"
+          cp /tmp/evidence/environment_preflight.json "${DEST}/environment_preflight.json"
+          cat > "${DEST}/PRESERVATION.json" <<EOF
+          {
+            "actions_artifact_id": ${ARTIFACT_ID},
+            "actions_artifact_sha256": "${ARTIFACT_SHA256}",
+            "analysis_sha256": "${ANALYSIS_SHA256}",
+            "candidate_spec_hash": "${CANDIDATE_SPEC_HASH}",
+            "formal_run_id": ${FORMAL_RUN_ID},
+            "package_freeze_sha": "${PACKAGE_SHA}",
+            "preservation_policy": "immutable-no-force-move-no-rerun",
+            "raw_aggregate_hash": "${RAW_AGGREGATE_HASH}",
+            "source_freeze_sha": "${SOURCE_SHA}",
+            "state": "FORMAL_EVIDENCE_PRESERVED"
+          }
+          EOF
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch --create "${PRESERVE_BRANCH}"
+          git add "${DEST}"
+          git commit -m 'preserve(cx01): retain candidate-002 formal evidence'
+          git push origin "HEAD:refs/heads/${PRESERVE_BRANCH}"
