@@ -34,7 +34,7 @@ def _fixture_repo(tmp_path: Path) -> tuple[Path, RD005SourceManifest]:
     _git(root, "config", "user.name", "fixture")
     _git(root, "config", "user.email", "fixture@example.invalid")
 
-    paths = sorted(RD005_REQUIRED_SOURCE_PATHS | {SOURCE_BINDING_PATH})
+    paths = sorted(RD005_REQUIRED_SOURCE_PATHS)
     for path in paths:
         target = root / path
         target.parent.mkdir(parents=True, exist_ok=True)
@@ -69,6 +69,17 @@ def test_rd005_source_checkout_verifies_exact_clean_git_and_file_bytes(
     assert verified.state_dict()["execution_authority_granted"] is False
 
 
+def test_rd005_source_checkout_rejects_nested_path_as_repository_root(
+    tmp_path: Path,
+) -> None:
+    root, manifest = _fixture_repo(tmp_path)
+    nested = root / "nested"
+    nested.mkdir()
+
+    with pytest.raises(ValueError, match="Git top-level"):
+        verify_rd005_source_checkout(nested, manifest)
+
+
 def test_rd005_source_checkout_rejects_wrong_git_identity(tmp_path: Path) -> None:
     root, manifest = _fixture_repo(tmp_path)
 
@@ -97,5 +108,5 @@ def test_rd005_source_checkout_requires_verifier_itself_in_manifest(
         entries=tuple(row for row in manifest.entries if row.path != SOURCE_BINDING_PATH),
     )
 
-    with pytest.raises(ValueError, match="bind the source verifier itself"):
+    with pytest.raises(ValueError, match="missing required paths"):
         verify_rd005_source_checkout(root, without_verifier)
