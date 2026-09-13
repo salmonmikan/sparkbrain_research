@@ -67,6 +67,13 @@ def verify_rd005_source_checkout(
     if not root.is_dir():
         raise ValueError("RD005 repository root must be a directory")
 
+    git_root = Path(_git(root, "rev-parse", "--show-toplevel")).resolve(strict=True)
+    if git_root != root:
+        raise ValueError(
+            "RD005 repository root does not equal the checkout Git top-level: "
+            f"expected {root}, got {git_root}"
+        )
+
     head = _git(root, "rev-parse", "HEAD")
     if head != manifest.source_git_sha:
         raise ValueError(
