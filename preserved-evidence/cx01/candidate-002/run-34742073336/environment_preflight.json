@@ -1,0 +1,15 @@
+{
+  "candidate_spec_hash": "5b51b5ac53a66b0ca79939c9eff976b53c75477ba38fd77547e2bd3858d095c8",
+  "dispatch_git_sha": "e8483968ce43076b4c3fd04c76e62106e2031769",
+  "executable": "/opt/hostedtoolcache/Python/3.11.16/x64/bin/python",
+  "implementation": "CPython",
+  "machine": "x86_64",
+  "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "python_version": "3.11.16",
+  "runner_arch": "X64",
+  "runner_environment": "github-hosted",
+  "runner_name": "GitHub Actions 1000005713",
+  "runner_os": "Linux",
+  "source_git_sha": "e8483968ce43076b4c3fd04c76e62106e2031769",
+  "source_module": "/home/runner/work/sparkbrain_research/sparkbrain_research/source/src/sparkbrain/comparison/cx01/formal.py"
+}

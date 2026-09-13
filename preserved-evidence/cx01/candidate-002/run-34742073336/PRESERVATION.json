@@ -1,0 +1,12 @@
+{
+  "actions_artifact_id": 10313276227,
+  "actions_artifact_sha256": "e8003d0cf85524b5fbc26f2fb1bcab185ef0b4b169916ef23ac7ee977a9bac47",
+  "analysis_sha256": "eb0bbea9b720316f50e17e455709359d595589a1b3c49c61b7296521fbc0456d",
+  "candidate_spec_hash": "5b51b5ac53a66b0ca79939c9eff976b53c75477ba38fd77547e2bd3858d095c8",
+  "formal_run_id": 34742073336,
+  "package_freeze_sha": "c104be281285d52a732d5366fe36209d5688d973",
+  "preservation_policy": "immutable-no-force-move-no-rerun",
+  "raw_aggregate_hash": "015cb66912071cd3ea287cc5bff43e6c77d436edd0a0c6085fa8e93e816f3d5a",
+  "source_freeze_sha": "e8483968ce43076b4c3fd04c76e62106e2031769",
+  "state": "FORMAL_EVIDENCE_PRESERVED"
+}
