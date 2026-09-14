@@ -1,0 +1,83 @@
+{
+  "artifact": {
+    "artifact_id": 10268643645,
+    "artifact_name": "rv01-r01-15-development-34612398956",
+    "artifact_zip_sha256": "e349381d95fd47e09830e45723fa306419698fd226c8d87a1a7f3d7f77b9fe13",
+    "freeze_ref": "freeze/rv01-r01-15-development-source",
+    "frozen_source_git_sha": "a46096458446e3d101c5a951dba4efd7db1ee0ae",
+    "raw_result_sha256": "e849acbd2a9acc14d87fdec58be398b6c4b1e53ec6b33aa5a77ace43d56d1dac",
+    "workflow_run_id": 34612398956
+  },
+  "notes": [
+    "The artifact ZIP digest and raw development_result.json SHA-256 exactly match the fixed R01-15 result report.",
+    "Observed development identities are extracted from the preserved raw artifact without rerunning or rescoring the consumed experiment.",
+    "World IDs are deterministically reconstructed from each raw world phase/family/seed tuple using the exact frozen R01-15 contract.",
+    "This audit is collision-history bookkeeping only and grants no execution authority."
+  ],
+  "observed_development": {
+    "seed_ids": [141500, 141501, 141502, 141503, 141504],
+    "world_ids": [
+      "r01-15:development:dense-route-load:141500",
+      "r01-15:development:dense-route-load:141501",
+      "r01-15:development:dense-route-load:141502",
+      "r01-15:development:dense-route-load:141503",
+      "r01-15:development:dense-route-load:141504",
+      "r01-15:development:disjoint-routes:141500",
+      "r01-15:development:disjoint-routes:141501",
+      "r01-15:development:disjoint-routes:141502",
+      "r01-15:development:disjoint-routes:141503",
+      "r01-15:development:disjoint-routes:141504",
+      "r01-15:development:edge-reversal:141500",
+      "r01-15:development:edge-reversal:141501",
+      "r01-15:development:edge-reversal:141502",
+      "r01-15:development:edge-reversal:141503",
+      "r01-15:development:edge-reversal:141504",
+      "r01-15:development:shared-cue-branches:141500",
+      "r01-15:development:shared-cue-branches:141501",
+      "r01-15:development:shared-cue-branches:141502",
+      "r01-15:development:shared-cue-branches:141503",
+      "r01-15:development:shared-cue-branches:141504",
+      "r01-15:development:shared-prefix-branches:141500",
+      "r01-15:development:shared-prefix-branches:141501",
+      "r01-15:development:shared-prefix-branches:141502",
+      "r01-15:development:shared-prefix-branches:141503",
+      "r01-15:development:shared-prefix-branches:141504"
+    ],
+    "worlds": [
+      {"family":"dense-route-load","phase":"development","seed":141500,"world_id":"r01-15:development:dense-route-load:141500"},
+      {"family":"dense-route-load","phase":"development","seed":141501,"world_id":"r01-15:development:dense-route-load:141501"},
+      {"family":"dense-route-load","phase":"development","seed":141502,"world_id":"r01-15:development:dense-route-load:141502"},
+      {"family":"dense-route-load","phase":"development","seed":141503,"world_id":"r01-15:development:dense-route-load:141503"},
+      {"family":"dense-route-load","phase":"development","seed":141504,"world_id":"r01-15:development:dense-route-load:141504"},
+      {"family":"disjoint-routes","phase":"development","seed":141500,"world_id":"r01-15:development:disjoint-routes:141500"},
+      {"family":"disjoint-routes","phase":"development","seed":141501,"world_id":"r01-15:development:disjoint-routes:141501"},
+      {"family":"disjoint-routes","phase":"development","seed":141502,"world_id":"r01-15:development:disjoint-routes:141502"},
+      {"family":"disjoint-routes","phase":"development","seed":141503,"world_id":"r01-15:development:disjoint-routes:141503"},
+      {"family":"disjoint-routes","phase":"development","seed":141504,"world_id":"r01-15:development:disjoint-routes:141504"},
+      {"family":"edge-reversal","phase":"development","seed":141500,"world_id":"r01-15:development:edge-reversal:141500"},
+      {"family":"edge-reversal","phase":"development","seed":141501,"world_id":"r01-15:development:edge-reversal:141501"},
+      {"family":"edge-reversal","phase":"development","seed":141502,"world_id":"r01-15:development:edge-reversal:141502"},
+      {"family":"edge-reversal","phase":"development","seed":141503,"world_id":"r01-15:development:edge-reversal:141503"},
+      {"family":"edge-reversal","phase":"development","seed":141504,"world_id":"r01-15:development:edge-reversal:141504"},
+      {"family":"shared-cue-branches","phase":"development","seed":141500,"world_id":"r01-15:development:shared-cue-branches:141500"},
+      {"family":"shared-cue-branches","phase":"development","seed":141501,"world_id":"r01-15:development:shared-cue-branches:141501"},
+      {"family":"shared-cue-branches","phase":"development","seed":141502,"world_id":"r01-15:development:shared-cue-branches:141502"},
+      {"family":"shared-cue-branches","phase":"development","seed":141503,"world_id":"r01-15:development:shared-cue-branches:141503"},
+      {"family":"shared-cue-branches","phase":"development","seed":141504,"world_id":"r01-15:development:shared-cue-branches:141504"},
+      {"family":"shared-prefix-branches","phase":"development","seed":141500,"world_id":"r01-15:development:shared-prefix-branches:141500"},
+      {"family":"shared-prefix-branches","phase":"development","seed":141501,"world_id":"r01-15:development:shared-prefix-branches:141501"},
+      {"family":"shared-prefix-branches","phase":"development","seed":141502,"world_id":"r01-15:development:shared-prefix-branches:141502"},
+      {"family":"shared-prefix-branches","phase":"development","seed":141503,"world_id":"r01-15:development:shared-prefix-branches:141503"},
+      {"family":"shared-prefix-branches","phase":"development","seed":141504,"world_id":"r01-15:development:shared-prefix-branches:141504"}
+    ]
+  },
+  "reserved_held_out": {
+    "executed": false,
+    "seed_ids": [141600,141601,141602,141603,141604,141605,141606,141607,141608,141609],
+    "world_id_derivation": "frozen contract r01-15:{phase}:{family}:{seed}; phase=held-out; five registered families"
+  },
+  "rerun_performed": false,
+  "schema": "rv01-r01-15-raw-artifact-identity-audit-v1",
+  "scientific_result_modified": false,
+  "status": "VERIFIED_IDENTITY_BOOKKEEPING_ONLY"
+}
