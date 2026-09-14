@@ -40,6 +40,11 @@ def _patch_required_paths(
     required = frozenset(paths)
     monkeypatch.setattr(builder, "RD005_REQUIRED_SOURCE_PATHS", required)
     monkeypatch.setattr(package, "RD005_REQUIRED_SOURCE_PATHS", required)
+    monkeypatch.setattr(
+        builder,
+        "_discover_rd005_test_paths",
+        lambda root: frozenset(),
+    )
 
 
 def test_builder_binds_exact_clean_head_and_all_declared_paths(
