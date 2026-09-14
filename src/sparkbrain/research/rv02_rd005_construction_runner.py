@@ -4,6 +4,11 @@ The runner materializes only the preregistered D1 construction artifact and
 passes it through the independent construction verifier. It never instantiates
 an RD005 capability learner/probe, scores an outcome, opens held-out output, or
 grants formal authority.
+
+The low-level ``run_construction*`` callables remain construction primitives for
+tests and for the prospectively bound wrapper. The legacy direct module CLI is
+intentionally disabled so D1 cannot bypass the exact runtime/package preflight
+in ``rv02_rd005_bound_construction``.
 """
 
 from __future__ import annotations
@@ -327,20 +332,27 @@ def run_construction_from_bytes(*, raw: bytes, repo_root: Path) -> Path:
 
 
 def run_construction(*, input_path: Path, repo_root: Path) -> Path:
-    """Read one input path once, then construct from those exact bytes."""
+    """Low-level test/wrapper primitive; formal D1 must use the bound entrypoint."""
 
     return run_construction_from_bytes(raw=input_path.read_bytes(), repo_root=repo_root)
 
 
 def main(argv: list[str] | None = None) -> int:
+    """Refuse the legacy direct CLI so D1 cannot bypass the bound preflight."""
+
     parser = argparse.ArgumentParser(
-        description="Construct and verify RD005 D1 artifacts without capability execution."
+        description=(
+            "Legacy direct RD005 construction CLI is disabled. Use "
+            "python -m sparkbrain.research.rv02_rd005_bound_construction instead."
+        )
     )
     parser.add_argument("--input", type=Path, required=True)
-    parser.add_argument("--repo-root", type=Path, default=Path("."))
-    args = parser.parse_args(argv)
-    run_construction(input_path=args.input, repo_root=args.repo_root)
-    return 0
+    parser.add_argument("--repo-root", type=Path, required=True)
+    parser.parse_args(argv)
+    raise RuntimeError(
+        "legacy RD005 construction CLI is disabled; use "
+        "python -m sparkbrain.research.rv02_rd005_bound_construction"
+    )
 
 
 if __name__ == "__main__":
