@@ -31,6 +31,7 @@ RD005_REQUIRED_SOURCE_PATHS = frozenset(
         "src/sparkbrain/research/rv02_rd005_execution_binding.py",
         "src/sparkbrain/research/rv02_rd005_source_binding.py",
         "src/sparkbrain/research/rv02_rd005_retained_registry.py",
+        "src/sparkbrain/research/rv02_rd005_construction_input.py",
         "src/sparkbrain/research/rv02_rd003_online.py",
         "src/sparkbrain/research/rv02_recruitment.py",
         "src/sparkbrain/research/rv02_scale.py",
