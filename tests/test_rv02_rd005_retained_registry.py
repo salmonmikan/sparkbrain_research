@@ -5,8 +5,8 @@ from pathlib import Path
 
 import pytest
 
-from sparkbrain.research.rv02_scale import ScaleStudyConfig, development_worlds
 from sparkbrain.research import rv02_rd005_retained_registry as registry_module
+from sparkbrain.research.rv02_scale import ScaleStudyConfig, development_worlds
 
 
 CONFIG = ScaleStudyConfig().state_dict()
