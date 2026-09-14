@@ -3,14 +3,16 @@
 This module implements the already-preregistered F0/FW/FD/FWD propagation
 factorization without granting execution authority. It contains no held-out or
 formal path and performs no I/O. A future frozen wrapper must bind the exact
-source/runtime/package identity and acquire the prospectively bound exactly-once
-STARTED claim before calling ``run_development_capability_suite`` exactly once.
+source/runtime/package identity, the preserved construction reachability hashes,
+and the prospectively bound exactly-once STARTED claim before calling
+``run_development_capability_suite`` exactly once.
 """
 
 from __future__ import annotations
 
 import copy
 from collections import Counter
+from collections.abc import Mapping
 from typing import Any
 
 from sparkbrain.v04.contracts import SynapticArrival
@@ -273,10 +275,35 @@ def _replicated_classification(
     }
 
 
-def run_capability_world(world: R0116DevelopmentWorldSpec) -> dict[str, Any]:
+def _require_retained_route_bindings(
+    world: R0116DevelopmentWorldSpec,
+    retained_reachability_sha256: Mapping[str, str],
+) -> None:
+    registered = set(world.probe_order)
+    retained = set(retained_reachability_sha256)
+    if retained != registered:
+        missing = sorted(registered - retained)
+        extra = sorted(retained - registered)
+        raise RuntimeError(
+            "R01-16 retained reachability binding does not match fixed probe grid: "
+            f"missing={missing}, extra={extra}"
+        )
+    for route_id, value in retained_reachability_sha256.items():
+        if len(value) != 64 or any(char not in "0123456789abcdef" for char in value):
+            raise ValueError(
+                f"R01-16 retained certificate hash for {route_id} is not SHA-256"
+            )
+
+
+def run_capability_world(
+    world: R0116DevelopmentWorldSpec,
+    *,
+    retained_reachability_sha256: Mapping[str, str],
+) -> dict[str, Any]:
     """Run one fixed R01-16 exposed-development world exactly as registered."""
 
     world.validate()
+    _require_retained_route_bindings(world, retained_reachability_sha256)
     trained, pre_training = _train_shared_field(world)
     post_training = _connection_inventory(trained)
     checkpoint = trained.state_dict()
@@ -300,6 +327,12 @@ def run_capability_world(world: R0116DevelopmentWorldSpec) -> dict[str, Any]:
             cue_source_ids=(route.units[0],),
             probe_horizon_ms=world.probe_horizon_ms(route),
         )
+        expected_certificate_sha256 = retained_reachability_sha256[route_id]
+        if certificate.sha256 != expected_certificate_sha256:
+            raise RuntimeError(
+                "R01-16 capability reachability reconstruction diverged from retained "
+                f"construction evidence for {world.world_id}/{route_id}"
+            )
         arms = {
             arm: _run_arm(
                 world,
@@ -379,7 +412,11 @@ def run_capability_world(world: R0116DevelopmentWorldSpec) -> dict[str, Any]:
                 "expected_units": list(route.units[1:]),
                 "common_breadth_budget": common_breadth,
                 "registered_cue_pulse_id": next(iter(cue_ids)),
+                "retained_reachability_certificate_sha256": (
+                    expected_certificate_sha256
+                ),
                 "reachability_certificate_sha256": certificate.sha256,
+                "retained_reachability_verified": True,
                 "reachability_certificate": certificate.state_dict(),
                 "factor_eligibility": {
                     "weight_eligible": certificate.weight_eligible,
@@ -417,20 +454,49 @@ def run_capability_world(world: R0116DevelopmentWorldSpec) -> dict[str, Any]:
             "queued_propagation_count": 0,
             "disposition": "PASS_EMPTY_COMMON_CHECKPOINT_QUEUE",
         },
+        "retained_reachability_verified": True,
         "probes": probes,
         "held_out_capability_executed": False,
         "formal_execution_allowed": False,
     }
 
 
-def run_development_capability_suite() -> dict[str, Any]:
+def _require_world_bindings(
+    worlds: tuple[R0116DevelopmentWorldSpec, ...],
+    retained_reachability_sha256: Mapping[str, Mapping[str, str]],
+) -> None:
+    expected_world_ids = {world.world_id for world in worlds}
+    retained_world_ids = set(retained_reachability_sha256)
+    if retained_world_ids != expected_world_ids:
+        missing = sorted(expected_world_ids - retained_world_ids)
+        extra = sorted(retained_world_ids - expected_world_ids)
+        raise RuntimeError(
+            "R01-16 retained reachability world binding does not match fixed grid: "
+            f"missing={missing}, extra={extra}"
+        )
+
+
+def run_development_capability_suite(
+    *,
+    retained_reachability_sha256: Mapping[str, Mapping[str, str]],
+) -> dict[str, Any]:
     """Run the fixed 25-world R01-16 development capability matrix.
 
-    This function deliberately contains no retry logic and no execution authority.
-    The one-way wrapper is responsible for exactly-once control state.
+    The caller must supply the exact per-world/per-route certificate hashes from
+    the preserved construction census. This function deliberately contains no
+    retry logic and no execution authority; the one-way wrapper is responsible
+    for exactly-once control state.
     """
 
-    worlds = [run_capability_world(world) for world in development_world_grid()]
+    fixed_worlds = development_world_grid()
+    _require_world_bindings(fixed_worlds, retained_reachability_sha256)
+    worlds = [
+        run_capability_world(
+            world,
+            retained_reachability_sha256=retained_reachability_sha256[world.world_id],
+        )
+        for world in fixed_worlds
+    ]
     contrast_keys = (
         "F0_vs_FW_different",
         "F0_vs_FD_different",
@@ -498,6 +564,7 @@ def run_development_capability_suite() -> dict[str, Any]:
             "generated_unit_sequence",
             "common_breadth_unit_sequence",
         ],
+        "retained_reachability_verified": True,
         "contrast_difference_counts": contrast_counts,
         "factor_classification": factor_classification,
         "worlds": worlds,
