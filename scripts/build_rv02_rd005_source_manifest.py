@@ -3,8 +3,9 @@
 
 The builder is intentionally source-preparation only. It binds the current clean
 Git checkout and SHA-256 digests for every source path required by the RD005
-package, plus this builder itself. It does not construct D1, open capability
-output, score an outcome, create STARTED, or grant execution authority.
+package, the canonical package-plan preflight, and this builder itself. It does
+not construct D1, open capability output, score an outcome, create STARTED, or
+grant execution authority.
 """
 
 from __future__ import annotations
@@ -22,7 +23,8 @@ from sparkbrain.research.rv02_rd005_development_package import (
 )
 
 _BUILDER_PATH = "scripts/build_rv02_rd005_source_manifest.py"
-_EXTRA_PROVENANCE_PATHS = frozenset({_BUILDER_PATH})
+_BOUND_CONSTRUCTION_PATH = "src/sparkbrain/research/rv02_rd005_bound_construction.py"
+_EXTRA_PROVENANCE_PATHS = frozenset({_BUILDER_PATH, _BOUND_CONSTRUCTION_PATH})
 
 
 def _git(repo_root: Path, *args: str) -> str:
