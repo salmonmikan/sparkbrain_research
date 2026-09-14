@@ -229,10 +229,8 @@ def _verify_world_rows(
 
 
 def _verify_r01_12_formal_execution_seeds(payload: Any) -> tuple[int, ...]:
-    outer = tuple(sorted(_collect_named_ints(payload, "outer_seed")))
-    comparison = tuple(sorted(_collect_named_ints(payload, "comparison_outer_seed")))
-    observed = tuple(sorted(set(outer) | set(comparison)))
-    if not outer or not comparison:
+    observed = tuple(sorted(_collect_named_ints(payload, "comparator_seed")))
+    if not observed:
         raise ValueError("R01-12F comparator execution seed ledger is missing")
     if observed != _R01_12_FORMAL_EXECUTION_SEEDS:
         raise ValueError(
