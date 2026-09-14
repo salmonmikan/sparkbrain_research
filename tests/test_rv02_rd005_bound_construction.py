@@ -29,15 +29,17 @@ def _patch_plan_inputs(
     supplied_digest: str,
 ) -> None:
     monkeypatch.setattr(bound, "RD005DevelopmentPackagePlan", _FakePlan)
-    monkeypatch.setattr(
-        bound,
-        "_load_input",
-        lambda raw: (
+
+    def _load(raw: bytes) -> tuple[dict[str, str], object, object]:
+        assert isinstance(raw, bytes)
+        json.loads(raw)
+        return (
             {"package_plan_sha256": supplied_digest},
             object(),
             object(),
-        ),
-    )
+        )
+
+    monkeypatch.setattr(bound, "_load_input", _load)
 
 
 def test_package_plan_preflight_accepts_exact_canonical_digest(
@@ -45,7 +47,7 @@ def test_package_plan_preflight_accepts_exact_canonical_digest(
 ) -> None:
     _patch_plan_inputs(monkeypatch, supplied_digest=_CANONICAL_DIGEST)
 
-    assert bound.verify_package_plan_binding({"fixture": True}) == _CANONICAL_DIGEST
+    assert bound.verify_package_plan_binding(b'{"fixture": true}') == _CANONICAL_DIGEST
 
 
 def test_package_plan_preflight_rejects_unrelated_valid_hex_digest(
@@ -54,7 +56,7 @@ def test_package_plan_preflight_rejects_unrelated_valid_hex_digest(
     _patch_plan_inputs(monkeypatch, supplied_digest="d" * 64)
 
     with pytest.raises(ValueError, match="does not match the canonical"):
-        bound.verify_package_plan_binding({"fixture": True})
+        bound.verify_package_plan_binding(b'{"fixture": true}')
 
 
 def test_bound_runner_refuses_mismatch_before_delegating(
