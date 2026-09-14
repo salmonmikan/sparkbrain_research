@@ -72,6 +72,13 @@ def _discover_rd005_test_paths(root: Path) -> frozenset[str]:
     return paths
 
 
+def _require_git_tracked(root: Path, relative_path: str) -> None:
+    try:
+        _git(root, "ls-files", "--error-unmatch", "--", relative_path)
+    except RuntimeError as exc:
+        raise ValueError(f"RD005 source path is not tracked by Git: {relative_path}") from exc
+
+
 def build_source_manifest(repo_root: Path) -> RD005SourceManifest:
     """Return the exact RD005 source manifest for one clean Git checkout."""
 
@@ -110,6 +117,7 @@ def build_source_manifest(repo_root: Path) -> RD005SourceManifest:
             raise ValueError(f"RD005 source path escapes repository root: {relative_path}")
         if not resolved.is_file():
             raise ValueError(f"RD005 source path is not a regular file: {relative_path}")
+        _require_git_tracked(root, relative_path)
         entries.append(
             RD005SourceManifestEntry(
                 path=relative_path,
