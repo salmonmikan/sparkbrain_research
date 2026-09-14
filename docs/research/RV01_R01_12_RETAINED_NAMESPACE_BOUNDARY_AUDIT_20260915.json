@@ -1,0 +1,60 @@
+{
+  "schema": "rv01-r01-12-retained-namespace-boundary-audit-v1",
+  "status": "VERIFIED_REPOSITORY_RETAINED_NAMESPACE_BOUNDARY",
+  "audit_scope": "repository-retained seed/world execution identity history only",
+  "boundary": {
+    "first_contract_commit": "b68b920ee088db4547ac3fb7907d9c46f1b19837",
+    "first_contract_path": "src/sparkbrain/research/rv01/interference_contract.py",
+    "first_contract_blob_sha": "d1fd0aa35a5b33e6d2908d8208758c9d91f0ed81",
+    "parent_commit": "4d4d0a6978e5cfaa1c9667c18b5fb2a59933d0e3",
+    "parent_tree": "df45f991cb4a74448cefb9428c19c2c1e73541fe"
+  },
+  "first_contract_identity_namespace": {
+    "development_seeds": [0, 1, 2],
+    "held_out_seeds": [100, 101, 102, 103, 104, 105, 106, 107, 108, 109],
+    "families": [
+      "disjoint-routes",
+      "shared-cue-branches",
+      "shared-prefix-branches",
+      "edge-reversal",
+      "dense-route-load"
+    ],
+    "world_id_format": "{phase}:{family}:{seed}"
+  },
+  "parent_snapshot_checks": {
+    "interference_contract_path_present": false,
+    "artifacts_research_directory_present": false,
+    "github_workflows": ["ci.yml"],
+    "rv01_source_directory_present": true
+  },
+  "interpretation": {
+    "earlier_rv01_source_work_existed": true,
+    "earlier_rv01_scientific_or_engineering_work_is_claimed_absent": false,
+    "earlier_repository_retained_seed_world_execution_namespace_is_claimed_absent": true,
+    "basis": "At the exact parent of the first retained interference identity contract, the contract path is absent, the artifacts tree contains no research/rv01 retained execution root (indeed no artifacts/research directory), and the workflow tree contains only generic ci.yml. The audit therefore closes only the repository-retained seed/world execution-identity history used by the R01-16 collision authority; it does not claim that earlier RV01 source exploration or local unretained work never occurred."
+  },
+  "evidence": [
+    {
+      "kind": "git-commit-parent",
+      "commit": "b68b920ee088db4547ac3fb7907d9c46f1b19837",
+      "parent": "4d4d0a6978e5cfaa1c9667c18b5fb2a59933d0e3"
+    },
+    {
+      "kind": "parent-artifacts-tree",
+      "tree": "005e152227adb1b3d755e099bb6b4f94cfc76dd4",
+      "contains_artifacts_research": false
+    },
+    {
+      "kind": "parent-workflow-tree",
+      "tree": "a9eef8bbba181c81ab68796407b91a48cd8ddd83",
+      "entries": ["ci.yml"]
+    },
+    {
+      "kind": "parent-rv01-source-tree",
+      "tree": "63f99bd98a1b4aa9905744d01d6c93c55b5125d1",
+      "contains_interference_contract": false
+    }
+  ],
+  "execution_authority_granted": false,
+  "scientific_result_modified": false
+}
