@@ -139,7 +139,15 @@ def test_retained_binding_requires_exact_census_bytes_and_world_grid(
     binding = load_retained_capability_binding(path)
 
     assert len(binding.retained_reachability_sha256) == 25
-    assert all(len(routes) == 4 for routes in binding.retained_reachability_sha256.values())
+    expected_route_counts = {
+        world.world_id: len(world.probe_order) for world in development_world_grid()
+    }
+    actual_route_counts = {
+        world_id: len(routes)
+        for world_id, routes in binding.retained_reachability_sha256.items()
+    }
+    assert actual_route_counts == expected_route_counts
+    assert sum(actual_route_counts.values()) == 100
 
     tampered = raw + b"\n"
     path.write_bytes(tampered)
