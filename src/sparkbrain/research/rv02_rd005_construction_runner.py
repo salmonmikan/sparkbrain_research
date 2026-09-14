@@ -223,13 +223,17 @@ def _output_dir(*, repo_root: Path, input_sha256: str) -> Path:
     return repo_root / RD005_OUTPUT_ROOT / f"construction-{input_sha256}"
 
 
-def run_construction(*, input_path: Path, repo_root: Path) -> Path:
-    """Construct and verify RD005 D1 evidence once for an exact input identity."""
+def run_construction_from_bytes(*, raw: bytes, repo_root: Path) -> Path:
+    """Construct RD005 D1 once from the exact already-selected input bytes.
+
+    The caller owns the read boundary. Passing bytes instead of a path prevents a
+    verified input from being swapped between a prospective preflight and output
+    identity consumption.
+    """
 
     # Parse the full prospective identity and verify the exact checkout before
     # consuming any output path. Source/package identity failure therefore does
     # not create a misleading terminal construction artifact.
-    raw = input_path.read_bytes()
     input_sha256 = _sha256_bytes(raw)
     identities, registry, source_manifest = _load_input(raw)
     verified_source = verify_rd005_source_checkout(repo_root, source_manifest)
@@ -322,6 +326,12 @@ def run_construction(*, input_path: Path, repo_root: Path) -> Path:
     return output_dir
 
 
+def run_construction(*, input_path: Path, repo_root: Path) -> Path:
+    """Read one input path once, then construct from those exact bytes."""
+
+    return run_construction_from_bytes(raw=input_path.read_bytes(), repo_root=repo_root)
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         description="Construct and verify RD005 D1 artifacts without capability execution."
@@ -337,4 +347,4 @@ if __name__ == "__main__":
     raise SystemExit(main())
 
 
-__all__ = ["main", "run_construction"]
+__all__ = ["main", "run_construction", "run_construction_from_bytes"]
