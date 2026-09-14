@@ -1,0 +1,192 @@
+name: RV01 R01-16 Frozen Capability Execute Once
+
+on:
+  push:
+    branches:
+      - "control/rv01-r01-16-capability-started-7761c1f7-20260915"
+
+permissions:
+  contents: write
+
+env:
+  FREEZE_REF: freeze/rv01-r01-16-capability-source-20260915
+  CONTROL_REF: control/rv01-r01-16-capability-started-7761c1f7-20260915
+  PRESERVE_REF: preserve/rv01-r01-16-capability-20260915
+  CONSTRUCTION_REF: preserve/rv01-r01-16-construction-census-34881254582
+  CONSTRUCTION_PATH: artifacts/rv01/r01-16/development/rv01-r01-16-development-7ed3a7532fc66ac8-87634d034204/construction_census.json
+  CONSTRUCTION_SHA256: 7761c1f76485034fd2b6776413dfb95472f65c4ee29636f72ef661c62f456cb2
+  OUTPUT_ROOT: artifacts/rv01/r01-16/capability
+  PYTHONPATH: src
+
+jobs:
+  execute-capability-once:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout atomic STARTED source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+
+      - name: Verify immutable remote STARTED and exact source freeze
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "${GITHUB_RUN_ATTEMPT}" != "1" ]; then
+            echo "refusing rerun of consumed R01-16 capability workflow attempt ${GITHUB_RUN_ATTEMPT}" >&2
+            exit 1
+          fi
+          test "${GITHUB_REF}" = "refs/heads/${CONTROL_REF}"
+          git fetch origin \
+            "+refs/heads/${FREEZE_REF}:refs/remotes/origin/${FREEZE_REF}" \
+            "+refs/heads/${CONTROL_REF}:refs/remotes/origin/${CONTROL_REF}"
+          frozen_sha="$(git rev-parse "refs/remotes/origin/${FREEZE_REF}")"
+          control_sha="$(git rev-parse "refs/remotes/origin/${CONTROL_REF}")"
+          test "${GITHUB_SHA}" = "${frozen_sha}"
+          test "${GITHUB_SHA}" = "${control_sha}"
+          test "$(git rev-parse HEAD)" = "${frozen_sha}"
+          if git ls-remote --exit-code --heads origin "${PRESERVE_REF}" >/dev/null 2>&1; then
+            echo "refusing consumed R01-16 capability identity: ${PRESERVE_REF}" >&2
+            exit 1
+          fi
+
+      - name: Set up exact Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.11.16"
+
+      - name: Fetch and verify canonical preserved construction census
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin "+refs/heads/${CONSTRUCTION_REF}:refs/remotes/origin/${CONSTRUCTION_REF}"
+          git show "refs/remotes/origin/${CONSTRUCTION_REF}:${CONSTRUCTION_PATH}" \
+            > /tmp/rv01-r01-16-construction-census.json
+          echo "${CONSTRUCTION_SHA256}  /tmp/rv01-r01-16-construction-census.json" \
+            | sha256sum --check --strict
+
+      - name: Build exact frozen source manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib
+          import json
+          import subprocess
+          from pathlib import Path
+
+          explicit = {
+              ".github/workflows/rv01-r01-16-capability-execute-once.yml",
+              "docs/research/RV01_R01_16_CAPABILITY_EXECUTION_AMENDMENT_002.md",
+              "docs/research/RV01_R01_16_CAPABILITY_FINAL_REVIEW.md",
+              "docs/research/RV01_R01_16_DEVELOPMENT_IDENTITY_BINDING.md",
+              "docs/research/RV01_R01_16_PREREGISTRATION_AMENDMENT_001.md",
+              "docs/research/RV01_R01_16_PROPAGATION_FACTORIZATION_PREREGISTRATION.md",
+              "pyproject.toml",
+              "scripts/run_rv01_r01_16_capability.py",
+          }
+          tracked = subprocess.check_output(
+              ["git", "ls-files", "src/sparkbrain"], text=True
+          ).splitlines()
+          paths = sorted(set(tracked).union(explicit))
+          entries = []
+          for raw in paths:
+              path = Path(raw)
+              if not path.is_file():
+                  raise SystemExit(f"missing manifest path: {raw}")
+              entries.append(
+                  {"path": raw, "sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
+              )
+          payload = {
+              "source_git_sha": subprocess.check_output(
+                  ["git", "rev-parse", "HEAD"], text=True
+              ).strip(),
+              "entries": entries,
+          }
+          Path("/tmp/rv01-r01-16-capability-source-manifest.json").write_text(
+              json.dumps(payload, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          PY
+
+      - name: Execute exposed-development capability exactly once
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/run_rv01_r01_16_capability.py \
+            --repo-root . \
+            --source-manifest /tmp/rv01-r01-16-capability-source-manifest.json \
+            --construction-census /tmp/rv01-r01-16-construction-census.json \
+            --control-mode distributed-github
+
+      - name: Record execution metadata and hashes
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/rv01-r01-16-capability-metadata
+          cat > /tmp/rv01-r01-16-capability-metadata/execution_metadata.json <<EOF
+          {
+            "protocol": "rv01-r01-16-propagation-factorization-v1",
+            "stage": "exposed-development-capability",
+            "frozen_source_git_sha": "${GITHUB_SHA}",
+            "freeze_ref": "${FREEZE_REF}",
+            "control_ref": "${CONTROL_REF}",
+            "construction_ref": "${CONSTRUCTION_REF}",
+            "construction_census_sha256": "${CONSTRUCTION_SHA256}",
+            "workflow_run_id": "${GITHUB_RUN_ID}",
+            "workflow_run_attempt": "${GITHUB_RUN_ATTEMPT}",
+            "python_version": "$(python --version 2>&1)",
+            "same_identity_rerun_allowed": false,
+            "held_out_capability_executed": false,
+            "formal_execution_allowed": false
+          }
+          EOF
+          cp /tmp/rv01-r01-16-capability-source-manifest.json \
+            /tmp/rv01-r01-16-capability-metadata/source_manifest.json || true
+          if [ -d "${OUTPUT_ROOT}" ]; then
+            find "${OUTPUT_ROOT}" -type f -print0 | sort -z | xargs -0 sha256sum \
+              > /tmp/rv01-r01-16-capability-metadata/output_sha256.txt
+            mkdir -p "${OUTPUT_ROOT}/_execution_metadata"
+            cp /tmp/rv01-r01-16-capability-metadata/* \
+              "${OUTPUT_ROOT}/_execution_metadata/"
+          fi
+
+      - name: Preserve immutable capability evidence ref
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "${PRESERVE_REF}" >/dev/null 2>&1; then
+            echo "refusing to move existing preservation ref ${PRESERVE_REF}" >&2
+            exit 1
+          fi
+          if [ ! -d "${OUTPUT_ROOT}" ]; then
+            mkdir -p "${OUTPUT_ROOT}/_terminal"
+            cp /tmp/rv01-r01-16-capability-metadata/* "${OUTPUT_ROOT}/_terminal/" || true
+            cat > "${OUTPUT_ROOT}/_terminal/FAILED_BEFORE_LOCAL_OUTPUT.json" <<EOF
+          {
+            "status": "CAPABILITY_TERMINAL_FAILURE_AFTER_REMOTE_STARTED",
+            "control_ref": "${CONTROL_REF}",
+            "frozen_source_git_sha": "${GITHUB_SHA}",
+            "same_identity_rerun_allowed": false
+          }
+          EOF
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f "${OUTPUT_ROOT}"
+          git commit -m "Preserve R01-16 capability ${GITHUB_RUN_ID}"
+          git push origin "HEAD:refs/heads/${PRESERVE_REF}"
+
+      - name: Upload raw capability evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rv01-r01-16-capability-${{ github.run_id }}
+          path: |
+            artifacts/rv01/r01-16/capability
+            /tmp/rv01-r01-16-capability-metadata
+          if-no-files-found: error
+          retention-days: 90
