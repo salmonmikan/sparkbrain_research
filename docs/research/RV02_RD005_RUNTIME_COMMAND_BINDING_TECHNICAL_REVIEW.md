@@ -30,6 +30,8 @@ python -m sparkbrain.research.rv02_rd005_bound_construction --input {constructio
 
 The argument vector, entrypoint module, runtime implementation, and runtime version are hashed together in `RD005_D1_EXECUTION_BINDING.binding_sha256`. The package plan includes that digest and marks the D1 construction wrapper, command contract, and Python runtime as bound. Capability remains explicitly unbound and closed.
 
+The legacy direct module CLI `python -m sparkbrain.research.rv02_rd005_construction_runner ...` is now fail-closed and refuses execution before reading input or allocating output. The lower-level construction callables remain available only as implementation/test primitives for the bound wrapper; they are not an authorized launch contract. A regression test verifies that the legacy CLI cannot consume an output identity.
+
 The two placeholders are not free scientific parameters. Before execution, the control/seal record must bind them to one exact construction-input artifact and one exact frozen checkout root. The construction input itself must carry the exact frozen source manifest SHA, authoritative collision-registry SHA, and canonical package-plan SHA. No alternate command, runtime, input bytes, or source checkout is authorized by this review.
 
 ## Exact-byte handoff
