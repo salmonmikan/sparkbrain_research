@@ -1,5 +1,5 @@
 {
-  "authoritative_complete": false,
+  "authoritative_complete": true,
   "execution_authority_granted": false,
   "historical_contract_bindings": [
     {
@@ -45,11 +45,17 @@
     "world_id_count": 290
   },
   "notes": [
-    "Current retained contract blobs exactly match the historical source commits listed above.",
-    "The known namespace is conservative: both consumed development/formal identities and reserved held-out identities are collision material.",
-    "R01-16 must remain fail-closed until every unresolved evidence class is discharged by durable evidence; this file is not an execution seal."
+    "The collision authority is deliberately scoped to repository-retained consumed/reserved seed and world execution identities; it does not claim that pre-R01-12 RV01 source exploration never existed.",
+    "The exact parent of the first retained interference identity contract has no interference contract path, no artifacts/research retained execution root, and no workflow other than generic ci.yml; the boundary audit therefore discharges the pre-R01-12 retained-identity class without erasing earlier RV01 source work.",
+    "The original R01-15 Actions artifact was recovered without rerun and its durable identity-only audit matches the fixed artifact ZIP and raw-result SHA-256 values, observed development seeds/worlds, and sealed held-out reservations.",
+    "Both consumed identities and unexecuted reserved held-out identities are collision material.",
+    "authoritative_complete=true opens only the collision-registry gate. This file is not an execution seal and grants no construction, capability, held-out, or formal authority."
   ],
   "retained_evidence_blob_bindings": [
+    {
+      "git_blob_sha": "2fa75567a8a9048a8dc48c237545e5185c435db0",
+      "path": "docs/research/RV01_R01_12_RETAINED_NAMESPACE_BOUNDARY_AUDIT_20260915.json"
+    },
     {
       "git_blob_sha": "4f8151b2d599a23bbb96ee536b6b7830df7ff928",
       "path": "artifacts/research/rv01/r01_12d/development_result_manifest.json"
@@ -73,13 +79,14 @@
     {
       "git_blob_sha": "bd158008359ae0b54cf67a817fcd12c099b0b8a4",
       "path": "docs/research/RV01_R01_15_DEVELOPMENT_RESULT.md"
+    },
+    {
+      "git_blob_sha": "1b961fa8f63cd512a0aa31ae0e29d0f7b8043cc1",
+      "path": "docs/research/RV01_R01_15_RAW_ARTIFACT_IDENTITY_AUDIT_20260914.json"
     }
   ],
-  "reviewed_repository_head": "c80fdfe1fb4abe04a00eb4cdcb60c6065a268d45",
+  "reviewed_repository_head": "d8fd9f3b5a6a71795eff55996855a5b127310c69",
   "schema": "rv01-r01-16-retained-history-bindings-v1",
-  "status": "PARTIAL_RECONSTRUCTION_FAIL_CLOSED",
-  "unresolved_evidence_classes": [
-    "pre-r01-12-retained-identity-history-not-yet-enumerated",
-    "r01-15-raw-development-world-ledger-not-retained-in-repository"
-  ]
+  "status": "VERIFIED_COMPLETE_REPOSITORY_RETAINED_NAMESPACE",
+  "unresolved_evidence_classes": []
 }
