@@ -105,9 +105,29 @@ def test_capability_package_identity_binds_source_retained_state_and_mode() -> N
     assert first == second
     assert package.run_id.startswith("rv01-r01-16-capability-1111111111111111-")
     assert first["control_mode"] == "distributed-github"
+    assert first["single_host_ownership_asserted"] is False
     assert first["retry_same_identity_allowed"] is False
     assert first["held_out_capability_allowed"] is False
     assert first["formal_execution_allowed"] is False
+
+
+def test_local_mode_requires_explicit_single_host_ownership() -> None:
+    with pytest.raises(RuntimeError, match="single-host ownership"):
+        R0116CapabilityPackage(
+            source_manifest=_manifest(),
+            retained_binding=_retained_binding(),
+            control_mode="local-offline",
+        ).validate()
+
+    package = R0116CapabilityPackage(
+        source_manifest=_manifest(),
+        retained_binding=_retained_binding(),
+        control_mode="local-offline",
+        single_host_ownership_asserted=True,
+    )
+    state = package.state_dict()
+    assert state["control_mode"] == "local-offline"
+    assert state["single_host_ownership_asserted"] is True
 
 
 def test_load_source_manifest_requires_capability_boundary_files(tmp_path: Path) -> None:
