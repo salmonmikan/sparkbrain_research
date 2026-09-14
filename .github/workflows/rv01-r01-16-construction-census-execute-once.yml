@@ -6,7 +6,7 @@ on:
       - "ops/rv01-r01-16-construction-census-execution-20260915"
 
 permissions:
-  contents: read
+  contents: write
 
 env:
   FREEZE_REF: freeze/rv01-r01-16-construction-census-source
@@ -125,7 +125,28 @@ jobs:
           if [ -d "${OUTPUT_ROOT}" ]; then
             find "${OUTPUT_ROOT}" -type f -print0 | sort -z | xargs -0 sha256sum \
               > /tmp/rv01-r01-16-metadata/output_sha256.txt
+            mkdir -p "${OUTPUT_ROOT}/_execution_metadata"
+            cp /tmp/rv01-r01-16-metadata/* "${OUTPUT_ROOT}/_execution_metadata/"
           fi
+
+      - name: Preserve immutable construction evidence ref
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ ! -d "${OUTPUT_ROOT}" ]; then
+            exit 0
+          fi
+          preserve_ref="preserve/rv01-r01-16-construction-census-${GITHUB_RUN_ID}"
+          if git ls-remote --exit-code --heads origin "${preserve_ref}" >/dev/null 2>&1; then
+            echo "refusing to move existing preservation ref ${preserve_ref}" >&2
+            exit 1
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f "${OUTPUT_ROOT}"
+          git commit -m "Preserve R01-16 construction census ${GITHUB_RUN_ID}"
+          git push origin "HEAD:refs/heads/${preserve_ref}"
 
       - name: Upload raw construction evidence even on failure
         if: always()
