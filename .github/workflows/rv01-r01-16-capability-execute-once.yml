@@ -33,6 +33,10 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          if [ "${GITHUB_RUN_ATTEMPT}" != "1" ]; then
+            echo "refusing rerun of consumed R01-16 capability workflow attempt ${GITHUB_RUN_ATTEMPT}" >&2
+            exit 1
+          fi
           test "${GITHUB_REF}" = "refs/heads/${CONTROL_REF}"
           git fetch origin \
             "+refs/heads/${FREEZE_REF}:refs/remotes/origin/${FREEZE_REF}" \
