@@ -31,11 +31,11 @@ Human-review gate was transparently handled as `HUMAN_REVIEW_WAIVED_BY_USER_2026
 
 The exact D1 construction command crossed STARTED once under the frozen contract. The bound construction terminated with exit code `1` and preserved `FAILED.json` rather than silently repairing or retrying.
 
-The terminal error was:
+The preserved top-level terminal condition is:
 
-`Sink top_large_integrated_048 violates the preregistered path diversity floor: 2`
+`RD005 construction stopped before capability: verified D1 matrix is not ready`
 
-The preserved machine-readable result classifies the outcome as `D1_CONSTRUCTION_FAILED_TERMINAL_IDENTITY_CONSUMED`, with `retry_same_identity_allowed=false`, `capability_output_opened=false`, and `learner_or_probe_executed=false`.
+The preserved machine-readable result classifies the outcome as `D1_CONSTRUCTION_FAILED_TERMINAL_IDENTITY_CONSUMED`, with `retry_same_identity_allowed=false`, `capability_output_opened=false`, and `learner_or_probe_executed=false`. Lower-level construction diagnostics are retained in the immutable construction artifact; this audit intentionally does not promote an unverified nested diagnostic into the authoritative terminal condition.
 
 This is therefore a negative **construction / gate-reachability** result for this exact identity. It is not a scored confirmatory result for H1/H4/K1/K2, because the preregistered capability stage was never opened.
 
