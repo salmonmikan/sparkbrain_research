@@ -6,6 +6,7 @@ from pathlib import Path
 import pytest
 
 import scripts.build_rv02_rd005_source_manifest as builder
+import sparkbrain.research.rv02_rd005_development_package as package
 
 
 def _git(repo: Path, *args: str) -> str:
@@ -32,12 +33,21 @@ def _init_repo(tmp_path: Path) -> Path:
     return repo
 
 
+def _patch_required_paths(
+    monkeypatch: pytest.MonkeyPatch,
+    paths: set[str],
+) -> None:
+    required = frozenset(paths)
+    monkeypatch.setattr(builder, "RD005_REQUIRED_SOURCE_PATHS", required)
+    monkeypatch.setattr(package, "RD005_REQUIRED_SOURCE_PATHS", required)
+
+
 def test_builder_binds_exact_clean_head_and_all_declared_paths(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     repo = _init_repo(tmp_path)
-    monkeypatch.setattr(builder, "RD005_REQUIRED_SOURCE_PATHS", frozenset({"source.txt"}))
+    _patch_required_paths(monkeypatch, {"source.txt"})
     monkeypatch.setattr(builder, "_EXTRA_PROVENANCE_PATHS", frozenset({"builder.txt"}))
 
     manifest = builder.build_source_manifest(repo)
@@ -52,7 +62,7 @@ def test_builder_rejects_modified_tracked_checkout(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     repo = _init_repo(tmp_path)
-    monkeypatch.setattr(builder, "RD005_REQUIRED_SOURCE_PATHS", frozenset({"source.txt"}))
+    _patch_required_paths(monkeypatch, {"source.txt"})
     monkeypatch.setattr(builder, "_EXTRA_PROVENANCE_PATHS", frozenset({"builder.txt"}))
     (repo / "source.txt").write_text("changed\n", encoding="utf-8")
 
@@ -67,7 +77,7 @@ def test_builder_rejects_nested_path_as_repository_root(
     repo = _init_repo(tmp_path)
     nested = repo / "nested"
     nested.mkdir()
-    monkeypatch.setattr(builder, "RD005_REQUIRED_SOURCE_PATHS", frozenset({"source.txt"}))
+    _patch_required_paths(monkeypatch, {"source.txt"})
     monkeypatch.setattr(builder, "_EXTRA_PROVENANCE_PATHS", frozenset({"builder.txt"}))
 
     with pytest.raises(ValueError, match="Git top-level"):
@@ -79,11 +89,7 @@ def test_builder_rejects_missing_bound_path(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     repo = _init_repo(tmp_path)
-    monkeypatch.setattr(
-        builder,
-        "RD005_REQUIRED_SOURCE_PATHS",
-        frozenset({"source.txt", "missing.txt"}),
-    )
+    _patch_required_paths(monkeypatch, {"source.txt", "missing.txt"})
     monkeypatch.setattr(builder, "_EXTRA_PROVENANCE_PATHS", frozenset({"builder.txt"}))
 
     with pytest.raises(ValueError, match="source path is missing"):
