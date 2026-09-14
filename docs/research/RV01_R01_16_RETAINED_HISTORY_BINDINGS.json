@@ -1,0 +1,85 @@
+{
+  "authoritative_complete": false,
+  "execution_authority_granted": false,
+  "historical_contract_bindings": [
+    {
+      "evidence_class": "r01-12-development",
+      "git_blob_sha": "d1fd0aa35a5b33e6d2908d8208758c9d91f0ed81",
+      "path": "src/sparkbrain/research/rv01/interference_contract.py",
+      "source_git_sha": "b163117512daca23b613c8a109a544833af7d360"
+    },
+    {
+      "evidence_class": "r01-12-formal-held-out",
+      "git_blob_sha": "d1fd0aa35a5b33e6d2908d8208758c9d91f0ed81",
+      "path": "src/sparkbrain/research/rv01/interference_contract.py",
+      "source_git_sha": "83d2c77d8ae3878727d2ed4e9e78bc169ce064b8"
+    },
+    {
+      "evidence_class": "r01-13-development",
+      "git_blob_sha": "27a640681da2e05337a771633e16f89af3bf7412",
+      "path": "src/sparkbrain/research/rv01/activity_matched_contract.py",
+      "source_git_sha": "241669c92a0fd93b1f98ffe5e5dcaf8fd97c4de2"
+    },
+    {
+      "evidence_class": "r01-14-development",
+      "git_blob_sha": "93e7ea99839e91d53a4a2a50ff80704313d68a9c",
+      "path": "src/sparkbrain/research/rv01/traversal_dynamics_contract.py",
+      "source_git_sha": "d0c828dda9faf1ff0d455adf02be4e9ef65030fb"
+    },
+    {
+      "evidence_class": "r01-15-development",
+      "git_blob_sha": "551528b1b3d26bd8d94095f3a683c2fee144411a",
+      "path": "src/sparkbrain/research/rv01/post_spike_suppression_contract.py",
+      "source_git_sha": "a46096458446e3d101c5a951dba4efd7db1ee0ae",
+      "source_ref": "freeze/rv01-r01-15-development-source"
+    }
+  ],
+  "known_collision_namespace": {
+    "covers_protocols": [
+      "R01-12",
+      "R01-13",
+      "R01-14",
+      "R01-15"
+    ],
+    "seed_id_count": 58,
+    "world_id_count": 290
+  },
+  "notes": [
+    "Current retained contract blobs exactly match the historical source commits listed above.",
+    "The known namespace is conservative: both consumed development/formal identities and reserved held-out identities are collision material.",
+    "R01-16 must remain fail-closed until every unresolved evidence class is discharged by durable evidence; this file is not an execution seal."
+  ],
+  "retained_evidence_blob_bindings": [
+    {
+      "git_blob_sha": "4f8151b2d599a23bbb96ee536b6b7830df7ff928",
+      "path": "artifacts/research/rv01/r01_12d/development_result_manifest.json"
+    },
+    {
+      "git_blob_sha": "d8321e18561c3e1a2feeeea9ab94f6c54e0e926a",
+      "path": "artifacts/research/rv01/r01_12f/formal_result_manifest.json"
+    },
+    {
+      "git_blob_sha": "46871db1c895f47a2913a2a0eb59f92ecc4e7a23",
+      "path": "artifacts/research/rv01/r01_12f/heldout_formal_result.json"
+    },
+    {
+      "git_blob_sha": "3a8caf5f7d4d8826adb1c5cfdae4c2fca9062ea4",
+      "path": "artifacts/research/rv01/r01_13/development_result.json"
+    },
+    {
+      "git_blob_sha": "2da5688525b4a18a1056a259e301e0d9651ae9da",
+      "path": "artifacts/research/rv01/r01_14/development_result.json"
+    },
+    {
+      "git_blob_sha": "bd158008359ae0b54cf67a817fcd12c099b0b8a4",
+      "path": "docs/research/RV01_R01_15_DEVELOPMENT_RESULT.md"
+    }
+  ],
+  "reviewed_repository_head": "c80fdfe1fb4abe04a00eb4cdcb60c6065a268d45",
+  "schema": "rv01-r01-16-retained-history-bindings-v1",
+  "status": "PARTIAL_RECONSTRUCTION_FAIL_CLOSED",
+  "unresolved_evidence_classes": [
+    "pre-r01-12-retained-identity-history-not-yet-enumerated",
+    "r01-15-raw-development-world-ledger-not-retained-in-repository"
+  ]
+}
