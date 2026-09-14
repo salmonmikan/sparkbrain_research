@@ -3,13 +3,14 @@
 This module implements the already-preregistered F0/FW/FD/FWD propagation
 factorization without granting execution authority. It contains no held-out or
 formal path and performs no I/O. A future frozen wrapper must bind the exact
-source/runtime/package identity and acquire an atomic remote STARTED claim before
-calling ``run_development_capability_suite`` exactly once.
+source/runtime/package identity and acquire the prospectively bound exactly-once
+STARTED claim before calling ``run_development_capability_suite`` exactly once.
 """
 
 from __future__ import annotations
 
 import copy
+from collections import Counter
 from typing import Any
 
 from sparkbrain.v04.contracts import SynapticArrival
@@ -30,6 +31,7 @@ from .rv01_r01_16_factorization import (
     ConnectionState,
     R01_16FactorizationConstruction,
 )
+from .rv01_r01_16_reachability import build_factor_reachability_certificate
 from .rv01_r01_16_worlds import (
     R0116DevelopmentWorldSpec,
     development_world_grid,
@@ -150,6 +152,12 @@ def _checkpoint_with_arm(
     return value
 
 
+def _registered_cue_pulse_id(world: R0116DevelopmentWorldSpec, route: Any) -> str:
+    """Return the one cue identity shared by all factorization arms."""
+
+    return f"r01-16:{world.world_id}:{route.route_id}:fixed-cue"
+
+
 def _run_arm(
     world: R0116DevelopmentWorldSpec,
     checkpoint: dict[str, Any],
@@ -168,13 +176,14 @@ def _run_arm(
     cue_time = 100.0
     if field.current_time_ms > cue_time:
         raise RuntimeError("R01-16 common checkpoint has advanced beyond registered cue time")
+    cue_pulse_id = _registered_cue_pulse_id(world, route)
     field.schedule_arrival(
         SynapticArrival(
             time_ms=cue_time,
             target_id=route.units[0],
             current=world.cue_magnitude,
             source_id=None,
-            pulse_id=f"r01-16:{world.world_id}:{route.route_id}:{arm}",
+            pulse_id=cue_pulse_id,
             novelty=0.0,
             prediction_error=0.0,
         )
@@ -207,6 +216,7 @@ def _run_arm(
     coverage = _ordered_coverage(expected, trace)
     return {
         "arm": arm,
+        "registered_cue_pulse_id": cue_pulse_id,
         "arm_checkpoint_hash": checkpoint_hash,
         "connection_hash_before": connection_hash_before,
         "connection_hash_after": connection_hash_after,
@@ -222,18 +232,45 @@ def _run_arm(
     }
 
 
-def _behavior_signature(row: dict[str, Any]) -> tuple[object, ...]:
-    """Return only preregistered behavioral endpoints, not raw timing evidence."""
+def _behavior_signature(row: dict[str, Any]) -> tuple[tuple[int, ...], tuple[int, ...]]:
+    """Return exactly the preregistered primary sequence pair."""
 
+    common_breadth_units = row.get("common_breadth_units")
+    if common_breadth_units is None:
+        raise RuntimeError("R01-16 primary endpoint lacks common-breadth sequence")
     return (
-        tuple(row["generated_units"]),
-        row["ordered_retention_fraction"],
-        row["exact_route_recovered"],
-        row["contamination_count"],
-        row["common_breadth_reached"],
-        tuple(row["common_breadth_units"] or ()),
-        digest(row["common_breadth_metrics"]),
+        tuple(int(unit_id) for unit_id in row["generated_units"]),
+        tuple(int(unit_id) for unit_id in common_breadth_units),
     )
+
+
+def _replicated_classification(
+    rows: list[tuple[str, str]],
+    *,
+    support_cell: str,
+    negative_cell: str,
+    supported: str,
+    unsupported: str,
+    mixed: str,
+) -> dict[str, object]:
+    """Apply the fixed >=2-world, all-cell non-compensatory decision rule."""
+
+    world_count = len({world_id for world_id, _ in rows})
+    dispositions = Counter(disposition for _, disposition in rows)
+    if world_count < 2:
+        classification = "INSUFFICIENT_REACHABLE_REPLICATION"
+    elif rows and all(disposition == support_cell for _, disposition in rows):
+        classification = supported
+    elif rows and all(disposition == negative_cell for _, disposition in rows):
+        classification = unsupported
+    else:
+        classification = mixed
+    return {
+        "classification": classification,
+        "eligible_world_count": world_count,
+        "eligible_cell_count": len(rows),
+        "cell_disposition_counts": dict(sorted(dispositions.items())),
+    }
 
 
 def run_capability_world(world: R0116DevelopmentWorldSpec) -> dict[str, Any]:
@@ -257,6 +294,12 @@ def run_capability_world(world: R0116DevelopmentWorldSpec) -> dict[str, Any]:
     probes: list[dict[str, Any]] = []
     for route_id in world.probe_order:
         route = route_by_id[route_id]
+        certificate = build_factor_reachability_certificate(
+            construction,
+            registered_unit_ids=tuple(range(world.unit_count)),
+            cue_source_ids=(route.units[0],),
+            probe_horizon_ms=world.probe_horizon_ms(route),
+        )
         arms = {
             arm: _run_arm(
                 world,
@@ -269,6 +312,9 @@ def run_capability_world(world: R0116DevelopmentWorldSpec) -> dict[str, Any]:
         }
         if arms["F0"]["arm_checkpoint_hash"] != common_checkpoint_hash:
             raise RuntimeError("R01-16 F0 did not restore the exact common checkpoint")
+        cue_ids = {str(row["registered_cue_pulse_id"]) for row in arms.values()}
+        if len(cue_ids) != 1:
+            raise RuntimeError("R01-16 factor arms changed the registered cue identity")
         common_breadth = min(
             int(row["raw_metrics"]["distinct_unit_count"])
             for row in arms.values()
@@ -276,25 +322,76 @@ def run_capability_world(world: R0116DevelopmentWorldSpec) -> dict[str, Any]:
         for row in arms.values():
             trace = tuple(int(unit) for unit in row["generated_units"])
             prefix = _prefix_to_distinct_budget(trace, common_breadth)
+            if prefix is None:
+                raise RuntimeError("R01-16 arm failed its fixed common-breadth budget")
             row["common_breadth_budget"] = common_breadth
-            row["common_breadth_reached"] = prefix is not None
-            row["common_breadth_units"] = list(prefix) if prefix is not None else None
-            row["common_breadth_metrics"] = (
-                _traversal_metrics(prefix) if prefix is not None else None
-            )
+            row["common_breadth_reached"] = True
+            row["common_breadth_units"] = list(prefix)
+            row["common_breadth_metrics"] = _traversal_metrics(prefix)
         signatures = {arm: _behavior_signature(arms[arm]) for arm in _ARMS}
+        contrasts = {
+            "F0_vs_FW_different": signatures["F0"] != signatures["FW"],
+            "F0_vs_FD_different": signatures["F0"] != signatures["FD"],
+            "F0_vs_FWD_different": signatures["F0"] != signatures["FWD"],
+            "FW_vs_FWD_different": signatures["FW"] != signatures["FWD"],
+            "FD_vs_FWD_different": signatures["FD"] != signatures["FWD"],
+        }
+        if certificate.weight_eligible:
+            weight_pair = (
+                contrasts["F0_vs_FW_different"],
+                contrasts["FD_vs_FWD_different"],
+            )
+            if all(weight_pair):
+                weight_cell = "WEIGHT_SUPPORT_CELL"
+            elif not any(weight_pair):
+                weight_cell = "WEIGHT_NEGATIVE_CELL"
+            else:
+                weight_cell = "WEIGHT_DISCORDANT"
+        else:
+            weight_cell = "WEIGHT_INELIGIBLE_UNREACHABLE"
+
+        if certificate.delay_eligible:
+            delay_pair = (
+                contrasts["F0_vs_FD_different"],
+                contrasts["FW_vs_FWD_different"],
+            )
+            if all(delay_pair):
+                delay_cell = "DELAY_SUPPORT_CELL"
+            elif not any(delay_pair):
+                delay_cell = "DELAY_NEGATIVE_CELL"
+            else:
+                delay_cell = "DELAY_DISCORDANT"
+        else:
+            delay_cell = "DELAY_INELIGIBLE_UNREACHABLE"
+
+        if certificate.combined_eligible:
+            combined_cell = (
+                "COMBINED_SUPPORT_CELL"
+                if contrasts["F0_vs_FWD_different"]
+                else "COMBINED_NEGATIVE_CELL"
+            )
+        else:
+            combined_cell = "COMBINED_INELIGIBLE_UNREACHABLE"
+
         probes.append(
             {
                 "probe_route_id": route_id,
                 "expected_units": list(route.units[1:]),
                 "common_breadth_budget": common_breadth,
+                "registered_cue_pulse_id": next(iter(cue_ids)),
+                "reachability_certificate_sha256": certificate.sha256,
+                "reachability_certificate": certificate.state_dict(),
+                "factor_eligibility": {
+                    "weight_eligible": certificate.weight_eligible,
+                    "delay_eligible": certificate.delay_eligible,
+                    "combined_eligible": certificate.combined_eligible,
+                },
                 "field_arms": [arms[arm] for arm in _ARMS],
-                "contrasts": {
-                    "F0_vs_FW_different": signatures["F0"] != signatures["FW"],
-                    "F0_vs_FD_different": signatures["F0"] != signatures["FD"],
-                    "F0_vs_FWD_different": signatures["F0"] != signatures["FWD"],
-                    "FW_vs_FWD_different": signatures["FW"] != signatures["FWD"],
-                    "FD_vs_FWD_different": signatures["FD"] != signatures["FWD"],
+                "contrasts": contrasts,
+                "primary_cell_classification": {
+                    "weight": weight_cell,
+                    "delay": delay_cell,
+                    "combined": combined_cell,
                 },
             }
         )
@@ -334,19 +431,62 @@ def run_development_capability_suite() -> dict[str, Any]:
     """
 
     worlds = [run_capability_world(world) for world in development_world_grid()]
+    contrast_keys = (
+        "F0_vs_FW_different",
+        "F0_vs_FD_different",
+        "F0_vs_FWD_different",
+        "FW_vs_FWD_different",
+        "FD_vs_FWD_different",
+    )
     contrast_counts = {
         key: sum(
             int(probe["contrasts"][key])
             for world in worlds
             for probe in world["probes"]
         )
-        for key in (
-            "F0_vs_FW_different",
-            "F0_vs_FD_different",
-            "F0_vs_FWD_different",
-            "FW_vs_FWD_different",
-            "FD_vs_FWD_different",
-        )
+        for key in contrast_keys
+    }
+
+    weight_rows: list[tuple[str, str]] = []
+    delay_rows: list[tuple[str, str]] = []
+    combined_rows: list[tuple[str, str]] = []
+    for world in worlds:
+        world_id = str(world["world"]["world_id"])
+        for probe in world["probes"]:
+            eligibility = probe["factor_eligibility"]
+            classification = probe["primary_cell_classification"]
+            if eligibility["weight_eligible"]:
+                weight_rows.append((world_id, str(classification["weight"])))
+            if eligibility["delay_eligible"]:
+                delay_rows.append((world_id, str(classification["delay"])))
+            if eligibility["combined_eligible"]:
+                combined_rows.append((world_id, str(classification["combined"])))
+
+    factor_classification = {
+        "weight": _replicated_classification(
+            weight_rows,
+            support_cell="WEIGHT_SUPPORT_CELL",
+            negative_cell="WEIGHT_NEGATIVE_CELL",
+            supported="WEIGHT_SUPPORTED",
+            unsupported="WEIGHT_UNSUPPORTED",
+            mixed="WEIGHT_MIXED",
+        ),
+        "delay": _replicated_classification(
+            delay_rows,
+            support_cell="DELAY_SUPPORT_CELL",
+            negative_cell="DELAY_NEGATIVE_CELL",
+            supported="DELAY_SUPPORTED",
+            unsupported="DELAY_UNSUPPORTED",
+            mixed="DELAY_MIXED",
+        ),
+        "combined": _replicated_classification(
+            combined_rows,
+            support_cell="COMBINED_SUPPORT_CELL",
+            negative_cell="COMBINED_NEGATIVE_CELL",
+            supported="COMBINED_SUPPORTED",
+            unsupported="COMBINED_UNSUPPORTED",
+            mixed="COMBINED_MIXED",
+        ),
     }
     payload = {
         "protocol_id": R01_16_PROTOCOL_ID,
@@ -354,12 +494,12 @@ def run_development_capability_suite() -> dict[str, Any]:
         "world_grid_hash": development_world_grid_hash(),
         "world_count": len(worlds),
         "probe_count": sum(len(world["probes"]) for world in worlds),
+        "primary_endpoint": [
+            "generated_unit_sequence",
+            "common_breadth_unit_sequence",
+        ],
         "contrast_difference_counts": contrast_counts,
-        "all_physically_effective_arms_behaviorally_identical_to_F0": (
-            contrast_counts["F0_vs_FW_different"] == 0
-            and contrast_counts["F0_vs_FD_different"] == 0
-            and contrast_counts["F0_vs_FWD_different"] == 0
-        ),
+        "factor_classification": factor_classification,
         "worlds": worlds,
         "held_out_capability_executed": False,
         "formal_execution_allowed": False,
