@@ -18,12 +18,21 @@ def main() -> None:
         choices=("distributed-github", "local-offline"),
         required=True,
     )
+    parser.add_argument(
+        "--assert-single-host-ownership",
+        action="store_true",
+        help=(
+            "Required for local-offline mode. Records the caller's assertion that "
+            "no other host can execute the same frozen capability identity."
+        ),
+    )
     args = parser.parse_args()
     output = execute_capability_once(
         repo_root=args.repo_root,
         source_manifest_path=args.source_manifest,
         construction_census_path=args.construction_census,
         control_mode=args.control_mode,
+        single_host_ownership_asserted=args.assert_single_host_ownership,
     )
     print(output.as_posix())
 
