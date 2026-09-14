@@ -5,7 +5,7 @@ construction runner already validates source/collision identities and performs
 source-checkout verification before allocating an output identity, but its input
 schema historically accepted any syntactically valid package-plan digest. This
 wrapper recomputes the canonical :class:`RD005DevelopmentPackagePlan` digest and
-requires an exact match before delegating to that construction-only runner.
+requires an exact match before delegating the exact same bytes to construction.
 
 No D1 output is created by the preflight itself. Capability, held-out and formal
 execution remain closed.
@@ -18,7 +18,7 @@ from pathlib import Path
 
 from sparkbrain.research.rv02_rd005_construction_runner import (
     _load_input,
-    run_construction,
+    run_construction_from_bytes,
 )
 from sparkbrain.research.rv02_rd005_development_package import RD005DevelopmentPackagePlan
 
@@ -47,11 +47,11 @@ def run_bound_construction(
     input_path: Path,
     repo_root: Path,
 ) -> Path:
-    """Verify the bound package plan before invoking D1 construction."""
+    """Verify and construct from one immutable in-memory input identity."""
 
     raw = input_path.read_bytes()
     verify_package_plan_binding(raw)
-    return run_construction(input_path=input_path, repo_root=repo_root)
+    return run_construction_from_bytes(raw=raw, repo_root=repo_root)
 
 
 def main(argv: list[str] | None = None) -> int:
