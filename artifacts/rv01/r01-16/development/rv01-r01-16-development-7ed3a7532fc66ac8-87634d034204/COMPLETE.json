@@ -1,0 +1,22 @@
+{
+  "capability_output_opened": false,
+  "probe_executed": false,
+  "run_id": "rv01-r01-16-development-7ed3a7532fc66ac8-87634d034204",
+  "same_identity_rerun_allowed": false,
+  "schema": "rv01-r01-16-construction-census-v1",
+  "status": "CONSTRUCTION_CENSUS_COMPLETE_CAPABILITY_UNOPENED",
+  "summary": {
+    "combined_eligible_cell_count": 100,
+    "combined_eligible_world_count": 25,
+    "combined_reachability_replication_ready": true,
+    "delay_eligible_cell_count": 100,
+    "delay_eligible_world_count": 25,
+    "delay_reachability_replication_ready": true,
+    "planned_cell_count": 100,
+    "weight_eligible_cell_count": 100,
+    "weight_eligible_world_count": 25,
+    "weight_reachability_replication_ready": true,
+    "world_count": 25,
+    "zero_contrast_world_count": 0
+  }
+}

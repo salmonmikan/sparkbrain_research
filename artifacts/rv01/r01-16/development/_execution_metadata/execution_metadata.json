@@ -1,0 +1,14 @@
+{
+  "protocol": "rv01-r01-16-propagation-factorization-v1",
+  "stage": "construction-census-only",
+  "frozen_source_git_sha": "7ed3a7532fc66ac81d78f20da819442eae1b4780",
+  "freeze_ref": "freeze/rv01-r01-16-construction-census-source",
+  "workflow_run_id": "34881254582",
+  "workflow_run_attempt": "1",
+  "python_version": "Python 3.11.16",
+  "capability_output_opened": false,
+  "probe_executed": false,
+  "held_out_capability_executed": false,
+  "formal_execution_allowed": false,
+  "same_source_rerun_allowed": false
+}

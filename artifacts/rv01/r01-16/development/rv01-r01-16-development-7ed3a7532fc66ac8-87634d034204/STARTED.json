@@ -1,0 +1,15 @@
+{
+  "capability_output_opened": false,
+  "collision_registry_sha256": "87634d034204bc2d6da5ab64ee4d6a56b62ca15a48b9548403ac51af16966ba1",
+  "package_plan_sha256": "43c003f86427a32456af308a9cef058cb4d77c8c104679ddd3c63fc8e7ce67af",
+  "probe_executed": false,
+  "protocol_id": "rv01-r01-16-propagation-factorization-v1",
+  "python_version": "3.11.16 (main, Aug 13 2026, 02:46:14) [GCC 13.3.0]",
+  "run_id": "rv01-r01-16-development-7ed3a7532fc66ac8-87634d034204",
+  "same_identity_rerun_allowed": false,
+  "schema": "rv01-r01-16-construction-census-v1",
+  "source_git_sha": "7ed3a7532fc66ac81d78f20da819442eae1b4780",
+  "source_manifest_sha256": "544d63303a90aa3b9e46eb939b35066402f51a08b346788815f692c300db1a33",
+  "status": "STARTED_CONSTRUCTION_ONLY",
+  "world_grid_sha256": "b334ab63b12ec967acc60d75242c8518fadc93a0eeb3de8f9c4a9d38d663c432"
+}
