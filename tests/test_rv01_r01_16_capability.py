@@ -10,6 +10,7 @@ from sparkbrain.research.rv01_r01_16_capability import (
     _prefix_to_distinct_budget,
     _registered_cue_pulse_id,
     _replicated_classification,
+    _require_retained_route_bindings,
     _traversal_metrics,
 )
 from sparkbrain.research.rv01_r01_16_factorization import ConnectionState
@@ -153,3 +154,22 @@ def test_replicated_classification_is_non_compensatory() -> None:
     )
 
     assert result["classification"] == "WEIGHT_MIXED"
+
+
+def test_retained_reachability_binding_requires_exact_probe_grid() -> None:
+    world = SimpleNamespace(probe_order=("route:a", "route:b"))
+    valid_hash = "a" * 64
+
+    _require_retained_route_bindings(
+        world,
+        {"route:a": valid_hash, "route:b": valid_hash},
+    )
+    with pytest.raises(RuntimeError, match="fixed probe grid"):
+        _require_retained_route_bindings(world, {"route:a": valid_hash})
+
+
+def test_retained_reachability_binding_requires_sha256() -> None:
+    world = SimpleNamespace(probe_order=("route:a",))
+
+    with pytest.raises(ValueError, match="SHA-256"):
+        _require_retained_route_bindings(world, {"route:a": "not-a-digest"})
