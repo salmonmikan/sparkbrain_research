@@ -29,6 +29,11 @@ def _patch_plan_inputs(
     supplied_digest: str,
 ) -> None:
     monkeypatch.setattr(bound, "RD005DevelopmentPackagePlan", _FakePlan)
+    monkeypatch.setattr(
+        bound,
+        "verify_rd005_d1_runtime",
+        lambda: {"python_implementation": "CPython", "python_version": "3.11.15"},
+    )
 
     def _load(raw: bytes) -> tuple[dict[str, str], object, object]:
         assert isinstance(raw, bytes)
@@ -57,6 +62,21 @@ def test_package_plan_preflight_rejects_unrelated_valid_hex_digest(
 
     with pytest.raises(ValueError, match="does not match the canonical"):
         bound.verify_package_plan_binding(b'{"fixture": true}')
+
+
+def test_bound_runner_refuses_wrong_runtime_before_reading_input(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    missing_input = tmp_path / "not-created.json"
+
+    def _reject_runtime() -> dict[str, str]:
+        raise RuntimeError("RD005 D1 Python version mismatch")
+
+    monkeypatch.setattr(bound, "verify_rd005_d1_runtime", _reject_runtime)
+
+    with pytest.raises(RuntimeError, match="Python version mismatch"):
+        bound.run_bound_construction(input_path=missing_input, repo_root=tmp_path)
 
 
 def test_bound_runner_refuses_mismatch_before_delegating(
