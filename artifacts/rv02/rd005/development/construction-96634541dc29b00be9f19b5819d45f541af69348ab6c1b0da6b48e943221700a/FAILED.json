@@ -1,0 +1,7 @@
+{
+  "construction_input_sha256": "96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
+  "exception_type": "RuntimeError",
+  "message": "RD005 construction stopped before capability: verified D1 matrix is not ready",
+  "retry_same_output_identity_allowed": false,
+  "status": "D1_CONSTRUCTION_FAILED_TERMINAL_FOR_THIS_OUTPUT_IDENTITY"
+}

@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/sparkbrain_research/sparkbrain_research/src/sparkbrain/research/rv02_rd005_bound_construction.py", line 69, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/sparkbrain_research/sparkbrain_research/src/sparkbrain/research/rv02_rd005_bound_construction.py", line 64, in main
+    run_bound_construction(input_path=args.input, repo_root=args.repo_root)
+  File "/home/runner/work/sparkbrain_research/sparkbrain_research/src/sparkbrain/research/rv02_rd005_bound_construction.py", line 54, in run_bound_construction
+    return run_construction_from_bytes(raw=raw, repo_root=repo_root)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/sparkbrain_research/sparkbrain_research/src/sparkbrain/research/rv02_rd005_construction_runner.py", line 293, in run_construction_from_bytes
+    raise RuntimeError(
+RuntimeError: RD005 construction stopped before capability: verified D1 matrix is not ready

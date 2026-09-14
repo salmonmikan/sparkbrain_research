@@ -1,0 +1,6 @@
+{
+  "python_executable": "/opt/hostedtoolcache/Python/3.11.15/x64/bin/python",
+  "python_implementation": "CPython",
+  "python_version": "3.11.15",
+  "runner_module": "sparkbrain.research.rv02_rd005_construction_runner"
+}

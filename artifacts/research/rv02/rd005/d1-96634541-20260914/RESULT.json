@@ -1,0 +1,12 @@
+{
+  "capability_output_opened": false,
+  "command_exit_code": 1,
+  "construction_input_sha256": "96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
+  "freeze_ref": "refs/heads/freeze/rv02-rd005-d1-source-c60b7fd8-20260914",
+  "learner_or_probe_executed": false,
+  "preflight_commit_sha": "096ddb8c65f342866839a2cb135d45e36ec1aabf",
+  "preserved_at_utc": "2026-09-14T10:07:01.526596+00:00",
+  "retry_same_identity_allowed": false,
+  "source_git_sha": "c60b7fd8d3889ee969f505d921e7d31c990871e6",
+  "status": "D1_CONSTRUCTION_FAILED_TERMINAL_IDENTITY_CONSUMED"
+}
