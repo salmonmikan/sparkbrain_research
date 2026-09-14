@@ -47,7 +47,7 @@
   "notes": [
     "The collision authority is deliberately scoped to repository-retained consumed/reserved seed and world execution identities; it does not claim that pre-R01-12 RV01 source exploration never existed.",
     "The exact parent of the first retained interference identity contract has no interference contract path, no artifacts/research retained execution root, and no workflow other than generic ci.yml; the boundary audit therefore discharges the pre-R01-12 retained-identity class without erasing earlier RV01 source work.",
-    "R01-12F formal comparator execution RNG identities 12101 through 12110 are retained in addition to the protocol seed reservations because the immutable held-out formal result records them as outer_seed/comparison_outer_seed values used by the executed comparator path.",
+    "R01-12F formal comparator execution RNG identities 12101 through 12110 are retained in addition to the protocol seed reservations because the immutable held-out formal result records them as comparator_seed values; the frozen comparator producer binds comparator_seed to seed_offset 12001 plus each held-out world seed 100 through 109.",
     "The original R01-15 Actions artifact was recovered without rerun and its durable identity-only audit matches the fixed artifact ZIP and raw-result SHA-256 values, observed development seeds/worlds, and sealed held-out reservations.",
     "Both consumed identities and unexecuted reserved held-out identities are collision material.",
     "authoritative_complete=true opens only the collision-registry gate. This file is not an execution seal and grants no construction, capability, held-out, or formal authority."
