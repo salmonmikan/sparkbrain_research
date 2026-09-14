@@ -1,0 +1,86 @@
+{
+  "registry_id": "rv02-rd005-retained-identities-v1",
+  "status": "AUTHORITATIVE_COMPLETE_FOR_PRE_RD005_COLLISION_CHECK",
+  "authoritative_complete": true,
+  "scope": "All retained or consumed RV02 development identity evidence committed under artifacts/research/rv02 plus immutable RD002/RD003/RD004 evidence anchors as reviewed on 2026-09-14. The prospective RD005 seed is excluded from prior identity evidence and must independently remain fresh.",
+  "retained_evidence_root": "artifacts/research/rv02",
+  "retained_evidence_root_entries": [
+    "README.md",
+    "development-feasibility-v1",
+    "local-execution-history.bundle",
+    "rd001",
+    "rd002",
+    "rd003",
+    "rd004",
+    "smoke-v1-invalid",
+    "smoke-v2"
+  ],
+  "structured_manifest_sources": [
+    {
+      "path": "artifacts/research/rv02/development-feasibility-v1/manifest.json",
+      "classification": "executed-development-evidence",
+      "expected_protocol": "rv02-development-feasibility-v1"
+    },
+    {
+      "path": "artifacts/research/rv02/smoke-v2/manifest.json",
+      "classification": "executed-development-smoke",
+      "expected_protocol": "rv02-development-feasibility-v1"
+    },
+    {
+      "path": "artifacts/research/rv02/rd001/manifest.json",
+      "classification": "executed-development-evidence",
+      "expected_protocol": "rv02-rd001-development"
+    },
+    {
+      "path": "artifacts/research/rv02/rd002/manifest.json",
+      "classification": "accepted-preserved-development-evidence",
+      "expected_protocol": "rv02-rd002-development"
+    },
+    {
+      "path": "artifacts/research/rv02/smoke-v1-invalid/manifest.json",
+      "classification": "invalid-diagnostic-history-identity-only",
+      "expected_protocol": "rv02-development-feasibility-v1"
+    }
+  ],
+  "preregistration_sources": [
+    {
+      "path": "docs/research/RV02_RD003_ONLINE_HIDDEN_ELIGIBILITY_PREREG.md",
+      "classification": "consumed-development-identity-inherits-exposed-worlds"
+    },
+    {
+      "path": "docs/research/RV02_RD004_RELATIVE_PROBE_CLOCK_PREREG.md",
+      "classification": "consumed-development-identity-inherits-exposed-worlds"
+    }
+  ],
+  "immutable_ref_anchors": {
+    "preserve/rv02-rd002-accepted-development": "24af1858cb4a8930039b85442583d2bf535a3a49",
+    "freeze/rv02-rd003-development-source": "79a949568b2a9a8ee18c40e9b356c564422c0127",
+    "preserve/rv02-rd003-attempt-001": "cfe0903b6f2e1d16a6b5581ae004502dabdf62b5",
+    "freeze/rv02-rd004-development-source": "75268dd804f0ef113869be172adf575ac22523a0",
+    "preserve/rv02-rd004-attempt-001": "2efaf81119a32087b2102bbdbff1af61cbc6bf16"
+  },
+  "consumed_or_reserved_seed_ids": [
+    92001
+  ],
+  "consumed_or_reserved_world_ids": [
+    "rv02-development:92001:capacity-pressure",
+    "rv02-development:92001:dense-load",
+    "rv02-development:92001:disjoint-routes",
+    "rv02-development:92001:opposing-reversal",
+    "rv02-development:92001:shared-cue",
+    "rv02-development:92001:shared-prefix"
+  ],
+  "invalid_evidence_policy": {
+    "path": "artifacts/research/rv02/smoke-v1-invalid",
+    "scientific_result_eligible": false,
+    "identity_collision_relevant": true,
+    "reason": "The retained smoke is internally inconsistent and is not scientific evidence, but its attempted namespace remains historical collision provenance. Its seed/world namespace is already covered by seed 92001 and the canonical six exposed development worlds."
+  },
+  "prospective_rd005": {
+    "fresh_seed": 92505,
+    "self_certification_allowed": false,
+    "included_in_prior_registry": false,
+    "freshness_rule": "Seed/world freshness is established only by absence from this independently reconstructed prior registry; the RD005 package cannot add itself to or certify the prior registry."
+  },
+  "review_record": "docs/research/RV02_RD005_RETAINED_IDENTITY_REGISTRY_AUDIT.md"
+}
