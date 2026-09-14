@@ -1,14 +1,12 @@
 """Bound preflight for prospective RV02 RD005 D1 construction.
 
-This module closes a package-integrity gap without opening capability. The legacy
-construction runner already validates source/collision identities and performs
-source-checkout verification before allocating an output identity, but its input
-schema historically accepted any syntactically valid package-plan digest. This
-wrapper recomputes the canonical :class:`RD005DevelopmentPackagePlan` digest and
-requires an exact match before delegating the exact same bytes to construction.
+This module closes package/runtime integrity gaps without opening capability. It
+recomputes the canonical :class:`RD005DevelopmentPackagePlan` digest, requires
+the prospectively fixed CPython runtime, and delegates the exact same verified
+input bytes to construction.
 
-No D1 output is created by the preflight itself. Capability, held-out and formal
-execution remain closed.
+No D1 output is created until all preflight checks pass. Capability, held-out and
+formal execution remain closed.
 """
 
 from __future__ import annotations
@@ -21,6 +19,7 @@ from sparkbrain.research.rv02_rd005_construction_runner import (
     run_construction_from_bytes,
 )
 from sparkbrain.research.rv02_rd005_development_package import RD005DevelopmentPackagePlan
+from sparkbrain.research.rv02_rd005_execution_binding import verify_rd005_d1_runtime
 
 
 def verify_package_plan_binding(raw_input: bytes) -> str:
@@ -47,8 +46,9 @@ def run_bound_construction(
     input_path: Path,
     repo_root: Path,
 ) -> Path:
-    """Verify and construct from one immutable in-memory input identity."""
+    """Verify runtime/package binding and construct from one in-memory identity."""
 
+    verify_rd005_d1_runtime()
     raw = input_path.read_bytes()
     verify_package_plan_binding(raw)
     return run_construction_from_bytes(raw=raw, repo_root=repo_root)
@@ -56,10 +56,10 @@ def run_bound_construction(
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
-        description="Run prospective RV02 RD005 D1 with canonical package-plan preflight."
+        description="Run prospective RV02 RD005 D1 with exact runtime/package preflight."
     )
     parser.add_argument("--input", type=Path, required=True)
-    parser.add_argument("--repo-root", type=Path, default=Path("."))
+    parser.add_argument("--repo-root", type=Path, required=True)
     args = parser.parse_args(argv)
     run_bound_construction(input_path=args.input, repo_root=args.repo_root)
     return 0
