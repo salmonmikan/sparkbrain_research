@@ -9,6 +9,7 @@ from sparkbrain.research.rv02_rd005_development_package import (
     RD005SourceManifest,
     RD005SourceManifestEntry,
 )
+from sparkbrain.research.rv02_rd005_execution_binding import RD005_D1_EXECUTION_BINDING
 
 SOURCE_SHA = "a" * 40
 FILE_SHA = "b" * 64
@@ -37,7 +38,7 @@ def _registry() -> RD005CollisionRegistry:
     )
 
 
-def test_rd005_package_plan_is_deterministic_and_execution_disabled() -> None:
+def test_rd005_package_plan_is_deterministic_and_construction_only_bound() -> None:
     plan = RD005DevelopmentPackagePlan(
         source_manifest=_manifest(),
         collision_registry=_registry(),
@@ -57,9 +58,14 @@ def test_rd005_package_plan_is_deterministic_and_execution_disabled() -> None:
     assert state["learner_or_probe_executed"] is False
     assert state["held_out_capability_allowed"] is False
     assert state["formal_execution_allowed"] is False
-    assert state["construction_wrapper_bound"] is False
+    assert state["construction_wrapper_bound"] is True
+    assert state["construction_command_bound"] is True
     assert state["capability_wrapper_bound"] is False
-    assert state["python_runtime_bound"] is False
+    assert state["python_runtime_bound"] is True
+    assert (
+        state["construction_execution_binding_sha256"]
+        == RD005_D1_EXECUTION_BINDING.binding_sha256
+    )
     assert plan.run_id == plan.run_id
     assert plan.package_plan_sha256 == plan.package_plan_sha256
     assert plan.output_relpath.startswith("artifacts/rv02/rd005/development/")
