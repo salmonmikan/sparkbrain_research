@@ -99,3 +99,16 @@ def test_builder_rejects_missing_bound_path(
 
     with pytest.raises(ValueError, match="source path is missing"):
         builder.build_source_manifest(repo)
+
+
+def test_builder_rejects_existing_but_untracked_bound_path(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    repo = _init_repo(tmp_path)
+    (repo / "untracked.txt").write_text("not committed\n", encoding="utf-8")
+    _patch_required_paths(monkeypatch, {"source.txt", "untracked.txt"})
+    monkeypatch.setattr(builder, "_EXTRA_PROVENANCE_PATHS", frozenset({"builder.txt"}))
+
+    with pytest.raises(ValueError, match="not tracked by Git"):
+        builder.build_source_manifest(repo)
