@@ -44,6 +44,7 @@ RD005_REQUIRED_SOURCE_PATHS = frozenset(
         "docs/research/RV02_RD005_RETAINED_IDENTITY_REGISTRY_AUDIT.md",
         "docs/research/RV02_RD005_RETAINED_IDENTITY_REGISTRY.json",
         "docs/research/RV02_RD005_RETAINED_IDENTITY_REGISTRY_TECHNICAL_REVIEW.md",
+        "docs/research/RV02_RD005_CONSTRUCTION_INPUT_BINDING_TECHNICAL_REVIEW.md",
         "artifacts/research/rv02/README.md",
         "artifacts/research/rv02/local-execution-history.bundle",
         "artifacts/research/rv02/development-feasibility-v1/manifest.json",
