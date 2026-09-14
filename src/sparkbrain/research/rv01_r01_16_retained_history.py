@@ -53,7 +53,7 @@ _EVIDENCE_BLOBS = {
         "d8321e18561c3e1a2feeeea9ab94f6c54e0e926a"
     ),
     "artifacts/research/rv01/r01_12f/heldout_formal_result.json": (
-        "46871db1c895f47a2913a2feeeea9ab94f6c54e0e926a"
+        "46871db1c895f47a2913a2a0eb59f92ecc4e7a23"
     ),
     "src/sparkbrain/research/rv01/activity_matched_contract.py": (
         "27a640681da2e05337a771633e16f89af3bf7412"
