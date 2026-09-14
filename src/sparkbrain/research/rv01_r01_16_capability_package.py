@@ -240,11 +240,16 @@ class R0116CapabilityPackage:
     source_manifest: R0116SourceManifest
     retained_binding: R0116RetainedCapabilityBinding
     control_mode: ControlMode
+    single_host_ownership_asserted: bool = False
 
     def validate(self) -> None:
         self.source_manifest.validate()
         if self.control_mode not in {"distributed-github", "local-offline"}:
             raise ValueError("unsupported R01-16 capability control mode")
+        if self.control_mode == "local-offline" and not self.single_host_ownership_asserted:
+            raise RuntimeError(
+                "R01-16 local-offline capability requires explicit single-host ownership"
+            )
         if (
             self.retained_binding.construction_census_sha256
             != R01_16_CONSTRUCTION_CENSUS_SHA256
@@ -282,6 +287,7 @@ class R0116CapabilityPackage:
             "python_implementation": R01_16_CAPABILITY_PYTHON_IMPLEMENTATION,
             "python_version": R01_16_CAPABILITY_PYTHON_VERSION,
             "control_mode": self.control_mode,
+            "single_host_ownership_asserted": self.single_host_ownership_asserted,
             "freeze_ref": R01_16_CAPABILITY_FREEZE_REF,
             "remote_started_ref": R01_16_CAPABILITY_CONTROL_REF,
             "preserve_ref": R01_16_CAPABILITY_PRESERVE_REF,
@@ -318,12 +324,14 @@ def execute_capability_once(
     source_manifest_path: Path,
     construction_census_path: Path,
     control_mode: ControlMode,
+    single_host_ownership_asserted: bool = False,
 ) -> Path:
     """Consume one R01-16 development capability identity exactly once locally.
 
     In distributed mode the caller must have already acquired the immutable
     remote STARTED/control ref. This function owns the second, local atomic claim
-    and has deliberately no retry path.
+    and has deliberately no retry path. Local/offline execution is accepted only
+    when the caller explicitly asserts single-host ownership for the identity.
     """
 
     root = repo_root.resolve(strict=True)
@@ -335,6 +343,7 @@ def execute_capability_once(
         source_manifest=manifest,
         retained_binding=retained,
         control_mode=control_mode,
+        single_host_ownership_asserted=single_host_ownership_asserted,
     )
     package.validate()
 
