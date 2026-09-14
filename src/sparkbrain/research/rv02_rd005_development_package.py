@@ -17,6 +17,7 @@ from dataclasses import dataclass
 from pathlib import PurePosixPath
 
 from .rv02_rd005_construction_artifact import RD005_FRESH_SEED, RD005_PLAN_ID
+from .rv02_rd005_execution_binding import RD005_D1_EXECUTION_BINDING
 from .rv02_rd005_gate_construction import RD005_PROTOCOL_ID
 
 RD005_REQUIRED_SOURCE_PATHS = frozenset(
@@ -26,6 +27,8 @@ RD005_REQUIRED_SOURCE_PATHS = frozenset(
         "src/sparkbrain/research/rv02_rd005_artifact_verifier.py",
         "src/sparkbrain/research/rv02_rd005_development_package.py",
         "src/sparkbrain/research/rv02_rd005_construction_runner.py",
+        "src/sparkbrain/research/rv02_rd005_bound_construction.py",
+        "src/sparkbrain/research/rv02_rd005_execution_binding.py",
         "src/sparkbrain/research/rv02_rd005_source_binding.py",
         "src/sparkbrain/research/rv02_rd005_retained_registry.py",
         "src/sparkbrain/research/rv02_rd003_online.py",
@@ -195,6 +198,7 @@ class RD005DevelopmentPackagePlan:
     def validate(self) -> None:
         self.source_manifest.validate()
         self.collision_registry.validate()
+        RD005_D1_EXECUTION_BINDING.validate()
 
     @property
     def run_id(self) -> str:
@@ -218,6 +222,7 @@ class RD005DevelopmentPackagePlan:
             "source_git_sha": self.source_manifest.source_git_sha,
             "source_manifest_sha256": self.source_manifest.manifest_sha256,
             "collision_registry_sha256": self.collision_registry.registry_sha256,
+            "construction_execution_binding_sha256": RD005_D1_EXECUTION_BINDING.binding_sha256,
             "run_id": self.run_id,
             "output_relpath": self.output_relpath,
             "overwrite_allowed": False,
@@ -232,9 +237,10 @@ class RD005DevelopmentPackagePlan:
             "learner_or_probe_executed": False,
             "held_out_capability_allowed": False,
             "formal_execution_allowed": False,
-            "construction_wrapper_bound": False,
+            "construction_wrapper_bound": True,
+            "construction_command_bound": True,
             "capability_wrapper_bound": False,
-            "python_runtime_bound": False,
+            "python_runtime_bound": True,
         }
 
     @property
