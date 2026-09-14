@@ -38,7 +38,7 @@ def _connection_inventory(field: Any) -> tuple[ConnectionState, ...]:
             plastic=bool(connection.plastic),
         )
         for connection in sorted(
-            field.topology.connections,
+            field.connections.values(),
             key=lambda row: (row.source_id, row.target_id),
         )
     )
