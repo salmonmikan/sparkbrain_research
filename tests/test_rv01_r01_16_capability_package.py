@@ -110,13 +110,16 @@ def test_capability_package_identity_binds_source_retained_state_and_mode() -> N
     assert first["formal_execution_allowed"] is False
 
 
-def test_load_source_manifest_rejects_malformed_entry(tmp_path: Path) -> None:
+def test_load_source_manifest_requires_capability_boundary_files(tmp_path: Path) -> None:
     manifest = _manifest().state_dict()
-    manifest["entries"].append("not-an-entry")
+    missing_path = "scripts/run_rv01_r01_16_capability.py"
+    manifest["entries"] = [
+        row for row in manifest["entries"] if row["path"] != missing_path
+    ]
     path = tmp_path / "manifest.json"
     path.write_text(json.dumps(manifest), encoding="utf-8")
 
-    with pytest.raises((TypeError, KeyError, ValueError)):
+    with pytest.raises(ValueError, match="missing required paths"):
         load_source_manifest(path)
 
 
