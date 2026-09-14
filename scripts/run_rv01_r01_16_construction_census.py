@@ -10,6 +10,20 @@ from sparkbrain.research.rv01_r01_16_development_package import (
     R0116SourceManifestEntry,
 )
 
+_CENSUS_REQUIRED_MANIFEST_PATHS = frozenset(
+    {
+        ".github/workflows/rv01-r01-16-construction-census-execute-once.yml",
+        "scripts/run_rv01_r01_16_construction_census.py",
+        "src/sparkbrain/research/rv01/interference_contract.py",
+        "src/sparkbrain/research/rv01/interference_runner.py",
+        "src/sparkbrain/research/rv01/physical_learner_bridge.py",
+        "src/sparkbrain/research/rv01/physical_plasticity.py",
+        "src/sparkbrain/research/rv01_r01_16_construction_census.py",
+        "src/sparkbrain/research/rv01_r01_16_retained_history.py",
+        "src/sparkbrain/research/rv01_r01_16_worlds.py",
+    }
+)
+
 
 def _load_manifest(path: Path) -> R0116SourceManifest:
     payload = json.loads(path.read_text(encoding="utf-8"))
@@ -29,6 +43,10 @@ def _load_manifest(path: Path) -> R0116SourceManifest:
     if len(manifest.entries) != len(raw_entries):
         raise ValueError("R01-16 source manifest entries must all be objects")
     manifest.validate()
+    paths = {entry.path for entry in manifest.entries}
+    missing = sorted(_CENSUS_REQUIRED_MANIFEST_PATHS.difference(paths))
+    if missing:
+        raise ValueError(f"R01-16 census source manifest is missing runtime paths: {missing}")
     return manifest
 
 
