@@ -18,8 +18,9 @@ from sparkbrain.research.rv01_r01_16_retained_history import (
 def test_r01_16_known_retained_namespace_is_deterministic_and_collision_free() -> None:
     seed_ids, world_ids = known_retained_namespace()
 
-    assert len(seed_ids) == 58
+    assert len(seed_ids) == 68
     assert len(world_ids) == 290
+    assert set(range(12101, 12111)).issubset(seed_ids)
     assert seed_ids == tuple(sorted(set(seed_ids)))
     assert world_ids == tuple(sorted(set(world_ids)))
     assert set(seed_ids).isdisjoint(R01_16_DEVELOPMENT_SEEDS)
@@ -40,6 +41,9 @@ def test_r01_16_retained_history_builder_opens_only_after_bound_audits() -> None
     assert "r01-12-development-contract-and-manifest" in (
         snapshot.verified_evidence_classes
     )
+    assert "r01-12-formal-comparator-execution-seed-ledger" in (
+        snapshot.verified_evidence_classes
+    )
     assert "r01-15-raw-development-world-identity-audit" in (
         snapshot.verified_evidence_classes
     )
@@ -50,7 +54,10 @@ def test_r01_16_retained_history_builder_opens_only_after_bound_audits() -> None
     registry = snapshot.to_collision_registry()
     registry.validate()
     assert registry.authoritative_complete is True
-    assert len(registry.consumed_or_reserved_seed_ids) == 58
+    assert len(registry.consumed_or_reserved_seed_ids) == 68
+    assert set(range(12101, 12111)).issubset(
+        registry.consumed_or_reserved_seed_ids
+    )
     assert len(registry.consumed_or_reserved_world_ids) == 290
 
 
