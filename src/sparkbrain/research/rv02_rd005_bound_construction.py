@@ -14,9 +14,7 @@ execution remain closed.
 from __future__ import annotations
 
 import argparse
-import json
 from pathlib import Path
-from typing import Any, Mapping
 
 from sparkbrain.research.rv02_rd005_construction_runner import (
     _load_input,
@@ -25,7 +23,7 @@ from sparkbrain.research.rv02_rd005_construction_runner import (
 from sparkbrain.research.rv02_rd005_development_package import RD005DevelopmentPackagePlan
 
 
-def verify_package_plan_binding(raw_input: Mapping[str, Any]) -> str:
+def verify_package_plan_binding(raw_input: bytes) -> str:
     """Return the canonical package-plan digest or fail closed on mismatch."""
 
     identities, collision_registry, source_manifest = _load_input(raw_input)
@@ -51,9 +49,7 @@ def run_bound_construction(
 ) -> Path:
     """Verify the bound package plan before invoking D1 construction."""
 
-    raw = json.loads(input_path.read_text(encoding="utf-8"))
-    if not isinstance(raw, Mapping):
-        raise ValueError("RD005 construction input must be a JSON object")
+    raw = input_path.read_bytes()
     verify_package_plan_binding(raw)
     return run_construction(input_path=input_path, repo_root=repo_root)
 
