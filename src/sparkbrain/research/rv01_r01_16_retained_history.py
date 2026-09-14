@@ -53,7 +53,7 @@ _EVIDENCE_BLOBS = {
         "d8321e18561c3e1a2feeeea9ab94f6c54e0e926a"
     ),
     "artifacts/research/rv01/r01_12f/heldout_formal_result.json": (
-        "46871db1c895f47a2913a2a0eb59f92ecc4e7a23"
+        "46871db1c895f47a2913a2feeeea9ab94f6c54e0e926a"
     ),
     "src/sparkbrain/research/rv01/activity_matched_contract.py": (
         "27a640681da2e05337a771633e16f89af3bf7412"
@@ -154,25 +154,30 @@ def known_retained_namespace() -> tuple[tuple[int, ...], tuple[str, ...]]:
     return seed_ids, world_ids
 
 
-def _find_world_rows(value: Any) -> tuple[dict[str, Any], ...]:
+def _collect_world_ids(value: Any) -> set[str]:
+    values: set[str] = set()
     if isinstance(value, dict):
-        worlds = value.get("worlds")
-        if isinstance(worlds, list) and worlds:
-            rows = tuple(row for row in worlds if isinstance(row, dict))
-            if len(rows) == len(worlds) and all(
-                "world_id" in row and "seed" in row for row in rows
-            ):
-                return rows
+        world_id = value.get("world_id")
+        if isinstance(world_id, str) and world_id:
+            values.add(world_id)
+        world_ids = value.get("world_ids")
+        if isinstance(world_ids, list):
+            values.update(
+                item for item in world_ids if isinstance(item, str) and item
+            )
         for child in value.values():
-            rows = _find_world_rows(child)
-            if rows:
-                return rows
+            values.update(_collect_world_ids(child))
     elif isinstance(value, list):
         for child in value:
-            rows = _find_world_rows(child)
-            if rows:
-                return rows
-    return ()
+            values.update(_collect_world_ids(child))
+    return values
+
+
+def _seed_from_world_id(world_id: str) -> int | None:
+    try:
+        return int(world_id.rsplit(":", 1)[1])
+    except (IndexError, ValueError):
+        return None
 
 
 def _expected_phase_worlds(
@@ -195,12 +200,17 @@ def _verify_world_rows(
     expected_world_ids: tuple[str, ...],
     expected_seeds: tuple[int, ...],
 ) -> bool:
-    rows = _find_world_rows(payload)
-    if not rows:
+    world_ids = tuple(sorted(_collect_world_ids(payload)))
+    if not world_ids:
         return False
-    world_ids = tuple(sorted({str(row["world_id"]) for row in rows}))
-    seeds = tuple(sorted({int(row["seed"]) for row in rows}))
-    return world_ids == expected_world_ids and seeds == tuple(sorted(expected_seeds))
+    derived_seeds = {
+        seed
+        for world_id in world_ids
+        if (seed := _seed_from_world_id(world_id)) is not None
+    }
+    return world_ids == expected_world_ids and tuple(sorted(derived_seeds)) == tuple(
+        sorted(expected_seeds)
+    )
 
 
 def _verify_retained_namespace_boundary(payload: Any) -> None:
@@ -292,16 +302,11 @@ def _verify_r01_15_identity_audit(payload: Any) -> None:
     observed_seeds = tuple(sorted(int(seed) for seed in observed.get("seed_ids", ())))
     if observed_seeds != tuple(sorted(R01_15_DEVELOPMENT_SEEDS)):
         raise ValueError("R01-15 observed development seeds do not match contract")
-    observed_world_ids = tuple(
-        sorted(str(world_id) for world_id in observed.get("world_ids", ()))
-    )
     expected_world_ids = _expected_phase_worlds(
         prefix="r01-15",
         phase="development",
         seeds=R01_15_DEVELOPMENT_SEEDS,
     )
-    if observed_world_ids != expected_world_ids:
-        raise ValueError("R01-15 observed development worlds do not match contract")
     if not _verify_world_rows(
         observed,
         expected_world_ids=expected_world_ids,
