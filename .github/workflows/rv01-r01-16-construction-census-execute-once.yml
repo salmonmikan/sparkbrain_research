@@ -1,0 +1,139 @@
+name: RV01 R01-16 Frozen Construction Census
+
+on:
+  push:
+    branches:
+      - "ops/rv01-r01-16-construction-census-execution-20260915"
+
+permissions:
+  contents: read
+
+env:
+  FREEZE_REF: freeze/rv01-r01-16-construction-census-source
+  OUTPUT_ROOT: artifacts/rv01/r01-16/development
+
+jobs:
+  execute-construction-census-once:
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    steps:
+      - name: Checkout pushed source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+
+      - name: Verify exact immutable construction source
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin "+refs/heads/${FREEZE_REF}:refs/remotes/origin/${FREEZE_REF}"
+          frozen_sha="$(git rev-parse "refs/remotes/origin/${FREEZE_REF}")"
+          test "$(git rev-parse HEAD)" = "${frozen_sha}"
+          test "${GITHUB_SHA}" = "${frozen_sha}"
+          test -f docs/research/RV01_R01_16_PROPAGATION_FACTORIZATION_PREREGISTRATION.md
+          test -f docs/research/RV01_R01_16_PREREGISTRATION_AMENDMENT_001.md
+          test -f docs/research/RV01_R01_16_DEVELOPMENT_IDENTITY_BINDING.md
+          test -f scripts/run_rv01_r01_16_construction_census.py
+          test -f src/sparkbrain/research/rv01_r01_16_construction_census.py
+          test -f src/sparkbrain/research/rv01_r01_16_worlds.py
+
+      - name: Set up exact Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.11.16"
+          cache: pip
+
+      - name: Install frozen package
+        run: python -m pip install -e .
+
+      - name: Build exact transitive source manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib
+          import json
+          import subprocess
+          from pathlib import Path
+
+          explicit = {
+              ".github/workflows/rv01-r01-16-construction-census-execute-once.yml",
+              "docs/research/RV01_R01_16_DEVELOPMENT_IDENTITY_BINDING.md",
+              "docs/research/RV01_R01_16_PREREGISTRATION_AMENDMENT_001.md",
+              "docs/research/RV01_R01_16_PROPAGATION_FACTORIZATION_PREREGISTRATION.md",
+              "scripts/run_rv01_r01_16_construction_census.py",
+          }
+          tracked = subprocess.check_output(
+              ["git", "ls-files", "src/sparkbrain"], text=True
+          ).splitlines()
+          paths = sorted(set(tracked).union(explicit))
+          entries = []
+          for raw in paths:
+              path = Path(raw)
+              if not path.is_file():
+                  raise SystemExit(f"missing manifest path: {raw}")
+              entries.append(
+                  {"path": raw, "sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
+              )
+          payload = {
+              "source_git_sha": subprocess.check_output(
+                  ["git", "rev-parse", "HEAD"], text=True
+              ).strip(),
+              "entries": entries,
+          }
+          Path("/tmp/rv01-r01-16-source-manifest.json").write_text(
+              json.dumps(payload, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          PY
+
+      - name: Execute construction-only census exactly once
+        shell: bash
+        run: |
+          set -euo pipefail
+          test ! -e "${OUTPUT_ROOT}"
+          python scripts/run_rv01_r01_16_construction_census.py \
+            --source-manifest /tmp/rv01-r01-16-source-manifest.json \
+            --repo-root .
+
+      - name: Record execution metadata and hashes
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/rv01-r01-16-metadata
+          frozen_sha="$(git rev-parse "refs/remotes/origin/${FREEZE_REF}")"
+          cat > /tmp/rv01-r01-16-metadata/execution_metadata.json <<EOF
+          {
+            "protocol": "rv01-r01-16-propagation-factorization-v1",
+            "stage": "construction-census-only",
+            "frozen_source_git_sha": "${frozen_sha}",
+            "freeze_ref": "${FREEZE_REF}",
+            "workflow_run_id": "${GITHUB_RUN_ID}",
+            "workflow_run_attempt": "${GITHUB_RUN_ATTEMPT}",
+            "python_version": "$(python --version 2>&1)",
+            "capability_output_opened": false,
+            "probe_executed": false,
+            "held_out_capability_executed": false,
+            "formal_execution_allowed": false,
+            "same_source_rerun_allowed": false
+          }
+          EOF
+          cp /tmp/rv01-r01-16-source-manifest.json \
+            /tmp/rv01-r01-16-metadata/source_manifest.json || true
+          if [ -d "${OUTPUT_ROOT}" ]; then
+            find "${OUTPUT_ROOT}" -type f -print0 | sort -z | xargs -0 sha256sum \
+              > /tmp/rv01-r01-16-metadata/output_sha256.txt
+          fi
+
+      - name: Upload raw construction evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rv01-r01-16-construction-census-${{ github.run_id }}
+          path: |
+            artifacts/rv01/r01-16/development
+            /tmp/rv01-r01-16-metadata
+          if-no-files-found: error
+          retention-days: 90
