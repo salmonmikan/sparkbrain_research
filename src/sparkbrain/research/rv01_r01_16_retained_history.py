@@ -40,6 +40,8 @@ _BOUNDARY_AUDIT_PATH = (
 _R01_15_IDENTITY_AUDIT_PATH = (
     "docs/research/RV01_R01_15_RAW_ARTIFACT_IDENTITY_AUDIT_20260914.json"
 )
+_R01_12_FORMAL_PATH = "artifacts/research/rv01/r01_12f/heldout_formal_result.json"
+_R01_12_FORMAL_EXECUTION_SEEDS = tuple(range(12101, 12111))
 
 _EVIDENCE_BLOBS = {
     _BOUNDARY_AUDIT_PATH: "2fa75567a8a9048a8dc48c237545e5185c435db0",
@@ -52,9 +54,7 @@ _EVIDENCE_BLOBS = {
     "artifacts/research/rv01/r01_12f/formal_result_manifest.json": (
         "d8321e18561c3e1a2feeeea9ab94f6c54e0e926a"
     ),
-    "artifacts/research/rv01/r01_12f/heldout_formal_result.json": (
-        "46871db1c895f47a2913a2a0eb59f92ecc4e7a23"
-    ),
+    _R01_12_FORMAL_PATH: "46871db1c895f47a2913a2a0eb59f92ecc4e7a23",
     "src/sparkbrain/research/rv01/activity_matched_contract.py": (
         "27a640681da2e05337a771633e16f89af3bf7412"
     ),
@@ -116,6 +116,7 @@ def known_retained_namespace() -> tuple[tuple[int, ...], tuple[str, ...]]:
             {
                 *DEVELOPMENT_SEEDS,
                 *HELD_OUT_SEEDS,
+                *_R01_12_FORMAL_EXECUTION_SEEDS,
                 *R01_13_DEVELOPMENT_SEEDS,
                 *R01_13_HELD_OUT_SEEDS,
                 *R01_14_DEVELOPMENT_SEEDS,
@@ -173,6 +174,20 @@ def _collect_world_ids(value: Any) -> set[str]:
     return values
 
 
+def _collect_named_ints(value: Any, field_name: str) -> set[int]:
+    values: set[int] = set()
+    if isinstance(value, dict):
+        field_value = value.get(field_name)
+        if isinstance(field_value, int) and not isinstance(field_value, bool):
+            values.add(field_value)
+        for child in value.values():
+            values.update(_collect_named_ints(child, field_name))
+    elif isinstance(value, list):
+        for child in value:
+            values.update(_collect_named_ints(child, field_name))
+    return values
+
+
 def _seed_from_world_id(world_id: str) -> int | None:
     try:
         return int(world_id.rsplit(":", 1)[1])
@@ -211,6 +226,20 @@ def _verify_world_rows(
     return world_ids == expected_world_ids and tuple(sorted(derived_seeds)) == tuple(
         sorted(expected_seeds)
     )
+
+
+def _verify_r01_12_formal_execution_seeds(payload: Any) -> tuple[int, ...]:
+    outer = tuple(sorted(_collect_named_ints(payload, "outer_seed")))
+    comparison = tuple(sorted(_collect_named_ints(payload, "comparison_outer_seed")))
+    observed = tuple(sorted(set(outer) | set(comparison)))
+    if not outer or not comparison:
+        raise ValueError("R01-12F comparator execution seed ledger is missing")
+    if observed != _R01_12_FORMAL_EXECUTION_SEEDS:
+        raise ValueError(
+            "R01-12F comparator execution seeds changed: "
+            f"expected {_R01_12_FORMAL_EXECUTION_SEEDS}, got {observed}"
+        )
+    return observed
 
 
 def _verify_retained_namespace_boundary(payload: Any) -> None:
@@ -401,9 +430,7 @@ def build_retained_history_snapshot(repo_root: Path) -> RetainedHistorySnapshot:
         raise ValueError("R01-12D retained world identities do not match its contract")
     verified.append("r01-12-development-contract-and-manifest")
 
-    r01_12f = _load_json(
-        root / "artifacts/research/rv01/r01_12f/heldout_formal_result.json"
-    )
+    r01_12f = _load_json(root / _R01_12_FORMAL_PATH)
     if _verify_world_rows(
         r01_12f,
         expected_world_ids=_expected_phase_worlds(
@@ -418,6 +445,8 @@ def build_retained_history_snapshot(repo_root: Path) -> RetainedHistorySnapshot:
         unresolved.append(
             "r01-12-held-out-formal-world-ledger-not-explicitly-recovered"
         )
+    _verify_r01_12_formal_execution_seeds(r01_12f)
+    verified.append("r01-12-formal-comparator-execution-seed-ledger")
 
     r01_13 = _load_json(root / "artifacts/research/rv01/r01_13/development_result.json")
     if _verify_world_rows(
