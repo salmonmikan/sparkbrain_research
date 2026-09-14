@@ -1,8 +1,8 @@
 """Prospective exposed-development capability runner for RV01 R01-16.
 
 This module implements the already-preregistered F0/FW/FD/FWD propagation
-factorization without granting execution authority.  It contains no held-out or
-formal path and performs no I/O.  A future frozen wrapper must bind the exact
+factorization without granting execution authority. It contains no held-out or
+formal path and performs no I/O. A future frozen wrapper must bind the exact
 source/runtime/package identity and acquire an atomic remote STARTED claim before
 calling ``run_development_capability_suite`` exactly once.
 """
@@ -16,7 +16,6 @@ from sparkbrain.v04.contracts import SynapticArrival
 from sparkbrain.v04.field import TemporalExcitableField
 from sparkbrain.v06.foundation import digest
 
-from .rv01.interference_contract import InterferencePhase
 from .rv01.interference_runner import (
     _INITIAL_WEIGHT,
     _MAXIMUM_PROBE_SPIKES,
@@ -83,7 +82,9 @@ def _traversal_metrics(trace: tuple[int, ...]) -> dict[str, Any]:
     }
 
 
-def _prefix_to_distinct_budget(trace: tuple[int, ...], budget: int) -> tuple[int, ...] | None:
+def _prefix_to_distinct_budget(
+    trace: tuple[int, ...], budget: int
+) -> tuple[int, ...] | None:
     if budget < 0:
         raise ValueError("distinct budget must be non-negative")
     if budget == 0:
@@ -222,9 +223,10 @@ def _run_arm(
 
 
 def _behavior_signature(row: dict[str, Any]) -> tuple[object, ...]:
+    """Return only preregistered behavioral endpoints, not raw timing evidence."""
+
     return (
         tuple(row["generated_units"]),
-        tuple(row["generated_times_ms"]),
         row["ordered_retention_fraction"],
         row["exact_route_recovered"],
         row["contamination_count"],
@@ -241,6 +243,7 @@ def run_capability_world(world: R0116DevelopmentWorldSpec) -> dict[str, Any]:
     trained, pre_training = _train_shared_field(world)
     post_training = _connection_inventory(trained)
     checkpoint = trained.state_dict()
+    common_checkpoint_hash = digest(checkpoint)
     if _queue_size(trained) != 0:
         raise RuntimeError("R01-16 common capability checkpoint queue is not empty")
     construction = R01_16FactorizationConstruction(
@@ -264,6 +267,8 @@ def run_capability_world(world: R0116DevelopmentWorldSpec) -> dict[str, Any]:
             )
             for arm in _ARMS
         }
+        if arms["F0"]["arm_checkpoint_hash"] != common_checkpoint_hash:
+            raise RuntimeError("R01-16 F0 did not restore the exact common checkpoint")
         common_breadth = min(
             int(row["raw_metrics"]["distinct_unit_count"])
             for row in arms.values()
@@ -299,7 +304,7 @@ def run_capability_world(world: R0116DevelopmentWorldSpec) -> dict[str, Any]:
         "phase": "development",
         "world": world.state_dict(),
         "world_specification_hash": world.specification_hash(),
-        "common_checkpoint_hash": digest(checkpoint),
+        "common_checkpoint_hash": common_checkpoint_hash,
         "pre_training": [row.state_dict() for row in pre_training],
         "post_training": [row.state_dict() for row in post_training],
         "factorization_summary": {
