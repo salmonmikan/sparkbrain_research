@@ -1,0 +1,29 @@
+{
+  "execution_authorization": "GLOBAL_EXPERIMENT_FORMAL_EXECUTION_PREAUTHORIZATION_2026-09-13",
+  "human_review": "HUMAN_REVIEW_WAIVED_BY_USER_2026-09-11",
+  "package": {
+    "construction_census_sha256": "7761c1f76485034fd2b6776413dfb95472f65c4ee29636f72ef661c62f456cb2",
+    "construction_preserve_ref": "preserve/rv01-r01-16-construction-census-34881254582",
+    "control_mode": "distributed-github",
+    "formal_execution_allowed": false,
+    "freeze_ref": "freeze/rv01-r01-16-capability-source-20260915",
+    "held_out_capability_allowed": false,
+    "local_started_relpath": "artifacts/rv01/r01-16/capability/_control/rv01-r01-16-capability-02b3d80744d0eb10-65ebe33d70af.STARTED.json",
+    "output_relpath": "artifacts/rv01/r01-16/capability/rv01-r01-16-capability-02b3d80744d0eb10-65ebe33d70af",
+    "preserve_ref": "preserve/rv01-r01-16-capability-20260915",
+    "protocol_id": "rv01-r01-16-propagation-factorization-v1",
+    "python_implementation": "CPython",
+    "python_version": "3.11.16",
+    "remote_started_ref": "control/rv01-r01-16-capability-started-7761c1f7-20260915",
+    "retained_binding_sha256": "65ebe33d70af5c18da9997fc339402503c97c704ad267c347365a6c7d8edeed4",
+    "retry_same_identity_allowed": false,
+    "run_id": "rv01-r01-16-capability-02b3d80744d0eb10-65ebe33d70af",
+    "single_host_ownership_asserted": false,
+    "source_git_sha": "02b3d80744d0eb10cb0d90fc38d3c55729d7ab99",
+    "source_manifest_sha256": "213a2f12fcdc3b80dd5e1081cc504aeaba4c6ed86ebcde7af1900145afec44c8",
+    "stage": "exposed-development-capability",
+    "world_grid_sha256": "b334ab63b12ec967acc60d75242c8518fadc93a0eeb3de8f9c4a9d38d663c432"
+  },
+  "package_sha256": "f9aac396af602dbe06885a5f52d0d6005952412790c22c2a92d648fd1eed3ec8",
+  "status": "STARTED"
+}

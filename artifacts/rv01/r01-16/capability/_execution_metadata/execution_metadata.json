@@ -1,0 +1,15 @@
+{
+  "protocol": "rv01-r01-16-propagation-factorization-v1",
+  "stage": "exposed-development-capability",
+  "frozen_source_git_sha": "02b3d80744d0eb10cb0d90fc38d3c55729d7ab99",
+  "freeze_ref": "freeze/rv01-r01-16-capability-source-20260915",
+  "control_ref": "control/rv01-r01-16-capability-started-7761c1f7-20260915",
+  "construction_ref": "preserve/rv01-r01-16-construction-census-34881254582",
+  "construction_census_sha256": "7761c1f76485034fd2b6776413dfb95472f65c4ee29636f72ef661c62f456cb2",
+  "workflow_run_id": "34903089159",
+  "workflow_run_attempt": "1",
+  "python_version": "Python 3.11.16",
+  "same_identity_rerun_allowed": false,
+  "held_out_capability_executed": false,
+  "formal_execution_allowed": false
+}

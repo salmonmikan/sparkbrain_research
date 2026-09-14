@@ -1,0 +1,36 @@
+{
+  "factor_classification": {
+    "combined": {
+      "cell_disposition_counts": {
+        "COMBINED_SUPPORT_CELL": 100
+      },
+      "classification": "COMBINED_SUPPORTED",
+      "eligible_cell_count": 100,
+      "eligible_world_count": 25
+    },
+    "delay": {
+      "cell_disposition_counts": {
+        "DELAY_DISCORDANT": 46,
+        "DELAY_NEGATIVE_CELL": 54
+      },
+      "classification": "DELAY_MIXED",
+      "eligible_cell_count": 100,
+      "eligible_world_count": 25
+    },
+    "weight": {
+      "cell_disposition_counts": {
+        "WEIGHT_SUPPORT_CELL": 100
+      },
+      "classification": "WEIGHT_SUPPORTED",
+      "eligible_cell_count": 100,
+      "eligible_world_count": 25
+    }
+  },
+  "formal_execution_allowed": false,
+  "held_out_capability_executed": false,
+  "package_sha256": "f9aac396af602dbe06885a5f52d0d6005952412790c22c2a92d648fd1eed3ec8",
+  "retry_same_identity_allowed": false,
+  "run_id": "rv01-r01-16-capability-02b3d80744d0eb10-65ebe33d70af",
+  "status": "CAPABILITY_COMPLETE",
+  "suite_hash": "c5c5e32160b634680ff5cad726365c38ec3d06c266cc453fcf349d604ee48ffc"
+}
