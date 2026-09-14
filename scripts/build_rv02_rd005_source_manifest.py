@@ -10,6 +10,7 @@ output, score an outcome, create STARTED, or grant execution authority.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import subprocess
 from pathlib import Path
@@ -91,7 +92,7 @@ def build_source_manifest(repo_root: Path) -> RD005SourceManifest:
         entries.append(
             RD005SourceManifestEntry(
                 path=relative_path,
-                sha256=__import__("hashlib").sha256(resolved.read_bytes()).hexdigest(),
+                sha256=hashlib.sha256(resolved.read_bytes()).hexdigest(),
             )
         )
 
