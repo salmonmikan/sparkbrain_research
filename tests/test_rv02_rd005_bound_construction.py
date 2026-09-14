@@ -68,34 +68,45 @@ def test_bound_runner_refuses_mismatch_before_delegating(
     _patch_plan_inputs(monkeypatch, supplied_digest="d" * 64)
     delegated = False
 
-    def _unexpected_delegate(*, input_path: Path, repo_root: Path) -> Path:
+    def _unexpected_delegate(*, raw: bytes, repo_root: Path) -> Path:
         nonlocal delegated
         delegated = True
-        return input_path
+        return repo_root
 
-    monkeypatch.setattr(bound, "run_construction", _unexpected_delegate)
+    monkeypatch.setattr(bound, "run_construction_from_bytes", _unexpected_delegate)
 
     with pytest.raises(ValueError, match="does not match the canonical"):
         bound.run_bound_construction(input_path=input_path, repo_root=tmp_path)
     assert delegated is False
 
 
-def test_bound_runner_delegates_only_after_exact_match(
+def test_bound_runner_delegates_exact_verified_bytes_only(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     input_path = tmp_path / "input.json"
-    input_path.write_text(json.dumps({"fixture": True}), encoding="utf-8")
+    original_raw = json.dumps({"fixture": True}).encode("utf-8")
+    replacement_raw = json.dumps({"fixture": "replaced"}).encode("utf-8")
+    input_path.write_bytes(original_raw)
     _patch_plan_inputs(monkeypatch, supplied_digest=_CANONICAL_DIGEST)
     expected_output = tmp_path / "output"
-    observed: list[tuple[Path, Path]] = []
+    observed: list[tuple[bytes, Path]] = []
 
-    def _delegate(*, input_path: Path, repo_root: Path) -> Path:
-        observed.append((input_path, repo_root))
+    original_verify = bound.verify_package_plan_binding
+
+    def _verify_then_replace(raw: bytes) -> str:
+        result = original_verify(raw)
+        input_path.write_bytes(replacement_raw)
+        return result
+
+    def _delegate(*, raw: bytes, repo_root: Path) -> Path:
+        observed.append((raw, repo_root))
         return expected_output
 
-    monkeypatch.setattr(bound, "run_construction", _delegate)
+    monkeypatch.setattr(bound, "verify_package_plan_binding", _verify_then_replace)
+    monkeypatch.setattr(bound, "run_construction_from_bytes", _delegate)
 
     result = bound.run_bound_construction(input_path=input_path, repo_root=tmp_path)
     assert result == expected_output
-    assert observed == [(input_path, tmp_path)]
+    assert input_path.read_bytes() == replacement_raw
+    assert observed == [(original_raw, tmp_path)]
