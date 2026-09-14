@@ -1,8 +1,9 @@
 """Fail-closed retained-history reconstruction for prospective RV01 R01-16.
 
-This module reconstructs only identity material that is explicitly bound by
-retained repository evidence. It deliberately keeps the resulting snapshot
-non-authoritative while any evidence class remains unresolved.
+The collision authority is deliberately limited to repository-retained consumed
+or reserved seed/world execution identities. Earlier RV01 source exploration is
+not erased or claimed absent; the retained namespace boundary is separately
+bound and audited.
 """
 
 from __future__ import annotations
@@ -33,8 +34,15 @@ from .rv01.traversal_dynamics_contract import (
 from .rv01_r01_16_development_package import R0116CollisionRegistry
 
 _BINDINGS_PATH = "docs/research/RV01_R01_16_RETAINED_HISTORY_BINDINGS.json"
+_BOUNDARY_AUDIT_PATH = (
+    "docs/research/RV01_R01_12_RETAINED_NAMESPACE_BOUNDARY_AUDIT_20260915.json"
+)
+_R01_15_IDENTITY_AUDIT_PATH = (
+    "docs/research/RV01_R01_15_RAW_ARTIFACT_IDENTITY_AUDIT_20260914.json"
+)
 
 _EVIDENCE_BLOBS = {
+    _BOUNDARY_AUDIT_PATH: "2fa75567a8a9048a8dc48c237545e5185c435db0",
     "src/sparkbrain/research/rv01/interference_contract.py": (
         "d1fd0aa35a5b33e6d2908d8208758c9d91f0ed81"
     ),
@@ -65,12 +73,8 @@ _EVIDENCE_BLOBS = {
     "docs/research/RV01_R01_15_DEVELOPMENT_RESULT.md": (
         "bd158008359ae0b54cf67a817fcd12c099b0b8a4"
     ),
+    _R01_15_IDENTITY_AUDIT_PATH: "1b961fa8f63cd512a0aa31ae0e29d0f7b8043cc1",
 }
-
-_PRE_R01_12_UNRESOLVED = "pre-r01-12-retained-identity-history-not-yet-enumerated"
-_R01_15_RAW_UNRESOLVED = (
-    "r01-15-raw-development-world-ledger-not-retained-in-repository"
-)
 
 
 def _git_blob_sha(data: bytes) -> str:
@@ -105,7 +109,7 @@ def _world_ids(
 
 
 def known_retained_namespace() -> tuple[tuple[int, ...], tuple[str, ...]]:
-    """Return the exact currently reconstructed R01-12..R01-15 namespace."""
+    """Return the exact repository-retained R01-12..R01-15 namespace."""
 
     seed_ids = tuple(
         sorted(
@@ -199,6 +203,122 @@ def _verify_world_rows(
     return world_ids == expected_world_ids and seeds == tuple(sorted(expected_seeds))
 
 
+def _verify_retained_namespace_boundary(payload: Any) -> None:
+    if not isinstance(payload, dict):
+        raise ValueError("R01 retained namespace boundary audit must be an object")
+    if payload.get("schema") != "rv01-r01-12-retained-namespace-boundary-audit-v1":
+        raise ValueError("unexpected R01 retained namespace boundary audit schema")
+    if payload.get("status") != "VERIFIED_REPOSITORY_RETAINED_NAMESPACE_BOUNDARY":
+        raise ValueError("R01 retained namespace boundary audit is not verified")
+    if payload.get("audit_scope") != (
+        "repository-retained seed/world execution identity history only"
+    ):
+        raise ValueError("R01 retained namespace boundary audit scope changed")
+
+    boundary = payload.get("boundary")
+    if not isinstance(boundary, dict):
+        raise ValueError("R01 retained namespace boundary payload is missing")
+    expected_boundary = {
+        "first_contract_commit": "b68b920ee088db4547ac3fb7907d9c46f1b19837",
+        "first_contract_path": "src/sparkbrain/research/rv01/interference_contract.py",
+        "first_contract_blob_sha": "d1fd0aa35a5b33e6d2908d8208758c9d91f0ed81",
+        "parent_commit": "4d4d0a6978e5cfaa1c9667c18b5fb2a59933d0e3",
+        "parent_tree": "df45f991cb4a74448cefb9428c19c2c1e73541fe",
+    }
+    if boundary != expected_boundary:
+        raise ValueError("R01 retained namespace boundary identity changed")
+
+    checks = payload.get("parent_snapshot_checks")
+    if checks != {
+        "interference_contract_path_present": False,
+        "artifacts_research_directory_present": False,
+        "github_workflows": ["ci.yml"],
+        "rv01_source_directory_present": True,
+    }:
+        raise ValueError("R01 retained namespace parent snapshot checks changed")
+
+    interpretation = payload.get("interpretation")
+    if not isinstance(interpretation, dict):
+        raise ValueError("R01 retained namespace interpretation is missing")
+    if interpretation.get("earlier_rv01_source_work_existed") is not True:
+        raise ValueError("R01 boundary audit must retain earlier source-work history")
+    if (
+        interpretation.get(
+            "earlier_repository_retained_seed_world_execution_namespace_is_claimed_absent"
+        )
+        is not True
+    ):
+        raise ValueError("pre-R01-12 retained namespace boundary is not discharged")
+    if payload.get("execution_authority_granted") is not False:
+        raise ValueError("R01 retained namespace audit cannot grant execution authority")
+    if payload.get("scientific_result_modified") is not False:
+        raise ValueError("R01 retained namespace audit cannot modify scientific results")
+
+
+def _verify_r01_15_identity_audit(payload: Any) -> None:
+    if not isinstance(payload, dict):
+        raise ValueError("R01-15 identity audit must be an object")
+    if payload.get("schema") != "rv01-r01-15-raw-artifact-identity-audit-v1":
+        raise ValueError("unexpected R01-15 identity audit schema")
+    if payload.get("status") != "VERIFIED_IDENTITY_BOOKKEEPING_ONLY":
+        raise ValueError("R01-15 identity audit is not verified bookkeeping")
+    if payload.get("rerun_performed") is not False:
+        raise ValueError("R01-15 identity audit indicates a rerun")
+    if payload.get("scientific_result_modified") is not False:
+        raise ValueError("R01-15 identity audit indicates scientific-result modification")
+
+    artifact = payload.get("artifact")
+    if not isinstance(artifact, dict):
+        raise ValueError("R01-15 identity audit artifact binding is missing")
+    expected_artifact = {
+        "artifact_id": 10268643645,
+        "artifact_name": "rv01-r01-15-development-34612398956",
+        "artifact_zip_sha256": (
+            "e349381d95fd47e09830e45723fa306419698fd226c8d87a1a7f3d7f77b9fe13"
+        ),
+        "freeze_ref": "freeze/rv01-r01-15-development-source",
+        "frozen_source_git_sha": "a46096458446e3d101c5a951dba4efd7db1ee0ae",
+        "raw_result_sha256": (
+            "e849acbd2a9acc14d87fdec58be398b6c4b1e53ec6b33aa5a77ace43d56d1dac"
+        ),
+        "workflow_run_id": 34612398956,
+    }
+    if artifact != expected_artifact:
+        raise ValueError("R01-15 raw artifact identity binding changed")
+
+    observed = payload.get("observed_development")
+    if not isinstance(observed, dict):
+        raise ValueError("R01-15 observed development identity ledger is missing")
+    observed_seeds = tuple(sorted(int(seed) for seed in observed.get("seed_ids", ())))
+    if observed_seeds != tuple(sorted(R01_15_DEVELOPMENT_SEEDS)):
+        raise ValueError("R01-15 observed development seeds do not match contract")
+    observed_world_ids = tuple(
+        sorted(str(world_id) for world_id in observed.get("world_ids", ()))
+    )
+    expected_world_ids = _expected_phase_worlds(
+        prefix="r01-15",
+        phase="development",
+        seeds=R01_15_DEVELOPMENT_SEEDS,
+    )
+    if observed_world_ids != expected_world_ids:
+        raise ValueError("R01-15 observed development worlds do not match contract")
+    if not _verify_world_rows(
+        observed,
+        expected_world_ids=expected_world_ids,
+        expected_seeds=R01_15_DEVELOPMENT_SEEDS,
+    ):
+        raise ValueError("R01-15 raw development world ledger is incomplete")
+
+    held_out = payload.get("reserved_held_out")
+    if not isinstance(held_out, dict):
+        raise ValueError("R01-15 held-out reservation ledger is missing")
+    if held_out.get("executed") is not False:
+        raise ValueError("R01-15 held-out identity unexpectedly reports execution")
+    held_out_seeds = tuple(sorted(int(seed) for seed in held_out.get("seed_ids", ())))
+    if held_out_seeds != tuple(sorted(R01_15_HELD_OUT_SEEDS)):
+        raise ValueError("R01-15 reserved held-out seeds do not match contract")
+
+
 @dataclass(frozen=True, slots=True)
 class RetainedHistorySnapshot:
     source_paths: tuple[str, ...]
@@ -243,7 +363,7 @@ class RetainedHistorySnapshot:
 
 
 def build_retained_history_snapshot(repo_root: Path) -> RetainedHistorySnapshot:
-    """Verify retained bytes and reconstruct the known collision namespace."""
+    """Verify retained bytes and reconstruct the authoritative collision namespace."""
 
     root = repo_root.resolve(strict=True)
     for relative, expected_blob in _EVIDENCE_BLOBS.items():
@@ -257,7 +377,9 @@ def build_retained_history_snapshot(repo_root: Path) -> RetainedHistorySnapshot:
                 f"expected {expected_blob}, got {actual_blob}"
             )
 
-    verified = ["r01-12-development-contract-and-manifest"]
+    _verify_retained_namespace_boundary(_load_json(root / _BOUNDARY_AUDIT_PATH))
+    verified = ["pre-r01-12-repository-retained-identity-boundary"]
+    unresolved: list[str] = []
 
     r01_12d = _load_json(
         root / "artifacts/research/rv01/r01_12d/development_result_manifest.json"
@@ -272,8 +394,7 @@ def build_retained_history_snapshot(repo_root: Path) -> RetainedHistorySnapshot:
     )
     if observed_r01_12d != expected_r01_12d:
         raise ValueError("R01-12D retained world identities do not match its contract")
-
-    unresolved = [_PRE_R01_12_UNRESOLVED]
+    verified.append("r01-12-development-contract-and-manifest")
 
     r01_12f = _load_json(
         root / "artifacts/research/rv01/r01_12f/heldout_formal_result.json"
@@ -321,8 +442,14 @@ def build_retained_history_snapshot(repo_root: Path) -> RetainedHistorySnapshot:
     else:
         unresolved.append("r01-14-development-world-ledger-not-explicitly-recovered")
 
-    verified.append("r01-15-frozen-contract-and-fixed-result-report")
-    unresolved.append(_R01_15_RAW_UNRESOLVED)
+    _verify_r01_15_identity_audit(_load_json(root / _R01_15_IDENTITY_AUDIT_PATH))
+    verified.extend(
+        (
+            "r01-15-frozen-contract-and-fixed-result-report",
+            "r01-15-raw-development-world-identity-audit",
+            "r01-15-reserved-held-out-identity-audit",
+        )
+    )
 
     seed_ids, world_ids = known_retained_namespace()
     return RetainedHistorySnapshot(
