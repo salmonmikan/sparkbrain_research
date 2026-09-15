@@ -30,6 +30,11 @@ def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def _refresh_raw_checksum(root: Path) -> None:
+    raw_path = root / "raw.json"
+    (root / "raw.sha256").write_text(f"{_sha256(raw_path)}  raw.json\n")
+
+
 def _build_bundle(root: Path) -> None:
     path_map = {
         "proposal-a": {"path_id": "path-a", "target": "world:x"},
@@ -99,21 +104,37 @@ def _build_bundle(root: Path) -> None:
             trace.append(
                 {"type": "md002-p4-expired-boundary", "event_id": selected_boundary}
             )
-        trace.extend(
-            [
-                {
-                    "type": "md002-p4-active-lineages",
-                    "phase": "before",
-                    "proposal_ids": ["proposal-a", "proposal-b"],
-                },
-                {
-                    "type": "md002-p4-active-lineages",
-                    "phase": "after",
-                    "proposal_ids": ["proposal-a", "proposal-b"],
-                },
-            ]
-        )
+        before = ["proposal-a", "proposal-b"]
+        after = ["proposal-a", "proposal-b"]
+        if merged:
+            trace.extend(
+                [
+                    {
+                        "type": "md002-p4-active-lineages",
+                        "phase": "before",
+                        "proposal_ids": before,
+                    },
+                    {
+                        "type": "md002-p4-active-lineages",
+                        "phase": "after",
+                        "proposal_ids": after,
+                    },
+                    {
+                        "type": "md002-merged-ancestry-measurement",
+                        "measurement": {
+                            "boundary_source_proposal_ids": ["proposal-a", "proposal-b"],
+                            "active_lineages_before": before,
+                            "active_lineages_after": after,
+                        },
+                    },
+                ]
+            )
         trace_digest = _canonical_sha256(trace)
+        measurement_payload = {
+            "boundary_source_proposal_ids": ["proposal-a", "proposal-b"],
+            "active_lineages_before": before,
+            "active_lineages_after": after,
+        }
         observation = {
             "condition_id": execution_id,
             "prospective_execution_id": prospective[execution_id],
@@ -131,11 +152,10 @@ def _build_bundle(root: Path) -> None:
             "retained_runtime_trace_sha256": trace_digest,
             "merged_ancestry_observation": (
                 {
-                    "boundary_source_proposal_ids": ["proposal-a", "proposal-b"],
-                    "active_lineages_before": ["proposal-a", "proposal-b"],
-                    "active_lineages_after": ["proposal-a", "proposal-b"],
+                    **measurement_payload,
                     "runtime_trace": trace,
                     "runtime_trace_sha256": trace_digest,
+                    "measurement_record_sha256": _canonical_sha256(measurement_payload),
                 }
                 if merged
                 else None
@@ -190,7 +210,7 @@ def _build_bundle(root: Path) -> None:
     _write_json(root / "_execution_metadata" / "execution_metadata.json", metadata)
     (root / "_execution_metadata" / "python_version.txt").write_text("Python 3.11.16\n")
     (root / "_execution_metadata" / "source_sha.txt").write_text(f"{SOURCE_SHA}\n")
-    (root / "raw.sha256").write_text(f"{_sha256(root / 'raw.json')}  raw.json\n")
+    _refresh_raw_checksum(root)
     binding_names = (
         "candidate_manifest.json",
         "runtime_contract.json",
@@ -200,6 +220,17 @@ def _build_bundle(root: Path) -> None:
     (root / "_execution_metadata" / "binding.sha256").write_text(
         "".join(f"{_sha256(root / name)}  {name}\n" for name in binding_names)
     )
+
+
+def _rewrite_trace_bound_fields(row: dict[str, object]) -> None:
+    trace = row["retained_runtime_trace"]
+    assert isinstance(trace, list)
+    trace_digest = _canonical_sha256(trace)
+    row["retained_runtime_trace_sha256"] = trace_digest
+    observation = row.get("merged_ancestry_observation")
+    if isinstance(observation, dict):
+        observation["runtime_trace"] = trace
+        observation["runtime_trace_sha256"] = trace_digest
 
 
 def test_independent_verifier_accepts_complete_bound_raw_bundle(tmp_path: Path) -> None:
@@ -218,9 +249,58 @@ def test_independent_verifier_rejects_trace_digest_tampering(tmp_path: Path) -> 
     raw = json.loads(raw_path.read_text())
     raw["observations"][1]["retained_runtime_trace_sha256"] = "0" * 64
     _write_json(raw_path, raw)
-    (tmp_path / "raw.sha256").write_text(f"{_sha256(raw_path)}  raw.json\n")
+    _refresh_raw_checksum(tmp_path)
 
     with pytest.raises(ValueError, match="retained trace digest mismatch"):
+        verify_raw_bundle(
+            tmp_path,
+            expected_source_sha=SOURCE_SHA,
+            expected_run_id=RUN_ID,
+            expected_owner_claim=OWNER_SHA,
+        )
+
+
+def test_independent_verifier_rejects_duplicate_before_lineage_record(tmp_path: Path) -> None:
+    _build_bundle(tmp_path)
+    raw_path = tmp_path / "raw.json"
+    raw = json.loads(raw_path.read_text())
+    row = raw["observations"][1]
+    trace = row["retained_runtime_trace"]
+    before = next(
+        item
+        for item in trace
+        if item.get("type") == "md002-p4-active-lineages" and item.get("phase") == "before"
+    )
+    trace.append(dict(before))
+    _rewrite_trace_bound_fields(row)
+    _write_json(raw_path, raw)
+    _refresh_raw_checksum(tmp_path)
+
+    with pytest.raises(ValueError, match="active-lineage before cardinality mismatch"):
+        verify_raw_bundle(
+            tmp_path,
+            expected_source_sha=SOURCE_SHA,
+            expected_run_id=RUN_ID,
+            expected_owner_claim=OWNER_SHA,
+        )
+
+
+def test_independent_verifier_rejects_missing_merged_measurement(tmp_path: Path) -> None:
+    _build_bundle(tmp_path)
+    raw_path = tmp_path / "raw.json"
+    raw = json.loads(raw_path.read_text())
+    row = raw["observations"][1]
+    trace = row["retained_runtime_trace"]
+    row["retained_runtime_trace"] = [
+        item
+        for item in trace
+        if item.get("type") != "md002-merged-ancestry-measurement"
+    ]
+    _rewrite_trace_bound_fields(row)
+    _write_json(raw_path, raw)
+    _refresh_raw_checksum(tmp_path)
+
+    with pytest.raises(ValueError, match="merged measurement cardinality mismatch"):
         verify_raw_bundle(
             tmp_path,
             expected_source_sha=SOURCE_SHA,
