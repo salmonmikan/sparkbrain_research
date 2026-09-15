@@ -1,132 +1,106 @@
 {
-  "run_timestamp": "2026-09-15T18:21:57+09:00",
-  "run_type": "SparkBrain Research Orchestrator",
-  "supersedes_interim_report_commit": "28399dd3c2848d22ccd051094041b9b5e44f7c40",
-  "correction_note": "The earlier 1813 history entry mislabeled b1b4... as a scorer SHA-256. It is the capability_suite_hash / immutable result provenance. The earlier history is preserved append-only; this state is authoritative for the current run.",
+  "run_timestamp": "2026-09-15T18:44:26+09:00",
   "evidence_analyst_handoff": {
     "branch": "ops/evidence-analyst-handoff",
     "commit": "6f2c5a54d1d6ae4e4d03731f039f727478a74e6c",
-    "status": "followed",
-    "decision": "A01 old-confirmatory P4 stopped after no complete pre-P2 executable scoring/replay/decision contract was found; pivoted to RV01 per handoff"
+    "status": "followed_then_partially_superseded_by_newer_RV01_repository_evidence"
   },
-  "authoritative_refs_inspected": {
+  "previous_orchestrator_report": {
+    "branch": "ops/orchestrator-run-report",
+    "commit": "c13ae95c289ec27ca2601c3aed7541261c055bfc"
+  },
+  "authoritative_refs": {
     "main": "ba16bf10535141c2edb29bbe3439ba0a38e71179",
-    "research/v061-a01-n3-adapter": "8044b25f3a7b7767bf1262ea6a99cd6b795e3e8d",
-    "research/rv01-endogenous-transition": "02b3d80744d0eb10cb0d90fc38d3c55729d7ab99",
-    "research/rv02-rd005-source-binding-20260913": "c60b7fd8d3889ee969f505d921e7d31c990871e6",
-    "research/v061-cx01-c002-prestart": "e8483968ce43076b4c3fd04c76e62106e2031769"
+    "a01": "8044b25f3a7b7767bf1262ea6a99cd6b795e3e8d",
+    "rv01": "02b3d80744d0eb10cb0d90fc38d3c55729d7ab99",
+    "rv02": "c60b7fd8d3889ee969f505d921e7d31c990871e6"
   },
   "active_lines": {
-    "A01_MD002": {
-      "p2": "SUPPORTED_SELECTIVE_CIRCULATION development result; consumed",
-      "p4": "old-confirmatory executable path STOP; no complete pre-P2 scorer/decision/runner verified",
-      "next": "distinct prospective exploratory/development P4 unless stronger pre-P2 contract is recovered"
+    "A01_MD_002": {
+      "status": "P2 development positive; P2 identity consumed; old-confirmatory P4 STOP without pre-P2 executable contract",
+      "next": "distinct prospective exploratory/development P4 only unless complete pre-P2 contract is recovered"
     },
     "RV01_R01_16": {
-      "capability_identity": "rv01-r01-16-capability-02b3d80744d0eb10-65ebe33d70af",
-      "aggregate": {
-        "weight": "WEIGHT_SUPPORTED 100/100",
-        "delay": "DELAY_MIXED 0 support / 54 negative / 46 discordant",
-        "combined": "COMBINED_SUPPORTED 100/100"
-      },
-      "new_post_hoc_diagnostic": {
+      "status": "consumed capability evidence; post-hoc interaction diagnostic derived",
+      "diagnostic": {
         "F0_vs_FW_different": "100/100",
         "FD_vs_FWD_different": "100/100",
         "F0_vs_FD_different": "46/100",
         "FW_vs_FWD_different": "0/100",
         "F0_vs_FWD_different": "100/100",
-        "visible_delay_survival_after_weight_reset": "0/46",
-        "interpretation": "asymmetric weight-conditioned expression of learned-delay contribution at frozen behavioral endpoint"
-      }
+        "interpretation": "asymmetric weight-conditioned expression of learned-delay contribution at measured behavioral endpoint"
+      },
+      "next": "fresh exploratory interaction successor with route/behavior plus orthogonal timing/trajectory endpoint"
     },
     "RV02_RD005": {
-      "status": "D1_ZERO_READY_STOP; consumed; blind unopened"
+      "status": "D1 consumed; D1_ZERO_READY_STOP; blind unopened",
+      "next": "distinct blind-preserving successor"
     },
     "CX01": {
-      "status": "candidate-002 formal NEGATIVE; consumed"
+      "status": "candidate-002 consumed immutable formal NEGATIVE",
+      "next": "prospectively distinct diagnostics/successor only"
     }
   },
-  "branches_advanced": {
-    "review/rv01-r01-16-delay-interaction-diagnostic-20260915": "78790d08b1da9c7efcb397203ca77cce34a7a487"
-  },
-  "commits_created": [
-    "2e655150a85491220c914b017b048fe01df9456b",
-    "78790d08b1da9c7efcb397203ca77cce34a7a487"
-  ],
-  "pull_requests": [
+  "open_prs": [
     {
       "number": 133,
       "title": "RV01 R01-16: record delay interaction diagnostic",
-      "head": "78790d08b1da9c7efcb397203ca77cce34a7a487",
-      "base": "02b3d80744d0eb10cb0d90fc38d3c55729d7ab99",
-      "status": "open_current_head_ci_and_fresh_codex_review_in_progress_not_merged",
-      "initial_codex_finding": "b1b4 value mislabeled as scorer SHA; corrected to capability suite hash / immutable result provenance",
-      "scientific_interpretation_changed_by_fix": false
+      "base": "research/rv01-endogenous-transition",
+      "base_sha": "02b3d80744d0eb10cb0d90fc38d3c55729d7ab99",
+      "head": "review/rv01-r01-16-delay-interaction-diagnostic-20260915",
+      "head_sha": "78790d08b1da9c7efcb397203ca77cce34a7a487",
+      "mergeable": true,
+      "ci": "green_on_exact_head_as_observed",
+      "review": "Codex P1 unresolved: add canonical docs/RESULTS_LEDGER.md entry",
+      "action_this_run": "posted @codex address that feedback, comment id 5678073446",
+      "merge_status": "not_merged"
     }
   ],
-  "exact_head_merges": [],
-  "workflows_experiments_executed": [],
-  "new_scientific_information": {
-    "produced": true,
-    "line": "RV01 R01-16",
-    "type": "post_hoc_mechanistic_diagnostic_from_immutable_consumed_exposed-development_evidence",
-    "claim_scope": "development/post-hoc only; not confirmatory/formal"
+  "branches_advanced_by_this_run": [],
+  "commits_created_by_this_run": [],
+  "prs_created_by_this_run": [],
+  "exact_head_merges_by_this_run": [],
+  "workflows_or_experiments_executed_by_this_run": [],
+  "new_one_way_identities_consumed_by_this_run": [],
+  "new_scientific_information_generated_by_this_run": false,
+  "new_repository_scientific_information_reconciled": {
+    "source": "immediately preceding orchestrator worker / PR #133",
+    "type": "post-hoc exposed-development diagnostic from immutable R01-16 capability evidence",
+    "result": "delay contribution visible 46/100 with learned weight retained and 0/100 after weight reset; weight contrast 100/100 under either delay state"
   },
-  "consumed_identities_referenced": [
-    "A01_MD-001",
-    "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
-    "rv01-r01-16-development-7ed3a7532fc66ac8-87634d034204",
-    "rv01-r01-16-capability-02b3d80744d0eb10-65ebe33d70af",
-    "96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
-    "CX01_candidate-002_formal"
-  ],
-  "one_way_identities_consumed_this_run": [],
-  "evidence_freeze_seal_state": {
-    "modified_immutable_evidence": false,
+  "evidence_state": {
     "new_freeze_refs": [],
     "new_preserve_refs": [],
     "new_started_control_refs": [],
-    "rv01_capability_preserve_commit": "0a25eac227d7ac0e8dbd5532d450ed2d50efa105",
-    "rv01_raw_sha256": "e3b6e8c7ed6db423919c4360a5291ac207544566beb4656954be344cb253f335",
-    "rv01_capability_suite_hash": "b1b4d555d30630d1051482563696981261619143099216ab893bbea481d69392d",
-    "rv01_source_package_manifest_sha256": "bc36c7da23f4d6b8fa1ee7d4d8c7bacdfd5970818482e146a188837247332582",
-    "rv01_retained_history_registry_sha256": "232f4fb23b74662d10adca2990e1b030bbb1c74e45fb67f607982738570795bd"
+    "immutable_evidence_modified": false
   },
+  "consumed_identities_referenced": [
+    "A01 MD-001",
+    "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
+    "rv01-r01-16 construction identity",
+    "rv01-r01-16-capability-02b3d80744d0eb10-65ebe33d70af",
+    "96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
+    "CX01 candidate-002"
+  ],
+  "human_review_overrides_used": [],
+  "obsolete_prs_closed": [],
+  "main_integration": [],
+  "branch_deletions": [],
   "blockers": [
-    "A01 P4 complete pre-P2 executable scoring/replay/decision contract not verified",
-    "RV01 successor requires fresh prospective identity/worlds/seeds and preregistered orthogonal endpoints",
-    "RV02 successor must remain distinct and blind-preserving",
-    "PR #133 current-head CI and fresh Codex review still in progress at final merge check"
+    "PR #133 canonical results ledger entry required before merge",
+    "A01 P4 lacks verified complete pre-P2 executable scoring/replay/decision contract",
+    "RV01 next interaction successor not yet prospectively frozen/bound",
+    "RV02 D1 consumed; successor must be distinct and blind-preserving"
   ],
   "concurrency_reconciliation": [
-    "RV01 authoritative head re-fetched immediately before branching; no movement detected",
-    "PR #133 head moved only through this run's provenance-label correction; old-head check/review state was not reused",
-    "Exact-head merge skipped because current-head checks/review remained incomplete"
-  ],
-  "human_review_overrides": [],
-  "obsolete_prs_archived_closed": [],
-  "main_integration": [],
-  "branch_classifications_manual_cleanup": [
-    "A01 historical P4 fixture/trace-binding branches: evidence-bearing/prospective construction history; superseded as immediate old-confirmatory execution path; do not delete automatically"
+    "Skipped recomputation/rerun of RV01 R01-16 diagnostic already completed by preceding worker",
+    "Corrected misleading delay-scale shorthand: authoritative result is weight-by-delay factor interaction",
+    "No stale merge attempted on PR #133; exact head remains 78790d08... while Codex remediation is pending"
   ],
   "next_ready_actions": [
-    {
-      "rank": 1,
-      "action": "RV01 distinct weight-delay interaction successor with fresh worlds/seeds/new identity, existing route endpoint plus orthogonal timing/trajectory-sensitive endpoint preregistered outcome-blind",
-      "information_value": "HIGH",
-      "distance": "MODERATE"
-    },
-    {
-      "rank": 2,
-      "action": "A01 P4 as a distinct prospective exploratory/development candidate unless a complete pre-P2 contract is recovered",
-      "information_value": "HIGH",
-      "distance": "MODERATE"
-    },
-    {
-      "rank": 3,
-      "action": "RV02 blind-preserving zero-ready successor under a distinct identity",
-      "information_value": "HIGH",
-      "distance": "MODERATE"
-    }
+    "Re-fetch PR #133 after Codex remediation; if ledger entry lands, inspect new exact head and merge only after exact-head CI/review green",
+    "Prospectively define RV01 distinct interaction successor on fresh identities/worlds/seeds with orthogonal timing/trajectory endpoint",
+    "Treat any new A01 P4 as exploratory/development unless complete pre-P2 executable contract is recovered",
+    "Design RV02 blind-preserving zero-ready successor"
   ]
 }
