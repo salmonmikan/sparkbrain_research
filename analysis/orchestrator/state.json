@@ -1,57 +1,74 @@
 {
-  "schema": "sparkbrain.evidence_analyst_handoff.v1",
-  "analysis_time": "2026-09-15T10:30:00+09:00",
-  "baseline": true,
-  "heads": {
+  "analysis_id": "evidence-analyst-20260915-1332",
+  "analysis_timestamp": "2026-09-15T13:32:04+09:00",
+  "previous_handoff_commit": "2df913382e94bdd197a92d10d9816fd8e8bfbcfb",
+  "source_refs": {
     "main": "ba16bf10535141c2edb29bbe3439ba0a38e71179",
-    "a01": {"branch": "research/v061-a01-n3-adapter", "sha": "97fb43cc76e878adcb9aad535b67c8b5cc1672ac"},
-    "rv01": {"branch": "research/rv01-endogenous-transition", "sha": "02b3d80744d0eb10cb0d90fc38d3c55729d7ab99"},
-    "rv02": {"branch": "research/rv02-rd005-source-binding-20260913", "sha": "c60b7fd8d3889ee969f505d921e7d31c990871e6"},
-    "cx01": {"branch": "research/cx01-candidate-002-prestart", "sha": "e8483968dfcb841982734630700cf1c8ed33de75"}
+    "a01_authoritative": "97fb43cc76e878adcb9aad535b67c8b5cc1672ac",
+    "a01_p2_probe_branch": "ca680064dc55b707ccd09610c19faa722bf23e82",
+    "rv01_authoritative": "02b3d80744d0eb10cb0d90fc38d3c55729d7ab99",
+    "rv01_capability_preserve": "0a25eac227d7ac0e8dbd5532d450ed2d50efa105",
+    "rv02_authoritative": "c60b7fd8d3889ee969f505d921e7d31c990871e6",
+    "rv02_d1_preserve": "d1fdd67ea197b879c52942c4a34e7d39a0a40698",
+    "cx01_source_freeze": "e8483968ce43076b4c3fd04c76e62106e2031769",
+    "cx01_package_freeze": "c104be281285d52a732d5366fe36209d5688d973",
+    "cx01_started_control": "8216d41a57e6933443d38dfc8d93f9188e423d0c",
+    "cx01_formal_preserve": "6d45928827209cd763a2879494d85838df38b96f",
+    "a01_md001_preserve": "febdc1dbea0b7f84b1625be51f44075d9fa5a8da"
   },
-  "newest_scientific_evidence": {
-    "line": "RV01 R01-16",
-    "identity": "rv01-r01-16-capability-02b3d80744d0eb10-65ebe33d70af",
-    "preserve_ref": "preserve/rv01-r01-16-capability-20260915",
-    "preserve_sha": "0a25eac227d7ac0e8dbd5532d450ed2d50efa105",
-    "classification": {"weight": "WEIGHT_SUPPORTED", "delay": "DELAY_MIXED", "combined": "COMBINED_SUPPORTED"},
-    "formal_execution_allowed": false,
-    "held_out_executions": 0,
-    "formal_executions": 0
-  },
+  "open_prs": [132],
+  "new_scientific_evidence": false,
+  "new_readiness_evidence": [
+    "PR #132 implements real A01 P2 post-attribution shared-root competition instrumentation and is CI-green",
+    "PR #132 currently executes the exact validation candidate in tests/preflight before STARTED",
+    "PR #132 currently scores raw observations before durable raw preservation and independent verification"
+  ],
   "top_recommendation": {
     "rank": 1,
-    "line": "A01 MD-002",
-    "action": "Prospectively implement, freeze, and if integrity-ready execute a distinct development-only P2 post-attribution shared-root capability probe.",
+    "action": "Repair PR #132 execution boundary, bind a distinct prospective A01 MD-002 P2 shared-root development input, then execute exactly once only after clean STARTED/raw-preserve boundary",
     "information_value": "HIGH",
-    "distance": "NEAR-MODERATE",
-    "status": "GO_CONDITIONAL",
-    "starting_branch": "research/v061-a01-n3-adapter",
-    "starting_sha_observed": "97fb43cc76e878adcb9aad535b67c8b5cc1672ac",
-    "formal_md002": "STOP",
-    "reason_formal_stopped": "N3 and other full-package bindings remain genuinely incomplete."
+    "implementation_distance": "NEAR",
+    "go_stop": "STOP_PENDING_INTEGRITY_FIX"
   },
-  "top_3": [
-    {"rank": 1, "line": "A01 MD-002", "action": "P2 post-attribution shared-root development capability probe", "information_value": "HIGH", "distance": "NEAR-MODERATE"},
-    {"rank": 2, "line": "A01 MD-002", "action": "P4 continuing-vs-reset lineage development discriminator", "information_value": "HIGH", "distance": "MODERATE"},
-    {"rank": 3, "line": "RV01 successor", "action": "Distinct exploratory delay-scale mechanistic discriminator; new identity/worlds; not confirmatory", "information_value": "HIGH", "distance": "MODERATE"}
+  "top_3_actions": [
+    {
+      "rank": 1,
+      "action": "A01 P2: separate synthetic CI/preflight from real candidate and raw acquisition from scoring; then run a distinct prospective development identity",
+      "information_value": "HIGH",
+      "distance": "NEAR"
+    },
+    {
+      "rank": 2,
+      "action": "A01 P4: continuing-vs-reset lineage development discriminator if P2 cannot be made clean promptly",
+      "information_value": "HIGH",
+      "distance": "MODERATE"
+    },
+    {
+      "rank": 3,
+      "action": "RV01: distinct exploratory delay-scale successor using new worlds/seeds/protocol",
+      "information_value": "HIGH",
+      "distance": "MODERATE"
+    }
   ],
   "consumed_identities": [
-    {"line": "A01", "identity": "V061_A01_MD_001", "preserve_ref": "preserve/v061-a01-md-001", "rerun": false},
-    {"line": "RV01", "identity": "rv01-r01-16-development-7ed3a7532fc66ac8-87634d034204", "rerun": false},
-    {"line": "RV01", "identity": "rv01-r01-16-capability-02b3d80744d0eb10-65ebe33d70af", "rerun": false},
-    {"line": "RV02", "identity": "96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a", "preserve_ref": "preserve/rv02-rd005-d1-96634541-20260914", "rerun": false},
-    {"line": "CX01", "identity": "candidate-002-formal", "preserve_ref": "preserve/cx01-candidate-002-formal-34977997-20260911", "rerun": false}
+    "V061 A01 MD-001",
+    "rv01-r01-16-development-7ed3a7532fc66ac8-87634d034204",
+    "rv01-r01-16-capability-02b3d80744d0eb10-65ebe33d70af",
+    "96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
+    "CX01 candidate-002 formal"
   ],
-  "blockers": {
-    "a01_p2": ["real post-attribution shared-root instrumentation not yet bound", "exact prospective identity/source/runtime/package/threshold freeze required"],
-    "a01_full_md002": ["N3 provenance unbound", "P3 stronger comparator incomplete", "P4 replay recipe incomplete", "P5 trial-level provenance incomplete", "formal source/runtime/package not sealed"],
-    "rv01_successor": ["must be a new exploratory/development identity after R01-16 outcome; no post-outcome confirmatory relabeling"],
-    "rv02_successor": ["D1 consumed; successor must be distinct and construction diagnostics must remain blind"],
-    "cx01_successor": ["candidate-002 consumed negative; no candidate-003 prospective branch found"]
-  },
-  "go_criteria_rank1": ["current A01 head re-fetched and no superseding P2 work", "exact world/cloned subepisodes bound", "arm/reset/restore/observation semantics frozen", "actual post-attribution shared-root resource instrumentation bound", "budgets/thresholds/scoring frozen before output", "distinct noncolliding identity with atomic remote STARTED/no-clobber", "exact source/runtime/package frozen", "tests/CI/review pass", "development-only; no held-out/formal opening"],
-  "stop_criteria_rank1": ["only matrix serialization/forward signals exist, no actual shared-root competition", "ambiguous reset/resource/timing/threshold/source/runtime/package", "identity collision or existing STARTED/preserve", "head moved after review", "same prospective identity already executed by another worker", "post-output protocol or threshold change"],
-  "provenance_corrections": ["Use preserve/rv02-rd005-d1-96634541-20260914 at d1fdd67ea197b879c52942c4a34e7d39a0a40698 for RD005 D1."],
-  "open_pr_count": 0
+  "blockers": [
+    "A01 P2 real prospective candidate must not be executed by tests/preflight/CI before STARTED",
+    "A01 P2 requires distinct unobserved input rather than relabeling current validation fixture",
+    "A01 P2 must preserve and independently verify raw evidence before scoring",
+    "Exact source/runtime/package/input and fixed scoring contract must be bound before execution",
+    "Atomic STARTED/no-clobber claim must precede one-way candidate execution"
+  ],
+  "ref_corrections": {
+    "rv02_d1_source_freeze": "freeze/rv02-rd005-d1-source-c60b7fd8-20260914",
+    "cx01_source_freeze": "freeze/cx01-002-source",
+    "cx01_package_freeze": "freeze/cx01-002-package",
+    "cx01_formal_preserve": "preserve/cx01-candidate-002-formal-34742073336",
+    "a01_md001_preserve_sha": "febdc1dbea0b7f84b1625be51f44075d9fa5a8da"
+  }
 }
