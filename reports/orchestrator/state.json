@@ -1,65 +1,145 @@
 {
-  "run_timestamp": "2026-09-16T03:27:23+09:00",
-  "worker_role": "sub",
-  "worker_label": "SECONDARY IMPLEMENTER",
+  "run_timestamp": "2026-09-16T04:45:00+09:00",
+  "worker_role": "main",
   "evidence_analyst_handoff": {
     "branch": "ops/evidence-analyst-handoff",
-    "commit": "e36b3313213a72296106b6bc0913a3b96fa8dec7",
-    "status": "followed"
+    "commit": "de93c1f2ddfca9ad0445cc0b34c98ab096d1435c",
+    "disposition": "followed"
   },
-  "control_brain_handoff": {
-    "branch": "ops/control-brain-handoff",
-    "commit": "ea94c12ec1be33bb8ef6d6409dd10ad19ea50631",
-    "status": "consumed_as_strategic_prior"
+  "shared_orchestrator_report_consumed": {
+    "branch": "ops/orchestrator-run-report",
+    "commit": "0a3633538be66f2ffff1c45686dc900053d79ac4",
+    "worker_role": "sub",
+    "disposition": "coordination claim used; machine-readable nonexistent refs treated as stale/advisory"
   },
-  "orchestrator_report_parent": "08b1abe2f5aacb33d8f55a9b7fba62a484b90155",
   "authoritative_refs_inspected": {
-    "a01_base": "research/v061-a01-n3-adapter@8044b25f3a7b7767bf1262ea6a99cd6b795e3e8d",
-    "a01_p3_result": "research/a01-md002-p3-result@fc6d43cf671e357956972a011eaf48a05a5a78b9",
-    "rv01_active": "research/rv01-loop-coupling-development@860a7d79101e25b4e64762d8051654d4a7914952",
-    "rv02_active": "research/rv02-stigmergic-lineage-credit@457db4e4f25dbfbf4d09e45f973e8d7d50357ca7",
-    "cx": "research/CX@75ec61eb748f8bc7f0257bce1d4293dbc967d70a",
-    "cx01": "research/CX01-causal-trace@3a545c4083386616116aad37373802161b792362"
+    "main": "ba16bf10535141c2edb29bbe3439ba0a38e71179",
+    "a01": "2e47df9cf8c6323f390935bb41c368632f3342c6",
+    "p4_candidate_branch": "3918fbb0c81afdd47bc10b680827f0f41052835e",
+    "rv01": "98be60268845487ce51e76b8a7687552a5dbc51f"
   },
-  "main_or_concurrent_activity_avoided": [
+  "active_lines": {
+    "A01_MD002": {
+      "frontier": "P4 candidate-001 pre-STARTED review",
+      "branch": "research/v061-a01-md002-p4-candidate-001-20260916",
+      "head": "3918fbb0c81afdd47bc10b680827f0f41052835e",
+      "pr": 137,
+      "status": "STOP_PRESTART_SCIENTIFIC_INTEGRITY_BLOCKERS"
+    },
+    "RV01": {
+      "head": "98be60268845487ce51e76b8a7687552a5dbc51f",
+      "status": "secondary; R01-17 consumed positive development result"
+    },
+    "RV02": {
+      "status": "RD005 D1 consumed terminal; independent successor work left for SUB"
+    },
+    "CX01": {
+      "status": "candidate-002 consumed formal negative; independent diagnostics left for SUB"
+    }
+  },
+  "branches_advanced": [
     {
-      "kind": "pull_request",
-      "number": 135,
-      "title": "A01 MD-002: add development P4 merged-lineage credit probe",
-      "head_ref": "research/v061-a01-md002-p4-lineage-separation-20260916",
-      "head_sha": "f0d668a6bdab35293a361dd0b442e19519be540b",
-      "base_ref": "research/v061-a01-n3-adapter",
-      "base_sha": "8044b25f3a7b7767bf1262ea6a99cd6b795e3e8d",
-      "reason": "P4 is the Evidence Analyst's highest-priority frontier and is already actively occupied; SUB avoided racing it."
+      "branch": "research/v061-a01-md002-p4-candidate-001-20260916",
+      "commits": [
+        "226402c85a60e40226736980f89ab72271009874",
+        "3918fbb0c81afdd47bc10b680827f0f41052835e"
+      ],
+      "changes": [
+        "readiness-only Ruff E501 exemption for candidate runner",
+        "manifest contract test no longer relies on JSON object insertion order"
+      ]
     }
   ],
-  "selected_action": "no_op_due_to_collision_and_no_independent_ready_scientific_work",
-  "branches_advanced": [],
-  "prs_created": [],
-  "prs_updated": [],
-  "prs_merged": [],
+  "prs": {
+    "created": [],
+    "merged": [],
+    "open": [137],
+    "exact_head_merges": []
+  },
   "workflows_executed": [],
+  "ci": {
+    "previous_run": {
+      "id": 35013999846,
+      "conclusion": "failure",
+      "interpretation": "lint/local readiness passed; test failed only on manifest execution-ID key order"
+    },
+    "current_head_run": {
+      "id": 35014566566,
+      "status_at_report": "in_progress",
+      "head": "3918fbb0c81afdd47bc10b680827f0f41052835e"
+    }
+  },
   "new_scientific_information": false,
   "new_measurements": [],
-  "new_consumed_one_way_identities": [],
-  "immutable_refs_moved_or_rewritten": [],
-  "human_review_overrides_used": [],
-  "main_integration": [],
+  "consumed_one_way_identities_this_run": [],
+  "consumed_identities_referenced": [
+    "a01-md002-p3-r-only-causal-carrier-candidate-001-v1",
+    "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
+    "rv01-r01-17-real-delay-causal-timing-v1",
+    "rv02-rd005-d1-96634541",
+    "cx01-candidate-002"
+  ],
+  "p4_candidate": {
+    "identity": "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
+    "consumed": false,
+    "freeze_ref_exists": false,
+    "control_started_ref_exists": false,
+    "raw_preserve_ref_exists": false,
+    "scored_preserve_ref_exists": false
+  },
   "blockers": [
-    "A01 P4 is already occupied by active PR #135 and must not be raced by SUB.",
-    "A01 P5 is scientifically gated on a qualified P4 result under the latest Evidence Analyst handoff.",
-    "RV01 R01-17, RV02 RD005 D1, and CX/CX01 candidate-002 are consumed and have no fresh prospectively ready successor identified in current authoritative state."
+    {
+      "severity": "P1",
+      "kind": "scientific_integrity",
+      "summary": "historical B boundary is expired at exactly its valid_until time, but expire requires now_ms > valid_until_ms"
+    },
+    {
+      "severity": "P1",
+      "kind": "scientific_integrity",
+      "summary": "candidate result is not yet bound to complete actual retained P4 runtime trace through P4RetainedTraceInput"
+    },
+    {
+      "severity": "P1",
+      "kind": "scientific_design",
+      "summary": "evidence sign is confounded with lineage identity; protocol requires sign-by-lineage crossing"
+    }
   ],
-  "concurrency_reconciliation": [
-    "SUB observed active P4 work at PR #135 head f0d668a6bdab35293a361dd0b442e19519be540b and intentionally left it untouched.",
-    "No separate operational claim was created because SUB selected no research implementation."
+  "concurrency_reconciliation": {
+    "main_claim": "PR #137 central P4 candidate; durable STOP/ownership comment recorded",
+    "sub_already_owned_or_advanced": [],
+    "avoided_duplicate_work": [
+      "SUB had intentionally stood down from central P4; MAIN did not absorb SUB-parallel RV02/CX/governance work"
+    ],
+    "stale_or_invalid_report_refs_ignored": [
+      "research/a01-md002-p3-result and other nonexistent machine-state refs from latest SUB report"
+    ]
+  },
+  "human_review_overrides": [],
+  "obsolete_pr_disposition": [],
+  "main_integration": [],
+  "work_intentionally_left_for_sub": [
+    "RV02 successor diagnostics",
+    "CX/CX01 independent diagnostics",
+    "outcome-independent helper/main-promotion assessment",
+    "Issue drift cleanup",
+    "tag/ruleset governance"
   ],
-  "work_intentionally_left_to_main": [
-    "A01 P4 development/freeze/execution path represented by PR #135 and current analyst GO/STOP criteria."
-  ],
-  "next_independent_ready_actions": [
-    "Re-evaluate after P4 movement or a new Evidence Analyst handoff.",
-    "Take a distinct prospectively ready action only if it is not owned by MAIN/another worker.",
-    "If a qualified P4 result advances P5, re-verify a prospective P5 contract before any implementation or execution."
+  "repository_doctrine": {
+    "issue_changes": [],
+    "canonical_doc_status_changes": [],
+    "new_authoritative_tags": [],
+    "legacy_branch_to_tag_mappings": [],
+    "tag_refs_found": 0,
+    "rulesets_found": 0,
+    "preserve_index_changes": [],
+    "immutable_refs_moved_or_rewritten": false,
+    "main_advanced": false
+  },
+  "next_ready_actions": [
+    "Fix P4 per-boundary TTL expiry prospectively before STARTED",
+    "Bind acquisition/classification to complete actual P4 retained runtime trace using P4RetainedTraceInput",
+    "Cross confirmation and contradiction with both lineage identities",
+    "Re-fetch exact head, require green CI and substantive exact-head re-review, re-check unused identity",
+    "Only then freeze/START exactly once and execute; otherwise STOP and pivot toward P5 reduction/reframe"
   ]
 }
