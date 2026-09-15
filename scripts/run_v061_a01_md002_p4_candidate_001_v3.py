@@ -20,8 +20,8 @@ from __future__ import annotations
 import argparse
 import json
 import os
-from pathlib import Path
 import subprocess
+from pathlib import Path
 from typing import Any
 
 import run_v061_a01_md002_p4_candidate_001_v2 as core
@@ -126,8 +126,7 @@ def _git(*args: str) -> str:
         ["git", *args],
         check=True,
         text=True,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
+        capture_output=True,
     )
     return result.stdout.strip()
 
@@ -137,8 +136,7 @@ def _remote_ref_sha(ref: str) -> str | None:
         ["git", "ls-remote", "--heads", "origin", f"refs/heads/{ref}"],
         check=False,
         text=True,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
+        capture_output=True,
     )
     _require(result.returncode in (0, 2), f"failed to inspect remote ref: {ref}")
     rows = [line for line in result.stdout.splitlines() if line.strip()]
@@ -232,8 +230,7 @@ def _claim_acquisition(*, source_sha: str) -> str:
         input=claim_message,
         check=True,
         text=True,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
+        capture_output=True,
         env=env,
     ).stdout.strip()
     claim = _require_git_sha(claim, "acquisition claim SHA")
@@ -241,8 +238,7 @@ def _claim_acquisition(*, source_sha: str) -> str:
         ["git", "push", "origin", f"{claim}:refs/heads/{ACQUIRE_REF}"],
         check=True,
         text=True,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
+        capture_output=True,
     )
     _require(_remote_ref_sha(ACQUIRE_REF) == claim, "acquisition claim publication mismatch")
     return claim
