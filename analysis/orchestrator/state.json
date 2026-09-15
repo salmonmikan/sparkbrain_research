@@ -1,86 +1,74 @@
 {
-  "analysis_timestamp": "2026-09-15T16:57:56+09:00",
-  "previous_handoff": {
-    "branch": "ops/evidence-analyst-handoff",
-    "commit": "1112ebbfd307cdfb56762af58b21ba49a6542ca8",
-    "status": "partially_superseded_by_completed_a01_p2_execution"
-  },
-  "orchestrator_run_report": {
+  "analysis_timestamp": "2026-09-15T19:09:28+09:00",
+  "orchestrator_report": {
     "branch": "ops/orchestrator-run-report",
-    "present_at_analysis_start": false,
-    "status": "missing_non_blocking"
+    "commit": "406821a3d9c8506a34927d902af9a1481e622eb3",
+    "status": "consistent_but_rv01_interpretation_superseded_by_numerical_validity_audit"
   },
-  "source_heads": {
+  "source_refs_inspected": {
     "main": "ba16bf10535141c2edb29bbe3439ba0a38e71179",
-    "research/v061-a01-n3-adapter": "8044b25f3a7b7767bf1262ea6a99cd6b795e3e8d",
-    "research/rv01-endogenous-transition": "02b3d80744d0eb10cb0d90fc38d3c55729d7ab99",
-    "research/rv02-rd005-source-binding-20260913": "c60b7fd8d3889ee969f505d921e7d31c990871e6"
+    "a01_authoritative": "8044b25f3a7b7767bf1262ea6a99cd6b795e3e8d",
+    "rv01_authoritative": "02b3d80744d0eb10cb0d90fc38d3c55729d7ab99",
+    "rv01_capability_preserve": "0a25eac227d7ac0e8dbd5532d450ed2d50efa105",
+    "rv01_pr133_head": "78790d08b1da9c7efcb397203ca77cce34a7a487",
+    "rv02_authoritative": "c60b7fd8d3889ee969f505d921e7d31c990871e6",
+    "cx01_source_freeze": "e8483968ce43076b4c3fd04c76e62106e2031769",
+    "cx01_package_freeze": "c104be281285d52a732d5366fe36209d5688d973"
   },
-  "open_pr_count": 0,
-  "new_scientific_evidence": {
-    "present": true,
-    "line": "A01 MD-002 P2",
-    "identity": "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
-    "workflow_run": 34936519897,
-    "result": "SUPPORTED_SELECTIVE_CIRCULATION",
-    "evidence_class": "development_positive_not_formal",
-    "source_freeze": {
-      "ref": "freeze/a01-md002-p2-candidate-002-source-20260915",
-      "sha": "8044b25f3a7b7767bf1262ea6a99cd6b795e3e8d"
-    },
-    "started_ref": {
-      "ref": "control/a01-md002-p2-candidate-002-started-20260915",
-      "sha": "8044b25f3a7b7767bf1262ea6a99cd6b795e3e8d"
-    },
-    "preserve_ref": {
-      "ref": "preserve/a01-md002-p2-candidate-002-34936519897-20260915",
-      "sha": "d7d48a8ad482acdb18de783c9506c32377530e1e"
-    },
-    "workflow_terminal_note": "failed_after_raw_acquisition_in_scorer_path_sha_verification; identity_consumed_no_rerun"
+  "new_evidence": {
+    "kind": "post_hoc_numerical_validity_audit_of_immutable_rv01_development_evidence",
+    "rv01_delay_max_abs_delta_ms": 1.0325962307433656e-11,
+    "rv01_delay_mean_abs_delta_ms": 1.3210275785146725e-12,
+    "rv01_delay_median_nonzero_abs_delta_ms": 6.954437026251981e-13,
+    "rv01_delay_max_relative_delta": 2.052650765310683e-12,
+    "rv01_weight_min_abs_delta": 0.6368348967461868,
+    "rv01_weight_max_abs_delta": 1.2,
+    "rv01_delay_sequence_different_cells": 46,
+    "rv01_same_unique_unit_set_among_delay_different": "46/46",
+    "rv01_same_multiset_and_length_among_delay_different": "42/46",
+    "authoritative_suite_hash": "c5c5e32160b634680ff5cad726365c38ec3d06c266cc453fcf349d604ee48ffc",
+    "pr133_mislabeled_suite_hash": "b1b4d555d30630d1051482563696981261619143099216ab893bbea481d69392d"
   },
   "top_recommendation": {
-    "rank": 1,
-    "action": "A01 P4 continuing-vs-reset discriminator: first verify whether a complete decision/scoring/replay contract predates the P2 result; if absent, prospectively define P4 as a distinct exploratory/development candidate",
+    "action": "Correct PR #133 numerical/provenance interpretation, then prospectively define and execute a distinct RV01 real-delay successor if integrity-ready",
     "information_value": "HIGH",
     "implementation_distance": "MODERATE",
-    "go_stop_status": "STOP_EXECUTION_PENDING_P4_CONTRACT_CLASSIFICATION_AND_PROSPECTIVE_BINDING"
+    "go_stop_status": "STOP_UNTIL_PR133_CORRECTED_AND_SUCCESSOR_HAS_SUBSTANTIVE_PREREGISTERED_DELAY_CONTRAST"
   },
   "top_3_actions": [
     {
       "rank": 1,
-      "action": "A01 P4 continuing-vs-reset discriminator with pre-P2 contract verification or new explicit exploratory/development contract",
+      "action": "RV01 real-delay successor after minimum PR #133 correction",
       "information_value": "HIGH",
       "implementation_distance": "MODERATE"
     },
     {
       "rank": 2,
-      "action": "RV01 distinct delay-scale exploratory successor",
+      "action": "A01 P4 as a distinct prospective exploratory/development discriminator",
       "information_value": "HIGH",
       "implementation_distance": "MODERATE"
     },
     {
       "rank": 3,
-      "action": "RV02 distinct blind-preserving zero-ready successor diagnostic",
+      "action": "RV02 blind-preserving zero-ready successor diagnostic",
       "information_value": "HIGH",
       "implementation_distance": "MODERATE"
     }
   ],
   "consumed_identities_referenced": [
-    "A01 MD-001",
+    "A01_MD_001",
     "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
-    "rv01-r01-16-development-7ed3a7532fc66ac8-87634d034204",
+    "rv01-r01-16-construction-census-workflow-34881254582",
     "rv01-r01-16-capability-02b3d80744d0eb10-65ebe33d70af",
-    "96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
-    "CX01 candidate-002 formal"
+    "rv02-rd005-d1-96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
+    "cx01-candidate-002-formal"
   ],
   "blockers": [
-    "No verified executable P4 scorer/runtime contract on the current authoritative tree",
-    "Must classify whether any full P4 decision/scoring/replay contract predates observation of the P2 result",
-    "If absent, P4 must be a new prospective exploratory/development identity rather than retroactively confirmatory",
-    "Candidate input must remain untouched before STARTED and raw must be preserved/verified before scoring"
-  ],
-  "stale_or_superseded": [
-    "Previous 13:32 instruction to repair and execute A01 P2 candidate-002 is superseded; candidate-002 is consumed",
-    "Do not rerun P2 because workflow 34936519897 failed after STARTED/raw acquisition"
+    "PR #133 unresolved results-ledger P1",
+    "PR #133 incorrect capability suite-hash provenance",
+    "PR #133 mechanistic interpretation overstates roundoff-scale delay contrast",
+    "Codex remediation path unavailable because repository environment is not configured",
+    "RV01 successor needs fresh identity and prospectively substantive delay contrast plus magnitude-aware/tie-robust scoring",
+    "A01 P4 lacks a verified complete pre-P2 executable scoring/replay/decision contract"
   ]
 }
