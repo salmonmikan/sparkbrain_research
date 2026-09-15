@@ -262,12 +262,12 @@ def test_p4_probe_rejects_reused_boundary_event_before_second_credit() -> None:
     )
     ledger.register_external(first_external)
     bridge = A01TransientCreditBridge(expectation, consistency, ledger)
-    first_probe = probe_merged_lineage_credit(
+    probe_merged_lineage_credit(
         bridge,
         boundary=boundary,
         external=first_external,
     )
-    assert first_probe.credit_scope == "all-resolved-paths"
+    assert len(consistency.resolutions) == 1
 
     consistency.register_boundary(boundary)
     second_external = RuntimePulse(
