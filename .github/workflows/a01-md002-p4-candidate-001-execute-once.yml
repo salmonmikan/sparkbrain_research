@@ -86,7 +86,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p "${OUTPUT_ROOT}/_execution_metadata"
-          python scripts/run_v061_a01_md002_p4_candidate_001.py manifest \
+          python scripts/run_v061_a01_md002_p4_candidate_001_v3.py manifest \
             --source-sha "${GITHUB_SHA}" \
             --output "${OUTPUT_ROOT}/candidate_manifest.json"
           cp research/v061_a01/md002_p4_candidate_001_runtime.json \
@@ -102,11 +102,11 @@ jobs:
             > _execution_metadata/binding.sha256
           cd "${GITHUB_WORKSPACE}"
 
-      - name: Acquire six-condition raw development evidence exactly once
+      - name: Acquire eight-execution raw development evidence exactly once
         shell: bash
         run: |
           set -euo pipefail
-          python scripts/run_v061_a01_md002_p4_candidate_001.py acquire \
+          python scripts/run_v061_a01_md002_p4_candidate_001_v3.py acquire \
             --source-sha "${GITHUB_SHA}" \
             --output "${RAW_PATH}"
           cd "${OUTPUT_ROOT}"
@@ -179,7 +179,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          python scripts/run_v061_a01_md002_p4_candidate_001.py score \
+          python scripts/run_v061_a01_md002_p4_candidate_001_v3.py score \
             --source-sha "${GITHUB_SHA}" \
             --raw-input "${RAW_PATH}" \
             --output "${SCORE_PATH}"
