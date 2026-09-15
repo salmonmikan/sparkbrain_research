@@ -1,0 +1,12 @@
+{
+  "schema": "v061-a01-md002-p2-candidate-runtime-v1",
+  "candidate_id": "a01-md002-p2-shared-probe-candidate-002-v1",
+  "python_version": "3.11.16",
+  "runner_label": "ubuntu-24.04",
+  "runner_image_version": "20260907.300.1",
+  "package_install": "python -m pip install --no-deps -e .",
+  "runtime_third_party_dependencies": [],
+  "development_only": true,
+  "held_out_execution_allowed": false,
+  "formal_execution_allowed": false
+}
