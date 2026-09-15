@@ -1,0 +1,72 @@
+{
+  "details": [
+    {
+      "proposal_id": "c2-left",
+      "world_permutation_swaps_status": true,
+      "worlds": [
+        {
+          "noncausal_confidence_unchanged": true,
+          "predicted_arrival_unchanged": true,
+          "requested_delta": 0.16666666666666663,
+          "same_targets": true,
+          "status": "exact-match",
+          "status_rule_pass": true,
+          "withheld_co_maximal": true,
+          "world_arm": "control"
+        },
+        {
+          "noncausal_confidence_unchanged": true,
+          "predicted_arrival_unchanged": true,
+          "requested_delta": -0.16666666666666669,
+          "same_targets": true,
+          "status": "exact-contradiction",
+          "status_rule_pass": true,
+          "withheld_co_maximal": true,
+          "world_arm": "intervention"
+        }
+      ]
+    },
+    {
+      "proposal_id": "c2-right",
+      "world_permutation_swaps_status": true,
+      "worlds": [
+        {
+          "noncausal_confidence_unchanged": true,
+          "predicted_arrival_unchanged": true,
+          "requested_delta": -0.16666666666666669,
+          "same_targets": true,
+          "status": "exact-contradiction",
+          "status_rule_pass": true,
+          "withheld_co_maximal": true,
+          "world_arm": "control"
+        },
+        {
+          "noncausal_confidence_unchanged": true,
+          "predicted_arrival_unchanged": true,
+          "requested_delta": 0.16666666666666663,
+          "same_targets": true,
+          "status": "exact-match",
+          "status_rule_pass": true,
+          "withheld_co_maximal": true,
+          "world_arm": "intervention"
+        }
+      ]
+    }
+  ],
+  "development_only": true,
+  "execution_identity": "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
+  "formal_execution_opened": false,
+  "frozen_scorer_source": "src/sparkbrain/v061_a01/md002_p2_shared_probe.py@8044b25f3a7b7767bf1262ea6a99cd6b795e3e8d",
+  "held_out_executed": false,
+  "independent_preserved_raw_verification": true,
+  "note": "Derived only from the already-preserved raw artifact using the frozen _score logic; no candidate acquisition was rerun.",
+  "raw_artifact_id": 10383369145,
+  "raw_envelope_canonical_sha256": "930a32dc257f25fff2fc50e33f039e720009c8938adc12289586510368af0ebe",
+  "raw_file_sha256": "80871f493d04987a0787135a16b343d7fa462f44cdc77767c581c63a8da2ca7f",
+  "schema": "v061-a01-md002-p2-candidate-independent-score-v1",
+  "source_sha": "8044b25f3a7b7767bf1262ea6a99cd6b795e3e8d",
+  "verdict": "SUPPORTED_SELECTIVE_CIRCULATION",
+  "workflow_run_attempt": 1,
+  "workflow_run_id": 34936519897,
+  "workflow_scoring_status": "NOT_RUN_DUE_TO_PRE_SCORE_PATH_VERIFICATION_FAILURE"
+}
