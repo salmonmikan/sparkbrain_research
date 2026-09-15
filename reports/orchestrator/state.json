@@ -1,101 +1,86 @@
 {
-  "run_timestamp": "2026-09-16T05:30:00+09:00",
+  "run_timestamp": "2026-09-16T07:30:47+09:00",
   "worker_role": "sub",
   "worker_label": "SECONDARY IMPLEMENTER",
-  "evidence_analyst_handoff": {
-    "branch": "ops/evidence-analyst-handoff",
-    "analysis_timestamp": "2026-09-16T05:00:00+09:00",
-    "control_brain_commit_consumed": "1985198deb95190d45cb46629beb654eb04d4d92",
-    "disposition": "followed; P4 central recommendation left to MAIN"
+  "evidence_analyst_commit_consumed": "e15c292d9590bc2406882551df7ba7b5b43513bb",
+  "evidence_analyst_analysis_timestamp": "2026-09-16T07:13:00+09:00",
+  "main_lane": {
+    "target": "A01 MD-002 P4 candidate-001 selective merged-lineage discriminator",
+    "owner": "main",
+    "branch": "research/v061-a01-md002-p4-candidate-001-20260916",
+    "pr": 137
   },
-  "shared_orchestrator_report_consumed": {
-    "branch": "ops/orchestrator-run-report",
-    "commit": "e1938c40f83ca717eb8211684d3dfaf1740f3587",
-    "worker_role": "main",
-    "disposition": "coordination used; MAIN-owned A01 P4 avoided"
+  "sub_lane": {
+    "target": "Independent read-only A01 P4 raw-artifact verifier readiness package",
+    "recommended_owner": "sub",
+    "execution_allowed": false,
+    "completion_target": "Reviewed and CI-clean independent fail-closed verifier satisfying V061_A01_MD002_EXECUTION_AUTHORIZATION_20260912.md and V061_A01_MD_002_P4_TRACE_BINDING_TECHNICAL_REVIEW.md, ready for MAIN integration/re-audit."
   },
+  "sub_fallback": null,
+  "selected_lane": null,
+  "selected_lane_kind": null,
+  "selection_disposition": "NO_OP_COLLISION_RECONCILIATION",
+  "selection_reason": "The Analyst-designated SUB verifier lane was concurrently advanced on MAIN-owned PR #137 while SUB was re-fetching state. Per collision rules SUB must not duplicate/race it, and no fallback lane exists.",
+  "execution_allowed": false,
+  "sub_active_claims": [],
+  "main_activity_avoided": [
+    "A01 MD-002 P4 mechanism/scorer/identity on PR #137",
+    "Independent P4 artifact verifier implementation now concurrently advanced by MAIN on PR #137"
+  ],
   "authoritative_refs_inspected": {
     "main": "ba16bf10535141c2edb29bbe3439ba0a38e71179",
     "a01_authoritative": "2e47df9cf8c6323f390935bb41c368632f3342c6",
-    "a01_p4_candidate_branch": "3918fbb0c81afdd47bc10b680827f0f41052835e",
+    "a01_p4_branch": "research/v061-a01-md002-p4-candidate-001-20260916",
+    "a01_p4_head_at_analyst": "7f2545b91b5d9dc6c1bcb80dccf921470ba99308",
+    "a01_p4_head_observed_mid_run": "e9dd268bdc5bb78dcfbc9b4a482d0e54cdb4a067",
+    "a01_p4_head_final": "fd259bd18feec119643ea215c84813fcf810c165",
     "a01_p4_pr": 137,
-    "rv01_authoritative": "98be60268845487ce51e76b8a7687552a5dbc51f",
-    "rv02_rd005_source": "c60b7fd8d3889ee969f505d921e7d31c990871e6",
-    "rv02_rd005_started_ref": "control/rv02-rd005-d1-started-96634541-20260914",
-    "rv02_rd005_preserve_ref": "preserve/rv02-rd005-d1-96634541-20260914",
-    "rv02_rd005_terminal_review_ref": "review/rv02-rd005-d1-terminal-outcome-20260914"
+    "a01_p4_exact_head_ci": {
+      "run_id": 35031427049,
+      "status": "in_progress",
+      "conclusion": null
+    },
+    "a01_p4_identity": "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
+    "matching_p4_started_control_freeze_preserve_branches_found": false,
+    "control_brain_commit_consumed_via_latest": "1985198deb95190d45cb46629beb654eb04d4d92",
+    "shared_orchestrator_report_base_commit": "3d311e1e56fd2c78536a9b841b57475966fca303"
   },
-  "active_lines": {
-    "A01_MD002": {
-      "frontier": "P4 candidate-001 pre-STARTED blocker resolution",
-      "owner": "main",
-      "branch": "research/v061-a01-md002-p4-candidate-001-20260916",
-      "head": "3918fbb0c81afdd47bc10b680827f0f41052835e",
-      "pr": 137,
-      "status": "STOP_PRESTART_THREE_P1_BLOCKERS"
-    },
-    "RV02": {
-      "status": "RD005 D1 terminal identity consumed; capability unopened; no prospectively distinct ready successor found",
-      "consumed_input_sha256": "96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a"
-    },
-    "CX01": {
-      "status": "candidate-002 consumed; no prospectively distinct newly authorized successor/measurement identified"
-    },
-    "A01_P5": {
-      "status": "ranked behind P4; full-stage completion gated by prior-stage validity; accepted narrow N3-DEV-001 already exists and was not rerun"
-    }
-  },
-  "selected_sub_work": null,
-  "selection_reason": "No independent scientifically clean ready item existed outside MAIN-owned P4. RV02 RD005 D1 is consumed terminal with no defined successor; CX had no distinct new authorized successor; P5 execution would overlap A01 progression or require prospective contract work rather than yield the shortest independent new measurement.",
   "branches_advanced": [],
-  "prs": {
-    "created": [],
-    "merged": [],
-    "touched": []
-  },
-  "workflows_executed": [],
+  "prs_advanced": [],
+  "workflows_experiments_executed": [],
+  "scientific_results": [],
   "new_scientific_information": false,
-  "new_measurements": [],
-  "consumed_one_way_identities_this_run": [],
-  "consumed_identities_referenced": [
-    "a01-md002-p3-r-only-causal-carrier-candidate-001-v1",
-    "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
-    "rv01-r01-17-real-delay-causal-timing-v1",
-    "96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
-    "cx01-candidate-002"
+  "consumed_identities_this_run": [],
+  "blockers": [
+    "SUB lane collision: MAIN advanced the same verifier target during SUB inspection.",
+    "Exact-head CI for fd259bd18feec119643ea215c84813fcf810c165 was still in progress at final inspection.",
+    "Exact-head clean substantive/Codex review for fd259bd18feec119643ea215c84813fcf810c165 was not established by this run."
   ],
-  "collision_avoidance": {
-    "main_owned_work_avoided": [
-      "A01 MD-002 P4 candidate-001 PR #137"
-    ],
+  "collision_avoidance_concurrency_reconciliation": {
+    "head_movement_detected": true,
+    "from_analyst_head": "7f2545b91b5d9dc6c1bcb80dccf921470ba99308",
+    "through": "e9dd268bdc5bb78dcfbc9b4a482d0e54cdb4a067",
+    "to": "fd259bd18feec119643ea215c84813fcf810c165",
+    "same_target_advanced_by_main": true,
+    "sub_write_to_research_branch_attempted": false,
     "implementation_claim_created": false,
-    "coordination_mode": "fresh remote-state checks + shared run report + latest Evidence Analyst handoff",
-    "concurrency_reconciliation": "no conflicting write attempted"
+    "resolution": "Stopped verifier implementation and recorded no-op rather than creating a duplicate branch/PR."
   },
-  "integrity": {
+  "immutable_ref_integrity_status": {
     "immutable_refs_moved_or_rewritten": false,
     "consumed_identity_rerun_or_retune": false,
-    "new_freeze_or_started_or_preserve_refs": [],
-    "human_review_overrides": []
+    "new_started_control_freeze_preserve_refs_created_by_sub": [],
+    "candidate_output_acquired_by_sub": false,
+    "scoring_performed_by_sub": false
   },
-  "blockers": [
-    "No distinct prospective RV02 successor is defined/ready after terminal RD005 D1.",
-    "No newly authorized CX successor/diagnostic measurement was identified outside consumed candidate-002.",
-    "A01 P5 remains subordinate to the MAIN-owned P4 progression and does not offer a shorter clean independent measurement in current state."
-  ],
-  "next_independent_ready_actions": [
-    "Re-fetch handoffs and remote state next run.",
-    "Take a prospectively defined RV02 successor if one appears and is independent of MAIN.",
-    "Take a prospectively distinct CX diagnostic/successor if one is newly authorized and clean.",
-    "Take separable P5 reduction work only when it has a distinct prospective contract and does not race MAIN's A01 frontier.",
-    "Otherwise no-op rather than manufacture parallel work."
-  ],
-  "repository_doctrine": {
-    "main_advanced": false,
-    "issue_changes": [],
-    "new_authoritative_tags": [],
-    "legacy_freeze_branches_changed": false,
-    "immutable_refs_moved_or_rewritten": false
+  "completion_target": {
+    "target": "Reviewed and CI-clean independent fail-closed P4 verifier ready for MAIN integration/re-audit",
+    "reached_by_sub": false,
+    "current_status": "MAIN has advanced source/tests to address the latest verifier P1 finding, but exact-head CI/review are not yet confirmed complete."
   },
-  "history_record_commit": "b61850c2e423331631ca6c86a84665a0c1d41a96"
+  "next_lane_fallback_status": {
+    "sub_lane": "currently MAIN-owned/advanced; do not duplicate",
+    "sub_fallback": null,
+    "instruction": "Await a later Evidence Analyst split; if no safe lane is supplied, no-op rather than invent successor science."
+  }
 }

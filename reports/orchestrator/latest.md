@@ -1,41 +1,50 @@
 # SparkBrain Research Orchestrator — SUB run report
 
-Timestamp: 2026-09-16 05:30 JST
+Timestamp: 2026-09-16 07:30 JST
 
 `worker_role: sub`
 `SECONDARY IMPLEMENTER`
 
 ## Result
 
-This run intentionally performed **no implementation or experiment execution**. No independent scientifically clean ready item was available that could be advanced without duplicating MAIN's current A01 frontier or inventing a post-outcome successor that has not been prospectively defined.
+This run performed an intentional **no-op after collision reconciliation**. The Evidence Analyst explicitly assigned SUB the independent read-only A01 P4 raw-artifact verifier lane with `execution_allowed=false`, but MAIN advanced that exact verifier target on PR #137 while this run was inspecting the remote state. Per the revised lane rules, SUB did not duplicate or race that work, and `sub_fallback` is null.
 
-This run produced **no new scientific information**.
+This run produced **no new scientific information**, consumed no one-way identity, and performed no experiment/workflow execution.
 
-## MAIN activity avoided
+## Evidence Analyst lane consumed
 
-MAIN owns A01 MD-002 P4 candidate-001 on PR #137 (`research/v061-a01-md002-p4-candidate-001-20260916@3918fbb0c81afdd47bc10b680827f0f41052835e`). PR #137 remains open and mergeable. The newest Evidence Analyst state at 05:00 JST reports exact-head CI run `35014566566` completed successfully, but the candidate remains STOP before STARTED because three P1 scientific/integrity blockers remain: strict TTL-boundary handling, complete actual retained-trace binding, and evidence-sign × lineage-identity counterbalancing.
+Evidence Analyst handoff: `ops/evidence-analyst-handoff@e15c292d9590bc2406882551df7ba7b5b43513bb` (07:13 JST).
 
-SUB did not touch PR #137, its branch, its candidate identity, its workflow, or any prospective P4 freeze/control/preserve ref.
+- `main_lane`: A01 MD-002 P4 candidate-001 selective merged-lineage discriminator on PR #137.
+- `sub_lane`: independent read-only P4 raw-artifact verifier readiness package.
+- `sub_fallback`: null.
+- `execution_allowed`: false.
+- Completion target: reviewed, CI-clean, fail-closed verifier satisfying the execution-authorization and P4 trace-binding technical-review requirements, ready for MAIN integration/re-audit.
 
-## Independent-line reconciliation
+## MAIN activity avoided / concurrency reconciliation
 
-**RV02:** RD005 D1 is conclusively consumed and terminal. The post-outcome review binds source `c60b7fd8d3889ee969f505d921e7d31c990871e6`, construction-input identity `96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a`, STARTED ref `control/rv02-rd005-d1-started-96634541-20260914`, preserve ref `preserve/rv02-rd005-d1-96634541-20260914`, and terminal classification `D1_CONSTRUCTION_FAILED_TERMINAL_IDENTITY_CONSUMED`. Capability never opened. No RD006 or other prospectively distinct successor branch was found ready for execution, so SUB did not retry, repair in place, or invent a successor after the outcome.
+At Analyst time, PR #137 was `7f2545b91b5d9dc6c1bcb80dccf921470ba99308` and the independent-verifier gate was still open. During this SUB run the same MAIN-owned PR advanced through `e9dd268bdc5bb78dcfbc9b4a482d0e54cdb4a067` to current head `fd259bd18feec119643ea215c84813fcf810c165`.
 
-**CX/CX01:** candidate-002 is consumed. The remote still contains older diagnostics/prestart branches, but no prospectively distinct newly authorized candidate-003/successor measurement was identified. SUB did not reinterpret those older branches as permission to rerun or retune candidate-002.
+The current head contains the independent read-only verifier and tests. The verifier now independently requires exactly one `before` and one `after` active-lineage record, derives plural merged ancestry from retained boundary rows, requires exactly one `md002-merged-ancestry-measurement` record bound to the derived payload, and binds the observation fields/digest back to those independently derived values. Commit `fd259bd...` adds fail-closed regression tests for duplicate before-lineage records and missing merged-measurement records.
 
-**A01 P5:** the newest Evidence Analyst ranks P5 reduction work behind P4. Full-stage P5 completion remains gated by prior-stage validity; the narrow accepted `N3-DEV-001` result already exists and full matched-resource reduction remains unevaluated. Starting a new P5 execution now would overlap the MAIN-owned A01 progression or require new prospective contract work rather than provide the shortest independent new measurement. SUB therefore left P5 to the A01 progression.
+Because MAIN moved the exact SUB target during inspection, SUB created no implementation branch/PR and did not touch PR #137. This is the required collision behavior, not a readiness-based no-op.
 
-## Implementation / execution
+## Current verifier readiness
 
-No research branch was advanced, no PR was created or merged, no workflow or experiment was dispatched, no one-way identity was consumed, no human-review override was used, and no immutable freeze/preserve/control/evidence ref was moved or rewritten.
+- PR #137 current exact head: `fd259bd18feec119643ea215c84813fcf810c165`.
+- Exact-head CI run `35031427049` was `in_progress` at final inspection.
+- The previous exact-head review blocker on `e9dd268...` was the missing independent retained-lineage cardinality / merged-measurement binding check; the current source appears to address that finding prospectively.
+- No exact-head clean review for `fd259bd...` was established by this SUB run.
+- Therefore the Analyst completion target is **not yet confirmed complete**. MAIN must finish exact-head CI/review/re-audit before any one-way boundary.
 
-No durable implementation claim was created because no substantial implementation began. Collision avoidance used fresh remote-state checks, MAIN's shared report, and the newest Evidence Analyst handoff.
+## Integrity / one-way state
 
-## Next independent action
+Search for `a01-md002-p4-candidate-001` branches found only the moving research branch; no matching P4 STARTED/control/freeze/preserve branch was present at inspection. Candidate identity `a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1` therefore remained pre-STARTED/unconsumed by the evidence available to SUB.
 
-On the next run, re-fetch all handoffs and remote state. Take a distinct RV02 successor, CX diagnostic/successor, or separable P5 reduction package only if it has been prospectively defined, is scientifically clean, and is not owned by MAIN. Otherwise continue to no-op rather than manufacture parallel work.
+SUB created no STARTED/control/freeze/preserve ref, acquired no candidate output, scored nothing, and changed no immutable evidence. No consumed identity was rerun or retuned.
 
-## Durable record
+## Completion target / next lane status
 
-History entry: `reports/orchestrator/history/2026-09-16/0530.md` created in commit `b61850c2e423331631ca6c86a84665a0c1d41a96`.
-Machine state updated in commit `3332dd37d73c256604774debd1f37f6dd1ef3c38`.
+SUB completion target: **not reached by SUB** because MAIN concurrently claimed/advanced the exact verifier package. The package is source-level advanced on MAIN's branch but still awaits exact-head CI completion and exact-head clean review.
+
+`sub_fallback` remains null. Until a later Evidence Analyst handoff assigns a new safe lane, SUB must not invent RV02/CX/P5 successor work. If the verifier remains MAIN-owned/complete on the next run and no new SUB lane is supplied, no-op again.
