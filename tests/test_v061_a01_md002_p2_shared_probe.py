@@ -1,6 +1,8 @@
 from __future__ import annotations
 
-from scripts.run_v061_a01_md002_p2_shared_probe import build_registered_fixture_and_schedule
+from scripts.run_v061_a01_md002_p2_shared_probe import (
+    build_registered_fixture_and_schedule,
+)
 from sparkbrain.v061_a01.md002_p2_shared_probe import execute_p2_shared_probe
 
 
