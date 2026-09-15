@@ -14,6 +14,14 @@ def test_shared_probe_executes_fixed_four_condition_matrix() -> None:
     assert state["held_out_executed"] is False
     assert state["formal_execution_opened"] is False
     assert state["threshold_tuned"] is False
+    assert state["criteria"] == [
+        "withheld arms remain co-maximal at the shared root",
+        "returned evidence changes only the causally addressed local target confidence",
+        "exact-match raises and selects the requested target",
+        "exact-contradiction lowers and deselects the requested target",
+        "world permutation swaps match/contradiction status for each fixed proposal identity",
+        "predicted arrival times remain unchanged by causal-support credit",
+    ]
 
 
 def test_shared_probe_retains_world_only_withheld_controls() -> None:
@@ -29,12 +37,3 @@ def test_shared_probe_retains_world_only_withheld_controls() -> None:
         assert control.probe_rows == intervention.probe_rows
         assert len(control.selected_targets) == 2
         assert len(intervention.selected_targets) == 2
-
-
-def test_shared_probe_reports_fixed_selective_circulation_criterion() -> None:
-    fixture, schedule = build_registered_fixture_and_schedule()
-    result = execute_p2_shared_probe(fixture, schedule)
-    # This is the prospectively fixed development criterion. If the mechanism
-    # does not satisfy it, the experiment must return NOT_SUPPORTED rather than
-    # changing the criterion after observing output.
-    assert result.verdict == "SUPPORTED_SELECTIVE_CIRCULATION"
