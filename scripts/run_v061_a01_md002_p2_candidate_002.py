@@ -298,7 +298,12 @@ def main() -> None:
             "raw": raw.state_dict(),
         }
         _write_json(args.output, payload)
-        print(json.dumps({"execution_identity": manifest["execution_identity"], "scored": False}, sort_keys=True))
+        print(
+            json.dumps(
+                {"execution_identity": manifest["execution_identity"], "scored": False},
+                sort_keys=True,
+            )
+        )
         return
 
     if args.raw_input is None:
@@ -320,7 +325,15 @@ def main() -> None:
         "result": scored.state_dict(),
     }
     _write_json(args.output, payload)
-    print(json.dumps({"execution_identity": manifest["execution_identity"], "verdict": scored.verdict}, sort_keys=True))
+    print(
+        json.dumps(
+            {
+                "execution_identity": manifest["execution_identity"],
+                "verdict": scored.verdict,
+            },
+            sort_keys=True,
+        )
+    )
 
 
 if __name__ == "__main__":
