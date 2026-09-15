@@ -1,9 +1,9 @@
-name: A01 MD-002 P2 Shared Probe
+name: A01 MD-002 P2 Candidate-002
 
 on:
   push:
     branches:
-      - "control/a01-md002-p2-shared-probe-started-20260915"
+      - "control/a01-md002-p2-candidate-002-started-20260915"
 
 permissions:
   contents: read
@@ -27,33 +27,89 @@ jobs:
         run: |
           set -euo pipefail
           test "${GITHUB_RUN_ATTEMPT}" = "1"
-          test "${GITHUB_REF_NAME}" = "control/a01-md002-p2-shared-probe-started-20260915"
-          frozen=$(git ls-remote origin refs/heads/freeze/a01-md002-p2-shared-probe-source-20260915 | awk '{print $1}')
+          test "${GITHUB_REF_NAME}" = "control/a01-md002-p2-candidate-002-started-20260915"
+          frozen=$(git ls-remote origin refs/heads/freeze/a01-md002-p2-candidate-002-source-20260915 | awk '{print $1}')
           test -n "$frozen"
           test "$frozen" = "${GITHUB_SHA}"
 
       - name: Install
         run: python -m pip install -e ".[dev,learned,spiking]"
 
-      - name: Validate prospective probe package
+      - name: Validate code without executing candidate-002
         run: |
-          ruff check src/sparkbrain/v061_a01/md002_p2_shared_probe.py scripts/run_v061_a01_md002_p2_shared_probe.py tests/test_v061_a01_md002_p2_shared_probe.py
-          pytest -q tests/test_v061_a01_md002_p2_shared_probe.py
+          ruff check \
+            src/sparkbrain/v061_a01/md002_p2_shared_probe.py \
+            src/sparkbrain/v061_a01/md002_p2_raw_pipeline.py \
+            scripts/run_v061_a01_md002_p2_shared_probe.py \
+            scripts/run_v061_a01_md002_p2_candidate_002.py \
+            tests/test_v061_a01_md002_p2_shared_probe.py \
+            tests/test_v061_a01_md002_p2_raw_pipeline.py \
+            tests/test_v061_a01_md002_p2_candidate_002.py
+          pytest -q \
+            tests/test_v061_a01_md002_p2_shared_probe.py \
+            tests/test_v061_a01_md002_p2_raw_pipeline.py \
+            tests/test_v061_a01_md002_p2_candidate_002.py
 
-      - name: Execute development-only shared-root probe exactly once
+      - name: Bind candidate manifest and runtime
         run: |
-          mkdir -p artifacts/v061/a01/md002-p2
-          python scripts/run_v061_a01_md002_p2_shared_probe.py \
+          set -euo pipefail
+          mkdir -p artifacts/v061/a01/md002-p2-candidate-002
+          python scripts/run_v061_a01_md002_p2_candidate_002.py manifest \
             --source-sha "${GITHUB_SHA}" \
-            --output artifacts/v061/a01/md002-p2/shared_probe.json \
-            | tee artifacts/v061/a01/md002-p2/shared_probe.stdout.json
-          sha256sum artifacts/v061/a01/md002-p2/shared_probe.json \
-            | tee artifacts/v061/a01/md002-p2/shared_probe.sha256
+            --output artifacts/v061/a01/md002-p2-candidate-002/candidate_manifest.json
+          python --version > artifacts/v061/a01/md002-p2-candidate-002/python_version.txt 2>&1
+          python -m pip freeze > artifacts/v061/a01/md002-p2-candidate-002/pip_freeze.txt
+          git rev-parse HEAD > artifacts/v061/a01/md002-p2-candidate-002/source_sha.txt
+          sha256sum \
+            artifacts/v061/a01/md002-p2-candidate-002/candidate_manifest.json \
+            artifacts/v061/a01/md002-p2-candidate-002/python_version.txt \
+            artifacts/v061/a01/md002-p2-candidate-002/pip_freeze.txt \
+            artifacts/v061/a01/md002-p2-candidate-002/source_sha.txt \
+            > artifacts/v061/a01/md002-p2-candidate-002/binding.sha256
 
-      - name: Upload immutable raw development evidence
+      - name: Acquire development raw observations exactly once
+        run: |
+          set -euo pipefail
+          python scripts/run_v061_a01_md002_p2_candidate_002.py acquire \
+            --source-sha "${GITHUB_SHA}" \
+            --output artifacts/v061/a01/md002-p2-candidate-002/raw.json
+          sha256sum artifacts/v061/a01/md002-p2-candidate-002/raw.json \
+            > artifacts/v061/a01/md002-p2-candidate-002/raw.sha256
+
+      - name: Preserve raw observations before scoring
         uses: actions/upload-artifact@v4
         with:
-          name: a01-md002-p2-shared-probe-${{ github.sha }}
-          path: artifacts/v061/a01/md002-p2/
+          name: a01-md002-p2-candidate-002-raw-${{ github.sha }}-${{ github.run_id }}
+          path: |
+            artifacts/v061/a01/md002-p2-candidate-002/candidate_manifest.json
+            artifacts/v061/a01/md002-p2-candidate-002/python_version.txt
+            artifacts/v061/a01/md002-p2-candidate-002/pip_freeze.txt
+            artifacts/v061/a01/md002-p2-candidate-002/source_sha.txt
+            artifacts/v061/a01/md002-p2-candidate-002/binding.sha256
+            artifacts/v061/a01/md002-p2-candidate-002/raw.json
+            artifacts/v061/a01/md002-p2-candidate-002/raw.sha256
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Verify preserved raw digest and score frozen criteria
+        run: |
+          set -euo pipefail
+          cd artifacts/v061/a01/md002-p2-candidate-002
+          sha256sum -c raw.sha256
+          cd "$GITHUB_WORKSPACE"
+          python scripts/run_v061_a01_md002_p2_candidate_002.py score \
+            --source-sha "${GITHUB_SHA}" \
+            --raw-input artifacts/v061/a01/md002-p2-candidate-002/raw.json \
+            --output artifacts/v061/a01/md002-p2-candidate-002/scored.json
+          sha256sum artifacts/v061/a01/md002-p2-candidate-002/scored.json \
+            > artifacts/v061/a01/md002-p2-candidate-002/scored.sha256
+
+      - name: Upload scored development result
+        uses: actions/upload-artifact@v4
+        with:
+          name: a01-md002-p2-candidate-002-scored-${{ github.sha }}-${{ github.run_id }}
+          path: |
+            artifacts/v061/a01/md002-p2-candidate-002/scored.json
+            artifacts/v061/a01/md002-p2-candidate-002/scored.sha256
           if-no-files-found: error
           retention-days: 90
