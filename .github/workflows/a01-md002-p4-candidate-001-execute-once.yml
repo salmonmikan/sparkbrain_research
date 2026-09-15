@@ -5,6 +5,10 @@ on:
     branches:
       - "control/a01-md002-p4-candidate-001-started-20260916"
 
+concurrency:
+  group: a01-md002-p4-candidate-001-one-shot
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
@@ -132,6 +136,11 @@ jobs:
             "control_ref": "${CONTROL_REF}",
             "raw_preserve_ref": "${RAW_PRESERVE_REF}",
             "scored_preserve_ref": "${SCORED_PRESERVE_REF}",
+            "execution_authority_type": "USER_EXPLICIT_A01_LINE_SCOPED_EXECUTION_AUTHORIZATION",
+            "execution_authorization_date": "2026-09-12",
+            "execution_authorization_record": "docs/research/V061_A01_MD002_EXECUTION_AUTHORIZATION_20260912.md",
+            "execution_authority_identity": "A01_MD002_USER_AUTHORIZATION_2026-09-12",
+            "execution_seal_identity": "${FREEZE_REF}@${GITHUB_SHA}|${CONTROL_REF}@${GITHUB_SHA}",
             "workflow_run_id": "${GITHUB_RUN_ID}",
             "workflow_run_attempt": "${GITHUB_RUN_ATTEMPT}",
             "python_version": "$(python --version 2>&1)",
