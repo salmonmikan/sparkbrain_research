@@ -1301,3 +1301,9 @@ requires preregistration, matched conditions, multiple seeds, raw outputs, and p
 
 Direct checkpoints and sensory diagnostics are engineering tests. They do not replace exact
 scientific reproduction, external evaluation, or C18's explicit trace/checkpoint evidence contract.
+
+## 2026-09-15 — RV01 R01-17 real-delay exposed-development successor
+
+R01-17 (`rv01-r01-17-real-delay-causal-timing-v1`) is a distinct prospective exposed-development protocol informed by the consumed R01-16 delay measurement-validity finding. It has no held-out or formal authority.
+
+The fixed development identity uses seeds `141800`–`141804` on a four-unit physical chain. Initial physical delay is prospectively separated from training lag by `1.5`–`2.25 ms`; meaningful learned-delay displacement and downstream causal first-arrival shift each require at least `0.5 ms`, with `0.05 ms` numerical/tie tolerance. F0 retains post-training weight/delay, FD retains post-training weight while resetting delay to pre-training values, and SHAM is an exact F0 replay control. All five cells must support for `SUPPORTED_REAL_DELAY_CAUSAL_TIMING`; any construction-ineligible cell yields `INSUFFICIENT_REAL_DELAY_CONSTRUCTION`. Raw evidence, including every training exposure, must be immutably preserved before the frozen scorer runs. Same-identity retries after STARTED are forbidden.

@@ -1289,3 +1289,7 @@ feedback may re-enter only as truth-free sensory/evidence and must reject evalua
 repair C15's unsupported residual advantage, promote C16 candidates or C17 organs, or unblock C19.
 Keeping those boundaries explicit prevents engineering completion from becoming a scientific
 claim upgrade.
+
+## 2026-09-15 — RV01 R01-17 separates physical delay learning from R01-16
+
+Decision: do not repair, rerun, or reinterpret consumed R01-16 to test delay plasticity. Use a new exposed-development identity (`rv01-r01-17-real-delay-causal-timing-v1`) with fresh seeds, initial physical delay meaningfully separated from observed training lag, a preregistered `0.5 ms` minimum learned-delay displacement and causal first-arrival shift, matched learned weights across F0/FD, deterministic SHAM, complete per-exposure raw training records, and immutable raw preservation before scoring. This is exploratory/development evidence only and carries no held-out/formal authority.

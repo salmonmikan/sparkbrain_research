@@ -1,0 +1,206 @@
+name: RV01 R01-17 Frozen Real-Delay Development Execute Once
+
+on:
+  push:
+    branches:
+      - "control/rv01-r01-17-real-delay-started-20260915"
+
+permissions:
+  contents: write
+
+env:
+  FREEZE_REF: freeze/rv01-r01-17-real-delay-source-20260915
+  CONTROL_REF: control/rv01-r01-17-real-delay-started-20260915
+  RAW_PRESERVE_REF: preserve/rv01-r01-17-real-delay-raw-20260915
+  SCORED_PRESERVE_REF: preserve/rv01-r01-17-real-delay-scored-20260915
+  OUTPUT_ROOT: artifacts/rv01/r01-17/development/rv01-r01-17-real-delay-causal-timing-v1
+  RAW_PATH: artifacts/rv01/r01-17/development/rv01-r01-17-real-delay-causal-timing-v1/raw.json
+  SCORE_PATH: artifacts/rv01/r01-17/development/rv01-r01-17-real-delay-causal-timing-v1/score.json
+  PYTHONPATH: src
+
+jobs:
+  execute-r01-17-once:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout atomic STARTED source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+
+      - name: Verify immutable STARTED, freeze, and unused preserve refs
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "${GITHUB_RUN_ATTEMPT}" != "1" ]; then
+            echo "refusing rerun of consumed R01-17 identity" >&2
+            exit 1
+          fi
+          test "${GITHUB_REF}" = "refs/heads/${CONTROL_REF}"
+          git fetch origin \
+            "+refs/heads/${FREEZE_REF}:refs/remotes/origin/${FREEZE_REF}" \
+            "+refs/heads/${CONTROL_REF}:refs/remotes/origin/${CONTROL_REF}"
+          frozen_sha="$(git rev-parse "refs/remotes/origin/${FREEZE_REF}")"
+          control_sha="$(git rev-parse "refs/remotes/origin/${CONTROL_REF}")"
+          test "${GITHUB_SHA}" = "${frozen_sha}"
+          test "${GITHUB_SHA}" = "${control_sha}"
+          test "$(git rev-parse HEAD)" = "${frozen_sha}"
+          for ref in "${RAW_PRESERVE_REF}" "${SCORED_PRESERVE_REF}"; do
+            if git ls-remote --exit-code --heads origin "${ref}" >/dev/null 2>&1; then
+              echo "refusing consumed R01-17 identity: ${ref}" >&2
+              exit 1
+            fi
+          done
+
+      - name: Set up exact Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.11.16"
+
+      - name: Build exact frozen source manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib
+          import json
+          import subprocess
+          from pathlib import Path
+
+          explicit = {
+              ".github/workflows/rv01-r01-17-real-delay-execute-once.yml",
+              "docs/research/RV01_R01_17_REAL_DELAY_PREREGISTRATION_20260915.md",
+              "pyproject.toml",
+              "scripts/run_rv01_r01_17_real_delay.py",
+              "tests/test_rv01_r01_17_real_delay.py",
+          }
+          tracked = subprocess.check_output(
+              ["git", "ls-files", "src/sparkbrain"], text=True
+          ).splitlines()
+          paths = sorted(set(tracked).union(explicit))
+          entries = []
+          for raw in paths:
+              path = Path(raw)
+              if not path.is_file():
+                  raise SystemExit(f"missing manifest path: {raw}")
+              entries.append({
+                  "path": raw,
+                  "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+              })
+          payload = {
+              "source_git_sha": subprocess.check_output(
+                  ["git", "rev-parse", "HEAD"], text=True
+              ).strip(),
+              "entries": entries,
+          }
+          Path("/tmp/rv01-r01-17-source-manifest.json").write_text(
+              json.dumps(payload, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          PY
+
+      - name: Acquire raw R01-17 evidence exactly once
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/run_rv01_r01_17_real_delay.py acquire \
+            --source-git-sha "${GITHUB_SHA}" \
+            --output "${RAW_PATH}"
+
+      - name: Preserve raw evidence before scoring
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "${RAW_PRESERVE_REF}" >/dev/null 2>&1; then
+            echo "refusing to move existing raw preserve ref" >&2
+            exit 1
+          fi
+          mkdir -p "${OUTPUT_ROOT}/_execution_metadata"
+          cp /tmp/rv01-r01-17-source-manifest.json \
+            "${OUTPUT_ROOT}/_execution_metadata/source_manifest.json" || true
+          cat > "${OUTPUT_ROOT}/_execution_metadata/execution_metadata.json" <<EOF
+          {
+            "protocol": "rv01-r01-17-real-delay-causal-timing-v1",
+            "stage": "exposed-development",
+            "frozen_source_git_sha": "${GITHUB_SHA}",
+            "freeze_ref": "${FREEZE_REF}",
+            "control_ref": "${CONTROL_REF}",
+            "raw_preserve_ref": "${RAW_PRESERVE_REF}",
+            "scored_preserve_ref": "${SCORED_PRESERVE_REF}",
+            "workflow_run_id": "${GITHUB_RUN_ID}",
+            "workflow_run_attempt": "${GITHUB_RUN_ATTEMPT}",
+            "python_version": "$(python --version 2>&1)",
+            "same_identity_rerun_allowed": false,
+            "held_out_executed": false,
+            "formal_execution_allowed": false
+          }
+          EOF
+          if [ ! -f "${RAW_PATH}" ]; then
+            mkdir -p "${OUTPUT_ROOT}/_terminal"
+            cat > "${OUTPUT_ROOT}/_terminal/FAILED_BEFORE_RAW.json" <<EOF
+          {
+            "status": "R01_17_TERMINAL_FAILURE_AFTER_STARTED_BEFORE_RAW",
+            "frozen_source_git_sha": "${GITHUB_SHA}",
+            "same_identity_rerun_allowed": false
+          }
+          EOF
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f "${OUTPUT_ROOT}"
+          git commit -m "Preserve R01-17 raw evidence ${GITHUB_RUN_ID}"
+          git push origin "HEAD:refs/heads/${RAW_PRESERVE_REF}"
+
+      - name: Verify preserved raw bytes before scoring
+        if: success()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin "+refs/heads/${RAW_PRESERVE_REF}:refs/remotes/origin/${RAW_PRESERVE_REF}"
+          local_sha="$(sha256sum "${RAW_PATH}" | awk '{print $1}')"
+          preserved_sha="$(git show "refs/remotes/origin/${RAW_PRESERVE_REF}:${RAW_PATH}" | sha256sum | awk '{print $1}')"
+          test "${local_sha}" = "${preserved_sha}"
+
+      - name: Score only the already-preserved raw evidence
+        if: success()
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/run_rv01_r01_17_real_delay.py score \
+            --raw "${RAW_PATH}" \
+            --output "${SCORE_PATH}"
+
+      - name: Preserve score or terminal scoring failure
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "${SCORED_PRESERVE_REF}" >/dev/null 2>&1; then
+            echo "refusing to move existing scored preserve ref" >&2
+            exit 1
+          fi
+          if [ ! -f "${SCORE_PATH}" ]; then
+            mkdir -p "${OUTPUT_ROOT}/_terminal"
+            cat > "${OUTPUT_ROOT}/_terminal/FAILED_BEFORE_SCORE.json" <<EOF
+          {
+            "status": "R01_17_TERMINAL_FAILURE_AFTER_STARTED_BEFORE_SCORE",
+            "frozen_source_git_sha": "${GITHUB_SHA}",
+            "raw_preserve_ref": "${RAW_PRESERVE_REF}",
+            "same_identity_rerun_allowed": false
+          }
+          EOF
+          fi
+          git add -f "${OUTPUT_ROOT}"
+          git commit -m "Preserve R01-17 scored evidence ${GITHUB_RUN_ID}"
+          git push origin "HEAD:refs/heads/${SCORED_PRESERVE_REF}"
+
+      - name: Upload retained run surface
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rv01-r01-17-real-delay-${{ github.run_id }}
+          path: artifacts/rv01/r01-17/development/rv01-r01-17-real-delay-causal-timing-v1
+          if-no-files-found: error
+          retention-days: 90
