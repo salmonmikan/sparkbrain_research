@@ -202,34 +202,40 @@ jobs:
           git push origin "${raw_commit}:refs/heads/${RAW_PRESERVE_REF}"
           touch "${RUNNER_TEMP}/p4-raw-preserve-owner"
 
-      - name: Verify preserved raw bytes before scoring
+      - name: Independently verify preserved raw artifact before scoring
         if: success()
         shell: bash
         run: |
           set -euo pipefail
+          claim_commit="$(cat "${RUNNER_TEMP}/p4-owner-claim-sha")"
           git fetch origin \
             "+refs/heads/${RAW_PRESERVE_REF}:refs/remotes/origin/${RAW_PRESERVE_REF}"
-          local_sha="$(sha256sum "${RAW_PATH}" | awk '{print $1}')"
-          preserved_sha="$(
-            git show "refs/remotes/origin/${RAW_PRESERVE_REF}:${RAW_PATH}" |
-              sha256sum | awk '{print $1}'
-          )"
-          test "${local_sha}" = "${preserved_sha}"
-          cd "${OUTPUT_ROOT}"
-          sha256sum -c raw.sha256
-          sha256sum -c _execution_metadata/binding.sha256
-          cd "${GITHUB_WORKSPACE}"
+          verify_root="${RUNNER_TEMP}/p4-preserved-raw"
+          rm -rf "${verify_root}"
+          mkdir -p "${verify_root}"
+          git archive "refs/remotes/origin/${RAW_PRESERVE_REF}" "${OUTPUT_ROOT}" |
+            tar -x -C "${verify_root}"
+          python scripts/verify_v061_a01_md002_p4_candidate_001_artifacts.py \
+            --root "${verify_root}/${OUTPUT_ROOT}" \
+            --expected-source-sha "${GITHUB_SHA}" \
+            --expected-run-id "${GITHUB_RUN_ID}" \
+            --expected-owner-claim "${claim_commit}"
+          printf '%s\n' "${verify_root}/${RAW_PATH}" > \
+            "${RUNNER_TEMP}/p4-verified-raw-path"
           touch "${RUNNER_TEMP}/p4-raw-verified"
 
-      - name: Score only already-preserved raw evidence
+      - name: Score only independently verified preserved raw evidence
         if: success()
         shell: bash
         run: |
           set -euo pipefail
+          test -f "${RUNNER_TEMP}/p4-raw-verified"
+          verified_raw="$(cat "${RUNNER_TEMP}/p4-verified-raw-path")"
+          test -f "${verified_raw}"
           touch "${RUNNER_TEMP}/p4-score-started"
           python scripts/run_v061_a01_md002_p4_candidate_001_v3.py score \
             --source-sha "${GITHUB_SHA}" \
-            --raw-input "${RAW_PATH}" \
+            --raw-input "${verified_raw}" \
             --output "${SCORE_PATH}"
           cd "${OUTPUT_ROOT}"
           sha256sum scored.json > scored.sha256
