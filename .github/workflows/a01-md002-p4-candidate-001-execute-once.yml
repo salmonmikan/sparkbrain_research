@@ -225,7 +225,9 @@ jobs:
             --output "${SCORE_PATH}"
           cd "${OUTPUT_ROOT}"
           sha256sum scored.json > scored.sha256
+          sha256sum -c scored.sha256
           cd "${GITHUB_WORKSPACE}"
+          touch "${RUNNER_TEMP}/p4-score-complete"
 
       - name: Preserve score or accurately staged terminal failure
         if: always()
@@ -251,8 +253,9 @@ jobs:
           mkdir -p "${OUTPUT_ROOT}/_terminal"
           if [ -f "${OUTPUT_ROOT}/_terminal/FAILED_BEFORE_RAW.json" ]; then
             echo "preserving existing before-raw terminal stage"
-          elif [ -f "${SCORE_PATH}" ]; then
-            :
+          elif [ -f "${RUNNER_TEMP}/p4-score-complete" ]; then
+            test -f "${SCORE_PATH}"
+            test -f "${OUTPUT_ROOT}/scored.sha256"
           elif [ -f "${RUNNER_TEMP}/p4-score-started" ]; then
             cat > "${OUTPUT_ROOT}/_terminal/FAILED_DURING_SCORE.json" <<EOF
           {
@@ -279,5 +282,9 @@ jobs:
           EOF
           fi
           git add -f "${OUTPUT_ROOT}"
-          git commit -m "Preserve A01 P4 scored result ${GITHUB_RUN_ID}"
+          if ! git diff --cached --quiet; then
+            git commit -m "Preserve A01 P4 scored result ${GITHUB_RUN_ID}"
+          else
+            echo "no new scored-stage bytes; reusing the existing raw-terminal commit"
+          fi
           git push origin "HEAD:refs/heads/${SCORED_PRESERVE_REF}"
