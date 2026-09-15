@@ -8,9 +8,9 @@ only that measurement payload back to the protocol representation before the
 frozen scorer re-validates ``P4RetainedTraceInput``.
 
 The ``acquire`` path is additionally fail-closed on the immutable one-way
-execution authority.  It verifies the frozen source, STARTED ref, durable owner
+execution authority. It verifies the frozen source, STARTED ref, durable owner
 claim and GitHub Actions run identity, then atomically creates a dedicated
-acquisition claim ref before any candidate observation is produced.  A second
+acquisition claim ref before any candidate observation is produced. A second
 invocation therefore cannot reuse the same prospective execution identities.
 No candidate mechanism, threshold, condition, or verdict rule is changed here.
 """
@@ -148,21 +148,15 @@ def _remote_ref_sha(ref: str) -> str | None:
     return _require_git_sha(rows[0].split()[0], f"remote ref {ref}")
 
 
-def _claim_acquisition(
-    *,
-    source_sha: str,
-    owner_claim_sha: str,
-    workflow_run_id: str,
-) -> str:
+def _claim_acquisition(*, source_sha: str) -> str:
     """Validate one-way authority and atomically consume the acquisition gate."""
 
     source_sha = _require_git_sha(source_sha, "source SHA")
-    owner_claim_sha = _require_git_sha(owner_claim_sha, "owner claim SHA")
+    workflow_run_id = str(os.environ.get("GITHUB_RUN_ID", ""))
     _require(workflow_run_id.isdigit(), "workflow run ID must be numeric")
 
     _require(os.environ.get("GITHUB_ACTIONS") == "true", "acquire requires GitHub Actions")
     _require(os.environ.get("GITHUB_REPOSITORY") == REPOSITORY, "repository identity mismatch")
-    _require(os.environ.get("GITHUB_RUN_ID") == workflow_run_id, "workflow run identity mismatch")
     _require(os.environ.get("GITHUB_RUN_ATTEMPT") == "1", "rerun attempt is forbidden")
     _require(
         os.environ.get("GITHUB_REF") == f"refs/heads/{CONTROL_REF}",
@@ -173,10 +167,11 @@ def _claim_acquisition(
 
     freeze_sha = _remote_ref_sha(FREEZE_REF)
     control_sha = _remote_ref_sha(CONTROL_REF)
-    owner_remote_sha = _remote_ref_sha(OWNER_REF)
+    owner_claim_sha = _remote_ref_sha(OWNER_REF)
     _require(freeze_sha == source_sha, "freeze ref does not bind exact source")
     _require(control_sha == source_sha, "STARTED ref does not bind exact source")
-    _require(owner_remote_sha == owner_claim_sha, "durable owner claim mismatch")
+    _require(owner_claim_sha is not None, "durable owner claim is missing")
+    owner_claim_sha = _require_git_sha(owner_claim_sha, "owner claim SHA")
 
     _git(
         "fetch",
@@ -256,18 +251,10 @@ def _claim_acquisition(
 def _parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     subparsers = parser.add_subparsers(dest="mode", required=True)
-
-    manifest = subparsers.add_parser("manifest")
-    manifest.add_argument("--source-sha", required=True)
-    manifest.add_argument("--output", required=True)
-
-    acquire = subparsers.add_parser("acquire")
-    acquire.add_argument("--source-sha", required=True)
-    acquire.add_argument("--output", required=True)
-    acquire.add_argument("--owner-claim-sha", required=True)
-    acquire.add_argument("--workflow-run-id", required=True)
-    acquire.add_argument("--acquire-claim-output", required=True)
-
+    for mode in ("manifest", "acquire"):
+        child = subparsers.add_parser(mode)
+        child.add_argument("--source-sha", required=True)
+        child.add_argument("--output", required=True)
     score = subparsers.add_parser("score")
     score.add_argument("--source-sha", required=True)
     score.add_argument("--raw-input", required=True)
@@ -281,12 +268,7 @@ def main() -> None:
     if args.mode == "manifest":
         value = core._manifest(source_sha)
     elif args.mode == "acquire":
-        acquire_claim = _claim_acquisition(
-            source_sha=source_sha,
-            owner_claim_sha=str(args.owner_claim_sha),
-            workflow_run_id=str(args.workflow_run_id),
-        )
-        Path(args.acquire_claim_output).write_text(f"{acquire_claim}\n")
+        _claim_acquisition(source_sha=source_sha)
         value = core._acquire(source_sha)
     elif args.mode == "score":
         raw = json.loads(Path(args.raw_input).read_text())
