@@ -14,7 +14,7 @@ The diagnostic is intended to sharpen the next **distinct exploratory/developmen
 - Preserve commit inspected: `0a25eac227d7ac0e8dbd5532d450ed2d50efa105`
 - Capability result: `artifacts/rv01/r01-16/capability/rv01-r01-16-capability-02b3d80744d0eb10-65ebe33d70af/capability_result.json`
 - Preserved raw artifact SHA-256: `e3b6e8c7ed6db423919c4360a5291ac207544566beb4656954be344cb253f335`
-- Frozen scorer SHA-256: `b1b4d555d30630d1051482563696981261619143099216ab893bbea481d69392d`
+- Capability suite hash (immutable result provenance): `b1b4d555d30630d1051482563696981261619143099216ab893bbea481d69392d`
 - Capability source/package manifest SHA-256: `bc36c7da23f4d6b8fa1ee7d4d8c7bacdfd5970818482e146a188837247332582`
 - Retained history registry SHA-256: `232f4fb23b74662d10adca2990e1b030bbb1c74e45fb67f607982738570795bd`
 
