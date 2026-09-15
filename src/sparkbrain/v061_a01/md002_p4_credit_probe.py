@@ -83,6 +83,16 @@ def _require_unused_external_evidence(bridge: Any, external: Any) -> None:
         raise ValueError("P4 merged-lineage external evidence must not be reused")
 
 
+def _require_unused_boundary_event(bridge: Any, boundary: Any) -> None:
+    """Prevent a consumed BoundaryEvent ID from receiving credit again."""
+
+    if any(
+        row.boundary_event_id == boundary.event_id
+        for row in bridge.consistency.resolutions
+    ):
+        raise ValueError("P4 merged-lineage boundary event must not be reused")
+
+
 def _validate_causal_ancestry(bridge: Any, proposal_ids: tuple[str, ...]) -> None:
     """Resolve ancestry and local paths fully before any pending state is consumed."""
 
@@ -140,6 +150,7 @@ def probe_merged_lineage_credit(
         raise ValueError("P4 merged-lineage source proposal IDs must be unique")
     if boundary.event_id not in external.parent_event_ids:
         raise ValueError("P4 merged-lineage credit probe requires exact-parent evidence")
+    _require_unused_boundary_event(bridge, boundary)
     _require_registered_boundary_payload(bridge, boundary)
     _require_selected_exact_parent(bridge, boundary, external)
     _require_unused_external_evidence(bridge, external)
