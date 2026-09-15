@@ -149,6 +149,68 @@ def _verify_runtime(root: Path) -> None:
     _require(runtime.get("same_identity_rerun_allowed") is False, "rerun unexpectedly enabled")
 
 
+def _trace_lineage_record(
+    trace: list[Any],
+    *,
+    phase: str,
+    execution_id: str,
+) -> list[str]:
+    matches = [
+        item
+        for item in trace
+        if isinstance(item, dict)
+        and item.get("type") == "md002-p4-active-lineages"
+        and item.get("phase") == phase
+    ]
+    _require(
+        len(matches) == 1,
+        f"{execution_id}: active-lineage {phase} cardinality mismatch",
+    )
+    proposal_ids = matches[0].get("proposal_ids")
+    _require(
+        isinstance(proposal_ids, list)
+        and all(isinstance(value, str) and value for value in proposal_ids),
+        f"{execution_id}: active-lineage {phase} proposal IDs invalid",
+    )
+    _require(
+        len(proposal_ids) == len(set(proposal_ids)),
+        f"{execution_id}: active-lineage {phase} proposal IDs duplicated",
+    )
+    return list(proposal_ids)
+
+
+def _merged_boundary_proposal_ids(
+    boundaries: list[Any],
+    *,
+    execution_id: str,
+) -> list[str]:
+    merged: list[str] = []
+    seen: set[str] = set()
+    for boundary in boundaries:
+        _require(isinstance(boundary, dict), f"{execution_id}: boundary row invalid")
+        source_ids = boundary.get("source_proposal_ids")
+        _require(
+            isinstance(source_ids, list)
+            and all(isinstance(value, str) and value for value in source_ids),
+            f"{execution_id}: boundary source proposal IDs invalid",
+        )
+        _require(
+            len(source_ids) == len(set(source_ids)),
+            f"{execution_id}: boundary source proposal IDs duplicated",
+        )
+        if len(source_ids) < 2:
+            continue
+        for proposal_id in source_ids:
+            if proposal_id not in seen:
+                seen.add(proposal_id)
+                merged.append(proposal_id)
+    _require(
+        len(merged) >= 2,
+        f"{execution_id}: retained boundary trace has no plural merged ancestry",
+    )
+    return merged
+
+
 def _verify_trace_row(
     row: dict[str, Any],
     contract: dict[str, Any],
@@ -179,6 +241,32 @@ def _verify_trace_row(
     if condition_spec.get("boundary_mode") != "merged":
         return
 
+    before = _trace_lineage_record(trace, phase="before", execution_id=execution_id)
+    after = _trace_lineage_record(trace, phase="after", execution_id=execution_id)
+    derived_merged_ids = _merged_boundary_proposal_ids(
+        boundaries,
+        execution_id=execution_id,
+    )
+    measurement_payload = {
+        "boundary_source_proposal_ids": derived_merged_ids,
+        "active_lineages_before": before,
+        "active_lineages_after": after,
+    }
+    measurement_rows = [
+        item
+        for item in trace
+        if isinstance(item, dict)
+        and item.get("type") == "md002-merged-ancestry-measurement"
+    ]
+    _require(
+        len(measurement_rows) == 1,
+        f"{execution_id}: merged measurement cardinality mismatch",
+    )
+    _require(
+        measurement_rows[0].get("measurement") == measurement_payload,
+        f"{execution_id}: merged measurement binding mismatch",
+    )
+
     observation = row.get("merged_ancestry_observation")
     _require(isinstance(observation, dict), f"{execution_id}: merged observation missing")
     _require(
@@ -189,17 +277,35 @@ def _verify_trace_row(
         observation.get("runtime_trace") == trace,
         f"{execution_id}: observation trace bytes mismatch",
     )
+    _require(
+        observation.get("boundary_source_proposal_ids") == derived_merged_ids,
+        f"{execution_id}: observation merged ancestry binding mismatch",
+    )
+    _require(
+        observation.get("active_lineages_before") == before,
+        f"{execution_id}: observation before-lineage binding mismatch",
+    )
+    _require(
+        observation.get("active_lineages_after") == after,
+        f"{execution_id}: observation after-lineage binding mismatch",
+    )
+    _require(
+        observation.get("measurement_record_sha256")
+        == _canonical_sha256(measurement_payload),
+        f"{execution_id}: observation measurement digest mismatch",
+    )
+
     merged_ids = row.get("merged_source_proposal_ids")
     _require(
         isinstance(merged_ids, list) and len(set(merged_ids)) >= 2,
         f"{execution_id}: merged ancestry is not plural",
     )
     _require(
-        set(observation.get("boundary_source_proposal_ids", [])) == set(merged_ids),
-        f"{execution_id}: merged ancestry observation mismatch",
+        merged_ids == derived_merged_ids,
+        f"{execution_id}: merged ancestry does not match retained boundaries",
     )
     _require(
-        len(set(observation.get("active_lineages_before", []))) >= 2,
+        len(set(before)) >= 2,
         f"{execution_id}: active lineage plurality missing before evidence",
     )
 
