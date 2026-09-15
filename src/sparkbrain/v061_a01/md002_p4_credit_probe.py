@@ -48,6 +48,16 @@ def _require_registered_boundary_payload(bridge: Any, boundary: Any) -> None:
         raise ValueError("P4 merged-lineage boundary must match registered pending boundary")
 
 
+def _require_unused_external_evidence(bridge: Any, external: Any) -> None:
+    """Prevent one external pulse from becoming multiple credit observations."""
+
+    if any(
+        row.external_event_id == external.event_id
+        for row in bridge.consistency.resolutions
+    ):
+        raise ValueError("P4 merged-lineage external evidence must not be reused")
+
+
 def probe_merged_lineage_credit(
     bridge: Any,
     *,
@@ -71,6 +81,7 @@ def probe_merged_lineage_credit(
     if boundary.event_id not in external.parent_event_ids:
         raise ValueError("P4 merged-lineage credit probe requires exact-parent evidence")
     _require_registered_boundary_payload(bridge, boundary)
+    _require_unused_external_evidence(bridge, external)
 
     resolution = bridge.observe_external(boundary, external)
     before = dict(resolution.path_reliability_before)

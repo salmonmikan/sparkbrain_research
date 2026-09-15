@@ -16,19 +16,40 @@ from sparkbrain.v061_a01.credit_bridge import (
 from sparkbrain.v061_a01.md002_p4_credit_probe import probe_merged_lineage_credit
 
 
-def _boundary(source_ids: tuple[str, ...]) -> BoundaryEvent:
+def _boundary(
+    source_ids: tuple[str, ...],
+    *,
+    event_id: str = "boundary-same-id",
+) -> BoundaryEvent:
     return BoundaryEvent(
-        event_id="boundary-same-id",
+        event_id=event_id,
         time_ms=40.0,
         port_id="port:p",
         magnitude=1.0,
         polarity=1,
         direction=BoundaryDirection.FIELD_TO_WORLD,
-        source_spark_id="spark:boundary-same-id",
+        source_spark_id=f"spark:{event_id}",
         source_unit_id=0,
         source_proposal_ids=source_ids,
         generation_depth=1,
         source_state_hash="state:shared",
+    )
+
+
+def _proposal(proposal_id: str, target: str) -> EndogenousPulseProposal:
+    return EndogenousPulseProposal(
+        proposal_id=proposal_id,
+        created_at_ms=10.0,
+        target=target,
+        predicted_arrival_ms=20.0,
+        magnitude=1.0,
+        polarity=1,
+        confidence=0.5,
+        origin_state_hash="state:shared",
+        local_path_ids=(f"local:A->{target}",),
+        generation_depth=1,
+        valid_until_ms=60.0,
+        energy_cost=0.1,
     )
 
 
@@ -46,22 +67,7 @@ def test_p4_probe_rejects_boundary_payload_mismatch() -> None:
     )
     ledger = ProvenanceLedger()
     for proposal_id, target in (("proposal-b", "B"), ("proposal-c", "C")):
-        ledger.register_proposal(
-            EndogenousPulseProposal(
-                proposal_id=proposal_id,
-                created_at_ms=10.0,
-                target=target,
-                predicted_arrival_ms=20.0,
-                magnitude=1.0,
-                polarity=1,
-                confidence=0.5,
-                origin_state_hash="state:shared",
-                local_path_ids=(f"local:A->{target}",),
-                generation_depth=1,
-                valid_until_ms=60.0,
-                energy_cost=0.1,
-            )
-        )
+        ledger.register_proposal(_proposal(proposal_id, target))
     consistency = UntypedBoundaryConsistency(ledger)
     registered = _boundary(("proposal-b",))
     supplied = _boundary(("proposal-b", "proposal-c"))
@@ -80,3 +86,39 @@ def test_p4_probe_rejects_boundary_payload_mismatch() -> None:
 
     with pytest.raises(ValueError, match="must match registered pending boundary"):
         probe_merged_lineage_credit(bridge, boundary=supplied, external=external)
+
+
+def test_p4_probe_rejects_reused_external_evidence() -> None:
+    expectation = A01LocalTemporalExpectation(
+        LocalExpectationConfig(minimum_observations=1, minimum_confidence=0.0)
+    )
+    ledger = ProvenanceLedger()
+    ledger.register_proposal(_proposal("proposal-b", "B"))
+    ledger.register_proposal(_proposal("proposal-c", "C"))
+    consistency = UntypedBoundaryConsistency(ledger)
+    first = _boundary(
+        ("proposal-b", "proposal-c"),
+        event_id="boundary-a",
+    )
+    second = _boundary(
+        ("proposal-b", "proposal-c"),
+        event_id="boundary-b",
+    )
+    consistency.register_boundary(first)
+    consistency.register_boundary(second)
+    external = RuntimePulse(
+        "external-shared",
+        45.0,
+        "world:x",
+        1.0,
+        1,
+        EventOrigin.EXTERNAL,
+        parent_event_ids=(first.event_id, second.event_id),
+    )
+    ledger.register_external(external)
+    bridge = A01TransientCreditBridge(expectation, consistency, ledger)
+
+    probe_merged_lineage_credit(bridge, boundary=first, external=external)
+
+    with pytest.raises(ValueError, match="external evidence must not be reused"):
+        probe_merged_lineage_credit(bridge, boundary=second, external=external)
