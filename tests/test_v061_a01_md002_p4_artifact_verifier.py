@@ -20,6 +20,108 @@ SOURCE_SHA = "1" * 40
 OWNER_SHA = "2" * 40
 RUN_ID = "123456"
 
+BASE_CONDITIONS = (
+    {
+        "condition_id": "p4-separate-confirmation",
+        "boundary_mode": "separate",
+        "evidence_mode": "confirmation",
+        "requires_later_separation": False,
+        "returned_external_evidence": True,
+        "positive_credit_permitted": True,
+    },
+    {
+        "condition_id": "p4-merged-confirmation",
+        "boundary_mode": "merged",
+        "evidence_mode": "confirmation",
+        "requires_later_separation": False,
+        "returned_external_evidence": True,
+        "positive_credit_permitted": True,
+    },
+    {
+        "condition_id": "p4-merged-separating-confirmation",
+        "boundary_mode": "merged",
+        "evidence_mode": "confirmation",
+        "requires_later_separation": True,
+        "returned_external_evidence": True,
+        "positive_credit_permitted": True,
+    },
+    {
+        "condition_id": "p4-merged-separating-contradiction",
+        "boundary_mode": "merged",
+        "evidence_mode": "contradiction",
+        "requires_later_separation": True,
+        "returned_external_evidence": True,
+        "positive_credit_permitted": False,
+    },
+    {
+        "condition_id": "p4-merged-absence",
+        "boundary_mode": "merged",
+        "evidence_mode": "absence",
+        "requires_later_separation": False,
+        "returned_external_evidence": False,
+        "positive_credit_permitted": False,
+    },
+    {
+        "condition_id": "p4-merged-replay",
+        "boundary_mode": "merged",
+        "evidence_mode": "internal-replay",
+        "requires_later_separation": False,
+        "returned_external_evidence": False,
+        "positive_credit_permitted": False,
+    },
+)
+
+EXECUTION_MATRIX = (
+    {
+        "execution_id": "p4-separate-confirmation",
+        "base_condition_id": "p4-separate-confirmation",
+        "selected_lineage_arm": None,
+        "evidence_sign": "confirmation",
+    },
+    {
+        "execution_id": "p4-merged-confirmation",
+        "base_condition_id": "p4-merged-confirmation",
+        "selected_lineage_arm": None,
+        "evidence_sign": "confirmation",
+    },
+    {
+        "execution_id": "p4-merged-separating-confirmation-a",
+        "base_condition_id": "p4-merged-separating-confirmation",
+        "selected_lineage_arm": "a",
+        "evidence_sign": "confirmation",
+    },
+    {
+        "execution_id": "p4-merged-separating-confirmation-b",
+        "base_condition_id": "p4-merged-separating-confirmation",
+        "selected_lineage_arm": "b",
+        "evidence_sign": "confirmation",
+    },
+    {
+        "execution_id": "p4-merged-separating-contradiction-a",
+        "base_condition_id": "p4-merged-separating-contradiction",
+        "selected_lineage_arm": "a",
+        "evidence_sign": "contradiction",
+    },
+    {
+        "execution_id": "p4-merged-separating-contradiction-b",
+        "base_condition_id": "p4-merged-separating-contradiction",
+        "selected_lineage_arm": "b",
+        "evidence_sign": "contradiction",
+    },
+    {
+        "execution_id": "p4-merged-absence",
+        "base_condition_id": "p4-merged-absence",
+        "selected_lineage_arm": None,
+        "evidence_sign": "absence",
+    },
+    {
+        "execution_id": "p4-merged-replay",
+        "base_condition_id": "p4-merged-replay",
+        "selected_lineage_arm": None,
+        "evidence_sign": "replay",
+    },
+)
+
 
 def _write_json(path: Path, value: object) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -35,6 +137,22 @@ def _refresh_raw_checksum(root: Path) -> None:
     (root / "raw.sha256").write_text(f"{_sha256(raw_path)}  raw.json\n")
 
 
+def _matrix_row(execution_id: str) -> dict[str, object]:
+    return next(dict(row) for row in EXECUTION_MATRIX if row["execution_id"] == execution_id)
+
+
+def _condition_spec(execution_id: str) -> dict[str, object]:
+    matrix_row = _matrix_row(execution_id)
+    base_condition_id = matrix_row["base_condition_id"]
+    base = next(
+        dict(row) for row in BASE_CONDITIONS if row["condition_id"] == base_condition_id
+    )
+    base["base_condition_id"] = base_condition_id
+    base["selected_lineage_arm"] = matrix_row["selected_lineage_arm"]
+    base["evidence_sign"] = matrix_row["evidence_sign"]
+    return base
+
+
 def _build_bundle(root: Path) -> None:
     path_map = {
         "proposal-a": {"path_id": "path-a", "target": "world:x"},
@@ -44,20 +162,16 @@ def _build_bundle(root: Path) -> None:
         execution_id: f"{CANDIDATE_ID}:{execution_id}:once"
         for execution_id in EXPECTED_EXECUTION_IDS
     }
-    matrix = [
-        {
-            "execution_id": execution_id,
-            "base_condition_id": execution_id.rsplit("-a", 1)[0].rsplit("-b", 1)[0],
-        }
-        for execution_id in EXPECTED_EXECUTION_IDS
-    ]
     contract = {
         "schema": CONTRACT_SCHEMA,
         "candidate_id": CANDIDATE_ID,
         "source_sha": SOURCE_SHA,
         "prospective_execution_ids": prospective,
-        "execution_matrix": matrix,
-        "fixture": {"path_map": path_map},
+        "execution_matrix": [dict(row) for row in EXECUTION_MATRIX],
+        "fixture": {
+            "path_map": path_map,
+            "base_conditions": [dict(row) for row in BASE_CONDITIONS],
+        },
     }
     contract["contract_sha256"] = _canonical_sha256(contract)
     manifest = {
@@ -78,8 +192,9 @@ def _build_bundle(root: Path) -> None:
 
     observations = []
     for execution_id in EXPECTED_EXECUTION_IDS:
-        separating = "merged-separating" in execution_id
-        merged = execution_id != "p4-separate-confirmation"
+        condition_spec = _condition_spec(execution_id)
+        separating = bool(condition_spec["requires_later_separation"])
+        merged = condition_spec["boundary_mode"] == "merged"
         selected_proposal = "proposal-b" if execution_id.endswith("-b") else "proposal-a"
         selected_boundary = f"history-{selected_proposal}"
         boundaries = [
@@ -138,10 +253,7 @@ def _build_bundle(root: Path) -> None:
         observation = {
             "condition_id": execution_id,
             "prospective_execution_id": prospective[execution_id],
-            "condition_spec": {
-                "boundary_mode": "merged" if merged else "separate",
-                "requires_later_separation": separating,
-            },
+            "condition_spec": condition_spec,
             "proposal_rows": [
                 {"proposal_id": "proposal-a"},
                 {"proposal_id": "proposal-b"},
@@ -290,10 +402,9 @@ def test_independent_verifier_rejects_missing_merged_measurement(tmp_path: Path)
     raw_path = tmp_path / "raw.json"
     raw = json.loads(raw_path.read_text())
     row = raw["observations"][1]
-    trace = row["retained_runtime_trace"]
     row["retained_runtime_trace"] = [
         item
-        for item in trace
+        for item in row["retained_runtime_trace"]
         if item.get("type") != "md002-merged-ancestry-measurement"
     ]
     _rewrite_trace_bound_fields(row)
@@ -301,6 +412,46 @@ def test_independent_verifier_rejects_missing_merged_measurement(tmp_path: Path)
     _refresh_raw_checksum(tmp_path)
 
     with pytest.raises(ValueError, match="merged measurement cardinality mismatch"):
+        verify_raw_bundle(
+            tmp_path,
+            expected_source_sha=SOURCE_SHA,
+            expected_run_id=RUN_ID,
+            expected_owner_claim=OWNER_SHA,
+        )
+
+
+def test_independent_verifier_rejects_condition_spec_not_bound_to_matrix(tmp_path: Path) -> None:
+    _build_bundle(tmp_path)
+    raw_path = tmp_path / "raw.json"
+    raw = json.loads(raw_path.read_text())
+    raw["observations"][1]["condition_spec"]["boundary_mode"] = "separate"
+    _write_json(raw_path, raw)
+    _refresh_raw_checksum(tmp_path)
+
+    with pytest.raises(ValueError, match="condition spec differs from frozen execution matrix"):
+        verify_raw_bundle(
+            tmp_path,
+            expected_source_sha=SOURCE_SHA,
+            expected_run_id=RUN_ID,
+            expected_owner_claim=OWNER_SHA,
+        )
+
+
+def test_independent_verifier_rejects_missing_trace_expiration_record(tmp_path: Path) -> None:
+    _build_bundle(tmp_path)
+    raw_path = tmp_path / "raw.json"
+    raw = json.loads(raw_path.read_text())
+    row = raw["observations"][2]
+    row["retained_runtime_trace"] = [
+        item
+        for item in row["retained_runtime_trace"]
+        if item.get("type") != "md002-p4-expired-boundary"
+    ]
+    _rewrite_trace_bound_fields(row)
+    _write_json(raw_path, raw)
+    _refresh_raw_checksum(tmp_path)
+
+    with pytest.raises(ValueError, match="selected historical boundary expiration record mismatch"):
         verify_raw_bundle(
             tmp_path,
             expected_source_sha=SOURCE_SHA,
