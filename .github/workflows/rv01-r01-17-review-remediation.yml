@@ -26,13 +26,18 @@ jobs:
           git merge-base --is-ancestor 7746e8a57f2d5ed7280888581ad4300e6bd4b482 HEAD
 
       - name: Apply exact review remediation
-        run: python .github/scripts/rv01_r01_17_review_remediation.py
+        shell: bash
+        run: |
+          set -euo pipefail
+          python .github/scripts/rv01_r01_17_review_remediation.py
+          python .github/scripts/rv01_r01_17_lint_fix.py
 
       - name: Remove one-shot remediation helpers
         shell: bash
         run: |
           rm .github/workflows/rv01-r01-17-review-remediation.yml
           rm .github/scripts/rv01_r01_17_review_remediation.py
+          rm .github/scripts/rv01_r01_17_lint_fix.py
 
       - name: Install local validation dependencies
         run: python -m pip install -e ".[dev]"
