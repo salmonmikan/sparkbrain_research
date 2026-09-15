@@ -11,7 +11,7 @@ import copy
 import hashlib
 import json
 import random
-from dataclasses import asdict, dataclass
+from dataclasses import dataclass
 from typing import Any
 
 from sparkbrain.v04.contracts import SynapticArrival
@@ -186,6 +186,7 @@ def _probe_checkpoint(
 ) -> dict[str, Any]:
     field = TemporalExcitableField.from_state_dict(copy.deepcopy(checkpoint))
     before_hash = connection_state_hash(field)
+    inventory = _connections(field)
     cue_time = 100.0
     field.schedule_arrival(
         SynapticArrival(
@@ -213,8 +214,9 @@ def _probe_checkpoint(
         raise RuntimeError("R01-17 probe mutated frozen connection state")
     return {
         "arm": arm,
-        "connection_hash_before": before_hash,
         "connection_hash_after": after_hash,
+        "connection_hash_before": before_hash,
+        "connections": inventory,
         "generated_times_ms": [float(row.time_ms) for row in later],
         "generated_units": [int(row.unit_id) for row in later],
     }
@@ -304,12 +306,19 @@ def score_raw_suite(raw: dict[str, Any]) -> dict[str, Any]:
     worlds = raw.get("worlds")
     if not isinstance(worlds, list) or len(worlds) != len(R01_17_DEVELOPMENT_SEEDS):
         raise ValueError("R01-17 scorer requires the complete fixed five-cell raw suite")
+    if raw.get("world_grid_sha256") != prospective_world_grid_hash():
+        raise ValueError("R01-17 raw suite world-grid hash drifted")
+    if raw.get("raw_suite_sha256") != _digest(worlds):
+        raise ValueError("R01-17 raw suite content hash mismatch")
     observed_seeds = [int(row["spec"]["seed"]) for row in worlds]
     if observed_seeds != list(R01_17_DEVELOPMENT_SEEDS):
         raise ValueError("R01-17 raw suite seed order/identity drifted")
 
     scored_worlds: list[dict[str, Any]] = []
     for row in worlds:
+        seed = int(row["spec"]["seed"])
+        if row["spec"] != build_world_spec(seed).state_dict():
+            raise ValueError("R01-17 raw suite spec diverged from the frozen construction")
         pre = _edge_map(row["pre_training_connections"])
         post = _edge_map(row["post_training_connections"])
         if set(pre) != set(post):
@@ -325,10 +334,6 @@ def score_raw_suite(raw: dict[str, Any]) -> dict[str, Any]:
             )
             for source, target in sorted(expected_edges)
         }
-        weight_matched = all(
-            float(post[key]["weight"]) == float(post[key]["weight"])
-            for key in expected_edges
-        )
         delay_eligible = all(
             value >= R01_17_MIN_DELAY_DISPLACEMENT_MS
             for value in delay_displacements.values()
@@ -338,13 +343,34 @@ def score_raw_suite(raw: dict[str, Any]) -> dict[str, Any]:
         f0 = arms["F0"]
         fd = arms["FD"]
         sham = arms["SHAM"]
+        f0_edges = _edge_map(f0["connections"])
+        fd_edges = _edge_map(fd["connections"])
+        sham_edges = _edge_map(sham["connections"])
+        arm_binding_valid = (
+            set(f0_edges) == expected_edges
+            and set(fd_edges) == expected_edges
+            and set(sham_edges) == expected_edges
+            and all(
+                float(f0_edges[key]["weight"]) == float(fd_edges[key]["weight"])
+                == float(sham_edges[key]["weight"])
+                == float(post[key]["weight"])
+                for key in expected_edges
+            )
+            and all(
+                float(f0_edges[key]["delay_ms"]) == float(post[key]["delay_ms"])
+                and float(sham_edges[key]["delay_ms"]) == float(post[key]["delay_ms"])
+                and float(fd_edges[key]["delay_ms"]) == float(pre[key]["delay_ms"])
+                for key in expected_edges
+            )
+        )
         expected_units = list(R01_17_ROUTE[1:])
         route_preserved = (
             list(f0["generated_units"]) == expected_units
             and list(fd["generated_units"]) == expected_units
         )
         sham_exact = (
-            sham["generated_units"] == f0["generated_units"]
+            sham["connection_hash_before"] == f0["connection_hash_before"]
+            and sham["generated_units"] == f0["generated_units"]
             and sham["generated_times_ms"] == f0["generated_times_ms"]
         )
         f0_arrivals = _first_arrivals(f0)
@@ -365,21 +391,21 @@ def score_raw_suite(raw: dict[str, Any]) -> dict[str, Any]:
 
         if not delay_eligible:
             disposition = "REAL_DELAY_INELIGIBLE"
-        elif route_preserved and sham_exact and complete_arrivals and causal_timing and weight_matched:
+        elif arm_binding_valid and route_preserved and sham_exact and causal_timing:
             disposition = "REAL_DELAY_SUPPORT_CELL"
         else:
             disposition = "REAL_DELAY_NEGATIVE_CELL"
 
         scored_worlds.append(
             {
+                "arm_binding_valid": arm_binding_valid,
                 "arrival_shifts_ms": arrival_shifts,
                 "delay_displacements_ms": delay_displacements,
                 "delay_eligible": delay_eligible,
                 "disposition": disposition,
                 "route_preserved": route_preserved,
-                "seed": int(row["spec"]["seed"]),
+                "seed": seed,
                 "sham_exact": sham_exact,
-                "weight_matched": weight_matched,
                 "world_id": row["spec"]["world_id"],
             }
         )
@@ -402,8 +428,8 @@ def score_raw_suite(raw: dict[str, Any]) -> dict[str, Any]:
         "phase": "development",
         "protocol_id": R01_17_PROTOCOL_ID,
         "raw_suite_sha256": raw["raw_suite_sha256"],
-        "scored_worlds": scored_worlds,
         "score_sha256": _digest(scored_worlds),
+        "scored_worlds": scored_worlds,
         "timing_tolerance_ms": R01_17_TIMING_TOLERANCE_MS,
     }
 
