@@ -1,132 +1,127 @@
 {
-  "schema": "sparkbrain-evidence-analyst-state-v3",
-  "analysis_timestamp": "2026-09-16T02:57:20+09:00",
-  "branch": "ops/evidence-analyst-handoff",
-  "control_brain": {
-    "branch": "ops/control-brain-handoff",
+  "analysis_timestamp": "2026-09-16T05:00:00+09:00",
+  "control_brain_handoff": {
+    "ref": "ops/control-brain-handoff",
     "commit": "1985198deb95190d45cb46629beb654eb04d4d92",
-    "status": "FOUNDATIONAL_STRATEGY_SUPPORTED_IMMEDIATE_P3_PRIORITY_SUPERSEDED",
-    "assessment": "Core causal-circulation thesis and stop/reframe rules remain valid, but P3 is no longer pending: it completed positive, so P4 is now primary and P5 reduction pressure increases."
+    "assessment": "foundational_strategy_supported_p4_priority_remains_correct"
   },
   "orchestrator_report": {
-    "branch": "ops/orchestrator-run-report",
-    "commit": "08b1abe2f5aacb33d8f55a9b7fba62a484b90155",
-    "status": "STALE_FOR_A01_PRE_P3_COMPLETION_RV01_SECTION_STILL_CONSISTENT"
+    "ref": "ops/orchestrator-run-report",
+    "commit": "e1938c40f83ca717eb8211684d3dfaf1740f3587",
+    "assessment": "scientifically_consistent_operationally_stale_on_ci_status"
   },
   "source_refs_inspected": {
     "main": "ba16bf10535141c2edb29bbe3439ba0a38e71179",
-    "a01_authoritative": "cf784e24b0d97a81b382988783ea8490cfc333dd",
-    "p3_source_freeze": "cf784e24b0d97a81b382988783ea8490cfc333dd",
-    "p3_started": "cf784e24b0d97a81b382988783ea8490cfc333dd",
-    "p3_raw_preserve": "908e3d35f2ced7efe01b778d19f22882543154bc",
-    "p3_scored_preserve": "8ffe8dfa8057595c2998c4a7b634d37a80ffa7b5",
-    "p4_parallel_branch": "f0d668a6bdab35293a361dd0b442e19519be540b",
-    "rv01_authoritative": "98be60268845487ce51e76b8a7687552a5dbc51f",
-    "rv02_authoritative": "c60b7fd8d3889ee969f505d921e7d31c990871e6"
-  },
-  "new_scientific_information": true,
-  "new_evidence": {
-    "identity": "a01-md002-p3-r-only-causal-carrier-candidate-001-v1",
-    "stage": "exposed-development",
-    "workflow_run_id": "35000888239",
-    "workflow_attempt": 1,
-    "classification": "SUPPORTED_R_CAUSAL_CARRIER",
-    "formal": false,
-    "held_out": false,
-    "contract_sha256": "cb79222dd2644ae278047daff7ca2415390ba7ae681c222de1a299cad34b67cb",
-    "raw_sha256": "a3b6c2dddef127f11202f6cb3b5ba9dfd03c244d28c9d15e480f2adb917d437c",
-    "scored_sha256": "6e6a7c2edc74936f4cd818a3eadbafc91db5a3164db08d0c0366b706fc99a4c2",
-    "directions": {
-      "A-to-B": {"baseline": "B", "donor": "C", "transplanted": "C"},
-      "B-to-A": {"baseline": "C", "donor": "B", "transplanted": "B"}
+    "a01_authoritative": "2e47df9cf8c6323f390935bb41c368632f3342c6",
+    "a01_p4_candidate_branch": "3918fbb0c81afdd47bc10b680827f0f41052835e",
+    "a01_p4_pr": 137,
+    "a01_p4_ci_run": {
+      "id": 35014566566,
+      "status": "completed",
+      "conclusion": "success"
     },
-    "interpretation": "Actual R-only transplantation transfers the measured local-credit/later-competition effect under matched L/F/C/evidence in both counterbalanced directions. This supports R as causal carrier at development level but remains plausibly reducible to explicit anonymous provenance/eligibility memory plus local support."
+    "a01_p3_source_started": "cf784e24b0d97a81b382988783ea8490cfc333dd",
+    "a01_p3_raw_preserve": "908e3d35f2ced7efe01b778d19f22882543154bc",
+    "a01_p3_scored_preserve": "8ffe8dfa8057595c2998c4a7b634d37a80ffa7b5",
+    "rv01_authoritative": "98be60268845487ce51e76b8a7687552a5dbc51f",
+    "rv02_rd005_source_binding": "c60b7fd8d3889ee969f505d921e7d31c990871e6"
   },
+  "new_scientific_information": false,
+  "new_readiness_information": [
+    "A01 authoritative advanced through PR #136 to 2e47df9; explicit BoundaryEvent replay is now idempotent.",
+    "P4 PR #137 remains open and candidate-001 remains unconsumed.",
+    "CI run 35014566566 completed successfully.",
+    "Three pre-STARTED P4 scientific/integrity blockers remain despite green CI."
+  ],
   "top_recommendation": {
-    "rank": 1,
-    "action": "A01 P4 fresh development merged-lineage selective-resolution discriminator",
+    "action": "A01 P4 genuine merged-lineage selective-resolution discriminator",
     "information_value": "HIGH",
     "implementation_distance": "MODERATE",
-    "go_stop_status": "GO only after current-A01 reconciliation, fresh identity, outcome-blind selective-resolution classifier, no boundary/evidence reuse, real retained plurality, non-privileged evidence binding, atomic STARTED, and raw-before-score. STOP if only en-bloc merged credit or privileged singleton/tie-break selection is available."
+    "go_stop_status": "STOP_UNTIL_THREE_PRE_STARTED_BLOCKERS_RESOLVED",
+    "identity": "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
+    "identity_consumed": false
   },
   "top_3_actions": [
     {
       "rank": 1,
-      "action": "A01 P4 genuine merged-lineage selective-resolution discriminator",
+      "action": "Resolve the three prospective P4 contract defects, re-review exact head, then execute candidate-001 only if still unused and scientifically clean.",
       "information_value": "HIGH",
       "implementation_distance": "MODERATE"
     },
     {
       "rank": 2,
-      "action": "A01 P5 minimal explicit anonymous causal-memory reduction",
+      "action": "A01 P5 minimal explicit anonymous causal-memory reduction under matched privilege/state.",
       "information_value": "HIGH",
       "implementation_distance": "MODERATE"
     },
     {
       "rank": 3,
-      "action": "A01 P5 genuine recurrent N3 reduction",
+      "action": "A01 P5 genuine recurrent N3 reduction under fair resource/state/lookup matching.",
       "information_value": "HIGH",
       "implementation_distance": "MODERATE-FAR"
     }
   ],
-  "consumed_identities": [
-    "A01_MD_001",
+  "consumed_identities_referenced": [
+    "A01 MD-001",
     "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
     "a01-md002-p3-r-only-causal-carrier-candidate-001-v1",
-    "rv01-r01-16-construction-census-workflow-34881254582",
-    "rv01-r01-16-capability-02b3d80744d0eb10-65ebe33d70af",
+    "RV01 R01-16 construction/capability identities",
     "rv01-r01-17-real-delay-causal-timing-v1",
-    "rv02-rd005-d1-96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
-    "cx01-candidate-002-formal"
+    "96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
+    "CX01 candidate-002 formal identity"
   ],
-  "genuine_blockers": [
-    "P4 lacks a verified complete prospective one-way scorer/execution contract on current A01; existing fixture and trace binding are construction/readiness only.",
-    "P4 success criteria must distinguish selective resolution from en-bloc all-path credit, no selectivity, premature singleton collapse, and privileged selection.",
-    "Open PR #135 is based on pre-P3 A01 and requires reconciliation onto current A01 before use.",
-    "P4 substrate must reject reuse of already-consumed BoundaryEvent/external evidence identities before mutation."
+  "blockers": [
+    {
+      "id": "p4_ttl_strict_boundary",
+      "severity": "P1",
+      "description": "Rejected lineage expiry currently occurs at the exact valid-until boundary while runtime expiry is strict now_ms > valid_until_ms."
+    },
+    {
+      "id": "p4_actual_retained_trace_binding",
+      "severity": "P1",
+      "description": "P4 must bind complete actual retained runtime history, not rely on fixture/caller boundary rows as lineage authority."
+    },
+    {
+      "id": "p4_sign_lineage_confound",
+      "severity": "P1",
+      "description": "Current confirmation=A and contradiction=B design confounds evidence sign with lineage identity; prospectively cross both signs with both lineages or equivalent symmetry."
+    }
   ],
-  "secondary_lines": {
-    "RV01": "R01-17 positive component capability resolved; secondary and reducible to ordinary local delay plasticity.",
-    "RV02": "RD005 D1 terminal consumed construction negative; distinct blind-preserving successor only if strategically needed.",
-    "CX01": "Candidate-002 formal negative consumed; no rerun or retune."
-  },
-  "go_criteria_rank_1": [
-    "Re-fetch and reconcile P4 implementation with current A01 cf784e24b0d97a81b382988783ea8490cfc333dd.",
-    "Use a fresh unused development identity and exact source/runtime/input binding.",
-    "Retain >=2 genuine historical lineages before external evidence, derived from retained runtime trace.",
-    "Bind independent external evidence to actual causal history without semantic/evaluator/singleton/tie-break privilege.",
-    "Freeze classifier before output; support requires selective evidenced-lineage credit/state/later-competition without equal noncausal-lineage credit.",
-    "Treat en-bloc all-path credit, no selectivity, premature collapse, or invalid binding as non-supporting outcomes.",
-    "Prevent reuse of boundary/external evidence IDs.",
-    "Use atomic STARTED and preserve/verify raw before frozen scoring."
+  "go_criteria": [
+    "Candidate identity remains unused and unstarted after re-fetch.",
+    "TTL expiry is strictly after validity boundary.",
+    "Actual retained runtime trace is completely bound and digest-verifiable.",
+    "Evidence sign and causal lineage identity are prospectively counterbalanced.",
+    "Plural historical ancestry survives until independent external evidence.",
+    "No semantic/evaluator/caller-selected-singleton/hidden-tiebreak privilege is used.",
+    "Frozen scorer defines selective lineage-only support before output.",
+    "Exact reviewed head, CI green, atomic STARTED, exactly-once acquisition, raw-before-score and no rescue are guaranteed."
   ],
-  "stop_criteria_rank_1": [
-    "Only en-bloc merged-boundary credit is implementable.",
-    "Selection requires semantic labels, evaluator truth, caller-supplied singleton ancestry, deterministic tie-break privilege, or post-outcome logic.",
-    "Plural ancestry collapses before independent external evidence.",
-    "Stale/unreviewed head or unresolved mutation/reuse integrity defect remains.",
-    "Scorer can change after raw acquisition.",
-    "Identity collision, non-atomic STARTED, or raw-before-score guarantee fails."
+  "stop_criteria": [
+    "Only en-bloc credit to all ancestry is possible.",
+    "Selective resolution requires semantic/evaluator/singleton/tiebreak privilege.",
+    "Plural ancestry collapses before evidence.",
+    "Actual retained history cannot be bound reproducibly.",
+    "Symmetric swapped-lineage scenarios cannot be defined prospectively without post-output redesign.",
+    "TTL boundary remains ambiguous.",
+    "Scorer or thresholds remain mutable after acquisition.",
+    "Identity is consumed or one-way boundary guarantees are not clean."
   ],
-  "concurrency_staleness": [
-    "Control Brain 00:30 handoff and Orchestrator 22:59 report both predate P3 completion.",
-    "P3 is complete and consumed; do not duplicate it.",
-    "PR #135 is a parallel P4 preparation stream; preserve it but reconcile its stale base and review findings before use."
-  ],
-  "governance_advisory": {
-    "issue_drift": [
-      "Issue #129 still frames atomic STARTED as future work, while A01 P2, RV01 R01-17, and A01 P3 already use the pattern; canonical repository evidence supersedes that stale operational wording."
-    ],
-    "tag_branch_migration_drift": [
-      "P3 used a legacy freeze branch for a new boundary despite the preferred prospective annotated-tag doctrine. Preserve it unchanged; use tags prospectively only when safe and non-blocking.",
-      "Repository rulesets are currently absent, so authoritative tag namespace protection is not operational."
-    ],
+  "governance_advisories": {
+    "issues": "Issue #129 is partly stale on atomic STARTED; canonical git evidence is authoritative.",
+    "tags": "No Git tags currently exist; new prospective freeze tags are preferred only when safe, without delaying P4.",
+    "rulesets": "No repository rulesets currently exist.",
     "main_promotion_candidates": [
-      "exact source/runtime binding and deterministic source-manifest verification",
-      "generic atomic STARTED/no-clobber/identity-collision helpers",
-      "generic raw-preserve-before-score and digest verification helpers",
-      "stable hypothesis-independent control-plane pointer helpers"
+      "outcome-independent explicit BoundaryEvent replay idempotence",
+      "generic exact source/runtime binding",
+      "generic atomic STARTED/no-clobber/identity-collision checks",
+      "generic raw-before-score and digest-verification helpers"
     ],
-    "main_role": "Stable substrate; current frontier correctly remains under research/* and immutable evidence refs."
-  }
+    "artifact_classification": {
+      "A_main_eligible": "outcome-independent reusable helpers after review/testing",
+      "B_active_research": "P4 candidate runner/scorer/protocol and P5 hypothesis-dependent work",
+      "C_immutable_evidence": "consumed freeze/control/preserve/formal evidence refs"
+    }
+  },
+  "next_orchestrator_handoff": "Stay on A01 P4. Re-fetch A01 and PR #137, preserve candidate-001 unused status, prospectively fix strict TTL expiry, actual retained-trace binding, and evidence-sign x lineage-identity counterbalancing. Re-review/CI exact head and execute once only if no privilege or integrity blocker remains. Otherwise STOP P4 and pivot to P5 reduction/reframe rather than rescuing the mechanism."
 }
