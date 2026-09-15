@@ -1,0 +1,211 @@
+name: A01 MD-002 P4 Candidate-001 Execute Once
+
+on:
+  push:
+    branches:
+      - "control/a01-md002-p4-candidate-001-started-20260916"
+
+permissions:
+  contents: write
+
+env:
+  FREEZE_REF: freeze/a01-md002-p4-candidate-001-source-20260916
+  CONTROL_REF: control/a01-md002-p4-candidate-001-started-20260916
+  RAW_PRESERVE_REF: preserve/a01-md002-p4-candidate-001-raw-20260916
+  SCORED_PRESERVE_REF: preserve/a01-md002-p4-candidate-001-scored-20260916
+  OUTPUT_ROOT: artifacts/v061/a01/md002-p4-candidate-001
+  RAW_PATH: artifacts/v061/a01/md002-p4-candidate-001/raw.json
+  SCORE_PATH: artifacts/v061/a01/md002-p4-candidate-001/scored.json
+
+jobs:
+  execute-once:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Checkout atomic STARTED source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+
+      - name: Guard exact frozen source and unused identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "${GITHUB_RUN_ATTEMPT}" = "1"
+          test "${GITHUB_REF}" = "refs/heads/${CONTROL_REF}"
+          git fetch origin \
+            "+refs/heads/${FREEZE_REF}:refs/remotes/origin/${FREEZE_REF}" \
+            "+refs/heads/${CONTROL_REF}:refs/remotes/origin/${CONTROL_REF}"
+          frozen_sha="$(git rev-parse "refs/remotes/origin/${FREEZE_REF}")"
+          control_sha="$(git rev-parse "refs/remotes/origin/${CONTROL_REF}")"
+          test "${GITHUB_SHA}" = "${frozen_sha}"
+          test "${GITHUB_SHA}" = "${control_sha}"
+          test "$(git rev-parse HEAD)" = "${frozen_sha}"
+          for ref in "${RAW_PRESERVE_REF}" "${SCORED_PRESERVE_REF}"; do
+            if git ls-remote --exit-code --heads origin "${ref}" >/dev/null 2>&1; then
+              echo "refusing consumed P4 identity: ${ref}" >&2
+              exit 1
+            fi
+          done
+
+      - name: Set up exact Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.11.16"
+
+      - name: Verify runtime contract and install exact source
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(python --version)" = "Python 3.11.16"
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          runtime = json.loads(
+              Path("research/v061_a01/md002_p4_candidate_001_runtime.json").read_text()
+          )
+          assert runtime == {
+              "schema": "v061-a01-md002-p4-candidate-runtime-v1",
+              "candidate_id": "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
+              "python_version": "3.11.16",
+              "runner_label": "ubuntu-24.04",
+              "package_install": "python -m pip install --no-deps -e .",
+              "runtime_third_party_dependencies": [],
+              "development_only": True,
+              "held_out_execution_allowed": False,
+              "formal_execution_allowed": False,
+              "same_identity_rerun_allowed": False,
+          }
+          PY
+          python -m pip install --no-deps -e .
+
+      - name: Bind frozen candidate manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "${OUTPUT_ROOT}/_execution_metadata"
+          python scripts/run_v061_a01_md002_p4_candidate_001.py manifest \
+            --source-sha "${GITHUB_SHA}" \
+            --output "${OUTPUT_ROOT}/candidate_manifest.json"
+          cp research/v061_a01/md002_p4_candidate_001_runtime.json \
+            "${OUTPUT_ROOT}/runtime_contract.json"
+          python --version > "${OUTPUT_ROOT}/_execution_metadata/python_version.txt" 2>&1
+          git rev-parse HEAD > "${OUTPUT_ROOT}/_execution_metadata/source_sha.txt"
+          cd "${OUTPUT_ROOT}"
+          sha256sum \
+            candidate_manifest.json \
+            runtime_contract.json \
+            _execution_metadata/python_version.txt \
+            _execution_metadata/source_sha.txt \
+            > _execution_metadata/binding.sha256
+          cd "${GITHUB_WORKSPACE}"
+
+      - name: Acquire six-condition raw development evidence exactly once
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/run_v061_a01_md002_p4_candidate_001.py acquire \
+            --source-sha "${GITHUB_SHA}" \
+            --output "${RAW_PATH}"
+          cd "${OUTPUT_ROOT}"
+          sha256sum raw.json > raw.sha256
+          cd "${GITHUB_WORKSPACE}"
+
+      - name: Preserve raw evidence before scoring
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "${RAW_PRESERVE_REF}" >/dev/null 2>&1; then
+            echo "refusing to move existing raw preserve ref" >&2
+            exit 1
+          fi
+          mkdir -p "${OUTPUT_ROOT}/_execution_metadata"
+          cat > "${OUTPUT_ROOT}/_execution_metadata/execution_metadata.json" <<EOF
+          {
+            "candidate_id": "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
+            "stage": "exposed-development",
+            "frozen_source_git_sha": "${GITHUB_SHA}",
+            "freeze_ref": "${FREEZE_REF}",
+            "control_ref": "${CONTROL_REF}",
+            "raw_preserve_ref": "${RAW_PRESERVE_REF}",
+            "scored_preserve_ref": "${SCORED_PRESERVE_REF}",
+            "workflow_run_id": "${GITHUB_RUN_ID}",
+            "workflow_run_attempt": "${GITHUB_RUN_ATTEMPT}",
+            "python_version": "$(python --version 2>&1)",
+            "same_identity_rerun_allowed": false,
+            "held_out_executed": false,
+            "formal_execution_allowed": false
+          }
+          EOF
+          if [ ! -f "${RAW_PATH}" ]; then
+            mkdir -p "${OUTPUT_ROOT}/_terminal"
+            cat > "${OUTPUT_ROOT}/_terminal/FAILED_BEFORE_RAW.json" <<EOF
+          {
+            "status": "P4_TERMINAL_FAILURE_AFTER_STARTED_BEFORE_RAW",
+            "frozen_source_git_sha": "${GITHUB_SHA}",
+            "same_identity_rerun_allowed": false
+          }
+          EOF
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f "${OUTPUT_ROOT}"
+          git commit -m "Preserve A01 P4 raw evidence ${GITHUB_RUN_ID}"
+          git push origin "HEAD:refs/heads/${RAW_PRESERVE_REF}"
+
+      - name: Verify preserved raw bytes before scoring
+        if: success()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin \
+            "+refs/heads/${RAW_PRESERVE_REF}:refs/remotes/origin/${RAW_PRESERVE_REF}"
+          local_sha="$(sha256sum "${RAW_PATH}" | awk '{print $1}')"
+          preserved_sha="$(
+            git show "refs/remotes/origin/${RAW_PRESERVE_REF}:${RAW_PATH}" |
+              sha256sum | awk '{print $1}'
+          )"
+          test "${local_sha}" = "${preserved_sha}"
+          cd "${OUTPUT_ROOT}"
+          sha256sum -c raw.sha256
+          sha256sum -c _execution_metadata/binding.sha256
+          cd "${GITHUB_WORKSPACE}"
+
+      - name: Score only already-preserved raw evidence
+        if: success()
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/run_v061_a01_md002_p4_candidate_001.py score \
+            --source-sha "${GITHUB_SHA}" \
+            --raw-input "${RAW_PATH}" \
+            --output "${SCORE_PATH}"
+          cd "${OUTPUT_ROOT}"
+          sha256sum scored.json > scored.sha256
+          cd "${GITHUB_WORKSPACE}"
+
+      - name: Preserve score or terminal scoring failure
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "${SCORED_PRESERVE_REF}" >/dev/null 2>&1; then
+            echo "refusing to move existing scored preserve ref" >&2
+            exit 1
+          fi
+          if [ ! -f "${SCORE_PATH}" ]; then
+            mkdir -p "${OUTPUT_ROOT}/_terminal"
+            cat > "${OUTPUT_ROOT}/_terminal/FAILED_DURING_SCORE.json" <<EOF
+          {
+            "status": "P4_TERMINAL_FAILURE_AFTER_STARTED_DURING_SCORE",
+            "frozen_source_git_sha": "${GITHUB_SHA}",
+            "same_identity_rerun_allowed": false
+          }
+          EOF
+          fi
+          git add -f "${OUTPUT_ROOT}"
+          git commit -m "Preserve A01 P4 scored result ${GITHUB_RUN_ID}"
+          git push origin "HEAD:refs/heads/${SCORED_PRESERVE_REF}"
