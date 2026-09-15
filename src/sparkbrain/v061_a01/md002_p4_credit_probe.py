@@ -5,7 +5,6 @@ from typing import Any, Literal
 
 from sparkbrain.v06.boundary import BoundaryEvent
 from sparkbrain.v06.foundation import RuntimePulse, validate_runtime_mapping
-from sparkbrain.v061_a01 import credit_bridge
 
 
 P4CreditScope = Literal[
@@ -13,6 +12,8 @@ P4CreditScope = Literal[
     "partial-resolved-paths",
     "no-credit",
 ]
+
+_CREDITING_STATUSES = {"exact-match", "exact-contradiction"}
 
 
 @dataclass(frozen=True, slots=True)
@@ -42,7 +43,7 @@ class P4MergedLineageCreditProbe:
 
 
 def probe_merged_lineage_credit(
-    bridge: credit_bridge.A01TransientCreditBridge,
+    bridge: Any,
     *,
     boundary: BoundaryEvent,
     external: RuntimePulse,
@@ -73,11 +74,9 @@ def probe_merged_lineage_credit(
         for path_id in credited_path_ids
         if before.get(path_id) != after.get(path_id)
     )
+    status = resolution.status.value
 
-    if not credited_path_ids or resolution.status not in {
-        credit_bridge.A01CausalCreditStatus.EXACT_MATCH,
-        credit_bridge.A01CausalCreditStatus.EXACT_CONTRADICTION,
-    }:
+    if not credited_path_ids or status not in _CREDITING_STATUSES:
         credit_scope: P4CreditScope = "no-credit"
     elif set(changed_path_ids) == set(credited_path_ids):
         credit_scope = "all-resolved-paths"
@@ -88,7 +87,7 @@ def probe_merged_lineage_credit(
         boundary_event_id=boundary.event_id,
         source_proposal_ids=source_proposal_ids,
         credited_path_ids=credited_path_ids,
-        status=resolution.status.value,
+        status=status,
         path_reliability_before=resolution.path_reliability_before,
         path_reliability_after=resolution.path_reliability_after,
         changed_path_ids=changed_path_ids,
