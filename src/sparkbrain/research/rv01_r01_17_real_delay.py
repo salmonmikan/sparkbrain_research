@@ -14,8 +14,6 @@ import random
 from dataclasses import dataclass
 from typing import Any
 
-from sparkbrain.v04.contracts import SynapticArrival
-from sparkbrain.v04.field import TemporalExcitableField
 from sparkbrain.research.rv01.physical_learner_bridge import (
     CurrentPhysicalLearnerBridge,
     build_physical_field,
@@ -23,6 +21,8 @@ from sparkbrain.research.rv01.physical_learner_bridge import (
     connection_state_hash,
     runtime_pulse,
 )
+from sparkbrain.v04.contracts import SynapticArrival
+from sparkbrain.v04.field import TemporalExcitableField
 from sparkbrain.v06.foundation import EventOrigin
 
 R01_17_PROTOCOL_ID = "rv01-r01-17-real-delay-causal-timing-v1"
@@ -234,17 +234,30 @@ def _acquire_world(spec: R0117WorldSpec) -> dict[str, Any]:
     )
     pre = _connections(field)
     api_hashes: set[str] = set()
+    training_exposures: list[dict[str, Any]] = []
     for episode in range(R01_17_EXPOSURES):
+        pulses = _training_pulses(spec, episode)
         bridge = CurrentPhysicalLearnerBridge(field)
         api_hashes.add(bridge.api.api_hash)
-        bridge.observe_sequence(_training_pulses(spec, episode))
+        connection_hash_before = connection_state_hash(field)
+        observations = bridge.observe_sequence(pulses)
+        connection_hash_after = connection_state_hash(field)
+        training_exposures.append(
+            {
+                "connection_hash_after": connection_hash_after,
+                "connection_hash_before": connection_hash_before,
+                "connections_after": _connections(field),
+                "episode": episode,
+                "observations": [row.state_dict() for row in observations],
+                "pulses": [pulse.as_dict() for pulse in pulses],
+            }
+        )
     if len(api_hashes) != 1:
         raise RuntimeError("R01-17 learner API changed inside one prospective cell")
     post = _connections(field)
     checkpoint = field.state_dict()
     pre_delay = {
-        (int(row["source_id"]), int(row["target_id"])): float(row["delay_ms"])
-        for row in pre
+        (int(row["source_id"]), int(row["target_id"])): float(row["delay_ms"]) for row in pre
     }
     fd_checkpoint = _rewrite_checkpoint_delays(checkpoint, pre_delay)
     return {
@@ -257,6 +270,7 @@ def _acquire_world(spec: R0117WorldSpec) -> dict[str, Any]:
         "post_training_connections": post,
         "pre_training_connections": pre,
         "spec": spec.state_dict(),
+        "training_exposures": training_exposures,
     }
 
 
@@ -291,9 +305,7 @@ def _edge_map(rows: list[dict[str, Any]]) -> dict[tuple[int, int], dict[str, Any
 
 def _first_arrivals(arm: dict[str, Any]) -> dict[int, float]:
     result: dict[int, float] = {}
-    for unit, time_ms in zip(
-        arm["generated_units"], arm["generated_times_ms"], strict=True
-    ):
+    for unit, time_ms in zip(arm["generated_units"], arm["generated_times_ms"], strict=True):
         result.setdefault(int(unit), float(time_ms))
     return result
 
@@ -329,14 +341,12 @@ def score_raw_suite(raw: dict[str, Any]) -> dict[str, Any]:
 
         delay_displacements = {
             f"{source}->{target}": abs(
-                float(post[(source, target)]["delay_ms"])
-                - float(pre[(source, target)]["delay_ms"])
+                float(post[(source, target)]["delay_ms"]) - float(pre[(source, target)]["delay_ms"])
             )
             for source, target in sorted(expected_edges)
         }
         delay_eligible = all(
-            value >= R01_17_MIN_DELAY_DISPLACEMENT_MS
-            for value in delay_displacements.values()
+            value >= R01_17_MIN_DELAY_DISPLACEMENT_MS for value in delay_displacements.values()
         )
 
         arms = row["arms"]
@@ -351,7 +361,8 @@ def score_raw_suite(raw: dict[str, Any]) -> dict[str, Any]:
             and set(fd_edges) == expected_edges
             and set(sham_edges) == expected_edges
             and all(
-                float(f0_edges[key]["weight"]) == float(fd_edges[key]["weight"])
+                float(f0_edges[key]["weight"])
+                == float(fd_edges[key]["weight"])
                 == float(sham_edges[key]["weight"])
                 == float(post[key]["weight"])
                 for key in expected_edges
@@ -384,8 +395,7 @@ def score_raw_suite(raw: dict[str, Any]) -> dict[str, Any]:
             if unit in f0_arrivals and unit in fd_arrivals
         }
         causal_timing = complete_arrivals and all(
-            value >= R01_17_MIN_CAUSAL_SHIFT_MS
-            and value > R01_17_TIMING_TOLERANCE_MS
+            value >= R01_17_MIN_CAUSAL_SHIFT_MS and value > R01_17_TIMING_TOLERANCE_MS
             for value in arrival_shifts.values()
         )
 

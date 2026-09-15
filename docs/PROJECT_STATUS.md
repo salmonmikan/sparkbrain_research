@@ -454,3 +454,7 @@ network-blocked official run evaluated all 1,744 Belief-R pairs without test fit
 tuning. Spark BU/BM/BREU were 0.0391/0.0896/0.0643, below direct and chance BREU 0.25. The C05
 external feature path maps unseen categorical tokens to UNK, parameter/compute matching is
 false, and evidence attribution is unavailable. Gate P3 and CL-007 therefore remain unmet.
+
+### 2026-09-15 — RV01 R01-17 preregistered, not yet executed
+
+R01-16's delay component remains unresolved because its realized delay intervention was only roundoff-scale. A distinct exposed-development successor, R01-17 (`rv01-r01-17-real-delay-causal-timing-v1`), is now preregistered on fresh seeds `141800`–`141804` with a deliberately nonzero delay-learning error, tolerance-aware eligibility, a causal timing endpoint, SHAM replay, and raw-before-score preservation. Status is **prospective / not executed** until exact-source review, green CI, source freeze, and atomic STARTED are complete. No R01-17 outcome may be inferred from this status entry.

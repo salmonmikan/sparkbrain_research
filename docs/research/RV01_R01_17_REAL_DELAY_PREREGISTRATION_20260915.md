@@ -68,6 +68,7 @@ The exactly-once acquisition stores, without applying the decision rule:
 - Python runtime identity;
 - fixed world/spec identity for each seed;
 - learner API hash;
+- every training exposure's deterministic input pulses, learner observation results, before/after connection hashes, and post-exposure connection inventory;
 - complete pre-training and post-training connection inventories;
 - `F0`, `FD`, and `SHAM` downstream generated unit sequences;
 - exact generated spike times in milliseconds for every arm;
