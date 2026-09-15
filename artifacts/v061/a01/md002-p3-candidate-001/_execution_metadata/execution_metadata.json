@@ -1,0 +1,15 @@
+{
+  "candidate_id": "a01-md002-p3-r-only-causal-carrier-candidate-001-v1",
+  "stage": "exposed-development",
+  "frozen_source_git_sha": "cf784e24b0d97a81b382988783ea8490cfc333dd",
+  "freeze_ref": "freeze/a01-md002-p3-candidate-001-source-20260916",
+  "control_ref": "control/a01-md002-p3-candidate-001-started-20260916",
+  "raw_preserve_ref": "preserve/a01-md002-p3-candidate-001-raw-20260916",
+  "scored_preserve_ref": "preserve/a01-md002-p3-candidate-001-scored-20260916",
+  "workflow_run_id": "35000888239",
+  "workflow_run_attempt": "1",
+  "python_version": "Python 3.11.16",
+  "same_identity_rerun_allowed": false,
+  "held_out_executed": false,
+  "formal_execution_allowed": false
+}
