@@ -72,13 +72,17 @@
         "probe_rows": [
           {
             "confidence": 0.6666666666666666,
-            "local_path_ids": ["local:R->S"],
+            "local_path_ids": [
+              "local:R->S"
+            ],
             "predicted_arrival_ms": 162.0,
             "target": "S"
           },
           {
             "confidence": 0.5,
-            "local_path_ids": ["local:R->T"],
+            "local_path_ids": [
+              "local:R->T"
+            ],
             "predicted_arrival_ms": 162.0,
             "target": "T"
           }
@@ -88,7 +92,9 @@
         "resolution_status": "exact-match",
         "response_target": "world:u",
         "returned_external_evidence": true,
-        "selected_targets": ["S"],
+        "selected_targets": [
+          "S"
+        ],
         "world_arm": "control"
       },
       {
@@ -96,13 +102,17 @@
         "probe_rows": [
           {
             "confidence": 0.5,
-            "local_path_ids": ["local:R->S"],
+            "local_path_ids": [
+              "local:R->S"
+            ],
             "predicted_arrival_ms": 162.0,
             "target": "S"
           },
           {
             "confidence": 0.3333333333333333,
-            "local_path_ids": ["local:R->T"],
+            "local_path_ids": [
+              "local:R->T"
+            ],
             "predicted_arrival_ms": 162.0,
             "target": "T"
           }
@@ -112,7 +122,9 @@
         "resolution_status": "exact-contradiction",
         "response_target": "world:v",
         "returned_external_evidence": true,
-        "selected_targets": ["S"],
+        "selected_targets": [
+          "S"
+        ],
         "world_arm": "control"
       },
       {
@@ -120,13 +132,17 @@
         "probe_rows": [
           {
             "confidence": 0.3333333333333333,
-            "local_path_ids": ["local:R->S"],
+            "local_path_ids": [
+              "local:R->S"
+            ],
             "predicted_arrival_ms": 162.0,
             "target": "S"
           },
           {
             "confidence": 0.5,
-            "local_path_ids": ["local:R->T"],
+            "local_path_ids": [
+              "local:R->T"
+            ],
             "predicted_arrival_ms": 162.0,
             "target": "T"
           }
@@ -136,7 +152,9 @@
         "resolution_status": "exact-contradiction",
         "response_target": "world:v",
         "returned_external_evidence": true,
-        "selected_targets": ["T"],
+        "selected_targets": [
+          "T"
+        ],
         "world_arm": "intervention"
       },
       {
@@ -144,13 +162,17 @@
         "probe_rows": [
           {
             "confidence": 0.5,
-            "local_path_ids": ["local:R->S"],
+            "local_path_ids": [
+              "local:R->S"
+            ],
             "predicted_arrival_ms": 162.0,
             "target": "S"
           },
           {
             "confidence": 0.6666666666666666,
-            "local_path_ids": ["local:R->T"],
+            "local_path_ids": [
+              "local:R->T"
+            ],
             "predicted_arrival_ms": 162.0,
             "target": "T"
           }
@@ -160,63 +182,133 @@
         "resolution_status": "exact-match",
         "response_target": "world:u",
         "returned_external_evidence": true,
-        "selected_targets": ["T"],
+        "selected_targets": [
+          "T"
+        ],
         "world_arm": "intervention"
       },
       {
         "condition_id": "p2-w0-withheld",
         "probe_rows": [
-          {"confidence": 0.5, "local_path_ids": ["local:R->S"], "predicted_arrival_ms": 162.0, "target": "S"},
-          {"confidence": 0.5, "local_path_ids": ["local:R->T"], "predicted_arrival_ms": 162.0, "target": "T"}
+          {
+            "confidence": 0.5,
+            "local_path_ids": [
+              "local:R->S"
+            ],
+            "predicted_arrival_ms": 162.0,
+            "target": "S"
+          },
+          {
+            "confidence": 0.5,
+            "local_path_ids": [
+              "local:R->T"
+            ],
+            "predicted_arrival_ms": 162.0,
+            "target": "T"
+          }
         ],
         "proposal_id": "c2-left",
         "requested_target": "S",
         "resolution_status": null,
         "response_target": "world:u",
         "returned_external_evidence": false,
-        "selected_targets": ["S", "T"],
+        "selected_targets": [
+          "S",
+          "T"
+        ],
         "world_arm": "control"
       },
       {
         "condition_id": "p2-w0-withheld",
         "probe_rows": [
-          {"confidence": 0.5, "local_path_ids": ["local:R->S"], "predicted_arrival_ms": 162.0, "target": "S"},
-          {"confidence": 0.5, "local_path_ids": ["local:R->T"], "predicted_arrival_ms": 162.0, "target": "T"}
+          {
+            "confidence": 0.5,
+            "local_path_ids": [
+              "local:R->S"
+            ],
+            "predicted_arrival_ms": 162.0,
+            "target": "S"
+          },
+          {
+            "confidence": 0.5,
+            "local_path_ids": [
+              "local:R->T"
+            ],
+            "predicted_arrival_ms": 162.0,
+            "target": "T"
+          }
         ],
         "proposal_id": "c2-right",
         "requested_target": "T",
         "resolution_status": null,
         "response_target": "world:v",
         "returned_external_evidence": false,
-        "selected_targets": ["S", "T"],
+        "selected_targets": [
+          "S",
+          "T"
+        ],
         "world_arm": "control"
       },
       {
         "condition_id": "p2-w1-withheld",
         "probe_rows": [
-          {"confidence": 0.5, "local_path_ids": ["local:R->S"], "predicted_arrival_ms": 162.0, "target": "S"},
-          {"confidence": 0.5, "local_path_ids": ["local:R->T"], "predicted_arrival_ms": 162.0, "target": "T"}
+          {
+            "confidence": 0.5,
+            "local_path_ids": [
+              "local:R->S"
+            ],
+            "predicted_arrival_ms": 162.0,
+            "target": "S"
+          },
+          {
+            "confidence": 0.5,
+            "local_path_ids": [
+              "local:R->T"
+            ],
+            "predicted_arrival_ms": 162.0,
+            "target": "T"
+          }
         ],
         "proposal_id": "c2-left",
         "requested_target": "S",
         "resolution_status": null,
         "response_target": "world:v",
         "returned_external_evidence": false,
-        "selected_targets": ["S", "T"],
+        "selected_targets": [
+          "S",
+          "T"
+        ],
         "world_arm": "intervention"
       },
       {
         "condition_id": "p2-w1-withheld",
         "probe_rows": [
-          {"confidence": 0.5, "local_path_ids": ["local:R->S"], "predicted_arrival_ms": 162.0, "target": "S"},
-          {"confidence": 0.5, "local_path_ids": ["local:R->T"], "predicted_arrival_ms": 162.0, "target": "T"}
+          {
+            "confidence": 0.5,
+            "local_path_ids": [
+              "local:R->S"
+            ],
+            "predicted_arrival_ms": 162.0,
+            "target": "S"
+          },
+          {
+            "confidence": 0.5,
+            "local_path_ids": [
+              "local:R->T"
+            ],
+            "predicted_arrival_ms": 162.0,
+            "target": "T"
+          }
         ],
         "proposal_id": "c2-right",
         "requested_target": "T",
         "resolution_status": null,
         "response_target": "world:u",
         "returned_external_evidence": false,
-        "selected_targets": ["S", "T"],
+        "selected_targets": [
+          "S",
+          "T"
+        ],
         "world_arm": "intervention"
       }
     ],
