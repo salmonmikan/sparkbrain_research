@@ -3,8 +3,6 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass
 from typing import Any, Literal
 
-from sparkbrain.v06 import boundary, foundation
-
 
 P4CreditScope = Literal[
     "all-resolved-paths",
@@ -36,16 +34,14 @@ class P4MergedLineageCreditProbe:
     formal_p4_result: None = None
 
     def state_dict(self) -> dict[str, Any]:
-        value = asdict(self)
-        foundation.validate_runtime_mapping(value, path="v061_a01.md002.p4_credit_probe")
-        return value
+        return asdict(self)
 
 
 def probe_merged_lineage_credit(
     bridge: Any,
     *,
-    boundary: boundary.BoundaryEvent,
-    external: foundation.RuntimePulse,
+    boundary: Any,
+    external: Any,
 ) -> P4MergedLineageCreditProbe:
     """Apply one already-admissible external event and record merged credit scope.
 
