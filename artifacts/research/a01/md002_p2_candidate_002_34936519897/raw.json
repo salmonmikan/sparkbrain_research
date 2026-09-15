@@ -1,0 +1,227 @@
+{
+  "manifest": {
+    "candidate_id": "a01-md002-p2-shared-probe-candidate-002-v1",
+    "development_only": true,
+    "execution_identity": "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
+    "formal_execution_allowed": false,
+    "held_out_execution_allowed": false,
+    "input_contract": {
+      "candidate_id": "a01-md002-p2-shared-probe-candidate-002-v1",
+      "schedule": {
+        "schema": "v061-a01-md002-p2-cloned-subepisode-schedule-v1",
+        "shared_probe": {
+          "cue_event_id": "c2-shared-probe",
+          "cue_time_ms": 155.0,
+          "origin_state_hash": "c2-shared-root-state",
+          "root_target": "R"
+        },
+        "subepisodes": [
+          {
+            "boundary_event_id": "c2-boundary-left",
+            "boundary_time_ms": 140.0,
+            "proposal_id": "c2-left",
+            "response_event_id": "c2-response-left",
+            "response_time_ms": 147.0
+          },
+          {
+            "boundary_event_id": "c2-boundary-right",
+            "boundary_time_ms": 140.0,
+            "proposal_id": "c2-right",
+            "response_event_id": "c2-response-right",
+            "response_time_ms": 147.0
+          }
+        ]
+      },
+      "world_only_contract": {
+        "admissible_external_evidence_sha256": "e3f3ca038e9a6faaeaf7812cbc8a1f702d01e7db28006716d16f10cb4bed77e2",
+        "control": {
+          "consistency_sha256": "27a4b56535182c857b0fa373c2ca7a7d3e652c8007c4ade91516e542852e824c",
+          "field_sha256": "49d4b598f7b9a1556cb31000ea46d3b197ef81e8acb48021df9356f746cedf9c",
+          "local_sha256": "75af95b323d5243af2b5185a2ebc31905bc79dc6053484f5774d190aeca5c924",
+          "return_address_sha256": "5d2d103eafa3a1ab46203b723beae7ae44ab648c44e71a005c078897c526f0a9"
+        },
+        "control_world_relation_sha256": "07040fec009353dbcb161f3224859b61bd48b322f15d99c4850730f0ce43e365",
+        "intervention": {
+          "consistency_sha256": "27a4b56535182c857b0fa373c2ca7a7d3e652c8007c4ade91516e542852e824c",
+          "field_sha256": "49d4b598f7b9a1556cb31000ea46d3b197ef81e8acb48021df9356f746cedf9c",
+          "local_sha256": "75af95b323d5243af2b5185a2ebc31905bc79dc6053484f5774d190aeca5c924",
+          "return_address_sha256": "5d2d103eafa3a1ab46203b723beae7ae44ab648c44e71a005c078897c526f0a9"
+        },
+        "intervention_world_relation_sha256": "421b9cb4c655fc67d0caed6db2fac44e6092e2816907a33191cdc2badfc71fb7"
+      }
+    },
+    "input_digest": "51e589907eb59af863a311cb92b5d0a1bbd4c1dc774f01e21e4f8bce15624c2a",
+    "schema": "v061-a01-md002-p2-candidate-manifest-v1",
+    "source_sha": "8044b25f3a7b7767bf1262ea6a99cd6b795e3e8d"
+  },
+  "raw": {
+    "criteria": [
+      "withheld arms remain co-maximal at the shared root",
+      "returned evidence changes only the causally addressed local target confidence",
+      "exact-match raises and selects the requested target",
+      "exact-contradiction lowers and deselects the requested target",
+      "world permutation swaps match/contradiction status for each fixed proposal identity",
+      "predicted arrival times remain unchanged by causal-support credit"
+    ],
+    "development_only": true,
+    "formal_execution_opened": false,
+    "held_out_executed": false,
+    "observations": [
+      {
+        "condition_id": "p2-w0-returned",
+        "probe_rows": [
+          {
+            "confidence": 0.6666666666666666,
+            "local_path_ids": ["local:R->S"],
+            "predicted_arrival_ms": 162.0,
+            "target": "S"
+          },
+          {
+            "confidence": 0.5,
+            "local_path_ids": ["local:R->T"],
+            "predicted_arrival_ms": 162.0,
+            "target": "T"
+          }
+        ],
+        "proposal_id": "c2-left",
+        "requested_target": "S",
+        "resolution_status": "exact-match",
+        "response_target": "world:u",
+        "returned_external_evidence": true,
+        "selected_targets": ["S"],
+        "world_arm": "control"
+      },
+      {
+        "condition_id": "p2-w0-returned",
+        "probe_rows": [
+          {
+            "confidence": 0.5,
+            "local_path_ids": ["local:R->S"],
+            "predicted_arrival_ms": 162.0,
+            "target": "S"
+          },
+          {
+            "confidence": 0.3333333333333333,
+            "local_path_ids": ["local:R->T"],
+            "predicted_arrival_ms": 162.0,
+            "target": "T"
+          }
+        ],
+        "proposal_id": "c2-right",
+        "requested_target": "T",
+        "resolution_status": "exact-contradiction",
+        "response_target": "world:v",
+        "returned_external_evidence": true,
+        "selected_targets": ["S"],
+        "world_arm": "control"
+      },
+      {
+        "condition_id": "p2-w1-returned",
+        "probe_rows": [
+          {
+            "confidence": 0.3333333333333333,
+            "local_path_ids": ["local:R->S"],
+            "predicted_arrival_ms": 162.0,
+            "target": "S"
+          },
+          {
+            "confidence": 0.5,
+            "local_path_ids": ["local:R->T"],
+            "predicted_arrival_ms": 162.0,
+            "target": "T"
+          }
+        ],
+        "proposal_id": "c2-left",
+        "requested_target": "S",
+        "resolution_status": "exact-contradiction",
+        "response_target": "world:v",
+        "returned_external_evidence": true,
+        "selected_targets": ["T"],
+        "world_arm": "intervention"
+      },
+      {
+        "condition_id": "p2-w1-returned",
+        "probe_rows": [
+          {
+            "confidence": 0.5,
+            "local_path_ids": ["local:R->S"],
+            "predicted_arrival_ms": 162.0,
+            "target": "S"
+          },
+          {
+            "confidence": 0.6666666666666666,
+            "local_path_ids": ["local:R->T"],
+            "predicted_arrival_ms": 162.0,
+            "target": "T"
+          }
+        ],
+        "proposal_id": "c2-right",
+        "requested_target": "T",
+        "resolution_status": "exact-match",
+        "response_target": "world:u",
+        "returned_external_evidence": true,
+        "selected_targets": ["T"],
+        "world_arm": "intervention"
+      },
+      {
+        "condition_id": "p2-w0-withheld",
+        "probe_rows": [
+          {"confidence": 0.5, "local_path_ids": ["local:R->S"], "predicted_arrival_ms": 162.0, "target": "S"},
+          {"confidence": 0.5, "local_path_ids": ["local:R->T"], "predicted_arrival_ms": 162.0, "target": "T"}
+        ],
+        "proposal_id": "c2-left",
+        "requested_target": "S",
+        "resolution_status": null,
+        "response_target": "world:u",
+        "returned_external_evidence": false,
+        "selected_targets": ["S", "T"],
+        "world_arm": "control"
+      },
+      {
+        "condition_id": "p2-w0-withheld",
+        "probe_rows": [
+          {"confidence": 0.5, "local_path_ids": ["local:R->S"], "predicted_arrival_ms": 162.0, "target": "S"},
+          {"confidence": 0.5, "local_path_ids": ["local:R->T"], "predicted_arrival_ms": 162.0, "target": "T"}
+        ],
+        "proposal_id": "c2-right",
+        "requested_target": "T",
+        "resolution_status": null,
+        "response_target": "world:v",
+        "returned_external_evidence": false,
+        "selected_targets": ["S", "T"],
+        "world_arm": "control"
+      },
+      {
+        "condition_id": "p2-w1-withheld",
+        "probe_rows": [
+          {"confidence": 0.5, "local_path_ids": ["local:R->S"], "predicted_arrival_ms": 162.0, "target": "S"},
+          {"confidence": 0.5, "local_path_ids": ["local:R->T"], "predicted_arrival_ms": 162.0, "target": "T"}
+        ],
+        "proposal_id": "c2-left",
+        "requested_target": "S",
+        "resolution_status": null,
+        "response_target": "world:v",
+        "returned_external_evidence": false,
+        "selected_targets": ["S", "T"],
+        "world_arm": "intervention"
+      },
+      {
+        "condition_id": "p2-w1-withheld",
+        "probe_rows": [
+          {"confidence": 0.5, "local_path_ids": ["local:R->S"], "predicted_arrival_ms": 162.0, "target": "S"},
+          {"confidence": 0.5, "local_path_ids": ["local:R->T"], "predicted_arrival_ms": 162.0, "target": "T"}
+        ],
+        "proposal_id": "c2-right",
+        "requested_target": "T",
+        "resolution_status": null,
+        "response_target": "world:u",
+        "returned_external_evidence": false,
+        "selected_targets": ["S", "T"],
+        "world_arm": "intervention"
+      }
+    ],
+    "schema": "v061-a01-md002-p2-shared-probe-raw-v1",
+    "scored": false
+  },
+  "schema": "v061-a01-md002-p2-candidate-raw-envelope-v1"
+}
