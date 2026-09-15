@@ -11,13 +11,23 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass, replace
 from typing import Any
 
-from sparkbrain.v06.foundation import EventOrigin, RuntimePulse, validate_runtime_mapping
+from sparkbrain.v06.foundation import (
+    EventOrigin,
+    RuntimePulse,
+    validate_runtime_mapping,
+)
 
 from .credit_bridge import A01CausalCreditStatus, A01TransientCreditBridge
-from .md002_development_plan import build_p2_development_plan
+from .md002_development_plan import (
+    P2DevelopmentConditionInput,
+    build_p2_development_plan,
+)
 from .md002_fixtures import P2WorldOnlyFixture
-from .md002_p2_schedule import P2ClonedSubepisodeSchedule
-from .md002_restore_adapter import restore_a01_p2_arm
+from .md002_p2_schedule import (
+    P2AttributionSubepisode,
+    P2ClonedSubepisodeSchedule,
+)
+from .md002_restore_adapter import RestoredA01P2Arm, restore_a01_p2_arm
 from .md002_world_fixture import P2AnonymousWorldRelation
 
 
@@ -47,7 +57,10 @@ class P2SharedProbeObservation:
     def state_dict(self) -> dict[str, Any]:
         value = asdict(self)
         value["probe_rows"] = [row.state_dict() for row in self.probe_rows]
-        validate_runtime_mapping(value, path="v061_a01.md002.p2_shared_probe_observation")
+        validate_runtime_mapping(
+            value,
+            path="v061_a01.md002.p2_shared_probe_observation",
+        )
         return value
 
 
@@ -68,11 +81,17 @@ class P2SharedProbeRun:
             "formal_execution_opened": False,
             "threshold_tuned": False,
         }
-        validate_runtime_mapping(value, path="v061_a01.md002.p2_shared_probe_run")
+        validate_runtime_mapping(
+            value,
+            path="v061_a01.md002.p2_shared_probe_run",
+        )
         return value
 
 
-def _probe_rows(restored: Any, schedule: P2ClonedSubepisodeSchedule) -> tuple[P2ProbeProposal, ...]:
+def _probe_rows(
+    restored: RestoredA01P2Arm,
+    schedule: P2ClonedSubepisodeSchedule,
+) -> tuple[P2ProbeProposal, ...]:
     cue = RuntimePulse(
         event_id=schedule.shared_probe.cue_event_id,
         time_ms=float(schedule.shared_probe.cue_time_ms),
@@ -100,7 +119,9 @@ def _probe_rows(restored: Any, schedule: P2ClonedSubepisodeSchedule) -> tuple[P2
         )
     )
     if len(rows) < 2:
-        raise RuntimeError("P2 shared-root probe requires at least two competing proposals")
+        raise RuntimeError(
+            "P2 shared-root probe requires at least two competing proposals"
+        )
     return rows
 
 
@@ -109,10 +130,15 @@ def _selected_targets(rows: tuple[P2ProbeProposal, ...]) -> tuple[str, ...]:
     return tuple(sorted(row.target for row in rows if row.confidence == best))
 
 
-def _execute_observation(condition: Any, subepisode: Any) -> P2SharedProbeObservation:
+def _execute_observation(
+    condition: P2DevelopmentConditionInput,
+    subepisode: P2AttributionSubepisode,
+) -> P2SharedProbeObservation:
     restored = restore_a01_p2_arm(condition.arm_input)
     if restored.boundary is None:
-        raise ValueError("P2 shared-root probe requires a live return-address boundary")
+        raise ValueError(
+            "P2 shared-root probe requires a live return-address boundary"
+        )
     proposal = restored.ledger.proposals.get(subepisode.proposal_id)
     if proposal is None:
         raise ValueError("scheduled P2 proposal is absent from restored ancestry")
@@ -161,7 +187,9 @@ def _execute_observation(condition: Any, subepisode: Any) -> P2SharedProbeObserv
     )
 
 
-def _row_map(observation: P2SharedProbeObservation) -> dict[str, P2ProbeProposal]:
+def _row_map(
+    observation: P2SharedProbeObservation,
+) -> dict[str, P2ProbeProposal]:
     return {row.target: row for row in observation.probe_rows}
 
 
@@ -185,21 +213,40 @@ def _score(observations: tuple[P2SharedProbeObservation, ...]) -> str:
             if len(withheld.selected_targets) < 2:
                 supported = False
             for target in returned_rows:
-                if returned_rows[target].predicted_arrival_ms != withheld_rows[target].predicted_arrival_ms:
+                if (
+                    returned_rows[target].predicted_arrival_ms
+                    != withheld_rows[target].predicted_arrival_ms
+                ):
                     supported = False
-                if target != returned.requested_target and returned_rows[target].confidence != withheld_rows[target].confidence:
+                if (
+                    target != returned.requested_target
+                    and returned_rows[target].confidence
+                    != withheld_rows[target].confidence
+                ):
                     supported = False
             requested_delta = (
                 returned_rows[returned.requested_target].confidence
                 - withheld_rows[returned.requested_target].confidence
             )
-            if returned.resolution_status == A01CausalCreditStatus.EXACT_MATCH.value:
+            if (
+                returned.resolution_status
+                == A01CausalCreditStatus.EXACT_MATCH.value
+            ):
                 statuses.add("match")
-                if not requested_delta > 0.0 or returned.selected_targets != (returned.requested_target,):
+                if (
+                    requested_delta <= 0.0
+                    or returned.selected_targets != (returned.requested_target,)
+                ):
                     supported = False
-            elif returned.resolution_status == A01CausalCreditStatus.EXACT_CONTRADICTION.value:
+            elif (
+                returned.resolution_status
+                == A01CausalCreditStatus.EXACT_CONTRADICTION.value
+            ):
                 statuses.add("contradiction")
-                if not requested_delta < 0.0 or returned.requested_target in returned.selected_targets:
+                if (
+                    requested_delta >= 0.0
+                    or returned.requested_target in returned.selected_targets
+                ):
                     supported = False
             else:
                 supported = False
