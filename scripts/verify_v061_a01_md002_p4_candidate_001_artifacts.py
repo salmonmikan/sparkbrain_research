@@ -2,8 +2,8 @@
 """Independent read-only verifier for A01 MD-002 P4 candidate-001 artifacts.
 
 This verifier intentionally does not import the candidate acquisition or scoring
-entrypoints.  It validates only already-materialized artifact structure,
-bindings, checksums, and raw trace completeness.  It never writes files and it
+entrypoints. It validates only already-materialized artifact structure,
+bindings, checksums, and raw trace completeness. It never writes files and it
 cannot acquire or score candidate outcomes.
 """
 
@@ -86,10 +86,7 @@ def _verify_checksum_manifest(root: Path, relative_path: str) -> None:
         )
         target = root / candidate
         _require(target.is_file(), f"checksum target missing: {filename}")
-        _require(
-            _file_sha256(target) == expected,
-            f"checksum mismatch: {filename}",
-        )
+        _require(_file_sha256(target) == expected, f"checksum mismatch: {filename}")
 
 
 def _verify_contract(contract: Any, expected_source_sha: str) -> dict[str, Any]:
@@ -118,8 +115,20 @@ def _verify_contract(contract: Any, expected_source_sha: str) -> dict[str, Any]:
     matrix_ids = [row.get("execution_id") for row in matrix if isinstance(row, dict)]
     _require(
         len(matrix) == len(EXPECTED_EXECUTION_IDS)
-        and set(matrix_ids) == set(EXPECTED_EXECUTION_IDS),
+        and set(matrix_ids) == set(EXPECTED_EXECUTION_IDS)
+        and len(matrix_ids) == len(set(matrix_ids)),
         "execution matrix mismatch",
+    )
+    fixture = contract.get("fixture")
+    _require(isinstance(fixture, dict), "contract fixture missing")
+    base_conditions = fixture.get("base_conditions")
+    _require(isinstance(base_conditions, list), "base condition matrix missing")
+    condition_ids = [
+        row.get("condition_id") for row in base_conditions if isinstance(row, dict)
+    ]
+    _require(
+        len(condition_ids) == len(set(condition_ids)),
+        "base condition IDs are duplicated",
     )
     return contract
 
@@ -149,11 +158,43 @@ def _verify_runtime(root: Path) -> None:
     _require(runtime.get("same_identity_rerun_allowed") is False, "rerun unexpectedly enabled")
 
 
+def _expected_condition_spec(
+    contract: dict[str, Any], execution_id: str
+) -> dict[str, Any]:
+    matrix = contract.get("execution_matrix")
+    _require(isinstance(matrix, list), "execution matrix missing")
+    matrix_rows = [
+        row
+        for row in matrix
+        if isinstance(row, dict) and row.get("execution_id") == execution_id
+    ]
+    _require(len(matrix_rows) == 1, f"{execution_id}: execution matrix cardinality mismatch")
+    matrix_row = matrix_rows[0]
+    base_condition_id = matrix_row.get("base_condition_id")
+    _require(
+        isinstance(base_condition_id, str) and base_condition_id,
+        f"{execution_id}: base condition binding missing",
+    )
+
+    fixture = contract.get("fixture")
+    _require(isinstance(fixture, dict), f"{execution_id}: fixture missing")
+    base_conditions = fixture.get("base_conditions")
+    _require(isinstance(base_conditions, list), f"{execution_id}: base conditions missing")
+    base_rows = [
+        row
+        for row in base_conditions
+        if isinstance(row, dict) and row.get("condition_id") == base_condition_id
+    ]
+    _require(len(base_rows) == 1, f"{execution_id}: base condition cardinality mismatch")
+    expected = dict(base_rows[0])
+    expected["base_condition_id"] = base_condition_id
+    expected["selected_lineage_arm"] = matrix_row.get("selected_lineage_arm")
+    expected["evidence_sign"] = matrix_row.get("evidence_sign")
+    return expected
+
+
 def _trace_lineage_record(
-    trace: list[Any],
-    *,
-    phase: str,
-    execution_id: str,
+    trace: list[Any], *, phase: str, execution_id: str
 ) -> list[str]:
     matches = [
         item
@@ -180,9 +221,7 @@ def _trace_lineage_record(
 
 
 def _merged_boundary_proposal_ids(
-    boundaries: list[Any],
-    *,
-    execution_id: str,
+    boundaries: list[Any], *, execution_id: str
 ) -> list[str]:
     merged: list[str] = []
     seen: set[str] = set()
@@ -211,11 +250,33 @@ def _merged_boundary_proposal_ids(
     return merged
 
 
+def _trace_expired_boundary_ids(trace: list[Any], execution_id: str) -> list[str]:
+    values = [
+        item.get("event_id")
+        for item in trace
+        if isinstance(item, dict) and item.get("type") == "md002-p4-expired-boundary"
+    ]
+    _require(
+        all(isinstance(value, str) and value for value in values),
+        f"{execution_id}: expiration record IDs invalid",
+    )
+    _require(
+        len(values) == len(set(values)),
+        f"{execution_id}: expiration records duplicated",
+    )
+    return [str(value) for value in values]
+
+
 def _verify_trace_row(
-    row: dict[str, Any],
-    contract: dict[str, Any],
-    execution_id: str,
+    row: dict[str, Any], contract: dict[str, Any], execution_id: str
 ) -> None:
+    condition_spec = row.get("condition_spec")
+    _require(isinstance(condition_spec, dict), f"{execution_id}: condition spec missing")
+    _require(
+        condition_spec == _expected_condition_spec(contract, execution_id),
+        f"{execution_id}: condition spec differs from frozen execution matrix",
+    )
+
     trace = row.get("retained_runtime_trace")
     boundaries = row.get("retained_boundary_events")
     _require(isinstance(trace, list) and trace, f"{execution_id}: retained trace missing")
@@ -236,17 +297,12 @@ def _verify_trace_row(
         f"{execution_id}: retained boundary coverage mismatch",
     )
 
-    condition_spec = row.get("condition_spec")
-    _require(isinstance(condition_spec, dict), f"{execution_id}: condition spec missing")
     if condition_spec.get("boundary_mode") != "merged":
         return
 
     before = _trace_lineage_record(trace, phase="before", execution_id=execution_id)
     after = _trace_lineage_record(trace, phase="after", execution_id=execution_id)
-    derived_merged_ids = _merged_boundary_proposal_ids(
-        boundaries,
-        execution_id=execution_id,
-    )
+    derived_merged_ids = _merged_boundary_proposal_ids(boundaries, execution_id=execution_id)
     measurement_payload = {
         "boundary_source_proposal_ids": derived_merged_ids,
         "active_lineages_before": before,
@@ -314,6 +370,7 @@ def _verify_trace_row(
         _require(isinstance(selected, dict), f"{execution_id}: trace selection missing")
         proposal_id = selected.get("proposal_id")
         path_map = contract.get("fixture", {}).get("path_map", {})
+        _require(isinstance(path_map, dict), f"{execution_id}: frozen path map missing")
         _require(proposal_id in path_map, f"{execution_id}: selected proposal not frozen")
         _require(
             selected.get("path_id") == path_map[proposal_id].get("path_id"),
@@ -322,22 +379,26 @@ def _verify_trace_row(
         external = row.get("external_evidence")
         _require(isinstance(external, dict), f"{execution_id}: external evidence missing")
         parents = set(external.get("parent_event_ids", []))
+        selected_boundary = selected.get("parent_boundary_event_id")
         _require(
-            selected.get("parent_boundary_event_id") in parents,
+            selected_boundary in parents,
             f"{execution_id}: selected boundary is not an external parent",
         )
+        top_level_expired = row.get("expired_historical_boundary_ids")
         _require(
-            selected.get("parent_boundary_event_id")
-            in set(row.get("expired_historical_boundary_ids", [])),
-            f"{execution_id}: selected historical boundary was not expired",
+            isinstance(top_level_expired, list)
+            and len(top_level_expired) == 1
+            and top_level_expired[0] == selected_boundary,
+            f"{execution_id}: selected historical expiration binding mismatch",
+        )
+        trace_expired = _trace_expired_boundary_ids(trace, execution_id)
+        _require(
+            trace_expired.count(str(selected_boundary)) == 1,
+            f"{execution_id}: selected historical boundary expiration record mismatch",
         )
 
 
-def _verify_raw(
-    root: Path,
-    contract: dict[str, Any],
-    expected_source_sha: str,
-) -> None:
+def _verify_raw(root: Path, contract: dict[str, Any], expected_source_sha: str) -> None:
     raw = _read_json(root / "raw.json")
     _require(isinstance(raw, dict), "raw artifact must be an object")
     _require(raw.get("schema") == RAW_SCHEMA, "raw schema mismatch")
