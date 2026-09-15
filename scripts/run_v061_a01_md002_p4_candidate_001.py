@@ -168,7 +168,7 @@ def _prior_consistency(ledger: ProvenanceLedger) -> UntypedBoundaryConsistency:
     external = _pulse(
         "p4-prior-external",
         5.0,
-        "world:confirmed",
+        "world:x",
         parent_event_ids=(boundary.event_id,),
     )
     model.register_boundary(boundary)
@@ -453,7 +453,7 @@ def _execute_condition(condition_id: str, execution_id: str) -> dict[str, Any]:
         external = _pulse(
             "p4-external-separate-confirmation",
             45.0,
-            "world:confirmed",
+            "world:x",
             parent_event_ids=(active_boundary.event_id,),
         )
         ledger.register_external(external)
@@ -464,7 +464,7 @@ def _execute_condition(condition_id: str, execution_id: str) -> dict[str, Any]:
         external = _pulse(
             "p4-external-merged-confirmation",
             45.0,
-            "world:confirmed",
+            "world:x",
             parent_event_ids=(active_boundary.event_id,),
         )
         ledger.register_external(external)
@@ -495,7 +495,7 @@ def _execute_condition(condition_id: str, execution_id: str) -> dict[str, Any]:
         external = _pulse(
             f"p4-external-{condition_id}",
             85.0,
-            "world:confirmed" if is_confirmation else "world:contradicted",
+            "world:x" if is_confirmation else "world:y",
             parent_event_ids=(active_boundary.event_id, historical_boundary.event_id),
         )
         ledger.register_external(external)
@@ -516,7 +516,7 @@ def _execute_condition(condition_id: str, execution_id: str) -> dict[str, Any]:
         replay = _pulse(
             "p4-internal-replay",
             45.0,
-            "world:confirmed",
+            "world:x",
             origin=EventOrigin.ENDOGENOUS_UNCONFIRMED,
             parent_event_ids=(active_boundary.event_id,),
         )
