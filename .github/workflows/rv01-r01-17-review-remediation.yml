@@ -1,0 +1,256 @@
+name: RV01 R01-17 Review Remediation
+
+on:
+  push:
+    branches:
+      - "research/rv01-r01-17-real-delay-development-20260915"
+
+permissions:
+  contents: write
+
+jobs:
+  remediate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout remediation trigger
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+
+      - name: Verify expected pre-remediation source
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD^)" = "7746e8a57f2d5ed7280888581ad4300e6bd4b482"
+
+      - name: Apply exact review remediation
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          source_path = Path("src/sparkbrain/research/rv01_r01_17_real_delay.py")
+          source = source_path.read_text(encoding="utf-8")
+          old_training = '''    api_hashes: set[str] = set()\n    for episode in range(R01_17_EXPOSURES):\n        bridge = CurrentPhysicalLearnerBridge(field)\n        api_hashes.add(bridge.api.api_hash)\n        bridge.observe_sequence(_training_pulses(spec, episode))\n    if len(api_hashes) != 1:\n'''
+          new_training = '''    api_hashes: set[str] = set()\n    training_exposures: list[dict[str, Any]] = []\n    for episode in range(R01_17_EXPOSURES):\n        pulses = _training_pulses(spec, episode)\n        bridge = CurrentPhysicalLearnerBridge(field)\n        api_hashes.add(bridge.api.api_hash)\n        connection_hash_before = connection_state_hash(field)\n        observations = bridge.observe_sequence(pulses)\n        connection_hash_after = connection_state_hash(field)\n        training_exposures.append(\n            {\n                "connection_hash_after": connection_hash_after,\n                "connection_hash_before": connection_hash_before,\n                "connections_after": _connections(field),\n                "episode": episode,\n                "observations": [row.state_dict() for row in observations],\n                "pulses": [pulse.as_dict() for pulse in pulses],\n            }\n        )\n    if len(api_hashes) != 1:\n'''
+          if old_training not in source:
+              raise SystemExit("expected R01-17 training block not found; refusing stale rewrite")
+          source = source.replace(old_training, new_training, 1)
+          old_return = '''        "pre_training_connections": pre,\n        "spec": spec.state_dict(),\n    }\n'''
+          new_return = '''        "pre_training_connections": pre,\n        "spec": spec.state_dict(),\n        "training_exposures": training_exposures,\n    }\n'''
+          if old_return not in source:
+              raise SystemExit("expected R01-17 raw return block not found")
+          source_path.write_text(source.replace(old_return, new_return, 1), encoding="utf-8")
+
+          prereg_path = Path("docs/research/RV01_R01_17_REAL_DELAY_PREREGISTRATION_20260915.md")
+          prereg = prereg_path.read_text(encoding="utf-8")
+          old_bullet = "- learner API hash;\n- complete pre-training and post-training connection inventories;\n"
+          new_bullet = (
+              "- learner API hash;\n"
+              "- every training exposure's deterministic input pulses, learner observation results, "
+              "before/after connection hashes, and post-exposure connection inventory;\n"
+              "- complete pre-training and post-training connection inventories;\n"
+          )
+          if old_bullet not in prereg:
+              raise SystemExit("expected preregistration raw-evidence bullet not found")
+          prereg_path.write_text(prereg.replace(old_bullet, new_bullet, 1), encoding="utf-8")
+
+          tests_path = Path("tests/test_rv01_r01_17_real_delay.py")
+          tests = tests_path.read_text(encoding="utf-8")
+          old_import = '''    R01_17_TIMING_TOLERANCE_MS,\n    _rewrite_checkpoint_delays,\n    build_world_spec,\n    prospective_world_specs,\n    score_raw_suite,\n)\n'''
+          new_import = '''    R01_17_TIMING_TOLERANCE_MS,\n    _digest,\n    _rewrite_checkpoint_delays,\n    build_world_spec,\n    prospective_world_grid_hash,\n    prospective_world_specs,\n    score_raw_suite,\n)\n'''
+          if old_import not in tests:
+              raise SystemExit("expected R01-17 test import block not found")
+          tests = tests.replace(old_import, new_import, 1)
+          marker = "def _synthetic_complete_raw("
+          if marker not in tests:
+              tests += r'''
+
+
+def _connection_row(source: int, target: int, *, weight: float, delay_ms: float) -> dict[str, object]:
+    return {
+        "source_id": source,
+        "target_id": target,
+        "weight": weight,
+        "delay_ms": delay_ms,
+    }
+
+
+def _synthetic_complete_raw(
+    *,
+    disposition_mode: str,
+    boundary: bool = False,
+) -> dict[str, object]:
+    worlds: list[dict[str, object]] = []
+    for index, spec in enumerate(prospective_world_specs()):
+        eligible = not (disposition_mode == "ineligible" and index == 0)
+        support = disposition_mode == "support" or (
+            disposition_mode == "mixed" and index == 0
+        )
+        displacement = 0.5 if boundary else (0.75 if eligible else 0.49)
+        shift = 0.5 if boundary else (0.75 if support else 0.49)
+        pre_rows = [
+            _connection_row(
+                source,
+                target,
+                weight=R01_17_INITIAL_WEIGHT,
+                delay_ms=spec.initial_delay_ms,
+            )
+            for source, target in ((0, 1), (1, 2), (2, 3))
+        ]
+        post_rows = [
+            _connection_row(
+                source,
+                target,
+                weight=0.9,
+                delay_ms=spec.initial_delay_ms - displacement,
+            )
+            for source, target in ((0, 1), (1, 2), (2, 3))
+        ]
+        f0_times = [104.0, 108.0, 112.0]
+        fd_times = [value + shift for value in f0_times]
+
+        def arm(*, delays_from_pre: bool, times: list[float], state_hash: str) -> dict[str, object]:
+            source_rows = pre_rows if delays_from_pre else post_rows
+            connections = [
+                _connection_row(
+                    int(row["source_id"]),
+                    int(row["target_id"]),
+                    weight=0.9,
+                    delay_ms=float(row["delay_ms"]),
+                )
+                for row in source_rows
+            ]
+            return {
+                "connection_hash_after": state_hash,
+                "connection_hash_before": state_hash,
+                "connections": connections,
+                "generated_times_ms": times,
+                "generated_units": [1, 2, 3],
+            }
+
+        worlds.append(
+            {
+                "arms": {
+                    "F0": arm(delays_from_pre=False, times=f0_times, state_hash="post"),
+                    "FD": arm(delays_from_pre=True, times=fd_times, state_hash="pre"),
+                    "SHAM": arm(delays_from_pre=False, times=f0_times, state_hash="post"),
+                },
+                "learner_api_hash": "synthetic-api",
+                "post_training_connections": post_rows,
+                "pre_training_connections": pre_rows,
+                "spec": spec.state_dict(),
+                "training_exposures": [],
+            }
+        )
+    payload: dict[str, object] = {
+        "formal_authority": False,
+        "held_out_authority": False,
+        "phase": "development",
+        "protocol_id": "rv01-r01-17-real-delay-causal-timing-v1",
+        "python_runtime": "synthetic-test",
+        "source_git_sha": "0" * 40,
+        "world_grid_sha256": prospective_world_grid_hash(),
+        "worlds": worlds,
+    }
+    payload["raw_suite_sha256"] = _digest(worlds)
+    return payload
+
+
+@pytest.mark.parametrize(
+    ("mode", "expected"),
+    (
+        ("support", "SUPPORTED_REAL_DELAY_CAUSAL_TIMING"),
+        ("negative", "UNSUPPORTED_REAL_DELAY_CAUSAL_TIMING"),
+        ("mixed", "MIXED_REAL_DELAY_CAUSAL_TIMING"),
+        ("ineligible", "INSUFFICIENT_REAL_DELAY_CONSTRUCTION"),
+    ),
+)
+def test_frozen_scorer_covers_all_aggregate_outcomes(mode: str, expected: str) -> None:
+    scored = score_raw_suite(_synthetic_complete_raw(disposition_mode=mode))
+    assert scored["classification"] == expected
+
+
+def test_frozen_scorer_accepts_exact_preregistered_half_ms_boundaries() -> None:
+    scored = score_raw_suite(
+        _synthetic_complete_raw(disposition_mode="support", boundary=True)
+    )
+    assert scored["classification"] == "SUPPORTED_REAL_DELAY_CAUSAL_TIMING"
+    assert all(
+        row["disposition"] == "REAL_DELAY_SUPPORT_CELL"
+        for row in scored["scored_worlds"]
+    )
+'''
+          tests_path.write_text(tests, encoding="utf-8")
+
+          canonical_sections = {
+              "docs/EXPERIMENT_PROTOCOL.md": r'''
+
+## 2026-09-15 — RV01 R01-17 real-delay exposed-development successor
+
+R01-17 (`rv01-r01-17-real-delay-causal-timing-v1`) is a distinct prospective exposed-development protocol informed by the consumed R01-16 delay measurement-validity finding. It has no held-out or formal authority.
+
+The fixed development identity uses seeds `141800`–`141804` on a four-unit physical chain. Initial physical delay is prospectively separated from training lag by `1.5`–`2.25 ms`; meaningful learned-delay displacement and downstream causal first-arrival shift each require at least `0.5 ms`, with `0.05 ms` numerical/tie tolerance. F0 retains post-training weight/delay, FD retains post-training weight while resetting delay to pre-training values, and SHAM is an exact F0 replay control. All five cells must support for `SUPPORTED_REAL_DELAY_CAUSAL_TIMING`; any construction-ineligible cell yields `INSUFFICIENT_REAL_DELAY_CONSTRUCTION`. Raw evidence, including every training exposure, must be immutably preserved before the frozen scorer runs. Same-identity retries after STARTED are forbidden.
+''',
+              "docs/PROJECT_STATUS.md": r'''
+
+### 2026-09-15 — RV01 R01-17 preregistered, not yet executed
+
+R01-16's delay component remains unresolved because its realized delay intervention was only roundoff-scale. A distinct exposed-development successor, R01-17 (`rv01-r01-17-real-delay-causal-timing-v1`), is now preregistered on fresh seeds `141800`–`141804` with a deliberately nonzero delay-learning error, tolerance-aware eligibility, a causal timing endpoint, SHAM replay, and raw-before-score preservation. Status is **prospective / not executed** until exact-source review, green CI, source freeze, and atomic STARTED are complete. No R01-17 outcome may be inferred from this status entry.
+''',
+              "docs/DECISION_LOG.md": r'''
+
+## 2026-09-15 — RV01 R01-17 separates physical delay learning from R01-16
+
+Decision: do not repair, rerun, or reinterpret consumed R01-16 to test delay plasticity. Use a new exposed-development identity (`rv01-r01-17-real-delay-causal-timing-v1`) with fresh seeds, initial physical delay meaningfully separated from observed training lag, a preregistered `0.5 ms` minimum learned-delay displacement and causal first-arrival shift, matched learned weights across F0/FD, deterministic SHAM, complete per-exposure raw training records, and immutable raw preservation before scoring. This is exploratory/development evidence only and carries no held-out/formal authority.
+''',
+          }
+          markers = {
+              "docs/EXPERIMENT_PROTOCOL.md": "## 2026-09-15 — RV01 R01-17 real-delay exposed-development successor",
+              "docs/PROJECT_STATUS.md": "### 2026-09-15 — RV01 R01-17 preregistered, not yet executed",
+              "docs/DECISION_LOG.md": "## 2026-09-15 — RV01 R01-17 separates physical delay learning from R01-16",
+          }
+          for raw_path, addition in canonical_sections.items():
+              path = Path(raw_path)
+              text = path.read_text(encoding="utf-8")
+              if markers[raw_path] not in text:
+                  if not text.endswith("\n"):
+                      text += "\n"
+                  path.write_text(text + addition.lstrip("\n"), encoding="utf-8")
+          PY
+
+          rm .github/workflows/rv01-r01-17-review-remediation.yml
+
+      - name: Install local validation dependencies
+        run: python -m pip install -e ".[dev]"
+
+      - name: Format, lint, and run focused tests without real acquisition
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m ruff check --fix \
+            src/sparkbrain/research/rv01_r01_17_real_delay.py \
+            scripts/run_rv01_r01_17_real_delay.py \
+            tests/test_rv01_r01_17_real_delay.py
+          python -m ruff format \
+            src/sparkbrain/research/rv01_r01_17_real_delay.py \
+            scripts/run_rv01_r01_17_real_delay.py \
+            tests/test_rv01_r01_17_real_delay.py
+          python -m ruff check \
+            src/sparkbrain/research/rv01_r01_17_real_delay.py \
+            scripts/run_rv01_r01_17_real_delay.py \
+            tests/test_rv01_r01_17_real_delay.py
+          python -m pytest -q tests/test_rv01_r01_17_real_delay.py
+
+      - name: Commit remediation without retaining helper workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "fix(rv01): close R01-17 freeze-readiness review gaps"
+          git push origin HEAD:research/rv01-r01-17-real-delay-development-20260915
