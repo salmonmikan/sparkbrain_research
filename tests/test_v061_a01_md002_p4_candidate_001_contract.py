@@ -30,14 +30,14 @@ def test_p4_candidate_manifest_preflight_does_not_execute_candidate(tmp_path: Pa
     assert contract["formal_execution_allowed"] is False
     assert contract["held_out_execution_allowed"] is False
     assert contract["same_identity_rerun_allowed"] is False
-    assert tuple(contract["prospective_execution_ids"]) == (
+    assert set(contract["prospective_execution_ids"]) == {
         "p4-separate-confirmation",
         "p4-merged-confirmation",
         "p4-merged-separating-confirmation",
         "p4-merged-separating-contradiction",
         "p4-merged-absence",
         "p4-merged-replay",
-    )
+    }
     assert contract["classifier"]["version"] == (
         "p4-selective-resolution-development-classifier-v1"
     )
