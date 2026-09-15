@@ -1,86 +1,139 @@
 {
-  "run_timestamp": "2026-09-16T07:30:47+09:00",
-  "worker_role": "sub",
-  "worker_label": "SECONDARY IMPLEMENTER",
-  "evidence_analyst_commit_consumed": "e15c292d9590bc2406882551df7ba7b5b43513bb",
-  "evidence_analyst_analysis_timestamp": "2026-09-16T07:13:00+09:00",
-  "main_lane": {
+  "run_timestamp": "2026-09-16T08:01:00+09:00",
+  "worker_role": "main",
+  "evidence_analyst_commit": "e15c292d9590bc2406882551df7ba7b5b43513bb",
+  "analyst_main_lane": {
     "target": "A01 MD-002 P4 candidate-001 selective merged-lineage discriminator",
-    "owner": "main",
-    "branch": "research/v061-a01-md002-p4-candidate-001-20260916",
-    "pr": 137
+    "recommended_owner": "main",
+    "information_value": "HIGH",
+    "implementation_distance": "NEAR",
+    "identity": "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1"
   },
-  "sub_lane": {
+  "analyst_sub_lane": {
     "target": "Independent read-only A01 P4 raw-artifact verifier readiness package",
     "recommended_owner": "sub",
     "execution_allowed": false,
-    "completion_target": "Reviewed and CI-clean independent fail-closed verifier satisfying V061_A01_MD002_EXECUTION_AUTHORIZATION_20260912.md and V061_A01_MD_002_P4_TRACE_BINDING_TECHNICAL_REVIEW.md, ready for MAIN integration/re-audit."
+    "completion_target": "Reviewed and CI-clean independent fail-closed verifier satisfying the P4 execution authorization and trace-binding technical-review requirements, ready for MAIN integration/re-audit."
   },
-  "sub_fallback": null,
-  "selected_lane": null,
-  "selected_lane_kind": null,
-  "selection_disposition": "NO_OP_COLLISION_RECONCILIATION",
-  "selection_reason": "The Analyst-designated SUB verifier lane was concurrently advanced on MAIN-owned PR #137 while SUB was re-fetching state. Per collision rules SUB must not duplicate/race it, and no fallback lane exists.",
-  "execution_allowed": false,
-  "sub_active_claims": [],
-  "main_activity_avoided": [
-    "A01 MD-002 P4 mechanism/scorer/identity on PR #137",
-    "Independent P4 artifact verifier implementation now concurrently advanced by MAIN on PR #137"
+  "analyst_sub_fallback": null,
+  "reservation_status": {
+    "sub_lane": "reserved_for_sub",
+    "source": "Operational reservation by MAIN under current hard two-worker ownership rule; Analyst state had recommended_owner=sub but did not yet serialize reservation_status.",
+    "fallback": null
+  },
+  "active_claims": [
+    {
+      "owner": "main",
+      "target": "A01 MD-002 P4 candidate-001 selective merged-lineage discriminator",
+      "branch": "research/v061-a01-md002-p4-candidate-001-20260916",
+      "pr": 137,
+      "status": "STOP_PENDING_RESERVED_SUB_VERIFIER_P1_FIXES"
+    },
+    {
+      "owner": "sub",
+      "target": "P4 independent raw-artifact verifier hardening: ledger-time active-lineage validation plus changed_path_ids recomputation",
+      "status": "RESERVED_FOR_SUB_NOT_TOUCHED_BY_MAIN_THIS_RUN",
+      "execution_allowed": false
+    }
   ],
-  "authoritative_refs_inspected": {
+  "authoritative_refs": {
     "main": "ba16bf10535141c2edb29bbe3439ba0a38e71179",
     "a01_authoritative": "2e47df9cf8c6323f390935bb41c368632f3342c6",
     "a01_p4_branch": "research/v061-a01-md002-p4-candidate-001-20260916",
-    "a01_p4_head_at_analyst": "7f2545b91b5d9dc6c1bcb80dccf921470ba99308",
-    "a01_p4_head_observed_mid_run": "e9dd268bdc5bb78dcfbc9b4a482d0e54cdb4a067",
-    "a01_p4_head_final": "fd259bd18feec119643ea215c84813fcf810c165",
+    "a01_p4_head": "c1248bb3c87c0767e3e1a3cd2a6978ebb4eb06dc",
     "a01_p4_pr": 137,
-    "a01_p4_exact_head_ci": {
-      "run_id": 35031427049,
-      "status": "in_progress",
-      "conclusion": null
-    },
     "a01_p4_identity": "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
-    "matching_p4_started_control_freeze_preserve_branches_found": false,
-    "control_brain_commit_consumed_via_latest": "1985198deb95190d45cb46629beb654eb04d4d92",
-    "shared_orchestrator_report_base_commit": "3d311e1e56fd2c78536a9b841b57475966fca303"
+    "a01_p4_identity_consumed": false,
+    "a01_p4_control_refs_found": false,
+    "a01_p4_preserve_refs_found": false,
+    "a01_p4_legacy_freeze_branches_found": false,
+    "a01_p4_prospective_freeze_tags_found": false,
+    "rv01_authoritative": "98be60268845487ce51e76b8a7687552a5dbc51f"
   },
-  "branches_advanced": [],
-  "prs_advanced": [],
-  "workflows_experiments_executed": [],
+  "ci_review": {
+    "exact_head_ci": {
+      "run_id": 35032927316,
+      "head_sha": "c1248bb3c87c0767e3e1a3cd2a6978ebb4eb06dc",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "exact_head_codex_review": {
+      "reviewed_commit": "c1248bb3c8",
+      "state": "COMMENTED",
+      "fresh_p1_findings": [
+        "Independent verifier trusts copied active-lineage trace records instead of re-deriving proposal activity from retained ledger proposal created_at_ms/valid_until_ms at the measurement phases.",
+        "Independent verifier trusts stored changed_path_ids instead of recomputing exact differences from pre.path_reliability and post.path_reliability."
+      ]
+    }
+  },
+  "branches_prs_advanced": {
+    "by_main_this_run": [],
+    "observed_existing_pr": [137],
+    "merges": []
+  },
+  "workflows_experiments": [],
   "scientific_results": [],
   "new_scientific_information": false,
   "consumed_identities_this_run": [],
-  "blockers": [
-    "SUB lane collision: MAIN advanced the same verifier target during SUB inspection.",
-    "Exact-head CI for fd259bd18feec119643ea215c84813fcf810c165 was still in progress at final inspection.",
-    "Exact-head clean substantive/Codex review for fd259bd18feec119643ea215c84813fcf810c165 was not established by this run."
+  "consumed_identities_referenced": [
+    "A01 MD-001",
+    "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
+    "a01-md002-p3-r-only-causal-carrier-candidate-001-v1",
+    "RV01 R01-16 construction/capability identities",
+    "rv01-r01-17-real-delay-causal-timing-v1",
+    "96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
+    "CX01 candidate-002 formal identity"
   ],
-  "collision_avoidance_concurrency_reconciliation": {
-    "head_movement_detected": true,
-    "from_analyst_head": "7f2545b91b5d9dc6c1bcb80dccf921470ba99308",
-    "through": "e9dd268bdc5bb78dcfbc9b4a482d0e54cdb4a067",
-    "to": "fd259bd18feec119643ea215c84813fcf810c165",
-    "same_target_advanced_by_main": true,
-    "sub_write_to_research_branch_attempted": false,
-    "implementation_claim_created": false,
-    "resolution": "Stopped verifier implementation and recorded no-op rather than creating a duplicate branch/PR."
+  "blockers": [
+    {
+      "id": "p4_verifier_rederive_active_lineages",
+      "severity": "P1",
+      "owner": "sub",
+      "description": "Fail closed by independently re-deriving active proposal validity from retained ledger proposal timestamps/validity intervals rather than trusting copied trace rows."
+    },
+    {
+      "id": "p4_verifier_recompute_changed_paths",
+      "severity": "P1",
+      "owner": "sub",
+      "description": "Fail closed by independently recomputing changed_path_ids from pre/post path reliability and rejecting disagreement with stored values."
+    }
+  ],
+  "concurrency_reconciliation": {
+    "previous_coordination_failure_observed": true,
+    "previous_failure": "Earlier MAIN activity advanced the Analyst-designated verifier target while SUB was inspecting it, causing the 07:30 SUB run to no-op.",
+    "current_run_response": "MAIN did not modify verifier source/tests or absorb the remaining verifier-hardening package; reserved it for SUB.",
+    "concurrent_overwrite_attempted": false
   },
-  "immutable_ref_integrity_status": {
+  "integrity_status": {
     "immutable_refs_moved_or_rewritten": false,
     "consumed_identity_rerun_or_retune": false,
-    "new_started_control_freeze_preserve_refs_created_by_sub": [],
-    "candidate_output_acquired_by_sub": false,
-    "scoring_performed_by_sub": false
+    "candidate_output_acquired": false,
+    "scoring_performed": false,
+    "started_created": false,
+    "merge_performed": false
   },
-  "completion_target": {
-    "target": "Reviewed and CI-clean independent fail-closed P4 verifier ready for MAIN integration/re-audit",
-    "reached_by_sub": false,
-    "current_status": "MAIN has advanced source/tests to address the latest verifier P1 finding, but exact-head CI/review are not yet confirmed complete."
+  "work_intentionally_left_for_sub": [
+    "Independently derive before/after active proposal validity from retained ledger proposal created_at_ms/valid_until_ms at the bound measurement phases.",
+    "Recompute exact changed-path differences from retained pre.path_reliability and post.path_reliability; fail closed if stored changed_path_ids disagrees.",
+    "Add fail-closed regression tests for both findings on a distinct SUB implementation stream."
+  ],
+  "reserved_sub_work_not_touched": true,
+  "reserved_sub_work_not_touched_detail": "MAIN made no verifier/test/source change despite the two current exact-head P1 findings because that coherent package is reserved for SUB.",
+  "lane_invalidation_or_repartition_reason": null,
+  "active_lines": {
+    "A01_MD002_P4": "central MAIN lane; pre-STARTED, blocked on two reserved-SUB verifier P1 findings",
+    "RV01": "authoritative branch unchanged; secondary/reduced ordinary local adaptive mechanism line",
+    "RV02": "RD005 D1 terminal-consumed; no fresh executor-authorized successor",
+    "CX_CX01": "candidate-002 consumed; no fresh successor assigned to MAIN"
   },
-  "next_lane_fallback_status": {
-    "sub_lane": "currently MAIN-owned/advanced; do not duplicate",
-    "sub_fallback": null,
-    "instruction": "Await a later Evidence Analyst split; if no safe lane is supplied, no-op rather than invent successor science."
-  }
+  "governance": {
+    "p4_question_issue": 138,
+    "tag_protection_issue": 139,
+    "governance_blocking_science": false,
+    "main_advanced": false,
+    "main_promotion_actions": []
+  },
+  "next_main_action": "After SUB delivers a reviewed/CI-clean verifier hardening package, re-fetch exact PR/source/identity/ref state, integrate/re-audit the exact head, verify both P1s are closed, re-run exact-head CI/review and one-way gates, then STARTED + exactly-once P4 execution only if every prospective condition remains clean.",
+  "history_record_commit": "8eeb5ce4534e5c3f2f56b2aadab83e6f4ab2108e",
+  "latest_record_commit": "31543ba71b9ec8ff857fc30d7d8d8abb06bb3162"
 }
