@@ -1,3 +1,5 @@
+import pytest
+
 from sparkbrain.v06.boundary import BoundaryDirection, BoundaryEvent
 from sparkbrain.v06.consistency import UntypedBoundaryConsistency
 from sparkbrain.v06.foundation import (
@@ -12,7 +14,6 @@ from sparkbrain.v061_a01.credit_bridge import (
     A01TransientCreditBridge,
 )
 from sparkbrain.v061_a01.md002_p4_credit_probe import probe_merged_lineage_credit
-import pytest
 
 
 def _boundary(source_ids: tuple[str, ...]) -> BoundaryEvent:
