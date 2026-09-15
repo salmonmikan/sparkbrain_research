@@ -1,0 +1,109 @@
+{
+  "classification": "SUPPORTED_REAL_DELAY_CAUSAL_TIMING",
+  "formal_authority": false,
+  "held_out_authority": false,
+  "minimum_causal_shift_ms": 0.5,
+  "minimum_delay_displacement_ms": 0.5,
+  "phase": "development",
+  "protocol_id": "rv01-r01-17-real-delay-causal-timing-v1",
+  "raw_suite_sha256": "7d6642bf16364c2a67acdf979324d0da59dcd7bbdc508c5f8773b6c654803dc2",
+  "score_sha256": "b76f3c7b3ec29f97ea69de30c6fb0e3c171c1eaa0e80699bf8055c3586ded76e",
+  "scored_worlds": [
+    {
+      "arm_binding_valid": true,
+      "arrival_shifts_ms": {
+        "1": 1.817788218750053,
+        "2": 3.6355764374998216,
+        "3": 5.4533646562498745
+      },
+      "delay_displacements_ms": {
+        "0->1": 1.817788218750053,
+        "1->2": 1.8177882187497687,
+        "2->3": 1.8177882187500494
+      },
+      "delay_eligible": true,
+      "disposition": "REAL_DELAY_SUPPORT_CELL",
+      "route_preserved": true,
+      "seed": 141800,
+      "sham_exact": true,
+      "world_id": "r01-17:development:real-delay-chain:141800"
+    },
+    {
+      "arm_binding_valid": true,
+      "arrival_shifts_ms": {
+        "1": 2.0607270468750585,
+        "2": 4.121454093749833,
+        "3": 6.182181140624891
+      },
+      "delay_displacements_ms": {
+        "0->1": 2.060727046875061,
+        "1->2": 2.0607270468747734,
+        "2->3": 2.060727046875061
+      },
+      "delay_eligible": true,
+      "disposition": "REAL_DELAY_SUPPORT_CELL",
+      "route_preserved": true,
+      "seed": 141801,
+      "sham_exact": true,
+      "world_id": "r01-17:development:real-delay-chain:141801"
+    },
+    {
+      "arm_binding_valid": true,
+      "arrival_shifts_ms": {
+        "1": 2.1949997343749175,
+        "2": 4.389999468750119,
+        "3": 6.584999203125037
+      },
+      "delay_displacements_ms": {
+        "0->1": 2.194999734374907,
+        "1->2": 2.1949997343752017,
+        "2->3": 2.194999734374907
+      },
+      "delay_eligible": true,
+      "disposition": "REAL_DELAY_SUPPORT_CELL",
+      "route_preserved": true,
+      "seed": 141802,
+      "sham_exact": true,
+      "world_id": "r01-17:development:real-delay-chain:141802"
+    },
+    {
+      "arm_binding_valid": true,
+      "arrival_shifts_ms": {
+        "1": 1.7809253437500132,
+        "2": 3.5618506875000264,
+        "3": 5.34277603125004
+      },
+      "delay_displacements_ms": {
+        "0->1": 1.780925343750023,
+        "1->2": 1.780925343750023,
+        "2->3": 1.7809253437500194
+      },
+      "delay_eligible": true,
+      "disposition": "REAL_DELAY_SUPPORT_CELL",
+      "route_preserved": true,
+      "seed": 141803,
+      "sham_exact": true,
+      "world_id": "r01-17:development:real-delay-chain:141803"
+    },
+    {
+      "arm_binding_valid": true,
+      "arrival_shifts_ms": {
+        "1": 1.5128603437501909,
+        "2": 3.025720687500211,
+        "3": 4.538581031249947
+      },
+      "delay_displacements_ms": {
+        "0->1": 1.512860343750197,
+        "1->2": 1.5128603437500265,
+        "2->3": 1.5128603437497423
+      },
+      "delay_eligible": true,
+      "disposition": "REAL_DELAY_SUPPORT_CELL",
+      "route_preserved": true,
+      "seed": 141804,
+      "sham_exact": true,
+      "world_id": "r01-17:development:real-delay-chain:141804"
+    }
+  ],
+  "timing_tolerance_ms": 0.05
+}
