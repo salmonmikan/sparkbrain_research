@@ -1,0 +1,15 @@
+{
+  "protocol": "rv01-r01-17-real-delay-causal-timing-v1",
+  "stage": "exposed-development",
+  "frozen_source_git_sha": "5ecb459b609b393ff837f57cc138f1eb44c1b255",
+  "freeze_ref": "freeze/rv01-r01-17-real-delay-source-20260915",
+  "control_ref": "control/rv01-r01-17-real-delay-started-20260915",
+  "raw_preserve_ref": "preserve/rv01-r01-17-real-delay-raw-20260915",
+  "scored_preserve_ref": "preserve/rv01-r01-17-real-delay-scored-20260915",
+  "workflow_run_id": "34978554838",
+  "workflow_run_attempt": "1",
+  "python_version": "Python 3.11.16",
+  "same_identity_rerun_allowed": false,
+  "held_out_executed": false,
+  "formal_execution_allowed": false
+}

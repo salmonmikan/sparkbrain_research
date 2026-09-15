@@ -1,0 +1,4172 @@
+{
+  "formal_authority": false,
+  "held_out_authority": false,
+  "phase": "development",
+  "protocol_id": "rv01-r01-17-real-delay-causal-timing-v1",
+  "python_runtime": "3.11.16",
+  "raw_suite_sha256": "7d6642bf16364c2a67acdf979324d0da59dcd7bbdc508c5f8773b6c654803dc2",
+  "source_git_sha": "5ecb459b609b393ff837f57cc138f1eb44c1b255",
+  "world_grid_sha256": "018aed11be0a8e47c790a9f52645e27a48babc8d1076b7c657a497348bc92df1",
+  "worlds": [
+    {
+      "arms": {
+        "F0": {
+          "arm": "F0",
+          "connection_hash_after": "8b05a1557124f89a1989d4cda9bb5ec5ac94b4eba093b3b3610fd4de3fdab282",
+          "connection_hash_before": "8b05a1557124f89a1989d4cda9bb5ec5ac94b4eba093b3b3610fd4de3fdab282",
+          "connections": [
+            {
+              "delay_ms": 4.197001781249947,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 4.197001781250231,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 4.19700178124995,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.25
+            }
+          ],
+          "generated_times_ms": [
+            104.19700178124995,
+            108.39400356250019,
+            112.59100534375014
+          ],
+          "generated_units": [
+            1,
+            2,
+            3
+          ]
+        },
+        "FD": {
+          "arm": "FD",
+          "connection_hash_after": "82a75625de2ca27543068b25d898d9065eb0e69116b2b97d5539568bddb8b261",
+          "connection_hash_before": "82a75625de2ca27543068b25d898d9065eb0e69116b2b97d5539568bddb8b261",
+          "connections": [
+            {
+              "delay_ms": 6.01479,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 6.01479,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 6.01479,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.25
+            }
+          ],
+          "generated_times_ms": [
+            106.01479,
+            112.02958000000001,
+            118.04437000000001
+          ],
+          "generated_units": [
+            1,
+            2,
+            3
+          ]
+        },
+        "SHAM": {
+          "arm": "SHAM",
+          "connection_hash_after": "8b05a1557124f89a1989d4cda9bb5ec5ac94b4eba093b3b3610fd4de3fdab282",
+          "connection_hash_before": "8b05a1557124f89a1989d4cda9bb5ec5ac94b4eba093b3b3610fd4de3fdab282",
+          "connections": [
+            {
+              "delay_ms": 4.197001781249947,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 4.197001781250231,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 4.19700178124995,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.25
+            }
+          ],
+          "generated_times_ms": [
+            104.19700178124995,
+            108.39400356250019,
+            112.59100534375014
+          ],
+          "generated_units": [
+            1,
+            2,
+            3
+          ]
+        }
+      },
+      "learner_api_hash": "31e95f27da53759cd24636eab8de9dd1752f457db2e16048aece4b82279a3a94",
+      "post_training_connections": [
+        {
+          "delay_ms": 4.197001781249947,
+          "source_id": 0,
+          "target_id": 1,
+          "weight": 1.25
+        },
+        {
+          "delay_ms": 4.197001781250231,
+          "source_id": 1,
+          "target_id": 2,
+          "weight": 1.25
+        },
+        {
+          "delay_ms": 4.19700178124995,
+          "source_id": 2,
+          "target_id": 3,
+          "weight": 1.25
+        }
+      ],
+      "pre_training_connections": [
+        {
+          "delay_ms": 6.01479,
+          "source_id": 0,
+          "target_id": 1,
+          "weight": 0.05
+        },
+        {
+          "delay_ms": 6.01479,
+          "source_id": 1,
+          "target_id": 2,
+          "weight": 0.05
+        },
+        {
+          "delay_ms": 6.01479,
+          "source_id": 2,
+          "target_id": 3,
+          "weight": 0.05
+        }
+      ],
+      "spec": {
+        "cue_magnitude": 1.176364,
+        "exposures": 6,
+        "formal_authority": false,
+        "held_out_authority": false,
+        "identity_sha256": "fad1791f1fd30da291e793bb89507a14fea678255401e2b3b660bb19b47ca228",
+        "initial_delay_ms": 6.01479,
+        "initial_weight": 0.05,
+        "minimum_causal_shift_ms": 0.5,
+        "minimum_delay_displacement_ms": 0.5,
+        "phase": "development",
+        "protocol_id": "rv01-r01-17-real-delay-causal-timing-v1",
+        "route": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "seed": 141800,
+        "threshold": 0.526364,
+        "timing_tolerance_ms": 0.05,
+        "training_lag_ms": 4.168148,
+        "unit_count": 4,
+        "world_id": "r01-17:development:real-delay-chain:141800",
+        "world_salt": "rv01-r01-17-real-delay-world-grid-v1"
+      },
+      "training_exposures": [
+        {
+          "connection_hash_after": "9ab31c74533c6652a7f3eba33fadfeb3d2537f3a8358f2c19a3cae30ff6b66c7",
+          "connection_hash_before": "9e6b2a76f097c8fbb8629969b82806332d79bcf9f0c8b33136828655147462f0",
+          "connections_after": [
+            {
+              "delay_ms": 5.091469,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 0.4376960373923073
+            },
+            {
+              "delay_ms": 5.091469,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 0.4376960373923073
+            },
+            {
+              "delay_ms": 5.091469,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 0.4376960373923073
+            }
+          ],
+          "episode": 0,
+          "observations": [
+            {
+              "accepted": true,
+              "connection_hash_after": "9e6b2a76f097c8fbb8629969b82806332d79bcf9f0c8b33136828655147462f0",
+              "connection_hash_before": "9e6b2a76f097c8fbb8629969b82806332d79bcf9f0c8b33136828655147462f0",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "959e8586b582398a11de545a9820bd1644663ede1fd937b5ed216b17f230ad11",
+              "connection_hash_before": "9e6b2a76f097c8fbb8629969b82806332d79bcf9f0c8b33136828655147462f0",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "6577b897608e7291e90555f7ad432bd161ccf19e73973ffe1c881d4e7a4fc120",
+              "connection_hash_before": "959e8586b582398a11de545a9820bd1644663ede1fd937b5ed216b17f230ad11",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "9ab31c74533c6652a7f3eba33fadfeb3d2537f3a8358f2c19a3cae30ff6b66c7",
+              "connection_hash_before": "6577b897608e7291e90555f7ad432bd161ccf19e73973ffe1c881d4e7a4fc120",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            }
+          ],
+          "pulses": [
+            {
+              "event_id": "r01-17:141800:train:0:0",
+              "generation_depth": 0,
+              "magnitude": 1.176364,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:0",
+              "time_ms": 0.0
+            },
+            {
+              "event_id": "r01-17:141800:train:0:1",
+              "generation_depth": 0,
+              "magnitude": 1.176364,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:1",
+              "time_ms": 4.168148
+            },
+            {
+              "event_id": "r01-17:141800:train:0:2",
+              "generation_depth": 0,
+              "magnitude": 1.176364,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:2",
+              "time_ms": 8.336296
+            },
+            {
+              "event_id": "r01-17:141800:train:0:3",
+              "generation_depth": 0,
+              "magnitude": 1.176364,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:3",
+              "time_ms": 12.504444000000001
+            }
+          ]
+        },
+        {
+          "connection_hash_after": "e580868d02dadda0a13ee77d8bf94eea1cad3b87e32fbf7c2856bb5be38aa437",
+          "connection_hash_before": "9ab31c74533c6652a7f3eba33fadfeb3d2537f3a8358f2c19a3cae30ff6b66c7",
+          "connections_after": [
+            {
+              "delay_ms": 4.629808499999987,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 0.8253920747846156
+            },
+            {
+              "delay_ms": 4.629808499999987,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 0.8253920747846156
+            },
+            {
+              "delay_ms": 4.629808500000044,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 0.8253920747846113
+            }
+          ],
+          "episode": 1,
+          "observations": [
+            {
+              "accepted": true,
+              "connection_hash_after": "9ab31c74533c6652a7f3eba33fadfeb3d2537f3a8358f2c19a3cae30ff6b66c7",
+              "connection_hash_before": "9ab31c74533c6652a7f3eba33fadfeb3d2537f3a8358f2c19a3cae30ff6b66c7",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "e20d501f570ddd2c61f50e93eaa3f2eedf3ee95d9028c9ce28ee084bd41fed0d",
+              "connection_hash_before": "9ab31c74533c6652a7f3eba33fadfeb3d2537f3a8358f2c19a3cae30ff6b66c7",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "89e8181e18755f30ac1f3099d56c0b4bef7c34fc1efc1382923050c46f7a05bf",
+              "connection_hash_before": "e20d501f570ddd2c61f50e93eaa3f2eedf3ee95d9028c9ce28ee084bd41fed0d",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "e580868d02dadda0a13ee77d8bf94eea1cad3b87e32fbf7c2856bb5be38aa437",
+              "connection_hash_before": "89e8181e18755f30ac1f3099d56c0b4bef7c34fc1efc1382923050c46f7a05bf",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            }
+          ],
+          "pulses": [
+            {
+              "event_id": "r01-17:141800:train:1:0",
+              "generation_depth": 0,
+              "magnitude": 1.176364,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:0",
+              "time_ms": 1000.0
+            },
+            {
+              "event_id": "r01-17:141800:train:1:1",
+              "generation_depth": 0,
+              "magnitude": 1.176364,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:1",
+              "time_ms": 1004.168148
+            },
+            {
+              "event_id": "r01-17:141800:train:1:2",
+              "generation_depth": 0,
+              "magnitude": 1.176364,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:2",
+              "time_ms": 1008.336296
+            },
+            {
+              "event_id": "r01-17:141800:train:1:3",
+              "generation_depth": 0,
+              "magnitude": 1.176364,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:3",
+              "time_ms": 1012.504444
+            }
+          ]
+        },
+        {
+          "connection_hash_after": "76548c23d32960fdbe27b88520672826fd6ed968b334f801bd3dc76626fd36a2",
+          "connection_hash_before": "e580868d02dadda0a13ee77d8bf94eea1cad3b87e32fbf7c2856bb5be38aa437",
+          "connections_after": [
+            {
+              "delay_ms": 4.39897824999998,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.213088112176924
+            },
+            {
+              "delay_ms": 4.39897824999998,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.213088112176924
+            },
+            {
+              "delay_ms": 4.398978250000009,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.2130881121769197
+            }
+          ],
+          "episode": 2,
+          "observations": [
+            {
+              "accepted": true,
+              "connection_hash_after": "e580868d02dadda0a13ee77d8bf94eea1cad3b87e32fbf7c2856bb5be38aa437",
+              "connection_hash_before": "e580868d02dadda0a13ee77d8bf94eea1cad3b87e32fbf7c2856bb5be38aa437",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "fda5aad1b556f777e5e37965dacfc7f3a03ece636fb09d3cc55d43d49571633a",
+              "connection_hash_before": "e580868d02dadda0a13ee77d8bf94eea1cad3b87e32fbf7c2856bb5be38aa437",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "b3d82a0eeba6043a71a19864bd8cc2a04ed16f1f47fb185f998268e25b7515ae",
+              "connection_hash_before": "fda5aad1b556f777e5e37965dacfc7f3a03ece636fb09d3cc55d43d49571633a",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "76548c23d32960fdbe27b88520672826fd6ed968b334f801bd3dc76626fd36a2",
+              "connection_hash_before": "b3d82a0eeba6043a71a19864bd8cc2a04ed16f1f47fb185f998268e25b7515ae",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            }
+          ],
+          "pulses": [
+            {
+              "event_id": "r01-17:141800:train:2:0",
+              "generation_depth": 0,
+              "magnitude": 1.176364,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:0",
+              "time_ms": 2000.0
+            },
+            {
+              "event_id": "r01-17:141800:train:2:1",
+              "generation_depth": 0,
+              "magnitude": 1.176364,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:1",
+              "time_ms": 2004.168148
+            },
+            {
+              "event_id": "r01-17:141800:train:2:2",
+              "generation_depth": 0,
+              "magnitude": 1.176364,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:2",
+              "time_ms": 2008.336296
+            },
+            {
+              "event_id": "r01-17:141800:train:2:3",
+              "generation_depth": 0,
+              "magnitude": 1.176364,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:3",
+              "time_ms": 2012.504444
+            }
+          ]
+        },
+        {
+          "connection_hash_after": "e0b67001be54637added04b190b617b03dce0ac7052de80f10308caf5e0830fb",
+          "connection_hash_before": "76548c23d32960fdbe27b88520672826fd6ed968b334f801bd3dc76626fd36a2",
+          "connections_after": [
+            {
+              "delay_ms": 4.283563125000091,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 4.283563124999864,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 4.283563125000105,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.25
+            }
+          ],
+          "episode": 3,
+          "observations": [
+            {
+              "accepted": true,
+              "connection_hash_after": "76548c23d32960fdbe27b88520672826fd6ed968b334f801bd3dc76626fd36a2",
+              "connection_hash_before": "76548c23d32960fdbe27b88520672826fd6ed968b334f801bd3dc76626fd36a2",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "4eec148215ac24ef271c6e57aada43c4a240ef5fdc31eb4d779561f874dd68a2",
+              "connection_hash_before": "76548c23d32960fdbe27b88520672826fd6ed968b334f801bd3dc76626fd36a2",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "280f7948aa0dcaac047be75522542c79afc6638f4a665e28d50921cf46571297",
+              "connection_hash_before": "4eec148215ac24ef271c6e57aada43c4a240ef5fdc31eb4d779561f874dd68a2",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "e0b67001be54637added04b190b617b03dce0ac7052de80f10308caf5e0830fb",
+              "connection_hash_before": "280f7948aa0dcaac047be75522542c79afc6638f4a665e28d50921cf46571297",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            }
+          ],
+          "pulses": [
+            {
+              "event_id": "r01-17:141800:train:3:0",
+              "generation_depth": 0,
+              "magnitude": 1.176364,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:0",
+              "time_ms": 3000.0
+            },
+            {
+              "event_id": "r01-17:141800:train:3:1",
+              "generation_depth": 0,
+              "magnitude": 1.176364,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:1",
+              "time_ms": 3004.168148
+            },
+            {
+              "event_id": "r01-17:141800:train:3:2",
+              "generation_depth": 0,
+              "magnitude": 1.176364,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:2",
+              "time_ms": 3008.336296
+            },
+            {
+              "event_id": "r01-17:141800:train:3:3",
+              "generation_depth": 0,
+              "magnitude": 1.176364,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:3",
+              "time_ms": 3012.504444
+            }
+          ]
+        },
+        {
+          "connection_hash_after": "fac2f1a28c98938c82d767fb249656c38ebbbfa1fc7957f6184a4d254566419b",
+          "connection_hash_before": "e0b67001be54637added04b190b617b03dce0ac7052de80f10308caf5e0830fb",
+          "connections_after": [
+            {
+              "delay_ms": 4.225855562500146,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 4.225855562499805,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 4.225855562500153,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.25
+            }
+          ],
+          "episode": 4,
+          "observations": [
+            {
+              "accepted": true,
+              "connection_hash_after": "e0b67001be54637added04b190b617b03dce0ac7052de80f10308caf5e0830fb",
+              "connection_hash_before": "e0b67001be54637added04b190b617b03dce0ac7052de80f10308caf5e0830fb",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "6e372098e7e703d94cdb0b8419cb1331944b3bf6451336a7a45dc90f6e03320a",
+              "connection_hash_before": "e0b67001be54637added04b190b617b03dce0ac7052de80f10308caf5e0830fb",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "0e236fa79c6a766762596bf912ca350cbdaed8a9b8a238180f3d32a6150decbf",
+              "connection_hash_before": "6e372098e7e703d94cdb0b8419cb1331944b3bf6451336a7a45dc90f6e03320a",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "fac2f1a28c98938c82d767fb249656c38ebbbfa1fc7957f6184a4d254566419b",
+              "connection_hash_before": "0e236fa79c6a766762596bf912ca350cbdaed8a9b8a238180f3d32a6150decbf",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            }
+          ],
+          "pulses": [
+            {
+              "event_id": "r01-17:141800:train:4:0",
+              "generation_depth": 0,
+              "magnitude": 1.176364,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:0",
+              "time_ms": 4000.0
+            },
+            {
+              "event_id": "r01-17:141800:train:4:1",
+              "generation_depth": 0,
+              "magnitude": 1.176364,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:1",
+              "time_ms": 4004.168148
+            },
+            {
+              "event_id": "r01-17:141800:train:4:2",
+              "generation_depth": 0,
+              "magnitude": 1.176364,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:2",
+              "time_ms": 4008.336296
+            },
+            {
+              "event_id": "r01-17:141800:train:4:3",
+              "generation_depth": 0,
+              "magnitude": 1.176364,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:3",
+              "time_ms": 4012.504444
+            }
+          ]
+        },
+        {
+          "connection_hash_after": "8b05a1557124f89a1989d4cda9bb5ec5ac94b4eba093b3b3610fd4de3fdab282",
+          "connection_hash_before": "fac2f1a28c98938c82d767fb249656c38ebbbfa1fc7957f6184a4d254566419b",
+          "connections_after": [
+            {
+              "delay_ms": 4.197001781249947,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 4.197001781250231,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 4.19700178124995,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.25
+            }
+          ],
+          "episode": 5,
+          "observations": [
+            {
+              "accepted": true,
+              "connection_hash_after": "fac2f1a28c98938c82d767fb249656c38ebbbfa1fc7957f6184a4d254566419b",
+              "connection_hash_before": "fac2f1a28c98938c82d767fb249656c38ebbbfa1fc7957f6184a4d254566419b",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "0fc58e18f970465e9e77a57b3db73bdb608fb2266871da51449124b4cbac2dca",
+              "connection_hash_before": "fac2f1a28c98938c82d767fb249656c38ebbbfa1fc7957f6184a4d254566419b",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "8edc9f36c3a238b636b4b3520bd45833863deaa8f1c2c02db755d43b4aadd0df",
+              "connection_hash_before": "0fc58e18f970465e9e77a57b3db73bdb608fb2266871da51449124b4cbac2dca",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "8b05a1557124f89a1989d4cda9bb5ec5ac94b4eba093b3b3610fd4de3fdab282",
+              "connection_hash_before": "8edc9f36c3a238b636b4b3520bd45833863deaa8f1c2c02db755d43b4aadd0df",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            }
+          ],
+          "pulses": [
+            {
+              "event_id": "r01-17:141800:train:5:0",
+              "generation_depth": 0,
+              "magnitude": 1.176364,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:0",
+              "time_ms": 5000.0
+            },
+            {
+              "event_id": "r01-17:141800:train:5:1",
+              "generation_depth": 0,
+              "magnitude": 1.176364,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:1",
+              "time_ms": 5004.168148
+            },
+            {
+              "event_id": "r01-17:141800:train:5:2",
+              "generation_depth": 0,
+              "magnitude": 1.176364,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:2",
+              "time_ms": 5008.336296
+            },
+            {
+              "event_id": "r01-17:141800:train:5:3",
+              "generation_depth": 0,
+              "magnitude": 1.176364,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:3",
+              "time_ms": 5012.504444
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "arms": {
+        "F0": {
+          "arm": "F0",
+          "connection_hash_after": "23472f0109f4d35d336285882052a336649b60b82157b1b2c0b4d1e3e5be8695",
+          "connection_hash_before": "23472f0109f4d35d336285882052a336649b60b82157b1b2c0b4d1e3e5be8695",
+          "connections": [
+            {
+              "delay_ms": 3.987198953124939,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 3.987198953125227,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 3.987198953124939,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.25
+            }
+          ],
+          "generated_times_ms": [
+            103.98719895312495,
+            107.97439790625018,
+            111.96159685937512
+          ],
+          "generated_units": [
+            1,
+            2,
+            3
+          ]
+        },
+        "FD": {
+          "arm": "FD",
+          "connection_hash_after": "5c4b16797bc34b5b9bdd90520aa2d37b5bf999b2eb4b71bcb83f33168a61b67d",
+          "connection_hash_before": "5c4b16797bc34b5b9bdd90520aa2d37b5bf999b2eb4b71bcb83f33168a61b67d",
+          "connections": [
+            {
+              "delay_ms": 6.047926,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 6.047926,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 6.047926,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.25
+            }
+          ],
+          "generated_times_ms": [
+            106.047926,
+            112.09585200000001,
+            118.14377800000001
+          ],
+          "generated_units": [
+            1,
+            2,
+            3
+          ]
+        },
+        "SHAM": {
+          "arm": "SHAM",
+          "connection_hash_after": "23472f0109f4d35d336285882052a336649b60b82157b1b2c0b4d1e3e5be8695",
+          "connection_hash_before": "23472f0109f4d35d336285882052a336649b60b82157b1b2c0b4d1e3e5be8695",
+          "connections": [
+            {
+              "delay_ms": 3.987198953124939,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 3.987198953125227,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 3.987198953124939,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.25
+            }
+          ],
+          "generated_times_ms": [
+            103.98719895312495,
+            107.97439790625018,
+            111.96159685937512
+          ],
+          "generated_units": [
+            1,
+            2,
+            3
+          ]
+        }
+      },
+      "learner_api_hash": "31e95f27da53759cd24636eab8de9dd1752f457db2e16048aece4b82279a3a94",
+      "post_training_connections": [
+        {
+          "delay_ms": 3.987198953124939,
+          "source_id": 0,
+          "target_id": 1,
+          "weight": 1.25
+        },
+        {
+          "delay_ms": 3.987198953125227,
+          "source_id": 1,
+          "target_id": 2,
+          "weight": 1.25
+        },
+        {
+          "delay_ms": 3.987198953124939,
+          "source_id": 2,
+          "target_id": 3,
+          "weight": 1.25
+        }
+      ],
+      "pre_training_connections": [
+        {
+          "delay_ms": 6.047926,
+          "source_id": 0,
+          "target_id": 1,
+          "weight": 0.05
+        },
+        {
+          "delay_ms": 6.047926,
+          "source_id": 1,
+          "target_id": 2,
+          "weight": 0.05
+        },
+        {
+          "delay_ms": 6.047926,
+          "source_id": 2,
+          "target_id": 3,
+          "weight": 0.05
+        }
+      ],
+      "spec": {
+        "cue_magnitude": 1.176526,
+        "exposures": 6,
+        "formal_authority": false,
+        "held_out_authority": false,
+        "identity_sha256": "97692077aac7311c45ad571c955ac52655f63bbf39fc08457d12cf139b3ae7d3",
+        "initial_delay_ms": 6.047926,
+        "initial_weight": 0.05,
+        "minimum_causal_shift_ms": 0.5,
+        "minimum_delay_displacement_ms": 0.5,
+        "phase": "development",
+        "protocol_id": "rv01-r01-17-real-delay-causal-timing-v1",
+        "route": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "seed": 141801,
+        "threshold": 0.526526,
+        "timing_tolerance_ms": 0.05,
+        "training_lag_ms": 3.954489,
+        "unit_count": 4,
+        "world_id": "r01-17:development:real-delay-chain:141801",
+        "world_salt": "rv01-r01-17-real-delay-world-grid-v1"
+      },
+      "training_exposures": [
+        {
+          "connection_hash_after": "df250014242195900f9b2de601d720714b74b7c72fa0976b32524d7cdbbf89e1",
+          "connection_hash_before": "bfe6c282f362d09254a692904e67b836764119bc0bb1a675baeffa225ccf6863",
+          "connections_after": [
+            {
+              "delay_ms": 5.0012075000000005,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 0.4461231813149607
+            },
+            {
+              "delay_ms": 5.0012075000000005,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 0.4461231813149607
+            },
+            {
+              "delay_ms": 5.0012075,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 0.4461231813149607
+            }
+          ],
+          "episode": 0,
+          "observations": [
+            {
+              "accepted": true,
+              "connection_hash_after": "bfe6c282f362d09254a692904e67b836764119bc0bb1a675baeffa225ccf6863",
+              "connection_hash_before": "bfe6c282f362d09254a692904e67b836764119bc0bb1a675baeffa225ccf6863",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "b3fca51b5638291c5640f427b61136d4520f3f56ce1bfc2401181e422a002c45",
+              "connection_hash_before": "bfe6c282f362d09254a692904e67b836764119bc0bb1a675baeffa225ccf6863",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "45c46f85314fb2e7fb52a80f7619979b64dd3383df503594e9c63ac94290eaed",
+              "connection_hash_before": "b3fca51b5638291c5640f427b61136d4520f3f56ce1bfc2401181e422a002c45",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "df250014242195900f9b2de601d720714b74b7c72fa0976b32524d7cdbbf89e1",
+              "connection_hash_before": "45c46f85314fb2e7fb52a80f7619979b64dd3383df503594e9c63ac94290eaed",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            }
+          ],
+          "pulses": [
+            {
+              "event_id": "r01-17:141801:train:0:0",
+              "generation_depth": 0,
+              "magnitude": 1.176526,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:0",
+              "time_ms": 0.0
+            },
+            {
+              "event_id": "r01-17:141801:train:0:1",
+              "generation_depth": 0,
+              "magnitude": 1.176526,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:1",
+              "time_ms": 3.954489
+            },
+            {
+              "event_id": "r01-17:141801:train:0:2",
+              "generation_depth": 0,
+              "magnitude": 1.176526,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:2",
+              "time_ms": 7.908978
+            },
+            {
+              "event_id": "r01-17:141801:train:0:3",
+              "generation_depth": 0,
+              "magnitude": 1.176526,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:3",
+              "time_ms": 11.863467
+            }
+          ]
+        },
+        {
+          "connection_hash_after": "27b446bc5a9317da7aae55151973887e801a5257cb148d6e6b3994ec1861fc9e",
+          "connection_hash_before": "df250014242195900f9b2de601d720714b74b7c72fa0976b32524d7cdbbf89e1",
+          "connections_after": [
+            {
+              "delay_ms": 4.477848249999983,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 0.8422463626299228
+            },
+            {
+              "delay_ms": 4.47784825000004,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 0.8422463626299183
+            },
+            {
+              "delay_ms": 4.477848249999983,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 0.8422463626299228
+            }
+          ],
+          "episode": 1,
+          "observations": [
+            {
+              "accepted": true,
+              "connection_hash_after": "df250014242195900f9b2de601d720714b74b7c72fa0976b32524d7cdbbf89e1",
+              "connection_hash_before": "df250014242195900f9b2de601d720714b74b7c72fa0976b32524d7cdbbf89e1",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "9aad8b24fca10d212b29f903ded1c7c9bf079c7ae475672f81493bb70ced5e82",
+              "connection_hash_before": "df250014242195900f9b2de601d720714b74b7c72fa0976b32524d7cdbbf89e1",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "b2016333edc8eeef80b9969c0443d5c9121024e483543fd2fd0313814eece7e8",
+              "connection_hash_before": "9aad8b24fca10d212b29f903ded1c7c9bf079c7ae475672f81493bb70ced5e82",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "27b446bc5a9317da7aae55151973887e801a5257cb148d6e6b3994ec1861fc9e",
+              "connection_hash_before": "b2016333edc8eeef80b9969c0443d5c9121024e483543fd2fd0313814eece7e8",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            }
+          ],
+          "pulses": [
+            {
+              "event_id": "r01-17:141801:train:1:0",
+              "generation_depth": 0,
+              "magnitude": 1.176526,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:0",
+              "time_ms": 1000.0
+            },
+            {
+              "event_id": "r01-17:141801:train:1:1",
+              "generation_depth": 0,
+              "magnitude": 1.176526,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:1",
+              "time_ms": 1003.954489
+            },
+            {
+              "event_id": "r01-17:141801:train:1:2",
+              "generation_depth": 0,
+              "magnitude": 1.176526,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:2",
+              "time_ms": 1007.908978
+            },
+            {
+              "event_id": "r01-17:141801:train:1:3",
+              "generation_depth": 0,
+              "magnitude": 1.176526,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:3",
+              "time_ms": 1011.863467
+            }
+          ]
+        },
+        {
+          "connection_hash_after": "cb008837cd4e0477c8a3f6c1f4ca5a3c06c8e9f93de483e7f194aed2cfba63b8",
+          "connection_hash_before": "27b446bc5a9317da7aae55151973887e801a5257cb148d6e6b3994ec1861fc9e",
+          "connections_after": [
+            {
+              "delay_ms": 4.216168624999975,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.2383695439448847
+            },
+            {
+              "delay_ms": 4.2161686250000034,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.2383695439448803
+            },
+            {
+              "delay_ms": 4.216168624999975,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.2383695439448847
+            }
+          ],
+          "episode": 2,
+          "observations": [
+            {
+              "accepted": true,
+              "connection_hash_after": "27b446bc5a9317da7aae55151973887e801a5257cb148d6e6b3994ec1861fc9e",
+              "connection_hash_before": "27b446bc5a9317da7aae55151973887e801a5257cb148d6e6b3994ec1861fc9e",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "b7c05329c9ebeb3e31b3ba14feb49ba651fa758b6dfc8a7d99d6ff03956f579e",
+              "connection_hash_before": "27b446bc5a9317da7aae55151973887e801a5257cb148d6e6b3994ec1861fc9e",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "0c4d73a6115d16fe045f65a9a750f87f753be3638006aed1205df3af78a7e430",
+              "connection_hash_before": "b7c05329c9ebeb3e31b3ba14feb49ba651fa758b6dfc8a7d99d6ff03956f579e",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "cb008837cd4e0477c8a3f6c1f4ca5a3c06c8e9f93de483e7f194aed2cfba63b8",
+              "connection_hash_before": "0c4d73a6115d16fe045f65a9a750f87f753be3638006aed1205df3af78a7e430",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            }
+          ],
+          "pulses": [
+            {
+              "event_id": "r01-17:141801:train:2:0",
+              "generation_depth": 0,
+              "magnitude": 1.176526,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:0",
+              "time_ms": 2000.0
+            },
+            {
+              "event_id": "r01-17:141801:train:2:1",
+              "generation_depth": 0,
+              "magnitude": 1.176526,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:1",
+              "time_ms": 2003.954489
+            },
+            {
+              "event_id": "r01-17:141801:train:2:2",
+              "generation_depth": 0,
+              "magnitude": 1.176526,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:2",
+              "time_ms": 2007.908978
+            },
+            {
+              "event_id": "r01-17:141801:train:2:3",
+              "generation_depth": 0,
+              "magnitude": 1.176526,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:3",
+              "time_ms": 2011.863467
+            }
+          ]
+        },
+        {
+          "connection_hash_after": "51bbc88cda81b65e8e638213cea1a1da2a64f2688cd27f86216646ac975081fe",
+          "connection_hash_before": "cb008837cd4e0477c8a3f6c1f4ca5a3c06c8e9f93de483e7f194aed2cfba63b8",
+          "connections_after": [
+            {
+              "delay_ms": 4.085328812500085,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 4.0853288124998715,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 4.085328812500085,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.25
+            }
+          ],
+          "episode": 3,
+          "observations": [
+            {
+              "accepted": true,
+              "connection_hash_after": "cb008837cd4e0477c8a3f6c1f4ca5a3c06c8e9f93de483e7f194aed2cfba63b8",
+              "connection_hash_before": "cb008837cd4e0477c8a3f6c1f4ca5a3c06c8e9f93de483e7f194aed2cfba63b8",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "881b57bd2de8e4fc72e8da46ec98dfb1e0d09dd46a66aaac93cea9c1ce0ba441",
+              "connection_hash_before": "cb008837cd4e0477c8a3f6c1f4ca5a3c06c8e9f93de483e7f194aed2cfba63b8",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "8bf448a34c02033dffc513fb2d090215fff683552f1f9f1c787beb590ba9a4e7",
+              "connection_hash_before": "881b57bd2de8e4fc72e8da46ec98dfb1e0d09dd46a66aaac93cea9c1ce0ba441",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "51bbc88cda81b65e8e638213cea1a1da2a64f2688cd27f86216646ac975081fe",
+              "connection_hash_before": "8bf448a34c02033dffc513fb2d090215fff683552f1f9f1c787beb590ba9a4e7",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            }
+          ],
+          "pulses": [
+            {
+              "event_id": "r01-17:141801:train:3:0",
+              "generation_depth": 0,
+              "magnitude": 1.176526,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:0",
+              "time_ms": 3000.0
+            },
+            {
+              "event_id": "r01-17:141801:train:3:1",
+              "generation_depth": 0,
+              "magnitude": 1.176526,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:1",
+              "time_ms": 3003.954489
+            },
+            {
+              "event_id": "r01-17:141801:train:3:2",
+              "generation_depth": 0,
+              "magnitude": 1.176526,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:2",
+              "time_ms": 3007.908978
+            },
+            {
+              "event_id": "r01-17:141801:train:3:3",
+              "generation_depth": 0,
+              "magnitude": 1.176526,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:3",
+              "time_ms": 3011.863467
+            }
+          ]
+        },
+        {
+          "connection_hash_after": "83f31040cc3cd29d0d753125e465afb93045ed57b27d364a20a3f535e7a5b6c2",
+          "connection_hash_before": "51bbc88cda81b65e8e638213cea1a1da2a64f2688cd27f86216646ac975081fe",
+          "connections_after": [
+            {
+              "delay_ms": 4.019908906250139,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 4.019908906249805,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 4.019908906250139,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.25
+            }
+          ],
+          "episode": 4,
+          "observations": [
+            {
+              "accepted": true,
+              "connection_hash_after": "51bbc88cda81b65e8e638213cea1a1da2a64f2688cd27f86216646ac975081fe",
+              "connection_hash_before": "51bbc88cda81b65e8e638213cea1a1da2a64f2688cd27f86216646ac975081fe",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "b2cd8305ac8b3b2842d40dfe08d62d6bde6902e1180c3e59ebf6d946fe29cdb7",
+              "connection_hash_before": "51bbc88cda81b65e8e638213cea1a1da2a64f2688cd27f86216646ac975081fe",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "367ea18652fcd68b62e9716e2a136e254e982740b354e665f674f32042cc3828",
+              "connection_hash_before": "b2cd8305ac8b3b2842d40dfe08d62d6bde6902e1180c3e59ebf6d946fe29cdb7",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "83f31040cc3cd29d0d753125e465afb93045ed57b27d364a20a3f535e7a5b6c2",
+              "connection_hash_before": "367ea18652fcd68b62e9716e2a136e254e982740b354e665f674f32042cc3828",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            }
+          ],
+          "pulses": [
+            {
+              "event_id": "r01-17:141801:train:4:0",
+              "generation_depth": 0,
+              "magnitude": 1.176526,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:0",
+              "time_ms": 4000.0
+            },
+            {
+              "event_id": "r01-17:141801:train:4:1",
+              "generation_depth": 0,
+              "magnitude": 1.176526,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:1",
+              "time_ms": 4003.954489
+            },
+            {
+              "event_id": "r01-17:141801:train:4:2",
+              "generation_depth": 0,
+              "magnitude": 1.176526,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:2",
+              "time_ms": 4007.908978
+            },
+            {
+              "event_id": "r01-17:141801:train:4:3",
+              "generation_depth": 0,
+              "magnitude": 1.176526,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:3",
+              "time_ms": 4011.863467
+            }
+          ]
+        },
+        {
+          "connection_hash_after": "23472f0109f4d35d336285882052a336649b60b82157b1b2c0b4d1e3e5be8695",
+          "connection_hash_before": "83f31040cc3cd29d0d753125e465afb93045ed57b27d364a20a3f535e7a5b6c2",
+          "connections_after": [
+            {
+              "delay_ms": 3.987198953124939,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 3.987198953125227,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 3.987198953124939,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.25
+            }
+          ],
+          "episode": 5,
+          "observations": [
+            {
+              "accepted": true,
+              "connection_hash_after": "83f31040cc3cd29d0d753125e465afb93045ed57b27d364a20a3f535e7a5b6c2",
+              "connection_hash_before": "83f31040cc3cd29d0d753125e465afb93045ed57b27d364a20a3f535e7a5b6c2",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "7bc06df6a9432fa7ae3aa12f0c43e8605ed9373783a16b598dc670a18e2d8afd",
+              "connection_hash_before": "83f31040cc3cd29d0d753125e465afb93045ed57b27d364a20a3f535e7a5b6c2",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "7b03703debc3799434d38c721c2ffd37e7b2274e22a8e02d2eba796a2e4de7f2",
+              "connection_hash_before": "7bc06df6a9432fa7ae3aa12f0c43e8605ed9373783a16b598dc670a18e2d8afd",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "23472f0109f4d35d336285882052a336649b60b82157b1b2c0b4d1e3e5be8695",
+              "connection_hash_before": "7b03703debc3799434d38c721c2ffd37e7b2274e22a8e02d2eba796a2e4de7f2",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            }
+          ],
+          "pulses": [
+            {
+              "event_id": "r01-17:141801:train:5:0",
+              "generation_depth": 0,
+              "magnitude": 1.176526,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:0",
+              "time_ms": 5000.0
+            },
+            {
+              "event_id": "r01-17:141801:train:5:1",
+              "generation_depth": 0,
+              "magnitude": 1.176526,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:1",
+              "time_ms": 5003.954489
+            },
+            {
+              "event_id": "r01-17:141801:train:5:2",
+              "generation_depth": 0,
+              "magnitude": 1.176526,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:2",
+              "time_ms": 5007.908978
+            },
+            {
+              "event_id": "r01-17:141801:train:5:3",
+              "generation_depth": 0,
+              "magnitude": 1.176526,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:3",
+              "time_ms": 5011.863467
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "arms": {
+        "F0": {
+          "arm": "F0",
+          "connection_hash_after": "b89ea7891d365e381e34ce9aacbf4964de04f553cde3591c8785019fcf08384a",
+          "connection_hash_before": "b89ea7891d365e381e34ce9aacbf4964de04f553cde3591c8785019fcf08384a",
+          "connections": [
+            {
+              "delay_ms": 3.937911265625093,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 3.9379112656247983,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 3.937911265625093,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.25
+            }
+          ],
+          "generated_times_ms": [
+            103.93791126562509,
+            107.8758225312499,
+            111.81373379687498
+          ],
+          "generated_units": [
+            1,
+            2,
+            3
+          ]
+        },
+        "FD": {
+          "arm": "FD",
+          "connection_hash_after": "f16b250d533f7058b5f6e186054701864e3d25c0329cbf41aba05ae79ead74d6",
+          "connection_hash_before": "f16b250d533f7058b5f6e186054701864e3d25c0329cbf41aba05ae79ead74d6",
+          "connections": [
+            {
+              "delay_ms": 6.132911,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 6.132911,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 6.132911,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.25
+            }
+          ],
+          "generated_times_ms": [
+            106.13291100000001,
+            112.26582200000001,
+            118.39873300000002
+          ],
+          "generated_units": [
+            1,
+            2,
+            3
+          ]
+        },
+        "SHAM": {
+          "arm": "SHAM",
+          "connection_hash_after": "b89ea7891d365e381e34ce9aacbf4964de04f553cde3591c8785019fcf08384a",
+          "connection_hash_before": "b89ea7891d365e381e34ce9aacbf4964de04f553cde3591c8785019fcf08384a",
+          "connections": [
+            {
+              "delay_ms": 3.937911265625093,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 3.9379112656247983,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 3.937911265625093,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.25
+            }
+          ],
+          "generated_times_ms": [
+            103.93791126562509,
+            107.8758225312499,
+            111.81373379687498
+          ],
+          "generated_units": [
+            1,
+            2,
+            3
+          ]
+        }
+      },
+      "learner_api_hash": "31e95f27da53759cd24636eab8de9dd1752f457db2e16048aece4b82279a3a94",
+      "post_training_connections": [
+        {
+          "delay_ms": 3.937911265625093,
+          "source_id": 0,
+          "target_id": 1,
+          "weight": 1.25
+        },
+        {
+          "delay_ms": 3.9379112656247983,
+          "source_id": 1,
+          "target_id": 2,
+          "weight": 1.25
+        },
+        {
+          "delay_ms": 3.937911265625093,
+          "source_id": 2,
+          "target_id": 3,
+          "weight": 1.25
+        }
+      ],
+      "pre_training_connections": [
+        {
+          "delay_ms": 6.132911,
+          "source_id": 0,
+          "target_id": 1,
+          "weight": 0.05
+        },
+        {
+          "delay_ms": 6.132911,
+          "source_id": 1,
+          "target_id": 2,
+          "weight": 0.05
+        },
+        {
+          "delay_ms": 6.132911,
+          "source_id": 2,
+          "target_id": 3,
+          "weight": 0.05
+        }
+      ],
+      "spec": {
+        "cue_magnitude": 1.109753,
+        "exposures": 6,
+        "formal_authority": false,
+        "held_out_authority": false,
+        "identity_sha256": "8cbdecb59c7f8dfe3576c05f8d8a0ed06dceb30240564973995180e425a3ab5d",
+        "initial_delay_ms": 6.132911,
+        "initial_weight": 0.05,
+        "minimum_causal_shift_ms": 0.5,
+        "minimum_delay_displacement_ms": 0.5,
+        "phase": "development",
+        "protocol_id": "rv01-r01-17-real-delay-causal-timing-v1",
+        "route": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "seed": 141802,
+        "threshold": 0.459753,
+        "timing_tolerance_ms": 0.05,
+        "training_lag_ms": 3.90307,
+        "unit_count": 4,
+        "world_id": "r01-17:development:real-delay-chain:141802",
+        "world_salt": "rv01-r01-17-real-delay-world-grid-v1"
+      },
+      "training_exposures": [
+        {
+          "connection_hash_after": "0ade5269cff04ed26fd5b23feca9f30dac46903f96729cf9faa276fee56bc3a6",
+          "connection_hash_before": "797d124abaaa64e26aac6e412966f1054ada2edfd9a474d536b272eb250226ea",
+          "connections_after": [
+            {
+              "delay_ms": 5.0179905,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 0.42556763185925195
+            },
+            {
+              "delay_ms": 5.0179905,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 0.42556763185925195
+            },
+            {
+              "delay_ms": 5.0179905,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 0.42556763185925195
+            }
+          ],
+          "episode": 0,
+          "observations": [
+            {
+              "accepted": true,
+              "connection_hash_after": "797d124abaaa64e26aac6e412966f1054ada2edfd9a474d536b272eb250226ea",
+              "connection_hash_before": "797d124abaaa64e26aac6e412966f1054ada2edfd9a474d536b272eb250226ea",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "7386b6964ad6767926455e1db7ef9723cc180b07ab02aaca2f92595b7716d9d4",
+              "connection_hash_before": "797d124abaaa64e26aac6e412966f1054ada2edfd9a474d536b272eb250226ea",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "d905ed34ce9b80c5dba1b446e8d103e96ceb08852111b6a39ff26c836477e802",
+              "connection_hash_before": "7386b6964ad6767926455e1db7ef9723cc180b07ab02aaca2f92595b7716d9d4",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "0ade5269cff04ed26fd5b23feca9f30dac46903f96729cf9faa276fee56bc3a6",
+              "connection_hash_before": "d905ed34ce9b80c5dba1b446e8d103e96ceb08852111b6a39ff26c836477e802",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            }
+          ],
+          "pulses": [
+            {
+              "event_id": "r01-17:141802:train:0:0",
+              "generation_depth": 0,
+              "magnitude": 1.109753,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:0",
+              "time_ms": 0.0
+            },
+            {
+              "event_id": "r01-17:141802:train:0:1",
+              "generation_depth": 0,
+              "magnitude": 1.109753,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:1",
+              "time_ms": 3.90307
+            },
+            {
+              "event_id": "r01-17:141802:train:0:2",
+              "generation_depth": 0,
+              "magnitude": 1.109753,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:2",
+              "time_ms": 7.80614
+            },
+            {
+              "event_id": "r01-17:141802:train:0:3",
+              "generation_depth": 0,
+              "magnitude": 1.109753,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:3",
+              "time_ms": 11.70921
+            }
+          ]
+        },
+        {
+          "connection_hash_after": "521cc7d2e9d937aa856aa30a9178228292f148a84a8b4405439d5102dde36f44",
+          "connection_hash_before": "0ade5269cff04ed26fd5b23feca9f30dac46903f96729cf9faa276fee56bc3a6",
+          "connections_after": [
+            {
+              "delay_ms": 4.460530249999978,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 0.8011352637185055
+            },
+            {
+              "delay_ms": 4.460530250000035,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 0.8011352637185012
+            },
+            {
+              "delay_ms": 4.460530249999978,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 0.8011352637185055
+            }
+          ],
+          "episode": 1,
+          "observations": [
+            {
+              "accepted": true,
+              "connection_hash_after": "0ade5269cff04ed26fd5b23feca9f30dac46903f96729cf9faa276fee56bc3a6",
+              "connection_hash_before": "0ade5269cff04ed26fd5b23feca9f30dac46903f96729cf9faa276fee56bc3a6",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "d4ea5f26e28061411f349b2dbdaccc25de152d9662bb5fc91057d757ec666b6b",
+              "connection_hash_before": "0ade5269cff04ed26fd5b23feca9f30dac46903f96729cf9faa276fee56bc3a6",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "9d18b3cae0bb5aa2d72807885773e4c532063770768e04d7e4be3be8f280baa2",
+              "connection_hash_before": "d4ea5f26e28061411f349b2dbdaccc25de152d9662bb5fc91057d757ec666b6b",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "521cc7d2e9d937aa856aa30a9178228292f148a84a8b4405439d5102dde36f44",
+              "connection_hash_before": "9d18b3cae0bb5aa2d72807885773e4c532063770768e04d7e4be3be8f280baa2",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            }
+          ],
+          "pulses": [
+            {
+              "event_id": "r01-17:141802:train:1:0",
+              "generation_depth": 0,
+              "magnitude": 1.109753,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:0",
+              "time_ms": 1000.0
+            },
+            {
+              "event_id": "r01-17:141802:train:1:1",
+              "generation_depth": 0,
+              "magnitude": 1.109753,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:1",
+              "time_ms": 1003.90307
+            },
+            {
+              "event_id": "r01-17:141802:train:1:2",
+              "generation_depth": 0,
+              "magnitude": 1.109753,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:2",
+              "time_ms": 1007.80614
+            },
+            {
+              "event_id": "r01-17:141802:train:1:3",
+              "generation_depth": 0,
+              "magnitude": 1.109753,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:3",
+              "time_ms": 1011.70921
+            }
+          ]
+        },
+        {
+          "connection_hash_after": "fb4c74624cb8e8fbb68ddfec78430472f185e769c525a62027a134ddc577c672",
+          "connection_hash_before": "521cc7d2e9d937aa856aa30a9178228292f148a84a8b4405439d5102dde36f44",
+          "connections_after": [
+            {
+              "delay_ms": 4.1818001250000245,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.1767028955777548
+            },
+            {
+              "delay_ms": 4.181800124999939,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.176702895577759
+            },
+            {
+              "delay_ms": 4.1818001250000245,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.1767028955777548
+            }
+          ],
+          "episode": 2,
+          "observations": [
+            {
+              "accepted": true,
+              "connection_hash_after": "521cc7d2e9d937aa856aa30a9178228292f148a84a8b4405439d5102dde36f44",
+              "connection_hash_before": "521cc7d2e9d937aa856aa30a9178228292f148a84a8b4405439d5102dde36f44",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "83706eab93b3a1cc0b19b210a608bc650b33494463013fe881311b8fe0a9b983",
+              "connection_hash_before": "521cc7d2e9d937aa856aa30a9178228292f148a84a8b4405439d5102dde36f44",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "2f5b3b31bfb06757ee1bfa29ccd43a24618f2bc4237b2d5cb6fb2d065a0168f3",
+              "connection_hash_before": "83706eab93b3a1cc0b19b210a608bc650b33494463013fe881311b8fe0a9b983",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "fb4c74624cb8e8fbb68ddfec78430472f185e769c525a62027a134ddc577c672",
+              "connection_hash_before": "2f5b3b31bfb06757ee1bfa29ccd43a24618f2bc4237b2d5cb6fb2d065a0168f3",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            }
+          ],
+          "pulses": [
+            {
+              "event_id": "r01-17:141802:train:2:0",
+              "generation_depth": 0,
+              "magnitude": 1.109753,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:0",
+              "time_ms": 2000.0
+            },
+            {
+              "event_id": "r01-17:141802:train:2:1",
+              "generation_depth": 0,
+              "magnitude": 1.109753,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:1",
+              "time_ms": 2003.90307
+            },
+            {
+              "event_id": "r01-17:141802:train:2:2",
+              "generation_depth": 0,
+              "magnitude": 1.109753,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:2",
+              "time_ms": 2007.80614
+            },
+            {
+              "event_id": "r01-17:141802:train:2:3",
+              "generation_depth": 0,
+              "magnitude": 1.109753,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:3",
+              "time_ms": 2011.70921
+            }
+          ]
+        },
+        {
+          "connection_hash_after": "aba627761818d0160adde2bb7131b976cc3b22c920d97519333e97cabd6e2aff",
+          "connection_hash_before": "fb4c74624cb8e8fbb68ddfec78430472f185e769c525a62027a134ddc577c672",
+          "connections_after": [
+            {
+              "delay_ms": 4.0424350624999335,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 4.042435062500118,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 4.0424350624999335,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.25
+            }
+          ],
+          "episode": 3,
+          "observations": [
+            {
+              "accepted": true,
+              "connection_hash_after": "fb4c74624cb8e8fbb68ddfec78430472f185e769c525a62027a134ddc577c672",
+              "connection_hash_before": "fb4c74624cb8e8fbb68ddfec78430472f185e769c525a62027a134ddc577c672",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "586080cef47cc43969f10e1dfec9e52b80fad64382b7b9af39b003c716fe6b97",
+              "connection_hash_before": "fb4c74624cb8e8fbb68ddfec78430472f185e769c525a62027a134ddc577c672",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "5c9c464c5af880cd03aec257d503259037edbe37f30d8ab9cbb97ef052359113",
+              "connection_hash_before": "586080cef47cc43969f10e1dfec9e52b80fad64382b7b9af39b003c716fe6b97",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "aba627761818d0160adde2bb7131b976cc3b22c920d97519333e97cabd6e2aff",
+              "connection_hash_before": "5c9c464c5af880cd03aec257d503259037edbe37f30d8ab9cbb97ef052359113",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            }
+          ],
+          "pulses": [
+            {
+              "event_id": "r01-17:141802:train:3:0",
+              "generation_depth": 0,
+              "magnitude": 1.109753,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:0",
+              "time_ms": 3000.0
+            },
+            {
+              "event_id": "r01-17:141802:train:3:1",
+              "generation_depth": 0,
+              "magnitude": 1.109753,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:1",
+              "time_ms": 3003.90307
+            },
+            {
+              "event_id": "r01-17:141802:train:3:2",
+              "generation_depth": 0,
+              "magnitude": 1.109753,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:2",
+              "time_ms": 3007.80614
+            },
+            {
+              "event_id": "r01-17:141802:train:3:3",
+              "generation_depth": 0,
+              "magnitude": 1.109753,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:3",
+              "time_ms": 3011.70921
+            }
+          ]
+        },
+        {
+          "connection_hash_after": "3932e514633054e8c99ead4fdf3d4f628f02cf7ff56b40b48f2f8ee0c891e987",
+          "connection_hash_before": "aba627761818d0160adde2bb7131b976cc3b22c920d97519333e97cabd6e2aff",
+          "connections_after": [
+            {
+              "delay_ms": 3.9727525312498884,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 3.972752531250208,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 3.9727525312498884,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.25
+            }
+          ],
+          "episode": 4,
+          "observations": [
+            {
+              "accepted": true,
+              "connection_hash_after": "aba627761818d0160adde2bb7131b976cc3b22c920d97519333e97cabd6e2aff",
+              "connection_hash_before": "aba627761818d0160adde2bb7131b976cc3b22c920d97519333e97cabd6e2aff",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "11a6c20dce5721eae8134b2cecf3a984ff18125f96e08fa0dc4e6409ae31c6db",
+              "connection_hash_before": "aba627761818d0160adde2bb7131b976cc3b22c920d97519333e97cabd6e2aff",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "bded8a34e0d99434f14c627e172da8f139aaa73bc2f516ae147fdce18121f1ec",
+              "connection_hash_before": "11a6c20dce5721eae8134b2cecf3a984ff18125f96e08fa0dc4e6409ae31c6db",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "3932e514633054e8c99ead4fdf3d4f628f02cf7ff56b40b48f2f8ee0c891e987",
+              "connection_hash_before": "bded8a34e0d99434f14c627e172da8f139aaa73bc2f516ae147fdce18121f1ec",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            }
+          ],
+          "pulses": [
+            {
+              "event_id": "r01-17:141802:train:4:0",
+              "generation_depth": 0,
+              "magnitude": 1.109753,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:0",
+              "time_ms": 4000.0
+            },
+            {
+              "event_id": "r01-17:141802:train:4:1",
+              "generation_depth": 0,
+              "magnitude": 1.109753,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:1",
+              "time_ms": 4003.90307
+            },
+            {
+              "event_id": "r01-17:141802:train:4:2",
+              "generation_depth": 0,
+              "magnitude": 1.109753,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:2",
+              "time_ms": 4007.80614
+            },
+            {
+              "event_id": "r01-17:141802:train:4:3",
+              "generation_depth": 0,
+              "magnitude": 1.109753,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:3",
+              "time_ms": 4011.70921
+            }
+          ]
+        },
+        {
+          "connection_hash_after": "b89ea7891d365e381e34ce9aacbf4964de04f553cde3591c8785019fcf08384a",
+          "connection_hash_before": "3932e514633054e8c99ead4fdf3d4f628f02cf7ff56b40b48f2f8ee0c891e987",
+          "connections_after": [
+            {
+              "delay_ms": 3.937911265625093,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 3.9379112656247983,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 3.937911265625093,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.25
+            }
+          ],
+          "episode": 5,
+          "observations": [
+            {
+              "accepted": true,
+              "connection_hash_after": "3932e514633054e8c99ead4fdf3d4f628f02cf7ff56b40b48f2f8ee0c891e987",
+              "connection_hash_before": "3932e514633054e8c99ead4fdf3d4f628f02cf7ff56b40b48f2f8ee0c891e987",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "494930e55a02dca773992369cb8eae60e7bac81d870904cb051c2f97f0efd1dd",
+              "connection_hash_before": "3932e514633054e8c99ead4fdf3d4f628f02cf7ff56b40b48f2f8ee0c891e987",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "1d1262b551414df2e6a6536c616c2b0459d7e861fe7194b632fcd8f2e9dc0275",
+              "connection_hash_before": "494930e55a02dca773992369cb8eae60e7bac81d870904cb051c2f97f0efd1dd",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "b89ea7891d365e381e34ce9aacbf4964de04f553cde3591c8785019fcf08384a",
+              "connection_hash_before": "1d1262b551414df2e6a6536c616c2b0459d7e861fe7194b632fcd8f2e9dc0275",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            }
+          ],
+          "pulses": [
+            {
+              "event_id": "r01-17:141802:train:5:0",
+              "generation_depth": 0,
+              "magnitude": 1.109753,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:0",
+              "time_ms": 5000.0
+            },
+            {
+              "event_id": "r01-17:141802:train:5:1",
+              "generation_depth": 0,
+              "magnitude": 1.109753,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:1",
+              "time_ms": 5003.90307
+            },
+            {
+              "event_id": "r01-17:141802:train:5:2",
+              "generation_depth": 0,
+              "magnitude": 1.109753,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:2",
+              "time_ms": 5007.80614
+            },
+            {
+              "event_id": "r01-17:141802:train:5:3",
+              "generation_depth": 0,
+              "magnitude": 1.109753,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:3",
+              "time_ms": 5011.70921
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "arms": {
+        "F0": {
+          "arm": "F0",
+          "connection_hash_after": "f4ad185c47bc04c3c296a8566c45a16651362da30b21d951a8d283704b83de0d",
+          "connection_hash_before": "f4ad185c47bc04c3c296a8566c45a16651362da30b21d951a8d283704b83de0d",
+          "connections": [
+            {
+              "delay_ms": 3.9602396562499766,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 3.9602396562499766,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 3.96023965624998,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.25
+            }
+          ],
+          "generated_times_ms": [
+            103.96023965624998,
+            107.92047931249996,
+            111.88071896874995
+          ],
+          "generated_units": [
+            1,
+            2,
+            3
+          ]
+        },
+        "FD": {
+          "arm": "FD",
+          "connection_hash_after": "817f8989a6b2cedfa0b951f82b8637358b1137872af56883a4166111f9c67134",
+          "connection_hash_before": "817f8989a6b2cedfa0b951f82b8637358b1137872af56883a4166111f9c67134",
+          "connections": [
+            {
+              "delay_ms": 5.741165,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 5.741165,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 5.741165,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.25
+            }
+          ],
+          "generated_times_ms": [
+            105.741165,
+            111.48232999999999,
+            117.22349499999999
+          ],
+          "generated_units": [
+            1,
+            2,
+            3
+          ]
+        },
+        "SHAM": {
+          "arm": "SHAM",
+          "connection_hash_after": "f4ad185c47bc04c3c296a8566c45a16651362da30b21d951a8d283704b83de0d",
+          "connection_hash_before": "f4ad185c47bc04c3c296a8566c45a16651362da30b21d951a8d283704b83de0d",
+          "connections": [
+            {
+              "delay_ms": 3.9602396562499766,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 3.9602396562499766,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 3.96023965624998,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.25
+            }
+          ],
+          "generated_times_ms": [
+            103.96023965624998,
+            107.92047931249996,
+            111.88071896874995
+          ],
+          "generated_units": [
+            1,
+            2,
+            3
+          ]
+        }
+      },
+      "learner_api_hash": "31e95f27da53759cd24636eab8de9dd1752f457db2e16048aece4b82279a3a94",
+      "post_training_connections": [
+        {
+          "delay_ms": 3.9602396562499766,
+          "source_id": 0,
+          "target_id": 1,
+          "weight": 1.25
+        },
+        {
+          "delay_ms": 3.9602396562499766,
+          "source_id": 1,
+          "target_id": 2,
+          "weight": 1.25
+        },
+        {
+          "delay_ms": 3.96023965624998,
+          "source_id": 2,
+          "target_id": 3,
+          "weight": 1.25
+        }
+      ],
+      "pre_training_connections": [
+        {
+          "delay_ms": 5.741165,
+          "source_id": 0,
+          "target_id": 1,
+          "weight": 0.05
+        },
+        {
+          "delay_ms": 5.741165,
+          "source_id": 1,
+          "target_id": 2,
+          "weight": 0.05
+        },
+        {
+          "delay_ms": 5.741165,
+          "source_id": 2,
+          "target_id": 3,
+          "weight": 0.05
+        }
+      ],
+      "spec": {
+        "cue_magnitude": 1.140846,
+        "exposures": 6,
+        "formal_authority": false,
+        "held_out_authority": false,
+        "identity_sha256": "eb551167ee294eb83bb5dc692e4a259e464f72a93da4a6e9978762d891528715",
+        "initial_delay_ms": 5.741165,
+        "initial_weight": 0.05,
+        "minimum_causal_shift_ms": 0.5,
+        "minimum_delay_displacement_ms": 0.5,
+        "phase": "development",
+        "protocol_id": "rv01-r01-17-real-delay-causal-timing-v1",
+        "route": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "seed": 141803,
+        "threshold": 0.490846,
+        "timing_tolerance_ms": 0.05,
+        "training_lag_ms": 3.931971,
+        "unit_count": 4,
+        "world_id": "r01-17:development:real-delay-chain:141803",
+        "world_salt": "rv01-r01-17-real-delay-world-grid-v1"
+      },
+      "training_exposures": [
+        {
+          "connection_hash_after": "22e7ced2548e34f4543135eef98379bce8c841a45b401eeb4135d1d00ba87fc9",
+          "connection_hash_before": "727993055ab3ab46b48ce50951bbdbb0d0a11860e82a611f02bd4eecd1a307ff",
+          "connections_after": [
+            {
+              "delay_ms": 4.836568,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 0.4349760370290816
+            },
+            {
+              "delay_ms": 4.836568,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 0.4349760370290816
+            },
+            {
+              "delay_ms": 4.836568,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 0.4349760370290817
+            }
+          ],
+          "episode": 0,
+          "observations": [
+            {
+              "accepted": true,
+              "connection_hash_after": "727993055ab3ab46b48ce50951bbdbb0d0a11860e82a611f02bd4eecd1a307ff",
+              "connection_hash_before": "727993055ab3ab46b48ce50951bbdbb0d0a11860e82a611f02bd4eecd1a307ff",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "c28bf8faae3e9e2f663c233fa0ed0dc404f88fcb60912bb816751914d2e9ef58",
+              "connection_hash_before": "727993055ab3ab46b48ce50951bbdbb0d0a11860e82a611f02bd4eecd1a307ff",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "9c83c48679fbf1d4812c362a49b42462bf6ab473d3bc47eb54167c2bf14c7d64",
+              "connection_hash_before": "c28bf8faae3e9e2f663c233fa0ed0dc404f88fcb60912bb816751914d2e9ef58",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "22e7ced2548e34f4543135eef98379bce8c841a45b401eeb4135d1d00ba87fc9",
+              "connection_hash_before": "9c83c48679fbf1d4812c362a49b42462bf6ab473d3bc47eb54167c2bf14c7d64",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            }
+          ],
+          "pulses": [
+            {
+              "event_id": "r01-17:141803:train:0:0",
+              "generation_depth": 0,
+              "magnitude": 1.140846,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:0",
+              "time_ms": 0.0
+            },
+            {
+              "event_id": "r01-17:141803:train:0:1",
+              "generation_depth": 0,
+              "magnitude": 1.140846,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:1",
+              "time_ms": 3.931971
+            },
+            {
+              "event_id": "r01-17:141803:train:0:2",
+              "generation_depth": 0,
+              "magnitude": 1.140846,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:2",
+              "time_ms": 7.863942
+            },
+            {
+              "event_id": "r01-17:141803:train:0:3",
+              "generation_depth": 0,
+              "magnitude": 1.140846,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:3",
+              "time_ms": 11.795912999999999
+            }
+          ]
+        },
+        {
+          "connection_hash_after": "e2530ef24e220fec47511005b517db150ecd4a4554650814d431e1da5ec7af92",
+          "connection_hash_before": "22e7ced2548e34f4543135eef98379bce8c841a45b401eeb4135d1d00ba87fc9",
+          "connections_after": [
+            {
+              "delay_ms": 4.384269499999988,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 0.8199520740581643
+            },
+            {
+              "delay_ms": 4.384269499999988,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 0.8199520740581643
+            },
+            {
+              "delay_ms": 4.384269500000045,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 0.81995207405816
+            }
+          ],
+          "episode": 1,
+          "observations": [
+            {
+              "accepted": true,
+              "connection_hash_after": "22e7ced2548e34f4543135eef98379bce8c841a45b401eeb4135d1d00ba87fc9",
+              "connection_hash_before": "22e7ced2548e34f4543135eef98379bce8c841a45b401eeb4135d1d00ba87fc9",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "8ec4f54b015f57e631dbc189b6e0bc3647ecb24d8bb6b3303e9cdc0347b42524",
+              "connection_hash_before": "22e7ced2548e34f4543135eef98379bce8c841a45b401eeb4135d1d00ba87fc9",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "3186cbb92bed893f09f5bebfd2da4f135108c4fae3762ab6aaeec302dd9774b7",
+              "connection_hash_before": "8ec4f54b015f57e631dbc189b6e0bc3647ecb24d8bb6b3303e9cdc0347b42524",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "e2530ef24e220fec47511005b517db150ecd4a4554650814d431e1da5ec7af92",
+              "connection_hash_before": "3186cbb92bed893f09f5bebfd2da4f135108c4fae3762ab6aaeec302dd9774b7",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            }
+          ],
+          "pulses": [
+            {
+              "event_id": "r01-17:141803:train:1:0",
+              "generation_depth": 0,
+              "magnitude": 1.140846,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:0",
+              "time_ms": 1000.0
+            },
+            {
+              "event_id": "r01-17:141803:train:1:1",
+              "generation_depth": 0,
+              "magnitude": 1.140846,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:1",
+              "time_ms": 1003.931971
+            },
+            {
+              "event_id": "r01-17:141803:train:1:2",
+              "generation_depth": 0,
+              "magnitude": 1.140846,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:2",
+              "time_ms": 1007.863942
+            },
+            {
+              "event_id": "r01-17:141803:train:1:3",
+              "generation_depth": 0,
+              "magnitude": 1.140846,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:3",
+              "time_ms": 1011.795913
+            }
+          ]
+        },
+        {
+          "connection_hash_after": "4c91da14974c24ce361c26264cbfb3b4963135328f0546935ed8f0944e064900",
+          "connection_hash_before": "e2530ef24e220fec47511005b517db150ecd4a4554650814d431e1da5ec7af92",
+          "connections_after": [
+            {
+              "delay_ms": 4.158120249999982,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.204928111087247
+            },
+            {
+              "delay_ms": 4.158120249999982,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.204928111087247
+            },
+            {
+              "delay_ms": 4.15812025000001,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.2049281110872425
+            }
+          ],
+          "episode": 2,
+          "observations": [
+            {
+              "accepted": true,
+              "connection_hash_after": "e2530ef24e220fec47511005b517db150ecd4a4554650814d431e1da5ec7af92",
+              "connection_hash_before": "e2530ef24e220fec47511005b517db150ecd4a4554650814d431e1da5ec7af92",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "8c12ce4f872b8d0e6106886bf8fed26b341a0392cae4e31b9687e668374503f3",
+              "connection_hash_before": "e2530ef24e220fec47511005b517db150ecd4a4554650814d431e1da5ec7af92",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "848ab04af0349dda1fc075a972bc78d53ca3f5bcc5f114e3fde2639928d62785",
+              "connection_hash_before": "8c12ce4f872b8d0e6106886bf8fed26b341a0392cae4e31b9687e668374503f3",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "4c91da14974c24ce361c26264cbfb3b4963135328f0546935ed8f0944e064900",
+              "connection_hash_before": "848ab04af0349dda1fc075a972bc78d53ca3f5bcc5f114e3fde2639928d62785",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            }
+          ],
+          "pulses": [
+            {
+              "event_id": "r01-17:141803:train:2:0",
+              "generation_depth": 0,
+              "magnitude": 1.140846,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:0",
+              "time_ms": 2000.0
+            },
+            {
+              "event_id": "r01-17:141803:train:2:1",
+              "generation_depth": 0,
+              "magnitude": 1.140846,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:1",
+              "time_ms": 2003.931971
+            },
+            {
+              "event_id": "r01-17:141803:train:2:2",
+              "generation_depth": 0,
+              "magnitude": 1.140846,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:2",
+              "time_ms": 2007.863942
+            },
+            {
+              "event_id": "r01-17:141803:train:2:3",
+              "generation_depth": 0,
+              "magnitude": 1.140846,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:3",
+              "time_ms": 2011.795913
+            }
+          ]
+        },
+        {
+          "connection_hash_after": "a78e186f4a7d16c23097b78eb16a8c83ca148ed30605036ee827c369a7f9d1d0",
+          "connection_hash_before": "4c91da14974c24ce361c26264cbfb3b4963135328f0546935ed8f0944e064900",
+          "connections_after": [
+            {
+              "delay_ms": 4.045045624999979,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 4.045045624999979,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 4.045045624999993,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.25
+            }
+          ],
+          "episode": 3,
+          "observations": [
+            {
+              "accepted": true,
+              "connection_hash_after": "4c91da14974c24ce361c26264cbfb3b4963135328f0546935ed8f0944e064900",
+              "connection_hash_before": "4c91da14974c24ce361c26264cbfb3b4963135328f0546935ed8f0944e064900",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "e74c93ed5b3a4b3c157507228182a0833b98708a99a53c9a93853f162e110fda",
+              "connection_hash_before": "4c91da14974c24ce361c26264cbfb3b4963135328f0546935ed8f0944e064900",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "e9de40479b18a5afd4f0f8a4867f1bd912e669d30adcadfa110e62e301de1e9f",
+              "connection_hash_before": "e74c93ed5b3a4b3c157507228182a0833b98708a99a53c9a93853f162e110fda",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "a78e186f4a7d16c23097b78eb16a8c83ca148ed30605036ee827c369a7f9d1d0",
+              "connection_hash_before": "e9de40479b18a5afd4f0f8a4867f1bd912e669d30adcadfa110e62e301de1e9f",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            }
+          ],
+          "pulses": [
+            {
+              "event_id": "r01-17:141803:train:3:0",
+              "generation_depth": 0,
+              "magnitude": 1.140846,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:0",
+              "time_ms": 3000.0
+            },
+            {
+              "event_id": "r01-17:141803:train:3:1",
+              "generation_depth": 0,
+              "magnitude": 1.140846,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:1",
+              "time_ms": 3003.931971
+            },
+            {
+              "event_id": "r01-17:141803:train:3:2",
+              "generation_depth": 0,
+              "magnitude": 1.140846,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:2",
+              "time_ms": 3007.863942
+            },
+            {
+              "event_id": "r01-17:141803:train:3:3",
+              "generation_depth": 0,
+              "magnitude": 1.140846,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:3",
+              "time_ms": 3011.795913
+            }
+          ]
+        },
+        {
+          "connection_hash_after": "c41d3591f2e293ed127be42498569f90f3766ce9b45ea8df9b548e5107db8bf5",
+          "connection_hash_before": "a78e186f4a7d16c23097b78eb16a8c83ca148ed30605036ee827c369a7f9d1d0",
+          "connections_after": [
+            {
+              "delay_ms": 3.9885083124999774,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 3.9885083124999774,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 3.9885083124999845,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.25
+            }
+          ],
+          "episode": 4,
+          "observations": [
+            {
+              "accepted": true,
+              "connection_hash_after": "a78e186f4a7d16c23097b78eb16a8c83ca148ed30605036ee827c369a7f9d1d0",
+              "connection_hash_before": "a78e186f4a7d16c23097b78eb16a8c83ca148ed30605036ee827c369a7f9d1d0",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "654b32872cac1bfa15a7f78f0546729f136da4c93ae80e8fefdbf438982ef284",
+              "connection_hash_before": "a78e186f4a7d16c23097b78eb16a8c83ca148ed30605036ee827c369a7f9d1d0",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "baf9b9f762d51107b851d4f04b567bb877f5212d27b8339d464af631cf099053",
+              "connection_hash_before": "654b32872cac1bfa15a7f78f0546729f136da4c93ae80e8fefdbf438982ef284",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "c41d3591f2e293ed127be42498569f90f3766ce9b45ea8df9b548e5107db8bf5",
+              "connection_hash_before": "baf9b9f762d51107b851d4f04b567bb877f5212d27b8339d464af631cf099053",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            }
+          ],
+          "pulses": [
+            {
+              "event_id": "r01-17:141803:train:4:0",
+              "generation_depth": 0,
+              "magnitude": 1.140846,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:0",
+              "time_ms": 4000.0
+            },
+            {
+              "event_id": "r01-17:141803:train:4:1",
+              "generation_depth": 0,
+              "magnitude": 1.140846,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:1",
+              "time_ms": 4003.931971
+            },
+            {
+              "event_id": "r01-17:141803:train:4:2",
+              "generation_depth": 0,
+              "magnitude": 1.140846,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:2",
+              "time_ms": 4007.863942
+            },
+            {
+              "event_id": "r01-17:141803:train:4:3",
+              "generation_depth": 0,
+              "magnitude": 1.140846,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:3",
+              "time_ms": 4011.795913
+            }
+          ]
+        },
+        {
+          "connection_hash_after": "f4ad185c47bc04c3c296a8566c45a16651362da30b21d951a8d283704b83de0d",
+          "connection_hash_before": "c41d3591f2e293ed127be42498569f90f3766ce9b45ea8df9b548e5107db8bf5",
+          "connections_after": [
+            {
+              "delay_ms": 3.9602396562499766,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 3.9602396562499766,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 3.96023965624998,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.25
+            }
+          ],
+          "episode": 5,
+          "observations": [
+            {
+              "accepted": true,
+              "connection_hash_after": "c41d3591f2e293ed127be42498569f90f3766ce9b45ea8df9b548e5107db8bf5",
+              "connection_hash_before": "c41d3591f2e293ed127be42498569f90f3766ce9b45ea8df9b548e5107db8bf5",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "59f1320885a843dd3d91a5d623ca3557811b36167be52453bc018af439a58e34",
+              "connection_hash_before": "c41d3591f2e293ed127be42498569f90f3766ce9b45ea8df9b548e5107db8bf5",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "4d2f47ce5a20c1e6b4d95d4ec1c3557ca50accf7d4fee48298a6eff8b285e87d",
+              "connection_hash_before": "59f1320885a843dd3d91a5d623ca3557811b36167be52453bc018af439a58e34",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "f4ad185c47bc04c3c296a8566c45a16651362da30b21d951a8d283704b83de0d",
+              "connection_hash_before": "4d2f47ce5a20c1e6b4d95d4ec1c3557ca50accf7d4fee48298a6eff8b285e87d",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            }
+          ],
+          "pulses": [
+            {
+              "event_id": "r01-17:141803:train:5:0",
+              "generation_depth": 0,
+              "magnitude": 1.140846,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:0",
+              "time_ms": 5000.0
+            },
+            {
+              "event_id": "r01-17:141803:train:5:1",
+              "generation_depth": 0,
+              "magnitude": 1.140846,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:1",
+              "time_ms": 5003.931971
+            },
+            {
+              "event_id": "r01-17:141803:train:5:2",
+              "generation_depth": 0,
+              "magnitude": 1.140846,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:2",
+              "time_ms": 5007.863942
+            },
+            {
+              "event_id": "r01-17:141803:train:5:3",
+              "generation_depth": 0,
+              "magnitude": 1.140846,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:3",
+              "time_ms": 5011.795913
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "arms": {
+        "F0": {
+          "arm": "F0",
+          "connection_hash_after": "0c37ef3533b10aad1d8d803c0798a0a373e0160662e70725a8f9a7303d686a99",
+          "connection_hash_before": "0c37ef3533b10aad1d8d803c0798a0a373e0160662e70725a8f9a7303d686a99",
+          "connections": [
+            {
+              "delay_ms": 4.1123146562498025,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 4.112314656249973,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 4.112314656250257,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.25
+            }
+          ],
+          "generated_times_ms": [
+            104.11231465624981,
+            108.22462931249979,
+            112.33694396875005
+          ],
+          "generated_units": [
+            1,
+            2,
+            3
+          ]
+        },
+        "FD": {
+          "arm": "FD",
+          "connection_hash_after": "7f61cda7c0846f3cdbbb5f96c307f7cb78d594dbfa97edb97fc8e655c60dbbdb",
+          "connection_hash_before": "7f61cda7c0846f3cdbbb5f96c307f7cb78d594dbfa97edb97fc8e655c60dbbdb",
+          "connections": [
+            {
+              "delay_ms": 5.625175,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 5.625175,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 5.625175,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.25
+            }
+          ],
+          "generated_times_ms": [
+            105.625175,
+            111.25035,
+            116.875525
+          ],
+          "generated_units": [
+            1,
+            2,
+            3
+          ]
+        },
+        "SHAM": {
+          "arm": "SHAM",
+          "connection_hash_after": "0c37ef3533b10aad1d8d803c0798a0a373e0160662e70725a8f9a7303d686a99",
+          "connection_hash_before": "0c37ef3533b10aad1d8d803c0798a0a373e0160662e70725a8f9a7303d686a99",
+          "connections": [
+            {
+              "delay_ms": 4.1123146562498025,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 4.112314656249973,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 4.112314656250257,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.25
+            }
+          ],
+          "generated_times_ms": [
+            104.11231465624981,
+            108.22462931249979,
+            112.33694396875005
+          ],
+          "generated_units": [
+            1,
+            2,
+            3
+          ]
+        }
+      },
+      "learner_api_hash": "31e95f27da53759cd24636eab8de9dd1752f457db2e16048aece4b82279a3a94",
+      "post_training_connections": [
+        {
+          "delay_ms": 4.1123146562498025,
+          "source_id": 0,
+          "target_id": 1,
+          "weight": 1.25
+        },
+        {
+          "delay_ms": 4.112314656249973,
+          "source_id": 1,
+          "target_id": 2,
+          "weight": 1.25
+        },
+        {
+          "delay_ms": 4.112314656250257,
+          "source_id": 2,
+          "target_id": 3,
+          "weight": 1.25
+        }
+      ],
+      "pre_training_connections": [
+        {
+          "delay_ms": 5.625175,
+          "source_id": 0,
+          "target_id": 1,
+          "weight": 0.05
+        },
+        {
+          "delay_ms": 5.625175,
+          "source_id": 1,
+          "target_id": 2,
+          "weight": 0.05
+        },
+        {
+          "delay_ms": 5.625175,
+          "source_id": 2,
+          "target_id": 3,
+          "weight": 0.05
+        }
+      ],
+      "spec": {
+        "cue_magnitude": 1.117742,
+        "exposures": 6,
+        "formal_authority": false,
+        "held_out_authority": false,
+        "identity_sha256": "8a8567149a6d173da5a51a496f959ace6c4ae178db0b2db1880155dd4d025f1c",
+        "initial_delay_ms": 5.625175,
+        "initial_weight": 0.05,
+        "minimum_causal_shift_ms": 0.5,
+        "minimum_delay_displacement_ms": 0.5,
+        "phase": "development",
+        "protocol_id": "rv01-r01-17-real-delay-causal-timing-v1",
+        "route": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "seed": 141804,
+        "threshold": 0.467742,
+        "timing_tolerance_ms": 0.05,
+        "training_lag_ms": 4.088301,
+        "unit_count": 4,
+        "world_id": "r01-17:development:real-delay-chain:141804",
+        "world_salt": "rv01-r01-17-real-delay-world-grid-v1"
+      },
+      "training_exposures": [
+        {
+          "connection_hash_after": "2518a3b1f4c59fd12c64f78ad120ffbfe7ed29517775e97380731b12b21832dd",
+          "connection_hash_before": "0fbf3b4a09df267a999045295998ec7edcd8872ff87e5f86bb696fe99e7d0314",
+          "connections_after": [
+            {
+              "delay_ms": 4.856738,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 0.4213290427774271
+            },
+            {
+              "delay_ms": 4.856738,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 0.4213290427774271
+            },
+            {
+              "delay_ms": 4.856738,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 0.4213290427774271
+            }
+          ],
+          "episode": 0,
+          "observations": [
+            {
+              "accepted": true,
+              "connection_hash_after": "0fbf3b4a09df267a999045295998ec7edcd8872ff87e5f86bb696fe99e7d0314",
+              "connection_hash_before": "0fbf3b4a09df267a999045295998ec7edcd8872ff87e5f86bb696fe99e7d0314",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "3dad316add3cc64e670bfc62bc42d8a4e365e2861b1bb022bc6ee45e3b4b6682",
+              "connection_hash_before": "0fbf3b4a09df267a999045295998ec7edcd8872ff87e5f86bb696fe99e7d0314",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "5373662552893cf14b65289bb89f01ae1a7866608b66a98d749a061847edc611",
+              "connection_hash_before": "3dad316add3cc64e670bfc62bc42d8a4e365e2861b1bb022bc6ee45e3b4b6682",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "2518a3b1f4c59fd12c64f78ad120ffbfe7ed29517775e97380731b12b21832dd",
+              "connection_hash_before": "5373662552893cf14b65289bb89f01ae1a7866608b66a98d749a061847edc611",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            }
+          ],
+          "pulses": [
+            {
+              "event_id": "r01-17:141804:train:0:0",
+              "generation_depth": 0,
+              "magnitude": 1.117742,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:0",
+              "time_ms": 0.0
+            },
+            {
+              "event_id": "r01-17:141804:train:0:1",
+              "generation_depth": 0,
+              "magnitude": 1.117742,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:1",
+              "time_ms": 4.088301
+            },
+            {
+              "event_id": "r01-17:141804:train:0:2",
+              "generation_depth": 0,
+              "magnitude": 1.117742,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:2",
+              "time_ms": 8.176602
+            },
+            {
+              "event_id": "r01-17:141804:train:0:3",
+              "generation_depth": 0,
+              "magnitude": 1.117742,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:3",
+              "time_ms": 12.264903
+            }
+          ]
+        },
+        {
+          "connection_hash_after": "e4b783c30c9900be24462ad097fe0376f1393bd5263364eff5c0b4a46df20812",
+          "connection_hash_before": "2518a3b1f4c59fd12c64f78ad120ffbfe7ed29517775e97380731b12b21832dd",
+          "connections_after": [
+            {
+              "delay_ms": 4.472519500000001,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 0.7926580855548542
+            },
+            {
+              "delay_ms": 4.472519500000001,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 0.7926580855548542
+            },
+            {
+              "delay_ms": 4.472519500000001,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 0.7926580855548542
+            }
+          ],
+          "episode": 1,
+          "observations": [
+            {
+              "accepted": true,
+              "connection_hash_after": "2518a3b1f4c59fd12c64f78ad120ffbfe7ed29517775e97380731b12b21832dd",
+              "connection_hash_before": "2518a3b1f4c59fd12c64f78ad120ffbfe7ed29517775e97380731b12b21832dd",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "fae858d52b5bebc96d41f6f8e68256a9fca7ae74e8b8ccc879c30965d524fa61",
+              "connection_hash_before": "2518a3b1f4c59fd12c64f78ad120ffbfe7ed29517775e97380731b12b21832dd",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "b09deb8ad81772a657160bb6549500db8df43a52fdfcb222ae0821f8130af174",
+              "connection_hash_before": "fae858d52b5bebc96d41f6f8e68256a9fca7ae74e8b8ccc879c30965d524fa61",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "e4b783c30c9900be24462ad097fe0376f1393bd5263364eff5c0b4a46df20812",
+              "connection_hash_before": "b09deb8ad81772a657160bb6549500db8df43a52fdfcb222ae0821f8130af174",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            }
+          ],
+          "pulses": [
+            {
+              "event_id": "r01-17:141804:train:1:0",
+              "generation_depth": 0,
+              "magnitude": 1.117742,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:0",
+              "time_ms": 1000.0
+            },
+            {
+              "event_id": "r01-17:141804:train:1:1",
+              "generation_depth": 0,
+              "magnitude": 1.117742,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:1",
+              "time_ms": 1004.088301
+            },
+            {
+              "event_id": "r01-17:141804:train:1:2",
+              "generation_depth": 0,
+              "magnitude": 1.117742,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:2",
+              "time_ms": 1008.176602
+            },
+            {
+              "event_id": "r01-17:141804:train:1:3",
+              "generation_depth": 0,
+              "magnitude": 1.117742,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:3",
+              "time_ms": 1012.264903
+            }
+          ]
+        },
+        {
+          "connection_hash_after": "5883af8b8c60f36f938f7cfd134d29064ad1a824e5e92f2bc122f0d436dd45fc",
+          "connection_hash_before": "e4b783c30c9900be24462ad097fe0376f1393bd5263364eff5c0b4a46df20812",
+          "connections_after": [
+            {
+              "delay_ms": 4.280410250000001,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.1639871283322811
+            },
+            {
+              "delay_ms": 4.280410250000001,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.1639871283322811
+            },
+            {
+              "delay_ms": 4.280410250000001,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.1639871283322811
+            }
+          ],
+          "episode": 2,
+          "observations": [
+            {
+              "accepted": true,
+              "connection_hash_after": "e4b783c30c9900be24462ad097fe0376f1393bd5263364eff5c0b4a46df20812",
+              "connection_hash_before": "e4b783c30c9900be24462ad097fe0376f1393bd5263364eff5c0b4a46df20812",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "c546015b4624655158e5bd8f118e1220121509445f3ad5900dc8e7a0f2998767",
+              "connection_hash_before": "e4b783c30c9900be24462ad097fe0376f1393bd5263364eff5c0b4a46df20812",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "72f66032c1e8d8e1e3ef9f12298f7bc1af66dd8e97af37ed57fb64acf50cc10e",
+              "connection_hash_before": "c546015b4624655158e5bd8f118e1220121509445f3ad5900dc8e7a0f2998767",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "5883af8b8c60f36f938f7cfd134d29064ad1a824e5e92f2bc122f0d436dd45fc",
+              "connection_hash_before": "72f66032c1e8d8e1e3ef9f12298f7bc1af66dd8e97af37ed57fb64acf50cc10e",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            }
+          ],
+          "pulses": [
+            {
+              "event_id": "r01-17:141804:train:2:0",
+              "generation_depth": 0,
+              "magnitude": 1.117742,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:0",
+              "time_ms": 2000.0
+            },
+            {
+              "event_id": "r01-17:141804:train:2:1",
+              "generation_depth": 0,
+              "magnitude": 1.117742,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:1",
+              "time_ms": 2004.088301
+            },
+            {
+              "event_id": "r01-17:141804:train:2:2",
+              "generation_depth": 0,
+              "magnitude": 1.117742,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:2",
+              "time_ms": 2008.176602
+            },
+            {
+              "event_id": "r01-17:141804:train:2:3",
+              "generation_depth": 0,
+              "magnitude": 1.117742,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:3",
+              "time_ms": 2012.264903
+            }
+          ]
+        },
+        {
+          "connection_hash_after": "96d303ec2bf5b0d62ae00aa8ff96041bd1bb2667c32aff18fd88256d285db15c",
+          "connection_hash_before": "5883af8b8c60f36f938f7cfd134d29064ad1a824e5e92f2bc122f0d436dd45fc",
+          "connections_after": [
+            {
+              "delay_ms": 4.1843556249998874,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 4.184355625000115,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 4.1843556249998874,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.25
+            }
+          ],
+          "episode": 3,
+          "observations": [
+            {
+              "accepted": true,
+              "connection_hash_after": "5883af8b8c60f36f938f7cfd134d29064ad1a824e5e92f2bc122f0d436dd45fc",
+              "connection_hash_before": "5883af8b8c60f36f938f7cfd134d29064ad1a824e5e92f2bc122f0d436dd45fc",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "15b58ea1df9cf6186c8e9aff1655a541d102d47594525d490bce9f537c240679",
+              "connection_hash_before": "5883af8b8c60f36f938f7cfd134d29064ad1a824e5e92f2bc122f0d436dd45fc",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "392f31f10084fa1c728a5c9445fa5a87bf8d2a45b087a8af9863c21810cbcdbb",
+              "connection_hash_before": "15b58ea1df9cf6186c8e9aff1655a541d102d47594525d490bce9f537c240679",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "96d303ec2bf5b0d62ae00aa8ff96041bd1bb2667c32aff18fd88256d285db15c",
+              "connection_hash_before": "392f31f10084fa1c728a5c9445fa5a87bf8d2a45b087a8af9863c21810cbcdbb",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            }
+          ],
+          "pulses": [
+            {
+              "event_id": "r01-17:141804:train:3:0",
+              "generation_depth": 0,
+              "magnitude": 1.117742,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:0",
+              "time_ms": 3000.0
+            },
+            {
+              "event_id": "r01-17:141804:train:3:1",
+              "generation_depth": 0,
+              "magnitude": 1.117742,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:1",
+              "time_ms": 3004.088301
+            },
+            {
+              "event_id": "r01-17:141804:train:3:2",
+              "generation_depth": 0,
+              "magnitude": 1.117742,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:2",
+              "time_ms": 3008.176602
+            },
+            {
+              "event_id": "r01-17:141804:train:3:3",
+              "generation_depth": 0,
+              "magnitude": 1.117742,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:3",
+              "time_ms": 3012.264903
+            }
+          ]
+        },
+        {
+          "connection_hash_after": "a0105812e62242b8f10d2e914f5f3e79a2d1ecceee2c39dacdf77ee90d83cfa7",
+          "connection_hash_before": "96d303ec2bf5b0d62ae00aa8ff96041bd1bb2667c32aff18fd88256d285db15c",
+          "connections_after": [
+            {
+              "delay_ms": 4.136328312499831,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 4.136328312500172,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 4.136328312499831,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.25
+            }
+          ],
+          "episode": 4,
+          "observations": [
+            {
+              "accepted": true,
+              "connection_hash_after": "96d303ec2bf5b0d62ae00aa8ff96041bd1bb2667c32aff18fd88256d285db15c",
+              "connection_hash_before": "96d303ec2bf5b0d62ae00aa8ff96041bd1bb2667c32aff18fd88256d285db15c",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "049b4ffa2b8ae857b9a48c75740b12ae46898d50c8d343da83d3af423ad98ca6",
+              "connection_hash_before": "96d303ec2bf5b0d62ae00aa8ff96041bd1bb2667c32aff18fd88256d285db15c",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "b1a95da136d6958b323fe394bfa4828364e47e0c7f108c74cdc7f5ba1840b2f4",
+              "connection_hash_before": "049b4ffa2b8ae857b9a48c75740b12ae46898d50c8d343da83d3af423ad98ca6",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "a0105812e62242b8f10d2e914f5f3e79a2d1ecceee2c39dacdf77ee90d83cfa7",
+              "connection_hash_before": "b1a95da136d6958b323fe394bfa4828364e47e0c7f108c74cdc7f5ba1840b2f4",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            }
+          ],
+          "pulses": [
+            {
+              "event_id": "r01-17:141804:train:4:0",
+              "generation_depth": 0,
+              "magnitude": 1.117742,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:0",
+              "time_ms": 4000.0
+            },
+            {
+              "event_id": "r01-17:141804:train:4:1",
+              "generation_depth": 0,
+              "magnitude": 1.117742,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:1",
+              "time_ms": 4004.088301
+            },
+            {
+              "event_id": "r01-17:141804:train:4:2",
+              "generation_depth": 0,
+              "magnitude": 1.117742,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:2",
+              "time_ms": 4008.176602
+            },
+            {
+              "event_id": "r01-17:141804:train:4:3",
+              "generation_depth": 0,
+              "magnitude": 1.117742,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:3",
+              "time_ms": 4012.264903
+            }
+          ]
+        },
+        {
+          "connection_hash_after": "0c37ef3533b10aad1d8d803c0798a0a373e0160662e70725a8f9a7303d686a99",
+          "connection_hash_before": "a0105812e62242b8f10d2e914f5f3e79a2d1ecceee2c39dacdf77ee90d83cfa7",
+          "connections_after": [
+            {
+              "delay_ms": 4.1123146562498025,
+              "source_id": 0,
+              "target_id": 1,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 4.112314656249973,
+              "source_id": 1,
+              "target_id": 2,
+              "weight": 1.25
+            },
+            {
+              "delay_ms": 4.112314656250257,
+              "source_id": 2,
+              "target_id": 3,
+              "weight": 1.25
+            }
+          ],
+          "episode": 5,
+          "observations": [
+            {
+              "accepted": true,
+              "connection_hash_after": "a0105812e62242b8f10d2e914f5f3e79a2d1ecceee2c39dacdf77ee90d83cfa7",
+              "connection_hash_before": "a0105812e62242b8f10d2e914f5f3e79a2d1ecceee2c39dacdf77ee90d83cfa7",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "d88ca5e9da3b0e9c485676ff327869618a649dceffdd3ae51ea0fc0978649b45",
+              "connection_hash_before": "a0105812e62242b8f10d2e914f5f3e79a2d1ecceee2c39dacdf77ee90d83cfa7",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "e01b59a67c3a538ca245906005b946273e740b723ae0a5dbe3ae926ad2bd8408",
+              "connection_hash_before": "d88ca5e9da3b0e9c485676ff327869618a649dceffdd3ae51ea0fc0978649b45",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            },
+            {
+              "accepted": true,
+              "connection_hash_after": "0c37ef3533b10aad1d8d803c0798a0a373e0160662e70725a8f9a7303d686a99",
+              "connection_hash_before": "e01b59a67c3a538ca245906005b946273e740b723ae0a5dbe3ae926ad2bd8408",
+              "ignored_or_rejected": false,
+              "method_name": "observe_external",
+              "mode": "stream"
+            }
+          ],
+          "pulses": [
+            {
+              "event_id": "r01-17:141804:train:5:0",
+              "generation_depth": 0,
+              "magnitude": 1.117742,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:0",
+              "time_ms": 5000.0
+            },
+            {
+              "event_id": "r01-17:141804:train:5:1",
+              "generation_depth": 0,
+              "magnitude": 1.117742,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:1",
+              "time_ms": 5004.088301
+            },
+            {
+              "event_id": "r01-17:141804:train:5:2",
+              "generation_depth": 0,
+              "magnitude": 1.117742,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:2",
+              "time_ms": 5008.176602
+            },
+            {
+              "event_id": "r01-17:141804:train:5:3",
+              "generation_depth": 0,
+              "magnitude": 1.117742,
+              "metadata": {},
+              "origin": "external",
+              "parent_event_ids": [],
+              "polarity": 1,
+              "source_path_ids": [],
+              "target": "unit:3",
+              "time_ms": 5012.264903
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
