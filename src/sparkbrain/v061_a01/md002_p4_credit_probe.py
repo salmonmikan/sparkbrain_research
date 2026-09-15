@@ -5,10 +5,7 @@ from typing import Any, Literal
 
 from sparkbrain.v06.boundary import BoundaryEvent
 from sparkbrain.v06.foundation import RuntimePulse, validate_runtime_mapping
-from sparkbrain.v061_a01.credit_bridge import (
-    A01CausalCreditStatus,
-    A01TransientCreditBridge,
-)
+from sparkbrain.v061_a01.credit_bridge import A01CausalCreditStatus, A01TransientCreditBridge
 
 
 P4CreditScope = Literal[
