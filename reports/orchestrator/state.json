@@ -1,106 +1,90 @@
 {
-  "run_timestamp": "2026-09-15T18:44:26+09:00",
+  "run_timestamp": "2026-09-15T22:59:22+09:00",
   "evidence_analyst_handoff": {
     "branch": "ops/evidence-analyst-handoff",
-    "commit": "6f2c5a54d1d6ae4e4d03731f039f727478a74e6c",
-    "status": "followed_then_partially_superseded_by_newer_RV01_repository_evidence"
-  },
-  "previous_orchestrator_report": {
-    "branch": "ops/orchestrator-run-report",
-    "commit": "c13ae95c289ec27ca2601c3aed7541261c055bfc"
+    "commit": "e8f6551a178eed234cbc0e7f7e8f566fafc67df1",
+    "status": "followed_and_partially_superseded_by_concurrent_completion"
   },
   "authoritative_refs": {
     "main": "ba16bf10535141c2edb29bbe3439ba0a38e71179",
     "a01": "8044b25f3a7b7767bf1262ea6a99cd6b795e3e8d",
-    "rv01": "02b3d80744d0eb10cb0d90fc38d3c55729d7ab99",
+    "rv01_before": "f72d840da0b3602971635698b4a15bf8f12585c4",
+    "rv01_after": "98be60268845487ce51e76b8a7687552a5dbc51f",
     "rv02": "c60b7fd8d3889ee969f505d921e7d31c990871e6"
   },
-  "active_lines": {
-    "A01_MD_002": {
-      "status": "P2 development positive; P2 identity consumed; old-confirmatory P4 STOP without pre-P2 executable contract",
-      "next": "distinct prospective exploratory/development P4 only unless complete pre-P2 contract is recovered"
-    },
-    "RV01_R01_16": {
-      "status": "consumed capability evidence; post-hoc interaction diagnostic derived",
-      "diagnostic": {
-        "F0_vs_FW_different": "100/100",
-        "FD_vs_FWD_different": "100/100",
-        "F0_vs_FD_different": "46/100",
-        "FW_vs_FWD_different": "0/100",
-        "F0_vs_FWD_different": "100/100",
-        "interpretation": "asymmetric weight-conditioned expression of learned-delay contribution at measured behavioral endpoint"
-      },
-      "next": "fresh exploratory interaction successor with route/behavior plus orthogonal timing/trajectory endpoint"
-    },
-    "RV02_RD005": {
-      "status": "D1 consumed; D1_ZERO_READY_STOP; blind unopened",
-      "next": "distinct blind-preserving successor"
-    },
-    "CX01": {
-      "status": "candidate-002 consumed immutable formal NEGATIVE",
-      "next": "prospectively distinct diagnostics/successor only"
-    }
+  "branches_advanced": [
+    "research/rv01-endogenous-transition",
+    "control/rv01-r01-17-real-delay-started-20260915",
+    "preserve/rv01-r01-17-real-delay-raw-20260915",
+    "preserve/rv01-r01-17-real-delay-scored-20260915"
+  ],
+  "prs": {
+    "merged": [
+      {
+        "number": 134,
+        "reviewed_head": "5ecb459b609b393ff837f57cc138f1eb44c1b255",
+        "merge_commit": "98be60268845487ce51e76b8a7687552a5dbc51f"
+      }
+    ],
+    "open_after_run": []
   },
-  "open_prs": [
+  "workflows_executed": [
     {
-      "number": 133,
-      "title": "RV01 R01-16: record delay interaction diagnostic",
-      "base": "research/rv01-endogenous-transition",
-      "base_sha": "02b3d80744d0eb10cb0d90fc38d3c55729d7ab99",
-      "head": "review/rv01-r01-16-delay-interaction-diagnostic-20260915",
-      "head_sha": "78790d08b1da9c7efcb397203ca77cce34a7a487",
-      "mergeable": true,
-      "ci": "green_on_exact_head_as_observed",
-      "review": "Codex P1 unresolved: add canonical docs/RESULTS_LEDGER.md entry",
-      "action_this_run": "posted @codex address that feedback, comment id 5678073446",
-      "merge_status": "not_merged"
+      "run_id": 34978554838,
+      "name": "RV01 R01-17 Frozen Real-Delay Development Execute Once",
+      "head_sha": "5ecb459b609b393ff837f57cc138f1eb44c1b255",
+      "attempt": 1,
+      "conclusion": "success"
     }
   ],
-  "branches_advanced_by_this_run": [],
-  "commits_created_by_this_run": [],
-  "prs_created_by_this_run": [],
-  "exact_head_merges_by_this_run": [],
-  "workflows_or_experiments_executed_by_this_run": [],
-  "new_one_way_identities_consumed_by_this_run": [],
-  "new_scientific_information_generated_by_this_run": false,
-  "new_repository_scientific_information_reconciled": {
-    "source": "immediately preceding orchestrator worker / PR #133",
-    "type": "post-hoc exposed-development diagnostic from immutable R01-16 capability evidence",
-    "result": "delay contribution visible 46/100 with learned weight retained and 0/100 after weight reset; weight contrast 100/100 under either delay state"
+  "new_scientific_information": true,
+  "new_measurements": {
+    "protocol": "rv01-r01-17-real-delay-causal-timing-v1",
+    "classification": "SUPPORTED_REAL_DELAY_CAUSAL_TIMING",
+    "cells_supported": "5/5",
+    "raw_suite_sha256": "7d6642bf16364c2a67acdf979324d0da59dcd7bbdc508c5f8773b6c654803dc2",
+    "score_sha256": "b76f3c7b3ec29f97ea69de30c6fb0e3c171c1eaa0e80699bf8055c3586ded76e",
+    "minimum_observed_edge_delay_displacement_ms": 1.5128603437497423,
+    "maximum_observed_edge_delay_displacement_ms": 2.1949997343752017,
+    "formal_authority": false,
+    "held_out_authority": false
   },
   "evidence_state": {
-    "new_freeze_refs": [],
-    "new_preserve_refs": [],
-    "new_started_control_refs": [],
-    "immutable_evidence_modified": false
+    "source_freeze": "freeze/rv01-r01-17-real-delay-source-20260915@5ecb459b609b393ff837f57cc138f1eb44c1b255",
+    "started_control": "control/rv01-r01-17-real-delay-started-20260915@5ecb459b609b393ff837f57cc138f1eb44c1b255",
+    "raw_preserve": "preserve/rv01-r01-17-real-delay-raw-20260915@fceb3663c7a880d82593e6c1efe52fcd1ad0c00a",
+    "scored_preserve": "preserve/rv01-r01-17-real-delay-scored-20260915@d4737d52ecbb2306d9f00f99366f0ad6424327be"
   },
-  "consumed_identities_referenced": [
-    "A01 MD-001",
+  "consumed_one_way_identities": [
+    "A01_MD_001",
     "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
-    "rv01-r01-16 construction identity",
+    "rv01-r01-16-construction-census-workflow-34881254582",
     "rv01-r01-16-capability-02b3d80744d0eb10-65ebe33d70af",
-    "96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
-    "CX01 candidate-002"
+    "rv01-r01-17-real-delay-causal-timing-v1",
+    "rv02-rd005-d1-96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
+    "cx01-candidate-002-formal"
   ],
-  "human_review_overrides_used": [],
-  "obsolete_prs_closed": [],
-  "main_integration": [],
-  "branch_deletions": [],
   "blockers": [
-    "PR #133 canonical results ledger entry required before merge",
-    "A01 P4 lacks verified complete pre-P2 executable scoring/replay/decision contract",
-    "RV01 next interaction successor not yet prospectively frozen/bound",
-    "RV02 D1 consumed; successor must be distinct and blind-preserving"
+    "No blocker remains for consumed R01-17; any successor requires a new prospective identity and pre-output contract.",
+    "A01 old-confirmatory P4 still lacks a verified complete pre-P2 executable contract.",
+    "RV02 RD005 D1 is consumed; only a distinct blind-preserving successor is valid."
   ],
   "concurrency_reconciliation": [
-    "Skipped recomputation/rerun of RV01 R01-16 diagnostic already completed by preceding worker",
-    "Corrected misleading delay-scale shorthand: authoritative result is weight-by-delay factor interaction",
-    "No stale merge attempted on PR #133; exact head remains 78790d08... while Codex remediation is pending"
+    "PR #133 and its durable R01-16 correction were already merged by another worker before active work in this run.",
+    "R01-17 PR branch and source freeze already existed and were re-verified rather than recreated."
+  ],
+  "human_review_overrides": [
+    "USER_AUTHORIZED_REVIEW_GATE_OVERRIDE / HUMAN_REVIEW_WAIVED_BY_USER"
+  ],
+  "obsolete_prs_closed": [],
+  "main_integration": [],
+  "branch_classifications_for_manual_cleanup": [
+    "review/rv01-r01-16-delay-interaction-diagnostic-20260915: merged historical review branch; retain until manually verified unreferenced",
+    "research/rv01-r01-17-real-delay-development-20260915: merged prospective-source history; retain because freeze/control evidence refers to exact source commit"
   ],
   "next_ready_actions": [
-    "Re-fetch PR #133 after Codex remediation; if ledger entry lands, inspect new exact head and merge only after exact-head CI/review green",
-    "Prospectively define RV01 distinct interaction successor on fresh identities/worlds/seeds with orthogonal timing/trajectory endpoint",
-    "Treat any new A01 P4 as exploratory/development unless complete pre-P2 executable contract is recovered",
-    "Design RV02 blind-preserving zero-ready successor"
+    "Evidence Analyst should reinterpret RV01 frontier using the new 5/5 positive R01-17 development result.",
+    "Any RV01 interference/competition successor must be a new prospective identity; do not rerun or retune R01-17.",
+    "A01 P4 exploratory and RV02 blind-preserving successor remain alternatives."
   ]
 }

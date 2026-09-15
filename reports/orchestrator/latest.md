@@ -1,112 +1,136 @@
-# SparkBrain Research Orchestrator run report — 2026-09-15 18:44 JST
+# SparkBrain Research Orchestrator run report — 2026-09-15 22:59 JST
 
-## Control-plane input
+## Control-plane input and reconciliation
 
-- Evidence Analyst handoff: `ops/evidence-analyst-handoff` at `6f2c5a54d1d6ae4e4d03731f039f727478a74e6c`.
-- Status: **followed, then partially superseded by newer repository evidence**. The analyst ranked A01 P4 first, with an explicit STOP if no complete pre-P2 executable scoring/replay/decision contract could be recovered, and RV01 as the pivot.
-- Previous orchestrator report read: `ops/orchestrator-run-report` at `c13ae95c289ec27ca2601c3aed7541261c055bfc` (18:21 JST). It already contained a newly derived RV01 R01-16 post-hoc interaction diagnostic and PR #133, so this run reconciled that work rather than duplicating it.
+- Evidence Analyst handoff consumed first: `ops/evidence-analyst-handoff@e8f6551a178eed234cbc0e7f7e8f566fafc67df1`.
+- The handoff's top recommendation was followed: correct/retire the R01-16 delay-validity issue, then prioritize a fresh prospective RV01 real-delay successor if the exact source was reviewed, green, frozen, collision-free, and raw-before-score safe.
+- Current remote superseded part of the handoff's readiness picture before this worker acted: PR #133 had already been exact-head merged into RV01, authoritative RV01 had advanced from `02b3d80744d0eb10cb0d90fc38d3c55729d7ab99` to `f72d840da0b3602971635698b4a15bf8f12585c4`, and a distinct R01-17 successor PR #134 plus source freeze already existed. This run reconciled that concurrent work and did not recreate it.
 
-## Authoritative refs / evidence re-fetched
+## Authoritative refs re-fetched
 
 - `main`: `ba16bf10535141c2edb29bbe3439ba0a38e71179`.
-- A01 authoritative `research/v061-a01-n3-adapter`: `8044b25f3a7b7767bf1262ea6a99cd6b795e3e8d` (re-fetched during this run; no concurrent movement observed).
-- RV01 authoritative `research/rv01-endogenous-transition`: `02b3d80744d0eb10cb0d90fc38d3c55729d7ab99`.
-- RV02 authoritative/source-binding remains `research/rv02-rd005-source-binding-20260913`: `c60b7fd8d3889ee969f505d921e7d31c990871e6`.
-- Relevant immutable refs were inventoried again. Current freeze refs include A01 P2 candidate-002 source, CX01 candidate-001/002 source/package, RV01 R01-15/R01-16 sources, and RV02 RD003/RD004/RD005 sources. Current preserve refs include A01 P2 candidate-002, CX01 candidate-002 formal evidence, RV01 R01-14/15/16 evidence, RV02 RD002/3/4/5 evidence, and A01 MD-001. Current STARTED/control refs include A01 P2 candidate-002, CX01 candidate-002, RV01 R01-16 capability, and RV02 RD005 D1.
+- A01 authoritative `research/v061-a01-n3-adapter`: `8044b25f3a7b7767bf1262ea6a99cd6b795e3e8d`.
+- RV01 authoritative at start of active work: `f72d840da0b3602971635698b4a15bf8f12585c4`; after exact-head PR #134 merge: `98be60268845487ce51e76b8a7687552a5dbc51f`.
+- RV02 authoritative/source-binding `research/rv02-rd005-source-binding-20260913`: `c60b7fd8d3889ee969f505d921e7d31c990871e6`.
+- CX01 immutable refs rechecked unchanged: source `e8483968ce43076b4c3fd04c76e62106e2031769`, package `c104be281285d52a732d5366fe36209d5688d973`, STARTED `8216d41a57e6933443d38dfc8d93f9188e423d0c`, preserve `6d45928827209cd763a2879494d85838df38b96f`.
 
-## Active research lines
+## RV01 R01-16 correction status
+
+PR #133 is no longer open. Its measurement-validity correction and canonical `docs/RESULTS_LEDGER.md` entry are present in RV01 via merge commit `f72d840da0b3602971635698b4a15bf8f12585c4`. Historical frozen labels remain unchanged: Weight `WEIGHT_SUPPORTED`, Delay `DELAY_MIXED`, Combined `COMBINED_SUPPORTED`; the durable interpretation now correctly states that the realized R01-16 delay displacement was roundoff-scale and does not support a substantive learned-delay mechanism.
+
+## RV01 R01-17 prospective readiness audited
+
+Open PR #134 was re-fetched and audited at exact head `5ecb459b609b393ff837f57cc138f1eb44c1b255`, base `research/rv01-endogenous-transition@f72d840da0b3602971635698b4a15bf8f12585c4`.
+
+Prospective fixed contract before any R01-17 output:
+- protocol `rv01-r01-17-real-delay-causal-timing-v1`;
+- fresh development seeds `141800..141804`;
+- initial physical delay deliberately exceeds training lag by `1.5–2.25 ms`;
+- minimum learned-delay displacement `0.5 ms`;
+- minimum downstream causal first-arrival shift `0.5 ms`;
+- timing/tie tolerance `0.05 ms`;
+- F0 learned-delay vs FD reset-delay with weights held matched, plus deterministic SHAM;
+- complete per-exposure raw learner observations/hashes retained;
+- synthetic scorer tests cover support, negative, mixed, ineligible, and exact 0.5 ms boundaries without invoking real acquisition;
+- raw preservation precedes scoring;
+- exposed-development only, no held-out/formal authority.
+
+Exact-head CI run `34976949639` was green. Latest Codex review on exact head `5ecb459...` reported no major issues. Earlier P1 comments were addressed by the current head; freeze-readiness record explicitly preserves the user-authorized human-review waiver without bypassing real integrity gates.
+
+Source freeze existed before execution and was re-fetched unchanged: `freeze/rv01-r01-17-real-delay-source-20260915@5ecb459b609b393ff837f57cc138f1eb44c1b255`. Immediately before one-way execution there was no R01-17 STARTED/control ref and no raw/scored preserve ref.
+
+## Exact-head merge
+
+PR #134 was re-fetched for head/diff/mergeability/checks immediately before merge and merged only with expected head SHA `5ecb459b609b393ff837f57cc138f1eb44c1b255`.
+
+- PR: #134 `RV01 R01-17: preregister real-delay causal timing development`
+- merge result: success
+- merge commit / new RV01 authoritative head: `98be60268845487ce51e76b8a7687552a5dbc51f`
+- merge method: merge commit
+
+No frozen or preserved evidence was imported or modified by the merge.
+
+## One-way execution under global authorization
+
+After a final freeze/preserve/collision audit, this run atomically created:
+
+- `control/rv01-r01-17-real-delay-started-20260915@5ecb459b609b393ff837f57cc138f1eb44c1b255`
+
+That push legitimately triggered exactly-once workflow run `34978554838`, attempt 1, on the exact frozen source. The workflow completed successfully. All scientific one-way steps succeeded in order:
+
+1. exact STARTED/freeze/no-preserve verification;
+2. exact Python 3.11.16/runtime and source manifest binding;
+3. raw acquisition exactly once;
+4. raw preservation before scoring;
+5. preserved raw-byte verification;
+6. scoring only the already-preserved raw;
+7. scored evidence preservation.
+
+Immutable evidence refs created by the workflow:
+- raw preserve `preserve/rv01-r01-17-real-delay-raw-20260915@fceb3663c7a880d82593e6c1efe52fcd1ad0c00a`;
+- scored preserve `preserve/rv01-r01-17-real-delay-scored-20260915@d4737d52ecbb2306d9f00f99366f0ad6424327be`.
+
+Execution metadata binds frozen source `5ecb459b609b393ff837f57cc138f1eb44c1b255`, workflow `34978554838`, attempt 1, Python 3.11.16, same-identity rerun false, held-out false, formal false.
+
+## New scientific result
+
+**New scientific information was produced in this run.** Frozen scorer classification:
+
+`SUPPORTED_REAL_DELAY_CAUSAL_TIMING`
+
+All five prospectively fixed development cells were `REAL_DELAY_SUPPORT_CELL`; all were delay-eligible, route-preserved, arm-binding-valid, and SHAM-exact.
+
+Per-cell learned-delay displacement / first downstream timing shift:
+- seed 141800: delay displacement ~`1.817788 ms`; unit-1 shift `1.817788 ms`, accumulating to unit-3 `5.453365 ms`;
+- seed 141801: ~`2.060727 ms`; unit-1 `2.060727 ms`, unit-3 `6.182181 ms`;
+- seed 141802: ~`2.195000 ms`; unit-1 `2.195000 ms`, unit-3 `6.584999 ms`;
+- seed 141803: ~`1.780925 ms`; unit-1 `1.780925 ms`, unit-3 `5.342776 ms`;
+- seed 141804: ~`1.512860 ms`; unit-1 `1.512860 ms`, unit-3 `4.538581 ms`.
+
+All effects are far above the preregistered `0.5 ms` minimum and `0.05 ms` numerical/tie tolerance. Raw suite SHA-256: `7d6642bf16364c2a67acdf979324d0da59dcd7bbdc508c5f8773b6c654803dc2`; score SHA-256: `b76f3c7b3ec29f97ea69de30c6fb0e3c171c1eaa0e80699bf8055c3586ded76e`.
+
+Scientific interpretation is intentionally narrow: on the fixed exposed-development chain, the ordinary physical learner can create a nontrivial learned-delay state, and resetting that learned delay while holding learned weights matched causally delays downstream first-arrival timing while preserving the route. This resolves the specific R01-16 measurement-validity ambiguity for capability, but does not establish generality, interference retention, weight×delay interaction, held-out confirmation, biological fidelity, or a formal SparkBrain claim.
+
+R01-17 is now consumed and must never be rerun or retuned.
+
+## Other active lines
 
 ### A01 MD-002
-
-P2 candidate-002 is consumed and remains no-rerun/no-retune. Development result remains `SUPPORTED_SELECTIVE_CIRCULATION`; no held-out/formal claim is made.
-
-The analyst-recommended P4 route was rechecked against historical P4 construction. The historical P4 fixture is execution-disabled and the trace binding intentionally does not score or open an execution gate. No complete pre-P2 executable P4 scoring/replay/decision contract was recovered. Therefore the old-confirmatory P4 path remains STOP. Any P4 designed now must be a distinct prospective exploratory/development identity unless stronger pre-P2 evidence is later recovered.
-
-### RV01 R01-16
-
-The previous orchestrator worker had already derived and documented a new post-hoc diagnostic from immutable, already-consumed capability evidence. This run re-fetched and independently checked the current PR/document rather than recomputing or rerunning R01-16.
-
-Bound evidence in the current diagnostic:
-- authoritative RV01 source `02b3d80744d0eb10cb0d90fc38d3c55729d7ab99`
-- capability identity `rv01-r01-16-capability-02b3d80744d0eb10-65ebe33d70af`
-- preserve ref `preserve/rv01-r01-16-capability-20260915`
-- preserve commit `0a25eac227d7ac0e8dbd5532d450ed2d50efa105`
-- raw artifact SHA-256 `e3b6e8c7ed6db423919c4360a5291ac207544566beb4656954be344cb253f335`
-- capability suite hash / immutable result provenance `b1b4d555d30630d1051482563696981261619143099216ab893bbea481d69392d`
-- source/package manifest SHA-256 `bc36c7da23f4d6b8fa1ee7d4d8c7bacdfd5970818482e146a188837247332582`
-- retained-history registry SHA-256 `232f4fb23b74662d10adca2990e1b030bbb1c74e45fb67f607982738570795bd`
-
-Verified contrast counts over 100 eligible development cells:
-- `F0_vs_FW_different`: 100/100
-- `FD_vs_FWD_different`: 100/100
-- `F0_vs_FD_different`: 46/100
-- `FW_vs_FWD_different`: 0/100
-- `F0_vs_FWD_different`: 100/100
-
-The frozen aggregate classifications remain Weight=`WEIGHT_SUPPORTED` 100/100, Delay=`DELAY_MIXED` (0 support / 54 negative / 46 discordant), Combined=`COMBINED_SUPPORTED` 100/100.
-
-The sharpened post-hoc interpretation is **asymmetric, weight-conditioned expression of the learned-delay contribution at the measured behavioral endpoint**: delay reset changes the signature in 46/100 cells while learned weight is retained, but in 0/100 cells after weight reset; weight remains consequential 100/100 under either delay state. This does not establish direct biophysical gating/causation and remains exposed-development/post-hoc evidence.
-
-Important reconciliation: an earlier shorthand framing this as different delay-scale buckets is not authoritative. The current bound diagnostic is a 2x2 weight/delay interaction (`F0`, `FW`, `FD`, `FWD`), and successor design should reflect that interaction rather than merely increasing delay magnitude.
+P2 candidate-002 remains consumed with development result `SUPPORTED_SELECTIVE_CIRCULATION`; no rerun. Old-confirmatory P4 remains invalid absent a complete pre-P2 executable contract; any new P4 is distinct exploratory/development work.
 
 ### RV02 RD005
-
-D1 identity `96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a` remains consumed with terminal `D1_ZERO_READY_STOP` / zero-ready construction-readiness result. Blind result remains unopened. No repair or rerun was attempted.
+D1 identity `96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a` remains consumed terminal `D1_ZERO_READY_STOP`; blind result remains unopened. No rerun or repair.
 
 ### CX/CX01
+Candidate-002 remains immutable formal NEGATIVE and consumed. Source/package/control/preserve refs remained unchanged; no rerun or retune.
 
-Candidate-002 remains immutable formal NEGATIVE (420 executions, replay 0, C1-C7 false) and consumed. No rerun, retune, or mutation of source/package/control/preserve evidence occurred.
+## Repository hygiene / concurrency / main
 
-## PR #133 reconciliation and advancement
-
-Open PR #133: `RV01 R01-16: record delay interaction diagnostic`.
-- base: `research/rv01-endogenous-transition` at `02b3d80744d0eb10cb0d90fc38d3c55729d7ab99`
-- head: `review/rv01-r01-16-delay-interaction-diagnostic-20260915`
-- exact current head: `78790d08b1da9c7efcb397203ca77cce34a7a487`
-- mergeable: true
-- changed files: one diagnostic document
-- current-head CI jobs observed green in the re-fetch sequence
-- Codex review completed on exact head and found a new P1 governance blocker: the newly derived negative/null diagnostic must be entered in canonical `docs/RESULTS_LEDGER.md`.
-
-This run did **not** merge PR #133 because the canonical ledger entry is a real durable-provenance blocker, not optional polish. The available direct GitHub file writer requires complete-file replacement for the large ledger, so this run avoided an unsafe manual whole-file rewrite. Instead it used the repository's existing Codex remediation path and posted `@codex address that feedback` (issue comment id `5678073446`) so the review worker can append the ledger entry safely on the PR branch. At the last exact-head re-fetch during this run the PR head had not yet moved, so no stale merge attempt was made.
-
-If Codex advances the head, the next orchestrator must re-fetch the new exact head, inspect the ledger patch and diagnostic diff, re-run/confirm required checks/review, and only then merge using that exact reviewed head SHA. The current `78790d08...` must not be merged while the P1 finding is unresolved.
-
-## Executions / one-way boundaries
-
-- New scientific workflow or experiment launched by this run: **0**.
-- New one-way identity consumed by this run: **0**.
-- New freeze refs: **0**.
-- New preserve refs: **0**.
-- New STARTED/control refs: **0**.
-- Frozen/preserved/formal evidence modified: **0**.
-- Human-review gate override used: **0**.
-
-Consumed identities remain no-rerun/no-retune: A01 MD-001, A01 MD-002 P2 candidate-002, RV01 R01-16 construction and capability, RV02 RD005 D1, CX01 candidate-002, plus all other explicitly consumed/frozen identities represented by immutable control/preserve refs.
-
-## Repository hygiene / main
-
-- Obsolete PRs closed: **0**.
-- Exact-head merges: **0**.
-- Main integration: **0**.
+- Concurrent work was reconciled rather than overwritten: PR #133 and R01-17 branch/freeze creation had already occurred before this worker acted.
+- Open PRs after PR #134 merge: **0**.
+- Obsolete PRs newly closed as obsolete: **0**; #133 and #134 are merged, not archived/abandoned.
 - Branch deletion: **0**.
-- Historical A01 P4 fixture/trace-binding branches remain evidence-bearing/archival and superseded as an immediately executable old-confirmatory path; leave intact.
-- Older RV01 R01-12/13/14/15 and RV02 RD001-004 construction/review branches are historical/evidence-bearing unless separately proven obsolete; no deletion or force movement was attempted.
+- `main` integration: **0**. No current change on this run required main integration to obtain the scientific result.
+- Historical/freeze/preserve/control refs remain evidence-bearing and are not cleanup candidates.
+- Review/research branches for already merged #133/#134 may be classified for manual cleanup only after confirming they are not referenced by any process; no deletion performed.
 
-## Genuine blockers
+## Human-review override
 
-1. PR #133 requires the canonical `docs/RESULTS_LEDGER.md` entry before merge. Codex remediation has been requested; exact head must be re-reviewed after any movement.
-2. A01 P4 lacks a verified complete pre-P2 executable scoring/replay/decision contract; any new P4 must be prospective exploratory/development.
-3. RV01's next causal discriminator requires a fresh identity/world/seed set and prospectively fixed endpoints. Based on the new interaction diagnostic, the high-information successor should keep the existing route/behavior endpoint and add an orthogonal timing/trajectory-sensitive endpoint to distinguish weight-conditioned delay expression, latent timing/decision-boundary convergence, and route-level interaction.
-4. RV02 D1 is consumed; only a distinct blind-preserving successor is valid.
+`USER_AUTHORIZED_REVIEW_GATE_OVERRIDE / HUMAN_REVIEW_WAIVED_BY_USER` was already recorded prospectively in the R01-17 freeze-readiness review and applied only to the literal independent-human-only gate. Exact-source review, CI, freeze, no-collision, STARTED, and raw-before-score gates were all independently satisfied.
 
-## Next-ready actions
+## Consumed identities / no-rerun additions
 
-1. **Finish PR #133 provenance record and exact-head merge if clean — NEAR, required correctness work.** Re-fetch after the Codex remediation request; if a new head adds the canonical ledger entry and exact-head CI/review are green, inspect and merge only that exact head. This is minimal work needed to make the new RV01 diagnostic durable on the active research line.
-2. **RV01 distinct interaction successor — HIGH information / MODERATE distance.** Prospectively preregister fresh worlds/seeds/identity and both route/behavior plus timing/trajectory endpoints; do not rerun R01-16.
-3. **A01 P4 distinct exploratory/development candidate — HIGH / MODERATE** if no complete pre-P2 contract emerges; never retroactively label a post-P2 scorer confirmatory.
-4. **RV02 blind-preserving zero-ready successor — HIGH / MODERATE** after the nearer RV01/A01 frontier.
+Existing consumed identities remain no-rerun/no-retune: A01 MD-001, A01 MD-002 P2 candidate-002, RV01 R01-16 construction/capability, RV02 RD005 D1, CX01 candidate-002, and other immutable consumed identities represented by retained control/preserve refs.
+
+Newly consumed in this run:
+- RV01 R01-17 `rv01-r01-17-real-delay-causal-timing-v1` at frozen source `5ecb459b609b393ff837f57cc138f1eb44c1b255`, STARTED `control/rv01-r01-17-real-delay-started-20260915`, workflow `34978554838`, raw preserve `fceb3663c7a880d82593e6c1efe52fcd1ad0c00a`, scored preserve `d4737d52ecbb2306d9f00f99366f0ad6424327be`.
+
+## Blockers and next-ready frontier
+
+No integrity blocker remains for the already-completed R01-17 identity; it is consumed and immutable.
+
+Highest-information next scientific move should be chosen by the Evidence Analyst using this new result. The natural RV01 successor question is now whether a real, demonstrated learned-delay signal changes route competition/interference independently of or jointly with learned weight on a **new** prospective identity. Do not automatically execute such a successor before prospective contract/scoring is fixed. A01 P4 and RV02 blind-preserving successor remain valid alternative frontiers.
 
 ## Run result
 
-**This run itself did not generate a new experiment measurement or consume a new identity.** It reconciled scientifically meaningful RV01 information generated by the immediately preceding worker, corrected the successor interpretation to the authoritative weight-by-delay interaction, verified that PR #133 is not yet merge-safe due to a canonical-ledger P1, and advanced that blocker through the repository's Codex remediation path without risking a stale merge or unsafe whole-file rewrite.
+This run produced a new positive exposed-development measurement, exact-head merged the reviewed R01-17 prospective tooling into the active RV01 research line, consumed exactly one new one-way identity under global authorization, and preserved both raw and scored evidence immutably. No formal or held-out claim was made.
