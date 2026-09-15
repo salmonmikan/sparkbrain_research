@@ -36,6 +36,18 @@ class P4MergedLineageCreditProbe:
         return asdict(self)
 
 
+def _require_registered_boundary_payload(bridge: Any, boundary: Any) -> None:
+    """Fail closed unless the supplied boundary is exactly the pending event."""
+
+    consistency_state = bridge.consistency.state_dict()
+    pending = consistency_state.get("pending", {})
+    registered = pending.get(boundary.event_id)
+    if registered is None:
+        raise ValueError("P4 merged-lineage boundary must be registered and pending")
+    if registered.get("event") != boundary.state_dict():
+        raise ValueError("P4 merged-lineage boundary must match registered pending boundary")
+
+
 def probe_merged_lineage_credit(
     bridge: Any,
     *,
@@ -58,6 +70,7 @@ def probe_merged_lineage_credit(
         raise ValueError("P4 merged-lineage source proposal IDs must be unique")
     if boundary.event_id not in external.parent_event_ids:
         raise ValueError("P4 merged-lineage credit probe requires exact-parent evidence")
+    _require_registered_boundary_payload(bridge, boundary)
 
     resolution = bridge.observe_external(boundary, external)
     before = dict(resolution.path_reliability_before)
