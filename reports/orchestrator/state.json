@@ -1,90 +1,65 @@
 {
-  "run_timestamp": "2026-09-15T22:59:22+09:00",
+  "run_timestamp": "2026-09-16T03:27:23+09:00",
+  "worker_role": "sub",
+  "worker_label": "SECONDARY IMPLEMENTER",
   "evidence_analyst_handoff": {
     "branch": "ops/evidence-analyst-handoff",
-    "commit": "e8f6551a178eed234cbc0e7f7e8f566fafc67df1",
-    "status": "followed_and_partially_superseded_by_concurrent_completion"
+    "commit": "e36b3313213a72296106b6bc0913a3b96fa8dec7",
+    "status": "followed"
   },
-  "authoritative_refs": {
-    "main": "ba16bf10535141c2edb29bbe3439ba0a38e71179",
-    "a01": "8044b25f3a7b7767bf1262ea6a99cd6b795e3e8d",
-    "rv01_before": "f72d840da0b3602971635698b4a15bf8f12585c4",
-    "rv01_after": "98be60268845487ce51e76b8a7687552a5dbc51f",
-    "rv02": "c60b7fd8d3889ee969f505d921e7d31c990871e6"
+  "control_brain_handoff": {
+    "branch": "ops/control-brain-handoff",
+    "commit": "ea94c12ec1be33bb8ef6d6409dd10ad19ea50631",
+    "status": "consumed_as_strategic_prior"
   },
-  "branches_advanced": [
-    "research/rv01-endogenous-transition",
-    "control/rv01-r01-17-real-delay-started-20260915",
-    "preserve/rv01-r01-17-real-delay-raw-20260915",
-    "preserve/rv01-r01-17-real-delay-scored-20260915"
-  ],
-  "prs": {
-    "merged": [
-      {
-        "number": 134,
-        "reviewed_head": "5ecb459b609b393ff837f57cc138f1eb44c1b255",
-        "merge_commit": "98be60268845487ce51e76b8a7687552a5dbc51f"
-      }
-    ],
-    "open_after_run": []
+  "orchestrator_report_parent": "08b1abe2f5aacb33d8f55a9b7fba62a484b90155",
+  "authoritative_refs_inspected": {
+    "a01_base": "research/v061-a01-n3-adapter@8044b25f3a7b7767bf1262ea6a99cd6b795e3e8d",
+    "a01_p3_result": "research/a01-md002-p3-result@fc6d43cf671e357956972a011eaf48a05a5a78b9",
+    "rv01_active": "research/rv01-loop-coupling-development@860a7d79101e25b4e64762d8051654d4a7914952",
+    "rv02_active": "research/rv02-stigmergic-lineage-credit@457db4e4f25dbfbf4d09e45f973e8d7d50357ca7",
+    "cx": "research/CX@75ec61eb748f8bc7f0257bce1d4293dbc967d70a",
+    "cx01": "research/CX01-causal-trace@3a545c4083386616116aad37373802161b792362"
   },
-  "workflows_executed": [
+  "main_or_concurrent_activity_avoided": [
     {
-      "run_id": 34978554838,
-      "name": "RV01 R01-17 Frozen Real-Delay Development Execute Once",
-      "head_sha": "5ecb459b609b393ff837f57cc138f1eb44c1b255",
-      "attempt": 1,
-      "conclusion": "success"
+      "kind": "pull_request",
+      "number": 135,
+      "title": "A01 MD-002: add development P4 merged-lineage credit probe",
+      "head_ref": "research/v061-a01-md002-p4-lineage-separation-20260916",
+      "head_sha": "f0d668a6bdab35293a361dd0b442e19519be540b",
+      "base_ref": "research/v061-a01-n3-adapter",
+      "base_sha": "8044b25f3a7b7767bf1262ea6a99cd6b795e3e8d",
+      "reason": "P4 is the Evidence Analyst's highest-priority frontier and is already actively occupied; SUB avoided racing it."
     }
   ],
-  "new_scientific_information": true,
-  "new_measurements": {
-    "protocol": "rv01-r01-17-real-delay-causal-timing-v1",
-    "classification": "SUPPORTED_REAL_DELAY_CAUSAL_TIMING",
-    "cells_supported": "5/5",
-    "raw_suite_sha256": "7d6642bf16364c2a67acdf979324d0da59dcd7bbdc508c5f8773b6c654803dc2",
-    "score_sha256": "b76f3c7b3ec29f97ea69de30c6fb0e3c171c1eaa0e80699bf8055c3586ded76e",
-    "minimum_observed_edge_delay_displacement_ms": 1.5128603437497423,
-    "maximum_observed_edge_delay_displacement_ms": 2.1949997343752017,
-    "formal_authority": false,
-    "held_out_authority": false
-  },
-  "evidence_state": {
-    "source_freeze": "freeze/rv01-r01-17-real-delay-source-20260915@5ecb459b609b393ff837f57cc138f1eb44c1b255",
-    "started_control": "control/rv01-r01-17-real-delay-started-20260915@5ecb459b609b393ff837f57cc138f1eb44c1b255",
-    "raw_preserve": "preserve/rv01-r01-17-real-delay-raw-20260915@fceb3663c7a880d82593e6c1efe52fcd1ad0c00a",
-    "scored_preserve": "preserve/rv01-r01-17-real-delay-scored-20260915@d4737d52ecbb2306d9f00f99366f0ad6424327be"
-  },
-  "consumed_one_way_identities": [
-    "A01_MD_001",
-    "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
-    "rv01-r01-16-construction-census-workflow-34881254582",
-    "rv01-r01-16-capability-02b3d80744d0eb10-65ebe33d70af",
-    "rv01-r01-17-real-delay-causal-timing-v1",
-    "rv02-rd005-d1-96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
-    "cx01-candidate-002-formal"
-  ],
+  "selected_action": "no_op_due_to_collision_and_no_independent_ready_scientific_work",
+  "branches_advanced": [],
+  "prs_created": [],
+  "prs_updated": [],
+  "prs_merged": [],
+  "workflows_executed": [],
+  "new_scientific_information": false,
+  "new_measurements": [],
+  "new_consumed_one_way_identities": [],
+  "immutable_refs_moved_or_rewritten": [],
+  "human_review_overrides_used": [],
+  "main_integration": [],
   "blockers": [
-    "No blocker remains for consumed R01-17; any successor requires a new prospective identity and pre-output contract.",
-    "A01 old-confirmatory P4 still lacks a verified complete pre-P2 executable contract.",
-    "RV02 RD005 D1 is consumed; only a distinct blind-preserving successor is valid."
+    "A01 P4 is already occupied by active PR #135 and must not be raced by SUB.",
+    "A01 P5 is scientifically gated on a qualified P4 result under the latest Evidence Analyst handoff.",
+    "RV01 R01-17, RV02 RD005 D1, and CX/CX01 candidate-002 are consumed and have no fresh prospectively ready successor identified in current authoritative state."
   ],
   "concurrency_reconciliation": [
-    "PR #133 and its durable R01-16 correction were already merged by another worker before active work in this run.",
-    "R01-17 PR branch and source freeze already existed and were re-verified rather than recreated."
+    "SUB observed active P4 work at PR #135 head f0d668a6bdab35293a361dd0b442e19519be540b and intentionally left it untouched.",
+    "No separate operational claim was created because SUB selected no research implementation."
   ],
-  "human_review_overrides": [
-    "USER_AUTHORIZED_REVIEW_GATE_OVERRIDE / HUMAN_REVIEW_WAIVED_BY_USER"
+  "work_intentionally_left_to_main": [
+    "A01 P4 development/freeze/execution path represented by PR #135 and current analyst GO/STOP criteria."
   ],
-  "obsolete_prs_closed": [],
-  "main_integration": [],
-  "branch_classifications_for_manual_cleanup": [
-    "review/rv01-r01-16-delay-interaction-diagnostic-20260915: merged historical review branch; retain until manually verified unreferenced",
-    "research/rv01-r01-17-real-delay-development-20260915: merged prospective-source history; retain because freeze/control evidence refers to exact source commit"
-  ],
-  "next_ready_actions": [
-    "Evidence Analyst should reinterpret RV01 frontier using the new 5/5 positive R01-17 development result.",
-    "Any RV01 interference/competition successor must be a new prospective identity; do not rerun or retune R01-17.",
-    "A01 P4 exploratory and RV02 blind-preserving successor remain alternatives."
+  "next_independent_ready_actions": [
+    "Re-evaluate after P4 movement or a new Evidence Analyst handoff.",
+    "Take a distinct prospectively ready action only if it is not owned by MAIN/another worker.",
+    "If a qualified P4 result advances P5, re-verify a prospective P5 contract before any implementation or execution."
   ]
 }
