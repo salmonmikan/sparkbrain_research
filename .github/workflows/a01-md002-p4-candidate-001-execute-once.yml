@@ -52,6 +52,7 @@ jobs:
               exit 1
             fi
           done
+          touch "${RUNNER_TEMP}/p4-started-guard-owner"
 
       - name: Set up exact Python
         uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
@@ -122,6 +123,10 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          if [ ! -f "${RUNNER_TEMP}/p4-started-guard-owner" ]; then
+            echo "run did not acquire the STARTED guard; refusing preserve writes"
+            exit 0
+          fi
           if git ls-remote --exit-code --heads origin "${RAW_PRESERVE_REF}" >/dev/null 2>&1; then
             echo "refusing to move existing raw preserve ref" >&2
             exit 1
@@ -164,6 +169,7 @@ jobs:
           git add -f "${OUTPUT_ROOT}"
           git commit -m "Preserve A01 P4 raw evidence ${GITHUB_RUN_ID}"
           git push origin "HEAD:refs/heads/${RAW_PRESERVE_REF}"
+          touch "${RUNNER_TEMP}/p4-raw-preserve-owner"
 
       - name: Verify preserved raw bytes before scoring
         if: success()
@@ -201,6 +207,14 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          if [ ! -f "${RUNNER_TEMP}/p4-started-guard-owner" ]; then
+            echo "run did not acquire the STARTED guard; refusing scored preserve write"
+            exit 0
+          fi
+          if [ ! -f "${RUNNER_TEMP}/p4-raw-preserve-owner" ]; then
+            echo "run did not create the raw preserve ref; refusing scored preserve write"
+            exit 0
+          fi
           if git ls-remote --exit-code --heads origin "${SCORED_PRESERVE_REF}" >/dev/null 2>&1; then
             echo "refusing to move existing scored preserve ref" >&2
             exit 1
