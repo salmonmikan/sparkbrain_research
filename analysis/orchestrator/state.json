@@ -1,73 +1,71 @@
 {
-  "analysis_timestamp": "2026-09-15T22:59:10+09:00",
+  "analysis_timestamp": "2026-09-16T01:05:13+09:00",
   "control_brain": {
     "branch": "ops/control-brain-handoff",
-    "commit": "7ae3641e68caeb6b5e459b7e646f8cf239f254f6",
-    "status": "supported_with_material_rv01_update",
-    "assessment": "Central causal-circulation and reduction priorities remain supported; prior tentative weight-conditioned/secondary delay interpretation is superseded by R01-17 real-delay capability, which is nevertheless parsimoniously an ordinary local delay-plasticity mechanism and remains secondary."
+    "commit": "1985198deb95190d45cb46629beb654eb04d4d92",
+    "history": "analysis/control_brain/history/2026-09-16/0030.md",
+    "status": "supported",
+    "assessment": "Central causal-circulation and reduction doctrine remains evidence-consistent; A01 P3/P4 should displace further RV01 characterization. R01-17 is a supported ordinary local-delay mechanism, not central novelty evidence."
   },
   "orchestrator_report": {
     "branch": "ops/orchestrator-run-report",
-    "commit": "406821a3d9c8506a34927d902af9a1481e622eb3",
-    "status": "stale_superseded_by_remote",
-    "superseded_by": [
-      "PR #133 merged",
-      "PR #134 merged",
-      "RV01 authoritative head 98be60268845487ce51e76b8a7687552a5dbc51f",
-      "R01-17 exactly-once execution and preserved score"
-    ]
+    "commit": "08b1abe2f5aacb33d8f55a9b7fba62a484b90155",
+    "status": "scientifically_consistent_but_operationally_stale_for_p3",
+    "assessment": "R01-17 evidence remains current; a later P3-readiness inspection was not durably reported."
   },
   "source_refs_inspected": {
     "main": "ba16bf10535141c2edb29bbe3439ba0a38e71179",
     "a01_authoritative": "8044b25f3a7b7767bf1262ea6a99cd6b795e3e8d",
+    "a01_p3_branch": "8044b25f3a7b7767bf1262ea6a99cd6b795e3e8d",
+    "a01_p2_source_freeze": "8044b25f3a7b7767bf1262ea6a99cd6b795e3e8d",
+    "a01_p2_started": "8044b25f3a7b7767bf1262ea6a99cd6b795e3e8d",
+    "a01_p2_preserve": "d7d48a8ad482acdb18de783c9506c32377530e1e",
     "rv01_authoritative": "98be60268845487ce51e76b8a7687552a5dbc51f",
     "rv01_r01_17_source_freeze": "5ecb459b609b393ff837f57cc138f1eb44c1b255",
-    "rv01_r01_17_started": "5ecb459b609b393ff837f57cc138f1eb44c1b255",
     "rv01_r01_17_raw_preserve": "fceb3663c7a880d82593e6c1efe52fcd1ad0c00a",
     "rv01_r01_17_scored_preserve": "d4737d52ecbb2306d9f00f99366f0ad6424327be",
     "rv02_authoritative": "c60b7fd8d3889ee969f505d921e7d31c990871e6",
-    "cx01_source_freeze": "e8483968ce43076b4c3fd04c76e62106e2031769",
-    "historical_a01_p3_harness": "cd07dc4995045ee8f0d806b7c61f3ad2b71c3ca7"
+    "cx01_source_freeze": "e8483968ce43076b4c3fd04c76e62106e2031769"
   },
-  "new_scientific_evidence": {
-    "protocol": "rv01-r01-17-real-delay-causal-timing-v1",
-    "classification": "SUPPORTED_REAL_DELAY_CAUSAL_TIMING",
-    "phase": "development",
-    "formal_authority": false,
-    "held_out_authority": false,
-    "workflow_run_id": "34978554838",
-    "workflow_attempt": 1,
-    "raw_suite_sha256": "7d6642bf16364c2a67acdf979324d0da59dcd7bbdc508c5f8773b6c654803dc2",
-    "score_sha256": "b76f3c7b3ec29f97ea69de30c6fb0e3c171c1eaa0e80699bf8055c3586ded76e",
-    "cells_supported": "5/5",
-    "delay_displacement_range_ms": [1.5128603437497423, 2.1949997343752017],
-    "interpretation": "Real learned physical delay independently causes cumulative downstream timing shifts with weights matched and route preserved; this is a component capability consistent with ordinary local adaptive delay plasticity, not SparkBrain-specific novelty."
+  "p3_prospective_history": {
+    "protocol_origin": "74b2bea2adb28866c7b4b3b29f812da37e3c404b",
+    "protocol_origin_time_utc": "2026-09-03T16:52:47Z",
+    "fixture_origin": "aa5fd80f1b044e4fd88d08cad5e646f2a4b809a1",
+    "fixture_origin_time_utc": "2026-09-11T15:09:41Z",
+    "plan_merge": "e3757d4089bcf90f6fdba11d90b3d0a9271c8a6b",
+    "plan_merge_time_utc": "2026-09-11T18:19:35Z",
+    "current_harness_present_on_a01": true,
+    "execution_authority": false,
+    "capability_result_present": false,
+    "score_present": false
   },
+  "new_scientific_evidence": null,
+  "new_readiness_evidence": "P3 discriminator/falsifier semantics, actual R-only fixture, fixed observation/negative-stop plan, and fail-closed bidirectional six-arm harness all predate P2 execution; remaining work is executable prospective classifier/binding/one-way preservation, not redesign of the scientific question.",
   "top_recommendation": {
-    "action": "A01 P3 actual R-only transplant causal-carrier exposed-development discriminator on a fresh prospective identity",
+    "action": "Complete and execute A01 P3 actual R-only causal-carrier exposed-development discriminator on a fresh prospective identity",
     "information_value": "HIGH",
-    "implementation_distance": "NEAR_MODERATE",
+    "implementation_distance": "NEAR",
     "central_theory_relevance": "DIRECT",
-    "go_stop_status": "GO_ONLY_AFTER_FRESH_P3_SCORE_EXECUTION_IDENTITY_AND_RAW_BEFORE_SCORE_BOUNDARY_ARE_PROSPECTIVELY_FIXED"
+    "go_stop_status": "GO_AFTER_OUTCOME_BLIND_CLASSIFIER_EXACT_BINDING_ATOMIC_STARTED_AND_RAW_BEFORE_SCORE_ARE_FROZEN_AND_REVIEWED"
   },
   "top_3_actions": [
     {
       "rank": 1,
-      "action": "A01 P3 actual R-only transplant causal-carrier development discriminator",
+      "action": "A01 P3 actual R-only causal-carrier development execution",
       "information_value": "HIGH",
-      "implementation_distance": "NEAR_MODERATE",
+      "implementation_distance": "NEAR",
       "central_theory_relevance": "DIRECT"
     },
     {
       "rank": 2,
-      "action": "A01 P4 continuing-vs-reset and merged-lineage ambiguity development discriminator",
+      "action": "A01 P4 bounded ambiguity / continuing-vs-reset historical-lineage development discriminator",
       "information_value": "HIGH",
       "implementation_distance": "MODERATE",
       "central_theory_relevance": "DIRECT"
     },
     {
       "rank": 3,
-      "action": "A01 P5 reduction against explicit N1 and genuine recurrent N3 if P3/P4 survive",
+      "action": "A01 P5 reduction against smallest explicit anonymous causal-memory null and genuine recurrent N3",
       "information_value": "HIGH",
       "implementation_distance": "MODERATE_FAR",
       "central_theory_relevance": "DECISIVE_REDUCTION"
@@ -83,17 +81,51 @@
     "cx01-candidate-002-formal"
   ],
   "blockers": [
-    "A01 P3 has pre-P2 fixture/plan isolation semantics but no previously frozen executable scorer/result contract; a new execution must be explicitly exploratory/development and prospectively scored",
-    "A01 P3 actual runtime execution must prove R-only transplantation with byte-identical L/F/C and evidence and independent per-arm traces",
-    "A01 P3 real candidate must not run in CI/preflight and raw evidence must be immutably preserved before scoring",
-    "Historical P3 harness branch cd07dc4995 is stale relative to current A01 8044b25f and cannot be imported without reconciliation",
-    "A01 P4 also lacks a verified complete pre-P2 executable scoring/replay/decision contract",
-    "P5 matched-resource comparator work remains incomplete and should not block standalone P3 development"
+    "P3 lacks a final executable outcome-blind development classifier bound before candidate output; it must be derived from pre-existing P3 semantics without post-outcome threshold invention",
+    "P3 needs exact source/runtime/input/fixture binding and collision-free fresh execution identities",
+    "P3 needs P2-style atomic remote STARTED/no-clobber and exactly-once execution",
+    "P3 real candidate must not execute in CI/preflight and raw evidence must be preserved and verified before frozen scoring",
+    "Any current A01/P3 head movement requires re-audit before one-way execution"
   ],
+  "go_criteria": [
+    "fresh unused development identity",
+    "byte-identical L/F/C and admissible evidence across matched arms",
+    "actual donor R transplanted into baseline runtime state",
+    "A-to-B and B-to-A fixture/input identities prospectively fixed",
+    "six independent arm execution identities and retained traces",
+    "deterministic qualitative classifier frozen before output",
+    "exact source/runtime/package/input binding",
+    "atomic STARTED/no-clobber",
+    "raw preserve and independent verification before scoring",
+    "substantive technical/semantic review; human-only identity may be transparently waived if sole blocker"
+  ],
+  "stop_criteria": [
+    "identity collision or concurrent STARTED/preserve claim",
+    "R is metadata-only rather than actual restored runtime state",
+    "L/F/C/evidence drift",
+    "donor output copied into transplant instead of independently generated",
+    "real candidate executed in CI/preflight before STARTED",
+    "scorer/threshold semantics altered after candidate output",
+    "source/head moves after review without re-audit",
+    "raw cannot be immutably preserved/verified before scoring",
+    "non-atomic STARTED or reuse of a consumed identity"
+  ],
+  "governance_advisories": {
+    "issue_drift": "Open Issue #129 still frames atomic remote STARTED as future repository-wide work, although later executions already implement the pattern; treat it as partly stale/generic-extraction debt, not a current scientific blocker.",
+    "missing_question_issue": "No open question-scoped Issue tracks A01 P3; advisory only and not a reason to delay execution.",
+    "rulesets": "none",
+    "git_tags": "none",
+    "tag_branch_migration": "Legacy branch-based immutable refs must remain untouched. Prefer protected annotated tags prospectively for new freeze/seal/formal/evidence boundaries when available, without delaying P3.",
+    "main_promotion_candidates": [
+      "generic exact source/runtime manifest verification",
+      "generic atomic no-clobber/STARTED helpers",
+      "generic raw-preserve-before-score and digest verification",
+      "stable outcome-independent control-plane pointer helpers"
+    ]
+  },
   "stale_or_superseded": [
-    "orchestrator run report 406821a3d9c8506a34927d902af9a1481e622eb3",
-    "prior analyst recommendation to create an RV01 real-delay successor: completed by PR #134 and workflow 34978554838",
-    "Control Brain wording that delay may be merely weight-conditioned: superseded by R01-17 component-capability evidence",
-    "any recommendation to continue RV01 immediately after R01-17: deprioritized in favor of central A01 P3/P4"
+    "ops/orchestrator-run-report is operationally stale for P3 readiness though scientifically current for R01-17",
+    "any recommendation to further characterize RV01 before central A01 P3/P4",
+    "assumption that P3 requires redesign of R-only scientific semantics; those semantics predate P2 and are already implemented fail-closed"
   ]
 }
