@@ -1,0 +1,46 @@
+{
+  "analysis_time_jst": "2026-09-15T18:55:00+09:00",
+  "schema": "sparkbrain-control-brain-state-v1",
+  "branch": "ops/control-brain-handoff",
+  "central_theory": "causal circulation through actual historical lineage changes later local competition without semantic/task labels or privileged global lookup",
+  "strategic_status": "A01_P2_DEVELOPMENT_SUPPORTED_NEXT_TEST_P3_P4_THEN_P5",
+  "line_priorities": [
+    {
+      "line": "A01_MD002",
+      "priority": 1,
+      "status": "PRIMARY",
+      "next_question": "Does selective circulation survive carrier-locus and bounded-ambiguity discrimination, then resist reduction to minimal explicit/recurrent causal memory?"
+    },
+    {
+      "line": "RV01_successor",
+      "priority": 2,
+      "status": "SECONDARY",
+      "next_question": "Is the mixed delay effect a genuine weight-conditioned mechanistic interaction or timing/numerical sensitivity?"
+    },
+    {
+      "line": "RV02_successor",
+      "priority": 3,
+      "status": "SECONDARY",
+      "next_question": "Why did causal-return readiness collapse before capability, under a distinct blind-preserving prospective identity?"
+    },
+    {
+      "line": "CX01_successor",
+      "priority": 4,
+      "status": "LOWER",
+      "next_question": "What mechanism specifically addresses the contingency-cycle frontier without benchmark-specific tuning?"
+    }
+  ],
+  "stop_reframe_rules": [
+    "Fail clean P3/P4 -> narrow or terminate A01 rather than rescue-tuning.",
+    "Pass P1-P4 but reduce under strengthened P5 to established-minimal explicit/recurrent causal memory -> stop claiming a new computational principle.",
+    "All registered non-privileged mechanism families fail or reduce -> reframe SparkBrain as an integrative cognitive architecture/testbed."
+  ],
+  "analyst_must_check": [
+    "new P3/P4 prospective evidence",
+    "carrier-locus falsification",
+    "genuine ambiguity retention and later resolution",
+    "strongest minimal explicit/recurrent reduction null",
+    "whether causal-circulation framing has become unnecessary or reducible",
+    "whether execution is drifting toward secondary work while central A01 is actionable"
+  ]
+}
