@@ -16,6 +16,7 @@ env:
   FREEZE_REF: freeze/a01-md002-p4-candidate-001-source-20260916
   CONTROL_REF: control/a01-md002-p4-candidate-001-started-20260916
   OWNER_REF: control/a01-md002-p4-candidate-001-owner-20260916
+  RECOVERY_PRESERVE_REF: preserve/a01-md002-p4-candidate-001-recovery-20260916
   RAW_PRESERVE_REF: preserve/a01-md002-p4-candidate-001-raw-20260916
   SCORED_PRESERVE_REF: preserve/a01-md002-p4-candidate-001-scored-20260916
   OUTPUT_ROOT: artifacts/v061/a01/md002-p4-candidate-001
@@ -47,7 +48,7 @@ jobs:
           test "${GITHUB_SHA}" = "${frozen_sha}"
           test "${GITHUB_SHA}" = "${control_sha}"
           test "$(git rev-parse HEAD)" = "${frozen_sha}"
-          for ref in "${OWNER_REF}" "${RAW_PRESERVE_REF}" "${SCORED_PRESERVE_REF}"; do
+          for ref in "${OWNER_REF}" "${RECOVERY_PRESERVE_REF}" "${RAW_PRESERVE_REF}" "${SCORED_PRESERVE_REF}"; do
             if git ls-remote --exit-code --heads origin "${ref}" >/dev/null 2>&1; then
               echo "refusing consumed P4 identity: ${ref}" >&2
               exit 1
@@ -148,10 +149,12 @@ jobs:
           test "$(git rev-parse "refs/remotes/origin/${OWNER_REF}")" = "${claim_commit}"
           test "$(git rev-parse "${claim_commit}^")" = "${GITHUB_SHA}"
           git show -s --format=%B "${claim_commit}" | grep -F "workflow_run_id=${GITHUB_RUN_ID}"
-          if git ls-remote --exit-code --heads origin "${RAW_PRESERVE_REF}" >/dev/null 2>&1; then
-            echo "refusing to move existing raw preserve ref" >&2
-            exit 1
-          fi
+          for ref in "${RECOVERY_PRESERVE_REF}" "${RAW_PRESERVE_REF}"; do
+            if git ls-remote --exit-code --heads origin "${ref}" >/dev/null 2>&1; then
+              echo "refusing to move existing preserve ref: ${ref}" >&2
+              exit 1
+            fi
+          done
           mkdir -p "${OUTPUT_ROOT}/_execution_metadata"
           cat > "${OUTPUT_ROOT}/_execution_metadata/execution_metadata.json" <<EOF
           {
@@ -162,6 +165,7 @@ jobs:
             "control_ref": "${CONTROL_REF}",
             "execution_owner_ref": "${OWNER_REF}",
             "execution_owner_claim_commit": "${claim_commit}",
+            "recovery_preserve_ref": "${RECOVERY_PRESERVE_REF}",
             "raw_preserve_ref": "${RAW_PRESERVE_REF}",
             "scored_preserve_ref": "${SCORED_PRESERVE_REF}",
             "execution_authority_type": "USER_EXPLICIT_A01_LINE_SCOPED_EXECUTION_AUTHORIZATION",
@@ -193,6 +197,8 @@ jobs:
           git commit -m "Preserve A01 P4 raw evidence ${GITHUB_RUN_ID}"
           raw_commit="$(git rev-parse HEAD)"
           printf '%s\n' "${raw_commit}" > "${RUNNER_TEMP}/p4-raw-commit-sha"
+          git push origin "${raw_commit}:refs/heads/${RECOVERY_PRESERVE_REF}"
+          touch "${RUNNER_TEMP}/p4-recovery-preserve-owner"
           git push origin "${raw_commit}:refs/heads/${RAW_PRESERVE_REF}"
           touch "${RUNNER_TEMP}/p4-raw-preserve-owner"
 
@@ -246,11 +252,16 @@ jobs:
           test "$(git rev-parse "${claim_commit}^")" = "${GITHUB_SHA}"
           git show -s --format=%B "${claim_commit}" | grep -F "workflow_run_id=${GITHUB_RUN_ID}"
 
-          if [ ! -f "${RUNNER_TEMP}/p4-raw-commit-sha" ]; then
-            echo "STARTED owner run did not produce a committed raw/terminal state" >&2
+          if git ls-remote --exit-code --heads origin "${RECOVERY_PRESERVE_REF}" >/dev/null 2>&1; then
+            git fetch origin "+refs/heads/${RECOVERY_PRESERVE_REF}:refs/remotes/origin/${RECOVERY_PRESERVE_REF}"
+            raw_commit="$(git rev-parse "refs/remotes/origin/${RECOVERY_PRESERVE_REF}")"
+          elif [ -f "${RUNNER_TEMP}/p4-raw-commit-sha" ]; then
+            raw_commit="$(cat "${RUNNER_TEMP}/p4-raw-commit-sha")"
+            git push origin "${raw_commit}:refs/heads/${RECOVERY_PRESERVE_REF}"
+          else
+            echo "owner run has no durable or local raw/terminal commit; recovery job will terminalize" >&2
             exit 1
           fi
-          raw_commit="$(cat "${RUNNER_TEMP}/p4-raw-commit-sha")"
           test "$(git rev-parse "${raw_commit}^")" = "${GITHUB_SHA}"
           git show -s --format=%B "${raw_commit}" | grep -F "Preserve A01 P4 raw evidence ${GITHUB_RUN_ID}"
           git show "${raw_commit}:${OUTPUT_ROOT}/_execution_metadata/execution_metadata.json" |
@@ -262,7 +273,7 @@ jobs:
             git fetch origin "+refs/heads/${RAW_PRESERVE_REF}:refs/remotes/origin/${RAW_PRESERVE_REF}"
             test "$(git rev-parse "refs/remotes/origin/${RAW_PRESERVE_REF}")" = "${raw_commit}"
           else
-            echo "raw preserve publication did not complete earlier; retrying exact owner raw/terminal commit"
+            echo "raw preserve publication did not complete earlier; promoting exact recovery commit"
             git push origin "${raw_commit}:refs/heads/${RAW_PRESERVE_REF}"
           fi
 
@@ -307,4 +318,117 @@ jobs:
           else
             echo "no new scored-stage bytes; reusing the existing raw-terminal commit"
           fi
+          git push origin "HEAD:refs/heads/${SCORED_PRESERVE_REF}"
+
+  recover-terminal:
+    needs: execute-once
+    if: ${{ always() }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout exact STARTED source for terminal recovery
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+
+      - name: Recover owner-bound terminal state without reacquiring
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "${GITHUB_REF}" = "refs/heads/${CONTROL_REF}"
+          git fetch origin \
+            "+refs/heads/${FREEZE_REF}:refs/remotes/origin/${FREEZE_REF}" \
+            "+refs/heads/${CONTROL_REF}:refs/remotes/origin/${CONTROL_REF}"
+          test "$(git rev-parse "refs/remotes/origin/${FREEZE_REF}")" = "${GITHUB_SHA}"
+          test "$(git rev-parse "refs/remotes/origin/${CONTROL_REF}")" = "${GITHUB_SHA}"
+
+          if ! git ls-remote --exit-code --heads origin "${OWNER_REF}" >/dev/null 2>&1; then
+            echo "STARTED ownership was never acquired; nothing to recover"
+            exit 0
+          fi
+          git fetch origin "+refs/heads/${OWNER_REF}:refs/remotes/origin/${OWNER_REF}"
+          claim_commit="$(git rev-parse "refs/remotes/origin/${OWNER_REF}")"
+          test "$(git rev-parse "${claim_commit}^")" = "${GITHUB_SHA}"
+          owner_message="$(git show -s --format=%B "${claim_commit}")"
+          owner_run_id="$(printf '%s\n' "${owner_message}" | sed -n 's/^workflow_run_id=//p')"
+          test -n "${owner_run_id}"
+          if [ "${owner_run_id}" != "${GITHUB_RUN_ID}" ]; then
+            echo "durable owner belongs to workflow run ${owner_run_id}; this rejected run must not recover it"
+            exit 0
+          fi
+          printf '%s\n' "${owner_message}" | grep -F "source_sha=${GITHUB_SHA}"
+
+          if git ls-remote --exit-code --heads origin "${SCORED_PRESERVE_REF}" >/dev/null 2>&1; then
+            echo "final scored/terminal preserve ref already exists"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if git ls-remote --exit-code --heads origin "${RECOVERY_PRESERVE_REF}" >/dev/null 2>&1; then
+            git fetch origin "+refs/heads/${RECOVERY_PRESERVE_REF}:refs/remotes/origin/${RECOVERY_PRESERVE_REF}"
+            recovery_sha="$(git rev-parse "refs/remotes/origin/${RECOVERY_PRESERVE_REF}")"
+            test "$(git rev-parse "${recovery_sha}^")" = "${GITHUB_SHA}"
+            git show -s --format=%B "${recovery_sha}" | grep -F "Preserve A01 P4 raw evidence ${GITHUB_RUN_ID}"
+            git show "${recovery_sha}:${OUTPUT_ROOT}/_execution_metadata/execution_metadata.json" |
+              grep -F "\"workflow_run_id\": \"${GITHUB_RUN_ID}\""
+            git show "${recovery_sha}:${OUTPUT_ROOT}/_execution_metadata/execution_metadata.json" |
+              grep -F "\"frozen_source_git_sha\": \"${GITHUB_SHA}\""
+
+            if git ls-remote --exit-code --heads origin "${RAW_PRESERVE_REF}" >/dev/null 2>&1; then
+              git fetch origin "+refs/heads/${RAW_PRESERVE_REF}:refs/remotes/origin/${RAW_PRESERVE_REF}"
+              test "$(git rev-parse "refs/remotes/origin/${RAW_PRESERVE_REF}")" = "${recovery_sha}"
+            else
+              git push origin "${recovery_sha}:refs/heads/${RAW_PRESERVE_REF}"
+            fi
+
+            if git cat-file -e "${recovery_sha}:${OUTPUT_ROOT}/_terminal/FAILED_BEFORE_RAW.json" 2>/dev/null; then
+              git push origin "${recovery_sha}:refs/heads/${SCORED_PRESERVE_REF}"
+              exit 0
+            fi
+
+            git checkout --detach "${recovery_sha}"
+            mkdir -p "${OUTPUT_ROOT}/_terminal"
+            cat > "${OUTPUT_ROOT}/_terminal/FAILED_AFTER_RAW_BEFORE_DURABLE_SCORE.json" <<EOF
+          {
+            "status": "P4_TERMINAL_FAILURE_AFTER_STARTED_RAW_DURABLE_SCORE_NOT_DURABLE",
+            "frozen_source_git_sha": "${GITHUB_SHA}",
+            "execution_owner_claim_commit": "${claim_commit}",
+            "workflow_run_id": "${GITHUB_RUN_ID}",
+            "same_identity_rerun_allowed": false
+          }
+          EOF
+            git add -f "${OUTPUT_ROOT}/_terminal/FAILED_AFTER_RAW_BEFORE_DURABLE_SCORE.json"
+            git commit -m "Preserve A01 P4 recovered terminal ${GITHUB_RUN_ID}"
+            git push origin "HEAD:refs/heads/${SCORED_PRESERVE_REF}"
+            exit 0
+          fi
+
+          git checkout --detach "${GITHUB_SHA}"
+          mkdir -p "${OUTPUT_ROOT}/_execution_metadata" "${OUTPUT_ROOT}/_terminal"
+          cat > "${OUTPUT_ROOT}/_execution_metadata/terminal_recovery.json" <<EOF
+          {
+            "candidate_id": "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
+            "frozen_source_git_sha": "${GITHUB_SHA}",
+            "execution_owner_ref": "${OWNER_REF}",
+            "execution_owner_claim_commit": "${claim_commit}",
+            "workflow_run_id": "${GITHUB_RUN_ID}",
+            "recovery_reason": "owner durable but no raw recovery commit became durable",
+            "same_identity_rerun_allowed": false
+          }
+          EOF
+          cat > "${OUTPUT_ROOT}/_terminal/FAILED_BEFORE_DURABLE_RAW.json" <<EOF
+          {
+            "status": "P4_TERMINAL_FAILURE_AFTER_STARTED_BEFORE_DURABLE_RAW",
+            "frozen_source_git_sha": "${GITHUB_SHA}",
+            "execution_owner_claim_commit": "${claim_commit}",
+            "workflow_run_id": "${GITHUB_RUN_ID}",
+            "same_identity_rerun_allowed": false
+          }
+          EOF
+          git add -f "${OUTPUT_ROOT}/_execution_metadata/terminal_recovery.json" \
+            "${OUTPUT_ROOT}/_terminal/FAILED_BEFORE_DURABLE_RAW.json"
+          git commit -m "Preserve A01 P4 no-raw terminal ${GITHUB_RUN_ID}"
           git push origin "HEAD:refs/heads/${SCORED_PRESERVE_REF}"
