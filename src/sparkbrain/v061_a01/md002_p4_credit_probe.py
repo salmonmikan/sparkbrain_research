@@ -44,7 +44,7 @@ class P4MergedLineageCreditProbe:
 def probe_merged_lineage_credit(
     bridge: Any,
     *,
-    boundary_event: boundary.BoundaryEvent,
+    boundary: boundary.BoundaryEvent,
     external: foundation.RuntimePulse,
 ) -> P4MergedLineageCreditProbe:
     """Apply one already-admissible external event and record merged credit scope.
@@ -56,15 +56,15 @@ def probe_merged_lineage_credit(
     evidence about lineage-specific causal credit.
     """
 
-    source_proposal_ids = tuple(dict.fromkeys(boundary_event.source_proposal_ids))
+    source_proposal_ids = tuple(dict.fromkeys(boundary.source_proposal_ids))
     if len(source_proposal_ids) < 2:
         raise ValueError("P4 merged-lineage credit probe requires plural source ancestry")
-    if len(source_proposal_ids) != len(boundary_event.source_proposal_ids):
+    if len(source_proposal_ids) != len(boundary.source_proposal_ids):
         raise ValueError("P4 merged-lineage source proposal IDs must be unique")
-    if boundary_event.event_id not in external.parent_event_ids:
+    if boundary.event_id not in external.parent_event_ids:
         raise ValueError("P4 merged-lineage credit probe requires exact-parent evidence")
 
-    resolution = bridge.observe_external(boundary_event, external)
+    resolution = bridge.observe_external(boundary, external)
     before = dict(resolution.path_reliability_before)
     after = dict(resolution.path_reliability_after)
     credited_path_ids = resolution.path_ids
@@ -83,7 +83,7 @@ def probe_merged_lineage_credit(
         credit_scope = "partial-resolved-paths"
 
     return P4MergedLineageCreditProbe(
-        boundary_event_id=boundary_event.event_id,
+        boundary_event_id=boundary.event_id,
         source_proposal_ids=source_proposal_ids,
         credited_path_ids=credited_path_ids,
         status=status,
