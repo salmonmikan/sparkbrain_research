@@ -41,11 +41,11 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          python -m ruff check --fix \
+          python -m ruff format \
             src/sparkbrain/research/rv01_r01_17_real_delay.py \
             scripts/run_rv01_r01_17_real_delay.py \
             tests/test_rv01_r01_17_real_delay.py
-          python -m ruff format \
+          python -m ruff check --fix \
             src/sparkbrain/research/rv01_r01_17_real_delay.py \
             scripts/run_rv01_r01_17_real_delay.py \
             tests/test_rv01_r01_17_real_delay.py
