@@ -1,10 +1,13 @@
 {
-  "analysis_timestamp": "2026-09-15T18:13:46+09:00",
+  "run_timestamp": "2026-09-15T18:21:57+09:00",
   "run_type": "SparkBrain Research Orchestrator",
+  "supersedes_interim_report_commit": "28399dd3c2848d22ccd051094041b9b5e44f7c40",
+  "correction_note": "The earlier 1813 history entry mislabeled b1b4... as a scorer SHA-256. It is the capability_suite_hash / immutable result provenance. The earlier history is preserved append-only; this state is authoritative for the current run.",
   "evidence_analyst_handoff": {
     "branch": "ops/evidence-analyst-handoff",
     "commit": "6f2c5a54d1d6ae4e4d03731f039f727478a74e6c",
-    "status": "followed_with_p4_stop_and_rv01_pivot"
+    "status": "followed",
+    "decision": "A01 old-confirmatory P4 stopped after no complete pre-P2 executable scoring/replay/decision contract was found; pivoted to RV01 per handoff"
   },
   "authoritative_refs_inspected": {
     "main": "ba16bf10535141c2edb29bbe3439ba0a38e71179",
@@ -15,55 +18,59 @@
   },
   "active_lines": {
     "A01_MD002": {
-      "status": "P2 development positive; P4 old-confirmatory execution path blocked by missing complete pre-P2 executable scorer/decision contract",
-      "p2_result": "SUPPORTED_SELECTIVE_CIRCULATION",
-      "next": "new prospective exploratory/development P4 unless complete pre-P2 contract is recovered"
+      "p2": "SUPPORTED_SELECTIVE_CIRCULATION development result; consumed",
+      "p4": "old-confirmatory executable path STOP; no complete pre-P2 scorer/decision/runner verified",
+      "next": "distinct prospective exploratory/development P4 unless stronger pre-P2 contract is recovered"
     },
     "RV01_R01_16": {
-      "status": "consumed exposed-development capability with new post-hoc interaction diagnostic",
-      "weight": "WEIGHT_SUPPORTED_100_100",
-      "delay": "DELAY_MIXED_0_support_54_negative_46_discordant",
-      "combined": "COMBINED_SUPPORTED_100_100",
-      "new_diagnostic": "delay visible 46/100 with learned weight retained; 0/100 after weight reset"
+      "capability_identity": "rv01-r01-16-capability-02b3d80744d0eb10-65ebe33d70af",
+      "aggregate": {
+        "weight": "WEIGHT_SUPPORTED 100/100",
+        "delay": "DELAY_MIXED 0 support / 54 negative / 46 discordant",
+        "combined": "COMBINED_SUPPORTED 100/100"
+      },
+      "new_post_hoc_diagnostic": {
+        "F0_vs_FW_different": "100/100",
+        "FD_vs_FWD_different": "100/100",
+        "F0_vs_FD_different": "46/100",
+        "FW_vs_FWD_different": "0/100",
+        "F0_vs_FWD_different": "100/100",
+        "visible_delay_survival_after_weight_reset": "0/46",
+        "interpretation": "asymmetric weight-conditioned expression of learned-delay contribution at frozen behavioral endpoint"
+      }
     },
     "RV02_RD005": {
-      "status": "D1_ZERO_READY_STOP_consumed_blind_unopened"
+      "status": "D1_ZERO_READY_STOP; consumed; blind unopened"
     },
     "CX01": {
-      "status": "candidate_002_formal_negative_consumed"
+      "status": "candidate-002 formal NEGATIVE; consumed"
     }
   },
   "branches_advanced": {
-    "review/rv01-r01-16-delay-interaction-diagnostic-20260915": "2e655150a85491220c914b017b048fe01df9456b"
+    "review/rv01-r01-16-delay-interaction-diagnostic-20260915": "78790d08b1da9c7efcb397203ca77cce34a7a487"
   },
   "commits_created": [
-    "2e655150a85491220c914b017b048fe01df9456b"
+    "2e655150a85491220c914b017b048fe01df9456b",
+    "78790d08b1da9c7efcb397203ca77cce34a7a487"
   ],
   "pull_requests": [
     {
       "number": 133,
       "title": "RV01 R01-16: record delay interaction diagnostic",
-      "head": "2e655150a85491220c914b017b048fe01df9456b",
+      "head": "78790d08b1da9c7efcb397203ca77cce34a7a487",
       "base": "02b3d80744d0eb10cb0d90fc38d3c55729d7ab99",
-      "status": "open_ci_in_progress_not_merged"
+      "status": "open_current_head_ci_and_fresh_codex_review_in_progress_not_merged",
+      "initial_codex_finding": "b1b4 value mislabeled as scorer SHA; corrected to capability suite hash / immutable result provenance",
+      "scientific_interpretation_changed_by_fix": false
     }
   ],
   "exact_head_merges": [],
   "workflows_experiments_executed": [],
   "new_scientific_information": {
     "produced": true,
-    "type": "post_hoc_mechanistic_diagnostic_from_immutable_consumed_development_evidence",
     "line": "RV01 R01-16",
-    "result": {
-      "F0_vs_FW_different": "100/100",
-      "FD_vs_FWD_different": "100/100",
-      "F0_vs_FD_different": "46/100",
-      "FW_vs_FWD_different": "0/100",
-      "F0_vs_FWD_different": "100/100",
-      "delay_visible_survival_after_weight_reset": "0/46",
-      "interpretation": "asymmetric weight-conditioned expression of learned-delay contribution at frozen behavioral endpoint"
-    },
-    "claim_scope": "post-hoc exposed-development diagnostic; not confirmatory/formal"
+    "type": "post_hoc_mechanistic_diagnostic_from_immutable_consumed_exposed-development_evidence",
+    "claim_scope": "development/post-hoc only; not confirmatory/formal"
   },
   "consumed_identities_referenced": [
     "A01_MD-001",
@@ -81,40 +88,43 @@
     "new_started_control_refs": [],
     "rv01_capability_preserve_commit": "0a25eac227d7ac0e8dbd5532d450ed2d50efa105",
     "rv01_raw_sha256": "e3b6e8c7ed6db423919c4360a5291ac207544566beb4656954be344cb253f335",
-    "rv01_scorer_sha256": "b1b4d555d30630d1051482563696981261619143099216ab893bbea481d69392d"
+    "rv01_capability_suite_hash": "b1b4d555d30630d1051482563696981261619143099216ab893bbea481d69392d",
+    "rv01_source_package_manifest_sha256": "bc36c7da23f4d6b8fa1ee7d4d8c7bacdfd5970818482e146a188837247332582",
+    "rv01_retained_history_registry_sha256": "232f4fb23b74662d10adca2990e1b030bbb1c74e45fb67f607982738570795bd"
   },
   "blockers": [
-    "A01 P4 complete pre-P2 executable scorer/replay/decision contract not verified",
-    "RV01 successor requires fresh prospective identity/worlds/seeds and preregistered dual endpoints",
+    "A01 P4 complete pre-P2 executable scoring/replay/decision contract not verified",
+    "RV01 successor requires fresh prospective identity/worlds/seeds and preregistered orthogonal endpoints",
     "RV02 successor must remain distinct and blind-preserving",
-    "PR #133 CI incomplete at final merge check"
+    "PR #133 current-head CI and fresh Codex review still in progress at final merge check"
   ],
   "concurrency_reconciliation": [
-    "Re-fetched authoritative RV01 head immediately before branching; no movement detected",
-    "PR #133 head/base remained exact at merge review; merge skipped because CI was incomplete"
+    "RV01 authoritative head re-fetched immediately before branching; no movement detected",
+    "PR #133 head moved only through this run's provenance-label correction; old-head check/review state was not reused",
+    "Exact-head merge skipped because current-head checks/review remained incomplete"
   ],
   "human_review_overrides": [],
   "obsolete_prs_archived_closed": [],
   "main_integration": [],
   "branch_classifications_manual_cleanup": [
-    "historical A01 P4 fixture/trace-binding branches: evidence-bearing/prospective-construction history; superseded as immediately executable confirmatory path; do not delete automatically"
+    "A01 historical P4 fixture/trace-binding branches: evidence-bearing/prospective construction history; superseded as immediate old-confirmatory execution path; do not delete automatically"
   ],
   "next_ready_actions": [
     {
       "rank": 1,
-      "action": "RV01 distinct weight-delay interaction successor with route endpoint plus orthogonal timing/trajectory endpoint",
+      "action": "RV01 distinct weight-delay interaction successor with fresh worlds/seeds/new identity, existing route endpoint plus orthogonal timing/trajectory-sensitive endpoint preregistered outcome-blind",
       "information_value": "HIGH",
       "distance": "MODERATE"
     },
     {
       "rank": 2,
-      "action": "A01 P4 as distinct prospective exploratory/development candidate unless complete pre-P2 contract is recovered",
+      "action": "A01 P4 as a distinct prospective exploratory/development candidate unless a complete pre-P2 contract is recovered",
       "information_value": "HIGH",
       "distance": "MODERATE"
     },
     {
       "rank": 3,
-      "action": "RV02 blind-preserving zero-ready successor",
+      "action": "RV02 blind-preserving zero-ready successor under a distinct identity",
       "information_value": "HIGH",
       "distance": "MODERATE"
     }
