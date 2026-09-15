@@ -243,3 +243,50 @@ def test_p4_probe_validates_unknown_path_before_consuming_boundary() -> None:
 
     assert boundary.event_id in consistency.state_dict()["pending"]
     assert consistency.resolutions == []
+
+
+def test_p4_probe_rejects_reused_boundary_event_before_second_credit() -> None:
+    expectation = _expectation()
+    ledger = _ledger()
+    consistency = UntypedBoundaryConsistency(ledger)
+    boundary = _boundary(("proposal-b", "proposal-c"), event_id="boundary-reused")
+    consistency.register_boundary(boundary)
+    first_external = RuntimePulse(
+        "external-first",
+        45.0,
+        "world:x",
+        1.0,
+        1,
+        EventOrigin.EXTERNAL,
+        parent_event_ids=(boundary.event_id,),
+    )
+    ledger.register_external(first_external)
+    bridge = A01TransientCreditBridge(expectation, consistency, ledger)
+    first_probe = probe_merged_lineage_credit(
+        bridge,
+        boundary=boundary,
+        external=first_external,
+    )
+    assert first_probe.credit_scope == "all-resolved-paths"
+
+    consistency.register_boundary(boundary)
+    second_external = RuntimePulse(
+        "external-second",
+        46.0,
+        "world:x",
+        1.0,
+        1,
+        EventOrigin.EXTERNAL,
+        parent_event_ids=(boundary.event_id,),
+    )
+    ledger.register_external(second_external)
+
+    with pytest.raises(ValueError, match="boundary event must not be reused"):
+        probe_merged_lineage_credit(
+            bridge,
+            boundary=boundary,
+            external=second_external,
+        )
+
+    assert boundary.event_id in consistency.state_dict()["pending"]
+    assert len(consistency.resolutions) == 1
