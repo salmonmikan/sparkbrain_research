@@ -5,7 +5,7 @@ from typing import Any, Literal
 
 from sparkbrain.v06.boundary import BoundaryEvent
 from sparkbrain.v06.foundation import RuntimePulse, validate_runtime_mapping
-from sparkbrain.v061_a01.credit_bridge import A01CausalCreditStatus, A01TransientCreditBridge
+from sparkbrain.v061_a01 import credit_bridge
 
 
 P4CreditScope = Literal[
@@ -42,7 +42,7 @@ class P4MergedLineageCreditProbe:
 
 
 def probe_merged_lineage_credit(
-    bridge: A01TransientCreditBridge,
+    bridge: credit_bridge.A01TransientCreditBridge,
     *,
     boundary: BoundaryEvent,
     external: RuntimePulse,
@@ -75,8 +75,8 @@ def probe_merged_lineage_credit(
     )
 
     if not credited_path_ids or resolution.status not in {
-        A01CausalCreditStatus.EXACT_MATCH,
-        A01CausalCreditStatus.EXACT_CONTRADICTION,
+        credit_bridge.A01CausalCreditStatus.EXACT_MATCH,
+        credit_bridge.A01CausalCreditStatus.EXACT_CONTRADICTION,
     }:
         credit_scope: P4CreditScope = "no-credit"
     elif set(changed_path_ids) == set(credited_path_ids):
