@@ -1,0 +1,81 @@
+{
+  "timestamp_jst": "2026-09-16T06:32:00+09:00",
+  "repository": "salmonmikan/sparkbrain_research",
+  "main": "ba16bf10535141c2edb29bbe3439ba0a38e71179",
+  "control_brain_latest_time_jst": "2026-09-16 00:30",
+  "evidence_analyst_latest_time_jst": "2026-09-16 05:00",
+  "orchestrator_latest_durable_report": {
+    "worker_role": "sub",
+    "time_jst": "2026-09-16 05:30"
+  },
+  "active_frontier": {
+    "line": "A01 MD-002 P4",
+    "pr": 137,
+    "branch": "research/v061-a01-md002-p4-candidate-001-20260916",
+    "head_observed_during_stewardship": "9507ac6c1623ddbe435245e086d56644ab2dd43e",
+    "concurrency_note": "MAIN was actively advancing this branch during stewardship; no stewardship mutation was made to the branch, PR implementation, workflow, freeze timing, or candidate identity."
+  },
+  "doctrine_status": "partially_compliant",
+  "doctrine_findings": {
+    "main_frontier_separation": "compliant_for_current_a01_frontier",
+    "legacy_main_drift": [
+      ".github/workflows/cx01-formal-one-way.yml",
+      ".github/workflows/cx01-dispatch-probe-target.yml",
+      ".github/workflows/cx01-dispatch-capability-probe.yml",
+      ".github/workflows/cx01-candidate-002-launch-bridge.yml",
+      ".github/workflows/cx01-candidate-002-preserve-evidence.yml"
+    ],
+    "legacy_main_drift_action": "deferred_non_blocking"
+  },
+  "issue_changes": [
+    {
+      "issue": 129,
+      "action": "closed_completed",
+      "reason": "atomic remote STARTED/no-clobber control is demonstrably in active use on later one-way executions; historical duplicate incident preserved"
+    },
+    {
+      "issue": 138,
+      "action": "created",
+      "purpose": "question-scoped A01 P4 falsifiable operational tracking"
+    },
+    {
+      "issue": 139,
+      "action": "created",
+      "purpose": "tag namespace ruleset/protection governance gap"
+    }
+  ],
+  "freeze_migration": {
+    "legacy_freeze_branch_count": 12,
+    "git_tag_count": 0,
+    "legacy_tag_mirrors_created": 0,
+    "legacy_branches_modified": 0,
+    "mapping_doc": "reports/repository_steward/legacy_freeze_map.md",
+    "status": "legacy_preserved_prospective_tag_policy_not_yet_enforced"
+  },
+  "tag_protection": {
+    "repository_ruleset_count": 0,
+    "status": "governance_gap",
+    "tracking_issue": 139,
+    "write_tooling": "unavailable_in_current_connector_for_tag_creation_and_ruleset_mutation"
+  },
+  "preserve_index": {
+    "existing_preserve_refs_moved_or_rewritten": 0,
+    "stewardship_mapping_updated": true
+  },
+  "main_promotion_candidates": [
+    "exact source/runtime manifest binding and verification",
+    "atomic remote STARTED / no-clobber / identity-collision helpers",
+    "raw-preserve-before-score and digest-verification helpers",
+    "explicit BoundaryEvent replay idempotence as a generic runtime correctness primitive",
+    "stable control-plane pointer/index helpers without hypothesis-specific semantics"
+  ],
+  "main_promotions_performed": 0,
+  "immutable_refs_untouched": true,
+  "scientific_experiments_executed": 0,
+  "one_way_identities_consumed": 0,
+  "deferred": [
+    "install tag protection/rulesets when safe write tooling is available",
+    "create exact-SHA annotated tag mirrors for legacy freeze branches only after protection/conventions are safely available",
+    "extract legacy CX01-specific main workflows only when it does not displace central research throughput"
+  ]
+}
