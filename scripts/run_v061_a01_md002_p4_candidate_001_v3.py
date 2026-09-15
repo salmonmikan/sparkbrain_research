@@ -18,6 +18,26 @@ import run_v061_a01_md002_p4_candidate_001_v2 as core
 from sparkbrain.v061_a01.md002_p4_trace_binding import P4RetainedTraceInput
 from sparkbrain.v061_a01.md002_protocol import canonical_sha256
 
+_original_contract = core._contract
+
+
+def _contract(source_sha: str) -> dict[str, Any]:
+    """Clarify the prospective trace scope and rebind the contract digest."""
+
+    value = _original_contract(source_sha)
+    value.pop("contract_sha256", None)
+    value["retained_trace_binding"]["boundary_source"] = (
+        "after fixed prior-relation calibration, every condition-stage P4 "
+        "BoundaryEvent actually registered by the assay is retained as an "
+        "md002-p4-boundary-event row"
+    )
+    value["retained_trace_binding"]["trace_scope_start"] = (
+        "immediately after deterministic prior-relation calibration and before "
+        "the first condition-stage P4 BoundaryEvent"
+    )
+    value["contract_sha256"] = canonical_sha256(value)
+    return value
+
 
 def _trace_from_json(values: list[dict[str, Any]]) -> tuple[dict[str, Any], ...]:
     rows: list[dict[str, Any]] = []
@@ -67,6 +87,7 @@ def _validate_trace_binding(row: dict[str, Any]) -> str | None:
     return None
 
 
+core._contract = _contract
 core._validate_trace_binding = _validate_trace_binding
 
 
