@@ -96,7 +96,9 @@ def _validate_causal_ancestry(bridge: Any, proposal_ids: tuple[str, ...]) -> Non
         visited.add(proposal_id)
         proposal = bridge.ledger.proposals.get(proposal_id)
         if proposal is None:
-            raise ValueError(f"P4 merged-lineage boundary references unknown proposal: {proposal_id}")
+            raise ValueError(
+                f"P4 merged-lineage boundary references unknown proposal: {proposal_id}"
+            )
         paths.update(proposal.local_path_ids)
         pending.extend(proposal.parent_proposal_ids)
 
