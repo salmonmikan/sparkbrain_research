@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-09-16T20:34:41+09:00",
+  "timestamp": "2026-09-16T21:35:16+09:00",
   "worker_role": "sub",
-  "Evidence Analyst commit": "c456415de114679a6f10d161f05f1202183933b3",
+  "Evidence Analyst commit": "b813aff863f50ea9963984a8e633af697ba3a550",
   "consumed_lanes": {
     "main_lane": {
       "target": "A01 Family-B distributed-field-trace Generation-1 exact one-way execution-package construction",
@@ -19,21 +19,25 @@
   "execution_allowed": false,
   "SUB active claim": null,
   "MAIN work explicitly avoided": [
-    "research/v061-a01-n3-adapter@8612d01fd9048b881bd8850e13e94ece954a053d",
     "research/v061-a01-family-b-gen1-execution-package-20260916@8612d01fd9048b881bd8850e13e94ece954a053d",
     "a01-family-b-distributed-field-trace-gen1-v1",
-    "all Family-B implementation/binding/CI/review/STARTED/preserve/score/execution work"
+    "all Family-B candidate implementation, source/protocol/package binding, CI/review, STARTED/control, preserve, scoring, workflow and execution work"
   ],
   "authoritative refs": {
-    "main": "ba16bf10535141c2edb29bbe3439ba0a38e71179",
-    "control_brain_handoff": "75c3087dcd7a09ca8dbcb9d4b58a4e1512a863bf",
-    "evidence_analyst_handoff": "c456415de114679a6f10d161f05f1202183933b3",
-    "orchestrator_report_parent_before_run": "568a0ad09665f4712457327114b4b2b48d07b964",
-    "a01_integrated_base": "8612d01fd9048b881bd8850e13e94ece954a053d",
+    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "control_brain_handoff": "cecb3418f54ef2c89806cbf0d0d8012adc067cca",
+    "evidence_analyst_handoff": "b813aff863f50ea9963984a8e633af697ba3a550",
+    "orchestrator_report_parent_before_run": "62a80fc858a17ead59bc7fb644368809a88caaeb",
     "family_b_execution_package_branch": "8612d01fd9048b881bd8850e13e94ece954a053d",
+    "family_b_identity": "a01-family-b-distributed-field-trace-gen1-v1",
     "rv01_status": "19cf98ec08635829f20c9ee21f4949a8a624d4ec",
     "rv02_status": "c6b33606850ef591690074f50ed92a4c9400b8bd",
-    "cx01_status": "251f7350b7a30c50e8b8a3329b6ff920d85bf493"
+    "cx01_status": "251f7350b7a30c50e8b8a3329b6ff920d85bf493",
+    "latest_main_governance_merge": "PR #146 -> ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "latest_observed_ci": "35095163387 success",
+    "git_tags_observed": 0,
+    "open_pr_count": 0,
+    "open_issues": [139, 145]
   },
   "branches/PRs advanced": [],
   "workflows/experiments": {
@@ -43,11 +47,13 @@
     "candidate_output_acquired": false,
     "new_scoring": false,
     "new_freeze_or_preserve": false,
-    "merge_performed": false
+    "merge_performed": false,
+    "research_branch_modified": false
   },
   "scientific/readiness results": [
     "No new scientific measurement or readiness package was created.",
-    "Valid no-op: current Analyst handoff provides no reserved independent SUB lane or fallback."
+    "Valid no-op: current Analyst handoff provides no reserved independent SUB lane or fallback.",
+    "Concurrent main governance movement via PR #146 was observed but is not SUB research work and was not touched."
   ],
   "consumed identities": {
     "observed_relevant": [
@@ -63,17 +69,17 @@
     "newly_consumed_this_run": []
   },
   "blockers": [
-    "No independent SUB science/readiness/support lane is currently reserved by the Analyst; SUB must not manufacture one."
+    "No independent SUB science/readiness/support lane is reserved by the latest Analyst handoff; SUB must not manufacture one.",
+    "MAIN Family-B blockers remain MAIN-owned and cannot be taken by SUB."
   ],
   "collision reconciliation": {
     "latest_analyst_rechecked_before_write": true,
-    "latest_analyst_tip": "c456415de114679a6f10d161f05f1202183933b3",
+    "latest_analyst_tip": "b813aff863f50ea9963984a8e633af697ba3a550",
     "main_lane_collision": false,
     "main_work_touched": false,
     "analyst_split_invalidated": false,
     "lane_rejected_reason": null,
-    "open_pr_count": 0,
-    "open_issues": [139, 145]
+    "concurrent_main_change_observed": "main advanced to ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d via merged governance PR #146; no collision with SUB lane because SUB lane is null"
   },
   "integrity state": {
     "immutable_refs_modified": false,
