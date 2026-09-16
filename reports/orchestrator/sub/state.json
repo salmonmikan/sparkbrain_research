@@ -1,12 +1,13 @@
 {
-  "timestamp": "2026-09-17T05:32:57+09:00",
+  "timestamp": "2026-09-17T06:36:19+09:00",
   "worker_role": "sub",
-  "evidence_analyst_commit": "a5dd5e737a665fead3a98538ed0735cf5ab20006",
+  "evidence_analyst_commit": "7bfef197fe0b255e395d2ea18ebadb59f2ca9fb6",
   "consumed_lanes": {
     "main_lane": {
-      "target": "C19-v2 exact scientific implementation-binding supplement and machine-verifiable execution package",
+      "target": "C19-v2 frozen execution-contract conformance closure",
       "branch": "research/c19-truth-free-symbolic-adapter-v2-20260917",
-      "current_head_observed": "4ed49e9985b120486efba2db37e558848bc36fe0",
+      "analyst_observed_head": "17ce3e61d17436337d13c90c6c86184fcad09f22",
+      "current_head_observed": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
       "frozen_science_anchor": "90c936a7abca7eba0dac1f977753503551e73368",
       "planned_identity": "c19-external-v2-official-v1",
       "execution_allowed": false,
@@ -14,7 +15,8 @@
     },
     "sub_lane": null,
     "sub_fallback": null,
-    "no_sub_lane_reason": "Terminal-provenance v2 is complete; RV01/RV02/CX01 have no fresh prospective successor; A01 reopening would require new/post-outcome science; C19 exact implementation binding and representation-confound audit are MAIN critical path; Issue #139 is governance-only."
+    "blocked_until": "A newer Evidence Analyst prospectively reserves genuinely independent SUB work.",
+    "no_sub_lane_reason": "No fresh independent prospective secondary object is reserved. Terminal-provenance v2 is complete; A01/RV01/RV02/CX01 have no fresh successor; all remaining C19 scorer/preservation/binding ambiguity is MAIN critical path; Issue #139 is governance."
   },
   "selected_independent_lane": null,
   "independence_from_main_critical_path": true,
@@ -23,42 +25,32 @@
   "main_work_explicitly_avoided": [
     "research/c19-truth-free-symbolic-adapter-v2-20260917",
     "c19-external-v2-official-v1",
-    "C19 exact condition executor bindings",
-    "five frozen C19 baseline factory/config/checkpoint/runtime/resource bindings",
-    "direct_stateless and explicit_state_probabilistic representation-confound audit",
-    "I2 G0/G1 byte-identity audit",
+    "C19 frozen raw/scorer/preservation package",
+    "PRE_START_SCORER_SEMANTICS_AMBIGUOUS resolution",
     "all C19 CI/verifier/package/binding blockers",
     "official Belief-R data access and one-way execution"
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "main_protected": false,
     "control_brain_handoff_tip": "b3e9da4b6eb65f01282db8f06f967f96e1ca8be0",
-    "evidence_analyst_tip": "a5dd5e737a665fead3a98538ed0735cf5ab20006",
-    "orchestrator_report_parent": "abcb755828259dc55f3854017e70f984b96ab73e",
-    "main_report_consumed": "43192d47c4229944d2be4e1c9dd9063d1cd257f8",
-    "sub_report_prior": "abcb755828259dc55f3854017e70f984b96ab73e",
+    "evidence_analyst_tip": "7bfef197fe0b255e395d2ea18ebadb59f2ca9fb6",
+    "orchestrator_report_parent": "e5748cac0753e1ae569e650e07e88c4091d669b4",
+    "main_report_consumed": "e5748cac0753e1ae569e650e07e88c4091d669b4",
+    "sub_report_prior_tip": "e5748cac0753e1ae569e650e07e88c4091d669b4",
     "completed_sub_methods_head": "d5317485a591439cb52d52b649b4930964cf2b3a",
-    "main_c19_current_head": "4ed49e9985b120486efba2db37e558848bc36fe0",
+    "main_c19_current_head": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
     "main_c19_frozen_science_anchor": "90c936a7abca7eba0dac1f977753503551e73368",
     "main_c19_ci_run": {
-      "run_id": 35141325228,
-      "head_sha": "4ed49e9985b120486efba2db37e558848bc36fe0",
-      "status": "completed",
-      "conclusion": "success"
-    },
-    "latest_analyst_ci_run": {
-      "run_id": 35145759110,
-      "head_sha": "a5dd5e737a665fead3a98538ed0735cf5ab20006",
+      "run_id": 35152618704,
+      "head_sha": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
       "status": "completed",
       "conclusion": "success"
     },
     "open_pr_count": 0,
     "open_issues": [139],
     "git_tags": [],
-    "repository_rulesets": [],
-    "legacy_freeze_control_preserve_evidence_refs_inspected": true,
-    "c19_started_control_preserve_freeze_evidence_refs_observed": []
+    "legacy_freeze_control_preserve_refs_inspected": true,
+    "c19_started_control_refs_observed": []
   },
   "branches_prs_advanced": {
     "sub_branches_created_or_advanced": [],
@@ -79,8 +71,8 @@
   "scientific_readiness_results": [
     "No new scientific measurement.",
     "No new SUB readiness result because the current Analyst handoff reserves no independent SUB lane or fallback.",
-    "The newer Analyst partition explicitly makes C19 exact scientific implementation binding and representation-confound auditing MAIN-only critical-path work.",
-    "C19 remained at 4ed49e9985b120486efba2db37e558848bc36fe0 during this SUB run; no concurrent C19 movement or STARTED authority was observed."
+    "Concurrent MAIN advanced C19 to 66c8eafe9863ed1b2455cc833a3dc498ce7721b0, closed the frozen 16-field raw schema and exact 55x1744 pair coverage with green CI 35152618704, and stopped at PRE_START_SCORER_SEMANTICS_AMBIGUOUS.",
+    "The remaining scorer semantic ambiguity is a MAIN blocker and was explicitly avoided by SUB."
   ],
   "consumed_identities": {
     "newly_consumed_this_run": [],
@@ -92,7 +84,7 @@
       "RV01 R01-16 family",
       "rv01-r01-17-real-delay-causal-timing-v1",
       "RV02 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
-      "CX01 Candidate-002"
+      "CX01 Candidate-002/formal evidence"
     ],
     "unconsumed_but_closed_or_reserved": {
       "a01-family-b-distributed-field-trace-gen1-v1": "rejected_before_started_static_reduction; no rescue/retune/rebind",
@@ -102,9 +94,10 @@
   },
   "blockers": [],
   "collision_reconciliation": {
-    "evidence_analyst_tip_final": "a5dd5e737a665fead3a98538ed0735cf5ab20006",
-    "orchestrator_report_tip_before_persistence": "abcb755828259dc55f3854017e70f984b96ab73e",
-    "main_c19_head_final": "4ed49e9985b120486efba2db37e558848bc36fe0",
+    "evidence_analyst_tip_final_before_persistence": "7bfef197fe0b255e395d2ea18ebadb59f2ca9fb6",
+    "orchestrator_report_tip_before_persistence": "e5748cac0753e1ae569e650e07e88c4091d669b4",
+    "main_c19_head_final_before_persistence": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
+    "concurrent_main_progress_detected": true,
     "main_collision": false,
     "lane_split_invalidated": false,
     "rejected_lane": null,
@@ -128,5 +121,5 @@
   "fallback_status": null,
   "rejected_lane": null,
   "lane_rejected_reason": null,
-  "next_sub_action": "Remain no-op until a newer Evidence Analyst handoff reserves genuinely independent sub_lane or sub_fallback work; do not absorb C19 binding or representation-audit work."
+  "next_sub_action": "Remain no-op until a newer Evidence Analyst handoff reserves genuinely independent sub_lane or sub_fallback work; do not absorb C19 scorer/preservation ambiguity or governance work."
 }
