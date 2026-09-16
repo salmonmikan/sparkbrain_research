@@ -33,12 +33,12 @@ class ExternalEvidenceLedger:
     @classmethod
     def from_consumed_ids(
         cls,
-        consumed_ids: tuple[str, ...],
+        consumed_ids: tuple[str, ...] | list[str],
     ) -> ExternalEvidenceLedger:
         """Restore acquisition deduplication state across checkpoint/restart."""
 
-        if not isinstance(consumed_ids, tuple):
-            raise TypeError("consumed evidence IDs must be a tuple")
+        if not isinstance(consumed_ids, (tuple, list)):
+            raise TypeError("consumed evidence IDs must be a tuple or list")
         if any(
             not isinstance(evidence_id, str) or not evidence_id.strip()
             for evidence_id in consumed_ids
