@@ -1,70 +1,59 @@
 # SparkBrain Research Orchestrator — MAIN run report
 
-Timestamp: 2026-09-16 11:36 JST
-
+Timestamp: 2026-09-16 15:22 JST  
 `worker_role: main`
 
 ## MAIN frontier
 
-MAIN executed the Evidence Analyst lane at `2c90237c98757d09bd37e445a411df0299e652e2`: **A01 post-P4 terminal closeout plus pre-existing premechanism-registry admission audit**.
+MAIN consumed Evidence Analyst handoff `c3e3cbd721d57f71f22f6d9080c02793e38f03ad` and continued the primary A01 Family-B `distributed-field-trace` Generation-1 readiness lane on PR #144. One-way execution remains **STOP**: the Analyst handoff explicitly permits readiness fixes only and does not admit STARTED, acquisition, scoring, workflow dispatch, or identity consumption.
 
-No new one-way experiment was admissible or executed in this run. The already-consumed P4 result remains authoritative:
+The live PR had advanced concurrently beyond the Analyst-observed head to `75a870ab3a9325c86050772514c5dfe277088860`. MAIN re-audited that exact head instead of assuming the stale report/head state.
 
-```text
-identity: a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1
-verdict: UNSUPPORTED_EN_BLOC_MERGED_CREDIT
-authority: development-only, consumed
-```
+## Critical-path fixes completed
 
-## Critical-path work completed by MAIN
+Fresh exact-head review showed the prior lifecycle-dedup fix still failed through the repository's ordinary JSON checkpoint boundary: `export_consumed_ids()` serializes through JSON as a list, while `from_consumed_ids()` accepted tuples only. That would make the documented restart restoration path fail and could encourage recreation of an empty acquisition ledger.
 
-1. Re-fetched the authoritative A01 base `research/v061-a01-n3-adapter@2e47df9cf8c6323f390935bb41c368632f3342c6` and reverified the latest Analyst assignment before mutation.
-2. Rechecked the prospective admission doctrine and premechanism matrix. The registry contains conceptual families A/B/C, but a qualifying successor requires a complete bound prospective discriminator/null/carrier contract, not merely a family label.
-3. Performed targeted repository-history searches for the registered B `distributed-field-trace` and C `joint-return-and-local-field-update` labels. No separate committed successor proposal was surfaced.
-4. Concluded that family A is the consumed P4-tested mechanism and that B/C remain conceptual registered families with **no complete bound pre-P4 successor proposal verified**.
-5. Created `research/v061-a01-post-p4-closeout-20260916` from the exact A01 base.
-6. Updated `docs/V061_A01_CURRENT_STATUS.md` to record P2/P3 positive development evidence, the consumed P4 terminal negative, P5 inadmissibility for the failed P4 mechanism, and the current one-way STOP boundary.
-7. Added `docs/V061_A01_POST_P4_ADMISSION_AUDIT.md`, explicitly separating the post-P4 audit from future prospective mechanism design.
-8. Opened PR #141 to `research/v061-a01-n3-adapter`, re-fetched its exact head/diff/mergeability, confirmed no CI workflows existed for the docs-only exact head and no submitted reviewer identity existed, applied the standing human-review-only waiver without fabricating a reviewer, and squash-merged exact head `2ec676a4d307abc8a49022df2dcd2ebf93e8a5ae`.
-9. Canonical A01 closeout merge commit: `1b548043b8f0850294cc3cbfaaa84dbdad69342c`.
+MAIN fixed this on the MAIN branch in commit:
 
-## Admission result / scientific interpretation
+`22db5a038b0cec364dcd4fb04f12f7a5066306bd` — `fix(a01): round-trip dedup checkpoints through JSON`
 
-This run produced **no new scientific measurement**. It canonicalized the previous P4 negative result and completed an admission audit.
+The fix:
 
-The audit found no complete admissible successor package whose scientific contract demonstrably predates the P4 outcome. Therefore:
+- permits only tuple/list decoded checkpoint sequences while preserving non-empty-string and uniqueness validation;
+- adds a JSON encode/decode round-trip test proving an already-consumed evidence ID remains rejected after ledger recreation;
+- updates the exact mechanism source blob/SHA binding in `docs/V061_A01_FAMILY_B_GEN1_PACKAGE_BINDING.json`;
+- preserves `execution_admitted=false`.
 
-```text
-one_way_execution_status: STOP_NO_VERIFIED_PROSPECTIVE_SUCCESSOR
-P4 rerun/retune/rescore/same-identity rescue: forbidden
-P5 on the P4-failed mechanism: not admissible
-post-outcome B/C mechanism invention inside this lane: not admissible
-```
+MAIN also reverified and resolved the accumulated PR review threads only after confirming their fixes at current source: escaped regex matching, independent belief-state-null binding, post-arithmetic finite/resource validation, duplicate-return guard, credit decay/resource bound, raw sign/width fail-closed parsing, complete source-key binding, lifecycle ledger restoration, and the new JSON checkpoint compatibility defect.
 
-This is not a formal falsification of every possible SparkBrain causal-circulation mechanism. Families B/C may be future research subjects only through a new prospective proposal generation admitted by a later control-loop decision.
+## Exact-head validation status
 
-## Coordination / SUB boundary
+PR #144 current head is `22db5a038b0cec364dcd4fb04f12f7a5066306bd`, open, non-draft, mergeable, and still targets `research/v061-a01-n3-adapter`.
 
-MAIN did not invalidate the current Analyst split. The latest split correctly keeps all A01 closeout/admission work with MAIN and reserves independent secondary work for SUB.
+A fresh Codex review was requested specifically for `22db5a0`; at persistence time it was still running. CI run `35063142416` was also still in progress. Both Python jobs had already passed checkout, install, lint, and local-readiness steps and were in the full test phase; bundle validation had not yet completed.
 
-MAIN intentionally did **not** touch:
+Therefore MAIN **did not merge PR #144 in this run**. Merge safety requires a completed clean exact-head review and CI before integration. The pending external checks are the remaining blocker; there is no scientific reason to cross STARTED while they are pending.
 
-- SUB primary lane: RV02 terminal-status/evidence-map consolidation, docs-only, `execution_allowed=false`;
-- SUB fallback: CX01 candidate-002 formal-negative status/evidence-map consolidation, docs-only.
+## Scientific result / integrity
 
-`reserved_sub_work_not_touched: true`
+**New scientific information: none.** This run changed readiness/integrity implementation only.
 
-## Integrity
+- prospective Family-B identity remains `a01-family-b-distributed-field-trace-gen1-v1`;
+- no Family-B STARTED/control/preserve authority exists or was created;
+- no acquisition/scoring/one-way workflow was dispatched;
+- no one-way identity was consumed;
+- Family-A P4 remains terminal-consumed and untouched;
+- no immutable freeze/control/preserve ref was changed;
+- no consumed A01/RV01/RV02/CX01 identity was rerun, retuned, repaired, or rescored under changed rules.
 
-- no immutable freeze/control/preserve ref modified;
-- no consumed identity rerun or retuned;
-- no STARTED ref created;
-- no experiment/workflow dispatch;
-- no new one-way identity consumed;
-- P4 authority chain remains untouched;
-- exact PR head and diff were re-audited immediately before merge;
-- human-review-only waiver was used only because no submitted reviewer identity existed; none was fabricated.
+## MAIN/SUB coordination
+
+The Analyst split remains valid; **no split was invalidated for putting a MAIN blocker on SUB**. All PR #144 implementation/review/binding work stayed with MAIN.
+
+MAIN intentionally did not touch reserved independent SUB work. SUB's latest durable report shows CX01 PR #143 completed and merged, with RV01 PR #140 remaining the next independent fallback. MAIN does not depend on that work.
 
 ## Next MAIN action
 
-STOP new A01 one-way execution under the current lane. Await the next Evidence Analyst / Control Brain allocation. If future work proposes B/C or another mechanism, it must be a new prospective generation with fresh identity, complete bound contract, fixed nulls/falsifiers, exact source/protocol/package/input binding, and all normal one-way integrity gates before exposure.
+Re-fetch PR #144 exact head. If it remains `22db5a038b0cec364dcd4fb04f12f7a5066306bd`, require CI success plus fresh exact-head Codex review with no new substantive findings. If either exposes a candidate-specific defect, MAIN fixes it and repeats exact-head validation. Only after clean checks may MAIN integrate the reviewed exact head into the A01 research branch.
+
+Even after readiness integration, **do not execute Family-B**. Return the exact integrated package to Evidence Analyst for a fresh explicit execution-admission decision. STARTED/no-clobber, exactly-once acquisition, raw-before-score, full scientific P4 discriminator/null/falsifier binding, and identity freshness must be rechecked only after such an admission.
