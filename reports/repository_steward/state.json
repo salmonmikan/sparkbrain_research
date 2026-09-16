@@ -1,39 +1,60 @@
 {
-  "timestamp_jst": "2026-09-16T19:45:00+09:00",
+  "timestamp_jst": "2026-09-17T07:46:00+09:00",
   "repository": "salmonmikan/sparkbrain_research",
-  "main": "ba16bf10535141c2edb29bbe3439ba0a38e71179",
-  "control_brain_latest_time_jst": "2026-09-16 18:30",
-  "evidence_analyst_latest_time_jst": "2026-09-16 18:58",
+  "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+  "control_brain_commit": "909ce53e7b0355f5aab1512e659ab36d910bf6a4",
+  "evidence_analyst_commit": "25eae547ccd9bb22edc2010e698a8dd2ecd33dcc",
+  "orchestrator_report_commit": "447fb545cb21af1e9649d4793548ca24ebec6f96",
   "orchestrator_reports": {
     "main": {
-      "time_jst": "2026-09-16 18:31",
-      "integrated_a01_head": "8612d01fd9048b881bd8850e13e94ece954a053d",
-      "execution_admitted": false
+      "time_jst": "2026-09-17 06:33",
+      "c19_research_head": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
+      "predecessor_identity": "c19-external-v2-official-v1",
+      "execution_started": false,
+      "official_data_accessed": false
     },
     "sub": {
-      "time_jst": "2026-09-16 19:41",
-      "completed_lane": "close stale Family-A P4 PR #137 without merge and close Issue #138",
-      "scientific_state_changed": false
+      "time_jst": "2026-09-17 07:43",
+      "lane": "C07/H9 fully-spiking-boundary source-only readiness audit",
+      "research_head": "9480da3d77dfee4766b28757f1a164f5cd4dac26",
+      "classification": "PRE_START_UNDERSPECIFIED",
+      "scientific_experiment_executed": false
     }
   },
+  "programme_reframe": {
+    "a01_registered_family_search": "closed",
+    "current_frame": "experimental_persistent_dynamical_cognitive_architecture_testbed",
+    "primary_frontier": "C19 external validation"
+  },
   "active_frontier": {
-    "line": "A01 Family-B distributed-field-trace Generation-1",
-    "identity": "a01-family-b-distributed-field-trace-gen1-v1",
-    "authoritative_research_head": "8612d01fd9048b881bd8850e13e94ece954a053d",
-    "execution_package_branch": "research/v061-a01-family-b-gen1-execution-package-20260916",
-    "execution_package_branch_head_observed": "8612d01fd9048b881bd8850e13e94ece954a053d",
-    "execution_allowed": false,
-    "status": "exact one-way package construction allowed; fresh Analyst admission required before STARTED"
+    "line": "C19 official-v2 external validation successor",
+    "source_basis_branch": "research/c19-truth-free-symbolic-adapter-v2-20260917",
+    "source_basis_head": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
+    "rejected_predecessor_protocol": "90c936a7abca7eba0dac1f977753503551e73368",
+    "rejected_predecessor_identity": "c19-external-v2-official-v1",
+    "planned_fresh_identity": "c19-external-v2-official-v2",
+    "successor_branch_observed": null,
+    "status": "fresh successor prospectively specified by Evidence Analyst; no successor branch observed at stewardship inspection"
+  },
+  "independent_sub_frontier": {
+    "line": "C07/H9 fully-spiking boundary readiness",
+    "branch": "research/c07-h9-fully-spiking-readiness-sub-20260917",
+    "head": "9480da3d77dfee4766b28757f1a164f5cd4dac26",
+    "status": "PRE_START_UNDERSPECIFIED",
+    "execution_allowed": false
   },
   "repository_state": {
     "open_pr_count": 0,
-    "open_issue_numbers": [139, 145],
-    "rv02_development_feasibility_head": "c6b33606850ef591690074f50ed92a4c9400b8bd"
+    "open_issue_numbers": [139, 147],
+    "closed_family_b_issue": 145,
+    "git_tag_count": 0,
+    "repository_ruleset_count": 0
   },
   "doctrine_status": "partially_compliant",
   "doctrine_findings": {
-    "main_frontier_separation": "compliant_for_current_family_b_frontier",
-    "canonical_science_vs_issues": "compliant_after_family_a_p4_operational_cleanup_and_family_b_question_issue_creation",
+    "main_frontier_separation": "compliant_for_c19_and_h9_research_frontiers",
+    "generic_tag_workflow_on_main": "compliant_outcome_independent_substrate",
+    "canonical_science_vs_issues": "compliant_after_issue_145_terminal_closure_and_issue_147_question_scoped_creation",
     "legacy_main_drift": [
       ".github/workflows/cx01-formal-one-way.yml",
       ".github/workflows/cx01-dispatch-probe-target.yml",
@@ -45,62 +66,72 @@
   },
   "issue_changes": [
     {
-      "issue": 145,
+      "issue": 147,
       "action": "created",
-      "purpose": "question-scoped Family-B Generation-1 falsifiable operational tracking",
-      "canonical_authority": "git-managed A01 status/protocol/evidence"
+      "purpose": "question-scoped C19 official-v2 operational tracking",
+      "canonical_authority": "git-managed C19 protocol/status/evidence"
+    },
+    {
+      "issue": 139,
+      "action": "updated",
+      "purpose": "reconcile implemented tag workflow, 0-tag/0-ruleset state, current-frontier priority, and scheduler read-only ruleset boundary"
     }
   ],
   "issue_reconciliation": {
-    "family_a_p4_issue_138": "closed_completed_by_sub_and_consistent_with_canonical_terminal_FAIL",
+    "family_b_issue_145": "closed_completed_with_canonical_REJECT_BEFORE_STARTED_STATIC_REDUCTION_pointer",
     "tag_governance_issue_139": "open_and_current",
+    "c19_question_issue_147": "open_and_question_scoped",
     "duplicate_or_umbrella_open_issues_found": 0
   },
   "freeze_migration": {
     "legacy_freeze_branch_count": 13,
-    "new_inventory_entry": "freeze/a01-md002-p4-candidate-001-source-20260916@1bd0099f4358e02efac7ee4acccfe5257a86c4be",
+    "all_legacy_freeze_shas_match_stored_inventory": true,
     "git_tag_count": 0,
     "legacy_tag_mirrors_created": 0,
     "legacy_branches_modified": 0,
     "mapping_doc": "reports/repository_steward/legacy_freeze_map.md",
-    "status": "legacy_preserved_prospective_tag_policy_not_yet_enforced"
+    "annotated_tag_creation_workflow": ".github/workflows/create-authoritative-tag.yml",
+    "status": "tag_creation_available_but_server_side_protection_absent; legacy_batch_migration_deferred"
   },
   "tag_protection": {
     "repository_ruleset_count": 0,
     "status": "governance_gap",
     "tracking_issue": 139,
-    "write_tooling": "connector exposes ruleset reads and branch refs but no annotated-tag creation or ruleset mutation action"
+    "scheduled_stewardship_boundary": "read_only_audit_report_only_no_ruleset_mutation"
   },
   "preserve_index": {
     "mapping_updated": true,
-    "p4_raw": "2511454f1633d3bc6f10e3d2a99e3ddd823bb798",
-    "p4_scored": "56ee762540e0519034d2e8db0ad3c6acda667ffd",
-    "existing_preserve_refs_moved_or_rewritten": 0
+    "new_legacy_freeze_entries": 0,
+    "scientific_mappings_changed": 0,
+    "existing_preserve_control_formal_evidence_refs_moved_or_rewritten": 0
   },
   "main_promotion_candidates": [
-    "exact source/runtime manifest binding and verification",
-    "atomic remote STARTED / no-clobber / identity-collision primitives",
-    "durable exactly-once external-evidence checkpointing",
-    "raw-preserve-before-score and digest-verification helpers",
+    "exact source/runtime manifest verification",
+    "atomic STARTED / no-clobber / identity-collision primitives",
+    "durable exactly-once acquisition checkpoints",
+    "raw-preserve-before-score and digest verification",
     "generic fail-closed verifier patterns",
-    "BoundaryEvent replay/idempotence as a generic runtime correctness primitive",
-    "stable control-plane pointer/index helpers without hypothesis-specific semantics"
+    "exact pair-coverage validation generalized beyond C19",
+    "deterministic bootstrap-contract helpers only after semantics are independently stabilized and generic",
+    "stable control-plane pointer/index helpers"
   ],
   "main_promotions_performed": 0,
   "immutable_refs_untouched": true,
-  "verified_immutable_refs": {
-    "family_a_p4_source_freeze": "1bd0099f4358e02efac7ee4acccfe5257a86c4be",
-    "family_a_p4_raw_preserve": "2511454f1633d3bc6f10e3d2a99e3ddd823bb798",
-    "family_a_p4_scored_preserve": "56ee762540e0519034d2e8db0ad3c6acda667ffd"
+  "verified_immutable_state": {
+    "freeze_branch_count": 13,
+    "freeze_branch_shas_match_legacy_freeze_map": true,
+    "authoritative_tag_count": 0,
+    "freeze_branches_deleted_or_moved": 0,
+    "preserve_control_formal_evidence_refs_modified_by_stewardship": 0
   },
   "scientific_experiments_executed": 0,
   "research_workflows_dispatched": 0,
   "one_way_identities_consumed": 0,
   "scientific_freezes_decided": 0,
   "deferred": [
-    "install authoritative tag namespace protection/rulesets when safe write tooling is available",
-    "create exact-SHA annotated tag mirrors for legacy freeze branches only after protection and true tag tooling are available",
-    "extract legacy CX01-specific main workflows only when it does not displace central research throughput",
-    "perform no Family-B scientific execution until the exact package receives fresh Evidence Analyst admission"
+    "install authoritative tag namespace protection/rulesets outside scheduled stewardship",
+    "create exact-SHA annotated legacy tag mirrors only under an explicitly safe protected migration procedure",
+    "extract legacy CX01-specific main workflows only when reversible and non-blocking",
+    "promote generic C19 validators only after they are demonstrably hypothesis-independent and stable"
   ]
 }
