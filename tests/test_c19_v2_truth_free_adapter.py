@@ -62,7 +62,11 @@ def test_adapter_is_deterministic_target_blind_and_non_oracle() -> None:
     assert first.condition_id == CONDITION_ID
     assert first.oracle is False
     assert adapter.contract_id == ADAPTER_CONTRACT_ID
-    assert all("ground_truth" not in key and "truth" not in key for key, _ in first.features)
+    forbidden_feature_fragments = ("ground_truth", "target:", "answer:", "evaluator:", "gold:")
+    assert all(
+        not any(fragment in key for fragment in forbidden_feature_fragments)
+        for key, _ in first.features
+    )
 
 
 def test_surface_parser_preserves_registered_roles_and_indices_only() -> None:
