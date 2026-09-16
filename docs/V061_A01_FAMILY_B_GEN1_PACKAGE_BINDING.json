@@ -3,9 +3,15 @@
   "proposal_id": "a01-family-b-distributed-field-trace-gen1-v1",
   "proposal_specification_sha256": "357f4a500164d31a3a851edc77c0870d3b59930c1766c1769671e9bdaf6ecf14",
   "protocol_bundle_source_sha": "7af99d6c3bbbf946f90fc01d9bc7cc7661de2006",
+  "source_git_blobs": {
+    "src/sparkbrain/evaluation/v061_family_b_distributed_field_trace.py": "49a859ccd96bce8423d626b38912142bb910c718",
+    "src/sparkbrain/evaluation/v061_family_b_readiness.py": "3565b893828111388f91050b02040caa1ce3cc2a",
+    "src/sparkbrain/evaluation/v061_family_b_readiness_harness.py": "a67ca26c4dd9c81b4323bd2ec2b0d3f38e39ec42"
+  },
   "mechanism_source_path": "src/sparkbrain/evaluation/v061_family_b_distributed_field_trace.py",
   "mechanism_source_sha256": "ddc834e5759eae31ea4ca4fced8964a9fb3a88b2945e2b31e8b7f01827698beb",
   "readiness_input_path": "tests/fixtures/v061_a01_family_b_gen1_readiness_input.json",
+  "readiness_input_git_blob": "07bf3f8be795512d9b1630c92feae3f86878363e",
   "readiness_input_sha256": "e05433d95dd116b5f5f90908b8d80cf76129591ad0fb95293cdb46562e93ee6d",
   "readiness_input_id": "v061-a01-bgen1-readiness-input-v1",
   "execution_admitted": false
