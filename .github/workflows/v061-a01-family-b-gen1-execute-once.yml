@@ -92,9 +92,7 @@ jobs:
           python - <<'PY'
           import json
           from pathlib import Path
-          runtime = json.loads(
-              Path("research/v061_a01/family_b_gen1_runtime.json").read_text()
-          )
+          runtime = json.loads(Path("research/v061_a01/family_b_gen1_runtime.json").read_text())
           assert runtime == {
               "candidate_id": "a01-family-b-distributed-field-trace-gen1-v1",
               "development_only": True,
@@ -119,8 +117,7 @@ jobs:
           python scripts/run_v061_a01_family_b_gen1.py manifest \
             --source-sha "${GITHUB_SHA}" \
             --output "${OUTPUT_ROOT}/candidate_manifest.json"
-          cp research/v061_a01/family_b_gen1_runtime.json \
-            "${OUTPUT_ROOT}/runtime_contract.json"
+          cp research/v061_a01/family_b_gen1_runtime.json "${OUTPUT_ROOT}/runtime_contract.json"
           python --version > "${OUTPUT_ROOT}/_execution_metadata/python_version.txt" 2>&1
           git rev-parse HEAD > "${OUTPUT_ROOT}/_execution_metadata/source_sha.txt"
 
@@ -173,8 +170,7 @@ jobs:
           raw_commit="$(git rev-parse HEAD)"
           printf '%s\n' "${raw_commit}" > "${RUNNER_TEMP}/family-b-raw-commit"
           git push origin "${raw_commit}:refs/heads/${RECOVERY_REF}"
-          git tag -a "${RAW_TAG}" "${raw_commit}" \
-            -m "A01 Family-B Gen1 raw evidence run ${GITHUB_RUN_ID}"
+          git tag -a "${RAW_TAG}" "${raw_commit}" -m "A01 Family-B Gen1 raw evidence run ${GITHUB_RUN_ID}"
           git push origin "refs/tags/${RAW_TAG}"
 
       - name: Independently verify preserved raw bundle
@@ -196,26 +192,23 @@ jobs:
             --expected-run-id "${GITHUB_RUN_ID}" \
             --expected-owner-claim "${owner_claim}" \
             --expected-acquisition-claim "${acquire_claim}"
-          printf '%s\n' "${verify_root}/${RAW_PATH}" \
-            > "${RUNNER_TEMP}/family-b-verified-raw-path"
+          printf '%s\n' "${verify_root}/${RAW_PATH}" > "${RUNNER_TEMP}/family-b-verified-raw-path"
 
-      - name: Score only independently verified preserved raw evidence
+      - name: Score exactly once from independently verified preserved raw evidence
         shell: bash
         run: |
           set -euo pipefail
           verified_raw="$(cat "${RUNNER_TEMP}/family-b-verified-raw-path")"
           test -f "${verified_raw}"
+          scored_tmp="${RUNNER_TEMP}/family-b-scored.json"
           python scripts/run_v061_a01_family_b_gen1.py score \
             --source-sha "${GITHUB_SHA}" \
             --raw-input "${verified_raw}" \
-            --output "${SCORE_PATH}"
-          cd "${OUTPUT_ROOT}"
-          sha256sum scored.json > scored.sha256
-          sha256sum -c scored.sha256
-          cd "${GITHUB_WORKSPACE}"
+            --output "${scored_tmp}"
+          sha256sum "${scored_tmp}" > "${RUNNER_TEMP}/family-b-scored.sha256"
           touch "${RUNNER_TEMP}/family-b-score-complete"
 
-      - name: Preserve terminal scored result
+      - name: Preserve exact terminal scored artifact without rescoring
         shell: bash
         run: |
           set -euo pipefail
@@ -223,20 +216,15 @@ jobs:
           raw_commit="$(cat "${RUNNER_TEMP}/family-b-raw-commit")"
           git reset --hard "${raw_commit}"
           mkdir -p "$(dirname "${SCORE_PATH}")"
-          cp "${RUNNER_TEMP}/family-b-preserved-raw/${OUTPUT_ROOT}/raw.json" "${RAW_PATH}"
-          python scripts/run_v061_a01_family_b_gen1.py score \
-            --source-sha "${GITHUB_SHA}" \
-            --raw-input "${RAW_PATH}" \
-            --output "${SCORE_PATH}"
+          cp "${RUNNER_TEMP}/family-b-scored.json" "${SCORE_PATH}"
           cd "${OUTPUT_ROOT}"
           sha256sum scored.json > scored.sha256
           sha256sum -c scored.sha256
           cd "${GITHUB_WORKSPACE}"
-          git add -f "${OUTPUT_ROOT}"
+          git add -f "${SCORE_PATH}" "${SCORE_PATH%.json}.sha256"
           git commit -m "Preserve A01 Family-B Gen1 scored evidence ${GITHUB_RUN_ID}"
           scored_commit="$(git rev-parse HEAD)"
-          git tag -a "${SCORED_TAG}" "${scored_commit}" \
-            -m "A01 Family-B Gen1 scored evidence run ${GITHUB_RUN_ID}"
+          git tag -a "${SCORED_TAG}" "${scored_commit}" -m "A01 Family-B Gen1 scored evidence run ${GITHUB_RUN_ID}"
           git push origin "refs/tags/${SCORED_TAG}"
 
       - name: Preserve auditable terminal failure after STARTED
@@ -279,6 +267,5 @@ jobs:
           git add -f "${OUTPUT_ROOT}/_terminal/POST_START_FAILURE.json"
           git commit -m "Preserve A01 Family-B Gen1 terminal failure ${GITHUB_RUN_ID}"
           terminal_commit="$(git rev-parse HEAD)"
-          git tag -a "${TERMINAL_TAG}" "${terminal_commit}" \
-            -m "A01 Family-B Gen1 terminal failure run ${GITHUB_RUN_ID}"
+          git tag -a "${TERMINAL_TAG}" "${terminal_commit}" -m "A01 Family-B Gen1 terminal failure run ${GITHUB_RUN_ID}"
           git push origin "refs/tags/${TERMINAL_TAG}"

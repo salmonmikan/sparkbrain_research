@@ -17,7 +17,7 @@ The scientific input is intentionally distinct from the readiness fixture. CI/re
 The frozen scorer evaluates these non-compensatory candidate gates:
 
 1. `circulation_external_required`: internal replay leaves the local competition contribution unchanged while an external confirmation changes it.
-2. `lineage_swap_anonymous_selectivity`: the effect follows anonymous physical Field overlap for left/right footprints rather than a declared semantic lineage.
+2. `lineage_swap_anonymous_selectivity`: the fixed anonymous permutation `[2, 3, 0, 1]` is applied directly to the F-only eligibility/credit carrier; the learned effect must move with the physical Field components from the left probe to the right probe without a lineage/semantic key.
 3. `contradiction_correction`: a matched negative world return corrects the previously confirmed local contribution.
 4. `f_only_transfer`: exporting/importing exactly `(eligibility, credit, decay)` preserves the learned competition effect.
 5. `bounded_plurality`: two coexisting anonymous footprints can be separately affected by anonymous boundary overlap and later differentiated locally.
@@ -47,7 +47,10 @@ Candidate and null resource profiles freeze these counters:
 - peak transient scalar state;
 - external observation count;
 - active-output budget;
+- generation/update budget;
 - lookup-privilege rank.
+
+The complete Generation-1 measurement has a fixed `generation_update_budget` of `9`: eight state update/generation transitions in the left/right/plural intervention sequence plus one F-only carrier generation/import. Internal replay is a no-op and does not consume a state-update unit. The resource-matched recurrent null is assigned the same budget and event stream.
 
 Lower is no more privileged/resource-expensive. The recurrent null is intentionally allowed to be a strong null; naming an internal state "Field" does not exempt the candidate from reduction to anonymous recurrent causal memory.
 
@@ -61,8 +64,8 @@ The exact source must later receive a fresh Evidence Analyst admission before an
 4. Acquisition writes raw evidence once.
 5. Raw artifacts are committed to a recovery ref and annotated raw-evidence tag before any scoring read.
 6. A separate verifier checks the preserved raw bundle and its digest.
-7. Only the verified preserved raw artifact is passed to the frozen scorer.
-8. The scored result is committed and annotated with a scored-evidence tag.
+7. The verified preserved raw artifact is scored exactly once into an ephemeral path.
+8. That exact scored artifact is copied into the raw-preserve commit tree and committed/tagged without re-running the scorer.
 9. A failure after STARTED is terminal for this identity unless the already-frozen protocol explicitly says otherwise; this package defines no same-identity retry.
 
 The workflow is triggered only by the dedicated STARTED control branch. Ordinary package commits and PR CI cannot trigger acquisition.
