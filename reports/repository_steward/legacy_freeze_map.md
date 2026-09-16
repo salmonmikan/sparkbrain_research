@@ -2,12 +2,13 @@
 
 Governance inventory only. This file does **not** redefine canonical scientific status or results. Canonical science remains in git-managed research status/docs and immutable evidence. Existing legacy `freeze/*` branches remain authoritative historical anchors and must not be moved, rewritten, deleted, or force-migrated.
 
-Observed 2026-09-16 06:32 JST.
+Observed 2026-09-16 19:45 JST.
 
 | Legacy freeze branch | Exact commit SHA | Retained evidence pointer(s), when obvious |
 |---|---|---|
 | `freeze/a01-md002-p2-candidate-002-source-20260915` | `8044b25f3a7b7767bf1262ea6a99cd6b795e3e8d` | `preserve/a01-md002-p2-candidate-002-34936519897-20260915@d7d48a8ad482acdb18de783c9506c32377530e1e` |
 | `freeze/a01-md002-p3-candidate-001-source-20260916` | `cf784e24b0d97a81b382988783ea8490cfc333dd` | raw `preserve/a01-md002-p3-candidate-001-raw-20260916@908e3d35f2ced7efe01b778d19f22882543154bc`; scored `preserve/a01-md002-p3-candidate-001-scored-20260916@8ffe8dfa8057595c2998c4a7b634d37a80ffa7b5` |
+| `freeze/a01-md002-p4-candidate-001-source-20260916` | `1bd0099f4358e02efac7ee4acccfe5257a86c4be` | raw `preserve/a01-md002-p4-candidate-001-raw-20260916@2511454f1633d3bc6f10e3d2a99e3ddd823bb798`; scored `preserve/a01-md002-p4-candidate-001-scored-20260916@56ee762540e0519034d2e8db0ad3c6acda667ffd` |
 | `freeze/cx01-001` | `f2c5ead5afda7d731033d585511ea68dc066a162` | no exact one-to-one preserve pointer asserted here |
 | `freeze/cx01-002-package` | `c104be281285d52a732d5366fe36209d5688d973` | formal preserve `preserve/cx01-candidate-002-formal-34742073336@6d45928827209cd763a2879494d85838df38b96f` |
 | `freeze/cx01-002-source` | `e8483968ce43076b4c3fd04c76e62106e2031769` | formal preserve `preserve/cx01-candidate-002-formal-34742073336@6d45928827209cd763a2879494d85838df38b96f` |
@@ -23,4 +24,4 @@ Observed 2026-09-16 06:32 JST.
 
 When safe annotated-tag creation and namespace protection are available, a legacy branch may receive a tag mirror **only** when the mapping is scientifically unambiguous and the tag points to exactly the same commit SHA. The legacy branch remains preserved after mirroring. Never retarget or delete an authoritative tag after creation/consumption.
 
-Current migration status: **0 legacy branch mirrors created; 12 legacy freeze branches inventoried; Git tags = 0; repository rulesets = 0.**
+Current migration status: **0 legacy branch mirrors created; 13 legacy freeze branches inventoried; Git tags = 0; repository rulesets = 0.**
