@@ -1,79 +1,75 @@
 {
-  "timestamp": "2026-09-16T16:41:28+09:00",
+  "timestamp": "2026-09-16T18:42:00+09:00",
   "worker_role": "sub",
-  "evidence_analyst_commit": "e72ab0ee673d60a4b50e77232903cd19cecbcdfd",
+  "evidence_analyst_commit": "c7f82ec19973bdc73853703a1f3aa3ac55ce0f5b",
   "consumed_lanes": {
     "main_lane": {
-      "target": "A01 Family-B distributed-field-trace Generation-1 readiness / PR #144",
+      "target": "A01 Family-B distributed-field-trace Generation-1",
       "owner": "main",
-      "status": "MAIN_OWNED_EXPLICITLY_AVOIDED"
+      "status": "MAIN_OWNED_EXPLICITLY_AVOIDED",
+      "integrated_commit_observed": "8612d01fd9048b881bd8850e13e94ece954a053d",
+      "execution_admitted": false
     },
     "sub_lane": {
-      "target": "RV01 PR #140 canonical current-status reconciliation",
+      "target": "RV02 PR #142 exact-head canonical D1 status integration",
       "reservation_status": "reserved_for_sub",
-      "status": "COMPLETED_BEFORE_THIS_RUN_MERGED",
-      "merge_commit": "19cf98ec08635829f20c9ee21f4949a8a624d4ec"
+      "status": "COMPLETED_MERGED",
+      "reviewed_head": "c34b78e6200d957cf47f9aa310a7b696457141f8",
+      "merge_commit": "c6b33606850ef591690074f50ed92a4c9400b8bd"
     },
-    "sub_fallback": {
-      "target": "RV02 PR #142 canonical ledger integration plus behavior-preserving Ruff cleanup",
-      "reservation_status": "reserved_for_sub",
-      "status": "SELECTED_ACTIVE_INCOMPLETE"
-    }
+    "sub_fallback": null
   },
   "selected_independent_lane": {
-    "target": "RV02 PR #142 canonical ledger integration plus behavior-preserving Ruff cleanup",
+    "target": "RV02 PR #142 exact-head canonical D1 status integration",
     "branch": "research/rv02-status-evidence-consolidation-sub-20260916",
     "pr": 142,
     "base": "research/rv02-development-feasibility@8176b91f5d427f3bdfccae2fac2c01b60a771403",
-    "head_before_run": "ce317febb8be8d111959082cd5632a5ead9c83b4",
-    "head_after_changes": "a835fc9ae69241d13e2d4d1daec8e3767e761ee7",
+    "analyst_snapshot_head": "011cb3dfd036050c779a3fbbdb981b0bf42de8ab",
+    "final_reviewed_head": "c34b78e6200d957cf47f9aa310a7b696457141f8",
+    "merge_commit": "c6b33606850ef591690074f50ed92a4c9400b8bd",
     "reservation_status": "reserved_for_sub",
     "independent_of_main_critical_path": true,
     "execution_allowed": false,
-    "status": "ACTIVE_BLOCKED_ON_SAFE_LEDGER_APPEND_AND_REVIEW"
+    "status": "COMPLETED_MERGED"
   },
   "independence_from_main_critical_path": true,
   "execution_allowed": false,
   "sub_active_claim": {
-    "target": "RV02 PR #142 independent documentation/integration cleanup",
-    "status": "ACTIVE",
-    "remaining_claim": "canonical RD005 D1 ledger append, fresh exact-head review, merge-safety"
+    "target": "RV02 PR #142 independent canonical-status integration",
+    "status": "COMPLETED_RELEASED",
+    "remaining_claim": null
   },
   "main_work_explicitly_avoided": [
-    "PR #144 and branch research/v061-a01-family-b-gen1-20260916",
-    "prospective identity a01-family-b-distributed-field-trace-gen1-v1",
-    "all Family-B candidate-specific implementation/verifier/harness/runner/binding/CI/review/preservation/scoring/execution blockers",
+    "research/v061-a01-n3-adapter@8612d01fd9048b881bd8850e13e94ece954a053d and the Family-B Generation-1 identity",
+    "fresh Evidence Analyst admission/rejection for Family-B",
+    "all Family-B candidate implementation/verifier/harness/runner/binding/CI/review/preservation/scoring/execution work",
     "all consumed A01 P2/P3/P4 identities and immutable evidence refs",
     "outcome-dependent A01 successor design"
   ],
   "authoritative_refs": {
-    "control_brain_handoff": "cd378adcc8636f5794ac56ffcbaacd037e5c8088",
-    "evidence_analyst_handoff": "e72ab0ee673d60a4b50e77232903cd19cecbcdfd",
-    "orchestrator_report_branch_before_first_write": "236139dde7dab7aadaf2ed0ad85de7336044b8b7",
-    "main_live_family_b_branch_avoided": "research/v061-a01-family-b-gen1-20260916@0ddb73d9602f6459ee1d181f1acf3f7fe02dd839",
-    "rv02_base": "research/rv02-development-feasibility@8176b91f5d427f3bdfccae2fac2c01b60a771403",
+    "control_brain_handoff": "75c3087dcd7a09ca8dbcb9d4b58a4e1512a863bf",
+    "evidence_analyst_handoff": "c7f82ec19973bdc73853703a1f3aa3ac55ce0f5b",
+    "main_report_commit_consumed": "b5d33e1116bf424644d1abc9ca214d9fa5b47ba1",
+    "main_family_b_integrated_research_head_avoided": "research/v061-a01-n3-adapter@8612d01fd9048b881bd8850e13e94ece954a053d",
+    "rv02_base_before_merge": "research/rv02-development-feasibility@8176b91f5d427f3bdfccae2fac2c01b60a771403",
+    "rv02_rd005_d1_identity": "96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
     "rv02_rd005_d1_source_freeze": "freeze/rv02-rd005-d1-source-c60b7fd8-20260914@c60b7fd8d3889ee969f505d921e7d31c990871e6",
     "rv02_rd005_d1_source_manifest_digest": "46b75901f831358263bfb940535204a7743286353f1cc61336183c7bbf65a87",
     "rv02_rd005_d1_preflight": "control/rv02-rd005-d1-preflight-c60b7fd8-20260914@096ddb8c65f342866839a2cb135d45e36ec1aabf",
     "rv02_rd005_d1_started": "control/rv02-rd005-d1-started-96634541-20260914@2535b6312a091f7da4efa10c064c285bdeda7eaf",
     "rv02_rd005_d1_raw_preserve": "preserve/rv02-rd005-d1-96634541-20260914@d1fdd67ea197b879c52942c4a34e7d39a0a40698",
-    "rv02_rd005_d1_terminal_audit": "review/rv02-rd005-d1-terminal-outcome-20260914@262a56f8d2a0f482166ee0e621305ceef6caeb0c",
-    "results_ledger_blob_observed": "e222182e26c1bdf74a9c418a500958809b748b1e"
+    "rv02_rd005_d1_terminal_audit": "review/rv02-rd005-d1-terminal-outcome-20260914@a02768b18fa290f249b7c488c896fad79f9ca409"
   },
   "branches_prs_advanced": [
     {
       "pr": 142,
       "branch": "research/rv02-status-evidence-consolidation-sub-20260916",
-      "head_before": "ce317febb8be8d111959082cd5632a5ead9c83b4",
-      "head_after": "a835fc9ae69241d13e2d4d1daec8e3767e761ee7",
-      "state": "open_mergeable",
-      "commits_added": [
-        "d8bae4959806908da554f3fa2c8fc48470e39b7b",
-        "d2c35c6aa77ced17c25aa86365a051ab3d566187",
-        "70adfc9958c916c60e1fa0e440ac0f450e310165",
-        "a835fc9ae69241d13e2d4d1daec8e3767e761ee7"
-      ],
-      "scope": "behavior-preserving Ruff cleanup only; existing RV02 status map retained"
+      "final_head": "c34b78e6200d957cf47f9aa310a7b696457141f8",
+      "state": "merged_closed",
+      "merge_commit": "c6b33606850ef591690074f50ed92a4c9400b8bd",
+      "merge_method": "squash",
+      "expected_head_sha_enforced": true,
+      "scope": "canonical D1 status integration plus outcome-independent lint configuration/test formatting; manifest-bound runner/source bytes unchanged relative to base"
     }
   ],
   "workflows_experiments": {
@@ -84,56 +80,60 @@
     "candidate_output_acquired": false,
     "repository_validation": [
       {
-        "id": 35070733775,
+        "id": 35079781765,
         "name": "ci",
-        "head": "a835fc9ae69241d13e2d4d1daec8e3767e761ee7",
+        "head": "c34b78e6200d957cf47f9aa310a7b696457141f8",
         "status": "completed",
         "conclusion": "success",
-        "python_versions": ["3.11", "3.13"]
+        "python_3_11": "success",
+        "python_3_13": "success",
+        "lint": "success",
+        "local_readiness": "success",
+        "tests": "success",
+        "bundle_validation": "success"
       }
     ],
-    "manual_workflow_dispatch": false
+    "fresh_review": {
+      "head": "c34b78e6200d957cf47f9aa310a7b696457141f8",
+      "status": "completed",
+      "new_findings": 0,
+      "unresolved_substantive_threads": 0
+    },
+    "manual_scientific_workflow_dispatch": false
   },
   "scientific_results": [],
   "scientific_readiness_results": [
     "No new scientific measurement or formal outcome was produced.",
-    "RV02 RD005 D1 remains a terminal consumed construction/gate-reachability negative for the exact D1 construction identity.",
-    "Capability output was not opened; this is not a capability negative.",
-    "Five pre-existing Ruff findings were addressed using behavior-preserving formatting/explicit zip strict=False semantics only.",
-    "The PR patch was re-fetched and contained only the existing status map plus the intended lint-only source/test edits.",
-    "Exact-head CI run 35070733775 completed successfully on Python 3.11 and 3.13.",
-    "Canonical RESULTS_LEDGER integration remains incomplete because a safe byte-preserving append primitive is unavailable in the current write surface."
+    "Canonical RESULTS_LEDGER and PROJECT_STATUS now record the already-consumed RD005 D1 terminal construction/gate-reachability negative and its non-capability boundary.",
+    "The correct live terminal-audit authority is a02768b18fa290f249b7c488c896fad79f9ca409.",
+    "Manifest-bound scripts/run_rv02_development.py and src/sparkbrain/research/rv02_scale.py are byte-identical to the retained development base in the final PR diff.",
+    "Exact-head CI 35079781765 succeeded on Python 3.11 and 3.13.",
+    "Fresh exact-head Codex review completed on c34b78e with no new finding and all substantive threads resolved.",
+    "PR #142 was squash-merged only after exact-head merge-safety verification."
   ],
   "consumed_identities": {
     "observed_relevant": [
-      "96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
+      "A01 MD-001",
+      "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
+      "a01-md002-p3-r-only-causal-carrier-candidate-001-v1",
+      "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
+      "RV01 R01-16 family",
       "rv01-r01-17-real-delay-causal-timing-v1",
+      "RV02 RD005 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
       "cx01-candidate-002"
     ],
     "newly_consumed_this_run": []
   },
-  "blockers": [
-    {
-      "target": "docs/RESULTS_LEDGER.md",
-      "type": "safe_append_tooling",
-      "detail": "The canonical ledger is append-only and large; the available repository write primitive replaces the complete file. SUB refused a risky historical-byte reconstruction/rewrite merely to append the RD005 D1 entry."
-    },
-    {
-      "target": "PR #142 review",
-      "type": "unresolved_p2",
-      "detail": "The existing P2 requiring the canonical RD005 D1 ledger entry remains unresolved. Fresh exact-head review should occur only after that entry exists."
-    }
-  ],
+  "blockers": [],
   "collision_reconciliation": {
     "main_lane_collision": false,
     "main_work_touched": false,
     "analyst_split_invalidated": false,
     "lane_rejected_reason": null,
-    "primary_sub_lane_completed_before_run": true,
-    "sub_fallback_selected": true,
-    "previous_sub_report_no_remaining_work_was_incorrect": true,
-    "correction": "Fresh Analyst e72ab0ee still reserved RV02 PR #142 as sub_fallback; this run selected it.",
-    "main_live_head_observed_and_avoided": "0ddb73d9602f6459ee1d181f1acf3f7fe02dd839"
+    "analyst_snapshot_head_was_stale": true,
+    "stale_snapshot_reconciled": "Live RV02 PR head had advanced to c34b78e, but all intervening changes were within the reserved SUB status/cleanup scope and restored manifest-bound source integrity.",
+    "main_concurrent_movement": "MAIN independently integrated Family-B readiness as 8612d01; SUB neither depended on nor modified that work.",
+    "latest_analyst_rechecked_before_merge": true
   },
   "integrity_state": {
     "immutable_refs_modified": false,
@@ -143,21 +143,19 @@
     "same_identity_rerun_or_retune": false,
     "scientific_scoring_performed": false,
     "main_critical_path_modified": false,
-    "unsafe_append_only_file_replacement_refused": true,
+    "manifest_bound_source_changed_in_final_diff": false,
     "exact_head_ci_clean": true,
-    "overall": "clean_independent_rv02_support_work_incomplete"
+    "fresh_exact_head_review_clean": true,
+    "exact_reviewed_head_merged": true,
+    "overall": "clean_independent_rv02_status_integration_complete"
   },
   "completion_target": {
-    "target": "Append narrow RD005 D1 entry to canonical RESULTS_LEDGER without rewriting prior bytes; obtain fresh exact-head review; resolve P2; perform fresh merge-safety and integrate only reviewed exact head",
-    "reached": false
+    "target": "Canonical RD005 D1 ledger + PROJECT_STATUS coverage; preserve hash-bound source bytes; exact-head green CI; fresh clean review; exact-head integration without reopening D1",
+    "reached": true,
+    "merge_commit": "c6b33606850ef591690074f50ed92a4c9400b8bd"
   },
-  "fallback_status": {
-    "target": "RV02 PR #142 canonical ledger integration plus behavior-preserving Ruff cleanup",
-    "status": "ACTIVE_INCOMPLETE",
-    "head": "a835fc9ae69241d13e2d4d1daec8e3767e761ee7",
-    "ci": "success"
-  },
+  "fallback_status": null,
   "rejected_lane": null,
   "lane_rejected_reason": null,
-  "next_sub_action": "Continue only RV02 PR #142 independent support work: obtain a byte-preserving canonical ledger append path, then re-fetch exact head, obtain fresh review and merge-safety. Never take A01 Family-B blockers."
+  "next_sub_action": "No further independent SUB lane is currently reserved. On the next run, re-fetch the latest Analyst handoff; if no new reserved independent lane/fallback exists, no-op. Never absorb Family-B admission/execution blockers."
 }
