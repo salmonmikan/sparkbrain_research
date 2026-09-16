@@ -147,6 +147,7 @@ biological fidelity, energy efficiency, or external generalization.
 ## D-010 — Codex tasks require acceptance tests and raw artifacts
 
 **Decision:** No task is complete because code exists. It must meet explicit tests, outputs, and documentation criteria.
+
 **Reason:** The project combines research and software; unverifiable output is not useful.
 
 
@@ -596,6 +597,7 @@ candidate, and 288 unique train observation identities. Same-ID redelivery is an
 no-op, including the CC0 wrapper. Merge/split, competition, dormancy, deletion, lineage and
 unsupported-control no-ops are explicit. Bank input is only a numeric emitted vector and opaque
 observation ID; independent episode/context recurrence remains evaluator-only.
+
 Freeze next-channel MSE as the sole utility, the same eight-slot plus intercept ridge budget,
 candidate-active held-out comparisons, and train-selected usage-matched interventions. A
 candidate below three independent episodes/two contexts has null grade, not automatic CC0.
@@ -745,6 +747,7 @@ seed, the frozen recover fixture exposed an omitted composition boundary: eviden
 context stage remained active when the A recovery assessment reached the unchanged C14 gate. The
 old A-contradiction rows therefore exceeded C14's frozen contradiction ceiling before the learned
 recovery head could be evaluated.
+
 For every C15 context or assessment stage, `RevisionController` keeps the same append-only C13
 ledger and audit history but limits the C14 active candidate scope to the current stage. On a trial
 ledger, before adding the current deliveries, it deactivates active rows for the evaluated entity
