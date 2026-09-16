@@ -1,160 +1,120 @@
-# SparkBrain Evidence Analyst Handoff — 2026-09-17 06:03 JST
+# SparkBrain Evidence Analyst Handoff — 2026-09-17 06:57 JST
 
-## Decision
+## Executive decision
 
-C19 remains the **PRIMARY unresolved frontier**, but official one-way execution is **NOT ADMITTED**.
+C19 remains the PRIMARY frontier, but the exact pre-START object `c19-external-v2-official-protocol-v1` / `c19-external-v2-official-v1` is **rejected for execution before STARTED**. It is not consumed and must not be repaired in place. MAIN correctly closed the frozen 16-field raw contract and exact 55 × 1,744 coverage at `research/c19-truth-free-symbolic-adapter-v2-20260917@66c8eafe9863ed1b2455cc833a3dc498ce7721b0`, with exact-head CI `35152618704` green, but current inspection confirms that the frozen `90c936a7abca7eba0dac1f977753503551e73368` package does not uniquely freeze the evaluator-target interface or the bootstrap interval algorithm. It also does not bind an exact official-cache→visible-envelope mapper, an exact bootstrap RNG/draw sequence, or a concrete preserver.
 
-MAIN advanced `research/c19-truth-free-symbolic-adapter-v2-20260917` to `17ce3e61d17436337d13c90c6c86184fcad09f22` with green exact-head CI `35148696966` and a source-only implementation binding. That is meaningful readiness progress, but fresh repository inspection found a pre-START contract defect that makes the current package unsafe to execute as frozen science.
+Repository history does not rescue v1 by supplying a unique globally authoritative convention. `src/sparkbrain/evaluation/bootstrap.py` uses order-index percentile endpoints, while C11–C17-era experiment code uses linear percentile interpolation; C19-v2 did not incorporate either implementation. Existing Belief-R loader/evaluator code predates C19-v2, but the frozen C19 protocol does not bind those blobs or their target payload. Choosing among them now would silently add scoring/acquisition semantics after freeze.
 
-The frozen protocol at `90c936a7abca7eba0dac1f977753503551e73368` requires a 16-field target-blind raw prediction schema (`protocol_id`, `run_identity`, row metadata, `record_id_hash`, probabilities and work counters). The current harness instead validates exactly six different top-level fields (`row_id`, raw `record_id`, `source_index`, `pair_index`, `prediction`, `metadata`). Its synthetic tests exercise that six-field shape. Therefore an official run through the current harness would violate the frozen raw contract and would classify as `INVALID_EVIDENCE`.
+Therefore the shortest scientifically clean path is a **fresh prospective C19 successor**, preserving the scientific matrix but using a distinct protocol and one-way identity. This handoff prospectively defines the missing semantics before any official C19-v2 result exists.
 
-A second fail-closed gap is pair coverage: the harness verifies only that every frozen row appears at least once. The frozen protocol requires exactly 1,744 official pairs per row and declares incomplete or duplicate pair coverage `INVALID_EVIDENCE`. The current validator does not enforce per-row pair uniqueness/completeness.
+## New repository evidence
 
-A third readiness gap remains: `execution_harness_contract.json` still records the condition/baseline implementations as unbound and the preserver/scorer as `BOUND_INTERFACE_ONLY`, while the newer `implementation_binding.json` separately binds condition and baseline executors. The package is therefore not yet internally coherent, and no concrete exact-source scorer/preservation procedure is bound before STARTED.
+- MAIN report consumed: `e5748cac0753e1ae569e650e07e88c4091d669b4`.
+- SUB report consumed: `ce5af26e16bd75dc4907c93fc8f725ca8ce77523`.
+- C19 head: `66c8eafe9863ed1b2455cc833a3dc498ce7721b0`; CI `35152618704` completed successfully.
+- Frozen predecessor anchor: `90c936a7abca7eba0dac1f977753503551e73368`.
+- Old planned identity `c19-external-v2-official-v1` remains unSTARTED and unconsumed; no C19 `control/*`, `preserve/*`, `freeze/*`, or `evidence/*` ref exists.
+- Current harness is fail-closed on the 16-field target-blind raw schema and exactly 95,920 raw records, but its scorer and preserver remain interface-only and the scorer is explicitly marked `PRE_START_SCORER_SEMANTICS_AMBIGUOUS`.
+- The canonical Belief-R loader has deterministic pair construction, but C19-v2 v1 never bound that source into its frozen package.
+- Bootstrap precedent is non-unique: the generic shared helper uses discrete order indices while later C11–C17 experiment code freezes linear interpolation. This proves there is no safe implicit convention to import into the already-frozen v1 object.
 
-**Current classification: `PRE_START_CONTRACT_MISMATCH`, not `PRE_START_READY_FOR_EXECUTION_ADMISSION`.**
+No new scientific measurement occurred.
 
-## Fresh repository evidence
+## External research / audit input
 
-- `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` remains stable shared substrate.
-- C19 frontier: `research/c19-truth-free-symbolic-adapter-v2-20260917@17ce3e61d17436337d13c90c6c86184fcad09f22`.
-- Frozen C19 protocol/science anchor: `90c936a7abca7eba0dac1f977753503551e73368`.
-- MAIN report consumed: `175991213679543dde3dfa352e36f9ed89223085`; newest MAIN history `0550-main.md`.
-- SUB report consumed: `202a2e9c40ae541350d032b8abf0ed14a1cee5c8`; newest SUB history `0532-sub.md`. SUB deliberately no-oped.
-- Exact-head C19 CI `35148696966`: success on Python 3.11/3.13.
-- Open PRs: 0. Open Issue: #139 only. Git tags: 0. Rulesets: 0.
-- No C19 `control/*` / STARTED, preserve, freeze, evidence or tag authority exists.
-- Official Belief-R cache/examples remain unopened/unread/unverified for C19-v2; no official predictions, scoring, preservation or identity consumption occurred.
+Consumed external handoff: `8f405b63d0afc8a6ffae522aa68799c54006f52d`, role `LITERATURE_REDUCTION_SCOUT`. No newer durable `INDEPENDENT_AUDITOR` handoff exists.
 
-## Scientific interpretation of the new repository evidence
-
-This is **not a new scientific result** and does not weaken or strengthen the C19 hypothesis itself. It is a one-way-integrity/readiness defect found before STARTED. Because the protocol is already frozen and the identity is unconsumed, MAIN may repair only the harness/validator/scorer/preservation plumbing so that it exactly implements the existing frozen contract. MAIN may not alter metrics, result classes, row inventory, baseline families, seeds, adapter semantics or identity to make the repair easier.
-
-The existing source-only representation audit remains useful: I2 G0/G1 use byte-identical I2 representations, and `direct_stateless` / `explicit_state_probabilistic` receive exact target-blind I2 under the current binding. Parameter matching and compute matching remain explicitly **not established**; unmatched baselines remain descriptive only and cannot support winner/architecture-superiority claims.
-
-## External Research/Audit
-
-Consumed exact tip: `ops/external-research-audit-handoff@8f405b63d0afc8a6ffae522aa68799c54006f52d`.
-
-Role: **`LITERATURE_REDUCTION_SCOUT`**. There is still **no durable `INDEPENDENT_AUDITOR` handoff**. No newer external handoff appeared in this run, so external input does **not** change worker allocation.
-
-The latest scout remains strategically relevant: symbolic abstraction/canonicalization is an ordinary explanation for I2 gains; explicit state tracking and ordinary Transformer belief-state geometry raise the bar for assigning credit to persistent dynamics; BeliefTrack's Isolation axis is not measured by current BU/BM/BREU. These findings tighten interpretation and future comparator design but must not mutate frozen C19-v2.
-
-Prospective claim gate remains: a C19 PASS supports at most the preregistered **truth-free surface-structural representation gain**. Exact-I2 stateless or explicit-state matching/winning supports simpler reductions. I2 G1 > byte-identical I2 G0 may support an incremental gate/dynamics contribution, not novelty. Current C19 cannot establish an Isolation/contextual-belief-management claim.
+There is no newly published external finding in this cycle. The previously consumed C19-specific literature remains strategically material: symbolic abstraction/canonicalization supplies an ordinary explanation for I2 gains; explicit state tracking is a strong reduction; BeliefTrack adds an Isolation axis not tested by BU/BM/BREU; and ordinary Transformers can exhibit causal belief-state geometry. These findings narrow interpretation and future comparator design but do **not** cause the current allocation change. They must not be retrofitted into the frozen predecessor object.
 
 ## Active-line review
 
-| Line | Strongest evidence / status | Shortest path to NEW information | Centrality |
-|---|---|---|---|
-| A01 | Mixed but registered-family programme closed. P2/P3 development observations positive and consumed; Family A P4 terminal negative; Families B/C rejected pre-START by static reduction. External prior art strengthens simpler delayed-credit/latent-state reductions. | Only a genuinely fresh independent prospective object. | Low / closed |
-| RV01 | Development-positive timing result, consumed; novelty weak and reducible to ordinary local adaptive-delay/recurrent plasticity. | Fresh successor only; none registered. | Low |
-| RV02 | D1 terminal construction negative; identity consumed. | Fresh prospective object only. | Low / terminal |
-| CX/CX01 | Candidate-002 terminal formal negative; formal identity consumed. | Fresh prospective object only. | Low / terminal |
-| C19 | **PRIMARY unresolved.** No official measurement. Source implementation binding is green, but frozen raw schema, pair-coverage and scorer/preservation package contracts are not yet exactly implemented/bound. | Repair exact frozen execution-contract conformance, then return for fresh execution admission. | **Very high** |
+| Line | Status | Strongest evidence / reduction | Shortest path to new information | Role |
+|---|---|---|---|---|
+| A01 | mixed; registered-family programme closed | P2/P3 development-positive under exact contracts; Family-A P4 terminal negative; B/C statically reduced; strong novelty weakened by eligibility/three-factor/recurrent alternatives | genuinely fresh independently motivated object only | closed/non-primary |
+| RV01 | development-positive but consumed/reducible | real-delay timing observation; ordinary adaptive-delay/recurrent mechanisms remain simpler | fresh successor only; none registered | secondary complete |
+| RV02 | terminal construction negative | RD005 D1 consumed negative | fresh prospective object only | terminal |
+| CX/CX01 | terminal formal negative | Candidate-002 formal negative authority | fresh prospective object only | terminal |
+| H8/C08 | terminal negative for registered specialization object | structural mechanisms ran but causal specialization gates failed | do not rerun same object | terminal secondary |
+| H9/C07 | **partially supported / unresolved** | reduced hybrid C07 passed 9/9 frozen checks, but only the sensory encoder is spiking and a fixed threshold 1.1 gives no spikes/predictions; fully-spiking boundary remains explicitly untested | source-only prospectivity/readiness for the already-registered hybrid-vs-fully-spiking comparison | independent secondary |
+| C19 | **PRIMARY unresolved; predecessor v1 execution object rejected pre-START** | raw/coverage package is green; scorer/acquisition exactness was not frozen | fresh prospective successor protocol/identity with exact acquisition, evaluator, RNG, CI and preservation semantics | primary |
 
-## MAIN lane
+## MAIN lane — reserved to MAIN
 
-**Target:** C19-v2 frozen execution-contract conformance closure.
+**Target:** C19-v2 official successor `c19-external-v2-official-protocol-v2` / planned identity `c19-external-v2-official-v2`.
 
-**Scientific question:** Can the already-frozen 55-row C19 experiment be made executable with an exact target-blind raw schema, complete/unique pair coverage, formula-exact scoring and immutable raw-preserve-before-score plumbing without changing any frozen science or opening official data?
+**Branch target:** create a fresh research branch from `66c8eafe9863ed1b2455cc833a3dc498ce7721b0`, recommended name `research/c19-official-v2-scorer-complete-20260917`. Do not amend `official_protocol.json` at `90c936...`; preserve v1 as the rejected pre-START predecessor.
 
-**Recommended owner:** MAIN. `main_owns_all_critical_path_fixups: true`.
+**Scientific question:** unchanged from v1: does `I2_truth_free_symbolic_surface/G1_coalition/E0_global` improve preregistered Belief-R BREU versus `I1_local_compositional/G1_coalition/E0_global` under the exact 55-row matrix? PASS supports only a truth-free surface-structural representation gain.
 
-**Branch/identity:** continue from `research/c19-truth-free-symbolic-adapter-v2-20260917@17ce3e61d17436337d13c90c6c86184fcad09f22`; preserve frozen anchor `90c936a7...`; planned identity remains `c19-external-v2-official-v1`.
+**Prospectively frozen successor semantics:** inherit the v1 adapter, 55 rows, seeds 15901–15905, five baseline families, metrics, resource-match gates, primary contrast, and PASS/FAIL/INCONCLUSIVE inequalities unchanged. Add the following exact missing contract before any official access:
 
-**Information value:** `VERY_HIGH_ENABLING`.  
-**Implementation distance:** `NEAR`.  
-**Execution allowed:** **false**.
+1. Bind the exact canonical Belief-R parser/pairing implementation by blob. `pair_index` is zero-based enumeration of the bound pair iterator in returned order. The model-visible two-step envelope uses opaque `record_id="c19v2-pair-{pair_index:04d}-step-{step_index}"`, `source_index=step_index`, `step_index∈{0,1}`, exact question, and ordered choices. No `dataset_id`, `modus`, relation, agreement, atomic index, or target metadata enters the autonomous executor boundary.
+2. Evaluator targets are materialized only for scoring after immutable raw preservation. Exact per-pair schema: `pair_index`, `record_id_hash`, `source_index`, `step_index`, `target_choice_id`, `update_required`. Require exactly 1,744 unique targets, 1,074 update and 670 maintain; join to every raw row by the four-field identity `(pair_index, record_id_hash, source_index, step_index)` and fail closed on any mismatch.
+3. Correctness is `prediction == target_choice_id`; `None` is incorrect. Per row: BU-Acc = correct/update count, BM-Acc = correct/maintain count, BREU = `(BU+BM)/2`, all-pair accuracy = correct/1744, final coverage = non-None/1744.
+4. Bootstrap is exact: one `random.Random(19901)` stream on the official CPython 3.11.16 runtime; for each of 10,000 replicates draw exactly 1,744 indices by 1,744 sequential `rng.randrange(1744)` calls. Apply the identical sampled-index vector to primary/reference and all five seeds. Recompute per-seed BU/BM/BREU, aggregate the five seed BREUs with a fixed seed order 15901→15905, then form primary minus reference. Never redraw a replicate. A zero-sized update or maintain slice is a scorer failure and invalid evidence.
+5. Sort all 10,000 effects and compute the 95% percentile interval with exact linear interpolation: `position=(N-1)*p`, lower=floor, upper=ceil, interpolated endpoint for `p=0.025` and `0.975`. No rounding before classification; finite canonical JSON only.
+6. Bind a concrete no-clobber preserver/reconstructor and exact source/package/runtime/input manifests. Raw SHA-256 and authority ref must exist before scorer access to evaluator targets.
 
-### Allowed scope
+**MAIN owns ALL critical-path fixes**, including successor protocolization, acquisition/scorer/preserver implementation, CI, verifier, bindings, exact-head review, STARTED/control creation, official execution and evidence finalization.
 
-MAIN may, using only source/static/synthetic fixtures:
+**Conditional one-way authorization:** MAIN may proceed through official execution in the same run only if the successor package implements the exact contract above, this handoff remains current or a newer handoff explicitly preserves it, `c19-external-v2-official-v2` is fresh/unSTARTED/unconsumed, v1 remains untouched, exact package/source/input/runtime bindings reconstruct, exact-head CI is green, no official output exists, and the STARTED/no-clobber/raw-before-score order is verified. If any new scientific/statistical choice appears, STOP before STARTED.
 
-- replace the harness's ad-hoc six-field raw record contract with the exact frozen `raw_prediction_schema`, including `record_id_hash` rather than raw `record_id` and exact top-level row/run metadata;
-- make the validator compare against the frozen protocol schema rather than a divergent hard-coded pseudo-schema;
-- enforce exactly 1,744 unique official pair indices for every one of the 55 frozen rows, rejecting missing/duplicate/cross-row-inconsistent records before preservation;
-- bind a concrete scorer only to the already-frozen BU_Acc/BM_Acc/BREU and paired-bootstrap semantics; if any scoring choice is not fully determined prospectively by the frozen protocol, STOP instead of inventing it;
-- bind the concrete immutable preservation/reconstruction/run-manifest procedure needed by the frozen artifact order, without creating an actual official preserve authority;
-- reconcile `execution_harness_contract.json`, `implementation_binding.json` and exact source/blob/runtime manifests so they tell one machine-verifiable story;
-- add synthetic tests that prove frozen-schema equality, exact pair coverage, duplicate rejection, raw-before-score, no-clobber and reconstruction;
-- fix all MAIN critical-path CI/verifier/binding defects that leave frozen science unchanged.
+## SUB lane — reserved for SUB and independent of MAIN
 
-### Forbidden scope
+**Target:** C07/H9 fully-spiking-boundary prospectivity/readiness audit.
 
-- official Belief-R test/cache locate/open/read/verify;
-- STARTED/control creation, one-way dispatch, official acquisition/scoring/preservation or identity consumption;
-- changing the frozen adapter, protocol, metrics, bootstrap/result-class semantics, row inventory, seeds, baseline families, claim boundary or planned identity;
-- retrofitting parameter/compute matching or upgrading unmatched baselines to winner-eligible;
-- selecting any implementation/scoring choice based on official behavior;
-- post-outcome successor design.
+This is not invented parallelism: H9 is a canonical secondary hypothesis and C07 documentation already registers `hybrid vs fully spiking boundary comparison`; the historical C07 result explicitly says it is hybrid and not fully spiking.
 
-## SUB lane
+Recommended branch/package target: `research/c07-h9-fully-spiking-readiness-sub-20260917`, source-only/pre-START. `execution_allowed=false`.
 
-`sub_lane: null`  
-`sub_fallback: null`
+SUB may inventory the existing C07 source, frozen hybrid tolerances, H9 falsifier, dependency/runtime boundary and fully-spiking gaps; define a fresh successor protocol only where choices are already prospectively supportable from canonical pre-existing doctrine; add fixture/readiness/verifier scaffolding; and report any missing scientific choices. SUB must not execute a new C07 experiment, retune the historical hybrid result, or touch C19. Completion target is either a reviewable pre-START H9 successor readiness package or an explicit `PRE_START_UNDERSPECIFIED` finding listing choices that require a later Analyst cycle.
 
-**No-sub-lane reason:** no fresh independent prospective secondary object is reserved. Terminal-provenance v2 is complete; A01/RV01/RV02/CX01 have no fresh successor; the newly found C19 raw-schema/coverage/scorer defects are MAIN blockers by definition; Issue #139 is governance. Assigning any of them to SUB would make MAIN depend on SUB.
+**SUB fallback:** `null`. If this source-only H9 readiness audit proves to require new post-hoc hypothesis design, SUB stops rather than taking MAIN work.
 
-SUB should deliberately no-op.
+MAIN must not absorb this reserved H9 work. SUB must not take C19 blockers.
+
+## Prospective MAIN contingency tree
+
+- **PRE_START_SUCCESSOR_PROTOCOLIZATION** — v2 successor package incomplete but every missing choice is exactly specified above: MAIN continues in the same run; no official access yet.
+- **PRE_START_BLOCKER** — CI/verifier/binding/runtime defect with science unchanged: MAIN fixes and continues.
+- **PRE_START_SEMANTIC_GAP** — any additional acquisition/scoring/statistical/baseline choice is not determined by this handoff: STOP before STARTED and return to Analyst.
+- **PRE_START_READY_FOR_ONE_WAY** — exact successor package is coherent, green, current-authority-bound, identity fresh, no-clobber checks clean: MAIN is prospectively authorized to create STARTED and continue through the frozen one-way sequence in the same run.
+- **POST_START_FAILURE** — any failure after STARTED: identity `c19-external-v2-official-v2` is consumed, no retry; preserve failure diagnostics allowed, then STOP.
+- **INVALID_EVIDENCE** — hash/binding/access-order/raw-before-score/coverage/target-join/scorer-contract failure: withhold scientific result; if STARTED exists identity remains consumed; no repair/rerun.
+- **PASS** — CI lower bound > 0: finalize immutable scored evidence/report in the same run, claim only the frozen representation gain, then STOP before designing follow-up science.
+- **FAIL** — CI upper bound <= 0: finalize evidence/report, mark representation-gain claim unsupported for this object, no same-identity repair, then STOP.
+- **INCONCLUSIVE** — CI contains 0: finalize evidence/report, mark direction unresolved, no same-identity retune, then STOP.
 
 ## Top 3
 
-1. **MAIN — close the frozen raw-schema and exact 55×1,744 coverage contract.** `VERY_HIGH_ENABLING`, `NEAR`.
-2. **MAIN — bind formula-exact scorer + preservation/reconstruction/manifests and reconcile package contracts; run source-only/synthetic CI.** `HIGH_ENABLING`, `NEAR_AFTER_1`.
-3. **SUB — deliberate no-op** until a genuinely independent lane is prospectively reserved.
+1. **MAIN: build the fresh C19 successor exact package and, if every GO condition holds, execute the one-way v2 identity in the same run.** Information value: VERY HIGH. Distance: NEAR–MEDIUM.
+2. **SUB: C07/H9 fully-spiking-boundary source-only readiness/prospectivity audit.** Information value: MEDIUM. Distance: NEAR for readiness, execution explicitly deferred.
+3. **Governance/stability after science:** protect new authoritative tags/rules where connector/admin support permits and promote only outcome-independent generic validators. Information value: LOW scientific / MEDIUM integrity.
 
-## #1 GO / STOP
+### #1 GO / STOP
 
-### GO
+GO only with: successor identity freshness; exact adapter/scientific-matrix inheritance; exact cache/parser/visible-envelope/target/scorer/preserver/runtime bindings; current Analyst authority; no existing STARTED/raw/scored/preserve output; exact 55×1,744 raw coverage; exact 1,744 target join; raw preservation before target scoring; exact-head CI green; and unchanged falsifiers. Human-review-only blockers remain waived by prior authorization, but no reviewer identity may be fabricated.
 
-Proceed only while all remain true:
+Scientific classification remains: PASS iff primary paired-bootstrap BREU CI lower > 0; FAIL iff upper <= 0; otherwise INCONCLUSIVE. Matched-baseline winner claims remain forbidden unless all four frozen matching dimensions hold for all five seeds. Stateless/explicit-state parity is a simpler-reduction signal; Isolation remains untested.
 
-- C19 head re-fetches at `17ce3e61...` (or only science-preserving MAIN descendants) and frozen science anchor remains `90c936...`;
-- `c19-external-v2-official-v1` remains fresh, unSTARTED, unconsumed and collision-free;
-- exact source/protocol/package/input/runtime bindings remain reconstructable;
-- all repairs are mechanically implied by the frozen protocol and require no official behavior;
-- raw output exactly matches the frozen target-blind schema and forbids target/text leakage;
-- every frozen row has exactly 1,744 unique official pairs with no duplicate/missing coverage;
-- no-clobber and immutable raw-before-score remain enforced;
-- concrete scoring is exactly the frozen BU/BM/BREU + paired-bootstrap procedure, with no post-data choices;
-- exact-head CI/review checks are green;
-- scientific falsifiers and claim limits remain unchanged, including descriptive-only unmatched baselines.
+STOP before STARTED for any unbound semantic choice, identity/ref collision, package drift, unexpected prior output, target leakage, inability to guarantee no-clobber/raw-before-score, or need to alter the inherited matrix/adapter/baselines/metrics/thresholds. After STARTED, any failure consumes the v2 identity and there is no retry.
 
-### STOP
+## Blocked / do not touch
 
-STOP if any repair requires changing frozen science, official-test behavior, a new scorer/threshold/statistic choice not already fixed, a new baseline family, retuning/rebinding the identity, or relaxing target-blindness/coverage. STOP on any ref/hash/identity collision, unexpected official access, STARTED, raw/scored output, or source-only static redundancy. Also STOP normally when the exact contract package is complete, coherent and green: return it for a **fresh Analyst execution ADMIT/REJECT** rather than executing in the same run.
-
-## Prospective outcome contingencies
-
-| Branch | Exact trigger | Same-run MAIN action | One-way execution |
-|---|---|---|---|
-| `PRE_START_CONTRACT_MISMATCH` | harness raw schema differs from frozen protocol or package contracts disagree while science is unchanged | repair serializer/validator/contracts/tests; re-fetch and continue | No |
-| `PRE_START_COVERAGE_GUARD_INCOMPLETE` | 55-row presence exists but exact 1,744-pair uniqueness/completeness is not enforced | add fail-closed frozen coverage validation/tests; continue | No |
-| `PRE_START_SCORER_BINDING_INCOMPLETE` | scorer/preserver is interface-only but frozen semantics fully determine implementation | bind concrete formula-exact scorer/preserve/reconstruction procedure and test synthetically | No |
-| `PRE_START_SCORER_SEMANTICS_AMBIGUOUS` | implementation would require a new scoring/statistical choice | STOP for new Analyst design decision; do not guess | No |
-| `PRE_START_BLOCKER` | CI/verifier/runtime/package defect with frozen science unchanged | MAIN fixes and continues after fresh integrity check | No |
-| `PRE_START_BINDING_INVALID` / `PRE_START_REDUNDANT` | frozen experiment cannot be implemented without redesign, or source-only audit collapses discriminator | STOP and return evidence | No |
-| `PRE_START_READY_FOR_EXECUTION_ADMISSION` | exact schema, coverage, scorer/preservation and package binding all complete/green | STOP for fresh Analyst ADMIT/REJECT | No |
-| `INVALID_EVIDENCE` | premature official access or ref/hash/package/order violation | STOP; preserve incident state; no repair-by-reinterpretation | No |
-| `POST_START_FAILURE` | STARTED unexpectedly exists under this handoff | STOP; identity is consumed unless a prior retry protocol exists (none) | No |
-| PASS / FAIL / INCONCLUSIVE | unreachable because execution is not admitted | none | No |
-
-Same-run continuation is prospectively allowed only through the science-preserving pre-START mismatch/coverage/scorer-binding/blocker branches above. It must stop before one-way execution.
-
-## Blocked until / do-not-touch
-
-Official C19-v2 execution is blocked until the exact frozen execution contract is implemented and machine-verifiably bound, exact-head CI is green, the identity remains fresh, and a newer Evidence Analyst explicitly admits execution.
-
-Do not touch consumed identities: A01 MD-001; `a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2`; `a01-md002-p3-r-only-causal-carrier-candidate-001-v1`; `a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1`; RV01 R01-16 family / `rv01-r01-17-real-delay-causal-timing-v1`; RV02 D1 `96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a`; CX01 Candidate-002/formal evidence. Family-B/C Gen1 exact objects remain rejected despite being unconsumed; no rescue/retune/rebind. Historical C19-v1/C06 and legacy freeze/control/preserve/evidence authorities remain immutable.
+- `c19-external-v2-official-protocol-v1`, identity `c19-external-v2-official-v1`, and frozen anchor `90c936...`: rejected pre-START predecessor; preserve exactly; never execute or “complete” it retroactively.
+- All consumed A01, RV01, RV02 and CX01 identities/authorities; no rerun, retune or rebinding.
+- Historical C19-v1/C06 and legacy freeze/preserve/control/evidence refs.
+- H8/C08 registered negative object; no rerun disguised as H9 work.
 
 ## Governance advisory
 
-Issue #139 remains operationally open; there are still no Git tags or repository rulesets, and `main` is unprotected. Legacy freeze branches remain intact and must not be migrated opportunistically. This governance gap must not delay the C19 contract repair.
+Open PRs: 0. Open Issue: #139 only. Tags: 0. Rulesets: 0. PR #146 has put generic annotated-tag creation tooling on `main`, but server-side protection remains absent. Do not migrate or rewrite legacy freeze branches. New authoritative anchors should use the generic annotated-tag path with strict no-clobber when safe, while recording exact object SHAs; lack of ruleset protection remains a governance gap, not a C19 scientific blocker.
 
-Outcome-independent future main-promotion candidates remain generic terminal-provenance v2 after separate review, historical-binding verification, no-clobber/source-manifest/raw-before-score helpers, exact pair-coverage validation, and a generic pre-START execution-package state machine once semantics stabilize.
+Outcome-independent main-promotion candidates after frontier stabilization: exact-pair coverage validator, target-blind raw-schema/no-clobber/raw-before-score helpers, and a generic deterministic bootstrap contract helper only after its semantics are independently frozen. C19-specific representation/scientific bindings stay on research branches.
 
-## Orchestrator handoff
+## Plain orchestrator handoff
 
-**MAIN takes C19 frozen execution-contract conformance and owns ALL critical-path fixes. SUB takes no lane and deliberately no-ops; fallback is null. MAIN must not manufacture SUB work, and SUB must not take C19 blockers. Neither worker touches consumed identities, immutable authorities, rejected A01 B/C objects, or frozen C19 science.**
+MAIN takes the C19 fresh successor and owns **ALL** critical-path fixes through a clean one-way run if the conditional GO gate is met. SUB takes the independent C07/H9 source-only readiness audit. SUB fallback is null. MAIN must not absorb the reserved H9 lane; SUB must not take any C19 blocker. Neither worker touches the rejected v1 C19 object, consumed/frozen experiments, historical evidence, or immutable authorities.
 
-Repartition only if a fresh independent secondary object is prospectively reserved, a new external/audit handoff materially changes expected information value, or source-only evidence invalidates/reduces C19. MAIN may continue same-run through the listed science-preserving pre-START branches, but must stop at scorer ambiguity, invalid/redundant science, integrity incidents, or ready-for-execution-admission.
+Repartition only if fresh evidence shows H9 work depends on C19, the H9 object is already completed/consumed elsewhere, a newer external/audit finding materially changes information value, or the successor C19 package reveals a scientific semantic gap not fixed here. MAIN may continue through pre-START implementation fixes, STARTED→acquisition→raw preservation→scoring, and PASS/FAIL/INCONCLUSIVE evidence finalization in the same run only under the exact prospective tree above; no post-outcome successor design is authorized.
