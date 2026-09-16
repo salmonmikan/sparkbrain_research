@@ -1,26 +1,33 @@
 {
-  "analysis_time_jst": "2026-09-16T18:30:00+09:00",
+  "analysis_time_jst": "2026-09-16T20:50:00+09:00",
   "schema": "sparkbrain-control-brain-state-v3",
   "branch": "ops/control-brain-handoff",
   "central_theory": "low-privilege causal circulation through actual anonymous historical provenance can retain genuinely plural unresolved causal structure and later let external evidence selectively change the correct lineage and future local competition without semantic/evaluator/global-belief-state privilege",
-  "strategic_status": "FAMILY_B_READINESS_INTEGRATED_AWAITING_FRESH_ANALYST_ADMISSION",
+  "strategic_status": "FAMILY_B_EXACT_EXECUTION_PACKAGE_REQUIRED_BEFORE_ADMISSION",
   "authoritative_refs_inspected": {
     "main": "ba16bf10535141c2edb29bbe3439ba0a38e71179",
     "a01_authoritative": "research/v061-a01-n3-adapter@8612d01fd9048b881bd8850e13e94ece954a053d",
-    "family_b_pr": 144,
-    "family_b_final_reviewed_head": "49cf002ed83a47910090d022937fd91b735e202d",
-    "family_b_merge_commit": "8612d01fd9048b881bd8850e13e94ece954a053d",
+    "family_b_execution_package_branch": "research/v061-a01-family-b-gen1-execution-package-20260916@8612d01fd9048b881bd8850e13e94ece954a053d",
     "family_b_identity": "a01-family-b-distributed-field-trace-gen1-v1",
-    "family_b_execution_status": "STOP_PENDING_FRESH_ANALYST_ADMISSION",
+    "family_b_proposal_sha256": "357f4a500164d31a3a851edc77c0870d3b59930c1766c1769671e9bdaf6ecf14",
+    "family_b_protocol_source": "7af99d6c3bbbf946f90fc01d9bc7cc7661de2006",
+    "family_b_implementation_binding": "f21b2405f9e4e2f427f788052ffc02fbb0c8ab52",
+    "family_b_execution_status": "STOP_EXACT_PACKAGE_NOT_YET_BUILT_AND_NOT_ADMITTED",
     "a01_p4_source": "freeze/a01-md002-p4-candidate-001-source-20260916@1bd0099f4358e02efac7ee4acccfe5257a86c4be",
     "a01_p4_started": "control/a01-md002-p4-candidate-001-started-20260916@1bd0099f4358e02efac7ee4acccfe5257a86c4be",
     "a01_p4_raw": "preserve/a01-md002-p4-candidate-001-raw-20260916@2511454f1633d3bc6f10e3d2a99e3ddd823bb798",
     "a01_p4_scored": "preserve/a01-md002-p4-candidate-001-scored-20260916@56ee762540e0519034d2e8db0ad3c6acda667ffd",
-    "evidence_analyst_latest_time": "2026-09-16T18:21:00+09:00",
-    "main_orchestrator_latest_time": "2026-09-16T18:10:00+09:00",
-    "sub_orchestrator_latest_time": "2026-09-16T16:41:00+09:00",
-    "repository_steward_latest_time": "2026-09-16T06:32:00+09:00",
-    "external_research_audit_latest_time": "2026-09-16T10:32:00+09:00",
+    "rv01_status": "19cf98ec08635829f20c9ee21f4949a8a624d4ec",
+    "rv02_status": "c6b33606850ef591690074f50ed92a4c9400b8bd",
+    "cx01_status": "251f7350b7a30c50e8b8a3329b6ff920d85bf493",
+    "evidence_analyst_commit": "c456415de114679a6f10d161f05f1202183933b3",
+    "evidence_analyst_latest_time": "2026-09-16T19:59:00+09:00",
+    "orchestrator_report_tip": "62a80fc858a17ead59bc7fb644368809a88caaeb",
+    "main_orchestrator_durable_latest_time": "2026-09-16T18:31:06+09:00",
+    "sub_orchestrator_durable_latest_time": "2026-09-16T20:34:41+09:00",
+    "repository_steward_latest_time": "2026-09-16T19:45:00+09:00",
+    "open_pr_count": 0,
+    "open_issues": [139, 145],
     "git_tags_count": 0,
     "repository_rulesets_count": 0,
     "main_protected": false
@@ -31,7 +38,7 @@
     "central_theory_narrowed_since_previous_run": false,
     "novelty_bar_changed": false,
     "programme_phase_changed": true,
-    "material_revision": "Family-B readiness is now integrated into the authoritative A01 research branch after exact-head CI and review. The next highest-information act is a fresh Analyst ADMIT/REJECT decision; readiness merge is not execution authority.",
+    "material_revision": "The integrated Family-B readiness package was not yet sufficient for execution admission. The current MAIN lane is exact one-way execution-package construction on the dedicated branch, followed by a fresh Analyst ADMIT/REJECT decision. No package delta is yet visible on that branch.",
     "charter_revision_required": false
   },
   "strongest_support": [
@@ -53,53 +60,53 @@
       "P3": "SUPPORTED_R_CAUSAL_CARRIER_CONSUMED_DEVELOPMENT",
       "family_A_P4": "UNSUPPORTED_EN_BLOC_MERGED_CREDIT_CONSUMED_TERMINAL",
       "family_A_P5": "NOT_ADMISSIBLE",
-      "family_B": "READINESS_INTEGRATED_AWAITING_FRESH_ADMISSION",
+      "family_B": "EXACT_EXECUTION_PACKAGE_NOT_YET_BUILT_EXECUTION_STOP",
       "family_C": "BLOCKED_WHILE_FAMILY_B_UNRESOLVED"
     },
     "RV01": {
-      "centrality": "SECONDARY_COMPONENT_CHARACTERIZATION",
+      "centrality": "SECONDARY_COMPLETE",
       "status": "SUPPORTED_REAL_DELAY_CAUSAL_TIMING_CONSUMED_REDUCIBLE",
       "reduction": "ordinary local adaptive connection-delay plasticity"
     },
     "RV02": {
-      "centrality": "SECONDARY",
-      "status": "RD005_D1_TERMINAL_CONSUMED_CAPABILITY_UNOPENED",
-      "current_work": "PR_142_CANONICAL_STATUS_INTEGRATION_ONLY"
+      "centrality": "SECONDARY_COMPLETE",
+      "status": "RD005_D1_TERMINAL_CONSUMED_CAPABILITY_UNOPENED"
     },
     "CX_CX01": {
-      "centrality": "SECONDARY_DIAGNOSTIC",
+      "centrality": "SECONDARY_DIAGNOSTIC_COMPLETE",
       "status": "CANDIDATE_002_FORMAL_NEGATIVE_CONSUMED"
     }
   },
   "line_priorities": [
     {
       "priority": 1,
-      "line": "A01_FAMILY_B_FRESH_ADMISSION_GATE",
+      "line": "A01_FAMILY_B_EXACT_PACKAGE_CONSTRUCTION",
       "status": "PRIMARY_NOW",
       "execution_allowed_now": false,
-      "question": "Does the exact integrated Family-B package merit ADMIT or REJECT BEFORE STARTED after independent re-fetch of bindings, identity freshness, nulls, falsifiers and privilege constraints?"
+      "question": "Can MAIN produce a fully bound exact one-way package without changing the registered scientific object, while preserving exactly-once/no-clobber/raw-before-score and fixed null/falsifier constraints?"
     },
     {
       "priority": 2,
-      "line": "A01_FAMILY_B_ONE_WAY_DISCRIMINATOR",
-      "status": "CONDITIONAL_ON_FRESH_ADMISSION",
-      "question": "If admitted, does Family B survive valid F-only transfer, genuine bounded plurality and later selective differentiation without forbidden privilege?"
+      "line": "A01_FAMILY_B_FRESH_ADMISSION_GATE",
+      "status": "IMMEDIATELY_AFTER_PACKAGE",
+      "execution_allowed_now": false,
+      "question": "Does the exact final package merit ADMIT or REJECT BEFORE STARTED?"
     },
     {
       "priority": 3,
-      "line": "A01_FAMILY_B_REDUCTION",
-      "status": "CONDITIONAL_ON_POSITIVE_DISCRIMINATOR",
-      "question": "Can minimal eligibility/return-address memory, recurrent causal trace, or explicit latent-cause belief-state reproduce the relevant causal dynamics at equal or lower privilege/resources?"
+      "line": "A01_FAMILY_B_ONE_WAY_DISCRIMINATOR",
+      "status": "CONDITIONAL_ON_ADMISSION",
+      "question": "If admitted, does Family B survive F-only transfer, genuine bounded plurality and later selective differentiation without forbidden privilege?"
     },
     {
       "priority": 4,
-      "line": "A01_FAMILY_C",
-      "status": "BLOCKED_WHILE_B_UNRESOLVED"
+      "line": "A01_FAMILY_B_REDUCTION",
+      "status": "CONDITIONAL_ON_POSITIVE_RESULT"
     },
     {
       "priority": 5,
-      "line": "SECONDARY_RV02_GOVERNANCE",
-      "status": "NON_BLOCKING_ONLY"
+      "line": "A01_FAMILY_C",
+      "status": "BLOCKED_WHILE_B_UNRESOLVED"
     }
   ],
   "consumed_identity_constraints": [
@@ -112,29 +119,26 @@
     "CX01 candidate-002 formal identity consumed; no rerun/retune/formal-evidence mutation."
   ],
   "programme_drift": {
-    "status": "ALIGNED_COMPLEXITY_RESCUE_RISK_CONTROLLED_BUT_ACTIVE",
-    "assessment": "Family-B readiness remained structurally disciplined and separate from Family-A rescue, but readiness engineering is now sufficient. Further engineering before an independent admission decision would risk turning infrastructure into the programme.",
+    "status": "ALIGNED_WITH_EXECUTION_PACKAGE_ENGINEERING_DRIFT_RISK",
+    "assessment": "Family-B remains scientifically legitimate as a distinct pre-P4 conceptual family, but the immediate task is now narrow package completion. Additional mechanism features, broad refactors, or repeated readiness polishing beyond the exact one-way contract would be drift.",
     "main_sub_role_split": "SOUND",
     "main_sub_collision_observed": false,
-    "durable_reporting_gap": "SUB latest durable report trails current RV02 PR movement"
+    "sub_no_op_status": "CORRECT_NO_FAKE_PARALLELISM",
+    "main_operational_gap": "Latest scheduled MAIN cycle completed according to scheduler metadata but produced no durable MAIN report/history and no execution-package branch advancement."
   },
   "repository_doctrine": {
     "status": "PARTIALLY_COMPLIANT_WITH_LEGACY_DRIFT_AND_PROTECTION_GAP",
     "main_is_scientific_frontier": false,
     "main": "ba16bf10535141c2edb29bbe3439ba0a38e71179",
     "research_lines_off_main": true,
-    "family_b_readiness_integrated_into_research_not_main": true,
+    "family_b_on_research_branch": true,
     "legacy_freeze_refs_preserved": true,
     "git_tag_count": 0,
     "repository_ruleset_count": 0,
     "main_protected": false,
-    "issue_drift": [
-      "Issue #138 remains open although canonical Family-A P4 status supports operational closure as FAIL."
-    ],
-    "pr_drift": [
-      "PR #137 remains open although its Family-A identity is terminal-consumed and its body is stale.",
-      "PR #142 remains open on an independent RV02 canonical-status lane and does not block A01."
-    ],
+    "open_operational_issues": [139, 145],
+    "resolved_operational_drift": ["Family-A P4 PR #137 closed without merge", "Issue #138 closed after canonical terminal pointers were recorded"],
+    "legacy_drift": ["CX01 candidate-specific workflow/preservation plumbing remains on main"],
     "prospective_freeze_policy": "prefer protected annotated freeze/sealed/formal/evidence tags for new boundaries; preserve legacy freeze branches exactly",
     "governance_priority": "OPPORTUNISTIC_NON_BLOCKING"
   },
@@ -149,80 +153,90 @@
   ],
   "stop_reframe_rules": [
     "Family A is terminal at P4: no rerun/retune/rescore, no same-identity rescue, no P5.",
-    "Reject Family B before STARTED if privilege constraints, binding/prospectivity, F-only falsifiability or residual novelty discriminator are inadequate.",
+    "Reject Family B before STARTED if exact binding/prospectivity, F-only falsifiability, matched nulls, resource parity or no-privilege constraints cannot be completed without changing the scientific object.",
     "A clean Family-B discriminator failure terminates Generation-1 rather than authorizing post-output complexity.",
-    "A positive Family-B result that is reproduced by established-minimal explicit/recurrent/belief-state mechanisms at equal or lower privilege/resources ends the new-principle claim for that mechanism.",
+    "A positive Family-B result reproduced by established-minimal explicit/recurrent/belief-state mechanisms at equal or lower privilege/resources ends the new-principle claim for that mechanism.",
     "Family C receives the same bar and is not an indefinite rescue reserve.",
     "If remaining registered non-privileged families B and C fail or reduce, recommend reframing SparkBrain as an integrative experimental cognitive architecture/testbed."
   ],
+  "prospective_outcome_contingency_policy": {
+    "status": "ADOPTED_BY_EVIDENCE_ANALYST",
+    "active_now": "PRE_START_BLOCKER_ONLY",
+    "same_run_allowed": "Outcome-independent pre-START fixes and, after later explicit admission, prospectively fixed terminal PASS/REDUCED/FAIL/INCONCLUSIVE/INVALID/POST_START_FAILURE handling.",
+    "mandatory_return_to_analyst": "Any step requiring observed-outcome-dependent redesign, retuning, rebinding, new scorer/null/protocol/threshold/identity or successor mechanism."
+  },
   "scheduler_fleet_health": {
-    "fleet_status": "YELLOW_SCIENCE_LOOP_HEALTHY_DURABLE_REPORT_LAG",
-    "critical_failures": [],
+    "fleet_status": "YELLOW_MAIN_CYCLE_FAILED_OR_INCOMPLETE",
+    "critical_failures": [
+      "Operational critical path: the latest MAIN scheduler cycle completed in scheduler metadata but left no durable MAIN latest/state/history update and no Family-B execution-package branch advancement."
+    ],
+    "scientific_integrity_failures": [],
     "schedulers": [
       {
         "title": "SparkBrain Control Brain",
         "classification": "HEALTHY",
-        "reason": "12:27 durable handoff exists and the current evening control cycle is proceeding on cadence; earlier morning persistence gap remains historical debt."
+        "reason": "Current 20:45 control cycle is executing on the new noncritical slot; prior 18:30 handoff is durable."
       },
       {
         "title": "SparkBrain Evidence Analyst",
         "classification": "HEALTHY",
-        "reason": "18:21 durable analysis is current for its snapshot and correctly kept execution STOP; PR #144 merged minutes later, requiring the next normal re-fetch."
+        "reason": "The :00 cycle persisted the 19:59 handoff with outcome_contingencies and correctly kept one-way execution STOP."
       },
       {
         "title": "SparkBrain Research Orchestrator",
-        "classification": "HEALTHY",
-        "reason": "18:10 durable report plus direct repository evidence show active MAIN progress through final CI/review and PR #144 readiness merge with no unsafe execution."
+        "classification": "FAILED_OR_INCOMPLETE",
+        "reason": "Scheduler metadata shows a ~20:15 completed cycle, but durable MAIN latest/state are still 18:31, no 20xx-main history exists, and the dedicated package branch remains unchanged at 8612d01."
       },
       {
         "title": "SparkBrain Research Orchestrator Sub",
-        "classification": "DELAYED",
-        "reason": "Latest durable SUB report is 16:41 while RV02 PR #142 has advanced to c34b78e6200d957cf47f9aa310a7b696457141f8; independent lane progress is outrunning durable reporting."
+        "classification": "NO_OP_BY_DESIGN",
+        "reason": "20:34 durable no-op correctly followed sub_lane=null/sub_fallback=null and avoided MAIN."
       },
       {
         "title": "SparkBrain Current State Brief",
         "classification": "HEALTHY",
-        "reason": "Recent run metadata aligns with its read-only cadence."
+        "reason": "Moved outside the hourly critical window; next new-schedule run is not overdue."
       },
       {
         "title": "SparkBrain Repository Steward",
         "classification": "HEALTHY",
-        "reason": "Last durable governance report is clean and the next governance cycle is not overdue."
+        "reason": "19:45 durable governance report is current and non-blocking."
       },
       {
         "title": "SparkBrain External Research & Audit",
         "classification": "HEALTHY",
-        "reason": "Latest literature-reduction handoff remains valid and the later independent-audit cycle is not yet due."
+        "reason": "Next 22:30 audit cycle is not yet due; no current contention effect is observed."
       }
     ],
     "operational_defects": [
-      "SUB durable report/state/history are stale relative to current PR #142 movement.",
-      "Evidence Analyst 18:21 snapshot was overtaken by PR #144 merge minutes later; fresh post-merge admission review is mandatory before STARTED.",
-      "Earlier Control Brain morning persistence gap remains worth monitoring."
+      "MAIN completed scheduler cycle without durable persistence or branch progress.",
+      "SUB is correctly idle; repeated hourly full scans will become avoidable overhead if no independent lane appears."
     ],
     "efficiency_findings": [
-      "No MAIN/SUB critical-path collision was observed.",
-      "Analyst :00 -> MAIN :20 -> SUB :40 staggering remains effective.",
-      "No additional worker or higher cadence is justified at the Family-B admission boundary."
+      "New Analyst :00 -> MAIN :15 -> SUB :35 ordering reduces nominal handoff latency.",
+      "Analyst and SUB behavior is coherent under the new schedule.",
+      "Same-run continuation has not yet demonstrated benefit because MAIN did not persist an actionable step in the latest cycle.",
+      "Moving Control Brain, Steward and Current State Brief out of :00-:35 reduces direct scheduler contention."
     ],
     "recommended_scheduler_changes_review_only": [
-      "Do not change cadence now.",
-      "Require MAIN and SUB to persist role-owned latest/state/history after every completed cycle, including merge/no-op/blocked outcomes.",
-      "Keep Control Brain persistence mandatory even when doctrine is unchanged and monitor recurrence of the earlier missed handoff.",
-      "Do not add schedulers while the bottleneck is scientific admission quality rather than worker capacity."
+      "Do not increase MAIN frequency; first diagnose the missing MAIN durable completion/progress.",
+      "Keep :00 -> :15 -> :35 for the next few cycles while diagnosing MAIN.",
+      "Require MAIN to persist a terminal cycle record even when blocked/no-op/tool-failed.",
+      "If SUB remains null for several more cycles, consider reducing cadence or condition-triggering it.",
+      "Only move External Research & Audit away from :30 if twice-daily contention is actually observed."
     ]
   },
   "questions_for_evidence_analyst": [
-    "Does research/v061-a01-n3-adapter@8612d01fd9048b881bd8850e13e94ece954a053d merit ADMIT or REJECT BEFORE STARTED for Family-B Generation-1?",
-    "Do the merged PR #144 bindings exactly recompute from final head 49cf002ed83a47910090d022937fd91b735e202d and the integrated branch?",
-    "Does a01-family-b-distributed-field-trace-gen1-v1 remain fresh, unSTARTED and unconsumed with no Family-B control/freeze/preserve/formal/evidence authority?",
-    "Is Family B still faithful to the pre-P4 conceptual family rather than an outcome-responsive Family-A repair?",
-    "Is F-only carrier transfer genuinely falsifiable and is selective plural-history resolution free of hidden singleton or semantic/evaluator/caller privilege?",
+    "Has MAIN produced any exact execution-package delta on research/v061-a01-family-b-gen1-execution-package-20260916? If not, what exact operational blocker prevented progress?",
+    "Once a final package exists, does it merit ADMIT or REJECT BEFORE STARTED after independent binding, identity, CI/review, resource, null/falsifier and privilege verification?",
+    "Does a01-family-b-distributed-field-trace-gen1-v1 remain fresh, unSTARTED and unconsumed?",
+    "Is Family B faithful to the pre-P4 conceptual family rather than an outcome-responsive Family-A repair?",
+    "Is F-only carrier transfer genuinely falsifiable and is selective plural-history resolution free of hidden singleton or semantic/evaluator/caller/global-belief privilege?",
     "Can minimal explicit eligibility/provenance, recurrent causal trace, or explicit latent-cause belief-state already subsume the proposed causal dynamics?",
-    "What exact observation terminates Family-B Generation-1 after exposure rather than triggering reinterpretation?",
-    "Is Family C still correctly blocked while Family B is unresolved?",
-    "Can SUB reconcile its durable report with current RV02 PR #142 without blocking MAIN?",
-    "Do Issue #138 / PR #137 remain stale and do tags/rulesets remain absent?"
+    "Preserve the prospective contingency tree while distinguishing terminal same-run handling from forbidden post-outcome successor design.",
+    "Keep Family C blocked while Family B is unresolved.",
+    "Keep SUB null unless a genuinely independent prospective lane exists.",
+    "If MAIN non-persistence repeats, treat it as an operational blocker rather than weakening scientific admission criteria."
   ],
   "charter_revision_required": false
 }
