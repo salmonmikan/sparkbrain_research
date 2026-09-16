@@ -1,6 +1,6 @@
 # CX01 Implementation Status
 
-> **CURRENT CANDIDATE-002 STATUS: TERMINAL-CONSUMED / FORMAL NEGATIVE.** This document is a preserved pre-execution implementation snapshot. Statements below that Candidate-002 is unopened, unselected, or the next formal attempt are historical and superseded for Candidate-002. The current canonical status and immutable evidence map is [`docs/CX01_CANDIDATE_002_FORMAL_STATUS.md`](CX01_CANDIDATE_002_FORMAL_STATUS.md). Candidate-002 MUST NOT be rerun, retuned, rescored, repaired, or reused. Any future formal attempt requires a distinct prospective identity and newly bound source/protocol/package.
+> **CURRENT CANDIDATE-002 STATUS: TERMINAL-CONSUMED / FORMAL NEGATIVE.** This document is a preserved pre-execution implementation snapshot. Statements below that Candidate-002 is unopened, unselected, or the next formal attempt are historical and superseded for Candidate-002. The current canonical status and immutable evidence map is [`docs/CX01_CANDIDATE_002_FORMAL_STATUS.md`](CX01_CANDIDATE_002_FORMAL_STATUS.md). Candidate-002 MUST NOT be rerun, retuned, repaired, or reused, and MUST NOT be rescored with a modified policy or from modified evidence. Read-only verification that recomputes the preserved result from immutable raw evidence with the unchanged frozen policy remains permitted. Any future formal attempt requires a distinct prospective identity and newly bound source/protocol/package.
 
 Historical status at the time of this snapshot: **STRUCTURAL HELD-OUT CORRECTION UNDER REVIEW — no new formal candidate opened**
 
