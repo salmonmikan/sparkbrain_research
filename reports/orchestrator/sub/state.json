@@ -1,76 +1,83 @@
 {
-  "timestamp": "2026-09-16T10:46:00+09:00",
+  "timestamp": "2026-09-16T11:43:00+09:00",
   "worker_role": "sub",
-  "evidence_analyst_commit": "5f444a295d3ae32263923c3706ac2c6c6746533d",
+  "evidence_analyst_commit": "2c90237c98757d09bd37e445a411df0299e652e2",
   "consumed_lanes": {
-    "main_lane": "A01 MD-002 P4 candidate-001 selective merged-lineage discriminator",
-    "sub_lane": "RV01 canonical status and evidence-map consolidation",
-    "sub_fallback": "RV02 terminal-status and evidence-map consolidation"
+    "main_lane": "A01 post-P4 terminal closeout plus pre-existing premechanism-registry admission audit",
+    "sub_lane": "RV02 terminal-status and evidence-map consolidation",
+    "sub_fallback": "CX01 candidate-002 formal-negative status/evidence-map consolidation"
   },
   "selected_independent_lane": {
-    "target": "RV01 canonical status and evidence-map consolidation",
+    "target": "RV02 terminal-status and evidence-map consolidation",
     "selection": "primary",
     "reservation_status": "reserved_for_sub",
     "independent_of_main_critical_path": true
   },
   "execution_allowed": false,
   "sub_active_claim": {
-    "target": "RV01 canonical status and evidence-map consolidation",
-    "branch": "research/rv01-status-evidence-consolidation-sub-20260916",
-    "pr": 140,
-    "head": "2d877a5af670c54d404d8782763129f497092f88",
+    "target": "RV02 terminal-status and evidence-map consolidation",
+    "branch": "research/rv02-status-evidence-consolidation-sub-20260916",
+    "pr": 142,
+    "head": "ce317febb8be8d111959082cd5632a5ead9c83b4",
     "status": "COMPLETION_TARGET_REACHED_REVIEWABLE_PR_OPEN"
   },
   "main_work_explicitly_avoided": [
-    "A01 MD-002 P4 candidate-001",
-    "research/v061-a01-md002-p4-candidate-001-20260916",
-    "PR #137",
-    "all P4 freeze/control/preserve refs and outcome-responsive successor design"
+    "A01 post-P4 terminal closeout and pre-existing mechanism admission audit",
+    "research/v061-a01-n3-adapter",
+    "research/v061-a01-post-p4-closeout-20260916",
+    "PR #141 and all A01 P4 immutable evidence",
+    "any A01 successor design or MAIN critical-path fixup"
   ],
   "authoritative_refs": {
-    "rv01_research": "research/rv01-endogenous-transition@98be60268845487ce51e76b8a7687552a5dbc51f",
-    "r01_17_freeze": "freeze/rv01-r01-17-real-delay-source-20260915@5ecb459b609b393ff837f57cc138f1eb44c1b255",
-    "r01_17_started": "control/rv01-r01-17-real-delay-started-20260915@5ecb459b609b393ff837f57cc138f1eb44c1b255",
-    "r01_17_raw": "preserve/rv01-r01-17-real-delay-raw-20260915@fceb3663c7a880d82593e6c1efe52fcd1ad0c00a",
-    "r01_17_scored": "preserve/rv01-r01-17-real-delay-scored-20260915@d4737d52ecbb2306d9f00f99366f0ad6424327be",
-    "main_report_seen": "reports/orchestrator/main/state.json at ops/orchestrator-run-report@6aa8869fea1c1696551be686a07104d843bd04db"
+    "rv02_research": "research/rv02-development-feasibility@8176b91f5d427f3bdfccae2fac2c01b60a771403",
+    "rd005_d1_identity": "96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
+    "rd005_source_freeze": "freeze/rv02-rd005-d1-source-c60b7fd8-20260914@c60b7fd8d3889ee969f505d921e7d31c990871e6",
+    "rd005_started": "control/rv02-rd005-d1-started-96634541-20260914@2535b6312a091f7da4efa10c064c285bdeda7eaf",
+    "rd005_raw_preserve": "preserve/rv02-rd005-d1-96634541-20260914@d1fdd67ea197b879c52942c4a34e7d39a0a40698",
+    "rd005_terminal_audit": "review/rv02-rd005-d1-terminal-outcome-20260914@262a56f8d2a0f482166ee0e621305ceef6caeb0c",
+    "main_report_seen": "reports/orchestrator/main/state.json at ops/orchestrator-run-report@5d0acd8260290d5147f99063b944173f1fd9f0cd",
+    "analyst_handoff": "ops/evidence-analyst-handoff@2c90237c98757d09bd37e445a411df0299e652e2"
   },
   "branches_prs_advanced": [
     {
-      "branch": "research/rv01-status-evidence-consolidation-sub-20260916",
-      "base": "98be60268845487ce51e76b8a7687552a5dbc51f",
-      "commit": "2d877a5af670c54d404d8782763129f497092f88",
+      "branch": "research/rv02-status-evidence-consolidation-sub-20260916",
+      "base": "8176b91f5d427f3bdfccae2fac2c01b60a771403",
+      "commit": "ce317febb8be8d111959082cd5632a5ead9c83b4",
       "files": [
-        "docs/research/RV01_STATUS_EVIDENCE_MAP.md"
+        "docs/research/RV02_STATUS_EVIDENCE_MAP.md"
       ]
     },
     {
-      "pr": 140,
-      "title": "RV01: consolidate current status and evidence map",
-      "base": "research/rv01-endogenous-transition",
-      "head": "research/rv01-status-evidence-consolidation-sub-20260916",
-      "head_sha": "2d877a5af670c54d404d8782763129f497092f88",
-      "state": "open"
+      "pr": 142,
+      "title": "RV02: consolidate current status and evidence map",
+      "base": "research/rv02-development-feasibility",
+      "head": "research/rv02-status-evidence-consolidation-sub-20260916",
+      "head_sha": "ce317febb8be8d111959082cd5632a5ead9c83b4",
+      "state": "open",
+      "changed_files": 1,
+      "behavior_change": false
     }
   ],
   "workflows_experiments": [],
   "scientific_results": [],
   "readiness_results": [
-    "Created a canonical RV01 status/evidence map from authoritative existing evidence only.",
-    "Recorded R01-17 development classification SUPPORTED_REAL_DELAY_CAUSAL_TIMING without upgrading authority.",
-    "Recorded exact source/freeze/STARTED/raw/scored refs and evidence digests.",
-    "Made the consumed/no-rerun/no-retune boundary explicit.",
-    "Recorded ordinary local adaptive-delay plasticity as the conservative simpler reduction.",
-    "Recorded that no verified fresh prospective RV01 successor currently exists."
+    "Created a canonical RV02 current status/evidence map from authoritative existing evidence only.",
+    "Recorded RD005 D1 as terminal construction/gate-reachability failure for the exact consumed identity, with capability unopened.",
+    "Recorded exact source-freeze, STARTED, raw-preserve, and terminal-audit refs without moving or rewriting them.",
+    "Made the no-rerun/no-retune/no-silent-repair boundary explicit.",
+    "Preserved the distinction between development evidence and formal/held-out capability evidence.",
+    "Recorded that no prospective RV02 successor identity/protocol is defined by this package.",
+    "Reconciled the stale historical research/rv02-distal-delay branch reference by not treating it as current mutable authority after fresh remote inventory showed no live branch by that name."
   ],
   "consumed_identities_this_run": [],
   "blockers": [],
   "collision_reconciliation": {
-    "analyst_main_lane_snapshot_became_stale_due_to_main_p4_completion": true,
-    "latest_main_result_seen": "UNSUPPORTED_EN_BLOC_MERGED_CREDIT",
-    "sub_lane_remained_valid_despite_main_outcome": true,
-    "main_sub_collision": false,
-    "main_reserved_sub_work_was_untouched": true
+    "latest_main_status": "A01 closeout completed; STOP_NO_VERIFIED_PROSPECTIVE_SUCCESSOR",
+    "sub_lane_remained_independent": true,
+    "main_sub_branch_or_identity_collision": false,
+    "main_reserved_sub_work_was_untouched": true,
+    "stale_analyst_ref_reconciled": "research/rv02-distal-delay absent from current live branch inventory",
+    "ops_report_branch_rechecked_before_persistence": "5d0acd8260290d5147f99063b944173f1fd9f0cd"
   },
   "integrity_state": {
     "immutable_refs_modified": false,
@@ -78,18 +85,20 @@
     "identity_consumed": false,
     "same_identity_rerun_or_retune": false,
     "main_critical_path_modified": false,
+    "formal_or_heldout_authority_upgraded": false,
     "overall": "clean"
   },
   "completion_target": {
-    "target": "reviewable docs-only RV01 canonical status/evidence map",
+    "target": "reviewable docs-only RV02 terminal-status/evidence-map package",
     "reached": true,
-    "branch": "research/rv01-status-evidence-consolidation-sub-20260916",
-    "commit": "2d877a5af670c54d404d8782763129f497092f88",
-    "pr": 140
+    "branch": "research/rv02-status-evidence-consolidation-sub-20260916",
+    "commit": "ce317febb8be8d111959082cd5632a5ead9c83b4",
+    "pr": 142
   },
   "fallback_status": {
-    "target": "RV02 terminal-status and evidence-map consolidation",
+    "target": "CX01 candidate-002 formal-negative status/evidence-map consolidation",
     "status": "unused_available_because_primary_completed"
   },
-  "rejected_lane": null
+  "rejected_lane": null,
+  "lane_rejected_reason": null
 }
