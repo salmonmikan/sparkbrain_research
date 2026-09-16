@@ -1,1 +1,213 @@
-{"timestamp":"2026-09-16T16:02:28+09:00","authoritative_refs_inspected":{"main":"ba16bf10535141c2edb29bbe3439ba0a38e71179","control_brain":"cd378adcc8636f5794ac56ffcbaacd037e5c8088","orchestrator_reports":"c0c157ce45fd0976022f30adffb223ea6e15ff6f","a01_base":"1b548043b8f0850294cc3cbfaaa84dbdad69342c","family_b_head":"0ddb73d9602f6459ee1d181f1acf3f7fe02dd839","family_b_identity":"a01-family-b-distributed-field-trace-gen1-v1","family_b_proposal_sha256":"357f4a500164d31a3a851edc77c0870d3b59930c1766c1769671e9bdaf6ecf14","family_b_protocol_bundle_source_sha":"7af99d6c3bbbf946f90fc01d9bc7cc7661de2006","rv01_pr140_head":"6152461e4f0e8ac5942da1dd7724a9ed0ed39d83","rv02_pr142_head":"ce317febb8be8d111959082cd5632a5ead9c83b4","cx01_pr143_merge":"251f7350b7a30c50e8b8a3329b6ff920d85bf493","rulesets":0,"main_protected":false,"git_tags_observed":0},"Control Brain commit":"cd378adcc8636f5794ac56ffcbaacd037e5c8088","MAIN report commit consumed":"c0c157ce45fd0976022f30adffb223ea6e15ff6f","SUB report commit consumed":"80c5a880ead7ba3925f4e03f3245b741f7458128","main_lane":{"target":"Close PR #144 Decision Log audit blocker, re-audit the moved exact head, obtain clean CI/review, integrate exact reviewed Family-B readiness, then return for fresh execution admission.","scientific_question":"Can distributed-field-trace preserve low-privilege anonymous causal history, valid F-only transfer, bounded plurality and later selective differentiation beyond matched explicit/recurrent/belief-state memory?","recommended_owner":"main","branch_or_identity":"research/v061-a01-family-b-gen1-20260916@0ddb73d9602f6459ee1d181f1acf3f7fe02dd839 / PR #144 / a01-family-b-distributed-field-trace-gen1-v1","information_value":"HIGH","implementation_distance":"VERY_NEAR_FOR_READINESS / BLOCKED_FOR_EXECUTION","dependencies":["dated append-only DECISION_LOG entry matching the already-fixed contract","exact proposal/source/protocol/package/input binding","fresh exact-head CI/review and merge-safety","fresh post-integration Analyst admission"],"allowed_scope":["Decision Log audit fix","all PR #144 candidate-specific CI/review/verifier/harness/binding fixes","exact-head readiness integration"],"forbidden_scope":["STARTED/acquisition/scoring/one-way dispatch/output exposure/identity consumption","consumed A01 rerun/retune/rescore","Family-A P5","outcome-responsive tuning","SUB-reserved work"],"go_conditions":["identity remains fresh/unSTARTED/unconsumed","Decision Log is audit-only","exact bindings verify","dedup/checkpoint/immutability/bounds/fail-closed properties remain intact","genuine P4/F-only/null falsifiers remain prospectively fixed","exact-head CI/review clean and reviewed head unchanged"],"stop_conditions":["Decision Log changes science","binding fails","review/CI defect remains","privileged addressing required","F-only falsifier invalid","matched minimal null fully reduces residual","STARTED/control/preserve collision"],"exact refs/identities to re-check":["A01 base 1b548043b8f0850294cc3cbfaaa84dbdad69342c","PR #144 exact head","a01-family-b-distributed-field-trace-gen1-v1","proposal sha256 357f4a500164d31a3a851edc77c0870d3b59930c1766c1769671e9bdaf6ecf14","protocol source 7af99d6c3bbbf946f90fc01d9bc7cc7661de2006","docs/DECISION_LOG.md","Family-A P4 authority read-only"],"main_owns_all_critical_path_fixups":true,"execution_allowed":false},"sub_lane":{"target":"Exact-head integrate RV01 PR #140 consumed R01-17 status package.","scientific_question/support purpose":"Keep canonical status consistent with consumed SUPPORTED_REAL_DELAY_CAUSAL_TIMING and its ordinary adaptive-delay-plasticity reduction without reopening R01-17.","recommended_owner":"sub","branch_or_identity":"research/rv01-status-evidence-consolidation-sub-20260916@6152461e4f0e8ac5942da1dd7724a9ed0ed39d83 / PR #140","information_value":"MEDIUM_ENABLING","implementation_distance":"IMMEDIATE_TO_VERY_NEAR","execution_allowed":false,"dependencies":["re-fetch exact head/checks/reviews immediately before merge","CI 35066255954 remains success","R01-17 immutable refs unchanged"],"allowed_scope":["merge-safety recheck","docs/status-only correction if new finding appears","integrate exact reviewed docs head"],"forbidden_scope":["new RV01 science/successor/workflow/STARTED/freeze/preserve/scoring","rerun/retune/repair/changed-policy rescore","immutable mutation","MAIN Family-B work"],"completion_target":"PROJECT_STATUS, RESULTS_LEDGER and RV01 map integrated and agree R01-17 is consumed development-only evidence and not runnable.","exact refs/identities":["rv01-r01-17-real-delay-causal-timing-v1","source/STARTED 5ecb459b609b393ff837f57cc138f1eb44c1b255","raw fceb3663c7a880d82593e6c1efe52fcd1ad0c00a","scored d4737d52ecbb2306d9f00f99366f0ad6424327be","PR #140@6152461","CI 35066255954"],"reservation_status":"reserved_for_sub","independent_of_main_critical_path":true},"sub_fallback":{"target":"RV02 PR #142 ledger integration plus behavior-preserving Ruff cleanup.","scientific_question/support purpose":"Record D1 as terminal construction/gate-reachability negative, not capability negative, and clear unrelated CI noise.","recommended_owner":"sub","branch_or_identity":"PR #142@ce317febb8be8d111959082cd5632a5ead9c83b4 / D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a","information_value":"MEDIUM_ENABLING","implementation_distance":"NEAR_TO_MEDIUM","execution_allowed":false,"dependencies":["RV01 lane completes/becomes invalid","preserve D1 authority","ledger finding fixed","code lint fixes behavior-preserving"],"allowed_scope":["ledger entry","import formatting","zip(..., strict=False) only when semantics preserved","exact-head CI/review/integration"],"forbidden_scope":["new RV02 run/candidate","D1 retry","protocol/scorer/threshold change","immutable mutation","MAIN Family-B work"],"completion_target":"Ledger coverage + green CI + zero substantive findings + exact-head integration without reopening D1.","exact refs/identities":["D1 96634541...","source c60b7fd8...","PR #142@ce317feb","CI 35049543394"],"reservation_status":"reserved_for_sub","independent_of_main_critical_path":true},"blocked_until":["Family-B execution waits for Decision Log fix, moved-head exact binding/CI/review, exact readiness integration, fresh Analyst admission, then STARTED/no-clobber/exactly-once/raw-before-score recheck.","Family C waits for Family-B rejection/termination/completion or material new evidence.","New RV01/RV02/CX01 science waits for distinct admitted prospective contracts.","RV02 fallback waits for RV01 SUB primary completion/invalidation.","Family-A P5 is permanently not applicable."],"do_not_touch":["A01 MD-001","a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2","a01-md002-p3-r-only-causal-carrier-candidate-001-v1","a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1 and immutable refs","RV01 R01-16/R01-17 except status integration","RV02 D1 except status integration","cx01-candidate-002 and formal authority","PR #137 as science frontier","SUB must not touch PR #144; MAIN must not absorb PR #140/#142","outcome-responsive B/C tuning","legacy immutable freeze/control/preserve refs"],"active MAIN/SUB claims observed":{"MAIN":"PR #144@0ddb73d; one live P1; CI green; execution false","SUB":"PR #140@6152461; all threads resolved; fresh review complete; CI 35066255954 success; open/mergeable; remote newer than durable SUB report"},"top recommendation":{"rank":1,"owner":"main","action":"Decision Log P1 -> fresh exact-head audit/CI/review -> exact readiness integration","information_value":"HIGH","distance":"VERY_NEAR","execution":"STOP_ONE_WAY"},"top 3":[{"rank":1,"owner":"main","action":"PR #144 Decision Log + exact-head readiness integration","information_value":"HIGH","distance":"VERY_NEAR"},{"rank":2,"owner":"sub","action":"PR #140 exact-head status integration","information_value":"MEDIUM_ENABLING","distance":"IMMEDIATE_TO_VERY_NEAR"},{"rank":3,"owner":"sub_fallback","action":"PR #142 ledger + behavior-preserving Ruff cleanup","information_value":"MEDIUM_ENABLING","distance":"NEAR_TO_MEDIUM"}],"consumed identities":["A01 MD-001","A01 P2 candidate-002","A01 P3 candidate-001","A01 Family-A P4 candidate-001","RV01 R01-16 family","rv01-r01-17-real-delay-causal-timing-v1","RV02 RD005 D1 96634541...","cx01-candidate-002"],"blockers":["PR #144 Decision Log P1","Family-B execution not admitted","PR #142 ledger + Ruff CI","zero rulesets/main unprotected"],"governance advisory":{"issue/canonical drift":"Issue #138 stale-open; PR #137 stale and falsely says P4 pre-STARTED/unconsumed.","freeze/tag migration drift":"Preserve legacy freeze branches exactly; no Family-B freeze yet is correct; use protected annotated tags for future new authoritative anchors.","tag-protection gap":"rulesets=0; main unprotected; Issue #139 remains open; no current Git tags observed.","outcome-independent main-promotion candidates":["generic source/runtime binding","STARTED/no-clobber + identity collision","durable duplicate-evidence checkpoint state","raw-before-score/digest verification","fail-closed verifier patterns","stable control-plane pointer/index helpers"]},"no_sub_lane_reason":null}
+{
+  "timestamp": "2026-09-16T17:01:38+09:00",
+  "authoritative refs inspected": {
+    "main": "ba16bf10535141c2edb29bbe3439ba0a38e71179",
+    "evidence_analyst_parent": "e72ab0ee673d60a4b50e77232903cd19cecbcdfd",
+    "control_brain": "cd378adcc8636f5794ac56ffcbaacd037e5c8088",
+    "orchestrator_report_tip": "2465ea356d389b1146f37213376d5abed1f896bf",
+    "a01_base": "1b548043b8f0850294cc3cbfaaa84dbdad69342c",
+    "family_b_head": "0ddb73d9602f6459ee1d181f1acf3f7fe02dd839",
+    "family_b_identity": "a01-family-b-distributed-field-trace-gen1-v1",
+    "family_b_proposal_sha256": "357f4a500164d31a3a851edc77c0870d3b59930c1766c1769671e9bdaf6ecf14",
+    "family_b_protocol_bundle_source_sha": "7af99d6c3bbbf946f90fc01d9bc7cc7661de2006",
+    "family_b_binding_execution_admitted": false,
+    "rv01_integrated_head": "19cf98ec08635829f20c9ee21f4949a8a624d4ec",
+    "rv02_pr142_head": "a835fc9ae69241d13e2d4d1daec8e3767e761ee7",
+    "cx01_status_merge": "251f7350b7a30c50e8b8a3329b6ff920d85bf493",
+    "family_a_p4_source_and_started": "1bd0099f4358e02efac7ee4acccfe5257a86c4be",
+    "family_a_p4_raw_preserve": "2511454f1633d3bc6f10e3d2a99e3ddd823bb798",
+    "family_a_p4_scored_preserve": "56ee762540e0519034d2e8db0ad3c6acda667ffd",
+    "rulesets": 0,
+    "git_tags_observed": 0,
+    "main_protected": false
+  },
+  "Control Brain commit": "cd378adcc8636f5794ac56ffcbaacd037e5c8088",
+  "MAIN report commit consumed": "236139dde7dab7aadaf2ed0ad85de7336044b8b7",
+  "SUB report commit consumed": "2465ea356d389b1146f37213376d5abed1f896bf",
+  "main_lane": {
+    "target": "Close PR #144 Decision Log audit blocker, re-audit moved exact head, obtain fresh clean binding/CI/review, integrate exact reviewed Family-B readiness, then return for fresh execution admission.",
+    "scientific_question": "Can distributed-field-trace realize low-privilege anonymous historical provenance with valid F-only transfer, genuine bounded plurality and later selective differentiation beyond matched explicit/recurrent/belief-state memory?",
+    "recommended_owner": "main",
+    "branch_or_identity": "research/v061-a01-family-b-gen1-20260916@0ddb73d9602f6459ee1d181f1acf3f7fe02dd839 / PR #144 / a01-family-b-distributed-field-trace-gen1-v1",
+    "information_value": "HIGH",
+    "implementation_distance": "VERY_NEAR_FOR_READINESS / BLOCKED_FOR_EXECUTION",
+    "dependencies": [
+      "dated byte-preserving DECISION_LOG append matching the already-fixed contract",
+      "exact proposal/source/protocol/package/input binding after moved head",
+      "fresh exact-head CI/review and merge-safety",
+      "fresh post-integration Evidence Analyst execution admission"
+    ],
+    "allowed_scope": [
+      "Decision Log audit-only fix",
+      "all PR #144 candidate-specific implementation/verifier/harness/runner/binding/CI/review fixups",
+      "exact-head readiness integration"
+    ],
+    "forbidden_scope": [
+      "STARTED/control/acquisition/scoring/one-way dispatch/output exposure/identity consumption",
+      "new execution freeze/preserve before admission",
+      "consumed A01 rerun/retune/rescore",
+      "Family-A P5",
+      "outcome-responsive tuning",
+      "semantic/evaluator/global-belief/caller-selected-lineage privilege",
+      "SUB-reserved work"
+    ],
+    "go_conditions": [
+      "identity remains fresh/unSTARTED/unconsumed",
+      "Decision Log change is audit-only",
+      "exact bindings verify",
+      "dedup/checkpoint/immutability/bounds/fail-closed properties remain intact",
+      "genuine plurality/swap/confirmation/contradiction/absence/internal-replay/later-competition and F-only/null falsifiers remain prospectively fixed",
+      "exact-head CI/review clean and reviewed head unchanged"
+    ],
+    "stop_conditions": [
+      "Decision Log changes science",
+      "exact binding fails",
+      "substantive review/CI defect remains",
+      "privileged addressing required",
+      "valid F-only falsifier cannot be prospectively defined",
+      "matched minimal null fully reproduces residual",
+      "STARTED/control/preserve collision",
+      "design is tuned to consumed Family-A outcomes"
+    ],
+    "exact refs/identities to re-check": [
+      "A01 base 1b548043b8f0850294cc3cbfaaa84dbdad69342c",
+      "PR #144 exact head",
+      "a01-family-b-distributed-field-trace-gen1-v1",
+      "proposal sha256 357f4a500164d31a3a851edc77c0870d3b59930c1766c1769671e9bdaf6ecf14",
+      "protocol source 7af99d6c3bbbf946f90fc01d9bc7cc7661de2006",
+      "Family-B package binding/readiness input",
+      "docs/DECISION_LOG.md",
+      "Family-A P4 authority read-only"
+    ],
+    "main_owns_all_critical_path_fixups": true,
+    "execution_allowed": false
+  },
+  "sub_lane": {
+    "target": "Complete RV02 PR #142 canonical RD005 D1 status integration after behavior-preserving CI cleanup.",
+    "scientific_question/support purpose": "Preserve D1 as a terminal construction/gate-reachability negative, explicitly not a capability negative, without reopening the consumed identity.",
+    "recommended_owner": "sub",
+    "branch_or_identity": "research/rv02-status-evidence-consolidation-sub-20260916@a835fc9ae69241d13e2d4d1daec8e3767e761ee7 / PR #142 / D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
+    "information_value": "MEDIUM_ENABLING",
+    "implementation_distance": "NEAR",
+    "execution_allowed": false,
+    "dependencies": [
+      "safe append-only canonical RESULTS_LEDGER entry",
+      "D1 immutable authority unchanged",
+      "fresh exact-head review after ledger change",
+      "fresh exact-head merge-safety"
+    ],
+    "allowed_scope": [
+      "narrow RESULTS_LEDGER status entry",
+      "behavior-preserving lint cleanup already in PR",
+      "exact-head CI/review/integration if clean"
+    ],
+    "forbidden_scope": [
+      "new RV02 candidate/capability run",
+      "D1 retry",
+      "scorer/threshold/protocol change",
+      "STARTED/freeze/preserve/scoring",
+      "immutable mutation",
+      "successor invention",
+      "Family-B work"
+    ],
+    "completion_target": "Canonical D1 ledger coverage + green CI + zero substantive findings + exact-head integration without reopening D1.",
+    "exact refs/identities": [
+      "D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
+      "source freeze c60b7fd8d3889ee969f505d921e7d31c990871e6",
+      "preflight 096ddb8c65f342866839a2cb135d45e36ec1aabf",
+      "STARTED 2535b6312a091f7da4efa10c064c285bdeda7eaf",
+      "raw preserve d1fdd67ea197b879c52942c4a34e7d39a0a40698",
+      "terminal audit 262a56f8d2a0f482166ee0e621305ceef6caeb0c",
+      "PR #142@a835fc9ae69241d13e2d4d1daec8e3767e761ee7",
+      "CI 35070733775"
+    ],
+    "reservation_status": "reserved_for_sub",
+    "independent_of_main_critical_path": true
+  },
+  "sub_fallback": null,
+  "blocked_until": [
+    "Family-B execution waits for audit-only Decision Log fix, moved-head exact binding/CI/review, exact readiness integration, fresh Analyst admission, then STARTED/no-clobber/exactly-once/raw-before-score recheck.",
+    "Family C waits for Family-B rejection/termination/completion or material new evidence.",
+    "New RV01/RV02/CX01 science waits for distinct admitted prospective contracts.",
+    "RV02 PR #142 integration waits only on its own safe ledger append plus fresh review/merge-safety; MAIN must not wait.",
+    "Family-A P5 is permanently not applicable."
+  ],
+  "do_not_touch": [
+    "A01 MD-001",
+    "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
+    "a01-md002-p3-r-only-causal-carrier-candidate-001-v1",
+    "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1 and immutable refs",
+    "RV01 R01-16/R01-17 consumed identities and immutable refs",
+    "RV02 RD005 D1 except canonical status integration",
+    "cx01-candidate-002 and formal authority",
+    "PR #137 as a science frontier",
+    "SUB must not touch PR #144; MAIN must not absorb PR #142",
+    "outcome-responsive B/C tuning",
+    "legacy immutable freeze/control/preserve refs"
+  ],
+  "active MAIN/SUB claims observed": {
+    "MAIN": "PR #144@0ddb73d; one unresolved P1 Decision Log blocker; CI 35063756557 success; execution false; scratch edit branch has no file changes.",
+    "SUB": "PR #142@a835fc9; CI 35070733775 success; one unresolved P2 RESULTS_LEDGER blocker; no scientific execution. RV01 #140 already merged as 19cf98ec."
+  },
+  "top recommendation": {
+    "rank": 1,
+    "owner": "main",
+    "action": "PR #144 Decision Log audit fix -> moved-head exact binding/CI/review -> exact readiness integration",
+    "information_value": "HIGH",
+    "distance": "VERY_NEAR",
+    "execution": "STOP_ONE_WAY"
+  },
+  "top 3": [
+    {
+      "rank": 1,
+      "owner": "main",
+      "action": "PR #144 Decision Log audit fix + exact-head readiness integration",
+      "information_value": "HIGH",
+      "distance": "VERY_NEAR"
+    },
+    {
+      "rank": 2,
+      "owner": "sub",
+      "action": "PR #142 canonical D1 ledger entry + fresh exact-head review/integration",
+      "information_value": "MEDIUM_ENABLING",
+      "distance": "NEAR"
+    },
+    {
+      "rank": 3,
+      "owner": "main",
+      "action": "After readiness integration, return exact Family-B package for fresh Analyst admit/reject before STARTED",
+      "information_value": "HIGH",
+      "distance": "NEAR_BUT_BLOCKED_ON_RANK_1"
+    }
+  ],
+  "consumed identities": [
+    "A01 MD-001",
+    "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
+    "a01-md002-p3-r-only-causal-carrier-candidate-001-v1",
+    "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
+    "RV01 R01-16 family",
+    "rv01-r01-17-real-delay-causal-timing-v1",
+    "RV02 RD005 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
+    "cx01-candidate-002"
+  ],
+  "blockers": [
+    "MAIN PR #144 P1: dated append-only Family-B Decision Log entry absent.",
+    "Family-B one-way execution is not admitted.",
+    "SUB PR #142 P2: canonical RD005 D1 RESULTS_LEDGER entry absent.",
+    "Both append-only documentation blockers currently lack a safe byte-preserving edit path in the executor runtimes; each owner must solve its own blocker without creating cross-role dependency.",
+    "Governance gap: zero rulesets/tags and main unprotected (non-blocking)."
+  ],
+  "governance advisory": {
+    "issue/canonical-source drift": "Issue #138 is stale-open after canonical P4 FAIL. PR #137 is stale and falsely says P4 is pre-STARTED/unconsumed; close without merge. RV01 drift is resolved; RV02 ledger coverage remains incomplete.",
+    "freeze/tag migration drift": "Preserve legacy freeze/control/preserve branches exactly. No Family-B freeze yet is correct at readiness. Prefer protected annotated tags for new authoritative anchors once protection exists.",
+    "tag-protection gap": "git tags=0; rulesets=0; main unprotected; Issue #139 remains open and non-blocking.",
+    "outcome-independent main-promotion candidates": [
+      "generic source/runtime binding",
+      "STARTED/no-clobber and identity collision checks",
+      "durable duplicate-evidence checkpoint state",
+      "raw-before-score and digest verification",
+      "fail-closed verifier patterns",
+      "stable control-plane pointer/index helpers"
+    ]
+  }
+}
