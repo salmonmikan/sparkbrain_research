@@ -707,7 +707,7 @@ contract correction only.
   - `raw_predictions.jsonl`: `d97d983fdaab2c08b78584090ba72ffb0eff379a3e9e702c5dbe63cfa49cc488`
 - Scientific support remains narrow: the input path is implicated in this synthetic diagnostic;
   semantic understanding, autonomous rough-input success, cognitive-core validity, concepts,
-  organs, biological fidelity, and external generalization remain unsupported or unevaluated
+  organs, biological fidelity, energy efficiency, and external generalization remain unsupported or unevaluated
 - Protected hashes and claim grades: unchanged
 
 ## 2026-08-26 — R-V03-0004 — C12 computational sensory-gate acceptance
@@ -1055,3 +1055,13 @@ contract correction only.
 - Claim impact: none. C06 remains negative; C15 residual superiority remains unsupported; C16
   remains candidate-level; C17 v1 remains an implementation failure and C17 v2 remains
   scientifically unsupported; C19 remains blocked/not evaluated; CL-007 and CL-008 remain E0.
+
+## 2026-09-16 — RV02-RD005-D1 — terminal construction / gate-reachability negative
+
+- Construction identity: `96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a`.
+- Evidence anchors: source freeze `c60b7fd8d3889ee969f505d921e7d31c990871e6`; preflight `096ddb8c65f342866839a2cb135d45e36ec1aabf`; STARTED `2535b6312a091f7da4efa10c064c285bdeda7eaf`; raw preserve `d1fdd67ea197b879c52942c4a34e7d39a0a40698`; terminal audit `262a56f8d2a0f482166ee0e621305ceef6caeb0c`.
+- Terminal condition: `RD005 construction stopped before capability: verified D1 matrix is not ready`.
+- Status: terminal consumed construction/gate-reachability negative for this exact D1 identity; non-retryable.
+- Capability boundary: capability output was never opened and learner/probe execution did not occur. This is **not** a capability negative and not a formal/held-out confirmatory capability result.
+- Integrity boundary: do not rerun, retune, repair, reopen, or reuse this identity; immutable source/control/preserve authorities remain unchanged.
+- Claim impact: no new positive scientific support. Earlier RV02 development-feasibility evidence does not override this terminal one-way outcome, and no successor identity or protocol is defined here.
