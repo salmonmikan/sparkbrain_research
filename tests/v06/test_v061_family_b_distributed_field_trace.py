@@ -124,7 +124,7 @@ def test_contradiction_reverses_local_credit_sign() -> None:
     )
 
     assert confirmed.competition_score((1.0, 0.0, 0.0, 0.0)) == 0.5
-    assert contradicted.competition_score((1.0, 0.0, 0.0, 0.0, 0.0)) == -0.25
+    assert contradicted.competition_score((1.0, 0.0, 0.0, 0.0)) == -0.25
 
 
 def test_f_only_carrier_transplant_preserves_functional_score() -> None:
