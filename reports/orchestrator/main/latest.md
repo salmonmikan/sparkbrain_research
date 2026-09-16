@@ -1,6 +1,6 @@
 # SparkBrain Research Orchestrator — MAIN latest
 
-Timestamp: 2026-09-16T23:29:00+09:00
+Timestamp: 2026-09-16T23:32:00+09:00
 Worker role: `main`
 Evidence Analyst consumed: `8711c993d6db5c61731cf86c730b94a2fcd2215c`
 
@@ -12,9 +12,9 @@ This is a pre-START admission/static-reduction closeout, not a one-way scientifi
 
 ## Critical-path work completed
 
-MAIN re-fetched and reconciled the current Analyst handoff, MAIN/SUB report streams, active research refs, legacy freeze/control/preserve refs, current workflow state, and the exact Family-B package. The exact candidate runner/mechanism was audited against the registered equal-resource recurrent causal-trace null and frozen scorer semantics.
+MAIN re-fetched and reconciled the current Analyst handoff, MAIN/SUB report streams, active research refs, legacy freeze/control/preserve refs, workflow state, and the exact Family-B package. The exact candidate runner/mechanism was audited against the registered equal-resource recurrent causal-trace null and frozen scorer semantics.
 
-The closeout was then persisted on the active research branch without modifying the rejected scientific object:
+The closeout was persisted on the active research branch without modifying the rejected scientific object:
 
 - `336aeb91ef87ece98110b3c42d06b5185c5a0f62` — added `docs/V061_A01_FAMILY_B_GEN1_PRESTART_REDUCTION_DECISION.md`.
 - `db66596ed4479e8dac8b713b4f92a73f76a25047` — updated `docs/V061_A01_CURRENT_STATUS.md` to record the terminal pre-START admission classification.
@@ -22,11 +22,11 @@ The closeout was then persisted on the active research branch without modifying 
 
 The static reduction is structural: the candidate and the registered recurrent causal-trace null use the same anonymous fixed-width recurrent update arithmetic over the same prospective input, emit the complete scorer signature needed for the comparison, and use equal resource/lookup privilege. Under the frozen scorer, a gate-passing candidate is therefore reduced by construction; a scientifically meaningful non-reduced PASS is unavailable for this exact object.
 
-MAIN deliberately did **not** repair the old Python 3.13 locked-file/manifest drift in the rejected execution package. Such repair is unnecessary for information gain and must not become a vehicle for retuning/rebinding a scientific object already rejected at admission.
+MAIN deliberately did **not** repair the rejected execution package merely to make it executable or CI-green. Such repair is unnecessary for information gain and must not become a vehicle for retuning/rebinding a scientific object already rejected at admission.
 
 ## Same-run continuation and stop
 
-Same-run continuation completed: fresh integrity reconciliation -> exact-object static reduction verification -> durable reduction decision -> canonical A01 status closeout -> operational Issue #145 reconciliation -> exact-head CI observation.
+Same-run continuation completed: fresh integrity reconciliation -> exact-object static reduction verification -> durable reduction decision -> canonical A01 status closeout -> operational Issue #145 reconciliation -> exact-head CI completion check.
 
 No STARTED/control claim, one-way dispatch, acquisition, raw exposure, scoring, freeze/evidence authority, or identity consumption occurred.
 
@@ -34,7 +34,9 @@ The run stops because the next scientifically meaningful action would require se
 
 ## CI / review state
 
-The closeout head `db66596ed4479e8dac8b713b4f92a73f76a25047` triggered CI run `35108354545`. At durable-report write time the Python 3.11 and 3.13 jobs had completed setup/install/lint/local-readiness and were still executing the test stage. This CI is closeout/integration validation only; no failed or pending CI may authorize repairing the rejected scientific object for execution.
+The closeout head `db66596ed4479e8dac8b713b4f92a73f76a25047` triggered CI run `35108354545`, which completed **failure**. Both Python 3.11 and Python 3.13 completed setup/install/lint/local-readiness successfully and then failed in the `Test` step; bundle validation was skipped. The connector exposed the failing stages but not the detailed test log, so this report does not invent a more specific failure cause.
+
+This CI failure does not reopen the rejected scientific object or authorize repairs aimed at making the one-way experiment executable. If a later non-scientific status/integration cleanup needs the failure resolved, it must remain outcome-independent and must not alter runner/mechanism/null/scorer/input/resource/identity semantics.
 
 ## Role separation / concurrency
 
@@ -48,4 +50,4 @@ Return this pre-START closeout to Evidence Analyst. Do not execute, rescue, retu
 
 ## Persistence target
 
-This report updates only the MAIN-owned stream and appends a role-suffixed history entry. SUB files and legacy shared latest/state are not modified.
+This report updates only the MAIN-owned stream and appends role-suffixed history. SUB files and legacy shared latest/state are not modified.
