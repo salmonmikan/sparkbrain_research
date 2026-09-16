@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-17T05:02:34+09:00",
+  "timestamp": "2026-09-17T05:15:38+09:00",
   "worker_role": "evidence_analyst",
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
@@ -26,34 +26,79 @@
     "exact_handoff_commit": "8f405b63d0afc8a6ffae522aa68799c54006f52d",
     "role": "LITERATURE_REDUCTION_SCOUT",
     "independent_auditor_handoff_present": false,
+    "genuinely_new_information": true,
     "findings_consumed": [
-      "A01 delayed/selective-credit novelty is further reduced by eligibility-trace, three-factor/e-prop, pending-causal-choice, and latent-cause-posterior prior art.",
-      "RV01 learned-delay novelty is further reduced by adaptive learned synaptic/axonal-delay prior art.",
-      "C19 must be interpreted against test-time/recurrent/fast-weight-memory and hybrid recurrent/attention prior art; a positive result is not by itself mechanistic novelty.",
-      "The cleanest prospective internal separator already present in the frozen 55-row inventory is I2+G0+E0 versus I2+G1+E0 under identical I2 representation bytes and matched resources.",
-      "For any dynamics claim, the strongest comparator must receive the same adapter representation; otherwise only a representation/interface claim is justified.",
-      "C06 wording should stay narrow: failure against the tested frozen external baseline, not broad loss of novelty."
+      {
+        "id": "symbolic_abstraction_representation_reduction",
+        "finding": "SemEval-2026 RvH-40 reports large reasoning gains from symbolic/variable/pseudoword abstraction, providing a strong ordinary abstraction/canonicalization explanation for any C19 I2 > I1 gain.",
+        "affected_lines": [
+          "C19_V2",
+          "PROGRAMME_NOVELTY"
+        ]
+      },
+      {
+        "id": "explicit_state_tracking_reduction",
+        "finding": "PDDL-Mind shows reliable explicit state/action tracking can improve belief reasoning; C19 persistent dynamics cannot receive mechanistic credit unless representation/information-matched explicit-state alternatives are separated.",
+        "affected_lines": [
+          "C19_V2",
+          "FUTURE_EXTERNAL_VALIDATION"
+        ]
+      },
+      {
+        "id": "belieftrack_isolation_dimension",
+        "finding": "BeliefTrack separates Update, Stay, and Isolation; current C19 BU/BM/BREU covers update/maintain but not an independent isolation/noise dimension.",
+        "affected_lines": [
+          "C19_V2",
+          "FUTURE_EXTERNAL_VALIDATION"
+        ]
+      },
+      {
+        "id": "transformer_belief_state_geometry",
+        "finding": "Recent causal/probing evidence finds functionally relevant Bayesian-like belief-state geometry in ordinary Transformers, so persistent/history-conditioned belief state itself is not a SparkBrain novelty axis.",
+        "affected_lines": [
+          "C19_V2",
+          "PROGRAMME_NOVELTY",
+          "FUTURE_INTERNAL_STATE_COMPARISON"
+        ]
+      }
+    ],
+    "prior_findings_retained_not_new_this_handoff": [
+      "eligibility/three-factor/e-prop reduction of delayed selective local credit",
+      "pending delayed causal-choice prior art",
+      "latent-cause multi-hypothesis inference",
+      "adaptive learned synaptic/axonal delays",
+      "local/online/forward-only SNN learning"
     ],
     "affected_lines": [
-      "A01",
-      "RV01",
-      "C19",
-      "C06"
+      "C19_V2",
+      "PROGRAMME_NOVELTY",
+      "FUTURE_EXTERNAL_VALIDATION",
+      "A01_REFRAME"
     ],
     "strategic_impact": {
       "allocation_changed": false,
-      "why": "C19 remains the highest-information unresolved frontier. The new literature tightens the binding/fairness and interpretation bar rather than displacing C19.",
-      "novelty_bar": "raised for A01/RV01 and for any broad C19 mechanistic novelty claim",
-      "prospective_discriminator": "I2+G0+E0 vs I2+G1+E0 with exactly the same I2 representation and matched state/compute/data",
-      "protocol_mutation": "forbidden; use the already-frozen rows only and add a prospective interpretation/binding supplement before STARTED"
+      "why": "The new literature directly targets C19 interpretation but does not make another line higher-value. It tightens the current binding audit and future claim boundary while C19 remains the primary unresolved frontier.",
+      "current_binding_requirements": [
+        "Determine prospectively whether frozen direct_stateless receives the exact same I2 representation; do not change its frozen semantics after inspecting outcomes.",
+        "Determine whether explicit_state_probabilistic is representation/information matched strongly enough to bear an explicit-state reduction claim.",
+        "Guarantee identical I2 representation bytes for I2+G0 and I2+G1 if using that already-frozen internal comparison to interpret persistent-dynamics contribution."
+      ],
+      "current_protocol_effect": "No frozen row/baseline/result-class changes. If existing baseline semantics are not representation matched, record the confound and narrow interpretation; define any new matched null only in a future prospective experiment after C19-v2.",
+      "novelty_bar": "raised: surface abstraction, explicit state tracking, and Transformer belief-state geometry are established ordinary alternatives",
+      "future_discriminators": [
+        "identical-I2-feature stateless/linear/shallow null if not already present under frozen direct_stateless semantics",
+        "representation/information-matched explicit transition/state tracker",
+        "BeliefTrack-style Update/Stay/Isolation perturbation suite",
+        "matched Transformer/recurrent belief-state comparator for future internal-state claims"
+      ]
     },
     "must_not_change": [
-      "consumed A01/RV01/RV02/CX01 identities or their frozen evidence",
-      "C19 frozen protocol/result classes/metrics/thresholds at 90c936a7abca7eba0dac1f977753503551e73368",
+      "all consumed/frozen A01/RV01/RV02/CX01 evidence and identities",
+      "C19-v2 frozen scientific semantics at 90c936a7abca7eba0dac1f977753503551e73368",
+      "the frozen five baseline families/55-row inventory/result classes/metrics/thresholds",
       "historical C19-v1/C06 evidence",
-      "legacy freeze/preserve/control refs"
-    ],
-    "metadata_drift": "The external handoff branch tip is 8f405b63d0afc8a6ffae522aa68799c54006f52d while its state field last_successful_handoff_commit still names the prior 33d4... commit; consume the branch tip and treat the state field as non-authoritative self-reference drift."
+      "c19-external-v2-official-v1 remains unSTARTED/unconsumed until a later execution admission"
+    ]
   },
   "active_line_review": {
     "A01": {
@@ -61,7 +106,7 @@
       "strongest_evidence": "P2/P3 development observations remain positive, but the stronger Field-organized causal-credit claim is unsupported; Family A ended in an executed P4 terminal negative and Families B/C were rejected pre-START by static reduction.",
       "information_value": "LOW until a genuinely new prospective object exists",
       "implementation_distance": "not actionable without new prospective design",
-      "simpler_reductions": "eligibility traces, three-factor/e-prop, pending-choice/latent-cause accounts; external scout further strengthens these reductions",
+      "simpler_reductions": "eligibility traces, three-factor/e-prop, pending-choice/latent-cause accounts remain established reductions from prior scout work; no new A01-specific finding in the latest 8f405 handoff",
       "centrality": "not primary"
     },
     "RV01": {
@@ -69,7 +114,7 @@
       "strongest_evidence": "positive development-only result; ordinary adaptive-delay/recurrent plasticity remains a simpler explanation",
       "information_value": "LOW",
       "implementation_distance": "no fresh successor",
-      "simpler_reductions": "adaptive learned synaptic/axonal delays and recurrent plasticity prior art",
+      "simpler_reductions": "adaptive learned synaptic/axonal-delay and recurrent-plasticity prior art remain established reductions from prior scout work; no new RV01-specific finding in 8f405",
       "centrality": "not primary"
     },
     "RV02": {
@@ -97,7 +142,7 @@
   },
   "main_lane": {
     "target": "C19-v2 exact scientific implementation-binding supplement and machine-verifiable execution package",
-    "scientific_question": "Can the already-frozen C19-v2 55-row experiment be instantiated with exact, fair, target-blind executors and baselines such that I2+G0 versus I2+G1 isolates integrative dynamics from representation privilege before any official data are opened?",
+    "scientific_question": "Can the already-frozen C19-v2 55-row experiment be instantiated with exact, fair, target-blind executors/baselines, while prospectively identifying any representation confound, without changing frozen science or opening official data?",
     "recommended_owner": "main",
     "branch_or_identity": {
       "branch": "research/c19-truth-free-symbolic-adapter-v2-20260917",
@@ -115,11 +160,12 @@
       "no official Belief-R test access"
     ],
     "allowed_scope": [
-      "create a prospective binding supplement without changing frozen protocol/result classes/metrics/thresholds",
+      "create a prospective binding supplement without changing frozen protocol/result classes/metrics/thresholds/row inventory/baseline families",
       "bind every I0/I1/I2 × G0/G1 × E0 condition to exact executable module/model/state/gate configuration",
-      "bind all five baseline families to exact factory/module, fixed hyperparameters, checkpoint/state initialization, seeds, runtime/dependency versions, data/compute budgets, and no-fit/no-tune/no-select constraints",
-      "guarantee byte-identical I2 adapter representation for G0 and G1 rows so the comparison isolates gate/exchange dynamics",
-      "make source/package/input/runtime bindings machine-verifiable",
+      "bind all five frozen baseline families to exact factory/module, fixed hyperparameters, checkpoint/state initialization, seeds, runtime/dependency versions, data/compute budgets, and no-fit/no-tune/no-select constraints",
+      "audit whether frozen direct_stateless actually receives exact I2 features and whether explicit_state_probabilistic is representation/information matched; record any mismatch as an interpretation limitation rather than silently changing frozen baseline semantics",
+      "guarantee byte-identical I2 adapter representation for G0 and G1 rows if the already-frozen internal comparison is used to interpret gate/exchange dynamics",
+      "make source/package/input/runtime/resource bindings machine-verifiable",
       "run source-only/static/synthetic tests and fix CI/verifier/binding defects that do not alter scientific semantics"
     ],
     "forbidden_scope": [
@@ -134,18 +180,19 @@
       "c19-external-v2-official-v1 remains fresh, unSTARTED, unconsumed, and collision-free",
       "existing records show the planned identity has not already been bound to a conflicting package; otherwise STOP rather than rebind",
       "all condition and baseline executors can be fixed source-only with no official test behavior",
-      "I2 representation bytes are identical between G0 and G1; only the preregistered gate/exchange dynamics differ",
-      "all five baselines receive fair representation/resources for the claims being made",
-      "package/source/input/runtime manifest is machine-verifiable and exact-head CI is green"
+      "for I2+G0 versus I2+G1 interpretation, I2 representation bytes are identical and only the preregistered gate/exchange dynamics differ",
+      "direct_stateless and explicit_state_probabilistic information/representation access is explicitly audited; any mismatch is frozen as a claim limitation rather than repaired post hoc",
+      "package/source/input/runtime/resource manifest is machine-verifiable and exact-head CI is green"
     ],
     "stop_conditions": [
       "any implementation choice requires observing official test behavior",
       "scientific semantics, protocol/result class/metric/threshold, or adapter contract would need to change",
-      "I2+G0 and I2+G1 cannot be instantiated with identical representation bytes and a clean gate-only difference",
-      "resource-matched baselines cannot be fixed under the preregistered tolerance",
+      "I2+G0 and I2+G1 cannot be instantiated with identical representation bytes yet a dynamics claim would rely on that comparison",
+      "the current frozen baseline semantics cannot be instantiated at all under the preregistered resource rules",
       "the planned identity is discovered to be already bound to a different package",
       "hash/ref/identity integrity drifts",
-      "exact binding package becomes complete, green, and reviewable; return to Analyst for execution ADMIT/REJECT"
+      "source-only audit shows a frozen discriminator is statically redundant before START",
+      "exact binding package becomes complete, green, reviewable, with representation-confound status recorded; return to Analyst for execution ADMIT/REJECT"
     ],
     "exact_refs_identities_to_recheck": [
       "ops/evidence-analyst-handoff current tip",
@@ -227,12 +274,14 @@
     }
   },
   "prospective_interpretation_gate": {
-    "purpose": "Tighten claims using new external prior art without mutating frozen C19 result classes.",
+    "purpose": "Integrate the new C19-specific literature prospectively without mutating frozen result classes.",
     "rules": [
-      "A protocol-level PASS without a robust matched I2+G1 > I2+G0 difference supports at most a representation/interface benefit; it does not support coalition-memory or integrative-dynamics contribution.",
-      "A protocol-level PASS with robust matched I2+G1 > I2+G0 supports contribution from integrative dynamics beyond the I2 representation, but still does not establish mechanistic novelty.",
-      "If a matched recurrent/test-time-memory/fast-weight comparator matches or wins, SparkBrain-specific superiority/novelty is further weakened.",
-      "These are prospective interpretation limits only; they do not alter the already-frozen PASS/FAIL/INCONCLUSIVE definitions."
+      "The frozen primary claim remains truth-free surface-structural representation gain only; a PASS does not by itself establish persistent dynamics or mechanistic novelty.",
+      "If identical-I2 I2+G1 robustly exceeds I2+G0, this may support an incremental contribution from gate/exchange dynamics beyond the representation, but not novelty.",
+      "If frozen direct_stateless receives exact I2 features and matches/wins, the representation gain has a stateless reduction. If it does not receive exact I2, current C19-v2 cannot settle that reduction; record the confound and reserve a future matched null rather than mutate the current protocol.",
+      "If explicit_state_probabilistic is representation/information matched and matches/wins, persistent-dynamics mechanistic credit is weakened. If it is not matched, current C19-v2 cannot settle the explicit-state reduction.",
+      "Current BU/BM/BREU does not test BeliefTrack's separate Isolation dimension; do not claim general contextual belief management from C19-v2 alone.",
+      "Persistent/history-conditioned belief-state representation is an established Transformer comparator property and is not itself a novelty claim."
     ]
   },
   "blocked_until": [
@@ -284,7 +333,7 @@
     {
       "rank": 2,
       "owner": "MAIN",
-      "action": "Source-only privilege/reduction/fairness/runtime audit and machine-verifiable exact-head CI/manifest",
+      "action": "Source-only representation-confound/fairness audit: direct_stateless I2 access, explicit_state_probabilistic information match, I2 G0/G1 byte identity, plus exact runtime/manifest CI",
       "information_value": "HIGH_ENABLING",
       "distance": "NEAR_AFTER_1"
     },
@@ -308,6 +357,7 @@
   "blockers": [
     "C19 exact condition executor binding is not preregistered.",
     "C19 five-baseline exact factory/hyperparameter/checkpoint/runtime/resource mapping is not preregistered.",
+    "Representation access of frozen direct_stateless and information/representation matching of explicit_state_probabilistic must be made explicit before interpreting dynamics/mechanism.",
     "Fresh execution admission is required after the exact binding package is green.",
     "No durable INDEPENDENT_AUDITOR handoff exists yet; this does not block C19 but limits independent audit confidence."
   ],
@@ -320,13 +370,13 @@
     "rulesets": 0,
     "main_protection": "no active ruleset observed; preserve existing branch/ref authorities",
     "freeze_tag_migration": "do not migrate legacy freeze branches; annotated protected tags remain a future-governance target",
-    "external_handoff_state_drift": "actual external branch tip 8f405... is newer than its state field last_successful_handoff_commit 33d4...; owning external-audit process should repair this metadata drift",
     "outcome_independent_main_promotion_candidates": [
       "generic terminal-provenance v2 after separate review",
       "historical-binding verifier",
       "no-clobber/source-manifest/raw-before-score helpers",
       "generic pre-START execution-package state machine after C19 stabilizes"
-    ]
+    ],
+    "external_audit_stream_note": "8f405 state is internally current and records prior tip 33d4 as history; no metadata-drift action is required."
   },
   "orchestrator_handoff_plain": {
     "main": "MAIN takes the C19 exact scientific implementation-binding supplement and owns ALL critical-path fixes.",
@@ -351,5 +401,6 @@
       "INVALID_EVIDENCE",
       "POST_START_FAILURE"
     ]
-  }
+  },
+  "correction_note": "This state supersedes the preliminary 0502 snapshot, which was written before final reconciliation of the newest 8f405 LITERATURE_REDUCTION_SCOUT content. History is append-only, so 0502 is preserved and this corrected handoff is appended separately."
 }
