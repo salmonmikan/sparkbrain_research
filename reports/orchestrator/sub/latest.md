@@ -1,86 +1,63 @@
 # SparkBrain Research Orchestrator — SUB latest
 
-Timestamp: `2026-09-17T07:43:49+09:00`  
+Timestamp: `2026-09-17T08:37:57+09:00`  
 Worker role: `sub`  
-Evidence Analyst authority: `25eae547ccd9bb22edc2010e698a8dd2ecd33dcc`
+Evidence Analyst authority: `9bd11c80c51ff61bc88d00b20192d90a9c5b970f`
 
-## Independent SUB lane selected
+## Selection result
 
-SUB consumed the newly reserved independent lane `C07/H9 fully-spiking-boundary prospectivity/readiness audit` on `research/c07-h9-fully-spiking-readiness-sub-20260917`.
+SUB performed a deliberate **no-op**. The current Evidence Analyst assigns `sub_lane=null` and `sub_fallback=null` because the previously reserved H9/C07 readiness lane is complete at `research/c07-h9-fully-spiking-readiness-sub-20260917@9480da3d77dfee4766b28757f1a164f5cd4dac26`, exact-head CI `35158843629` green, with terminal readiness classification `PRE_START_UNDERSPECIFIED`.
 
-The lane is explicitly `reserved_for_sub`, `independent_of_main_critical_path=true`, and `execution_allowed=false`. SUB therefore performed source-only readiness work and did not create STARTED, dispatch a scientific workflow, execute SwitchWorld as a fresh experiment, create/consume a one-way identity, or score scientific output.
-
-Final SUB research head: `9480da3d77dfee4766b28757f1a164f5cd4dac26`.
+Further H9 implementation would require prospectively choosing eight new scientific semantics rather than carrying out an already-defined independent readiness task. No other distinct prospective secondary object is registered and ready. Therefore the no-op rule applies and SUB does not manufacture parallel work.
 
 ## MAIN frontier avoided
 
-MAIN's C19 frontier remained outside SUB scope. During reconciliation, `research/c19-truth-free-symbolic-adapter-v2-20260917` stayed at `66c8eafe9863ed1b2455cc833a3dc498ce7721b0`; the fresh C19 successor branch had not appeared. SUB did not touch C19 branches, protocols, identities, scorer/preserver code, official data, CI blockers, or evidence.
+MAIN's PRIMARY frontier remains C19. Fresh re-fetch confirmed:
 
-No Analyst lane was rejected for MAIN critical-path coupling; the assigned H9/C07 lane is genuinely independent.
+- current substrate `research/c19-truth-free-symbolic-adapter-v2-20260917@66c8eafe9863ed1b2455cc833a3dc498ce7721b0`;
+- recommended successor `research/c19-official-v2-scorer-complete-20260917` is still absent;
+- fresh C19 successor identity/protocol remain MAIN-only;
+- no open PR exists.
 
-## Implementation / readiness work
+SUB did not touch any C19 branch, identity, protocol, scorer, preserver, verifier, CI blocker, STARTED/control state, official data, preservation, scoring, or evidence.
 
-SUB created the H9 readiness branch from exact stable substrate `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` and added one readiness commit:
+No Analyst lane was rejected for critical-path coupling because no SUB lane was assigned.
 
-- `9480da3d77dfee4766b28757f1a164f5cd4dac26` — `research: add H9 fully-spiking readiness audit`
-
-The commit adds:
-
-- `artifacts/spiking/h9_fully_spiking_readiness/readiness.json`, a machine-readable source-bound readiness record;
-- `artifacts/spiking/h9_fully_spiking_readiness/report.md`, the source-only scientific boundary audit;
-- `scripts/verify_h9_fully_spiking_readiness.py`, a fail-closed verifier that hashes the pinned source blobs and checks that execution remains disabled and all unresolved choices stay explicit;
-- `tests/test_h9_fully_spiking_readiness.py`, regression tests for the readiness package and verifier.
-
-No PR was opened and nothing was merged to `main`; unresolved hypothesis-dependent work remains on the research branch.
-
-Exact-head CI run `35158843629` completed successfully on Python 3.11 and 3.13. Install, Lint, Local readiness, Test, and Validate bundle succeeded.
-
-## Readiness result
-
-Classification: **`PRE_START_UNDERSPECIFIED`**.
-
-The historical C07 result remains useful but only supports a hybrid boundary: sensory input is encoded through snnTorch LIF while signed evidence graph, hypothesis state, Coalition scoring, ignition, broadcast, and Workspace continue through the rate/algorithmic C01 engine. The historical 9/9 invariant result and the retained `spike_threshold=1.1` no-spike/no-prediction negative were treated as immutable prior evidence, not rerun or retuned.
-
-A fresh fully-spiking successor is not scientifically specified enough to implement. Eight choices are not uniquely determined by current canonical doctrine:
-
-1. operational definition of the fully-spiking boundary;
-2. exact non-sensory neuron/synapse/inhibition/refractory dynamics;
-3. spike-domain representation and decoder mapping for cognition-level state;
-4. parameter and tuning budget;
-5. primary comparator and allowed claim;
-6. authority of historical hybrid tolerances for the successor;
-7. fixed-weight vs surrogate-gradient vs local-plasticity regime;
-8. exact runtime, seeds, determinism and randomness policy.
-
-Selecting any of these now would create new science rather than readiness implementation. SUB therefore stopped at the completion target authorized by the Analyst.
-
-## Scientific execution / integrity
-
-New scientific measurement: **none**.  
-Newly consumed identities: **none**.  
-Fresh H9 successor identity: **not created**.
-
-Scientific experiments: `0`; STARTED/control: `0`; one-way dispatch: `0`; acquisition/scoring/preservation: `0`; immutable evidence mutation: `0`.
-
-The source-only package pins 14 current source/artifact blobs and records the inherited H9/C07 task-facing invariants, local/offline boundary, and no-energy-claim restriction. Execution remains fail-closed.
-
-## Repository / collision reconciliation
+## Repository state / integrity
 
 - `main`: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
-- Evidence Analyst: `25eae547ccd9bb22edc2010e698a8dd2ecd33dcc`, unchanged after branch push
-- Control Brain: `909ce53e7b0355f5aab1512e659ab36d910bf6a4`, doctrine only
-- C19 observed head: `66c8eafe9863ed1b2455cc833a3dc498ce7721b0`, unchanged during SUB work
+- Evidence Analyst: `9bd11c80c51ff61bc88d00b20192d90a9c5b970f`
+- Control Brain: `909ce53e7b0355f5aab1512e659ab36d910bf6a4` (doctrine only)
+- H9 readiness branch: `9480da3d77dfee4766b28757f1a164f5cd4dac26`, unchanged
+- C19 substrate branch: `66c8eafe9863ed1b2455cc833a3dc498ce7721b0`, unchanged
 - open PRs: `0`
-- open Issue: `#139` only
+- open Issues: `#147`, `#139`
 - authoritative Git tags: `0`
-- repository rulesets: `0`
+- legacy `freeze/*`, `control/*`, `preserve/*`, and `evidence/*` refs remain present and untouched.
 
-No MAIN dependency was created and no reserved MAIN work was touched.
+No immutable/frozen/formal evidence was modified. No historical object was rerun or retuned. No STARTED/control ref was created. No scientific workflow was dispatched. No one-way identity was consumed.
 
-## Completion / next SUB boundary
+## Implementation / commits / PRs
 
-The Analyst completion target is reached through the explicit `PRE_START_UNDERSPECIFIED` finding plus a reviewable, green, source-bound readiness package.
+Research implementation commits: **0**.  
+Research branches advanced: **0**.  
+PRs opened/merged: **0**.  
+Scientific workflows/experiments: **0**.
 
-The next Evidence Analyst cycle must prospectively fix the eight unresolved scientific choices and assign a distinct H9 successor protocol/identity before SUB may implement or execute a fresh fully-spiking object. Until then, this H9 lane must not cross STARTED or use the historical threshold negative as a calibration target.
+The only write in this run is the required SUB-owned durable orchestration report stream.
+
+## Readiness / scientific progress
+
+No new scientific measurement or readiness result was produced. The latest independent H9 result remains `PRE_START_UNDERSPECIFIED`; its completion target was already reached in the prior SUB run. The eight unresolved H9 scientific choices remain outside implementation authority until a future Evidence Analyst prospectively defines a distinct successor protocol/identity.
+
+Newly consumed identities: **none**.
+
+## Blockers / completion target
+
+SUB is blocked by **absence of a valid independent lane**, not by an operational defect. Specifically, H9 readiness is complete and the next H9 step requires new prospective scientific design; all live C19 work belongs to MAIN.
+
+This run's completion target was to re-fetch current authority and remote state and fail closed when no valid SUB lane/fallback exists. That target is reached.
 
 `sub_fallback=null`; no fallback was used.
+
+Next SUB action: remain no-op until a newer Evidence Analyst reserves a genuinely independent lane with `reservation_status=reserved_for_sub` and `independent_of_main_critical_path=true`.
