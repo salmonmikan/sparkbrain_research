@@ -1,0 +1,23 @@
+{
+  "candidate_id": "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
+  "stage": "exposed-development",
+  "frozen_source_git_sha": "1bd0099f4358e02efac7ee4acccfe5257a86c4be",
+  "freeze_ref": "freeze/a01-md002-p4-candidate-001-source-20260916",
+  "control_ref": "control/a01-md002-p4-candidate-001-started-20260916",
+  "execution_owner_ref": "control/a01-md002-p4-candidate-001-owner-20260916",
+  "execution_owner_claim_commit": "121839ecf9ad6dfaff1d90173ffbf9022a1fe0ea",
+  "recovery_preserve_ref": "preserve/a01-md002-p4-candidate-001-recovery-20260916",
+  "raw_preserve_ref": "preserve/a01-md002-p4-candidate-001-raw-20260916",
+  "scored_preserve_ref": "preserve/a01-md002-p4-candidate-001-scored-20260916",
+  "execution_authority_type": "USER_EXPLICIT_A01_LINE_SCOPED_EXECUTION_AUTHORIZATION",
+  "execution_authorization_date": "2026-09-12",
+  "execution_authorization_record": "docs/research/V061_A01_MD002_EXECUTION_AUTHORIZATION_20260912.md",
+  "execution_authority_identity": "A01_MD002_USER_AUTHORIZATION_2026-09-12",
+  "execution_seal_identity": "freeze/a01-md002-p4-candidate-001-source-20260916@1bd0099f4358e02efac7ee4acccfe5257a86c4be|control/a01-md002-p4-candidate-001-started-20260916@1bd0099f4358e02efac7ee4acccfe5257a86c4be|control/a01-md002-p4-candidate-001-owner-20260916@121839ecf9ad6dfaff1d90173ffbf9022a1fe0ea",
+  "workflow_run_id": "35044851215",
+  "workflow_run_attempt": "1",
+  "python_version": "Python 3.11.16",
+  "same_identity_rerun_allowed": false,
+  "held_out_executed": false,
+  "formal_execution_allowed": false
+}
