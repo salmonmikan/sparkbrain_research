@@ -4,6 +4,8 @@ import json
 import subprocess
 from pathlib import Path
 
+from scripts import run_v061_a01_family_b_gen1 as runner
+
 ROOT = Path(__file__).resolve().parents[2]
 BINDING_PATH = ROOT / "docs" / "V061_A01_FAMILY_B_GEN1_EXECUTION_BINDING.json"
 
@@ -11,6 +13,17 @@ BINDING_PATH = ROOT / "docs" / "V061_A01_FAMILY_B_GEN1_EXECUTION_BINDING.json"
 def _git_blob(path: str) -> str:
     result = subprocess.run(
         ["git", "rev-parse", f"HEAD:{path}"],
+        cwd=ROOT,
+        check=True,
+        text=True,
+        capture_output=True,
+    )
+    return result.stdout.strip()
+
+
+def _git_head() -> str:
+    result = subprocess.run(
+        ["git", "rev-parse", "HEAD"],
         cwd=ROOT,
         check=True,
         text=True,
@@ -32,6 +45,15 @@ def test_execution_binding_is_exact_and_does_not_self_admit() -> None:
     assert locked
     for path, expected_blob in locked.items():
         assert _git_blob(path) == expected_blob
+
+
+def test_execution_manifest_preflights_exact_binding_without_acquisition() -> None:
+    head = _git_head()
+    manifest = runner._manifest(head)
+    assert manifest["candidate_id"] == "a01-family-b-distributed-field-trace-gen1-v1"
+    assert manifest["source_sha"] == head
+    assert manifest["execution_admitted_in_package"] is False
+    assert manifest["same_identity_rerun_allowed"] is False
 
 
 def test_execution_binding_reserves_exact_one_way_refs_without_creating_them() -> None:
