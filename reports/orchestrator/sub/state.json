@@ -1,16 +1,18 @@
 {
-  "timestamp": "2026-09-16T22:35:00+09:00",
+  "timestamp": "2026-09-16T23:34:00+09:00",
   "worker_role": "sub",
-  "Evidence Analyst commit": "4acc09570f34182b0eb9ce464ecc64ad43a16592",
+  "Evidence Analyst commit": "8711c993d6db5c61731cf86c730b94a2fcd2215c",
   "consumed_lanes": {
     "main_lane": {
-      "target": "A01 Family-B distributed-field-trace Generation-1 exact one-way execution-package construction and fresh Analyst admission",
+      "target": "Canonicalize A01 Family-B Generation-1 pre-START static reduction and retire exact object from execution without consuming identity",
       "owner": "main",
-      "status": "MAIN_OWNED_EXPLICITLY_AVOIDED",
-      "analyst_observed_branch": "research/v061-a01-family-b-gen1-execution-package-20260916@8612d01fd9048b881bd8850e13e94ece954a053d",
-      "fresh_observed_branch": "research/v061-a01-family-b-gen1-execution-package-20260916@c22e91dbab2b50b62fe005764265004f8c96a761",
+      "status": "MAIN_COMPLETED_CLOSEOUT_EXPLICITLY_AVOIDED",
+      "fresh_observed_branch": "research/v061-a01-family-b-gen1-execution-package-20260916@db66596ed4479e8dac8b713b4f92a73f76a25047",
       "identity": "a01-family-b-distributed-field-trace-gen1-v1",
-      "execution_admitted": false
+      "classification": "REJECT_BEFORE_STARTED_STATIC_REDUCTION",
+      "execution_admitted": false,
+      "started": false,
+      "identity_consumed": false
     },
     "sub_lane": null,
     "sub_fallback": null
@@ -20,26 +22,29 @@
   "execution_allowed": false,
   "SUB active claim": null,
   "MAIN work explicitly avoided": [
-    "research/v061-a01-family-b-gen1-execution-package-20260916@c22e91dbab2b50b62fe005764265004f8c96a761",
+    "research/v061-a01-family-b-gen1-execution-package-20260916@db66596ed4479e8dac8b713b4f92a73f76a25047",
     "a01-family-b-distributed-field-trace-gen1-v1",
-    "all Family-B candidate implementation, package review/binding, STARTED/control, preservation/scoring, workflow dispatch and execution work"
+    "Family-B closeout/CI/integration state",
+    "Family C, Generation-2, replacement mechanism, changed null/scorer/resource contract, or new identity design before a fresh Analyst cycle"
   ],
   "authoritative refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "control_brain_handoff": "cecb3418f54ef2c89806cbf0d0d8012adc067cca",
-    "evidence_analyst_handoff": "4acc09570f34182b0eb9ce464ecc64ad43a16592",
-    "orchestrator_report_parent_before_run": "65ec0815d7c8db94ad5fe07c9ba1fd2f7e3998c4",
-    "family_b_execution_package_branch": "c22e91dbab2b50b62fe005764265004f8c96a761",
+    "evidence_analyst_handoff": "8711c993d6db5c61731cf86c730b94a2fcd2215c",
+    "orchestrator_report_parent_before_run": "89495a738743c5e14035fc590993cdc867278712",
+    "main_report_observed": "89495a738743c5e14035fc590993cdc867278712",
+    "family_b_closeout_branch": "db66596ed4479e8dac8b713b4f92a73f76a25047",
     "family_b_identity": "a01-family-b-distributed-field-trace-gen1-v1",
-    "family_b_ci": "35102070203 success",
+    "family_b_closeout_ci": "35108354545 completed failure at Test on Python 3.11 and 3.13",
     "family_b_started_refs_observed": 0,
     "family_b_preserve_refs_observed": 0,
     "family_b_freeze_or_evidence_tags_observed": 0,
+    "git_tags_observed": 0,
     "rv01_status": "19cf98ec08635829f20c9ee21f4949a8a624d4ec",
     "rv02_status": "c6b33606850ef591690074f50ed92a4c9400b8bd",
     "cx01_status": "251f7350b7a30c50e8b8a3329b6ff920d85bf493",
     "open_pr_count": 0,
-    "open_issues": [139, 145]
+    "open_issues": [139]
   },
   "branches/PRs advanced": [],
   "workflows/experiments": {
@@ -51,12 +56,13 @@
     "new_freeze_or_preserve": false,
     "merge_performed": false,
     "research_branch_modified_by_sub": false,
-    "observed_main_ci": "35102070203 success"
+    "observed_main_closeout_ci": "35108354545 completed failure"
   },
   "scientific/readiness results": [
     "No new SUB scientific measurement or readiness package was created.",
     "Valid no-op: latest Analyst handoff provides no reserved independent SUB lane or fallback.",
-    "Concurrent MAIN progress built the Family-B one-way execution package at c22e91d and passed push CI; this was observed only and not touched by SUB."
+    "Concurrent MAIN work completed the Family-B Gen1 pre-START static-reduction closeout at db66596e; identity remains unSTARTED and unconsumed.",
+    "No independent successor package is prospectively fixed; next primary science waits for a fresh Analyst cycle."
   ],
   "consumed identities": {
     "observed_relevant": [
@@ -73,16 +79,17 @@
   },
   "blockers": [
     "No independent SUB science/readiness/support lane is reserved by the latest Analyst handoff; SUB must not manufacture one.",
-    "MAIN Family-B review/admission/execution work remains MAIN-owned despite concurrent branch advancement."
+    "Family-B Gen1 is closed pre-START and the next primary scientific object requires a fresh prospective Evidence Analyst handoff.",
+    "Issue #139 remains governance-only and is not a scientific SUB lane."
   ],
   "collision reconciliation": {
     "latest_analyst_rechecked_before_write": true,
-    "latest_analyst_tip": "4acc09570f34182b0eb9ce464ecc64ad43a16592",
+    "latest_analyst_tip": "8711c993d6db5c61731cf86c730b94a2fcd2215c",
     "main_lane_collision": false,
     "main_work_touched": false,
     "analyst_split_invalidated": false,
     "lane_rejected_reason": null,
-    "concurrent_main_change_observed": "Family-B execution-package branch advanced after the Analyst handoff from 8612d01 to c22e91d; CI succeeded. Because sub_lane and sub_fallback are null, this creates no valid SUB claim and remains MAIN-owned."
+    "concurrent_main_change_observed": "Since the previous SUB report, MAIN completed the Family-B Gen1 static-reduction closeout at db66596e, closed Issue #145, and recorded terminal closeout CI failure. Analyst sub_lane/sub_fallback remain null, so this creates no SUB claim."
   },
   "integrity state": {
     "immutable_refs_modified": false,
@@ -93,7 +100,7 @@
     "same_identity_rerun_or_retune": false,
     "scientific_scoring_performed": false,
     "main_critical_path_modified": false,
-    "overall": "clean_valid_no_op_with_concurrent_main_progress_observed"
+    "overall": "clean_valid_no_op_after_main_prestart_closeout"
   },
   "completion_target": {
     "target": "NO_OP_UNTIL_NEW_RESERVED_INDEPENDENT_LANE",
@@ -102,5 +109,5 @@
   "fallback_status": null,
   "rejected_lane": null,
   "lane_rejected_reason": null,
-  "next_sub_action": "Re-fetch the next Evidence Analyst handoff. If no new reserved independent lane/fallback exists, no-op again; never absorb Family-B MAIN blockers or execution/admission work."
+  "next_sub_action": "Re-fetch the next Evidence Analyst handoff. If no new reserved independent lane/fallback exists, no-op again; do not design or implement a post-reduction successor independently."
 }
