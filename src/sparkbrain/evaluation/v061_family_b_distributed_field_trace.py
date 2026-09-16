@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import math
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 from .v061_p3_p5_diagnostic_protocol import StateLocus
 from .v061_premechanism_admission import MechanismFamily, PreMechanismProposal
@@ -15,12 +15,30 @@ DEFAULT_WIDTH = 4
 DEFAULT_DECAY = 0.5
 
 
+@dataclass(slots=True)
+class ExternalEvidenceLedger:
+    """Acquisition-side duplicate guard, deliberately outside the F-only carrier."""
+
+    _consumed_ids: set[str] = field(default_factory=set, repr=False)
+
+    @property
+    def consumed_ids(self) -> frozenset[str]:
+        return frozenset(self._consumed_ids)
+
+    def consume_once(self, evidence_id: str) -> None:
+        if not isinstance(evidence_id, str) or not evidence_id.strip():
+            raise ValueError("external evidence ID must be a non-empty string")
+        if evidence_id in self._consumed_ids:
+            raise ValueError("external evidence ID already consumed")
+        self._consumed_ids.add(evidence_id)
+
+
 @dataclass(frozen=True, slots=True)
 class DistributedFieldTraceState:
     """Anonymous local Field carrier for Family-B construction tests.
 
     The carrier deliberately contains no lineage ID, semantic/task label,
-    transition key, evaluator key, or caller-selected address.
+    transition key, evaluator key, caller-selected address, or evidence ID.
     """
 
     eligibility: tuple[float, ...]
@@ -46,27 +64,31 @@ class DistributedFieldTraceState:
         if len(self.eligibility) != len(self.credit):
             raise ValueError("eligibility and credit widths must match")
         _validate_decay(self.decay)
-        _validate_vector(self.eligibility, expected_width=len(self.eligibility))
-        _validate_vector(self.credit, expected_width=len(self.credit))
+        _validate_eligibility(self.eligibility, decay=self.decay)
+        _validate_credit(self.credit, decay=self.decay)
 
     def deposit_local_activity(
         self,
         activity: tuple[float, ...],
     ) -> DistributedFieldTraceState:
-        """Decay prior eligibility and add anonymous local Field activity."""
+        """Advance one local step: decay old traces, then add local activity."""
 
         self.validate()
-        _validate_vector(activity, expected_width=len(self.eligibility))
-        if any(value < 0.0 for value in activity):
-            raise ValueError("local activity must be non-negative")
+        _validate_unit_interval_vector(
+            activity,
+            expected_width=len(self.eligibility),
+            label="local activity",
+        )
         eligibility = tuple(
             self.decay * previous + current
             for previous, current in zip(self.eligibility, activity, strict=True)
         )
-        _validate_vector(eligibility, expected_width=len(self.eligibility))
+        credit = tuple(self.decay * previous for previous in self.credit)
+        _validate_eligibility(eligibility, decay=self.decay)
+        _validate_credit(credit, decay=self.decay)
         return DistributedFieldTraceState(
             eligibility=eligibility,
-            credit=self.credit,
+            credit=credit,
             decay=self.decay,
         )
 
@@ -75,17 +97,24 @@ class DistributedFieldTraceState:
         boundary_activity: tuple[float, ...],
         *,
         sign: int,
+        evidence_id: str,
+        evidence_ledger: ExternalEvidenceLedger,
     ) -> DistributedFieldTraceState:
-        """Apply signed anonymous boundary consequence component-wise."""
+        """Apply one deduplicated signed anonymous boundary consequence."""
 
         self.validate()
-        if sign not in {-1, 1}:
+        if type(sign) is not int or sign not in {-1, 1}:
             raise ValueError("external world-return sign must be -1 or +1")
-        _validate_vector(boundary_activity, expected_width=len(self.eligibility))
-        if any(value < 0.0 for value in boundary_activity):
-            raise ValueError("boundary activity must be non-negative")
+        if not isinstance(evidence_ledger, ExternalEvidenceLedger):
+            raise TypeError("external world return requires an ExternalEvidenceLedger")
+        _validate_unit_interval_vector(
+            boundary_activity,
+            expected_width=len(self.eligibility),
+            label="boundary activity",
+        )
         credit = tuple(
-            previous + sign * eligible * boundary
+            self.decay * previous
+            + (1.0 - self.decay) * sign * eligible * boundary
             for previous, eligible, boundary in zip(
                 self.credit,
                 self.eligibility,
@@ -93,7 +122,8 @@ class DistributedFieldTraceState:
                 strict=True,
             )
         )
-        _validate_vector(credit, expected_width=len(self.credit))
+        _validate_credit(credit, decay=self.decay)
+        evidence_ledger.consume_once(evidence_id)
         return DistributedFieldTraceState(
             eligibility=self.eligibility,
             credit=credit,
@@ -101,7 +131,7 @@ class DistributedFieldTraceState:
         )
 
     def internal_replay(self) -> DistributedFieldTraceState:
-        """Internal replay alone cannot create or alter consequence credit."""
+        """Internal replay alone cannot create or strengthen consequence credit."""
 
         self.validate()
         return self
@@ -110,9 +140,11 @@ class DistributedFieldTraceState:
         """Return the local Field contribution to later competition."""
 
         self.validate()
-        _validate_vector(activity, expected_width=len(self.credit))
-        if any(value < 0.0 for value in activity):
-            raise ValueError("competition activity must be non-negative")
+        _validate_unit_interval_vector(
+            activity,
+            expected_width=len(self.credit),
+            label="competition activity",
+        )
         score = sum(
             credit * local
             for credit, local in zip(self.credit, activity, strict=True)
@@ -145,11 +177,41 @@ def _validate_decay(decay: float) -> None:
         raise ValueError("decay must be finite and in [0, 1)")
 
 
+def _resource_bound(decay: float) -> float:
+    _validate_decay(decay)
+    return 1.0 / (1.0 - decay)
+
+
 def _validate_vector(values: tuple[float, ...], *, expected_width: int) -> None:
     if len(values) != expected_width:
         raise ValueError("vector width mismatch")
     if not all(math.isfinite(value) for value in values):
         raise ValueError("vector values must be finite")
+
+
+def _validate_unit_interval_vector(
+    values: tuple[float, ...],
+    *,
+    expected_width: int,
+    label: str,
+) -> None:
+    _validate_vector(values, expected_width=expected_width)
+    if any(value < 0.0 or value > 1.0 for value in values):
+        raise ValueError(f"{label} values must be in [0, 1]")
+
+
+def _validate_eligibility(values: tuple[float, ...], *, decay: float) -> None:
+    _validate_vector(values, expected_width=len(values))
+    bound = _resource_bound(decay)
+    if any(value < 0.0 or value > bound + 1e-12 for value in values):
+        raise ValueError("eligibility values exceed the fixed resource bound")
+
+
+def _validate_credit(values: tuple[float, ...], *, decay: float) -> None:
+    _validate_vector(values, expected_width=len(values))
+    bound = _resource_bound(decay)
+    if any(abs(value) > bound + 1e-12 for value in values):
+        raise ValueError("credit values exceed the fixed resource bound")
 
 
 FAMILY_B_GEN1_PROPOSAL = PreMechanismProposal(

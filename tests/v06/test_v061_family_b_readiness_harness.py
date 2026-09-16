@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 import pytest
@@ -43,3 +44,19 @@ def test_readiness_fixture_fails_closed_on_dimension_drift() -> None:
 
     with pytest.raises(ValueError, match="all readiness vectors must match fixture width"):
         run_construction_readiness(invalid)
+
+
+def test_readiness_fixture_rejects_fractional_signs_before_coercion(
+    tmp_path: Path,
+) -> None:
+    payload = json.loads(FIXTURE_PATH.read_text(encoding="utf-8"))
+    payload["confirmation_sign"] = 1.9
+    payload["contradiction_sign"] = -1.9
+    invalid_path = tmp_path / "invalid-signs.json"
+    invalid_path.write_text(json.dumps(payload), encoding="utf-8")
+
+    with pytest.raises(
+        ValueError,
+        match=r"readiness fixture signs must be fixed at \+1 and -1",
+    ):
+        load_readiness_fixture(invalid_path)

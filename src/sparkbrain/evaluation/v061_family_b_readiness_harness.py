@@ -5,7 +5,17 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-from .v061_family_b_distributed_field_trace import DistributedFieldTraceState
+from .v061_family_b_distributed_field_trace import (
+    DistributedFieldTraceState,
+    ExternalEvidenceLedger,
+)
+
+
+def _fixed_json_sign(payload: dict[str, Any], key: str, expected: int) -> int:
+    value = payload[key]
+    if type(value) is not int or value != expected:
+        raise ValueError("readiness fixture signs must be fixed at +1 and -1")
+    return value
 
 
 @dataclass(frozen=True, slots=True)
@@ -36,8 +46,8 @@ class FamilyBGen1ReadinessFixture:
             right_boundary_return=tuple(
                 float(value) for value in payload["right_boundary_return"]
             ),
-            confirmation_sign=int(payload["confirmation_sign"]),
-            contradiction_sign=int(payload["contradiction_sign"]),
+            confirmation_sign=_fixed_json_sign(payload, "confirmation_sign", 1),
+            contradiction_sign=_fixed_json_sign(payload, "contradiction_sign", -1),
         )
 
     def validate(self) -> None:
@@ -60,20 +70,24 @@ class FamilyBGen1ReadinessFixture:
 class FamilyBGen1ConstructionResult:
     fixture_id: str
     external_return_required: bool
+    duplicate_evidence_rejected: bool
     lineage_swap_follows_footprint: bool
     contradiction_corrects_credit: bool
     f_only_transfer_preserves_effect: bool
     bounded_plurality_differentiates_by_overlap: bool
+    credit_expires_and_remains_bounded: bool
 
     @property
     def all_construction_checks_pass(self) -> bool:
         return all(
             (
                 self.external_return_required,
+                self.duplicate_evidence_rejected,
                 self.lineage_swap_follows_footprint,
                 self.contradiction_corrects_credit,
                 self.f_only_transfer_preserves_effect,
                 self.bounded_plurality_differentiates_by_overlap,
+                self.credit_expires_and_remains_bounded,
             )
         )
 
@@ -99,19 +113,36 @@ def run_construction_readiness(
         fixture.width,
         decay=fixture.decay,
     )
+    ledger = ExternalEvidenceLedger()
 
     left = empty.deposit_local_activity(fixture.left_activity)
     left_replay = left.internal_replay()
     left_confirmed = left.apply_external_world_return(
         fixture.left_boundary_return,
         sign=fixture.confirmation_sign,
+        evidence_id="readiness:left:confirm",
+        evidence_ledger=ledger,
     )
     external_required = left_replay.credit != left_confirmed.credit
+
+    try:
+        left_confirmed.apply_external_world_return(
+            fixture.left_boundary_return,
+            sign=fixture.confirmation_sign,
+            evidence_id="readiness:left:confirm",
+            evidence_ledger=ledger,
+        )
+    except ValueError as error:
+        duplicate_rejected = str(error) == "external evidence ID already consumed"
+    else:
+        duplicate_rejected = False
 
     right = empty.deposit_local_activity(fixture.right_activity)
     right_confirmed = right.apply_external_world_return(
         fixture.right_boundary_return,
         sign=fixture.confirmation_sign,
+        evidence_id="readiness:right:confirm",
+        evidence_ledger=ledger,
     )
     lineage_swap = (
         left_confirmed.competition_score(fixture.left_activity) > 0.0
@@ -123,9 +154,11 @@ def run_construction_readiness(
     left_corrected = left_confirmed.apply_external_world_return(
         fixture.left_boundary_return,
         sign=fixture.contradiction_sign,
+        evidence_id="readiness:left:contradict",
+        evidence_ledger=ledger,
     )
     contradiction = (
-        left_corrected.competition_score(fixture.left_activity)
+        left_corrected.competition_score(fixture.left_activity) < 0.0
         < left_confirmed.competition_score(fixture.left_activity)
     )
 
@@ -140,10 +173,14 @@ def run_construction_readiness(
     plural_left = plural.apply_external_world_return(
         fixture.left_boundary_return,
         sign=fixture.confirmation_sign,
+        evidence_id="readiness:plural:left",
+        evidence_ledger=ledger,
     )
     plural_right = plural.apply_external_world_return(
         fixture.right_boundary_return,
         sign=fixture.confirmation_sign,
+        evidence_id="readiness:plural:right",
+        evidence_ledger=ledger,
     )
     bounded_plurality = (
         plural_left.competition_score(fixture.left_activity) > 0.0
@@ -152,11 +189,20 @@ def run_construction_readiness(
         and plural_right.competition_score(fixture.left_activity) == 0.0
     )
 
+    decayed = left_confirmed.deposit_local_activity((0.0,) * fixture.width)
+    bound = 1.0 / (1.0 - fixture.decay)
+    credit_bounded = (
+        abs(decayed.credit[0]) < abs(left_confirmed.credit[0])
+        and all(abs(value) <= bound for value in decayed.credit)
+    )
+
     return FamilyBGen1ConstructionResult(
         fixture_id=fixture.fixture_id,
         external_return_required=external_required,
+        duplicate_evidence_rejected=duplicate_rejected,
         lineage_swap_follows_footprint=lineage_swap,
         contradiction_corrects_credit=contradiction,
         f_only_transfer_preserves_effect=f_only_transfer,
         bounded_plurality_differentiates_by_overlap=bounded_plurality,
+        credit_expires_and_remains_bounded=credit_bounded,
     )

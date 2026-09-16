@@ -26,24 +26,29 @@ No threshold, carrier rule, scorer rule, or stopping rule in this contract is ch
 The minimal Generation-1 carrier is a fixed-width local Field state with two component-wise vectors:
 
 - `eligibility[i]`: a decaying local footprint left by local Field activity;
-- `credit[i]`: a signed local consequence trace accumulated only when an external world return overlaps an eligible footprint.
+- `credit[i]`: a signed, leaky local consequence trace updated only when an external world return overlaps an eligible footprint.
 
-The candidate stores **no lineage identifier, semantic label, task label, evaluator lookup key, transition/path identifier, or global belief table**. It exposes no API that accepts a selected lineage. The only external return input is a fixed-width anonymous boundary vector plus a signed physical consequence (`+1` or `-1`).
+The candidate stores **no lineage identifier, semantic label, task label, evaluator lookup key, transition/path identifier, global belief table, or evidence ID**. It exposes no API that accepts a selected lineage. The scientific carrier receives only a fixed-width anonymous boundary vector plus a signed physical consequence (`+1` or `-1`).
+
+Repeated delivery of one external evidence identity must not create repeated credit. An acquisition-side `ExternalEvidenceLedger` therefore consumes opaque evidence IDs exactly once before the update is accepted. This ledger is **not** part of the candidate Field carrier, is not exported by the P3 F-only transfer, cannot affect competition scores, and cannot select a lineage; it exists only to enforce the repository-wide duplicate-evidence invariant.
 
 Local update rules are fixed prospectively:
 
-1. Local Field activity `a` updates eligibility component-wise as `e' = decay * e + a`.
-2. Internal replay or absence of external return does not update `credit`.
-3. External return vector `r` with sign `s ∈ {-1,+1}` updates `credit` as `c' = c + s * (e ⊙ r)`.
-4. Later local competition for activity vector `q` receives only the local score `dot(c, q)` from this carrier.
-5. Export/import of the candidate carrier for P3 is exactly the Field carrier `(eligibility, credit, decay)`; no hidden N/P/global state accompanies it.
+1. Local Field activity `a`, with each component in `[0, 1]`, advances one local step as `e' = decay * e + a` and `c' = decay * c`.
+2. Internal replay alone does not create or strengthen consequence credit.
+3. A deduplicated external return vector `r`, with each component in `[0, 1]`, and sign `s ∈ {-1,+1}` updates credit as `c' = decay * c + (1 - decay) * s * (e ⊙ r)`.
+4. Later local competition for activity vector `q ∈ [0, 1]^width` receives only the local score `dot(c, q)` from this carrier.
+5. Export/import of the candidate carrier for P3 is exactly the Field carrier `(eligibility, credit, decay)`; the acquisition-side evidence ledger and any hidden N/P/global state are excluded.
+6. The fixed input range and leaky updates imply a resource bound `B = 1 / (1 - decay)` for each eligibility component and the absolute value of each credit component. State outside this bound is invalid and fails closed.
 
 The fixed default readiness configuration is:
 
 - width: `4` components;
 - decay: `0.5`;
+- local/boundary/competition components: `[0, 1]`;
 - score: unnormalized local dot product;
-- credit gain: exactly `1.0`;
+- credit update gain: exactly `(1 - decay)`;
+- per-component eligibility/credit resource bound: `1 / (1 - decay)`;
 - no clipping, softmax, learned threshold, normalization, or post-outcome parameter tuning.
 
 These defaults are construction/readiness constants, not biological constants.
@@ -74,6 +79,7 @@ Generation-1 must be stopped rather than rescued if any of the following is obse
 4. **Plurality failure:** bounded coexisting footprints cannot later be causally differentiated without privileged addressing.
 5. **Null reduction:** the claimed residual is reproduced by the matched explicit eligibility/return-address null, recurrent causal-trace null, or explicit latent-cause/belief-state null with equal or lower privilege/resources.
 6. **Identity/binding failure:** proposal/source/protocol/package/input identity cannot be verified exactly before STARTED.
+7. **Bound/dedup failure:** the candidate requires unbounded eligibility/credit or repeated delivery of one evidence ID increases causal credit.
 
 No observed failure may be repaired under the same consumed identity.
 
@@ -83,11 +89,13 @@ The following are deterministic implementation tests, not scientific measurement
 
 - component-wise lineage-swap construction follows anonymous physical footprint;
 - external return is necessary for credit update;
+- repeated delivery of one evidence ID is rejected by the acquisition boundary;
 - contradiction changes the sign of the local consequence contribution;
 - F-only carrier serialization/export/import preserves the deterministic competition score;
 - two disjoint coexisting footprints can be represented and anonymous boundary return can address them only through vector overlap;
-- dimensional mismatch, non-finite values, invalid consequence sign, or invalid decay fail closed;
-- proposal hash, source SHA, discriminator IDs, null IDs, and privilege declarations verify exactly.
+- eligibility and credit decay on later local steps and remain inside the fixed resource bound;
+- dimensional mismatch, non-finite values, out-of-range activity, invalid consequence sign, or invalid decay fail closed;
+- proposal hash, exact source key set/source blobs, contract bytes, input bytes, discriminator IDs, null IDs, and privilege declarations verify exactly.
 
 Passing these tests means **ready for Evidence Analyst review**, not ready for one-way execution.
 
@@ -105,16 +113,19 @@ SUB must not work on this branch, identity, verifier, CI, review, binding, or an
 
 ## 7. Binding fields
 
-The code-side `PreMechanismProposal` must bind this exact set of IDs and declarations to the commit containing this contract as `protocol_bundle_source_sha`. A separate readiness contract also binds `belief_state_null_id` because the base `PreMechanismProposal` predates that additional Analyst requirement.
+The code-side `PreMechanismProposal` binds the pre-P4 protocol-bundle source commit and the exact discriminator/null/stopping identities. Because this post-P4 readiness contract did not exist at that pre-P4 commit, the readiness package separately binds the exact bytes of this document using both its Git blob SHA and SHA-256. The package binding also fixes the complete required source-path key set, each source Git blob, the readiness input bytes, and the additional belief-state null ID.
 
 The final implementation head must record:
 
 - prospective identity;
-- protocol-bundle source SHA;
+- pre-P4 protocol-bundle source SHA;
 - mechanism rule spec path (this file);
+- exact mechanism-contract Git blob and SHA-256;
 - null-ladder spec path (`docs/V061_A01_NULL_LADDER.md` plus the explicit IDs above);
 - canonical proposal SHA-256 from `PreMechanismProposal.bind()`;
 - belief-state null ID;
+- complete required source-path key set and exact source Git blobs;
+- exact readiness input blob/SHA-256;
 - exact implementation head reviewed by CI/review.
 
 The branch remains mutable research state. It is not an immutable freeze/seal/evidence anchor, and no new freeze tag/ref is created during readiness-only work.
