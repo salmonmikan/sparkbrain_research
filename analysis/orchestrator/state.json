@@ -1,331 +1,355 @@
 {
-  "timestamp": "2026-09-17T00:08:00+09:00",
+  "timestamp": "2026-09-17T00:57:00+09:00",
   "worker_role": "evidence_analyst",
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "control_brain": "cecb3418f54ef2c89806cbf0d0d8012adc067cca",
-    "orchestrator_report_tip": "74aaafaa1c0556d2118810547a254fce3f93c80e",
-    "evidence_analyst_parent": "8711c993d6db5c61731cf86c730b94a2fcd2215c",
-    "family_b_closeout": "db66596ed4479e8dac8b713b4f92a73f76a25047",
+    "control_brain_handoff": "cecb3418f54ef2c89806cbf0d0d8012adc067cca",
+    "evidence_analyst_parent_before_run": "d295a61d37903f1b7c34fd793c6aa6a6e25c5cb6",
+    "orchestrator_report_tip_consumed": "591c006b1e5cd0728917de4358cbc44f3e372a1f",
+    "family_a_p4_source": "freeze/a01-md002-p4-candidate-001-source-20260916@1bd0099f4358e02efac7ee4acccfe5257a86c4be",
+    "family_a_p4_classification": "UNSUPPORTED_EN_BLOC_MERGED_CREDIT",
+    "family_b_closeout": "research/v061-a01-family-b-gen1-execution-package-20260916@db66596ed4479e8dac8b713b4f92a73f76a25047",
+    "family_b_identity": "a01-family-b-distributed-field-trace-gen1-v1",
+    "family_b_status": "REJECT_BEFORE_STARTED_STATIC_REDUCTION",
+    "family_c_closeout": "research/v061-a01-family-c-gen1-20260917@cfe1c3e5506d9fd8b41028dbfe0f8a8dd31a82c5",
+    "family_c_identity": "a01-family-c-joint-return-local-field-gen1-v1",
+    "family_c_proposal_binding_commit": "9cfddc6dc4d2beab090a9b38661a68dcec755ff7",
+    "family_c_proposal_sha256": "4b574b7053efb50b59a8d7536c94d02a7a25bdfc5b1d7f88575c7b6fc3e614ac",
+    "family_c_null_resource_binding": "690a62df641d0577e3f7d760354763a6f0ec69e33eedfdacb37e92e7c654dbbc",
+    "family_c_status": "REJECT_BEFORE_STARTED_STATIC_REDUCTION",
+    "sub_ab_audit": "research/v061-a01-negative-completion-ab-audit-sub-20260917@9468bbe882bd7bd8bb0b60c2ad91d11e4616ac56",
     "rv01": "19cf98ec08635829f20c9ee21f4949a8a624d4ec",
     "rv02": "c6b33606850ef591690074f50ed92a4c9400b8bd",
     "cx01": "251f7350b7a30c50e8b8a3329b6ff920d85bf493",
+    "family_c_closeout_ci": "35115671607 completed failure; inherited Family-B locked-file binding tests",
+    "sub_audit_ci": "35116725837 completed failure; same inherited Family-B locked-file binding tests",
     "open_pr_count": 0,
     "open_issues": [139],
-    "git_tags": [],
-    "repository_rulesets": [],
-    "legacy_freeze_branch_count_observed": 13,
-    "sealed_branches_observed": [],
-    "formal_branches_observed": [],
-    "family_b_started_refs_observed": [],
-    "family_b_preserve_refs_observed": []
+    "git_tags_count": 0,
+    "repository_rulesets_count": 0,
+    "main_protected": false
   },
   "control_brain_commit": "cecb3418f54ef2c89806cbf0d0d8012adc067cca",
-  "MAIN_report_commit_consumed": "89495a738743c5e14035fc590993cdc867278712",
-  "SUB_report_commit_consumed": "74aaafaa1c0556d2118810547a254fce3f93c80e",
+  "MAIN_report_commit_consumed": "e4f0b2d1401857bf616075a799d0ef541de8ee22",
+  "SUB_report_commit_consumed": "591c006b1e5cd0728917de4358cbc44f3e372a1f",
   "active_MAIN_SUB_claims_observed": {
     "main": {
-      "frontier": "A01 Family-B Gen1 closeout",
+      "previous_lane": "Family-C Generation-1 prospective proposal/static-screen lane",
       "status": "COMPLETED_PRESTART_STATIC_REDUCTION_CLOSEOUT",
-      "branch": "research/v061-a01-family-b-gen1-execution-package-20260916",
-      "head": "db66596ed4479e8dac8b713b4f92a73f76a25047",
-      "identity": "a01-family-b-distributed-field-trace-gen1-v1",
+      "branch": "research/v061-a01-family-c-gen1-20260917",
+      "head": "cfe1c3e5506d9fd8b41028dbfe0f8a8dd31a82c5",
+      "identity": "a01-family-c-joint-return-local-field-gen1-v1",
       "started": false,
-      "identity_consumed": false,
-      "closeout_ci": "35108354545 completed failure in Test on Python 3.11/3.13; non-scientific and non-reopening"
+      "identity_consumed": false
     },
     "sub": {
-      "status": "VALID_NO_OP_AFTER_MAIN_CLOSEOUT",
-      "selected_lane": null,
-      "collision_with_main": false,
-      "latest_report_commit": "74aaafaa1c0556d2118810547a254fce3f93c80e"
+      "previous_lane": "A/B negative-completion disposition bookkeeping audit",
+      "status": "COMPLETED_AUDIT_FINDING",
+      "branch": "research/v061-a01-negative-completion-ab-audit-sub-20260917",
+      "head": "9468bbe882bd7bd8bb0b60c2ad91d11e4616ac56",
+      "collision_with_main": false
     }
   },
   "active_line_review": {
     "A01": {
-      "status": "MIXED_FAMILY_C_NOW_PRIMARY_UNRESOLVED_FAMILY",
       "centrality": "PRIMARY",
+      "status": "REGISTERED_FAMILY_PROGRAMME_TERMINAL_AT_CURRENT_TESTED_BOUND_OBJECTS_STRATEGIC_REFRAME_READY_MACHINE_VERDICT_WITHHELD",
       "strongest_evidence": [
         "P2 consumed positive development evidence SUPPORTED_SELECTIVE_CIRCULATION",
         "P3 consumed positive development evidence SUPPORTED_R_CAUSAL_CARRIER",
         "Family-A P4 consumed terminal negative UNSUPPORTED_EN_BLOC_MERGED_CREDIT",
-        "Family-B Gen1 pre-START terminal admission rejection by equal-resource recurrent-null static reduction"
+        "Family-B Gen1 unSTARTED/unconsumed pre-START static reduction by registered equal-resource recurrent causal-trace null",
+        "Family-C Gen1 unSTARTED/unconsumed pre-START static reduction by registered equal-resource separable address-plus-Field null"
       ],
-      "family_c_status": "REGISTERED_CONCEPTUAL_FAMILY_NO_EXACT_PROPOSAL_YET",
-      "shortest_path_to_new_information": "Prospectively bind Family-C Gen1, statically screen against strong nulls before implementation, then build only the surviving exact pre-START package and return for fresh execution admission.",
-      "genuine_blocker": "No exact prospectively bound Family-C Generation-1 proposal/package exists yet.",
-      "information_value": "VERY_HIGH",
-      "implementation_distance": "MEDIUM"
+      "simpler_reduction": "P2/P3 and B/C candidate mechanisms remain compatible with established eligibility/provenance/recurrent/separable causal-credit mechanisms at matched or lower privilege/resources.",
+      "shortest_path_to_new_information": "Canonicalize registered-family programme closeout and strategic reframe without inventing a rescue successor; separately preserve machine-accounting ambiguity.",
+      "genuine_blocker": "Current NegativeCompletionProgramme/CandidateDisposition cannot faithfully encode B/C pre-START terminal states, so an exact machine negative-completion verdict is withheld rather than retrofitted.",
+      "information_value": "VERY_HIGH_DECISION",
+      "implementation_distance": "NEAR"
     },
     "RV01": {
-      "status": "SUPPORTED_DEVELOPMENT_ONLY_WITH_SIMPLER_REDUCTION",
       "centrality": "SECONDARY",
+      "status": "SUPPORTED_DEVELOPMENT_ONLY_WITH_SIMPLER_REDUCTION",
       "strongest_evidence": "R01-17 positive real-delay development evidence",
       "simpler_reduction": "ordinary local adaptive-delay/recurrent plasticity",
       "fresh_successor_defined": false
     },
     "RV02": {
-      "status": "TERMINAL_CONSTRUCTION_GATE_NEGATIVE",
       "centrality": "SECONDARY",
-      "strongest_evidence": "D1 consumed construction/gate-reachability negative; capability unopened",
+      "status": "TERMINAL_CONSTRUCTION_GATE_NEGATIVE_CAPABILITY_UNOPENED",
       "fresh_successor_defined": false
     },
     "CX01": {
-      "status": "TERMINAL_FORMAL_NEGATIVE",
       "centrality": "SECONDARY",
-      "strongest_evidence": "Candidate-002 consumed formal negative",
+      "status": "TERMINAL_FORMAL_NEGATIVE",
       "fresh_successor_defined": false
     }
   },
   "main_lane": {
-    "target": "Prospectively define, bind, static-reduction-audit, and if still scientifically live implement the exact Family-C Generation-1 pre-START package.",
-    "scientific_question": "Can actual anonymous transient causal return provenance select which local/Field substructure receives external consequence while persistent local/Field state carries the effect into later competition, with genuine plural-lineage selectivity and without reduction to equal-or-lower-resource explicit, recurrent, belief-state, or separable address-plus-Field nulls?",
+    "target": "Canonical A01 registered-family programme closeout and strategic reframe without retroactive machine-rule changes or successor invention.",
+    "scientific_question": "Given Family-A's executed terminal negative and Family-B/C's prospectively bound pre-START static reductions, does any registered non-privileged mechanism family remain scientifically live under the unchanged protocol, and what conservative programme conclusion is justified without rewriting accounting after the outcomes?",
     "recommended_owner": "main",
     "branch_or_identity": {
-      "branch": "research/v061-a01-family-c-gen1-20260917",
-      "identity": "a01-family-c-joint-return-local-field-gen1-v1",
-      "mechanism_family": "joint-return-and-local-field-update",
-      "proposal_state": "TO_BE_BOUND_PROSPECTIVELY"
+      "recommended_branch": "research/v061-a01-registered-family-closeout-20260917",
+      "scientific_identity": null,
+      "base_authority": "research/v061-a01-family-c-gen1-20260917@cfe1c3e5506d9fd8b41028dbfe0f8a8dd31a82c5"
     },
-    "information_value": "VERY_HIGH",
-    "implementation_distance": "MEDIUM",
+    "information_value": "VERY_HIGH_DECISION",
+    "implementation_distance": "NEAR",
     "dependencies": [
-      "Family-B closeout remains canonical and unconsumed",
-      "Consumed A/B identities and immutable authorities remain untouched",
-      "Family-C proposal binds discriminator/null/falsifier/resource/privilege semantics before implementation outcome",
-      "Actual transient address derives from pending causal provenance, not caller/evaluator selection",
-      "Initial plurality is genuinely co-maximal and not hidden by singleton winner selection"
+      "Family-A P4 immutable authority remains unchanged",
+      "Family-B closeout remains db66596ed4479e8dac8b713b4f92a73f76a25047 and unSTARTED/unconsumed",
+      "Family-C closeout remains cfe1c3e5506d9fd8b41028dbfe0f8a8dd31a82c5 and unSTARTED/unconsumed",
+      "Premechanism protocol still registers exactly A/B/C and its existing negative-completion semantics are unchanged",
+      "SUB A/B audit representability and coverage-validation gaps remain true"
     ],
     "allowed_scope": [
-      "Create fresh Family-C research branch and proposal identity",
-      "Define exact proposal specification and bound SHA-256",
-      "Bind lineage-swap, contradiction, future-competition, bounded-plurality, P3 selector/carrier-cross, explicit-null, recurrent-null, additional separable-null, belief-state comparator, negative-stop and resource/privilege definitions",
-      "Run static privilege/resource/reduction audit before expensive implementation",
-      "If and only if the bound proposal survives static reduction, implement candidate/readiness harness and exact source/package/input binding",
-      "Fix all Family-C candidate-specific CI/review/verifier/harness/binding defects that preserve bound scientific semantics",
-      "Run deterministic development/readiness tests without one-way acquisition"
+      "Create fresh documentation/status closeout branch",
+      "Map exact A/B/C terminal authority, STARTED/consumption state, proposal and reduction class",
+      "Update canonical A01 status to record that no registered non-privileged family remains live at the current tested/bound-object level",
+      "Record the prospectively pre-existing strategic reframe toward an integrative experimental cognitive architecture/testbed",
+      "Explicitly withhold machine negative-completion verdict under current schema",
+      "Fix closeout-critical CI/test-scope defects only when semantics-preserving and without changing Family-B/C scientific bytes"
     ],
     "forbidden_scope": [
-      "Create STARTED/control claims for Family-C Gen1",
-      "Dispatch one-way workflow or acquire/scored scientific evidence",
-      "Consume Family-C identity",
-      "Modify consumed Family-A/B objects or immutable refs",
-      "Weaken nulls, plurality, resource matching, or privilege constraints because Family-B reduced",
-      "Change bound Gen1 scientific content after proposal binding without new generation and Analyst",
-      "Merge frontier mechanism/scorer science to main"
+      "STARTED/control creation, one-way workflow dispatch, acquisition, raw/scoring, or identity consumption",
+      "Family-B/C execution, rescue, retune, rebind or same-identity reuse",
+      "Family-C Gen2, Family-D, replacement mechanism, new scorer/null/resource contract or outcome-responsive successor",
+      "Changing v061_premechanism_admission.py or negative-completion stop semantics to force the current programme to pass",
+      "Modifying immutable evidence",
+      "Merging frontier science to main"
     ],
     "go_conditions": [
-      "Fresh branch and identity with no collision",
-      "Premechanism admission fields complete and bound",
-      "No forbidden typed/semantic/evaluator/global lookup privilege",
-      "P3 selector-vs-carrier cross fixed prospectively",
-      "Explicit/recurrent/belief/separable null ladder fixed and resource/lookup matched",
-      "Static audit finds no equal-or-lower-resource exact subsumption",
-      "Exact-head readiness CI/review clean before returning to Analyst"
+      "Family-A/B/C exact authority and terminal classifications re-verify",
+      "No Family-B/C STARTED/raw/scored/preserve/evidence authority exists",
+      "B/C static reductions remain reproducible under equal/lower resource and privilege accounting",
+      "No prospectively registered surviving non-privileged family is found",
+      "Current protocol/evaluator semantics remain unchanged",
+      "Closeout changes remain documentation/status-only except an optional semantics-preserving CI-scope fix"
     ],
     "stop_conditions": [
-      "Static reduction proves a registered equal-or-lower-resource null subsumes the exact bound proposal",
-      "No-privilege/resource/prospectivity constraints cannot be met without changing the scientific question",
-      "Any unexpected STARTED/raw/score/evidence artifact appears",
-      "The exact pre-START package is complete; return to Analyst before execution"
+      "A surviving registered family/candidate is discovered",
+      "B/C static reduction or resource/privilege parity cannot be reproduced",
+      "Unexpected one-way artifact exists",
+      "Closeout requires changing scientific/evaluator semantics",
+      "A CI fix would require changing Family-B/C scientific bytes",
+      "Canonical closeout is complete"
     ],
     "exact_refs_identities_to_recheck": [
+      "freeze/a01-md002-p4-candidate-001-source-20260916@1bd0099f4358e02efac7ee4acccfe5257a86c4be",
       "research/v061-a01-family-b-gen1-execution-package-20260916@db66596ed4479e8dac8b713b4f92a73f76a25047",
       "a01-family-b-distributed-field-trace-gen1-v1",
-      "docs/V061_PREMECHANISM_ADMISSION_AND_NEGATIVE_COMPLETION.md",
-      "docs/V061_CROSS_LINE_EVIDENCE_FIREWALL_AND_PREMECHANISM_MATRIX.md",
-      "src/sparkbrain/evaluation/v061_premechanism_admission.py",
-      "src/sparkbrain/evaluation/v061_p3_p5_diagnostic_protocol.py",
-      "research/v061-a01-family-c-gen1-20260917",
+      "research/v061-a01-family-c-gen1-20260917@cfe1c3e5506d9fd8b41028dbfe0f8a8dd31a82c5",
       "a01-family-c-joint-return-local-field-gen1-v1",
-      "all prospective Family-C control/preserve/freeze/sealed/formal/evidence refs"
+      "docs/V061_PREMECHANISM_ADMISSION_AND_NEGATIVE_COMPLETION.md",
+      "src/sparkbrain/evaluation/v061_premechanism_admission.py",
+      "research/v061-a01-negative-completion-ab-audit-sub-20260917@9468bbe882bd7bd8bb0b60c2ad91d11e4616ac56",
+      "all prospective A01 control/preserve/freeze/sealed/formal/evidence refs"
     ],
-    "prospective_protocol_ids": {
-      "lineage_swap": "v061-a01-cgen1-lineage-swap-v1",
-      "contradiction": "v061-a01-cgen1-contradiction-v1",
-      "future_competition": "v061-a01-cgen1-future-local-competition-v1",
-      "bounded_plurality": "v061-a01-cgen1-bounded-plurality-v1",
-      "p3_selector_carrier_cross": "v061-a01-cgen1-address-at-update-field-carrier-cross-v1",
-      "explicit_null": "v061-a01-cgen1-explicit-return-address-eligibility-null-v1",
-      "recurrent_null": "v061-a01-cgen1-resource-matched-recurrent-causal-trace-null-v1",
-      "separable_joint_null": "v061-a01-cgen1-separable-address-plus-field-null-v1",
-      "negative_stop": "v061-a01-cgen1-stop-no-selective-plurality-or-null-reduction-v1"
-    },
     "main_owns_all_critical_path_fixups": true
   },
   "sub_lane": {
-    "target": "Independent A01 Family-A/Family-B negative-completion disposition bookkeeping audit.",
-    "scientific_question_support_purpose": "Determine whether already-terminal Family-A P4 and Family-B pre-START reduction states are cleanly representable in CandidateDisposition/family-coverage accounting without changing scientific results, and identify bookkeeping gaps relevant only after Family C later reaches a terminal disposition.",
+    "target": "Independent Family-C plus A/B/C terminal-provenance and negative-completion bookkeeping audit.",
+    "scientific_question_support_purpose": "Extend the completed A/B audit to Family C and build a full three-family evidence-provenance matrix showing exactly what the unchanged machine accounting can and cannot represent, without deciding or blocking MAIN's strategic closeout.",
     "recommended_owner": "sub",
-    "branch_or_identity": "research/v061-a01-negative-completion-ab-audit-sub-20260917; no scientific identity",
+    "branch_or_identity": "research/v061-a01-negative-completion-c-audit-sub-20260917; no scientific identity",
     "information_value": "MEDIUM_ENABLING",
     "implementation_distance": "NEAR",
     "execution_allowed": false,
     "dependencies": [
-      "Existing immutable Family-A P4 authority chain",
+      "Family-A immutable terminal authority",
       "Family-B closeout db66596ed4479e8dac8b713b4f92a73f76a25047",
-      "Existing negative-completion evaluator semantics"
+      "Family-C closeout cfe1c3e5506d9fd8b41028dbfe0f8a8dd31a82c5",
+      "Prior SUB A/B audit 9468bbe882bd7bd8bb0b60c2ad91d11e4616ac56",
+      "Unchanged current evaluator/protocol"
     ],
     "allowed_scope": [
-      "Read-only audit of evaluator semantics, terminal statuses, proposal/disposition bookkeeping and canonical docs",
-      "Optional documentation-only audit note on the distinct SUB branch if scientific semantics remain unchanged"
+      "Read-only comparison and documentation-only audit on distinct SUB branch",
+      "Record mechanism family, proposal authority, terminal class, STARTED state, identity consumption, phase assessed/not-assessed, reduction comparator, canonical authority and current-schema representability for A/B/C",
+      "Identify general future accounting requirements without implementing them"
     ],
     "forbidden_scope": [
-      "Touch Family-C branch/identity/package",
-      "Fix MAIN CI/binding or candidate-specific work",
-      "Edit consumed evidence or invent reruns",
-      "Declare programme negative completion before Family C completion",
-      "Change evaluator semantics to force coverage"
+      "Touch MAIN closeout branch",
+      "Change evaluator/protocol/schema",
+      "Synthesize Family-B/C dispositions",
+      "Declare programme machine negative completion",
+      "Fix MAIN inherited Family-B CI tests",
+      "Work on Gen2/replacement science",
+      "Any scientific execution"
     ],
-    "completion_target": "Map which A/B dispositions are representable now, which fields remain intentionally unset, and what exact bookkeeping prerequisite remains after Family C, with zero scientific-evidence changes.",
+    "completion_target": "Three-family terminal-provenance matrix plus exact statement whether Family C repeats Family B's representability gap, with zero scientific-evidence changes.",
     "exact_refs_identities": [
-      "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
-      "a01-family-b-distributed-field-trace-gen1-v1",
+      "Family-A P4 authority chain",
       "research/v061-a01-family-b-gen1-execution-package-20260916@db66596ed4479e8dac8b713b4f92a73f76a25047",
+      "research/v061-a01-family-c-gen1-20260917@cfe1c3e5506d9fd8b41028dbfe0f8a8dd31a82c5",
+      "a01-family-b-distributed-field-trace-gen1-v1",
+      "a01-family-c-joint-return-local-field-gen1-v1",
       "src/sparkbrain/evaluation/v061_premechanism_admission.py",
-      "docs/V061_PREMECHANISM_ADMISSION_AND_NEGATIVE_COMPLETION.md"
+      "docs/V061_PREMECHANISM_ADMISSION_AND_NEGATIVE_COMPLETION.md",
+      "research/v061-a01-negative-completion-ab-audit-sub-20260917@9468bbe882bd7bd8bb0b60c2ad91d11e4616ac56"
     ],
     "reservation_status": "reserved_for_sub",
     "independent_of_main_critical_path": true
   },
   "sub_fallback": null,
   "outcome_contingencies": {
-    "PRE_START_PROPOSAL_INCOMPLETE": {
+    "PROGRAMME_CLOSEOUT_READY": {
       "active": true,
-      "trigger_classification": "Family-C proposal is missing a bound discriminator/null/falsifier/carrier/resource/privilege field before the Gen1 proposal hash is frozen.",
-      "same_run_main_action": "Fill missing prospective fields/tests while explicitly pre-binding, within the fixed Family-C scientific question and without weakening nulls or privilege/plurality bars.",
-      "branch_ref_identity_package_protocol_constraints": "research/v061-a01-family-c-gen1-20260917; identity a01-family-c-joint-return-local-field-gen1-v1; no STARTED/output refs",
+      "trigger_classification": "A/B/C terminal exact refs remain stable; B/C are unSTARTED/unconsumed static rejections; no registered non-privileged family remains live; protocol semantics unchanged.",
+      "same_run_main_action": "Create fresh closeout branch, canonicalize A/B/C evidence map and strategic reframe, explicitly withhold machine negative-completion verdict, run exact-head review/CI, and complete closeout.",
+      "branch_ref_identity_package_protocol_constraints": "Base from Family-C closeout cfe1c3e5506d9fd8b41028dbfe0f8a8dd31a82c5; Family-B db66596ed4479e8dac8b713b4f92a73f76a25047; no new scientific identity/package/protocol.",
       "one_way_execution_allowed": false,
-      "go_conditions": ["No proposal hash has yet been treated as the fixed Gen1 scientific object"],
-      "stop_conditions": ["Once the Gen1 proposal specification is bound, a scientific-content change requires a new generation and Analyst"],
+      "go_conditions": ["All authority and reduction checks pass", "No surviving registered family exists"],
+      "stop_conditions": ["Contradictory surviving family/evidence appears", "Scientific rule change would be required"],
       "outcome_independent_and_prospectively_fixed": true,
-      "return_to_analyst_when": "A bound proposal would need scientific redefinition rather than completeness repair"
+      "return_to_analyst_when": "Immediately after canonical closeout before any new scientific object"
     },
-    "PRE_START_STATIC_REDUCTION": {
+    "BOOKKEEPING_SCHEMA_AMBIGUITY": {
       "active": true,
-      "trigger_classification": "After proposal binding, an equal-or-lower-resource explicit/recurrent/belief/separable null statically reproduces the complete claimed discriminator dynamics, or the object is only a renamed/additive established mechanism.",
-      "same_run_main_action": "Record a pre-START rejection/reduction for that exact proposal and canonicalize closeout; do not implement merely to confirm an already-provable reduction.",
-      "branch_ref_identity_package_protocol_constraints": "Exact bound Family-C Gen1 proposal hash and fixed null/resource contract",
+      "trigger_classification": "CandidateDisposition cannot faithfully encode B/C pre-START terminal states or completed_families remains unlinked to evidence-backed terminal records.",
+      "same_run_main_action": "Do not change evaluator or stop rules; state the machine verdict is withheld while preserving the strategic evidence closeout.",
       "one_way_execution_allowed": false,
-      "go_conditions": ["Exact static proof is stable and no STARTED/output exists"],
-      "stop_conditions": ["Any attempt to change mechanism/null/scorer/resource accounting to escape the proof requires new generation and Analyst"],
+      "go_conditions": ["Canonical evidence suffices for strategic interpretation while machine schema is insufficient"],
+      "stop_conditions": ["An exact machine verdict is demanded; return to a later prospective methods/accounting cycle"],
       "outcome_independent_and_prospectively_fixed": true,
-      "return_to_analyst_when": "Immediately after canonical pre-START closeout"
-    },
-    "PRE_START_READY_FOR_IMPLEMENTATION": {
-      "active": true,
-      "trigger_classification": "Exact Family-C Gen1 proposal passes premechanism admission, privilege/resource checks, and no static subsumption is demonstrated.",
-      "same_run_main_action": "Implement the exact bound proposal and deterministic readiness package; fix semantics-preserving candidate-specific critical-path defects; bind source/package/input/runner/verifier/scorer; stop before STARTED and return exact package for fresh Analyst execution admission.",
-      "branch_ref_identity_package_protocol_constraints": "Implementation must remain semantically identical to the bound Gen1 proposal and fixed protocol/null IDs.",
-      "one_way_execution_allowed": false,
-      "go_conditions": ["Bound proposal unchanged", "No STARTED/output", "Readiness work remains deterministic and pre-outcome"],
-      "stop_conditions": ["Scientific redesign/rebinding required", "Exact pre-START package complete"],
-      "outcome_independent_and_prospectively_fixed": true,
-      "return_to_analyst_when": "Exact pre-START package is complete or scientific semantics would need to change"
+      "return_to_analyst_when": "Machine accounting redesign is needed"
     },
     "PRE_START_BLOCKER": {
       "active": true,
-      "trigger_classification": "Candidate-specific CI/verifier/binding/harness/package defect after proposal binding.",
-      "same_run_main_action": "MAIN fixes semantics-preserving critical-path defect and re-runs exact-head readiness checks.",
+      "trigger_classification": "Documentation/status integration, review or CI prevents a clean closeout.",
+      "same_run_main_action": "MAIN fixes semantics-preserving closeout-critical defects itself. Known current CI debt may be isolated only without changing locked Family-B runner/binding/scientific bytes.",
       "one_way_execution_allowed": false,
-      "go_conditions": ["Fix preserves bound scientific semantics"],
-      "stop_conditions": ["Fix changes hypothesis, mechanism semantics, discriminator/null IDs, success criteria, resource accounting, or identity"],
+      "go_conditions": ["Fix changes only generic/test-scope/integration behavior and preserves all scientific objects"],
+      "stop_conditions": ["Fix would change Family-B/C proposal, runner semantics, binding, null, resource accounting or identity"],
       "outcome_independent_and_prospectively_fixed": true,
-      "return_to_analyst_when": "Scientific redesign/rebinding is needed"
+      "return_to_analyst_when": "Scientific bytes would need modification"
+    },
+    "INVALID_EVIDENCE": {
+      "active": true,
+      "trigger_classification": "Authority mismatch, unexpected B/C STARTED/raw/scored/preserve/evidence artifact, or B/C static reduction/resource parity cannot be reproduced.",
+      "same_run_main_action": "STOP closeout; preserve audit trail and perform integrity/read-only reconciliation only; no rerun/rescore/rebind.",
+      "one_way_execution_allowed": false,
+      "go_conditions": [],
+      "stop_conditions": ["Always stop scientific continuation"],
+      "outcome_independent_and_prospectively_fixed": true,
+      "return_to_analyst_when": "Immediately"
     },
     "PASS": {
       "active": false,
-      "trigger_classification": "Not legitimately reachable because one-way execution is not admitted in this handoff.",
-      "same_run_main_action": null,
+      "trigger_classification": "Unreachable; no admitted one-way candidate exists.",
+      "same_run_main_action": "None; any such artifact is an integrity event.",
       "one_way_execution_allowed": false,
-      "go_conditions": [],
-      "stop_conditions": ["Any PASS artifact implies unauthorized execution or wrong object; stop for integrity review"],
-      "outcome_independent_and_prospectively_fixed": true,
-      "return_to_analyst_when": "Immediately if artifact appears"
+      "outcome_independent_and_prospectively_fixed": true
     },
     "FAIL": {
       "active": false,
-      "trigger_classification": "Not legitimately reachable because one-way execution is not admitted.",
-      "same_run_main_action": null,
+      "trigger_classification": "Unreachable; no admitted one-way candidate exists.",
+      "same_run_main_action": "None; any such artifact is an integrity event.",
       "one_way_execution_allowed": false,
-      "go_conditions": [],
-      "stop_conditions": ["Unexpected scientific result artifact -> stop; no rerun/rescore"],
-      "outcome_independent_and_prospectively_fixed": true,
-      "return_to_analyst_when": "Immediately if artifact appears"
+      "outcome_independent_and_prospectively_fixed": true
     },
     "INCONCLUSIVE": {
       "active": false,
-      "trigger_classification": "No scientific execution is admitted; no new outcome class may be created reactively.",
-      "same_run_main_action": null,
+      "trigger_classification": "Unreachable; no admitted one-way candidate exists.",
+      "same_run_main_action": "None; any such artifact is an integrity event.",
       "one_way_execution_allowed": false,
-      "go_conditions": [],
-      "stop_conditions": ["Any scorer/outcome-class redesign requires Analyst/new object"],
-      "outcome_independent_and_prospectively_fixed": true,
-      "return_to_analyst_when": "Before any outcome-class redesign"
-    },
-    "INVALID_EVIDENCE": {
-      "active": false,
-      "trigger_classification": "Unexpected STARTED/output/evidence appears or identity/source/package binding cannot be reconciled.",
-      "same_run_main_action": "Preserve audit trail only; do not score, rerun, rebind, or create a successor.",
-      "one_way_execution_allowed": false,
-      "go_conditions": [],
-      "stop_conditions": ["Scientific continuation prohibited"],
-      "outcome_independent_and_prospectively_fixed": true,
-      "return_to_analyst_when": "Mandatory integrity review"
+      "outcome_independent_and_prospectively_fixed": true
     },
     "POST_START_FAILURE": {
-      "active": false,
-      "trigger_classification": "Should be unreachable because STARTED is forbidden; if observed, it is an integrity event.",
-      "same_run_main_action": "Stop; no same-ID retry, repair, scoring, or successor design.",
+      "active": true,
+      "trigger_classification": "Any unexpected new STARTED/output despite no execution authorization.",
+      "same_run_main_action": "Treat as integrity incident; no retry, scoring or successor design.",
       "one_way_execution_allowed": false,
-      "go_conditions": [],
-      "stop_conditions": ["All scientific continuation stops"],
+      "stop_conditions": ["Always stop"],
       "outcome_independent_and_prospectively_fixed": true,
-      "return_to_analyst_when": "Mandatory integrity review"
+      "return_to_analyst_when": "Immediately"
+    },
+    "CLOSEOUT_COMPLETE": {
+      "active": true,
+      "trigger_classification": "Canonical registered-family closeout/reframe landed with exact authorities and unchanged scientific semantics.",
+      "same_run_main_action": "STOP; do not start Gen2/Family-D/replacement science.",
+      "one_way_execution_allowed": false,
+      "go_conditions": ["Closeout evidence map and machine-verdict-withheld statement are durable"],
+      "stop_conditions": ["Always stop after closeout"],
+      "outcome_independent_and_prospectively_fixed": true,
+      "return_to_analyst_when": "Next Analyst/Control Brain cycle"
     }
   },
   "blocked_until": [
-    "Family-C one-way execution waits for an exact package and a later fresh Analyst ADMIT decision.",
-    "Programme negative completion waits for a terminal Family-C prospective disposition because all three registered non-privileged families are required.",
-    "Family-C Gen2/replacement/new scorer/new null/new identity waits for Gen1 terminal status and a new Analyst cycle.",
-    "Family-B Gen1 execution remains permanently blocked for the exact rejected object despite the identity being unused.",
-    "Repository ruleset/tag protection waits for repository-administration capability and remains non-blocking for science."
+    "Any A01 Gen2, Family-D, non-separable replacement, new scorer/null/resource contract waits for a fresh independently motivated Analyst cycle; current B/C reductions cannot be used as same-run rescue feedback.",
+    "Formal machine negative-completion schema/evaluator change is blocked from retroactively adjudicating the current programme; future general accounting redesign must be prospective.",
+    "Family-B and Family-C exact Gen1 execution/rescue/rebind are permanently blocked for these rejected exact objects despite identities remaining unconsumed.",
+    "RV01/RV02/CX01 new experiments wait for a fresh prospective successor.",
+    "One-way A01 scientific execution is blocked because no live admitted candidate exists.",
+    "Repository ruleset/tag protection remains blocked on repository administration capability and is non-blocking for scientific closeout."
   ],
   "do_not_touch": [
-    "Consumed A01 MD-001",
-    "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
-    "a01-md002-p3-r-only-causal-carrier-candidate-001-v1",
-    "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
-    "RV01 R01-16 family",
-    "rv01-r01-17-real-delay-causal-timing-v1",
-    "RV02 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
-    "cx01-candidate-002",
-    "All immutable/legacy freeze/control/preserve/formal/evidence refs for consumed work",
-    "Family-B Gen1 exact object/identity for STARTED, execution, retune, rescue, or rebind",
-    "SUB-reserved A/B negative-completion bookkeeping audit for MAIN",
-    "Family-C post-result successor design, Gen2, changed null/scorer/threshold/resource accounting, or identity reuse"
+    "Consumed A01 MD-001, P2 candidate-002, P3 candidate-001, Family-A P4 candidate-001",
+    "Consumed RV01 R01-16 family and R01-17",
+    "Consumed RV02 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
+    "Consumed CX01 Candidate-002",
+    "All immutable legacy freeze/control/preserve/formal/evidence authorities for consumed work",
+    "Family-B Gen1 exact object/identity for STARTED, execution, retune, rescue, rebind or same-identity reuse",
+    "Family-C Gen1 exact object/identity for STARTED, execution, retune, rescue, rebind or same-identity reuse",
+    "Outcome-dependent A01 successor design or retroactive negative-completion rule changes",
+    "SUB-reserved A/B/C provenance audit by MAIN",
+    "MAIN closeout branch and MAIN-owned inherited CI blocker by SUB"
   ],
-  "top_recommendation": "MAIN prospectively binds and statically audits Family-C Generation-1 before expensive implementation; if it survives static reduction, MAIN may build only the exact pre-START readiness package and must return for fresh execution admission.",
+  "top_recommendation": {
+    "rank": 1,
+    "owner": "main",
+    "action": "Canonicalize A01 registered-family programme closeout and strategic reframe while explicitly withholding the machine negative-completion verdict under the unchanged schema.",
+    "information_value": "VERY_HIGH_DECISION",
+    "implementation_distance": "NEAR",
+    "one_way_execution_allowed": false
+  },
   "top_3": [
     {
       "rank": 1,
-      "action": "MAIN bind and statically audit Family-C Gen1 proposal",
-      "information_value": "VERY_HIGH",
-      "distance": "NEAR_TO_MEDIUM"
+      "owner": "main",
+      "action": "A01 registered-family closeout + strategic reframe; machine verdict withheld",
+      "information_value": "VERY_HIGH_DECISION",
+      "implementation_distance": "NEAR"
     },
     {
       "rank": 2,
-      "action": "MAIN implement exact Family-C pre-START readiness package only if bound proposal survives static reduction, then return for ADMIT/REJECT",
-      "information_value": "HIGH_ENABLING",
-      "distance": "MEDIUM"
+      "owner": "sub",
+      "action": "Independent Family-C / A-B-C terminal-provenance bookkeeping audit",
+      "information_value": "MEDIUM_ENABLING",
+      "implementation_distance": "NEAR"
     },
     {
       "rank": 3,
-      "action": "SUB independently audit A/B negative-completion disposition bookkeeping",
-      "information_value": "MEDIUM_ENABLING",
-      "distance": "NEAR"
+      "owner": "main_conditional",
+      "action": "Isolate inherited Family-B descendant binding-test CI debt only if exact-head closeout requires it and the fix is semantics-preserving",
+      "information_value": "LOW_SCIENCE_HIGH_INTEGRITY_ENABLING",
+      "implementation_distance": "NEAR"
     }
   ],
+  "top_1_go_stop": {
+    "GO": [
+      "Family-A authority, Family-B db66596ed4479e8dac8b713b4f92a73f76a25047 and Family-C cfe1c3e5506d9fd8b41028dbfe0f8a8dd31a82c5 re-verify",
+      "Family-B/C remain unSTARTED and unconsumed with no raw/scored/evidence refs",
+      "Source/proposal/null/resource bindings remain exact",
+      "Protocol still registers A/B/C with unchanged negative-completion semantics",
+      "SUB audit representability gap remains true",
+      "No surviving registered family exists",
+      "Exact-head CI/review is clean or only the known inherited Family-B locked-file test debt remains, with any fix restricted to semantics-preserving test/integration scope"
+    ],
+    "STOP": [
+      "Discovery of a prospectively registered A/B/C object that survives the existing bar",
+      "Failure to reproduce B/C static equivalence or matched resource/privilege status",
+      "Any unexpected STARTED/raw/scored/evidence artifact",
+      "Need to change scientific/evaluator semantics",
+      "After canonical closeout; no same-run successor design"
+    ],
+    "raw_before_score": "Not applicable because acquisition is forbidden; any raw/score artifact is a STOP condition.",
+    "scientific_falsifiers": [
+      "A registered A/B/C object genuinely survives the unchanged admission bar",
+      "B/C static equivalence is not reproducible",
+      "The matched null uses greater privilege or resources than the candidate"
+    ]
+  },
   "consumed_identities": [
     "A01 MD-001",
     "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
@@ -334,35 +358,27 @@
     "RV01 R01-16 family",
     "rv01-r01-17-real-delay-causal-timing-v1",
     "RV02 RD005 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
-    "cx01-candidate-002"
+    "CX01 Candidate-002"
+  ],
+  "unconsumed_but_rejected_exact_objects": [
+    "a01-family-b-distributed-field-trace-gen1-v1",
+    "a01-family-c-joint-return-local-field-gen1-v1"
   ],
   "blockers": [
-    "No exact Family-C Generation-1 proposal/package exists yet; this is the current scientific-design/readiness blocker, not a reason to reopen Family B.",
-    "Family-B closeout CI failure is non-blocking and must not be used to reopen execution of the rejected object.",
-    "Repository tag/ruleset protection remains absent but is governance-only and non-blocking."
+    "Current CandidateDisposition cannot faithfully encode pre-START B/C terminal states without fabricating P1-P4 outcomes.",
+    "NegativeCompletionProgramme.completed_families is not cross-validated against evidence-backed terminal records/disposition family coverage.",
+    "Family-C and SUB audit descendant branch CI currently fails inherited Family-B execution-binding locked-file tests; this is operational CI debt, not contradictory science.",
+    "No live admitted one-way A01 candidate exists."
   ],
-  "go_stop_top_recommendation": {
-    "go": "Fresh Family-C branch/identity only; bind full premechanism proposal first; actual-provenance transient selector; genuinely plural histories; P3 update-time selector vs post-update Field carrier; explicit/recurrent/belief/separable nulls; matched resource/lookup privilege; static reduction screening; deterministic readiness tests only.",
-    "stop": "No STARTED/dispatch/acquisition/raw/score/identity consumption. Bound Gen1 content may not change without new generation/Analyst. Static subsumption => pre-START rejection. Exact package complete => return for fresh execution admission."
-  },
   "governance_advisory": {
-    "issue_canonical_drift": "Issue #145 is closed after Family-B canonical closeout; only #139 remains open and governance-scoped.",
-    "freeze_tag_migration_drift": "Legacy freeze/control/preserve branch authorities remain untouched; no migration is authorized.",
-    "tag_protection_gap": "Git tags empty; repository rulesets empty; main unprotected despite authoritative-tag creation workflow on main.",
+    "issue_canonical_source_drift": "Issue #139 remains operational governance tracking; no authority inversion detected.",
+    "freeze_tag_migration_drift": "Legacy freeze branches remain authoritative historical anchors; preserve exactly and do not retarget/migrate them merely for normalization.",
+    "tag_protection_gap": "Annotated authoritative-tag creation tooling is on main, but git tags=0, repository rulesets=0 and main is unprotected; server-side immutability remains missing.",
+    "ci_drift": "Family-C and SUB audit CI failures are inherited from Family-B execution-binding tests that compare mutable descendant working-tree blobs against historical locked blobs. Do not mutate rejected Family-B science to make descendants green.",
     "outcome_independent_main_promotion_candidates": [
-      "generic source/runtime binding",
-      "STARTED/no-clobber and identity-collision protection",
-      "exactly-once acquisition checkpointing",
-      "raw-preserve-before-score and digest verification",
-      "generic fail-closed verification"
+      "Generic historical binding verifier that validates locked blobs at the recorded source commit rather than mutable descendant checkout, after separate review",
+      "General terminal-provenance accounting record designed prospectively rather than retrofitted to force the current A01 verdict"
     ]
   },
-  "concurrency_reconciliation": {
-    "evidence_analyst_parent_before_write": "8711c993d6db5c61731cf86c730b94a2fcd2215c",
-    "orchestrator_report_tip_consumed": "74aaafaa1c0556d2118810547a254fce3f93c80e",
-    "main_closeout_observed": true,
-    "sub_noop_observed_after_main_closeout": true,
-    "scientific_output_since_prior_analyst": false,
-    "family_b_identity_newly_consumed": false
-  }
+  "orchestrator_handoff": "MAIN takes A01 registered-family closeout/reframe and owns ALL critical-path fixes. SUB takes the independent Family-C/A-B-C provenance bookkeeping audit. SUB fallback is null. MAIN must not absorb reserved SUB work; SUB must not take MAIN blockers. Neither touches consumed identities, immutable evidence, rejected B/C Gen1 objects, retroactive stop-rule changes or outcome-responsive successors. Repartition only if fresh evidence reveals a surviving registered family, invalidates a B/C static reduction/resource match, shows unexpected one-way artifacts, or makes the SUB audit integrity-coupled to MAIN closeout. MAIN may same-run continue through PROGRAMME_CLOSEOUT_READY, BOOKKEEPING_SCHEMA_AMBIGUITY documentation handling and semantics-preserving PRE_START_BLOCKER fixes only; it stops at INVALID_EVIDENCE, scientific-rule changes, CLOSEOUT_COMPLETE, or any new-object design point."
 }
