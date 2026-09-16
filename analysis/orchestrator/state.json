@@ -1,247 +1,335 @@
 {
-  "analysis_timestamp": "2026-09-16T11:00:00+09:00",
+  "analysis_timestamp": "2026-09-16T12:02:00+09:00",
   "authoritative_refs_inspected": {
     "main": "ba16bf10535141c2edb29bbe3439ba0a38e71179",
-    "control_brain_latest_commit": "099c7418b1465ef054a6bf9f9bd965b851de53ad",
-    "evidence_analyst_prior": "5f444a295d3ae32263923c3706ac2c6c6746533d",
-    "main_report_commit": "6aa8869fea1c1696551be686a07104d843bd04db",
-    "sub_report_commit": "d8a5b19fc296aa41602298ee16d6abdb8c7862dc",
-    "a01_authoritative": "2e47df9cf8c6323f390935bb41c368632f3342c6",
+    "control_brain_handoff": "1985198deb95190d45cb46629beb654eb04d4d92",
+    "evidence_analyst_prior": "2c90237c98757d09bd37e445a411df0299e652e2",
+    "orchestrator_report_branch": "4956a940baa1f18d4e3b42aedcde0e0f7e106878",
+    "main_report_commit": "5d0acd8260290d5147f99063b944173f1fd9f0cd",
+    "sub_report_commit": "4956a940baa1f18d4e3b42aedcde0e0f7e106878",
+    "a01_authoritative": "1b548043b8f0850294cc3cbfaaa84dbdad69342c",
     "a01_p4_source": "1bd0099f4358e02efac7ee4acccfe5257a86c4be",
     "a01_p4_raw_preserve": "2511454f1633d3bc6f10e3d2a99e3ddd823bb798",
     "a01_p4_scored_preserve": "56ee762540e0519034d2e8db0ad3c6acda667ffd",
     "rv01_docs_head": "2d877a5af670c54d404d8782763129f497092f88",
-    "rv02_development_feasibility": "8176b91f5d427f3bdfccae2fac2c01b60a771403",
-    "rv02_rd005_preserve": "d1fdd67ea197b879c52942c4a34e7d39a0a40698",
+    "rv02_docs_head": "ce317febb8be8d111959082cd5632a5ead9c83b4",
     "cx01_comparator_extension": "0687c8db3efb8180c8599d32235751b93f3c1f77",
     "cx01_candidate_002_formal_preserve": "6d45928827209cd763a2879494d85838df38b96f",
     "git_tags_count": 0,
     "repository_rulesets_count": 0
   },
-  "control_brain_commit_consumed": "099c7418b1465ef054a6bf9f9bd965b851de53ad",
-  "main_report_commit_consumed": "6aa8869fea1c1696551be686a07104d843bd04db",
-  "sub_report_commit_consumed": "d8a5b19fc296aa41602298ee16d6abdb8c7862dc",
-  "new_scientific_information": true,
-  "new_scientific_result": {
-    "line": "A01_MD002_P4",
-    "identity": "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
-    "verdict": "UNSUPPORTED_EN_BLOC_MERGED_CREDIT",
-    "authority": "development_only_consumed",
-    "interpretation": "Plural merged ancestry was retained, but all separating assays changed both causal paths; the tested bridge did not selectively resolve the externally supported historical lineage.",
-    "rerun_allowed": false
-  },
+  "control_brain_commit_consumed": "1985198deb95190d45cb46629beb654eb04d4d92",
+  "main_report_commit_consumed": "5d0acd8260290d5147f99063b944173f1fd9f0cd",
+  "sub_report_commit_consumed": "4956a940baa1f18d4e3b42aedcde0e0f7e106878",
+  "new_scientific_information": false,
+  "new_readiness_information": [
+    "MAIN completed the A01 post-P4 closeout and admission audit and verified no complete bound pre-P4 successor package for registered families B or C.",
+    "SUB completed the RV02 terminal-status/evidence-map package and opened PR #142 without scientific execution.",
+    "The pre-existing negative-completion doctrine still requires coverage of all registered non-privileged families A/B/C, so family-A failure alone is insufficient for programme-level negative completion."
+  ],
   "active_main_sub_claims_observed": [
     {
       "owner": "main",
-      "target": "A01 MD-002 P4 terminal closeout / next-mechanism admission audit",
-      "status": "P4_EXECUTION_COMPLETE_TERMINAL_NEGATIVE; NEXT_ONE_WAY_TARGET_NOT_YET_VERIFIED"
+      "target": "A01 post-P4 terminal closeout plus pre-existing premechanism admission audit",
+      "status": "COMPLETED_STOP_NO_VERIFIED_PROSPECTIVE_SUCCESSOR"
     },
     {
       "owner": "sub",
-      "target": "RV01 canonical status/evidence-map consolidation",
-      "status": "COMPLETION_TARGET_REACHED_PR_140_OPEN_CI_GREEN"
+      "target": "RV02 terminal-status and evidence-map consolidation",
+      "status": "COMPLETION_TARGET_REACHED_PR_142_OPEN"
     }
   ],
   "active_line_review": {
     "A01_MD002": {
       "centrality": "CENTRAL_DIRECT",
-      "status": "MIXED_CURRENT_TRANSIENT_RETURN_ADDRESS_MECHANISM_TERMINAL_AT_P4",
-      "strongest_evidence": "P2/P3 positive consumed development evidence; P4 clean consumed negative development evidence UNSUPPORTED_EN_BLOC_MERGED_CREDIT.",
-      "simpler_reduction": "Eligibility-trace / explicit anonymous provenance or return-address memory remains sufficient for P2/P3; P4 failed selective plural-lineage resolution.",
-      "shortest_path_to_new_information": "Audit the pre-existing premechanism registry for a complete prospectively defined distinct candidate/mechanism predating P4 outcome. If none exists, stop rather than rescue-design.",
-      "genuine_blockers": ["No verified complete prospective post-P4-independent next candidate package was found."],
+      "status": "MIXED_FAMILY_A_TERMINAL_AT_P4_PROGRAMME_INCOMPLETE",
+      "strongest_evidence": "P2/P3 positive consumed development evidence; P4 family-A clean consumed negative development evidence UNSUPPORTED_EN_BLOC_MERGED_CREDIT.",
+      "simpler_reduction": "P2/P3 remain compatible with eligibility/provenance/return-address memory; family A failed selective plural-lineage resolution at P4.",
+      "shortest_path_to_new_information": "Create a fresh prospective Generation-1 proposal/readiness package for the pre-P4-registered distributed-field-trace family B, then re-admit or reject it before STARTED.",
+      "genuine_blockers": [
+        "No complete bound family-B proposal currently exists.",
+        "One-way execution requires a later fresh Evidence Analyst admission after exact proposal/package readiness is complete."
+      ],
       "information_value": "HIGH",
-      "implementation_distance": "NEAR_FOR_AUDIT_BLOCKED_FOR_ONE_WAY_EXECUTION"
+      "implementation_distance": "MEDIUM_FOR_READINESS_BLOCKED_FOR_EXECUTION"
     },
     "RV01": {
       "centrality": "SECONDARY_COMPONENT_CHARACTERIZATION",
       "status": "SUPPORTED_COMPONENT_EFFECT_CONSUMED_REDUCIBLE",
       "strongest_evidence": "R01-17 SUPPORTED_REAL_DELAY_CAUSAL_TIMING, development-only and consumed.",
       "simpler_reduction": "Ordinary local adaptive-delay plasticity.",
-      "shortest_path_to_new_information": "Requires a distinct prospective successor; none verified. Canonical docs package is complete in PR #140.",
-      "information_value": "MEDIUM",
-      "implementation_distance": "BLOCKED_FOR_NEW_SCIENCE"
+      "shortest_path_to_new_information": "Requires a distinct prospective successor; current useful work is documentation/reduction context only.",
+      "information_value": "LOW_TO_MEDIUM_UNLESS_NEW_CONTRACT",
+      "implementation_distance": "NEAR_FOR_DOCS_BLOCKED_FOR_NEW_SCIENCE"
     },
     "RV02": {
       "centrality": "SECONDARY",
-      "status": "RD005_D1_TERMINAL_CONSUMED_CAPABILITY_UNOPENED",
-      "strongest_evidence": "Terminal construction failure after STARTED; capability never opened.",
+      "status": "RD005_D1_TERMINAL_CONSUMED_CAPABILITY_UNOPENED_DOCS_PACKAGE_COMPLETE",
+      "strongest_evidence": "Terminal construction/gate-reachability failure after STARTED; capability never opened.",
       "simpler_reduction": "No positive capability evidence to reduce.",
-      "shortest_path_to_new_information": "Requires a distinct prospective successor; none verified. Docs consolidation is independently useful.",
-      "information_value": "MEDIUM_IF_NEW_CONTRACT",
-      "implementation_distance": "NEAR_FOR_DOCS_BLOCKED_FOR_NEW_SCIENCE"
+      "shortest_path_to_new_information": "Requires a distinct prospective successor; PR #142 is documentation only.",
+      "information_value": "LOW_UNLESS_NEW_CONTRACT",
+      "implementation_distance": "BLOCKED_FOR_NEW_SCIENCE"
     },
     "CX_CX01": {
       "centrality": "SECONDARY_DIAGNOSTIC",
       "status": "CANDIDATE_002_FORMAL_NEGATIVE_CONSUMED",
-      "strongest_evidence": "Candidate-002 formal negative remains terminal for that identity.",
+      "strongest_evidence": "Candidate-002 formal preserved result remains negative and consumed.",
       "simpler_reduction": "No positive special mechanism established.",
-      "shortest_path_to_new_information": "Requires distinct prospective candidate; none verified. Docs consolidation is fallback.",
-      "information_value": "MEDIUM_IF_NEW_CONTRACT",
+      "shortest_path_to_new_information": "Docs-only formal-negative evidence-map consolidation is independently useful; new science requires a fresh prospective contract.",
+      "information_value": "MEDIUM_ENABLING_FOR_DOCS",
       "implementation_distance": "NEAR_FOR_DOCS_BLOCKED_FOR_NEW_SCIENCE"
     }
   },
   "main_lane": {
-    "target": "A01 post-P4 terminal closeout plus pre-existing premechanism-registry admission audit",
-    "scientific_question": "Does any already-preregistered, outcome-independent non-privileged mechanism/candidate with a complete prospective discriminator/null contract remain after P4 failure?",
+    "target": "A01 family-B distributed-field-trace Generation-1 prospective proposal and implementation-readiness package",
+    "scientific_question": "Can the pre-P4-registered distributed-field-trace family be specified prospectively without semantic/evaluator/global lookup privilege so that causal selectivity, world-to-local circulation, valid F-only carrier transfer, bounded plurality/later differentiation, and adversarial explicit/recurrent nulls are fixed before outcome exposure?",
     "recommended_owner": "main",
-    "branch_or_identity": "research/v061-a01-n3-adapter@2e47df9cf8c6323f390935bb41c368632f3342c6; no new one-way identity assigned",
-    "information_value": "HIGH_ENABLING",
-    "implementation_distance": "NEAR_FOR_CLOSEOUT_AND_AUDIT_BLOCKED_FOR_ONE_WAY_EXECUTION",
+    "branch_or_identity": "new fresh research package, suggested research/v061-a01-distributed-field-trace-gen1-20260916; no one-way identity authorized yet",
+    "information_value": "HIGH",
+    "implementation_distance": "MEDIUM_FOR_PROPOSAL_AND_READINESS_BLOCKED_FOR_ONE_WAY_EXECUTION",
+    "execution_allowed": false,
     "dependencies": [
-      "P4 terminal verdict and preserve chain reverified",
-      "pre-outcome premechanism registry/admission docs inspected exactly",
-      "any next candidate contract must demonstrably predate P4 outcome"
+      "Pre-P4 family-B definition in the cross-line premechanism matrix",
+      "Pre-mechanism admission evaluator and immutable proposal-specification binding",
+      "Concrete lineage-swap, contradiction, future-competition, bounded-ambiguity and F-only P3 protocol IDs",
+      "Explicit-memory and recurrent/reservoir null IDs",
+      "Fixed negative stopping observation",
+      "Exact source/protocol/package/input binding"
     ],
     "allowed_scope": [
-      "Update canonical A01 status with P4 terminal negative result",
-      "Inventory pre-existing mechanism families/candidate contracts",
-      "Verify provenance of any candidate contract and prepare it only if complete and truly prospective",
-      "MAIN owns all critical-path fixes"
+      "Create a fresh proposal generation explicitly marked post-P4 prospective research",
+      "Assign a fresh proposal/package identity and compute its binding hash",
+      "Implement family-B source, harness, verifier and readiness tests",
+      "Open a reviewable research PR without candidate-output acquisition",
+      "MAIN owns all candidate-specific CI/verifier/binding/review blockers"
     ],
     "forbidden_scope": [
-      "No P4 rerun/retune/rescore/same-identity redesign",
-      "No P5 on the failed P4 mechanism",
-      "No post-outcome rescue mechanism/threshold/scorer invention",
-      "No semantic/evaluator/global lookup/caller-selected lineage privilege"
+      "No STARTED, one-way workflow dispatch, acquisition, scoring, or new scientific identity consumption in this handoff",
+      "No rerun/retune/rescore of consumed A01 P2/P3/P4",
+      "No P5 on failed family A",
+      "No threshold/scorer/carrier detail reverse-engineered from the observed P4 en-bloc failure",
+      "No semantic/evaluator/global-belief-state/caller-selected lineage privilege",
+      "No importing RV01/RV02/CX outcomes as the family-B mechanism itself"
     ],
     "go_conditions": [
-      "P4 source/STARTED/raw/scored refs and consumed verdict verify exactly",
-      "For any later run: distinct fresh identity and complete contract demonstrably predating P4 outcome",
-      "Exact source/protocol/package/input binding and no prior STARTED/preserve consumption",
-      "Prospective nulls/falsifiers fixed; locality/anonymity/no-privilege intact",
-      "Exact-head CI/review clean; atomic STARTED/no-clobber; exactly-once acquisition; durable raw-before-score"
+      "Family-B scope traces to the pre-P4 registered distributed-field-trace definition",
+      "Fresh proposal identity is unused and unSTARTED",
+      "All admission declarations and concrete protocol/null/falsifier IDs are present",
+      "Proposal-specification SHA-256 recomputes exactly",
+      "P3 valid F-only transfer is stated prospectively and is fail-closed",
+      "Null ladder, locality/anonymity/no-privilege constraints are fixed",
+      "Exact-head CI/readiness/review are clean",
+      "GO in this handoff authorizes readiness only, not one-way execution"
     ],
     "stop_conditions": [
-      "No complete pre-P4 prospective successor contract exists",
-      "Proposal is an outcome-responsive rescue or reuses consumed identity",
-      "P5 is proposed for the P4-failed mechanism",
+      "Scientific definition is tailored to the already observed P4 outcome rather than the pre-P4 family-B contract",
+      "Proposal cannot be fully bound before candidate output",
+      "Valid F-only carrier transfer cannot be prospectively specified",
+      "Mechanism reduces to established explicit memory before execution with no residual discriminator",
       "Privilege/locality/anonymity contract weakens",
-      "Identity/binding/provenance cannot be independently verified"
+      "Identity or binding hash cannot be independently verified"
     ],
     "refs_or_identities_to_recheck": [
-      "research/v061-a01-md002-p4-candidate-001-20260916@1bd0099f4358e02efac7ee4acccfe5257a86c4be",
-      "freeze/a01-md002-p4-candidate-001-source-20260916@1bd0099f4358e02efac7ee4acccfe5257a86c4be",
-      "control/a01-md002-p4-candidate-001-started-20260916@1bd0099f4358e02efac7ee4acccfe5257a86c4be",
-      "preserve/a01-md002-p4-candidate-001-raw-20260916@2511454f1633d3bc6f10e3d2a99e3ddd823bb798",
-      "preserve/a01-md002-p4-candidate-001-scored-20260916@56ee762540e0519034d2e8db0ad3c6acda667ffd",
-      "research/v061-a01-n3-adapter@2e47df9cf8c6323f390935bb41c368632f3342c6",
+      "research/v061-a01-n3-adapter@1b548043b8f0850294cc3cbfaaa84dbdad69342c",
       "docs/V061_PREMECHANISM_ADMISSION_AND_NEGATIVE_COMPLETION.md",
-      "docs/V061_P3_P5_CAUSAL_CREDIT_DISCRIMINATION_PROTOCOL.md"
+      "docs/V061_CROSS_LINE_EVIDENCE_FIREWALL_AND_PREMECHANISM_MATRIX.md",
+      "src/sparkbrain/evaluation/v061_premechanism_admission.py",
+      "tests/v06/test_premechanism_admission.py",
+      "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1 and its immutable refs read-only"
     ],
-    "main_owns_all_critical_path_fixups": true,
-    "current_one_way_execution_status": "STOP_NO_VERIFIED_PROSPECTIVE_SUCCESSOR"
+    "main_owns_all_critical_path_fixups": true
   },
   "sub_lane": {
-    "target": "RV02 terminal-status and evidence-map consolidation",
-    "scientific_question": "Support purpose: consolidate the terminal RD005 D1 construction failure, consumed boundary, capability-unopened state, and evidence chronology without successor design.",
+    "target": "CX01 candidate-002 formal-negative status/evidence-map consolidation",
+    "scientific_question": "Support purpose: consolidate the consumed formal-negative result, exact evidence pointers, authority boundary, and no-rerun/no-retune status without successor design.",
     "recommended_owner": "sub",
-    "branch_or_identity": "docs-only package from research/rv02-development-feasibility@8176b91f5d427f3bdfccae2fac2c01b60a771403",
+    "branch_or_identity": "distinct docs-only package from research/cx01-comparator-extension@0687c8db3efb8180c8599d32235751b93f3c1f77",
     "information_value": "MEDIUM_ENABLING",
     "implementation_distance": "NEAR",
     "execution_allowed": false,
-    "dependencies": ["Use only existing RV02 evidence", "Remain independent of MAIN", "Do not infer successor science from terminal result"],
-    "allowed_scope": ["Canonical RV02 status/evidence map", "Exact source/control/preserve pointers", "Reviewable docs-only PR"],
-    "forbidden_scope": ["No experiment/workflow/STARTED/freeze/preserve/scoring", "No RD005 rescue/successor design", "No immutable evidence mutation", "No MAIN work"],
-    "completion_target": "Reviewable docs-only RV02 terminal-status/evidence-map package",
-    "refs_or_identities_to_recheck": [
-      "96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
-      "freeze/rv02-rd005-d1-source-c60b7fd8-20260914@c60b7fd8d3889ee969f505d921e7d31c990871e6",
-      "control/rv02-rd005-d1-started-96634541-20260914",
-      "preserve/rv02-rd005-d1-96634541-20260914@d1fdd67ea197b879c52942c4a34e7d39a0a40698"
+    "dependencies": [
+      "Use only existing candidate-002 formal evidence",
+      "Remain independent of MAIN family-B work",
+      "Preserve the consumed formal-negative interpretation exactly"
     ],
-    "reservation_status": "reserved_for_sub",
-    "independent_of_main_critical_path": true
-  },
-  "sub_fallback": {
-    "target": "CX01 candidate-002 formal-negative status/evidence-map consolidation",
-    "scientific_question": "Support purpose: consolidate the consumed formal-negative result and evidence pointers without new candidate design.",
-    "recommended_owner": "sub",
-    "branch_or_identity": "docs-only package using research/cx01-comparator-extension@0687c8db3efb8180c8599d32235751b93f3c1f77",
-    "information_value": "LOW_TO_MEDIUM_ENABLING",
-    "implementation_distance": "NEAR",
-    "execution_allowed": false,
-    "dependencies": ["Use only existing formal evidence", "Remain independent of MAIN/RV02"],
-    "allowed_scope": ["Canonical CX01 status/evidence-map cleanup", "Reviewable docs-only PR"],
-    "forbidden_scope": ["No new CX candidate/experiment", "No rerun/retune", "No formal evidence mutation", "No MAIN work"],
-    "completion_target": "Reviewable docs-only CX01 formal-negative evidence-map package",
+    "allowed_scope": [
+      "Canonical CX01 status/evidence map",
+      "Exact source/package freeze, STARTED and formal-preserve pointers",
+      "Reviewable docs-only PR"
+    ],
+    "forbidden_scope": [
+      "No new CX01 candidate or experiment",
+      "No candidate-003 design",
+      "No workflow/STARTED/freeze/preserve/scoring",
+      "No rerun/retune or formal evidence mutation",
+      "No MAIN family-B work"
+    ],
+    "completion_target": "Reviewable canonical CX01 candidate-002 formal-negative evidence-map package",
     "refs_or_identities_to_recheck": [
-      "control/cx01-candidate-002-started-20260913",
+      "research/cx01-comparator-extension@0687c8db3efb8180c8599d32235751b93f3c1f77",
+      "freeze/cx01-002-source@e8483968ce43076b4c3fd04c76e62106e2031769",
+      "freeze/cx01-002-package@c104be281285d52a732d5366fe36209d5688d973",
+      "control/cx01-candidate-002-started-20260913@8216d41a57e6933443d38dfc8d93f9188e423d0c",
       "preserve/cx01-candidate-002-formal-34742073336@6d45928827209cd763a2879494d85838df38b96f"
     ],
     "reservation_status": "reserved_for_sub",
     "independent_of_main_critical_path": true
   },
+  "sub_fallback": {
+    "target": "RV01 reduction-context augmentation using the existing canonical status package",
+    "scientific_question": "Support purpose: add concise external-prior-art context strengthening the ordinary adaptive-delay reduction without changing the consumed R01-17 interpretation or defining successor science.",
+    "recommended_owner": "sub",
+    "branch_or_identity": "research/rv01-status-evidence-consolidation-sub-20260916@2d877a5af670c54d404d8782763129f497092f88 / PR #140",
+    "information_value": "LOW_TO_MEDIUM_ENABLING",
+    "implementation_distance": "NEAR",
+    "execution_allowed": false,
+    "dependencies": [
+      "Keep external literature and repository evidence explicitly separate",
+      "Use the External Research Audit learned-delay literature handoff only as reduction context"
+    ],
+    "allowed_scope": [
+      "Docs-only reduction-context note",
+      "Preserve development-only authority and no-successor boundary"
+    ],
+    "forbidden_scope": [
+      "No experiment or new RV01 successor",
+      "No threshold/scorer changes or same-identity reinterpretation",
+      "No MAIN work"
+    ],
+    "completion_target": "Reviewable docs-only reduction-context improvement to the existing RV01 status package",
+    "refs_or_identities_to_recheck": [
+      "research/rv01-status-evidence-consolidation-sub-20260916@2d877a5af670c54d404d8782763129f497092f88",
+      "rv01-r01-17-real-delay-causal-timing-v1",
+      "preserve/rv01-r01-17-real-delay-scored-20260915@d4737d52ecbb2306d9f00f99366f0ad6424327be",
+      "ops/external-research-audit-handoff literature scout state"
+    ],
+    "reservation_status": "reserved_for_sub",
+    "independent_of_main_critical_path": true
+  },
   "blocked_until": [
-    {"work": "A01 P5 on current P4 mechanism", "condition": "NOT_APPLICABLE: P4 failed; do not run P5 as rescue"},
-    {"work": "Any new A01 one-way experiment", "condition": "A distinct complete prospective contract predating P4 outcome is identified and passes fresh gates; otherwise stop"},
-    {"work": "RV01/RV02/CX01 new science", "condition": "Distinct prospective successor contract exists"}
+    {
+      "work": "Family-B one-way execution",
+      "condition": "MAIN completes a fresh bound Generation-1 proposal/package and a later Evidence Analyst run independently re-fetches the exact head, bindings, identity freshness, CI/review, nulls/falsifiers and explicitly admits execution"
+    },
+    {
+      "work": "Family C implementation/execution",
+      "condition": "Family B is completed/rejected or fresh evidence/Control Brain reprioritizes; do not stack complexity in parallel"
+    },
+    {
+      "work": "A01 P5 on consumed family-A P4 mechanism",
+      "condition": "NOT_APPLICABLE_PERMANENTLY_FOR_THIS_IDENTITY: family A failed P4"
+    },
+    {
+      "work": "RV01/RV02/CX01 new science",
+      "condition": "A distinct prospective successor contract exists and is separately admitted"
+    }
   ],
   "do_not_touch": [
     "A01 MD-001 consumed identity",
     "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
     "a01-md002-p3-r-only-causal-carrier-candidate-001-v1",
-    "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
+    "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1 and all associated freeze/control/preserve refs",
     "RV01 R01-16 consumed family",
     "rv01-r01-17-real-delay-causal-timing-v1",
     "96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
-    "CX01 candidate-002 formal consumed identity",
-    "all associated immutable/frozen/control/preserve anchors",
-    "SUB must not touch MAIN A01 critical-path branches/identities",
-    "MAIN must not absorb reserved RV02/CX01 docs packages"
+    "CX01 candidate-002 formal consumed identity and immutable evidence",
+    "PR #137 / family-A P4 code as a mutable scientific frontier",
+    "Any family-B/C threshold, scorer or carrier detail reverse-engineered from the observed P4 en-bloc outcome",
+    "SUB must not touch MAIN family-B branch/identity or any MAIN blocker",
+    "MAIN must not absorb reserved CX01/RV01 documentation work"
   ],
-  "top_recommendation": "MAIN canonicalizes P4 terminal negative status and performs the pre-existing mechanism admission audit; one-way execution remains STOP unless a complete pre-P4 prospective distinct package is found.",
+  "top_recommendation": "MAIN creates a fresh prospectively bound family-B distributed-field-trace Generation-1 proposal/readiness package under the pre-P4 registered family definition; one-way execution remains STOP until a later fresh Analyst admission.",
   "top_3": [
-    {"rank": 1, "owner": "main", "action": "P4 terminal closeout + premechanism admission audit", "information_value": "HIGH_ENABLING", "distance": "NEAR_FOR_AUDIT_BLOCKED_FOR_EXECUTION"},
-    {"rank": 2, "owner": "sub", "action": "RV02 terminal-status/evidence-map consolidation", "information_value": "MEDIUM_ENABLING", "distance": "NEAR"},
-    {"rank": 3, "owner": "main", "action": "If #1 finds a pre-P4 complete prospective distinct candidate, prepare that exact fresh identity/package; otherwise remain blocked", "information_value": "HIGH_IF_ADMISSIBLE", "distance": "CONDITIONAL_BLOCKED"}
+    {
+      "rank": 1,
+      "owner": "main",
+      "action": "Family-B distributed-field-trace Generation-1 prospective proposal/readiness",
+      "information_value": "HIGH",
+      "distance": "MEDIUM"
+    },
+    {
+      "rank": 2,
+      "owner": "sub",
+      "action": "CX01 candidate-002 formal-negative status/evidence-map consolidation",
+      "information_value": "MEDIUM_ENABLING",
+      "distance": "NEAR"
+    },
+    {
+      "rank": 3,
+      "owner": "main",
+      "action": "After family-B readiness completes, return to Evidence Analyst for exact-package execution admission or pre-start rejection",
+      "information_value": "HIGH",
+      "distance": "NEAR_AFTER_PACKAGE"
+    }
   ],
   "consumed_identities": [
     "A01 MD-001",
     "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
     "a01-md002-p3-r-only-causal-carrier-candidate-001-v1",
     "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
-    "RV01 R01-16 family",
+    "RV01 R01-16 consumed family",
     "rv01-r01-17-real-delay-causal-timing-v1",
     "96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
-    "CX01 candidate-002"
+    "CX01 candidate-002 formal consumed identity"
   ],
   "blockers": [
-    "No verified complete prospectively defined next A01 mechanism package predating P4 outcome.",
-    "P5 is not valid for the current mechanism because P4 failed.",
-    "RV01/RV02/CX01 new science lacks verified prospective successor contracts."
+    "No bound family-B proposal/package currently exists; execution cannot begin.",
+    "Fresh family-B proposal details must remain prospectively fixed and cannot be tailored to the P4 observed failure pattern.",
+    "Tag namespace protection remains absent but is governance debt rather than a scientific blocker."
   ],
   "go_stop_top_recommendation": {
-    "go_now": "Canonical P4 closeout and admission inventory only.",
-    "go_to_one_way_execution_only_if": [
-      "distinct identity and complete prospective contract predating P4 outcome",
-      "exact source/protocol/package/input binding",
-      "fresh no-STARTED/no-preserve state",
-      "fixed nulls/falsifiers and no-privilege contract",
-      "exact-head CI/review clean",
-      "atomic STARTED/no-clobber and durable raw-before-score"
+    "go_now": "Create and harden a fresh family-B proposal/readiness package under the pre-P4 registered family and admission schema.",
+    "execution_status": "STOP_UNTIL_FUTURE_ANALYST_ADMISSION",
+    "execution_go_requires": [
+      "Fresh unused identity",
+      "Exact proposal-specification hash and fixed discriminator/null/falsifier IDs",
+      "Exact source/protocol/package/input binding",
+      "Explicit prospective family-B P3 F-only carrier falsifier",
+      "Exact-head CI and substantive review",
+      "Locality/anonymity/no-privilege intact",
+      "Atomic STARTED/no-clobber",
+      "Exactly-once acquisition",
+      "Raw preserved before independent verification/scoring"
     ],
-    "stop_if": ["no pre-P4 complete contract", "same-identity or outcome-responsive rescue", "P5 on failed P4 mechanism", "privilege/locality/anonymity violation", "binding/provenance ambiguity"]
+    "stop_if": [
+      "Proposal is outcome-responsive rescue design",
+      "Identity is already consumed",
+      "Mechanism requires semantic/evaluator/global lookup privilege",
+      "Proposal cannot be fully bound before output exposure",
+      "Family-B carrier/falsifier cannot be independently verified",
+      "Head moves after review without re-audit"
+    ]
   },
   "governance_advisory": {
-    "issue_canonical_drift": "Issue #138 remains open even though P4 now has a clean consumed FAIL-equivalent result; update canonical git status first, then Steward can close #138 with stable evidence refs.",
-    "freeze_tag_migration": "P4 created a new legacy-style freeze branch after prospective tag preference. It is now consumed authority: preserve exactly; an exact-SHA annotated tag mirror may be added later only if safe.",
-    "tag_protection_gap": "Fresh checks: zero Git tag refs and zero repository rulesets. Issue #139 tracks the gap.",
+    "issue_138": "STALE_OPEN_AFTER_CANONICAL_P4_FAIL; Repository Steward may close as FAIL with stable pointers",
+    "issue_139": "OPEN_TAG_PROTECTION_GAP",
+    "pr_137": "TERMINAL_FAMILY_A_ARTIFACT_OPEN; advise close without merge after durable links",
+    "pr_140": "RV01 docs-only open independent",
+    "pr_142": "RV02 docs-only open independent and completion target reached",
+    "git_tags_count": 0,
+    "repository_rulesets_count": 0,
+    "freeze_tag_migration": "P4 used legacy-style freeze branch; preserve exactly, optional exact-SHA tag mirror only later under governance",
     "main_promotion_candidates": [
-      "Potentially generic fail-closed verifier logic for independent reconstruction of ledger activity and changed-path declarations, only after generalization/tests prove outcome-independent reuse.",
-      "P4 mechanism/runner/scorer itself is not main-eligible."
+      "generic source/runtime manifest binding",
+      "atomic STARTED/no-clobber and identity-collision primitives",
+      "raw-preserve/digest-verification mechanics",
+      "generalized fail-closed verifier derivation independent of P4 schema"
     ]
   },
   "orchestrator_handoff": {
-    "main": "A01 post-P4 terminal closeout and pre-existing mechanism admission audit; MAIN owns ALL critical-path fixes.",
-    "sub": "RV02 terminal-status/evidence-map consolidation; independent and must not block MAIN.",
-    "sub_fallback": "CX01 candidate-002 formal-negative evidence-map consolidation.",
-    "neither_touches": "Consumed identities and immutable evidence; SUB avoids MAIN A01 lane; MAIN avoids reserved SUB docs work.",
-    "repartition_on": [
-      "fresh evidence of a complete pre-P4 prospective next-family package",
-      "evidence-chain invalidation of P4",
-      "material RV02/CX01 canonical-status change",
-      "new higher-information independent secondary package"
+    "main": "MAIN takes family-B distributed-field-trace Generation-1 prospective proposal/readiness and owns ALL critical-path fixes; one-way execution remains forbidden in this handoff.",
+    "sub": "SUB takes CX01 candidate-002 formal-negative status/evidence-map consolidation, independent of MAIN.",
+    "sub_fallback": "RV01 reduction-context documentation on PR #140.",
+    "main_must_not_absorb_reserved_sub_work": true,
+    "sub_must_not_take_main_blockers": true,
+    "neither_touches": "consumed A01/RV01/RV02/CX01 identities or immutable evidence",
+    "repartition_triggers": [
+      "P4 evidence chain invalidated",
+      "A genuinely pre-existing complete B/C proposal is discovered",
+      "Family B cannot satisfy prospective admission before implementation",
+      "New higher-information independent secondary package appears",
+      "Control Brain materially revises registered-family strategy"
     ]
   }
 }
