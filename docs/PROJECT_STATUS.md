@@ -136,7 +136,7 @@ C16 is accepted for the preregistered synthetic protocol `c16-proto-concepts-v1`
 `artifacts/v03/c16_proto_concepts/` from source commit
 `4933a6059240875d0548fe602f114d768a49ef28`; the recorded integration branch is
 `codex/c16-proto-concepts`, whose pre-artifact head `3dd9593` merges the source-only lineage
-through pin commit `b1c83e6`. All eight engineering gates passed with zero failed seed. The raw
+through pin commit `b1c83e6`. All eight engineering gates passed with zero failed seeds. The raw
 bundle retains 990 lineage rows, 90 bank rows, 5 learned checkpoints, 5,760 held-out episode rows,
 360 seed summaries, 72 utility aggregates, 60 control banks, 240 seed comparisons, 48 aggregate
 comparisons, 1,920 causal rows, and 60 counterexample rows.
@@ -215,7 +215,30 @@ merge `06e13975b486548bb17924acc3b82786246ad6e1` and final source commit
 an attributable bounded Coalition before belief mutation while preserving the legacy gate as
 the default and leaving the v0.2 learned backend unchanged.
 
-Across seeds 2701--2605, all G02/G05 engineering gates passed. E1 oracle-entity cross-talk and
+Across seeds 2701--2705, all 12 frozen G03 engineering gates passed with no failed seed. The
+run retained 360 raw rows, 15 causal-removal rows, 24 aggregate metrics, 120 seed rows, four
+paired statistics, and 50 machine-resolvable reason references. Independent support Ignition,
+removal reversal, and exact restoration were 1.0; same-ID and correlated-group inflation were
+0; contradiction reduced the score by 0.1296997075145081; and G1 differed from both frozen
+probability controls on 90% of paired primary cases. All six artifacts reproduced byte-for-byte
+under a different `PYTHONHASHSEED`, and their derived results were recalculated from raw rows.
+
+This accepts only attributable synthetic Coalition control at fixed logits. It does not show
+external accuracy gain, learned Coalition formation, semantic understanding, biological
+fidelity, or energy efficiency. C06/C08 negative findings, scientific claim grades, protected
+hashes, package 0.2.1, persisted schema 0.2, and release metadata remain unchanged.
+
+## v0.3 C13 — evidence ledger and oracle entity-scope diagnosis
+
+C13 is locally accepted under preregistered protocol `c13-evidence-entity-v1`, using accepted
+C12 merge `280516fb` and source commit `03b2659`. The isolated `v03_seed` path now has strict
+canonical `EvidenceRecord`, `EntityBinding`, and `EvidenceAuditRow` contracts; deterministic
+evidence/binding identities; correlation-aware immutable evidence; append-only deactivate and
+restore; transitive effective-active lineage; complete Spark-to-sample resolution; semantic
+audit replay; fixed G0 probability decisions; and condition-separated E0/E1 execution. E2
+learned slots remain an interface only and have zero execution rows.
+
+Across seeds 2601--2605, all G02/G05 engineering gates passed. E1 oracle-entity cross-talk and
 misassignment were 0, oracle coverage was 1.0, and E0-minus-E1 cross-talk was 1.0 with the frozen
 paired-bootstrap interval [1.0, 1.0]. This supports only the preregistered relation-free synthetic
 diagnosis that explicit oracle entity scope removes the constructed global-scope cross-talk. It
