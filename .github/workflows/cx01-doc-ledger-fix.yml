@@ -1,0 +1,49 @@
+name: cx01-doc-ledger-fix
+
+on:
+  push:
+    branches: ["research/cx01-status-evidence-consolidation-sub-20260916"]
+    paths: [".github/workflows/cx01-doc-ledger-fix.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  fix-ledger-wording:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/cx01-status-evidence-consolidation-sub-20260916
+          fetch-depth: 0
+      - name: Apply exact documentation-only replacement
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git hash-object docs/RESULTS_LEDGER.md)" = "72b4deb09a623a360dab4a0808285d698ef03534"
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib
+
+          path = Path("docs/RESULTS_LEDGER.md")
+          data = path.read_text(encoding="utf-8")
+          old = "- Integrity: no rerun, retune, rescore, post-outcome repair, or identity reuse is permitted. Any future CX01 formal attempt requires a distinct prospective identity and full prospective integrity path."
+          new = "- Integrity: no rerun, retune, post-outcome repair, identity reuse, or rescoring with a modified policy or modified evidence is permitted. Read-only recomputation from immutable raw evidence using the unchanged frozen scoring policy is permitted for verification. Any future CX01 formal attempt requires a distinct prospective identity and full prospective integrity path."
+          if data.count(old) != 1:
+              raise SystemExit(f"expected exactly one target sentence, found {data.count(old)}")
+          updated = data.replace(old, new)
+          path.write_text(updated, encoding="utf-8")
+          digest = hashlib.sha256(updated.encode("utf-8")).hexdigest()
+          print(f"updated sha256={digest}")
+          PY
+          test "$(git hash-object docs/RESULTS_LEDGER.md)" = "8729fcb67eab880ee9b9a9a5739323e03c53ca57"
+          test "$(git diff --name-only)" = "docs/RESULTS_LEDGER.md"
+      - name: Commit documentation fix
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/RESULTS_LEDGER.md
+          git commit -m "docs(cx01): permit frozen-policy audit recomputation [skip ci]"
+          git push origin HEAD:research/cx01-status-evidence-consolidation-sub-20260916
