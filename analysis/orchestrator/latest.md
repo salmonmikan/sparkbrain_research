@@ -1,83 +1,79 @@
 # SparkBrain Evidence Analyst — Latest Handoff
 
-Analysis time: 2026-09-16 18:42 JST
+Analysis time: 2026-09-16 18:58 JST
 
 ## Executive assessment
 
-**No new scientific measurement has appeared.** The strongest evidence is unchanged: A01 P2 `SUPPORTED_SELECTIVE_CIRCULATION` and P3 `SUPPORTED_R_CAUSAL_CARRIER` remain positive consumed development evidence; Family-A P4 remains the terminal consumed negative `UNSUPPORTED_EN_BLOC_MERGED_CREDIT`. Family-A P4 cannot be rerun, retuned, repaired, rescored under changed rules, or followed by P5 as a rescue.
+**No new scientific measurement has appeared.** The scientific evidence is unchanged: A01 P2 `SUPPORTED_SELECTIVE_CIRCULATION` and P3 `SUPPORTED_R_CAUSAL_CARRIER` remain positive consumed development evidence; Family-A P4 remains terminal-consumed `UNSUPPORTED_EN_BLOC_MERGED_CREDIT`. RV01 R01-17 remains positive development-only timing evidence with an ordinary local adaptive-delay-plasticity reduction. RV02 D1 remains a terminal construction/gate-reachability negative, not a capability negative. CX01 Candidate-002 remains a terminal formal negative.
 
-The important movement is readiness/integration:
+There are two important state changes since the previous Analyst handoff:
 
-1. **MAIN completed Family-B Generation-1 readiness integration.** PR #144 was reviewed at exact head `49cf002ed83a47910090d022937fd91b735e202d` and merged into `research/v061-a01-n3-adapter` at commit `8612d01fd9048b881bd8850e13e94ece954a053d` (tree `96c2a8d26d43617a1162d52dc753f38297ed091c`). The package remains explicitly readiness-only with `execution_admitted=false`. No Family-B STARTED, acquisition, scoring, raw-output exposure, or one-way identity consumption was observed.
-2. **The primary frontier therefore advances from readiness repair to exact execution-package construction.** The integrated readiness contract fixes the prospective identity, mechanism family, resource bounds, discriminator/null/falsifier IDs and no-privilege boundary, but it is not itself an executable one-way measurement package. MAIN should now bind the exact runner/acquisition/scorer/input/package and raw-before-score/STARTED semantics, then return that exact final package for a fresh Analyst admit/reject decision. One-way execution remains **STOP** until that later exact-package admission.
-3. **SUB's RV02 lane is now essentially merge-ready.** Live PR #142 is open/mergeable at `c34b78e6200d957cf47f9aa310a7b696457141f8`; exact-head CI run `35079781765` succeeded and all currently fetched substantive review threads are resolved. Its diff preserves hash-bound RV02 scientific runner/source bytes and uses narrow lint configuration rather than mutating frozen bytes. SUB should perform only the final exact-head merge-safety check and integrate if the head remains unchanged. MAIN does not wait for this.
+1. **RV02 PR #142 is now completed and merged.** SUB integrated exact reviewed head `c34b78e6200d957cf47f9aa310a7b696457141f8` into `research/rv02-development-feasibility` at merge commit `c6b33606850ef591690074f50ed92a4c9400b8bd`. No experiment, STARTED, scoring, or new identity consumption occurred. This removes the old SUB science/status lane.
+2. **Family-B remains the only near-term high-information scientific frontier, but it is still not execution-ready.** Readiness is integrated at `research/v061-a01-n3-adapter@8612d01fd9048b881bd8850e13e94ece954a053d`. The bound package explicitly says `execution_admitted=false` and binds deterministic readiness only. It does not yet bind an exact one-way acquisition runner, scientific input, scorer/verifier, raw-preservation destination/order, or complete execution package. MAIN therefore must build that exact prospective package and return it for a fresh exact-package Analyst admit/reject before STARTED.
 
-Current verdict: **MAIN GO to build/finalize the exact Family-B one-way package, but STOP scientific execution. SUB GO to integrate the independent RV02 status package if exact-head merge-safety still holds.**
+Current verdict: **MAIN GO to construct/finalize the exact Family-B Generation-1 one-way execution package, but STOP scientific execution. SUB receives only independent stale-operational-claim cleanup for Family-A P4; no secondary scientific candidate is currently fresh/admitted.**
 
-## Interpretation by line
+## Interpretation by active line
 
 ### A01 / MD-002 — PRIMARY FRONTIER
 
-- P2: `SUPPORTED_SELECTIVE_CIRCULATION`, positive consumed development evidence.
-- P3: `SUPPORTED_R_CAUSAL_CARRIER`, positive consumed development evidence.
-- Family-A P4: `UNSUPPORTED_EN_BLOC_MERGED_CREDIT`, terminal consumed negative. Plural traces could coexist physically, but selective historical lineage credit did not emerge; credit remained merged/en-bloc.
-- Family-A P5: permanently inadmissible for that failed consumed mechanism.
-- Family B `distributed-field-trace`: **unresolved, not yet measured**. Readiness is now integrated at `research/v061-a01-n3-adapter@8612d01f...`.
-- Family C / outcome-dependent successors: blocked while the simpler registered Family-B line remains unresolved.
+- P2 identity `a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2`: consumed, `SUPPORTED_SELECTIVE_CIRCULATION`.
+- P3 identity `a01-md002-p3-r-only-causal-carrier-candidate-001-v1`: consumed, `SUPPORTED_R_CAUSAL_CARRIER`.
+- Family-A P4 identity `a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1`: consumed terminal negative `UNSUPPORTED_EN_BLOC_MERGED_CREDIT`. Plural traces coexisted physically, but later historical credit remained merged/en-bloc. No rerun, retune, changed-policy rescore, same-ID rescue, or P5 rescue is admissible.
+- Family-B identity `a01-family-b-distributed-field-trace-gen1-v1`: **fresh/unconsumed and unresolved**. Readiness is integrated, but no Family-B STARTED/control/freeze/preserve branch was observed and the current binding remains `execution_admitted=false`.
+- Family C or any outcome-dependent successor remains blocked until Family-B is validly terminal or materially new evidence changes the frontier.
 
-The shortest path to new information is no longer more readiness repair. It is to construct the **exact prospective one-way package** under the already-integrated Family-B contract, freeze all source/protocol/package/input/runner/scorer bindings and falsifiers before output exposure, obtain fresh exact-package Analyst admission, then execute exactly once.
+The Family-B protocol already fixes the scientific object prospectively: exactly two live local slots, local eligibility/credit dynamics, deterministic reset/checkpoint semantics, strict width/fail-closed behavior, genuine shared-substrate plurality, lineage-swap covariance, valid F-only transfer, later selective competition, and three matched simpler null families. A positive claim requires all frozen discriminators and no forbidden semantic/evaluator/global/caller-selected-lineage privilege. If a matched simpler null reproduces the discriminator with less state/privilege, the distinctive Family-B claim reduces rather than passing as revolutionary evidence.
 
-The scientific reduction bar remains high: any future positive Family-B claim must survive genuine co-maximal plurality, lineage swap, confirmation/match, contradiction, absence, internal replay, later selective competition, valid F-only functional transfer, and matched explicit eligibility/return-address, recurrent causal-trace and explicit latent-cause/belief-state nulls without semantic/evaluator/global lookup or caller-selected-lineage privilege.
+**Shortest path to new information:** MAIN builds the exact one-way runner/acquisition/scorer/input/package around the already-fixed contract, fixes all candidate-specific pre-START defects itself, obtains exact-head CI/review, then returns the final exact package for fresh Analyst admission. This handoff does **not** admit STARTED or execution because the exact execution package does not yet exist.
 
 ### RV01 — SECONDARY COMPONENT CHARACTERIZATION
 
-R01-17 (`rv01-r01-17-real-delay-causal-timing-v1`) remains consumed development-only evidence `SUPPORTED_REAL_DELAY_CAUSAL_TIMING`. The conservative reduction is ordinary local adaptive-delay plasticity. Canonical status integration is complete at merge `19cf98ec08635829f20c9ee21f4949a8a624d4ec`. No distinct fresh successor is admitted.
+R01-17 `rv01-r01-17-real-delay-causal-timing-v1` remains consumed `SUPPORTED_REAL_DELAY_CAUSAL_TIMING` development evidence. The conservative reduction is ordinary local adaptive-delay plasticity. Canonical status integration is complete at `19cf98ec08635829f20c9ee21f4949a8a624d4ec`. No fresh distinct RV01 successor is prospectively defined/admitted, so there is no current RV01 SUB science lane.
 
-### RV02 — SECONDARY / ACTIVE SUB SUPPORT LANE
+### RV02 — SECONDARY / COMPLETE
 
-RD005 D1 identity `96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a` remains terminal-consumed. Capability output was never opened and learner/probe execution did not occur. The result is strictly a **construction/gate-reachability negative**, not a capability negative.
+RD005 D1 identity `96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a` remains terminal-consumed. Capability output was never opened; learner/probe execution did not occur. Its valid conclusion is strictly **construction/gate-reachability negative**, not capability negative.
 
-Live PR #142 is at exact head `c34b78e6200d957cf47f9aa310a7b696457141f8`, base `8176b91f5d427f3bdfccae2fac2c01b60a771403`, and is open/mergeable. `PROJECT_STATUS`, `RESULTS_LEDGER`, and the RV02 status/evidence map now carry the narrow terminal interpretation. Exact-head CI `35079781765` is green and all fetched substantive review threads are resolved. The narrow Ruff per-file ignores preserve the hash-bound frozen runner/source bytes rather than silently generating a new scientific source identity.
+PR #142 is now merged: reviewed head `c34b78e6200d957cf47f9aa310a7b696457141f8` -> `research/rv02-development-feasibility@c6b33606850ef591690074f50ed92a4c9400b8bd`. Exact-head CI `35079781765` was successful. No new RV02 measurement or consumed identity resulted. There is no fresh RV02 successor defined/admitted.
 
-Shortest path: SUB re-fetches head/diff/reviews/checks immediately before merge and integrates only unchanged `c34b78e...`. No RV02 science, retry, capability run, successor invention, STARTED, scoring, or evidence mutation.
+### CX / CX01 — SECONDARY DIAGNOSTIC / COMPLETE
 
-### CX / CX01 — SECONDARY DIAGNOSTIC
-
-`cx01-candidate-002` remains terminal-consumed/formal negative for its exact frozen contract. Status integration is complete at merge `251f7350b7a30c50e8b8a3329b6ff920d85bf493`. Read-only recomputation from immutable raw evidence under the unchanged frozen scoring policy remains valid audit work; rerun, retune, repair, reuse, and modified-policy/evidence rescoring remain forbidden.
+`cx01-candidate-002` remains terminal-consumed/formal negative for its exact frozen contract. Canonical integration is complete at `251f7350b7a30c50e8b8a3329b6ff920d85bf493`. Read-only recomputation from immutable raw under the unchanged frozen scorer is valid audit work; rerun, retune, repair, modified-policy rescoring, or identity reuse is forbidden. No fresh CX/CX01 successor is admitted.
 
 ## Parallel decomposition
 
 ### `main_lane`
 
-- **target:** finalize an exact prospective one-way Family-B Generation-1 execution package on top of the integrated readiness contract, then return that exact package for fresh Evidence Analyst execution admission before STARTED.
-- **scientific_question:** Can a low-privilege distributed-field trace preserve and selectively reuse historical provenance under P4-level adversarial discrimination without reducing to explicit return-address memory, recurrent causal trace, or explicit latent-cause/belief-state lookup?
+- **target:** construct and finalize the exact prospective Family-B Generation-1 one-way scientific execution package on the integrated readiness base, then return that exact package for fresh Evidence Analyst admit/reject before STARTED.
+- **scientific_question:** Can a low-privilege distributed-field trace preserve and selectively reuse historical provenance on one shared substrate under P4-level adversarial discrimination without reducing to explicit return-address memory, recurrent causal trace, or explicit latent-cause/belief-state lookup?
 - **recommended_owner:** `main`
-- **branch_or_identity:** integrated base `research/v061-a01-n3-adapter@8612d01fd9048b881bd8850e13e94ece954a053d`; prospective identity `a01-family-b-distributed-field-trace-gen1-v1`. MAIN may create/advance its own implementation branch for the exact one-way package.
+- **branch_or_identity:** integrated base `research/v061-a01-n3-adapter@8612d01fd9048b881bd8850e13e94ece954a053d`; prospective identity `a01-family-b-distributed-field-trace-gen1-v1`; MAIN may create/advance only its own pre-START implementation/package branch.
 - **information_value:** `HIGH`
 - **implementation_distance:** `NEAR_TO_MEDIUM`
-- **dependencies:** exact prospective runner/acquisition/scorer/input/package binding; fixed stopping semantics; exact-head clean CI and substantive review; then fresh Analyst admit/reject on that exact package.
-- **allowed_scope:** all Family-B candidate-specific runner, acquisition harness, scorer, verifier, fixture, input, resource-matching, binding, test, CI and review work required for the exact one-way package; prospective package preparation that does not consume the scientific identity or expose output.
-- **forbidden_scope:** STARTED/control consumption, workflow dispatch, acquisition, scoring, raw-output exposure or identity consumption before fresh admission; post-outcome retune/same-identity repair; Family-A rescue; forbidden semantic/evaluator/global/caller-selected-lineage privilege; SUB-reserved RV02 work.
-- **go_conditions:** identity remains fresh/unSTARTED/unconsumed; exact source/protocol/package/input/runner/scorer hashes are prospectively bound; readiness scientific contract remains unchanged; all required P4 discriminators/nulls/falsifiers are fixed; durable duplicate-evidence protection and raw-before-score/preserve-before-read are encoded; exact-head CI/review clean; fresh Analyst admission issued for the exact package.
-- **stop_conditions:** binding drift; substantive CI/review defect; matched minimal null explains the residual; privileged addressing becomes necessary; F-only or plurality/later-differentiation falsifier cannot be defined; STARTED/control/preserve collision or prior output exposure; outcome-responsive tuning; after STARTED any clean discriminator/null failure consumes Generation-1 terminally with no same-ID repair.
-- **exact refs/identities to re-check:** `research/v061-a01-n3-adapter@8612d01fd9048b881bd8850e13e94ece954a053d` (tree `96c2a8d...`); PR #144 reviewed head `49cf002...`; identity `a01-family-b-distributed-field-trace-gen1-v1`; readiness package `a01-family-b-distributed-field-trace-gen1-readiness-package-v1`; proposal SHA-256 `357f4a500164d31a3a851edc77c0870d3b59930c1766c1769671e9bdaf6ecf14`; pre-P4 family source `525ecd9e205b2657a4ed207ae2b6cef0bae4bffc`; post-P4 protocol source `7af99d6c3bbbf946f90fc01d9bc7cc7661de2006`; binding implementation head `f21b2405f9e4e2f427f788052ffc02fbb0c8ab52`; Family-A P4 authority read-only.
+- **dependencies:** exact prospective acquisition runner; exact scientific input; exact scorer/verifier; raw destination and preserve-before-read/raw-before-score ordering; STARTED/no-clobber/duplicate-evidence semantics; resource matching; full source/protocol/package/input/runtime hashes; exact-head green CI and substantive review; fresh Analyst admission on the final exact package.
+- **allowed_scope:** every Family-B candidate-specific pre-START runner/harness/scorer/verifier/fixture/input/resource/binding/test/CI/review fix needed to create a scientifically clean one-way package; prospective package/freeze preparation that does not create STARTED, consume identity, expose raw outcome, or alter the frozen scientific contract.
+- **forbidden_scope:** STARTED/control creation, workflow dispatch, acquisition, scoring, raw-output exposure, evidence consumption, or one-way identity consumption before fresh exact-package admission; post-outcome retuning; same-ID repair; Family-A rescue; changes to frozen discriminator/null/falsifier thresholds or scientific semantics; SUB-reserved operational cleanup.
+- **go_conditions:** identity is still fresh/unconsumed/unSTARTED; current remote has no Family-B raw/preserve/control collision; source/protocol/package/input/runner/scorer/verifier hashes are exact and prospective; existing proposal/protocol scientific semantics are unchanged; exactly-once and no-clobber are encoded; raw is durably preserved and digest-verified before scoring/reading; fixed scientific discriminators/nulls/falsifiers remain byte/ID stable; exact-head CI and substantive review are clean; final exact package returns to Analyst and receives explicit execution admission.
+- **stop_conditions:** any prior STARTED/raw/output/consumption is discovered; exact binding is incomplete or stale; scientific contract, thresholds, null definitions, hypothesis, or identity would need to change; a pre-START fix becomes outcome-dependent; forbidden privilege is required; exact-head review/CI remains substantively unresolved. After a later admitted STARTED, any clean falsifier/null failure consumes the identity terminally with no same-ID rescue.
+- **exact refs/identities to re-check:** `research/v061-a01-n3-adapter@8612d01fd9048b881bd8850e13e94ece954a053d`; PR #144 reviewed head `49cf002ed83a47910090d022937fd91b735e202d`; proposal `a01-family-b-distributed-field-trace-gen1-v1`; proposal SHA-256 `357f4a500164d31a3a851edc77c0870d3b59930c1766c1769671e9bdaf6ecf14`; protocol source commit `7af99d6c3bbbf946f90fc01d9bc7cc7661de2006`; implementation binding `f21b2405dbb09d88ce61ee21e0fc73ca2823b669`; current binding `docs/V061_A01_FAMILY_B_GEN1_PACKAGE_BINDING.json` with `execution_admitted=false`; Family-A P4 immutable source/STARTED `1bd0099f4358e02efac7ee4acccfe5257a86c4be`, raw preserve `2511454f1633d3bc6f10e3d2a99e3ddd823bb798`, scored preserve `56ee762540e0519034d2e8db0ad3c6acda667ffd` read-only.
 - **`main_owns_all_critical_path_fixups: true`**
-- **execution_allowed:** `false`
+- **execution_allowed:** `false` in the current state.
 
 ### `sub_lane`
 
-- **target:** complete RV02 PR #142 exact-head terminal-status integration without changing hash-bound scientific source/runner bytes.
-- **scientific_question/support purpose:** canonically preserve D1 as a terminal construction/gate-reachability negative, explicitly not a capability negative, without reopening the consumed identity.
+- **target:** remove stale Family-A P4 operational claims by closing PR #137 **without merge** and closing Issue #138 with pointers to the canonical terminal-consumed negative; make no scientific/code/evidence changes.
+- **scientific_question/support purpose:** prevent operational metadata from continuing to claim that the already-consumed Family-A P4 identity is pre-STARTED/unconsumed, while preserving canonical git-managed science untouched.
 - **recommended_owner:** `sub`
-- **branch_or_identity:** `research/rv02-status-evidence-consolidation-sub-20260916@c34b78e6200d957cf47f9aa310a7b696457141f8`, PR #142; D1 `96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a`.
-- **information_value:** `MEDIUM_ENABLING`
+- **branch_or_identity:** PR #137 currently open at head/source commit `1bd0099f4358e02efac7ee4acccfe5257a86c4be`; Issue #138; consumed identity `a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1` is read-only.
+- **information_value:** `LOW_MEDIUM_INTEGRITY`
 - **implementation_distance:** `IMMEDIATE`
 - **execution_allowed:** `false`
-- **dependencies:** final pre-merge re-fetch confirms exact head unchanged; green CI remains green; all substantive review threads remain resolved; immutable D1 authorities unchanged.
-- **allowed_scope:** exact-head merge-safety and integration; canonical status/ledger/map already present; narrow CI configuration preserving frozen source bytes; read-only authority verification.
-- **forbidden_scope:** modifying hash-bound RV02 scientific runner/source bytes; any new RV02 experiment/capability run/successor; D1 retry/repair/retune/reopen/reuse; protocol/scorer/threshold changes; STARTED/freeze/preserve/scoring mutation; Family-B work.
-- **completion_target:** integrate only unchanged reviewed head after final merge-safety, leaving D1 terminal-consumed and capability unopened.
-- **exact refs/identities:** head `c34b78e6200d957cf47f9aa310a7b696457141f8`; base `8176b91f5d427f3bdfccae2fac2c01b60a771403`; D1 `96634541...`; source freeze `c60b7fd8d3889ee969f505d921e7d31c990871e6`; preflight `096ddb8c...`; STARTED `2535b631...`; raw preserve `d1fdd67e...`; terminal audit `a02768b1...`; CI `35079781765` success.
+- **dependencies:** canonical Family-A P4 terminal result and immutable source/raw/scored authorities remain unchanged; PR #137 and Issue #138 remain stale-open immediately before closure.
+- **allowed_scope:** re-fetch operational state; close PR #137 without merge/edit; close Issue #138 as completed/stale with canonical terminal-result pointers; read-only authority verification.
+- **forbidden_scope:** merging PR #137; editing or rebasing its scientific branch; changing P4 protocol/source/scorer/evidence; reopening/rerunning/rescoring the consumed identity; creating a P5/successor; touching Family-B MAIN work or any immutable authority.
+- **completion_target:** PR #137 and Issue #138 no longer advertise a pre-START/unconsumed P4 run; canonical evidence remains byte-identical; no research branch/code/evidence mutation occurs.
+- **exact refs/identities:** PR #137 head `1bd0099f4358e02efac7ee4acccfe5257a86c4be`; Issue #138; P4 identity `a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1`; raw preserve `2511454f1633d3bc6f10e3d2a99e3ddd823bb798`; scored preserve `56ee762540e0519034d2e8db0ad3c6acda667ffd`.
 - **`reservation_status: reserved_for_sub`**
 - **`independent_of_main_critical_path: true`**
 
@@ -85,42 +81,96 @@ Shortest path: SUB re-fetches head/diff/reviews/checks immediately before merge 
 
 `null`
 
-No second independent actionable package is currently verified/reserved. CX01 and RV01 integration are complete, and no distinct fresh RV01/RV02/CX successor is prospectively defined/admitted. Governance cleanup remains advisory instead of being used to manufacture parallelism.
+After checking RV01, RV02, CX/CX01, unrelated active PR/CI work, reusable-tooling needs, status material, and read-only diagnostic opportunities, no second distinct scientifically useful package is currently fresh/admitted. Do not invent a candidate merely to keep SUB busy.
+
+## Prospective `outcome_contingencies`
+
+These contingencies are fixed **before** Family-B outcome observation. They do not override the current STOP: because no exact one-way execution package has yet been built/admitted, this handoff does **not** authorize Family-B STARTED or execution. MAIN may continue through `PRE_START_BLOCKER` fixes in the same run. Once a later handoff admits an exact final package, the post-START branches below are the prospectively fixed terminal-handling policy; no branch authorizes a second scientific run or a post-outcome successor.
+
+### `PRE_START_BLOCKER`
+- **trigger:** before STARTED, package construction, exact binding, CI/review, resource matching, duplicate-evidence/no-clobber, or raw-preservation ordering is invalid/incomplete.
+- **same-run MAIN action:** fix candidate-specific implementation/tooling/binding/test defects that are outcome-independent and preserve the already-fixed scientific contract; rebind/retest/review.
+- **one-way execution allowed:** `false`.
+- **GO:** no raw outcome exists; identity stays fresh; scientific hypothesis, inputs-as-scientific-conditions, thresholds, nulls, falsifiers, and proposal identity do not change.
+- **STOP / return Analyst:** once package is complete, stop for exact-package admission; also stop immediately if the fix requires redefining hypothesis/protocol/null/threshold/input semantics/identity or uses outcome information.
+- **prospectively fixed / outcome-independent:** `true`.
+
+### `PASS` — applicable only after a later exact-package admission
+- **trigger:** valid frozen scoring passes **all** positive gates: shared-substrate genuine plurality, lineage-swap covariance/leakage bound, confirmation/match, contradiction, absence, internal replay, later selective competition, valid F-only transfer, all matched-null separation requirements, resource bound, and no forbidden privilege.
+- **same-run MAIN action:** after raw has already been durably preserved/verified before scoring, preserve scored/formal result, mark the exact identity consumed-terminal PASS, update canonical ledger/status/evidence pointers for this identity, and prepare/integrate only outcome-reporting artifacts under normal exact-head review safety. No successor experiment.
+- **one-way execution allowed:** only the already-admitted single Generation-1 run; no second run.
+- **GO:** exact admitted package/identity still matches; raw-before-score ordering and provenance are valid; classification is produced only by the frozen scorer.
+- **STOP / return Analyst:** after terminalizing/reporting PASS, or before any broader claim, new mechanism, Gen-2, Family-C design, retune, rebinding, or new identity.
+- **prospectively fixed / outcome-independent:** `true` for terminal handling.
+
+### `REDUCED_EXPLANATION` — applicable only after a later exact-package admission
+- **trigger:** Family-B exhibits part/all of the phenotype but a prospectively fixed matched explicit-return-address, recurrent-causal-trace, or latent-cause/belief-state comparator closes the gap or passes an equivalent discriminator with simpler state/privilege, so the distinctive mechanism claim is not supported.
+- **same-run MAIN action:** preserve/score under frozen rules, consume the identity terminally with the reduced interpretation, update ledger/status, and stop. Do not relabel this as revolutionary support.
+- **one-way execution allowed:** no additional run.
+- **STOP / return Analyst:** before designing any alternative mechanism or successor.
+- **prospectively fixed / outcome-independent:** `true`.
+
+### `FAIL` — applicable only after a later exact-package admission
+- **trigger:** valid evidence hits any decisive frozen falsifier, including no genuine plurality, lineage-swap failure/leakage, invalid F-only transfer, absent later selective differentiation, forbidden privilege, or other frozen discriminator failure.
+- **same-run MAIN action:** preserve raw then frozen score, preserve terminal negative/formal audit, mark identity consumed, update canonical ledger/status. No rescue, retune, threshold change, or rerun.
+- **one-way execution allowed:** no additional run.
+- **STOP / return Analyst:** before any Gen-2/Family-C/new diagnostic design.
+- **prospectively fixed / outcome-independent:** `true`.
+
+### `INCONCLUSIVE` — applicable only if the final frozen scorer prospectively contains such a class
+- **trigger:** valid evidence maps to an explicitly predeclared inconclusive classification rather than PASS/FAIL/reduced explanation.
+- **same-run MAIN action:** preserve raw/scored evidence, consume this exact identity terminally as inconclusive, update ledger/status, and stop. Do not add metrics, change thresholds, or reinterpret after seeing output.
+- **one-way execution allowed:** no additional run.
+- **STOP / return Analyst:** before any new diagnostic/candidate. If the final frozen scorer has no INCONCLUSIVE class, do not invent one post hoc.
+- **prospectively fixed / outcome-independent:** `true` conditional on its presence in the admitted scorer.
+
+### `INVALID_EVIDENCE`
+- **trigger:** after STARTED, evidence/provenance is invalid because of binding mismatch, corrupt/unbound input or output, raw-before-score/preserve-before-read violation, provenance failure, or another frozen integrity violation.
+- **same-run MAIN action:** preserve available audit/log/partial artifacts without treating them as scientific support, mark the identity consumed terminal-invalid, record exact reason, and stop.
+- **one-way execution allowed:** `false` after invalidation; no retry unless an exact retry rule was prospectively frozen before STARTED (none exists currently).
+- **STOP / return Analyst:** before any repair/retry/new identity.
+- **prospectively fixed / outcome-independent:** `true`.
+
+### `POST_START_FAILURE`
+- **trigger:** runtime/tool/acquisition failure after STARTED before valid terminal evidence exists.
+- **same-run MAIN action:** preserve logs/partial artifacts, record the terminal failure, mark identity consumed, and stop.
+- **one-way execution allowed:** no same-ID retry under the current contract.
+- **STOP / return Analyst:** before fixing and rerunning scientifically, rebinding to a new package, or allocating a replacement identity.
+- **prospectively fixed / outcome-independent:** `true`.
 
 ## `blocked_until`
 
-- Family-B one-way execution waits for a complete exact prospective execution package **and a fresh Analyst admission on that exact package**. After admission, STARTED/no-clobber, consumed registry, exactly-once acquisition and raw-before-score/preserve-before-read must still be reverified immediately before execution.
-- Family C/outcome-dependent successors wait for Family-B rejection, clean termination/completion, or material new evidence.
-- New RV01/RV02/CX01 science waits for distinct prospectively defined and admitted identities/protocols.
-- RV02 PR #142 needs only its own final exact-head merge-safety; MAIN must not wait.
-- Family-A P5 is not blocked; it is permanently inadmissible for the consumed failed Family-A P4 mechanism.
+- Family-B one-way execution is blocked until MAIN produces a complete exact prospective one-way package and a fresh Analyst admission explicitly admits that **exact** package. Immediate pre-execution re-verification must then confirm identity freshness, STARTED/no-clobber, consumed registry, exact bindings, current remote head, exact-head CI/review, exactly-once acquisition, and raw-before-score/preserve-before-read.
+- Family C or other outcome-dependent successors wait for Family-B valid terminalization/material new evidence.
+- New RV01/RV02/CX01 science waits for a distinct prospectively defined/admitted identity and protocol.
+- Family-A P5 is permanently inadmissible for the failed consumed Family-A P4 mechanism.
 
 ## `do_not_touch`
 
-Consumed/immutable boundary includes A01 MD-001; P2 `a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2`; P3 `a01-md002-p3-r-only-causal-carrier-candidate-001-v1`; P4 `a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1`; RV01 R01-16/R01-17; RV02 RD005 D1; CX01 Candidate-002; and all associated immutable freeze/control/preserve/formal/evidence authorities. SUB must not touch the Family-B integrated base/identity or any MAIN blocker. MAIN must not absorb PR #142 while it is reserved. RV02 hash-bound source/runner bytes remain untouched. PR #137 is not a science frontier. No outcome-dependent successor invention or outcome-responsive B/C tuning.
+Consumed/immutable boundary: A01 MD-001; P2 `a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2`; P3 `a01-md002-p3-r-only-causal-carrier-candidate-001-v1`; Family-A P4 `a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1`; RV01 R01-16 family and `rv01-r01-17-real-delay-causal-timing-v1`; RV02 D1 `96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a`; CX01 Candidate-002; and all associated freeze/control/preserve/formal/evidence authorities. SUB must not touch the Family-B base/identity or any MAIN blocker. PR #137 may only be **closed without merge/edit**. Neither worker may invent outcome-dependent successors, change frozen scoring/protocol rules after output, or rescue a consumed identity.
 
 ## Ranked top 3
 
-1. **MAIN — finalize the exact Family-B Generation-1 one-way execution package under the integrated readiness contract; no execution yet.** Information value `HIGH`; distance `NEAR_TO_MEDIUM`.
-2. **SUB — re-fetch PR #142 exact head/reviews/checks/mergeability and integrate only unchanged `c34b78e...` if still clean.** Information value `MEDIUM_ENABLING`; distance `IMMEDIATE`.
-3. **MAIN -> Analyst — return the exact completed Family-B package for a fresh admit/reject checkpoint.** Information value `HIGH_ENABLING`; distance `ONE_CHECKPOINT_AFTER_#1`.
+1. **MAIN — construct/finalize the exact Family-B Generation-1 one-way execution package; no execution yet.** Information value `HIGH`; distance `NEAR_TO_MEDIUM`.
+2. **MAIN -> Analyst — submit the final exact Family-B package for a fresh binding/integrity admit-or-reject checkpoint.** Information value `HIGH_ENABLING`; distance `ONE_CHECKPOINT_AFTER_#1`.
+3. **SUB — close stale PR #137 without merge and close Issue #138 with canonical terminal P4 pointers.** Information value `LOW_MEDIUM_INTEGRITY`; distance `IMMEDIATE`; independent of MAIN.
 
 ## #1 GO / STOP
 
-**GO now:** construction/finalization of the exact prospective one-way package only. MAIN may implement all candidate-specific critical-path runner/harness/scorer/verifier/binding/input/test work. Before returning for admission, verify the identity is still fresh and unused; exact source/protocol/package/input/runner/scorer binding; fixed STARTED/no-clobber semantics; raw-before-score and preserve-before-read ordering; exact-head CI/review; and prospectively fixed scientific falsifiers/nulls.
+**GO now:** pre-START package construction and all MAIN-owned critical-path fixups that preserve the already-fixed Family-B scientific contract. Before admission, the final package must bind the exact identity, protocol/source, implementation, scientific input, runner/acquisition, scorer/verifier, output/preserve locations and hashes; encode atomic STARTED/no-clobber and durable duplicate-evidence checks; guarantee exactly-once acquisition and raw durable preservation/digest verification before any score/read; and pass exact-head CI plus substantive review. Scientific falsifiers/nulls remain those already fixed by the contract.
 
-**STOP now:** no STARTED, no workflow dispatch, no acquisition, no scoring, no raw-output exposure and no identity consumption. The currently integrated binding explicitly has `execution_admitted=false` and is a readiness package.
+**STOP now:** no STARTED, no workflow dispatch, no acquisition, no raw-output exposure, no scoring, and no identity consumption. The current binding is explicitly readiness-only and `execution_admitted=false`. MAIN must return the completed exact package to Analyst before one-way execution.
 
-A later execution is GO only after fresh exact-package admission plus immediate re-verification of identity freshness, no-clobber, consumed registry, exact bindings, current remote state, exact-head clean CI/review, exactly-once evidence acquisition, raw preservation before scoring/reading, genuine plurality/lineage swap/match/contradiction/absence/internal replay/later selective differentiation, valid F-only transfer, matched explicit/recurrent/belief-state nulls, and no forbidden privilege. Any clean scientific falsifier/null failure after STARTED makes the identity terminal; do not repair or rerun it.
+## Governance advisory — no action by Analyst
 
-## Governance advisory — no action here
-
-- Issue #138 remains stale-open after canonical Family-A P4 FAIL.
-- PR #137 remains open with stale pre-STARTED/unconsumed wording for the consumed P4 identity; close without merge after preserving authoritative pointers.
-- Preserve legacy freeze/control/preserve branches exactly. Absence of Family-B STARTED/freeze/preserve is correct at the current readiness-only boundary.
-- No Git tag refs were observed; repository rulesets remain `0`; `main` and the Evidence Analyst handoff branch are unprotected. Issue #139 remains the non-blocking hardening tracker.
-- Outcome-independent future `main` promotion candidates are generic integrity primitives only: exact source/runtime/package binding, STARTED/no-clobber and identity collision checks, durable duplicate-evidence checkpoint state, raw-before-score/preserve-before-read/digest verification, generic fail-closed verifier patterns, and stable preserve/control pointer/index helpers.
+- PR #137 remains open even though its body says the P4 identity is pre-STARTED/unconsumed while its head/source is the already-consumed P4 source/STARTED commit `1bd0099f...`. Close without merge; do not edit/rebase it into current science.
+- Issue #138 remains stale-open after canonical Family-A P4 FAIL. It is operational, not canonical science.
+- RV02 #142, RV01 #140 and CX01 #143 are now complete; their old operational lanes must not be recycled as new science.
+- No Git tags were observed and repository rulesets remain `0`; `main` and the Evidence Analyst handoff branch remain effectively unprotected. Preserve legacy freeze/control/preserve branches exactly. For **new** anchors, prefer protected annotated tags once protection infrastructure exists.
+- Outcome-independent future `main` promotion candidates remain generic integrity primitives only: exact binding, STARTED/no-clobber/identity-collision checks, duplicate-evidence checkpoint persistence, raw-before-score/preserve-before-read/digest verification, fail-closed verifier helpers, and stable preserve/control pointer/index tooling.
 
 ## Orchestrator handoff
 
-**MAIN takes Family-B exact one-way execution-package construction on integrated base `8612d01f...` and owns ALL critical-path fixes. SUB takes RV02 PR #142 at `c34b78e...` for final exact-head merge-safety/integration, independent of MAIN. SUB fallback is null. MAIN must not absorb reserved RV02 work; SUB must not take Family-B blockers. Neither touches consumed identities or immutable authorities.** Repartition only if live evidence invalidates independence, PR #142 completes (then SUB becomes no-op absent a new reserved package), or Family-B packaging becomes scientifically inadmissible/terminal and a fresh Analyst selects a different central frontier.
+**MAIN takes exact Family-B Generation-1 one-way package construction on `research/v061-a01-n3-adapter@8612d01fd9048b881bd8850e13e94ece954a053d` and owns ALL critical-path fixes. SUB takes stale Family-A P4 operational cleanup (close PR #137 without merge; close Issue #138), independent of MAIN. SUB fallback is null. MAIN must not absorb reserved SUB cleanup merely because it is easy; SUB must not take Family-B blockers. Neither touches consumed identities or immutable authorities.**
+
+Repartition only if fresh remote evidence shows Family-B has already STARTED/consumed, the prospective identity/binding is invalidated, a new higher-value independent secondary package is prospectively defined/admitted, or new evidence changes the central scientific question. For same-run continuity, MAIN may fix `PRE_START_BLOCKER` defects without another Analyst cycle when the scientific contract is unchanged. **PASS / REDUCED_EXPLANATION / FAIL / INCONCLUSIVE / INVALID_EVIDENCE / POST_START_FAILURE terminal handling is prospectively fixed here, but it becomes operative only after a later Analyst explicitly admits a complete exact one-way package. This handoff itself does not authorize execution.**
