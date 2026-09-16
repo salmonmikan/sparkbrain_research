@@ -1,20 +1,19 @@
 {
-  "timestamp": "2026-09-17T00:39:27+09:00",
+  "timestamp": "2026-09-17T01:39:45+09:00",
   "worker_role": "sub",
-  "Evidence Analyst commit": "d295a61d37903f1b7c34fd793c6aa6a6e25c5cb6",
+  "Evidence Analyst commit": "5eb075481b8a5846a5234f1d397a88fd288af861",
   "consumed_lanes": {
     "main_lane": {
-      "target": "Family-C Generation-1 prospective primary frontier",
+      "target": "A01 registered-family programme closeout and strategic reframe",
       "owner": "main",
-      "observed_branch": "research/v061-a01-family-c-gen1-20260917@cfe1c3e5506d9fd8b41028dbfe0f8a8dd31a82c5",
-      "identity": "a01-family-c-joint-return-local-field-gen1-v1",
-      "observed_current_status": "COMPLETED_PRESTART_STATIC_REDUCTION_CLOSEOUT",
+      "observed_branch": "research/v061-a01-registered-family-closeout-20260917@3329d15d9a3f73555396fb93a4dab117616e7bc2",
+      "observed_current_status": "CLOSEOUT_COMPLETE",
       "explicitly_avoided": true
     },
     "sub_lane": {
-      "target": "A/B negative-completion disposition bookkeeping audit",
+      "target": "Independent Family-C plus A/B/C terminal-provenance and negative-completion bookkeeping audit",
       "owner": "sub",
-      "branch_or_identity": "research/v061-a01-negative-completion-ab-audit-sub-20260917",
+      "branch_or_identity": "research/v061-a01-negative-completion-c-audit-sub-20260917; no scientific identity",
       "reservation_status": "reserved_for_sub",
       "independent_of_main_critical_path": true,
       "execution_allowed": false
@@ -22,49 +21,62 @@
     "sub_fallback": null
   },
   "selected_independent_lane": {
-    "target": "A/B negative-completion disposition bookkeeping audit",
-    "branch": "research/v061-a01-negative-completion-ab-audit-sub-20260917",
-    "base": "db66596ed4479e8dac8b713b4f92a73f76a25047",
-    "head": "9468bbe882bd7bd8bb0b60c2ad91d11e4616ac56",
-    "artifact": "docs/V061_A01_NEGATIVE_COMPLETION_AB_BOOKKEEPING_AUDIT.md",
+    "target": "A/B/C terminal-provenance and negative-completion bookkeeping audit",
+    "branch": "research/v061-a01-negative-completion-c-audit-sub-20260917",
+    "base": "3329d15d9a3f73555396fb93a4dab117616e7bc2",
+    "head": "e127c3989780ebd5a78b8db914d4d6271920497e",
+    "artifact": "docs/V061_A01_NEGATIVE_COMPLETION_ABC_BOOKKEEPING_AUDIT.md",
     "completion_status": "COMPLETED_AUDIT_FINDING"
   },
   "independence_from_main_critical_path": true,
   "execution_allowed": false,
-  "SUB active claim": "research/v061-a01-negative-completion-ab-audit-sub-20260917@9468bbe882bd7bd8bb0b60c2ad91d11e4616ac56",
+  "SUB active claim": "research/v061-a01-negative-completion-c-audit-sub-20260917@e127c3989780ebd5a78b8db914d4d6271920497e",
   "MAIN work explicitly avoided": [
-    "research/v061-a01-family-c-gen1-20260917@cfe1c3e5506d9fd8b41028dbfe0f8a8dd31a82c5",
-    "a01-family-c-joint-return-local-field-gen1-v1",
-    "Family-C proposal/null/scorer/binding/CI and any MAIN critical-path fixes",
-    "Family-C Gen2/replacement object or successor design",
-    "Family-B execution rescue/retune/rebind"
+    "research/v061-a01-registered-family-closeout-20260917@3329d15d9a3f73555396fb93a4dab117616e7bc2",
+    "MAIN canonical programme-closeout/status edits",
+    "MAIN semantics-preserving historical Family-B binding-test-scope fix",
+    "Family-B/Family-C scientific implementation, nulls, scorer, resource contracts, bindings, identities and one-way lifecycle",
+    "Any A01 Gen2, Family-D, replacement mechanism or successor science"
   ],
   "authoritative refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "control_brain_handoff": "cecb3418f54ef2c89806cbf0d0d8012adc067cca",
-    "evidence_analyst_handoff": "d295a61d37903f1b7c34fd793c6aa6a6e25c5cb6",
-    "orchestrator_report_parent_before_run": "e4f0b2d1401857bf616075a799d0ef541de8ee22",
-    "main_report_observed": "e4f0b2d1401857bf616075a799d0ef541de8ee22",
+    "evidence_analyst_handoff": "5eb075481b8a5846a5234f1d397a88fd288af861",
+    "orchestrator_report_parent_before_run": "c8441627fbe8a38379f9dc0f792f4fd1fbfa9766",
+    "main_report_observed": "c8441627fbe8a38379f9dc0f792f4fd1fbfa9766",
+    "main_closeout": "research/v061-a01-registered-family-closeout-20260917@3329d15d9a3f73555396fb93a4dab117616e7bc2",
+    "prior_sub_ab_audit": "research/v061-a01-negative-completion-ab-audit-sub-20260917@9468bbe882bd7bd8bb0b60c2ad91d11e4616ac56",
     "family_a_proposal_hash": "2794d1596227eab17c68c46d6874662c3669656edb49e28425f1ef613b66c5dc",
     "family_a_terminal_identity": "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
     "family_a_terminal_classification": "UNSUPPORTED_EN_BLOC_MERGED_CREDIT",
-    "family_b_closeout_branch": "db66596ed4479e8dac8b713b4f92a73f76a25047",
+    "family_a_source_freeze": "freeze/a01-md002-p4-candidate-001-source-20260916@1bd0099f4358e02efac7ee4acccfe5257a86c4be",
+    "family_a_started": "control/a01-md002-p4-candidate-001-started-20260916@1bd0099f4358e02efac7ee4acccfe5257a86c4be",
+    "family_a_raw": "preserve/a01-md002-p4-candidate-001-raw-20260916@2511454f1633d3bc6f10e3d2a99e3ddd823bb798",
+    "family_a_scored": "preserve/a01-md002-p4-candidate-001-scored-20260916@56ee762540e0519034d2e8db0ad3c6acda667ffd",
+    "family_b_closeout_branch": "research/v061-a01-family-b-gen1-execution-package-20260916@db66596ed4479e8dac8b713b4f92a73f76a25047",
     "family_b_identity": "a01-family-b-distributed-field-trace-gen1-v1",
     "family_b_classification": "REJECT_BEFORE_STARTED_STATIC_REDUCTION",
     "family_b_started": false,
     "family_b_identity_consumed": false,
-    "family_c_main_branch": "cfe1c3e5506d9fd8b41028dbfe0f8a8dd31a82c5",
-    "git_tags_observed": 0,
+    "family_c_closeout_branch": "research/v061-a01-family-c-gen1-20260917@cfe1c3e5506d9fd8b41028dbfe0f8a8dd31a82c5",
+    "family_c_identity": "a01-family-c-joint-return-local-field-gen1-v1",
+    "family_c_proposal_binding_commit": "9cfddc6dc4d2beab090a9b38661a68dcec755ff7",
+    "family_c_proposal_sha256": "4b574b7053efb50b59a8d7536c94d02a7a25bdfc5b1d7f88575c7b6fc3e614ac",
+    "family_c_null_resource_binding_sha256": "690a62df641d0577e3f7d760354763a6f0ec69e33eedfdacb37e92e7c654dbbc",
+    "family_c_classification": "REJECT_BEFORE_STARTED_STATIC_REDUCTION",
+    "family_c_started": false,
+    "family_c_identity_consumed": false,
     "open_pr_count_before_sub_write": 0,
-    "open_issues": [139]
+    "open_issues": [139],
+    "repository_rulesets_count": 0
   },
   "branches/PRs advanced": {
     "branches": [
       {
-        "branch": "research/v061-a01-negative-completion-ab-audit-sub-20260917",
-        "base": "db66596ed4479e8dac8b713b4f92a73f76a25047",
-        "head": "9468bbe882bd7bd8bb0b60c2ad91d11e4616ac56",
-        "commit_message": "research(a01): audit A/B negative-completion bookkeeping"
+        "branch": "research/v061-a01-negative-completion-c-audit-sub-20260917",
+        "base": "3329d15d9a3f73555396fb93a4dab117616e7bc2",
+        "head": "e127c3989780ebd5a78b8db914d4d6271920497e",
+        "commit_message": "research(a01): audit A/B/C terminal provenance bookkeeping"
       }
     ],
     "prs_created": [],
@@ -79,17 +91,19 @@
     "new_freeze_or_preserve": false,
     "merge_performed": false,
     "documentation_push_ci": {
-      "run_id": 35116725837,
-      "head": "9468bbe882bd7bd8bb0b60c2ad91d11e4616ac56",
+      "run_id": 35123266101,
+      "head": "e127c3989780ebd5a78b8db914d4d6271920497e",
       "status_at_final_pre_report_check": "in_progress"
     }
   },
   "scientific/readiness results": [
     "No new scientific measurement was produced.",
-    "Family-A executed P4 terminal state is structurally representable by CandidateDisposition if every P1-P4 boolean is sourced from exact canonical authority; the audit does not synthesize missing phase facts.",
-    "Family-B pre-START static reduction is not faithfully representable by CandidateDisposition because P1-P4 have no assessed/not-assessed state and the only reduction field is executed-P5 explicit-memory specific.",
-    "NegativeCompletionProgramme.completed_families is not cross-validated against evidence-backed disposition-family coverage, so family coverage is currently a caller assertion rather than a sufficient proof.",
-    "Fail-closed prerequisite recorded: do not synthesize a Family-B disposition or declare programme negative completion merely by populating completed_families; future accounting needs evidence-backed terminal classes including pre-START static reduction."
+    "Family-A executed P4 terminal mode remains structurally representable by CandidateDisposition only when every required phase boolean comes from exact canonical phase authority.",
+    "Family-B pre-START static reduction remains unrepresentable by CandidateDisposition without fabricating P1-P4 phase outcomes.",
+    "Family-C repeats Family-B's representability gap: it is a pre-START static reduction with P1-P5 not assessed, and its separable address-plus-Field reduction cannot be encoded as executed P5 explicit-memory reduction.",
+    "A complete A/B/C terminal-provenance matrix is now documented with proposal/terminal/STARTED/consumption/phase/comparator/canonical-authority fields.",
+    "NegativeCompletionProgramme.completed_families remains insufficient as evidence-backed coverage because validation does not cross-check it against faithful terminal-provenance records.",
+    "Fail-closed state remains machine verdict WITHHELD; no synthetic Family-B or Family-C CandidateDisposition should be created under the current schema."
   ],
   "consumed identities": {
     "observed_relevant": [
@@ -103,22 +117,23 @@
       "cx01-candidate-002"
     ],
     "newly_consumed_this_run": [],
-    "family_b_unconsumed_but_rejected": "a01-family-b-distributed-field-trace-gen1-v1"
+    "family_b_unconsumed_but_rejected": "a01-family-b-distributed-field-trace-gen1-v1",
+    "family_c_unconsumed_but_rejected": "a01-family-c-joint-return-local-field-gen1-v1"
   },
   "blockers": [
-    "Current CandidateDisposition cannot faithfully encode a pre-START static-reduction terminal state without fabricating P1-P4 phase outcomes.",
-    "Current completed_families accounting is not cross-validated against terminal records/dispositions and must not alone support programme negative completion.",
-    "These are future bookkeeping prerequisites, not blockers for MAIN's Family-C scientific lane."
+    "Current CandidateDisposition cannot faithfully encode Family-B or Family-C pre-START static-reduction terminal states without fabricating P1-P4 phase outcomes.",
+    "Current completed_families accounting is not cross-validated against evidence-backed terminal records and must not alone support programme machine negative completion.",
+    "These are future prospective bookkeeping-method requirements, not blockers for MAIN's completed strategic closeout."
   ],
   "collision reconciliation": {
     "latest_analyst_rechecked_before_write": true,
-    "latest_analyst_tip": "d295a61d37903f1b7c34fd793c6aa6a6e25c5cb6",
-    "orchestrator_tip_rechecked_before_write": "e4f0b2d1401857bf616075a799d0ef541de8ee22",
+    "latest_analyst_tip": "5eb075481b8a5846a5234f1d397a88fd288af861",
+    "orchestrator_tip_rechecked_before_first_write": "c8441627fbe8a38379f9dc0f792f4fd1fbfa9766",
     "main_lane_collision": false,
     "main_work_touched": false,
     "analyst_split_invalidated": false,
     "lane_rejected_reason": null,
-    "concurrent_main_change_observed": "MAIN completed Family-C Gen1 pre-START static-reduction closeout on its own branch; SUB treated this only as collision state and did not consume or modify it."
+    "concurrent_main_change_observed": "MAIN completed registered-family closeout at 3329d15d9a3f73555396fb93a4dab117616e7bc2 before SUB began the reserved audit; SUB used that completed head only as a branch base and did not modify MAIN's branch or rely on SUB completion."
   },
   "integrity state": {
     "immutable_refs_modified": false,
@@ -133,12 +148,12 @@
     "overall": "clean_independent_documentation_audit"
   },
   "completion_target": {
-    "target": "Explicit mapping of A/B representability and exact bookkeeping prerequisite remaining before programme-level negative completion, with zero changes to scientific evidence",
+    "target": "Three-family terminal-provenance matrix plus exact statement whether Family C repeats Family B's representability gap, with zero scientific-evidence changes",
     "reached": true,
-    "result": "Family A structurally representable with canonical phase provenance; Family B not representable under current schema; family-coverage validation gap documented."
+    "result": "Family A structurally representable only from exact phase provenance; Family B and Family C not faithfully representable under current CandidateDisposition; completed_families remains insufficient as evidence-backed coverage."
   },
   "fallback_status": null,
   "rejected_lane": null,
   "lane_rejected_reason": null,
-  "next_sub_action": "Return the audit finding to the next Evidence Analyst cycle. Do not implement evaluator/schema changes unless a fresh reserved SUB lane explicitly assigns that prospective bookkeeping work."
+  "next_sub_action": "Return the completed A/B/C audit to the next Evidence Analyst cycle. Do not implement evaluator/schema changes or successor science unless a fresh reserved independent SUB lane explicitly assigns that work."
 }
