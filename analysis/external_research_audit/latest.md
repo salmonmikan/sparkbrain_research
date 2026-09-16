@@ -1,87 +1,93 @@
 # SparkBrain External Research & Audit — Latest Handoff
 
-Analysis time: 2026-09-16 10:32 JST  
+Analysis time: 2026-09-17 04:28 JST  
 Role: `LITERATURE_REDUCTION_SCOUT`
 
 ## Current repository context
 
-A01 MD-002 remains the central line. The latest Evidence Analyst handoff records P2 `SUPPORTED_SELECTIVE_CIRCULATION` and P3 `SUPPORTED_R_CAUSAL_CARRIER` as positive consumed development evidence and P4 as the next decisive discriminator: retain genuinely plural historical causal ancestry and later resolve it selectively from external evidence without semantic/evaluator/global/singleton privilege.
+Fresh inspection found `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`, Control Brain handoff `b3e9da4b6eb65f01282db8f06f967f96e1ca8be0`, Evidence Analyst handoff `9f6cb3b1cb4a5bb1a7a10f6f9b04e54c50bb1cec`, MAIN report `6c3d5cc730b057f5c852160a904a0124e22cafe7`, and SUB report `409d5356d69b9b2635dde0a8f84cbc4eabc44069`. Split MAIN/SUB report streams and role-suffixed histories are present and were consumed.
 
-Fresh remote inspection found PR #137 still open and mergeable but its head moved after the 10:03 Analyst handoff, from `c1248bb3...` to `1bd0099f4358e02efac7ee4acccfe5257a86c4be`. No matching P4 `control/*` / `preserve/*` branch appeared in the fresh P4 ref search. This external-science run does not inherit the old exact-head verifier/CI judgment onto the moved head.
+The registered A01 A/B/C mechanism search is now closed and the programme has been reframed as an experimental persistent-dynamical cognitive architecture/testbed. C19-v2 is the primary frontier. The active C19 branch remains `research/c19-truth-free-symbolic-adapter-v2-20260917@90c936a7abca7eba0dac1f977753503551e73368`; official one-way execution is not admitted. The current source contains a source-only protocol validator that is intentionally incapable of official execution, so MAIN's current task is still executable harness/source-runtime-package binding on synthetic/dev fixtures only.
 
-The requested split MAIN/SUB durable report files are still absent; the 09:01 legacy shared MAIN report is used only as compatibility history, with no durable split SUB report available.
+The I2 adapter is target-blind surface structuring: it exposes source/step indices, a fixed query marker, sentence-ordinal premises and choice ordinals while hashing normalized surface strings. The frozen protocol already limits a positive claim to `truth_free_surface_structural_representation_gain_only`.
 
-## Five high-value literature findings
+## Four new literature findings
 
-### 1. P2/P3 are strongly compatible with established eligibility-trace / three-factor credit assignment
+### 1. Surface/symbolic abstraction itself is a strong ordinary explanation for representation gains
 
-Gerstner et al. (2018) formalize/review neo-Hebbian three-factor learning: local pre/post co-activity establishes a synapse-specific eligibility flag, and a later modulatory third factor turns eligible state into plasticity. Bellec et al. (2020) e-prop factorizes recurrent-network learning into forward local eligibility traces plus later learning signals and demonstrates long-delay temporal credit without BPTT. Shindou et al. (2019) provides direct biological evidence for a silent synaptic eligibility trace selectively converted by later dopamine.
+Biesterbos, Den Ouden & De Rijke, *RvH-40 at SemEval-2026 Task 11: Disentangling Reasoning from Belief through Symbolic Abstraction* (ACL/SemEval 2026) show that variable/pseudoword substitution can expose latent reasoning otherwise suppressed by linguistic content; their final system reports 97.92% validation and 96.34% hidden-test accuracy.
 
-- https://doi.org/10.3389/fncir.2018.00053
-- https://doi.org/10.1038/s41467-020-17236-y
-- https://doi.org/10.1111/ejn.13921
+- https://aclanthology.org/2026.semeval-1.65/
+- DOI: 10.18653/v1/2026.semeval-1.65
 
-**SparkBrain implication:** delayed selective local credit is not a novelty discriminator. A01 P2/P3 remain plausibly reducible to anonymous return-address / provenance / eligibility memory plus local support. P5 should include a minimal eligibility-style null under matched addressing/state privilege.
+**Implication for C19:** an I2 > I1 result can plausibly arise from ordinary abstraction/canonicalization inductive bias rather than SparkBrain-specific persistent dynamics. That does not invalidate C19; it reinforces the present narrow claim boundary.
 
-### 2. A single historical cause kept “pending” and reinstated at delayed feedback is already an established motif
+**Future prospective discriminator:** after the current frozen C19-v2 identity resolves, feed the exact same I2 features to a minimal stateless/linear or shallow model. First verify whether the frozen `direct_stateless` baseline already receives the identical I2 representation; if not, define a future representation-matched null rather than altering the present protocol.
 
-Witkowski et al. (2025) report causal-choice identity at delayed outcome time and a frontopolar pending representation that bridges intervening decisions and predicts later reinstatement for credit assignment. The eLife assessment also says the task does not capture the full ambiguity of real-world credit assignment.
+### 2. Explicit symbolic state tracking is a strong established alternative to implicit neural belief dynamics
 
-- https://doi.org/10.7554/eLife.101841.3
+Zhu, Yi, Jia & Thomason, *PDDL-Mind: Large Language Models are Capable on Belief Reasoning with Reliable State Tracking* (arXiv:2604.17819, 20 April 2026) decouple environment-state evolution from belief inference using explicit PDDL states/actions and verified transitions, reporting >5 percentage points absolute gain over prior SOTA across ToM benchmarks.
 
-**SparkBrain implication:** P4 must demand more than “remember one cause across a delay.” Its useful bar is genuine simultaneous historical plurality that remains unresolved until later independent evidence, with no preselected singleton, semantic cause label, evaluator field, or hidden tie-break privilege.
+- https://arxiv.org/abs/2604.17819
 
-### 3. Retaining multiple possible causes is also established at the algorithmic/cognitive level
+**Implication for C19:** a positive external-validation result does not uniquely validate persistent-dynamical computation if equally informed explicit state tracking can produce the gain. The frozen `explicit_state_probabilistic` family is relevant, but its exact information/representation boundary should be checked before claiming it closes this reduction.
 
-Chan, Niv & Norman (2016) show behavior and OFC activity consistent with maintaining a full posterior distribution over four possible latent causes, rather than only the most probable cause or scalar uncertainty.
+**Future prospective discriminator:** use the same structured visible information and matched state/resource budget for a minimal explicit transition/state tracker versus SparkBrain dynamics.
 
-- https://doi.org/10.1523/JNEUROSCI.0659-16.2016
+### 3. Belief management now has a stronger three-way target: Update, Stay, and Isolation
 
-**SparkBrain implication:** even a positive P4 does not make “plurality + later evidence-based resolution” conceptually new. The potentially distinguishing claim is lower-privilege mechanism: actual local historical provenance rather than an explicit global posterior over named latent causes. P5 should therefore include an explicit latent-cause/belief-state null alongside the eligibility-trace null, with privilege/state costs recorded instead of forcing architectural equivalence.
+Xu et al., *When Should Models Change Their Minds? Contextual Belief Management in Large Language Models* (arXiv:2605.30219, first submitted 28 May 2026) introduce BeliefTrack and diagnose `Failed Update`, `Failed Stay`, and `Failed Isolation`. They report belief-state-reward RL reducing failure rates by 70.9% on average and representation steering reducing failure rates by 46.1% across two tasks.
 
-### 4. Recent 2026 work reinforces the RV01 learned-delay reduction
+- https://arxiv.org/abs/2605.30219
 
-Vassallo & Taherinejad (Frontiers in Neuroscience, 20 May 2026) introduce online three-factor rules that jointly learn weights and synaptic/axonal delays in feedforward and recurrent LIF SNNs using eligibility propagation, with material performance gains from learned delays.
+**Implication for C19:** BU/BM/BREU covers Belief-R's update/maintain trade-off but not a distinct isolation axis. A C19 pass could therefore still reflect clean-format representation gain rather than robust contextual belief management.
 
-- https://doi.org/10.3389/fnins.2026.1814505
+**Future prospective discriminator:** a separately frozen BeliefTrack-style or Belief-R nuisance-perturbation suite with irrelevant evidence/noise while logical belief transitions are held fixed, reporting Update/Stay/Isolation separately.
 
-**SparkBrain implication:** RV01 R01-17 learned physical-delay causality fits a current ordinary adaptive temporal-parameter family. This strengthens, rather than weakens, the Control Brain’s reduction of RV01 timing to standard local delay plasticity.
+### 4. Very recent evidence shows ordinary Transformers can carry functionally causal Bayesian belief-state geometry
 
-### 5. Local / online / forward-only learning is a crowded baseline family
+Balcells et al., *Large Language Models Develop Belief State Geometry In-Context* (arXiv:2609.17376, submitted 15 September and updated 16 September 2026) report belief states linearly decodable from residual streams across six open-source LLMs and 40 HMMs, with peak probe R² 0.83–0.99; patching/steering the identified subspace changes downstream predictions while controls degrade performance.
 
-TESS (2025) performs temporal and spatial credit assignment using locally available neuronal signals; Traces Propagation (2025) is forward-only and fully local using eligibility traces plus a local contrastive objective.
+- https://arxiv.org/abs/2609.17376
 
-- https://arxiv.org/abs/2502.01837
-- https://arxiv.org/abs/2509.13053
+**Programme implication:** persistent/history-conditioned internal belief representations with causal relevance are an established comparator property, not a SparkBrain novelty axis. Future new-principle claims need a stronger discriminator such as low-privilege causal lineage/locality/resource constraints. For C19, the transformer baseline remains important but external performance alone cannot settle mechanism equivalence.
 
-**SparkBrain implication:** locality, online operation, event-driven computation and forward-only learning should be constraints, not novelty evidence. P5 should measure the actual differentiator: causal-lineage resolution under equal or lower semantic/addressing/global-state privilege while matching the relevant causal dynamics.
+## Reduction map / interpretation
 
-## Reduction map
+The prior scout's eligibility-trace, pending-cause, latent-cause, learned-delay and local-learning reductions remain intact and are not repeated as new findings.
 
-- delayed selective local credit → established eligibility / three-factor / e-prop family
-- single pending historical cause → established pending/prospective causal-choice representation
-- multiple unresolved causes → established latent-cause / belief-state inference family
-- learned connection delay → established adaptive synaptic/axonal-delay family
-- local/online/forward-only learning → established local-SNN learning family
+The new C19-specific reduction pressure is:
 
-The still-unreduced residue is narrower:
+`I2 surface decomposition + hashing -> ordinary abstraction/canonicalization inductive bias`
 
-`actual anonymous historical provenance -> genuine plurality retained without explicit semantic/global belief state -> later external evidence selectively credits one lineage using only locally available causal structure -> changed future competition/world interaction`
+and downstream:
 
-No searched source in this run established that exact low-privilege mechanism. That is an unresolved distinction, not evidence of novelty.
+`belief-revision gain -> reliable explicit state tracking or ordinary Transformer belief-state representation`
 
-## Questions for Evidence Analyst
+This does **not** invalidate C19-v2. It sharpens what a positive outcome may establish: external testbed validity and useful structured representation, not a new computational principle.
 
-1. Re-audit PR #137 at current head `1bd0099f...` before any STARTED boundary; the prior exact-head readiness judgment is stale after the head move.
-2. Prospectively define P5 against two null families: minimal eligibility/return-address local memory, and explicit latent-cause/belief-state inference. Track state size, lookup radius, semantic labels, learning-signal specificity and update locus.
-3. For P4, identify what runtime object proves genuine plurality rather than several explicit IDs waiting for later singleton lookup.
-4. State what observation distinguishes local historical provenance from a conventional pending-cause pointer or explicit posterior over causes.
-5. Add the 2026 learnable-delay work to RV01’s canonical reduction map.
-6. Treat locality/online/forward-only properties as implementation constraints unless they produce a causally discriminating capability beyond equally local established baselines.
+## Knowledge-flow contract
+
+- `role`: `LITERATURE_REDUCTION_SCOUT`
+- `genuinely_new_information`: `true`
+- `affected_lines`: `C19_V2`, `PROGRAMME_NOVELTY`, `FUTURE_EXTERNAL_VALIDATION`, secondarily `A01_REFRAME`
+- `novelty_or_reduction_impact`: `C19_I2_POSITIVE_RESULT_HAS_STRONG_ORDINARY_REPRESENTATION_CANONICALIZATION_AND_EXPLICIT_STATE_REDUCTIONS; PERSISTENT_BELIEF_STATE_ITSELF_IS_NOT_NOVEL`
+- `audit_classification`: `null`
+- `prospective_baselines_or_discriminators`: identical-I2-feature stateless/shallow null; representation-matched explicit-state tracker; Update/Stay/Isolation perturbation suite; matched Transformer/recurrent belief-state comparator for future internal-state claims.
+- `questions_for_evidence_analyst`:
+  1. Does frozen `direct_stateless` consume the exact same I2 representation, or are frontend representation and downstream dynamics confounded?
+  2. Is `explicit_state_probabilistic` representation/information matched strongly enough to test the explicit-state reduction?
+  3. Preserve the current C19-v2 protocol and claim boundary; these are future prospective discriminators only.
+  4. If C19-v2 passes, explicitly separate structured-frontend gain from persistent-dynamics gain before making an architectural mechanism claim.
+- `questions_for_control_brain`:
+  1. Should post-C19 planning prioritize representation-matched static and explicit-state nulls before scaling/application work?
+  2. If C19 establishes a clean Belief-R signal, should BeliefTrack/Failed-Isolation be the next external-generalization test?
+  3. Treat the 15–16 September 2026 belief-state-geometry result as additional evidence that persistent belief state is an established comparator property.
+- `must_not_change_frozen_or_consumed`: all consumed A01/RV01/RV02/CX identities; rejected A01 Family-B/C exact objects; historical C19-v1/C06; C19-v2 scientific semantics at `90c936a7...`; `c19-external-v2-official-v1` remains unSTARTED/unconsumed until a newer execution admission.
 
 ## Handoff
 
 **Role performed:** `LITERATURE_REDUCTION_SCOUT`.  
-**Genuinely new external evidence:** yes — especially the 2025 delayed causal-choice study and the 2026 online learned-delay work materially sharpen the current P4/RV01 reduction bar.  
-**Top implication:** a positive P4 must distinguish itself from both eligibility-trace credit assignment and explicit multi-cause belief-state inference; the residual claim is about low-privilege causal provenance/resolution, not delayed credit or plurality alone.  
-**Affected lines:** A01 P2/P3/P4/P5, RV01 R01-17, programme-level novelty framing.
+**Genuinely new external scientific information:** yes — focused on the newly primary C19 line, not recycled A01/RV01 prior art.  
+**Top implication:** a future C19 I2 gain has strong ordinary explanations as abstraction/canonicalization or explicit state tracking unless a representation-matched static/state baseline separates frontend gains from persistent dynamics.  
+**Affected lines:** C19-v2, programme novelty framing, future external validation.  
