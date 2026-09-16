@@ -147,7 +147,6 @@ biological fidelity, energy efficiency, or external generalization.
 ## D-010 — Codex tasks require acceptance tests and raw artifacts
 
 **Decision:** No task is complete because code exists. It must meet explicit tests, outputs, and documentation criteria.
-
 **Reason:** The project combines research and software; unverifiable output is not useful.
 
 
@@ -597,7 +596,6 @@ candidate, and 288 unique train observation identities. Same-ID redelivery is an
 no-op, including the CC0 wrapper. Merge/split, competition, dormancy, deletion, lineage and
 unsupported-control no-ops are explicit. Bank input is only a numeric emitted vector and opaque
 observation ID; independent episode/context recurrence remains evaluator-only.
-
 Freeze next-channel MSE as the sole utility, the same eight-slot plus intercept ridge budget,
 candidate-active held-out comparisons, and train-selected usage-matched interventions. A
 candidate below three independent episodes/two contexts has null grade, not automatic CC0.
@@ -747,7 +745,6 @@ seed, the frozen recover fixture exposed an omitted composition boundary: eviden
 context stage remained active when the A recovery assessment reached the unchanged C14 gate. The
 old A-contradiction rows therefore exceeded C14's frozen contradiction ceiling before the learned
 recovery head could be evaluated.
-
 For every C15 context or assessment stage, `RevisionController` keeps the same append-only C13
 ledger and audit history but limits the C14 active candidate scope to the current stage. On a trial
 ledger, before adding the current deliveries, it deactivates active rows for the evaluated entity
@@ -1298,3 +1295,35 @@ exact-parent routing. Independent review precedes source-pin authorization.
 Resource matching is NOT_EVALUATED because exact shared operations/transient
 measurement is unavailable; fixed/learned/hidden capacity is explicitly unequal.
 This is not full MD-002, a replacement of MD-001, or Field-emergence evidence.
+
+## D-A01-BGEN1-DEV001 — Freeze Family-B Generation-1 distributed Field readiness dynamics
+
+**Decision (2026-09-16):** Record the already-fixed post-P4 Generation-1 readiness contract for
+prospective identity `a01-family-b-distributed-field-trace-gen1-v1`. The anonymous local Field
+carrier has width 4 and decay 0.5 with component-wise eligibility and signed credit state. A local
+activity step applies `e' = decay * e + a` and `c' = decay * c`. A deduplicated external return
+applies `c' = decay * c + (1 - decay) * s * (e ⊙ r)` for sign `s ∈ {-1,+1}`. Later competition
+receives only the local score `dot(c, q)`. The P3 transfer carrier is exactly
+`(eligibility, credit, decay)`.
+
+The acquisition-side `ExternalEvidenceLedger` is outside the scientific Field carrier. It exists
+only to enforce exactly-once evidence consumption, cannot affect competition or select a lineage,
+and its consumed-ID state must be exported and restored across checkpoint/restart boundaries before
+more returns are accepted. Each eligibility component and absolute credit component is bounded by
+`B = 1 / (1 - decay)`; malformed, non-finite, dimensionally invalid, or out-of-bound state fails
+closed. The readiness defaults add no clipping, softmax, normalization, learned threshold, or
+post-outcome parameter tuning.
+
+**Limitations:** This is an audit/readiness decision, not a scientific result and not a retroactive
+claim that a fully bound Family-B candidate existed before Family-A P4. `execution_admitted` remains
+false. No STARTED/control consumption, acquisition, scoring, one-way output exposure, freeze or
+preserve creation for execution, or identity consumption is authorized here. The mechanism may not
+use semantic/task labels, evaluator lookup, global belief lookup, caller-selected lineage, or any
+Family-A same-identity rescue. Valid F-only transfer, genuine bounded plurality with later selective
+differentiation, and matched explicit eligibility/return-address, recurrent causal-trace, and
+explicit latent-cause/belief-state nulls remain required prospective falsifiers for any later run.
+
+**Reason:** The Family-B dynamics, resource bound, checkpoint semantics, scoring rule, and claim
+limitations were already fixed in the Generation-1 readiness contract. This dated append-only entry
+closes the repository audit trail without changing that scientific contract. A future one-way run
+still requires exact moved-head binding/CI/review plus a fresh Evidence Analyst execution admission.
