@@ -2,7 +2,7 @@
 
 Governance inventory only. This file does **not** redefine canonical scientific status or results. Canonical science remains in git-managed research status/docs and immutable evidence. Existing legacy `freeze/*` branches remain authoritative historical anchors and must not be moved, rewritten, deleted, or force-migrated.
 
-Observed 2026-09-16 19:45 JST.
+Observed 2026-09-17 07:46 JST.
 
 | Legacy freeze branch | Exact commit SHA | Retained evidence pointer(s), when obvious |
 |---|---|---|
@@ -22,6 +22,6 @@ Observed 2026-09-16 19:45 JST.
 
 ## Prospective migration rule
 
-When safe annotated-tag creation and namespace protection are available, a legacy branch may receive a tag mirror **only** when the mapping is scientifically unambiguous and the tag points to exactly the same commit SHA. The legacy branch remains preserved after mirroring. Never retarget or delete an authoritative tag after creation/consumption.
+True annotated-tag creation is now available on `main` through `.github/workflows/create-authoritative-tag.yml`, but repository rulesets/tag-namespace protection are still absent. Legacy branch mirrors therefore remain deferred by stewardship: a mirror may be created only under an explicitly safe migration procedure, must point to the exact same commit SHA, and must never replace or remove the legacy branch. Never retarget or delete an authoritative tag after creation/consumption.
 
-Current migration status: **0 legacy branch mirrors created; 13 legacy freeze branches inventoried; Git tags = 0; repository rulesets = 0.**
+Current migration status: **0 legacy branch mirrors created; 13 legacy freeze branches inventoried and exact-SHA reverified; Git tags = 0; repository rulesets = 0.**
