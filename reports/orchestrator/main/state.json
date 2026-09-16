@@ -1,190 +1,147 @@
 {
-  "timestamp": "2026-09-17T03:36:30+09:00",
+  "timestamp": "2026-09-17T04:41:00+09:00",
   "worker_role": "main",
-  "evidence_analyst_commit": "5511d0ec124c122c08148fd139b2ccaad9b79872",
+  "evidence_analyst_commit": "9f6cb3b1cb4a5bb1a7a10f6f9b04e54c50bb1cec",
   "analyst_lanes": {
-    "main_lane": {
-      "target": "C19-v2 official-execution protocolization around exact admitted readiness object; stop before official data/STARTED/execution",
-      "branch": "research/c19-truth-free-symbolic-adapter-v2-20260917",
-      "readiness_anchor": "7ede1bfb41285ec0107136b4f6abd5e893adcacf",
-      "execution_protocol_id": "c19-external-v2-official-protocol-v1",
-      "planned_official_identity": "c19-external-v2-official-v1",
-      "one_way_execution_allowed": false,
-      "main_owns_all_critical_path_fixups": true
-    },
+    "main_lane": "C19-v2 executable one-way harness completion + exact source/runtime/package binding; one-way execution disallowed",
     "sub_lane": null,
-    "sub_fallback": null,
-    "blocked_until": "Fresh Evidence Analyst execution ADMIT/REJECT for the exact reviewable protocol package"
+    "sub_fallback": null
   },
   "consumed_prospective_contingency_branches": [
-    "ADMITTED_READINESS_PROTOCOLIZATION",
-    "PRE_START_PROTOCOL_INCOMPLETE",
-    "PRE_START_READY_FOR_EXECUTION_ADMISSION"
+    "PRE_START_HARNESS_INCOMPLETE",
+    "PRE_START_BLOCKER",
+    "PRE_START_HARNESS_INCOMPLETE"
   ],
   "main_active_claim": {
-    "frontier": "C19-v2 official execution protocolization",
+    "target": "C19-v2 executable pre-START harness readiness",
     "branch": "research/c19-truth-free-symbolic-adapter-v2-20260917",
-    "readiness_anchor": "7ede1bfb41285ec0107136b4f6abd5e893adcacf",
-    "exact_head": "90c936a7abca7eba0dac1f977753503551e73368",
-    "protocol_id": "c19-external-v2-official-protocol-v1",
-    "adapter_contract_id": "c19-belief-r-truth-free-symbolic-adapter-v1",
-    "planned_official_identity": "c19-external-v2-official-v1",
-    "status": "PRE_START_READY_FOR_EXECUTION_ADMISSION"
+    "frozen_scientific_anchor": "90c936a7abca7eba0dac1f977753503551e73368",
+    "final_head": "4ed49e9985b120486efba2db37e558848bc36fe0",
+    "planned_identity": "c19-external-v2-official-v1",
+    "status": "PRE_START_HARNESS_INCOMPLETE_REQUIRES_SCIENTIFIC_IMPLEMENTATION_BINDING"
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "control_brain_handoff": "b3e9da4b6eb65f01282db8f06f967f96e1ca8be0",
-    "evidence_analyst": "5511d0ec124c122c08148fd139b2ccaad9b79872",
-    "orchestrator_report_parent_for_persistence": "409d5356d69b9b2635dde0a8f84cbc4eabc44069",
-    "c19_readiness_anchor": "7ede1bfb41285ec0107136b4f6abd5e893adcacf",
-    "c19_protocolization_first_commit": "b37765e273aa28ce5c993d47c71ca5ad1a1ed52e",
-    "c19_exact_protocol_package_head": "90c936a7abca7eba0dac1f977753503551e73368",
-    "readiness_package_binding_blob": "d2dbfb32ba6b3babec8d7891d18c3e30f235a3cf",
-    "readiness_preregistration_blob": "0921f92c9cc29ac68f13972e24117870d159fc65",
-    "truth_free_adapter_blob": "3153fcb61d5872e93d22f30f0f1f808f856bfaeb",
+    "evidence_analyst": "9f6cb3b1cb4a5bb1a7a10f6f9b04e54c50bb1cec",
+    "control_brain": "38cfb164459cec1ae12820defe17734c2be3eb14",
+    "orchestrator_report_parent": "6c3d5cc730b057f5c852160a904a0124e22cafe7",
+    "c19_protocol_anchor": "90c936a7abca7eba0dac1f977753503551e73368",
+    "c19_final_harness_head": "4ed49e9985b120486efba2db37e558848bc36fe0",
     "official_protocol_blob": "88d2eabaf8309aa2a0266d91f7463d1a8dcdc38f",
     "official_protocol_validator_blob": "61e1c7c5cba3340796f1d89602bbffc6be7941a1",
-    "official_protocol_checker_blob": "e4506c102ec648eec20ec52a3ceaee6fda63ef5f",
-    "official_protocol_test_blob": "d0f1ebff1bb508ea5487976e48703a62b696490a",
-    "official_protocol_doc_blob": "87d61fe0421a06919bcb1bfd43a4ac590438f94e",
-    "official_protocol_binding_blob": "974b717a257ef955cdb51372349b8b2abb4fbda3",
-    "belief_r_revision": "3719f5804c63318037465fecf298a7fd78d99121",
-    "belief_r_spec_sha256": "ed092dd97a176813f011cdf007d4e34a0b9bcc7c855c22983a31ff82e7b0d63c",
-    "belief_r_expected_cache_sha256": "b584c18328965cf3eb3d36f2f9ef145c1e15c9bf57bba084982ba18df1fa4153",
-    "exact_head_ci": {
-      "run_id": 35135084743,
-      "head_sha": "90c936a7abca7eba0dac1f977753503551e73368",
-      "status": "completed",
-      "conclusion": "success"
-    },
-    "c19_started_refs_observed": [],
-    "c19_control_refs_observed": [],
-    "c19_preserve_refs_observed": [],
-    "c19_evidence_refs_observed": [],
-    "c19_freeze_refs_observed": []
+    "truth_free_adapter_blob": "3153fcb61d5872e93d22f30f0f1f808f856bfaeb",
+    "harness_source_blob": "d6e29df114450eea4f3741ca203d2b01969ce330",
+    "harness_contract_blob": "5bedb4b3da7639c37ddd4da18ed2b286e3082ec4",
+    "harness_tests_blob_initial": "24099b1e0e7b05f2000e6574df33830eae690582",
+    "harness_readiness_doc_blob": "7e02bb6d0c664a93f07d4ff2f1c26af162f9e9f"
   },
   "branches_prs_advanced": {
     "branch": "research/c19-truth-free-symbolic-adapter-v2-20260917",
-    "from": "7ede1bfb41285ec0107136b4f6abd5e893adcacf",
-    "to": "90c936a7abca7eba0dac1f977753503551e73368",
+    "from": "90c936a7abca7eba0dac1f977753503551e73368",
     "commits": [
-      "b37765e273aa28ce5c993d47c71ca5ad1a1ed52e",
-      "90c936a7abca7eba0dac1f977753503551e73368"
+      "c8ca3aa5e543917bc81b94b920d79f2a39b14ff8",
+      "554ccca0a80bb792a2c7dbef2f05ac6cb06afe88",
+      "4ed49e9985b120486efba2db37e558848bc36fe0"
     ],
     "open_prs": 0,
-    "research_pr_merges": 0
+    "merges": 0
   },
   "workflows_experiments": {
-    "push_ci_runs": [
-      {
-        "run_id": 35134632711,
-        "head_sha": "b37765e273aa28ce5c993d47c71ca5ad1a1ed52e",
-        "conclusion": "success"
-      },
-      {
-        "run_id": 35135084743,
-        "head_sha": "90c936a7abca7eba0dac1f977753503551e73368",
-        "conclusion": "success"
-      }
-    ],
-    "official_scientific_workflow_dispatches": 0,
+    "ci_failed_then_fixed": {
+      "run_id": 35140943973,
+      "head": "554ccca0a80bb792a2c7dbef2f05ac6cb06afe88",
+      "cause": "Ruff UP037 quoted return annotations in new harness"
+    },
+    "ci_final": {
+      "run_id": 35141325228,
+      "head": "4ed49e9985b120486efba2db37e558848bc36fe0",
+      "python_3_11": "success",
+      "python_3_13": "success",
+      "install": "success",
+      "lint": "success",
+      "local_readiness": "success",
+      "test": "success",
+      "validate_bundle": "success"
+    },
+    "official_workflow_dispatches": 0,
     "official_experiments_started": 0,
-    "official_data_acquisitions": 0,
-    "official_examples_read_or_verified": false,
-    "raw_prediction_artifacts": 0,
-    "scoring_runs": 0,
-    "preserve_or_evidence_authorities_created": 0
+    "official_examples_read": false,
+    "official_acquisitions": 0,
+    "official_raw_artifacts": 0,
+    "official_scores": 0,
+    "new_preserve_or_evidence_authorities": 0
   },
   "scientific_results": {
     "new_one_way_measurement": false,
-    "new_result_class": null,
-    "new_scientific_information": "No experimental outcome. New readiness/integrity information: the complete C19-v2 official-run semantics, 55-row inventory, primary discriminator, PASS/FAIL/INCONCLUSIVE/INVALID_EVIDENCE classes, baseline resource-matching/winner-claim rules, STARTED/no-clobber/raw-before-score sequence, and exact file bindings can be fixed prospectively and pass exact-head CI without official Belief-R data access.",
-    "protocol_status": "PRE_START_READY_FOR_EXECUTION_ADMISSION",
-    "official_execution_admitted": false,
-    "official_belief_r_data_accessed": false
+    "readiness_result": "Generic one-way execution integrity machinery is implementable and green on synthetic/dev fixtures, but exact C19 condition-runner and registered-baseline scientific implementation mappings are not frozen by the current authoritative protocol/source/spec.",
+    "scientific_interpretation_changed": false
   },
-  "consumed_identities": {
-    "newly_consumed_this_run": [],
-    "planned_c19_v2_identity": {
-      "identity": "c19-external-v2-official-v1",
-      "started": false,
-      "consumed": false
-    },
-    "do_not_touch_consumed": [
-      "A01 MD-001",
-      "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
-      "a01-md002-p3-r-only-causal-carrier-candidate-001-v1",
-      "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
-      "RV01 R01-16 family",
-      "rv01-r01-17-real-delay-causal-timing-v1",
-      "RV02 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
-      "CX01 Candidate-002"
-    ],
-    "unconsumed_but_closed_or_reserved": {
-      "a01-family-b-distributed-field-trace-gen1-v1": "rejected_before_started_static_reduction; no rescue/retune/rebind",
-      "a01-family-c-joint-return-local-field-gen1-v1": "rejected_before_started_static_reduction; no rescue/retune/rebind",
-      "c19-external-v2-official-v1": "fresh planned MAIN identity; no STARTED and no consumption; execution requires a newer Analyst handoff"
-    }
-  },
+  "consumed_identities": [
+    "A01 MD-001",
+    "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
+    "a01-md002-p3-r-only-causal-carrier-candidate-001-v1",
+    "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
+    "RV01 R01-16 family",
+    "rv01-r01-17-real-delay-causal-timing-v1",
+    "RV02 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
+    "CX01 Candidate-002"
+  ],
   "blockers": [
-    "Fresh Evidence Analyst execution admission is required for the exact package before official cache verification or any one-way action. There is no outstanding technical protocolization blocker."
+    {
+      "kind": "scientific_implementation_binding",
+      "target": "C19 condition executor",
+      "detail": "No exact executable mapping for I0/I1/I2 x G0/G1 x E0 is frozen at the authoritative protocol anchor."
+    },
+    {
+      "kind": "scientific_implementation_binding",
+      "target": "registered baselines",
+      "detail": "The five registered baseline names are not bound to exact factory/hyperparameter/checkpoint implementations; reusable factories alone do not resolve the registered experiment."
+    }
   ],
   "concurrency_reconciliation": {
-    "evidence_analyst_tip_before_and_after_work": "5511d0ec124c122c08148fd139b2ccaad9b79872",
-    "research_branch_final_head_rechecked": "90c936a7abca7eba0dac1f977753503551e73368",
-    "orchestrator_report_tip_observed_before_persistence": "409d5356d69b9b2635dde0a8f84cbc4eabc44069",
-    "concurrent_sub_report_observed": true,
-    "concurrent_sub_status": "NO_OP_NO_RESERVED_LANE",
-    "sub_main_collision": false,
-    "unexpected_one_way_artifacts": false,
-    "c19_started_refs_observed": [],
-    "c19_control_refs_observed": [],
-    "c19_preserve_refs_observed": [],
-    "c19_evidence_refs_observed": [],
-    "c19_freeze_refs_observed": []
+    "research_branch_rechecked_before_and_after_writes": true,
+    "unexpected_concurrent_research_movement": false,
+    "evidence_analyst_rechecked": "9f6cb3b1cb4a5bb1a7a10f6f9b04e54c50bb1cec",
+    "sub_lane_collision": false,
+    "main_blocker_delegated_to_sub": false
   },
   "integrity_status": {
-    "status": "CLEAN_PRE_START_READY_FOR_EXECUTION_ADMISSION",
-    "immutable_evidence_mutated": false,
-    "readiness_adapter_or_preregistration_mutated": false,
-    "official_cache_opened_or_verified": false,
-    "official_examples_read": false,
-    "started_created": false,
-    "workflow_dispatched": false,
+    "scientific_protocol_mutated": false,
+    "official_data_accessed": false,
+    "c19_started_created": false,
+    "c19_control_created": false,
     "identity_consumed": false,
-    "raw_or_scored_evidence_created": false,
-    "freeze_preserve_or_evidence_authority_created": false,
-    "raw_before_score_contract_fixed": true,
-    "no_clobber_contract_fixed": true,
-    "exact_package_binding_machine_verified": true,
-    "exact_head_ci": "success"
+    "raw_before_score_order_violated": false,
+    "immutable_evidence_mutated": false,
+    "one_way_execution_allowed": false
   },
   "main_critical_path_fixups_completed": [
-    "Created and froze c19-external-v2-official-protocol-v1 around immutable readiness anchor 7ede1bfb...",
-    "Fixed exact 30 C19 + 25 baseline row inventory and five official seeds",
-    "Fixed prospective primary discriminator, BREU metric, paired-bootstrap result classifications and narrow claim boundary",
-    "Fixed baseline data/optimization/parameter/compute matching and winner-claim restrictions",
-    "Fixed future execution ordering with fresh admission, STARTED before cache verification, network block, no-clobber and raw-before-score",
-    "Added source-only protocol validator/checker/tests/docs without official data access",
-    "Added exact Git-blob package binding for protocol files and immutable readiness files",
-    "Strengthened CI to recompute and verify package blob bindings",
-    "Obtained exact final-head CI success at 90c936a7..."
+    "synthetic/dev executable 55-row traversal scaffold",
+    "future-admission fail-closed gate",
+    "network-off and no-fit/no-tune/no-select runtime boundary",
+    "exact five-family baseline executor registry validation",
+    "target-blind raw record validation",
+    "no-clobber JSONL raw writer",
+    "deterministic reconstruction and SHA-256 validation",
+    "immutable preservation receipt binding",
+    "raw-before-score state-machine enforcement",
+    "Ruff UP037 lint fix",
+    "exact-head CI green on Python 3.11/3.13"
   ],
   "same_run_steps_completed": [
-    "Fresh remote/Analyst/orchestrator/control reconciliation",
-    "ADMITTED_READINESS_PROTOCOLIZATION: accepted exact readiness anchor without mutation",
-    "PRE_START_PROTOCOL_INCOMPLETE: implemented complete official protocol object and source-only validation",
-    "Ran and observed successful CI for first protocolization commit b37765e...",
-    "Re-fetched branch and Analyst tip before continuing",
-    "Strengthened exact package-binding verification without changing scientific semantics",
-    "Re-fetched branch and Analyst tip before second fast-forward",
-    "Confirmed exact final-head CI run 35135084743 success",
-    "Reconciled STARTED/control/preserve/evidence/freeze refs as absent",
-    "PRE_START_READY_FOR_EXECUTION_ADMISSION: stopped at the prospective mandatory boundary"
+    "fresh remote/Analyst/orchestrator/Control Brain reconciliation",
+    "frozen C19 source/protocol/readiness inspection",
+    "pre-START harness scaffold implementation",
+    "synthetic integrity test implementation",
+    "harness readiness contract/documentation",
+    "CI failure diagnosis and MAIN-owned lint correction",
+    "exact-head CI verification",
+    "remaining scientific implementation binding audit"
   ],
-  "same_run_stop_reason": "PRE_START_READY_FOR_EXECUTION_ADMISSION. The exact package is reviewable and green. Current Analyst handoff forbids official Belief-R access, STARTED/control, dispatch, acquisition, scoring, preservation/evidence creation and identity consumption until a fresh execution ADMIT/REJECT.",
-  "work_intentionally_left_for_sub": "None. Current Analyst sub_lane and sub_fallback are null; concurrent SUB correctly recorded a deliberate no-op.",
-  "reserved_sub_work_not_touched": [],
+  "same_run_stop_reason": "PRE_START_HARNESS_INCOMPLETE_REQUIRES_SCIENTIFIC_IMPLEMENTATION_BINDING: the remaining exact condition and baseline mappings are not fixed by the current frozen protocol/source/spec, so MAIN will not silently create new experimental semantics under this handoff.",
+  "work_intentionally_left_for_sub": null,
+  "reserved_sub_work_not_touched": true,
   "lane_repartition_reason": null,
-  "next_main_action": "Return research/c19-truth-free-symbolic-adapter-v2-20260917@90c936a7abca7eba0dac1f977753503551e73368 to Evidence Analyst for fresh execution ADMIT/REJECT. Do not execute under the current handoff."
+  "analyst_split_invalidated": false,
+  "next_main_action": "Return exact head 4ed49e9985b120486efba2db37e558848bc36fe0, green CI 35141325228, and the unresolved condition/baseline implementation bindings to Evidence Analyst for a fresh prospective decision. Do not START or execute officially under the current handoff."
 }
