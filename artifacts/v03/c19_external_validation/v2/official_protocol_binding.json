@@ -7,50 +7,18 @@
   "readiness_package_binding_blob": "d2dbfb32ba6b3babec8d7891d18c3e30f235a3cf",
   "binding_scheme": "git-blob-sha1-plus-readiness-anchor",
   "bound_files": [
-    {
-      "path": "artifacts/v03/c19_external_validation/v2/official_protocol.json",
-      "git_blob_sha1": "88d2eabaf8309aa2a0266d91f7463d1a8dcdc38f"
-    },
-    {
-      "path": "src/sparkbrain/v03_external_validation/official_protocol.py",
-      "git_blob_sha1": "61e1c7c5cba3340796f1d89602bbffc6be7941a1"
-    },
-    {
-      "path": "scripts/check_c19_v2_official_protocol.py",
-      "git_blob_sha1": "e4506c102ec648eec20ec52a3ceaee6fda63ef5f"
-    },
-    {
-      "path": "tests/test_c19_v2_official_protocol.py",
-      "git_blob_sha1": "c40f7d404cbc87684bb5152c4a482e82e4d173b9"
-    },
-    {
-      "path": "docs/C19_V2_OFFICIAL_EXECUTION_PROTOCOL.md",
-      "git_blob_sha1": "87d61fe0421a06919bcb1bfd43a4ac590438f94e"
-    }
+    {"path":"artifacts/v03/c19_external_validation/v2/official_protocol.json","git_blob_sha1":"88d2eabaf8309aa2a0266d91f7463d1a8dcdc38f"},
+    {"path":"src/sparkbrain/v03_external_validation/official_protocol.py","git_blob_sha1":"61e1c7c5cba3340796f1d89602bbffc6be7941a1"},
+    {"path":"scripts/check_c19_v2_official_protocol.py","git_blob_sha1":"e4506c102ec648eec20ec52a3ceaee6fda63ef5f"},
+    {"path":"tests/test_c19_v2_official_protocol.py","git_blob_sha1":"d0f1ebff1bb508ea5487976e48703a62b696490a"},
+    {"path":"docs/C19_V2_OFFICIAL_EXECUTION_PROTOCOL.md","git_blob_sha1":"87d61fe0421a06919bcb1bfd43a4ac590438f94e"}
   ],
   "immutable_readiness_files": [
-    {
-      "path": "artifacts/v03/c19_external_validation/v2/preregistration.json",
-      "git_blob_sha1": "0921f92c9cc29ac68f13972e24117870d159fc65"
-    },
-    {
-      "path": "src/sparkbrain/v03_external_validation/truth_free_adapter.py",
-      "git_blob_sha1": "3153fcb61d5872e93d22f30f0f1f808f856bfaeb"
-    }
+    {"path":"artifacts/v03/c19_external_validation/v2/preregistration.json","git_blob_sha1":"0921f92c9cc29ac68f13972e24117870d159fc65"},
+    {"path":"src/sparkbrain/v03_external_validation/truth_free_adapter.py","git_blob_sha1":"3153fcb61d5872e93d22f30f0f1f808f856bfaeb"}
   ],
-  "official_data_access": {
-    "cache_opened": false,
-    "cache_verified": false,
-    "examples_read": false,
-    "predictions_produced": false,
-    "scoring_performed": false
-  },
-  "one_way_state": {
-    "started_ref_created": false,
-    "workflow_dispatched": false,
-    "identity_consumed": false,
-    "freeze_or_evidence_authority_created": false
-  },
+  "official_data_access": {"cache_opened":false,"cache_verified":false,"examples_read":false,"predictions_produced":false,"scoring_performed":false},
+  "one_way_state": {"started_ref_created":false,"workflow_dispatched":false,"identity_consumed":false,"freeze_or_evidence_authority_created":false},
   "future_execution_admission_required": true,
   "stop_when_reviewable": true
 }

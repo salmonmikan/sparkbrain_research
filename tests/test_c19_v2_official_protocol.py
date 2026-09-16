@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 from pathlib import Path
 
@@ -20,10 +21,17 @@ from sparkbrain.v03_external_validation.official_protocol import (
 
 ROOT = Path(__file__).parents[1]
 PROTOCOL_PATH = ROOT / "artifacts/v03/c19_external_validation/v2/official_protocol.json"
+BINDING_PATH = ROOT / "artifacts/v03/c19_external_validation/v2/official_protocol_binding.json"
 
 
 def protocol() -> dict[str, object]:
     return json.loads(PROTOCOL_PATH.read_text(encoding="utf-8"))
+
+
+def git_blob_sha1(path: Path) -> str:
+    data = path.read_bytes()
+    header = f"blob {len(data)}\0".encode()
+    return hashlib.sha1(header + data).hexdigest()
 
 
 def test_protocol_is_prestart_and_binds_exact_readiness_anchor() -> None:
@@ -114,6 +122,19 @@ def test_baseline_winner_claim_requires_all_registered_matching_dimensions() -> 
     assert matching["optimization_update_relative_tolerance"] == 0.05
     assert matching["analytical_training_plus_inference_ops_relative_tolerance"] == 0.05
     assert matching["unmatched_baseline_role"] == "descriptive_only_no_superiority_claim"
+
+
+def test_official_protocol_package_binding_matches_tracked_blobs() -> None:
+    binding = json.loads(BINDING_PATH.read_text(encoding="utf-8"))
+    assert binding["protocol_id"] == PROTOCOL_ID
+    assert binding["planned_official_identity"] == PLANNED_IDENTITY
+    assert binding["readiness_anchor_commit"] == READINESS_ANCHOR
+    assert binding["future_execution_admission_required"] is True
+    assert binding["stop_when_reviewable"] is True
+    for record in [*binding["bound_files"], *binding["immutable_readiness_files"]]:
+        assert git_blob_sha1(ROOT / record["path"]) == record["git_blob_sha1"]
+    assert set(binding["official_data_access"].values()) == {False}
+    assert set(binding["one_way_state"].values()) == {False}
 
 
 def test_source_only_validator_accepts_exact_protocol() -> None:
