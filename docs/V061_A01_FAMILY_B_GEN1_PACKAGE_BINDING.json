@@ -5,12 +5,12 @@
   "protocol_bundle_source_sha": "7af99d6c3bbbf946f90fc01d9bc7cc7661de2006",
   "belief_state_null_id": "v061-a01-bgen1-explicit-latent-cause-belief-null-v1",
   "source_git_blobs": {
-    "src/sparkbrain/evaluation/v061_family_b_distributed_field_trace.py": "b4fd984ca2ac7e9ea263d69b234ac83608023b79",
+    "src/sparkbrain/evaluation/v061_family_b_distributed_field_trace.py": "6eafb74b6b6d28c937f460a57863e19a7382f66f",
     "src/sparkbrain/evaluation/v061_family_b_readiness.py": "f07b0cce4f5965d8045ead2775135d651f74241a",
     "src/sparkbrain/evaluation/v061_family_b_readiness_harness.py": "1f6b9bbe666ae60fcbd2df6e4009b4268291869c"
   },
   "mechanism_source_path": "src/sparkbrain/evaluation/v061_family_b_distributed_field_trace.py",
-  "mechanism_source_sha256": "45aa4a875b13bd23c53c9737cf140b1fcabec452361926b0d5116dd7b7d27c60",
+  "mechanism_source_sha256": "00d45e4b4e9e5d166387f93c073dcbd2471a124c8f577168e4e159d7392d9f24",
   "mechanism_contract_path": "docs/V061_A01_FAMILY_B_DISTRIBUTED_FIELD_TRACE_GEN1.md",
   "mechanism_contract_git_blob": "c9a9bcebd29526bd7a2988482c9a396529cb5158",
   "mechanism_contract_sha256": "42b44ad6acf2c914cc8941aecc673f48dea1b83a8db51765903cb75f9eb0fcac",

@@ -187,9 +187,22 @@ class DistributedFieldTraceState:
     @classmethod
     def from_field_carrier(
         cls,
-        carrier: tuple[tuple[float, ...], tuple[float, ...], float],
+        carrier: (
+            tuple[tuple[float, ...], tuple[float, ...], float]
+            | list[object]
+        ),
     ) -> DistributedFieldTraceState:
-        eligibility, credit, decay = carrier
+        """Restore a persisted F-only carrier while preserving immutability."""
+
+        if not isinstance(carrier, (tuple, list)) or len(carrier) != 3:
+            raise ValueError("field carrier must contain eligibility, credit, and decay")
+        eligibility_raw, credit_raw, decay = carrier
+        if not isinstance(eligibility_raw, (tuple, list)) or not isinstance(
+            credit_raw, (tuple, list)
+        ):
+            raise TypeError("field carrier vectors must be tuple or list sequences")
+        eligibility = tuple(eligibility_raw)
+        credit = tuple(credit_raw)
         state = cls(eligibility=eligibility, credit=credit, decay=decay)
         state.validate()
         return state
