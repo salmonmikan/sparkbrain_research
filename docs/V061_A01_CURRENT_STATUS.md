@@ -6,6 +6,12 @@ This document records the moving development-state interpretation of A01. Immuta
 
 A01 remains a development research line. No development result below is a formal held-out result unless explicitly marked otherwise.
 
+Current programme interpretation authority:
+
+```text
+ops/evidence-analyst-handoff@5eb075481b8a5846a5234f1d397a88fd288af861
+```
+
 ## Current scientific state
 
 ```text
@@ -15,6 +21,8 @@ Family-A P4: terminal negative development evidence, consumed
 P5 on failed Family-A P4: NOT_ADMISSIBLE
 Family-B Gen1: REJECT_BEFORE_STARTED_STATIC_REDUCTION, unconsumed
 Family-C Gen1: REJECT_BEFORE_STARTED_STATIC_REDUCTION, unconsumed
+registered-family strategic state: CLOSED / REFRAME
+machine NegativeCompletionProgramme verdict: WITHHELD
 ```
 
 The strongest interpretation remains mixed:
@@ -22,9 +30,19 @@ The strongest interpretation remains mixed:
 - P2/P3 showed that anonymous causal/provenance state can affect later local competition.
 - Family-A P4 failed selective historical-lineage resolution: merged plural ancestry changed en bloc rather than crediting only the externally supported lineage.
 - Family-B Gen1 was rejected before STARTED because its exact dynamics were statically reproduced by its equal-resource recurrent causal-trace null.
-- Family-C Gen1 was prospectively bound under a fresh Analyst handoff and then rejected before STARTED because its exact selector/update/carrier dynamics are identical to the registered equal-resource separable address-plus-Field null.
+- Family-C Gen1 was prospectively bound and then rejected before STARTED because its exact selector/update/carrier dynamics are identical to the registered equal-resource separable address-plus-Field null.
 
 The two pre-START reductions are static admission decisions, not scientific measurements, and neither consumed its one-way identity.
+
+All three registered non-privileged mechanism families now have terminal dispositions at their current tested/prospectively bound object level. No registered family remains live under the unchanged protocol at this level. The stronger claim that a novel non-privileged Field-organized anonymous causal-credit principle survives the registered simpler mechanism families is therefore not supported by the registered-family programme.
+
+This does not erase the P2/P3 development observations and does not claim that SparkBrain as a whole is impossible.
+
+Canonical strategic closeout:
+
+```text
+docs/V061_A01_REGISTERED_FAMILY_PROGRAMME_CLOSEOUT.md
+```
 
 ## Consumed A01 identities
 
@@ -37,7 +55,7 @@ a01-md002-p3-r-only-causal-carrier-candidate-001-v1
 a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1
 ```
 
-The following identities remain **unconsumed** but their exact scientific objects are rejected before STARTED and must not be executed or rescued under the same identity:
+The following identities remain **unconsumed** but their exact scientific objects are rejected before STARTED and must not be executed, rescued, retuned, or rebound under the same identity:
 
 ```text
 a01-family-b-distributed-field-trace-gen1-v1
@@ -78,10 +96,11 @@ Plural merged ancestry was retained, but the separating assays did not isolate c
 
 ## Family-B Generation-1 pre-START closeout
 
-Branch:
+Branch authority:
 
 ```text
 research/v061-a01-family-b-gen1-execution-package-20260916
+  -> db66596ed4479e8dac8b713b4f92a73f76a25047
 ```
 
 Identity:
@@ -106,16 +125,11 @@ The candidate and its resource-matched recurrent causal-trace null implement the
 
 ## Family-C Generation-1 pre-START closeout
 
-Analyst authority:
-
-```text
-d295a61d37903f1b7c34fd793c6aa6a6e25c5cb6
-```
-
-Branch:
+Branch authority:
 
 ```text
 research/v061-a01-family-c-gen1-20260917
+  -> cfe1c3e5506d9fd8b41028dbfe0f8a8dd31a82c5
 ```
 
 Identity:
@@ -152,22 +166,17 @@ The exact Gen1 object uses the actual anonymous pending causal-provenance capabi
 
 No Family-C STARTED/control, workflow dispatch, acquisition, raw/scored evidence, preserve/freeze/formal/evidence authority, or identity consumption occurred.
 
-## Prospectivity boundary
+## Registered-family programme closeout
 
-The governing documents remain:
+The governing family protocol still registers exactly:
 
 ```text
-docs/V061_PREMECHANISM_ADMISSION_AND_NEGATIVE_COMPLETION.md
-docs/V061_P3_P5_CAUSAL_CREDIT_DISCRIMINATION_PROTOCOL.md
-docs/V061_CROSS_LINE_EVIDENCE_FIREWALL_AND_PREMECHANISM_MATRIX.md
-docs/V061_A01_POST_P4_ADMISSION_AUDIT.md
-docs/V061_A01_FAMILY_B_GEN1_PRESTART_REDUCTION_DECISION.md
-docs/V061_A01_FAMILY_C_JOINT_RETURN_LOCAL_FIELD_GEN1.md
-docs/V061_A01_FAMILY_C_NULL_LADDER_GEN1.md
-docs/V061_A01_FAMILY_C_GEN1_PRESTART_REDUCTION_DECISION.md
+1. transient-return-address
+2. distributed-field-trace
+3. joint-return-and-local-field-update
 ```
 
-All three registered non-privileged families now have terminal dispositions at the tested/prospectively bound object level:
+Their current terminal map is:
 
 ```text
 transient-return-address:
@@ -180,17 +189,44 @@ joint-return-and-local-field-update:
     Family-C Gen1 pre-START static reduction
 ```
 
-This status document does **not** itself declare programme negative completion. The Evidence Analyst must reconcile the negative-completion protocol, terminal disposition bookkeeping, and the independently reserved SUB A/B bookkeeping audit before making any programme-level conclusion.
+Accordingly, the registered-family search is strategically closed at the current tested/bound-object level and reframed rather than immediately rescued with a post-outcome successor.
 
-## Current next action
+The machine `NegativeCompletionProgramme` verdict remains **WITHHELD**. The current `CandidateDisposition` schema cannot faithfully represent Family-B or Family-C pre-START terminal states without fabricating P1-P4 phase outcomes, and `completed_families` is not evidence-backed cross-validation. No synthetic disposition and no retroactive evaluator/stop-rule change is permitted to force a formal machine verdict.
 
-The current MAIN scientific object is terminal before STARTED. MAIN must return to the Evidence Analyst before any successor design, Generation-2 object, altered null/resource contract, or one-way execution.
+## Strategic reframe
+
+The next portfolio-level framing is SparkBrain as an integrative experimental cognitive architecture/testbed. Existing P2/P3 observations and component mechanisms remain useful objects of study, while the current A01 registered-family programme is not evidence for a novel irreducible Field-organized causal-credit principle.
+
+This reframe is not authorization for a new scientific object. Family-C Gen2, Family-D, a non-separable replacement, changed null/resource accounting, a changed scorer, or any one-way execution requires a fresh prospective Evidence Analyst cycle.
+
+## Prospectivity and integrity boundary
+
+The governing documents include:
+
+```text
+docs/V061_PREMECHANISM_ADMISSION_AND_NEGATIVE_COMPLETION.md
+docs/V061_P3_P5_CAUSAL_CREDIT_DISCRIMINATION_PROTOCOL.md
+docs/V061_CROSS_LINE_EVIDENCE_FIREWALL_AND_PREMECHANISM_MATRIX.md
+docs/V061_A01_POST_P4_ADMISSION_AUDIT.md
+docs/V061_A01_FAMILY_B_GEN1_PRESTART_REDUCTION_DECISION.md
+docs/V061_A01_FAMILY_C_JOINT_RETURN_LOCAL_FIELD_GEN1.md
+docs/V061_A01_FAMILY_C_NULL_LADDER_GEN1.md
+docs/V061_A01_FAMILY_C_GEN1_PRESTART_REDUCTION_DECISION.md
+docs/V061_A01_REGISTERED_FAMILY_PROGRAMME_CLOSEOUT.md
+```
+
+Current boundary:
 
 ```text
 Family-A consumed identities: DO NOT TOUCH
-Family-B Gen1 exact object: EXECUTION/RESCUE FORBIDDEN
-Family-C Gen1 exact object: EXECUTION/RESCUE FORBIDDEN
-Family-C Gen1 identity consumption: NO — remains unconsumed
-Family-C Gen2 / replacement design in this run: FORBIDDEN
-programme negative completion declaration in this run: FORBIDDEN
+Family-B Gen1 exact object: EXECUTION/RESCUE/RETUNE/REBIND FORBIDDEN
+Family-C Gen1 exact object: EXECUTION/RESCUE/RETUNE/REBIND FORBIDDEN
+Family-B/C identity consumption: NO — remain unconsumed
+machine negative-completion verdict: WITHHELD
+Gen2 / Family-D / replacement design in this run: FORBIDDEN
+new one-way execution in this run: FORBIDDEN
 ```
+
+## Current next action
+
+The canonical registered-family closeout is the current MAIN target. Once its documentation/status integration and semantics-preserving exact-head CI are complete, MAIN must stop and return to the Evidence Analyst / Control Brain portfolio cycle. No same-run successor design is authorized.
