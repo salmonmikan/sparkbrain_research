@@ -46,8 +46,10 @@ Scored preserved evidence:
 
 - `preserve/rv01-r01-17-real-delay-scored-20260915@d4737d52ecbb2306d9f00f99366f0ad6424327be`
 - score path: `artifacts/rv01/r01-17/development/rv01-r01-17-real-delay-causal-timing-v1/score.json`
-- raw suite SHA-256: `7d6642bf16364c2a67acdf979324d0da59dcd7bbdc508c5f8773b6c654803dc2`
-- score SHA-256: `b76f3c7b3ec29f97ea69de30c6fb0e3c171c1eaa0e80699bf8055c3586ded76e`
+- raw-suite embedded payload SHA-256: `7d6642bf16364c2a67acdf979324d0da59dcd7bbdc508c5f8773b6c654803dc2`
+- scored-worlds embedded payload SHA-256: `b76f3c7b3ec29f97ea69de30c6fb0e3c171c1eaa0e80699bf8055c3586ded76e`
+
+The two SHA-256 values above are protocol-embedded digests over the producer's canonical payload subsets (`worlds` and `scored_worlds` respectively), not byte-level SHA-256 checksums of the indented `raw.json` or `score.json` artifact files.
 
 ## R01-17 scored development result
 
