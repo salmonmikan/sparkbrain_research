@@ -102,7 +102,8 @@ def test_i0_i1_and_adapter_receive_exact_same_visible_byte_budget() -> None:
     encoded = BeliefRTruthFreeSymbolicAdapter().encode(value)
     i0 = whole_hash_visible_input(value)
     i1 = compositional_visible_input(value)
-    assert encoded.input_bytes == i0.input_bytes == i1.input_bytes == len(envelope.encode("utf-8"))
+    expected_bytes = len(envelope.encode("utf-8"))
+    assert encoded.input_bytes == i0.input_bytes == i1.input_bytes == expected_bytes
 
 
 def test_registered_synthetic_probe_is_not_exact_i0_or_i1_feature_equivalence() -> None:
@@ -128,7 +129,9 @@ def test_source_index_is_preserved_not_inferred_from_surface_text() -> None:
     assert second_events[0] == ("source_index", 0, "1")
     assert first.question == second.question
     assert first.choices == second.choices
-    assert BeliefRTruthFreeSymbolicAdapter().encode(first).feature_hash != BeliefRTruthFreeSymbolicAdapter().encode(second).feature_hash
+    first_hash = BeliefRTruthFreeSymbolicAdapter().encode(first).feature_hash
+    second_hash = BeliefRTruthFreeSymbolicAdapter().encode(second).feature_hash
+    assert first_hash != second_hash
 
 
 def test_v2_preregistration_forbids_official_access_and_oracle_conditions() -> None:

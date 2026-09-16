@@ -56,7 +56,9 @@ class TruthFreeBeliefRInput:
             raise ValueError("question must contain the registered query marker exactly once")
         if not isinstance(self.choices, tuple) or len(self.choices) != 3:
             raise ValueError("choices must be an ordered three-string tuple")
-        if any(not isinstance(choice, str) or not choice.strip() for choice in self.choices):
+        if any(
+            not isinstance(choice, str) or not choice.strip() for choice in self.choices
+        ):
             raise ValueError("choices must contain three non-empty strings")
 
 
@@ -70,8 +72,11 @@ def canonical_visible_envelope(value: TruthFreeBeliefRInput) -> str:
     """Return the exact data-matched envelope supplied to every autonomous condition."""
 
     value.validate()
+    choices = {
+        name: choice for name, choice in zip(_CHOICE_NAMES, value.choices, strict=True)
+    }
     payload = {
-        "choices": {name: choice for name, choice in zip(_CHOICE_NAMES, value.choices, strict=True)},
+        "choices": choices,
         "question": value.question,
         "source_index": value.source_index,
         "step_index": value.step_index,
