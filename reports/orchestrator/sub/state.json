@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-16T14:11:00+09:00",
+  "timestamp": "2026-09-16T14:16:00+09:00",
   "worker_role": "sub",
   "evidence_analyst_commit": "565c6731c0ffb083510101c67c143c3311a04430",
   "consumed_lanes": {
@@ -8,7 +8,7 @@
     "sub_fallback": "Reconcile RV01 PR #140 with canonical project status so consumed R01-17 cannot appear runnable"
   },
   "selected_independent_lane": {
-    "target": "CX01 PR #143 final audit-reproducibility wording fix and exact-head integration",
+    "target": "CX01 PR #143 documentation integrity and exact-head integration",
     "branch": "research/cx01-status-evidence-consolidation-sub-20260916",
     "pr": 143,
     "reservation_status": "reserved_for_sub",
@@ -21,7 +21,7 @@
     "branch": "research/cx01-status-evidence-consolidation-sub-20260916",
     "pr": 143,
     "head": "69c584bfe273a432e192cd5873685047e432d703",
-    "status": "FIX_APPLIED_AWAITING_EXACT_HEAD_CI_AND_REVIEW"
+    "status": "CI_GREEN_EXACT_HEAD_REVIEW_FOUND_ONE_NEW_LEDGER_P2_UNMERGED"
   },
   "main_work_explicitly_avoided": [
     "A01 family-B distributed-field-trace Generation-1 proposal/readiness",
@@ -74,32 +74,32 @@
       {
         "id": 35058441953,
         "name": "ci",
-        "status": "in_progress",
-        "conclusion": null,
-        "detail": "Python 3.11 and 3.13 jobs passed install/lint/local-readiness and were in tests at last fetch"
+        "status": "completed",
+        "conclusion": "success"
       }
     ],
     "exact_head_codex_review": {
       "head": "69c584bfe273a432e192cd5873685047e432d703",
-      "status": "running"
+      "status": "completed_with_one_new_p2",
+      "finding": "RESULTS_LEDGER Candidate-002 integrity sentence blanket-prohibits rescoring and must distinguish forbidden modified-policy/modified-evidence rescore from permitted unchanged-frozen-policy immutable-raw read-only recomputation"
     }
   },
   "scientific_results": [],
   "scientific_readiness_results": [
     "No new scientific measurement was produced.",
-    "Corrected the final documented audit boundary so Candidate-002 remains terminal/no-reuse while immutable-raw, unchanged-frozen-policy read-only recomputation remains permitted.",
+    "Corrected runbook and implementation-status audit boundaries so Candidate-002 remains terminal/no-reuse while immutable-raw, unchanged-frozen-policy read-only recomputation remains permitted.",
     "Reverified exact Candidate-002 source/package/STARTED/preserve refs without mutation.",
-    "Resolved the previously open P2 review thread after applying the exact wording fix.",
-    "PR #143 remains documentation-only and independent of MAIN."
+    "Both exact-head ci and cx01-development are green.",
+    "Fresh exact-head review found one remaining results-ledger documentation consistency defect; no merge occurred."
   ],
   "consumed_identities": [
     "cx01-candidate-002"
   ],
   "consumed_identities_this_run": [],
   "blockers": [
-    "Exact-head ci run 35058441953 is still in progress.",
-    "Exact-head Codex review for 69c584b is still running.",
-    "Merge must wait for fresh exact-head re-fetch after checks/review finish."
+    "PR #143 has one unresolved substantive P2 in docs/RESULTS_LEDGER.md: the integrity line must permit unchanged-policy immutable-raw read-only recomputation while forbidding modified-policy/modified-evidence rescoring.",
+    "The available connected GitHub text-file writer performs whole-file replacement rather than a line/patch edit; performing a whole-file rewrite of the large append-only scientific ledger without a trustworthy byte-preserving local checkout was rejected as an unnecessary corruption risk.",
+    "PR #143 must not merge until the ledger wording is safely corrected and the resulting exact head is re-reviewed."
   ],
   "collision_reconciliation": {
     "main_lane_collision": false,
@@ -117,20 +117,26 @@
     "same_identity_rerun_or_retune": false,
     "modified_policy_or_evidence_rescore": false,
     "main_critical_path_modified": false,
-    "overall": "clean_docs_only_fix_awaiting_validation"
+    "unsafe_whole_ledger_rewrite_avoided": true,
+    "overall": "clean_docs_only_progress_unmerged_due_fresh_review_finding"
   },
   "completion_target": {
     "target": "PR #143 has zero unresolved substantive review findings, exact-head ci and cx01-development green, and frozen-policy audit reproduction wording is consistent",
     "reached": false,
+    "achieved": [
+      "exact-head ci green",
+      "exact-head cx01-development green",
+      "runbook and implementation-status wording consistent"
+    ],
     "remaining": [
-      "ci completion",
-      "exact-head Codex review completion",
-      "fresh merge-safety audit and exact-head integration if clean"
+      "safe RESULTS_LEDGER wording correction",
+      "fresh exact-head Codex review with zero substantive findings",
+      "fresh merge-safety audit and exact-head integration"
     ]
   },
   "fallback_status": {
     "target": "RV01 PR #140 canonical project-status reconciliation",
-    "status": "reserved_not_used_primary_still_active"
+    "status": "reserved_not_used_primary_still_valid"
   },
   "rejected_lane": null,
   "lane_rejected_reason": null
