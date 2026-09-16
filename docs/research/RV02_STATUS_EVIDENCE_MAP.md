@@ -34,7 +34,7 @@ Authoritative anchors re-verified from the current remote repository:
 | Preflight control | `control/rv02-rd005-d1-preflight-c60b7fd8-20260914` | `096ddb8c65f342866839a2cb135d45e36ec1aabf` |
 | STARTED boundary | `control/rv02-rd005-d1-started-96634541-20260914` | `2535b6312a091f7da4efa10c064c285bdeda7eaf` |
 | Raw outcome preserve | `preserve/rv02-rd005-d1-96634541-20260914` | `d1fdd67ea197b879c52942c4a34e7d39a0a40698` |
-| Post-outcome audit | `review/rv02-rd005-d1-terminal-outcome-20260914` | `262a56f8d2a0f482166ee0e621305ceef6caeb0c` |
+| Post-outcome audit | `review/rv02-rd005-d1-terminal-outcome-20260914` | `a02768b18fa290f249b7c488c896fad79f9ca409` |
 
 The post-outcome audit document is:
 
