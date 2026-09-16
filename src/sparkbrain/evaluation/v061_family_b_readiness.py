@@ -16,6 +16,7 @@ from .v061_premechanism_admission import assess_premechanism_admission
 EXPECTED_PROPOSAL_SPECIFICATION_HASH = (
     "357f4a500164d31a3a851edc77c0870d3b59930c1766c1769671e9bdaf6ecf14"
 )
+EXPECTED_BELIEF_STATE_NULL_ID = "v061-a01-bgen1-explicit-latent-cause-belief-null-v1"
 EXPECTED_PROTOCOL_IDS = frozenset(
     {
         "v061-a01-bgen1-lineage-swap-v1",
@@ -29,7 +30,7 @@ EXPECTED_NULL_IDS = frozenset(
     {
         "v061-a01-bgen1-explicit-eligibility-return-address-null-v1",
         "v061-a01-bgen1-resource-matched-recurrent-causal-trace-null-v1",
-        BELIEF_STATE_NULL_ID,
+        EXPECTED_BELIEF_STATE_NULL_ID,
     }
 )
 EXPECTED_NEGATIVE_STOP_ID = "v061-a01-bgen1-stop-f-only-failure-or-null-reduction-v1"
@@ -80,7 +81,10 @@ def assess_family_b_gen1_readiness() -> FamilyBGen1ReadinessAssessment:
     proposal_identity_fixed = proposal.proposal_id == PROPOSAL_ID
     spec_path_fixed = proposal.mechanism_rule_spec_path == MECHANISM_RULE_SPEC_PATH
     protocols_fixed = protocol_ids == EXPECTED_PROTOCOL_IDS
-    nulls_fixed = null_ids == EXPECTED_NULL_IDS
+    nulls_fixed = (
+        null_ids == EXPECTED_NULL_IDS
+        and BELIEF_STATE_NULL_ID == EXPECTED_BELIEF_STATE_NULL_ID
+    )
     stop_fixed = proposal.negative_stop_observation_id == EXPECTED_NEGATIVE_STOP_ID
 
     requirements = (
