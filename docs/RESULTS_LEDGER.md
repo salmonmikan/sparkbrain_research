@@ -533,7 +533,7 @@ preparation are integrated; public release readiness is not claimed.
 **Repository validation:** `python scripts/validate_release.py --preparation-only`
 
 **Archive validation:** extracted package without `.git`; local readiness, offline reproduction
-to an empty path outside the archive root, preparation validation, and the full packaged
+to an empty path outside the archive root, release preparation validation, and the full packaged
 test suite
 
 **Private review command:**
