@@ -1,0 +1,59 @@
+{
+  "execution_harness_id": "c19-external-v2-official-harness-v1",
+  "fixed_inventory": {
+    "baseline_rows": 25,
+    "c19_rows": 30,
+    "total_rows": 55
+  },
+  "frozen_protocol_head": "90c936a7abca7eba0dac1f977753503551e73368",
+  "implementation_bindings": {
+    "baseline_executors": {
+      "existing_reusable_factory_source": "src/sparkbrain/baselines/neural/models.py",
+      "families": [
+        "direct_stateless",
+        "explicit_state_probabilistic",
+        "modular_rim_like",
+        "recurrent",
+        "transformer"
+      ],
+      "reason": "Factory code exists for several neural families, but the exact C19-v2 family-to-factory/hyperparameter/checkpoint mapping is not frozen by the protocol.",
+      "status": "UNBOUND_SCIENTIFIC_IMPLEMENTATION"
+    },
+    "condition_executor": {
+      "reason": "No exact executable C19 I0/I1/I2 × G0/G1 E0 condition runner is frozen at the protocol anchor.",
+      "status": "UNBOUND_SCIENTIFIC_IMPLEMENTATION"
+    },
+    "preserver": {
+      "interface": "sparkbrain.v03_external_validation.official_execution:Preserver",
+      "status": "BOUND_INTERFACE_ONLY"
+    },
+    "raw_writer": "sparkbrain.v03_external_validation.official_execution:write_raw_jsonl_no_clobber",
+    "reconstructor": "sparkbrain.v03_external_validation.official_execution:reconstruct_raw_jsonl",
+    "scorer": {
+      "interface": "sparkbrain.v03_external_validation.official_execution:Scorer",
+      "status": "BOUND_INTERFACE_ONLY"
+    }
+  },
+  "official_data_accessed": false,
+  "official_execution_allowed": false,
+  "planned_official_identity": "c19-external-v2-official-v1",
+  "protocol_id": "c19-external-v2-official-protocol-v1",
+  "runtime_boundary": {
+    "harness_runtime_dependencies": "stdlib_only",
+    "network_allowed": false,
+    "official_fit_tune_select_allowed": false,
+    "python_requires": ">=3.11"
+  },
+  "schema_version": "1",
+  "state_machine": [
+    "fresh_execution_admission",
+    "STARTED_exact_package",
+    "cache_verification",
+    "acquisition",
+    "target_blind_raw_write",
+    "immutable_raw_preservation",
+    "scoring_from_preserved_raw"
+  ],
+  "status": "prestart_harness_scaffold_not_execution_admitted",
+  "stop_reason_if_remaining_unbound": "PRE_START_HARNESS_INCOMPLETE_REQUIRES_SCIENTIFIC_IMPLEMENTATION_BINDING"
+}
