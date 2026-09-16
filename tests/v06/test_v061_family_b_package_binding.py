@@ -8,6 +8,7 @@ from sparkbrain.evaluation.v061_family_b_distributed_field_trace import (
     FAMILY_B_GEN1_PROPOSAL,
 )
 from sparkbrain.evaluation.v061_family_b_readiness import (
+    EXPECTED_BELIEF_STATE_NULL_ID,
     EXPECTED_PROPOSAL_SPECIFICATION_HASH,
 )
 
@@ -39,6 +40,7 @@ def test_family_b_package_binding_matches_exact_source_and_input_bytes() -> None
         binding["protocol_bundle_source_sha"]
         == FAMILY_B_GEN1_PROPOSAL.protocol_bundle_source_sha
     )
+    assert binding["belief_state_null_id"] == EXPECTED_BELIEF_STATE_NULL_ID
     assert _sha256(source_path) == binding["mechanism_source_sha256"]
     assert _sha256(input_path) == binding["readiness_input_sha256"]
     assert _git_blob_sha(input_path) == binding["readiness_input_git_blob"]
