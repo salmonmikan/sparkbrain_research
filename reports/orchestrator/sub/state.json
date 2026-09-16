@@ -1,63 +1,61 @@
 {
-  "timestamp": "2026-09-16T12:41:33+09:00",
+  "timestamp": "2026-09-16T14:11:00+09:00",
   "worker_role": "sub",
-  "evidence_analyst_commit": "8ce038e437ebd0bd2ca0514b392005034f2a298f",
-  "main_report_commit_consumed": "5d0acd8260290d5147f99063b944173f1fd9f0cd",
-  "sub_report_prior_commit_consumed": "4956a940baa1f18d4e3b42aedcde0e0f7e106878",
+  "evidence_analyst_commit": "565c6731c0ffb083510101c67c143c3311a04430",
   "consumed_lanes": {
     "main_lane": "A01 family-B distributed-field-trace Generation-1 prospective proposal and implementation-readiness package",
-    "sub_lane": "CX01 candidate-002 formal-negative status/evidence-map consolidation",
-    "sub_fallback": "RV01 reduction-context augmentation using the existing canonical status package"
+    "sub_lane": "Finish CX01 PR #143 by correcting final audit-reproducibility wording defect and completing exact-head review/integration",
+    "sub_fallback": "Reconcile RV01 PR #140 with canonical project status so consumed R01-17 cannot appear runnable"
   },
   "selected_independent_lane": {
-    "target": "CX01 candidate-002 formal-negative status/evidence-map consolidation",
-    "selection": "primary",
+    "target": "CX01 PR #143 final audit-reproducibility wording fix and exact-head integration",
+    "branch": "research/cx01-status-evidence-consolidation-sub-20260916",
+    "pr": 143,
     "reservation_status": "reserved_for_sub",
     "independent_of_main_critical_path": true
   },
   "independent_of_main_critical_path": true,
   "execution_allowed": false,
   "sub_active_claim": {
-    "target": "CX01 candidate-002 formal-negative status/evidence-map consolidation",
+    "target": "CX01 Candidate-002 documentation integration",
     "branch": "research/cx01-status-evidence-consolidation-sub-20260916",
     "pr": 143,
-    "head": "aa99a4ccf9df0b050016841332802fa297d68ea8",
-    "status": "COMPLETION_TARGET_REACHED_REVIEWABLE_PR_OPEN"
+    "head": "69c584bfe273a432e192cd5873685047e432d703",
+    "status": "FIX_APPLIED_AWAITING_EXACT_HEAD_CI_AND_REVIEW"
   },
   "main_work_explicitly_avoided": [
-    "A01 family-B distributed-field-trace Generation-1 proposal/readiness package",
-    "any A01 family-B implementation, verifier, CI, binding, review, or package blocker",
+    "A01 family-B distributed-field-trace Generation-1 proposal/readiness",
+    "all A01 family-B implementation/verifier/CI/binding/review/package blockers",
     "all consumed A01 P2/P3/P4 identities and immutable refs",
-    "family-C successor work blocked by the current Analyst handoff"
+    "family-C successor work"
   ],
   "authoritative_refs": {
-    "cx01_research_base": "research/cx01-comparator-extension@0687c8db3efb8180c8599d32235751b93f3c1f77",
-    "cx01_candidate_002_source_freeze": "freeze/cx01-002-source@e8483968ce43076b4c3fd04c76e62106e2031769",
-    "cx01_candidate_002_package_freeze": "freeze/cx01-002-package@c104be281285d52a732d5366fe36209d5688d973",
-    "cx01_candidate_002_started": "control/cx01-candidate-002-started-20260913@8216d41a57e6933443d38dfc8d93f9188e423d0c",
-    "cx01_candidate_002_formal_preserve": "preserve/cx01-candidate-002-formal-34742073336@6d45928827209cd763a2879494d85838df38b96f",
-    "cx01_candidate_002_analysis": "preserved-evidence/cx01/candidate-002/run-34742073336/analysis.json",
-    "analyst_handoff": "ops/evidence-analyst-handoff@8ce038e437ebd0bd2ca0514b392005034f2a298f"
+    "evidence_analyst": "ops/evidence-analyst-handoff@565c6731c0ffb083510101c67c143c3311a04430",
+    "control_brain": "ops/control-brain-handoff@cd378adcc8636f5794ac56ffcbaacd037e5c8088",
+    "main_report_consumed": "5d0acd8260290d5147f99063b944173f1fd9f0cd",
+    "sub_report_prior": "f862937819537626c67aeb78ff67bee40e37070b",
+    "cx01_source_freeze": "freeze/cx01-002-source@e8483968ce43076b4c3fd04c76e62106e2031769",
+    "cx01_package_freeze": "freeze/cx01-002-package@c104be281285d52a732d5366fe36209d5688d973",
+    "cx01_started": "control/cx01-candidate-002-started-20260913@8216d41a57e6933443d38dfc8d93f9188e423d0c",
+    "cx01_formal_preserve": "preserve/cx01-candidate-002-formal-34742073336@6d45928827209cd763a2879494d85838df38b96f"
   },
   "branches_prs_advanced": [
     {
       "branch": "research/cx01-status-evidence-consolidation-sub-20260916",
-      "base": "0687c8db3efb8180c8599d32235751b93f3c1f77",
-      "commit": "aa99a4ccf9df0b050016841332802fa297d68ea8",
-      "files": [
-        "docs/CX01_CANDIDATE_002_FORMAL_STATUS.md"
-      ]
+      "commit": "d49609294c545c0f4c4928aee516f0c0847effaf",
+      "change": "CX01_FORMAL_RUNBOOK audit/reproducibility boundary"
+    },
+    {
+      "branch": "research/cx01-status-evidence-consolidation-sub-20260916",
+      "commit": "69c584bfe273a432e192cd5873685047e432d703",
+      "change": "CX01_IMPLEMENTATION_STATUS audit/reproducibility boundary"
     },
     {
       "pr": 143,
-      "title": "docs(cx01): consolidate candidate-002 formal negative status",
-      "base": "research/cx01-comparator-extension",
-      "head": "research/cx01-status-evidence-consolidation-sub-20260916",
-      "head_sha": "aa99a4ccf9df0b050016841332802fa297d68ea8",
       "state": "open",
-      "mergeable_at_last_check": true,
-      "changed_files": 1,
-      "behavior_change": false
+      "mergeable": true,
+      "head": "69c584bfe273a432e192cd5873685047e432d703",
+      "merged": false
     }
   ],
   "workflows_experiments": {
@@ -65,63 +63,74 @@
     "one_way_workflow_dispatched": false,
     "new_started_ref": null,
     "new_scoring": false,
+    "candidate_output_acquired": false,
     "repository_validation": [
       {
-        "id": 35053116611,
-        "name": "ci",
-        "status_at_last_check": "in_progress"
+        "id": 35058441893,
+        "name": "cx01-development",
+        "status": "completed",
+        "conclusion": "success"
       },
       {
-        "id": 35053116671,
-        "name": "cx01-development",
-        "status_at_last_check": "in_progress"
+        "id": 35058441953,
+        "name": "ci",
+        "status": "in_progress",
+        "conclusion": null,
+        "detail": "Python 3.11 and 3.13 jobs passed install/lint/local-readiness and were in tests at last fetch"
       }
-    ]
+    ],
+    "exact_head_codex_review": {
+      "head": "69c584bfe273a432e192cd5873685047e432d703",
+      "status": "running"
+    }
   },
   "scientific_results": [],
   "scientific_readiness_results": [
     "No new scientific measurement was produced.",
-    "Consolidated the preserved Candidate-002 formal-negative result into a current canonical status/evidence map.",
-    "Reverified 420 formal executions and the non-compensatory all-family policy boundary from existing preserved evidence.",
-    "Recorded all seven evaluated comparator decisions as unsupported under the frozen formal policy, with at least one required family at pass fraction 0.0 for each comparator.",
-    "Bounded the interpretation to the exact frozen candidate/comparator/protocol contract rather than the whole SparkBrain programme.",
-    "Recorded the exact source/package freeze, STARTED/control, formal preserve, preserved analysis, and terminal no-rerun boundary.",
-    "Left historical pre-execution CX01 documents untouched while marking their Candidate-002 not-opened state as historical rather than current."
+    "Corrected the final documented audit boundary so Candidate-002 remains terminal/no-reuse while immutable-raw, unchanged-frozen-policy read-only recomputation remains permitted.",
+    "Reverified exact Candidate-002 source/package/STARTED/preserve refs without mutation.",
+    "Resolved the previously open P2 review thread after applying the exact wording fix.",
+    "PR #143 remains documentation-only and independent of MAIN."
   ],
   "consumed_identities": [
     "cx01-candidate-002"
   ],
   "consumed_identities_this_run": [],
   "blockers": [
-    "PR #143 repository validation remained in progress at the last check; review/merge therefore remains pending but does not block MAIN."
+    "Exact-head ci run 35058441953 is still in progress.",
+    "Exact-head Codex review for 69c584b is still running.",
+    "Merge must wait for fresh exact-head re-fetch after checks/review finish."
   ],
   "collision_reconciliation": {
-    "current_analyst_main_lane": "A01 family-B distributed-field-trace Generation-1 prospective proposal and implementation-readiness package",
-    "durable_main_stream_is_older_than_current_analyst_allocation": true,
-    "sub_lane_remained_independent": true,
-    "main_sub_branch_or_identity_collision": false,
-    "main_reserved_sub_work_was_untouched": true,
-    "ops_report_branch_at_start": "4956a940baa1f18d4e3b42aedcde0e0f7e106878"
+    "main_lane_collision": false,
+    "main_work_touched": false,
+    "reserved_sub_lane_valid": true,
+    "sub_fallback_entered": false,
+    "concurrent_pr_head_at_start": "8c7088dcbf3821678eb37851eb161db660c16e38",
+    "current_pr_head": "69c584bfe273a432e192cd5873685047e432d703"
   },
   "integrity_state": {
     "immutable_refs_modified": false,
+    "formal_evidence_modified": false,
     "scientific_execution_performed": false,
     "identity_consumed_this_run": false,
     "same_identity_rerun_or_retune": false,
+    "modified_policy_or_evidence_rescore": false,
     "main_critical_path_modified": false,
-    "formal_evidence_mutated": false,
-    "overall": "clean_docs_only"
+    "overall": "clean_docs_only_fix_awaiting_validation"
   },
   "completion_target": {
-    "target": "reviewable canonical CX01 candidate-002 formal-negative evidence-map package",
-    "reached": true,
-    "branch": "research/cx01-status-evidence-consolidation-sub-20260916",
-    "commit": "aa99a4ccf9df0b050016841332802fa297d68ea8",
-    "pr": 143
+    "target": "PR #143 has zero unresolved substantive review findings, exact-head ci and cx01-development green, and frozen-policy audit reproduction wording is consistent",
+    "reached": false,
+    "remaining": [
+      "ci completion",
+      "exact-head Codex review completion",
+      "fresh merge-safety audit and exact-head integration if clean"
+    ]
   },
   "fallback_status": {
-    "target": "RV01 reduction-context augmentation using the existing canonical status package",
-    "status": "unused_because_primary_completed"
+    "target": "RV01 PR #140 canonical project-status reconciliation",
+    "status": "reserved_not_used_primary_still_active"
   },
   "rejected_lane": null,
   "lane_rejected_reason": null
