@@ -1,19 +1,16 @@
 {
-  "timestamp": "2026-09-17T01:39:45+09:00",
+  "timestamp": "2026-09-17T02:58:09+09:00",
   "worker_role": "sub",
-  "Evidence Analyst commit": "5eb075481b8a5846a5234f1d397a88fd288af861",
+  "evidence_analyst_commit": "53a1a3cd9dc8b1c657ff056f517278cf3c0b4d00",
   "consumed_lanes": {
     "main_lane": {
-      "target": "A01 registered-family programme closeout and strategic reframe",
-      "owner": "main",
-      "observed_branch": "research/v061-a01-registered-family-closeout-20260917@3329d15d9a3f73555396fb93a4dab117616e7bc2",
-      "observed_current_status": "CLOSEOUT_COMPLETE",
+      "target": "C19-v2 truth-free symbolic-adapter readiness",
+      "branch": "research/c19-truth-free-symbolic-adapter-v2-20260917",
+      "head_observed": "7ede1bfb41285ec0107136b4f6abd5e893adcacf",
       "explicitly_avoided": true
     },
     "sub_lane": {
-      "target": "Independent Family-C plus A/B/C terminal-provenance and negative-completion bookkeeping audit",
-      "owner": "sub",
-      "branch_or_identity": "research/v061-a01-negative-completion-c-audit-sub-20260917; no scientific identity",
+      "target": "Generic terminal-provenance accounting v2 prototype, isolated from current A01 evaluator",
       "reservation_status": "reserved_for_sub",
       "independent_of_main_critical_path": true,
       "execution_allowed": false
@@ -21,139 +18,130 @@
     "sub_fallback": null
   },
   "selected_independent_lane": {
-    "target": "A/B/C terminal-provenance and negative-completion bookkeeping audit",
-    "branch": "research/v061-a01-negative-completion-c-audit-sub-20260917",
-    "base": "3329d15d9a3f73555396fb93a4dab117616e7bc2",
-    "head": "e127c3989780ebd5a78b8db914d4d6271920497e",
-    "artifact": "docs/V061_A01_NEGATIVE_COMPLETION_ABC_BOOKKEEPING_AUDIT.md",
-    "completion_status": "COMPLETED_AUDIT_FINDING"
+    "target": "Generic terminal-provenance accounting v2 prototype",
+    "branch": "research/methods-terminal-provenance-v2-sub-20260917",
+    "base": "e127c3989780ebd5a78b8db914d4d6271920497e",
+    "head": "d5317485a591439cb52d52b649b4930964cf2b3a",
+    "files": [
+      "src/sparkbrain/evaluation/terminal_provenance.py",
+      "tests/test_terminal_provenance.py",
+      "docs/TERMINAL_PROVENANCE_ACCOUNTING_V2.md"
+    ],
+    "status": "completed"
   },
   "independence_from_main_critical_path": true,
   "execution_allowed": false,
-  "SUB active claim": "research/v061-a01-negative-completion-c-audit-sub-20260917@e127c3989780ebd5a78b8db914d4d6271920497e",
-  "MAIN work explicitly avoided": [
-    "research/v061-a01-registered-family-closeout-20260917@3329d15d9a3f73555396fb93a4dab117616e7bc2",
-    "MAIN canonical programme-closeout/status edits",
-    "MAIN semantics-preserving historical Family-B binding-test-scope fix",
-    "Family-B/Family-C scientific implementation, nulls, scorer, resource contracts, bindings, identities and one-way lifecycle",
-    "Any A01 Gen2, Family-D, replacement mechanism or successor science"
+  "sub_active_claim": "research/methods-terminal-provenance-v2-sub-20260917@d5317485a591439cb52d52b649b4930964cf2b3a",
+  "main_work_explicitly_avoided": [
+    "research/c19-truth-free-symbolic-adapter-v2-20260917@7ede1bfb41285ec0107136b4f6abd5e893adcacf",
+    "c19-external-v2",
+    "c19-belief-r-truth-free-symbolic-adapter-v1",
+    "c19-external-v2-official-v1",
+    "official Belief-R data/access and all C19 STARTED/dispatch/acquisition/scoring/fixups"
   ],
-  "authoritative refs": {
+  "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "control_brain_handoff": "cecb3418f54ef2c89806cbf0d0d8012adc067cca",
-    "evidence_analyst_handoff": "5eb075481b8a5846a5234f1d397a88fd288af861",
-    "orchestrator_report_parent_before_run": "c8441627fbe8a38379f9dc0f792f4fd1fbfa9766",
-    "main_report_observed": "c8441627fbe8a38379f9dc0f792f4fd1fbfa9766",
-    "main_closeout": "research/v061-a01-registered-family-closeout-20260917@3329d15d9a3f73555396fb93a4dab117616e7bc2",
-    "prior_sub_ab_audit": "research/v061-a01-negative-completion-ab-audit-sub-20260917@9468bbe882bd7bd8bb0b60c2ad91d11e4616ac56",
-    "family_a_proposal_hash": "2794d1596227eab17c68c46d6874662c3669656edb49e28425f1ef613b66c5dc",
-    "family_a_terminal_identity": "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
-    "family_a_terminal_classification": "UNSUPPORTED_EN_BLOC_MERGED_CREDIT",
-    "family_a_source_freeze": "freeze/a01-md002-p4-candidate-001-source-20260916@1bd0099f4358e02efac7ee4acccfe5257a86c4be",
-    "family_a_started": "control/a01-md002-p4-candidate-001-started-20260916@1bd0099f4358e02efac7ee4acccfe5257a86c4be",
-    "family_a_raw": "preserve/a01-md002-p4-candidate-001-raw-20260916@2511454f1633d3bc6f10e3d2a99e3ddd823bb798",
-    "family_a_scored": "preserve/a01-md002-p4-candidate-001-scored-20260916@56ee762540e0519034d2e8db0ad3c6acda667ffd",
-    "family_b_closeout_branch": "research/v061-a01-family-b-gen1-execution-package-20260916@db66596ed4479e8dac8b713b4f92a73f76a25047",
-    "family_b_identity": "a01-family-b-distributed-field-trace-gen1-v1",
-    "family_b_classification": "REJECT_BEFORE_STARTED_STATIC_REDUCTION",
-    "family_b_started": false,
-    "family_b_identity_consumed": false,
-    "family_c_closeout_branch": "research/v061-a01-family-c-gen1-20260917@cfe1c3e5506d9fd8b41028dbfe0f8a8dd31a82c5",
-    "family_c_identity": "a01-family-c-joint-return-local-field-gen1-v1",
-    "family_c_proposal_binding_commit": "9cfddc6dc4d2beab090a9b38661a68dcec755ff7",
-    "family_c_proposal_sha256": "4b574b7053efb50b59a8d7536c94d02a7a25bdfc5b1d7f88575c7b6fc3e614ac",
-    "family_c_null_resource_binding_sha256": "690a62df641d0577e3f7d760354763a6f0ec69e33eedfdacb37e92e7c654dbbc",
-    "family_c_classification": "REJECT_BEFORE_STARTED_STATIC_REDUCTION",
-    "family_c_started": false,
-    "family_c_identity_consumed": false,
-    "open_pr_count_before_sub_write": 0,
+    "control_brain": "cecb3418f54ef2c89806cbf0d0d8012adc067cca",
+    "evidence_analyst": "53a1a3cd9dc8b1c657ff056f517278cf3c0b4d00",
+    "main_report_commit_consumed": "9348ab8758b88d320d83354dff89d593cb133398",
+    "prior_sub_report_commit": "6c26a66021ca1ed4f20e4fd43eac5a1b78199116",
+    "prior_sub_abc_audit": "research/v061-a01-negative-completion-c-audit-sub-20260917@e127c3989780ebd5a78b8db914d4d6271920497e",
+    "main_c19_head_observed": "7ede1bfb41285ec0107136b4f6abd5e893adcacf",
+    "open_pr_count": 0,
     "open_issues": [139],
-    "repository_rulesets_count": 0
+    "git_tags": [],
+    "freeze_control_preserve_refs_inspected": true
   },
-  "branches/PRs advanced": {
-    "branches": [
-      {
-        "branch": "research/v061-a01-negative-completion-c-audit-sub-20260917",
-        "base": "3329d15d9a3f73555396fb93a4dab117616e7bc2",
-        "head": "e127c3989780ebd5a78b8db914d4d6271920497e",
-        "commit_message": "research(a01): audit A/B/C terminal provenance bookkeeping"
-      }
+  "branches_prs_advanced": {
+    "branch_created": "research/methods-terminal-provenance-v2-sub-20260917",
+    "base": "e127c3989780ebd5a78b8db914d4d6271920497e",
+    "head": "d5317485a591439cb52d52b649b4930964cf2b3a",
+    "commits": [
+      "9aef508f1e45c87c4d615227b281e5f1173cee3f",
+      "b3096ef6ef17373c9240f601eeb38930c75886eb",
+      "c3e5c16f327d16decb2e28fcf93cd6fdafd8f2ae",
+      "8037dc385bdc7eba71c97b50be6f9d39536c8cd8",
+      "e7c7273c430aa16efd17ef9295ab47afda9b6a08",
+      "f0332345cd67b2d25afec76b980f620563300650",
+      "d5317485a591439cb52d52b649b4930964cf2b3a"
     ],
-    "prs_created": [],
+    "nonsemantic_noop_commit": "8037dc385bdc7eba71c97b50be6f9d39536c8cd8",
+    "prs": [],
     "merges": []
   },
-  "workflows/experiments": {
-    "scientific_experiment_dispatched": false,
-    "one_way_workflow_dispatched": false,
-    "new_started_ref": null,
-    "candidate_output_acquired": false,
-    "new_scoring": false,
-    "new_freeze_or_preserve": false,
-    "merge_performed": false,
-    "documentation_push_ci": {
-      "run_id": 35123266101,
-      "head": "e127c3989780ebd5a78b8db914d4d6271920497e",
-      "status_at_final_pre_report_check": "in_progress"
-    }
-  },
-  "scientific/readiness results": [
-    "No new scientific measurement was produced.",
-    "Family-A executed P4 terminal mode remains structurally representable by CandidateDisposition only when every required phase boolean comes from exact canonical phase authority.",
-    "Family-B pre-START static reduction remains unrepresentable by CandidateDisposition without fabricating P1-P4 phase outcomes.",
-    "Family-C repeats Family-B's representability gap: it is a pre-START static reduction with P1-P5 not assessed, and its separable address-plus-Field reduction cannot be encoded as executed P5 explicit-memory reduction.",
-    "A complete A/B/C terminal-provenance matrix is now documented with proposal/terminal/STARTED/consumption/phase/comparator/canonical-authority fields.",
-    "NegativeCompletionProgramme.completed_families remains insufficient as evidence-backed coverage because validation does not cross-check it against faithful terminal-provenance records.",
-    "Fail-closed state remains machine verdict WITHHELD; no synthetic Family-B or Family-C CandidateDisposition should be created under the current schema."
-  ],
-  "consumed identities": {
-    "observed_relevant": [
-      "A01 MD-001",
-      "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
-      "a01-md002-p3-r-only-causal-carrier-candidate-001-v1",
-      "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
-      "RV01 R01-16 family",
-      "rv01-r01-17-real-delay-causal-timing-v1",
-      "RV02 RD005 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
-      "cx01-candidate-002"
+  "workflows_experiments": {
+    "ordinary_push_ci": [
+      {
+        "run_id": 35129992622,
+        "head": "c3e5c16f327d16decb2e28fcf93cd6fdafd8f2ae",
+        "conclusion": "failure",
+        "cause": "SUB-owned Ruff UP035/I001 lint defects",
+        "resolved": true
+      },
+      {
+        "run_id": 35130731774,
+        "head": "d5317485a591439cb52d52b649b4930964cf2b3a",
+        "conclusion": "success",
+        "python_3_11": "success",
+        "python_3_13": "success",
+        "steps": "Install/Lint/Local readiness/Test/Validate bundle success"
+      }
     ],
-    "newly_consumed_this_run": [],
-    "family_b_unconsumed_but_rejected": "a01-family-b-distributed-field-trace-gen1-v1",
-    "family_c_unconsumed_but_rejected": "a01-family-c-joint-return-local-field-gen1-v1"
+    "scientific_workflows_dispatched": [],
+    "experiments": [],
+    "started_refs_created": [],
+    "acquisitions": [],
+    "scoring": [],
+    "evidence_mutations": []
   },
-  "blockers": [
-    "Current CandidateDisposition cannot faithfully encode Family-B or Family-C pre-START static-reduction terminal states without fabricating P1-P4 phase outcomes.",
-    "Current completed_families accounting is not cross-validated against evidence-backed terminal records and must not alone support programme machine negative completion.",
-    "These are future prospective bookkeeping-method requirements, not blockers for MAIN's completed strategic closeout."
+  "scientific_readiness_results": [
+    "No new scientific measurement.",
+    "Generic v2 distinguishes executed phase failure, executed P5 reduction, pre-START static reduction, and pre-START other rejection.",
+    "Pre-START records enforce P1-P5 NOT_ASSESSED and cannot fabricate executed phase history.",
+    "Evidence-backed family coverage is derived from actual terminal records and duplicate family provenance fails closed.",
+    "All fixtures are synthetic; current A01 evaluator and machine verdict are unchanged.",
+    "Diff from the completed prior SUB audit changes only three new generic methods/test/documentation files."
   ],
-  "collision reconciliation": {
-    "latest_analyst_rechecked_before_write": true,
-    "latest_analyst_tip": "5eb075481b8a5846a5234f1d397a88fd288af861",
-    "orchestrator_tip_rechecked_before_first_write": "c8441627fbe8a38379f9dc0f792f4fd1fbfa9766",
-    "main_lane_collision": false,
-    "main_work_touched": false,
-    "analyst_split_invalidated": false,
-    "lane_rejected_reason": null,
-    "concurrent_main_change_observed": "MAIN completed registered-family closeout at 3329d15d9a3f73555396fb93a4dab117616e7bc2 before SUB began the reserved audit; SUB used that completed head only as a branch base and did not modify MAIN's branch or rely on SUB completion."
+  "consumed_identities": {
+    "newly_consumed_this_run": [],
+    "observed_do_not_touch": [
+      "A01 MD-001",
+      "A01 P2 candidate-002",
+      "A01 P3 candidate-001",
+      "A01 Family-A P4 candidate-001",
+      "RV01 R01-16 family",
+      "RV01 R01-17",
+      "RV02 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
+      "CX01 Candidate-002"
+    ],
+    "planned_c19_v2_official_identity_avoided": "c19-external-v2-official-v1"
   },
-  "integrity state": {
+  "blockers": [],
+  "collision_reconciliation": {
+    "evidence_analyst_tip_final": "53a1a3cd9dc8b1c657ff056f517278cf3c0b4d00",
+    "main_c19_head_final": "7ede1bfb41285ec0107136b4f6abd5e893adcacf",
+    "main_collision": false,
+    "lane_split_invalidated": false,
+    "rejected_lane": null,
+    "lane_rejected_reason": null
+  },
+  "integrity_state": {
+    "status": "clean_independent_methods_prototype",
     "immutable_refs_modified": false,
-    "formal_or_scientific_evidence_modified": false,
-    "main_research_branch_modified_by_sub": false,
-    "sub_research_support_branch_modified": true,
-    "scientific_execution_performed": false,
-    "identity_consumed_this_run": false,
-    "same_identity_rerun_or_retune": false,
-    "scientific_scoring_performed": false,
-    "main_critical_path_modified": false,
-    "overall": "clean_independent_documentation_audit"
+    "a01_evaluator_modified": false,
+    "a01_machine_verdict_modified": false,
+    "main_branch_modified": false,
+    "c19_modified": false,
+    "scientific_execution": false,
+    "new_identity_consumption": false
   },
   "completion_target": {
-    "target": "Three-family terminal-provenance matrix plus exact statement whether Family C repeats Family B's representability gap, with zero scientific-evidence changes",
+    "target": "Standalone generic schema/model/tests/docs demonstrate truthful executed/pre-START representation and evidence-backed family coverage on synthetic fixtures while A01 remains unchanged.",
     "reached": true,
-    "result": "Family A structurally representable only from exact phase provenance; Family B and Family C not faithfully representable under current CandidateDisposition; completed_families remains insufficient as evidence-backed coverage."
+    "exact_head_ci": "35130731774 success"
   },
   "fallback_status": null,
   "rejected_lane": null,
   "lane_rejected_reason": null,
-  "next_sub_action": "Return the completed A/B/C audit to the next Evidence Analyst cycle. Do not implement evaluator/schema changes or successor science unless a fresh reserved independent SUB lane explicitly assigns that work."
+  "next_sub_action": "Return the completed prototype to the next Evidence Analyst cycle; do not promote to main or migrate current A01/C19 accounting without a fresh reserved lane."
 }

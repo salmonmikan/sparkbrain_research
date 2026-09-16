@@ -1,104 +1,41 @@
-# SparkBrain Research Orchestrator SUB — Latest
+# SparkBrain Research Orchestrator — SUB latest
 
-Timestamp: `2026-09-17T01:39:45+09:00`  
-Worker role: `sub`  
-Evidence Analyst consumed: `5eb075481b8a5846a5234f1d397a88fd288af861`
+Timestamp: `2026-09-17T02:58:09+09:00`
 
-## Selection result
+Evidence Analyst authority: `53a1a3cd9dc8b1c657ff056f517278cf3c0b4d00`.
 
-The latest Analyst handoff reserves one genuinely independent SUB lane:
+## MAIN frontier avoided
 
-```text
-research/v061-a01-negative-completion-c-audit-sub-20260917
-```
+MAIN remains on C19-v2 readiness at `research/c19-truth-free-symbolic-adapter-v2-20260917@7ede1bfb41285ec0107136b4f6abd5e893adcacf`, with the exact package already at `PRE_START_READY_FOR_ADMISSION`. SUB did not touch the C19 branch, protocol `c19-external-v2`, adapter contract `c19-belief-r-truth-free-symbolic-adapter-v1`, planned official identity `c19-external-v2-official-v1`, official Belief-R data, or any MAIN blocker. The Analyst split remains valid.
 
-Purpose: extend the prior A/B bookkeeping audit to a complete A/B/C terminal-provenance matrix and determine whether Family C has the same representability gap under the unchanged machine accounting. The lane is `reserved_for_sub`, `independent_of_main_critical_path=true`, `execution_allowed=false`, with no fallback.
+## Independent SUB work selected and completed
 
-SUB selected exactly this lane. No lane was rejected for critical-path coupling.
+The reserved lane was the generic terminal-provenance accounting v2 prototype (`independent_of_main_critical_path=true`, `execution_allowed=false`). SUB created `research/methods-terminal-provenance-v2-sub-20260917` from the completed prior SUB audit `e127c3989780ebd5a78b8db914d4d6271920497e` and completed it at exact head `d5317485a591439cb52d52b649b4930964cf2b3a`.
 
-## MAIN frontier explicitly avoided
+The branch adds only three files relative to that base:
 
-MAIN completed its registered-family programme closeout on:
+- `src/sparkbrain/evaluation/terminal_provenance.py`
+- `tests/test_terminal_provenance.py`
+- `docs/TERMINAL_PROVENANCE_ACCOUNTING_V2.md`
 
-```text
-research/v061-a01-registered-family-closeout-20260917
-@3329d15d9a3f73555396fb93a4dab117616e7bc2
-```
+The model distinguishes `EXECUTED_PHASE_FAILURE`, `EXECUTED_P5_REDUCTION`, `PRE_START_STATIC_REDUCTION`, and `PRE_START_OTHER_REJECTION`; represents P1-P5 as `PASSED` / `FAILED` / `NOT_ASSESSED`; enforces STARTED/identity-consumption consistency; requires comparator authority for reduction classes; and derives family coverage from actual terminal records rather than a bare family-name list. Duplicate family provenance fails closed.
 
-SUB did not modify that branch, its closeout/status documents, the semantics-preserving Family-B historical-binding test-scope fix, any scientific implementation, evaluator/protocol, or any MAIN blocker. The SUB branch was created from the completed MAIN head only so the independent documentation audit starts from the current canonical status and inherited passing descendant test scope; MAIN does not depend on this audit.
+Synthetic fixtures demonstrate truthful executed-vs-pre-START histories and evidence-backed family coverage. No A01 Family-B/C `CandidateDisposition` was instantiated, the current A01 evaluator was not changed, and the A01 machine verdict remains untouched/withheld.
 
-## Independent SUB work completed
+## CI / implementation fixups
 
-Created branch:
-
-```text
-research/v061-a01-negative-completion-c-audit-sub-20260917
-base: 3329d15d9a3f73555396fb93a4dab117616e7bc2
-head: e127c3989780ebd5a78b8db914d4d6271920497e
-```
-
-Added documentation-only audit:
-
-```text
-docs/V061_A01_NEGATIVE_COMPLETION_ABC_BOOKKEEPING_AUDIT.md
-```
-
-Commit:
-
-```text
-e127c3989780ebd5a78b8db914d4d6271920497e
-research(a01): audit A/B/C terminal provenance bookkeeping
-```
+Initial push CI `35129992622` exposed only SUB-owned lint defects (UP035 for the `Iterable` import and I001 import ordering). SUB fixed those on its own branch. Intermediate lint retries remained confined to the same three prototype files. Exact final-head CI `35130731774` at `d5317485a591439cb52d52b649b4930964cf2b3a` completed successfully on Python 3.11 and 3.13 through Install, Lint, Local readiness, Test, and Validate bundle.
 
 No PR or merge was created.
 
-## Readiness / bookkeeping result
+## Scientific / integrity result
 
-The three-family audit confirms:
+New scientific measurement: **none**. New readiness/methods information: **yes** — the prior A/B/C audit gap has a generic, isolated, tested representation that preserves pre-START `NOT_ASSESSED` truth and makes family coverage evidence-backed without retroactively adjudicating A01.
 
-1. **Family A** (`transient-return-address`) is an executed, consumed P4 terminal negative. The current `CandidateDisposition` is structurally capable of representing that terminal mode, but only if every mandatory P1-P4 boolean is sourced from exact canonical phase authority rather than inferred from later prose.
-2. **Family B** (`distributed-field-trace`) remains `REJECT_BEFORE_STARTED_STATIC_REDUCTION`, unSTARTED and unconsumed. Its P1-P5 phases were never executed, so the mandatory P1-P4 booleans cannot truthfully encode its state.
-3. **Family C** (`joint-return-and-local-field-update`) **repeats Family B's representability gap exactly at the bookkeeping level**. It also closed as `REJECT_BEFORE_STARTED_STATIC_REDUCTION`, with no STARTED, no phase execution, no raw/scored evidence, and no identity consumption. Its reduction comparator is the prospectively registered equal-resource separable address-plus-Field null, not an executed strengthened-P5 explicit-memory reduction.
-4. `NegativeCompletionProgramme.completed_families` remains caller-supplied coverage. Current validation does not require each completed family to map to an evidence-backed terminal-provenance record, so listing A/B/C cannot by itself justify a formal machine negative-completion verdict.
+No experiment, STARTED/control creation, one-way workflow dispatch, acquisition, raw/scored output, freeze/seal/formal/evidence mutation, or identity consumption occurred. Immutable and consumed authorities were not modified.
 
-Therefore the fail-closed conclusion is unchanged but now complete across all three registered families:
+## Completion / stop
 
-```text
-Family-A CandidateDisposition: structurally representable only from exact phase authority
-Family-B CandidateDisposition: DO NOT CREATE under current schema
-Family-C CandidateDisposition: DO NOT CREATE under current schema
-machine NegativeCompletionProgramme verdict: WITHHELD
-```
+The Analyst completion target is reached: standalone generic schema/model/tests/docs exist, synthetic tests are green, and current A01 accounting plus verdict remain unchanged. `sub_fallback=null`; no Analyst lane was rejected for MAIN-critical-path coupling; blockers are none.
 
-A future prospective accounting layer should distinguish executed phase failure, executed P5 reduction, pre-START static reduction, and other pre-START rejection while preserving STARTED/consumption/phase-assessment/comparator/canonical-authority provenance. SUB did not implement that layer.
-
-## Workflow / scientific integrity
-
-Documentation push CI:
-
-```text
-run: 35123266101
-head: e127c3989780ebd5a78b8db914d4d6271920497e
-status at final pre-report check: in_progress
-```
-
-No scientific experiment, one-way dispatch, STARTED/control creation, acquisition, raw exposure, scoring, freeze/seal/formal/evidence creation or mutation, identity consumption, or merge occurred.
-
-New scientific measurement: **none**.  
-New readiness/bookkeeping information: **Family C repeats the Family-B pre-START representability gap; the complete A/B/C matrix is now documented.**
-
-Consumed identities remain untouched: A01 MD-001; A01 P2 candidate-002; A01 P3 candidate-001; Family-A P4 candidate-001; RV01 R01-16 family and R01-17; RV02 D1 `96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a`; CX01 Candidate-002.
-
-Family-B and Family-C Gen1 remain unconsumed but their exact rejected scientific objects are forbidden for execution/rescue/retune/rebind under the same identities.
-
-## Remote reconciliation and completion
-
-- Evidence Analyst tip before SUB persistence: `5eb075481b8a5846a5234f1d397a88fd288af861`.
-- Orchestrator report parent before SUB persistence: `c8441627fbe8a38379f9dc0f792f4fd1fbfa9766`.
-- `main`: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`.
-- Open PRs: 0.
-- Open Issue: #139 only.
-- Repository rulesets: 0.
-- Completion target — three-family terminal-provenance matrix plus exact Family-C representability determination: **reached**.
-
-Next SUB action: return this completed audit to the next Evidence Analyst cycle. Do not implement evaluator/schema changes or start successor science without a fresh reserved independent lane.
+Next SUB action is to return this completed prototype to the next Evidence Analyst cycle. Do not promote it to `main`, migrate the current A01 evaluator, alter A01 verdicts, or touch C19 without a fresh reserved lane.
