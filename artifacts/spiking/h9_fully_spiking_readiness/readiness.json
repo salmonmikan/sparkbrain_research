@@ -1,0 +1,165 @@
+{
+  "completion": {
+    "identity_consumed": false,
+    "result": "PRE_START_UNDERSPECIFIED",
+    "scientific_execution_performed": false,
+    "target": "Reviewable pre-START source-only H9 readiness package or explicit PRE_START_UNDERSPECIFIED finding."
+  },
+  "execution_allowed": false,
+  "existing_boundary_inventory": {
+    "broadcast": "RATE_ALGORITHMIC",
+    "coalition_scoring": "RATE_ALGORITHMIC",
+    "fully_spiking_backend_present": false,
+    "hypothesis_state": "RATE_ALGORITHMIC",
+    "ignition": "RATE_ALGORITHMIC",
+    "sensory_encoding": "SPIKING_LIF",
+    "signed_evidence_graph": "RATE_ALGORITHMIC",
+    "state_trace_serialization": "SHARED_C01_SCHEMA_WITH_SPIKING_STATS",
+    "workspace": "RATE_ALGORITHMIC"
+  },
+  "historical_c07": {
+    "canonical_prediction_sequence": [
+      null,
+      "cat",
+      "cat",
+      "cat",
+      "toy",
+      "toy",
+      "cat"
+    ],
+    "classification": "HYBRID_PARTIAL_SUPPORT_WITH_PARAMETER_SENSITIVE_NEGATIVE",
+    "distinct_ignitions": [
+      "cat",
+      "toy",
+      "cat"
+    ],
+    "frozen_checks_passed": "9/9",
+    "hybrid_boundary": "snnTorch LIF sensory encoding; rate evidence graph, hypothesis state, Coalition, ignition, and Workspace",
+    "negative_condition": "spike_threshold=1.1 with unit currents",
+    "negative_result": "no sensory spikes and no predictions",
+    "reuse_policy": "Historical result is evidence only. Do not retune, rerun, or silently reinterpret it as a fully-spiking result.",
+    "seed": 7
+  },
+  "hypothesis": {
+    "canonical_test_family": "C07 spiking equivalence",
+    "claim": "A spiking substrate can preserve theory-level behavior.",
+    "fresh_successor_identity": null,
+    "id": "H9",
+    "reason_identity_unset": "Canonical doctrine does not uniquely define the fully-spiking implementation or evaluation object."
+  },
+  "independence": {
+    "forbidden_main_touch": [
+      "C19 branches, protocols, identities, data, scorer, preserver, CI or evidence"
+    ],
+    "independent_of_main_critical_path": true,
+    "main_dependencies": [],
+    "main_frontier": "C19"
+  },
+  "missing_scientific_choices": [
+    {
+      "id": "FULLY_SPIKING_OPERATIONAL_BOUNDARY",
+      "question": "Which C01/C07 components must be implemented as spike-mediated neural dynamics for the object to count as fully spiking?",
+      "why_not_derivable": "C07 explicitly permits Coalition and Workspace to remain algorithmic in the first hybrid backend and never defines the complete fully-spiking boundary."
+    },
+    {
+      "id": "NON_SENSORY_NEURON_AND_SYNAPSE_MODEL",
+      "question": "What exact recurrent neuron, synapse/filter, inhibition and refractory dynamics implement hypothesis, Coalition, ignition, broadcast and Workspace state?",
+      "why_not_derivable": "Canonical doctrine names possible libraries and mappings but does not bind equations or parameters for a fully-spiking successor."
+    },
+    {
+      "id": "REPRESENTATION_AND_DECODER_MAPPING",
+      "question": "How are evidence identity, residual belief state, Coalition score, ignition and Workspace occupancy represented and decoded from spikes without importing the rate engine?",
+      "why_not_derivable": "The current hybrid delegates these semantics to build_reference_brain; no spike-domain mapping is registered."
+    },
+    {
+      "id": "PARAMETER_AND_TUNING_BUDGET",
+      "question": "Which parameters are fixed a priori, which may be tuned, on what data, and under what equal budget?",
+      "why_not_derivable": "Historical LIF parameters were frozen for the hybrid object only; threshold 1.1 is a retained negative, not a successor calibration rule."
+    },
+    {
+      "id": "PRIMARY_COMPARATOR_AND_CLAIM",
+      "question": "Is the fully-spiking object compared primarily with the rate backend, the historical hybrid, or both, and what exact claim is allowed?",
+      "why_not_derivable": "H9 says rate and spiking should satisfy invariants while C07 separately lists a hybrid-vs-fully-spiking boundary comparison."
+    },
+    {
+      "id": "SUCCESSOR_TOLERANCE_AUTHORITY",
+      "question": "Are all historical hybrid tolerances inherited unchanged as the fully-spiking acceptance rule, or are some only diagnostic?",
+      "why_not_derivable": "The frozen tolerances were preregistered for the historical hybrid comparison, not for a fully-spiking successor identity."
+    },
+    {
+      "id": "TRAINING_OR_PLASTICITY_REGIME",
+      "question": "Must the successor be fixed-weight, surrogate-gradient trained, or locally plastic, and what data/seeds govern that choice?",
+      "why_not_derivable": "C07 lists surrogate-gradient vs local/plastic comparison only where feasible and does not make one regime authoritative."
+    },
+    {
+      "id": "EXACT_RUNTIME_AND_RANDOMNESS",
+      "question": "What exact Python/PyTorch/snnTorch runtime, deterministic settings, seeds and stochastic/noise policy define the successor?",
+      "why_not_derivable": "The repository records a historical verified runtime and broad optional dependency bounds but no fresh fully-spiking runtime identity."
+    }
+  ],
+  "prospectively_supportable_readiness_contract": {
+    "behavioral_invariants": [
+      "first ambiguous fur event remains no-ignition",
+      "ordered distinct ignition labels remain cat, toy, cat",
+      "switch-to-TOY event-index latency differs from rate by at most one",
+      "recovery-to-CAT event-index latency differs from rate by at most one",
+      "residual loser recovery is present at the final event",
+      "duplicate evidence diversity remains exactly one",
+      "Workspace occupancy remains within configured capacity and capacity-1 final label is cat",
+      "removing sensory:plastic_seam -> hypothesis:toy does not make TOY earlier or more frequent",
+      "rate/spike traces remain exportable through the shared trace schema"
+    ],
+    "measurement_boundaries": [
+      "activity counts and wall-clock remain descriptive and separate",
+      "no energy-efficiency claim",
+      "differences must be documented rather than tuned away after observation"
+    ],
+    "note": "These are inherited readiness constraints. They do not uniquely specify a fresh fully-spiking experiment.",
+    "task": "SwitchWorld canonical CAT->TOY->CAT scenario plus pre-existing C07 invariant fixtures"
+  },
+  "readiness_gates_for_next_analyst": [
+    "Prospectively define FULLY_SPIKING_OPERATIONAL_BOUNDARY.",
+    "Bind exact non-sensory neural dynamics and representation/decoder semantics.",
+    "Freeze comparator, allowed claim, tolerances, parameter/tuning budget, runtime and seeds before execution.",
+    "Assign a fresh protocol and one-way identity distinct from historical C07.",
+    "Keep historical C07 artifacts immutable and preserve all negative results."
+  ],
+  "recommended_branch": "research/c07-h9-fully-spiking-readiness-sub-20260917",
+  "runtime_boundary": {
+    "historical_verified_runtime": {
+      "device": "cpu",
+      "python": "3.13.3",
+      "snntorch": "1.0.0",
+      "torch": "2.13.0+cpu"
+    },
+    "local_only": true,
+    "offline_after_setup": true,
+    "optional_spiking_dependencies": [
+      "torch>=2.2",
+      "snntorch==1.0.0"
+    ],
+    "project_python": ">=3.11",
+    "successor_runtime_frozen": false
+  },
+  "schema": "h9-fully-spiking-readiness-v1",
+  "source_base_commit": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+  "source_bindings": {
+    "artifacts/spiking/c07_comparison.json": "89346bff6314fe556e20778e1c565d8666efaa71",
+    "artifacts/spiking/c07_report.md": "b7e255e77d182cc567eb3cd0df7999bdb69bf814",
+    "docs/DEPENDENCIES.md": "01a78d80de3929414a01a8024b26fe3630530aed",
+    "docs/HYPOTHESES_AND_FALSIFICATION.md": "49482bd0532c5272c71fc49b0864f7b84443dbf2",
+    "docs/codex/C07_SPIKING_BACKEND.md": "f6c6f419e4f9c3a34018d591e42a2b93a4d4d474",
+    "docs/plans/c07-spiking-backend-plan.md": "6e80618b275c3cf449a8a882d88b5fcdc806063e",
+    "pyproject.toml": "49d47f3d65f67f1c0a6b82a3f7fc2d0364e2a88c",
+    "scripts/run_spiking_comparison.py": "55d9e82e5934e54536fe53ccae0b724c300f8b3d",
+    "src/sparkbrain/engine.py": "48fa64414f539ec4a00acc9e25ffc9b1d26a4982",
+    "src/sparkbrain/model.py": "ab450dba5943fa9184e66c00a4e992d6588bf6a5",
+    "src/sparkbrain/protocols.py": "85ea6448538e078832cce82c9537a436e003e835",
+    "src/sparkbrain/spiking.py": "81e000e84de69c6ac0e6241174eb55a85ac63316",
+    "src/sparkbrain/worlds.py": "228357596dd336f73ffc4308de3a629ac08f39db",
+    "tests/test_spiking_backend.py": "aa6e02b104d5190c4a87d945eb7d06aa87eec242"
+  },
+  "status": "PRE_START_UNDERSPECIFIED",
+  "worker_role": "sub",
+  "analyst_authority": "25eae547ccd9bb22edc2010e698a8dd2ecd33dcc"
+}
