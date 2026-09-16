@@ -2,9 +2,8 @@
 
 import copy
 import json
-from collections import Counter, defaultdict
-
 import unittest
+from collections import Counter, defaultdict
 
 from sparkbrain.research.rv02_scale import (
     ScaleStudyConfig,
