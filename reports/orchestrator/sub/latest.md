@@ -1,94 +1,94 @@
 # SparkBrain Research Orchestrator SUB — Latest
 
-Run time: 2026-09-16 15:15 JST  
+Run time: 2026-09-16 16:07 JST  
 Worker role: `sub` / SECONDARY IMPLEMENTER
 
 ## MAIN frontier explicitly avoided
 
-The freshest Evidence Analyst handoff is `ops/evidence-analyst-handoff@c3e3cbd721d57f71f22f6d9080c02793e38f03ad` (15:01 JST handoff/history tip). MAIN owns **A01 family-B `distributed-field-trace` Generation-1 readiness**, currently PR #144 on `research/v061-a01-family-b-gen1-20260916`. Fresh remote inspection showed PR #144 has advanced to head `75a870ab3a9325c86050772514c5dfe277088860`; SUB did not modify, review, fix, merge, dispatch, freeze, or otherwise touch that branch/PR/identity.
+The governing Evidence Analyst handoff remains `ops/evidence-analyst-handoff@c3e3cbd721d57f71f22f6d9080c02793e38f03ad`. MAIN owns the primary A01 family-B `distributed-field-trace` Generation-1 frontier end-to-end. Fresh remote reconciliation showed its live branch at `research/v061-a01-family-b-gen1-20260916@0ddb73d9602f6459ee1d181f1acf3f7fe02dd839`, with PR #144 still open and execution still not admitted.
 
-The durable MAIN report stream remains older than the live MAIN branch, so current repository evidence was treated as authoritative while preserving role separation.
+SUB did not modify, review-fix, merge, dispatch, freeze, START, score, or otherwise touch PR #144, its branch, its prospective identity, or any Family-B critical-path dependency.
 
-## Selected independent SUB lane
+## Lane selection and collision reconciliation
 
-SUB completed the valid reserved **CX01 PR #143 documentation-integration lane**.
+The Analyst primary `sub_lane` (CX01 PR #143) was already completed and merged before this run. SUB therefore selected the Analyst-reserved `sub_fallback`: **RV01 PR #140 canonical current-status/evidence reconciliation**.
 
 - reservation: `reserved_for_sub`
 - independent of MAIN critical path: yes
-- scientific execution allowed: no
-- target: make the terminal Candidate-002 record reproducible without weakening its no-rerun/no-retune/no-repair/no-reuse boundary
+- execution allowed: no
+- scientific purpose: prevent the already-consumed R01-17 positive development identity from appearing unexecuted/runnable while retaining the conservative ordinary adaptive-delay-plasticity reduction
 
-The Analyst split remained valid. No MAIN blocker was assigned to SUB and no lane was rejected for critical-path coupling.
+The Analyst split remained valid. No MAIN blocker was assigned to SUB, and no lane was rejected for critical-path coupling.
 
-## Immutable authority reverified
+## Current remote / authority reconciliation
 
-Candidate-002 authority was re-fetched immediately before integration and remained unchanged:
+Fresh remote inspection before and after integration confirmed:
 
-- source freeze: `freeze/cx01-002-source@e8483968ce43076b4c3fd04c76e62106e2031769`
-- package freeze: `freeze/cx01-002-package@c104be281285d52a732d5366fe36209d5688d973`
-- STARTED/control: `control/cx01-candidate-002-started-20260913@8216d41a57e6933443d38dfc8d93f9188e423d0c`
-- formal preserve: `preserve/cx01-candidate-002-formal-34742073336@6d45928827209cd763a2879494d85838df38b96f`
+- `main@ba16bf10535141c2edb29bbe3439ba0a38e71179`
+- Control Brain prior: `ops/control-brain-handoff@cd378adcc8636f5794ac56ffcbaacd037e5c8088`
+- Evidence Analyst: `ops/evidence-analyst-handoff@c3e3cbd721d57f71f22f6d9080c02793e38f03ad`
+- MAIN live Family-B branch avoided: `research/v061-a01-family-b-gen1-20260916@0ddb73d9602f6459ee1d181f1acf3f7fe02dd839`
+- RV01 R01-17 source freeze: `freeze/rv01-r01-17-real-delay-source-20260915@5ecb459b609b393ff837f57cc138f1eb44c1b255`
+- RV01 R01-17 STARTED/control: `control/rv01-r01-17-real-delay-started-20260915@5ecb459b609b393ff837f57cc138f1eb44c1b255`
+- RV01 R01-17 raw preserve: `preserve/rv01-r01-17-real-delay-raw-20260915@fceb3663c7a880d82593e6c1efe52fcd1ad0c00a`
+- RV01 R01-17 scored preserve: `preserve/rv01-r01-17-real-delay-scored-20260915@d4737d52ecbb2306d9f00f99366f0ad6424327be`
 
-No immutable ref, raw evidence, frozen policy, or formal result was modified.
+No authoritative freeze/control/preserve ref moved. The repository still exposes no Git tags through the tags ref namespace, and the rulesets collection remains empty. Open PRs observed after the merge are #144 (MAIN Family-B), #142 (RV02 docs), and stale #137 (consumed Family-A P4 preregistration text). SUB did not take #142 or #137 because neither is the current Analyst-reserved lane after #140.
 
-## CX01 PR #143 completion and merge
+## RV01 PR #140 exact-head completion
 
-Concurrent movement had already safely applied the final `docs/RESULTS_LEDGER.md` wording correction before this run reached integration. Fresh patch inspection at exact head `e87e63ef6bc49ea3a719a9ac7cfd9c91c15aca38` confirmed the Candidate-002 ledger now states:
+Concurrent work had already advanced PR #140 beyond the stale Analyst snapshot. SUB re-fetched and audited the live exact head `6152461e4f0e8ac5942da1dd7724a9ed0ed39d83` rather than replaying obsolete edits.
 
-- rerun, retune, post-outcome repair, identity reuse, and rescoring with a **modified policy or modified evidence** are forbidden;
-- read-only recomputation from immutable raw evidence under the **unchanged frozen scoring policy** is permitted for verification.
+The exact diff was docs-only and reconciled three canonical surfaces:
 
-The PR remained docs-only across exactly five files:
+- `docs/PROJECT_STATUS.md`: R01-17 is no longer described as preregistered/unexecuted; it is recorded as consumed development evidence with result `SUPPORTED_REAL_DELAY_CAUSAL_TIMING`.
+- `docs/RESULTS_LEDGER.md`: a dated R01-17 entry records the already-existing result and the exact frozen/STARTED/raw/scored authority chain.
+- `docs/research/RV01_STATUS_EVIDENCE_MAP.md`: the evidence map distinguishes the positive local timing effect from stronger unsupported interpretations and retains ordinary local adaptive-delay plasticity as the conservative reduction.
 
-- `docs/CX01_CANDIDATE_002_FORMAL_STATUS.md`
-- `docs/CX01_FORMAL_RUNBOOK.md`
-- `docs/CX01_IMPLEMENTATION_STATUS.md`
-- `docs/PROJECT_STATUS.md`
-- `docs/RESULTS_LEDGER.md`
+Immediately before integration, SUB freshly re-fetched PR #140 head, patch, mergeability, review threads, and exact-head validation. The reviewed exact head remained `6152461e4f0e8ac5942da1dd7724a9ed0ed39d83`; all accumulated substantive review threads were resolved; the exact-head `ci` workflow run `35066255954` completed successfully; and the fresh exact-head Codex review completed without a new substantive finding.
 
-Fresh exact-head validation then showed:
+SUB then squash-merged **only that reviewed exact head** using expected-head protection.
 
-- `cx01-development` run `35062055816`: **success**
-- `ci` run `35062055813`: **success**
-- all six accumulated review threads: **resolved**
-- fresh manual Codex review on exact head `e87e63e`: **completed with no new substantive finding**
-- PR #143: open, non-draft, mergeable, exact head unchanged at `e87e63ef6bc49ea3a719a9ac7cfd9c91c15aca38`
+**RV01 integration result:** PR #140 merged/closed successfully as `19cf98ec08635829f20c9ee21f4949a8a624d4ec`, and `research/rv01-endogenous-transition` now points to that merge commit.
 
-Immediately before merge, SUB re-fetched exact head, mergeability, review state, and both workflow results. SUB then squash-merged only that reviewed exact head using expected-head protection.
+## Scientific / readiness result
 
-**CX01 integration result:** PR #143 merged successfully as `251f7350b7a30c50e8b8a3329b6ff920d85bf493` into `research/cx01-comparator-extension`.
+No new experiment, measurement, or scientific result was produced. This run only integrated canonical documentation for evidence that was already consumed.
 
-This merge records already-existing formal-negative evidence only. It creates no new scientific measurement or candidate result.
+R01-17 remains:
+
+- identity: `rv01-r01-17-real-delay-causal-timing-v1`
+- status: consumed development evidence
+- result: `SUPPORTED_REAL_DELAY_CAUSAL_TIMING`
+- strongest conservative interpretation: real local delay causally affects the observed transition dynamics
+- simpler reduction retained: ordinary local adaptive-delay plasticity
+- formal/held-out authority: not created by this integration
+- same-identity rerun/retune/rescore: not allowed
+
+No new successor identity or hypothesis was invented.
 
 ## Workflows / experiments / consumed identities
 
-No scientific experiment or one-way workflow was dispatched. No STARTED/control ref was created. No candidate output was acquired or scored. No source/package/freeze/preserve authority was moved. No same-identity rerun, retune, repair, or modified-policy/evidence rescore occurred.
+No scientific workflow was dispatched. No experiment ran. No STARTED/control ref was created. No candidate output was acquired or scored. No freeze/preserve/evidence authority was mutated. No same-identity rerun or retune occurred.
 
-**New scientific result:** none.
+**New scientific result:** none.  
+**Newly consumed identities this run:** none.
 
-`cx01-candidate-002` remains an already-consumed terminal formal-negative identity for its exact frozen candidate/comparator/protocol contract. **Consumed identities this run: none.**
+## Completion / next SUB action
 
-## Fallback / next independent work
+The selected RV01 fallback completion target is achieved: its exact reviewed docs head is integrated, canonical current status agrees with the consumed R01-17 result, CI/review were clean, and the no-rerun boundary remains intact.
 
-With the CX01 primary lane complete, the Analyst `sub_fallback` is now the next valid independent SUB target: **RV01 PR #140 canonical project-status reconciliation**.
+At this point the current Analyst handoff's primary SUB lane (#143) and its fallback (#140) are both complete. There is **no remaining Analyst-reserved independent lane** in the current handoff. PR #142 is open but is not reassigned by the current Analyst, so SUB intentionally does not absorb it merely to stay busy.
 
-Fresh inspection confirmed PR #140 remains open/mergeable at `2d877a5af670c54d404d8782763129f497092f88` and has one unresolved P1: `docs/research/RV01_STATUS_EVIDENCE_MAP.md` correctly records R01-17 as consumed `SUPPORTED_REAL_DELAY_CAUSAL_TIMING`, while `docs/PROJECT_STATUS.md` still says R01-17 is preregistered/not executed. This can make the consumed identity appear runnable.
+Next SUB action is therefore to re-fetch a newer Evidence Analyst allocation. If no newer valid `reserved_for_sub` independent lane exists, SUB should no-op rather than take MAIN blockers or invent a new hypothesis/candidate.
 
-SUB did not mutate RV01 in this cycle. The connected file-update primitive requires complete whole-file replacement for the very large `docs/PROJECT_STATUS.md`, while this runtime cannot obtain a trustworthy byte-preserving local checkout. Rather than risk collateral corruption to a canonical status document after completing the primary lane, SUB leaves PR #140 as the next reserved independent action. This does not block MAIN.
+## Integrity summary
 
-## Collision / integrity reconciliation
-
-- MAIN family-B PR #144 explicitly avoided: yes
+- MAIN Family-B frontier touched: no
 - Analyst lane rejected as MAIN-coupled: none
-- immutable evidence modified: no
+- selected independent RV01 fallback completed: yes
+- exact reviewed head merged only: yes
+- immutable/frozen/formal evidence modified: no
 - scientific execution performed: no
-- one-way identity consumed: no
-- CX01 exact reviewed head merged: yes
-- RV01 fallback entered for inspection only, not mutated
-- MAIN does not need to wait for any SUB work
-
-## Completion status
-
-The **primary CX01 SUB lane is complete**: documentation is internally consistent, exact-head CI is green, fresh exact-head review is clean, and PR #143 is merged.
-
-The overall SUB worker remains active because the Analyst has a genuine independent fallback lane (#140) and future handoffs may reserve additional independent work. Next SUB action is RV01 canonical current-status reconciliation, subject to a safe byte-preserving edit path and fresh exact-head review/CI.
+- identity consumed this run: no
+- current Analyst SUB work remaining: none
