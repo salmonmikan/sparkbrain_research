@@ -1,5 +1,5 @@
 {
-  "run_timestamp": "2026-09-16T08:01:00+09:00",
+  "run_timestamp": "2026-09-16T09:01:00+09:00",
   "worker_role": "main",
   "evidence_analyst_commit": "e15c292d9590bc2406882551df7ba7b5b43513bb",
   "analyst_main_lane": {
@@ -18,8 +18,9 @@
   "analyst_sub_fallback": null,
   "reservation_status": {
     "sub_lane": "reserved_for_sub",
-    "source": "Operational reservation by MAIN under current hard two-worker ownership rule; Analyst state had recommended_owner=sub but did not yet serialize reservation_status.",
-    "fallback": null
+    "source": "Operational reservation continued under the hard two-worker ownership rule; Analyst state still recommends owner=sub and has not superseded the lane.",
+    "fallback": null,
+    "reservation_respected_by_main": true
   },
   "active_claims": [
     {
@@ -33,7 +34,8 @@
       "owner": "sub",
       "target": "P4 independent raw-artifact verifier hardening: ledger-time active-lineage validation plus changed_path_ids recomputation",
       "status": "RESERVED_FOR_SUB_NOT_TOUCHED_BY_MAIN_THIS_RUN",
-      "execution_allowed": false
+      "execution_allowed": false,
+      "durable_sub_claim_observed": false
     }
   ],
   "authoritative_refs": {
@@ -42,6 +44,7 @@
     "a01_p4_branch": "research/v061-a01-md002-p4-candidate-001-20260916",
     "a01_p4_head": "c1248bb3c87c0767e3e1a3cd2a6978ebb4eb06dc",
     "a01_p4_pr": 137,
+    "a01_p4_pr_state": "open_unmerged",
     "a01_p4_identity": "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
     "a01_p4_identity_consumed": false,
     "a01_p4_control_refs_found": false,
@@ -60,15 +63,17 @@
     "exact_head_codex_review": {
       "reviewed_commit": "c1248bb3c8",
       "state": "COMMENTED",
-      "fresh_p1_findings": [
-        "Independent verifier trusts copied active-lineage trace records instead of re-deriving proposal activity from retained ledger proposal created_at_ms/valid_until_ms at the measurement phases.",
-        "Independent verifier trusts stored changed_path_ids instead of recomputing exact differences from pre.path_reliability and post.path_reliability."
+      "unresolved_reserved_sub_p1_findings": [
+        "Independent verifier must re-derive proposal activity from retained ledger proposal created_at_ms/valid_until_ms at the measurement phases rather than trusting copied active-lineage rows.",
+        "Independent verifier must recompute exact changed_path_ids from pre.path_reliability and post.path_reliability and reject disagreement with the stored field."
       ]
     }
   },
   "branches_prs_advanced": {
     "by_main_this_run": [],
     "observed_existing_pr": [137],
+    "new_reserved_sub_branch_observed": false,
+    "new_reserved_sub_pr_observed": false,
     "merges": []
   },
   "workflows_experiments": [],
@@ -101,7 +106,9 @@
   "concurrency_reconciliation": {
     "previous_coordination_failure_observed": true,
     "previous_failure": "Earlier MAIN activity advanced the Analyst-designated verifier target while SUB was inspecting it, causing the 07:30 SUB run to no-op.",
-    "current_run_response": "MAIN did not modify verifier source/tests or absorb the remaining verifier-hardening package; reserved it for SUB.",
+    "current_run_response": "MAIN did not modify verifier source/tests or absorb the remaining verifier-hardening package; the reservation remains in force despite no newer SUB claim.",
+    "newer_sub_durable_record_observed": false,
+    "missing_sub_claim_treated_as_permission": false,
     "concurrent_overwrite_attempted": false
   },
   "integrity_status": {
@@ -110,15 +117,17 @@
     "candidate_output_acquired": false,
     "scoring_performed": false,
     "started_created": false,
-    "merge_performed": false
+    "merge_performed": false,
+    "research_branch_modified_by_main": false
   },
   "work_intentionally_left_for_sub": [
     "Independently derive before/after active proposal validity from retained ledger proposal created_at_ms/valid_until_ms at the bound measurement phases.",
     "Recompute exact changed-path differences from retained pre.path_reliability and post.path_reliability; fail closed if stored changed_path_ids disagrees.",
-    "Add fail-closed regression tests for both findings on a distinct SUB implementation stream."
+    "Keep independent retained-trace cardinality, merged-ancestry measurement, condition-spec binding, checksum/digest, preservation/no-clobber verification fail-closed and covered by regression tests.",
+    "Deliver the verifier hardening on a distinct SUB implementation stream without STARTED/acquisition/scoring."
   ],
   "reserved_sub_work_not_touched": true,
-  "reserved_sub_work_not_touched_detail": "MAIN made no verifier/test/source change despite the two current exact-head P1 findings because that coherent package is reserved for SUB.",
+  "reserved_sub_work_not_touched_detail": "MAIN made no verifier/test/scientific-source change and did not absorb the reserved SUB package despite no durable SUB claim being visible yet.",
   "lane_invalidation_or_repartition_reason": null,
   "active_lines": {
     "A01_MD002_P4": "central MAIN lane; pre-STARTED, blocked on two reserved-SUB verifier P1 findings",
@@ -127,13 +136,11 @@
     "CX_CX01": "candidate-002 consumed; no fresh successor assigned to MAIN"
   },
   "governance": {
-    "p4_question_issue": 138,
-    "tag_protection_issue": 139,
     "governance_blocking_science": false,
     "main_advanced": false,
     "main_promotion_actions": []
   },
-  "next_main_action": "After SUB delivers a reviewed/CI-clean verifier hardening package, re-fetch exact PR/source/identity/ref state, integrate/re-audit the exact head, verify both P1s are closed, re-run exact-head CI/review and one-way gates, then STARTED + exactly-once P4 execution only if every prospective condition remains clean.",
-  "history_record_commit": "8eeb5ce4534e5c3f2f56b2aadab83e6f4ab2108e",
-  "latest_record_commit": "31543ba71b9ec8ff857fc30d7d8d8abb06bb3162"
+  "next_main_action": "After SUB delivers a reviewed/CI-clean verifier hardening package, re-fetch exact PR/source/identity/ref state, integrate only that completed package, re-audit the exact resulting head, verify all verifier P1s are closed, re-run exact-head CI/review and one-way gates, then STARTED + exactly-once P4 execution only if every prospective condition remains clean.",
+  "history_record_commit": "f105e433c1d8d256e0e513551ea4836188950446",
+  "latest_record_commit": "0acbefbf1d433ba3456d2deba3ac92e673996183"
 }
