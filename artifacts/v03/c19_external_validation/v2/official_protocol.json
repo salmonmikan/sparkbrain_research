@@ -1,0 +1,158 @@
+{
+  "schema_version": "1",
+  "protocol_id": "c19-external-v2-official-protocol-v1",
+  "readiness_protocol_id": "c19-external-v2",
+  "adapter_contract_id": "c19-belief-r-truth-free-symbolic-adapter-v1",
+  "planned_official_identity": "c19-external-v2-official-v1",
+  "status": "prestart_protocolized_not_execution_admitted",
+  "official_execution_allowed": false,
+  "readiness_authority": {
+    "commit": "7ede1bfb41285ec0107136b4f6abd5e893adcacf",
+    "readiness_package_binding_blob": "d2dbfb32ba6b3babec8d7891d18c3e30f235a3cf",
+    "readiness_preregistration_blob": "0921f92c9cc29ac68f13972e24117870d159fc65",
+    "truth_free_adapter_blob": "3153fcb61d5872e93d22f30f0f1f808f856bfaeb",
+    "mutation_allowed": false
+  },
+  "belief_r_metadata_pin": {
+    "repository_id": "CAiRE/belief_r",
+    "revision": "3719f5804c63318037465fecf298a7fd78d99121",
+    "spec_sha256": "ed092dd97a176813f011cdf007d4e34a0b9bcc7c855c22983a31ff82e7b0d63c",
+    "expected_cache_sha256": "b584c18328965cf3eb3d36f2f9ef145c1e15c9bf57bba084982ba18df1fa4153",
+    "expected_size_bytes": 2230828,
+    "expected_rows": 3656,
+    "expected_pairs": 1744,
+    "expected_update_pairs": 1074,
+    "cache_content_accessed_during_protocolization": false,
+    "cache_verified_during_protocolization": false,
+    "examples_read_during_protocolization": false
+  },
+  "condition_matrix": {
+    "inputs": [
+      "I0_whole_hash",
+      "I1_local_compositional",
+      "I2_truth_free_symbolic_surface"
+    ],
+    "gates": [
+      "G0_probability_margin",
+      "G1_coalition"
+    ],
+    "entities": [
+      "E0_global"
+    ],
+    "official_seeds": [
+      15901,
+      15902,
+      15903,
+      15904,
+      15905
+    ]
+  },
+  "baseline_matrix": {
+    "baseline_kinds": [
+      "direct_stateless",
+      "explicit_state_probabilistic",
+      "modular_rim_like",
+      "recurrent",
+      "transformer"
+    ],
+    "official_seeds": [
+      15901,
+      15902,
+      15903,
+      15904,
+      15905
+    ]
+  },
+  "row_inventory": [
+    {"row_id":"c19:I0_whole_hash:G0_probability_margin:E0_global:seed-15901","row_kind":"c19_condition","condition_id":"I0_whole_hash/G0_probability_margin/E0_global","input_track":"I0_whole_hash","gate":"G0_probability_margin","entity":"E0_global","seed":15901},
+    {"row_id":"c19:I0_whole_hash:G0_probability_margin:E0_global:seed-15902","row_kind":"c19_condition","condition_id":"I0_whole_hash/G0_probability_margin/E0_global","input_track":"I0_whole_hash","gate":"G0_probability_margin","entity":"E0_global","seed":15902},
+    {"row_id":"c19:I0_whole_hash:G0_probability_margin:E0_global:seed-15903","row_kind":"c19_condition","condition_id":"I0_whole_hash/G0_probability_margin/E0_global","input_track":"I0_whole_hash","gate":"G0_probability_margin","entity":"E0_global","seed":15903},
+    {"row_id":"c19:I0_whole_hash:G0_probability_margin:E0_global:seed-15904","row_kind":"c19_condition","condition_id":"I0_whole_hash/G0_probability_margin/E0_global","input_track":"I0_whole_hash","gate":"G0_probability_margin","entity":"E0_global","seed":15904},
+    {"row_id":"c19:I0_whole_hash:G0_probability_margin:E0_global:seed-15905","row_kind":"c19_condition","condition_id":"I0_whole_hash/G0_probability_margin/E0_global","input_track":"I0_whole_hash","gate":"G0_probability_margin","entity":"E0_global","seed":15905},
+    {"row_id":"c19:I0_whole_hash:G1_coalition:E0_global:seed-15901","row_kind":"c19_condition","condition_id":"I0_whole_hash/G1_coalition/E0_global","input_track":"I0_whole_hash","gate":"G1_coalition","entity":"E0_global","seed":15901},
+    {"row_id":"c19:I0_whole_hash:G1_coalition:E0_global:seed-15902","row_kind":"c19_condition","condition_id":"I0_whole_hash/G1_coalition/E0_global","input_track":"I0_whole_hash","gate":"G1_coalition","entity":"E0_global","seed":15902},
+    {"row_id":"c19:I0_whole_hash:G1_coalition:E0_global:seed-15903","row_kind":"c19_condition","condition_id":"I0_whole_hash/G1_coalition/E0_global","input_track":"I0_whole_hash","gate":"G1_coalition","entity":"E0_global","seed":15903},
+    {"row_id":"c19:I0_whole_hash:G1_coalition:E0_global:seed-15904","row_kind":"c19_condition","condition_id":"I0_whole_hash/G1_coalition/E0_global","input_track":"I0_whole_hash","gate":"G1_coalition","entity":"E0_global","seed":15904},
+    {"row_id":"c19:I0_whole_hash:G1_coalition:E0_global:seed-15905","row_kind":"c19_condition","condition_id":"I0_whole_hash/G1_coalition/E0_global","input_track":"I0_whole_hash","gate":"G1_coalition","entity":"E0_global","seed":15905},
+    {"row_id":"c19:I1_local_compositional:G0_probability_margin:E0_global:seed-15901","row_kind":"c19_condition","condition_id":"I1_local_compositional/G0_probability_margin/E0_global","input_track":"I1_local_compositional","gate":"G0_probability_margin","entity":"E0_global","seed":15901},
+    {"row_id":"c19:I1_local_compositional:G0_probability_margin:E0_global:seed-15902","row_kind":"c19_condition","condition_id":"I1_local_compositional/G0_probability_margin/E0_global","input_track":"I1_local_compositional","gate":"G0_probability_margin","entity":"E0_global","seed":15902},
+    {"row_id":"c19:I1_local_compositional:G0_probability_margin:E0_global:seed-15903","row_kind":"c19_condition","condition_id":"I1_local_compositional/G0_probability_margin/E0_global","input_track":"I1_local_compositional","gate":"G0_probability_margin","entity":"E0_global","seed":15903},
+    {"row_id":"c19:I1_local_compositional:G0_probability_margin:E0_global:seed-15904","row_kind":"c19_condition","condition_id":"I1_local_compositional/G0_probability_margin/E0_global","input_track":"I1_local_compositional","gate":"G0_probability_margin","entity":"E0_global","seed":15904},
+    {"row_id":"c19:I1_local_compositional:G0_probability_margin:E0_global:seed-15905","row_kind":"c19_condition","condition_id":"I1_local_compositional/G0_probability_margin/E0_global","input_track":"I1_local_compositional","gate":"G0_probability_margin","entity":"E0_global","seed":15905},
+    {"row_id":"c19:I1_local_compositional:G1_coalition:E0_global:seed-15901","row_kind":"c19_condition","condition_id":"I1_local_compositional/G1_coalition/E0_global","input_track":"I1_local_compositional","gate":"G1_coalition","entity":"E0_global","seed":15901},
+    {"row_id":"c19:I1_local_compositional:G1_coalition:E0_global:seed-15902","row_kind":"c19_condition","condition_id":"I1_local_compositional/G1_coalition/E0_global","input_track":"I1_local_compositional","gate":"G1_coalition","entity":"E0_global","seed":15902},
+    {"row_id":"c19:I1_local_compositional:G1_coalition:E0_global:seed-15903","row_kind":"c19_condition","condition_id":"I1_local_compositional/G1_coalition/E0_global","input_track":"I1_local_compositional","gate":"G1_coalition","entity":"E0_global","seed":15903},
+    {"row_id":"c19:I1_local_compositional:G1_coalition:E0_global:seed-15904","row_kind":"c19_condition","condition_id":"I1_local_compositional/G1_coalition/E0_global","input_track":"I1_local_compositional","gate":"G1_coalition","entity":"E0_global","seed":15904},
+    {"row_id":"c19:I1_local_compositional:G1_coalition:E0_global:seed-15905","row_kind":"c19_condition","condition_id":"I1_local_compositional/G1_coalition/E0_global","input_track":"I1_local_compositional","gate":"G1_coalition","entity":"E0_global","seed":15905},
+    {"row_id":"c19:I2_truth_free_symbolic_surface:G0_probability_margin:E0_global:seed-15901","row_kind":"c19_condition","condition_id":"I2_truth_free_symbolic_surface/G0_probability_margin/E0_global","input_track":"I2_truth_free_symbolic_surface","gate":"G0_probability_margin","entity":"E0_global","seed":15901},
+    {"row_id":"c19:I2_truth_free_symbolic_surface:G0_probability_margin:E0_global:seed-15902","row_kind":"c19_condition","condition_id":"I2_truth_free_symbolic_surface/G0_probability_margin/E0_global","input_track":"I2_truth_free_symbolic_surface","gate":"G0_probability_margin","entity":"E0_global","seed":15902},
+    {"row_id":"c19:I2_truth_free_symbolic_surface:G0_probability_margin:E0_global:seed-15903","row_kind":"c19_condition","condition_id":"I2_truth_free_symbolic_surface/G0_probability_margin/E0_global","input_track":"I2_truth_free_symbolic_surface","gate":"G0_probability_margin","entity":"E0_global","seed":15903},
+    {"row_id":"c19:I2_truth_free_symbolic_surface:G0_probability_margin:E0_global:seed-15904","row_kind":"c19_condition","condition_id":"I2_truth_free_symbolic_surface/G0_probability_margin/E0_global","input_track":"I2_truth_free_symbolic_surface","gate":"G0_probability_margin","entity":"E0_global","seed":15904},
+    {"row_id":"c19:I2_truth_free_symbolic_surface:G0_probability_margin:E0_global:seed-15905","row_kind":"c19_condition","condition_id":"I2_truth_free_symbolic_surface/G0_probability_margin/E0_global","input_track":"I2_truth_free_symbolic_surface","gate":"G0_probability_margin","entity":"E0_global","seed":15905},
+    {"row_id":"c19:I2_truth_free_symbolic_surface:G1_coalition:E0_global:seed-15901","row_kind":"c19_condition","condition_id":"I2_truth_free_symbolic_surface/G1_coalition/E0_global","input_track":"I2_truth_free_symbolic_surface","gate":"G1_coalition","entity":"E0_global","seed":15901},
+    {"row_id":"c19:I2_truth_free_symbolic_surface:G1_coalition:E0_global:seed-15902","row_kind":"c19_condition","condition_id":"I2_truth_free_symbolic_surface/G1_coalition/E0_global","input_track":"I2_truth_free_symbolic_surface","gate":"G1_coalition","entity":"E0_global","seed":15902},
+    {"row_id":"c19:I2_truth_free_symbolic_surface:G1_coalition:E0_global:seed-15903","row_kind":"c19_condition","condition_id":"I2_truth_free_symbolic_surface/G1_coalition/E0_global","input_track":"I2_truth_free_symbolic_surface","gate":"G1_coalition","entity":"E0_global","seed":15903},
+    {"row_id":"c19:I2_truth_free_symbolic_surface:G1_coalition:E0_global:seed-15904","row_kind":"c19_condition","condition_id":"I2_truth_free_symbolic_surface/G1_coalition/E0_global","input_track":"I2_truth_free_symbolic_surface","gate":"G1_coalition","entity":"E0_global","seed":15904},
+    {"row_id":"c19:I2_truth_free_symbolic_surface:G1_coalition:E0_global:seed-15905","row_kind":"c19_condition","condition_id":"I2_truth_free_symbolic_surface/G1_coalition/E0_global","input_track":"I2_truth_free_symbolic_surface","gate":"G1_coalition","entity":"E0_global","seed":15905},
+    {"row_id":"baseline:direct_stateless:seed-15901","row_kind":"baseline","baseline_kind":"direct_stateless","seed":15901},
+    {"row_id":"baseline:direct_stateless:seed-15902","row_kind":"baseline","baseline_kind":"direct_stateless","seed":15902},
+    {"row_id":"baseline:direct_stateless:seed-15903","row_kind":"baseline","baseline_kind":"direct_stateless","seed":15903},
+    {"row_id":"baseline:direct_stateless:seed-15904","row_kind":"baseline","baseline_kind":"direct_stateless","seed":15904},
+    {"row_id":"baseline:direct_stateless:seed-15905","row_kind":"baseline","baseline_kind":"direct_stateless","seed":15905},
+    {"row_id":"baseline:explicit_state_probabilistic:seed-15901","row_kind":"baseline","baseline_kind":"explicit_state_probabilistic","seed":15901},
+    {"row_id":"baseline:explicit_state_probabilistic:seed-15902","row_kind":"baseline","baseline_kind":"explicit_state_probabilistic","seed":15902},
+    {"row_id":"baseline:explicit_state_probabilistic:seed-15903","row_kind":"baseline","baseline_kind":"explicit_state_probabilistic","seed":15903},
+    {"row_id":"baseline:explicit_state_probabilistic:seed-15904","row_kind":"baseline","baseline_kind":"explicit_state_probabilistic","seed":15904},
+    {"row_id":"baseline:explicit_state_probabilistic:seed-15905","row_kind":"baseline","baseline_kind":"explicit_state_probabilistic","seed":15905},
+    {"row_id":"baseline:modular_rim_like:seed-15901","row_kind":"baseline","baseline_kind":"modular_rim_like","seed":15901},
+    {"row_id":"baseline:modular_rim_like:seed-15902","row_kind":"baseline","baseline_kind":"modular_rim_like","seed":15902},
+    {"row_id":"baseline:modular_rim_like:seed-15903","row_kind":"baseline","baseline_kind":"modular_rim_like","seed":15903},
+    {"row_id":"baseline:modular_rim_like:seed-15904","row_kind":"baseline","baseline_kind":"modular_rim_like","seed":15904},
+    {"row_id":"baseline:modular_rim_like:seed-15905","row_kind":"baseline","baseline_kind":"modular_rim_like","seed":15905},
+    {"row_id":"baseline:recurrent:seed-15901","row_kind":"baseline","baseline_kind":"recurrent","seed":15901},
+    {"row_id":"baseline:recurrent:seed-15902","row_kind":"baseline","baseline_kind":"recurrent","seed":15902},
+    {"row_id":"baseline:recurrent:seed-15903","row_kind":"baseline","baseline_kind":"recurrent","seed":15903},
+    {"row_id":"baseline:recurrent:seed-15904","row_kind":"baseline","baseline_kind":"recurrent","seed":15904},
+    {"row_id":"baseline:recurrent:seed-15905","row_kind":"baseline","baseline_kind":"recurrent","seed":15905},
+    {"row_id":"baseline:transformer:seed-15901","row_kind":"baseline","baseline_kind":"transformer","seed":15901},
+    {"row_id":"baseline:transformer:seed-15902","row_kind":"baseline","baseline_kind":"transformer","seed":15902},
+    {"row_id":"baseline:transformer:seed-15903","row_kind":"baseline","baseline_kind":"transformer","seed":15903},
+    {"row_id":"baseline:transformer:seed-15904","row_kind":"baseline","baseline_kind":"transformer","seed":15904},
+    {"row_id":"baseline:transformer:seed-15905","row_kind":"baseline","baseline_kind":"transformer","seed":15905}
+  ],
+  "primary_discriminator": {
+    "primary_condition": "I2_truth_free_symbolic_surface/G1_coalition/E0_global",
+    "reference_condition": "I1_local_compositional/G1_coalition/E0_global",
+    "secondary_reference_condition": "I0_whole_hash/G1_coalition/E0_global",
+    "primary_metric": "BREU",
+    "claim_boundary": "truth_free_surface_structural_representation_gain_only",
+    "prohibited_inferences": ["semantic_symbolic_understanding","causal_circulation_novelty","A01_reopening","architecture_superiority_without_matched_baselines"]
+  },
+  "metrics": {
+    "BU_Acc": {"slice":"update","expected_pairs":1074},
+    "BM_Acc": {"slice":"maintain","expected_pairs":670},
+    "BREU": {"formula":"(BU_Acc + BM_Acc) / 2","primary":true},
+    "all_pair_accuracy": {"expected_pairs":1744,"primary":false},
+    "final_coverage": {"expected_pairs":1744,"primary":false}
+  },
+  "paired_statistics": {
+    "method":"paired_official_pair_bootstrap","resamples":10000,"bootstrap_seed":19901,"confidence_level":0.95,"resampling_unit":"official_pair_index","shared_resample_indices_across_all_five_seeds":true,"seed_aggregation":"recompute per-seed BU_Acc/BM_Acc/BREU then mean the five seed BREU values","primary_contrast":"primary_condition_minus_reference_condition","primary_contrast_only_controls_result_class":true,"other_contrasts":"descriptive_only","missing_or_duplicate_pair_classification":"INVALID_EVIDENCE"
+  },
+  "result_classification": {
+    "PASS":{"trigger":"primary BREU paired-bootstrap 95% CI lower_bound > 0","interpretation":"supports only the preregistered truth-free surface-structural representation gain on Belief-R"},
+    "FAIL":{"trigger":"primary BREU paired-bootstrap 95% CI upper_bound <= 0","interpretation":"does not support the preregistered representation gain; no same-identity repair"},
+    "INCONCLUSIVE":{"trigger":"primary BREU paired-bootstrap 95% CI contains 0","interpretation":"direction unresolved under the frozen discriminator; no same-identity retune"},
+    "INVALID_EVIDENCE":{"trigger":"identity/hash/binding/row-inventory/raw-before-score/access-order violation or incomplete/duplicate official pair coverage","interpretation":"scientific result withheld; if STARTED already exists the identity remains consumed"}
+  },
+  "baseline_resource_matching": {
+    "required_dimensions":["data_match","optimization_match","parameter_match","compute_match"],"same_official_pairs_required":1744,"same_target_blind_information_boundary_required":true,"extra_official_examples_forbidden":true,"target_fields_forbidden":true,"selection_split":"dev","calibration_split":"dev","official_test_fit_or_tuning":false,"parameter_count_relative_tolerance":0.02,"optimization_update_relative_tolerance":0.05,"analytical_training_plus_inference_ops_relative_tolerance":0.05,"wall_clock_role":"report_only_not_matching_gate","all_five_seeds_required_for_family_claim":true,"winner_claim_rule":"all four matching dimensions true for all five seeds AND paired BREU delta 95% CI lower_bound > 0","unmatched_baseline_role":"descriptive_only_no_superiority_claim"
+  },
+  "official_access_sequence_after_future_admission": ["fresh_remote_and_identity_reconciliation","fresh_evidence_analyst_execution_admission","create_STARTED_control_ref_bound_to_exact_protocol_package","verify_local_official_cache_hash_size_header_row_and_pair_counts","assert_network_blocked","execute_exact_55_row_inventory_without_fit_tune_or_select","write_target_blind_raw_predictions_to_fresh_no_clobber_path","hash_and_preserve_raw_predictions_before_any_scoring","score_only_from_preserved_raw_predictions_plus_evaluator_targets","write_scored_metrics_statistics_failures_and_report"],
+  "one_way_integrity": {"single_use_identity":true,"started_required_before_cache_verification":true,"existing_started_ref_is_fatal_before_start":true,"existing_raw_or_scored_output_is_fatal_before_start":true,"retry_after_started":false,"failure_after_started_consumes_identity":true,"raw_before_score":true,"raw_sha256_required_before_scoring":true,"no_clobber":true},
+  "runner_contract": {"c19_condition_rows":30,"baseline_rows":25,"total_rows":55,"official_pairs_per_row":1744,"model_execution_network_allowed":false,"official_fit_tune_select_allowed":false,"fresh_output_directory_required":true,"all_rows_required":true,"partial_post_start_failure":"identity_consumed_no_retry"},
+  "raw_prediction_schema": {"target_blind":true,"required_fields":["protocol_id","run_identity","row_id","row_kind","seed","pair_index","record_id_hash","source_index","step_index","prediction","probabilities","input_track","gate","entity","baseline_kind","work_counters"],"forbidden_fields":["ground_truth","truth","target","label","answer","correct","update_required","question","premises","choices_text","official_cache_bytes"],"official_text_committed":false},
+  "scored_output_contract": {"source":"preserved_raw_predictions_plus_evaluator_targets","sanitized_only":true,"official_question_or_premise_text_committed":false,"required_outputs":["scored_predictions","metrics_by_row","paired_statistics","baseline_matching","failure_examples","report"]},
+  "artifact_order": ["acquisition_manifest","run_manifest","raw_predictions","raw_manifest","scored_predictions","metrics_by_row","paired_statistics","baseline_matching","failure_examples","report"],
+  "reconstruction_contract": {"protocol_and_package_hashes_recorded":true,"readiness_anchor_recorded":true,"belief_r_revision_and_cache_hash_recorded":true,"row_inventory_recorded":true,"seed_inventory_recorded":true,"raw_manifest_records_sha256_and_row_counts":true,"scoring_must_reconstruct_from_preserved_raw":true},
+  "admission_boundary": {"fresh_evidence_analyst_execution_admission_required":true,"official_data_access_before_execution_admission":false,"started_before_execution_admission":false,"workflow_dispatch_before_execution_admission":false,"identity_consumption_before_execution_admission":false,"stop_when_exact_protocol_package_is_reviewable":true}
+}
