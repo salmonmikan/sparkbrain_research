@@ -1,0 +1,86 @@
+{
+  "schema_version": "1",
+  "binding_id": "c19-external-v2-source-only-structural-binding-v1",
+  "status": "prestart_binding_candidate_not_execution_admitted",
+  "source_parent_commit": "4ed49e9985b120486efba2db37e558848bc36fe0",
+  "frozen_protocol_head": "90c936a7abca7eba0dac1f977753503551e73368",
+  "planned_official_identity": "c19-external-v2-official-v1",
+  "official_execution_allowed": false,
+  "official_data_access": {
+    "cache_opened": false,
+    "cache_verified": false,
+    "examples_read": false,
+    "predictions_produced": false,
+    "scoring_performed": false
+  },
+  "bound_source_blobs": {
+    "implementation_binding.py": "aa0b07e0b756841ca8b4d4291aa9c4076f3f3ce1",
+    "test_c19_v2_implementation_binding.py": "ad26f890fa940e50be337ffabf2b8843b2f683ea",
+    "truth_free_adapter.py": "3153fcb61d5872e93d22f30f0f1f808f856bfaeb",
+    "input_diagnosis.py": "54298cae67a372237cc65ee9272bae661adb45cb",
+    "coalition.py": "bc0529e421c0b466d12af94fa3c833b9afe3bc02",
+    "official_execution.py": "d6e29df114450eea4f3741ca203d2b01969ce330"
+  },
+  "condition_binding": {
+    "input_tracks": [
+      "I0_whole_hash",
+      "I1_local_compositional",
+      "I2_truth_free_symbolic_surface"
+    ],
+    "shared_readout": "sha256_seeded_signed_projection_v1",
+    "training_updates": 0,
+    "G0_probability_margin": {
+      "score_threshold": 0.5,
+      "margin_threshold": 0.08
+    },
+    "G1_coalition": {
+      "implementation": "sparkbrain.v03_seed.coalition:C14_BOUNDED_MODE",
+      "settle_rounds_per_visible_step": 2,
+      "new_evidence_on_settle": false
+    },
+    "E0_global": true,
+    "I2_G0_G1_byte_identical_representation": true
+  },
+  "baseline_binding": {
+    "representation_access": "exact_I2_truth_free_symbolic_surface_for_all_five",
+    "training_updates": 0,
+    "official_fit_tune_select": false,
+    "families": {
+      "direct_stateless": "final-step fixed seeded projection",
+      "explicit_state_probabilistic": "product-of-step probability state",
+      "modular_rim_like": "four fixed seeded modules with top-two confidence aggregation",
+      "recurrent": "fixed 0.5 recurrent probability state",
+      "transformer": "fixed two-step causal-attention aggregation over projected states"
+    }
+  },
+  "representation_confound_audit": {
+    "direct_stateless_receives_exact_I2": true,
+    "explicit_state_probabilistic_receives_exact_I2": true,
+    "I2_G0_G1_byte_identity": true,
+    "frontend_confound_for_these_contrasts": false,
+    "isolation_axis_tested": false,
+    "persistent_state_novelty_claim_allowed": false
+  },
+  "resource_matching_policy": {
+    "data_match": "same injected official pair inventory and same target-blind I2 representation for every baseline",
+    "optimization_match": "zero training or selection updates for condition readout and every baseline",
+    "parameter_match": "not asserted by this binding; generated fixed coefficients are reported as algorithmic constants",
+    "compute_match": "operation counters must be recorded; unmatched families are descriptive only",
+    "winner_claim": "forbidden unless the frozen protocol's four matching dimensions are all established for all five seeds"
+  },
+  "claim_limits": [
+    "PASS remains only a truth-free surface-structural representation gain claim",
+    "I2 G1 over byte-identical I2 G0 may support an incremental gate/dynamics contribution but not mechanistic novelty",
+    "direct_stateless or explicit-state matching/winning supports simpler reductions",
+    "no architecture-superiority claim follows from unmatched resource rows",
+    "BU/BM/BREU does not test a separate Isolation axis",
+    "persistent belief state is not a novelty claim"
+  ],
+  "integrity": {
+    "STARTED_created": false,
+    "workflow_dispatched": false,
+    "identity_consumed": false,
+    "preserve_or_evidence_authority_created": false,
+    "future_evidence_analyst_execution_admission_required": true
+  }
+}
