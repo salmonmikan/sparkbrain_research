@@ -30,14 +30,14 @@
     "reservation_status": "reserved_for_sub",
     "independent_of_main_critical_path": true,
     "execution_allowed": false,
-    "status": "ACTIVE_BLOCKED_ON_SAFE_LEDGER_APPEND_AND_VALIDATION"
+    "status": "ACTIVE_BLOCKED_ON_SAFE_LEDGER_APPEND_AND_REVIEW"
   },
   "independence_from_main_critical_path": true,
   "execution_allowed": false,
   "sub_active_claim": {
     "target": "RV02 PR #142 independent documentation/integration cleanup",
     "status": "ACTIVE",
-    "remaining_claim": "canonical RD005 D1 ledger append, exact-head CI/review, merge-safety"
+    "remaining_claim": "canonical RD005 D1 ledger append, fresh exact-head review, merge-safety"
   },
   "main_work_explicitly_avoided": [
     "PR #144 and branch research/v061-a01-family-b-gen1-20260916",
@@ -49,7 +49,7 @@
   "authoritative_refs": {
     "control_brain_handoff": "cd378adcc8636f5794ac56ffcbaacd037e5c8088",
     "evidence_analyst_handoff": "e72ab0ee673d60a4b50e77232903cd19cecbcdfd",
-    "orchestrator_report_branch_before_write": "236139dde7dab7aadaf2ed0ad85de7336044b8b7",
+    "orchestrator_report_branch_before_first_write": "236139dde7dab7aadaf2ed0ad85de7336044b8b7",
     "main_live_family_b_branch_avoided": "research/v061-a01-family-b-gen1-20260916@0ddb73d9602f6459ee1d181f1acf3f7fe02dd839",
     "rv02_base": "research/rv02-development-feasibility@8176b91f5d427f3bdfccae2fac2c01b60a771403",
     "rv02_rd005_d1_source_freeze": "freeze/rv02-rd005-d1-source-c60b7fd8-20260914@c60b7fd8d3889ee969f505d921e7d31c990871e6",
@@ -87,9 +87,9 @@
         "id": 35070733775,
         "name": "ci",
         "head": "a835fc9ae69241d13e2d4d1daec8e3767e761ee7",
-        "status_at_report": "in_progress",
-        "observed_passed_stages": ["install", "ruff", "local_readiness"],
-        "observed_running_stage": "pytest"
+        "status": "completed",
+        "conclusion": "success",
+        "python_versions": ["3.11", "3.13"]
       }
     ],
     "manual_workflow_dispatch": false
@@ -101,6 +101,7 @@
     "Capability output was not opened; this is not a capability negative.",
     "Five pre-existing Ruff findings were addressed using behavior-preserving formatting/explicit zip strict=False semantics only.",
     "The PR patch was re-fetched and contained only the existing status map plus the intended lint-only source/test edits.",
+    "Exact-head CI run 35070733775 completed successfully on Python 3.11 and 3.13.",
     "Canonical RESULTS_LEDGER integration remains incomplete because a safe byte-preserving append primitive is unavailable in the current write surface."
   ],
   "consumed_identities": {
@@ -118,9 +119,9 @@
       "detail": "The canonical ledger is append-only and large; the available repository write primitive replaces the complete file. SUB refused a risky historical-byte reconstruction/rewrite merely to append the RD005 D1 entry."
     },
     {
-      "target": "PR #142 exact-head validation",
-      "type": "ci_review_pending",
-      "detail": "CI run 35070733775 remained in progress at report persistence time; the existing ledger P2 review thread remains unresolved until the canonical entry exists."
+      "target": "PR #142 review",
+      "type": "unresolved_p2",
+      "detail": "The existing P2 requiring the canonical RD005 D1 ledger entry remains unresolved. Fresh exact-head review should occur only after that entry exists."
     }
   ],
   "collision_reconciliation": {
@@ -143,18 +144,20 @@
     "scientific_scoring_performed": false,
     "main_critical_path_modified": false,
     "unsafe_append_only_file_replacement_refused": true,
+    "exact_head_ci_clean": true,
     "overall": "clean_independent_rv02_support_work_incomplete"
   },
   "completion_target": {
-    "target": "Append narrow RD005 D1 entry to canonical RESULTS_LEDGER without rewriting prior bytes; obtain clean exact-head CI and fresh review; resolve P2; perform fresh merge-safety and integrate only reviewed exact head",
+    "target": "Append narrow RD005 D1 entry to canonical RESULTS_LEDGER without rewriting prior bytes; obtain fresh exact-head review; resolve P2; perform fresh merge-safety and integrate only reviewed exact head",
     "reached": false
   },
   "fallback_status": {
     "target": "RV02 PR #142 canonical ledger integration plus behavior-preserving Ruff cleanup",
     "status": "ACTIVE_INCOMPLETE",
-    "head": "a835fc9ae69241d13e2d4d1daec8e3767e761ee7"
+    "head": "a835fc9ae69241d13e2d4d1daec8e3767e761ee7",
+    "ci": "success"
   },
   "rejected_lane": null,
   "lane_rejected_reason": null,
-  "next_sub_action": "Continue only RV02 PR #142 independent support work: obtain a byte-preserving canonical ledger append path, then re-fetch exact head, CI, review and merge-safety. Never take A01 Family-B blockers."
+  "next_sub_action": "Continue only RV02 PR #142 independent support work: obtain a byte-preserving canonical ledger append path, then re-fetch exact head, obtain fresh review and merge-safety. Never take A01 Family-B blockers."
 }

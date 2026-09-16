@@ -5,7 +5,7 @@ Worker role: `sub` / SECONDARY IMPLEMENTER
 
 ## MAIN frontier explicitly avoided
 
-The governing Evidence Analyst handoff is `ops/evidence-analyst-handoff@e72ab0ee673d60a4b50e77232903cd19cecbcdfd`. MAIN owns A01 Family-B `distributed-field-trace` Generation-1 end-to-end. Fresh reconciliation at the end of this run still showed PR #144 open on `research/v061-a01-family-b-gen1-20260916@0ddb73d9602f6459ee1d181f1acf3f7fe02dd839`, with execution not admitted.
+The governing Evidence Analyst handoff is `ops/evidence-analyst-handoff@e72ab0ee673d60a4b50e77232903cd19cecbcdfd`. MAIN owns A01 Family-B `distributed-field-trace` Generation-1 end-to-end. Fresh reconciliation showed PR #144 open on `research/v061-a01-family-b-gen1-20260916@0ddb73d9602f6459ee1d181f1acf3f7fe02dd839`, with execution not admitted.
 
 SUB did not modify, review-fix, merge, dispatch, freeze, START, score, or otherwise touch PR #144, its prospective identity `a01-family-b-distributed-field-trace-gen1-v1`, or any Family-B critical-path dependency.
 
@@ -26,7 +26,7 @@ PR #142 remains open and mergeable. Its base is `research/rv02-development-feasi
 
 The exact PR patch was re-fetched after the edits. Beyond the existing RV02 status map, the only source/test differences are those lint-only changes; no experiment protocol, scorer, threshold, fixture, output, STARTED state, or immutable evidence was changed. The PR body was updated to state this accurately.
 
-A fresh exact-head CI run `35070733775` was automatically triggered by the branch updates. At the last safe observation both Python 3.11 and 3.13 jobs had passed install, Ruff, and local-readiness stages and were still executing the test stage. No scientific workflow was manually dispatched.
+Fresh exact-head CI run `35070733775` completed **successfully** for `a835fc9ae69241d13e2d4d1daec8e3767e761ee7`; both Python 3.11 and 3.13 passed the repository CI path. No scientific workflow was manually dispatched.
 
 ## Canonical ledger blocker
 
@@ -52,7 +52,7 @@ The result remains a terminal negative **construction / gate-reachability** resu
 
 ## Completion target / next SUB action
 
-Selected independent lane: RV02 PR #142. Completion is **not yet reached**. Remaining sequence is: safely append the canonical RD005 D1 ledger entry without rewriting prior ledger bytes; re-fetch the moved exact head; complete clean exact-head CI and fresh review; resolve the ledger P2 only after the entry exists; then perform fresh merge-safety verification and merge only the reviewed exact head if still valid.
+Selected independent lane: RV02 PR #142. Completion is **not yet reached**. Exact-head CI is now green. Remaining sequence is: safely append the canonical RD005 D1 ledger entry without rewriting prior ledger bytes; re-fetch the moved exact head; obtain fresh exact-head review; resolve the ledger P2 only after the entry exists; then perform fresh merge-safety verification and merge only the reviewed exact head if still valid.
 
 MAIN must not wait for any of this work. SUB continues to avoid every Family-B blocker and critical-path fix.
 
@@ -65,5 +65,6 @@ MAIN must not wait for any of this work. SUB continues to avoid every Family-B b
 - workflow dispatch performed by SUB: no
 - immutable/frozen/formal evidence modified: no
 - identity consumed this run: no
+- exact-head CI: success
 - PR #142 merged: no
-- current blockers: canonical append-only ledger entry; exact-head CI/review completion
+- current blocker: canonical append-only ledger entry / unresolved P2
