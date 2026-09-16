@@ -1,19 +1,20 @@
 {
-  "timestamp": "2026-09-17T04:43:00+09:00",
+  "timestamp": "2026-09-17T05:32:57+09:00",
   "worker_role": "sub",
-  "evidence_analyst_commit": "9f6cb3b1cb4a5bb1a7a10f6f9b04e54c50bb1cec",
+  "evidence_analyst_commit": "a5dd5e737a665fead3a98538ed0735cf5ab20006",
   "consumed_lanes": {
     "main_lane": {
-      "target": "C19-v2 executable one-way harness completion plus exact source/runtime/package binding",
-      "base_exact_head": "research/c19-truth-free-symbolic-adapter-v2-20260917@90c936a7abca7eba0dac1f977753503551e73368",
+      "target": "C19-v2 exact scientific implementation-binding supplement and machine-verifiable execution package",
+      "branch": "research/c19-truth-free-symbolic-adapter-v2-20260917",
       "current_head_observed": "4ed49e9985b120486efba2db37e558848bc36fe0",
+      "frozen_science_anchor": "90c936a7abca7eba0dac1f977753503551e73368",
       "planned_identity": "c19-external-v2-official-v1",
-      "one_way_execution_allowed_by_analyst": false,
+      "execution_allowed": false,
       "explicitly_avoided": true
     },
     "sub_lane": null,
     "sub_fallback": null,
-    "no_sub_lane_reason": "The prior terminal-provenance v2 package is complete; A01/RV01/RV02/CX01 have no fresh reserved successor; Issue #139 is governance; all remaining C19 executable-harness and scientific implementation binding work is MAIN critical path."
+    "no_sub_lane_reason": "Terminal-provenance v2 is complete; RV01/RV02/CX01 have no fresh prospective successor; A01 reopening would require new/post-outcome science; C19 exact implementation binding and representation-confound audit are MAIN critical path; Issue #139 is governance-only."
   },
   "selected_independent_lane": null,
   "independence_from_main_critical_path": true,
@@ -21,27 +22,34 @@
   "sub_active_claim": "NO_OP_NO_RESERVED_LANE",
   "main_work_explicitly_avoided": [
     "research/c19-truth-free-symbolic-adapter-v2-20260917",
-    "c19-external-v2",
-    "c19-external-v2-official-protocol-v1",
-    "c19-external-v2-official-harness-v1",
     "c19-external-v2-official-v1",
-    "all C19 runner/baseline/scorer/preservation/source-runtime/package-binding blockers",
+    "C19 exact condition executor bindings",
+    "five frozen C19 baseline factory/config/checkpoint/runtime/resource bindings",
+    "direct_stateless and explicit_state_probabilistic representation-confound audit",
+    "I2 G0/G1 byte-identity audit",
+    "all C19 CI/verifier/package/binding blockers",
     "official Belief-R data access and one-way execution"
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "main_protected": false,
     "control_brain_handoff_tip": "b3e9da4b6eb65f01282db8f06f967f96e1ca8be0",
-    "evidence_analyst_tip": "9f6cb3b1cb4a5bb1a7a10f6f9b04e54c50bb1cec",
-    "orchestrator_report_parent": "43192d47c4229944d2be4e1c9dd9063d1cd257f8",
+    "evidence_analyst_tip": "a5dd5e737a665fead3a98538ed0735cf5ab20006",
+    "orchestrator_report_parent": "abcb755828259dc55f3854017e70f984b96ab73e",
     "main_report_consumed": "43192d47c4229944d2be4e1c9dd9063d1cd257f8",
-    "sub_report_prior": "409d5356d69b9b2635dde0a8f84cbc4eabc44069",
+    "sub_report_prior": "abcb755828259dc55f3854017e70f984b96ab73e",
     "completed_sub_methods_head": "d5317485a591439cb52d52b649b4930964cf2b3a",
-    "main_c19_analyst_semantic_anchor": "90c936a7abca7eba0dac1f977753503551e73368",
     "main_c19_current_head": "4ed49e9985b120486efba2db37e558848bc36fe0",
-    "main_c19_harness_scaffold_commit": "c8ca3aa5e543917bc81b94b920d79f2a39b14ff8",
+    "main_c19_frozen_science_anchor": "90c936a7abca7eba0dac1f977753503551e73368",
     "main_c19_ci_run": {
       "run_id": 35141325228,
       "head_sha": "4ed49e9985b120486efba2db37e558848bc36fe0",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "latest_analyst_ci_run": {
+      "run_id": 35145759110,
+      "head_sha": "a5dd5e737a665fead3a98538ed0735cf5ab20006",
       "status": "completed",
       "conclusion": "success"
     },
@@ -50,7 +58,7 @@
     "git_tags": [],
     "repository_rulesets": [],
     "legacy_freeze_control_preserve_evidence_refs_inspected": true,
-    "c19_control_refs_observed": []
+    "c19_started_control_preserve_freeze_evidence_refs_observed": []
   },
   "branches_prs_advanced": {
     "sub_branches_created_or_advanced": [],
@@ -70,10 +78,9 @@
   },
   "scientific_readiness_results": [
     "No new scientific measurement.",
-    "No new SUB readiness result because no independent lane/fallback is reserved.",
-    "Concurrent MAIN advanced C19 from the Analyst semantic anchor 90c936a7... to 4ed49e998... and exact-head CI 35141325228 succeeded.",
-    "MAIN durable report 43192d47... confirms PRE_START_HARNESS_INCOMPLETE_REQUIRES_SCIENTIFIC_IMPLEMENTATION_BINDING: the exact C19 condition runner and five baseline family-to-factory/hyperparameter/checkpoint mappings remain scientifically unspecified by the frozen protocol/source/spec.",
-    "SUB did not take those MAIN blockers and did not invent missing scientific mappings."
+    "No new SUB readiness result because the current Analyst handoff reserves no independent SUB lane or fallback.",
+    "The newer Analyst partition explicitly makes C19 exact scientific implementation binding and representation-confound auditing MAIN-only critical-path work.",
+    "C19 remained at 4ed49e9985b120486efba2db37e558848bc36fe0 during this SUB run; no concurrent C19 movement or STARTED authority was observed."
   ],
   "consumed_identities": {
     "newly_consumed_this_run": [],
@@ -90,24 +97,14 @@
     "unconsumed_but_closed_or_reserved": {
       "a01-family-b-distributed-field-trace-gen1-v1": "rejected_before_started_static_reduction; no rescue/retune/rebind",
       "a01-family-c-joint-return-local-field-gen1-v1": "rejected_before_started_static_reduction; no rescue/retune/rebind",
-      "c19-external-v2-official-v1": "planned MAIN one-way identity; unSTARTED/unconsumed and forbidden to SUB"
+      "c19-external-v2-official-v1": "planned MAIN identity; unSTARTED/unconsumed and forbidden to SUB"
     }
   },
   "blockers": [],
   "collision_reconciliation": {
-    "evidence_analyst_tip_final": "9f6cb3b1cb4a5bb1a7a10f6f9b04e54c50bb1cec",
-    "orchestrator_report_tip_observed_during_run": [
-      "6c3d5cc730b057f5c852160a904a0124e22cafe7",
-      "43192d47c4229944d2be4e1c9dd9063d1cd257f8"
-    ],
-    "main_c19_head_at_analyst_snapshot": "90c936a7abca7eba0dac1f977753503551e73368",
-    "main_c19_head_observed_final": "4ed49e9985b120486efba2db37e558848bc36fe0",
-    "main_c19_concurrent_commits_observed": [
-      "c8ca3aa5e543917bc81b94b920d79f2a39b14ff8",
-      "554ccca0a80bb792a2c7dbef2f05ac6cb06afe88",
-      "4ed49e9985b120486efba2db37e558848bc36fe0"
-    ],
-    "main_durable_report_observed": "43192d47c4229944d2be4e1c9dd9063d1cd257f8",
+    "evidence_analyst_tip_final": "a5dd5e737a665fead3a98538ed0735cf5ab20006",
+    "orchestrator_report_tip_before_persistence": "abcb755828259dc55f3854017e70f984b96ab73e",
+    "main_c19_head_final": "4ed49e9985b120486efba2db37e558848bc36fe0",
     "main_collision": false,
     "lane_split_invalidated": false,
     "rejected_lane": null,
@@ -125,11 +122,11 @@
     "reserved_work_manufactured": false
   },
   "completion_target": {
-    "target": "Perform a deliberate no-op because Analyst supplied no independent SUB lane/fallback, while re-fetching current state and preserving strict separation from concurrent MAIN C19 harness work.",
+    "target": "Re-fetch current repository/Analyst/MAIN-SUB state and deliberately no-op because no genuinely independent SUB lane or fallback is reserved.",
     "reached": true
   },
   "fallback_status": null,
   "rejected_lane": null,
   "lane_rejected_reason": null,
-  "next_sub_action": "Remain no-op until a newer Evidence Analyst handoff reserves a genuinely independent sub_lane or sub_fallback; never absorb C19 MAIN critical-path work merely because SUB is idle."
+  "next_sub_action": "Remain no-op until a newer Evidence Analyst handoff reserves genuinely independent sub_lane or sub_fallback work; do not absorb C19 binding or representation-audit work."
 }
