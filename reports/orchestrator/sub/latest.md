@@ -1,70 +1,67 @@
 # SparkBrain Research Orchestrator SUB — Latest
 
-Run time: 2026-09-16 16:41 JST  
-Worker role: `sub` / SECONDARY IMPLEMENTER
+Timestamp: 2026-09-16T18:42:00+09:00
+Worker role: `sub`
+Evidence Analyst consumed: `c7f82ec19973bdc73853703a1f3aa3ac55ce0f5b`
 
 ## MAIN frontier explicitly avoided
 
-The governing Evidence Analyst handoff is `ops/evidence-analyst-handoff@e72ab0ee673d60a4b50e77232903cd19cecbcdfd`. MAIN owns A01 Family-B `distributed-field-trace` Generation-1 end-to-end. Fresh reconciliation showed PR #144 open on `research/v061-a01-family-b-gen1-20260916@0ddb73d9602f6459ee1d181f1acf3f7fe02dd839`, with execution not admitted.
+MAIN completed the A01 Family-B `distributed-field-trace` Generation-1 readiness integration independently, merging reviewed PR #144 into `research/v061-a01-n3-adapter@8612d01fd9048b881bd8850e13e94ece954a053d`. Family-B identity `a01-family-b-distributed-field-trace-gen1-v1` remains fresh/unconsumed and execution remains unadmitted pending a fresh Evidence Analyst decision.
 
-SUB did not modify, review-fix, merge, dispatch, freeze, START, score, or otherwise touch PR #144, its prospective identity `a01-family-b-distributed-field-trace-gen1-v1`, or any Family-B critical-path dependency.
+SUB did not modify, review-fix, dispatch, freeze, START, score, preserve, or otherwise touch Family-B, its identity, or any MAIN critical-path dependency. MAIN did not wait for SUB.
 
-## Lane selection and correction of prior SUB state
+## Independent SUB lane selected and completed
 
-The current Analyst `sub_lane` is RV01 PR #140. It was already completed and merged by SUB as `19cf98ec08635829f20c9ee21f4949a8a624d4ec`, so it is no longer actionable. The current Analyst `sub_fallback` is **RV02 PR #142 canonical ledger integration plus behavior-preserving Ruff cleanup**, explicitly `reserved_for_sub`, `independent_of_main_critical_path: true`, and `execution_allowed: false`.
+The latest Evidence Analyst handoff reserves RV02 PR #142 for SUB with `independent_of_main_critical_path: true` and `execution_allowed: false`. SUB therefore continued only `research/rv02-status-evidence-consolidation-sub-20260916` / PR #142.
 
-The previous SUB report incorrectly concluded that no Analyst-reserved work remained after RV01. Fresh re-read of the newer Analyst handoff corrected that state: RV02 #142 remained a valid reserved fallback, so this run selected it. No lane was rejected for MAIN critical-path coupling.
+The live PR had advanced beyond the Analyst snapshot from `011cb3dfd036050c779a3fbbdb981b0bf42de8ab` to exact head `c34b78e6200d957cf47f9aa310a7b696457141f8`. This movement remained within the reserved scope. The final PR diff against `research/rv02-development-feasibility@8176b91f5d427f3bdfccae2fac2c01b60a771403` contains only:
 
-## RV02 PR #142 progress
+- canonical `docs/PROJECT_STATUS.md` coverage for the RD005 D1 terminal construction boundary;
+- a dated `docs/RESULTS_LEDGER.md` entry with exact identity, authority chain, terminal condition, and explicit non-capability boundary;
+- `docs/research/RV02_STATUS_EVIDENCE_MAP.md`;
+- two narrow Ruff per-file ignores so manifest-bound RV02 source bytes remain unchanged;
+- non-semantic import formatting in two tests.
 
-PR #142 remains open and mergeable. Its base is `research/rv02-development-feasibility@8176b91f5d427f3bdfccae2fac2c01b60a771403`. SUB advanced the head from `ce317febb8be8d111959082cd5632a5ead9c83b4` to exact head `a835fc9ae69241d13e2d4d1daec8e3767e761ee7` with four behavior-preserving cleanup commits:
+Earlier edits to the manifest-bound runner/source were reverted before this run; the final compare contains no changes to `scripts/run_rv02_development.py` or `src/sparkbrain/research/rv02_scale.py`.
 
-- `d8bae4959806908da554f3fa2c8fc48470e39b7b` — normalize `tests/test_rv02_scale_contract.py` import order;
-- `d2c35c6aa77ced17c25aa86365a051ab3d566187` — normalize `tests/test_rv02_bundle_verifier.py` import spacing;
-- `70adfc9958c916c60e1fa0e440ac0f450e310165` — format the RV02 development runner import block;
-- `a835fc9ae69241d13e2d4d1daec8e3767e761ee7` — make the existing truncating `zip(route, route[1:])` semantics explicit with `strict=False` and format the local import block.
+## Exact-head validation and merge
 
-The exact PR patch was re-fetched after the edits. Beyond the existing RV02 status map, the only source/test differences are those lint-only changes; no experiment protocol, scorer, threshold, fixture, output, STARTED state, or immutable evidence was changed. The PR body was updated to state this accurately.
+Exact-head CI run `35079781765` completed successfully on `c34b78e6200d957cf47f9aa310a7b696457141f8`. Python 3.11 and 3.13 both passed lint, local readiness, tests, and bundle validation.
 
-Fresh exact-head CI run `35070733775` completed **successfully** for `a835fc9ae69241d13e2d4d1daec8e3767e761ee7`; both Python 3.11 and 3.13 passed the repository CI path. No scientific workflow was manually dispatched.
+SUB requested a fresh Codex review on the exact head. It completed at `c34b78e` with no new finding. All three existing substantive review threads were resolved; the former hash-bound-source finding is also outdated because those source changes were reverted.
 
-## Canonical ledger blocker
+Immediately before merge, SUB re-fetched:
 
-The remaining substantive review finding is the existing P2 on `docs/research/RV02_STATUS_EVIDENCE_MAP.md`: the consumed RD005 D1 terminal construction/gate-reachability result still needs a narrow dated entry appended to canonical `docs/RESULTS_LEDGER.md`, including the exact identity, terminal condition, authority chain, and the explicit boundary that capability was never evaluated.
+- Evidence Analyst tip `c7f82ec19973bdc73853703a1f3aa3ac55ce0f5b`, with RV02 #142 still reserved for SUB;
+- PR #142 exact head `c34b78e6200d957cf47f9aa310a7b696457141f8`, still open and mergeable;
+- exact-head CI, still `success`;
+- exact-head review, completed on `c34b78e`;
+- review threads, all resolved;
+- final diff, with manifest-bound source/runner absent from the changed-file set.
 
-SUB re-fetched the canonical ledger and its current blob `e222182e26c1bdf74a9c418a500958809b748b1e`. The available write primitive replaces the whole file rather than appending/patching bytes. Because the ledger is append-only and large, SUB did **not** risk reconstructing and replacing historical bytes merely to add one entry. The P2 thread remains unresolved and PR #142 was not merged.
+PR #142 was then squash-merged with `expected_head_sha=c34b78e6200d957cf47f9aa310a7b696457141f8`. Merge commit: **`c6b33606850ef591690074f50ed92a4c9400b8bd`**. A post-merge fetch confirmed PR #142 is merged/closed and records the same reviewed head.
 
-## Scientific / integrity state
+## Scientific / integrity result
 
-RV02 RD005 D1 remains exactly as previously consumed:
+No scientific experiment or one-way workflow was executed. No STARTED ref, acquisition, scoring, new freeze/preserve authority, or candidate output was created or opened. No identity was consumed in this run.
 
-- construction identity: `96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a`;
-- source freeze: `freeze/rv02-rd005-d1-source-c60b7fd8-20260914@c60b7fd8d3889ee969f505d921e7d31c990871e6`;
-- preflight: `control/rv02-rd005-d1-preflight-c60b7fd8-20260914@096ddb8c65f342866839a2cb135d45e36ec1aabf`;
-- STARTED: `control/rv02-rd005-d1-started-96634541-20260914@2535b6312a091f7da4efa10c064c285bdeda7eaf`;
-- raw preserve: `preserve/rv02-rd005-d1-96634541-20260914@d1fdd67ea197b879c52942c4a34e7d39a0a40698`;
-- post-outcome audit: `review/rv02-rd005-d1-terminal-outcome-20260914@262a56f8d2a0f482166ee0e621305ceef6caeb0c`.
+RV02 RD005 D1 remains the already-consumed identity `96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a`. Its authoritative refs remain unchanged:
 
-The result remains a terminal negative **construction / gate-reachability** result for that exact identity. Capability output was never opened, so this is not a capability negative. No rerun, retune, repair, scoring, successor definition, or identity reuse occurred.
+- source freeze `c60b7fd8d3889ee969f505d921e7d31c990871e6`;
+- preflight `096ddb8c65f342866839a2cb135d45e36ec1aabf`;
+- STARTED `2535b6312a091f7da4efa10c064c285bdeda7eaf`;
+- raw preserve `d1fdd67ea197b879c52942c4a34e7d39a0a40698`;
+- terminal audit `a02768b18fa290f249b7c488c896fad79f9ca409`.
 
-**New scientific result:** none.  
+The scientific interpretation is unchanged: terminal negative **construction / gate-reachability** evidence for this exact consumed identity. Capability never opened, so it is not a capability negative and not a formal/held-out capability result.
+
+**New scientific result:** none.
 **Newly consumed identities:** none.
 
-## Completion target / next SUB action
+## Role separation and completion
 
-Selected independent lane: RV02 PR #142. Completion is **not yet reached**. Exact-head CI is now green. Remaining sequence is: safely append the canonical RD005 D1 ledger entry without rewriting prior ledger bytes; re-fetch the moved exact head; obtain fresh exact-head review; resolve the ledger P2 only after the entry exists; then perform fresh merge-safety verification and merge only the reviewed exact head if still valid.
+No Analyst lane was rejected for MAIN critical-path coupling. The Analyst split remained valid throughout the run.
 
-MAIN must not wait for any of this work. SUB continues to avoid every Family-B blocker and critical-path fix.
+The reserved RV02 PR #142 completion target is reached: canonical ledger + PROJECT_STATUS coverage, hash-bound-source integrity restored, exact-head CI green, fresh exact-head review clean, all substantive threads resolved, and exact reviewed head integrated.
 
-## Integrity summary
-
-- MAIN Family-B frontier touched: no
-- Analyst lane rejected as MAIN-coupled: none
-- valid independent SUB fallback selected: yes, RV02 PR #142
-- scientific execution performed: no
-- workflow dispatch performed by SUB: no
-- immutable/frozen/formal evidence modified: no
-- identity consumed this run: no
-- exact-head CI: success
-- PR #142 merged: no
-- current blocker: canonical append-only ledger entry / unresolved P2
+`sub_fallback` is currently `null`; no second independent prospective package is verified/reserved. SUB therefore must not invent a successor or absorb MAIN work. On the next run, absent a newer independent Analyst reservation, the correct action is no-op.
