@@ -1,22 +1,18 @@
 {
-  "analysis_timestamp": "2026-09-16T09:02:00+09:00",
-  "control_brain_handoff": {
-    "ref": "ops/control-brain-handoff",
-    "commit": "1985198deb95190d45cb46629beb654eb04d4d92",
-    "assessment": "foundational_strategy_supported_as_prior"
-  },
-  "orchestrator_report": {
-    "ref": "ops/orchestrator-run-report",
-    "commit": "50f75af6f454b792d8f1dca2e4d8d260237104b2",
-    "assessment": "fresh MAIN 09:01 report; reservation respected; no new scientific result"
-  },
+  "analysis_timestamp": "2026-09-16T10:03:00+09:00",
   "authoritative_refs_inspected": {
     "main": "ba16bf10535141c2edb29bbe3439ba0a38e71179",
+    "control_brain_handoff": "1985198deb95190d45cb46629beb654eb04d4d92",
+    "evidence_analyst_prior": "d6c1ce8de78cd031eb82209657a851b9e0a18684",
+    "orchestrator_run_report_branch": "50f75af6f454b792d8f1dca2e4d8d260237104b2",
+    "main_split_report": "MISSING_NOT_YET_MATERIALIZED",
+    "sub_split_report": "MISSING_NOT_YET_MATERIALIZED",
+    "legacy_shared_report_role": "main",
     "a01_authoritative": "2e47df9cf8c6323f390935bb41c368632f3342c6",
     "a01_p4_branch": "research/v061-a01-md002-p4-candidate-001-20260916",
     "a01_p4_head": "c1248bb3c87c0767e3e1a3cd2a6978ebb4eb06dc",
     "a01_p4_pr": 137,
-    "a01_p4_pr_state": "open_unmerged",
+    "a01_p4_pr_state": "open_unmerged_mergeable",
     "a01_p4_ci": {
       "run_id": 35032927316,
       "status": "completed",
@@ -27,37 +23,49 @@
     "a01_p4_started_or_control_found": false,
     "a01_p4_preserve_found": false,
     "rv01_authoritative": "98be60268845487ce51e76b8a7687552a5dbc51f",
+    "rv02_authoritative": "2d6463e76e017a4f7f7edbdff6067f91f14594f3",
     "rv02_rd005_source": "c60b7fd8d3889ee969f505d921e7d31c990871e6",
-    "rv02_rd005_consumed_input_sha256": "96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a"
+    "cx01_authoritative": "db6264056c194fba4d8a8c9c8a86b0a2444d1c4",
+    "git_tags_count": 0,
+    "repository_rulesets_count": 0
   },
+  "control_brain_commit_consumed": "1985198deb95190d45cb46629beb654eb04d4d92",
+  "main_report_commit_consumed": "50f75af6f454b792d8f1dca2e4d8d260237104b2",
+  "main_report_source": "legacy_shared_fallback_because_split_main_stream_not_yet_materialized",
+  "sub_report_commit_consumed": null,
+  "sub_report_source": "split_sub_stream_not_yet_materialized_and_no_newer_durable_sub_report_found",
   "new_scientific_information": false,
-  "new_readiness_information": [
-    "PR #137 remains at c1248bb3c87c0767e3e1a3cd2a6978ebb4eb06dc with exact-head CI success and the P4 identity still pre-STARTED/unconsumed.",
-    "Exact-head review leaves two P1 verifier defects: re-derive active proposal validity from retained ledger proposal created_at_ms/valid_until_ms at bound measurement times; recompute changed_path_ids from retained pre/post path_reliability and reject disagreement.",
-    "The fresh 09:01 MAIN report explicitly left those two P1 verifier fixes to SUB and did not absorb them, converting the remaining work into a genuinely available reserved package."
+  "new_readiness_or_coordination_information": [
+    "PR #137 remains open/unmerged at exact head c1248bb3c87c0767e3e1a3cd2a6978ebb4eb06dc; exact-head CI run 35032927316 remains successful.",
+    "Fresh control-ref inventory still contains no P4 STARTED/control ref and fresh preserve-ref inventory contains no P4 preserve ref; candidate-001 remains pre-STARTED/unconsumed.",
+    "The prior Analyst split was invalid under the new strict role doctrine: both remaining P4 verifier P1 defects are on MAIN's critical path and are reassigned to MAIN.",
+    "New MAIN/SUB split durable-report paths are not yet materialized on ops/orchestrator-run-report; current claims therefore fall back to the legacy 09:01 MAIN report until the next executor writes its role-owned stream.",
+    "A genuinely independent SUB package is available as secondary-line scientific-material consolidation rather than a MAIN blocker."
   ],
-  "active_claims_observed": [
+  "active_main_sub_claims_observed": [
     {
       "owner": "main",
-      "target": "A01 MD-002 P4 candidate-001 selective merged-lineage discriminator",
+      "target": "A01 MD-002 P4 candidate-001",
       "branch": "research/v061-a01-md002-p4-candidate-001-20260916",
       "pr": 137,
-      "status": "STOP_PENDING_RESERVED_SUB_VERIFIER_P1_FIXES"
+      "status": "ACTIVE_FRONTIER_REASSIGNED_TO_MAIN_WITH_ALL_P4_CRITICAL_PATH_FIXUPS"
     },
     {
       "owner": "sub",
-      "target": "P4 independent verifier hardening: ledger-time active-lineage validation plus changed_path_ids recomputation",
-      "status": "RESERVED_FOR_SUB_NOT_YET_DURABLY_CLAIMED",
-      "execution_allowed": false
+      "target": null,
+      "status": "NO_DURABLE_CURRENT_SUB_CLAIM_SPLIT_STREAM_NOT_YET_MATERIALIZED"
     }
   ],
   "active_line_review": {
     "A01_MD002": {
       "centrality": "CENTRAL_DIRECT",
       "status": "UNRESOLVED_P4_PRESTARTED",
-      "strongest_evidence": "P2 SUPPORTED_SELECTIVE_CIRCULATION and P3 SUPPORTED_R_CAUSAL_CARRIER remain positive development evidence; no P4 outcome exists.",
+      "strongest_evidence": "P2 SUPPORTED_SELECTIVE_CIRCULATION and P3 SUPPORTED_R_CAUSAL_CARRIER remain positive consumed development evidence; no P4 outcome exists.",
       "simpler_reduction": "Explicit anonymous return-address/provenance/eligibility memory plus local support update remains sufficient to explain P3 until stronger reduction tests are defeated.",
-      "shortest_path_to_new_information": "Close the two independent-verifier P1s on a distinct SUB package, integrate/re-audit exact head, then execute P4 exactly once if all gates remain clean.",
+      "shortest_path_to_new_information": "MAIN closes both verifier P1 defects itself, re-audits exact head, and executes P4 exactly once if all gates remain clean.",
+      "genuine_blockers": [
+        "two exact-head verifier P1 defects only"
+      ],
       "information_value": "HIGH",
       "implementation_distance": "NEAR"
     },
@@ -66,18 +74,18 @@
       "status": "SUPPORTED_COMPONENT_EFFECT_CONSUMED",
       "strongest_evidence": "R01-17 positive development evidence for learned physical-delay causal timing.",
       "simpler_reduction": "Ordinary local adaptive-delay plasticity remains sufficient.",
-      "shortest_path_to_new_information": "No fresh prospectively defined successor verified; do not invent one from consumed outcomes.",
+      "shortest_path_to_new_information": "No fresh prospective successor verified; useful independent work now is canonical status/evidence consolidation, not new execution.",
       "information_value": "MEDIUM",
-      "implementation_distance": "UNDEFINED_UNTIL_PROSPECTIVE_SUCCESSOR"
+      "implementation_distance": "NEAR_FOR_DOC_CONSOLIDATION_UNDEFINED_FOR_NEW_SCIENCE"
     },
     "RV02": {
       "centrality": "SECONDARY",
       "status": "RD005_D1_TERMINAL_CONSUMED_CAPABILITY_UNOPENED",
-      "strongest_evidence": "D1 construction failed terminally after STARTED; identity consumed.",
-      "simpler_reduction": "No capability evidence to reduce; construction failed before capability opened.",
-      "shortest_path_to_new_information": "Requires a distinct prospectively defined successor contract; none verified.",
+      "strongest_evidence": "D1 construction failed terminally after STARTED; capability never opened.",
+      "simpler_reduction": "No capability evidence to reduce.",
+      "shortest_path_to_new_information": "Requires a distinct prospectively defined successor contract; none verified. Status/evidence consolidation is independently useful now.",
       "information_value": "MEDIUM_IF_NEW_CONTRACT",
-      "implementation_distance": "BLOCKED"
+      "implementation_distance": "BLOCKED_FOR_NEW_SCIENCE_NEAR_FOR_DOC_CONSOLIDATION"
     },
     "CX_CX01": {
       "centrality": "SECONDARY_DIAGNOSTIC",
@@ -97,39 +105,40 @@
     "information_value": "HIGH",
     "implementation_distance": "NEAR",
     "dependencies": [
-      "Reserved SUB independent-verifier hardening package completed and integration-ready.",
+      "MAIN closes both exact-head independent-verifier P1 defects itself; no SUB dependency.",
       "Exact resulting P4 head remains identity-fresh and fully reviewed/CI-clean.",
       "Prospective TTL, retained-trace, counterbalance, privilege, STARTED/no-clobber and raw-before-score contracts remain intact."
     ],
     "allowed_scope": [
-      "Keep the P4 scientific mechanism/scorer/condition contract stable.",
-      "Wait for and then integrate only the completed reserved SUB verifier-hardening package.",
-      "Re-run exact-head review/CI and fresh identity/ref checks.",
-      "After every prospective gate is clean, create the one-way STARTED authority and execute exactly once under existing authorization."
+      "Implement the two remaining verifier P1 fixes directly on MAIN's P4 critical path.",
+      "Add focused fail-closed regression coverage for both malformed-artifact classes.",
+      "Keep the frozen scientific mechanism/classifier/condition contract stable.",
+      "Re-run exact-head CI/review and fresh identity/ref checks after every critical-path change.",
+      "If every prospective gate is clean, create STARTED atomically and execute P4 exactly once under existing authorization."
     ],
     "forbidden_scope": [
-      "Do not implement or absorb the reserved SUB verifier P1 fixes.",
-      "No candidate acquisition before independent verifier requirements are satisfied.",
+      "Do not wait for SUB to fix verifier/CI/review/binding/preservation/scoring blockers on P4.",
+      "No candidate acquisition before verifier closure.",
       "No post-output threshold/scorer/condition/mechanism changes.",
       "No semantic/evaluator/global lookup/caller-selected singleton/hidden tie-break privilege.",
-      "No same-identity rescue or reacquisition."
+      "No same-identity rescue, reacquisition, rerun or retune."
     ],
     "go_conditions": [
-      "SUB verifier independently re-derives active proposal validity from retained ledger proposal created_at_ms/valid_until_ms at bound before/after measurement times.",
-      "SUB verifier independently recomputes exact changed paths from retained pre.path_reliability and post.path_reliability and rejects stored changed_path_ids disagreement.",
-      "Independent verifier remains fail-closed on retained-trace cardinality, merged ancestry, condition-spec binding, candidate/source/run ownership, checksums/digests, raw schema/completeness and no-clobber state.",
-      "Exact-head CI and substantive review are clean after integration.",
-      "P4 identity remains unused and no matching STARTED/control/preserve evidence exists.",
+      "Verifier independently re-derives before/after proposal activity from retained ledger proposal created_at_ms/valid_until_ms at the bound measurement timestamps.",
+      "Verifier independently recomputes exact changed paths from retained pre.path_reliability and post.path_reliability and rejects disagreement with stored changed_path_ids.",
+      "Existing fail-closed checks remain for retained-trace cardinality, merged ancestry, condition-spec binding, candidate/source/run ownership, checksums/digests, raw schema/completeness and no-clobber state.",
+      "Exact-head CI and substantive review are clean after MAIN's fixes.",
+      "P4 identity remains unused and no matching STARTED/control/preserve/freeze authority exists.",
       "Genuinely plural ancestry survives until independent external evidence and selective resolution uses no privileged selector.",
       "Atomic STARTED/no-clobber, exactly-once acquisition, durable raw preservation, independent raw verification, then scoring are guaranteed."
     ],
     "stop_conditions": [
       "Either exact-head verifier P1 remains unresolved.",
       "PR head moves after final audit without re-audit.",
-      "Identity is already consumed/STARTED or matching one-way refs unexpectedly exist.",
+      "Identity is already STARTED/consumed or matching one-way refs unexpectedly appear.",
       "Actual retained history/activity cannot be independently re-derived from retained raw state.",
       "Plurality collapses before evidence, selective resolution requires privilege, or only en-bloc credit is possible.",
-      "Raw/no-clobber/terminal-preservation guarantees fail closedness."
+      "Raw/no-clobber/terminal-preservation guarantees become fail-open."
     ],
     "refs_or_identities_to_recheck": [
       "research/v061-a01-n3-adapter@2e47df9cf8c6323f390935bb41c368632f3342c6",
@@ -137,73 +146,104 @@
       "PR #137 exact head/reviews/checks",
       "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
       "matching control/*, preserve/*, freeze/* refs"
-    ]
+    ],
+    "main_owns_all_critical_path_fixups": true
   },
   "sub_lane": {
-    "target": "Distinct P4 independent-verifier P1 hardening package",
-    "scientific_question": "Integrity/readiness gate: can the retained P4 raw artifact be independently shown to encode real runtime-active lineage and real path changes rather than trusting acquisition-declared derived fields?",
+    "target": "RV01 canonical status and evidence-map consolidation",
+    "scientific_question": "Support purpose: can RV01's consumed development evidence, ordinary-mechanism reduction, no-rerun boundary and exact evidence pointers be represented in one current canonical status map without opening new science?",
     "recommended_owner": "sub",
-    "branch_or_identity": "new distinct prospective implementation package/branch, suggested target research/v061-a01-md002-p4-independent-verifier-hardening-sub-20260916, based on/rechecked against P4 head c1248bb3c87c0767e3e1a3cd2a6978ebb4eb06dc",
-    "information_value": "HIGH_ENABLING",
+    "branch_or_identity": "new distinct docs-only branch/package from research/rv01-endogenous-transition@98be60268845487ce51e76b8a7687552a5dbc51f; suggested research/rv01-status-evidence-consolidation-sub-20260916",
+    "information_value": "MEDIUM_ENABLING",
     "implementation_distance": "NEAR",
     "execution_allowed": false,
     "dependencies": [
-      "Use only the already-preregistered P4 raw/preservation/source contract.",
-      "Remain outcome-blind and separate from MAIN's active P4 branch/PR until package handoff.",
-      "Re-fetch current P4 head before implementation and stop if MAIN has already changed the same verifier defects."
+      "Remain fully independent of MAIN P4 and its unknown outcome.",
+      "Use only already-existing RV01 canonical docs, control/preserve refs and consumed evidence.",
+      "Do not create a new RV01 scientific successor or reinterpret the consumed result."
     ],
     "allowed_scope": [
-      "Implement independent re-derivation of before/after proposal activity from retained ledger proposal created_at_ms/valid_until_ms and bound measurement timestamps.",
-      "Implement independent recomputation of changed_path_ids from retained pre/post path_reliability and fail closed on disagreement.",
-      "Add focused regression tests that demonstrate both malformed-artifact classes are rejected.",
-      "Preserve existing independent cardinality/merged-ancestry/condition-spec/source/run/digest/no-clobber checks.",
-      "Deliver as a distinct branch/package/PR suitable for MAIN integration."
+      "Create/update a concise canonical RV01 status document and evidence map on a distinct docs-only branch.",
+      "Record the supported component effect, the simpler ordinary local adaptive-delay-plasticity reduction, consumed/no-rerun identities, exact source/control/preserve pointers, and the absence of a currently verified prospective successor.",
+      "Resolve internal documentation ambiguity only by pointing to authoritative existing evidence.",
+      "Deliver a reviewable docs-only package/PR without touching MAIN's P4 branch."
     ],
     "forbidden_scope": [
-      "No commits directly to MAIN's active P4 branch/PR #137.",
-      "No STARTED/control/freeze/preserve creation.",
-      "No workflow dispatch, candidate acquisition, scoring, or verdict generation.",
-      "No scientific threshold/classifier/mechanism/condition/lineage-selection changes.",
-      "No mutation of consumed or immutable evidence and no tuning from candidate output."
+      "No experiment/workflow dispatch, STARTED/control/freeze/preserve creation, scoring or identity consumption.",
+      "No new RV01 hypothesis, successor protocol, thresholds or post-outcome retuning.",
+      "No mutation of immutable/consumed evidence.",
+      "No Issue cleanup, tag migration or ruleset changes; those remain Repository Steward/governance work.",
+      "No edits to MAIN's active P4 branch/PR #137."
     ],
-    "completion_target": "A distinct reviewed/CI-clean fail-closed verifier-hardening package that closes both exact-head P1 findings and can be integrated by MAIN without changing the prospective P4 scientific contract.",
+    "completion_target": "A reviewable docs-only RV01 canonical status/evidence-map package that makes the current consumed result, simpler reduction, no-rerun boundary and exact evidence refs unambiguous for future research without creating new science.",
     "refs_or_identities_to_recheck": [
-      "PR #137 current exact head and comments 4020926926 / 4020926933",
-      "scripts/verify_v061_a01_md002_p4_candidate_001_artifacts.py",
-      "docs/research/V061_A01_MD002_EXECUTION_AUTHORIZATION_20260912.md",
-      "docs/research/V061_A01_MD_002_P4_TRACE_BINDING_TECHNICAL_REVIEW.md",
-      "absence of matching P4 STARTED/control/preserve refs"
+      "research/rv01-endogenous-transition@98be60268845487ce51e76b8a7687552a5dbc51f",
+      "rv01-r01-17-real-delay-causal-timing-v1",
+      "control/rv01-r01-17-real-delay-started-20260915",
+      "preserve/rv01-r01-17-real-delay-raw-20260915",
+      "preserve/rv01-r01-17-real-delay-scored-20260915",
+      "RV01 existing canonical docs/results under docs/research/"
     ],
-    "reservation_status": "reserved_for_sub"
+    "reservation_status": "reserved_for_sub",
+    "independent_of_main_critical_path": true
   },
-  "sub_fallback": null,
-  "no_sub_fallback_reason": {
-    "summary": "No second scientifically meaningful independent package is currently verified after broad active-line/readiness search; splitting the verifier into trivial implementation-vs-test leftovers would recreate fake parallelism.",
-    "checked_options": {
-      "RV01": "current useful identity is consumed and no fresh prospective successor contract was verified.",
-      "RV02": "RD005 D1 is terminal-consumed and no prospectively distinct successor exists.",
-      "CX_CX01": "candidate-002 is consumed and no distinct prospective successor/diagnostic contract is verified.",
-      "A01_P5": "the repository contains historical P5 work, but no current outcome-independent prospective package was verified that is cleanly separable from the unknown P4 result; do not retrofit a successor after P4 outcome.",
-      "P4_secondary_readiness": "the coherent remaining verifier hardening is already the primary SUB lane; artificially splitting its tests/tooling into a fallback would create coordination overhead rather than independent scientific throughput.",
-      "read_only_diagnostics": "no pre-defined non-consumed development-data diagnostic with a valid interpretation independent of P4 was verified."
-    }
+  "sub_fallback": {
+    "target": "RV02 terminal-status and evidence-map consolidation",
+    "scientific_question": "Support purpose: can the terminal RD005 D1 construction failure, consumed boundary and earlier RV02 evidence be consolidated canonically without designing a successor or changing scientific interpretation?",
+    "recommended_owner": "sub",
+    "branch_or_identity": "new distinct docs-only branch/package from research/rv02-structure-induced-compression@2d6463e76e017a4f7f7edbdff6067f91f14594f3; suggested research/rv02-status-evidence-consolidation-sub-20260916",
+    "information_value": "MEDIUM_ENABLING",
+    "implementation_distance": "NEAR",
+    "execution_allowed": false,
+    "dependencies": [
+      "Use only existing RV02 source/docs and preserved/control evidence.",
+      "Remain independent of MAIN P4 and do not infer any successor from RD005 outcome.",
+      "Preserve the fact that RD005 capability never opened after terminal construction failure."
+    ],
+    "allowed_scope": [
+      "Create/update a concise canonical RV02 status/evidence map on a distinct docs-only branch.",
+      "Record RD005 D1 terminal-consumed status, exact source/input/control/preserve pointers, and the fact that no prospectively defined successor is currently verified.",
+      "Clarify prior RV02 evidence chronology without changing conclusions.",
+      "Deliver a reviewable docs-only package/PR."
+    ],
+    "forbidden_scope": [
+      "No experiment/workflow dispatch, identity consumption, STARTED/control/freeze/preserve creation or scoring.",
+      "No new RD005 rescue, successor design, threshold changes or post-outcome tuning.",
+      "No mutation of immutable evidence.",
+      "No tag/ruleset/Issue governance changes.",
+      "No edits to MAIN's active P4 branch/PR #137."
+    ],
+    "completion_target": "A reviewable docs-only RV02 status/evidence-map package that makes terminal/consumed boundaries and exact evidence refs explicit while leaving successor science unopened.",
+    "refs_or_identities_to_recheck": [
+      "research/rv02-structure-induced-compression@2d6463e76e017a4f7f7edbdff6067f91f14594f3",
+      "research/rv02-rd005-d1@c60b7fd8d3889ee969f505d921e7d31c990871e6",
+      "96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
+      "control/rv02-rd005-d1-started-96634541-20260914",
+      "preserve/rv02-rd005-d1-96634541-20260914"
+    ],
+    "reservation_status": "reserved_for_sub",
+    "independent_of_main_critical_path": true
   },
   "blocked_until": [
     {
       "work": "P4 one-way execution",
-      "condition": "reserved SUB verifier hardening closes both exact-head P1 findings; integrated exact head remains review/CI clean and identity-fresh"
+      "condition": "MAIN closes both verifier P1 defects itself; exact resulting head remains reviewed/CI-clean and identity-fresh."
     },
     {
       "work": "P5 outcome-responsive candidate/scorer/execution",
-      "condition": "P4 is resolved or an already-existing outcome-independent prospective P5 contract is explicitly re-verified before outcome knowledge can affect it"
+      "condition": "P4 resolves, or an already-existing outcome-independent prospective P5 contract is explicitly re-verified before outcome knowledge can affect it."
     },
     {
-      "work": "RV02 successor design/execution by executor",
-      "condition": "a distinct prospective scientific contract exists outside consumed RD005"
+      "work": "RV01 new experiment/successor",
+      "condition": "A distinct prospective scientific contract exists outside consumed R01-17 evidence."
     },
     {
-      "work": "CX successor design/execution by executor",
-      "condition": "a distinct prospective scientific contract exists outside consumed candidate-002"
+      "work": "RV02 successor",
+      "condition": "A distinct prospective scientific contract exists outside consumed RD005."
+    },
+    {
+      "work": "CX successor",
+      "condition": "A distinct prospective scientific contract exists outside consumed candidate-002."
     }
   ],
   "do_not_touch": [
@@ -215,38 +255,39 @@
     "96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
     "CX01 candidate-002 formal identity",
     "all immutable freeze/control/preserve/formal evidence anchors",
-    "SUB direct writes to MAIN-active research/v061-a01-md002-p4-candidate-001-20260916 / PR #137; use the distinct reserved package instead",
+    "SUB edits/claims on MAIN-active research/v061-a01-md002-p4-candidate-001-20260916 or PR #137",
     "P4 candidate output before STARTED",
-    "outcome-dependent P4/P5/RV02/CX successor redesign"
+    "outcome-dependent P4/P5/RV01/RV02/CX successor redesign"
   ],
   "top_recommendation": {
-    "action": "Run A01 P4 exactly once only after the distinct reserved SUB verifier-hardening package closes both P1 integrity defects and MAIN re-audits the integrated exact head.",
+    "action": "MAIN closes both P4 verifier P1 defects itself, re-audits exact head, and executes A01 P4 exactly once only if all prospective gates remain clean.",
     "information_value": "HIGH",
     "implementation_distance": "NEAR",
-    "go_stop_status": "STOP_UNTIL_RESERVED_SUB_VERIFIER_P1S_CLOSED_AND_EXACT_HEAD_REAUDITED",
+    "go_stop_status": "STOP_UNTIL_MAIN_CLOSES_VERIFIER_P1S_AND_EXACT_HEAD_IS_REAUDITED",
     "identity": "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
     "identity_consumed": false
   },
   "top_3_actions": [
     {
       "rank": 1,
-      "action": "Close reserved SUB verifier hardening, integrate/re-audit, then exactly-once A01 P4 selective merged-lineage execution",
+      "owner": "main",
+      "action": "Close both P4 verifier P1 defects, re-audit exact head, then exactly-once P4 if GO.",
       "information_value": "HIGH",
       "implementation_distance": "NEAR"
     },
     {
       "rank": 2,
-      "action": "A01 P5 minimal explicit anonymous causal-memory reduction under a prospectively verified outcome-independent contract",
-      "information_value": "HIGH",
-      "implementation_distance": "MODERATE",
-      "status": "BLOCKED_FROM_OUTCOME_RESPONSIVE_DESIGN"
+      "owner": "sub",
+      "action": "RV01 canonical status/evidence-map consolidation on a distinct docs-only branch.",
+      "information_value": "MEDIUM_ENABLING",
+      "implementation_distance": "NEAR"
     },
     {
       "rank": 3,
-      "action": "A01 P5 recurrent/N3 matched-resource reduction with fair state/resource/lookup matching",
+      "owner": "blocked_future",
+      "action": "A01 P5 minimal explicit anonymous causal-memory reduction under a prospectively frozen contract only after P4 or a pre-existing outcome-independent contract is re-verified.",
       "information_value": "HIGH",
-      "implementation_distance": "MODERATE-FAR",
-      "status": "BLOCKED_UNTIL_CONTRACT_DEPENDENCIES_VERIFIED"
+      "implementation_distance": "MODERATE_BLOCKED"
     }
   ],
   "consumed_identities": [
@@ -259,30 +300,50 @@
     "CX01 candidate-002 formal identity"
   ],
   "blockers": [
-    {
-      "id": "p4_verifier_rederive_active_lineages",
-      "severity": "P1",
-      "owner": "sub",
-      "description": "Independent verifier must re-derive proposal activity from retained ledger proposal created_at_ms/valid_until_ms at bound measurement times, not trust copied active-lineage rows."
-    },
-    {
-      "id": "p4_verifier_recompute_changed_paths",
-      "severity": "P1",
-      "owner": "sub",
-      "description": "Independent verifier must recompute exact changed-path differences from retained pre/post path_reliability and reject stored changed_path_ids disagreement."
-    }
+    "P4: two exact-head verifier P1 defects; now MAIN-owned and not a SUB dependency.",
+    "RV01/RV02/CX: no verified fresh prospective successor contract.",
+    "Split MAIN/SUB orchestrator report files have not yet been materialized; operational state currently falls back to legacy shared MAIN report."
   ],
-  "governance_advisory": {
-    "issue_canonical_source": "Canonical git-managed science remains authoritative; Issue cleanup/drift is advisory and not a P4 blocker.",
-    "freeze_tag_migration": "Preserve legacy freeze branches exactly. No new need to migrate/retarget immutable anchors during this gate.",
-    "tag_protection": "No stronger authoritative protection signal was established in this run; protection/ruleset hardening remains advisory and must not delay executable science.",
-    "main_promotion_candidates": [
-      "BoundaryEvent replay idempotence",
-      "generic exact source/runtime binding",
-      "generic atomic STARTED/no-clobber",
-      "generic raw-before-score/digest verification",
-      "generic terminal-recovery primitives",
-      "generalized independent read-only artifact verifier after review/testing"
+  "go_stop_top1": {
+    "go": [
+      "Identity fresh/unconsumed; no matching P4 STARTED/control/preserve/freeze authority.",
+      "Exact source/protocol/package/input binding verified at final audited head.",
+      "Both verifier P1s independently closed as specified.",
+      "Fail-closed raw/schema/digest/cardinality/ancestry/condition/no-clobber checks retained.",
+      "Exact-head CI/review clean.",
+      "Plural historical ancestry survives to later external evidence with no privileged selector.",
+      "STARTED/no-clobber -> exactly-once acquisition -> durable raw preserve -> independent verify -> score."
+    ],
+    "stop": [
+      "Either P1 remains or verifier trusts acquisition-declared active-lineage/changed-path derived fields.",
+      "Head changes after audit without re-audit.",
+      "Identity already STARTED/consumed or matching one-way refs appear.",
+      "Actual retained history cannot be reconstructed.",
+      "Plurality collapses early, privilege is required, or only en-bloc credit remains.",
+      "Raw/preservation/no-clobber/terminal semantics become fail-open."
     ]
-  }
+  },
+  "governance_advisory": {
+    "issue_canonical_source_drift": "No new material Issue-vs-canonical-science contradiction was verified in this run. Continue treating git-managed science/evidence as authoritative and Issues as operational only.",
+    "freeze_tag_migration": "Fresh tag inventory is empty; authoritative freezes remain legacy branch/ref based. Preserve them exactly; prospective tag migration remains governance work.",
+    "tag_protection_gap": "Repository rulesets inventory is empty and tag inventory is empty. Protection for future freeze/sealed/formal/evidence tag namespaces is not established.",
+    "main_promotion_candidates": [
+      "generic source/runtime binding",
+      "atomic STARTED/no-clobber primitives",
+      "raw-before-score and digest verification",
+      "terminal-recovery primitives",
+      "generalized hypothesis-independent artifact-verifier primitives after P4-specific semantics are removed"
+    ],
+    "science_priority_relation": "Governance work must not delay MAIN P4."
+  },
+  "orchestrator_handoff": {
+    "plain": "MAIN takes A01 P4 candidate-001 and owns ALL P4 critical-path fixes, including both remaining verifier P1s. SUB takes RV01 canonical status/evidence-map consolidation, fully independent of MAIN; SUB fallback is RV02 terminal-status/evidence-map consolidation. These SUB packages are reserved for SUB and MAIN should not absorb them merely because it can. SUB must not take any P4 blocker. Neither worker touches consumed identities, immutable evidence anchors, P4 output before STARTED, or outcome-dependent successor redesign.",
+    "repartition_when": [
+      "P4 yields a valid consumed result that changes the primary frontier.",
+      "A verified fresh prospective secondary contract appears with higher independent information value.",
+      "The RV01/RV02 documentation package is already completed or invalidated by concurrent movement.",
+      "A new Analyst handoff explicitly reassigns/revokes a reservation."
+    ]
+  },
+  "no_sub_lane_reason": null
 }
