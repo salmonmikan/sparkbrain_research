@@ -1,148 +1,140 @@
 # SparkBrain Evidence Analyst — Latest Handoff
 
-Analysis time: 2026-09-16 15:01 JST
+Analysis time: 2026-09-16 16:02 JST
 
 ## Executive assessment
 
-**No new scientific measurement has appeared.** The newest scientific result remains A01 MD-002 P4 family-A candidate-001: consumed development evidence with frozen verdict `UNSUPPORTED_EN_BLOC_MERGED_CREDIT`. P2/P3 remain positive consumed development evidence; family A remains terminal at P4 and must not be rerun, retuned, rescored under changed rules, rescued under the same identity, or sent to P5.
+**No new scientific measurement has appeared.** The authoritative scientific frontier remains A01 MD-002: P2 `SUPPORTED_SELECTIVE_CIRCULATION` and P3 `SUPPORTED_R_CAUSAL_CARRIER` are positive consumed development evidence; Family-A P4 is the terminal consumed negative `UNSUPPORTED_EN_BLOC_MERGED_CREDIT`. Family A must not be rerun, retuned, rescored under changed rules, rescued under the same identity, or sent to P5.
 
-The important new evidence is **readiness evidence on the primary frontier**. MAIN has now materially created the fresh post-P4 family-B `distributed-field-trace` Generation-1 package on `research/v061-a01-family-b-gen1-20260916`, PR #144, exact head `77d0178dc7e4dd12e19a8cbe3f8751e5ff9531e5`. The exact head is CI-green and the package correctly declares `execution_admitted=false`, fixes the proposal identity/hash, source/package/input bindings, protocol IDs, explicit/recurrent/belief-state nulls, a negative-stop identity, and a minimal anonymous Field carrier.
+The important new evidence is readiness and coordination movement:
 
-This is **not execution-ready yet**. Fresh exact-head review exposes two live MAIN-critical blockers:
+1. MAIN has closed the prior Family-B lifecycle-dedup and malformed-width blockers, plus two additional checkpoint-integrity defects. PR #144 exact head is now `0ddb73d9602f6459ee1d181f1acf3f7fe02dd839`; CI run `35063756557` is green on Python 3.11/3.13. Consumed external-evidence IDs now round-trip through JSON checkpoint decoding, and restored F-only carrier vectors are normalized back to immutable tuples.
+2. Fresh exact-head review leaves **one live P1 only**: the newly prospective Family-B eligibility/credit dynamics, scoring/resource bound, checkpoint semantics, and limitations are not yet recorded in append-only `docs/DECISION_LOG.md`. This is an audit-trail blocker, not a new scientific result.
+3. SUB completed CX01 PR #143 and merged exact reviewed head `e87e63ef6bc49ea3a719a9ac7cfd9c91c15aca38` as `251f7350b7a30c50e8b8a3329b6ff920d85bf493`, with no new science or identity consumption.
+4. RV01 PR #140 advanced **after the latest durable SUB report** to `6152461e4f0e8ac5942da1dd7724a9ed0ed39d83`. All three review threads are resolved, fresh Codex review completed on that head, CI run `35066255954` is now `success`, and the PR remains open/mergeable. It is therefore the new primary reserved SUB lane.
 
-1. **P1 lifecycle dedup integrity:** `ExternalEvidenceLedger` prevents duplicate credit only within one in-memory object lifetime. After recreation/checkpoint/restart, the same external evidence ID can be consumed again. The acquisition-side exactly-once state must survive the full evidence lifecycle or be bound to an upstream durable no-clobber boundary before one-way execution.
-2. **P2 fail-closed fixture parsing:** readiness JSON still coerces `width` via `int(...)`, so malformed fractional width such as `4.9` can normalize to `4` instead of failing closed.
-
-Several older review findings are semantically fixed at the current head even though their threads remain unresolved: regex escaping is present, the belief-state null is independently literal-bound, and the complete source-binding key set is enforced. MAIN should resolve those only after exact-head confirmation. The current construction tests are useful readiness checks, but **the bounded-plurality fixture is not P4 scientific evidence**; later execution admission must still bind the genuine P4 conditions from the pre-existing protocol: co-maximal unresolved historical lineages, match/contradiction/absence/internal-replay conditions, lineage swap, and later selective competition.
-
-SUB remains correctly independent. PR #143 is still open at `69c584bfe273a432e192cd5873685047e432d703`; all earlier findings are resolved except one documentation-integrity P2 in `docs/RESULTS_LEDGER.md`, where blanket `no rescore` wording must be narrowed so immutable-raw + unchanged-frozen-policy read-only recomputation remains allowed. This work does not block MAIN.
+Current verdict: **MAIN GO for readiness completion/integration only; STOP one-way Family-B execution.** The Decision Log fix will create a new exact head, so it must receive fresh binding audit, CI, review, and merge-safety checks before integration. A later fresh Evidence Analyst re-fetch of the integrated exact package must explicitly admit execution before STARTED.
 
 ## Interpretation by line
 
-### A01 / MD-002 — CENTRAL
+### A01 / MD-002 — PRIMARY FRONTIER
 
 - P2: `SUPPORTED_SELECTIVE_CIRCULATION`, positive consumed development evidence.
 - P3: `SUPPORTED_R_CAUSAL_CARRIER`, positive consumed development evidence.
-- P4 family A (`transient-return-address`): `UNSUPPORTED_EN_BLOC_MERGED_CREDIT`, terminal negative consumed development evidence.
-- P5 on failed family A: permanently not applicable.
-- Family B (`distributed-field-trace`): **prospective Generation-1 readiness package now exists**, but has no STARTED/control/preserve authority and is not execution-admitted.
-- Family C (`joint-return-and-local-field-update`): remains blocked while B is the simpler registered uncovered family.
-- Programme state: mixed; family A terminal; negative-completion coverage incomplete.
+- Family-A P4: `UNSUPPORTED_EN_BLOC_MERGED_CREDIT`, terminal negative consumed development evidence.
+- Family-A P5: permanently not admissible.
+- Family B `distributed-field-trace`: fresh post-P4 Generation-1 readiness exists on PR #144; **no scientific output, STARTED, freeze, or preserve authority exists for this identity yet**.
+- Family C remains blocked while B is the simpler pre-P4 registered uncovered family.
+- Programme status: mixed/incomplete; Family A terminal, Family B readiness active, negative-completion coverage incomplete.
 
-Family-B remains scientifically legitimate only as a fresh post-P4 generation anchored to the pre-P4 family boundary: anonymous, causally local, external-confirmation-only, contradiction-correctable, competition-facing, uncertainty-preserving, bounded, observer-independent, transplant-testable, and comparator-separable. Its strongest reduction risk remains that the Field trace is simply an explicit eligibility/context memory written in vector form. Therefore a positive construction test is not evidence of a new computational principle; the future discriminator must survive matched explicit eligibility/return-address, recurrent causal-trace, and explicit latent-cause/belief-state reductions.
+The Family-B package is materially healthier than at the previous handoff. Lifecycle duplicate protection now survives JSON checkpoint restore; public fixture width/sign parsing is fail-closed; source-key binding, belief-state-null binding, arithmetic bounds, credit decay/resource bounds, and F-only-carrier immutability have been reviewed/fixed. The remaining current blocker is the missing append-only Decision Log record.
+
+The scientific reduction bar remains unchanged and high. A vector Field trace is still at substantial risk of reducing to explicit eligibility/context memory. A later positive result matters only if it survives matched explicit eligibility/return-address, recurrent causal-trace, and explicit latent-cause/belief-state reductions at equal or lower privilege/resources.
 
 ### RV01 — SECONDARY COMPONENT CHARACTERIZATION
 
-R01-17 remains consumed development evidence `SUPPORTED_REAL_DELAY_CAUSAL_TIMING`, without held-out/formal authority, and conservatively reducible to ordinary local adaptive-delay plasticity. No fresh prospective RV01 science contract is verified. PR #140 remains the preferred SUB fallback because its status-map/current-project-status contradiction can make a consumed identity look runnable.
+R01-17 (`rv01-r01-17-real-delay-causal-timing-v1`) remains consumed exposed-development evidence `SUPPORTED_REAL_DELAY_CAUSAL_TIMING`. It has no held-out/formal authority and remains conservatively reducible to ordinary local adaptive-delay plasticity.
+
+PR #140 now reconciles `PROJECT_STATUS`, `RESULTS_LEDGER`, and the RV01 status map around that consumed result. Current exact head `6152461e4f0e8ac5942da1dd7724a9ed0ed39d83` is mergeable, all three review threads are resolved, fresh review completed, and CI run `35066255954` is green. No fresh RV01 successor is verified. Therefore the shortest useful SUB action is exact-head status integration, not new science.
 
 ### RV02 — SECONDARY / TERMINAL CURRENT IDENTITY
 
-RD005 D1 identity `96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a` remains terminal-consumed after STARTED; capability was never opened. This is a construction/gate-reachability negative, not a capability negative. PR #142 remains lower-priority independent integration debt.
+RD005 D1 identity `96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a` remains terminal-consumed after STARTED; capability never opened. The correct interpretation is **construction/gate-reachability negative**, not capability negative.
+
+PR #142 remains independent support debt. It has one unresolved `RESULTS_LEDGER` documentation finding and current red CI; the inspected lint job reports five Ruff violations (import formatting plus `zip(..., strict=...)`). Those are valid SUB fallback work only if kept behavior-preserving and do not become a route to new RV02 science.
 
 ### CX / CX01 — SECONDARY DIAGNOSTIC
 
-`cx01-candidate-002` remains terminal-consumed / formal negative for its exact frozen candidate/comparator/protocol contract, not a programme-wide SparkBrain negative. PR #143 is nearly complete but must fix the remaining RESULTS_LEDGER reproducibility wording before exact-head integration.
+`cx01-candidate-002` remains terminal-consumed / formal negative for its exact frozen candidate/comparator/protocol contract, not a programme-wide negative. PR #143 status integration is now complete and merged. Read-only recomputation from immutable raw evidence under the unchanged frozen policy remains audit-valid; rerun, retune, repair, reuse, and modified-policy/evidence rescoring remain forbidden.
 
 ## Parallel decomposition
 
 ### `main_lane`
 
-- **target:** close family-B Generation-1 readiness integrity on PR #144 and return an exact clean package for a fresh execution-admission decision.
-- **scientific_question:** Can the pre-P4-registered `distributed-field-trace` family be bound prospectively as a low-privilege Field carrier with valid F-only transfer, genuine bounded plurality/later selective differentiation, and adversarial explicit/recurrent/belief-state nulls, without becoming a renamed explicit memory mechanism?
+- **target:** close the last Family-B Generation-1 readiness audit blocker on PR #144, integrate the exact clean readiness package into the A01 research branch, then return it for a fresh execution-admission decision.
+- **scientific_question:** Can the pre-P4-registered `distributed-field-trace` family be prospectively bound as a low-privilege anonymous Field carrier with valid F-only transfer, genuine bounded plurality/later selective differentiation, and matched explicit/recurrent/belief-state reductions without collapsing to a renamed explicit-memory mechanism?
 - **recommended_owner:** `main`
-- **branch_or_identity:** `research/v061-a01-family-b-gen1-20260916@77d0178dc7e4dd12e19a8cbe3f8751e5ff9531e5`, PR #144, prospective identity `a01-family-b-distributed-field-trace-gen1-v1`.
+- **branch_or_identity:** `research/v061-a01-family-b-gen1-20260916@0ddb73d9602f6459ee1d181f1acf3f7fe02dd839`, PR #144, identity `a01-family-b-distributed-field-trace-gen1-v1`.
 - **information_value:** `HIGH`
-- **implementation_distance:** `NEAR_TO_MEDIUM_FOR_READINESS / BLOCKED_FOR_ONE_WAY_EXECUTION`
-- **dependencies:** durable duplicate-evidence/no-clobber state across the full acquisition lifecycle; strict raw fixture validation; exact proposal/source/protocol/package/input bindings; genuine P4 protocol binding; valid F-only falsifier; explicit/recurrent/belief-state null ladder; exact-head CI and substantive review.
-- **allowed_scope:** fix the lifecycle-dedup P1 and width-validation P2; add narrowly necessary tests/bindings; re-run exact-head CI/review; resolve outdated review findings only after verifying the exact fix; keep all candidate-specific verifier/harness/runner/binding/review work with MAIN; produce a complete audit-ready package.
-- **forbidden_scope:** no STARTED/control consumption, acquisition, scoring, one-way workflow dispatch, or scientific output exposure under this handoff; no family-A P2/P3/P4 rerun/retune/rescore; no P5 rescue of family A; no outcome-responsive mechanism tuning; no semantic/evaluator/global-belief/caller-selected-lineage privilege; no SUB-reserved work.
-- **go_conditions:** proposal identity remains fresh/unSTARTED/unconsumed; exact hashes and key sets recompute; acquisition dedup survives restart/recreation or is durably enforced upstream; malformed public fixture fields fail closed; genuine P4 conditions and F-only/null falsifiers are fixed before output; exact-head CI and substantive review are clean; no control/preserve collision. **GO now means readiness fixes only.**
-- **stop_conditions:** lifecycle exactly-once cannot be made fail-closed without scientific privilege; P4 selectivity requires semantic/global addressing; F-only transfer cannot be prospectively falsified; the mechanism is pre-start fully reproduced by an established-minimal explicit mechanism with no residual discriminator; binding/hash identity cannot be independently verified; any design detail is tuned to the observed family-A P4 failure.
-- **exact refs/identities to re-check:** `research/v061-a01-n3-adapter@1b548043b8f0850294cc3cbfaaa84dbdad69342c`; PR #144 exact head; `docs/V061_A01_FAMILY_B_DISTRIBUTED_FIELD_TRACE_GEN1.md`; `docs/V061_A01_FAMILY_B_GEN1_PACKAGE_BINDING.json`; `docs/V061_PREMECHANISM_ADMISSION_AND_NEGATIVE_COMPLETION.md`; `docs/V061_CROSS_LINE_EVIDENCE_FIREWALL_AND_PREMECHANISM_MATRIX.md`; `docs/V061_P3_P5_CAUSAL_CREDIT_DISCRIMINATION_PROTOCOL.md`; consumed family-A P4 authority read-only.
+- **implementation_distance:** `VERY_NEAR_FOR_READINESS_INTEGRATION / BLOCKED_FOR_ONE_WAY_EXECUTION`
+- **dependencies:** append the dated Decision Log entry without changing the scientific contract; re-fetch/recompute exact proposal/source/protocol/package/input bindings; fresh exact-head CI/review; exact-head merge-safety; integrate only the reviewed head; later fresh Analyst admission before STARTED.
+- **allowed_scope:** Decision Log audit-trail fix; any PR #144 candidate-specific CI/review/binding/verifier/harness fix required by the moved exact head; exact binding refresh only when required; ordinary CI/review; exact-head readiness integration. MAIN owns **all** critical-path fixups.
+- **forbidden_scope:** no STARTED/control consumption, acquisition, scoring, one-way dispatch, raw output exposure, or identity consumption; no consumed P2/P3/P4 rerun/retune/rescore; no Family-A P5; no outcome-responsive tuning; no semantic/evaluator/global-belief/caller-selected-lineage privilege; no reserved SUB work.
+- **go_conditions:** Family-B identity remains fresh/unSTARTED/unconsumed; Decision Log change is audit-only and matches the already-fixed prospective contract; proposal/source/protocol/package/input bindings verify exactly; lifecycle dedup/checkpoint/immutability/bounds/fail-closed validation remain intact; genuine P4 plurality/swap/confirmation/contradiction/absence/replay/later-competition and F-only/null falsifiers remain fixed; fresh exact-head CI/review clean; exact reviewed head unchanged at merge.
+- **stop_conditions:** Decision Log changes science; exact binding fails; a new review/CI defect remains; selectivity requires privileged addressing; valid F-only transfer cannot be prospectively falsified; matched established-minimal nulls fully reproduce the residual; STARTED/control/preserve collision appears; design is tuned to consumed Family-A outcomes.
+- **exact refs/identities to re-check:** `research/v061-a01-n3-adapter@1b548043b8f0850294cc3cbfaaa84dbdad69342c`; PR #144 exact head; `a01-family-b-distributed-field-trace-gen1-v1`; proposal SHA-256 `357f4a500164d31a3a851edc77c0870d3b59930c1766c1769671e9bdaf6ecf14`; protocol-bundle source `7af99d6c3bbbf946f90fc01d9bc7cc7661de2006`; Family-B contract/binding; `docs/DECISION_LOG.md`; premechanism/protocol docs; Family-A P4 authority read-only.
 - **`main_owns_all_critical_path_fixups: true`**
 - **execution_allowed:** `false`
 
 ### `sub_lane`
 
-- **target:** finish CX01 PR #143 by correcting the remaining RESULTS_LEDGER audit-reproducibility wording and completing exact-head integration.
-- **scientific_question/support purpose:** preserve a terminal no-rerun boundary while permitting read-only reproduction from immutable raw evidence with the unchanged frozen scoring policy.
+- **target:** complete exact-head integration of RV01 PR #140 now that the consumed R01-17 status package is review-clean and CI-green.
+- **scientific_question/support purpose:** make canonical RV01 status consistently record consumed `SUPPORTED_REAL_DELAY_CAUSAL_TIMING` and the conservative ordinary local adaptive-delay-plasticity reduction without reopening the identity.
 - **recommended_owner:** `sub`
-- **branch_or_identity:** `research/cx01-status-evidence-consolidation-sub-20260916@69c584bfe273a432e192cd5873685047e432d703`, PR #143.
+- **branch_or_identity:** `research/rv01-status-evidence-consolidation-sub-20260916@6152461e4f0e8ac5942da1dd7724a9ed0ed39d83`, PR #140.
 - **information_value:** `MEDIUM_ENABLING`
-- **implementation_distance:** `VERY_NEAR`
+- **implementation_distance:** `IMMEDIATE_TO_VERY_NEAR`
 - **execution_allowed:** `false`
-- **dependencies:** preserve exact Candidate-002 immutable refs; safe byte-preserving edit path for the ledger; fresh exact-head review/checks before merge.
-- **allowed_scope:** narrow only the ledger wording so rerun/retune/repair/reuse and modified-policy/modified-evidence rescoring remain forbidden while unchanged-policy immutable-raw audit recomputation remains allowed; run review/CI; docs-only integration on a clean exact head.
-- **forbidden_scope:** no new CX candidate, successor, experiment, STARTED, workflow, freeze/preserve, scientific scoring, immutable-evidence mutation, or MAIN family-B work.
-- **completion_target:** zero unresolved substantive findings; exact-head `ci` and `cx01-development` green; documentation is reproducible without permitting Candidate-002 reuse.
-- **exact refs/identities:** `freeze/cx01-002-source@e8483968ce43076b4c3fd04c76e62106e2031769`; `freeze/cx01-002-package@c104be281285d52a732d5366fe36209d5688d973`; `control/cx01-candidate-002-started-20260913@8216d41a57e6933443d38dfc8d93f9188e423d0c`; `preserve/cx01-candidate-002-formal-34742073336@6d45928827209cd763a2879494d85838df38b96f`; PR #143.
+- **dependencies:** immediately re-fetch exact PR head/checks/reviews before integration; CI run `35066255954` must remain green; preserve R01-17 one-way refs exactly.
+- **allowed_scope:** exact-head merge-safety; docs/status-only correction if a new documentation finding appears; integrate only the exact reviewed docs/status head into `research/rv01-endogenous-transition`.
+- **forbidden_scope:** no new RV01 experiment/successor/threshold/scorer/workflow/STARTED/freeze/preserve/scoring; no rerun/retune/repair/changed-policy rescore; no immutable mutation; no Family-B work.
+- **completion_target:** PR #140 integrated on the exact reviewed head with `PROJECT_STATUS`, `RESULTS_LEDGER`, and the status map agreeing R01-17 is consumed development-only evidence and not runnable.
+- **exact refs/identities:** R01-17 identity; base `research/rv01-endogenous-transition@98be60268845487ce51e76b8a7687552a5dbc51f`; source/STARTED `5ecb459b609b393ff837f57cc138f1eb44c1b255`; raw `fceb3663c7a880d82593e6c1efe52fcd1ad0c00a`; scored `d4737d52ecbb2306d9f00f99366f0ad6424327be`; PR #140 exact head; CI run `35066255954`.
 - **`reservation_status: reserved_for_sub`**
 - **`independent_of_main_critical_path: true`**
 
 ### `sub_fallback`
 
-- **target:** reconcile RV01 PR #140 current project status with the consumed R01-17 result.
-- **scientific_question/support purpose:** prevent a consumed positive development identity from appearing unexecuted/runnable while preserving the ordinary adaptive-delay-plasticity reduction.
+- **target:** close RV02 PR #142 status-integration debt: append the consumed D1 terminal construction result to `RESULTS_LEDGER` and clear the current behavior-preserving Ruff CI failures.
+- **scientific_question/support purpose:** preserve the narrow construction/gate-reachability negative without misclassifying it as a capability negative, and keep unrelated CI debt from obscuring the docs package.
 - **recommended_owner:** `sub`
-- **branch_or_identity:** `research/rv01-status-evidence-consolidation-sub-20260916@2d877a5af670c54d404d8782763129f497092f88` / PR #140; re-fetch exact head before action.
+- **branch_or_identity:** PR #142 at `ce317febb8be8d111959082cd5632a5ead9c83b4`; D1 identity `96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a`.
 - **information_value:** `MEDIUM_ENABLING`
-- **implementation_distance:** `NEAR`
+- **implementation_distance:** `NEAR_TO_MEDIUM`
 - **execution_allowed:** `false`
-- **dependencies:** complete primary CX01 lane first; preserve R01-17 source/STARTED/raw/scored refs; fresh review-thread check.
-- **allowed_scope:** bounded docs/current-status reconciliation, no-rerun boundary, conservative reduction statement, exact-head CI/review/integration.
-- **forbidden_scope:** no new RV01 science/successor, workflow/STARTED/freeze/preserve/scoring, rerun/retune, immutable mutation, or MAIN family-B work.
-- **completion_target:** no contradictory runnable status for R01-17; review and CI clean.
-- **exact refs/identities:** `rv01-r01-17-real-delay-causal-timing-v1`; `freeze/rv01-r01-17-real-delay-source-20260915@5ecb459b609b393ff837f57cc138f1eb44c1b255`; `control/rv01-r01-17-real-delay-started-20260915@5ecb459b609b393ff837f57cc138f1eb44c1b255`; `preserve/rv01-r01-17-real-delay-raw-20260915@fceb3663c7a880d82593e6c1efe52fcd1ad0c00a`; `preserve/rv01-r01-17-real-delay-scored-20260915@d4737d52ecbb2306d9f00f99366f0ad6424327be`.
+- **dependencies:** use only after RV01 primary completes/becomes invalid; preserve D1 authorities; ledger fix; code-touching lint fixes must be behavior-preserving.
+- **allowed_scope:** ledger status entry; import formatting; `zip(..., strict=False)` only where it preserves prior truncating semantics; exact-head CI/review/integration if clean.
+- **forbidden_scope:** no new RV02 candidate/capability run; no D1 retry; no scorer/threshold/protocol change; no immutable mutation; no Family-B work.
+- **completion_target:** canonical D1 ledger coverage, CI green, zero substantive findings, exact-head integration without reopening D1.
+- **exact refs/identities:** D1 identity; source freeze `c60b7fd8d3889ee969f505d921e7d31c990871e6`; preflight/STARTED/raw authorities; PR #142 head; CI run `35049543394`.
 - **`reservation_status: reserved_for_sub`**
 - **`independent_of_main_critical_path: true`**
 
 ## `blocked_until`
 
-- Family-B one-way execution is blocked until MAIN fixes the current lifecycle-dedup P1 and raw-width P2, exact-head substantive review/CI are clean, the execution protocol/package/input binding is complete, and a **later fresh Evidence Analyst handoff explicitly admits execution**.
-- Family C remains blocked while family B is the simpler registered family, unless family B is rejected/terminated or strategy is explicitly repartitioned.
-- P5 on failed family-A P4 is permanently not applicable.
-- PR #143 integration is blocked on its final ledger wording P2 plus fresh exact-head checks.
-- RV01 fallback waits for the primary CX01 lane.
-- New RV01/RV02/CX01 science waits for separately admitted prospective contracts.
+- Family-B one-way execution: blocked until the Decision Log P1 is fixed without contract drift, the moved exact head has fresh clean CI/review, the exact reviewed readiness head is integrated, and a later fresh Evidence Analyst re-fetch explicitly admits execution. STARTED/no-clobber/exactly-once/raw-before-score must then be reverified.
+- Family C: blocked until Family B is rejected/terminated/completed or new evidence materially changes priority.
+- New RV01/RV02/CX01 science: blocked until a distinct fresh prospective contract is independently defined and admitted.
+- SUB RV02 fallback: waits for RV01 PR #140 completion/invalidation.
+- Family-A P5: permanently not applicable to the failed Family-A P4 mechanism.
 
 ## `do_not_touch`
 
-- A01 MD-001 consumed identity.
-- `a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2`.
-- `a01-md002-p3-r-only-causal-carrier-candidate-001-v1`.
-- `a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1` and every associated immutable freeze/control/preserve ref.
-- RV01 R01-16 consumed family and `rv01-r01-17-real-delay-causal-timing-v1`.
-- RV02 RD005 D1 `96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a`.
-- CX01 `cx01-candidate-002` and its formal authority chain.
-- PR #137 / family-A P4 code as a scientific frontier.
-- Outcome-responsive B/C mechanism tuning derived from the observed family-A P4 result.
-- SUB must not touch PR #144/family-B blockers; MAIN must not absorb PR #143 or RV01 fallback.
+Consumed/immutable boundary includes A01 MD-001; P2 `a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2`; P3 `a01-md002-p3-r-only-causal-carrier-candidate-001-v1`; P4 `a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1`; RV01 R01-16/R01-17; RV02 RD005 D1; CX01 Candidate-002; and all associated immutable freeze/control/preserve authorities. PR #137 is not a live science frontier and must not be merged. SUB must not touch PR #144; MAIN must not absorb PR #140/#142 while reserved. No outcome-responsive B/C mechanism/threshold/carrier/scorer design.
 
 ## Ranked top 3
 
-1. **MAIN — close PR #144 family-B readiness integrity blockers.** Information value: HIGH. Distance: NEAR/MEDIUM. Execution: STOP.
-2. **SUB — finish PR #143 final RESULTS_LEDGER reproducibility wording.** Information value: MEDIUM enabling. Distance: VERY NEAR. Docs-only.
-3. **SUB fallback — repair RV01 PR #140 canonical current-status drift.** Information value: MEDIUM enabling. Distance: NEAR. Docs-only.
+1. **MAIN — PR #144 Decision Log fix → fresh exact-head audit/CI/review → exact readiness integration.** Information value `HIGH`; distance `VERY_NEAR` for readiness; one-way execution `STOP`.
+2. **SUB — PR #140 exact-head merge-safety and status integration.** Information value `MEDIUM_ENABLING`; distance `IMMEDIATE_TO_VERY_NEAR`; no scientific execution.
+3. **SUB fallback — PR #142 ledger + behavior-preserving Ruff cleanup.** Information value `MEDIUM_ENABLING`; distance `NEAR_TO_MEDIUM`; no scientific execution.
 
 ## #1 GO / STOP
 
-**GO now:** MAIN fixes the two current PR #144 readiness blockers and re-establishes an exact clean package. The fresh family-B identity appears unused: there is no family-B freeze/control/preserve ref in the inspected remote inventory, and the package itself says `execution_admitted=false`.
+**GO now:** MAIN may make the single audit-trail Decision Log fix and every Family-B critical-path fix caused by the moved head, then re-establish an exact clean readiness package and integrate only the reviewed exact head.
 
-**STOP one-way execution now.** CI success is insufficient while substantive review has a live P1/P2. Before any future STARTED boundary require again: fresh identity; exact proposal/source/protocol/package/input binding; durable STARTED/no-clobber and lifecycle duplicate-evidence protection; exactly-once acquisition; raw-before-score preservation; exact-head CI/review; frozen scientific falsifiers including genuine P4 plurality/lineage-swap/absence/replay and valid F-only transfer; matched explicit/recurrent/belief-state nulls; no forbidden privilege. A clean failure is terminal for this generation and must not trigger same-identity rescue.
+**STOP one-way execution now.** Identity freshness is currently consistent with the inspected remote inventory—no Family-B STARTED/control/preserve authority was observed—but that is not execution permission. Before any later STARTED require again: exact unused identity; exact source/protocol/package/input binding; durable STARTED/no-clobber and lifecycle duplicate protection; exactly-once acquisition; raw preserved before scoring; exact-head clean CI/review; prospectively frozen scientific falsifiers including genuine plurality, swap, confirmation/contradiction/absence/internal replay, later selective competition and valid F-only transfer; matched explicit/recurrent/belief-state nulls; and no forbidden privilege. Any clean discriminator/null failure terminates this generation rather than authorizing same-identity rescue.
 
 ## Governance advisory — no action here
 
-- Issue #138 is stale-open relative to canonical family-A P4 `FAIL` and should be closed operationally with authoritative pointers.
-- PR #137 is stale and materially misleading: its body still describes the P4 identity as pre-STARTED/unconsumed although that identity is terminal-consumed. Close without merge after preserving pointers.
-- Legacy freeze branches remain authoritative and must not move. No family-B freeze exists yet, which is correct at readiness stage.
-- The repository still has no rulesets; tag-protection gap #139 remains open. No tag refs were found in the inspected tag namespace.
-- Outcome-independent later main-promotion candidates remain generic integrity utilities only: durable no-clobber/duplicate-evidence state, source/runtime binding, raw-before-score helpers, fail-closed verifier patterns. Do not promote family-B candidate mechanism code/scorers/workflows.
-- Durable MAIN reporting is stale relative to remote reality: the MAIN report remains post-P4 closeout while PR #144 has advanced substantially. Current repository evidence overrides the stale report.
+- Issue #138 remains stale-open relative to canonical Family-A P4 `FAIL`.
+- PR #137 remains open and still says the P4 identity is pre-STARTED/unconsumed; that is now false. Close without merge after preserving authoritative pointers.
+- Legacy freeze branches remain authoritative and must not move. No Family-B freeze yet is correct at readiness.
+- Repository rulesets are still `0`; `main` is currently unprotected; Issue #139 remains a real non-blocking tag/ref protection gap. No current Git tags were observed.
+- RV01 canonical-status drift is now fixed on PR #140 but not yet integrated.
+- Outcome-independent future `main` promotion candidates remain generic integrity primitives only: exact manifest/runtime binding, STARTED/no-clobber, durable duplicate-evidence checkpoint state, raw-before-score/digest verification, fail-closed verifiers, and stable control-plane pointer/index helpers. Do not promote Family-B hypothesis-specific mechanism/scorer/workflow code yet.
 
 ## Orchestrator handoff
 
-**MAIN takes PR #144 / family-B Generation-1 readiness and owns ALL critical-path fixes**, specifically the durable full-lifecycle evidence-dedup P1, strict width-validation P2, exact bindings, review/CI closure, and any further family-B-specific blocker. MAIN does not cross STARTED under this handoff.
+**MAIN takes A01 Family-B PR #144 and owns ALL critical-path fixes through exact clean readiness integration. SUB takes RV01 PR #140 exact-head status integration, independent of MAIN. SUB fallback is RV02 PR #142 status/behavior-preserving CI cleanup. MAIN must not absorb reserved RV01/RV02 work. SUB must not take any Family-B blocker. Neither touches consumed identities or immutable authorities.**
 
-**SUB takes PR #143's final RESULTS_LEDGER wording fix, independent of MAIN.** SUB fallback is RV01 PR #140 current-status reconciliation. MAIN must not absorb those reserved independent lanes; SUB must not take any PR #144 blocker.
-
-**Neither touches consumed identities or immutable evidence, family-A P4 rescue, outcome-responsive successor tuning, or family C execution.** Repartition only if newer evidence invalidates the family-B package, family B is pre-start rejected/terminal, the CX01/RV01 support lane completes or becomes invalid, or a newer Analyst/Control Brain handoff explicitly changes centrality.
+Repartition only if a newer Analyst handoff supersedes this one, a supposedly independent SUB task becomes integrity-critical to MAIN, a lane completes/becomes invalid/claimed, or new scientific evidence materially changes information value. Family-B rejection/termination may open Family C; Family-B success/failure must not be used to retrospectively retune the same identity.
