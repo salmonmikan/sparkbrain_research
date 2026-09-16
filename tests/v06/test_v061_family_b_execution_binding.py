@@ -4,10 +4,13 @@ import json
 import subprocess
 from pathlib import Path
 
+import pytest
+
 from scripts import run_v061_a01_family_b_gen1 as runner
 
 ROOT = Path(__file__).resolve().parents[2]
 BINDING_PATH = ROOT / "docs" / "V061_A01_FAMILY_B_GEN1_EXECUTION_BINDING.json"
+FAMILY_B_TERMINAL_CLOSEOUT_SHA = "db66596ed4479e8dac8b713b4f92a73f76a25047"
 
 
 def _git_blob(path: str) -> str:
@@ -32,6 +35,34 @@ def _git_head() -> str:
     return result.stdout.strip()
 
 
+def _checkout_is_within_historical_family_b_package() -> bool:
+    result = subprocess.run(
+        [
+            "git",
+            "merge-base",
+            "--is-ancestor",
+            "HEAD",
+            FAMILY_B_TERMINAL_CLOSEOUT_SHA,
+        ],
+        cwd=ROOT,
+        check=False,
+        text=True,
+        capture_output=True,
+    )
+    return result.returncode == 0
+
+
+HISTORICAL_PACKAGE_ONLY = pytest.mark.skipif(
+    not _checkout_is_within_historical_family_b_package(),
+    reason=(
+        "Family-B HEAD-bound execution-package checks are historical-package-only; "
+        "descendant research/status branches must not reinterpret mutable HEAD as the "
+        "rejected Family-B execution source"
+    ),
+)
+
+
+@HISTORICAL_PACKAGE_ONLY
 def test_execution_binding_is_exact_and_does_not_self_admit() -> None:
     binding = json.loads(BINDING_PATH.read_text(encoding="utf-8"))
     assert binding["schema"] == "v061-a01-family-b-gen1-execution-binding-v1"
@@ -47,6 +78,7 @@ def test_execution_binding_is_exact_and_does_not_self_admit() -> None:
         assert _git_blob(path) == expected_blob
 
 
+@HISTORICAL_PACKAGE_ONLY
 def test_execution_manifest_preflights_exact_binding_without_acquisition() -> None:
     head = _git_head()
     manifest = runner._manifest(head)
