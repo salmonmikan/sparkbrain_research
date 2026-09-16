@@ -1,134 +1,249 @@
 {
-  "analysis_time_jst": "2026-09-16T00:30:00+09:00",
-  "schema": "sparkbrain-control-brain-state-v2",
+  "analysis_time_jst": "2026-09-16T12:27:00+09:00",
+  "schema": "sparkbrain-control-brain-state-v3",
   "branch": "ops/control-brain-handoff",
-  "central_theory": "causal circulation through actual historical lineage changes later local competition without semantic/task labels or privileged global lookup",
-  "strategic_status": "A01_P2_DEVELOPMENT_SUPPORTED_P3_PRIMARY_RV01_DELAY_REDUCED_TO_ORDINARY_LOCAL_PLASTICITY",
+  "central_theory": "low-privilege causal circulation through actual anonymous historical provenance can retain genuinely plural unresolved causal structure and later let external evidence selectively change the correct lineage and future local competition without semantic/evaluator/global-belief-state privilege",
+  "strategic_status": "A01_P2_P3_SUPPORTED_FAMILY_A_TERMINAL_AT_P4_FAMILY_B_PROSPECTIVE_READINESS_ONLY",
+  "authoritative_refs_inspected": {
+    "main": "ba16bf10535141c2edb29bbe3439ba0a38e71179",
+    "a01_authoritative": "research/v061-a01-n3-adapter@1b548043b8f0850294cc3cbfaaa84dbdad69342c",
+    "a01_p4_source": "freeze/a01-md002-p4-candidate-001-source-20260916@1bd0099f4358e02efac7ee4acccfe5257a86c4be",
+    "a01_p4_started": "control/a01-md002-p4-candidate-001-started-20260916@1bd0099f4358e02efac7ee4acccfe5257a86c4be",
+    "a01_p4_raw": "preserve/a01-md002-p4-candidate-001-raw-20260916@2511454f1633d3bc6f10e3d2a99e3ddd823bb798",
+    "a01_p4_scored": "preserve/a01-md002-p4-candidate-001-scored-20260916@56ee762540e0519034d2e8db0ad3c6acda667ffd",
+    "evidence_analyst_latest_time": "2026-09-16T12:02:00+09:00",
+    "main_orchestrator_latest_time": "2026-09-16T11:36:00+09:00",
+    "sub_orchestrator_latest_time": "2026-09-16T11:43:00+09:00",
+    "repository_steward_latest_time": "2026-09-16T06:32:00+09:00",
+    "external_research_audit_latest_time": "2026-09-16T10:32:00+09:00",
+    "git_tags_count": 0,
+    "repository_rulesets_count": 0
+  },
   "strongest_support": [
-    "A01 MD-002 P2 candidate-002 preserved raw evidence independently scores SUPPORTED_SELECTIVE_CIRCULATION: returned match/contradiction selectively changes the causally addressed proposal and later shared-root competition while the non-causal proposal and arrival timing remain fixed.",
-    "RV02 shows that eligibility-like state without a reachable causal-return opportunity is insufficient, preserving the distinction between trace storage and a closed external causal loop.",
-    "CX01 formal comparator families share a rapid contingency-cycle failure frontier, leaving fast closed-loop adaptation as an unresolved target but not as positive SparkBrain evidence."
+    "A01 P2 consumed development evidence SUPPORTED_SELECTIVE_CIRCULATION: returned match/contradiction selectively changed the causally addressed proposal and later shared-root competition.",
+    "A01 P3 consumed development evidence SUPPORTED_R_CAUSAL_CARRIER: the registered R partition carried the P2-like local-update/later-competition effect under the frozen matched-arm construction.",
+    "RV02 negative evidence preserves an important distinction: eligibility-like state without a reachable external causal-return opportunity was insufficient to open capability.",
+    "The pre-P4 programme registered three conceptual non-privileged families A/B/C, so family-A failure narrows but does not by itself exhaust the programme."
   ],
   "strongest_counterevidence": [
-    "v0.5 anonymous temporal assemblies remain reducible to established assembly/reservoir/temporal-memory families.",
-    "v0.6/v0.6.1 showed explicit-state dominance and formally unsupported Primary behavior.",
-    "RV01 R01-16 demystified much traversal behavior into learned connection weight.",
-    "RV01 R01-17 now demonstrates that genuine timing adaptation is cleanly explained by ordinary local learned connection-delay plasticity, weakening any residual mysterious-Field timing interpretation.",
-    "A01 P2 has not yet established carrier-locus causality, genuine retained ambiguity, or resistance to minimal explicit/recurrent reduction."
+    "A01 P4 family-A consumed development verdict UNSUPPORTED_EN_BLOC_MERGED_CREDIT: plural ancestry was retained, but the tested transient-return-address bridge changed merged causal paths en bloc instead of selectively resolving the supported historical lineage.",
+    "P2/P3 remain compatible with established eligibility/provenance/return-address memory plus local support update.",
+    "External reduction review shows delayed credit, pending causal choice, multiple possible causes, local/forward-only learning, and learned connection delays all have established comparison families.",
+    "RV01 traversal/timing effects reduce substantially to ordinary learned connection weight and local adaptive connection-delay plasticity.",
+    "v0.5 remains compatible with established assembly/reservoir/temporal-memory mechanisms, while v0.6/v0.6.1 previously showed explicit-state dominance and unsupported broad Primary behavior."
   ],
   "foundational_update": {
     "central_theory_changed": false,
+    "central_theory_narrowed": true,
     "broad_novelty_strengthened": false,
-    "broad_novelty_pressure": "increased",
-    "material_revision": "The prior tentative belief that RV01 delay was merely secondary or weight-conditioned is superseded. R01-17 supports real learned physical-delay causality, but as an ordinary local adaptive mechanism rather than SparkBrain-specific novelty.",
+    "broad_novelty_pressure": "materially_increased",
+    "material_revision": "Family A transient-return-address is terminal at P4. The live programme-level claim is now limited to whether remaining registered non-privileged families can realize low-privilege plural historical provenance and selective later resolution without reducing to explicit/recurrent/latent-cause memory.",
     "charter_revision_required": false
+  },
+  "active_line_review": {
+    "A01_MD002": {
+      "centrality": "CENTRAL_DIRECT",
+      "status": "P2_POSITIVE_CONSUMED_P3_POSITIVE_CONSUMED_FAMILY_A_P4_TERMINAL_NEGATIVE_PROGRAMME_UNRESOLVED",
+      "P2": "SUPPORTED_SELECTIVE_CIRCULATION_consumed_development",
+      "P3": "SUPPORTED_R_CAUSAL_CARRIER_consumed_development",
+      "P4_family_A": "UNSUPPORTED_EN_BLOC_MERGED_CREDIT_consumed_terminal_development",
+      "P5_family_A": "NOT_ADMISSIBLE",
+      "family_A": "TERMINAL",
+      "family_B": "CONCEPTUALLY_REGISTERED_PRE_P4_NO_COMPLETE_BOUND_PROPOSAL_YET",
+      "family_C": "CONCEPTUALLY_REGISTERED_PRE_P4_NO_COMPLETE_BOUND_PROPOSAL_YET"
+    },
+    "RV01": {
+      "centrality": "SECONDARY_COMPONENT_CHARACTERIZATION",
+      "status": "SUPPORTED_REAL_DELAY_CAUSAL_TIMING_CONSUMED_REDUCIBLE",
+      "reduction": "ordinary local adaptive connection-delay plasticity",
+      "new_science_allowed": false
+    },
+    "RV02": {
+      "centrality": "SECONDARY",
+      "status": "RD005_D1_TERMINAL_CONSUMED_CAPABILITY_UNOPENED",
+      "new_science_allowed": false
+    },
+    "CX_CX01": {
+      "centrality": "SECONDARY_DIAGNOSTIC",
+      "status": "CANDIDATE_002_FORMAL_NEGATIVE_CONSUMED",
+      "new_science_allowed": false
+    }
   },
   "line_priorities": [
     {
-      "line": "A01_MD002_P3",
       "priority": 1,
-      "status": "PRIMARY_HIGH",
-      "next_question": "Is the registered return-address partition R causally sufficient for the P2-like local-update and later-competition effect under an actual R-only transplant with matched L/F/C/evidence?"
+      "line": "A01_FAMILY_B_DISTRIBUTED_FIELD_TRACE_GEN1",
+      "status": "PRIMARY_PROPOSAL_READINESS_ONLY",
+      "next_question": "Can the pre-P4 registered distributed-field-trace family be specified minimally and prospectively with a falsifiable carrier, F-only transfer, plural-history selective-resolution discriminator, strong nulls, fixed stop observation, and no semantic/evaluator/global lookup privilege?",
+      "execution_allowed_now": false
     },
     {
-      "line": "A01_MD002_P4",
       "priority": 2,
-      "status": "HIGH_CONDITIONAL_ON_P3_OR_IF_P3_BLOCKED",
-      "next_question": "Can genuine non-singleton historical causal ancestry persist and later be selectively resolved by independent external evidence without hidden singleton or tie-break privilege?"
+      "line": "A01_FAMILY_B_ADMISSION_GATE",
+      "status": "BLOCKED_UNTIL_EXACT_PACKAGE_COMPLETE",
+      "next_question": "Does the exact completed family-B package merit one-way admission or pre-start rejection after independent re-fetch of bindings, identity freshness, CI/review, nulls and falsifiers?"
     },
     {
-      "line": "A01_MD002_P5",
       "priority": 3,
-      "status": "HIGH_CONDITIONAL_ON_P3_P4_SURVIVAL",
-      "next_question": "Can a minimal explicit anonymous causal-memory null or genuine recurrent N3 null reproduce endpoint and causal state dynamics with equal or lower state and lookup privilege?"
+      "line": "A01_FAMILY_B_DISCRIMINATOR_AND_REDUCTION",
+      "status": "CONDITIONAL_ON_LATER_ADMISSION",
+      "next_question": "If admitted, does family B survive a clean central discriminator and then resist minimal eligibility/return-address, recurrent causal-trace, and explicit latent-cause/belief-state reductions under matched privilege/resources?"
     },
     {
-      "line": "RV01",
       "priority": 4,
-      "status": "SECONDARY_COMPONENT_CAPABILITY_RESOLVED",
-      "next_question": "No further characterization unless a specific RV01 mechanism is needed to discriminate an explanation of the central A01 thesis."
+      "line": "A01_FAMILY_C",
+      "status": "BLOCKED_WHILE_B_IS_SIMPLER_NEXT_REGISTERED_FAMILY",
+      "next_question": "Open only after family B is rejected/completed or new evidence materially changes priority."
     },
     {
-      "line": "RV02",
       "priority": 5,
-      "status": "SECONDARY_TERMINAL_D1_CONSTRUCTION_NEGATIVE",
-      "next_question": "Only pursue a blind-preserving distinct successor if A01 is blocked or the result directly tests the causal-circulation thesis."
-    },
-    {
-      "line": "CX01",
-      "priority": 6,
-      "status": "LOWER_FORMAL_NEGATIVE_CONSUMED",
-      "next_question": "Define a sharper mechanism-specific successor before spending further execution budget."
+      "line": "RV01_RV02_CX01",
+      "status": "SECONDARY_DOCS_REDUCTION_CONTEXT_ONLY_UNLESS_FRESH_PROSPECTIVE_CONTRACT",
+      "next_question": "Do not spend new execution budget without a distinct admitted successor tied to the central thesis."
     }
   ],
   "consumed_identity_constraints": [
-    "A01 MD-001: consumed, no rerun/rescore repair.",
-    "A01 MD-002 P2 candidate-002 a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2: consumed, no rerun/retune/reacquisition.",
-    "RV01 R01-16 construction/capability identity: consumed, historical labels immutable.",
-    "RV01 R01-17 rv01-r01-17-real-delay-causal-timing-v1: consumed, no rerun/retune.",
-    "RV02 RD005 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a: terminal consumed, no retry same identity.",
-    "CX01 candidate-002 formal identity: consumed, no rerun/retune."
+    "A01 MD-001: consumed; no rerun/rescore/repair.",
+    "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2: consumed; no rerun/retune/reacquisition.",
+    "a01-md002-p3-r-only-causal-carrier-candidate-001-v1: consumed; no rerun/retune.",
+    "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1: consumed terminal family-A identity; no rerun/retune/rescore/same-identity rescue.",
+    "RV01 R01-16 consumed family: historical classifications/evidence immutable.",
+    "rv01-r01-17-real-delay-causal-timing-v1: consumed; no rerun/retune.",
+    "RV02 RD005 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a: terminal consumed; no retry same identity.",
+    "CX01 candidate-002 formal identity: consumed; no rerun/retune/formal-evidence mutation."
   ],
+  "programme_drift": {
+    "status": "ALIGNED_BUT_COMPLEXITY_RESCUE_RISK_INCREASED",
+    "assessment": "Family-B work is justified only because the family existed conceptually before P4 and is part of the pre-existing negative-completion programme. Post-P4 engineering must remain minimal, falsification-first, and anchored to the pre-P4 family definition rather than serving as a rescue of the observed family-A failure.",
+    "main_sub_role_split": "CURRENTLY_SOUND",
+    "main_sub_collision_observed": false
+  },
   "repository_doctrine": {
     "status": "PARTIALLY_COMPLIANT_WITH_LEGACY_DRIFT_AND_PROTECTION_GAP",
     "main_is_scientific_frontier": false,
-    "main_current_role_assessment": "Main is currently stable and behind active A01/RV01/RV02 research, which is correct under doctrine.",
+    "main_current_role_assessment": "main remains stable shared substrate and is correctly behind active research lines",
     "research_lines_off_main": true,
-    "immutable_legacy_refs_preserved": true,
-    "legacy_drift": [
-      "Main contains legacy CX01 candidate-specific workflow/preservation plumbing; treat this as historical drift rather than precedent for future hypothesis-specific code placement."
+    "legacy_freeze_refs_preserved": true,
+    "legacy_freeze_branch_count_observed": 13,
+    "git_tag_count": 0,
+    "repository_ruleset_count": 0,
+    "legacy_main_drift": [
+      "Legacy CX01 candidate-specific workflow/preservation plumbing remains on main and must not be treated as precedent for new hypothesis-specific code placement."
     ],
-    "canonical_scientific_truth_location": "git-managed repository sources/docs and immutable evidence pointers; Issues are operational/question tracking only",
-    "prospective_freeze_policy": "Prefer immutable annotated freeze/sealed/formal/evidence tags for new prospective boundaries; legacy freeze branches remain preserved and untouched.",
-    "repository_rulesets_present": false,
+    "canonical_scientific_truth_location": "git-managed sources/docs plus immutable evidence pointers; Issues are operational/question tracking",
+    "issue_drift": [
+      "Issue #138 remains open although canonical A01 P4 status now supports operational closure as FAIL."
+    ],
+    "pr_drift": [
+      "PR #137 remains open although its family-A candidate is terminal-consumed; close without merge after durable links are preserved."
+    ],
+    "prospective_freeze_policy": "prefer annotated freeze/sealed/formal/evidence tags with update/delete protection for new boundaries; preserve legacy freeze branches exactly",
     "authoritative_tag_namespace_protection_operational": false,
-    "preserve_role": "May be used as append-only/moving evidence index or provenance map where immutable evidence snapshots are separately protected; legacy preserve snapshots remain valid.",
-    "governance_priority": "OPPORTUNISTIC_NON_BLOCKING",
-    "do_not_delay_central_discriminator": true,
-    "next_governance_actions": [
-      "Before the next new freeze if feasible, define protected authoritative tag namespaces and annotated-tag metadata conventions without delaying A01 P3/P4.",
-      "Keep new candidate-specific execution plumbing under research-scoped lines unless it is extracted into a genuinely generic stable helper.",
-      "Gradually correct legacy main drift only while related code is already being touched; do not reorganize evidence refs for cleanliness."
-    ]
+    "governance_priority": "OPPORTUNISTIC_NON_BLOCKING"
   },
   "promotion_candidates": [
     {
-      "component": "exact source/runtime checkout verification and deterministic source-manifest binding",
-      "status": "CANDIDATE_AFTER_GENERIC_EXTRACTION",
-      "condition": "Must be separated from candidate semantics, reviewed as a stable generic interface, and testable without mutable experiment state."
+      "component": "exact source/runtime verification and deterministic source-manifest binding",
+      "status": "CANDIDATE_AFTER_GENERIC_EXTRACTION"
     },
     {
-      "component": "generic no-clobber, identity-collision, and STARTED-boundary helpers",
-      "status": "CANDIDATE_AFTER_GENERIC_EXTRACTION",
-      "condition": "Promote only outcome-independent primitives, not candidate-specific identities or workflow logic."
+      "component": "generic no-clobber, identity-collision and STARTED-boundary primitives",
+      "status": "CANDIDATE_AFTER_GENERIC_EXTRACTION"
     },
     {
-      "component": "raw-preserve-before-score and evidence digest verification helpers",
-      "status": "CANDIDATE_AFTER_GENERIC_EXTRACTION",
-      "condition": "Generic preservation mechanics may survive even if originating hypotheses fail."
+      "component": "raw-preserve-before-score and digest-verification helpers",
+      "status": "CANDIDATE_AFTER_GENERIC_EXTRACTION"
     },
     {
-      "component": "stable control-plane pointer/index helpers",
-      "status": "CANDIDATE_AFTER_GENERIC_EXTRACTION",
-      "condition": "Must contain no hypothesis-specific scientific interpretation or mutable candidate state."
+      "component": "generic fail-closed verifier patterns",
+      "status": "CANDIDATE_AFTER_GENERIC_EXTRACTION"
+    },
+    {
+      "component": "BoundaryEvent replay/idempotence runtime correctness primitive",
+      "status": "CANDIDATE_AFTER_GENERIC_EXTRACTION"
+    },
+    {
+      "component": "stable control-plane pointer/index helpers without hypothesis semantics",
+      "status": "CANDIDATE_AFTER_GENERIC_EXTRACTION"
     }
   ],
   "stop_reframe_rules": [
-    "Fail clean prospective P3 -> narrow or terminate the registered return-address carrier mechanism rather than redefining R or rescue-tuning.",
-    "Fail clean prospective P4 -> stop claiming retained historical-lineage plurality/later ambiguity resolution for the affected mechanism.",
-    "Pass P1-P4 but reduce under strengthened P5 to established-minimal explicit/recurrent causal memory with equal or lower state/privilege -> stop claiming a new computational principle for that mechanism.",
-    "All registered non-privileged mechanism families fail or reduce -> reframe SparkBrain as an integrative experimental cognitive architecture/testbed.",
-    "Positive component capabilities such as learned weight or learned delay do not count as support for causal circulation unless they directly survive the relevant discriminator."
+    "Family A is terminal at P4: no rerun/retune/rescore, no same-identity rescue, no P5 on the failed mechanism.",
+    "Reject family B before STARTED if its complete prospective contract cannot be specified without post-P4 rescue tuning, semantic/evaluator/global-state privilege, or a meaningful residual discriminator beyond established explicit memory.",
+    "A clean family-B discriminator failure terminates family B rather than authorizing added complexity after output.",
+    "Family C, if later admitted, receives the same falsification and reduction standard and is not an indefinite rescue reserve.",
+    "If a surviving candidate is reproduced by established-minimal eligibility/return-address memory, recurrent causal trace, or explicit latent-cause/belief-state mechanism with equal or lower state/resource/lookup privilege while matching relevant causal dynamics, stop claiming a new computational principle for that mechanism.",
+    "If remaining registered non-privileged families B and C also fail or reduce, recommend reframing SparkBrain as an integrative experimental cognitive architecture/testbed."
   ],
+  "scheduler_fleet_health": {
+    "fleet_status": "YELLOW_OPERATIONAL_LAG_NO_SCIENTIFIC_INTEGRITY_FAILURE",
+    "critical_failures": [],
+    "schedulers": [
+      {
+        "title": "SparkBrain Control Brain",
+        "classification": "STALE_ENTERING_THIS_RUN",
+        "reason": "Durable control handoff remained at 00:30 JST and scheduler metadata did not show a durable expected morning-cycle advancement before this run."
+      },
+      {
+        "title": "SparkBrain Evidence Analyst",
+        "classification": "HEALTHY",
+        "reason": "12:02 durable analysis reflects P4 closeout, current MAIN/SUB streams and family-B allocation."
+      },
+      {
+        "title": "SparkBrain Research Orchestrator",
+        "classification": "DELAYED",
+        "reason": "Latest durable MAIN report is 11:36 JST while a newer scheduler cycle appears to have started; no new family-B durable report or branch was visible at inspection."
+      },
+      {
+        "title": "SparkBrain Research Orchestrator Sub",
+        "classification": "UNKNOWN_NEW_ACTIVE_INSTANCE_NOT_YET_DUE",
+        "reason": "Current active scheduler has no completed run recorded yet; latest durable SUB repository report is 11:43 JST from the preceding worker instance. Only one SUB scheduler is active, so no live duplicate collision is present."
+      },
+      {
+        "title": "SparkBrain Current State Brief",
+        "classification": "UNKNOWN_TIMING_METADATA_DRIFT",
+        "reason": "Last-run metadata does not align cleanly with the current exact cadence; read-only and noncritical."
+      },
+      {
+        "title": "SparkBrain Repository Steward",
+        "classification": "HEALTHY_WITH_SCHEDULE_TRANSITION_ODDITY",
+        "reason": "Clean durable 06:32 JST stewardship output exists; current schedule metadata differs slightly from observed run time, consistent with reconfiguration."
+      },
+      {
+        "title": "SparkBrain External Research & Audit",
+        "classification": "HEALTHY",
+        "reason": "10:32 JST durable literature-reduction handoff advanced and sharpened the current reduction bar."
+      }
+    ],
+    "operational_defects": [
+      "Control Brain expected morning cycle did not leave a durable handoff before this run.",
+      "MAIN durable reporting is currently behind the newest Analyst allocation by approximately one cycle.",
+      "SUB scheduler identity was recreated/replaced, reducing scheduler-run continuity even though repository reports preserve scientific continuity.",
+      "Current State Brief cadence and last-run metadata need consistency verification."
+    ],
+    "efficiency_findings": [
+      "No MAIN/SUB critical-path collision was observed.",
+      "Analyst :00 -> MAIN :20 -> SUB :40 staggering remains conceptually sound.",
+      "No increase in worker count or cadence is justified while family B is in proposal/readiness rather than execution."
+    ],
+    "recommended_scheduler_changes_review_only": [
+      "Investigate why the Control Brain morning cycle failed to leave a durable latest/state/history update.",
+      "Require MAIN to persist a role-owned report every cycle, including explicit blocked/no-op state.",
+      "Preserve a stable SUB scheduler identity rather than recreating the task.",
+      "Verify Current State Brief exact cadence/runtime metadata and correct it only if the mismatch is real.",
+      "Keep current Analyst/MAIN/SUB staggering and do not increase cadence now."
+    ]
+  },
   "analyst_must_answer": [
-    "Has the fresh P3 identity acquired a fully prospective outcome-blind scorer/readout and exact execution contract, or does only the branch marker exist?",
-    "Does P3 transplant actual runtime R only with byte-identical L/F/C and admissible evidence, and are all arms independently executed?",
-    "What exact prospectively declared P3 observation falsifies the registered R-carrier hypothesis?",
-    "If P3 is positive, does P4 preserve genuine non-singleton historical ancestry and later resolve it selectively rather than forcing an early singleton?",
-    "Can a minimal explicit anonymous return-address/eligibility/provenance plus local-support mechanism reproduce the full P2/P3 causal dynamics with equal or lower privilege/state?",
-    "Can a genuine recurrent N3 null reproduce the same causal dynamics under fair resource/state/lookup matching?",
-    "Is secondary RV01/RV02/CX work displacing the central A01 discriminator merely because it is easier to execute?",
-    "Is main remaining a stable substrate and are legacy CX-specific workflows being treated as historical drift rather than precedent?",
-    "Can the next genuinely new freeze use protected annotated tag namespaces without delaying the central experiment?"
+    "Does the concrete family-B Generation-1 proposal remain traceable to the pre-P4 distributed-field-trace definition rather than becoming an outcome-responsive repair of family-A P4 failure?",
+    "Can family B state a prospectively falsifiable F-only carrier transfer and genuine plural-history selective-resolution discriminator without semantic/evaluator/global lookup or hidden singleton privilege?",
+    "Can minimal eligibility/return-address/provenance memory already reproduce the proposed family-B causal dynamics, and if so what residual discriminator remains?",
+    "What recurrent causal-trace and explicit latent-cause/multi-cause belief-state nulls fairly match state, lookup radius, semantic privilege, latency and update locus?",
+    "What exact predeclared observation terminates family B rather than triggering reinterpretation?",
+    "Is family-B engineering still the minimum necessary to answer the scientific question, or is readiness/provenance infrastructure becoming the programme itself?",
+    "Has MAIN produced a complete exact family-B package, and if so should it be admitted or rejected pre-start?",
+    "Has SUB moved to the reserved independent CX01 docs lane without touching MAIN blockers, and has MAIN avoided absorbing SUB work?",
+    "Are Issue #138 and PR #137 operationally stale relative to canonical P4 status, and do zero tags/zero rulesets remain current?",
+    "What evidence, if any, would justify opening family C before family B has been rejected or produced a discriminator result?"
   ]
 }
