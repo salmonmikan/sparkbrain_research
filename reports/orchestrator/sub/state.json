@@ -1,117 +1,92 @@
 {
-  "timestamp": "2026-09-16T18:42:00+09:00",
+  "timestamp": "2026-09-16T19:41:30+09:00",
   "worker_role": "sub",
-  "evidence_analyst_commit": "c7f82ec19973bdc73853703a1f3aa3ac55ce0f5b",
+  "Evidence Analyst commit": "ff495d751c121ca7e4a91efc813370be08fe3d46",
   "consumed_lanes": {
     "main_lane": {
-      "target": "A01 Family-B distributed-field-trace Generation-1",
+      "target": "A01 Family-B distributed-field-trace Generation-1 exact one-way package construction",
       "owner": "main",
       "status": "MAIN_OWNED_EXPLICITLY_AVOIDED",
-      "integrated_commit_observed": "8612d01fd9048b881bd8850e13e94ece954a053d",
+      "integrated_base": "8612d01fd9048b881bd8850e13e94ece954a053d",
+      "execution_package_branch_observed": "research/v061-a01-family-b-gen1-execution-package-20260916@8612d01fd9048b881bd8850e13e94ece954a053d",
       "execution_admitted": false
     },
     "sub_lane": {
-      "target": "RV02 PR #142 exact-head canonical D1 status integration",
+      "target": "Close stale Family-A P4 PR #137 without merge and Issue #138 with canonical terminal pointers",
       "reservation_status": "reserved_for_sub",
-      "status": "COMPLETED_MERGED",
-      "reviewed_head": "c34b78e6200d957cf47f9aa310a7b696457141f8",
-      "merge_commit": "c6b33606850ef591690074f50ed92a4c9400b8bd"
+      "independent_of_main_critical_path": true,
+      "execution_allowed": false,
+      "status": "COMPLETED"
     },
     "sub_fallback": null
   },
   "selected_independent_lane": {
-    "target": "RV02 PR #142 exact-head canonical D1 status integration",
-    "branch": "research/rv02-status-evidence-consolidation-sub-20260916",
-    "pr": 142,
-    "base": "research/rv02-development-feasibility@8176b91f5d427f3bdfccae2fac2c01b60a771403",
-    "analyst_snapshot_head": "011cb3dfd036050c779a3fbbdb981b0bf42de8ab",
-    "final_reviewed_head": "c34b78e6200d957cf47f9aa310a7b696457141f8",
-    "merge_commit": "c6b33606850ef591690074f50ed92a4c9400b8bd",
+    "target": "Family-A P4 stale operational-claim cleanup",
+    "pr": 137,
+    "issue": 138,
+    "pr_exact_head": "1bd0099f4358e02efac7ee4acccfe5257a86c4be",
     "reservation_status": "reserved_for_sub",
     "independent_of_main_critical_path": true,
     "execution_allowed": false,
-    "status": "COMPLETED_MERGED"
+    "status": "COMPLETED_OPERATIONAL_ONLY"
   },
   "independence_from_main_critical_path": true,
   "execution_allowed": false,
-  "sub_active_claim": {
-    "target": "RV02 PR #142 independent canonical-status integration",
+  "SUB active claim": {
+    "target": "PR #137 / Issue #138 stale P4 operational cleanup",
     "status": "COMPLETED_RELEASED",
     "remaining_claim": null
   },
-  "main_work_explicitly_avoided": [
-    "research/v061-a01-n3-adapter@8612d01fd9048b881bd8850e13e94ece954a053d and the Family-B Generation-1 identity",
-    "fresh Evidence Analyst admission/rejection for Family-B",
-    "all Family-B candidate implementation/verifier/harness/runner/binding/CI/review/preservation/scoring/execution work",
-    "all consumed A01 P2/P3/P4 identities and immutable evidence refs",
-    "outcome-dependent A01 successor design"
+  "MAIN work explicitly avoided": [
+    "research/v061-a01-n3-adapter@8612d01fd9048b881bd8850e13e94ece954a053d",
+    "research/v061-a01-family-b-gen1-execution-package-20260916@8612d01fd9048b881bd8850e13e94ece954a053d",
+    "a01-family-b-distributed-field-trace-gen1-v1",
+    "all Family-B runner/acquisition/scorer/verifier/binding/test/CI/review/STARTED/preserve/score/execution work",
+    "all outcome-dependent successor design"
   ],
-  "authoritative_refs": {
+  "authoritative refs": {
+    "main": "ba16bf10535141c2edb29bbe3439ba0a38e71179",
     "control_brain_handoff": "75c3087dcd7a09ca8dbcb9d4b58a4e1512a863bf",
-    "evidence_analyst_handoff": "c7f82ec19973bdc73853703a1f3aa3ac55ce0f5b",
-    "main_report_commit_consumed": "b5d33e1116bf424644d1abc9ca214d9fa5b47ba1",
-    "main_family_b_integrated_research_head_avoided": "research/v061-a01-n3-adapter@8612d01fd9048b881bd8850e13e94ece954a053d",
-    "rv02_base_before_merge": "research/rv02-development-feasibility@8176b91f5d427f3bdfccae2fac2c01b60a771403",
-    "rv02_rd005_d1_identity": "96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
-    "rv02_rd005_d1_source_freeze": "freeze/rv02-rd005-d1-source-c60b7fd8-20260914@c60b7fd8d3889ee969f505d921e7d31c990871e6",
-    "rv02_rd005_d1_source_manifest_digest": "46b75901f831358263bfb940535204a7743286353f1cc61336183c7bbf65a87",
-    "rv02_rd005_d1_preflight": "control/rv02-rd005-d1-preflight-c60b7fd8-20260914@096ddb8c65f342866839a2cb135d45e36ec1aabf",
-    "rv02_rd005_d1_started": "control/rv02-rd005-d1-started-96634541-20260914@2535b6312a091f7da4efa10c064c285bdeda7eaf",
-    "rv02_rd005_d1_raw_preserve": "preserve/rv02-rd005-d1-96634541-20260914@d1fdd67ea197b879c52942c4a34e7d39a0a40698",
-    "rv02_rd005_d1_terminal_audit": "review/rv02-rd005-d1-terminal-outcome-20260914@a02768b18fa290f249b7c488c896fad79f9ca409"
+    "evidence_analyst_handoff": "ff495d751c121ca7e4a91efc813370be08fe3d46",
+    "orchestrator_report_parent": "d7fb844a1ca82d7cf0fa4023df0d37f92d4831db",
+    "main_family_b_integrated_base_avoided": "research/v061-a01-n3-adapter@8612d01fd9048b881bd8850e13e94ece954a053d",
+    "main_execution_package_branch_avoided": "research/v061-a01-family-b-gen1-execution-package-20260916@8612d01fd9048b881bd8850e13e94ece954a053d",
+    "family_a_p4_identity": "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
+    "family_a_p4_source_freeze": "freeze/a01-md002-p4-candidate-001-source-20260916@1bd0099f4358e02efac7ee4acccfe5257a86c4be",
+    "family_a_p4_started": "control/a01-md002-p4-candidate-001-started-20260916@1bd0099f4358e02efac7ee4acccfe5257a86c4be",
+    "family_a_p4_raw_preserve": "preserve/a01-md002-p4-candidate-001-raw-20260916@2511454f1633d3bc6f10e3d2a99e3ddd823bb798",
+    "family_a_p4_scored_preserve": "preserve/a01-md002-p4-candidate-001-scored-20260916@56ee762540e0519034d2e8db0ad3c6acda667ffd",
+    "family_a_p4_scored_blob_reverified": "15f9dede2b859ff408de9f01e15f3cdcf82a48a5",
+    "canonical_status": "research/v061-a01-n3-adapter:docs/V061_A01_CURRENT_STATUS.md"
   },
-  "branches_prs_advanced": [
+  "branches/PRs advanced": [
     {
-      "pr": 142,
-      "branch": "research/rv02-status-evidence-consolidation-sub-20260916",
-      "final_head": "c34b78e6200d957cf47f9aa310a7b696457141f8",
-      "state": "merged_closed",
-      "merge_commit": "c6b33606850ef591690074f50ed92a4c9400b8bd",
-      "merge_method": "squash",
-      "expected_head_sha_enforced": true,
-      "scope": "canonical D1 status integration plus outcome-independent lint configuration/test formatting; manifest-bound runner/source bytes unchanged relative to base"
+      "pr": 137,
+      "head": "1bd0099f4358e02efac7ee4acccfe5257a86c4be",
+      "action": "closed_without_merge",
+      "merged": false,
+      "branch_modified": false
+    },
+    {
+      "issue": 138,
+      "action": "canonical_FAIL_pointer_comment_then_close_completed",
+      "scientific_source_modified": false
     }
   ],
-  "workflows_experiments": {
+  "workflows/experiments": {
     "scientific_experiment_dispatched": false,
     "one_way_workflow_dispatched": false,
     "new_started_ref": null,
-    "new_scoring": false,
     "candidate_output_acquired": false,
-    "repository_validation": [
-      {
-        "id": 35079781765,
-        "name": "ci",
-        "head": "c34b78e6200d957cf47f9aa310a7b696457141f8",
-        "status": "completed",
-        "conclusion": "success",
-        "python_3_11": "success",
-        "python_3_13": "success",
-        "lint": "success",
-        "local_readiness": "success",
-        "tests": "success",
-        "bundle_validation": "success"
-      }
-    ],
-    "fresh_review": {
-      "head": "c34b78e6200d957cf47f9aa310a7b696457141f8",
-      "status": "completed",
-      "new_findings": 0,
-      "unresolved_substantive_threads": 0
-    },
-    "manual_scientific_workflow_dispatch": false
+    "new_scoring": false,
+    "new_freeze_or_preserve": false
   },
-  "scientific_results": [],
-  "scientific_readiness_results": [
-    "No new scientific measurement or formal outcome was produced.",
-    "Canonical RESULTS_LEDGER and PROJECT_STATUS now record the already-consumed RD005 D1 terminal construction/gate-reachability negative and its non-capability boundary.",
-    "The correct live terminal-audit authority is a02768b18fa290f249b7c488c896fad79f9ca409.",
-    "Manifest-bound scripts/run_rv02_development.py and src/sparkbrain/research/rv02_scale.py are byte-identical to the retained development base in the final PR diff.",
-    "Exact-head CI 35079781765 succeeded on Python 3.11 and 3.13.",
-    "Fresh exact-head Codex review completed on c34b78e with no new finding and all substantive threads resolved.",
-    "PR #142 was squash-merged only after exact-head merge-safety verification."
+  "scientific/readiness results": [
+    "No new scientific measurement or readiness package was created.",
+    "Operational metadata now agrees with the canonical terminal-consumed Family-A P4 status.",
+    "Immutable scored evidence reverified unchanged with verdict UNSUPPORTED_EN_BLOC_MERGED_CREDIT and same_identity_rerun_allowed=false."
   ],
-  "consumed_identities": {
+  "consumed identities": {
     "observed_relevant": [
       "A01 MD-001",
       "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
@@ -125,37 +100,38 @@
     "newly_consumed_this_run": []
   },
   "blockers": [],
-  "collision_reconciliation": {
+  "collision reconciliation": {
+    "latest_analyst_rechecked_before_write": true,
+    "latest_analyst_tip": "ff495d751c121ca7e4a91efc813370be08fe3d46",
     "main_lane_collision": false,
     "main_work_touched": false,
+    "main_execution_package_branch_observed_and_avoided": true,
     "analyst_split_invalidated": false,
     "lane_rejected_reason": null,
-    "analyst_snapshot_head_was_stale": true,
-    "stale_snapshot_reconciled": "Live RV02 PR head had advanced to c34b78e, but all intervening changes were within the reserved SUB status/cleanup scope and restored manifest-bound source integrity.",
-    "main_concurrent_movement": "MAIN independently integrated Family-B readiness as 8612d01; SUB neither depended on nor modified that work.",
-    "latest_analyst_rechecked_before_merge": true
+    "pr137_exact_head_rechecked_before_close": true,
+    "issue138_open_rechecked_before_close": true
   },
-  "integrity_state": {
+  "integrity state": {
     "immutable_refs_modified": false,
-    "formal_evidence_modified": false,
+    "formal_or_scientific_evidence_modified": false,
+    "research_branch_modified": false,
     "scientific_execution_performed": false,
     "identity_consumed_this_run": false,
     "same_identity_rerun_or_retune": false,
     "scientific_scoring_performed": false,
     "main_critical_path_modified": false,
-    "manifest_bound_source_changed_in_final_diff": false,
-    "exact_head_ci_clean": true,
-    "fresh_exact_head_review_clean": true,
-    "exact_reviewed_head_merged": true,
-    "overall": "clean_independent_rv02_status_integration_complete"
+    "pr137_merged": false,
+    "canonical_scored_blob_unchanged": true,
+    "overall": "clean_independent_operational_cleanup_complete"
   },
   "completion_target": {
-    "target": "Canonical RD005 D1 ledger + PROJECT_STATUS coverage; preserve hash-bound source bytes; exact-head green CI; fresh clean review; exact-head integration without reopening D1",
+    "target": "PR #137 and Issue #138 no longer advertise a pre-START/unconsumed P4 run; canonical evidence byte-identical; no research/code/evidence mutation",
     "reached": true,
-    "merge_commit": "c6b33606850ef591690074f50ed92a4c9400b8bd"
+    "pr137_state": "closed_unmerged",
+    "issue138_state": "closed_completed"
   },
   "fallback_status": null,
   "rejected_lane": null,
   "lane_rejected_reason": null,
-  "next_sub_action": "No further independent SUB lane is currently reserved. On the next run, re-fetch the latest Analyst handoff; if no new reserved independent lane/fallback exists, no-op. Never absorb Family-B admission/execution blockers."
+  "next_sub_action": "Re-fetch the next Evidence Analyst handoff. If no new reserved independent lane/fallback exists, no-op; never absorb Family-B MAIN blockers."
 }
