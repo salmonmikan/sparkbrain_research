@@ -451,7 +451,7 @@ retained in the run artifacts.
 - C05 checkpoint evidence lacks an integrated checkpoint-matched, hashed dev-only encoder
   vocabulary/feature manifest;
 - final C06 model execution and C08 structural-plasticity evidence are not integrated;
-- `LICENSE_NOT_SELECTED.md` remains, so no public archive or tag or ready claim was produced;
+- `LICENSE_NOT_SELECTED.md` remains, so no public archive, tag, or ready claim was produced;
 - the tested lock is a Windows/Python 3.13 snapshot, not a universal cross-platform wheel lock.
 
 **Claim impact:** no evidence grade increases. This is reproducibility engineering for selected
