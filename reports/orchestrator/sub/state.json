@@ -1,39 +1,41 @@
 {
-  "timestamp": "2026-09-16T14:16:00+09:00",
+  "timestamp": "2026-09-16T15:15:00+09:00",
   "worker_role": "sub",
-  "evidence_analyst_commit": "565c6731c0ffb083510101c67c143c3311a04430",
+  "evidence_analyst_commit": "c3e3cbd721d57f71f22f6d9080c02793e38f03ad",
   "consumed_lanes": {
-    "main_lane": "A01 family-B distributed-field-trace Generation-1 prospective proposal and implementation-readiness package",
-    "sub_lane": "Finish CX01 PR #143 by correcting final audit-reproducibility wording defect and completing exact-head review/integration",
-    "sub_fallback": "Reconcile RV01 PR #140 with canonical project status so consumed R01-17 cannot appear runnable"
+    "main_lane": "A01 family-B distributed-field-trace Generation-1 readiness on PR #144; MAIN owns all critical-path fixups",
+    "sub_lane": "Finish CX01 PR #143 documentation integration with frozen-policy audit reproducibility and exact-head integration",
+    "sub_fallback": "Reconcile RV01 PR #140 canonical project status so consumed R01-17 cannot appear runnable"
   },
   "selected_independent_lane": {
     "target": "CX01 PR #143 documentation integrity and exact-head integration",
     "branch": "research/cx01-status-evidence-consolidation-sub-20260916",
     "pr": 143,
     "reservation_status": "reserved_for_sub",
-    "independent_of_main_critical_path": true
+    "independent_of_main_critical_path": true,
+    "status": "COMPLETED_MERGED"
   },
   "independent_of_main_critical_path": true,
   "execution_allowed": false,
   "sub_active_claim": {
-    "target": "CX01 Candidate-002 documentation integration",
-    "branch": "research/cx01-status-evidence-consolidation-sub-20260916",
-    "pr": 143,
-    "head": "69c584bfe273a432e192cd5873685047e432d703",
-    "status": "CI_GREEN_EXACT_HEAD_REVIEW_FOUND_ONE_NEW_LEDGER_P2_UNMERGED"
+    "target": "RV01 PR #140 canonical current-status reconciliation after completion of CX01 primary lane",
+    "branch": "research/rv01-status-evidence-consolidation-sub-20260916",
+    "pr": 140,
+    "head": "2d877a5af670c54d404d8782763129f497092f88",
+    "status": "FALLBACK_NEXT_RESERVED_INSPECTED_NOT_MUTATED"
   },
   "main_work_explicitly_avoided": [
-    "A01 family-B distributed-field-trace Generation-1 proposal/readiness",
-    "all A01 family-B implementation/verifier/CI/binding/review/package blockers",
+    "A01 family-B distributed-field-trace Generation-1 PR #144 and branch research/v061-a01-family-b-gen1-20260916",
+    "all family-B implementation/verifier/CI/binding/review/package/execution blockers",
     "all consumed A01 P2/P3/P4 identities and immutable refs",
     "family-C successor work"
   ],
   "authoritative_refs": {
-    "evidence_analyst": "ops/evidence-analyst-handoff@565c6731c0ffb083510101c67c143c3311a04430",
-    "control_brain": "ops/control-brain-handoff@cd378adcc8636f5794ac56ffcbaacd037e5c8088",
-    "main_report_consumed": "5d0acd8260290d5147f99063b944173f1fd9f0cd",
-    "sub_report_prior": "f862937819537626c67aeb78ff67bee40e37070b",
+    "evidence_analyst": "ops/evidence-analyst-handoff@c3e3cbd721d57f71f22f6d9080c02793e38f03ad",
+    "control_brain_latest_consumed": "analysis/control_brain/latest.md (12:27 JST strategic prior)",
+    "main_report_consumed": "reports/orchestrator/main/latest.md (11:36 JST; stale versus live PR #144)",
+    "sub_report_prior": "ops/orchestrator-run-report@d0a2cade69f4f09fc6142e3e97a6544d68d30424",
+    "main_live_pr_144_head_avoided": "75a870ab3a9325c86050772514c5dfe277088860",
     "cx01_source_freeze": "freeze/cx01-002-source@e8483968ce43076b4c3fd04c76e62106e2031769",
     "cx01_package_freeze": "freeze/cx01-002-package@c104be281285d52a732d5366fe36209d5688d973",
     "cx01_started": "control/cx01-candidate-002-started-20260913@8216d41a57e6933443d38dfc8d93f9188e423d0c",
@@ -41,21 +43,21 @@
   },
   "branches_prs_advanced": [
     {
-      "branch": "research/cx01-status-evidence-consolidation-sub-20260916",
-      "commit": "d49609294c545c0f4c4928aee516f0c0847effaf",
-      "change": "CX01_FORMAL_RUNBOOK audit/reproducibility boundary"
-    },
-    {
-      "branch": "research/cx01-status-evidence-consolidation-sub-20260916",
-      "commit": "69c584bfe273a432e192cd5873685047e432d703",
-      "change": "CX01_IMPLEMENTATION_STATUS audit/reproducibility boundary"
-    },
-    {
       "pr": 143,
-      "state": "open",
-      "mergeable": true,
-      "head": "69c584bfe273a432e192cd5873685047e432d703",
-      "merged": false
+      "branch": "research/cx01-status-evidence-consolidation-sub-20260916",
+      "reviewed_head": "e87e63ef6bc49ea3a719a9ac7cfd9c91c15aca38",
+      "state": "merged",
+      "merge_method": "squash",
+      "merge_commit": "251f7350b7a30c50e8b8a3329b6ff920d85bf493",
+      "changed_files": 5,
+      "scope": "docs-only"
+    },
+    {
+      "pr": 140,
+      "branch": "research/rv01-status-evidence-consolidation-sub-20260916",
+      "head": "2d877a5af670c54d404d8782763129f497092f88",
+      "state": "open_mergeable",
+      "scope": "fallback inspected only; no mutation this run"
     }
   ],
   "workflows_experiments": {
@@ -66,48 +68,54 @@
     "candidate_output_acquired": false,
     "repository_validation": [
       {
-        "id": 35058441893,
+        "id": 35062055816,
         "name": "cx01-development",
+        "head": "e87e63ef6bc49ea3a719a9ac7cfd9c91c15aca38",
         "status": "completed",
         "conclusion": "success"
       },
       {
-        "id": 35058441953,
+        "id": 35062055813,
         "name": "ci",
+        "head": "e87e63ef6bc49ea3a719a9ac7cfd9c91c15aca38",
         "status": "completed",
         "conclusion": "success"
       }
     ],
     "exact_head_codex_review": {
-      "head": "69c584bfe273a432e192cd5873685047e432d703",
-      "status": "completed_with_one_new_p2",
-      "finding": "RESULTS_LEDGER Candidate-002 integrity sentence blanket-prohibits rescoring and must distinguish forbidden modified-policy/modified-evidence rescore from permitted unchanged-frozen-policy immutable-raw read-only recomputation"
+      "head": "e87e63ef6bc49ea3a719a9ac7cfd9c91c15aca38",
+      "status": "completed_clean",
+      "completed_at": "2026-09-16T06:13:08Z",
+      "unresolved_review_threads_after_review": 0
     }
   },
   "scientific_results": [],
   "scientific_readiness_results": [
-    "No new scientific measurement was produced.",
-    "Corrected runbook and implementation-status audit boundaries so Candidate-002 remains terminal/no-reuse while immutable-raw, unchanged-frozen-policy read-only recomputation remains permitted.",
-    "Reverified exact Candidate-002 source/package/STARTED/preserve refs without mutation.",
-    "Both exact-head ci and cx01-development are green.",
-    "Fresh exact-head review found one remaining results-ledger documentation consistency defect; no merge occurred."
+    "No new scientific measurement or formal outcome was produced.",
+    "CX01 Candidate-002 status integration is complete and merged without modifying immutable evidence.",
+    "RESULTS_LEDGER now permits unchanged-frozen-policy read-only recomputation from immutable raw evidence while preserving terminal no-rerun/no-retune/no-repair/no-reuse and modified-policy/evidence no-rescore boundaries.",
+    "Fresh exact-head ci and cx01-development passed and fresh exact-head Codex review completed without a new substantive finding.",
+    "RV01 PR #140 remains a valid independent fallback and its P1 current-status contradiction was freshly confirmed."
   ],
   "consumed_identities": [
-    "cx01-candidate-002"
+    "cx01-candidate-002",
+    "rv01-r01-17-real-delay-causal-timing-v1"
   ],
   "consumed_identities_this_run": [],
   "blockers": [
-    "PR #143 has one unresolved substantive P2 in docs/RESULTS_LEDGER.md: the integrity line must permit unchanged-policy immutable-raw read-only recomputation while forbidding modified-policy/modified-evidence rescoring.",
-    "The available connected GitHub text-file writer performs whole-file replacement rather than a line/patch edit; performing a whole-file rewrite of the large append-only scientific ledger without a trustworthy byte-preserving local checkout was rejected as an unnecessary corruption risk.",
-    "PR #143 must not merge until the ledger wording is safely corrected and the resulting exact head is re-reviewed."
+    "No blocker remains on the completed CX01 primary lane.",
+    "RV01 fallback requires a bounded edit to the very large docs/PROJECT_STATUS.md; the connected writer is whole-file replacement and this runtime lacks a trustworthy byte-preserving local checkout, so mutation was deferred rather than risking collateral corruption."
   ],
   "collision_reconciliation": {
     "main_lane_collision": false,
     "main_work_touched": false,
     "reserved_sub_lane_valid": true,
-    "sub_fallback_entered": false,
-    "concurrent_pr_head_at_start": "8c7088dcbf3821678eb37851eb161db660c16e38",
-    "current_pr_head": "69c584bfe273a432e192cd5873685047e432d703"
+    "primary_sub_lane_completed": true,
+    "sub_fallback_entered": true,
+    "sub_fallback_mutated": false,
+    "main_live_pr_observed": 144,
+    "main_live_head_observed": "75a870ab3a9325c86050772514c5dfe277088860",
+    "cx01_reviewed_head": "e87e63ef6bc49ea3a719a9ac7cfd9c91c15aca38"
   },
   "integrity_state": {
     "immutable_refs_modified": false,
@@ -117,26 +125,20 @@
     "same_identity_rerun_or_retune": false,
     "modified_policy_or_evidence_rescore": false,
     "main_critical_path_modified": false,
-    "unsafe_whole_ledger_rewrite_avoided": true,
-    "overall": "clean_docs_only_progress_unmerged_due_fresh_review_finding"
+    "merge_exact_reviewed_head_only": true,
+    "overall": "clean_primary_sub_lane_completed_docs_only"
   },
   "completion_target": {
-    "target": "PR #143 has zero unresolved substantive review findings, exact-head ci and cx01-development green, and frozen-policy audit reproduction wording is consistent",
-    "reached": false,
-    "achieved": [
-      "exact-head ci green",
-      "exact-head cx01-development green",
-      "runbook and implementation-status wording consistent"
-    ],
-    "remaining": [
-      "safe RESULTS_LEDGER wording correction",
-      "fresh exact-head Codex review with zero substantive findings",
-      "fresh merge-safety audit and exact-head integration"
-    ]
+    "primary_target": "PR #143 zero substantive findings, exact-head ci/cx01-development green, frozen-policy audit reproduction wording consistent, exact reviewed head integrated",
+    "primary_reached": true,
+    "primary_merge_commit": "251f7350b7a30c50e8b8a3329b6ff920d85bf493",
+    "next_target": "RV01 PR #140 current project status agrees with consumed R01-17 result and no-rerun boundary"
   },
   "fallback_status": {
     "target": "RV01 PR #140 canonical project-status reconciliation",
-    "status": "reserved_not_used_primary_still_valid"
+    "status": "selected_after_primary_completion_inspected_not_mutated",
+    "head": "2d877a5af670c54d404d8782763129f497092f88",
+    "unresolved_finding": "P1 synchronize docs/PROJECT_STATUS.md with consumed SUPPORTED_REAL_DELAY_CAUSAL_TIMING R01-17 status"
   },
   "rejected_lane": null,
   "lane_rejected_reason": null
