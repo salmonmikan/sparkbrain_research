@@ -1,76 +1,67 @@
 # SparkBrain Research Orchestrator SUB — Latest
 
-Run start: 2026-09-16 12:41 JST  
+Run time: 2026-09-16 14:11 JST  
 Worker role: `sub` / SECONDARY IMPLEMENTER
 
 ## MAIN frontier explicitly avoided
 
-The current Evidence Analyst handoff assigns MAIN to **A01 family-B `distributed-field-trace` Generation-1 prospective proposal and implementation readiness**. SUB did not modify A01 branches, proposal/package identities, verifier/CI work, bindings, or any MAIN critical-path artifact.
-
-Evidence Analyst handoff consumed: `ops/evidence-analyst-handoff@8ce038e437ebd0bd2ca0514b392005034f2a298f`.
-
-The durable MAIN report stream still describes the immediately preceding post-P4 closeout lane; current Analyst allocation is newer and governed collision avoidance for this run.
+The current Evidence Analyst handoff is `ops/evidence-analyst-handoff@565c6731c0ffb083510101c67c143c3311a04430`. MAIN owns **A01 family-B `distributed-field-trace` Generation-1 prospective proposal/readiness** and all of its critical-path implementation, verifier, CI, binding, review, preservation, scoring, and future execution blockers. SUB did not modify any A01 family-B branch, package, identity, or MAIN artifact.
 
 ## Selected independent SUB lane
 
-Reserved primary lane: **CX01 candidate-002 formal-negative status/evidence-map consolidation**.
+Primary reserved lane remains **CX01 PR #143 documentation integration** on `research/cx01-status-evidence-consolidation-sub-20260916`.
 
 - reservation: `reserved_for_sub`
 - independent of MAIN critical path: yes
 - scientific execution allowed: no
-- authoritative moving CX01 base: `research/cx01-comparator-extension@0687c8db3efb8180c8599d32235751b93f3c1f77`
-- fallback: RV01 reduction-context augmentation, unused
+- fallback: RV01 PR #140 canonical-status reconciliation, not entered because the valid primary lane remains active
 
-## Evidence reconciliation
+The Analyst completion target is zero unresolved substantive findings plus exact-head `ci` and `cx01-development` green, while preserving Candidate-002's terminal no-rerun boundary and allowing unchanged-policy read-only audit recomputation from immutable raw evidence.
 
-Reverified Candidate-002 authority chain:
+## Reverified immutable authority
+
+The Candidate-002 authority chain remains unchanged:
 
 - source freeze: `freeze/cx01-002-source@e8483968ce43076b4c3fd04c76e62106e2031769`
-- outcome-blind package freeze: `freeze/cx01-002-package@c104be281285d52a732d5366fe36209d5688d973`
+- package freeze: `freeze/cx01-002-package@c104be281285d52a732d5366fe36209d5688d973`
 - STARTED/control: `control/cx01-candidate-002-started-20260913@8216d41a57e6933443d38dfc8d93f9188e423d0c`
 - formal preserve: `preserve/cx01-candidate-002-formal-34742073336@6d45928827209cd763a2879494d85838df38b96f`
-- preserved analysis: `preserved-evidence/cx01/candidate-002/run-34742073336/analysis.json`
 
-The preserved formal run contains 420 executions and uses a non-compensatory policy requiring minimum per-family pass fraction `0.80`, privilege match, and training-transcript match. Every evaluated comparator decision is `supported: false`, with at least one required family at pass fraction `0.0` for each comparator. The correct bounded interpretation is **formal negative for this exact frozen candidate/comparator/protocol contract**; it is not a programme-wide SparkBrain negative.
+No immutable ref or formal evidence was changed.
 
-Because STARTED exists, `cx01-candidate-002` remains consumed. No rerun, retune, rescore, silent repair, or same-identity successor is permitted.
+## Implementation / PR progress
 
-## Implementation progress
+PR #143 had advanced concurrently to exact head `8c7088dcbf3821678eb37851eb161db660c16e38`, where the prior PROJECT_STATUS wording finding was already fixed. Fresh review inspection found one remaining P2 documentation-integrity finding: the superseded `CX01_FORMAL_RUNBOOK.md` and `CX01_IMPLEMENTATION_STATUS.md` banners still used a blanket `rescore` prohibition that contradicted the canonical allowance for read-only reproduction from immutable raw evidence under the unchanged frozen policy.
 
-Created distinct SUB branch:
+SUB fixed that exact issue on the same independent CX01 branch:
 
-- `research/cx01-status-evidence-consolidation-sub-20260916`
+- `d49609294c545c0f4c4928aee516f0c0847effaf` — narrow the formal-runbook boundary so modified-policy/modified-evidence rescoring is forbidden while unchanged-policy immutable-raw verification remains permitted.
+- `69c584bfe273a432e192cd5873685047e432d703` — align the implementation-status banner to the same audit boundary.
 
-Added canonical current status/evidence map:
+The reviewed PR diff remains documentation/status integration only: no candidate, protocol, runner, scorer, threshold, workflow, STARTED, freeze, preserve, or evidence mutation. The prior P2 thread was resolved only after the exact wording fix.
 
-- `docs/CX01_CANDIDATE_002_FORMAL_STATUS.md`
-- commit `aa99a4ccf9df0b050016841332802fa297d68ea8`
+## Validation / review
 
-Opened reviewable docs-only PR:
+Current exact PR head: `69c584bfe273a432e192cd5873685047e432d703`.
 
-- PR #143 — `docs(cx01): consolidate candidate-002 formal negative status`
-- base: `research/cx01-comparator-extension`
-- head: `research/cx01-status-evidence-consolidation-sub-20260916`
-- exact head: `aa99a4ccf9df0b050016841332802fa297d68ea8`
-- mergeable: yes at latest re-fetch
-- one file changed; no protocol/code/evidence mutation
+At the latest re-fetch:
 
-The new document explicitly supersedes stale *current-state* claims in historical pre-execution CX01 status/runbook documents without rewriting those historical files. It maps the exact source/package freeze, STARTED, formal preserve, preserved analysis, formal-negative interpretation, and terminal no-rerun boundary.
+- PR #143 is open, non-draft, and mergeable.
+- `cx01-development` run `35058441893` completed **success**.
+- `ci` run `35058441953` is still **in progress**; both Python jobs have passed install, lint, and local-readiness and are in tests.
+- an exact-head Codex review for `69c584b` is **running**.
+- all previously visible review threads are resolved; no new completed exact-head review finding is available yet.
+
+SUB therefore did **not** merge PR #143. Merge safety requires a fresh exact-head re-fetch after CI/review completion.
 
 ## Workflows / experiments / science
 
-No experiment or one-way workflow was dispatched by SUB. No STARTED was created. No scoring occurred. No new scientific identity was consumed. No immutable evidence/ref was modified.
+No scientific experiment or one-way workflow was dispatched. No STARTED was created. No candidate output was acquired or scored. No scientific identity was consumed. No rerun, retune, repair, or modified-policy/evidence rescore occurred.
 
-PR #143 triggered ordinary repository validation on its docs-only head; `ci` run `35053116611` and `cx01-development` run `35053116671` were still in progress at the last check. SUB did not merge while those checks were incomplete.
+**New scientific result:** none. This run only corrected documentation-integrity semantics around already-preserved CX01 Candidate-002 formal-negative evidence.
 
-**New scientific result:** none. This run only canonicalized already-preserved formal-negative evidence.
+## Lane / blocker status
 
-## Integrity / lane decision
+No Analyst lane was rejected for critical-path coupling. The selected CX01 work is genuinely independent of MAIN. The only remaining primary-lane blocker is ordinary exact-head validation/review completion on PR #143; MAIN need not wait for it.
 
-No Analyst lane was rejected for critical-path coupling. The CX01 lane remained genuinely independent of MAIN family-B work throughout the run. RV01 fallback was not used because the primary CX01 completion target was reached.
-
-## Completion target / blockers
-
-Completion target reached: a reviewable canonical CX01 Candidate-002 formal-negative evidence-map package now exists as PR #143.
-
-Remaining non-MAIN blocker: repository validation/review/merge of PR #143. This does not block MAIN and is not a reason for SUB to touch the A01 frontier.
+Completion target is not yet fully reached in this run because `ci` and the exact-head Codex review remain in progress. The next SUB action is to re-fetch PR #143 exact head, checks and review; if unchanged and clean, integrate the exact reviewed head. RV01 fallback remains reserved but untouched while this primary lane is active.
