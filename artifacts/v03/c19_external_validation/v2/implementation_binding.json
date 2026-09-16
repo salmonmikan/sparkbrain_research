@@ -15,11 +15,21 @@
   },
   "bound_source_blobs": {
     "implementation_binding.py": "ec03a6a71e6b9d88d4242b13ff94f2115a7b5bcc",
-    "test_c19_v2_implementation_binding.py": "ad26f890fa940e50be337ffabf2b8843b2f683ea",
+    "test_c19_v2_implementation_binding.py": "638c8193965f03228a868752cfa3f14e5a0a0c30",
     "truth_free_adapter.py": "3153fcb61d5872e93d22f30f0f1f808f856bfaeb",
     "input_diagnosis.py": "54298cae67a372237cc65ee9272bae661adb45cb",
     "coalition.py": "bc0529e421c0b466d12af94fa3c833b9afe3bc02",
-    "official_execution.py": "d6e29df114450eea4f3741ca203d2b01969ce330"
+    "official_execution.py": "d6e29df114450eea4f3741ca203d2b01969ce330",
+    "official_protocol.json": "88d2eabaf8309aa2a0266d91f7463d1a8dcdc38f",
+    "pyproject.toml": "49d47f3d65f67f1c0a6b82a3f7fc2d0364e2a88c"
+  },
+  "runtime_binding": {
+    "official_python_implementation": "CPython",
+    "official_python_version": "3.11.16",
+    "repository_package_version": "0.3.2.dev0",
+    "external_runtime_dependencies_required_by_bound_executors": [],
+    "ci_compatibility_versions": ["3.11", "3.13"],
+    "network_allowed_during_model_execution": false
   },
   "condition_binding": {
     "input_tracks": [
@@ -66,6 +76,8 @@
     "optimization_match": "zero training or selection updates for condition readout and every baseline",
     "parameter_match": "not asserted by this binding; generated fixed coefficients are reported as algorithmic constants",
     "compute_match": "operation counters must be recorded; unmatched families are descriptive only",
+    "parameter_match_asserted": false,
+    "compute_match_asserted": false,
     "winner_claim": "forbidden unless the frozen protocol's four matching dimensions are all established for all five seeds"
   },
   "claim_limits": [
