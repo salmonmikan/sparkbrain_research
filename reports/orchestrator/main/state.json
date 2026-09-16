@@ -1,17 +1,20 @@
 {
-  "timestamp": "2026-09-17T01:26:00+09:00",
+  "timestamp": "2026-09-17T02:30:37+09:00",
   "worker_role": "main",
-  "evidence_analyst_commit": "5eb075481b8a5846a5234f1d397a88fd288af861",
+  "evidence_analyst_commit": "53a1a3cd9dc8b1c657ff056f517278cf3c0b4d00",
   "analyst_lanes": {
     "main_lane": {
-      "target": "Canonical A01 registered-family programme closeout and strategic reframe",
-      "branch": "research/v061-a01-registered-family-closeout-20260917",
-      "scientific_identity": null,
+      "target": "C19-v2 truth-free symbolic-adapter and fresh external-validation preregistration package; stop before official Belief-R data access",
+      "branch": "research/c19-truth-free-symbolic-adapter-v2-20260917",
+      "protocol_id": "c19-external-v2",
+      "adapter_contract_id": "c19-belief-r-truth-free-symbolic-adapter-v1",
+      "planned_official_identity": "c19-external-v2-official-v1",
+      "one_way_execution_allowed": false,
       "main_owns_all_critical_path_fixups": true
     },
     "sub_lane": {
-      "target": "A/B/C terminal-provenance bookkeeping audit",
-      "branch": "research/v061-a01-negative-completion-c-audit-sub-20260917",
+      "target": "Generic terminal-provenance accounting v2 prototype, isolated from current A01 evaluator",
+      "branch": "research/methods-terminal-provenance-v2-sub-20260917",
       "reservation_status": "reserved_for_sub",
       "independent_of_main_critical_path": true,
       "execution_allowed": false
@@ -19,123 +22,165 @@
     "sub_fallback": null
   },
   "consumed_prospective_contingency_branches": [
-    "PROGRAMME_CLOSEOUT_READY",
-    "BOOKKEEPING_SCHEMA_AMBIGUITY",
+    "PRE_START_ADAPTER_INCOMPLETE",
     "PRE_START_BLOCKER",
-    "CLOSEOUT_COMPLETE"
+    "PRE_START_READY_FOR_ADMISSION"
   ],
   "main_active_claim": {
-    "frontier": "A01 registered-family programme closeout and strategic reframe",
-    "branch": "research/v061-a01-registered-family-closeout-20260917",
-    "head": "3329d15d9a3f73555396fb93a4dab117616e7bc2",
-    "status": "CLOSEOUT_COMPLETE",
-    "scientific_identity": null
+    "frontier": "C19-v2 truth-free symbolic-adapter readiness",
+    "branch": "research/c19-truth-free-symbolic-adapter-v2-20260917",
+    "head": "7ede1bfb41285ec0107136b4f6abd5e893adcacf",
+    "protocol_id": "c19-external-v2",
+    "adapter_contract_id": "c19-belief-r-truth-free-symbolic-adapter-v1",
+    "planned_official_identity": "c19-external-v2-official-v1",
+    "status": "PRE_START_READY_FOR_ADMISSION"
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "control_brain": "cecb3418f54ef2c89806cbf0d0d8012adc067cca",
-    "family_a_p4_source": "freeze/a01-md002-p4-candidate-001-source-20260916@1bd0099f4358e02efac7ee4acccfe5257a86c4be",
-    "family_a_p4_started": "control/a01-md002-p4-candidate-001-started-20260916@1bd0099f4358e02efac7ee4acccfe5257a86c4be",
-    "family_a_p4_raw": "preserve/a01-md002-p4-candidate-001-raw-20260916@2511454f1633d3bc6f10e3d2a99e3ddd823bb798",
-    "family_a_p4_scored": "preserve/a01-md002-p4-candidate-001-scored-20260916@56ee762540e0519034d2e8db0ad3c6acda667ffd",
-    "family_b_closeout": "research/v061-a01-family-b-gen1-execution-package-20260916@db66596ed4479e8dac8b713b4f92a73f76a25047",
-    "family_c_closeout": "research/v061-a01-family-c-gen1-20260917@cfe1c3e5506d9fd8b41028dbfe0f8a8dd31a82c5",
-    "sub_ab_audit": "research/v061-a01-negative-completion-ab-audit-sub-20260917@9468bbe882bd7bd8bb0b60c2ad91d11e4616ac56",
-    "family_b_started_refs_observed": [],
-    "family_c_started_refs_observed": [],
-    "family_b_preserve_refs_observed": [],
-    "family_c_preserve_refs_observed": [],
-    "git_tags_observed": [],
-    "repository_rulesets_observed": []
+    "evidence_analyst": "53a1a3cd9dc8b1c657ff056f517278cf3c0b4d00",
+    "c19_v1_blocked_source": "052413136229dcfa63f08cebe19585134f7cfb98",
+    "c19_v1_protocol": "c19-external-v1",
+    "c19_v1_blocked_run": "c19-external-blocked-readiness-v1",
+    "c19_v1_preregistration_sha256": "97a2448e2918f3b0a4583520ad2f35d5d47d99813585be7bb3fae32e0b340cfe",
+    "belief_r_revision": "3719f5804c63318037465fecf298a7fd78d99121",
+    "belief_r_spec_sha256": "ed092dd97a176813f011cdf007d4e34a0b9bcc7c855c22983a31ff82e7b0d63c",
+    "c19_v2_proposal_binding_commit": "a407b8a836c58a784551e5cfdae390ebfaed73ee",
+    "c19_v2_implementation_commit": "398eafd988afb04111cc8bcf1243fbbeff622fed",
+    "c19_v2_test_fix_commit": "1a8c03b39f7f7a35d70b02a1f0f3a164d7c52691",
+    "c19_v2_final_package_head": "7ede1bfb41285ec0107136b4f6abd5e893adcacf",
+    "c19_v2_preregistration_blob": "0921f92c9cc29ac68f13972e24117870d159fc65",
+    "c19_v2_adapter_blob": "3153fcb61d5872e93d22f30f0f1f808f856bfaeb",
+    "c19_v2_readiness_script_blob": "814206a7b1c8d2a4c39b8be2b9eea66342bba372",
+    "c19_v2_test_blob": "3942f6a5273f3de9fb94e157b5ab542581fbe417",
+    "c19_v2_package_binding_blob": "d2dbfb32ba6b3babec8d7891d18c3e30f235a3cf",
+    "c19_v2_control_refs_observed": [],
+    "c19_v2_preserve_refs_observed": [],
+    "c19_v2_freeze_refs_observed": []
   },
   "branches_prs_advanced": {
-    "created_branch": "research/v061-a01-registered-family-closeout-20260917",
-    "base": "cfe1c3e5506d9fd8b41028dbfe0f8a8dd31a82c5",
+    "created_branch": "research/c19-truth-free-symbolic-adapter-v2-20260917",
+    "base": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "commits": [
-      "237893712affe70c6f1401d73462e90a984c3a05",
-      "452f403391a6927f976de02d39e7c07c3d2ed8ef",
-      "3329d15d9a3f73555396fb93a4dab117616e7bc2"
+      "a407b8a836c58a784551e5cfdae390ebfaed73ee",
+      "b5f04e38a24bf2fed34753ddddb889ff85dc398a",
+      "398eafd988afb04111cc8bcf1243fbbeff622fed",
+      "dae60272ac80cddecfc3bbf5939e5caa7d2f111d",
+      "1a8c03b39f7f7a35d70b02a1f0f3a164d7c52691",
+      "7ede1bfb41285ec0107136b4f6abd5e893adcacf"
     ],
-    "final_head": "3329d15d9a3f73555396fb93a4dab117616e7bc2",
+    "final_head": "7ede1bfb41285ec0107136b4f6abd5e893adcacf",
     "open_prs": 0,
     "research_pr_merges": 0
   },
   "workflows_experiments": {
-    "exact_head_ci": {
-      "run_id": 35121422819,
-      "head_sha": "3329d15d9a3f73555396fb93a4dab117616e7bc2",
-      "status": "completed",
-      "conclusion": "success",
-      "python_3_11": "success",
-      "python_3_13": "success"
-    },
-    "one_way_workflow_dispatches": 0,
+    "push_ci_runs": [
+      {
+        "run_id": 35127699431,
+        "head_sha": "398eafd988afb04111cc8bcf1243fbbeff622fed",
+        "conclusion": "failure",
+        "classification": "test_only_verifier_assertion_defect"
+      },
+      {
+        "run_id": 35128088200,
+        "head_sha": "1a8c03b39f7f7a35d70b02a1f0f3a164d7c52691",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 35128112882,
+        "head_sha": "7ede1bfb41285ec0107136b4f6abd5e893adcacf",
+        "conclusion": "success",
+        "python_3_11": "success",
+        "python_3_13": "success",
+        "install_lint_local_readiness_test_validate_bundle": "success"
+      }
+    ],
+    "manual_one_way_workflow_dispatches": 0,
     "experiments_executed": 0,
-    "acquisitions": 0,
+    "official_data_acquisitions": 0,
+    "raw_prediction_artifacts": 0,
     "scoring_runs": 0
   },
   "scientific_results": {
     "new_one_way_measurement": false,
-    "new_scientific_information": "No new measurement. Canonicalized the existing registered-family terminal evidence and strategic reframe; machine negative-completion verdict remains WITHHELD.",
-    "programme_interpretation": "No registered non-privileged family remains live at the current tested/bound-object level; stronger novel Field-organized causal-credit claim is not supported by the registered-family programme.",
-    "machine_negative_completion_verdict": "WITHHELD",
-    "strategic_reframe": "integrative experimental cognitive architecture/testbed"
+    "new_scientific_information": "No experimental outcome. New readiness information: a deterministic target-blind source-index-preserving C19-v2 surface adapter can be implemented from the allowed visible envelope without Oracle/evaluator privilege and is not exactly feature-equivalent to I0/I1 on the preregistered synthetic probes.",
+    "c19_v1_status": "not_evaluated_blocked_readiness_unchanged",
+    "c19_v2_status": "PRE_START_READY_FOR_ADMISSION",
+    "official_belief_r_data_accessed": false,
+    "future_admission_required": true
   },
   "consumed_identities": {
     "newly_consumed_this_run": [],
+    "planned_c19_v2_identity": {
+      "identity": "c19-external-v2-official-v1",
+      "started": false,
+      "consumed": false
+    },
     "preserved_do_not_touch": [
+      "C19-v1 source 052413136229dcfa63f08cebe19585134f7cfb98 and its immutable blocked-readiness artifacts",
       "A01 MD-001",
       "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
       "a01-md002-p3-r-only-causal-carrier-candidate-001-v1",
       "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
+      "a01-family-b-distributed-field-trace-gen1-v1",
+      "a01-family-c-joint-return-local-field-gen1-v1",
       "RV01 R01-16 family",
       "RV01 R01-17",
       "RV02 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
       "CX01 Candidate-002"
-    ],
-    "rejected_unconsumed_do_not_execute": [
-      "a01-family-b-distributed-field-trace-gen1-v1",
-      "a01-family-c-joint-return-local-field-gen1-v1"
     ]
   },
   "blockers": {
-    "scientific_execution": "No live admitted A01 candidate; successor design requires a fresh prospective Evidence Analyst cycle.",
-    "machine_accounting": "CandidateDisposition cannot faithfully encode B/C pre-START terminal states; verdict intentionally withheld.",
-    "governance_nonblocking": "No repository rulesets/tag protection; Issue #139 remains open."
+    "current": "Fresh Evidence Analyst ADMIT/REJECT is mandatory before official Belief-R access or any one-way C19-v2 action.",
+    "scientific_execution": "one_way_execution_allowed=false in the current handoff",
+    "governance_nonblocking": "Issue #139/tag/ruleset protection debt remains separate from C19 readiness."
   },
   "concurrency_reconciliation": {
-    "evidence_analyst_tip_before_persistence": "5eb075481b8a5846a5234f1d397a88fd288af861",
-    "orchestrator_report_tip_before_persistence": "591c006b1e5cd0728917de4358cbc44f3e372a1f",
-    "main_branch_rechecked": true,
+    "evidence_analyst_tip_before_work": "53a1a3cd9dc8b1c657ff056f517278cf3c0b4d00",
+    "evidence_analyst_tip_after_implementation": "53a1a3cd9dc8b1c657ff056f517278cf3c0b4d00",
+    "orchestrator_report_tip_before_persistence": "6c26a66021ca1ed4f20e4fd43eac5a1b78199116",
+    "research_branch_final_head_rechecked": "7ede1bfb41285ec0107136b4f6abd5e893adcacf",
     "sub_reserved_work_collision": false,
-    "unexpected_one_way_artifacts": false
+    "unexpected_one_way_artifacts": false,
+    "c19_control_refs_observed": [],
+    "c19_preserve_refs_observed": [],
+    "c19_freeze_refs_observed": []
   },
   "integrity_status": {
-    "status": "CLEAN_CLOSEOUT_NO_ONE_WAY_EXECUTION",
+    "status": "CLEAN_PRE_START_READY_FOR_ADMISSION",
     "immutable_evidence_mutated": false,
+    "historical_c19_v1_mutated": false,
+    "official_cache_opened_or_verified": false,
+    "official_examples_read": false,
     "started_created": false,
     "identity_consumed": false,
     "raw_or_scored_evidence_created": false,
-    "scientific_bytes_changed": false,
-    "evaluator_semantics_changed": false
+    "manual_workflow_dispatched": false,
+    "adapter_semantics_changed_after_binding": false,
+    "comparison_baseline_or_metric_semantics_changed": false
   },
   "main_critical_path_fixups_completed": [
-    "Created canonical registered-family closeout document",
-    "Updated A01 current status for strategic closeout/reframe with machine verdict WITHHELD",
-    "Isolated inherited Family-B HEAD-bound execution-binding tests from descendant closeout branches without changing Family-B runner/binding/scientific bytes",
-    "Obtained exact-head CI success on Python 3.11 and 3.13"
+    "Created fresh C19-v2 branch from exact main stable substrate",
+    "Prospectively bound truth-free adapter/protocol/input/condition/baseline/integrity contract before official access",
+    "Implemented target-blind non-Oracle surface adapter and source-only readiness checks",
+    "Bound exact source/package blobs and historical C19-v1 authority",
+    "Diagnosed failing implementation CI as a test-only leakage assertion defect",
+    "Fixed the verifier assertion without changing adapter/protocol/scientific semantics",
+    "Refreshed exact package binding to the corrected test blob",
+    "Obtained exact final-head CI success on Python 3.11 and 3.13"
   ],
   "same_run_steps_completed": [
-    "Fresh integrity/authority reconciliation",
-    "PROGRAMME_CLOSEOUT_READY: created closeout branch and canonical evidence map",
-    "BOOKKEEPING_SCHEMA_AMBIGUITY: withheld machine verdict without schema/evaluator rewrite",
-    "PRE_START_BLOCKER: fixed descendant CI test scope only",
-    "Re-fetched exact head and CI; confirmed success",
-    "CLOSEOUT_COMPLETE: stopped before successor design"
+    "Fresh remote/evidence/orchestrator/control reconciliation",
+    "PRE_START_ADAPTER_INCOMPLETE: created and bound the fresh C19-v2 prospective object",
+    "Implemented adapter/tests/readiness harness without official Belief-R data access",
+    "PRE_START_BLOCKER: repaired test-only verifier assertion itself",
+    "Re-fetched exact head and refreshed package binding",
+    "Confirmed final exact-head CI success",
+    "PRE_START_READY_FOR_ADMISSION: stopped before official data access or STARTED"
   ],
-  "same_run_stop_reason": "CLOSEOUT_COMPLETE. Any next A01 scientific step would require a fresh Gen2/Family-D/replacement object, null/scorer/resource changes, or other prospective successor design not authorized in this handoff.",
-  "work_intentionally_left_for_sub": "Reserved A/B/C terminal-provenance bookkeeping audit on research/v061-a01-negative-completion-c-audit-sub-20260917.",
+  "same_run_stop_reason": "PRE_START_READY_FOR_ADMISSION. The exact C19-v2 readiness package is bound and green, and the Analyst prospectively requires a fresh independent ADMIT/REJECT before official Belief-R access or any one-way action.",
+  "work_intentionally_left_for_sub": "Generic terminal-provenance accounting v2 prototype on research/methods-terminal-provenance-v2-sub-20260917.",
   "reserved_sub_work_not_touched": true,
   "lane_repartition_reason": null,
-  "next_main_action": "Return to Evidence Analyst / Control Brain portfolio cycle; do not design or execute an A01 successor in this run."
+  "next_main_action": "Return research/c19-truth-free-symbolic-adapter-v2-20260917@7ede1bfb41285ec0107136b4f6abd5e893adcacf to Evidence Analyst for fresh ADMIT/REJECT; do not execute under the current handoff."
 }

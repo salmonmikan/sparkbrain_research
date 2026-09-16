@@ -1,108 +1,105 @@
 # SparkBrain Research Orchestrator — MAIN latest
 
-Timestamp: `2026-09-17T01:26:00+09:00`
+Timestamp: `2026-09-17T02:30:37+09:00`
 
 ## Run result
 
-MAIN completed the Analyst-assigned **A01 registered-family programme closeout and strategic reframe** on:
+MAIN advanced the Analyst-assigned **C19-v2 truth-free symbolic-adapter readiness frontier** to the mandatory fresh-Analyst admission boundary on:
 
 ```text
-research/v061-a01-registered-family-closeout-20260917
-@3329d15d9a3f73555396fb93a4dab117616e7bc2
+research/c19-truth-free-symbolic-adapter-v2-20260917
+@7ede1bfb41285ec0107136b4f6abd5e893adcacf
 ```
 
 Evidence Analyst authority consumed:
 
 ```text
 ops/evidence-analyst-handoff
-@5eb075481b8a5846a5234f1d397a88fd288af861
+@53a1a3cd9dc8b1c657ff056f517278cf3c0b4d00
 ```
 
-No one-way scientific execution occurred. No STARTED/control claim, workflow dispatch, acquisition, raw exposure, scoring, freeze/sealed/formal/evidence authority, or identity consumption was created.
+No one-way scientific execution occurred. No official Belief-R cache/example was opened, verified, parsed, or evaluated. No STARTED/control claim, manual workflow dispatch, acquisition, raw/scored output, freeze/sealed/formal/evidence authority, or identity consumption was created.
 
 ## MAIN frontier
 
-The primary frontier for this run was not a new candidate. It was canonical closeout of the registered A01 mechanism-family programme after the existing evidence reached:
+The exact prospective object is:
 
-- Family A `transient-return-address`: executed P4 terminal negative `UNSUPPORTED_EN_BLOC_MERGED_CREDIT`, consumed.
-- Family B `distributed-field-trace`: `REJECT_BEFORE_STARTED_STATIC_REDUCTION`, unSTARTED/unconsumed.
-- Family C `joint-return-and-local-field-update`: `REJECT_BEFORE_STARTED_STATIC_REDUCTION`, unSTARTED/unconsumed.
+- protocol: `c19-external-v2`
+- adapter contract: `c19-belief-r-truth-free-symbolic-adapter-v1`
+- planned future official identity: `c19-external-v2-official-v1`
+- input condition: `I2_truth_free_symbolic_surface`
+- base: `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
 
-MAIN created `docs/V061_A01_REGISTERED_FAMILY_PROGRAMME_CLOSEOUT.md` and updated `docs/V061_A01_CURRENT_STATUS.md` to state conservatively that no registered non-privileged family remains live at the current tested/bound-object level. P2/P3 positive development evidence remains valid. The stronger novel Field-organized causal-credit claim is not supported by the registered-family programme at this level.
+MAIN bound the proposal before any official outcome at `a407b8a836c58a784551e5cfdae390ebfaed73ee`, implemented the target-blind adapter/readiness harness with implementation commit `398eafd988afb04111cc8bcf1243fbbeff622fed`, fixed one test-only verifier assertion at `1a8c03b39f7f7a35d70b02a1f0f3a164d7c52691`, and refreshed the exact package binding at final head `7ede1bfb41285ec0107136b4f6abd5e893adcacf`.
 
-The machine `NegativeCompletionProgramme` verdict remains **WITHHELD**. MAIN did not change the evaluator or fabricate P1-P4 booleans for Family B/C.
+The bound adapter accepts only record ID, caller-supplied source index, step index, backend-visible question text, and the ordered three choices. It does not accept evaluator Target, ground truth, update/no-update status, benchmark semantic metadata, C06 outputs, or official cache bytes. The mapping performs only deterministic surface normalization/segmentation and role/index-qualified surface fingerprinting; it performs no relation, polarity, answer, ontology, or truth inference. The adapter is `oracle=false`.
 
-## Critical-path fix completed
+I0, I1, and the new adapter receive the same canonical visible envelope byte boundary. Registered source-only synthetic checks establish that the new representation is not exactly feature-equivalent to I0 or I1 on the bound probes, while retaining the same visible-data privilege.
 
-Inherited CI on Family-C/SUB descendants failed because two Family-B execution-binding tests interpreted mutable descendant `HEAD` as the historical Family-B execution-package checkout.
+## Critical-path fixes completed
 
-MAIN changed **only**:
+The first implementation CI reached lint/local-readiness successfully but failed the Test step on both supported Python versions. Source review isolated a test-only defect: the leakage assertion rejected any feature key containing the substring `truth`, which falsely rejected the prospective contract name containing `truth-free`.
 
-```text
-tests/v06/test_v061_family_b_execution_binding.py
-```
+MAIN fixed this blocker itself under the Analyst `PRE_START_BLOCKER` contingency. The test now rejects actual target-like feature fragments (`ground_truth`, `target:`, `answer:`, `evaluator:`, `gold:`) instead of the generic English substring. Adapter/protocol/input/baseline/metric semantics did not change.
 
-The two HEAD-bound historical execution-package checks are now scoped to the historical Family-B package ancestry. The static expected-one-way-ref test remains active. No Family-B runner, execution binding, scientific input, mechanism, null, scorer, resource contract, immutable authority, or rejected identity was changed.
-
-Exact-head CI:
+The package binding was then refreshed to the corrected test blob. Exact final-head CI:
 
 ```text
-run: 35121422819
-head: 3329d15d9a3f73555396fb93a4dab117616e7bc2
+run: 35128112882
+head: 7ede1bfb41285ec0107136b4f6abd5e893adcacf
 Python 3.11: success
 Python 3.13: success
-overall: success
+Install/Lint/Local readiness/Test/Validate bundle: success
+conclusion: success
 ```
 
 ## Same-run continuation
 
 Consumed prospective branches, in order:
 
-1. `PROGRAMME_CLOSEOUT_READY` — created the fresh closeout branch and canonical registered-family evidence map.
-2. `BOOKKEEPING_SCHEMA_AMBIGUITY` — preserved the machine verdict as `WITHHELD`; no schema/evaluator rewrite.
-3. `PRE_START_BLOCKER` — repaired only the descendant test-scope defect, without touching Family-B/C scientific bytes.
-4. `CLOSEOUT_COMPLETE` — exact-head CI passed; MAIN stopped before any successor design.
+1. `PRE_START_ADAPTER_INCOMPLETE` — created the fresh branch, fixed the C19-v2 question/input/condition/baseline/integrity contract, and bound it before official access.
+2. `PRE_START_BLOCKER` — implemented the adapter/readiness package and repaired the semantics-preserving test-only verifier defect itself.
+3. `PRE_START_READY_FOR_ADMISSION` — exact package is bound, static source-level leakage/privilege/redundancy checks are represented in tests/readiness tooling, official data access remains false, and exact-head CI is green. MAIN stops here by prospective rule.
 
-## Scientific information
+`PRE_START_ADAPTER_INVALID` and `PRE_START_REDUNDANT` did not trigger. PASS/FAIL/INCONCLUSIVE are unreachable in this handoff because one-way execution is not authorized.
 
-No new one-way measurement was produced.
+## Scientific / readiness information
 
-The run adds durable **decision/status integration**, not a new experimental result: the existing terminal family evidence is now canonicalized into the registered-family strategic closeout and reframe toward SparkBrain as an integrative experimental cognitive architecture/testbed.
+New one-way scientific measurement: **none**.
 
-New consumed identities: **0**.
+New readiness information: a deterministic, source-index-preserving, target-blind C19-v2 surface adapter can be specified and implemented using only the allowed backend-visible envelope without Oracle/evaluator privilege, while remaining source-level distinct from the registered I0/I1 representations on the prospective synthetic probes. This makes the exact package reviewable for independent Analyst ADMIT/REJECT; it does not itself admit or validate the official external experiment.
 
-Rejected but unconsumed and execution/rescue-forbidden:
+Historical C19-v1 remains immutable `not_evaluated` blocked-readiness authority at source `052413136229dcfa63f08cebe19585134f7cfb98`, with preregistration SHA-256 `97a2448e2918f3b0a4583520ad2f35d5d47d99813585be7bb3fae32e0b340cfe`. It was not reclassified or mutated.
 
-```text
-a01-family-b-distributed-field-trace-gen1-v1
-a01-family-c-joint-return-local-field-gen1-v1
-```
+New consumed identities: **0**. Planned `c19-external-v2-official-v1` remains unSTARTED/unconsumed.
 
 ## SUB boundary
 
-The Analyst-reserved independent SUB lane remains:
+The current Analyst-reserved independent SUB lane is:
 
 ```text
-research/v061-a01-negative-completion-c-audit-sub-20260917
+research/methods-terminal-provenance-v2-sub-20260917
 ```
 
-Purpose: extend the A/B bookkeeping audit to an A/B/C terminal-provenance matrix. `execution_allowed=false`.
+Purpose: generic terminal-provenance accounting v2 prototype, independent of C19-v2 and `execution_allowed=false`.
 
-MAIN did **not** touch or absorb that work and did not wait for it. No Analyst split was invalidated.
+MAIN did not touch or absorb this work and did not wait for it. No Analyst split was invalidated: no MAIN blocker was assigned to SUB.
 
 ## Stop reason
 
-The run stopped because `CLOSEOUT_COMPLETE` was reached.
+MAIN stopped because `PRE_START_READY_FOR_ADMISSION` was reached. The Analyst handoff requires an independent fresh ADMIT/REJECT before any official Belief-R access or one-way action.
 
-Any further A01 scientific action would require a fresh prospective scientific object such as Gen2, Family-D, a replacement/non-separable mechanism, changed null/resource accounting, changed scorer/success criterion, or another successor design. None is authorized by the current handoff, so same-run continuation ends here.
+Therefore MAIN did not create STARTED/control, inspect/verify official cache/examples, dispatch official evaluation, acquire predictions, preserve raw evidence, score, consume `c19-external-v2-official-v1`, or create freeze/evidence refs.
 
-## Governance / remaining blockers
+Any scientific change to adapter semantics, allowed data, condition/baseline matrix, metrics/gates, resource/privilege boundary, protocol identity, or planned one-way identity from this point requires a new prospective object and a new Analyst cycle.
 
-- Open PRs observed before the run: `0`.
+## Concurrency / governance
+
+- Evidence Analyst tip re-fetched after implementation remained `53a1a3cd9dc8b1c657ff056f517278cf3c0b4d00`.
+- Orchestrator report tip before persistence remained `6c26a66021ca1ed4f20e4fd43eac5a1b78199116`; no concurrent report movement was observed.
+- Open PRs observed at start: `0`.
 - Open Issue #139 remains governance-only.
-- Git authoritative tags observed: `0`.
-- Repository rulesets observed: `0`.
-- One-way A01 execution is blocked because no live admitted candidate exists.
-- Machine accounting remains intentionally withheld because the current `CandidateDisposition` cannot faithfully represent B/C pre-START terminal states.
+- No C19 control/preserve/freeze research branches were observed for the new identity namespace.
+- Repository tag/ruleset protection debt remains nonblocking governance work.
 
-Next MAIN action: return control to Evidence Analyst / Control Brain. Do not invent or execute an A01 successor under this handoff.
+Next MAIN action: return the exact bound package at `7ede1bfb41285ec0107136b4f6abd5e893adcacf` to Evidence Analyst for fresh ADMIT/REJECT. Do not execute it under this handoff.
