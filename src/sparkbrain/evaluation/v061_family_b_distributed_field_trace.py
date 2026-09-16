@@ -76,6 +76,8 @@ class DistributedFieldTraceState:
         *,
         decay: float = DEFAULT_DECAY,
     ) -> DistributedFieldTraceState:
+        if type(width) is not int:
+            raise TypeError("width must be a non-boolean integer")
         if width <= 0:
             raise ValueError("width must be positive")
         _validate_decay(decay)
