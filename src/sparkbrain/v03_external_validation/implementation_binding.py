@@ -243,7 +243,10 @@ def condition_executor(
         else:
             raise ValueError(f"unsupported frozen gate: {gate!r}")
         final_raw, final_visible = pair[-1]
-        rep_hashes = [hashlib.sha256(representation_bytes(item[1])).hexdigest() for item in encoded_steps]
+        rep_hashes = [
+            hashlib.sha256(representation_bytes(item[1])).hexdigest()
+            for item in encoded_steps
+        ]
         output.append(
             {
                 "record_id": final_visible.record_id,
@@ -313,7 +316,9 @@ def _baseline_probabilities(
         weighted = {choice: 0.0 for choice in CHOICES}
         weights = []
         for record in records:
-            weight = math.exp(_unit(seed, "causal-attention-v1", f"{record.feature_hash}:{final_hash}"))
+            weight = math.exp(
+                _unit(seed, "causal-attention-v1", f"{record.feature_hash}:{final_hash}")
+            )
             weights.append(weight)
         total = sum(weights)
         for weight, row in zip(weights, projections, strict=True):
@@ -364,7 +369,11 @@ def baseline_executor(
 
 def baseline_registry() -> dict[str, Any]:
     return {
-        kind: (lambda row, examples, frozen_kind=kind: baseline_executor(frozen_kind, row, examples))
+        kind: (
+            lambda row, examples, frozen_kind=kind: baseline_executor(
+                frozen_kind, row, examples
+            )
+        )
         for kind in BASELINES
     }
 
@@ -407,7 +416,9 @@ def binding_manifest() -> dict[str, Any]:
             "data_match": "exact same injected official pairs and exact I2 bytes for all baselines",
             "optimization_match": "zero updates for C19 readout and every baseline",
             "parameter_role": "training-free generated coefficients; report as fixed, not learned",
-            "compute_match": "measure deterministic operation counters; unmatched rows are descriptive",
+            "compute_match": (
+                "measure deterministic operation counters; unmatched rows are descriptive"
+            ),
             "winner_claim_requires_all_frozen_matching_dimensions": True,
         },
     }

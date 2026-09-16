@@ -14,7 +14,7 @@
     "scoring_performed": false
   },
   "bound_source_blobs": {
-    "implementation_binding.py": "aa0b07e0b756841ca8b4d4291aa9c4076f3f3ce1",
+    "implementation_binding.py": "ec03a6a71e6b9d88d4242b13ff94f2115a7b5bcc",
     "test_c19_v2_implementation_binding.py": "ad26f890fa940e50be337ffabf2b8843b2f683ea",
     "truth_free_adapter.py": "3153fcb61d5872e93d22f30f0f1f808f856bfaeb",
     "input_diagnosis.py": "54298cae67a372237cc65ee9272bae661adb45cb",
