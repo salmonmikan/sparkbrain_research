@@ -1,10 +1,10 @@
 import pytest
 
 from sparkbrain.evaluation.terminal_provenance import (
+    assess_evidence_backed_family_coverage,
     PhaseAssessment,
     TerminalClass,
     TerminalProvenanceRecord,
-    assess_evidence_backed_family_coverage,
 )
 
 
