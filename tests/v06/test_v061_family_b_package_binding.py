@@ -15,7 +15,7 @@ from sparkbrain.evaluation.v061_family_b_readiness import (
 
 ROOT = Path(__file__).resolve().parents[2]
 BINDING_PATH = ROOT / "docs" / "V061_A01_FAMILY_B_GEN1_PACKAGE_BINDING.json"
-EXPECTED_IMPLEMENTATION_HEAD_SHA = "421145d60645b2f3b0d4c46c69ef314a9fc4de74"
+EXPECTED_IMPLEMENTATION_HEAD_SHA = "f21b2405f9e4e2f427f788052ffc02fbb0c8ab52"
 EXPECTED_PROTOCOL_BUNDLE_SOURCE_STAGE = "post-p4-generation1-contract"
 EXPECTED_SOURCE_PATHS = frozenset(
     {

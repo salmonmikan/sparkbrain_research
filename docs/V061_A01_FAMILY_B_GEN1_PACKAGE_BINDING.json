@@ -5,15 +5,15 @@
   "pre_p4_family_source_sha": "525ecd9e205b2657a4ed207ae2b6cef0bae4bffc",
   "protocol_bundle_source_sha": "7af99d6c3bbbf946f90fc01d9bc7cc7661de2006",
   "protocol_bundle_source_stage": "post-p4-generation1-contract",
-  "implementation_head_sha": "421145d60645b2f3b0d4c46c69ef314a9fc4de74",
+  "implementation_head_sha": "f21b2405f9e4e2f427f788052ffc02fbb0c8ab52",
   "belief_state_null_id": "v061-a01-bgen1-explicit-latent-cause-belief-null-v1",
   "source_git_blobs": {
-    "src/sparkbrain/evaluation/v061_family_b_distributed_field_trace.py": "d613d548d598df5cf4124f6c46e42c8e0745492c",
+    "src/sparkbrain/evaluation/v061_family_b_distributed_field_trace.py": "f597d936a853e296f5e8d40dc054c875357e5a81",
     "src/sparkbrain/evaluation/v061_family_b_readiness.py": "f07b0cce4f5965d8045ead2775135d651f74241a",
     "src/sparkbrain/evaluation/v061_family_b_readiness_harness.py": "1f6b9bbe666ae60fcbd2df6e4009b4268291869c"
   },
   "mechanism_source_path": "src/sparkbrain/evaluation/v061_family_b_distributed_field_trace.py",
-  "mechanism_source_sha256": "877fd403fc0e2052313bfd05398971a9996423182b37cc470716795ff334b19e",
+  "mechanism_source_sha256": "c8037ab7a9532a62b5ca0de10fdb3bbdf82485e4bd236c13a095b219b7dcb547",
   "mechanism_contract_path": "docs/V061_A01_FAMILY_B_DISTRIBUTED_FIELD_TRACE_GEN1.md",
   "mechanism_contract_git_blob": "55675feb5764aca4ab3433a203d54cf6a193dbc5",
   "mechanism_contract_sha256": "65ce021041d8c6b24c3a6743472c214188dc856530cd201835111213309f4bbf",
