@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-16T23:29:00+09:00",
+  "timestamp": "2026-09-16T23:32:00+09:00",
   "worker_role": "main",
   "Evidence Analyst commit": "8711c993d6db5c61731cf86c730b94a2fcd2215c",
   "analyst_lanes": {
@@ -56,10 +56,12 @@
     "closeout_ci": {
       "run_id": 35108354545,
       "head": "db66596ed4479e8dac8b713b4f92a73f76a25047",
-      "status_at_report_write": "in_progress",
-      "python_3_11": "test_in_progress_after_setup_install_lint_local_readiness_success",
-      "python_3_13": "test_in_progress_after_setup_install_lint_local_readiness_success",
-      "purpose": "closeout/integration validation only"
+      "status": "completed",
+      "conclusion": "failure",
+      "python_3_11": "setup_install_lint_local_readiness_success_then_test_failure_bundle_validation_skipped",
+      "python_3_13": "setup_install_lint_local_readiness_success_then_test_failure_bundle_validation_skipped",
+      "failure_detail_available": false,
+      "purpose": "closeout/integration validation only; not execution admission"
     },
     "experiments_executed": 0,
     "one_way_dispatches": 0,
@@ -87,7 +89,7 @@
   ],
   "blockers": [
     "No same-run successor is scientifically authorized after the static reduction; next science requires a new prospectively defined object/identity from a fresh Evidence Analyst cycle.",
-    "Exact-head closeout CI run 35108354545 was still in progress when the durable report was written; it is not an execution-admission blocker because the exact Family-B object is already rejected before STARTED."
+    "Closeout CI run 35108354545 fails its Test step on Python 3.11 and 3.13. Detailed test logs were not exposed by the available connector. This does not reopen or authorize repair of the rejected Family-B scientific object for execution."
   ],
   "concurrency reconciliation": {
     "evidence_analyst_latest": "8711c993d6db5c61731cf86c730b94a2fcd2215c",
@@ -96,7 +98,8 @@
     "sub_fallback": null,
     "sub_reserved_work_touched": false,
     "active_family_b_branch_ref_rechecked_before_closeout": true,
-    "issue_145_reconciled_after_ref_and_analyst_recheck": true
+    "issue_145_reconciled_after_ref_and_analyst_recheck": true,
+    "family_b_branch_final_ref": "db66596ed4479e8dac8b713b4f92a73f76a25047"
   },
   "integrity status": {
     "family_b_identity_fresh_unconsumed": true,
@@ -106,7 +109,8 @@
     "immutable_evidence_mutated": false,
     "same_identity_rescue_attempted": false,
     "scientific_object_modified_after_reduction": false,
-    "static_closeout_only": true
+    "static_closeout_only": true,
+    "closeout_ci_green": false
   },
   "main_critical_path_fixups_completed": [
     "Re-fetched and reconciled current Analyst, MAIN/SUB reports, active refs, legacy integrity refs, and Family-B identity state.",
@@ -114,7 +118,7 @@
     "Persisted a concise pre-START reduction decision without modifying runner, mechanism, scorer, null, input, identity, or frozen evidence.",
     "Updated canonical A01 moving status to record Family-B Gen1 rejection-before-STARTED and unconsumed identity state.",
     "Reconciled and closed operational Issue #145 with canonical commit/path pointers.",
-    "Observed exact-head closeout CI without repairing the rejected execution package merely to make it executable."
+    "Observed exact-head closeout CI through terminal failure without repairing the rejected execution package merely to make it executable."
   ],
   "same_run_steps_completed": [
     "fresh remote/integrity/Analyst reconciliation",
@@ -122,10 +126,10 @@
     "decision record commit 336aeb91",
     "canonical status closeout commit db66596e",
     "Issue #145 terminal operational reconciliation",
-    "exact-head CI refetch/observation",
-    "MAIN durable report persistence"
+    "exact-head CI terminal observation: run 35108354545 failure in Test on Python 3.11/3.13",
+    "MAIN durable report persistence and terminal CI correction"
   ],
-  "same_run_stop_reason": "The next scientifically meaningful step would require designing/selecting/rebinding a new scientific object or identity after observing the Family-B reduction. That is not prospectively authorized in the consumed Analyst handoff, so MAIN returns control to Evidence Analyst.",
+  "same_run_stop_reason": "The next scientifically meaningful step would require designing/selecting/rebinding a new scientific object or identity after observing the Family-B reduction. That is not prospectively authorized in the consumed Analyst handoff, so MAIN returns control to Evidence Analyst. The closeout CI failure does not justify repairing the rejected scientific object for execution.",
   "work intentionally left for SUB": [],
   "reserved SUB work not touched": [],
   "lane repartition reason": null,
