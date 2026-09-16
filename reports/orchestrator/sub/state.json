@@ -1,125 +1,117 @@
 {
-  "timestamp": "2026-09-17T06:36:19+09:00",
+  "timestamp": "2026-09-17T07:43:49+09:00",
   "worker_role": "sub",
-  "evidence_analyst_commit": "7bfef197fe0b255e395d2ea18ebadb59f2ca9fb6",
+  "evidence_analyst_commit": "25eae547ccd9bb22edc2010e698a8dd2ecd33dcc",
   "consumed_lanes": {
-    "main_lane": {
-      "target": "C19-v2 frozen execution-contract conformance closure",
-      "branch": "research/c19-truth-free-symbolic-adapter-v2-20260917",
-      "analyst_observed_head": "17ce3e61d17436337d13c90c6c86184fcad09f22",
-      "current_head_observed": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
-      "frozen_science_anchor": "90c936a7abca7eba0dac1f977753503551e73368",
-      "planned_identity": "c19-external-v2-official-v1",
-      "execution_allowed": false,
-      "explicitly_avoided": true
-    },
-    "sub_lane": null,
-    "sub_fallback": null,
-    "blocked_until": "A newer Evidence Analyst prospectively reserves genuinely independent SUB work.",
-    "no_sub_lane_reason": "No fresh independent prospective secondary object is reserved. Terminal-provenance v2 is complete; A01/RV01/RV02/CX01 have no fresh successor; all remaining C19 scorer/preservation/binding ambiguity is MAIN critical path; Issue #139 is governance."
+    "main_lane": "C19 fresh official-v2 successor; MAIN-only critical path",
+    "sub_lane": "C07/H9 fully-spiking-boundary prospectivity/readiness audit",
+    "sub_fallback": null
   },
-  "selected_independent_lane": null,
+  "selected_independent_lane": {
+    "target": "C07/H9 fully-spiking-boundary prospectivity/readiness audit",
+    "branch": "research/c07-h9-fully-spiking-readiness-sub-20260917",
+    "status": "PRE_START_UNDERSPECIFIED",
+    "reservation_status": "reserved_for_sub"
+  },
   "independence_from_main_critical_path": true,
   "execution_allowed": false,
-  "sub_active_claim": "NO_OP_NO_RESERVED_LANE",
+  "sub_active_claim": "H9_C07_FULLY_SPIKING_READINESS_SOURCE_ONLY",
   "main_work_explicitly_avoided": [
-    "research/c19-truth-free-symbolic-adapter-v2-20260917",
-    "c19-external-v2-official-v1",
-    "C19 frozen raw/scorer/preservation package",
-    "PRE_START_SCORER_SEMANTICS_AMBIGUOUS resolution",
-    "all C19 CI/verifier/package/binding blockers",
-    "official Belief-R data access and one-way execution"
+    "C19 fresh official-v2 successor branch/protocol/identity",
+    "C19 retired official-v1 object",
+    "C19 scorer, preserver, data access, CI and execution blockers"
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "control_brain_handoff_tip": "b3e9da4b6eb65f01282db8f06f967f96e1ca8be0",
-    "evidence_analyst_tip": "7bfef197fe0b255e395d2ea18ebadb59f2ca9fb6",
-    "orchestrator_report_parent": "e5748cac0753e1ae569e650e07e88c4091d669b4",
-    "main_report_consumed": "e5748cac0753e1ae569e650e07e88c4091d669b4",
-    "sub_report_prior_tip": "e5748cac0753e1ae569e650e07e88c4091d669b4",
-    "completed_sub_methods_head": "d5317485a591439cb52d52b649b4930964cf2b3a",
-    "main_c19_current_head": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
-    "main_c19_frozen_science_anchor": "90c936a7abca7eba0dac1f977753503551e73368",
-    "main_c19_ci_run": {
-      "run_id": 35152618704,
-      "head_sha": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
-      "status": "completed",
-      "conclusion": "success"
-    },
-    "open_pr_count": 0,
-    "open_issues": [139],
+    "evidence_analyst": "25eae547ccd9bb22edc2010e698a8dd2ecd33dcc",
+    "control_brain": "909ce53e7b0355f5aab1512e659ab36d910bf6a4",
+    "orchestrator_report_parent": "ce5af26e16bd75dc4907c93fc8f725ca8ce77523",
+    "main_c19_observed": "research/c19-truth-free-symbolic-adapter-v2-20260917@66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
+    "sub_h9_branch": "research/c07-h9-fully-spiking-readiness-sub-20260917@9480da3d77dfee4766b28757f1a164f5cd4dac26",
     "git_tags": [],
-    "legacy_freeze_control_preserve_refs_inspected": true,
-    "c19_started_control_refs_observed": []
+    "repository_rulesets": []
+  },
+  "reports_consumed": {
+    "main_report_commit": "e5748cac0753e1ae569e650e07e88c4091d669b4",
+    "sub_report_commit": "ce5af26e16bd75dc4907c93fc8f725ca8ce77523"
   },
   "branches_prs_advanced": {
-    "sub_branches_created_or_advanced": [],
-    "sub_commits": [],
-    "prs": [],
+    "branches_created": [
+      "research/c07-h9-fully-spiking-readiness-sub-20260917"
+    ],
+    "branch_head": "9480da3d77dfee4766b28757f1a164f5cd4dac26",
+    "implementation_commits": [
+      "9480da3d77dfee4766b28757f1a164f5cd4dac26"
+    ],
+    "prs_created": [],
     "merges": []
   },
   "workflows_experiments": {
-    "sub_workflows_dispatched": [],
-    "sub_ci_runs_started": [],
-    "experiments": [],
-    "started_refs_created": [],
-    "acquisitions": [],
-    "scoring": [],
-    "preservations": [],
-    "evidence_mutations": []
-  },
-  "scientific_readiness_results": [
-    "No new scientific measurement.",
-    "No new SUB readiness result because the current Analyst handoff reserves no independent SUB lane or fallback.",
-    "Concurrent MAIN advanced C19 to 66c8eafe9863ed1b2455cc833a3dc498ce7721b0, closed the frozen 16-field raw schema and exact 55x1744 pair coverage with green CI 35152618704, and stopped at PRE_START_SCORER_SEMANTICS_AMBIGUOUS.",
-    "The remaining scorer semantic ambiguity is a MAIN blocker and was explicitly avoided by SUB."
-  ],
-  "consumed_identities": {
-    "newly_consumed_this_run": [],
-    "observed_do_not_touch": [
-      "A01 MD-001",
-      "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
-      "a01-md002-p3-r-only-causal-carrier-candidate-001-v1",
-      "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
-      "RV01 R01-16 family",
-      "rv01-r01-17-real-delay-causal-timing-v1",
-      "RV02 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
-      "CX01 Candidate-002/formal evidence"
+    "ci_run": 35158843629,
+    "ci_conclusion": "success",
+    "ci_matrix": [
+      "Python 3.11 success",
+      "Python 3.13 success"
     ],
-    "unconsumed_but_closed_or_reserved": {
-      "a01-family-b-distributed-field-trace-gen1-v1": "rejected_before_started_static_reduction; no rescue/retune/rebind",
-      "a01-family-c-joint-return-local-field-gen1-v1": "rejected_before_started_static_reduction; no rescue/retune/rebind",
-      "c19-external-v2-official-v1": "planned MAIN identity; unSTARTED/unconsumed and forbidden to SUB"
-    }
+    "scientific_experiments_executed": 0,
+    "started_control_created": false,
+    "one_way_dispatches": 0
   },
-  "blockers": [],
+  "scientific_readiness_results": {
+    "new_scientific_measurement": null,
+    "readiness_classification": "PRE_START_UNDERSPECIFIED",
+    "historical_c07_interpretation": "HYBRID_PARTIAL_SUPPORT_WITH_PARAMETER_SENSITIVE_NEGATIVE",
+    "fully_spiking_backend_present": false,
+    "source_bindings_pinned": 14,
+    "fail_closed_source_only_verifier_added": true,
+    "missing_scientific_choices": [
+      "FULLY_SPIKING_OPERATIONAL_BOUNDARY",
+      "NON_SENSORY_NEURON_AND_SYNAPSE_MODEL",
+      "REPRESENTATION_AND_DECODER_MAPPING",
+      "PARAMETER_AND_TUNING_BUDGET",
+      "PRIMARY_COMPARATOR_AND_CLAIM",
+      "SUCCESSOR_TOLERANCE_AUTHORITY",
+      "TRAINING_OR_PLASTICITY_REGIME",
+      "EXACT_RUNTIME_AND_RANDOMNESS"
+    ]
+  },
+  "consumed_identities": {
+    "newly_consumed_by_sub": [],
+    "h9_fresh_successor_identity": null,
+    "historical_objects_reexecuted": []
+  },
+  "blockers": {
+    "operational": [],
+    "scientific_pre_start": [
+      "fully-spiking operational boundary is not prospectively fixed",
+      "non-sensory neural dynamics and spike-domain representation/decoder mapping are not fixed",
+      "parameter/tuning budget, comparator/claim, successor tolerance authority, training regime, and exact runtime/randomness are not fixed"
+    ]
+  },
   "collision_reconciliation": {
-    "evidence_analyst_tip_final_before_persistence": "7bfef197fe0b255e395d2ea18ebadb59f2ca9fb6",
-    "orchestrator_report_tip_before_persistence": "e5748cac0753e1ae569e650e07e88c4091d669b4",
-    "main_c19_head_final_before_persistence": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
-    "concurrent_main_progress_detected": true,
-    "main_collision": false,
-    "lane_split_invalidated": false,
-    "rejected_lane": null,
-    "lane_rejected_reason": null,
-    "unexpected_c19_started_or_control": false
+    "analyst_authority_unchanged_after_branch_push": true,
+    "main_c19_head_unchanged_during_sub_work": true,
+    "main_successor_branch_observed": false,
+    "main_dependency_created": false,
+    "reserved_main_work_touched": false
   },
   "integrity_state": {
-    "status": "CLEAN_DELIBERATE_NO_OP",
-    "immutable_refs_modified": false,
-    "main_branch_modified_by_sub": false,
-    "c19_modified_by_sub": false,
-    "scientific_execution": false,
-    "official_data_accessed_by_sub": false,
-    "new_identity_consumption": false,
-    "reserved_work_manufactured": false
+    "immutable_evidence_mutated": false,
+    "historical_c07_reexecuted_or_retuned": false,
+    "scientific_identity_created_or_consumed": false,
+    "execution_remains_fail_closed": true,
+    "official_or_external_data_accessed": false,
+    "c19_touched": false
   },
   "completion_target": {
-    "target": "Re-fetch current repository/Analyst/MAIN-SUB state and deliberately no-op because no genuinely independent SUB lane or fallback is reserved.",
-    "reached": true
+    "target": "reviewable pre-START H9 successor readiness package or explicit PRE_START_UNDERSPECIFIED finding",
+    "status": "reached",
+    "result": "PRE_START_UNDERSPECIFIED"
   },
-  "fallback_status": null,
+  "fallback_status": {
+    "sub_fallback": null,
+    "used": false
+  },
   "rejected_lane": null,
-  "lane_rejected_reason": null,
-  "next_sub_action": "Remain no-op until a newer Evidence Analyst handoff reserves genuinely independent sub_lane or sub_fallback work; do not absorb C19 scorer/preservation ambiguity or governance work."
+  "next_sub_action": "Return PRE_START_UNDERSPECIFIED package to the next Evidence Analyst cycle. Do not implement or execute a fresh fully-spiking successor until the missing scientific choices and a distinct identity are fixed prospectively."
 }
