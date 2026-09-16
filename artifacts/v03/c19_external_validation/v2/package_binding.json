@@ -7,6 +7,7 @@
   "base_main_commit": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
   "proposal_binding_commit": "a407b8a836c58a784551e5cfdae390ebfaed73ee",
   "implementation_commit": "398eafd988afb04111cc8bcf1243fbbeff622fed",
+  "test_fix_commit": "1a8c03b39f7f7a35d70b02a1f0f3a164d7c52691",
   "binding_scheme": "git-commit-plus-git-blob-sha1",
   "bound_files": [
     {
@@ -27,7 +28,7 @@
     },
     {
       "path": "tests/test_c19_v2_truth_free_adapter.py",
-      "git_blob_sha1": "4143fea886fd147fe364f4faefb99df124e20ba7"
+      "git_blob_sha1": "3942f6a5273f3de9fb94e157b5ab542581fbe417"
     }
   ],
   "historical_c19_v1": {
