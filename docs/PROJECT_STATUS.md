@@ -7,8 +7,10 @@ candidate/comparator/protocol contract. The completed formal run contains 420 ex
 the frozen non-compensatory scoring policy, all seven evaluated comparator decisions are
 unsupported. This is a bounded CX01 result, not a programme-wide SparkBrain negative.
 
-A persistent STARTED record exists, so Candidate-002 must not be rerun, retuned, rescored,
-repaired, or reused. The canonical current status, exact source/package/STARTED/preserve refs,
+A persistent STARTED record exists, so Candidate-002 must not be rerun, retuned, rescored under a
+modified policy or from modified evidence, repaired, or reused. Read-only verification that
+recomputes the preserved result from immutable raw evidence with the unchanged frozen policy
+remains permitted. The canonical current status, exact source/package/STARTED/preserve refs,
 evidence hashes, and interpretation boundary are recorded in
 `docs/CX01_CANDIDATE_002_FORMAL_STATUS.md`. Historical CX01 pre-execution runbook/status text is
 retained for audit history only and is superseded for Candidate-002.
