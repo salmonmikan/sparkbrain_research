@@ -95,39 +95,72 @@ P5 on current P4 mechanism: NOT_ADMISSIBLE
 
 P5 must not be used as a rescue path for this failed P4 mechanism.
 
-## Post-P4 admission boundary
+## Family-B Generation-1 readiness frontier
 
-The prospective admission rules remain defined by:
+The pre-P4 premechanism registry already contained the distinct conceptual family:
+
+```text
+distributed-field-trace
+```
+
+It did **not** contain a fully bound Family-B candidate package. After Family-A became terminal, the Evidence Analyst allocated MAIN to construct a fresh post-P4 prospective Generation-1 package from the pre-P4 Family-B boundary. That package must not be represented as a pre-P4 candidate and must not import Family-A outcome-responsive thresholds, carrier rules, scorers, or rescue logic.
+
+Current readiness branch:
+
+```text
+research/v061-a01-family-b-gen1-20260916
+```
+
+Prospective identity reserved for the readiness package:
+
+```text
+a01-family-b-distributed-field-trace-gen1-v1
+```
+
+Prospective contract:
+
+```text
+docs/V061_A01_FAMILY_B_DISTRIBUTED_FIELD_TRACE_GEN1.md
+```
+
+The contract fixes the minimal pre-P4-derived Family-B rule and exact discriminator/null/falsifier IDs before any Generation-1 scientific output is exposed. Construction tests and proposal-binding checks are implementation readiness only.
+
+Current one-way execution status remains:
+
+```text
+STOP_PENDING_FAMILY_B_GEN1_ANALYST_ADMISSION
+```
+
+No STARTED/control consumption, acquisition, scoring, or one-way workflow dispatch is permitted from the readiness branch. If the package becomes exact-head CI/review clean, it returns to the Evidence Analyst for a fresh execution-admission decision.
+
+## Prospectivity boundary
+
+The governing documents remain:
 
 ```text
 docs/V061_PREMECHANISM_ADMISSION_AND_NEGATIVE_COMPLETION.md
 docs/V061_P3_P5_CAUSAL_CREDIT_DISCRIMINATION_PROTOCOL.md
 docs/V061_CROSS_LINE_EVIDENCE_FIREWALL_AND_PREMECHANISM_MATRIX.md
-```
-
-A separate post-P4 admission audit is recorded in:
-
-```text
 docs/V061_A01_POST_P4_ADMISSION_AUDIT.md
 ```
 
-Current one-way execution status:
+There are two distinct prospectivity claims and they must not be conflated:
 
-```text
-STOP_NO_VERIFIED_PROSPECTIVE_SUCCESSOR
-```
+1. A **pre-P4 fully specified successor** was not found by the post-P4 admission audit. Therefore no such package may be retroactively claimed.
+2. A **new post-P4 prospective generation** may be specified for an already registered distinct family, but only if its contract is fixed before that generation's outputs, is independently auditable, and does not tune to the Family-A failure pattern.
 
-A later A01 execution is admissible only if a distinct fresh identity is backed by a complete prospective contract whose scientific content demonstrably predates the P4 outcome, including fixed discriminator/null/falsifier definitions and exact source/protocol/package/input binding. An outcome-responsive rescue contract is not admissible.
+A future Family-B execution is admissible only after a fresh Analyst handoff verifies a distinct unused identity, fixed discriminator/null/falsifier definitions, exact source/protocol/package/input binding, STARTED/no-clobber readiness, raw-before-score ordering, exact-head CI/review, and the no-privilege constraints.
 
 ## Current next action
 
-The current MAIN responsibility is terminal closeout and prospective-admission auditing, not another experiment.
+MAIN owns the Family-B Generation-1 readiness package end-to-end, including any candidate-specific implementation, test, verifier, binding, CI, or review fix needed to make the package audit-ready.
 
-Until a qualifying pre-outcome contract is independently verified:
+Until a fresh Analyst execution admission is issued:
 
 ```text
-new A01 one-way execution: STOP
+Family-B Generation-1 construction/readiness: ALLOWED
+Family-B Generation-1 one-way execution: STOP
 P4 rerun or retune: FORBIDDEN
-P5 on failed P4 mechanism: FORBIDDEN
-post-outcome rescue design in this execution lane: FORBIDDEN
+P5 on failed Family-A P4 mechanism: FORBIDDEN
+same-identity or outcome-responsive Family-A rescue: FORBIDDEN
 ```

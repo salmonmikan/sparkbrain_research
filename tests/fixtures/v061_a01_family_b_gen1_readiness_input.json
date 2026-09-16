@@ -1,0 +1,12 @@
+{
+  "fixture_id": "v061-a01-bgen1-readiness-input-v1",
+  "width": 4,
+  "decay": 0.5,
+  "left_activity": [1.0, 0.0, 0.0, 0.0],
+  "right_activity": [0.0, 1.0, 0.0, 0.0],
+  "plural_activity": [1.0, 1.0, 0.0, 0.0],
+  "left_boundary_return": [1.0, 0.0, 0.0, 0.0],
+  "right_boundary_return": [0.0, 1.0, 0.0, 0.0],
+  "confirmation_sign": 1,
+  "contradiction_sign": -1
+}
