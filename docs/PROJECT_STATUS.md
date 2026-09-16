@@ -202,7 +202,7 @@ merge `06e13975b486548bb17924acc3b82786246ad6e1` and final source commit
 an attributable bounded Coalition before belief mutation while preserving the legacy gate as
 the default and leaving the v0.2 learned backend unchanged.
 
-Across seeds 2701--2705, all 12 frozen G03 engineering gates passed with no failed seed. The
+Across seeds 2701--2705, all 12 frozen G03 engineering gates passed. The
 run retained 360 raw rows, 15 causal-removal rows, 24 aggregate metrics, 120 seed rows, four
 paired statistics, and 50 machine-resolvable reason references. Independent support Ignition,
 removal reversal, and exact restoration were 1.0; same-ID and correlated-group inflation were
@@ -236,7 +236,6 @@ protected hashes, package 0.2.1, schema 0.2, and release metadata remain unchang
 The canonical metrics artifact retains all 1,440 condition-separated execution rows, and the
 invariant artifact retains the before/after observations needed to recalculate G02/G05 rather
 than relying on acceptance booleans alone.
-
 ## v0.3 C12 — computational sensory gate
 
 C12 is locally accepted under preregistered protocol `c12-sensory-field-v1` after the accepted
@@ -346,7 +345,6 @@ python scripts/validate_bundle.py
 The persisted config/state/trace schema remains `0.2`; package and documentation version is `0.2.1`.
 
 ## 5. Current Phase-0 observation
-
 On the bundled 40×30 SwitchWorld run, the full SparkBrain configuration reached approximately:
 
 - all-step accuracy: 0.640
@@ -455,6 +453,17 @@ tuning. Spark BU/BM/BREU were 0.0391/0.0896/0.0643, below direct and chance BREU
 external feature path maps unseen categorical tokens to UNK, parameter/compute matching is
 false, and evidence attribution is unavailable. Gate P3 and CL-007 therefore remain unmet.
 
-### 2026-09-15 — RV01 R01-17 preregistered, not yet executed
+### 2026-09-16 — RV01 R01-17 consumed development result
 
-R01-16's delay component remains unresolved because its realized delay intervention was only roundoff-scale. A distinct exposed-development successor, R01-17 (`rv01-r01-17-real-delay-causal-timing-v1`), is now preregistered on fresh seeds `141800`–`141804` with a deliberately nonzero delay-learning error, tolerance-aware eligibility, a causal timing endpoint, SHAM replay, and raw-before-score preservation. Status is **prospective / not executed** until exact-source review, green CI, source freeze, and atomic STARTED are complete. No R01-17 outcome may be inferred from this status entry.
+R01-17 (`rv01-r01-17-real-delay-causal-timing-v1`) was preregistered as a distinct exposed-development successor to R01-16 and executed once on fresh seeds `141800`–`141804` under the frozen source. The identity crossed STARTED and is **consumed**. Its frozen development classification is `SUPPORTED_REAL_DELAY_CAUSAL_TIMING`.
+
+All five scored development worlds were classified `REAL_DELAY_SUPPORT_CELL`: learned-delay displacement and downstream causal-arrival shift exceeded the preregistered 0.5 ms minima, route preservation and exact SHAM replay held, and arm binding was valid. This is **development authority only**; it has no held-out or formal authority and does not establish a uniquely SparkBrain-specific mechanism. The conservative reduction remains ordinary local adaptive-delay plasticity.
+
+Authoritative one-way refs remain immutable and unchanged:
+
+- source freeze: `freeze/rv01-r01-17-real-delay-source-20260915@5ecb459b609b393ff837f57cc138f1eb44c1b255`
+- STARTED/control: `control/rv01-r01-17-real-delay-started-20260915@5ecb459b609b393ff837f57cc138f1eb44c1b255`
+- raw preserve: `preserve/rv01-r01-17-real-delay-raw-20260915@fceb3663c7a880d82593e6c1efe52fcd1ad0c00a`
+- scored preserve: `preserve/rv01-r01-17-real-delay-scored-20260915@d4737d52ecbb2306d9f00f99366f0ad6424327be`
+
+Same-identity rerun, retuning, repair, changed-threshold or changed-policy rescoring, and reinterpretive rescue are forbidden. Read-only verification from immutable evidence under the unchanged frozen contract does not create a new run or reopen the identity. No fresh prospective RV01 successor is currently verified. See `docs/research/RV01_STATUS_EVIDENCE_MAP.md` for the canonical evidence map and exact digests.
