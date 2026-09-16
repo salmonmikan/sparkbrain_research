@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from dataclasses import replace
 
+import pytest
+
 import sparkbrain.evaluation.v061_family_b_readiness as family_b_readiness
 from sparkbrain.evaluation.v061_family_b_distributed_field_trace import (
     BELIEF_STATE_NULL_ID,
@@ -65,8 +67,10 @@ def test_all_protocol_null_and_stop_ids_are_prospectively_fixed_and_distinct() -
     assert proposal.negative_stop_observation_id not in protocol_ids | null_ids
 
 
-def test_belief_state_null_identity_drift_fails_readiness(monkeypatch: object) -> None:
-    monkeypatch.setattr(  # type: ignore[attr-defined]
+def test_belief_state_null_identity_drift_fails_readiness(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setattr(
         family_b_readiness,
         "BELIEF_STATE_NULL_ID",
         "post-outcome-null-drift",
