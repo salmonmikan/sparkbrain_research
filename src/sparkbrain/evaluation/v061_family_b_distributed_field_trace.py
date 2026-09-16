@@ -7,6 +7,7 @@ from .v061_p3_p5_diagnostic_protocol import StateLocus
 from .v061_premechanism_admission import MechanismFamily, PreMechanismProposal
 
 PROPOSAL_ID = "a01-family-b-distributed-field-trace-gen1-v1"
+PRE_P4_FAMILY_SOURCE_SHA = "525ecd9e205b2657a4ed207ae2b6cef0bae4bffc"
 PROTOCOL_BUNDLE_SOURCE_SHA = "7af99d6c3bbbf946f90fc01d9bc7cc7661de2006"
 MECHANISM_RULE_SPEC_PATH = "docs/V061_A01_FAMILY_B_DISTRIBUTED_FIELD_TRACE_GEN1.md"
 NULL_LADDER_SPEC_PATH = "docs/V061_A01_NULL_LADDER.md"
@@ -209,6 +210,8 @@ class DistributedFieldTraceState:
 
 
 def _validate_decay(decay: float) -> None:
+    if isinstance(decay, bool) or not isinstance(decay, (int, float)):
+        raise TypeError("decay must be a real number")
     if not math.isfinite(decay) or not 0.0 <= decay < 1.0:
         raise ValueError("decay must be finite and in [0, 1)")
 
@@ -221,6 +224,8 @@ def _resource_bound(decay: float) -> float:
 def _validate_vector(values: tuple[float, ...], *, expected_width: int) -> None:
     if len(values) != expected_width:
         raise ValueError("vector width mismatch")
+    if any(isinstance(value, bool) or not isinstance(value, (int, float)) for value in values):
+        raise TypeError("vector values must be real numbers")
     if not all(math.isfinite(value) for value in values):
         raise ValueError("vector values must be finite")
 
