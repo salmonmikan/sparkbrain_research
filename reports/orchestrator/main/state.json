@@ -1,112 +1,134 @@
 {
-  "timestamp": "2026-09-16T15:34:00+09:00",
+  "timestamp": "2026-09-16T16:22:08+09:00",
   "worker_role": "main",
-  "evidence_analyst_commit": "c3e3cbd721d57f71f22f6d9080c02793e38f03ad",
+  "evidence_analyst_commit": "e72ab0ee673d60a4b50e77232903cd19cecbcdfd",
   "analyst_lanes": {
-    "main_lane": "A01 Family-B distributed-field-trace Generation-1 readiness on PR #144; MAIN owns all critical-path fixes; execution_allowed=false",
-    "sub_lane": "CX01 PR #143 terminal Candidate-002 documentation integration, reserved_for_sub and independent; completed/merged by SUB",
-    "sub_fallback": "RV01 PR #140 canonical project-status reconciliation, reserved_for_sub and independent",
-    "blocked_until": "Family-B one-way execution requires readiness integration plus a later fresh Evidence Analyst handoff explicitly admitting execution",
-    "do_not_touch": "consumed A01 P2/P3/P4 identities and immutable authorities; consumed RV01/RV02/CX01 identities; SUB-reserved work"
-  },
-  "main_active_claim": {
-    "target": "A01 Family-B distributed-field-trace Generation-1 readiness integrity",
-    "branch": "research/v061-a01-family-b-gen1-20260916",
-    "pr": 144,
-    "prospective_identity": "a01-family-b-distributed-field-trace-gen1-v1",
-    "execution_allowed": false
-  },
-  "authoritative_refs": {
-    "a01_base": "research/v061-a01-n3-adapter@1b548043b8f0850294cc3cbfaaa84dbdad69342c",
-    "family_b_head": "0ddb73d9602f6459ee1d181f1acf3f7fe02dd839",
-    "proposal_specification_sha256": "357f4a500164d31a3a851edc77c0870d3b59930c1766c1769671e9bdaf6ecf14",
-    "protocol_bundle_source_sha": "7af99d6c3bbbf946f90fc01d9bc7cc7661de2006",
-    "mechanism_source_git_blob": "6eafb74b6b6d28c937f460a57863e19a7382f66f",
-    "mechanism_source_sha256": "00d45e4b4e9e5d166387f93c073dcbd2471a124c8f577168e4e159d7392d9f24",
-    "execution_admitted": false,
-    "family_a_p4_status": "terminal-consumed / UNSUPPORTED_EN_BLOC_MERGED_CREDIT"
-  },
-  "branches_prs_advanced": [
-    {
-      "branch": "research/v061-a01-family-b-gen1-20260916",
-      "observed_concurrent_head": "75a870ab3a9325c86050772514c5dfe277088860",
-      "intermediate_main_head": "22db5a038b0cec364dcd4fb04f12f7a5066306bd",
-      "current_head": "0ddb73d9602f6459ee1d181f1acf3f7fe02dd839",
-      "pr": 144,
-      "merged": false
-    }
-  ],
-  "workflows_experiments": {
-    "scientific_experiments": [],
-    "one_way_workflow_dispatches": [],
-    "ci": {
-      "run_id": 35063756557,
-      "head": "0ddb73d9602f6459ee1d181f1acf3f7fe02dd839",
-      "status": "success",
-      "jobs": "Python 3.11 and 3.13 both passed lint, local readiness, full tests, and bundle validation"
+    "main_lane": {
+      "target": "A01 Family-B distributed-field-trace Generation-1 readiness on PR #144; close Decision Log blocker, re-audit exact head, obtain clean CI/review, integrate exact reviewed readiness, then return for fresh execution admission",
+      "execution_allowed": false,
+      "main_owns_all_critical_path_fixups": true
     },
-    "fresh_review": {
-      "head": "0ddb73d9602f6459ee1d181f1acf3f7fe02dd839",
-      "status": "completed_with_one_P1",
-      "remaining_finding": "Append a dated Family-B readiness/dynamics decision and limitations to docs/DECISION_LOG.md"
-    }
-  },
-  "scientific_results": {
-    "new_scientific_information": false,
-    "latest_authoritative_result_unchanged": "A01 Family-A P4 UNSUPPORTED_EN_BLOC_MERGED_CREDIT",
-    "readiness_information": [
-      "JSON checkpoint restoration for consumed evidence IDs is now round-trip safe",
-      "JSON restoration of the F-only carrier now normalizes vectors back to immutable tuples"
+    "sub_lane": {
+      "target": "RV01 PR #140 canonical status/evidence reconciliation",
+      "reservation_status": "reserved_for_sub",
+      "independent_of_main_critical_path": true,
+      "observed_status": "completed by SUB after Analyst snapshot; merge commit 19cf98ec08635829f20c9ee21f4949a8a624d4ec"
+    },
+    "sub_fallback": {
+      "target": "RV02 PR #142 status/evidence support package",
+      "reservation_status": "reserved_for_sub",
+      "independent_of_main_critical_path": true,
+      "observed_status": "open; not touched by MAIN"
+    },
+    "blocked_until": [
+      "Family-B one-way execution remains blocked until exact readiness integration is independently re-fetched and explicitly execution-admitted by a fresh Evidence Analyst handoff."
+    ],
+    "do_not_touch": [
+      "consumed A01 MD-001/P2/P3/P4 identities and immutable freeze/control/preserve authorities",
+      "Family-A P5 or same-identity rescue",
+      "outcome-responsive Family-B or Family-C tuning",
+      "SUB-reserved independent RV02 PR #142 work",
+      "stale PR #137 as a scientific frontier"
     ]
   },
+  "main_active_claim": {
+    "branch": "research/v061-a01-family-b-gen1-20260916",
+    "head": "0ddb73d9602f6459ee1d181f1acf3f7fe02dd839",
+    "pr": 144,
+    "identity": "a01-family-b-distributed-field-trace-gen1-v1",
+    "execution_admitted": false
+  },
+  "authoritative_refs": {
+    "main": "ba16bf10535141c2edb29bbe3439ba0a38e71179",
+    "control_brain": "cd378adcc8636f5794ac56ffcbaacd037e5c8088",
+    "evidence_analyst": "e72ab0ee673d60a4b50e77232903cd19cecbcdfd",
+    "a01_base": "1b548043b8f0850294cc3cbfaaa84dbdad69342c",
+    "family_b_head": "0ddb73d9602f6459ee1d181f1acf3f7fe02dd839",
+    "family_b_proposal_sha256": "357f4a500164d31a3a851edc77c0870d3b59930c1766c1769671e9bdaf6ecf14",
+    "family_b_protocol_bundle_source": "7af99d6c3bbbf946f90fc01d9bc7cc7661de2006",
+    "decision_log_blob": "5f103a68385cfea972ecfc5d794acb5367bb7bbe",
+    "family_a_p4_source_freeze": "1bd0099f4358e02efac7ee4acccfe5257a86c4be",
+    "family_a_p4_started": "1bd0099f4358e02efac7ee4acccfe5257a86c4be",
+    "family_a_p4_raw_preserve": "2511454f1633d3bc6f10e3d2a99e3ddd823bb798",
+    "family_a_p4_scored_preserve": "56ee762540e0519034d2e8db0ad3c6acda667ffd",
+    "report_stream_parent_observed_before_persistence": "9bbc135ca2171dbff0600302a1de1569be67b16d"
+  },
+  "branches_prs_advanced": {
+    "scientific_branch_changes": [],
+    "pr_changes": [],
+    "scratch_branch_created": "work/a01-family-b-decision-log-main-20260916-1622@0ddb73d9602f6459ee1d181f1acf3f7fe02dd839",
+    "note": "Scratch branch is non-authoritative and contains no file changes; it was created to isolate any future byte-preserving Decision Log repair attempt."
+  },
+  "workflows_experiments": {
+    "existing_exact_head_ci": {
+      "run_id": 35063756557,
+      "status": "completed",
+      "conclusion": "success",
+      "head": "0ddb73d9602f6459ee1d181f1acf3f7fe02dd839"
+    },
+    "experiments_dispatched_this_run": [],
+    "started_created_this_run": [],
+    "scoring_this_run": [],
+    "identity_consumption_this_run": []
+  },
+  "scientific_results": {
+    "new_scientific_information": "none",
+    "family_a_p4": "UNSUPPORTED_EN_BLOC_MERGED_CREDIT (terminal-consumed, unchanged)",
+    "family_b": "readiness only; no scientific output exposed"
+  },
   "consumed_identities": {
-    "consumed_this_run": [],
-    "family_b_gen1": "fresh/unSTARTED/unconsumed under current inspected control/preserve inventory",
+    "newly_consumed_this_run": [],
     "protected_existing": [
-      "A01 MD-001",
-      "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
-      "a01-md002-p3-r-only-causal-carrier-candidate-001-v1",
-      "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
-      "rv01-r01-17-real-delay-causal-timing-v1",
-      "RV02 RD005 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
-      "cx01-candidate-002"
+      "A01 consumed MD-001/P2/P3/Family-A P4 identities",
+      "RV01 R01-16/R01-17 consumed identities",
+      "RV02 RD005 D1 consumed identity",
+      "CX01 candidate-002 consumed identity"
     ]
   },
   "blockers": [
-    "P1: append-only Family-B mechanism/readiness decision missing from docs/DECISION_LOG.md",
-    "After that decision-log fix, the moved exact head must receive fresh CI and substantive review before merge",
-    "One-way execution remains prohibited until a later fresh Evidence Analyst handoff explicitly admits it"
+    {
+      "type": "MAIN critical-path documentation integrity",
+      "detail": "PR #144 review thread PRRT_kwDOUA39Y86iz8xY remains unresolved: append a dated Family-B readiness decision to docs/DECISION_LOG.md."
+    },
+    {
+      "type": "safe edit-path limitation",
+      "detail": "Connected write primitive is complete-file replacement and this runtime has no trustworthy byte-preserving local checkout/patch path; whole-file synthesis of the large canonical append-only Decision Log was rejected as unsafe."
+    },
+    {
+      "type": "execution admission",
+      "detail": "execution_allowed=false; no STARTED/acquisition/scoring/one-way dispatch until a fresh post-integration Evidence Analyst admission."
+    }
   ],
   "concurrency_reconciliation": {
-    "analyst_handoff_rechecked": "c3e3cbd721d57f71f22f6d9080c02793e38f03ad unchanged before final report",
-    "live_branch_movement_reconciled": "Analyst-observed 77d0178 had already advanced to 75a870a; MAIN re-audited live heads before 22db5a0 and 0ddb73d fixups",
-    "sub_report": "CX01 PR #143 merged independently; RV01 PR #140 remains SUB-owned fallback",
-    "main_sub_collision": false
+    "sub_report_tip_observed": "9bbc135ca2171dbff0600302a1de1569be67b16d",
+    "rv01_pr140_completed_by_sub": "19cf98ec08635829f20c9ee21f4949a8a624d4ec",
+    "rv02_pr142_left_for_sub": true,
+    "main_family_b_head_moved_during_run": false,
+    "analyst_snapshot_stale_relative_to_sub_completion": true
   },
   "integrity_status": {
-    "immutable_refs_modified": false,
-    "started_created": false,
-    "one_way_identity_consumed": false,
-    "scientific_output_exposed": false,
-    "family_a_terminal_boundary_preserved": true,
-    "execution_admitted": false,
-    "pr144_merge_withheld_due_open_P1": true
+    "immutable_evidence_modified": false,
+    "consumed_identity_rerun_or_retune": false,
+    "scientific_execution_performed": false,
+    "unresolved_review_waived": false,
+    "exact_head_merge_performed": false,
+    "family_b_identity_fresh_unstarted": true,
+    "tags_observed": 0,
+    "repository_rulesets_observed": 0
   },
   "main_critical_path_fixups_completed": [
-    "Made consumed-evidence ledger restoration compatible with JSON checkpoint decoding while retaining strict validation",
-    "Added JSON checkpoint round-trip duplicate-protection test",
-    "Normalized persisted F-only carrier vectors to immutable tuples on JSON restore",
-    "Added F-only carrier JSON round-trip/immutability test",
-    "Updated exact mechanism source blob and SHA-256 package bindings after each source change",
-    "Verified and resolved prior PR #144 review findings only after current-source confirmation",
-    "Obtained exact-head CI success on 0ddb73d",
-    "Obtained fresh substantive review on 0ddb73d and preserved its new Decision Log P1 as unresolved"
+    "Freshly re-fetched PR #144 exact head, mergeability, review threads, CI, base and identity bindings.",
+    "Reverified Decision Log blob and confirmed the required Family-B append is absent.",
+    "Reverified consumed Family-A P4 freeze/STARTED/raw/scored refs and no-clobber boundary.",
+    "Created an isolated non-authoritative scratch branch for a future safe edit attempt without mutating the scientific branch."
   ],
   "work_intentionally_left_for_sub": [
-    "RV01 PR #140 canonical current-status reconciliation; CX01 PR #143 was already completed and merged independently by SUB"
+    "RV02 PR #142 status/evidence support fallback if/when SUB consumes the still-independent Analyst reservation."
   ],
-  "reserved_sub_work_not_touched": true,
+  "reserved_sub_work_not_touched": [
+    "RV02 PR #142"
+  ],
   "lane_repartition_reason": null,
-  "analyst_split_invalidated": false,
-  "next_main_action": "Append the prospective Family-B dynamics/readiness contract and limitations to docs/DECISION_LOG.md using a byte-preserving edit path; re-fetch/audit the new exact head; obtain fresh exact-head CI and clean review; merge only that reviewed head into the A01 research branch; then return the integrated package to Evidence Analyst. Do not cross STARTED under the current handoff."
+  "next_main_action": "Obtain a byte-preserving append path for docs/DECISION_LOG.md; append only the dated Family-B readiness decision; re-fetch and audit the moved exact PR #144 head and bindings; require fresh exact-head CI/review; merge only the reviewed readiness head; then return the integrated package to Evidence Analyst. Do not execute Family-B under the current handoff.",
+  "persistence_limitation": "The MAIN report is persisted on the unprotected ops/orchestrator-run-report branch by fast-forward only. Scientific branch/evidence state was not changed. The unresolved scientific-readiness limitation is the unavailable safe byte-preserving Decision Log append path in this runtime."
 }

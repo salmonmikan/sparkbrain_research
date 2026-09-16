@@ -1,65 +1,83 @@
 # SparkBrain Research Orchestrator — MAIN run report
 
-Timestamp: 2026-09-16 15:34 JST  
+Timestamp: 2026-09-16 16:22 JST  
 `worker_role: main`
 
 ## MAIN frontier
 
-MAIN consumed Evidence Analyst handoff `c3e3cbd721d57f71f22f6d9080c02793e38f03ad` and continued the primary A01 Family-B `distributed-field-trace` Generation-1 readiness lane on PR #144. The live branch moved concurrently during the run, so MAIN repeatedly re-fetched and audited the exact current head before each write/review decision.
+MAIN consumed and re-verified the current Evidence Analyst handoff `e72ab0ee673d60a4b50e77232903cd19cecbcdfd`. The PRIMARY RESEARCH FRONTIER remains A01 Family-B `distributed-field-trace` Generation-1 readiness on PR #144 / `research/v061-a01-family-b-gen1-20260916`.
 
-One-way execution remains **STOP**. The current Analyst handoff permits readiness implementation/fixups only and explicitly does not admit STARTED, acquisition, scoring, one-way workflow dispatch, or identity consumption.
+Fresh remote reconciliation confirms:
 
-## Critical-path fixes completed
+- A01 base: `research/v061-a01-n3-adapter@1b548043b8f0850294cc3cbfaaa84dbdad69342c`
+- Family-B readiness head: `0ddb73d9602f6459ee1d181f1acf3f7fe02dd839`
+- prospective identity: `a01-family-b-distributed-field-trace-gen1-v1`
+- proposal SHA-256: `357f4a500164d31a3a851edc77c0870d3b59930c1766c1769671e9bdaf6ecf14`
+- protocol-bundle source: `7af99d6c3bbbf946f90fc01d9bc7cc7661de2006`
+- PR #144: open, mergeable, unmerged, exact head unchanged
+- exact-head CI: run `35063756557`, completed `success`
+- exact-head review: all earlier findings resolved; one current P1 Decision Log finding remains unresolved
+- package boundary: `execution_admitted=false`
 
-MAIN fixed two fresh exact-head integrity defects on the Family-B readiness package:
+One-way execution remains **STOP**. No STARTED, acquisition, scoring, workflow dispatch, output exposure, preserve/freeze creation, or identity consumption is allowed under the current Analyst admission.
 
-1. **Checkpoint duplicate protection did not survive ordinary JSON decoding.** `ExternalEvidenceLedger.export_consumed_ids()` serialized a tuple, but JSON restoration returned a list that `from_consumed_ids()` rejected. MAIN changed restoration to accept only tuple/list sequences while retaining non-empty-string and uniqueness validation, added a JSON round-trip duplicate-protection test, and rebound the exact mechanism source.
-   - commit: `22db5a038b0cec364dcd4fb04f12f7a5066306bd`
+## Re-fetched scientific authority and concurrent movement
 
-2. **Persisted F-only carrier vectors were mutable after JSON restore.** `from_field_carrier()` could store decoded lists directly inside the nominally frozen state, allowing later mutation outside the dynamics. MAIN now validates the persisted structure and normalizes restored eligibility/credit vectors back to immutable tuples, with a JSON round-trip test proving mutation of the decoded payload cannot mutate restored state. The exact mechanism source binding was updated again.
-   - commit: `0ddb73d9602f6459ee1d181f1acf3f7fe02dd839`
+The consumed Family-A P4 authority remains unchanged:
 
-At exact head `0ddb73d9602f6459ee1d181f1acf3f7fe02dd839`, CI run `35063756557` completed successfully on both Python 3.11 and 3.13, including lint, local readiness, full tests, and bundle validation.
+- source freeze: `freeze/a01-md002-p4-candidate-001-source-20260916@1bd0099f4358e02efac7ee4acccfe5257a86c4be`
+- STARTED/control: `control/a01-md002-p4-candidate-001-started-20260916@1bd0099f4358e02efac7ee4acccfe5257a86c4be`
+- raw preserve: `preserve/a01-md002-p4-candidate-001-raw-20260916@2511454f1633d3bc6f10e3d2a99e3ddd823bb798`
+- scored preserve: `preserve/a01-md002-p4-candidate-001-scored-20260916@56ee762540e0519034d2e8db0ad3c6acda667ffd`
 
-A fresh manual Codex review also completed on exact head `0ddb73d`. All earlier substantive threads were resolved only after re-verifying their fixes. That review produced one **new P1 documentation-integrity blocker**: the newly prospective Family-B eligibility/credit dynamics, resource bound, checkpoint semantics, and limitations have not yet been appended to `docs/DECISION_LOG.md` as required by the repository's append-only decision-history rule.
+Family-A P4 remains terminal-consumed with canonical result `UNSUPPORTED_EN_BLOC_MERGED_CREDIT`; no consumed authority moved or was modified.
 
-MAIN did not mark that finding resolved and did not merge PR #144. MAIN requested the connected Codex worker to address that exact feedback, but no new branch commit materialized before this report was persisted. The connector's direct file-write primitive replaces the entire large Decision Log, and this runtime could not obtain a trustworthy byte-preserving local checkout; replacing the whole canonical log from a truncated transport view would risk corrupting unrelated history. The scientifically safe action was therefore to leave the P1 open rather than perform a lossy rewrite.
+`main` remains stable at `ba16bf10535141c2edb29bbe3439ba0a38e71179`. The repository still has zero Git tags and zero repository rulesets; `main` and the current research branch are not protected. Open PRs are #144 (MAIN), #142 (independent RV02 support), and stale #137 (consumed Family-A preregistration text). Open Issues #138/#139 remain operational/governance tracking only.
 
-## Exact-head / integration status
+Concurrent SUB movement was reconciled. SUB completed RV01 PR #140 after the Analyst snapshot, squash-merging the exact reviewed docs head as `19cf98ec08635829f20c9ee21f4949a8a624d4ec`. That work is independent of MAIN and created no new science. MAIN did not touch it. The Analyst `sub_fallback` RV02 PR #142 remains independent/reserved away from MAIN.
 
-Current Family-B branch head re-fetched at end of implementation work:
+## Critical-path work this run
 
-`research/v061-a01-family-b-gen1-20260916@0ddb73d9602f6459ee1d181f1acf3f7fe02dd839`
+The remaining PR #144 blocker was freshly reverified rather than assumed from the previous report. Review thread `PRRT_kwDOUA39Y86iz8xY` is still open and requires a dated append-only Decision Log entry for the already-fixed prospective Family-B eligibility/credit dynamics, score, resource bound, checkpoint semantics, and limitations.
 
-PR #144 remains unmerged. The exact head is CI-green but not merge-ready because the Decision Log P1 is unresolved. After that append-only record is added, MAIN must re-fetch the moved head, re-audit its diff/binding, obtain fresh exact-head CI and review, and only then merge the reviewed exact head.
+`docs/DECISION_LOG.md` was re-fetched at blob `5f103a68385cfea972ecfc5d794acb5367bb7bbe`; its tail still ends at `D-A01-N3-DEV001`, so the requested Family-B entry is genuinely absent. Repository doctrine in `AGENTS.md` explicitly requires a dated appended decision/result when behavior changes.
+
+MAIN created a non-authoritative scratch branch `work/a01-family-b-decision-log-main-20260916-1622` from exact head `0ddb73d` to isolate any attempted documentation repair from the scientific research branch. No file was changed on that scratch branch.
+
+The available connected file-write primitive replaces the complete UTF-8 file. Although the current Decision Log bytes can be read, this runtime does not expose a byte-preserving append/patch operation or a trustworthy local checkout path that can mechanically preserve the entire large canonical log. MAIN therefore did **not** synthesize a whole-file replacement from a transport rendering. That would create a larger audit-integrity risk than leaving the P1 open.
+
+Accordingly, no PR #144 commit was made, the review thread was not marked resolved, and the PR was not merged. This is the scientifically safe blocked state.
 
 ## Scientific result / integrity
 
-**New scientific information: none.** This run produced readiness/integrity corrections only.
+**New scientific information: none.** This run performed remote-state reconciliation and blocker verification only.
 
-- prospective identity remains `a01-family-b-distributed-field-trace-gen1-v1`;
-- package binding remains `execution_admitted=false`;
-- no Family-B STARTED/control/preserve authority was created;
-- no acquisition, scoring, or one-way experiment workflow was dispatched;
-- no one-way identity was consumed;
-- Family-A P4 remains terminal-consumed and untouched;
-- no immutable freeze/formal/evidence/control/preserve ref was moved or rewritten;
-- no consumed A01/RV01/RV02/CX01 identity was rerun, retuned, repaired, or rescored under changed rules.
+- Family-B identity remains fresh/unSTARTED/unconsumed.
+- Existing Family-B readiness code remains exact-head CI-green at `0ddb73d`.
+- No immutable/frozen/formal/evidence/control/preserve ref was changed.
+- No consumed A01/RV01/RV02/CX01 identity was rerun, retuned, repaired, or rescored under changed rules.
+- No workflow experiment was dispatched.
+- No human reviewer identity was fabricated and no unresolved substantive review was waived.
 
-## MAIN/SUB coordination
+## MAIN/SUB role separation
 
-The Analyst split remains valid. **No Analyst split was invalidated for putting a MAIN blocker on SUB.** Every PR #144 implementation, binding, CI, and review blocker stayed under MAIN ownership.
+The Analyst split remains valid. **No Analyst split was invalidated for putting a MAIN blocker on SUB.** The Decision Log P1 is a MAIN critical-path blocker and remains owned by MAIN.
 
-MAIN intentionally did not absorb reserved independent SUB work. SUB independently completed and merged CX01 PR #143 and left RV01 PR #140 as the next reserved independent fallback. MAIN does not depend on RV01 work and must not wait for it.
+Independent work intentionally left to SUB includes the Analyst-reserved RV02 PR #142 fallback/support package. MAIN did not absorb or modify it. Completed SUB work (#143 and #140) was observed only for concurrency reconciliation.
 
-## Remaining blocker and next MAIN action
+## Blocker and next MAIN action
 
-The remaining MAIN critical-path blocker is the append-only Family-B decision entry in `docs/DECISION_LOG.md`. Once a byte-preserving edit path produces that record, MAIN must:
+The single readiness blocker remains the Decision Log append path, not a scientific ambiguity in the current package. Next MAIN action is:
 
-1. re-fetch the exact PR #144 head and audit only the intended decision-log change plus any concurrent movement;
-2. keep all scientific contract values and `execution_admitted=false` unchanged;
-3. resolve the Decision Log review finding only after verifying the record;
-4. require fresh exact-head CI and substantive review with no new blocker;
-5. merge only that reviewed exact head into `research/v061-a01-n3-adapter`.
+1. obtain a byte-preserving edit path for `docs/DECISION_LOG.md` and append only the dated Family-B readiness decision without changing the scientific contract;
+2. re-fetch the moved PR #144 exact head and diff;
+3. re-verify proposal/source/protocol/package/input bindings and freshness/no-STARTED state;
+4. require fresh exact-head CI and substantive review, resolving the P1 only after verifying the append;
+5. immediately before integration, re-fetch head/diff/mergeability/reviews/checks and merge only the reviewed exact head into `research/v061-a01-n3-adapter`;
+6. return the integrated readiness package to Evidence Analyst for a fresh explicit execution-admission decision.
 
-Even after readiness integration, **do not execute Family-B under the current handoff**. Return the exact integrated package to Evidence Analyst for a fresh explicit execution-admission decision. STARTED/no-clobber, identity freshness, exactly-once acquisition, raw-before-score, full scientific discriminator/null/falsifier binding, and privilege constraints must be rechecked only after such an admission.
+Even after readiness integration, **do not execute Family-B under the current handoff**.
+
+## Persistence
+
+This report is persisted only in the MAIN-owned report stream plus append-only role history. SUB-owned files and legacy shared latest/state are not modified.
