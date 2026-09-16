@@ -1,5 +1,18 @@
 # Project Status — SparkBrain v0.3.2.dev0
 
+## CX01 formal comparator — Candidate-002 terminal negative
+
+`cx01-candidate-002` is **TERMINAL-CONSUMED / FORMAL NEGATIVE** for its exact frozen
+candidate/comparator/protocol contract. The completed formal run contains 420 executions; under
+the frozen non-compensatory scoring policy, all seven evaluated comparator decisions are
+unsupported. This is a bounded CX01 result, not a programme-wide SparkBrain negative.
+
+A persistent STARTED record exists, so Candidate-002 must not be rerun, retuned, rescored,
+repaired, or reused. The canonical current status, exact source/package/STARTED/preserve refs,
+evidence hashes, and interpretation boundary are recorded in
+`docs/CX01_CANDIDATE_002_FORMAL_STATUS.md`. Historical CX01 pre-execution runbook/status text is
+retained for audit history only and is superseded for Candidate-002.
+
 ## v0.3 release migration boundary
 
 The package version is now `0.3.2.dev0`. The accepted v0.2.1 reference engine retains
