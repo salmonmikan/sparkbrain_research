@@ -15,7 +15,11 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from sparkbrain.research.rv02_scale import (  # noqa: E402
-    ScaleStudyConfig, audit_scale, development_worlds, digest, run_development_cell,
+    ScaleStudyConfig,
+    audit_scale,
+    development_worlds,
+    digest,
+    run_development_cell,
 )
 
 
