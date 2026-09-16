@@ -146,6 +146,11 @@ def test_f_only_carrier_transplant_preserves_functional_score() -> None:
     assert transplanted.competition_score(probe) == donor.competition_score(probe) == 0.5
 
 
+def test_state_construction_rejects_boolean_width() -> None:
+    with pytest.raises(TypeError, match="width must be a non-boolean integer"):
+        DistributedFieldTraceState.zeros(width=True)
+
+
 @pytest.mark.parametrize(
     ("carrier", "expected_message"),
     [
