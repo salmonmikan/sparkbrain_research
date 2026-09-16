@@ -11,6 +11,7 @@ from __future__ import annotations
 import hashlib
 import json
 import platform
+import string
 import sys
 from collections.abc import Iterable, Mapping, Sequence
 from dataclasses import dataclass
@@ -28,6 +29,7 @@ EXECUTION_HARNESS_ID = "c19-external-v2-official-harness-v1"
 FROZEN_PROTOCOL_HEAD = "90c936a7abca7eba0dac1f977753503551e73368"
 SYNTHETIC_SCOPE = "synthetic_dev_only"
 OFFICIAL_SCOPE = "official_one_way"
+EXPECTED_PAIRS_PER_ROW = 1744
 FORBIDDEN_RAW_KEYS = frozenset(
     {
         "answer",
@@ -40,10 +42,35 @@ FORBIDDEN_RAW_KEYS = frozenset(
         "target",
         "target_label",
         "truth",
+        "update_required",
+        "question",
+        "premises",
+        "choices_text",
+        "official_cache_bytes",
     }
 )
 RAW_REQUIRED_KEYS = frozenset(
-    {"row_id", "record_id", "source_index", "pair_index", "prediction", "metadata"}
+    {
+        "protocol_id",
+        "run_identity",
+        "row_id",
+        "row_kind",
+        "seed",
+        "pair_index",
+        "record_id_hash",
+        "source_index",
+        "step_index",
+        "prediction",
+        "probabilities",
+        "input_track",
+        "gate",
+        "entity",
+        "baseline_kind",
+        "work_counters",
+    }
+)
+EXECUTOR_REQUIRED_KEYS = frozenset(
+    {"record_id", "source_index", "pair_index", "prediction", "metadata"}
 )
 
 
@@ -53,6 +80,10 @@ def canonical_json(value: object) -> str:
 
 def sha256_json(value: object) -> str:
     return hashlib.sha256(canonical_json(value).encode("utf-8")).hexdigest()
+
+
+def _sha256_text(value: str) -> str:
+    return hashlib.sha256(value.encode("utf-8")).hexdigest()
 
 
 @dataclass(frozen=True, slots=True)
@@ -175,27 +206,136 @@ def reject_target_leakage(value: object, *, path: str = "raw") -> None:
             reject_target_leakage(child, path=f"{path}[{index}]")
 
 
+def _require_non_negative_integer(value: object, name: str) -> int:
+    if isinstance(value, bool) or not isinstance(value, int) or value < 0:
+        raise ValueError(f"{name} must be a non-negative integer")
+    return value
+
+
+def _materialize_raw_record(
+    row: Mapping[str, object],
+    emitted: Mapping[str, Any],
+    *,
+    admission: ExecutionAdmission,
+) -> dict[str, Any]:
+    if set(emitted) != EXECUTOR_REQUIRED_KEYS:
+        raise ValueError("executor payload keys differ from the bound pre-raw contract")
+    reject_target_leakage(emitted, path="executor")
+
+    record_id = emitted["record_id"]
+    if not isinstance(record_id, str) or not record_id:
+        raise ValueError("record_id must be a non-empty string before hashing")
+    metadata = emitted["metadata"]
+    if not isinstance(metadata, Mapping):
+        raise ValueError("executor metadata must be a mapping")
+    required_metadata = {"final_probabilities", "work_counters", "final_step_index"}
+    if not required_metadata.issubset(metadata):
+        raise ValueError("executor metadata lacks frozen raw-contract material")
+
+    probabilities = metadata["final_probabilities"]
+    work_counters = metadata["work_counters"]
+    if not isinstance(probabilities, Mapping) or not probabilities:
+        raise ValueError("probabilities must be a non-empty mapping")
+    if not isinstance(work_counters, Mapping):
+        raise ValueError("work_counters must be a mapping")
+
+    return {
+        "protocol_id": PROTOCOL_ID,
+        "run_identity": admission.planned_identity,
+        "row_id": str(row["row_id"]),
+        "row_kind": str(row["row_kind"]),
+        "seed": int(row["seed"]),
+        "pair_index": _require_non_negative_integer(emitted["pair_index"], "pair_index"),
+        "record_id_hash": _sha256_text(record_id),
+        "source_index": _require_non_negative_integer(
+            emitted["source_index"], "source_index"
+        ),
+        "step_index": _require_non_negative_integer(
+            metadata["final_step_index"], "step_index"
+        ),
+        "prediction": emitted["prediction"],
+        "probabilities": dict(probabilities),
+        "input_track": row.get("input_track"),
+        "gate": row.get("gate"),
+        "entity": row.get("entity"),
+        "baseline_kind": row.get("baseline_kind"),
+        "work_counters": dict(work_counters),
+    }
+
+
+def _is_sha256(value: object) -> bool:
+    return (
+        isinstance(value, str)
+        and len(value) == 64
+        and all(character in string.hexdigits for character in value)
+        and value == value.lower()
+    )
+
+
 def validate_raw_records(records: Sequence[Mapping[str, Any]]) -> None:
     if not records:
         raise ValueError("raw acquisition must contain prediction records")
-    expected_rows = {str(row["row_id"]) for row in expected_row_inventory()}
-    seen_rows: set[str] = set()
+
+    expected_rows = {
+        str(row["row_id"]): dict(row) for row in expected_row_inventory()
+    }
+    expected_pairs = set(range(EXPECTED_PAIRS_PER_ROW))
+    pairs_by_row = {row_id: set() for row_id in expected_rows}
+    identity_by_pair: dict[int, tuple[str, int, int]] = {}
+
     for record in records:
         if set(record) != RAW_REQUIRED_KEYS:
             raise ValueError("raw prediction record keys differ from frozen target-blind schema")
         reject_target_leakage(record)
+        if record["protocol_id"] != PROTOCOL_ID:
+            raise ValueError("raw protocol_id drift")
+        if record["run_identity"] != PLANNED_IDENTITY:
+            raise ValueError("raw run_identity drift")
+
         row_id = record["row_id"]
         if not isinstance(row_id, str) or row_id not in expected_rows:
             raise ValueError("raw prediction references an unknown frozen row")
-        seen_rows.add(row_id)
-        if not isinstance(record["record_id"], str) or not record["record_id"]:
-            raise ValueError("record_id must be a non-empty string")
-        for integer_key in ("source_index", "pair_index"):
-            value = record[integer_key]
-            if isinstance(value, bool) or not isinstance(value, int) or value < 0:
-                raise ValueError(f"{integer_key} must be a non-negative integer")
-    if seen_rows != expected_rows:
-        raise ValueError("raw acquisition must cover every frozen protocol row")
+        expected_row = expected_rows[row_id]
+        if record["row_kind"] != expected_row["row_kind"]:
+            raise ValueError("raw row_kind differs from frozen row inventory")
+        if record["seed"] != expected_row["seed"]:
+            raise ValueError("raw seed differs from frozen row inventory")
+        for key in ("input_track", "gate", "entity", "baseline_kind"):
+            if record[key] != expected_row.get(key):
+                raise ValueError(f"raw {key} differs from frozen row inventory")
+
+        pair_index = _require_non_negative_integer(record["pair_index"], "pair_index")
+        if pair_index >= EXPECTED_PAIRS_PER_ROW:
+            raise ValueError("pair_index is outside the frozen official-pair inventory")
+        if pair_index in pairs_by_row[row_id]:
+            raise ValueError("duplicate pair_index within a frozen row")
+        pairs_by_row[row_id].add(pair_index)
+
+        source_index = _require_non_negative_integer(record["source_index"], "source_index")
+        step_index = _require_non_negative_integer(record["step_index"], "step_index")
+        record_id_hash = record["record_id_hash"]
+        if not _is_sha256(record_id_hash):
+            raise ValueError("record_id_hash must be a lowercase SHA-256 digest")
+        identity = (record_id_hash, source_index, step_index)
+        known_identity = identity_by_pair.setdefault(pair_index, identity)
+        if known_identity != identity:
+            raise ValueError("cross-row official-pair identity mismatch")
+
+        probabilities = record["probabilities"]
+        if not isinstance(probabilities, Mapping) or not probabilities:
+            raise ValueError("raw probabilities must be a non-empty mapping")
+        work_counters = record["work_counters"]
+        if not isinstance(work_counters, Mapping):
+            raise ValueError("raw work_counters must be a mapping")
+
+    expected_total = len(expected_rows) * EXPECTED_PAIRS_PER_ROW
+    if len(records) != expected_total:
+        raise ValueError("raw acquisition record count differs from frozen 55x1744 inventory")
+    incomplete_rows = [
+        row_id for row_id, seen_pairs in pairs_by_row.items() if seen_pairs != expected_pairs
+    ]
+    if incomplete_rows:
+        raise ValueError("raw acquisition must contain exactly 1744 unique pairs per frozen row")
 
 
 def write_raw_jsonl_no_clobber(path: Path, raw: RawBundle) -> Path:
@@ -283,9 +423,7 @@ class OneWayExecutionHarness:
             )
             emitted = executor(row, frozen_examples)
             for record in emitted:
-                materialized = dict(record)
-                materialized["row_id"] = row["row_id"]
-                records.append(materialized)
+                records.append(_materialize_raw_record(row, record, admission=admission))
 
         raw = RawBundle.from_records(records)
         raw_writer(raw)
