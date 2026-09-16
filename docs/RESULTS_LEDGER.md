@@ -1073,3 +1073,12 @@ contract correction only.
 - Preserved raw audit: realized absolute delay movement was only floating-point roundoff scale (maximum about `1.03e-11 ms`, mean about `1.32e-12 ms`, median about `6.95e-13 ms`), while learned weight movement was macroscopic relative to the `0.05` initial weight.
 - Interpretation: R01-16 strongly supports the learned-weight contribution at the development endpoint; the delay mechanism is **unresolved** by R01-16. The 46 delay-discordant cells must not be used as evidence for substantive learned-delay expression or weight-gated delay plasticity; they are compatible with microscopic timestamp/tie-order sensitivity or another downstream numerical/event-order effect.
 - Boundary: this negative measurement-validity finding does not modify the consumed R01-16 protocol or artifacts. The next valid test must use a distinct prospective identity with initial physical delay meaningfully separated from training lag, tolerance-aware delay eligibility, and an orthogonal timing/trajectory endpoint.
+
+## 2026-09-16 — RV01 R01-17 consumed real-delay development result
+
+- Identity: `rv01-r01-17-real-delay-causal-timing-v1`; exposed-development only; crossed STARTED and is consumed.
+- Frozen source / STARTED: `freeze/rv01-r01-17-real-delay-source-20260915@5ecb459b609b393ff837f57cc138f1eb44c1b255` and `control/rv01-r01-17-real-delay-started-20260915@5ecb459b609b393ff837f57cc138f1eb44c1b255`.
+- Preserved evidence: raw `preserve/rv01-r01-17-real-delay-raw-20260915@fceb3663c7a880d82593e6c1efe52fcd1ad0c00a`; scored `preserve/rv01-r01-17-real-delay-scored-20260915@d4737d52ecbb2306d9f00f99366f0ad6424327be`; preservation workflow run `34978554838`.
+- Result: `SUPPORTED_REAL_DELAY_CAUSAL_TIMING`; all five seeds/worlds (`141800`–`141804`) were `REAL_DELAY_SUPPORT_CELL`; the preregistered >0.5 ms learned-delay displacement and downstream arrival-shift minima passed with route preservation, exact SHAM replay, and valid arm binding.
+- Embedded payload digests: raw-suite `worlds` payload `7d6642bf16364c2a67acdf979324d0da59dcd7bbdc508c5f8773b6c654803dc2`; scored `scored_worlds` payload `b76f3c7b3ec29f97ea69de30c6fb0e3c171c1eaa0e80699bf8055c3586ded76e`. These are protocol payload digests, not whole artifact-byte checksums.
+- Boundary: development authority only; no held-out/formal authority; conservative reduction remains ordinary local adaptive-delay plasticity. Same-identity rerun, retune, repair, changed-threshold/changed-policy rescore, or reinterpretive rescue is forbidden. No fresh prospective RV01 successor is verified.
