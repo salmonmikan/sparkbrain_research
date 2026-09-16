@@ -3,12 +3,14 @@
   "fixed_inventory": {
     "baseline_rows": 25,
     "c19_rows": 30,
-    "total_rows": 55
+    "official_pairs_per_row": 1744,
+    "total_rows": 55,
+    "total_raw_records": 95920
   },
   "frozen_protocol_head": "90c936a7abca7eba0dac1f977753503551e73368",
   "implementation_bindings": {
     "baseline_executors": {
-      "existing_reusable_factory_source": "src/sparkbrain/baselines/neural/models.py",
+      "source": "src/sparkbrain/v03_external_validation/implementation_binding.py:baseline_registry",
       "families": [
         "direct_stateless",
         "explicit_state_probabilistic",
@@ -16,12 +18,11 @@
         "recurrent",
         "transformer"
       ],
-      "reason": "Factory code exists for several neural families, but the exact C19-v2 family-to-factory/hyperparameter/checkpoint mapping is not frozen by the protocol.",
-      "status": "UNBOUND_SCIENTIFIC_IMPLEMENTATION"
+      "status": "BOUND_SOURCE_ONLY_PRESTART"
     },
     "condition_executor": {
-      "reason": "No exact executable C19 I0/I1/I2 × G0/G1 E0 condition runner is frozen at the protocol anchor.",
-      "status": "UNBOUND_SCIENTIFIC_IMPLEMENTATION"
+      "source": "src/sparkbrain/v03_external_validation/implementation_binding.py:condition_executor",
+      "status": "BOUND_SOURCE_ONLY_PRESTART"
     },
     "preserver": {
       "interface": "sparkbrain.v03_external_validation.official_execution:Preserver",
@@ -31,20 +32,38 @@
     "reconstructor": "sparkbrain.v03_external_validation.official_execution:reconstruct_raw_jsonl",
     "scorer": {
       "interface": "sparkbrain.v03_external_validation.official_execution:Scorer",
-      "status": "BOUND_INTERFACE_ONLY"
+      "status": "BOUND_INTERFACE_ONLY_SCORING_SEMANTICS_AMBIGUOUS"
     }
   },
   "official_data_accessed": false,
   "official_execution_allowed": false,
   "planned_official_identity": "c19-external-v2-official-v1",
   "protocol_id": "c19-external-v2-official-protocol-v1",
+  "raw_contract": {
+    "schema_source": "artifacts/v03/c19_external_validation/v2/official_protocol.json:raw_prediction_schema",
+    "exact_top_level_fields": 16,
+    "raw_record_id_committed": false,
+    "record_id_sha256_only": true,
+    "exact_unique_pair_indices_per_row": 1744,
+    "cross_row_pair_identity_consistency_required": true,
+    "status": "BOUND_AND_FAIL_CLOSED_SYNTHETICALLY_TESTED"
+  },
   "runtime_boundary": {
     "harness_runtime_dependencies": "stdlib_only",
     "network_allowed": false,
     "official_fit_tune_select_allowed": false,
     "python_requires": ">=3.11"
   },
-  "schema_version": "1",
+  "scoring_readiness": {
+    "frozen_metrics": ["BU_Acc", "BM_Acc", "BREU", "all_pair_accuracy", "final_coverage"],
+    "frozen_bootstrap_resamples": 10000,
+    "frozen_bootstrap_seed": 19901,
+    "evaluator_target_interface_exact_schema_frozen": false,
+    "bootstrap_quantile_interpolation_exact_rule_frozen": false,
+    "status": "PRE_START_SCORER_SEMANTICS_AMBIGUOUS",
+    "reason": "The frozen protocol fixes metric formulas, pair slices, bootstrap count/seed/unit and result inequalities, but does not uniquely freeze the evaluator-target payload schema or exact empirical-quantile/interpolation convention. MAIN must not invent those choices."
+  },
+  "schema_version": "2",
   "state_machine": [
     "fresh_execution_admission",
     "STARTED_exact_package",
@@ -54,6 +73,6 @@
     "immutable_raw_preservation",
     "scoring_from_preserved_raw"
   ],
-  "status": "prestart_harness_scaffold_not_execution_admitted",
-  "stop_reason_if_remaining_unbound": "PRE_START_HARNESS_INCOMPLETE_REQUIRES_SCIENTIFIC_IMPLEMENTATION_BINDING"
+  "status": "prestart_raw_contract_closed_scorer_semantics_ambiguous_not_execution_admitted",
+  "stop_reason": "PRE_START_SCORER_SEMANTICS_AMBIGUOUS"
 }
