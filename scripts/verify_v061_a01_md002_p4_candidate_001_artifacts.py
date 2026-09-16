@@ -21,33 +21,20 @@ from pathlib import Path
 from typing import Any
 
 try:
-    from scripts._verify_v061_a01_md002_p4_candidate_001_artifacts_base import (
-        CANDIDATE_ID,
-        CONTRACT_SCHEMA,
-        EXPECTED_EXECUTION_IDS,
-        EXPECTED_PYTHON,
-        RAW_SCHEMA,
-        RUNTIME_SCHEMA,
-        _canonical_sha256,
-        verify_raw_bundle as _verify_base_raw_bundle,
-    )
+    from scripts import _verify_v061_a01_md002_p4_candidate_001_artifacts_base as _base
 except ModuleNotFoundError:  # direct `python scripts/...py` execution
-    from _verify_v061_a01_md002_p4_candidate_001_artifacts_base import (
-        CANDIDATE_ID,
-        CONTRACT_SCHEMA,
-        EXPECTED_EXECUTION_IDS,
-        EXPECTED_PYTHON,
-        RAW_SCHEMA,
-        RUNTIME_SCHEMA,
-        _canonical_sha256,
-        verify_raw_bundle as _verify_base_raw_bundle,
-    )
+    import _verify_v061_a01_md002_p4_candidate_001_artifacts_base as _base
 
 
-# Compatibility export for the pre-existing structural-verifier unit tests.
-# The workflow CLI below never stops at this layer; it always runs the stronger
-# independent derivations through verify_preserved_raw_bundle().
-verify_raw_bundle = _verify_base_raw_bundle
+# Compatibility exports for the pre-existing structural-verifier unit tests.
+CANDIDATE_ID = _base.CANDIDATE_ID
+CONTRACT_SCHEMA = _base.CONTRACT_SCHEMA
+EXPECTED_EXECUTION_IDS = _base.EXPECTED_EXECUTION_IDS
+EXPECTED_PYTHON = _base.EXPECTED_PYTHON
+RAW_SCHEMA = _base.RAW_SCHEMA
+RUNTIME_SCHEMA = _base.RUNTIME_SCHEMA
+_canonical_sha256 = _base._canonical_sha256
+verify_raw_bundle = _base.verify_raw_bundle
 
 
 def _require(condition: bool, message: str) -> None:
@@ -277,7 +264,7 @@ def verify_preserved_raw_bundle(
 ) -> None:
     """Run structural verification plus independent scientific re-derivations."""
 
-    _verify_base_raw_bundle(
+    _base.verify_raw_bundle(
         root,
         expected_source_sha=expected_source_sha,
         expected_run_id=expected_run_id,
