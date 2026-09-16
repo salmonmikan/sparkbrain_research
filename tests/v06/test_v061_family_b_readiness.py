@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from dataclasses import replace
 
+import sparkbrain.evaluation.v061_family_b_readiness as family_b_readiness
 from sparkbrain.evaluation.v061_family_b_distributed_field_trace import (
     BELIEF_STATE_NULL_ID,
     FAMILY_B_GEN1_PROPOSAL,
@@ -9,6 +10,7 @@ from sparkbrain.evaluation.v061_family_b_distributed_field_trace import (
     PROTOCOL_BUNDLE_SOURCE_SHA,
 )
 from sparkbrain.evaluation.v061_family_b_readiness import (
+    EXPECTED_BELIEF_STATE_NULL_ID,
     EXPECTED_NEGATIVE_STOP_ID,
     EXPECTED_NULL_IDS,
     EXPECTED_PROPOSAL_SPECIFICATION_HASH,
@@ -56,10 +58,25 @@ def test_all_protocol_null_and_stop_ids_are_prospectively_fixed_and_distinct() -
     }
 
     assert protocol_ids == EXPECTED_PROTOCOL_IDS
+    assert BELIEF_STATE_NULL_ID == EXPECTED_BELIEF_STATE_NULL_ID
     assert null_ids == EXPECTED_NULL_IDS
     assert proposal.negative_stop_observation_id == EXPECTED_NEGATIVE_STOP_ID
     assert protocol_ids.isdisjoint(null_ids)
     assert proposal.negative_stop_observation_id not in protocol_ids | null_ids
+
+
+def test_belief_state_null_identity_drift_fails_readiness(monkeypatch: object) -> None:
+    monkeypatch.setattr(  # type: ignore[attr-defined]
+        family_b_readiness,
+        "BELIEF_STATE_NULL_ID",
+        "post-outcome-null-drift",
+    )
+
+    readiness = family_b_readiness.assess_family_b_gen1_readiness()
+
+    assert not readiness.null_ids_fixed
+    assert not readiness.ready_for_evidence_analyst_review
+    assert "null-ids-fixed" in readiness.missing_requirements
 
 
 def test_hash_binding_fails_closed_if_protocol_identity_changes() -> None:
