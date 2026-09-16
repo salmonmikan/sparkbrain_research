@@ -1,0 +1,135 @@
+name: Create authoritative annotated tag
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: "Authoritative tag name (freeze/*, sealed/*, formal/*, or evidence/*)"
+        required: true
+        type: string
+      target_sha:
+        description: "Exact 40-character commit SHA to tag"
+        required: true
+        type: string
+      experiment_id:
+        description: "Experiment or candidate identity"
+        required: true
+        type: string
+      protocol_identity:
+        description: "Protocol identity or digest"
+        required: false
+        default: ""
+        type: string
+      package_identity:
+        description: "Package identity or digest"
+        required: false
+        default: ""
+        type: string
+      provenance:
+        description: "Short provenance note / source of authority"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: authoritative-tag-${{ inputs.tag_name }}
+  cancel-in-progress: false
+
+jobs:
+  create-tag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate request and create annotated tag
+        env:
+          TAG_NAME: ${{ inputs.tag_name }}
+          TARGET_SHA: ${{ inputs.target_sha }}
+          EXPERIMENT_ID: ${{ inputs.experiment_id }}
+          PROTOCOL_IDENTITY: ${{ inputs.protocol_identity }}
+          PACKAGE_IDENTITY: ${{ inputs.package_identity }}
+          PROVENANCE: ${{ inputs.provenance }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          case "$TAG_NAME" in
+            freeze/*|sealed/*|formal/*|evidence/*) ;;
+            *)
+              echo "::error::Tag namespace must be freeze/*, sealed/*, formal/*, or evidence/*."
+              exit 1
+              ;;
+          esac
+
+          git check-ref-format "refs/tags/$TAG_NAME"
+
+          if [[ ! "$TARGET_SHA" =~ ^[0-9a-fA-F]{40}$ ]]; then
+            echo "::error::target_sha must be an exact 40-character commit SHA."
+            exit 1
+          fi
+
+          git fetch --prune --tags origin '+refs/heads/*:refs/remotes/origin/*'
+
+          if ! git cat-file -e "${TARGET_SHA}^{commit}" 2>/dev/null; then
+            echo "::error::Target commit $TARGET_SHA is not available from the repository."
+            exit 1
+          fi
+
+          if git ls-remote --exit-code --tags origin "refs/tags/$TAG_NAME" >/dev/null 2>&1; then
+            echo "::error::Authoritative tag already exists: $TAG_NAME. Existing authoritative tags are never replaced."
+            exit 1
+          fi
+
+          created_at_utc="$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+          message_file="$(mktemp)"
+          trap 'rm -f "$message_file"' EXIT
+
+          {
+            printf 'SparkBrain authoritative scientific identity\n\n'
+            printf 'tag_name: %s\n' "$TAG_NAME"
+            printf 'target_sha: %s\n' "$TARGET_SHA"
+            printf 'experiment_id: %s\n' "$EXPERIMENT_ID"
+            printf 'protocol_identity: %s\n' "$PROTOCOL_IDENTITY"
+            printf 'package_identity: %s\n' "$PACKAGE_IDENTITY"
+            printf 'freeze_timestamp_utc: %s\n' "$created_at_utc"
+            printf 'provenance: %s\n' "$PROVENANCE"
+            printf 'workflow_run: %s/actions/runs/%s\n' "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY" "$GITHUB_RUN_ID"
+          } > "$message_file"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag --annotate "$TAG_NAME" "$TARGET_SHA" --file "$message_file"
+
+          # Deliberately no --force. A concurrent creator of the same tag must make this push fail.
+          git push origin "refs/tags/$TAG_NAME:refs/tags/$TAG_NAME"
+
+          remote_lines="$(git ls-remote --tags origin "refs/tags/$TAG_NAME" "refs/tags/$TAG_NAME^{}")"
+          tag_object_sha="$(printf '%s\n' "$remote_lines" | awk -v ref="refs/tags/$TAG_NAME" '$2 == ref {print $1}')"
+          peeled_sha="$(printf '%s\n' "$remote_lines" | awk -v ref="refs/tags/$TAG_NAME^{}" '$2 == ref {print $1}')"
+
+          if [[ -z "$tag_object_sha" || -z "$peeled_sha" ]]; then
+            echo "::error::Remote ref is not a verifiable annotated tag."
+            exit 1
+          fi
+
+          if [[ "${peeled_sha,,}" != "${TARGET_SHA,,}" ]]; then
+            echo "::error::Remote annotated tag peels to $peeled_sha instead of requested $TARGET_SHA."
+            exit 1
+          fi
+
+          {
+            echo "## Authoritative annotated tag created"
+            echo
+            echo "- tag: \`$TAG_NAME\`"
+            echo "- annotated tag object: \`$tag_object_sha\`"
+            echo "- target commit: \`$peeled_sha\`"
+            echo "- experiment/candidate: \`$EXPERIMENT_ID\`"
+            echo "- created UTC: \`$created_at_utc\`"
+            echo
+            echo "This workflow never force-updates or deletes authoritative tags."
+          } >> "$GITHUB_STEP_SUMMARY"
