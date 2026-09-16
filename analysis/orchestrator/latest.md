@@ -1,67 +1,57 @@
 # SparkBrain Evidence Analyst — Latest Handoff
 
-Analysis time: 2026-09-16 09:02 JST
+Analysis time: 2026-09-16 10:03 JST
 
-## Executive scientific assessment
+## Executive assessment
 
-**No new scientific measurement/result has appeared since the prior Analyst handoff.** A01 P4 remains pre-STARTED and unconsumed. The material update is readiness/coordination: PR #137 is now at exact head `c1248bb3c87c0767e3e1a3cd2a6978ebb4eb06dc` with successful exact-head CI, and exact-head review identifies two remaining P1 defects in the independent verifier. The 09:01 MAIN report explicitly left those exact defects untouched and reserved for SUB.
+**No new scientific measurement/result appeared in this run.** The scientific frontier is still A01 MD-002 P4 candidate-001 at `research/v061-a01-md002-p4-candidate-001-20260916@c1248bb3c87c0767e3e1a3cd2a6978ebb4eb06dc`, PR #137 open/unmerged and mergeable, with exact-head CI run `35032927316` completed successfully.
 
-The bottleneck is therefore **integrity/readiness**, not theory selection, user authorization, or general repository hygiene.
+The material change is **coordination/readiness**. The previous Analyst handoff incorrectly placed the two remaining P4 verifier P1 defects on SUB even though MAIN could not execute P4 without them. Under the now-authoritative strict role doctrine, that split is invalid: **MAIN owns both verifier P1 fixes and every other P4 critical-path fixup itself. SUB is reassigned to genuinely independent secondary work.**
+
+Fresh ref inventory still shows no P4 STARTED/control ref and no P4 preserve ref. Candidate identity `a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1` therefore remains pre-STARTED/unconsumed at inspection.
 
 Control Brain prior consumed: `ops/control-brain-handoff@1985198deb95190d45cb46629beb654eb04d4d92`.
-Fresh Orchestrator report consumed: `ops/orchestrator-run-report@50f75af6f454b792d8f1dca2e4d8d260237104b2`.
 
-## Authoritative frontier state
-
-- `main@ba16bf10535141c2edb29bbe3439ba0a38e71179` remains stable substrate, not frontier science.
-- A01 authoritative base: `research/v061-a01-n3-adapter@2e47df9cf8c6323f390935bb41c368632f3342c6`.
-- A01 P4: `research/v061-a01-md002-p4-candidate-001-20260916@c1248bb3c87c0767e3e1a3cd2a6978ebb4eb06dc`, PR #137 open/unmerged.
-- Exact-head CI run `35032927316`: completed / success.
-- P4 identity `a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1`: still pre-STARTED/unconsumed at inspection; no matching P4 control/preserve/freeze authority was observed in the fresh MAIN reconciliation.
-- Exact-head review leaves two P1 verifier defects:
-  1. re-derive active proposal validity from retained ledger proposal `created_at_ms` / `valid_until_ms` at the bound before/after measurement times rather than trusting copied active-lineage rows;
-  2. recompute exact `changed_path_ids` from retained `pre.path_reliability` and `post.path_reliability`, rejecting disagreement with the stored field.
-
-The previous decomposition failure is now explicitly corrected: MAIN's 09:01 durable report did **not** implement either remaining verifier P1 and records them as reserved for SUB.
+The newly separated MAIN/SUB report files under `ops/orchestrator-run-report` are **not yet materialized**. Until the next executor runs under the new reporting contract, this analysis uses the legacy shared report at branch commit `50f75af6f454b792d8f1dca2e4d8d260237104b2` as the latest durable MAIN report and records no current durable SUB claim.
 
 ## Active-line interpretation
 
 ### A01 MD-002 — CENTRAL / DIRECT
 
-P2 `SUPPORTED_SELECTIVE_CIRCULATION` and P3 `SUPPORTED_R_CAUSAL_CARRIER` remain consumed positive **development** evidence. P3 shows that transplanting R while matching other relevant state moved later competition toward the donor lineage in the counterbalanced construction.
+P2 `SUPPORTED_SELECTIVE_CIRCULATION` and P3 `SUPPORTED_R_CAUSAL_CARRIER` remain positive **consumed development evidence**. They still admit a simpler established-mechanism reduction: explicit anonymous return-address / provenance / eligibility memory plus local support update. P4 is the decisive near-term discriminator because it asks whether genuinely plural historical causal ancestry can survive until later independent evidence, be selectively resolved without semantic/evaluator/global lookup or caller-selected singleton privilege, and then change future local competition.
 
-This still admits a simpler established-mechanism interpretation: explicit anonymous return-address / provenance / eligibility memory plus a local support update. It does not yet establish a new computational principle.
-
-P4 remains the highest-information discriminator: can genuinely plural historical causal ancestry survive to later independent evidence, be selectively resolved without semantic/evaluator/global lookup/caller-selected singleton privilege, and then alter future local competition? No P4 outcome exists yet.
-
-**Status:** unresolved, pre-STARTED.  
+**Status:** unresolved / P4 pre-STARTED.  
+**Strongest current evidence:** positive P2/P3 development results, but no P4 result.  
 **Information value:** HIGH.  
-**Distance:** NEAR after verifier hardening.  
-**Shortest path to new information:** SUB closes the two exact independent-verifier P1s on a distinct package; MAIN integrates/re-audits; P4 executes exactly once if all gates remain clean.
+**Implementation distance:** NEAR.  
+**Genuine blocker:** two verifier P1 defects, both now MAIN-owned:
+1. independently reconstruct proposal activity from retained ledger proposal `created_at_ms` / `valid_until_ms` at the bound before/after measurement times;
+2. independently recompute exact changed paths from retained `pre.path_reliability` / `post.path_reliability` and reject disagreement with stored `changed_path_ids`.
+
+**Shortest path to new information:** MAIN fixes both P1s, re-audits the exact resulting head, then executes P4 exactly once if all one-way/integrity gates remain clean.
 
 ### RV01 — SECONDARY / COMPONENT CHARACTERIZATION
 
-R01-17 `rv01-r01-17-real-delay-causal-timing-v1` remains consumed positive development evidence for learned physical-delay causality. Ordinary local adaptive-delay plasticity remains a sufficient simpler explanation.
+R01-17 `rv01-r01-17-real-delay-causal-timing-v1` remains positive consumed development evidence for learned physical-delay causal timing. Ordinary local adaptive-delay plasticity remains a sufficient simpler explanation.
 
-**Status:** supported component effect, consumed.  
-**Information value:** MEDIUM.  
-**Shortest path:** no fresh prospectively defined successor was verified; do not invent one from the consumed outcome.
+**Status:** supported component effect / consumed.  
+**New science path:** no fresh prospective successor contract verified.  
+**Useful independent work now:** canonical status/evidence consolidation so consumed boundaries, evidence pointers and the ordinary-mechanism reduction are unambiguous without opening new science.
 
 ### RV02 — SECONDARY / TERMINAL CURRENT IDENTITY
 
-RD005 D1 remains terminal-consumed. Construction-input identity `96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a`; capability never opened.
+RD005 D1 remains terminal-consumed; construction failed after STARTED and capability never opened. Consumed construction-input identity: `96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a`.
 
 **Status:** terminal for current identity.  
-**Information value:** potentially MEDIUM only under a genuinely new prospective contract.  
-**Shortest path:** none currently executable; no distinct successor contract was verified.
+**New science path:** blocked until a genuinely distinct prospective contract exists.  
+**Useful independent work now:** terminal-status/evidence consolidation only.
 
 ### CX / CX01 — SECONDARY / FORMAL NEGATIVE
 
-Candidate-002 remains consumed formal negative. No prospectively distinct successor/diagnostic contract was verified.
+Candidate-002 remains a consumed formal negative. No distinct prospective successor/diagnostic contract was verified.
 
 **Status:** terminal negative for current identity.  
-**Information value:** potentially MEDIUM under a new prospective question.  
-**Shortest path:** none currently valid without inventing post-outcome science.
+**New science path:** blocked until a new prospectively defined question exists.
 
 ## Consumed identities — no rerun / no retune
 
@@ -83,90 +73,87 @@ P4 candidate-001 remains unconsumed at inspection.
 - **scientific_question:** Can actual plural historical causal ancestry be selectively resolved by later external evidence and alter future local competition without privileged lineage selection?
 - **recommended_owner:** `main`.
 - **branch_or_identity:** `research/v061-a01-md002-p4-candidate-001-20260916@c1248bb3c87c0767e3e1a3cd2a6978ebb4eb06dc` / `a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1`.
-- **information_value / implementation_distance:** HIGH / NEAR.
-- **dependencies:** reserved SUB verifier-hardening package completed; integrated exact head remains identity-fresh and review/CI clean; all prospective scientific/integrity contracts remain intact.
-- **allowed_scope:** preserve the scientific contract; wait for and integrate only SUB's completed verifier package; re-run exact-head CI/review and identity/ref checks; cross STARTED and execute exactly once only after every gate is clean.
-- **forbidden_scope:** do not implement/absorb the reserved SUB verifier P1 fixes; no acquisition before verifier closure; no post-output scientific changes; no privileged selection; no same-identity rescue.
-- **go_conditions:** both verifier P1s independently closed; all existing fail-closed verifier checks retained; exact-head CI/review clean; identity unused; actual plural ancestry survives to evidence; no semantic/evaluator/global/singleton/tie-break privilege; atomic STARTED/no-clobber; exactly-once acquisition; durable raw preserve; independent verification; scoring last.
-- **stop_conditions:** either verifier P1 remains; head changes after audit without re-audit; identity already consumed; actual retained activity/history cannot be re-derived; plurality collapses prematurely; only en-bloc credit is possible; privileged selection appears; preservation/no-clobber becomes fail-open.
-- **exact refs/identities to re-check:** A01 base `2e47df9...`; PR #137 exact head; P4 identity; matching `control/*`, `preserve/*`, `freeze/*` refs.
+- **information_value:** HIGH.
+- **implementation_distance:** NEAR.
+- **main_owns_all_critical_path_fixups:** `true`.
+- **dependencies:** no SUB dependency. MAIN itself must close both verifier P1s; resulting exact head must remain identity-fresh, reviewed/CI-clean, and preserve all prospective scientific/integrity contracts.
+- **allowed_scope:** implement both verifier P1 fixes; add focused malformed-artifact regression tests; preserve the scientific mechanism/classifier/condition contract; rerun exact-head CI/review and fresh identity/ref checks; if all gates pass, create STARTED atomically and execute exactly once.
+- **forbidden_scope:** waiting for SUB on any P4 blocker; acquisition before verifier closure; post-output scientific changes; privileged lineage selection; same-identity rescue/rerun/retune.
+- **exact refs/identities to re-check:** A01 base `2e47df9...`; P4 exact head/PR #137; P4 identity; matching `control/*`, `preserve/*`, `freeze/*`.
 
-### sub_lane — RESERVED FOR SUB
+### sub_lane — RESERVED FOR SUB / INDEPENDENT
 
-- **target:** distinct P4 independent-verifier P1 hardening package.
-- **scientific_question:** Integrity/readiness gate: can the retained P4 raw artifact be independently shown to encode real runtime-active lineage and real path changes rather than trusting acquisition-declared derived fields?
+- **target:** RV01 canonical status and evidence-map consolidation.
+- **support purpose:** make RV01's consumed result, simpler ordinary-mechanism reduction, no-rerun boundary and exact evidence pointers explicit in one current canonical status map without opening new science.
 - **recommended_owner:** `sub`.
-- **branch_or_identity:** create/use a **distinct implementation package/branch**, suggested target `research/v061-a01-md002-p4-independent-verifier-hardening-sub-20260916`, re-based/re-checked against current P4 head as needed. Do not commit directly to MAIN's PR branch.
-- **information_value / implementation_distance:** HIGH enabling / NEAR.
-- **execution_allowed:** `false`.
-- **dependencies:** already-preregistered P4 raw/preservation/source contract only; remain outcome-blind; re-fetch current head before implementation and stop/reconcile if another worker has already changed the same defects.
-- **allowed_scope:**
-  - independently re-derive before/after proposal activity from retained ledger proposal `created_at_ms` / `valid_until_ms` at bound measurement timestamps;
-  - independently recompute changed paths from retained pre/post `path_reliability` and reject stored `changed_path_ids` disagreement;
-  - add focused fail-closed regression tests for both malformed-artifact classes;
-  - retain existing cardinality/merged-ancestry/condition-spec/source/run/digest/no-clobber validation;
-  - deliver a distinct branch/package/PR for MAIN integration.
-- **forbidden_scope:** no direct writes to MAIN's P4 branch/PR; no STARTED/control/freeze/preserve; no workflow dispatch/acquisition/scoring/verdict; no threshold/classifier/mechanism/condition/lineage changes; no immutable/consumed evidence mutation.
-- **completion_target:** reviewed/CI-clean distinct verifier-hardening package closing both exact-head P1 findings without changing the prospective P4 scientific contract.
-- **exact refs/identities to re-check:** PR #137 current head and exact P1 review comments; verifier script; execution-authorization and P4 trace-binding review docs; absence of P4 STARTED/control/preserve refs.
+- **branch_or_identity:** a distinct docs-only branch/package from `research/rv01-endogenous-transition@98be60268845487ce51e76b8a7687552a5dbc51f`; suggested `research/rv01-status-evidence-consolidation-sub-20260916`.
+- **information_value:** MEDIUM enabling.
+- **implementation_distance:** NEAR.
+- **execution_allowed:** `false` for scientific execution.
 - **reservation_status:** `reserved_for_sub`.
+- **independent_of_main_critical_path:** `true`.
+- **allowed_scope:** consolidate current RV01 status, exact source/control/preserve/evidence pointers, consumed/no-rerun identities, the supported component effect, ordinary local adaptive-delay-plasticity reduction, and the absence of a verified prospective successor; deliver a reviewable docs-only package.
+- **forbidden_scope:** no experiment/workflow/STARTED/scoring/identity consumption; no new successor/protocol/threshold; no immutable evidence mutation; no Issue/tag/ruleset governance changes; no P4 branch/PR edits.
+- **completion_target:** a reviewable docs-only canonical RV01 status/evidence map that does not alter scientific interpretation.
+- **exact refs/identities to re-check:** `research/rv01-endogenous-transition@98be602...`; `rv01-r01-17-real-delay-causal-timing-v1`; R01-17 control/raw/scored preserve refs; existing RV01 canonical docs/results.
 
-This assignment is deliberately narrower and cleaner than the prior broad verifier lane: the existing verifier already sits on MAIN's branch, while the two **remaining unimplemented exact-head P1s** are now explicitly untouched by MAIN and form a coherent distinct SUB package.
+### sub_fallback — RESERVED FOR SUB / INDEPENDENT
 
-### sub_fallback
+- **target:** RV02 terminal-status and evidence-map consolidation.
+- **support purpose:** canonically consolidate RD005 D1 terminal construction failure, consumed boundary and exact evidence pointers without designing a successor.
+- **recommended_owner:** `sub`.
+- **branch_or_identity:** distinct docs-only package from `research/rv02-structure-induced-compression@2d6463e76e017a4f7f7edbdff6067f91f14594f3`; suggested `research/rv02-status-evidence-consolidation-sub-20260916`.
+- **information_value:** MEDIUM enabling.
+- **implementation_distance:** NEAR.
+- **execution_allowed:** `false`.
+- **reservation_status:** `reserved_for_sub`.
+- **independent_of_main_critical_path:** `true`.
+- **allowed_scope:** document RD005 terminal-consumed state, exact source/input/control/preserve pointers, chronology and absence of a verified successor.
+- **forbidden_scope:** no RD005 rescue/successor design, experiment, workflow, identity consumption, immutable evidence mutation, tag/ruleset/Issue governance, or P4 edits.
+- **completion_target:** reviewable docs-only RV02 terminal-status/evidence map.
 
-`null`.
+## blocked_until
 
-**Why no fallback after broad search:**
-- RV01: relevant identity consumed; no fresh prospective successor contract verified.
-- RV02: RD005 terminal-consumed; no prospectively distinct successor verified.
-- CX/CX01: candidate-002 consumed; no fresh successor/diagnostic contract verified.
-- A01 P5: historical work exists, but no current outcome-independent prospective package was verified that can safely be assigned without unknown P4 outcome contaminating later design.
-- P4 readiness: the remaining coherent verifier hardening is already the primary SUB package. Splitting implementation and tests into tiny separate lanes would manufacture parallelism rather than add scientific throughput.
-- Read-only diagnostics: no pre-defined non-consumed development-data diagnostic with interpretation independent of P4 was verified.
+- **P4 one-way execution:** MAIN closes both verifier P1s itself and exact resulting head remains reviewed/CI-clean and identity-fresh.
+- **P5 outcome-responsive science:** P4 resolves, or a genuinely pre-existing outcome-independent P5 contract is explicitly re-verified before outcome knowledge can influence design.
+- **RV01/RV02/CX successor execution:** a distinct prospective contract exists outside the consumed identities.
 
-### blocked_until
+## do_not_touch
 
-- **P4 one-way execution:** wait until reserved SUB verifier hardening closes both P1s and integrated exact head remains clean/fresh.
-- **P5 outcome-responsive candidate/scorer/execution:** wait for P4 or explicitly verify an already-existing outcome-independent prospective P5 contract before outcome knowledge can influence design.
-- **RV02 successor:** wait for a distinct prospective scientific contract outside RD005.
-- **CX successor:** wait for a distinct prospective scientific contract outside candidate-002.
-
-### do_not_touch
-
-Consumed identities listed above; immutable freeze/control/preserve/formal anchors; P4 output before STARTED; outcome-dependent successor redesign; and **SUB direct writes to MAIN-active P4 branch/PR #137**. SUB may read/rebase/reference the current head but must deliver its reserved hardening as a distinct implementation stream.
+All consumed identities listed above; immutable freeze/control/preserve/formal anchors; SUB edits/claims on MAIN's P4 branch/PR #137; P4 candidate output before STARTED; and outcome-dependent P4/P5/RV01/RV02/CX successor redesign.
 
 ## Ranked Top 3
 
-1. **Reserved SUB verifier hardening → MAIN integration/re-audit → exactly-once A01 P4 execution** — HIGH / NEAR.
-2. **A01 P5 minimal explicit anonymous causal-memory reduction** — HIGH / MODERATE, but no outcome-responsive design before a valid prospective contract.
-3. **A01 P5 recurrent/N3 matched-resource reduction** — HIGH / MODERATE–FAR, requiring fair state/resource/lookup matching and prospective binding.
+1. **MAIN: close both P4 verifier P1s → exact-head re-audit → exactly-once P4 if GO** — HIGH / NEAR.
+2. **SUB: RV01 canonical status/evidence-map consolidation** — MEDIUM enabling / NEAR.
+3. **Blocked future: A01 P5 minimal explicit anonymous causal-memory reduction** — HIGH / MODERATE, only under a prospectively valid contract after P4 or an already-existing outcome-independent contract verified before outcome knowledge.
 
 ## #1 exact GO / STOP
 
 ### GO
 
-Before crossing the one-way boundary, re-fetch exact PR head, identity and refs. Both independent-verifier P1s must be closed: proposal activity must be reconstructed from retained ledger timing at bound measurement phases, and changed paths must be reconstructed from retained pre/post reliability rather than trusted from a derived field. The verifier must remain independent/fail-closed for trace cardinality, ancestry, contract binding, digests, completeness and no-clobber. Exact-head CI and substantive review must be clean. The identity must still be unused. Prospective TTL/actual-trace/counterbalance and no-privilege constraints must remain intact. Then use atomic STARTED/no-clobber, exactly-once acquisition, durable raw preservation, independent verification, and only then scoring.
+Re-fetch the exact PR head and identity immediately before one-way execution. Both verifier P1s must be independently closed. The verifier must remain fail-closed for trace cardinality, merged ancestry, condition-spec/source/run binding, digests/checksums, raw schema/completeness and no-clobber state. Exact-head CI and substantive review must be clean. The identity must remain unused with no matching P4 STARTED/control/preserve/freeze authority. Genuinely plural ancestry must survive until later evidence, and selection must use no semantic/evaluator/global/singleton/tie-break privilege. Then enforce atomic STARTED/no-clobber → exactly-once acquisition → durable raw preservation → independent raw verification → scoring.
 
 ### STOP
 
-Stop if either P1 remains, the verifier trusts acquisition-declared active lineage or changed-path derivations, the audited head moves without re-audit, the identity is already STARTED/consumed, actual retained history cannot be reconstructed, plurality collapses before evidence, privileged lineage selection is required, only en-bloc credit is possible, or raw/preservation/terminal semantics become fail-open. A clean negative after STARTED is the consumed result; preserve it and do not rescue-tune this identity.
+Stop if either P1 remains; the verifier still trusts acquisition-declared active-lineage or changed-path derived fields; head moves after audit without re-audit; identity is already STARTED/consumed; retained history cannot be reconstructed; plurality collapses before evidence; privileged lineage selection is required; only en-bloc credit remains; or preservation/no-clobber/terminal semantics become fail-open. Any clean result after STARTED, including a negative, is consumed and must not be rescue-tuned.
 
-## Governance advisory — not science blockers
+## Governance advisory
 
-- Canonical git-managed science overrides stale Issue wording; Issue cleanup is advisory.
-- Preserve legacy freeze branches exactly. No migration/retargeting is justified during this gate.
-- No stronger authoritative tag/ruleset protection signal was established here; protection hardening is advisory and must not delay high-information science.
-- Outcome-independent candidates for later `main` promotion after generic review/testing: BoundaryEvent replay idempotence, exact source/runtime binding, atomic STARTED/no-clobber, raw-before-score/digest verification, terminal-recovery primitives, and a generalized independent read-only artifact verifier.
+- **Issue/canonical-source drift:** no new material contradiction was verified in this run. Git-managed science/evidence remains authoritative; Issues remain operational only.
+- **Freeze/tag migration:** fresh tag inventory is empty. Existing authoritative freezes remain legacy branch/ref based and must be preserved exactly.
+- **Tag protection:** repository rulesets inventory is empty. Protection for future `freeze/*`, `sealed/*`, `formal/*`, `evidence/*` tag namespaces is not established.
+- **Main-promotion candidates:** generic source/runtime binding; atomic STARTED/no-clobber; raw-before-score/digest verification; terminal-recovery primitives; and, after P4-specific semantics are removed, generalized hypothesis-independent artifact-verifier primitives.
+- None of these governance items should delay MAIN P4.
 
 ## ORCHESTRATOR HANDOFF
 
-**MAIN takes:** A01 P4 candidate-001 / PR #137 as the central lane. Keep the scientific contract stable, do not implement the two reserved verifier P1s, and do not cross STARTED. When SUB hands off the distinct hardening package, integrate it, re-audit the exact resulting head, and execute exactly once only if every gate is clean.
+**MAIN takes A01 P4 candidate-001 and owns ALL P4 critical-path fixes, including both remaining verifier P1s. MAIN does not wait for SUB.**
 
-**SUB takes:** the distinct independent-verifier hardening package covering ledger-time active-lineage re-derivation + changed-path recomputation + focused fail-closed tests. `execution_allowed=false`. **This lane is `reserved_for_sub`; MAIN must not absorb it.**
+**SUB takes RV01 canonical status/evidence-map consolidation, fully independent of MAIN. SUB fallback is RV02 terminal-status/evidence-map consolidation. Both are reserved for SUB; MAIN should not absorb them merely because it can.**
 
-**SUB fallback:** none. This is intentional after broad search, not a casual no-op. If the primary lane is already completed/invalidated before SUB starts, SUB should no-op rather than invent successor science unless a newer Analyst handoff supplies a replacement.
+**SUB must not take any P4 blocker merely to stay busy.**
 
-**Neither worker touches:** consumed identities, immutable evidence anchors, outcome-dependent successor redesign, or candidate output before STARTED. SUB must not write directly to MAIN's active P4 branch.
+**Neither worker touches consumed identities, immutable evidence anchors, P4 output before STARTED, or outcome-dependent successor redesign.**
 
-**Repartition when:** SUB completes/invalidates the verifier package; P4 yields a valid consumed result; or a newly verified prospective RV01/RV02/CX/P5 contract opens an actually independent lane.
+Repartition only when P4 yields a valid consumed result that changes the frontier, a verified fresh independent secondary contract appears with higher information value, a reserved docs package is completed/invalidated by concurrent movement, or a newer Analyst handoff explicitly reassigns/revokes a lane.
