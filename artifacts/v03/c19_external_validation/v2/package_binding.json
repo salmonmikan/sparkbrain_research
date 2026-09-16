@@ -1,0 +1,54 @@
+{
+  "schema_version": "1",
+  "package_id": "c19-external-v2-readiness-package-v1",
+  "protocol_id": "c19-external-v2",
+  "adapter_contract_id": "c19-belief-r-truth-free-symbolic-adapter-v1",
+  "planned_official_identity": "c19-external-v2-official-v1",
+  "base_main_commit": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+  "proposal_binding_commit": "a407b8a836c58a784551e5cfdae390ebfaed73ee",
+  "implementation_commit": "398eafd988afb04111cc8bcf1243fbbeff622fed",
+  "binding_scheme": "git-commit-plus-git-blob-sha1",
+  "bound_files": [
+    {
+      "path": "artifacts/v03/c19_external_validation/v2/preregistration.json",
+      "git_blob_sha1": "0921f92c9cc29ac68f13972e24117870d159fc65"
+    },
+    {
+      "path": "docs/C19_V2_TRUTH_FREE_ADAPTER_PREREGISTRATION.md",
+      "git_blob_sha1": "bc383d635aee40b7f837090b8551c4a3d53c284c"
+    },
+    {
+      "path": "src/sparkbrain/v03_external_validation/truth_free_adapter.py",
+      "git_blob_sha1": "3153fcb61d5872e93d22f30f0f1f808f856bfaeb"
+    },
+    {
+      "path": "scripts/check_c19_v2_readiness.py",
+      "git_blob_sha1": "814206a7b1c8d2a4c39b8be2b9eea66342bba372"
+    },
+    {
+      "path": "tests/test_c19_v2_truth_free_adapter.py",
+      "git_blob_sha1": "4143fea886fd147fe364f4faefb99df124e20ba7"
+    }
+  ],
+  "historical_c19_v1": {
+    "source_commit": "052413136229dcfa63f08cebe19585134f7cfb98",
+    "preregistration_sha256": "97a2448e2918f3b0a4583520ad2f35d5d47d99813585be7bb3fae32e0b340cfe",
+    "status": "not_evaluated_blocked_readiness",
+    "mutated": false
+  },
+  "official_data_access": {
+    "cache_opened": false,
+    "cache_verified": false,
+    "examples_read": false,
+    "predictions_produced": false,
+    "scoring_performed": false
+  },
+  "one_way_state": {
+    "started_ref_created": false,
+    "workflow_dispatched": false,
+    "identity_consumed": false,
+    "freeze_or_evidence_authority_created": false
+  },
+  "future_admission_required": true,
+  "exact_head_ci_must_be_green_before_analyst_admission": true
+}
