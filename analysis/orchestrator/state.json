@@ -1,351 +1,355 @@
 {
-  "timestamp": "2026-09-17T03:58:35+09:00",
+  "timestamp": "2026-09-17T05:02:34+09:00",
+  "worker_role": "evidence_analyst",
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "control_brain_handoff": "b3e9da4b6eb65f01282db8f06f967f96e1ca8be0",
-    "prior_evidence_analyst_handoff": "5511d0ec124c122c08148fd139b2ccaad9b79872",
-    "orchestrator_report_tip": "6c3d5cc730b057f5c852160a904a0124e22cafe7",
-    "main_orchestrator_report_commit": "6c3d5cc730b057f5c852160a904a0124e22cafe7",
-    "sub_orchestrator_report_commit": "409d5356d69b9b2635dde0a8f84cbc4eabc44069",
-    "external_research_audit_handoff": "33d4eb513e62a64860c94073cf8a2a743e5481b9",
-    "c19_v2_branch": "research/c19-truth-free-symbolic-adapter-v2-20260917@90c936a7abca7eba0dac1f977753503551e73368",
-    "c19_v2_readiness_anchor": "7ede1bfb41285ec0107136b4f6abd5e893adcacf",
-    "c19_v2_readiness_protocol": "c19-external-v2",
-    "c19_v2_official_protocol": "c19-external-v2-official-protocol-v1",
-    "c19_v2_official_protocol_blob": "88d2eabaf8309aa2a0266d91f7463d1a8dcdc38f",
-    "c19_v2_official_protocol_validator_blob": "61e1c7c5cba3340796f1d89602bbffc6be7941a1",
-    "c19_v2_adapter_contract": "c19-belief-r-truth-free-symbolic-adapter-v1",
-    "c19_v2_adapter_blob": "3153fcb61d5872e93d22f30f0f1f808f856bfaeb",
-    "c19_v2_planned_identity": "c19-external-v2-official-v1",
-    "c19_v2_exact_head_ci": {
-      "run_id": 35135084743,
-      "conclusion": "success"
-    },
-    "c19_v2_started_or_control_ref_observed": false,
-    "c19_v2_preserve_or_evidence_ref_observed": false,
-    "a01_programme_closeout": "research/v061-a01-registered-family-closeout-20260917@3329d15d9a3f73555396fb93a4dab117616e7bc2",
-    "rv01": "research/rv01-endogenous-transition@19cf98ec08635829f20c9ee21f4949a8a624d4ec",
-    "rv02": "research/rv02-development-feasibility@c6b33606850ef591690074f50ed92a4c9400b8bd",
-    "cx01": "research/cx01-comparator-extension@251f7350b7a30c50e8b8a3329b6ff920d85bf493",
-    "sub_terminal_provenance_v2": "research/methods-terminal-provenance-v2-sub-20260917@d5317485a591439cb52d52b649b4930964cf2b3a",
-    "open_pr_count": 0,
-    "open_issues": [139],
-    "git_tags": [],
-    "repository_rulesets": [],
-    "main_protected": false,
-    "legacy_freeze_control_preserve_evidence_refs_inspected": true
+    "evidence_analyst_handoff_before_write": "9f6cb3b1cb4a5bb1a7a10f6f9b04e54c50bb1cec",
+    "control_brain_handoff": "b3e9a7e13f1adf72086f79d88c62a2995557ccc5",
+    "orchestrator_run_report": "abcb755828259dc55f3854017e70f984b96ab73e",
+    "external_research_audit_handoff": "8f405b63d0afc8a6ffae522aa68799c54006f52d",
+    "c19_frontier": "research/c19-truth-free-symbolic-adapter-v2-20260917@4ed49e9985b120486efba2db37e558848bc36fe0",
+    "c19_frozen_science_anchor": "90c936a7abca7eba0dac1f977753503551e73368",
+    "sub_terminal_provenance": "research/methods-terminal-provenance-v2-sub-20260917@d5317485a591439cb52d52b649b4930964cf2b3a",
+    "a01_closeout": "research/v061-a01-negative-completion-coordinator-20260916@3329d15d9a3f73555396fb93a4dab117616e7bc2",
+    "legacy_authorities": [
+      "freeze/r01-16-family-v1@d817ea...",
+      "control/r01-17-v1@4a3da4...",
+      "preserve/r01-17-replicate-v1@774d85..."
+    ]
   },
-  "Control Brain commit": "b3e9da4b6eb65f01282db8f06f967f96e1ca8be0",
-  "MAIN report commit consumed": "6c3d5cc730b057f5c852160a904a0124e22cafe7",
-  "SUB report commit consumed": "409d5356d69b9b2635dde0a8f84cbc4eabc44069",
-  "External Research/Audit handoff commit/role consumed": {
-    "commit": "33d4eb513e62a64860c94073cf8a2a743e5481b9",
-    "role": "LITERATURE_REDUCTION_SCOUT",
-    "independent_auditor_durable_handoff_observed": false
-  },
+  "control_brain_commit": "b3e9a7e13f1adf72086f79d88c62a2995557ccc5",
+  "main_report_commit_consumed": "43192d47c4229944d2be4e1c9dd9063d1cd257f8",
+  "sub_report_commit_consumed": "abcb755828259dc55f3854017e70f984b96ab73e",
+  "external_research_audit_handoff_commit_consumed": "8f405b63d0afc8a6ffae522aa68799c54006f52d",
+  "external_research_audit_role_consumed": "LITERATURE_REDUCTION_SCOUT",
   "external_input": {
-    "handoff_commit": "33d4eb513e62a64860c94073cf8a2a743e5481b9",
+    "exact_handoff_commit": "8f405b63d0afc8a6ffae522aa68799c54006f52d",
     "role": "LITERATURE_REDUCTION_SCOUT",
-    "new_since_previous_analyst_cycle": false,
+    "independent_auditor_handoff_present": false,
     "findings_consumed": [
-      "Eligibility traces / three-factor learning / e-prop are established delayed selective-credit reductions.",
-      "Pending delayed causal-choice representations are established simpler mechanisms.",
-      "Latent-cause / belief-state posterior mechanisms reduce plurality novelty.",
-      "Learned synaptic/axonal delay prior art strengthens RV01's ordinary adaptive-delay reduction.",
-      "Local/online/forward-only learning is crowded prior art and is a constraint rather than novelty evidence."
+      "A01 delayed/selective-credit novelty is further reduced by eligibility-trace, three-factor/e-prop, pending-causal-choice, and latent-cause-posterior prior art.",
+      "RV01 learned-delay novelty is further reduced by adaptive learned synaptic/axonal-delay prior art.",
+      "C19 must be interpreted against test-time/recurrent/fast-weight-memory and hybrid recurrent/attention prior art; a positive result is not by itself mechanistic novelty.",
+      "The cleanest prospective internal separator already present in the frozen 55-row inventory is I2+G0+E0 versus I2+G1+E0 under identical I2 representation bytes and matched resources.",
+      "For any dynamics claim, the strongest comparator must receive the same adapter representation; otherwise only a representation/interface claim is justified.",
+      "C06 wording should stay narrow: failure against the tested frozen external baseline, not broad loss of novelty."
     ],
-    "affected_lines": ["A01", "RV01"],
-    "strategic_impact": "Raises the novelty and reduction bar for future A01/RV01 work but does not expose a new C19-v2 leak, comparator or counterexample. Current allocation changes because repository inspection found an executable-harness gap, not because of external input.",
-    "future_prospective_baselines_or_discriminators": [
-      "Eligibility/return-address local-memory comparator for any future A01 delayed-credit claim.",
-      "Latent-cause/belief-state comparator for any future A01 plurality claim.",
-      "Adaptive learned synaptic/axonal-delay comparator for future RV01 learned-delay claims."
+    "affected_lines": [
+      "A01",
+      "RV01",
+      "C19",
+      "C06"
     ],
-    "allocation_changed": false,
+    "strategic_impact": {
+      "allocation_changed": false,
+      "why": "C19 remains the highest-information unresolved frontier. The new literature tightens the binding/fairness and interpretation bar rather than displacing C19.",
+      "novelty_bar": "raised for A01/RV01 and for any broad C19 mechanistic novelty claim",
+      "prospective_discriminator": "I2+G0+E0 vs I2+G1+E0 with exactly the same I2 representation and matched state/compute/data",
+      "protocol_mutation": "forbidden; use the already-frozen rows only and add a prospective interpretation/binding supplement before STARTED"
+    },
     "must_not_change": [
-      "Consumed/frozen A01 and RV01 identities/evidence.",
-      "Rejected exact A01 Family-B/C objects.",
-      "Frozen C19-v2 semantic protocol/readiness objects at 90c936a7abca7eba0dac1f977753503551e73368."
+      "consumed A01/RV01/RV02/CX01 identities or their frozen evidence",
+      "C19 frozen protocol/result classes/metrics/thresholds at 90c936a7abca7eba0dac1f977753503551e73368",
+      "historical C19-v1/C06 evidence",
+      "legacy freeze/preserve/control refs"
     ],
-    "audit_gap": "No newer durable INDEPENDENT_AUDITOR handoff was observed; this is a knowledge-flow gap, not audit clearance."
+    "metadata_drift": "The external handoff branch tip is 8f405b63d0afc8a6ffae522aa68799c54006f52d while its state field last_successful_handoff_commit still names the prior 33d4... commit; consume the branch tip and treat the state field as non-authoritative self-reference drift."
   },
   "active_line_review": {
-    "C19": {
-      "status": "UNRESOLVED_PRIMARY_PRESTART",
-      "strongest_evidence": "Truth-free adapter and fully prospective 55-row official protocol are green and exact, but the bound official_protocol.py is explicitly validation-only and intentionally incapable of execution.",
-      "shortest_path_to_new_information": "Complete/bind executable target-blind one-way harness using synthetic fixtures, then return for fresh execution admission.",
-      "simpler_reduction_or_risk": "No new scientific reduction found; current risk is execution-readiness/integrity, not outcome interpretation.",
-      "centrality": "PRIMARY"
-    },
     "A01": {
-      "status": "MIXED_PROGRAMME_CLOSED",
-      "strongest_evidence": "P2/P3 development observations positive; Family-A P4 terminal negative; Families B/C pre-START static reductions; stronger registered-family Field claim unsupported.",
-      "shortest_path_to_new_information": "No prospective successor currently defined.",
-      "simpler_reduction_or_risk": "External prior art further strengthens ordinary delayed-credit/local-memory/latent-cause reductions.",
-      "centrality": "CLOSED_SECONDARY"
+      "status": "mixed; registered-family programme closed",
+      "strongest_evidence": "P2/P3 development observations remain positive, but the stronger Field-organized causal-credit claim is unsupported; Family A ended in an executed P4 terminal negative and Families B/C were rejected pre-START by static reduction.",
+      "information_value": "LOW until a genuinely new prospective object exists",
+      "implementation_distance": "not actionable without new prospective design",
+      "simpler_reductions": "eligibility traces, three-factor/e-prop, pending-choice/latent-cause accounts; external scout further strengthens these reductions",
+      "centrality": "not primary"
     },
     "RV01": {
-      "status": "DEVELOPMENT_POSITIVE_NOVELTY_WEAK",
-      "strongest_evidence": "Positive development-only observations remain.",
-      "shortest_path_to_new_information": "No fresh successor currently defined.",
-      "simpler_reduction_or_risk": "Ordinary recurrent/adaptive learned-delay plasticity; external prior art strengthens this reduction.",
-      "centrality": "SECONDARY_CLOSED_PENDING_NEW_OBJECT"
+      "status": "development-positive but novelty-weak/reducible",
+      "strongest_evidence": "positive development-only result; ordinary adaptive-delay/recurrent plasticity remains a simpler explanation",
+      "information_value": "LOW",
+      "implementation_distance": "no fresh successor",
+      "simpler_reductions": "adaptive learned synaptic/axonal delays and recurrent plasticity prior art",
+      "centrality": "not primary"
     },
     "RV02": {
-      "status": "TERMINAL_CONSTRUCTION_NEGATIVE",
-      "shortest_path_to_new_information": "None without a new prospective object.",
-      "centrality": "TERMINAL"
+      "status": "terminal construction negative",
+      "strongest_evidence": "D1 terminal negative with consumed identity",
+      "information_value": "LOW absent a fresh prospective object",
+      "implementation_distance": "blocked by need for new prospective science",
+      "centrality": "not primary"
     },
     "CX01": {
-      "status": "TERMINAL_FORMAL_NEGATIVE",
-      "shortest_path_to_new_information": "None without a new prospective object.",
-      "centrality": "TERMINAL"
+      "status": "terminal formal negative",
+      "strongest_evidence": "Candidate-002 formal negative",
+      "information_value": "LOW absent a fresh prospective object",
+      "implementation_distance": "blocked by need for new prospective science",
+      "centrality": "not primary"
+    },
+    "C19": {
+      "status": "PRIMARY unresolved external-validation frontier; no official scientific outcome yet",
+      "strongest_evidence": "Frozen scientific protocol/readiness is green and a synthetic/dev execution harness is green at 4ed49e9985b120486efba2db37e558848bc36fe0, but exact scientific implementation bindings for the C19 conditions and five baseline families are not preregistered.",
+      "information_value": "VERY_HIGH",
+      "implementation_distance": "NEAR_TO_MEDIUM",
+      "genuine_blocker": "prospectively fix exact condition executors and exact baseline factory/hyperparameter/checkpoint/runtime/resource bindings without observing official data or changing frozen scientific semantics",
+      "centrality": "PRIMARY"
     }
   },
   "main_lane": {
-    "target": "C19-v2 executable one-way harness completion plus exact source/runtime/package binding",
-    "scientific_question": "Can the already frozen C19-v2 protocol be realized as a deterministic, target-blind, no-tune, resource-accounted, raw-before-score one-way execution harness without changing any preregistered scientific semantics?",
+    "target": "C19-v2 exact scientific implementation-binding supplement and machine-verifiable execution package",
+    "scientific_question": "Can the already-frozen C19-v2 55-row experiment be instantiated with exact, fair, target-blind executors and baselines such that I2+G0 versus I2+G1 isolates integrative dynamics from representation privilege before any official data are opened?",
     "recommended_owner": "main",
     "branch_or_identity": {
-      "base_exact_head": "research/c19-truth-free-symbolic-adapter-v2-20260917@90c936a7abca7eba0dac1f977753503551e73368",
-      "preferred_descendant_package_branch": "research/c19-v2-official-harness-20260917",
-      "official_protocol": "c19-external-v2-official-protocol-v1",
+      "branch": "research/c19-truth-free-symbolic-adapter-v2-20260917",
+      "current_head": "4ed49e9985b120486efba2db37e558848bc36fe0",
+      "frozen_science_anchor": "90c936a7abca7eba0dac1f977753503551e73368",
       "planned_identity": "c19-external-v2-official-v1"
     },
     "information_value": "VERY_HIGH_ENABLING",
     "implementation_distance": "NEAR_TO_MEDIUM",
+    "execution_allowed": false,
     "dependencies": [
-      "90c936a7abca7eba0dac1f977753503551e73368 and all frozen semantic blobs remain unchanged.",
-      "Official Belief-R examples/cache remain unopened/unverified until a later execution admission and STARTED.",
-      "c19-external-v2-official-v1 remains fresh, unSTARTED and unconsumed."
+      "current frozen C19 protocol and adapter semantics",
+      "green pre-START synthetic/dev execution harness",
+      "fresh/unSTARTED/unconsumed planned identity",
+      "no official Belief-R test access"
     ],
     "allowed_scope": [
-      "Implement deterministic runner/acquisition/output components using synthetic/dev fixtures only.",
-      "Bind execution source, baseline implementations or exact implementation refs, evaluator/scorer boundary, raw writer, preservation receipt, reconstruction/scoring pipeline and dependency/runtime versions.",
-      "Enforce network-off, no fit/tune/select, no-clobber, target-blind raw output, exact 55-row inventory, source-index pairing, baseline resource accounting and raw-before-score ordering.",
-      "Create machine-verifiable source/runtime/package/input manifests and synthetic integrity tests.",
-      "MAIN fixes all CI/verifier/runner/binding blockers that preserve frozen science."
+      "create a prospective binding supplement without changing frozen protocol/result classes/metrics/thresholds",
+      "bind every I0/I1/I2 × G0/G1 × E0 condition to exact executable module/model/state/gate configuration",
+      "bind all five baseline families to exact factory/module, fixed hyperparameters, checkpoint/state initialization, seeds, runtime/dependency versions, data/compute budgets, and no-fit/no-tune/no-select constraints",
+      "guarantee byte-identical I2 adapter representation for G0 and G1 rows so the comparison isolates gate/exchange dynamics",
+      "make source/package/input/runtime bindings machine-verifiable",
+      "run source-only/static/synthetic tests and fix CI/verifier/binding defects that do not alter scientific semantics"
     ],
     "forbidden_scope": [
-      "Open/read/verify/parse official Belief-R cache/examples.",
-      "Create STARTED/control or dispatch official execution.",
-      "Acquire/preserve/score official output or consume c19-external-v2-official-v1.",
-      "Change adapter, preregistration, official protocol semantics, metrics, result thresholds, baseline set/resource tolerances, 55-row inventory, seeds, identity or claim boundary.",
-      "Design a successor from observed outcomes."
+      "open/read/verify official Belief-R test examples or use their behavior to choose implementations",
+      "STARTED/control creation, one-way dispatch, acquisition, scoring, preservation, identity consumption",
+      "change frozen C19 protocol, metrics, thresholds, result classes, adapter contract, row inventory, seed plan, or baseline families",
+      "silently rebind c19-external-v2-official-v1 if existing records already bind it to a different exact package",
+      "post-outcome design"
     ],
     "go_conditions": [
-      "Exact semantic head 90c936... and protocol/readiness/adapter blobs re-verify.",
-      "Identity/ref namespace is collision-free with no STARTED/raw/scored/preserve/freeze/evidence state.",
-      "Harness can be implemented entirely from frozen protocol/source/spec and synthetic fixtures.",
-      "Target-blind and resource-fair execution is enforceable and exact-head CI/review is clean."
+      "4ed49e9985b120486efba2db37e558848bc36fe0 and 90c936a7abca7eba0dac1f977753503551e73368 re-fetch exactly",
+      "c19-external-v2-official-v1 remains fresh, unSTARTED, unconsumed, and collision-free",
+      "existing records show the planned identity has not already been bound to a conflicting package; otherwise STOP rather than rebind",
+      "all condition and baseline executors can be fixed source-only with no official test behavior",
+      "I2 representation bytes are identical between G0 and G1; only the preregistered gate/exchange dynamics differ",
+      "all five baselines receive fair representation/resources for the claims being made",
+      "package/source/input/runtime manifest is machine-verifiable and exact-head CI is green"
     ],
     "stop_conditions": [
-      "The executable harness package becomes exact, green and reviewable: return for fresh execution admission.",
-      "Any scientific-semantic change is required.",
-      "Official test behavior/data is needed to choose implementation or fairness rules.",
-      "Target-blind boundary, no-tune/no-clobber/raw-before-score or matched-baseline rules cannot be enforced.",
-      "I2 is statically equivalent to I0/I1 under the frozen contract.",
-      "Any source/protocol/package/input/identity/ref integrity anomaly appears."
+      "any implementation choice requires observing official test behavior",
+      "scientific semantics, protocol/result class/metric/threshold, or adapter contract would need to change",
+      "I2+G0 and I2+G1 cannot be instantiated with identical representation bytes and a clean gate-only difference",
+      "resource-matched baselines cannot be fixed under the preregistered tolerance",
+      "the planned identity is discovered to be already bound to a different package",
+      "hash/ref/identity integrity drifts",
+      "exact binding package becomes complete, green, and reviewable; return to Analyst for execution ADMIT/REJECT"
     ],
-    "exact refs/identities to re-check": [
-      "research/c19-truth-free-symbolic-adapter-v2-20260917@90c936a7abca7eba0dac1f977753503551e73368",
-      "readiness anchor 7ede1bfb41285ec0107136b4f6abd5e893adcacf",
-      "official protocol blob 88d2eabaf8309aa2a0266d91f7463d1a8dcdc38f",
-      "official protocol validator blob 61e1c7c5cba3340796f1d89602bbffc6be7941a1",
-      "adapter blob 3153fcb61d5872e93d22f30f0f1f808f856bfaeb",
-      "Belief-R revision 3719f5804c63318037465fecf298a7fd78d99121",
-      "expected cache SHA metadata b584c18328965cf3eb3d36f2f9ef145c1e15c9bf57bba084982ba18df1fa4153",
-      "planned identity c19-external-v2-official-v1",
-      "all C19-v2 STARTED/control/preserve/freeze/sealed/formal/evidence namespaces"
+    "exact_refs_identities_to_recheck": [
+      "ops/evidence-analyst-handoff current tip",
+      "research/c19-truth-free-symbolic-adapter-v2-20260917@4ed49e9985b120486efba2db37e558848bc36fe0",
+      "C19 frozen science anchor 90c936a7abca7eba0dac1f977753503551e73368",
+      "c19-external-v2-official-v1",
+      "all C19 control/STARTED/preserve/freeze/evidence refs",
+      "consumed-identity registry",
+      "exact-head CI/checks"
     ],
-    "main_owns_all_critical_path_fixups": true,
-    "one_way_execution_allowed": false,
-    "admission_status": "PROTOCOL_ADMITTED_HARNESS_NOT_YET_EXECUTION_ADMITTED"
+    "main_owns_all_critical_path_fixups": true
   },
   "sub_lane": null,
   "sub_fallback": null,
-  "no_sub_lane_reason": "The previously reserved generic terminal-provenance v2 package is complete with green CI. A01 revival would be post-outcome science without a fresh prospective object; RV01/RV02/CX01 have no fresh reserved successors; Issue #139 is governance; all remaining C19 harness/source-runtime work is MAIN critical path. Creating a SUB task now would manufacture parallelism.",
+  "no_sub_lane_reason": "The prior terminal-provenance v2 package is complete; RV01/RV02/CX01 have no fresh prospective successor; A01 reopening would be post-outcome science; C19 implementation bindings are the MAIN critical path; Issue #139 is governance and lower priority. Assigning any C19 binding/harness blocker to SUB would make SUB a dependency of MAIN.",
   "outcome_contingencies": {
-    "PRE_START_HARNESS_INCOMPLETE": {
-      "trigger/classification": "One or more executable runner/acquisition/preservation/scoring/runtime/baseline bindings or synthetic integrity checks are missing.",
-      "same_run_main_action": "Implement/fix only the predeclared harness from frozen protocol/source/spec using synthetic/dev fixtures.",
-      "exact_constraints": "90c936... scientific semantics and c19-external-v2-official-v1 unchanged; official data unopened.",
+    "PRE_START_BINDING_INCOMPLETE": {
+      "trigger": "one or more exact C19 condition or baseline implementation/runtime bindings are still absent but can be fixed without changing frozen science",
+      "same_run_next_action": "MAIN may continue implementing the prospective binding supplement and synthetic/source-only tests",
       "one_way_execution_allowed": false,
-      "go_conditions": "Work is outcome-independent and does not require official examples.",
-      "stop_conditions": "Scientific-semantic change or official-data-dependent design becomes necessary.",
-      "outcome_independent_and_prospectively_fixed": true,
-      "return_to_analyst": "Not required while filling predeclared executable fields."
+      "constraints": "stay on the C19 branch; preserve 90c936 scientific semantics; no official data; planned identity unconsumed",
+      "go_conditions": "binding choices are source-only, prospectively fixed, and do not use official behavior",
+      "stop_conditions": "any scientific redesign or test-informed choice becomes necessary",
+      "outcome_independent": true
     },
     "PRE_START_BLOCKER": {
-      "trigger/classification": "CI/type/lint/path/runtime/package-binding defect blocks the exact harness while scientific semantics remain unchanged.",
-      "same_run_main_action": "MAIN fixes the blocker, re-fetches exact state and reruns pre-START validation.",
-      "exact_constraints": "No scientific-semantic or official-data boundary change.",
+      "trigger": "CI/verifier/package/hash/runtime defect blocks the binding package but correcting it leaves scientific semantics unchanged",
+      "same_run_next_action": "MAIN fixes the blocker, re-fetches exact state, reruns allowed synthetic/static checks, and continues",
       "one_way_execution_allowed": false,
-      "go_conditions": "Fix is semantics-preserving.",
-      "stop_conditions": "Fix requires changing protocol/metric/baseline/identity or official-data-dependent behavior.",
-      "outcome_independent_and_prospectively_fixed": true,
-      "return_to_analyst": "Required if science must change or package becomes exact/reviewable."
+      "constraints": "no protocol/metric/threshold/identity redesign",
+      "go_conditions": "fix is semantics-preserving",
+      "stop_conditions": "fix requires a new scientific choice",
+      "outcome_independent": true
     },
-    "PRE_START_HARNESS_INVALID": {
-      "trigger/classification": "Runner requires target/evaluator truth before preserved raw, cannot enforce no-tune/network/no-clobber/raw-before-score, baseline resource accounting cannot meet the frozen contract, I2 collapses statically to I0/I1, or protocol cannot be implemented without semantic mutation.",
-      "same_run_main_action": "Stop; preserve pre-START state and return to Analyst with the invalidity evidence.",
-      "exact_constraints": "Do not open official data or consume identity.",
+    "PRE_START_BINDING_INVALID": {
+      "trigger": "frozen conditions/baselines cannot be instantiated fairly without changing science, same-I2 fairness is impossible, or binding requires official-test knowledge",
+      "same_run_next_action": "STOP; record exact reason and return to Analyst",
       "one_way_execution_allowed": false,
-      "go_conditions": "None for continued execution.",
-      "stop_conditions": "Always stop on this classification.",
-      "outcome_independent_and_prospectively_fixed": true,
-      "return_to_analyst": "Required immediately."
+      "outcome_independent": true
+    },
+    "PRE_START_REDUNDANT": {
+      "trigger": "source-only audit shows I2+G0 and I2+G1 are statically equivalent or G1 introduces no distinct mechanism beyond the identical I2 representation before official data are seen",
+      "same_run_next_action": "STOP and classify the integrative-dynamics discriminator as pre-START reduced; do not execute",
+      "one_way_execution_allowed": false,
+      "outcome_independent": true
     },
     "PRE_START_READY_FOR_EXECUTION_ADMISSION": {
-      "trigger/classification": "Executable source/runtime/baseline/scorer/preservation package is exactly bound, synthetic integrity checks and exact-head CI are green, identity remains fresh and official data remains unopened.",
-      "same_run_main_action": "STOP and return to Evidence Analyst for explicit one-way execution ADMIT/REJECT.",
-      "exact_constraints": "No STARTED, cache verification, dispatch, acquisition, preservation, scoring or identity consumption in this handoff.",
+      "trigger": "all exact condition/baseline/runtime/resource bindings are complete, machine-verifiable, fair, reviewable, and exact-head CI is green with no official data access",
+      "same_run_next_action": "STOP and return to Analyst for fresh execution ADMIT/REJECT",
       "one_way_execution_allowed": false,
-      "go_conditions": "Exact package is reviewable.",
-      "stop_conditions": "This state is itself the mandatory stop boundary.",
-      "outcome_independent_and_prospectively_fixed": true,
-      "return_to_analyst": "Required."
+      "outcome_independent": true
     },
     "INVALID_EVIDENCE": {
-      "trigger/classification": "Unexpected hash/ref/identity/access/output mismatch or evidence that claimed pre-START state is false.",
-      "same_run_main_action": "Read-only integrity reconciliation only, then stop.",
+      "trigger": "hash/ref/source/package drift, premature official-data access, or other integrity mismatch",
+      "same_run_next_action": "STOP; perform read-only integrity reconciliation only",
       "one_way_execution_allowed": false,
-      "outcome_independent_and_prospectively_fixed": true,
-      "return_to_analyst": "Required."
+      "outcome_independent": true
     },
     "POST_START_FAILURE": {
-      "trigger/classification": "STARTED or official output unexpectedly exists before a newer explicit execution admission.",
-      "same_run_main_action": "Treat as integrity incident; identity is consumed by one-way contract; do not retry/rescore/rebind/repair.",
+      "trigger": "any STARTED/control evidence appears under this no-execution handoff",
+      "same_run_next_action": "STOP as an integrity incident; no retry, rescore, rebind, or replacement run",
       "one_way_execution_allowed": false,
-      "outcome_independent_and_prospectively_fixed": true,
-      "return_to_analyst": "Required immediately."
+      "outcome_independent": true
     },
     "PASS": {
-      "reachable": false,
-      "reason": "Official execution is not admitted in this handoff."
+      "trigger": "unreachable under this handoff because official execution is not authorized",
+      "same_run_next_action": "none",
+      "one_way_execution_allowed": false
     },
     "FAIL": {
-      "reachable": false,
-      "reason": "Official execution is not admitted in this handoff."
+      "trigger": "unreachable under this handoff because official execution is not authorized",
+      "same_run_next_action": "none",
+      "one_way_execution_allowed": false
     },
     "INCONCLUSIVE": {
-      "reachable": false,
-      "reason": "Official execution is not admitted in this handoff."
+      "trigger": "unreachable under this handoff because official execution is not authorized",
+      "same_run_next_action": "none",
+      "one_way_execution_allowed": false
     }
   },
+  "prospective_interpretation_gate": {
+    "purpose": "Tighten claims using new external prior art without mutating frozen C19 result classes.",
+    "rules": [
+      "A protocol-level PASS without a robust matched I2+G1 > I2+G0 difference supports at most a representation/interface benefit; it does not support coalition-memory or integrative-dynamics contribution.",
+      "A protocol-level PASS with robust matched I2+G1 > I2+G0 supports contribution from integrative dynamics beyond the I2 representation, but still does not establish mechanistic novelty.",
+      "If a matched recurrent/test-time-memory/fast-weight comparator matches or wins, SparkBrain-specific superiority/novelty is further weakened.",
+      "These are prospective interpretation limits only; they do not alter the already-frozen PASS/FAIL/INCONCLUSIVE definitions."
+    ]
+  },
   "blocked_until": [
-    "Official C19-v2 execution waits for an exact/green executable harness package and a newer explicit Evidence Analyst execution admission.",
-    "New A01/RV01/RV02/CX science waits for a fresh prospective portfolio/hypothesis object defined independently of observed outcomes.",
-    "Retroactive A01 machine negative-completion retrofit remains separate governance/methods work and must not rewrite historical evidence post hoc."
+    "Official C19 STARTED/dispatch/acquisition/scoring/preservation is blocked until exact implementation bindings are complete and a fresh Analyst handoff explicitly admits execution.",
+    "A01/RV01/RV02/CX01 successor science is blocked until a fresh prospective object exists independently of consumed outcomes.",
+    "Governance/tag migration may proceed only in its owning lane and must not delay C19 science."
   ],
   "do_not_touch": [
     "A01 MD-001",
-    "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
-    "a01-md002-p3-r-only-causal-carrier-candidate-001-v1",
-    "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
-    "RV01 R01-16 family",
-    "rv01-r01-17-real-delay-causal-timing-v1",
+    "A01 P2 candidate-002",
+    "A01 P3 candidate-001",
+    "A01 Family-A P4 candidate-001",
+    "Family-B/C rejected Gen1 exact objects: unconsumed does not mean reusable; no rescue/retune/rebind",
+    "RV01 R01-16 family / R01-17 consumed evidence",
     "RV02 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
     "CX01 Candidate-002/formal evidence",
-    "rejected exact a01-family-b-distributed-field-trace-gen1-v1",
-    "rejected exact a01-family-c-joint-return-local-field-gen1-v1",
-    "historical C19-v1 and C06 immutable evidence",
-    "all existing legacy freeze/control/preserve/evidence refs",
-    "outcome-dependent successor design",
-    "90c936a7abca7eba0dac1f977753503551e73368 scientific semantics"
+    "historical C19-v1 and C06 evidence",
+    "legacy freeze/preserve/control/evidence refs",
+    "C19 frozen protocol/science anchor 90c936a7abca7eba0dac1f977753503551e73368",
+    "C19 planned identity c19-external-v2-official-v1 until exact first-binding status is verified",
+    "outcome-dependent successor design"
   ],
-  "active MAIN/SUB claims observed": {
-    "MAIN": "C19-v2 protocolization complete at 90c936...; reported PRE_START_READY_FOR_EXECUTION_ADMISSION; no one-way execution performed.",
-    "SUB": "NO_OP_NO_RESERVED_LANE; C19 MAIN frontier explicitly avoided."
+  "active_main_claim_observed": {
+    "branch": "research/c19-truth-free-symbolic-adapter-v2-20260917",
+    "head": "4ed49e9985b120486efba2db37e558848bc36fe0",
+    "status": "pre-START harness green; exact scientific executor/baseline binding incomplete",
+    "latest_exact_head_ci": "35141325228 success"
   },
-  "top recommendation": {
+  "active_sub_claim_observed": {
+    "status": "deliberate no-op",
+    "reason": "no reserved independent lane/fallback",
+    "latest_report_commit": "abcb755828259dc55f3854017e70f984b96ab73e"
+  },
+  "top_recommendation": {
     "rank": 1,
-    "owner": "main",
-    "action": "Complete and exactly bind the C19-v2 executable one-way harness on synthetic/dev fixtures without changing frozen scientific semantics; then stop for fresh execution admission.",
+    "owner": "MAIN",
+    "action": "Build and freeze a prospective C19-v2 exact scientific implementation-binding supplement around the unchanged protocol/harness, then stop at a complete green reviewable package for fresh execution admission.",
     "information_value": "VERY_HIGH_ENABLING",
-    "implementation_distance": "NEAR_TO_MEDIUM",
-    "execution_allowed": false
+    "distance": "NEAR_TO_MEDIUM"
   },
-  "top 3": [
+  "top_3": [
     {
       "rank": 1,
-      "owner": "main",
-      "action": "C19-v2 executable harness + source/runtime/package binding completion",
+      "owner": "MAIN",
+      "action": "Exact condition/baseline/runtime/resource implementation-binding supplement with same-I2 G0/G1 fairness",
       "information_value": "VERY_HIGH_ENABLING",
       "distance": "NEAR_TO_MEDIUM"
     },
     {
       "rank": 2,
-      "owner": "main",
-      "action": "Exact harness leakage/privilege/fairness/runtime/CI audit and return for execution admission",
+      "owner": "MAIN",
+      "action": "Source-only privilege/reduction/fairness/runtime audit and machine-verifiable exact-head CI/manifest",
       "information_value": "HIGH_ENABLING",
       "distance": "NEAR_AFTER_1"
     },
     {
       "rank": 3,
-      "owner": "sub",
-      "action": "Deliberate no-op / hold capacity until a genuinely independent reserved package exists",
-      "information_value": "INTEGRITY_PRESERVING",
-      "distance": "NONE"
+      "owner": "SUB",
+      "action": "Deliberate no-op until Analyst reserves a genuinely independent secondary package",
+      "information_value": "AVOIDS_FALSE_PARALLELISM",
+      "distance": "NOW"
     }
   ],
-  "consumed identities": [
+  "consumed_identities": [
     "A01 MD-001",
-    "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
-    "a01-md002-p3-r-only-causal-carrier-candidate-001-v1",
-    "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
-    "RV01 R01-16 family",
-    "rv01-r01-17-real-delay-causal-timing-v1",
+    "A01 P2 candidate-002",
+    "A01 P3 candidate-001",
+    "A01 Family-A P4 candidate-001",
+    "RV01 R01-16 family / R01-17",
     "RV02 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
     "CX01 Candidate-002/formal evidence"
   ],
   "blockers": [
-    {
-      "target": "C19 official one-way execution",
-      "type": "PRE_START_EXECUTABLE_HARNESS_GAP",
-      "detail": "The current official_protocol.py is intentionally incapable of execution; exact executable runner/acquisition/preservation/scoring/runtime/source binding is not yet the frozen package.",
-      "owner": "main"
-    },
-    {
-      "target": "Independent audit knowledge flow",
-      "type": "MISSING_DURABLE_INDEPENDENT_AUDITOR_HANDOFF",
-      "detail": "Only LITERATURE_REDUCTION_SCOUT durable output is present; absence is not audit clearance.",
-      "owner": "external_audit_stream"
-    }
+    "C19 exact condition executor binding is not preregistered.",
+    "C19 five-baseline exact factory/hyperparameter/checkpoint/runtime/resource mapping is not preregistered.",
+    "Fresh execution admission is required after the exact binding package is green.",
+    "No durable INDEPENDENT_AUDITOR handoff exists yet; this does not block C19 but limits independent audit confidence."
   ],
-  "go_stop_top1": {
-    "go": [
-      "c19-external-v2-official-v1 fresh/unSTARTED/unconsumed",
-      "90c936... semantic blobs unchanged",
-      "runner/baselines/scorer-preservation/runtime/source/package/input bindings exact and machine-verifiable",
-      "synthetic no-clobber and raw-before-score receipt ordering verified",
-      "network/no-fit/no-tune/no-select and resource matching enforceable",
-      "exact-head CI/review clean"
+  "governance_advisory": {
+    "open_prs": 0,
+    "open_issues": [
+      "#139 tag-protection/governance"
     ],
-    "stop": [
-      "I2 statically reduces to I0/I1",
-      "target-blind boundary cannot be preserved",
-      "fair matched baselines cannot satisfy frozen protocol",
-      "official behavior/data is needed to choose implementation",
-      "any source/protocol/package/input/identity binding drifts",
-      "executable package becomes green/reviewable, which requires fresh Analyst execution admission"
-    ]
-  },
-  "governance advisory": {
-    "issue_canonical_source_drift": "Only Issue #139 is open; Issues remain operational and not canonical science.",
-    "freeze_tag_migration_drift": "No authoritative Git tags exist; preserve legacy freeze refs exactly and do not migrate during frontier work.",
-    "tag_protection_gap": "Repository rulesets remain empty and main is unprotected.",
+    "git_tags": 0,
+    "rulesets": 0,
+    "main_protection": "no active ruleset observed; preserve existing branch/ref authorities",
+    "freeze_tag_migration": "do not migrate legacy freeze branches; annotated protected tags remain a future-governance target",
+    "external_handoff_state_drift": "actual external branch tip 8f405... is newer than its state field last_successful_handoff_commit 33d4...; owning external-audit process should repair this metadata drift",
     "outcome_independent_main_promotion_candidates": [
-      "generic terminal-provenance v2 after review",
-      "generic historical-binding verifier",
-      "generic no-clobber/source-manifest/raw-before-score helpers",
-      "generic pre-START execution-package binding/state-machine helper after C19 stabilization"
+      "generic terminal-provenance v2 after separate review",
+      "historical-binding verifier",
+      "no-clobber/source-manifest/raw-before-score helpers",
+      "generic pre-START execution-package state machine after C19 stabilizes"
     ]
   },
-  "repartition_conditions": [
-    "A newer external/audit handoff introduces a material C19 counterexample, baseline or leakage concern.",
-    "A genuinely independent prospectively defined secondary research package appears.",
-    "Integrity coupling makes the current MAIN/SUB split invalid.",
-    "C19 harness work is shown to require scientific-semantic redesign rather than implementation-only completion."
-  ]
+  "orchestrator_handoff_plain": {
+    "main": "MAIN takes the C19 exact scientific implementation-binding supplement and owns ALL critical-path fixes.",
+    "sub": "SUB has no reserved lane and deliberately no-ops; it must not take C19 blockers.",
+    "sub_fallback": "none",
+    "main_must_not_absorb_reserved_sub_work": true,
+    "sub_must_not_take_main_blockers": true,
+    "neither_touches": "consumed identities, immutable evidence/legacy authorities, rejected A01 B/C exact objects, or frozen C19 protocol semantics",
+    "repartition_if": [
+      "a fresh independent secondary object is prospectively defined and reserved",
+      "new external/audit evidence materially displaces C19 expected information value",
+      "C19 binding is source-only reduced/invalid before START"
+    ],
+    "same_run_main_continuation": [
+      "PRE_START_BINDING_INCOMPLETE",
+      "PRE_START_BLOCKER"
+    ],
+    "same_run_main_must_stop": [
+      "PRE_START_BINDING_INVALID",
+      "PRE_START_REDUNDANT",
+      "PRE_START_READY_FOR_EXECUTION_ADMISSION",
+      "INVALID_EVIDENCE",
+      "POST_START_FAILURE"
+    ]
+  }
 }
