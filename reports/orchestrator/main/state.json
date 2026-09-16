@@ -1,0 +1,145 @@
+{
+  "timestamp": "2026-09-16T10:39:00+09:00",
+  "worker_role": "main",
+  "evidence_analyst_commit": "5f444a295d3ae32263923c3706ac2c6c6746533d",
+  "analyst_main_lane": {
+    "target": "A01 MD-002 P4 candidate-001 selective merged-lineage discriminator",
+    "identity": "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
+    "main_owns_all_critical_path_fixups": true,
+    "status_at_start": "P1 verifier hardening required before exactly-once execution"
+  },
+  "analyst_sub_lane": {
+    "target": "RV01 canonical status/evidence-map consolidation",
+    "reservation_status": "reserved_for_sub",
+    "independent_of_main_critical_path": true,
+    "execution_allowed": false
+  },
+  "analyst_sub_fallback": {
+    "target": "RV02 terminal-status/evidence-map consolidation",
+    "reservation_status": "reserved_for_sub",
+    "independent_of_main_critical_path": true,
+    "execution_allowed": false
+  },
+  "main_active_claim": {
+    "target": "A01 MD-002 P4 candidate-001 selective merged-lineage discriminator",
+    "branch": "research/v061-a01-md002-p4-candidate-001-20260916",
+    "pr": 137,
+    "identity": "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
+    "terminal_status": "CONSUMED_UNSUPPORTED_EN_BLOC_MERGED_CREDIT"
+  },
+  "authoritative_refs": {
+    "a01_base": "research/v061-a01-n3-adapter@2e47df9cf8c6323f390935bb41c368632f3342c6",
+    "p4_research_head": "research/v061-a01-md002-p4-candidate-001-20260916@1bd0099f4358e02efac7ee4acccfe5257a86c4be",
+    "p4_source_freeze": "freeze/a01-md002-p4-candidate-001-source-20260916@1bd0099f4358e02efac7ee4acccfe5257a86c4be",
+    "p4_started": "control/a01-md002-p4-candidate-001-started-20260916@1bd0099f4358e02efac7ee4acccfe5257a86c4be",
+    "p4_owner": "control/a01-md002-p4-candidate-001-owner-20260916@121839ecf9ad6dfaff1d90173ffbf9022a1fe0ea",
+    "p4_acquire": "control/a01-md002-p4-candidate-001-acquire-20260916@d909a861616830ffd4b473b43eff38660b69de55",
+    "p4_raw": "preserve/a01-md002-p4-candidate-001-raw-20260916@2511454f1633d3bc6f10e3d2a99e3ddd823bb798",
+    "p4_recovery": "preserve/a01-md002-p4-candidate-001-recovery-20260916@2511454f1633d3bc6f10e3d2a99e3ddd823bb798",
+    "p4_scored": "preserve/a01-md002-p4-candidate-001-scored-20260916@56ee762540e0519034d2e8db0ad3c6acda667ffd"
+  },
+  "branches_prs_advanced": [
+    {
+      "branch": "research/v061-a01-md002-p4-candidate-001-20260916",
+      "from": "c1248bb3c87c0767e3e1a3cd2a6978ebb4eb06dc",
+      "to": "1bd0099f4358e02efac7ee4acccfe5257a86c4be",
+      "commits": [
+        "f06be39c7200d55f75fb276a9675763bb9639d3e",
+        "1bd0099f4358e02efac7ee4acccfe5257a86c4be"
+      ]
+    },
+    {
+      "pr": 137,
+      "state": "open_unmerged",
+      "mergeable": true,
+      "exact_reviewed_head": "1bd0099f4358e02efac7ee4acccfe5257a86c4be"
+    }
+  ],
+  "workflows_experiments": {
+    "ci": {
+      "run_id": 35044284527,
+      "head": "1bd0099f4358e02efac7ee4acccfe5257a86c4be",
+      "conclusion": "success",
+      "python_3_11": "success",
+      "python_3_13": "success"
+    },
+    "exact_head_review": {
+      "commit": "1bd0099f4358e02efac7ee4acccfe5257a86c4be",
+      "status": "completed",
+      "new_findings": false
+    },
+    "p4_execute_once": {
+      "run_id": 35044851215,
+      "source_sha": "1bd0099f4358e02efac7ee4acccfe5257a86c4be",
+      "conclusion": "success",
+      "run_attempt": 1,
+      "acquisition": "success",
+      "raw_preservation": "success",
+      "independent_preserved_artifact_verification": "success",
+      "scoring": "success",
+      "terminal_recovery": "success"
+    }
+  },
+  "scientific_results": [
+    {
+      "line": "A01_MD002_P4",
+      "identity": "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
+      "evidence_class": "development_only",
+      "verdict": "UNSUPPORTED_EN_BLOC_MERGED_CREDIT",
+      "reasons": [
+        "valid trace-bound plural merged ancestry was retained",
+        "both lineage IDs were crossed with both evidence signs",
+        "every separating assay changed every merged causal path",
+        "the current bridge therefore did not selectively resolve lineage"
+      ],
+      "interpretation": "negative development evidence against selective historical-lineage resolution in the current P4 bridge; broader causal circulation is not globally falsified by this result alone"
+    }
+  ],
+  "consumed_identities": [
+    "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
+    "A01 MD-001 identities",
+    "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
+    "a01-md002-p3-r-only-causal-carrier-candidate-001-v1",
+    "RV01 R01-16 consumed construction/capability identities",
+    "rv01-r01-17-real-delay-causal-timing-v1",
+    "96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
+    "CX01 candidate-002 formal identity"
+  ],
+  "blockers": [
+    "P4 candidate-001 is consumed and must not be rerun, retuned, or rescued under the same identity.",
+    "Any successor/P5/new mechanism must wait for a fresh prospective Evidence Analyst allocation that incorporates the immutable P4 result; no outcome-responsive successor was invented in this run."
+  ],
+  "concurrency_reconciliation": {
+    "evidence_analyst_rechecked_at_end": "5f444a295d3ae32263923c3706ac2c6c6746533d",
+    "current_analyst_split_valid": true,
+    "sub_collision": false,
+    "research_branch_head_unchanged_between_final_review_freeze_and_started": true
+  },
+  "integrity_status": {
+    "exact_source_frozen_before_started": true,
+    "identity_fresh_before_started": true,
+    "raw_before_score": true,
+    "independent_raw_verification_before_score": true,
+    "exact_head_ci_clean": true,
+    "exact_head_review_clean": true,
+    "one_way_refs_created": true,
+    "same_identity_rerun_allowed": false,
+    "overall": "terminal_evidence_preserved"
+  },
+  "main_critical_path_fixups_completed": [
+    "independent active-lineage re-derivation from retained ledger temporal validity at bound measurement times",
+    "independent changed_path_ids recomputation from retained pre/post path reliability",
+    "focused fail-closed regression coverage",
+    "lint/import hygiene caused by verifier hardening",
+    "exact-head CI and exact-head review",
+    "source freeze and exactly-once execution"
+  ],
+  "work_intentionally_left_for_sub": [
+    "RV01 canonical status/evidence-map consolidation",
+    "RV02 terminal-status/evidence-map consolidation fallback"
+  ],
+  "reserved_sub_work_not_touched": true,
+  "lane_repartition_reason": null,
+  "lane_repartition_note": "The latest Analyst had already corrected the earlier invalid verifier-to-SUB split. MAIN simply executed the current valid ownership: all P4 critical-path fixes remained with MAIN.",
+  "next_main_action": "STOP this consumed P4 identity. Wait for a fresh prospective Evidence Analyst handoff that incorporates the immutable en-bloc negative result, then take the next primary frontier without rescue-tuning P4 candidate-001."
+}
