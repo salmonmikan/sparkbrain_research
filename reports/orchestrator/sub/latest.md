@@ -1,63 +1,71 @@
 # SparkBrain Research Orchestrator SUB — Latest
 
-Run time: 2026-09-16 10:46 JST  
+Run time: 2026-09-16 11:43 JST  
 Worker role: `sub` / SECONDARY IMPLEMENTER
 
 ## MAIN frontier explicitly avoided
 
-MAIN's A01 MD-002 P4 candidate-001 was not touched. During this SUB run, the newer MAIN report showed that candidate-001 had already crossed the one-way boundary and terminated as consumed development evidence with verdict `UNSUPPORTED_EN_BLOC_MERGED_CREDIT`. SUB did not modify PR #137, the A01 research branch, P4 freeze/control/preserve refs, scorer, or any P4 follow-up design.
+MAIN's current frontier was not touched. The current MAIN stream owns the A01 post-P4 terminal closeout / pre-existing mechanism admission audit and has already merged closeout PR #141, ending at `STOP_NO_VERIFIED_PROSPECTIVE_SUCCESSOR`. SUB did not modify A01 branches, PRs, candidate identities, P4 evidence, or successor design.
 
-The Evidence Analyst handoff consumed for lane ownership was `ops/evidence-analyst-handoff@5f444a295d3ae32263923c3706ac2c6c6746533d`. Although its snapshot still described P4 as pre-STARTED, its reserved SUB lane remained scientifically independent of the later MAIN outcome.
+Evidence Analyst handoff consumed: `ops/evidence-analyst-handoff@2c90237c98757d09bd37e445a411df0299e652e2`.
 
 ## Selected independent SUB lane
 
-Primary reserved lane: **RV01 canonical status and evidence-map consolidation**.
+Primary reserved lane: **RV02 terminal-status and evidence-map consolidation**.
 
 - reservation: `reserved_for_sub`
 - independent of MAIN critical path: yes
 - scientific execution allowed: no
-- authoritative RV01 base rechecked: `research/rv01-endogenous-transition@98be60268845487ce51e76b8a7687552a5dbc51f`
+- authoritative RV02 base: `research/rv02-development-feasibility@8176b91f5d427f3bdfccae2fac2c01b60a771403`
 
-Fresh evidence checks confirmed:
+Fallback remained **CX01 candidate-002 formal-negative status/evidence-map consolidation** and was not needed.
 
-- R01-17 identity `rv01-r01-17-real-delay-causal-timing-v1` is consumed.
-- frozen/STARTED source: `5ecb459b609b393ff837f57cc138f1eb44c1b255`
-- raw preserve: `fceb3663c7a880d82593e6c1efe52fcd1ad0c00a`
-- scored preserve: `d4737d52ecbb2306d9f00f99366f0ad6424327be`
-- preserved classification: `SUPPORTED_REAL_DELAY_CAUSAL_TIMING`, development-only with no formal/held-out authority.
-- ordinary local adaptive-delay plasticity remains the conservative simpler reduction.
+## Fresh evidence reconciliation
+
+RD005 D1 exact consumed construction identity:
+
+`96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a`
+
+Reverified anchors:
+
+- source freeze: `freeze/rv02-rd005-d1-source-c60b7fd8-20260914@c60b7fd8d3889ee969f505d921e7d31c990871e6`
+- STARTED: `control/rv02-rd005-d1-started-96634541-20260914@2535b6312a091f7da4efa10c064c285bdeda7eaf`
+- raw preserve: `preserve/rv02-rd005-d1-96634541-20260914@d1fdd67ea197b879c52942c4a34e7d39a0a40698`
+- terminal audit: `review/rv02-rd005-d1-terminal-outcome-20260914@262a56f8d2a0f482166ee0e621305ceef6caeb0c`
+
+The preserved terminal condition remains: `RD005 construction stopped before capability: verified D1 matrix is not ready`. The same output identity is not retryable; capability output was unopened and learner/probe execution did not occur. This is a terminal negative construction/gate-reachability result for this exact identity, not a formal/held-out capability result.
+
+Fresh remote inventory does not expose the historical `research/rv02-distal-delay` branch name referenced by older analysis, so it was not treated as current mutable authority.
 
 ## Implementation progress
 
-Created distinct SUB docs branch:
+Created distinct SUB branch:
 
-- `research/rv01-status-evidence-consolidation-sub-20260916`
+- `research/rv02-status-evidence-consolidation-sub-20260916`
 
-Added canonical status/evidence map:
+Added:
 
-- `docs/research/RV01_STATUS_EVIDENCE_MAP.md`
-- commit `2d877a5af670c54d404d8782763129f497092f88`
-
-The document consolidates the consumed result, exact source/STARTED/raw/scored evidence pointers, evidence digests, no-rerun/no-retune boundary, development-only authority, conservative reduction, relationship to R01-16, and the absence of a verified prospective successor. It does not create new science or reinterpret immutable evidence.
+- `docs/research/RV02_STATUS_EVIDENCE_MAP.md`
+- commit `ce317febb8be8d111959082cd5632a5ead9c83b4`
 
 Opened reviewable docs-only PR:
 
-- PR #140 — `RV01: consolidate current status and evidence map`
-- base: `research/rv01-endogenous-transition`
-- head: `research/rv01-status-evidence-consolidation-sub-20260916`
-- exact head: `2d877a5af670c54d404d8782763129f497092f88`
-- diff: one new documentation file, 117 additions
+- PR #142 — `RV02: consolidate current status and evidence map`
+- base: `research/rv02-development-feasibility`
+- head: `research/rv02-status-evidence-consolidation-sub-20260916`
+- exact head: `ce317febb8be8d111959082cd5632a5ead9c83b4`
+- one documentation file changed; no behavior/protocol/evidence mutation
+
+The new evidence map consolidates the live RV02 development baseline, exact RD005 D1 one-way identity, freeze/STARTED/preserve/audit chronology, consumed/no-rerun boundary, capability-unopened status, development-only authority, and absence of a prospectively defined successor. It intentionally does not invent successor science.
 
 ## Scientific / readiness result
 
-No new experiment, workflow, STARTED boundary, scoring action, or one-way identity was executed by SUB. No new scientific measurement was produced.
+No workflow or experiment was dispatched. No STARTED boundary was created. No scoring occurred. No new one-way identity was consumed. No new scientific measurement was produced.
 
-The independent readiness/documentation completion target **was reached**: RV01 now has a reviewable canonical status/evidence-map package that makes the consumed development result and evidence boundaries explicit without opening successor science.
+The independent Analyst-defined completion target **was reached**: RV02 now has a reviewable canonical docs-only status/evidence-map package.
 
-No immutable/frozen/formal evidence was modified. No consumed identity was rerun or retuned.
+No immutable/frozen/formal/control/preserve evidence was modified. No consumed identity was rerun or retuned. No Analyst lane was rejected for critical-path coupling.
 
 ## Fallback / blockers
 
-RV02 terminal-status/evidence-map consolidation remained available as the reserved fallback but was not needed because the primary RV01 lane completed successfully.
-
-No blocker remains for this SUB completion target. PR review/merge may proceed independently and is not a dependency for MAIN.
+CX01 fallback was unused because the primary RV02 lane completed. The docs completion target itself has no remaining blocker; PR review/merge is independent of MAIN and is not required for MAIN progress.
