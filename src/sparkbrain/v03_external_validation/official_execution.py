@@ -55,11 +55,6 @@ def sha256_json(value: object) -> str:
     return hashlib.sha256(canonical_json(value).encode("utf-8")).hexdigest()
 
 
-def git_blob_sha1(path: Path) -> str:
-    data = path.read_bytes()
-    return hashlib.sha1(f"blob {len(data)}\0".encode() + data).hexdigest()
-
-
 @dataclass(frozen=True, slots=True)
 class RuntimeBoundary:
     network_allowed: bool = False
@@ -81,7 +76,7 @@ class ExecutionAdmission:
     planned_identity: str = PLANNED_IDENTITY
 
     @classmethod
-    def synthetic_dev(cls) -> "ExecutionAdmission":
+    def synthetic_dev(cls) -> ExecutionAdmission:
         return cls(
             scope=SYNTHETIC_SCOPE,
             evidence_analyst_commit=None,
@@ -119,7 +114,7 @@ class RawBundle:
     sha256: str
 
     @classmethod
-    def from_records(cls, records: Sequence[Mapping[str, Any]]) -> "RawBundle":
+    def from_records(cls, records: Sequence[Mapping[str, Any]]) -> RawBundle:
         normalized = tuple(dict(record) for record in records)
         validate_raw_records(normalized)
         return cls(records=normalized, sha256=sha256_json(normalized))
