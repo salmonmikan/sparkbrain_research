@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-09-17T05:50:00+09:00",
+  "timestamp": "2026-09-17T06:33:00+09:00",
   "worker_role": "main",
-  "evidence_analyst_commit": "a5dd5e737a665fead3a98538ed0735cf5ab20006",
+  "evidence_analyst_commit": "7bfef197fe0b255e395d2ea18ebadb59f2ca9fb6",
   "analyst_lanes": {
     "main_lane": {
-      "target": "C19-v2 exact scientific implementation binding and representation-confound audit",
+      "target": "C19-v2 frozen execution-contract conformance closure",
       "branch": "research/c19-truth-free-symbolic-adapter-v2-20260917",
       "frozen_protocol_head": "90c936a7abca7eba0dac1f977753503551e73368",
       "planned_identity": "c19-external-v2-official-v1",
@@ -12,22 +12,24 @@
       "execution_allowed": false
     },
     "sub_lane": null,
-    "sub_fallback": null
+    "sub_fallback": null,
+    "blocked_until": "Fresh Evidence Analyst resolves the remaining scorer semantics and explicitly authorizes the next package stage."
   },
   "consumed_prospective_contingency_branches": [
-    "PRE_START_BINDING_INCOMPLETE",
-    "PRE_START_BLOCKER",
-    "PRE_START_BINDING_INCOMPLETE",
-    "PRE_START_READY_FOR_EXECUTION_ADMISSION"
+    "PRE_START_CONTRACT_MISMATCH",
+    "PRE_START_COVERAGE_GUARD_INCOMPLETE",
+    "PRE_START_SCORER_BINDING_INCOMPLETE",
+    "PRE_START_SCORER_SEMANTICS_AMBIGUOUS"
   ],
-  "main_active_claim": "C19-v2 exact source-only condition/baseline/runtime binding, representation-confound audit, and machine-verifiable pre-START execution package",
+  "main_active_claim": "C19-v2 exact frozen raw schema and 55x1744 pair-coverage closure; concrete scorer remains prospectively unresolved",
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "a5dd5e737a665fead3a98538ed0735cf5ab20006",
+    "evidence_analyst": "7bfef197fe0b255e395d2ea18ebadb59f2ca9fb6",
     "control_brain": "b3e9da4b6eb65f01282db8f06f967f96e1ca8be0",
-    "orchestrator_report_parent": "202a2e9c40ae541350d032b8abf0ed14a1cee5c8",
+    "orchestrator_report_parent": "175991213679543dde3dfa352e36f9ed89223085",
     "c19_frozen_protocol_head": "90c936a7abca7eba0dac1f977753503551e73368",
-    "c19_research_head": "17ce3e61d17436337d13c90c6c86184fcad09f22",
+    "c19_start_head": "17ce3e61d17436337d13c90c6c86184fcad09f22",
+    "c19_research_head": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
     "c19_control_refs": [],
     "c19_preserve_refs": [],
     "c19_freeze_refs": [],
@@ -36,32 +38,35 @@
   },
   "branches_prs_advanced": {
     "research/c19-truth-free-symbolic-adapter-v2-20260917": {
-      "start_of_run_observed_head": "52b3796d54082e5ccc84a883429dcc962b232884",
-      "prior_main_report_head": "4ed49e9985b120486efba2db37e558848bc36fe0",
-      "final_head": "17ce3e61d17436337d13c90c6c86184fcad09f22",
+      "start_of_run_observed_head": "17ce3e61d17436337d13c90c6c86184fcad09f22",
+      "final_head": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
       "main_commits": [
-        "d4991b88d499d1523c4f6c3ac1cb785b8149872a",
-        "17ce3e61d17436337d13c90c6c86184fcad09f22"
+        "2450d36551a43dffb1b35e708812a63fd5364bb8",
+        "e1b5c65244b396968b514a8ab9a68bddb9f8067b",
+        "16c798469da634c7d0e758eafb7cd05f80f3af9d",
+        "10b7ed33eb2b968c76cf6647d48839ac11dd2c0a",
+        "313772b397c1f2e25934b51f7fdc55e71574846f",
+        "9b0943adb83a8abd49d0726b5cc87acac45b2e60",
+        "66c8eafe9863ed1b2455cc833a3dc498ce7721b0"
       ]
     },
     "open_prs": [],
     "merges": []
   },
   "workflows_experiments": {
-    "failed_pre_fix_ci": {
-      "run_id": 35147470067,
-      "head": "52b3796d54082e5ccc84a883429dcc962b232884",
-      "result": "failure",
-      "classification": "PRE_START_BLOCKER",
-      "cause": "four Ruff E501 formatting findings only"
-    },
     "exact_head_ci": {
-      "run_id": 35148696966,
-      "head": "17ce3e61d17436337d13c90c6c86184fcad09f22",
+      "run_id": 35152618704,
+      "head": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
       "result": "success",
       "python_3_11": "success",
       "python_3_13": "success",
-      "steps": ["Install", "Lint", "Local readiness", "Test", "Validate bundle"]
+      "steps": [
+        "Install",
+        "Lint",
+        "Local readiness",
+        "Test",
+        "Validate bundle"
+      ]
     },
     "official_experiments_dispatched": [],
     "official_data_access": false
@@ -69,11 +74,10 @@
   "scientific_results": {
     "new_scientific_measurement": false,
     "new_readiness_information": [
-      "Exact condition and five-family structural baseline executors are prospectively bound without official data access or fitting.",
-      "I2 representation bytes are prospectively identical across G0/G1 for the registered dynamics contrast.",
-      "direct_stateless and explicit_state_probabilistic receive exact target-blind I2 representation bytes.",
-      "Exact source/input/protocol/runtime blobs are machine-verifiable from the binding artifact and tests.",
-      "Parameter matching and compute matching remain unestablished; unmatched baselines are descriptive only and cannot support winner/superiority claims."
+      "The frozen 16-field target-blind raw schema is now enforced by the one-way harness.",
+      "Every one of the 55 frozen rows must contain exactly the 1,744 unique official pair indices; missing, duplicate, out-of-range, or cross-row identity-inconsistent records fail closed.",
+      "The package contract is reconciled to the already source-bound condition and five baseline executors instead of reporting them as unbound.",
+      "A concrete scorer cannot be uniquely instantiated from the current frozen C19-v2 package because the evaluator-target payload/interface and exact empirical bootstrap quantile/interpolation convention are not uniquely bound."
     ]
   },
   "consumed_identities": {
@@ -90,17 +94,19 @@
     "c19_external_v2_official_v1_consumed": false
   },
   "blockers": [
-    "Fresh Evidence Analyst execution ADMIT/REJECT is required before any official C19-v2 one-way action."
+    "PRE_START_SCORER_SEMANTICS_AMBIGUOUS: the exact evaluator-target payload/interface and the exact empirical bootstrap quantile/interpolation convention are not uniquely frozen by the current C19-v2 package.",
+    "The preserver remains interface-bound only; no immutable C19 preserve authority exists or was created."
   ],
   "concurrency_reconciliation": {
-    "concurrent_c19_movement_detected": true,
-    "observed_head": "52b3796d54082e5ccc84a883429dcc962b232884",
-    "action": "Re-audited the concurrent prospective implementation-binding commit against Analyst authority, retained it, then fixed its MAIN-owned CI and binding-verification blockers.",
+    "concurrent_c19_movement_detected": false,
+    "start_head": "17ce3e61d17436337d13c90c6c86184fcad09f22",
+    "final_head": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
     "sub_report_tip_consumed": "202a2e9c40ae541350d032b8abf0ed14a1cee5c8",
-    "evidence_analyst_tip_unchanged_at_stop": true
+    "evidence_analyst_tip_unchanged_at_stop": true,
+    "orchestrator_report_tip_before_persistence": "175991213679543dde3dfa352e36f9ed89223085"
   },
   "integrity_status": {
-    "status": "PRE_START_READY_FOR_EXECUTION_ADMISSION",
+    "status": "PRE_START_SCORER_SEMANTICS_AMBIGUOUS",
     "frozen_science_changed": false,
     "official_cache_opened": false,
     "official_cache_verified": false,
@@ -114,26 +120,30 @@
     "identity_consumed": false,
     "raw_before_score_contract_preserved": true,
     "no_clobber_contract_preserved": true,
+    "exact_raw_schema_closed": true,
+    "exact_pair_coverage_closed": true,
     "parameter_match_asserted": false,
     "compute_match_asserted": false,
     "winner_claim_allowed": false
   },
   "main_critical_path_fixups_completed": [
-    "Reconciled and audited concurrent source-only implementation-binding commit 52b3796d54082e5ccc84a883429dcc962b232884.",
-    "Fixed four Ruff E501 failures without changing scientific semantics in d4991b88d499d1523c4f6c3ac1cb785b8149872a.",
-    "Added machine-verifiable source/input/protocol/runtime blob binding and explicit resource-match limitations in 17ce3e61d17436337d13c90c6c86184fcad09f22.",
-    "Confirmed exact-head CI 35148696966 green on Python 3.11 and 3.13."
+    "Replaced the six-field ad-hoc raw payload with the exact frozen 16-field target-blind raw schema and SHA-256 record-id commitment.",
+    "Added exact 55x1744 pair coverage, duplicate/missing/out-of-range detection, and cross-row pair-identity consistency checks.",
+    "Added the already-determined final step index to the source-bound baseline executor payload so the frozen raw schema can be materialized without new scientific semantics.",
+    "Added synthetic fail-closed tests for exact schema, complete pair coverage, cross-row identity, target leakage, no-clobber, preservation ordering, and reconstruction.",
+    "Refreshed exact implementation-binding blob hashes and reconciled the harness contract with source-bound condition/baseline executors.",
+    "Confirmed exact-head CI 35152618704 green on Python 3.11 and 3.13."
   ],
   "same_run_steps_completed": [
-    "PRE_START_BINDING_INCOMPLETE: audited prospectively bound executors and baseline mappings.",
-    "PRE_START_BLOCKER: repaired formatting-only CI failure.",
-    "PRE_START_BINDING_INCOMPLETE: completed exact source/input/runtime binding verification.",
-    "PRE_START_READY_FOR_EXECUTION_ADMISSION: exact package green and reviewable; stopped before one-way execution."
+    "PRE_START_CONTRACT_MISMATCH: closed the raw schema mismatch against the frozen protocol.",
+    "PRE_START_COVERAGE_GUARD_INCOMPLETE: enforced exactly 1,744 unique official pair indices in every frozen row.",
+    "PRE_START_SCORER_BINDING_INCOMPLETE: inspected the frozen scoring contract and repository conventions after raw closure.",
+    "PRE_START_SCORER_SEMANTICS_AMBIGUOUS: stopped before inventing an evaluator-target payload or bootstrap quantile/interpolation rule."
   ],
-  "same_run_stop_reason": "Current Evidence Analyst requires STOP at PRE_START_READY_FOR_EXECUTION_ADMISSION; official execution remains disallowed until a fresh exact-package execution ADMIT/REJECT.",
+  "same_run_stop_reason": "The current Evidence Analyst requires STOP at PRE_START_SCORER_SEMANTICS_AMBIGUOUS. Implementing a concrete scorer now would add scoring semantics not uniquely frozen by the current C19-v2 package.",
   "work_intentionally_left_for_sub": [],
   "reserved_sub_work_not_touched": [],
   "lane_repartition_reason": null,
   "analyst_split_invalidated": false,
-  "next_main_action": "Return exact package head 17ce3e61d17436337d13c90c6c86184fcad09f22 and green CI 35148696966 to Evidence Analyst for fresh execution ADMIT/REJECT. Do not create STARTED or access official Belief-R content under the current handoff."
+  "next_main_action": "Return exact C19 head 66c8eafe9863ed1b2455cc833a3dc498ce7721b0 and green CI 35152618704 to Evidence Analyst for prospective resolution of the evaluator-target schema and bootstrap CI convention. Do not create STARTED or access official Belief-R content under the current handoff."
 }
