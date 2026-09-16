@@ -1,0 +1,116 @@
+{
+  "timestamp": "2026-09-16T10:32:36+09:00",
+  "role": "LITERATURE_REDUCTION_SCOUT",
+  "schema": "sparkbrain-external-research-audit-state-v1",
+  "repository_refs_inspected": {
+    "main": "ba16bf10535141c2edb29bbe3439ba0a38e71179",
+    "control_brain_handoff": "1985198deb95190d45cb46629beb654eb04d4d92",
+    "evidence_analyst_handoff": "5f444a295d3ae32263923c3706ac2c6c6746533d",
+    "orchestrator_run_report": "50f75af6f454b792d8f1dca2e4d8d260237104b2",
+    "a01_p4_pr": 137,
+    "a01_p4_head_fresh": "1bd0099f4358e02efac7ee4acccfe5257a86c4be",
+    "a01_p4_head_in_latest_analyst": "c1248bb3c87c0767e3e1a3cd2a6978ebb4eb06dc",
+    "a01_p4_identity": "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
+    "p4_matching_control_or_preserve_branch_visible_in_fresh_search": false,
+    "active_research_inventory_inspected": true,
+    "legacy_freeze_and_preserve_inventory_inspected": true
+  },
+  "control_brain_commit_consumed": "1985198deb95190d45cb46629beb654eb04d4d92",
+  "evidence_analyst_commit_consumed": "5f444a295d3ae32263923c3706ac2c6c6746533d",
+  "main_report_commit_consumed": "50f75af6f454b792d8f1dca2e4d8d260237104b2",
+  "main_report_source": "legacy_shared_compatibility_fallback_split_main_missing",
+  "sub_report_commit_consumed": null,
+  "sub_report_source": "split_sub_missing_no_durable_current_sub_report_consumed",
+  "split_report_status": {
+    "reports/orchestrator/main/latest.md": "MISSING_404",
+    "reports/orchestrator/main/state.json": "NOT_CONSUMED_BECAUSE_SPLIT_STREAM_NOT_MATERIALIZED",
+    "reports/orchestrator/sub/latest.md": "MISSING_404",
+    "reports/orchestrator/sub/state.json": "NOT_CONSUMED_BECAUSE_SPLIT_STREAM_NOT_MATERIALIZED",
+    "role_suffixed_history": "NONE_VISIBLE_IN_2026-09-16_HISTORY_LIST"
+  },
+  "current_repository_scientific_context": {
+    "central_line": "A01_MD002_P4",
+    "p2": "SUPPORTED_SELECTIVE_CIRCULATION_CONSUMED_DEVELOPMENT",
+    "p3": "SUPPORTED_R_CAUSAL_CARRIER_CONSUMED_DEVELOPMENT",
+    "p4": "UNRESOLVED_PRESTARTED_AT_LATEST_ANALYST_INSPECTION_HEAD_MOVED_AFTERWARD",
+    "rv01_r01_17": "SUPPORTED_REAL_DELAY_CAUSAL_TIMING_CONSUMED_REDUCIBLE_TO_ORDINARY_LOCAL_DELAY_PLASTICITY",
+    "rv02_rd005": "TERMINAL_CONSUMED_CURRENT_IDENTITY",
+    "cx01_candidate_002": "FORMAL_NEGATIVE_CONSUMED"
+  },
+  "new_external_scientific_evidence_found": true,
+  "findings": [
+    {
+      "id": "eligibility_three_factor_reduction",
+      "external_fact": "Neo-Hebbian three-factor learning and e-prop already provide delayed selective credit using local eligibility traces plus later modulatory/learning signals; direct biological eligibility-trace evidence also exists.",
+      "sources": [
+        "https://doi.org/10.3389/fncir.2018.00053",
+        "https://doi.org/10.1038/s41467-020-17236-y",
+        "https://doi.org/10.1111/ejn.13921"
+      ],
+      "affected_lines": ["A01_P2", "A01_P3", "A01_P5"],
+      "implication": "Delayed selective local credit is not a novelty discriminator; retain a minimal eligibility/return-address plus local-support null in P5.",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "pending_causal_choice_prior_art",
+      "external_fact": "A 2025 eLife study reports maintenance of a causal choice in a pending state across intervening decisions and later reinstatement at delayed feedback; the assessment notes limited ambiguity in the task.",
+      "sources": ["https://doi.org/10.7554/eLife.101841.3"],
+      "affected_lines": ["A01_P4"],
+      "implication": "P4 must exceed singleton pending-cause memory by preserving genuine simultaneous historical plurality until later independent evidence resolves it without privileged selection.",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "latent_cause_plurality_baseline",
+      "external_fact": "Bayesian latent-cause work demonstrates representation/inference over a full distribution of multiple possible hidden causes rather than only a MAP cause.",
+      "sources": ["https://doi.org/10.1523/JNEUROSCI.0659-16.2016"],
+      "affected_lines": ["A01_P4", "A01_P5"],
+      "implication": "Plurality plus later evidence-based resolution is not conceptually novel; P5 should include an explicit latent-cause/belief-state null and account for its semantic/global-state privilege.",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "learned_delay_2026_reduction",
+      "external_fact": "A peer-reviewed 2026 Frontiers paper learns synaptic and axonal delays online with three-factor rules in feedforward and recurrent LIF SNNs and reports material gains from learned delays.",
+      "sources": ["https://doi.org/10.3389/fnins.2026.1814505"],
+      "affected_lines": ["RV01_R01_17", "PROGRAMME_NOVELTY"],
+      "implication": "Recent external literature independently strengthens the ordinary adaptive-delay interpretation of RV01 R01-17.",
+      "confidence": "HIGH"
+    },
+    {
+      "id": "local_forward_only_baseline_family",
+      "external_fact": "Recent TESS and Traces Propagation work demonstrates temporally/spatially local and forward-only SNN learning using local signals/eligibility mechanisms.",
+      "sources": [
+        "https://arxiv.org/abs/2502.01837",
+        "https://arxiv.org/abs/2509.13053"
+      ],
+      "affected_lines": ["A01_P5", "PROGRAMME_NOVELTY"],
+      "implication": "Locality, online operation and forward-only learning should be treated as constraints rather than novelty evidence; compare causal-resolution capability and privilege directly.",
+      "confidence": "HIGH"
+    }
+  ],
+  "reduction_candidates": [
+    "A01 P2/P3 -> eligibility trace / three-factor / e-prop plus anonymous return-address/provenance and local support",
+    "A01 P4 singleton delayed cause -> pending/prospective causal-choice representation",
+    "A01 P4/P5 plural unresolved causes -> explicit Bayesian latent-cause/belief-state inference",
+    "RV01 R01-17 learned delay -> ordinary adaptive synaptic/axonal delay learning",
+    "Programme locality/online/forward-only properties -> established local SNN learning family"
+  ],
+  "residual_unreduced_question": "Can actual anonymous historical provenance retain genuine causal plurality without explicit semantic/global belief state and let later external evidence selectively credit one lineage using only locally available causal structure, thereby changing future local competition/world interaction?",
+  "novelty_claim_status_from_this_scout": "NOT_ESTABLISHED_SEARCH_FOUND_NO_EXACT_LOW_PRIVILEGE_MATCH_BUT_ABSENCE_IS_NOT_EVIDENCE_OF_NOVELTY",
+  "questions_for_evidence_analyst": [
+    "Re-audit PR #137 at fresh head 1bd0099f4358e02efac7ee4acccfe5257a86c4be before any STARTED boundary because the prior exact-head readiness assessment is stale after the move.",
+    "Can P5 prospectively compare both a minimal eligibility/return-address local-memory null and an explicit latent-cause/belief-state null, tracking state size, lookup radius, semantic labels, learning-signal specificity and update locus?",
+    "What retained P4 runtime object proves genuine plurality rather than several explicit IDs stored for later singleton lookup?",
+    "What prospective observation distinguishes local historical provenance from a conventional pending-cause pointer or explicit posterior over causes?",
+    "Should the 2026 learned-delay paper be added to RV01 canonical reduction/status documentation?",
+    "Keep locality/online/forward-only properties as constraints unless they produce a causally discriminating capability beyond equally local established baselines."
+  ],
+  "top_implication": "A positive P4 must distinguish SparkBrain from both eligibility-trace credit assignment and explicit multi-cause belief-state inference; the residual claim is about low-privilege causal provenance/resolution rather than delayed credit or plurality alone.",
+  "affected_lines": ["A01_P2", "A01_P3", "A01_P4", "A01_P5", "RV01_R01_17", "PROGRAMME_NOVELTY"],
+  "confidence": "HIGH_FOR_PRIOR_ART_MEDIUM_HIGH_FOR_EXACT_REDUCTION_EQUIVALENCE",
+  "persistence": {
+    "branch": "ops/external-research-audit-handoff",
+    "history_path": "analysis/external_research_audit/history/2026-09-16/1032-LITERATURE_REDUCTION_SCOUT.md",
+    "latest_path": "analysis/external_research_audit/latest.md",
+    "state_path": "analysis/external_research_audit/state.json"
+  }
+}
