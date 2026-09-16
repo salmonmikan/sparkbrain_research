@@ -6,7 +6,9 @@ import pytest
 
 from sparkbrain.v03_external_validation.official_execution import (
     EXECUTION_HARNESS_ID,
+    EXPECTED_PAIRS_PER_ROW,
     FROZEN_PROTOCOL_HEAD,
+    RAW_REQUIRED_KEYS,
     ExecutionAdmission,
     OneWayExecutionHarness,
     PreservationReceipt,
@@ -26,8 +28,14 @@ def synthetic_executor(row, examples):
             "record_id": str(example["record_id"]),
             "source_index": int(example["source_index"]),
             "pair_index": int(example["pair_index"]),
-            "prediction": "A",
-            "metadata": {"synthetic": True, "row_kind": row["row_kind"]},
+            "prediction": "a",
+            "metadata": {
+                "synthetic": True,
+                "row_kind": row["row_kind"],
+                "final_probabilities": {"a": 0.6, "b": 0.3, "c": 0.1},
+                "work_counters": {"synthetic_operations": 1},
+                "final_step_index": int(example["step_index"]),
+            },
         }
         for example in examples
     ]
@@ -35,6 +43,29 @@ def synthetic_executor(row, examples):
 
 def baseline_registry():
     return {name: synthetic_executor for name in BASELINES}
+
+
+def synthetic_examples():
+    return tuple(
+        {
+            "record_id": f"synthetic-{pair_index}",
+            "source_index": pair_index,
+            "pair_index": pair_index,
+            "step_index": 1,
+        }
+        for pair_index in range(EXPECTED_PAIRS_PER_ROW)
+    )
+
+
+def acquire_synthetic_raw() -> RawBundle:
+    harness = OneWayExecutionHarness(boundary=RuntimeBoundary())
+    return harness.acquire(
+        admission=ExecutionAdmission.synthetic_dev(),
+        examples=synthetic_examples(),
+        condition_executor=synthetic_executor,
+        baseline_executors=baseline_registry(),
+        raw_writer=lambda bundle: None,
+    )
 
 
 def test_runtime_manifest_binds_frozen_protocol_and_blocks_network() -> None:
@@ -71,22 +102,40 @@ def test_executor_registry_requires_all_five_frozen_baselines() -> None:
         validate_executor_registry(synthetic_executor, incomplete)
 
 
-def test_synthetic_harness_executes_exact_55_rows_without_targets() -> None:
+def test_synthetic_harness_executes_exact_55_by_1744_contract_without_targets() -> None:
     written: list[RawBundle] = []
     harness = OneWayExecutionHarness(boundary=RuntimeBoundary())
     raw = harness.acquire(
         admission=ExecutionAdmission.synthetic_dev(),
-        examples=({"record_id": "synthetic-1", "source_index": 0, "pair_index": 0},),
+        examples=synthetic_examples(),
         condition_executor=synthetic_executor,
         baseline_executors=baseline_registry(),
         raw_writer=written.append,
     )
     assert len(expected_row_inventory()) == 55
-    assert len(raw.records) == 55
+    assert len(raw.records) == 55 * EXPECTED_PAIRS_PER_ROW
     assert {record["row_id"] for record in raw.records} == {
         row["row_id"] for row in expected_row_inventory()
     }
+    assert all(set(record) == RAW_REQUIRED_KEYS for record in raw.records)
+    assert all("record_id" not in record for record in raw.records)
     assert written == [raw]
+
+
+def test_missing_or_duplicate_pair_coverage_fails_closed() -> None:
+    raw = acquire_synthetic_raw()
+    with pytest.raises(ValueError, match="55x1744"):
+        RawBundle.from_records(raw.records[:-1])
+    with pytest.raises(ValueError, match="duplicate pair_index"):
+        RawBundle.from_records((*raw.records, raw.records[0]))
+
+
+def test_cross_row_pair_identity_mismatch_fails_closed() -> None:
+    raw = acquire_synthetic_raw()
+    records = [dict(record) for record in raw.records]
+    records[-1]["source_index"] += 1
+    with pytest.raises(ValueError, match="cross-row official-pair identity mismatch"):
+        RawBundle.from_records(records)
 
 
 def test_raw_target_leakage_fails_closed() -> None:
@@ -94,13 +143,13 @@ def test_raw_target_leakage_fails_closed() -> None:
 
     def leaking_executor(row, examples):
         rows = synthetic_executor(row, examples)
-        rows[0]["metadata"]["ground_truth"] = "A"
+        rows[0]["metadata"]["ground_truth"] = "a"
         return rows
 
     with pytest.raises(ValueError, match="target leakage"):
         harness.acquire(
             admission=ExecutionAdmission.synthetic_dev(),
-            examples=({"record_id": "synthetic-1", "source_index": 0, "pair_index": 0},),
+            examples=synthetic_examples(),
             condition_executor=leaking_executor,
             baseline_executors={name: leaking_executor for name in BASELINES},
             raw_writer=lambda raw: None,
@@ -111,7 +160,7 @@ def test_no_clobber_blocks_second_acquisition() -> None:
     harness = OneWayExecutionHarness(boundary=RuntimeBoundary())
     kwargs = {
         "admission": ExecutionAdmission.synthetic_dev(),
-        "examples": ({"record_id": "synthetic-1", "source_index": 0, "pair_index": 0},),
+        "examples": synthetic_examples(),
         "condition_executor": synthetic_executor,
         "baseline_executors": baseline_registry(),
         "raw_writer": lambda raw: None,
@@ -125,7 +174,7 @@ def test_preservation_is_required_before_scoring_and_digest_is_bound() -> None:
     harness = OneWayExecutionHarness(boundary=RuntimeBoundary())
     raw = harness.acquire(
         admission=ExecutionAdmission.synthetic_dev(),
-        examples=({"record_id": "synthetic-1", "source_index": 0, "pair_index": 0},),
+        examples=synthetic_examples(),
         condition_executor=synthetic_executor,
         baseline_executors=baseline_registry(),
         raw_writer=lambda bundle: None,
@@ -156,7 +205,7 @@ def test_raw_jsonl_is_no_clobber_and_reconstructable(tmp_path: Path) -> None:
     output = tmp_path / "raw.jsonl"
     raw = harness.acquire(
         admission=ExecutionAdmission.synthetic_dev(),
-        examples=({"record_id": "synthetic-1", "source_index": 0, "pair_index": 0},),
+        examples=synthetic_examples(),
         condition_executor=synthetic_executor,
         baseline_executors=baseline_registry(),
         raw_writer=lambda bundle: write_raw_jsonl_no_clobber(output, bundle),
