@@ -8,7 +8,7 @@ Prospective identity: `a01-family-b-distributed-field-trace-gen1-v1`
 
 ## 1. Prospectivity boundary
 
-This Generation-1 package is created after the terminal Family-A P4 result. It is **not** represented as a pre-P4 fully specified candidate. Its admissible scientific boundary is inherited only from pre-P4 Family-B material in `V061_D8_SPARKBRAIN_MECHANISTIC_THEORY_REVISION.md`, `V061_PREMECHANISM_ADMISSION_AND_NEGATIVE_COMPLETION.md`, and `V061_CROSS_LINE_EVIDENCE_FIREWALL_AND_PREMECHANISM_MATRIX.md`:
+This Generation-1 package is created after the terminal Family-A P4 result. It is **not** represented as a pre-P4 fully specified candidate. Its admissible scientific boundary is inherited only from pre-P4 Family-B material in `V061_D8_SPARKBRAIN_MECHANISTIC_THEORY_REVISION.md`, `V061_PREMECHANISM_ADMISSION_AND_NEGATIVE_COMPLETION.md`, and `V061_CROSS_LINE_EVIDENCE_FIREWALL_AND_PREMECHANISM_MATRIX.md`. The earliest repository revision that introduced the H-B `Field-distributed consequence trace` family used here is `525ecd9e205b2657a4ed207ae2b6cef0bae4bffc`; that revision is a family-level prior only, not a frozen Generation-1 protocol bundle.
 
 - an interaction may leave a **decaying distributed Field trace**;
 - later local competition may be biased through that trace;
@@ -113,12 +113,15 @@ SUB must not work on this branch, identity, verifier, CI, review, binding, or an
 
 ## 7. Binding fields
 
-The code-side `PreMechanismProposal` binds the pre-P4 protocol-bundle source commit and the exact discriminator/null/stopping identities. Because this post-P4 readiness contract did not exist at that pre-P4 commit, the readiness package separately binds the exact bytes of this document using both its Git blob SHA and SHA-256. The package binding also fixes the complete required source-path key set, each source Git blob, the readiness input bytes, and the additional belief-state null ID.
+The code-side `PreMechanismProposal.protocol_bundle_source_sha` binds the **post-P4 Generation-1 protocol-contract source** commit `7af99d6c3bbbf946f90fc01d9bc7cc7661de2006`; it is not claimed to be a pre-P4 protocol bundle. The package separately binds `pre_p4_family_source_sha` to `525ecd9e205b2657a4ed207ae2b6cef0bae4bffc`, the pre-P4 revision that introduced H-B as a conceptual family. That earlier revision establishes only the admissible family-level prior and does not retroactively fix Generation-1 discriminator IDs, dynamics, thresholds, scorer rules, or stopping rules.
 
-The final implementation head must record:
+Because this post-P4 readiness contract did not exist at the pre-P4 family source, the readiness package binds the exact bytes of this document using both its Git blob SHA and SHA-256. The package binding also fixes the complete required source-path key set, each source Git blob, the readiness input bytes, the additional belief-state null ID, and an exact implementation-head SHA. `implementation_head_sha` denotes the last commit containing all mechanism, harness, tests, status/decision documentation, and provenance clarifications before the package-binding metadata itself is finalized; the binding-finalization commit may only change the binding artifact and its binding-verification test.
+
+The final readiness package must record:
 
 - prospective identity;
-- pre-P4 protocol-bundle source SHA;
+- pre-P4 Family-B family-source SHA;
+- post-P4 Generation-1 protocol-contract source SHA;
 - mechanism rule spec path (this file);
 - exact mechanism-contract Git blob and SHA-256;
 - null-ladder spec path (`docs/V061_A01_NULL_LADDER.md` plus the explicit IDs above);
