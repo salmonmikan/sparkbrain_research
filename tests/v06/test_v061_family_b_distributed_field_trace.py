@@ -124,7 +124,7 @@ def test_contradiction_reverses_local_credit_sign() -> None:
     )
 
     assert confirmed.competition_score((1.0, 0.0, 0.0, 0.0)) == 0.5
-    assert contradicted.competition_score((1.0, 0.0, 0.0, 0.0)) == -0.25
+    assert contradicted.competition_score((1.0, 0.0, 0.0, 0.0, 0.0)) == -0.25
 
 
 def test_f_only_carrier_transplant_preserves_functional_score() -> None:
@@ -144,6 +144,31 @@ def test_f_only_carrier_transplant_preserves_functional_score() -> None:
 
     probe = (0.0, 1.0, 0.0, 0.0)
     assert transplanted.competition_score(probe) == donor.competition_score(probe) == 0.5
+
+
+@pytest.mark.parametrize(
+    ("carrier", "expected_message"),
+    [
+        (
+            [[True, False], [0.0, 0.0], 0.5],
+            "vector values must be real numbers",
+        ),
+        (
+            [[0.0, 0.0], [False, 0.0], 0.5],
+            "vector values must be real numbers",
+        ),
+        (
+            [[0.0, 0.0], [0.0, 0.0], False],
+            "decay must be a real number",
+        ),
+    ],
+)
+def test_f_only_carrier_restore_rejects_boolean_numeric_values(
+    carrier: list[object],
+    expected_message: str,
+) -> None:
+    with pytest.raises(TypeError, match=re.escape(expected_message)):
+        DistributedFieldTraceState.from_field_carrier(carrier)
 
 
 def test_bounded_plurality_can_hold_two_footprints_then_differentiate_by_overlap() -> None:
