@@ -60,3 +60,30 @@ def test_readiness_fixture_rejects_fractional_signs_before_coercion(
         match=r"readiness fixture signs must be fixed at \+1 and -1",
     ):
         load_readiness_fixture(invalid_path)
+
+
+@pytest.mark.parametrize("invalid_width", [4.9, True, "4"])
+def test_readiness_fixture_rejects_non_integer_width_before_coercion(
+    tmp_path: Path,
+    invalid_width: object,
+) -> None:
+    payload = json.loads(FIXTURE_PATH.read_text(encoding="utf-8"))
+    payload["width"] = invalid_width
+    invalid_path = tmp_path / "invalid-width.json"
+    invalid_path.write_text(json.dumps(payload), encoding="utf-8")
+
+    with pytest.raises(ValueError, match="width must be a positive integer"):
+        load_readiness_fixture(invalid_path)
+
+
+def test_readiness_fixture_rejects_stringified_vector_values(tmp_path: Path) -> None:
+    payload = json.loads(FIXTURE_PATH.read_text(encoding="utf-8"))
+    payload["left_activity"][0] = "1.0"
+    invalid_path = tmp_path / "invalid-vector.json"
+    invalid_path.write_text(json.dumps(payload), encoding="utf-8")
+
+    with pytest.raises(
+        ValueError,
+        match="left_activity values must be finite numbers",
+    ):
+        load_readiness_fixture(invalid_path)

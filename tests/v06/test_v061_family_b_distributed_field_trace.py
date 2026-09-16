@@ -56,6 +56,31 @@ def test_duplicate_external_evidence_id_is_rejected_without_second_credit() -> N
     assert ledger.consumed_ids == frozenset({"ev:duplicate"})
 
 
+def test_consumed_evidence_ids_round_trip_across_ledger_recreation() -> None:
+    state = _with_left_activity()
+    ledger = ExternalEvidenceLedger()
+    returned = state.apply_external_world_return(
+        (1.0, 0.0, 0.0, 0.0),
+        sign=1,
+        evidence_id="ev:checkpoint",
+        evidence_ledger=ledger,
+    )
+
+    checkpoint = ledger.export_consumed_ids()
+    restored = ExternalEvidenceLedger.from_consumed_ids(checkpoint)
+
+    assert checkpoint == ("ev:checkpoint",)
+    assert restored.export_consumed_ids() == checkpoint
+    with pytest.raises(ValueError, match="external evidence ID already consumed"):
+        returned.apply_external_world_return(
+            (1.0, 0.0, 0.0, 0.0),
+            sign=1,
+            evidence_id="ev:checkpoint",
+            evidence_ledger=restored,
+        )
+    assert returned.credit == (0.5, 0.0, 0.0, 0.0)
+
+
 def test_anonymous_lineage_swap_follows_physical_field_footprint() -> None:
     left = _with_left_activity()
     right = DistributedFieldTraceState.zeros().deposit_local_activity(
@@ -229,6 +254,10 @@ def test_distinct_external_returns_remain_resource_bounded() -> None:
                 decay=0.5,
             ).validate(),
             "credit values exceed the fixed resource bound",
+        ),
+        (
+            lambda: ExternalEvidenceLedger.from_consumed_ids(("ev:a", "ev:a")),
+            "consumed evidence IDs must be unique",
         ),
     ],
 )

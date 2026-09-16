@@ -25,6 +25,29 @@ class ExternalEvidenceLedger:
     def consumed_ids(self) -> frozenset[str]:
         return frozenset(self._consumed_ids)
 
+    def export_consumed_ids(self) -> tuple[str, ...]:
+        """Return deterministic checkpoint state for the acquisition boundary."""
+
+        return tuple(sorted(self._consumed_ids))
+
+    @classmethod
+    def from_consumed_ids(
+        cls,
+        consumed_ids: tuple[str, ...],
+    ) -> ExternalEvidenceLedger:
+        """Restore acquisition deduplication state across checkpoint/restart."""
+
+        if not isinstance(consumed_ids, tuple):
+            raise TypeError("consumed evidence IDs must be a tuple")
+        if any(
+            not isinstance(evidence_id, str) or not evidence_id.strip()
+            for evidence_id in consumed_ids
+        ):
+            raise ValueError("consumed evidence IDs must be non-empty strings")
+        if len(set(consumed_ids)) != len(consumed_ids):
+            raise ValueError("consumed evidence IDs must be unique")
+        return cls(_consumed_ids=set(consumed_ids))
+
     def consume_once(self, evidence_id: str) -> None:
         if not isinstance(evidence_id, str) or not evidence_id.strip():
             raise ValueError("external evidence ID must be a non-empty string")

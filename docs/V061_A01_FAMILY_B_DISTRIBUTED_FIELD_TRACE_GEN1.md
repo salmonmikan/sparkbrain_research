@@ -30,7 +30,7 @@ The minimal Generation-1 carrier is a fixed-width local Field state with two com
 
 The candidate stores **no lineage identifier, semantic label, task label, evaluator lookup key, transition/path identifier, global belief table, or evidence ID**. It exposes no API that accepts a selected lineage. The scientific carrier receives only a fixed-width anonymous boundary vector plus a signed physical consequence (`+1` or `-1`).
 
-Repeated delivery of one external evidence identity must not create repeated credit. An acquisition-side `ExternalEvidenceLedger` therefore consumes opaque evidence IDs exactly once before the update is accepted. This ledger is **not** part of the candidate Field carrier, is not exported by the P3 F-only transfer, cannot affect competition scores, and cannot select a lineage; it exists only to enforce the repository-wide duplicate-evidence invariant.
+Repeated delivery of one external evidence identity must not create repeated credit. An acquisition-side `ExternalEvidenceLedger` therefore consumes opaque evidence IDs exactly once before an update is accepted. This ledger is **not** part of the candidate Field carrier, is not exported by the P3 F-only transfer, cannot affect competition scores, and cannot select a lineage; it exists only to enforce the repository-wide duplicate-evidence invariant. Its consumed-ID state is deterministic checkpoint state: callers must persist `export_consumed_ids()` and restore it with `from_consumed_ids()` across restart/checkpoint boundaries before accepting further returns. Recreating an empty ledger after prior consumption is not a valid acquisition boundary.
 
 Local update rules are fixed prospectively:
 
@@ -79,7 +79,7 @@ Generation-1 must be stopped rather than rescued if any of the following is obse
 4. **Plurality failure:** bounded coexisting footprints cannot later be causally differentiated without privileged addressing.
 5. **Null reduction:** the claimed residual is reproduced by the matched explicit eligibility/return-address null, recurrent causal-trace null, or explicit latent-cause/belief-state null with equal or lower privilege/resources.
 6. **Identity/binding failure:** proposal/source/protocol/package/input identity cannot be verified exactly before STARTED.
-7. **Bound/dedup failure:** the candidate requires unbounded eligibility/credit or repeated delivery of one evidence ID increases causal credit.
+7. **Bound/dedup failure:** the candidate requires unbounded eligibility/credit, repeated delivery of one evidence ID increases causal credit, or duplicate-consumption state cannot survive the acquisition lifecycle.
 
 No observed failure may be repaired under the same consumed identity.
 
@@ -88,13 +88,13 @@ No observed failure may be repaired under the same consumed identity.
 The following are deterministic implementation tests, not scientific measurements and do not consume the one-way identity:
 
 - component-wise lineage-swap construction follows anonymous physical footprint;
-- external return is necessary for credit update;
-- repeated delivery of one evidence ID is rejected by the acquisition boundary;
+- external return is necessary for credit creation/strengthening;
+- repeated delivery of one evidence ID is rejected by the acquisition boundary, including after checkpoint/export and ledger restoration;
 - contradiction changes the sign of the local consequence contribution;
 - F-only carrier serialization/export/import preserves the deterministic competition score;
 - two disjoint coexisting footprints can be represented and anonymous boundary return can address them only through vector overlap;
 - eligibility and credit decay on later local steps and remain inside the fixed resource bound;
-- dimensional mismatch, non-finite values, out-of-range activity, invalid consequence sign, or invalid decay fail closed;
+- malformed public fixture values (including fractional/boolean/string width, fractional signs, and stringified vector values), dimensional mismatch, non-finite values, out-of-range activity, invalid consequence sign, or invalid decay fail closed;
 - proposal hash, exact source key set/source blobs, contract bytes, input bytes, discriminator IDs, null IDs, and privilege declarations verify exactly.
 
 Passing these tests means **ready for Evidence Analyst review**, not ready for one-way execution.
