@@ -1,0 +1,125 @@
+{
+  "schema_version": "0.4",
+  "protocol_id": "c19-external-v2",
+  "adapter_contract_id": "c19-belief-r-truth-free-symbolic-adapter-v1",
+  "planned_official_identity": "c19-external-v2-official-v1",
+  "status": "readiness_only",
+  "official_evaluation_allowed": false,
+  "parent_blocked_protocol": {
+    "protocol_id": "c19-external-v1",
+    "run_id": "c19-external-blocked-readiness-v1",
+    "source_commit": "052413136229dcfa63f08cebe19585134f7cfb98",
+    "initial_preregistration_sha256": "97a2448e2918f3b0a4583520ad2f35d5d47d99813585be7bb3fae32e0b340cfe"
+  },
+  "belief_r_metadata_pin": {
+    "repository_id": "CAiRE/belief_r",
+    "revision": "3719f5804c63318037465fecf298a7fd78d99121",
+    "spec_sha256": "ed092dd97a176813f011cdf007d4e34a0b9bcc7c855c22983a31ff82e7b0d63c",
+    "cache_content_access_allowed": false,
+    "cache_verification_allowed": false,
+    "examples_read_allowed": false
+  },
+  "adapter_input_boundary": {
+    "allowed_fields": [
+      "record_id",
+      "source_index",
+      "step_index",
+      "question",
+      "choices"
+    ],
+    "forbidden_fields": [
+      "ground_truth",
+      "update_required",
+      "target",
+      "label",
+      "truth",
+      "answer",
+      "evaluator",
+      "gold",
+      "modus",
+      "relation_type",
+      "agreement_level",
+      "atomic_idx",
+      "dataset_id",
+      "official_cache_bytes",
+      "c06_official_outputs"
+    ],
+    "all_autonomous_conditions_receive_same_visible_fields": true,
+    "evaluator_truth_visible": false,
+    "official_test_target_visible": false
+  },
+  "question_grammar": {
+    "required_query_marker": "What necessarily had to follow",
+    "premise_prefix_source": "question text before the first required query marker",
+    "normalization": "NFKC, casefold, whitespace collapse",
+    "premise_segmentation": "surface sentence boundaries only",
+    "semantic_inference": false,
+    "polarity_inference": false,
+    "ontology_lookup": false
+  },
+  "source_index_contract": {
+    "caller_supplied": true,
+    "preserved_exactly": true,
+    "content_derived_reindexing": false,
+    "ordering_rule": "ascending source_index within the supplied pair/stream",
+    "duplicates_allowed": false
+  },
+  "condition_matrix": {
+    "inputs": [
+      "I0_whole_hash",
+      "I1_local_compositional",
+      "I2_truth_free_symbolic_surface"
+    ],
+    "gates": [
+      "G0_probability_margin",
+      "G1_coalition"
+    ],
+    "entities": [
+      "E0_global"
+    ],
+    "oracle_conditions": []
+  },
+  "baseline_kinds": [
+    "direct_stateless",
+    "explicit_state_probabilistic",
+    "modular_rim_like",
+    "recurrent",
+    "transformer"
+  ],
+  "checkpoint_selection": {
+    "selection_split": "dev",
+    "calibration_split": "dev",
+    "official_test_fit_or_tuning": false
+  },
+  "fresh_seed_contract": {
+    "official_seed_range": [15901, 15902, 15903, 15904, 15905],
+    "proxy_seed_range": [16901, 16902, 16903, 16904, 16905],
+    "reserved_test_seed_range": [18901, 18902],
+    "split_seed": 17901,
+    "bootstrap_seed": 19901
+  },
+  "static_admission_checks": {
+    "target_leakage": "must_pass",
+    "hidden_oracle_privilege": "must_pass",
+    "source_index_determinism": "must_pass",
+    "same_visible_input_boundary": "must_pass",
+    "exact_feature_equivalence_to_I0_or_I1": "must_be_false"
+  },
+  "raw_before_score_plan": {
+    "required": true,
+    "raw_prediction_preservation_before_any_scoring": true,
+    "scoring_in_this_handoff": false
+  },
+  "no_clobber_plan": {
+    "planned_identity_is_single_use": true,
+    "started_ref_required_before_future_official_access": true,
+    "existing_started_ref_is_fatal": true,
+    "existing_raw_or_scored_output_is_fatal": true,
+    "started_ref_created_in_this_handoff": false
+  },
+  "admission_boundary": {
+    "fresh_evidence_analyst_admit_reject_required": true,
+    "stop_when_exact_readiness_package_is_reviewable": true,
+    "official_data_access_before_admission": false
+  }
+}
