@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-09-16T15:22:00+09:00",
+  "timestamp": "2026-09-16T15:34:00+09:00",
   "worker_role": "main",
   "evidence_analyst_commit": "c3e3cbd721d57f71f22f6d9080c02793e38f03ad",
   "analyst_lanes": {
     "main_lane": "A01 Family-B distributed-field-trace Generation-1 readiness on PR #144; MAIN owns all critical-path fixes; execution_allowed=false",
-    "sub_lane": "CX01 PR #143 terminal Candidate-002 documentation integration, reserved_for_sub and independent; now reported complete/merged by SUB",
-    "sub_fallback": "RV01 PR #140 canonical current-status reconciliation, reserved_for_sub and independent",
-    "blocked_until": "Family-B one-way execution requires clean readiness integration plus a later fresh Evidence Analyst handoff explicitly admitting execution",
+    "sub_lane": "CX01 PR #143 terminal Candidate-002 documentation integration, reserved_for_sub and independent; completed/merged by SUB",
+    "sub_fallback": "RV01 PR #140 canonical project-status reconciliation, reserved_for_sub and independent",
+    "blocked_until": "Family-B one-way execution requires readiness integration plus a later fresh Evidence Analyst handoff explicitly admitting execution",
     "do_not_touch": "consumed A01 P2/P3/P4 identities and immutable authorities; consumed RV01/RV02/CX01 identities; SUB-reserved work"
   },
   "main_active_claim": {
@@ -18,17 +18,20 @@
   },
   "authoritative_refs": {
     "a01_base": "research/v061-a01-n3-adapter@1b548043b8f0850294cc3cbfaaa84dbdad69342c",
-    "family_b_head": "22db5a038b0cec364dcd4fb04f12f7a5066306bd",
+    "family_b_head": "0ddb73d9602f6459ee1d181f1acf3f7fe02dd839",
     "proposal_specification_sha256": "357f4a500164d31a3a851edc77c0870d3b59930c1766c1769671e9bdaf6ecf14",
     "protocol_bundle_source_sha": "7af99d6c3bbbf946f90fc01d9bc7cc7661de2006",
+    "mechanism_source_git_blob": "6eafb74b6b6d28c937f460a57863e19a7382f66f",
+    "mechanism_source_sha256": "00d45e4b4e9e5d166387f93c073dcbd2471a124c8f577168e4e159d7392d9f24",
     "execution_admitted": false,
     "family_a_p4_status": "terminal-consumed / UNSUPPORTED_EN_BLOC_MERGED_CREDIT"
   },
   "branches_prs_advanced": [
     {
       "branch": "research/v061-a01-family-b-gen1-20260916",
-      "from_head": "75a870ab3a9325c86050772514c5dfe277088860",
-      "to_head": "22db5a038b0cec364dcd4fb04f12f7a5066306bd",
+      "observed_concurrent_head": "75a870ab3a9325c86050772514c5dfe277088860",
+      "intermediate_main_head": "22db5a038b0cec364dcd4fb04f12f7a5066306bd",
+      "current_head": "0ddb73d9602f6459ee1d181f1acf3f7fe02dd839",
       "pr": 144,
       "merged": false
     }
@@ -37,24 +40,28 @@
     "scientific_experiments": [],
     "one_way_workflow_dispatches": [],
     "ci": {
-      "run_id": 35063142416,
-      "head": "22db5a038b0cec364dcd4fb04f12f7a5066306bd",
-      "status_at_report": "in_progress",
-      "observed_steps": "Python 3.11/3.13 lint and local readiness succeeded; full test in progress; bundle validation pending"
+      "run_id": 35063756557,
+      "head": "0ddb73d9602f6459ee1d181f1acf3f7fe02dd839",
+      "status": "success",
+      "jobs": "Python 3.11 and 3.13 both passed lint, local readiness, full tests, and bundle validation"
     },
     "fresh_review": {
-      "head": "22db5a038b0cec364dcd4fb04f12f7a5066306bd",
-      "status_at_report": "running"
+      "head": "0ddb73d9602f6459ee1d181f1acf3f7fe02dd839",
+      "status": "completed_with_one_P1",
+      "remaining_finding": "Append a dated Family-B readiness/dynamics decision and limitations to docs/DECISION_LOG.md"
     }
   },
   "scientific_results": {
     "new_scientific_information": false,
     "latest_authoritative_result_unchanged": "A01 Family-A P4 UNSUPPORTED_EN_BLOC_MERGED_CREDIT",
-    "readiness_information": "JSON checkpoint restoration defect fixed; no scientific output exposed"
+    "readiness_information": [
+      "JSON checkpoint restoration for consumed evidence IDs is now round-trip safe",
+      "JSON restoration of the F-only carrier now normalizes vectors back to immutable tuples"
+    ]
   },
   "consumed_identities": {
     "consumed_this_run": [],
-    "family_b_gen1": "fresh/unSTARTED/unconsumed as far as current inspected control/preserve inventory shows",
+    "family_b_gen1": "fresh/unSTARTED/unconsumed under current inspected control/preserve inventory",
     "protected_existing": [
       "A01 MD-001",
       "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
@@ -66,14 +73,14 @@
     ]
   },
   "blockers": [
-    "Exact-head CI for 22db5a0 still in progress at persistence time",
-    "Fresh exact-head Codex review for 22db5a0 still running at persistence time",
+    "P1: append-only Family-B mechanism/readiness decision missing from docs/DECISION_LOG.md",
+    "After that decision-log fix, the moved exact head must receive fresh CI and substantive review before merge",
     "One-way execution remains prohibited until a later fresh Evidence Analyst handoff explicitly admits it"
   ],
   "concurrency_reconciliation": {
-    "analyst_handoff_rechecked": "c3e3cbd721d57f71f22f6d9080c02793e38f03ad unchanged immediately before report preparation",
-    "live_branch_movement_reconciled": "Analyst-observed 77d0178 had already advanced to 75a870a; MAIN re-audited live head before adding 22db5a0",
-    "sub_report": "CX01 PR #143 merged independently; RV01 fallback remains SUB-owned",
+    "analyst_handoff_rechecked": "c3e3cbd721d57f71f22f6d9080c02793e38f03ad unchanged before final report",
+    "live_branch_movement_reconciled": "Analyst-observed 77d0178 had already advanced to 75a870a; MAIN re-audited live heads before 22db5a0 and 0ddb73d fixups",
+    "sub_report": "CX01 PR #143 merged independently; RV01 PR #140 remains SUB-owned fallback",
     "main_sub_collision": false
   },
   "integrity_status": {
@@ -82,20 +89,24 @@
     "one_way_identity_consumed": false,
     "scientific_output_exposed": false,
     "family_a_terminal_boundary_preserved": true,
-    "execution_admitted": false
+    "execution_admitted": false,
+    "pr144_merge_withheld_due_open_P1": true
   },
   "main_critical_path_fixups_completed": [
-    "Allowed JSON-decoded list checkpoint state in ExternalEvidenceLedger restore while retaining strict validation",
-    "Added explicit JSON checkpoint round-trip duplicate-protection test",
-    "Updated exact source blob and SHA-256 package binding",
-    "Verified and resolved all accumulated PR #144 review threads whose findings were fixed at current source",
-    "Requested fresh substantive review for exact head 22db5a0"
+    "Made consumed-evidence ledger restoration compatible with JSON checkpoint decoding while retaining strict validation",
+    "Added JSON checkpoint round-trip duplicate-protection test",
+    "Normalized persisted F-only carrier vectors to immutable tuples on JSON restore",
+    "Added F-only carrier JSON round-trip/immutability test",
+    "Updated exact mechanism source blob and SHA-256 package bindings after each source change",
+    "Verified and resolved prior PR #144 review findings only after current-source confirmation",
+    "Obtained exact-head CI success on 0ddb73d",
+    "Obtained fresh substantive review on 0ddb73d and preserved its new Decision Log P1 as unresolved"
   ],
   "work_intentionally_left_for_sub": [
-    "RV01 PR #140 current-status reconciliation after SUB completed CX01 PR #143"
+    "RV01 PR #140 canonical current-status reconciliation; CX01 PR #143 was already completed and merged independently by SUB"
   ],
   "reserved_sub_work_not_touched": true,
   "lane_repartition_reason": null,
   "analyst_split_invalidated": false,
-  "next_main_action": "Re-fetch PR #144 exact head; close any new exact-head CI/review finding; when CI and fresh review are clean, integrate only the reviewed exact head, then return the integrated package to Evidence Analyst for a fresh execution-admission decision. Do not cross STARTED under the current handoff."
+  "next_main_action": "Append the prospective Family-B dynamics/readiness contract and limitations to docs/DECISION_LOG.md using a byte-preserving edit path; re-fetch/audit the new exact head; obtain fresh exact-head CI and clean review; merge only that reviewed head into the A01 research branch; then return the integrated package to Evidence Analyst. Do not cross STARTED under the current handoff."
 }
