@@ -451,7 +451,7 @@ retained in the run artifacts.
 - C05 checkpoint evidence lacks an integrated checkpoint-matched, hashed dev-only encoder
   vocabulary/feature manifest;
 - final C06 model execution and C08 structural-plasticity evidence are not integrated;
-- `LICENSE_NOT_SELECTED.md` remains, so no public archive, tag, or ready claim was produced;
+- `LICENSE_NOT_SELECTED.md` remains, so no public archive or tag or ready claim was produced;
 - the tested lock is a Windows/Python 3.13 snapshot, not a universal cross-platform wheel lock.
 
 **Claim impact:** no evidence grade increases. This is reproducibility engineering for selected
@@ -707,7 +707,7 @@ contract correction only.
   - `raw_predictions.jsonl`: `d97d983fdaab2c08b78584090ba72ffb0eff379a3e9e702c5dbe63cfa49cc488`
 - Scientific support remains narrow: the input path is implicated in this synthetic diagnostic;
   semantic understanding, autonomous rough-input success, cognitive-core validity, concepts,
-  organs, biological fidelity, energy efficiency, and external generalization remain unsupported or unevaluated
+  organs, biological fidelity, and external generalization remain unsupported or unevaluated
 - Protected hashes and claim grades: unchanged
 
 ## 2026-08-26 — R-V03-0004 — C12 computational sensory-gate acceptance
