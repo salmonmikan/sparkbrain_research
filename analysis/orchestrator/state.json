@@ -1,54 +1,59 @@
 {
-  "timestamp": "2026-09-16T13:58:00+09:00",
+  "timestamp": "2026-09-16T15:01:07+09:00",
   "worker_role": "evidence_analyst",
   "authoritative_refs_inspected": {
     "main": "ba16bf10535141c2edb29bbe3439ba0a38e71179",
     "control_brain_handoff": "cd378adcc8636f5794ac56ffcbaacd037e5c8088",
-    "evidence_analyst_prior": "235c248c3eb87f42319fb1e2b990500641b9e624",
-    "orchestrator_report_branch": "f862937819537626c67aeb78ff67bee40e37070b",
-    "main_report_commit": "5d0acd8260290d5147f99063b944173f1fd9f0cd",
-    "sub_report_commit": "f862937819537626c67aeb78ff67bee40e37070b",
+    "evidence_analyst_prior": "565c6731c0ffb083510101c67c143c3311a04430",
+    "orchestrator_report_branch": "d0a2cade69f4f09fc6142e3e97a6544d68d30424",
+    "main_report_commit": "c88bb959ba28d83ef4edf8fe55630e9c3332eab4",
+    "sub_report_commit": "3392f2d108d54da9df343ede7edf9fa7368cd7f7",
     "a01_authoritative": "1b548043b8f0850294cc3cbfaaa84dbdad69342c",
-    "a01_p4_source_freeze": "1bd0099f4358e02efac7ee4acccfe5257a86c4be",
-    "a01_p4_started": "1bd0099f4358e02efac7ee4acccfe5257a86c4be",
-    "a01_p4_raw_preserve": "2511454f1633d3bc6f10e3d2a99e3ddd823bb798",
-    "a01_p4_scored_preserve": "56ee762540e0519034d2e8db0ad3c6acda667ffd",
-    "rv01_base": "98be60268845487ce51e76b8a7687552a5dbc51f",
-    "rv01_docs_head": "2d877a5af670c54d404d8782763129f497092f88",
-    "rv02_base": "8176b91f5d427f3bdfccae2fac2c01b60a771403",
-    "rv02_docs_head": "ce317febb8be8d111959082cd5632a5ead9c83b4",
-    "cx01_docs_head": "79b70f62041cb012940033076ede733d4d97a024",
+    "family_b_branch_head": "77d0178dc7e4dd12e19a8cbe3f8751e5ff9531e5",
+    "family_b_pr": 144,
+    "family_b_proposal_identity": "a01-family-b-distributed-field-trace-gen1-v1",
+    "family_b_proposal_specification_sha256": "357f4a500164d31a3a851edc77c0870d3b59930c1766c1769671e9bdaf6ecf14",
+    "family_b_protocol_bundle_source_sha": "7af99d6c3bbbf946f90fc01d9bc7cc7661de2006",
+    "family_b_readiness_input_git_blob": "07bf3f8be795512d9b1630c92feae3f86878363e",
+    "family_b_execution_admitted": false,
+    "cx01_docs_head": "69c584bfe273a432e192cd5873685047e432d703",
     "cx01_candidate_002_source_freeze": "e8483968ce43076b4c3fd04c76e62106e2031769",
     "cx01_candidate_002_package_freeze": "c104be281285d52a732d5366fe36209d5688d973",
     "cx01_candidate_002_started": "8216d41a57e6933443d38dfc8d93f9188e423d0c",
     "cx01_candidate_002_formal_preserve": "6d45928827209cd763a2879494d85838df38b96f",
-    "git_tags_count": 0,
-    "repository_rulesets_count": 0
+    "rv01_docs_head_last_verified": "2d877a5af670c54d404d8782763129f497092f88",
+    "repository_rulesets_count": 0,
+    "git_tags_observed": 0
   },
   "control_brain_commit": "cd378adcc8636f5794ac56ffcbaacd037e5c8088",
-  "main_report_commit_consumed": "5d0acd8260290d5147f99063b944173f1fd9f0cd",
-  "sub_report_commit_consumed": "f862937819537626c67aeb78ff67bee40e37070b",
+  "main_report_commit_consumed": "c88bb959ba28d83ef4edf8fe55630e9c3332eab4",
+  "sub_report_commit_consumed": "3392f2d108d54da9df343ede7edf9fa7368cd7f7",
   "new_scientific_information": false,
   "new_readiness_information": [
-    "No remote family-B distributed-field-trace branch or PR is visible; MAIN durable reporting remains on the 11:36 post-P4 closeout lane.",
-    "CX01 PR #143 advanced to exact head 79b70f62041cb012940033076ede733d4d97a024; prior P1 findings and the project-status-link finding are resolved, and exact-head ci plus cx01-development are green.",
-    "CX01 PR #143 has one new unresolved P2: project-status wording must distinguish forbidden modified-policy/modified-evidence rescoring from legitimate read-only recomputation using immutable raw evidence and the unchanged frozen policy.",
-    "RV01 PR #140 has an unresolved P1 canonical project-status drift: its status map records consumed R01-17 while docs/PROJECT_STATUS.md can still present the line as preregistered/not executed.",
-    "RV02 PR #142 remains open/mergeable but CI-red with an unresolved RD005 RESULTS_LEDGER finding."
+    "MAIN has now materialized the A01 family-B distributed-field-trace Generation-1 readiness branch and PR #144 at exact head 77d0178dc7e4dd12e19a8cbe3f8751e5ff9531e5.",
+    "PR #144 exact-head CI is green and the package remains explicitly execution_admitted=false.",
+    "A live P1 remains: ExternalEvidenceLedger deduplicates only inside one object lifetime, so evidence can be double-counted after ledger recreation/checkpoint/restart unless durable lifecycle state or an upstream durable no-clobber boundary is added.",
+    "A live P2 remains: readiness fixture width is coerced with int(...), permitting fractional width to normalize instead of failing closed.",
+    "Older PR #144 review findings for regex escaping, belief-state-null independent binding, and exact source key-set binding are semantically fixed in the current source but review threads have not all been resolved.",
+    "PR #143 remains open at 69c584bfe273a432e192cd5873685047e432d703 with one unresolved RESULTS_LEDGER reproducibility wording P2; it remains independent SUB work."
   ],
   "active_main_sub_claims_observed": [
     {
       "owner": "main",
-      "target": "A01 family-B distributed-field-trace Generation-1 prospective proposal and implementation readiness",
-      "status": "ALLOCATED_NOT_YET_DURABLY_MATERIALIZED",
-      "execution_allowed": false
+      "target": "A01 family-B distributed-field-trace Generation-1 readiness",
+      "status": "REMOTE_MATERIALIZED_PR144_REVIEW_BLOCKED",
+      "branch": "research/v061-a01-family-b-gen1-20260916",
+      "head": "77d0178dc7e4dd12e19a8cbe3f8751e5ff9531e5",
+      "pr": 144,
+      "execution_allowed": false,
+      "durable_report_status": "STALE_RELATIVE_TO_REMOTE"
     },
     {
       "owner": "sub",
       "target": "CX01 candidate-002 documentation integration",
-      "status": "REMOTE_ADVANCED_BEYOND_DURABLE_REPORT_FINAL_P2_REMAINS",
+      "status": "ONE_LEDGER_P2_REMAINS",
       "branch": "research/cx01-status-evidence-consolidation-sub-20260916",
-      "head": "79b70f62041cb012940033076ede733d4d97a024",
+      "head": "69c584bfe273a432e192cd5873685047e432d703",
       "pr": 143,
       "execution_allowed": false
     }
@@ -56,289 +61,259 @@
   "active_line_review": {
     "A01_MD002": {
       "centrality": "CENTRAL_DIRECT",
-      "status": "MIXED_FAMILY_A_TERMINAL_AT_P4_PROGRAMME_INCOMPLETE",
-      "strongest_evidence": "P2/P3 positive consumed development evidence; P4 family-A clean consumed negative development evidence UNSUPPORTED_EN_BLOC_MERGED_CREDIT.",
-      "simpler_reduction": "P2/P3 remain compatible with explicit eligibility/provenance/return-address memory; family A failed selective plural-lineage resolution at P4.",
-      "shortest_path_to_new_information": "Build and bind the smallest fresh post-P4 prospective family-B Generation-1 package, then return for a fresh exact-head admission decision before STARTED.",
+      "status": "MIXED_FAMILY_A_TERMINAL_FAMILY_B_READINESS_ACTIVE_PROGRAMME_INCOMPLETE",
+      "strongest_evidence": "P2/P3 positive consumed development evidence; family-A P4 clean consumed negative UNSUPPORTED_EN_BLOC_MERGED_CREDIT; no new scientific measurement from family-B readiness.",
+      "simpler_reduction": "P2/P3 remain compatible with explicit eligibility/provenance/return-address memory; family-B vector Field trace remains at high risk of being explicit eligibility/context memory under another representation.",
+      "shortest_path_to_new_information": "MAIN closes PR #144 readiness-integrity blockers, then a fresh Evidence Analyst admission audit either rejects the exact package pre-start or admits a scientifically clean one-way discriminator.",
       "genuine_blockers": [
-        "No complete bound family-B proposal/package currently exists.",
-        "No family-B research branch or PR is currently verified.",
-        "One-way execution requires a later fresh Evidence Analyst admission."
+        "Family-B ExternalEvidenceLedger state is not durable across object recreation/checkpoint/restart.",
+        "Family-B readiness fixture width parsing does not fail closed on fractional width.",
+        "Exact-head substantive review is not clean despite green CI.",
+        "One-way execution still requires a later explicit Evidence Analyst admission after complete execution binding."
       ],
       "information_value": "HIGH",
-      "implementation_distance": "MEDIUM_FOR_READINESS_BLOCKED_FOR_EXECUTION"
+      "implementation_distance": "NEAR_TO_MEDIUM_FOR_READINESS_BLOCKED_FOR_EXECUTION"
     },
     "RV01": {
       "centrality": "SECONDARY_COMPONENT_CHARACTERIZATION",
       "status": "SUPPORTED_COMPONENT_EFFECT_CONSUMED_REDUCIBLE_DOCS_DRIFT_OPEN",
       "strongest_evidence": "R01-17 SUPPORTED_REAL_DELAY_CAUSAL_TIMING, development-only and consumed.",
       "simpler_reduction": "Ordinary local adaptive-delay plasticity.",
-      "shortest_path_to_new_information": "No new science without a distinct prospective successor; first remove the current project-status contradiction on PR #140.",
+      "shortest_path_to_new_information": "No new science without a fresh prospective successor; first reconcile PR #140 project status if SUB reaches fallback.",
       "information_value": "LOW_TO_MEDIUM_SCIENCE_MEDIUM_INTEGRITY",
       "implementation_distance": "NEAR_FOR_DOCS_BLOCKED_FOR_NEW_SCIENCE"
     },
     "RV02": {
       "centrality": "SECONDARY",
-      "status": "RD005_D1_TERMINAL_CONSUMED_CAPABILITY_UNOPENED_DOCS_INTEGRATION_DIRTY",
+      "status": "RD005_D1_TERMINAL_CONSUMED_CAPABILITY_UNOPENED",
       "strongest_evidence": "Terminal construction/gate-reachability failure after STARTED; capability never opened.",
       "simpler_reduction": "No positive capability evidence to reduce.",
-      "shortest_path_to_new_information": "Requires a distinct prospective successor; current docs PR #142 remains independent integration debt.",
+      "shortest_path_to_new_information": "Requires a distinct prospective successor; current docs integration remains lower-priority support work.",
       "information_value": "LOW_UNLESS_NEW_CONTRACT",
-      "implementation_distance": "NEAR_TO_MEDIUM_FOR_DOCS_BLOCKED_FOR_NEW_SCIENCE"
+      "implementation_distance": "BLOCKED_FOR_NEW_SCIENCE"
     },
     "CX_CX01": {
       "centrality": "SECONDARY_DIAGNOSTIC",
-      "status": "CANDIDATE_002_FORMAL_NEGATIVE_CONSUMED_FINAL_DOCS_WORDING_FIX_OPEN",
-      "strongest_evidence": "Candidate-002 remains formal negative and consumed for the exact frozen candidate/comparator/protocol contract.",
+      "status": "CANDIDATE_002_FORMAL_NEGATIVE_CONSUMED_FINAL_LEDGER_WORDING_FIX_OPEN",
+      "strongest_evidence": "Candidate-002 formal negative and consumed for the exact frozen candidate/comparator/protocol contract.",
       "simpler_reduction": "No positive special mechanism established.",
-      "shortest_path_to_new_information": "No new science contract exists; finish the final documentation-integrity wording fix on PR #143.",
+      "shortest_path_to_new_information": "No new science contract exists; finish PR #143 documentation integrity.",
       "information_value": "MEDIUM_ENABLING_FOR_INTEGRITY",
       "implementation_distance": "VERY_NEAR_FOR_DOCS_BLOCKED_FOR_NEW_SCIENCE"
     }
   },
   "main_lane": {
-    "target": "A01 family-B distributed-field-trace Generation-1 prospective proposal and implementation-readiness package",
-    "scientific_question": "Can the pre-P4-registered distributed-field-trace family be specified prospectively without semantic/evaluator/global lookup privilege so that causal selectivity, world-to-local circulation, valid F-only carrier transfer, bounded plurality/later differentiation, and adversarial explicit/recurrent/belief-state nulls are fixed before outcome exposure?",
+    "target": "Close A01 family-B Generation-1 readiness integrity on PR #144 and return an exact clean package for a fresh execution-admission decision",
+    "scientific_question": "Can the pre-P4-registered distributed-field-trace family be prospectively bound as a low-privilege Field carrier with valid F-only transfer, genuine bounded plurality and later selective differentiation, and adversarial explicit/recurrent/belief-state nulls without reducing to renamed explicit memory?",
     "recommended_owner": "main",
-    "branch_or_identity": "fresh post-P4 prospective generation to be created; no family-B research branch or one-way identity currently verified",
+    "branch_or_identity": "research/v061-a01-family-b-gen1-20260916@77d0178dc7e4dd12e19a8cbe3f8751e5ff9531e5 / PR #144 / a01-family-b-distributed-field-trace-gen1-v1",
     "information_value": "HIGH",
-    "implementation_distance": "MEDIUM_FOR_PROPOSAL_AND_READINESS_BLOCKED_FOR_ONE_WAY_EXECUTION",
+    "implementation_distance": "NEAR_TO_MEDIUM_FOR_READINESS_BLOCKED_FOR_ONE_WAY_EXECUTION",
     "execution_allowed": false,
     "dependencies": [
-      "Pre-P4 family-B definition in the cross-line premechanism matrix",
-      "Premechanism admission evaluator and tests",
-      "Concrete lineage-swap, contradiction, future-competition, bounded-ambiguity and valid F-only P3 protocol IDs",
-      "Explicit eligibility/return-address null",
-      "Recurrent causal-trace null",
-      "Explicit latent-cause/belief-state null",
-      "Fixed negative stopping observation",
-      "Exact proposal/source/protocol/package/input binding"
+      "Durable duplicate-evidence/no-clobber state across the full acquisition lifecycle",
+      "Strict raw fixture width/type validation before coercion",
+      "Exact proposal/source/protocol/package/input binding",
+      "Genuine P4 co-maximal plurality, evidence-condition, lineage-swap, absence and replay protocol binding",
+      "Valid F-only carrier-transfer falsifier",
+      "Explicit eligibility/return-address, recurrent causal-trace, and explicit belief-state null ladder",
+      "Exact-head CI and substantive review clean"
     ],
     "allowed_scope": [
-      "Create a fresh proposal generation explicitly marked post-P4 prospective research",
-      "Assign a fresh unused proposal/package identity and bind all fixed discriminator/null/falsifier IDs",
-      "Implement family-B source, harness, verifier and readiness tests",
-      "Open a reviewable research PR without candidate-output acquisition",
-      "MAIN owns every family-B-specific CI/verifier/binding/review blocker"
+      "Fix PR #144 lifecycle-dedup P1 and width-validation P2",
+      "Add only the tests/bindings required to close those integrity gaps",
+      "Resolve older review findings only after verifying their exact-head fixes",
+      "Re-run exact-head CI/review",
+      "MAIN owns every family-B-specific verifier/harness/runner/binding/review blocker",
+      "Prepare a complete audit-ready execution package without crossing STARTED"
     ],
     "forbidden_scope": [
-      "No STARTED, one-way workflow dispatch, acquisition, scoring, or new scientific identity consumption under this handoff",
-      "No rerun/retune/rescore of consumed A01 P2/P3/P4",
-      "No P5 on failed family A",
-      "No threshold/scorer/carrier/mechanism detail reverse-engineered from the observed P4 result",
-      "No semantic/evaluator/global-belief-state/caller-selected lineage privilege"
+      "No STARTED/control consumption, acquisition, scoring, one-way workflow dispatch, or scientific output exposure under this handoff",
+      "No rerun/retune/rescore of consumed A01 P2/P3/P4 identities",
+      "No P5 rescue of failed family A",
+      "No outcome-responsive mechanism or threshold tuning derived from family-A P4 failure",
+      "No semantic/evaluator/global-belief/caller-selected-lineage privilege",
+      "No absorption of SUB-reserved CX01/RV01 work"
     ],
     "go_conditions": [
-      "Family-B scope traces to the pre-P4 registered distributed-field-trace definition",
-      "Fresh proposal identity is unused and unSTARTED",
-      "All concrete admission protocol/null/falsifier IDs are fixed",
-      "Proposal-specification SHA-256 recomputes exactly",
-      "Valid F-only carrier transfer is prospectively stated and fail-closed",
-      "Null ladder plus locality/anonymity/no-privilege/resource constraints are fixed",
-      "Exact-head CI/readiness/substantive review are clean",
-      "No prior STARTED/control/preserve collision",
-      "GO in this handoff authorizes readiness only, not one-way execution"
+      "Proposal identity is fresh, unused and unSTARTED",
+      "Proposal specification hash and source/package/input bindings independently recompute",
+      "Acquisition duplicate-evidence protection remains correct across restart/recreation or is durably enforced upstream",
+      "Malformed fixture width/sign and other public fields fail closed before normalization",
+      "Genuine P4 plurality/selective-resolution conditions are fixed before output exposure",
+      "Valid F-only transfer and all null/falsifier identities are fixed",
+      "Exact-head CI and substantive review have no unresolved current findings",
+      "No STARTED/control/preserve collision",
+      "GO under this handoff authorizes readiness only"
     ],
     "stop_conditions": [
-      "Scientific definition is tailored to the already observed P4 result rather than the pre-P4 family-B boundary",
-      "Proposal cannot be fully bound before candidate output",
-      "Valid F-only carrier transfer cannot be prospectively specified",
-      "Mechanism reduces to established explicit memory before execution with no residual discriminator",
-      "Privilege/locality/anonymity contract weakens",
-      "Identity or binding hash cannot be independently verified"
+      "Lifecycle exactly-once cannot be made fail-closed without adding scientific privilege",
+      "Selective resolution requires semantic/global/caller-selected addressing",
+      "Valid F-only transfer cannot be prospectively falsified",
+      "An established-minimal explicit mechanism fully reproduces the claimed residual pre-start with equal or lower privilege/resources",
+      "Identity/hash/binding cannot be independently verified",
+      "Any same-generation design is tuned to observed family-A P4 failure"
     ],
     "refs_or_identities_to_recheck": [
       "research/v061-a01-n3-adapter@1b548043b8f0850294cc3cbfaaa84dbdad69342c",
+      "research/v061-a01-family-b-gen1-20260916@77d0178dc7e4dd12e19a8cbe3f8751e5ff9531e5",
+      "PR #144",
+      "a01-family-b-distributed-field-trace-gen1-v1",
+      "docs/V061_A01_FAMILY_B_DISTRIBUTED_FIELD_TRACE_GEN1.md",
+      "docs/V061_A01_FAMILY_B_GEN1_PACKAGE_BINDING.json",
       "docs/V061_PREMECHANISM_ADMISSION_AND_NEGATIVE_COMPLETION.md",
       "docs/V061_CROSS_LINE_EVIDENCE_FIREWALL_AND_PREMECHANISM_MATRIX.md",
-      "src/sparkbrain/evaluation/v061_premechanism_admission.py",
-      "tests/v06/test_premechanism_admission.py",
-      "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1 and immutable refs read-only"
+      "docs/V061_P3_P5_CAUSAL_CREDIT_DISCRIMINATION_PROTOCOL.md",
+      "consumed family-A P4 authority chain read-only"
     ],
     "main_owns_all_critical_path_fixups": true
   },
   "sub_lane": {
-    "target": "Finish CX01 PR #143 by correcting the final audit-reproducibility wording defect and completing exact-head review/integration",
-    "scientific_question": "Support purpose: preserve the terminal no-rerun boundary while explicitly permitting read-only reproduction from immutable raw evidence with the unchanged frozen policy.",
+    "target": "Finish CX01 PR #143 by correcting the remaining RESULTS_LEDGER audit-reproducibility wording and completing exact-head integration",
+    "scientific_question": "Support purpose: preserve the terminal no-rerun boundary while permitting read-only reproduction from immutable raw evidence with the unchanged frozen scoring policy.",
     "recommended_owner": "sub",
-    "branch_or_identity": "research/cx01-status-evidence-consolidation-sub-20260916@79b70f62041cb012940033076ede733d4d97a024 / PR #143",
+    "branch_or_identity": "research/cx01-status-evidence-consolidation-sub-20260916@69c584bfe273a432e192cd5873685047e432d703 / PR #143",
     "information_value": "MEDIUM_ENABLING",
     "implementation_distance": "VERY_NEAR",
     "execution_allowed": false,
     "dependencies": [
       "Preserve Candidate-002 source/package/STARTED/formal-preserve refs exactly",
-      "Remain independent of MAIN family-B work",
-      "Re-fetch exact PR head and unresolved review thread before edit and before integration"
+      "Use a safe byte-preserving edit path for the append-only ledger",
+      "Re-fetch exact PR head, review, and checks before integration"
     ],
     "allowed_scope": [
-      "Narrow docs/PROJECT_STATUS.md wording so unchanged-policy/immutable-raw audit recomputation is allowed while rerun/retune/repair/identity reuse and modified-policy or modified-evidence rescoring remain forbidden",
-      "Keep canonical status wording consistent if needed",
-      "Resolve the review thread only after the exact fix",
-      "Re-run ordinary CI/review and integrate docs only on the exact clean head"
+      "Narrow the Candidate-002 RESULTS_LEDGER wording so modified-policy/modified-evidence rescoring remains forbidden while unchanged-policy immutable-raw audit recomputation remains allowed",
+      "Run ordinary CI/review",
+      "Integrate docs only on a clean exact head"
     ],
     "forbidden_scope": [
-      "No new CX01 candidate or experiment",
-      "No successor design",
+      "No new CX01 candidate, successor, or experiment",
       "No workflow/STARTED/freeze/preserve/scientific scoring",
       "No modified-policy or modified-evidence rescore",
-      "No formal evidence mutation",
+      "No immutable evidence mutation",
       "No MAIN family-B work"
     ],
-    "completion_target": "PR #143 has zero unresolved substantive review findings, exact-head ci and cx01-development green, and documentation permits frozen-policy read-only verification without permitting Candidate-002 reuse",
+    "completion_target": "PR #143 has zero unresolved substantive findings, exact-head ci and cx01-development are green, and documentation permits frozen-policy read-only verification without permitting Candidate-002 reuse",
     "refs_or_identities_to_recheck": [
       "freeze/cx01-002-source@e8483968ce43076b4c3fd04c76e62106e2031769",
       "freeze/cx01-002-package@c104be281285d52a732d5366fe36209d5688d973",
       "control/cx01-candidate-002-started-20260913@8216d41a57e6933443d38dfc8d93f9188e423d0c",
       "preserve/cx01-candidate-002-formal-34742073336@6d45928827209cd763a2879494d85838df38b96f",
-      "PR #143 exact head 79b70f62041cb012940033076ede733d4d97a024 before final wording fix"
+      "PR #143 exact head before any edit"
     ],
     "reservation_status": "reserved_for_sub",
     "independent_of_main_critical_path": true
   },
   "sub_fallback": {
-    "target": "Reconcile RV01 PR #140 with canonical project status so consumed R01-17 cannot appear unexecuted/runnable",
-    "scientific_question": "Support purpose: make the current-state entry point agree with the consumed positive development result and its no-rerun boundary while retaining the conservative ordinary adaptive-delay-plasticity reduction.",
+    "target": "Reconcile RV01 PR #140 current project status with the consumed R01-17 result",
+    "scientific_question": "Support purpose: prevent a consumed positive development identity from appearing unexecuted/runnable while retaining the ordinary adaptive-delay-plasticity reduction.",
     "recommended_owner": "sub",
-    "branch_or_identity": "research/rv01-status-evidence-consolidation-sub-20260916@2d877a5af670c54d404d8782763129f497092f88 / PR #140",
+    "branch_or_identity": "research/rv01-status-evidence-consolidation-sub-20260916@2d877a5af670c54d404d8782763129f497092f88 / PR #140; re-fetch exact head before action",
     "information_value": "MEDIUM_ENABLING",
     "implementation_distance": "NEAR",
     "execution_allowed": false,
     "dependencies": [
       "Primary CX01 lane completed first",
       "Preserve R01-17 source/STARTED/raw/scored refs exactly",
-      "Re-fetch PR #140 review thread before edit"
+      "Fresh PR #140 review-thread and exact-head check before edit"
     ],
     "allowed_scope": [
-      "Add a bounded current-status entry to docs/PROJECT_STATUS.md stating R01-17 is consumed development evidence SUPPORTED_REAL_DELAY_CAUSAL_TIMING",
-      "State no held-out/formal authority and the no-rerun/no-retune boundary",
-      "Retain the ordinary local adaptive-delay-plasticity reduction and link the canonical RV01 evidence map",
-      "Resolve the P1 only after the exact fix and rerun ordinary CI/review"
+      "Bounded docs/current-status reconciliation",
+      "State consumed development status and no-rerun/no-retune boundary",
+      "Retain conservative adaptive-delay-plasticity reduction",
+      "Run exact-head CI/review and integrate docs only if clean"
     ],
     "forbidden_scope": [
-      "No new RV01 experiment or successor design",
-      "No STARTED/workflow/freeze/preserve/scoring",
+      "No new RV01 experiment or successor",
+      "No workflow/STARTED/freeze/preserve/scoring",
       "No rerun/retune/changed-rule rescore",
       "No immutable evidence mutation",
       "No MAIN family-B work"
     ],
-    "completion_target": "PR #140 no longer exposes contradictory current-state claims, the P1 is resolved, and exact-head CI/review is clean without implying a new science claim",
+    "completion_target": "PR #140 no longer exposes contradictory current-state claims for R01-17 and is review/CI clean",
     "refs_or_identities_to_recheck": [
-      "research/rv01-endogenous-transition@98be60268845487ce51e76b8a7687552a5dbc51f",
+      "rv01-r01-17-real-delay-causal-timing-v1",
       "freeze/rv01-r01-17-real-delay-source-20260915@5ecb459b609b393ff837f57cc138f1eb44c1b255",
       "control/rv01-r01-17-real-delay-started-20260915@5ecb459b609b393ff837f57cc138f1eb44c1b255",
       "preserve/rv01-r01-17-real-delay-raw-20260915@fceb3663c7a880d82593e6c1efe52fcd1ad0c00a",
-      "preserve/rv01-r01-17-real-delay-scored-20260915@d4737d52ecbb2306d9f00f99366f0ad6424327be",
-      "rv01-r01-17-real-delay-causal-timing-v1"
+      "preserve/rv01-r01-17-real-delay-scored-20260915@d4737d52ecbb2306d9f00f99366f0ad6424327be"
     ],
     "reservation_status": "reserved_for_sub",
     "independent_of_main_critical_path": true
   },
   "blocked_until": [
     {
-      "work": "Family-B one-way execution",
-      "condition": "MAIN completes a fresh fully bound package and a later Evidence Analyst run explicitly admits the exact head after identity/binding/null/falsifier/CI/review checks"
+      "target": "Family-B one-way execution",
+      "reason": "Blocked until MAIN closes the lifecycle-dedup P1 and raw-width P2, exact-head CI/substantive review are clean, complete execution binding is verified, and a later fresh Evidence Analyst handoff explicitly admits execution."
     },
     {
-      "work": "Family C implementation/execution",
-      "condition": "Family B is completed/rejected or fresh evidence/Control Brain reprioritizes"
+      "target": "Family C implementation/execution",
+      "reason": "Blocked while family B is the simpler registered uncovered family unless B is rejected/terminal or strategy is explicitly repartitioned."
     },
     {
-      "work": "A01 P5 on the failed family-A P4 mechanism",
-      "condition": "permanently not applicable for that consumed mechanism"
+      "target": "Family-A P5",
+      "reason": "Permanently not applicable to the terminal P4-failed mechanism."
     },
     {
-      "work": "New RV01/RV02/CX01 science",
-      "condition": "a distinct prospective successor contract is separately admitted"
+      "target": "CX01 PR #143 integration",
+      "reason": "Blocked until the final RESULTS_LEDGER reproducibility wording P2 is fixed and exact-head checks/review remain clean."
     },
     {
-      "work": "PR #143 integration",
-      "condition": "final unresolved P2 wording defect is fixed and exact-head review/checks remain clean"
+      "target": "RV01 fallback",
+      "reason": "Waits until the primary CX01 SUB lane completes or becomes invalid."
     },
     {
-      "work": "PR #140 integration",
-      "condition": "unresolved P1 project-status drift is fixed"
-    },
-    {
-      "work": "RV02 PR #142 repair",
-      "condition": "current CX01 lane and RV01 fallback complete or become invalid; RD005 ledger and behavior-preserving CI cleanup remain"
+      "target": "New RV01/RV02/CX01 science",
+      "reason": "Requires a separately defined and admitted fresh prospective contract."
     }
   ],
   "do_not_touch": [
     "A01 MD-001 consumed identity",
     "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
     "a01-md002-p3-r-only-causal-carrier-candidate-001-v1",
-    "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1 and associated immutable refs",
+    "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1 and all immutable freeze/control/preserve anchors",
     "RV01 R01-16 consumed family",
     "rv01-r01-17-real-delay-causal-timing-v1",
     "RV02 RD005 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
-    "CX01 cx01-candidate-002 and its immutable source/package/STARTED/preserve chain",
-    "PR #137/family-A P4 code as a mutable scientific frontier",
-    "Outcome-responsive family-B/C design reverse-engineered from the observed P4 result",
-    "SUB touching MAIN family-B critical-path work",
-    "MAIN absorbing reserved CX01/RV01 SUB work"
+    "cx01-candidate-002 and its immutable authority chain",
+    "PR #137 / family-A P4 code as a mutable scientific frontier",
+    "Any outcome-responsive family-B/C mechanism tuning derived from observed family-A P4 output",
+    "SUB touching PR #144 or family-B critical-path blockers",
+    "MAIN absorbing reserved PR #143 or RV01 fallback work"
   ],
   "top_recommendation": {
     "rank": 1,
     "owner": "main",
-    "action": "Materialize the minimal family-B distributed-field-trace Generation-1 prospective proposal/readiness package, but do not cross STARTED under this handoff.",
+    "action": "Close PR #144 family-B readiness integrity blockers and return the exact package for fresh admission review",
     "information_value": "HIGH",
-    "distance": "MEDIUM",
-    "execution_allowed": false
+    "distance": "NEAR_TO_MEDIUM",
+    "execution_status": "STOP_ONE_WAY_EXECUTION"
   },
   "top_3": [
     {
       "rank": 1,
       "owner": "main",
-      "action": "Family-B distributed-field-trace Generation-1 proposal/readiness",
+      "action": "Close PR #144 lifecycle-dedup and width-validation readiness blockers",
       "information_value": "HIGH",
-      "distance": "MEDIUM",
-      "execution_allowed": false
+      "distance": "NEAR_TO_MEDIUM"
     },
     {
       "rank": 2,
       "owner": "sub",
-      "action": "Finish PR #143 final audit-reproducibility wording fix",
-      "information_value": "MEDIUM_ENABLING_INTEGRITY",
-      "distance": "VERY_NEAR",
-      "execution_allowed": false
+      "action": "Finish PR #143 final RESULTS_LEDGER reproducibility wording",
+      "information_value": "MEDIUM_ENABLING",
+      "distance": "VERY_NEAR"
     },
     {
       "rank": 3,
-      "owner": "sub",
-      "action": "Fallback: repair RV01 PR #140 canonical project-status drift",
-      "information_value": "MEDIUM_ENABLING_INTEGRITY",
-      "distance": "NEAR",
-      "execution_allowed": false
+      "owner": "sub_fallback",
+      "action": "Repair RV01 PR #140 canonical current-status drift after CX01 completes",
+      "information_value": "MEDIUM_ENABLING",
+      "distance": "NEAR"
     }
   ],
-  "go_stop_top_recommendation": {
-    "go_now": "Prospective family-B specification and implementation-readiness only.",
-    "future_execution_go_requires": [
-      "fresh unused identity",
-      "fixed discriminator/null/falsifier IDs and recomputable proposal hash",
-      "exact source/protocol/package/input binding",
-      "no prior STARTED/control/preserve collision",
-      "atomic STARTED/no-clobber",
-      "exactly-once acquisition",
-      "raw preservation before independent verification/scoring",
-      "exact-head CI and substantive review clean",
-      "prospectively fixed F-only carrier transfer falsifier",
-      "bounded plurality/later differentiation falsifier",
-      "adversarial explicit/recurrent/belief-state nulls",
-      "no semantic/evaluator/global lookup privilege"
-    ],
-    "stop_readiness_if": [
-      "outcome-responsive rescue engineering from P4",
-      "binding cannot complete before candidate output",
-      "F-only carrier test cannot be stated prospectively",
-      "locality/anonymity/no-privilege constraints weaken",
-      "identity/binding cannot be independently verified",
-      "established explicit memory already reproduces the proposed causal dynamics with no residual discriminator"
-    ],
-    "stop_execution": "Execution remains forbidden until a later fresh Evidence Analyst handoff explicitly admits the exact completed package."
-  },
   "consumed_identities": [
-    "A01 MD-001",
+    "A01 MD-001 consumed identity",
     "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
     "a01-md002-p3-r-only-causal-carrier-candidate-001-v1",
     "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
@@ -348,32 +323,57 @@
     "cx01-candidate-002"
   ],
   "blockers": [
-    "No complete bound family-B proposal/package exists yet.",
-    "No family-B branch/PR is visible in the current remote state.",
-    "Family-B one-way execution has no current Analyst admission.",
-    "CX01 PR #143 has one unresolved P2 documentation-integrity wording defect.",
-    "RV01 PR #140 has one unresolved P1 canonical project-status contradiction.",
-    "RV02 PR #142 remains CI-red and lacks its requested RD005 RESULTS_LEDGER entry."
+    "PR #144 P1: duplicate evidence consumption is not durable across ledger recreation/checkpoint/restart.",
+    "PR #144 P2: fractional readiness fixture width can be silently coerced instead of rejected.",
+    "PR #144 exact-head substantive review is not clean, regardless of green CI.",
+    "Family-B one-way execution lacks a fresh Analyst execution admission.",
+    "PR #143 final RESULTS_LEDGER wording P2 remains unresolved."
   ],
-  "governance_advisory": {
-    "issue_canonical_source_drift": [
-      "Issue #138 remains open although canonical A01 status records P4 FAIL.",
-      "PR #137 remains open and its body still says the P4 identity is pre-STARTED/unconsumed, which is false after the consumed execution.",
-      "RV01 PR #140 exposes project-status drift that can make consumed R01-17 appear unexecuted.",
-      "CX01 PR #143 is nearly reconciled but must narrow rescoring language to preserve unchanged-policy audit reproduction."
+  "go_stop_top_recommendation": {
+    "go_now": "MAIN may fix family-B readiness blockers, bindings, tests, and review findings only.",
+    "stop_now": "No STARTED, acquisition, scoring, workflow dispatch, or scientific identity consumption for family-B.",
+    "future_execution_requires": [
+      "Fresh unused identity",
+      "Exact source/protocol/package/input binding",
+      "Durable atomic STARTED/no-clobber and full-lifecycle duplicate-evidence protection",
+      "Exactly-once acquisition",
+      "Raw-before-score preservation and verification",
+      "Exact-head CI and substantive review clean",
+      "Prospectively frozen genuine P4 plurality/selective-resolution and valid F-only falsifiers",
+      "Matched explicit/recurrent/belief-state nulls",
+      "No semantic/evaluator/global/caller-selected privilege",
+      "Fresh Evidence Analyst explicit execution admission"
     ],
-    "freeze_tag_migration_drift": "Repository still uses legacy branch-based freeze/control/preserve authorities; no Git tags currently exist. Preserve all legacy refs exactly.",
-    "tag_protection_gap": "Repository rulesets count remains zero and Issue #139 remains open.",
-    "outcome_independent_main_promotion_candidates": [
-      "generic exact source/runtime binding",
-      "generic STARTED/no-clobber and identity-collision primitives",
-      "generic raw-preserve-before-score and digest verification",
-      "generic fail-closed verifier mechanics"
-    ],
-    "not_main_promotion_candidates": [
-      "family-A/B/C mechanism code",
-      "candidate-specific scorers/workflows/protocols"
+    "scientific_falsifiers": [
+      "F-only transfer failure",
+      "Privilege required for selective resolution",
+      "External consequence fails to alter later local competition through allowed local state",
+      "Plural coexisting historical causes cannot later be selectively differentiated",
+      "Matched established-minimal null fully reproduces residual with equal or lower resources/privilege",
+      "Identity/binding/dedup integrity failure"
     ]
   },
-  "orchestrator_handoff": "MAIN takes family-B distributed-field-trace Generation-1 proposal/readiness and owns ALL critical-path fixes. SUB takes the final CX01 PR #143 audit-reproducibility documentation fix, independent of MAIN. SUB fallback is RV01 PR #140 canonical project-status reconciliation. MAIN must not absorb reserved independent SUB work. SUB must not take MAIN blockers. Neither touches consumed identities, immutable evidence, family-A P4 rescue/P5, or outcome-responsive successor design. Repartition only if a SUB package becomes dependent on MAIN, concurrent work completes/invalidates a reserved package, or new authoritative evidence changes line priority. Family-B readiness completion triggers a fresh Analyst admission decision and does not itself authorize execution."
+  "governance_advisory": {
+    "issue_canonical_source_drift": [
+      "Issue #138 remains open although canonical A01 state records P4 FAIL.",
+      "PR #137 remains open and its body still says the P4 identity is pre-STARTED/unconsumed despite terminal consumption."
+    ],
+    "freeze_tag_migration_drift": "Legacy freeze branches remain authoritative; no family-B freeze exists yet, which is correct for readiness-only work. No tag refs were observed.",
+    "tag_protection_gap": "Repository rulesets count remains 0; Issue #139 remains open.",
+    "outcome_independent_main_promotion_candidates": [
+      "Durable duplicate-evidence/no-clobber state primitive",
+      "Exact source/runtime binding helpers",
+      "Raw-before-score preservation/digest verification helpers",
+      "Generic fail-closed verifier patterns"
+    ],
+    "reporting_drift": "Durable MAIN report remains on post-P4 closeout while remote PR #144 has materially advanced; current repository evidence overrides the stale report."
+  },
+  "orchestrator_handoff": {
+    "main": "MAIN takes PR #144/family-B Generation-1 readiness and owns ALL critical-path fixes, including lifecycle dedup, width validation, bindings, CI/review, and later execution blockers.",
+    "sub": "SUB takes PR #143 final RESULTS_LEDGER wording fix, independent of MAIN.",
+    "sub_fallback": "After CX01 completes, SUB may reconcile RV01 PR #140 current status.",
+    "separation": "MAIN must not absorb reserved independent SUB work; SUB must not take any family-B blocker.",
+    "neither_touches": "Consumed identities, immutable evidence, family-A rescue, outcome-responsive successor tuning, or family C execution.",
+    "repartition_if": "Family-B package is invalidated or terminal/rejected, SUB work completes/becomes invalid, integrity coupling makes separation impossible, or a newer Analyst/Control Brain handoff explicitly changes ownership."
+  }
 }
