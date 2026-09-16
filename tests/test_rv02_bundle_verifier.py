@@ -9,7 +9,6 @@ from pathlib import Path
 
 from sparkbrain.research.rv02_scale import ScaleStudyConfig, digest
 
-
 RUNNER_PATH = Path(__file__).resolve().parents[1] / "scripts" / "run_rv02_development.py"
 SPEC = importlib.util.spec_from_file_location("rv02_runner_independent_test", RUNNER_PATH)
 RUNNER = importlib.util.module_from_spec(SPEC)

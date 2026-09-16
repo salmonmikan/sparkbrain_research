@@ -1,5 +1,18 @@
 # Project Status — SparkBrain v0.3.2.dev0
 
+## RV02 RD005 D1 — terminal construction boundary
+
+As of 2026-09-16, RD005 D1 construction identity
+`96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a` is **terminal-consumed**
+after its one-way STARTED boundary. The frozen construction stopped before capability with
+`RD005 construction stopped before capability: verified D1 matrix is not ready`.
+Capability output was never opened and learner/probe execution did not occur, so this is a
+construction/gate-reachability negative for the exact D1 identity, **not** a capability negative
+and not a formal/held-out capability result. Do not rerun, retune, repair, reopen, or reuse this
+identity. Canonical status and evidence pointers are in
+`docs/research/RV02_STATUS_EVIDENCE_MAP.md`; the dated negative-result entry is retained in
+`docs/RESULTS_LEDGER.md`.
+
 ## v0.3 release migration boundary
 
 The package version is now `0.3.2.dev0`. The accepted v0.2.1 reference engine retains
