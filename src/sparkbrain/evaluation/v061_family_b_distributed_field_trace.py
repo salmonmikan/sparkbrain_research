@@ -63,6 +63,7 @@ class DistributedFieldTraceState:
             self.decay * previous + current
             for previous, current in zip(self.eligibility, activity, strict=True)
         )
+        _validate_vector(eligibility, expected_width=len(self.eligibility))
         return DistributedFieldTraceState(
             eligibility=eligibility,
             credit=self.credit,
@@ -92,6 +93,7 @@ class DistributedFieldTraceState:
                 strict=True,
             )
         )
+        _validate_vector(credit, expected_width=len(self.credit))
         return DistributedFieldTraceState(
             eligibility=self.eligibility,
             credit=credit,
@@ -111,10 +113,13 @@ class DistributedFieldTraceState:
         _validate_vector(activity, expected_width=len(self.credit))
         if any(value < 0.0 for value in activity):
             raise ValueError("competition activity must be non-negative")
-        return sum(
+        score = sum(
             credit * local
             for credit, local in zip(self.credit, activity, strict=True)
         )
+        if not math.isfinite(score):
+            raise ValueError("competition score must be finite")
+        return score
 
     def export_field_carrier(
         self,
