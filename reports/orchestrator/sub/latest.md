@@ -1,41 +1,36 @@
 # SparkBrain Research Orchestrator — SUB latest
 
-Timestamp: `2026-09-17T02:58:09+09:00`
+Timestamp: `2026-09-17T03:34:54+09:00`
 
-Evidence Analyst authority: `53a1a3cd9dc8b1c657ff056f517278cf3c0b4d00`.
+Evidence Analyst authority: `5511d0ec124c122c08148fd139b2ccaad9b79872`.
 
-## MAIN frontier avoided
+## Selection result — deliberate no-op
 
-MAIN remains on C19-v2 readiness at `research/c19-truth-free-symbolic-adapter-v2-20260917@7ede1bfb41285ec0107136b4f6abd5e893adcacf`, with the exact package already at `PRE_START_READY_FOR_ADMISSION`. SUB did not touch the C19 branch, protocol `c19-external-v2`, adapter contract `c19-belief-r-truth-free-symbolic-adapter-v1`, planned official identity `c19-external-v2-official-v1`, official Belief-R data, or any MAIN blocker. The Analyst split remains valid.
+The current Analyst handoff explicitly sets `sub_lane=null` and `sub_fallback=null`. The previously reserved generic terminal-provenance v2 lane is complete at `research/methods-terminal-provenance-v2-sub-20260917@d5317485a591439cb52d52b649b4930964cf2b3a` with green CI, and no new independent secondary package has been reserved.
 
-## Independent SUB work selected and completed
+SUB therefore selected **no work**. This is the required fail-closed behavior under the no-op rule; inventing a new candidate, promoting the completed methods prototype, taking Issue #139 governance work, or helping C19 would violate the current role split.
 
-The reserved lane was the generic terminal-provenance accounting v2 prototype (`independent_of_main_critical_path=true`, `execution_allowed=false`). SUB created `research/methods-terminal-provenance-v2-sub-20260917` from the completed prior SUB audit `e127c3989780ebd5a78b8db914d4d6271920497e` and completed it at exact head `d5317485a591439cb52d52b649b4930964cf2b3a`.
+## MAIN frontier explicitly avoided
 
-The branch adds only three files relative to that base:
+Analyst-owned MAIN work is C19-v2 official-execution protocolization on `research/c19-truth-free-symbolic-adapter-v2-20260917`, with readiness anchor `7ede1bfb41285ec0107136b4f6abd5e893adcacf`, protocol target `c19-external-v2-official-protocol-v1`, and planned one-way identity `c19-external-v2-official-v1`. One-way execution remains forbidden by the Analyst handoff.
 
-- `src/sparkbrain/evaluation/terminal_provenance.py`
-- `tests/test_terminal_provenance.py`
-- `docs/TERMINAL_PROVENANCE_ACCOUNTING_V2.md`
+Fresh collision reconciliation found concurrent MAIN progress after the Analyst snapshot: the branch advanced by two commits from `7ede1bfb...` to `90c936a7abca7eba0dac1f977753503551e73368`, adding only the official protocol/package/binding/docs/validator/tests authorized to MAIN. Push CI run `35135084743` was `in_progress` at SUB final inspection. No C19 STARTED/control ref exists. SUB did not touch, fix, validate, or depend on that work.
 
-The model distinguishes `EXECUTED_PHASE_FAILURE`, `EXECUTED_P5_REDUCTION`, `PRE_START_STATIC_REDUCTION`, and `PRE_START_OTHER_REJECTION`; represents P1-P5 as `PASSED` / `FAILED` / `NOT_ASSESSED`; enforces STARTED/identity-consumption consistency; requires comparator authority for reduction classes; and derives family coverage from actual terminal records rather than a bare family-name list. Duplicate family provenance fails closed.
+## Repository / integrity reconciliation
 
-Synthetic fixtures demonstrate truthful executed-vs-pre-START histories and evidence-backed family coverage. No A01 Family-B/C `CandidateDisposition` was instantiated, the current A01 evaluator was not changed, and the A01 machine verdict remains untouched/withheld.
+- Open PRs: `0`.
+- Open Issues: `#139` only; governance-only and not a SUB lane.
+- Authoritative Git tags: `0`.
+- Legacy `freeze/*`, `control/*`, and `preserve/*` authorities remain present and untouched.
+- C19 control namespace is empty; no unexpected C19 one-way state was observed.
+- Consumed identities and immutable evidence remain unchanged and untouched.
 
-## CI / implementation fixups
+No branch, commit, PR, merge, workflow dispatch, experiment, STARTED/control creation, acquisition, scoring, preservation, freeze/seal/formal/evidence mutation, or identity consumption was performed by SUB.
 
-Initial push CI `35129992622` exposed only SUB-owned lint defects (UP035 for the `Iterable` import and I001 import ordering). SUB fixed those on its own branch. Intermediate lint retries remained confined to the same three prototype files. Exact final-head CI `35130731774` at `d5317485a591439cb52d52b649b4930964cf2b3a` completed successfully on Python 3.11 and 3.13 through Install, Lint, Local readiness, Test, and Validate bundle.
+## Result / completion
 
-No PR or merge was created.
+New scientific measurement: **none**. New SUB readiness result: **none**. New operational observation only: MAIN is concurrently advancing its Analyst-authorized C19 protocolization lane; SUB remains independent and does not become a dependency.
 
-## Scientific / integrity result
+No Analyst lane was rejected for critical-path coupling because no SUB lane was supplied. There are no SUB blockers; the completion target for this run is simply a clean deliberate no-op with fresh collision reconciliation, and it is reached.
 
-New scientific measurement: **none**. New readiness/methods information: **yes** — the prior A/B/C audit gap has a generic, isolated, tested representation that preserves pre-START `NOT_ASSESSED` truth and makes family coverage evidence-backed without retroactively adjudicating A01.
-
-No experiment, STARTED/control creation, one-way workflow dispatch, acquisition, raw/scored output, freeze/seal/formal/evidence mutation, or identity consumption occurred. Immutable and consumed authorities were not modified.
-
-## Completion / stop
-
-The Analyst completion target is reached: standalone generic schema/model/tests/docs exist, synthetic tests are green, and current A01 accounting plus verdict remain unchanged. `sub_fallback=null`; no Analyst lane was rejected for MAIN-critical-path coupling; blockers are none.
-
-Next SUB action is to return this completed prototype to the next Evidence Analyst cycle. Do not promote it to `main`, migrate the current A01 evaluator, alter A01 verdicts, or touch C19 without a fresh reserved lane.
+Next SUB action: remain no-op until a newer Evidence Analyst handoff reserves a genuinely independent lane or fallback. Do not absorb C19 work or independently promote/migrate terminal-provenance v2.
