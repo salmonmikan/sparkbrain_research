@@ -210,10 +210,16 @@ def _manifest(source_sha: str) -> dict[str, Any]:
     readiness = _load_json(READINESS_BINDING_PATH)
     execution = _load_json(EXECUTION_BINDING_PATH)
     _require(readiness.get("execution_admitted") is False, "readiness admission drift")
-    _require(execution.get("execution_admitted") is False, "execution binding must remain unadmitted")
+    _require(
+        execution.get("execution_admitted") is False,
+        "execution binding must remain unadmitted",
+    )
     _require(execution.get("one_way_execution_allowed") is False, "package must not self-admit")
     _require(execution.get("candidate_id") == CANDIDATE_ID, "execution binding candidate drift")
-    _require(execution.get("scientific_input_sha256") == _sha256_path(INPUT_PATH), "input digest drift")
+    _require(
+        execution.get("scientific_input_sha256") == _sha256_path(INPUT_PATH),
+        "input digest drift",
+    )
     _require(execution.get("runtime_sha256") == _sha256_path(RUNTIME_PATH), "runtime digest drift")
     _verify_locked_files(source_sha, execution)
     return {
@@ -379,7 +385,9 @@ def _candidate_measurement(payload: dict[str, Any]) -> dict[str, Any]:
 
     checks = {
         "circulation_external_required": left_pre == left_replay and left_confirmed > left_replay,
-        "lineage_swap_anonymous_selectivity": swapped_right == left_confirmed and swapped_right > swapped_left,
+        "lineage_swap_anonymous_selectivity": (
+            swapped_right == left_confirmed and swapped_right > swapped_left
+        ),
         "contradiction_correction": left_corrected < left_confirmed,
         "f_only_transfer": transfer_left == left_confirmed,
         "bounded_plurality": (
@@ -559,7 +567,10 @@ def _score(source_sha: str, raw: dict[str, Any]) -> dict[str, Any]:
             null = nulls.get(key)
             _require(isinstance(null, dict), f"missing null: {key}")
             _require(null.get("null_id") == EXPECTED_NULL_IDS[key], f"null identity drift: {key}")
-            if null.get("signature") == candidate.get("signature") and _profile_not_greater(null, candidate):
+            if (
+                null.get("signature") == candidate.get("signature")
+                and _profile_not_greater(null, candidate)
+            ):
                 reducer = str(null["null_id"])
                 break
         verdict = "REDUCED_EXPLANATION" if reducer else "PASS"
