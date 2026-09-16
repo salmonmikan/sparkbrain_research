@@ -26,7 +26,7 @@ def test_execution_binding_is_exact_and_does_not_self_admit() -> None:
     assert binding["execution_admitted"] is False
     assert binding["one_way_execution_allowed"] is False
     assert binding["same_identity_rerun_allowed"] is False
-    assert binding["implementation_head_sha"] == "3939df3004b61adef337c547144ffb1cdcb04f49"
+    assert binding["implementation_head_sha"] == "45fc3fdb09d13191175a35263bb7cc0639e2660e"
 
     locked = binding["locked_files"]
     assert locked

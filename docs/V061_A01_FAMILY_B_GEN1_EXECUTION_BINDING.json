@@ -1,0 +1,41 @@
+{
+  "schema": "v061-a01-family-b-gen1-execution-binding-v1",
+  "candidate_id": "a01-family-b-distributed-field-trace-gen1-v1",
+  "package_id": "a01-family-b-distributed-field-trace-gen1-execution-package-v1",
+  "implementation_head_sha": "45fc3fdb09d13191175a35263bb7cc0639e2660e",
+  "readiness_binding_path": "docs/V061_A01_FAMILY_B_GEN1_PACKAGE_BINDING.json",
+  "readiness_binding_git_blob": "08ec42db419fd09639091653c53986929813ca12",
+  "execution_protocol_path": "docs/V061_A01_FAMILY_B_GEN1_EXECUTION_PROTOCOL.md",
+  "scientific_input_id": "v061-a01-family-b-gen1-scientific-input-v1",
+  "scientific_input_path": "research/v061_a01/family_b_gen1_execution_input.json",
+  "scientific_input_sha256": "b607729c1984bd454a516d19e5939063bca4123e5e5754c9e40fd7e3d09213a6",
+  "runtime_path": "research/v061_a01/family_b_gen1_runtime.json",
+  "runtime_sha256": "f4df1e71a12685c7304d77c66c1767e94c510545feafc68982a06963b6b07e6f",
+  "execution_admitted": false,
+  "one_way_execution_allowed": false,
+  "same_identity_rerun_allowed": false,
+  "locked_files": {
+    ".github/workflows/v061-a01-family-b-gen1-execute-once.yml": "303f217acf94f7059a2cbeb650d6e8665406e340",
+    "docs/V061_A01_FAMILY_B_DISTRIBUTED_FIELD_TRACE_GEN1.md": "55675feb5764aca4ab3433a203d54cf6a193dbc5",
+    "docs/V061_A01_FAMILY_B_GEN1_EXECUTION_PROTOCOL.md": "41ace77660465ffa0ff04d5c088e3d8ccda8dcfb",
+    "docs/V061_A01_FAMILY_B_GEN1_PACKAGE_BINDING.json": "08ec42db419fd09639091653c53986929813ca12",
+    "docs/V061_A01_NULL_LADDER.md": "5ebb815dca6b2d275b257c67a476145a0cc80928",
+    "research/v061_a01/family_b_gen1_execution_input.json": "c826991a288eecd0a80089a9055043c0100e55a1",
+    "research/v061_a01/family_b_gen1_runtime.json": "93e8676b20ded8a6e1709bf0a9e19a1bc356de03",
+    "scripts/run_v061_a01_family_b_gen1.py": "fd0bdacf4c4740da58e14596aa75bcdcaa5d1d16",
+    "scripts/verify_v061_a01_family_b_gen1_artifacts.py": "56dc1e8a9786ac62a6230631a728c37debf77766",
+    "src/sparkbrain/evaluation/v061_family_b_distributed_field_trace.py": "f597d936a853e296f5e8d40dc054c875357e5a81"
+  },
+  "expected_one_way_refs": {
+    "source_freeze_tag": "freeze/a01-family-b-gen1-source-20260916",
+    "started_ref": "control/a01-family-b-gen1-started-20260916",
+    "owner_ref": "control/a01-family-b-gen1-owner-20260916",
+    "acquisition_ref": "control/a01-family-b-gen1-acquire-20260916",
+    "raw_recovery_ref": "preserve/a01-family-b-gen1-recovery-20260916",
+    "raw_evidence_tag": "evidence/a01-family-b-gen1-raw-20260916",
+    "scored_evidence_tag": "evidence/a01-family-b-gen1-scored-20260916",
+    "terminal_failure_tag": "evidence/a01-family-b-gen1-terminal-failure-20260916"
+  },
+  "final_source_binding_rule": "A later Evidence Analyst admission must name the exact final commit containing this binding; this artifact does not self-admit execution.",
+  "package_state": "PRE_START_COMPLETE_PENDING_FRESH_ANALYST_ADMISSION"
+}
