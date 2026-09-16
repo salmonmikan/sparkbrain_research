@@ -10,11 +10,7 @@ from sparkbrain.v03_external_validation.implementation_binding import (
     binding_manifest,
     condition_executor,
 )
-from sparkbrain.v03_external_validation.official_execution import (
-    ExecutionAdmission,
-    OneWayExecutionHarness,
-    RuntimeBoundary,
-)
+from sparkbrain.v03_external_validation.official_protocol import expected_row_inventory
 
 ROOT = Path(__file__).parents[1]
 BINDING_PATH = ROOT / "artifacts/v03/c19_external_validation/v2/implementation_binding.json"
@@ -96,19 +92,16 @@ def test_binding_manifest_freezes_confound_and_claim_boundaries() -> None:
     assert manifest["official_fit_tune_select"] is False
 
 
-def test_bound_executors_run_the_exact_55_row_synthetic_harness() -> None:
-    written = []
-    harness = OneWayExecutionHarness(boundary=RuntimeBoundary())
-    raw = harness.acquire(
-        admission=ExecutionAdmission.synthetic_dev(),
-        examples=_examples(),
-        condition_executor=condition_executor,
-        baseline_executors=baseline_registry(),
-        raw_writer=written.append,
-    )
-    assert len(raw.records) == 55
-    assert written == [raw]
-    assert all(record["metadata"]["binding_id"] == BINDING_ID for record in raw.records)
+def test_bound_executors_cover_every_frozen_row_on_one_synthetic_pair() -> None:
+    registry = baseline_registry()
+    for row in expected_row_inventory():
+        if row["row_kind"] == "c19_condition":
+            emitted = condition_executor(row, _examples())
+        else:
+            emitted = registry[str(row["baseline_kind"])](row, _examples())
+        assert len(emitted) == 1
+        assert emitted[0]["metadata"]["binding_id"] == BINDING_ID
+        assert emitted[0]["metadata"]["final_step_index"] == 1
 
 
 def test_binding_artifact_matches_exact_source_input_and_runtime_blobs() -> None:
