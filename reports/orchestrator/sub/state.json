@@ -1,47 +1,55 @@
 {
-  "timestamp": "2026-09-17T03:34:54+09:00",
+  "timestamp": "2026-09-17T04:43:00+09:00",
   "worker_role": "sub",
-  "evidence_analyst_commit": "5511d0ec124c122c08148fd139b2ccaad9b79872",
+  "evidence_analyst_commit": "9f6cb3b1cb4a5bb1a7a10f6f9b04e54c50bb1cec",
   "consumed_lanes": {
     "main_lane": {
-      "target": "C19-v2 official-execution protocolization around the exact admitted truth-free adapter; stop before official data/STARTED",
-      "branch": "research/c19-truth-free-symbolic-adapter-v2-20260917",
-      "analyst_readiness_anchor": "7ede1bfb41285ec0107136b4f6abd5e893adcacf",
-      "current_head_observed": "90c936a7abca7eba0dac1f977753503551e73368",
+      "target": "C19-v2 executable one-way harness completion plus exact source/runtime/package binding",
+      "base_exact_head": "research/c19-truth-free-symbolic-adapter-v2-20260917@90c936a7abca7eba0dac1f977753503551e73368",
+      "current_head_observed": "4ed49e9985b120486efba2db37e558848bc36fe0",
+      "planned_identity": "c19-external-v2-official-v1",
+      "one_way_execution_allowed_by_analyst": false,
       "explicitly_avoided": true
     },
     "sub_lane": null,
     "sub_fallback": null,
-    "no_sub_lane_reason": "The previously reserved terminal-provenance v2 lane is complete with green CI. RV01/RV02/CX01 have no fresh reserved successors; A01 revival would be outcome-responsive; Issue #139 is Repository Steward governance; C19 is MAIN critical path; immediate methods promotion would manufacture low-value parallelism."
+    "no_sub_lane_reason": "The prior terminal-provenance v2 package is complete; A01/RV01/RV02/CX01 have no fresh reserved successor; Issue #139 is governance; all remaining C19 executable-harness and scientific implementation binding work is MAIN critical path."
   },
   "selected_independent_lane": null,
   "independence_from_main_critical_path": true,
   "execution_allowed": false,
   "sub_active_claim": "NO_OP_NO_RESERVED_LANE",
   "main_work_explicitly_avoided": [
-    "research/c19-truth-free-symbolic-adapter-v2-20260917@90c936a7abca7eba0dac1f977753503551e73368",
+    "research/c19-truth-free-symbolic-adapter-v2-20260917",
     "c19-external-v2",
-    "c19-belief-r-truth-free-symbolic-adapter-v1",
     "c19-external-v2-official-protocol-v1",
+    "c19-external-v2-official-harness-v1",
     "c19-external-v2-official-v1",
-    "official Belief-R data/access and all C19 CI/verifier/binding/STARTED/dispatch/acquisition/scoring work"
+    "all C19 runner/baseline/scorer/preservation/source-runtime/package-binding blockers",
+    "official Belief-R data access and one-way execution"
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "control_brain_handoff_tip": "b3e9da4b6eb65f01282db8f06f967f96e1ca8be0",
-    "evidence_analyst": "5511d0ec124c122c08148fd139b2ccaad9b79872",
-    "orchestrator_report_parent": "3507d0ff5ccc4467e2d94220a72aad47c5dd5318",
+    "evidence_analyst_tip": "9f6cb3b1cb4a5bb1a7a10f6f9b04e54c50bb1cec",
+    "orchestrator_report_parent": "43192d47c4229944d2be4e1c9dd9063d1cd257f8",
+    "main_report_consumed": "43192d47c4229944d2be4e1c9dd9063d1cd257f8",
+    "sub_report_prior": "409d5356d69b9b2635dde0a8f84cbc4eabc44069",
     "completed_sub_methods_head": "d5317485a591439cb52d52b649b4930964cf2b3a",
-    "main_c19_head_observed": "90c936a7abca7eba0dac1f977753503551e73368",
-    "main_c19_analyst_anchor": "7ede1bfb41285ec0107136b4f6abd5e893adcacf",
+    "main_c19_analyst_semantic_anchor": "90c936a7abca7eba0dac1f977753503551e73368",
+    "main_c19_current_head": "4ed49e9985b120486efba2db37e558848bc36fe0",
+    "main_c19_harness_scaffold_commit": "c8ca3aa5e543917bc81b94b920d79f2a39b14ff8",
     "main_c19_ci_run": {
-      "run_id": 35135084743,
-      "status_at_final_inspection": "in_progress"
+      "run_id": 35141325228,
+      "head_sha": "4ed49e9985b120486efba2db37e558848bc36fe0",
+      "status": "completed",
+      "conclusion": "success"
     },
     "open_pr_count": 0,
     "open_issues": [139],
     "git_tags": [],
-    "legacy_freeze_control_preserve_refs_inspected": true,
+    "repository_rulesets": [],
+    "legacy_freeze_control_preserve_evidence_refs_inspected": true,
     "c19_control_refs_observed": []
   },
   "branches_prs_advanced": {
@@ -57,12 +65,15 @@
     "started_refs_created": [],
     "acquisitions": [],
     "scoring": [],
+    "preservations": [],
     "evidence_mutations": []
   },
   "scientific_readiness_results": [
     "No new scientific measurement.",
     "No new SUB readiness result because no independent lane/fallback is reserved.",
-    "Concurrent MAIN movement was observed and kept outside SUB scope: C19 advanced from Analyst anchor 7ede1bfb... to 90c936a7... while remaining MAIN-owned."
+    "Concurrent MAIN advanced C19 from the Analyst semantic anchor 90c936a7... to 4ed49e998... and exact-head CI 35141325228 succeeded.",
+    "MAIN durable report 43192d47... confirms PRE_START_HARNESS_INCOMPLETE_REQUIRES_SCIENTIFIC_IMPLEMENTATION_BINDING: the exact C19 condition runner and five baseline family-to-factory/hyperparameter/checkpoint mappings remain scientifically unspecified by the frozen protocol/source/spec.",
+    "SUB did not take those MAIN blockers and did not invent missing scientific mappings."
   ],
   "consumed_identities": {
     "newly_consumed_this_run": [],
@@ -84,11 +95,19 @@
   },
   "blockers": [],
   "collision_reconciliation": {
-    "evidence_analyst_tip_final": "5511d0ec124c122c08148fd139b2ccaad9b79872",
-    "orchestrator_report_tip_before_persistence": "3507d0ff5ccc4467e2d94220a72aad47c5dd5318",
-    "main_c19_head_at_analyst_snapshot": "7ede1bfb41285ec0107136b4f6abd5e893adcacf",
-    "main_c19_head_observed_final": "90c936a7abca7eba0dac1f977753503551e73368",
-    "main_c19_concurrent_commits_ahead": 2,
+    "evidence_analyst_tip_final": "9f6cb3b1cb4a5bb1a7a10f6f9b04e54c50bb1cec",
+    "orchestrator_report_tip_observed_during_run": [
+      "6c3d5cc730b057f5c852160a904a0124e22cafe7",
+      "43192d47c4229944d2be4e1c9dd9063d1cd257f8"
+    ],
+    "main_c19_head_at_analyst_snapshot": "90c936a7abca7eba0dac1f977753503551e73368",
+    "main_c19_head_observed_final": "4ed49e9985b120486efba2db37e558848bc36fe0",
+    "main_c19_concurrent_commits_observed": [
+      "c8ca3aa5e543917bc81b94b920d79f2a39b14ff8",
+      "554ccca0a80bb792a2c7dbef2f05ac6cb06afe88",
+      "4ed49e9985b120486efba2db37e558848bc36fe0"
+    ],
+    "main_durable_report_observed": "43192d47c4229944d2be4e1c9dd9063d1cd257f8",
     "main_collision": false,
     "lane_split_invalidated": false,
     "rejected_lane": null,
@@ -96,16 +115,17 @@
     "unexpected_c19_started_or_control": false
   },
   "integrity_state": {
-    "status": "CLEAN_DELiberate_NO_OP",
+    "status": "CLEAN_DELIBERATE_NO_OP",
     "immutable_refs_modified": false,
     "main_branch_modified_by_sub": false,
     "c19_modified_by_sub": false,
     "scientific_execution": false,
+    "official_data_accessed_by_sub": false,
     "new_identity_consumption": false,
     "reserved_work_manufactured": false
   },
   "completion_target": {
-    "target": "Perform a deliberate no-op because Analyst supplied no independent SUB lane/fallback, while re-fetching current state and preserving strict separation from concurrent MAIN C19 work.",
+    "target": "Perform a deliberate no-op because Analyst supplied no independent SUB lane/fallback, while re-fetching current state and preserving strict separation from concurrent MAIN C19 harness work.",
     "reached": true
   },
   "fallback_status": null,
