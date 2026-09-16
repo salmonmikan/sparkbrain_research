@@ -500,9 +500,8 @@ negative result, not external generalization or superiority.
 
 **Code/base:** integrated `codex/c01-c10-integration`; package `0.2.1`, schema `0.2`  
 **Primary validation:** `python -m pytest -q`, `python -m ruff check .`,
-`python scripts/local_readiness_check.py`, `python scripts/validate_bundle.py`,
-`python scripts/validate_prior_art_audit.py`, and
-`python scripts/validate_release.py --preparation-only`
+`python scripts/validate_release.py --preparation-only`  
+**Offline reproduction:** `python scripts/reproduce_release.py --offline --output <LOCAL_OUTPUT>`
 
 ### Validation outcome
 
@@ -534,7 +533,7 @@ preparation are integrated; public release readiness is not claimed.
 **Repository validation:** `python scripts/validate_release.py --preparation-only`
 
 **Archive validation:** extracted package without `.git`; local readiness, offline reproduction
-to an empty path outside the archive root, release preparation validation, and the full packaged
+to an empty path outside the archive root, preparation validation, and the full packaged
 test suite
 
 **Private review command:**
