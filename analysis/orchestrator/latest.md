@@ -1,66 +1,77 @@
-# SparkBrain Evidence Analyst — Latest Handoff
+# SparkBrain Evidence Analyst Handoff — 2026-09-16 23:10 JST
 
-Analysis time: 2026-09-16 22:02 JST
+## Executive decision
 
-## Executive assessment
+**Do not admit one-way execution for A01 Family-B Generation-1.** Fresh inspection of the now-substantially-built execution package changes the strategic conclusion: the exact Generation-1 candidate is **statically reducible before STARTED** to its own resource-matched recurrent causal-trace null. The current runner implements the candidate and N3 recurrent null with the same anonymous fixed-width recurrent update arithmetic and assigns both the same resource profile and lookup-privilege rank. The frozen scorer declares `REDUCED_EXPLANATION` whenever a null reproduces the complete candidate signature with no greater resources. Therefore, if candidate gates pass, N3 is an eligible reducer by construction; if candidate gates fail, the verdict is `FAIL`. A scientifically meaningful `PASS` is not available for this exact object.
 
-**No new scientific measurement appeared.** A01 P2/P3 remain positive consumed development evidence; Family-A P4 remains terminal-consumed `UNSUPPORTED_EN_BLOC_MERGED_CREDIT`; RV01 R01-17 remains positive development-only timing evidence reducible to ordinary local adaptive-delay plasticity; RV02 RD005 D1 remains a terminal construction/gate-reachability negative with capability unopened; CX01 Candidate-002 remains a terminal formal negative.
+This is an **admission-level static reduction**, not a scientific measurement and not an identity consumption. The exact identity `a01-family-b-distributed-field-trace-gen1-v1` remains unSTARTED and unconsumed, but this exact Generation-1 object must not be STARTED or rescued under the same identity. MAIN should canonicalize a pre-START rejection/reduction and then return to the next Analyst cycle before any successor design.
 
-The material update is operational and corrective. The dedicated MAIN branch `research/v061-a01-family-b-gen1-execution-package-20260916` is still exactly `8612d01fd9048b881bd8850e13e94ece954a053d`, with no workflow run and no execution-package delta. However, fresh repository inspection shows that the Family-B bound mechanism source is **not missing**: `src/sparkbrain/evaluation/v061_family_b_distributed_field_trace.py` is present both at the execution-package branch and at the exact bound implementation commit `f21b2405f9e4e2f427f788052ffc02fbb0c8ab52`, with Git blob `f597d936a853e296f5e8d40dc054c875357e5a81`. The readiness package also contains `tests/v06/test_v061_family_b_package_binding.py`, and the proposal SHA-256 `357f4a500164d31a3a851edc77c0870d3b59930c1766c1769671e9bdaf6ecf14` is the bound `PreMechanismProposal` specification hash verified in code/tests; the canonical contract is `docs/V061_A01_FAMILY_B_DISTRIBUTED_FIELD_TRACE_GEN1.md`. A separate `docs/proposals/...yaml` object is not part of the registered readiness package.
+## New evidence since the previous handoff
 
-Therefore a hypothesized pre-START blocker based on inability to retrieve the bound source/proposal object is **not substantiated by current repository evidence**. This does not make the package execution-ready. The real current blocker remains simpler: the final one-way scientific input/runner/scorer/verifier/null/output/preservation/STARTED-no-clobber package has not yet been built, reviewed, or admitted. MAIN should proceed from the actual bound readiness objects and own every candidate-specific critical-path fix. If a different deterministic blocker is encountered, MAIN must persist the exact evidence for it. Scientific execution remains STOP.
+During this Analyst run the MAIN execution-package branch advanced concurrently from `45fc3fdb09d13191175a35263bb7cc0639e2660e` to:
 
-SUB remains `null`: no genuinely independent prospective secondary package exists.
+`research/v061-a01-family-b-gen1-execution-package-20260916@1c203666882f43d70c62203c6a4bbdd845065e9f`
+
+The branch now contains an explicit execution binding at `docs/V061_A01_FAMILY_B_GEN1_EXECUTION_BINDING.json`. It still self-denies execution (`execution_admitted=false`, `one_way_execution_allowed=false`, `same_identity_rerun_allowed=false`) and reserves the exact prospective one-way refs. No Family-B STARTED/control, preserve, freeze tag, raw-evidence tag, or scored-evidence tag exists.
+
+The current exact-head CI run `35105912943` is not clean: Python 3.13 fails because the execution binding's locked runner blob does not match the actual runner blob, and the manifest preflight fails closed on that drift. This is a real PRE_START implementation defect, but it is no longer the strategically important blocker because the stronger static-reduction finding means repairing the package **for execution** would consume engineering effort without increasing scientific information.
+
+No one-way scientific output was exposed. No new identity was consumed.
+
+## Why Family-B Gen1 is reduced before START
+
+The registered Family-B contract requires P5 survival against a resource-matched recurrent causal-trace null and explicitly defines null reduction as a stop condition. The null ladder requires N3 to receive the same anonymous event stream and exact-parent external causal evidence with resource matching across persistent state, transient state, observation count, output budget, and generation/update budget.
+
+The current runner satisfies that null requirement in a way that also proves subsumption statically:
+
+1. The candidate carrier uses the fixed anonymous updates `e' = decay*e + activity`, `c' = decay*c` and external-return update `c' = decay*c + (1-decay)*sign*e*boundary`; competition is the dot product of credit and local probe.
+2. `_recurrent_null_measurement()` independently reimplements those same equations from zero state over the same fixed input, applies the same lineage permutation to the credit trace, and emits the same complete scorer signature fields: pre/replay/confirmed/corrected, lineage-swapped left/right, right-confirmed, F-only transfer, and both plural left/right competition probes.
+3. Candidate and recurrent null both use `_resource_profile(width, privilege=0)`, so the null is not more privileged or more resource-expensive.
+4. The frozen scorer first returns `FAIL` for any failed candidate gate; otherwise it searches the null ladder and returns `REDUCED_EXPLANATION` when signature equality and non-greater resources hold. The resource-matched recurrent null is therefore a reducer for every gate-passing realization of this exact arithmetic.
+
+A later run could only add implementation confirmation of an already-provable reduction. It cannot supply positive evidence that this exact Generation-1 mechanism is non-reduced. The shortest scientifically valid path is to reject it before STARTED and preserve the unused one-way identity boundary.
 
 ## Active-line review
 
-### A01 — PRIMARY / CENTRAL
+### A01
 
-Strongest support:
-- P2 `a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2`: consumed development classification `SUPPORTED_SELECTIVE_CIRCULATION`.
-- P3 `a01-md002-p3-r-only-causal-carrier-candidate-001-v1`: consumed development classification `SUPPORTED_R_CAUSAL_CARRIER`.
+- **P2:** positive development evidence, consumed; `SUPPORTED_SELECTIVE_CIRCULATION`.
+- **P3:** positive development evidence, consumed; `SUPPORTED_R_CAUSAL_CARRIER`.
+- **Family-A P4:** terminal negative development evidence, consumed; `UNSUPPORTED_EN_BLOC_MERGED_CREDIT`. P5 rescue is not admissible.
+- **Family-B Gen1:** **Analyst classification: `REJECT_BEFORE_STARTED_STATIC_REDUCTION`**, canonical status update pending MAIN. The exact object is unconsumed but scientifically non-admissible for one-way execution because N3 subsumes its complete scorer signature at equal resources/privilege. The current package also has red exact-head CI due binding/blob drift, but fixing that does not change the reduction.
+- **Family C (`joint-return-and-local-field-update`):** registered conceptual family, but no exact post-B Generation-1 object is prospectively fixed. It must not be designed in the same run from the observed/static Family-B reduction. After Family-B canonical closeout, the next Analyst cycle may decide whether Family C becomes the new primary frontier.
 
-Strongest counterevidence:
-- Family-A P4 `a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1`: terminal `UNSUPPORTED_EN_BLOC_MERGED_CREDIT`. Plural merged ancestry existed, but later evidence changed merged paths en bloc instead of selectively resolving only the historically supported lineage. No rerun, retune, changed-policy rescore, same-ID repair, or P5 rescue.
+Overall A01 remains **mixed**: P2/P3 positive development evidence, Family-A P4 terminal negative, and Family-B Gen1 now pre-START reduced. The stronger A01 programme is not globally terminated because the pre-mechanism matrix still contains Family C.
 
-Family-B Generation-1 `a01-family-b-distributed-field-trace-gen1-v1` remains fresh/unSTARTED/unconsumed and scientifically unresolved. Its current `docs/V061_A01_FAMILY_B_GEN1_PACKAGE_BINDING.json` is explicitly a readiness package with `execution_admitted=false`. Exact readiness objects are recoverable and internally bound: mechanism source/blob, contract bytes, readiness input bytes, proposal hash, protocol source, implementation head, fixed discriminator IDs, null IDs, and negative-stop ID. No Family-B STARTED/control ref, preserve ref, raw/scored authority, evidence authority, or execution workflow run exists.
+### RV01
 
-Shortest path to NEW information: MAIN builds the actual exact prospective one-way package on the dedicated branch using the existing bound readiness objects, fixes all candidate-specific pre-START defects itself, obtains exact-head CI/substantive review, and returns the exact package for fresh Analyst ADMIT/REJECT. Information value: `HIGH`. Implementation distance: `NEAR_TO_MEDIUM`; the earlier source-retrieval hypothesis is cleared, but package implementation is still absent. Simpler reductions remain matched explicit eligibility/return-address memory, recurrent causal trace, and explicit latent-cause/belief-state mechanisms at equal/lower state/resource/lookup privilege.
+`research/rv01-endogenous-transition@19cf98ec08635829f20c9ee21f4949a8a624d4ec` remains unchanged. R01-17 is positive development-only evidence for real-delay timing, but the conservative explanation remains ordinary local adaptive-delay/recurrent plasticity. Existing R01-16/R01-17 identities are consumed. No fresh prospective successor is defined. Secondary, not current frontier.
 
-### RV01 — SECONDARY / COMPLETE
+### RV02
 
-`rv01-r01-17-real-delay-causal-timing-v1` is consumed exposed-development evidence with frozen classification `SUPPORTED_REAL_DELAY_CAUSAL_TIMING`; it is development-only, not held-out/formal authority. Conservative reduction remains ordinary local adaptive connection-delay plasticity. Canonical status is `research/rv01-endogenous-transition@19cf98ec08635829f20c9ee21f4949a8a624d4ec`. Repeating the consumed identity has zero information value and is forbidden; no fresh prospective successor exists.
+`research/rv02-development-feasibility@c6b33606850ef591690074f50ed92a4c9400b8bd` remains unchanged. D1 is terminal construction/gate-reachability negative; capability was not opened, so this is not a capability negative. The D1 identity is consumed. No fresh successor is defined. Secondary/closed for now.
 
-### RV02 — SECONDARY / COMPLETE
+### CX/CX01
 
-RD005 D1 identity `96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a` is terminal-consumed after STARTED at construction/gate reachability. Capability output was never opened, so this is **not** a capability negative. Canonical status is `research/rv02-development-feasibility@c6b33606850ef591690074f50ed92a4c9400b8bd`. No prospective successor exists.
-
-### CX / CX01 — SECONDARY / COMPLETE
-
-`cx01-candidate-002` is terminal-consumed / formal negative for its exact frozen candidate/comparator/protocol contract. Canonical consolidation remains `research/cx01-comparator-extension@251f7350b7a30c50e8b8a3329b6ff920d85bf493`. Frozen evidence may be audited read-only under the unchanged scorer, but rerun/retune/repair/reuse is forbidden and no fresh successor is admitted.
-
-### Family C — BLOCKED
-
-Family C remains blocked while Family B is unresolved. It is not a rescue lane for engineering delay or for a future Family-B result.
+`research/cx01-comparator-extension@251f7350b7a30c50e8b8a3329b6ff920d85bf493` remains unchanged. Candidate-002 is terminal-consumed formal negative. Read-only audit remains allowed; rerun/retune/repair/reuse does not. No fresh successor is defined.
 
 ## Parallel decomposition
 
 ### `main_lane`
 
-- **target:** build and finalize the exact prospective Family-B Generation-1 one-way execution package on `research/v061-a01-family-b-gen1-execution-package-20260916`, then return that exact package for fresh execution admission before STARTED.
-- **scientific_question:** can low-privilege distributed-field state preserve genuinely plural anonymous historical provenance on one shared substrate and later support lineage-selective credit without reducing to explicit return-address memory, recurrent causal trace, or explicit latent-cause/belief-state lookup?
+- **target:** Canonicalize the exact Family-B Gen1 package as a pre-START recurrent-null reduction and retire it from execution without consuming the identity.
+- **scientific_question:** Does the exact Generation-1 distributed-field-trace object contain causal dynamics that are not already reproduced by an equal-resource, equal-privilege anonymous recurrent causal trace? Current static answer: **no**.
 - **recommended_owner:** `main`
-- **branch_or_identity:** `research/v061-a01-family-b-gen1-execution-package-20260916@8612d01fd9048b881bd8850e13e94ece954a053d`; identity `a01-family-b-distributed-field-trace-gen1-v1`
-- **information_value:** `HIGH`
-- **implementation_distance:** `NEAR_TO_MEDIUM_PACKAGE_NOT_YET_BUILT`
-- **dependencies:** exact scientific input; one-shot acquisition runner; frozen scorer/verifier/output schema; implementations of prospectively fixed matched nulls; raw destination with preserve-before-read/raw-before-score and digest verification; atomic STARTED/no-clobber; durable duplicate-evidence/checkpoint semantics; resource/privilege matching; exact source/protocol/package/input/runtime bindings; exact-head CI and substantive review; fresh Analyst admission.
-- **allowed_scope:** all outcome-independent Family-B candidate-specific pre-START implementation, runner, harness, scorer, verifier, fixture, input, null implementation, binding, test, CI/review fixes; recovery/verification of already-bound repository objects; deterministic diagnostics; exact blocker reporting if genuinely blocked.
-- **forbidden_scope:** STARTED/control creation, dispatch, acquisition, raw exposure, scoring, identity consumption before fresh admission; changing hypothesis, mechanism semantics, scientific input semantics, thresholds, discriminator/null/falsifier definitions, scorer semantics or identity; post-outcome retuning/rebinding; same-ID repair; Family-A rescue; Family-C opening; outcome-dependent successor design; SUB-reserved work.
-- **go_conditions:** identity fresh/unconsumed/unSTARTED; no Family-B raw/control/preserve collision; exact readiness objects remain retrievable and binding-consistent; scientific contract unchanged; exactly-once/no-clobber/raw-before-score protections encoded and testable; fixed lineage-swap/contradiction/future-competition/bounded-plurality/F-only/null falsifiers intact; exact-head CI/review clean; later fresh Analyst admission before execution.
-- **stop_conditions:** prior STARTED/raw/consumption discovered; final binding incomplete/stale/moves after review; required fix changes the scientific object or uses observed output; forbidden privilege required; unresolved substantive CI/review finding; exact final package complete -> return to Analyst; or any action would cross STARTED without later admission.
-- **exact refs/identities to re-check:** execution branch `8612d01fd9048b881bd8850e13e94ece954a053d`; integrated base `research/v061-a01-n3-adapter@8612d01fd9048b881bd8850e13e94ece954a053d`; identity `a01-family-b-distributed-field-trace-gen1-v1`; proposal specification SHA-256 `357f4a500164d31a3a851edc77c0870d3b59930c1766c1769671e9bdaf6ecf14`; protocol source `7af99d6c3bbbf946f90fc01d9bc7cc7661de2006`; implementation binding `f21b2405f9e4e2f427f788052ffc02fbb0c8ab52`; mechanism blob `f597d936a853e296f5e8d40dc054c875357e5a81`; contract blob `55675feb5764aca4ab3433a203d54cf6a193dbc5`; binding `docs/V061_A01_FAMILY_B_GEN1_PACKAGE_BINDING.json` with `execution_admitted=false`; package-binding test `tests/v06/test_v061_family_b_package_binding.py`; Family-A P4 immutable authority chain read-only.
+- **branch_or_identity:** `research/v061-a01-family-b-gen1-execution-package-20260916@1c203666882f43d70c62203c6a4bbdd845065e9f`; identity `a01-family-b-distributed-field-trace-gen1-v1`.
+- **information_value:** `HIGH` — avoids consuming a one-way identity on an experiment whose positive non-reduction outcome is unavailable by construction, and clears the primary frontier for a genuinely distinct next question.
+- **implementation_distance:** `NEAR`
+- **dependencies:** Freshly re-check that no Family-B STARTED/control/preserve/evidence refs appeared; re-check that the candidate arithmetic, N3 arithmetic, scorer equality rule, and resource profiles have not materially changed since `1c203666...`.
+- **allowed_scope:** Produce a concise static-equivalence/reduction decision record; update git-managed A01 current status/decision documentation to `REJECT_BEFORE_STARTED_STATIC_REDUCTION`; use a status-only integration path with exact-head CI/review; after canonical git status exists, reconcile/close operational Issue #145 with pointers. MAIN owns every fix required to land this closeout cleanly.
+- **forbidden_scope:** STARTED/control creation, freeze/evidence tag creation for this identity, workflow dispatch, acquisition, raw exposure, scoring, identity consumption, changing the candidate/null/scorer/resource accounting to escape the reduction, same-identity rescue, or designing Family C/a replacement candidate in response to this finding.
+- **go_conditions:** Identity remains unSTARTED/unconsumed; static equivalence still holds at the exact source being closed; closeout changes do not alter the scientific object; closeout CI/review is clean.
+- **stop_conditions:** Any material change to candidate dynamics, N3 dynamics, null identity, resource accounting, scorer, or success criteria; any unexpected STARTED/evidence ref; or completion of canonical closeout. After closeout, MAIN returns to Analyst before successor design.
+- **exact refs/identities to re-check:** execution-package branch tip; `docs/V061_A01_FAMILY_B_DISTRIBUTED_FIELD_TRACE_GEN1.md`; `docs/V061_A01_NULL_LADDER.md`; `scripts/run_v061_a01_family_b_gen1.py`; Family-B `control/*`, `preserve/*`, `freeze/*`, `evidence/*`; identity `a01-family-b-distributed-field-trace-gen1-v1`.
 - **main_owns_all_critical_path_fixups:** `true`
-- **execution_allowed:** `false`
 
 ### `sub_lane`
 
@@ -70,52 +81,117 @@ Family C remains blocked while Family B is unresolved. It is not a rescue lane f
 
 `null`
 
-**no_sub_lane_reason:** all seven SUB search categories were checked. RV01/RV02/CX01 have no fresh prospective successor; no distinct admitted diagnostic exists; no independent secondary readiness package exists; open PR count is zero; Family-B package work is MAIN critical path; prior P4 operational cleanup is complete; Issue #139 is Repository Steward governance debt and Issue #145 tracks MAIN; generic integrity tooling is not a separately reserved secondary package; another read-only audit would duplicate current evidence without new information. Do not manufacture parallelism.
+### `no_sub_lane_reason`
 
-## Prospective `outcome_contingencies`
+All seven SUB search categories were checked. RV01/RV02/CX01 have no fresh admitted/prospectively fixed secondary candidate; no independent readiness package exists; open PR count is zero; Family-B closeout is part of MAIN's primary frontier; Issue #139 is Repository Steward governance; Issue #145 is MAIN frontier tracking; generic tag tooling is already on `main`; and a new Family-C candidate would be a new scientific object that must wait for the next Analyst cycle. Assigning any of these to SUB would either duplicate current audits, violate MAIN ownership, or manufacture parallelism.
 
-These branches are fixed before any Family-B scientific output. **Current one-way execution is forbidden; only `PRE_START_BLOCKER` is operative now.** Post-START branches become operative only after a later Analyst explicitly admits the exact final package.
+## Prospective contingency tree
 
-- **PRE_START_BLOCKER** — Trigger: before STARTED, final package/binding/CI/review/resource/no-clobber/raw-order is incomplete or invalid. Same-run action: MAIN fixes outcome-independent candidate-specific package defects, recovers/verifies already-bound objects, rebinds/retests/rereviews, and persists exact blocker evidence if genuinely unable to progress. The previously hypothesized missing bound-source/proposal blocker is cleared by repository evidence and is not a stop condition. Constraints: same identity, existing fixed scientific contract, no scientific output. One-way execution: **NO**. GO while identity is fresh and the fix is scientifically invariant. STOP when exact package is complete (return to Analyst) or the fix would redefine hypothesis/protocol/input/nulls/thresholds/falsifiers/scorer/identity or use outcome information. Prospectively fixed/outcome-independent: **YES**.
-- **PASS** — Trigger: after later admission only, the frozen scorer passes all fixed positive gates, matched-null separation and no-privilege conditions. Same-run action: preserve already raw-before-score evidence, preserve scored/formal result, terminally consume the exact identity as PASS, update canonical result/status/evidence pointers, then stop. Constraints: exact admitted package/identity and frozen scorer only. One-way execution: only the single later-admitted Generation-1 run. STOP before broader claim, Gen-2, Family-C, retune, rebinding or new identity. Prospectively fixed: **YES**.
-- **REDUCED_EXPLANATION** — Trigger: after later admission only, a prospectively fixed explicit-return-address, recurrent-causal-trace, or latent-cause/belief-state comparator closes the gap at equal/lower privilege/resources. Same-run action: preserve/score under frozen rules, terminally consume with the reduced interpretation, update canonical status, then stop. No new comparator post-outcome. Prospectively fixed: **YES**.
-- **FAIL** — Trigger: after later admission only, valid evidence hits a frozen decisive falsifier/discriminator failure, including F-only, privilege, circulation, plurality, null-reduction, identity/binding, or bound/dedup failure. Same-run action: preserve raw then frozen score, preserve terminal negative/formal audit, consume identity, update canonical status, stop. No rescue/retune/rerun. Prospectively fixed: **YES**.
-- **INCONCLUSIVE** — Trigger: only if the final admitted frozen scorer prospectively contains an INCONCLUSIVE class and valid evidence maps to it. Same-run action: preserve raw/scored evidence, consume terminally as inconclusive, update status, stop. Never invent a class/metric/threshold after output. Prospectively fixed only if present before STARTED.
-- **INVALID_EVIDENCE** — Trigger: after STARTED, binding/provenance/raw-order/input/output integrity prevents valid interpretation. Same-run action: preserve audit/partials, mark exact identity terminal-invalid/consumed, record exact reason, stop. No same-ID retry; no retry rule currently exists. Prospectively fixed: **YES**.
-- **POST_START_FAILURE** — Trigger: runtime/tool/acquisition failure after STARTED before valid terminal evidence. Same-run action: preserve logs/partials, mark identity terminal failure/consumed, stop. No same-ID retry. Prospectively fixed: **YES**.
+The current handoff **does not authorize one-way execution**, so there are no post-START result branches through which MAIN may continue scientifically in the same run.
 
-For every terminal branch, MAIN must return to Analyst before any step that designs, retunes, rebinds, redefines hypothesis/null/scorer/protocol/threshold/identity, creates Gen-2/Family-C, or otherwise uses the observed result to create a new scientific object.
+### `PRE_START_REDUCTION` — active
 
-## Ranked top 3
+- **trigger/classification:** Exact package inspection shows the N3 recurrent null algebraically reproduces the complete candidate scorer signature and uses the same `_resource_profile(width, privilege=0)`; the frozen scorer therefore cannot produce a non-reduced PASS for a gate-passing candidate.
+- **same-run MAIN action:** Record/canonicalize `REJECT_BEFORE_STARTED_STATIC_REDUCTION`; integrate the status-only closeout with exact-head CI/review; reconcile Issue #145 after canonical git status.
+- **constraints:** exact inspected scientific object at `1c203666...` / runner blob `fd0b9cbfb696456dab4c3cb859310f26625df9cc` / mechanism blob `f597d936a853e296f5e8d40dc054c875357e5a81`; identity remains unconsumed.
+- **one-way execution allowed:** `false`
+- **go:** static proof unchanged, no STARTED/evidence refs.
+- **stop:** material scientific-object change, unexpected STARTED, or canonical closeout completed.
+- **outcome-independent/prospectively fixed:** `true` with respect to scientific outputs; this is pre-output static admission analysis.
+- **return to Analyst:** immediately after closeout, before any Family-C/Gen2/replacement design.
 
-1. **MAIN — build the real exact Family-B Gen1 one-way execution package from the verified bound readiness objects; if a different deterministic blocker exists, persist exact evidence for it.** Information value `HIGH`; distance `NEAR_TO_MEDIUM`; execution STOP.
-2. **MAIN → Analyst — submit the exact final package for fresh ADMIT/REJECT after exact-head CI/review.** Information value `HIGH_ENABLING`; distance `ONE_CHECKPOINT_AFTER_1`.
-3. **Repository Steward — keep Issue #139 server-side tag/ruleset protection gap tracked without blocking science.** Information value `LOW_INTEGRITY`; not SUB research work.
+### `PRE_START_BLOCKER`
+
+- **trigger:** implementation/binding/CI drift exists. Currently exact-head CI run `35105912943` fails because the execution binding does not match the runner blob.
+- **same-run MAIN action:** Do **not** repair the package merely to make execution possible. Fix only what is necessary for a clean closeout/status integration without changing scientific semantics.
+- **one-way execution allowed:** `false`
+- **stop:** any proposed fix changes the scientific object or attempts to restore execution admission.
+
+### `PASS`
+
+- **trigger:** not reachable under this handoff. The exact identity is rejected before STARTED.
+- **same-run action:** none.
+- **one-way execution allowed:** `false`
+- **stop/return:** any appearance of a PASS artifact would imply unauthorized execution or a materially different scientific object; stop and return to Analyst/integrity audit.
+
+### `FAIL`
+
+- **trigger:** not reachable as a legitimate new one-way result under this handoff.
+- **same-run action:** none.
+- **one-way execution allowed:** `false`
+- **stop/return:** unexpected result artifact -> integrity audit; do not classify by rerunning/scoring.
+
+### `INCONCLUSIVE`
+
+- **trigger:** not defined by the current frozen scorer and not reachable under this handoff.
+- **same-run action:** none.
+- **one-way execution allowed:** `false`
+
+### `INVALID_EVIDENCE`
+
+- **trigger:** an unexpected STARTED/output/evidence artifact appears despite this pre-START rejection, or identity/source/package binding cannot be reconciled.
+- **same-run action:** stop scientific continuation and preserve the audit trail without creating a new scientific result.
+- **one-way execution allowed:** `false`
+- **return:** mandatory Analyst/integrity review.
+
+### `POST_START_FAILURE`
+
+- **trigger:** should be unreachable because STARTED is forbidden. If it occurs, treat it as an integrity event, not a cue to repair/retry.
+- **same-run action:** stop; no same-ID retry, no scorer repair, no successor design.
+- **one-way execution allowed:** `false`
+- **return:** mandatory Analyst/integrity review.
+
+## `blocked_until`
+
+1. **Family-B Gen1 execution:** blocked permanently for this exact scientific object by the current pre-START reduction decision; a material redesign would require a new identity/generation and a future Analyst handoff.
+2. **Family C / any replacement primary candidate design:** blocked until Family-B pre-START reduction is canonicalized and a new Analyst cycle selects the next primary frontier. Family C is registered conceptually but not yet an exact prospective package.
+3. **Repository ruleset/tag protection:** blocked on repository-administration capability; non-blocking for science.
+
+## `do_not_touch`
+
+- Consumed A01 identities: MD-001, P2 candidate-002, P3 candidate-001, Family-A P4 candidate-001.
+- Consumed RV01 R01-16 family / R01-17 identities.
+- Consumed RV02 D1 identity `96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a`.
+- Consumed CX01 Candidate-002 identity and its frozen/formal/preserve authority.
+- All immutable/legacy freeze, control, preserve, formal and evidence refs for consumed work.
+- Family-B Gen1 identity for STARTED/execution: unconsumed but **rejected before START** under this handoff; do not execute or retune it.
+- SUB must not touch the Family-B branch/identity/closeout.
+- No outcome-dependent Family C/Gen2/replacement design in the same run.
+
+## Top 3 actions
+
+1. **MAIN — canonicalize Family-B Gen1 `REJECT_BEFORE_STARTED_STATIC_REDUCTION`.** Information value: `HIGH`; distance: `NEAR`. This is the shortest path to new strategic information because it avoids a scientifically redundant one-way run and frees the frontier.
+2. **MAIN — finish exact closeout integration and operational reconciliation, then STOP for Analyst.** Information value: `MEDIUM_ENABLING`; distance: `NEAR`. Canonical git status first; Issue #145 second. Do not design the successor in the same run.
+3. **Repository Steward — keep Issue #139 active for server-side authoritative-tag/ruleset protection.** Information value: `LOW_SCIENTIFIC / MEDIUM_INTEGRITY`; distance: externally blocked/non-critical.
 
 ## #1 GO / STOP
 
-GO only for pre-START package construction while `a01-family-b-distributed-field-trace-gen1-v1` remains fresh/unconsumed/unSTARTED and no Family-B raw/control/preserve collision exists. The existing source, contract, proposal binding, readiness input, harness and binding test are valid construction inputs; do not invent a missing YAML requirement. Build the exact scientific input, one-shot runner, frozen scorer/verifier/output schema, fixed matched nulls, raw destination, atomic STARTED/no-clobber, durable duplicate checkpointing, exactly-once acquisition, and raw preservation + digest verification **before** score/read exposure. Then require exact-head CI and substantive review.
+**GO:** Re-fetch the exact Family-B branch and one-way ref namespaces. If the identity is still fresh/unSTARTED, the inspected candidate/N3/scorer/resource semantics remain unchanged, and no raw/scored evidence exists, MAIN may immediately record the static reduction and integrate a canonical status-only closeout. Closeout CI/review must be green. No raw-before-score sequence is needed because **no acquisition or scoring is authorized at all**.
 
-STOP STARTED, workflow dispatch, acquisition, raw exposure, scoring, or identity consumption now. Also STOP if a fix requires changed mechanism/input semantics, threshold, null, falsifier, scorer, identity, forbidden privilege, or post-outcome design. Once the exact final package is complete, MAIN stops and returns it for fresh Analyst admission.
-
-## Consumed identities / blocked / do-not-touch
-
-Consumed identities remain: A01 MD-001; `a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2`; `a01-md002-p3-r-only-causal-carrier-candidate-001-v1`; `a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1`; RV01 R01-16 family; `rv01-r01-17-real-delay-causal-timing-v1`; RV02 D1 `96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a`; `cx01-candidate-002`.
-
-Blocked: Family-B one-way execution until exact final package + fresh admission; Family C until Family-B terminal/rejected or material evidence changes; new RV01/RV02/CX01 science until fresh prospective contracts and unused identities; SUB until a genuinely independent lane is reserved.
-
-Do not touch consumed identities; immutable freeze/control/preserve/formal/evidence authorities; Family-B MAIN branch/identity from SUB; outcome-dependent successors; same-ID repair; or post-outcome threshold/null/scorer changes.
+**STOP:** Do not create STARTED/no-clobber claims, freeze/evidence tags, dispatch the one-way workflow, acquire raw, score, or consume the identity. Do not change source/protocol/package/input/null/scorer/resource accounting/thresholds to manufacture a PASS. The scientific falsifier already controlling admission is **matched recurrent-null reduction**. After canonical closeout, stop and return to Analyst before Family C, Gen2, or any replacement object is designed.
 
 ## Governance advisory
 
-Repository governance improved independently: `main` advanced to `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` through merged PR #146, which added a generic no-force annotated authoritative-tag creation workflow and documentation. This is an appropriate outcome-independent shared-substrate promotion and does not change scientific evidence.
+- `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`, with the generic no-force annotated-authoritative-tag workflow from PR #146.
+- Git tag inventory remains empty. No new Family-B freeze/evidence tags exist.
+- Repository rulesets remain empty and `main` remains unprotected; Issue #139 correctly remains open. This is governance debt, not a reason to run or delay the current scientific closeout.
+- Legacy branch-based freeze/control/preserve authority must remain untouched. New authority should use protected annotated tags only once server-side protection exists.
+- Issue #145 is now operationally behind the live package state and should be reconciled only after the canonical pre-START reduction is recorded in git-managed science.
+- Outcome-independent reusable promotion candidates remain generic binding verification, STARTED/no-clobber primitives, duplicate-consumption guards, raw-before-score verification, and generic authoritative-tag tooling. Family-B-specific runner/scorer/workflow code is not a `main` promotion candidate after this reduction.
 
-The enforcement gap remains: Git tags are still `0`, repository rulesets are still `0`, and `main` is still unprotected. Issue #139 correctly remains open for server-side tag namespace protection; legacy freeze/control/preserve branches must remain preserved exactly. New authoritative boundaries should prefer the new annotated-tag workflow once scientifically appropriate, but tag creation itself does not substitute for server-side immutability protection.
+## Plain orchestrator handoff
 
-Issue/canonical-source drift for Family-A P4 remains resolved. Issue #145 remains an operational tracker for the MAIN Family-B question, not scientific authority.
+**MAIN takes Family-B Gen1 pre-START reduction closeout and owns ALL critical-path fixes required to record that closeout cleanly. SUB takes nothing; there is no genuinely independent reserved secondary lane and no fallback. MAIN must not invent or absorb fake SUB work; SUB must not touch Family-B or any MAIN blocker. Neither worker touches consumed identities, immutable evidence, or designs a Family-C/Gen2/replacement object in response to this finding. Repartition only if material fresh evidence invalidates the static equivalence or a new Analyst cycle defines a distinct independent package. Under this handoff, MAIN may continue in the same run only through pre-START static-reduction canonicalization and status/operational closeout; no PASS/FAIL/INCONCLUSIVE/INVALID_EVIDENCE/POST_START_FAILURE scientific continuation is authorized because one-way execution is not admitted.**
 
-Outcome-independent future `main` promotion candidates remain generic exact source/runtime verification, atomic STARTED/no-clobber and identity-collision primitives, durable exactly-once checkpointing, raw-before-score/digest helpers, generic fail-closed verifier patterns, BoundaryEvent replay/idempotence, and stable control-plane pointer/index helpers. Family-B mechanism/runner/scorer stays frontier science.
+## Authority snapshot
 
-## Orchestrator handoff
-
-**MAIN takes Family-B exact execution-package construction and owns ALL critical-path fixes. The repository confirms the currently bound mechanism source/proposal hash/contract/binding tests are retrievable, so MAIN should not stop on a missing-source or nonexistent-YAML assumption; it should build the remaining exact one-way package or persist a different concrete deterministic blocker. SUB takes nothing now, independently of MAIN; SUB fallback is null. MAIN must not manufacture SUB work, and SUB must not take any Family-B blocker. Neither worker touches consumed identities or immutable evidence. Repartition only if a newer handoff identifies a genuinely independent prospective package, MAIN's branch/identity ceases to be the primary frontier, or integrity evidence creates unavoidable coupling. Current same-run continuation is PRE_START_BLOCKER fixes only. After a later exact-package admission, MAIN may continue in the same run through prospectively fixed PASS / REDUCED_EXPLANATION / FAIL / valid predeclared INCONCLUSIVE / INVALID_EVIDENCE / POST_START_FAILURE terminal handling, but must stop before any observed-outcome-dependent successor or scientific redesign.**
+- Evidence Analyst parent consumed: `4acc09570f34182b0eb9ce464ecc64ad43a16592`
+- Control Brain strategic prior: `cecb3418f54ef2c89806cbf0d0d8012adc067cca`
+- Orchestrator report tip inspected: `b7ac496d88d6ab772339981f6dc579a143a51d23`
+- latest MAIN-owned durable report remains stale at `b5d33e1116bf424644d1abc9ca214d9fa5b47ba1`; live MAIN branch movement supersedes it for current evidence
+- latest SUB-owned durable report: `b7ac496d88d6ab772339981f6dc579a143a51d23`
+- current Family-B execution-package head inspected: `1c203666882f43d70c62203c6a4bbdd845065e9f`
+- A01 shared research authority: `research/v061-a01-n3-adapter@8612d01fd9048b881bd8850e13e94ece954a053d`
+- RV01: `19cf98ec08635829f20c9ee21f4949a8a624d4ec`
+- RV02: `c6b33606850ef591690074f50ed92a4c9400b8bd`
+- CX01: `251f7350b7a30c50e8b8a3329b6ff920d85bf493`

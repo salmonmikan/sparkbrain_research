@@ -1,254 +1,393 @@
 {
-  "timestamp": "2026-09-16T22:02:41+09:00",
-  "authoritative refs inspected": {
+  "timestamp": "2026-09-16T23:10:00+09:00",
+  "worker_role": "evidence_analyst",
+  "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "control_brain": "cecb3418f54ef2c89806cbf0d0d8012adc067cca",
-    "evidence_analyst_parent": "b813aff863f50ea9963984a8e633af697ba3a550",
-    "orchestrator_report_tip": "65ec0815d7c8db94ad5fe07c9ba1fd2f7e3998c4",
-    "a01_integrated_base": "8612d01fd9048b881bd8850e13e94ece954a053d",
-    "family_b_execution_package_branch": "research/v061-a01-family-b-gen1-execution-package-20260916@8612d01fd9048b881bd8850e13e94ece954a053d",
-    "family_b_identity": "a01-family-b-distributed-field-trace-gen1-v1",
-    "family_b_proposal_sha256": "357f4a500164d31a3a851edc77c0870d3b59930c1766c1769671e9bdaf6ecf14",
-    "family_b_protocol_source": "7af99d6c3bbbf946f90fc01d9bc7cc7661de2006",
-    "family_b_implementation_binding": "f21b2405f9e4e2f427f788052ffc02fbb0c8ab52",
-    "family_b_mechanism_blob": "f597d936a853e296f5e8d40dc054c875357e5a81",
-    "family_b_contract_blob": "55675feb5764aca4ab3433a203d54cf6a193dbc5",
-    "family_b_execution_admitted": false,
-    "family_b_execution_branch_workflow_runs": 0,
-    "family_b_started_refs_observed": 0,
-    "family_b_preserve_refs_observed": 0,
-    "a01_p4_source_started": "1bd0099f4358e02efac7ee4acccfe5257a86c4be",
-    "a01_p4_raw_preserve": "2511454f1633d3bc6f10e3d2a99e3ddd823bb798",
-    "a01_p4_scored_preserve": "56ee762540e0519034d2e8db0ad3c6acda667ffd",
-    "rv01_status": "19cf98ec08635829f20c9ee21f4949a8a624d4ec",
-    "rv02_status": "c6b33606850ef591690074f50ed92a4c9400b8bd",
-    "cx01_status": "251f7350b7a30c50e8b8a3329b6ff920d85bf493",
-    "open_pr_count": 0,
-    "open_issues": [139, 145],
-    "git_tags_observed": 0,
-    "rulesets_observed": 0,
-    "main_protected": false,
-    "governance_tag_workflow_merge": "PR #146 -> ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d"
+    "orchestrator_report_tip": "b7ac496d88d6ab772339981f6dc579a143a51d23",
+    "evidence_analyst_parent": "4acc09570f34182b0eb9ce464ecc64ad43a16592",
+    "a01_shared_research": "8612d01fd9048b881bd8850e13e94ece954a053d",
+    "a01_family_b_execution_package": "1c203666882f43d70c62203c6a4bbdd845065e9f",
+    "a01_family_b_binding_implementation_head": "45fc3fdb09d13191175a35263bb7cc0639e2660e",
+    "rv01": "19cf98ec08635829f20c9ee21f4949a8a624d4ec",
+    "rv02": "c6b33606850ef591690074f50ed92a4c9400b8bd",
+    "cx01": "251f7350b7a30c50e8b8a3329b6ff920d85bf493",
+    "family_b_control_refs": [],
+    "family_b_preserve_refs": [],
+    "family_b_freeze_tags": [],
+    "family_b_evidence_tags": [],
+    "git_tags": [],
+    "repository_rulesets": []
   },
-  "Control Brain commit": "cecb3418f54ef2c89806cbf0d0d8012adc067cca",
-  "MAIN report commit consumed": "b5d33e1116bf424644d1abc9ca214d9fa5b47ba1",
-  "SUB report commit consumed": "65ec0815d7c8db94ad5fe07c9ba1fd2f7e3998c4",
-  "active MAIN/SUB claims observed": {
-    "MAIN": "Family-B exact execution-package branch remains at the readiness base 8612d01 with no final execution-package delta or workflow run. Durable MAIN latest/state remain at 18:31. Fresh repository inspection disproves a missing-bound-source blocker: the bound mechanism source exists at f21b2405 and on the current branch, the proposal hash is the in-code PreMechanismProposal binding, and the package-binding test is under tests/v06/.",
-    "SUB": "21:35 durable valid no-op; no active independent claim and no MAIN work touched."
+  "control_brain_commit": "cecb3418f54ef2c89806cbf0d0d8012adc067cca",
+  "MAIN_report_commit_consumed": "b5d33e1116bf424644d1abc9ca214d9fa5b47ba1",
+  "SUB_report_commit_consumed": "b7ac496d88d6ab772339981f6dc579a143a51d23",
+  "concurrency_reconciliation": {
+    "initial_family_b_head_seen": "45fc3fdb09d13191175a35263bb7cc0639e2660e",
+    "final_family_b_head_inspected_before_persistence": "1c203666882f43d70c62203c6a4bbdd845065e9f",
+    "movement_interpretation": "MAIN continued pre-START package construction concurrently. The later head adds exact binding/preflight work but does not create STARTED, preserve, freeze, raw, scored, or terminal evidence refs.",
+    "analyst_parent_unchanged_before_write": true,
+    "orchestrator_report_tip_unchanged_before_write": true
+  },
+  "active_MAIN_SUB_claims_observed": {
+    "main": {
+      "durable_report_state": "STALE_RELATIVE_TO_LIVE_BRANCH",
+      "durable_report_timestamp": "2026-09-16T18:31:06+09:00",
+      "live_frontier_branch": "research/v061-a01-family-b-gen1-execution-package-20260916",
+      "live_frontier_head": "1c203666882f43d70c62203c6a4bbdd845065e9f",
+      "started_claim_observed": false,
+      "one_way_output_observed": false
+    },
+    "sub": {
+      "durable_report_timestamp": "2026-09-16T22:35:00+09:00",
+      "selected_lane": null,
+      "status": "VALID_NO_OP",
+      "collision_with_main": false
+    }
+  },
+  "scientific_admission_decision": {
+    "identity": "a01-family-b-distributed-field-trace-gen1-v1",
+    "decision": "REJECT_BEFORE_STARTED_STATIC_REDUCTION",
+    "execution_admitted": false,
+    "one_way_execution_allowed": false,
+    "identity_consumed": false,
+    "reason": "The exact Generation-1 candidate dynamics are algebraically reproduced by the resource-matched recurrent causal-trace null over the complete frozen scorer signature, and candidate/null use the same resource profile with lookup_privilege_rank=0. The scorer returns FAIL if candidate gates fail and REDUCED_EXPLANATION if an equal-or-lower-resource null matches the signature; therefore a scientifically meaningful non-reduced PASS is unavailable for this exact object.",
+    "canonical_status_pending": true,
+    "current_package_ci": {
+      "run_id": 35105912943,
+      "status_at_inspection": "in_progress_with_python_3_13_failure",
+      "failure": "execution binding locked-file drift for scripts/run_v061_a01_family_b_gen1.py; manifest preflight fails closed",
+      "strategic_effect": "secondary to static reduction; do not repair merely to enable execution"
+    }
+  },
+  "active_line_review": {
+    "A01": {
+      "overall_status": "MIXED_WITH_PRIMARY_GEN1_PRESTART_REDUCTION",
+      "centrality": "PRIMARY",
+      "strongest_evidence": [
+        "P2 positive consumed development evidence: SUPPORTED_SELECTIVE_CIRCULATION",
+        "P3 positive consumed development evidence: SUPPORTED_R_CAUSAL_CARRIER",
+        "Family-A P4 terminal consumed negative: UNSUPPORTED_EN_BLOC_MERGED_CREDIT",
+        "Family-B Gen1 exact object statically reduced before START to resource-matched recurrent causal trace"
+      ],
+      "family_b_gen1_status": "REJECT_BEFORE_STARTED_STATIC_REDUCTION_PENDING_CANONICALIZATION",
+      "family_b_gen1_consumed": false,
+      "shortest_path_to_new_information": "Canonicalize the pre-START reduction without consuming the identity, then return to Analyst before selecting/designing the next primary family.",
+      "genuine_blockers": [
+        "Canonical git-managed closeout not yet recorded",
+        "Current exact package CI is not green because execution binding locks a runner blob that differs from the current blob"
+      ],
+      "simpler_reduction": "resource-matched anonymous recurrent causal trace (N3)",
+      "information_value": "HIGH",
+      "implementation_distance": "NEAR"
+    },
+    "RV01": {
+      "status": "SUPPORTED_DEVELOPMENT_ONLY_WITH_SIMPLER_REDUCTION",
+      "centrality": "SECONDARY",
+      "strongest_evidence": "R01-17 positive real-delay development evidence",
+      "simpler_reduction": "ordinary local adaptive-delay/recurrent plasticity",
+      "fresh_successor_defined": false,
+      "shortest_path_to_new_information": null
+    },
+    "RV02": {
+      "status": "TERMINAL_CONSTRUCTION_GATE_NEGATIVE",
+      "centrality": "SECONDARY",
+      "strongest_evidence": "D1 consumed construction/gate-reachability negative; capability unopened",
+      "fresh_successor_defined": false,
+      "shortest_path_to_new_information": null
+    },
+    "CX01": {
+      "status": "TERMINAL_FORMAL_NEGATIVE",
+      "centrality": "SECONDARY",
+      "strongest_evidence": "Candidate-002 consumed formal negative",
+      "fresh_successor_defined": false,
+      "shortest_path_to_new_information": null
+    },
+    "Family_C": {
+      "status": "REGISTERED_CONCEPTUAL_FAMILY_NOT_YET_EXACT_PACKAGE",
+      "centrality": "BLOCKED_FUTURE_PRIMARY_CANDIDATE",
+      "scientific_question": "joint-return-and-local-field-update",
+      "shortest_path_to_new_information": "Only after Family-B closeout and a new Analyst cycle fixes a fresh prospective Generation-1 object",
+      "blocked_reason": "Designing it in the same run after observing Family-B static reduction would create a new scientific object responsively"
+    }
   },
   "main_lane": {
-    "target": "Build/finalize the exact prospective Family-B Generation-1 one-way execution package from the verified bound readiness objects, then return the exact final package for fresh Analyst execution admission before STARTED.",
-    "scientific_question": "Can low-privilege distributed-field state preserve genuinely plural anonymous historical provenance and later support lineage-selective credit without reducing to explicit return-address memory, recurrent causal trace, or explicit latent-cause/belief-state lookup?",
+    "target": "Canonicalize A01 Family-B Generation-1 as a pre-START recurrent-null reduction and retire the exact object from execution without consuming its identity.",
+    "scientific_question": "Does the exact distributed-field-trace Generation-1 object contain causal dynamics not already reproduced by an equal-resource, equal-privilege anonymous recurrent causal trace? Current static answer: no.",
     "recommended_owner": "main",
-    "branch_or_identity": "research/v061-a01-family-b-gen1-execution-package-20260916@8612d01fd9048b881bd8850e13e94ece954a053d / a01-family-b-distributed-field-trace-gen1-v1",
+    "branch_or_identity": {
+      "branch": "research/v061-a01-family-b-gen1-execution-package-20260916",
+      "head_inspected": "1c203666882f43d70c62203c6a4bbdd845065e9f",
+      "identity": "a01-family-b-distributed-field-trace-gen1-v1",
+      "runner_blob": "fd0b9cbfb696456dab4c3cb859310f26625df9cc",
+      "mechanism_blob": "f597d936a853e296f5e8d40dc054c875357e5a81",
+      "null_ladder_blob": "5ebb815dca6b2d275b257c67a476145a0cc80928"
+    },
     "information_value": "HIGH",
-    "implementation_distance": "NEAR_TO_MEDIUM_PACKAGE_NOT_YET_BUILT",
+    "implementation_distance": "NEAR",
     "dependencies": [
-      "exact scientific input and one-shot acquisition runner",
-      "frozen scorer/verifier/output schema and prospectively fixed matched-null implementations",
-      "raw destination with preserve-before-read/raw-before-score plus digest verification",
-      "atomic STARTED/no-clobber and durable duplicate-evidence/checkpoint semantics",
-      "resource/privilege matching",
-      "exact source/protocol/package/input/runtime bindings",
-      "exact-head green CI and substantive review",
-      "fresh Analyst admission on the exact final package"
+      "Re-fetch exact Family-B branch head immediately before closeout",
+      "Verify no Family-B STARTED/control/preserve/freeze/evidence refs exist",
+      "Verify candidate arithmetic, recurrent-null arithmetic, scorer equality rule, and equal resource profile have not materially changed"
     ],
     "allowed_scope": [
-      "all outcome-independent candidate-specific pre-START implementation/runner/harness/scorer/verifier/fixture/input/null/binding/test/CI/review fixes",
-      "recovery and verification of already-bound repository objects without changing bytes/meaning",
-      "deterministic diagnostics and exact blocker reporting if a genuine blocker prevents progress"
+      "Record a concise static-equivalence/reduction decision",
+      "Update git-managed A01 status/decision documentation to REJECT_BEFORE_STARTED_STATIC_REDUCTION",
+      "Use a status-only integration path with exact-head CI/review",
+      "Fix any closeout-specific CI/review issue that does not change scientific semantics",
+      "After canonical git status exists, reconcile/close Issue #145 with stable pointers"
     ],
     "forbidden_scope": [
-      "STARTED/control, dispatch, acquisition, raw exposure, scoring or identity consumption before fresh admission",
-      "scientific-object changes to hypothesis/mechanism/input semantics/thresholds/nulls/falsifiers/scorer semantics/identity",
-      "post-outcome retuning/rebinding, same-ID repair, Family-A rescue, Family-C opening or outcome-dependent successor design",
-      "future reserved independent SUB work"
+      "Create STARTED/control claims for Family-B Gen1",
+      "Create freeze/evidence tags for Family-B Gen1",
+      "Dispatch the one-way workflow",
+      "Acquire raw evidence or score",
+      "Consume the identity",
+      "Retune candidate/null/scorer/resource accounting to escape the reduction",
+      "Same-identity rescue",
+      "Design Family C, Gen2, or replacement science in response to this finding"
     ],
     "go_conditions": [
-      "identity remains fresh/unconsumed/unSTARTED and no Family-B raw/control/preserve collision exists",
-      "existing bound readiness objects remain retrievable and binding-consistent",
-      "all final execution bindings are prospective/current and scientific contract is unchanged",
-      "exactly-once/no-clobber/raw-before-score protections and fixed discriminators/nulls/falsifiers remain intact",
-      "exact-head CI/review clean",
-      "final exact package later receives fresh Analyst admission"
+      "Identity remains unSTARTED and unconsumed",
+      "Static candidate-to-N3 equivalence still holds at exact closeout source",
+      "No raw/scored evidence exists",
+      "Closeout changes do not alter the scientific object",
+      "Closeout exact-head CI/review is clean"
     ],
     "stop_conditions": [
-      "prior STARTED/raw/consumption discovered",
-      "final binding incomplete/stale or moved after review",
-      "required fix changes the scientific object, uses observed outcome, or requires forbidden privilege",
-      "substantive CI/review remains unresolved",
-      "exact package complete -> return to Analyst",
-      "any action would cross STARTED without fresh admission"
+      "Any material candidate/null/scorer/resource-accounting change",
+      "Any unexpected Family-B STARTED/evidence ref",
+      "Canonical closeout completes; return to Analyst before successor design"
     ],
-    "exact refs/identities to re-check": [
-      "research/v061-a01-family-b-gen1-execution-package-20260916@8612d01fd9048b881bd8850e13e94ece954a053d",
-      "research/v061-a01-n3-adapter@8612d01fd9048b881bd8850e13e94ece954a053d",
+    "exact_refs_identities_to_recheck": [
+      "research/v061-a01-family-b-gen1-execution-package-20260916",
       "a01-family-b-distributed-field-trace-gen1-v1",
-      "proposal sha256 357f4a500164d31a3a851edc77c0870d3b59930c1766c1769671e9bdaf6ecf14",
-      "protocol source 7af99d6c3bbbf946f90fc01d9bc7cc7661de2006",
-      "implementation binding f21b2405f9e4e2f427f788052ffc02fbb0c8ab52",
-      "mechanism source blob f597d936a853e296f5e8d40dc054c875357e5a81",
-      "contract blob 55675feb5764aca4ab3433a203d54cf6a193dbc5",
-      "docs/V061_A01_FAMILY_B_GEN1_PACKAGE_BINDING.json execution_admitted=false",
-      "tests/v06/test_v061_family_b_package_binding.py",
-      "Family-A P4 immutable source/STARTED/raw/scored authority chain"
+      "docs/V061_A01_FAMILY_B_DISTRIBUTED_FIELD_TRACE_GEN1.md",
+      "docs/V061_A01_NULL_LADDER.md",
+      "scripts/run_v061_a01_family_b_gen1.py",
+      "control/a01-family-b-gen1-started-20260916",
+      "control/a01-family-b-gen1-owner-20260916",
+      "control/a01-family-b-gen1-acquire-20260916",
+      "preserve/a01-family-b-gen1-recovery-20260916",
+      "freeze/a01-family-b-gen1-source-20260916",
+      "evidence/a01-family-b-gen1-raw-20260916",
+      "evidence/a01-family-b-gen1-scored-20260916",
+      "evidence/a01-family-b-gen1-terminal-failure-20260916"
     ],
-    "main_owns_all_critical_path_fixups": true,
-    "execution_allowed": false
+    "main_owns_all_critical_path_fixups": true
   },
   "sub_lane": null,
   "sub_fallback": null,
-  "no_sub_lane_reason": "All seven search categories were checked. RV01/RV02/CX01 have no fresh prospective successor; no distinct admitted diagnostic exists; no independent secondary readiness package exists; open PR count is zero; Family-B execution-package work is MAIN critical path; generic tooling is not a separately reserved independent package; P4 cleanup is complete; Issue #139 belongs to Repository Steward and #145 tracks MAIN; another read-only audit would duplicate current evidence. No fake parallelism is warranted.",
+  "no_sub_lane_reason": "All seven SUB search categories were checked. RV01/RV02/CX01 have no fresh admitted/prospectively fixed secondary candidate; no distinct secondary readiness package exists; there are no open PRs; Family-B closeout is MAIN primary-frontier work; Issue #139 is Repository Steward governance; Issue #145 is MAIN operational tracking; generic authoritative-tag tooling is already on main; and Family C is a new scientific object that must wait for the next Analyst cycle. Assigning work now would duplicate audits, violate MAIN ownership, or manufacture parallelism.",
   "outcome_contingencies": {
-    "applicability": "Execution remains forbidden now. PRE_START_BLOCKER is active. Post-START branches become operative only after a later Analyst explicitly admits the exact final package; none authorizes a second run or post-outcome successor.",
-    "PRE_START_BLOCKER": {
-      "trigger": "Before STARTED, the final execution package/binding/CI/review/resource/no-clobber/raw-order is incomplete or invalid.",
-      "current_classification": "FINAL_PACKAGE_NOT_YET_BUILT; previously hypothesized missing bound source/proposal object is cleared by fresh repository evidence.",
-      "same_run_next_action": "MAIN continues outcome-independent candidate-specific package construction/fixes, may recover/verify already-bound repository objects, rebind/retest/rereview as needed, and if genuinely blocked persists exact deterministic blocker evidence.",
-      "constraints": "Same identity and fixed scientific contract; use actual registered paths/objects; no scientific output.",
+    "PRE_START_REDUCTION": {
+      "active": true,
+      "trigger_classification": "The N3 recurrent null algebraically reproduces the complete candidate scorer signature and uses the same resource profile with lookup_privilege_rank=0; the scorer therefore cannot produce a non-reduced PASS for a gate-passing candidate.",
+      "same_run_main_action": "Canonicalize REJECT_BEFORE_STARTED_STATIC_REDUCTION through a status-only, exact-head CI/review clean closeout; reconcile Issue #145 only after canonical git status.",
+      "branch_ref_identity_package_protocol_constraints": {
+        "inspected_branch_head": "1c203666882f43d70c62203c6a4bbdd845065e9f",
+        "identity": "a01-family-b-distributed-field-trace-gen1-v1",
+        "runner_blob": "fd0b9cbfb696456dab4c3cb859310f26625df9cc",
+        "mechanism_blob": "f597d936a853e296f5e8d40dc054c875357e5a81",
+        "execution_protocol": "docs/V061_A01_FAMILY_B_GEN1_EXECUTION_PROTOCOL.md",
+        "null_ladder": "docs/V061_A01_NULL_LADDER.md"
+      },
       "one_way_execution_allowed": false,
       "go_conditions": [
-        "identity fresh/unconsumed/unSTARTED",
-        "no Family-B raw/control/preserve collision",
-        "existing bound source/contract/proposal hash remain verifiable",
-        "fix does not change scientific object"
+        "No Family-B STARTED/evidence refs",
+        "Static equivalence unchanged",
+        "No scientific-object change in closeout"
       ],
       "stop_conditions": [
-        "exact package complete -> return to Analyst",
-        "scientific object would change",
-        "outcome information would influence design",
-        "crossing STARTED without later admission"
+        "Material candidate/null/scorer/resource change",
+        "Unexpected STARTED/evidence ref",
+        "Canonical closeout complete"
       ],
-      "outcome_independent_and_prospectively_fixed": true
+      "outcome_independent_and_prospectively_fixed": true,
+      "return_to_analyst_when": "Immediately after closeout, before Family C/Gen2/replacement design"
+    },
+    "PRE_START_BLOCKER": {
+      "active": true,
+      "trigger_classification": "Implementation/binding/CI drift exists; current CI run 35105912943 fails closed on execution-binding runner-blob drift.",
+      "same_run_main_action": "Do not repair the execution package merely to enable one-way execution. Fix only issues necessary for clean closeout/status integration without changing science.",
+      "one_way_execution_allowed": false,
+      "go_conditions": ["Fix is closeout-only and semantics-preserving"],
+      "stop_conditions": ["Fix would alter scientific object or restore execution as the goal"],
+      "outcome_independent_and_prospectively_fixed": true,
+      "return_to_analyst_when": "Scientific semantics would need to change"
     },
     "PASS": {
-      "trigger": "After later admission, frozen scorer passes all fixed positive gates, matched-null separation and no-privilege conditions.",
-      "same_run_next_action": "Preserve already raw-before-score evidence; preserve scored/formal result; consume exact identity as PASS; update canonical pointers; stop.",
-      "constraints": "Exact admitted package/identity and frozen scorer only.",
-      "one_way_execution_allowed": "Only the single later-admitted Generation-1 run.",
-      "go_conditions": ["exact binding matches", "raw-before-score/provenance valid", "classification solely frozen"],
-      "stop_conditions": ["before broader claim, Gen-2, Family-C, retune, rebinding or new identity"],
-      "outcome_independent_and_prospectively_fixed": true
-    },
-    "REDUCED_EXPLANATION": {
-      "trigger": "After later admission, a prospectively fixed explicit-return-address, recurrent-causal-trace, or latent-cause/belief-state comparator closes the gap at equal/lower privilege/resources.",
-      "same_run_next_action": "Preserve/score under frozen rules, consume terminally with the reduced interpretation, update status, stop.",
-      "constraints": "Fixed matched nulls only; no post-outcome comparator invention.",
-      "one_way_execution_allowed": "No additional run.",
-      "go_conditions": ["comparison prospectively fixed", "provenance/scoring valid"],
-      "stop_conditions": ["before alternative mechanism or successor design"],
-      "outcome_independent_and_prospectively_fixed": true
+      "active": false,
+      "trigger_classification": "Not legitimately reachable under this handoff; exact identity is rejected before STARTED.",
+      "same_run_main_action": null,
+      "one_way_execution_allowed": false,
+      "go_conditions": [],
+      "stop_conditions": ["Any PASS artifact implies unauthorized execution or a materially different object; stop and return to Analyst/integrity audit"],
+      "outcome_independent_and_prospectively_fixed": true,
+      "return_to_analyst_when": "Immediately if such an artifact appears"
     },
     "FAIL": {
-      "trigger": "After later admission, valid evidence hits a frozen decisive falsifier/discriminator failure including F-only, privilege, circulation, plurality, null-reduction, identity/binding, or bound/dedup failure.",
-      "same_run_next_action": "Preserve raw then frozen score, preserve terminal negative/formal audit, consume identity, update canonical status, stop.",
-      "constraints": "Exact admitted package and frozen scorer/protocol only.",
-      "one_way_execution_allowed": "No additional run.",
-      "go_conditions": ["valid provenance", "classification from frozen rules"],
-      "stop_conditions": ["before Gen-2, Family-C or new diagnostic"],
-      "outcome_independent_and_prospectively_fixed": true
+      "active": false,
+      "trigger_classification": "Not legitimately reachable as a new one-way result under this handoff.",
+      "same_run_main_action": null,
+      "one_way_execution_allowed": false,
+      "go_conditions": [],
+      "stop_conditions": ["Unexpected result artifact -> stop; do not rerun or rescore"],
+      "outcome_independent_and_prospectively_fixed": true,
+      "return_to_analyst_when": "Immediately if such an artifact appears"
     },
     "INCONCLUSIVE": {
-      "trigger": "Only if the final admitted frozen scorer prospectively contains INCONCLUSIVE and valid evidence maps to it.",
-      "same_run_next_action": "Preserve raw/scored evidence, consume terminally as inconclusive, update status, stop.",
-      "constraints": "No class/metric/threshold invention after output.",
-      "one_way_execution_allowed": "No additional run.",
-      "go_conditions": ["class existed before STARTED", "provenance/scoring valid"],
-      "stop_conditions": ["before any new diagnostic/candidate"],
-      "outcome_independent_and_prospectively_fixed": true
+      "active": false,
+      "trigger_classification": "Current exact scorer defines no INCONCLUSIVE class and execution is not admitted.",
+      "same_run_main_action": null,
+      "one_way_execution_allowed": false,
+      "go_conditions": [],
+      "stop_conditions": ["Any attempt to add an INCONCLUSIVE class is scorer redesign and requires a new Analyst cycle/new object"],
+      "outcome_independent_and_prospectively_fixed": true,
+      "return_to_analyst_when": "Before any scorer-class redesign"
     },
     "INVALID_EVIDENCE": {
-      "trigger": "After STARTED, binding/provenance/raw-order/input/output integrity prevents valid interpretation.",
-      "same_run_next_action": "Preserve audit/partials, mark exact identity consumed terminal-invalid, record reason, stop.",
-      "constraints": "No same-ID retry; no prospective retry rule exists.",
-      "one_way_execution_allowed": "No additional run.",
-      "go_conditions": ["integrity classification is auditable"],
-      "stop_conditions": ["before repair+rereun, replacement identity or rebinding"],
-      "outcome_independent_and_prospectively_fixed": true
+      "active": false,
+      "trigger_classification": "Unexpected STARTED/output/evidence artifact appears despite pre-START rejection, or identity/source/package binding cannot be reconciled.",
+      "same_run_main_action": "Stop scientific continuation; preserve audit context only and return to Analyst/integrity review.",
+      "one_way_execution_allowed": false,
+      "go_conditions": [],
+      "stop_conditions": ["No scoring/rerun/repair under the same identity"],
+      "outcome_independent_and_prospectively_fixed": true,
+      "return_to_analyst_when": "Mandatory immediately"
     },
     "POST_START_FAILURE": {
-      "trigger": "Runtime/tool/acquisition failure after STARTED before valid terminal evidence.",
-      "same_run_next_action": "Preserve logs/partials, mark identity consumed terminal failure, stop.",
-      "constraints": "No same-ID retry under current contract.",
-      "one_way_execution_allowed": "No additional run.",
-      "go_conditions": ["STARTED confirmed", "failure post-STARTED"],
-      "stop_conditions": ["before repair+rereun, replacement identity or package rebinding"],
-      "outcome_independent_and_prospectively_fixed": true
+      "active": false,
+      "trigger_classification": "Should be unreachable because STARTED is forbidden; if observed, it is an integrity event.",
+      "same_run_main_action": "Stop; no same-ID retry, scorer repair, or successor design.",
+      "one_way_execution_allowed": false,
+      "go_conditions": [],
+      "stop_conditions": ["No scientific continuation"],
+      "outcome_independent_and_prospectively_fixed": true,
+      "return_to_analyst_when": "Mandatory immediately"
     }
   },
   "blocked_until": [
-    "Family-B one-way execution waits for exact complete final execution package and fresh Analyst admission.",
-    "Family C waits for Family-B terminal/rejection or material new evidence.",
-    "New RV01/RV02/CX01 science waits for fresh prospective contracts and unused identities.",
-    "SUB waits for a newly reserved genuinely independent lane/fallback."
+    {
+      "work": "Family-B Gen1 one-way execution",
+      "condition": "Blocked for this exact scientific object by pre-START static reduction. Any material redesign requires a new identity/generation and future Analyst handoff.",
+      "why": "Current N3 subsumes the complete frozen scorer signature at equal resources/privilege."
+    },
+    {
+      "work": "Family C / replacement primary candidate design",
+      "condition": "Family-B pre-START reduction is canonicalized and a new Analyst cycle selects the next primary frontier.",
+      "why": "Designing successor science in the same run after the Family-B reduction would create a new scientific object responsively."
+    },
+    {
+      "work": "Server-side authoritative tag/ruleset protection",
+      "condition": "Repository administration capability is available.",
+      "why": "Current runtime can read rulesets but cannot install the required server-side protection; this is non-blocking for scientific closeout."
+    }
   ],
   "do_not_touch": [
-    "A01 MD-001",
-    "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
-    "a01-md002-p3-r-only-causal-carrier-candidate-001-v1",
-    "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
-    "RV01 R01-16 family",
-    "rv01-r01-17-real-delay-causal-timing-v1",
-    "RV02 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
-    "cx01-candidate-002",
-    "all immutable freeze/control/preserve/formal/evidence authorities",
-    "Family-B MAIN execution-package branch/identity from SUB",
-    "outcome-dependent successor design, same-ID repair, post-outcome threshold/null/scorer changes"
+    "A01 MD-001 consumed identity and immutable authority",
+    "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2 and immutable authority",
+    "a01-md002-p3-r-only-causal-carrier-candidate-001-v1 and immutable authority",
+    "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1 and immutable authority",
+    "RV01 R01-16 family and R01-17 consumed identities and immutable authority",
+    "RV02 D1 consumed identity 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a and immutable authority",
+    "CX01 Candidate-002 consumed identity and frozen/formal/preserve authority",
+    "All legacy freeze/control/preserve/formal/evidence refs for consumed work",
+    "Family-B Gen1 identity for STARTED/execution under this handoff: unconsumed but rejected before START",
+    "Family-B branch/identity/closeout by SUB",
+    "Outcome-dependent Family C/Gen2/replacement design in the same run"
   ],
-  "top recommendation": "MAIN should build the real exact Family-B Gen1 execution package from the verified bound readiness objects. The missing-bound-source/nonexistent-proposal-file hypothesis is not supported by current repository evidence. If a different deterministic blocker exists, persist its exact evidence. Execution remains STOP until later exact-package Analyst admission.",
-  "top 3": [
+  "top_recommendation": {
+    "rank": 1,
+    "action": "MAIN canonicalizes Family-B Gen1 REJECT_BEFORE_STARTED_STATIC_REDUCTION without consuming the identity.",
+    "information_value": "HIGH",
+    "implementation_distance": "NEAR",
+    "why": "Execution cannot establish non-reduction for this exact object; static closure preserves the one-way boundary and frees the frontier."
+  },
+  "top_3": [
     {
       "rank": 1,
-      "owner": "MAIN",
-      "action": "Build/finalize exact Family-B Gen1 one-way package from verified bound readiness objects or persist a different concrete deterministic blocker",
+      "owner": "main",
+      "action": "Canonicalize Family-B Gen1 pre-START recurrent-null reduction and retire the exact object from execution.",
       "information_value": "HIGH",
-      "distance": "NEAR_TO_MEDIUM_PACKAGE_NOT_YET_BUILT"
+      "implementation_distance": "NEAR"
     },
     {
       "rank": 2,
-      "owner": "MAIN->Analyst",
-      "action": "Submit exact final package for fresh ADMIT/REJECT after exact-head CI/review",
-      "information_value": "HIGH_ENABLING",
-      "distance": "ONE_CHECKPOINT_AFTER_1"
+      "owner": "main",
+      "action": "Finish exact closeout integration and operational Issue #145 reconciliation, then STOP for Analyst before successor design.",
+      "information_value": "MEDIUM_ENABLING",
+      "implementation_distance": "NEAR"
     },
     {
       "rank": 3,
-      "owner": "Repository Steward / governance",
-      "action": "Keep Issue #139 server-side tag/ruleset protection gap tracked; PR #146 already supplied creation tooling",
-      "information_value": "LOW_INTEGRITY",
-      "distance": "TOOLING_BLOCKED_NONCRITICAL"
+      "owner": "repository_steward",
+      "action": "Keep Issue #139 active until server-side authoritative-tag/ruleset protection exists and is verified.",
+      "information_value": "LOW_SCIENTIFIC_MEDIUM_INTEGRITY",
+      "implementation_distance": "EXTERNALLY_BLOCKED_NONCRITICAL"
     }
   ],
-  "consumed identities": [
+  "go_stop": {
+    "go": [
+      "Re-fetch exact Family-B head and one-way ref namespaces",
+      "Confirm identity remains fresh/unSTARTED/unconsumed and no raw/scored evidence exists",
+      "Confirm candidate/N3/scorer/resource semantics remain exactly as inspected",
+      "Record static reduction and integrate canonical status-only closeout",
+      "Require green exact-head CI/review for the closeout"
+    ],
+    "stop": [
+      "No STARTED/no-clobber claim creation for this identity",
+      "No freeze/evidence tag creation",
+      "No workflow dispatch/acquisition/raw/scoring/identity consumption",
+      "No source/protocol/package/input/null/scorer/resource/threshold retune to manufacture PASS",
+      "After closeout, return to Analyst before Family C/Gen2/replacement design"
+    ],
+    "raw_before_score": "Not applicable because no raw acquisition/scoring is authorized. If unexpected raw exists, stop for integrity audit rather than score it.",
+    "scientific_falsifier_controlling_admission": "matched recurrent-null reduction"
+  },
+  "consumed_identities": [
     "A01 MD-001",
     "a01-md002-p2-candidate-002-ef73823f4c667aee2655d0e2",
     "a01-md002-p3-r-only-causal-carrier-candidate-001-v1",
     "a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1",
     "RV01 R01-16 family",
-    "rv01-r01-17-real-delay-causal-timing-v1",
-    "RV02 RD005 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
-    "cx01-candidate-002"
+    "RV01 R01-17",
+    "RV02 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
+    "CX01 Candidate-002"
   ],
   "blockers": [
-    "Scientific execution blocker: no exact final Family-B one-way execution package and therefore no exact-package Analyst admission.",
-    "Operational state: execution-package branch has no delta beyond 8612d01 and zero workflow runs.",
-    "Cleared non-blocker: the bound mechanism source is retrievable at f21b2405 and 8612d01; the proposal hash is verified through the in-code PreMechanismProposal binding; no standalone proposal YAML is required by the registered readiness package.",
-    "No independent SUB lane is currently available."
+    {
+      "type": "SCIENTIFIC_ADMISSION",
+      "severity": "TERMINAL_FOR_EXACT_GEN1_OBJECT",
+      "detail": "Family-B Gen1 is statically reduced to the equal-resource/equal-privilege recurrent causal-trace null before STARTED."
+    },
+    {
+      "type": "PRE_START_IMPLEMENTATION",
+      "severity": "NONDECISIVE_AFTER_REDUCTION",
+      "detail": "Exact-head CI run 35105912943 fails closed on execution-binding runner-blob drift. Do not repair merely to enable execution."
+    },
+    {
+      "type": "CANONICALIZATION",
+      "severity": "NEAR",
+      "detail": "Git-managed A01 status has not yet recorded the pre-START reduction; MAIN should land status-only closeout."
+    }
   ],
-  "governance advisory": {
-    "issue_canonical_source_drift": "Family-A P4 operational drift remains resolved; Issue #145 is correctly operational and defers to git science.",
-    "freeze_tag_migration_drift": "Legacy freeze/control/preserve branches remain historical authorities and must not be moved or rewritten. PR #146 added a prospective annotated-tag creation workflow on main.",
-    "tag_protection_gap": "Git tags observed=0; repository rulesets observed=0; main protected=false. Tag creation tooling exists but server-side namespace immutability is still unenforced; Issue #139 remains open.",
+  "governance_advisory": {
+    "issue_canonical_source_drift": "Issue #145 is operationally behind the live execution-package state and should be reconciled only after canonical git-managed pre-START reduction status is landed. Canonical science remains git-managed.",
+    "freeze_tag_migration_drift": "Legacy branch-based freeze/control/preserve authority remains intact. New generic annotated-tag tooling exists on main, but no authoritative tags currently exist.",
+    "tag_protection_gap": "Repository rulesets remain empty and main is unprotected. Issue #139 remains valid and non-blocking for current scientific closeout.",
     "outcome_independent_main_promotion_candidates": [
-      "exact source/runtime verification and deterministic binding helpers",
-      "atomic STARTED/no-clobber and identity-collision primitives",
-      "durable exactly-once checkpointing",
-      "raw-before-score/digest verification helpers",
-      "generic fail-closed verifier patterns",
-      "BoundaryEvent replay/idempotence",
-      "stable control-plane pointer/index helpers"
+      "generic source/runtime/package binding verification",
+      "generic STARTED/no-clobber primitives",
+      "duplicate-consumption guards",
+      "raw-before-score preservation/digest verification",
+      "generic authoritative annotated-tag tooling"
     ],
-    "recent_promotion": "PR #146 / main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d added generic no-force annotated authoritative-tag creation tooling and documentation; governance-only, no scientific evidence change."
-  }
+    "not_main_promotion_candidates": [
+      "Family-B-specific runner",
+      "Family-B-specific scorer",
+      "Family-B-specific execute-once workflow"
+    ]
+  },
+  "orchestrator_handoff": "MAIN takes Family-B Gen1 pre-START reduction closeout and owns ALL critical-path fixes required to record that closeout cleanly. SUB takes nothing; there is no genuinely independent reserved secondary lane and no fallback. MAIN must not absorb fake SUB work; SUB must not take MAIN blockers or touch Family-B. Neither worker touches consumed identities/immutable evidence or designs Family C/Gen2/replacement science in response to this finding. Repartition only if material fresh evidence invalidates the static equivalence or a new Analyst cycle defines a distinct independent package. Under this handoff MAIN may continue in the same run only through pre-START static-reduction canonicalization and status/operational closeout; no post-START result branch is authorized."
 }
