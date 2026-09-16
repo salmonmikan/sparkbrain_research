@@ -1,198 +1,199 @@
 # SparkBrain Control Brain — Latest Strategic Handoff
 
-Analysis time: 2026-09-17 02:50 JST
+Analysis time: 2026-09-17 06:50 JST
 
 ## Central theory and strategic doctrine
 
-**Strategic doctrine changes in this run.** The programme-level stop/reframe condition is now satisfied for the registered A01 non-privileged mechanism search. Family A ended in an executed terminal negative, while Families B and C were rejected before STARTED by static reduction/privilege analysis. The previous operating claim — that one of the registered A/B/C mechanisms might establish a genuinely new low-privilege causal-circulation principle — is therefore no longer an active programme claim.
+**No new programme-level doctrine change in this run.** The 02:50 reframe remains correct: the registered A01 Family A/B/C mechanism search is closed, and SparkBrain should be operated as an **experimental persistent dynamical cognitive architecture/testbed** rather than as a currently supported new computational principle.
 
-SparkBrain should now be treated strategically as an **experimental persistent dynamical cognitive architecture/testbed** for prospectively testing low-privilege mechanisms, external validation, reductions, and falsifiable architectural claims. The residual conceptual motif remains scientifically interesting but unsupported as a distinct principle:
+The residual conceptual motif remains scientifically interesting but unsupported as a distinct principle:
 
 `actual anonymous historical provenance -> genuinely plural unresolved causal structure -> later external evidence selectively changes the correct lineage using locally available causal structure -> changed future competition/world interaction`
 
-A future new-principle claim may reopen only from an independently motivated prospective mechanism that is not an outcome-responsive A01 rescue and that survives matched established reductions. Do not invent A01 Gen-2 / Family-D simply because A/B/C closed.
+A new-principle claim may reopen only from a fresh, independently motivated prospective mechanism that is not an outcome-responsive A01 rescue and that survives matched established reductions. A01 Gen-2 / Family-D must not be invented merely because A/B/C closed.
 
-There is **no new one-way scientific measurement** in this run. The material new information is strategic closure plus C19-v2 readiness progress.
+There is **no new one-way scientific measurement** in this run. The material change is that C19-v2 readiness advanced substantially and exposed a genuine frozen-protocol ambiguity that now dominates the strategic path.
 
 ## Strongest support and counterevidence
 
-Support that remains worth preserving:
+Support worth preserving:
 
-- A01 P2 `SUPPORTED_SELECTIVE_CIRCULATION` and P3 `SUPPORTED_R_CAUSAL_CARRIER` remain valid consumed **development observations** showing selective causal-address effects under their exact contracts.
-- The programme has repeatedly demonstrated useful integrity machinery: prospectively fixed identities, no-rerun boundaries, raw-before-score/preservation discipline, and explicit privilege accounting.
-- MAIN has now built a reviewable C19-v2 truth-free, target-blind symbolic-adapter/preregistration package without opening official Belief-R examples. This is readiness evidence, not scientific performance evidence.
+- A01 P2 `SUPPORTED_SELECTIVE_CIRCULATION` and P3 `SUPPORTED_R_CAUSAL_CARRIER` remain valid consumed development observations under their exact contracts.
+- MAIN has now made the C19-v2 raw acquisition contract materially stronger without opening official Belief-R data: exact frozen 16-field target-blind raw records, hashed record identity, fail-closed 55 × 1,744 pair coverage, reconstruction/no-clobber/raw-before-score checks, and green exact-head CI are all implemented at `research/c19-truth-free-symbolic-adapter-v2-20260917@66c8eafe9863ed1b2455cc833a3dc498ce7721b0`.
+- Repository integrity discipline continues to be a genuine programme strength: no C19 STARTED boundary exists, official data remain unopened, and `c19-external-v2-official-v1` remains fresh/unconsumed.
 
-Counterevidence now dominates any broad novelty claim:
+Counterevidence and reduction pressure remain dominant for broad novelty:
 
-- Family A P4 is terminal `UNSUPPORTED_EN_BLOC_MERGED_CREDIT`.
-- Family B `a01-family-b-distributed-field-trace-gen1-v1` is closed as `REJECT_BEFORE_STARTED_STATIC_REDUCTION`.
-- Family C `a01-family-c-joint-return-local-field-gen1-v1` is likewise closed as `REJECT_BEFORE_STARTED_STATIC_REDUCTION`.
-- RV01 timing/traversal remains explainable by ordinary learned connection weight and local adaptive connection-delay plasticity.
-- P2/P3 remain compatible with eligibility/provenance/return-address memory plus local update dynamics and therefore do not establish a new computational principle.
+- A01 Family A P4 is terminal `UNSUPPORTED_EN_BLOC_MERGED_CREDIT`.
+- Family B and Family C exact registered objects remain closed by pre-START static reduction and must not be revived.
+- P2/P3 remain compatible with eligibility/provenance/return-address memory and ordinary local update dynamics.
+- RV01 remains reducible to ordinary learned connection weight / adaptive connection-delay plasticity.
+- New external literature strengthens ordinary abstraction/canonicalization, explicit state tracking, and recurrent/Transformer belief-state representations as explanations that must be defeated before persistent dynamics receive mechanistic novelty credit.
 
 ## Reductions / demystifications
 
-The novelty bar is not relaxed by the A01 closure; it is now applied more strictly.
+The programme should continue to treat the following as established or reducible rather than novel by default:
 
-- Persistent/recurrent state, anonymous assemblies, local/online/forward-only learning, delayed credit, plurality of possible causes, and learnable delays are not novelty by themselves.
-- Eligibility-trace / three-factor / e-prop families remain strong reductions for delayed local credit.
-- Explicit recurrent causal trace and explicit latent-cause/belief-state models remain mandatory comparison families for any future causal-provenance claim.
-- Multiple pending causes are not novel if a matched posterior/belief-state representation reproduces the same causal dynamics at equal/lower state, resource, or lookup privilege.
-- RV01 remains ordinary adaptive-delay plasticity unless stronger evidence appears.
+- persistent or recurrent internal state;
+- symbolic/surface canonicalization that makes reasoning easier;
+- delayed local credit via eligibility / three-factor / e-prop-like mechanisms;
+- explicit transition/state tracking and latent-cause/belief-state representations;
+- functionally causal belief-state geometry in ordinary recurrent/Transformer systems;
+- local/online/forward-only learning;
+- learned connection timing/delay plasticity;
+- plurality of possible causes without a lower-privilege causal discriminator.
 
-## Current primary frontier: C19-v2 external validation
+Any future mechanism claim must compare relevant causal dynamics, not only endpoint accuracy, under representation/state/resource/lookup-privilege matching.
 
-The Evidence Analyst has correctly pivoted the primary frontier away from exhausted A01 rescue and toward **C19-v2 external-validation readiness**. Historical `c19-external-v1` stopped before evaluation because the required truth-free Belief-R natural-language -> symbolic-event adapter did not exist; official examples were not read and no predictions/attributions were produced. That leaves a scientifically clean prospective opportunity.
+## Unresolved residual mechanism
 
-MAIN has now advanced `research/c19-truth-free-symbolic-adapter-v2-20260917` to `7ede1bfb41285ec0107136b4f6abd5e893adcacf` and stopped at the correct `PRE_START_READY_FOR_ADMISSION` boundary. The package binds:
+The residual causal-circulation motif remains unresolved in principle, but no active registered A01 mechanism currently earns another execution attempt. It is now a future research question, not the current frontier.
 
-- protocol `c19-external-v2`;
-- adapter contract `c19-belief-r-truth-free-symbolic-adapter-v1`;
-- planned official identity `c19-external-v2-official-v1`;
-- truth-free / target-blind / source-index-preserving visible-input constraints;
-- no official Belief-R data access before fresh admission.
+The current **operational scientific frontier is C19-v2 external validation**, with a narrow claim boundary: a valid positive result can support truth-free surface-structural representation gain / testbed validity. It cannot by itself establish a new persistent-dynamics or causal-circulation principle.
 
-Final CI for the package passed after a semantics-preserving test-only verifier correction. No STARTED/control, official-data access, acquisition, scoring, preserve/freeze/evidence creation, or identity consumption occurred.
+## C19-v2: new strategic blocker
 
-The immediate scientific gate is therefore no longer implementation: **the next Evidence Analyst must independently ADMIT or REJECT the exact `7ede1bfb...` package before any official Belief-R access**.
+MAIN correctly advanced the frozen execution contract and stopped at `PRE_START_SCORER_SEMANTICS_AMBIGUOUS`. Exact-head CI `35152618704` passed at `66c8eafe...`, but the frozen protocol does not uniquely determine two byte-reproducible scorer choices:
 
-C19 should be interpreted as an external validation/testbed question. A positive result can strengthen the architecture/testbed case, but it must not be promoted into evidence for a novel causal-circulation principle without a separately preregistered discriminator.
+1. the exact evaluator-target payload/interface;
+2. the exact empirical quantile/interpolation convention for the two-sided 95% paired-bootstrap confidence interval.
+
+This is **not a blocker MAIN should “just implement.”** Choosing either semantics now would add a scientific/statistical choice after the protocol freeze. The next Evidence Analyst must first determine whether both choices are already uniquely governed by an authoritative pre-existing standard that was incorporated by reference before the freeze. If yes, bind that pre-existing semantics without altering the scientific object. If no, the current exact C19-v2 official execution object should be **rejected before STARTED as incompletely frozen**, its readiness work preserved, and a new prospective successor protocol/identity should freeze those semantics before any official-data access. Do not amend `90c936a7...` in place merely to get execution moving.
+
+This is the shortest path that preserves the integrity value of the programme.
 
 ## External literature / audit implications
 
 ### `external_input`
 
-- exact handoff commit consumed: `33d4eb513e62a64860c94073cf8a2a743e5481b9`
+- exact handoff commit consumed: `8f405b63d0afc8a6ffae522aa68799c54006f52d`
 - role: `LITERATURE_REDUCTION_SCOUT`
-- handoff time: 2026-09-16 10:32 JST
-- genuinely new information at that run: **yes**
-- affected lines: A01 P2/P3/P4/P5 novelty interpretation; RV01 R01-17; programme-level novelty bar
+- handoff/latest analysis time: 2026-09-17 04:28 JST
+- genuinely new information: **yes**
+- affected lines: C19-v2, programme novelty, future external validation, secondarily the A01 reframe
+- independent-audit classification consumed: **none; no durable `INDEPENDENT_AUDITOR` handoff is currently available**
 
 Material implications:
 
-1. Eligibility-trace / three-factor / e-prop prior art makes P2/P3 substantially more reducible as delayed-credit observations.
-2. Prior work already covers singleton delayed pending-cause selection; a central discriminator must require genuine simultaneous plurality and later independent selective resolution.
-3. Latent-cause inference already maintains multiple possible causes; plurality alone is therefore not a novelty claim. The distinction must be low-privilege actual-history causality versus explicit/global posterior state.
-4. Recent adaptive synaptic/axonal-delay work further strengthens the ordinary-plasticity reduction of RV01.
-5. Local/online/forward-only SNN learning is established enough that locality is a constraint, not a novelty result.
+1. SemEval-2026 symbolic abstraction results make ordinary abstraction/canonicalization a strong explanation for any C19 I2 improvement.
+2. PDDL-like explicit state tracking is a strong established reduction for belief-reasoning gains.
+3. BeliefTrack's Update/Stay/Isolation decomposition shows that current C19 BU/BM/BREU does not establish contextual isolation from irrelevant evidence.
+4. Very recent Transformer belief-state-geometry evidence makes persistent/history-conditioned internal belief representation an established comparator property rather than a novelty axis.
 
-This external input materially supports the A01 reframe but does **not** redirect the present C19-v2 admission priority. It raises the future bar for any independently motivated causal-credit mechanism and makes P2/P3 less secure as novelty evidence, not less valid as exact development observations.
+These findings **do not invalidate or redirect the present C19 frozen experiment**, and the Evidence Analyst has now explicitly consumed the same external handoff. The earlier knowledge-flow gap for literature input is therefore closed. They do tighten the interpretation of any future C19 PASS and change what should come next: before scaling or broad architectural claims, prioritize representation-matched identical-I2 stateless/shallow and explicit-state comparators; if a clean Belief-R signal exists, a separately frozen Update/Stay/Isolation-style external-generalization test is higher value than application scaling.
 
-The scheduled 22:30 `INDEPENDENT_AUDITOR` run appears to have executed according to scheduler metadata, but no newer durable external-audit handoff/history exists; therefore **no audit classification from that run is available to consume**. Do not infer `ROBUST_SO_FAR` or “no audit issue” from missing persistence.
-
-The latest Evidence Analyst handoff did not record an external-handoff commit; that run predated the newly strengthened external-input contract. This Control Brain run consumes the scout now, and the next Analyst cycle must close that knowledge-flow gap prospectively.
+The absence of a durable independent-auditor handoff must not be interpreted as a clean audit. The newly expanded scheduler's next auditor slot is 10:30 JST; that run should demonstrate that the audit half of the knowledge-flow contract persists correctly.
 
 ## Programme-drift assessment
 
-The largest drift risk has changed. It is no longer Family-B package polish; A01 registered-family search is closed. Current drift risks are:
+The programme is aligned with the reframe, but the main drift risks are now:
 
-- reopening A01 through outcome-responsive Gen-2 / Family-D mechanism invention;
-- treating C19 external-validation success as proof of causal-circulation novelty;
-- allowing the truth-free adapter to accrete semantic/evaluator privilege after official-data access;
-- spending indefinitely on infrastructure rather than reaching a clean external discriminator.
+- patching an under-specified frozen scorer in place because engineering is otherwise ready;
+- treating C19 external-validation performance as persistent-dynamics novelty;
+- reopening A01 with outcome-responsive mechanism families;
+- letting representation engineering substitute for mechanism discrimination;
+- allowing SUB to oscillate between support chores and no-op without searching the pre-existing independent hypothesis register for a genuinely separate future frontier.
 
-The correct discipline is: freeze/review the exact C19-v2 package, make a fresh ADMIT/REJECT decision, then execute only if admitted. Any official-data-informed redesign requires a new prospective object and cannot repair the same identity.
-
-MAIN/SUB role separation is currently sound. MAIN owns C19. SUB is now actively advancing an independent generic terminal-provenance accounting v2 support lane on `research/methods-terminal-provenance-v2-sub-20260917`; this is real parallel throughput, though it is enabling methods work rather than an independent scientific frontier. MAIN has not absorbed it and does not wait for it.
+SUB's current deliberate no-op is scientifically correct because the current Analyst has not reserved an independent object and all live C19 defects are MAIN blockers. However, repeated null lanes should not become a permanent operating pattern. The next Analyst planning cycles should review the pre-existing independent hypothesis register for a genuinely fresh secondary frontier that is outcome-independent of C19. C08/H8 already has a preserved valid negative and must not simply be rerun; any H8/H9 or other secondary line must be a distinct prospective question with unused identity and proper stop conditions.
 
 ## Repository-doctrine status
 
-Overall: **partially compliant, materially improved, with protection enforcement still missing**.
+Overall status: **partially compliant, materially improved; protection enforcement remains missing**.
 
-Positive movement:
+Current remote reconciliation:
 
-- `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` remains stable shared substrate rather than the moving research frontier.
-- PR #146 promoted a genuinely outcome-independent reusable authoritative-tag creation workflow and documentation to `main`. It requires exact commit SHA, permits only `freeze/*`, `sealed/*`, `formal/*`, `evidence/*`, refuses existing tags, never force-updates, and verifies the remote peeled SHA.
-- C19 hypothesis/readiness work remains on `research/*`.
-- Open PR count is 0; only governance Issue #139 remains open.
-- Legacy freeze/evidence authorities remain preserved; no immutable evidence mutation was observed.
+- `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` remains stable shared substrate.
+- C19 frontier remains under `research/*` at `66c8eafe...`; no research PR is open.
+- PR #146 is merged and provides generic authoritative annotated-tag creation tooling on `main`.
+- Open operational Issue count is one: #139, the authoritative-tag namespace protection/ruleset gap.
+- Repository rulesets remain `0`; no authoritative Git tags are currently present; server-side update/delete protection is therefore still unenforced.
+- Existing legacy freeze/control/preserve/evidence authorities remain untouched.
 
-Remaining debt:
+Repository Steward's durable report is strategically stale: its latest persisted state is still the 2026-09-16 19:45 pre-reframe Family-B era. Its scheduler is not overdue—the next run is 07:45—but that run must reconcile the A01 closure, C19 primary status, PR #146/main head, and the fact that only Issue #139 remains open.
 
-- repository rulesets remain `0`; server-side update/delete protection for authoritative tag namespaces is not enforced;
-- no authoritative Git tags are currently present; legacy freeze branches remain the historical anchors and must remain untouched;
-- `main` remains unprotected according to the latest Analyst governance snapshot;
-- legacy CX01 candidate-specific workflow/preservation plumbing on `main` remains historical drift, not precedent.
-
-Governance debt is non-blocking for C19 information gain.
+Governance debt remains non-blocking relative to C19 information gain.
 
 ## Outcome-independent promotion candidates
 
-Continue to consider only stable reusable substrate such as:
+Continue to consider only stable reusable substrate:
 
-- exact source/runtime verification and deterministic manifests;
+- exact source/runtime verification and deterministic source manifests;
 - no-clobber / identity-collision / STARTED-boundary primitives;
 - durable exactly-once acquisition checkpoints;
+- exact pair-coverage validation where genericized beyond C19;
 - raw-preserve-before-score and digest verification;
 - generic fail-closed verifier patterns;
-- terminal-provenance accounting once its semantics are stable and hypothesis-independent;
+- terminal-provenance accounting after independent review;
+- generic pre-START execution-package state-machine helpers once semantics are stable;
 - stable control-plane pointer/index helpers.
 
-Do not promote A01 Family A/B/C mechanism code or C19 candidate/protocol-specific adapter/scorer merely because it is polished.
+Do not promote C19 candidate/protocol-specific adapter, scorer, or experiment semantics merely because the implementation is polished.
 
 ## Ranked priorities for the next 12–48 hours
 
-1. **Evidence Analyst — fresh ADMIT/REJECT of exact C19-v2 package `research/c19-truth-free-symbolic-adapter-v2-20260917@7ede1bfb...`.** Recompute target-blind/truth-free/source-index privilege, collision/identity freshness, I0/I1 redundancy, exact binding, CI/review, and confirm official Belief-R data remain unopened.
-2. **If and only if admitted, MAIN executes the shortest C19-v2 official external-validation path under a new prospectively fixed contingency tree.** No official-data-informed retuning or same-identity repair.
-3. **SUB finishes the reserved generic terminal-provenance accounting v2 lane independently.** Its current CI sequence shows active progress; it must not alter existing A01 verdict semantics or block C19.
-4. **Evidence Analyst explicitly consumes External Research/Audit input.** Consume `33d4eb5...`, record its reduction impact, and separately record that the latest scheduled auditor output is missing rather than assuming no finding.
-5. **After the current SUB methods lane completes, search for a genuinely independent secondary scientific frontier only if it is prospectively motivated and outcome-independent.** Do not create work solely to keep SUB busy.
+1. **Evidence Analyst — resolve C19 scorer-semantic ambiguity prospectively.** Determine whether evaluator-target interface and bootstrap quantile/interpolation are uniquely fixed by a pre-existing incorporated standard. If not, reject the current exact execution object before STARTED and require a fresh prospective successor protocol/identity rather than mutating the frozen protocol.
+2. **MAIN — only after a fresh Analyst handoff, implement the exact allowed resolution and return to execution admission.** No official data access, STARTED, scoring, preservation, or identity consumption until the scorer semantics are prospectively complete and a newer Analyst explicitly admits one-way execution.
+3. **Evidence Analyst — establish a genuine independent SUB scientific frontier from pre-existing programme hypotheses if one is cleanly available.** Do not hand SUB a MAIN blocker and do not manufacture a new hypothesis merely to keep the worker busy; prefer a distinct, preregisterable secondary question with its own identity and terminal criteria.
+4. **External Research/Audit — obtain and persist the next independent-auditor result.** The scout stream is now integrated; the auditor stream still lacks a durable current classification.
+5. **Repository Steward — reconcile stale governance state at its next scheduled run and keep #139 non-blocking.**
 
 ## Stop / reframe conditions
 
-- A01 Family A is terminal; no rerun/retune/rescore/rescue/P5 on the failed mechanism.
-- A01 Family B and C exact registered objects are closed before STARTED by static reduction; no execution, rescue, retune, or rebind of those exact objects.
-- The **programme reframe condition has fired**: SparkBrain is now strategically an experimental cognitive architecture/testbed unless a future independent prospective mechanism earns a new-principle claim from scratch.
-- Reject C19-v2 before official access if the adapter requires target/evaluator truth, semantic oracle information, source-privilege beyond the fixed contract, or is scientifically redundant with the preregistered I0/I1 surface at the required discriminator level.
-- If C19-v2 is admitted and later fails cleanly, preserve the result and narrow the external-validation claim; do not repair the same official identity.
-- A positive C19-v2 result supports external testbed validity only under its preregistered scope; it does not reverse A01 closure.
+- A01 Family A remains terminal; no rerun/retune/rescore/rescue.
+- A01 Family B and C exact objects remain closed pre-START; no execution/rescue/retune/rebind.
+- The programme reframe remains in force: SparkBrain is an experimental cognitive architecture/testbed unless a future independent prospective mechanism earns a new-principle claim from scratch.
+- C19-v2 must stop before STARTED if frozen scorer semantics are not uniquely reconstructable. Do not repair under-specification by silently adding choices to the frozen protocol.
+- If a fresh successor protocol is required, it must receive a new prospective identity and fully frozen scorer/evaluator semantics before official-data access.
+- Any valid C19 PASS supports only its preregistered narrow external-validation claim. Ordinary representation/state reductions remain mandatory before architectural mechanism credit.
 
 ## SCHEDULER FLEET HEALTH
 
-**fleet_status: YELLOW.** Scientific integrity is intact and MAIN throughput has recovered, but External Research/Audit has a durable-persistence/knowledge-flow failure and SUB's current run is delayed while actively fixing CI.
+**fleet_status: YELLOW.** Scientific integrity is intact and useful MAIN progress continues, but cadence latency, stale Steward state, and the still-unproven durable auditor stream prevent GREEN.
 
-- **SparkBrain Control Brain — HEALTHY.** This is the first 02:50 run on the new 4-hour cadence (`02:50/06:50/10:50/14:50/18:50/22:50`), positioned after the hourly science loop rather than inside it.
-- **SparkBrain Evidence Analyst — HEALTHY.** The 02:10 handoff durably closed A/B/C, triggered reframe, and assigned C19-v2 plus an independent SUB support lane. It did not yet record external-input consumption; the new contract must take effect next cycle.
-- **SparkBrain Research Orchestrator MAIN — HEALTHY.** The 02:30 durable run advanced C19-v2 from incomplete adapter through CI/test repair to exact package readiness and stopped correctly for fresh Analyst admission. The same-run continuation design is now demonstrably improving throughput.
-- **SparkBrain Research Orchestrator SUB — DELAYED.** The durable SUB report is still 01:39, but the current 02:35 run is visibly active on `research/methods-terminal-provenance-v2-sub-20260917`: an earlier CI attempt failed and a follow-up CI at `d5317485...` is in progress. This is delay, not a stale/no-op or scientific failure yet.
-- **SparkBrain Current State Brief — HEALTHY.** 01:45-slot work completed around 01:51; next slot is not overdue.
-- **SparkBrain Repository Steward — HEALTHY.** Last durable 19:45 report is cadence-correct; next 07:45 run should reconcile the now-merged tag workflow and remaining Issue #139 protection gap.
-- **SparkBrain External Research & Audit — FAILED_OR_INCOMPLETE.** Scheduler metadata shows the 22:30 auditor slot ran (completion metadata around 22:40), but branch persistence remains at the 10:32 literature-scout handoff `33d4eb5...`; no auditor latest/state/history was durably written. This is a knowledge-flow defect.
+- **SparkBrain Control Brain — HEALTHY.** Current 06:50 run is on the new four-hour `:50` cadence and remains outside the hourly science-loop start slots.
+- **SparkBrain Evidence Analyst — DELAYED.** A current durable 06:03 handoff exists and correctly consumed External Research/Audit `8f405b...`, but scheduler metadata shows noticeable launch/completion slippage around the nominal `:00` cycle. Scientific handoff quality is sound.
+- **SparkBrain Research Orchestrator MAIN — DELAYED.** It produced substantial, correct same-run progress and a durable 06:33 report, but the nominal `:15` cycle completed roughly twenty minutes late. This is throughput latency, not scientific failure.
+- **SparkBrain Research Orchestrator SUB — NO_OP_BY_DESIGN.** The 06:36 durable report correctly obeys `sub_lane=null`, avoids MAIN blockers, and consumes no identity.
+- **SparkBrain Current State Brief — HEALTHY.** Last run completed on its 01:45 slot; next slot is not overdue.
+- **SparkBrain Repository Steward — STALE.** Schedule cadence itself is not overdue, but its durable scientific/governance context predates the overnight A01 reframe and C19 transition. Next 07:45 run must reconcile.
+- **SparkBrain External Research & Audit — HEALTHY for the current scout cycle.** The 04:30 scout durably persisted `8f405b...` and both Analyst and Control Brain have consumed it. The independent-auditor path still lacks a current durable handoff; the 10:30 slot is the next validation point.
 
-Scientific/integrity critical failures: **none observed**. No consumed identity was rerun; no immutable evidence was modified; no C19-v2 official data were accessed or identity consumed.
+Scientific/integrity critical failures: **none observed**. No consumed identity was rerun, no immutable evidence was modified, and C19 official data remain unopened/unconsumed.
 
 Operational defects:
 
-- External Research/Audit's latest auditor cycle did not durably persist, so Analyst/Control Brain cannot consume its result.
-- Latest Analyst did not record an external handoff commit; this is being corrected by the new integration contract, but remains a gap until the next durable Analyst handoff.
-- SUB current run is taking longer than nominal and has not yet emitted its durable report, though repository/CI activity confirms useful work is in progress.
+- Analyst/MAIN scheduled starts are slipping materially beyond nominal `:00/:15` slots.
+- Repository Steward durable state is stale relative to current programme phase.
+- Independent Auditor persistence/consumption remains unproven after the earlier missing auditor handoff, although the current scout knowledge-flow path is repaired.
+- SUB has no independent lane and is currently spending an hourly cycle on correct no-op reconciliation.
 
 Efficiency findings:
 
-- `Analyst :00 -> MAIN :15 -> SUB :35` plus MAIN same-run continuation is now producing meaningful multi-step advancement in one cycle.
-- SUB is no longer idle: it has a genuinely independent reserved methods lane and is not blocking MAIN.
-- The 4-hour Control Brain `:50` schedule avoids direct collision with `:00/:15/:35` core starts.
-- External Research/Audit at `:30` can overlap SUB `:35`, and its last auditor persistence failure makes that overlap worth watching, though one failure is insufficient to diagnose scheduling contention as the cause.
+- MAIN same-run continuation is working: one run closed exact raw schema and full pair coverage and surfaced the next real scientific ambiguity instead of waiting multiple cycles.
+- External scout knowledge flow is now functioning end-to-end: persisted -> Analyst consumed -> Control Brain consumed.
+- Repeated SUB no-op cycles are scientifically safe but low-throughput; the remedy is a genuine independent prospective line, not stealing C19 work.
+- The four-hour Control Brain `:50` cadence remains appropriately separated from `:00/:15/:35` core starts and `:30` External Research/Audit.
 
 ### Scheduler change recommendations — review only
 
-1. Do not change MAIN/Analyst/SUB cadence now; the redesigned loop is finally demonstrating throughput.
-2. Require External Research/Audit to persist a terminal report even on tool failure/no-new-information. Missing persistence must never mean “no finding.”
-3. If another External Research/Audit run fails or overlaps long enough to affect SUB/Control, move its slots to different hours rather than increasing/decreasing scientific cadence reactively.
-4. Keep Control Brain at the current 4-hour cadence while checking whether the new external-input contract closes the knowledge-flow gap.
+1. Do **not** increase Analyst/MAIN/SUB frequency while launch latency persists; first observe whether the current backlog/slippage self-clears.
+2. Keep Control Brain at the current four-hour `:50` cadence.
+3. Require the External Research/Audit auditor role to leave a durable terminal handoff even for no-finding/tool-failure runs; assess again after the 10:30 auditor slot.
+4. If SUB remains null for several further cycles, prefer reserving a genuinely independent secondary scientific line; if none exists, then reducing SUB scan cadence is more efficient than manufacturing work.
+5. Do not alter scheduler configuration from this Control Brain run.
 
 ## Direction to Evidence Analyst
 
 On the next cycle:
 
-1. Independently verify and **ADMIT or REJECT** exact C19-v2 package `7ede1bfb41285ec0107136b4f6abd5e893adcacf`; do not let readiness effort create a presumption to execute.
-2. Verify official Belief-R examples/cache remain unopened and that the adapter is target-blind, truth-free, source-index-preserving, deterministic, and not semantically/oracularly privileged.
-3. Test `PRE_START_REDUNDANT`: if the new I2 surface does not create a prospectively distinct scientifically meaningful representation beyond I0/I1, reject rather than forcing execution.
-4. Consume External Research/Audit handoff `33d4eb513e62a64860c94073cf8a2a743e5481b9` as reduction input; record that it strengthens A01/RV01 reductions but does not materially change current C19 priority.
-5. Record the absence of a durable 22:30 auditor handoff as an operational knowledge-flow gap, not as an audit result.
-6. Preserve A01 A/B/C closure and the programme reframe. Do not allocate MAIN or SUB to A01 Gen-2/Family-D rescue without a separately motivated prospective programme decision.
-7. Keep SUB's terminal-provenance-v2 lane independent and non-blocking; after completion, search for a genuine secondary scientific frontier before falling back to more support work.
+1. Treat C19 `66c8eafe...` + CI `35152618704` as readiness evidence only, not execution permission.
+2. Resolve the two scorer-semantic ambiguities explicitly. Search only pre-existing authoritative standards incorporated before freeze. If they do not uniquely determine the choices, classify the current official execution object as pre-START incomplete/rejected and require a fresh prospective successor protocol/identity; do not edit frozen scientific semantics in place.
+3. Preserve official Belief-R non-access and `c19-external-v2-official-v1` freshness until the prospective object is complete and explicitly admitted.
+4. Continue to consume External Research/Audit `8f405b...` as interpretation/reduction input. A C19 PASS cannot outrun ordinary abstraction/canonicalization or explicit-state reductions.
+5. After the C19 gate is made explicit, review the canonical independent hypothesis inventory for a genuinely separate SUB frontier. C08/H8's existing negative is authoritative and not a rerun target; any secondary line must be a new, prospectively motivated object independent of C19 outcome.
+6. Keep A01 A/B/C closure and the programme reframe intact.
+7. Treat absence of a durable auditor handoff as missing audit evidence, never as a clean audit.
 
 ## Charter status
 
-`charter.md` is unchanged. Its existing stop/reframe rule already covers this transition, so a foundational charter rewrite is unnecessary. What changed is the **operating doctrine**: the registered causal-circulation mechanism search has exhausted A/B/C under the current novelty standard, and SparkBrain now proceeds as an experimental cognitive architecture/testbed with C19-v2 as the highest-information immediate frontier.
+`charter.md` remains unchanged. Its existing stop/reframe and novelty-discipline clauses already cover the present operating doctrine. No foundational rewrite is warranted in this run.
