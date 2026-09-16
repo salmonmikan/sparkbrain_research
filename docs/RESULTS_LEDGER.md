@@ -1066,5 +1066,5 @@ contract correction only.
 - Preserved evidence: `preserve/cx01-candidate-002-formal-34742073336@6d45928827209cd763a2879494d85838df38b96f`; analysis `preserved-evidence/cx01/candidate-002/run-34742073336/analysis.json`.
 - Preserved bindings: raw aggregate SHA-256 `015cb66912071cd3ea287cc5bff43e6c77d436edd0a0c6085fa8e93e816f3d5a`; policy SHA-256 `5cc3fe30c978f95e2ddbd0834eafd8963c37e0ccccb1dcc32915556577fcc76a`.
 - Boundary: this negative applies only to this exact frozen candidate/comparator/protocol contract. It is not a programme-wide SparkBrain negative and does not reinterpret other lines.
-- Integrity: no rerun, retune, rescore, post-outcome repair, or identity reuse is permitted. Any future CX01 formal attempt requires a distinct prospective identity and full prospective integrity path.
+- Integrity: no rerun, retune, post-outcome repair, identity reuse, or rescoring with a modified policy or modified evidence is permitted. Read-only recomputation from immutable raw evidence using the unchanged frozen scoring policy is permitted for verification. Any future CX01 formal attempt requires a distinct prospective identity and full prospective integrity path.
 - Documentation action only: this ledger entry records already-preserved evidence and creates no new scientific result or execution.
