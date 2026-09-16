@@ -342,7 +342,7 @@ def baseline_executor(
         visible = [item[1] for item in pair]
         records = [encode_visible(item, "I2_truth_free_symbolic_surface") for item in visible]
         probabilities, work = _baseline_probabilities(kind, records, seed=seed)
-        final = visible[-1]
+        final_raw, final = pair[-1]
         output.append(
             {
                 "record_id": final.record_id,
@@ -361,6 +361,7 @@ def baseline_executor(
                     "final_probabilities": probabilities,
                     "work_counters": {"deterministic_operations": work},
                     "fit_tune_select": False,
+                    "final_step_index": int(final_raw["step_index"]),
                 },
             }
         )
