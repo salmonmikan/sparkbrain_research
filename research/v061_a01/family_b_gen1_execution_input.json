@@ -1,0 +1,70 @@
+{
+  "candidate_id": "a01-family-b-distributed-field-trace-gen1-v1",
+  "confirmation_sign": 1,
+  "contradiction_sign": -1,
+  "decay": 0.5,
+  "left_activity": [
+    1.0,
+    0.25,
+    0.0,
+    0.0
+  ],
+  "left_boundary_return": [
+    1.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "left_competition_probe": [
+    1.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "lineage_swap_permutation": [
+    2,
+    3,
+    0,
+    1
+  ],
+  "plural_activity": [
+    1.0,
+    0.0,
+    1.0,
+    0.0
+  ],
+  "required_discriminator_ids": {
+    "bounded_ambiguity": "v061-a01-bgen1-bounded-plurality-v1",
+    "contradiction": "v061-a01-bgen1-contradiction-v1",
+    "f_only_transfer": "v061-a01-bgen1-field-only-functional-transfer-v1",
+    "future_competition": "v061-a01-bgen1-future-local-competition-v1",
+    "lineage_swap": "v061-a01-bgen1-lineage-swap-v1",
+    "negative_stop": "v061-a01-bgen1-stop-f-only-failure-or-null-reduction-v1"
+  },
+  "required_null_ids": {
+    "belief_state": "v061-a01-bgen1-explicit-latent-cause-belief-null-v1",
+    "explicit_memory": "v061-a01-bgen1-explicit-eligibility-return-address-null-v1",
+    "recurrent_trace": "v061-a01-bgen1-resource-matched-recurrent-causal-trace-null-v1"
+  },
+  "right_activity": [
+    0.0,
+    0.0,
+    1.0,
+    0.25
+  ],
+  "right_boundary_return": [
+    0.0,
+    0.0,
+    1.0,
+    0.0
+  ],
+  "right_competition_probe": [
+    0.0,
+    0.0,
+    1.0,
+    0.0
+  ],
+  "schema": "v061-a01-family-b-gen1-scientific-input-v1",
+  "scientific_input_id": "v061-a01-family-b-gen1-scientific-input-v1",
+  "width": 4
+}

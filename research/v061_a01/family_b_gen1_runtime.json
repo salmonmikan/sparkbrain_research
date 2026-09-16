@@ -1,0 +1,13 @@
+{
+  "candidate_id": "a01-family-b-distributed-field-trace-gen1-v1",
+  "development_only": true,
+  "execution_admission_required": true,
+  "formal_execution_allowed": false,
+  "held_out_execution_allowed": false,
+  "package_install": "python -m pip install --no-deps -e .",
+  "python_version": "3.11.16",
+  "runner_label": "ubuntu-24.04",
+  "runtime_third_party_dependencies": [],
+  "same_identity_rerun_allowed": false,
+  "schema": "v061-a01-family-b-gen1-runtime-v1"
+}
