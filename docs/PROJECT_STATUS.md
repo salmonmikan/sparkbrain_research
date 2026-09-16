@@ -202,7 +202,7 @@ merge `06e13975b486548bb17924acc3b82786246ad6e1` and final source commit
 an attributable bounded Coalition before belief mutation while preserving the legacy gate as
 the default and leaving the v0.2 learned backend unchanged.
 
-Across seeds 2701--2705, all 12 frozen G03 engineering gates passed. The
+Across seeds 2701--2705, all 12 frozen G03 engineering gates passed with no failed seed. The
 run retained 360 raw rows, 15 causal-removal rows, 24 aggregate metrics, 120 seed rows, four
 paired statistics, and 50 machine-resolvable reason references. Independent support Ignition,
 removal reversal, and exact restoration were 1.0; same-ID and correlated-group inflation were
@@ -236,6 +236,7 @@ protected hashes, package 0.2.1, schema 0.2, and release metadata remain unchang
 The canonical metrics artifact retains all 1,440 condition-separated execution rows, and the
 invariant artifact retains the before/after observations needed to recalculate G02/G05 rather
 than relying on acceptance booleans alone.
+
 ## v0.3 C12 — computational sensory gate
 
 C12 is locally accepted under preregistered protocol `c12-sensory-field-v1` after the accepted
@@ -345,6 +346,7 @@ python scripts/validate_bundle.py
 The persisted config/state/trace schema remains `0.2`; package and documentation version is `0.2.1`.
 
 ## 5. Current Phase-0 observation
+
 On the bundled 40×30 SwitchWorld run, the full SparkBrain configuration reached approximately:
 
 - all-step accuracy: 0.640
