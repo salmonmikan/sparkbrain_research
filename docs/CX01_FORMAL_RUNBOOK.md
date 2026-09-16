@@ -1,8 +1,10 @@
 # CX01 Formal Comparator Runbook
 
-Status: **protocol v2 procedure — no new formal candidate selected or opened**
+> **TERMINAL / SUPERSEDED FOR `cx01-candidate-002`.** Candidate-002 has already crossed STARTED, completed its formal run, and is **TERMINAL-CONSUMED / FORMAL NEGATIVE**. This runbook MUST NOT be used to rerun, retune, repair, reopen, or reuse Candidate-002, and MUST NOT rescore it with a modified policy or from modified evidence. Read-only verification that recomputes the preserved result from immutable raw evidence with the unchanged frozen policy remains permitted. The current canonical status and immutable evidence map is [`docs/CX01_CANDIDATE_002_FORMAL_STATUS.md`](CX01_CANDIDATE_002_FORMAL_STATUS.md). Any future CX01 formal attempt requires a distinct prospective identity and a newly bound source/protocol/package before STARTED.
 
-This runbook is normative for the next CX01 formal attempt. Historical Candidate-003 and rejected Candidate-001 remain immutable prior evidence and are never reused.
+Historical status at the time this procedure was authored: **protocol v2 procedure — no new formal candidate selected or opened**
+
+The historical procedure below is retained for audit/protocol history only. Its references to Candidate-002 as the "next" attempt are superseded by the terminal status above and do not authorize identity reuse. Historical Candidate-003 and rejected Candidate-001 remain immutable prior evidence and are never reused.
 
 ## 0. Permanent exclusions
 

@@ -1,6 +1,8 @@
 # CX01 Implementation Status
 
-Status: **STRUCTURAL HELD-OUT CORRECTION UNDER REVIEW — no new formal candidate opened**
+> **CURRENT CANDIDATE-002 STATUS: TERMINAL-CONSUMED / FORMAL NEGATIVE.** This document is a preserved pre-execution implementation snapshot. Statements below that Candidate-002 is unopened, unselected, or the next formal attempt are historical and superseded for Candidate-002. The current canonical status and immutable evidence map is [`docs/CX01_CANDIDATE_002_FORMAL_STATUS.md`](CX01_CANDIDATE_002_FORMAL_STATUS.md). Candidate-002 MUST NOT be rerun, retuned, repaired, or reused, and MUST NOT be rescored with a modified policy or from modified evidence. Read-only verification that recomputes the preserved result from immutable raw evidence with the unchanged frozen policy remains permitted. Any future formal attempt requires a distinct prospective identity and newly bound source/protocol/package.
+
+Historical status at the time of this snapshot: **STRUCTURAL HELD-OUT CORRECTION UNDER REVIEW — no new formal candidate opened**
 
 ## Current scientific boundary
 
@@ -88,6 +90,8 @@ Implemented v2 controls:
 | STARTED | **NOT CREATED** |
 | Formal capability | **NOT EXECUTED** |
 
+The final four rows above describe the historical pre-Candidate-002 state at the time of this snapshot. They are not current Candidate-002 status; Candidate-002 is now terminal-consumed as stated at the top of this document.
+
 ## Formal-only structural variation
 
 The v2 generator varies more than anonymous labels:
@@ -135,7 +139,7 @@ A final invariance comparison is still required for the exact PR #23 merge SHA b
 
 ## Next boundary
 
-The required sequence is:
+The sequence below is historical Candidate-002 preparation history and MUST NOT be re-entered for `cx01-candidate-002`. It is retained to document the original prospective procedure:
 
 ```text
 PR #23 review + green CI
@@ -152,4 +156,4 @@ PR #23 review + green CI
   -> frozen scoring
 ```
 
-No formal capability may be opened before the independent seal. After STARTED there is no repair, retuning, threshold change, world change, comparator change, or same-candidate rerun.
+No formal capability may be opened before the independent seal. After STARTED there is no repair, retuning, threshold change, world change, comparator change, or same-candidate rerun. For Candidate-002, STARTED already exists and the no-rerun boundary is therefore terminal.

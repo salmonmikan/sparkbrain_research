@@ -1055,3 +1055,16 @@ contract correction only.
 - Claim impact: none. C06 remains negative; C15 residual superiority remains unsupported; C16
   remains candidate-level; C17 v1 remains an implementation failure and C17 v2 remains
   scientifically unsupported; C19 remains blocked/not evaluated; CL-007 and CL-008 remain E0.
+
+## 2026-09-16 — CX01 Candidate-002 formal negative (terminal consumed)
+
+- Candidate identity: `cx01-candidate-002`; formal run `cx01-formal-34f627d0cc819c2f02d25d88`; 420 executions.
+- Status: scientific `not_supported` for the exact frozen Candidate-002/comparator/protocol contract; identity is terminal-consumed because a persistent STARTED record exists.
+- Result: under frozen scoring policy `cx01-formal-scoring-policy-1`, all seven evaluated comparator decisions were unsupported. Every comparator had at least one required family with pass fraction `0.0`, so none satisfied the non-compensatory all-family minimum pass fraction of `0.80`.
+- Source/package authority: `freeze/cx01-002-source@e8483968ce43076b4c3fd04c76e62106e2031769`; `freeze/cx01-002-package@c104be281285d52a732d5366fe36209d5688d973`.
+- STARTED/control: `control/cx01-candidate-002-started-20260913@8216d41a57e6933443d38dfc8d93f9188e423d0c`.
+- Preserved evidence: `preserve/cx01-candidate-002-formal-34742073336@6d45928827209cd763a2879494d85838df38b96f`; analysis `preserved-evidence/cx01/candidate-002/run-34742073336/analysis.json`.
+- Preserved bindings: raw aggregate SHA-256 `015cb66912071cd3ea287cc5bff43e6c77d436edd0a0c6085fa8e93e816f3d5a`; policy SHA-256 `5cc3fe30c978f95e2ddbd0834eafd8963c37e0ccccb1dcc32915556577fcc76a`.
+- Boundary: this negative applies only to this exact frozen candidate/comparator/protocol contract. It is not a programme-wide SparkBrain negative and does not reinterpret other lines.
+- Integrity: no rerun, retune, post-outcome repair, identity reuse, or rescoring with a modified policy or modified evidence is permitted. Read-only recomputation from immutable raw evidence using the unchanged frozen scoring policy is permitted for verification. Any future CX01 formal attempt requires a distinct prospective identity and full prospective integrity path.
+- Documentation action only: this ledger entry records already-preserved evidence and creates no new scientific result or execution.
