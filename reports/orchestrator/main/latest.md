@@ -1,60 +1,70 @@
 # SparkBrain Research Orchestrator — MAIN run report
 
-Timestamp: 2026-09-16 10:39 JST
+Timestamp: 2026-09-16 11:36 JST
 
 `worker_role: main`
 
-## Result
+## MAIN frontier
 
-MAIN advanced the primary frontier A01 MD-002 P4 candidate-001 end-to-end. The two remaining independent-verifier P1 defects assigned by Evidence Analyst were fixed on the active P4 branch, the resulting lint failure was also fixed by MAIN, exact-head CI and Codex review completed cleanly, the exact source was frozen, the one-way STARTED boundary was crossed, and the candidate executed exactly once under the standing 2026-09-12 A01 authorization.
+MAIN executed the Evidence Analyst lane at `2c90237c98757d09bd37e445a411df0299e652e2`: **A01 post-P4 terminal closeout plus pre-existing premechanism-registry admission audit**.
 
-The exactly-once workflow run `35044851215` completed successfully on frozen source `1bd0099f4358e02efac7ee4acccfe5257a86c4be`, including acquisition, raw preservation, independent preserved-artifact verification, scoring, final preservation, and terminal-recovery checks.
+No new one-way experiment was admissible or executed in this run. The already-consumed P4 result remains authoritative:
 
-The frozen development classifier returned **`UNSUPPORTED_EN_BLOC_MERGED_CREDIT`**. Valid plural merged ancestry was retained and both lineage identities were crossed with both evidence signs, but every separating assay changed every merged causal path. The current bridge therefore did **not** selectively resolve the trace-derived historical lineage; future competition remained tied in the separating merged assays. This is new development evidence against the P4 selective-resolution mechanism. It is not held-out/formal evidence, and it does not by itself falsify all broader causal-circulation hypotheses, but this exact P4 mechanism/identity is now terminal and consumed.
+```text
+identity: a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1
+verdict: UNSUPPORTED_EN_BLOC_MERGED_CREDIT
+authority: development-only, consumed
+```
 
-## MAIN critical-path fixes completed
+## Critical-path work completed by MAIN
 
-1. Added independent retained-ledger validation of active lineage records at the exact bound before/after measurement timestamps, using each proposal's retained `created_at_ms` / `valid_until_ms`.
-2. Added independent recomputation of `changed_path_ids` from retained `pre.path_reliability` / `post.path_reliability`, failing closed on disagreement.
-3. Added focused regression coverage for expired proposals falsely marked active and for inconsistent changed-path declarations.
-4. Preserved the previous structural verifier as an internal compatibility base while the production CLI now always applies the stronger independent derivations before scoring.
-5. Initial CI on `f06be39c7200d55f75fb276a9675763bb9639d3e` failed only on lint/import hygiene introduced by the hardening. MAIN fixed that same critical-path CI blocker in `1bd0099f4358e02efac7ee4acccfe5257a86c4be`.
-6. Exact-head CI run `35044284527` then completed successfully for Python 3.11 and 3.13, including lint, readiness, tests, and bundle validation.
-7. Exact-head Codex review for `1bd0099` completed with no new correctness/scientific-integrity finding.
+1. Re-fetched the authoritative A01 base `research/v061-a01-n3-adapter@2e47df9cf8c6323f390935bb41c368632f3342c6` and reverified the latest Analyst assignment before mutation.
+2. Rechecked the prospective admission doctrine and premechanism matrix. The registry contains conceptual families A/B/C, but a qualifying successor requires a complete bound prospective discriminator/null/carrier contract, not merely a family label.
+3. Performed targeted repository-history searches for the registered B `distributed-field-trace` and C `joint-return-and-local-field-update` labels. No separate committed successor proposal was surfaced.
+4. Concluded that family A is the consumed P4-tested mechanism and that B/C remain conceptual registered families with **no complete bound pre-P4 successor proposal verified**.
+5. Created `research/v061-a01-post-p4-closeout-20260916` from the exact A01 base.
+6. Updated `docs/V061_A01_CURRENT_STATUS.md` to record P2/P3 positive development evidence, the consumed P4 terminal negative, P5 inadmissibility for the failed P4 mechanism, and the current one-way STOP boundary.
+7. Added `docs/V061_A01_POST_P4_ADMISSION_AUDIT.md`, explicitly separating the post-P4 audit from future prospective mechanism design.
+8. Opened PR #141 to `research/v061-a01-n3-adapter`, re-fetched its exact head/diff/mergeability, confirmed no CI workflows existed for the docs-only exact head and no submitted reviewer identity existed, applied the standing human-review-only waiver without fabricating a reviewer, and squash-merged exact head `2ec676a4d307abc8a49022df2dcd2ebf93e8a5ae`.
+9. Canonical A01 closeout merge commit: `1b548043b8f0850294cc3cbfaaa84dbdad69342c`.
 
-## One-way execution / evidence
+## Admission result / scientific interpretation
 
-- candidate identity: `a01-md002-p4-merged-lineage-selective-resolution-candidate-001-v1`
-- exact reviewed source: `1bd0099f4358e02efac7ee4acccfe5257a86c4be`
-- source freeze: `freeze/a01-md002-p4-candidate-001-source-20260916@1bd0099f4358e02efac7ee4acccfe5257a86c4be`
-- STARTED: `control/a01-md002-p4-candidate-001-started-20260916@1bd0099f4358e02efac7ee4acccfe5257a86c4be`
-- owner claim: `control/a01-md002-p4-candidate-001-owner-20260916@121839ecf9ad6dfaff1d90173ffbf9022a1fe0ea`
-- acquire claim: `control/a01-md002-p4-candidate-001-acquire-20260916@d909a861616830ffd4b473b43eff38660b69de55`
-- workflow run: `35044851215`, completed `success`
-- raw preserve: `preserve/a01-md002-p4-candidate-001-raw-20260916@2511454f1633d3bc6f10e3d2a99e3ddd823bb798`
-- recovery preserve: `preserve/a01-md002-p4-candidate-001-recovery-20260916@2511454f1633d3bc6f10e3d2a99e3ddd823bb798`
-- scored preserve: `preserve/a01-md002-p4-candidate-001-scored-20260916@56ee762540e0519034d2e8db0ad3c6acda667ffd`
-- verdict: `UNSUPPORTED_EN_BLOC_MERGED_CREDIT`
-- same-identity rerun: forbidden
+This run produced **no new scientific measurement**. It canonicalized the previous P4 negative result and completed an admission audit.
 
-No rerun, rescue tuning, rescoring under changed rules, or same-identity redesign is allowed.
+The audit found no complete admissible successor package whose scientific contract demonstrably predates the P4 outcome. Therefore:
 
-## Coordination
+```text
+one_way_execution_status: STOP_NO_VERIFIED_PROSPECTIVE_SUCCESSOR
+P4 rerun/retune/rescore/same-identity rescue: forbidden
+P5 on the P4-failed mechanism: not admissible
+post-outcome B/C mechanism invention inside this lane: not admissible
+```
 
-The current Evidence Analyst handoff at `5f444a295d3ae32263923c3706ac2c6c6746533d` correctly assigns the P4 verifier P1 fixes to MAIN. MAIN therefore did not need to invalidate the current split. The earlier design in which those blockers were reserved for SUB had already been superseded; MAIN reclaimed the blockers because they are on the primary P4 critical path and completed them in this run.
+This is not a formal falsification of every possible SparkBrain causal-circulation mechanism. Families B/C may be future research subjects only through a new prospective proposal generation admitted by a later control-loop decision.
 
-MAIN intentionally did **not** touch the valid independent SUB reservation:
-- RV01 canonical status/evidence-map consolidation (primary SUB lane, docs-only, no execution),
-- RV02 terminal-status/evidence-map consolidation (SUB fallback).
+## Coordination / SUB boundary
 
-Those remain independent of the P4 critical path and reserved for SUB.
+MAIN did not invalidate the current Analyst split. The latest split correctly keeps all A01 closeout/admission work with MAIN and reserves independent secondary work for SUB.
 
-## Consumed / do-not-touch
+MAIN intentionally did **not** touch:
 
-In addition to the pre-existing consumed identities, P4 candidate-001 is now consumed. Preserve all P4 freeze/control/preserve anchors exactly. Do not rerun or retune this P4 identity. Existing A01 MD-001, P2, P3, RV01, RV02 RD005 and CX01 consumed identities remain untouched.
+- SUB primary lane: RV02 terminal-status/evidence-map consolidation, docs-only, `execution_allowed=false`;
+- SUB fallback: CX01 candidate-002 formal-negative status/evidence-map consolidation, docs-only.
 
-## Interpretation / next MAIN action
+`reserved_sub_work_not_touched: true`
 
-P4 has produced genuinely new negative development evidence: the tested bridge distributes credit en bloc across merged causal ancestry instead of selectively resolving the externally evidenced historical lineage. MAIN should stop this identity here.
+## Integrity
 
-Do not invent an outcome-responsive successor in this run. The next MAIN scientific target must come from a fresh prospective Evidence Analyst handoff after it incorporates the immutable P4 result. A P5-style stronger reduction test or a distinct new mechanism may be considered only if prospectively defined outside this consumed identity and if its interpretation is not retrofitted to rescue this result.
+- no immutable freeze/control/preserve ref modified;
+- no consumed identity rerun or retuned;
+- no STARTED ref created;
+- no experiment/workflow dispatch;
+- no new one-way identity consumed;
+- P4 authority chain remains untouched;
+- exact PR head and diff were re-audited immediately before merge;
+- human-review-only waiver was used only because no submitted reviewer identity existed; none was fabricated.
+
+## Next MAIN action
+
+STOP new A01 one-way execution under the current lane. Await the next Evidence Analyst / Control Brain allocation. If future work proposes B/C or another mechanism, it must be a new prospective generation with fresh identity, complete bound contract, fixed nulls/falsifiers, exact source/protocol/package/input binding, and all normal one-way integrity gates before exposure.
