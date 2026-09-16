@@ -1,71 +1,76 @@
 # SparkBrain Research Orchestrator SUB — Latest
 
-Run time: 2026-09-16 11:43 JST  
+Run start: 2026-09-16 12:41 JST  
 Worker role: `sub` / SECONDARY IMPLEMENTER
 
 ## MAIN frontier explicitly avoided
 
-MAIN's current frontier was not touched. The current MAIN stream owns the A01 post-P4 terminal closeout / pre-existing mechanism admission audit and has already merged closeout PR #141, ending at `STOP_NO_VERIFIED_PROSPECTIVE_SUCCESSOR`. SUB did not modify A01 branches, PRs, candidate identities, P4 evidence, or successor design.
+The current Evidence Analyst handoff assigns MAIN to **A01 family-B `distributed-field-trace` Generation-1 prospective proposal and implementation readiness**. SUB did not modify A01 branches, proposal/package identities, verifier/CI work, bindings, or any MAIN critical-path artifact.
 
-Evidence Analyst handoff consumed: `ops/evidence-analyst-handoff@2c90237c98757d09bd37e445a411df0299e652e2`.
+Evidence Analyst handoff consumed: `ops/evidence-analyst-handoff@8ce038e437ebd0bd2ca0514b392005034f2a298f`.
+
+The durable MAIN report stream still describes the immediately preceding post-P4 closeout lane; current Analyst allocation is newer and governed collision avoidance for this run.
 
 ## Selected independent SUB lane
 
-Primary reserved lane: **RV02 terminal-status and evidence-map consolidation**.
+Reserved primary lane: **CX01 candidate-002 formal-negative status/evidence-map consolidation**.
 
 - reservation: `reserved_for_sub`
 - independent of MAIN critical path: yes
 - scientific execution allowed: no
-- authoritative RV02 base: `research/rv02-development-feasibility@8176b91f5d427f3bdfccae2fac2c01b60a771403`
+- authoritative moving CX01 base: `research/cx01-comparator-extension@0687c8db3efb8180c8599d32235751b93f3c1f77`
+- fallback: RV01 reduction-context augmentation, unused
 
-Fallback remained **CX01 candidate-002 formal-negative status/evidence-map consolidation** and was not needed.
+## Evidence reconciliation
 
-## Fresh evidence reconciliation
+Reverified Candidate-002 authority chain:
 
-RD005 D1 exact consumed construction identity:
+- source freeze: `freeze/cx01-002-source@e8483968ce43076b4c3fd04c76e62106e2031769`
+- outcome-blind package freeze: `freeze/cx01-002-package@c104be281285d52a732d5366fe36209d5688d973`
+- STARTED/control: `control/cx01-candidate-002-started-20260913@8216d41a57e6933443d38dfc8d93f9188e423d0c`
+- formal preserve: `preserve/cx01-candidate-002-formal-34742073336@6d45928827209cd763a2879494d85838df38b96f`
+- preserved analysis: `preserved-evidence/cx01/candidate-002/run-34742073336/analysis.json`
 
-`96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a`
+The preserved formal run contains 420 executions and uses a non-compensatory policy requiring minimum per-family pass fraction `0.80`, privilege match, and training-transcript match. Every evaluated comparator decision is `supported: false`, with at least one required family at pass fraction `0.0` for each comparator. The correct bounded interpretation is **formal negative for this exact frozen candidate/comparator/protocol contract**; it is not a programme-wide SparkBrain negative.
 
-Reverified anchors:
-
-- source freeze: `freeze/rv02-rd005-d1-source-c60b7fd8-20260914@c60b7fd8d3889ee969f505d921e7d31c990871e6`
-- STARTED: `control/rv02-rd005-d1-started-96634541-20260914@2535b6312a091f7da4efa10c064c285bdeda7eaf`
-- raw preserve: `preserve/rv02-rd005-d1-96634541-20260914@d1fdd67ea197b879c52942c4a34e7d39a0a40698`
-- terminal audit: `review/rv02-rd005-d1-terminal-outcome-20260914@262a56f8d2a0f482166ee0e621305ceef6caeb0c`
-
-The preserved terminal condition remains: `RD005 construction stopped before capability: verified D1 matrix is not ready`. The same output identity is not retryable; capability output was unopened and learner/probe execution did not occur. This is a terminal negative construction/gate-reachability result for this exact identity, not a formal/held-out capability result.
-
-Fresh remote inventory does not expose the historical `research/rv02-distal-delay` branch name referenced by older analysis, so it was not treated as current mutable authority.
+Because STARTED exists, `cx01-candidate-002` remains consumed. No rerun, retune, rescore, silent repair, or same-identity successor is permitted.
 
 ## Implementation progress
 
 Created distinct SUB branch:
 
-- `research/rv02-status-evidence-consolidation-sub-20260916`
+- `research/cx01-status-evidence-consolidation-sub-20260916`
 
-Added:
+Added canonical current status/evidence map:
 
-- `docs/research/RV02_STATUS_EVIDENCE_MAP.md`
-- commit `ce317febb8be8d111959082cd5632a5ead9c83b4`
+- `docs/CX01_CANDIDATE_002_FORMAL_STATUS.md`
+- commit `aa99a4ccf9df0b050016841332802fa297d68ea8`
 
 Opened reviewable docs-only PR:
 
-- PR #142 — `RV02: consolidate current status and evidence map`
-- base: `research/rv02-development-feasibility`
-- head: `research/rv02-status-evidence-consolidation-sub-20260916`
-- exact head: `ce317febb8be8d111959082cd5632a5ead9c83b4`
-- one documentation file changed; no behavior/protocol/evidence mutation
+- PR #143 — `docs(cx01): consolidate candidate-002 formal negative status`
+- base: `research/cx01-comparator-extension`
+- head: `research/cx01-status-evidence-consolidation-sub-20260916`
+- exact head: `aa99a4ccf9df0b050016841332802fa297d68ea8`
+- mergeable: yes at latest re-fetch
+- one file changed; no protocol/code/evidence mutation
 
-The new evidence map consolidates the live RV02 development baseline, exact RD005 D1 one-way identity, freeze/STARTED/preserve/audit chronology, consumed/no-rerun boundary, capability-unopened status, development-only authority, and absence of a prospectively defined successor. It intentionally does not invent successor science.
+The new document explicitly supersedes stale *current-state* claims in historical pre-execution CX01 status/runbook documents without rewriting those historical files. It maps the exact source/package freeze, STARTED, formal preserve, preserved analysis, formal-negative interpretation, and terminal no-rerun boundary.
 
-## Scientific / readiness result
+## Workflows / experiments / science
 
-No workflow or experiment was dispatched. No STARTED boundary was created. No scoring occurred. No new one-way identity was consumed. No new scientific measurement was produced.
+No experiment or one-way workflow was dispatched by SUB. No STARTED was created. No scoring occurred. No new scientific identity was consumed. No immutable evidence/ref was modified.
 
-The independent Analyst-defined completion target **was reached**: RV02 now has a reviewable canonical docs-only status/evidence-map package.
+PR #143 triggered ordinary repository validation on its docs-only head; `ci` run `35053116611` and `cx01-development` run `35053116671` were still in progress at the last check. SUB did not merge while those checks were incomplete.
 
-No immutable/frozen/formal/control/preserve evidence was modified. No consumed identity was rerun or retuned. No Analyst lane was rejected for critical-path coupling.
+**New scientific result:** none. This run only canonicalized already-preserved formal-negative evidence.
 
-## Fallback / blockers
+## Integrity / lane decision
 
-CX01 fallback was unused because the primary RV02 lane completed. The docs completion target itself has no remaining blocker; PR review/merge is independent of MAIN and is not required for MAIN progress.
+No Analyst lane was rejected for critical-path coupling. The CX01 lane remained genuinely independent of MAIN family-B work throughout the run. RV01 fallback was not used because the primary CX01 completion target was reached.
+
+## Completion target / blockers
+
+Completion target reached: a reviewable canonical CX01 Candidate-002 formal-negative evidence-map package now exists as PR #143.
+
+Remaining non-MAIN blocker: repository validation/review/merge of PR #143. This does not block MAIN and is not a reason for SUB to touch the A01 frontier.
