@@ -111,6 +111,16 @@ def test_eligibility_decays_before_new_local_activity_is_added() -> None:
     assert state.eligibility == (0.5, 0.0, 0.0, 0.0)
 
 
+def test_competition_score_rejects_arithmetic_overflow() -> None:
+    state = DistributedFieldTraceState(
+        eligibility=(0.0, 0.0, 0.0, 0.0),
+        credit=(1e308, 0.0, 0.0, 0.0),
+    )
+
+    with pytest.raises(ValueError, match="competition score must be finite"):
+        state.competition_score((1e308, 0.0, 0.0, 0.0))
+
+
 @pytest.mark.parametrize(
     ("operation", "expected_message"),
     [
@@ -138,6 +148,16 @@ def test_eligibility_decays_before_new_local_activity_is_added() -> None:
                 sign=0,
             ),
             "external world-return sign must be -1 or +1",
+        ),
+        (
+            lambda: DistributedFieldTraceState(
+                eligibility=(1e308, 0.0, 0.0, 0.0),
+                credit=(0.0, 0.0, 0.0, 0.0),
+            ).apply_external_world_return(
+                (1e308, 0.0, 0.0, 0.0),
+                sign=1,
+            ),
+            "vector values must be finite",
         ),
     ],
 )
