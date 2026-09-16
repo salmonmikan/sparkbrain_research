@@ -115,7 +115,7 @@ def audit_scale(config: ScaleStudyConfig, world: dict[str, Any], scale: int) -> 
     if digest(world) not in {digest(w) for w in development_worlds(config)}:
         raise ValueError("world must match an unmodified RV02 development fixture")
     required = tuple(sorted({edge for route in world["routes"]
-                             for edge in zip(route, route[1:], strict=False)}))
+                             for edge in zip(route, route[1:])}))
     edges = build_topology(config, scale, required)
     n = config.base_units * scale
     outgoing: dict[int, list[int]] = {i: [] for i in range(n)}
@@ -197,9 +197,7 @@ def run_development_cell(config: ScaleStudyConfig, world: dict[str, Any], scale:
         raise ValueError("architecture must be field or reservoir")
     audit = audit_scale(config, world, scale)
     from sparkbrain.research.rv01.physical_learner_bridge import (
-        build_physical_field,
-        connection_snapshots,
-        runtime_pulse,
+        build_physical_field, connection_snapshots, runtime_pulse,
     )
     from sparkbrain.research.rv01.physical_plasticity import ExternalOnlyPhysicalPlasticity
     from sparkbrain.research.rv01.resource_matched_reservoir import ResourceMatchedSparseReservoir
