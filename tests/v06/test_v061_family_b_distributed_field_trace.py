@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import math
+import re
 from collections.abc import Callable
 
 import pytest
@@ -144,5 +145,5 @@ def test_invalid_carrier_inputs_fail_closed(
     operation: Callable[[], object],
     expected_message: str,
 ) -> None:
-    with pytest.raises(ValueError, match=expected_message):
+    with pytest.raises(ValueError, match=re.escape(expected_message)):
         operation()
