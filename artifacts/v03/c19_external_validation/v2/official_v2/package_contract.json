@@ -4,14 +4,14 @@
   "protocol_id": "c19-external-v2-official-protocol-v2",
   "planned_official_identity": "c19-external-v2-official-v2",
   "status": "prestart_reviewable_not_execution_admitted",
-  "evidence_analyst_authority": "280bf94f369071efbc727a0e141fd592ddfa0e08",
+  "evidence_analyst_authority": "080e28ce782c3a77e7d4a8249de03046d545ee9c",
   "source_base_commit": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
   "inherited_frozen_protocol_head": "90c936a7abca7eba0dac1f977753503551e73368",
   "inherited_source_binding_blob": "858c8f739a06a5b96d092b5e8e8af43916c73ff6",
   "inherited_protocol_blob": "88d2eabaf8309aa2a0266d91f7463d1a8dcdc38f",
   "v2_source_blobs": {
     "official_protocol_v2.py": "cc852a774426af09832fe68c67d19a467c32812d",
-    "official_execution_v2.py": "d6a6293dce9d0924ee83ed763cf7a13900c0c044",
+    "official_execution_v2.py": "55509ee7f5bff1fb13d4e7dcd0a41684f91f5b76",
     "official_scoring_v2.py": "85fd33195d1ec99d8f9f716bad69c1bdda20e45e",
     "test_c19_official_v2_scoring.py": "9670f8a0a52568200cc02a4acecb40e0c2305092"
   },
