@@ -1,0 +1,63 @@
+{
+  "schema_version": "1",
+  "state": "EXECUTION_AUTHORIZED",
+  "evidence_analyst_commit": "719b9e74063e5e10f6226fd49f1835036ed75e5b",
+  "run_identity": "c19-r2-fsa-state-tracker-official-v1",
+  "execution_limit": 1,
+  "no_retry_after_started": true,
+  "started_ref": "control/c19-r2-fsa-state-tracker-started-v1-20260918",
+  "preserve_ref": "preserve/c19-r2-fsa-state-tracker-raw-c19-r2-fsa-state-tracker-official-v1",
+  "evidence_tag": "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
+  "scientific_package_commit": "5d5d171cf872baed7a636fd246ab36f3a91a6716",
+  "scientific_contract": {
+    "path": "configs/external_validation/c19_r2_fsa_state_tracker.json",
+    "blob_sha": "a1385abb99e36774e31fa96533483aa11201d491"
+  },
+  "preregistration": {
+    "path": "docs/research/c19_r2_fsa_state_tracker_preregistration.md",
+    "blob_sha": "d84b0b43e3bcc6fdd213e6282352e1d6f4f837e0"
+  },
+  "scientific_sources": {
+    "protocol": {
+      "path": "src/sparkbrain/v03_external_validation/c19_r2_protocol.py",
+      "blob_sha": "7f847d34a7c82b36a649b9ac1994b6960a6695d1"
+    },
+    "scoring": {
+      "path": "src/sparkbrain/v03_external_validation/c19_r2_scoring.py",
+      "blob_sha": "ce55f1a9a06173c37c5bd686d198fb2c73ba9d87"
+    },
+    "source_map": {
+      "path": "src/sparkbrain/v03_external_validation/c19_r2_source_map.py",
+      "blob_sha": "de2efcb754685fb6905091913cbf01ee1fed2781"
+    },
+    "state_tracker": {
+      "path": "src/sparkbrain/v03_external_validation/c19_r2_state_tracker.py",
+      "blob_sha": "c2871ca635cafc957b31251ec6f07894b3a2297a"
+    }
+  },
+  "v4_read_only_binding": {
+    "package_commit": "74bfe6b4a39758656f291baaa3f16236e3e71964",
+    "preserve_commit": "d8fcc5216ff24940836972816cb0ec8f11e4ba06",
+    "evidence_commit": "a0f83318356ced1c84863737803080d0dc69d208",
+    "raw_sha256": "692f8a5dba48f604eb1f5518a8545b80da01e1a00a9e2d2b6b1c0567355d65af"
+  },
+  "integrity": {
+    "formal_identity_fresh_at_authorization": true,
+    "started_no_clobber_required": true,
+    "raw_before_score": true,
+    "raw_and_target_free_source_map_preserved_before_targets": true,
+    "preserve_then_independent_refetch_before_targets": true,
+    "target_free_atomic_idx_cluster_primary": true,
+    "r1_outputs_forbidden": true,
+    "v4_per_example_scored_outputs_for_design_forbidden": true,
+    "automatic_successor_after_failure": false
+  },
+  "allowed_authority_paths": [
+    ".github/workflows/c19-r2-one-way.yml",
+    ".github/workflows/c19-r2-prestart.yml",
+    "configs/external_validation/c19_r2_execution_authority.json",
+    "scripts/check_c19_r2_prestart.py",
+    "scripts/preserve_c19_r2_boundary.py",
+    "scripts/run_c19_r2_official.py"
+  ]
+}
