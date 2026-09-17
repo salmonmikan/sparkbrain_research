@@ -1,17 +1,17 @@
 {
-  "timestamp": "2026-09-18T04:45:00+09:00",
+  "timestamp": "2026-09-18T05:51:00+09:00",
   "worker_role": "sub",
   "mode": "exploratory_incubator",
   "evidence_analyst_commit": "b09d90d0545a0448ea5a310f9373969e7471b15d",
   "consumed_lanes": [],
   "selected_independent_lane": null,
-  "exploratory_target": "H1 explicit competing-belief retention versus a matched probabilistic recurrent filter in a synthetic three-state non-monotonic world",
+  "exploratory_target": "RV01 adaptive-delay reduction sensitivity: residual-deadzone learner versus resource-matched generic clipped EWMA",
   "independent_of_main_critical_path": true,
   "execution_allowed": false,
   "execution_allowed_reason": "No reserved formal SUB lane or fallback exists; only NON_EVIDENTIARY incubator work is allowed.",
   "sub_active_claim": {
-    "branch": "research/exploratory-sub-h1-competing-belief-reduction-20260918",
-    "head": "b403205cdc86b5c5930a2031c4001ba68fd30ee9",
+    "branch": "research/exploratory-sub-rv01-delay-filter-reduction-20260918",
+    "head": "ac00bd10af28358ed8162d99fe284cb665a1807a",
     "status": "bounded_complete",
     "authoritative": false
   },
@@ -20,7 +20,8 @@
     "C19_R2_FSA_STATE_TRACKER_PROSPECTIVE_SPECIFICATION implementation, review fixups, identity/STARTED/execution, scoring and preservation",
     "C19-R1-v1/v2 post-START failures, transient outputs, diagnosis, repair, retry or successor design",
     "consumed C19-v2/v3/v4 and R1-v1/v2 identities and controls",
-    "immutable C19-v4 preserve/evidence/tag"
+    "immutable C19-v4 preserve/evidence/tag",
+    "consumed/frozen/formal RV01 identities, sources, preserves and scores"
   ],
   "authoritative_refs": {
     "main": "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
@@ -36,44 +37,65 @@
     "c19_v4_evidence_tag": "evidence/c19-official-v4-c19-external-v2-official-v4"
   },
   "branches_prs_advanced": {
-    "branch": "research/exploratory-sub-h1-competing-belief-reduction-20260918@b403205cdc86b5c5930a2031c4001ba68fd30ee9",
+    "branch": "research/exploratory-sub-rv01-delay-filter-reduction-20260918@ac00bd10af28358ed8162d99fe284cb665a1807a",
     "base": "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "commits": [
-      "97af5a7b2e51ae0e012ef340864a92b8d9668f48",
-      "40e65a2ece2a01047a8db795672931919a6397e7",
-      "be88658d13dbcdfcca8cb9c82a31c22a8880a508",
-      "b403205cdc86b5c5930a2031c4001ba68fd30ee9"
+      "8da9c9fac6a2919116227d5089f814639d45199e",
+      "d174718f73297fd4487ae7bf76980804e0254b54",
+      "d56709749e234e283e95d1134a8516569d96f338",
+      "065d083231f4d6b732090adc4d78416112b50f79",
+      "2d98da1b73782011d7951150e6c8f00f209e1afa",
+      "ac00bd10af28358ed8162d99fe284cb665a1807a"
     ],
     "prs_created": [],
     "merges": []
   },
   "workflows_experiments": {
+    "initial_artifact_binding_ci": {
+      "run_id": 35272631598,
+      "head": "2d98da1b73782011d7951150e6c8f00f209e1afa",
+      "status": "completed",
+      "conclusion": "failure",
+      "python_3_11": "failure: exact serialized float equality only",
+      "python_3_13": "success",
+      "scientific_semantics_changed_after": false
+    },
     "final_exact_head_ci": {
-      "run_id": 35266438318,
-      "head": "b403205cdc86b5c5930a2031c4001ba68fd30ee9",
+      "run_id": 35273041940,
+      "head": "ac00bd10af28358ed8162d99fe284cb665a1807a",
       "status": "completed",
       "conclusion": "success",
       "python_3_11": "success",
       "python_3_13": "success",
       "manual_dispatch": false
     },
-    "experiment": "Disjoint DEV parameter selection and TEST evaluation for an explicit three-score competing-belief heuristic versus a three-state probabilistic recurrent filter across six fixed revision/recovery utility trade-offs."
+    "mechanical_ci_fix": "Artifact-binding test now normalizes cross-Python floating-point noise to 10 decimal places. Experiment, parameter selection, committed result artifact, and scientific semantics were unchanged.",
+    "experiment": "DEV-only parameter selection for a one-scalar residual-deadzone delay learner and one-scalar generic clipped EWMA, followed by a fixed-parameter TEST outlier sensitivity sweep on disjoint seeds."
   },
   "scientific_readiness_exploratory_results": {
     "new_formal_scientific_result": false,
     "formal_readiness_changed_by_sub": false,
-    "observation": "Across six fixed TEST utility trade-offs, the matched probabilistic filter won four and the explicit competing-belief heuristic won two; all utility differences were small.",
-    "probabilistic_minus_competing_test_utility": [
-      0.00027897479831484606,
-      0.0007188661651439388,
-      -0.0004165488098240022,
-      -0.0006527733359722454,
-      0.0025821264076603123,
-      0.00009136973551882033
+    "selected_deadzone": {
+      "eta": 0.8,
+      "deadzone_ms": 0.35
+    },
+    "selected_generic_clipped_ewma": {
+      "alpha": 0.65,
+      "innovation_clip_ms": 4.0
+    },
+    "test_outlier_probabilities": [0.0, 0.03, 0.06, 0.12, 0.2],
+    "generic_minus_deadzone_test_utility": [
+      -0.09166507690521092,
+      -0.07422981235595205,
+      -0.057282413339833194,
+      -0.025851266532205375,
+      0.018541750670667767
     ],
-    "max_absolute_test_utility_gap": 0.0025821264076603123,
-    "mean_absolute_test_utility_gap": 0.0007901098754056942,
-    "interpretation": "Reduction pressure only: this simple synthetic world provides no robust mechanism-specific advantage for explicit competing beliefs once a strong probabilistic state baseline has matched persistent state and hysteresis opportunity."
+    "deadzone_wins": 4,
+    "generic_wins": 1,
+    "crossover_observed": true,
+    "observation": "The residual-deadzone filter has higher fixed utility through 12% outlier probability, but the generic clipped EWMA crosses over and wins at 20%; the apparent advantage is therefore materially corruption-regime dependent.",
+    "interpretation": "Reduction pressure only. The deadzone learner is itself a simple scalar adaptive filter, so the toy cannot establish RV01/SparkBrain-specific machinery; the clipped-EWMA baseline also does not reduce the toy over the whole sensitivity surface."
   },
   "evidentiary_status": "NON_EVIDENTIARY",
   "consumed_identities": {
@@ -93,6 +115,10 @@
         "consumed": true,
         "immutable_evidence": true,
         "touched_by_sub": false
+      },
+      "rv01_consumed_or_formal_history": {
+        "touched_by_sub": false,
+        "rerun_or_rescore": false
       }
     }
   },
@@ -101,17 +127,20 @@
   ],
   "collision_reconciliation": {
     "analyst_tip_rechecked": "b09d90d0545a0448ea5a310f9373969e7471b15d",
+    "main_head_rechecked": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "main_r2_head_rechecked": "5d5d171cf872baed7a636fd246ab36f3a91a6716",
     "main_r2_exact_head_checks": {
       "dedicated_pre_start_35265194243": "success",
       "ordinary_ci_35265194183": "success"
     },
-    "main_report_rechecked_after_relay": "R2_PRE_START_READY_FOR_ANALYST_REVIEW / hard STOP",
+    "main_report_rechecked": "R2_PRE_START_READY_FOR_ANALYST_REVIEW / hard STOP",
+    "r2_started_or_control_ref": null,
+    "r2_preserve_ref": null,
     "open_prs": 0,
     "open_operational_issues": [139],
-    "sub_branch_head": "b403205cdc86b5c5930a2031c4001ba68fd30ee9",
+    "sub_branch_head": "ac00bd10af28358ed8162d99fe284cb665a1807a",
     "sub_intervened_on_main": false,
-    "result": "independence maintained; concurrent MAIN relay commits were retained on the report branch before SUB persistence"
+    "result": "independence maintained; report persistence uses only SUB-owned stream files"
   },
   "integrity_state": {
     "exploratory_only": true,
@@ -123,44 +152,49 @@
     "freeze_formal_evidence_or_preserve_ref_created_by_sub": false,
     "consumed_or_frozen_identity_modified": false,
     "main_branch_modified": false,
-    "exact_exploratory_head_ci_green": true
+    "exact_exploratory_head_ci_green": true,
+    "cross_python_artifact_binding_closed_mechanically": true
   },
   "completion_target": {
-    "target": "Run one independent H1 matched probabilistic reduction diagnostic, explicitly mark it NON_EVIDENTIARY, close exact-head CI, and return the reduction lesson to Evidence Analyst without touching MAIN.",
+    "target": "Run one independent RV01 matched robust-filter reduction sensitivity diagnostic, explicitly mark it NON_EVIDENTIARY, close exact-head CI across Python 3.11/3.13, and return the reduction lesson to Evidence Analyst without touching MAIN or consumed RV01 evidence.",
     "status": "achieved"
   },
   "fallback_status": "No formal sub_lane or sub_fallback; Exploratory Incubator used for exactly one distinct target this run.",
   "rejected_lane": null,
   "lane_rejected_reason": null,
-  "why_independent_of_main": "Synthetic-only H1 reduction diagnostic with no dependency on C19-R2 specification/readiness/outcome, R1 failures, official inputs, scorer, preservation, or any MAIN blocker.",
-  "hypothesis_or_reduction_question": "Does an explicit competing-belief heuristic retain a mechanism-specific non-monotonic revision advantage over a strong probabilistic recurrent filter when both receive the same observations, three-scalar persistent-state budget, two DEV-selected control parameters, and revision hysteresis opportunity?",
+  "why_independent_of_main": "Synthetic-only RV01 reduction diagnostic created from stable main, with no dependency on C19-R2 specification/readiness/outcome, R1 failures, official inputs, scorers, preservation, or any MAIN blocker; consumed RV01 formal artifacts were not reopened or reinterpreted.",
+  "hypothesis_or_reduction_question": "Does an RV01-motivated residual-deadzone delay learner retain a stable mechanism-specific advantage over an ordinary robust scalar filter when persistent state and DEV-selected control count are matched?",
   "synthetic_or_dev_inputs_used": {
-    "source": "deterministic synthetic three-state non-monotonic Markov sequences only",
-    "states": [0, 1, 2],
-    "sequences_per_seed": 256,
-    "sequence_length": 72,
-    "world_stay_probability": 0.92,
-    "world_correct_observation_probability": 0.68,
+    "source": "deterministic synthetic changing-delay sequences only",
+    "latent_delay_levels_ms": [1.0, 3.0, 5.0],
+    "sequences_per_seed": 128,
+    "sequence_length": 64,
+    "stay_probability": 0.94,
+    "observation_noise_sigma_ms": 0.55,
+    "outlier_magnitude_ms": 3.0,
+    "dev_outlier_probability": 0.06,
+    "test_outlier_probabilities": [0.0, 0.03, 0.06, 0.12, 0.2],
     "dev_seeds": [20260901, 20260902, 20260903, 20260904, 20260905],
-    "test_seeds": [20260918, 20260919, 20260920, 20260921, 20260922]
+    "test_seeds": [20260918, 20260919, 20260920, 20260921, 20260922],
+    "resource_match": "Both filters retain exactly one persistent scalar delay estimate and select exactly two control parameters on DEV only."
   },
-  "implementation_or_experiment_performed": "Implemented a three-score decayed competing-belief heuristic and a three-state HMM-style recurrent filter. Each independently DEV-selected two control parameters from fixed grids, then evaluated fixed selections on disjoint TEST seeds across six fixed accuracy/false-revision/switch-latency/return-recovery utility surfaces.",
-  "observations": "The probabilistic filter won four of six TEST utility rows and the explicit competing-belief heuristic won two; maximum absolute utility gap was 0.0025821264 and mean absolute gap 0.0007901099, indicating near-equivalence in this bounded toy world.",
-  "what_would_falsify_or_reduce_it": "A fresh prospective H1 task family with matched information/reliability access, persistent state, training/tuning/calibration, hysteresis opportunity and compute/resources where explicit competing objects show a stable held-out Pareto or preregistered utility advantage over strong probabilistic/recurrent controls.",
-  "candidate_formal_question": "Under prospectively matched observation access, persistent-state capacity, training/tuning/calibration budget, revision-control opportunity and compute/resource budget, do explicit persistent competing beliefs improve held-out non-monotonic revision accuracy/recovery/latency trade-offs beyond strong probabilistic or generic recurrent state models?",
+  "implementation_or_experiment_performed": "Implemented a residual-deadzone scalar delay learner and a generic clipped-EWMA comparator. Each independently selected two controls from fixed DEV grids at outlier probability 0.06; parameters were then frozen and evaluated on disjoint TEST seeds across a predeclared outlier sensitivity sweep using fixed MAE/false-adjustment/switch-latency/return-recovery utility.",
+  "observations": "The deadzone learner won four of five fixed TEST corruption regimes, but generic clipped EWMA crossed over at 20% outliers. Generic-minus-deadzone utility moved monotonically from -0.091665 at zero outliers to +0.018542 at 20%, showing material regime sensitivity rather than a stable mechanism-specific advantage.",
+  "what_would_falsify_or_reduce_it": "A fresh prospective world family in which strong ordinary robust adaptive estimators, under matched information/state/parameter/tuning/compute/control opportunity, match or dominate the RV01-specific mechanism across preregistered recovery/stability/accuracy trade-offs; or evidence that apparent advantage disappears across predeclared process/noise regimes.",
+  "candidate_formal_question": "Under prospectively matched information access, persistent state, parameter/training/tuning budget and compute/resource budget, does an RV01-specific learned-delay mechanism provide a stable held-out timing/recovery advantage over strong generic robust adaptive filters across preregistered process/noise regimes?",
   "suggested_prospective_object": null,
   "new_scientific_choices_required_before_formalization": [
-    "fresh task/world family and source of non-monotonic returns",
-    "allowed or learned transition/noise/reliability information for each comparator",
-    "exact explicit-belief dynamics and strong probabilistic/recurrent comparators",
+    "fresh task/world family and source of delay changes",
+    "observation/noise/outlier contract",
+    "exact RV01-specific mechanism and strong generic robust comparator family",
     "persistent-state, parameter, compute and resource matching",
     "training, fitting, calibration and selection budgets",
-    "primary metrics and Pareto/utility success/failure criteria",
-    "held-out split",
-    "seeds/runtime/determinism",
+    "primary timing/recovery/stability metrics and Pareto/utility success/failure criteria",
+    "held-out process/noise regimes and seeds",
+    "runtime/determinism",
     "preservation/scoring/statistical contract",
     "fresh protocol/package/bindings/identity"
   ],
-  "promotion_recommendation": "REJECT",
-  "promotion_recommendation_scope": "Reject this current toy as a formalization candidate only; retain the reduction lesson that H1 must beat a strong matched probabilistic/recurrent baseline. This is not a formal scientific rejection of H1 and does not authorize automatic continuation."
+  "promotion_recommendation": "CONTINUE_EXPLORING",
+  "promotion_recommendation_scope": "Only after Evidence Analyst classification, and at most as a fresh stronger ordinary-filter reduction. Do not promote this toy directly or continue the branch automatically."
 }
