@@ -1,137 +1,133 @@
 {
-  "timestamp_jst": "2026-09-17T07:46:00+09:00",
+  "timestamp_jst": "2026-09-18T01:51:00+09:00",
+  "worker_role": "repository_steward",
   "repository": "salmonmikan/sparkbrain_research",
   "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-  "control_brain_commit": "909ce53e7b0355f5aab1512e659ab36d910bf6a4",
-  "evidence_analyst_commit": "25eae547ccd9bb22edc2010e698a8dd2ecd33dcc",
-  "orchestrator_report_commit": "447fb545cb21af1e9649d4793548ca24ebec6f96",
+  "control_brain_commit": "d8987f8c6d88fad48a8f652f4255e73b30a223e6",
+  "evidence_analyst_commit": "42836802e78abd26d19c5b8a789411f2b03d0ea1",
+  "orchestrator_report_commit_observed": "da0eee526a1286e3df989f136d44f97cb6dce670",
+  "current_remote_authority": {
+    "main_protected": false,
+    "r1_research_branch": "research/c19-r1-revision-authority-reduction-20260917",
+    "r1_research_head": "7197ab0f9683616858859446ae9eed7b75707f25",
+    "r1_started_ref": "control/c19-r1-revision-authority-started-20260918",
+    "r1_started_head": "62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2",
+    "r1_identity": "c19-r1-revision-authority-official-v1",
+    "r1_status": "POST_START_FAILURE_CONSUMED_NO_RETRY",
+    "r1_raw_preserve_evidence_scoring": "none",
+    "c19_v4_evidence_tag": "evidence/c19-official-v4-c19-external-v2-official-v4",
+    "c19_v4_tag_object": "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
+    "c19_v4_evidence_commit": "a0f83318356ced1c84863737803080d0dc69d208"
+  },
   "orchestrator_reports": {
     "main": {
-      "time_jst": "2026-09-17 06:33",
-      "c19_research_head": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
-      "predecessor_identity": "c19-external-v2-official-v1",
-      "execution_started": false,
-      "official_data_accessed": false
+      "time_jst": "2026-09-18 01:51",
+      "classification": "POST_START_FAILURE",
+      "failure": "ModuleNotFoundError: No module named 'torch'",
+      "identity_consumed": true,
+      "same_id_retry_allowed": false,
+      "scientific_result": "none"
     },
     "sub": {
-      "time_jst": "2026-09-17 07:43",
-      "lane": "C07/H9 fully-spiking-boundary source-only readiness audit",
-      "research_head": "9480da3d77dfee4766b28757f1a164f5cd4dac26",
-      "classification": "PRE_START_UNDERSPECIFIED",
-      "scientific_experiment_executed": false
+      "time_jst": "2026-09-18 01:52",
+      "mode": "exploratory_incubator",
+      "target": "H3 duplicate/correlation robustness reduction toy",
+      "formal_evidentiary_status": "NON_EVIDENTIARY",
+      "main_frontier_touched": false
     }
-  },
-  "programme_reframe": {
-    "a01_registered_family_search": "closed",
-    "current_frame": "experimental_persistent_dynamical_cognitive_architecture_testbed",
-    "primary_frontier": "C19 external validation"
-  },
-  "active_frontier": {
-    "line": "C19 official-v2 external validation successor",
-    "source_basis_branch": "research/c19-truth-free-symbolic-adapter-v2-20260917",
-    "source_basis_head": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
-    "rejected_predecessor_protocol": "90c936a7abca7eba0dac1f977753503551e73368",
-    "rejected_predecessor_identity": "c19-external-v2-official-v1",
-    "planned_fresh_identity": "c19-external-v2-official-v2",
-    "successor_branch_observed": null,
-    "status": "fresh successor prospectively specified by Evidence Analyst; no successor branch observed at stewardship inspection"
-  },
-  "independent_sub_frontier": {
-    "line": "C07/H9 fully-spiking boundary readiness",
-    "branch": "research/c07-h9-fully-spiking-readiness-sub-20260917",
-    "head": "9480da3d77dfee4766b28757f1a164f5cd4dac26",
-    "status": "PRE_START_UNDERSPECIFIED",
-    "execution_allowed": false
   },
   "repository_state": {
     "open_pr_count": 0,
-    "open_issue_numbers": [139, 147],
-    "closed_family_b_issue": 145,
-    "git_tag_count": 0,
-    "repository_ruleset_count": 0
+    "open_issue_numbers": [139],
+    "closed_issue_numbers_this_run": [147],
+    "authoritative_annotated_tag_count": 1,
+    "repository_ruleset_count": 0,
+    "legacy_freeze_branch_count": 13
   },
-  "doctrine_status": "partially_compliant",
+  "doctrine_status": "partially_compliant_with_active_science_separated_and_protection_gap",
   "doctrine_findings": {
-    "main_frontier_separation": "compliant_for_c19_and_h9_research_frontiers",
-    "generic_tag_workflow_on_main": "compliant_outcome_independent_substrate",
-    "canonical_science_vs_issues": "compliant_after_issue_145_terminal_closure_and_issue_147_question_scoped_creation",
-    "legacy_main_drift": [
-      ".github/workflows/cx01-formal-one-way.yml",
-      ".github/workflows/cx01-dispatch-probe-target.yml",
-      ".github/workflows/cx01-dispatch-capability-probe.yml",
-      ".github/workflows/cx01-candidate-002-launch-bridge.yml",
-      ".github/workflows/cx01-candidate-002-preserve-evidence.yml"
-    ],
+    "main_frontier_separation": "compliant",
+    "new_evidence_tag_pattern": "compliant_annotated_evidence_tag_observed",
+    "canonical_science_vs_issues": "compliant_after_issue_147_operational_closure",
+    "sub_incubator_boundary": "compliant_non_evidentiary_research_only",
+    "server_side_protection": "missing",
     "legacy_main_drift_action": "deferred_non_blocking"
   },
   "issue_changes": [
     {
       "issue": 147,
-      "action": "created",
-      "purpose": "question-scoped C19 official-v2 operational tracking",
-      "canonical_authority": "git-managed C19 protocol/status/evidence"
+      "action": "updated_and_closed_completed",
+      "reason": "C19 official-validation successor chain has canonical terminal v4 PASS evidence under authoritative annotated tag",
+      "canonical_authority": "evidence/c19-official-v4-c19-external-v2-official-v4"
     },
     {
       "issue": 139,
-      "action": "updated",
-      "purpose": "reconcile implemented tag workflow, 0-tag/0-ruleset state, current-frontier priority, and scheduler read-only ruleset boundary"
+      "action": "updated_kept_open",
+      "reason": "repository now has one authoritative annotated evidence tag but still zero rulesets/server-side namespace protection"
     }
   ],
-  "issue_reconciliation": {
-    "family_b_issue_145": "closed_completed_with_canonical_REJECT_BEFORE_STARTED_STATIC_REDUCTION_pointer",
-    "tag_governance_issue_139": "open_and_current",
-    "c19_question_issue_147": "open_and_question_scoped",
-    "duplicate_or_umbrella_open_issues_found": 0
+  "r1_issue_action": {
+    "created": false,
+    "reason": "R1 successor/stop decision is scientific and belongs to Evidence Analyst; governance must not predefine successor scope"
   },
   "freeze_migration": {
     "legacy_freeze_branch_count": 13,
-    "all_legacy_freeze_shas_match_stored_inventory": true,
-    "git_tag_count": 0,
-    "legacy_tag_mirrors_created": 0,
-    "legacy_branches_modified": 0,
+    "legacy_freeze_refs_present": true,
+    "authoritative_annotated_tag_count": 1,
+    "new_tag": "evidence/c19-official-v4-c19-external-v2-official-v4",
+    "legacy_tag_mirrors_created_this_run": 0,
+    "legacy_branches_modified_by_stewardship": 0,
     "mapping_doc": "reports/repository_steward/legacy_freeze_map.md",
-    "annotated_tag_creation_workflow": ".github/workflows/create-authoritative-tag.yml",
-    "status": "tag_creation_available_but_server_side_protection_absent; legacy_batch_migration_deferred"
+    "mapping_changed_this_run": false,
+    "status": "prospective_annotated_tag_pattern_active; legacy_batch_migration_deferred_until_safe_protection_policy"
   },
   "tag_protection": {
     "repository_ruleset_count": 0,
+    "main_protected": false,
     "status": "governance_gap",
     "tracking_issue": 139,
-    "scheduled_stewardship_boundary": "read_only_audit_report_only_no_ruleset_mutation"
+    "scheduled_stewardship_boundary": "read_only_only_no_ruleset_mutation"
   },
   "preserve_index": {
-    "mapping_updated": true,
+    "mapping_changed": false,
     "new_legacy_freeze_entries": 0,
     "scientific_mappings_changed": 0,
-    "existing_preserve_control_formal_evidence_refs_moved_or_rewritten": 0
+    "existing_preserve_control_formal_evidence_refs_modified_by_stewardship": 0
   },
-  "main_promotion_candidates": [
+  "main_promotion_candidates_reviewed": [
+    "exact execution-environment/dependency manifest verification",
+    "same-environment pre-START import/dependency smoke-test harness",
     "exact source/runtime manifest verification",
-    "atomic STARTED / no-clobber / identity-collision primitives",
+    "atomic STARTED/no-clobber/identity-collision primitives",
     "durable exactly-once acquisition checkpoints",
     "raw-preserve-before-score and digest verification",
+    "evaluator-join uniqueness/totality/fail-closed validators",
+    "deterministic golden scorer fixture harnesses",
     "generic fail-closed verifier patterns",
-    "exact pair-coverage validation generalized beyond C19",
-    "deterministic bootstrap-contract helpers only after semantics are independently stabilized and generic",
     "stable control-plane pointer/index helpers"
   ],
   "main_promotions_performed": 0,
+  "research_only_not_promotion_eligible_now": [
+    "C19/R1 scientific controller/scorer/workflow semantics",
+    "SUB exploratory H3 correlation-reduction code/artifacts"
+  ],
   "immutable_refs_untouched": true,
   "verified_immutable_state": {
-    "freeze_branch_count": 13,
-    "freeze_branch_shas_match_legacy_freeze_map": true,
-    "authoritative_tag_count": 0,
-    "freeze_branches_deleted_or_moved": 0,
+    "legacy_freeze_branch_count": 13,
+    "authoritative_c19_v4_tag_untouched": true,
+    "r1_started_ref_untouched": true,
+    "freeze_branches_deleted_or_moved_by_stewardship": 0,
     "preserve_control_formal_evidence_refs_modified_by_stewardship": 0
   },
   "scientific_experiments_executed": 0,
   "research_workflows_dispatched": 0,
-  "one_way_identities_consumed": 0,
+  "one_way_identities_consumed_by_stewardship": 0,
   "scientific_freezes_decided": 0,
   "deferred": [
     "install authoritative tag namespace protection/rulesets outside scheduled stewardship",
     "create exact-SHA annotated legacy tag mirrors only under an explicitly safe protected migration procedure",
-    "extract legacy CX01-specific main workflows only when reversible and non-blocking",
-    "promote generic C19 validators only after they are demonstrably hypothesis-independent and stable"
+    "let Evidence Analyst consume R1 POST_START_FAILURE and decide stop versus fresh prospective successor",
+    "extract/promote generic runtime-environment preflight only after hypothesis-independent stabilization",
+    "extract legacy CX01-specific main workflows only when reversible and non-blocking"
   ]
 }
