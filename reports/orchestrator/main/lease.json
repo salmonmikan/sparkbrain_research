@@ -1,19 +1,19 @@
 {
-  "run_id": "relay-20260917T1945JST",
-  "execution_mode": "RELAY",
-  "status": "WAITING_EXTERNAL",
-  "started_at": "2026-09-17T19:45:26+09:00",
-  "heartbeat_at": "2026-09-17T19:52:12+09:00",
-  "analyst_commit": "ef858fe9e6fbe9d0bdd57bc43a15e07ec0b30c23",
+  "run_id": "primary-20260917T2014JST",
+  "execution_mode": "PRIMARY",
+  "status": "RUNNING",
+  "started_at": "2026-09-17T20:14:14+09:00",
+  "heartbeat_at": "2026-09-17T20:16:00+09:00",
+  "analyst_commit": "56f0665ccc536bff6bf48e9eb581ec9a9eafcecc",
   "active_branch": "research/c19-official-v4-preservation-qualified-20260917",
   "active_identity": "c19-external-v2-official-v4",
-  "active_step": "V4_PRE_START_VALIDATION_WAIT",
-  "workflow_run_id": 35212637922,
+  "active_step": "V4_PRE_START_BLOCKER_LINT",
+  "workflow_run_id": 35212637754,
   "workflow_run_ids": {
     "prestart_admission": 35212637922,
     "ordinary_ci": 35212637754
   },
   "active_package_head": "a0ba353ff33abc981875c9d02af2e171a1bc65f6",
-  "expected_next_action": "Collect exact-head pre-START admission and ordinary CI results for a0ba353ff33abc981875c9d02af2e171a1bc65f6. If both are green, re-check v4 freshness/collisions and Analyst GO gates before creating STARTED. If either fails, apply only prospectively authorized science-invariant mechanical fixes; STOP for Analyst on any semantic/runtime-version/scientific redesign need.",
+  "expected_next_action": "Apply only the three behavior-preserving Ruff fixes diagnosed on a0ba353, then collect both ordinary CI and dedicated v4 pre-START admission on the new exact head. STARTED remains forbidden until both are green and fresh identity/control/preserve/evidence collision checks pass.",
   "owner": "main"
 }
