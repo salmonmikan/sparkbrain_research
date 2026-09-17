@@ -13,6 +13,11 @@ from sparkbrain.v03_external_validation.c19_r1_revision_authority import (
     RuntimeBoundary,
     select_revision_authority,
 )
+from sparkbrain.v03_external_validation.c19_r1_source_map import (
+    atomic_idx_clusters,
+    atomic_idx_source_map_sha256,
+    validate_atomic_idx_source_map,
+)
 
 
 def _synthetic_examples() -> tuple[dict[str, object], ...]:
@@ -39,6 +44,15 @@ def _synthetic_examples() -> tuple[dict[str, object], ...]:
     return tuple(examples)
 
 
+def _synthetic_source_map() -> tuple[dict[str, object], ...]:
+    return validate_atomic_idx_source_map(
+        tuple(
+            {"pair_index": pair_index, "atomic_idx": f"atomic-{pair_index // 2}"}
+            for pair_index in range(EXPECTED_PAIRS)
+        )
+    )
+
+
 def main() -> None:
     contract = load_and_validate_contract()
     tie = {"a": 0.6, "b": 0.3, "c": 0.1}
@@ -63,12 +77,24 @@ def main() -> None:
     if any(record["source_index"] != 1 or record["step_index"] != 1 for record in raw.records):
         raise SystemExit("R1 raw must preserve the final-step evaluator join identity")
 
+    source_map = _synthetic_source_map()
+    source_map_digest = atomic_idx_source_map_sha256(source_map)
+    if source_map_digest != atomic_idx_source_map_sha256(tuple(dict(row) for row in source_map)):
+        raise SystemExit("R1 atomic_idx source-map digest must be deterministic")
+    if any(set(row) != {"pair_index", "atomic_idx"} for row in source_map):
+        raise SystemExit("R1 atomic_idx source map must contain no target fields")
+    clusters = atomic_idx_clusters(source_map)
+    if sum(len(indices) for _, indices in clusters) != EXPECTED_PAIRS:
+        raise SystemExit("R1 atomic_idx source map must assign every pair exactly once")
+
     print(
         json.dumps(
             {
                 "contract": contract,
                 "synthetic_records": len(raw.records),
                 "synthetic_raw_sha256": raw.sha256,
+                "synthetic_atomic_idx_source_map_sha256": source_map_digest,
+                "synthetic_atomic_idx_clusters": len(clusters),
                 "official_data_accessed": False,
                 "official_execution_allowed": False,
                 "status": "R1_PRE_START_READY_FOR_ANALYST_REVIEW",
