@@ -16,10 +16,6 @@ from pathlib import Path
 from typing import Any
 
 from sparkbrain.v03_external_validation import implementation_binding as v4_binding
-from sparkbrain.v03_external_validation.official_execution import (
-    RuntimeBoundary,
-    reject_target_leakage,
-)
 from sparkbrain.v03_external_validation.c19_r1_protocol import (
     EXPECTED_PAIRS,
     INPUT_TRACK,
@@ -29,6 +25,10 @@ from sparkbrain.v03_external_validation.c19_r1_protocol import (
     PROTOCOL_ID,
     ROW_KIND,
     expected_r1_rows,
+)
+from sparkbrain.v03_external_validation.official_execution import (
+    RuntimeBoundary,
+    reject_target_leakage,
 )
 
 SYNTHETIC_SCOPE = "synthetic_dev_only"
@@ -217,7 +217,7 @@ class ExecutionAdmissionR1:
     planned_identity: str = PLANNED_IDENTITY
 
     @classmethod
-    def synthetic_dev(cls) -> "ExecutionAdmissionR1":
+    def synthetic_dev(cls) -> ExecutionAdmissionR1:
         return cls(SYNTHETIC_SCOPE, None, None, None)
 
     def validate(self) -> None:
@@ -250,7 +250,7 @@ class RawBundleR1:
     sha256: str
 
     @classmethod
-    def from_records(cls, records: Sequence[Mapping[str, Any]]) -> "RawBundleR1":
+    def from_records(cls, records: Sequence[Mapping[str, Any]]) -> RawBundleR1:
         normalized = tuple(dict(record) for record in records)
         validate_raw_records(normalized)
         digest = hashlib.sha256(_canonical(normalized).encode("utf-8")).hexdigest()
