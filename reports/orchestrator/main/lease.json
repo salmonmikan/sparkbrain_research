@@ -1,15 +1,15 @@
 {
   "run_id": "primary-20260917T2318JST",
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "BLOCKED",
   "started_at": "2026-09-17T23:18:02+09:00",
-  "heartbeat_at": "2026-09-17T23:19:00+09:00",
+  "heartbeat_at": "2026-09-17T23:21:00+09:00",
   "analyst_commit": "9f88fba973f54bc6608d183aacfaccd7952a229f",
   "active_branch": "research/c19-r1-revision-authority-reduction-20260917",
   "active_identity": "c19-r1-revision-authority-official-v1",
   "active_step": "R1_PRE_START_READY_FOR_ANALYST_REVIEW",
   "workflow_run_id": 35221764005,
   "ordinary_ci_run_id": 35221764016,
-  "expected_next_action": "Reconfirm current Analyst authority and R1 exact-head integrity envelope. If no newer Analyst handoff explicitly authorizes execution, stop before STARTED and persist a BLOCKED checkpoint. If authorization has changed, re-verify all GO conditions before any one-way mutation.",
+  "expected_next_action": "Wait for a fresh Evidence Analyst handoff. If and only if a newer authority explicitly authorizes R1 execution, re-fetch exact branch/head, identity freshness, frozen source/protocol/package/runtime/input/scorer/preserver bindings, STARTED/no-clobber control/preserve/evidence namespaces, exact-head CI/review and collision state immediately before STARTED. Under analyst commit 9f88fba973f54bc6608d183aacfaccd7952a229f, remain stopped and do not dispatch one-way execution.",
   "owner": "main"
 }
