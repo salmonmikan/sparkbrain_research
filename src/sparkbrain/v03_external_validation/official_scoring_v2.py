@@ -10,14 +10,13 @@ from collections.abc import Mapping, Sequence
 from statistics import mean
 from typing import Any
 
-from sparkbrain.v03_external_validation.official_execution import RawBundle
+from sparkbrain.v03_external_validation.official_execution_v2 import RawBundleV2
 from sparkbrain.v03_external_validation.official_protocol_v2 import (
     BOOTSTRAP_DRAWS_PER_RESAMPLE,
     BOOTSTRAP_LOWER_P,
     BOOTSTRAP_RESAMPLES,
     BOOTSTRAP_SEED,
     BOOTSTRAP_UPPER_P,
-    EVALUATOR_JOIN_KEY_FIELDS,
     EVALUATOR_TARGET_FIELDS,
     EXPECTED_MAINTAIN_PAIRS,
     EXPECTED_PAIRS,
@@ -73,7 +72,7 @@ def _join_key(row: Mapping[str, Any]) -> JoinKey:
 
 
 def validate_evaluator_targets(
-    raw: RawBundle,
+    raw: RawBundleV2,
     evaluator_targets: Sequence[Mapping[str, Any]],
 ) -> tuple[Target, ...]:
     """Validate the exact post-preservation evaluator join and return pair order."""
@@ -112,7 +111,9 @@ def validate_evaluator_targets(
             raise ValueError("evaluator record_id_hash must be lowercase SHA-256")
         _require_non_negative_int(target["source_index"], "source_index")
         _require_non_negative_int(target["step_index"], "step_index")
-        if not isinstance(target["target_choice_id"], str) or not target["target_choice_id"]:
+        if not isinstance(target["target_choice_id"], str) or not target[
+            "target_choice_id"
+        ]:
             raise ValueError("target_choice_id must be a non-empty string")
         if not isinstance(target["update_required"], bool):
             raise ValueError("update_required must be boolean")
@@ -143,7 +144,11 @@ def linear_quantile_10k(effects: Sequence[float], p: float) -> float:
 
     if len(effects) != BOOTSTRAP_RESAMPLES:
         raise ValueError("quantile requires exactly 10000 effects")
-    if not isinstance(p, (int, float)) or isinstance(p, bool) or not 0.0 <= float(p) <= 1.0:
+    if (
+        not isinstance(p, (int, float))
+        or isinstance(p, bool)
+        or not 0.0 <= float(p) <= 1.0
+    ):
         raise ValueError("quantile p must be in [0, 1]")
     values = [float(value) for value in effects]
     if any(not math.isfinite(value) for value in values):
@@ -169,12 +174,16 @@ def _correct(record: Mapping[str, Any], target: Mapping[str, Any]) -> float:
     return float(record["prediction"] == target["target_choice_id"])
 
 
-def _row_metrics(records: Sequence[Mapping[str, Any]], targets: Sequence[Target]) -> dict[str, float]:
+def _row_metrics(
+    records: Sequence[Mapping[str, Any]], targets: Sequence[Target]
+) -> dict[str, float]:
     by_pair = {int(record["pair_index"]): record for record in records}
     if set(by_pair) != set(range(EXPECTED_PAIRS)):
         raise ValueError("row scoring requires complete pair coverage")
     updates = [index for index, target in enumerate(targets) if target["update_required"]]
-    maintains = [index for index, target in enumerate(targets) if not target["update_required"]]
+    maintains = [
+        index for index, target in enumerate(targets) if not target["update_required"]
+    ]
     bu = mean(_correct(by_pair[index], targets[index]) for index in updates)
     bm = mean(_correct(by_pair[index], targets[index]) for index in maintains)
     return {
@@ -189,9 +198,11 @@ def _row_metrics(records: Sequence[Mapping[str, Any]], targets: Sequence[Target]
 
 
 def _primary_reference_delta_by_pair(
-    raw: RawBundle, targets: Sequence[Target]
+    raw: RawBundleV2, targets: Sequence[Target]
 ) -> tuple[float, ...]:
-    condition_rows: dict[tuple[str, int], dict[int, Mapping[str, Any]]] = defaultdict(dict)
+    condition_rows: dict[
+        tuple[str, int], dict[int, Mapping[str, Any]]
+    ] = defaultdict(dict)
     for record in raw.records:
         condition_id = _condition_id(record)
         if condition_id not in {PRIMARY_CONDITION, REFERENCE_CONDITION}:
@@ -242,13 +253,17 @@ def _effect_from_indices(
     return ((update_sum / update_n) + (maintain_sum / maintain_n)) / 2.0
 
 
-def paired_breu_bootstrap(raw: RawBundle, targets: Sequence[Target]) -> dict[str, Any]:
+def paired_breu_bootstrap(
+    raw: RawBundleV2, targets: Sequence[Target]
+) -> dict[str, Any]:
     deltas = _primary_reference_delta_by_pair(raw, targets)
     observed = _effect_from_indices(deltas, targets, tuple(range(EXPECTED_PAIRS)))
     rng = random.Random(BOOTSTRAP_SEED)
     effects: list[float] = []
     for _ in range(BOOTSTRAP_RESAMPLES):
-        sampled = tuple(rng.randrange(EXPECTED_PAIRS) for _ in range(BOOTSTRAP_DRAWS_PER_RESAMPLE))
+        sampled = tuple(
+            rng.randrange(EXPECTED_PAIRS) for _ in range(BOOTSTRAP_DRAWS_PER_RESAMPLE)
+        )
         effects.append(_effect_from_indices(deltas, targets, sampled))
 
     lower = linear_quantile_10k(effects, BOOTSTRAP_LOWER_P)
@@ -265,7 +280,9 @@ def paired_breu_bootstrap(raw: RawBundle, targets: Sequence[Target]) -> dict[str
         "bootstrap_seed": BOOTSTRAP_SEED,
         "draws_per_resample": BOOTSTRAP_DRAWS_PER_RESAMPLE,
         "shared_resample_indices_across_all_five_seeds": True,
-        "seed_aggregation": "recompute per-seed BU_Acc/BM_Acc/BREU then mean the five seed BREU values",
+        "seed_aggregation": (
+            "recompute per-seed BU_Acc/BM_Acc/BREU then mean the five seed BREU values"
+        ),
         "primary_contrast": "primary_condition_minus_reference_condition",
         "observed_effect": observed,
         "confidence_interval": {"level": 0.95, "lower": lower, "upper": upper},
@@ -274,7 +291,7 @@ def paired_breu_bootstrap(raw: RawBundle, targets: Sequence[Target]) -> dict[str
 
 
 def score_official_v2(
-    raw: RawBundle,
+    raw: RawBundleV2,
     evaluator_targets: Sequence[Mapping[str, Any]],
     *,
     enforce_official_runtime: bool = True,
@@ -299,8 +316,13 @@ def score_official_v2(
             "row_id": record["row_id"],
             "seed": record["seed"],
             "pair_index": record["pair_index"],
-            "correct": bool(record["prediction"] == targets[int(record["pair_index"])]["target_choice_id"]),
-            "update_required": bool(targets[int(record["pair_index"])]["update_required"]),
+            "correct": bool(
+                record["prediction"]
+                == targets[int(record["pair_index"])]["target_choice_id"]
+            ),
+            "update_required": bool(
+                targets[int(record["pair_index"])]["update_required"]
+            ),
         }
         for record in raw.records
     ]
@@ -314,7 +336,10 @@ def score_official_v2(
         "paired_statistics": paired,
         "baseline_matching": {
             "winner_claim_allowed": False,
-            "reason": "parameter/compute matching remains unasserted; baseline rows are descriptive",
+            "reason": (
+                "parameter/compute matching remains unasserted; "
+                "baseline rows are descriptive"
+            ),
         },
         "failure_examples": failures,
         "report": {
