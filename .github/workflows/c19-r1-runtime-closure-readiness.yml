@@ -1,0 +1,168 @@
+name: C19-R1 identity-free runtime closure readiness
+
+on:
+  push:
+    branches:
+      - "research/readiness-c19-r1-runtime-closure-20260918"
+    paths:
+      - ".github/workflows/c19-r1-runtime-closure-readiness.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  runtime-closure:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Checkout identity-free readiness branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up exact inherited R1 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11.16"
+          cache: pip
+
+      - name: Verify readiness-only provenance and inherited dependency declaration
+        run: |
+          set -euo pipefail
+          test "${GITHUB_REF_NAME}" = 'research/readiness-c19-r1-runtime-closure-20260918'
+          git merge-base --is-ancestor 7197ab0f9683616858859446ae9eed7b75707f25 HEAD
+          test "$(python -c 'import platform; print(platform.python_version())')" = '3.11.16'
+          python - <<'PY'
+          import tomllib
+          from pathlib import Path
+          value = tomllib.loads(Path('pyproject.toml').read_text(encoding='utf-8'))
+          learned = value['project']['optional-dependencies']['learned']
+          assert learned == ['numpy>=2.0', 'torch==2.13.0'], learned
+          print('inherited learned dependency contract:', learned)
+          PY
+
+      - name: Reproduce the pre-existing base-install admission gap without official data
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install -e .
+          set +e
+          python - <<'PY'
+          import runpy
+          runpy.run_path('scripts/run_c19_r1_official.py', run_name='c19_r1_runtime_import_probe')
+          PY
+          rc=$?
+          set -e
+          if [ "${rc}" -eq 0 ]; then
+            echo 'base install unexpectedly imported the production R1 runner; forensic gap no longer reproduces' >&2
+            exit 1
+          fi
+          echo 'base-install production import fails as expected from the consumed R1 forensic basis'
+
+      - name: Install the already-declared learned runtime contract
+        run: |
+          set -euo pipefail
+          python -m pip install -e ".[learned]"
+          python - <<'PY'
+          import numpy
+          import torch
+          assert torch.__version__.split('+', 1)[0] == '2.13.0', torch.__version__
+          print('torch', torch.__version__)
+          print('numpy', numpy.__version__)
+          PY
+
+      - name: Network-blocked production import smoke through the previously failing path
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import runpy
+          import socket
+          from unittest.mock import patch
+
+          def blocked(*args, **kwargs):
+              raise RuntimeError('network disabled by C19-R1 readiness smoke')
+
+          with patch.object(socket, 'create_connection', blocked), patch.object(socket.socket, 'connect', blocked):
+              namespace = runpy.run_path(
+                  'scripts/run_c19_r1_official.py',
+                  run_name='c19_r1_runtime_import_probe',
+              )
+          assert 'acquire_raw' in namespace
+          assert 'score_preserved' in namespace
+          print('network-blocked production R1 runner import succeeded')
+          PY
+
+      - name: Synthetic target-blind full-inventory smoke under the same environment
+        run: |
+          set -euo pipefail
+          python scripts/check_c19_r1_prestart.py | tee "${RUNNER_TEMP}/r1-prestart.json"
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          value = json.loads(Path(os.environ['RUNNER_TEMP'], 'r1-prestart.json').read_text())
+          assert value['official_data_accessed'] is False
+          assert value['official_execution_allowed'] is False
+          assert value['status'] == 'R1_PRE_START_READY_FOR_ANALYST_REVIEW'
+          assert value['synthetic_atomic_idx_source_map_sha256'] == '1eb547f6505dc5e86bcdbac7efe72c5c80e22b6614dc6a08af7089bb942da2a9'
+          assert value['synthetic_raw_sha256'] == '23a8389d7304568c2ff50e868e34e69256ab60f122bc37c826e915b576a55406'
+          assert value['synthetic_records'] == 8720
+          print('synthetic fixture digests unchanged')
+          PY
+
+      - name: Emit identity-free runtime closure manifest
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib
+          import json
+          import os
+          import platform
+          import subprocess
+          from pathlib import Path
+          import numpy
+          import torch
+
+          prestart = json.loads(Path(os.environ['RUNNER_TEMP'], 'r1-prestart.json').read_text())
+          manifest = {
+              'schema_version': '1',
+              'status': 'IDENTITY_FREE_RUNTIME_CLOSURE_READINESS',
+              'scientific_execution_allowed': False,
+              'formal_identity': None,
+              'official_data_accessed': False,
+              'forensic_basis_commit': '7197ab0f9683616858859446ae9eed7b75707f25',
+              'evidence_analyst_commit': 'fc59c9de3ab29507901cadfea800565271ab5edb',
+              'readiness_commit': subprocess.run(
+                  ['git', 'rev-parse', 'HEAD'], check=True, capture_output=True, text=True
+              ).stdout.strip(),
+              'runner': 'ubuntu-24.04',
+              'python_implementation': platform.python_implementation(),
+              'python_version': platform.python_version(),
+              'install_command': 'python -m pip install -e .[learned]',
+              'declared_dependencies': ['numpy>=2.0', 'torch==2.13.0'],
+              'resolved_torch_version': torch.__version__,
+              'resolved_numpy_version': numpy.__version__,
+              'production_import_path': 'scripts/run_c19_r1_official.py',
+              'network_blocked_import_smoke': 'PASS',
+              'synthetic_raw_sha256': prestart['synthetic_raw_sha256'],
+              'synthetic_atomic_idx_source_map_sha256': prestart['synthetic_atomic_idx_source_map_sha256'],
+              'synthetic_records': prestart['synthetic_records'],
+              'consumed_identity_not_retried': 'c19-r1-revision-authority-official-v1',
+              'next_authority': 'STOP_FOR_FRESH_EVIDENCE_ANALYST_DECISION',
+          }
+          payload = json.dumps(manifest, indent=2, sort_keys=True, ensure_ascii=False) + '\n'
+          path = Path(os.environ['RUNNER_TEMP'], 'c19-r1-runtime-closure-manifest.json')
+          path.write_text(payload, encoding='utf-8')
+          print(payload)
+          print('manifest_sha256=' + hashlib.sha256(payload.encode('utf-8')).hexdigest())
+          PY
+
+      - name: Upload non-scientific readiness manifest
+        uses: actions/upload-artifact@v4
+        with:
+          name: c19-r1-runtime-closure-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/c19-r1-runtime-closure-manifest.json
+            ${{ runner.temp }}/r1-prestart.json
+          if-no-files-found: error
+          retention-days: 30
