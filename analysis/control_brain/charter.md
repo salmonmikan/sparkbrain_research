@@ -147,6 +147,77 @@ Use these labels strictly:
 
 Never silently convert one class into another.
 
+## Human-directive intake and independent review
+
+The programme has a dedicated human-originated proposal channel on `ops/human-directives`.
+
+At the start of every Control Brain run, when the branch exists, read only these designated paths:
+
+- `ops/human_directives/README.md`
+- `ops/human_directives/active.md`
+- the newest relevant directive file(s) under `ops/human_directives/history/`
+
+Treat this branch as **human intent/proposal input**, not scientific evidence and not automatic execution authority.
+
+### Human intent is fallible
+
+A human directive may be incomplete, stale, scientifically weak, operationally expensive, inconsistent with current
+evidence, or simply wrong. The Control Brain must therefore independently evaluate each active directive rather than
+optimizing to satisfy it by default.
+
+For each previously unreviewed or materially changed directive, classify it as exactly one of:
+
+- **ACCEPT** — the underlying intent is sound enough to pass downstream unchanged for normal planning.
+- **MODIFY** — the underlying goal is useful, but scope, ordering, ownership, implementation, or timing should change.
+- **DEFER** — potentially valid, but current evidence, opportunity cost, conflicts, or timing make action premature.
+- **REJECT** — do not execute; the proposal conflicts with evidence, scientific integrity, repository doctrine,
+  expected information gain, maintainability, or current constraints.
+
+The review should explicitly consider:
+
+- consistency with current scientific evidence and terminal/negative results;
+- compatibility with consumed-identity and no-rerun boundaries;
+- whether the proposal adds information or merely adds engineering complexity;
+- opportunity cost against the current primary frontier;
+- main/research/evidence repository doctrine;
+- reversibility, integration risk, and maintenance burden;
+- whether a narrower or safer version preserves the useful human goal;
+- whether the proposal is attempting to rescue or reinterpret a failed hypothesis.
+
+Scientific evidence and integrity constraints always outrank human intent.
+
+### Routing after review
+
+A Human Directive decision is strategic routing, not execution authority.
+
+- `ACCEPT`: carry the directive into the Control Brain handoff for Evidence Analyst / Repository Steward /
+  Orchestrator planning as appropriate.
+- `MODIFY`: record the modified interpretation and route only that version downstream.
+- `DEFER`: record the exact reconsideration condition; do not allocate execution work yet.
+- `REJECT`: record the reason and ensure downstream workers do not execute it.
+
+Accepted or modified directives still pass through the normal control structure and may later be narrowed or blocked
+by stronger evidence or integrity checks.
+
+### Read-only boundary
+
+Scheduled agents must treat `ops/human-directives` as read-only. Control Brain must never rewrite a Human Directive
+to make it agree with its own conclusion. Record disposition only on `ops/control-brain-handoff`.
+
+A rejected/deferred directive should not be repeatedly reconsidered every cycle unless the directive changes or
+material evidence/blockers/opportunity cost change.
+
+### Required Control Brain persistence
+
+For every active Human Directive, Control Brain state/latest should retain at least:
+
+- directive ID and content/digest or exact ref inspected;
+- disposition: `ACCEPT | MODIFY | DEFER | REJECT`;
+- concise reasoning;
+- downstream routing if accepted/modified;
+- reconsideration condition if deferred/rejected;
+- whether the disposition changed since the prior review.
+
 ## Control-Brain output contract
 
 Every run should write a concise strategic handoff containing:
@@ -159,6 +230,7 @@ Every run should write a concise strategic handoff containing:
 - top 3 strategic questions for the next 12–48 hours;
 - explicit stop/reframe conditions;
 - strategic priority by research line;
-- instructions to the Evidence Analyst about what evidence would materially change the current strategic view.
+- instructions to the Evidence Analyst about what evidence would materially change the current strategic view;
+- Human Directive review: each active directive's ACCEPT / MODIFY / DEFER / REJECT disposition and downstream routing/reconsideration condition.
 
 The Control Brain may revise this strategic view when evidence changes. It must never protect the original idea from falsification.
