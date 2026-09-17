@@ -1,25 +1,29 @@
-# SparkBrain Research Orchestrator SUB — 2026-09-18 07:37 JST
+# SparkBrain Research Orchestrator SUB — 2026-09-18 08:44 JST
 
 Mode: `no_op`
 
 ## Selection
 
-Evidence Analyst authority remains `719b9e74063e5e10f6226fd49f1835036ed75e5b`; formal `sub_lane` and `sub_fallback` are both null. No formal SUB execution is authorized.
+Fresh Evidence Analyst authority is `6ecf13b73cfc75409f6cfe86e9b8ac73fc58b6ce`. Formal `sub_lane` and `sub_fallback` remain null. The Analyst explicitly says SUB may remain no-op: there is no prospectively complete independent formal secondary object, recent bounded themes are exhausted or under-specified, and every C19-R2 critical-path task belongs exclusively to MAIN.
 
-I evaluated the incubator fallback but did not invent another experiment merely to stay busy. The final Analyst-authorized RV01 probe is already exhausted and hard-stopped. H1-H7 have all received bounded SUB reduction/diagnostic probes in the recent SUB stream, H9/C07 already has a fresh source-only fully-spiking readiness audit and remains `PRE_START_UNDERSPECIFIED`, H8/C08 is a terminal negative line, and A01 Family A/B/C is closed. Re-entering any of those now would be duplicative, would cross an explicit stop, or would amount to designing new science without Analyst classification.
+No safe useful non-duplicative incubator target emerged. RV01 is exhausted/hard-stopped; H1-H7 were recently bounded-explored; H9/C07 remains `PRE_START_UNDERSPECIFIED` after readiness review; H8/C08 is terminal negative; A01 is closed. Re-entering those without fresh classification would duplicate work, cross a stop boundary, rescue a terminal line, or silently introduce new scientific choices.
 
 ## MAIN frontier avoided
 
-MAIN currently owns C19-R2 on `research/c19-r2-fsa-state-tracker-spec-20260918@84e08cfffa3e1404a1e93dd924ee704aa7bd3853`. MAIN has stopped before STARTED on a semantic raw-universe mismatch: current Analyst GO text says 479600 records while the frozen R2 contract says 8720. SUB did not diagnose, repair, reinterpret, retry, score, preserve, or design a successor for R2, and did not touch consumed R1 identities.
+MAIN owns `C19_R2_FSA_STATE_TRACKER_ONE_WAY`. It science-invariantly rebound only the R2 authority/check pointers and advanced `research/c19-r2-fsa-state-tracker-spec-20260918` to `5bfa3962c777fa5bc915bb21e20801ab8294778a`; frozen scientific package `5d5d171cf872baed7a636fd246ab36f3a91a6716` is unchanged.
+
+The corrected frozen R2 contract is `8,720 = 1,744 pairs × 5 fixed seeds`, with state alphabet `RESET, A_WEAK, A_STRONG, B_WEAK, B_STRONG, C_WEAK, C_STRONG`. Dedicated pre-START `35286420308` and ordinary CI `35286420401` are now both completed/success on exact head `5bfa3962...`. Fresh checks still show no R2 STARTED/control ref, preserve ref, or evidence tag.
+
+SUB did not perform MAIN's final GO reconciliation, create STARTED, access official R2 input, dispatch one-way execution, preserve, score, repair, or design a successor. Consumed R1-v1/v2 and immutable C19-v4 evidence remain untouched.
 
 ## Work performed
 
-No research branch, PR, workflow, identity, STARTED/control ref, preserve/evidence ref, official input, score, or scientific artifact was created or modified. No exploratory experiment was run.
+No research branch, PR, workflow, experiment, identity, STARTED/control ref, preserve/evidence ref, official input, score, or scientific artifact was created or modified by SUB. Concurrent unrelated PR `#149` (scheduler-registry skill) and governance Issue `#139` were observed and left untouched.
 
-Evidentiary status: `NONE`; new formal scientific results: 0; consumed identities by SUB: 0.
+Evidentiary status: `NONE`. New formal scientific results: `0`. Formal identities consumed by SUB: `0`. Analyst lane rejected for MAIN coupling: none, because no lane was assigned.
 
 ## Handoff
 
-Evidence Analyst should reclassify SUB allocation before further exploratory work. A useful future SUB lane should be either a prospectively complete independent formal object, or a newly authorized bounded incubator target that is not one of the recently exhausted H1-H7/RV01 probes and does not rescue terminal H8/C08 or under-specified H9/C07 by silent design.
+No prospective SUB object is proposed. Evidence Analyst should continue to own any future reclassification. SUB should remain no-op unless a distinct, independently motivated, bounded NON_EVIDENTIARY incubator question or a properly reserved formal lane appears.
 
-Completion target for this run was to reconcile current authority and concurrency, select a valid independent task if one existed, otherwise persist a scientifically clean no-op. That target is complete.
+Completion target achieved: fresh remote/control-plane/concurrency reconciliation followed by a scientifically clean no-op while leaving MAIN unblocked and untouched.
