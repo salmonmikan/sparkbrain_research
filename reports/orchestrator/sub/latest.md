@@ -1,97 +1,80 @@
 # SparkBrain Research Orchestrator — SUB latest
 
-Timestamp: `2026-09-17T17:45:11+09:00`  
+Timestamp: `2026-09-17T19:42:00+09:00`  
 Worker role: `sub`  
 Mode: `exploratory_incubator`  
-Evidence Analyst authority consumed: `b9c14e9e171bf765447aa45e71b7ba75cc7ce357`
+Evidence Analyst authority consumed: `ef858fe9e6fbe9d0bdd57bc43a15e07ec0b30c23`
 
 ## Selection result
 
-Formal `sub_lane` and `sub_fallback` are both `null`. The current Evidence Analyst explicitly permits bounded NON_EVIDENTIARY synthetic/development exploration while no formal secondary object is reserved. SUB therefore selected exactly one independent incubator target: **revision-authority finite-state reduction feasibility on a synthetic assertion/retraction world**.
+Formal `sub_lane` and `sub_fallback` are both `null`. The latest Analyst explicitly **REJECTED** the previous provenance/FSA incubator object and forbids continuing that branch as standalone science. SUB therefore did not continue it. With no reserved formal lane, SUB selected exactly one different bounded NON_EVIDENTIARY target on paused H9/C07: **hidden decoder/filter state as a confound in the definition of a fully-spiking boundary**.
 
-No formal lane was rejected for critical-path coupling. No formal execution was authorized or attempted.
+No formal lane was rejected for MAIN critical-path coupling. Formal execution was not authorized or attempted.
 
 ## MAIN frontier explicitly avoided
 
-Current repository state moved beyond the Analyst snapshot while this SUB run was in progress. MAIN's C19-v3 branch is `research/c19-official-v3-runtime-closed-20260917@84b244959f249da916a36906508ead0830052e9b`, and `control/c19-official-v3-started-20260917@915b7b21abe6ef936fa18e81e4a5117712d20f28` exists. Its STARTED marker binds identity `c19-external-v2-official-v3`, protocol `c19-external-v2-official-protocol-v3`, exact package `84b244959...`, Analyst authority `b9c14e9e...`, and `no_retry: true`.
+Current primary frontier is C19 official-v4. Fresh remote state shows `research/c19-official-v4-preservation-qualified-20260917@84b244959f249da916a36906508ead0830052e9b`, created under the latest Analyst authority. MAIN owns all v4 build/admission/runtime/preservation/execution fixups. SUB did not touch C19-v4, C19-v2/v3 controls or identities, the qualified preservation mechanism, Belief-R, official inputs, or any MAIN blocker.
 
-Final post-persistence reconciliation found one-way workflow `35200352569` had moved from `in_progress` to **`completed: failure`**. The control ref was still at the original STARTED commit `915b7b21...`; SUB did not diagnose the failure, modify the control ref, retry the identity, or inspect/use any official result path. Because this is a post-START MAIN event and the STARTED marker is no-retry, all disposition/diagnostics/consumption recording belongs to MAIN and the next Analyst cycle.
-
-SUB did **not** touch the C19-v3 research branch, STARTED/control ref, one-way workflow, runtime/package/binding state, official inputs, raw/scoring/preservation path, or any current MAIN blocker. Consumed C19-v2 also remains untouched and non-retryable.
+C19-v2 and C19-v3 remain consumed/no-retry. No `control/c19-official-v4*` STARTED authority was present in the fresh control-ref inventory during this SUB run.
 
 ## Exploratory target
 
-`exploratory_target`: representation-matched explicit-state reduction feasibility for a source-revision-authority mechanism.
+`exploratory_target`: H9 fully-spiking operational-boundary sensitivity to hidden continuous decoder/filter state.
 
-`why_independent_of_main`: the probe is based on stable `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`, uses only synthetic generated events, reads no official Belief-R/C19 output, is useful regardless of C19 PASS/FAIL/INCONCLUSIVE/operational termination, and changes no MAIN branch or authority.
+`why_independent_of_main`: H9/C07 is a paused secondary line, the probe starts from stable `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`, uses only generated two-label delayed-recall data, reads no C19/Belief-R output, and is useful regardless of the C19-v4 outcome.
 
-`hypothesis_or_reduction_question`: **Can a deliberately history-sensitive source-authority assertion/retraction policy be represented exactly by a small bounded finite-state controller rather than requiring full persistent history?**
+`hypothesis_or_reduction_question`: **Can spike-valued I/O appear to preserve delayed behavior while the task-relevant memory is actually carried by hidden continuous decoder/filter state rather than non-sensory spike-mediated dynamics?**
 
-`synthetic_or_dev_inputs_used`: generated event histories over three fixed sources (`low < mid < high`), six signed assertions, three retractions and one irrelevant event. No formal/held-out/official input was accessed.
+`synthetic_or_dev_inputs_used`: 40 generated trials: labels A/B crossed with silent gaps 1–20. No historical C07 result was rerun or used for tuning; no official/sealed/formal/held-out input was accessed.
 
 ## Implementation / experiment performed
 
 Created clearly non-authoritative branch:
 
-- `research/exploratory-sub-revision-authority-fsa-20260917`
+- `research/exploratory-sub-h9-decoder-state-boundary-20260917`
 - base: `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
-- current head after lint-only repair: `a4e14a13eb4011e94cc93d07f9a13d9251bfd759`
+- exact head: `10c4122d1b0afba4fa1f6266c781d41e00f14833`
 
-SUB commits:
+Artifacts:
 
-1. `8b5dccadf90b4388a37011615f7065baaec44c0c` — add deterministic synthetic FSA probe.
-2. `2bf9a30775f2385dc0930ebc49680c3a1e22a61a` — record bounded synthetic observations in `artifacts/exploratory/sub/revision_authority_fsa_20260917/result.json`.
-3. `344323d7d6cba3190df00bef7c062beca0846d76` — document explicit EXPLORATORY / NON_EVIDENTIARY boundary and open scientific choices.
-4. `a4e14a13eb4011e94cc93d07f9a13d9251bfd759` — mechanical lint-only repair (`zip(..., strict=True)` and formatting); no exploratory semantics changed.
+- `scripts/exploratory_h9_decoder_state_boundary.py`
+- `artifacts/spiking/exploratory_h9_decoder_state_boundary/result.json`
+- `artifacts/spiking/exploratory_h9_decoder_state_boundary/README.md`
 
-The reference policy replays the full synthetic history, retains the latest active assertion per source, and emits the highest-authority active assertion. The reduction retains one ternary slot `{-1,0,+1}` per source, for at most `3^3 = 27` states. A current-event-only comparator is included as a weak sanity baseline.
+The probe compares: (1) a stateless query-time spike decoder, (2) hidden analog leaky state at fixed epsilon `0.05` across a descriptive decay grid `0.5/0.8/0.9/0.95/0.99`, and (3) a toy recurrent spike latch. The grid is sensitivity analysis only and was not selected against any formal outcome.
 
 ## Observations
 
-These observations are **NON_EVIDENTIARY** and must not be used to support a formal SparkBrain/C19 claim.
+All observations are **NON_EVIDENTIARY**.
 
-- Exhaustive histories through horizon 5: `111,111`.
-- Explicit FSA vs full-history reference: `111,111 / 111,111` exact matches (`1.0`).
-- Reachable FSA states: all `27`.
-- Current-event-only comparator exact-match rate: `61,727 / 111,111 = 0.5555435555`.
-- First simple stateless counterexample: `assert(low,-1)` followed by `retract(mid)` leaves reference/FSA output `-1`, while the current-event-only comparator outputs `0`.
-- Deterministic random checks, 20,000 histories per horizon:
-  - horizon 10: FSA `1.0`, stateless `0.492`, 27 states;
-  - horizon 25: FSA `1.0`, stateless `0.47505`, 27 states;
-  - horizon 50: FSA `1.0`, stateless `0.4759`, 27 states.
+- Stateless current-spike-only decoder: `0/40` correct.
+- Hidden analog leaky state with **zero non-sensory recurrent spikes**:
+  - decay `0.5`: `8/40`, full accuracy through gap 4;
+  - decay `0.8`: `26/40`, full accuracy through gap 13;
+  - decays `0.9`, `0.95`, `0.99`: `40/40`, full accuracy through all tested gaps 1–20.
+- Toy recurrent spike latch: `40/40`, with mean `10.5` recurrent spikes/trial and maximum `20`.
 
-Interpretation is deliberately narrow: **this constructed source-authority/retraction world compresses exactly into a tiny explicit state independent of horizon.** This makes a finite-state/state-tracker reduction technically plausible and cheap to test prospectively before attributing generic history-sensitive gains to richer persistent dynamics. It says nothing directly about C19, Belief-R, or SparkBrain.
+Narrow interpretation: **spike-valued sensory/output interfaces alone do not define a fully-spiking computational substrate if decoder/filter variables are allowed to carry task-relevant analog memory.** For a future H9 object, every persistent state variable should be inventoried and classified as spike-mediated, analog/filter, or algorithmic. This does not support H9 itself, does not show that SparkBrain needs such memory, and does not select a neuron model or formal protocol.
 
-The exploratory branch's ordinary repository CI run `35200816595` failed at `ruff` lint on both Python 3.11 and 3.13. SUB treated that as its own exploratory-branch hygiene, not MAIN work, and made the mechanical lint-only commit `a4e14a13...`. Replacement exact-head CI `35201182618` was `in_progress` at final reconciliation; no scientific workflow was dispatched.
+Ordinary repository CI was automatically triggered by the exploratory commits. At the report-writing checkpoint, the visible branch runs were still in progress; no formal/scientific workflow was dispatched by SUB.
 
 ## Incubator handoff to Evidence Analyst
 
 - `evidentiary_status`: `NON_EVIDENTIARY`
-- `what_would_falsify_or_reduce_it`: a richer prospectively defined revision task in which exact behavior cannot be represented compactly without state growth tied to history length, entity/source count, unconstrained provenance identity, or other resources; or a simpler representation-matched comparator that dominates the FSA construction.
-- `candidate_formal_question`: whether a prospectively fixed, resource-matched explicit authority/provenance state tracker accounts for history-sensitive revision behavior under controlled state-count, transition-sparsity and horizon scaling.
-- `suggested_prospective_object`: none yet. The exploratory construction is too definition-dependent to freeze directly.
-- `new_scientific_choices_required_before_formalization`: event ontology; authority relation; same-rank conflicts; source/provenance multiplicity; confidence/contradiction/retraction semantics; state/resource matching; strong non-FSA and representation-matched shallow comparators; held-out task family; state-count/transition-sparsity/horizon scaling; success/failure thresholds; exact source/package/runtime/input bindings and integrity gates.
-- `promotion_recommendation`: **`CONTINUE_EXPLORING`**, not FORMALIZE. A useful next bounded probe, only if a later Analyst cycle still leaves SUB in incubator mode, is conflicting same-rank sources plus provenance-sensitive retractions to test whether exact state remains compact or grows sharply.
+- `what_would_falsify_or_reduce_it`: the concern is reduced by a prospectively specified successor that forbids task-relevant hidden continuous/algorithmic memory outside the declared spiking substrate, or demonstrates such state is task-irrelevant under a fixed state-inventory/ablation rule.
+- `candidate_formal_question`: after a fresh prospective definition, does a declared spike-mediated non-sensory substrate preserve fixed H9 behavioral invariants when task-relevant hidden continuous/algorithmic state outside that substrate is prohibited or explicitly resource-matched?
+- `suggested_prospective_object`: none yet; this probe only narrows specification pressure.
+- `new_scientific_choices_required_before_formalization`: exact fully-spiking component boundary; allowed decoder/filter state and state-inventory rule; non-sensory neuron/synapse model; representation/decoder mapping; comparator/claim; parameter/training budget; tolerance authority; exact runtime/seeds/determinism; fresh protocol/package/identity/integrity gates.
+- `promotion_recommendation`: **`CONTINUE_EXPLORING`**, not FORMALIZE. A future bounded H9 incubator could test whether a simple state-inventory/ablation criterion cleanly separates spike-mediated memory from hidden analog state, but only after Analyst review of this probe.
 
 ## Formal work / integrity status
 
-Formal SUB work: none.  
-Formal workflow/experiment dispatches: `0`.  
-STARTED/control creation by SUB: `0`.  
-Official-data access: `0`.  
-Formal acquisition/scoring/preservation: `0`.  
-New formal scientific result: **none**.  
-New identities consumed by SUB: **none**.  
-PRs opened/merged: `0`.
+Formal SUB work: none. Formal workflow/experiment dispatches: `0`. STARTED/control creation: `0`. Official-data access: `0`. Formal acquisition/scoring/preservation: `0`. New formal scientific result: **none**. New identities consumed by SUB: **none**. PRs opened/merged: `0`.
 
-Fresh repository reconciliation found open PR count `0`, open Issues `#139` and `#147`, 13 legacy `freeze/*` branches and 19 `preserve/*` branches. SUB created no freeze/sealed/formal/evidence/control authority and mutated none of those historical refs.
-
-The current Analyst snapshot is stale on MAIN phase because C19-v3 crossed STARTED after it was written, but that does not invalidate the independent incubator permission: this probe neither helps nor blocks the current C19 execution. If the exploratory idea were ever needed by the active MAIN object, SUB must stop rather than integrate it there.
+Fresh repository checks found open PR count `0`, open Issues `#139/#147`, stable `main@ebed6ab...`, existing consumed v2/v3 control refs, and active v4 pre-start branch. SUB created no freeze/sealed/formal/evidence/control authority and mutated no historical evidence.
 
 ## Blockers / completion target
 
-Formal SUB remains blocked by absence of a reserved independent formal lane/fallback. There is no blocker to preserving this completed exploratory probe.
+Formal SUB remains blocked by absence of a reserved independent formal lane/fallback. The prior provenance/FSA branch is additionally blocked from continuation by explicit Analyst `REJECT` classification.
 
-Completion target is reached for this run: one bounded independent NON_EVIDENTIARY probe was created, executed on synthetic data, explicitly bounded, and prepared for Analyst accept/reject/continue review. SUB stops here rather than expanding the synthetic world in the same run.
-
-Next SUB action is to wait for the next Evidence Analyst classification. Do not formalize this exploratory branch/result directly; do not touch C19-v3 or its failed post-START run; do not consume any identity. If incubator permission remains and no formal lane exists, only then consider one further bounded synthetic stress test from a fresh non-evidentiary boundary.
+Completion target is reached: one different bounded H9 synthetic diagnostic was implemented, executed, labeled NON_EVIDENTIARY, and packaged for Analyst accept/reject/continue review without entering MAIN or formal authority. SUB stops here rather than expanding H9 choices in the same run.
