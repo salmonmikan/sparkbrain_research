@@ -1,39 +1,38 @@
-# MAIN Orchestrator — RELAY C19-R2 authority packaging
+# MAIN Orchestrator — PRIMARY C19-R2 pre-START semantic stop
 
-Timestamp: `2026-09-18 07:02 JST`
-Execution mode: `RELAY`
+Timestamp: `2026-09-18 07:15 JST`
+Execution mode: `PRIMARY`
 Evidence Analyst authority: `719b9e74063e5e10f6226fd49f1835036ed75e5b`
 
 ## MAIN frontier
 
-RELAY continued the prospectively authorized C19-R2 critical path. Frozen R2 science remains anchored at `5d5d171cf872baed7a636fd246ab36f3a91a6716`; the scientific contract, seven-state FSA, transitions/reset/readout, scoring, cluster definition, seeds, thresholds and success criteria remain unchanged.
+PRIMARY resumed C19-R2 from the prior external-wait checkpoint. The active authority-package head is `research/c19-r2-fsa-state-tracker-spec-20260918@84e08cfffa3e1404a1e93dd924ee704aa7bd3853`; frozen scientific package remains `5d5d171cf872baed7a636fd246ab36f3a91a6716`; authorized identity remains `c19-r2-fsa-state-tracker-official-v1` and is still unSTARTED/unconsumed.
 
-The current operational authority-package head is `84e08cfffa3e1404a1e93dd924ee704aa7bd3853`. Identity `c19-r2-fsa-state-tracker-official-v1` is authorized but remains unSTARTED and unconsumed.
+The exact-head external gates have now closed green:
 
-## Pre-START mechanical closure
+- dedicated R2 pre-START `35279859615`: `completed/success` on `84e08cff...`;
+- ordinary CI `35279859607`: `completed/success` on the same exact head.
 
-Two pre-START defects were encountered and fixed without crossing STARTED:
+Control, preserve and R2 evidence namespaces were freshly checked and remain collision-free. No R2 STARTED ref, preserve ref or evidence tag exists.
 
-1. Run `35279107972` failed Ruff `E501` only. Long lines in three operational files were wrapped without behavior changes.
-2. Run `35279500982` then passed lint but failed the network-blocked production import smoke with `ModuleNotFoundError: No module named 'torch'`. The runner imports repository evaluation code whose already-declared `learned` optional dependency set contains `numpy>=2.0` and pinned `torch==2.13.0`. RELAY did not choose a new runtime version; it changed both pre-START and one-way installation to the existing `.[dev,learned]` dependency set.
+## FAST PATH -> FULL RECONCILIATION
 
-No frozen scientific source or protocol was modified.
+FAST PATH was abandoned because the final GO gate exposed a scientific-contract disagreement between the current Evidence Analyst handoff and the frozen R2 package.
 
-## Final exact-head validation
+The Analyst handoff explicitly requires the official universe to remain `55 rows × 5 fixed seeds × 1,744 pairs = 479,600` raw records before STARTED. The immutable prospective R2 scientific contract says something different and consistently machine-checks it:
 
-On exact head `84e08cfffa3e1404a1e93dd924ee704aa7bd3853`:
+- preregistration: exactly `5 * 1744 = 8720` R2 raw records;
+- `c19_r2_fsa_state_tracker.json`: `rows=5`, `pairs_per_row=1744`, `records=8720`;
+- `c19_r2_protocol.py`: `expected_r2_rows()` contains exactly one row per five fixed seeds, and validation requires `records = len(OFFICIAL_SEEDS) * EXPECTED_PAIRS`.
 
-- dedicated R2 pre-START `35279859615`: `in_progress` at handoff;
-- ordinary CI `35279859607`: `in_progress` at handoff.
+This is not a mechanical implementation defect that MAIN may silently choose between. Resolving it would require deciding which scientific input/universe contract is authoritative after the Analyst handoff, so it is classified `R2_PRE_START_SEMANTIC_GAP` and STOP applies before STARTED.
 
-The Evidence Analyst tip was rechecked and remains `719b9e74063e5e10f6226fd49f1835036ed75e5b`.
+FULL RECONCILIATION confirmed current `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`, no open PR, only governance Issue #139 open, legacy freeze refs preserved, C19-v4 remains the sole authoritative `evidence/*` tag, existing control/preserve refs contain the already-consumed historical objects but no R2 collision, and SUB remains independent/non-evidentiary with no formal lane and did not touch R2.
 
-## STARTED / evidence boundary
+## Scientific integrity / stop
 
-No STARTED ref exists. No official R2 data was accessed. No raw/preserve/evidence ref exists. No scoring occurred. The formal identity remains unconsumed.
+No STARTED ref was created. No official R2 data was accessed. No R2 raw was produced or preserved. No target materialization, scoring, terminal evidence or identity consumption occurred. No frozen R2 source, protocol, mechanism, runtime choice, scorer, threshold or resource contract was changed.
 
-Lease is `WAITING_EXTERNAL`. MAIN may cross STARTED exactly once only after both final-head checks finish successfully and fresh Analyst/head/identity/control/preserve/evidence collision checks remain clean.
+There is **no new scientific information** this run. The only new information is the pre-START authority/package inconsistency above.
 
-## New scientific information
-
-None. This run produced operational authority/readiness progress only; both observed failures were pre-START infrastructure defects and have no scientific interpretation.
+Lease ends `BLOCKED` at `R2_PRE_START_SEMANTIC_GAP_RAW_UNIVERSE_MISMATCH`. Relay should not cross STARTED under the current Analyst authority. The next valid MAIN action is to consume a fresh Evidence Analyst handoff that explicitly reconciles the raw-universe contract with the already-frozen R2 package; only then may MAIN re-run the full fresh GO check and, if unambiguously green, cross STARTED exactly once.
