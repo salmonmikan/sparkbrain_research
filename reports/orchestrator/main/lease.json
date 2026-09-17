@@ -1,14 +1,14 @@
 {
-  "run_id": "primary-20260918T0018JST",
+  "run_id": "primary-20260918T0115JST",
   "execution_mode": "PRIMARY",
-  "status": "BLOCKED",
-  "started_at": "2026-09-18T00:18:00+09:00",
-  "heartbeat_at": "2026-09-18T00:38:00+09:00",
-  "analyst_commit": "f2342817193f4e3a191bb05921db5598ee3cd10c",
+  "status": "RUNNING",
+  "started_at": "2026-09-18T01:15:33+09:00",
+  "heartbeat_at": "2026-09-18T01:19:00+09:00",
+  "analyst_commit": "42836802e78abd26d19c5b8a789411f2b03d0ea1",
   "active_branch": "research/c19-r1-revision-authority-reduction-20260917",
   "active_identity": "c19-r1-revision-authority-official-v1",
-  "active_step": "R1_PRE_START_READY_FOR_ANALYST_REVIEW",
+  "active_step": "R1_PRE_START_AUTHORITY_PACKAGING",
   "workflow_run_id": null,
-  "expected_next_action": "Wait for a fresh Evidence Analyst handoff. Under f2342817193f4e3a191bb05921db5598ee3cd10c do not create STARTED or dispatch one-way execution. If a newer Analyst explicitly authorizes execution, first re-fetch exact R1 head 7cf849051a68b4227e29fe2f6ee95b2ff277dacd, identity freshness, bindings, namespaces, CI/review and lease/collision state.",
+  "expected_next_action": "Mechanically add science-invariant R1 execution-authority/admission wrapper, re-establish ordinary CI and dedicated pre-START green on the same final SHA, then fresh-recheck authority, namespace collisions, identity freshness and all bindings before exactly one authorized one-way execution.",
   "owner": "main"
 }
