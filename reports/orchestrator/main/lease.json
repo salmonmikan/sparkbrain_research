@@ -1,14 +1,14 @@
 {
   "run_id": "primary-20260918T0312JST",
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "WAITING_EXTERNAL",
   "started_at": "2026-09-18T03:12:21+09:00",
-  "heartbeat_at": "2026-09-18T03:12:21+09:00",
+  "heartbeat_at": "2026-09-18T03:20:00+09:00",
   "analyst_commit": "966018058f296098805982a8d206102741c3842c",
   "active_branch": "research/c19-r1-revision-authority-runtime-closed-v2-20260918",
   "active_identity": "c19-r1-revision-authority-official-v2",
-  "active_step": "R1_V2_PRE_START_BUILD",
-  "workflow_run_id": null,
-  "expected_next_action": "Create the fresh successor-v2 branch from exact consumed-v1 package basis 7197ab0f9683616858859446ae9eed7b75707f25, preserve the scientific contract unchanged, bind the already-qualified CPython 3.11.16 learned runtime closure prospectively, and run exact-head pre-START/CI gates. Do not touch consumed v1 or immutable v4 evidence.",
+  "active_step": "R1_V2_PRE_START_GATES_RUNNING",
+  "workflow_run_id": 35258035210,
+  "expected_next_action": "Collect dedicated successor-v2 pre-START 35258035210 and ordinary CI 35258035223 for exact package head a23975c5713347eaa459161f538a8f0c3db6152e. If either fails mechanically, MAIN owns science-invariant repair and must rerun both required gates on the new exact final SHA. If both pass, re-fetch Analyst 966018058f296098805982a8d206102741c3842c, exact package head, fresh identity, frozen science/runtime bindings, and exact control/preserve/evidence namespaces. If all remain clean, the prospectively fixed R1_V2_PRE_START_READY branch permits creation of control/c19-r1-revision-authority-started-v2-20260918 with fresh identity c19-r1-revision-authority-official-v2 and continuation through exactly one one-way execution. Never retry consumed v1; a post-START infrastructure/runtime failure consumes v2 and terminates R1 with no automatic v3.",
   "owner": "main"
 }
