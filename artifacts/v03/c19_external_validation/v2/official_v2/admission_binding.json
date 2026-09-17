@@ -45,18 +45,35 @@
       "path": "src/sparkbrain/v03_external_validation/implementation_binding.py",
       "git_blob_sha1": "223642c732563549cecd9fc977504b5db76c5557"
     },
-    "inherited_raw_writer_and_reconstructor": {
-      "path": "src/sparkbrain/v03_external_validation/official_execution.py",
-      "git_blob_sha1": "e8f40f0b532d8a65f11c14446e306d3df37501ad",
-      "raw_writer": "write_raw_jsonl_no_clobber",
-      "reconstructor": "reconstruct_raw_jsonl"
+    "target_blind_io_bridge": {
+      "path": "src/sparkbrain/v03_external_validation/official_io_v2.py",
+      "git_blob_sha1": "4991f765341432726dc573f1cf38a68b9a073687",
+      "final_source_index": 1,
+      "final_step_index": 1,
+      "target_materialization": "after immutable raw preservation only"
+    },
+    "v2_raw_writer_and_reconstructor": {
+      "path": "src/sparkbrain/v03_external_validation/official_execution_v2.py",
+      "git_blob_sha1": "4e2389512dca649698a1cfdbdc822e406e685e17",
+      "raw_writer": "write_raw_jsonl_no_clobber_v2",
+      "reconstructor": "reconstruct_raw_jsonl_v2"
     }
   },
   "runtime_binding": {
     "python_implementation": "CPython",
     "python_version": "3.11.16",
     "network_allowed_during_model_execution": false,
-    "official_fit_tune_select_allowed": false
+    "official_fit_tune_select_allowed": false,
+    "two_phase_runner": {
+      "path": "scripts/run_c19_official_v2.py",
+      "git_blob_sha1": "1a952b6845e7e358faaca0a4c9b45b34dbb27f69"
+    },
+    "one_way_workflow": {
+      "path": ".github/workflows/c19-official-v2-one-way.yml",
+      "git_blob_sha1": "7787dd0125f7e68f68711812fb716ae3f5de733e",
+      "trigger": "push of STARTED.json under control/c19-official-v2-started-*",
+      "rerun_allowed": false
+    }
   },
   "immutable_raw_preservation_binding": {
     "authority_type": "git_commit_object",
@@ -83,6 +100,13 @@
     "force_update_forbidden": true,
     "same_identity_retry_after_started": false
   },
+  "terminal_evidence_binding": {
+    "authority_type": "annotated_git_tag",
+    "tag": "evidence/c19-official-v2-c19-external-v2-official-v2",
+    "tag_must_not_exist_before_started": true,
+    "result_artifacts_sanitized_only": true,
+    "official_text_committed": false
+  },
   "execution_order": [
     "fresh authority and collision reconciliation",
     "create STARTED bound to exact package commit",
@@ -94,7 +118,7 @@
     "re-fetch and reconstruct raw from exact preservation commit SHA",
     "materialize evaluator targets after immutable raw preservation",
     "score only reconstructed preserved raw plus evaluator targets",
-    "persist terminal evidence"
+    "persist terminal evidence under the bound annotated tag"
   ],
   "integrity": {
     "started_created": false,
