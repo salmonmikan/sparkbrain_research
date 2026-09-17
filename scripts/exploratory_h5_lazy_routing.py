@@ -106,7 +106,10 @@ def run_scenario(
         if touched_at >= 0 and touched_at < horizon - 1:
             lazy[index] *= DECAY ** ((horizon - 1) - touched_at)
 
-    max_error = max(abs(dense_value - lazy_value) for dense_value, lazy_value in zip(dense, lazy))
+    max_error = max(
+        abs(dense_value - lazy_value)
+        for dense_value, lazy_value in zip(dense, lazy, strict=True)
+    )
     dense_work, lazy_work, ratio, break_even_extra = accounting_only(
         n_nodes,
         activity_rate,
@@ -135,7 +138,9 @@ def build_report() -> dict[str, object]:
     ]
     return {
         "status": "EXPLORATORY_NON_EVIDENTIARY",
-        "hypothesis": "H5 lazy decay/event routing can reduce audited algorithmic work in sparse regimes",
+        "hypothesis": (
+            "H5 lazy decay/event routing can reduce audited algorithmic work in sparse regimes"
+        ),
         "decay": DECAY,
         "horizon": DEFAULT_HORIZON,
         "out_degree": DEFAULT_DEGREE,
