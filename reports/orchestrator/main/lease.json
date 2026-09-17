@@ -1,14 +1,15 @@
 {
-  "run_id": "primary-20260917T2113JST",
-  "execution_mode": "PRIMARY",
-  "status": "WAITING_EXTERNAL",
-  "started_at": "2026-09-17T21:13:10+09:00",
-  "heartbeat_at": "2026-09-17T21:34:00+09:00",
+  "run_id": "relay-20260917T2145JST",
+  "execution_mode": "RELAY",
+  "status": "BLOCKED",
+  "started_at": "2026-09-17T21:45:00+09:00",
+  "heartbeat_at": "2026-09-17T21:45:00+09:00",
   "analyst_commit": "9f88fba973f54bc6608d183aacfaccd7952a229f",
   "active_branch": "research/c19-r1-revision-authority-reduction-20260917",
   "active_identity": "c19-r1-revision-authority-official-v1",
-  "active_step": "R1_PRE_START_EXACT_HEAD_CHECKS",
+  "active_step": "R1_PRE_START_READY_FOR_ANALYST_REVIEW",
   "workflow_run_id": 35221764005,
-  "expected_next_action": "Re-fetch exact R1 head c23736b63e6100bcdc38e7f11d94c782eb6273dc and collect dedicated pre-START run 35221764005 plus ordinary CI run 35221764016. Fix only science-invariant blockers. If both exact-head checks are green and integrity remains clean, STOP at R1_PRE_START_READY_FOR_ANALYST_REVIEW and return to Evidence Analyst for fresh execution authorization; do not create STARTED under the current handoff.",
+  "ordinary_ci_run_id": 35221764016,
+  "expected_next_action": "Both exact-head checks are green on c23736b63e6100bcdc38e7f11d94c782eb6273dc. Stop before STARTED and wait for a fresh Evidence Analyst handoff that explicitly authorizes any R1 one-way execution. Do not create STARTED under analyst commit 9f88fba973f54bc6608d183aacfaccd7952a229f.",
   "owner": "main"
 }
