@@ -158,7 +158,8 @@
   "analyst_split_invalidated": false,
   "write_path_diagnostics": {
     "report_latest_update": "success",
-    "report_state_update": "in_progress_at_state_write",
+    "report_state_update": "success",
+    "report_history_append": "success",
     "research_or_control_write_attempted_this_run": false,
     "reason_no_research_write": "POST_START_FAILURE requires stop; scientific mutation would be impermissible for consumed identity."
   },
