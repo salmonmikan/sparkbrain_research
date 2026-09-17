@@ -3,12 +3,12 @@
   "execution_mode": "PRIMARY",
   "status": "RUNNING",
   "started_at": "2026-09-17T21:13:10+09:00",
-  "heartbeat_at": "2026-09-17T21:16:00+09:00",
+  "heartbeat_at": "2026-09-17T21:32:00+09:00",
   "analyst_commit": "9f88fba973f54bc6608d183aacfaccd7952a229f",
   "active_branch": "research/c19-r1-revision-authority-reduction-20260917",
   "active_identity": "c19-r1-revision-authority-official-v1",
-  "active_step": "R1_PRE_START_SPECIFICATION",
-  "workflow_run_id": null,
-  "expected_next_action": "Create the fresh R1 research branch from current main, specify and build the same-I2 label-free stateless revision-authority/certainty reduction, freeze exact comparator/resource/protocol/package/input/scorer bindings, add synthetic/dev readiness and exact-head CI/pre-START gates, and STOP before STARTED for fresh Analyst authorization.",
+  "active_step": "R1_PRE_START_BLOCKER_SYNTHETIC_FIXTURE",
+  "workflow_run_id": 35221506105,
+  "expected_next_action": "Fix only the invalid synthetic fixture so it satisfies the already-frozen C19 truth-free visible-envelope query-marker contract, push a new exact R1 head, and re-run ordinary CI plus the dedicated R1 pre-START gate. Do not create STARTED or access official data under the current Analyst handoff.",
   "owner": "main"
 }
