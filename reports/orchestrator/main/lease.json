@@ -1,14 +1,14 @@
 {
   "run_id": "primary-20260918T0018JST",
   "execution_mode": "PRIMARY",
-  "status": "WAITING_EXTERNAL",
+  "status": "BLOCKED",
   "started_at": "2026-09-18T00:18:00+09:00",
-  "heartbeat_at": "2026-09-18T00:36:00+09:00",
+  "heartbeat_at": "2026-09-18T00:38:00+09:00",
   "analyst_commit": "f2342817193f4e3a191bb05921db5598ee3cd10c",
   "active_branch": "research/c19-r1-revision-authority-reduction-20260917",
   "active_identity": "c19-r1-revision-authority-official-v1",
-  "active_step": "R1_PRE_START_WAITING_ORDINARY_CI",
-  "workflow_run_id": 35241040735,
-  "expected_next_action": "Re-fetch exact branch head 7cf849051a68b4227e29fe2f6ee95b2ff277dacd and Analyst f2342817193f4e3a191bb05921db5598ee3cd10c, then collect ordinary CI 35241040735; dedicated pre-START 35241040727 is already green. If CI fails only science-invariantly, MAIN fixes it and regains both checks on one final SHA. If CI is green, set R1_PRE_START_READY_FOR_ANALYST_REVIEW and STOP before STARTED pending fresh Analyst authorization.",
+  "active_step": "R1_PRE_START_READY_FOR_ANALYST_REVIEW",
+  "workflow_run_id": null,
+  "expected_next_action": "Wait for a fresh Evidence Analyst handoff. Under f2342817193f4e3a191bb05921db5598ee3cd10c do not create STARTED or dispatch one-way execution. If a newer Analyst explicitly authorizes execution, first re-fetch exact R1 head 7cf849051a68b4227e29fe2f6ee95b2ff277dacd, identity freshness, bindings, namespaces, CI/review and lease/collision state.",
   "owner": "main"
 }
