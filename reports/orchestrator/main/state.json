@@ -1,17 +1,17 @@
 {
-  "timestamp": "2026-09-18T04:28:00+09:00",
+  "timestamp": "2026-09-18T04:31:00+09:00",
   "worker_role": "main",
   "execution_mode": "PRIMARY",
   "evidence_analyst_commit": "b09d90d0545a0448ea5a310f9373969e7471b15d",
   "current_lane": "C19_R2_FSA_STATE_TRACKER_PROSPECTIVE_SPECIFICATION",
-  "current_phase": "R2_PRE_START_CHECKS_RUNNING",
+  "current_phase": "R2_PRE_START_DEDICATED_GREEN_CI_RUNNING",
   "consumed_contingency_branches": [
     "R2_PRE_START_SPECIFICATION",
     "R2_PRE_START_BLOCKER"
   ],
   "active_claim": {
     "branch": "research/c19-r2-fsa-state-tracker-spec-20260918",
-    "head": "3ddc73f548e3d82e240d76d081ee94f12b031912",
+    "head": "5d5d171cf872baed7a636fd246ab36f3a91a6716",
     "formal_identity": null,
     "owner": "main",
     "started": false,
@@ -21,7 +21,7 @@
   "authoritative_target_refs": {
     "analyst": "ops/evidence-analyst-handoff@b09d90d0545a0448ea5a310f9373969e7471b15d",
     "main": "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "r2_branch": "research/c19-r2-fsa-state-tracker-spec-20260918@3ddc73f548e3d82e240d76d081ee94f12b031912",
+    "r2_branch": "research/c19-r2-fsa-state-tracker-spec-20260918@5d5d171cf872baed7a636fd246ab36f3a91a6716",
     "scientific_parent_v4_package": "research/c19-official-v4-preservation-qualified-20260917@74bfe6b4a39758656f291baaa3f16236e3e71964",
     "v4_preserve_commit": "d8fcc5216ff24940836972816cb0ec8f11e4ba06",
     "v4_evidence_commit": "a0f83318356ced1c84863737803080d0dc69d208",
@@ -36,8 +36,7 @@
   "branches_prs_advanced": {
     "branch_created": "research/c19-r2-fsa-state-tracker-spec-20260918",
     "base": "74bfe6b4a39758656f291baaa3f16236e3e71964",
-    "final_head": "3ddc73f548e3d82e240d76d081ee94f12b031912",
-    "ahead_of_parent_by_commits": 12,
+    "final_head": "5d5d171cf872baed7a636fd246ab36f3a91a6716",
     "parent_files_modified": false,
     "r2_owned_paths_changed": [
       ".github/workflows/c19-r2-prestart.yml",
@@ -60,18 +59,26 @@
       "status": "completed",
       "conclusion": "failure",
       "failure_class": "mechanical_lint_only",
-      "details": "Dedicated workflow explicitly passed JSON to Ruff and two R2 Python lines exceeded the configured 100-character limit; tests/readiness were skipped."
+      "details": "Dedicated workflow explicitly passed JSON to Ruff and two R2 Python lines exceeded the configured 100-character limit."
     },
-    "final_exact_head_dedicated_prestart": {
+    "second_dedicated_prestart": {
       "run_id": 35264985183,
       "head": "3ddc73f548e3d82e240d76d081ee94f12b031912",
-      "status": "queued",
-      "conclusion": null
+      "status": "completed",
+      "conclusion": "failure",
+      "failure_class": "mechanical_float_fixture_only",
+      "details": "Lint and network-blocked import passed. One Type-7 quantile golden fixture used exact binary-float equality; scorer implementation was unchanged and the fixture alone was made float-robust."
+    },
+    "final_exact_head_dedicated_prestart": {
+      "run_id": 35265194243,
+      "head": "5d5d171cf872baed7a636fd246ab36f3a91a6716",
+      "status": "completed",
+      "conclusion": "success"
     },
     "final_exact_head_ordinary_ci": {
-      "run_id": 35264985201,
-      "head": "3ddc73f548e3d82e240d76d081ee94f12b031912",
-      "status": "queued",
+      "run_id": 35265194183,
+      "head": "5d5d171cf872baed7a636fd246ab36f3a91a6716",
+      "status": "in_progress",
       "conclusion": null
     },
     "official_execution": null
@@ -80,7 +87,7 @@
     "new_scientific_measurement": false,
     "terminal_scientific_result": null,
     "classification": "PRE_FORMAL_READINESS_ONLY",
-    "interpretation": "No official R2 data were accessed and no formal identity or STARTED exists; this run froze and implemented the prospective reduction object only."
+    "interpretation": "No official R2 data were accessed and no formal identity or STARTED exists. Dedicated readiness is green on the final exact head; ordinary CI remains external."
   },
   "consumed_identities": {
     "c19-r1-revision-authority-official-v1": {
@@ -100,8 +107,8 @@
     }
   },
   "blockers": [
-    "Final exact-head ordinary CI 35264985201 and dedicated pre-START 35264985183 are external and unresolved at checkpoint.",
-    "Current Analyst handoff forbids reserving an R2 formal identity or crossing STARTED even after both readiness checks become green; fresh Evidence Analyst execution authority is required."
+    "Final exact-head ordinary CI 35265194183 is still in progress.",
+    "Current Analyst handoff forbids reserving an R2 formal identity or crossing STARTED even after readiness becomes fully green; fresh Evidence Analyst execution authority is required."
   ],
   "lease_collision_reconciliation": {
     "prior_run_id": "relay-20260918T0344JST",
@@ -135,7 +142,9 @@
     "Created fresh R2 branch directly from immutable C19-v4 package head rather than from consumed R1 lineage.",
     "Froze explicit seven-state per-pair tracker state, reset, observation, transitions, readout, input/runtime/resource bindings, preservation boundary, cluster-aware inference and terminal criteria before any R2 outcome exists.",
     "Implemented target-blind deterministic R2 tracker, source-map contract, fail-closed scorer contract, preregistration, golden fixtures and dedicated pre-START checker/workflow.",
-    "Diagnosed initial pre-START failure as lint-only and repaired only Ruff input selection plus two line-wrap violations without scientific-semantic changes."
+    "Repaired initial lint-only readiness blockers without scientific-semantic changes.",
+    "Repaired only exact binary-float equality in the quantile golden fixture with math.isclose; scorer and registered Type-7 semantics were unchanged.",
+    "Obtained dedicated R2 pre-START success on final head 5d5d171cf872baed7a636fd246ab36f3a91a6716."
   ],
   "same_run_steps": [
     "Read latest Analyst R1-v2 terminal handoff and consumed R2 specification contingency.",
@@ -145,12 +154,13 @@
     "Added frozen config/protocol, explicit FSA implementation, target-free source map, scorer, preregistration, tests, checker and dedicated workflow.",
     "Verified parent-to-R2 diff contains only nine R2-owned paths.",
     "Collected initial dedicated pre-START lint failure and applied prospectively authorized science-invariant fixups.",
-    "Started new exact-head ordinary CI and dedicated pre-START checks on 3ddc73f548e3d82e240d76d081ee94f12b031912."
+    "Collected second dedicated pre-START float-fixture failure and changed only the test assertion tolerance.",
+    "Reached final exact head 5d5d171cf872baed7a636fd246ab36f3a91a6716; dedicated pre-START 35265194243 is green and ordinary CI 35265194183 remains in progress."
   ],
-  "same_run_stop_reason": "WAITING_EXTERNAL: exact-head ordinary CI and dedicated R2 pre-START are now external and no useful local critical-path action remains. Current handoff also forbids identity reservation or STARTED before fresh Analyst review.",
-  "work_intentionally_left_for_sub": "No formal SUB lane or fallback exists. SUB's independent NON_EVIDENTIARY H2 exploration remains separate and was not touched.",
+  "same_run_stop_reason": "WAITING_EXTERNAL: dedicated readiness is green but ordinary CI 35265194183 remains external; no useful local critical-path action remains. Current handoff also forbids identity reservation or STARTED before fresh Analyst review.",
+  "work_intentionally_left_for_sub": "No formal SUB lane or fallback exists. SUB independent NON_EVIDENTIARY exploratory work remains separate and was not touched.",
   "lane_repartition_reason": null,
-  "next_main_action": "Relay/next MAIN must collect runs 35264985201 and 35264985183 for exact head 3ddc73f548e3d82e240d76d081ee94f12b031912. If either has only a science-invariant mechanical failure, repair it and require both checks green on the new same final SHA. If a semantic/scientific gap appears, STOP for Analyst. If both are green, re-fetch Analyst tip and exact head, persist R2_PRE_START_READY_FOR_ANALYST_REVIEW, and STOP without reserving identity or creating STARTED under current authority.",
+  "next_main_action": "Relay/next MAIN must collect ordinary CI 35265194183 for exact head 5d5d171cf872baed7a636fd246ab36f3a91a6716 while retaining dedicated pre-START success 35265194243. If CI has only a science-invariant mechanical failure, repair it and require both checks green on the new same final SHA. If a semantic/scientific gap appears, STOP for Analyst. If CI is green, re-fetch Analyst tip and exact R2 head, persist R2_PRE_START_READY_FOR_ANALYST_REVIEW, and STOP without reserving identity or creating STARTED under current authority.",
   "write_path_diagnostics": {
     "primary_lease_acquire": {
       "action": "GitHub update_file reports/orchestrator/main/lease.json",
@@ -163,11 +173,11 @@
     },
     "r2_direct_file_writes": {
       "result": "success",
-      "final_head": "3ddc73f548e3d82e240d76d081ee94f12b031912"
+      "final_head": "5d5d171cf872baed7a636fd246ab36f3a91a6716"
     },
     "durable_reporting": {
-      "latest_update": "success",
-      "state_update": "in_progress_at_this_commit",
+      "latest_update_commit": "24bfb01110a7bf7729f952a0ac2b22b6d99efc8f",
+      "state_update": "success",
       "lease_finalization": "pending",
       "history_append": "pending"
     }
