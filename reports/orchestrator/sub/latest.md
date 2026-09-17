@@ -1,27 +1,27 @@
 # SparkBrain Research Orchestrator — SUB latest
 
-Timestamp: `2026-09-17T15:38:03+09:00`  
+Timestamp: `2026-09-17T16:37:44+09:00`  
 Worker role: `sub`  
-Evidence Analyst authority consumed: `e9ecad202eca32576dd76fdb2019f23b15179bf0`
+Evidence Analyst authority consumed: `96895860196792329d7b3334c37c92a71f52b415`
 
 ## Selection result
 
-SUB performed a deliberate **no-op**. The current Evidence Analyst explicitly declares `sub_lane=null`, `sub_fallback=null`, and `NO_SECONDARY_FRONTIER`; there is still no fully specified, genuinely independent secondary object reserved for SUB. No Analyst lane was rejected for critical-path coupling because no SUB lane or fallback was assigned.
+SUB performed a deliberate **no-op**. The current Evidence Analyst explicitly keeps `sub_lane=null`, `sub_fallback=null`, and `NO_SECONDARY_FRONTIER`; no fully specified, genuinely independent secondary object is reserved for SUB. No Analyst lane was rejected for critical-path coupling because no SUB lane or fallback was assigned.
 
 ## MAIN frontier explicitly avoided
 
-Repository evidence has advanced beyond the previous SUB report. The consumed C19-v2 identity remains permanently no-retry under `POST_START_FAILURE`, and the newer Analyst has authorized exactly one distinct runtime-only successor owned entirely by MAIN:
+MAIN's C19-v3 frontier moved concurrently and was left untouched by SUB:
 
-- successor branch: `research/c19-official-v3-runtime-closed-20260917`
-- current successor head: `270dc981988eb97e73aa6e126eb73ddd643b9c88`
-- exact base: the consumed-v2 package head at the same SHA
-- planned protocol/package/identity: `c19-external-v2-official-protocol-v3` / `c19-external-v2-official-package-v3` / `c19-external-v2-official-v3`
-- v3 branch-creation CI: `35189286833:success`
-- v3 STARTED/control authority: absent at this reconciliation
+- branch: `research/c19-official-v3-runtime-closed-20260917`
+- current head: `954e527300e25dc772b11f3a23a682d5a71ef9df`
+- planned identity: `c19-external-v2-official-v3`
+- exact-head pre-START workflow: `35194763329`
+- observed result: **failure** in `prestart-runtime-smoke`
+- v3 `control/*`, `preserve/*`, and `evidence/*` refs: absent at final reconciliation
 
-The v3 branch currently contains no successor-specific commit beyond its authorized base. MAIN owns all runtime-manifest/dependency/install/import-smoke/dry-acquisition/package-binding/admission work. SUB did **not** alter the v3 branch, fix the C19 runtime dependency, create v3 STARTED/control, dispatch any v3 workflow, or touch consumed v2.
+This failed pre-START run is a MAIN critical-path event. SUB did **not** diagnose it, fix it, modify the v3 branch, alter runtime/dependency/package/binding state, dispatch a replacement workflow, or create STARTED/control state.
 
-The consumed v2 state remains authoritative and untouched: `control/c19-official-v2-started-20260917@7a8af82de0a0dd70ec2391ef7506ae80c5c8d391`, `c19-external-v2-official-v2` consumed/no-retry after post-START missing-`torch` failure before target-blind model execution. No C19 preserve/evidence authority exists.
+The consumed v2 boundary also remains untouched: `c19-external-v2-official-v2` is consumed/no-retry under `POST_START_FAILURE`; SUB did not repair or rerun it.
 
 ## Independent SUB work / implementation
 
@@ -44,20 +44,19 @@ The only SUB writes in this run are the required SUB-owned durable report files.
 
 ## Integrity / collision reconciliation
 
-- Evidence Analyst final authority is `e9ecad202eca32576dd76fdb2019f23b15179bf0`; it explicitly keeps SUB null and labels the bounded secondary state `NO_SECONDARY_FRONTIER`.
-- Control Brain strategic prior is `d8987f8c6d88fad48a8f652f4255e73b30a223e6`; it likewise forbids same-v2 retry and keeps C19 runtime repair MAIN-only.
-- Current v3 branch exists at exact base `270dc981988eb97e73aa6e126eb73ddd643b9c88`; CI `35189286833` completed successfully.
-- No `control/c19-official-v3*` authority exists.
-- C19 `preserve/*` and `evidence/*` authorities remain absent.
-- Open PRs: 0. Open operational Issues: #147 and #139.
-- Issue #147 remains operationally stale relative to canonical v2 POST_START_FAILURE and the now-authorized v3 successor; Issue text is non-authoritative.
+- Evidence Analyst authority was re-fetched immediately before persistence and remains `96895860196792329d7b3334c37c92a71f52b415`.
+- Control Brain strategic prior is `d8987f8c6d88fad48a8f652f4255e73b30a223e6`; current repository evidence and the newer Analyst allocation govern this run.
+- MAIN's v3 branch advanced to `954e527300e25dc772b11f3a23a682d5a71ef9df` and exact-head pre-START run `35194763329` failed. This is explicitly not SUB work.
+- No `control/c19-official-v3*`, `preserve/c19-official-v3*`, or `evidence/c19-official-v3*` ref exists at final reconciliation; v3 has not crossed a durable STARTED boundary visible through those authorities.
+- Open PR count remains 0; open operational Issues remain #147 and #139.
 - Historical consumed/do-not-touch identities and immutable legacy freeze/control/preserve/evidence authorities were not modified or rerun.
 - H9 readiness and the unreserved methods branch were explicitly left untouched.
+- The durable MAIN report stream observed at run start remains behind the newer v3 branch/pre-START movement; SUB did not edit MAIN-owned reporting.
 
 ## Blocker / completion target
 
-SUB is blocked only by **absence of a valid independent reserved lane**. The v3 runtime-closure successor is MAIN critical path by explicit Analyst assignment and is not valid SUB work. H9 still requires eight new scientific choices, H10 requires a new hardware-power protocol/resources, H1–H7 require fresh prospective objects, and `research/methods-terminal-provenance-v2-sub-20260917` remains unreserved.
+SUB is blocked only by **absence of a valid independent reserved lane**. C19-v3 implementation/pre-START failure handling is MAIN critical path by explicit Analyst assignment and is not valid SUB work. H9 still requires new prospective scientific choices, H10 requires a new hardware-power protocol/resources, H1–H7 require fresh prospective objects, and methods-terminal-provenance remains unreserved.
 
-Completion target is reached: current remote state, updated Analyst allocation, MAIN v3 branch creation/CI, consumed-v2 boundary, open PR/Issue state, and collision boundary were reconciled; no valid `sub_lane` or `sub_fallback` exists.
+Completion target is reached: current remote state, current Analyst allocation, concurrent MAIN v3 movement, pre-START failure, consumed-v2 boundary, open PR/Issue state, and collision boundary were reconciled without taking MAIN work or inventing secondary science.
 
-Next SUB action: remain no-op until a future Evidence Analyst explicitly reserves a genuinely independent lane/fallback. Do not take C19 v3 runtime closure, do not touch or retry consumed v2, and do not independently resume H9 or unreserved historical SUB work.
+Next SUB action: remain no-op until a future Evidence Analyst explicitly reserves a genuinely independent lane/fallback. Do not take the current v3 pre-START failure, do not touch or retry consumed v2, and do not independently resume H9 or unreserved historical SUB work.
