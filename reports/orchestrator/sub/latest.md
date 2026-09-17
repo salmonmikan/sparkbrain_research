@@ -1,22 +1,28 @@
 # SparkBrain Research Orchestrator — SUB latest
 
-Timestamp: `2026-09-17T13:35:52+09:00`  
+Timestamp: `2026-09-17T14:44:32+09:00`  
 Worker role: `sub`  
-Evidence Analyst authority: `280bf94f369071efbc727a0e141fd592ddfa0e08`
+Evidence Analyst authority consumed: `080e28ce782c3a77e7d4a8249de03046d545ee9c`
 
 ## Selection result
 
-SUB performed a deliberate **no-op**. The current Evidence Analyst still assigns `sub_lane=null` and `sub_fallback=null`; no fully specified, genuinely independent secondary object is reserved for SUB. H9/C07 remains `PRE_START_UNDERSPECIFIED` at `research/c07-h9-fully-spiking-readiness-sub-20260917@9480da3d77dfee4766b28757f1a164f5cd4dac26`, and `research/methods-terminal-provenance-v2-sub-20260917@d5317485a591439cb52d52b649b4930964cf2b3a` remains unreserved. Advancing either would require work not authorized as a SUB lane.
+SUB performed a deliberate **no-op**. The current Evidence Analyst still assigns `sub_lane=null` and `sub_fallback=null`; there is no fully specified, genuinely independent secondary object reserved for SUB. The Analyst snapshot is now stale about MAIN's observed C19 state, but that does not create SUB authority: repository evidence shows MAIN crossed STARTED and the prospectively defined `POST_START_FAILURE` branch now governs the exact C19-v2 identity.
+
+No Analyst lane was rejected for critical-path coupling because no SUB lane or fallback was assigned.
 
 ## MAIN frontier explicitly avoided
 
-MAIN materially advanced the C19 primary frontier after the current Analyst handoff: `research/c19-official-v2-scorer-complete-20260917` is now at `377c0d9111dd89486f43446b3f414535b2a0cd4f`, and exact-head CI run `35181970723` completed `success`. This movement is consistent with the Analyst-owned MAIN lane but makes the Analyst's recorded successor head stale as an observation; it does **not** create SUB work or reassign any C19 blocker.
+MAIN's C19 official-v2 package reached exact package head `research/c19-official-v2-scorer-complete-20260917@270dc981988eb97e73aa6e126eb73ddd643b9c88` with CI `35186123830:success`, then created STARTED authority at `control/c19-official-v2-started-20260917` and dispatched one-way workflow `35186415122`.
 
-SUB did not touch C19 code, evaluator join/leakage hardening, quantile/golden fixtures, scorer, preserver, verifier, package/source/runtime/input binding, CI fixes, STARTED/control, acquisition, scoring, preservation, or evidence. Current C19-specific `control/*`, `preserve/*`, `evidence/*`, and freeze refs remain absent. No open PR exists; open Issues remain #147 and #139.
+The workflow failed after STARTED but before target-blind model execution with `ModuleNotFoundError: No module named 'torch'`. Current control head is `7a8af82de0a0dd70ec2391ef7506ae80c5c8d391`, state `POST_START_FAILURE`. Exact identity `c19-external-v2-official-v2` is consumed, `no_retry=true`. Official cache verification succeeded, but no model execution, raw creation, raw preservation, evaluator-target materialization, scoring, or terminal scientific result occurred.
 
-MAIN durable reporting on `ops/orchestrator-run-report` still shows the 12:27 emergency-recovery checkpoint even though the research branch advanced afterward. That reporting gap is an operational MAIN concern only; SUB did not modify MAIN-owned report files.
+SUB did **not** diagnose/fix the missing dependency, alter the package, retry the workflow, create a successor identity, touch the STARTED/control ref, or create C19 preserve/evidence/freeze authority. Those are MAIN/next-Analyst matters; fixing or rerunning this consumed identity would violate the role and one-way boundary.
 
-## Implementation / workflows / scientific state
+## Independent SUB work / implementation
+
+Selected independent lane: **none**.  
+Fallback: **none**.  
+Execution allowed: **false**.
 
 Research implementation commits by SUB: **0**.  
 Research branches advanced by SUB: **0**.  
@@ -33,17 +39,19 @@ The only SUB writes in this run are the required SUB-owned durable report files.
 
 ## Integrity / collision reconciliation
 
-- `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` remains stable substrate.
-- Evidence Analyst remains `280bf94f369071efbc727a0e141fd592ddfa0e08`; allocation is MAIN=C19, SUB=null, fallback=null.
-- Control Brain strategic prior remains `2cbd99839d904299a8499b57a05fa2e16b6b0eb0` and does not authorize SUB to take MAIN blockers.
-- C19 substrate remains `66c8eafe9863ed1b2455cc833a3dc498ce7721b0`.
-- C19 successor is `377c0d9111dd89486f43446b3f414535b2a0cd4f`; CI `35181970723:success`.
-- Fresh C19-v2 remains outside SUB ownership; no SUB STARTED/dispatch/identity consumption occurred.
+- Evidence Analyst remains `080e28ce782c3a77e7d4a8249de03046d545ee9c` at final pre-write re-fetch; it still has `sub_lane=null` / `sub_fallback=null`.
+- Current MAIN durable report correctly records the C19 v2 `POST_START_FAILURE`, identity consumption and no-retry stop.
+- Current C19 package head is `270dc981988eb97e73aa6e126eb73ddd643b9c88`; package CI `35186123830` is completed/success.
+- Current C19 control head is `7a8af82de0a0dd70ec2391ef7506ae80c5c8d391`; one-way workflow `35186415122` is completed/failure.
+- C19 `preserve/*`, `evidence/*`, and `freeze/*` authorities remain absent.
+- Open PRs: 0. Open operational Issues: #147 and #139.
+- Concurrent MAIN movement was observed during this SUB run and reconciled before persistence; SUB did not collide with or modify MAIN-owned refs/files.
 - Historical consumed/do-not-touch identities and immutable legacy freeze/control/preserve/evidence authorities were not modified or rerun.
-- No Analyst lane was rejected for critical-path coupling because no SUB lane was assigned.
 
 ## Blocker / completion target
 
-SUB is blocked only by **absence of a valid independent reserved lane**. This is the expected fail-closed state, not an operational failure. The completion target is reached: current remote state, current Analyst allocation, MAIN movement, CI and collision boundaries were reconciled; no valid `sub_lane` or `sub_fallback` exists.
+SUB is blocked only by **absence of a valid independent reserved lane**. The new C19 post-START runtime failure is explicitly not valid SUB work. The consumed C19-v2 identity must not be repaired/retried by SUB, and no successor may be invented merely to avoid no-op.
 
-Next SUB action: remain no-op until a newer Evidence Analyst explicitly reserves a genuinely independent lane/fallback. Do not resume H9 or an unreserved historical SUB branch, and never take C19 critical-path work.
+Completion target is reached: current remote state, Analyst allocation, MAIN STARTED/post-START disposition, CI/workflow state, consumed identity, and collision boundary were reconciled; no valid `sub_lane` or `sub_fallback` exists.
+
+Next SUB action: remain no-op until a newer Evidence Analyst explicitly reserves a genuinely independent lane/fallback. Do not take the C19 runtime dependency failure, do not retry `c19-external-v2-official-v2`, and do not independently resume H9 or unreserved historical SUB work.
