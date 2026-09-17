@@ -1,51 +1,69 @@
 {
-  "timestamp": "2026-09-18T01:28:00+09:00",
+  "timestamp": "2026-09-18T01:49:30+09:00",
   "worker_role": "main",
-  "execution_mode": "PRIMARY",
+  "execution_mode": "RELAY",
   "evidence_analyst_commit": "42836802e78abd26d19c5b8a789411f2b03d0ea1",
   "current_lane": "C19-R1 audit-aligned representation-matched revision-authority one-way reduction",
-  "current_phase": "R1_PRE_START_AUTHORITY_PACKAGING_WAITING_EXACT_HEAD_GATES",
+  "current_phase": "R1_POST_START_ONE_WAY_RUNNING",
   "consumed_contingency_branches": [
-    "R1_PRE_START_AUTHORITY_PACKAGING"
+    "R1_PRE_START_AUTHORITY_PACKAGING",
+    "R1_PRE_START_READY_FOR_ONE_WAY"
   ],
   "active_claim": {
-    "branch": "research/c19-r1-revision-authority-reduction-20260917",
+    "branch": "control/c19-r1-revision-authority-started-20260918",
     "identity": "c19-r1-revision-authority-official-v1",
     "owner": "main"
   },
   "authoritative_target_refs": {
     "scientific_basis": "7cf849051a68b4227e29fe2f6ee95b2ff277dacd",
     "r1_execution_package": "7197ab0f9683616858859446ae9eed7b75707f25",
+    "r1_started_control": "62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2",
     "analyst": "42836802e78abd26d19c5b8a789411f2b03d0ea1",
-    "v4_package_read_only": "74bfe6b4a39758656f291baaa3f16236e3e71964",
-    "v4_preserve_read_only": "d8fcc5216ff24940836972816cb0ec8f11e4ba06",
-    "v4_evidence_read_only": "a0f83318356ced1c84863737803080d0dc69d208",
     "r1_atomic_idx_source_map_sha256": "cb3ca63703bdab4107e896884908817680dd4fe4b5eebc32b6219075f0187bbb"
   },
   "fast_path_used": true,
   "full_reconciliation_reason": null,
   "branches_prs_advanced": [
-    "research/c19-r1-revision-authority-reduction-20260917: 7cf849051a68b4227e29fe2f6ee95b2ff277dacd -> 7197ab0f9683616858859446ae9eed7b75707f25"
+    "created control/c19-r1-revision-authority-started-20260918 from exact package 7197ab0f9683616858859446ae9eed7b75707f25",
+    "added STARTED marker at control head 62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2"
   ],
   "workflows_experiments": [
     {
-      "kind": "ordinary_ci",
+      "kind": "admission_ordinary_ci",
       "run_id": 35246655185,
       "head": "7197ab0f9683616858859446ae9eed7b75707f25",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "kind": "admission_r1_dedicated_prestart",
+      "run_id": 35246655189,
+      "head": "7197ab0f9683616858859446ae9eed7b75707f25",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "kind": "started_branch_ci",
+      "run_id": 35248878746,
+      "head": "62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2",
       "status": "in_progress",
       "conclusion": null
     },
     {
-      "kind": "r1_dedicated_prestart",
-      "run_id": 35246655189,
-      "head": "7197ab0f9683616858859446ae9eed7b75707f25",
+      "kind": "r1_one_way",
+      "run_id": 35248878958,
+      "head": "62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2",
       "status": "in_progress",
       "conclusion": null
     }
   ],
   "scientific_results": [],
   "consumed_identities": {
-    "r1": "fresh_unstarted_unconsumed",
+    "c19-r1-revision-authority-official-v1": {
+      "consumed": true,
+      "reason": "STARTED created at control/c19-r1-revision-authority-started-20260918@62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2",
+      "retry_allowed": false
+    },
     "do_not_touch": [
       "consumed C19-v2 identity",
       "consumed C19-v3 identity",
@@ -53,42 +71,50 @@
     ]
   },
   "blockers": [
-    "External exact-head ordinary CI and dedicated R1 pre-START are still running. STARTED is forbidden until both are green and all fresh final GO checks pass."
+    "One-way workflow 35248878958 is still running. No second execution or successor is allowed."
   ],
   "lease_collision_reconciliation": {
-    "prior_lease": "stale BLOCKED lease older than 20 minutes",
-    "target_branch_moved_before_recovery": false,
-    "conflicting_fresh_main_lease_observed": false,
-    "recovery": "safe"
+    "prior_lease_status": "WAITING_EXTERNAL",
+    "prior_heartbeat": "2026-09-18T01:28:00+09:00",
+    "conflicting_fresh_primary_running": false,
+    "relay_takeover": "authorized by completed exact-head gates and prospectively fixed R1_PRE_START_READY_FOR_ONE_WAY contingency"
   },
   "integrity_status": {
     "scientific_contract_changed": false,
     "preregistration_changed": false,
-    "started_created": false,
-    "official_r1_data_accessed": false,
-    "r1_identity_consumed": false,
-    "immutable_v4_mutated": false,
-    "sub_collision": false
+    "admission_ordinary_ci_green": true,
+    "admission_prestart_green": true,
+    "started_created": true,
+    "started_ref": "control/c19-r1-revision-authority-started-20260918",
+    "r1_identity_consumed": true,
+    "retry_allowed": false,
+    "preserve_ref_observed": false,
+    "evidence_tag_observed": false,
+    "terminal_scientific_result_created": false,
+    "immutable_prior_evidence_mutated": false
   },
   "critical_path_fixes_completed": [
-    "Added explicit execution-authority metadata bound to exact Analyst authority and unchanged R1 scientific basis.",
-    "Added R1 one-way workflow implementing STARTED/no-clobber/raw-before-target/preserve-refetch integrity chain.",
-    "Extended dedicated pre-START gate to prove admission-only diff, immutable science blobs and fresh R1 namespaces."
+    "Collected exact-head ordinary CI 35246655185 and dedicated R1 pre-START 35246655189 as success on package 7197ab0f...",
+    "Re-fetched unchanged Evidence Analyst authority 42836802..., exact R1 package head, fresh STARTED/preserve/evidence namespaces and execution-authority binding.",
+    "Created exactly one fresh STARTED control ref and marker bound to Analyst 42836802... and exact package 7197ab0f...",
+    "Triggered one-way workflow 35248878958 via the STARTED marker push."
   ],
   "same_run_steps": [
-    "Consumed fresh Evidence Analyst execution authorization.",
-    "Recovered stale MAIN lease after fresh target reconciliation.",
-    "Re-fetched exact R1 branch and authority immediately before mutation.",
-    "Committed science-invariant admission wrapper at 7197ab0f9683616858859446ae9eed7b75707f25.",
-    "Observed exact-head ordinary CI 35246655185 and dedicated pre-START 35246655189 start."
+    "Read prior WAITING_EXTERNAL lease and latest MAIN state.",
+    "Verified admission ordinary CI and dedicated pre-START both succeeded on the same exact package SHA.",
+    "Verified research branch remained at 7197ab0f9683616858859446ae9eed7b75707f25 and Analyst branch remained at 42836802e78abd26d19c5b8a789411f2b03d0ea1.",
+    "Verified no existing R1 STARTED, preserve branch or evidence tag before STARTED.",
+    "Created control/c19-r1-revision-authority-started-20260918 and STARTED.json.",
+    "Observed R1 one-way workflow 35248878958 begin and handed off as WAITING_EXTERNAL."
   ],
-  "stop_reason": "WAITING_EXTERNAL: exact-head CI/pre-START are running and no other useful local critical-path action is valid before their results.",
+  "stop_reason": "WAITING_EXTERNAL: the prospectively authorized one-way run is now in progress. Waiting itself is not useful work, and the identity is consumed/no-retry after STARTED.",
   "work_left_for_sub": "No MAIN critical-path work. SUB remains independently scoped.",
   "lane_repartition_reason": null,
-  "next_main_action": "Collect runs 35246655185 and 35246655189. If both succeed, fresh re-check Analyst authority, exact head, identity/control/preserve/evidence namespace freshness and all bindings, then create exactly one STARTED control ref and continue the authorized one-way run. If a gate fails mechanically, MAIN fixes it and revalidates both on the new exact head; any semantic change requires STOP.",
+  "next_main_action": "Collect one-way workflow 35248878958 only. On success, verify preserve/refetch/digest-before-target/scoring ordering plus terminal evidence/tag and persist the fixed classification. On failure after STARTED, preserve/verify diagnostics, keep R1 consumed with no retry and STOP. Do not create R2 or make any outcome-responsive design change.",
   "write_path_diagnostics": {
     "github_direct_writes": "working",
-    "r1_branch_fast_forward": "success",
-    "durable_reporting": "in progress at this state construction"
+    "started_branch_creation": "success",
+    "started_marker_creation": "success",
+    "lease_persistence": "success"
   }
 }
