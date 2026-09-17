@@ -1,38 +1,38 @@
-# MAIN Orchestrator — PRIMARY C19-R2 authority rebind / external wait
+# MAIN Orchestrator — RELAY C19-R2 STARTED / one-way external wait
 
-Timestamp: `2026-09-18 08:22 JST`
-Execution mode: `PRIMARY`
+Timestamp: `2026-09-18 08:48 JST`
+Execution mode: `RELAY`
 Evidence Analyst authority: `6ecf13b73cfc75409f6cfe86e9b8ac73fc58b6ce`
 
 ## MAIN frontier
 
-PRIMARY remains on `C19_R2_FSA_STATE_TRACKER_ONE_WAY`. The fresh Evidence Analyst handoff prospectively resolved the prior raw-universe mismatch: the frozen R2 contract is authoritative at exactly `8,720 = 1,744 pairs x 5 fixed seeds`, with state alphabet `RESET, A_WEAK, A_STRONG, B_WEAK, B_STRONG, C_WEAK, C_STRONG`. R2 was still unSTARTED/unconsumed, so this is an Analyst bookkeeping correction rather than a scientific mutation.
+RELAY continued only the prospectively authorized `C19_R2_FSA_STATE_TRACKER_ONE_WAY` critical path. The corrected Analyst handoff remains current and explicitly reconciles R2 to the already-frozen `8,720 = 1,744 pairs x 5 fixed seeds` contract and seven-state alphabet `RESET, A_WEAK, A_STRONG, B_WEAK, B_STRONG, C_WEAK, C_STRONG`.
 
-The active branch was re-fetched at `research/c19-r2-fsa-state-tracker-spec-20260918@84e08cfffa3e1404a1e93dd924ee704aa7bd3853`. No fresh MAIN collision existed; the prior MAIN lease was stale and SUB remained `no_op` with no R2 touch.
+The prior PRIMARY lease was `WAITING_EXTERNAL`, its heartbeat was older than 20 minutes, the active research head remained exactly `research/c19-r2-fsa-state-tracker-spec-20260918@5bfa3962c777fa5bc915bb21e20801ab8294778a`, and no fresh conflicting MAIN mutation was present.
 
-## Critical-path progress
+## Exact-head gates and final pre-START reconciliation
 
-MAIN performed the prospectively authorized science-invariant authority-only rebind. New exact head:
+The two required gates on exact head `5bfa3962...` are both terminal green:
 
-`research/c19-r2-fsa-state-tracker-spec-20260918@5bfa3962c777fa5bc915bb21e20801ab8294778a`
+- dedicated pre-START `35286420308`: `completed/success`;
+- ordinary CI `35286420401`: `completed/success`.
 
-The single new commit changes exactly three authority/checking locations and nothing scientific:
+The authority-only rebind from `84e08cff...` to `5bfa3962...` changes only `.github/workflows/c19-r2-prestart.yml`, `configs/external_validation/c19_r2_execution_authority.json`, and `scripts/check_c19_r2_prestart.py`, each only rebinding the Analyst authority pointer/check. Frozen scientific package remains `5d5d171cf872baed7a636fd246ab36f3a91a6716`.
 
-- `configs/external_validation/c19_r2_execution_authority.json`: Analyst pointer `719b9e...` -> `6ecf13b...`;
-- `scripts/check_c19_r2_prestart.py`: expected Analyst pointer `719b9e...` -> `6ecf13b...`;
-- `.github/workflows/c19-r2-prestart.yml`: authority-bound production smoke pointer `719b9e...` -> `6ecf13b...`.
+Immediately before STARTED, RELAY re-fetched the Analyst tip (`6ecf13b...`), the exact research branch head (`5bfa3962...`), and the R2 control/preserve/evidence namespaces. No STARTED control ref, preserve ref, or terminal evidence tag existed, so `c19-r2-fsa-state-tracker-official-v1` was still fresh at the boundary.
 
-Comparison from the prior authority head shows only those three one-line substitutions. Frozen scientific package remains `5d5d171cf872baed7a636fd246ab36f3a91a6716`; its contract/preregistration/protocol/scorer/source-map/state-tracker bindings were not changed.
+## STARTED and one-way execution
 
-Fresh namespace checks after the head move still show no R2 STARTED control ref, preserve ref, or evidence tag. The identity `c19-r2-fsa-state-tracker-official-v1` therefore remains fresh/unSTARTED/unconsumed.
+RELAY crossed STARTED exactly once by creating:
 
-## Workflow state / external handoff
+`control/c19-r2-fsa-state-tracker-started-v1-20260918@41df2685fe015140c8afa13e646554dd2e8c836b`
 
-The required exact-head gates are now:
+The control ref is based on exact package `5bfa3962...` and adds only `artifacts/v03/c19_external_validation/r2/official_v1/STARTED.json`. From this point, identity `c19-r2-fsa-state-tracker-official-v1` is consumed and must never be retried.
 
-- dedicated R2 pre-START `35286420308`: `completed/success` on exact head `5bfa3962...`;
-- ordinary CI `35286420401`: `in_progress` on the same exact head at final checkpoint.
+The fixed one-way workflow was triggered automatically and is currently:
 
-No useful local critical-path work remains while ordinary CI is still running, so PRIMARY ends with lease `WAITING_EXTERNAL`. Relay should collect CI `35286420401`. If it succeeds on exact head `5bfa3962...`, re-fetch fresh Analyst authority, exact branch head, identity/consumed state, control/preserve/evidence namespaces, frozen science/runtime/source-map/scorer/preserver bindings and then cross STARTED exactly once only if every GO condition remains simultaneously true. Any mechanical pre-START failure remains MAIN-owned; any scientific/semantic change requirement must STOP before STARTED.
+- workflow `35288390550`: `in_progress` on STARTED commit `41df2685...`.
 
-No STARTED ref was created, no official R2 data was read, no raw/preserve/targets/scoring/evidence was produced, and there is **no new scientific information** this run.
+At the final checkpoint, the R2 preserve ref and evidence tag were still absent, so no raw preservation, terminal evidence, or terminal scientific classification had yet been observed. There is **no new scientific information yet**.
+
+Lease is `WAITING_EXTERNAL`. The next MAIN/RELAY cycle must collect only workflow `35288390550`. If it succeeds, independently verify the preserve ref, evidence tag/manifest, exact package/Analyst/STARTED/preservation bindings, and terminal reduction class before marking `COMPLETED`. If it fails after STARTED, classify the identity as consumed `POST_START_FAILURE` and stop with no retry, salvage, repair, or automatic successor.
