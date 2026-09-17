@@ -38,4 +38,4 @@ jobs:
       - name: V2 scientific scorer regression remains green
         run: |
           set -euo pipefail
-          python -m pytest -q -m external tests/test_c19_official_v2_scoring.py
+          python -m pytest -q tests/test_c19_official_v2_scoring.py
