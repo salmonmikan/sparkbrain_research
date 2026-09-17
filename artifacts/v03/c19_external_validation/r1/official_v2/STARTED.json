@@ -1,0 +1,17 @@
+{
+  "state": "STARTED",
+  "started_at": "2026-09-18T03:44:13+09:00",
+  "scientific_protocol_id": "c19-r1-revision-authority-protocol-v1",
+  "protocol_id": "c19-r1-revision-authority-protocol-v2",
+  "run_identity": "c19-r1-revision-authority-official-v2",
+  "no_retry": true,
+  "evidence_analyst_commit": "966018058f296098805982a8d206102741c3842c",
+  "exact_package_commit": "a23975c5713347eaa459161f538a8f0c3db6152e",
+  "scientific_basis_commit": "7cf849051a68b4227e29fe2f6ee95b2ff277dacd",
+  "runtime_manifest_sha256": "cdb7a2a075f76d4b65b51fc7d0b46f7ecda98646e33902420b2a7e5b7d604fc5",
+  "atomic_idx_source_map_sha256": "cb3ca63703bdab4107e896884908817680dd4fe4b5eebc32b6219075f0187bbb",
+  "admission_runs": {
+    "ordinary_ci": 35258035223,
+    "dedicated_prestart": 35258035210
+  }
+}
