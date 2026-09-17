@@ -1,0 +1,15 @@
+{
+  "schema_version": "1",
+  "state": "STARTED",
+  "protocol_id": "c19-external-v2-official-protocol-v2",
+  "run_identity": "c19-external-v2-official-v2",
+  "evidence_analyst_commit": "080e28ce782c3a77e7d4a8249de03046d545ee9c",
+  "exact_package_commit": "270dc981988eb97e73aa6e126eb73ddd643b9c88",
+  "source_base_commit": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
+  "started_ref": "control/c19-official-v2-started-20260917",
+  "started_at": "2026-09-17T14:36:00+09:00",
+  "raw_before_score": true,
+  "immutable_raw_before_evaluator_targets": true,
+  "no_clobber": true,
+  "no_retry": true
+}
