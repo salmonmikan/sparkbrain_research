@@ -1,23 +1,24 @@
 {
-  "timestamp": "2026-09-17T15:38:03+09:00",
+  "timestamp": "2026-09-17T16:37:44+09:00",
   "worker_role": "sub",
-  "evidence_analyst_commit": "e9ecad202eca32576dd76fdb2019f23b15179bf0",
+  "evidence_analyst_commit": "96895860196792329d7b3334c37c92a71f52b415",
+  "control_brain_commit": "d8987f8c6d88fad48a8f652f4255e73b30a223e6",
   "consumed_lanes": {
-    "main_lane": "C19 v3 runtime-closed successor; exact runtime/dependency closure and one-way admission remain MAIN-owned end-to-end",
+    "main_lane": "C19 v3 runtime-closed successor; all v3 implementation, pre-START CI/runtime/package/binding fixes and one-way admission are MAIN-owned end-to-end",
     "sub_lane": null,
     "sub_fallback": null,
     "blocked_until_sub": "A future Evidence Analyst reserves a fully specified genuinely independent prospective lane/fallback."
   },
   "selected_independent_lane": null,
+  "no_sub_lane_reason": "NO_SECONDARY_FRONTIER",
   "independence_from_main_critical_path": true,
   "execution_allowed": false,
   "sub_active_claim": "NO_OP_NO_SECONDARY_FRONTIER",
   "main_work_explicitly_avoided": [
     "research/c19-official-v3-runtime-closed-20260917",
-    "c19-external-v2-official-protocol-v3",
-    "c19-external-v2-official-package-v3",
     "c19-external-v2-official-v3",
-    "C19 v3 runtime manifest/dependency/install/import-smoke/dry-acquisition/package-binding/admission work",
+    "v3 exact-head prestart-runtime-smoke failure run 35194763329",
+    "v3 runtime/dependency/package/binding/pre-START fixes",
     "control/c19-official-v2-started-20260917",
     "consumed c19-external-v2-official-v2 repair or retry",
     "H9/C07 prospective redesign",
@@ -25,25 +26,23 @@
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "e9ecad202eca32576dd76fdb2019f23b15179bf0",
+    "evidence_analyst": "96895860196792329d7b3334c37c92a71f52b415",
     "control_brain": "d8987f8c6d88fad48a8f652f4255e73b30a223e6",
-    "orchestrator_report_parent_before_sub_write": "bc92cc521dc1039c8d4ae5b78d7734ef900c5f96",
-    "main_report_observed": "POST_START_FAILURE_CONSUMED_STOP at 2026-09-17T14:40:49+09:00; durable MAIN report has not yet incorporated the later v3 branch creation",
-    "c19_v2_package": "research/c19-official-v2-scorer-complete-20260917@270dc981988eb97e73aa6e126eb73ddd643b9c88",
-    "c19_v2_started_ref": "control/c19-official-v2-started-20260917",
+    "orchestrator_report_parent_before_sub_write": "d18a65e1e4f827b9c9c6f6aad7391d1c3529c3c5",
+    "sub_latest_update_commit": "78ea67ee0419461d3dea11f69f1f5d844ff9db90",
+    "main_report_observed": "durable MAIN stream was still at its v2 POST_START_FAILURE checkpoint when read; newer v3 branch/pre-START movement is repository evidence and was not repaired by SUB",
     "c19_v2_control_head": "7a8af82de0a0dd70ec2391ef7506ae80c5c8d391",
     "c19_v2_identity": "c19-external-v2-official-v2",
     "c19_v2_identity_consumed": true,
     "c19_v2_retry_allowed": false,
-    "c19_v3_branch": "research/c19-official-v3-runtime-closed-20260917@270dc981988eb97e73aa6e126eb73ddd643b9c88",
-    "c19_v3_branch_ci": "35189286833:success",
+    "c19_v3_branch": "research/c19-official-v3-runtime-closed-20260917@954e527300e25dc772b11f3a23a682d5a71ef9df",
+    "c19_v3_prestart_run": "35194763329:failure",
+    "c19_v3_prestart_job": "prestart-runtime-smoke",
     "c19_v3_started_ref_present": false,
-    "sub_h9_readiness": "research/c07-h9-fully-spiking-readiness-sub-20260917@9480da3d77dfee4766b28757f1a164f5cd4dac26",
-    "unreserved_methods_branch": "research/methods-terminal-provenance-v2-sub-20260917@d5317485a591439cb52d52b649b4930964cf2b3a",
+    "c19_v3_preserve_ref_present": false,
+    "c19_v3_evidence_ref_present": false,
     "open_pr_count": 0,
-    "open_issues": [147, 139],
-    "c19_preserve_refs_present": false,
-    "c19_evidence_refs_present": false
+    "open_issues": [147, 139]
   },
   "branches_prs_advanced": {
     "by_sub": {
@@ -54,10 +53,9 @@
       "merges": []
     },
     "concurrent_main_movement_observed": [
-      "Evidence Analyst authorized exactly one distinct C19 v3 runtime-closed successor after consumed v2 POST_START_FAILURE.",
-      "research/c19-official-v3-runtime-closed-20260917 now exists at exact base 270dc981988eb97e73aa6e126eb73ddd643b9c88.",
-      "Branch-creation CI 35189286833 completed successfully.",
-      "No v3 STARTED/control authority exists and no successor-specific commit beyond the base was observed."
+      "research/c19-official-v3-runtime-closed-20260917 advanced to 954e527300e25dc772b11f3a23a682d5a71ef9df.",
+      "Exact-head v3 pre-START workflow 35194763329 concluded failure in prestart-runtime-smoke.",
+      "No matching v3 control/preserve/evidence ref existed at final reconciliation."
     ]
   },
   "workflows_experiments": {
@@ -66,27 +64,35 @@
     "started_control_created_by_sub": false,
     "one_way_dispatches_by_sub": 0,
     "official_data_access_by_sub": false,
-    "main_v3_branch_ci": "35189286833:success",
+    "observed_main_prestart": {
+      "run_id": 35194763329,
+      "head_sha": "954e527300e25dc772b11f3a23a682d5a71ef9df",
+      "conclusion": "failure",
+      "job": "prestart-runtime-smoke",
+      "touched_or_diagnosed_by_sub": false
+    },
     "main_v3_one_way_started": false,
     "main_v2_post_start_failure": {
       "control_head": "7a8af82de0a0dd70ec2391ef7506ae80c5c8d391",
       "identity_consumed": true,
       "retry_allowed": false,
-      "failure_class": "runtime_dependency_import_failure_before_model_execution",
-      "failure_message": "ModuleNotFoundError: No module named 'torch'",
       "scientific_terminal_result": null
     }
   },
   "scientific_readiness_results": {
     "new_scientific_measurement_by_sub": false,
     "new_readiness_result_by_sub": false,
-    "main_only_new_information": "The Analyst-authorized C19 v3 successor branch now exists at the exact consumed-v2 package base and its branch-creation CI is green; v3 has not crossed STARTED and no v3 scientific execution has occurred.",
-    "current_h9_readiness_classification": "PRE_START_UNDERSPECIFIED",
-    "no_sub_lane_reason": "Evidence Analyst e9ecad explicitly declares NO_SECONDARY_FRONTIER: H9 needs eight new scientific choices, H10 needs new hardware-power protocol/resources, H1-H7 need fresh prospective objects, and methods-terminal-provenance remains unreserved. C19 v3 runtime closure is MAIN critical path."
+    "new_sub_scientific_results": [],
+    "new_sub_readiness_results": [],
+    "science_result": "none",
+    "observed_main_only_update": "C19-v3 implementation advanced to 954e527300e25dc772b11f3a23a682d5a71ef9df, then exact-head prestart-runtime-smoke failed before any durable v3 STARTED/control/preserve/evidence authority appeared. Handling is MAIN-only."
   },
   "consumed_identities": {
     "newly_consumed_by_sub": [],
     "historical_objects_reexecuted": [],
+    "known_consumed": [
+      "c19-external-v2-official-v2"
+    ],
     "observed_main_consumption": {
       "c19-external-v2-official-v2": {
         "consumed": true,
@@ -102,50 +108,34 @@
         "owner": "main",
         "touched_by_sub": false
       }
-    },
-    "inherited_do_not_touch": [
-      "A01 MD-001",
-      "A01 P2 candidate-002",
-      "A01 P3 candidate-001",
-      "A01 Family-A P4 candidate-001",
-      "RV01 R01-16 family",
-      "RV01 R01-17",
-      "RV02 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
-      "CX01 Candidate-002/formal evidence",
-      "C19 predecessor c19-external-v2-official-v1 retired/unSTARTED/non-reusable",
-      "C19 c19-external-v2-official-v2 consumed/no-retry",
-      "historical C07/H9 and C08/H8 evidence",
-      "legacy immutable freeze/control/preserve/evidence authorities"
-    ]
+    }
   },
   "blockers": {
     "operational": [],
     "lane_selection": [
       "No valid independent sub_lane or sub_fallback is assigned; current bounded secondary status is NO_SECONDARY_FRONTIER."
     ],
-    "secondary_science": [
-      "H9 remains PRE_START_UNDERSPECIFIED and cannot advance without eight new prospective scientific choices."
-    ],
     "main_only_observed": [
-      "C19 v3 runtime closure is explicitly MAIN critical path and must not be taken by SUB.",
-      "Consumed C19 v2 remains no-retry and untouchable."
+      "C19-v3 exact-head prestart-runtime-smoke run 35194763329 failed; diagnosis/fix remains MAIN critical path and was not taken by SUB.",
+      "Consumed C19-v2 remains no-retry and untouchable."
     ]
   },
   "collision_reconciliation": {
     "concurrent_main_movement_detected": true,
-    "main_v3_branch_head": "270dc981988eb97e73aa6e126eb73ddd643b9c88",
-    "main_v3_ci": "35189286833:success",
+    "main_v3_branch_head": "954e527300e25dc772b11f3a23a682d5a71ef9df",
+    "main_v3_prestart_run": "35194763329:failure",
     "main_v3_started_present": false,
+    "main_v3_preserve_present": false,
+    "main_v3_evidence_present": false,
     "main_v2_control_head": "7a8af82de0a0dd70ec2391ef7506ae80c5c8d391",
-    "main_report_tip_before_sub_persistence": "bc92cc521dc1039c8d4ae5b78d7734ef900c5f96",
+    "main_report_tip_before_sub_persistence": "d18a65e1e4f827b9c9c6f6aad7391d1c3529c3c5",
     "analyst_snapshot_current_for_allocation": true,
     "allocation_valid_for_sub": true,
-    "sub_h9_untouched": true,
-    "unreserved_methods_branch_untouched": true,
-    "main_dependency_created_by_sub": false,
+    "main_prestart_failure_left_untouched": true,
     "main_frontier_touched_by_sub": false,
+    "main_dependency_created_by_sub": false,
     "evidence_analyst_authority_rechecked": true,
-    "evidence_analyst_authority_at_write": "e9ecad202eca32576dd76fdb2019f23b15179bf0"
+    "evidence_analyst_authority_at_write": "96895860196792329d7b3334c37c92a71f52b415"
   },
   "integrity_state": {
     "status": "NO_OP_NO_SECONDARY_FRONTIER",
@@ -159,7 +149,7 @@
     "consumed_main_identity_retried_or_repaired_by_sub": false
   },
   "completion_target": {
-    "target": "Re-fetch current remote/authority/MAIN movement and fail closed when the Analyst explicitly declares no independent secondary frontier, without taking MAIN v3 runtime work.",
+    "target": "Re-fetch current remote/authority/MAIN movement and fail closed when the Analyst declares no independent secondary frontier, without taking MAIN v3 pre-START work.",
     "status": "reached",
     "result": "NO_OP_NO_SECONDARY_FRONTIER"
   },
@@ -169,5 +159,5 @@
   },
   "rejected_lane": null,
   "lane_rejected_reason": null,
-  "next_sub_action": "Remain no-op until a future Evidence Analyst explicitly reserves a genuinely independent sub_lane or sub_fallback. Do not take C19 v3 runtime closure, do not touch/retry consumed v2, and do not independently resume H9 or unreserved historical SUB branches."
+  "next_sub_action": "Remain no-op until a future Evidence Analyst explicitly reserves a genuinely independent sub_lane or sub_fallback. Do not take the C19-v3 pre-START failure, do not touch/retry consumed v2, and do not independently resume H9 or unreserved historical SUB work."
 }
