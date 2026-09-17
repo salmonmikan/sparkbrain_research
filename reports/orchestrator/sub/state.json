@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-18T08:49:00+09:00",
+  "timestamp": "2026-09-18T08:51:00+09:00",
   "worker_role": "sub",
   "mode": "no_op",
   "evidence_analyst_commit": "6ecf13b73cfc75409f6cfe86e9b8ac73fc58b6ce",
@@ -14,7 +14,7 @@
   "main_work_explicitly_avoided": [
     "C19-R2 identity/STARTED creation and official one-way execution",
     "C19-R2 candidate-specific CI/prestart/runtime/binding fixups, official acquisition, preservation and scoring",
-    "C19-R2 post-START diagnosis, repair, retry or successor design",
+    "C19-R2 post-START diagnosis, repair, retry, interpretation escalation or successor design",
     "consumed C19-R1 v1/v2 failures and any repair/retry/rescue",
     "immutable C19-v4 evidence and consumed identities",
     "scheduler definitions and unrelated PR #149"
@@ -25,10 +25,11 @@
     "control_brain_doctrine": "ops/control-brain-handoff@3bcd000f7e31bc8df8d59ca5ddec88ff5b847e22",
     "main_lane": "research/c19-r2-fsa-state-tracker-spec-20260918@5bfa3962c777fa5bc915bb21e20801ab8294778a",
     "r2_frozen_scientific_package": "5d5d171cf872baed7a636fd246ab36f3a91a6716",
-    "r2_authorized_identity": "c19-r2-fsa-state-tracker-official-v1",
+    "r2_identity": "c19-r2-fsa-state-tracker-official-v1",
     "r2_started": "control/c19-r2-fsa-state-tracker-started-v1-20260918@41df2685fe015140c8afa13e646554dd2e8c836b",
-    "r2_preserve": null,
-    "r2_evidence": null,
+    "r2_preserve": "preserve/c19-r2-fsa-state-tracker-raw-c19-r2-fsa-state-tracker-official-v1@3628694294a6eb33b18a0b42a56bb5ad77fe7b94",
+    "r2_evidence_commit": "6197fa801a78a0c5de4c2b6ff5d03216ac5539db",
+    "r2_evidence_tag": "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
     "c19_v4_evidence": "evidence/c19-official-v4-c19-external-v2-official-v4"
   },
   "branches_prs_advanced": {
@@ -39,47 +40,61 @@
   "observed_main_workflows": {
     "r2_dedicated_prestart": "35286420308:completed/success@5bfa3962c777fa5bc915bb21e20801ab8294778a",
     "r2_ordinary_ci": "35286420401:completed/success@5bfa3962c777fa5bc915bb21e20801ab8294778a",
-    "r2_control_branch_ci": "35288390498:in_progress@41df2685fe015140c8afa13e646554dd2e8c836b",
-    "official_execution": "35288390550:in_progress@41df2685fe015140c8afa13e646554dd2e8c836b"
+    "official_execution": "35288390550:completed/success@41df2685fe015140c8afa13e646554dd2e8c836b"
   },
-  "scientific_results": [],
+  "scientific_results": [
+    {
+      "producer": "MAIN formal one-way R2, observed read-only by SUB",
+      "identity": "c19-r2-fsa-state-tracker-official-v1",
+      "result_class": "REDUCED_BY_FSA",
+      "contrast": "c19_v4_primary_breu_minus_r2_breu",
+      "observed_effect": -0.2462308568887407,
+      "primary_inference": "paired_atomic_idx_cluster_bootstrap",
+      "confidence_interval_95": [-0.2554750732756702, -0.23690126111231016],
+      "unique_clusters": 204,
+      "resamples": 10000,
+      "claim_boundary": "Tests only the fixed seven-state FSA reduction; R1 revision-authority remains scientifically unresolved and an interpretation ceiling.",
+      "created_by_sub": false
+    }
+  ],
   "readiness_results": [],
   "exploratory_results": [],
-  "evidentiary_status": "NONE",
+  "evidentiary_status": "NONE_FOR_SUB",
   "consumed_identities": {
     "sub_consumed": [],
     "authoritative_untouched": {
       "c19-external-v2-official-v4": "terminal immutable PASS",
       "c19-r1-revision-authority-official-v1": "consumed POST_START_FAILURE; no retry",
       "c19-r1-revision-authority-official-v2": "consumed POST_START_FAILURE; no retry; R1 line terminated",
-      "c19-r2-fsa-state-tracker-official-v1": "STARTED/consumed by MAIN at 2026-09-18T08:45:03+09:00; no_retry=true; official one-way execution in progress at final SUB reconciliation"
+      "c19-r2-fsa-state-tracker-official-v1": "consumed by MAIN; terminal REDUCED_BY_FSA evidence; no_retry=true"
     }
   },
   "blockers": [
     "No reserved independent formal SUB lane or fallback exists.",
     "Evidence Analyst supplied no newly authorized distinct incubator target and explicitly permits SUB to remain no_op.",
     "RV01 exploratory allowance is exhausted/hard-stopped; H1-H7 were recently bounded-explored; H9/C07 is under-specified after readiness review; H8/C08 is terminal negative; A01 is closed.",
-    "R2 is now STARTED and consumed by MAIN; all official execution, preservation, scoring, failure handling and terminal interpretation remain exclusively MAIN/Evidence-Analyst owned."
+    "R2 now has terminal formal evidence; interpretation and any prospective successor/reduction allocation belong to Evidence Analyst/MAIN, not SUB."
   ],
   "collision_reconciliation": {
     "analyst_tip_final": "6ecf13b73cfc75409f6cfe86e9b8ac73fc58b6ce",
     "main_final": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "main_lane_final_observed_head": "5bfa3962c777fa5bc915bb21e20801ab8294778a",
-    "main_phase": "R2_STARTED_OFFICIAL_ONE_WAY_IN_PROGRESS",
+    "main_phase": "R2_TERMINAL_EVIDENCE_REDUCED_BY_FSA",
     "main_started": true,
     "r2_started_ref": "control/c19-r2-fsa-state-tracker-started-v1-20260918@41df2685fe015140c8afa13e646554dd2e8c836b",
     "r2_started_at": "2026-09-18T08:45:03+09:00",
     "r2_no_retry": true,
-    "r2_preserve_ref_count": 0,
-    "r2_evidence_tag_count": 0,
+    "r2_preserve_ref_count": 1,
+    "r2_evidence_tag_count": 1,
+    "r2_terminal_result": "REDUCED_BY_FSA",
     "open_pr_numbers": [149],
     "open_issue_numbers": [139],
     "ruleset_count": 0,
     "legacy_freeze_branch_count": 13,
-    "authoritative_evidence_tag_count": 1,
+    "authoritative_evidence_tag_count_observed_after_r2": 2,
     "sub_collision": false,
     "concurrent_movement_detected_after_initial_persistence": true,
-    "action": "Observed and recorded MAIN's concurrent STARTED transition only; no research branch, STARTED, workflow, preserve, scoring or successor mutation was performed by SUB."
+    "action": "Observed and recorded MAIN's concurrent STARTED -> preserve -> terminal evidence transition only; no scientific or execution mutation was performed by SUB."
   },
   "integrity_state": {
     "formal_identity_created_by_sub": false,
@@ -108,7 +123,8 @@
     "latest": "reports/orchestrator/sub/latest.md",
     "state": "reports/orchestrator/sub/state.json",
     "history_initial": "reports/orchestrator/history/2026-09-18/0844-sub.md",
-    "history_final_reconciliation": "reports/orchestrator/history/2026-09-18/0849-sub.md",
+    "history_started_reconciliation": "reports/orchestrator/history/2026-09-18/0849-sub.md",
+    "history_terminal_reconciliation": "reports/orchestrator/history/2026-09-18/0851-sub.md",
     "history_append_status": "completed",
     "force_push_used": false
   }
