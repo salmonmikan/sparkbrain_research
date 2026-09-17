@@ -45,3 +45,54 @@ After a fresh prospective definition: does a declared spike-mediated non-sensory
 - fresh protocol/package/identity and integrity gates.
 
 Promotion recommendation from SUB: `CONTINUE_EXPLORING`, not `FORMALIZE`.
+
+## Follow-up: fixed state-inventory reset/ablation probe
+
+This second probe is also **EXPLORATORY / NON_EVIDENTIARY**. It predeclares four
+persistent-state classes and tests fixed resets immediately before query:
+
+- `spike_state`: discrete recurrent spike-mediated latch;
+- `decoder_state`: non-spiking continuous decoder-held memory;
+- `filter_state`: non-spiking leaky trace;
+- `algorithmic_state`: non-spiking discrete controller memory.
+
+The synthetic task remains two-label delayed recall over gaps 1–20. Each
+single-state mechanism is tested under no reset, each individual state reset,
+reset of all non-spike state, and reset of all state. A fixed hybrid carries the
+same cue in both `spike_state` and `decoder_state`. The filter uses decay `0.95`
+and sign decoding with no fitted threshold.
+
+### Follow-up observation
+
+Every single-state memory mechanism scores `40/40` with no reset and drops to
+`0/40` when its own backing state is reset. Resetting all non-spike state kills
+decoder, filter, and algorithmic memory (`0/40` each) while the spike latch
+remains `40/40`. Resetting spike state kills only the spike latch among those
+single-state mechanisms.
+
+The hybrid remains `40/40` after either the spike-state reset or the
+decoder-state reset, because the other channel still carries the cue. It only
+falls to `0/40` when all state is reset. This is the useful integrity example:
+**a hidden non-spike memory channel can mask an apparently successful ablation
+of spike-mediated memory unless every persistent state variable is inventoried
+and reset classes are defined prospectively.**
+
+The matrix is in `state_inventory_ablation.json`; the executable synthetic probe
+is `scripts/exploratory_h9_state_inventory_ablation.py`.
+
+### Handoff implication
+
+This does not establish that historical or future H9 implementations contain
+such leakage. It supports only a readiness recommendation: before a future H9
+formal object is opened, prospectively inventory persistent state and include
+fixed reset/ablation gates capable of distinguishing spike-mediated,
+decoder/filter, and algorithmic memory.
+
+A future formal question could ask whether delayed H9 performance remains when
+all non-spike persistent state is forcibly reset while declared spike-mediated
+state remains intact. That would require a fresh protocol/package/identity and
+fresh choices for component boundary, allowed state classes, neuron/synapse
+dynamics, representation/decoder mapping, comparator/claim, development budget,
+tolerances, runtime, seeds, and determinism.
+
+Promotion recommendation remains `CONTINUE_EXPLORING`, not `FORMALIZE`.
