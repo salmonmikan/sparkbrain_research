@@ -1,82 +1,97 @@
 {
-  "timestamp": "2026-09-18T03:47:00+09:00",
+  "timestamp": "2026-09-18T04:45:00+09:00",
   "worker_role": "sub",
   "mode": "exploratory_incubator",
-  "evidence_analyst_commit": "966018058f296098805982a8d206102741c3842c",
+  "evidence_analyst_commit": "b09d90d0545a0448ea5a310f9373969e7471b15d",
   "consumed_lanes": [],
   "selected_independent_lane": null,
-  "exploratory_target": "H2 residual-loser retention versus resource-matched generic symmetric recurrent memory on synthetic returning-state episodes",
+  "exploratory_target": "H1 explicit competing-belief retention versus a matched probabilistic recurrent filter in a synthetic three-state non-monotonic world",
   "independent_of_main_critical_path": true,
   "execution_allowed": false,
-  "execution_allowed_reason": "No reserved formal SUB lane or fallback exists; incubator work is non-formal only.",
+  "execution_allowed_reason": "No reserved formal SUB lane or fallback exists; only NON_EVIDENTIARY incubator work is allowed.",
   "sub_active_claim": {
-    "branch": "research/exploratory-sub-h2-residual-memory-reduction-20260918",
-    "head": "5cd9f65bca71ee1a235c88c27d32e25f27c76745",
+    "branch": "research/exploratory-sub-h1-competing-belief-reduction-20260918",
+    "head": "b403205cdc86b5c5930a2031c4001ba68fd30ee9",
     "status": "bounded_complete",
     "authoritative": false
   },
   "main_work_explicitly_avoided": [
-    "research/c19-r1-revision-authority-runtime-closed-v2-20260918",
-    "control/c19-r1-revision-authority-started-v2-20260918",
-    "c19-r1-revision-authority-official-v2 execution/diagnosis/repair/retry/scoring/preservation",
-    "C19-R1 successor design",
-    "all consumed C19 v2/v3/v4 and R1-v1 identities"
+    "research/c19-r2-fsa-state-tracker-spec-20260918",
+    "C19_R2_FSA_STATE_TRACKER_PROSPECTIVE_SPECIFICATION implementation, review fixups, identity/STARTED/execution, scoring and preservation",
+    "C19-R1-v1/v2 post-START failures, transient outputs, diagnosis, repair, retry or successor design",
+    "consumed C19-v2/v3/v4 and R1-v1/v2 identities and controls",
+    "immutable C19-v4 preserve/evidence/tag"
   ],
   "authoritative_refs": {
     "main": "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "ops/evidence-analyst-handoff@966018058f296098805982a8d206102741c3842c",
-    "main_active_package": "research/c19-r1-revision-authority-runtime-closed-v2-20260918@a23975c5713347eaa459161f538a8f0c3db6152e",
-    "main_started": "control/c19-r1-revision-authority-started-v2-20260918@a230e250021cea113c42d674da2bfc31dc0a3549",
-    "main_one_way_workflow": "35260650772:failure",
-    "main_preserve_ref": null,
-    "main_evidence_tag": null
+    "evidence_analyst": "ops/evidence-analyst-handoff@b09d90d0545a0448ea5a310f9373969e7471b15d",
+    "control_brain_strategic_only": "ops/control-brain-handoff@d40f83ababcddf0b1e72621c77b10a8c4900badb",
+    "main_active_r2": "research/c19-r2-fsa-state-tracker-spec-20260918@5d5d171cf872baed7a636fd246ab36f3a91a6716",
+    "main_r2_dedicated_pre_start": "35265194243:success",
+    "main_r2_ordinary_ci": "35265194183:success",
+    "main_r2_formal_identity": null,
+    "main_r2_started": null,
+    "r1_v1_started": "control/c19-r1-revision-authority-started-20260918@62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2",
+    "r1_v2_started": "control/c19-r1-revision-authority-started-v2-20260918@a230e250021cea113c42d674da2bfc31dc0a3549",
+    "c19_v4_evidence_tag": "evidence/c19-official-v4-c19-external-v2-official-v4"
   },
   "branches_prs_advanced": {
-    "branch": "research/exploratory-sub-h2-residual-memory-reduction-20260918@5cd9f65bca71ee1a235c88c27d32e25f27c76745",
+    "branch": "research/exploratory-sub-h1-competing-belief-reduction-20260918@b403205cdc86b5c5930a2031c4001ba68fd30ee9",
+    "base": "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "commits": [
-      "6cb1a0c6e57a022e236f1dab392328da4eb86348",
-      "b67bab8ba78724b9b35773f34a2bad3c9800017e",
-      "5cd9f65bca71ee1a235c88c27d32e25f27c76745"
+      "97af5a7b2e51ae0e012ef340864a92b8d9668f48",
+      "40e65a2ece2a01047a8db795672931919a6397e7",
+      "be88658d13dbcdfcca8cb9c82a31c22a8880a508",
+      "b403205cdc86b5c5930a2031c4001ba68fd30ee9"
     ],
     "prs_created": [],
     "merges": []
   },
   "workflows_experiments": {
-    "initial_ci": {
-      "run_id": 35260250588,
-      "head": "6cb1a0c6e57a022e236f1dab392328da4eb86348",
-      "status": "completed",
-      "conclusion": "failure",
-      "reason": "Ruff UP033 only before tests; mechanical cache-decorator correction applied on exploratory branch."
-    },
     "final_exact_head_ci": {
-      "run_id": 35260556560,
-      "head": "5cd9f65bca71ee1a235c88c27d32e25f27c76745",
+      "run_id": 35266438318,
+      "head": "b403205cdc86b5c5930a2031c4001ba68fd30ee9",
       "status": "completed",
       "conclusion": "success",
+      "python_3_11": "success",
+      "python_3_13": "success",
       "manual_dispatch": false
     },
-    "experiment": "disjoint DEV decay selection and TEST evaluation for residual-loser versus symmetric recurrent two-state reductions"
+    "experiment": "Disjoint DEV parameter selection and TEST evaluation for an explicit three-score competing-belief heuristic versus a three-state probabilistic recurrent filter across six fixed revision/recovery utility trade-offs."
   },
   "scientific_readiness_exploratory_results": {
     "new_formal_scientific_result": false,
-    "formal_readiness_changed": false,
-    "observation": "Generic symmetric recurrent memory had higher TEST utility than residual-loser retention under all seven fixed utility trade-offs.",
-    "symmetric_minus_residual_test_utility": [0.006298, 0.013909, 0.030186, 0.006151, 0.010453, 0.028184, 0.008571],
-    "interpretation": "Reduction pressure only: future H2 work should beat strong resource-matched recurrent/probabilistic memory controls; this toy cannot support or reject H2 formally."
+    "formal_readiness_changed_by_sub": false,
+    "observation": "Across six fixed TEST utility trade-offs, the matched probabilistic filter won four and the explicit competing-belief heuristic won two; all utility differences were small.",
+    "probabilistic_minus_competing_test_utility": [
+      0.00027897479831484606,
+      0.0007188661651439388,
+      -0.0004165488098240022,
+      -0.0006527733359722454,
+      0.0025821264076603123,
+      0.00009136973551882033
+    ],
+    "max_absolute_test_utility_gap": 0.0025821264076603123,
+    "mean_absolute_test_utility_gap": 0.0007901098754056942,
+    "interpretation": "Reduction pressure only: this simple synthetic world provides no robust mechanism-specific advantage for explicit competing beliefs once a strong probabilistic state baseline has matched persistent state and hysteresis opportunity."
   },
   "evidentiary_status": "NON_EVIDENTIARY",
   "consumed_identities": {
     "sub_consumed": [],
-    "main_observed": {
+    "main_or_global_observed_untouched": {
       "c19-r1-revision-authority-official-v1": {
         "consumed": true,
+        "retry_allowed": false,
         "touched_by_sub": false
       },
       "c19-r1-revision-authority-official-v2": {
         "consumed": true,
         "retry_allowed": false,
-        "started_ref": "control/c19-r1-revision-authority-started-v2-20260918@a230e250021cea113c42d674da2bfc31dc0a3549",
+        "touched_by_sub": false
+      },
+      "c19-official-v4": {
+        "consumed": true,
+        "immutable_evidence": true,
         "touched_by_sub": false
       }
     }
@@ -85,15 +100,18 @@
     "No reserved independent formal SUB lane or fallback exists."
   ],
   "collision_reconciliation": {
-    "analyst_tip_rechecked": "966018058f296098805982a8d206102741c3842c",
-    "main_package_rechecked": "a23975c5713347eaa459161f538a8f0c3db6152e",
-    "main_started_observed_during_run": true,
-    "main_started_commit": "a230e250021cea113c42d674da2bfc31dc0a3549",
-    "main_one_way_workflow_final_observed_state": "35260650772:completed/failure",
-    "main_preserve_ref_present_at_final_reconciliation": false,
-    "main_evidence_tag_present_at_final_reconciliation": false,
+    "analyst_tip_rechecked": "b09d90d0545a0448ea5a310f9373969e7471b15d",
+    "main_r2_head_rechecked": "5d5d171cf872baed7a636fd246ab36f3a91a6716",
+    "main_r2_exact_head_checks": {
+      "dedicated_pre_start_35265194243": "success",
+      "ordinary_ci_35265194183": "success"
+    },
+    "main_report_rechecked_after_relay": "R2_PRE_START_READY_FOR_ANALYST_REVIEW / hard STOP",
+    "open_prs": 0,
+    "open_operational_issues": [139],
+    "sub_branch_head": "b403205cdc86b5c5930a2031c4001ba68fd30ee9",
     "sub_intervened_on_main": false,
-    "result": "independence maintained; MAIN post-START failure left entirely to MAIN/Evidence Analyst"
+    "result": "independence maintained; concurrent MAIN relay commits were retained on the report branch before SUB persistence"
   },
   "integrity_state": {
     "exploratory_only": true,
@@ -108,41 +126,41 @@
     "exact_exploratory_head_ci_green": true
   },
   "completion_target": {
-    "target": "Run one independent H2 matched-memory reduction diagnostic, make the NON_EVIDENTIARY boundary explicit, close exact-head CI, and return the reduction lesson to Evidence Analyst.",
+    "target": "Run one independent H1 matched probabilistic reduction diagnostic, explicitly mark it NON_EVIDENTIARY, close exact-head CI, and return the reduction lesson to Evidence Analyst without touching MAIN.",
     "status": "achieved"
   },
-  "fallback_status": "No formal sub_lane or sub_fallback; Exploratory Incubator used exactly once for this run.",
+  "fallback_status": "No formal sub_lane or sub_fallback; Exploratory Incubator used for exactly one distinct target this run.",
   "rejected_lane": null,
   "lane_rejected_reason": null,
-  "why_independent_of_main": "Synthetic-only H2 reduction diagnostic with no dependency on C19-R1-v2 package, outcome, blocker, official inputs, scorer, preservation, or successor decision.",
-  "hypothesis_or_reduction_question": "Does residual-loser-specific recovery retain an advantage over a generic symmetric recurrent-memory reduction when both receive the same two-scalar state budget and one independently DEV-selected decay parameter?",
+  "why_independent_of_main": "Synthetic-only H1 reduction diagnostic with no dependency on C19-R2 specification/readiness/outcome, R1 failures, official inputs, scorer, preservation, or any MAIN blocker.",
+  "hypothesis_or_reduction_question": "Does an explicit competing-belief heuristic retain a mechanism-specific non-monotonic revision advantage over a strong probabilistic recurrent filter when both receive the same observations, three-scalar persistent-state budget, two DEV-selected control parameters, and revision hysteresis opportunity?",
   "synthetic_or_dev_inputs_used": {
-    "source": "deterministic synthetic A->B->A episodes only",
-    "episodes_per_seed": 512,
-    "initial_a_steps": 6,
-    "b_dwell_steps": [2, 4, 8, 16],
-    "return_a_steps": 6,
-    "evidence_mean_magnitude": 1.0,
-    "evidence_noise_sigma": 1.2,
-    "dev_seeds": [20260908, 20260909, 20260910, 20260911, 20260912],
+    "source": "deterministic synthetic three-state non-monotonic Markov sequences only",
+    "states": [0, 1, 2],
+    "sequences_per_seed": 256,
+    "sequence_length": 72,
+    "world_stay_probability": 0.92,
+    "world_correct_observation_probability": 0.68,
+    "dev_seeds": [20260901, 20260902, 20260903, 20260904, 20260905],
     "test_seeds": [20260918, 20260919, 20260920, 20260921, 20260922]
   },
-  "implementation_or_experiment_performed": "Implemented two matched two-state/one-decay mechanisms; independently selected decay on fixed DEV utility and evaluated the selected decay on disjoint TEST seeds across seven fixed false-revision/return-latency utility trade-offs.",
-  "observations": "Symmetric recurrent TEST utility exceeded residual-loser TEST utility for all seven fixed trade-offs, with gaps from +0.006151 to +0.030186.",
-  "what_would_falsify_or_reduce_it": "A fresh matched prospective H2 design in which loser-specific retention retains a preregistered held-out advantage over strong recurrent/probabilistic memory controls under matched information, state, training/tuning and resource budgets.",
-  "candidate_formal_question": "Under matched state, information, training/tuning and resource budgets, does loser-specific residual retention improve a preregistered recovery-vs-false-revision utility beyond generic recurrent/probabilistic memory?",
+  "implementation_or_experiment_performed": "Implemented a three-score decayed competing-belief heuristic and a three-state HMM-style recurrent filter. Each independently DEV-selected two control parameters from fixed grids, then evaluated fixed selections on disjoint TEST seeds across six fixed accuracy/false-revision/switch-latency/return-recovery utility surfaces.",
+  "observations": "The probabilistic filter won four of six TEST utility rows and the explicit competing-belief heuristic won two; maximum absolute utility gap was 0.0025821264 and mean absolute gap 0.0007901099, indicating near-equivalence in this bounded toy world.",
+  "what_would_falsify_or_reduce_it": "A fresh prospective H1 task family with matched information/reliability access, persistent state, training/tuning/calibration, hysteresis opportunity and compute/resources where explicit competing objects show a stable held-out Pareto or preregistered utility advantage over strong probabilistic/recurrent controls.",
+  "candidate_formal_question": "Under prospectively matched observation access, persistent-state capacity, training/tuning/calibration budget, revision-control opportunity and compute/resource budget, do explicit persistent competing beliefs improve held-out non-monotonic revision accuracy/recovery/latency trade-offs beyond strong probabilistic or generic recurrent state models?",
   "suggested_prospective_object": null,
   "new_scientific_choices_required_before_formalization": [
-    "fresh task/world family",
-    "residual and comparator dynamics",
-    "training/tuning budget",
-    "state/resource matching",
-    "utility region and operating-point rule",
+    "fresh task/world family and source of non-monotonic returns",
+    "allowed or learned transition/noise/reliability information for each comparator",
+    "exact explicit-belief dynamics and strong probabilistic/recurrent comparators",
+    "persistent-state, parameter, compute and resource matching",
+    "training, fitting, calibration and selection budgets",
+    "primary metrics and Pareto/utility success/failure criteria",
     "held-out split",
     "seeds/runtime/determinism",
-    "success/failure criteria",
+    "preservation/scoring/statistical contract",
     "fresh protocol/package/bindings/identity"
   ],
   "promotion_recommendation": "REJECT",
-  "promotion_recommendation_scope": "Reject this current toy as a formalization candidate only; retain the reduction lesson. This is not a formal rejection of H2."
+  "promotion_recommendation_scope": "Reject this current toy as a formalization candidate only; retain the reduction lesson that H1 must beat a strong matched probabilistic/recurrent baseline. This is not a formal scientific rejection of H1 and does not authorize automatic continuation."
 }
