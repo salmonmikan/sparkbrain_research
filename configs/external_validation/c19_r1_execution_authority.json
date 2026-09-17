@@ -1,31 +1,73 @@
 {
-  "schema_version": "1",
-  "state": "EXECUTION_AUTHORIZED",
-  "execution_allowed": true,
-  "execution_limit": 1,
-  "no_retry_after_started": true,
-  "evidence_analyst_commit": "42836802e78abd26d19c5b8a789411f2b03d0ea1",
-  "scientific_basis_commit": "7cf849051a68b4227e29fe2f6ee95b2ff277dacd",
-  "protocol_id": "c19-r1-revision-authority-protocol-v1",
-  "run_identity": "c19-r1-revision-authority-official-v1",
-  "scientific_contract": {
-    "path": "configs/external_validation/c19_r1_revision_authority.json",
-    "blob_sha": "1174c82fabfbe00f48226a128370b2d83b902efa"
-  },
-  "preregistration": {
-    "path": "docs/research/c19_r1_revision_authority_preregistration.md",
-    "blob_sha": "6a31b94b480cb672214d2a0858bcc833bf0f43b4"
-  },
-  "atomic_idx_source_map_sha256": "cb3ca63703bdab4107e896884908817680dd4fe4b5eebc32b6219075f0187bbb",
-  "v4_read_only_binding": {
-    "package_commit": "74bfe6b4a39758656f291baaa3f16236e3e71964",
-    "preserve_commit": "d8fcc5216ff24940836972816cb0ec8f11e4ba06",
-    "evidence_commit": "a0f83318356ced1c84863737803080d0dc69d208",
-    "raw_sha256": "692f8a5dba48f604eb1f5518a8545b80da01e1a00a9e2d2b6b1c0567355d65af"
-  },
-  "allowed_admission_paths": [
+  "allowed_successor_paths": [
     ".github/workflows/c19-r1-prestart.yml",
     ".github/workflows/c19-r1-one-way.yml",
-    "configs/external_validation/c19_r1_execution_authority.json"
-  ]
+    "configs/external_validation/c19_r1_execution_authority.json",
+    "scripts/run_c19_r1_official_v2.py"
+  ],
+  "atomic_idx_source_map_sha256": "cb3ca63703bdab4107e896884908817680dd4fe4b5eebc32b6219075f0187bbb",
+  "consumed_v1_package_commit": "7197ab0f9683616858859446ae9eed7b75707f25",
+  "evidence_analyst_commit": "966018058f296098805982a8d206102741c3842c",
+  "evidence_tag": "evidence/c19-r1-revision-authority-c19-r1-revision-authority-official-v2",
+  "execution_allowed": true,
+  "execution_limit": 1,
+  "execution_protocol_id": "c19-r1-revision-authority-protocol-v2",
+  "line_level_budget": {
+    "automatic_v3_allowed": false,
+    "final_operational_successor": true,
+    "second_post_start_infrastructure_failure_before_measurement": "TERMINATE_R1_REDUCTION_LINE"
+  },
+  "no_retry_after_started": true,
+  "preregistration": {
+    "blob_sha": "6a31b94b480cb672214d2a0858bcc833bf0f43b4",
+    "path": "docs/research/c19_r1_revision_authority_preregistration.md"
+  },
+  "preserve_ref": "preserve/c19-r1-revision-authority-raw-c19-r1-revision-authority-official-v2",
+  "run_identity": "c19-r1-revision-authority-official-v2",
+  "runtime_manifest": {
+    "declared_dependencies": [
+      "numpy>=2.0",
+      "torch==2.13.0"
+    ],
+    "install_command": "python -m pip install -e .[learned]",
+    "network_blocked_import_smoke_required": true,
+    "production_import_path": "scripts/run_c19_r1_official.py",
+    "python_implementation": "CPython",
+    "python_version": "3.11.16",
+    "readiness_commit": "f5f0f7abd02372954aa8edcf10b6c15f9644c122",
+    "readiness_workflow_run_id": 35254816937,
+    "resolved_dependencies": {
+      "numpy": "2.4.6",
+      "torch": "2.13.0+cu130"
+    },
+    "runner": "ubuntu-24.04",
+    "schema_version": "1"
+  },
+  "runtime_manifest_sha256": "cdb7a2a075f76d4b65b51fc7d0b46f7ecda98646e33902420b2a7e5b7d604fc5",
+  "runtime_readiness": {
+    "artifact_digest": "sha256:a6124b357e89c8cdb3d9f9e835621ee5f96a9529177391f759ab35fe320681a0",
+    "dedicated_workflow_run_id": 35254816937,
+    "ordinary_ci_run_id": 35254816864,
+    "readiness_commit": "f5f0f7abd02372954aa8edcf10b6c15f9644c122",
+    "status": "PASS"
+  },
+  "schema_version": "2",
+  "scientific_basis_commit": "7cf849051a68b4227e29fe2f6ee95b2ff277dacd",
+  "scientific_contract": {
+    "blob_sha": "1174c82fabfbe00f48226a128370b2d83b902efa",
+    "path": "configs/external_validation/c19_r1_revision_authority.json"
+  },
+  "scientific_protocol_id": "c19-r1-revision-authority-protocol-v1",
+  "scientific_protocol_source": {
+    "blob_sha": "be65b3887ba7c67eaf97cf53b456ed17f926fd6a",
+    "path": "src/sparkbrain/v03_external_validation/c19_r1_protocol.py"
+  },
+  "started_ref": "control/c19-r1-revision-authority-started-v2-20260918",
+  "state": "EXECUTION_AUTHORIZED",
+  "v4_read_only_binding": {
+    "evidence_commit": "a0f83318356ced1c84863737803080d0dc69d208",
+    "package_commit": "74bfe6b4a39758656f291baaa3f16236e3e71964",
+    "preserve_commit": "d8fcc5216ff24940836972816cb0ec8f11e4ba06",
+    "raw_sha256": "692f8a5dba48f604eb1f5518a8545b80da01e1a00a9e2d2b6b1c0567355d65af"
+  }
 }

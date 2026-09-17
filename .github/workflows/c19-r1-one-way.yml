@@ -1,12 +1,12 @@
-name: C19-R1 one-way
-run-name: c19-r1-${{ github.ref_name }}
+name: C19-R1 successor-v2 one-way
+run-name: c19-r1-v2-${{ github.ref_name }}
 
 on:
   push:
     branches:
-      - "control/c19-r1-revision-authority-started-*"
+      - "control/c19-r1-revision-authority-started-v2-20260918"
     paths:
-      - "artifacts/v03/c19_external_validation/r1/official_v1/STARTED.json"
+      - "artifacts/v03/c19_external_validation/r1/official_v2/STARTED.json"
 
 permissions:
   contents: write
@@ -16,30 +16,34 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 180
     steps:
-      - name: Checkout STARTED control ref
+      - name: Checkout successor-v2 STARTED control ref
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ github.token }}
 
-      - name: Validate STARTED marker, authority, and collision state
+      - name: Validate STARTED marker, authority, runtime binding, and collisions
         env:
-          STARTED_PATH: artifacts/v03/c19_external_validation/r1/official_v1/STARTED.json
+          STARTED_PATH: artifacts/v03/c19_external_validation/r1/official_v2/STARTED.json
         run: |
           set -euo pipefail
           test "${GITHUB_RUN_ATTEMPT}" = '1'
-          case "${GITHUB_REF_NAME}" in
-            control/c19-r1-revision-authority-started-*) ;;
-            *) echo 'unexpected R1 STARTED ref namespace' >&2; exit 1 ;;
-          esac
+          test "${GITHUB_REF_NAME}" = 'control/c19-r1-revision-authority-started-v2-20260918'
           python - <<'PY' > /tmp/started.env
-          import json, os, re
+          import json
+          import os
+          import re
           from pathlib import Path
+
           started = json.loads(Path(os.environ['STARTED_PATH']).read_text(encoding='utf-8'))
           required = {
               'state': 'STARTED',
-              'protocol_id': 'c19-r1-revision-authority-protocol-v1',
-              'run_identity': 'c19-r1-revision-authority-official-v1',
+              'scientific_protocol_id': 'c19-r1-revision-authority-protocol-v1',
+              'protocol_id': 'c19-r1-revision-authority-protocol-v2',
+              'run_identity': 'c19-r1-revision-authority-official-v2',
+              'runtime_manifest_sha256': (
+                  'cdb7a2a075f76d4b65b51fc7d0b46f7ecda98646e33902420b2a7e5b7d604fc5'
+              ),
               'no_retry': True,
           }
           for key, expected in required.items():
@@ -58,13 +62,19 @@ jobs:
           git merge-base --is-ancestor "${PACKAGE_COMMIT}" "${GITHUB_SHA}"
           changed="$(git diff --name-only "${PACKAGE_COMMIT}..${GITHUB_SHA}")"
           test "${changed}" = "${STARTED_PATH}"
-          AUTH='configs/external_validation/c19_r1_execution_authority.json'
+
           python - "${PACKAGE_COMMIT}" "${ANALYST_COMMIT}" <<'PY'
-          import json, subprocess, sys
+          import hashlib
+          import json
+          import subprocess
+          import sys
+
           package, analyst = sys.argv[1:]
           raw = subprocess.run(
               ['git', 'show', f'{package}:configs/external_validation/c19_r1_execution_authority.json'],
-              check=True, capture_output=True, text=True,
+              check=True,
+              capture_output=True,
+              text=True,
           ).stdout
           value = json.loads(raw)
           assert value['state'] == 'EXECUTION_AUTHORIZED'
@@ -72,66 +82,122 @@ jobs:
           assert value['execution_limit'] == 1
           assert value['no_retry_after_started'] is True
           assert value['evidence_analyst_commit'] == analyst
-          assert analyst == '42836802e78abd26d19c5b8a789411f2b03d0ea1'
-          assert value['run_identity'] == 'c19-r1-revision-authority-official-v1'
-          assert value['atomic_idx_source_map_sha256'] == 'cb3ca63703bdab4107e896884908817680dd4fe4b5eebc32b6219075f0187bbb'
+          assert analyst == '966018058f296098805982a8d206102741c3842c'
+          assert value['execution_protocol_id'] == 'c19-r1-revision-authority-protocol-v2'
+          assert value['run_identity'] == 'c19-r1-revision-authority-official-v2'
+          assert value['runtime_manifest_sha256'] == (
+              'cdb7a2a075f76d4b65b51fc7d0b46f7ecda98646e33902420b2a7e5b7d604fc5'
+          )
+          payload = json.dumps(
+              value['runtime_manifest'], sort_keys=True, separators=(',', ':')
+          ).encode()
+          assert hashlib.sha256(payload).hexdigest() == value['runtime_manifest_sha256']
+          assert value['atomic_idx_source_map_sha256'] == (
+              'cb3ca63703bdab4107e896884908817680dd4fe4b5eebc32b6219075f0187bbb'
+          )
           PY
-          PRESERVE_BRANCH='preserve/c19-r1-revision-authority-raw-c19-r1-revision-authority-official-v1'
-          EVIDENCE_TAG='evidence/c19-r1-revision-authority-c19-r1-revision-authority-official-v1'
+
+          PRESERVE_BRANCH='preserve/c19-r1-revision-authority-raw-c19-r1-revision-authority-official-v2'
+          EVIDENCE_TAG='evidence/c19-r1-revision-authority-c19-r1-revision-authority-official-v2'
           if git ls-remote --exit-code --heads origin "${PRESERVE_BRANCH}" >/dev/null 2>&1; then exit 1; fi
           if git ls-remote --exit-code --tags origin "refs/tags/${EVIDENCE_TAG}" >/dev/null 2>&1; then exit 1; fi
           echo "PRESERVE_BRANCH=${PRESERVE_BRANCH}" >> "${GITHUB_ENV}"
           echo "EVIDENCE_TAG=${EVIDENCE_TAG}" >> "${GITHUB_ENV}"
           echo "STARTED_REF=${GITHUB_REF_NAME}" >> "${GITHUB_ENV}"
 
-      - name: Checkout exact R1 package commit
+      - name: Checkout exact successor-v2 package
         run: |
           set -euo pipefail
           git checkout --detach "${EXACT_PACKAGE_COMMIT}"
           test "$(git rev-parse HEAD)" = "${EXACT_PACKAGE_COMMIT}"
 
-      - name: Re-prove admission-only diff and immutable bindings
+      - name: Re-prove frozen science and operational-only successor diff
         run: |
           set -euo pipefail
           python - <<'PY'
-          import json, subprocess
+          import json
+          import subprocess
           from pathlib import Path
-          authority = json.loads(Path('configs/external_validation/c19_r1_execution_authority.json').read_text())
-          basis = authority['scientific_basis_commit']
+
+          authority = json.loads(
+              Path('configs/external_validation/c19_r1_execution_authority.json').read_text()
+          )
+          basis = authority['consumed_v1_package_commit']
+
           def git(*args: str) -> str:
-              return subprocess.run(['git', *args], check=True, capture_output=True, text=True).stdout.strip()
+              return subprocess.run(
+                  ['git', *args], check=True, capture_output=True, text=True
+              ).stdout.strip()
+
           changed = set(git('diff', '--name-only', f'{basis}..HEAD').splitlines())
-          assert changed == set(authority['allowed_admission_paths']), changed
-          assert git('rev-parse', 'HEAD:configs/external_validation/c19_r1_revision_authority.json') == authority['scientific_contract']['blob_sha']
-          assert git('rev-parse', 'HEAD:docs/research/c19_r1_revision_authority_preregistration.md') == authority['preregistration']['blob_sha']
+          assert changed == set(authority['allowed_successor_paths']), changed
+          assert git(
+              'rev-parse', 'HEAD:configs/external_validation/c19_r1_revision_authority.json'
+          ) == authority['scientific_contract']['blob_sha']
+          assert git(
+              'rev-parse', 'HEAD:src/sparkbrain/v03_external_validation/c19_r1_protocol.py'
+          ) == authority['scientific_protocol_source']['blob_sha']
+          assert git(
+              'rev-parse', 'HEAD:docs/research/c19_r1_revision_authority_preregistration.md'
+          ) == authority['preregistration']['blob_sha']
           v4 = authority['v4_read_only_binding']
           for key in ('package_commit', 'preserve_commit', 'evidence_commit'):
               git('cat-file', '-e', f"{v4[key]}^{{commit}}")
           PY
 
-      - name: Set up exact official Python
+      - name: Set up exact successor-v2 Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11.16"
           cache: pip
 
-      - name: Install exact R1 runtime and re-prove pre-START contract
+      - name: Install and verify frozen successor-v2 runtime
         run: |
           set -euo pipefail
           test "$(python -c 'import platform; print(platform.python_version())')" = '3.11.16'
           python -m pip install --upgrade pip
-          python -m pip install -e .
+          python -m pip install -e ".[learned]"
+          python - <<'PY'
+          import numpy
+          import torch
+          assert numpy.__version__ == '2.4.6', numpy.__version__
+          assert torch.__version__ == '2.13.0+cu130', torch.__version__
+          print('numpy', numpy.__version__)
+          print('torch', torch.__version__)
+          PY
           python scripts/check_c19_r1_prestart.py
+
+      - name: Network-blocked exact successor production import smoke
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import runpy
+          import socket
+          from unittest.mock import patch
+
+          def blocked(*args, **kwargs):
+              raise RuntimeError('network disabled by C19-R1 successor-v2 execution smoke')
+
+          with patch.object(socket, 'create_connection', blocked), patch.object(
+              socket.socket, 'connect', blocked
+          ):
+              namespace = runpy.run_path(
+                  'scripts/run_c19_r1_official_v2.py',
+                  run_name='c19_r1_v2_execution_import_probe',
+              )
+          assert 'acquire_raw' in namespace
+          assert 'score_preserved' in namespace
+          PY
 
       - name: Acquire and verify pinned Belief-R after STARTED
         run: |
           set -euo pipefail
           python scripts/manage_belief_r.py --acquire --cache "${RUNNER_TEMP}/belief_r-test.csv" > "${RUNNER_TEMP}/belief-r-verification.json"
 
-      - name: Execute target-blind R1 acquisition with network blocked
+      - name: Execute target-blind successor-v2 acquisition with network blocked
         run: |
           set -euo pipefail
-          python scripts/run_c19_r1_official.py acquire-raw \
+          python scripts/run_c19_r1_official_v2.py acquire-raw \
             --cache "${RUNNER_TEMP}/belief_r-test.csv" \
             --raw "${RUNNER_TEMP}/raw_predictions.jsonl" \
             --atomic-idx-map "${RUNNER_TEMP}/atomic_idx_source_map.json" \
@@ -140,9 +206,13 @@ jobs:
             --package-commit "${EXACT_PACKAGE_COMMIT}" \
             --started-ref "${STARTED_REF}"
           python - <<'PY'
-          import json, os
+          import json
+          import os
           from pathlib import Path
+
           manifest = json.loads(Path(os.environ['RUNNER_TEMP'], 'raw_manifest.json').read_text())
+          assert manifest['protocol_id'] == 'c19-r1-revision-authority-protocol-v2'
+          assert manifest['run_identity'] == 'c19-r1-revision-authority-official-v2'
           assert manifest['atomic_idx_source_map_sha256'] == 'cb3ca63703bdab4107e896884908817680dd4fe4b5eebc32b6219075f0187bbb'
           assert manifest['atomic_idx_source_map_entries'] == 1744
           assert manifest['atomic_idx_source_map_target_free'] is True
@@ -156,7 +226,7 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           if git ls-remote --exit-code --heads origin "${PRESERVE_BRANCH}" >/dev/null 2>&1; then exit 1; fi
           git switch --create "${PRESERVE_BRANCH}" "${EXACT_PACKAGE_COMMIT}"
-          DEST='artifacts/v03/c19_external_validation/r1/official_v1'
+          DEST='artifacts/v03/c19_external_validation/r1/official_v2'
           mkdir -p "${DEST}"
           for name in raw_predictions.jsonl atomic_idx_source_map.json raw_manifest.json; do
             test ! -e "${DEST}/${name}"
@@ -165,20 +235,20 @@ jobs:
           done
           git add -- "${DEST}/raw_predictions.jsonl" "${DEST}/atomic_idx_source_map.json" "${DEST}/raw_manifest.json"
           test "$(git diff --cached --name-only | wc -l)" -eq 3
-          git commit -m 'preserve(c19-r1): retain target-blind official raw and source map'
+          git commit -m 'preserve(c19-r1-v2): retain target-blind official raw and source map'
           PRESERVATION_COMMIT="$(git rev-parse HEAD)"
           git push origin "HEAD:refs/heads/${PRESERVE_BRANCH}"
           REMOTE="$(git ls-remote --heads origin "${PRESERVE_BRANCH}" | awk '{print $1}')"
           test "${REMOTE}" = "${PRESERVATION_COMMIT}"
           echo "PRESERVATION_COMMIT=${PRESERVATION_COMMIT}" >> "${GITHUB_ENV}"
 
-      - name: Independently re-fetch preserved R1 bundle and verify exact bytes
+      - name: Independently re-fetch preserved successor-v2 bundle and verify exact bytes
         run: |
           set -euo pipefail
           git checkout --detach "${EXACT_PACKAGE_COMMIT}"
           git fetch --no-tags origin "refs/heads/${PRESERVE_BRANCH}:refs/remotes/origin/${PRESERVE_BRANCH}"
           test "$(git rev-parse "refs/remotes/origin/${PRESERVE_BRANCH}")" = "${PRESERVATION_COMMIT}"
-          DEST='artifacts/v03/c19_external_validation/r1/official_v1'
+          DEST='artifacts/v03/c19_external_validation/r1/official_v2'
           for name in raw_predictions.jsonl atomic_idx_source_map.json raw_manifest.json; do
             git show "${PRESERVATION_COMMIT}:${DEST}/${name}" > "${RUNNER_TEMP}/preserved_${name}"
             test "$(sha256sum "${RUNNER_TEMP}/${name}" | awk '{print $1}')" = "$(sha256sum "${RUNNER_TEMP}/preserved_${name}" | awk '{print $1}')"
@@ -193,10 +263,10 @@ jobs:
           git show "${V4_PRESERVE}:${V4_DEST}" > "${RUNNER_TEMP}/v4_raw_predictions.jsonl"
           test "$(sha256sum "${RUNNER_TEMP}/v4_raw_predictions.jsonl" | awk '{print $1}')" = '692f8a5dba48f604eb1f5518a8545b80da01e1a00a9e2d2b6b1c0567355d65af'
 
-      - name: Materialize evaluator targets and score only preserved R1 raw
+      - name: Materialize evaluator targets and score only preserved successor-v2 raw
         run: |
           set -euo pipefail
-          python scripts/run_c19_r1_official.py score-preserved \
+          python scripts/run_c19_r1_official_v2.py score-preserved \
             --cache "${RUNNER_TEMP}/belief_r-test.csv" \
             --raw "${RUNNER_TEMP}/preserved_raw_predictions.jsonl" \
             --atomic-idx-map "${RUNNER_TEMP}/preserved_atomic_idx_source_map.json" \
@@ -208,28 +278,32 @@ jobs:
             --r1-preservation-commit "${PRESERVATION_COMMIT}" \
             --v4-preservation-commit 'd8fcc5216ff24940836972816cb0ec8f11e4ba06'
 
-      - name: Create terminal R1 evidence commit and annotated authority tag
+      - name: Create terminal successor-v2 evidence commit and annotated authority tag
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git switch --create c19-r1-terminal-evidence "${EXACT_PACKAGE_COMMIT}"
-          DEST='artifacts/v03/c19_external_validation/r1/official_v1/evidence'
+          git switch --create c19-r1-v2-terminal-evidence "${EXACT_PACKAGE_COMMIT}"
+          DEST='artifacts/v03/c19_external_validation/r1/official_v2/evidence'
           mkdir -p "${DEST}"
           cp "${RUNNER_TEMP}/terminal_evidence/"*.json "${DEST}/"
           python - <<'PY'
-          import json, os
+          import json
+          import os
           from pathlib import Path
-          dest = Path('artifacts/v03/c19_external_validation/r1/official_v1/evidence')
+
+          dest = Path('artifacts/v03/c19_external_validation/r1/official_v2/evidence')
           value = {
-              'schema_version': '1',
+              'schema_version': '2',
               'state': 'TERMINAL_EVIDENCE',
-              'protocol_id': 'c19-r1-revision-authority-protocol-v1',
-              'run_identity': 'c19-r1-revision-authority-official-v1',
+              'scientific_protocol_id': 'c19-r1-revision-authority-protocol-v1',
+              'protocol_id': 'c19-r1-revision-authority-protocol-v2',
+              'run_identity': 'c19-r1-revision-authority-official-v2',
               'evidence_analyst_commit': os.environ['EVIDENCE_ANALYST_COMMIT'],
               'exact_package_commit': os.environ['EXACT_PACKAGE_COMMIT'],
               'started_ref': os.environ['STARTED_REF'],
               'raw_preservation_commit': os.environ['PRESERVATION_COMMIT'],
+              'runtime_manifest_sha256': 'cdb7a2a075f76d4b65b51fc7d0b46f7ecda98646e33902420b2a7e5b7d604fc5',
               'workflow_run_id': os.environ['GITHUB_RUN_ID'],
               'workflow_run_attempt': int(os.environ['GITHUB_RUN_ATTEMPT']),
           }
@@ -238,16 +312,16 @@ jobs:
           )
           PY
           git add "${DEST}"
-          git commit -m 'evidence(c19-r1): finalize revision-authority reduction'
+          git commit -m 'evidence(c19-r1-v2): finalize revision-authority reduction'
           EVIDENCE_COMMIT="$(git rev-parse HEAD)"
-          git tag -a "${EVIDENCE_TAG}" "${EVIDENCE_COMMIT}" -m "C19-R1 terminal evidence; identity c19-r1-revision-authority-official-v1"
+          git tag -a "${EVIDENCE_TAG}" "${EVIDENCE_COMMIT}" -m "C19-R1 successor-v2 terminal evidence; identity c19-r1-revision-authority-official-v2"
           git push origin "refs/tags/${EVIDENCE_TAG}"
 
       - name: Upload non-raw diagnostics for post-START audit
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: c19-r1-run-${{ github.run_id }}
+          name: c19-r1-v2-run-${{ github.run_id }}
           if-no-files-found: ignore
           retention-days: 90
           path: |
