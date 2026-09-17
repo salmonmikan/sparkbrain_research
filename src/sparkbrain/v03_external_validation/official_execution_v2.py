@@ -8,10 +8,12 @@ the already-green structural raw validator from the frozen predecessor.
 from __future__ import annotations
 
 import hashlib
+import json
 import platform
 import sys
 from collections.abc import Iterable, Mapping, Sequence
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Any, Protocol
 
 from sparkbrain.v03_external_validation import official_execution as inherited
@@ -169,6 +171,33 @@ def validate_raw_records_v2(records: Sequence[Mapping[str, Any]]) -> None:
         converted["run_identity"] = inherited.PLANNED_IDENTITY
         inherited_records.append(converted)
     inherited.validate_raw_records(inherited_records)
+
+
+def write_raw_jsonl_no_clobber_v2(path: Path, raw: RawBundleV2) -> Path:
+    """Persist target-blind v2 raw exactly once without translating its identity."""
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("x", encoding="utf-8") as handle:
+        for record in raw.records:
+            handle.write(inherited.canonical_json(record))
+            handle.write("\n")
+    return path
+
+
+def reconstruct_raw_jsonl_v2(path: Path, *, expected_sha256: str) -> RawBundleV2:
+    """Reconstruct only fresh-v2 raw and verify the preservation digest."""
+
+    records: list[dict[str, Any]] = []
+    with path.open("r", encoding="utf-8") as handle:
+        for line in handle:
+            value = json.loads(line)
+            if not isinstance(value, dict):
+                raise ValueError("raw JSONL entries must be mappings")
+            records.append(value)
+    raw = RawBundleV2.from_records(records)
+    if raw.sha256 != expected_sha256:
+        raise ValueError("reconstructed raw digest mismatch")
+    return raw
 
 
 def runtime_manifest_v2() -> dict[str, object]:
