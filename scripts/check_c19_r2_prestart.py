@@ -38,11 +38,17 @@ ALLOWED_DIFF_PATHS = {
     "tests/test_c19_r2_state_tracker.py",
 }
 SOURCE_BLOB_PATHS = {
-    "implementation_binding_blob": "src/sparkbrain/v03_external_validation/implementation_binding.py",
-    "truth_free_adapter_blob": "src/sparkbrain/v03_external_validation/truth_free_adapter.py",
+    "implementation_binding_blob": (
+        "src/sparkbrain/v03_external_validation/implementation_binding.py"
+    ),
+    "truth_free_adapter_blob": (
+        "src/sparkbrain/v03_external_validation/truth_free_adapter.py"
+    ),
     "v4_protocol_blob": "src/sparkbrain/v03_external_validation/official_protocol_v4.py",
     "v4_scoring_blob": "src/sparkbrain/v03_external_validation/official_scoring_v4.py",
-    "v4_execution_blob": "src/sparkbrain/v03_external_validation/official_execution_v4.py",
+    "v4_execution_blob": (
+        "src/sparkbrain/v03_external_validation/official_execution_v4.py"
+    ),
     "preserver_blob": "scripts/preserve_raw_boundary.py",
 }
 
@@ -52,9 +58,23 @@ def _git(*args: str) -> str:
 
 
 def _verify_parent_and_diff() -> None:
-    subprocess.run(["git", "merge-base", "--is-ancestor", PARENT_V4_PACKAGE_COMMIT, "HEAD"], cwd=ROOT, check=True)
-    subprocess.run(["git", "merge-base", "--is-ancestor", SCIENTIFIC_PACKAGE, "HEAD"], cwd=ROOT, check=True)
-    changed = {line for line in _git("diff", "--name-only", f"{PARENT_V4_PACKAGE_COMMIT}..HEAD").splitlines() if line}
+    subprocess.run(
+        ["git", "merge-base", "--is-ancestor", PARENT_V4_PACKAGE_COMMIT, "HEAD"],
+        cwd=ROOT,
+        check=True,
+    )
+    subprocess.run(
+        ["git", "merge-base", "--is-ancestor", SCIENTIFIC_PACKAGE, "HEAD"],
+        cwd=ROOT,
+        check=True,
+    )
+    changed = {
+        line
+        for line in _git(
+            "diff", "--name-only", f"{PARENT_V4_PACKAGE_COMMIT}..HEAD"
+        ).splitlines()
+        if line
+    }
     unexpected = changed - ALLOWED_DIFF_PATHS
     if unexpected:
         raise RuntimeError(f"R2 branch modifies non-R2 paths: {sorted(unexpected)}")
@@ -70,7 +90,10 @@ def _verify_source_blobs() -> None:
         actual = _git("hash-object", relative_path)
         expected = source[key]
         if actual != expected:
-            raise RuntimeError(f"R2 source binding drift for {relative_path}: {actual} != {expected}")
+            raise RuntimeError(
+                f"R2 source binding drift for {relative_path}: "
+                f"{actual} != {expected}"
+            )
 
 
 def _verify_authority() -> dict[str, object]:
@@ -86,8 +109,14 @@ def _verify_authority() -> dict[str, object]:
         "no_retry_after_started": True,
         "scientific_package_commit": SCIENTIFIC_PACKAGE,
         "started_ref": "control/c19-r2-fsa-state-tracker-started-v1-20260918",
-        "preserve_ref": "preserve/c19-r2-fsa-state-tracker-raw-c19-r2-fsa-state-tracker-official-v1",
-        "evidence_tag": "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
+        "preserve_ref": (
+            "preserve/c19-r2-fsa-state-tracker-raw-"
+            "c19-r2-fsa-state-tracker-official-v1"
+        ),
+        "evidence_tag": (
+            "evidence/c19-r2-fsa-state-tracker-"
+            "c19-r2-fsa-state-tracker-official-v1"
+        ),
     }
     for key, value in expected.items():
         if authority.get(key) != value:
@@ -134,29 +163,41 @@ def _verify_golden_transition_contract() -> None:
     for before, probabilities, expected in cases:
         actual = transition(before, probabilities)
         if actual != expected:
-            raise RuntimeError(f"R2 transition drift: {before} -> {actual}, expected {expected}")
+            raise RuntimeError(
+                f"R2 transition drift: {before} -> {actual}, expected {expected}"
+            )
     if readout("C_WEAK") != "c":
         raise RuntimeError("R2 readout drift")
 
 
 def main() -> None:
     frozen = load_and_validate_contract(ROOT / CONFIG_PATH)
-    if frozen["formal_identity"] is not None or frozen["official_execution_allowed"] is not False:
-        raise RuntimeError("R2 frozen scientific contract must remain unchanged by authority packaging")
+    if (
+        frozen["formal_identity"] is not None
+        or frozen["official_execution_allowed"] is not False
+    ):
+        raise RuntimeError(
+            "R2 frozen scientific contract must remain unchanged by authority packaging"
+        )
     authority = _verify_authority()
     _verify_parent_and_diff()
     _verify_source_blobs()
     _verify_golden_transition_contract()
-    print(json.dumps({
-        "status": "R2_PRE_START_AUTHORITY_READY",
-        "frozen_science_formal_identity": None,
-        "authorized_identity": authority["run_identity"],
-        "evidence_analyst_commit": authority["evidence_analyst_commit"],
-        "official_execution_allowed": True,
-        "parent_v4_package_commit": PARENT_V4_PACKAGE_COMMIT,
-        "scientific_package_commit": SCIENTIFIC_PACKAGE,
-        "state_count": len(STATE_ALPHABET),
-    }, sort_keys=True))
+    print(
+        json.dumps(
+            {
+                "status": "R2_PRE_START_AUTHORITY_READY",
+                "frozen_science_formal_identity": None,
+                "authorized_identity": authority["run_identity"],
+                "evidence_analyst_commit": authority["evidence_analyst_commit"],
+                "official_execution_allowed": True,
+                "parent_v4_package_commit": PARENT_V4_PACKAGE_COMMIT,
+                "scientific_package_commit": SCIENTIFIC_PACKAGE,
+                "state_count": len(STATE_ALPHABET),
+            },
+            sort_keys=True,
+        )
+    )
 
 
 if __name__ == "__main__":
