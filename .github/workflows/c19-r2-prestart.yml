@@ -1,0 +1,50 @@
+name: c19-r2-prestart
+
+on:
+  push:
+    branches:
+      - research/c19-r2-fsa-state-tracker-spec-20260918
+  workflow_dispatch:
+
+jobs:
+  prestart:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11.16"
+          cache: pip
+      - name: Install readiness dependencies
+        run: python -m pip install -e ".[dev]"
+      - name: Lint R2 package
+        run: >-
+          python -m ruff check
+          configs/external_validation/c19_r2_fsa_state_tracker.json
+          scripts/check_c19_r2_prestart.py
+          src/sparkbrain/v03_external_validation/c19_r2_protocol.py
+          src/sparkbrain/v03_external_validation/c19_r2_scoring.py
+          src/sparkbrain/v03_external_validation/c19_r2_source_map.py
+          src/sparkbrain/v03_external_validation/c19_r2_state_tracker.py
+          tests/test_c19_r2_state_tracker.py
+      - name: Network-blocked import smoke
+        run: |
+          python - <<'PY'
+          import socket
+
+          class DeniedSocket(socket.socket):
+              def connect(self, *args, **kwargs):
+                  raise RuntimeError("network use forbidden during R2 pre-START import smoke")
+
+          socket.socket = DeniedSocket
+          import sparkbrain.v03_external_validation.c19_r2_protocol  # noqa: F401,E402
+          import sparkbrain.v03_external_validation.c19_r2_scoring  # noqa: F401,E402
+          import sparkbrain.v03_external_validation.c19_r2_source_map  # noqa: F401,E402
+          import sparkbrain.v03_external_validation.c19_r2_state_tracker  # noqa: F401,E402
+          PY
+      - name: Golden fixtures
+        run: python -m pytest -q tests/test_c19_r2_state_tracker.py
+      - name: Fail-closed R2 pre-START contract
+        run: python scripts/check_c19_r2_prestart.py
