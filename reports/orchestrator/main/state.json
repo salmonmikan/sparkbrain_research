@@ -1,84 +1,166 @@
 {
-  "timestamp": "2026-09-17T12:27:00+09:00",
+  "timestamp": "2026-09-17T14:40:49+09:00",
   "worker_role": "main",
-  "mode": "EMERGENCY_OPERATIONAL_RECOVERY",
-  "evidence_analyst_commit": "fe33b0210fdf16cf0b729d105539d4333a50450d",
-  "main_active_claim": "C19 fresh official-v2 successor operationally recovered; scientific package implementation not yet advanced",
-  "authoritative_refs": {
-    "c19_source_base_branch": "research/c19-truth-free-symbolic-adapter-v2-20260917",
-    "c19_source_base_head": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
-    "c19_successor_branch": "research/c19-official-v2-scorer-complete-20260917",
-    "planned_protocol": "c19-external-v2-official-protocol-v2",
-    "planned_identity": "c19-external-v2-official-v2",
-    "evidence_analyst": "fe33b0210fdf16cf0b729d105539d4333a50450d"
+  "evidence_analyst_commit": "080e28ce782c3a77e7d4a8249de03046d545ee9c",
+  "analyst_lanes": {
+    "main_lane": {
+      "target": "C19 fresh official-v2 package -> exact admission closure -> conditional one-way execution",
+      "branch": "research/c19-official-v2-scorer-complete-20260917",
+      "protocol": "c19-external-v2-official-protocol-v2",
+      "identity": "c19-external-v2-official-v2",
+      "main_owns_all_critical_path_fixups": true
+    },
+    "sub_lane": null,
+    "sub_fallback": null,
+    "blocked_until": "A newer Evidence Analyst handoff consumes the observed POST_START_FAILURE and prospectively defines any next distinct object, if justified."
   },
-  "scheduler_recovery": {
-    "scheduler_enabled": true,
-    "schedule": "hourly at :15 Asia/Tokyo",
-    "latest_run_observed": "2026-09-17T12:25:09+09:00 approximately",
-    "previous_durable_main_timestamp": "2026-09-17T06:33:00+09:00",
-    "root_cause_classification": "WORKER_FALSE_WRITE_PATH_UNAVAILABLE / DURABLE_REPORT_STALL",
-    "github_write_path_verified": true,
-    "verified_write_action": "created research/c19-official-v2-scorer-complete-20260917 from exact SHA 66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
-    "durable_report_recovered": true
+  "consumed_prospective_contingency_branches": [
+    "PRE_START_BINDING_DRIFT",
+    "PRE_START_BLOCKER",
+    "PRE_START_READY_FOR_ONE_WAY",
+    "POST_START_FAILURE"
+  ],
+  "main_active_claim": "C19 official-v2 identity consumed by post-START runtime failure before target-blind model execution; no scientific result; no retry",
+  "authoritative_refs": {
+    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "evidence_analyst": "080e28ce782c3a77e7d4a8249de03046d545ee9c",
+    "c19_source_base": "research/c19-truth-free-symbolic-adapter-v2-20260917@66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
+    "c19_package": "research/c19-official-v2-scorer-complete-20260917@270dc981988eb97e73aa6e126eb73ddd643b9c88",
+    "c19_started_ref": "control/c19-official-v2-started-20260917",
+    "c19_started_commit": "e576dd5d9b496ad0162158162cd2bb72ec21b1f6",
+    "c19_control_head": "7a8af82de0a0dd70ec2391ef7506ae80c5c8d391",
+    "c19_preserve_refs": [],
+    "c19_evidence_refs": [],
+    "c19_freeze_refs": []
   },
   "branches_prs_advanced": {
     "research/c19-official-v2-scorer-complete-20260917": {
-      "created_from": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
-      "scientific_delta_added_by_recovery": false
+      "analyst_observed_head": "377c0d9111dd89486f43446b3f414535b2a0cd4f",
+      "exact_started_package_head": "270dc981988eb97e73aa6e126eb73ddd643b9c88",
+      "commits_ahead_of_analyst_observation": 12,
+      "exact_head_ci_run": 35186123830,
+      "exact_head_ci_result": "success"
     },
-    "open_prs_created_by_recovery": []
+    "control/c19-official-v2-started-20260917": {
+      "started_commit": "e576dd5d9b496ad0162158162cd2bb72ec21b1f6",
+      "final_control_head": "7a8af82de0a0dd70ec2391ef7506ae80c5c8d391",
+      "final_state": "POST_START_FAILURE"
+    },
+    "open_prs": [],
+    "merges": []
   },
   "workflows_experiments": {
-    "official_experiments_dispatched": [],
-    "official_data_access": false,
-    "started_created": false,
-    "identity_consumed": false
+    "package_ci": {
+      "run_id": 35186123830,
+      "head": "270dc981988eb97e73aa6e126eb73ddd643b9c88",
+      "result": "success"
+    },
+    "official_one_way": {
+      "run_id": 35186415122,
+      "head_ref": "control/c19-official-v2-started-20260917",
+      "started_head": "e576dd5d9b496ad0162158162cd2bb72ec21b1f6",
+      "result": "failure",
+      "failed_step": "Execute target-blind acquisition with network blocked",
+      "failure_class": "runtime_dependency_import_failure_before_model_execution",
+      "failure_message": "ModuleNotFoundError: No module named 'torch'",
+      "official_cache_verified": true,
+      "official_cache_sha256": "b584c18328965cf3eb3d36f2f9ef145c1e15c9bf57bba084982ba18df1fa4153",
+      "official_pair_count": 1744,
+      "official_update_pair_count": 1074,
+      "official_maintain_pair_count": 670,
+      "target_blind_model_execution_started": false,
+      "raw_created": false,
+      "raw_preservation_created": false,
+      "evaluator_targets_materialized": false,
+      "scoring_performed": false,
+      "diagnostic_artifact_id": 10482855538,
+      "diagnostic_artifact_sha256": "73446a3bd9db7a47fc10575f68f1cad2eb1882eabdb7742898a2ac21ab2d306f"
+    }
   },
   "scientific_results": {
     "new_scientific_measurement": false,
-    "recovery_only": true
+    "terminal_scientific_result": null,
+    "classification": "POST_START_FAILURE",
+    "interpretation": "Runtime/import failure before target-blind model execution; not PASS/FAIL/INCONCLUSIVE evidence for the scientific question."
   },
-  "consumed_prospective_contingency_branches": [
-    "PRE_START_SUCCESSOR_PROTOCOLIZATION"
-  ],
+  "consumed_identities": {
+    "c19-external-v2-official-v2": {
+      "consumed": true,
+      "reason": "POST_START_FAILURE after STARTED",
+      "retry_allowed": false
+    },
+    "inherited_do_not_touch": [
+      "A01 MD-001",
+      "A01 P2 candidate-002",
+      "A01 P3 candidate-001",
+      "A01 Family-A P4 candidate-001",
+      "RV01 R01-16 family",
+      "RV01 R01-17",
+      "RV02 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
+      "CX01 Candidate-002/formal evidence",
+      "C19 predecessor c19-external-v2-official-v1 retired/rejected-unSTARTED and non-reusable"
+    ]
+  },
   "blockers": [
-    "Fresh-v2 scientific implementation/package still needs to be completed under the current Analyst authority before STARTED."
+    "Current C19 official-v2 identity is consumed and cannot be retried.",
+    "Current Evidence Analyst handoff predates STARTED/POST_START_FAILURE; no distinct successor identity/package is prospectively authorized.",
+    "The observed missing-torch dependency may inform future readiness work only after a newer Analyst handoff defines a distinct object."
   ],
   "concurrency_reconciliation": {
-    "analyst_authority_rechecked": true,
-    "successor_branch_was_absent_before_recovery": true,
-    "successor_branch_created_from_exact_authorized_base": true
+    "material_movement_after_analyst_handoff": true,
+    "analyst_handoff_state_snapshot_stale": true,
+    "analyst_contingency_still_applicable": "POST_START_FAILURE",
+    "research_head_observed": "270dc981988eb97e73aa6e126eb73ddd643b9c88",
+    "control_head_observed": "7a8af82de0a0dd70ec2391ef7506ae80c5c8d391",
+    "same_identity_retry_detected": false,
+    "open_prs": 0,
+    "open_issues": [139, 147]
   },
   "integrity_status": {
-    "status": "PRE_START_SUCCESSOR_PROTOCOLIZATION_RECOVERED",
+    "status": "POST_START_FAILURE_CONSUMED_STOP",
     "immutable_evidence_modified": false,
-    "official_cache_opened": false,
-    "started_ref_created": false,
-    "workflow_dispatched": false,
+    "started_ref_created": true,
+    "started_before_this_run": true,
+    "identity_consumed": true,
+    "retry_allowed": false,
+    "official_cache_verified": true,
+    "target_blind_model_execution_started": false,
     "official_raw_created": false,
+    "official_raw_preserved": false,
+    "evaluator_targets_materialized": false,
     "official_scoring_performed": false,
-    "identity_consumed": false
+    "terminal_scientific_result_created": false,
+    "diagnostics_preserved": true,
+    "raw_before_score_contract_violated": false,
+    "no_clobber_contract_violated": false
   },
   "main_critical_path_fixups_completed": [
-    "Diagnosed scheduler-vs-persistence split: scheduler was running while MAIN durable report was stale.",
-    "Directly verified GitHub repository write capability.",
-    "Created the exact Analyst-authorized fresh successor branch from the approved source base.",
-    "Restored MAIN durable latest/state reporting."
+    "Verified that the C19 v2 package advanced from the Analyst-observed 377c0d91 head to exact package 270dc981 with exact-head CI 35186123830 green.",
+    "Verified STARTED marker e576dd5d and the exact package/source/Analyst bindings embedded in it.",
+    "Verified one-way workflow 35186415122 step-by-step disposition and post-START diagnostic artifact digest.",
+    "Verified append-only POST_START_FAILURE control record 7a8af82d and consumed/no-retry identity state.",
+    "Reconciled absence of C19 preserve/evidence/freeze refs and absence of any scientific score/result.",
+    "Persisted the mandatory MAIN terminal report without rerunning or repairing the consumed identity."
   ],
   "same_run_steps_completed": [
-    "Scheduler health inspection",
-    "Durable report staleness confirmation",
-    "Current Evidence Analyst authority re-fetch",
-    "Successor-branch existence check",
-    "Direct GitHub write-path verification",
-    "Successor branch creation",
-    "MAIN durable report recovery"
+    "Re-fetched active remote C19 refs, open PRs/issues and current CI/workflow state.",
+    "Consumed Evidence Analyst 080e28ce and separately read MAIN/SUB report streams plus Control Brain prior.",
+    "Detected current repository state had crossed STARTED after the Analyst snapshot.",
+    "Inspected exact STARTED commit and workflow run 35186415122.",
+    "Classified observed state under the prospective POST_START_FAILURE contingency.",
+    "Confirmed diagnostic preservation and identity consumption/no-retry state.",
+    "Stopped scientific execution and persisted MAIN-owned latest/state/history."
   ],
-  "same_run_stop_reason": "Emergency recovery scope completed. Scientific successor implementation remains for the normal MAIN loop under current Analyst constraints.",
+  "same_run_stop_reason": "The exact C19 v2 identity crossed STARTED and then failed before model execution. The Analyst prospectively requires POST_START_FAILURE => preserve diagnostics, consume identity, no retry, STOP. Any repair-and-rerun or successor design now requires a newer prospective Analyst handoff.",
   "work_intentionally_left_for_sub": [],
   "reserved_sub_work_not_touched": [],
   "lane_repartition_reason": null,
   "analyst_split_invalidated": false,
-  "next_main_action": "Implement the Auditor-hardened C19 fresh-v2 package on the recovered successor branch, using direct GitHub write actions. Never claim write-path unavailability without attempting the relevant write and persisting the exact error. Persist a MAIN report even on blocked/failure/no-op runs."
+  "write_path_diagnostics": {
+    "report_latest_update": "success",
+    "report_state_update": "in_progress_at_state_write",
+    "research_or_control_write_attempted_this_run": false,
+    "reason_no_research_write": "POST_START_FAILURE requires stop; scientific mutation would be impermissible for consumed identity."
+  },
+  "next_main_action": "Do not retry c19-external-v2-official-v2. Wait for a newer Evidence Analyst handoff that consumes control/c19-official-v2-started-20260917@7a8af82de0a0dd70ec2391ef7506ae80c5c8d391 and prospectively defines any distinct next object, if justified."
 }
