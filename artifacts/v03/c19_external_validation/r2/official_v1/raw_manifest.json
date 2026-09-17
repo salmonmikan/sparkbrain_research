@@ -1,0 +1,14 @@
+{
+  "atomic_idx_source_map_sha256": "6cb7bda6a08c97186d841688d5a3e3e361eb105ab3b03e2351b97a9775cda0a0",
+  "evidence_analyst_commit": "6ecf13b73cfc75409f6cfe86e9b8ac73fc58b6ce",
+  "exact_package_commit": "5bfa3962c777fa5bc915bb21e20801ab8294778a",
+  "pairs_per_row": 1744,
+  "protocol_id": "c19-r2-fsa-state-tracker-protocol-v1",
+  "raw_bundle_sha256": "ca990ec40d3f1151525a945baa59176885bc149bbb3d56d7a56af9caac0edd7e",
+  "raw_record_count": 8720,
+  "row_count": 5,
+  "run_identity": "c19-r2-fsa-state-tracker-official-v1",
+  "schema_version": "1",
+  "started_ref": "control/c19-r2-fsa-state-tracker-started-v1-20260918",
+  "target_fields_materialized": false
+}
