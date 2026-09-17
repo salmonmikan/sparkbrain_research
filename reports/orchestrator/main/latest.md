@@ -1,47 +1,54 @@
 # SparkBrain Research Orchestrator — MAIN latest
 
-Timestamp: `2026-09-17T20:18:00+09:00`  
+Timestamp: `2026-09-17T20:49:00+09:00`  
 Worker role: `main`  
-Execution mode: `PRIMARY`  
+Execution mode: `RELAY`  
 Evidence Analyst authority: `56f0665ccc536bff6bf48e9eb581ec9a9eafcecc`
 
 ## MAIN frontier
 
-PRIMARY recovered the stale RELAY lease only after reconciling the active C19-v4 branch and exact validation state. The active object remains the Analyst-authorized **C19 official-v4 preservation-qualified final successor** on `research/c19-official-v4-preservation-qualified-20260917`.
+RELAY resumed the Analyst-authorized **C19 official-v4 preservation-qualified final successor**. The prior PRIMARY lease was `WAITING_EXTERNAL`, not an active `RUNNING` collision.
 
-Fresh authority classified the current phase as `V4_PRE_START_BLOCKER_LINT`: dedicated pre-START admission `35212637922` was green on `a0ba353ff33abc981875c9d02af2e171a1bc65f6`, while ordinary CI `35212637754` failed only at Ruff lint in both Python 3.11 and 3.13 jobs. No v4 STARTED/control/preserve/evidence authority existed, so `c19-external-v2-official-v4` remained fresh/unSTARTED/unconsumed.
-
-## Critical-path fixes completed
-
-PRIMARY inspected the exact lint diagnostics and made only the three behavior-preserving changes prospectively allowed by the Analyst:
-
-1. wrapped one overlong `argparse.ArgumentParser` construction in `scripts/run_c19_official_v4.py`;
-2. removed the unnecessary quoted forward annotation on `ExecutionAdmissionV4.synthetic_dev`;
-3. removed the unnecessary quoted forward annotation on `RawBundleV4.from_records`.
-
-No candidate, protocol, baseline, matrix, seed, input, runtime version, scorer/statistics, threshold, preservation semantics, or claim semantics changed.
-
-The final exact package head after those lint-only fixes is:
+The exact research head remained:
 
 `research/c19-official-v4-preservation-qualified-20260917@74bfe6b4a39758656f291baaa3f16236e3e71964`
 
-Intermediate lint commit: `bb279e313c2d9612055ddb67eb1a9a8aee22b374`.
+Both required exact-head admission gates completed successfully:
 
-## Exact-head workflow state
+- ordinary CI `35214841871` — `completed: success`
+- dedicated v4 pre-START admission `35214841877` — `completed: success`
 
-The final-head push started both required validations on `74bfe6b4a39758656f291baaa3f16236e3e71964`:
+Fresh checks found no existing v4 control, preservation, or evidence authority collision. The latest Analyst handoff prospectively authorized `V4_PRE_START_READY_FOR_ONE_WAY` when these gates were green.
 
-- ordinary CI: `35214841871` — `in_progress` at checkpoint
-- dedicated v4 pre-START admission: `35214841877` — `in_progress` at checkpoint
+## STARTED / one-way continuation
 
-Because the lint repair changed the exact package head, the earlier pre-START success on `a0ba353...` is intentionally not reused as admission authority.
+RELAY created:
 
-No STARTED marker was created, no one-way execution was dispatched, no official Belief-R data was accessed, and no v4 identity was consumed.
+`control/c19-official-v4-started-20260917@3ebffb0c55ea9e5dac6c2a52d3d5c0ee6443d58e`
+
+The STARTED marker binds:
+
+- protocol: `c19-external-v2-official-protocol-v4`
+- identity: `c19-external-v2-official-v4`
+- Analyst: `56f0665ccc536bff6bf48e9eb581ec9a9eafcecc`
+- exact package: `74bfe6b4a39758656f291baaa3f16236e3e71964`
+- no-retry: `true`
+
+This consumed the v4 identity. It may not be retried.
+
+The push triggered official one-way workflow `35217655980`. At checkpoint it is **in progress**. Its one-way job has already passed STARTED-marker/collision validation and exact-package checkout; it is currently setting up the exact Python runtime before official-data access.
+
+## Scientific status
+
+New scientific information: **none yet**.
+
+No terminal evidence has been observed yet. No preserved raw, evaluator-target materialization, score, or evidence tag had been observed at this checkpoint.
 
 ## Lease / stop
 
 Lease status: **`WAITING_EXTERNAL`**.
 
-PRIMARY stopped because the only remaining critical-path work is completion of the two external exact-head workflows. Relay continuation is expected. Relay or the next PRIMARY must first collect both `35214841871` and `35214841877` and re-fetch the exact v4 head. If both are green, it may proceed only after fresh identity/control/preserve/evidence collision checks and every Analyst GO/binding condition still passes. If either workflow fails mechanically, MAIN owns the science-invariant fix; any semantic/runtime-version/scientific redesign requires STOP for Analyst.
+RELAY stopped rather than occupying the worker while workflow `35217655980` runs externally. The next MAIN/RELAY cycle must collect this exact run.
 
-New scientific information: **none**. This run performed only prospectively authorized lint-only pre-START repair and exact-head revalidation dispatch.
+- If it succeeds: independently verify the v4 preservation branch, terminal evidence tag/manifest, exact bindings and terminal classification, then finalize and STOP.
+- If it fails anywhere after STARTED: preserve diagnostics, classify `V4_POST_START_FAILURE`, keep v4 consumed/no-retry, and STOP. No automatic v5 is authorized.
