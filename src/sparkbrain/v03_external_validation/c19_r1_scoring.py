@@ -1,8 +1,8 @@
 """Fail-closed scorer for the prospective C19-R1 matched reduction.
 
-The scorer is frozen pre-START. It consumes only immutable R1 raw, immutable
-C19-v4 raw bound to the terminal v4 preserve digest, and evaluator targets
-materialized after R1 raw preservation.
+The scorer consumes only immutable R1 raw, immutable C19-v4 raw bound to the
+terminal v4 preserve digest, a preserved target-free atomic_idx source map, and
+evaluator targets materialized after R1 raw/source-map preservation.
 """
 
 from __future__ import annotations
@@ -16,7 +16,6 @@ from statistics import mean
 from typing import Any
 
 from sparkbrain.v03_external_validation.c19_r1_protocol import (
-    BOOTSTRAP_DRAWS_PER_RESAMPLE,
     BOOTSTRAP_LOWER_P,
     BOOTSTRAP_RESAMPLES,
     BOOTSTRAP_SEED,
@@ -27,9 +26,14 @@ from sparkbrain.v03_external_validation.c19_r1_protocol import (
     OFFICIAL_PYTHON_IMPLEMENTATION,
     OFFICIAL_PYTHON_VERSION,
     OFFICIAL_SEEDS,
+    PAIR_IID_BOOTSTRAP_DRAWS_PER_RESAMPLE,
     V4_PRIMARY_CONDITION,
 )
 from sparkbrain.v03_external_validation.c19_r1_revision_authority import RawBundleR1
+from sparkbrain.v03_external_validation.c19_r1_source_map import (
+    atomic_idx_clusters,
+    validate_atomic_idx_source_map,
+)
 from sparkbrain.v03_external_validation.official_execution_v4 import RawBundleV4
 from sparkbrain.v03_external_validation.official_protocol_v4 import EVALUATOR_TARGET_FIELDS
 
@@ -201,33 +205,53 @@ def linear_quantile_10k(effects: Sequence[float], p: float) -> float:
     return values[lower] + (values[upper] - values[lower]) * fraction
 
 
+def atomic_idx_cluster_resample_indices(
+    atomic_idx_source_map: Sequence[Mapping[str, Any]],
+    rng: random.Random,
+) -> tuple[int, ...]:
+    clusters = atomic_idx_clusters(atomic_idx_source_map)
+    sampled: list[int] = []
+    for _ in range(len(clusters)):
+        _, pair_indices = clusters[rng.randrange(len(clusters))]
+        sampled.extend(pair_indices)
+    return tuple(sampled)
+
+
+def _classify_interval(lower: float, upper: float) -> str:
+    if lower > 0.0:
+        return "SURVIVES_REDUCTION"
+    if upper <= 0.0:
+        return "REDUCED"
+    return "INCONCLUSIVE"
+
+
 def paired_reduction_bootstrap(
     r1_raw: RawBundleR1,
     v4_raw: RawBundleV4,
     targets: Sequence[Target],
+    atomic_idx_source_map: Sequence[Mapping[str, Any]],
 ) -> dict[str, Any]:
+    source_map = validate_atomic_idx_source_map(atomic_idx_source_map)
+    clusters = atomic_idx_clusters(source_map)
     deltas = reduction_delta_by_pair(r1_raw, v4_raw, targets)
     observed = _effect_from_indices(deltas, targets, tuple(range(EXPECTED_PAIRS)))
     rng = random.Random(BOOTSTRAP_SEED)
     effects = []
     for _ in range(BOOTSTRAP_RESAMPLES):
-        sampled = tuple(
-            rng.randrange(EXPECTED_PAIRS) for _ in range(BOOTSTRAP_DRAWS_PER_RESAMPLE)
-        )
+        sampled = atomic_idx_cluster_resample_indices(source_map, rng)
         effects.append(_effect_from_indices(deltas, targets, sampled))
     lower = linear_quantile_10k(effects, BOOTSTRAP_LOWER_P)
     upper = linear_quantile_10k(effects, BOOTSTRAP_UPPER_P)
-    if lower > 0.0:
-        result_class = "SURVIVES_REDUCTION"
-    elif upper <= 0.0:
-        result_class = "REDUCED"
-    else:
-        result_class = "INCONCLUSIVE"
+    result_class = _classify_interval(lower, upper)
     return {
-        "method": "paired_official_pair_bootstrap",
+        "method": "paired_atomic_idx_cluster_bootstrap",
         "contrast": "c19_v4_primary_breu_minus_r1_breu",
+        "cluster_key": "atomic_idx",
+        "unique_clusters": len(clusters),
+        "clusters_per_resample": len(clusters),
+        "cluster_observation_policy": "carry_all_paired_observations_at_sampled_cluster_multiplicity",
+        "cluster_order": "first_occurrence_in_pair_index_order",
         "resamples": BOOTSTRAP_RESAMPLES,
-        "draws_per_resample": BOOTSTRAP_DRAWS_PER_RESAMPLE,
         "bootstrap_seed": BOOTSTRAP_SEED,
         "observed_effect": observed,
         "confidence_interval": {"level": 0.95, "lower": lower, "upper": upper},
@@ -239,13 +263,46 @@ def paired_reduction_bootstrap(
     }
 
 
+def pair_iid_sensitivity_bootstrap(
+    r1_raw: RawBundleR1,
+    v4_raw: RawBundleV4,
+    targets: Sequence[Target],
+) -> dict[str, Any]:
+    deltas = reduction_delta_by_pair(r1_raw, v4_raw, targets)
+    observed = _effect_from_indices(deltas, targets, tuple(range(EXPECTED_PAIRS)))
+    rng = random.Random(BOOTSTRAP_SEED)
+    effects = []
+    for _ in range(BOOTSTRAP_RESAMPLES):
+        sampled = tuple(
+            rng.randrange(EXPECTED_PAIRS)
+            for _ in range(PAIR_IID_BOOTSTRAP_DRAWS_PER_RESAMPLE)
+        )
+        effects.append(_effect_from_indices(deltas, targets, sampled))
+    lower = linear_quantile_10k(effects, BOOTSTRAP_LOWER_P)
+    upper = linear_quantile_10k(effects, BOOTSTRAP_UPPER_P)
+    return {
+        "method": "paired_official_pair_bootstrap_sensitivity",
+        "contrast": "c19_v4_primary_breu_minus_r1_breu",
+        "resamples": BOOTSTRAP_RESAMPLES,
+        "draws_per_resample": PAIR_IID_BOOTSTRAP_DRAWS_PER_RESAMPLE,
+        "bootstrap_seed": BOOTSTRAP_SEED,
+        "observed_effect": observed,
+        "confidence_interval": {"level": 0.95, "lower": lower, "upper": upper},
+        "result_class": _classify_interval(lower, upper),
+        "role": "secondary_sensitivity_only",
+    }
+
+
 def score_reduction(
     r1_raw: RawBundleR1,
     v4_raw: RawBundleV4,
     evaluator_targets: Sequence[Mapping[str, Any]],
+    atomic_idx_source_map: Sequence[Mapping[str, Any]],
 ) -> dict[str, Any]:
+    source_map = validate_atomic_idx_source_map(atomic_idx_source_map)
     targets = validate_evaluator_targets(r1_raw, evaluator_targets)
-    paired = paired_reduction_bootstrap(r1_raw, v4_raw, targets)
+    primary = paired_reduction_bootstrap(r1_raw, v4_raw, targets, source_map)
+    sensitivity = pair_iid_sensitivity_bootstrap(r1_raw, v4_raw, targets)
 
     r1_rows: dict[int, list[Mapping[str, Any]]] = defaultdict(list)
     for record in r1_raw.records:
@@ -262,18 +319,23 @@ def score_reduction(
         metrics[str(seed)] = {"BU_Acc": bu, "BM_Acc": bm, "BREU": (bu + bm) / 2.0}
 
     return {
-        "paired_reduction_statistics": paired,
+        "paired_reduction_statistics": primary,
+        "pair_iid_sensitivity_statistics": sensitivity,
         "r1_metrics_by_seed": metrics,
         "report": {
-            "reduction_result_class": paired["result_class"],
-            "claim_boundary": paired["claim_boundary"],
+            "reduction_result_class": primary["result_class"],
+            "primary_inference_method": primary["method"],
+            "pair_iid_result_role": "secondary_sensitivity_only",
+            "claim_boundary": primary["claim_boundary"],
         },
     }
 
 
 __all__ = [
     "assert_official_python_runtime",
+    "atomic_idx_cluster_resample_indices",
     "linear_quantile_10k",
+    "pair_iid_sensitivity_bootstrap",
     "paired_reduction_bootstrap",
     "reduction_delta_by_pair",
     "score_reduction",
