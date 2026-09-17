@@ -41,7 +41,7 @@ def test_executor_is_target_blind_and_stateless_for_visible_pair() -> None:
             "source_index": 0,
             "pair_index": 0,
             "step_index": 0,
-            "question": "Visible premise alpha?",
+            "question": "Visible premise alpha. What necessarily had to follow?",
             "choices": ("A", "B", "C"),
         },
         {
@@ -49,7 +49,7 @@ def test_executor_is_target_blind_and_stateless_for_visible_pair() -> None:
             "source_index": 1,
             "pair_index": 0,
             "step_index": 1,
-            "question": "Visible revised premise beta?",
+            "question": "Visible revised premise beta. What necessarily had to follow?",
             "choices": ("A", "B", "C"),
         },
     )

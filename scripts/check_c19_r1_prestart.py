@@ -27,7 +27,7 @@ def _synthetic_examples() -> tuple[dict[str, object], ...]:
                     "step_index": step_index,
                     "question": (
                         f"Entity {pair_index} has a visible revision at step {step_index}. "
-                        "Which option is most structurally supported?"
+                        "What necessarily had to follow?"
                     ),
                     "choices": (
                         f"option a {pair_index}",
