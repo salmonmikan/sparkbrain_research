@@ -1,134 +1,181 @@
 {
-  "timestamp": "2026-09-17T17:47:32+09:00",
+  "timestamp": "2026-09-17T18:28:00+09:00",
   "worker_role": "main",
-  "evidence_analyst_commit": "b9c14e9e171bf765447aa45e71b7ba75cc7ce357",
+  "execution_mode": "PRIMARY",
+  "evidence_analyst_commit": "b7cc088df7c9768bb7e62b40d4c54f273df969eb",
+  "current_lane": {
+    "target": "generic one-way raw-preservation/evidence-boundary reliability qualification on synthetic/development-only data; no C19-v4",
+    "phase": "WAITING_EXACT_HEAD_ORDINARY_CI_AFTER_DEDICATED_READINESS_PASS",
+    "branch": "research/readiness-raw-preservation-boundary-20260917",
+    "identity": null,
+    "formal_execution_allowed": false,
+    "main_owns_all_critical_path_fixups": true
+  },
   "analyst_lanes": {
-    "main_lane": {
-      "target": "C19 official-v3 runtime-closed successor -> exact pre-START admission -> conditional one-way execution",
-      "branch": "research/c19-official-v3-runtime-closed-20260917",
-      "protocol": "c19-external-v2-official-protocol-v3",
-      "package": "c19-external-v2-official-package-v3",
-      "identity": "c19-external-v2-official-v3",
-      "main_owns_all_critical_path_fixups": true
-    },
+    "main_lane": "generic one-way raw-preservation/evidence-boundary reliability qualification, then fresh scientific-object selection; no C19-v4",
     "sub_lane": null,
     "sub_fallback": null,
-    "blocked_until": "A newer Evidence Analyst handoff consumes the v3 POST_START_FAILURE and prospectively decides stop versus any new distinct object."
+    "blocked_until": "Any new one-way science remains blocked until generic raw-preservation reliability is proven and a newer Analyst prospectively defines a fresh formal object."
   },
-  "consumed_prospective_contingency_branches": ["V3_PRE_START_BLOCKER", "V3_PRE_START_READY_FOR_ONE_WAY", "V3_POST_START_FAILURE"],
-  "main_active_claim": "C19 official-v3 identity consumed by post-START immutable-raw-preservation failure after target-blind acquisition and before evaluator targets/scoring; no terminal scientific result; no retry; no automatic v4",
-  "authoritative_refs": {
+  "consumed_contingency_branches": [
+    "C19_V3_POST_START_FAILURE",
+    "GENERIC_PRESERVATION_READINESS_BLOCKER"
+  ],
+  "active_claim": "Identity-free synthetic qualification of the generic preserve-before-read boundary after the consumed C19-v3 preservation failure; no scientific execution is authorized.",
+  "authoritative_target_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "b9c14e9e171bf765447aa45e71b7ba75cc7ce357",
-    "control_brain": "d8987f8c6d88fad48a8f652f4255e73b30a223e6",
-    "c19_v3_package": "research/c19-official-v3-runtime-closed-20260917@84b244959f249da916a36906508ead0830052e9b",
-    "c19_v3_started": "control/c19-official-v3-started-20260917@915b7b21abe6ef936fa18e81e4a5117712d20f28",
+    "evidence_analyst": "b7cc088df7c9768bb7e62b40d4c54f273df969eb",
+    "readiness_branch": "research/readiness-raw-preservation-boundary-20260917@158ad46cafcc9d9b17f01a85488562b63e81257d",
+    "readiness_preserve_ref": "readiness/raw-preservation-35204638939@8a4d0107a3251def652fd848a1da5b0731ff3283",
     "c19_v3_control_final": "control/c19-official-v3-started-20260917@294d947ade2f906e284d5e1eed5ad57ac7527947",
-    "c19_v3_preserve_refs": [],
-    "c19_v3_evidence_refs": [],
-    "c19_v2_control": "control/c19-official-v2-started-20260917@7a8af82de0a0dd70ec2391ef7506ae80c5c8d391"
+    "c19_v3_identity": "c19-external-v2-official-v3:consumed:no-retry",
+    "c19_v2_identity": "c19-external-v2-official-v2:consumed:no-retry"
+  },
+  "fast_path_used": true,
+  "full_reconciliation_reason": null,
+  "fast_path_reconciliation": {
+    "analyst_target_consistent": true,
+    "c19_terminal_control_consistent": true,
+    "identity_collision": false,
+    "sub_collision": false,
+    "unexpected_target_movement": false,
+    "reason_full_reconciliation_not_needed": "Analyst lane, terminal C19 control, current MAIN/SUB streams, and target refs agreed; the next action was fully classified as identity-free readiness work."
   },
   "branches_prs_advanced": {
-    "research/c19-official-v3-runtime-closed-20260917": "84b244959f249da916a36906508ead0830052e9b",
-    "control/c19-official-v3-started-20260917": "294d947ade2f906e284d5e1eed5ad57ac7527947",
-    "open_prs": [],
+    "research/readiness-raw-preservation-boundary-20260917": "158ad46cafcc9d9b17f01a85488562b63e81257d",
+    "readiness/raw-preservation-35204638939": "8a4d0107a3251def652fd848a1da5b0731ff3283",
+    "prs_opened": [],
     "merges": []
   },
   "workflows_experiments": {
-    "prestart": {"run_id": 35199692189, "result": "success", "head": "84b244959f249da916a36906508ead0830052e9b"},
-    "package_ci": {"run_id": 35199692097, "result": "success", "head": "84b244959f249da916a36906508ead0830052e9b"},
-    "official_one_way": {
-      "run_id": 35200352569,
+    "v3_failure_diagnosis_source": {
+      "workflow_run_id": 35200352569,
       "job_id": 105133356842,
-      "result": "failure",
-      "failed_step": "Persist raw predictions immutably before evaluator targets",
-      "failure_class": "raw_preservation_failure_after_target_blind_acquisition_before_targets",
-      "exact_runtime_install_succeeded": true,
-      "official_input_verification_succeeded": true,
-      "target_blind_acquisition_completed": true,
-      "raw_created_during_workflow": true,
-      "raw_row_count": 95920,
-      "raw_sha256": "fe08f475b2ba7b0e5e38c61595a23bb54863a7bfd66a3d62663442d99f639978",
-      "raw_immutably_preserved": false,
-      "evaluator_targets_materialized": false,
-      "scoring_started": false,
-      "diagnostic_artifact_id": 10487408980,
-      "diagnostic_artifact_role": "diagnostic_only_not_immutable_raw_evidence"
+      "evidentiary_use": false,
+      "diagnosis": "Preservation step switched to a fresh branch and attempted cp into artifacts/v03/c19_external_validation/v2/official_v3 without creating the destination directory; cp failed with No such file or directory before preservation commit/push.",
+      "v3_raw_recovered_or_scored": false
+    },
+    "generic_preservation_readiness": {
+      "workflow_run_id": 35204638939,
+      "head": "158ad46cafcc9d9b17f01a85488562b63e81257d",
+      "status": "completed",
+      "conclusion": "success",
+      "formal_experiment": false,
+      "synthetic_only": true,
+      "preservation_ref": "readiness/raw-preservation-35204638939@8a4d0107a3251def652fd848a1da5b0731ff3283",
+      "qualified_properties": [
+        "missing destination parents created",
+        "fresh remote preservation ref required",
+        "payload and manifest copied with pre-commit digest equality",
+        "independent remote ref re-fetch",
+        "exact payload and manifest digest equality after re-fetch",
+        "second-write same-ref no-clobber failure"
+      ]
+    },
+    "ordinary_ci": {
+      "workflow_run_id": 35204638807,
+      "head": "158ad46cafcc9d9b17f01a85488562b63e81257d",
+      "status": "in_progress",
+      "conclusion": null
     }
   },
   "scientific_results": {
-    "new_scientific_measurement": false,
+    "new_scientific_information": false,
     "terminal_scientific_result": null,
-    "classification": "POST_START_FAILURE",
-    "interpretation": "Target-blind acquisition completed, but immutable raw preservation failed before evaluator targets/scoring. No canonical raw evidence exists; no PASS/FAIL/INCONCLUSIVE result exists; diagnostic metadata must not be scored or relabeled as scientific evidence."
+    "readiness_result": "Dedicated synthetic raw-preservation qualification succeeded; ordinary exact-head repository CI remains pending, so full GENERIC_PRESERVATION_READINESS_PASS is not yet finalized."
   },
   "consumed_identities": {
-    "c19-external-v2-official-v3": {"consumed": true, "retry_allowed": false, "automatic_successor_allowed": false, "reason": "V3_POST_START_FAILURE after STARTED"},
-    "c19-external-v2-official-v2": {"consumed": true, "retry_allowed": false, "reason": "prior POST_START_FAILURE"},
-    "inherited_do_not_touch": ["A01 MD-001", "A01 P2 candidate-002", "A01 P3 candidate-001", "A01 Family-A P4 candidate-001", "RV01 R01-16 family", "RV01 R01-17", "RV02 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a", "CX01 Candidate-002/formal evidence", "C19 predecessor c19-external-v2-official-v1"]
+    "c19-external-v2-official-v3": {
+      "consumed": true,
+      "retry_allowed": false,
+      "touched_this_run": false
+    },
+    "c19-external-v2-official-v2": {
+      "consumed": true,
+      "retry_allowed": false,
+      "touched_this_run": false
+    },
+    "new_identities_consumed_this_run": []
   },
   "blockers": [
-    "v3 identity is consumed/no-retry after post-START raw-preservation failure",
-    "no canonical preserve ref/raw evidence exists, so scoring or recovery from diagnostics is forbidden",
-    "automatic v4 is forbidden; fresh Evidence Analyst authority is required for any new object"
+    "Ordinary exact-head CI run 35204638807 is still in progress; Analyst GO requires exact-head CI/review green before readiness completion.",
+    "All new one-way science remains blocked pending a newer Analyst handoff even after readiness completion."
   ],
-  "concurrency_reconciliation": {
-    "material_movement_after_analyst_handoff": true,
-    "analyst_contingency_applied": "V3_POST_START_FAILURE",
-    "research_head": "84b244959f249da916a36906508ead0830052e9b",
-    "control_final": "294d947ade2f906e284d5e1eed5ad57ac7527947",
-    "same_identity_retry_detected": false,
-    "open_prs": 0,
-    "open_issues": [139, 147],
-    "sub_mode_observed": "exploratory_incubator",
-    "sub_exploration_used_by_main": false,
-    "sub_main_collision_observed": false
+  "lease_collision_reconciliation": {
+    "lease_path_existed_at_start": false,
+    "competing_fresh_main_lease_detected": false,
+    "lease_created": true,
+    "run_id": "primary-20260917T1817JST",
+    "owner": "main",
+    "active_identity": null,
+    "collision_status": "clear"
   },
   "integrity_status": {
-    "status": "V3_POST_START_FAILURE_CONSUMED_STOP",
-    "immutable_evidence_modified": false,
-    "v2_consumed_identity_touched": false,
-    "v3_identity_consumed": true,
-    "v3_retry_allowed": false,
-    "target_blind_acquisition_completed": true,
-    "raw_generated_transiently": true,
-    "official_raw_immutably_preserved": false,
-    "evaluator_targets_materialized": false,
-    "official_scoring_performed": false,
-    "terminal_scientific_result_created": false,
-    "diagnostics_preserved": true,
-    "diagnostics_are_scientific_evidence": false,
-    "automatic_v4_created": false
+    "status": "IDENTITY_FREE_SYNTHETIC_READINESS_WAITING_ORDINARY_CI",
+    "formal_identity_created": false,
+    "started_created": false,
+    "official_data_accessed": false,
+    "consumed_identity_rerun": false,
+    "transient_v3_raw_recovered": false,
+    "diagnostic_v3_raw_scored": false,
+    "immutable_scientific_evidence_modified": false,
+    "c19_v4_created": false,
+    "readiness_ref_no_force": true,
+    "synthetic_preserve_before_read_proven": true,
+    "independent_refetch_digest_match_proven": true,
+    "same_ref_no_clobber_proven": true
   },
-  "main_critical_path_fixups_completed": [
-    "mechanically closed pre-START runtime/import-smoke defects without changing scientific semantics",
-    "verified exact-head pre-START and CI green",
-    "verified STARTED exact package/identity/Analyst/no-retry binding",
-    "verified target-blind acquisition completed before immutable raw-preservation failure",
-    "verified no preserve/evidence authority, no evaluator targets and no scoring",
-    "recorded append-only POST_START_FAILURE control state at 294d947ade2f906e284d5e1eed5ad57ac7527947",
-    "stopped without retrying the consumed identity"
+  "critical_path_fixes_completed": [
+    "diagnosed the generic v3 preservation failure without recovering or scoring v3 raw",
+    "created a science-agnostic preservation primitive that creates missing destination parents and fails closed on remote-ref/file collision",
+    "bound preservation to an exact base commit and exact staged payload/manifest paths",
+    "verified copied-byte digests before commit and remote branch SHA after push",
+    "added synthetic tests for missing-directory creation, independent exact-byte re-fetch, and no-clobber",
+    "added a dedicated identity-free synthetic readiness workflow",
+    "completed dedicated readiness workflow 35204638939 successfully"
   ],
-  "same_run_steps_completed": [
-    "re-fetched authoritative repository state independently of ops branches",
-    "consumed Analyst/MAIN/SUB/Control Brain designated streams",
-    "reconciled v3 exact-head pre-START/CI success and STARTED",
-    "reconciled one-way run 35200352569 to terminal failure",
-    "classified V3_POST_START_FAILURE",
-    "verified diagnostic raw metadata but no immutable raw evidence",
-    "persisted POST_START_FAILURE control marker",
-    "persisted MAIN latest/state/history"
+  "same_run_steps": [
+    "consumed current Analyst main_lane and STOP boundaries",
+    "created/heartbeated MAIN PRIMARY lease after confirming no competing lease",
+    "reconciled stable main, terminal C19-v3 control, consumed identities, MAIN/SUB boundaries",
+    "diagnosed failed preservation command from v3 workflow logs without using v3 raw",
+    "created commit 158ad46cafcc9d9b17f01a85488562b63e81257d and research readiness branch",
+    "observed dedicated readiness workflow 35204638939 complete success",
+    "re-fetched readiness preservation ref 8a4d0107a3251def652fd848a1da5b0731ff3283",
+    "observed ordinary CI 35204638807 still in progress",
+    "checkpointed for Relay rather than waiting on external CI"
   ],
-  "same_run_stop_reason": "Prospective V3_POST_START_FAILURE requires consume/no-retry/STOP and forbids automatic v4. Raw was not immutably preserved before evaluator targets, so no scientific scoring or recovery path is allowed.",
-  "work_intentionally_left_for_sub": "No formal SUB lane/fallback exists. SUB may only continue separately authorized NON_EVIDENTIARY incubation; MAIN did not absorb or depend on it.",
-  "reserved_sub_work_not_touched": [],
+  "same_run_stop_reason": "External wait only: ordinary exact-head CI 35204638807 is still in progress and no useful local MAIN critical-path work remains. PRIMARY checkpoints and yields so Relay can collect the result under the already-fixed readiness contingency.",
+  "work_left_for_sub": "No formal SUB lane/fallback. SUB may continue only its separately authorized NON_EVIDENTIARY exploratory-incubator work and must not touch this readiness lane or C19 consumed authorities.",
+  "reserved_sub_work_not_touched": [
+    "research/exploratory-sub-revision-authority-fsa-20260917"
+  ],
   "lane_repartition_reason": null,
-  "analyst_split_invalidated": false,
+  "next_main_action": "Relay: collect ordinary CI run 35204638807 for exact head 158ad46cafcc9d9b17f01a85488562b63e81257d. If success, finalize GENERIC_PRESERVATION_READINESS_PASS and STOP for a newer Analyst object-selection handoff. If failure, repair only outcome-independent synthetic readiness tooling under GENERIC_PRESERVATION_READINESS_BLOCKER and revalidate exact head. Never create STARTED/formal identity/C19-v4 or retry v2/v3.",
   "write_path_diagnostics": {
-    "control_post_start_failure_marker": {"first_attempt": "schema validation failed because create_file requires repository_full_name rather than owner/repo; no mutation occurred", "retry": "success", "commit": "294d947ade2f906e284d5e1eed5ad57ac7527947"},
-    "report_latest_update": "success",
-    "report_state_update": "success",
-    "report_history_append": {"status": "success", "path": "reports/orchestrator/history/2026-09-17/1747-main.md", "commit": "2d52d946651fcb1ee35d28c5aa3fc1432f44df45"}
-  },
-  "next_main_action": "STOP. Do not retry c19-external-v2-official-v3, do not score from diagnostic artifact, and do not create v4. Return v3 POST_START_FAILURE to a newer Evidence Analyst for a fresh prospective decision."
+    "lease_create": {
+      "status": "success",
+      "commit": "38c2fa58db7629db58e95d9a895dec176798bd05"
+    },
+    "lease_heartbeat": {
+      "status": "success",
+      "commit": "9f8712a9c77cadf805e6f1a206c082ad00d31299"
+    },
+    "readiness_tree_create": {
+      "status": "success",
+      "tree": "6e058eec2ff49e55ddd34b30e49eafc48822f499"
+    },
+    "readiness_commit_create": {
+      "status": "success",
+      "commit": "158ad46cafcc9d9b17f01a85488562b63e81257d"
+    },
+    "readiness_branch_create": {
+      "status": "success",
+      "branch": "research/readiness-raw-preservation-boundary-20260917"
+    },
+    "main_latest_checkpoint": {
+      "status": "success",
+      "commit": "6a7ec46683a51f5fdcbc4563a722a3caa9de5f62"
+    }
+  }
 }
