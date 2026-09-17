@@ -1,15 +1,15 @@
 {
-  "run_id": "primary-20260918T0715JST",
+  "run_id": "primary-20260918T0817JST",
   "execution_mode": "PRIMARY",
-  "status": "BLOCKED",
-  "started_at": "2026-09-18T07:15:51+09:00",
-  "heartbeat_at": "2026-09-18T07:15:51+09:00",
-  "analyst_commit": "719b9e74063e5e10f6226fd49f1835036ed75e5b",
+  "status": "RUNNING",
+  "started_at": "2026-09-18T08:17:32+09:00",
+  "heartbeat_at": "2026-09-18T08:17:32+09:00",
+  "analyst_commit": "6ecf13b73cfc75409f6cfe86e9b8ac73fc58b6ce",
   "active_branch": "research/c19-r2-fsa-state-tracker-spec-20260918",
   "active_identity": "c19-r2-fsa-state-tracker-official-v1",
-  "active_step": "R2_PRE_START_SEMANTIC_GAP_RAW_UNIVERSE_MISMATCH",
+  "active_step": "R2_AUTHORITY_REBIND",
   "workflow_run_id": null,
-  "workflow_run_ids": [35279859615, 35279859607],
-  "expected_next_action": "Do not create STARTED or dispatch R2 under Analyst authority 719b9e74063e5e10f6226fd49f1835036ed75e5b. A fresh Evidence Analyst handoff must explicitly reconcile the GO-gate claim of 55 rows x 5 seeds x 1744 pairs = 479600 raw records with the already-frozen R2 preregistration/config/protocol contract of exactly 5 rows x 1744 pairs = 8720 raw records. After a clarified handoff, re-fetch exact branch head, identity/consumed state, CI/pre-START, source/protocol/package/input/runtime/FSA/source-map/scorer/preserver bindings and control/preserve/evidence namespaces before any STARTED mutation.",
+  "workflow_run_ids": [],
+  "expected_next_action": "Science-invariantly rebind the R2 execution-authority metadata/checks from Analyst 719b9e74063e5e10f6226fd49f1835036ed75e5b to corrected Analyst authority 6ecf13b73cfc75409f6cfe86e9b8ac73fc58b6ce while preserving the frozen R2 scientific package and 8720-record contract, then rerun ordinary CI and dedicated R2 pre-START on the same final SHA before any STARTED mutation.",
   "owner": "main"
 }
