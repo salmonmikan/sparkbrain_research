@@ -3,12 +3,13 @@
   "package_id": "c19-external-v2-official-package-v2",
   "protocol_id": "c19-external-v2-official-protocol-v2",
   "planned_official_identity": "c19-external-v2-official-v2",
-  "status": "prestart_reviewable_not_execution_admitted",
+  "status": "prestart_admission_bound_waiting_exact_head_ci_and_fresh_reconciliation",
   "evidence_analyst_authority": "080e28ce782c3a77e7d4a8249de03046d545ee9c",
   "source_base_commit": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
   "inherited_frozen_protocol_head": "90c936a7abca7eba0dac1f977753503551e73368",
   "inherited_source_binding_blob": "858c8f739a06a5b96d092b5e8e8af43916c73ff6",
   "inherited_protocol_blob": "88d2eabaf8309aa2a0266d91f7463d1a8dcdc38f",
+  "admission_binding_blob": "f7015e64f5650257960ce7dfc676e4285ae48fb2",
   "v2_source_blobs": {
     "official_protocol_v2.py": "cc852a774426af09832fe68c67d19a467c32812d",
     "official_execution_v2.py": "55509ee7f5bff1fb13d4e7dcd0a41684f91f5b76",
@@ -69,6 +70,16 @@
     "INCONCLUSIVE": "valid CI contains 0",
     "INVALID_EVIDENCE": "binding/join/completeness/leakage/ordering/integrity violation"
   },
+  "admission_bindings_closed": [
+    "exact current v2 source blob binding",
+    "exact Belief-R source spec binding",
+    "exact Belief-R parser and pairing-rule binding",
+    "exact Episode envelope binding",
+    "exact truth-free input adapter binding",
+    "exact condition/baseline implementation binding",
+    "exact raw writer/reconstructor binding",
+    "concrete immutable raw preservation authority via exact Git commit object"
+  ],
   "integrity": {
     "STARTED_created": false,
     "official_data_accessed": false,
@@ -83,8 +94,6 @@
   "remaining_admission_gates": [
     "exact-head CI green",
     "fresh authority reconciliation immediately before STARTED",
-    "exact source/parser/envelope/input binding reconstruction",
-    "concrete immutable raw preservation authority binding",
-    "no prior STARTED/raw/scored/output collision"
+    "no prior STARTED/raw/scored/output/preserve collision"
   ]
 }
