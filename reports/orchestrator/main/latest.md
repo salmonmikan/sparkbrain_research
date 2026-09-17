@@ -1,38 +1,38 @@
-# MAIN Orchestrator — PRIMARY C19-R2 pre-START semantic stop
+# MAIN Orchestrator — PRIMARY C19-R2 authority rebind checkpoint
 
-Timestamp: `2026-09-18 07:15 JST`
+Timestamp: `2026-09-18 08:20 JST`
 Execution mode: `PRIMARY`
-Evidence Analyst authority: `719b9e74063e5e10f6226fd49f1835036ed75e5b`
+Evidence Analyst authority: `6ecf13b73cfc75409f6cfe86e9b8ac73fc58b6ce`
 
 ## MAIN frontier
 
-PRIMARY resumed C19-R2 from the prior external-wait checkpoint. The active authority-package head is `research/c19-r2-fsa-state-tracker-spec-20260918@84e08cfffa3e1404a1e93dd924ee704aa7bd3853`; frozen scientific package remains `5d5d171cf872baed7a636fd246ab36f3a91a6716`; authorized identity remains `c19-r2-fsa-state-tracker-official-v1` and is still unSTARTED/unconsumed.
+PRIMARY remains on `C19_R2_FSA_STATE_TRACKER_ONE_WAY`. The fresh Evidence Analyst handoff prospectively resolved the prior raw-universe mismatch: the frozen R2 contract is authoritative at exactly `8,720 = 1,744 pairs x 5 fixed seeds`, with state alphabet `RESET, A_WEAK, A_STRONG, B_WEAK, B_STRONG, C_WEAK, C_STRONG`. R2 remained unSTARTED/unconsumed, so this was an Analyst bookkeeping correction rather than a scientific mutation.
 
-The exact-head external gates have now closed green:
+The active branch was re-fetched at `research/c19-r2-fsa-state-tracker-spec-20260918@84e08cfffa3e1404a1e93dd924ee704aa7bd3853`. No fresh MAIN collision existed; the prior MAIN lease was stale and SUB remained `no_op` with no R2 touch.
 
-- dedicated R2 pre-START `35279859615`: `completed/success` on `84e08cff...`;
-- ordinary CI `35279859607`: `completed/success` on the same exact head.
+## Critical-path progress
 
-Control, preserve and R2 evidence namespaces were freshly checked and remain collision-free. No R2 STARTED ref, preserve ref or evidence tag exists.
+MAIN performed the prospectively authorized science-invariant authority-only rebind. New exact head:
 
-## FAST PATH -> FULL RECONCILIATION
+`research/c19-r2-fsa-state-tracker-spec-20260918@5bfa3962c777fa5bc915bb21e20801ab8294778a`
 
-FAST PATH was abandoned because the final GO gate exposed a scientific-contract disagreement between the current Evidence Analyst handoff and the frozen R2 package.
+The single new commit changes exactly three authority/checking locations and nothing scientific:
 
-The Analyst handoff explicitly requires the official universe to remain `55 rows × 5 fixed seeds × 1,744 pairs = 479,600` raw records before STARTED. The immutable prospective R2 scientific contract says something different and consistently machine-checks it:
+- `configs/external_validation/c19_r2_execution_authority.json`: Analyst pointer `719b9e...` -> `6ecf13b...`;
+- `scripts/check_c19_r2_prestart.py`: expected Analyst pointer `719b9e...` -> `6ecf13b...`;
+- `.github/workflows/c19-r2-prestart.yml`: authority-bound production smoke pointer `719b9e...` -> `6ecf13b...`.
 
-- preregistration: exactly `5 * 1744 = 8720` R2 raw records;
-- `c19_r2_fsa_state_tracker.json`: `rows=5`, `pairs_per_row=1744`, `records=8720`;
-- `c19_r2_protocol.py`: `expected_r2_rows()` contains exactly one row per five fixed seeds, and validation requires `records = len(OFFICIAL_SEEDS) * EXPECTED_PAIRS`.
+Comparison from the prior authority head shows only those three one-line substitutions. Frozen scientific package remains `5d5d171cf872baed7a636fd246ab36f3a91a6716`; its contract/preregistration/protocol/scorer/source-map/state-tracker bindings were not changed.
 
-This is not a mechanical implementation defect that MAIN may silently choose between. Resolving it would require deciding which scientific input/universe contract is authoritative after the Analyst handoff, so it is classified `R2_PRE_START_SEMANTIC_GAP` and STOP applies before STARTED.
+Fresh namespace checks after the head move still show no R2 STARTED control ref, preserve ref, or evidence tag. The identity `c19-r2-fsa-state-tracker-official-v1` therefore remains fresh/unSTARTED/unconsumed.
 
-FULL RECONCILIATION confirmed current `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`, no open PR, only governance Issue #139 open, legacy freeze refs preserved, C19-v4 remains the sole authoritative `evidence/*` tag, existing control/preserve refs contain the already-consumed historical objects but no R2 collision, and SUB remains independent/non-evidentiary with no formal lane and did not touch R2.
+## Workflow state / external handoff
 
-## Scientific integrity / stop
+The head move automatically started both required exact-head gates on `5bfa3962...`:
 
-No STARTED ref was created. No official R2 data was accessed. No R2 raw was produced or preserved. No target materialization, scoring, terminal evidence or identity consumption occurred. No frozen R2 source, protocol, mechanism, runtime choice, scorer, threshold or resource contract was changed.
+- dedicated R2 pre-START `35286420308`: queued at checkpoint;
+- ordinary CI `35286420401`: queued at checkpoint.
 
-There is **no new scientific information** this run. The only new information is the pre-START authority/package inconsistency above.
+No useful local critical-path work remains while those external gates are pending, so PRIMARY is ending with lease `WAITING_EXTERNAL`. Relay should collect both runs. If both are success on exact head `5bfa3962...`, re-fetch fresh Analyst authority, exact branch head, identity/consumed state, control/preserve/evidence namespaces, frozen science/runtime/source-map/scorer/preserver bindings and then cross STARTED exactly once only if every GO condition remains simultaneously true. Any mechanical pre-START failure remains MAIN-owned; any scientific/semantic change requirement must STOP before STARTED.
 
-Lease ends `BLOCKED` at `R2_PRE_START_SEMANTIC_GAP_RAW_UNIVERSE_MISMATCH`. Relay should not cross STARTED under the current Analyst authority. The next valid MAIN action is to consume a fresh Evidence Analyst handoff that explicitly reconciles the raw-universe contract with the already-frozen R2 package; only then may MAIN re-run the full fresh GO check and, if unambiguously green, cross STARTED exactly once.
+No STARTED ref was created, no official R2 data was read, no raw/preserve/targets/scoring/evidence was produced, and there is **no new scientific information** this run.
