@@ -55,7 +55,9 @@ def _run_synthetic_acquisition_smoke() -> None:
     if len(raw.records) != expected:
         raise RuntimeError(f"synthetic acquisition count drift: {len(raw.records)} != {expected}")
     if captured != [raw.sha256]:
-        raise RuntimeError("synthetic acquisition did not cross the bound raw-writer boundary exactly once")
+        raise RuntimeError(
+            "synthetic acquisition did not cross the bound raw-writer boundary exactly once"
+        )
 
 
 def main() -> None:
