@@ -1,14 +1,15 @@
 {
   "run_id": "relay-20260918T0647JST",
   "execution_mode": "RELAY",
-  "status": "RUNNING",
+  "status": "WAITING_EXTERNAL",
   "started_at": "2026-09-18T06:47:24+09:00",
-  "heartbeat_at": "2026-09-18T06:47:24+09:00",
+  "heartbeat_at": "2026-09-18T06:54:00+09:00",
   "analyst_commit": "719b9e74063e5e10f6226fd49f1835036ed75e5b",
   "active_branch": "research/c19-r2-fsa-state-tracker-spec-20260918",
   "active_identity": "c19-r2-fsa-state-tracker-official-v1",
-  "active_step": "R2_AUTHORITY_PACKAGING_AND_EXACT_HEAD_REVALIDATION",
-  "workflow_run_id": null,
-  "expected_next_action": "Perform only science-invariant R2 authority packaging on the frozen R2 contract, then require ordinary CI and dedicated pre-START green on the same final head before any STARTED boundary.",
+  "active_step": "R2_FINAL_AUTHORITY_PACKAGE_CI_PRESTART",
+  "workflow_run_id": 35279107972,
+  "workflow_run_ids": [35279107972, 35279107964],
+  "expected_next_action": "Collect dedicated R2 pre-START run 35279107972 and ordinary CI 35279107964 on exact head 31398d6eb4e56fe1b51ddb8206fa395075638a2b. Only if both are completed/success, the Analyst tip remains compatible, the head is unchanged, and control/preserve/evidence namespaces remain collision-free may MAIN create the exact bound STARTED ref and cross the one-way boundary once.",
   "owner": "main"
 }
