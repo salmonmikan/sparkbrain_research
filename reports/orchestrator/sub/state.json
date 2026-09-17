@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-09-17T09:35:14+09:00",
+  "timestamp": "2026-09-17T10:34:04+09:00",
   "worker_role": "sub",
-  "evidence_analyst_commit": "abda3b80450c2ee385c35233b13f6f003f63415b",
+  "evidence_analyst_commit": "f709fa1ee0281fab39a1f4f895247117d28aa35c",
   "consumed_lanes": {
     "main_lane": "C19 fresh official-v2 successor; MAIN-only critical path",
     "sub_lane": null,
@@ -19,9 +19,9 @@
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "abda3b80450c2ee385c35233b13f6f003f63415b",
+    "evidence_analyst": "f709fa1ee0281fab39a1f4f895247117d28aa35c",
     "control_brain": "909ce53e7b0355f5aab1512e659ab36d910bf6a4",
-    "orchestrator_report_parent_before_run": "d6d012072a15eb52e8fa9a12ea9d5e674c2451f7",
+    "orchestrator_report_parent_before_run": "80fecbc95ed646ce24c0912ff7d3e2615eb1df8f",
     "main_c19_observed": "research/c19-truth-free-symbolic-adapter-v2-20260917@66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
     "main_c19_successor_branch_present": false,
     "sub_h9_readiness": "research/c07-h9-fully-spiking-readiness-sub-20260917@9480da3d77dfee4766b28757f1a164f5cd4dac26",
@@ -29,6 +29,8 @@
     "open_pr_count": 0,
     "open_issues": [147, 139],
     "git_tag_count": 0,
+    "repository_ruleset_count": 0,
+    "main_branch_protected": false,
     "legacy_freeze_refs_present": true,
     "legacy_control_refs_present": true,
     "legacy_preserve_refs_present": true,
@@ -52,15 +54,17 @@
     "started_control_created": false,
     "one_way_dispatches": 0,
     "official_data_access": false,
-    "latest_analyst_ci": "35165122294:success",
-    "prior_sub_report_ci": "35163367495:success"
+    "latest_analyst_ci": "35169680585:success",
+    "prior_sub_report_ci": "35167513353:success",
+    "main_c19_ci": "35152618704:success",
+    "sub_h9_ci": "35158843629:success"
   },
   "scientific_readiness_results": {
     "new_scientific_measurement": false,
     "new_readiness_result": false,
     "current_h9_readiness_classification": "PRE_START_UNDERSPECIFIED",
     "current_h9_completion_target_already_reached": true,
-    "no_sub_lane_reason": "The previously reserved H9/C07 readiness lane is complete and further progress requires eight new prospectively fixed scientific choices. No other distinct registered independent secondary object is assigned and ready; all live C19 work is MAIN-owned. Existing historical/unreserved SUB-named branches do not create authority to resume work."
+    "no_sub_lane_reason": "H9 readiness is complete and further progress requires eight new prospectively fixed scientific choices. No distinct independent object is reserved; the methods-terminal-provenance branch is unreserved; C19 is MAIN-only."
   },
   "consumed_identities": {
     "newly_consumed_by_sub": [],
@@ -96,8 +100,8 @@
     "reserved_main_work_touched": false,
     "unreserved_methods_terminal_provenance_branch_touched": false,
     "evidence_analyst_authority_rechecked": true,
-    "evidence_analyst_authority_at_write": "abda3b80450c2ee385c35233b13f6f003f63415b",
-    "orchestrator_report_tip_rechecked_before_write": "d6d012072a15eb52e8fa9a12ea9d5e674c2451f7"
+    "evidence_analyst_authority_at_write": "f709fa1ee0281fab39a1f4f895247117d28aa35c",
+    "orchestrator_report_tip_rechecked_before_write": "80fecbc95ed646ce24c0912ff7d3e2615eb1df8f"
   },
   "integrity_state": {
     "status": "NO_OP_FAIL_CLOSED",
@@ -110,7 +114,7 @@
     "main_frontier_touched": false
   },
   "completion_target": {
-    "target": "Re-fetch complete current state, respect current allocation, and fail closed if no valid independent SUB lane/fallback exists.",
+    "target": "Re-fetch complete current state, consume current Analyst allocation, and fail closed if no valid independent SUB lane/fallback exists.",
     "status": "reached",
     "result": "NO_OP_NO_VALID_INDEPENDENT_LANE"
   },
@@ -120,5 +124,5 @@
   },
   "rejected_lane": null,
   "lane_rejected_reason": null,
-  "next_sub_action": "Remain no-op until a newer Evidence Analyst reserves a genuinely independent sub_lane or sub_fallback. Do not resume H9 or any unreserved historical SUB branch; never take C19 blockers."
+  "next_sub_action": "Remain no-op until a newer Evidence Analyst reserves a genuinely independent sub_lane or sub_fallback. Do not resume H9 or unreserved historical SUB branches; never take C19 blockers."
 }
