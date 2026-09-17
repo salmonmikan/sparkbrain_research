@@ -1,22 +1,18 @@
 {
   "timestamp": "2026-09-17T19:59:00+09:00",
   "worker_role": "evidence_analyst",
-  "control_plane_mailbox_semantics": "ops/* branches are designated persistence/control-plane mailboxes only; repository facts were re-fetched independently from current refs, workflows, Issues, PRs, tags and rulesets.",
+  "control_plane_mailbox_semantics": "ops/* branches are control-plane mailboxes only; current scientific/repository state was re-fetched independently.",
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "evidence_analyst_prior_tip": "ef858fe9e6fbe9d0bdd57bc43a15e07ec0b30c23",
-    "control_brain": "d8987f8c6d88fad48a8f652f4255e73b30a223e6",
-    "orchestrator_tip_observed": "b206b40657ed1d9ecc5bcb678a1178ab1bc8502d",
-    "external_research_audit_tip": "c42adf10546d0825fb13a258f052a6a4be399ec5",
-    "repository_steward": "4cb869b4078de1caa9a9e9aa32df88f6eff54b25",
     "c19_v4_package": "research/c19-official-v4-preservation-qualified-20260917@a0ba353ff33abc981875c9d02af2e171a1bc65f6",
-    "c19_v4_prestart_workflow": "35212637922:completed:success",
-    "c19_v4_ordinary_ci": "35212637754:completed:failure:lint",
+    "c19_v4_prestart": "35212637922:completed:success",
+    "c19_v4_ci": "35212637754:completed:failure:lint",
     "c19_v4_control_refs": [],
     "c19_v4_preserve_refs": [],
     "c19_v4_evidence_tags": [],
-    "sub_exploratory_h9": "research/exploratory-sub-h9-decoder-state-boundary-20260917@daf7a2897b3804a0666e152db313fd40a3bdc188",
-    "sub_exploratory_h9_ci": "35211931421:completed:success",
+    "sub_h9_exploratory": "research/exploratory-sub-h9-decoder-state-boundary-20260917@daf7a2897b3804a0666e152db313fd40a3bdc188",
+    "sub_h9_ci": "35211931421:completed:success",
     "open_prs": 0,
     "open_issues": [139, 147],
     "legacy_freeze_branch_count": 13,
@@ -31,163 +27,91 @@
   "Literature_handoff_commit_consumed": "c42adf10546d0825fb13a258f052a6a4be399ec5",
   "Audit_handoff_commit_consumed": "66612643c396a3af04bbd0d53908ef8e2f70b5a2",
   "Repository_Steward_commit_consumed": "4cb869b4078de1caa9a9e9aa32df88f6eff54b25",
+  "Repository_Steward_state_consumed": "reports/repository_steward/state.json@05a3d69095de5c803f8bd18d231c761d56a474aa",
   "external_input": {
     "literature": {
-      "handoff_commit": "c42adf10546d0825fb13a258f052a6a4be399ec5",
       "role": "LITERATURE_REDUCTION_SCOUT",
-      "history_file": "analysis/external_research_audit/history/2026-09-17/1632-LITERATURE_REDUCTION_SCOUT.md",
+      "handoff_commit": "c42adf10546d0825fb13a258f052a6a4be399ec5",
       "new_this_cycle": false,
-      "findings_consumed": [
-        "revision-authority/certainty arbitration",
-        "minimal-edit revision diagnostics",
-        "representation-matched FSA/state tracking",
-        "state-space/transition-sparsity/horizon scaling",
-        "selective-history belief-state alternatives"
-      ],
+      "findings_consumed": ["revision-authority/certainty arbitration", "minimal-edit diagnostics", "FSA/state-tracker reductions", "state-space/transition-sparsity/horizon scaling", "selective-history belief state"],
       "affected_lines": ["C19", "PROGRAMME_NOVELTY", "FUTURE_REDUCTION", "H9_SPECIFICATION"],
-      "strategic_impact": "Keeps the novelty bar high and defines future matched reductions; does not alter frozen/consumed C19 objects or current v4 allocation.",
-      "allocation_changed": false,
-      "must_not_change": ["C19-v2", "C19-v3", "C19-v4 frozen scientific contract", "consumed/frozen A01/RV01/RV02/CX objects"]
+      "strategic_impact": "Raises future reduction bar; no retrofit of current/consumed C19 objects.",
+      "allocation_changed": false
     },
     "audit": {
-      "handoff_commit": "66612643c396a3af04bbd0d53908ef8e2f70b5a2",
       "role": "INDEPENDENT_AUDITOR",
-      "history_file": "analysis/external_research_audit/history/2026-09-17/1032-INDEPENDENT_AUDITOR.md",
+      "handoff_commit": "66612643c396a3af04bbd0d53908ef8e2f70b5a2",
       "new_this_cycle": false,
-      "findings_consumed": [
-        "evaluator joins exact/unique/total/fail-closed/target-safe",
-        "quantile edge semantics prospectively fixed",
-        "deterministic golden scorer fixtures",
-        "narrow representation-gain interpretation before matched reductions"
-      ],
+      "findings_consumed": ["exact/unique/total/fail-closed target-safe join", "fixed quantile edge semantics", "golden scorer fixtures", "narrow PASS interpretation until matched reductions"],
       "affected_lines": ["C19", "C19_PROTOCOL_INTEGRITY", "PROGRAMME_NOVELTY"],
-      "strategic_impact": "Still binding for v4 admission; the current ordinary-CI lint failure is an engineering blocker, not a new audit finding.",
+      "strategic_impact": "Binding for v4 admission; current lint failure is engineering-only.",
       "allocation_changed": false
     }
   },
   "sub_exploratory_review": {
-    "applicable": true,
     "classification": "CONTINUE_EXPLORING",
     "evidentiary_status": "NON_EVIDENTIARY",
     "branch": "research/exploratory-sub-h9-decoder-state-boundary-20260917@daf7a2897b3804a0666e152db313fd40a3bdc188",
-    "exact_head_ci": "35211931421:success",
-    "observations_consumed": [
-      "stateless current-spike-only decoder scored 0/40 on the fixed delayed-recall toy",
-      "hidden analog leaky state with zero non-sensory recurrent spikes reached 40/40 at decay 0.9, 0.95 and 0.99",
-      "toy recurrent spike latch reached 40/40 while using recurrent spikes",
-      "spike-valued I/O alone does not rule out task-relevant hidden continuous decoder/filter memory"
-    ],
-    "interpretation": "Useful specification pressure on what a fully-spiking boundary must include, but not evidence for H9 and not sufficiently specified for formalization.",
-    "formalize_now": false,
-    "allowed_next": "Exactly one additional bounded synthetic/dev-only state-inventory and fixed ablation/reset diagnostic, independent of C19.",
-    "remaining_scientific_choices": [
-      "fully-spiking component boundary",
-      "allowed decoder/filter state and state-inventory rule",
-      "non-sensory neuron/synapse dynamics",
-      "representation/decoder mapping",
-      "comparator and claim",
-      "parameter/training budget",
-      "tolerance authority",
-      "runtime/seeds/determinism",
-      "fresh protocol/package/identity/integrity gates"
-    ],
-    "hard_stop_conditions": [
-      "one additional bounded diagnostic leaves the ambiguity definitional",
-      "another tuning cycle is required",
-      "official data or formal identity would be needed",
-      "formal task/resource choices would be selected from exploratory outcomes",
-      "any coupling to C19 or MAIN critical path appears"
-    ]
-  },
-  "active_line_review": {
-    "A01": {"status": "MIXED_PROGRAMME_CLOSED", "shortest_path_new_information": "fresh independently motivated object only", "centrality": "closed"},
-    "RV01": {"status": "DEVELOPMENT_POSITIVE_REDUCIBLE", "shortest_path_new_information": "fresh matched-reduction successor", "centrality": "secondary_complete"},
-    "RV02": {"status": "TERMINAL_CONSTRUCTION_NEGATIVE", "shortest_path_new_information": "fresh object only", "centrality": "terminal"},
-    "CX_CX01": {"status": "TERMINAL_FORMAL_NEGATIVE", "shortest_path_new_information": "fresh object only", "centrality": "terminal"},
-    "H8_C08": {"status": "TERMINAL_CAUSAL_SPECIALIZATION_NEGATIVE", "shortest_path_new_information": "distinct prospective object only", "centrality": "terminal"},
-    "H9_C07": {"status": "PRE_START_UNDERSPECIFIED_WITH_NON_EVIDENTIARY_DECODER_STATE_CONFOUND", "shortest_path_new_information": "one bounded state-inventory/ablation diagnostic then fresh prospective specification or stop", "centrality": "exploratory_only"},
-    "C19": {"status": "SCIENTIFICALLY_UNRESOLVED_V4_PRE_START_BLOCKER_LINT", "consumed": ["c19-external-v2-official-v2", "c19-external-v2-official-v3"], "strongest_evidence": "v4 exact-head pre-START admission passed; ordinary CI failed only at lint; no STARTED/preserve/evidence ref exists", "shortest_path_new_information": "mechanical lint fix then exact-head ordinary CI + pre-START revalidation; one-way only if all GO gates pass", "centrality": "PRIMARY"}
+    "observations": ["stateless current-spike-only 0/40", "hidden analog state 40/40 at decay 0.9/0.95/0.99 with zero non-sensory recurrent spikes", "toy recurrent spike latch 40/40"],
+    "interpretation": "Spike-valued I/O alone does not exclude task-relevant hidden continuous decoder/filter memory; useful specification pressure only, not H9 evidence.",
+    "allowed_next": "Exactly one bounded synthetic/dev-only state-inventory plus fixed ablation/reset diagnostic.",
+    "remaining_choices": ["fully-spiking boundary", "decoder/filter state inventory", "non-sensory dynamics", "representation/decoder mapping", "comparator/claim", "budget", "tolerance", "runtime/seeds/determinism", "fresh formal identity/integrity"],
+    "hard_stop": ["ambiguity remains definitional after one diagnostic", "another tuning cycle needed", "official/formal resources required", "coupling to C19/MAIN"]
   },
   "main_lane": {
     "target": "C19 official-v4 preservation-qualified final successor",
-    "scientific_question": "Under the unchanged C19 official contract, does I2_truth_free_symbolic_surface/G1_coalition/E0_global improve preregistered Belief-R BREU versus I1_local_compositional/G1_coalition/E0_global across the fixed 55-row matrix?",
+    "scientific_question": "Does fixed I2 truth-free symbolic surface improve preregistered Belief-R BREU versus fixed I1 local compositional across the frozen 55-row matrix?",
     "recommended_owner": "main",
-    "branch_or_identity": {
-      "branch": "research/c19-official-v4-preservation-qualified-20260917",
-      "branch_current_head_observed": "a0ba353ff33abc981875c9d02af2e171a1bc65f6",
-      "protocol_id": "c19-external-v2-official-protocol-v4",
-      "package_id": "c19-external-v2-official-package-v4",
-      "identity": "c19-external-v2-official-v4",
-      "science_basis": "research/c19-official-v3-runtime-closed-20260917@84b244959f249da916a36906508ead0830052e9b",
-      "preservation_basis": "research/readiness-raw-preservation-boundary-20260917@158ad46cafcc9d9b17f01a85488562b63e81257d",
-      "qualified_preserve_ref": "readiness/raw-preservation-35204638939@8a4d0107a3251def652fd848a1da5b0731ff3283"
-    },
+    "branch_or_identity": "research/c19-official-v4-preservation-qualified-20260917@a0ba353ff33abc981875c9d02af2e171a1bc65f6 / c19-external-v2-official-v4",
     "information_value": "VERY_HIGH",
     "implementation_distance": "VERY_NEAR",
-    "dependencies": [
-      "inspect exact ordinary-CI lint diagnostics",
-      "apply only behavior-preserving lint/static cleanup",
-      "rerun ordinary CI and dedicated v4 pre-START on the same final exact head",
-      "fresh identity/control/preserve/evidence collision checks",
-      "all prior exact binding and preservation/target-safety gates"
-    ],
-    "allowed_scope": ["behavior-preserving lint/format/import-order/static cleanup", "science-invariant v4 CI/preflight/runner/package/binding/preservation fixes", "one-way execution only after all GO gates"],
-    "forbidden_scope": ["v2/v3 retry or raw recovery", "candidate/baseline/matrix/seed/metric/statistical threshold/input/runtime retuning", "target access before immutable raw preservation and independent refetch", "post-outcome scientific redesign"],
-    "go_conditions": [
-      "v4 identity fresh, unSTARTED and unconsumed",
-      "v4 control/preserve/evidence namespaces collision-free",
-      "ordinary CI green on exact final head",
-      "dedicated v4 pre-START admission green on same exact final head",
-      "fixed science contract unchanged",
-      "exact source/protocol/package/input/runtime/parser/envelope/scorer/bootstrap/preserver binding",
-      "1,744 input pairs and 95,920 target-blind raw rows",
-      "preserve-before-target with independent refetch and digest equality",
-      "1,744 unique/total target-safe join and golden scorer/quantile fixtures green"
-    ],
-    "stop_conditions": ["lint repair requires semantic or runtime change", "any scientific/resource/runtime semantic redesign", "authority collision", "target leakage or raw-count/digest/join/scorer integrity failure", "INVALID_EVIDENCE", "any post-START failure"],
-    "exact_refs_identities_to_recheck": ["research/c19-official-v4-preservation-qualified-20260917", "c19-external-v2-official-v4", "control/c19-official-v4-started-*", "preserve/c19-official-v4-*", "evidence/c19-official-v4-*"],
+    "dependencies": ["mechanical lint cleanup", "ordinary CI + dedicated pre-START green on same final head", "fresh binding/collision checks"],
+    "allowed_scope": ["behavior-preserving lint/format/import-order/static cleanup", "science-invariant critical-path fixes", "one-way only after all GO gates"],
+    "forbidden_scope": ["v2/v3 retry/recovery", "scientific/statistical/resource/runtime retuning", "target before immutable raw preservation/refetch", "post-outcome redesign"],
+    "go_conditions": ["identity fresh/unSTARTED/unconsumed", "same exact head ordinary CI green", "same exact head dedicated pre-START green", "science contract unchanged", "exact source/protocol/package/input/runtime/parser/envelope/scorer/bootstrap/preserver binding", "1,744 inputs/95,920 raw", "preserve-before-target + refetch/digest equality", "1,744 unique/total target-safe join", "golden scorer/quantile green", "fresh control/preserve/evidence collision check"],
+    "stop_conditions": ["lint fix needs semantic/runtime change", "scientific/resource/runtime redesign", "authority collision", "leakage/raw-count/digest/join/scorer violation", "INVALID_EVIDENCE", "POST_START_FAILURE"],
     "main_owns_all_critical_path_fixups": true
   },
   "sub_lane": null,
   "sub_fallback": null,
-  "no_sub_lane_reason": "No independent formal object is prospectively complete. H9 remains under-specified; the decoder-state branch is NON_EVIDENTIARY exploratory work only.",
+  "no_sub_lane_reason": "No independent formal object is prospectively complete; H9 decoder-state work remains NON_EVIDENTIARY and under-specified.",
   "outcome_contingencies": {
-    "V4_PRE_START_BLOCKER_LINT": {"trigger": "ordinary CI 35212637754 failed at Lint on exact head a0ba353 while dedicated pre-START 35212637922 succeeded", "next_action": "MAIN may make only behavior-preserving lint/static cleanup and must rerun ordinary CI plus dedicated pre-START on the new exact head", "one_way_execution_allowed": false, "prospectively_fixed": true, "stop_if": "any semantic/runtime/scientific choice is required"},
-    "V4_PRE_START_BLOCKER": {"trigger": "other science-invariant pre-START defect", "next_action": "MAIN fixes and re-verifies same run", "one_way_execution_allowed": false, "prospectively_fixed": true},
-    "V4_PRE_START_SEMANTIC_GAP": {"trigger": "scientific/resource/runtime semantic redesign needed", "next_action": "STOP for Analyst", "one_way_execution_allowed": false, "prospectively_fixed": true},
-    "V4_PRE_START_READY_FOR_ONE_WAY": {"trigger": "all fresh GO conditions green on same exact final head", "next_action": "MAIN may create STARTED and continue target-blind acquisition -> immutable raw preserve -> independent refetch/digest -> evaluator targets -> scoring -> terminal evidence", "one_way_execution_allowed": true, "prospectively_fixed": true},
-    "V4_PASS": {"trigger": "valid BREU 95% CI lower > 0", "next_action": "finalize immutable evidence/report and STOP", "one_way_execution_allowed": false, "prospectively_fixed": true},
-    "V4_FAIL": {"trigger": "valid BREU 95% CI upper <= 0", "next_action": "finalize immutable evidence/report and STOP", "one_way_execution_allowed": false, "prospectively_fixed": true},
-    "V4_INCONCLUSIVE": {"trigger": "valid BREU 95% CI contains 0", "next_action": "finalize immutable evidence/report and STOP", "one_way_execution_allowed": false, "prospectively_fixed": true},
-    "V4_INVALID_EVIDENCE": {"trigger": "binding/raw-count/digest/join/target-safety/scorer violation", "next_action": "preserve invalidity diagnostics and STOP; no rescore", "one_way_execution_allowed": false, "prospectively_fixed": true},
-    "V4_POST_START_FAILURE": {"trigger": "operational failure after STARTED before terminal evidence", "next_action": "consume/no-retry, diagnostics/report only, STOP; no v5", "one_way_execution_allowed": false, "prospectively_fixed": true}
+    "V4_PRE_START_BLOCKER_LINT": {"trigger": "pre-START success but ordinary CI lint failure on a0ba353", "next_action": "MAIN behavior-preserving lint cleanup; rerun both workflows on new exact head", "one_way_execution_allowed": false, "prospectively_fixed": true},
+    "V4_PRE_START_BLOCKER": {"trigger": "other science-invariant pre-START defect", "next_action": "MAIN fix/reverify same run", "one_way_execution_allowed": false, "prospectively_fixed": true},
+    "V4_PRE_START_SEMANTIC_GAP": {"trigger": "semantic/resource/runtime redesign needed", "next_action": "STOP for Analyst", "one_way_execution_allowed": false, "prospectively_fixed": true},
+    "V4_PRE_START_READY_FOR_ONE_WAY": {"trigger": "all GO gates green on same final exact head", "next_action": "STARTED -> target-blind acquisition -> immutable raw preserve -> refetch/digest -> targets -> scoring -> terminal evidence", "one_way_execution_allowed": true, "prospectively_fixed": true},
+    "V4_PASS": {"trigger": "valid 95% BREU CI lower > 0", "next_action": "finalize evidence/report; STOP"},
+    "V4_FAIL": {"trigger": "valid 95% BREU CI upper <= 0", "next_action": "finalize evidence/report; STOP"},
+    "V4_INCONCLUSIVE": {"trigger": "valid CI contains 0", "next_action": "finalize evidence/report; STOP"},
+    "V4_INVALID_EVIDENCE": {"trigger": "binding/raw/digest/join/target-safety/scorer violation", "next_action": "preserve invalidity diagnostics; STOP; no rescore"},
+    "V4_POST_START_FAILURE": {"trigger": "failure after STARTED", "next_action": "consume/no-retry; diagnostics/report; STOP; no v5"}
   },
   "blocked_until": {
-    "v4_started_one_way": "ordinary CI and dedicated v4 pre-START admission are green on the same exact final head, science invariance intact, identity fresh/unconsumed/unSTARTED, collision checks clean",
-    "formal_sub": "new independent object fully prospectively specified and reserved",
+    "v4_started_one_way": "ordinary CI and dedicated pre-START green on same exact final head plus fresh integrity/binding/collision checks",
+    "formal_sub": "new independent object fully prospectively specified/reserved",
     "c19_v5": "forbidden"
   },
-  "do_not_touch": ["consumed C19-v2/v3 identities and controls", "transient v3 raw/diagnostics as scientific evidence", "consumed A01/RV01/RV02/CX identities", "legacy immutable freeze/preserve/formal/evidence authorities", "rejected provenance/FSA exploratory output as evidence", "H9 decoder-state exploratory output as evidence"],
+  "do_not_touch": ["consumed C19-v2/v3 identities/controls", "transient v3 raw/diagnostics as evidence", "consumed A01/RV01/RV02/CX identities", "immutable historical refs", "rejected provenance/FSA output as evidence", "H9 exploratory output as evidence"],
   "active_MAIN_SUB_claims_observed": {
-    "MAIN": "C19 v4 at a0ba353; pre-START success; ordinary CI lint failure; no STARTED",
-    "SUB": "exploratory_incubator on independent H9 decoder-state boundary at daf7a289; no formal lane"
+    "MAIN": "C19-v4 a0ba353; dedicated pre-START green; ordinary CI lint-failing; no STARTED",
+    "SUB": "exploratory_incubator on H9 decoder-state boundary daf7a289; no formal lane"
   },
-  "top_recommendation": "MAIN fixes only the ordinary-CI lint blocker, then gets both ordinary CI and dedicated pre-START green on the same exact head; if all fresh GO checks pass, continue the already-fixed one-way path in the same run.",
+  "top_recommendation": "MAIN performs only mechanical v4 lint repair, gets ordinary CI and dedicated pre-START green on the same exact head, then continues one-way only if every fresh GO check passes.",
   "top_3": [
-    {"rank": 1, "action": "MAIN mechanical v4 lint fix + same-head ordinary CI/pre-START revalidation, then one-way only if all GO gates pass", "information_value": "VERY_HIGH", "distance": "VERY_NEAR"},
-    {"rank": 2, "action": "SUB one bounded NON_EVIDENTIARY H9 state-inventory/ablation diagnostic, independent of C19", "information_value": "MEDIUM", "distance": "NEAR"},
-    {"rank": 3, "action": "Governance: reconcile #147 and independently review generic preservation/digest tooling for main promotion; keep #139 open", "information_value": "HIGH_RELIABILITY", "distance": "NEAR"}
+    {"rank": 1, "action": "MAIN lint fix + same-head CI/pre-START revalidation; then conditional one-way", "information_value": "VERY_HIGH", "distance": "VERY_NEAR"},
+    {"rank": 2, "action": "SUB one bounded NON_EVIDENTIARY H9 state-inventory/ablation diagnostic", "information_value": "MEDIUM", "distance": "NEAR"},
+    {"rank": 3, "action": "Reconcile #147; independently review generic preservation/digest tooling for main promotion; keep #139 open", "information_value": "HIGH_RELIABILITY", "distance": "NEAR"}
   ],
-  "consumed_identities": ["c19-external-v2-official-v2", "c19-external-v2-official-v3", "A01 MD-001/P2 candidate-002/P3 candidate-001/P4 candidate-001", "RV01 R01-16/R01-17", "RV02 D1", "CX01 Candidate-002/formal object"],
-  "blockers": ["C19-v4 ordinary CI lint failure on exact head a0ba353", "H9 remains formally under-specified"],
+  "consumed_identities": ["c19-external-v2-official-v2", "c19-external-v2-official-v3", "A01 MD-001/P2/P3/P4", "RV01 R01-16/R01-17", "RV02 D1", "CX01 Candidate-002/formal object"],
+  "blockers": ["C19-v4 ordinary CI lint failure", "H9 formally under-specified"],
   "governance_advisory": {
-    "issue_drift": "#147 still describes c19-external-v2-official-v2 as planned fresh identity; current canonical state is v2/v3 consumed and v4 active pre-START",
-    "tag_migration": "13 legacy freeze branches retained; authoritative tags remain 0",
-    "tag_protection_gap": "repository rulesets 0; main unprotected; #139 remains open and non-blocking",
-    "main_promotion_candidates": ["generic raw preservation/no-clobber/digest refetch verification after independent review"],
+    "issue_drift": "#147 still names v2 as planned fresh identity; canonical state is v2/v3 consumed and v4 active pre-START",
+    "freeze_tag_migration": "13 legacy freeze branches retained; authoritative tags 0",
+    "tag_protection_gap": "rulesets 0; main unprotected; #139 remains open/non-blocking",
+    "main_promotion_candidates": ["generic preservation/no-clobber/digest/refetch tooling after independent review"],
     "open_prs": 0
   },
   "allocation_changed_due_to_external_input": false,
   "allocation_changed_due_to_exploratory_input": false,
-  "orchestrator_handoff": "MAIN takes C19-v4 and owns all critical-path fixes, beginning with exact ordinary-CI lint. Formal SUB remains null/null; SUB may run one more bounded NON_EVIDENTIARY H9 state-inventory/ablation diagnostic only. SUB must not take MAIN blockers; MAIN must not absorb future reserved SUB work. Neither touches consumed v2/v3, transient v3 raw, immutable historical authorities, or exploratory output as formal evidence. Repartition on terminal v4, materially new external/audit evidence, or a fully prospective independent SUB object."
+  "orchestrator_handoff": "MAIN owns C19-v4 and every critical-path fix, starting with ordinary-CI lint. Formal SUB is null/null; SUB may do one more bounded NON_EVIDENTIARY H9 state-inventory/ablation diagnostic only. SUB must not take MAIN blockers; MAIN must not absorb future reserved SUB work; neither touches consumed v2/v3, transient v3 raw, immutable history, or exploratory outputs as evidence. Repartition on terminal v4, materially new external/audit input, or a fully prospective independent SUB object."
 }
