@@ -1,61 +1,61 @@
-# MAIN Orchestrator — RELAY C19-R1 successor-v2
+# MAIN Orchestrator — PRIMARY C19-R2 pre-formal specification
 
-Timestamp: `2026-09-18 03:45 JST`
-Execution mode: `RELAY`
-Evidence Analyst authority: `966018058f296098805982a8d206102741c3842c`
+Timestamp: `2026-09-18 04:28 JST`
+Execution mode: `PRIMARY`
+Evidence Analyst authority: `b09d90d0545a0448ea5a310f9373969e7471b15d`
 
 ## MAIN frontier
 
-The active MAIN object is the prospectively authorized final operational successor for C19-R1:
+Evidence Analyst has terminally closed the C19-R1 revision-authority line after successor-v2 post-START failure and moved MAIN to the scientifically distinct `C19_R2_FSA_STATE_TRACKER_PROSPECTIVE_SPECIFICATION` lane. R1-v1/v2 remain consumed/no-retry; no R1 transient raw was used or salvaged.
 
-- package branch/head: `research/c19-r1-revision-authority-runtime-closed-v2-20260918@a23975c5713347eaa459161f538a8f0c3db6152e`
-- identity: `c19-r1-revision-authority-official-v2`
-- protocol: `c19-r1-revision-authority-protocol-v2`
-- STARTED ref/commit: `control/c19-r1-revision-authority-started-v2-20260918@a230e250021cea113c42d674da2bfc31dc0a3549`
-- one-way workflow: `35260650772`
+PRIMARY recovered the stale prior WAITING_EXTERNAL lease only after reconciling the completed failed R1-v2 one-way workflow and the new Analyst handoff, then created a fresh R2 branch directly from immutable C19-v4 scientific package lineage:
 
-## Relay reconciliation
+- branch: `research/c19-r2-fsa-state-tracker-spec-20260918`
+- exact current head: `3ddc73f548e3d82e240d76d081ee94f12b031912`
+- scientific parent: `research/c19-official-v4-preservation-qualified-20260917@74bfe6b4a39758656f291baaa3f16236e3e71964`
+- formal identity: **none reserved**
+- STARTED: **not created**
+- official execution: **not authorized**
 
-The prior PRIMARY lease was `WAITING_EXTERNAL` with heartbeat `03:21 JST`, older than the 20-minute collision window. No newer lease appeared before mutation. The exact package head remained `a23975c...`; Evidence Analyst tip remained exactly `966018...`; the planned STARTED and preserve namespaces were absent and the planned evidence tag was absent.
+## Prospectively frozen R2 object
 
-Both exact-head pre-START gates are green on `a23975c...`:
+R2 is an explicit representation-matched seven-state tracker using the exact immutable C19-v4 I2 encoder and deterministic `c19-readout-v1` projection. Its state alphabet is `RESET`, plus weak/strong state for each of `a/b/c`. It resets every pair, has no cross-pair memory, no raw-history lookup, no external lookup, no fitting/tuning/selection, and zero trainable parameters.
 
-- dedicated pre-START `35258035210` — `success`
-- ordinary CI `35258035223` — `success`
+The fixed observation uses deterministic top choice with lexical tie-break and a natural majority threshold of `0.5` to distinguish weak/strong. The transition table, final readout, exact pair/seed/runtime bindings, state/resource budget, raw-before-score preservation boundary, target-free atomic_idx source map, v4 comparator binding, cluster-aware primary bootstrap, pair-IID secondary sensitivity, and terminal criteria are all frozen in the pre-formal config/protocol/preregistration.
 
-The consumed-v1 -> successor-v2 diff remains exactly the four prospectively allowed operational files. Frozen scientific contract/protocol/preregistration bindings and the readiness-derived runtime manifest were unchanged.
+Nine R2-owned paths were added relative to the exact v4 parent and no parent/v4 scientific path was modified. The pre-START checker fail-closes on exact parent ancestry, exact R2-only diff paths, pinned immutable source blobs, no formal identity, no execution authority, and golden transition semantics.
 
-## STARTED / one-way transition
+## Same-run mechanical fixups
 
-Current Analyst contingency `R1_V2_PRE_START_READY` explicitly permits fresh STARTED followed by exactly one one-way execution when all gates remain clean. Relay therefore created the STARTED ref from the exact package SHA and added only:
+The first exact-head dedicated R2 pre-START run `35264684899` failed before tests at lint only. The failure was mechanical and prospective contingency `R2_PRE_START_BLOCKER` permits science-invariant repair:
 
-`artifacts/v03/c19_external_validation/r1/official_v2/STARTED.json`
+- the dedicated workflow incorrectly passed the JSON contract file explicitly to Ruff;
+- `scripts/check_c19_r2_prestart.py` had one E501 path literal;
+- `c19_r2_protocol.py` had one E501 tuple line.
 
-The STARTED marker binds:
+PRIMARY removed the JSON path from Ruff input and wrapped only those two lines. No state definition, transition, threshold, input, resource, runtime, preservation, scorer, success criterion, or evidence binding changed.
 
-- Evidence Analyst `966018058f296098805982a8d206102741c3842c`
-- exact package `a23975c5713347eaa459161f538a8f0c3db6152e`
-- scientific protocol v1 + execution protocol v2
-- identity `c19-r1-revision-authority-official-v2`
-- runtime manifest `cdb7a2a075f76d4b65b51fc7d0b46f7ecda98646e33902420b2a7e5b7d604fc5`
-- both successful admission runs
-- `no_retry: true`
+## Exact-head workflow checkpoint
 
-Package -> STARTED comparison confirms the STARTED JSON is the only changed path.
+Final head is `3ddc73f548e3d82e240d76d081ee94f12b031912`.
 
-The configured exactly-once one-way workflow `35260650772` was triggered from STARTED commit `a230e250...` and is currently `in_progress`.
+Fresh final-head runs are now external:
+
+- ordinary CI `35264985201` — queued at checkpoint;
+- dedicated R2 pre-START `35264985183` — queued at checkpoint.
+
+The earlier failed dedicated run `35264684899` is superseded by this new exact head.
 
 ## Scientific / integrity state
 
-There is no new scientific result at this checkpoint. STARTED has now crossed the one-way boundary, so successor-v2 is consumed and may never be retried or repaired as the same identity.
+No new scientific measurement or outcome exists. R2 remains pre-formal, unSTARTED, unconsumed, and without a formal identity. C19-v4 immutable evidence is referenced read-only; consumed C19/R1 identities and refs were not modified. SUB's independent NON_EVIDENTIARY H2 exploratory work was not touched.
 
-No preserve/evidence result has yet been claimed. The prior consumed v1 remains untouched. No SUB-reserved work was touched.
+## Stop / relay action
 
-## Stop / next relay action
+Lease is `WAITING_EXTERNAL`. No useful local critical-path work remains until the two exact-head checks resolve.
 
-Lease is `WAITING_EXTERNAL`; no useful local critical-path work remains while workflow `35260650772` runs.
+Relay/next MAIN must collect **both** final-head runs above:
 
-Next MAIN/RELAY must collect that same workflow only:
-
-- SUCCESS: independently verify preserve/evidence refs and terminal classification, persist terminal state, STOP before any new object.
-- FAILURE after STARTED: preserve diagnostics, classify `R1_V2_POST_START_FAILURE`, keep v2 consumed/no-retry, terminate the R1 reduction line, and create no automatic v3.
+- if either fails for a science-invariant mechanical reason, fix only that blocker, obtain a new exact head, and require both ordinary CI and dedicated pre-START to pass on that same final SHA;
+- if a failure exposes a semantic/scientific gap, STOP for Evidence Analyst without redesign;
+- if both are green, re-fetch Analyst authority and exact R2 head, set the phase to `R2_PRE_START_READY_FOR_ANALYST_REVIEW`, persist the checkpoint, and STOP. Do **not** reserve a formal identity, create STARTED, or execute official data under the current Analyst handoff.
