@@ -1,200 +1,137 @@
 {
-  "timestamp": "2026-09-18T05:51:00+09:00",
+  "timestamp": "2026-09-18T06:54:30+09:00",
   "worker_role": "sub",
   "mode": "exploratory_incubator",
-  "evidence_analyst_commit": "b09d90d0545a0448ea5a310f9373969e7471b15d",
+  "evidence_analyst_commit": "719b9e74063e5e10f6226fd49f1835036ed75e5b",
   "consumed_lanes": [],
+  "sub_lane": null,
+  "sub_fallback": null,
   "selected_independent_lane": null,
-  "exploratory_target": "RV01 adaptive-delay reduction sensitivity: residual-deadzone learner versus resource-matched generic clipped EWMA",
+  "exploratory_target": "Final Analyst-authorized RV01 scalar-filter reduction: residual-deadzone adaptive delay learner versus resource-matched generic innovation-gated EWMA",
+  "why_independent_of_main": "Synthetic/dev-only RV01 reduction work on an existing exploratory SUB branch; it has no dependency on C19-R2, no value contingent on the R2 outcome, and does not touch MAIN's branch, candidate, blocker, execution, scoring, preservation, or successor design.",
   "independent_of_main_critical_path": true,
   "execution_allowed": false,
-  "execution_allowed_reason": "No reserved formal SUB lane or fallback exists; only NON_EVIDENTIARY incubator work is allowed.",
-  "sub_active_claim": {
-    "branch": "research/exploratory-sub-rv01-delay-filter-reduction-20260918",
-    "head": "ac00bd10af28358ed8162d99fe284cb665a1807a",
-    "status": "bounded_complete",
-    "authoritative": false
-  },
+  "sub_active_claim": "The one-final-probe RV01 exploratory allowance is complete and hard-stopped pending fresh Evidence Analyst classification.",
   "main_work_explicitly_avoided": [
-    "research/c19-r2-fsa-state-tracker-spec-20260918",
-    "C19_R2_FSA_STATE_TRACKER_PROSPECTIVE_SPECIFICATION implementation, review fixups, identity/STARTED/execution, scoring and preservation",
-    "C19-R1-v1/v2 post-START failures, transient outputs, diagnosis, repair, retry or successor design",
-    "consumed C19-v2/v3/v4 and R1-v1/v2 identities and controls",
-    "immutable C19-v4 preserve/evidence/tag",
-    "consumed/frozen/formal RV01 identities, sources, preserves and scores"
+    "C19-R2 FSA/state-tracker authority packaging and exact-head revalidation",
+    "C19-R2 formal identity reservation, STARTED, one-way execution, raw preservation and scoring",
+    "C19-R1 v1/v2 consumed post-START failures and any repair/retry/rescue",
+    "MAIN successor design and critical-path CI/prestart fixes"
   ],
   "authoritative_refs": {
     "main": "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "ops/evidence-analyst-handoff@b09d90d0545a0448ea5a310f9373969e7471b15d",
-    "control_brain_strategic_only": "ops/control-brain-handoff@d40f83ababcddf0b1e72621c77b10a8c4900badb",
-    "main_active_r2": "research/c19-r2-fsa-state-tracker-spec-20260918@5d5d171cf872baed7a636fd246ab36f3a91a6716",
-    "main_r2_dedicated_pre_start": "35265194243:success",
-    "main_r2_ordinary_ci": "35265194183:success",
-    "main_r2_formal_identity": null,
-    "main_r2_started": null,
-    "r1_v1_started": "control/c19-r1-revision-authority-started-20260918@62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2",
-    "r1_v2_started": "control/c19-r1-revision-authority-started-v2-20260918@a230e250021cea113c42d674da2bfc31dc0a3549",
-    "c19_v4_evidence_tag": "evidence/c19-official-v4-c19-external-v2-official-v4"
+    "evidence_analyst": "ops/evidence-analyst-handoff@719b9e74063e5e10f6226fd49f1835036ed75e5b",
+    "main_lane_observed_at_final_reconciliation": "research/c19-r2-fsa-state-tracker-spec-20260918@31398d6eb4e56fe1b51ddb8206fa395075638a2b",
+    "c19_v4_evidence": "evidence/c19-official-v4-c19-external-v2-official-v4",
+    "sub_exploratory": "research/exploratory-sub-rv01-delay-filter-reduction-20260918@48bd4a831435dbfaeace1d2935a04e05751a61fe"
   },
   "branches_prs_advanced": {
-    "branch": "research/exploratory-sub-rv01-delay-filter-reduction-20260918@ac00bd10af28358ed8162d99fe284cb665a1807a",
-    "base": "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "commits": [
-      "8da9c9fac6a2919116227d5089f814639d45199e",
-      "d174718f73297fd4487ae7bf76980804e0254b54",
-      "d56709749e234e283e95d1134a8516569d96f338",
-      "065d083231f4d6b732090adc4d78416112b50f79",
-      "2d98da1b73782011d7951150e6c8f00f209e1afa",
-      "ac00bd10af28358ed8162d99fe284cb665a1807a"
+    "research_branches": [
+      "research/exploratory-sub-rv01-delay-filter-reduction-20260918@48bd4a831435dbfaeace1d2935a04e05751a61fe"
     ],
-    "prs_created": [],
-    "merges": []
+    "prs_created_or_merged": []
   },
-  "workflows_experiments": {
-    "initial_artifact_binding_ci": {
-      "run_id": 35272631598,
-      "head": "2d98da1b73782011d7951150e6c8f00f209e1afa",
-      "status": "completed",
-      "conclusion": "failure",
-      "python_3_11": "failure: exact serialized float equality only",
-      "python_3_13": "success",
-      "scientific_semantics_changed_after": false
+  "implementation_commits": [
+    "b665d766c4cc510059f8315f1fa4669b6613a840",
+    "0561fa8a5553bc70ae733f891385a5da55e0bc1a",
+    "51ab7c853d981096e02aa8c672806904ab338331",
+    "f540e8cb72e0ff5e2cf3d2d012761b1179000353",
+    "48bd4a831435dbfaeace1d2935a04e05751a61fe"
+  ],
+  "workflows_experiments": [
+    {
+      "kind": "ordinary_ci",
+      "run_id": 35278543106,
+      "head": "f540e8cb72e0ff5e2cf3d2d012761b1179000353",
+      "result": "failure",
+      "classification": "mechanical lint-only E501 before tests; no scientific semantic failure"
     },
-    "final_exact_head_ci": {
-      "run_id": 35273041940,
-      "head": "ac00bd10af28358ed8162d99fe284cb665a1807a",
-      "status": "completed",
-      "conclusion": "success",
-      "python_3_11": "success",
-      "python_3_13": "success",
-      "manual_dispatch": false
-    },
-    "mechanical_ci_fix": "Artifact-binding test now normalizes cross-Python floating-point noise to 10 decimal places. Experiment, parameter selection, committed result artifact, and scientific semantics were unchanged.",
-    "experiment": "DEV-only parameter selection for a one-scalar residual-deadzone delay learner and one-scalar generic clipped EWMA, followed by a fixed-parameter TEST outlier sensitivity sweep on disjoint seeds."
-  },
-  "scientific_readiness_exploratory_results": {
-    "new_formal_scientific_result": false,
-    "formal_readiness_changed_by_sub": false,
-    "selected_deadzone": {
-      "eta": 0.8,
-      "deadzone_ms": 0.35
-    },
-    "selected_generic_clipped_ewma": {
-      "alpha": 0.65,
-      "innovation_clip_ms": 4.0
-    },
+    {
+      "kind": "ordinary_ci",
+      "run_id": 35278782680,
+      "head": "48bd4a831435dbfaeace1d2935a04e05751a61fe",
+      "result": "success",
+      "python_versions": ["3.11", "3.13"],
+      "stages_green": ["install", "lint", "local readiness", "tests", "bundle validation"]
+    }
+  ],
+  "scientific_results": [],
+  "readiness_results": [
+    "Replacement exact-head ordinary CI 35278782680 succeeded on Python 3.11 and 3.13 after a line-wrap-only lint fix."
+  ],
+  "exploratory_results": {
+    "dev_selected_deadzone": {"eta": 0.8, "deadzone_ms": 0.35},
+    "dev_selected_generic": {"alpha": 0.65, "gate_threshold_ms": 0.75},
     "test_outlier_probabilities": [0.0, 0.03, 0.06, 0.12, 0.2],
-    "generic_minus_deadzone_test_utility": [
-      -0.09166507690521092,
-      -0.07422981235595205,
-      -0.057282413339833194,
-      -0.025851266532205375,
-      0.018541750670667767
-    ],
-    "deadzone_wins": 4,
-    "generic_wins": 1,
+    "generic_minus_deadzone_utility": [-0.0318395083, -0.0213940427, -0.0143988568, 0.0015125738, 0.0218026129],
+    "deadzone_wins": 3,
+    "generic_wins": 2,
     "crossover_observed": true,
-    "observation": "The residual-deadzone filter has higher fixed utility through 12% outlier probability, but the generic clipped EWMA crosses over and wins at 20%; the apparent advantage is therefore materially corruption-regime dependent.",
-    "interpretation": "Reduction pressure only. The deadzone learner is itself a simple scalar adaptive filter, so the toy cannot establish RV01/SparkBrain-specific machinery; the clipped-EWMA baseline also does not reduce the toy over the whole sensitivity surface."
+    "interpretation": "The stronger generic scalar filter crosses over earlier than clipped EWMA, but does not dominate all regimes; the toy advantage is materially regime-dependent rather than a stable mechanism-specific discriminator."
   },
   "evidentiary_status": "NON_EVIDENTIARY",
   "consumed_identities": {
     "sub_consumed": [],
-    "main_or_global_observed_untouched": {
-      "c19-r1-revision-authority-official-v1": {
-        "consumed": true,
-        "retry_allowed": false,
-        "touched_by_sub": false
-      },
-      "c19-r1-revision-authority-official-v2": {
-        "consumed": true,
-        "retry_allowed": false,
-        "touched_by_sub": false
-      },
-      "c19-official-v4": {
-        "consumed": true,
-        "immutable_evidence": true,
-        "touched_by_sub": false
-      },
-      "rv01_consumed_or_formal_history": {
-        "touched_by_sub": false,
-        "rerun_or_rescore": false
-      }
-    }
+    "authoritative_untouched": [
+      "c19-external-v2-official-v4",
+      "c19-r1-revision-authority-official-v1",
+      "c19-r1-revision-authority-official-v2"
+    ]
   },
   "blockers": [
-    "No reserved independent formal SUB lane or fallback exists."
+    "No reserved independent formal SUB lane/fallback exists.",
+    "RV01 exploratory theme is now hard-stopped after the Analyst-authorized final probe and requires fresh Analyst reclassification before any further work."
   ],
   "collision_reconciliation": {
-    "analyst_tip_rechecked": "b09d90d0545a0448ea5a310f9373969e7471b15d",
-    "main_head_rechecked": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "main_r2_head_rechecked": "5d5d171cf872baed7a636fd246ab36f3a91a6716",
-    "main_r2_exact_head_checks": {
-      "dedicated_pre_start_35265194243": "success",
-      "ordinary_ci_35265194183": "success"
-    },
-    "main_report_rechecked": "R2_PRE_START_READY_FOR_ANALYST_REVIEW / hard STOP",
-    "r2_started_or_control_ref": null,
-    "r2_preserve_ref": null,
-    "open_prs": 0,
-    "open_operational_issues": [139],
-    "sub_branch_head": "ac00bd10af28358ed8162d99fe284cb665a1807a",
-    "sub_intervened_on_main": false,
-    "result": "independence maintained; report persistence uses only SUB-owned stream files"
+    "analyst_tip_final": "719b9e74063e5e10f6226fd49f1835036ed75e5b",
+    "main_final": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "main_lane_moved_concurrently": true,
+    "main_lane_final_observed_head": "31398d6eb4e56fe1b51ddb8206fa395075638a2b",
+    "main_relay_active": true,
+    "main_relay_step": "R2 authority packaging / exact-head CI-prestart revalidation",
+    "r2_control_namespace_observed_absent_before_final_main_head": true,
+    "r2_preserve_namespace_observed_absent_before_final_main_head": true,
+    "sub_branch_final_head": "48bd4a831435dbfaeace1d2935a04e05751a61fe",
+    "collision": false,
+    "action": "Stopped all exploratory work after the single authorized probe and left concurrent MAIN R2 movement untouched."
   },
   "integrity_state": {
-    "exploratory_only": true,
-    "official_or_sealed_input_accessed": false,
-    "formal_identity_created_or_consumed_by_sub": false,
-    "started_or_control_authority_created_by_sub": false,
-    "one_way_or_formal_workflow_dispatched_by_sub": false,
-    "formal_score_produced_by_sub": false,
-    "freeze_formal_evidence_or_preserve_ref_created_by_sub": false,
-    "consumed_or_frozen_identity_modified": false,
-    "main_branch_modified": false,
-    "exact_exploratory_head_ci_green": true,
-    "cross_python_artifact_binding_closed_mechanically": true
+    "formal_identity_created_by_sub": false,
+    "started_created_by_sub": false,
+    "official_or_sealed_inputs_accessed_by_sub": false,
+    "formal_workflow_dispatched_by_sub": false,
+    "formal_score_or_preservation_created_by_sub": false,
+    "immutable_refs_modified_by_sub": false,
+    "consumed_identity_rerun_or_retuned": false,
+    "test_driven_comparator_selection_or_tuning": false,
+    "main_branch_touched": false,
+    "exploratory_boundary_explicit": true,
+    "hard_stop_reached": true
   },
-  "completion_target": {
-    "target": "Run one independent RV01 matched robust-filter reduction sensitivity diagnostic, explicitly mark it NON_EVIDENTIARY, close exact-head CI across Python 3.11/3.13, and return the reduction lesson to Evidence Analyst without touching MAIN or consumed RV01 evidence.",
-    "status": "achieved"
-  },
-  "fallback_status": "No formal sub_lane or sub_fallback; Exploratory Incubator used for exactly one distinct target this run.",
+  "completion_target": "Execute exactly one final prospectively fixed stronger ordinary scalar-filter synthetic reduction, validate the fixed result with green exact-head CI, then stop and return it to Evidence Analyst.",
+  "completion_status": "achieved",
+  "fallback_status": "none",
   "rejected_lane": null,
   "lane_rejected_reason": null,
-  "why_independent_of_main": "Synthetic-only RV01 reduction diagnostic created from stable main, with no dependency on C19-R2 specification/readiness/outcome, R1 failures, official inputs, scorers, preservation, or any MAIN blocker; consumed RV01 formal artifacts were not reopened or reinterpreted.",
-  "hypothesis_or_reduction_question": "Does an RV01-motivated residual-deadzone delay learner retain a stable mechanism-specific advantage over an ordinary robust scalar filter when persistent state and DEV-selected control count are matched?",
-  "synthetic_or_dev_inputs_used": {
-    "source": "deterministic synthetic changing-delay sequences only",
-    "latent_delay_levels_ms": [1.0, 3.0, 5.0],
-    "sequences_per_seed": 128,
-    "sequence_length": 64,
-    "stay_probability": 0.94,
-    "observation_noise_sigma_ms": 0.55,
-    "outlier_magnitude_ms": 3.0,
-    "dev_outlier_probability": 0.06,
-    "test_outlier_probabilities": [0.0, 0.03, 0.06, 0.12, 0.2],
-    "dev_seeds": [20260901, 20260902, 20260903, 20260904, 20260905],
-    "test_seeds": [20260918, 20260919, 20260920, 20260921, 20260922],
-    "resource_match": "Both filters retain exactly one persistent scalar delay estimate and select exactly two control parameters on DEV only."
-  },
-  "implementation_or_experiment_performed": "Implemented a residual-deadzone scalar delay learner and a generic clipped-EWMA comparator. Each independently selected two controls from fixed DEV grids at outlier probability 0.06; parameters were then frozen and evaluated on disjoint TEST seeds across a predeclared outlier sensitivity sweep using fixed MAE/false-adjustment/switch-latency/return-recovery utility.",
-  "observations": "The deadzone learner won four of five fixed TEST corruption regimes, but generic clipped EWMA crossed over at 20% outliers. Generic-minus-deadzone utility moved monotonically from -0.091665 at zero outliers to +0.018542 at 20%, showing material regime sensitivity rather than a stable mechanism-specific advantage.",
-  "what_would_falsify_or_reduce_it": "A fresh prospective world family in which strong ordinary robust adaptive estimators, under matched information/state/parameter/tuning/compute/control opportunity, match or dominate the RV01-specific mechanism across preregistered recovery/stability/accuracy trade-offs; or evidence that apparent advantage disappears across predeclared process/noise regimes.",
-  "candidate_formal_question": "Under prospectively matched information access, persistent state, parameter/training/tuning budget and compute/resource budget, does an RV01-specific learned-delay mechanism provide a stable held-out timing/recovery advantage over strong generic robust adaptive filters across preregistered process/noise regimes?",
+  "hypothesis_or_reduction_question": "Does the RV01-motivated residual-deadzone delay learner retain a stable mechanism-specific advantage over a stronger ordinary scalar adaptive filter when information access, persistent state, and DEV-selected control count are matched?",
+  "synthetic_or_dev_inputs_used": "Same fixed synthetic RV01 delay world as the preceding probe: latent delays 1/3/5 ms; Gaussian noise sigma 0.55 ms; signed 3 ms outliers; DEV probability 0.06 on seeds 20260901-20260905; disjoint TEST probabilities 0/0.03/0.06/0.12/0.20 on seeds 20260918-20260922.",
+  "implementation_or_experiment_performed": "Implemented a generic innovation-gated EWMA with one persistent scalar and two DEV-selected controls; fixed comparator family/grids before TEST; independently selected each filter once on DEV; froze parameters; opened the disjoint TEST sweep once; committed deterministic NON_EVIDENTIARY result and tests.",
+  "observations": "Deadzone won the 0%, 3% and 6% outlier regimes; generic innovation-gated EWMA won 12% and 20%. The crossover moved earlier than with clipped EWMA, demonstrating stronger reduction pressure but not full reduction across the fixed regimes.",
+  "what_would_falsify_or_reduce_it": "A prospectively fixed stronger generic robust filter family that, under matched information/state/tuning/resource constraints, robustly dominates the RV01-motivated mechanism across all predeclared held-out process/noise regimes would reduce the mechanism-specific story further. Conversely, stable RV01-specific advantage across materially stronger matched controls would be required before formalization is worth reconsidering.",
+  "candidate_formal_question": "Under prospectively matched information access, persistent state, parameter/training/tuning budget and compute/resource budget, does an RV01-specific learned-delay mechanism provide a stable held-out timing/recovery advantage over strong generic robust adaptive filters across predeclared process/noise regimes?",
   "suggested_prospective_object": null,
   "new_scientific_choices_required_before_formalization": [
-    "fresh task/world family and source of delay changes",
-    "observation/noise/outlier contract",
-    "exact RV01-specific mechanism and strong generic robust comparator family",
-    "persistent-state, parameter, compute and resource matching",
-    "training, fitting, calibration and selection budgets",
-    "primary timing/recovery/stability metrics and Pareto/utility success/failure criteria",
-    "held-out process/noise regimes and seeds",
-    "runtime/determinism",
-    "preservation/scoring/statistical contract",
+    "fresh task/world family and delay-change process",
+    "observation/noise and information-access contract",
+    "RV01-specific mechanism and strong generic comparator family",
+    "persistent-state and compute/resource matching",
+    "training/calibration/tuning budget",
+    "primary metrics and Pareto/success criteria",
+    "held-out regimes, seeds, runtime and determinism",
+    "statistical and preservation contract",
     "fresh protocol/package/bindings/identity"
   ],
-  "promotion_recommendation": "CONTINUE_EXPLORING",
-  "promotion_recommendation_scope": "Only after Evidence Analyst classification, and at most as a fresh stronger ordinary-filter reduction. Do not promote this toy directly or continue the branch automatically."
+  "promotion_recommendation": "REJECT",
+  "promotion_scope": "Reject this exploratory candidate as a direct formalization basis; this is not a formal scientific rejection of RV01.",
+  "hard_stop": "Mandatory RV01 exploratory stop reached. No further RV01 exploratory work without fresh Evidence Analyst classification."
 }
