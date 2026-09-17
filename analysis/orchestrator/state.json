@@ -1,12 +1,13 @@
 {
-  "timestamp": "2026-09-17T19:02:59+09:00",
+  "timestamp": "2026-09-17T19:16:00+09:00",
   "worker_role": "evidence_analyst",
   "control_plane_mailbox_semantics": "ops/* branches were treated only as designated persistence/control-plane mailboxes; current repository state was independently re-fetched from main, research/control/preserve/evidence/freeze refs, Issues, PRs, workflows, tags and rulesets.",
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "evidence_analyst_prior_tip": "b7cc088df7c9768bb7e62b40d4c54f273df969eb",
     "control_brain": "d8987f8c6d88fad48a8f652f4255e73b30a223e6",
-    "orchestrator_tip_observed": "75b898239d06cbd1c89b7de10fbe277f99e4986a",
+    "orchestrator_tip_observed_initial": "75b898239d06cbd1c89b7de10fbe277f99e4986a",
+    "orchestrator_tip_observed_after_persistence": "c7d86b585eace65d5ed6d24cdc81cd5b23e87e02",
     "external_research_audit_tip": "c42adf10546d0825fb13a258f052a6a4be399ec5",
     "repository_steward": "4cb869b4078de1caa9a9e9aa32df88f6eff54b25",
     "c19_v2_package": "research/c19-official-v2-scorer-complete-20260917@270dc981988eb97e73aa6e126eb73ddd643b9c88",
@@ -17,6 +18,7 @@
     "readiness_preserve_ref": "readiness/raw-preservation-35204638939@8a4d0107a3251def652fd848a1da5b0731ff3283",
     "readiness_workflow": "35204638939:completed:success",
     "readiness_repo_ci": "35204638807:completed:success",
+    "c19_v4_branch_after_allocation": "research/c19-official-v4-preservation-qualified-20260917@84b244959f249da916a36906508ead0830052e9b",
     "sub_exploratory_branch": "research/exploratory-sub-revision-authority-fsa-20260917@7bf67e39bfbd327e52a2db02304e08e987462e53",
     "sub_exploratory_ci": "35206884542:completed:success",
     "open_prs": 0,
@@ -31,9 +33,11 @@
   "SUB_report_commit_consumed": "3033ed68a31e80a656af53bb215944a42dd762d5",
   "SUB_operating_mode_observed": "exploratory_incubator",
   "concurrency_reconciliation": {
-    "main_report": "MAIN durable state is current through GENERIC_PRESERVATION_READINESS_PASS and stopped for a newer Analyst decision.",
+    "main_report_consumed": "MAIN durable latest/state records GENERIC_PRESERVATION_READINESS_PASS and a stop for newer Analyst authority.",
+    "main_movement_after_handoff_write": "MAIN subsequently acquired PRIMARY lease at orchestrator commit c7d86b585eace65d5ed6d24cdc81cd5b23e87e02 using Analyst latest commit d1b60468678c2425ac1fa445c5f6067d5bcdb64b; active step V4_PRE_START_BUILD; v4 branch was created at the exact authorized v3 science base 84b244959f249da916a36906508ead0830052e9b. No STARTED/workflow run was observed in this reconciliation.",
     "sub_report": "SUB durable report is older than the current exploratory branch head; fresh repository branch 7bf67e39... and CI 35206884542 were independently inspected.",
-    "scientific_collision_observed": false
+    "scientific_collision_observed": false,
+    "allocation_invalidated_by_concurrency": false
   },
   "sub_exploratory_review": {
     "applicable": true,
@@ -115,7 +119,8 @@
   "new_repository_evidence": {
     "generic_preservation_readiness": "PASS",
     "effect_on_strategy": "This removes the specific generic raw-preservation readiness blocker that caused the prior handoff to forbid a new C19 identity. Because no scientific outcome from v2/v3 was observed or used, one final fresh science-invariant successor is now justified prospectively.",
-    "sub_richer_stress": "Completed and definition-dominated; current candidate rejected as standalone formal object."
+    "sub_richer_stress": "Completed and definition-dominated; current candidate rejected as standalone formal object.",
+    "post_handoff_concurrency": "MAIN accepted the new authority, acquired a v4 pre-start lease and created the exact authorized v4 branch at its v3 base. This is consistent with, not a change to, the handoff."
   },
   "active_line_review": {
     "A01": {"status": "MIXED_PROGRAMME_CLOSED", "consumed": ["MD-001", "P2 candidate-002", "P3 candidate-001", "P4 candidate-001"], "shortest_path_new_information": "fresh independently motivated object only", "centrality": "closed"},
@@ -124,7 +129,7 @@
     "CX_CX01": {"status": "TERMINAL_FORMAL_NEGATIVE", "consumed": ["Candidate-002/formal object"], "shortest_path_new_information": "fresh object only", "centrality": "terminal"},
     "H8_C08": {"status": "TERMINAL_CAUSAL_SPECIALIZATION_NEGATIVE", "shortest_path_new_information": "distinct prospective object only", "centrality": "terminal"},
     "H9_C07": {"status": "PRE_START_UNDERSPECIFIED", "shortest_path_new_information": "fix unresolved scientific choices prospectively before formal work", "centrality": "paused_unreserved"},
-    "C19": {"status": "SCIENTIFICALLY_UNRESOLVED_PRESERVATION_READINESS_QUALIFIED", "consumed": ["c19-external-v2-official-v2", "c19-external-v2-official-v3"], "strongest_evidence": "v3 reached target-blind acquisition but no canonical raw/targets/score; generic preservation boundary later passed independent synthetic qualification", "shortest_path_new_information": "one fresh final v4 under unchanged science and qualified preservation", "centrality": "PRIMARY"},
+    "C19": {"status": "SCIENTIFICALLY_UNRESOLVED_PRESERVATION_READINESS_QUALIFIED_V4_PRESTART_BUILD_ACTIVE", "consumed": ["c19-external-v2-official-v2", "c19-external-v2-official-v3"], "strongest_evidence": "v3 reached target-blind acquisition but no canonical raw/targets/score; generic preservation boundary later passed independent synthetic qualification; v4 branch now exists at exact v3 base but has not crossed STARTED", "shortest_path_new_information": "complete prospectively fixed v4 pre-start admission, then one-way only if all GO gates pass", "centrality": "PRIMARY"},
     "SUB_PROVENANCE_FSA": {"status": "EXPLORATORY_NON_EVIDENTIARY_REJECTED_AS_STANDALONE_FORMAL_OBJECT", "shortest_path_new_information": "none on this candidate; retain only as future comparator idea", "centrality": "rejected_incubator_object"}
   },
   "main_lane": {
@@ -133,6 +138,7 @@
     "recommended_owner": "main",
     "branch_or_identity": {
       "branch": "research/c19-official-v4-preservation-qualified-20260917",
+      "branch_current_head_observed": "84b244959f249da916a36906508ead0830052e9b",
       "protocol_id": "c19-external-v2-official-protocol-v4",
       "package_id": "c19-external-v2-official-package-v4",
       "identity": "c19-external-v2-official-v4",
@@ -220,9 +226,9 @@
   },
   "outcome_contingencies": {
     "V4_PRE_START_BUILD": {
-      "trigger": "fresh v4 branch/package does not yet exist",
+      "trigger": "fresh v4 branch/package is being built before STARTED",
       "classification": "PRE_START_BUILD",
-      "next_action_main_same_run": "Create/build v4 from exact v3 science basis and qualified preservation basis; no one-way execution until all GO gates pass.",
+      "next_action_main_same_run": "Build v4 from exact v3 science basis and qualified preservation basis; no one-way execution until all GO gates pass.",
       "one_way_execution_allowed": false,
       "outcome_independent_prospectively_fixed": true
     },
@@ -287,7 +293,7 @@
     }
   },
   "blocked_until": {
-    "v4_one_way": "fresh v4 branch/package built; science invariance proven; qualified preservation bound; exact-head CI/review green; fresh identity/ref collision checks clean",
+    "v4_one_way": "science invariance proven; qualified preservation integrated/bound; exact-head CI/review green; fresh identity/ref collision checks clean",
     "c19_v5": "FORBIDDEN_BY_THIS_HANDOFF",
     "formal_sub": "new independent object fully prospectively specified and reserved"
   },
@@ -299,11 +305,21 @@
     "legacy freeze/preserve/evidence authorities",
     "rejected SUB exploratory branch/results as formal evidence"
   ],
-  "active_MAIN_claim_observed": "Generic preservation readiness completed PASS; MAIN stopped pending this Analyst decision.",
-  "active_SUB_claim_observed": "Exploratory incubator branch moved beyond the durable SUB report; no formal lane/identity and no MAIN collision.",
-  "top_recommendation": "MAIN should make one final fresh C19-v4 attempt under unchanged science and the independently qualified preservation boundary; no v5 is authorized.",
+  "active_MAIN_claim_observed": {
+    "status": "RUNNING",
+    "orchestrator_commit": "c7d86b585eace65d5ed6d24cdc81cd5b23e87e02",
+    "run_id": "primary-20260917T1913JST",
+    "analyst_commit_consumed_by_main": "d1b60468678c2425ac1fa445c5f6067d5bcdb64b",
+    "active_branch": "research/c19-official-v4-preservation-qualified-20260917",
+    "active_branch_head_observed": "84b244959f249da916a36906508ead0830052e9b",
+    "active_identity": "c19-external-v2-official-v4",
+    "active_step": "V4_PRE_START_BUILD",
+    "workflow_run_id": null
+  },
+  "active_SUB_claim_observed": "Exploratory incubator durable report remains older than branch head; no formal lane/identity and no MAIN collision.",
+  "top_recommendation": "MAIN should complete the currently active v4 pre-start build and make one final C19-v4 attempt only after every preservation-qualified GO gate is green; no v5 is authorized.",
   "top_3": [
-    {"rank": 1, "owner": "MAIN", "action": "Build/admit/execute exactly one C19-v4 preservation-qualified successor under unchanged science.", "information_value": "VERY_HIGH", "distance": "NEAR"},
+    {"rank": 1, "owner": "MAIN", "action": "Complete/admit/execute exactly one C19-v4 preservation-qualified successor under unchanged science.", "information_value": "VERY_HIGH", "distance": "NEAR"},
     {"rank": 2, "owner": "SUB", "action": "Reject/retire the current provenance-FSA standalone candidate; preserve only its comparator lesson. If idle, incubate a different independent NON_EVIDENTIARY line or no-op.", "information_value": "MEDIUM_PORTFOLIO", "distance": "INDEPENDENT"},
     {"rank": 3, "owner": "GOVERNANCE_SUBSTRATE", "action": "Independently review/promote the qualified generic raw-preservation primitive to main and reconcile Issue #147 without blocking v4.", "information_value": "HIGH_RELIABILITY", "distance": "NEAR"}
   ],
@@ -320,7 +336,7 @@
     "CX01 Candidate-002/formal object"
   ],
   "blockers": [
-    "v4 does not yet exist and may not cross STARTED until all prospectively fixed admission gates pass",
+    "v4 exists only at the exact v3 base and may not cross STARTED until all prospectively fixed admission gates pass",
     "no formal SUB lane is currently sufficiently specified",
     "external role-specific latest/state mailbox paths are absent; role-suffixed history fallback remains necessary"
   ],
@@ -330,7 +346,7 @@
     "scientific_falsifiers": {"PASS": "BREU 95% bootstrap CI lower > 0", "FAIL": "upper <= 0", "INCONCLUSIVE": "valid CI contains 0"}
   },
   "governance_advisory": {
-    "issue_drift": "Issue #147 is stale against consumed v2/v3 and prospectively authorized v4; reconcile operational text without treating Issue content as scientific authority.",
+    "issue_drift": "Issue #147 is stale against consumed v2/v3 and active prospectively authorized v4; reconcile operational text without treating Issue content as scientific authority.",
     "tag_migration": "13 legacy freeze branches remain authoritative and must not be moved; no mass migration while server-side protection is absent.",
     "tag_protection_gap": "0 tags, 0 repository rulesets, main unprotected; #139 remains open and non-blocking.",
     "main_promotion_candidates": [
@@ -343,7 +359,7 @@
     "legacy_main_drift": "historical CX01 candidate-specific workflows remain on main; defer reversible cleanup until it does not compete with science"
   },
   "allocation_change_reason": {
-    "MAIN": "Changed from identity-free readiness to one final v4 because repository evidence now contains an independent GENERIC_PRESERVATION_READINESS_PASS. No scientific v2/v3 outcome was observed or used.",
+    "MAIN": "Changed from identity-free readiness to one final v4 because repository evidence now contains an independent GENERIC_PRESERVATION_READINESS_PASS. No scientific v2/v3 outcome was observed or used. MAIN has since accepted this authority and begun V4_PRE_START_BUILD.",
     "SUB": "Current exploratory candidate changed from CONTINUE_EXPLORING to REJECT after the authorized richer stress showed the strongest state-complexity result is dominated by the constructed provenance-token semantics.",
     "external_input_changed_allocation": false
   }
