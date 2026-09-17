@@ -1,0 +1,131 @@
+name: Raw preservation boundary readiness
+
+on:
+  push:
+    branches:
+      - "research/readiness-raw-preservation-boundary-20260917"
+    paths:
+      - ".github/workflows/raw-preservation-readiness.yml"
+      - "scripts/preserve_raw_boundary.py"
+      - "tests/test_raw_preservation_boundary.py"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: raw-preservation-readiness-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  qualify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Checkout exact readiness head
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ github.token }}
+
+      - name: Configure synthetic readiness commit identity
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
+      - name: Generate deterministic synthetic raw and manifest
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+
+          root = Path(os.environ['RUNNER_TEMP'])
+          raw = root / 'synthetic_raw.jsonl'
+          raw.write_text(
+              ''.join(
+                  json.dumps({'row': index, 'value': f'synthetic-{index:04d}'}, sort_keys=True)
+                  + '\n'
+                  for index in range(512)
+              ),
+              encoding='utf-8',
+          )
+          digest = hashlib.sha256(raw.read_bytes()).hexdigest()
+          manifest = root / 'synthetic_manifest.json'
+          manifest.write_text(
+              json.dumps(
+                  {
+                      'evidentiary_status': 'NON_EVIDENTIARY',
+                      'kind': 'synthetic_raw_preservation_readiness',
+                      'payload_sha256': digest,
+                      'rows': 512,
+                      'source_head': os.environ['GITHUB_SHA'],
+                  },
+                  indent=2,
+                  sort_keys=True,
+              )
+              + '\n',
+              encoding='utf-8',
+          )
+          PY
+
+      - name: Preserve synthetic raw through no-clobber branch mechanism
+        env:
+          TARGET_BRANCH: readiness/raw-preservation-${{ github.run_id }}
+          DESTINATION: artifacts/readiness/raw-preservation-${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          python scripts/preserve_raw_boundary.py \
+            --payload "${RUNNER_TEMP}/synthetic_raw.jsonl" \
+            --manifest "${RUNNER_TEMP}/synthetic_manifest.json" \
+            --base-commit "${GITHUB_SHA}" \
+            --branch "${TARGET_BRANCH}" \
+            --destination "${DESTINATION}" \
+            --result "${RUNNER_TEMP}/preservation_result.json"
+          echo "TARGET_BRANCH=${TARGET_BRANCH}" >> "${GITHUB_ENV}"
+          echo "DESTINATION=${DESTINATION}" >> "${GITHUB_ENV}"
+
+      - name: Independently re-fetch preserved bytes and verify exact digests
+        run: |
+          set -euo pipefail
+          remote_sha="$(git ls-remote --exit-code --heads origin "${TARGET_BRANCH}" | awk '{print $1}')"
+          recorded_sha="$(python -c 'import json,os; print(json.load(open(os.path.join(os.environ["RUNNER_TEMP"], "preservation_result.json")))["preservation_commit"])')"
+          test "${remote_sha}" = "${recorded_sha}"
+          git fetch --no-tags origin "refs/heads/${TARGET_BRANCH}:refs/remotes/origin/${TARGET_BRANCH}"
+          git show "${remote_sha}:${DESTINATION}/synthetic_raw.jsonl" > "${RUNNER_TEMP}/refetched_raw.jsonl"
+          git show "${remote_sha}:${DESTINATION}/synthetic_manifest.json" > "${RUNNER_TEMP}/refetched_manifest.json"
+          test "$(sha256sum "${RUNNER_TEMP}/refetched_raw.jsonl" | awk '{print $1}')" = \
+            "$(sha256sum "${RUNNER_TEMP}/synthetic_raw.jsonl" | awk '{print $1}')"
+          test "$(sha256sum "${RUNNER_TEMP}/refetched_manifest.json" | awk '{print $1}')" = \
+            "$(sha256sum "${RUNNER_TEMP}/synthetic_manifest.json" | awk '{print $1}')"
+
+      - name: Prove no-clobber collision fails closed
+        run: |
+          set -euo pipefail
+          if python scripts/preserve_raw_boundary.py \
+            --payload "${RUNNER_TEMP}/synthetic_raw.jsonl" \
+            --manifest "${RUNNER_TEMP}/synthetic_manifest.json" \
+            --base-commit "${GITHUB_SHA}" \
+            --branch "${TARGET_BRANCH}" \
+            --destination "${DESTINATION}"; then
+            echo 'second preservation unexpectedly succeeded' >&2
+            exit 1
+          fi
+
+      - name: Record non-evidentiary readiness summary
+        run: |
+          set -euo pipefail
+          {
+            echo '## Generic raw-preservation readiness'
+            echo
+            echo '- status: NON_EVIDENTIARY synthetic qualification'
+            echo "- source head: \`${GITHUB_SHA}\`"
+            echo "- readiness ref: \`${TARGET_BRANCH}\`"
+            echo '- exact remote ref re-fetch: verified'
+            echo '- payload digest equality after re-fetch: verified'
+            echo '- manifest digest equality after re-fetch: verified'
+            echo '- missing destination creation: exercised'
+            echo '- second-write no-clobber behavior: fail-closed'
+          } >> "${GITHUB_STEP_SUMMARY}"
