@@ -1,50 +1,56 @@
-# MAIN Orchestrator — PRIMARY checkpoint
+# MAIN Orchestrator — RELAY checkpoint
 
-Timestamp: `2026-09-18 01:28 JST`
-Execution mode: `PRIMARY`
+Timestamp: `2026-09-18 01:49 JST`
+Execution mode: `RELAY`
 Evidence Analyst authority: `42836802e78abd26d19c5b8a789411f2b03d0ea1`
 
 ## MAIN frontier
 
-C19-R1 representation-matched stateless revision-authority reduction remains the PRIMARY frontier. The exact fresh identity is `c19-r1-revision-authority-official-v1`.
+C19-R1 representation-matched stateless revision-authority reduction remains the PRIMARY frontier under fresh execution authorization for exactly one one-way run.
 
-## Fast-path reconciliation
+## Relay continuation
 
-FAST PATH was used. The prior MAIN lease was stale and the R1 branch had not moved, so PRIMARY safely recovered ownership. No target/authority anomaly required full reconciliation. SUB's independent NON_EVIDENTIARY work was not touched.
+Relay consumed the prior `WAITING_EXTERNAL` handoff. Exact package `7197ab0f9683616858859446ae9eed7b75707f25` remained current, and Analyst authority remained `42836802...`.
 
-## Critical-path progress
+The two final admission gates both completed successfully on the exact same package SHA:
+- ordinary CI `35246655185` — **success**;
+- dedicated R1 pre-START `35246655189` — **success**.
 
-MAIN mechanically added the science-invariant R1 execution-admission wrapper on `research/c19-r1-revision-authority-reduction-20260917`.
+Fresh checks also found no prior R1 STARTED branch, no R1 preserve branch and no R1 evidence tag.
 
-New exact head: `7197ab0f9683616858859446ae9eed7b75707f25`.
+## STARTED / one-way boundary
 
-The admission commit adds only:
-- `configs/external_validation/c19_r1_execution_authority.json`;
-- `.github/workflows/c19-r1-one-way.yml`;
-- the admission checks/path triggers in `.github/workflows/c19-r1-prestart.yml`.
+Relay created exactly one fresh control ref:
 
-The wrapper binds Analyst authority `42836802...`, scientific basis `7cf84905...`, the unchanged scientific-contract and preregistration blobs, target-free `atomic_idx` source-map digest `cb3ca637...`, immutable v4 package/preserve/evidence/raw bindings, exact R1 identity, exactly-one execution, and no retry after STARTED. The scientific contract/preregistration remain unchanged and still encode their historical pre-START boundary; the new authority file is an operational admission layer, not a science mutation.
+`control/c19-r1-revision-authority-started-20260918@62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2`
 
-The one-way wrapper prospectively enforces STARTED/no-retry, exact package + Analyst authority, admission-only package diff, fresh preserve/evidence namespaces, CPython 3.11.16, post-START pinned Belief-R acquisition, target-blind/network-blocked R1 acquisition, exact source-map digest/inventory, atomic preservation of raw + source map + manifest, independent remote re-fetch/digest equality before targets, read-only immutable v4 raw binding, scoring only after preservation, and annotated terminal evidence.
+The STARTED marker is bound to:
+- exact package `7197ab0f9683616858859446ae9eed7b75707f25`;
+- Analyst authority `42836802e78abd26d19c5b8a789411f2b03d0ea1`;
+- protocol `c19-r1-revision-authority-protocol-v1`;
+- identity `c19-r1-revision-authority-official-v1`;
+- target-free `atomic_idx` source-map digest `cb3ca63703bdab4107e896884908817680dd4fe4b5eebc32b6219075f0187bbb`.
 
-## Workflow/check state
+R1 identity is therefore now **consumed / no retry**.
 
-Exact-head ordinary CI: `35246655185` — `in_progress` at checkpoint.
+The STARTED push triggered the prospectively authorized one-way workflow:
 
-Exact-head dedicated R1 pre-START: `35246655189` — `in_progress` at checkpoint.
+`35248878958` — currently **in progress**.
 
-Both runs are bound to `7197ab0f9683616858859446ae9eed7b75707f25`. STARTED has not been created; official R1 data access, one-way execution, preservation, scoring and identity consumption have not occurred.
-
-## Stop / relay boundary
-
-PRIMARY stopped because the only remaining critical-path work is waiting for the two external exact-head gates. Lease is `WAITING_EXTERNAL` so Relay may collect the runs.
-
-If both runs are green, Relay/next MAIN must fresh re-fetch the Analyst handoff, R1 exact head, R1 control/preserve/evidence namespaces, identity freshness, and all source/protocol/package/input/runtime/controller/source-map/scorer/preserver bindings. Only if every GO condition remains clean may it create one STARTED control ref bound to exact package `7197ab0f...` and Analyst `42836802...`, then allow the single one-way workflow to continue.
-
-If either gate fails for a science-invariant mechanical reason, MAIN owns the fix and must re-establish both gates on the new same final SHA. Any scientific/statistical/controller/resource/runtime-version redesign requires STOP and fresh Analyst authority.
+A normal CI run on the STARTED commit (`35248878746`) is also in progress, but no second one-way execution is permitted regardless of its outcome.
 
 ## Science / integrity
 
-New scientific information: **none**. This run performed admission/readiness packaging only. R1 remains unSTARTED/unconsumed. Consumed C19-v2/v3/v4 and immutable v4 evidence were not changed or rescored.
+New scientific information: **none yet**. No terminal R1 result, preserve ref or evidence tag has been observed at this checkpoint.
 
-Work left for SUB: none on MAIN's critical path; SUB remains independent and must not take R1 blockers.
+No scientific contract, preregistration, controller rule, representation, resource contract, metric, inferential rule or prior immutable C19-v4 evidence was changed.
+
+## Stop / relay boundary
+
+Lease is `WAITING_EXTERNAL`. Waiting for workflow `35248878958` is the only remaining valid action.
+
+Next MAIN/Relay must collect **that same one-way run only**:
+- if successful, verify raw preservation/refetch/digest ordering before target materialization/scoring, then verify the terminal evidence/tag and persist the fixed classification;
+- if it fails after STARTED, preserve/verify diagnostics, keep R1 consumed with no retry, and STOP.
+
+No automatic R2 or outcome-responsive redesign is authorized.
