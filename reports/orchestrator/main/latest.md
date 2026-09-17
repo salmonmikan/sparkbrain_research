@@ -1,46 +1,36 @@
 # MAIN Orchestrator — RELAY C19-R2 authority packaging
 
-Timestamp: `2026-09-18 06:54 JST`
+Timestamp: `2026-09-18 06:58 JST`
 Execution mode: `RELAY`
 Evidence Analyst authority: `719b9e74063e5e10f6226fd49f1835036ed75e5b`
 
 ## MAIN frontier
 
-The latest Evidence Analyst handoff prospectively authorizes exactly one formal R2 identity, `c19-r2-fsa-state-tracker-official-v1`, after science-invariant authority packaging and full exact-head GO revalidation. The frozen scientific package remains anchored at `5d5d171cf872baed7a636fd246ab36f3a91a6716` and its scientific contract/protocol/scoring/source-map/state-tracker blobs were not modified.
+RELAY continued the prospectively authorized C19-R2 critical path. The frozen scientific package remains `5d5d171cf872baed7a636fd246ab36f3a91a6716`; its scientific contract, seven-state mechanism, transition/reset/readout, scoring method, cluster definition, seeds, thresholds and success criteria were not changed.
 
-RELAY advanced only the authorized operational envelope on `research/c19-r2-fsa-state-tracker-spec-20260918`, producing final authority-package head `31398d6eb4e56fe1b51ddb8206fa395075638a2b`.
+The operational execution envelope is now at `research/c19-r2-fsa-state-tracker-spec-20260918@5a8155af6d6d7dacaa4413386d2a93c4eda3ca08`, with fresh identity `c19-r2-fsa-state-tracker-official-v1` prospectively bound but still unSTARTED and unconsumed.
 
-## Authority packaging completed
+## Authority packaging and mechanical fix
 
-Added science-invariant execution authority and one-way infrastructure:
+The authorized package now includes exact identity/Analyst binding, STARTED/preserve/evidence namespaces, a target-blind R2 runner, raw+manifest+target-free `atomic_idx` source-map preservation, preserve/refetch-before-target scoring, and a one-way workflow.
 
-- `configs/external_validation/c19_r2_execution_authority.json` binds the fresh R2 identity, Analyst commit, STARTED namespace, preserve namespace, evidence tag, immutable C19-v4 comparator refs, and exact frozen scientific blobs.
-- `scripts/run_c19_r2_official.py` provides authority validation, target-blind acquisition, target-free `atomic_idx` source-map creation, post-preservation target materialization, and the already-preregistered cluster-primary scorer.
-- `scripts/preserve_c19_r2_boundary.py` atomically preserves raw predictions, raw manifest, and the target-free source map without clobbering.
-- `.github/workflows/c19-r2-one-way.yml` enforces STARTED/no-retry, exact-package checkout, raw+source-map preservation/refetch before targets, immutable C19-v4 raw binding, cluster-primary scoring, and terminal evidence tagging.
-- the dedicated pre-START workflow/checker now validates the authority package and production execution binding while requiring the original scientific blobs to remain exact.
+The first authority-package pre-START run `35279107972` failed before any scientific/runtime gate at Ruff lint only: 20 `E501` line-length findings in the newly added operational scripts. RELAY classified this under the prospectively allowed mechanical pre-START fix path and changed formatting only. No behavior or scientific semantics were changed.
 
-No R2 scientific semantics, state machine, transition/reset/readout, seeds, resource contract, scoring method, cluster definition, thresholds, or success criteria were changed.
+Final exact head after that formatting-only repair is `5a8155af6d6d7dacaa4413386d2a93c4eda3ca08`.
 
-## Collision / role reconciliation
+## Final exact-head validation
 
-The inherited MAIN lease was `BLOCKED` and stale; no fresh PRIMARY `RUNNING` collision existed. SUB remains on independent NON_EVIDENTIARY RV01 exploratory work and did not touch R2. Control Brain was read only as strategic prior and did not override the current Analyst authority.
+- dedicated R2 pre-START `35279500982`: `in_progress` at handoff;
+- ordinary CI `35279500925`: `in_progress` at handoff.
 
-## Exact-head revalidation now running
-
-Final authority-package head: `31398d6eb4e56fe1b51ddb8206fa395075638a2b`.
-
-- dedicated R2 pre-START run `35279107972`: `queued` when handed off.
-- ordinary CI run `35279107964`: `in_progress` when handed off.
-
-The lease is `WAITING_EXTERNAL`. RELAY did not remain occupied solely waiting for these workflows.
+The current Evidence Analyst tip was re-fetched and remains `719b9e74063e5e10f6226fd49f1835036ed75e5b`.
 
 ## STARTED / evidence boundary
 
-No STARTED ref was created. No official R2 data was accessed. No raw/preserve/evidence ref was created. The formal identity is prospectively reserved by authority but remains unSTARTED and unconsumed.
+No STARTED ref was created. No official R2 data was accessed. No raw/preserve/evidence ref was created. No R2 scoring occurred. The identity remains unconsumed.
 
-The next MAIN/RELAY may cross STARTED exactly once only if both exact-head checks finish `success`, the Analyst authority remains compatible, the branch head remains unchanged, and the R2 control/preserve/evidence namespaces remain collision-free immediately before STARTED.
+Lease is `WAITING_EXTERNAL`. The next MAIN/RELAY may create STARTED exactly once only after both final-head checks complete successfully and fresh Analyst/head/identity/control/preserve/evidence collision checks remain clean.
 
 ## New scientific information
 
-None. This run is operational authority/readiness progress only; no official R2 measurement exists yet.
+None. This run produced operational readiness/authority progress only. The observed pre-START failure was lint-only and has no scientific interpretation.
