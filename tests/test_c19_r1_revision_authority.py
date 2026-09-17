@@ -1,6 +1,10 @@
 from __future__ import annotations
 
+import random
+from collections import Counter
+
 from sparkbrain.v03_external_validation.c19_r1_protocol import (
+    EXPECTED_PAIRS,
     INPUT_TRACK,
     MECHANISM_ID,
     OFFICIAL_SEEDS,
@@ -11,6 +15,23 @@ from sparkbrain.v03_external_validation.c19_r1_revision_authority import (
     revision_authority_executor,
     select_revision_authority,
 )
+from sparkbrain.v03_external_validation.c19_r1_scoring import (
+    atomic_idx_cluster_resample_indices,
+)
+from sparkbrain.v03_external_validation.c19_r1_source_map import (
+    atomic_idx_clusters,
+    atomic_idx_source_map_sha256,
+    validate_atomic_idx_source_map,
+)
+
+
+def _synthetic_source_map() -> tuple[dict[str, object], ...]:
+    return validate_atomic_idx_source_map(
+        tuple(
+            {"pair_index": pair_index, "atomic_idx": f"atomic-{pair_index // 2}"}
+            for pair_index in range(EXPECTED_PAIRS)
+        )
+    )
 
 
 def test_revision_wins_exact_certainty_tie() -> None:
@@ -68,3 +89,24 @@ def test_executor_is_target_blind_and_stateless_for_visible_pair() -> None:
     forbidden = {"ground_truth", "target", "label", "update_required", "correct"}
     assert forbidden.isdisjoint(emitted)
     assert forbidden.isdisjoint(metadata)
+
+
+def test_atomic_idx_source_map_is_total_deterministic_and_target_free() -> None:
+    source_map = _synthetic_source_map()
+    assert len(source_map) == EXPECTED_PAIRS
+    assert all(set(entry) == {"pair_index", "atomic_idx"} for entry in source_map)
+    assert atomic_idx_source_map_sha256(source_map) == atomic_idx_source_map_sha256(
+        tuple(dict(entry) for entry in source_map)
+    )
+    clusters = atomic_idx_clusters(source_map)
+    assert sum(len(indices) for _, indices in clusters) == EXPECTED_PAIRS
+    assert len(clusters) == EXPECTED_PAIRS // 2
+
+
+def test_cluster_resample_carries_whole_atomic_clusters_at_same_multiplicity() -> None:
+    source_map = _synthetic_source_map()
+    sampled = atomic_idx_cluster_resample_indices(source_map, random.Random(19901))
+    counts = Counter(sampled)
+    for _, pair_indices in atomic_idx_clusters(source_map):
+        multiplicities = {counts[pair_index] for pair_index in pair_indices}
+        assert len(multiplicities) == 1
