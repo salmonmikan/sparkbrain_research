@@ -1,0 +1,99 @@
+{
+  "timestamp": "2026-09-17T22:27:17+09:00",
+  "role": "INDEPENDENT_AUDITOR",
+  "phase_ordering_confirmed": true,
+  "blind_target_selection": {
+    "target": "C19 official-v4 terminal PASS and inferential/statistical validity",
+    "authoritative_refs_inspected": [
+      "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+      "research/c19-official-v4-preservation-qualified-20260917@74bfe6b4a39758656f291baaa3f16236e3e71964",
+      "control/c19-official-v4-started-20260917@3ebffb0c55ea9e5dac6c2a52d3d5c0ee6443d58e",
+      "preserve/c19-official-v4-raw-c19-external-v2-official-v4@d8fcc5216ff24940836972816cb0ec8f11e4ba06",
+      "evidence/c19-official-v4-c19-external-v2-official-v4 -> a0f83318356ced1c84863737803080d0dc69d208",
+      "research/c19-r1-revision-authority-reduction-20260917@c23736b63e6100bcdc38e7f11d94c782eb6273dc"
+    ],
+    "attack_hypotheses": [
+      "target/evaluator leakage before raw preservation",
+      "package/identity/STARTED binding drift or post-START mutation",
+      "scorer/join/quantile drift from prospective contract",
+      "overclaim through unmatched descriptive baselines",
+      "pair-level bootstrap pseudo-replication from structurally clustered Belief-R pairs",
+      "simpler representation/state reductions"
+    ],
+    "why_consequential": "C19-v4 is the newest terminal positive scientific result and directly determines the next reduction frontier."
+  },
+  "blind_target_change_reason": null,
+  "repository_refs_inspected": [
+    "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "research/c19-official-v4-preservation-qualified-20260917@74bfe6b4a39758656f291baaa3f16236e3e71964",
+    "control/c19-official-v4-started-20260917@3ebffb0c55ea9e5dac6c2a52d3d5c0ee6443d58e",
+    "preserve/c19-official-v4-raw-c19-external-v2-official-v4@d8fcc5216ff24940836972816cb0ec8f11e4ba06",
+    "evidence/c19-official-v4-c19-external-v2-official-v4 -> a0f83318356ced1c84863737803080d0dc69d208",
+    "research/c19-r1-revision-authority-reduction-20260917@c23736b63e6100bcdc38e7f11d94c782eb6273dc"
+  ],
+  "control_brain_commit_consumed": "d8987f8c6d88fad48a8f652f4255e73b30a223e6",
+  "evidence_analyst_commit_consumed": "9f88fba973f54bc6608d183aacfaccd7952a229f",
+  "main_report_commit_consumed": "0d1305d96ef67982b578bb854bc8c1e4bea2be5f",
+  "sub_report_commit_consumed": "982fcd7d08ab8d157a91c499f52b896e47df4ced",
+  "literature_handoff_commit_consumed": "c42adf10546d0825fb13a258f052a6a4be399ec5",
+  "genuinely_new_information": true,
+  "findings": [
+    {
+      "id": "v4_integrity_chain",
+      "status": "ROBUST_SO_FAR",
+      "summary": "Exact package/STARTED binding, target-blind raw preservation, independent digest re-fetch, post-preservation target materialization, fail-closed scorer joins, and immutable evidence tag are consistent with the frozen contract."
+    },
+    {
+      "id": "v4_formal_pass",
+      "status": "CONTRACT_VALID",
+      "summary": "Observed primary BREU effect is +0.10044748325412106 with registered pair-bootstrap 95% CI [0.09457740578201118, 0.10647303483001931], yielding formal PASS under the frozen rule."
+    },
+    {
+      "id": "clustered_bootstrap_unit",
+      "status": "NEW_AUDIT_ISSUE",
+      "summary": "The scorer resamples 1,744 pair indices independently, while Belief-R pair construction groups/reuses structure by (atomic_idx, modus) and the official dataset has atomic_idx 0-596; pair-level independence is not established, so the tight CI may be anti-conservative for generalization across reasoning families."
+    },
+    {
+      "id": "baseline_claim_boundary",
+      "status": "ROBUST_SO_FAR",
+      "summary": "Terminal evidence explicitly forbids winner claims for unmatched descriptive baselines and limits the result to truth-free surface structural representation gain."
+    }
+  ],
+  "affected_lines": [
+    "C19_V4",
+    "C19_R1",
+    "PROGRAMME_STATISTICAL_INTEGRITY",
+    "FUTURE_EXTERNAL_VALIDATION"
+  ],
+  "audit_classification": "WEAKENED",
+  "confidence": "HIGH_ON_INTEGRITY_CHAIN_MEDIUM_HIGH_ON_CLUSTERING_CONCERN",
+  "novelty_or_reduction_impact": "NO_NEW_NOVELTY_SUPPORT; C19_V4_REMAINS_NARROW_PASS; CI_GENERALIZATION_WEAKENED_BY_UNRESOLVED_CLUSTERING; R1_REMAINS_HIGH_VALUE",
+  "prospective_baselines_or_discriminators": [
+    "Do not alter v4; any cluster sensitivity on v4 must be explicitly post-hoc/read-only and non-canonical.",
+    "Before R1 STARTED, prospectively freeze the scientific inferential unit and a cluster-aware paired bootstrap/sensitivity keyed to a justified Belief-R family grouping such as (atomic_idx, modus) or another preregistered source-family key.",
+    "Retain the same-I2 stateless revision-authority reduction comparator.",
+    "If R1 survives, proceed to representation-matched FSA/state-tracker reduction."
+  ],
+  "questions_for_evidence_analyst": [
+    "For R1, what is the scientific sampling unit: individual pair, (atomic_idx, modus) family, dataset family, or another predeclared grouping?",
+    "Should R1 freeze pair-level and cluster-level paired intervals, with the cluster-aware result governing any claim that generalizes across reasoning families?",
+    "Should v4's pair-bootstrap CI be described as contract-valid resampling stability rather than independent-example population uncertainty unless cluster sensitivity is performed?",
+    "Does this finding change R1 START authorization or only its prospective statistical contract?"
+  ],
+  "questions_for_control_brain": [
+    "Should future external-validation protocols require an explicit independence/cluster-unit declaration before STARTED?",
+    "Should matched reductions reuse the same frozen benchmark clustering to avoid pseudo-replication?",
+    "Should the programme keep the testbed reframe and narrow v4 claim unchanged unless a cluster-aware sensitivity materially overturns the effect?"
+  ],
+  "must_not_change_frozen_or_consumed": [
+    "c19-external-v2-official-v4",
+    "74bfe6b4a39758656f291baaa3f16236e3e71964",
+    "3ebffb0c55ea9e5dac6c2a52d3d5c0ee6443d58e",
+    "d8fcc5216ff24940836972816cb0ec8f11e4ba06",
+    "a0f83318356ced1c84863737803080d0dc69d208",
+    "canonical v4 paired_statistics.json and formal PASS",
+    "consumed C19-v2/v3 identities",
+    "all consumed A01/RV01/RV02/CX identities",
+    "v4 per-example outcomes must not tune R1 mechanism/resource choices"
+  ]
+}
