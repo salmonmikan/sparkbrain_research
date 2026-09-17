@@ -1,19 +1,19 @@
 {
   "run_id": "primary-20260917T2014JST",
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "WAITING_EXTERNAL",
   "started_at": "2026-09-17T20:14:14+09:00",
-  "heartbeat_at": "2026-09-17T20:16:00+09:00",
+  "heartbeat_at": "2026-09-17T20:19:00+09:00",
   "analyst_commit": "56f0665ccc536bff6bf48e9eb581ec9a9eafcecc",
   "active_branch": "research/c19-official-v4-preservation-qualified-20260917",
   "active_identity": "c19-external-v2-official-v4",
-  "active_step": "V4_PRE_START_BLOCKER_LINT",
-  "workflow_run_id": 35212637754,
+  "active_step": "V4_PRE_START_VALIDATION_WAIT",
+  "workflow_run_id": 35214841877,
   "workflow_run_ids": {
-    "prestart_admission": 35212637922,
-    "ordinary_ci": 35212637754
+    "ordinary_ci": 35214841871,
+    "prestart_admission": 35214841877
   },
-  "active_package_head": "a0ba353ff33abc981875c9d02af2e171a1bc65f6",
-  "expected_next_action": "Apply only the three behavior-preserving Ruff fixes diagnosed on a0ba353, then collect both ordinary CI and dedicated v4 pre-START admission on the new exact head. STARTED remains forbidden until both are green and fresh identity/control/preserve/evidence collision checks pass.",
+  "active_package_head": "74bfe6b4a39758656f291baaa3f16236e3e71964",
+  "expected_next_action": "Collect exact-head ordinary CI 35214841871 and dedicated pre-START 35214841877. If both are green, re-fetch Analyst authority and exact v4 head, verify identity fresh/unSTARTED/unconsumed, verify control/preserve/evidence collision-free and all exact bindings, then STARTED/one-way may continue under the prospectively fixed V4_PRE_START_READY_FOR_ONE_WAY branch. If either validation fails mechanically, MAIN fixes only science-invariant defects and revalidates both; STOP for Analyst on any semantic/runtime/scientific redesign need.",
   "owner": "main"
 }
