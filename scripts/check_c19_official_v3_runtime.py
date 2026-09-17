@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import importlib
+import runpy
 import tomllib
 from pathlib import Path
 
@@ -23,7 +24,10 @@ def main() -> None:
         importlib.import_module("sparkbrain.learned.backend")
         importlib.import_module("sparkbrain.external_validation.evaluation")
         importlib.import_module("sparkbrain.v03_external_validation.implementation_binding")
-        importlib.import_module("scripts.run_c19_official_v3")
+        runpy.run_path(
+            str(ROOT / "scripts/run_c19_official_v3.py"),
+            run_name="c19_official_v3_runner_smoke",
+        )
 
     print("C19 official-v3 runtime closure smoke: PASS")
 
