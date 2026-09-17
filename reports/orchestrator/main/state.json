@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-09-18T01:51:00+09:00",
+  "timestamp": "2026-09-18T02:18:00+09:00",
   "worker_role": "main",
-  "execution_mode": "RELAY",
+  "execution_mode": "PRIMARY",
   "evidence_analyst_commit": "42836802e78abd26d19c5b8a789411f2b03d0ea1",
-  "current_lane": "C19-R1 audit-aligned representation-matched revision-authority one-way reduction",
-  "current_phase": "R1_POST_START_FAILURE_CONSUMED_STOP",
+  "current_lane": "C19-R1 audit-aligned representation-matched revision-authority reduction",
+  "current_phase": "R1_POST_START_FAILURE_CONSUMED_AWAIT_ANALYST",
   "consumed_contingency_branches": [
     "R1_PRE_START_AUTHORITY_PACKAGING",
     "R1_PRE_START_READY_FOR_ONE_WAY",
@@ -13,40 +13,28 @@
   "active_claim": {
     "branch": "control/c19-r1-revision-authority-started-20260918",
     "identity": "c19-r1-revision-authority-official-v1",
-    "owner": "main"
+    "owner": "main",
+    "status": "consumed_no_retry"
   },
   "authoritative_target_refs": {
+    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "scientific_basis": "7cf849051a68b4227e29fe2f6ee95b2ff277dacd",
     "r1_execution_package": "7197ab0f9683616858859446ae9eed7b75707f25",
     "r1_started_control": "62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2",
     "analyst": "42836802e78abd26d19c5b8a789411f2b03d0ea1",
     "r1_atomic_idx_source_map_sha256": "cb3ca63703bdab4107e896884908817680dd4fe4b5eebc32b6219075f0187bbb",
     "r1_preserve_refs": [],
-    "r1_evidence_tags": []
+    "r1_evidence_tags": [],
+    "authoritative_v4_evidence_tag": "evidence/c19-official-v4-c19-external-v2-official-v4",
+    "legacy_freeze_branch_count_observed": 13
   },
   "fast_path_used": true,
-  "full_reconciliation_reason": null,
-  "branches_prs_advanced": [
-    "created control/c19-r1-revision-authority-started-20260918 from exact package 7197ab0f9683616858859446ae9eed7b75707f25",
-    "STARTED marker commit 62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2"
-  ],
+  "full_reconciliation_triggered": true,
+  "full_reconciliation_reason": "The current Evidence Analyst handoff still describes R1 before STARTED and authorizes one clean execution, but authoritative remote state now contains STARTED commit 62e4f03a... and terminal post-START workflow failure 35248878958. Repository evidence therefore supersedes the stale control-plane snapshot and required broad reconciliation before any mutation.",
+  "branches_prs_advanced": [],
   "workflows_experiments": [
     {
-      "kind": "admission_ordinary_ci",
-      "run_id": 35246655185,
-      "head": "7197ab0f9683616858859446ae9eed7b75707f25",
-      "status": "completed",
-      "conclusion": "success"
-    },
-    {
-      "kind": "admission_r1_dedicated_prestart",
-      "run_id": 35246655189,
-      "head": "7197ab0f9683616858859446ae9eed7b75707f25",
-      "status": "completed",
-      "conclusion": "success"
-    },
-    {
-      "kind": "r1_one_way",
+      "kind": "r1_one_way_observed",
       "run_id": 35248878958,
       "head": "62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2",
       "status": "completed",
@@ -55,19 +43,26 @@
       "failure_class": "runtime_dependency_import_failure_before_target_blind_acquisition",
       "failure_message": "ModuleNotFoundError: No module named 'torch'",
       "belief_r_acquisition_step": "success",
+      "target_blind_r1_acquisition_completed": false,
       "raw_preservation_step": "skipped",
       "target_materialization_scoring_step": "skipped",
       "terminal_evidence_step": "skipped",
       "diagnostic_artifact_id": 10509360230,
-      "diagnostic_artifact_digest": "sha256:e277c15bc52336ca816012b54a9c308d28491c8f32d19160a385394f730f7300",
-      "diagnostic_artifact_size_bytes": 312
+      "diagnostic_artifact_digest": "sha256:e277c15bc52336ca816012b54a9c308d28491c8f32d19160a385394f730f7300"
+    },
+    {
+      "kind": "control_plane_ci",
+      "run_id": 35251728802,
+      "head": "4715afcdb9e6423845d88171977475bb1e3f4ef0",
+      "status_at_observation": "in_progress",
+      "scientific_relevance": "none; triggered by PRIMARY lease persistence on ops/orchestrator-run-report"
     }
   ],
   "scientific_results": {
     "new_scientific_measurement": false,
     "terminal_scientific_result": null,
     "classification": "POST_START_FAILURE",
-    "interpretation": "R1 official-v1 crossed STARTED, acquired/verified the pinned Belief-R input, then failed during import before target-blind R1 acquisition could execute. No raw predictions were preserved, evaluator targets were not materialized, scoring was not performed, and no reduction result exists."
+    "interpretation": "R1 official-v1 crossed STARTED and verified/acquired the pinned Belief-R input, then failed importing torch before target-blind R1 acquisition produced predictions. No R1 raw was preserved, targets were not materialized, scoring did not occur, and the reduction question remains scientifically unanswered."
   },
   "consumed_identities": {
     "c19-r1-revision-authority-official-v1": {
@@ -76,28 +71,32 @@
       "retry_allowed": false
     },
     "do_not_touch": [
-      "consumed C19-v2 identity",
-      "consumed C19-v3 identity",
-      "consumed C19-v4 identity"
+      "consumed C19-v2 identity/control",
+      "consumed C19-v3 identity/control",
+      "consumed C19-v4 identity/control/preserve/evidence",
+      "consumed R1 official-v1 identity/control",
+      "all immutable legacy freeze/formal/evidence refs"
     ]
   },
   "blockers": [
-    "Current R1 official-v1 identity is consumed and cannot be retried.",
-    "The exact failure was a missing torch runtime dependency encountered after STARTED; any repair-and-rerun would require a distinct prospectively defined future object and fresh Analyst authority.",
-    "No automatic R2 is authorized."
+    "c19-r1-revision-authority-official-v1 is consumed/no-retry after STARTED.",
+    "Current Evidence Analyst authority 42836802... predates the terminal post-START failure and does not authorize a distinct successor.",
+    "Repairing the missing torch dependency and rerunning the same identity is scientifically forbidden; no automatic R2 is authorized."
   ],
   "lease_collision_reconciliation": {
-    "prior_lease_status": "WAITING_EXTERNAL",
-    "conflicting_fresh_primary_running": false,
-    "relay_continuation": "completed prospectively authorized R1_PRE_START_READY_FOR_ONE_WAY chain through STARTED and one-way result collection"
+    "prior_lease_run_id": "relay-20260918T0145JST",
+    "prior_lease_status": "BLOCKED",
+    "prior_heartbeat": "2026-09-18T01:51:00+09:00",
+    "collision_window_minutes": 20,
+    "conflicting_fresh_main_running": false,
+    "primary_lease_acquired": true,
+    "primary_lease_acquisition_commit": "4715afcdb9e6423845d88171977475bb1e3f4ef0",
+    "reconciliation_result": "No scientific mutation performed after finding the consumed identity and stale Analyst snapshot."
   },
   "integrity_status": {
-    "scientific_contract_changed": false,
-    "preregistration_changed": false,
-    "admission_ordinary_ci_green": true,
-    "admission_prestart_green": true,
-    "started_created": true,
-    "started_ref": "control/c19-r1-revision-authority-started-20260918",
+    "scientific_contract_changed_by_primary": false,
+    "research_branch_changed_by_primary": false,
+    "started_ref_changed_by_primary": false,
     "r1_identity_consumed": true,
     "retry_allowed": false,
     "official_belief_r_acquisition_completed": true,
@@ -107,37 +106,44 @@
     "evaluator_targets_materialized": false,
     "official_scoring_performed": false,
     "terminal_evidence_created": false,
-    "diagnostics_preserved": true,
+    "r1_preserve_namespace_clean": true,
+    "r1_evidence_namespace_clean": true,
     "immutable_prior_evidence_mutated": false,
     "raw_before_score_contract_violated": false,
-    "no_clobber_contract_violated": false
+    "no_clobber_contract_violated": false,
+    "analyst_authority_rechecked_before_persistence": true
   },
   "critical_path_fixes_completed": [
-    "Collected exact-head ordinary CI 35246655185 and dedicated R1 pre-START 35246655189 as success.",
-    "Re-fetched unchanged Analyst authority, exact package head and fresh R1 namespaces before STARTED.",
-    "Created exactly one STARTED control ref and launched one-way workflow 35248878958.",
-    "Collected workflow failure and exact logs; admission, binding, runtime setup and pinned Belief-R acquisition all succeeded before the target-blind acquisition step failed importing torch.",
-    "Verified preservation/scoring/evidence steps were skipped and no R1 preserve/evidence refs were created.",
-    "Verified diagnostic artifact 10509360230 with digest sha256:e277c15bc52336ca816012b54a9c308d28491c8f32d19160a385394f730f7300."
+    "No repair was scientifically authorized after STARTED; PRIMARY correctly refrained from modifying or rerunning the consumed object.",
+    "Re-fetched exact R1 execution package and STARTED control refs.",
+    "Re-read terminal one-way job steps and exact traceback confirming missing torch before target-blind prediction generation.",
+    "Re-verified no R1 preserve branch or evidence tag exists.",
+    "Escalated from fast-path startup to full reconciliation because current Analyst authority is stale relative to repository evidence."
   ],
   "same_run_steps": [
-    "Read WAITING_EXTERNAL lease and latest Analyst authority.",
-    "Verified both final exact-head gates succeeded.",
-    "Created fresh STARTED ref/marker bound to exact package and Analyst authority.",
-    "Observed one-way workflow start, then collected its terminal failure.",
-    "Inspected job steps and full failure log.",
-    "Confirmed failure occurred before target-blind R1 acquisition produced raw output.",
-    "Confirmed no preserve branch or evidence tag was created and diagnostics were uploaded."
+    "Read current Analyst handoff, MAIN report and lease.",
+    "Recovered stale BLOCKED Relay lease and persisted a PRIMARY RUNNING heartbeat.",
+    "Re-fetched R1 package head, STARTED control commit and one-way workflow terminal state.",
+    "Inspected workflow job steps and full failure logs.",
+    "Verified target-blind raw production never completed and downstream preservation/scoring/evidence steps were skipped.",
+    "Performed full reconciliation of main, research branches, PRs, Issues, legacy freeze refs, evidence tags, SUB collision state and current authority movement.",
+    "Re-fetched Evidence Analyst tip immediately before durable reporting and confirmed it remains 42836802....",
+    "Persisted a PRIMARY terminal reconciliation without scientific mutation."
   ],
-  "stop_reason": "POST_START_FAILURE: c19-r1-revision-authority-official-v1 is consumed/no-retry. The prospectively fixed integrity rule requires STOP; a missing-torch repair may only inform a fresh future object after a newer Evidence Analyst handoff.",
-  "work_left_for_sub": "No MAIN critical-path work. SUB remains independently scoped and must not repair/retry R1 official-v1.",
+  "stop_reason": "R1_POST_START_FAILURE: the identity is consumed/no-retry and the latest Evidence Analyst handoff has not yet consumed the failure or prospectively defined a distinct next object. Any repair-and-rerun or automatic successor would violate the pre-existing contingency tree.",
+  "work_left_for_sub": "SUB remains independent. Its H3 correlation-reduction probe is NON_EVIDENTIARY and reserved to SUB/exploratory review; PRIMARY did not touch it. SUB must not repair/retry R1.",
+  "reserved_sub_work_not_touched": true,
   "lane_repartition_reason": null,
-  "next_main_action": "Do not retry R1 official-v1. Wait for a newer Evidence Analyst handoff that consumes workflow 35248878958 and STARTED ref 62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2. Any distinct successor must be prospectively defined before execution; no automatic R2.",
+  "next_main_action": "Wait for a newer Evidence Analyst handoff that explicitly consumes STARTED 62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2 and workflow 35248878958. Under the current authority, perform no further scientific mutation. If a distinct future object is justified, it must be prospectively specified with fresh identity/runtime/package bindings before execution.",
   "write_path_diagnostics": {
     "github_direct_writes": "working",
-    "started_branch_creation": "success",
-    "started_marker_creation": "success",
-    "diagnostic_readback": "success",
-    "lease_persistence": "success"
+    "primary_lease_acquisition": {
+      "result": "success",
+      "commit": "4715afcdb9e6423845d88171977475bb1e3f4ef0"
+    },
+    "main_latest_persistence": {
+      "result": "success",
+      "commit": "d2f725604eca935296cc0e924781d82a04c8ee5e"
+    }
   }
 }
