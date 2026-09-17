@@ -1,53 +1,59 @@
 {
-  "timestamp": "2026-09-18T00:43:00+09:00",
+  "timestamp": "2026-09-18T01:49:01+09:00",
   "worker_role": "sub",
   "mode": "exploratory_incubator",
-  "evidence_analyst_commit": "f2342817193f4e3a191bb05921db5598ee3cd10c",
+  "evidence_analyst_commit": "42836802e78abd26d19c5b8a789411f2b03d0ea1",
   "consumed_lanes": {
-    "main_lane": "C19-R1 audit-aligned representation-matched stateless revision-authority reduction; MAIN-only; exact-head readiness green; execution/STARTED forbidden pending fresh Analyst authorization",
+    "main_lane": "C19-R1 audit-aligned representation-matched stateless revision-authority reduction; MAIN-only; exact-head admission gates green; one-way execution remains MAIN-owned",
     "sub_lane": null,
     "sub_fallback": null
   },
   "selected_independent_lane": null,
-  "exploratory_target": "H4 no-ignition versus information-matched ordinary abstention on a fixed synthetic selective-prediction grid",
+  "exploratory_target": "H3 duplicate/correlation robustness versus an information-matched correlation-aware scalar reduction on a fixed synthetic world",
   "independence_from_main_critical_path": true,
-  "why_independent_of_main": "Distinct H4 synthetic reduction probe based on stable main. It uses no C19/R1 branch, identity, official Belief-R data, scorer, source map, preservation machinery, MAIN blocker, or v4 per-example outcome.",
+  "why_independent_of_main": "Distinct H3 synthetic reduction probe based on stable main. It uses no C19-R1 branch material, identity, official Belief-R data, v4 per-example outcome, MAIN blocker, scorer, source map, STARTED authority, preservation machinery, or consumed formal identity.",
   "execution_allowed": false,
-  "sub_active_claim": "EXPLORATORY_NON_EVIDENTIARY_H4_ABSTENTION_EQUIVALENCE",
+  "sub_active_claim": "EXPLORATORY_NON_EVIDENTIARY_H3_CORRELATION_REDUCTION",
   "main_work_explicitly_avoided": [
-    "C19-R1 branch implementation, atomic_idx audit amendment, CI/pre-START fixes, STARTED/execution and successor design",
+    "C19-R1 branch implementation, admission wrapper, CI/pre-START fixes, STARTED/execution, scoring, preservation, and successor design",
     "C19-v4 immutable control/preserve/evidence and official Belief-R materials",
     "C19-v2/v3/v4 consumed identities",
-    "MAIN candidate-specific binding, scoring and preservation work"
+    "MAIN candidate-specific binding, verifier, review, and critical-path work"
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "f2342817193f4e3a191bb05921db5598ee3cd10c",
+    "evidence_analyst": "42836802e78abd26d19c5b8a789411f2b03d0ea1",
     "control_brain": "d8987f8c6d88fad48a8f652f4255e73b30a223e6",
-    "c19_r1": "research/c19-r1-revision-authority-reduction-20260917@7cf849051a68b4227e29fe2f6ee95b2ff277dacd",
+    "orchestrator_report_tip_before_sub_write": "6d8d6dd4cc8d70b712fdefa341f69e9d68a69f03",
+    "c19_r1": "research/c19-r1-revision-authority-reduction-20260917@7197ab0f9683616858859446ae9eed7b75707f25",
     "c19_r1_started_refs": [],
-    "c19_r1_preserve_refs": [],
-    "c19_r1_prestart": "35241040727:success",
-    "c19_r1_ordinary_ci": "35241040735:success",
+    "c19_r1_exact_head_ordinary_ci": "35246655185:success",
+    "c19_r1_exact_head_prestart": "35246655189:success",
     "c19_v4_evidence_tag": "evidence/c19-official-v4-c19-external-v2-official-v4",
-    "exploratory_branch": "research/exploratory-sub-h4-abstention-equivalence-20260918@c66c6775319cb569229f5de621f07a61c010b080",
-    "exploratory_exact_head_ci": "35241758360:success",
+    "exploratory_branch": "research/exploratory-sub-h3-correlation-reduction-20260918@4b0f90c65cb91fe2d07b19927de1ac4d4a14ba28",
+    "exploratory_exact_head_ci": "35248646725:success",
     "open_pr_count": 0,
-    "open_issues": [139, 147],
-    "authoritative_evidence_tag_observed": "evidence/c19-official-v4-c19-external-v2-official-v4"
+    "open_issues": [
+      139,
+      147
+    ]
   },
   "branches_prs_advanced": {
     "research_branches_created": [
-      "research/exploratory-sub-h4-abstention-equivalence-20260918"
+      "research/exploratory-sub-h3-correlation-reduction-20260918"
     ],
     "research_branches_advanced": [
-      "research/exploratory-sub-h4-abstention-equivalence-20260918@c66c6775319cb569229f5de621f07a61c010b080"
+      "research/exploratory-sub-h3-correlation-reduction-20260918@4b0f90c65cb91fe2d07b19927de1ac4d4a14ba28"
     ],
     "implementation_commits": [
-      "afb56d3d71a3fefe2eb01604c68ef42244c543a9",
-      "d56d62620ef5357520c56fb262e798aa779d9b39",
-      "42fdc3b1856b042b63b126382b096dfac0840e1a",
-      "c66c6775319cb569229f5de621f07a61c010b080"
+      "5f48fa13c06c8fc04cd0ebe7bdf9ec65f2d2b4c3",
+      "e63e0b9d3fc6f8fda3a2c4a67ad71c073b33f4b9",
+      "54350e63180ab7dbc143c0894b4b0c7e5a1051e7",
+      "f5e9645564d018c5dad902cdafa51d5ba9bddf44",
+      "d9186d8221c641131efdb67cdcf0f0e8026d97cf",
+      "ab5f2da32cee724c44bc76fce5dc9e813b634bbb",
+      "0ffdc5c53a00d40468552fe0ea51fdac0fd6a7e0",
+      "4b0f90c65cb91fe2d07b19927de1ac4d4a14ba28"
     ],
     "prs_created": [],
     "merges": []
@@ -59,12 +65,18 @@
     "one_way_dispatches_by_sub": 0,
     "official_data_access_by_sub": false,
     "manual_workflow_dispatches_by_sub": 0,
-    "exploratory_exact_head_ci": "35241758360:success",
+    "ordinary_push_ci_attempts": [
+      "35247846628:failure:lint-only",
+      "35248164724:failure:lint-only",
+      "35248415079:failure:lint-only",
+      "35248646725:success"
+    ],
+    "exploratory_exact_head_ci": "35248646725:success",
     "synthetic_exploratory_micro_experiment": {
-      "script": "scripts/exploratory_h4_abstention_equivalence.py",
-      "tests": "tests/test_exploratory_h4_abstention_equivalence.py",
-      "result_artifact": "artifacts/exploratory_h4_abstention_equivalence/result.json",
-      "boundary_document": "artifacts/exploratory_h4_abstention_equivalence/README.md",
+      "script": "scripts/exploratory_h3_correlation_reduction.py",
+      "tests": "tests/test_exploratory_h3_correlation_reduction.py",
+      "result_artifact": "artifacts/exploratory_h3_correlation_reduction/result.json",
+      "boundary_document": "artifacts/exploratory_h3_correlation_reduction/README.md",
       "formal": false,
       "identity": null
     }
@@ -74,61 +86,97 @@
     "new_formal_readiness_result_by_sub": false,
     "exploratory_observation": true,
     "fixed_synthetic_parameters": {
-      "example_count": 192,
-      "margins": [0.2, 0.35, 0.5, 0.65, 0.8, 0.95],
-      "diversities": [1, 2, 3, 4],
-      "contradictions": [false, true],
-      "within_cell_variants": 4,
-      "workspace_gate": "margin >= 0.50 AND diversity >= 2 AND contradiction == false",
-      "matched_feature_score": "margin + 0.10*(diversity-1) - 0.35*contradiction"
+      "samples": 4096,
+      "seed": 1337,
+      "groups_per_example": 5,
+      "latent_group_truth_probability": 0.7,
+      "within_group_source_agreement_probability": 0.9,
+      "member_patterns": [
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          2,
+          4,
+          8
+        ],
+        [
+          8,
+          4,
+          2,
+          1,
+          1
+        ],
+        [
+          1,
+          2,
+          4,
+          8,
+          16
+        ]
+      ],
+      "exact_duplicate_pattern": [
+        1,
+        1,
+        2,
+        4
+      ]
     },
-    "workspace_no_ignition": {
-      "accepted": 48,
-      "coverage": 0.25,
-      "selective_risk": 0.125
+    "accuracy": {
+      "naive": 0.737548828125,
+      "source_dedup": 0.753662109375,
+      "group_normalized_scalar": 0.801513671875,
+      "group_majority_proxy": 0.801025390625
     },
-    "best_margin_only_at_or_above_workspace_coverage": {
-      "threshold": 0.8,
-      "accepted": 64,
-      "coverage": 0.3333333333333333,
-      "selective_risk": 0.21875
+    "group_normalized_vs_group_majority_agreement": 0.97900390625,
+    "adversarial_correlated_wrong_group": {
+      "wrong_distinct_source_counts": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "at_counts_4_8_16": "naive and exact-source-dedup predict wrong sign; group-normalized scalar and group-majority proxy predict correct sign"
     },
-    "matched_feature_dominator": {
-      "threshold": 0.8,
-      "accepted": 52,
-      "coverage": 0.2708333333333333,
-      "selective_risk": 0.11538461538461542
-    },
-    "matched_feature_dominator_count": 1,
-    "interpretation": "In this constructed selective-prediction world, the workspace no-ignition point appears superior to a margin-only abstention comparator but is strictly dominated once the ordinary abstention comparator receives the same margin/diversity/contradiction information. This is comparator-information matching pressure, not H4 evidence."
+    "interpretation": "In this constructed world, exact-ID dedup does not correct correlation overcounting across distinct source IDs, while a simpler scalar comparator with privileged true correlation-group information nearly matches the coalition-style proxy. This is comparator-information/reduction pressure, not H3 evidence."
   },
   "evidentiary_status": "NON_EVIDENTIARY",
-  "hypothesis_or_reduction_question": "Does toy no-ignition retain a selective-prediction advantage once an ordinary abstention comparator receives the same margin/diversity/contradiction information?",
-  "synthetic_or_dev_inputs_used": "Fixed deterministic 192-example synthetic grid over margin, diversity, contradiction and four within-cell variants; no formal, sealed, official, held-out C19/R1/Belief-R or consumed-identity data.",
-  "implementation_or_experiment_performed": "Implemented a fixed toy no-ignition gate, a margin-only abstention frontier, and an information-matched abstention frontier; pinned expected coverage-risk behavior with tests; persisted a NON_EVIDENTIARY result artifact and Analyst boundary document; and obtained green exact-head ordinary CI without manual workflow dispatch.",
+  "hypothesis_or_reduction_question": "Can duplicate/correlation robustness that looks coalition-like be reproduced by an ordinary provenance-aware scalar reduction when the comparator receives the same correlation-group information?",
+  "synthetic_or_dev_inputs_used": "Fixed deterministic 4096-example synthetic grid with five latent correlation groups plus a deterministic adversarial correlated-source sweep; no formal, sealed, official, held-out C19/R1/Belief-R or consumed-identity data.",
+  "implementation_or_experiment_performed": "Implemented naive accumulation, exact-source dedup, known-group normalized scalar aggregation, and a coalition-style group-majority proxy; pinned fixed observations with tests; persisted a NON_EVIDENTIARY result artifact and Analyst boundary document; mechanically fixed only repository lint/import-layout issues; and obtained green exact-head ordinary CI without manual workflow dispatch.",
   "observations": [
-    "Toy workspace no-ignition accepts 48/192 examples at coverage 0.25 and selective risk 0.125.",
-    "The best fixed margin-only abstention point at or above workspace coverage has coverage 0.3333333333333333 and worse selective risk 0.21875.",
-    "When ordinary abstention receives matched margin/diversity/contradiction information, threshold 0.80 accepts 52/192 at coverage 0.2708333333333333 and lower selective risk 0.11538461538461542, strictly dominating the workspace point.",
-    "Exactly one point on the fixed matched-feature frontier dominates the workspace point.",
-    "Exact-head CI 35241758360 completed successfully on c66c6775319cb569229f5de621f07a61c010b080."
+    "Fixed-grid accuracy: naive 0.737548828125; exact-source dedup 0.753662109375; group-normalized scalar 0.801513671875; group-majority proxy 0.801025390625.",
+    "Group-normalized scalar and group-majority proxy agree on 0.97900390625 of fixed-grid examples.",
+    "In the adversarial stress case, once one wrong correlation group contains 4, 8, or 16 distinct source IDs against two correct singleton groups, naive and exact-source-dedup readers fail while both group-aware readers remain correct.",
+    "True correlation-group IDs are privileged synthetic information, so the result does not establish formal H3 performance; it identifies an information-matching requirement for a future comparator.",
+    "Final exact-head ordinary CI 35248646725 completed successfully on 4b0f90c65cb91fe2d07b19927de1ac4d4a14ba28."
   ],
-  "what_would_falsify_or_reduce_it": "The comparator-matching concern is reduced if a prospectively frozen H4 experiment gives no-ignition a robust coverage-risk or preregistered utility advantage over ordinary abstention mechanisms matched for uncertainty information, calibration opportunity, predictor capacity, training/tuning budget and resource budget.",
-  "candidate_formal_question": "Under prospectively matched uncertainty information, calibration/training budget, predictor capacity and resource budget, does a no-ignition workspace state improve held-out coverage-risk or preregistered selective utility beyond ordinary abstention mechanisms on insufficient-evidence and OOD cases?",
+  "what_would_falsify_or_reduce_it": "The reduction concern is reduced if correlation structure cannot be supplied or learned under matched information/resource budgets, if a strong correlation-aware scalar/Bayesian comparator loses prospectively when groups are noisy/latent rather than given, or if Coalition-specific interactions retain a preregistered held-out robustness/calibration advantage after matched provenance/correlation correction.",
+  "candidate_formal_question": "Under a prospectively fixed duplicate/correlation/contradiction task family and matched provenance information, calibration, learning budget and resources, do Evidence Coalitions improve held-out robustness beyond strong correlation-aware scalar/Bayesian baselines?",
   "suggested_prospective_object": null,
   "new_scientific_choices_required_before_formalization": [
-    "task family and insufficient-evidence/OOD construction",
-    "definition of ignition/no-ignition and exact workspace gate inputs",
-    "comparator information budget and feature access",
-    "ordinary abstention comparator family and calibration method",
-    "predictor capacity and training/tuning budget matching",
-    "coverage-risk and utility metrics plus operating-point selection rule",
-    "calibration split and held-out split",
-    "resource/runtime contract, seeds and determinism",
-    "failure/exclusion rules and success/failure criteria",
+    "task/world family and held-out construction",
+    "source and correlation structure",
+    "whether correlation-group identity is observed, inferred, or learned",
+    "source reliability process and calibration method",
+    "duplicate and contradiction semantics",
+    "Evidence Coalition mechanism",
+    "correlation-aware scalar/Bayesian comparator family",
+    "information privileges and provenance access",
+    "training/tuning budgets and resource matching",
+    "primary robustness/calibration metrics",
+    "runtime, seeds, determinism, failure/exclusion rules",
+    "success/failure criteria",
     "fresh protocol, package and identity with normal integrity gates"
   ],
-  "promotion_recommendation": "CONTINUE_EXPLORING only after Evidence Analyst classification; do not automatically continue or formalize this H4 toy next run",
+  "promotion_recommendation": "CONTINUE_EXPLORING only after Evidence Analyst classification; do not automatically continue or formalize this H3 toy next run",
   "consumed_identities": {
     "newly_consumed_by_sub": [],
     "known_consumed_do_not_touch": [
@@ -148,15 +196,16 @@
     ],
     "exploratory_validation": [],
     "main_only": [
-      "C19-R1 is exact-head green but remains MAIN-only and Analyst-blocked before STARTED; SUB did not touch it."
+      "C19-R1 is MAIN-owned; exact-head admission is green but SUB must not create STARTED, execute it, diagnose it, or design its successor."
     ]
   },
   "collision_reconciliation": {
-    "current_main_frontier": "C19-R1@7cf849051a68b4227e29fe2f6ee95b2ff277dacd; dedicated pre-START 35241040727 success; ordinary CI 35241040735 success; no R1 STARTED/preserve ref observed; fresh Analyst authorization still required",
+    "current_main_frontier": "C19-R1@7197ab0f9683616858859446ae9eed7b75707f25; exact-head ordinary CI 35246655185 success; pre-START 35246655189 success; no control/c19-r1 STARTED ref observed at closeout",
     "main_frontier_touched_by_sub": false,
     "main_dependency_created_by_sub": false,
     "official_inputs_or_outputs_used_by_sub": false,
-    "evidence_analyst_tip_at_write": "f2342817193f4e3a191bb05921db5598ee3cd10c",
+    "evidence_analyst_tip_at_write": "42836802e78abd26d19c5b8a789411f2b03d0ea1",
+    "orchestrator_tip_before_write": "6d8d6dd4cc8d70b712fdefa341f69e9d68a69f03",
     "concurrent_main_reporting_preserved": true
   },
   "integrity_state": {
@@ -171,9 +220,9 @@
     "exploratory_artifacts_labeled_non_evidentiary": true
   },
   "completion_target": {
-    "target": "One bounded independent H4 no-ignition versus information-matched abstention reduction probe.",
+    "target": "One bounded independent H3 correlation-aware scalar reduction probe.",
     "status": "reached",
-    "result": "New exploratory branch, fixed synthetic probe, tests, result artifact and NON_EVIDENTIARY boundary document persisted; exact-head CI green."
+    "result": "New exploratory branch, fixed synthetic probe, deterministic tests, result artifact and NON_EVIDENTIARY boundary document persisted; final exact-head ordinary CI green."
   },
   "fallback_status": {
     "sub_fallback": null,
@@ -182,11 +231,12 @@
   "rejected_lane": null,
   "lane_rejected_reason": null,
   "historical_incubator_boundaries": {
-    "h7": "Evidence Analyst classified NO_ACTION; stopped and not touched in this run",
+    "h4": "Evidence Analyst classified NO_ACTION; stopped and not touched in this run",
+    "h7": "NO_ACTION; not touched",
     "h9": "completed/NO_ACTION; not touched",
     "revision_authority_fsa": "rejected; not touched",
     "h5": "returned to Evidence Analyst; not automatically continued",
     "h6": "returned to Evidence Analyst; not automatically continued"
   },
-  "next_sub_action": "Return the H4 NON_EVIDENTIARY abstention-equivalence probe to Evidence Analyst for classification. Do not touch C19-R1 and do not automatically continue/formalize H4 before fresh Analyst review."
+  "next_sub_action": "Return the H3 NON_EVIDENTIARY correlation-reduction probe to Evidence Analyst for classification. Do not touch C19-R1 and do not automatically continue or formalize H3 before fresh Analyst review."
 }
