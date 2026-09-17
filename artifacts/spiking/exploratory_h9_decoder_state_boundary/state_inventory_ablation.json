@@ -1,0 +1,101 @@
+{
+  "attribution_checks": {
+    "hybrid_killed_by_all_state_reset": true,
+    "hybrid_survives_single_channel_reset": true,
+    "non_spike_memories_killed_by_all_non_spike_reset": true,
+    "spike_latch_killed_by_spike_reset": true,
+    "spike_latch_survives_all_non_spike_reset": true,
+    "stateless_never_solves_delayed_recall": true
+  },
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "fixed_choices": {
+    "filter_decay": 0.95,
+    "filter_decode": "sign(trace), no fitted threshold",
+    "note": "Synthetic attribution diagnostic only; no parameter selection against formal or held-out outcomes.",
+    "reset_conditions": [
+      "none",
+      "spike_state",
+      "decoder_state",
+      "filter_state",
+      "algorithmic_state",
+      "all_non_spike",
+      "all_state"
+    ],
+    "reset_timing": "immediately before query"
+  },
+  "interpretation": [
+    "Each single-state memory succeeds only while its declared backing state remains available.",
+    "Resetting every non-spike state removes delayed performance from decoder/filter/algorithmic mechanisms while leaving spike-latch performance intact.",
+    "The hybrid retains perfect performance after either single-channel reset, showing that hidden decoder state can mask ablation of a spike-mediated memory channel unless the state inventory is explicit.",
+    "This supports a prospective state-accounting/reset gate as a methodological safeguard; it is not evidence for H9."
+  ],
+  "mechanism_reset_matrix": {
+    "algorithmic_memory": {
+      "algorithmic_state": {"accuracy": 0.0, "correct": 0, "total": 40},
+      "all_non_spike": {"accuracy": 0.0, "correct": 0, "total": 40},
+      "all_state": {"accuracy": 0.0, "correct": 0, "total": 40},
+      "decoder_state": {"accuracy": 1.0, "correct": 40, "total": 40},
+      "filter_state": {"accuracy": 1.0, "correct": 40, "total": 40},
+      "none": {"accuracy": 1.0, "correct": 40, "total": 40},
+      "spike_state": {"accuracy": 1.0, "correct": 40, "total": 40}
+    },
+    "decoder_memory": {
+      "algorithmic_state": {"accuracy": 1.0, "correct": 40, "total": 40},
+      "all_non_spike": {"accuracy": 0.0, "correct": 0, "total": 40},
+      "all_state": {"accuracy": 0.0, "correct": 0, "total": 40},
+      "decoder_state": {"accuracy": 0.0, "correct": 0, "total": 40},
+      "filter_state": {"accuracy": 1.0, "correct": 40, "total": 40},
+      "none": {"accuracy": 1.0, "correct": 40, "total": 40},
+      "spike_state": {"accuracy": 1.0, "correct": 40, "total": 40}
+    },
+    "filter_trace": {
+      "algorithmic_state": {"accuracy": 1.0, "correct": 40, "total": 40},
+      "all_non_spike": {"accuracy": 0.0, "correct": 0, "total": 40},
+      "all_state": {"accuracy": 0.0, "correct": 0, "total": 40},
+      "decoder_state": {"accuracy": 1.0, "correct": 40, "total": 40},
+      "filter_state": {"accuracy": 0.0, "correct": 0, "total": 40},
+      "none": {"accuracy": 1.0, "correct": 40, "total": 40},
+      "spike_state": {"accuracy": 1.0, "correct": 40, "total": 40}
+    },
+    "hybrid_spike_plus_decoder": {
+      "algorithmic_state": {"accuracy": 1.0, "correct": 40, "total": 40},
+      "all_non_spike": {"accuracy": 1.0, "correct": 40, "total": 40},
+      "all_state": {"accuracy": 0.0, "correct": 0, "total": 40},
+      "decoder_state": {"accuracy": 1.0, "correct": 40, "total": 40},
+      "filter_state": {"accuracy": 1.0, "correct": 40, "total": 40},
+      "none": {"accuracy": 1.0, "correct": 40, "total": 40},
+      "spike_state": {"accuracy": 1.0, "correct": 40, "total": 40}
+    },
+    "spike_latch": {
+      "algorithmic_state": {"accuracy": 1.0, "correct": 40, "total": 40},
+      "all_non_spike": {"accuracy": 1.0, "correct": 40, "total": 40},
+      "all_state": {"accuracy": 0.0, "correct": 0, "total": 40},
+      "decoder_state": {"accuracy": 1.0, "correct": 40, "total": 40},
+      "filter_state": {"accuracy": 1.0, "correct": 40, "total": 40},
+      "none": {"accuracy": 1.0, "correct": 40, "total": 40},
+      "spike_state": {"accuracy": 0.0, "correct": 0, "total": 40}
+    },
+    "stateless": {
+      "algorithmic_state": {"accuracy": 0.0, "correct": 0, "total": 40},
+      "all_non_spike": {"accuracy": 0.0, "correct": 0, "total": 40},
+      "all_state": {"accuracy": 0.0, "correct": 0, "total": 40},
+      "decoder_state": {"accuracy": 0.0, "correct": 0, "total": 40},
+      "filter_state": {"accuracy": 0.0, "correct": 0, "total": 40},
+      "none": {"accuracy": 0.0, "correct": 0, "total": 40},
+      "spike_state": {"accuracy": 0.0, "correct": 0, "total": 40}
+    }
+  },
+  "predeclared_state_inventory": {
+    "algorithmic_state": "non-spiking discrete controller memory",
+    "decoder_state": "non-spiking continuous decoder-held memory",
+    "filter_state": "non-spiking leaky trace",
+    "spike_state": "discrete recurrent spike-mediated latch"
+  },
+  "schema": "exploratory-h9-state-inventory-ablation-v1",
+  "synthetic_task": {
+    "labels": ["A", "B"],
+    "query": "recall cue after silent gap",
+    "silent_gap_range": [1, 20],
+    "trials_per_mechanism_condition": 40
+  }
+}
