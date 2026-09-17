@@ -249,7 +249,9 @@ def paired_reduction_bootstrap(
         "cluster_key": "atomic_idx",
         "unique_clusters": len(clusters),
         "clusters_per_resample": len(clusters),
-        "cluster_observation_policy": "carry_all_paired_observations_at_sampled_cluster_multiplicity",
+        "cluster_observation_policy": (
+            "carry_all_paired_observations_at_sampled_cluster_multiplicity"
+        ),
         "cluster_order": "first_occurrence_in_pair_index_order",
         "resamples": BOOTSTRAP_RESAMPLES,
         "bootstrap_seed": BOOTSTRAP_SEED,
