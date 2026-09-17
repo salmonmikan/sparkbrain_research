@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import math
 import random
 from collections import Counter
 
@@ -142,5 +143,5 @@ def test_cluster_resample_carries_whole_clusters_at_same_multiplicity() -> None:
 
 def test_type7_quantile_semantics_are_frozen() -> None:
     values = tuple(float(index) for index in range(10_000))
-    assert linear_quantile_10k(values, 0.025) == 249.975
-    assert linear_quantile_10k(values, 0.975) == 9749.025
+    assert math.isclose(linear_quantile_10k(values, 0.025), 249.975, abs_tol=1e-12)
+    assert math.isclose(linear_quantile_10k(values, 0.975), 9749.025, abs_tol=1e-12)
