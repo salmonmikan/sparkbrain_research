@@ -1,99 +1,180 @@
 {
-  "timestamp": "2026-09-18T02:47:25+09:00",
+  "timestamp": "2026-09-18T03:20:00+09:00",
   "worker_role": "main",
-  "execution_mode": "RELAY",
-  "evidence_analyst_commit": "fc59c9de3ab29507901cadfea800565271ab5edb",
-  "current_lane": "C19_R1_POST_START_RUNTIME_CLOSURE_READINESS",
-  "current_phase": "R1_RUNTIME_READINESS_WAITING_EXTERNAL",
+  "execution_mode": "PRIMARY",
+  "evidence_analyst_commit": "966018058f296098805982a8d206102741c3842c",
+  "current_lane": "C19_R1_REVISION_AUTHORITY_SUCCESSOR_V2",
+  "current_phase": "R1_V2_PRE_START_GATES_RUNNING",
   "consumed_contingency_branches": [
-    "R1_POST_START_FAILURE",
-    "R1_RUNTIME_READINESS_MECHANICAL_BINDING_DEFECT",
-    "R1_RUNTIME_READINESS_PRE_START_BLOCKER"
+    "R1_V1_POST_START_FAILURE",
+    "R1_RUNTIME_READINESS_PASS",
+    "R1_V2_PRE_START_BUILD"
   ],
   "active_claim": {
-    "branch": "research/readiness-c19-r1-runtime-closure-20260918",
-    "identity": null,
+    "branch": "research/c19-r1-revision-authority-runtime-closed-v2-20260918",
+    "identity": "c19-r1-revision-authority-official-v2",
     "owner": "main",
-    "status": "identity_free_readiness_only",
-    "scientific_execution_allowed": false
+    "status": "fresh_pre_start_successor",
+    "scientific_execution_allowed": true,
+    "execution_gate": "ordinary CI and dedicated pre-START must both be green on one exact final SHA, followed by fresh authority/binding/namespace reconciliation"
   },
   "authoritative_target_refs": {
-    "forensic_basis": "research/c19-r1-revision-authority-reduction-20260917@7197ab0f9683616858859446ae9eed7b75707f25",
-    "consumed_r1_started": "control/c19-r1-revision-authority-started-20260918@62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2",
-    "consumed_r1_one_way_run": "35248878958:failure",
-    "readiness_branch": "research/readiness-c19-r1-runtime-closure-20260918@f5f0f7abd02372954aa8edcf10b6c15f9644c122",
-    "analyst": "fc59c9de3ab29507901cadfea800565271ab5edb"
+    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "analyst": "966018058f296098805982a8d206102741c3842c",
+    "consumed_v1_package": "research/c19-r1-revision-authority-reduction-20260917@7197ab0f9683616858859446ae9eed7b75707f25",
+    "consumed_v1_started": "control/c19-r1-revision-authority-started-20260918@62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2",
+    "runtime_readiness": "research/readiness-c19-r1-runtime-closure-20260918@f5f0f7abd02372954aa8edcf10b6c15f9644c122",
+    "successor_v2": "research/c19-r1-revision-authority-runtime-closed-v2-20260918@a23975c5713347eaa459161f538a8f0c3db6152e",
+    "planned_started_ref": "control/c19-r1-revision-authority-started-v2-20260918",
+    "planned_preserve_ref": "preserve/c19-r1-revision-authority-raw-c19-r1-revision-authority-official-v2",
+    "planned_evidence_tag": "evidence/c19-r1-revision-authority-c19-r1-revision-authority-official-v2"
   },
   "fast_path_used": true,
   "full_reconciliation_triggered": false,
+  "full_reconciliation_reason": null,
   "branches_prs_advanced": [
     {
-      "branch": "research/readiness-c19-r1-runtime-closure-20260918",
+      "branch": "research/c19-r1-revision-authority-runtime-closed-v2-20260918",
       "base": "7197ab0f9683616858859446ae9eed7b75707f25",
-      "head": "f5f0f7abd02372954aa8edcf10b6c15f9644c122",
-      "change": "Added identity-free runtime-closure workflow only; no scientific contract, formal identity, STARTED, preserve, evidence, scorer, controller, representation, source-map or resource-contract mutation."
+      "head": "a23975c5713347eaa459161f538a8f0c3db6152e",
+      "change": "Created the final prospectively authorized R1 successor with a fresh formal identity/protocol/namespace and exact runtime/admission closure only. Frozen scientific contract, scientific protocol source, preregistration, mechanism, scorer/statistics, input/resource contract and v4 comparator binding remain unchanged."
     }
   ],
   "workflows_experiments": [
     {
-      "kind": "identity_free_runtime_closure",
+      "kind": "identity_free_runtime_readiness_consumed_as_admission_evidence",
       "run_id": 35254816937,
       "head": "f5f0f7abd02372954aa8edcf10b6c15f9644c122",
-      "status_at_checkpoint": "in_progress",
-      "scope": "synthetic/dev-only; exact Python 3.11.16; already-declared learned extras; base-install gap reproduction; network-blocked production-runner import; deterministic synthetic prestart digest checks; non-scientific readiness manifest"
+      "status": "success",
+      "ordinary_ci_run_id": 35254816864,
+      "ordinary_ci_status": "success",
+      "artifact_digest": "sha256:a6124b357e89c8cdb3d9f9e835621ee5f96a9529177391f759ab35fe320681a0",
+      "scope": "identity-free readiness only; no scientific result"
+    },
+    {
+      "kind": "successor_v2_dedicated_prestart",
+      "run_id": 35258035210,
+      "head": "a23975c5713347eaa459161f538a8f0c3db6152e",
+      "status_at_checkpoint": "in_progress"
     },
     {
       "kind": "ordinary_ci",
-      "run_id": 35254816864,
-      "head": "f5f0f7abd02372954aa8edcf10b6c15f9644c122",
+      "run_id": 35258035223,
+      "head": "a23975c5713347eaa459161f538a8f0c3db6152e",
       "status_at_checkpoint": "in_progress"
     }
   ],
+  "runtime_binding": {
+    "python_implementation": "CPython",
+    "python_version": "3.11.16",
+    "runner": "ubuntu-24.04",
+    "install_command": "python -m pip install -e .[learned]",
+    "declared_dependencies": [
+      "numpy>=2.0",
+      "torch==2.13.0"
+    ],
+    "resolved_dependencies": {
+      "numpy": "2.4.6",
+      "torch": "2.13.0+cu130"
+    },
+    "runtime_manifest_sha256": "cdb7a2a075f76d4b65b51fc7d0b46f7ecda98646e33902420b2a7e5b7d604fc5",
+    "network_blocked_production_import_required": true
+  },
+  "frozen_science_binding": {
+    "scientific_contract_blob": "1174c82fabfbe00f48226a128370b2d83b902efa",
+    "scientific_protocol_source_blob": "be65b3887ba7c67eaf97cf53b456ed17f926fd6a",
+    "preregistration_blob": "6a31b94b480cb672214d2a0858bcc833bf0f43b4",
+    "atomic_idx_source_map_sha256": "cb3ca63703bdab4107e896884908817680dd4fe4b5eebc32b6219075f0187bbb",
+    "successor_diff_allowed_paths": [
+      ".github/workflows/c19-r1-prestart.yml",
+      ".github/workflows/c19-r1-one-way.yml",
+      "configs/external_validation/c19_r1_execution_authority.json",
+      "scripts/run_c19_r1_official_v2.py"
+    ]
+  },
   "scientific_results": {
     "new_scientific_measurement": false,
     "terminal_scientific_result": null,
-    "classification": "READINESS_ONLY_WAITING_EXTERNAL",
-    "interpretation": "The consumed R1 official-v1 scientific question remains unanswered. This Relay run performed only identity-free synthetic/dev runtime closure work prospectively authorized by the latest Evidence Analyst."
+    "classification": "PRE_START_ONLY",
+    "interpretation": "No official successor-v2 execution has occurred. This run packaged operational admission/runtime closure around the unchanged R1 scientific object and dispatched only pre-START/CI gates."
   },
   "consumed_identities": {
     "c19-r1-revision-authority-official-v1": {
       "consumed": true,
       "retry_allowed": false,
       "touched_this_run": false
+    },
+    "c19-r1-revision-authority-official-v2": {
+      "consumed": false,
+      "started": false,
+      "official_data_accessed": false
     }
   },
   "blockers": [
-    "Dedicated runtime-closure workflow 35254816937 and ordinary CI 35254816864 are still running.",
-    "No formal successor identity or STARTED is authorized. Even a readiness PASS requires STOP for a fresh Evidence Analyst decision."
+    "Dedicated successor-v2 pre-START run 35258035210 is still running on exact head a23975c5713347eaa459161f538a8f0c3db6152e.",
+    "Ordinary CI run 35258035223 is still running on the same exact head.",
+    "STARTED remains blocked until both are green and a fresh authority/binding/namespace reconciliation is clean."
   ],
   "lease_collision_reconciliation": {
-    "prior_lease_run_id": "primary-20260918T0214JST",
-    "prior_lease_status": "BLOCKED",
-    "prior_heartbeat": "2026-09-18T02:19:30+09:00",
-    "fresh_conflicting_primary_running": false,
-    "newer_analyst_authority_observed": true,
-    "newer_analyst_commit": "fc59c9de3ab29507901cadfea800565271ab5edb",
-    "result": "Safe Relay continuation onto distinct identity-free readiness branch."
+    "prior_lease_run_id": "relay-20260918T0245JST",
+    "prior_lease_mode": "RELAY",
+    "prior_lease_status": "WAITING_EXTERNAL",
+    "prior_heartbeat": "2026-09-18T02:47:20+09:00",
+    "fresh_conflicting_main_running": false,
+    "prior_lease_stale_over_20_minutes": true,
+    "successor_branch_existed_before_primary": false,
+    "sub_collision": false,
+    "result": "Safe PRIMARY recovery after fresh Analyst allocation and target reconciliation."
   },
   "integrity_status": {
-    "consumed_r1_mutated": false,
-    "consumed_r1_retried": false,
-    "formal_identity_created": false,
-    "started_created": false,
+    "consumed_v1_mutated": false,
+    "consumed_v1_retried": false,
+    "immutable_v4_evidence_modified": false,
+    "successor_identity_fresh": true,
+    "successor_started_created": false,
     "official_data_accessed": false,
+    "raw_predictions_generated": false,
+    "preserve_ref_created": false,
     "evaluator_targets_materialized": false,
     "scoring_performed": false,
-    "immutable_evidence_modified": false,
-    "readiness_branch_identity_free": true,
-    "analyst_execution_allowed": false
+    "evidence_ref_created": false,
+    "scientific_contract_changed": false,
+    "scientific_protocol_source_changed": false,
+    "statistics_changed": false,
+    "resource_contract_changed": false,
+    "sub_reserved_work_touched": false
   },
-  "critical_path_actions_performed": [
-    "Consumed newer Analyst commit fc59c9de3ab29507901cadfea800565271ab5edb, which explicitly authorizes identity-free R1 runtime closure readiness only.",
-    "Created research/readiness-c19-r1-runtime-closure-20260918 from exact forensic package 7197ab0f9683616858859446ae9eed7b75707f25.",
-    "Added a dedicated readiness workflow that preserves the inherited Python/dependency declarations, reproduces the base-install gap without official data, installs only the already-declared learned dependency group, smoke-imports the exact production R1 runner with network blocked, verifies deterministic synthetic prestart digests, and emits a non-scientific readiness manifest.",
-    "Observed dedicated run 35254816937 and ordinary CI 35254816864 start on exact head f5f0f7abd02372954aa8edcf10b6c15f9644c122.",
-    "Handed off external workflow waiting through MAIN lease rather than occupying the worker."
+  "main_critical_path_fixups_completed": [
+    "Recovered stale MAIN lease only after fresh collision/authority reconciliation.",
+    "Created the prospectively authorized fresh successor-v2 branch directly from exact consumed-v1 package commit 7197ab0f9683616858859446ae9eed7b75707f25.",
+    "Bound the exact successful identity-free runtime closure, including CPython 3.11.16, the already-declared learned dependency group, resolved numpy/torch versions, artifact digest and frozen runtime-manifest SHA-256.",
+    "Added a fresh identity/protocol execution wrapper while leaving the scientific contract, protocol implementation, preregistration, mechanism and scorer byte-identical.",
+    "Replaced the v1 admission workflows on the successor branch with exact-v2 namespace/runtime/science-binding gates and a one-way path that preserves raw before targets.",
+    "Pushed exact package head a23975c5713347eaa459161f538a8f0c3db6152e and observed both required exact-head gates start."
   ],
-  "stop_reason": "WAITING_EXTERNAL: both exact-head readiness workflows are still running. Analyst prospectively allows mechanical readiness work, but no additional useful local action exists until those results arrive.",
-  "next_main_action": "Collect runs 35254816937 and 35254816864. If both pass, persist R1_RUNTIME_READINESS_PASS and STOP for fresh Analyst review. If either fails, inspect the exact readiness failure and apply only science-invariant readiness fixes that remain within Analyst fc59c9de3ab29507901cadfea800565271ab5edb. Never create STARTED or a formal successor under this authority."
+  "same_run_steps_completed": [
+    "Consumed Analyst successor-v2 allocation.",
+    "Acquired PRIMARY lease.",
+    "Created successor-v2 research branch.",
+    "Created and committed operational-only successor package.",
+    "Re-fetched exact branch head and unchanged Analyst authority.",
+    "Observed dedicated pre-START and ordinary CI enter in-progress state.",
+    "Persisted WAITING_EXTERNAL relay checkpoint rather than idling."
+  ],
+  "same_run_stop_reason": "WAITING_EXTERNAL: both mandatory exact-head successor-v2 gates are still running and no useful local critical-path work remains. STARTED has not been created.",
+  "work_intentionally_left_for_sub": "No formal SUB lane or fallback exists. Current H3 exploratory candidate is Analyst-REJECT for automatic continuation; PRIMARY did not touch SUB work.",
+  "reserved_sub_work_not_touched": true,
+  "lane_repartition_reason": null,
+  "next_main_action": "Collect successor-v2 dedicated pre-START 35258035210 and ordinary CI 35258035223 on exact head a23975c5713347eaa459161f538a8f0c3db6152e. If either fails mechanically, MAIN fixes only science-invariant operational defects and reruns both gates on the new exact final SHA. If both are green, fresh-re-fetch Analyst authority 966018058f296098805982a8d206102741c3842c, package head, identity freshness, runtime/science bindings and exact control/preserve/evidence namespaces; if all remain clean, R1_V2_PRE_START_READY prospectively authorizes creation of the one fresh STARTED marker followed by exactly one one-way execution in the same run. Any post-START infrastructure/runtime failure before measurement consumes v2 and terminates R1; no automatic v3.",
+  "write_path_diagnostics": {
+    "github_connector_used": true,
+    "actions": [
+      "updated MAIN lease to RUNNING successfully",
+      "created successor branch successfully",
+      "created blobs/tree/commit successfully",
+      "fast-forwarded successor branch to a23975c5713347eaa459161f538a8f0c3db6152e successfully",
+      "durable MAIN reporting writes succeeded through this state checkpoint"
+    ],
+    "write_path_blocker": null
+  }
 }
