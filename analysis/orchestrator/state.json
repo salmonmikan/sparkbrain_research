@@ -1,54 +1,62 @@
 {
-  "timestamp": "2026-09-18T01:02:34+09:00",
+  "timestamp": "2026-09-18T02:19:27+09:00",
   "worker_role": "evidence_analyst",
-  "control_plane_mailbox_semantics": "ops/* branches are persistence/control-plane mailboxes only; only designated handoff/report paths and relevant history were consumed. Current scientific state was re-fetched independently from main, research refs, immutable/control/preserve/evidence refs, Issues/PRs/workflows and exact identities.",
+  "control_plane_mailbox_semantics": "ops/* branches are persistence/control-plane mailboxes only. Only designated handoff/report paths and relevant history were consumed; current scientific state was independently re-fetched from main, research refs, control/preserve/evidence refs, workflows, Issues/PRs and exact identities.",
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst_prior_tip": "f2342817193f4e3a191bb05921db5598ee3cd10c",
-    "c19_r1": "research/c19-r1-revision-authority-reduction-20260917@7cf849051a68b4227e29fe2f6ee95b2ff277dacd",
+    "main_protected": false,
+    "evidence_analyst_prior_tip": "42836802e78abd26d19c5b8a789411f2b03d0ea1",
+    "orchestrator_report_tip_observed": "4715afcdb9e6423845d88171977475bb1e3f4ef0",
+    "c19_r1_failed_package": "research/c19-r1-revision-authority-reduction-20260917@7197ab0f9683616858859446ae9eed7b75707f25",
+    "c19_r1_scientific_basis_before_admission": "7cf849051a68b4227e29fe2f6ee95b2ff277dacd",
     "c19_r1_identity": "c19-r1-revision-authority-official-v1",
-    "c19_r1_started_refs": [],
+    "c19_r1_started": "control/c19-r1-revision-authority-started-20260918@62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2",
+    "c19_r1_ordinary_ci": "35246655185:success",
+    "c19_r1_prestart": "35246655189:success",
+    "c19_r1_one_way": "35248878958:failure",
+    "c19_r1_failure": "ModuleNotFoundError: No module named 'torch' during target-blind acquisition",
     "c19_r1_preserve_refs": [],
     "c19_r1_evidence_refs": [],
-    "c19_r1_ordinary_ci": "35225032841:success",
-    "c19_r1_prestart": "35225032830:success",
+    "c19_r1_scientific_result": null,
     "c19_r1_source_map_sha256": "cb3ca63703bdab4107e896884908817680dd4fe4b5eebc32b6219075f0187bbb",
-    "c19_r1_current_execution_metadata": "execution_allowed=false; current_handoff_execution_allowed=false",
-    "c19_r1_one_way_workflow_present": false,
-    "c19_v4_package": "74bfe6b4a39758656f291baaa3f16236e3e71964",
-    "c19_v4_control": "294d947ade2f906e284d5e1eed5ad57ac7527947",
     "c19_v4_preserve": "preserve/c19-official-v4-raw-c19-external-v2-official-v4@d8fcc5216ff24940836972816cb0ec8f11e4ba06",
+    "c19_v4_evidence_tag": "evidence/c19-official-v4-c19-external-v2-official-v4",
     "c19_v4_evidence_commit": "a0f83318356ced1c84863737803080d0dc69d208",
-    "c19_v4_evidence_tag_object": "14cde297de93877d00e869fae39aee6f852d4302",
-    "c19_v4_result": {
-      "class": "PASS",
-      "claim_boundary": "truth_free_surface_structural_representation_gain_only",
-      "primary_effect": 0.10044747706422018,
-      "registered_pair_bootstrap_ci95": [0.09457741127849362, 0.10647302648240685],
-      "audit_generalization_classification": "WEAKENED_NOT_INVALID"
-    },
-    "sub_exploratory_h4": "research/exploratory-sub-h4-workspace-threshold-20260918@86b6249831afeccab87d948bd07f6f48be118299",
-    "sub_exploratory_h4_ci": "35225234716:success",
+    "c19_v4_result": "PASS_NARROW_TRUTH_FREE_SURFACE_STRUCTURAL_REPRESENTATION_GAIN",
+    "sub_exploratory_h3": "research/exploratory-sub-h3-correlation-reduction-20260918@4b0f90c65cb91fe2d07b19927de1ac4d4a14ba28",
+    "sub_exploratory_h3_ci": "35248646725:success",
     "open_pr_count": 0,
-    "open_issues": [139, 147],
+    "open_issues": [139],
+    "closed_issue_147": true,
     "legacy_freeze_branch_count": 13,
     "authoritative_evidence_tag_count_observed": 1,
-    "repository_ruleset_count": 0,
-    "main_protected": false
+    "repository_ruleset_count": 0
   },
-  "Control_Brain_commit": "24d3f94b93f118fe101fd039fd3cfb7c7f0a880f",
-  "Control_Brain_branch_tip_observed": "446edc5eda0566f736c03631a3f5090850a5e97b",
-  "MAIN_report_commit_consumed": "ccfd00f7aebfd855e704ba8db040175e3ec6b9bd",
-  "SUB_report_commit_consumed": "e746f649a5c1eb09e67d5a949b485e256f623f65",
+  "Control_Brain_commit": "d8987f8c6d88fad48a8f652f4255e73b30a223e6",
+  "MAIN_report_commit_consumed": "8d1d265e2f22ab0f1c2b2ea7b57579e7cd08a701",
+  "SUB_report_commit_consumed": "a797f57deac62846a0f302645a62936f92911583",
   "SUB_operating_mode_observed": "exploratory_incubator",
   "Literature_handoff_commit_consumed": "c42adf10546d0825fb13a258f052a6a4be399ec5",
   "Audit_handoff_commit_consumed": "1de53b412f66d4da94f54a8bc12a7e2717ef5011",
-  "Repository_Steward_commit_consumed": "57c7f8fa86de4af3ef1688f33ce009433a076d98",
-  "Repository_Steward_state_consumed": "reports/repository_steward/state.json@57c7f8fa86de4af3ef1688f33ce009433a076d98",
+  "Repository_Steward_commit_consumed": "5feec031a602c8a68bf9da1f07aae54225ecc212",
+  "Repository_Steward_state_consumed": "reports/repository_steward/state.json@ops/repository-steward@5feec031a602c8a68bf9da1f07aae54225ecc212",
   "external_role_mailbox_status": {
     "literature_latest_state_present": false,
     "audit_latest_state_present": true,
-    "literature_fallback": "Newest role-suffixed Literature history was consumed independently; legacy shared latest/state was not used as role authority."
+    "literature_fallback": "Newest role-suffixed Literature history consumed independently; legacy shared latest/state not used as role authority."
+  },
+  "new_repository_evidence": {
+    "event": "R1_POST_START_FAILURE_CONSUMED_NO_RETRY",
+    "scientific_result": "none",
+    "root_cause_localization": "execution-environment/package admission parity",
+    "exact_package_dependency_evidence": {
+      "pyproject_base_dependencies": [],
+      "torch_declaration": "torch==2.13.0 under optional dependency group learned",
+      "one_way_install": "pip install -e .",
+      "prestart_install": "pip install -e .[dev]",
+      "inference": "Neither gate installed/proved the already-declared learned dependency set through the exact production acquisition import path."
+    },
+    "integrity_interpretation": "Operational failure only. R1 identity consumed/no-retry; no raw, score or evidence; no scientific inference permitted."
   },
   "external_input": {
     "literature": {
@@ -56,344 +64,239 @@
       "handoff_commit": "c42adf10546d0825fb13a258f052a6a4be399ec5",
       "new_this_cycle": false,
       "findings_consumed": [
-        "state-dependent revision-authority/certainty arbitration as a direct simpler reduction",
+        "revision-authority/certainty arbitration as direct reduction",
         "minimal-edit revision diagnostics",
-        "representation-matched explicit/implicit finite-state tracking",
+        "representation-matched FSA/state tracking",
         "state-count/transition-sparsity/horizon scaling",
         "selective-history belief-state alternatives"
       ],
-      "affected_lines": ["C19_V4", "C19_R1", "PROGRAMME_NOVELTY", "PERSISTENT_DYNAMICS_REDUCTION"],
-      "strategic_impact": "The reduction ladder remains revision-authority first, then matched FSA/state-tracker, then selective-history alternatives before stronger persistent-dynamics claims. It supports R1 priority and does not alter v4.",
-      "prospective_baselines_or_discriminators": [
-        "same-I2 stateless revision-authority/certainty controller",
-        "representation-matched FSA/state tracker if R1 survives",
-        "minimal-edit revision stratification",
-        "state-count/transition-sparsity/horizon scaling"
-      ],
+      "affected_lines": ["C19_V4", "C19_R1", "PROGRAMME_NOVELTY", "FUTURE_EXTERNAL_VALIDATION"],
       "allocation_changed": false,
-      "must_not_change": ["C19-v2", "C19-v3", "C19-v4 immutable/consumed objects"]
+      "strategic_impact": "Reduction pressure remains high but no new literature justifies another identity after the operational R1 failure."
     },
     "audit": {
       "role": "INDEPENDENT_AUDITOR",
       "handoff_commit": "1de53b412f66d4da94f54a8bc12a7e2717ef5011",
       "new_this_cycle": false,
-      "classification": "WEAKENED",
+      "classification": "WEAKENED_NOT_INVALID",
       "findings_consumed": [
-        "C19-v4 integrity chain and registered narrow PASS remain valid and immutable",
-        "pair-IID bootstrap alone does not establish independence across underlying reasoning situations sharing atomic_idx",
-        "R1 should prospectively bind a target-free atomic_idx source map and use atomic_idx-cluster bootstrap as primary inference"
+        "C19-v4 integrity chain and narrow registered PASS remain valid and immutable",
+        "pair-IID uncertainty is not sufficient for independent reasoning-family generalization",
+        "R1 had prospectively addressed this via deterministic target-free atomic_idx mapping and cluster-primary bootstrap before STARTED"
       ],
       "affected_lines": ["C19_V4", "C19_R1", "PROGRAMME_STATISTICAL_INTEGRITY"],
-      "strategic_impact": "The prior audit blocker is now prospectively satisfied on fresh R1 exact head 7cf849...: deterministic target-free atomic_idx source-map/digest binding, cluster-primary bootstrap, pair-IID sensitivity only, and same-head ordinary CI plus pre-START green. Audit therefore no longer blocks one clean R1 one-way run after final admission packaging and fresh gates.",
-      "prospective_baselines_or_discriminators": [
-        "atomic_idx cluster bootstrap as primary R1 inferential unit",
-        "pair-IID bootstrap as secondary sensitivity",
-        "fresh independent audit of terminal R1 chain before stronger interpretation/successor"
-      ],
-      "allocation_changed": true,
-      "allocation_change": "MAIN owner/scientific target unchanged; execution permission advances from readiness-only to exactly one one-way R1 run after science-invariant authority/admission packaging and final same-head gates. SUB allocation unchanged.",
-      "must_not_change": [
-        "C19-v4 package/STARTED/raw/preserve/evidence/tag/formal PASS",
-        "consumed C19-v2/v3/v4 identities",
-        "v4 per-example outcomes must not be used to tune R1"
-      ]
+      "allocation_changed": false,
+      "strategic_impact": "No R1 score exists to audit. Any future fresh successor of the same question should retain a prospectively frozen cluster-aware inferential contract."
     }
   },
   "sub_exploratory_review": {
-    "classification": "NO_ACTION",
+    "classification": "CONTINUE_EXPLORING",
     "evidentiary_status": "NON_EVIDENTIARY",
-    "candidate": "H4 workspace-threshold / abstention-equivalence under an information-matched continuous baseline",
-    "branch": "research/exploratory-sub-h4-workspace-threshold-20260918@86b6249831afeccab87d948bd07f6f48be118299",
-    "ci": "35225234716:success",
-    "observations": [
-      "fixed synthetic grid contained 200 conditions",
-      "information-matched continuous baseline won 200/200 conditions",
-      "thresholded workspace won 0/200",
-      "50 conditions had latent-above-threshold local evidence suppressed by the gate"
+    "candidate": "H3 duplicate/correlation robustness versus correlation-aware scalar reduction",
+    "branch": "research/exploratory-sub-h3-correlation-reduction-20260918@4b0f90c65cb91fe2d07b19927de1ac4d4a14ba28",
+    "ci": "35248646725:success",
+    "observations": {
+      "n_examples": 4096,
+      "naive_accuracy": 0.737548828125,
+      "exact_source_dedup_accuracy": 0.753662109375,
+      "true_group_normalized_scalar_accuracy": 0.801513671875,
+      "known_group_coalition_proxy_accuracy": 0.801025390625,
+      "group_scalar_coalition_agreement": 0.97900390625
+    },
+    "interpretation": "Exact duplicate-ID collapse does not solve correlated-source overcounting, but the strongest comparator currently receives privileged true correlation-group IDs. This is a reduction/specification warning, not H3 evidence.",
+    "remaining_scientific_choices": [
+      "how correlation groups are observed, inferred or learned",
+      "grouping/noise/corruption model",
+      "comparator information privileges",
+      "calibration/training/tuning budget",
+      "held-out family and metrics",
+      "resource accounting and formal success criteria"
     ],
-    "interpretation": "Useful specification/reduction lesson only: apparent ignition/nonlinearity can disappear against a comparator with the same local information, and stored-but-not-broadcast is a definition/accounting distinction. The outcome is strongly induced by the toy construction and is not H4 evidence.",
-    "decision": "Stop this H4 incubator theme. Do not formalize, relabel as evidence, or continue same-toy sweeps under the current allocation.",
-    "future_integrity_requirement": "Any future H4 formal object must be newly prospective and predeclare an external task/OOD family, local-evidence matching, gate/ignition mechanism, information/resource-matched comparator, held-out contexts/interventions, success/failure criteria, identity and full bindings."
+    "allowed_next_step": "Exactly one bounded synthetic/dev-only oracle-group-privilege removal/sensitivity probe with a prospectively fixed observable/noisy grouping proxy supplied symmetrically to scalar and coalition comparators.",
+    "hard_stop": "Stop if oracle grouping remains essential, tuning/learning/resource choices are required, official data or a formal identity is needed, a second follow-up would be needed, or the work couples to MAIN/R1.",
+    "formalization_allowed_now": false
   },
   "active_line_review": {
-    "A01": {
-      "status": "MIXED_PROGRAMME_CLOSED",
-      "consumed_identity_status": "programme objects consumed/no-rerun",
-      "shortest_path_to_new_information": "fresh independently motivated object only",
-      "simpler_reductions": "ordinary local/provenance/return-address memory explanations",
-      "information_value": "LOW_UNLESS_NEW_OBJECT",
-      "implementation_distance": "FAR",
-      "centrality": "closed"
-    },
-    "RV01": {
-      "status": "DEVELOPMENT_POSITIVE_REDUCIBLE",
-      "consumed_identity_status": "R01-16/R01-17 consumed",
-      "shortest_path_to_new_information": "fresh matched reduction",
-      "simpler_reductions": "learned connection weights/adaptive-delay plasticity",
-      "information_value": "MEDIUM",
-      "implementation_distance": "MEDIUM",
-      "centrality": "secondary_complete"
-    },
-    "RV02": {
-      "status": "TERMINAL_CONSTRUCTION_NEGATIVE",
-      "consumed_identity_status": "D1 consumed/terminal",
-      "shortest_path_to_new_information": "fresh object only",
-      "information_value": "LOW",
-      "implementation_distance": "FAR",
-      "centrality": "terminal"
-    },
-    "CX_CX01": {
-      "status": "TERMINAL_FORMAL_NEGATIVE",
-      "consumed_identity_status": "Candidate-002/formal evidence immutable",
-      "shortest_path_to_new_information": "fresh object only",
-      "information_value": "LOW",
-      "implementation_distance": "FAR",
-      "centrality": "terminal"
-    },
-    "H8_C08": {
-      "status": "TERMINAL_CAUSAL_SPECIALIZATION_NEGATIVE",
-      "shortest_path_to_new_information": "distinct prospective object only",
-      "information_value": "LOW",
-      "implementation_distance": "FAR",
-      "centrality": "terminal"
-    },
-    "H9_C07": {
-      "status": "PRE_START_UNDERSPECIFIED",
-      "strongest_evidence": "no new formal evidence; prior incubator work only exposed methodology/state-accounting confounds",
-      "shortest_path_to_new_information": "fresh persistent-state inventory/reset/resource contract if reprioritized",
-      "information_value": "MEDIUM_IF_FULLY_SPECIFIED",
-      "implementation_distance": "FAR",
-      "centrality": "secondary_paused"
-    },
-    "H4": {
-      "status": "EXPLORATORY_ONLY_NO_ACTION",
-      "strongest_evidence": "no formal evidence; latest synthetic information-matched baseline dominates by construction",
-      "shortest_path_to_new_information": "none on current toy; future formal object only after fresh task/comparator specification",
-      "information_value": "LOW_CURRENT",
-      "implementation_distance": "FAR_FOR_FORMAL",
-      "centrality": "exploratory_closed_for_now"
-    },
-    "C19_V4": {
-      "status": "TERMINAL_PASS_NARROW_REPRESENTATION_GAIN",
-      "strongest_evidence": "immutable target-blind preserved raw plus terminal annotated evidence tag and registered PASS",
-      "audit_status": "WEAKENED_NOT_INVALID",
-      "claim_boundary": "truth_free_surface_structural_representation_gain_only",
-      "unsupported_claims": ["persistent-dynamics novelty", "architecture winner", "population-generalization certainty from pair-IID interval alone"],
-      "shortest_path_to_new_information": "fresh matched reductions; do not rescore v4",
-      "information_value": "COMPLETED_PRIMARY_RESULT",
-      "implementation_distance": "DONE",
-      "centrality": "completed_primary_result"
-    },
-    "C19_R1": {
-      "status": "R1_PRE_START_AUDIT_AMENDMENT_COMPLETE_READY_FOR_AUTHORIZED_ONE_WAY",
-      "strongest_evidence": "exact head 7cf849... now contains the target-free digest-bound atomic_idx source map and cluster-primary inference and passed ordinary CI 35225032841 plus dedicated pre-START 35225032830; identity remains fresh/unSTARTED/unconsumed",
-      "shortest_path_to_new_information": "science-invariant authority/admission wrapper, same-final-SHA revalidation, then exactly one one-way run",
-      "simpler_reduction": "same-I2 label-free stateless revision-authority/certainty arbitration",
-      "information_value": "VERY_HIGH",
-      "implementation_distance": "NEAR",
-      "centrality": "primary"
-    }
+    "A01": {"status": "MIXED_PROGRAMME_CLOSED", "shortest_path_to_new_information": "fresh independently motivated object only", "centrality": "closed"},
+    "RV01": {"status": "DEVELOPMENT_POSITIVE_REDUCIBLE", "consumed": "R01-16/R01-17", "shortest_path_to_new_information": "fresh matched reduction", "centrality": "secondary_complete"},
+    "RV02": {"status": "TERMINAL_CONSTRUCTION_NEGATIVE", "consumed": "D1", "shortest_path_to_new_information": "fresh object only", "centrality": "terminal"},
+    "CX_CX01": {"status": "TERMINAL_FORMAL_NEGATIVE", "shortest_path_to_new_information": "fresh object only", "centrality": "terminal"},
+    "H8_C08": {"status": "TERMINAL_CAUSAL_SPECIALIZATION_NEGATIVE", "shortest_path_to_new_information": "distinct prospective object only", "centrality": "terminal"},
+    "H9_C07": {"status": "PRE_START_UNDERSPECIFIED", "shortest_path_to_new_information": "fresh persistent-state inventory/reset/resource contract if reprioritized", "centrality": "secondary_paused"},
+    "H3": {"status": "EXPLORATORY_NON_EVIDENTIARY_CONTINUE_BOUNDED", "shortest_path_to_new_information": "one oracle-privilege-removal synthetic probe", "centrality": "exploratory_secondary"},
+    "C19_V4": {"status": "TERMINAL_PASS_NARROW_REPRESENTATION_GAIN", "audit_status": "WEAKENED_NOT_INVALID", "claim_boundary": "truth_free_surface_structural_representation_gain_only", "shortest_path_to_new_information": "fresh matched reductions only; v4 immutable", "centrality": "completed_primary_result"},
+    "C19_R1": {"status": "TERMINAL_POST_START_FAILURE_CONSUMED_NO_SCIENTIFIC_RESULT", "shortest_path_to_new_information": "identity-free exact runtime/dependency closure readiness, then fresh Analyst decision", "centrality": "primary_line_paused_at_runtime_integrity_gate"}
   },
   "main_lane": {
-    "target": "C19-R1 audit-aligned representation-matched revision-authority one-way reduction",
-    "scientific_question": "Can C19-v4's same-I2 representation gain be explained by the already-fixed simpler same-I2, label-free, stateless revision-authority/certainty arbitration mechanism?",
+    "target": "C19_R1_POST_START_RUNTIME_CLOSURE_READINESS",
     "recommended_owner": "main",
-    "branch_or_identity": "research/c19-r1-revision-authority-reduction-20260917@7cf849051a68b4227e29fe2f6ee95b2ff277dacd / c19-r1-revision-authority-official-v1",
+    "reservation_status": "reserved_for_main",
+    "main_owns_all_critical_path_fixups": true,
+    "primary_scientific_question": "The R1 matched-reduction question remains unresolved; no valid R1 scientific measurement exists.",
+    "suggested_readiness_branch": "research/readiness-c19-r1-runtime-closure-20260918",
+    "forensic_basis": "research/c19-r1-revision-authority-reduction-20260917@7197ab0f9683616858859446ae9eed7b75707f25",
+    "execution_allowed": false,
+    "scientific_execution_allowed": false,
+    "formal_identity": null,
     "information_value": "VERY_HIGH",
     "implementation_distance": "NEAR",
-    "execution_allowed": true,
-    "execution_limit": "exactly one fresh one-way execution after all final admission gates",
-    "dependencies": [
-      "current Evidence Analyst authority",
-      "unchanged exact R1 controller/I2/input/runtime/resource/source-map/scorer contract",
-      "source map SHA256 cb3ca63703bdab4107e896884908817680dd4fe4b5eebc32b6219075f0187bbb",
-      "science-invariant execution-authority/admission metadata and one-way wrapper",
-      "same-final-SHA ordinary CI and dedicated pre-START green after any authority-wrapper commit",
-      "fresh namespace/source/package/input/runtime/preservation/scorer checks immediately before STARTED"
-    ],
     "allowed_scope": [
-      "mechanical execution-authority metadata and one-way wrapper around the already-fixed R1 contract",
-      "reuse of proven C19 STARTED/no-clobber/raw-before-target/preserve-refetch integrity pattern",
-      "all MAIN critical-path science-invariant CI/preflight/workflow/source/runtime/package/input/preservation/scoring fixes",
-      "exactly one one-way execution after every GO condition passes"
+      "synthetic/dev-only exact dependency/import parity work on a distinct readiness branch",
+      "bind Python version, dependency/install command, manifest and synthetic fixture digest",
+      "network-blocked smoke through the previously failing production acquisition import path",
+      "ordinary CI plus dedicated same-environment runtime smoke",
+      "science-invariant mechanical readiness fixes and forensic comparison only"
     ],
     "forbidden_scope": [
-      "change controller rule/strength/hyperparameters or same-I2 representation",
-      "change official pair universe/input artifacts/base model/runtime/device/resource contract",
-      "change metric/slices/decision thresholds/bootstrap count/RNG/Type-7 quantile/atomic_idx cluster key/source-map semantics",
-      "use v4 or R1 observed outcomes to tune or redesign the run",
-      "modify/rerun/rescore consumed C19-v2/v3/v4",
-      "automatic R2 or any outcome-responsive successor"
+      "retry or repair-and-rerun c19-r1-revision-authority-official-v1",
+      "create STARTED or consume any formal identity",
+      "official Belief-R execution, evaluator target materialization or scoring",
+      "change controller, I2 representation, source-map semantics, pair universe, scorer, cluster statistics or resource contract",
+      "use transient R1 diagnostics as scientific evidence",
+      "automatic R2 or successor execution"
     ],
-    "go_conditions": [
-      "R1 identity fresh/unSTARTED/unconsumed and control/preserve/evidence namespaces collision-free",
-      "exact source/protocol/package/input/runtime/base-model/controller/scorer/preserver/source-map binding",
-      "source map target-free, deterministic, digest-bound, total and fail-closed",
-      "expected 1744 paired universe bound before one-way",
-      "atomic_idx cluster bootstrap primary; all observations of each sampled cluster carried at cluster multiplicity; pair-IID secondary only",
-      "STARTED/no-clobber created before official data read",
-      "target-blind acquisition and immutable raw publication before evaluator targets",
-      "independent raw refetch and digest equality before target materialization/scoring",
-      "target join unique/total/fail-closed and target-safe",
-      "golden scorer/cluster fixtures green",
-      "ordinary CI and dedicated pre-START green on the same final execution SHA",
-      "fresh Analyst authority and final namespace/collision/binding checks clean immediately before STARTED"
-    ],
-    "stop_conditions": [
-      "a new scientific/statistical/resource/controller choice is required",
-      "atomic_idx binding becomes target-dependent, ambiguous, incomplete or non-deterministic",
-      "target leakage or binding/digest/join/scorer integrity failure",
-      "authority/namespace collision",
-      "fresh audit materially invalidates v4 or the fixed R1 contract",
-      "any STARTED/post-START failure; identity then consumed/no-retry"
-    ],
-    "exact_refs_identities_to_recheck": [
-      "research/c19-r1-revision-authority-reduction-20260917",
-      "ops/evidence-analyst-handoff designated latest/state",
-      "control/c19-r1*",
-      "preserve/c19-r1*",
-      "evidence/c19-r1*",
-      "c19-r1-revision-authority-official-v1",
-      "C19-v4 preserve/evidence refs read-only"
-    ],
-    "main_owns_all_critical_path_fixups": true
+    "completion_target": "Prove or fail exact runtime closure on a distinct identity-free readiness branch and STOP for a fresh Evidence Analyst decision."
   },
   "sub_lane": null,
   "sub_fallback": null,
-  "no_sub_lane_reason": "No independently motivated formal secondary object is prospectively complete; the latest H4 workspace-threshold toy is a definition-sensitive NON_EVIDENTIARY methodology lesson and is exhausted for this allocation.",
-  "blocked_until": {
-    "main_one_way": "science-invariant authority/admission wrapper added, final exact head ordinary CI plus dedicated pre-START green, fresh identity/namespace/binding checks clean; then one R1 execution is authorized",
-    "formal_sub": "a genuinely independent prospectively specified object is reserved for SUB",
-    "h4_current_incubator": "stopped_NO_ACTION"
-  },
-  "do_not_touch": [
-    "consumed C19-v2/v3/v4 identities and controls",
-    "immutable C19-v4 preserve/evidence/tag except read-only reference",
-    "C19-v4 per-example outcomes as R1 tuning material",
-    "consumed A01/RV01/RV02/CX identities",
-    "immutable/legacy freeze/formal/evidence refs",
-    "SUB exploratory artifacts as formal evidence",
-    "scheduler definitions"
-  ],
-  "outcome_contingencies": {
-    "current": "R1_PRE_START_AUTHORITY_PACKAGING",
-    "R1_PRE_START_AUTHORITY_PACKAGING": {
-      "trigger": "Audit-requested scientific/statistical amendment is complete, exact-head CI/pre-START green, identity fresh, but repository execution metadata is still false and one-way wrapper absent.",
-      "main_same_run_action": "Add only science-invariant execution-authority/admission metadata and the one-way wrapper; if head moves, rerun ordinary CI and dedicated pre-START on the same final SHA.",
-      "one_way_execution_allowed": false,
-      "prospectively_fixed": true,
-      "stop_if": "Packaging requires any scientific semantic change."
+  "no_sub_lane_reason": "No independently motivated formal secondary object is prospectively complete. H3 is promising exploratory reduction work but current oracle correlation-group privilege blocks formalization; MAIN's runtime blocker is never valid SUB work.",
+  "active_MAIN_SUB_claims_observed": {
+    "MAIN": {
+      "lease_status": "RUNNING_RECONCILIATION_ONLY",
+      "lease_tip_context": "ops/orchestrator-run-report@4715afcdb9e6423845d88171977475bb1e3f4ef0",
+      "run_id": "primary-20260918T0214JST",
+      "active_identity": "c19-r1-revision-authority-official-v1",
+      "active_step": "R1_POST_START_FAILURE_RECONCILIATION",
+      "expected_behavior": "do not mutate/retry consumed identity; reconcile to fresh Analyst authority"
     },
-    "R1_PRE_START_BLOCKER_MECHANICAL": {
-      "trigger": "Science-invariant CI/preflight/workflow/binding defect before STARTED.",
-      "main_same_run_action": "MAIN owns and fixes it, then re-fetches and revalidates exact head.",
-      "one_way_execution_allowed": false,
-      "prospectively_fixed": true,
-      "stop_if": "Fix requires new scientific/statistical/resource semantics."
-    },
-    "R1_PRE_START_CLUSTER_BINDING_GAP": {
-      "trigger": "Declared target-free atomic_idx mapping/source-map/digest cannot remain deterministic, total, unique/fail-closed.",
-      "main_same_run_action": "STOP and return to Analyst; do not invent an alternate cluster.",
-      "one_way_execution_allowed": false,
-      "prospectively_fixed": true
-    },
-    "R1_PRE_START_SEMANTIC_GAP": {
-      "trigger": "Any new controller, resource, representation, metric, threshold, inferential rule or other scientific choice is required.",
-      "main_same_run_action": "STOP for fresh prospective decision.",
-      "one_way_execution_allowed": false,
-      "prospectively_fixed": true
-    },
-    "R1_PRE_START_READY_FOR_ONE_WAY": {
-      "trigger": "Final exact package and authority wrapper frozen; ordinary CI plus dedicated pre-START green on the same SHA; fresh identity/binding/collision checks clean.",
-      "main_same_run_action": "Create STARTED, perform exactly one target-blind acquisition, immutable raw preserve/refetch/digest, target materialization/join, cluster-aware scoring and terminal evidence under the fixed contract.",
-      "one_way_execution_allowed": true,
-      "prospectively_fixed": true,
-      "go_conditions": "all main_lane go_conditions"
-    },
-    "R1_SURVIVES_REDUCTION": {
-      "trigger": "Valid atomic_idx-cluster bootstrap 95% CI for C19-v4 primary BREU minus R1 BREU has lower bound > 0.",
-      "main_same_run_action": "Preserve terminal evidence and report narrow result; STOP. No automatic next reduction.",
-      "one_way_execution_allowed": false,
-      "claim_limit": "Only this revision-authority reduction failed to fully explain v4 gain; not proof of persistent dynamics."
-    },
-    "R1_REDUCED": {
-      "trigger": "Valid atomic_idx-cluster bootstrap 95% CI upper bound <= 0.",
-      "main_same_run_action": "Preserve terminal evidence and report that the simpler state-free reduction explains/matches the gain under this contract; STOP.",
-      "one_way_execution_allowed": false
-    },
-    "R1_INCONCLUSIVE": {
-      "trigger": "Valid atomic_idx-cluster bootstrap 95% CI contains 0.",
-      "main_same_run_action": "Preserve terminal evidence and report inconclusive; STOP.",
-      "one_way_execution_allowed": false
-    },
-    "R1_INVALID_EVIDENCE": {
-      "trigger": "Evidence/integrity chain invalid after STARTED or a terminal classification cannot be trusted.",
-      "main_same_run_action": "STOP; if STARTED the identity is consumed/no-retry; no silent repair or successor.",
-      "one_way_execution_allowed": false
-    },
-    "R1_POST_START_FAILURE": {
-      "trigger": "Any failure after STARTED not explicitly covered by a frozen retry contract.",
-      "main_same_run_action": "Consume/no-retry and STOP; no automatic R2.",
-      "one_way_execution_allowed": false
+    "SUB": {
+      "mode": "exploratory_incubator",
+      "formal_claim": null,
+      "exploratory_branch": "research/exploratory-sub-h3-correlation-reduction-20260918@4b0f90c65cb91fe2d07b19927de1ac4d4a14ba28",
+      "main_frontier_touched": false
     }
   },
-  "active_MAIN_claim_observed": "C19-R1 audit-aligned same-I2 stateless revision-authority reduction; amendment complete and exact-head green, stopped at Analyst review before STARTED.",
-  "active_SUB_claim_observed": "No formal claim; NON_EVIDENTIARY H4 workspace-threshold/information-matched-baseline toy only.",
-  "top_recommendation": "Authorize MAIN to mechanically admission-package the exact amended R1 contract, re-green same-final-SHA gates, then execute exactly one clean R1 one-way identity if every fresh GO condition remains true.",
+  "blocked_until": {
+    "future_r1_like_formal_successor": "blocked until distinct identity-free runtime closure is demonstrated, an exact dependency/environment contract is prospectively frozen, and a later Analyst explicitly defines a fresh successor identity/package",
+    "formal_sub": "blocked until a genuinely independent formal object is prospectively complete and reserved",
+    "h3_incubator": "limited to one bounded NON_EVIDENTIARY oracle-privilege-removal probe"
+  },
+  "outcome_contingencies": {
+    "R1_POST_START_FAILURE": {
+      "status": "terminal_for_consumed_identity",
+      "action": "STOP; no retry; no automatic R2; no scientific result"
+    },
+    "R1_RUNTIME_READINESS_MECHANICAL_BINDING_DEFECT": {
+      "status": "current_interpretation",
+      "action": "MAIN may investigate/fix only on a distinct identity-free readiness branch using synthetic/dev-only work"
+    },
+    "R1_RUNTIME_READINESS_PRE_START_BLOCKER": {
+      "action": "MAIN owns science-invariant readiness CI/package/smoke fixes and may continue same run after exact-head revalidation"
+    },
+    "R1_RUNTIME_READINESS_PASS": {
+      "action": "persist readiness result and STOP for fresh Analyst decision; no successor or STARTED implied"
+    },
+    "R1_RUNTIME_READINESS_SEMANTIC_GAP": {
+      "action": "STOP if closure requires new runtime version, device/resource choice, controller/input/scorer/statistical change or other scientific/resource decision"
+    },
+    "R1_RUNTIME_READINESS_INVALID_INTEGRITY": {
+      "action": "STOP if consumed R1 is mutated/rescued, official/transient data is used improperly, or immutable/identity boundaries collide"
+    },
+    "scientific_PASS_FAIL_INCONCLUSIVE": {
+      "applicable": false,
+      "reason": "No fresh formal successor is authorized. Any future successor requires a new prospective scientific contingency tree before STARTED."
+    }
+  },
+  "do_not_touch": [
+    "consumed C19-v2/v3/v4 identities and STARTED/control refs",
+    "consumed c19-r1-revision-authority-official-v1 and its STARTED/control ref",
+    "C19-v4 preserve/evidence/tag and all immutable formal evidence",
+    "R1 transient diagnostics as scientific evidence or rescue material",
+    "consumed A01/RV01/RV02/CX identities/evidence",
+    "all 13 legacy freeze refs",
+    "SUB H3 exploratory artifacts as formal evidence",
+    "scheduler definitions"
+  ],
+  "consumed_identities": {
+    "C19": ["c19-external-v2-official-v2", "c19-external-v2-official-v3", "c19-external-v2-official-v4", "c19-r1-revision-authority-official-v1"],
+    "other_programmes": ["A01 consumed programme objects", "RV01 R01-16/R01-17", "RV02 D1", "CX/CX01 formal consumed objects"]
+  },
+  "blockers": [
+    "R1 exact identity is consumed/no-retry after post-START missing-torch failure before raw production",
+    "No fresh formal successor identity/package is prospectively defined or authorized",
+    "Exact one-way runtime/dependency parity was not proven by the prior pre-START gates",
+    "H3 exploratory comparator currently relies on privileged true correlation-group IDs",
+    "Server-side authoritative tag namespace protection remains absent but is non-blocking governance debt"
+  ],
+  "top_recommendation": "Do not spend another scientific identity. MAIN should first close the exact R1 production runtime/dependency boundary with identity-free synthetic/dev-only same-environment readiness on a distinct branch, then STOP for fresh Analyst review.",
   "top_3": [
     {
       "rank": 1,
       "owner": "MAIN",
-      "action": "Add science-invariant R1 one-way authority/admission wrapper, re-green same-final-SHA CI plus pre-START, then execute exactly once if all GO gates hold.",
+      "action": "Identity-free exact R1 runtime/dependency closure readiness on a distinct branch",
       "information_value": "VERY_HIGH",
       "distance": "NEAR"
     },
     {
       "rank": 2,
-      "owner": "INDEPENDENT_AUDIT_STREAM",
-      "action": "After R1 terminal evidence, audit terminal provenance and cluster-aware inference before stronger interpretation or successor; a genuinely new material concern arriving before STARTED stops MAIN.",
-      "information_value": "HIGH_CONFIDENCE",
+      "owner": "INDEPENDENT_AUDIT",
+      "action": "Read-only audit of the failed R1 runtime/admission gap and any readiness-only diff before any future successor",
+      "information_value": "HIGH",
       "distance": "NEAR"
     },
     {
       "rank": 3,
-      "owner": "GOVERNANCE_AND_SUB_IDLE",
-      "action": "Reconcile stale #147/#139 text and review generic preservation tooling promotion non-blockingly; formal SUB remains null and may only choose a different independent NON_EVIDENTIARY incubator or no-op.",
-      "information_value": "MEDIUM_OPERATIONAL",
+      "owner": "SUB_INCUBATOR",
+      "action": "One bounded H3 oracle-group-privilege removal/sensitivity probe, NON_EVIDENTIARY, then stop/review",
+      "information_value": "MEDIUM",
       "distance": "NEAR"
     }
   ],
-  "consumed_identities": [
-    "C19-v2 c19-external-v2-official-v2",
-    "C19-v3 c19-external-v2-official-v3",
-    "C19-v4 c19-external-v2-official-v4",
-    "A01 consumed registered objects including MD-001/P2 candidate-002/P3 candidate-001/Family-A P4",
-    "RV01 R01-16/R01-17",
-    "RV02 D1",
-    "CX01 Candidate-002/formal evidence"
-  ],
-  "blockers": [
-    "R1 current repository metadata still forbids execution and current tree lacks a one-way workflow; MAIN must add only science-invariant authority/admission packaging and revalidate the final exact head before STARTED.",
-    "No formal independent SUB lane/fallback is prospectively complete.",
-    "Authoritative tag protection/rulesets are absent; governance gap is non-blocking to the prospectively authorized R1 run but remains real."
-  ],
-  "governance_advisory": {
-    "issue_147": "Stale/obsolete against canonical v4 terminal PASS and R1 frontier; Steward should reconcile exact pointers and close operationally.",
-    "issue_139": "Protection-gap tracker remains valid, but any no-tags premise is stale because a C19-v4 annotated evidence tag now exists.",
-    "tag_protection": "Repository rulesets remain zero; authoritative evidence tag lacks server-side ruleset protection.",
-    "main_protection": "main remains unprotected.",
-    "freeze_migration": "Preserve all 13 legacy freeze branches exactly; no bulk migration before safe tag protection exists.",
-    "main_promotion_candidates": [
-      "generic raw-preservation/digest/no-clobber tooling after independent review"
+  "top_1_go_stop": {
+    "GO": [
+      "readiness branch only; no formal identity and no STARTED",
+      "bind exact Python 3.11.16, dependency/install command/manifest, failed R1 forensic basis and synthetic/dev-only fixture",
+      "exercise exact production acquisition import path through the prior torch import boundary under network blocking",
+      "use only already-declared dependencies for diagnosis unless a new contract is prospectively required",
+      "ordinary CI and dedicated same-environment runtime smoke green on the final readiness SHA"
     ],
-    "remain_research_local": [
-      "R1-specific atomic_idx source-map/cluster/scoring machinery until generalized and stabilized"
+    "raw_before_score": "N/A for readiness because official raw/scoring are forbidden; any future formal successor must retain target-blind raw -> immutable preserve -> independent refetch/digest -> targets -> scoring",
+    "scientific_falsifier": "N/A; no scientific execution is authorized. Readiness PASS/FAIL is engineering/integrity evidence only.",
+    "STOP": [
+      "same-ID retry/rescue",
+      "official data acquisition or scoring",
+      "new controller/representation/source-map/pair-universe/statistical/resource choice",
+      "runtime-version/resource rebinding that requires a fresh formal contract",
+      "use of post-START transient artifacts as evidence",
+      "any attempt to infer a scientific R1 result from this operational failure"
     ]
   },
-  "allocation_changed_due_to_external_or_exploratory_input": {
-    "literature": false,
-    "audit": true,
-    "audit_explanation": "The already-consumed Audit required the amendment; fresh repository evidence now proves the amendment complete, so execution permission advances from readiness-only to exactly one gated R1 one-way run.",
-    "sub_exploratory": false
+  "governance_advisory": {
+    "issue_147": "closed completed against canonical C19-v4 evidence",
+    "issue_139": "open/current; one authoritative evidence tag exists but zero rulesets",
+    "tag_protection_gap": true,
+    "main_protected": false,
+    "repository_ruleset_count": 0,
+    "legacy_freeze_branch_count": 13,
+    "open_pr_count": 0,
+    "main_promotion_candidates": [
+      "generic exact execution-environment/dependency manifest verification",
+      "same-environment pre-START import smoke harness",
+      "generic STARTED/no-clobber/runtime-binding primitives",
+      "raw-preserve/refetch/digest/join validators"
+    ],
+    "research_only_not_promotion_eligible_now": [
+      "R1 scientific controller/scorer/workflow semantics",
+      "SUB H3 exploratory code/artifacts"
+    ]
+  },
+  "allocation_change": {
+    "changed": true,
+    "cause": "fresh repository R1 POST_START_FAILURE and exact runtime/install evidence",
+    "changed_by_literature": false,
+    "changed_by_audit": false,
+    "changed_by_sub_exploration": false,
+    "from": "one authorized R1 one-way execution",
+    "to": "identity-free MAIN runtime-closure readiness only; no successor authorized"
   }
 }
