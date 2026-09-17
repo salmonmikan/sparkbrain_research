@@ -3,12 +3,12 @@
   "execution_mode": "PRIMARY",
   "status": "RUNNING",
   "started_at": "2026-09-17T18:17:17+09:00",
-  "heartbeat_at": "2026-09-17T18:17:17+09:00",
+  "heartbeat_at": "2026-09-17T18:26:30+09:00",
   "analyst_commit": "b7cc088df7c9768bb7e62b40d4c54f273df969eb",
-  "active_branch": null,
+  "active_branch": "research/readiness-raw-preservation-boundary-20260917",
   "active_identity": null,
-  "active_step": "diagnose_generic_raw_preservation_failure",
+  "active_step": "qualify_generic_raw_preservation_boundary",
   "workflow_run_id": null,
-  "expected_next_action": "Inspect the v3 preservation implementation and failed preservation step without recovering/scoring v3 raw, then create an identity-free synthetic readiness branch if the mechanism can be qualified generically.",
+  "expected_next_action": "Collect exact-head CI and raw-preservation readiness workflow state for 158ad46cafcc9d9b17f01a85488562b63e81257d; if the synthetic qualification is green, finalize readiness and stop for a new Analyst scientific-object decision.",
   "owner": "main"
 }
