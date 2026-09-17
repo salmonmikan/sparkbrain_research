@@ -35,7 +35,10 @@ def _remote_branch_sha(remote: str, branch: str) -> str | None:
     if result.returncode == 2:
         return None
     if result.returncode != 0:
-        raise SystemExit(f"unable to inspect remote branch {remote}/{branch}: {result.stderr.strip()}")
+        raise SystemExit(
+            f"unable to inspect remote branch {remote}/{branch}: "
+            f"{result.stderr.strip()}"
+        )
     lines = [line for line in result.stdout.splitlines() if line.strip()]
     if len(lines) != 1:
         raise SystemExit(f"ambiguous remote branch resolution for {remote}/{branch}")
@@ -106,7 +109,10 @@ def main() -> None:
     parser.add_argument("--branch", required=True)
     parser.add_argument("--destination", required=True)
     parser.add_argument("--remote", default="origin")
-    parser.add_argument("--commit-message", default="preserve(c19-r2): retain target-blind raw and source map")
+    parser.add_argument(
+        "--commit-message",
+        default="preserve(c19-r2): retain target-blind raw and source map",
+    )
     parser.add_argument("--result", type=Path)
     args = parser.parse_args()
     result = preserve(
