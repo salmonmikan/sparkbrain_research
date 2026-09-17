@@ -1,149 +1,99 @@
 {
-  "timestamp": "2026-09-18T02:18:00+09:00",
+  "timestamp": "2026-09-18T02:47:25+09:00",
   "worker_role": "main",
-  "execution_mode": "PRIMARY",
-  "evidence_analyst_commit": "42836802e78abd26d19c5b8a789411f2b03d0ea1",
-  "current_lane": "C19-R1 audit-aligned representation-matched revision-authority reduction",
-  "current_phase": "R1_POST_START_FAILURE_CONSUMED_AWAIT_ANALYST",
+  "execution_mode": "RELAY",
+  "evidence_analyst_commit": "fc59c9de3ab29507901cadfea800565271ab5edb",
+  "current_lane": "C19_R1_POST_START_RUNTIME_CLOSURE_READINESS",
+  "current_phase": "R1_RUNTIME_READINESS_WAITING_EXTERNAL",
   "consumed_contingency_branches": [
-    "R1_PRE_START_AUTHORITY_PACKAGING",
-    "R1_PRE_START_READY_FOR_ONE_WAY",
-    "R1_POST_START_FAILURE"
+    "R1_POST_START_FAILURE",
+    "R1_RUNTIME_READINESS_MECHANICAL_BINDING_DEFECT",
+    "R1_RUNTIME_READINESS_PRE_START_BLOCKER"
   ],
   "active_claim": {
-    "branch": "control/c19-r1-revision-authority-started-20260918",
-    "identity": "c19-r1-revision-authority-official-v1",
+    "branch": "research/readiness-c19-r1-runtime-closure-20260918",
+    "identity": null,
     "owner": "main",
-    "status": "consumed_no_retry"
+    "status": "identity_free_readiness_only",
+    "scientific_execution_allowed": false
   },
   "authoritative_target_refs": {
-    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "scientific_basis": "7cf849051a68b4227e29fe2f6ee95b2ff277dacd",
-    "r1_execution_package": "7197ab0f9683616858859446ae9eed7b75707f25",
-    "r1_started_control": "62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2",
-    "analyst": "42836802e78abd26d19c5b8a789411f2b03d0ea1",
-    "r1_atomic_idx_source_map_sha256": "cb3ca63703bdab4107e896884908817680dd4fe4b5eebc32b6219075f0187bbb",
-    "r1_preserve_refs": [],
-    "r1_evidence_tags": [],
-    "authoritative_v4_evidence_tag": "evidence/c19-official-v4-c19-external-v2-official-v4",
-    "legacy_freeze_branch_count_observed": 13
+    "forensic_basis": "research/c19-r1-revision-authority-reduction-20260917@7197ab0f9683616858859446ae9eed7b75707f25",
+    "consumed_r1_started": "control/c19-r1-revision-authority-started-20260918@62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2",
+    "consumed_r1_one_way_run": "35248878958:failure",
+    "readiness_branch": "research/readiness-c19-r1-runtime-closure-20260918@f5f0f7abd02372954aa8edcf10b6c15f9644c122",
+    "analyst": "fc59c9de3ab29507901cadfea800565271ab5edb"
   },
   "fast_path_used": true,
-  "full_reconciliation_triggered": true,
-  "full_reconciliation_reason": "The current Evidence Analyst handoff still describes R1 before STARTED and authorizes one clean execution, but authoritative remote state now contains STARTED commit 62e4f03a... and terminal post-START workflow failure 35248878958. Repository evidence therefore supersedes the stale control-plane snapshot and required broad reconciliation before any mutation.",
-  "branches_prs_advanced": [],
+  "full_reconciliation_triggered": false,
+  "branches_prs_advanced": [
+    {
+      "branch": "research/readiness-c19-r1-runtime-closure-20260918",
+      "base": "7197ab0f9683616858859446ae9eed7b75707f25",
+      "head": "f5f0f7abd02372954aa8edcf10b6c15f9644c122",
+      "change": "Added identity-free runtime-closure workflow only; no scientific contract, formal identity, STARTED, preserve, evidence, scorer, controller, representation, source-map or resource-contract mutation."
+    }
+  ],
   "workflows_experiments": [
     {
-      "kind": "r1_one_way_observed",
-      "run_id": 35248878958,
-      "head": "62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2",
-      "status": "completed",
-      "conclusion": "failure",
-      "failed_step": "Execute target-blind R1 acquisition with network blocked",
-      "failure_class": "runtime_dependency_import_failure_before_target_blind_acquisition",
-      "failure_message": "ModuleNotFoundError: No module named 'torch'",
-      "belief_r_acquisition_step": "success",
-      "target_blind_r1_acquisition_completed": false,
-      "raw_preservation_step": "skipped",
-      "target_materialization_scoring_step": "skipped",
-      "terminal_evidence_step": "skipped",
-      "diagnostic_artifact_id": 10509360230,
-      "diagnostic_artifact_digest": "sha256:e277c15bc52336ca816012b54a9c308d28491c8f32d19160a385394f730f7300"
+      "kind": "identity_free_runtime_closure",
+      "run_id": 35254816937,
+      "head": "f5f0f7abd02372954aa8edcf10b6c15f9644c122",
+      "status_at_checkpoint": "in_progress",
+      "scope": "synthetic/dev-only; exact Python 3.11.16; already-declared learned extras; base-install gap reproduction; network-blocked production-runner import; deterministic synthetic prestart digest checks; non-scientific readiness manifest"
     },
     {
-      "kind": "control_plane_ci",
-      "run_id": 35251728802,
-      "head": "4715afcdb9e6423845d88171977475bb1e3f4ef0",
-      "status_at_observation": "in_progress",
-      "scientific_relevance": "none; triggered by PRIMARY lease persistence on ops/orchestrator-run-report"
+      "kind": "ordinary_ci",
+      "run_id": 35254816864,
+      "head": "f5f0f7abd02372954aa8edcf10b6c15f9644c122",
+      "status_at_checkpoint": "in_progress"
     }
   ],
   "scientific_results": {
     "new_scientific_measurement": false,
     "terminal_scientific_result": null,
-    "classification": "POST_START_FAILURE",
-    "interpretation": "R1 official-v1 crossed STARTED and verified/acquired the pinned Belief-R input, then failed importing torch before target-blind R1 acquisition produced predictions. No R1 raw was preserved, targets were not materialized, scoring did not occur, and the reduction question remains scientifically unanswered."
+    "classification": "READINESS_ONLY_WAITING_EXTERNAL",
+    "interpretation": "The consumed R1 official-v1 scientific question remains unanswered. This Relay run performed only identity-free synthetic/dev runtime closure work prospectively authorized by the latest Evidence Analyst."
   },
   "consumed_identities": {
     "c19-r1-revision-authority-official-v1": {
       "consumed": true,
-      "reason": "POST_START_FAILURE after STARTED",
-      "retry_allowed": false
-    },
-    "do_not_touch": [
-      "consumed C19-v2 identity/control",
-      "consumed C19-v3 identity/control",
-      "consumed C19-v4 identity/control/preserve/evidence",
-      "consumed R1 official-v1 identity/control",
-      "all immutable legacy freeze/formal/evidence refs"
-    ]
+      "retry_allowed": false,
+      "touched_this_run": false
+    }
   },
   "blockers": [
-    "c19-r1-revision-authority-official-v1 is consumed/no-retry after STARTED.",
-    "Current Evidence Analyst authority 42836802... predates the terminal post-START failure and does not authorize a distinct successor.",
-    "Repairing the missing torch dependency and rerunning the same identity is scientifically forbidden; no automatic R2 is authorized."
+    "Dedicated runtime-closure workflow 35254816937 and ordinary CI 35254816864 are still running.",
+    "No formal successor identity or STARTED is authorized. Even a readiness PASS requires STOP for a fresh Evidence Analyst decision."
   ],
   "lease_collision_reconciliation": {
-    "prior_lease_run_id": "relay-20260918T0145JST",
+    "prior_lease_run_id": "primary-20260918T0214JST",
     "prior_lease_status": "BLOCKED",
-    "prior_heartbeat": "2026-09-18T01:51:00+09:00",
-    "collision_window_minutes": 20,
-    "conflicting_fresh_main_running": false,
-    "primary_lease_acquired": true,
-    "primary_lease_acquisition_commit": "4715afcdb9e6423845d88171977475bb1e3f4ef0",
-    "reconciliation_result": "No scientific mutation performed after finding the consumed identity and stale Analyst snapshot."
+    "prior_heartbeat": "2026-09-18T02:19:30+09:00",
+    "fresh_conflicting_primary_running": false,
+    "newer_analyst_authority_observed": true,
+    "newer_analyst_commit": "fc59c9de3ab29507901cadfea800565271ab5edb",
+    "result": "Safe Relay continuation onto distinct identity-free readiness branch."
   },
   "integrity_status": {
-    "scientific_contract_changed_by_primary": false,
-    "research_branch_changed_by_primary": false,
-    "started_ref_changed_by_primary": false,
-    "r1_identity_consumed": true,
-    "retry_allowed": false,
-    "official_belief_r_acquisition_completed": true,
-    "target_blind_r1_acquisition_completed": false,
-    "official_raw_created": false,
-    "official_raw_preserved": false,
+    "consumed_r1_mutated": false,
+    "consumed_r1_retried": false,
+    "formal_identity_created": false,
+    "started_created": false,
+    "official_data_accessed": false,
     "evaluator_targets_materialized": false,
-    "official_scoring_performed": false,
-    "terminal_evidence_created": false,
-    "r1_preserve_namespace_clean": true,
-    "r1_evidence_namespace_clean": true,
-    "immutable_prior_evidence_mutated": false,
-    "raw_before_score_contract_violated": false,
-    "no_clobber_contract_violated": false,
-    "analyst_authority_rechecked_before_persistence": true
+    "scoring_performed": false,
+    "immutable_evidence_modified": false,
+    "readiness_branch_identity_free": true,
+    "analyst_execution_allowed": false
   },
-  "critical_path_fixes_completed": [
-    "No repair was scientifically authorized after STARTED; PRIMARY correctly refrained from modifying or rerunning the consumed object.",
-    "Re-fetched exact R1 execution package and STARTED control refs.",
-    "Re-read terminal one-way job steps and exact traceback confirming missing torch before target-blind prediction generation.",
-    "Re-verified no R1 preserve branch or evidence tag exists.",
-    "Escalated from fast-path startup to full reconciliation because current Analyst authority is stale relative to repository evidence."
+  "critical_path_actions_performed": [
+    "Consumed newer Analyst commit fc59c9de3ab29507901cadfea800565271ab5edb, which explicitly authorizes identity-free R1 runtime closure readiness only.",
+    "Created research/readiness-c19-r1-runtime-closure-20260918 from exact forensic package 7197ab0f9683616858859446ae9eed7b75707f25.",
+    "Added a dedicated readiness workflow that preserves the inherited Python/dependency declarations, reproduces the base-install gap without official data, installs only the already-declared learned dependency group, smoke-imports the exact production R1 runner with network blocked, verifies deterministic synthetic prestart digests, and emits a non-scientific readiness manifest.",
+    "Observed dedicated run 35254816937 and ordinary CI 35254816864 start on exact head f5f0f7abd02372954aa8edcf10b6c15f9644c122.",
+    "Handed off external workflow waiting through MAIN lease rather than occupying the worker."
   ],
-  "same_run_steps": [
-    "Read current Analyst handoff, MAIN report and lease.",
-    "Recovered stale BLOCKED Relay lease and persisted a PRIMARY RUNNING heartbeat.",
-    "Re-fetched R1 package head, STARTED control commit and one-way workflow terminal state.",
-    "Inspected workflow job steps and full failure logs.",
-    "Verified target-blind raw production never completed and downstream preservation/scoring/evidence steps were skipped.",
-    "Performed full reconciliation of main, research branches, PRs, Issues, legacy freeze refs, evidence tags, SUB collision state and current authority movement.",
-    "Re-fetched Evidence Analyst tip immediately before durable reporting and confirmed it remains 42836802....",
-    "Persisted a PRIMARY terminal reconciliation without scientific mutation."
-  ],
-  "stop_reason": "R1_POST_START_FAILURE: the identity is consumed/no-retry and the latest Evidence Analyst handoff has not yet consumed the failure or prospectively defined a distinct next object. Any repair-and-rerun or automatic successor would violate the pre-existing contingency tree.",
-  "work_left_for_sub": "SUB remains independent. Its H3 correlation-reduction probe is NON_EVIDENTIARY and reserved to SUB/exploratory review; PRIMARY did not touch it. SUB must not repair/retry R1.",
-  "reserved_sub_work_not_touched": true,
-  "lane_repartition_reason": null,
-  "next_main_action": "Wait for a newer Evidence Analyst handoff that explicitly consumes STARTED 62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2 and workflow 35248878958. Under the current authority, perform no further scientific mutation. If a distinct future object is justified, it must be prospectively specified with fresh identity/runtime/package bindings before execution.",
-  "write_path_diagnostics": {
-    "github_direct_writes": "working",
-    "primary_lease_acquisition": {
-      "result": "success",
-      "commit": "4715afcdb9e6423845d88171977475bb1e3f4ef0"
-    },
-    "main_latest_persistence": {
-      "result": "success",
-      "commit": "d2f725604eca935296cc0e924781d82a04c8ee5e"
-    }
-  }
+  "stop_reason": "WAITING_EXTERNAL: both exact-head readiness workflows are still running. Analyst prospectively allows mechanical readiness work, but no additional useful local action exists until those results arrive.",
+  "next_main_action": "Collect runs 35254816937 and 35254816864. If both pass, persist R1_RUNTIME_READINESS_PASS and STOP for fresh Analyst review. If either fails, inspect the exact readiness failure and apply only science-invariant readiness fixes that remain within Analyst fc59c9de3ab29507901cadfea800565271ab5edb. Never create STARTED or a formal successor under this authority."
 }
