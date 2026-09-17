@@ -1,12 +1,12 @@
 # MAIN Orchestrator — PRIMARY C19-R1 successor-v2
 
-Timestamp: `2026-09-18 03:20 JST`
+Timestamp: `2026-09-18 03:21 JST`
 Execution mode: `PRIMARY`
 Evidence Analyst authority: `966018058f296098805982a8d206102741c3842c`
 
 ## MAIN frontier
 
-The primary frontier is now the prospectively authorized final operational successor for the unresolved C19-R1 matched reduction:
+The primary frontier is the prospectively authorized final operational successor for the unresolved C19-R1 matched reduction:
 
 - branch: `research/c19-r1-revision-authority-runtime-closed-v2-20260918`
 - exact current package head: `a23975c5713347eaa459161f538a8f0c3db6152e`
@@ -33,18 +33,18 @@ The successor adds only four operational paths relative to `7197ab0f...`:
 3. `configs/external_validation/c19_r1_execution_authority.json`
 4. `scripts/run_c19_r1_official_v2.py`
 
-The frozen science remains bound by exact blobs:
+Frozen bindings remain exact:
 
-- scientific contract: `1174c82fabfbe00f48226a128370b2d83b902efa`
-- scientific protocol source: `be65b3887ba7c67eaf97cf53b456ed17f926fd6a`
-- preregistration: `6a31b94b480cb672214d2a0858bcc833bf0f43b4`
+- scientific contract blob: `1174c82fabfbe00f48226a128370b2d83b902efa`
+- scientific protocol source blob: `be65b3887ba7c67eaf97cf53b456ed17f926fd6a`
+- preregistration blob: `6a31b94b480cb672214d2a0858bcc833bf0f43b4`
 - target-free `atomic_idx` source-map digest: `cb3ca63703bdab4107e896884908817680dd4fe4b5eebc32b6219075f0187bbb`
 
-The wrapper changes only formal execution metadata from v1 to the fresh successor identity/protocol while delegating acquisition/scoring to the byte-identical frozen v1 runner implementation.
+The thin successor wrapper changes only formal execution metadata from v1 to the fresh v2 protocol/identity while delegating acquisition and scoring to the byte-identical frozen v1 runner implementation.
 
 ## Runtime/admission binding
 
-The successful identity-free readiness evidence is bound prospectively into successor-v2:
+The successful identity-free readiness evidence is prospectively bound into successor-v2:
 
 - readiness commit: `f5f0f7abd02372954aa8edcf10b6c15f9644c122`
 - dedicated readiness workflow: `35254816937:success`
@@ -53,20 +53,17 @@ The successful identity-free readiness evidence is bound prospectively into succ
 - runner: `ubuntu-24.04`
 - CPython: `3.11.16`
 - install: `python -m pip install -e .[learned]`
-- declared learned dependencies: `numpy>=2.0`, `torch==2.13.0`
 - resolved readiness environment: `numpy==2.4.6`, `torch==2.13.0+cu130`
 - frozen runtime-manifest SHA-256: `cdb7a2a075f76d4b65b51fc7d0b46f7ecda98646e33902420b2a7e5b7d604fc5`
 
-The new dedicated pre-START gate verifies those exact runtime values, reruns the frozen unit/synthetic contracts, checks frozen science blobs, proves the successor diff is limited to the four operational paths, smoke-imports the production successor runner under network blocking, and checks exact v2 control/preserve/evidence namespaces for freshness.
+## Workflow/check state
 
-## External workflow state
+On exact successor head `a23975c...`:
 
-Push of exact successor head `a23975c...` started the required same-head gates:
+- dedicated successor-v2 pre-START `35258035210` — **completed / success**;
+- ordinary CI `35258035223` — `in_progress` at the final checkpoint.
 
-- dedicated successor-v2 pre-START: `35258035210` — `in_progress`
-- ordinary CI: `35258035223` — `in_progress`
-
-No useful local critical-path action remains until those gates finish, so PRIMARY is not occupying the worker solely to wait.
+The dedicated gate therefore confirms the operational-only diff, frozen science blobs, exact runtime binding, deterministic synthetic fixtures, network-blocked production import, and fresh v2 namespaces on this SHA. STARTED still remains blocked until ordinary CI is also green and all authority/binding/collision facts are freshly re-fetched.
 
 ## Scientific / integrity state
 
@@ -79,13 +76,13 @@ There is **no new scientific measurement** in this checkpoint.
 - immutable C19-v4 evidence was not changed;
 - SUB work was not absorbed or used as evidence.
 
-## Relay continuation
+## Stop / Relay continuation
 
-MAIN lease is `WAITING_EXTERNAL`. Relay continuation is expected and prospectively authorized.
+MAIN lease remains `WAITING_EXTERNAL` because ordinary CI `35258035223` is still running and no useful local critical-path work remains. Relay continuation is expected.
 
-Relay/next PRIMARY must first collect `35258035210` and `35258035223` for exact head `a23975c5713347eaa459161f538a8f0c3db6152e`.
+Relay/next PRIMARY must collect ordinary CI for exact head `a23975c5713347eaa459161f538a8f0c3db6152e` while retaining the already-green dedicated pre-START result `35258035210`.
 
-- If either gate fails mechanically, MAIN owns the science-invariant fix and must rerun both required gates on the new exact final SHA.
-- If any fix would change controller/representation/input/statistics/resources/device/runtime version or other scientific semantics, STOP before STARTED.
-- If both gates are green, re-fetch Analyst authority, exact package head, identity freshness and exact `control/preserve/evidence` namespaces. If all remain clean, the current Analyst contingency `R1_V2_PRE_START_READY` explicitly permits MAIN to create the fresh STARTED marker and continue the exactly-one one-way execution in the same run.
+- If ordinary CI fails mechanically, MAIN owns the science-invariant fix and must rerun both required gates on the new exact final SHA.
+- If a fix would change controller/representation/input/statistics/resources/device/runtime version or other scientific semantics, STOP before STARTED.
+- If ordinary CI is green, re-fetch Analyst authority, exact package head, identity freshness, frozen science/runtime bindings and exact `control/preserve/evidence` namespaces. If all remain clean, current Analyst contingency `R1_V2_PRE_START_READY` permits MAIN to create the fresh STARTED marker and continue the exactly-one one-way execution in the same run.
 - After STARTED, any infrastructure/runtime failure before measurement consumes v2 and terminates the R1 reduction line; never create an automatic v3.
