@@ -1,0 +1,62 @@
+name: C19-R1 pre-START readiness
+
+on:
+  push:
+    branches:
+      - "research/c19-r1-revision-authority-reduction-*"
+    paths:
+      - "configs/external_validation/c19_r1_revision_authority.json"
+      - "src/sparkbrain/v03_external_validation/c19_r1_*.py"
+      - "scripts/check_c19_r1_prestart.py"
+      - "scripts/run_c19_r1_official.py"
+      - "tests/test_c19_r1_revision_authority.py"
+      - ".github/workflows/c19-r1-prestart.yml"
+      - "docs/research/c19_r1_revision_authority_preregistration.md"
+
+permissions:
+  contents: read
+
+jobs:
+  prestart:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11.16"
+          cache: pip
+      - name: Install exact pre-START R1 package
+        run: |
+          set -euo pipefail
+          test "$(python -c 'import platform; print(platform.python_version())')" = '3.11.16'
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+      - name: Lint R1 package
+        run: |
+          python -m ruff check \
+            src/sparkbrain/v03_external_validation/c19_r1_protocol.py \
+            src/sparkbrain/v03_external_validation/c19_r1_revision_authority.py \
+            src/sparkbrain/v03_external_validation/c19_r1_io.py \
+            src/sparkbrain/v03_external_validation/c19_r1_scoring.py \
+            scripts/check_c19_r1_prestart.py \
+            scripts/run_c19_r1_official.py \
+            tests/test_c19_r1_revision_authority.py
+      - name: Unit tests
+        run: python -m pytest -q tests/test_c19_r1_revision_authority.py
+      - name: Synthetic target-blind full-inventory readiness
+        run: python scripts/check_c19_r1_prestart.py
+      - name: Assert no official execution authority exists in package
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          value = json.loads(
+              Path("configs/external_validation/c19_r1_revision_authority.json").read_text()
+          )
+          assert value["official_execution_allowed"] is False
+          assert value["integrity"]["current_handoff_execution_allowed"] is False
+          print("pre-START execution boundary intact")
+          PY
