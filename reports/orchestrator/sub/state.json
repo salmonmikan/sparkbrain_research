@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-09-18T01:49:01+09:00",
+  "timestamp": "2026-09-18T01:52:53+09:00",
   "worker_role": "sub",
   "mode": "exploratory_incubator",
   "evidence_analyst_commit": "42836802e78abd26d19c5b8a789411f2b03d0ea1",
   "consumed_lanes": {
-    "main_lane": "C19-R1 audit-aligned representation-matched stateless revision-authority reduction; MAIN-only; exact-head admission gates green; one-way execution remains MAIN-owned",
+    "main_lane": "C19-R1 audit-aligned representation-matched stateless revision-authority reduction; MAIN-only; official-v1 crossed STARTED and ended POST_START_FAILURE; identity consumed/no-retry",
     "sub_lane": null,
     "sub_fallback": null
   },
@@ -15,7 +15,7 @@
   "execution_allowed": false,
   "sub_active_claim": "EXPLORATORY_NON_EVIDENTIARY_H3_CORRELATION_REDUCTION",
   "main_work_explicitly_avoided": [
-    "C19-R1 branch implementation, admission wrapper, CI/pre-START fixes, STARTED/execution, scoring, preservation, and successor design",
+    "C19-R1 branch implementation, admission wrapper, CI/pre-START fixes, STARTED/execution, post-START failure diagnosis/repair/retry, scoring, preservation, and successor design",
     "C19-v4 immutable control/preserve/evidence and official Belief-R materials",
     "C19-v2/v3/v4 consumed identities",
     "MAIN candidate-specific binding, verifier, review, and critical-path work"
@@ -24,11 +24,16 @@
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "evidence_analyst": "42836802e78abd26d19c5b8a789411f2b03d0ea1",
     "control_brain": "d8987f8c6d88fad48a8f652f4255e73b30a223e6",
-    "orchestrator_report_tip_before_sub_write": "6d8d6dd4cc8d70b712fdefa341f69e9d68a69f03",
+    "orchestrator_main_reconciled_tip": "87a3c1796e215b349035a3ef55222fae0fe90ca2",
     "c19_r1": "research/c19-r1-revision-authority-reduction-20260917@7197ab0f9683616858859446ae9eed7b75707f25",
-    "c19_r1_started_refs": [],
+    "c19_r1_started_refs": [
+      "control/c19-r1-revision-authority-started-20260918@62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2"
+    ],
     "c19_r1_exact_head_ordinary_ci": "35246655185:success",
     "c19_r1_exact_head_prestart": "35246655189:success",
+    "c19_r1_one_way": "35248878958:failure:POST_START_FAILURE",
+    "c19_r1_preserve_refs": [],
+    "c19_r1_evidence_refs": [],
     "c19_v4_evidence_tag": "evidence/c19-official-v4-c19-external-v2-official-v4",
     "exploratory_branch": "research/exploratory-sub-h3-correlation-reduction-20260918@4b0f90c65cb91fe2d07b19927de1ac4d4a14ba28",
     "exploratory_exact_head_ci": "35248646725:success",
@@ -79,6 +84,15 @@
       "boundary_document": "artifacts/exploratory_h3_correlation_reduction/README.md",
       "formal": false,
       "identity": null
+    },
+    "main_only_observed_concurrent_workflow": {
+      "run_id": 35248878958,
+      "status": "completed",
+      "conclusion": "failure",
+      "classification": "POST_START_FAILURE",
+      "failed_step": "Execute target-blind R1 acquisition with network blocked",
+      "failure_message": "ModuleNotFoundError: No module named 'torch'",
+      "sub_diagnosed_or_repaired": false
     }
   },
   "scientific_readiness_exploratory_results": {
@@ -92,41 +106,12 @@
       "latent_group_truth_probability": 0.7,
       "within_group_source_agreement_probability": 0.9,
       "member_patterns": [
-        [
-          1,
-          1,
-          1,
-          1,
-          1
-        ],
-        [
-          1,
-          1,
-          2,
-          4,
-          8
-        ],
-        [
-          8,
-          4,
-          2,
-          1,
-          1
-        ],
-        [
-          1,
-          2,
-          4,
-          8,
-          16
-        ]
+        [1, 1, 1, 1, 1],
+        [1, 1, 2, 4, 8],
+        [8, 4, 2, 1, 1],
+        [1, 2, 4, 8, 16]
       ],
-      "exact_duplicate_pattern": [
-        1,
-        1,
-        2,
-        4
-      ]
+      "exact_duplicate_pattern": [1, 1, 2, 4]
     },
     "accuracy": {
       "naive": 0.737548828125,
@@ -136,13 +121,7 @@
     },
     "group_normalized_vs_group_majority_agreement": 0.97900390625,
     "adversarial_correlated_wrong_group": {
-      "wrong_distinct_source_counts": [
-        1,
-        2,
-        4,
-        8,
-        16
-      ],
+      "wrong_distinct_source_counts": [1, 2, 4, 8, 16],
       "at_counts_4_8_16": "naive and exact-source-dedup predict wrong sign; group-normalized scalar and group-majority proxy predict correct sign"
     },
     "interpretation": "In this constructed world, exact-ID dedup does not correct correlation overcounting across distinct source IDs, while a simpler scalar comparator with privileged true correlation-group information nearly matches the coalition-style proxy. This is comparator-information/reduction pressure, not H3 evidence."
@@ -183,12 +162,14 @@
       "c19-external-v2-official-v2",
       "c19-external-v2-official-v3",
       "c19-external-v2-official-v4",
+      "c19-r1-revision-authority-official-v1",
       "A01 consumed identities",
       "RV01 R01-16/R01-17",
       "RV02 D1",
       "CX01 Candidate-002"
     ],
-    "c19_r1_revision_authority_official_v1_observed_consumed": false
+    "c19_r1_revision_authority_official_v1_observed_consumed": true,
+    "c19_r1_consumption_reason": "POST_START_FAILURE after STARTED; retry_allowed=false"
   },
   "blockers": {
     "formal_lane": [
@@ -196,17 +177,18 @@
     ],
     "exploratory_validation": [],
     "main_only": [
-      "C19-R1 is MAIN-owned; exact-head admission is green but SUB must not create STARTED, execute it, diagnose it, or design its successor."
+      "C19-R1 official-v1 is consumed/no-retry after POST_START_FAILURE; SUB must not diagnose, repair, retry, score, preserve, or design an automatic successor. MAIN is blocked pending a newer Evidence Analyst handoff."
     ]
   },
   "collision_reconciliation": {
-    "current_main_frontier": "C19-R1@7197ab0f9683616858859446ae9eed7b75707f25; exact-head ordinary CI 35246655185 success; pre-START 35246655189 success; no control/c19-r1 STARTED ref observed at closeout",
+    "current_main_frontier": "C19-R1@7197ab0f9683616858859446ae9eed7b75707f25 crossed STARTED via control/c19-r1-revision-authority-started-20260918@62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2; one-way 35248878958 ended POST_START_FAILURE before raw predictions; identity consumed/no-retry",
     "main_frontier_touched_by_sub": false,
     "main_dependency_created_by_sub": false,
     "official_inputs_or_outputs_used_by_sub": false,
     "evidence_analyst_tip_at_write": "42836802e78abd26d19c5b8a789411f2b03d0ea1",
-    "orchestrator_tip_before_write": "6d8d6dd4cc8d70b712fdefa341f69e9d68a69f03",
-    "concurrent_main_reporting_preserved": true
+    "main_report_tip_reconciled": "87a3c1796e215b349035a3ef55222fae0fe90ca2",
+    "concurrent_main_reporting_preserved": true,
+    "late_concurrent_movement_reconciled": true
   },
   "integrity_state": {
     "status": "EXPLORATORY_NON_EVIDENTIARY_BOUNDARY_HELD",
@@ -222,7 +204,7 @@
   "completion_target": {
     "target": "One bounded independent H3 correlation-aware scalar reduction probe.",
     "status": "reached",
-    "result": "New exploratory branch, fixed synthetic probe, deterministic tests, result artifact and NON_EVIDENTIARY boundary document persisted; final exact-head ordinary CI green."
+    "result": "New exploratory branch, fixed synthetic probe, deterministic tests, result artifact and NON_EVIDENTIARY boundary document persisted; final exact-head ordinary CI green; late concurrent R1 STARTED/post-START failure reconciled without SUB intervention."
   },
   "fallback_status": {
     "sub_fallback": null,
@@ -238,5 +220,5 @@
     "h5": "returned to Evidence Analyst; not automatically continued",
     "h6": "returned to Evidence Analyst; not automatically continued"
   },
-  "next_sub_action": "Return the H3 NON_EVIDENTIARY correlation-reduction probe to Evidence Analyst for classification. Do not touch C19-R1 and do not automatically continue or formalize H3 before fresh Analyst review."
+  "next_sub_action": "Return the H3 NON_EVIDENTIARY correlation-reduction probe to Evidence Analyst for classification. Do not touch the consumed R1 official-v1 identity and do not automatically continue or formalize H3 before fresh Analyst review."
 }
