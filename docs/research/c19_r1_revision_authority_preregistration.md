@@ -53,26 +53,36 @@ prospectively prefer the revision (step 1).
 
 This is a reduction/sufficiency test, not a compute-matched superiority claim.
 
-## Raw and evidence integrity
+## Raw, cluster-source, and evidence integrity
 
 The official runner is prepared but is not authorized by the current handoff.
 A future one-way run requires a new Evidence Analyst authorization and a fresh
 STARTED ref bound to the exact package head.
+
+The independent-audit amendment fixes `atomic_idx` as the primary inference
+cluster before STARTED. A deterministic source-map artifact contains exactly one
+`pair_index -> atomic_idx` assignment for every registered pair and no evaluator
+target fields. Its canonical SHA-256 digest is recorded in the raw manifest. The
+source map is preserved together with raw and the raw manifest before evaluator
+targets may be materialized. The ordering used for deterministic RNG indexing is
+first cluster occurrence in pair-index order.
 
 On a future authorized run:
 
 1. STARTED exists before official cache access;
 2. acquisition is target blind and network blocked;
 3. R1 raw contains exactly `5 * 1744 = 8720` records;
-4. raw is immutably preserved and independently re-fetched/digest-verified
-   before evaluator targets exist;
-5. evaluator join is unique, total, and bound to the final visible record;
-6. scoring consumes immutable R1 raw plus the exact immutable C19-v4 raw bound
-   to preserve commit `d8fcc5216ff24940836972816cb0ec8f11e4ba06` and raw
-   digest `692f8a5dba48f604eb1f5518a8545b80da01e1a00a9e2d2b6b1c0567355d65af`;
-7. any failure after STARTED consumes the R1 identity; no retry is allowed.
+4. the target-free atomic source map assigns all 1,744 pairs exactly once;
+5. raw, source map, and manifest are immutably preserved and independently
+   re-fetched/digest-verified before evaluator targets exist;
+6. evaluator join is unique, total, and bound to the final visible record;
+7. scoring consumes immutable R1 raw/source map plus the exact immutable C19-v4
+   raw bound to preserve commit `d8fcc5216ff24940836972816cb0ec8f11e4ba06`
+   and raw digest
+   `692f8a5dba48f604eb1f5518a8545b80da01e1a00a9e2d2b6b1c0567355d65af`;
+8. any failure after STARTED consumes the R1 identity; no retry is allowed.
 
-## Fixed reduction contrast
+## Fixed reduction contrast and inferential unit
 
 For each pair, correctness is averaged across the same five seeds separately
 for C19-v4 primary `I2/G1/E0` and R1. The per-pair delta is:
@@ -80,16 +90,25 @@ for C19-v4 primary `I2/G1/E0` and R1. The per-pair delta is:
 `mean_correct(v4 primary) - mean_correct(R1)`
 
 The registered BREU effect averages that delta separately on the fixed update
-and maintain slices, then averages the two slice effects. The paired bootstrap
-uses exactly 10,000 resamples of 1,744 pair indices with seed `19901` and the
-same linear empirical 2.5%/97.5% quantile rule as C19-v4.
+and maintain slices, then averages the two slice effects.
+
+The **primary** uncertainty analysis is an `atomic_idx` cluster bootstrap. Each
+resample draws exactly the number of unique `atomic_idx` clusters with
+replacement. Whenever a cluster is drawn, every registered paired observation
+belonging to that cluster is carried into the resample at the same cluster
+multiplicity. The bootstrap uses exactly 10,000 resamples, RNG seed `19901`, and
+the frozen linear/Type-7 empirical 2.5%/97.5% quantile semantics.
+
+The former 1,744-draw pair-IID bootstrap is retained unchanged only as a
+**secondary sensitivity analysis**; it cannot govern the primary classification.
 
 Classification is fixed before R1 STARTED:
 
-- `SURVIVES_REDUCTION`: 95% paired CI lower bound `> 0`.
-- `REDUCED`: 95% paired CI upper bound `<= 0`.
-- `INCONCLUSIVE`: CI contains `0`.
-- `INVALID_EVIDENCE`: any binding/raw/digest/join/target-safety/scorer violation.
+- `SURVIVES_REDUCTION`: primary 95% atomic-cluster CI lower bound `> 0`.
+- `REDUCED`: primary 95% atomic-cluster CI upper bound `<= 0`.
+- `INCONCLUSIVE`: primary atomic-cluster CI contains `0`.
+- `INVALID_EVIDENCE`: any binding/raw/source-map/digest/join/target-safety/scorer
+  violation.
 
 Survival rejects only this particular stateless authority reduction. It does
 **not** establish persistent-dynamics novelty; an explicit/implicit finite-state
@@ -98,6 +117,7 @@ tracker remains the next prospective reduction if R1 survives.
 ## Current stop boundary
 
 The current Evidence Analyst handoff does **not** authorize STARTED or one-way
-execution. MAIN may only build/fix/revalidate this pre-START package. Once the
-exact branch head is green in ordinary CI and the dedicated R1 pre-START gate,
-MAIN must return to the Analyst for fresh execution authorization.
+execution. MAIN may only implement/fix/revalidate this audit-aligned pre-START
+package. Once the exact amended branch head is green in ordinary CI and the
+dedicated R1 pre-START gate, MAIN must return to the Analyst for fresh execution
+authorization.
