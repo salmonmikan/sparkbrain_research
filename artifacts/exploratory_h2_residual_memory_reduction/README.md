@@ -84,3 +84,6 @@ seeds/runtime/bindings, and a fresh identity.
   fresh protocol/package/bindings/identity
 - `promotion_recommendation`: `REJECT` the current toy as a formalization candidate;
   retain only the reduction lesson that future H2 work must beat strong matched memory
+
+This bounded H2 probe is complete. Do not continue this toy automatically; return it
+to Evidence Analyst for classification before any further H2 exploration.
