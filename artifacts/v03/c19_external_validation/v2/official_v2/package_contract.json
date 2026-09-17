@@ -1,0 +1,90 @@
+{
+  "schema_version": "1",
+  "package_id": "c19-external-v2-official-package-v2",
+  "protocol_id": "c19-external-v2-official-protocol-v2",
+  "planned_official_identity": "c19-external-v2-official-v2",
+  "status": "prestart_reviewable_not_execution_admitted",
+  "evidence_analyst_authority": "280bf94f369071efbc727a0e141fd592ddfa0e08",
+  "source_base_commit": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
+  "inherited_frozen_protocol_head": "90c936a7abca7eba0dac1f977753503551e73368",
+  "inherited_source_binding_blob": "858c8f739a06a5b96d092b5e8e8af43916c73ff6",
+  "inherited_protocol_blob": "88d2eabaf8309aa2a0266d91f7463d1a8dcdc38f",
+  "v2_source_blobs": {
+    "official_protocol_v2.py": "cc852a774426af09832fe68c67d19a467c32812d",
+    "official_execution_v2.py": "d6a6293dce9d0924ee83ed763cf7a13900c0c044",
+    "official_scoring_v2.py": "85fd33195d1ec99d8f9f716bad69c1bdda20e45e",
+    "test_c19_official_v2_scoring.py": "9670f8a0a52568200cc02a4acecb40e0c2305092"
+  },
+  "scientific_inheritance": {
+    "row_inventory": "unchanged inherited 30 condition + 25 baseline rows",
+    "official_pairs_per_row": 1744,
+    "official_seeds": [15901, 15902, 15903, 15904, 15905],
+    "primary_condition": "I2_truth_free_symbolic_surface/G1_coalition/E0_global",
+    "reference_condition": "I1_local_compositional/G1_coalition/E0_global",
+    "primary_metric": "BREU",
+    "claim_boundary": "truth_free_surface_structural_representation_gain_only"
+  },
+  "evaluator_contract": {
+    "materialize_after_immutable_raw_preservation": true,
+    "fields": [
+      "pair_index",
+      "record_id_hash",
+      "source_index",
+      "step_index",
+      "target_choice_id",
+      "update_required"
+    ],
+    "join_key": ["pair_index", "record_id_hash", "source_index", "step_index"],
+    "expected_targets": 1744,
+    "expected_update_pairs": 1074,
+    "expected_maintain_pairs": 670,
+    "unique_total_required": true,
+    "duplicate_or_missing": "fail_closed",
+    "target_truth_model_side": false
+  },
+  "bootstrap_contract": {
+    "python_implementation": "CPython",
+    "python_version": "3.11.16",
+    "rng": "random.Random(19901)",
+    "resamples": 10000,
+    "draws_per_resample": 1744,
+    "draw_expression": "sequential randrange(1744)",
+    "shared_sample_vector_across_primary_reference_and_all_five_seeds": true,
+    "seed_aggregation": "recompute per-seed BU_Acc/BM_Acc/BREU then mean the five seed BREU values",
+    "primary_contrast": "primary_condition_minus_reference_condition",
+    "quantile": {
+      "rule": "sort finite effects; r=(N-1)*p; floor/ceil linear interpolation",
+      "ties": "retained",
+      "reject": ["empty", "wrong_length", "NaN", "+inf", "-inf"],
+      "p0": "min",
+      "p1": "max",
+      "lower_p": 0.025,
+      "upper_p": 0.975,
+      "round_before_classification": false
+    }
+  },
+  "result_classification": {
+    "PASS": "95% CI lower > 0",
+    "FAIL": "95% CI upper <= 0",
+    "INCONCLUSIVE": "valid CI contains 0",
+    "INVALID_EVIDENCE": "binding/join/completeness/leakage/ordering/integrity violation"
+  },
+  "integrity": {
+    "STARTED_created": false,
+    "official_data_accessed": false,
+    "workflow_dispatched": false,
+    "identity_consumed": false,
+    "raw_before_score": true,
+    "immutable_raw_before_evaluator_targets": true,
+    "no_clobber": true,
+    "same_identity_retry_after_STARTED": false,
+    "exact_package_commit_bound_at_future_admission": true
+  },
+  "remaining_admission_gates": [
+    "exact-head CI green",
+    "fresh authority reconciliation immediately before STARTED",
+    "exact source/parser/envelope/input binding reconstruction",
+    "concrete immutable raw preservation authority binding",
+    "no prior STARTED/raw/scored/output collision"
+  ]
+}
