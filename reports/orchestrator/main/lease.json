@@ -1,15 +1,15 @@
 {
-  "run_id": "primary-20260918T0514JST",
+  "run_id": "primary-20260918T0613JST",
   "execution_mode": "PRIMARY",
-  "status": "BLOCKED",
-  "started_at": "2026-09-18T05:14:37+09:00",
-  "heartbeat_at": "2026-09-18T05:17:44+09:00",
+  "status": "RUNNING",
+  "started_at": "2026-09-18T06:13:41+09:00",
+  "heartbeat_at": "2026-09-18T06:13:41+09:00",
   "analyst_commit": "b09d90d0545a0448ea5a310f9373969e7471b15d",
   "active_branch": "research/c19-r2-fsa-state-tracker-spec-20260918",
   "active_identity": null,
-  "active_step": "R2_PRE_START_READY_FOR_ANALYST_REVIEW",
+  "active_step": "R2_PRE_START_GATE_RECHECK",
   "workflow_run_id": 35265194183,
   "workflow_run_ids": [35265194183, 35265194243],
-  "expected_next_action": "Wait for a newer Evidence Analyst handoff. Current authority b09d90d0545a0448ea5a310f9373969e7471b15d hard-stops R2 at pre-formal readiness. Do not reserve a formal identity, create STARTED, access official R2 data, or dispatch official execution until a fresh handoff prospectively authorizes that boundary.",
+  "expected_next_action": "Re-fetch the current Evidence Analyst authority, exact R2 head, same-head readiness workflows, identity/STARTED/preserve/evidence namespaces, and SUB collision state. If authority remains b09d90d0545a0448ea5a310f9373969e7471b15d, enforce R2_PRE_START_READY_FOR_ANALYST_REVIEW hard STOP and return the lease to BLOCKED without scientific mutation.",
   "owner": "main"
 }
