@@ -1,72 +1,72 @@
 {
-  "timestamp": "2026-09-17T19:52:12+09:00",
+  "timestamp": "2026-09-17T20:18:00+09:00",
   "worker_role": "main",
-  "execution_mode": "RELAY",
-  "evidence_analyst_commit": "ef858fe9e6fbe9d0bdd57bc43a15e07ec0b30c23",
+  "execution_mode": "PRIMARY",
+  "evidence_analyst_commit": "56f0665ccc536bff6bf48e9eb581ec9a9eafcecc",
   "current_lane": {
     "target": "C19 official-v4 preservation-qualified final successor",
     "phase": "V4_PRE_START_VALIDATION_WAIT",
     "branch": "research/c19-official-v4-preservation-qualified-20260917",
     "identity": "c19-external-v2-official-v4",
-    "package_head": "a0ba353ff33abc981875c9d02af2e171a1bc65f6",
+    "package_head": "74bfe6b4a39758656f291baaa3f16236e3e71964",
     "formal_execution_allowed_now": false
   },
-  "contingency_consumed": "V4_PRE_START_BUILD",
+  "analyst_lanes": {
+    "main_lane": "C19 official-v4 preservation-qualified final successor",
+    "sub_lane": null,
+    "sub_fallback": null
+  },
+  "consumed_contingency_branches": [
+    "V4_PRE_START_BLOCKER_LINT"
+  ],
+  "active_claim": "C19-v4 remains prospective and scientifically unchanged; current work is lint-only exact-head admission repair.",
   "authoritative_target_refs": {
     "science_basis": "research/c19-official-v3-runtime-closed-20260917@84b244959f249da916a36906508ead0830052e9b",
-    "preservation_basis": "research/readiness-raw-preservation-boundary-20260917@158ad46cafcc9d9b17f01a85488562b63e81257d",
-    "qualified_preserve_ref": "readiness/raw-preservation-35204638939@8a4d0107a3251def652fd848a1da5b0731ff3283",
-    "v4_package": "research/c19-official-v4-preservation-qualified-20260917@a0ba353ff33abc981875c9d02af2e171a1bc65f6",
+    "v4_pre_lint_head": "research/c19-official-v4-preservation-qualified-20260917@a0ba353ff33abc981875c9d02af2e171a1bc65f6",
+    "v4_final_head": "research/c19-official-v4-preservation-qualified-20260917@74bfe6b4a39758656f291baaa3f16236e3e71964",
     "v4_control_refs": [],
     "v4_preserve_refs": [],
     "v4_evidence_tags": []
   },
   "fast_path_used": true,
   "full_reconciliation_reason": null,
-  "lease_collision_reconciliation": {
-    "prior_primary_run_id": "primary-20260917T1913JST",
-    "prior_primary_heartbeat": "2026-09-17T19:16:00+09:00",
-    "prior_primary_status": "RUNNING",
-    "prior_lease_age_at_relay_start_minutes": 29,
-    "same_target_remote_movement_after_primary_heartbeat": false,
-    "relay_takeover": "allowed_after_stale-lease reconciliation",
-    "current_lease_status": "WAITING_EXTERNAL"
+  "branches_prs_advanced": {
+    "research/c19-official-v4-preservation-qualified-20260917": [
+      "bb279e313c2d9612055ddb67eb1a9a8aee22b374",
+      "74bfe6b4a39758656f291baaa3f16236e3e71964"
+    ],
+    "prs": []
   },
-  "critical_path_actions_performed": [
-    "reconciled stale PRIMARY lease against fresh Analyst authority and exact v4 branch",
-    "confirmed v4 branch remained at exact v3 science basis with no STARTED/control/preserve/evidence authority",
-    "integrated the already-qualified generic preservation primitive and its synthetic no-clobber test",
-    "added fresh v4 protocol/run/package authority wrappers while inheriting v3 scientific semantics",
-    "added explicit v4-v3 scientific-contract invariance test",
-    "added v4 runtime/synthetic acquisition checker and runner",
-    "added v4 pre-START admission workflow",
-    "added v4 one-way workflow using qualified preservation, independent refetch/digest verification, preserve-before-target ordering, and terminal evidence tag flow",
-    "advanced v4 branch to a0ba353ff33abc981875c9d02af2e171a1bc65f6 without force",
-    "observed exact-head pre-START admission workflow 35212637922 and ordinary CI 35212637754 start"
-  ],
-  "workflow_check_state": {
-    "prestart_admission": {
-      "run_id": 35212637922,
-      "head": "a0ba353ff33abc981875c9d02af2e171a1bc65f6",
-      "status_at_checkpoint": "in_progress",
-      "conclusion": null
-    },
-    "ordinary_ci": {
-      "run_id": 35212637754,
-      "head": "a0ba353ff33abc981875c9d02af2e171a1bc65f6",
-      "status_at_checkpoint": "in_progress",
-      "conclusion": null
-    }
+  "workflows_experiments": {
+    "prior_prestart": "35212637922:completed:success@a0ba353ff33abc981875c9d02af2e171a1bc65f6",
+    "prior_ci": "35212637754:completed:failure:ruff@a0ba353ff33abc981875c9d02af2e171a1bc65f6",
+    "final_head_ci": "35214841871:in_progress@74bfe6b4a39758656f291baaa3f16236e3e71964",
+    "final_head_prestart": "35214841877:in_progress@74bfe6b4a39758656f291baaa3f16236e3e71964",
+    "one_way_dispatched": false,
+    "official_experiment_started": false
   },
   "scientific_results": {
     "new_scientific_information": false,
     "terminal_scientific_result": null,
-    "interpretation": "Only prospectively authorized v4 pre-START build/admission work advanced. No official data was accessed, no STARTED marker exists, and v4 remains unconsumed."
+    "interpretation": "Only behavior-preserving lint cleanup and exact-head revalidation were performed. No official data access, STARTED, raw, preservation, target materialization, scoring, or identity consumption occurred."
   },
   "consumed_identities": {
     "c19-external-v2-official-v2": "consumed:no-retry:untouched",
     "c19-external-v2-official-v3": "consumed:no-retry:untouched",
     "c19-external-v2-official-v4": "fresh:unSTARTED:unconsumed"
+  },
+  "blockers": [
+    "final exact-head ordinary CI 35214841871 still in progress",
+    "final exact-head dedicated pre-START 35214841877 still in progress"
+  ],
+  "lease_collision_reconciliation": {
+    "prior_run_id": "relay-20260917T1945JST",
+    "prior_status": "WAITING_EXTERNAL",
+    "prior_heartbeat": "2026-09-17T19:52:12+09:00",
+    "lease_age_at_primary_recovery_minutes": 22,
+    "target_head_before_mutation": "a0ba353ff33abc981875c9d02af2e171a1bc65f6",
+    "unexpected_remote_movement": false,
+    "primary_recovery": "allowed after stale-lease and exact-target reconciliation"
   },
   "integrity_status": {
     "status": "V4_PRE_START_VALIDATION_WAIT",
@@ -77,19 +77,35 @@
     "v4_identity_consumed": false,
     "v2_v3_retried_or_recovered": false,
     "immutable_scientific_evidence_modified": false,
-    "qualified_preservation_integrated": true,
-    "fresh_v4_control_namespace_collision": false,
-    "fresh_v4_preserve_namespace_collision": false,
-    "fresh_v4_evidence_namespace_collision": false
+    "lint_changes_behavior_preserving": true,
+    "prior_green_prestart_not_reused_after_head_change": true
   },
-  "same_run_stop_reason": "Both exact-head validation workflows are external and still in progress. Under the relay waiting policy, MAIN persisted the exact package head and workflow IDs and stopped rather than occupying the worker solely waiting.",
-  "next_main_action": "Collect workflows 35212637922 and 35212637754. If both are green, perform fresh authority/identity/binding/collision GO checks immediately before any STARTED creation. If a failure is mechanical and science-invariant, fix/reverify under V4_PRE_START_BLOCKER; STOP for Analyst on any semantic, runtime-version, protocol, metric, baseline, seed, matrix, input-resource or scorer-contract choice.",
-  "work_left_for_sub": "No formal SUB lane/fallback; SUB must not touch C19-v4 and may only pursue a different independent NON_EVIDENTIARY incubator target or no-op.",
+  "main_critical_path_fixups_completed": [
+    "collected exact Ruff diagnostics from ordinary CI 35212637754",
+    "wrapped one overlong argparse construction",
+    "removed two unnecessary quoted forward annotations",
+    "advanced v4 branch by fast-forward only to 74bfe6b4a39758656f291baaa3f16236e3e71964",
+    "triggered fresh ordinary CI and dedicated pre-START on the same final exact head"
+  ],
+  "same_run_steps_completed": [
+    "read latest Analyst authority and MAIN lease/report",
+    "reconciled stale RELAY lease and exact v4 head",
+    "confirmed dedicated pre-START success and ordinary CI lint-only failure on a0ba353",
+    "inspected failed CI job logs",
+    "applied only prospectively authorized mechanical lint fixes",
+    "re-fetched final branch head",
+    "identified final-head workflow runs 35214841871 and 35214841877",
+    "persisted WAITING_EXTERNAL checkpoint for Relay continuation"
+  ],
+  "same_run_stop_reason": "The two required validations on final exact head 74bfe6b4a39758656f291baaa3f16236e3e71964 are external and still in progress. No other useful local critical-path mutation remains until their results are known.",
+  "work_left_for_sub": "No formal SUB lane/fallback. SUB remains independent on bounded NON_EVIDENTIARY H9 exploration and must not touch C19-v4.",
+  "reserved_sub_work_not_touched": true,
+  "lane_repartition_reason": null,
+  "next_main_action": "Collect ordinary CI 35214841871 and dedicated pre-START 35214841877 for exact head 74bfe6b4a39758656f291baaa3f16236e3e71964. If both are green, re-fetch Analyst authority, exact branch head, v4 identity freshness, control/preserve/evidence collisions, and all source/protocol/package/input/runtime/scorer/preserver bindings immediately before STARTED. If either fails mechanically, fix only science-invariant defects and revalidate both; STOP for Analyst on any semantic/runtime/scientific redesign need.",
   "write_path_diagnostics": {
-    "relay_lease_takeover": "success@309764d78b66da684eebe578a61e6c8eeadc578e",
-    "v4_tree": "0ce838110bf956544aae5195bdb011f37a4d90b3",
-    "v4_commit": "a0ba353ff33abc981875c9d02af2e171a1bc65f6",
-    "v4_ref_fast_forward": "success",
-    "relay_wait_lease": "success@a089dd7feacca9af5dc89d942bf60b85ddf2920a"
+    "primary_lease_recovery": "success@06f66687532ac24588b4e069d07f7887fa159569",
+    "script_lint_fix": "success@bb279e313c2d9612055ddb67eb1a9a8aee22b374",
+    "annotation_lint_fix": "success@74bfe6b4a39758656f291baaa3f16236e3e71964",
+    "latest_checkpoint": "success@ec747f89f251a887ac837f22d9893ee85437f55f"
   }
 }
