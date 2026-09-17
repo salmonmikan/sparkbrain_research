@@ -1,105 +1,137 @@
 {
-  "timestamp": "2026-09-17T10:32:45+09:00",
-  "role": "INDEPENDENT_AUDITOR",
-  "schema": "sparkbrain-external-research-audit-state-v2",
+  "timestamp": "2026-09-17T16:32:08+09:00",
+  "role": "LITERATURE_REDUCTION_SCOUT",
+  "schema": "sparkbrain-external-research-audit-state-v3",
   "repository_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "control_brain_handoff": "909ce53e7b0355f5aab1512e659ab36d910bf6a4",
-    "evidence_analyst_handoff": "f709fa1ee0281fab39a1f4f895247117d28aa35c",
-    "orchestrator_report_branch": "51e910ebd2685b17bb13724fc34e5a4a71026e43",
-    "orchestrator_main_report": "6443aa0cbf1d23e59e1f7b3ae6ad76f55e5855d9",
-    "orchestrator_sub_report": "51e910ebd2685b17bb13724fc34e5a4a71026e43",
-    "c19_v2_branch": "research/c19-truth-free-symbolic-adapter-v2-20260917@66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
-    "c19_v2_scientific_semantics_anchor": "90c936a7abca7eba0dac1f977753503551e73368",
-    "planned_predecessor_identity": "c19-external-v2-official-v1",
+    "control_brain_handoff": "d8987f8c6d88fad48a8f652f4255e73b30a223e6",
+    "evidence_analyst_handoff": "96895860196792329d7b3334c37c92a71f52b415",
+    "orchestrator_report_branch": "d18a65e1e4f827b9c9c6f6aad7391d1c3529c3c5",
+    "orchestrator_main_report": "4d2098a8627ce700d9e1e2a37c89e5ed58859f46",
+    "orchestrator_sub_report": "d18a65e1e4f827b9c9c6f6aad7391d1c3529c3c5",
+    "external_research_audit_prior_tip": "66612643c396a3af04bbd0d53908ef8e2f70b5a2",
+    "c19_v2_package": "research/c19-official-v2-scorer-complete-20260917@270dc981988eb97e73aa6e126eb73ddd643b9c88",
+    "c19_v2_control_head": "control/c19-official-v2-started-20260917@7a8af82de0a0dd70ec2391ef7506ae80c5c8d391",
+    "c19_v2_identity": "c19-external-v2-official-v2",
+    "c19_v2_identity_consumed": true,
+    "c19_v2_retry_allowed": false,
+    "c19_v3_branch": "research/c19-official-v3-runtime-closed-20260917@954e527300e25dc772b11f3a23a682d5a71ef9df",
+    "c19_v3_base": "270dc981988eb97e73aa6e126eb73ddd643b9c88",
+    "c19_v3_commits_ahead_of_base": 8,
+    "c19_v3_started_ref_present": false,
+    "c19_v3_latest_prestart_workflow": "35194763329:failure",
+    "c19_v3_latest_prestart_failure_step": "Exact runtime and network-blocked import smoke",
     "legacy_freeze_branches_inspected": true,
-    "preserve_indexes_inspected": true,
-    "authoritative_tags_inspected": true,
-    "role_suffixed_orchestrator_history_inspected": true
+    "preserve_branches_inspected": true,
+    "authoritative_tags_endpoint_result": "404_NO_TAG_NAMESPACE_OBSERVED",
+    "open_prs": 0
   },
-  "control_brain_commit_consumed": "909ce53e7b0355f5aab1512e659ab36d910bf6a4",
-  "evidence_analyst_commit_consumed": "f709fa1ee0281fab39a1f4f895247117d28aa35c",
-  "main_report_commit_consumed": "6443aa0cbf1d23e59e1f7b3ae6ad76f55e5855d9",
-  "sub_report_commit_consumed": "51e910ebd2685b17bb13724fc34e5a4a71026e43",
+  "control_brain_commit_consumed": "d8987f8c6d88fad48a8f652f4255e73b30a223e6",
+  "evidence_analyst_commit_consumed": "96895860196792329d7b3334c37c92a71f52b415",
+  "main_report_commit_consumed": "4d2098a8627ce700d9e1e2a37c89e5ed58859f46",
+  "sub_report_commit_consumed": "d18a65e1e4f827b9c9c6f6aad7391d1c3529c3c5",
   "recent_external_history_consumed": {
-    "branch_prior_tip": "8f405b63d0afc8a6ffae522aa68799c54006f52d",
-    "latest_prior_role": "LITERATURE_REDUCTION_SCOUT",
-    "latest_prior_time": "2026-09-17T04:28:04+09:00",
-    "history_file": "analysis/external_research_audit/history/2026-09-17/0428-LITERATURE_REDUCTION_SCOUT.md"
+    "prior_tip": "66612643c396a3af04bbd0d53908ef8e2f70b5a2",
+    "prior_role": "INDEPENDENT_AUDITOR",
+    "prior_time": "2026-09-17T10:32:45+09:00",
+    "earlier_same_day_scout": "analysis/external_research_audit/history/2026-09-17/0428-LITERATURE_REDUCTION_SCOUT.md",
+    "earlier_same_day_audit": "analysis/external_research_audit/history/2026-09-17/1032-INDEPENDENT_AUDITOR.md",
+    "repeated_findings_avoided": [
+      "RvH-40 symbolic abstraction/canonicalization",
+      "PDDL-Mind explicit state tracking",
+      "BeliefTrack Update/Stay/Isolation",
+      "LLM belief-state geometry",
+      "C19 scorer join/quantile ambiguity"
+    ]
   },
   "genuinely_new_information": true,
-  "new_information_note": "New repository integrity event since prior external handoff. The scorer ambiguity was first caught by the pre-start gate/Evidence Analyst and independently verified by this audit; it is not claimed as first discovered by the auditor.",
-  "audit_target": "C19_V2_PRESTART_SCORER_BINDING_AND_INTERPRETABILITY",
-  "audit_classification": "INCONCLUSIVE",
-  "integrity_gate_assessment": "ROBUST_SO_FAR",
-  "confidence": "HIGH",
+  "confidence": "HIGH_FOR_REDUCTION_DIRECTION_MEDIUM_FOR_DIRECT_C19_TRANSFER",
   "findings": [
     {
-      "id": "prestart_scorer_ambiguity",
-      "repository_fact": "At C19-v2 head 66c8eafe..., the repository records PRESTART_PROTOCOL_SCORER_BINDING_REQUIRED before official STARTED/dispatch. Quantile convention and exact evaluator target_payload join key were under-specified.",
-      "audit_result": "The predecessor protocol is not safely scorable as-is, but no official result or consumed identity is invalidated because the issue was detected before the one-way boundary.",
-      "classification": "INCONCLUSIVE"
+      "id": "revision_authority_controller",
+      "title": "State-dependent revision authority is a simple direct reduction baseline",
+      "source": "Zhao et al., When Tools Hurt LLM Reasoning: State-Dependent Belief Revision under External Evidence, arXiv:2508.15754; accepted EMNLP 2026",
+      "url": "https://arxiv.org/abs/2508.15754",
+      "external_fact": "External evidence helps weak initial beliefs but can harm strong correct beliefs; CASE is a label-free certainty-based controller choosing whether to revise/use external evidence.",
+      "affected_line": "C19_V3",
+      "implication": "A positive Belief-R update/maintain result can reduce to revision-authority arbitration before persistent dynamics."
     },
     {
-      "id": "post_outcome_tuning_attack",
-      "attack": "Check whether scorer semantics were repaired after observing official outcomes or after STARTED.",
-      "audit_result": "Attack failed. No official STARTED, dispatch, scoring, or formal result existed when the ambiguity was recorded. A fresh prospectively frozen successor is legitimate; in-place repair or identity reuse would not be.",
-      "classification": "ROBUST_SO_FAR"
+      "id": "minimal_edit_revision",
+      "title": "Minimal-edit revision diagnostics separate update mechanisms",
+      "source": "Dhanda, DeltaLogic, arXiv:2604.02733 (2026)",
+      "url": "https://arxiv.org/abs/2604.02733",
+      "external_fact": "Support insertion, defeating-fact insertion, support removal, and irrelevant additions reveal distinct inertia/over-flip/abstention regimes not captured by static accuracy.",
+      "affected_line": "FUTURE_EXTERNAL_VALIDATION",
+      "implication": "Any C19 follow-up should localize gain by edit class rather than rely on aggregate BREU alone."
     },
     {
-      "id": "evaluator_target_leakage_risk",
-      "attack": "Check whether evaluator target_payload identity/provenance matching could leak target truth into candidate/model construction.",
-      "audit_result": "Unresolved technical risk until the successor freezes exact join fields, enforces one-to-one uniqueness and total coverage, fails closed on duplicate/missing keys, and explicitly keeps target truth evaluator-only.",
-      "classification": "INCONCLUSIVE"
+      "id": "implicit_fsa_reduction",
+      "title": "Transformer state tracking can implement an implicit finite-state automaton",
+      "source": "Zhang et al., Finite State Automata Inside Transformers with Chain-of-Thought, arXiv:2502.20129 (2025)",
+      "url": "https://arxiv.org/abs/2502.20129",
+      "external_fact": "Mechanistic analysis identifies state-representing circuits consistent with an implicit FSA and tests skipped steps, noise and length generalization.",
+      "affected_line": "PROGRAMME_NOVELTY",
+      "implication": "History-dependent state alone is reducible to ordinary finite-state computation; matched FSA/state-tracker baselines are required for stronger mechanism claims."
     },
     {
-      "id": "quantile_degree_of_freedom",
-      "attack": "Check whether unspecified quantile interpolation/tie behavior leaves outcome-sensitive scoring freedom.",
-      "audit_result": "Yes prospectively. Successor should freeze method plus ties/NaN/empty behavior and deterministic golden fixtures before STARTED.",
-      "classification": "INCONCLUSIVE"
+      "id": "state_dynamics_scaling",
+      "title": "State-space and transition complexity provide a controlled scaling discriminator",
+      "source": "Li et al., Scaling Laws for State Dynamics in Large Language Models, arXiv:2505.14892 (2025)",
+      "url": "https://arxiv.org/abs/2505.14892",
+      "external_fact": "State-tracking accuracy degrades as state count grows and transitions become sparse across box tracking, DFA and text-game settings.",
+      "affected_line": "PERSISTENT_DYNAMICS_REDUCTION",
+      "implication": "A future SparkBrain discriminator should compare error curves under controlled state-count, transition-density and horizon scaling rather than only fixed benchmark accuracy."
     },
     {
-      "id": "mechanistic_overclaim_survives_repair",
-      "audit_result": "Even after scorer repair, direct_stateless and explicit_state_probabilistic are not representation-matched to I2, so a positive I2>I1 result can support only the narrow structured-representation gain boundary until future matched nulls are run.",
-      "classification": "REDUCIBLE"
+      "id": "selective_history_retention",
+      "title": "Selective retention is an established alternative to persistent full-history dynamics",
+      "source": "Jiang et al., PABU: Progress-Aware Belief Update for Efficient LLM Agents, arXiv:2602.09138 (2026)",
+      "url": "https://arxiv.org/abs/2602.09138",
+      "external_fact": "PABU explicitly predicts progress and selectively retains action-observation history, outperforming full-history baselines across AgentGym in the reported study.",
+      "affected_line": "FUTURE_AGENTIC_VALIDATION",
+      "implication": "Future long-horizon SparkBrain gains must distinguish persistent self-organized dynamics from compact selective-history belief state."
     }
   ],
   "affected_lines": [
-    "C19_V2",
-    "C19_PROTOCOL_INTEGRITY",
-    "PROGRAMME_NOVELTY"
+    "C19_V3",
+    "PROGRAMME_NOVELTY",
+    "FUTURE_EXTERNAL_VALIDATION",
+    "PERSISTENT_DYNAMICS_REDUCTION",
+    "FUTURE_AGENTIC_VALIDATION"
   ],
-  "novelty_or_reduction_impact": "NO_NEW_NOVELTY_SUPPORT; C19_REMAINS_UNRESOLVED; EXISTING_REPRESENTATION_MATCHED_REDUCTION_PRESSURE_REMAINS",
+  "novelty_or_reduction_impact": "STRONGER_REDUCTION_PRESSURE; BELIEF_REVISION_GAIN_CAN_BE_EXPLAINED_BY_REVISION_AUTHORITY_OR_FINITE_STATE_TRACKING_BEFORE_PERSISTENT_DYNAMICS",
+  "audit_classification": null,
   "prospective_baselines_or_discriminators": [
-    "Fresh successor protocol/package/identity with exact frozen quantile semantics and exact evaluator-target join semantics before STARTED.",
-    "Deterministic golden scorer fixtures: successful one-to-one join, duplicate-key rejection, missing-key rejection, quantile tie/NaN/empty edge cases.",
-    "Optional independent second scorer implementation or frozen golden-output checksum before the one-way boundary.",
-    "After a valid C19 formal result, exact-I2 representation-matched stateless/linear/shallow and representation-matched explicit-state alternatives."
+    "Representation-matched label-free revision-authority / certainty-arbitration controller after a valid C19 result.",
+    "Representation-matched explicit/implicit finite-state tracker.",
+    "DeltaLogic-style minimal-edit stratification: support insertion, support removal, defeating fact, irrelevant control.",
+    "Controlled state-count / transition-sparsity / horizon scaling sweep.",
+    "Selective-retention compact belief-state baseline for later long-horizon agentic claims."
   ],
   "questions_for_evidence_analyst": [
-    "Is the predecessor scorer/protocol artifact preserved unchanged and explicitly retired-unSTARTED rather than repaired in place?",
-    "Is c19-external-v2-official-v1 permanently non-reusable/retired rather than repurposed for the successor?",
-    "Does the successor freeze exact evaluator join fields with uniqueness and totality assertions before STARTED?",
-    "Is target truth strictly evaluator-only and technically prevented from entering candidate/model features?",
-    "Are quantile rules complete for ties, NaN and empty input and covered by frozen golden fixtures?"
+    "If C19-v3 eventually yields valid evidence, should the first follow-up reduction be a same-representation certainty/authority controller rather than a larger SparkBrain experiment?",
+    "Can future external validation stratify revision by causal edit type rather than aggregate BREU alone?",
+    "Can an explicit FSA/state tracker receive exactly the same structural representation as the tested SparkBrain condition?",
+    "Should state-space / transition-sparsity scaling be preregistered before broader benchmark expansion?"
   ],
   "questions_for_control_brain": [
-    "Should executable golden scorer fixtures become a generic readiness requirement for future one-way external protocols?",
-    "Should unique/total evaluator-join assertions become a generic formal-execution gate?",
-    "Keep C19's claim narrow and defer scaling until a valid formal result plus representation-matched nulls exist."
+    "Should persistent-state existence be explicitly excluded from the novelty axis unless matched FSA/recurrent/state-tracker reductions fail?",
+    "Should post-C19 priority be revision-authority/FSA reduction before scale-up or visualization?",
+    "Should controlled complexity scaling become the preferred discriminator for the testbed reframe?"
   ],
   "must_not_change_frozen_or_consumed": [
     "all consumed A01/RV01/RV02/CX identities",
-    "rejected A01 Family-B and Family-C exact objects",
-    "historical C19-v1/C06 authorities",
-    "C19-v2 scientific semantics anchored at 90c936a7abca7eba0dac1f977753503551e73368",
-    "ambiguous predecessor protocol/scorer artifacts must remain historical and unchanged",
-    "c19-external-v2-official-v1 must be retired unSTARTED and never repurposed",
-    "no outcome-conditioned scorer, threshold, join, or quantile choices"
+    "rejected A01 Family-B/C exact objects",
+    "C19-v1 retired-unSTARTED predecessor",
+    "c19-external-v2-official-v2 consumed/no-retry",
+    "C19-v3 inherited v2 scientific semantics",
+    "C19-v3 55-row matrix, I2/I1 conditions, baselines, seeds, metrics, bootstrap/quantile/scorer and claim boundary",
+    "no external-literature-driven retrofit of the current prospective object"
   ],
   "persistence": {
     "branch": "ops/external-research-audit-handoff",
-    "history_path": "analysis/external_research_audit/history/2026-09-17/1032-INDEPENDENT_AUDITOR.md",
+    "history_path": "analysis/external_research_audit/history/2026-09-17/1632-LITERATURE_REDUCTION_SCOUT.md",
     "latest_path": "analysis/external_research_audit/latest.md",
     "state_path": "analysis/external_research_audit/state.json"
   }
