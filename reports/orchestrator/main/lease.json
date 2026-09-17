@@ -1,0 +1,14 @@
+{
+  "run_id": "primary-20260917T1817JST",
+  "execution_mode": "PRIMARY",
+  "status": "RUNNING",
+  "started_at": "2026-09-17T18:17:17+09:00",
+  "heartbeat_at": "2026-09-17T18:17:17+09:00",
+  "analyst_commit": "b7cc088df7c9768bb7e62b40d4c54f273df969eb",
+  "active_branch": null,
+  "active_identity": null,
+  "active_step": "diagnose_generic_raw_preservation_failure",
+  "workflow_run_id": null,
+  "expected_next_action": "Inspect the v3 preservation implementation and failed preservation step without recovering/scoring v3 raw, then create an identity-free synthetic readiness branch if the mechanism can be qualified generically.",
+  "owner": "main"
+}
