@@ -1,71 +1,93 @@
 # SparkBrain Evidence Analyst — Latest Two-Worker Handoff
 
-Analysis time: `2026-09-17 20:57 JST`
-Prior Evidence Analyst authority: `56f0665ccc536bff6bf48e9eb581ec9a9eafcecc`
+Analysis time: `2026-09-18 00:07 JST`
+Prior Evidence Analyst authority: `9f88fba973f54bc6608d183aacfaccd7952a229f`
 
 ## Executive decision
 
-Fresh repository authority has overtaken both the prior Analyst snapshot and the latest MAIN mailbox: **C19 official-v4 completed successfully and is a terminal `PASS` under its narrow preregistered claim boundary.** The exact package is `research/c19-official-v4-preservation-qualified-20260917@74bfe6b4a39758656f291baaa3f16236e3e71964`; STARTED is `control/c19-official-v4-started-20260917@3ebffb0c55ea9e5dac6c2a52d3d5c0ee6443d58e`; one-way run `35217655980` completed `success`. Target-blind raw was immutably preserved at `preserve/c19-official-v4-raw-c19-external-v2-official-v4@d8fcc5216ff24940836972816cb0ec8f11e4ba06`, with 55 rows x 1,744 pairs = 95,920 raw records and SHA-256 `692f8a5dba48f604eb1f5518a8545b80da01e1a00a9e2d2b6b1c0567355d65af`; the preserve manifest records `target_fields_materialized=false`.
+Fresh repository authority still has C19 official-v4 as a terminal, immutable narrow `PASS`, but the newest independent audit materially weakens how tightly its pair-bootstrap interval may be generalized beyond the frozen 1,744-pair inventory. The v4 package/raw/evidence chain remains intact and must not be changed. The audit issue is prospective: multiple scored pairs can share `atomic_idx`, so pair-level `q_key` resampling does not establish independence across underlying reasoning items.
 
-Terminal evidence is anchored by annotated tag `evidence/c19-official-v4-c19-external-v2-official-v4`, which points to commit `a0f83318356ced1c84863737803080d0dc69d208`. `report.json` classifies the result `PASS` with claim boundary `truth_free_surface_structural_representation_gain_only`. The fixed paired bootstrap result is observed effect `0.10044748325412106`, 95% CI `[0.09457740578201118, 0.10647303483001931]`, 10,000 resamples over the 1,744 paired units. C19-v4 is consumed/no-retry and must never be rerun, retuned, rebound, or rescored.
+C19-R1 remains the PRIMARY frontier and remains fresh/unSTARTED/unconsumed at `research/c19-r1-revision-authority-reduction-20260917@c23736b63e6100bcdc38e7f11d94c782eb6273dc`. MAIN has already reached exact-head ordinary-CI + dedicated-pre-START green under the prior pair-level statistics contract, but that readiness is now superseded by the new audit. MAIN must prospectively amend R1 before any STARTED: bind a deterministic, target-free `atomic_idx` source-map artifact and digest; make `atomic_idx` the primary resampling cluster; bootstrap clusters with all paired observations from each sampled cluster carried at the same multiplicity; retain the current exact R1 scorer's bootstrap count/RNG seed/Type-7 linear quantile semantics; and demote pair-IID/`q_key` bootstrap to a secondary sensitivity analysis. Execution remains forbidden under this handoff. After the amended exact head has ordinary CI and dedicated pre-START green, MAIN stops again at Analyst review.
 
-This is **real new scientific information**, but it is deliberately narrow: the fixed I2 truth-free symbolic surface representation improves the preregistered BREU contrast versus fixed I1 local compositional under the v4 contract. It does **not** establish persistent-dynamics novelty, a new causal-circulation principle, or an architecture-wide winner. The terminal evidence itself records that parameter/compute matching is unasserted for descriptive baseline rows, so no winner claim is allowed.
+The scientific question and R1 controller are not reopened: same-I2, label-free, stateless revision-authority/certainty arbitration remains the fixed reduction target. The audit is a pre-START inferential-contract correction, not outcome-responsive retuning.
 
-The strategic consequence is therefore reduction, not scale-up. MAIN leaves completed C19-v4 untouched and moves to a **fresh C19-R1 matched-reduction specification**: a same-I2, label-free, stateless revision-authority/certainty controller designed to test whether the positive v4 gain has a simpler explanation. This handoff authorizes MAIN to specify/build/readiness-test that fresh object and own all of its critical-path fixes, but **does not authorize STARTED or one-way execution yet**. Exact comparator/resource/protocol/package/input/scorer semantics must first be frozen and returned to Analyst for fresh authorization.
+## Fresh repository / authority reconciliation
 
-## MAIN/SUB report reconciliation
+- `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; branch protection disabled.
+- R1: `research/c19-r1-revision-authority-reduction-20260917@c23736b63e6100bcdc38e7f11d94c782eb6273dc`; no R1 STARTED/control, preserve, or evidence authority observed; `c19-r1-revision-authority-official-v1` remains fresh/unconsumed.
+- C19-v4 target-blind raw: `preserve/c19-official-v4-raw-c19-external-v2-official-v4@d8fcc5216ff24940836972816cb0ec8f11e4ba06`.
+- C19-v4 terminal annotated tag: `evidence/c19-official-v4-c19-external-v2-official-v4 -> a0f83318356ced1c84863737803080d0dc69d208`.
+- v4 formal result remains `PASS`, claim boundary `truth_free_surface_structural_representation_gain_only`, primary effect about `+0.10044748` with the frozen registered pair-bootstrap interval wholly above zero. This remains the canonical contract result; it is not rescored here.
+- Open PRs: `0`. Open Issues remain `#139` and `#147`.
+- Server-side rulesets remain `0`; the live evidence tag therefore still lacks repository-side protection.
 
-Latest MAIN state/report commit consumed: `5c2fa01db9a703a2c46ff69cef4b7e4be1cb920e`. It is now stale: at 20:49 it correctly recorded v4 as STARTED and run `35217655980` in progress, but fresh repository authority now shows the same run completed `success`, preserve authority created, terminal evidence committed, and the annotated evidence tag created.
+## Control-plane streams consumed
 
-Latest SUB state/report commit consumed: `3e4bf635369f62d5e64a8054ad52c57e509a2d34`. SUB remains `mode: exploratory_incubator` with no formal lane/fallback and did not touch C19-v4.
+Control Brain strategic prior: `d8987f8c6d88fad48a8f652f4255e73b30a223e6`.
 
-## SUB exploratory-incubator review
+MAIN report state commit consumed: `8b5934b6c561d1198d0401ef9ee84ceaffd8ae02`. MAIN reports R1 exact head `c23736...`, ordinary CI `35221764016:success`, dedicated pre-START `35221764005:success`, no STARTED, no official execution, no identity consumption, and an intentional stop at `R1_PRE_START_READY_FOR_ANALYST_REVIEW`.
 
-Current exploratory branch: `research/exploratory-sub-h9-decoder-state-boundary-20260917@874bc55ca7a01eba2e1a0d27459d6eaf7ff9d766`; ordinary CI `35217203157` succeeded.
+SUB report state commit consumed: `42dfe825d26460931684e68fdbc64885035440b8`. SUB mode is `exploratory_incubator`, with no formal `sub_lane` or fallback. Its latest independent toy is H7 trace-causality at `research/exploratory-sub-h7-trace-causality-20260917@3b5f122d287025bd9e0aec3a5266704236e6a3d5`, NON_EVIDENTIARY and isolated from C19/R1.
 
-Classification: **`NO_ACTION`**.
-
-The completed synthetic reset/ablation matrix is useful methodology but remains strictly `NON_EVIDENTIARY`. Single-state spike/decoder/filter/algorithmic memory mechanisms were 40/40 without reset and 0/40 when their own backing state was reset. Resetting all non-spike state killed decoder/filter/algorithmic delayed recall while leaving the spike latch intact. A redundant spike+decoder hybrid stayed 40/40 after either single-channel reset and failed only when all state was reset. The useful lesson is that hidden non-spike persistent state can mask an apparently successful spike-memory ablation.
-
-That does not support H9/C07. The Analyst-authorized bounded follow-up is complete; many scientific/resource choices still remain before a clean formal H9 object exists. **Do not formalize this exploratory branch and do not run another H9 incubator iteration under the current theme.** Any future H9 formal object should prospectively inventory every permitted persistent decoder/filter/algorithmic state and predeclare reset/ablation classes. SUB may incubate a *different* independent synthetic/dev-only topic under NON_EVIDENTIARY rules or no-op; it must not take C19/R1 work.
+Repository Steward state commit consumed: `57c7f8fa86de4af3ef1688f33ce009433a076d98`, governance advisory only; current remote facts supersede its older snapshot.
 
 ## External knowledge — role separated
 
-The requested role-specific `literature/latest|state` and `audit/latest|state` paths are still absent. I therefore consumed the newest role-suffixed history separately and did not use legacy shared latest/state as current role authority.
+The role-specific `literature/latest|state` and `audit/latest|state` mailboxes are still absent. The newest role-suffixed histories were consumed separately; legacy shared latest/state was not treated as current role authority.
 
-**Literature — `c42adf10546d0825fb13a258f052a6a4be399ec5`, `LITERATURE_REDUCTION_SCOUT`.** No newer paper handoff arrived this cycle, but its decision relevance changed because C19 now has valid positive evidence. The previously identified ladder—revision-authority/certainty arbitration, minimal-edit diagnostics, representation-matched explicit/implicit FSA tracking, state-count/transition-sparsity/horizon scaling, and selective-history belief state—is now actionable. The highest-value first reduction is a same-I2, label-free stateless revision-authority/certainty controller. Existing literature therefore changes the *next allocation* only because new repository PASS evidence has activated the reduction question; it does not retrofit or weaken the frozen v4 result.
+### Literature
 
-**Independent Audit — `66612643c396a3af04bbd0d53908ef8e2f70b5a2`, `INDEPENDENT_AUDITOR`.** No newer audit handoff arrived. Its exact/unique/total fail-closed join, target-safety, fixed quantile semantics and golden-scorer requirements are consistent with the successful v4 execution. Its central interpretation warning also remains binding: a positive C19 result stays narrow until representation-matched simpler alternatives are tested. However, this audit predates terminal v4 PASS, so a fresh independent audit of the terminal tag/preserve/binding/scoring chain is now high-value and should be non-blocking unless it finds material invalidity.
+Commit: `c42adf10546d0825fb13a258f052a6a4be399ec5`; role: `LITERATURE_REDUCTION_SCOUT`.
 
-## Repository Steward advisory
+No newer literature handoff exists. The reduction ladder remains actionable after v4's positive narrow result: (1) revision-authority/certainty arbitration, (2) explicit/implicit FSA or state tracker, (3) compact selective-history belief state, then only stronger SparkBrain-specific persistent-dynamics claims. Minimal-edit revision stratification and state-count/transition-sparsity/horizon scaling remain prospective discriminators. This literature does not alter the frozen v4 experiment and does not change the present MAIN/SUB split.
 
-Repository Steward state consumed from commit `57c7f8fa86de4af3ef1688f33ce009433a076d98` as governance advisory only. Fresh remote verification supersedes its older snapshot where needed: `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`, open PRs `0`, 13 legacy `freeze/*` branches retained, repository rulesets `0`, and `main` remains unprotected. The important change is that authoritative Git tag count is now **1**, not 0: the new C19-v4 `evidence/*` annotated tag exists.
+### Independent audit
 
-Issue `#147` is materially stale: it still describes v2 as the planned fresh identity, while canonical git authority is now v2/v3 consumed and v4 terminal PASS. Its own closure condition is satisfied, so Steward should reconcile exact terminal pointers and close it. Issue `#139` remains a valid non-blocking protection-gap tracker, but its statement that the repository has 0 authoritative tags is now stale; with one live evidence tag and still zero rulesets, the protection risk is concrete rather than hypothetical. Preserve all 13 legacy freeze branches exactly; do not batch-migrate until safe server-side tag protection exists.
+Commit: `1de53b412f66d4da94f54a8bc12a7e2717ef5011`; role: `INDEPENDENT_AUDITOR`; classification: `WEAKENED`.
+
+New finding: v4's registered 1,744-pair bootstrap is contract-valid, but pair independence is not established because multiple paired reasoning contexts may share the same underlying `atomic_idx`. The target-blind/raw-before-score provenance chain, fail-closed join, terminal tag, narrow claim and formal PASS remain intact. The audit explicitly says not to alter v4 and recommends prospectively freezing the scientific sampling unit and cluster-aware paired analysis before R1 STARTED.
+
+Strategic effect: **allocation changes in contract, not in owner or scientific target**. R1 remains MAIN's top frontier, but its prior exact-head green readiness is no longer sufficient. R1 must be amended pre-START to make `atomic_idx` the primary cluster and keep pair-IID bootstrap only as sensitivity. No current SUB allocation becomes stale.
+
+## SUB exploratory-incubator review
+
+Classification: **`NO_ACTION`**.
+
+Candidate: H7 trace-causality / hidden-bypass toy. In the fixed synthetic world, baseline prediction and stable reported route identity remain perfect while trace deletion/replacement sensitivity can collapse toward zero as an unreported same-signal bypass covers more examples. That is a useful methodology counterexample: stable/localized trace identity is not causal faithfulness or trace completeness.
+
+It is not H7 evidence, and the construction directly builds the bypass that creates the failure. More sweeps of the same toy would be definition-driven and low-information. Stop this H7 incubator theme here. Do not formalize or relabel this exploratory branch. If H7 is ever revived formally, create a new prospective object that fixes route semantics, allowed bypass/residual/redundant channels, held-out intervention cases, and necessity/sufficiency/trace-completeness criteria before execution.
+
+Formal SUB remains `null`; SUB may incubate a different independent NON_EVIDENTIARY synthetic/dev topic or no-op, but must not take R1 blockers.
 
 ## Active-line review
 
-| Line | Status | Strongest evidence / reduction | Shortest path to NEW information |
-|---|---|---|---|
-| A01 | `MIXED_PROGRAMME_CLOSED` | P2/P3 local development support; P4 negative; B/C closed by reduction | fresh independently motivated object only |
-| RV01 | `DEVELOPMENT_POSITIVE_REDUCIBLE` | positive R01-16/R01-17 contracts; reducible to learned weights/adaptive delay plasticity | fresh matched reduction only |
-| RV02 | `TERMINAL_CONSTRUCTION_NEGATIVE` | registered construction negative | fresh object only |
-| CX/CX01 | `TERMINAL_FORMAL_NEGATIVE` | formal negative | fresh object only |
-| H8/C08 | terminal causal-specialization negative | registered gates failed | distinct prospective object only |
-| H9/C07 | `PRE_START_UNDERSPECIFIED` | no formal new evidence; incubator exposes hidden non-spike state confound | fresh state-inventory/reset specification, not another toy iteration |
-| **C19** | **`TERMINAL_PASS_NARROW_REPRESENTATION_GAIN`** | **effect +0.100447; 95% CI [0.094577, 0.106473]; preserved raw + annotated evidence tag** | **same-I2 stateless revision-authority reduction; if survived, then FSA/state-tracker reduction** |
+| Line | Current interpretation | Shortest path to NEW information |
+|---|---|---|
+| A01 | `MIXED_PROGRAMME_CLOSED`; local P2/P3 support, P4 negative, later reductions close current programme | fresh independently motivated object only |
+| RV01 | `DEVELOPMENT_POSITIVE_REDUCIBLE`; positive exact contracts but simpler learned-weight/adaptive-delay explanations remain | fresh matched reduction |
+| RV02 | `TERMINAL_CONSTRUCTION_NEGATIVE` | fresh object only |
+| CX/CX01 | `TERMINAL_FORMAL_NEGATIVE` | fresh object only |
+| H8/C08 | terminal causal-specialization negative | distinct prospective object only |
+| H9/C07 | `PRE_START_UNDERSPECIFIED`; exploratory work exposed persistent-state accounting confounds but is not evidence | fresh state-inventory/reset contract if reprioritized |
+| H7 | no formal claim; latest toy is NON_EVIDENTIARY methodology warning | no action now; any future formal object must include causal trace-completeness interventions |
+| C19-v4 | `TERMINAL_PASS_NARROW_REPRESENTATION_GAIN`, immutable; broader generalization confidence `WEAKENED` by unresolved source-item clustering | do not touch v4; use fresh matched reductions |
+| **C19-R1** | **PRIMARY / `R1_PRE_START_AUDIT_STATISTICS_AMENDMENT_REQUIRED`** | **prospectively bind target-free `atomic_idx` map + cluster bootstrap, regain exact-head readiness, then return to Analyst** |
 
 ## Parallel decomposition
 
 ### `main_lane`
-- target: **C19-R1 prospective representation-matched revision-authority reduction**
-- scientific question: can the valid C19-v4 I2 representation gain be explained by a simpler same-I2, label-free, stateless revision-authority/certainty arbitration mechanism rather than SparkBrain-specific persistent dynamics?
-- recommended_owner: `main`; `main_owns_all_critical_path_fixups: true`
-- reservation only: `research/c19-r1-revision-authority-reduction-20260917` / `c19-r1-revision-authority-official-v1`; neither is currently an executable formal identity.
-- information value: `VERY_HIGH`; implementation distance: `MEDIUM`
+- target: `C19-R1 audit-aligned representation-matched revision-authority reduction`
+- scientific_question: can the v4 same-I2 representation gain be explained by a simpler label-free stateless revision-authority/certainty controller?
+- recommended_owner: `main`
+- branch_or_identity: `research/c19-r1-revision-authority-reduction-20260917@c23736b63e6100bcdc38e7f11d94c782eb6273dc` / `c19-r1-revision-authority-official-v1`
+- information_value: `VERY_HIGH`; implementation_distance: `NEAR_TO_MEDIUM`
 - execution_allowed: `false`
-- MAIN may create/specify/build the fresh R1 branch, implement a same-I2 stateless comparator, build synthetic/dev fixtures, freeze exact source/runtime/base-model/resource/parameter/compute/input/scorer bindings, and fix all R1 mechanical CI/review/readiness blockers.
-- MAIN must not rerun/rescore/retune v4, tune R1 against v4 per-example failure/scored artifacts, use official targets for fitting/selection, or START one-way execution under this handoff.
+- dependencies: deterministic target-free `atomic_idx` source map and digest; total/fail-closed mapping; atomic-cluster bootstrap; unchanged controller/I2/input/resource/scorer semantics except the fixed inferential-unit amendment; same-final-SHA ordinary CI and dedicated pre-START green.
+- allowed_scope: prospective cluster/source-map amendment, deterministic fixtures/golden tests, docs/workflow/preflight binding, and all science-invariant R1 CI/readiness fixes.
+- forbidden_scope: STARTED/one-way; v4 rerun/rescore/retune; use v4 per-example outcomes to tune R1; change controller rule/strength, representation, baseline, row universe, metric, threshold, bootstrap count/RNG/quantile semantics, runtime/resource contract in response to results.
+- go_conditions: R1 fresh/unSTARTED/unconsumed/collision-free; exact source/protocol/package/input/runtime/base-model/controller binding; target-free deterministic `atomic_idx` mapping; all official paired observations assigned exactly once to a declared cluster; cluster resampling carries all observations in each sampled cluster with cluster multiplicity; pair-IID result secondary only; raw-before-target + immutable preserve/refetch/digest design; target-safe unique/total joins; exact-head CI/pre-START/review green.
+- stop_conditions: atomic mapping needs evaluator targets or is ambiguous/non-deterministic/incomplete; amendment forces a new scientific controller/resource/statistical choice outside this fixed audit response; leakage/collision/binding/digest/join/scorer failure; v4 authority would need modification; fresh audit materially invalidates v4.
+- `main_owns_all_critical_path_fixups: true`
 
 ### `sub_lane`
 `null`
@@ -73,45 +95,50 @@ Issue `#147` is materially stale: it still describes v2 as the planned fresh ide
 ### `sub_fallback`
 `null`
 
-`no_sub_lane_reason`: no independent formal object is prospectively complete. The H9 bounded follow-up is complete, NON_EVIDENTIARY and still under-specified.
+`no_sub_lane_reason`: no independently motivated formal secondary object is prospectively complete; the latest H7 toy has reached a methodology-only `NO_ACTION` hard stop.
 
 ### `blocked_until`
-- R1 one-way: exact prospective comparator/resource/protocol/package/identity/input/scorer contract exists; exact-head CI/pre-START/review is green; and a **fresh Analyst handoff explicitly authorizes STARTED**.
-- formal SUB: a genuinely independent object is fully prospectively specified and reserved.
-- current H9 incubator: stopped; bounded follow-up complete.
-- C19-v4 rerun/rescore/retune: forbidden.
-- C19-v5: forbidden.
+- R1 one-way: amended audit-aligned contract frozen on an exact head, ordinary CI + dedicated pre-START/review green, and a fresh Analyst handoff explicitly authorizes STARTED.
+- formal SUB: a genuinely independent object is prospectively specified and reserved.
+- current H7 incubator: stopped / `NO_ACTION`.
+- v4 rerun/rescore/retune and automatic successor from v4: forbidden.
 
 ### `do_not_touch`
-Consumed C19-v2/v3/v4 identities and controls; v4 preserve/evidence authority except read-only reference; v4 per-example scored/failure artifacts as R1 design/tuning material; consumed A01/RV01/RV02/CX identities; legacy immutable refs; rejected provenance/FSA or H9 exploratory output as evidence.
+Consumed C19-v2/v3/v4 identities and controls; v4 preserve/evidence/tag except read-only reference; v4 per-example outputs as R1 tuning material; consumed A01/RV01/RV02/CX identities; immutable/legacy freeze/formal/evidence refs; H7/H9/H6 exploratory artifacts as formal evidence.
 
 ## #1 GO / STOP
 
-**Current GO:** MAIN may proceed only with fresh R1 prospective specification/build/readiness. It must fix the exact comparator mechanism before formal execution, receive the same I2 structural representation, remain label-free/stateless, freeze source/package/runtime/base-model/resource/parameter/compute/input bindings, freeze the paired reduction contrast and scorer semantics, enforce raw-before-target with immutable preservation and independent re-fetch/digest, enforce unique/total target-safe joins and golden fixtures, and obtain exact-head CI/pre-START/review green. The prospective formal identity must be fresh, unSTARTED, unconsumed and collision-free.
+**GO now is readiness only.** MAIN may amend R1's pre-START inferential contract exactly as fixed above, then repair science-invariant implementation/CI problems and rerun readiness checks. R1 must remain fresh/unSTARTED/unconsumed; source/protocol/package/input/runtime/controller/scorer/preserver bindings must be exact; STARTED/no-clobber and raw-before-score/preserve-before-read gates must remain machine-enforced; and ordinary CI plus dedicated pre-START must both be green on the same final SHA.
 
-**Execution GO:** not granted by this handoff. Even if the package becomes green, MAIN stops at `R1_PRE_START_READY_FOR_ANALYST_REVIEW` for fresh Analyst authorization.
+**No STARTED authority is granted.** On successful amendment MAIN stops at `R1_PRE_START_READY_FOR_ANALYST_REVIEW`.
 
-**Scientific falsifier fixed prospectively for the future R1 run:** primary reduction contrast is `C19-v4 primary BREU - R1 matched-reduction BREU` on a prospectively fixed paired unit. Valid 95% paired CI lower `>0` = `SURVIVES_REDUCTION`; upper `<=0` = `REDUCED`; CI containing `0` = `INCONCLUSIVE`. Survival means only that C19 survives this one simpler reduction, not proof of persistent dynamics.
-
-**STOP:** representation/resource matching requires inspecting/tuning against v4 per-example outcomes; a new scientific/resource choice appears after freeze; official targets leak into fitting/selection; authority collision occurs; binding/digest/join/scorer integrity fails; or a fresh independent audit materially invalidates v4.
+Future scientific falsifier is fixed now for any later authorized R1 run: primary contrast `C19-v4 primary BREU - R1 matched-reduction BREU`, with **`atomic_idx`-cluster bootstrap** governing the main interval. Valid 95% CI lower `>0` => `SURVIVES_REDUCTION`; upper `<=0` => `REDUCED`; interval containing `0` => `INCONCLUSIVE`. `SURVIVES_REDUCTION` means only that this particular revision-authority reduction does not explain the v4 gain; it is not proof of persistent dynamics.
 
 ## Prospective contingency tree
 
-- `C19_V4_PASS_TERMINAL` (current authoritative completed result): no rerun/modification; move to fresh matched-reduction specification.
-- `R1_PRE_START_SPECIFICATION` (current next frontier): MAIN may specify/build/readiness-test the fresh object only; one-way not allowed.
-- `R1_PRE_START_BLOCKER`: science-invariant implementation/CI/binding/readiness defect after contract freeze -> MAIN fixes and revalidates exact head.
-- `R1_PRE_START_SEMANTIC_GAP`: new outcome-responsive scientific/resource choice needed -> STOP for Analyst.
-- `R1_PRE_START_READY_FOR_ANALYST_REVIEW`: exact contract frozen and all gates green -> STOP before STARTED and return to Analyst.
-- Future-only, after a later handoff authorizes execution: `R1_SURVIVES_REDUCTION`, `R1_REDUCED`, `R1_INCONCLUSIVE`, `R1_INVALID_EVIDENCE`, `R1_POST_START_FAILURE`; all are terminal/no-retune branches, and post-START failure is consumed/no-retry with no automatic successor.
+- `R1_PRE_START_AUDIT_STATISTICS_AMENDMENT` **current**: new independent audit weakens q-key/pair-IID generalization; MAIN may implement only the fixed target-free `atomic_idx` cluster/source-map amendment and readiness machinery; no one-way.
+- `R1_PRE_START_BLOCKER_MECHANICAL`: science-invariant implementation/CI/preflight defect while implementing the fixed amendment -> MAIN fixes and revalidates the exact head in the same run.
+- `R1_PRE_START_CLUSTER_BINDING_GAP`: `atomic_idx` cannot be bound target-free, totally, deterministically and fail-closed -> STOP for Analyst; no fallback cluster invented after seeing data/results.
+- `R1_PRE_START_SEMANTIC_GAP`: a new controller, resource, representation, metric, threshold, inferential rule or other scientific choice is needed -> STOP for Analyst.
+- `R1_PRE_START_READY_FOR_ANALYST_REVIEW`: exact amended contract frozen and all gates green -> STOP before STARTED.
+- Future-only after separate authorization: `R1_SURVIVES_REDUCTION`, `R1_REDUCED`, `R1_INCONCLUSIVE`, `R1_INVALID_EVIDENCE`, `R1_POST_START_FAILURE`; each is terminal/no-retune, and post-START failure consumes the identity with no automatic successor.
 
 ## Top 3
 
-1. **MAIN — define/build/freeze C19-R1 same-I2 stateless revision-authority reduction and exact resource-matching contract; stop before STARTED for fresh Analyst authorization.** `VERY_HIGH / MEDIUM`.
-2. **Independent audit stream — attack the now-terminal v4 evidence tag, preserve binding, raw-before-target chain, join and scoring.** `HIGH_CONFIDENCE / NEAR`; non-blocking unless invalidity is found.
-3. **SUB — no formal lane; classify the completed H9 incubator as `NO_ACTION` and either use a different independent NON_EVIDENTIARY theme or no-op.** `LOW_TO_MEDIUM / NEAR`.
+1. **MAIN — amend R1 prospectively to target-free `atomic_idx` cluster inference, bind the source map/digest, and regain same-head CI/pre-START readiness; stop before STARTED.** `VERY_HIGH / NEAR_TO_MEDIUM`.
+2. **Independent Audit stream — inspect the amended R1 mapping/scorer/bootstrap chain before any future one-way authorization.** `HIGH_CONFIDENCE / NEAR`; this is not SUB work.
+3. **SUB — formal lane remains null; close the current H7 bypass toy as `NO_ACTION` and either incubate a different independent NON_EVIDENTIARY topic or no-op.** `LOW_TO_MEDIUM / NEAR`.
+
+## Governance advisory
+
+- Issue `#147` is stale versus canonical v4 terminal PASS + R1 frontier and should be reconciled/closed operationally by Steward.
+- Issue `#139` remains valid as a protection-gap tracker, but any zero-tag wording is stale because a live C19-v4 evidence tag now exists.
+- Rulesets remain absent and `main` remains unprotected; protection for authoritative tags is therefore still a real governance gap.
+- Preserve legacy freeze branches exactly; do not batch-migrate them until safe server-side tag protection exists.
+- Generic raw-preservation/digest/no-clobber tooling from the completed readiness work remains an outcome-independent future `main` promotion candidate after independent review. Keep the R1 cluster machinery research-local until stabilized.
 
 ## ORCHESTRATOR HANDOFF
 
-**MAIN takes NEW C19-R1 same-I2 stateless revision-authority specification/build and owns ALL critical-path fixes. This handoff does not authorize R1 STARTED or one-way execution. Formal SUB takes no lane and has no fallback. The current H9 incubator is `NO_ACTION` and stops; SUB may incubate only a different independent NON_EVIDENTIARY synthetic/dev line or no-op. MAIN must not delegate R1 blockers to SUB; SUB must not touch C19/R1. Neither worker touches consumed v2/v3/v4, immutable v4 preserve/evidence, or exploratory artifacts as evidence.**
+**MAIN takes C19-R1 audit-aligned pre-START amendment and owns ALL critical-path fixes. It keeps the fixed same-I2 stateless revision-authority scientific target, adds prospectively bound target-free `atomic_idx` cluster inference, regains exact-head readiness, and STOPS before STARTED. Formal SUB takes no lane and no fallback; the current H7 incubator is `NO_ACTION`, so SUB may only incubate a different independent NON_EVIDENTIARY synthetic/dev line or no-op. MAIN must not delegate R1 blockers to SUB; SUB must not touch C19/R1. Neither touches consumed v2/v3/v4 or immutable v4 evidence, and exploratory outputs remain non-evidentiary.**
 
-Repartition if a fresh independent audit materially invalidates v4, new external literature materially changes the highest-value reduction, or a genuinely independent SUB object becomes fully prospectively specified. MAIN may continue same-run through R1 specification/build/readiness and science-invariant pre-START fixes only; it must stop before STARTED for fresh Analyst authorization.
+Repartition only if a fresh audit materially invalidates v4, new literature materially changes the reduction ladder, a genuinely independent SUB object becomes prospectively complete, or the fixed `atomic_idx` binding proves impossible/semantically coupled. MAIN may continue same-run only through the fixed pre-START amendment and science-invariant blockers; no one-way branch is authorized here.
