@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-17T17:43:16+09:00",
+  "timestamp": "2026-09-17T17:45:11+09:00",
   "worker_role": "sub",
   "mode": "exploratory_incubator",
   "evidence_analyst_commit": "b9c14e9e171bf765447aa45e71b7ba75cc7ce357",
@@ -21,18 +21,20 @@
     "c19-external-v2-official-v3",
     "workflow 35200352569 and its official acquisition/raw/preserve/score/result path",
     "consumed c19-external-v2-official-v2 repair or retry",
-    "all current C19 blockers/fixups/successor design"
+    "all current C19 blockers/fixups/post-START diagnostics/successor design"
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "evidence_analyst": "b9c14e9e171bf765447aa45e71b7ba75cc7ce357",
     "control_brain": "d8987f8c6d88fad48a8f652f4255e73b30a223e6",
     "orchestrator_report_parent_before_sub_write": "e038c9b7667c3b7b768696a356fd1b5f2f05fecd",
-    "sub_latest_update_commit": "b3e9cc197b0ff12042400fa6fc77ba8bc0f2938c",
+    "sub_latest_final_update_commit": "0ad2b4a3cfc9bdf29311beb6d1dc2f0a4b0c98c3",
     "c19_v3_package": "research/c19-official-v3-runtime-closed-20260917@84b244959f249da916a36906508ead0830052e9b",
     "c19_v3_started_ref": "control/c19-official-v3-started-20260917@915b7b21abe6ef936fa18e81e4a5117712d20f28",
     "c19_v3_identity": "c19-external-v2-official-v3",
-    "c19_v3_one_way_run": "35200352569:in_progress_at_pre_persistence_reconciliation",
+    "c19_v3_started_no_retry": true,
+    "c19_v3_one_way_run": "35200352569:completed:failure",
+    "c19_v3_control_head_at_final_reconciliation": "915b7b21abe6ef936fa18e81e4a5117712d20f28",
     "c19_v2_control": "control/c19-official-v2-started-20260917@7a8af82de0a0dd70ec2391ef7506ae80c5c8d391",
     "exploratory_branch": "research/exploratory-sub-revision-authority-fsa-20260917@a4e14a13eb4011e94cc93d07f9a13d9251bfd759",
     "open_pr_count": 0,
@@ -58,7 +60,7 @@
     "concurrent_main_movement_observed": [
       "C19-v3 package advanced to 84b244959f249da916a36906508ead0830052e9b.",
       "C19-v3 STARTED authority appeared at 915b7b21abe6ef936fa18e81e4a5117712d20f28.",
-      "One-way run 35200352569 was in progress at final pre-persistence reconciliation."
+      "One-way run 35200352569 completed with failure after the initial SUB report persistence; control head remained at STARTED during final reconciliation."
     ]
   },
   "workflows_experiments": {
@@ -78,13 +80,15 @@
       "failed_run": "35200816595:failure",
       "failure_step": "Lint / ruff",
       "mechanical_fix_commit": "a4e14a13eb4011e94cc93d07f9a13d9251bfd759",
-      "exact_head_status_at_persistence": "pending/not durably concluded"
+      "replacement_run": "35201182618:in_progress_at_final_reconciliation"
     },
     "observed_main_v3_one_way": {
       "run_id": 35200352569,
       "head": "control/c19-official-v3-started-20260917@915b7b21abe6ef936fa18e81e4a5117712d20f28",
-      "status_at_reconciliation": "in_progress",
-      "touched_by_sub": false
+      "status_at_final_reconciliation": "completed",
+      "conclusion": "failure",
+      "diagnosed_or_touched_by_sub": false,
+      "canonical_post_failure_control_record_present_at_final_reconciliation": false
     }
   },
   "scientific_readiness_exploratory_results": {
@@ -103,7 +107,8 @@
       "25": {"samples": 20000, "fsa_exact_match_rate": 1.0, "stateless_match_rate": 0.47505, "states": 27},
       "50": {"samples": 20000, "fsa_exact_match_rate": 1.0, "stateless_match_rate": 0.4759, "states": 27}
     },
-    "interpretation": "In this deliberately constructed source-authority/retraction world, full-history behavior compresses exactly into a 27-state explicit representation independent of horizon. This is reduction-feasibility input only, not evidence about C19, Belief-R, SparkBrain, or programme novelty."
+    "interpretation": "In this deliberately constructed source-authority/retraction world, full-history behavior compresses exactly into a 27-state explicit representation independent of horizon. This is reduction-feasibility input only, not evidence about C19, Belief-R, SparkBrain, or programme novelty.",
+    "main_result_interpretation_by_sub": "none; SUB observed only that the MAIN one-way workflow concluded failure and did not inspect/diagnose/interpret it scientifically"
   },
   "evidentiary_status": "NON_EVIDENTIARY",
   "hypothesis_or_reduction_question": "Can a deliberately history-sensitive source-authority assertion/retraction policy be represented exactly by a small bounded finite-state controller rather than requiring full persistent history?",
@@ -145,14 +150,16 @@
       "identity": "c19-external-v2-official-v3",
       "started": true,
       "no_retry": true,
-      "workflow_status": "in_progress_at_reconciliation",
+      "workflow_conclusion": "failure",
+      "canonical_post_failure_control_record_present": false,
+      "sub_disposition": "do_not_touch; MAIN/Analyst must record and classify",
       "touched_by_sub": false
     }
   },
   "blockers": {
     "formal_lane": ["No reserved independent formal sub_lane or sub_fallback exists."],
     "exploratory": [],
-    "main_only": ["C19-v3 is STARTED and its one-way workflow is MAIN-owned; SUB must not diagnose, modify, interpret, retry or depend on it."]
+    "main_only": ["C19-v3 crossed STARTED and its one-way workflow concluded failure; SUB must not diagnose, modify, retry, rescue, rescore or design a successor."]
   },
   "collision_reconciliation": {
     "concurrent_main_movement_detected": true,
@@ -162,8 +169,9 @@
     "main_dependency_created_by_sub": false,
     "exploratory_branch_based_on_stable_main": true,
     "official_inputs_or_outputs_used_by_sub": false,
-    "evidence_analyst_authority_rechecked_before_persistence": true,
-    "evidence_analyst_authority_at_write": "b9c14e9e171bf765447aa45e71b7ba75cc7ce357"
+    "evidence_analyst_authority_rechecked_before_initial_persistence": true,
+    "evidence_analyst_authority_at_write": "b9c14e9e171bf765447aa45e71b7ba75cc7ce357",
+    "post_persistence_main_terminal_movement_reconciled": true
   },
   "integrity_state": {
     "status": "EXPLORATORY_NON_EVIDENTIARY_BOUNDARY_HELD",
@@ -187,5 +195,5 @@
   },
   "rejected_lane": null,
   "lane_rejected_reason": null,
-  "next_sub_action": "Stop after this bounded probe and await Evidence Analyst classification. Do not formalize the exploratory branch/result and do not touch C19-v3. If a later Analyst cycle still permits incubator mode with no formal lane, a single richer synthetic test with same-rank conflicts and provenance-sensitive retractions is the proposed next step."
+  "next_sub_action": "Stop after this bounded probe and await Evidence Analyst classification. Do not formalize the exploratory branch/result and do not touch C19-v3 post-START failure. If a later Analyst cycle still permits incubator mode with no formal lane, a single richer synthetic test with same-rank conflicts and provenance-sensitive retractions is the proposed next step."
 }
