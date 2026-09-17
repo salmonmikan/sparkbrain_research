@@ -20,7 +20,7 @@ from sparkbrain.v03_external_validation.c19_r2_state_tracker import readout, tra
 ROOT = Path(__file__).resolve().parents[1]
 AUTHORITY_PATH = ROOT / "configs/external_validation/c19_r2_execution_authority.json"
 AUTHORIZED_IDENTITY = "c19-r2-fsa-state-tracker-official-v1"
-AUTHORIZED_ANALYST = "719b9e74063e5e10f6226fd49f1835036ed75e5b"
+AUTHORIZED_ANALYST = "6ecf13b73cfc75409f6cfe86e9b8ac73fc58b6ce"
 SCIENTIFIC_PACKAGE = "5d5d171cf872baed7a636fd246ab36f3a91a6716"
 ALLOWED_DIFF_PATHS = {
     ".github/workflows/c19-r2-one-way.yml",

@@ -54,7 +54,7 @@ jobs:
       - name: Authority-bound production execution smoke
         run: |
           python scripts/run_c19_r2_official.py prestart-smoke \
-            --analyst-commit 719b9e74063e5e10f6226fd49f1835036ed75e5b \
+            --analyst-commit 6ecf13b73cfc75409f6cfe86e9b8ac73fc58b6ce \
             --package-commit "$(git rev-parse HEAD)"
       - name: Fresh one-way namespaces
         run: |

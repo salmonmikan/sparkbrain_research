@@ -1,7 +1,7 @@
 {
   "schema_version": "1",
   "state": "EXECUTION_AUTHORIZED",
-  "evidence_analyst_commit": "719b9e74063e5e10f6226fd49f1835036ed75e5b",
+  "evidence_analyst_commit": "6ecf13b73cfc75409f6cfe86e9b8ac73fc58b6ce",
   "run_identity": "c19-r2-fsa-state-tracker-official-v1",
   "execution_limit": 1,
   "no_retry_after_started": true,
