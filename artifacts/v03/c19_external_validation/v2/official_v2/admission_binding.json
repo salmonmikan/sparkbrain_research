@@ -1,0 +1,107 @@
+{
+  "schema_version": "1",
+  "binding_id": "c19-external-v2-official-admission-binding-v1",
+  "protocol_id": "c19-external-v2-official-protocol-v2",
+  "planned_official_identity": "c19-external-v2-official-v2",
+  "evidence_analyst_authority": "080e28ce782c3a77e7d4a8249de03046d545ee9c",
+  "source_base_commit": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
+  "source_parser_envelope_input_binding": {
+    "belief_r_source_spec": {
+      "path": "configs/external_validation/belief_r.json",
+      "git_blob_sha1": "b2273104d63aa1eb486cd3f7064518aa989fb782",
+      "repository_id": "CAiRE/belief_r",
+      "revision": "3719f5804c63318037465fecf298a7fd78d99121",
+      "filename": "test.csv",
+      "split": "test",
+      "expected_sha256": "b584c18328965cf3eb3d36f2f9ef145c1e15c9bf57bba084982ba18df1fa4153",
+      "expected_size_bytes": 2230828,
+      "expected_rows": 3656,
+      "expected_pairs": 1744,
+      "expected_update_pairs": 1074
+    },
+    "belief_r_parser": {
+      "path": "src/sparkbrain/external_validation/belief_r.py",
+      "git_blob_sha1": "5d5e4983dcf799824db3d8042d345cfd5257148a",
+      "entrypoints": [
+        "load_belief_r_spec",
+        "verify_belief_r_cache",
+        "iter_belief_r_pairs",
+        "pair_to_episode",
+        "load_belief_r_episodes"
+      ],
+      "pairing_rules_frozen_by_blob": true
+    },
+    "episode_envelope": {
+      "path": "src/sparkbrain/tasks/schema.py",
+      "git_blob_sha1": "ea3eb02658e22e3312291aeb80e16c016dc04ee2",
+      "schema_version": "0.2",
+      "target_truth_model_side_forbidden": true
+    },
+    "truth_free_input_adapter": {
+      "path": "src/sparkbrain/v03_external_validation/truth_free_adapter.py",
+      "git_blob_sha1": "3153fcb61d5872e93d22f30f0f1f808f856bfaeb"
+    },
+    "condition_and_baseline_binding": {
+      "path": "src/sparkbrain/v03_external_validation/implementation_binding.py",
+      "git_blob_sha1": "223642c732563549cecd9fc977504b5db76c5557"
+    },
+    "inherited_raw_writer_and_reconstructor": {
+      "path": "src/sparkbrain/v03_external_validation/official_execution.py",
+      "git_blob_sha1": "e8f40f0b532d8a65f11c14446e306d3df37501ad",
+      "raw_writer": "write_raw_jsonl_no_clobber",
+      "reconstructor": "reconstruct_raw_jsonl"
+    }
+  },
+  "runtime_binding": {
+    "python_implementation": "CPython",
+    "python_version": "3.11.16",
+    "network_allowed_during_model_execution": false,
+    "official_fit_tune_select_allowed": false
+  },
+  "immutable_raw_preservation_binding": {
+    "authority_type": "git_commit_object",
+    "preserve_branch": "preserve/c19-official-v2-raw-c19-external-v2-official-v2",
+    "branch_must_not_exist_before_started": true,
+    "create_only_after_target_blind_raw_acquisition": true,
+    "raw_path": "artifacts/v03/c19_external_validation/v2/official_v2/raw_predictions.jsonl",
+    "manifest_path": "artifacts/v03/c19_external_validation/v2/official_v2/raw_manifest.json",
+    "manifest_required_fields": [
+      "protocol_id",
+      "run_identity",
+      "exact_package_commit",
+      "raw_sha256",
+      "raw_record_count",
+      "row_count",
+      "pairs_per_row"
+    ],
+    "expected_raw_record_count": 95920,
+    "expected_row_count": 55,
+    "expected_pairs_per_row": 1744,
+    "preserve_ref_format": "git-commit:<40-hex-sha1>",
+    "immutable_authority": "the exact Git commit object SHA containing both target-blind raw_predictions.jsonl and raw_manifest.json",
+    "scoring_source": "re-fetch raw_predictions.jsonl from the exact preservation commit SHA and reconstruct with expected raw_sha256 before evaluator targets are materialized",
+    "force_update_forbidden": true,
+    "same_identity_retry_after_started": false
+  },
+  "execution_order": [
+    "fresh authority and collision reconciliation",
+    "create STARTED bound to exact package commit",
+    "verify pinned Belief-R cache against exact source spec",
+    "materialize exact 1744 pairs with bound parser/envelope",
+    "execute exact 55-row inventory with target truth excluded from model-side inputs",
+    "write target-blind raw with no-clobber",
+    "create immutable raw preservation Git commit and record exact commit SHA",
+    "re-fetch and reconstruct raw from exact preservation commit SHA",
+    "materialize evaluator targets after immutable raw preservation",
+    "score only reconstructed preserved raw plus evaluator targets",
+    "persist terminal evidence"
+  ],
+  "integrity": {
+    "started_created": false,
+    "official_data_accessed": false,
+    "identity_consumed": false,
+    "raw_before_targets": true,
+    "raw_before_score": true,
+    "no_clobber": true
+  }
+}
