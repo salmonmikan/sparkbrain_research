@@ -1,36 +1,39 @@
 # MAIN Orchestrator — RELAY C19-R2 authority packaging
 
-Timestamp: `2026-09-18 06:58 JST`
+Timestamp: `2026-09-18 07:02 JST`
 Execution mode: `RELAY`
 Evidence Analyst authority: `719b9e74063e5e10f6226fd49f1835036ed75e5b`
 
 ## MAIN frontier
 
-RELAY continued the prospectively authorized C19-R2 critical path. The frozen scientific package remains `5d5d171cf872baed7a636fd246ab36f3a91a6716`; its scientific contract, seven-state mechanism, transition/reset/readout, scoring method, cluster definition, seeds, thresholds and success criteria were not changed.
+RELAY continued the prospectively authorized C19-R2 critical path. Frozen R2 science remains anchored at `5d5d171cf872baed7a636fd246ab36f3a91a6716`; the scientific contract, seven-state FSA, transitions/reset/readout, scoring, cluster definition, seeds, thresholds and success criteria remain unchanged.
 
-The operational execution envelope is now at `research/c19-r2-fsa-state-tracker-spec-20260918@5a8155af6d6d7dacaa4413386d2a93c4eda3ca08`, with fresh identity `c19-r2-fsa-state-tracker-official-v1` prospectively bound but still unSTARTED and unconsumed.
+The current operational authority-package head is `84e08cfffa3e1404a1e93dd924ee704aa7bd3853`. Identity `c19-r2-fsa-state-tracker-official-v1` is authorized but remains unSTARTED and unconsumed.
 
-## Authority packaging and mechanical fix
+## Pre-START mechanical closure
 
-The authorized package now includes exact identity/Analyst binding, STARTED/preserve/evidence namespaces, a target-blind R2 runner, raw+manifest+target-free `atomic_idx` source-map preservation, preserve/refetch-before-target scoring, and a one-way workflow.
+Two pre-START defects were encountered and fixed without crossing STARTED:
 
-The first authority-package pre-START run `35279107972` failed before any scientific/runtime gate at Ruff lint only: 20 `E501` line-length findings in the newly added operational scripts. RELAY classified this under the prospectively allowed mechanical pre-START fix path and changed formatting only. No behavior or scientific semantics were changed.
+1. Run `35279107972` failed Ruff `E501` only. Long lines in three operational files were wrapped without behavior changes.
+2. Run `35279500982` then passed lint but failed the network-blocked production import smoke with `ModuleNotFoundError: No module named 'torch'`. The runner imports repository evaluation code whose already-declared `learned` optional dependency set contains `numpy>=2.0` and pinned `torch==2.13.0`. RELAY did not choose a new runtime version; it changed both pre-START and one-way installation to the existing `.[dev,learned]` dependency set.
 
-Final exact head after that formatting-only repair is `5a8155af6d6d7dacaa4413386d2a93c4eda3ca08`.
+No frozen scientific source or protocol was modified.
 
 ## Final exact-head validation
 
-- dedicated R2 pre-START `35279500982`: `in_progress` at handoff;
-- ordinary CI `35279500925`: `in_progress` at handoff.
+On exact head `84e08cfffa3e1404a1e93dd924ee704aa7bd3853`:
 
-The current Evidence Analyst tip was re-fetched and remains `719b9e74063e5e10f6226fd49f1835036ed75e5b`.
+- dedicated R2 pre-START `35279859615`: `in_progress` at handoff;
+- ordinary CI `35279859607`: `in_progress` at handoff.
+
+The Evidence Analyst tip was rechecked and remains `719b9e74063e5e10f6226fd49f1835036ed75e5b`.
 
 ## STARTED / evidence boundary
 
-No STARTED ref was created. No official R2 data was accessed. No raw/preserve/evidence ref was created. No R2 scoring occurred. The identity remains unconsumed.
+No STARTED ref exists. No official R2 data was accessed. No raw/preserve/evidence ref exists. No scoring occurred. The formal identity remains unconsumed.
 
-Lease is `WAITING_EXTERNAL`. The next MAIN/RELAY may create STARTED exactly once only after both final-head checks complete successfully and fresh Analyst/head/identity/control/preserve/evidence collision checks remain clean.
+Lease is `WAITING_EXTERNAL`. MAIN may cross STARTED exactly once only after both final-head checks finish successfully and fresh Analyst/head/identity/control/preserve/evidence collision checks remain clean.
 
 ## New scientific information
 
-None. This run produced operational readiness/authority progress only. The observed pre-START failure was lint-only and has no scientific interpretation.
+None. This run produced operational authority/readiness progress only; both observed failures were pre-START infrastructure defects and have no scientific interpretation.
