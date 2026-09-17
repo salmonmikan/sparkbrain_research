@@ -52,7 +52,7 @@ def reference_full_history(history):
 
 
 def fsa_step(state, event):
-    active = dict(zip(SOURCES, state))
+    active = dict(zip(SOURCES, state, strict=True))
     kind, source, sign = event
     if kind == "assert":
         active[source] = sign
@@ -62,7 +62,7 @@ def fsa_step(state, event):
 
 
 def fsa_output(state):
-    active = dict(zip(SOURCES, state))
+    active = dict(zip(SOURCES, state, strict=True))
     for source in sorted(SOURCES, key=RANK.__getitem__, reverse=True):
         if active[source] != 0:
             return active[source]
@@ -96,11 +96,7 @@ def run():
 
             baseline = 0 if not history else stateless_output(history[-1])
             stateless_matches += expected == baseline
-            if (
-                first_stateless_counterexample is None
-                and expected != baseline
-                and history
-            ):
+            if first_stateless_counterexample is None and expected != baseline and history:
                 first_stateless_counterexample = {
                     "history": [list(event) for event in history],
                     "reference_output": expected,
@@ -141,9 +137,7 @@ def run():
             "sources": list(SOURCES),
             "authority_order": list(SOURCES),
             "event_alphabet_size": len(EVENTS),
-            "fsa_state_definition": (
-                "one ternary active-claim slot {-1,0,+1} per source"
-            ),
+            "fsa_state_definition": "one ternary active-claim slot {-1,0,+1} per source",
             "maximum_fsa_states": 3 ** len(SOURCES),
         },
         "exhaustive": {
