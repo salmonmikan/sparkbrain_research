@@ -1,0 +1,14 @@
+{
+  "atomic_idx_source_map_sha256": "6cb7bda6a08c97186d841688d5a3e3e361eb105ab3b03e2351b97a9775cda0a0",
+  "claim_boundary": "This contrast tests only the fixed seven-state FSA reduction. R1 revision-authority remains scientifically unresolved and therefore remains an interpretation ceiling.",
+  "evidence_analyst_commit": "6ecf13b73cfc75409f6cfe86e9b8ac73fc58b6ce",
+  "exact_package_commit": "5bfa3962c777fa5bc915bb21e20801ab8294778a",
+  "pair_iid_result_role": "secondary_sensitivity_only",
+  "primary_inference_method": "paired_atomic_idx_cluster_bootstrap",
+  "protocol_id": "c19-r2-fsa-state-tracker-protocol-v1",
+  "raw_bundle_sha256": "ca990ec40d3f1151525a945baa59176885bc149bbb3d56d7a56af9caac0edd7e",
+  "raw_preservation_commit": "3628694294a6eb33b18a0b42a56bb5ad77fe7b94",
+  "reduction_result_class": "REDUCED_BY_FSA",
+  "run_identity": "c19-r2-fsa-state-tracker-official-v1",
+  "v4_raw_sha256": "692f8a5dba48f604eb1f5518a8545b80da01e1a00a9e2d2b6b1c0567355d65af"
+}

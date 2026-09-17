@@ -1,0 +1,15 @@
+{
+  "bootstrap_seed": 19901,
+  "confidence_interval": {
+    "level": 0.95,
+    "lower": -0.25500734086833354,
+    "upper": -0.237325193230218
+  },
+  "contrast": "c19_v4_primary_breu_minus_r2_breu",
+  "draws_per_resample": 1744,
+  "method": "paired_official_pair_bootstrap_sensitivity",
+  "observed_effect": -0.2462308568887407,
+  "resamples": 10000,
+  "result_class": "REDUCED_BY_FSA",
+  "role": "secondary_sensitivity_only"
+}

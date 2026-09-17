@@ -1,0 +1,13 @@
+{
+  "evidence_analyst_commit": "6ecf13b73cfc75409f6cfe86e9b8ac73fc58b6ce",
+  "exact_package_commit": "5bfa3962c777fa5bc915bb21e20801ab8294778a",
+  "protocol_id": "c19-r2-fsa-state-tracker-protocol-v1",
+  "raw_preservation_commit": "3628694294a6eb33b18a0b42a56bb5ad77fe7b94",
+  "result_class": "REDUCED_BY_FSA",
+  "run_identity": "c19-r2-fsa-state-tracker-official-v1",
+  "schema_version": "1",
+  "started_ref": "control/c19-r2-fsa-state-tracker-started-v1-20260918",
+  "state": "TERMINAL_EVIDENCE",
+  "workflow_run_attempt": 1,
+  "workflow_run_id": "35288390550"
+}

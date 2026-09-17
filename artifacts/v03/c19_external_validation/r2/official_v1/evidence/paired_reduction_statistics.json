@@ -1,0 +1,19 @@
+{
+  "bootstrap_seed": 19901,
+  "claim_boundary": "This contrast tests only the fixed seven-state FSA reduction. R1 revision-authority remains scientifically unresolved and therefore remains an interpretation ceiling.",
+  "cluster_key": "atomic_idx",
+  "cluster_observation_policy": "carry_all_paired_observations_at_sampled_cluster_multiplicity",
+  "cluster_order": "first_occurrence_in_pair_index_order",
+  "clusters_per_resample": 204,
+  "confidence_interval": {
+    "level": 0.95,
+    "lower": -0.2554750732756702,
+    "upper": -0.23690126111231016
+  },
+  "contrast": "c19_v4_primary_breu_minus_r2_breu",
+  "method": "paired_atomic_idx_cluster_bootstrap",
+  "observed_effect": -0.2462308568887407,
+  "resamples": 10000,
+  "result_class": "REDUCED_BY_FSA",
+  "unique_clusters": 204
+}
