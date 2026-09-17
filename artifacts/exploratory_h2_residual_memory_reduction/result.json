@@ -1,0 +1,80 @@
+{
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "exploratory_target": "H2 residual-loser retention versus resource-matched generic symmetric recurrent memory on returning-state episodes",
+  "interpretation_boundary": "This is a synthetic reduction diagnostic only. It does not rerun or reinterpret C15 and cannot support or reject H2 formally.",
+  "rows": [
+    {
+      "false_revision_weight": 0.5,
+      "latency_weight": 0.05,
+      "residual_loser": {"dev": {"accuracy": 0.8424512108569802, "false_revision_rate": 0.1447265625, "return_latency": 0.530078125, "utility": 0.7435840233569802}, "selected_decay": 0.57, "test": {"accuracy": 0.8405794539921475, "false_revision_rate": 0.14010416666666664, "return_latency": 0.540625, "utility": 0.7434961206588142}},
+      "symmetric_minus_residual_test_utility": 0.0062977886304530495,
+      "symmetric_recurrent": {"dev": {"accuracy": 0.8451351286213423, "false_revision_rate": 0.13645833333333332, "return_latency": 0.5328125, "utility": 0.7502653369546757}, "selected_decay": 0.4, "test": {"accuracy": 0.8433811488726006, "false_revision_rate": 0.13346354166666669, "return_latency": 0.537109375, "utility": 0.7497939092892673}}
+    },
+    {
+      "false_revision_weight": 1.0,
+      "latency_weight": 0.05,
+      "residual_loser": {"dev": {"accuracy": 0.8418009733627848, "false_revision_rate": 0.13391927083333333, "return_latency": 0.673828125, "utility": 0.6741902962794515}, "selected_decay": 0.65, "test": {"accuracy": 0.8413244085310285, "false_revision_rate": 0.13040364583333333, "return_latency": 0.66484375, "utility": 0.6776785751976953}},
+      "symmetric_minus_residual_test_utility": 0.013909388126636002,
+      "symmetric_recurrent": {"dev": {"accuracy": 0.8438141819867765, "false_revision_rate": 0.11953125, "return_latency": 0.715234375, "utility": 0.6885212132367765}, "selected_decay": 0.51, "test": {"accuracy": 0.8433783279076646, "false_revision_rate": 0.11790364583333332, "return_latency": 0.677734375, "utility": 0.6915879633243313}}
+    },
+    {
+      "false_revision_weight": 2.0,
+      "latency_weight": 0.05,
+      "residual_loser": {"dev": {"accuracy": 0.8398341421384432, "false_revision_rate": 0.12838541666666664, "return_latency": 0.74609375, "utility": 0.5457586213051099}, "selected_decay": 0.68, "test": {"accuracy": 0.8395896276623891, "false_revision_rate": 0.127734375, "return_latency": 0.718359375, "utility": 0.5482029089123891}},
+      "symmetric_minus_residual_test_utility": 0.03018623068955839,
+      "symmetric_recurrent": {"dev": {"accuracy": 0.8396405163736389, "false_revision_rate": 0.11295572916666667, "return_latency": 0.8171875, "utility": 0.5728696830403055}, "selected_decay": 0.56, "test": {"accuracy": 0.8400297646019474, "false_revision_rate": 0.1115234375, "return_latency": 0.771875, "utility": 0.5783891396019475}}
+    },
+    {
+      "false_revision_weight": 0.5,
+      "latency_weight": 0.1,
+      "residual_loser": {"dev": {"accuracy": 0.8423132713615178, "false_revision_rate": 0.14537760416666667, "return_latency": 0.521875, "utility": 0.7174369692781843}, "selected_decay": 0.56, "test": {"accuracy": 0.8402327528116832, "false_revision_rate": 0.14166666666666666, "return_latency": 0.528125, "utility": 0.7165869194783498}},
+      "symmetric_minus_residual_test_utility": 0.006151465003484513,
+      "symmetric_recurrent": {"dev": {"accuracy": 0.844636835849552, "false_revision_rate": 0.13932291666666669, "return_latency": 0.50703125, "utility": 0.7242722525162186}, "selected_decay": 0.38, "test": {"accuracy": 0.842373801148501, "false_revision_rate": 0.13645833333333335, "return_latency": 0.5140625, "utility": 0.7227383844818344}}
+    },
+    {
+      "false_revision_weight": 1.0,
+      "latency_weight": 0.1,
+      "residual_loser": {"dev": {"accuracy": 0.8423132713615178, "false_revision_rate": 0.14537760416666667, "return_latency": 0.521875, "utility": 0.6447481671948512}, "selected_decay": 0.56, "test": {"accuracy": 0.8402327528116832, "false_revision_rate": 0.14166666666666666, "return_latency": 0.528125, "utility": 0.6457535861450164}},
+      "symmetric_minus_residual_test_utility": 0.010453083560917453,
+      "symmetric_recurrent": {"dev": {"accuracy": 0.8451351286213423, "false_revision_rate": 0.13645833333333332, "return_latency": 0.5328125, "utility": 0.6553955452880089}, "selected_decay": 0.4, "test": {"accuracy": 0.8433811488726006, "false_revision_rate": 0.13346354166666669, "return_latency": 0.537109375, "utility": 0.6562066697059339}}
+    },
+    {
+      "false_revision_weight": 2.0,
+      "latency_weight": 0.1,
+      "residual_loser": {"dev": {"accuracy": 0.8398341421384432, "false_revision_rate": 0.12838541666666664, "return_latency": 0.74609375, "utility": 0.50845393380511}, "selected_decay": 0.68, "test": {"accuracy": 0.8395896276623891, "false_revision_rate": 0.127734375, "return_latency": 0.718359375, "utility": 0.512284940162389}},
+      "symmetric_minus_residual_test_utility": 0.028183820721023545,
+      "symmetric_recurrent": {"dev": {"accuracy": 0.8425582873817126, "false_revision_rate": 0.11673177083333333, "return_latency": 0.755859375, "utility": 0.533508808215046}, "selected_decay": 0.53, "test": {"accuracy": 0.8421875108834126, "false_revision_rate": 0.1150390625, "return_latency": 0.71640625, "utility": 0.5404687608834126}}
+    },
+    {
+      "false_revision_weight": 1.0,
+      "latency_weight": 0.2,
+      "residual_loser": {"dev": {"accuracy": 0.8388622966430898, "false_revision_rate": 0.155078125, "return_latency": 0.44453125, "utility": 0.5948779216430897}, "selected_decay": 0.48, "test": {"accuracy": 0.8364865079779742, "false_revision_rate": 0.1525390625, "return_latency": 0.448828125, "utility": 0.5941818204779741}},
+      "symmetric_minus_residual_test_utility": 0.008570832268455453,
+      "symmetric_recurrent": {"dev": {"accuracy": 0.8443207563274818, "false_revision_rate": 0.14108072916666667, "return_latency": 0.495703125, "utility": 0.6040994021608151}, "selected_decay": 0.37, "test": {"accuracy": 0.8421927569130963, "false_revision_rate": 0.13795572916666668, "return_latency": 0.507421875, "utility": 0.6027526527464295}}
+    }
+  ],
+  "synthetic_contract": {
+    "b_dwell_steps": [2, 4, 8, 16],
+    "decay_grid": [0.0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2, 0.21, 0.22, 0.23, 0.24, 0.25, 0.26, 0.27, 0.28, 0.29, 0.3, 0.31, 0.32, 0.33, 0.34, 0.35, 0.36, 0.37, 0.38, 0.39, 0.4, 0.41, 0.42, 0.43, 0.44, 0.45, 0.46, 0.47, 0.48, 0.49, 0.5, 0.51, 0.52, 0.53, 0.54, 0.55, 0.56, 0.57, 0.58, 0.59, 0.6, 0.61, 0.62, 0.63, 0.64, 0.65, 0.66, 0.67, 0.68, 0.69, 0.7, 0.71, 0.72, 0.73, 0.74, 0.75, 0.76, 0.77, 0.78, 0.79, 0.8, 0.81, 0.82, 0.83, 0.84, 0.85, 0.86, 0.87, 0.88, 0.89, 0.9, 0.91, 0.92, 0.93, 0.94, 0.95],
+    "dev_seeds": [20260908, 20260909, 20260910, 20260911, 20260912],
+    "episodes_per_seed": 512,
+    "evidence_mean_magnitude": 1.0,
+    "evidence_noise_sigma": 1.2,
+    "initial_a_steps": 6,
+    "residual_loser_semantics": "Only the prior losing hypothesis carries decayed state; the prior winner is replaced by current evidence.",
+    "return_a_steps": 6,
+    "selection_rule": "Select each mechanism's decay independently on DEV utility only; evaluate the fixed selected decay on disjoint TEST seeds.",
+    "state_budget": "Both mechanisms use two scalar hypothesis states and one prospectively selected decay parameter.",
+    "symmetric_recurrent_semantics": "Both hypothesis states carry the same generic recurrent decay.",
+    "test_seeds": [20260918, 20260919, 20260920, 20260921, 20260922],
+    "utility_weights": [
+      {"false_revision_weight": 0.5, "latency_weight": 0.05},
+      {"false_revision_weight": 1.0, "latency_weight": 0.05},
+      {"false_revision_weight": 2.0, "latency_weight": 0.05},
+      {"false_revision_weight": 0.5, "latency_weight": 0.1},
+      {"false_revision_weight": 1.0, "latency_weight": 0.1},
+      {"false_revision_weight": 2.0, "latency_weight": 0.1},
+      {"false_revision_weight": 1.0, "latency_weight": 0.2}
+    ]
+  }
+}
