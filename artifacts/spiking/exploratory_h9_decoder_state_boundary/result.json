@@ -1,0 +1,41 @@
+{
+  "schema": "exploratory-h9-decoder-state-boundary-v1",
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "synthetic_task": {
+    "labels": ["A", "B"],
+    "silent_gap_range": [1, 20],
+    "trials": 40,
+    "query": "recall cue after silent gap",
+    "abstention_counts_incorrect": true
+  },
+  "fixed_probe_choices": {
+    "analog_detection_epsilon": 0.05,
+    "analog_decay_grid": [0.5, 0.8, 0.9, 0.95, 0.99],
+    "note": "Sensitivity grid only; no selection against formal outcomes."
+  },
+  "stateless_current_spike_only": {
+    "accuracy": 0.0,
+    "correct": 0,
+    "total": 40
+  },
+  "analog_leaky_hidden_state": [
+    {"decay": 0.5, "accuracy": 0.2, "max_gap_with_full_accuracy": 4, "non_sensory_recurrent_spikes": 0},
+    {"decay": 0.8, "accuracy": 0.65, "max_gap_with_full_accuracy": 13, "non_sensory_recurrent_spikes": 0},
+    {"decay": 0.9, "accuracy": 1.0, "max_gap_with_full_accuracy": 20, "non_sensory_recurrent_spikes": 0},
+    {"decay": 0.95, "accuracy": 1.0, "max_gap_with_full_accuracy": 20, "non_sensory_recurrent_spikes": 0},
+    {"decay": 0.99, "accuracy": 1.0, "max_gap_with_full_accuracy": 20, "non_sensory_recurrent_spikes": 0}
+  ],
+  "toy_recurrent_spike_latch": {
+    "accuracy": 1.0,
+    "correct": 40,
+    "total": 40,
+    "mean_recurrent_spikes_per_trial": 10.5,
+    "max_recurrent_spikes_per_trial": 20
+  },
+  "interpretation": [
+    "No current query spike plus no retained state cannot solve this delayed recall toy.",
+    "Hidden continuous leaky state can solve a decay-dependent horizon with zero non-sensory recurrent spikes.",
+    "A toy recurrent spike latch solves all tested gaps but uses recurrent spike activity proportional to the gap.",
+    "A future H9 fully-spiking boundary must explicitly account for state carried by decoders/filters; spike-valued I/O alone is insufficient."
+  ]
+}
