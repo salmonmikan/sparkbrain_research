@@ -1,43 +1,47 @@
 # SparkBrain Research Orchestrator — MAIN latest
 
-Timestamp: `2026-09-17T19:52:12+09:00`  
+Timestamp: `2026-09-17T20:18:00+09:00`  
 Worker role: `main`  
-Execution mode: `RELAY`  
-Evidence Analyst authority: `ef858fe9e6fbe9d0bdd57bc43a15e07ec0b30c23`
+Execution mode: `PRIMARY`  
+Evidence Analyst authority: `56f0665ccc536bff6bf48e9eb581ec9a9eafcecc`
 
 ## MAIN frontier
 
-RELAY took over the stale PRIMARY lease only after fail-closed reconciliation: the prior PRIMARY heartbeat was `19:16 JST`, while the v4 branch still had no movement beyond the exact authorized v3 science base and no v4 STARTED/control/preserve/evidence authority existed.
+PRIMARY recovered the stale RELAY lease only after reconciling the active C19-v4 branch and exact validation state. The active object remains the Analyst-authorized **C19 official-v4 preservation-qualified final successor** on `research/c19-official-v4-preservation-qualified-20260917`.
 
-The active object is the Analyst-authorized **C19 official-v4 preservation-qualified final successor**. RELAY advanced only the prospectively fixed `V4_PRE_START_BUILD` path; no new scientific choice was made.
+Fresh authority classified the current phase as `V4_PRE_START_BLOCKER_LINT`: dedicated pre-START admission `35212637922` was green on `a0ba353ff33abc981875c9d02af2e171a1bc65f6`, while ordinary CI `35212637754` failed only at Ruff lint in both Python 3.11 and 3.13 jobs. No v4 STARTED/control/preserve/evidence authority existed, so `c19-external-v2-official-v4` remained fresh/unSTARTED/unconsumed.
 
-## Critical-path continuation
+## Critical-path fixes completed
 
-The v4 package branch advanced to:
+PRIMARY inspected the exact lint diagnostics and made only the three behavior-preserving changes prospectively allowed by the Analyst:
 
-`research/c19-official-v4-preservation-qualified-20260917@a0ba353ff33abc981875c9d02af2e171a1bc65f6`
+1. wrapped one overlong `argparse.ArgumentParser` construction in `scripts/run_c19_official_v4.py`;
+2. removed the unnecessary quoted forward annotation on `ExecutionAdmissionV4.synthetic_dev`;
+3. removed the unnecessary quoted forward annotation on `RawBundleV4.from_records`.
 
-from exact science basis `84b244959f249da916a36906508ead0830052e9b`.
+No candidate, protocol, baseline, matrix, seed, input, runtime version, scorer/statistics, threshold, preservation semantics, or claim semantics changed.
 
-The build integrates the already-qualified generic preservation primitive from readiness head `158ad46cafcc9d9b17f01a85488562b63e81257d` and keeps v3 scientific semantics structurally inherited. Added pre-START checks include explicit v4-v3 science-contract invariance, the exact runtime/network-blocked synthetic acquisition smoke, the qualified raw-preservation no-clobber test, and the frozen v2 scorer regression.
+The final exact package head after those lint-only fixes is:
 
-The v4 one-way workflow now uses the qualified preservation boundary to create missing destination parents, fail closed on an existing preservation ref, verify staged-byte digests, push without force, independently re-fetch the exact preservation commit and verify raw/manifest digests before evaluator target materialization, then score only preserved raw and create terminal evidence under the fresh v4 authority.
+`research/c19-official-v4-preservation-qualified-20260917@74bfe6b4a39758656f291baaa3f16236e3e71964`
 
-Consumed C19-v2/v3 were not retried, recovered or inspected for science. No official Belief-R data was accessed. No v4 STARTED marker was created and v4 remains unconsumed.
+Intermediate lint commit: `bb279e313c2d9612055ddb67eb1a9a8aee22b374`.
 
-## Exact-head validation
+## Exact-head workflow state
 
-Push of `a0ba353...` started two exact-head workflows:
+The final-head push started both required validations on `74bfe6b4a39758656f291baaa3f16236e3e71964`:
 
-- pre-START admission: `35212637922` — `in_progress` at checkpoint
-- ordinary CI: `35212637754` — `in_progress` at checkpoint
+- ordinary CI: `35214841871` — `in_progress` at checkpoint
+- dedicated v4 pre-START admission: `35214841877` — `in_progress` at checkpoint
 
-No STARTED/one-way execution is authorized until these complete green and every fresh Analyst GO/binding/collision check is revalidated.
+Because the lint repair changed the exact package head, the earlier pre-START success on `a0ba353...` is intentionally not reused as admission authority.
+
+No STARTED marker was created, no one-way execution was dispatched, no official Belief-R data was accessed, and no v4 identity was consumed.
 
 ## Lease / stop
 
 Lease status: **`WAITING_EXTERNAL`**.
 
-RELAY stopped because the remaining work is external workflow completion and there is no useful immediate critical-path mutation to perform safely. The next MAIN cycle should collect both workflow results. If both are green, it must perform the fresh v4 identity/control/preserve/evidence collision and binding checks immediately before any STARTED creation. Mechanical science-invariant failures may be fixed under `V4_PRE_START_BLOCKER`; any semantic/runtime-version/scientific redesign requires STOP for Analyst.
+PRIMARY stopped because the only remaining critical-path work is completion of the two external exact-head workflows. Relay continuation is expected. Relay or the next PRIMARY must first collect both `35214841871` and `35214841877` and re-fetch the exact v4 head. If both are green, it may proceed only after fresh identity/control/preserve/evidence collision checks and every Analyst GO/binding condition still passes. If either workflow fails mechanically, MAIN owns the science-invariant fix; any semantic/runtime-version/scientific redesign requires STOP for Analyst.
 
-New scientific information: **none**. This run advanced only prospectively authorized pre-START readiness/admission work.
+New scientific information: **none**. This run performed only prospectively authorized lint-only pre-START repair and exact-head revalidation dispatch.
