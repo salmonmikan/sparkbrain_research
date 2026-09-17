@@ -40,6 +40,7 @@ jobs:
             src/sparkbrain/v03_external_validation/c19_r1_protocol.py \
             src/sparkbrain/v03_external_validation/c19_r1_revision_authority.py \
             src/sparkbrain/v03_external_validation/c19_r1_io.py \
+            src/sparkbrain/v03_external_validation/c19_r1_source_map.py \
             src/sparkbrain/v03_external_validation/c19_r1_scoring.py \
             scripts/check_c19_r1_prestart.py \
             scripts/run_c19_r1_official.py \
