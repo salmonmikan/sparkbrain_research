@@ -1,27 +1,26 @@
 {
-  "timestamp": "2026-09-17T07:58:00+09:00",
+  "timestamp": "2026-09-17T09:00:00+09:00",
   "worker_role": "evidence_analyst",
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst_handoff_before_write": "25eae547ccd9bb22edc2010e698a8dd2ecd33dcc",
+    "evidence_analyst_handoff_before_write": "9bd11c80c51ff61bc88d00b20192d90a9c5b970f",
     "control_brain_handoff": "909ce53e7b0355f5aab1512e659ab36d910bf6a4",
-    "orchestrator_run_report": "447fb545cb21af1e9649d4793548ca24ebec6f96",
+    "orchestrator_run_report": "d6d012072a15eb52e8fa9a12ea9d5e674c2451f7",
     "external_research_audit_handoff": "8f405b63d0afc8a6ffae522aa68799c54006f52d",
-    "repository_steward": "4cb869b4078de1caa9a9e9aa32df88f6eff54b25",
     "c19_frontier": "research/c19-truth-free-symbolic-adapter-v2-20260917@66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
-    "c19_fresh_successor_branch_present": false,
-    "c19_fresh_successor_branch": "research/c19-official-v2-scorer-complete-20260917",
-    "c19_frozen_predecessor_anchor": "90c936a7abca7eba0dac1f977753503551e73368",
+    "c19_successor_branch": "research/c19-official-v2-scorer-complete-20260917",
+    "c19_successor_branch_present": false,
+    "c19_predecessor_anchor": "90c936a7abca7eba0dac1f977753503551e73368",
     "c19_exact_head_ci": "35152618704:success",
     "h9_readiness": "research/c07-h9-fully-spiking-readiness-sub-20260917@9480da3d77dfee4766b28757f1a164f5cd4dac26",
-    "h9_exact_head_ci": "35158843629:success",
+    "h9_readiness_status": "PRE_START_UNDERSPECIFIED",
     "open_pr_count": 0,
     "open_issues": [147, 139],
-    "git_tag_count": 0,
     "repository_ruleset_count": 0,
+    "authoritative_git_tag_count": 0,
     "legacy_freeze_refs_present": true,
-    "legacy_preserve_refs_present": true,
     "legacy_control_refs_present": true,
+    "legacy_preserve_refs_present": true,
     "legacy_evidence_refs_present": true,
     "c19_control_ref_present": false,
     "c19_preserve_ref_present": false,
@@ -30,7 +29,7 @@
   },
   "control_brain_commit": "909ce53e7b0355f5aab1512e659ab36d910bf6a4",
   "main_report_commit_consumed": "e5748cac0753e1ae569e650e07e88c4091d669b4",
-  "sub_report_commit_consumed": "447fb545cb21af1e9649d4793548ca24ebec6f96",
+  "sub_report_commit_consumed": "d6d012072a15eb52e8fa9a12ea9d5e674c2451f7",
   "external_research_audit_handoff_commit_consumed": "8f405b63d0afc8a6ffae522aa68799c54006f52d",
   "external_research_audit_role_consumed": "LITERATURE_REDUCTION_SCOUT",
   "external_input": {
@@ -40,15 +39,22 @@
     "genuinely_new_information_this_cycle": false,
     "independent_auditor_handoff_available": false,
     "findings_consumed": [
-      "SemEval-2026 symbolic abstraction/canonicalization supplies an ordinary explanation for I2-type representation gains.",
-      "PDDL-Mind-style explicit symbolic state tracking raises the reduction bar for crediting persistent dynamics.",
-      "BeliefTrack separates Update, Stay and Isolation; current C19 BU/BM/BREU does not test an Isolation axis.",
-      "Ordinary Transformers can exhibit functionally causal belief-state geometry, so persistent/history-conditioned state itself is not a novelty axis."
+      "Symbolic abstraction/canonicalization supplies an ordinary explanation for I2-type representation gains.",
+      "Explicit symbolic state tracking is a strong established reduction for belief-reasoning gains.",
+      "BeliefTrack separates Update, Stay and Isolation; current C19 BU/BM/BREU does not establish an Isolation axis.",
+      "Ordinary Transformers can contain functionally causal belief-state geometry, so persistent/history-conditioned state is not itself a novelty axis."
     ],
-    "affected_lines": ["C19", "PROGRAMME_NOVELTY", "FUTURE_EXTERNAL_VALIDATION", "A01_REFRAME"],
-    "strategic_impact": "NARROWS_C19_INTERPRETATION_AND_STRENGTHENS_SIMPLER_REDUCTIONS_WITHOUT_CHANGING_CURRENT_PRIMARY_ALLOCATION",
-    "novelty_effect": "Persistent-state novelty remains weakened; a positive C19 result supports only the frozen narrow representation-gain claim unless matched reductions are defeated prospectively.",
-    "methodological_risk": "Structured representation and explicit state tracking can be misattributed to SparkBrain dynamics if frontend/state comparators are not representation matched.",
+    "affected_lines": [
+      "C19",
+      "PROGRAMME_NOVELTY",
+      "FUTURE_EXTERNAL_VALIDATION",
+      "A01_REFRAME"
+    ],
+    "strategic_impact": "NARROWS_C19_INTERPRETATION_AND_STRENGTHENS_SIMPLER_REDUCTIONS_WITHOUT_CHANGING_CURRENT_ALLOCATION",
+    "weakens_novelty": true,
+    "strengthens_simpler_reduction": true,
+    "methodological_risk": "Structured frontend representation and explicit state tracking can be misattributed to persistent dynamics unless future comparators are representation/information matched.",
+    "raises_future_discriminator_bar": true,
     "prospective_baselines_or_discriminators": [
       "identical-I2 stateless/linear/shallow comparator",
       "representation/information-matched explicit state tracker",
@@ -56,43 +62,38 @@
       "separately frozen Update/Stay/Isolation external-generalization test"
     ],
     "current_allocation_changed": false,
-    "reason_allocation_unchanged": "No newer external or audit finding arrived. C19 remains the highest-value unresolved frontier. The SUB allocation change in this cycle is caused by completion of the H9 readiness audit and its PRE_START_UNDERSPECIFIED result, not by external input.",
+    "reason_allocation_unchanged": "No new external or audit handoff arrived. C19 remains the highest-information unresolved frontier and H9 remains under-specified after completed independent readiness.",
     "must_not_change": [
-      "rejected C19 predecessor protocol/identity and frozen anchor 90c936a7abca7eba0dac1f977753503551e73368",
+      "rejected/retired-unconsumed C19 predecessor protocol/identity and frozen anchor 90c936a7abca7eba0dac1f977753503551e73368",
       "all consumed/frozen A01, RV01, RV02 and CX01 experiments",
-      "historical C19-v1/C06 evidence",
-      "historical C07 hybrid evidence and threshold-1.1 negative"
+      "historical C19-v1/C06 authorities",
+      "historical C07 hybrid evidence and threshold-1.1 negative",
+      "fresh C19-v2 inherited matrix/baselines/metrics after STARTED"
     ]
   },
   "new_repository_evidence": {
     "scientific_measurement": false,
-    "c19_status": "PRIMARY_UNRESOLVED_FRESH_SUCCESSOR_AUTHORIZED_NOT_YET_CREATED",
+    "material_scientific_change": false,
     "c19_current_head": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
     "c19_successor_branch_present": false,
     "c19_started_or_consumed": false,
-    "h9_readiness_status": "PRE_START_UNDERSPECIFIED",
+    "c19_exact_head_ci_green": true,
+    "sub_latest_report": "d6d012072a15eb52e8fa9a12ea9d5e674c2451f7",
+    "sub_latest_result": "NO_OP_NO_VALID_INDEPENDENT_LANE",
     "h9_readiness_head": "9480da3d77dfee4766b28757f1a164f5cd4dac26",
-    "h9_source_bindings_pinned": 14,
-    "h9_scientific_execution_performed": false,
-    "h9_identity_created_or_consumed": false,
-    "h9_missing_scientific_choices": [
-      "FULLY_SPIKING_OPERATIONAL_BOUNDARY",
-      "NON_SENSORY_NEURON_AND_SYNAPSE_MODEL",
-      "REPRESENTATION_AND_DECODER_MAPPING",
-      "PARAMETER_AND_TUNING_BUDGET",
-      "PRIMARY_COMPARATOR_AND_CLAIM",
-      "SUCCESSOR_TOLERANCE_AUTHORITY",
-      "TRAINING_OR_PLASTICITY_REGIME",
-      "EXACT_RUNTIME_AND_RANDOMNESS"
-    ],
-    "issue_drift_update": "Issue #147 now tracks the fresh C19 official-v2 operational question in addition to governance Issue #139; older reports listing only #139 are operationally stale."
+    "h9_readiness_status": "PRE_START_UNDERSPECIFIED",
+    "operational_confirmation": "SUB correctly remained no-op and did not touch MAIN; no durable MAIN science movement occurred after the 66c8eafe substrate report."
   },
   "active_line_review": {
     "A01": {
       "status": "MIXED_REGISTERED_FAMILY_PROGRAMME_CLOSED",
-      "strongest_evidence": "P2/P3 consumed development positives remain valid under exact contracts; Family-A P4 is terminal negative; Family-B/C exact objects are pre-START static reductions.",
+      "strongest_evidence": "P2/P3 consumed development positives remain valid; Family-A P4 is terminal negative; Family-B/C exact objects are pre-START static reductions.",
       "consumed": true,
-      "simpler_reductions": ["eligibility/three-factor delayed credit", "latent-cause/state memory", "ordinary recurrent/local mechanisms"],
+      "simpler_reductions": [
+        "eligibility/three-factor delayed credit",
+        "latent-cause/state memory",
+        "ordinary recurrent/local mechanisms"
+      ],
       "shortest_path_to_new_information": "genuinely fresh independently motivated prospective object only",
       "genuine_blocker": "no independently motivated registered successor",
       "information_value": "LOW_CURRENTLY",
@@ -103,7 +104,10 @@
       "status": "DEVELOPMENT_POSITIVE_CONSUMED_REDUCIBLE",
       "strongest_evidence": "real-delay causal timing observation remains valid but novelty is weak",
       "consumed": true,
-      "simpler_reductions": ["ordinary local adaptive connection-delay plasticity", "recurrent timing dynamics"],
+      "simpler_reductions": [
+        "ordinary local adaptive connection-delay plasticity",
+        "recurrent timing dynamics"
+      ],
       "shortest_path_to_new_information": "fresh successor only; none registered",
       "genuine_blocker": "no registered fresh successor",
       "information_value": "LOW",
@@ -132,8 +136,9 @@
     },
     "H8_C08": {
       "status": "TERMINAL_REGISTERED_SPECIALIZATION_NEGATIVE",
-      "strongest_evidence": "structural mechanisms executed but causal specialization gates failed",
-      "shortest_path_to_new_information": "new independently motivated object only; no rerun of C08 negative",
+      "strongest_evidence": "structural mechanisms executed but causal-specialization gates failed",
+      "consumed": true,
+      "shortest_path_to_new_information": "new independently motivated object only; do not rerun C08",
       "genuine_blocker": "registered negative is terminal",
       "information_value": "LOW",
       "implementation_distance": "NO_CURRENT_SUCCESSOR",
@@ -141,10 +146,12 @@
     },
     "H9_C07": {
       "status": "HYBRID_PARTIAL_SUPPORT_FULLY_SPIKING_SUCCESSOR_PRE_START_UNDERSPECIFIED",
-      "strongest_evidence": "historical reduced C07 hybrid passed 9/9 frozen checks, but only sensory encoding is spiking; threshold 1.1 gives no spikes/predictions; the new source-only readiness package pins 14 blobs and proves eight scientific choices are not uniquely fixed",
+      "strongest_evidence": "historical C07 hybrid passed frozen checks but only sensory encoding is spiking; threshold-1.1 negative is preserved; completed readiness identifies eight unresolved scientific choices",
       "consumed": false,
-      "simpler_reductions": ["historical hybrid boundary already explains current positive invariants without a fully-spiking cognitive substrate"],
-      "shortest_path_to_new_information": "later prospective Analyst design of a distinct fully-spiking object, then a fresh protocol/identity",
+      "simpler_reductions": [
+        "historical hybrid boundary already explains current positive invariants without a fully-spiking cognitive substrate"
+      ],
+      "shortest_path_to_new_information": "later prospective Analyst design of a distinct fully-spiking object, then fresh protocol/identity",
       "genuine_blocker": "eight unresolved scientific choices cannot be delegated to implementation",
       "information_value": "MEDIUM_FUTURE",
       "implementation_distance": "BLOCKED_ON_PROSPECTIVE_SCIENTIFIC_DESIGN",
@@ -152,11 +159,15 @@
     },
     "C19": {
       "status": "PRIMARY_UNRESOLVED_PREDECESSOR_REJECTED_FRESH_SUCCESSOR_AUTHORIZED_NOT_YET_CREATED",
-      "strongest_evidence": "raw/coverage/condition-baseline substrate is green; v1 under-specification has been resolved prospectively for a distinct v2 successor before official access",
+      "strongest_evidence": "exact target-blind raw/coverage substrate is green and fresh successor acquisition/scorer/preservation semantics have been fixed prospectively before official access",
       "consumed": false,
-      "simpler_reductions": ["surface abstraction/canonicalization", "explicit state tracking", "ordinary recurrent/Transformer belief-state representation"],
+      "simpler_reductions": [
+        "surface abstraction/canonicalization",
+        "explicit state tracking",
+        "ordinary recurrent/Transformer belief-state representation"
+      ],
       "shortest_path_to_new_information": "implement exact fresh successor package and execute one-way if all conformance gates hold",
-      "genuine_blocker": "fresh successor package has not yet been created; no scientific ambiguity is currently known beyond the fixed handoff contract",
+      "genuine_blocker": "fresh successor package has not yet been created; no currently known scientific ambiguity remains beyond the fixed handoff contract",
       "information_value": "VERY_HIGH",
       "implementation_distance": "NEAR_TO_MEDIUM",
       "centrality": "PRIMARY"
@@ -172,14 +183,14 @@
     "implementation_distance": "NEAR_TO_MEDIUM",
     "execution_allowed": "CONDITIONAL_AFTER_EXACT_SUCCESSOR_PACKAGE_CONFORMANCE",
     "dependencies": [
-      "rejected predecessor anchor 90c936a7abca7eba0dac1f977753503551e73368 remains immutable historical input",
+      "predecessor anchor 90c936a7abca7eba0dac1f977753503551e73368 remains immutable historical input",
       "source base 66c8eafe9863ed1b2455cc833a3dc498ce7721b0 remains outcome-free",
       "identity c19-external-v2-official-v2 is fresh/unSTARTED/unconsumed",
       "current Analyst authority remains current or a newer handoff explicitly preserves this exact successor contract"
     ],
     "allowed_scope": [
       "create distinct successor research branch/protocol/identity without altering predecessor",
-      "implement exact prospectively fixed cache/parser/visible-envelope/evaluator-target/scorer/bootstrap/preserver contract",
+      "implement exact prospectively fixed parser/visible-envelope/evaluator-target/scorer/bootstrap/preserver contract",
       "update C19-specific tests/docs/manifests for the successor",
       "fix all science-preserving CI/verifier/binding/runtime defects",
       "perform exact-head integration and fresh integrity checks",
@@ -187,7 +198,7 @@
     ],
     "forbidden_scope": [
       "modify or execute the rejected predecessor v1 object",
-      "change the inherited adapter, matrix, baselines, seeds, metrics, thresholds or claim after observing official output",
+      "change inherited adapter, matrix, baselines, seeds, metrics, thresholds or claim after observing official output",
       "inspect official examples before STARTED",
       "score before immutable raw preservation",
       "retry or repair after post-START failure",
@@ -195,10 +206,12 @@
     ],
     "go_conditions": [
       "fresh identity is collision-free, unSTARTED and unconsumed",
-      "exact cache/parser/visible-envelope/target/scorer/bootstrap/preserver/runtime/input/package bindings reconstruct",
-      "exact 55x1744 raw coverage and 1744 target join fail closed",
+      "source base and inherited science remain unchanged",
+      "exact parser/visible-envelope/target/scorer/bootstrap/preserver/runtime/input/package bindings reconstruct",
+      "fresh successor package contains no official output before STARTED",
+      "no conflicting C19 control/preserve/evidence authority exists",
+      "exact 55x1744 raw coverage and exact 1744 evaluator-target join fail closed",
       "STARTED/no-clobber/raw-before-score ordering is machine-enforced",
-      "no prior official output or conflicting control/preserve/evidence authority exists",
       "exact-head CI is green",
       "current Analyst authority still authorizes this exact successor"
     ],
@@ -225,147 +238,170 @@
   },
   "sub_lane": null,
   "sub_fallback": null,
-  "no_sub_lane_reason": "The reserved H9/C07 readiness lane is complete at 9480da3d77dfee4766b28757f1a164f5cd4dac26 with PRE_START_UNDERSPECIFIED and green CI. Further implementation would require choosing eight new scientific semantics rather than performing readiness work. No other distinct prospective secondary object is presently registered and ready, and all live C19 work is MAIN-owned.",
+  "no_sub_lane_reason": "H9/C07 readiness is complete at 9480da3d77dfee4766b28757f1a164f5cd4dac26 with PRE_START_UNDERSPECIFIED; advancing it now requires eight new prospectively fixed scientific choices, not implementation. No other distinct registered independent secondary object is ready, and all live C19 work is MAIN-owned.",
   "outcome_contingencies": {
     "PRE_START_SUCCESSOR_PROTOCOLIZATION": {
-      "trigger": "fresh C19 v2 successor package is incomplete but every remaining choice is mechanically determined by this handoff",
-      "next_action_same_run": "MAIN continues implementation and science-preserving conformance fixes",
-      "constraints": "use source base 66c8eafe..., distinct protocol/identity v2, preserve predecessor v1 unchanged",
+      "trigger_classification": "fresh v2 successor branch/package is incomplete while every remaining choice is mechanically determined by this handoff",
+      "same_run_main_action": "continue successor implementation and science-preserving package closure",
+      "constraints": "source base 66c8eafe..., fresh protocol v2 and identity v2 only; no predecessor mutation; no official access",
       "one_way_execution_allowed": false,
-      "go": "all remaining work is mechanically determined and no official output is accessed",
-      "stop": "any additional semantic choice appears",
-      "outcome_independent_prospectively_fixed": true
+      "go_conditions": "all implementation choices are direct realizations of the prospectively fixed contract",
+      "stop_conditions": "a new semantic/scientific choice becomes necessary",
+      "outcome_independent_and_prospectively_fixed": true,
+      "must_stop_when": "PRE_START_SEMANTIC_GAP or stale authority is reached"
     },
     "PRE_START_BLOCKER": {
-      "trigger": "CI/verifier/binding/runtime defect with scientific contract unchanged",
-      "next_action_same_run": "MAIN fixes the blocker and re-verifies exact head",
-      "constraints": "no change to frozen successor scientific semantics",
+      "trigger_classification": "CI/verifier/binding/runtime defect with inherited science unchanged",
+      "same_run_main_action": "MAIN fixes the blocker and rechecks exact head/authority/identity state",
+      "constraints": "science-preserving fix only on MAIN critical path",
       "one_way_execution_allowed": false,
-      "go": "fix is science-preserving",
-      "stop": "fix requires new scientific choice",
-      "outcome_independent_prospectively_fixed": true
+      "go_conditions": "fix does not alter matrix, hypothesis, scorer semantics, baselines, metrics or thresholds",
+      "stop_conditions": "fix would require a new scientific choice",
+      "outcome_independent_and_prospectively_fixed": true,
+      "must_stop_when": "semantic redesign would be required"
     },
     "PRE_START_STALE_AUTHORITY": {
-      "trigger": "Analyst ref, source base, identity state, or authoritative refs move incompatibly before STARTED",
-      "next_action_same_run": "stop, re-fetch, and reconcile with the newer authority before any official access",
-      "constraints": "no STARTED or official access under stale authority",
+      "trigger_classification": "Analyst ref, source base, planned identity state or authoritative refs move incompatibly before STARTED",
+      "same_run_main_action": "stop and reconcile the new authority; do not access official data",
+      "constraints": "no STARTED and no one-way execution",
       "one_way_execution_allowed": false,
-      "go": "only after explicit reconciliation preserves the exact contract",
-      "stop": "new authority changes scientific object or identity",
-      "outcome_independent_prospectively_fixed": true
+      "go_conditions": "none until reconciliation restores exact authorization",
+      "stop_conditions": "authority mismatch remains",
+      "outcome_independent_and_prospectively_fixed": true,
+      "must_stop_when": "immediately on incompatible movement"
     },
     "PRE_START_SEMANTIC_GAP": {
-      "trigger": "a required acquisition/scoring/statistical/baseline/claim choice is not fixed by this handoff",
-      "next_action_same_run": "STOP and return to Evidence Analyst",
-      "constraints": "do not create STARTED and do not inspect official data",
+      "trigger_classification": "any additional acquisition/scoring/statistical/baseline/claim choice is not prospectively determined",
+      "same_run_main_action": "STOP and return control to Evidence Analyst",
+      "constraints": "do not create STARTED or open official data",
       "one_way_execution_allowed": false,
-      "go": "none in same run",
-      "stop": "immediate",
-      "outcome_independent_prospectively_fixed": true
+      "go_conditions": "none",
+      "stop_conditions": "semantic gap exists",
+      "outcome_independent_and_prospectively_fixed": true,
+      "must_stop_when": "immediately before any post-hoc design"
     },
     "PRE_START_READY_FOR_ONE_WAY": {
-      "trigger": "exact successor package is coherent, identity fresh, current authority confirmed, no prior output, exact-head CI green, no-clobber/raw-before-score verified",
-      "next_action_same_run": "MAIN may create STARTED and continue through frozen acquisition, immutable raw preservation, target materialization, scoring and terminal evidence finalization",
-      "constraints": "identity c19-external-v2-official-v2 only; exact successor package only",
+      "trigger_classification": "exact successor package coherent; exact-head CI green; fresh identity unSTARTED/unconsumed; no prior output; no-clobber/raw-before-score and authority checks all pass",
+      "same_run_main_action": "create STARTED and continue immediately through acquisition and terminal evidence pipeline",
+      "constraints": "exact fresh v2 branch/protocol/identity and fixed manifests only",
       "one_way_execution_allowed": true,
-      "go": "all GO conditions simultaneously hold after a fresh re-fetch",
-      "stop": "any integrity mismatch before STARTED",
-      "outcome_independent_prospectively_fixed": true
+      "go_conditions": "all main_lane go_conditions simultaneously true on fresh refetch",
+      "stop_conditions": "any gate becomes false before STARTED",
+      "outcome_independent_and_prospectively_fixed": true,
+      "must_stop_when": "a new semantic choice appears or authority becomes stale"
     },
     "POST_START_FAILURE": {
-      "trigger": "any failure after STARTED is created",
-      "next_action_same_run": "preserve failure diagnostics if possible, mark identity consumed, STOP",
-      "constraints": "no retry and no silent repair",
+      "trigger_classification": "any failure after STARTED is created",
+      "same_run_main_action": "preserve diagnostics if possible, mark identity consumed, no retry, STOP",
+      "constraints": "identity c19-external-v2-official-v2 remains consumed",
       "one_way_execution_allowed": false,
-      "go": "diagnostic preservation only",
-      "stop": "mandatory after preservation",
-      "outcome_independent_prospectively_fixed": true
+      "go_conditions": "none",
+      "stop_conditions": "post-START failure itself",
+      "outcome_independent_and_prospectively_fixed": true,
+      "must_stop_when": "immediately after preserving failure state"
     },
     "INVALID_EVIDENCE": {
-      "trigger": "hash/binding/access-order/raw-before-score/coverage/target-join/scorer/preservation contract failure",
-      "next_action_same_run": "withhold scientific result; preserve invalidity evidence; STOP",
-      "constraints": "if STARTED exists the identity remains consumed; no repair/rerun",
+      "trigger_classification": "hash/binding/access-order/coverage/target-join/scorer/preservation contract violation",
+      "same_run_main_action": "withhold scientific result, preserve invalidity evidence, STOP",
+      "constraints": "if STARTED exists identity remains consumed; no repair/rerun",
       "one_way_execution_allowed": false,
-      "go": "none",
-      "stop": "mandatory",
-      "outcome_independent_prospectively_fixed": true
+      "go_conditions": "none",
+      "stop_conditions": "invalidity detected",
+      "outcome_independent_and_prospectively_fixed": true,
+      "must_stop_when": "immediately after invalidity is classified"
     },
     "PASS": {
-      "trigger": "primary paired-bootstrap BREU 95% CI lower bound > 0",
-      "next_action_same_run": "finalize immutable scored evidence/report, claim only truth-free surface-structural representation gain, then STOP",
-      "constraints": "no post-outcome successor design; no broad mechanism novelty claim",
-      "one_way_execution_allowed": false,
-      "go": "evidence finalization only",
-      "stop": "after terminal evidence finalization",
-      "outcome_independent_prospectively_fixed": true
+      "trigger_classification": "primary paired-bootstrap BREU CI lower bound > 0",
+      "same_run_main_action": "finalize immutable scored evidence/report and terminal disposition, then STOP before follow-up design",
+      "constraints": "claim only frozen truth-free surface-structural representation gain",
+      "one_way_execution_allowed": true,
+      "go_conditions": "valid evidence and exact frozen scorer",
+      "stop_conditions": "terminal evidence finalized",
+      "outcome_independent_and_prospectively_fixed": true,
+      "must_stop_when": "before designing any successor/comparator from the observed outcome"
     },
     "FAIL": {
-      "trigger": "primary paired-bootstrap BREU 95% CI upper bound <= 0",
-      "next_action_same_run": "finalize immutable scored evidence/report, mark registered representation-gain claim unsupported for this object, then STOP",
-      "constraints": "no same-identity repair or retune",
-      "one_way_execution_allowed": false,
-      "go": "evidence finalization only",
-      "stop": "after terminal evidence finalization",
-      "outcome_independent_prospectively_fixed": true
+      "trigger_classification": "primary paired-bootstrap BREU CI upper bound <= 0",
+      "same_run_main_action": "finalize immutable evidence/report, mark registered representation-gain claim unsupported for this object, STOP",
+      "constraints": "no rescue/retune/rerun",
+      "one_way_execution_allowed": true,
+      "go_conditions": "valid evidence and exact frozen scorer",
+      "stop_conditions": "terminal evidence finalized",
+      "outcome_independent_and_prospectively_fixed": true,
+      "must_stop_when": "before post-outcome redesign"
     },
     "INCONCLUSIVE": {
-      "trigger": "primary paired-bootstrap BREU 95% CI contains 0",
-      "next_action_same_run": "finalize immutable scored evidence/report, mark direction unresolved, then STOP",
-      "constraints": "no same-identity retune and no post-outcome successor design",
-      "one_way_execution_allowed": false,
-      "go": "evidence finalization only",
-      "stop": "after terminal evidence finalization",
-      "outcome_independent_prospectively_fixed": true
+      "trigger_classification": "primary paired-bootstrap BREU CI contains 0",
+      "same_run_main_action": "finalize immutable evidence/report, mark direction unresolved, STOP",
+      "constraints": "no adaptive follow-up within the same run",
+      "one_way_execution_allowed": true,
+      "go_conditions": "valid evidence and exact frozen scorer",
+      "stop_conditions": "terminal evidence finalized",
+      "outcome_independent_and_prospectively_fixed": true,
+      "must_stop_when": "before post-outcome candidate/protocol design"
     }
   },
   "blocked_until": {
-    "main": "No external worker dependency. MAIN may proceed with fresh C19 successor implementation now; one-way execution is blocked only until its own exact package conformance GO gate is satisfied and freshly re-verified.",
-    "sub": "A later Evidence Analyst must define a distinct prospectively justified H9 fully-spiking successor protocol/identity, or reserve another genuinely independent lane. The completed H9 readiness branch must not cross STARTED."
+    "main": "Not blocked on SUB or another Analyst cycle; blocked only until its own exact fresh-successor package passes all conformance gates.",
+    "sub": "A later Evidence Analyst prospectively defines a distinct H9 successor protocol/identity or another genuinely independent secondary lane."
   },
   "do_not_touch": [
-    "c19-external-v2-official-protocol-v1",
-    "c19-external-v2-official-v1",
-    "C19 predecessor frozen anchor 90c936a7abca7eba0dac1f977753503551e73368",
-    "all consumed A01 MD-001/P2/P3/P4 identities and authorities",
-    "A01 Family-B and Family-C rejected exact objects",
-    "RV01 R01-16 family and R01-17 consumed identities",
-    "RV02 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
-    "CX01 Candidate-002/formal consumed identity/evidence",
+    "rejected/retired-unconsumed C19 predecessor c19-external-v2-official-protocol-v1 / c19-external-v2-official-v1 and anchor 90c936a7abca7eba0dac1f977753503551e73368",
+    "A01 MD-001",
+    "A01 MD-002 P2 candidate-002",
+    "A01 MD-002 P3 candidate-001",
+    "A01 Family-A P4 candidate-001",
+    "rejected A01 Family-B/C exact objects",
+    "RV01 R01-16 family and R01-17",
+    "RV02 D1 consumed identity 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
+    "CX01 Candidate-002/formal evidence",
     "historical C19-v1/C06 authorities",
-    "H8/C08 registered negative object",
+    "H8/C08 registered negative",
     "historical C07 hybrid evidence and threshold-1.1 negative",
     "legacy freeze/control/preserve/evidence refs"
   ],
-  "active_claims_observed": {
-    "main": "C19 primary frontier; last durable MAIN report closed exact raw schema and 55x1744 coverage but predates the fresh successor authorization. No successor branch has yet appeared.",
-    "sub": "H9/C07 source-only readiness completed at 9480da3d... with PRE_START_UNDERSPECIFIED; execution remains disabled and completion target is reached."
+  "active_main_sub_claims_observed": {
+    "main": {
+      "durable_report_commit": "e5748cac0753e1ae569e650e07e88c4091d669b4",
+      "durable_report_timestamp": "2026-09-17T06:33:00+09:00",
+      "observed_branch_head": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
+      "report_is_older_than_current_analyst_authority": true,
+      "current_repository_movement_after_report": false
+    },
+    "sub": {
+      "durable_report_commit": "d6d012072a15eb52e8fa9a12ea9d5e674c2451f7",
+      "durable_report_timestamp": "2026-09-17T08:37:57+09:00",
+      "claim": "NO_OP_NO_VALID_INDEPENDENT_LANE",
+      "main_frontier_touched": false,
+      "new_identity_consumed": false
+    }
   },
-  "top_recommendation": "MAIN should immediately implement the exact fresh C19 successor package from source base 66c8eafe... and, after a fresh integrity re-fetch proves every GO condition, continue through the already-authorized one-way v2 sequence in the same run. SUB should stop H9 implementation work because the readiness task is complete and the next step requires new prospective science.",
+  "top_recommendation": "MAIN creates and closes the exact fresh C19 official-v2 successor package from 66c8eafe... and, if all GO gates remain true on fresh refetch, proceeds through the one-way identity to terminal evidence in the same run; SUB remains no-op.",
   "top_3": [
     {
       "rank": 1,
       "owner": "MAIN",
-      "action": "Build the exact fresh C19 successor package and, if all GO conditions remain true, execute c19-external-v2-official-v2 through terminal evidence finalization.",
+      "action": "Build exact fresh C19 official-v2 successor package and conditionally execute through terminal evidence.",
       "information_value": "VERY_HIGH",
       "distance": "NEAR_TO_MEDIUM"
     },
     {
       "rank": 2,
       "owner": "SUB",
-      "action": "Deliberate no-op on scientific execution; preserve completed H9 readiness and do not invent the missing fully-spiking design.",
-      "information_value": "LOW_OR_INVALID_FOR_UNREGISTERED_IMPLEMENTATION",
+      "action": "Deliberate no-op until a distinct independent prospective object is scientifically defined; preserve completed H9 readiness.",
+      "information_value": "LOW_OR_INVALID_IF_UNREGISTERED",
       "distance": "BLOCKED_ON_PROSPECTIVE_SCIENTIFIC_DESIGN"
     },
     {
       "rank": 3,
       "owner": "GOVERNANCE",
-      "action": "Keep Issue #147 operationally aligned with canonical git science and resolve Issue #139 tag-protection/ruleset gap when an administrative path is available without delaying C19.",
+      "action": "Keep Issue #147 aligned with canonical git state and resolve #139 tag/ruleset protection gap when an administrative path exists without delaying C19.",
       "information_value": "LOW_SCIENTIFIC_MEDIUM_INTEGRITY",
       "distance": "NON_BLOCKING"
     }
   ],
   "consumed_identities": {
-    "inherited_do_not_touch": [
+    "consumed_do_not_rerun": [
       "A01 MD-001",
       "A01 MD-002 P2 candidate-002",
       "A01 MD-002 P3 candidate-001",
@@ -375,41 +411,63 @@
       "RV02 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
       "CX01 Candidate-002/formal evidence"
     ],
-    "c19_predecessor_v1_status": "REJECTED_PRE_START_UNCONSUMED",
+    "c19_predecessor_v1_consumed": false,
+    "c19_predecessor_v1_status": "REJECTED_RETIRED_UNCONSUMED",
     "c19_fresh_v2_consumed": false,
-    "h9_fresh_successor_identity": null,
-    "newly_consumed_this_analyst_cycle": []
+    "c19_fresh_v2_started": false,
+    "h9_fresh_successor_identity": null
   },
   "blockers": {
     "main": [
-      "Fresh C19 successor branch/package has not yet been created. This is implementation distance, not a scientific-design blocker under the current handoff."
+      "Fresh C19 successor branch/package has not yet been created.",
+      "All package conformance gates must be satisfied before STARTED; MAIN owns every critical-path implementation/CI/verifier/binding fix."
     ],
     "sub": [
-      "H9 fully-spiking successor is PRE_START_UNDERSPECIFIED across eight scientific choices; implementation must not choose them implicitly."
+      "No valid independent lane is currently registered.",
+      "H9 readiness is complete but a fully-spiking successor requires eight unresolved scientific choices."
     ],
     "programme": [
-      "No current durable INDEPENDENT_AUDITOR handoff; absence is missing audit evidence, not a clean audit.",
-      "Authoritative tag namespaces still lack server-side ruleset protection."
+      "No durable current INDEPENDENT_AUDITOR handoff exists; absence is missing audit evidence, not a clean audit."
     ]
   },
-  "allocation": {
-    "main": "C19 fresh official-v2 successor end-to-end",
-    "sub": null,
-    "sub_fallback": null,
-    "changed_since_previous_analyst": true,
-    "change_reason": "SUB completed its reserved H9 readiness lane and returned PRE_START_UNDERSPECIFIED. The exact readiness task is complete; further work would require new scientific design. MAIN allocation is unchanged.",
-    "changed_due_to_external_input": false
+  "go_stop_for_top_recommendation": {
+    "go": [
+      "c19-external-v2-official-v2 fresh/unSTARTED/unconsumed/collision-free",
+      "source/protocol/package/input/runtime bindings reconstruct exactly",
+      "no prior official output or conflicting C19 authority",
+      "exact 55x1744 raw coverage and exact 1744 target join fail closed",
+      "STARTED/no-clobber/raw-before-score machine enforced",
+      "exact-head CI green",
+      "current Analyst authority still admits the exact contract",
+      "scientific falsifiers remain PASS lower>0, FAIL upper<=0, else INCONCLUSIVE"
+    ],
+    "stop": [
+      "any new semantic/scientific/statistical choice",
+      "stale authority",
+      "identity/ref/hash/package collision",
+      "target leakage or unexpected prior output",
+      "cannot enforce no-clobber/raw-before-score",
+      "need to change inherited matrix/adapter/baselines/metrics/thresholds",
+      "any post-START failure or invalid-evidence condition"
+    ]
   },
   "governance_advisory": {
-    "issue_canonical_source_drift": "Issue #147 is a new operational C19 tracker and explicitly defers authority to git-managed scientific protocol/evidence. Issue #139 remains the tag-protection administration gap. Older reports saying only #139 is open are stale.",
-    "freeze_tag_migration_drift": "Legacy freeze branches remain authoritative historical anchors and must not be rewritten or force-migrated. New authoritative anchors should use the generic annotated-tag creation path when legitimately reached.",
-    "tag_protection_gap": "0 authoritative Git tags and 0 repository rulesets; server-side protection for freeze/sealed/formal/evidence namespaces is still absent.",
+    "issue_canonical_source_drift": "Issue #147 is operational and correctly defers to canonical git-managed science; Issue #139 remains governance-only.",
+    "freeze_tag_migration_drift": "Legacy freeze branches remain authoritative historical anchors and must not be force-migrated or rewritten.",
+    "tag_protection_gap": "Authoritative annotated-tag creation tooling exists on main, but repository rulesets remain zero and server-side update/delete protection is not installed.",
     "outcome_independent_main_promotion_candidates": [
       "generic exact-pair coverage validator",
       "target-blind raw-schema/no-clobber/raw-before-score helpers",
       "source/runtime manifest verification",
-      "deterministic bootstrap infrastructure only after semantics are genericized and independently frozen"
+      "deterministic bootstrap infrastructure only after semantics are generic rather than C19-specific"
     ],
-    "priority": "NON_BLOCKING_RELATIVE_TO_C19_INFORMATION_GAIN"
+    "blocking_science": false
+  },
+  "concurrency_reconciliation": {
+    "evidence_analyst_tip_before_write": "9bd11c80c51ff61bc88d00b20192d90a9c5b970f",
+    "orchestrator_tip_observed": "d6d012072a15eb52e8fa9a12ea9d5e674c2451f7",
+    "c19_head_observed": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
+    "c19_successor_branch_present": false,
+    "concurrent_scientific_movement_detected": false
   }
 }
