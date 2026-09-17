@@ -1,34 +1,56 @@
 {
-  "timestamp": "2026-09-17T19:45:00+09:00",
+  "timestamp": "2026-09-17T20:47:00+09:00",
   "worker_role": "sub",
   "mode": "exploratory_incubator",
-  "evidence_analyst_commit": "ef858fe9e6fbe9d0bdd57bc43a15e07ec0b30c23",
-  "control_brain_commit": "d8987f8c6d88fad48a8f652f4255e73b30a223e6",
-  "consumed_lanes": {"main_lane": "C19 official-v4 PRIMARY", "sub_lane": null, "sub_fallback": null},
+  "evidence_analyst_commit": "56f0665ccc536bff6bf48e9eb581ec9a9eafcecc",
+  "evidence_analyst_content_authority": "ef858fe9e6fbe9d0bdd57bc43a15e07ec0b30c23",
+  "control_brain_commit": "0d03673c3fa25a47daf1d4f77ba07fb9aa63a000",
+  "consumed_lanes": {
+    "main_lane": "C19 official-v4 PRIMARY",
+    "sub_lane": null,
+    "sub_fallback": null
+  },
   "selected_independent_lane": null,
-  "exploratory_target": "H9 fully-spiking operational-boundary sensitivity to hidden continuous decoder/filter state",
+  "exploratory_target": "H9 fixed persistent-state inventory plus pre-query reset/ablation attribution diagnostic",
   "independence_from_main_critical_path": true,
-  "why_independent_of_main": "Paused unreserved H9/C07; stable-main synthetic-only probe; no C19/Belief-R dependency or output use.",
+  "why_independent_of_main": "Paused unreserved H9/C07; generated synthetic delayed-recall data only; no C19/Belief-R dependency, output use, or MAIN repair value.",
   "execution_allowed": false,
-  "sub_active_claim": "EXPLORATORY_NON_EVIDENTIARY_H9_DECODER_STATE_BOUNDARY",
-  "main_work_explicitly_avoided": ["C19-v4 branch/identity/admission/execution", "C19-v2/v3 consumed authorities", "Belief-R official inputs/raw/scorer/preserve", "MAIN preservation integration"],
+  "sub_active_claim": "EXPLORATORY_NON_EVIDENTIARY_H9_STATE_INVENTORY_ABLATION",
+  "main_work_explicitly_avoided": [
+    "C19-v4 branch/identity/admission/preservation/execution",
+    "C19-v2/v3 consumed identities and controls",
+    "Belief-R official inputs/raw/scorer/preserve",
+    "MAIN STARTED/control and one-way transition"
+  ],
   "authoritative_refs": {
-    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "ef858fe9e6fbe9d0bdd57bc43a15e07ec0b30c23",
-    "control_brain": "d8987f8c6d88fad48a8f652f4255e73b30a223e6",
-    "c19_v4": "research/c19-official-v4-preservation-qualified-20260917@84b244959f249da916a36906508ead0830052e9b",
-    "c19_v3_control": "control/c19-official-v3-started-20260917@294d947ade2f906e284d5e1eed5ad57ac7527947",
-    "c19_v2_control": "control/c19-official-v2-started-20260917@7a8af82de0a0dd70ec2391ef7506ae80c5c8d391",
-    "exploratory_branch": "research/exploratory-sub-h9-decoder-state-boundary-20260917@daf7a2897b3804a0666e152db313fd40a3bdc188",
+    "main": "ebed6ab6a7a3fb6feda7dffaca81f8d18d81e3fa",
+    "evidence_analyst_branch_tip": "56f0665ccc536bff6bf48e9eb581ec9a9eafcecc",
+    "control_brain": "0d03673c3fa25a47daf1d4f77ba07fb9aa63a000",
+    "c19_v4": "research/c19-official-v4-preservation-qualified-20260917@74bfe6b4a39758656f291baaa3f16236e3e71964",
+    "c19_v4_ordinary_ci": "35214841871:success",
+    "c19_v4_prestart": "35214841877:success",
+    "c19_v4_control_refs_observed": [],
+    "c19_v4_preserve_refs_observed": [],
+    "c19_v4_evidence_refs_observed": [],
+    "exploratory_branch": "research/exploratory-sub-h9-decoder-state-boundary-20260917@874bc55ca7a01eba2e1a0d27459d6eaf7ff9d766",
     "open_pr_count": 0,
-    "open_issues": [139, 147]
+    "open_issues": [139, 147],
+    "authoritative_git_tag_count_observed": 0,
+    "legacy_freeze_branch_count_observed": 13
   },
   "branches_prs_advanced": {
     "by_sub": {
-      "research_branches_created": ["research/exploratory-sub-h9-decoder-state-boundary-20260917"],
-      "research_branches_advanced": ["research/exploratory-sub-h9-decoder-state-boundary-20260917@daf7a2897b3804a0666e152db313fd40a3bdc188"],
-      "implementation_commits": ["8d8c40a5dd5cdf0eeaa4cbbd3e94d18815c226a3", "a2c30dd765cbbc32743c36da75322c194bf979bd", "10c4122d1b0afba4fa1f6266c781d41e00f14833", "daf7a2897b3804a0666e152db313fd40a3bdc188"],
-      "prs_created": [], "merges": []
+      "research_branches_created": [],
+      "research_branches_advanced": [
+        "research/exploratory-sub-h9-decoder-state-boundary-20260917@874bc55ca7a01eba2e1a0d27459d6eaf7ff9d766"
+      ],
+      "implementation_commits": [
+        "5fcb5c6a02fc6a37219a5f1af05ea91c124821e5",
+        "73825f72a494cca71990d2fe8b38c76b6a1b5d6d",
+        "874bc55ca7a01eba2e1a0d27459d6eaf7ff9d766"
+      ],
+      "prs_created": [],
+      "merges": []
     }
   },
   "workflows_experiments": {
@@ -37,36 +59,113 @@
     "started_control_created_by_sub": false,
     "one_way_dispatches_by_sub": 0,
     "official_data_access_by_sub": false,
-    "synthetic_exploratory_micro_experiment": {"script": "scripts/exploratory_h9_decoder_state_boundary.py", "input": "A/B x silent gaps 1..20", "formal": false, "one_way": false, "identity": null},
-    "exploratory_branch_ci": {"intermediate_runs_failed_lint": true, "mechanical_lint_fix_commit": "daf7a2897b3804a0666e152db313fd40a3bdc188", "replacement_exact_head_run": "35211931421:in_progress_at_final_reconciliation"}
+    "synthetic_exploratory_micro_experiment": {
+      "script": "scripts/exploratory_h9_state_inventory_ablation.py",
+      "result": "artifacts/spiking/exploratory_h9_decoder_state_boundary/state_inventory_ablation.json",
+      "input": "generated A/B labels x silent gaps 1..20; 40 trials per mechanism/reset condition",
+      "formal": false,
+      "one_way": false,
+      "identity": null
+    },
+    "exploratory_branch_ci": {
+      "run": 35217203157,
+      "head": "874bc55ca7a01eba2e1a0d27459d6eaf7ff9d766",
+      "status_at_final_reconciliation": "in_progress"
+    }
   },
   "scientific_readiness_exploratory_results": {
     "new_formal_scientific_measurement_by_sub": false,
     "new_formal_readiness_result_by_sub": false,
     "exploratory_observation": true,
-    "stateless_accuracy": 0.0,
-    "analog_hidden_state": [{"decay": 0.5, "accuracy": 0.2, "max_full_gap": 4}, {"decay": 0.8, "accuracy": 0.65, "max_full_gap": 13}, {"decay": 0.9, "accuracy": 1.0, "max_full_gap": 20}, {"decay": 0.95, "accuracy": 1.0, "max_full_gap": 20}, {"decay": 0.99, "accuracy": 1.0, "max_full_gap": 20}],
-    "toy_recurrent_spike_latch_accuracy": 1.0,
-    "toy_recurrent_spike_latch_mean_spikes": 10.5,
-    "interpretation": "Spike-valued I/O alone is insufficient to define fully-spiking computation if hidden analog decoder/filter state may carry task-relevant memory."
+    "single_state_no_reset": "40/40 for spike_latch, decoder_memory, filter_trace, algorithmic_memory",
+    "own_backing_state_reset": "0/40 for each corresponding single-state mechanism",
+    "all_non_spike_reset": {
+      "spike_latch": "40/40",
+      "decoder_memory": "0/40",
+      "filter_trace": "0/40",
+      "algorithmic_memory": "0/40"
+    },
+    "hybrid_spike_plus_decoder": {
+      "no_reset": "40/40",
+      "spike_state_reset": "40/40",
+      "decoder_state_reset": "40/40",
+      "all_non_spike_reset": "40/40",
+      "all_state_reset": "0/40"
+    },
+    "interpretation": "A redundant hidden non-spike memory channel can mask ablation of spike-mediated memory; prospective H9 integrity should inventory persistent state and define fixed reset classes before outcome observation."
   },
   "evidentiary_status": "NON_EVIDENTIARY",
-  "hypothesis_or_reduction_question": "Can spike-valued I/O preserve delayed behavior via hidden continuous decoder/filter memory rather than non-sensory spike dynamics?",
-  "synthetic_or_dev_inputs_used": "Generated A/B delayed-recall trials only; no historical C07 rerun/tuning or formal inputs.",
-  "implementation_or_experiment_performed": "Deterministic stateless, analog-leaky and toy recurrent-spike-latch comparators with fixed sensitivity grid; results and boundary note persisted on exploratory branch.",
-  "observations": ["stateless 0/40", "analog decay 0.9/0.95/0.99 each 40/40 with zero non-sensory recurrent spikes", "analog decay 0.8 26/40 and 0.5 8/40", "toy recurrent spike latch 40/40 with mean 10.5 recurrent spikes"],
-  "what_would_falsify_or_reduce_it": "A prospectively specified H9 object that forbids task-relevant hidden continuous/algorithmic memory outside the declared spiking substrate or proves it task-irrelevant under a fixed state-inventory/ablation rule.",
-  "candidate_formal_question": "Does a declared spike-mediated non-sensory substrate preserve fixed H9 invariants when hidden continuous/algorithmic memory outside the substrate is prohibited or resource-matched?",
+  "hypothesis_or_reduction_question": "Can a declared persistent-state inventory plus fixed reset matrix reveal when hidden non-spike memory masks an apparently successful spike-memory ablation?",
+  "synthetic_or_dev_inputs_used": "Generated A/B delayed-recall trials only; no historical C07 rerun, formal inputs, sealed inputs, or C19 outputs.",
+  "implementation_or_experiment_performed": "Predeclared spike/decoder/filter/algorithmic state slots; fixed resets immediately before query; single-state and fixed spike+decoder hybrid mechanisms; no fitting or held-out tuning.",
+  "observations": [
+    "Each single-state mechanism is 40/40 without reset and 0/40 when its own backing state is reset.",
+    "Resetting all non-spike state eliminates decoder/filter/algorithmic delayed recall but leaves spike-latch recall intact.",
+    "A spike+decoder hybrid remains 40/40 after either single-channel reset and fails only after all state is reset, demonstrating masking by redundant hidden state."
+  ],
+  "what_would_falsify_or_reduce_it": "For a fresh prospectively specified H9 object, delayed performance surviving a forced reset of all permitted non-spike persistent state while declared spike-mediated state remains intact would reduce the leakage concern; a complete inventory with no task-relevant non-spike persistent state would also reduce it.",
+  "candidate_formal_question": "Under a prospectively declared state inventory and fixed reset interventions, does delayed H9 performance remain when all non-spike persistent state is reset while spike-mediated state is preserved?",
   "suggested_prospective_object": null,
-  "new_scientific_choices_required_before_formalization": ["fully-spiking component boundary", "decoder/filter state inventory rule", "non-sensory dynamics", "representation/decoder mapping", "comparator/claim", "parameter/training budget", "tolerance authority", "runtime/seeds/determinism", "fresh protocol/package/identity/integrity gates"],
-  "promotion_recommendation": "CONTINUE_EXPLORING",
-  "consumed_identities": {"newly_consumed_by_sub": [], "known_consumed_do_not_touch": ["c19-external-v2-official-v2", "c19-external-v2-official-v3", "A01 consumed identities", "RV01 R01-16/R01-17", "RV02 D1", "CX01 Candidate-002"]},
-  "blockers": {"formal_lane": ["No reserved independent formal sub_lane or sub_fallback."], "prior_incubator": ["Prior provenance/FSA standalone object REJECTED by Analyst; not continued."], "main_only": ["C19-v4 active PRIMARY frontier."]},
-  "collision_reconciliation": {"concurrent_main_movement_detected": true, "current_main_frontier": "C19-v4 pre-start build", "main_frontier_touched_by_sub": false, "main_dependency_created_by_sub": false, "official_inputs_or_outputs_used_by_sub": false, "evidence_analyst_authority_at_write": "ef858fe9e6fbe9d0bdd57bc43a15e07ec0b30c23"},
-  "integrity_state": {"status": "EXPLORATORY_NON_EVIDENTIARY_BOUNDARY_HELD", "immutable_evidence_mutated": false, "historical_consumed_objects_reexecuted_or_retuned": false, "formal_scientific_identity_created_or_consumed_by_sub": false, "started_ref_created_by_sub": false, "formal_workflow_dispatched_by_sub": false, "official_data_accessed_by_sub": false, "main_frontier_touched_by_sub": false},
-  "completion_target": {"target": "One different bounded independent NON_EVIDENTIARY probe after retirement of rejected FSA object.", "status": "reached", "result": "H9 decoder/filter state boundary shown materially consequential in a toy delayed-recall setting; Analyst review required before any next step."},
-  "fallback_status": {"sub_fallback": null, "used": false},
-  "rejected_lane": "research/exploratory-sub-revision-authority-fsa-20260917",
-  "lane_rejected_reason": "Evidence Analyst classified prior standalone object REJECT; branch not continued.",
-  "next_sub_action": "Stop and await Analyst classification; do not formalize directly and do not touch C19-v4."
+  "new_scientific_choices_required_before_formalization": [
+    "fully-spiking component boundary",
+    "allowed decoder/filter/algorithmic state and inventory rule",
+    "non-sensory neuron/synapse dynamics",
+    "representation/decoder mapping",
+    "comparator and claim",
+    "development/training budget and allowed data",
+    "acceptance tolerances",
+    "runtime/seeds/determinism",
+    "fresh protocol/package/identity/integrity gates"
+  ],
+  "promotion_recommendation": "NONE",
+  "promotion_note": "Do not promote or continue this branch directly. The Analyst-authorized one-follow-up H9 allowance is exhausted and the conclusion remains methodological/definitional; stop this theme until a new Analyst decision.",
+  "consumed_identities": {
+    "newly_consumed_by_sub": [],
+    "known_consumed_do_not_touch": [
+      "c19-external-v2-official-v2",
+      "c19-external-v2-official-v3",
+      "A01 consumed identities",
+      "RV01 R01-16/R01-17",
+      "RV02 D1",
+      "CX01 Candidate-002"
+    ],
+    "c19_v4_observed_consumed": false
+  },
+  "blockers": {
+    "formal_lane": ["No reserved independent formal sub_lane or sub_fallback."],
+    "incubator_theme": ["Analyst-authorized one additional H9 diagnostic is complete; no further H9 exploration without new Analyst allocation."],
+    "main_only": ["C19-v4 remains active PRIMARY frontier; exact-head CI and pre-START are green but STARTED/one-way is MAIN-only."]
+  },
+  "collision_reconciliation": {
+    "concurrent_main_movement_detected": true,
+    "current_main_frontier": "C19-v4 pre-START on 74bfe6b4a39758656f291baaa3f16236e3e71964 with ordinary CI and dedicated pre-START green",
+    "v4_control_preserve_evidence_collision_observed": false,
+    "main_frontier_touched_by_sub": false,
+    "main_dependency_created_by_sub": false,
+    "official_inputs_or_outputs_used_by_sub": false,
+    "evidence_analyst_branch_tip_at_write": "56f0665ccc536bff6bf48e9eb581ec9a9eafcecc"
+  },
+  "integrity_state": {
+    "status": "EXPLORATORY_NON_EVIDENTIARY_BOUNDARY_HELD",
+    "immutable_evidence_mutated": false,
+    "historical_consumed_objects_reexecuted_or_retuned": false,
+    "formal_scientific_identity_created_or_consumed_by_sub": false,
+    "started_ref_created_by_sub": false,
+    "formal_workflow_dispatched_by_sub": false,
+    "official_data_accessed_by_sub": false,
+    "main_frontier_touched_by_sub": false
+  },
+  "completion_target": {
+    "target": "Exactly one additional Analyst-authorized bounded H9 state-inventory/reset diagnostic.",
+    "status": "reached",
+    "result": "Fixed synthetic state inventory and reset matrix demonstrate attribution and redundant hidden-state masking in the toy world; returned to Analyst as NON_EVIDENTIARY readiness input."
+  },
+  "fallback_status": {
+    "sub_fallback": null,
+    "used": false
+  },
+  "rejected_lane": null,
+  "lane_rejected_reason": null,
+  "historical_retired_incubator": "research/exploratory-sub-revision-authority-fsa-20260917 remains REJECTED and was not touched",
+  "next_sub_action": "Stop this bounded H9 theme and await a new Evidence Analyst allocation/classification; do not formalize directly and do not touch C19-v4."
 }
