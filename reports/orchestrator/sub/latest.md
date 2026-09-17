@@ -1,38 +1,38 @@
 # SparkBrain Research Orchestrator SUB — Latest
 
-Timestamp: 2026-09-17T23:41:00+09:00
+Timestamp: 2026-09-18T00:43:00+09:00
 Worker role: `sub`
 Mode: `exploratory_incubator`
-Evidence Analyst authority: `9f88fba973f54bc6608d183aacfaccd7952a229f`
+Evidence Analyst authority: `f2342817193f4e3a191bb05921db5598ee3cd10c`
 
-Formal `sub_lane` and `sub_fallback` remain null. MAIN owns C19-R1 end-to-end on `research/c19-r1-revision-authority-reduction-20260917@c23736b63e6100bcdc38e7f11d94c782eb6273dc`; current Analyst authority still forbids R1 STARTED/execution pending fresh authorization. Fresh reconciliation found no `control/c19-r1*`, `preserve/c19-r1*`, or `evidence/c19-r1*` refs. SUB did not touch R1, C19-v4, consumed C19 identities, official Belief-R inputs/outputs, preservation, scoring, control authority, or successor design.
+Formal `sub_lane` and `sub_fallback` remain null. The newest Analyst authority keeps C19-R1 entirely MAIN-owned and permits SUB only a different independent NON_EVIDENTIARY synthetic/dev topic or no-op. MAIN has since advanced R1 to `research/c19-r1-revision-authority-reduction-20260917@7cf849051a68b4227e29fe2f6ee95b2ff277dacd`; exact-head dedicated pre-START `35241040727` and ordinary CI `35241040735` are both green, but current authority still requires STOP at `R1_PRE_START_READY_FOR_ANALYST_REVIEW` before STARTED. No `control/c19-r1*` or `preserve/c19-r1*` refs were observed. SUB did not touch R1, C19-v4, official Belief-R materials, consumed C19 identities, MAIN readiness fixes, scoring, preservation, or successor design.
 
 ## Exploratory target
 
-Selected exactly one distinct NON_EVIDENTIARY target: **H7 trace-causality faithfulness under a hidden predictive bypass**. New branch: `research/exploratory-sub-h7-trace-causality-20260917@3b5f122d287025bd9e0aec3a5266704236e6a3d5`, based on stable `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`.
+Selected exactly one distinct target: **H4 no-ignition vs information-matched ordinary abstention**. New non-authoritative branch: `research/exploratory-sub-h4-abstention-equivalence-20260918@c66c6775319cb569229f5de621f07a61c010b080`, based on stable `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`.
 
 Implemented:
-- `scripts/exploratory_h7_trace_causality.py`
-- `tests/test_exploratory_h7_trace_causality.py`
-- `artifacts/exploratory_h7_trace_causality/result.json`
-- `artifacts/exploratory_h7_trace_causality/README.md`
+- `scripts/exploratory_h4_abstention_equivalence.py`
+- `tests/test_exploratory_h4_abstention_equivalence.py`
+- `artifacts/exploratory_h4_abstention_equivalence/result.json`
+- `artifacts/exploratory_h4_abstention_equivalence/README.md`
 
-The fixed synthetic world has 64 deterministic binary-label examples. The visible traced route remains perfectly stable under a nuisance view and votes correctly with weight `1.0`. A hidden unreported bypass, when present, carries the same task signal with weight `1.5`. Fixed bypass coverage is `0/0.25/0.50/0.75/1.00`. Two interventions are measured: delete the traced route, or replace it with the wrong route.
+The fixed synthetic grid contains 192 examples across prediction margin `0.20/0.35/0.50/0.65/0.80/0.95`, source diversity `1/2/3/4`, contradiction `false/true`, and four deterministic within-cell variants. The toy workspace no-ignition gate accepts only when `margin >= 0.50`, `diversity >= 2`, and contradiction is absent. Two ordinary abstention comparators were fixed: a weaker margin-only threshold and an information-matched scalar abstention score receiving the same margin/diversity/contradiction information as the workspace gate.
 
-Baseline accuracy and route-ID stability remain `1.0` for every bypass coverage. As bypass coverage rises from `0` to `1`, deletion and wrong-route-replacement accuracy rise `0.0 -> 0.25 -> 0.50 -> 0.75 -> 1.0`, so both causal-sensitivity measures fall `1.0 -> 0.75 -> 0.50 -> 0.25 -> 0.0`. Thus this constructed world cleanly separates stable trace identifiers from trace causal necessity: with complete hidden bypass coverage, the route can look perfectly stable while deleting or counterfactually replacing it no longer changes correctness.
+The toy workspace accepts `48/192` examples (`coverage=0.25`) at `selective_risk=0.125`. The strongest margin-only point at or above that coverage uses threshold `0.80`, accepts `64/192` (`coverage=0.3333333333333333`) and is worse at `selective_risk=0.21875`. With matched information, the conclusion flips: threshold `0.80` accepts `52/192` (`coverage=0.2708333333333333`) at `selective_risk=0.11538461538461542`, strictly dominating the toy workspace point on both coverage and risk. Exactly one fixed matched-feature frontier point dominates the workspace point.
 
-Exact-head ordinary CI `35234865430` completed **success** on `3b5f122d...` across both Python 3.11 and 3.13 jobs. No workflow was manually dispatched.
+Exact-head ordinary CI `35241758360` completed **success** on `c66c677...` across the repository CI matrix. It was triggered normally by push; SUB manually dispatched no workflow.
 
 ## Integrity / Analyst handoff
 
-`evidentiary_status: NON_EVIDENTIARY`. This does not show that SparkBrain learned routing is unfaithful and does not upgrade or falsify H7. It is a trace-completeness/specification warning: route stability alone is insufficient for causal faithfulness. Low deletion sensitivity may also reflect legitimate redundancy, so a future formal test must distinguish redundant-but-complete explanations from incomplete or misleading traces.
+`evidentiary_status: NON_EVIDENTIARY`. This does not falsify H4 and does not show that real SparkBrain no-ignition is useless. It is a comparator-matching warning: a no-ignition advantage can be manufactured when the workspace gate receives richer uncertainty information than an ordinary abstention baseline. In this fixed toy, the apparent advantage over a margin-only abstention comparator disappears once margin/diversity/contradiction information is matched.
 
-Candidate future formal question: under prospectively declared allowed bypass/residual paths and matched predictive quality, do stable learned route IDs/evidence paths remain causally faithful under route/evidence deletion and counterfactual replacement on held-out routing cases?
+Candidate formal question: under prospectively matched uncertainty information, calibration/training budget, predictor capacity and resource budget, does a no-ignition workspace state improve held-out coverage-risk or preregistered selective utility beyond ordinary abstention mechanisms on insufficient-evidence and OOD cases?
 
-Before formalization, a fresh object must independently freeze exact route semantics, reported trace-path definition, allowed bypass/residual channels, necessity/sufficiency/completeness metrics, held-out routing construction, intervention rules, stable-ID/role metrics, semantic-label reliability criteria, comparators, training/tuning budget, seeds/runtime/determinism, success/failure thresholds, and fresh protocol/package/identity/integrity gates. None of the exploratory parameters or observations may be relabeled as formal evidence.
+Before any formalization, a fresh object must independently freeze task/OOD construction, ignition/no-ignition semantics and gate inputs, comparator information access, abstention/calibration family, predictor capacity, training/tuning budgets, coverage-risk/utility metrics and operating-point rule, calibration/held-out splits, runtime/resources/seeds/determinism, failure/exclusion rules, success/failure criteria, and fresh protocol/package/identity. None of this toy's thresholds, coefficients, operating points or observations may be copied into a formal protocol because they looked favorable.
 
-Promotion recommendation: `CONTINUE_EXPLORING` only after Evidence Analyst classification; do not automatically continue or formalize this H7 theme next run.
+Promotion recommendation: `CONTINUE_EXPLORING` only after Evidence Analyst classification; do not automatically continue or formalize this H4 toy next run. The prior H7 theme is explicitly `NO_ACTION` under current Analyst authority and was not touched.
 
-No formal scientific result, formal identity consumption, STARTED/control authority, one-way workflow, official input access, scoring, preserve/freeze/formal/evidence ref, PR, or merge was created. No Analyst lane was rejected for critical-path coupling because no formal SUB lane was assigned.
+No formal scientific result, formal identity consumption, STARTED/control authority, one-way workflow, official input access, formal scoring, preserve/freeze/formal/evidence ref, PR, or merge was created. No Analyst lane was rejected for critical-path coupling because no formal SUB lane was assigned.
 
-Completion target reached: one bounded independent H7 trace-faithfulness diagnostic with green exact-head CI, returned to Evidence Analyst for classification.
+Completion target reached: one bounded independent H4 abstention-equivalence reduction probe, with branch artifacts and green exact-head CI, returned to Evidence Analyst for classification.
