@@ -1,13 +1,14 @@
 {
-  "timestamp": "2026-09-18T01:49:30+09:00",
+  "timestamp": "2026-09-18T01:51:00+09:00",
   "worker_role": "main",
   "execution_mode": "RELAY",
   "evidence_analyst_commit": "42836802e78abd26d19c5b8a789411f2b03d0ea1",
   "current_lane": "C19-R1 audit-aligned representation-matched revision-authority one-way reduction",
-  "current_phase": "R1_POST_START_ONE_WAY_RUNNING",
+  "current_phase": "R1_POST_START_FAILURE_CONSUMED_STOP",
   "consumed_contingency_branches": [
     "R1_PRE_START_AUTHORITY_PACKAGING",
-    "R1_PRE_START_READY_FOR_ONE_WAY"
+    "R1_PRE_START_READY_FOR_ONE_WAY",
+    "R1_POST_START_FAILURE"
   ],
   "active_claim": {
     "branch": "control/c19-r1-revision-authority-started-20260918",
@@ -19,13 +20,15 @@
     "r1_execution_package": "7197ab0f9683616858859446ae9eed7b75707f25",
     "r1_started_control": "62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2",
     "analyst": "42836802e78abd26d19c5b8a789411f2b03d0ea1",
-    "r1_atomic_idx_source_map_sha256": "cb3ca63703bdab4107e896884908817680dd4fe4b5eebc32b6219075f0187bbb"
+    "r1_atomic_idx_source_map_sha256": "cb3ca63703bdab4107e896884908817680dd4fe4b5eebc32b6219075f0187bbb",
+    "r1_preserve_refs": [],
+    "r1_evidence_tags": []
   },
   "fast_path_used": true,
   "full_reconciliation_reason": null,
   "branches_prs_advanced": [
     "created control/c19-r1-revision-authority-started-20260918 from exact package 7197ab0f9683616858859446ae9eed7b75707f25",
-    "added STARTED marker at control head 62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2"
+    "STARTED marker commit 62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2"
   ],
   "workflows_experiments": [
     {
@@ -43,25 +46,33 @@
       "conclusion": "success"
     },
     {
-      "kind": "started_branch_ci",
-      "run_id": 35248878746,
-      "head": "62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2",
-      "status": "in_progress",
-      "conclusion": null
-    },
-    {
       "kind": "r1_one_way",
       "run_id": 35248878958,
       "head": "62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2",
-      "status": "in_progress",
-      "conclusion": null
+      "status": "completed",
+      "conclusion": "failure",
+      "failed_step": "Execute target-blind R1 acquisition with network blocked",
+      "failure_class": "runtime_dependency_import_failure_before_target_blind_acquisition",
+      "failure_message": "ModuleNotFoundError: No module named 'torch'",
+      "belief_r_acquisition_step": "success",
+      "raw_preservation_step": "skipped",
+      "target_materialization_scoring_step": "skipped",
+      "terminal_evidence_step": "skipped",
+      "diagnostic_artifact_id": 10509360230,
+      "diagnostic_artifact_digest": "sha256:e277c15bc52336ca816012b54a9c308d28491c8f32d19160a385394f730f7300",
+      "diagnostic_artifact_size_bytes": 312
     }
   ],
-  "scientific_results": [],
+  "scientific_results": {
+    "new_scientific_measurement": false,
+    "terminal_scientific_result": null,
+    "classification": "POST_START_FAILURE",
+    "interpretation": "R1 official-v1 crossed STARTED, acquired/verified the pinned Belief-R input, then failed during import before target-blind R1 acquisition could execute. No raw predictions were preserved, evaluator targets were not materialized, scoring was not performed, and no reduction result exists."
+  },
   "consumed_identities": {
     "c19-r1-revision-authority-official-v1": {
       "consumed": true,
-      "reason": "STARTED created at control/c19-r1-revision-authority-started-20260918@62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2",
+      "reason": "POST_START_FAILURE after STARTED",
       "retry_allowed": false
     },
     "do_not_touch": [
@@ -71,13 +82,14 @@
     ]
   },
   "blockers": [
-    "One-way workflow 35248878958 is still running. No second execution or successor is allowed."
+    "Current R1 official-v1 identity is consumed and cannot be retried.",
+    "The exact failure was a missing torch runtime dependency encountered after STARTED; any repair-and-rerun would require a distinct prospectively defined future object and fresh Analyst authority.",
+    "No automatic R2 is authorized."
   ],
   "lease_collision_reconciliation": {
     "prior_lease_status": "WAITING_EXTERNAL",
-    "prior_heartbeat": "2026-09-18T01:28:00+09:00",
     "conflicting_fresh_primary_running": false,
-    "relay_takeover": "authorized by completed exact-head gates and prospectively fixed R1_PRE_START_READY_FOR_ONE_WAY contingency"
+    "relay_continuation": "completed prospectively authorized R1_PRE_START_READY_FOR_ONE_WAY chain through STARTED and one-way result collection"
   },
   "integrity_status": {
     "scientific_contract_changed": false,
@@ -88,33 +100,44 @@
     "started_ref": "control/c19-r1-revision-authority-started-20260918",
     "r1_identity_consumed": true,
     "retry_allowed": false,
-    "preserve_ref_observed": false,
-    "evidence_tag_observed": false,
-    "terminal_scientific_result_created": false,
-    "immutable_prior_evidence_mutated": false
+    "official_belief_r_acquisition_completed": true,
+    "target_blind_r1_acquisition_completed": false,
+    "official_raw_created": false,
+    "official_raw_preserved": false,
+    "evaluator_targets_materialized": false,
+    "official_scoring_performed": false,
+    "terminal_evidence_created": false,
+    "diagnostics_preserved": true,
+    "immutable_prior_evidence_mutated": false,
+    "raw_before_score_contract_violated": false,
+    "no_clobber_contract_violated": false
   },
   "critical_path_fixes_completed": [
-    "Collected exact-head ordinary CI 35246655185 and dedicated R1 pre-START 35246655189 as success on package 7197ab0f...",
-    "Re-fetched unchanged Evidence Analyst authority 42836802..., exact R1 package head, fresh STARTED/preserve/evidence namespaces and execution-authority binding.",
-    "Created exactly one fresh STARTED control ref and marker bound to Analyst 42836802... and exact package 7197ab0f...",
-    "Triggered one-way workflow 35248878958 via the STARTED marker push."
+    "Collected exact-head ordinary CI 35246655185 and dedicated R1 pre-START 35246655189 as success.",
+    "Re-fetched unchanged Analyst authority, exact package head and fresh R1 namespaces before STARTED.",
+    "Created exactly one STARTED control ref and launched one-way workflow 35248878958.",
+    "Collected workflow failure and exact logs; admission, binding, runtime setup and pinned Belief-R acquisition all succeeded before the target-blind acquisition step failed importing torch.",
+    "Verified preservation/scoring/evidence steps were skipped and no R1 preserve/evidence refs were created.",
+    "Verified diagnostic artifact 10509360230 with digest sha256:e277c15bc52336ca816012b54a9c308d28491c8f32d19160a385394f730f7300."
   ],
   "same_run_steps": [
-    "Read prior WAITING_EXTERNAL lease and latest MAIN state.",
-    "Verified admission ordinary CI and dedicated pre-START both succeeded on the same exact package SHA.",
-    "Verified research branch remained at 7197ab0f9683616858859446ae9eed7b75707f25 and Analyst branch remained at 42836802e78abd26d19c5b8a789411f2b03d0ea1.",
-    "Verified no existing R1 STARTED, preserve branch or evidence tag before STARTED.",
-    "Created control/c19-r1-revision-authority-started-20260918 and STARTED.json.",
-    "Observed R1 one-way workflow 35248878958 begin and handed off as WAITING_EXTERNAL."
+    "Read WAITING_EXTERNAL lease and latest Analyst authority.",
+    "Verified both final exact-head gates succeeded.",
+    "Created fresh STARTED ref/marker bound to exact package and Analyst authority.",
+    "Observed one-way workflow start, then collected its terminal failure.",
+    "Inspected job steps and full failure log.",
+    "Confirmed failure occurred before target-blind R1 acquisition produced raw output.",
+    "Confirmed no preserve branch or evidence tag was created and diagnostics were uploaded."
   ],
-  "stop_reason": "WAITING_EXTERNAL: the prospectively authorized one-way run is now in progress. Waiting itself is not useful work, and the identity is consumed/no-retry after STARTED.",
-  "work_left_for_sub": "No MAIN critical-path work. SUB remains independently scoped.",
+  "stop_reason": "POST_START_FAILURE: c19-r1-revision-authority-official-v1 is consumed/no-retry. The prospectively fixed integrity rule requires STOP; a missing-torch repair may only inform a fresh future object after a newer Evidence Analyst handoff.",
+  "work_left_for_sub": "No MAIN critical-path work. SUB remains independently scoped and must not repair/retry R1 official-v1.",
   "lane_repartition_reason": null,
-  "next_main_action": "Collect one-way workflow 35248878958 only. On success, verify preserve/refetch/digest-before-target/scoring ordering plus terminal evidence/tag and persist the fixed classification. On failure after STARTED, preserve/verify diagnostics, keep R1 consumed with no retry and STOP. Do not create R2 or make any outcome-responsive design change.",
+  "next_main_action": "Do not retry R1 official-v1. Wait for a newer Evidence Analyst handoff that consumes workflow 35248878958 and STARTED ref 62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2. Any distinct successor must be prospectively defined before execution; no automatic R2.",
   "write_path_diagnostics": {
     "github_direct_writes": "working",
     "started_branch_creation": "success",
     "started_marker_creation": "success",
+    "diagnostic_readback": "success",
     "lease_persistence": "success"
   }
 }
