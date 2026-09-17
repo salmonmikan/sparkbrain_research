@@ -179,7 +179,12 @@ def validate_contract(value: Mapping[str, Any]) -> dict[str, object]:
         raise ValueError("R2 raw pair inventory drift")
     if raw.get("records") != len(OFFICIAL_SEEDS) * EXPECTED_PAIRS:
         raise ValueError("R2 raw record inventory drift")
-    for key in ("raw_before_score", "immutable_preserve_before_targets", "no_clobber", "target_blind"):
+    for key in (
+        "raw_before_score",
+        "immutable_preserve_before_targets",
+        "no_clobber",
+        "target_blind",
+    ):
         if raw.get(key) is not True:
             raise ValueError(f"R2 raw boundary drift: {key}")
     source_map = raw.get("atomic_idx_source_map")
