@@ -1,139 +1,118 @@
 # SparkBrain Evidence Analyst — Latest Two-Worker Handoff
 
-Analysis time: `2026-09-18 03:07 JST`
-Prior Evidence Analyst authority: `fc59c9de3ab29507901cadfea800565271ab5edb`
+Analysis time: `2026-09-18 03:58 JST`
+Prior Evidence Analyst authority: `966018058f296098805982a8d206102741c3842c`
 
 ## Executive decision
 
-Fresh repository evidence closes the immediate C19-R1 runtime-closure question. MAIN's distinct identity-free readiness branch `research/readiness-c19-r1-runtime-closure-20260918@f5f0f7abd02372954aa8edcf10b6c15f9644c122` now has both required exact-head checks complete and green: dedicated runtime-closure workflow `35254816937:success` and ordinary CI `35254816864:success`.
+Fresh repository authority changes the frontier materially. The final prospectively authorized C19-R1 operational successor, `c19-r1-revision-authority-official-v2`, crossed STARTED at `control/c19-r1-revision-authority-started-v2-20260918@a230e250021cea113c42d674da2bfc31dc0a3549`, then exactly-once workflow `35260650772` completed `failure` during target-blind acquisition. Runtime installation, network-blocked production import smoke, pinned Belief-R verification and all authority/binding checks before acquisition passed. The raw-preserve, independent re-fetch, evaluator-target materialization, scoring and terminal-evidence steps were all skipped.
 
-The readiness object is not scientific evidence. It created no formal identity, STARTED, official-data execution, score, preserve ref, or evidence ref. It demonstrates only that the consumed R1-v1 failure mode can be reproduced and closed mechanically with the already-declared learned dependency set, CPython 3.11.16, the production R1 import path under network blocking, and unchanged synthetic pre-START digests.
+The workflow diagnostic bundle shows that target-blind acquisition transiently produced the expected `8720` raw records and a target-free 1,744-entry / 204-cluster `atomic_idx` map, but the unpreserved manifest retained the consumed v1 bindings (`c19-r1-revision-authority-protocol-v1` / `c19-r1-revision-authority-official-v1`) rather than the authorized v2 bindings. Inspection of the v2 wrapper and frozen base runner identifies this as an operational wrapper/binding defect: the wrapper mutates the dictionary returned by `runpy.run_path`, while the inherited acquisition function continues to use the base function globals for `PROTOCOL_ID` and `PLANNED_IDENTITY`. This is a post-START execution defect, not a valid scientific result.
 
-`c19-r1-revision-authority-official-v1` remains permanently consumed/no-retry after its post-START `torch` import failure. It must never be repaired, retried, rescored, or relabeled.
+No transient v2 raw may be salvaged, preserved later, scored, or treated as evidence. `c19-r1-revision-authority-official-v2` is consumed/no-retry. The prospective execution authority explicitly declared v2 the `final_operational_successor`, set `automatic_v3_allowed=false`, and required `TERMINATE_R1_REDUCTION_LINE` after a second post-START infrastructure/operational failure before valid measurement. That stop budget now fires. **C19-R1 revision-authority is scientifically unresolved but operationally terminated; no v3 or same-question rescue successor is authorized.**
 
-Because the scientific R1 reduction question remains unresolved and the runtime defect is now independently closed without changing science, one fresh R1-like successor is prospectively justified. MAIN receives exactly one new primary object: `C19_R1_REVISION_AUTHORITY_SUCCESSOR_V2`. The successor must preserve the v1 scientific contract unchanged and differ only in fresh identity/namespace plus exact runtime/admission binding derived from the identity-free readiness result. This is the final operational-successor budget for this R1 reduction line: another post-START infrastructure/runtime failure before measurement terminates the line rather than creating another rescue successor.
+MAIN therefore moves to a scientifically distinct, pre-formal frontier: **`C19_R2_FSA_STATE_TRACKER_PROSPECTIVE_SPECIFICATION`**. This is motivated independently by the pre-existing reduction ladder after C19-v4: representation-matched finite-state/state-tracker reduction is the next high-information simpler explanation after revision-authority. MAIN may specify and build pre-START readiness only; no formal identity is reserved and no STARTED/one-way execution is authorized by this handoff.
 
-Formal SUB remains `null`. The latest SUB output is `mode: exploratory_incubator` and completed the one bounded H3 noisy-group follow-up. Analyst classification is **`REJECT`** for promotion/continuation of this current exploratory candidate, not a formal rejection of H3. Under symmetric imperfect grouping information, the normalized scalar tied or beat the coalition proxy throughout the fixed synthetic sweep; the remaining grouping structure is still supplied metadata rather than inferred structure. The authorized follow-up budget is exhausted.
+Formal SUB remains `null`. Latest SUB is `mode: exploratory_incubator` and completed a bounded H2 residual-loser-vs-generic-memory toy. Analyst classification is **`REJECT`** for promotion or automatic continuation of this current toy, not a formal scientific rejection of H2.
 
 ## Fresh repository / authority reconciliation
 
-- `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; stable shared substrate.
+- `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; stable shared substrate, unprotected.
 - Open PRs: `0`.
 - Open operational Issues: `#139` only.
-- Repository rulesets: `0`; authoritative tag namespace protection remains absent.
+- Repository rulesets: `0`.
 - Legacy `freeze/*` branches: `13`, all preserved.
-- Authoritative evidence tag: `evidence/c19-official-v4-c19-external-v2-official-v4` -> terminal C19-v4 evidence.
-- C19-v4 remains immutable terminal `PASS` under the narrow `truth_free_surface_structural_representation_gain_only` claim; Audit classification remains `WEAKENED_NOT_INVALID`.
-- Consumed R1-v1 package: `research/c19-r1-revision-authority-reduction-20260917@7197ab0f9683616858859446ae9eed7b75707f25`.
-- Consumed R1-v1 STARTED: `control/c19-r1-revision-authority-started-20260918@62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2`.
-- Consumed R1-v1 one-way: `35248878958:failure`; no raw/preserve/targets/score/evidence.
-- Identity-free readiness: `research/readiness-c19-r1-runtime-closure-20260918@f5f0f7abd02372954aa8edcf10b6c15f9644c122`.
-- Readiness workflows: `35254816937:success`, `35254816864:success`.
-- Readiness changed only a dedicated readiness workflow relative to the failed package basis; no scientific contract was changed.
-- Latest SUB exploratory branch: `research/exploratory-sub-h3-correlation-reduction-20260918@678e38ae0035ca95c424c0fa1eb9343bed8b680b`; exact-head CI `35254408782:success`.
+- Authoritative annotated tags: `1`: `evidence/c19-official-v4-c19-external-v2-official-v4`.
+- C19-v4 remains immutable terminal `PASS` under the narrow `truth_free_surface_structural_representation_gain_only` claim; Audit status remains `WEAKENED_NOT_INVALID`.
+- R1-v1 remains consumed/no-retry with no scientific result.
+- R1-v2 package: `research/c19-r1-revision-authority-runtime-closed-v2-20260918@a23975c5713347eaa459161f538a8f0c3db6152e`.
+- R1-v2 STARTED: `control/c19-r1-revision-authority-started-v2-20260918@a230e250021cea113c42d674da2bfc31dc0a3549`.
+- R1-v2 one-way: `35260650772:failure`.
+- R1-v2 preserve ref: absent.
+- R1-v2 evidence tag: absent.
+- R1-v2 status: `POST_START_FAILURE_CONSUMED_NO_RETRY`; no valid scientific classification.
+- Latest SUB branch: `research/exploratory-sub-h2-residual-memory-reduction-20260918@5cd9f65bca71ee1a235c88c27d32e25f27c76745`; exact-head CI `35260556560:success`.
 
 ## Control-plane streams consumed
 
-- Control Brain commit: `d40f83ababcddf0b1e72621c77b10a8c4900badb`. Strategic prior only. It independently recommends classifying the exact readiness as `R1_RUNTIME_READINESS_PASS`, permits consideration of at most one fresh R1-like successor, and recommends terminating the reduction line if that successor suffers another post-START infrastructure failure before measurement.
-- MAIN report commit: `3b33702d7670a3a9160a04eee01913c4751267eb`. Its durable checkpoint still says the readiness workflows were in progress; fresh workflow state now shows both succeeded, so repository authority overrides the minutes-scale report lag.
-- SUB report commit: `e8bbf5047da3340c0464aed189c2a92cc806a632`. SUB remained independent and NON_EVIDENTIARY.
-- Repository Steward commit/state: `5feec031a602c8a68bf9da1f07aae54225ecc212`; governance advisory only.
+- Control Brain commit: `d40f83ababcddf0b1e72621c77b10a8c4900badb`. Strategic prior only. It prospectively recommended terminating the R1 reduction line if the one allowed fresh successor suffered another post-START infrastructure failure before valid measurement. Current repository evidence now triggers that condition.
+- MAIN report commit consumed: `8fd868647884a199368235833a48c4955803553c`. Its durable 03:45 checkpoint recorded v2 as post-START/in-progress; fresh workflow state now shows terminal failure, so repository authority overrides the short-lived report lag.
+- SUB report commit consumed: `bb76c6edf206743227a6dba34108a2a01551a9db`. SUB remained independent and NON_EVIDENTIARY and itself observed the MAIN one-way failure without intervening.
+- Repository Steward commit/state: `5feec031a602c8a68bf9da1f07aae54225ecc212`; governance advisory only and older than R1-v2.
 
 ## External knowledge — role separated
 
 ### `external_input.literature`
 
-Role-specific `literature/latest.md` / `literature/state.json` remains absent. The newest role-suffixed Literature history is consumed independently at commit `c42adf10546d0825fb13a258f052a6a4be399ec5`, role `LITERATURE_REDUCTION_SCOUT`.
+Role-specific `literature/latest.md` / `literature/state.json` remains absent. The newest role-suffixed Literature handoff remains commit `c42adf10546d0825fb13a258f052a6a4be399ec5`, role `LITERATURE_REDUCTION_SCOUT`.
 
-No new literature appeared this cycle. Existing findings continue to impose a reduction ladder: revision-authority/certainty arbitration first, then representation-matched finite-state/state tracking, then compact selective-history alternatives, before any stronger persistent-dynamics claim. This supports the scientific value of finishing the R1 revision-authority reduction but does not itself cause the allocation change.
+No new literature appeared this cycle. The existing reduction ladder remains: revision-authority/certainty arbitration, then representation-matched explicit/implicit finite-state tracking, then compact selective-history belief-state alternatives, before any stronger persistent-dynamics claim. R1 has not scientifically answered the first reduction because both formal identities failed operationally. That unresolved alternative therefore remains an interpretation ceiling on C19-v4. Nevertheless, the FSA/state-tracker question is independently motivated by the literature and can generate new information without pretending R1 was falsified or passed.
 
-Allocation changed due to fresh repository readiness evidence, not Literature.
+Allocation changes this cycle because the precommitted R1 stop budget was triggered by fresh repository evidence. Literature determines the scientifically distinct next reduction direction but did not cause the R1 termination.
 
 ### `external_input.audit`
 
 Latest Audit remains commit `1de53b412f66d4da94f54a8bc12a7e2717ef5011`, role `INDEPENDENT_AUDITOR`, classification `WEAKENED` for C19-v4.
 
-No new Audit appeared this cycle. Its material constraints remain binding prospectively: do not rewrite v4; do not overread the frozen pair-IID CI as independent-family generalization; and use a prospectively frozen cluster-aware inferential unit in future matched reductions. R1-v1 already froze target-free `atomic_idx` mapping and an `atomic_idx`-cluster primary bootstrap before STARTED. The fresh successor must inherit that stronger statistics contract unchanged.
+No new Audit appeared this cycle. Its constraints remain binding for any future external-validation object: v4 is immutable; pair-IID uncertainty is not enough for independent-family generalization; a target-free, prospectively fixed cluster unit should govern broader inference. R1 had already adopted `atomic_idx` cluster-primary inference. Any future FSA/state-tracker object should retain a prospectively fixed, target-free cluster-aware inferential contract unless a different unit is scientifically justified before STARTED.
 
-Allocation changed due to runtime-readiness PASS, not Audit.
+Audit did not cause the allocation change and there is no R1-v2 score/result for it to audit scientifically. A read-only audit of the v2 operational failure is useful for tooling/governance, not for changing the science classification.
 
 ## SUB exploratory-incubator review
 
 Classification: **`REJECT`**.
 
-This classification rejects promotion or further automatic continuation of the current H3 exploratory candidate. It is **not** a formal scientific rejection of H3.
+Scope: reject promotion or automatic continuation of the current H2 toy; this is **not** a formal scientific rejection of H2.
 
-The fixed NON_EVIDENTIARY follow-up used 4,096 synthetic examples and supplied the same noisy observed grouping proxy to the normalized scalar and coalition-style majority readers. Results:
+The NON_EVIDENTIARY synthetic probe matched both mechanisms to a two-scalar state budget and one independently DEV-selected decay, then tested on disjoint TEST seeds over seven fixed recovery-vs-false-revision utility trade-offs. The generic symmetric recurrent memory comparator exceeded residual-loser retention on all seven TEST trade-offs. `symmetric - residual` utility margins were `+0.006298`, `+0.013909`, `+0.030186`, `+0.006151`, `+0.010453`, `+0.028184`, and `+0.008571`.
 
-| proxy corruption | naive | source dedup | normalized scalar | coalition proxy |
-|---:|---:|---:|---:|---:|
-| 0% | 0.73755 | 0.75366 | 0.80151 | 0.80103 |
-| 10% | 0.73755 | 0.75366 | 0.78906 | 0.77905 |
-| 25% | 0.73755 | 0.75366 | 0.77271 | 0.76929 |
-| 50% | 0.73755 | 0.75366 | 0.76074 | 0.74463 |
-| 100% | 0.73755 | 0.75366 | 0.75732 | 0.73291 |
+This is useful reduction pressure: any future H2 formal object should beat strong recurrent/probabilistic memory under matched information, state, tuning and resource budgets. It is not evidence that real SparkBrain residual retention is unnecessary. The current synthetic world, residual/comparator dynamics, utility region and tuning rule are not a prospectively justified formal object, and SUB's bounded target is complete. Do not continue this toy automatically.
 
-The scalar is effectively tied at perfect grouping and strictly better at every nonzero corruption level. As proxy quality degrades, grouping-aware gains shrink. The proxy itself remains supplied synthetic metadata rather than learned/inferred structure.
-
-Why reject this candidate now:
-- the prospectively authorized one-follow-up budget is exhausted;
-- the current toy supplies grouping metadata rather than solving correlation inference;
-- the coalition proxy does not show an advantage over the strong scalar under symmetric proxy access;
-- formalization would require new scientific choices about grouping inference/learning, held-out worlds, comparator capacity, calibration, resources, metrics and success criteria.
-
-A future H3 object would need independent motivation and a fresh prospective specification; the current exploratory branch/results cannot be relabeled as formal evidence.
+A future H2 object requires a fresh prospective task/world family, exact residual and comparator dynamics, fit/tune budget, state/resource matching, utility/success criteria, held-out split, runtime/determinism and fresh identity/bindings. The exploratory branch/result itself must never be relabeled formal evidence.
 
 ## Active-line review
 
 | Line | Strongest current interpretation | Consumed / integrity state | Shortest path to NEW information | Centrality |
 |---|---|---|---|---|
-| A01 | `MIXED_PROGRAMME_CLOSED`; P2/P3 development support but P4/reductions prevent broad mechanism claim | consumed programme objects, no rerun | fresh independently motivated mechanism only | closed |
-| RV01 | `DEVELOPMENT_POSITIVE_REDUCIBLE` to ordinary learned weight/adaptive-delay mechanisms | R01-16/R01-17 consumed | fresh strong matched reduction | secondary complete |
+| A01 | `MIXED_PROGRAMME_CLOSED`; P2/P3 development support remains reducible and P4 prevents broad claim | consumed, no rerun | fresh independently motivated mechanism only | closed |
+| RV01 | `DEVELOPMENT_POSITIVE_REDUCIBLE` to ordinary learned/adaptive mechanisms | R01-16/R01-17 consumed | fresh strong matched reduction | secondary complete |
 | RV02 | `TERMINAL_CONSTRUCTION_NEGATIVE` | D1 consumed | fresh object only | terminal |
-| CX/CX01 | `TERMINAL_FORMAL_NEGATIVE` | formal evidence immutable | fresh object only | terminal |
+| CX/CX01 | `TERMINAL_FORMAL_NEGATIVE` | immutable formal evidence | fresh object only | terminal |
 | H8/C08 | terminal causal-specialization negative | consumed/closed | distinct prospective object only | terminal |
-| H9/C07 | `PRE_START_UNDERSPECIFIED`; prior incubator output is methodology only | no formal clean object | fresh exact state/reset/resource contract | secondary paused |
-| H3 | `EXPLORATORY_CANDIDATE_REJECTED_NON_EVIDENTIARY` | no identity consumed | only a genuinely fresh object with inferred/observable grouping and strong scalar/Bayesian reductions | exploratory stopped |
+| H9/C07 | `PRE_START_UNDERSPECIFIED` | no formal clean object | fresh exact state/reset/resource contract | secondary paused |
+| H2 | `EXPLORATORY_CANDIDATE_REJECTED_NON_EVIDENTIARY` | no identity consumed | fresh world + strong matched memory controls only | exploratory stopped |
 | C19-v4 | `TERMINAL_PASS_NARROW_REPRESENTATION_GAIN / WEAKENED_NOT_INVALID` | immutable consumed evidence | fresh matched reductions only | completed primary result |
 | C19-R1-v1 | `TERMINAL_POST_START_FAILURE_CONSUMED_NO_SCIENTIFIC_RESULT` | consumed/no-retry | none for v1 | terminal consumed |
-| C19-R1 runtime closure | `R1_RUNTIME_READINESS_PASS` | identity-free, no science | enables fresh prospective decision only | readiness complete |
-| **C19-R1 successor-v2** | **fresh prospective reduction object** | **must be new identity/unSTARTED before GO** | **same-I2 stateless revision-authority reduction under exact runtime closure** | **PRIMARY** |
+| C19-R1-v2 | `TERMINAL_POST_START_FAILURE_CONSUMED_NO_SCIENTIFIC_RESULT`; R1 line stop budget triggered | consumed/no-retry; no preserve/score/evidence | no v3; R1 question remains unresolved | terminal line |
+| **C19-R2 FSA/state tracker** | **`PRE_FORMAL_PROSPECTIVE_SPECIFICATION`** | **no identity reserved or consumed** | **prospectively define a representation-matched explicit state-tracker reduction** | **PRIMARY** |
 
 ## Parallel decomposition
 
 ### `main_lane`
 
-- target: `C19_R1_REVISION_AUTHORITY_SUCCESSOR_V2`
-- reservation_status: `reserved_for_main`
-- recommended_owner: `main`
-- independent_of_sub: `true`
-- main_owns_all_critical_path_fixups: `true`
-- suggested branch: `research/c19-r1-revision-authority-runtime-closed-v2-20260918`
-- suggested protocol: `c19-r1-revision-authority-protocol-v2`
-- fresh identity: `c19-r1-revision-authority-official-v2`
-- execution_allowed: `true`, **only after all pre-START gates below are satisfied on one exact final successor SHA**
-- information_value: `VERY_HIGH`
-- implementation_distance: `NEAR_TO_MEDIUM`
+- target: `C19_R2_FSA_STATE_TRACKER_PROSPECTIVE_SPECIFICATION`
+- owner: `MAIN`
+- main owns **ALL** critical-path specification, implementation, CI/preflight, binding, preservation/scoring harness and review fixups.
+- formal identity: `null` until the mechanism/resource contract is prospectively complete.
+- execution allowed: `false` in this handoff.
+- suggested working branch only: `research/c19-r2-fsa-state-tracker-spec-20260918`.
+- information value: `VERY_HIGH`.
+- implementation distance: `MEDIUM`.
 
-Scientific question and mechanism must be inherited unchanged from R1-v1:
-- same question: can C19-v4's valid I2 representation gain be explained by a simpler same-I2, label-free, stateless revision-authority/certainty arbitration mechanism rather than SparkBrain-specific persistent dynamics?
-- same I2 truth-free symbolic surface representation;
-- same zero-trainable-parameter, stateless, no-cross-pair-state controller;
-- same certainty tuple and deterministic revision-authority rule; no thresholds or outcome-responsive tuning;
-- same exact Belief-R revision, 1,744 pair universe, update/maintain inventory, five seeds, work contract, target visibility and no-fit/tune/select rule;
-- same BREU reduction contrast and target-free `atomic_idx` source-map semantics;
-- same `atomic_idx`-cluster primary paired bootstrap, 10,000 resamples, seed and quantile semantics; pair-IID remains secondary sensitivity only;
-- same narrow claim boundary.
+Fresh scientific question to specify prospectively: **Can the narrow C19-v4 I2 representation gain be explained by a representation-matched explicit finite-state/state-tracker mechanism operating on the same target-blind visible envelope, without SparkBrain-specific persistent coalition dynamics?**
 
-The only allowed prospective change from consumed R1-v1 is operational admission/runtime closure:
-- fresh identity, protocol/namespace and package commit;
-- exact CPython 3.11.16 execution environment;
-- install the already-declared learned runtime group rather than bare base install;
-- bind the exact resolved dependency/environment manifest prospectively before STARTED;
-- require the production runner import path to pass under network blocking in the exact intended environment;
-- inherit the successful identity-free readiness evidence without importing any scientific outcome.
+Before this may become formal, MAIN must fix without outcome-responsive tuning:
+1. exact state alphabet / memory variables, initial state and reset semantics;
+2. exact transition/update function and output/readout rule;
+3. what history or lookup privilege the state tracker receives, with the same I2 target-blind representation as the comparator basis;
+4. parameter/state/resource/compute matching and any fit/tune/select budget;
+5. the exact Belief-R pair universe, seeds, runtime/determinism and source/package/input bindings;
+6. comparator relation to immutable C19-v4 raw/evidence;
+7. target-free inferential grouping and cluster-aware paired statistics;
+8. raw-before-score/no-clobber preservation, evaluator join, scorer and terminal success/failure criteria;
+9. exact identity/namespace only after items 1–8 are frozen.
 
-MAIN owns every successor-specific package, workflow, CI/preflight, verifier, binding, preservation, scoring and exact-head blocker. SUB must never take any of them.
+This object is **not** an R1 rescue. It must not use R1-v1/v2 transient raw or failure details to tune its scientific mechanism. It is independently motivated by the pre-existing C19-v4 reduction ladder. Because R1 remains scientifically unresolved, even a future FSA result cannot erase revision-authority as an alternative explanation.
 
 ### `sub_lane`
 `null`
@@ -141,103 +120,70 @@ MAIN owns every successor-specific package, workflow, CI/preflight, verifier, bi
 ### `sub_fallback`
 `null`
 
-`no_sub_lane_reason`: no independent formal secondary object is prospectively complete. The bounded H3 candidate has reached a `REJECT` stop/redirect boundary; H9 remains under-specified; and MAIN's R1 successor critical path is never valid SUB work.
+`no_sub_lane_reason`: no independent formal secondary object is prospectively complete. H2's current toy is rejected for promotion/continuation; H9 remains under-specified; and all C19-R2 FSA/state-tracker critical-path work belongs exclusively to MAIN.
 
-SUB may use idle capacity only for a **different** independent synthetic/dev NON_EVIDENTIARY incubator line or no-op. It must not continue the current H3 proxy ladder automatically and must not take any R1 blocker.
+SUB may use idle capacity only for a **different**, independent synthetic/dev NON_EVIDENTIARY incubator target or no-op. SUB must not diagnose or repair R1-v2, salvage its transient raw, continue H2 automatically, or take any MAIN FSA blocker.
 
 ### `blocked_until`
 
-- R1 successor STARTED is blocked until a fresh successor package/identity exists, the scientific contract is proven unchanged, runtime/admission closure is bound prospectively, namespaces are collision-free, and ordinary CI plus dedicated pre-START are green on the same exact final SHA.
+- C19-R1 is permanently blocked from another operational successor under the precommitted line stop budget.
+- C19-R2 formal identity/STARTED is blocked until MAIN freezes the complete state-tracker mechanism, matching/resource contract, inputs/runtime/statistics, source/package/scorer/preserver bindings and obtains fresh Analyst authorization.
 - Formal SUB is blocked until a genuinely independent formal object is prospectively complete and reserved.
-- Current H3 proxy-ladder exploration is stopped; any future H3 work requires a fresh Analyst allocation/object rather than continuation of this branch.
+- Current H2 exploration is stopped; any future H2 work requires a fresh Analyst object.
 
 ### `do_not_touch`
 
-Consumed C19-v2/v3/v4 identities and controls; consumed R1-v1 identity/control; C19-v4 raw preserve/evidence/tag; any R1-v1 transient diagnostics as scientific evidence; consumed A01/RV01/RV02/CX identities; all immutable/legacy freeze/formal/evidence refs; current H3 exploratory artifacts as formal evidence; scheduler definitions.
+Consumed C19-v2/v3/v4 identities and controls; consumed R1-v1 and R1-v2 identities/STARTED refs; C19-v4 raw preserve/evidence/tag; R1-v2 transient unpreserved raw/manifest as scientific evidence or design-tuning material; any R1 same-question v3 rescue; consumed A01/RV01/RV02/CX identities; all immutable/legacy freeze/formal/evidence refs; current H2 exploratory artifacts as formal evidence; scheduler definitions.
 
 ## Top 3
 
-1. **MAIN — prospectively package and, only after exact-head GO gates, execute one fresh R1 successor-v2.** Information value `VERY_HIGH`; distance `NEAR_TO_MEDIUM`. This is the shortest path to the unresolved matched-reduction answer now that the exact runtime failure mode is mechanically closed.
-2. **Independent Audit — read-only review of the successor's frozen runtime/admission + cluster-aware binding when available, and terminal evidence afterward.** Value `HIGH`; distance `NEAR`. This is not SUB work and is not a substitute for MAIN's own gates.
-3. **SUB — stop the current H3 candidate and redirect only to a distinct independent NON_EVIDENTIARY theme or no-op.** Value `MEDIUM` for broad hypothesis generation; formal lane remains null.
+1. **MAIN — prospectively specify and preflight the representation-matched C19-R2 FSA/state-tracker reduction, then STOP at Analyst review before any identity/STARTED.** Information value `VERY_HIGH`; distance `MEDIUM`.
+2. **Independent Audit — read-only confirm R1-v2 failure/binding provenance and later attack the R2 prospective state/resource/statistical contract before one-way execution.** Value `HIGH`; distance `NEAR_TO_MEDIUM`. This is not SUB work.
+3. **SUB — stop the current H2 toy and redirect only to a distinct independent NON_EVIDENTIARY theme or no-op.** Value `MEDIUM` for hypothesis generation; formal lane remains null.
 
 ## #1 GO / STOP
 
-### GO to STARTED only if all are true on one exact final successor SHA
+### GO — specification/readiness only
 
-- fresh successor identity `c19-r1-revision-authority-official-v2` is unSTARTED, unconsumed and collision-free across control/preserve/evidence namespaces;
-- exact source/protocol/package/input/runtime/controller/source-map/scorer/preserver bindings are frozen;
-- diff from the v1 scientific basis is restricted to fresh identity/authority/admission/runtime-closure mechanics and contains no scientific-semantic change;
-- exact CPython 3.11.16 and exact resolved dependency/environment manifest are bound;
-- exact production runner import succeeds with network blocked under the same environment that will execute the one-way path;
-- deterministic synthetic pre-START/source-map/raw fixtures remain unchanged under the inherited scientific contract;
-- ordinary CI and dedicated pre-START are both green on the same final SHA;
-- STARTED/no-clobber occurs before official cache/data access;
-- target-blind raw is acquired before evaluator targets, then immutably preserved with no-clobber, independently re-fetched and digest-verified before target materialization/scoring;
-- evaluator join is unique/total/fail-closed and target-safe;
-- frozen golden scorer and `atomic_idx` cluster-bootstrap fixtures are green;
-- a final fresh authority/collision re-fetch remains clean immediately before one-way execution.
+MAIN may proceed only with pre-formal specification and outcome-independent implementation/readiness. Before an R2 formal object is even eligible for a future START decision:
 
-### Scientific falsifiers / terminal classifications
-
-Primary contrast remains `C19-v4 primary BREU - R1 successor BREU` under the prospectively frozen `atomic_idx`-cluster paired bootstrap:
-- `SURVIVES_REDUCTION`: 95% cluster CI lower `> 0`.
-- `REDUCED`: 95% cluster CI upper `<= 0`.
-- `INCONCLUSIVE`: 95% cluster CI contains `0`.
-- `INVALID_EVIDENCE`: any binding/raw/source-map/digest/join/target-safety/scorer violation.
-
-`SURVIVES_REDUCTION` means only that this fixed stateless revision-authority reduction failed to explain the v4 gain; it is not proof of SparkBrain-specific persistent dynamics.
+- no consumed R1 identity, transient raw, post-START diagnostic outcome or v4 per-example scored outcome is used to choose/tune state rules;
+- exact state variables, transitions, reset semantics and readout are deterministic and prospectively fixed;
+- the same target-blind I2 visible representation and exact official pair universe are bound unless a different input contract is independently justified before any execution;
+- state/resource/lookup privilege, fit/tune/select budget and compute accounting are explicit and matched enough for the intended reduction claim;
+- exact source/protocol/package/input/runtime/source-map/scorer/preserver bindings are declared;
+- STARTED/no-clobber and target-blind raw -> immutable preserve -> independent re-fetch/digest -> evaluator targets -> scoring ordering is designed fail-closed;
+- a target-free cluster-aware inferential unit is frozen prospectively;
+- deterministic golden fixtures plus ordinary CI and dedicated pre-START checks are green on one exact final head;
+- no formal identity is consumed before a fresh Analyst handoff explicitly authorizes execution.
 
 ### STOP
 
-STOP before STARTED if any new controller/representation/input/pair-universe/metric/statistical/resource/device/runtime-version choice is required, if exact runtime closure cannot be bound without new choices, if source-map/target-safety/binding is ambiguous, if any authority collision appears, or if the science contract cannot be proven unchanged.
+STOP before formal identity/STARTED if the state alphabet, transition function, resource matching, lookup privilege, fit/tune budget, input universe, metric or statistical unit requires outcome-informed tuning or remains scientifically ambiguous. STOP if R1 transient unpreserved output would be needed to design the candidate. STOP if the proposed FSA is merely an operational rewrite of the failed R1 controller rather than a scientifically distinct matched reduction.
 
-After STARTED, any failure consumes the fresh identity. If successor-v2 suffers another infrastructure/runtime failure before measurement, **terminate the R1 reduction line**: no automatic successor-v3 and no repair/retry. `SURVIVES_REDUCTION`, `REDUCED`, `INCONCLUSIVE`, and `INVALID_EVIDENCE` are all terminal for the identity.
+There is **no scientific PASS/FAIL threshold authorized yet** because the exact FSA mechanism and matching contract are not frozen. The readiness falsifier is inability to define a deterministic, target-free, representation/resource-matched state-tracker comparator without adding unresolved degrees of freedom. `R2_PRE_START_READY_FOR_ANALYST_REVIEW` is a hard STOP in this handoff.
 
-## Prospective contingency tree
+## Prospective outcome contingencies
 
-- `R1_V1_POST_START_FAILURE`: terminal consumed; no retry/rescue.
-- `R1_RUNTIME_READINESS_PASS`: observed; exact missing runtime/import boundary was closed identity-free; no scientific result.
-- `R1_V2_PRE_START_BUILD`: MAIN owns all successor-specific build/binding/readiness work.
-- `R1_V2_PRE_START_BLOCKER`: if purely science-invariant/mechanical, MAIN may fix same run, then re-fetch and rerun all exact-head gates.
-- `R1_V2_PRE_START_SEMANTIC_GAP`: any new scientific/resource/runtime-version choice -> STOP before STARTED.
-- `R1_V2_PRE_START_READY`: if every GO gate remains clean, MAIN may create fresh STARTED and continue one-way in the same run.
-- `R1_V2_SURVIVES_REDUCTION`: preserve terminal evidence/report, STOP; later Analyst may consider a representation-matched FSA/state-tracker reduction, never automatically in the same run.
-- `R1_V2_REDUCED`: preserve terminal evidence/report, STOP; simpler revision-authority explanation succeeds under the frozen contract.
-- `R1_V2_INCONCLUSIVE`: preserve terminal evidence/report, STOP; no rerun/retune.
-- `R1_V2_INVALID_EVIDENCE`: STOP; no scientific claim; no automatic retry.
-- `R1_V2_POST_START_FAILURE`: consume identity and STOP; because the line-level operational successor budget is exhausted, terminate the R1 reduction line rather than creating another rescue successor.
+- `R1_V2_POST_START_FAILURE`: **observed / terminal**. Keep identity consumed/no-retry; do not salvage transient raw; terminate R1 reduction line; no automatic v3.
+- `R2_PRE_START_SPECIFICATION`: MAIN fixes the distinct FSA/state-tracker scientific and integrity contract.
+- `R2_PRE_START_BLOCKER`: MAIN may repair purely mechanical implementation/CI/binding defects same-run only when the scientific contract remains unchanged.
+- `R2_PRE_START_SEMANTIC_GAP`: STOP and return to Analyst if any state/resource/input/statistical choice remains unresolved or becomes outcome-responsive.
+- `R2_PRE_START_READY_FOR_ANALYST_REVIEW`: STOP; no STARTED/identity consumption in this handoff.
+- Future `R2_SURVIVES_FSA_REDUCTION`, `R2_REDUCED_BY_FSA`, `R2_INCONCLUSIVE`, `R2_INVALID_EVIDENCE`, and `R2_POST_START_FAILURE` branches are reserved conceptually but **not executable and not numerically defined** until the exact mechanism/matching/statistical contract is prospectively frozen.
 
-## Orchestrator handoff
-
-MAIN takes **C19-R1 fresh successor-v2** and owns **ALL** critical-path fixes end-to-end. The consumed official-v1 object stays untouched. MAIN may continue through science-invariant pre-START blockers and, if the exact final successor head satisfies every prospectively fixed gate, through STARTED -> target-blind acquisition -> immutable raw preservation/refetch -> targets -> cluster-aware scoring -> one terminal result branch in the same run. It must stop at every terminal branch and must not create the next scientific object from an observed result.
-
-Formal SUB takes **nothing** (`sub_lane: null`). SUB may incubate only a **different**, independent, synthetic/dev, NON_EVIDENTIARY question or no-op. The current H3 proxy candidate is rejected for promotion/continuation and its results remain NON_EVIDENTIARY. `sub_fallback: null`.
-
-MAIN must not absorb future reserved SUB work; SUB must not take MAIN blockers. Neither worker touches consumed/frozen/evidence authority, R1-v1, C19-v4 evidence, scheduler definitions, or exploratory H3 artifacts as formal evidence.
-
-Repartition only on fresh authority: a material new Audit invalidating the C19-v4 basis, a pre-START semantic/runtime-resource gap in successor-v2, a terminal successor-v2 result requiring a new scientific question, or a genuinely independent formal SUB object prospectively specified from scratch. Literature or exploratory observations do not retroactively alter frozen/consumed objects.
+Same-run continuation is therefore allowed only through R2 pre-START mechanical specification/readiness branches. No result-bearing branch is authorized now.
 
 ## Governance advisory
 
-Repository Steward findings remain advisory and agree with fresh remote facts:
-- #147 is closed against canonical C19-v4 evidence.
-- #139 is the only open Issue and correctly tracks the absence of server-side protection for authoritative tag namespaces.
-- one authoritative annotated C19-v4 evidence tag exists;
-- repository rulesets remain `0`;
-- `main` remains stable shared substrate and unprotected;
-- all 13 legacy freeze branches remain preserved;
-- open PR count remains `0`.
+Repository Steward output is advisory and older than the R1-v2 event. Fresh repository facts independently confirm: Issue `#139` is the only open Issue, open PR count is `0`, rulesets remain `0`, `main` is unprotected, one authoritative C19-v4 evidence tag exists, and all 13 legacy freeze branches remain present.
 
-Outcome-independent main-promotion candidates, after extraction and independent review, include exact execution-environment/dependency manifest verification and same-environment production-import smoke, plus existing no-clobber/raw-preserve/digest and fail-closed join/scorer primitives. Do not promote R1-specific scientific controller/workflow semantics as generic substrate.
+The strongest outcome-independent main-promotion candidate exposed by R1-v2 is now broader than dependency smoke alone: a generic **execution-binding parity verifier** should assert that wrapper-level protocol/identity/runtime bindings are the values actually observed by the production acquisition function, not merely values present in an outer wrapper namespace. This should be extracted and independently tested before promotion; R1/C19-specific scientific code remains research-local.
 
-## Allocation-change summary
+Keep #139 visible and non-blocking. Do not migrate/delete legacy freeze branches or retarget authoritative tags in this Analyst run.
 
-- New repository evidence: **YES** — identity-free R1 runtime closure now passes on exact head.
-- SUB operating mode: `exploratory_incubator`.
-- SUB incubator review: **`REJECT` current H3 candidate**; no formal H3 conclusion.
-- New Literature: **NO**; allocation unchanged by Literature.
-- New Independent Audit: **NO**; allocation unchanged by Audit.
-- Repository Steward governance findings: consumed as advisory; no scientific allocation change.
-- MAIN/SUB allocation changed: **YES**, because readiness PASS removes the operational blocker and justifies exactly one fresh prospective R1 successor while preserving consumed-v1 integrity.
-- Formal SUB fallback: `null`.
+## Orchestrator handoff
+
+**MAIN takes C19-R2 FSA/state-tracker prospective specification and owns ALL critical-path fixes.** MAIN may proceed only through specification/readiness; it must STOP before formal identity/STARTED and return to Analyst. **Formal SUB takes nothing (`sub_lane=null`); there is no formal fallback (`sub_fallback=null`).** SUB may incubate a new independent synthetic/dev hypothesis only under strict NON_EVIDENTIARY rules or no-op. MAIN must not absorb a future reserved SUB object; SUB must not take R1 diagnostics or any R2 blocker.
+
+Neither worker touches consumed R1-v1/v2 identities, transient v2 raw, C19-v4 immutable evidence, consumed legacy science, authoritative immutable refs, or scheduler definitions. Repartition only if a fresh independent formal SUB object becomes prospectively complete, a new external audit materially invalidates C19-v4, or a fresh external/incubator finding materially changes expected information gain without retrofitting consumed objects. There are no same-run scientific result branches available to MAIN under this handoff; only R2 pre-START mechanical/specification branches may continue.
