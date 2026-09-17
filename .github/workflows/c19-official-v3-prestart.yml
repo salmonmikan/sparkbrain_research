@@ -1,0 +1,37 @@
+name: C19 official-v3 pre-START runtime
+
+on:
+  push:
+    branches:
+      - "research/c19-official-v3-runtime-closed-20260917"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  runtime-closure:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11.16"
+          cache: pip
+      - name: Install exact official-v3 runtime
+        run: |
+          set -euo pipefail
+          test "$(python -c 'import platform; print(platform.python_version())')" = '3.11.16'
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[learned]"
+      - name: Exact runtime and network-blocked import smoke
+        run: |
+          set -euo pipefail
+          python scripts/check_c19_official_v3_runtime.py
+      - name: V2 scientific scorer regression remains green
+        run: |
+          set -euo pipefail
+          python -m pytest -q -m external tests/test_c19_official_v2_scoring.py
