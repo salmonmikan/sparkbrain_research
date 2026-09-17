@@ -1,157 +1,185 @@
 {
-  "timestamp": "2026-09-17T16:37:44+09:00",
+  "timestamp": "2026-09-17T17:43:16+09:00",
   "worker_role": "sub",
-  "evidence_analyst_commit": "96895860196792329d7b3334c37c92a71f52b415",
+  "mode": "exploratory_incubator",
+  "evidence_analyst_commit": "b9c14e9e171bf765447aa45e71b7ba75cc7ce357",
   "control_brain_commit": "d8987f8c6d88fad48a8f652f4255e73b30a223e6",
   "consumed_lanes": {
-    "main_lane": "C19 v3 runtime-closed successor; all v3 implementation, pre-START CI/runtime/package/binding fixes and one-way admission are MAIN-owned end-to-end",
+    "main_lane": "C19-v3 current primary frontier; MAIN owns all current C19 execution, blockers, result handling and fixups end-to-end",
     "sub_lane": null,
-    "sub_fallback": null,
-    "blocked_until_sub": "A future Evidence Analyst reserves a fully specified genuinely independent prospective lane/fallback."
+    "sub_fallback": null
   },
   "selected_independent_lane": null,
-  "no_sub_lane_reason": "NO_SECONDARY_FRONTIER",
+  "exploratory_target": "Synthetic revision-authority explicit finite-state reduction feasibility",
   "independence_from_main_critical_path": true,
+  "why_independent_of_main": "Probe is based on stable main, uses generated synthetic event histories only, consumes no C19/Belief-R outputs, does not touch MAIN branches/authority, and remains interpretable regardless of the current C19-v3 outcome.",
   "execution_allowed": false,
-  "sub_active_claim": "NO_OP_NO_SECONDARY_FRONTIER",
+  "sub_active_claim": "EXPLORATORY_NON_EVIDENTIARY_REVISION_AUTHORITY_FSA_FEASIBILITY",
   "main_work_explicitly_avoided": [
     "research/c19-official-v3-runtime-closed-20260917",
+    "control/c19-official-v3-started-20260917",
     "c19-external-v2-official-v3",
-    "v3 exact-head prestart-runtime-smoke failure run 35194763329",
-    "v3 runtime/dependency/package/binding/pre-START fixes",
-    "control/c19-official-v2-started-20260917",
+    "workflow 35200352569 and its official acquisition/raw/preserve/score/result path",
     "consumed c19-external-v2-official-v2 repair or retry",
-    "H9/C07 prospective redesign",
-    "unreserved methods-terminal-provenance branch"
+    "all current C19 blockers/fixups/successor design"
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "96895860196792329d7b3334c37c92a71f52b415",
+    "evidence_analyst": "b9c14e9e171bf765447aa45e71b7ba75cc7ce357",
     "control_brain": "d8987f8c6d88fad48a8f652f4255e73b30a223e6",
-    "orchestrator_report_parent_before_sub_write": "d18a65e1e4f827b9c9c6f6aad7391d1c3529c3c5",
-    "sub_latest_update_commit": "78ea67ee0419461d3dea11f69f1f5d844ff9db90",
-    "main_report_observed": "durable MAIN stream was still at its v2 POST_START_FAILURE checkpoint when read; newer v3 branch/pre-START movement is repository evidence and was not repaired by SUB",
-    "c19_v2_control_head": "7a8af82de0a0dd70ec2391ef7506ae80c5c8d391",
-    "c19_v2_identity": "c19-external-v2-official-v2",
-    "c19_v2_identity_consumed": true,
-    "c19_v2_retry_allowed": false,
-    "c19_v3_branch": "research/c19-official-v3-runtime-closed-20260917@954e527300e25dc772b11f3a23a682d5a71ef9df",
-    "c19_v3_prestart_run": "35194763329:failure",
-    "c19_v3_prestart_job": "prestart-runtime-smoke",
-    "c19_v3_started_ref_present": false,
-    "c19_v3_preserve_ref_present": false,
-    "c19_v3_evidence_ref_present": false,
+    "orchestrator_report_parent_before_sub_write": "e038c9b7667c3b7b768696a356fd1b5f2f05fecd",
+    "sub_latest_update_commit": "b3e9cc197b0ff12042400fa6fc77ba8bc0f2938c",
+    "c19_v3_package": "research/c19-official-v3-runtime-closed-20260917@84b244959f249da916a36906508ead0830052e9b",
+    "c19_v3_started_ref": "control/c19-official-v3-started-20260917@915b7b21abe6ef936fa18e81e4a5117712d20f28",
+    "c19_v3_identity": "c19-external-v2-official-v3",
+    "c19_v3_one_way_run": "35200352569:in_progress_at_pre_persistence_reconciliation",
+    "c19_v2_control": "control/c19-official-v2-started-20260917@7a8af82de0a0dd70ec2391ef7506ae80c5c8d391",
+    "exploratory_branch": "research/exploratory-sub-revision-authority-fsa-20260917@a4e14a13eb4011e94cc93d07f9a13d9251bfd759",
     "open_pr_count": 0,
-    "open_issues": [147, 139]
+    "open_issues": [139, 147],
+    "legacy_freeze_branch_count": 13,
+    "preserve_branch_count": 19,
+    "sealed_branch_count": 0,
+    "formal_branch_count": 0
   },
   "branches_prs_advanced": {
     "by_sub": {
-      "research_branches_created": [],
-      "research_branches_advanced": [],
-      "implementation_commits": [],
+      "research_branches_created": ["research/exploratory-sub-revision-authority-fsa-20260917"],
+      "research_branches_advanced": ["research/exploratory-sub-revision-authority-fsa-20260917@a4e14a13eb4011e94cc93d07f9a13d9251bfd759"],
+      "implementation_commits": [
+        "8b5dccadf90b4388a37011615f7065baaec44c0c",
+        "2bf9a30775f2385dc0930ebc49680c3a1e22a61a",
+        "344323d7d6cba3190df00bef7c062beca0846d76",
+        "a4e14a13eb4011e94cc93d07f9a13d9251bfd759"
+      ],
       "prs_created": [],
       "merges": []
     },
     "concurrent_main_movement_observed": [
-      "research/c19-official-v3-runtime-closed-20260917 advanced to 954e527300e25dc772b11f3a23a682d5a71ef9df.",
-      "Exact-head v3 pre-START workflow 35194763329 concluded failure in prestart-runtime-smoke.",
-      "No matching v3 control/preserve/evidence ref existed at final reconciliation."
+      "C19-v3 package advanced to 84b244959f249da916a36906508ead0830052e9b.",
+      "C19-v3 STARTED authority appeared at 915b7b21abe6ef936fa18e81e4a5117712d20f28.",
+      "One-way run 35200352569 was in progress at final pre-persistence reconciliation."
     ]
   },
   "workflows_experiments": {
-    "scientific_workflows_dispatched_by_sub": 0,
-    "scientific_experiments_executed_by_sub": 0,
+    "formal_scientific_workflows_dispatched_by_sub": 0,
+    "formal_scientific_experiments_executed_by_sub": 0,
     "started_control_created_by_sub": false,
     "one_way_dispatches_by_sub": 0,
     "official_data_access_by_sub": false,
-    "observed_main_prestart": {
-      "run_id": 35194763329,
-      "head_sha": "954e527300e25dc772b11f3a23a682d5a71ef9df",
-      "conclusion": "failure",
-      "job": "prestart-runtime-smoke",
-      "touched_or_diagnosed_by_sub": false
+    "synthetic_exploratory_micro_experiment": {
+      "script": "experiments/exploratory/sub/revision_authority_fsa_probe.py",
+      "input": "generated synthetic source-assert/retract/irrelevant histories",
+      "formal": false,
+      "one_way": false,
+      "identity": null
     },
-    "main_v3_one_way_started": false,
-    "main_v2_post_start_failure": {
-      "control_head": "7a8af82de0a0dd70ec2391ef7506ae80c5c8d391",
-      "identity_consumed": true,
-      "retry_allowed": false,
-      "scientific_terminal_result": null
+    "exploratory_branch_ci": {
+      "failed_run": "35200816595:failure",
+      "failure_step": "Lint / ruff",
+      "mechanical_fix_commit": "a4e14a13eb4011e94cc93d07f9a13d9251bfd759",
+      "exact_head_status_at_persistence": "pending/not durably concluded"
+    },
+    "observed_main_v3_one_way": {
+      "run_id": 35200352569,
+      "head": "control/c19-official-v3-started-20260917@915b7b21abe6ef936fa18e81e4a5117712d20f28",
+      "status_at_reconciliation": "in_progress",
+      "touched_by_sub": false
     }
   },
-  "scientific_readiness_results": {
-    "new_scientific_measurement_by_sub": false,
-    "new_readiness_result_by_sub": false,
-    "new_sub_scientific_results": [],
-    "new_sub_readiness_results": [],
-    "science_result": "none",
-    "observed_main_only_update": "C19-v3 implementation advanced to 954e527300e25dc772b11f3a23a682d5a71ef9df, then exact-head prestart-runtime-smoke failed before any durable v3 STARTED/control/preserve/evidence authority appeared. Handling is MAIN-only."
+  "scientific_readiness_exploratory_results": {
+    "new_formal_scientific_measurement_by_sub": false,
+    "new_formal_readiness_result_by_sub": false,
+    "exploratory_observation": true,
+    "exhaustive_histories_through_horizon_5": 111111,
+    "fsa_exact_matches": 111111,
+    "fsa_exact_match_rate": 1.0,
+    "reachable_fsa_states": 27,
+    "maximum_fsa_states": 27,
+    "stateless_exact_matches": 61727,
+    "stateless_exact_match_rate": 0.5555435555435555,
+    "random_checks": {
+      "10": {"samples": 20000, "fsa_exact_match_rate": 1.0, "stateless_match_rate": 0.492, "states": 27},
+      "25": {"samples": 20000, "fsa_exact_match_rate": 1.0, "stateless_match_rate": 0.47505, "states": 27},
+      "50": {"samples": 20000, "fsa_exact_match_rate": 1.0, "stateless_match_rate": 0.4759, "states": 27}
+    },
+    "interpretation": "In this deliberately constructed source-authority/retraction world, full-history behavior compresses exactly into a 27-state explicit representation independent of horizon. This is reduction-feasibility input only, not evidence about C19, Belief-R, SparkBrain, or programme novelty."
   },
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "hypothesis_or_reduction_question": "Can a deliberately history-sensitive source-authority assertion/retraction policy be represented exactly by a small bounded finite-state controller rather than requiring full persistent history?",
+  "synthetic_or_dev_inputs_used": "Generated three-source assertion/retraction/irrelevant histories only; no official, sealed, one-way-only or formal held-out inputs.",
+  "implementation_or_experiment_performed": "Implemented a deterministic full-history reference, 27-state explicit reducer, weak current-event-only comparator, exhaustive horizon<=5 enumeration, and deterministic longer-horizon random checks; persisted code/result/README on an explicitly exploratory branch.",
+  "observations": [
+    "The explicit reducer exactly matched the constructed full-history reference across all 111111 exhaustive histories through horizon 5.",
+    "All 27 bounded states were reachable.",
+    "The current-event-only comparator matched only 0.5555435555 exhaustively and about 0.476-0.492 at longer horizons.",
+    "This only demonstrates that the constructed authority/retraction semantics admit compact explicit state; it is not a discovery about current MAIN science."
+  ],
+  "what_would_falsify_or_reduce_it": "A richer prospectively defined revision task requiring state growth with history/entity/source/provenance complexity, or a simpler representation-matched comparator that accounts for the same behavior, would reduce or falsify the usefulness of this FSA proposal.",
+  "candidate_formal_question": "Does a prospectively fixed, resource-matched explicit authority/provenance state tracker account for history-sensitive revision behavior under controlled state-count, transition-sparsity and horizon scaling?",
+  "suggested_prospective_object": null,
+  "new_scientific_choices_required_before_formalization": [
+    "revision event ontology and authority relation",
+    "same-rank conflict handling",
+    "source/provenance multiplicity and identity semantics",
+    "confidence, contradiction and retraction semantics",
+    "state/resource matching rule",
+    "strong non-FSA and representation-matched stateless/shallow comparators",
+    "prospective held-out task family",
+    "state-count/transition-sparsity/horizon scaling regime",
+    "success/failure criteria and metric",
+    "exact source/package/runtime/input bindings and integrity gates"
+  ],
+  "promotion_recommendation": "CONTINUE_EXPLORING",
   "consumed_identities": {
     "newly_consumed_by_sub": [],
-    "historical_objects_reexecuted": [],
-    "known_consumed": [
-      "c19-external-v2-official-v2"
+    "exploratory_identity_created": false,
+    "known_consumed_do_not_touch": [
+      "c19-external-v2-official-v2",
+      "A01 consumed formal/development identities",
+      "RV01 R01-16/R01-17 consumed identities",
+      "RV02 D1 consumed identity",
+      "CX01 Candidate-002/formal evidence"
     ],
-    "observed_main_consumption": {
-      "c19-external-v2-official-v2": {
-        "consumed": true,
-        "reason": "POST_START_FAILURE after STARTED",
-        "retry_allowed": false,
-        "touched_by_sub": false
-      }
-    },
-    "planned_fresh_main_identity": {
-      "c19-external-v2-official-v3": {
-        "started": false,
-        "consumed": false,
-        "owner": "main",
-        "touched_by_sub": false
-      }
+    "current_main_v3": {
+      "identity": "c19-external-v2-official-v3",
+      "started": true,
+      "no_retry": true,
+      "workflow_status": "in_progress_at_reconciliation",
+      "touched_by_sub": false
     }
   },
   "blockers": {
-    "operational": [],
-    "lane_selection": [
-      "No valid independent sub_lane or sub_fallback is assigned; current bounded secondary status is NO_SECONDARY_FRONTIER."
-    ],
-    "main_only_observed": [
-      "C19-v3 exact-head prestart-runtime-smoke run 35194763329 failed; diagnosis/fix remains MAIN critical path and was not taken by SUB.",
-      "Consumed C19-v2 remains no-retry and untouchable."
-    ]
+    "formal_lane": ["No reserved independent formal sub_lane or sub_fallback exists."],
+    "exploratory": [],
+    "main_only": ["C19-v3 is STARTED and its one-way workflow is MAIN-owned; SUB must not diagnose, modify, interpret, retry or depend on it."]
   },
   "collision_reconciliation": {
     "concurrent_main_movement_detected": true,
-    "main_v3_branch_head": "954e527300e25dc772b11f3a23a682d5a71ef9df",
-    "main_v3_prestart_run": "35194763329:failure",
-    "main_v3_started_present": false,
-    "main_v3_preserve_present": false,
-    "main_v3_evidence_present": false,
-    "main_v2_control_head": "7a8af82de0a0dd70ec2391ef7506ae80c5c8d391",
-    "main_report_tip_before_sub_persistence": "d18a65e1e4f827b9c9c6f6aad7391d1c3529c3c5",
-    "analyst_snapshot_current_for_allocation": true,
-    "allocation_valid_for_sub": true,
-    "main_prestart_failure_left_untouched": true,
+    "analyst_snapshot_stale_on_main_phase": true,
+    "analyst_incubator_permission_still_applicable": true,
     "main_frontier_touched_by_sub": false,
     "main_dependency_created_by_sub": false,
-    "evidence_analyst_authority_rechecked": true,
-    "evidence_analyst_authority_at_write": "96895860196792329d7b3334c37c92a71f52b415"
+    "exploratory_branch_based_on_stable_main": true,
+    "official_inputs_or_outputs_used_by_sub": false,
+    "evidence_analyst_authority_rechecked_before_persistence": true,
+    "evidence_analyst_authority_at_write": "b9c14e9e171bf765447aa45e71b7ba75cc7ce357"
   },
   "integrity_state": {
-    "status": "NO_OP_NO_SECONDARY_FRONTIER",
+    "status": "EXPLORATORY_NON_EVIDENTIARY_BOUNDARY_HELD",
     "immutable_evidence_mutated": false,
-    "historical_objects_reexecuted_or_retuned": false,
-    "scientific_identity_created_or_consumed_by_sub": false,
+    "historical_consumed_objects_reexecuted_or_retuned": false,
+    "formal_scientific_identity_created_or_consumed_by_sub": false,
     "started_ref_created_by_sub": false,
-    "workflow_dispatched_by_sub": false,
+    "formal_workflow_dispatched_by_sub": false,
     "official_data_accessed_by_sub": false,
-    "main_frontier_touched_by_sub": false,
-    "consumed_main_identity_retried_or_repaired_by_sub": false
+    "freeze_sealed_formal_evidence_control_authority_created_by_sub": false,
+    "main_frontier_touched_by_sub": false
   },
   "completion_target": {
-    "target": "Re-fetch current remote/authority/MAIN movement and fail closed when the Analyst declares no independent secondary frontier, without taking MAIN v3 pre-START work.",
+    "target": "Complete at most one bounded independent NON_EVIDENTIARY incubator probe and hand it to Evidence Analyst without entering MAIN or formal authority.",
     "status": "reached",
-    "result": "NO_OP_NO_SECONDARY_FRONTIER"
+    "result": "Revision-authority FSA reduction feasibility demonstrated only in a deliberately synthetic constructed world; recommend CONTINUE_EXPLORING, not formalization."
   },
   "fallback_status": {
     "sub_fallback": null,
@@ -159,5 +187,5 @@
   },
   "rejected_lane": null,
   "lane_rejected_reason": null,
-  "next_sub_action": "Remain no-op until a future Evidence Analyst explicitly reserves a genuinely independent sub_lane or sub_fallback. Do not take the C19-v3 pre-START failure, do not touch/retry consumed v2, and do not independently resume H9 or unreserved historical SUB work."
+  "next_sub_action": "Stop after this bounded probe and await Evidence Analyst classification. Do not formalize the exploratory branch/result and do not touch C19-v3. If a later Analyst cycle still permits incubator mode with no formal lane, a single richer synthetic test with same-rank conflicts and provenance-sensitive retractions is the proposed next step."
 }
