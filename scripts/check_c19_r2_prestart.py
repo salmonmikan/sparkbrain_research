@@ -28,7 +28,9 @@ ALLOWED_DIFF_PATHS = {
     "tests/test_c19_r2_state_tracker.py",
 }
 SOURCE_BLOB_PATHS = {
-    "implementation_binding_blob": "src/sparkbrain/v03_external_validation/implementation_binding.py",
+    "implementation_binding_blob": (
+        "src/sparkbrain/v03_external_validation/implementation_binding.py"
+    ),
     "truth_free_adapter_blob": "src/sparkbrain/v03_external_validation/truth_free_adapter.py",
     "v4_protocol_blob": "src/sparkbrain/v03_external_validation/official_protocol_v4.py",
     "v4_scoring_blob": "src/sparkbrain/v03_external_validation/official_scoring_v4.py",
