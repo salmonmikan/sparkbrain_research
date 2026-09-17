@@ -1,15 +1,14 @@
 {
-  "run_id": "primary-20260917T2318JST",
+  "run_id": "primary-20260918T0018JST",
   "execution_mode": "PRIMARY",
-  "status": "BLOCKED",
-  "started_at": "2026-09-17T23:18:02+09:00",
-  "heartbeat_at": "2026-09-17T23:21:00+09:00",
-  "analyst_commit": "9f88fba973f54bc6608d183aacfaccd7952a229f",
+  "status": "RUNNING",
+  "started_at": "2026-09-18T00:18:00+09:00",
+  "heartbeat_at": "2026-09-18T00:18:00+09:00",
+  "analyst_commit": "f2342817193f4e3a191bb05921db5598ee3cd10c",
   "active_branch": "research/c19-r1-revision-authority-reduction-20260917",
   "active_identity": "c19-r1-revision-authority-official-v1",
-  "active_step": "R1_PRE_START_READY_FOR_ANALYST_REVIEW",
-  "workflow_run_id": 35221764005,
-  "ordinary_ci_run_id": 35221764016,
-  "expected_next_action": "Wait for a fresh Evidence Analyst handoff. If and only if a newer authority explicitly authorizes R1 execution, re-fetch exact branch/head, identity freshness, frozen source/protocol/package/runtime/input/scorer/preserver bindings, STARTED/no-clobber control/preserve/evidence namespaces, exact-head CI/review and collision state immediately before STARTED. Under analyst commit 9f88fba973f54bc6608d183aacfaccd7952a229f, remain stopped and do not dispatch one-way execution.",
+  "active_step": "R1_PRE_START_AUDIT_STATISTICS_AMENDMENT",
+  "workflow_run_id": null,
+  "expected_next_action": "Implement only the prospectively fixed target-free atomic_idx source-map/digest and atomic_idx-cluster bootstrap amendment on the exact R1 branch, retain pair-IID/q_key bootstrap as secondary sensitivity, repair only science-invariant readiness blockers, regain same-final-SHA ordinary CI and dedicated pre-START green, then STOP before STARTED for fresh Analyst review.",
   "owner": "main"
 }
