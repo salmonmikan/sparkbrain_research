@@ -1,0 +1,70 @@
+{
+  "exhaustive": {
+    "first_stateless_counterexample": {
+      "fsa_state": [
+        -1,
+        0,
+        0
+      ],
+      "history": [
+        [
+          "assert",
+          "low",
+          -1
+        ],
+        [
+          "retract",
+          "mid",
+          0
+        ]
+      ],
+      "reference_output": -1,
+      "stateless_output": 0
+    },
+    "fsa_exact_match_rate": 1.0,
+    "fsa_exact_matches": 111111,
+    "histories_checked": 111111,
+    "max_horizon": 5,
+    "reachable_fsa_states": 27,
+    "stateless_match_rate": 0.5555435555435555,
+    "stateless_matches": 61727
+  },
+  "interpretation": "Within this deliberately simplified synthetic revision-authority world, full-history behavior compresses exactly into 27 explicit states independent of horizon, while a current-event-only baseline fails frequently. This supports testing explicit-state/FSA reductions prospectively before attributing history-sensitive gains to richer persistent dynamics. It is not evidence about C19, Belief-R, or SparkBrain.",
+  "long_horizon_random_checks": {
+    "10": {
+      "fsa_exact_match_rate": 1.0,
+      "reachable_fsa_states_seen": 27,
+      "samples": 20000,
+      "stateless_match_rate": 0.492
+    },
+    "25": {
+      "fsa_exact_match_rate": 1.0,
+      "reachable_fsa_states_seen": 27,
+      "samples": 20000,
+      "stateless_match_rate": 0.47505
+    },
+    "50": {
+      "fsa_exact_match_rate": 1.0,
+      "reachable_fsa_states_seen": 27,
+      "samples": 20000,
+      "stateless_match_rate": 0.4759
+    }
+  },
+  "question": "Can a source-authority assertion/retraction policy with history dependence be represented exactly by a bounded explicit FSA?",
+  "status": "EXPLORATORY_NON_EVIDENTIARY",
+  "synthetic_contract": {
+    "authority_order": [
+      "low",
+      "mid",
+      "high"
+    ],
+    "event_alphabet_size": 10,
+    "fsa_state_definition": "one ternary active-claim slot {-1,0,+1} per source",
+    "maximum_fsa_states": 27,
+    "sources": [
+      "low",
+      "mid",
+      "high"
+    ]
+  }
+}
