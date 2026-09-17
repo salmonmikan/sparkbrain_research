@@ -1,0 +1,184 @@
+{
+  "analyst_authority": "719b9e74063e5e10f6226fd49f1835036ed75e5b",
+  "analyst_bound": "Exactly one final stronger ordinary scalar-filter synthetic reduction, then mandatory stop/reclassification regardless of outcome.",
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "exploratory_target": "Final RV01 scalar-filter reduction: residual-deadzone learner versus resource-matched generic innovation-gated EWMA",
+  "interpretation_boundary": "Synthetic reduction diagnostic only. It does not rerun or reinterpret consumed RV01 evidence and cannot support or reject RV01 scientifically.",
+  "mode": "exploratory_incubator",
+  "rows": [
+    {
+      "deadzone_delay_learner": {
+        "false_adjustment_rate": 0.42552576456634583,
+        "mae": 0.30961260765352777,
+        "return_recovery_2step": 0.7817894229649369,
+        "switch_latency": 1.8888193649991165,
+        "utility": -0.33411392807202994
+      },
+      "generic_innovation_gated_ewma": {
+        "false_adjustment_rate": 0.28924811933712713,
+        "mae": 0.35651355539578383,
+        "return_recovery_2step": 0.7423195889950801,
+        "switch_latency": 2.0979398478274716,
+        "utility": -0.3659534363487714
+      },
+      "generic_minus_deadzone_utility": -0.03183950827674148,
+      "outlier_probability": 0.0
+    },
+    {
+      "deadzone_delay_learner": {
+        "false_adjustment_rate": 0.468549936694564,
+        "mae": 0.3831698738972965,
+        "return_recovery_2step": 0.7633580279574204,
+        "switch_latency": 1.9609863993156835,
+        "utility": -0.4212057490220667
+      },
+      "generic_innovation_gated_ewma": {
+        "false_adjustment_rate": 0.33898228840725275,
+        "mae": 0.42107690471146464,
+        "return_recovery_2step": 0.7391640166469153,
+        "switch_latency": 2.1533677270452345,
+        "utility": -0.44259979170723496
+      },
+      "generic_minus_deadzone_utility": -0.021394042685168257,
+      "outlier_probability": 0.03
+    },
+    {
+      "deadzone_delay_learner": {
+        "false_adjustment_rate": 0.5067905648789501,
+        "mae": 0.45338132579336426,
+        "return_recovery_2step": 0.7466176531292253,
+        "switch_latency": 2.033912590601275,
+        "utility": -0.5037641685178088
+      },
+      "generic_innovation_gated_ewma": {
+        "false_adjustment_rate": 0.3843266936057184,
+        "mae": 0.4831478006638621,
+        "return_recovery_2step": 0.7252573735959237,
+        "switch_latency": 2.2312830654393894,
+        "utility": -0.5181630253087989
+      },
+      "generic_minus_deadzone_utility": -0.014398856790990067,
+      "outlier_probability": 0.06
+    },
+    {
+      "deadzone_delay_learner": {
+        "false_adjustment_rate": 0.5802386926184815,
+        "mae": 0.5926808058781112,
+        "return_recovery_2step": 0.7110284707719803,
+        "switch_latency": 2.192999420433302,
+        "utility": -0.6678642563990096
+      },
+      "generic_innovation_gated_ewma": {
+        "false_adjustment_rate": 0.46760066761592495,
+        "mae": 0.6052604220144294,
+        "return_recovery_2step": 0.6949584540370253,
+        "switch_latency": 2.3938298385888364,
+        "utility": -0.6663516825897257
+      },
+      "generic_minus_deadzone_utility": 0.0015125738092839347,
+      "outlier_probability": 0.12
+    },
+    {
+      "deadzone_delay_learner": {
+        "false_adjustment_rate": 0.6611360801250789,
+        "mae": 0.7738728838334089,
+        "return_recovery_2step": 0.6555235422717292,
+        "switch_latency": 2.497829762570368,
+        "utility": -0.8827064613947764
+      },
+      "generic_innovation_gated_ewma": {
+        "false_adjustment_rate": 0.5621534827797825,
+        "mae": 0.764490344660578,
+        "return_recovery_2step": 0.6409143491868807,
+        "switch_latency": 2.6706653216971707,
+        "utility": -0.8609038484894175
+      },
+      "generic_minus_deadzone_utility": 0.021802612905358898,
+      "outlier_probability": 0.2
+    }
+  ],
+  "selected_on_dev": {
+    "deadzone_delay_learner": {
+      "deadzone_ms": 0.35,
+      "eta": 0.8
+    },
+    "generic_innovation_gated_ewma": {
+      "alpha": 0.65,
+      "gate_threshold_ms": 0.75
+    }
+  },
+  "summary": {
+    "crossover_observed": true,
+    "deadzone_wins": 3,
+    "generic_wins": 2,
+    "hard_stop_reached": true,
+    "promotion_recommendation": "REJECT",
+    "promotion_scope": "Reject this exploratory candidate as a direct formalization basis. This is not a formal rejection of RV01."
+  },
+  "synthetic_contract": {
+    "deadzone_parameter_grid": {
+      "deadzone_ms": [
+        0.0,
+        0.2,
+        0.35,
+        0.5,
+        0.75,
+        1.0
+      ],
+      "eta": [
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.65,
+        0.8
+      ]
+    },
+    "dev_outlier_probability": 0.06,
+    "dev_seeds": [
+      20260901,
+      20260902,
+      20260903,
+      20260904,
+      20260905
+    ],
+    "innovation_gated_ewma_parameter_grid": {
+      "alpha": [
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.65,
+        0.8
+      ],
+      "gate_threshold_ms": [
+        0.2,
+        0.35,
+        0.5,
+        0.75,
+        1.0,
+        1.25,
+        1.5
+      ]
+    },
+    "resource_match": "Both filters retain exactly one persistent scalar delay estimate and select exactly two controls on DEV only.",
+    "selection_rule": "Comparator family and both parameter grids were fixed before TEST. Each filter is selected independently on the single fixed DEV world, then parameters are frozen before the disjoint TEST sweep is opened. No TEST-driven comparator selection or tuning.",
+    "source_world": "same fixed world as preceding RV01 clipped-EWMA probe",
+    "test_outlier_probabilities": [
+      0.0,
+      0.03,
+      0.06,
+      0.12,
+      0.2
+    ],
+    "test_seeds": [
+      20260918,
+      20260919,
+      20260920,
+      20260921,
+      20260922
+    ]
+  }
+}
