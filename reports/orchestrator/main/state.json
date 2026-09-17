@@ -1,14 +1,14 @@
 {
-  "timestamp": "2026-09-18T06:58:00+09:00",
+  "timestamp": "2026-09-18T07:02:00+09:00",
   "worker_role": "main",
   "execution_mode": "RELAY",
   "evidence_analyst_commit": "719b9e74063e5e10f6226fd49f1835036ed75e5b",
   "current_lane": "C19_R2_FSA_STATE_TRACKER_ONE_WAY",
-  "current_phase": "R2_FINAL_AUTHORITY_PACKAGE_REVALIDATION_AFTER_MECHANICAL_LINT_FIX",
+  "current_phase": "R2_FINAL_EXACT_HEAD_REVALIDATION_AFTER_PINNED_RUNTIME_DEPENDENCY_CLOSURE",
   "consumed_contingency_branches": ["PRE_START_BLOCKER"],
   "active_claim": {
     "branch": "research/c19-r2-fsa-state-tracker-spec-20260918",
-    "head": "5a8155af6d6d7dacaa4413386d2a93c4eda3ca08",
+    "head": "84e08cfffa3e1404a1e93dd924ee704aa7bd3853",
     "scientific_package_commit": "5d5d171cf872baed7a636fd246ab36f3a91a6716",
     "spec_id": "c19-r2-fsa-state-tracker-spec-v1",
     "protocol_id": "c19-r2-fsa-state-tracker-protocol-v1",
@@ -20,10 +20,8 @@
   },
   "authoritative_target_refs": {
     "analyst": "ops/evidence-analyst-handoff@719b9e74063e5e10f6226fd49f1835036ed75e5b",
-    "main": "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "r2_authority_package": "research/c19-r2-fsa-state-tracker-spec-20260918@5a8155af6d6d7dacaa4413386d2a93c4eda3ca08",
+    "r2_authority_package": "research/c19-r2-fsa-state-tracker-spec-20260918@84e08cfffa3e1404a1e93dd924ee704aa7bd3853",
     "r2_frozen_scientific_package": "5d5d171cf872baed7a636fd246ab36f3a91a6716",
-    "scientific_parent_v4": "research/c19-official-v4-preservation-qualified-20260917@74bfe6b4a39758656f291baaa3f16236e3e71964",
     "v4_preserve_commit": "d8fcc5216ff24940836972816cb0ec8f11e4ba06",
     "v4_evidence_commit": "a0f83318356ced1c84863737803080d0dc69d208",
     "r2_started": null,
@@ -35,34 +33,37 @@
   "branches_prs_advanced": {
     "research_branch": "research/c19-r2-fsa-state-tracker-spec-20260918",
     "authority_package_initial_head": "31398d6eb4e56fe1b51ddb8206fa395075638a2b",
-    "final_head_after_mechanical_fix": "5a8155af6d6d7dacaa4413386d2a93c4eda3ca08",
+    "post_lint_head": "5a8155af6d6d7dacaa4413386d2a93c4eda3ca08",
+    "final_head": "84e08cfffa3e1404a1e93dd924ee704aa7bd3853",
     "frozen_scientific_source_files_modified": false,
-    "mechanical_fix_commits": [
-      "97d6de7b4dee56ad55b25057f2ea2bca11455d35",
-      "1be42635cdb4f49c89788ceb66b541086ed3dae5",
-      "5a8155af6d6d7dacaa4413386d2a93c4eda3ca08"
-    ],
+    "runtime_dependency_fix": "Use existing repository optional extra [learned], which prospectively pins numpy>=2.0 and torch==2.13.0, in both pre-START and one-way runtimes.",
     "prs_created_or_merged": []
   },
   "workflows_experiments": {
-    "superseded_dedicated_prestart": {
+    "prestart_lint_failure": {
       "run_id": 35279107972,
       "head": "31398d6eb4e56fe1b51ddb8206fa395075638a2b",
-      "status": "completed",
       "conclusion": "failure",
-      "failed_step": "Lint R2 package",
-      "failure_class": "mechanical_ruff_e501_line_length_only",
+      "failure_class": "mechanical_ruff_e501_line_length_only"
+    },
+    "prestart_runtime_import_failure": {
+      "run_id": 35279500982,
+      "head": "5a8155af6d6d7dacaa4413386d2a93c4eda3ca08",
+      "conclusion": "failure",
+      "failed_step": "Network-blocked production import smoke",
+      "failure_class": "mechanical_declared_optional_dependency_not_installed",
+      "failure_message": "ModuleNotFoundError: No module named 'torch'",
       "scientific_semantics_affected": false
     },
     "final_dedicated_prestart": {
-      "run_id": 35279500982,
-      "head": "5a8155af6d6d7dacaa4413386d2a93c4eda3ca08",
+      "run_id": 35279859615,
+      "head": "84e08cfffa3e1404a1e93dd924ee704aa7bd3853",
       "status": "in_progress",
       "conclusion": null
     },
     "final_ordinary_ci": {
-      "run_id": 35279500925,
-      "head": "5a8155af6d6d7dacaa4413386d2a93c4eda3ca08",
+      "run_id": 35279859607,
+      "head": "84e08cfffa3e1404a1e93dd924ee704aa7bd3853",
       "status": "in_progress",
       "conclusion": null
     },
@@ -72,7 +73,7 @@
     "new_scientific_measurement": false,
     "terminal_scientific_result": null,
     "classification": "PRE_START_AUTHORITY_PACKAGING_ONLY",
-    "interpretation": "No new scientific information. The only observed failure was Ruff E501 in operational authority files; it was repaired by line wrapping without changing frozen R2 science or execution semantics."
+    "interpretation": "No new scientific information. Pre-START failures were operational only: Ruff line length, then an incidental import requiring the repository's already-declared learned extra. No STARTED boundary was crossed."
   },
   "consumed_identities": {
     "c19-r1-revision-authority-official-v1": {"consumed": true, "retry_allowed": false, "touched_this_run": false},
@@ -80,14 +81,14 @@
     "r2": {"formal_identity": "c19-r2-fsa-state-tracker-official-v1", "started": false, "consumed": false}
   },
   "blockers": [
-    "Final dedicated pre-START 35279500982 and ordinary CI 35279500925 must both complete successfully on exact head 5a8155af6d6d7dacaa4413386d2a93c4eda3ca08 before STARTED.",
-    "Fresh Analyst/head/identity/namespace reconciliation is required immediately before STARTED."
+    "Final dedicated pre-START 35279859615 and ordinary CI 35279859607 must both succeed on exact head 84e08cfffa3e1404a1e93dd924ee704aa7bd3853 before STARTED.",
+    "Fresh Analyst/head/identity/control/preserve/evidence reconciliation remains mandatory immediately before STARTED."
   ],
   "lease_collision_reconciliation": {
     "same_branch_or_identity_fresh_primary_collision": false,
     "analyst_tip_rechecked": "719b9e74063e5e10f6226fd49f1835036ed75e5b",
     "sub_collision": false,
-    "result": "RELAY retained MAIN ownership and stopped before STARTED while final exact-head checks run"
+    "result": "safe RELAY mechanical runtime closure; stopped before STARTED"
   },
   "integrity_status": {
     "frozen_r2_scientific_contract_modified": false,
@@ -96,6 +97,8 @@
     "frozen_r2_source_map_modified": false,
     "frozen_r2_state_tracker_modified": false,
     "authority_bound_to_frozen_blobs": true,
+    "runtime_version_choice_invented": false,
+    "runtime_dependency_source": "existing pyproject learned extra: numpy>=2.0, torch==2.13.0",
     "raw_before_score_contract_preserved": true,
     "preserve_and_refetch_before_targets_contract_preserved": true,
     "formal_identity_authorized": true,
@@ -103,30 +106,30 @@
     "official_data_accessed": false,
     "official_execution_dispatched": false,
     "immutable_evidence_modified": false,
-    "consumed_identity_retried_or_modified": false,
-    "mechanical_lint_fix_only": true
+    "consumed_identity_retried_or_modified": false
   },
   "critical_path_fixes_completed": [
-    "Created the prospectively authorized R2 execution authority and one-way preservation/scoring envelope without modifying frozen science.",
-    "Diagnosed exact-head pre-START failure 35279107972 as Ruff E501 only.",
-    "Wrapped long lines in three operational files only; behavior and scientific semantics were unchanged.",
-    "Triggered fresh exact-head pre-START and ordinary CI on 5a8155af6d6d7dacaa4413386d2a93c4eda3ca08."
+    "Packaged fresh R2 execution authority without changing frozen science.",
+    "Fixed Ruff E501 mechanically by line wrapping only.",
+    "Diagnosed production import smoke failure as missing torch caused by the runner's inherited evaluation import path.",
+    "Closed that dependency mechanically by installing the repository's existing pinned [learned] extra in both pre-START and one-way environments.",
+    "Triggered fresh exact-head validation on 84e08cfffa3e1404a1e93dd924ee704aa7bd3853."
   ],
   "same_run_steps": [
     "Acquired RELAY lease after stale BLOCKED PRIMARY state.",
-    "Packaged R2 authority while binding exact frozen scientific blobs.",
-    "Observed pre-START lint-only failure before any STARTED boundary.",
-    "Applied prospectively allowed science-invariant mechanical formatting fix.",
-    "Re-fetched Analyst tip and final R2 head, then handed off final external checks."
+    "Created the Analyst-authorized R2 authority/preservation/one-way envelope.",
+    "Handled two pre-START mechanical failures without crossing STARTED or changing science.",
+    "Re-fetched Analyst authority and handed off final exact-head checks under WAITING_EXTERNAL."
   ],
-  "same_run_stop_reason": "Final exact-head pre-START and ordinary CI are still running. STARTED remains forbidden until both are green and fresh authority/head/identity/namespace reconciliation passes; RELAY therefore persists WAITING_EXTERNAL rather than waiting idly.",
-  "work_intentionally_left_for_sub": "None; SUB remains independent NON_EVIDENTIARY work and was not touched.",
+  "same_run_stop_reason": "Final exact-head pre-START and ordinary CI are running after the pinned runtime dependency closure. STARTED remains forbidden until both are green and fresh authority/head/identity/namespace checks pass; RELAY therefore ends under WAITING_EXTERNAL rather than waiting idly.",
+  "work_intentionally_left_for_sub": "None; SUB remains independent and was not touched.",
   "lane_repartition_reason": null,
-  "next_main_action": "Collect 35279500982 and 35279500925. If both succeed on 5a8155af6d6d7dacaa4413386d2a93c4eda3ca08, re-fetch Analyst tip, branch head, formal identity/STARTED/consumed state and control/preserve/evidence namespaces. Only then create the exact bound STARTED ref once.",
+  "next_main_action": "Collect 35279859615 and 35279859607. If both succeed on 84e08cfffa3e1404a1e93dd924ee704aa7bd3853, re-fetch Analyst tip, branch head, formal identity/STARTED/consumed state and control/preserve/evidence namespaces. Only then create the exact bound STARTED ref once.",
   "write_path_diagnostics": {
     "authority_packaging": "success",
-    "mechanical_lint_fix": "success",
-    "final_research_head": "5a8155af6d6d7dacaa4413386d2a93c4eda3ca08",
+    "lint_only_fix": "success",
+    "pinned_runtime_dependency_closure": "success",
+    "final_research_head": "84e08cfffa3e1404a1e93dd924ee704aa7bd3853",
     "lease_persistence": "success"
   }
 }
