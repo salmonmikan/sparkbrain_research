@@ -1,14 +1,14 @@
 {
   "run_id": "primary-20260917T1817JST",
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "WAITING_EXTERNAL",
   "started_at": "2026-09-17T18:17:17+09:00",
-  "heartbeat_at": "2026-09-17T18:26:30+09:00",
+  "heartbeat_at": "2026-09-17T18:28:00+09:00",
   "analyst_commit": "b7cc088df7c9768bb7e62b40d4c54f273df969eb",
   "active_branch": "research/readiness-raw-preservation-boundary-20260917",
   "active_identity": null,
-  "active_step": "qualify_generic_raw_preservation_boundary",
-  "workflow_run_id": null,
-  "expected_next_action": "Collect exact-head CI and raw-preservation readiness workflow state for 158ad46cafcc9d9b17f01a85488562b63e81257d; if the synthetic qualification is green, finalize readiness and stop for a new Analyst scientific-object decision.",
+  "active_step": "wait_for_exact_head_ordinary_ci_after_dedicated_readiness_success",
+  "workflow_run_id": 35204638807,
+  "expected_next_action": "Relay should collect ordinary CI 35204638807 for exact head 158ad46cafcc9d9b17f01a85488562b63e81257d. If success, finalize GENERIC_PRESERVATION_READINESS_PASS and STOP for a newer Evidence Analyst scientific-object decision. If failure, repair only outcome-independent synthetic readiness tooling under GENERIC_PRESERVATION_READINESS_BLOCKER and revalidate exact head. Do not create STARTED, consume a formal identity, access official C19 data, retry v2/v3, recover v3 transient raw, or create C19-v4.",
   "owner": "main"
 }
