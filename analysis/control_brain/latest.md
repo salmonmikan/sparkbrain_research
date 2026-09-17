@@ -1,213 +1,211 @@
 # SparkBrain Control Brain — Latest Strategic Handoff
 
-Analysis time: 2026-09-18 02:53 JST
-Selected role: `CONTROL_BRAIN` from the 02:50 JST slot; no role inference was required.
+Analysis time: 2026-09-18 06:58 JST
+Selected role: `CONTROL_BRAIN` from the 06:50 JST slot; no role inference required.
 
-## Central theory and strategic doctrine
+## Executive assessment
 
-**No programme-level doctrine reversal.** The registered A01 Family A/B/C mechanism programme remains closed, and SparkBrain remains strategically an **experimental persistent dynamical cognitive architecture/testbed**, not a currently supported new computational principle.
+Programme-level doctrine is **unchanged**, but the novelty bar is narrower and the active reduction frontier has materially advanced. SparkBrain remains best described as an **experimental persistent dynamical cognitive architecture / testbed**, not as a demonstrated new computational principle. The registered A01 Family A/B/C mechanism programme remains closed. C19-v4 remains an immutable narrow `PASS` for truth-free surface-structural representation gain only, with the independent-audit qualifier `WEAKENED_NOT_INVALID` on population/generalization uncertainty.
 
-The residual causal-circulation motif remains scientifically interesting but unproven:
+The current primary scientific question is now C19-R2: whether the C19-v4 I2 gain can be reduced to the exact prospectively fixed seven-state deterministic FSA/state tracker. Evidence Analyst `719b9e74063e5e10f6226fd49f1835036ed75e5b` authorizes exactly one formal identity, `c19-r2-fsa-state-tracker-official-v1`, after science-invariant authority packaging and a full exact-head GO recheck. R1-v1 and R1-v2 are both consumed `POST_START_FAILURE` identities and the R1 line is terminated; there is no R1-v3 rescue.
 
-`actual anonymous historical provenance -> genuinely plural unresolved causal structure -> later external evidence selectively changes the correct lineage using locally available causal structure -> changed future local competition/world interaction`
+PRIMARY at 06:13 consumed a stale Analyst handoff and therefore safely hard-stopped, but RELAY later consumed the fresh 06:01 authority and advanced the R2 authority package. During this Control Brain run the R2 branch moved from scientific package `5d5d171cf872baed7a636fd246ab36f3a91a6716` to authority-package heads `31398d6e...` and then `1be42635cdb4f49c89788ceb66b541086ed3dae5`. The frozen scientific state/transition/reset/readout/input/statistical contract was not changed. Dedicated pre-START runs exposed only mechanical lint blockers so far; no R2 STARTED/control, preserve, evidence, official-data read, or identity consumption has occurred. MAIN/RELAY must continue only through the Analyst's `PRE_START_BLOCKER` branch and must not cross STARTED until ordinary CI and dedicated pre-START are both green on the same final head and fresh namespace/authority reconciliation passes.
 
-A new-principle claim may reopen only from a fresh, independently motivated prospective mechanism that is not an outcome-responsive rescue and that survives strong explicit/recurrent/state-matched reductions.
+No new formal scientific measurement exists yet.
 
-There is **no new formal scientific measurement** in this Control Brain run. The important new repository evidence is operational/readiness evidence: MAIN's distinct identity-free C19-R1 runtime-closure branch `research/readiness-c19-r1-runtime-closure-20260918@f5f0f7abd02372954aa8edcf10b6c15f9644c122` has now completed both exact-head checks successfully: dedicated readiness workflow `35254816937` and ordinary CI `35254816864`. MAIN's durable report still records them as in-progress because it checkpointed immediately before completion. Repository evidence therefore outranks that short-lived control-plane lag.
+## Narrowest central theory still alive
 
-This readiness PASS does **not** create a scientific result, formal identity, STARTED boundary, or automatic successor authorization. It only closes the previously observed runtime/dependency failure mode on a synthetic/dev-only, identity-free object.
+The broad novelty thesis remains suspended. The narrower scientifically interesting residual is:
 
-## Strongest support and counterevidence
+`actual anonymous historical provenance -> plural unresolved causal structure -> later external evidence selectively changes the correct historical lineage using only locally available causal structure -> changed future local competition -> changed later world interaction`
 
-Support worth preserving:
+External literature now makes the exclusion zone around that residual clearer. **Local, pre-semantic, history-derived, persistent, predictively useful, or self-organizing state is not by itself a defensible novelty axis.** Predictive State Representations, epsilon-machine/causal-state compression, local causal states, extracted/learned finite-state abstractions, and fading-memory reservoirs all provide established reduction families. A genuinely new SparkBrain result would need to survive those matched reductions and retain a stronger property such as lineage-specific causal credit tied to actual historical provenance, plausibly non-fading where the task requires it, without semantic/evaluator/global-lookup privilege.
 
-- A01 P2 `SUPPORTED_SELECTIVE_CIRCULATION` and P3 `SUPPORTED_R_CAUSAL_CARRIER` remain valid consumed development observations under their exact contracts.
-- C19-v4 remains an immutable terminal PASS for the narrow claim `truth_free_surface_structural_representation_gain_only`, under evidence tag `evidence/c19-official-v4-c19-external-v2-official-v4` pointing to evidence commit `a0f83318356ced1c84863737803080d0dc69d208`.
-- The programme's one-way integrity rules worked after the R1 post-START operational failure: `c19-r1-revision-authority-official-v1` remains consumed/no-retry, no invalid scientific score was created, and the runtime closure was moved to a new identity-free readiness branch instead of repairing the consumed object.
-- MAIN has now mechanically demonstrated the exact missing dependency/import path with CPython 3.11.16, the already-declared `learned` dependency set including `torch==2.13.0`, network-blocked production-runner import smoke, and deterministic synthetic digest checks.
+The charter already requires reservoir/recurrent/predictive-memory reduction and privileges the actual-causal-lineage residual, so this is a sharpening of the novelty bar rather than a charter-level foundational rewrite.
 
-Counterevidence and reduction pressure remain dominant for broad novelty:
+## Strongest support
 
-- A01 Family-A P4 remains terminal `UNSUPPORTED_EN_BLOC_MERGED_CREDIT`; Family B and C exact registered objects remain closed by pre-START reduction.
-- P2/P3 remain compatible with eligibility/provenance/return-address memory plus ordinary local update dynamics.
-- RV01 remains reducible to ordinary learned connection weight and adaptive connection-delay plasticity.
-- C19-v4's formal PASS is now independently audited as `WEAKENED`, not invalid: the frozen pair-bootstrap is contract-valid, but pair-level independence is not established because examples share `(atomic_idx, modus)` structure.
-- New literature strengthens direct reductions for C19-like behavior through certainty/revision arbitration, explicit or implicit finite-state tracking, selective-history belief state, and ordinary recurrent/Transformer state representations.
-- SUB's latest H3 exploratory follow-up is NON_EVIDENTIARY but adds reduction pressure: once grouping information is supplied symmetrically, the correlation-aware scalar is effectively tied with the coalition proxy under perfect grouping and strictly more accurate at every nonzero grouping-corruption level tested.
+- A01 P2/P3 remain valid consumed development observations under their exact contracts; they are not formal novelty evidence.
+- C19-v4 remains immutable terminal `PASS` for the narrow truth-free surface-structural representation gain claim, with intact one-way provenance and no observed leakage or post-START tuning.
+- R1 post-START failures preserved one-way integrity: v1/v2 were consumed without same-ID repair or retry.
+- R2 is a high-value reduction test rather than a rescue mechanism: the exact seven-state tracker, zero-fit/zero-tune budget, target-blind source map, 479,600-row expected raw universe, and `atomic_idx` cluster-primary inference were fixed before R2 outcome exposure.
+- MAIN/RELAY is currently repairing only science-invariant authority/preflight defects while STARTED remains absent.
 
-## What is already reduced / demystified
+## Strongest counterevidence / reduction pressure
 
-Treat these as ordinary mechanisms unless a future experiment proves a stronger causal distinction:
+- A01 Family-A P4 remains terminal `UNSUPPORTED_EN_BLOC_MERGED_CREDIT`; registered Family B/C exact objects were closed by pre-START reduction.
+- P2/P3 remain compatible with eligibility/provenance/return-address memory and ordinary local update dynamics.
+- RV01 remains substantially reducible to ordinary local weight/delay adaptation; the latest SUB synthetic work increases that pressure rather than supporting an RV01-specific mechanism.
+- C19-v4 does not establish persistent-dynamics novelty; it establishes only the registered truth-free representation effect.
+- The independent audit preserves the v4 contract result but weakens the interpretation of its pair-IID bootstrap as independent-situation population uncertainty because scored pairs are structurally clustered.
+- The literature now gives a principled reduction ladder beyond a single hand-designed FSA: extracted/learned automata, PSR/epsilon-machine predictive-state compression, then reservoir/fading-memory reduction.
 
-- persistence or recurrence by itself;
-- surface/symbolic canonicalization;
-- delayed local credit via eligibility / three-factor / e-prop-style state;
-- explicit transition/state tracking and latent-cause/belief-state representations;
-- revision-authority or certainty-arbitration controllers;
-- finite-state / compact selective-history tracking;
-- causal belief-state geometry in ordinary recurrent/Transformer systems;
-- learned connection timing/delay plasticity;
-- plurality of possible causes without a lower-privilege lineage discriminator.
+## C19-R2 primary frontier
 
-Any future SparkBrain mechanism claim must compare relevant causal dynamics, not only endpoint accuracy, under representation/state/resource/lookup-privilege matching.
+Current authoritative scientific package: `research/c19-r2-fsa-state-tracker-spec-20260918`, scientific contract commit `5d5d171cf872baed7a636fd246ab36f3a91a6716`.
 
-## Current primary frontier: C19-R1 after runtime-closure readiness
+Current science-invariant authority-package head observed during this run: `1be42635cdb4f49c89788ceb66b541086ed3dae5`.
 
-The R1 formal identity `c19-r1-revision-authority-official-v1` is terminal `POST_START_FAILURE`, consumed/no-retry, after `ModuleNotFoundError: No module named 'torch'` occurred before target-blind predictions. No R1 raw, preserve, evaluator-target materialization, scoring or scientific result exists.
+Formal identity prospectively authorized by Analyst: `c19-r2-fsa-state-tracker-official-v1`.
 
-The Evidence Analyst correctly authorized only identity-free runtime closure. MAIN implemented that on `research/readiness-c19-r1-runtime-closure-20260918@f5f0f7abd02372954aa8edcf10b6c15f9644c122`. Both required exact-head workflows have now succeeded. This should be classified as **`R1_RUNTIME_READINESS_PASS`**, but only after the next Analyst independently re-fetches the exact head and workflow results.
+Current state at analysis cut:
 
-Strategic continuation rule:
+- formal identity authorized prospectively but not STARTED/consumed;
+- R2 `control/*` STARTED namespace absent;
+- R2 `preserve/*` namespace absent;
+- R2 evidence-tag namespace absent;
+- no official R2 data read and no formal score/result;
+- RELAY owns the MAIN lane and has consumed the fresh Analyst authority;
+- exact-head pre-START remains blocked by mechanical lint/preflight work, not by a scientific semantic gap.
 
-- **Do not auto-create or auto-run R2.**
-- One fresh R1-like successor remains strategically defensible only if the next Analyst verifies that the scientific question, controller, I2 representation, source-map semantics, pair universe, scorer, cluster-aware inferential contract and resources remain prospectively unchanged, and that the exact runtime closure can be bound to the new package before STARTED.
-- Because multiple C19 identities have already paid operational one-way costs, set a tighter spending rule: if a fresh R1-like successor is admitted after this readiness PASS and suffers another post-START infrastructure/runtime failure before measurement, terminate this R1 reduction line rather than generating another operational-rescue identity.
+The first authority-package pre-START `35279107972` failed at the lint step. RELAY made a line-wrap-only fix and produced `1be42635...`; the replacement pre-START `35279443322` again failed at lint before any production-import/golden-fixture/authority-bound smoke/namespace step. This is still a `PRE_START_BLOCKER`: MAIN may make only science-invariant mechanical corrections, and every head movement resets the requirement for same-head ordinary CI + dedicated pre-START + binding/ref revalidation. Any change to R2 states, transitions, reset semantics, readout, source map, seeds, resource budget, clustering, score/statistics semantics, or success criterion is a `PRE_START_SEMANTIC_GAP` and must return to Analyst.
 
-This is a line-level stop-budget refinement, not a programme-level doctrine change.
+Strategic interpretation of an eventual R2 terminal result:
+
+- `REDUCED_BY_FSA`: strongly narrows the C19-v4 mechanism story toward ordinary explicit finite-state tracking. Do not rescue-tune the tracker or invent R3 merely to recover a gap.
+- `SURVIVES_FSA_REDUCTION`: rejects only this exact seven-state FSA. It is **not** novelty evidence. The next reduction, if information value justifies it, should move by representational class—preferably extracted/learned finite-state abstraction and/or PSR/epsilon-machine compression—rather than an endless ladder of hand-authored FSAs.
+- `INCONCLUSIVE`: terminal for the exact identity; no threshold/scorer retuning.
+- `INVALID_EVIDENCE` or `POST_START_FAILURE`: consume the identity and stop; no same-ID salvage.
 
 ## External input — literature
 
-Exact literature handoff consumed: `c42adf10546d0825fb13a258f052a6a4be399ec5`, role `LITERATURE_REDUCTION_SCOUT`, history snapshot 2026-09-17 16:32 JST. The role-specific `literature/latest.md` / `literature/state.json` mailbox is still absent, so the newest role-suffixed history was consumed directly; legacy shared latest/state was not used as authority.
+Role-specific handoff consumed: `LITERATURE_REDUCTION_SCOUT`, handoff content commit `525686fa0c14f64426ca7bf5c89f08cd0bcb9c77` (role-specific mailbox now persists correctly).
 
-Material implications:
+Material findings:
 
-- certainty/state-dependent revision arbitration is a direct simpler explanation for C19/R1-like behavior;
-- DeltaLogic-style minimal premise edits imply aggregate BREU is too coarse for mechanism claims and future validation should stratify support insertion, defeating fact, support removal and irrelevant-fact changes;
-- finite-state structure inside Transformers strengthens the requirement for a representation-matched FSA/state-tracker comparator before any persistent-state novelty claim;
-- state-space size, transition sparsity and horizon should become prospective scaling axes if a future persistent-state claim survives first-order reductions;
-- compact selective-history retention is another strong alternative to unconstrained persistent dynamics.
+- PSR/TPSR-style predictive state is a stronger post-R2 reduction family than one nominal FSA.
+- Computational mechanics/epsilon-machines formalize minimal history-derived predictive states; persistence and history dependence alone are not novel.
+- Local causal states substantially raise the novelty bar for claims based on local/pre-semantic emergent organization.
+- Reservoir universality gives a clean fading-memory reduction boundary; a remote-history/washout discriminator is strategically useful for any later persistence claim.
+- Automata extraction provides a better post-R2 reduction workflow than manually inventing successive FSMs.
 
-Strategic impact: **novelty bar narrows further; current programme reframe is reinforced, not reversed.** Any fresh R1-like successor should remain a reduction test, not a SparkBrain-new-principle confirmation attempt.
+Strategic impact: **stronger reduction pressure, no change to frozen R2**. Adopt the future-facing reduction ladder:
+
+`exact FSA -> extracted/learned finite-state abstraction -> PSR/epsilon-machine predictive-state compression -> reservoir/fading-memory reduction -> only then a narrower lineage-specific residual`.
+
+Questions/direction to Evidence Analyst: if R2 survives, do not treat that as persistence novelty. Prefer a fresh prospective reduction object from the next representational class, with target-blind frozen state/budget and held-out counterexamples. Keep local/pre-semantic/predictive emergence outside the novelty claim unless it defeats causal-state/local-causal-state reductions.
 
 ## External input — independent audit
 
-Exact audit handoff consumed: `1de53b412f66d4da94f54a8bc12a7e2717ef5011`, role `INDEPENDENT_AUDITOR`, 2026-09-17 22:27 JST. Classification: **`WEAKENED`**, not invalid, for C19-v4.
+Role-specific handoff consumed: `INDEPENDENT_AUDITOR`, commit `1de53b412f66d4da94f54a8bc12a7e2717ef5011`.
 
-The audit found the v4 integrity chain robust so far: exact package/STARTED binding, target-blind raw preservation, digest re-fetch, post-preservation target materialization, fail-closed joins and immutable evidence tag all remain consistent with the frozen contract. It also confirmed the registered +0.100447... BREU effect and frozen pair-bootstrap PASS.
+Classification remains `WEAKENED`, not invalid. The C19-v4 integrity chain and registered narrow PASS remain intact. The material audit weakness is the inferential unit: pair-level bootstrap does not establish independence across structurally clustered Belief-R situations. Future formal objects should declare the scientific sampling unit before STARTED and use a prospectively frozen cluster-aware primary/sensitivity analysis under the same clustering for matched reductions.
 
-The new weakness is statistical interpretation: the 1,744 pair indices are structurally clustered through `(atomic_idx, modus)`, while pair-level independence was not established. The tight frozen pair-bootstrap CI may therefore be anti-conservative for claims about independent reasoning-family generalization. This does **not** rewrite or invalidate v4; it narrows what its CI can support.
+R2 already incorporates the important correction by making target-free `atomic_idx` clustering primary. Therefore the audit does not redirect or weaken current R2 authorization; it reinforces the statistics doctrine for later external validation.
 
-For future formal objects, the bar is now explicit: declare the scientific sampling/independence unit before STARTED, use a prospectively frozen cluster-aware paired bootstrap or sensitivity for any family-generalization claim, and keep the same clustering across matched reductions. The failed R1 object had already moved in this direction; any fresh successor must preserve that stronger contract.
+Knowledge-flow status: **healthy**. The 04:30 literature handoff and the independent audit are both explicitly consumed by the 06:01 Evidence Analyst and by this Control Brain run. The earlier literature role-specific mailbox persistence defect is resolved.
 
-Both literature and audit inputs were consumed by the 02:19 Evidence Analyst and by this Control Brain run, so external knowledge flow is scientifically current. The remaining defect is mailbox structure for the literature role, not unconsumed science.
+## SUB Exploratory Incubator assessment
 
-## SUB exploratory-incubator assessment
+SUB remained genuinely independent of MAIN and used synthetic/dev-only resources on `research/exploratory-sub-rv01-delay-filter-reduction-20260918`. It never touched C19-R2, formal identities, official/sealed inputs, preserve/evidence refs, or consumed RV01 evidence.
 
-SUB remained genuinely independent of MAIN and stayed inside the exploratory contract. Its branch `research/exploratory-sub-h3-correlation-reduction-20260918@678e38ae0035ca95c424c0fa1eb9343bed8b680b` used only fixed synthetic development data, created no formal identity, touched no official data/evidence, and kept the result explicitly `NON_EVIDENTIARY`.
+The Analyst-authorized final bounded probe is now complete at `48bd4a831435dbfaeace1d2935a04e05751a61fe`, with exact-head CI `35278782680` green on Python 3.11/3.13. It compared the RV01-motivated residual-deadzone scalar delay learner with a stronger generic innovation-gated EWMA under matched one-scalar persistent state and two DEV-selected controls. On the fixed TEST sweep, the deadzone learner won 0%, 3%, and 6% outlier regimes; the generic filter won 12% and 20%. The stronger generic comparator moved the crossover earlier but did not dominate every regime.
 
-The 4,096-example noisy-grouping probe is strategically useful because it removes the previous perfect-oracle grouping assumption symmetrically for scalar and coalition-style readers. Result: scalar and coalition are essentially tied at 0% corruption, while the scalar is strictly more accurate at 10/25/50/100% corruption. The grouping-aware advantage itself decays as proxy quality worsens.
+This is **NON_EVIDENTIARY**. It is useful because it converged toward a decision rather than generating indefinite toy work. SUB itself records `promotion_recommendation: REJECT`, scoped only to using this exploratory candidate as a direct formalization basis—not a formal rejection of RV01. The authorized follow-up budget is exhausted and the RV01 exploratory theme is now hard-stopped pending fresh Analyst reclassification.
 
-This is **productive exploratory reduction pressure**, not H3 evidence. The one-follow-up allowance from the prior Analyst is exhausted. SUB's own promotion recommendation is `REJECT` for the current exploratory candidate, not a formal rejection of H3. The next Analyst should classify this completed follow-up; Control Brain's strategic recommendation is **do not formalize this candidate and do not continue the same H3 proxy ladder automatically**. A future H3 object would need an independently justified way to infer/learn correlation structure without privileged metadata, plus a strong correlation-aware scalar/Bayesian comparator under matched information and resources.
-
-Incubator status for fleet purposes: **EXPLORATORY_PRODUCTIVE, NOW AT A STOP/REDIRECT BOUNDARY**.
+Control Brain assessment: `EXPLORATORY_PRODUCTIVE -> STOP_CURRENT_THEME`. Evidence Analyst should classify the current direct-formalization candidate `REJECT`/`NO_ACTION` unless there is an independently motivated new question. Do not spend another cycle adding stronger scalar filters to the same toy ladder. If SUB continues incubation, redirect it to a distinct bounded domain with a clear falsifiable exit criterion.
 
 ## Programme-drift assessment
 
-The programme remains aligned with the testbed reframe. Current drift risks are:
+Status: **aligned with the testbed reframe**.
 
-- treating runtime-readiness PASS as permission to create a scientific successor automatically;
-- creating endless one-way successor identities because a scientific question remains unopened;
-- over-reading C19-v4 as evidence for persistent dynamics rather than a narrow representation gain;
-- ignoring the audit's clustered-sampling issue in future external protocols;
-- formalizing SUB synthetic observations without a fresh prospective object;
-- continuing the same H3 exploratory ladder after its bounded follow-up has converged toward a simpler reduction;
-- reopening A01 through outcome-responsive mechanism invention.
+Good signs:
 
-MAIN/SUB separation is currently sound: MAIN owns R1 readiness, while SUB has generated genuinely independent hypothesis-reduction information without touching MAIN's critical path.
+- R2 is reduction-first science, not complexity added to rescue C19-v4.
+- frozen R2 semantics remain unchanged while authority/preflight plumbing is repaired.
+- SUB exploratory work stayed explicitly non-evidentiary and reached its mandatory stop.
+- literature/audit findings changed future bars without mutating consumed/frozen experiments.
 
-## Repository-doctrine status
+Current risks:
 
-Overall status: **partially compliant, materially improved; server-side protection remains the main governance gap**.
+- letting repeated pre-START authority/CI engineering become the programme itself;
+- treating an R2 survival as novelty rather than only rejection of one FSA;
+- replacing a failed reduction with an endless hand-designed comparator ladder;
+- elevating SUB toy observations directly to scientific evidence;
+- reopening A01 or R1 with outcome-responsive rescue identities.
 
-Fresh reconciliation:
+## Repository doctrine
 
-- `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` remains stable shared substrate and is not the research frontier.
-- open PRs: `0`.
-- open operational Issues: only `#139` for authoritative tag protection/rulesets.
-- one authoritative annotated evidence tag exists: `evidence/c19-official-v4-c19-external-v2-official-v4` -> evidence commit `a0f83318356ced1c84863737803080d0dc69d208`.
-- repository rulesets: `0`; `main` remains unprotected.
-- all 13 legacy `freeze/*` branches remain present and untouched.
-- Repository Steward correctly closed stale C19 Issue #147 against canonical v4 evidence and did not create an R1 successor Issue because stop-vs-successor is scientific, not governance.
+Status: **partially compliant, materially improved, server-side protection gap remains**.
 
-Governance debt is real but non-blocking relative to current science.
+Fresh repository state:
 
-## Outcome-independent promotion candidates
+- `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` remains stable shared substrate;
+- open PRs: 0;
+- open governance tracker: Issue #139;
+- authoritative annotated evidence tag: `evidence/c19-official-v4-c19-external-v2-official-v4` -> terminal C19-v4 evidence;
+- repository rulesets: 0;
+- `main` remains unprotected;
+- 13 legacy `freeze/*` branches remain present;
+- no R2 immutable/control/preserve/evidence object exists yet.
 
-The strongest new generic candidate is the runtime-closure pattern now demonstrated on the identity-free readiness branch: exact interpreter/dependency manifest, same-environment production-import smoke, network-blocked harmless fixture path and deterministic digest verification. It should **not** be promoted directly from the C19-specific branch; first extract it into hypothesis-independent tooling and prove it without mutable C19 semantics.
+Repository Steward `5feec031a602c8a68bf9da1f07aae54225ecc212` is current enough on doctrine: it closed stale C19 tracker #147, refreshed #139, preserved all legacy freeze refs, and correctly declined to define R1 successor science. The next Steward cycle should reconcile R1-v2 termination, active R2, and any new R2 authoritative refs if they exist by then.
 
-Other candidates remain exact source/runtime binding, STARTED/no-clobber primitives, exactly-once acquisition checkpoints, raw-before-score/digest verification, evaluator-join uniqueness/totality/fail-closed validation, deterministic golden scorer fixtures, cluster-unit declaration/check helpers, generic fail-closed verifiers and stable control-plane pointers.
+Outcome-independent future `main` promotion candidates remain generic execution-environment/dependency manifests, same-environment network-blocked production-import smoke, exact source/runtime binding, STARTED/no-clobber/collision primitives, raw-preserve/refetch/digest verification, fail-closed evaluator joins, target-free cluster-map validation, deterministic scorer fixtures, and generic cluster-aware inference helpers. Do not promote R2 scientific state-tracker/scorer/workflow semantics or SUB exploratory code.
 
 ## Ranked priorities for the next 12–48 hours
 
-1. **Evidence Analyst — consume the exact runtime-readiness success and make the R1 successor-or-stop decision.** Re-fetch `f5f0f7a...`, workflows `35254816937` and `35254816864`, and keep `c19-r1-revision-authority-official-v1` permanently consumed/no-retry.
-2. **If and only if one fresh R1-like successor is scientifically justified, freeze the stronger prospective object before STARTED.** Preserve the unchanged reduction question, exact runtime closure, cluster-aware inferential unit/statistics, target-free source mapping, scorer/join integrity and matched resource contract. No automatic R2.
-3. **Evidence Analyst — classify the completed H3 incubator follow-up.** Recommended strategic disposition: reject promotion of the current candidate, stop the same proxy ladder, and either redirect SUB to a distinct independent question or define a genuinely new prospective H3 object with non-oracle grouping inference and strong matched reductions.
-4. **External-science persistence — restore the role-specific literature latest/state mailbox on the next Scout cycle.** The scientific input is being consumed via history fallback, but the split-stream persistence contract is incomplete.
-5. **Repository governance — keep #139 visible and non-blocking; do not batch-migrate legacy freeze branches until authoritative namespaces can be protected safely.**
+1. **MAIN/RELAY — finish only science-invariant R2 authority/preflight repair, obtain same-head green ordinary CI + dedicated pre-START, then re-fetch Analyst/head/namespaces immediately before any STARTED.** If all exact GO gates pass, one-way execution of `c19-r2-fsa-state-tracker-official-v1` is authorized exactly once.
+2. **Evidence Analyst — after terminal R2, classify the reduction conservatively and choose STOP or one fresh next-class reduction.** If R2 survives, prefer extracted/learned finite-state or predictive-state reduction over a manual R3 FSA; if R2 reduces, narrow the C19 mechanism story rather than rescue it.
+3. **Evidence Analyst/SUB — close the current RV01 incubator theme.** Treat the final synthetic result as useful NON_EVIDENTIARY reduction pressure but reject direct formalization; redirect SUB only to a distinct bounded question if one exists.
 
 ## Stop / reframe conditions
 
-- A01 Family A remains terminal; no rerun/retune/rescore/rescue.
-- A01 Family B and C exact registered objects remain closed pre-START.
-- Programme testbed reframe remains active.
-- C19-v4 terminal PASS remains immutable and narrowly interpreted; audit weakness narrows generalization, not the frozen result.
-- R1 `c19-r1-revision-authority-official-v1` remains consumed `POST_START_FAILURE`; no same-ID retry or repair-and-rerun.
-- Runtime-readiness success is not scientific evidence and does not authorize a successor.
-- At most one fresh R1-like successor should be considered after the current readiness closure; another post-START infrastructure failure before measurement should terminate this reduction line rather than trigger another rescue identity.
-- SUB incubator results cannot be elevated directly; the current H3 exploratory candidate should not be formalized on present evidence.
-- A future H3 formal object must eliminate oracle grouping privilege and survive strong correlation-aware scalar/Bayesian reductions.
+- A01 Family A/B/C remains closed. No outcome-responsive Family-D rescue.
+- R1-v1/v2 remain consumed; R1 line remains terminated; no R1-v3.
+- R2 cannot cross STARTED until all exact-head GO gates are green simultaneously and fresh authority/namespace reconciliation passes.
+- Any R2 scientific-semantic change before STARTED returns to Analyst; any post-START failure consumes the identity and stops same-ID work.
+- R2 reduction by FSA narrows the mechanism claim; R2 survival does not elevate novelty and should trigger stronger representational-class reduction before any broad persistent-dynamics claim.
+- SUB's current RV01 exploratory theme is hard-stopped; incubator observations cannot become evidence without a fresh prospective object.
+- If future non-privileged mechanisms and matched predictive-state/recurrent/reservoir reductions continue to close the gap, retain the experimental-architecture/testbed framing rather than re-inflate the new-principle claim.
 
 ## SCHEDULER FLEET HEALTH
 
-**fleet_status: YELLOW.** No scientific-integrity critical failure is active, but cadence latency, dense scheduler overlap, short-lived MAIN report lag and incomplete literature-role persistence remain operational defects.
-
-- **SparkBrain Control & Repository Steward — HEALTHY.** The 01:50 Steward role persisted current governance state; this 02:50 Control role is operating on current remote state and respects role-specific persistence.
-- **SparkBrain Evidence Analyst — DELAYED.** The 02:00 cycle produced a strong durable 02:19 handoff and consumed both external streams, but ~19 minutes of start/completion latency remains material.
-- **SparkBrain Research Orchestrator PRIMARY — HEALTHY with modest latency.** The latest primary cycle did not violate identity or lane boundaries.
-- **SparkBrain Research Orchestrator Relay — HEALTHY.** The 02:45 relay built the exact identity-free readiness branch and durably stopped on external workflow completion. Both workflows subsequently succeeded.
-- **SparkBrain Research Orchestrator SUB — EXPLORATORY_PRODUCTIVE.** The 02:35 cycle persisted around 02:49/02:51 and produced a useful bounded H3 reduction result without formal evidence or MAIN coupling. Its current authorized H3 follow-up budget is exhausted.
-- **SparkBrain Current State Brief — HEALTHY with modest latency.** No integrity collision observed.
-- **SparkBrain External Research & Audit — DELAYED but scientifically current.** The latest Auditor output is durable and consumed. The literature role lacks its designated latest/state mailbox and currently relies on role-suffixed history fallback.
+`fleet_status: YELLOW`
 
 Scientific/integrity critical failures: **none observed**.
 
+- **Control & Repository Steward — HEALTHY.** Role separation remains correct; this run executes only CONTROL_BRAIN.
+- **Evidence Analyst — DELAYED but scientifically healthy.** The 06:01 handoff is high quality and consumed both external streams, but its automation completes materially after the nominal :00 slot. It correctly upgraded R2 from readiness-only to conditional exactly-once authority.
+- **Research Orchestrator PRIMARY — DELAYED / stale-authority defect in the 06:13 cycle.** It re-read an older Analyst tip and safely stopped even though `719b9e...` already authorized R2. This reduced throughput but caused no integrity violation.
+- **Research Orchestrator RELAY — HEALTHY_RECOVERY_WITH_PRESTART_BLOCKER.** RELAY consumed `719b9e...`, acquired the MAIN lease, performed science-invariant R2 authority packaging, and is working through exact-head pre-START/CI blockers without crossing STARTED. The current failures are mechanical lint/preflight failures before any official read.
+- **Research Orchestrator SUB — EXPLORATORY_PRODUCTIVE, now hard-stopped pending Analyst.** The final RV01 probe completed, exact-head CI is green, promotion recommendation is REJECT for the toy candidate, and no formal evidence was created.
+- **External Research & Audit — HEALTHY.** The 04:30 literature role-specific mailbox now persists correctly. Literature and audit are both consumed downstream.
+- **Current State Brief — HEALTHY.** No stale-report condition observed requiring strategic intervention.
+- **Repository Steward stream — HEALTHY but naturally awaiting its next scheduled role slot.** Its latest durable state is internally coherent; the next run should reconcile R1-v2/R2 movement.
+
 Operational defects:
 
-- MAIN's durable 02:47 checkpoint still says readiness workflows are `in_progress`, while fresh workflow state shows both exact-head runs succeeded. This is a minutes-scale control-plane lag that the next Analyst must resolve from repository evidence.
-- Evidence Analyst and SUB are running materially later than nominal exact slots.
-- The active core is now dense around `SUB :35 -> Relay :45 -> Control/Steward :50`; Current State Brief also uses `:45` on some hours. SUB's real completion currently spills into the `:50` window.
-- `analysis/external_research_audit/literature/latest.md` and `literature/state.json` are absent despite the split-stream contract.
+1. PRIMARY's 06:13 fast-path consumed stale Analyst authority despite a newer handoff existing. MAIN must treat the exact Analyst branch tip re-fetch as authoritative immediately before any hard-stop/STARTED decision.
+2. Evidence Analyst latency is still large enough that `:00 -> :15` nominal spacing is not reliably a real 15-minute handoff window.
+3. `:35 SUB -> :45 RELAY -> :50 Control/Steward` remains dense; this run overlaps an active RELAY, which is acceptable because Control is read-only but makes status snapshots transient.
+4. R2 authority packaging exposed repeated lint-only pre-START failures. These are safe but consume cycles; generic production-path lint/import smoke should eventually be extracted as reusable substrate after R2, not during it.
 
 Efficiency findings:
 
-- Relay is useful: it closed identity-free runtime readiness without waiting for another full MAIN cycle.
-- SUB incubator is useful when bounded; the latest H3 probe produced a clear reduction-oriented stop signal rather than fake activity.
-- Further H3 cycles without a new Analyst classification would become resource churn.
-- External literature/audit knowledge flow is healthy despite the literature mailbox-structure defect.
+- RELAY successfully recovered throughput lost by PRIMARY's stale Analyst read, validating the relay concept.
+- SUB incubation produced a bounded negative/reduction-oriented conclusion and stopped, which is useful parallel throughput rather than fake activity.
+- External literature is materially improving the reduction ladder instead of merely adding citations.
 
-### Scheduler change recommendations — review only
+Scheduler recommendations — review only:
 
-1. **Do not mutate schedules from this role.**
-2. Observe the dense `:35/:45/:50` window for two more cycles. If >10-minute spillover or persistence collisions continue, separate Control/Steward from Relay by another 5–10 minutes; moving the downstream read-only control slot later is preferable to disrupting science workers.
-3. Investigate the recurring Evidence Analyst ~15–20 minute latency before increasing any research cadence.
-4. Keep Relay only while it produces real same-hour critical-path progress; avoid adding more workers to the same window.
-5. Do not let SUB repeat the exhausted H3 probe while awaiting Analyst classification; redirect or no-op rather than force activity.
-6. Fix role-specific literature persistence on the next External Research Scout run; this is a handoff-contract issue, not a reason to change research cadence.
+- **Do not increase research cadence.** The bottleneck is handoff latency/stale consumption and exact-head preflight churn, not lack of scheduled attempts.
+- Keep the current ordering while watching the next two cycles, but require PRIMARY/RELAY to re-fetch the exact Analyst branch tip immediately before policy decisions.
+- If `:35/:45/:50` overlap continues to make Control snapshots repeatedly land inside active RELAY transitions, moving the read-only Control/Steward slot slightly later would improve observability; no schedule change is justified from this single run alone.
+- No external-stream schedule change is currently needed; role-specific persistence is now functioning.
 
 ## Direction to Evidence Analyst
 
-On the next cycle:
-
-1. Independently re-fetch `research/readiness-c19-r1-runtime-closure-20260918@f5f0f7abd02372954aa8edcf10b6c15f9644c122` and verify dedicated readiness `35254816937:success` plus ordinary CI `35254816864:success`; classify runtime closure without treating it as science.
-2. Keep `c19-r1-revision-authority-official-v1` consumed/no-retry and explicitly decide **STOP versus one fresh R1-like successor**. Do not infer successor permission from readiness success alone.
-3. If a fresh successor is justified, preserve the prospectively stronger statistical contract: explicit scientific sampling unit, cluster-aware paired inference, same clustering across reductions, and the exact runtime/dependency closure now proven synthetically.
-4. Apply a line-level spending rule: another post-START infrastructure failure before measurement should terminate R1 rather than generate another rescue identity.
-5. Consume SUB's completed noisy-group H3 follow-up at `678e38ae...`. Treat it as NON_EVIDENTIARY. Recommended classification is `REJECT` promotion of the current exploratory candidate / stop the same proxy ladder; this is not a formal rejection of H3.
-6. Only reopen H3 formally if a new prospective object removes oracle grouping privilege and specifies grouping inference/learning, matched information/resources, a strong correlation-aware scalar/Bayesian comparator, held-out construction, metrics and success criteria before execution.
-7. Preserve the literature-driven reduction order: revision-authority/certainty arbitration first, then representation-matched FSA/state tracker, then broader persistent-state claims only if those reductions fail.
-8. Preserve C19-v4 exactly; describe its pair-bootstrap as contract-valid stability rather than independent-example population generalization unless separate post-hoc cluster sensitivity is clearly labeled non-canonical.
-9. Keep A01 closed and the programme testbed reframe active.
+1. Treat R2 as the sole primary scientific frontier until it terminates; MAIN owns every critical-path mechanical blocker.
+2. If current authority-package head moves, demand exact same-head ordinary CI, dedicated pre-START, production-runtime parity, frozen-blob binding, fresh identity/namespaces, and target-free cluster-map integrity before STARTED.
+3. Do not weaken the R2 bar to compensate for lint/CI delay. Mechanical fixups are allowed; scientific semantics are not.
+4. On terminal R2, apply the frozen cluster-primary decision exactly and stop that identity.
+5. If R2 survives the exact seven-state FSA, explicitly record that local/pre-semantic/history-derived predictive state is still reducible in principle; choose a fresh extracted/learned automaton or PSR/epsilon-machine reduction before any broad novelty claim. Do not default to hand-written R3/R4 FSAs.
+6. If R2 reduces C19-v4, narrow the mechanism interpretation and resist rescue complexity.
+7. Classify the completed SUB RV01 incubator direct-formalization candidate `REJECT` or `NO_ACTION`; its one allowed follow-up is exhausted. Any further SUB work should be a distinct bounded question, not another comparator on the same synthetic ladder.
+8. Preserve C19-v4 unchanged with audit status `WEAKENED_NOT_INVALID`; keep cluster-aware sampling-unit doctrine for all fresh external-validation objects.
+9. Keep Issue/governance state advisory only; scientific authority stays in git-managed evidence.
 
 ## Charter status
 
-`charter.md` remains unchanged. Existing evidence-over-strategy, reduction, stop/reframe and interpretation rules already cover the current state. This run adds a tighter R1 line-level spending rule and explicit external statistical/runtime readiness requirements without changing the foundational doctrine.
+`analysis/control_brain/charter.md` remains unchanged. The programme reframe and residual-lineage thesis are already covered by the charter. This run sharpens the novelty bar and post-R2 reduction ladder without changing the foundational role or evidence hierarchy.
