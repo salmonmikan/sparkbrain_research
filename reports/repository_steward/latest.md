@@ -1,134 +1,132 @@
 # SparkBrain Repository Steward — Latest
 
-Timestamp: 2026-09-18 01:51 JST
+Timestamp: 2026-09-18 07:50 JST
+Selected role: `REPOSITORY_STEWARD` from the 07:50 JST slot; no role inference required.
 
 ## Overall
-Repository doctrine remains **partially compliant, with active science correctly separated from `main` and authoritative evidence-tagging now exercised in practice**. `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` remains stable shared substrate. Current unresolved/failed scientific work remains under `research/*` and dedicated control refs; stewardship executed no experiment, dispatched no research workflow, consumed no identity, and made no scientific freeze or interpretation decision.
+Repository doctrine remains **partially compliant and scientifically well separated**. `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` remains the stable shared substrate and is still unprotected. Active C19-R2 work remains under `research/*`; no R2 STARTED, preserve, or evidence namespace exists. Stewardship did not execute an experiment, dispatch a research workflow, consume an identity, alter scientific semantics, decide a freeze, merge a research PR, or touch immutable evidence.
 
-The material governance updates in this run are:
-
-- C19 official validation now has a real authoritative annotated evidence tag, `evidence/c19-official-v4-c19-external-v2-official-v4`, pointing through annotated tag object `4d6c0bd9a6c06c17352941d3fa730502e72b8540` to terminal evidence commit `a0f83318356ced1c84863737803080d0dc69d208`.
-- Issue #147 was reconciled to the canonical terminal C19-v4 evidence and closed as operationally complete.
-- Issue #139 was refreshed from the obsolete `0 tags / 0 rulesets` state to `1 authoritative annotated evidence tag / 0 rulesets`; it remains open because server-side protection is still absent.
-- MAIN subsequently crossed STARTED on C19-R1 and terminated `POST_START_FAILURE` before raw output due missing `torch`; this exact R1 identity is consumed/no-retry. No R1 Issue was created because successor/stop selection is scientific and belongs to Evidence Analyst, not stewardship.
+The main governance-relevant development since the prior Steward run is not a new scientific result but a **pre-START authority/package mismatch** on C19-R2. MAIN reached exact-head green ordinary CI and dedicated pre-START on `research/c19-r2-fsa-state-tracker-spec-20260918@84e08cfffa3e1404a1e93dd924ee704aa7bd3853`, then correctly stopped because the current Evidence Analyst handoff describes an official raw universe of `55 × 5 × 1,744 = 479,600`, while the frozen R2 prospective package consistently specifies `5 × 1,744 = 8,720`. Stewardship does not choose between those scientific contracts and does not create an operational Issue that would prematurely define the answer. The mismatch is deferred to Evidence Analyst for explicit reconciliation before any R2 STARTED.
 
 ## Control-plane and remote reconciliation
 
-Designated control streams were read only as mailboxes and reconciled against fresh repository refs:
+Control-plane branches were treated only as mailboxes and reconciled against fresh remote repository state.
 
-- Control Brain branch head consumed: `d8987f8c6d88fad48a8f652f4255e73b30a223e6`; its latest strategic snapshot predates the newest R1 terminal event.
-- Evidence Analyst branch head consumed: `42836802e78abd26d19c5b8a789411f2b03d0ea1`; it authorized one R1 run after science-invariant admission packaging.
-- Orchestrator report branch head observed: `da0eee526a1286e3df989f136d44f97cb6dce670`.
-- MAIN latest at 01:51 JST reports `c19-r1-revision-authority-official-v1` crossed STARTED at `control/c19-r1-revision-authority-started-20260918@62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2` and then terminated `POST_START_FAILURE` because target-blind acquisition could not import `torch`. No R1 raw/preserve/evidence/scoring exists; same-ID retry is forbidden.
-- Fresh remote R1 research branch is `research/c19-r1-revision-authority-reduction-20260917@7197ab0f9683616858859446ae9eed7b75707f25`; fresh remote state overrides the older Analyst snapshot where necessary.
-- SUB latest is `mode: exploratory_incubator` on independent H3 correlation-reduction work. It is explicitly NON_EVIDENTIARY, avoided MAIN/R1, and requires later Analyst classification before any formalization.
+- Control Brain head consumed: `519750750f9a86daeb6c4637ee471cd2d86e1fd2`.
+- Evidence Analyst head consumed: `719b9e74063e5e10f6226fd49f1835036ed75e5b`.
+- Orchestrator report branch observed: `ab9d5590296744becd2e3c2f33061406ab40bb2b`.
+- MAIN latest (`2026-09-18 07:15 JST`) reports `R2_PRE_START_SEMANTIC_GAP_RAW_UNIVERSE_MISMATCH`; no STARTED, official-data read, raw, preserve, scoring, terminal evidence, or identity consumption occurred.
+- SUB latest (`2026-09-18 07:37 JST`) is a clean `no_op`: no formal lane exists, the prior RV01 incubator budget is exhausted, and SUB explicitly avoided C19-R2.
 
-Fresh repository facts:
+Fresh remote facts:
 
-- `main`: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`, unprotected.
-- Open pull requests: **0**.
-- Open operational Issues after this run: **#139 only**.
-- Authoritative Git tags: **1**, the annotated C19-v4 evidence tag above.
-- Repository rulesets: **0**.
-- Legacy `freeze/*` branches: **13**, all still present at their observed exact SHAs.
+- `main`: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`, `protected=false`.
+- active R2 research head: `research/c19-r2-fsa-state-tracker-spec-20260918@84e08cfffa3e1404a1e93dd924ee704aa7bd3853`.
+- R2 `control/*`: absent.
+- R2 `preserve/*`: absent.
+- R2 `evidence/*` tag: absent.
+- open PRs: **0**.
+- open operational Issues: **#139 only**.
+- authoritative annotated evidence tags: **1**, `evidence/c19-official-v4-c19-external-v2-official-v4` -> annotated tag object `4d6c0bd9a6c06c17352941d3fa730502e72b8540`.
+- repository rulesets: **0**.
+- legacy `freeze/*` branches: **13**, all still present.
+- consumed R1-v2 STARTED ref remains present at `control/c19-r1-revision-authority-started-v2-20260918@a230e250021cea113c42d674da2bfc31dc0a3549`; it was not touched.
 
 ## Doctrine drift found / corrected / deferred
 
-### Correctly separated / compliant
+### Correct / compliant
 
-- `main` has not chased C19-R1 or SUB exploratory work.
-- C19-v4 terminal evidence is now anchored by an annotated `evidence/*` tag rather than a new moving freeze branch.
-- R1 remains under `research/*` plus its dedicated STARTED control ref. Its post-START operational failure was not repaired or rerun by stewardship.
-- SUB H3 incubator artifacts remain on a distinct exploratory research branch and explicitly NON_EVIDENTIARY.
-- Open Issues remain operational tracking only; no Issue is treated as canonical scientific truth.
+- `main` has not absorbed C19-R2 scientific code or SUB exploratory artifacts.
+- active unresolved science remains off `main` under research/control refs.
+- C19-v4 terminal evidence remains anchored through an annotated `evidence/*` tag.
+- no new moving `freeze/*` branch was introduced for current work.
+- SUB did not convert exploratory material into formal evidence and now correctly no-ops rather than inventing another candidate.
+- canonical scientific interpretation remains in git-managed evidence/research state rather than Issues.
 
 ### Corrected this run
 
-1. **Issue #147 closed.** It had become stale as an open C19 official-validation tracker after the distinct successor chain reached canonical C19-v4 terminal `PASS`. The Issue now records only the concise operational disposition and stable annotated evidence-tag pointer; scientific interpretation remains in git-managed canonical evidence.
-2. **Issue #139 refreshed.** It previously said authoritative Git tags were 0. The repository now has one annotated C19-v4 evidence tag, so the body was updated while leaving the protection task open because rulesets are still 0.
-3. Stewardship state is reconciled past the former Family-B/C19-v2 phase to the current C19-v4 terminal evidence and R1 post-START operational failure.
+No repository-content or Issue correction was necessary. Stewardship state itself is advanced from the earlier R1-only snapshot to the current R2 pre-START semantic-gap state.
 
-### Deferred / non-blocking drift
+### Deferred / non-blocking
 
-- `main` remains unprotected and repository rulesets remain absent.
-- Historical CX01 candidate-specific workflow plumbing remains on `main`; extraction is still deferred because it is legacy debt and unrelated to the current information path.
-- R1 exposed another reusable readiness concern—exact one-way runtime dependency/environment parity—but candidate-specific R1 code must not be promoted merely because this defect was observed.
+- server-side protection remains absent: repository rulesets are still `0`, `main` is unprotected, and authoritative tag namespaces are not update/delete protected;
+- legacy CX01 candidate-specific workflow plumbing on `main` remains historical debt and is not on the current information path;
+- the R2 `479,600` versus `8,720` mismatch is a scientific authority reconciliation question, not governance cleanup;
+- generic pre-START/runtime/binding helpers remain possible future `main` promotion candidates only after extraction from C19-specific semantics.
 
 ## Issue audit / changes
 
-### #147 — closed completed
-The C19 official-validation tracker is now operationally complete. The prospectively distinct successor chain reached canonical C19-v4 terminal `PASS`; stewardship linked the authoritative annotated evidence tag and closed the Issue without expanding the scientific claim.
-
 ### #139 — open and current
-The protection gap remains real. Tag creation is demonstrably working, but server-side update/delete protection is not enforced because repository rulesets remain 0. Scheduled stewardship made no ruleset/protection mutation.
+No change this run. The body already accurately records the current governance state: authoritative annotated-tag creation exists and has been exercised once, while repository rulesets remain `0`. The acceptance criteria are not yet satisfied. Scheduled stewardship made no ruleset or protection mutation.
+
+### C19-R2 semantic mismatch — no Issue created
+MAIN's stop is scientifically meaningful because it is about which frozen/authoritative input-universe contract governs the formal object. Creating a stewardship Issue that prescribes `479,600` or `8,720` would reinterpret science. Evidence Analyst must first reconcile the authority; a later operational Issue is appropriate only if a clearly non-scientific implementation task remains.
 
 ### R1
-No new Issue was created for the R1 `POST_START_FAILURE`. The exact identity is consumed/no-retry, but whether to stop R1 or define a new prospective successor is a scientific allocation decision for Evidence Analyst. Creating an Issue now would risk prematurely defining successor scope from governance.
+No R1 Issue was created or reopened. R1-v1/v2 remain consumed/no-retry historical objects and Control Brain/Evidence Analyst have already moved the primary frontier to R2.
 
-## Freeze branch → tag migration
+## Freeze branch -> tag migration
 
-- Legacy `freeze/*` branch count: **13**.
-- All 13 legacy freeze refs are still present; no branch was deleted, moved, force-updated, or rewritten by stewardship.
-- Authoritative annotated tags: **1**.
-- New tag observed: `evidence/c19-official-v4-c19-external-v2-official-v4` -> tag object `4d6c0bd9...` -> evidence commit `a0f83318...`.
-- Legacy branch-to-tag mirrors created this run: **0**.
-- No legacy batch migration was attempted.
+- legacy `freeze/*` branches: **13**;
+- all observed legacy freeze refs remain present and unchanged;
+- authoritative annotated tags: **1**;
+- legacy branch-to-tag mirrors created this run: **0**;
+- no batch migration attempted;
+- no freeze branch moved, deleted, force-updated, or rewritten.
 
-This is the intended prospective pattern: new immutable scientific evidence can use the annotated-tag workflow while historical freeze branches remain preserved exactly. Batch mirroring remains deferred until namespace protection/safe migration policy is actually installed or explicitly authorized.
+The prospective policy remains sound: new authoritative evidence should use annotated tags where scientifically appropriate, while historical freeze branches remain preserved exactly. Batch mirroring remains deferred until a safe protected migration procedure exists.
 
 ## Tag protection / ruleset status
 
-Read-only governance status remains **gap present**:
+Read-only governance state remains **gap present**:
 
-- authoritative tag creation workflow: available and now successfully exercised;
-- authoritative annotated tag count: 1;
-- repository ruleset count: 0;
+- authoritative tag workflow: available and exercised;
+- `evidence/*` authoritative tag count: 1;
+- repository rulesets: 0;
 - `main` protection: disabled;
-- `freeze/*`, `sealed/*`, `formal/*`, `evidence/*` update/delete protection: not server-side enforced.
+- `freeze/*`, `sealed/*`, `formal/*`, `evidence/*` server-side update/delete protection: absent.
 
-Issue #139 remains the sole open governance tracker. No ruleset/tag-protection administration was attempted.
+Issue #139 remains the sole open governance tracker. This scheduled role did not create, update, delete, or manage rulesets/tag protection.
 
 ## Preserve-index / mapping maintenance
 
-No legacy freeze mapping changed and no new legacy freeze branch appeared, so `reports/repository_steward/legacy_freeze_map.md` required no scientific mapping change this run. The new C19-v4 object is already self-identifying through its authoritative annotated evidence tag and does not require a legacy branch-to-tag mirror entry.
-
-No preserve/control/formal/evidence ref was moved, rewritten, retargeted or reclassified by stewardship.
+No new legacy freeze branch, legacy tag mirror, or authoritative mapping requiring `legacy_freeze_map.md` maintenance was observed. R2 has no STARTED/preserve/evidence object yet, so no R2 preservation mapping exists to record. No preserve/control/formal/evidence ref was moved or reclassified by stewardship.
 
 ## Main-promotion candidates reviewed
 
 No promotion was performed.
 
-Potential future outcome-independent substrate candidates now include:
+Still plausible after hypothesis-independent extraction and review:
 
 - exact execution-environment/dependency manifest verification;
-- same-environment pre-START import/dependency smoke-test harnesses;
-- exact source/runtime manifest verification;
-- atomic STARTED / no-clobber / identity-collision primitives;
-- durable exactly-once acquisition checkpoints;
+- same-environment production-import and network-blocked smoke-test primitives;
+- exact source/runtime/package binding checks;
+- STARTED/no-clobber/identity-collision helpers;
 - raw-preserve-before-score and digest verification;
-- evaluator-join uniqueness/totality/fail-closed validators;
-- deterministic golden scorer fixture harnesses;
-- generic fail-closed verifier patterns;
-- stable control-plane pointer/index helpers.
+- unique/total/fail-closed evaluator joins;
+- target-free cluster-map validation;
+- deterministic scorer/golden-fixture helpers;
+- generic cluster-aware inference utilities;
+- durable control-plane pointer/index helpers.
 
-These are candidates only after extraction, independent review and proof of hypothesis independence. C19/R1 scientific controller/scorer/workflow semantics and SUB exploratory H3 code remain research-only.
+Not promotion-eligible now: R2 seven-state scientific tracker semantics, R2 scorer/input-universe contract, C19-specific one-way workflow semantics, and prior SUB exploratory code.
 
 ## Immutable refs / integrity
 
 Verified untouched by stewardship:
 
 - all 13 legacy `freeze/*` branches;
-- C19-v4 annotated evidence tag and its target evidence commit;
-- all preserve/control/formal/evidence refs;
-- consumed R1 STARTED identity/ref;
+- `evidence/c19-official-v4-c19-external-v2-official-v4` and its terminal evidence target;
+- consumed R1-v1/v2 STARTED refs;
+- existing preserve/control/formal/evidence refs;
 - prior consumed A01/RV01/RV02/CX identities.
 
-Stewardship did not execute, retry, score, preserve, freeze, merge, dispatch, or consume any scientific identity.
+R2 currently has no immutable/consumed formal object to modify. Stewardship created none.
 
 ## Deferred governance
 
-1. Keep #139 open until server-side authoritative-tag namespace protection is installed and verified outside scheduled stewardship.
-2. Do not mass-mirror legacy freeze branches until a safe protected migration procedure exists.
-3. Let Evidence Analyst consume the R1 `POST_START_FAILURE` and decide stop vs fresh prospective successor; governance must not predefine that science.
-4. Consider generic runtime-environment preflight helpers for later `main` promotion only after they are detached from R1/C19 semantics and independently stable.
-5. Continue treating SUB incubator branches as NON_EVIDENTIARY research material unless and until Evidence Analyst creates a fresh prospective formal object.
+1. Keep #139 open until authoritative tag namespaces are protected and verified through an appropriate administrative path outside scheduled stewardship.
+2. Do not mass-mirror legacy freeze branches until a safe protected migration procedure is explicitly established.
+3. Let Evidence Analyst reconcile the R2 `479,600` versus `8,720` scientific contract; governance must not select one.
+4. After R2 authority is reconciled, create/update Issues only for clearly operational work that does not restate or reinterpret the scientific contract.
+5. Review generic pre-START/runtime/binding helpers for future `main` promotion only after they are detached from C19-specific semantics and independently stable.
