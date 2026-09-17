@@ -6,11 +6,13 @@ on:
       - "research/c19-r1-revision-authority-reduction-*"
     paths:
       - "configs/external_validation/c19_r1_revision_authority.json"
+      - "configs/external_validation/c19_r1_execution_authority.json"
       - "src/sparkbrain/v03_external_validation/c19_r1_*.py"
       - "scripts/check_c19_r1_prestart.py"
       - "scripts/run_c19_r1_official.py"
       - "tests/test_c19_r1_revision_authority.py"
       - ".github/workflows/c19-r1-prestart.yml"
+      - ".github/workflows/c19-r1-one-way.yml"
       - "docs/research/c19_r1_revision_authority_preregistration.md"
 
 permissions:
@@ -49,15 +51,63 @@ jobs:
         run: python -m pytest -q tests/test_c19_r1_revision_authority.py
       - name: Synthetic target-blind full-inventory readiness
         run: python scripts/check_c19_r1_prestart.py
-      - name: Assert no official execution authority exists in package
+      - name: Validate science-invariant execution authority packaging
         run: |
+          set -euo pipefail
           python - <<'PY'
           import json
+          import subprocess
           from pathlib import Path
-          value = json.loads(
+
+          basis = "7cf849051a68b4227e29fe2f6ee95b2ff277dacd"
+          analyst = "42836802e78abd26d19c5b8a789411f2b03d0ea1"
+          identity = "c19-r1-revision-authority-official-v1"
+          authority = json.loads(
+              Path("configs/external_validation/c19_r1_execution_authority.json").read_text()
+          )
+          assert authority["state"] == "EXECUTION_AUTHORIZED"
+          assert authority["execution_allowed"] is True
+          assert authority["execution_limit"] == 1
+          assert authority["no_retry_after_started"] is True
+          assert authority["evidence_analyst_commit"] == analyst
+          assert authority["scientific_basis_commit"] == basis
+          assert authority["run_identity"] == identity
+          assert authority["atomic_idx_source_map_sha256"] == (
+              "cb3ca63703bdab4107e896884908817680dd4fe4b5eebc32b6219075f0187bbb"
+          )
+          contract = json.loads(
               Path("configs/external_validation/c19_r1_revision_authority.json").read_text()
           )
-          assert value["official_execution_allowed"] is False
-          assert value["integrity"]["current_handoff_execution_allowed"] is False
-          print("pre-START execution boundary intact")
+          assert contract["official_execution_allowed"] is False
+          assert contract["integrity"]["current_handoff_execution_allowed"] is False
+          def git(*args: str) -> str:
+              return subprocess.run(
+                  ["git", *args], check=True, capture_output=True, text=True
+              ).stdout.strip()
+          assert git("rev-parse", f"{basis}:configs/external_validation/c19_r1_revision_authority.json") == authority["scientific_contract"]["blob_sha"]
+          assert git("rev-parse", "HEAD:configs/external_validation/c19_r1_revision_authority.json") == authority["scientific_contract"]["blob_sha"]
+          assert git("rev-parse", f"{basis}:docs/research/c19_r1_revision_authority_preregistration.md") == authority["preregistration"]["blob_sha"]
+          assert git("rev-parse", "HEAD:docs/research/c19_r1_revision_authority_preregistration.md") == authority["preregistration"]["blob_sha"]
+          changed = set(git("diff", "--name-only", f"{basis}..HEAD").splitlines())
+          assert changed == set(authority["allowed_admission_paths"]), changed
+          v4 = authority["v4_read_only_binding"]
+          for key in ("package_commit", "preserve_commit", "evidence_commit"):
+              git("cat-file", "-e", f"{v4[key]}^{{commit}}")
+          print("R1 execution authority is admission-only; scientific blobs unchanged")
           PY
+      - name: Assert R1 execution namespaces remain fresh
+        run: |
+          set -euo pipefail
+          for ref in \
+            'control/c19-r1-revision-authority-started-' \
+            'preserve/c19-r1-revision-authority-raw-' ; do
+            if git ls-remote --heads origin "${ref}*" | grep -q .; then
+              echo "collision in ${ref} namespace" >&2
+              exit 1
+            fi
+          done
+          if git ls-remote --tags origin 'refs/tags/evidence/c19-r1-revision-authority-*' | grep -q .; then
+            echo 'R1 evidence tag collision' >&2
+            exit 1
+          fi
+          echo 'R1 namespaces fresh'

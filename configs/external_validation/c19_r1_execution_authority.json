@@ -1,0 +1,31 @@
+{
+  "schema_version": "1",
+  "state": "EXECUTION_AUTHORIZED",
+  "execution_allowed": true,
+  "execution_limit": 1,
+  "no_retry_after_started": true,
+  "evidence_analyst_commit": "42836802e78abd26d19c5b8a789411f2b03d0ea1",
+  "scientific_basis_commit": "7cf849051a68b4227e29fe2f6ee95b2ff277dacd",
+  "protocol_id": "c19-r1-revision-authority-protocol-v1",
+  "run_identity": "c19-r1-revision-authority-official-v1",
+  "scientific_contract": {
+    "path": "configs/external_validation/c19_r1_revision_authority.json",
+    "blob_sha": "1174c82fabfbe00f48226a128370b2d83b902efa"
+  },
+  "preregistration": {
+    "path": "docs/research/c19_r1_revision_authority_preregistration.md",
+    "blob_sha": "6a31b94b480cb672214d2a0858bcc833bf0f43b4"
+  },
+  "atomic_idx_source_map_sha256": "cb3ca63703bdab4107e896884908817680dd4fe4b5eebc32b6219075f0187bbb",
+  "v4_read_only_binding": {
+    "package_commit": "74bfe6b4a39758656f291baaa3f16236e3e71964",
+    "preserve_commit": "d8fcc5216ff24940836972816cb0ec8f11e4ba06",
+    "evidence_commit": "a0f83318356ced1c84863737803080d0dc69d208",
+    "raw_sha256": "692f8a5dba48f604eb1f5518a8545b80da01e1a00a9e2d2b6b1c0567355d65af"
+  },
+  "allowed_admission_paths": [
+    ".github/workflows/c19-r1-prestart.yml",
+    ".github/workflows/c19-r1-one-way.yml",
+    "configs/external_validation/c19_r1_execution_authority.json"
+  ]
+}
