@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-09-18T04:32:00+09:00",
+  "timestamp": "2026-09-18T04:45:00+09:00",
   "worker_role": "main",
-  "execution_mode": "PRIMARY",
+  "execution_mode": "RELAY",
   "evidence_analyst_commit": "b09d90d0545a0448ea5a310f9373969e7471b15d",
   "current_lane": "C19_R2_FSA_STATE_TRACKER_PROSPECTIVE_SPECIFICATION",
-  "current_phase": "R2_PRE_START_DEDICATED_GREEN_CI_RUNNING",
-  "consumed_contingency_branches": ["R2_PRE_START_SPECIFICATION", "R2_PRE_START_BLOCKER"],
+  "current_phase": "R2_PRE_START_READY_FOR_ANALYST_REVIEW",
+  "consumed_contingency_branches": ["R2_PRE_START_BLOCKER", "R2_PRE_START_READY_FOR_ANALYST_REVIEW"],
   "active_claim": {
     "branch": "research/c19-r2-fsa-state-tracker-spec-20260918",
     "head": "5d5d171cf872baed7a636fd246ab36f3a91a6716",
@@ -20,9 +20,6 @@
     "main": "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "r2": "research/c19-r2-fsa-state-tracker-spec-20260918@5d5d171cf872baed7a636fd246ab36f3a91a6716",
     "scientific_parent_v4": "research/c19-official-v4-preservation-qualified-20260917@74bfe6b4a39758656f291baaa3f16236e3e71964",
-    "v4_preserve_commit": "d8fcc5216ff24940836972816cb0ec8f11e4ba06",
-    "v4_evidence_commit": "a0f83318356ced1c84863737803080d0dc69d208",
-    "v4_raw_sha256": "692f8a5dba48f604eb1f5518a8545b80da01e1a00a9e2d2b6b1c0567355d65af",
     "r2_started": null,
     "r2_preserve": null,
     "r2_evidence": null
@@ -30,88 +27,79 @@
   "fast_path_used": true,
   "full_reconciliation_triggered": false,
   "full_reconciliation_reason": null,
-  "branches_prs_advanced": {
-    "created": "research/c19-r2-fsa-state-tracker-spec-20260918",
-    "base": "74bfe6b4a39758656f291baaa3f16236e3e71964",
-    "head": "5d5d171cf872baed7a636fd246ab36f3a91a6716",
-    "parent_or_immutable_science_modified": false,
-    "changed_path_scope": "nine R2-owned pre-formal paths only",
-    "prs": [],
-    "merges": []
-  },
   "workflows_experiments": {
-    "initial_prestart": {"run_id": 35264684899, "head": "bc2362724d797e4716cf76dee5a826d2f682ed08", "status": "completed", "conclusion": "failure", "class": "mechanical_lint_only"},
-    "second_prestart": {"run_id": 35264985183, "head": "3ddc73f548e3d82e240d76d081ee94f12b031912", "status": "completed", "conclusion": "failure", "class": "mechanical_float_fixture_only"},
-    "final_prestart": {"run_id": 35265194243, "head": "5d5d171cf872baed7a636fd246ab36f3a91a6716", "status": "completed", "conclusion": "success"},
-    "final_ci": {"run_id": 35265194183, "head": "5d5d171cf872baed7a636fd246ab36f3a91a6716", "status": "in_progress", "conclusion": null},
+    "dedicated_prestart": {
+      "run_id": 35265194243,
+      "head": "5d5d171cf872baed7a636fd246ab36f3a91a6716",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "ordinary_ci": {
+      "run_id": 35265194183,
+      "head": "5d5d171cf872baed7a636fd246ab36f3a91a6716",
+      "status": "completed",
+      "conclusion": "success"
+    },
     "official_execution": null
   },
   "scientific_results": {
     "new_scientific_measurement": false,
     "terminal_scientific_result": null,
     "classification": "PRE_FORMAL_READINESS_ONLY",
-    "interpretation": "R2 was specified and mechanically validated without official R2 data access; dedicated readiness is green and ordinary CI remains external."
+    "interpretation": "R2 exact-head dedicated pre-START and ordinary CI are both green. This is operational readiness only; current Analyst authority requires STOP before formal identity/STARTED."
   },
   "consumed_identities": {
     "c19-r1-revision-authority-official-v1": {"consumed": true, "retry_allowed": false, "touched_this_run": false},
-    "c19-r1-revision-authority-official-v2": {"consumed": true, "retry_allowed": false, "touched_this_run": false, "terminal_status": "POST_START_FAILURE_CONSUMED_NO_RETRY"},
+    "c19-r1-revision-authority-official-v2": {"consumed": true, "retry_allowed": false, "touched_this_run": false},
     "r2": {"formal_identity": null, "consumed": false}
   },
   "blockers": [
-    "Ordinary CI 35265194183 remains in progress on exact head 5d5d171cf872baed7a636fd246ab36f3a91a6716.",
-    "Fresh Evidence Analyst execution authority is required before any R2 formal identity or STARTED."
+    "Fresh Evidence Analyst authorization is required before reserving any formal R2 identity or crossing STARTED.",
+    "Current handoff defines R2_PRE_START_READY_FOR_ANALYST_REVIEW as a hard STOP."
   ],
   "lease_collision_reconciliation": {
-    "prior_run_id": "relay-20260918T0344JST",
-    "prior_status": "WAITING_EXTERNAL",
-    "prior_heartbeat": "2026-09-18T03:45:00+09:00",
-    "stale_over_20_minutes_at_acquire": true,
-    "r1_v2_terminal_workflow_reconciled": "35260650772:completed/failure",
-    "new_analyst_handoff_reconciled": "b09d90d0545a0448ea5a310f9373969e7471b15d",
-    "conflicting_fresh_main_lease_seen": false,
-    "result": "safe PRIMARY recovery"
+    "inherited_run_id": "primary-20260918T0417JST",
+    "inherited_status": "WAITING_EXTERNAL",
+    "inherited_heartbeat": "2026-09-18T04:31:30+09:00",
+    "fresh_primary_running_same_object": false,
+    "analyst_tip_rechecked": "b09d90d0545a0448ea5a310f9373969e7471b15d",
+    "r2_head_rechecked": "5d5d171cf872baed7a636fd246ab36f3a91a6716",
+    "result": "safe RELAY continuation"
   },
   "integrity_status": {
-    "analyst_tip_unchanged_at_checkpoint": true,
-    "exact_v4_parent_binding": true,
-    "r2_only_diff_scope": true,
+    "analyst_tip_unchanged": true,
+    "exact_r2_head_unchanged": true,
+    "dedicated_prestart_green_same_head": true,
+    "ordinary_ci_green_same_head": true,
     "formal_identity_reserved": false,
     "started_created": false,
     "official_data_accessed": false,
-    "r1_transient_outputs_used": false,
-    "v4_per_example_outputs_used_for_design_or_tuning": false,
+    "official_execution_dispatched": false,
     "immutable_refs_modified": false,
     "consumed_identity_retried_or_modified": false,
-    "raw_before_score_and_preserve_before_targets_frozen": true,
-    "target_free_cluster_inference_frozen": true,
     "sub_work_touched": false
   },
-  "critical_path_fixes_completed": [
-    "Created the fresh R2 pre-formal branch from exact immutable C19-v4 package lineage.",
-    "Froze the seven-state per-pair mechanism, exact representation/input/runtime/resource bindings, preservation boundary, cluster-aware inference, terminal criteria and interpretation ceiling before any R2 outcome.",
-    "Implemented deterministic target-blind tracker, atomic_idx source-map contract, fail-closed scorer, preregistration, tests, checker and dedicated pre-START workflow.",
-    "Fixed only workflow/Ruff line-format mechanical blockers from run 35264684899.",
-    "Fixed only exact binary-float equality in the Type-7 quantile fixture from run 35264985183; scorer semantics were unchanged.",
-    "Obtained dedicated pre-START success 35265194243 on final exact head."
+  "critical_path_actions_performed": [
+    "Collected ordinary CI 35265194183 and verified completed/success on exact head 5d5d171cf872baed7a636fd246ab36f3a91a6716.",
+    "Re-verified dedicated pre-START 35265194243 remains completed/success on the same exact head.",
+    "Re-fetched the exact R2 branch and confirmed the head did not move.",
+    "Re-fetched Evidence Analyst authority and confirmed tip b09d90d0545a0448ea5a310f9373969e7471b15d is unchanged.",
+    "Applied the prospectively fixed hard STOP at R2_PRE_START_READY_FOR_ANALYST_REVIEW."
   ],
   "same_run_steps": [
-    "Reconciled stale Relay lease, R1-v2 terminal failure and latest Analyst handoff.",
-    "Acquired PRIMARY lease.",
-    "Built and preregistered R2 on a fresh branch from C19-v4.",
-    "Ran/collected two mechanical pre-START failures and applied only prospectively authorized science-invariant fixes.",
-    "Reached final head 5d5d171cf872baed7a636fd246ab36f3a91a6716; dedicated gate is green, ordinary CI is still running.",
-    "Persisted MAIN latest/state/lease/history for safe Relay continuation."
+    "Read inherited WAITING_EXTERNAL lease and latest MAIN state/report.",
+    "Reconciled current Analyst authority and exact R2 target.",
+    "Collected both exact-head workflow outcomes.",
+    "Advanced phase to R2_PRE_START_READY_FOR_ANALYST_REVIEW without code/science mutation.",
+    "Persisted RELAY latest/state/lease/history."
   ],
-  "same_run_stop_reason": "WAITING_EXTERNAL: ordinary CI remains in progress and there is no useful local critical-path action; current handoff also forbids identity reservation or STARTED before fresh Analyst review.",
-  "work_intentionally_left_for_sub": "No formal SUB lane/fallback; independent NON_EVIDENTIARY SUB work was not touched.",
+  "same_run_stop_reason": "The current Evidence Analyst handoff explicitly requires a hard STOP at R2_PRE_START_READY_FOR_ANALYST_REVIEW. Both readiness gates are green, but formal identity reservation, STARTED and official execution remain unauthorized.",
+  "work_intentionally_left_for_sub": "None; no formal SUB lane/fallback and no SUB work was touched.",
   "lane_repartition_reason": null,
-  "next_main_action": "Collect ordinary CI 35265194183 for exact head 5d5d171cf872baed7a636fd246ab36f3a91a6716 while retaining dedicated success 35265194243. Mechanical science-invariant CI failure may be fixed with both gates rerun on one new exact head; semantic/scientific gap requires STOP. If CI succeeds, re-fetch Analyst/head, persist R2_PRE_START_READY_FOR_ANALYST_REVIEW, and STOP without formal identity or STARTED under current authority.",
+  "next_main_action": "Wait for a newer Evidence Analyst handoff. Do not reserve an R2 formal identity, create STARTED, or execute official data under authority b09d90d0545a0448ea5a310f9373969e7471b15d.",
   "write_path_diagnostics": {
-    "lease_acquire": {"result": "success", "commit": "02a1c353f5b38fbd18ff62471e5e21c95f9cad0a"},
-    "branch_and_r2_file_writes": {"result": "success", "final_head": "5d5d171cf872baed7a636fd246ab36f3a91a6716"},
-    "latest_report": {"result": "success", "commit": "e8727c9e561f5c22a3d7e342e1ca3832a691bfc4"},
-    "lease_finalization": {"result": "success", "commit": "6f24283a2c820c2596e246e04d961b4ab12c09c6", "status": "WAITING_EXTERNAL"},
-    "history_append": {"result": "success", "commit": "de1e90bb2f8808f204723bef72002a66012da1d3", "path": "reports/orchestrator/history/2026-09-18/0431-main.md"},
-    "state_finalization": {"result": "success", "note": "this commit"}
+    "latest_report": {"result": "success", "commit": "329761222b726750a65d00c60e58593d52be3c35"},
+    "research_write_attempted": false,
+    "reason_no_research_write": "No fix was required; both exact-head readiness workflows succeeded and current authority mandates STOP before formal execution."
   }
 }
