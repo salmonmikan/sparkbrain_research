@@ -1,38 +1,177 @@
 {
-  "timestamp": "2026-09-17T21:49:00+09:00",
+  "timestamp": "2026-09-17T22:47:36+09:00",
   "worker_role": "sub",
   "mode": "exploratory_incubator",
   "evidence_analyst_commit": "9f88fba973f54bc6608d183aacfaccd7952a229f",
-  "consumed_lanes": {"main_lane": "C19-R1 revision-authority matched reduction; MAIN-only; execution forbidden pending fresh Analyst authorization", "sub_lane": null, "sub_fallback": null},
+  "consumed_lanes": {
+    "main_lane": "C19-R1 revision-authority matched reduction; MAIN-only; exact-head ordinary/pre-START CI green; execution forbidden pending fresh Analyst authorization",
+    "sub_lane": null,
+    "sub_fallback": null
+  },
   "selected_independent_lane": null,
-  "exploratory_target": "H5 generic lazy-decay/event-routing audited-operation crossover on a fixed synthetic world",
+  "exploratory_target": "H6 workspace broadcast communication-accounting sensitivity under fixed synthetic fan-out and direct-router destination knowledge",
   "independence_from_main_critical_path": true,
-  "why_independent_of_main": "Distinct H5 synthetic reduction probe; no C19/R1 or Belief-R formal inputs/outputs; cannot unblock MAIN.",
+  "why_independent_of_main": "Distinct H6 synthetic coordination/accounting diagnostic using no C19/R1 branch, identity, official Belief-R inputs/outputs, scorer, preservation, or MAIN blocker.",
   "execution_allowed": false,
-  "sub_active_claim": "EXPLORATORY_NON_EVIDENTIARY_H5_LAZY_ROUTING_ACCOUNTING",
-  "main_work_explicitly_avoided": ["C19-R1 branch/identity/STARTED/execution/successor design", "C19-v4 control/preserve/evidence", "C19-v2/v3 consumed identities", "Belief-R official inputs/raw/scorer/preservation"],
-  "authoritative_refs": {"main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d", "evidence_analyst": "9f88fba973f54bc6608d183aacfaccd7952a229f", "control_brain": "d8987f8c6d88fad48a8f652f4255e73b30a223e6", "c19_r1": "research/c19-r1-revision-authority-reduction-20260917@c23736b63e6100bcdc38e7f11d94c782eb6273dc", "c19_r1_ordinary_ci": "35221764016:success", "c19_r1_prestart": "35221764005:success", "c19_v4_started": "control/c19-official-v4-started-20260917@3ebffb0c55ea9e5dac6c2a52d3d5c0ee6443d58e", "c19_v4_preserve": "preserve/c19-official-v4-raw-c19-external-v2-official-v4@d8fcc5216ff24940836972816cb0ec8f11e4ba06", "c19_v4_evidence_tag": "evidence/c19-official-v4-c19-external-v2-official-v4", "exploratory_branch": "research/exploratory-sub-h5-lazy-routing-20260917@cdcee56dc8d918236ed5e342d3e1712a770cd481", "open_pr_count": 0, "open_issues": [139,147]},
-  "branches_prs_advanced": {"research_branches_created": ["research/exploratory-sub-h5-lazy-routing-20260917"], "research_branches_advanced": ["research/exploratory-sub-h5-lazy-routing-20260917@cdcee56dc8d918236ed5e342d3e1712a770cd481"], "implementation_commits": ["58d64a97ff6d523923f390a9812f37337aa44daa", "cdcee56dc8d918236ed5e342d3e1712a770cd481"], "prs_created": [], "merges": []},
-  "workflows_experiments": {"formal_scientific_workflows_dispatched_by_sub": 0, "formal_scientific_experiments_executed_by_sub": 0, "started_control_created_by_sub": false, "one_way_dispatches_by_sub": 0, "official_data_access_by_sub": false, "exploratory_ci_initial": "35222429356:failure:lint", "exploratory_ci_replacement": "35222660670:success", "synthetic_exploratory_micro_experiment": {"script": "scripts/exploratory_h5_lazy_routing.py", "tests": "tests/test_exploratory_h5_lazy_routing.py", "artifact": "artifacts/exploratory_h5_lazy_routing/README.md", "formal": false, "identity": null}},
-  "scientific_readiness_exploratory_results": {"new_formal_scientific_measurement_by_sub": false, "new_formal_readiness_result_by_sub": false, "exploratory_observation": true, "fixed_synthetic_parameters": {"decay":0.97,"horizon":200,"out_degree":8,"node_counts":[100,400,1600],"activity_rates":[0.01,0.05,0.10,0.25,0.50,1.00]}, "lazy_to_dense_work_ratio": {"0.01":0.0281,"0.05":0.1335,"0.10":0.2556,"0.25":0.5686,"0.50":0.9619,"1.00":1.4709}, "break_even_extra_bookkeeping_per_active_source": {"0.01":882.50,"0.05":162.90,"0.10":72.95,"0.25":18.98,"0.50":0.99,"1.00":-8.01}, "analytic_equal_unit_cost_crossover_activity_fraction_approx":0.5291, "state_equivalence_validation":"exact-head CI 35222660670 success", "interpretation":"Toy generic lazy evaluation retains large audited-work headroom only in sparse exogenous regimes; headroom collapses near moderate activity and reverses at full activity. Recurrent fan-out and matched-behavior accounting remain untested."},
+  "sub_active_claim": "EXPLORATORY_NON_EVIDENTIARY_H6_WORKSPACE_ACCOUNTING_SENSITIVITY",
+  "main_work_explicitly_avoided": [
+    "C19-R1 branch/identity/STARTED/execution/successor design",
+    "C19-v4 control/preserve/evidence and official Belief-R materials",
+    "C19-v2/v3/v4 consumed identities",
+    "MAIN candidate-specific CI/binding/scoring/preservation work"
+  ],
+  "authoritative_refs": {
+    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "evidence_analyst": "9f88fba973f54bc6608d183aacfaccd7952a229f",
+    "control_brain": "d8987f8c6d88fad48a8f652f4255e73b30a223e6",
+    "c19_r1": "research/c19-r1-revision-authority-reduction-20260917@c23736b63e6100bcdc38e7f11d94c782eb6273dc",
+    "c19_r1_started_refs": [],
+    "c19_r1_ordinary_ci": "35221764016:success",
+    "c19_r1_prestart": "35221764005:success",
+    "exploratory_branch": "research/exploratory-sub-h6-workspace-accounting-20260917@3904596cdb6377fc460435bf1b8a6dcdadff4fab",
+    "exploratory_exact_head_ci": "35229064353:success",
+    "open_pr_count": 0,
+    "open_issues": [139, 147]
+  },
+  "branches_prs_advanced": {
+    "research_branches_created": ["research/exploratory-sub-h6-workspace-accounting-20260917"],
+    "research_branches_advanced": ["research/exploratory-sub-h6-workspace-accounting-20260917@3904596cdb6377fc460435bf1b8a6dcdadff4fab"],
+    "implementation_commits": [
+      "b3059b8ec5fe11c17df04e80bb54649f64ae2ea6",
+      "f0a41cf5273e8375d0abcca46a9ca2b80c96ff56",
+      "5a5f7793f14cd64e2b395dad60bdec303085a75c",
+      "3904596cdb6377fc460435bf1b8a6dcdadff4fab"
+    ],
+    "prs_created": [],
+    "merges": []
+  },
+  "workflows_experiments": {
+    "formal_scientific_workflows_dispatched_by_sub": 0,
+    "formal_scientific_experiments_executed_by_sub": 0,
+    "started_control_created_by_sub": false,
+    "one_way_dispatches_by_sub": 0,
+    "official_data_access_by_sub": false,
+    "exploratory_ci_initial": "35228743996:failure:lint",
+    "exploratory_ci_replacement": "35229064353:success",
+    "synthetic_exploratory_micro_experiment": {
+      "script": "scripts/exploratory_h6_workspace_accounting.py",
+      "tests": "tests/test_exploratory_h6_workspace_accounting.py",
+      "artifact": "artifacts/exploratory_h6_workspace_accounting/README.md",
+      "formal": false,
+      "identity": null
+    }
+  },
+  "scientific_readiness_exploratory_results": {
+    "new_formal_scientific_measurement_by_sub": false,
+    "new_formal_readiness_result_by_sub": false,
+    "exploratory_observation": true,
+    "fixed_synthetic_parameters": {
+      "total_consumers": 31,
+      "direct_budget": 4,
+      "fanouts": [1, 2, 4, 8, 16],
+      "router_destination_knowledge_probabilities": [0.25, 0.5, 0.75, 1.0]
+    },
+    "accounting_contracts": {
+      "shared_slot": "one workspace publication charged once regardless of readership",
+      "recipient_charged": "one publication plus exposure to all 31 potential consumers charged"
+    },
+    "scenario_count": 20,
+    "shared_slot_workspace_strict_efficiency_wins": 19,
+    "shared_slot_ties": 1,
+    "recipient_charged_direct_strict_efficiency_wins": 20,
+    "perfect_router_recall": {
+      "fanout_1": 1.0,
+      "fanout_2": 1.0,
+      "fanout_4": 1.0,
+      "fanout_8": 0.5,
+      "fanout_16": 0.25
+    },
+    "fanout_8_router_knowledge_0_25": {
+      "direct_expected_relevant_deliveries": 2.424258270093941,
+      "direct_recall": 0.3030322837617426,
+      "direct_relevant_deliveries_per_send": 0.6060645675234853,
+      "workspace_recall": 1.0,
+      "workspace_efficiency_shared_slot": 8.0,
+      "workspace_efficiency_recipient_charged": 0.25
+    },
+    "interpretation": "The apparent H6 efficiency ordering flips solely with the fan-out charging contract in this toy. Future H6 science must freeze communication accounting and match coordination quality before comparing workspace to direct routing."
+  },
   "evidentiary_status": "NON_EVIDENTIARY",
-  "hypothesis_or_reduction_question": "Can generic lazy state materialization plus event-routed edge traversal reproduce a dense synthetic decay/message system while reducing audited algorithmic work only in genuinely sparse regimes?",
-  "synthetic_or_dev_inputs_used": "Deterministic generated ring-neighborhood graphs and signed event streams only; no formal/official/held-out data.",
-  "implementation_or_experiment_performed": "Implemented dense/lazy synthetic evaluators, transparent operation accounting, fixed scale/activity grid, state-equivalence tests and crossover tests; repaired lint only after CI feedback.",
-  "observations": ["Final exact-head CI 35222660670 is green.", "Lazy/dense work ratios rise from 0.0281 at 1% activity to 1.4709 at 100%.", "Bookkeeping headroom is 0.99 at 50% and negative at 100%.", "Toy equal-unit-cost crossover is about 52.9%; it is not a formal SparkBrain threshold."],
-  "what_would_falsify_or_reduce_it": "A fresh matched-behavior prospective object would reduce H5 if recurrent fan-out and fully charged bookkeeping make event-routed execution equal or more costly than dense-equivalent execution throughout the intended sparse regime, or if lazy behavior diverges.",
-  "candidate_formal_question": "Under prospectively fixed matched behavior and operation-accounting rules, does event-routed execution retain a work advantage over a dense-equivalent implementation across a predeclared sparse-activity scale sweep once recurrent fan-out and bookkeeping are fully charged?",
+  "hypothesis_or_reduction_question": "Can an apparent coordination/efficiency advantage for capacity-limited workspace broadcast be created or removed solely by fan-out charging and direct-router destination knowledge?",
+  "synthetic_or_dev_inputs_used": "Exact analytic binomial expectations over fixed synthetic consumer fan-out and router-knowledge grids; no formal, sealed, official, or held-out data.",
+  "implementation_or_experiment_performed": "Implemented an exact analytic direct-router expectation model and two deliberately different workspace communication-accounting contracts, pinned the accounting flip with tests, documented the non-evidentiary boundary, fixed lint mechanically, and obtained green exact-head CI.",
+  "observations": [
+    "Under shared-slot accounting workspace efficiency is strictly higher in 19/20 scenarios and ties in 1/20.",
+    "Under recipient-charged accounting direct routing is strictly more efficient in 20/20 scenarios.",
+    "Perfect direct-router knowledge saturates the fixed four-recipient budget: recall 1.0 at fan-out 1/2/4, 0.5 at fan-out 8, 0.25 at fan-out 16.",
+    "At fan-out 8 and knowledge 0.25, direct expected recall is about 0.303 while workspace recall is 1.0, but the efficiency ordering still flips with accounting alone.",
+    "Initial exact-head CI failed only at lint; a formatting-only change produced replacement CI 35229064353 success."
+  ],
+  "what_would_falsify_or_reduce_it": "This diagnostic is reduced if a prospectively fixed communication-cost contract plus matched coordination quality makes workspace and direct-routing conclusions invariant to reasonable fan-out charging, or if strong direct/shared-state/attention comparators erase the workspace advantage.",
+  "candidate_formal_question": "Under a prospectively fixed communication-cost contract and matched coordination quality, does a capacity-limited workspace retain a coordination/communication advantage over direct routed communication, a shared recurrent-state reduction, and other matched alternatives across a predeclared module/fan-out regime?",
   "suggested_prospective_object": null,
-  "new_scientific_choices_required_before_formalization": ["state dynamics and behavioral-equivalence criterion", "endogenous activity/ignition rule", "graph/scaling and recurrent-cascade semantics", "dense comparator", "operation taxonomy/weighting", "quality matching", "scale/activity grid and seeds", "tuning budget", "success/failure and uncertainty criterion", "fresh protocol/package/runtime/identity/integrity gates"],
+  "new_scientific_choices_required_before_formalization": [
+    "task and coordination-success semantics",
+    "router destination-knowledge and routing-overhead assumptions",
+    "global publication/read/exposure communication-cost accounting",
+    "direct-routing, shared-recurrent-state and attention comparator definitions",
+    "message/capacity budgets and quality matching",
+    "module/fan-out regime and uncertainty treatment",
+    "seeds/runtime/determinism and tuning budget",
+    "success/failure criteria",
+    "fresh protocol/package/runtime/identity/integrity gates"
+  ],
   "promotion_recommendation": "CONTINUE_EXPLORING",
-  "consumed_identities": {"newly_consumed_by_sub": [], "known_consumed_do_not_touch": ["c19-external-v2-official-v2","c19-external-v2-official-v3","c19-external-v2-official-v4","A01 consumed identities","RV01 R01-16/R01-17","RV02 D1","CX01 Candidate-002"], "c19_r1_observed_consumed": false},
-  "blockers": {"formal_lane": ["No reserved independent formal sub_lane or sub_fallback."], "exploratory_validation": [], "main_only": ["C19-R1 remains MAIN-only and Analyst-blocked for execution; SUB did not touch it."]},
-  "collision_reconciliation": {"current_main_frontier":"C19-R1@c23736b63e6100bcdc38e7f11d94c782eb6273dc; exact-head ordinary CI and pre-START green; execution forbidden by Analyst", "main_frontier_touched_by_sub":false,"main_dependency_created_by_sub":false,"official_inputs_or_outputs_used_by_sub":false,"evidence_analyst_tip_at_write":"9f88fba973f54bc6608d183aacfaccd7952a229f"},
-  "integrity_state": {"status":"EXPLORATORY_NON_EVIDENTIARY_BOUNDARY_HELD","immutable_evidence_mutated":false,"consumed_objects_reexecuted_or_retuned":false,"formal_identity_created_or_consumed_by_sub":false,"started_ref_created_by_sub":false,"formal_workflow_dispatched_by_sub":false,"official_data_accessed_by_sub":false,"main_frontier_touched_by_sub":false},
-  "completion_target": {"target":"One bounded independent H5 lazy-routing/accounting feasibility probe.","status":"reached","result":"Branch/probe/tests/documentation persisted; final exact-head CI green; synthetic crossover accounting recorded as NON_EVIDENTIARY."},
-  "fallback_status": {"sub_fallback":null,"used":false},
+  "consumed_identities": {
+    "newly_consumed_by_sub": [],
+    "known_consumed_do_not_touch": [
+      "c19-external-v2-official-v2",
+      "c19-external-v2-official-v3",
+      "c19-external-v2-official-v4",
+      "A01 consumed identities",
+      "RV01 R01-16/R01-17",
+      "RV02 D1",
+      "CX01 Candidate-002"
+    ],
+    "c19_r1_observed_consumed": false
+  },
+  "blockers": {
+    "formal_lane": ["No reserved independent formal sub_lane or sub_fallback."],
+    "exploratory_validation": [],
+    "main_only": ["C19-R1 remains MAIN-only and Analyst-blocked for execution; SUB did not touch it."]
+  },
+  "collision_reconciliation": {
+    "current_main_frontier": "C19-R1@c23736b63e6100bcdc38e7f11d94c782eb6273dc; exact-head ordinary CI/pre-START green; no STARTED ref observed; execution forbidden by Analyst",
+    "main_frontier_touched_by_sub": false,
+    "main_dependency_created_by_sub": false,
+    "official_inputs_or_outputs_used_by_sub": false,
+    "evidence_analyst_tip_at_write": "9f88fba973f54bc6608d183aacfaccd7952a229f"
+  },
+  "integrity_state": {
+    "status": "EXPLORATORY_NON_EVIDENTIARY_BOUNDARY_HELD",
+    "immutable_evidence_mutated": false,
+    "consumed_objects_reexecuted_or_retuned": false,
+    "formal_identity_created_or_consumed_by_sub": false,
+    "started_ref_created_by_sub": false,
+    "formal_workflow_dispatched_by_sub": false,
+    "official_data_accessed_by_sub": false,
+    "main_frontier_touched_by_sub": false
+  },
+  "completion_target": {
+    "target": "One bounded independent H6 workspace/direct-routing communication-accounting sensitivity diagnostic.",
+    "status": "reached",
+    "result": "Branch, exact analytic probe, tests and NON_EVIDENTIARY documentation persisted; initial lint failure fixed mechanically; replacement exact-head CI green."
+  },
+  "fallback_status": {
+    "sub_fallback": null,
+    "used": false
+  },
   "rejected_lane": null,
   "lane_rejected_reason": null,
-  "historical_incubator_boundaries": {"h9":"completed/NO_ACTION; not touched","revision_authority_fsa":"rejected; not touched"},
-  "next_sub_action": "Return H5 NON_EVIDENTIARY probe to Evidence Analyst for classification; do not touch C19-R1 and do not automatically continue/formalize H5."
+  "historical_incubator_boundaries": {
+    "h9": "completed/NO_ACTION; not touched",
+    "revision_authority_fsa": "rejected; not touched",
+    "h5": "returned to Evidence Analyst last run; not automatically continued"
+  },
+  "next_sub_action": "Return H6 NON_EVIDENTIARY accounting-sensitivity probe to Evidence Analyst for classification; do not touch C19-R1 and do not automatically formalize or continue H6 before Analyst review."
 }
