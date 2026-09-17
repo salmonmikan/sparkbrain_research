@@ -1,14 +1,14 @@
 {
   "run_id": "primary-20260917T2113JST",
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "WAITING_EXTERNAL",
   "started_at": "2026-09-17T21:13:10+09:00",
-  "heartbeat_at": "2026-09-17T21:32:00+09:00",
+  "heartbeat_at": "2026-09-17T21:34:00+09:00",
   "analyst_commit": "9f88fba973f54bc6608d183aacfaccd7952a229f",
   "active_branch": "research/c19-r1-revision-authority-reduction-20260917",
   "active_identity": "c19-r1-revision-authority-official-v1",
-  "active_step": "R1_PRE_START_BLOCKER_SYNTHETIC_FIXTURE",
-  "workflow_run_id": 35221506105,
-  "expected_next_action": "Fix only the invalid synthetic fixture so it satisfies the already-frozen C19 truth-free visible-envelope query-marker contract, push a new exact R1 head, and re-run ordinary CI plus the dedicated R1 pre-START gate. Do not create STARTED or access official data under the current Analyst handoff.",
+  "active_step": "R1_PRE_START_EXACT_HEAD_CHECKS",
+  "workflow_run_id": 35221764005,
+  "expected_next_action": "Re-fetch exact R1 head c23736b63e6100bcdc38e7f11d94c782eb6273dc and collect dedicated pre-START run 35221764005 plus ordinary CI run 35221764016. Fix only science-invariant blockers. If both exact-head checks are green and integrity remains clean, STOP at R1_PRE_START_READY_FOR_ANALYST_REVIEW and return to Evidence Analyst for fresh execution authorization; do not create STARTED under the current handoff.",
   "owner": "main"
 }

@@ -1,54 +1,54 @@
-# SparkBrain Research Orchestrator — MAIN latest
+# MAIN PRIMARY checkpoint — C19-R1 pre-START
 
-Timestamp: `2026-09-17T20:49:00+09:00`  
-Worker role: `main`  
-Execution mode: `RELAY`  
-Evidence Analyst authority: `56f0665ccc536bff6bf48e9eb581ec9a9eafcecc`
+Timestamp: 2026-09-17T21:34:00+09:00  
+Worker role: MAIN  
+Execution mode: PRIMARY  
+Evidence Analyst authority: `9f88fba973f54bc6608d183aacfaccd7952a229f`
 
-## MAIN frontier
+## Frontier
 
-RELAY resumed the Analyst-authorized **C19 official-v4 preservation-qualified final successor**. The prior PRIMARY lease was `WAITING_EXTERNAL`, not an active `RUNNING` collision.
+The primary frontier is the prospectively defined C19-R1 representation-matched reduction: can C19-v4's valid I2 gain be explained by a simpler same-I2, label-free, stateless revision-authority/certainty mechanism rather than SparkBrain-specific persistent dynamics?
 
-The exact research head remained:
+Current exact branch/head: `research/c19-r1-revision-authority-reduction-20260917@c23736b63e6100bcdc38e7f11d94c782eb6273dc`.
+Planned identity: `c19-r1-revision-authority-official-v1`.
+Current phase remains `R1_PRE_START_SPECIFICATION`; the current Analyst handoff explicitly forbids STARTED/one-way execution.
 
-`research/c19-official-v4-preservation-qualified-20260917@74bfe6b4a39758656f291baaa3f16236e3e71964`
+## Fast-path reconciliation
 
-Both required exact-head admission gates completed successfully:
+FAST PATH was used; no full reconciliation was required. The prior lease was stale and belonged to the completed C19-v4 phase, so PRIMARY recovered MAIN after reconciling the new R1 branch namespace and v4 authority. No competing MAIN mutation was observed on the R1 branch/identity. SUB's independent exploratory H9 work was not touched.
 
-- ordinary CI `35214841871` — `completed: success`
-- dedicated v4 pre-START admission `35214841877` — `completed: success`
+Authoritative parent bindings retained prospectively:
 
-Fresh checks found no existing v4 control, preservation, or evidence authority collision. The latest Analyst handoff prospectively authorized `V4_PRE_START_READY_FOR_ONE_WAY` when these gates were green.
+- v4 package: `74bfe6b4a39758656f291baaa3f16236e3e71964`
+- v4 preserve commit: `d8fcc5216ff24940836972816cb0ec8f11e4ba06`
+- v4 evidence commit/tag target: `a0f83318356ced1c84863737803080d0dc69d208`
+- v4 raw SHA-256: `692f8a5dba48f604eb1f5518a8545b80da01e1a00a9e2d2b6b1c0567355d65af`
 
-## STARTED / one-way continuation
+R1 has no STARTED/control, preserve, or evidence ref. Its identity is fresh/unconsumed.
 
-RELAY created:
+## Same-run implementation
 
-`control/c19-official-v4-started-20260917@3ebffb0c55ea9e5dac6c2a52d3d5c0ee6443d58e`
+PRIMARY created the R1 branch directly from the exact v4 package head and preregistered the R1 scientific contract before any R1 outcome existed. The package fixes the scientific question, same-I2 visible representation/readout, zero-parameter stateless revision-authority rule, exact tie behavior, five inherited seeds, official pair/resource/runtime/input binding, target-blind raw contract, raw-before-score/preserve-before-target boundary, v4 immutable comparator binding, paired BREU reduction contrast, bootstrap semantics, result classes, and narrow claim boundary.
 
-The STARTED marker binds:
+The initial package commit was `258dd9fe01d012b367d1d3a9a9b93d9971768499`. Its dedicated pre-START and ordinary CI runs failed only at lint. MAIN consumed the prospectively allowed `R1_PRE_START_BLOCKER` contingency and made a lint-only cleanup at `72a05ee628ceeb3dbd9f8e871aa2c934b0d34861` without changing scientific/runtime semantics.
 
-- protocol: `c19-external-v2-official-protocol-v4`
-- identity: `c19-external-v2-official-v4`
-- Analyst: `56f0665ccc536bff6bf48e9eb581ec9a9eafcecc`
-- exact package: `74bfe6b4a39758656f291baaa3f16236e3e71964`
-- no-retry: `true`
+Dedicated pre-START run `35221506105` on that head then passed installation and lint but failed a unit test because the synthetic fixture omitted the already-frozen truth-free adapter query marker `What necessarily had to follow`. This was a synthetic fixture contract defect, not a new scientific choice. MAIN fixed only the synthetic fixture to satisfy the pre-existing visible-envelope contract, producing current head `c23736b63e6100bcdc38e7f11d94c782eb6273dc`.
 
-This consumed the v4 identity. It may not be retried.
+No official Belief-R access, STARTED, one-way dispatch, identity consumption, immutable R1 raw, evaluator targets, or scoring occurred.
 
-The push triggered official one-way workflow `35217655980`. At checkpoint it is **in progress**. Its one-way job has already passed STARTED-marker/collision validation and exact-package checkout; it is currently setting up the exact Python runtime before official-data access.
+## Current external checks
 
-## Scientific status
+Current exact-head runs started automatically from `c23736b63e6100bcdc38e7f11d94c782eb6273dc`:
 
-New scientific information: **none yet**.
+- dedicated `C19-R1 pre-START readiness`: run `35221764005` — `in_progress` at checkpoint;
+- ordinary `ci`: run `35221764016` — `queued` at checkpoint.
 
-No terminal evidence has been observed yet. No preserved raw, evaluator-target materialization, score, or evidence tag had been observed at this checkpoint.
+PRIMARY is not staying occupied solely to wait for these external jobs. The lease is handed off as `WAITING_EXTERNAL` for Relay collection.
 
-## Lease / stop
+## Relay continuation
 
-Lease status: **`WAITING_EXTERNAL`**.
+Relay/next MAIN must first re-fetch the lease, exact R1 head, Analyst authority, R1 control/preserve/evidence namespaces, and both exact-head workflows. If either check fails for a science-invariant implementation/readiness defect, MAIN owns the fix and may continue under `R1_PRE_START_BLOCKER`. If a failure requires a new comparator/mechanism/resource/runtime-version/statistical/scientific choice, STOP for Analyst. If ordinary CI and the dedicated pre-START gate are both green on the same exact head and integrity remains clean, classify `R1_PRE_START_READY_FOR_ANALYST_REVIEW` and STOP before STARTED for a fresh Analyst execution authorization.
 
-RELAY stopped rather than occupying the worker while workflow `35217655980` runs externally. The next MAIN/RELAY cycle must collect this exact run.
+## Scientific result
 
-- If it succeeds: independently verify the v4 preservation branch, terminal evidence tag/manifest, exact bindings and terminal classification, then finalize and STOP.
-- If it fails anywhere after STARTED: preserve diagnostics, classify `V4_POST_START_FAILURE`, keep v4 consumed/no-retry, and STOP. No automatic v5 is authorized.
+No new scientific information was produced in this run. All progress is prospective specification/readiness only. C19-v4 remains immutable terminal evidence; v2/v3/v4 consumed identities were not rerun, retuned, rescored, or repaired.
