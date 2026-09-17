@@ -77,7 +77,15 @@
     "raw_before_score": true,
     "immutable_preserve_before_targets": true,
     "no_clobber": true,
-    "target_blind": true
+    "target_blind": true,
+    "atomic_idx_source_map": {
+      "artifact": "atomic_idx_source_map.json",
+      "schema_version": "1",
+      "cluster_key": "atomic_idx",
+      "target_free": true,
+      "pair_assignment": "exactly_once",
+      "preserve_with_raw_before_targets": true
+    }
   },
   "scoring_contract": {
     "metric": "BREU",
@@ -85,19 +93,25 @@
     "reduction_contrast": "C19-v4 primary BREU minus R1 BREU",
     "seed_aggregation": "mean correctness over the five fixed seeds per pair before paired reduction contrast",
     "bootstrap": {
-      "method": "paired_official_pair_bootstrap",
+      "primary_method": "paired_atomic_idx_cluster_bootstrap",
+      "primary_cluster_key": "atomic_idx",
+      "primary_draws_per_resample": "number_of_unique_atomic_idx_clusters",
+      "cluster_observation_policy": "carry_all_paired_observations_at_sampled_cluster_multiplicity",
+      "cluster_order": "first_occurrence_in_pair_index_order",
+      "secondary_sensitivity_method": "paired_official_pair_bootstrap_sensitivity",
+      "secondary_draws_per_resample": 1744,
       "resamples": 10000,
-      "draws_per_resample": 1744,
       "seed": 19901,
       "confidence_level": 0.95,
+      "quantile_method": "linear_type7",
       "lower_p": 0.025,
       "upper_p": 0.975
     },
     "classification": {
-      "SURVIVES_REDUCTION": "95% paired CI lower > 0",
-      "REDUCED": "95% paired CI upper <= 0",
-      "INCONCLUSIVE": "CI contains 0",
-      "INVALID_EVIDENCE": "binding/raw/digest/join/target-safety/scorer violation"
+      "SURVIVES_REDUCTION": "95% atomic_idx-cluster CI lower > 0",
+      "REDUCED": "95% atomic_idx-cluster CI upper <= 0",
+      "INCONCLUSIVE": "atomic_idx-cluster CI contains 0",
+      "INVALID_EVIDENCE": "binding/raw/source-map/digest/join/target-safety/scorer violation"
     },
     "claim_boundary": "SURVIVES_REDUCTION rejects only this fixed stateless authority reduction; it is not proof of persistent dynamics"
   },
