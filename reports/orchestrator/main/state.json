@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-09-17T21:45:00+09:00",
+  "timestamp": "2026-09-17T22:22:00+09:00",
   "worker_role": "main",
-  "execution_mode": "RELAY",
+  "execution_mode": "PRIMARY",
   "evidence_analyst_commit": "9f88fba973f54bc6608d183aacfaccd7952a229f",
   "current_lane": "C19-R1 representation-matched stateless revision-authority reduction",
   "current_phase": "R1_PRE_START_READY_FOR_ANALYST_REVIEW",
@@ -50,17 +50,18 @@
     "c19_r1_revision_authority_official_v1": "fresh_unstarted_unconsumed"
   },
   "blockers": [
-    "Readiness is green, but the current Evidence Analyst handoff explicitly forbids R1 STARTED/one-way execution.",
-    "A fresh Evidence Analyst handoff is required before any R1 one-way execution authority exists."
+    "R1 exact-head readiness is complete, but Evidence Analyst commit 9f88fba973f54bc6608d183aacfaccd7952a229f explicitly forbids STARTED/one-way execution.",
+    "A fresh Evidence Analyst handoff explicitly authorizing R1 execution is required before any scientific mutation can continue."
   ],
   "lease_collision_reconciliation": {
-    "prior_lease_run_id": "primary-20260917T2113JST",
-    "prior_lease_status": "WAITING_EXTERNAL",
-    "prior_lease_heartbeat": "2026-09-17T21:34:00+09:00",
-    "fresh_running_primary_collision": false,
-    "exact_branch_head_matches_primary_checkpoint": true,
+    "prior_lease_run_id": "relay-20260917T2145JST",
+    "prior_lease_status": "BLOCKED",
+    "prior_lease_heartbeat": "2026-09-17T21:45:00+09:00",
+    "fresh_running_main_collision": false,
+    "stale_or_nonrunning_lease_recovered_after_ref_reconciliation": true,
+    "exact_branch_head_matches_prior_checkpoint": true,
     "sub_collision": false,
-    "sub_main_work_avoided": "SUB explicitly avoided the C19-R1 branch/identity and worked an independent NON_EVIDENTIARY H5 incubator target."
+    "sub_main_work_avoided": "SUB is on independent NON_EVIDENTIARY H5 exploratory branch research/exploratory-sub-h5-lazy-routing-20260917 and did not touch C19-R1."
   },
   "integrity_status": {
     "official_data_accessed": false,
@@ -75,19 +76,24 @@
     "r1_preserve_refs_present": false,
     "r1_evidence_tags_present": false
   },
-  "critical_path_actions_performed": [
-    "Collected dedicated R1 pre-START readiness run 35221764005 and verified success on exact head c23736b63e6100bcdc38e7f11d94c782eb6273dc.",
-    "Collected ordinary CI run 35221764016 and verified success on the same exact head.",
-    "Re-fetched the exact R1 branch and confirmed it remains at c23736b63e6100bcdc38e7f11d94c782eb6273dc.",
-    "Verified no R1 STARTED/control, preserve, or evidence refs exist.",
-    "Consumed the prospectively fixed R1_PRE_START_READY_FOR_ANALYST_REVIEW contingency and stopped before STARTED."
+  "critical_path_fixes_completed": [],
+  "same_run_steps": [
+    "Re-fetched Evidence Analyst authority and confirmed it remains 9f88fba973f54bc6608d183aacfaccd7952a229f.",
+    "Re-fetched exact R1 branch and confirmed head c23736b63e6100bcdc38e7f11d94c782eb6273dc is unchanged.",
+    "Re-verified R1 pre-START readiness run 35221764005 is completed/success on the exact head.",
+    "Re-verified ordinary CI run 35221764016 is completed/success on the same exact head.",
+    "Re-verified no R1 STARTED/control, preserve, or evidence refs exist.",
+    "Reconciled the prior BLOCKED RELAY lease and acquired PRIMARY coordination without a fresh RUNNING collision.",
+    "Stopped before STARTED as required by the prospectively fixed R1_PRE_START_READY_FOR_ANALYST_REVIEW contingency."
   ],
-  "stop_reason": "Both exact-head readiness gates are green, which triggers the prospectively fixed R1_PRE_START_READY_FOR_ANALYST_REVIEW branch. The current Analyst authority requires STOP before STARTED and a fresh Analyst handoff for execution authorization.",
-  "work_left_for_sub": "None on the MAIN critical path. SUB remains independent and must not touch R1.",
-  "next_main_action": "Wait for a fresh Evidence Analyst handoff. If and only if that handoff explicitly authorizes R1 one-way execution, a future PRIMARY/RELAY must re-fetch the exact R1 head, identity, bindings, control/preserve/evidence namespaces, CI/review and collision state before STARTED. Otherwise remain stopped.",
+  "same_run_stop_reason": "The current Analyst authority is unchanged and explicitly requires STOP at R1_PRE_START_READY_FOR_ANALYST_REVIEW. Any STARTED/one-way execution would exceed prospective authorization.",
+  "work_left_for_sub": "None on the MAIN critical path. SUB remains independent; MAIN did not touch its NON_EVIDENTIARY H5 exploratory work.",
+  "reserved_sub_work_not_touched": true,
+  "lane_repartition_reason": null,
+  "next_main_action": "Wait for a fresh Evidence Analyst handoff. If a newer authority explicitly authorizes R1 execution, re-fetch exact head, identity freshness, source/protocol/package/runtime/input/scorer/preserver bindings, control/preserve/evidence namespaces, exact-head CI/review and collision state immediately before STARTED. Otherwise remain stopped.",
   "write_path_diagnostics": {
-    "lease_update": "success",
-    "research_or_scientific_write_attempted": false,
-    "reason_no_scientific_write": "Current Analyst authority forbids STARTED/one-way execution and both readiness checks are already green."
+    "lease_heartbeat_update": "success commit e787d55b40cde37d918924b3e802c98b09b0784b",
+    "scientific_or_research_branch_write_attempted": false,
+    "reason_no_scientific_write": "Execution is explicitly forbidden by current Analyst authority after readiness completion."
   }
 }
