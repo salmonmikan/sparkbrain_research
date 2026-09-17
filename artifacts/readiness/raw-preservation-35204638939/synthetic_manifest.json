@@ -1,0 +1,7 @@
+{
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "kind": "synthetic_raw_preservation_readiness",
+  "payload_sha256": "eb6e41735d60751b37193ccd8b39ee79d549c14a11e40f003911dc4f9be3587a",
+  "rows": 512,
+  "source_head": "158ad46cafcc9d9b17f01a85488562b63e81257d"
+}
