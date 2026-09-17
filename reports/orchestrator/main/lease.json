@@ -1,14 +1,15 @@
 {
   "run_id": "primary-20260918T0417JST",
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "WAITING_EXTERNAL",
   "started_at": "2026-09-18T04:17:32+09:00",
-  "heartbeat_at": "2026-09-18T04:18:00+09:00",
+  "heartbeat_at": "2026-09-18T04:31:30+09:00",
   "analyst_commit": "b09d90d0545a0448ea5a310f9373969e7471b15d",
   "active_branch": "research/c19-r2-fsa-state-tracker-spec-20260918",
   "active_identity": null,
-  "active_step": "R2_PRE_START_SPECIFICATION",
-  "workflow_run_id": null,
-  "expected_next_action": "Create the fresh pre-formal R2 branch from the immutable C19-v4 scientific package lineage, freeze a distinct deterministic representation-matched finite-state/state-tracker mechanism plus resource/input/statistical/preservation bindings, add golden fixtures and dedicated pre-START checks, run exact-head CI/readiness, and STOP at fresh Evidence Analyst review without reserving an identity or crossing STARTED.",
+  "active_step": "R2_PRE_START_DEDICATED_GREEN_CI_RUNNING",
+  "workflow_run_id": 35265194183,
+  "workflow_run_ids": [35265194183, 35265194243],
+  "expected_next_action": "Collect ordinary CI 35265194183 for exact head 5d5d171cf872baed7a636fd246ab36f3a91a6716 while retaining dedicated R2 pre-START success 35265194243. If CI fails only for a science-invariant mechanical reason, fix that blocker and require ordinary CI plus dedicated pre-START on the same new final SHA. If a semantic/scientific gap appears, STOP for Evidence Analyst. If CI is green, re-fetch Analyst tip and exact R2 head, persist R2_PRE_START_READY_FOR_ANALYST_REVIEW, and STOP. Do not reserve a formal identity, create STARTED, or execute official data under the current Analyst handoff.",
   "owner": "main"
 }
