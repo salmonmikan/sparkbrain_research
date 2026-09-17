@@ -1,0 +1,285 @@
+{
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "exploratory_target": "H1 explicit competing-belief retention versus a matched probabilistic recurrent filter in a synthetic three-state non-monotonic world",
+  "interpretation_boundary": "This is a synthetic reduction diagnostic only. Near-equivalence here cannot support or reject H1 formally and does not reinterpret any formal result.",
+  "rows": [
+    {
+      "competing_beliefs": {
+        "selected_decay": 0.25,
+        "selected_margin": 1.0,
+        "test": {
+          "accuracy": 0.7570421006944444,
+          "false_revision_rate": 0.12921670979277522,
+          "return_recovery_2step": 0.6736520836292555,
+          "switch_latency": 2.347192419958275,
+          "utility": 0.6584574308473093
+        }
+      },
+      "false_revision_weight": 1.0,
+      "latency_weight": 0.03,
+      "probabilistic_filter": {
+        "selected_hysteresis": 0.35,
+        "selected_stay_prior": 0.86,
+        "test": {
+          "accuracy": 0.7575086805555555,
+          "false_revision_rate": 0.12965948523323684,
+          "return_recovery_2step": 0.6746504091875476,
+          "switch_latency": 2.34367836849422,
+          "utility": 0.6587364056456242
+        }
+      },
+      "probabilistic_minus_competing_test_utility": 0.00027897479831484606,
+      "return_recovery_weight": 0.15
+    },
+    {
+      "competing_beliefs": {
+        "selected_decay": 0.65,
+        "selected_margin": 1.0,
+        "test": {
+          "accuracy": 0.7553168402777778,
+          "false_revision_rate": 0.09255507899930496,
+          "return_recovery_2step": 0.5277647699478406,
+          "switch_latency": 3.1114845679460483,
+          "utility": 0.5560268607329625
+        }
+      },
+      "false_revision_weight": 2.0,
+      "latency_weight": 0.03,
+      "probabilistic_filter": {
+        "selected_hysteresis": 0.35,
+        "selected_stay_prior": 0.92,
+        "test": {
+          "accuracy": 0.7567599826388889,
+          "false_revision_rate": 0.0929624582977947,
+          "return_recovery_2step": 0.5285176832036373,
+          "switch_latency": 3.112233054191289,
+          "utility": 0.5567457268981064
+        }
+      },
+      "probabilistic_minus_competing_test_utility": 0.0007188661651439388,
+      "return_recovery_weight": 0.15
+    },
+    {
+      "competing_beliefs": {
+        "selected_decay": 0.25,
+        "selected_margin": 1.0,
+        "test": {
+          "accuracy": 0.7570421006944444,
+          "false_revision_rate": 0.12921670979277522,
+          "return_recovery_2step": 0.6736520836292555,
+          "switch_latency": 2.347192419958275,
+          "utility": 0.588041658248561
+        }
+      },
+      "false_revision_weight": 1.0,
+      "latency_weight": 0.06,
+      "probabilistic_filter": {
+        "selected_hysteresis": 0.25,
+        "selected_stay_prior": 0.86,
+        "test": {
+          "accuracy": 0.7695855034722222,
+          "false_revision_rate": 0.1504068825880371,
+          "return_recovery_2step": 0.6908915773078417,
+          "switch_latency": 2.2531208006937384,
+          "utility": 0.587625109438737
+        }
+      },
+      "probabilistic_minus_competing_test_utility": -0.0004165488098240022,
+      "return_recovery_weight": 0.15
+    },
+    {
+      "competing_beliefs": {
+        "selected_decay": 0.25,
+        "selected_margin": 1.0,
+        "test": {
+          "accuracy": 0.7570421006944444,
+          "false_revision_rate": 0.12921670979277522,
+          "return_recovery_2step": 0.6736520836292555,
+          "switch_latency": 2.347192419958275,
+          "utility": 0.7595052433916977
+        }
+      },
+      "false_revision_weight": 1.0,
+      "latency_weight": 0.03,
+      "probabilistic_filter": {
+        "selected_hysteresis": 0.25,
+        "selected_stay_prior": 0.86,
+        "test": {
+          "accuracy": 0.7695855034722222,
+          "false_revision_rate": 0.1504068825880371,
+          "return_recovery_2step": 0.6908915773078417,
+          "switch_latency": 2.2531208006937384,
+          "utility": 0.7588524700557254
+        }
+      },
+      "probabilistic_minus_competing_test_utility": -0.0006527733359722454,
+      "return_recovery_weight": 0.3
+    },
+    {
+      "competing_beliefs": {
+        "selected_decay": 0.65,
+        "selected_margin": 0.5,
+        "test": {
+          "accuracy": 0.7676649305555555,
+          "false_revision_rate": 0.15046576198365375,
+          "return_recovery_2step": 0.6849504192760779,
+          "switch_latency": 2.255020700194181,
+          "utility": 0.7158266774874528
+        }
+      },
+      "false_revision_weight": 0.5,
+      "latency_weight": 0.02,
+      "probabilistic_filter": {
+        "selected_hysteresis": 0.25,
+        "selected_stay_prior": 0.86,
+        "test": {
+          "accuracy": 0.7695855034722222,
+          "false_revision_rate": 0.1504068825880371,
+          "return_recovery_2step": 0.6908915773078417,
+          "switch_latency": 2.2531208006937384,
+          "utility": 0.7184088038951131
+        }
+      },
+      "probabilistic_minus_competing_test_utility": 0.0025821264076603123,
+      "return_recovery_weight": 0.1
+    },
+    {
+      "competing_beliefs": {
+        "selected_decay": 0.25,
+        "selected_margin": 1.0,
+        "test": {
+          "accuracy": 0.7570421006944444,
+          "false_revision_rate": 0.12921670979277522,
+          "return_recovery_2step": 0.6736520836292555,
+          "switch_latency": 2.347192419958275,
+          "utility": 0.5598727610001741
+        }
+      },
+      "false_revision_weight": 2.0,
+      "latency_weight": 0.06,
+      "probabilistic_filter": {
+        "selected_hysteresis": 0.35,
+        "selected_stay_prior": 0.86,
+        "test": {
+          "accuracy": 0.7575086805555555,
+          "false_revision_rate": 0.12965948523323684,
+          "return_recovery_2step": 0.6746504091875476,
+          "switch_latency": 2.34367836849422,
+          "utility": 0.559964130735693
+        }
+      },
+      "probabilistic_minus_competing_test_utility": 9.136973551882033e-05,
+      "return_recovery_weight": 0.3
+    }
+  ],
+  "summary": {
+    "competing_wins": 2,
+    "max_absolute_test_utility_gap": 0.0025821264076603123,
+    "mean_absolute_test_utility_gap": 0.0007901098754056942,
+    "probabilistic_wins": 4
+  },
+  "synthetic_contract": {
+    "competing_parameter_grid": {
+      "decay": [
+        0.0,
+        0.25,
+        0.5,
+        0.65,
+        0.75,
+        0.82,
+        0.88,
+        0.92,
+        0.95,
+        0.97
+      ],
+      "revision_margin": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0,
+        1.5
+      ]
+    },
+    "dev_seeds": [
+      20260901,
+      20260902,
+      20260903,
+      20260904,
+      20260905
+    ],
+    "memory_budget": "Both mechanisms retain three scalar state values and use exactly two DEV-selected control parameters; neither sees TEST truth during selection.",
+    "probabilistic_observation_model": "The synthetic observation reliability is part of the declared task model and is not tuned on TEST outcomes.",
+    "probabilistic_parameter_grid": {
+      "revision_hysteresis": [
+        0.0,
+        0.02,
+        0.05,
+        0.08,
+        0.12,
+        0.18,
+        0.25,
+        0.35
+      ],
+      "stay_prior": [
+        0.7,
+        0.8,
+        0.86,
+        0.9,
+        0.92,
+        0.94,
+        0.96,
+        0.98
+      ]
+    },
+    "selection_rule": "Each mechanism selects its two parameters independently on DEV utility only, then evaluates those fixed parameters on disjoint TEST seeds.",
+    "sequence_length": 72,
+    "sequences_per_seed": 256,
+    "states": [
+      0,
+      1,
+      2
+    ],
+    "test_seeds": [
+      20260918,
+      20260919,
+      20260920,
+      20260921,
+      20260922
+    ],
+    "utility_weights": [
+      {
+        "false_revision_weight": 1.0,
+        "latency_weight": 0.03,
+        "return_recovery_weight": 0.15
+      },
+      {
+        "false_revision_weight": 2.0,
+        "latency_weight": 0.03,
+        "return_recovery_weight": 0.15
+      },
+      {
+        "false_revision_weight": 1.0,
+        "latency_weight": 0.06,
+        "return_recovery_weight": 0.15
+      },
+      {
+        "false_revision_weight": 1.0,
+        "latency_weight": 0.03,
+        "return_recovery_weight": 0.3
+      },
+      {
+        "false_revision_weight": 0.5,
+        "latency_weight": 0.02,
+        "return_recovery_weight": 0.1
+      },
+      {
+        "false_revision_weight": 2.0,
+        "latency_weight": 0.06,
+        "return_recovery_weight": 0.3
+      }
+    ],
+    "world_correct_observation_probability": 0.68,
+    "world_stay_probability": 0.92
+  }
+}
