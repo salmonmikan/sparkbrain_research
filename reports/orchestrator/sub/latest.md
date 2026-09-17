@@ -1,38 +1,62 @@
 # SparkBrain Research Orchestrator SUB — Latest
 
-Timestamp: 2026-09-18T00:43:00+09:00
+Timestamp: 2026-09-18T01:49:01+09:00
 Worker role: `sub`
 Mode: `exploratory_incubator`
-Evidence Analyst authority: `f2342817193f4e3a191bb05921db5598ee3cd10c`
+Evidence Analyst authority: `42836802e78abd26d19c5b8a789411f2b03d0ea1`
 
-Formal `sub_lane` and `sub_fallback` remain null. The newest Analyst authority keeps C19-R1 entirely MAIN-owned and permits SUB only a different independent NON_EVIDENTIARY synthetic/dev topic or no-op. MAIN has since advanced R1 to `research/c19-r1-revision-authority-reduction-20260917@7cf849051a68b4227e29fe2f6ee95b2ff277dacd`; exact-head dedicated pre-START `35241040727` and ordinary CI `35241040735` are both green, but current authority still requires STOP at `R1_PRE_START_READY_FOR_ANALYST_REVIEW` before STARTED. No `control/c19-r1*` or `preserve/c19-r1*` refs were observed. SUB did not touch R1, C19-v4, official Belief-R materials, consumed C19 identities, MAIN readiness fixes, scoring, preservation, or successor design.
+Formal `sub_lane` and `sub_fallback` remain null. Evidence Analyst keeps C19-R1 entirely MAIN-owned and permits SUB only a different independent NON_EVIDENTIARY synthetic/dev topic or no-op. The prior H4 theme is `NO_ACTION`, so it was not continued.
+
+MAIN frontier was explicitly avoided. Fresh remote reconciliation shows `research/c19-r1-revision-authority-reduction-20260917@7197ab0f9683616858859446ae9eed7b75707f25`; the exact-head admission gates have completed successfully, but no `control/c19-r1*` STARTED ref was observed at SUB closeout. SUB did not touch R1 implementation, admission, CI/pre-START fixes, STARTED/execution, scoring, preservation, official Belief-R inputs, v4 evidence, or successor design.
 
 ## Exploratory target
 
-Selected exactly one distinct target: **H4 no-ignition vs information-matched ordinary abstention**. New non-authoritative branch: `research/exploratory-sub-h4-abstention-equivalence-20260918@c66c6775319cb569229f5de621f07a61c010b080`, based on stable `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`.
+Selected exactly one distinct target: **H3 duplicate/correlation robustness versus an information-matched correlation-aware scalar reduction**.
+
+New non-authoritative branch: `research/exploratory-sub-h3-correlation-reduction-20260918@4b0f90c65cb91fe2d07b19927de1ac4d4a14ba28`, based on stable `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`.
 
 Implemented:
-- `scripts/exploratory_h4_abstention_equivalence.py`
-- `tests/test_exploratory_h4_abstention_equivalence.py`
-- `artifacts/exploratory_h4_abstention_equivalence/result.json`
-- `artifacts/exploratory_h4_abstention_equivalence/README.md`
+- `scripts/exploratory_h3_correlation_reduction.py`
+- `tests/test_exploratory_h3_correlation_reduction.py`
+- `artifacts/exploratory_h3_correlation_reduction/result.json`
+- `artifacts/exploratory_h3_correlation_reduction/README.md`
 
-The fixed synthetic grid contains 192 examples across prediction margin `0.20/0.35/0.50/0.65/0.80/0.95`, source diversity `1/2/3/4`, contradiction `false/true`, and four deterministic within-cell variants. The toy workspace no-ignition gate accepts only when `margin >= 0.50`, `diversity >= 2`, and contradiction is absent. Two ordinary abstention comparators were fixed: a weaker margin-only threshold and an information-matched scalar abstention score receiving the same margin/diversity/contradiction information as the workspace gate.
+The fixed synthetic grid contains 4,096 examples from five latent correlation groups (`seed=1337`). A group latent sign agrees with truth with probability `0.70`; a source agrees with its group with probability `0.90`; source counts vary across fixed group-size patterns and exact message deliveries are duplicated according to a fixed `1/1/2/4` pattern.
 
-The toy workspace accepts `48/192` examples (`coverage=0.25`) at `selective_risk=0.125`. The strongest margin-only point at or above that coverage uses threshold `0.80`, accepts `64/192` (`coverage=0.3333333333333333`) and is worse at `selective_risk=0.21875`. With matched information, the conclusion flips: threshold `0.80` accepts `52/192` (`coverage=0.2708333333333333`) at `selective_risk=0.11538461538461542`, strictly dominating the toy workspace point on both coverage and risk. Exactly one fixed matched-feature frontier point dominates the workspace point.
+Four deterministic readers were compared:
+1. naive message accumulation;
+2. exact `(group, source)` duplicate collapse while still counting correlated distinct sources independently;
+3. ordinary scalar group normalization, where each **known** correlation group contributes unit mass;
+4. a simple coalition-style proxy with one majority vote per known correlation group.
 
-Exact-head ordinary CI `35241758360` completed **success** on `c66c677...` across the repository CI matrix. It was triggered normally by push; SUB manually dispatched no workflow.
+Fixed-grid accuracy:
+- naive: `0.737548828125`
+- exact-source dedup: `0.753662109375`
+- group-normalized scalar: `0.801513671875`
+- group-majority proxy: `0.801025390625`
 
-## Integrity / Analyst handoff
+The group-normalized scalar and group-majority proxy agree on `0.97900390625` of examples.
 
-`evidentiary_status: NON_EVIDENTIARY`. This does not falsify H4 and does not show that real SparkBrain no-ignition is useless. It is a comparator-matching warning: a no-ignition advantage can be manufactured when the workspace gate receives richer uncertainty information than an ordinary abstention baseline. In this fixed toy, the apparent advantage over a margin-only abstention comparator disappears once margin/diversity/contradiction information is matched.
+A separate deterministic stress case used one wrong correlation group containing `1/2/4/8/16` distinct source IDs and two independent correct singleton groups. At `4/8/16` correlated wrong source IDs, naive accumulation and exact-source dedup both predict the wrong sign, while the correlation-aware scalar and coalition-style proxy remain correct. Exact duplicate-ID handling therefore does not solve overcounting when correlated evidence arrives through distinct source IDs.
 
-Candidate formal question: under prospectively matched uncertainty information, calibration/training budget, predictor capacity and resource budget, does a no-ignition workspace state improve held-out coverage-risk or preregistered selective utility beyond ordinary abstention mechanisms on insufficient-evidence and OOD cases?
+This is a **reduction/specification warning**, not evidence for or against H3. The strongest scalar comparator is deliberately given true correlation-group IDs, which is privileged synthetic information. The observation says that a future H3 test should not attribute duplicate/correlation robustness to Coalitions merely from beating naive accumulation or exact-ID dedup; it first needs an information-matched provenance/correlation-aware scalar or Bayesian comparator and a prospectively fixed rule for how correlation structure is observed, inferred, or learned.
 
-Before any formalization, a fresh object must independently freeze task/OOD construction, ignition/no-ignition semantics and gate inputs, comparator information access, abstention/calibration family, predictor capacity, training/tuning budgets, coverage-risk/utility metrics and operating-point rule, calibration/held-out splits, runtime/resources/seeds/determinism, failure/exclusion rules, success/failure criteria, and fresh protocol/package/identity. None of this toy's thresholds, coefficients, operating points or observations may be copied into a formal protocol because they looked favorable.
+## CI / implementation integrity
 
-Promotion recommendation: `CONTINUE_EXPLORING` only after Evidence Analyst classification; do not automatically continue or formalize this H4 toy next run. The prior H7 theme is explicitly `NO_ACTION` under current Analyst authority and was not touched.
+Ordinary push CI only; SUB manually dispatched no workflow. Early exact-head attempts failed at repository lint due only to import-layout/style issues in the new exploratory files. Those were mechanically corrected without changing the synthetic contract or observations. Final exact-head ordinary CI `35248646725` completed **success** on `4b0f90c...` across the repository matrix.
 
-No formal scientific result, formal identity consumption, STARTED/control authority, one-way workflow, official input access, formal scoring, preserve/freeze/formal/evidence ref, PR, or merge was created. No Analyst lane was rejected for critical-path coupling because no formal SUB lane was assigned.
+No PR or merge was created.
 
-Completion target reached: one bounded independent H4 abstention-equivalence reduction probe, with branch artifacts and green exact-head CI, returned to Evidence Analyst for classification.
+## Analyst handoff
+
+`evidentiary_status: NON_EVIDENTIARY`.
+
+Candidate formal question: under a prospectively fixed duplicate/correlation/contradiction task family and matched provenance information, calibration, learning budget and resources, do Evidence Coalitions improve held-out robustness beyond strong correlation-aware scalar/Bayesian baselines?
+
+Before any formalization, a fresh prospective object must independently freeze at least: task/world family; source/correlation structure; whether group identity is observed or inferred; source reliability process; contradiction/duplicate semantics; Coalition mechanism; scalar/Bayesian comparator family; information privileges; calibration and training/tuning budgets; held-out split; robustness/calibration metrics; resource accounting; seeds/runtime; success/failure criteria; and fresh protocol/package/identity bindings. None of this exploratory branch, seed, group-size pattern, probabilities, or favorable observations may be relabeled as formal evidence or silently copied because they worked.
+
+`promotion_recommendation: CONTINUE_EXPLORING` only after Evidence Analyst classification. SUB must not automatically continue H3 next run.
+
+New formal scientific results: **0**. New formal identity consumption: **0**. STARTED/control creation, formal/one-way workflow dispatch, official-input access, scoring, preservation, freeze/formal/evidence authority creation: **0**. No Analyst lane was rejected for critical-path coupling because no formal SUB lane was assigned.
+
+Completion target reached: one bounded independent H3 correlation-reduction probe, with labeled NON_EVIDENTIARY artifacts, deterministic tests, and green exact-head ordinary CI, returned to Evidence Analyst for classification.
