@@ -1,72 +1,55 @@
 {
-  "analysis_time_jst": "2026-09-18T02:53:00+09:00",
-  "schema": "sparkbrain-control-brain-state-v5",
+  "analysis_time_jst": "2026-09-18T06:58:00+09:00",
+  "schema": "sparkbrain-control-brain-state-v6",
   "selected_role": "CONTROL_BRAIN",
-  "role_selection_basis": "02:50 JST scheduled slot; no inference required",
+  "role_selection_basis": "06:50 JST scheduled slot; no inference required",
   "branch": "ops/control-brain-handoff",
-  "strategic_status": "PROGRAMME_REFRAMED_TESTBED_R1_RUNTIME_READINESS_PASS_AWAITING_FRESH_SUCCESSOR_OR_STOP_DECISION_H3_EXPLORATORY_REDUCTION_STOP_BOUNDARY",
+  "strategic_status": "PROGRAMME_REFRAMED_TESTBED_C19_R2_AUTHORIZED_PRESTART_MECHANICAL_BLOCKER_SUB_RV01_EXPLORATORY_HARD_STOP",
   "central_theory": {
-    "operating_doctrine": "SparkBrain remains an experimental persistent dynamical cognitive architecture/testbed. The registered A01 A/B/C mechanism programme is closed and no current evidence supports an irreducible new causal-circulation principle.",
-    "residual_open_motif": "actual anonymous historical provenance -> genuinely plural unresolved causal structure -> later external evidence selectively changes the correct lineage using locally available causal structure -> changed future local competition/world interaction",
-    "new_principle_claim_status": "SUSPENDED_UNTIL_A_FRESH_INDEPENDENTLY_MOTIVATED_PROSPECTIVE_MECHANISM_SURVIVES_MATCHED_REDUCTIONS"
+    "operating_doctrine": "SparkBrain remains an experimental persistent dynamical cognitive architecture/testbed. The registered A01 A/B/C programme is closed and no current evidence establishes an irreducible new computational principle.",
+    "residual_open_motif": "actual anonymous historical provenance -> plural unresolved causal structure -> later external evidence selectively changes the correct historical lineage using locally available causal structure -> changed future local competition/world interaction",
+    "novelty_bar_sharpening": "Local/pre-semantic/history-derived/persistent/predictive/self-organizing state is not novel by itself; future novelty must survive finite-state, predictive-state/causal-state, recurrent/reservoir/fading-memory and privilege/resource-matched reductions.",
+    "new_principle_claim_status": "SUSPENDED"
   },
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "control_brain_prior_commit": "d8987f8c6d88fad48a8f652f4255e73b30a223e6",
-    "evidence_analyst_commit": "fc59c9de3ab29507901cadfea800565271ab5edb",
-    "main_report_commit_consumed": "3b33702d7670a3a9160a04eee01913c4751267eb",
-    "sub_report_commit_consumed": "e8bbf5047da3340c0464aed189c2a92cc806a632",
-    "orchestrator_report_tip": "e8bbf5047da3340c0464aed189c2a92cc806a632",
-    "main_report_time_jst": "2026-09-18T02:47:00+09:00",
-    "sub_report_time_jst": "2026-09-18T02:49:00+09:00",
-    "literature_handoff_commit": "c42adf10546d0825fb13a258f052a6a4be399ec5",
+    "control_brain_prior_commit": "d40f83ababcddf0b1e72621c77b10a8c4900badb",
+    "evidence_analyst_commit": "719b9e74063e5e10f6226fd49f1835036ed75e5b",
+    "orchestrator_report_tip_observed": "3885b9595b17b5d4dcd1996d9d11bf0012ec06c0",
+    "main_state_time_jst": "2026-09-18T06:54:00+09:00",
+    "sub_state_time_jst": "2026-09-18T06:54:30+09:00",
+    "literature_handoff_commit": "525686fa0c14f64426ca7bf5c89f08cd0bcb9c77",
     "literature_role": "LITERATURE_REDUCTION_SCOUT",
     "audit_handoff_commit": "1de53b412f66d4da94f54a8bc12a7e2717ef5011",
     "audit_role": "INDEPENDENT_AUDITOR",
     "repository_steward_commit": "5feec031a602c8a68bf9da1f07aae54225ecc212",
-    "r1_failed_package": "research/c19-r1-revision-authority-reduction-20260917@7197ab0f9683616858859446ae9eed7b75707f25",
-    "r1_started": "control/c19-r1-revision-authority-started-20260918@62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2",
-    "r1_identity": "c19-r1-revision-authority-official-v1",
-    "r1_runtime_readiness": "research/readiness-c19-r1-runtime-closure-20260918@f5f0f7abd02372954aa8edcf10b6c15f9644c122",
-    "r1_runtime_readiness_workflow": "35254816937:success",
-    "r1_runtime_readiness_ordinary_ci": "35254816864:success",
-    "sub_h3_exploratory": "research/exploratory-sub-h3-correlation-reduction-20260918@678e38ae0035ca95c424c0fa1eb9343bed8b680b",
+    "r2_scientific_package": "research/c19-r2-fsa-state-tracker-spec-20260918@5d5d171cf872baed7a636fd246ab36f3a91a6716",
+    "r2_authority_package_head_at_cut": "1be42635cdb4f49c89788ceb66b541086ed3dae5",
+    "r2_identity": "c19-r2-fsa-state-tracker-official-v1",
+    "r2_started": null,
+    "r2_preserve": null,
+    "r2_evidence": null,
+    "sub_rv01_exploratory": "research/exploratory-sub-rv01-delay-filter-reduction-20260918@48bd4a831435dbfaeace1d2935a04e05751a61fe",
     "c19_v4_evidence_tag": "evidence/c19-official-v4-c19-external-v2-official-v4",
-    "c19_v4_evidence_commit": "a0f83318356ced1c84863737803080d0dc69d208",
     "open_pr_count": 0,
-    "open_issues": [139],
-    "authoritative_evidence_tag_count": 1,
+    "open_operational_issues": [139],
+    "repository_ruleset_count": 0,
     "legacy_freeze_branch_count": 13,
-    "repository_rulesets_count": 0
+    "authoritative_evidence_tag_count": 1
   },
   "new_formal_scientific_measurement": false,
   "foundational_update": {
     "programme_level_strategic_doctrine_changed": false,
     "programme_reframe_condition_remains_active": true,
-    "novelty_bar_relaxed": false,
-    "material_operational_update": "Identity-free R1 exact runtime/dependency closure readiness now passes both dedicated readiness and ordinary CI at exact head f5f0f7a; no scientific successor is authorized by that fact alone.",
-    "line_level_stop_budget_tightened": true,
-    "line_level_stop_rule": "At most one fresh R1-like successor should be considered after current runtime readiness closure; another post-START infrastructure/runtime failure before measurement should terminate this reduction line rather than generate another rescue identity.",
-    "charter_revision_required": false
+    "novelty_bar_sharpened": true,
+    "charter_revision_required": false,
+    "material_scientific_phase_update": "R1-v1/v2 are terminated consumed failures; R2 is now prospectively authorized exactly once after full exact-head GO gates.",
+    "material_operational_update": "PRIMARY missed the fresh Analyst authority; RELAY recovered it and is performing science-invariant R2 authority packaging/prestart repairs without STARTED."
   },
-  "strongest_support": [
-    "A01 P2 and P3 remain valid consumed development observations under their exact contracts.",
-    "C19-v4 remains immutable terminal PASS for the narrow truth-free surface structural representation gain claim.",
-    "R1 identity boundaries were preserved after post-START runtime failure; no same-ID repair/rerun occurred.",
-    "Identity-free runtime closure now passes exact-head workflow 35254816937 and ordinary CI 35254816864."
-  ],
-  "strongest_counterevidence": [
-    "A01 Family-A P4 remains terminal UNSUPPORTED_EN_BLOC_MERGED_CREDIT and Family B/C exact objects remain closed by pre-START reduction.",
-    "P2/P3 remain compatible with eligibility/provenance/return-address memory and ordinary local update dynamics.",
-    "RV01 remains reducible to ordinary learned connection weight and adaptive delay plasticity.",
-    "External literature strengthens revision-authority, FSA/state-tracker, selective-history and recurrent/Transformer reductions.",
-    "Independent audit weakens the population-generalization interpretation of C19-v4 pair-bootstrap uncertainty because pair-level independence is not established.",
-    "SUB H3 synthetic follow-up adds NON_EVIDENTIARY reduction pressure: a correlation-aware scalar matches or exceeds the coalition proxy when grouping information is supplied symmetrically."
-  ],
   "active_line_review": {
     "A01": {
       "status": "CLOSED_REGISTERED_MECHANISM_PROGRAMME",
-      "next_rescue": "FORBIDDEN_WITHOUT_INDEPENDENT_PROSPECTIVE_PROGRAMME_DECISION"
+      "rescue": "FORBIDDEN_WITHOUT_INDEPENDENT_PROSPECTIVE_PROGRAMME_DECISION"
     },
     "C19_V4": {
       "status": "TERMINAL_PASS_NARROW_REPRESENTATION_GAIN",
@@ -74,18 +57,32 @@
       "claim_boundary": "truth_free_surface_structural_representation_gain_only"
     },
     "C19_R1": {
-      "status": "TERMINAL_POST_START_FAILURE_CONSUMED_NO_SCIENTIFIC_RESULT",
-      "identity": "c19-r1-revision-authority-official-v1",
-      "same_id_retry_allowed": false,
-      "runtime_readiness_status": "PASS_IN_FRESH_REPOSITORY_EVIDENCE_AWAITING_DURABLE_ANALYST_RECONCILIATION",
-      "scientific_successor_authorized": false,
-      "next_decision": "fresh Evidence Analyst STOP versus at most one fresh R1-like successor"
+      "status": "TERMINATED_AFTER_TWO_POST_START_FAILURES",
+      "consumed": [
+        "c19-r1-revision-authority-official-v1",
+        "c19-r1-revision-authority-official-v2"
+      ],
+      "r1_v3_allowed": false
     },
-    "H3": {
-      "status": "EXPLORATORY_NON_EVIDENTIARY_REDUCTION_STOP_BOUNDARY",
-      "current_candidate_promotion": "REJECT_RECOMMENDED_NOT_FORMAL_H3_REJECTION",
-      "analyst_post_followup_classification": "PENDING",
-      "further_same_proxy_ladder": "STOP_PENDING_FRESH_ANALYST_REDIRECTION"
+    "C19_R2": {
+      "status": "AUTHORIZED_PRESTART_MECHANICAL_BLOCKER",
+      "scientific_package": "5d5d171cf872baed7a636fd246ab36f3a91a6716",
+      "authority_head_at_cut": "1be42635cdb4f49c89788ceb66b541086ed3dae5",
+      "formal_identity": "c19-r2-fsa-state-tracker-official-v1",
+      "started": false,
+      "consumed": false,
+      "execution_allowed": "CONDITIONAL_EXACTLY_ONCE_AFTER_ALL_FINAL_HEAD_GO_GATES",
+      "latest_prestart": "35279443322:failure_at_lint_before_official_read",
+      "latest_ordinary_ci": "35279443317:in_progress_at_analysis_cut",
+      "scientific_semantics_changed": false
+    },
+    "RV01_SUB_EXPLORATORY": {
+      "status": "NON_EVIDENTIARY_FINAL_BOUNDED_PROBE_COMPLETE_HARD_STOP",
+      "branch": "48bd4a831435dbfaeace1d2935a04e05751a61fe",
+      "exact_head_ci": "35278782680:success",
+      "promotion_recommendation": "REJECT_DIRECT_FORMALIZATION_CANDIDATE_ONLY",
+      "formal_rv01_rejection": false,
+      "further_same_theme_allowed": false
     },
     "H9_C07": {
       "status": "PRE_START_UNDERSPECIFIED_PAUSED"
@@ -94,220 +91,205 @@
       "status": "TERMINAL_CAUSAL_SPECIALIZATION_NEGATIVE"
     }
   },
-  "r1_runtime_readiness": {
-    "branch": "research/readiness-c19-r1-runtime-closure-20260918",
-    "head": "f5f0f7abd02372954aa8edcf10b6c15f9644c122",
-    "formal_identity": null,
-    "scientific_execution_allowed": false,
-    "dedicated_readiness_workflow": 35254816937,
-    "dedicated_readiness_result": "success",
-    "ordinary_ci_workflow": 35254816864,
-    "ordinary_ci_result": "success",
-    "bound_runtime": "CPython 3.11.16",
-    "dependency_closure": ["numpy>=2.0", "torch==2.13.0 via already-declared learned optional dependency group"],
-    "tests": [
-      "reproduce consumed-run base-install import gap without official data",
-      "install existing learned dependency group",
-      "network-blocked production-runner import smoke",
-      "deterministic synthetic target-blind prestart/raw/source-map digest checks"
+  "r2_frontier": {
+    "scientific_question": "Can the C19-v4 I2 truth-free representation gain be explained by the exact fixed seven-state deterministic FSA/state tracker?",
+    "expected_raw_rows": 479600,
+    "primary_inference": "target-free atomic_idx cluster bootstrap",
+    "formal_identity": "c19-r2-fsa-state-tracker-official-v1",
+    "go_required": [
+      "fresh identity and collision-free control/preserve/evidence namespaces",
+      "unchanged frozen R2 scientific blobs and exact authority binding",
+      "ordinary CI success and dedicated pre-START success on the same final head",
+      "production runtime/import/execution parity green",
+      "target-free atomic_idx map total/deterministic/digest-bound/fail-closed",
+      "fresh Analyst/head/namespace reconciliation immediately before STARTED",
+      "STARTED/no-clobber before official read",
+      "raw preserved and independently refetched/digest-verified before target materialization/scoring"
     ],
-    "scientific_interpretation": "none; identity-free readiness only",
-    "next_action": "fresh Analyst independent revalidation and successor-or-stop decision"
+    "prestart_blocker_policy": "science-invariant mechanical fixes may continue same-run; every head change resets exact-head validation",
+    "semantic_gap_policy": "any scientific semantic change must stop and return to Analyst",
+    "terminal_interpretation": {
+      "REDUCED_BY_FSA": "narrow C19-v4 mechanism story toward ordinary finite-state tracking; no rescue-tuning",
+      "SURVIVES_FSA_REDUCTION": "rejects only this exact FSA; next-class reduction required before novelty claim",
+      "INCONCLUSIVE": "terminal exact-identity stop",
+      "INVALID_EVIDENCE": "consume and stop; no same-ID salvage",
+      "POST_START_FAILURE": "consume and stop; no same-ID salvage"
+    }
   },
   "external_input": {
     "literature": {
       "role": "LITERATURE_REDUCTION_SCOUT",
-      "handoff_commit": "c42adf10546d0825fb13a258f052a6a4be399ec5",
-      "source": "role-suffixed history fallback because literature/latest.md and literature/state.json are absent",
-      "genuinely_new_information": true,
-      "affected_lines": ["C19_V4", "C19_R1", "PROGRAMME_NOVELTY", "FUTURE_EXTERNAL_VALIDATION"],
-      "findings_consumed": [
-        "state-dependent certainty/revision arbitration as direct reduction",
-        "minimal premise-edit diagnostics beyond aggregate BREU",
-        "finite-state structure/state tracking inside Transformers",
-        "state-space size/transition sparsity/horizon scaling axes",
-        "compact selective-history belief-state alternatives"
+      "handoff_commit": "525686fa0c14f64426ca7bf5c89f08cd0bcb9c77",
+      "new_this_cycle": true,
+      "affected_lines": [
+        "C19_R2_FSA_STATE_TRACKER",
+        "PROGRAMME_NOVELTY",
+        "POST_R2_REDUCTION",
+        "PERSISTENT_DYNAMICS_RESIDUAL",
+        "FUTURE_EXTERNAL_VALIDATION"
       ],
-      "strategic_impact": "NOVELTY_BAR_NARROWED_FURTHER; TESTBED_REFRAME_REINFORCED; R1_REMAINS_A_REDUCTION_TEST",
-      "questions_for_evidence_analyst": [
-        "Keep revision-authority/certainty arbitration as the first direct reduction.",
-        "If R1 survives, require representation-matched FSA/state tracking before broader persistent-state claims.",
-        "Do not treat runtime readiness as novelty evidence."
-      ]
+      "findings": [
+        "PSR/TPSR predictive state remains a live post-R2 ordinary reduction",
+        "epsilon-machine/causal-state compression formalizes minimal history-derived predictive state",
+        "local causal states raise the bar for local/pre-semantic emergence claims",
+        "reservoir universality defines a fading-memory reduction boundary",
+        "automata extraction is preferable to an endless hand-authored FSA ladder"
+      ],
+      "strategic_impact": "NOVELTY_BAR_SHARPENED_NO_CHANGE_TO_FROZEN_R2",
+      "post_r2_reduction_ladder": "exact FSA -> extracted/learned finite-state -> PSR/epsilon-machine -> reservoir/fading-memory -> narrower lineage-specific residual"
     },
     "audit": {
       "role": "INDEPENDENT_AUDITOR",
       "handoff_commit": "1de53b412f66d4da94f54a8bc12a7e2717ef5011",
-      "classification": "WEAKENED",
-      "genuinely_new_information": true,
-      "affected_lines": ["C19_V4", "C19_R1", "PROGRAMME_STATISTICAL_INTEGRITY", "FUTURE_EXTERNAL_VALIDATION"],
-      "findings_consumed": [
-        "C19-v4 integrity chain and narrow formal PASS remain valid and immutable",
-        "pair-level independence is not established because examples are structurally clustered by atomic_idx/modus",
-        "pair-bootstrap CI may be anti-conservative for independent reasoning-family generalization",
-        "future formal objects should prospectively declare scientific sampling unit and cluster-aware paired inference"
+      "new_this_cycle": false,
+      "classification": "WEAKENED_NOT_INVALID",
+      "affected_lines": [
+        "C19_V4",
+        "C19_R2_FSA_STATE_TRACKER",
+        "PROGRAMME_STATISTICAL_INTEGRITY"
       ],
-      "strategic_impact": "V4_RESULT_PRESERVED_BUT_GENERALIZATION_NARROWED; FUTURE_CLUSTER_UNIT_DECLARATION_REQUIRED",
-      "questions_for_evidence_analyst": [
-        "Preserve v4 unchanged and non-canonicalize any post-hoc cluster sensitivity.",
-        "Retain the stronger cluster-aware contract in any fresh R1-like successor.",
-        "Use the same frozen clustering across matched reductions."
-      ]
+      "finding": "C19-v4 integrity/narrow PASS remains valid; pair-IID bootstrap does not establish independent reasoning-situation population uncertainty because pairs are structurally clustered.",
+      "strategic_impact": "V4_PRESERVED_GENERALIZATION_NARROWED_FUTURE_CLUSTER_UNIT_REQUIRED",
+      "r2_alignment": "R2 already prospectively uses atomic_idx cluster-primary inference"
     },
-    "knowledge_flow_status": "BOTH_LITERATURE_AND_AUDIT_CONSUMED_BY_EVIDENCE_ANALYST_AND_CONTROL_BRAIN",
-    "remaining_flow_defect": "role-specific literature latest/state mailbox absent; history fallback currently required"
+    "knowledge_flow_status": "HEALTHY_BOTH_STREAMS_CONSUMED_BY_0601_ANALYST_AND_CONTROL_BRAIN",
+    "literature_role_specific_mailbox_status": "RESOLVED_AND_PERSISTING"
   },
   "sub_incubator_review": {
     "mode": "exploratory_incubator",
-    "branch": "research/exploratory-sub-h3-correlation-reduction-20260918@678e38ae0035ca95c424c0fa1eb9343bed8b680b",
     "independent_of_main": true,
     "allowed_resources_only": true,
     "evidentiary_status": "NON_EVIDENTIARY",
-    "prior_analyst_classification": "CONTINUE_EXPLORING_FOR_EXACTLY_ONE_BOUNDED_FOLLOWUP",
-    "completed_followup": true,
+    "analyst_classification_before_final_probe": "CONTINUE_EXPLORING_EXACTLY_ONE_FINAL_PROBE",
+    "final_probe_complete": true,
+    "branch": "research/exploratory-sub-rv01-delay-filter-reduction-20260918@48bd4a831435dbfaeace1d2935a04e05751a61fe",
+    "ci": "35278782680:success",
+    "deadzone_wins": 3,
+    "generic_innovation_gated_ewma_wins": 2,
+    "crossover_observed": true,
+    "promotion_recommendation_from_sub": "REJECT",
+    "control_brain_assessment": "EXPLORATORY_PRODUCTIVE_THEN_STOP_CURRENT_THEME",
+    "recommended_next_analyst_classification": "REJECT_OR_NO_ACTION_FOR_DIRECT_FORMALIZATION",
     "followup_budget_exhausted": true,
-    "current_result": {
-      "n_examples": 4096,
-      "corruption_levels": [0, 10, 25, 50, 100],
-      "proxy_scalar_accuracy": [0.80151, 0.78906, 0.77271, 0.76074, 0.75732],
-      "proxy_coalition_accuracy": [0.80103, 0.77905, 0.76929, 0.74463, 0.73291],
-      "interpretation": "scalar approximately ties at perfect grouping and beats coalition at all nonzero corruption levels; grouping-aware benefit decays with proxy quality"
-    },
-    "control_brain_assessment": "EXPLORATORY_PRODUCTIVE_NOW_STOP_OR_REDIRECT",
-    "recommended_analyst_classification": "REJECT_CURRENT_EXPLORATORY_CANDIDATE_PROMOTION_NOT_FORMAL_H3_REJECTION",
-    "formalization_allowed_now": false,
-    "further_same_ladder_allowed_without_new_analyst": false
+    "further_same_theme_without_fresh_analyst": false
   },
   "programme_drift": {
-    "status": "REFRAMED_ALIGNED_WITH_RUNTIME_READINESS_PASS_AND_H3_REDUCTION_STOP_SIGNAL",
-    "primary_risks": [
-      "auto-creating a scientific successor from runtime readiness PASS",
-      "creating endless one-way rescue identities after infrastructure failures",
-      "overclaiming C19-v4 beyond narrow representation gain",
-      "ignoring clustered sampling in future formal statistics",
-      "elevating SUB exploratory findings directly to evidence",
-      "continuing H3 proxy exploration after its bounded follow-up converged toward reduction",
-      "reopening A01 through outcome-responsive mechanism invention"
-    ],
+    "status": "REFRAMED_ALIGNED",
     "main_sub_role_split": "SOUND",
-    "main_sub_collision_observed": false
+    "main_sub_collision_observed": false,
+    "primary_risks": [
+      "allowing authority/preflight engineering to become an end in itself",
+      "treating R2 survival as novelty rather than rejection of one FSA",
+      "building an endless hand-authored comparator ladder",
+      "elevating SUB exploratory observations directly to evidence",
+      "reopening A01 or R1 with outcome-responsive rescue identities"
+    ]
   },
   "repository_doctrine": {
     "status": "PARTIALLY_COMPLIANT_MATERIALLY_IMPROVED_SERVER_SIDE_PROTECTION_GAP_REMAINS",
-    "main_is_scientific_frontier": false,
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "main_is_scientific_frontier": false,
     "open_pr_count": 0,
     "open_operational_issues": [139],
     "authoritative_evidence_tag_count": 1,
-    "c19_v4_evidence_tag": "evidence/c19-official-v4-c19-external-v2-official-v4",
     "repository_ruleset_count": 0,
     "main_protected": false,
     "legacy_freeze_branch_count": 13,
     "legacy_immutable_refs_preserved": true,
-    "steward_status": "HEALTHY_0151_RECONCILED_ISSUE_147_AND_TAG_STATE",
     "governance_priority": "NON_BLOCKING"
   },
   "promotion_candidates": [
-    "generic exact execution-environment/dependency manifest verification",
-    "generic same-environment production-import/network-blocked fixture smoke harness",
-    "exact source/runtime verification and deterministic source manifests",
-    "generic no-clobber / identity-collision / STARTED-boundary primitives",
-    "durable exactly-once acquisition checkpointing",
-    "raw-preserve-before-score and digest verification",
-    "evaluator-join uniqueness/totality/fail-closed validators",
-    "deterministic golden scorer fixture harnesses",
-    "prospective sampling-unit/cluster declaration and matched cluster-aware inference helpers",
-    "generic fail-closed verifier patterns",
+    "generic execution-environment/dependency manifest verifier",
+    "same-environment network-blocked production-import smoke harness",
+    "exact source/runtime/binding verifier",
+    "STARTED/no-clobber/identity-collision primitives",
+    "raw-preserve/refetch/digest verification",
+    "fail-closed evaluator join validators",
+    "target-free cluster-map validators",
+    "deterministic scorer fixture harnesses",
+    "generic prospective sampling-unit/cluster-aware inference helpers",
     "stable control-plane pointer/index helpers"
   ],
-  "line_priorities": [
+  "top_3": [
     {
-      "priority": 1,
-      "line": "C19_R1_RUNTIME_READINESS_PASS_SUCCESSOR_OR_STOP_DECISION",
+      "rank": 1,
+      "owner": "MAIN_RELAY",
+      "action": "Finish only science-invariant R2 authority/prestart repair; require same-head green CI+prestart and fresh authority/namespaces before one exact STARTED/execution.",
+      "information_value": "VERY_HIGH"
+    },
+    {
+      "rank": 2,
       "owner": "EVIDENCE_ANALYST",
-      "information_value": "VERY_HIGH_ENABLING"
+      "action": "After terminal R2, apply exact cluster-primary result and choose STOP or one fresh next-representational-class reduction; do not default to a manual R3 FSA.",
+      "information_value": "HIGH"
     },
     {
-      "priority": 2,
-      "line": "AT_MOST_ONE_FRESH_R1_LIKE_SUCCESSOR_IF_STRICTLY_JUSTIFIED",
-      "owner": "MAIN_ONLY_AFTER_FRESH_ANALYST_AUTHORITY",
-      "status": "NOT_AUTHORIZED_YET"
-    },
-    {
-      "priority": 3,
-      "line": "H3_INCUBATOR_COMPLETED_FOLLOWUP_CLASSIFICATION_AND_REDIRECT",
-      "owner": "EVIDENCE_ANALYST",
-      "status": "CURRENT_CANDIDATE_PROMOTION_REJECT_RECOMMENDED"
-    },
-    {
-      "priority": 4,
-      "line": "EXTERNAL_LITERATURE_ROLE_MAILBOX_PERSISTENCE_REPAIR",
-      "owner": "EXTERNAL_RESEARCH_SCOUT_NEXT_RUN",
-      "status": "OPERATIONAL_HANDOFF_DEFECT"
-    },
-    {
-      "priority": 5,
-      "line": "AUTHORITATIVE_TAG_NAMESPACE_PROTECTION",
-      "owner": "ADMINISTRATIVE_OUTSIDE_SCHEDULED_CONTROL",
-      "status": "ISSUE_139_OPEN_NON_BLOCKING"
+      "rank": 3,
+      "owner": "EVIDENCE_ANALYST_SUB",
+      "action": "Close the current RV01 incubator direct-formalization candidate; redirect SUB only to a distinct bounded question if worthwhile.",
+      "information_value": "MEDIUM"
     }
   ],
-  "stop_reframe_conditions": [
-    "A01 Family A remains terminal; no rerun/retune/rescore/rescue.",
-    "A01 Family B and C exact objects remain closed pre-START.",
-    "Programme testbed reframe remains active.",
-    "C19-v4 terminal PASS remains immutable and narrowly interpreted; audit weakness narrows generalization, not the frozen result.",
-    "R1 c19-r1-revision-authority-official-v1 remains consumed POST_START_FAILURE; no same-ID retry or repair-and-rerun.",
-    "Runtime-readiness PASS is not scientific evidence and does not authorize a successor.",
-    "At most one fresh R1-like successor should be considered after current readiness closure; another post-START infrastructure failure before measurement terminates this reduction line.",
-    "SUB incubator results cannot be elevated directly; the current H3 exploratory candidate should not be formalized on present evidence.",
-    "Any future H3 formal object must remove oracle grouping privilege and survive strong correlation-aware scalar/Bayesian reductions."
-  ],
-  "scheduler_fleet": {
+  "stop_reframe": {
+    "a01_family_abc_closed": true,
+    "r1_line_terminated_no_r1_v3": true,
+    "r2_no_started_until_exact_go": true,
+    "r2_semantic_change_returns_to_analyst": true,
+    "r2_post_start_failure_consumes_identity": true,
+    "r2_survival_is_not_novelty": true,
+    "sub_rv01_current_theme_hard_stopped": true,
+    "testbed_reframe_remains_active": true
+  },
+  "fleet_health": {
     "fleet_status": "YELLOW",
-    "scientific_integrity_critical_failures": [],
-    "operational_defects": [
-      "MAIN durable 02:47 checkpoint reports readiness workflows in progress while fresh repository workflow state shows both succeeded; short-lived control-plane lag remains until next Analyst/MAIN persistence.",
-      "Evidence Analyst durable handoff arrives roughly 15-20 minutes after its nominal :00 slot.",
-      "SUB :35 cycle currently spills into the :50 window and Relay :45 also occupies that window, creating dense :35/:45/:50 contention.",
-      "role-specific literature latest/state mailbox is absent and requires history fallback."
-    ],
-    "scheduler_statuses": {
-      "SparkBrain Control & Repository Steward": "HEALTHY",
-      "SparkBrain Evidence Analyst": "DELAYED",
-      "SparkBrain Research Orchestrator PRIMARY": "HEALTHY",
-      "SparkBrain Research Orchestrator Relay": "HEALTHY",
-      "SparkBrain Research Orchestrator SUB": "EXPLORATORY_PRODUCTIVE",
-      "SparkBrain Current State Brief": "HEALTHY",
-      "SparkBrain External Research & Audit": "DELAYED"
+    "critical_failures": [],
+    "schedulers": {
+      "control_repository_steward": "HEALTHY",
+      "evidence_analyst": "DELAYED_BUT_SCIENTIFICALLY_HEALTHY",
+      "research_orchestrator_primary": "DELAYED_STALE_ANALYST_CONSUMPTION_IN_0613_CYCLE",
+      "research_orchestrator_relay": "HEALTHY_RECOVERY_WITH_PRESTART_BLOCKER",
+      "research_orchestrator_sub": "EXPLORATORY_PRODUCTIVE_NOW_HARD_STOPPED_PENDING_ANALYST",
+      "external_research_audit": "HEALTHY",
+      "current_state_brief": "HEALTHY",
+      "repository_steward_stream": "HEALTHY_AWAITING_NEXT_ROLE_SLOT"
     },
+    "operational_defects": [
+      "PRIMARY 06:13 consumed an older Analyst tip despite 719b9e already existing; safe stop but lost throughput",
+      "Evidence Analyst completion latency makes the nominal :00->:15 handoff window unreliable",
+      ":35 SUB -> :45 RELAY -> :50 Control/Steward remains dense and produces transient overlapping snapshots",
+      "R2 authority packaging is spending multiple cycles on mechanical lint-only prestart defects"
+    ],
     "efficiency_findings": [
-      "Relay closed identity-free runtime readiness within the hour and is currently useful.",
-      "SUB incubator produced a bounded independent reduction-oriented stop signal instead of fake activity.",
-      "Further H3 proxy cycles without fresh Analyst classification would be resource churn.",
-      "Both external science roles are consumed despite the literature mailbox-structure defect."
+      "RELAY recovered the fresh Analyst authority and advanced the primary lane without weakening integrity",
+      "SUB incubator produced a bounded reduction-oriented conclusion and stopped",
+      "role-specific literature persistence is repaired and external knowledge is consumed downstream"
     ],
     "recommended_scheduler_changes": [
-      "Do not mutate scheduler definitions from Control Brain.",
-      "Observe the dense :35/:45/:50 window for two more cycles; if spillover persists, move the downstream read-only control slot later by 5-10 minutes or otherwise separate it from Relay.",
-      "Investigate recurring Evidence Analyst 15-20 minute latency before increasing research cadence.",
-      "Keep Relay only while it produces real same-hour critical-path progress.",
-      "Do not repeat the exhausted H3 probe while awaiting Analyst classification.",
-      "Repair role-specific literature persistence on the next Scout run."
+      "Do not increase cadence",
+      "Require exact Analyst branch-tip re-fetch immediately before MAIN policy/STARTED decisions",
+      "Observe at least the next two cycles before moving read-only Control/Steward later than Relay",
+      "No External Research/Audit schedule change currently justified"
     ]
   },
   "direction_to_evidence_analyst": [
-    "Re-fetch f5f0f7abd02372954aa8edcf10b6c15f9644c122 and verify 35254816937:success plus 35254816864:success; classify runtime readiness without treating it as science.",
-    "Keep c19-r1-revision-authority-official-v1 consumed/no-retry and decide STOP versus at most one fresh R1-like successor.",
-    "If a fresh successor is justified, preserve explicit sampling unit, cluster-aware paired inference, same clustering across reductions, and exact runtime/dependency closure before STARTED.",
-    "Apply the new line-level spending rule: another post-START infrastructure failure before measurement terminates R1 rather than generating another rescue identity.",
-    "Consume SUB branch 678e38ae0035ca95c424c0fa1eb9343bed8b680b as NON_EVIDENTIARY; reject promotion of the current candidate and stop the same proxy ladder unless a new prospective H3 object is independently justified.",
-    "Preserve reduction ordering: revision-authority/certainty arbitration first, then representation-matched FSA/state tracking, then broader persistent-state claims only if those reductions fail.",
-    "Preserve C19-v4 exactly and keep its pair-bootstrap interpretation narrow unless post-hoc cluster sensitivity is clearly labeled non-canonical.",
-    "Keep A01 closed and the programme testbed reframe active."
+    "Keep R2 as sole primary scientific frontier until terminal; MAIN owns every critical-path mechanical blocker.",
+    "Do not weaken R2 scientific semantics because CI/prestart is slow; every head change resets same-head validation.",
+    "On terminal R2 apply the frozen atomic_idx cluster-primary decision exactly and stop the identity.",
+    "If R2 survives, choose a fresh extracted/learned finite-state or PSR/epsilon-machine reduction before broad novelty claims; do not default to hand-authored R3/R4 FSAs.",
+    "If R2 reduces C19-v4, narrow the mechanism story rather than rescue-tune.",
+    "Classify the completed RV01 incubator direct-formalization candidate REJECT/NO_ACTION; its one allowed follow-up is exhausted.",
+    "Preserve C19-v4 unchanged with audit status WEAKENED_NOT_INVALID and retain cluster-aware sampling doctrine."
   ],
   "charter_status": {
     "changed": false,
-    "reason": "Existing evidence-over-strategy, reduction, stop/reframe and interpretation rules cover the current state."
+    "reason": "Existing charter already covers reduction-first novelty discipline, testbed reframe, and actual-causal-lineage residual; current update sharpens the reduction ladder without changing foundational doctrine."
+  },
+  "persistence": {
+    "latest_commit": "66c17b60f9729b9cac5cc3d2d75fceb515d10efd",
+    "latest_path": "analysis/control_brain/latest.md",
+    "state_path": "analysis/control_brain/state.json",
+    "history_path": "analysis/control_brain/history/2026-09-18/0658.md",
+    "immutable_refs_written": false,
+    "force_push_used": false
   }
 }
