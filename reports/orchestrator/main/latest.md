@@ -1,12 +1,12 @@
-# MAIN Orchestrator — PRIMARY C19-R2 authority rebind checkpoint
+# MAIN Orchestrator — PRIMARY C19-R2 authority rebind / external wait
 
-Timestamp: `2026-09-18 08:20 JST`
+Timestamp: `2026-09-18 08:22 JST`
 Execution mode: `PRIMARY`
 Evidence Analyst authority: `6ecf13b73cfc75409f6cfe86e9b8ac73fc58b6ce`
 
 ## MAIN frontier
 
-PRIMARY remains on `C19_R2_FSA_STATE_TRACKER_ONE_WAY`. The fresh Evidence Analyst handoff prospectively resolved the prior raw-universe mismatch: the frozen R2 contract is authoritative at exactly `8,720 = 1,744 pairs x 5 fixed seeds`, with state alphabet `RESET, A_WEAK, A_STRONG, B_WEAK, B_STRONG, C_WEAK, C_STRONG`. R2 remained unSTARTED/unconsumed, so this was an Analyst bookkeeping correction rather than a scientific mutation.
+PRIMARY remains on `C19_R2_FSA_STATE_TRACKER_ONE_WAY`. The fresh Evidence Analyst handoff prospectively resolved the prior raw-universe mismatch: the frozen R2 contract is authoritative at exactly `8,720 = 1,744 pairs x 5 fixed seeds`, with state alphabet `RESET, A_WEAK, A_STRONG, B_WEAK, B_STRONG, C_WEAK, C_STRONG`. R2 was still unSTARTED/unconsumed, so this is an Analyst bookkeeping correction rather than a scientific mutation.
 
 The active branch was re-fetched at `research/c19-r2-fsa-state-tracker-spec-20260918@84e08cfffa3e1404a1e93dd924ee704aa7bd3853`. No fresh MAIN collision existed; the prior MAIN lease was stale and SUB remained `no_op` with no R2 touch.
 
@@ -28,11 +28,11 @@ Fresh namespace checks after the head move still show no R2 STARTED control ref,
 
 ## Workflow state / external handoff
 
-The head move automatically started both required exact-head gates on `5bfa3962...`:
+The required exact-head gates are now:
 
-- dedicated R2 pre-START `35286420308`: queued at checkpoint;
-- ordinary CI `35286420401`: queued at checkpoint.
+- dedicated R2 pre-START `35286420308`: `completed/success` on exact head `5bfa3962...`;
+- ordinary CI `35286420401`: `in_progress` on the same exact head at final checkpoint.
 
-No useful local critical-path work remains while those external gates are pending, so PRIMARY is ending with lease `WAITING_EXTERNAL`. Relay should collect both runs. If both are success on exact head `5bfa3962...`, re-fetch fresh Analyst authority, exact branch head, identity/consumed state, control/preserve/evidence namespaces, frozen science/runtime/source-map/scorer/preserver bindings and then cross STARTED exactly once only if every GO condition remains simultaneously true. Any mechanical pre-START failure remains MAIN-owned; any scientific/semantic change requirement must STOP before STARTED.
+No useful local critical-path work remains while ordinary CI is still running, so PRIMARY ends with lease `WAITING_EXTERNAL`. Relay should collect CI `35286420401`. If it succeeds on exact head `5bfa3962...`, re-fetch fresh Analyst authority, exact branch head, identity/consumed state, control/preserve/evidence namespaces, frozen science/runtime/source-map/scorer/preserver bindings and then cross STARTED exactly once only if every GO condition remains simultaneously true. Any mechanical pre-START failure remains MAIN-owned; any scientific/semantic change requirement must STOP before STARTED.
 
 No STARTED ref was created, no official R2 data was read, no raw/preserve/targets/scoring/evidence was produced, and there is **no new scientific information** this run.
