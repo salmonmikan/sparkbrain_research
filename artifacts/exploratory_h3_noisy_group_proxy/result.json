@@ -1,0 +1,110 @@
+{
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "interpretation_boundary": "Observed proxy labels are synthetic metadata, not learned structure. The probe is a reduction/sensitivity check only and cannot support an H3 claim.",
+  "question": "When perfect latent correlation-group IDs are replaced by a fixed noisy observed grouping proxy supplied symmetrically to scalar and coalition readers, does the apparent coalition advantage survive?",
+  "rows": [
+    {
+      "accuracy": {
+        "naive": 0.737548828125,
+        "proxy_group_majority": 0.801025390625,
+        "proxy_group_normalized": 0.801513671875,
+        "source_dedup": 0.753662109375
+      },
+      "corruption_rate": 0.0,
+      "proxy_scalar_vs_proxy_coalition_agreement": 0.97900390625
+    },
+    {
+      "accuracy": {
+        "naive": 0.737548828125,
+        "proxy_group_majority": 0.779052734375,
+        "proxy_group_normalized": 0.7890625,
+        "source_dedup": 0.753662109375
+      },
+      "corruption_rate": 0.1,
+      "proxy_scalar_vs_proxy_coalition_agreement": 0.926513671875
+    },
+    {
+      "accuracy": {
+        "naive": 0.737548828125,
+        "proxy_group_majority": 0.769287109375,
+        "proxy_group_normalized": 0.772705078125,
+        "source_dedup": 0.753662109375
+      },
+      "corruption_rate": 0.25,
+      "proxy_scalar_vs_proxy_coalition_agreement": 0.9111328125
+    },
+    {
+      "accuracy": {
+        "naive": 0.737548828125,
+        "proxy_group_majority": 0.74462890625,
+        "proxy_group_normalized": 0.7607421875,
+        "source_dedup": 0.753662109375
+      },
+      "corruption_rate": 0.5,
+      "proxy_scalar_vs_proxy_coalition_agreement": 0.9072265625
+    },
+    {
+      "accuracy": {
+        "naive": 0.737548828125,
+        "proxy_group_majority": 0.73291015625,
+        "proxy_group_normalized": 0.75732421875,
+        "source_dedup": 0.753662109375
+      },
+      "corruption_rate": 1.0,
+      "proxy_scalar_vs_proxy_coalition_agreement": 0.904296875
+    }
+  ],
+  "synthetic_contract": {
+    "corruption_rates": [
+      0.0,
+      0.1,
+      0.25,
+      0.5,
+      1.0
+    ],
+    "exact_duplicate_pattern": [
+      1,
+      1,
+      2,
+      4
+    ],
+    "groups_per_example": 5,
+    "information_symmetry": "proxy_group_normalized and proxy_group_majority receive the identical observed_group_id and neither predictor reads true_group_id.",
+    "latent_group_truth_probability": 0.7,
+    "member_patterns": [
+      [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        2,
+        4,
+        8
+      ],
+      [
+        8,
+        4,
+        2,
+        1,
+        1
+      ],
+      [
+        1,
+        2,
+        4,
+        8,
+        16
+      ]
+    ],
+    "proxy_corruption_rule": "Per unique source, independently replace the true group label with a uniformly selected different group at the fixed corruption rate; exact duplicate deliveries retain the same observed proxy label.",
+    "proxy_seed": 20260918,
+    "samples": 4096,
+    "within_group_source_agreement_probability": 0.9,
+    "world_seed": 1337
+  }
+}
