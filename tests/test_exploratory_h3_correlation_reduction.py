@@ -1,9 +1,8 @@
 from __future__ import annotations
 
 import importlib.util
-from pathlib import Path
 import sys
-
+from pathlib import Path
 
 MODULE_PATH = Path(__file__).parents[1] / "scripts" / "exploratory_h3_correlation_reduction.py"
 SPEC = importlib.util.spec_from_file_location("exploratory_h3_correlation_reduction", MODULE_PATH)
