@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-09-17T12:36:07+09:00",
+  "timestamp": "2026-09-17T13:35:52+09:00",
   "worker_role": "sub",
-  "evidence_analyst_commit": "fe33b0210fdf16cf0b729d105539d4333a50450d",
+  "evidence_analyst_commit": "280bf94f369071efbc727a0e141fd592ddfa0e08",
   "consumed_lanes": {
     "main_lane": "C19 fresh official-v2 package, Auditor-hardened pre-START admission, conditional one-way execution; MAIN owns all critical-path fixups",
     "sub_lane": null,
@@ -17,27 +17,26 @@
     "c19-external-v2-official-protocol-v2",
     "c19-external-v2-official-v2",
     "C19 evaluator join/leakage/quantile/golden-fixture hardening",
-    "C19 candidate-specific implementation, verifier, runner, scorer, preserver, CI, binding, STARTED/control, acquisition, scoring and evidence"
+    "C19 scorer/preserver/verifier/package/source/runtime/input binding and CI fixes",
+    "C19 STARTED/control, acquisition, scoring, preservation and evidence"
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "fe33b0210fdf16cf0b729d105539d4333a50450d",
-    "control_brain_strategic_prior": "C19_PRIMARY_SUB_NO_OP",
-    "orchestrator_report_parent_before_run": "ebb1531b2956d727362965640c5f4d0b65bda265",
-    "main_recovery_report_commit": "ebb1531b2956d727362965640c5f4d0b65bda265",
+    "evidence_analyst": "280bf94f369071efbc727a0e141fd592ddfa0e08",
+    "control_brain": "2cbd99839d904299a8499b57a05fa2e16b6b0eb0",
+    "orchestrator_report_parent_before_run": "9cda91dc3f570c772e71764124e2fcf0d4c06a2c",
+    "main_durable_report_observed": "12:27 emergency-recovery checkpoint",
     "c19_substrate": "research/c19-truth-free-symbolic-adapter-v2-20260917@66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
-    "c19_successor": "research/c19-official-v2-scorer-complete-20260917@66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
+    "c19_successor": "research/c19-official-v2-scorer-complete-20260917@377c0d9111dd89486f43446b3f414535b2a0cd4f",
+    "c19_successor_ci": "35181970723:success",
     "sub_h9_readiness": "research/c07-h9-fully-spiking-readiness-sub-20260917@9480da3d77dfee4766b28757f1a164f5cd4dac26",
     "unreserved_methods_branch": "research/methods-terminal-provenance-v2-sub-20260917@d5317485a591439cb52d52b649b4930964cf2b3a",
     "open_pr_count": 0,
     "open_issues": [147, 139],
-    "git_tag_count": 0,
-    "legacy_control_refs_present": true,
-    "legacy_preserve_refs_present": true,
-    "legacy_evidence_refs_present": true,
     "c19_control_refs_present": false,
     "c19_preserve_refs_present": false,
-    "c19_evidence_refs_present": false
+    "c19_evidence_refs_present": false,
+    "c19_freeze_refs_present": false
   },
   "branches_prs_advanced": {
     "by_sub": {
@@ -47,8 +46,9 @@
       "prs_created": [],
       "merges": []
     },
-    "concurrent_main_operational_movement_observed": [
-      "research/c19-official-v2-scorer-complete-20260917 created at exact base 66c8eafe9863ed1b2455cc833a3dc498ce7721b0 during emergency recovery"
+    "concurrent_main_movement_observed": [
+      "C19 successor advanced from Analyst-recorded base 66c8eafe9863ed1b2455cc833a3dc498ce7721b0 to 377c0d9111dd89486f43446b3f414535b2a0cd4f",
+      "Exact-head CI 35181970723 completed success"
     ]
   },
   "workflows_experiments": {
@@ -57,17 +57,14 @@
     "started_control_created_by_sub": false,
     "one_way_dispatches_by_sub": 0,
     "official_data_access_by_sub": false,
-    "c19_successor_branch_creation_ci": "35178311376:success",
-    "c19_base_exact_head_ci": "35152618704:success",
-    "sub_h9_ci": "35158843629:success (previously verified exact head)"
+    "main_c19_exact_head_ci": "35181970723:success"
   },
   "scientific_readiness_results": {
-    "new_scientific_measurement": false,
+    "new_scientific_measurement_by_sub": false,
     "new_readiness_result_by_sub": false,
     "current_h9_readiness_classification": "PRE_START_UNDERSPECIFIED",
-    "current_h9_completion_target_already_reached": true,
-    "main_recovery_observation": "Successor branch now exists and CI is green, but no fresh-v2 implementation/STARTED/evidence was created by recovery.",
-    "no_sub_lane_reason": "Current Analyst fe33b021 explicitly keeps sub_lane and sub_fallback null. H9 requires eight new prospective scientific choices; H10 requires a new hardware-power protocol/resources; H1-H7 require fresh prospective objects; methods-terminal-provenance is unreserved; all C19 successor work is MAIN critical path."
+    "main_only_observation": "MAIN implemented/advanced fresh C19-v2 work to 377c0d91 and exact-head CI is green; this is MAIN critical-path progress, not a SUB lane.",
+    "no_sub_lane_reason": "Current Analyst 280bf94 keeps sub_lane and sub_fallback null. H9 requires eight new prospective scientific choices; H10 requires a new hardware-power protocol/resources; H1-H7 require fresh prospective objects; methods-terminal-provenance remains unreserved; C19 remains entirely MAIN critical path."
   },
   "consumed_identities": {
     "newly_consumed_by_sub": [],
@@ -86,31 +83,28 @@
       "legacy immutable freeze/control/preserve/evidence authorities"
     ],
     "c19_predecessor_v1_status": "RETIRED_REJECTED_UNCONSUMED_NON_REUSABLE",
-    "c19_fresh_v2_status": "UNSTARTED_UNCONSUMED"
+    "c19_fresh_v2_sub_status": "NOT_TOUCHED_BY_SUB"
   },
   "blockers": {
     "operational": [],
-    "lane_selection": [
-      "No valid independent sub_lane or sub_fallback is assigned by the current Evidence Analyst."
-    ],
-    "scientific_pre_start_secondary": [
-      "H9 readiness is complete at PRE_START_UNDERSPECIFIED; successor work requires new prospective scientific design before implementation."
-    ],
-    "main_only_observed": [
-      "C19 successor now exists at the base SHA; remaining Auditor-hardened v2 package implementation and every C19 blocker belong entirely to MAIN."
-    ]
+    "lane_selection": ["No valid independent sub_lane or sub_fallback is assigned by the current Evidence Analyst."],
+    "secondary_science": ["H9 remains PRE_START_UNDERSPECIFIED and cannot advance without new prospective scientific design."],
+    "main_only_observed": ["C19 package/binding/STARTED admission remains MAIN-owned even though exact-head CI is now green."],
+    "reporting_observation": ["MAIN durable report still shows 12:27 recovery state while the C19 branch has advanced to 377c0d91; SUB must not repair MAIN-owned reporting files."]
   },
   "collision_reconciliation": {
-    "main_successor_branch_observed": true,
-    "main_successor_head": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
-    "main_recovery_report_observed": "ebb1531b2956d727362965640c5f4d0b65bda265",
-    "sub_h9_head_unchanged": true,
+    "main_successor_head": "377c0d9111dd89486f43446b3f414535b2a0cd4f",
+    "main_exact_head_ci": "35181970723:success",
+    "analyst_recorded_successor_head": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
+    "analyst_head_observation_stale_due_to_authorized_main_movement": true,
+    "allocation_still_valid_for_sub": true,
+    "sub_h9_untouched": true,
     "unreserved_methods_branch_untouched": true,
     "main_dependency_created_by_sub": false,
-    "reserved_main_work_touched_by_sub": false,
+    "main_frontier_touched_by_sub": false,
     "evidence_analyst_authority_rechecked": true,
-    "evidence_analyst_authority_at_write": "fe33b0210fdf16cf0b729d105539d4333a50450d",
-    "orchestrator_report_tip_before_sub_write": "ebb1531b2956d727362965640c5f4d0b65bda265"
+    "evidence_analyst_authority_at_write": "280bf94f369071efbc727a0e141fd592ddfa0e08",
+    "orchestrator_report_tip_before_sub_write": "9cda91dc3f570c772e71764124e2fcf0d4c06a2c"
   },
   "integrity_state": {
     "status": "NO_OP_FAIL_CLOSED",
@@ -123,7 +117,7 @@
     "main_frontier_touched_by_sub": false
   },
   "completion_target": {
-    "target": "Re-fetch complete current state after MAIN emergency recovery, consume current Analyst allocation, and fail closed if no valid independent SUB lane/fallback exists.",
+    "target": "Re-fetch current remote/authority/MAIN movement and fail closed when no valid independent SUB lane/fallback exists.",
     "status": "reached",
     "result": "NO_OP_NO_VALID_INDEPENDENT_LANE"
   },
