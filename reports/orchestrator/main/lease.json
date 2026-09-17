@@ -1,14 +1,14 @@
 {
-  "run_id": "primary-20260918T0312JST",
-  "execution_mode": "PRIMARY",
-  "status": "WAITING_EXTERNAL",
-  "started_at": "2026-09-18T03:12:21+09:00",
-  "heartbeat_at": "2026-09-18T03:21:00+09:00",
+  "run_id": "relay-20260918T0344JST",
+  "execution_mode": "RELAY",
+  "status": "RUNNING",
+  "started_at": "2026-09-18T03:44:00+09:00",
+  "heartbeat_at": "2026-09-18T03:44:00+09:00",
   "analyst_commit": "966018058f296098805982a8d206102741c3842c",
   "active_branch": "research/c19-r1-revision-authority-runtime-closed-v2-20260918",
   "active_identity": "c19-r1-revision-authority-official-v2",
-  "active_step": "R1_V2_PRE_START_DEDICATED_GREEN_CI_RUNNING",
+  "active_step": "R1_V2_PRE_START_READY_FINAL_RECONCILIATION",
   "workflow_run_id": 35258035223,
-  "expected_next_action": "Dedicated successor-v2 pre-START 35258035210 is success on exact head a23975c5713347eaa459161f538a8f0c3db6152e. Collect ordinary CI 35258035223 on that same head. If CI passes, re-fetch Analyst 966018058f296098805982a8d206102741c3842c, exact package head, v2 identity freshness, frozen science/runtime bindings, and exact control/preserve/evidence namespaces; if all remain clean, R1_V2_PRE_START_READY permits creation of control/c19-r1-revision-authority-started-v2-20260918 and exactly one one-way execution. If CI fails mechanically, MAIN owns science-invariant repair and both required gates must be green on the new exact final SHA. Never retry consumed v1; a post-START infrastructure/runtime failure consumes v2 and terminates R1 with no automatic v3.",
+  "expected_next_action": "Both exact-head admission gates are green on a23975c5713347eaa459161f538a8f0c3db6152e. Reconcile fresh Analyst/package/identity/runtime/science/control-preserve-evidence state; if still clean, create control/c19-r1-revision-authority-started-v2-20260918 with STARTED.json and allow the configured exactly-once one-way workflow to begin. No v1 retry and no automatic v3 after any post-START failure.",
   "owner": "main"
 }
