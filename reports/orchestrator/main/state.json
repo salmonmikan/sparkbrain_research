@@ -1,16 +1,17 @@
 {
-  "timestamp": "2026-09-18T00:32:00+09:00",
+  "timestamp": "2026-09-18T00:35:00+09:00",
   "worker_role": "main",
   "execution_mode": "PRIMARY",
   "evidence_analyst_commit": "f2342817193f4e3a191bb05921db5598ee3cd10c",
   "current_lane": "C19-R1 audit-aligned representation-matched stateless revision-authority reduction",
-  "current_phase": "R1_PRE_START_AUDIT_STATISTICS_AMENDMENT_WAITING_EXACT_HEAD_CHECKS",
+  "current_phase": "R1_PRE_START_AUDIT_AMENDMENT_WAITING_EXACT_HEAD_CHECKS",
   "contingency_consumed": [
-    "R1_PRE_START_AUDIT_STATISTICS_AMENDMENT"
+    "R1_PRE_START_AUDIT_STATISTICS_AMENDMENT",
+    "R1_PRE_START_BLOCKER_SCIENCE_INVARIANT_LINT"
   ],
   "active_claim": {
     "branch": "research/c19-r1-revision-authority-reduction-20260917",
-    "head": "27e95f3363bfd32d21c9744cff3a7de8562cf679",
+    "head": "7cf849051a68b4227e29fe2f6ee95b2ff277dacd",
     "planned_identity": "c19-r1-revision-authority-official-v1",
     "execution_allowed": false,
     "scientific_question_unchanged": true
@@ -20,7 +21,7 @@
     "parent_v4_preserve": "d8fcc5216ff24940836972816cb0ec8f11e4ba06",
     "parent_v4_evidence": "a0f83318356ced1c84863737803080d0dc69d208",
     "parent_v4_raw_sha256": "692f8a5dba48f604eb1f5518a8545b80da01e1a00a9e2d2b6b1c0567355d65af",
-    "r1_branch": "27e95f3363bfd32d21c9744cff3a7de8562cf679",
+    "r1_branch": "7cf849051a68b4227e29fe2f6ee95b2ff277dacd",
     "r1_started_control": null,
     "r1_preserve": null,
     "r1_evidence": null
@@ -30,7 +31,8 @@
   "branches_prs_advanced": {
     "branch": "research/c19-r1-revision-authority-reduction-20260917",
     "starting_head": "c23736b63e6100bcdc38e7f11d94c782eb6273dc",
-    "final_head": "27e95f3363bfd32d21c9744cff3a7de8562cf679",
+    "amendment_head_before_lint_fix": "27e95f3363bfd32d21c9744cff3a7de8562cf679",
+    "final_head": "7cf849051a68b4227e29fe2f6ee95b2ff277dacd",
     "commits": [
       "fff3bdba6dd8efb68afede17ceeb63017a8d5b34",
       "d8691a2d13d43a5c7735f27d9fab2eb993a5f3d9",
@@ -40,20 +42,31 @@
       "23625f76b43349c4559e14c166c0a244aff5c12a",
       "082cdd17073846e223a5f2dc5a0efec31f41fc49",
       "29425541bfa66a17fd292daa4c7ec64abdc18019",
-      "27e95f3363bfd32d21c9744cff3a7de8562cf679"
+      "27e95f3363bfd32d21c9744cff3a7de8562cf679",
+      "7cf849051a68b4227e29fe2f6ee95b2ff277dacd"
     ],
     "prs": []
   },
   "workflows_experiments": {
-    "r1_prestart": {
+    "superseded_prestart_failure": {
       "run_id": 35240543810,
       "head": "27e95f3363bfd32d21c9744cff3a7de8562cf679",
+      "status": "completed",
+      "conclusion": "failure",
+      "failed_step": "Lint R1 package",
+      "exact_error": "E501 Line too long (102 > 100) at c19_r1_scoring.py:252:101",
+      "classification": "science_invariant_mechanical_lint_blocker",
+      "fixed_by_commit": "7cf849051a68b4227e29fe2f6ee95b2ff277dacd"
+    },
+    "r1_prestart": {
+      "run_id": 35241040727,
+      "head": "7cf849051a68b4227e29fe2f6ee95b2ff277dacd",
       "status": "in_progress",
       "conclusion": null
     },
     "ordinary_ci": {
-      "run_id": 35240543784,
-      "head": "27e95f3363bfd32d21c9744cff3a7de8562cf679",
+      "run_id": 35241040735,
+      "head": "7cf849051a68b4227e29fe2f6ee95b2ff277dacd",
       "status": "in_progress",
       "conclusion": null
     },
@@ -72,7 +85,8 @@
     "pair_iid_bootstrap_role": "secondary_sensitivity_only",
     "bootstrap_resamples_unchanged": 10000,
     "bootstrap_seed_unchanged": 19901,
-    "quantile_semantics_unchanged": "linear_type7"
+    "quantile_semantics_unchanged": "linear_type7",
+    "first_exact_head_lint_blocker_fixed_without_semantic_change": true
   },
   "consumed_identities": {
     "c19_v2": "consumed_no_retry",
@@ -81,7 +95,7 @@
     "c19_r1_revision_authority_official_v1": "fresh_unstarted_unconsumed"
   },
   "blockers": [
-    "Exact-head ordinary CI and dedicated R1 pre-START checks are still running on 27e95f3363bfd32d21c9744cff3a7de8562cf679.",
+    "Exact-head ordinary CI run 35241040735 and dedicated R1 pre-START run 35241040727 are still running on 7cf849051a68b4227e29fe2f6ee95b2ff277dacd.",
     "Even after both checks are green, Evidence Analyst commit f2342817193f4e3a191bb05921db5598ee3cd10c requires STOP before STARTED and fresh Analyst review."
   ],
   "lease_collision_reconciliation": {
@@ -89,8 +103,8 @@
     "lease_acquired": true,
     "fresh_running_main_collision": false,
     "exact_branch_head_before_first_mutation": "c23736b63e6100bcdc38e7f11d94c782eb6273dc",
-    "analyst_tip_before_mutation": "f2342817193f4e3a191bb05921db5598ee3cd10c",
-    "analyst_tip_before_checkpoint": "f2342817193f4e3a191bb05921db5598ee3cd10c",
+    "exact_branch_head_before_lint_fix": "27e95f3363bfd32d21c9744cff3a7de8562cf679",
+    "analyst_tip": "f2342817193f4e3a191bb05921db5598ee3cd10c",
     "sub_collision": false,
     "sub_work_avoided": "Formal SUB lane/fallback remain null; independent NON_EVIDENTIARY incubator work was not touched."
   },
@@ -109,7 +123,8 @@
     "runtime_changed": false,
     "metric_changed": false,
     "threshold_changed": false,
-    "bootstrap_count_seed_quantile_changed": false
+    "bootstrap_count_seed_quantile_changed": false,
+    "lint_fix_only_formatting": true
   },
   "critical_path_fixes_completed": [
     "Added canonical target-free atomic_idx source-map artifact with exact-once/total pair assignment and SHA-256 digest.",
@@ -117,28 +132,31 @@
     "Changed primary inferential resampling unit from pair-IID to atomic_idx clusters exactly as prospectively fixed by Analyst.",
     "Preserved all observations in each sampled cluster at identical sampled-cluster multiplicity.",
     "Demoted the unchanged 1744-draw pair-IID bootstrap to secondary sensitivity only.",
-    "Updated pre-START config, runner, dedicated workflow lint scope, synthetic tests, and preregistration documentation."
+    "Updated pre-START config, runner, dedicated workflow lint scope, synthetic tests, and preregistration documentation.",
+    "Diagnosed exact pre-START failure from job 105267543121 as one Ruff E501 and fixed only line wrapping in 7cf849051a68b4227e29fe2f6ee95b2ff277dacd."
   ],
   "same_run_steps": [
     "Read fresh Analyst authority f2342817193f4e3a191bb05921db5598ee3cd10c and classified the authorized action as R1_PRE_START_AUDIT_STATISTICS_AMENDMENT.",
-    "Re-fetched lease and exact R1 head and acquired a non-colliding PRIMARY RUNNING lease.",
-    "Verified atomic_idx exists in the pinned Belief-R source rows and is used by deterministic official pair construction without requiring evaluator target materialization.",
+    "Acquired a non-colliding PRIMARY RUNNING lease after exact R1 head reconciliation.",
+    "Verified atomic_idx is a deterministic source-side field in the pinned Belief-R pair construction and does not require evaluator target materialization.",
     "Implemented the fixed target-free source-map/digest and atomic-cluster bootstrap amendment without touching the R1 controller or consumed parent evidence.",
-    "Re-fetched the amended R1 branch at exact final head 27e95f3363bfd32d21c9744cff3a7de8562cf679.",
-    "Observed dedicated pre-START run 35240543810 and ordinary CI run 35240543784 running on the exact final head.",
+    "Observed exact-head pre-START run 35240543810 fail only Ruff E501 after package installation succeeded.",
+    "Fetched job 105267543121 logs and repaired only the 102-character cluster policy line by formatting it across lines.",
+    "Re-fetched branch at new exact head 7cf849051a68b4227e29fe2f6ee95b2ff277dacd and observed new dedicated pre-START run 35241040727 plus ordinary CI run 35241040735 in progress.",
     "Stopped without STARTED or one-way execution because no useful local critical-path work remains while exact-head checks are external-running."
   ],
-  "same_run_stop_reason": "External exact-head readiness checks are still running; PRIMARY must not idle waiting. Relay may collect them. Even on green, current Analyst authority requires STOP before STARTED for fresh Analyst review.",
+  "same_run_stop_reason": "The first exact-head failure was a prospectively repairable science-invariant lint defect and was fixed. New exact-head checks are external-running; PRIMARY must not idle waiting. Relay may collect them. Even on green, current Analyst authority requires STOP before STARTED for fresh Analyst review.",
   "work_left_for_sub": "None on the MAIN critical path. SUB must not take R1 checks or blockers.",
   "reserved_sub_work_not_touched": true,
   "lane_repartition_reason": null,
-  "next_main_action": "Collect runs 35240543810 and 35240543784 on exact head 27e95f3363bfd32d21c9744cff3a7de8562cf679. If a science-invariant implementation/CI defect appears, MAIN fixes it and regains both checks on one final SHA. If both are green, set R1_PRE_START_READY_FOR_ANALYST_REVIEW and STOP before STARTED pending a fresh Analyst handoff. If atomic_idx binding is target-dependent/ambiguous/incomplete or needs a new scientific/statistical choice, STOP for Analyst immediately.",
+  "next_main_action": "Collect runs 35241040727 and 35241040735 on exact head 7cf849051a68b4227e29fe2f6ee95b2ff277dacd. If a science-invariant implementation/CI defect appears, MAIN fixes it and regains both checks on one final SHA. If both are green, set R1_PRE_START_READY_FOR_ANALYST_REVIEW and STOP before STARTED pending a fresh Analyst handoff. If atomic_idx binding is target-dependent/ambiguous/incomplete or needs a new scientific/statistical choice, STOP for Analyst immediately.",
   "write_path_diagnostics": {
     "lease_start_update": "success",
     "research_branch_direct_github_writes": "success",
     "new_source_map_file_create": "success commit fff3bdba6dd8efb68afede17ceeb63017a8d5b34",
-    "final_research_head": "27e95f3363bfd32d21c9744cff3a7de8562cf679",
+    "workflow_log_fetch": "success for job 105267543121",
+    "science_invariant_lint_fix": "success commit 7cf849051a68b4227e29fe2f6ee95b2ff277dacd",
     "local_checkout_network_attempt": "failed DNS resolution and was not treated as a GitHub write blocker",
-    "durable_reporting": "in_progress_at_state_write"
+    "durable_reporting": "main latest/state/history/lease persistence in progress"
   }
 }
