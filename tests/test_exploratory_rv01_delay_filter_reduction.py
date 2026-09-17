@@ -1,10 +1,13 @@
 from __future__ import annotations
 
 import importlib.util
+import json
 import sys
 from pathlib import Path
 
-MODULE_PATH = Path(__file__).parents[1] / "scripts" / "exploratory_rv01_delay_filter_reduction.py"
+ROOT = Path(__file__).parents[1]
+MODULE_PATH = ROOT / "scripts" / "exploratory_rv01_delay_filter_reduction.py"
+RESULT_PATH = ROOT / "artifacts" / "exploratory_rv01_delay_filter_reduction" / "result.json"
 SPEC = importlib.util.spec_from_file_location(
     "exploratory_rv01_delay_filter_reduction",
     MODULE_PATH,
@@ -21,6 +24,12 @@ def test_probe_is_deterministic_and_non_evidentiary() -> None:
 
     assert first == second
     assert first["evidentiary_status"] == "NON_EVIDENTIARY"
+
+
+def test_committed_result_matches_probe() -> None:
+    committed = json.loads(RESULT_PATH.read_text(encoding="utf-8"))
+
+    assert committed == MODULE.run_probe()
 
 
 def test_dev_test_are_disjoint_and_resources_are_matched() -> None:
