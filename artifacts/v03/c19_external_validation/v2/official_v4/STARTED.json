@@ -1,0 +1,11 @@
+{
+  "schema_version": "1",
+  "state": "STARTED",
+  "protocol_id": "c19-external-v2-official-protocol-v4",
+  "run_identity": "c19-external-v2-official-v4",
+  "evidence_analyst_commit": "56f0665ccc536bff6bf48e9eb581ec9a9eafcecc",
+  "exact_package_commit": "74bfe6b4a39758656f291baaa3f16236e3e71964",
+  "started_ref": "control/c19-official-v4-started-20260917",
+  "no_retry": true,
+  "human_review_override": "user-authorized human-review-only blocker waiver; no reviewer identity fabricated"
+}
