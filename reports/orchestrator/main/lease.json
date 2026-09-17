@@ -1,19 +1,22 @@
 {
-  "run_id": "primary-20260918T0115JST",
-  "execution_mode": "PRIMARY",
+  "run_id": "relay-20260918T0145JST",
+  "execution_mode": "RELAY",
   "status": "WAITING_EXTERNAL",
-  "started_at": "2026-09-18T01:15:33+09:00",
-  "heartbeat_at": "2026-09-18T01:28:00+09:00",
+  "started_at": "2026-09-18T01:46:57+09:00",
+  "heartbeat_at": "2026-09-18T01:49:30+09:00",
   "analyst_commit": "42836802e78abd26d19c5b8a789411f2b03d0ea1",
-  "active_branch": "research/c19-r1-revision-authority-reduction-20260917",
+  "active_branch": "control/c19-r1-revision-authority-started-20260918",
   "active_identity": "c19-r1-revision-authority-official-v1",
-  "active_step": "R1_PRE_START_WAITING_EXACT_HEAD_GATES",
-  "workflow_run_id": 35246655189,
+  "active_step": "R1_POST_START_ONE_WAY_RUNNING",
+  "workflow_run_id": 35248878958,
   "related_workflow_run_ids": {
-    "ordinary_ci": 35246655185,
-    "dedicated_prestart": 35246655189
+    "admission_ordinary_ci": 35246655185,
+    "admission_dedicated_prestart": 35246655189,
+    "started_branch_ci": 35248878746,
+    "one_way": 35248878958
   },
   "exact_package_commit": "7197ab0f9683616858859446ae9eed7b75707f25",
-  "expected_next_action": "Collect ordinary CI 35246655185 and dedicated pre-START 35246655189. If both are green, re-fetch Analyst authority 42836802..., exact package head, R1 identity/control/preserve/evidence namespaces and all frozen bindings; only then create exactly one STARTED control ref and continue the authorized one-way run. Mechanical gate failures remain MAIN-owned; semantic changes STOP.",
+  "started_commit": "62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2",
+  "expected_next_action": "Collect one-way workflow 35248878958 only. If it succeeds, re-fetch the R1 STARTED/control ref, preserve branch, annotated evidence tag/commit and terminal result; verify raw-preserve-refetch-before-target/scoring integrity and persist the terminal classification. If it fails after STARTED, preserve/verify diagnostics, keep c19-r1-revision-authority-official-v1 consumed with no retry, and STOP. Do not invent R2 or redesign any scientific/runtime/statistical choice.",
   "owner": "main"
 }
