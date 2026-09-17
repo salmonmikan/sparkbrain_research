@@ -1,0 +1,128 @@
+{
+  "timestamp": "2026-09-18T04:30:00+09:00",
+  "role": "LITERATURE_REDUCTION_SCOUT",
+  "control_plane_mailbox_semantics_respected": true,
+  "repository_refs_inspected": {
+    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "c19_r2": "research/c19-r2-fsa-state-tracker-spec-20260918@5d5d171cf872baed7a636fd246ab36f3a91a6716",
+    "c19_v4_scientific_parent": "74bfe6b4a39758656f291baaa3f16236e3e71964",
+    "c19_v4_evidence_tag": "evidence/c19-official-v4-c19-external-v2-official-v4",
+    "c19_v4_evidence_commit": "a0f83318356ced1c84863737803080d0dc69d208",
+    "r1_v2_consumed_package": "research/c19-r1-revision-authority-runtime-closed-v2-20260918@a23975c5713347eaa459161f538a8f0c3db6152e",
+    "sub_h2_exploratory": "research/exploratory-sub-h2-residual-memory-reduction-20260918@5cd9f65bca71ee1a235c88c27d32e25f27c76745",
+    "open_pr_count": 0,
+    "legacy_freeze_branch_count": 13,
+    "authoritative_evidence_tag_count": 1
+  },
+  "control_brain_commit_consumed": "d40f83ababcddf0b1e72621c77b10a8c4900badb",
+  "evidence_analyst_commit_consumed": "b09d90d0545a0448ea5a310f9373969e7471b15d",
+  "main_report_commit_consumed": "a4ff0f85d5c7a89d1f21817775d57ead85ddd21c",
+  "sub_report_commit_consumed": "bb76c6edf206743227a6dba34108a2a01551a9db",
+  "orchestrator_report_branch_tip_observed": "a4ff0f85d5c7a89d1f21817775d57ead85ddd21c",
+  "prior_literature_history_consumed": "analysis/external_research_audit/history/2026-09-17/1632-LITERATURE_REDUCTION_SCOUT.md",
+  "genuinely_new_information": true,
+  "current_repository_interpretation": {
+    "programme": "REFRAMED_TESTBED_NO_SUPPORTED_NEW_COMPUTATIONAL_PRINCIPLE",
+    "c19_v4": "TERMINAL_PASS_NARROW_REPRESENTATION_GAIN_IMMUTABLE",
+    "c19_r1": "SCIENTIFICALLY_UNRESOLVED_OPERATIONAL_LINE_TERMINATED_AFTER_CONSUMED_V1_V2_FAILURES",
+    "c19_r2": "PRE_FORMAL_PROSPECTIVE_SEVEN_STATE_FSA_REDUCTION_NOT_EXECUTION_ADMITTED",
+    "r2_dedicated_prestart": "35265194243:success@5d5d171cf872baed7a636fd246ab36f3a91a6716",
+    "r2_ordinary_ci_fresh_observation": "35265194183:success@5d5d171cf872baed7a636fd246ab36f3a91a6716",
+    "r2_formal_identity": null,
+    "r2_started": false
+  },
+  "findings": [
+    {
+      "id": "PSR_POST_R2_REDUCTION",
+      "summary": "Predictive State Representations encode dynamical state as predictions of future observable tests rather than nominal hidden state. A future R2 survival would not exclude a low-dimensional target-blind predictive-state reduction.",
+      "sources": [
+        "Littman, Sutton & Singh, Predictive Representations of State, NeurIPS 2001",
+        "Singh, James & Rudary, Predictive State Representations: A New Theory for Modeling Dynamical Systems, UAI 2004"
+      ],
+      "direct_applicability_confidence": "MEDIUM_HIGH"
+    },
+    {
+      "id": "EPSILON_MACHINE_CAUSAL_STATE_REDUCTION",
+      "summary": "Computational mechanics defines causal states as minimal sufficient predictive equivalence classes of histories. History-derived persistent predictive state is therefore an established formal object, not a SparkBrain-specific novelty axis.",
+      "sources": [
+        "Shalizi & Crutchfield, Computational Mechanics: Pattern and Prediction, Structure and Simplicity, J Stat Phys 2001"
+      ],
+      "direct_applicability_confidence": "HIGH_FOR_NOVELTY_BAR_MEDIUM_FOR_BENCHMARK_DESIGN"
+    },
+    {
+      "id": "LOCAL_CAUSAL_STATE_NOVELTY_PRESSURE",
+      "summary": "Local causal states use spacetime lightcones and predictive equivalence to discover emergent coherent structures from local interactions without semantic labels. Local/pre-semantic/predictive emergence alone is insufficient as a novelty claim.",
+      "sources": [
+        "Rupe, Kashinath, Kumar & Crutchfield, Chaos 2025, DOI 10.1063/5.0267915"
+      ],
+      "direct_applicability_confidence": "HIGH_FOR_PROGRAMME_NOVELTY_MEDIUM_FOR_DIRECT_C19_COMPARATOR"
+    },
+    {
+      "id": "RESERVOIR_FADING_MEMORY_BOUNDARY",
+      "summary": "Echo-state/reservoir systems are universal approximants for broad fading-memory filter classes. Future SparkBrain persistence should be tested for genuinely non-fading history dependence under matched recent inputs and a resource-matched reservoir comparator.",
+      "sources": [
+        "Grigoryeva & Ortega, Echo state networks are universal, Neural Networks 2018",
+        "Grigoryeva & Ortega, Universal discrete-time reservoir computers with stochastic inputs and linear readouts using non-homogeneous state-affine systems, JMLR 2018"
+      ],
+      "direct_applicability_confidence": "MEDIUM_HIGH_WITH_FADING_MEMORY_ASSUMPTION_CAVEAT"
+    },
+    {
+      "id": "AUTOMATA_EXTRACTION_REDUCTION_WORKFLOW",
+      "summary": "Automata extraction from recurrent networks via queries/counterexamples suggests a principled future workflow: extract a compact finite-state abstraction from frozen SparkBrain behavior rather than manually proliferating one-off FSA comparators.",
+      "sources": [
+        "Weiss, Goldberg & Yahav, Extracting Automata from Recurrent Neural Networks Using Queries and Counterexamples, ICML 2018"
+      ],
+      "direct_applicability_confidence": "MEDIUM_HIGH"
+    }
+  ],
+  "affected_lines": [
+    "C19_R2_FSA_STATE_TRACKER",
+    "PROGRAMME_NOVELTY",
+    "POST_R2_REDUCTION",
+    "PERSISTENT_DYNAMICS_RESIDUAL",
+    "FUTURE_EXTERNAL_VALIDATION"
+  ],
+  "reduction_candidates": [
+    "prospective learned/extracted DFA or WFA abstraction",
+    "Predictive State Representation / transformed PSR",
+    "epsilon-machine / causal-state predictive compression",
+    "local causal-state diagnostic for spatial/local emergence claims",
+    "resource/state-matched echo-state/reservoir fading-memory comparator"
+  ],
+  "confidence": {
+    "external_prior_art_exists": "HIGH",
+    "novelty_bar_impact": "HIGH",
+    "direct_equivalence_to_current_SparkBrain": "NOT_CLAIMED",
+    "prospective_discriminator_value": "MEDIUM_HIGH"
+  },
+  "novelty_or_reduction_impact": "STRONGER_REDUCTION_PRESSURE: a future R2 survival rejects only the exact seven-state tracker. Pre-semantic/local/history-derived predictive state and emergent organization already have established predictive-state/causal-state formalisms. SparkBrain must survive broader predictive-state and fading-memory reductions before any stronger novelty interpretation.",
+  "prospective_baselines_or_discriminators": [
+    "target-blind PSR/TPSR comparator with prospectively frozen state dimension, test set and learning budget",
+    "causal-state / epsilon-machine reconstruction under a frozen observable envelope",
+    "prospective DFA/WFA extraction from frozen SparkBrain behavior with held-out counterexamples",
+    "resource/state-matched ESN/reservoir baseline",
+    "remote-history / washout scaling test that holds current/recent input fixed while moving a causal event farther into the past",
+    "local-causal-state diagnostic if future claims rely on local emergent organization"
+  ],
+  "questions_for_evidence_analyst": [
+    "If R2 survives, should the next reduction use learned/extracted finite-state abstraction before another hand-designed mechanism?",
+    "Should PSR/epsilon-machine compression be placed ahead of any stronger persistent-dynamics claim?",
+    "Can a future remote-history test prospectively hold current/recent input fixed while shifting only the causal event farther into the past?",
+    "Keep R2 frozen exactly as currently specified; treat these findings as future prospective work only."
+  ],
+  "questions_for_control_brain": [
+    "Should local/pre-semantic/predictive-state emergence be explicitly removed from novelty axes unless it survives causal-state/local-causal-state reductions?",
+    "Should the post-R2 reduction ladder be organized by representational class rather than one-off mechanism names?",
+    "Should non-fading lineage-specific causal credit under matched state/lookup/resource budgets become the narrower residual novelty target?"
+  ],
+  "must_not_change_frozen_or_consumed": [
+    "immutable C19-v4 package/preserve/evidence/tag and terminal PASS",
+    "consumed C19-v2/v3 identities",
+    "consumed R1-v1 and R1-v2 identities and controls",
+    "R1 transient unpreserved outputs",
+    "consumed A01/RV01/RV02/CX identities and legacy immutable refs",
+    "current R2 pre-formal mechanism/statistics/resource semantics in response to this literature",
+    "no formal R2 identity or STARTED without fresh Evidence Analyst authorization"
+  ],
+  "legacy_shared_latest_state_updated": false
+}
