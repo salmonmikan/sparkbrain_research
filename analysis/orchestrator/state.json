@@ -231,7 +231,7 @@
     "latest": "analysis/orchestrator/latest.md",
     "state": "analysis/orchestrator/state.json",
     "history": "analysis/orchestrator/history/2026-09-18/0800.md",
-    "history_append_status": "pending_at_state_write",
+    "history_append_status": "completed",
     "immutable_refs_written": false,
     "force_push_used": false
   }
