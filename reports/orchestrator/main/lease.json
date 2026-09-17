@@ -1,14 +1,14 @@
 {
-  "run_id": "primary-20260917T1913JST",
-  "execution_mode": "PRIMARY",
+  "run_id": "relay-20260917T1945JST",
+  "execution_mode": "RELAY",
   "status": "RUNNING",
-  "started_at": "2026-09-17T19:13:42+09:00",
-  "heartbeat_at": "2026-09-17T19:16:00+09:00",
-  "analyst_commit": "d1b60468678c2425ac1fa445c5f6067d5bcdb64b",
+  "started_at": "2026-09-17T19:45:26+09:00",
+  "heartbeat_at": "2026-09-17T19:45:26+09:00",
+  "analyst_commit": "ef858fe9e6fbe9d0bdd57bc43a15e07ec0b30c23",
   "active_branch": "research/c19-official-v4-preservation-qualified-20260917",
   "active_identity": "c19-external-v2-official-v4",
-  "active_step": "V4_PRE_START_BUILD",
+  "active_step": "V4_PRE_START_BUILD_RELAY_TAKEOVER_STALE_PRIMARY",
   "workflow_run_id": null,
-  "expected_next_action": "Create the fresh v4 branch from exact v3 science basis 84b244959f249da916a36906508ead0830052e9b, integrate only the already-qualified generic preservation mechanism from readiness head 158ad46cafcc9d9b17f01a85488562b63e81257d, prove science-contract invariance and exact bindings, then run exact-head pre-START CI/admission. Do not START until every Analyst GO gate is green.",
+  "expected_next_action": "Continue only the prospectively authorized V4_PRE_START_BUILD: integrate the already-qualified generic preservation mechanism without changing science, prove invariance/bindings, then run exact-head pre-START validation. Do not START until every Analyst GO gate is green.",
   "owner": "main"
 }
