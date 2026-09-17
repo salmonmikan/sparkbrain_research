@@ -8,7 +8,7 @@ on:
 
 jobs:
   prestart:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
         with:
@@ -23,12 +23,14 @@ jobs:
         run: >-
           python -m ruff check
           scripts/check_c19_r2_prestart.py
+          scripts/preserve_c19_r2_boundary.py
+          scripts/run_c19_r2_official.py
           src/sparkbrain/v03_external_validation/c19_r2_protocol.py
           src/sparkbrain/v03_external_validation/c19_r2_scoring.py
           src/sparkbrain/v03_external_validation/c19_r2_source_map.py
           src/sparkbrain/v03_external_validation/c19_r2_state_tracker.py
           tests/test_c19_r2_state_tracker.py
-      - name: Network-blocked import smoke
+      - name: Network-blocked production import smoke
         run: |
           python - <<'PY'
           import socket
@@ -42,8 +44,30 @@ jobs:
           import sparkbrain.v03_external_validation.c19_r2_scoring  # noqa: F401,E402
           import sparkbrain.v03_external_validation.c19_r2_source_map  # noqa: F401,E402
           import sparkbrain.v03_external_validation.c19_r2_state_tracker  # noqa: F401,E402
+          import runpy
+          runpy.run_path("scripts/run_c19_r2_official.py", run_name="r2_prestart_import")
           PY
       - name: Golden fixtures
         run: python -m pytest -q tests/test_c19_r2_state_tracker.py
-      - name: Fail-closed R2 pre-START contract
+      - name: Fail-closed frozen-science and authority contract
         run: python scripts/check_c19_r2_prestart.py
+      - name: Authority-bound production execution smoke
+        run: |
+          python scripts/run_c19_r2_official.py prestart-smoke \
+            --analyst-commit 719b9e74063e5e10f6226fd49f1835036ed75e5b \
+            --package-commit "$(git rev-parse HEAD)"
+      - name: Fresh one-way namespaces
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin 'control/c19-r2-fsa-state-tracker-started-*' >/dev/null 2>&1; then
+            echo 'R2 STARTED namespace already exists' >&2
+            exit 1
+          fi
+          if git ls-remote --exit-code --heads origin 'preserve/c19-r2-fsa-state-tracker-raw-*' >/dev/null 2>&1; then
+            echo 'R2 preserve namespace already exists' >&2
+            exit 1
+          fi
+          if git ls-remote --exit-code --tags origin 'refs/tags/evidence/c19-r2-fsa-state-tracker-*' >/dev/null 2>&1; then
+            echo 'R2 evidence namespace already exists' >&2
+            exit 1
+          fi
