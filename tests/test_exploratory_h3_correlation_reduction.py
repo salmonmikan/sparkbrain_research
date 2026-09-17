@@ -1,8 +1,8 @@
 from __future__ import annotations
 
 import importlib.util
-import sys
 from pathlib import Path
+import sys
 
 
 MODULE_PATH = Path(__file__).parents[1] / "scripts" / "exploratory_h3_correlation_reduction.py"
