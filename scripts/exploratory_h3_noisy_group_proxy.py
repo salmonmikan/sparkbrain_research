@@ -14,7 +14,6 @@ import random
 from collections.abc import Callable
 from dataclasses import dataclass
 
-
 CORRUPTION_RATES = (0.0, 0.10, 0.25, 0.50, 1.0)
 
 
