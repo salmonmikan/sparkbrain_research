@@ -15,119 +15,68 @@
     "sub_fallback": null,
     "blocked_until": "A newer Evidence Analyst handoff consumes the v3 POST_START_FAILURE and prospectively decides stop versus any new distinct object."
   },
-  "consumed_prospective_contingency_branches": [
-    "V3_PRE_START_BLOCKER",
-    "V3_PRE_START_READY_FOR_ONE_WAY",
-    "V3_POST_START_FAILURE"
-  ],
+  "consumed_prospective_contingency_branches": ["V3_PRE_START_BLOCKER", "V3_PRE_START_READY_FOR_ONE_WAY", "V3_POST_START_FAILURE"],
   "main_active_claim": "C19 official-v3 identity consumed by post-START immutable-raw-preservation failure after target-blind acquisition and before evaluator targets/scoring; no terminal scientific result; no retry; no automatic v4",
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "evidence_analyst": "b9c14e9e171bf765447aa45e71b7ba75cc7ce357",
     "control_brain": "d8987f8c6d88fad48a8f652f4255e73b30a223e6",
     "c19_v3_package": "research/c19-official-v3-runtime-closed-20260917@84b244959f249da916a36906508ead0830052e9b",
-    "c19_v3_started_ref": "control/c19-official-v3-started-20260917",
-    "c19_v3_started_commit": "915b7b21abe6ef936fa18e81e4a5117712d20f28",
-    "c19_v3_control_head": "294d947ade2f906e284d5e1eed5ad57ac7527947",
+    "c19_v3_started": "control/c19-official-v3-started-20260917@915b7b21abe6ef936fa18e81e4a5117712d20f28",
+    "c19_v3_control_final": "control/c19-official-v3-started-20260917@294d947ade2f906e284d5e1eed5ad57ac7527947",
     "c19_v3_preserve_refs": [],
     "c19_v3_evidence_refs": [],
-    "c19_v2_control_head": "7a8af82de0a0dd70ec2391ef7506ae80c5c8d391"
+    "c19_v2_control": "control/c19-official-v2-started-20260917@7a8af82de0a0dd70ec2391ef7506ae80c5c8d391"
   },
   "branches_prs_advanced": {
-    "research/c19-official-v3-runtime-closed-20260917": {
-      "exact_execution_head": "84b244959f249da916a36906508ead0830052e9b",
-      "prestart_run": 35199692189,
-      "prestart_result": "success",
-      "exact_head_ci_run": 35199692097,
-      "exact_head_ci_result": "success"
-    },
-    "control/c19-official-v3-started-20260917": {
-      "started_commit": "915b7b21abe6ef936fa18e81e4a5117712d20f28",
-      "post_start_failure_commit": "294d947ade2f906e284d5e1eed5ad57ac7527947",
-      "final_state": "POST_START_FAILURE"
-    },
+    "research/c19-official-v3-runtime-closed-20260917": "84b244959f249da916a36906508ead0830052e9b",
+    "control/c19-official-v3-started-20260917": "294d947ade2f906e284d5e1eed5ad57ac7527947",
     "open_prs": [],
     "merges": []
   },
   "workflows_experiments": {
-    "prestart": {
-      "run_id": 35199692189,
-      "head": "84b244959f249da916a36906508ead0830052e9b",
-      "result": "success"
-    },
-    "package_ci": {
-      "run_id": 35199692097,
-      "head": "84b244959f249da916a36906508ead0830052e9b",
-      "result": "success"
-    },
+    "prestart": {"run_id": 35199692189, "result": "success", "head": "84b244959f249da916a36906508ead0830052e9b"},
+    "package_ci": {"run_id": 35199692097, "result": "success", "head": "84b244959f249da916a36906508ead0830052e9b"},
     "official_one_way": {
       "run_id": 35200352569,
       "job_id": 105133356842,
-      "head_ref": "control/c19-official-v3-started-20260917",
-      "started_head": "915b7b21abe6ef936fa18e81e4a5117712d20f28",
       "result": "failure",
       "failed_step": "Persist raw predictions immutably before evaluator targets",
       "failure_class": "raw_preservation_failure_after_target_blind_acquisition_before_targets",
       "exact_runtime_install_succeeded": true,
-      "started_and_package_verification_succeeded": true,
       "official_input_verification_succeeded": true,
       "target_blind_acquisition_completed": true,
       "raw_created_during_workflow": true,
       "raw_row_count": 95920,
       "raw_sha256": "fe08f475b2ba7b0e5e38c61595a23bb54863a7bfd66a3d62663442d99f639978",
       "raw_immutably_preserved": false,
-      "preserve_ref_created": false,
       "evaluator_targets_materialized": false,
       "scoring_started": false,
-      "scoring_performed": false,
-      "evidence_ref_created": false,
       "diagnostic_artifact_id": 10487408980,
-      "diagnostic_artifact_role": "diagnostic_only_not_immutable_raw_evidence",
-      "diagnostic_raw_predictions_present": false
+      "diagnostic_artifact_role": "diagnostic_only_not_immutable_raw_evidence"
     }
   },
   "scientific_results": {
     "new_scientific_measurement": false,
     "terminal_scientific_result": null,
     "classification": "POST_START_FAILURE",
-    "interpretation": "Target-blind acquisition completed, but immutable raw preservation failed before evaluator targets/scoring. No canonical raw evidence exists and there is no PASS/FAIL/INCONCLUSIVE result. The raw manifest/digest in the diagnostic artifact is operational evidence only and must not be scored or relabeled as scientific evidence."
+    "interpretation": "Target-blind acquisition completed, but immutable raw preservation failed before evaluator targets/scoring. No canonical raw evidence exists; no PASS/FAIL/INCONCLUSIVE result exists; diagnostic metadata must not be scored or relabeled as scientific evidence."
   },
   "consumed_identities": {
-    "c19-external-v2-official-v3": {
-      "consumed": true,
-      "reason": "V3_POST_START_FAILURE after STARTED during immutable raw preservation",
-      "retry_allowed": false,
-      "automatic_successor_allowed": false
-    },
-    "c19-external-v2-official-v2": {
-      "consumed": true,
-      "reason": "prior POST_START_FAILURE",
-      "retry_allowed": false
-    },
-    "inherited_do_not_touch": [
-      "A01 MD-001",
-      "A01 P2 candidate-002",
-      "A01 P3 candidate-001",
-      "A01 Family-A P4 candidate-001",
-      "RV01 R01-16 family",
-      "RV01 R01-17",
-      "RV02 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
-      "CX01 Candidate-002/formal evidence",
-      "C19 predecessor c19-external-v2-official-v1 retired/rejected-unSTARTED and non-reusable"
-    ]
+    "c19-external-v2-official-v3": {"consumed": true, "retry_allowed": false, "automatic_successor_allowed": false, "reason": "V3_POST_START_FAILURE after STARTED"},
+    "c19-external-v2-official-v2": {"consumed": true, "retry_allowed": false, "reason": "prior POST_START_FAILURE"},
+    "inherited_do_not_touch": ["A01 MD-001", "A01 P2 candidate-002", "A01 P3 candidate-001", "A01 Family-A P4 candidate-001", "RV01 R01-16 family", "RV01 R01-17", "RV02 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a", "CX01 Candidate-002/formal evidence", "C19 predecessor c19-external-v2-official-v1"]
   },
   "blockers": [
-    "C19 v3 crossed STARTED and then failed to preserve generated target-blind raw immutably; the exact identity is consumed/no-retry.",
-    "No canonical preserve ref or raw evidence exists for v3, so scoring/recovery from diagnostic artifact is forbidden.",
-    "The prospective Analyst handoff explicitly forbids automatic v4 after V3_POST_START_FAILURE; a fresh prospective Analyst decision is required before any new object."
+    "v3 identity is consumed/no-retry after post-START raw-preservation failure",
+    "no canonical preserve ref/raw evidence exists, so scoring or recovery from diagnostics is forbidden",
+    "automatic v4 is forbidden; fresh Evidence Analyst authority is required for any new object"
   ],
   "concurrency_reconciliation": {
     "material_movement_after_analyst_handoff": true,
-    "analyst_handoff_state_snapshot_stale_on_execution_phase": true,
     "analyst_contingency_applied": "V3_POST_START_FAILURE",
-    "research_head_observed": "84b244959f249da916a36906508ead0830052e9b",
-    "control_started_observed": "915b7b21abe6ef936fa18e81e4a5117712d20f28",
-    "control_post_failure_written": "294d947ade2f906e284d5e1eed5ad57ac7527947",
+    "research_head": "84b244959f249da916a36906508ead0830052e9b",
+    "control_final": "294d947ade2f906e284d5e1eed5ad57ac7527947",
     "same_identity_retry_detected": false,
     "open_prs": 0,
     "open_issues": [139, 147],
@@ -139,7 +88,6 @@
     "status": "V3_POST_START_FAILURE_CONSUMED_STOP",
     "immutable_evidence_modified": false,
     "v2_consumed_identity_touched": false,
-    "v3_started_ref_created": true,
     "v3_identity_consumed": true,
     "v3_retry_allowed": false,
     "target_blind_acquisition_completed": true,
@@ -150,44 +98,37 @@
     "terminal_scientific_result_created": false,
     "diagnostics_preserved": true,
     "diagnostics_are_scientific_evidence": false,
-    "raw_before_score_contract_bypassed": false,
-    "no_clobber_contract_violated": false,
     "automatic_v4_created": false
   },
   "main_critical_path_fixups_completed": [
-    "Reconciled v3 branch to exact execution head 84b244959 and verified exact-head pre-START 35199692189 plus CI 35199692097 were green.",
-    "Closed pre-START runtime/import-smoke defects mechanically without changing v2/v3 scientific semantics.",
-    "Verified STARTED authority 915b7b21 and exact package/identity/Analyst/no-retry binding.",
-    "Verified one-way run 35200352569 completed target-blind acquisition under the frozen v3 runtime before failing at immutable raw preservation.",
-    "Verified absence of v3 preserve/evidence authority and absence of evaluator-target materialization/scoring.",
-    "Inspected diagnostic artifact metadata/manifest and retained only diagnostic raw row count/digest, not as canonical evidence.",
-    "Persisted append-only POST_START_FAILURE control record 294d947a with consumed/no-retry/no-automatic-v4 disposition.",
-    "Stopped rather than repairing/retrying the consumed identity."
+    "mechanically closed pre-START runtime/import-smoke defects without changing scientific semantics",
+    "verified exact-head pre-START and CI green",
+    "verified STARTED exact package/identity/Analyst/no-retry binding",
+    "verified target-blind acquisition completed before immutable raw-preservation failure",
+    "verified no preserve/evidence authority, no evaluator targets and no scoring",
+    "recorded append-only POST_START_FAILURE control state at 294d947ade2f906e284d5e1eed5ad57ac7527947",
+    "stopped without retrying the consumed identity"
   ],
   "same_run_steps_completed": [
-    "Re-fetched remote research/control/preserve/evidence refs, PRs/issues and workflow/CI state independently of ops branches.",
-    "Consumed Evidence Analyst b9c14e9e and separately read current MAIN/SUB streams plus Control Brain strategic prior.",
-    "Reconciled concurrent v3 branch movement to exact head 84b244959 and successful pre-START/CI runs.",
-    "Reconciled STARTED authority and one-way workflow 35200352569.",
-    "Classified the terminal workflow state under prospective V3_POST_START_FAILURE.",
-    "Verified raw generation metadata but no immutable raw preservation, no targets and no scoring.",
-    "Created the append-only canonical POST_START_FAILURE marker on the v3 control branch.",
-    "Persisted MAIN-owned latest/state/history independently of scientific execution."
+    "re-fetched authoritative repository state independently of ops branches",
+    "consumed Analyst/MAIN/SUB/Control Brain designated streams",
+    "reconciled v3 exact-head pre-START/CI success and STARTED",
+    "reconciled one-way run 35200352569 to terminal failure",
+    "classified V3_POST_START_FAILURE",
+    "verified diagnostic raw metadata but no immutable raw evidence",
+    "persisted POST_START_FAILURE control marker",
+    "persisted MAIN latest/state/history"
   ],
-  "same_run_stop_reason": "Prospective V3_POST_START_FAILURE requires diagnostic preservation where possible, consumption of c19-external-v2-official-v3, no retry, STOP and no automatic v4. Raw was not immutably preserved before evaluator targets, so no scientific scoring or recovery path is allowed in this run.",
+  "same_run_stop_reason": "Prospective V3_POST_START_FAILURE requires consume/no-retry/STOP and forbids automatic v4. Raw was not immutably preserved before evaluator targets, so no scientific scoring or recovery path is allowed.",
   "work_intentionally_left_for_sub": "No formal SUB lane/fallback exists. SUB may only continue separately authorized NON_EVIDENTIARY incubation; MAIN did not absorb or depend on it.",
   "reserved_sub_work_not_touched": [],
   "lane_repartition_reason": null,
   "analyst_split_invalidated": false,
   "write_path_diagnostics": {
-    "control_post_start_failure_marker": {
-      "first_attempt": "schema validation failed because create_file requires repository_full_name rather than owner/repo fields; no repository mutation occurred",
-      "retry": "success",
-      "commit": "294d947ade2f906e284d5e1eed5ad57ac7527947"
-    },
+    "control_post_start_failure_marker": {"first_attempt": "schema validation failed because create_file requires repository_full_name rather than owner/repo; no mutation occurred", "retry": "success", "commit": "294d947ade2f906e284d5e1eed5ad57ac7527947"},
     "report_latest_update": "success",
     "report_state_update": "success",
-    "report_history_append": "pending_at_state_write"
+    "report_history_append": {"status": "success", "path": "reports/orchestrator/history/2026-09-17/1747-main.md", "commit": "2d52d946651fcb1ee35d28c5aa3fc1432f44df45"}
   },
-  "next_main_action": "STOP. Do not retry c19-external-v2-official-v3, do not score from diagnostic artifact, and do not create v4. Return control/c19-official-v3-started-20260917@294d947ade2f906e284d5e1eed5ad57ac7527947 to a newer Evidence Analyst for a fresh prospective decision."
+  "next_main_action": "STOP. Do not retry c19-external-v2-official-v3, do not score from diagnostic artifact, and do not create v4. Return v3 POST_START_FAILURE to a newer Evidence Analyst for a fresh prospective decision."
 }
