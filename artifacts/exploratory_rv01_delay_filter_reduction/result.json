@@ -1,0 +1,140 @@
+{
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "exploratory_target": "RV01 adaptive-delay reduction sensitivity: residual-deadzone learner versus resource-matched generic clipped EWMA",
+  "interpretation_boundary": "Synthetic reduction diagnostic only. It does not rerun or reinterpret consumed RV01 evidence and cannot support or reject RV01 scientifically.",
+  "rows": [
+    {
+      "deadzone_delay_learner": {
+        "false_adjustment_rate": 0.42552576456634583,
+        "mae": 0.30961260765352777,
+        "return_recovery_2step": 0.7817894229649369,
+        "switch_latency": 1.8888193649991165,
+        "utility": -0.33411392807202994
+      },
+      "generic_clipped_ewma": {
+        "false_adjustment_rate": 0.7402564365114329,
+        "mae": 0.3543535905500529,
+        "return_recovery_2step": 0.8471362273570465,
+        "switch_latency": 1.681485374281948,
+        "utility": -0.42577900497724086
+      },
+      "generic_minus_deadzone_utility": -0.09166507690521092,
+      "outlier_probability": 0.0
+    },
+    {
+      "deadzone_delay_learner": {
+        "false_adjustment_rate": 0.468549936694564,
+        "mae": 0.3831698738972965,
+        "return_recovery_2step": 0.7633580279574204,
+        "switch_latency": 1.9609863993156835,
+        "utility": -0.4212057490220667
+      },
+      "generic_clipped_ewma": {
+        "false_adjustment_rate": 0.757399327381198,
+        "mae": 0.4156234779618485,
+        "return_recovery_2step": 0.8281273540221031,
+        "switch_latency": 1.751710701441538,
+        "utility": -0.49543556137801875
+      },
+      "generic_minus_deadzone_utility": -0.07422981235595205,
+      "outlier_probability": 0.03
+    },
+    {
+      "deadzone_delay_learner": {
+        "false_adjustment_rate": 0.5067905648789501,
+        "mae": 0.45338132579336426,
+        "return_recovery_2step": 0.7466176531292253,
+        "switch_latency": 2.033912590601275,
+        "utility": -0.5037641685178088
+      },
+      "generic_clipped_ewma": {
+        "false_adjustment_rate": 0.7744068189234777,
+        "mae": 0.47394581360194926,
+        "return_recovery_2step": 0.8157633967413382,
+        "switch_latency": 1.8194637994065936,
+        "utility": -0.561046581857642
+      },
+      "generic_minus_deadzone_utility": -0.057282413339833194,
+      "outlier_probability": 0.06
+    },
+    {
+      "deadzone_delay_learner": {
+        "false_adjustment_rate": 0.5802386926184815,
+        "mae": 0.5926808058781112,
+        "return_recovery_2step": 0.7110284707719803,
+        "switch_latency": 2.192999420433302,
+        "utility": -0.6678642563990096
+      },
+      "generic_clipped_ewma": {
+        "false_adjustment_rate": 0.8066523376089665,
+        "mae": 0.588680679940025,
+        "return_recovery_2step": 0.7734490109962981,
+        "switch_latency": 1.9907242372947116,
+        "utility": -0.693715522931215
+      },
+      "generic_minus_deadzone_utility": -0.025851266532205375,
+      "outlier_probability": 0.12
+    },
+    {
+      "deadzone_delay_learner": {
+        "false_adjustment_rate": 0.6611360801250789,
+        "mae": 0.7738728838334089,
+        "return_recovery_2step": 0.6555235422717292,
+        "switch_latency": 2.497829762570368,
+        "utility": -0.8827064613947764
+      },
+      "generic_clipped_ewma": {
+        "false_adjustment_rate": 0.8428900586495034,
+        "mae": 0.7353885028754781,
+        "return_recovery_2step": 0.714651647044629,
+        "switch_latency": 2.2465314391808078,
+        "utility": -0.8641647107241086
+      },
+      "generic_minus_deadzone_utility": 0.018541750670667767,
+      "outlier_probability": 0.2
+    }
+  ],
+  "selected_on_dev": {
+    "deadzone_delay_learner": {
+      "deadzone_ms": 0.35,
+      "eta": 0.8
+    },
+    "generic_clipped_ewma": {
+      "alpha": 0.65,
+      "innovation_clip_ms": 4.0
+    }
+  },
+  "summary": {
+    "crossover_observed": true,
+    "deadzone_wins": 4,
+    "generic_wins": 1
+  },
+  "synthetic_contract": {
+    "clipped_ewma_parameter_grid": {
+      "alpha": [0.1, 0.2, 0.3, 0.4, 0.5, 0.65, 0.8],
+      "innovation_clip_ms": [0.5, 1.0, 1.5, 2.0, 3.0, 4.0]
+    },
+    "deadzone_parameter_grid": {
+      "deadzone_ms": [0.0, 0.2, 0.35, 0.5, 0.75, 1.0],
+      "eta": [0.1, 0.2, 0.3, 0.4, 0.5, 0.65, 0.8]
+    },
+    "dev_outlier_probability": 0.06,
+    "dev_seeds": [20260901, 20260902, 20260903, 20260904, 20260905],
+    "latent_delay_levels_ms": [1.0, 3.0, 5.0],
+    "observation_noise_sigma_ms": 0.55,
+    "outlier_magnitude_ms": 3.0,
+    "resource_match": "Both filters retain exactly one persistent scalar delay estimate and select exactly two control parameters on DEV only.",
+    "selection_rule": "Select each filter independently on the single fixed DEV world at outlier probability 0.06, then keep parameters fixed across disjoint TEST seeds and the full outlier sensitivity sweep.",
+    "sequence_length": 64,
+    "sequences_per_seed": 128,
+    "stay_probability": 0.94,
+    "test_outlier_probabilities": [0.0, 0.03, 0.06, 0.12, 0.2],
+    "test_seeds": [20260918, 20260919, 20260920, 20260921, 20260922],
+    "utility": {
+      "false_adjustment_threshold_ms": 0.15,
+      "formula": "-mae - 0.20*false_adjustment_rate - 0.03*switch_latency + 0.15*return_recovery_2step",
+      "recovery_tolerance_ms": 0.5,
+      "switch_latency_cap_steps": 8
+    }
+  }
+}
