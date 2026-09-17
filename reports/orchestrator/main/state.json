@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-17T22:22:00+09:00",
+  "timestamp": "2026-09-17T23:20:00+09:00",
   "worker_role": "main",
   "execution_mode": "PRIMARY",
   "evidence_analyst_commit": "9f88fba973f54bc6608d183aacfaccd7952a229f",
@@ -42,6 +42,11 @@
     "branch_head_unchanged": "research/c19-r1-revision-authority-reduction-20260917@c23736b63e6100bcdc38e7f11d94c782eb6273dc",
     "prs": []
   },
+  "workflows_experiments": {
+    "new_workflows_dispatched": [],
+    "new_experiments_started": [],
+    "reason": "Current Analyst authority forbids R1 STARTED/one-way execution."
+  },
   "scientific_results": [],
   "consumed_identities": {
     "c19_v2": "consumed_no_retry",
@@ -51,17 +56,17 @@
   },
   "blockers": [
     "R1 exact-head readiness is complete, but Evidence Analyst commit 9f88fba973f54bc6608d183aacfaccd7952a229f explicitly forbids STARTED/one-way execution.",
-    "A fresh Evidence Analyst handoff explicitly authorizing R1 execution is required before any scientific mutation can continue."
+    "A fresh Evidence Analyst handoff explicitly authorizing R1 execution is required before scientific execution can continue."
   ],
   "lease_collision_reconciliation": {
-    "prior_lease_run_id": "relay-20260917T2145JST",
+    "prior_lease_run_id": "primary-20260917T2217JST",
     "prior_lease_status": "BLOCKED",
-    "prior_lease_heartbeat": "2026-09-17T21:45:00+09:00",
+    "prior_lease_heartbeat": "2026-09-17T22:23:00+09:00",
     "fresh_running_main_collision": false,
     "stale_or_nonrunning_lease_recovered_after_ref_reconciliation": true,
     "exact_branch_head_matches_prior_checkpoint": true,
     "sub_collision": false,
-    "sub_main_work_avoided": "SUB is on independent NON_EVIDENTIARY H5 exploratory branch research/exploratory-sub-h5-lazy-routing-20260917 and did not touch C19-R1."
+    "sub_main_work_avoided": "SUB is on independent NON_EVIDENTIARY H6 workspace-accounting exploratory branch research/exploratory-sub-h6-workspace-accounting-20260917 and did not touch C19-R1."
   },
   "integrity_status": {
     "official_data_accessed": false,
@@ -78,21 +83,23 @@
   },
   "critical_path_fixes_completed": [],
   "same_run_steps": [
-    "Re-fetched Evidence Analyst authority and confirmed it remains 9f88fba973f54bc6608d183aacfaccd7952a229f.",
+    "Re-fetched the Evidence Analyst branch tip and confirmed it remains 9f88fba973f54bc6608d183aacfaccd7952a229f.",
     "Re-fetched exact R1 branch and confirmed head c23736b63e6100bcdc38e7f11d94c782eb6273dc is unchanged.",
     "Re-verified R1 pre-START readiness run 35221764005 is completed/success on the exact head.",
     "Re-verified ordinary CI run 35221764016 is completed/success on the same exact head.",
     "Re-verified no R1 STARTED/control, preserve, or evidence refs exist.",
-    "Reconciled the prior BLOCKED RELAY lease and acquired PRIMARY coordination without a fresh RUNNING collision.",
+    "Read current SUB report and confirmed its H6 NON_EVIDENTIARY work is independent and does not collide with C19-R1.",
+    "Recovered the stale prior BLOCKED PRIMARY lease after exact ref/integrity reconciliation and persisted a fresh RUNNING heartbeat.",
     "Stopped before STARTED as required by the prospectively fixed R1_PRE_START_READY_FOR_ANALYST_REVIEW contingency."
   ],
   "same_run_stop_reason": "The current Analyst authority is unchanged and explicitly requires STOP at R1_PRE_START_READY_FOR_ANALYST_REVIEW. Any STARTED/one-way execution would exceed prospective authorization.",
-  "work_left_for_sub": "None on the MAIN critical path. SUB remains independent; MAIN did not touch its NON_EVIDENTIARY H5 exploratory work.",
+  "work_left_for_sub": "None on the MAIN critical path. SUB remains independent; MAIN did not touch its NON_EVIDENTIARY H6 exploratory work.",
   "reserved_sub_work_not_touched": true,
   "lane_repartition_reason": null,
   "next_main_action": "Wait for a fresh Evidence Analyst handoff. If a newer authority explicitly authorizes R1 execution, re-fetch exact head, identity freshness, source/protocol/package/runtime/input/scorer/preserver bindings, control/preserve/evidence namespaces, exact-head CI/review and collision state immediately before STARTED. Otherwise remain stopped.",
   "write_path_diagnostics": {
-    "lease_heartbeat_update": "success commit e787d55b40cde37d918924b3e802c98b09b0784b",
+    "lease_heartbeat_update": "success commit a2682f486643d5ceb84a7ab7b22b1f35dcae8fde",
+    "main_latest_update": "success commit 85943391fa1bd2760c15db31fc2d43530b54bb59",
     "scientific_or_research_branch_write_attempted": false,
     "reason_no_scientific_write": "Execution is explicitly forbidden by current Analyst authority after readiness completion."
   }
