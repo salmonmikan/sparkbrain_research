@@ -92,7 +92,9 @@ class Preserver(Protocol):
 
 
 class Scorer(Protocol):
-    def __call__(self, raw: RawBundleV2, evaluator_targets: object) -> Mapping[str, object]: ...
+    def __call__(
+        self, raw: RawBundleV2, evaluator_targets: object
+    ) -> Mapping[str, object]: ...
 
 
 def _sha256_text(value: str) -> str:
@@ -137,8 +139,12 @@ def _materialize_raw_record(
         "seed": int(row["seed"]),
         "pair_index": _non_negative_int(emitted["pair_index"], "pair_index"),
         "record_id_hash": _sha256_text(record_id),
-        "source_index": _non_negative_int(emitted["source_index"], "source_index"),
-        "step_index": _non_negative_int(metadata["final_step_index"], "step_index"),
+        "source_index": _non_negative_int(
+            emitted["source_index"], "source_index"
+        ),
+        "step_index": _non_negative_int(
+            metadata["final_step_index"], "step_index"
+        ),
         "prediction": emitted["prediction"],
         "probabilities": dict(probabilities),
         "input_track": row.get("input_track"),
@@ -214,7 +220,9 @@ class OneWayExecutionHarnessV2:
                 else baseline_executors[str(row["baseline_kind"])]
             )
             for emitted in executor(row, frozen_examples):
-                records.append(_materialize_raw_record(row, emitted, admission=admission))
+                records.append(
+                    _materialize_raw_record(row, emitted, admission=admission)
+                )
         raw = RawBundleV2.from_records(records)
         raw_writer(raw)
         self._raw = raw
@@ -230,7 +238,9 @@ class OneWayExecutionHarnessV2:
         self._receipt = receipt
         return receipt
 
-    def score(self, *, evaluator_targets: object, scorer: Scorer) -> Mapping[str, object]:
+    def score(
+        self, *, evaluator_targets: object, scorer: Scorer
+    ) -> Mapping[str, object]:
         if self._raw is None or self._receipt is None:
             raise RuntimeError("raw must be immutably preserved before scoring")
         self._receipt.validate_for(self._raw)  # type: ignore[arg-type]
