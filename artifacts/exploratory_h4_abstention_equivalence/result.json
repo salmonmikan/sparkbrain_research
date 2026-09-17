@@ -1,0 +1,72 @@
+{
+  "comparison": {
+    "best_margin_only_at_or_above_workspace_coverage": {
+      "accepted": 64,
+      "coverage": 0.3333333333333333,
+      "selective_risk": 0.21875,
+      "threshold": 0.8,
+      "total": 192
+    },
+    "best_matched_feature_dominator": {
+      "accepted": 52,
+      "coverage": 0.2708333333333333,
+      "selective_risk": 0.11538461538461542,
+      "threshold": 0.8,
+      "total": 192
+    },
+    "matched_feature_dominator_count": 1,
+    "workspace_dominated_when_information_matched": true
+  },
+  "hypothesis_or_reduction_question": "Does toy no-ignition retain a selective-prediction advantage once an ordinary abstention comparator receives the same margin/diversity/contradiction information?",
+  "inputs": {
+    "contradictions": [false, true],
+    "diversities": [1, 2, 3, 4],
+    "example_count": 192,
+    "margins": [0.2, 0.35, 0.5, 0.65, 0.8, 0.95],
+    "variants": [0, 1, 2, 3]
+  },
+  "margin_only_abstention_frontier": [
+    {"accepted": 192, "coverage": 1.0, "selective_risk": 0.5, "threshold": 0.2, "total": 192},
+    {"accepted": 160, "coverage": 0.8333333333333334, "selective_risk": 0.42500000000000004, "threshold": 0.35, "total": 192},
+    {"accepted": 128, "coverage": 0.6666666666666666, "selective_risk": 0.359375, "threshold": 0.5, "total": 192},
+    {"accepted": 96, "coverage": 0.5, "selective_risk": 0.29166666666666663, "threshold": 0.65, "total": 192},
+    {"accepted": 64, "coverage": 0.3333333333333333, "selective_risk": 0.21875, "threshold": 0.8, "total": 192},
+    {"accepted": 32, "coverage": 0.16666666666666666, "selective_risk": 0.15625, "threshold": 0.95, "total": 192}
+  ],
+  "matched_feature_abstention_frontier": [
+    {"accepted": 192, "coverage": 1.0, "selective_risk": 0.5, "threshold": -0.15, "total": 192},
+    {"accepted": 188, "coverage": 0.9791666666666666, "selective_risk": 0.4893617021276596, "threshold": -0.05, "total": 192},
+    {"accepted": 184, "coverage": 0.9583333333333334, "selective_risk": 0.4782608695652174, "threshold": 0.0, "total": 192},
+    {"accepted": 180, "coverage": 0.9375, "selective_risk": 0.4666666666666667, "threshold": 0.05, "total": 192},
+    {"accepted": 176, "coverage": 0.9166666666666666, "selective_risk": 0.4545454545454546, "threshold": 0.1, "total": 192},
+    {"accepted": 172, "coverage": 0.8958333333333334, "selective_risk": 0.4476744186046512, "threshold": 0.15, "total": 192},
+    {"accepted": 164, "coverage": 0.8541666666666666, "selective_risk": 0.4207317073170732, "threshold": 0.2, "total": 192},
+    {"accepted": 156, "coverage": 0.8125, "selective_risk": 0.40384615384615385, "threshold": 0.25, "total": 192},
+    {"accepted": 152, "coverage": 0.7916666666666666, "selective_risk": 0.39473684210526316, "threshold": 0.3, "total": 192},
+    {"accepted": 140, "coverage": 0.7291666666666666, "selective_risk": 0.3642857142857143, "threshold": 0.35, "total": 192},
+    {"accepted": 132, "coverage": 0.6875, "selective_risk": 0.34090909090909094, "threshold": 0.4, "total": 192},
+    {"accepted": 124, "coverage": 0.6458333333333334, "selective_risk": 0.32258064516129037, "threshold": 0.45, "total": 192},
+    {"accepted": 112, "coverage": 0.5833333333333334, "selective_risk": 0.2946428571428571, "threshold": 0.5, "total": 192},
+    {"accepted": 100, "coverage": 0.5208333333333334, "selective_risk": 0.26, "threshold": 0.55, "total": 192},
+    {"accepted": 92, "coverage": 0.4791666666666667, "selective_risk": 0.23913043478260865, "threshold": 0.6, "total": 192},
+    {"accepted": 80, "coverage": 0.4166666666666667, "selective_risk": 0.21250000000000002, "threshold": 0.65, "total": 192},
+    {"accepted": 68, "coverage": 0.3541666666666667, "selective_risk": 0.16176470588235292, "threshold": 0.7, "total": 192},
+    {"accepted": 60, "coverage": 0.3125, "selective_risk": 0.15000000000000002, "threshold": 0.75, "total": 192},
+    {"accepted": 52, "coverage": 0.2708333333333333, "selective_risk": 0.11538461538461542, "threshold": 0.8, "total": 192},
+    {"accepted": 40, "coverage": 0.20833333333333334, "selective_risk": 0.07499999999999996, "threshold": 0.85, "total": 192},
+    {"accepted": 36, "coverage": 0.1875, "selective_risk": 0.05555555555555558, "threshold": 0.9, "total": 192},
+    {"accepted": 28, "coverage": 0.14583333333333334, "selective_risk": 0.0357142857142857, "threshold": 0.95, "total": 192},
+    {"accepted": 20, "coverage": 0.10416666666666667, "selective_risk": 0.0, "threshold": 1.0, "total": 192},
+    {"accepted": 16, "coverage": 0.08333333333333333, "selective_risk": 0.0, "threshold": 1.05, "total": 192},
+    {"accepted": 12, "coverage": 0.0625, "selective_risk": 0.0, "threshold": 1.1, "total": 192},
+    {"accepted": 8, "coverage": 0.041666666666666664, "selective_risk": 0.0, "threshold": 1.15, "total": 192},
+    {"accepted": 4, "coverage": 0.020833333333333332, "selective_risk": 0.0, "threshold": 1.25, "total": 192}
+  ],
+  "status": "EXPLORATORY_NON_EVIDENTIARY",
+  "workspace_no_ignition": {
+    "accepted": 48,
+    "coverage": 0.25,
+    "selective_risk": 0.125,
+    "total": 192
+  }
+}
