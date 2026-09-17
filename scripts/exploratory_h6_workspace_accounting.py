@@ -73,7 +73,11 @@ def scenario(fanout: int, router_knowledge: float) -> Scenario:
 
 
 def build_report() -> dict[str, object]:
-    scenarios = [scenario(fanout, knowledge) for fanout in FANOUTS for knowledge in ROUTER_KNOWLEDGE]
+    scenarios = [
+        scenario(fanout, knowledge)
+        for fanout in FANOUTS
+        for knowledge in ROUTER_KNOWLEDGE
+    ]
     shared_wins = sum(
         item.workspace_efficiency_shared_slot
         > item.direct_relevant_deliveries_per_send
