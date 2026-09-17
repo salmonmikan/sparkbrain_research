@@ -13,7 +13,9 @@ RESULT_PATH = (
     ROOT / "artifacts" / "exploratory_rv01_innovation_gate_reduction" / "result.json"
 )
 
-SPEC = importlib.util.spec_from_file_location("exploratory_rv01_innovation_gate_reduction", MODULE_PATH)
+SPEC = importlib.util.spec_from_file_location(
+    "exploratory_rv01_innovation_gate_reduction", MODULE_PATH
+)
 assert SPEC is not None
 assert SPEC.loader is not None
 MODULE = importlib.util.module_from_spec(SPEC)
