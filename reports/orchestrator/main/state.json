@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-09-17T18:28:00+09:00",
+  "timestamp": "2026-09-17T18:30:00+09:00",
   "worker_role": "main",
   "execution_mode": "PRIMARY",
   "evidence_analyst_commit": "b7cc088df7c9768bb7e62b40d4c54f273df969eb",
   "current_lane": {
     "target": "generic one-way raw-preservation/evidence-boundary reliability qualification on synthetic/development-only data; no C19-v4",
-    "phase": "WAITING_EXACT_HEAD_ORDINARY_CI_AFTER_DEDICATED_READINESS_PASS",
+    "phase": "GENERIC_PRESERVATION_READINESS_PASS_COMPLETED",
     "branch": "research/readiness-raw-preservation-boundary-20260917",
     "identity": null,
     "formal_execution_allowed": false,
@@ -15,13 +15,14 @@
     "main_lane": "generic one-way raw-preservation/evidence-boundary reliability qualification, then fresh scientific-object selection; no C19-v4",
     "sub_lane": null,
     "sub_fallback": null,
-    "blocked_until": "Any new one-way science remains blocked until generic raw-preservation reliability is proven and a newer Analyst prospectively defines a fresh formal object."
+    "blocked_until": "Any new one-way science requires a newer Evidence Analyst handoff prospectively defining a fresh formal object."
   },
   "consumed_contingency_branches": [
     "C19_V3_POST_START_FAILURE",
-    "GENERIC_PRESERVATION_READINESS_BLOCKER"
+    "GENERIC_PRESERVATION_READINESS_BLOCKER",
+    "GENERIC_PRESERVATION_READINESS_PASS"
   ],
-  "active_claim": "Identity-free synthetic qualification of the generic preserve-before-read boundary after the consumed C19-v3 preservation failure; no scientific execution is authorized.",
+  "active_claim": "Generic preserve-before-read reliability has passed the Analyst-authorized identity-free synthetic qualification; scientific object selection remains blocked pending a newer Analyst handoff.",
   "authoritative_target_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "evidence_analyst": "b7cc088df7c9768bb7e62b40d4c54f273df969eb",
@@ -35,11 +36,12 @@
   "full_reconciliation_reason": null,
   "fast_path_reconciliation": {
     "analyst_target_consistent": true,
+    "analyst_tip_stable_through_finalization": true,
     "c19_terminal_control_consistent": true,
     "identity_collision": false,
     "sub_collision": false,
     "unexpected_target_movement": false,
-    "reason_full_reconciliation_not_needed": "Analyst lane, terminal C19 control, current MAIN/SUB streams, and target refs agreed; the next action was fully classified as identity-free readiness work."
+    "reason_full_reconciliation_not_needed": "Analyst lane, terminal C19 control, current MAIN/SUB streams, and target refs agreed; the entire run remained within the prospectively defined identity-free readiness contingencies."
   },
   "branches_prs_advanced": {
     "research/readiness-raw-preservation-boundary-20260917": "158ad46cafcc9d9b17f01a85488562b63e81257d",
@@ -75,14 +77,15 @@
     "ordinary_ci": {
       "workflow_run_id": 35204638807,
       "head": "158ad46cafcc9d9b17f01a85488562b63e81257d",
-      "status": "in_progress",
-      "conclusion": null
+      "status": "completed",
+      "conclusion": "success"
     }
   },
   "scientific_results": {
     "new_scientific_information": false,
     "terminal_scientific_result": null,
-    "readiness_result": "Dedicated synthetic raw-preservation qualification succeeded; ordinary exact-head repository CI remains pending, so full GENERIC_PRESERVATION_READINESS_PASS is not yet finalized."
+    "readiness_result": "GENERIC_PRESERVATION_READINESS_PASS",
+    "interpretation": "The generic preservation boundary passed synthetic end-to-end qualification plus ordinary exact-head repository CI. This is enabling readiness evidence only and does not authorize or support a scientific claim."
   },
   "consumed_identities": {
     "c19-external-v2-official-v3": {
@@ -98,8 +101,7 @@
     "new_identities_consumed_this_run": []
   },
   "blockers": [
-    "Ordinary exact-head CI run 35204638807 is still in progress; Analyst GO requires exact-head CI/review green before readiness completion.",
-    "All new one-way science remains blocked pending a newer Analyst handoff even after readiness completion."
+    "No fresh formal scientific object is authorized. A newer Evidence Analyst handoff is required before any STARTED/one-way execution or C19 successor decision."
   ],
   "lease_collision_reconciliation": {
     "lease_path_existed_at_start": false,
@@ -108,10 +110,11 @@
     "run_id": "primary-20260917T1817JST",
     "owner": "main",
     "active_identity": null,
-    "collision_status": "clear"
+    "collision_status": "clear",
+    "final_status": "COMPLETED"
   },
   "integrity_status": {
-    "status": "IDENTITY_FREE_SYNTHETIC_READINESS_WAITING_ORDINARY_CI",
+    "status": "GENERIC_PRESERVATION_READINESS_PASS_NO_SCIENTIFIC_IDENTITY",
     "formal_identity_created": false,
     "started_created": false,
     "official_data_accessed": false,
@@ -123,7 +126,8 @@
     "readiness_ref_no_force": true,
     "synthetic_preserve_before_read_proven": true,
     "independent_refetch_digest_match_proven": true,
-    "same_ref_no_clobber_proven": true
+    "same_ref_no_clobber_proven": true,
+    "exact_head_ordinary_ci_green": true
   },
   "critical_path_fixes_completed": [
     "diagnosed the generic v3 preservation failure without recovering or scoring v3 raw",
@@ -132,7 +136,9 @@
     "verified copied-byte digests before commit and remote branch SHA after push",
     "added synthetic tests for missing-directory creation, independent exact-byte re-fetch, and no-clobber",
     "added a dedicated identity-free synthetic readiness workflow",
-    "completed dedicated readiness workflow 35204638939 successfully"
+    "completed dedicated readiness workflow 35204638939 successfully",
+    "completed ordinary exact-head CI 35204638807 successfully",
+    "classified GENERIC_PRESERVATION_READINESS_PASS and stopped before scientific object selection"
   ],
   "same_run_steps": [
     "consumed current Analyst main_lane and STOP boundaries",
@@ -142,16 +148,18 @@
     "created commit 158ad46cafcc9d9b17f01a85488562b63e81257d and research readiness branch",
     "observed dedicated readiness workflow 35204638939 complete success",
     "re-fetched readiness preservation ref 8a4d0107a3251def652fd848a1da5b0731ff3283",
-    "observed ordinary CI 35204638807 still in progress",
-    "checkpointed for Relay rather than waiting on external CI"
+    "checkpointed temporary WAITING_EXTERNAL state while ordinary CI was still running",
+    "re-fetched ordinary CI 35204638807 and observed completed success",
+    "re-fetched Evidence Analyst authority and confirmed no concurrent authority movement",
+    "finalized readiness PASS and stopped at the prospective Analyst boundary"
   ],
-  "same_run_stop_reason": "External wait only: ordinary exact-head CI 35204638807 is still in progress and no useful local MAIN critical-path work remains. PRIMARY checkpoints and yields so Relay can collect the result under the already-fixed readiness contingency.",
-  "work_left_for_sub": "No formal SUB lane/fallback. SUB may continue only its separately authorized NON_EVIDENTIARY exploratory-incubator work and must not touch this readiness lane or C19 consumed authorities.",
+  "same_run_stop_reason": "GENERIC_PRESERVATION_READINESS_PASS is complete. The prospective handoff requires MAIN to finalize readiness and STOP; selecting or defining the next scientific object requires a newer Evidence Analyst handoff.",
+  "work_left_for_sub": "No formal SUB lane/fallback. SUB may continue only its separately authorized NON_EVIDENTIARY exploratory-incubator work and must not touch completed MAIN readiness or consumed C19 authorities.",
   "reserved_sub_work_not_touched": [
     "research/exploratory-sub-revision-authority-fsa-20260917"
   ],
   "lane_repartition_reason": null,
-  "next_main_action": "Relay: collect ordinary CI run 35204638807 for exact head 158ad46cafcc9d9b17f01a85488562b63e81257d. If success, finalize GENERIC_PRESERVATION_READINESS_PASS and STOP for a newer Analyst object-selection handoff. If failure, repair only outcome-independent synthetic readiness tooling under GENERIC_PRESERVATION_READINESS_BLOCKER and revalidate exact head. Never create STARTED/formal identity/C19-v4 or retry v2/v3.",
+  "next_main_action": "None under the current handoff. Wait for a newer Evidence Analyst to prospectively select/define the next formal scientific object. Do not create STARTED/formal identity, retry C19-v2/v3, recover v3 transient raw, or create C19-v4.",
   "write_path_diagnostics": {
     "lease_create": {
       "status": "success",
@@ -173,9 +181,14 @@
       "status": "success",
       "branch": "research/readiness-raw-preservation-boundary-20260917"
     },
-    "main_latest_checkpoint": {
+    "main_latest_finalization": {
       "status": "success",
-      "commit": "6a7ec46683a51f5fdcbc4563a722a3caa9de5f62"
+      "commit": "6fff37232d1ac91d808c65eea586fa33b4fcfa21"
+    },
+    "temporary_history_checkpoint": {
+      "status": "success",
+      "path": "reports/orchestrator/history/2026-09-17/1828-main.md",
+      "commit": "ffa1d3c9d6cedf1f94e95712843df338b366b5ae"
     }
   }
 }
