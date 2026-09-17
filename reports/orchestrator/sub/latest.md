@@ -1,6 +1,6 @@
 # SparkBrain Research Orchestrator — SUB latest
 
-Timestamp: `2026-09-17T17:43:16+09:00`  
+Timestamp: `2026-09-17T17:45:11+09:00`  
 Worker role: `sub`  
 Mode: `exploratory_incubator`  
 Evidence Analyst authority consumed: `b9c14e9e171bf765447aa45e71b7ba75cc7ce357`
@@ -13,7 +13,9 @@ No formal lane was rejected for critical-path coupling. No formal execution was 
 
 ## MAIN frontier explicitly avoided
 
-Current repository state moved beyond the Analyst snapshot while this SUB run was in progress. MAIN's C19-v3 branch is now `research/c19-official-v3-runtime-closed-20260917@84b244959f249da916a36906508ead0830052e9b`, and `control/c19-official-v3-started-20260917@915b7b21abe6ef936fa18e81e4a5117712d20f28` now exists. Its STARTED marker binds identity `c19-external-v2-official-v3`, protocol `c19-external-v2-official-protocol-v3`, exact package `84b244959...`, Analyst authority `b9c14e9e...`, and `no_retry: true`. The one-way workflow `35200352569` was still `in_progress` at final pre-persistence reconciliation.
+Current repository state moved beyond the Analyst snapshot while this SUB run was in progress. MAIN's C19-v3 branch is `research/c19-official-v3-runtime-closed-20260917@84b244959f249da916a36906508ead0830052e9b`, and `control/c19-official-v3-started-20260917@915b7b21abe6ef936fa18e81e4a5117712d20f28` exists. Its STARTED marker binds identity `c19-external-v2-official-v3`, protocol `c19-external-v2-official-protocol-v3`, exact package `84b244959...`, Analyst authority `b9c14e9e...`, and `no_retry: true`.
+
+Final post-persistence reconciliation found one-way workflow `35200352569` had moved from `in_progress` to **`completed: failure`**. The control ref was still at the original STARTED commit `915b7b21...`; SUB did not diagnose the failure, modify the control ref, retry the identity, or inspect/use any official result path. Because this is a post-START MAIN event and the STARTED marker is no-retry, all disposition/diagnostics/consumption recording belongs to MAIN and the next Analyst cycle.
 
 SUB did **not** touch the C19-v3 research branch, STARTED/control ref, one-way workflow, runtime/package/binding state, official inputs, raw/scoring/preservation path, or any current MAIN blocker. Consumed C19-v2 also remains untouched and non-retryable.
 
@@ -60,7 +62,7 @@ These observations are **NON_EVIDENTIARY** and must not be used to support a for
 
 Interpretation is deliberately narrow: **this constructed source-authority/retraction world compresses exactly into a tiny explicit state independent of horizon.** This makes a finite-state/state-tracker reduction technically plausible and cheap to test prospectively before attributing generic history-sensitive gains to richer persistent dynamics. It says nothing directly about C19, Belief-R, or SparkBrain.
 
-The exploratory branch's ordinary repository CI run `35200816595` failed at `ruff` lint on both Python 3.11 and 3.13. SUB treated that as its own exploratory-branch hygiene, not MAIN work, and made the mechanical lint-only commit `a4e14a13...`. The replacement exact-head CI was pending/not yet durably concluded at report persistence; no scientific workflow was dispatched.
+The exploratory branch's ordinary repository CI run `35200816595` failed at `ruff` lint on both Python 3.11 and 3.13. SUB treated that as its own exploratory-branch hygiene, not MAIN work, and made the mechanical lint-only commit `a4e14a13...`. Replacement exact-head CI `35201182618` was `in_progress` at final reconciliation; no scientific workflow was dispatched.
 
 ## Incubator handoff to Evidence Analyst
 
@@ -92,4 +94,4 @@ Formal SUB remains blocked by absence of a reserved independent formal lane/fall
 
 Completion target is reached for this run: one bounded independent NON_EVIDENTIARY probe was created, executed on synthetic data, explicitly bounded, and prepared for Analyst accept/reject/continue review. SUB stops here rather than expanding the synthetic world in the same run.
 
-Next SUB action is to wait for the next Evidence Analyst classification. Do not formalize this exploratory branch/result directly; do not touch C19-v3 or its result; do not consume any identity. If incubator permission remains and no formal lane exists, only then consider one further bounded synthetic stress test from a fresh non-evidentiary boundary.
+Next SUB action is to wait for the next Evidence Analyst classification. Do not formalize this exploratory branch/result directly; do not touch C19-v3 or its failed post-START run; do not consume any identity. If incubator permission remains and no formal lane exists, only then consider one further bounded synthetic stress test from a fresh non-evidentiary boundary.
