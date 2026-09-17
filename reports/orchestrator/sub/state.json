@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-09-18T07:37:08+09:00",
+  "timestamp": "2026-09-18T08:44:06+09:00",
   "worker_role": "sub",
   "mode": "no_op",
-  "evidence_analyst_commit": "719b9e74063e5e10f6226fd49f1835036ed75e5b",
+  "evidence_analyst_commit": "6ecf13b73cfc75409f6cfe86e9b8ac73fc58b6ce",
   "consumed_lanes": [],
   "sub_lane": null,
   "sub_fallback": null,
@@ -10,57 +10,71 @@
   "exploratory_target": null,
   "independent_of_main_critical_path": true,
   "execution_allowed": false,
-  "sub_active_claim": "No active SUB research claim; current run intentionally no-ops after fresh authority and collision reconciliation.",
+  "sub_active_claim": "No active SUB research claim; this run intentionally no-ops after fresh repository, authority, report-stream, ref, workflow and concurrency reconciliation.",
   "main_work_explicitly_avoided": [
-    "C19-R2 FSA/state-tracker semantic raw-universe mismatch and all MAIN critical-path reconciliation",
-    "C19-R2 identity/STARTED/official execution/raw preservation/scoring",
-    "consumed C19-R1 v1/v2 failures and any repair/retry/rescue",
-    "MAIN successor design"
+    "C19-R2 final GO reconciliation, identity/STARTED creation and one-way execution",
+    "C19-R2 candidate-specific CI/prestart/runtime/binding fixups, official acquisition, preservation and scoring",
+    "consumed C19-R1 v1/v2 failures and any repair/retry/rescue or successor design",
+    "immutable C19-v4 evidence and consumed identities",
+    "scheduler definitions and unrelated PR #149"
   ],
   "authoritative_refs": {
     "main": "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "ops/evidence-analyst-handoff@719b9e74063e5e10f6226fd49f1835036ed75e5b",
-    "main_lane": "research/c19-r2-fsa-state-tracker-spec-20260918@84e08cfffa3e1404a1e93dd924ee704aa7bd3853",
-    "main_report_tip_before_sub_persistence": "ops/orchestrator-run-report@32d00dcd647d0456101dc204c0a7b61a7e8e38f7",
-    "c19_v4_evidence": "evidence/c19-official-v4-c19-external-v2-official-v4",
-    "h9_readiness": "research/c07-h9-fully-spiking-readiness-sub-20260917@9480da3d77dfee4766b28757f1a164f5cd4dac26",
-    "rv01_exploratory_hard_stopped": "research/exploratory-sub-rv01-delay-filter-reduction-20260918@48bd4a831435dbfaeace1d2935a04e05751a61fe"
+    "evidence_analyst": "ops/evidence-analyst-handoff@6ecf13b73cfc75409f6cfe86e9b8ac73fc58b6ce",
+    "control_brain_doctrine": "ops/control-brain-handoff@3bcd000f7e31bc8df8d59ca5ddec88ff5b847e22",
+    "main_lane": "research/c19-r2-fsa-state-tracker-spec-20260918@5bfa3962c777fa5bc915bb21e20801ab8294778a",
+    "r2_frozen_scientific_package": "5d5d171cf872baed7a636fd246ab36f3a91a6716",
+    "r2_authorized_identity": "c19-r2-fsa-state-tracker-official-v1",
+    "r2_started": null,
+    "r2_preserve": null,
+    "r2_evidence": null,
+    "c19_v4_evidence": "evidence/c19-official-v4-c19-external-v2-official-v4"
   },
   "branches_prs_advanced": {
     "research_branches": [],
     "prs_created_or_merged": []
   },
   "workflows_experiments": [],
+  "observed_main_workflows": {
+    "r2_dedicated_prestart": "35286420308:completed/success@5bfa3962c777fa5bc915bb21e20801ab8294778a",
+    "r2_ordinary_ci": "35286420401:completed/success@5bfa3962c777fa5bc915bb21e20801ab8294778a",
+    "official_execution": null
+  },
   "scientific_results": [],
   "readiness_results": [],
   "exploratory_results": [],
   "evidentiary_status": "NONE",
   "consumed_identities": {
     "sub_consumed": [],
-    "authoritative_untouched": [
-      "c19-external-v2-official-v4",
-      "c19-r1-revision-authority-official-v1",
-      "c19-r1-revision-authority-official-v2",
-      "c19-r2-fsa-state-tracker-official-v1"
-    ]
+    "authoritative_untouched": {
+      "c19-external-v2-official-v4": "terminal immutable PASS",
+      "c19-r1-revision-authority-official-v1": "consumed POST_START_FAILURE; no retry",
+      "c19-r1-revision-authority-official-v2": "consumed POST_START_FAILURE; no retry; R1 line terminated",
+      "c19-r2-fsa-state-tracker-official-v1": "fresh/unSTARTED/unconsumed at final SUB reconciliation"
+    }
   },
   "blockers": [
-    "No reserved independent formal SUB lane/fallback exists.",
-    "RV01 exploratory allowance is exhausted and hard-stopped pending fresh Analyst classification.",
-    "H1-H7 have all been recently explored by bounded SUB probes, so repeating them now would be duplicative.",
-    "H9/C07 already has a recent fully-spiking readiness audit and remains PRE_START_UNDERSPECIFIED; choosing its missing scientific semantics would exceed SUB authority.",
-    "H8/C08 is terminal negative and A01 Family A/B/C is closed; reopening them would be rescue/reinterpretation rather than clean incubator work."
+    "No reserved independent formal SUB lane or fallback exists.",
+    "Evidence Analyst supplied no newly authorized distinct incubator target and explicitly permits SUB to remain no_op.",
+    "RV01 exploratory allowance is exhausted/hard-stopped; H1-H7 were recently bounded-explored; H9/C07 is under-specified after readiness review; H8/C08 is terminal negative; A01 is closed.",
+    "R2 has both exact-head gates green, but final GO reconciliation and any STARTED/execution action remain exclusively MAIN-owned."
   ],
   "collision_reconciliation": {
-    "analyst_tip_final": "719b9e74063e5e10f6226fd49f1835036ed75e5b",
+    "analyst_tip_final": "6ecf13b73cfc75409f6cfe86e9b8ac73fc58b6ce",
     "main_final": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "main_lane_final_observed_head": "84e08cfffa3e1404a1e93dd924ee704aa7bd3853",
-    "main_phase": "R2_PRE_START_SEMANTIC_GAP_RAW_UNIVERSE_MISMATCH",
+    "main_lane_final_observed_head": "5bfa3962c777fa5bc915bb21e20801ab8294778a",
+    "main_phase": "R2_AUTHORITY_REBOUND_BOTH_EXACT_HEAD_GATES_GREEN_AWAITING_MAIN_FINAL_GO",
     "main_started": false,
-    "open_pr_count": 0,
+    "r2_control_ref_count": 0,
+    "r2_preserve_ref_count": 0,
+    "r2_evidence_tag_count": 0,
+    "open_pr_numbers": [149],
     "open_issue_numbers": [139],
+    "ruleset_count": 0,
+    "legacy_freeze_branch_count": 13,
+    "authoritative_evidence_tag_count": 1,
     "sub_collision": false,
-    "action": "No branch or workflow mutation performed; MAIN semantic blocker left untouched."
+    "action": "No research branch or workflow mutation performed; MAIN frontier and unrelated concurrent scheduler/governance work were left untouched."
   },
   "integrity_state": {
     "formal_identity_created_by_sub": false,
@@ -71,16 +85,25 @@
     "immutable_refs_modified_by_sub": false,
     "consumed_identity_rerun_or_retuned": false,
     "main_branch_touched": false,
-    "research_branch_touched": false,
-    "exploratory_boundary_respected": true
+    "main_research_branch_touched": false,
+    "research_branch_touched_by_sub": false,
+    "exploratory_boundary_respected": true,
+    "ops_branch_treated_as_mailbox_only": true
   },
-  "completion_target": "Freshly reconcile Analyst/MAIN/report/control-plane state, select a valid independent formal or non-duplicative bounded incubator target if available, otherwise persist a scientifically clean no-op.",
+  "completion_target": "Freshly reconcile current repository authority, Evidence Analyst, both orchestrator streams, Control Brain doctrine, authoritative refs, PRs/issues/workflows and concurrent movement; select a valid independent formal or safe non-duplicative bounded incubator target if one exists; otherwise persist a scientifically clean no-op without blocking MAIN.",
   "completion_status": "achieved",
   "fallback_status": "no safe useful non-duplicative incubator target selected",
   "rejected_lane": null,
   "lane_rejected_reason": null,
-  "no_op_reason": "No valid formal lane/fallback exists and every obvious secondary candidate is either recently exhausted, explicitly hard-stopped, terminal/closed, or under-specified such that proceeding would require inventing new scientific choices without Analyst classification.",
+  "no_op_reason": "No valid formal lane/fallback exists, the fresh Analyst explicitly permits no-op, and every obvious secondary candidate is recently exhausted, hard-stopped, terminal/closed or under-specified such that proceeding would require duplication, rescue or new scientific choices without fresh classification.",
   "candidate_formal_question": null,
   "suggested_prospective_object": null,
-  "promotion_recommendation": "NONE"
+  "promotion_recommendation": "NONE",
+  "persistence": {
+    "latest": "reports/orchestrator/sub/latest.md",
+    "state": "reports/orchestrator/sub/state.json",
+    "history": "reports/orchestrator/history/2026-09-18/0844-sub.md",
+    "history_append_status": "completed",
+    "force_push_used": false
+  }
 }
