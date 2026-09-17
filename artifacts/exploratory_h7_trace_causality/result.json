@@ -1,0 +1,60 @@
+{
+  "status": "EXPLORATORY_NON_EVIDENTIARY",
+  "hypothesis": "Stable learned-route identifiers can coexist with weak trace-to-output causal necessity when an unreported bypass carries the same task signal",
+  "example_count": 64,
+  "routed_weight": 1.0,
+  "bypass_weight": 1.5,
+  "scenarios": [
+    {
+      "bypass_coverage": 0.0,
+      "baseline_accuracy": 1.0,
+      "route_stability": 1.0,
+      "trace_deletion_accuracy": 0.0,
+      "wrong_route_replacement_accuracy": 0.0,
+      "deletion_sensitivity": 1.0,
+      "replacement_sensitivity": 1.0
+    },
+    {
+      "bypass_coverage": 0.25,
+      "baseline_accuracy": 1.0,
+      "route_stability": 1.0,
+      "trace_deletion_accuracy": 0.25,
+      "wrong_route_replacement_accuracy": 0.25,
+      "deletion_sensitivity": 0.75,
+      "replacement_sensitivity": 0.75
+    },
+    {
+      "bypass_coverage": 0.5,
+      "baseline_accuracy": 1.0,
+      "route_stability": 1.0,
+      "trace_deletion_accuracy": 0.5,
+      "wrong_route_replacement_accuracy": 0.5,
+      "deletion_sensitivity": 0.5,
+      "replacement_sensitivity": 0.5
+    },
+    {
+      "bypass_coverage": 0.75,
+      "baseline_accuracy": 1.0,
+      "route_stability": 1.0,
+      "trace_deletion_accuracy": 0.75,
+      "wrong_route_replacement_accuracy": 0.75,
+      "deletion_sensitivity": 0.25,
+      "replacement_sensitivity": 0.25
+    },
+    {
+      "bypass_coverage": 1.0,
+      "baseline_accuracy": 1.0,
+      "route_stability": 1.0,
+      "trace_deletion_accuracy": 1.0,
+      "wrong_route_replacement_accuracy": 1.0,
+      "deletion_sensitivity": 0.0,
+      "replacement_sensitivity": 0.0
+    }
+  ],
+  "summary": {
+    "route_stability_all_scenarios": true,
+    "baseline_accuracy_all_scenarios": true,
+    "deletion_sensitivity_range": [0.0, 1.0],
+    "replacement_sensitivity_range": [0.0, 1.0]
+  }
+}
