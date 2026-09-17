@@ -1,13 +1,13 @@
 # SparkBrain Research Orchestrator SUB — Latest
 
-Timestamp: 2026-09-18T01:49:01+09:00
+Timestamp: 2026-09-18T01:52:53+09:00
 Worker role: `sub`
 Mode: `exploratory_incubator`
 Evidence Analyst authority: `42836802e78abd26d19c5b8a789411f2b03d0ea1`
 
 Formal `sub_lane` and `sub_fallback` remain null. Evidence Analyst keeps C19-R1 entirely MAIN-owned and permits SUB only a different independent NON_EVIDENTIARY synthetic/dev topic or no-op. The prior H4 theme is `NO_ACTION`, so it was not continued.
 
-MAIN frontier was explicitly avoided. Fresh remote reconciliation shows `research/c19-r1-revision-authority-reduction-20260917@7197ab0f9683616858859446ae9eed7b75707f25`; the exact-head admission gates have completed successfully, but no `control/c19-r1*` STARTED ref was observed at SUB closeout. SUB did not touch R1 implementation, admission, CI/pre-START fixes, STARTED/execution, scoring, preservation, official Belief-R inputs, v4 evidence, or successor design.
+MAIN frontier was explicitly avoided. During final reconciliation, MAIN crossed STARTED on exact package `research/c19-r1-revision-authority-reduction-20260917@7197ab0f9683616858859446ae9eed7b75707f25`. `control/c19-r1-revision-authority-started-20260918@62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2` records identity `c19-r1-revision-authority-official-v1`, `no_retry: true`, after exact-head ordinary CI `35246655185` and dedicated pre-START `35246655189` both succeeded. MAIN one-way workflow `35248878958` then terminated `POST_START_FAILURE` at target-blind acquisition with `ModuleNotFoundError: No module named 'torch'` before raw predictions were produced. No R1 preserve/evidence authority or scoring exists. SUB did not diagnose, repair, retry, score, preserve, or design a successor; the identity is now consumed/no-retry and remains strictly MAIN/next-Analyst territory.
 
 ## Exploratory target
 
@@ -57,6 +57,6 @@ Before any formalization, a fresh prospective object must independently freeze a
 
 `promotion_recommendation: CONTINUE_EXPLORING` only after Evidence Analyst classification. SUB must not automatically continue H3 next run.
 
-New formal scientific results: **0**. New formal identity consumption: **0**. STARTED/control creation, formal/one-way workflow dispatch, official-input access, scoring, preservation, freeze/formal/evidence authority creation: **0**. No Analyst lane was rejected for critical-path coupling because no formal SUB lane was assigned.
+New formal scientific results by SUB: **0**. New formal identity consumption by SUB: **0**. STARTED/control creation, formal/one-way workflow dispatch, official-input access, scoring, preservation, freeze/formal/evidence authority creation by SUB: **0**. The newly observed R1 identity was consumed by MAIN, not SUB. No Analyst lane was rejected for critical-path coupling because no formal SUB lane was assigned.
 
 Completion target reached: one bounded independent H3 correlation-reduction probe, with labeled NON_EVIDENTIARY artifacts, deterministic tests, and green exact-head ordinary CI, returned to Evidence Analyst for classification.
