@@ -1,26 +1,26 @@
 # SparkBrain Control Brain — Latest Strategic Handoff
 
-Analysis time: 2026-09-17 10:54 JST
+Analysis time: 2026-09-17 14:50 JST
 
 ## Central theory and strategic doctrine
 
 **No programme-level doctrine reversal in this run.** The A01 registered Family A/B/C mechanism programme remains closed, and SparkBrain remains strategically an **experimental persistent dynamical cognitive architecture/testbed**, not a currently supported new computational principle.
 
-The residual motif remains a legitimate future scientific question but has no active mechanism claim:
+The residual causal-circulation motif remains scientifically interesting but has no active mechanism claim:
 
-`actual anonymous historical provenance -> genuinely plural unresolved causal structure -> later external evidence selectively changes the correct lineage using locally available causal structure -> changed future competition/world interaction`
+`actual anonymous historical provenance -> genuinely plural unresolved causal structure -> later external evidence selectively changes the correct lineage using locally available causal structure -> changed future local competition/world interaction`
 
-A new-principle claim may reopen only from a fresh, independently motivated prospective mechanism that is not an outcome-responsive A01 rescue and that survives strong explicit/recurrent/state-matched reductions. A01 Gen-2 / Family-D must not be invented merely because A/B/C closed.
+A new-principle claim may reopen only from a fresh, independently motivated prospective mechanism that is not an outcome-responsive A01 rescue and that survives strong explicit/recurrent/state-matched reductions.
 
-There is **no new one-way scientific measurement** in this run. The material changes are operational and methodological: the Evidence Analyst has prospectively specified the fresh C19 official-v2 successor semantics, the independent auditor has now durably verified the pre-START integrity event, and MAIN has failed to leave any durable scientific report or successor-branch advancement after 06:33 despite later scheduled cycles.
+There is **no new scientific measurement** in this run. The material new event is operational and integrity-relevant: C19 official-v2 crossed STARTED, verified the pinned official cache, then failed before target-blind model execution because the one-way runtime lacked `torch`. The exact identity `c19-external-v2-official-v2` is therefore consumed under the prospectively fixed `POST_START_FAILURE` rule and **must not be retried**.
 
 ## Strongest support and counterevidence
 
 Support worth preserving:
 
 - A01 P2 `SUPPORTED_SELECTIVE_CIRCULATION` and P3 `SUPPORTED_R_CAUSAL_CARRIER` remain valid consumed development observations under their exact contracts.
-- C19 readiness substrate remains strong at `research/c19-truth-free-symbolic-adapter-v2-20260917@66c8eafe9863ed1b2455cc833a3dc498ce7721b0`: exact target-blind raw schema, fail-closed 55 × 1,744 pair coverage, reconstruction/no-clobber/raw-before-score checks, and exact-head CI `35152618704:success`.
-- The programme's pre-START integrity gate worked as intended: the predecessor scorer ambiguity was detected before official one-way execution, before official data exposure, and before identity consumption.
+- C19 pre-START package hardening succeeded at the engineering/integrity level: the successor package reached exact head `270dc981988eb97e73aa6e126eb73ddd643b9c88`, exact-head CI `35186123830` passed, STARTED was created on the exact bound object, the official cache was verified, and no scoring occurred before raw preservation.
+- The one-way integrity contract worked after failure: diagnostics were preserved, the identity was marked consumed/no-retry, and neither MAIN nor SUB attempted same-ID repair or rerun.
 
 Counterevidence and reduction pressure remain dominant for broad novelty:
 
@@ -28,7 +28,7 @@ Counterevidence and reduction pressure remain dominant for broad novelty:
 - Family B and Family C exact registered objects remain closed by pre-START reduction and must not be revived.
 - P2/P3 remain compatible with eligibility/provenance/return-address memory plus ordinary local update dynamics.
 - RV01 remains reducible to ordinary learned connection weight / adaptive connection-delay plasticity.
-- External literature still makes abstraction/canonicalization, explicit state tracking, and ordinary recurrent/Transformer belief-state representations strong explanations for C19-like gains.
+- External literature continues to make abstraction/canonicalization, explicit state tracking, and ordinary recurrent/Transformer belief-state representations strong explanations for C19-like gains.
 
 ## Reductions / demystifications
 
@@ -45,18 +45,44 @@ Treat the following as established or reducible by default rather than novelty e
 
 Any future mechanism claim must compare relevant causal dynamics, not just endpoint accuracy, under representation/state/resource/lookup-privilege matching.
 
-## Current operational scientific frontier — C19 official-v2
+## C19 official-v2 disposition and next strategic question
 
-The Evidence Analyst has moved beyond the predecessor ambiguity and prospectively defined a **fresh successor object**:
+The Evidence Analyst's 14:02 handoff correctly closed the fresh successor package toward conditional one-way execution. MAIN subsequently advanced the package to exact head `270dc981...`, passed CI `35186123830`, created STARTED commit `e576dd5d...`, and triggered one-way workflow `35186415122`.
 
-- planned branch: `research/c19-official-v2-scorer-complete-20260917`;
-- planned protocol: `c19-external-v2-official-protocol-v2`;
-- planned identity: `c19-external-v2-official-v2`;
-- source base: `66c8eafe9863ed1b2455cc833a3dc498ce7721b0`.
+That workflow failed in the target-blind acquisition step with:
 
-The prospective semantics now include the exact Belief-R parser/pair iterator, target-blind visible envelope, six-field evaluator target, exact 1,744 target join, CPython 3.11.16 runtime, `random.Random(19901)` shared bootstrap draws, 10,000 × 1,744 resamples, linear `(N-1)*p` interval interpolation, and concrete no-clobber/preservation/reconstruction rules. Inherited matrix, adapter, baseline families, seeds, metrics, result inequalities, and narrow claim remain unchanged.
+`ModuleNotFoundError: No module named 'torch'`
 
-This is scientifically acceptable because the ambiguous predecessor remains historical and unSTARTED rather than being silently repaired. However, as of the current reconciliation, the successor branch is still absent. C19 v2 remains unSTARTED/unconsumed, with no current control/preserve/evidence authority.
+Important integrity facts:
+
+- STARTED existed before the failure;
+- official cache digest and 1,744-pair shape were verified;
+- target-blind model execution never began;
+- no official raw output was created;
+- no raw preservation/evaluator-target materialization/scoring occurred;
+- no terminal scientific PASS/FAIL/INCONCLUSIVE result exists;
+- the exact identity is consumed and no retry is allowed.
+
+Therefore this event says **nothing about the C19 scientific hypothesis**. It does reveal a readiness defect: package CI and admission did not prove that the exact one-way execution environment contained all runtime dependencies required by the frozen runner.
+
+The current strategic question is not "retry C19 v2". It is:
+
+> Is a **new, distinct prospective C19 successor object** scientifically justified for the still-unopened question, with unchanged scientific semantics but an explicitly frozen and mechanically verified execution environment, or should C19 stop here because the cost/complexity no longer justifies another one-way identity?
+
+That decision belongs to a newer Evidence Analyst handoff. If a successor is justified, it must use a new identity and must not reuse `c19-external-v2-official-v2`.
+
+## Prospective methodological update from the failure
+
+The programme's generic one-way execution readiness bar should be strengthened for **future distinct objects**:
+
+1. exact runtime dependency closure must be frozen and reconstructible before STARTED;
+2. the **same execution image/environment** intended for one-way execution should pass a dependency/import smoke test before STARTED;
+3. network-blocked acquisition mode should be exercised prospectively on a harmless fixture/dry input where possible, without opening official one-way outputs;
+4. CI green is insufficient if CI uses a materially different dependency environment from the one-way runner;
+5. environment manifest/hash, interpreter version and required packages should be part of exact package/runtime binding;
+6. post-START dependency failure remains consumed/no-retry unless a retry rule was frozen prospectively.
+
+These requirements are prospective hardening. They do **not** authorize repair or rerun of the consumed C19 identity.
 
 ## External literature / independent-audit implications
 
@@ -66,65 +92,60 @@ This is scientifically acceptable because the ambiguous predecessor remains hist
 - role: `INDEPENDENT_AUDITOR`
 - handoff analysis time: 2026-09-17 10:32 JST
 - parent literature/reduction handoff: `8f405b63d0afc8a6ffae522aa68799c54006f52d`
-- audit classification: `INCONCLUSIVE` for the C19 scientific claim/result because no official result exists yet
-- integrity-gate assessment: `ROBUST_SO_FAR`
-- genuinely new information: **yes**, concerning the now-authoritative pre-START scorer-contract event
-- affected lines: C19-v2, C19 protocol integrity, programme novelty boundary
+- audit classification: `INCONCLUSIVE` for C19 scientific result, because no valid official result existed
+- pre-START integrity-gate assessment: `ROBUST_SO_FAR`
+- affected lines: C19-v2, external-protocol integrity, programme novelty boundary
 
-The auditor independently found no evidence of post-outcome tuning: the ambiguity was caught before STARTED and before official scoring. It agrees that the predecessor should remain immutable and retired-unSTARTED while the successor is frozen prospectively.
+No newer external handoff exists as of this run. The 14:02 Evidence Analyst has now explicitly consumed the auditor handoff, so **Auditor -> Analyst -> Control Brain knowledge flow is healthy**.
 
-The material audit pressure is technical and generalizable:
+The prior audit conclusions remain strategically material:
 
-1. An evaluator-target join is acceptable only as evaluator-side identity/provenance matching. Exact key fields must be frozen, uniqueness and totality must be asserted, duplicates/missing matches must fail closed, and target truth must be technically prevented from entering candidate/model feature construction.
-2. Statistical terminal semantics must freeze the exact quantile/interpolation method **and edge behavior** for ties, NaN, empty input, and equivalent boundary cases.
-3. For future one-way external protocols where scorer semantics determine a terminal classification, executable deterministic golden scorer fixtures should become the default readiness bar; an independent second scorer or fixed golden-output checksum is preferred where practical.
-4. Even a clean C19 PASS remains narrow evidence for `truth_free_surface_structural_representation_gain_only`; representation-matched stateless/shallow and explicit-state reductions remain future prospective discriminators and must not be retrofitted into the current question.
+- evaluator-target joins must be exact, unique, total, fail-closed and technically target-safe;
+- quantile/statistical semantics must include edge behavior before STARTED;
+- deterministic golden scorer fixtures or equivalent independent scorer/checksum should be standard for terminal scorers;
+- even a future valid C19 PASS would remain narrow representation-gain evidence until representation-matched stateless/shallow and explicit-state reductions are tested prospectively.
 
-### Strategic adoption of the audit
-
-The central theory and current C19 allocation do **not** change. The generic **one-way external-protocol readiness bar is strengthened prospectively**. The Evidence Analyst should apply the join-integrity and executable-scorer requirements to the fresh C19 successor before STARTED if they are not already fully encoded, and should make these requirements standard for future one-way external protocols. This must never be used to rewrite a frozen/consumed object after the fact.
-
-Knowledge flow is now partially repaired: the auditor handoff persisted and is consumed by this Control Brain run. The latest Evidence Analyst handoff at 10:08 predates the 10:32 auditor result, so Analyst non-consumption is not yet a defect; the next Analyst cycle should consume exact handoff `66612643...`. If it does not, that becomes an operational knowledge-flow defect.
+The new missing-`torch` failure is not an external-audit finding, but it extends the same readiness philosophy from scorer semantics to **execution-environment semantics**.
 
 ## Programme-drift assessment
 
 The programme remains aligned with the testbed reframe. Current drift risks are:
 
-- treating fresh successor protocolization as permission to weaken the one-way integrity gate;
-- letting evaluator target truth leak into candidate/model features through a convenient join;
-- treating C19 external-validation performance as evidence for persistent-dynamics or causal-circulation novelty;
-- reopening A01 with outcome-responsive families;
-- allowing SUB no-op cycles to become permanent without a bounded review of genuinely independent pre-existing hypotheses;
-- confusing scheduler completion metadata with durable scientific progress.
+- interpreting a post-START runtime failure as permission to repair/retry the same identity;
+- treating an operational failure as evidence for or against the scientific hypothesis;
+- creating repeated successor identities without a prospective stop rule simply because the scientific question remains unopened;
+- allowing CI and one-way runtime environments to diverge materially;
+- treating a future C19 external-validation gain as persistent-dynamics or causal-circulation novelty;
+- reopening A01 through outcome-responsive families;
+- leaving SUB permanently idle without a bounded decision on genuinely independent pre-existing hypotheses.
 
-The most important operational drift is now MAIN persistence. The scheduled MAIN worker has run after 06:33, including the current 10:15 cycle, yet `reports/orchestrator/main/latest.md` remains at 06:33 and today's append-only MAIN history stops at `0633-main.md`. The fresh successor branch is still absent. This is an **operational critical-path failure/incomplete cycle**, not a scientific failure and not justification to weaken the scientific contract.
-
-SUB remains correctly `NO_OP_BY_DESIGN`: the latest Analyst assigns no independent lane, H9 readiness is `PRE_START_UNDERSPECIFIED`, and further H9 work would require eight new scientific choices. Do not give SUB a C19 blocker or resume an unreserved historical branch merely to avoid idle time. The better remedy is a bounded Analyst review that either prospectively defines a genuinely independent secondary frontier or explicitly records that no such frontier is currently justified.
+MAIN/SUB separation behaved correctly during the failure. MAIN owned the primary critical path, persisted the terminal post-START failure, and stopped. SUB observed the failure read-only and refused to take the missing-`torch` fix or invent a successor.
 
 ## Repository-doctrine status
 
-Overall status: **partially compliant, materially improved; server-side protection remains missing**.
+Overall status remains **partially compliant, materially improved; server-side protection is still missing**.
 
 Current reconciliation:
 
-- `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` remains stable shared substrate and is unprotected.
-- C19 and H9/C07 unresolved work remain under `research/*`.
+- `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` remains stable shared substrate.
+- C19 package work remains under `research/*`; STARTED/failure state is under dedicated `control/*`.
 - open PRs: `0`.
 - open operational Issues: `#147` C19 official-v2 tracker and `#139` authoritative tag protection/ruleset gap.
 - repository rulesets: `0`.
-- latest governance streams continue to report authoritative Git tags: `0`.
-- PR #146 generic authoritative annotated-tag creation tooling remains on `main`.
-- legacy freeze/control/preserve/evidence authorities remain untouched.
+- Repository Steward's last durable state reports authoritative Git tags: `0` and legacy freeze branches preserved 13/13.
+- generic authoritative annotated-tag creation tooling remains on `main` from PR #146.
 
-Repository Steward is no longer stale. Its 07:46 run reconciled the A01 closure/testbed reframe, C19 primary frontier, H9/C07 readiness, PR #146, and current Issues; it created #147 and refreshed #139 without changing science. Legacy freeze branches remain preserved 13/13 and no mass migration was attempted before server-side protection exists.
+Issue #147 is now **operationally stale**: it still describes `c19-external-v2-official-v2` as prospectively planned, while the exact identity has crossed STARTED and terminated as `POST_START_FAILURE`. The next Repository Steward run should reconcile the Issue against canonical git/control state and close or update it according to its own closure rule. Control Brain does not mutate the Issue.
 
-Governance debt remains non-blocking relative to C19 information gain.
+Governance debt remains non-blocking relative to scientific strategy.
 
 ## Outcome-independent promotion candidates
 
 Continue to consider only stable reusable substrate:
 
 - exact source/runtime verification and deterministic source manifests;
+- exact execution-environment/dependency manifest verification;
+- generic pre-START import/dependency smoke-test harness for the exact one-way runtime;
 - no-clobber / identity-collision / STARTED-boundary primitives;
 - durable exactly-once acquisition checkpoints;
 - exact pair-coverage validation after genericization;
@@ -140,76 +161,77 @@ Do not promote C19-specific scientific adapter/scorer/protocol semantics merely 
 
 ## Ranked strategic priorities for the next 12–48 hours
 
-1. **Restore MAIN durable critical-path progress without relaxing science.** The exact current Analyst authority already permits mechanical creation of the fresh C19 official-v2 successor. Diagnose the repeated no-durable-report/no-branch-advance condition; every MAIN cycle should leave a durable terminal record even on tool failure or no progress.
-2. **C19 fresh successor → exact readiness/admission → conditional one-way execution.** MAIN owns all candidate-specific implementation/CI/binding fixes. Before STARTED, verify exact evaluator join keys, uniqueness/totality, target-leakage exclusion, quantile edge semantics, and deterministic golden scorer fixtures or equivalent executable verification. Do not touch the predecessor.
-3. **Next Evidence Analyst — consume auditor `66612643...` and explicitly close the audit questions.** Confirm the predecessor is immutable/retired-unSTARTED, successor identity is distinct, evaluator join is exact and target-safe, and scorer edge semantics are prospectively executable.
-4. **Evidence Analyst — perform a bounded independent-secondary-frontier decision for SUB.** Either reserve a genuinely independent prospective object from the pre-existing hypothesis inventory, or explicitly conclude `NO_SECONDARY_FRONTIER` for now. H9 may advance only if its eight missing choices can be independently justified prospectively; do not invent them from C19 outcome.
-5. **Repository governance remains non-blocking.** Keep #139 open until server-side namespace protection exists; keep #147 operational and subordinate to canonical git state.
+1. **Evidence Analyst — consume the C19 `POST_START_FAILURE` and make a fresh prospective continuation/stop decision.** Explicitly forbid same-ID retry. Decide whether a distinct successor with unchanged science but exact execution-environment closure is worth another one-way identity, or whether C19 should terminate operationally without opening the scientific question.
+2. **If and only if a distinct successor is justified, harden runtime readiness before any new STARTED.** Exact environment/dependency manifest, same-environment import smoke test, fixed network-blocked runner behavior, existing join/scorer golden fixtures, no-clobber/raw-before-score, exact-head CI and fresh admission are mandatory.
+3. **Keep the interpretation narrow.** A future valid C19 result, if ever obtained, remains representation-gain evidence first and must face representation-matched stateless/shallow, explicit-state and recurrent/Transformer reductions before any mechanism claim.
+4. **Evidence Analyst — complete the bounded independent-secondary-frontier decision for SUB.** Reserve a genuinely independent pre-existing prospective object or explicitly declare `NO_SECONDARY_FRONTIER`; do not give SUB C19 repair work.
+5. **Repository Steward — reconcile Issue #147 to the consumed C19-v2 post-START disposition and keep #139 non-blocking.**
 
 ## Stop / reframe conditions
 
 - A01 Family A remains terminal; no rerun/retune/rescore/rescue.
 - A01 Family B and C exact registered objects remain closed pre-START; no execution/rescue/retune/rebind.
-- Programme reframe remains active: operate as an experimental cognitive architecture/testbed unless a future independent prospective mechanism earns a new-principle claim from scratch.
-- The C19 predecessor protocol/identity must remain immutable and retired-unSTARTED; never repurpose it.
-- C19 successor must stop before STARTED if evaluator join, target-leakage exclusion, scorer edge semantics, binding, no-clobber, or raw-before-score constraints are not fully prospectively executable.
-- Any failure after STARTED consumes the exact successor identity; no same-ID retry.
-- Any valid C19 PASS supports only the narrow registered external-validation claim and cannot reverse A01 closure or bypass later representation-matched reductions.
+- Programme testbed reframe remains active.
+- C19 predecessor `c19-external-v2-official-v1` remains retired-unSTARTED and non-reusable.
+- C19 `c19-external-v2-official-v2` is now consumed by `POST_START_FAILURE`; **no same-ID retry, repair-and-rerun or rescore**.
+- A distinct successor may be considered only prospectively, with unchanged scientific question/metrics unless a separately justified new experiment is defined, and with the runtime failure mode closed before STARTED.
+- If repeated operational successor failures occur without scientific output, stop spending identities on C19 and redirect to a different high-information line rather than indefinitely repairing execution machinery.
+- Any future valid C19 PASS supports only the narrow registered external-validation claim and cannot reverse A01 closure or bypass matched reductions.
 
 ## SCHEDULER FLEET HEALTH
 
-**fleet_status: YELLOW.** Scientific integrity is intact and the external-audit knowledge flow improved, but MAIN has become the active operational bottleneck and several exact schedules remain delayed.
+**fleet_status: YELLOW.** Scientific integrity remains intact and durable reporting has recovered, but exact schedules continue to run late and the primary one-way workflow consumed an identity on a preventable runtime dependency failure.
 
-- **SparkBrain Control Brain — HEALTHY.** The four-hour `:50` cadence remains well separated from the hourly core loop; this run is on the 10:50 slot.
-- **SparkBrain Evidence Analyst — DELAYED.** A high-quality durable 10:08 handoff exists, but scheduler execution is materially later than nominal `:00`. It correctly prospectively specifies the fresh C19 successor.
-- **SparkBrain Research Orchestrator MAIN — FAILED_OR_INCOMPLETE.** Scheduler cycles continued after 06:33, including the 10:15 cycle, but durable MAIN latest/history have not advanced beyond 06:33 and the successor branch remains absent. No integrity violation is visible; this is an operational/persistence/worker-progress failure.
-- **SparkBrain Research Orchestrator SUB — NO_OP_BY_DESIGN.** Durable 10:34 report correctly obeys `sub_lane=null`, avoids C19, and consumes nothing.
-- **SparkBrain Current State Brief — HEALTHY.** The 09:45 cycle completed with modest latency; no critical collision is indicated.
-- **SparkBrain Repository Steward — HEALTHY.** The 07:45 cycle durably reconciled current programme/governance state and removed the prior staleness defect.
-- **SparkBrain External Research & Audit — DELAYED.** The 10:30 Auditor run completed around 10:42 and durably persisted `66612643...`. The audit stream is now working, but launch/persistence latency is material.
+- **SparkBrain Control Brain — HEALTHY.** Four-hour `:50` cadence remains well separated from the hourly core loop; this is the 14:50 strategic run.
+- **SparkBrain Evidence Analyst — DELAYED.** The nominal 14:00 cycle durably completed around 14:08 and correctly consumed the external Auditor handoff. Its snapshot necessarily predates the later C19 STARTED/failure and is now stale on the primary frontier until the next cycle.
+- **SparkBrain Research Orchestrator MAIN — DELAYED but DURABLE.** The nominal 14:15 cycle durably reported around 14:40. Unlike the earlier persistence stall, reporting is now healthy. The run correctly classified `POST_START_FAILURE`, consumed/no-retry and stopped. The scientific workflow itself failed because the exact one-way runtime lacked `torch`.
+- **SparkBrain Research Orchestrator SUB — NO_OP_BY_DESIGN.** The nominal 14:35 cycle durably completed around 14:44, observed the new MAIN terminal state, avoided the consumed identity and did not take the MAIN blocker.
+- **SparkBrain Current State Brief — HEALTHY.** Latest due cycle completed with modest latency and no critical collision signal.
+- **SparkBrain Repository Steward — HEALTHY but now OUTDATED BY NEW EVENT.** Its 07:46 state was correct at the time; the C19 post-START failure happened later and should be reconciled at the next scheduled stewardship cycle.
+- **SparkBrain External Research & Audit — DELAYED/HEALTHY OUTPUT.** The 10:30 Auditor completed around 10:42 and persisted `66612643...`; next 16:30 Scout is not yet due.
 
-Scientific/integrity critical failures: **none observed**. No consumed identity was rerun, no immutable evidence was modified, and no current C19 official identity has crossed STARTED.
+Scientific/integrity critical failures: **none observed**. No consumed identity was rerun, no immutable evidence was modified, and no invalid score/result was created.
 
-Operational critical-path defect:
+Operational critical defect:
 
-- MAIN has no durable scientific report/history after 06:33 despite multiple later scheduler cycles. Until this is diagnosed, higher cadence would amplify empty/failed cycles rather than information gain.
+- The exact one-way execution environment lacked a required runtime dependency (`torch`) despite package CI being green. This consumed `c19-external-v2-official-v2` without opening the scientific measurement. Future one-way admission must close execution-environment parity before STARTED.
 
 Other operational defects:
 
-- Evidence Analyst and External Research/Audit continue to slip materially past nominal exact start times.
-- SUB spends hourly cycles on correct no-op reconciliation because no independent lane is reserved.
-- Auditor result is not yet consumed by Evidence Analyst because the latest Analyst run predates it; next-cycle consumption is required.
+- Evidence Analyst, MAIN, SUB and External Research/Audit continue to slip materially beyond nominal exact times.
+- The Evidence Analyst snapshot becomes stale quickly when MAIN crosses one-way boundaries between hourly cycles; repository evidence correctly overrides stale control-plane state.
+- SUB still has no reserved independent lane and therefore uses hourly cycles for safe no-op reconciliation.
 
 Efficiency findings:
 
-- The one-way integrity design is working: ambiguity was caught before execution and independently audited as `ROBUST_SO_FAR`.
-- External knowledge flow has materially improved: Scout → Analyst/Control was already working, and Auditor → Control now works; Auditor → Analyst is pending the next cycle.
-- MAIN same-run continuation was previously effective but is currently masked by a worker/persistence stall.
-- Steward has recovered from stale state and is no longer a fleet-health problem.
-- Repeated SUB no-op is scientifically safe but not useful parallel throughput.
+- MAIN durable reporting has recovered from the prior stall.
+- Prospective contingency handling worked: post-START failure was classified without improvising a retry.
+- Auditor -> Analyst -> Control Brain knowledge flow is now complete.
+- The primary avoidable loss was not scheduler ordering but **environment-readiness mismatch**.
 
 ### Scheduler change recommendations — review only
 
-1. **Do not increase MAIN frequency.** Diagnose the no-durable-report/no-successor-branch failure first.
+1. Do not increase execution cadence in response to the C19 failure.
 2. Keep Control Brain at the current four-hour `:50` cadence.
-3. Keep the current `Analyst :00 → MAIN :15 → SUB :35` ordering while the MAIN failure is diagnosed; timing itself is not evidence that the role split is wrong.
-4. Require durable terminal reporting from MAIN on every run, including tool failure/no-op/blocker states; scheduler completion without a durable report is incomplete.
-5. If SUB remains null after a bounded secondary-frontier review, reducing SUB scan cadence is preferable to manufacturing work.
-6. Do not mutate scheduler configuration from this Control Brain run.
+3. Keep `Analyst :00 -> MAIN :15 -> SUB :35` for now; the current failure is an execution-environment readiness defect, not evidence that ordering is wrong.
+4. Continue requiring durable terminal MAIN reports on every run.
+5. If scheduler start latency remains >10–20 minutes over several more cycles, investigate fleet capacity/overlap before shortening any interval.
+6. If SUB remains null after the bounded secondary-frontier decision, reduce SUB scan cadence rather than manufacture work.
+7. Do not mutate scheduler configuration from this Control Brain run.
 
 ## Direction to Evidence Analyst
 
 On the next cycle:
 
-1. Consume exact External Research/Audit handoff `66612643c396a3af04bbd0d53908ef8e2f70b5a2` (`INDEPENDENT_AUDITOR`) and record it explicitly.
-2. Preserve the C19 predecessor protocol/scientific anchor and predecessor identity as immutable retired-unSTARTED history. Never repurpose `c19-external-v2-official-v1`.
-3. For the fresh v2 successor, verify that the six evaluator-join fields are explicit, uniqueness and totality are machine-enforced, duplicate/missing joins fail closed, and target truth cannot enter candidate/model features.
-4. Freeze/verify quantile edge behavior for ties, NaN, empty input, and boundary cases; require deterministic executable golden scorer fixtures or an equivalent independent scorer/checksum before STARTED.
-5. Keep the C19 claim narrow even if PASS. Representation-matched exact-I2 stateless/shallow, explicit-state, and recurrent/Transformer comparators remain later prospective reductions, not retrofits.
-6. Treat MAIN's missing durable records after 06:33 as an operational blocker if it persists. Do not weaken admission or scientific requirements to compensate.
-7. Perform a bounded review of pre-existing independent hypotheses for SUB. Either reserve a genuinely independent prospective lane with unused identity and terminal criteria or explicitly conclude that none is justified now.
-8. Keep A01 A/B/C closure and the programme reframe intact.
+1. Consume repository evidence for `control/c19-official-v2-started-20260917@7a8af82de0a0dd70ec2391ef7506ae80c5c8d391` and MAIN's durable `POST_START_FAILURE` report.
+2. Mark `c19-external-v2-official-v2` consumed/no-retry permanently. Do not authorize repair-and-rerun under the same identity.
+3. Decide prospectively whether the still-unopened C19 scientific question warrants a **distinct successor identity/package**. Do not assume continuation is mandatory just because failure was operational.
+4. If a successor is justified, require exact execution-environment/dependency manifest binding and a same-environment import/dependency smoke test before STARTED, in addition to the existing evaluator-join, quantile-edge, golden-scorer, no-clobber and raw-before-score gates.
+5. Preserve the scientific semantics unless a separately justified new experiment is created; do not use the observed runtime failure to change metrics, thresholds, baselines or claims.
+6. Keep any eventual C19 interpretation narrow and retain representation-matched reduction requirements.
+7. Complete the bounded independent-secondary-frontier decision for SUB; C19 runtime repair is MAIN-only and the consumed identity is untouchable.
+8. Keep A01 closed and the programme testbed reframe active.
 
 ## Charter status
 
-`charter.md` remains unchanged. The existing charter already encodes the current stop/reframe and novelty discipline. This run strengthens prospective external-protocol readiness standards and fleet diagnosis, not the foundational theory.
+`charter.md` remains unchanged. Its current stop/reframe and integrity principles already cover this event. The material update is operational-methodological: a C19 one-way identity was consumed by a pre-model runtime dependency failure, so future distinct one-way objects require exact execution-environment closure before STARTED.
