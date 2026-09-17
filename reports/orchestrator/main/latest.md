@@ -1,62 +1,60 @@
 # SparkBrain Research Orchestrator — MAIN latest
 
-Timestamp: `2026-09-17T18:28:00+09:00`  
+Timestamp: `2026-09-17T18:30:00+09:00`  
 Worker role: `main`  
 Execution mode: `PRIMARY`  
 Evidence Analyst authority consumed: `b7cc088df7c9768bb7e62b40d4c54f273df969eb`
 
 ## MAIN frontier
 
-MAIN has left C19 scientific execution stopped and moved exactly onto the Analyst-authorized identity-free readiness lane: **generic one-way raw-preservation/evidence-boundary reliability qualification on synthetic/development-only data**. No C19-v4 was created, no STARTED marker was created, no formal identity was consumed, no official Belief-R data was accessed, and consumed C19-v2/v3 remained untouched.
+MAIN completed the Analyst-authorized **generic one-way raw-preservation/evidence-boundary reliability qualification on synthetic/development-only data**. C19 scientific execution remains stopped. No C19-v4 was created, no STARTED marker was created, no formal identity was consumed, no official Belief-R data was accessed, and consumed C19-v2/v3 remained untouched.
 
-The active readiness branch is `research/readiness-raw-preservation-boundary-20260917@158ad46cafcc9d9b17f01a85488562b63e81257d`, based on stable `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`.
+The completed readiness head is `research/readiness-raw-preservation-boundary-20260917@158ad46cafcc9d9b17f01a85488562b63e81257d`, based on stable `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`.
 
 ## Fast-path reconciliation
 
-PRIMARY used the fast path. The current Analyst handoff, v3 terminal control state, MAIN report, SUB boundary, and current target refs agreed; no integrity or claim collision required repository-wide reconciliation. The v3 terminal control remains `control/c19-official-v3-started-20260917@294d947ade2f906e284d5e1eed5ad57ac7527947`; `c19-external-v2-official-v3` remains consumed/no-retry and no v3 preserve/evidence authority was used or reconstructed.
+PRIMARY used the fast path throughout. The current Analyst handoff, v3 terminal control state, MAIN report, SUB boundary, and active target refs agreed; no integrity/collision anomaly required FULL RECONCILIATION. The final Analyst authority remained `b7cc088d...` throughout this run.
 
-A new MAIN lease was created because the designated lease path did not previously exist. No competing fresh MAIN lease was present. The lease was then heartbeated after readiness branch creation.
+The v3 terminal control remains `control/c19-official-v3-started-20260917@294d947ade2f906e284d5e1eed5ad57ac7527947`; `c19-external-v2-official-v3` remains consumed/no-retry and no v3 preserve/evidence authority was reconstructed or used.
 
 ## Generic preservation failure diagnosis
 
-Without recovering or scoring any v3 raw output, MAIN inspected the failed one-way workflow mechanics. The exact preservation failure was generic and pre-scientific in nature: after switching to a fresh preservation branch, the workflow attempted to copy raw/manifest files into `artifacts/v03/c19_external_validation/v2/official_v3`, but that destination directory did not exist. The failing command reported `No such file or directory` before any preservation commit or push.
+Without recovering or scoring any v3 raw output, MAIN inspected only the failed workflow mechanics. The v3 preservation step switched to a fresh preservation branch and attempted to copy raw/manifest files into `artifacts/v03/c19_external_validation/v2/official_v3`, but that directory had not been created. `cp` failed with `No such file or directory` before any preservation commit or push.
 
-This diagnosis does not rescue v3 and does not alter its consumed disposition. It only identifies a reusable evidence-boundary defect that can be qualified prospectively with synthetic data.
+This diagnosis does not rescue v3 and does not alter its consumed disposition. It identified the generic preservation defect that the current readiness lane was authorized to qualify prospectively with synthetic data.
 
 ## Critical-path implementation
 
-MAIN created one fresh NON_EVIDENTIARY readiness commit `158ad46cafcc9d9b17f01a85488562b63e81257d` containing:
+MAIN created readiness commit `158ad46cafcc9d9b17f01a85488562b63e81257d` containing:
 
-- `scripts/preserve_raw_boundary.py`: a science-agnostic fail-closed preservation primitive that binds an exact base commit, refuses an existing remote preservation ref, creates missing destination parents, refuses destination-file overwrite, verifies copied-byte SHA-256 before commit, stages only the expected payload/manifest, pushes without force, and re-reads the remote ref to require exact preservation-commit equality.
-- `tests/test_raw_preservation_boundary.py`: a synthetic local bare-remote test proving missing destination creation, exact-byte re-fetch, and same-branch no-clobber failure.
-- `.github/workflows/raw-preservation-readiness.yml`: an identity-free synthetic qualification workflow generating deterministic raw/manifest bytes, preserving them to a fresh readiness ref, independently re-fetching exact bytes/digests, and proving a second write fails closed.
+- `scripts/preserve_raw_boundary.py`: science-agnostic fail-closed preservation primitive that binds an exact base commit, refuses an existing remote preservation ref, creates missing destination parents, refuses destination-file overwrite, verifies copied-byte SHA-256 before commit, stages only the expected payload/manifest, pushes without force, and re-reads the remote ref to require exact preservation-commit equality.
+- `tests/test_raw_preservation_boundary.py`: synthetic bare-remote qualification proving missing destination creation, exact-byte independent re-fetch, and same-branch no-clobber failure.
+- `.github/workflows/raw-preservation-readiness.yml`: identity-free synthetic workflow generating deterministic raw/manifest bytes, preserving them to a fresh readiness ref, independently re-fetching exact bytes/digests, and proving a second write fails closed.
 
-The readiness workflow intentionally contains no evaluator, scorer, official dataset, STARTED marker, or formal identity.
+The readiness tooling has no evaluator, scorer, official dataset, STARTED marker, or formal identity.
 
-## Workflow/check state
+## Readiness result
 
-Dedicated readiness workflow `35204638939` on exact head `158ad46...` completed **success**. Every qualification step passed, including preservation through the fresh no-clobber branch mechanism, independent remote re-fetch with exact digest equality, and explicit same-ref collision failure. It created the NON_EVIDENTIARY readiness ref `readiness/raw-preservation-35204638939@8a4d0107a3251def652fd848a1da5b0731ff3283`.
+Dedicated readiness workflow `35204638939` on exact head `158ad46...` completed **success**. Every intended preservation gate passed. It created the NON_EVIDENTIARY readiness ref `readiness/raw-preservation-35204638939@8a4d0107a3251def652fd848a1da5b0731ff3283` and independently proved exact remote re-fetch/digest equality plus fail-closed same-ref collision behavior.
 
-Ordinary repository CI `35204638807` on the same exact head remains **in_progress** at this checkpoint. No CI failure has been observed, but the Analyst GO condition requires exact-head CI/review green before the readiness lane can be classified complete.
+Ordinary repository CI `35204638807` subsequently completed **success** on the same exact head. The remaining exact-head CI gate therefore closed during this PRIMARY run.
 
-## Same-run continuation and stop
+Under the Analyst's prospective tree, this is now **`GENERIC_PRESERVATION_READINESS_PASS`**. The intended generic preserve-before-read boundary has been demonstrated on deterministic synthetic data with exact source/head binding, no-clobber, durable remote preservation, independent re-fetch, and exact digest equality.
 
-Consumed prospective readiness branch: `GENERIC_PRESERVATION_READINESS_BLOCKER`. MAIN diagnosed the generic defect, implemented the prospectively allowed outcome-independent readiness tooling, and obtained a green dedicated synthetic qualification.
+## Same-run stop
 
-PRIMARY now stops only because the remaining ordinary CI is an external wait and no other useful MAIN critical-path work remains. It does not hold the worker open merely to wait. The lease is handed off with the exact workflow/head and prospectively fixed next action for Relay.
+Consumed readiness contingencies: `GENERIC_PRESERVATION_READINESS_BLOCKER` -> `GENERIC_PRESERVATION_READINESS_PASS`.
 
-If CI `35204638807` succeeds on `158ad46...`, Relay may classify `GENERIC_PRESERVATION_READINESS_PASS`, finalize the readiness checkpoint, and STOP for a newer Evidence Analyst scientific-object decision. If CI fails, Relay may repair only outcome-independent readiness tooling under `GENERIC_PRESERVATION_READINESS_BLOCKER` and revalidate an exact head. It must not create STARTED, consume an identity, access official C19 data, retry v2/v3, or create C19-v4.
+The run now stops because the Analyst explicitly requires a newer handoff before any fresh scientific object is selected or executed. Readiness success does **not** authorize C19-v4 or any other one-way science. MAIN therefore does not create a formal identity, STARTED marker, successor candidate, protocol, scorer, baseline, or resource contract in response to this readiness outcome.
 
-New scientific information: **none**. New readiness information: the intended generic Git preservation boundary has now passed a synthetic end-to-end no-clobber, independent-re-fetch, exact-digest qualification; ordinary repository CI is the only remaining gate at this checkpoint.
+New scientific information: **none**. New enabling information: the generic raw-preservation/evidence-boundary mechanism is qualified under the current synthetic readiness contract, closing the operational class that consumed C19-v3 without spending another scientific identity.
 
 ## SUB boundary
 
-Formal `sub_lane` and `sub_fallback` remain null. SUB's permitted exploratory-incubator work is independent and NON_EVIDENTIARY. MAIN did not touch or absorb the SUB exploratory branch and did not delegate any MAIN blocker to SUB.
+Formal `sub_lane` and `sub_fallback` remain null. SUB's permitted exploratory-incubator work remains independent and NON_EVIDENTIARY. MAIN did not touch or absorb its exploratory branch and did not delegate any MAIN blocker to SUB.
 
-## Next MAIN / Relay action
+## Completion / next authority
 
-Collect ordinary CI run `35204638807` for `research/readiness-raw-preservation-boundary-20260917@158ad46cafcc9d9b17f01a85488562b63e81257d`.
+MAIN lease is `COMPLETED`. Relay continuation is **not expected for this checkpoint** because both the dedicated readiness workflow and ordinary exact-head CI are green.
 
-- On exact-head CI success: finalize `GENERIC_PRESERVATION_READINESS_PASS`, persist the readiness result, and STOP for fresh Analyst object selection.
-- On CI failure: inspect/fix only generic synthetic readiness mechanics, re-run exact-head validation, and continue within the existing readiness contingency.
-- Under no outcome: create or dispatch a formal science object, retry C19-v2/v3, recover v3 transient raw, or create C19-v4.
+Next action belongs to a newer Evidence Analyst handoff: select, reject, or prospectively define the next formal scientific object using this readiness result. Until then, MAIN must not create STARTED/formal identity, retry C19-v2/v3, recover v3 transient raw, or create C19-v4.
