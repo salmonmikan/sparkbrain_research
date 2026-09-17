@@ -4,6 +4,7 @@ import importlib.util
 import json
 import sys
 from pathlib import Path
+from typing import Any
 
 ROOT = Path(__file__).parents[1]
 MODULE_PATH = ROOT / "scripts" / "exploratory_rv01_delay_filter_reduction.py"
@@ -18,6 +19,17 @@ sys.modules[SPEC.name] = MODULE
 SPEC.loader.exec_module(MODULE)
 
 
+def _normalized(value: Any) -> Any:
+    """Normalize insignificant cross-Python floating-point variation for artifact binding."""
+    if isinstance(value, float):
+        return round(value, 10)
+    if isinstance(value, dict):
+        return {key: _normalized(item) for key, item in value.items()}
+    if isinstance(value, list):
+        return [_normalized(item) for item in value]
+    return value
+
+
 def test_probe_is_deterministic_and_non_evidentiary() -> None:
     first = MODULE.run_probe()
     second = MODULE.run_probe()
@@ -29,7 +41,7 @@ def test_probe_is_deterministic_and_non_evidentiary() -> None:
 def test_committed_result_matches_probe() -> None:
     committed = json.loads(RESULT_PATH.read_text(encoding="utf-8"))
 
-    assert committed == MODULE.run_probe()
+    assert _normalized(committed) == _normalized(MODULE.run_probe())
 
 
 def test_dev_test_are_disjoint_and_resources_are_matched() -> None:
