@@ -1,0 +1,92 @@
+{
+  "accuracy": {
+    "group_majority": 0.801025390625,
+    "group_normalized": 0.801513671875,
+    "naive": 0.737548828125,
+    "source_dedup": 0.753662109375
+  },
+  "adversarial_correlated_sweep": [
+    {
+      "correlated_wrong_sources": 1,
+      "group_majority": 1,
+      "group_normalized": 1,
+      "naive": 1,
+      "source_dedup": 1
+    },
+    {
+      "correlated_wrong_sources": 2,
+      "group_majority": 1,
+      "group_normalized": 1,
+      "naive": 1,
+      "source_dedup": 1
+    },
+    {
+      "correlated_wrong_sources": 4,
+      "group_majority": 1,
+      "group_normalized": 1,
+      "naive": -1,
+      "source_dedup": -1
+    },
+    {
+      "correlated_wrong_sources": 8,
+      "group_majority": 1,
+      "group_normalized": 1,
+      "naive": -1,
+      "source_dedup": -1
+    },
+    {
+      "correlated_wrong_sources": 16,
+      "group_majority": 1,
+      "group_normalized": 1,
+      "naive": -1,
+      "source_dedup": -1
+    }
+  ],
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "group_normalized_vs_group_majority_agreement": 0.97900390625,
+  "interpretation_boundary": "Known correlation-group IDs are privileged synthetic information. The probe tests a reduction possibility, not H3 itself.",
+  "question": "Can duplicate/correlation robustness that looks coalition-like be reproduced by an ordinary provenance-aware scalar reduction when the comparator receives the same correlation-group information?",
+  "synthetic_contract": {
+    "exact_duplicate_pattern": [
+      1,
+      1,
+      2,
+      4
+    ],
+    "groups_per_example": 5,
+    "latent_group_truth_probability": 0.7,
+    "member_patterns": [
+      [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        2,
+        4,
+        8
+      ],
+      [
+        8,
+        4,
+        2,
+        1,
+        1
+      ],
+      [
+        1,
+        2,
+        4,
+        8,
+        16
+      ]
+    ],
+    "samples": 4096,
+    "seed": 1337,
+    "within_group_source_agreement_probability": 0.9
+  }
+}
