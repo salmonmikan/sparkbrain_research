@@ -1,19 +1,16 @@
 {
-  "run_id": "primary-20260917T2014JST",
-  "execution_mode": "PRIMARY",
+  "run_id": "relay-20260917T2047JST",
+  "execution_mode": "RELAY",
   "status": "WAITING_EXTERNAL",
-  "started_at": "2026-09-17T20:14:14+09:00",
-  "heartbeat_at": "2026-09-17T20:19:00+09:00",
+  "started_at": "2026-09-17T20:47:10+09:00",
+  "heartbeat_at": "2026-09-17T20:49:00+09:00",
   "analyst_commit": "56f0665ccc536bff6bf48e9eb581ec9a9eafcecc",
-  "active_branch": "research/c19-official-v4-preservation-qualified-20260917",
+  "active_branch": "control/c19-official-v4-started-20260917",
   "active_identity": "c19-external-v2-official-v4",
-  "active_step": "V4_PRE_START_VALIDATION_WAIT",
-  "workflow_run_id": 35214841877,
-  "workflow_run_ids": {
-    "ordinary_ci": 35214841871,
-    "prestart_admission": 35214841877
-  },
+  "active_step": "V4_ONE_WAY_RUNNING_AFTER_STARTED",
+  "workflow_run_id": 35217655980,
   "active_package_head": "74bfe6b4a39758656f291baaa3f16236e3e71964",
-  "expected_next_action": "Collect exact-head ordinary CI 35214841871 and dedicated pre-START 35214841877. If both are green, re-fetch Analyst authority and exact v4 head, verify identity fresh/unSTARTED/unconsumed, verify control/preserve/evidence collision-free and all exact bindings, then STARTED/one-way may continue under the prospectively fixed V4_PRE_START_READY_FOR_ONE_WAY branch. If either validation fails mechanically, MAIN fixes only science-invariant defects and revalidates both; STOP for Analyst on any semantic/runtime/scientific redesign need.",
+  "started_commit": "3ebffb0c55ea9e5dac6c2a52d3d5c0ee6443d58e",
+  "expected_next_action": "Collect one-way workflow 35217655980. The v4 identity is now consumed by STARTED and may never be retried. If the workflow succeeds, verify preserve/c19-official-v4-raw-c19-external-v2-official-v4, evidence/c19-official-v4-c19-external-v2-official-v4, terminal evidence manifest/bindings and classification, then finalize report and STOP. If the workflow fails at any point after STARTED, preserve diagnostics, classify V4_POST_START_FAILURE, consume/no-retry, and STOP with no v5.",
   "owner": "main"
 }
