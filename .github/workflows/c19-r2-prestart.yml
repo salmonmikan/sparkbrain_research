@@ -22,7 +22,6 @@ jobs:
       - name: Lint R2 package
         run: >-
           python -m ruff check
-          configs/external_validation/c19_r2_fsa_state_tracker.json
           scripts/check_c19_r2_prestart.py
           src/sparkbrain/v03_external_validation/c19_r2_protocol.py
           src/sparkbrain/v03_external_validation/c19_r2_scoring.py
