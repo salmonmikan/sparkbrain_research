@@ -1,15 +1,14 @@
 {
-  "run_id": "primary-20260918T0817JST",
-  "execution_mode": "PRIMARY",
+  "run_id": "relay-20260918T0845JST",
+  "execution_mode": "RELAY",
   "status": "WAITING_EXTERNAL",
-  "started_at": "2026-09-18T08:17:32+09:00",
-  "heartbeat_at": "2026-09-18T08:22:15+09:00",
+  "started_at": "2026-09-18T08:45:03+09:00",
+  "heartbeat_at": "2026-09-18T08:48:00+09:00",
   "analyst_commit": "6ecf13b73cfc75409f6cfe86e9b8ac73fc58b6ce",
-  "active_branch": "research/c19-r2-fsa-state-tracker-spec-20260918",
+  "active_branch": "control/c19-r2-fsa-state-tracker-started-v1-20260918",
   "active_identity": "c19-r2-fsa-state-tracker-official-v1",
-  "active_step": "R2_AUTHORITY_REBOUND_DEDICATED_GREEN_CI_RUNNING",
-  "workflow_run_id": 35286420401,
-  "workflow_run_ids": [35286420308, 35286420401],
-  "expected_next_action": "Collect ordinary CI 35286420401 on exact head 5bfa3962c777fa5bc915bb21e20801ab8294778a. Dedicated pre-START 35286420308 is already completed/success on that head. If CI also succeeds, re-fetch Evidence Analyst authority, exact branch head, c19-r2-fsa-state-tracker-official-v1 freshness/consumed state, control/preserve/evidence namespaces, and exact source/protocol/package/input/runtime/FSA/source-map/scorer/preserver bindings immediately before STARTED. Cross STARTED exactly once only if every GO condition remains simultaneously true. If CI fails mechanically, MAIN owns a science-invariant fix and all exact-head gates reset; if a scientific/semantic change is required, STOP before STARTED.",
+  "active_step": "R2_STARTED_ONE_WAY_WAITING_EXTERNAL",
+  "workflow_run_id": 35288390550,
+  "expected_next_action": "Collect one-way workflow 35288390550 for STARTED commit 41df2685fe015140c8afa13e646554dd2e8c836b. If completed/success, independently re-fetch preserve/c19-r2-fsa-state-tracker-raw-c19-r2-fsa-state-tracker-official-v1 and evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1, verify exact package/Analyst/STARTED/preservation/evidence bindings and terminal result classification, then mark COMPLETED. If the workflow fails after STARTED, consume c19-r2-fsa-state-tracker-official-v1 and mark BLOCKED/POST_START_FAILURE with no retry, salvage, repair, or automatic successor. Do not re-dispatch the consumed identity.",
   "owner": "main"
 }
