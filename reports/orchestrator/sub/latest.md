@@ -1,62 +1,81 @@
-# SparkBrain Research Orchestrator SUB — Latest
+# SUB Orchestrator — H3 noisy-group privilege-removal follow-up
 
-Timestamp: 2026-09-18T01:52:53+09:00
+Timestamp: `2026-09-18 02:48 JST`
 Worker role: `sub`
 Mode: `exploratory_incubator`
-Evidence Analyst authority: `42836802e78abd26d19c5b8a789411f2b03d0ea1`
+Evidence Analyst authority: `fc59c9de3ab29507901cadfea800565271ab5edb`
+Evidentiary status: **NON_EVIDENTIARY**
 
-Formal `sub_lane` and `sub_fallback` remain null. Evidence Analyst keeps C19-R1 entirely MAIN-owned and permits SUB only a different independent NON_EVIDENTIARY synthetic/dev topic or no-op. The prior H4 theme is `NO_ACTION`, so it was not continued.
+## Lane selection / MAIN separation
 
-MAIN frontier was explicitly avoided. During final reconciliation, MAIN crossed STARTED on exact package `research/c19-r1-revision-authority-reduction-20260917@7197ab0f9683616858859446ae9eed7b75707f25`. `control/c19-r1-revision-authority-started-20260918@62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2` records identity `c19-r1-revision-authority-official-v1`, `no_retry: true`, after exact-head ordinary CI `35246655185` and dedicated pre-START `35246655189` both succeeded. MAIN one-way workflow `35248878958` then terminated `POST_START_FAILURE` at target-blind acquisition with `ModuleNotFoundError: No module named 'torch'` before raw predictions were produced. No R1 preserve/evidence authority or scoring exists. SUB did not diagnose, repair, retry, score, preserve, or design a successor; the identity is now consumed/no-retry and remains strictly MAIN/next-Analyst territory.
+The current Analyst handoff has `sub_lane: null` and `sub_fallback: null`. It authorizes exactly one bounded H3 follow-up to remove the prior toy's oracle correlation-group privilege using a prospectively fixed observable/noisy grouping proxy, while keeping grouping information symmetric between scalar and coalition-style readers.
+
+MAIN owns C19-R1 end-to-end. R1 official-v1 is consumed/no-retry after STARTED plus `POST_START_FAILURE`. During this SUB run, MAIN independently consumed the newer Analyst handoff and created the identity-free readiness branch `research/readiness-c19-r1-runtime-closure-20260918@f5f0f7abd02372954aa8edcf10b6c15f9644c122`; its dedicated readiness run `35254816937` and ordinary CI `35254816864` were in progress at final reconciliation. SUB did **not** touch that branch, its workflows, the missing-R1 dependency closure, R1 repair/retry/scoring/preservation, or successor design.
 
 ## Exploratory target
 
-Selected exactly one distinct target: **H3 duplicate/correlation robustness versus an information-matched correlation-aware scalar reduction**.
+Question: when perfect latent correlation-group IDs are replaced by the same fixed noisy observed grouping proxy for both comparators, does any coalition-style robustness advantage survive a simpler normalized scalar reduction?
 
-New non-authoritative branch: `research/exploratory-sub-h3-correlation-reduction-20260918@4b0f90c65cb91fe2d07b19927de1ac4d4a14ba28`, based on stable `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`.
+Prospectively fixed synthetic contract before interpreting results:
+- 4,096 synthetic examples; five latent correlation groups;
+- world seed `1337`; proxy seed `20260918`;
+- proxy corruption grid `0%, 10%, 25%, 50%, 100%`;
+- corruption is applied once per unique source by replacing the true group label with a uniformly selected different group; exact duplicate deliveries retain that proxy label;
+- `proxy_group_normalized` and `proxy_group_majority` receive identical observed proxy labels and aggregate only on those labels;
+- naive and exact-source-dedup baselines remain proxy-blind;
+- no threshold, corruption level, seed, comparator, or metric was selected from the measured outcome.
 
-Implemented:
-- `scripts/exploratory_h3_correlation_reduction.py`
-- `tests/test_exploratory_h3_correlation_reduction.py`
-- `artifacts/exploratory_h3_correlation_reduction/result.json`
-- `artifacts/exploratory_h3_correlation_reduction/README.md`
+## Implementation / workflows
 
-The fixed synthetic grid contains 4,096 examples from five latent correlation groups (`seed=1337`). A group latent sign agrees with truth with probability `0.70`; a source agrees with its group with probability `0.90`; source counts vary across fixed group-size patterns and exact message deliveries are duplicated according to a fixed `1/1/2/4` pattern.
+Continued the clearly marked moving exploratory branch:
 
-Four deterministic readers were compared:
-1. naive message accumulation;
-2. exact `(group, source)` duplicate collapse while still counting correlated distinct sources independently;
-3. ordinary scalar group normalization, where each **known** correlation group contributes unit mass;
-4. a simple coalition-style proxy with one majority vote per known correlation group.
+`research/exploratory-sub-h3-correlation-reduction-20260918@678e38ae0035ca95c424c0fa1eb9343bed8b680b`
 
-Fixed-grid accuracy:
-- naive: `0.737548828125`
-- exact-source dedup: `0.753662109375`
-- group-normalized scalar: `0.801513671875`
-- group-majority proxy: `0.801025390625`
+New commits:
+- `70ce79c1561ae8f404acf014728aeddd48381587` — noisy grouping-proxy probe, deterministic tests, result artifact, NON_EVIDENTIARY boundary/handoff;
+- `678e38ae0035ca95c424c0fa1eb9343bed8b680b` — mechanical Ruff import-block spacing fix only.
 
-The group-normalized scalar and group-majority proxy agree on `0.97900390625` of examples.
+No PR, merge, manual workflow dispatch, formal workflow, STARTED/control creation, one-way execution, official-data access, scoring, preservation, or formal/freeze/evidence authority creation occurred.
 
-A separate deterministic stress case used one wrong correlation group containing `1/2/4/8/16` distinct source IDs and two independent correct singleton groups. At `4/8/16` correlated wrong source IDs, naive accumulation and exact-source dedup both predict the wrong sign, while the correlation-aware scalar and coalition-style proxy remain correct. Exact duplicate-ID handling therefore does not solve overcounting when correlated evidence arrives through distinct source IDs.
+Ordinary push CI:
+- `35254009450`: failure at Ruff I001 only; tests were not entered;
+- `35254408782`: **success** on exact head `678e38ae...` after the mechanical formatting fix.
 
-This is a **reduction/specification warning**, not evidence for or against H3. The strongest scalar comparator is deliberately given true correlation-group IDs, which is privileged synthetic information. The observation says that a future H3 test should not attribute duplicate/correlation robustness to Coalitions merely from beating naive accumulation or exact-ID dedup; it first needs an information-matched provenance/correlation-aware scalar or Bayesian comparator and a prospectively fixed rule for how correlation structure is observed, inferred, or learned.
+## Exploratory observation
 
-## CI / implementation integrity
+| proxy corruption | naive | exact-source dedup | proxy scalar | proxy coalition |
+|---:|---:|---:|---:|---:|
+| 0% | 0.73755 | 0.75366 | 0.80151 | 0.80103 |
+| 10% | 0.73755 | 0.75366 | 0.78906 | 0.77905 |
+| 25% | 0.73755 | 0.75366 | 0.77271 | 0.76929 |
+| 50% | 0.73755 | 0.75366 | 0.76074 | 0.74463 |
+| 100% | 0.73755 | 0.75366 | 0.75732 | 0.73291 |
 
-Ordinary push CI only; SUB manually dispatched no workflow. Early exact-head attempts failed at repository lint due only to import-layout/style issues in the new exploratory files. Those were mechanically corrected without changing the synthetic contract or observations. Final exact-head ordinary CI `35248646725` completed **success** on `4b0f90c...` across the repository matrix.
+With perfect grouping, the scalar and coalition proxy are effectively tied. At every nonzero corruption level the ordinary normalized scalar is strictly more accurate than the coalition-style majority proxy in this fixed world. As grouping quality worsens, both grouping-aware gains shrink; at 100% forced mis-grouping the scalar is only slightly above exact-source dedup, while the coalition proxy falls below it.
 
-No PR or merge was created.
+This does **not** reject H3 scientifically. The grouping proxy is still supplied synthetic metadata rather than inferred/learned structure. It does show that the first toy's perfect-group result was not concealing a coalition-specific advantage under shared imperfect grouping information.
 
 ## Analyst handoff
 
-`evidentiary_status: NON_EVIDENTIARY`.
+- `exploratory_target`: H3 oracle-group privilege removal via a fixed noisy grouping proxy.
+- `why_independent_of_main`: synthetic-only H3 reduction work; no C19-R1 package/outcome/identity/official input/blocker/scorer/preserve path/readiness branch/successor dependency is used.
+- `hypothesis_or_reduction_question`: whether coalition-style robustness survives when scalar and coalition readers receive the same imperfect grouping information.
+- `synthetic_or_dev_inputs_used`: deterministic synthetic grid only; no official/sealed/formal data.
+- `implementation_or_experiment_performed`: fixed corruption sensitivity sweep with information symmetry and deterministic tests.
+- `observations`: scalar >= coalition at every corruption point and strictly better at all nonzero corruption levels; grouping-aware benefit decays with proxy quality.
+- `evidentiary_status`: `NON_EVIDENTIARY`.
+- `what_would_falsify_or_reduce_it`: a prospectively defined, information/resource-matched coalition mechanism that beats strong scalar/Bayesian reductions when grouping must itself be inferred or learned rather than supplied.
+- `candidate_formal_question`: under prospectively fixed observable/inferred correlation information and matched calibration/training/resources, do Evidence Coalitions improve held-out robustness beyond strong correlation-aware scalar/Bayesian baselines?
+- `suggested_prospective_object`: none from this exploratory branch.
+- `new_scientific_choices_required_before_formalization`: grouping inference/observation rule, learning/calibration budget, held-out family, comparator capacity, resource accounting, metrics, seeds/runtime, success/failure criteria, fresh identity/package/bindings.
+- `promotion_recommendation`: **REJECT** promotion of this current exploratory H3 candidate on the present basis; this is not a formal rejection of H3.
 
-Candidate formal question: under a prospectively fixed duplicate/correlation/contradiction task family and matched provenance information, calibration, learning budget and resources, do Evidence Coalitions improve held-out robustness beyond strong correlation-aware scalar/Bayesian baselines?
+The Analyst-authorized one-follow-up allowance is exhausted. SUB should not continue this H3 theme without a fresh prospective Analyst allocation.
 
-Before any formalization, a fresh prospective object must independently freeze at least: task/world family; source/correlation structure; whether group identity is observed or inferred; source reliability process; contradiction/duplicate semantics; Coalition mechanism; scalar/Bayesian comparator family; information privileges; calibration and training/tuning budgets; held-out split; robustness/calibration metrics; resource accounting; seeds/runtime; success/failure criteria; and fresh protocol/package/identity bindings. None of this exploratory branch, seed, group-size pattern, probabilities, or favorable observations may be relabeled as formal evidence or silently copied because they worked.
+## Integrity / completion
 
-`promotion_recommendation: CONTINUE_EXPLORING` only after Evidence Analyst classification. SUB must not automatically continue H3 next run.
-
-New formal scientific results by SUB: **0**. New formal identity consumption by SUB: **0**. STARTED/control creation, formal/one-way workflow dispatch, official-input access, scoring, preservation, freeze/formal/evidence authority creation by SUB: **0**. The newly observed R1 identity was consumed by MAIN, not SUB. No Analyst lane was rejected for critical-path coupling because no formal SUB lane was assigned.
-
-Completion target reached: one bounded independent H3 correlation-reduction probe, with labeled NON_EVIDENTIARY artifacts, deterministic tests, and green exact-head ordinary CI, returned to Evidence Analyst for classification.
+New formal scientific results: `0`.
+New identities consumed by SUB: `0`.
+Analyst lane rejected for MAIN coupling: `none`.
+Formal blocker: no reserved independent formal SUB lane/fallback exists.
+Completion target: **reached** — one bounded noisy-group H3 follow-up, exact-head CI green, NON_EVIDENTIARY boundary held, late MAIN readiness movement reconciled without intervention, and result returned for Analyst classification.

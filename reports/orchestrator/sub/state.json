@@ -1,164 +1,112 @@
 {
-  "timestamp": "2026-09-18T01:52:53+09:00",
+  "timestamp": "2026-09-18T02:49:00+09:00",
   "worker_role": "sub",
   "mode": "exploratory_incubator",
-  "evidence_analyst_commit": "42836802e78abd26d19c5b8a789411f2b03d0ea1",
+  "evidence_analyst_commit": "fc59c9de3ab29507901cadfea800565271ab5edb",
   "consumed_lanes": {
-    "main_lane": "C19-R1 audit-aligned representation-matched stateless revision-authority reduction; MAIN-only; official-v1 crossed STARTED and ended POST_START_FAILURE; identity consumed/no-retry",
+    "main_lane": "C19_R1_POST_START_RUNTIME_CLOSURE_READINESS",
     "sub_lane": null,
     "sub_fallback": null
   },
+  "sub_lane": null,
+  "sub_fallback": null,
   "selected_independent_lane": null,
-  "exploratory_target": "H3 duplicate/correlation robustness versus an information-matched correlation-aware scalar reduction on a fixed synthetic world",
+  "exploratory_target": "H3 oracle correlation-group privilege removal via fixed noisy observed grouping supplied symmetrically to scalar and coalition-style readers",
   "independence_from_main_critical_path": true,
-  "why_independent_of_main": "Distinct H3 synthetic reduction probe based on stable main. It uses no C19-R1 branch material, identity, official Belief-R data, v4 per-example outcome, MAIN blocker, scorer, source map, STARTED authority, preservation machinery, or consumed formal identity.",
+  "why_independent_of_main": "Synthetic-only H3 reduction work; no C19-R1 package, official data, MAIN runtime-closure branch, blocker, scorer, preserve/evidence authority, consumed identity, or successor dependency is used.",
   "execution_allowed": false,
-  "sub_active_claim": "EXPLORATORY_NON_EVIDENTIARY_H3_CORRELATION_REDUCTION",
+  "sub_active_claim": "EXPLORATORY_NON_EVIDENTIARY_H3_NOISY_GROUP_PRIVILEGE_REMOVAL",
   "main_work_explicitly_avoided": [
-    "C19-R1 branch implementation, admission wrapper, CI/pre-START fixes, STARTED/execution, post-START failure diagnosis/repair/retry, scoring, preservation, and successor design",
-    "C19-v4 immutable control/preserve/evidence and official Belief-R materials",
-    "C19-v2/v3/v4 consumed identities",
-    "MAIN candidate-specific binding, verifier, review, and critical-path work"
+    "C19-R1 failure diagnosis/repair/retry/scoring/preservation/successor design",
+    "research/readiness-c19-r1-runtime-closure-20260918 and MAIN workflows 35254816937 / 35254816864",
+    "C19 v2/v3/v4 and R1 consumed identities plus immutable authorities"
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "42836802e78abd26d19c5b8a789411f2b03d0ea1",
+    "evidence_analyst": "fc59c9de3ab29507901cadfea800565271ab5edb",
     "control_brain": "d8987f8c6d88fad48a8f652f4255e73b30a223e6",
-    "orchestrator_main_reconciled_tip": "87a3c1796e215b349035a3ef55222fae0fe90ca2",
-    "c19_r1": "research/c19-r1-revision-authority-reduction-20260917@7197ab0f9683616858859446ae9eed7b75707f25",
-    "c19_r1_started_refs": [
-      "control/c19-r1-revision-authority-started-20260918@62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2"
-    ],
-    "c19_r1_exact_head_ordinary_ci": "35246655185:success",
-    "c19_r1_exact_head_prestart": "35246655189:success",
+    "orchestrator_report_parent_reconciled": "46ba59a1143711e4d950d04779fd8bbda9a13521",
+    "c19_r1_package": "research/c19-r1-revision-authority-reduction-20260917@7197ab0f9683616858859446ae9eed7b75707f25",
+    "c19_r1_started": "control/c19-r1-revision-authority-started-20260918@62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2",
     "c19_r1_one_way": "35248878958:failure:POST_START_FAILURE",
     "c19_r1_preserve_refs": [],
     "c19_r1_evidence_refs": [],
-    "c19_v4_evidence_tag": "evidence/c19-official-v4-c19-external-v2-official-v4",
-    "exploratory_branch": "research/exploratory-sub-h3-correlation-reduction-20260918@4b0f90c65cb91fe2d07b19927de1ac4d4a14ba28",
-    "exploratory_exact_head_ci": "35248646725:success",
+    "main_readiness_branch": "research/readiness-c19-r1-runtime-closure-20260918@f5f0f7abd02372954aa8edcf10b6c15f9644c122",
+    "main_readiness_workflows_at_reconciliation": ["35254816937:in_progress", "35254816864:in_progress"],
+    "exploratory_branch": "research/exploratory-sub-h3-correlation-reduction-20260918@678e38ae0035ca95c424c0fa1eb9343bed8b680b",
+    "exploratory_exact_head_ci": "35254408782:success",
     "open_pr_count": 0,
-    "open_issues": [
-      139,
-      147
-    ]
+    "open_issues": [139]
   },
   "branches_prs_advanced": {
-    "research_branches_created": [
-      "research/exploratory-sub-h3-correlation-reduction-20260918"
-    ],
-    "research_branches_advanced": [
-      "research/exploratory-sub-h3-correlation-reduction-20260918@4b0f90c65cb91fe2d07b19927de1ac4d4a14ba28"
-    ],
-    "implementation_commits": [
-      "5f48fa13c06c8fc04cd0ebe7bdf9ec65f2d2b4c3",
-      "e63e0b9d3fc6f8fda3a2c4a67ad71c073b33f4b9",
-      "54350e63180ab7dbc143c0894b4b0c7e5a1051e7",
-      "f5e9645564d018c5dad902cdafa51d5ba9bddf44",
-      "d9186d8221c641131efdb67cdcf0f0e8026d97cf",
-      "ab5f2da32cee724c44bc76fce5dc9e813b634bbb",
-      "0ffdc5c53a00d40468552fe0ea51fdac0fd6a7e0",
-      "4b0f90c65cb91fe2d07b19927de1ac4d4a14ba28"
-    ],
-    "prs_created": [],
+    "branch": "research/exploratory-sub-h3-correlation-reduction-20260918",
+    "final_head": "678e38ae0035ca95c424c0fa1eb9343bed8b680b",
+    "commits": ["70ce79c1561ae8f404acf014728aeddd48381587", "678e38ae0035ca95c424c0fa1eb9343bed8b680b"],
+    "prs": [],
     "merges": []
   },
   "workflows_experiments": {
-    "formal_scientific_workflows_dispatched_by_sub": 0,
-    "formal_scientific_experiments_executed_by_sub": 0,
-    "started_control_created_by_sub": false,
-    "one_way_dispatches_by_sub": 0,
-    "official_data_access_by_sub": false,
-    "manual_workflow_dispatches_by_sub": 0,
-    "ordinary_push_ci_attempts": [
-      "35247846628:failure:lint-only",
-      "35248164724:failure:lint-only",
-      "35248415079:failure:lint-only",
-      "35248646725:success"
-    ],
-    "exploratory_exact_head_ci": "35248646725:success",
-    "synthetic_exploratory_micro_experiment": {
-      "script": "scripts/exploratory_h3_correlation_reduction.py",
-      "tests": "tests/test_exploratory_h3_correlation_reduction.py",
-      "result_artifact": "artifacts/exploratory_h3_correlation_reduction/result.json",
-      "boundary_document": "artifacts/exploratory_h3_correlation_reduction/README.md",
-      "formal": false,
-      "identity": null
-    },
-    "main_only_observed_concurrent_workflow": {
-      "run_id": 35248878958,
-      "status": "completed",
-      "conclusion": "failure",
-      "classification": "POST_START_FAILURE",
-      "failed_step": "Execute target-blind R1 acquisition with network blocked",
-      "failure_message": "ModuleNotFoundError: No module named 'torch'",
-      "sub_diagnosed_or_repaired": false
-    }
+    "formal_workflows_dispatched_by_sub": 0,
+    "formal_experiments_executed_by_sub": 0,
+    "manual_dispatches_by_sub": 0,
+    "ordinary_push_ci": ["35254009450:failure:lint-only:I001", "35254408782:success"],
+    "exploratory_files": [
+      "scripts/exploratory_h3_noisy_group_proxy.py",
+      "tests/test_exploratory_h3_noisy_group_proxy.py",
+      "artifacts/exploratory_h3_noisy_group_proxy/result.json",
+      "artifacts/exploratory_h3_noisy_group_proxy/README.md"
+    ]
   },
   "scientific_readiness_exploratory_results": {
-    "new_formal_scientific_measurement_by_sub": false,
-    "new_formal_readiness_result_by_sub": false,
-    "exploratory_observation": true,
-    "fixed_synthetic_parameters": {
+    "new_formal_scientific_result": false,
+    "new_formal_readiness_result": false,
+    "fixed_contract": {
       "samples": 4096,
-      "seed": 1337,
-      "groups_per_example": 5,
-      "latent_group_truth_probability": 0.7,
-      "within_group_source_agreement_probability": 0.9,
-      "member_patterns": [
-        [1, 1, 1, 1, 1],
-        [1, 1, 2, 4, 8],
-        [8, 4, 2, 1, 1],
-        [1, 2, 4, 8, 16]
-      ],
-      "exact_duplicate_pattern": [1, 1, 2, 4]
+      "world_seed": 1337,
+      "proxy_seed": 20260918,
+      "corruption_rates": [0.0, 0.1, 0.25, 0.5, 1.0],
+      "information_symmetry": "scalar and coalition readers receive identical noisy observed grouping labels"
     },
-    "accuracy": {
-      "naive": 0.737548828125,
-      "source_dedup": 0.753662109375,
-      "group_normalized_scalar": 0.801513671875,
-      "group_majority_proxy": 0.801025390625
-    },
-    "group_normalized_vs_group_majority_agreement": 0.97900390625,
-    "adversarial_correlated_wrong_group": {
-      "wrong_distinct_source_counts": [1, 2, 4, 8, 16],
-      "at_counts_4_8_16": "naive and exact-source-dedup predict wrong sign; group-normalized scalar and group-majority proxy predict correct sign"
-    },
-    "interpretation": "In this constructed world, exact-ID dedup does not correct correlation overcounting across distinct source IDs, while a simpler scalar comparator with privileged true correlation-group information nearly matches the coalition-style proxy. This is comparator-information/reduction pressure, not H3 evidence."
+    "accuracy": [
+      {"corruption": 0.0, "naive": 0.737548828125, "dedup": 0.753662109375, "scalar": 0.801513671875, "coalition": 0.801025390625},
+      {"corruption": 0.1, "naive": 0.737548828125, "dedup": 0.753662109375, "scalar": 0.7890625, "coalition": 0.779052734375},
+      {"corruption": 0.25, "naive": 0.737548828125, "dedup": 0.753662109375, "scalar": 0.772705078125, "coalition": 0.769287109375},
+      {"corruption": 0.5, "naive": 0.737548828125, "dedup": 0.753662109375, "scalar": 0.7607421875, "coalition": 0.74462890625},
+      {"corruption": 1.0, "naive": 0.737548828125, "dedup": 0.753662109375, "scalar": 0.75732421875, "coalition": 0.73291015625}
+    ],
+    "interpretation": "Scalar and coalition are essentially tied with perfect grouping; scalar is strictly more accurate at every nonzero corruption level. Grouping-aware gains decay with proxy quality. This is reduction pressure only, not H3 evidence."
   },
   "evidentiary_status": "NON_EVIDENTIARY",
-  "hypothesis_or_reduction_question": "Can duplicate/correlation robustness that looks coalition-like be reproduced by an ordinary provenance-aware scalar reduction when the comparator receives the same correlation-group information?",
-  "synthetic_or_dev_inputs_used": "Fixed deterministic 4096-example synthetic grid with five latent correlation groups plus a deterministic adversarial correlated-source sweep; no formal, sealed, official, held-out C19/R1/Belief-R or consumed-identity data.",
-  "implementation_or_experiment_performed": "Implemented naive accumulation, exact-source dedup, known-group normalized scalar aggregation, and a coalition-style group-majority proxy; pinned fixed observations with tests; persisted a NON_EVIDENTIARY result artifact and Analyst boundary document; mechanically fixed only repository lint/import-layout issues; and obtained green exact-head ordinary CI without manual workflow dispatch.",
+  "hypothesis_or_reduction_question": "Does any coalition-specific robustness advantage survive when perfect latent group IDs are replaced by the same noisy observed grouping proxy for scalar and coalition readers?",
+  "synthetic_or_dev_inputs_used": "Deterministic 4096-example synthetic five-group world only; no official/sealed/formal data.",
+  "implementation_or_experiment_performed": "One prospectively fixed grouping-proxy corruption sweep with symmetric comparator information, deterministic tests/result artifact, NON_EVIDENTIARY boundary, and one mechanical lint-only follow-up commit.",
   "observations": [
-    "Fixed-grid accuracy: naive 0.737548828125; exact-source dedup 0.753662109375; group-normalized scalar 0.801513671875; group-majority proxy 0.801025390625.",
-    "Group-normalized scalar and group-majority proxy agree on 0.97900390625 of fixed-grid examples.",
-    "In the adversarial stress case, once one wrong correlation group contains 4, 8, or 16 distinct source IDs against two correct singleton groups, naive and exact-source-dedup readers fail while both group-aware readers remain correct.",
-    "True correlation-group IDs are privileged synthetic information, so the result does not establish formal H3 performance; it identifies an information-matching requirement for a future comparator.",
-    "Final exact-head ordinary CI 35248646725 completed successfully on 4b0f90c65cb91fe2d07b19927de1ac4d4a14ba28."
+    "At 0% corruption scalar=0.801513671875 and coalition=0.801025390625.",
+    "At all nonzero corruption points normalized scalar accuracy exceeds coalition majority accuracy.",
+    "At 100% forced mis-grouping scalar=0.75732421875, exact-source dedup=0.753662109375, coalition=0.73291015625.",
+    "Replacement exact-head ordinary CI 35254408782 succeeded."
   ],
-  "what_would_falsify_or_reduce_it": "The reduction concern is reduced if correlation structure cannot be supplied or learned under matched information/resource budgets, if a strong correlation-aware scalar/Bayesian comparator loses prospectively when groups are noisy/latent rather than given, or if Coalition-specific interactions retain a preregistered held-out robustness/calibration advantage after matched provenance/correlation correction.",
-  "candidate_formal_question": "Under a prospectively fixed duplicate/correlation/contradiction task family and matched provenance information, calibration, learning budget and resources, do Evidence Coalitions improve held-out robustness beyond strong correlation-aware scalar/Bayesian baselines?",
+  "what_would_falsify_or_reduce_it": "A fresh prospectively specified, information/resource-matched coalition mechanism that retains a held-out advantage over strong scalar/Bayesian reductions when grouping must be inferred or learned rather than supplied.",
+  "candidate_formal_question": "Under prospectively fixed observable/inferred correlation information and matched calibration/training/resources, do Evidence Coalitions improve held-out robustness beyond strong correlation-aware scalar/Bayesian baselines?",
   "suggested_prospective_object": null,
   "new_scientific_choices_required_before_formalization": [
-    "task/world family and held-out construction",
-    "source and correlation structure",
-    "whether correlation-group identity is observed, inferred, or learned",
-    "source reliability process and calibration method",
-    "duplicate and contradiction semantics",
-    "Evidence Coalition mechanism",
-    "correlation-aware scalar/Bayesian comparator family",
-    "information privileges and provenance access",
-    "training/tuning budgets and resource matching",
-    "primary robustness/calibration metrics",
-    "runtime, seeds, determinism, failure/exclusion rules",
+    "held-out task/world family",
+    "group observation/inference/learning rule",
+    "calibration and reliability learning",
+    "duplicate/contradiction semantics",
+    "coalition and strong scalar/Bayesian comparator definitions",
+    "information privileges",
+    "training/tuning/resource budgets",
+    "metrics/operating point",
+    "runtime/seeds/determinism",
     "success/failure criteria",
-    "fresh protocol, package and identity with normal integrity gates"
+    "fresh protocol/package/bindings/identity"
   ],
-  "promotion_recommendation": "CONTINUE_EXPLORING only after Evidence Analyst classification; do not automatically continue or formalize this H3 toy next run",
+  "promotion_recommendation": "REJECT",
+  "promotion_recommendation_meaning": "Reject promotion of the current exploratory H3 candidate on this basis; not a formal scientific rejection of H3. The Analyst-authorized one-follow-up allowance is exhausted.",
   "consumed_identities": {
     "newly_consumed_by_sub": [],
-    "known_consumed_do_not_touch": [
+    "known_do_not_touch": [
       "c19-external-v2-official-v2",
       "c19-external-v2-official-v3",
       "c19-external-v2-official-v4",
@@ -167,58 +115,37 @@
       "RV01 R01-16/R01-17",
       "RV02 D1",
       "CX01 Candidate-002"
-    ],
-    "c19_r1_revision_authority_official_v1_observed_consumed": true,
-    "c19_r1_consumption_reason": "POST_START_FAILURE after STARTED; retry_allowed=false"
-  },
-  "blockers": {
-    "formal_lane": [
-      "No reserved independent formal sub_lane or sub_fallback."
-    ],
-    "exploratory_validation": [],
-    "main_only": [
-      "C19-R1 official-v1 is consumed/no-retry after POST_START_FAILURE; SUB must not diagnose, repair, retry, score, preserve, or design an automatic successor. MAIN is blocked pending a newer Evidence Analyst handoff."
     ]
   },
+  "blockers": {
+    "formal_sub": ["No reserved independent formal sub_lane or sub_fallback."],
+    "main_only": ["R1 official-v1 is consumed/no-retry.", "R1 runtime-closure readiness is MAIN-owned."]
+  },
   "collision_reconciliation": {
-    "current_main_frontier": "C19-R1@7197ab0f9683616858859446ae9eed7b75707f25 crossed STARTED via control/c19-r1-revision-authority-started-20260918@62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2; one-way 35248878958 ended POST_START_FAILURE before raw predictions; identity consumed/no-retry",
     "main_frontier_touched_by_sub": false,
     "main_dependency_created_by_sub": false,
     "official_inputs_or_outputs_used_by_sub": false,
-    "evidence_analyst_tip_at_write": "42836802e78abd26d19c5b8a789411f2b03d0ea1",
-    "main_report_tip_reconciled": "87a3c1796e215b349035a3ef55222fae0fe90ca2",
-    "concurrent_main_reporting_preserved": true,
-    "late_concurrent_movement_reconciled": true
+    "concurrent_ops_commits_observed": ["805fc426b9c0253443b8f056e8f7f6ee5c4602bc", "46ba59a1143711e4d950d04779fd8bbda9a13521"],
+    "latest_main_designated_state_re_read": true,
+    "concurrent_main_reporting_preserved": true
   },
   "integrity_state": {
     "status": "EXPLORATORY_NON_EVIDENTIARY_BOUNDARY_HELD",
     "immutable_evidence_mutated": false,
-    "consumed_objects_reexecuted_or_retuned": false,
+    "consumed_identity_rerun_or_retuned": false,
     "formal_identity_created_or_consumed_by_sub": false,
-    "started_ref_created_by_sub": false,
-    "formal_workflow_dispatched_by_sub": false,
+    "started_or_control_created_by_sub": false,
     "official_data_accessed_by_sub": false,
-    "main_frontier_touched_by_sub": false,
-    "exploratory_artifacts_labeled_non_evidentiary": true
+    "formal_scoring_or_preservation_by_sub": false,
+    "main_frontier_touched_by_sub": false
   },
   "completion_target": {
-    "target": "One bounded independent H3 correlation-aware scalar reduction probe.",
+    "target": "Exactly one Analyst-authorized H3 noisy-group privilege-removal follow-up.",
     "status": "reached",
-    "result": "New exploratory branch, fixed synthetic probe, deterministic tests, result artifact and NON_EVIDENTIARY boundary document persisted; final exact-head ordinary CI green; late concurrent R1 STARTED/post-START failure reconciled without SUB intervention."
+    "result": "Synthetic sweep complete, exact-head CI green, promotion recommendation REJECT, H3 hard stop reached pending fresh Analyst allocation."
   },
-  "fallback_status": {
-    "sub_fallback": null,
-    "used": false
-  },
+  "fallback_status": {"sub_fallback": null, "used": false},
   "rejected_lane": null,
   "lane_rejected_reason": null,
-  "historical_incubator_boundaries": {
-    "h4": "Evidence Analyst classified NO_ACTION; stopped and not touched in this run",
-    "h7": "NO_ACTION; not touched",
-    "h9": "completed/NO_ACTION; not touched",
-    "revision_authority_fsa": "rejected; not touched",
-    "h5": "returned to Evidence Analyst; not automatically continued",
-    "h6": "returned to Evidence Analyst; not automatically continued"
-  },
-  "next_sub_action": "Return the H3 NON_EVIDENTIARY correlation-reduction probe to Evidence Analyst for classification. Do not touch the consumed R1 official-v1 identity and do not automatically continue or formalize H3 before fresh Analyst review."
+  "next_sub_action": "Return this NON_EVIDENTIARY H3 result to Evidence Analyst; do not continue H3 or touch MAIN R1 readiness without fresh allocation."
 }
