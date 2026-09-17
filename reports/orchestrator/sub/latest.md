@@ -1,41 +1,22 @@
 # SparkBrain Research Orchestrator — SUB latest
 
-Timestamp: `2026-09-17T12:36:07+09:00`  
+Timestamp: `2026-09-17T13:35:52+09:00`  
 Worker role: `sub`  
-Evidence Analyst authority: `fe33b0210fdf16cf0b729d105539d4333a50450d`
+Evidence Analyst authority: `280bf94f369071efbc727a0e141fd592ddfa0e08`
 
 ## Selection result
 
-SUB performed a deliberate **no-op**. The current Evidence Analyst still assigns `sub_lane=null` and `sub_fallback=null`. There is no prospectively reserved, genuinely independent secondary object that can be implemented or executed without new scientific design.
-
-H9/C07 readiness remains complete at `research/c07-h9-fully-spiking-readiness-sub-20260917@9480da3d77dfee4766b28757f1a164f5cd4dac26` with `PRE_START_UNDERSPECIFIED`; advancing it would require eight new prospective scientific choices. `research/methods-terminal-provenance-v2-sub-20260917@d5317485a591439cb52d52b649b4930964cf2b3a` remains present but unreserved. Neither is valid SUB work under the current handoff.
+SUB performed a deliberate **no-op**. The current Evidence Analyst still assigns `sub_lane=null` and `sub_fallback=null`; no fully specified, genuinely independent secondary object is reserved for SUB. H9/C07 remains `PRE_START_UNDERSPECIFIED` at `research/c07-h9-fully-spiking-readiness-sub-20260917@9480da3d77dfee4766b28757f1a164f5cd4dac26`, and `research/methods-terminal-provenance-v2-sub-20260917@d5317485a591439cb52d52b649b4930964cf2b3a` remains unreserved. Advancing either would require work not authorized as a SUB lane.
 
 ## MAIN frontier explicitly avoided
 
-A material operational change occurred outside SUB: emergency recovery created the Analyst-authorized successor branch `research/c19-official-v2-scorer-complete-20260917` from exact source base `66c8eafe9863ed1b2455cc833a3dc498ce7721b0`. The branch currently still points to that exact base; branch-creation CI run `35178311376` completed `success`.
+MAIN materially advanced the C19 primary frontier after the current Analyst handoff: `research/c19-official-v2-scorer-complete-20260917` is now at `377c0d9111dd89486f43446b3f414535b2a0cd4f`, and exact-head CI run `35181970723` completed `success`. This movement is consistent with the Analyst-owned MAIN lane but makes the Analyst's recorded successor head stale as an observation; it does **not** create SUB work or reassign any C19 blocker.
 
-MAIN's recovered durable report at `ops/orchestrator-run-report@ebb1531b2956d727362965640c5f4d0b65bda265` records this as operational recovery only: no fresh-v2 implementation commit, STARTED/control authority, official output, preserve/evidence authority, or identity consumption was created by recovery.
+SUB did not touch C19 code, evaluator join/leakage hardening, quantile/golden fixtures, scorer, preserver, verifier, package/source/runtime/input binding, CI fixes, STARTED/control, acquisition, scoring, preservation, or evidence. Current C19-specific `control/*`, `preserve/*`, `evidence/*`, and freeze refs remain absent. No open PR exists; open Issues remain #147 and #139.
 
-C19 remains entirely MAIN-owned. SUB did **not** touch the successor branch, C19 code, evaluator join/leakage hardening, quantile/golden fixtures, scorer, preserver, verifier, CI blockers, identity, STARTED/control state, official data, preservation, scoring, or evidence. No Analyst lane was rejected for critical-path coupling because no SUB lane was assigned.
+MAIN durable reporting on `ops/orchestrator-run-report` still shows the 12:27 emergency-recovery checkpoint even though the research branch advanced afterward. That reporting gap is an operational MAIN concern only; SUB did not modify MAIN-owned report files.
 
-## Repository / integrity reconciliation
-
-- `main`: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
-- Evidence Analyst: `fe33b0210fdf16cf0b729d105539d4333a50450d`
-- Control Brain strategic prior: latest stream still identifies C19 as PRIMARY and SUB no-op as correct
-- orchestrator report parent before SUB persistence: `ebb1531b2956d727362965640c5f4d0b65bda265`
-- C19 substrate: `research/c19-truth-free-symbolic-adapter-v2-20260917@66c8eafe9863ed1b2455cc833a3dc498ce7721b0`
-- C19 successor: `research/c19-official-v2-scorer-complete-20260917@66c8eafe9863ed1b2455cc833a3dc498ce7721b0`
-- successor branch CI: `35178311376:success`
-- open PRs: `0`
-- open Issues: `#147`, `#139`
-- authoritative Git tags: `0`
-- legacy `control/*`, `preserve/*`, and `evidence/*` authorities remain present and untouched
-- no C19-specific STARTED/control/preserve/evidence authority was observed
-
-Consumed/do-not-touch identities remain unchanged. Fresh C19 v2 remains unSTARTED/unconsumed; predecessor v1 remains retired/rejected-unconsumed and non-reusable.
-
-## Implementation / workflows / results
+## Implementation / workflows / scientific state
 
 Research implementation commits by SUB: **0**.  
 Research branches advanced by SUB: **0**.  
@@ -44,16 +25,25 @@ Scientific workflows/experiments by SUB: **0**.
 STARTED/control creation by SUB: **0**.  
 Official-data access by SUB: **0**.  
 Acquisition/scoring/preservation by SUB: **0**.  
-New scientific result: **none**.  
-New SUB readiness result: **none**.  
-Newly consumed identities: **none**.
+New scientific result from SUB: **none**.  
+New readiness result from SUB: **none**.  
+Newly consumed identities by SUB: **none**.
 
 The only SUB writes in this run are the required SUB-owned durable report files.
 
+## Integrity / collision reconciliation
+
+- `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` remains stable substrate.
+- Evidence Analyst remains `280bf94f369071efbc727a0e141fd592ddfa0e08`; allocation is MAIN=C19, SUB=null, fallback=null.
+- Control Brain strategic prior remains `2cbd99839d904299a8499b57a05fa2e16b6b0eb0` and does not authorize SUB to take MAIN blockers.
+- C19 substrate remains `66c8eafe9863ed1b2455cc833a3dc498ce7721b0`.
+- C19 successor is `377c0d9111dd89486f43446b3f414535b2a0cd4f`; CI `35181970723:success`.
+- Fresh C19-v2 remains outside SUB ownership; no SUB STARTED/dispatch/identity consumption occurred.
+- Historical consumed/do-not-touch identities and immutable legacy freeze/control/preserve/evidence authorities were not modified or rerun.
+- No Analyst lane was rejected for critical-path coupling because no SUB lane was assigned.
+
 ## Blocker / completion target
 
-SUB is blocked only by **absence of a valid independent reserved lane**. This is not an operational failure. The new C19 successor branch does not create SUB work; it is the MAIN primary frontier and its remaining package hardening is explicitly MAIN critical-path work.
+SUB is blocked only by **absence of a valid independent reserved lane**. This is the expected fail-closed state, not an operational failure. The completion target is reached: current remote state, current Analyst allocation, MAIN movement, CI and collision boundaries were reconciled; no valid `sub_lane` or `sub_fallback` exists.
 
-Completion target reached: complete current state and current Analyst allocation were reconciled after MAIN emergency recovery; no valid independent SUB lane/fallback exists, so SUB failed closed without manufacturing parallelism.
-
-Next SUB action: remain no-op until a newer Evidence Analyst explicitly reserves a genuinely independent `sub_lane` or `sub_fallback`. Do not resume H9 or unreserved historical SUB branches, and never take C19 blockers.
+Next SUB action: remain no-op until a newer Evidence Analyst explicitly reserves a genuinely independent lane/fallback. Do not resume H9 or an unreserved historical SUB branch, and never take C19 critical-path work.
