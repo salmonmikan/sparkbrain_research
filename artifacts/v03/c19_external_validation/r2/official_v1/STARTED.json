@@ -1,0 +1,14 @@
+{
+  "state": "STARTED",
+  "started_at": "2026-09-18T08:45:03+09:00",
+  "protocol_id": "c19-r2-fsa-state-tracker-protocol-v1",
+  "run_identity": "c19-r2-fsa-state-tracker-official-v1",
+  "no_retry": true,
+  "evidence_analyst_commit": "6ecf13b73cfc75409f6cfe86e9b8ac73fc58b6ce",
+  "exact_package_commit": "5bfa3962c777fa5bc915bb21e20801ab8294778a",
+  "scientific_package_commit": "5d5d171cf872baed7a636fd246ab36f3a91a6716",
+  "admission_runs": {
+    "ordinary_ci": 35286420401,
+    "dedicated_prestart": 35286420308
+  }
+}
