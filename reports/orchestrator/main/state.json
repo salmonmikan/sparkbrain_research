@@ -1,149 +1,84 @@
 {
-  "timestamp": "2026-09-17T06:33:00+09:00",
+  "timestamp": "2026-09-17T12:27:00+09:00",
   "worker_role": "main",
-  "evidence_analyst_commit": "7bfef197fe0b255e395d2ea18ebadb59f2ca9fb6",
-  "analyst_lanes": {
-    "main_lane": {
-      "target": "C19-v2 frozen execution-contract conformance closure",
-      "branch": "research/c19-truth-free-symbolic-adapter-v2-20260917",
-      "frozen_protocol_head": "90c936a7abca7eba0dac1f977753503551e73368",
-      "planned_identity": "c19-external-v2-official-v1",
-      "main_owns_all_critical_path_fixups": true,
-      "execution_allowed": false
-    },
-    "sub_lane": null,
-    "sub_fallback": null,
-    "blocked_until": "Fresh Evidence Analyst resolves the remaining scorer semantics and explicitly authorizes the next package stage."
-  },
-  "consumed_prospective_contingency_branches": [
-    "PRE_START_CONTRACT_MISMATCH",
-    "PRE_START_COVERAGE_GUARD_INCOMPLETE",
-    "PRE_START_SCORER_BINDING_INCOMPLETE",
-    "PRE_START_SCORER_SEMANTICS_AMBIGUOUS"
-  ],
-  "main_active_claim": "C19-v2 exact frozen raw schema and 55x1744 pair-coverage closure; concrete scorer remains prospectively unresolved",
+  "mode": "EMERGENCY_OPERATIONAL_RECOVERY",
+  "evidence_analyst_commit": "fe33b0210fdf16cf0b729d105539d4333a50450d",
+  "main_active_claim": "C19 fresh official-v2 successor operationally recovered; scientific package implementation not yet advanced",
   "authoritative_refs": {
-    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "7bfef197fe0b255e395d2ea18ebadb59f2ca9fb6",
-    "control_brain": "b3e9da4b6eb65f01282db8f06f967f96e1ca8be0",
-    "orchestrator_report_parent": "175991213679543dde3dfa352e36f9ed89223085",
-    "c19_frozen_protocol_head": "90c936a7abca7eba0dac1f977753503551e73368",
-    "c19_start_head": "17ce3e61d17436337d13c90c6c86184fcad09f22",
-    "c19_research_head": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
-    "c19_control_refs": [],
-    "c19_preserve_refs": [],
-    "c19_freeze_refs": [],
-    "c19_evidence_refs": [],
-    "c19_tags": []
+    "c19_source_base_branch": "research/c19-truth-free-symbolic-adapter-v2-20260917",
+    "c19_source_base_head": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
+    "c19_successor_branch": "research/c19-official-v2-scorer-complete-20260917",
+    "planned_protocol": "c19-external-v2-official-protocol-v2",
+    "planned_identity": "c19-external-v2-official-v2",
+    "evidence_analyst": "fe33b0210fdf16cf0b729d105539d4333a50450d"
+  },
+  "scheduler_recovery": {
+    "scheduler_enabled": true,
+    "schedule": "hourly at :15 Asia/Tokyo",
+    "latest_run_observed": "2026-09-17T12:25:09+09:00 approximately",
+    "previous_durable_main_timestamp": "2026-09-17T06:33:00+09:00",
+    "root_cause_classification": "WORKER_FALSE_WRITE_PATH_UNAVAILABLE / DURABLE_REPORT_STALL",
+    "github_write_path_verified": true,
+    "verified_write_action": "created research/c19-official-v2-scorer-complete-20260917 from exact SHA 66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
+    "durable_report_recovered": true
   },
   "branches_prs_advanced": {
-    "research/c19-truth-free-symbolic-adapter-v2-20260917": {
-      "start_of_run_observed_head": "17ce3e61d17436337d13c90c6c86184fcad09f22",
-      "final_head": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
-      "main_commits": [
-        "2450d36551a43dffb1b35e708812a63fd5364bb8",
-        "e1b5c65244b396968b514a8ab9a68bddb9f8067b",
-        "16c798469da634c7d0e758eafb7cd05f80f3af9d",
-        "10b7ed33eb2b968c76cf6647d48839ac11dd2c0a",
-        "313772b397c1f2e25934b51f7fdc55e71574846f",
-        "9b0943adb83a8abd49d0726b5cc87acac45b2e60",
-        "66c8eafe9863ed1b2455cc833a3dc498ce7721b0"
-      ]
+    "research/c19-official-v2-scorer-complete-20260917": {
+      "created_from": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
+      "scientific_delta_added_by_recovery": false
     },
-    "open_prs": [],
-    "merges": []
+    "open_prs_created_by_recovery": []
   },
   "workflows_experiments": {
-    "exact_head_ci": {
-      "run_id": 35152618704,
-      "head": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
-      "result": "success",
-      "python_3_11": "success",
-      "python_3_13": "success",
-      "steps": [
-        "Install",
-        "Lint",
-        "Local readiness",
-        "Test",
-        "Validate bundle"
-      ]
-    },
     "official_experiments_dispatched": [],
-    "official_data_access": false
+    "official_data_access": false,
+    "started_created": false,
+    "identity_consumed": false
   },
   "scientific_results": {
     "new_scientific_measurement": false,
-    "new_readiness_information": [
-      "The frozen 16-field target-blind raw schema is now enforced by the one-way harness.",
-      "Every one of the 55 frozen rows must contain exactly the 1,744 unique official pair indices; missing, duplicate, out-of-range, or cross-row identity-inconsistent records fail closed.",
-      "The package contract is reconciled to the already source-bound condition and five baseline executors instead of reporting them as unbound.",
-      "A concrete scorer cannot be uniquely instantiated from the current frozen C19-v2 package because the evaluator-target payload/interface and exact empirical bootstrap quantile/interpolation convention are not uniquely bound."
-    ]
+    "recovery_only": true
   },
-  "consumed_identities": {
-    "inherited_do_not_touch": [
-      "A01 MD-001",
-      "A01 MD-002 P2 candidate-002",
-      "A01 MD-002 P3 candidate-001",
-      "A01 Family-A P4 candidate-001",
-      "RV01 R01-16 family",
-      "RV01 R01-17",
-      "RV02 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
-      "CX01 Candidate-002/formal evidence"
-    ],
-    "c19_external_v2_official_v1_consumed": false
-  },
+  "consumed_prospective_contingency_branches": [
+    "PRE_START_SUCCESSOR_PROTOCOLIZATION"
+  ],
   "blockers": [
-    "PRE_START_SCORER_SEMANTICS_AMBIGUOUS: the exact evaluator-target payload/interface and the exact empirical bootstrap quantile/interpolation convention are not uniquely frozen by the current C19-v2 package.",
-    "The preserver remains interface-bound only; no immutable C19 preserve authority exists or was created."
+    "Fresh-v2 scientific implementation/package still needs to be completed under the current Analyst authority before STARTED."
   ],
   "concurrency_reconciliation": {
-    "concurrent_c19_movement_detected": false,
-    "start_head": "17ce3e61d17436337d13c90c6c86184fcad09f22",
-    "final_head": "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
-    "sub_report_tip_consumed": "202a2e9c40ae541350d032b8abf0ed14a1cee5c8",
-    "evidence_analyst_tip_unchanged_at_stop": true,
-    "orchestrator_report_tip_before_persistence": "175991213679543dde3dfa352e36f9ed89223085"
+    "analyst_authority_rechecked": true,
+    "successor_branch_was_absent_before_recovery": true,
+    "successor_branch_created_from_exact_authorized_base": true
   },
   "integrity_status": {
-    "status": "PRE_START_SCORER_SEMANTICS_AMBIGUOUS",
-    "frozen_science_changed": false,
+    "status": "PRE_START_SUCCESSOR_PROTOCOLIZATION_RECOVERED",
+    "immutable_evidence_modified": false,
     "official_cache_opened": false,
-    "official_cache_verified": false,
-    "official_examples_read": false,
     "started_ref_created": false,
     "workflow_dispatched": false,
-    "official_predictions_produced": false,
     "official_raw_created": false,
     "official_scoring_performed": false,
-    "preserve_or_evidence_authority_created": false,
-    "identity_consumed": false,
-    "raw_before_score_contract_preserved": true,
-    "no_clobber_contract_preserved": true,
-    "exact_raw_schema_closed": true,
-    "exact_pair_coverage_closed": true,
-    "parameter_match_asserted": false,
-    "compute_match_asserted": false,
-    "winner_claim_allowed": false
+    "identity_consumed": false
   },
   "main_critical_path_fixups_completed": [
-    "Replaced the six-field ad-hoc raw payload with the exact frozen 16-field target-blind raw schema and SHA-256 record-id commitment.",
-    "Added exact 55x1744 pair coverage, duplicate/missing/out-of-range detection, and cross-row pair-identity consistency checks.",
-    "Added the already-determined final step index to the source-bound baseline executor payload so the frozen raw schema can be materialized without new scientific semantics.",
-    "Added synthetic fail-closed tests for exact schema, complete pair coverage, cross-row identity, target leakage, no-clobber, preservation ordering, and reconstruction.",
-    "Refreshed exact implementation-binding blob hashes and reconciled the harness contract with source-bound condition/baseline executors.",
-    "Confirmed exact-head CI 35152618704 green on Python 3.11 and 3.13."
+    "Diagnosed scheduler-vs-persistence split: scheduler was running while MAIN durable report was stale.",
+    "Directly verified GitHub repository write capability.",
+    "Created the exact Analyst-authorized fresh successor branch from the approved source base.",
+    "Restored MAIN durable latest/state reporting."
   ],
   "same_run_steps_completed": [
-    "PRE_START_CONTRACT_MISMATCH: closed the raw schema mismatch against the frozen protocol.",
-    "PRE_START_COVERAGE_GUARD_INCOMPLETE: enforced exactly 1,744 unique official pair indices in every frozen row.",
-    "PRE_START_SCORER_BINDING_INCOMPLETE: inspected the frozen scoring contract and repository conventions after raw closure.",
-    "PRE_START_SCORER_SEMANTICS_AMBIGUOUS: stopped before inventing an evaluator-target payload or bootstrap quantile/interpolation rule."
+    "Scheduler health inspection",
+    "Durable report staleness confirmation",
+    "Current Evidence Analyst authority re-fetch",
+    "Successor-branch existence check",
+    "Direct GitHub write-path verification",
+    "Successor branch creation",
+    "MAIN durable report recovery"
   ],
-  "same_run_stop_reason": "The current Evidence Analyst requires STOP at PRE_START_SCORER_SEMANTICS_AMBIGUOUS. Implementing a concrete scorer now would add scoring semantics not uniquely frozen by the current C19-v2 package.",
+  "same_run_stop_reason": "Emergency recovery scope completed. Scientific successor implementation remains for the normal MAIN loop under current Analyst constraints.",
   "work_intentionally_left_for_sub": [],
   "reserved_sub_work_not_touched": [],
   "lane_repartition_reason": null,
   "analyst_split_invalidated": false,
-  "next_main_action": "Return exact C19 head 66c8eafe9863ed1b2455cc833a3dc498ce7721b0 and green CI 35152618704 to Evidence Analyst for prospective resolution of the evaluator-target schema and bootstrap CI convention. Do not create STARTED or access official Belief-R content under the current handoff."
+  "next_main_action": "Implement the Auditor-hardened C19 fresh-v2 package on the recovered successor branch, using direct GitHub write actions. Never claim write-path unavailability without attempting the relevant write and persisting the exact error. Persist a MAIN report even on blocked/failure/no-op runs."
 }
