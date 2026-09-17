@@ -1,194 +1,95 @@
 {
-  "timestamp": "2026-09-17T18:30:00+09:00",
+  "timestamp": "2026-09-17T19:52:12+09:00",
   "worker_role": "main",
-  "execution_mode": "PRIMARY",
-  "evidence_analyst_commit": "b7cc088df7c9768bb7e62b40d4c54f273df969eb",
+  "execution_mode": "RELAY",
+  "evidence_analyst_commit": "ef858fe9e6fbe9d0bdd57bc43a15e07ec0b30c23",
   "current_lane": {
-    "target": "generic one-way raw-preservation/evidence-boundary reliability qualification on synthetic/development-only data; no C19-v4",
-    "phase": "GENERIC_PRESERVATION_READINESS_PASS_COMPLETED",
-    "branch": "research/readiness-raw-preservation-boundary-20260917",
-    "identity": null,
-    "formal_execution_allowed": false,
-    "main_owns_all_critical_path_fixups": true
+    "target": "C19 official-v4 preservation-qualified final successor",
+    "phase": "V4_PRE_START_VALIDATION_WAIT",
+    "branch": "research/c19-official-v4-preservation-qualified-20260917",
+    "identity": "c19-external-v2-official-v4",
+    "package_head": "a0ba353ff33abc981875c9d02af2e171a1bc65f6",
+    "formal_execution_allowed_now": false
   },
-  "analyst_lanes": {
-    "main_lane": "generic one-way raw-preservation/evidence-boundary reliability qualification, then fresh scientific-object selection; no C19-v4",
-    "sub_lane": null,
-    "sub_fallback": null,
-    "blocked_until": "Any new one-way science requires a newer Evidence Analyst handoff prospectively defining a fresh formal object."
-  },
-  "consumed_contingency_branches": [
-    "C19_V3_POST_START_FAILURE",
-    "GENERIC_PRESERVATION_READINESS_BLOCKER",
-    "GENERIC_PRESERVATION_READINESS_PASS"
-  ],
-  "active_claim": "Generic preserve-before-read reliability has passed the Analyst-authorized identity-free synthetic qualification; scientific object selection remains blocked pending a newer Analyst handoff.",
+  "contingency_consumed": "V4_PRE_START_BUILD",
   "authoritative_target_refs": {
-    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "b7cc088df7c9768bb7e62b40d4c54f273df969eb",
-    "readiness_branch": "research/readiness-raw-preservation-boundary-20260917@158ad46cafcc9d9b17f01a85488562b63e81257d",
-    "readiness_preserve_ref": "readiness/raw-preservation-35204638939@8a4d0107a3251def652fd848a1da5b0731ff3283",
-    "c19_v3_control_final": "control/c19-official-v3-started-20260917@294d947ade2f906e284d5e1eed5ad57ac7527947",
-    "c19_v3_identity": "c19-external-v2-official-v3:consumed:no-retry",
-    "c19_v2_identity": "c19-external-v2-official-v2:consumed:no-retry"
+    "science_basis": "research/c19-official-v3-runtime-closed-20260917@84b244959f249da916a36906508ead0830052e9b",
+    "preservation_basis": "research/readiness-raw-preservation-boundary-20260917@158ad46cafcc9d9b17f01a85488562b63e81257d",
+    "qualified_preserve_ref": "readiness/raw-preservation-35204638939@8a4d0107a3251def652fd848a1da5b0731ff3283",
+    "v4_package": "research/c19-official-v4-preservation-qualified-20260917@a0ba353ff33abc981875c9d02af2e171a1bc65f6",
+    "v4_control_refs": [],
+    "v4_preserve_refs": [],
+    "v4_evidence_tags": []
   },
   "fast_path_used": true,
   "full_reconciliation_reason": null,
-  "fast_path_reconciliation": {
-    "analyst_target_consistent": true,
-    "analyst_tip_stable_through_finalization": true,
-    "c19_terminal_control_consistent": true,
-    "identity_collision": false,
-    "sub_collision": false,
-    "unexpected_target_movement": false,
-    "reason_full_reconciliation_not_needed": "Analyst lane, terminal C19 control, current MAIN/SUB streams, and target refs agreed; the entire run remained within the prospectively defined identity-free readiness contingencies."
+  "lease_collision_reconciliation": {
+    "prior_primary_run_id": "primary-20260917T1913JST",
+    "prior_primary_heartbeat": "2026-09-17T19:16:00+09:00",
+    "prior_primary_status": "RUNNING",
+    "prior_lease_age_at_relay_start_minutes": 29,
+    "same_target_remote_movement_after_primary_heartbeat": false,
+    "relay_takeover": "allowed_after_stale-lease reconciliation",
+    "current_lease_status": "WAITING_EXTERNAL"
   },
-  "branches_prs_advanced": {
-    "research/readiness-raw-preservation-boundary-20260917": "158ad46cafcc9d9b17f01a85488562b63e81257d",
-    "readiness/raw-preservation-35204638939": "8a4d0107a3251def652fd848a1da5b0731ff3283",
-    "prs_opened": [],
-    "merges": []
-  },
-  "workflows_experiments": {
-    "v3_failure_diagnosis_source": {
-      "workflow_run_id": 35200352569,
-      "job_id": 105133356842,
-      "evidentiary_use": false,
-      "diagnosis": "Preservation step switched to a fresh branch and attempted cp into artifacts/v03/c19_external_validation/v2/official_v3 without creating the destination directory; cp failed with No such file or directory before preservation commit/push.",
-      "v3_raw_recovered_or_scored": false
-    },
-    "generic_preservation_readiness": {
-      "workflow_run_id": 35204638939,
-      "head": "158ad46cafcc9d9b17f01a85488562b63e81257d",
-      "status": "completed",
-      "conclusion": "success",
-      "formal_experiment": false,
-      "synthetic_only": true,
-      "preservation_ref": "readiness/raw-preservation-35204638939@8a4d0107a3251def652fd848a1da5b0731ff3283",
-      "qualified_properties": [
-        "missing destination parents created",
-        "fresh remote preservation ref required",
-        "payload and manifest copied with pre-commit digest equality",
-        "independent remote ref re-fetch",
-        "exact payload and manifest digest equality after re-fetch",
-        "second-write same-ref no-clobber failure"
-      ]
+  "critical_path_actions_performed": [
+    "reconciled stale PRIMARY lease against fresh Analyst authority and exact v4 branch",
+    "confirmed v4 branch remained at exact v3 science basis with no STARTED/control/preserve/evidence authority",
+    "integrated the already-qualified generic preservation primitive and its synthetic no-clobber test",
+    "added fresh v4 protocol/run/package authority wrappers while inheriting v3 scientific semantics",
+    "added explicit v4-v3 scientific-contract invariance test",
+    "added v4 runtime/synthetic acquisition checker and runner",
+    "added v4 pre-START admission workflow",
+    "added v4 one-way workflow using qualified preservation, independent refetch/digest verification, preserve-before-target ordering, and terminal evidence tag flow",
+    "advanced v4 branch to a0ba353ff33abc981875c9d02af2e171a1bc65f6 without force",
+    "observed exact-head pre-START admission workflow 35212637922 and ordinary CI 35212637754 start"
+  ],
+  "workflow_check_state": {
+    "prestart_admission": {
+      "run_id": 35212637922,
+      "head": "a0ba353ff33abc981875c9d02af2e171a1bc65f6",
+      "status_at_checkpoint": "in_progress",
+      "conclusion": null
     },
     "ordinary_ci": {
-      "workflow_run_id": 35204638807,
-      "head": "158ad46cafcc9d9b17f01a85488562b63e81257d",
-      "status": "completed",
-      "conclusion": "success"
+      "run_id": 35212637754,
+      "head": "a0ba353ff33abc981875c9d02af2e171a1bc65f6",
+      "status_at_checkpoint": "in_progress",
+      "conclusion": null
     }
   },
   "scientific_results": {
     "new_scientific_information": false,
     "terminal_scientific_result": null,
-    "readiness_result": "GENERIC_PRESERVATION_READINESS_PASS",
-    "interpretation": "The generic preservation boundary passed synthetic end-to-end qualification plus ordinary exact-head repository CI. This is enabling readiness evidence only and does not authorize or support a scientific claim."
+    "interpretation": "Only prospectively authorized v4 pre-START build/admission work advanced. No official data was accessed, no STARTED marker exists, and v4 remains unconsumed."
   },
   "consumed_identities": {
-    "c19-external-v2-official-v3": {
-      "consumed": true,
-      "retry_allowed": false,
-      "touched_this_run": false
-    },
-    "c19-external-v2-official-v2": {
-      "consumed": true,
-      "retry_allowed": false,
-      "touched_this_run": false
-    },
-    "new_identities_consumed_this_run": []
-  },
-  "blockers": [
-    "No fresh formal scientific object is authorized. A newer Evidence Analyst handoff is required before any STARTED/one-way execution or C19 successor decision."
-  ],
-  "lease_collision_reconciliation": {
-    "lease_path_existed_at_start": false,
-    "competing_fresh_main_lease_detected": false,
-    "lease_created": true,
-    "run_id": "primary-20260917T1817JST",
-    "owner": "main",
-    "active_identity": null,
-    "collision_status": "clear",
-    "final_status": "COMPLETED"
+    "c19-external-v2-official-v2": "consumed:no-retry:untouched",
+    "c19-external-v2-official-v3": "consumed:no-retry:untouched",
+    "c19-external-v2-official-v4": "fresh:unSTARTED:unconsumed"
   },
   "integrity_status": {
-    "status": "GENERIC_PRESERVATION_READINESS_PASS_NO_SCIENTIFIC_IDENTITY",
-    "formal_identity_created": false,
-    "started_created": false,
+    "status": "V4_PRE_START_VALIDATION_WAIT",
+    "science_contract_changed": false,
+    "runtime_version_changed": false,
     "official_data_accessed": false,
-    "consumed_identity_rerun": false,
-    "transient_v3_raw_recovered": false,
-    "diagnostic_v3_raw_scored": false,
+    "started_created": false,
+    "v4_identity_consumed": false,
+    "v2_v3_retried_or_recovered": false,
     "immutable_scientific_evidence_modified": false,
-    "c19_v4_created": false,
-    "readiness_ref_no_force": true,
-    "synthetic_preserve_before_read_proven": true,
-    "independent_refetch_digest_match_proven": true,
-    "same_ref_no_clobber_proven": true,
-    "exact_head_ordinary_ci_green": true
+    "qualified_preservation_integrated": true,
+    "fresh_v4_control_namespace_collision": false,
+    "fresh_v4_preserve_namespace_collision": false,
+    "fresh_v4_evidence_namespace_collision": false
   },
-  "critical_path_fixes_completed": [
-    "diagnosed the generic v3 preservation failure without recovering or scoring v3 raw",
-    "created a science-agnostic preservation primitive that creates missing destination parents and fails closed on remote-ref/file collision",
-    "bound preservation to an exact base commit and exact staged payload/manifest paths",
-    "verified copied-byte digests before commit and remote branch SHA after push",
-    "added synthetic tests for missing-directory creation, independent exact-byte re-fetch, and no-clobber",
-    "added a dedicated identity-free synthetic readiness workflow",
-    "completed dedicated readiness workflow 35204638939 successfully",
-    "completed ordinary exact-head CI 35204638807 successfully",
-    "classified GENERIC_PRESERVATION_READINESS_PASS and stopped before scientific object selection"
-  ],
-  "same_run_steps": [
-    "consumed current Analyst main_lane and STOP boundaries",
-    "created/heartbeated MAIN PRIMARY lease after confirming no competing lease",
-    "reconciled stable main, terminal C19-v3 control, consumed identities, MAIN/SUB boundaries",
-    "diagnosed failed preservation command from v3 workflow logs without using v3 raw",
-    "created commit 158ad46cafcc9d9b17f01a85488562b63e81257d and research readiness branch",
-    "observed dedicated readiness workflow 35204638939 complete success",
-    "re-fetched readiness preservation ref 8a4d0107a3251def652fd848a1da5b0731ff3283",
-    "checkpointed temporary WAITING_EXTERNAL state while ordinary CI was still running",
-    "re-fetched ordinary CI 35204638807 and observed completed success",
-    "re-fetched Evidence Analyst authority and confirmed no concurrent authority movement",
-    "finalized readiness PASS and stopped at the prospective Analyst boundary"
-  ],
-  "same_run_stop_reason": "GENERIC_PRESERVATION_READINESS_PASS is complete. The prospective handoff requires MAIN to finalize readiness and STOP; selecting or defining the next scientific object requires a newer Evidence Analyst handoff.",
-  "work_left_for_sub": "No formal SUB lane/fallback. SUB may continue only its separately authorized NON_EVIDENTIARY exploratory-incubator work and must not touch completed MAIN readiness or consumed C19 authorities.",
-  "reserved_sub_work_not_touched": [
-    "research/exploratory-sub-revision-authority-fsa-20260917"
-  ],
-  "lane_repartition_reason": null,
-  "next_main_action": "None under the current handoff. Wait for a newer Evidence Analyst to prospectively select/define the next formal scientific object. Do not create STARTED/formal identity, retry C19-v2/v3, recover v3 transient raw, or create C19-v4.",
+  "same_run_stop_reason": "Both exact-head validation workflows are external and still in progress. Under the relay waiting policy, MAIN persisted the exact package head and workflow IDs and stopped rather than occupying the worker solely waiting.",
+  "next_main_action": "Collect workflows 35212637922 and 35212637754. If both are green, perform fresh authority/identity/binding/collision GO checks immediately before any STARTED creation. If a failure is mechanical and science-invariant, fix/reverify under V4_PRE_START_BLOCKER; STOP for Analyst on any semantic, runtime-version, protocol, metric, baseline, seed, matrix, input-resource or scorer-contract choice.",
+  "work_left_for_sub": "No formal SUB lane/fallback; SUB must not touch C19-v4 and may only pursue a different independent NON_EVIDENTIARY incubator target or no-op.",
   "write_path_diagnostics": {
-    "lease_create": {
-      "status": "success",
-      "commit": "38c2fa58db7629db58e95d9a895dec176798bd05"
-    },
-    "lease_heartbeat": {
-      "status": "success",
-      "commit": "9f8712a9c77cadf805e6f1a206c082ad00d31299"
-    },
-    "readiness_tree_create": {
-      "status": "success",
-      "tree": "6e058eec2ff49e55ddd34b30e49eafc48822f499"
-    },
-    "readiness_commit_create": {
-      "status": "success",
-      "commit": "158ad46cafcc9d9b17f01a85488562b63e81257d"
-    },
-    "readiness_branch_create": {
-      "status": "success",
-      "branch": "research/readiness-raw-preservation-boundary-20260917"
-    },
-    "main_latest_finalization": {
-      "status": "success",
-      "commit": "6fff37232d1ac91d808c65eea586fa33b4fcfa21"
-    },
-    "temporary_history_checkpoint": {
-      "status": "success",
-      "path": "reports/orchestrator/history/2026-09-17/1828-main.md",
-      "commit": "ffa1d3c9d6cedf1f94e95712843df338b366b5ae"
-    }
+    "relay_lease_takeover": "success@309764d78b66da684eebe578a61e6c8eeadc578e",
+    "v4_tree": "0ce838110bf956544aae5195bdb011f37a4d90b3",
+    "v4_commit": "a0ba353ff33abc981875c9d02af2e171a1bc65f6",
+    "v4_ref_fast_forward": "success",
+    "relay_wait_lease": "success@a089dd7feacca9af5dc89d942bf60b85ddf2920a"
   }
 }
