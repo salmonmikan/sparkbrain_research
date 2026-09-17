@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-18T05:14:37+09:00",
+  "timestamp": "2026-09-18T06:13:41+09:00",
   "worker_role": "main",
   "execution_mode": "PRIMARY",
   "evidence_analyst_commit": "b09d90d0545a0448ea5a310f9373969e7471b15d",
@@ -54,29 +54,11 @@
     },
     "official_execution": null
   },
-  "binding_reconciliation": {
-    "config_blob_sha": "a1385abb99e36774e31fa96533483aa11201d491",
-    "parent_v4_package_commit": "74bfe6b4a39758656f291baaa3f16236e3e71964",
-    "v4_raw_sha256": "692f8a5dba48f604eb1f5518a8545b80da01e1a00a9e2d2b6b1c0567355d65af",
-    "representation": "I2_truth_free_symbolic_surface",
-    "expected_pairs": 1744,
-    "official_seeds": [15901, 15902, 15903, 15904, 15905],
-    "runtime": "CPython 3.11.16",
-    "network_allowed_during_model_execution": false,
-    "primary_inference": "paired_atomic_idx_cluster_bootstrap",
-    "secondary_inference": "paired_official_pair_bootstrap_sensitivity",
-    "resamples": 10000,
-    "bootstrap_seed": 19901,
-    "raw_before_score": true,
-    "immutable_preserve_before_targets": true,
-    "no_clobber": true,
-    "fresh_analyst_execution_authorization_required": true
-  },
   "scientific_results": {
     "new_scientific_measurement": false,
     "terminal_scientific_result": null,
     "classification": "PRE_FORMAL_READINESS_ONLY",
-    "interpretation": "No new scientific information. Exact R2 package and both readiness gates remain green and unchanged, while fresh Analyst authorization is still absent."
+    "interpretation": "No new scientific information. Exact R2 package and both readiness gates remain green and unchanged, while the current Evidence Analyst authority still hard-stops before formal identity or STARTED."
   },
   "consumed_identities": {
     "c19-r1-revision-authority-official-v1": {
@@ -96,25 +78,26 @@
   },
   "blockers": [
     "Fresh Evidence Analyst authorization is required before reserving any formal R2 identity or crossing STARTED.",
-    "Current handoff defines R2_PRE_START_READY_FOR_ANALYST_REVIEW as a hard STOP."
+    "Current authority b09d90d0545a0448ea5a310f9373969e7471b15d explicitly defines R2_PRE_START_READY_FOR_ANALYST_REVIEW as a hard STOP."
   ],
   "lease_collision_reconciliation": {
-    "inherited_run_id": "relay-20260918T0445JST",
+    "inherited_run_id": "primary-20260918T0514JST",
     "inherited_status": "BLOCKED",
-    "inherited_heartbeat": "2026-09-18T04:45:00+09:00",
+    "inherited_heartbeat": "2026-09-18T05:17:44+09:00",
     "same_branch_or_identity_fresh_running_collision": false,
-    "primary_lease_acquired_commit": "4a9f87b312bdfae877cbb1a834cb2ecd80043f4e",
+    "primary_lease_acquired_commit": "73784dc9c274a091b57eb4a8cde05b07842134bd",
     "analyst_tip_rechecked": "b09d90d0545a0448ea5a310f9373969e7471b15d",
     "r2_head_rechecked": "5d5d171cf872baed7a636fd246ab36f3a91a6716",
-    "result": "safe PRIMARY reconciliation; no scientific mutation authorized"
+    "result": "safe PRIMARY reconciliation; current hard stop unchanged"
   },
   "integrity_status": {
     "analyst_tip_unchanged": true,
     "exact_r2_head_unchanged": true,
-    "main_head_unchanged": true,
     "dedicated_prestart_green_same_head": true,
     "ordinary_ci_green_same_head": true,
-    "r2_evidence_tag_absent": true,
+    "r2_control_namespace_absent": true,
+    "r2_preserve_namespace_absent": true,
+    "r2_evidence_tag_namespace_absent": true,
     "formal_identity_reserved": false,
     "started_created": false,
     "official_data_accessed": false,
@@ -125,33 +108,33 @@
   },
   "critical_path_fixes_completed": [],
   "critical_path_actions_performed": [
-    "Re-read current Evidence Analyst latest/state/history authority and confirmed the hard STOP remains in force.",
-    "Reconciled inherited MAIN lease and acquired a PRIMARY lease with no collision.",
-    "Re-fetched the exact R2 branch and confirmed head 5d5d171cf872baed7a636fd246ab36f3a91a6716 is unchanged.",
+    "Re-read the designated Evidence Analyst latest/history authority and confirmed the R2 hard STOP remains unchanged.",
+    "Reconciled the inherited MAIN BLOCKED lease and acquired a fresh PRIMARY lease without collision.",
+    "Re-fetched the exact R2 target and confirmed head 5d5d171cf872baed7a636fd246ab36f3a91a6716 is unchanged.",
     "Re-fetched ordinary CI 35265194183 and dedicated pre-START 35265194243; both remain completed/success on the exact R2 head.",
-    "Re-fetched the R2 pre-formal contract and confirmed formal_identity=null, official_execution_allowed=false, exact v4/source/input/runtime/scorer/preservation bindings, and fresh-Analyst gate remain intact.",
-    "Read SUB only for collision avoidance and Control Brain only as strategic prior; neither changes the R2 hard stop."
+    "Re-fetched R2 control, preserve and evidence namespaces and confirmed all remain absent.",
+    "Read current SUB report only for collision avoidance; SUB remains on an independent NON_EVIDENTIARY RV01 probe and did not touch R2.",
+    "Consulted Control Brain only as older strategic prior; it does not override the current Analyst gate."
   ],
   "same_run_steps": [
-    "Read designated Evidence Analyst handoff latest/state/history.",
-    "Read MAIN latest/state/lease and reconciled prior RELAY checkpoint.",
-    "Re-fetched active R2 target, main, exact workflow results, R2 evidence-tag absence, and binding contract.",
-    "Confirmed no R2 formal identity/STARTED/preserve/evidence and no SUB collision.",
-    "Applied R2_PRE_START_READY_FOR_ANALYST_REVIEW hard STOP without research mutation.",
-    "Persisted PRIMARY latest/state/lease/history on the designated control-plane branch."
+    "Read designated Evidence Analyst handoff latest/history and current MAIN latest/state/lease.",
+    "Re-fetched current Analyst tip, exact R2 head, readiness workflows and namespace collisions.",
+    "Confirmed no R2 formal identity, STARTED, preserve or evidence and no SUB collision.",
+    "Applied the R2_PRE_START_READY_FOR_ANALYST_REVIEW hard STOP without research mutation.",
+    "Persisted MAIN-owned control-plane latest/state/lease/history only."
   ],
   "same_run_stop_reason": "Evidence Analyst authority b09d90d0545a0448ea5a310f9373969e7471b15d is unchanged and explicitly requires STOP at R2_PRE_START_READY_FOR_ANALYST_REVIEW before formal identity reservation, STARTED or official execution.",
-  "work_intentionally_left_for_sub": "None. No formal SUB lane/fallback exists; current SUB work is an independent NON_EVIDENTIARY H1 incubator and was not touched.",
+  "work_intentionally_left_for_sub": "None. No formal SUB lane/fallback exists. Current SUB work is an independent NON_EVIDENTIARY RV01 adaptive-delay reduction probe and was not touched.",
   "lane_repartition_reason": null,
-  "next_main_action": "Wait for a newer Evidence Analyst handoff. If one prospectively authorizes R2 formalization/execution, re-fetch the exact R2 head, all identity/source/protocol/package/input/runtime/source-map/scorer/preserver bindings, namespace collisions, checks and consumed registry before crossing STARTED.",
+  "next_main_action": "Wait for a newer Evidence Analyst handoff. If it prospectively authorizes R2 formalization/execution, re-fetch the exact R2 head, identity/source/protocol/package/input/runtime/source-map/scorer/preserver bindings, namespaces, checks and consumed registry before crossing STARTED.",
   "write_path_diagnostics": {
     "primary_lease_start": {
       "result": "success",
-      "commit": "4a9f87b312bdfae877cbb1a834cb2ecd80043f4e"
+      "commit": "73784dc9c274a091b57eb4a8cde05b07842134bd"
     },
     "latest_report": {
       "result": "success",
-      "commit": "1bb53fd9b3eabde643653674d01215ee726ed94a"
+      "commit": "12c978aae430d5c4b89fe1751220f7c32082085f"
     },
     "research_write_attempted": false,
     "reason_no_research_write": "No research mutation is prospectively authorized under the unchanged Analyst hard-stop authority."
