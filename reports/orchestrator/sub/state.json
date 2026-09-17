@@ -1,37 +1,45 @@
 {
-  "timestamp": "2026-09-17T20:48:00+09:00",
+  "timestamp": "2026-09-17T21:45:00+09:00",
   "worker_role": "sub",
   "mode": "exploratory_incubator",
-  "evidence_analyst_commit": "56f0665ccc536bff6bf48e9eb581ec9a9eafcecc",
-  "control_brain_commit": "0d03673c3fa25a47daf1d4f77ba07fb9aa63a000",
-  "consumed_lanes": {"main_lane": "C19 official-v4 PRIMARY", "sub_lane": null, "sub_fallback": null},
+  "evidence_analyst_commit": "9f88fba973f54bc6608d183aacfaccd7952a229f",
+  "control_brain_branch_tip": "d8987f8c6d88fad48a8f652f4255e73b30a223e6",
+  "consumed_lanes": {
+    "main_lane": "C19-R1 revision-authority matched reduction build/spec/readiness; execution forbidden pending fresh Analyst authorization",
+    "sub_lane": null,
+    "sub_fallback": null
+  },
   "selected_independent_lane": null,
-  "exploratory_target": "H9 fixed persistent-state inventory plus pre-query reset/ablation attribution diagnostic",
+  "exploratory_target": "H5 generic lazy-decay/event-routing audited-operation crossover on a fixed synthetic world",
   "independence_from_main_critical_path": true,
-  "why_independent_of_main": "Paused unreserved H9/C07; generated synthetic delayed-recall data only; no C19/Belief-R dependency, output use, or MAIN repair value.",
+  "why_independent_of_main": "H5 synthetic operation-accounting probe is separate from C19/R1, uses no Belief-R or formal outputs, and cannot repair or unblock MAIN.",
   "execution_allowed": false,
-  "sub_active_claim": "EXPLORATORY_NON_EVIDENTIARY_H9_STATE_INVENTORY_ABLATION",
-  "main_work_explicitly_avoided": ["C19-v4 branch/identity/admission/preservation/execution", "C19-v2/v3 consumed authorities", "Belief-R official inputs/raw/scorer/preserve", "MAIN STARTED/one-way transition"],
+  "sub_active_claim": "EXPLORATORY_NON_EVIDENTIARY_H5_LAZY_ROUTING_ACCOUNTING",
+  "main_work_explicitly_avoided": [
+    "research/c19-r1-revision-authority-reduction-20260917 and identity c19-r1-revision-authority-official-v1",
+    "C19-v4 consumed identity/control/preserve/evidence",
+    "C19-v2/v3 consumed identities/controls",
+    "Belief-R official inputs/raw/scorer/preservation",
+    "any R1 STARTED/control/one-way transition or successor design"
+  ],
   "authoritative_refs": {
-    "main": "ebed6ab6a7a3fb6feda7dffaca81f8d18d81e3fa",
-    "evidence_analyst_branch_tip": "56f0665ccc536bff6bf48e9eb581ec9a9eafcecc",
-    "control_brain": "0d03673c3fa25a47daf1d4f77ba07fb9aa63a000",
-    "c19_v4": "research/c19-official-v4-preservation-qualified-20260917@74bfe6b4a39758656f291baaa3f16236e3e71964",
-    "c19_v4_ordinary_ci": "35214841871:success",
-    "c19_v4_prestart": "35214841877:success",
-    "c19_v4_control_refs_observed": [],
-    "c19_v4_preserve_refs_observed": [],
-    "c19_v4_evidence_refs_observed": [],
-    "exploratory_branch": "research/exploratory-sub-h9-decoder-state-boundary-20260917@874bc55ca7a01eba2e1a0d27459d6eaf7ff9d766",
+    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "evidence_analyst_branch_tip_at_persistence": "9f88fba973f54bc6608d183aacfaccd7952a229f",
+    "control_brain_branch_tip": "d8987f8c6d88fad48a8f652f4255e73b30a223e6",
+    "c19_r1": "research/c19-r1-revision-authority-reduction-20260917@c23736b63e6100bcdc38e7f11d94c782eb6273dc",
+    "c19_r1_ordinary_ci": "35221764016:success",
+    "c19_r1_prestart": "35221764005:success",
+    "c19_v4_started": "control/c19-official-v4-started-20260917@3ebffb0c55ea9e5dac6c2a52d3d5c0ee6443d58e",
+    "c19_v4_preserve": "preserve/c19-official-v4-raw-c19-external-v2-official-v4@d8fcc5216ff24940836972816cb0ec8f11e4ba06",
+    "c19_v4_evidence_tag": "evidence/c19-official-v4-c19-external-v2-official-v4",
+    "exploratory_branch": "research/exploratory-sub-h5-lazy-routing-20260917@cdcee56dc8d918236ed5e342d3e1712a770cd481",
     "open_pr_count": 0,
-    "open_issues": [139, 147],
-    "authoritative_git_tag_count_observed": 0,
-    "legacy_freeze_branch_count_observed": 13
+    "open_issues": [139, 147]
   },
   "branches_prs_advanced": {
-    "research_branches_created": [],
-    "research_branches_advanced": ["research/exploratory-sub-h9-decoder-state-boundary-20260917@874bc55ca7a01eba2e1a0d27459d6eaf7ff9d766"],
-    "implementation_commits": ["5fcb5c6a02fc6a37219a5f1af05ea91c124821e5", "73825f72a494cca71990d2fe8b38c76b6a1b5d6d", "874bc55ca7a01eba2e1a0d27459d6eaf7ff9d766"],
+    "research_branches_created": ["research/exploratory-sub-h5-lazy-routing-20260917"],
+    "research_branches_advanced": ["research/exploratory-sub-h5-lazy-routing-20260917@cdcee56dc8d918236ed5e342d3e1712a770cd481"],
+    "implementation_commits": ["58d64a97ff6d523923f390a9812f37337aa44daa", "cdcee56dc8d918236ed5e342d3e1712a770cd481"],
     "prs_created": [],
     "merges": []
   },
@@ -42,44 +50,134 @@
     "one_way_dispatches_by_sub": 0,
     "official_data_access_by_sub": false,
     "synthetic_exploratory_micro_experiment": {
-      "script": "scripts/exploratory_h9_state_inventory_ablation.py",
-      "result": "artifacts/spiking/exploratory_h9_decoder_state_boundary/state_inventory_ablation.json",
-      "input": "generated A/B labels x silent gaps 1..20; 40 trials per mechanism/reset condition",
+      "script": "scripts/exploratory_h5_lazy_routing.py",
+      "tests": "tests/test_exploratory_h5_lazy_routing.py",
+      "artifact": "artifacts/exploratory_h5_lazy_routing/README.md",
+      "input": "deterministic generated ring graph/message process; no repository formal data",
       "formal": false,
       "one_way": false,
       "identity": null
     },
-    "exploratory_branch_ci": {"run": 35217203157, "head": "874bc55ca7a01eba2e1a0d27459d6eaf7ff9d766", "status": "success"}
+    "exploratory_ci_initial": {
+      "run": 35222429356,
+      "head": "58d64a97ff6d523923f390a9812f37337aa44daa",
+      "status": "failure",
+      "failure_stage": "lint"
+    },
+    "exploratory_ci_replacement": {
+      "run": 35222660670,
+      "head": "cdcee56dc8d918236ed5e342d3e1712a770cd481",
+      "status": "in_progress_at_report_checkpoint"
+    }
   },
   "scientific_readiness_exploratory_results": {
     "new_formal_scientific_measurement_by_sub": false,
     "new_formal_readiness_result_by_sub": false,
     "exploratory_observation": true,
-    "single_state_no_reset": "40/40 for spike_latch, decoder_memory, filter_trace, algorithmic_memory",
-    "own_backing_state_reset": "0/40 for each corresponding single-state mechanism",
-    "all_non_spike_reset": {"spike_latch": "40/40", "decoder_memory": "0/40", "filter_trace": "0/40", "algorithmic_memory": "0/40"},
-    "hybrid_spike_plus_decoder": {"no_reset": "40/40", "spike_state_reset": "40/40", "decoder_state_reset": "40/40", "all_non_spike_reset": "40/40", "all_state_reset": "0/40"},
-    "interpretation": "A redundant hidden non-spike memory channel can mask ablation of spike-mediated memory; future H9 integrity should inventory persistent state and fix reset classes prospectively."
+    "fixed_synthetic_parameters": {
+      "decay": 0.97,
+      "horizon": 200,
+      "out_degree": 8,
+      "node_counts": [100, 400, 1600],
+      "activity_rates": [0.01, 0.05, 0.10, 0.25, 0.50, 1.00]
+    },
+    "lazy_to_dense_work_ratio": {
+      "0.01": 0.0281,
+      "0.05": 0.1335,
+      "0.10": 0.2556,
+      "0.25": 0.5686,
+      "0.50": 0.9619,
+      "1.00": 1.4709
+    },
+    "break_even_extra_bookkeeping_per_active_source": {
+      "0.01": 882.50,
+      "0.05": 162.90,
+      "0.10": 72.95,
+      "0.25": 18.98,
+      "0.50": 0.99,
+      "1.00": -8.01
+    },
+    "analytic_equal_unit_cost_crossover_activity_fraction_approx": 0.5291,
+    "state_equivalence_validation": "implemented; replacement exact-head CI had not reached terminal status at report checkpoint",
+    "interpretation": "Toy generic lazy evaluation has large audited-work headroom only in sparse exogenous regimes; bookkeeping headroom collapses near moderate activity and reverses at full activity. Recurrent fan-out and matched-behavior accounting remain untested."
   },
   "evidentiary_status": "NON_EVIDENTIARY",
-  "hypothesis_or_reduction_question": "Can a declared persistent-state inventory plus fixed reset matrix reveal when hidden non-spike memory masks an apparently successful spike-memory ablation?",
-  "synthetic_or_dev_inputs_used": "Generated A/B delayed-recall trials only; no historical C07 rerun, formal/sealed inputs, or C19 outputs.",
-  "implementation_or_experiment_performed": "Predeclared spike/decoder/filter/algorithmic state slots; fixed resets immediately before query; single-state and fixed spike+decoder hybrid mechanisms; no held-out tuning.",
-  "observations": ["Each single-state mechanism is 40/40 without reset and 0/40 when its own backing state is reset.", "Resetting all non-spike state eliminates decoder/filter/algorithmic delayed recall but leaves spike-latch recall intact.", "A spike+decoder hybrid stays 40/40 after either single-channel reset and fails only after all state is reset."],
-  "what_would_falsify_or_reduce_it": "In a fresh prospective H9 object, delayed performance surviving forced reset of every permitted non-spike persistent state while spike-mediated state remains intact would reduce the leakage concern; a complete inventory with no task-relevant non-spike persistent state would also reduce it.",
-  "candidate_formal_question": "Under a prospectively declared state inventory and fixed reset interventions, does delayed H9 performance remain when all non-spike persistent state is reset while spike-mediated state is preserved?",
+  "hypothesis_or_reduction_question": "Can generic lazy state materialization plus event-routed edge traversal reproduce a dense synthetic decay/message system while reducing audited algorithmic work only in genuinely sparse regimes?",
+  "synthetic_or_dev_inputs_used": "Generated deterministic ring-neighborhood graphs and signed event streams only; no formal/official/held-out SparkBrain data.",
+  "implementation_or_experiment_performed": "Implemented dense and lazy synthetic evaluators, fixed transparent operation accounting, deterministic scale/activity grid, dense/lazy equivalence tests, and a crossover test; repaired only repository lint on the exploratory script after CI feedback.",
+  "observations": [
+    "Fixed accounting predicts lazy/dense ratios 0.0281/0.1335/0.2556/0.5686/0.9619/1.4709 as activity rises 1%/5%/10%/25%/50%/100%.",
+    "Bookkeeping headroom falls from 882.50 extra unit-cost operations per active source at 1% activity to 0.99 at 50%, and is already negative at 100%.",
+    "The toy equal-unit-cost crossover is about 52.9% activity; this is not a SparkBrain threshold and must not be imported into a formal protocol.",
+    "Exact-state equivalence is encoded as a repository test but had not yet completed on replacement exact-head CI at report checkpoint."
+  ],
+  "what_would_falsify_or_reduce_it": "A fresh matched-behavior prospective object would reduce H5 if recurrent fan-out and fully charged bookkeeping make event-routed execution equal or more costly than dense-equivalent execution throughout the intended sparse regime, or if behavior diverges when lazy materialization is used.",
+  "candidate_formal_question": "Under prospectively fixed matched behavior and operation-accounting rules, does event-routed execution retain a work advantage over a dense-equivalent implementation across a predeclared sparse-activity scale sweep once recurrent fan-out and bookkeeping are fully charged?",
   "suggested_prospective_object": null,
-  "new_scientific_choices_required_before_formalization": ["fully-spiking component boundary", "allowed decoder/filter/algorithmic state and inventory rule", "non-sensory neuron/synapse dynamics", "representation/decoder mapping", "comparator/claim", "development/training budget", "acceptance tolerances", "runtime/seeds/determinism", "fresh protocol/package/identity/integrity gates"],
-  "promotion_recommendation": "NONE",
-  "promotion_note": "No direct promotion and no further H9 incubator iteration without a new Analyst decision; the authorized follow-up is complete and remains methodological/definitional.",
-  "consumed_identities": {"newly_consumed_by_sub": [], "known_consumed_do_not_touch": ["c19-external-v2-official-v2", "c19-external-v2-official-v3", "A01 consumed identities", "RV01 R01-16/R01-17", "RV02 D1", "CX01 Candidate-002"], "c19_v4_observed_consumed": false},
-  "blockers": {"formal_lane": ["No reserved independent formal sub_lane or sub_fallback."], "incubator_theme": ["The one additional Analyst-authorized H9 diagnostic is complete; further H9 exploration requires a new Analyst decision."], "main_only": ["C19-v4 remains PRIMARY; exact-head CI/pre-START are green but STARTED/one-way is MAIN-only."]},
-  "collision_reconciliation": {"concurrent_main_movement_detected": true, "current_main_frontier": "C19-v4 pre-START on 74bfe6b4a39758656f291baaa3f16236e3e71964 with ordinary CI and dedicated pre-START green", "v4_control_preserve_evidence_collision_observed": false, "main_frontier_touched_by_sub": false, "main_dependency_created_by_sub": false, "official_inputs_or_outputs_used_by_sub": false, "evidence_analyst_branch_tip_at_write": "56f0665ccc536bff6bf48e9eb581ec9a9eafcecc"},
-  "integrity_state": {"status": "EXPLORATORY_NON_EVIDENTIARY_BOUNDARY_HELD", "immutable_evidence_mutated": false, "historical_consumed_objects_reexecuted_or_retuned": false, "formal_scientific_identity_created_or_consumed_by_sub": false, "started_ref_created_by_sub": false, "formal_workflow_dispatched_by_sub": false, "official_data_accessed_by_sub": false, "main_frontier_touched_by_sub": false},
-  "completion_target": {"target": "Exactly one additional Analyst-authorized bounded H9 state-inventory/reset diagnostic.", "status": "reached", "result": "Synthetic state inventory/reset matrix demonstrates attribution and redundant hidden-state masking in the toy world; exact exploratory head passed ordinary CI; returned as NON_EVIDENTIARY input."},
-  "fallback_status": {"sub_fallback": null, "used": false},
+  "new_scientific_choices_required_before_formalization": [
+    "exact state dynamics and behavioral equivalence criterion",
+    "endogenous activity/ignition rule",
+    "graph family, degree/scaling regime and recurrent cascade semantics",
+    "dense-equivalent comparator implementation",
+    "audited operation taxonomy and weighting or vector-valued reporting",
+    "quality-matching criterion",
+    "scale/activity grid and seeds",
+    "development/tuning budget",
+    "success/failure criterion and uncertainty treatment",
+    "fresh protocol/package/runtime/identity and integrity gates"
+  ],
+  "promotion_recommendation": "CONTINUE_EXPLORING",
+  "promotion_note": "Return to Evidence Analyst first; do not automatically iterate this H5 theme or reuse exploratory thresholds/settings as a future formal protocol.",
+  "consumed_identities": {
+    "newly_consumed_by_sub": [],
+    "known_consumed_do_not_touch": [
+      "c19-external-v2-official-v2",
+      "c19-external-v2-official-v3",
+      "c19-external-v2-official-v4",
+      "A01 consumed identities",
+      "RV01 R01-16/R01-17",
+      "RV02 D1",
+      "CX01 Candidate-002"
+    ],
+    "c19_r1_observed_consumed": false
+  },
+  "blockers": {
+    "formal_lane": ["No reserved independent formal sub_lane or sub_fallback."],
+    "exploratory_validation": ["Replacement exact-head ordinary CI 35222660670 remained in progress at report checkpoint."],
+    "main_only": ["C19-R1 exact-head CI/pre-START are green; execution remains MAIN-only and additionally blocked by Analyst authorization. SUB did not touch it."]
+  },
+  "collision_reconciliation": {
+    "concurrent_main_movement_detected": true,
+    "current_main_frontier": "C19-R1@c23736b63e6100bcdc38e7f11d94c782eb6273dc; ordinary CI and dedicated pre-START success; execution forbidden by current Analyst handoff",
+    "main_frontier_touched_by_sub": false,
+    "main_dependency_created_by_sub": false,
+    "official_inputs_or_outputs_used_by_sub": false,
+    "evidence_analyst_branch_tip_at_write": "9f88fba973f54bc6608d183aacfaccd7952a229f"
+  },
+  "integrity_state": {
+    "status": "EXPLORATORY_NON_EVIDENTIARY_BOUNDARY_HELD",
+    "immutable_evidence_mutated": false,
+    "historical_consumed_objects_reexecuted_or_retuned": false,
+    "formal_scientific_identity_created_or_consumed_by_sub": false,
+    "started_ref_created_by_sub": false,
+    "formal_workflow_dispatched_by_sub": false,
+    "official_data_accessed_by_sub": false,
+    "main_frontier_touched_by_sub": false
+  },
+  "completion_target": {
+    "target": "Exactly one bounded, independent, nonduplicative synthetic H5 lazy-routing/accounting feasibility probe.",
+    "status": "implementation_and_accounting_complete_ci_pending",
+    "result": "Exploratory branch/probe/tests/documentation are persisted; transparent synthetic crossover accounting is recorded; replacement exact-head CI still pending."
+  },
+  "fallback_status": {
+    "sub_fallback": null,
+    "used": false
+  },
   "rejected_lane": null,
   "lane_rejected_reason": null,
-  "historical_retired_incubator": "research/exploratory-sub-revision-authority-fsa-20260917 remains REJECTED and was not touched",
-  "next_sub_action": "Stop this H9 incubator theme and await a new Evidence Analyst allocation/classification; do not formalize directly and do not touch C19-v4."
+  "historical_incubator_boundaries": {
+    "h9": "completed/NO_ACTION under current Analyst handoff; not touched",
+    "revision_authority_fsa": "previously rejected; not touched"
+  },
+  "next_sub_action": "Return this H5 NON_EVIDENTIARY probe to Evidence Analyst for classification. Do not touch C19-R1 and do not automatically promote or formalize the exploratory branch."
 }
