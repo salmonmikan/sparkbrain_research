@@ -1,24 +1,14 @@
 {
-  "run_id": "relay-20260918T0145JST",
-  "execution_mode": "RELAY",
-  "status": "BLOCKED",
-  "started_at": "2026-09-18T01:46:57+09:00",
-  "heartbeat_at": "2026-09-18T01:51:00+09:00",
+  "run_id": "primary-20260918T0214JST",
+  "execution_mode": "PRIMARY",
+  "status": "RUNNING",
+  "started_at": "2026-09-18T02:14:26+09:00",
+  "heartbeat_at": "2026-09-18T02:14:26+09:00",
   "analyst_commit": "42836802e78abd26d19c5b8a789411f2b03d0ea1",
   "active_branch": "control/c19-r1-revision-authority-started-20260918",
   "active_identity": "c19-r1-revision-authority-official-v1",
-  "active_step": "R1_POST_START_FAILURE_CONSUMED",
+  "active_step": "R1_POST_START_FAILURE_RECONCILIATION",
   "workflow_run_id": 35248878958,
-  "related_workflow_run_ids": {
-    "admission_ordinary_ci": 35246655185,
-    "admission_dedicated_prestart": 35246655189,
-    "started_branch_ci": 35248878746,
-    "one_way": 35248878958
-  },
-  "exact_package_commit": "7197ab0f9683616858859446ae9eed7b75707f25",
-  "started_commit": "62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2",
-  "diagnostic_artifact_id": 10509360230,
-  "diagnostic_artifact_digest": "sha256:e277c15bc52336ca816012b54a9c308d28491c8f32d19160a385394f730f7300",
-  "expected_next_action": "STOP this identity. c19-r1-revision-authority-official-v1 is consumed and must not be retried. A newer Evidence Analyst handoff must consume POST_START_FAILURE from workflow 35248878958 and decide prospectively whether any distinct future object is justified. The observed missing-torch import failure may inform future readiness only; no automatic R2, runtime-version choice, repair-and-rerun, rescoring or successor design is authorized here.",
+  "expected_next_action": "Reconcile current remote authority after the R1 POST_START_FAILURE. Do not mutate/retry the consumed identity. If Evidence Analyst authority remains pre-failure, persist BLOCKED and return the post-START failure to Analyst for a fresh prospective decision.",
   "owner": "main"
 }
