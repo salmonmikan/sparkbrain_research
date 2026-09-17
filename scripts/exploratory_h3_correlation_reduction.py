@@ -11,8 +11,8 @@ from __future__ import annotations
 import argparse
 import json
 import random
+from collections.abc import Callable
 from dataclasses import dataclass
-from typing import Callable
 
 
 @dataclass(frozen=True)
@@ -147,7 +147,10 @@ def run_probe(samples: int = 4096, seed: int = 1337) -> dict[str, object]:
         "group_normalized": predict_group_normalized,
         "group_majority": predict_group_majority,
     }
-    accuracy = {name: _accuracy(examples, predictor) for name, predictor in predictors.items()}
+    accuracy = {
+        name: _accuracy(examples, predictor)
+        for name, predictor in predictors.items()
+    }
     group_agreement = sum(
         predict_group_normalized(messages) == predict_group_majority(messages)
         for _truth, messages in examples
