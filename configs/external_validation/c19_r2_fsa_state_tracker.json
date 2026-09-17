@@ -1,0 +1,126 @@
+{
+  "schema_version": "1",
+  "spec_id": "c19-r2-fsa-state-tracker-spec-v1",
+  "protocol_id": "c19-r2-fsa-state-tracker-protocol-v1",
+  "formal_identity": null,
+  "status": "preformal_specification_only",
+  "official_execution_allowed": false,
+  "source_binding": {
+    "parent_v4_package_commit": "74bfe6b4a39758656f291baaa3f16236e3e71964",
+    "v4_preserve_commit": "d8fcc5216ff24940836972816cb0ec8f11e4ba06",
+    "v4_evidence_commit": "a0f83318356ced1c84863737803080d0dc69d208",
+    "v4_raw_sha256": "692f8a5dba48f604eb1f5518a8545b80da01e1a00a9e2d2b6b1c0567355d65af",
+    "implementation_binding_blob": "223642c732563549cecd9fc977504b5db76c5557",
+    "truth_free_adapter_blob": "3153fcb61d5872e93d22f30f0f1f808f856bfaeb",
+    "v4_protocol_blob": "88e63e0bde27fcca3202173982a982580eb49700",
+    "v4_scoring_blob": "55ca473f954b405579e62d4bfbfdc762a974e036",
+    "v4_execution_blob": "ddb356ef8057319872b728310c1c4b780b401a16",
+    "preserver_blob": "fe288f617d323620d3bda519f9300f60e73c0f8d"
+  },
+  "input_binding": {
+    "expected_pairs": 1744,
+    "expected_update_pairs": 1074,
+    "expected_maintain_pairs": 670,
+    "representation": "I2_truth_free_symbolic_surface",
+    "visible_steps_per_pair": [0, 1],
+    "source_indices_per_pair": [0, 1],
+    "target_use_before_raw_preservation": false
+  },
+  "mechanism": {
+    "family": "representation_matched_explicit_finite_state_tracker",
+    "state_alphabet": [
+      "RESET",
+      "A_WEAK",
+      "A_STRONG",
+      "B_WEAK",
+      "B_STRONG",
+      "C_WEAK",
+      "C_STRONG"
+    ],
+    "reset_state": "RESET",
+    "reset_scope": "every_pair",
+    "cross_pair_state": false,
+    "projection_salt": "c19-readout-v1",
+    "observation": {
+      "leader": "deterministic_top_choice_lexical_tie_break",
+      "strength": "top_probability_gte_0.5",
+      "majority_threshold": 0.5
+    },
+    "transition": {
+      "same_leader": "same_choice_strong_if_prior_or_current_strong_else_weak",
+      "different_current_strong": "switch_to_current_strong",
+      "different_prior_strong_current_weak": "retain_prior_choice_but_decay_to_weak",
+      "different_both_weak": "switch_to_current_weak"
+    },
+    "readout": "choice_component_of_state_after_visible_step_1",
+    "history_privilege": "only_current_finite_state_no_raw_history_lookup",
+    "external_lookup": false,
+    "fit_tune_select": false,
+    "trainable_parameters": 0,
+    "official_seeds": [15901, 15902, 15903, 15904, 15905]
+  },
+  "resource_contract": {
+    "states_including_reset": 7,
+    "persistent_state_per_pair": "one_of_seven_enumerated_states",
+    "cross_pair_memory": false,
+    "encodings_per_pair": 2,
+    "projection_passes_per_pair": 2,
+    "transition_updates_per_pair": 2,
+    "fit_updates": 0,
+    "tune_trials": 0,
+    "selection_trials": 0,
+    "artificial_compute_padding": false,
+    "claim_type": "reduction_sufficiency_not_compute_matched_superiority"
+  },
+  "runtime_binding": {
+    "python_implementation": "CPython",
+    "python_version": "3.11.16",
+    "network_allowed_during_model_execution": false,
+    "official_fit_tune_select_allowed": false,
+    "base_model": null
+  },
+  "raw_contract": {
+    "rows": 5,
+    "pairs_per_row": 1744,
+    "records": 8720,
+    "raw_before_score": true,
+    "immutable_preserve_before_targets": true,
+    "no_clobber": true,
+    "target_blind": true,
+    "atomic_idx_source_map": {
+      "artifact": "atomic_idx_source_map.json",
+      "schema_version": "1",
+      "cluster_key": "atomic_idx",
+      "target_free": true,
+      "pair_assignment": "exactly_once",
+      "preserve_with_raw_before_targets": true
+    }
+  },
+  "scoring_contract": {
+    "metric": "BREU",
+    "v4_primary_condition": "I2_truth_free_symbolic_surface/G1_coalition/E0_global",
+    "reduction_contrast": "C19-v4 primary BREU minus R2 BREU",
+    "primary_method": "paired_atomic_idx_cluster_bootstrap",
+    "secondary_method": "paired_official_pair_bootstrap_sensitivity",
+    "resamples": 10000,
+    "bootstrap_seed": 19901,
+    "confidence_level": 0.95,
+    "quantile_method": "linear_type7",
+    "classification": {
+      "SURVIVES_FSA_REDUCTION": "primary_ci_lower_gt_0",
+      "REDUCED_BY_FSA": "primary_ci_upper_lte_0",
+      "INCONCLUSIVE": "primary_ci_contains_0",
+      "INVALID_EVIDENCE": "integrity_or_binding_failure"
+    }
+  },
+  "integrity": {
+    "fresh_analyst_execution_authorization_required": true,
+    "current_handoff_execution_allowed": false,
+    "formal_identity_must_be_fresh_and_future": true,
+    "started_no_clobber_required": true,
+    "retry_after_started": false,
+    "r1_transient_outputs_for_design_or_tuning": false,
+    "v4_per_example_outputs_for_design_or_tuning": false,
+    "preserve_then_independent_refetch_before_targets": true
+  }
+}
