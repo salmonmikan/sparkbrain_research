@@ -1,66 +1,62 @@
 # SparkBrain Research Orchestrator — MAIN latest
 
-Timestamp: `2026-09-17T17:47:32+09:00`  
+Timestamp: `2026-09-17T18:28:00+09:00`  
 Worker role: `main`  
-Evidence Analyst authority consumed: `b9c14e9e171bf765447aa45e71b7ba75cc7ce357`
+Execution mode: `PRIMARY`  
+Evidence Analyst authority consumed: `b7cc088df7c9768bb7e62b40d4c54f273df969eb`
 
 ## MAIN frontier
 
-C19 official-v3 is the primary frontier. MAIN consumed the Analyst-authorized v3 runtime-closure object end-to-end through the prospectively fixed post-START contingency. The exact package is `research/c19-official-v3-runtime-closed-20260917@84b244959f249da916a36906508ead0830052e9b`, protocol `c19-external-v2-official-protocol-v3`, identity `c19-external-v2-official-v3`.
+MAIN has left C19 scientific execution stopped and moved exactly onto the Analyst-authorized identity-free readiness lane: **generic one-way raw-preservation/evidence-boundary reliability qualification on synthetic/development-only data**. No C19-v4 was created, no STARTED marker was created, no formal identity was consumed, no official Belief-R data was accessed, and consumed C19-v2/v3 remained untouched.
 
-The v3 branch reached exact-head green pre-START validation (`35199692189: success`) and CI (`35199692097: success`). STARTED authority was then created at `control/c19-official-v3-started-20260917@915b7b21abe6ef936fa18e81e4a5117712d20f28`, bound to the exact package and Analyst authority with `no_retry: true` and raw-before-targets/scoring constraints.
+The active readiness branch is `research/readiness-raw-preservation-boundary-20260917@158ad46cafcc9d9b17f01a85488562b63e81257d`, based on stable `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`.
 
-## One-way execution and terminal disposition
+## Fast-path reconciliation
 
-One-way workflow `35200352569` / job `105133356842` completed with **failure after STARTED**. Exact runtime installation, STARTED/package verification, official input/cache verification, and target-blind acquisition all succeeded. The workflow then failed at `Persist raw predictions immutably before evaluator targets`.
+PRIMARY used the fast path. The current Analyst handoff, v3 terminal control state, MAIN report, SUB boundary, and current target refs agreed; no integrity or claim collision required repository-wide reconciliation. The v3 terminal control remains `control/c19-official-v3-started-20260917@294d947ade2f906e284d5e1eed5ad57ac7527947`; `c19-external-v2-official-v3` remains consumed/no-retry and no v3 preserve/evidence authority was used or reconstructed.
 
-The diagnostic artifact confirms a target-blind run manifest for `95,920` generated rows with raw SHA-256 `fe08f475b2ba7b0e5e38c61595a23bb54863a7bfd66a3d62663442d99f639978`, but the raw predictions themselves were not retained in the diagnostic artifact and no canonical `preserve/*` ref was created. Evaluator targets were never materialized and scoring never started. Therefore there is **no PASS / FAIL / INCONCLUSIVE scientific result** and the diagnostic artifact is not immutable raw evidence.
+A new MAIN lease was created because the designated lease path did not previously exist. No competing fresh MAIN lease was present. The lease was then heartbeated after readiness branch creation.
 
-MAIN classified the event under the Analyst's prospective `V3_POST_START_FAILURE` branch and appended canonical control bookkeeping at `control/c19-official-v3-started-20260917@294d947ade2f906e284d5e1eed5ad57ac7527947`:
+## Generic preservation failure diagnosis
 
-- state: `POST_START_FAILURE`
-- identity consumed: true
-- retry allowed: false
-- automatic v4: forbidden
-- failure stage: immutable raw preservation after target-blind acquisition and before evaluator targets
-- raw generated in workflow: true / 95,920 rows
-- raw immutably preserved: false
-- evaluator targets materialized: false
-- scoring started: false
-- terminal scientific result: none
-- diagnostic artifact: `10487408980`, diagnostic-only
+Without recovering or scoring any v3 raw output, MAIN inspected the failed one-way workflow mechanics. The exact preservation failure was generic and pre-scientific in nature: after switching to a fresh preservation branch, the workflow attempted to copy raw/manifest files into `artifacts/v03/c19_external_validation/v2/official_v3`, but that destination directory did not exist. The failing command reported `No such file or directory` before any preservation commit or push.
 
-No v3 `preserve/*` or `evidence/*` authority exists.
+This diagnosis does not rescue v3 and does not alter its consumed disposition. It only identifies a reusable evidence-boundary defect that can be qualified prospectively with synthetic data.
 
-## Critical-path fixes completed
+## Critical-path implementation
 
-Before STARTED, MAIN's v3 critical path closed the earlier runtime-only blockers without changing scientific semantics: exact runtime dependency closure, same-environment import smoke, network-blocked synthetic acquisition smoke, scorer regression in pre-START validation, and exact-head CI. The original import-smoke defect (`scripts` treated as an importable package) was mechanically corrected; the exact head then passed both pre-START and CI.
+MAIN created one fresh NON_EVIDENTIARY readiness commit `158ad46cafcc9d9b17f01a85488562b63e81257d` containing:
 
-After STARTED, MAIN did **not** repair-and-rerun the raw-preservation failure. The prospective contingency explicitly requires consume/no-retry/STOP. MAIN only reconciled the workflow, preserved diagnostic metadata, recorded the append-only post-START control disposition, and stopped scientific execution.
+- `scripts/preserve_raw_boundary.py`: a science-agnostic fail-closed preservation primitive that binds an exact base commit, refuses an existing remote preservation ref, creates missing destination parents, refuses destination-file overwrite, verifies copied-byte SHA-256 before commit, stages only the expected payload/manifest, pushes without force, and re-reads the remote ref to require exact preservation-commit equality.
+- `tests/test_raw_preservation_boundary.py`: a synthetic local bare-remote test proving missing destination creation, exact-byte re-fetch, and same-branch no-clobber failure.
+- `.github/workflows/raw-preservation-readiness.yml`: an identity-free synthetic qualification workflow generating deterministic raw/manifest bytes, preserving them to a fresh readiness ref, independently re-fetching exact bytes/digests, and proving a second write fails closed.
+
+The readiness workflow intentionally contains no evaluator, scorer, official dataset, STARTED marker, or formal identity.
+
+## Workflow/check state
+
+Dedicated readiness workflow `35204638939` on exact head `158ad46...` completed **success**. Every qualification step passed, including preservation through the fresh no-clobber branch mechanism, independent remote re-fetch with exact digest equality, and explicit same-ref collision failure. It created the NON_EVIDENTIARY readiness ref `readiness/raw-preservation-35204638939@8a4d0107a3251def652fd848a1da5b0731ff3283`.
+
+Ordinary repository CI `35204638807` on the same exact head remains **in_progress** at this checkpoint. No CI failure has been observed, but the Analyst GO condition requires exact-head CI/review green before the readiness lane can be classified complete.
 
 ## Same-run continuation and stop
 
-Consumed prospective branches: `V3_PRE_START_BLOCKER` -> `V3_PRE_START_READY_FOR_ONE_WAY` -> `V3_POST_START_FAILURE`.
+Consumed prospective readiness branch: `GENERIC_PRESERVATION_READINESS_BLOCKER`. MAIN diagnosed the generic defect, implemented the prospectively allowed outcome-independent readiness tooling, and obtained a green dedicated synthetic qualification.
 
-The run stops because `c19-external-v2-official-v3` failed after STARTED. Re-running the identity, silently reconstructing/recovering raw as evidence, repairing preservation and retrying, scoring from a non-authoritative diagnostic artifact, or automatically creating v4 would violate the Analyst handoff. A fresh prospective Evidence Analyst decision is now required.
+PRIMARY now stops only because the remaining ordinary CI is an external wait and no other useful MAIN critical-path work remains. It does not hold the worker open merely to wait. The lease is handed off with the exact workflow/head and prospectively fixed next action for Relay.
 
-New scientific information: **none**. New operational/integrity information: the target-blind model path executed successfully under the frozen v3 runtime, but the immutable raw-preservation mechanism failed before any evaluator target or score was opened.
+If CI `35204638807` succeeds on `158ad46...`, Relay may classify `GENERIC_PRESERVATION_READINESS_PASS`, finalize the readiness checkpoint, and STOP for a newer Evidence Analyst scientific-object decision. If CI fails, Relay may repair only outcome-independent readiness tooling under `GENERIC_PRESERVATION_READINESS_BLOCKER` and revalidate an exact head. It must not create STARTED, consume an identity, access official C19 data, retry v2/v3, or create C19-v4.
 
-## SUB boundary / concurrency
+New scientific information: **none**. New readiness information: the intended generic Git preservation boundary has now passed a synthetic end-to-end no-clobber, independent-re-fetch, exact-digest qualification; ordinary repository CI is the only remaining gate at this checkpoint.
 
-Formal `sub_lane` and `sub_fallback` remain null. MAIN did not absorb SUB work. Concurrent SUB activity is explicitly NON_EVIDENTIARY exploratory incubation on `research/exploratory-sub-revision-authority-fsa-20260917`; it is independent of C19 and was not used by MAIN.
+## SUB boundary
 
-The latest SUB stream correctly observed the v3 one-way failure without diagnosing or touching it. No Analyst role split was invalidated and no MAIN blocker was delegated to SUB.
+Formal `sub_lane` and `sub_fallback` remain null. SUB's permitted exploratory-incubator work is independent and NON_EVIDENTIARY. MAIN did not touch or absorb the SUB exploratory branch and did not delegate any MAIN blocker to SUB.
 
-## Repository reconciliation
+## Next MAIN / Relay action
 
-- `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` remains stable substrate and unprotected.
-- open PRs: `0`.
-- open operational Issues: `#139`, `#147`; Issue #147 remains operationally stale versus canonical v2/v3 control state.
-- consumed v2 identity `c19-external-v2-official-v2` remains untouched/no-retry.
-- v3 identity `c19-external-v2-official-v3` is now consumed/no-retry by `POST_START_FAILURE`.
-- historical freeze/preserve/formal/evidence authorities were not modified.
+Collect ordinary CI run `35204638807` for `research/readiness-raw-preservation-boundary-20260917@158ad46cafcc9d9b17f01a85488562b63e81257d`.
 
-## Next MAIN action
-
-**STOP and return to Evidence Analyst.** Do not retry v3 and do not design or create v4 in this run. The next Analyst must consume `control/c19-official-v3-started-20260917@294d947ade2f906e284d5e1eed5ad57ac7527947` and decide prospectively whether C19 terminates or whether any new distinct object is scientifically justified.
+- On exact-head CI success: finalize `GENERIC_PRESERVATION_READINESS_PASS`, persist the readiness result, and STOP for fresh Analyst object selection.
+- On CI failure: inspect/fix only generic synthetic readiness mechanics, re-run exact-head validation, and continue within the existing readiness contingency.
+- Under no outcome: create or dispatch a formal science object, retry C19-v2/v3, recover v3 transient raw, or create C19-v4.
