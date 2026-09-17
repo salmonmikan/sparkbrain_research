@@ -1,15 +1,15 @@
 {
-  "run_id": "primary-20260918T0417JST",
-  "execution_mode": "PRIMARY",
-  "status": "WAITING_EXTERNAL",
-  "started_at": "2026-09-18T04:17:32+09:00",
-  "heartbeat_at": "2026-09-18T04:31:30+09:00",
+  "run_id": "relay-20260918T0445JST",
+  "execution_mode": "RELAY",
+  "status": "BLOCKED",
+  "started_at": "2026-09-18T04:43:35+09:00",
+  "heartbeat_at": "2026-09-18T04:45:00+09:00",
   "analyst_commit": "b09d90d0545a0448ea5a310f9373969e7471b15d",
   "active_branch": "research/c19-r2-fsa-state-tracker-spec-20260918",
   "active_identity": null,
-  "active_step": "R2_PRE_START_DEDICATED_GREEN_CI_RUNNING",
+  "active_step": "R2_PRE_START_READY_FOR_ANALYST_REVIEW",
   "workflow_run_id": 35265194183,
   "workflow_run_ids": [35265194183, 35265194243],
-  "expected_next_action": "Collect ordinary CI 35265194183 for exact head 5d5d171cf872baed7a636fd246ab36f3a91a6716 while retaining dedicated R2 pre-START success 35265194243. If CI fails only for a science-invariant mechanical reason, fix that blocker and require ordinary CI plus dedicated pre-START on the same new final SHA. If a semantic/scientific gap appears, STOP for Evidence Analyst. If CI is green, re-fetch Analyst tip and exact R2 head, persist R2_PRE_START_READY_FOR_ANALYST_REVIEW, and STOP. Do not reserve a formal identity, create STARTED, or execute official data under the current Analyst handoff.",
+  "expected_next_action": "Wait for a newer Evidence Analyst handoff. Both ordinary CI 35265194183 and dedicated R2 pre-START 35265194243 are green on exact head 5d5d171cf872baed7a636fd246ab36f3a91a6716. Current authority requires a hard STOP before formal identity reservation, STARTED, or official execution.",
   "owner": "main"
 }
