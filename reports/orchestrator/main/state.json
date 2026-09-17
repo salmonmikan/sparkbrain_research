@@ -1,11 +1,14 @@
 {
-  "timestamp": "2026-09-18T07:02:00+09:00",
+  "timestamp": "2026-09-18T07:15:51+09:00",
   "worker_role": "main",
-  "execution_mode": "RELAY",
+  "execution_mode": "PRIMARY",
   "evidence_analyst_commit": "719b9e74063e5e10f6226fd49f1835036ed75e5b",
   "current_lane": "C19_R2_FSA_STATE_TRACKER_ONE_WAY",
-  "current_phase": "R2_FINAL_EXACT_HEAD_REVALIDATION_AFTER_PINNED_RUNTIME_DEPENDENCY_CLOSURE",
-  "consumed_contingency_branches": ["PRE_START_BLOCKER"],
+  "current_phase": "R2_PRE_START_SEMANTIC_GAP_RAW_UNIVERSE_MISMATCH",
+  "consumed_contingency_branches": [
+    "PRE_START_BLOCKER",
+    "R2_PRE_START_SEMANTIC_GAP"
+  ],
   "active_claim": {
     "branch": "research/c19-r2-fsa-state-tracker-spec-20260918",
     "head": "84e08cfffa3e1404a1e93dd924ee704aa7bd3853",
@@ -16,9 +19,11 @@
     "owner": "main",
     "started": false,
     "consumed": false,
-    "execution_allowed": "conditional_after_final_exact_head_GO"
+    "execution_allowed": false,
+    "execution_block_reason": "Current Analyst GO gate states 55 rows x 5 seeds x 1744 pairs = 479600 raw records, while the frozen preregistration/config/protocol require exactly 5 rows x 1744 pairs = 8720 raw records."
   },
   "authoritative_target_refs": {
+    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "analyst": "ops/evidence-analyst-handoff@719b9e74063e5e10f6226fd49f1835036ed75e5b",
     "r2_authority_package": "research/c19-r2-fsa-state-tracker-spec-20260918@84e08cfffa3e1404a1e93dd924ee704aa7bd3853",
     "r2_frozen_scientific_package": "5d5d171cf872baed7a636fd246ab36f3a91a6716",
@@ -29,66 +34,73 @@
     "r2_evidence": null
   },
   "fast_path_used": true,
-  "full_reconciliation_triggered": false,
+  "full_reconciliation_triggered": true,
+  "full_reconciliation_reason": "The Evidence Analyst's explicit GO-gate raw-universe cardinality disagrees with the already-frozen R2 preregistration/config/protocol. This is a scientific-contract ambiguity and cannot be resolved by MAIN as a mechanical fix.",
   "branches_prs_advanced": {
     "research_branch": "research/c19-r2-fsa-state-tracker-spec-20260918",
-    "authority_package_initial_head": "31398d6eb4e56fe1b51ddb8206fa395075638a2b",
-    "post_lint_head": "5a8155af6d6d7dacaa4413386d2a93c4eda3ca08",
-    "final_head": "84e08cfffa3e1404a1e93dd924ee704aa7bd3853",
-    "frozen_scientific_source_files_modified": false,
-    "runtime_dependency_fix": "Use existing repository optional extra [learned], which prospectively pins numpy>=2.0 and torch==2.13.0, in both pre-START and one-way runtimes.",
-    "prs_created_or_merged": []
+    "research_head_at_start": "84e08cfffa3e1404a1e93dd924ee704aa7bd3853",
+    "research_head_at_stop": "84e08cfffa3e1404a1e93dd924ee704aa7bd3853",
+    "research_branch_mutated_this_run": false,
+    "started_branch_created": false,
+    "prs_created_or_merged": [],
+    "open_pr_count": 0
   },
   "workflows_experiments": {
-    "prestart_lint_failure": {
-      "run_id": 35279107972,
-      "head": "31398d6eb4e56fe1b51ddb8206fa395075638a2b",
-      "conclusion": "failure",
-      "failure_class": "mechanical_ruff_e501_line_length_only"
-    },
-    "prestart_runtime_import_failure": {
-      "run_id": 35279500982,
-      "head": "5a8155af6d6d7dacaa4413386d2a93c4eda3ca08",
-      "conclusion": "failure",
-      "failed_step": "Network-blocked production import smoke",
-      "failure_class": "mechanical_declared_optional_dependency_not_installed",
-      "failure_message": "ModuleNotFoundError: No module named 'torch'",
-      "scientific_semantics_affected": false
-    },
     "final_dedicated_prestart": {
       "run_id": 35279859615,
       "head": "84e08cfffa3e1404a1e93dd924ee704aa7bd3853",
-      "status": "in_progress",
-      "conclusion": null
+      "status": "completed",
+      "conclusion": "success"
     },
     "final_ordinary_ci": {
       "run_id": 35279859607,
       "head": "84e08cfffa3e1404a1e93dd924ee704aa7bd3853",
-      "status": "in_progress",
-      "conclusion": null
+      "status": "completed",
+      "conclusion": "success"
     },
     "official_execution": null
   },
   "scientific_results": {
     "new_scientific_measurement": false,
     "terminal_scientific_result": null,
-    "classification": "PRE_START_AUTHORITY_PACKAGING_ONLY",
-    "interpretation": "No new scientific information. Pre-START failures were operational only: Ruff line length, then an incidental import requiring the repository's already-declared learned extra. No STARTED boundary was crossed."
+    "classification": "PRE_START_SEMANTIC_GAP",
+    "interpretation": "No R2 outcome exists. The discovered disagreement is pre-START authority/package metadata: Analyst GO says 479600 raw records while the prospectively frozen R2 contract says 8720."
   },
   "consumed_identities": {
-    "c19-r1-revision-authority-official-v1": {"consumed": true, "retry_allowed": false, "touched_this_run": false},
-    "c19-r1-revision-authority-official-v2": {"consumed": true, "retry_allowed": false, "touched_this_run": false},
-    "r2": {"formal_identity": "c19-r2-fsa-state-tracker-official-v1", "started": false, "consumed": false}
+    "c19-external-v2-official-v4": {
+      "consumed": true,
+      "terminal": true,
+      "touched_this_run": false
+    },
+    "c19-r1-revision-authority-official-v1": {
+      "consumed": true,
+      "retry_allowed": false,
+      "touched_this_run": false
+    },
+    "c19-r1-revision-authority-official-v2": {
+      "consumed": true,
+      "retry_allowed": false,
+      "touched_this_run": false
+    },
+    "c19-r2-fsa-state-tracker-official-v1": {
+      "authorized": true,
+      "started": false,
+      "consumed": false
+    }
   },
   "blockers": [
-    "Final dedicated pre-START 35279859615 and ordinary CI 35279859607 must both succeed on exact head 84e08cfffa3e1404a1e93dd924ee704aa7bd3853 before STARTED.",
-    "Fresh Analyst/head/identity/control/preserve/evidence reconciliation remains mandatory immediately before STARTED."
+    "Analyst GO requires an official raw universe of 55 rows x 5 fixed seeds x 1744 pairs = 479600 records.",
+    "Frozen R2 preregistration requires exactly 5 x 1744 = 8720 raw records; config fixes rows=5/pairs_per_row=1744/records=8720; protocol constructs one row per five official seeds and machine-checks that cardinality.",
+    "Choosing either interpretation or changing the frozen contract would be a scientific semantic decision, so STARTED is blocked pending a fresh Analyst reconciliation."
   ],
   "lease_collision_reconciliation": {
+    "prior_lease": "relay-20260918T0647JST:WAITING_EXTERNAL",
     "same_branch_or_identity_fresh_primary_collision": false,
+    "primary_lease_acquired": true,
     "analyst_tip_rechecked": "719b9e74063e5e10f6226fd49f1835036ed75e5b",
+    "target_head_rechecked": "84e08cfffa3e1404a1e93dd924ee704aa7bd3853",
     "sub_collision": false,
-    "result": "safe RELAY mechanical runtime closure; stopped before STARTED"
+    "result": "PRIMARY acquired safely, then stopped before STARTED on semantic gap"
   },
   "integrity_status": {
     "frozen_r2_scientific_contract_modified": false,
@@ -96,40 +108,63 @@
     "frozen_r2_scoring_modified": false,
     "frozen_r2_source_map_modified": false,
     "frozen_r2_state_tracker_modified": false,
-    "authority_bound_to_frozen_blobs": true,
-    "runtime_version_choice_invented": false,
-    "runtime_dependency_source": "existing pyproject learned extra: numpy>=2.0, torch==2.13.0",
+    "authority_package_head_unchanged": true,
+    "same_head_ci_green": true,
+    "same_head_prestart_green": true,
+    "control_namespace_collision": false,
+    "preserve_namespace_collision": false,
+    "evidence_namespace_collision": false,
     "raw_before_score_contract_preserved": true,
     "preserve_and_refetch_before_targets_contract_preserved": true,
-    "formal_identity_authorized": true,
     "started_created": false,
     "official_data_accessed": false,
     "official_execution_dispatched": false,
     "immutable_evidence_modified": false,
-    "consumed_identity_retried_or_modified": false
+    "consumed_identity_retried_or_modified": false,
+    "go_gate_semantically_unambiguous": false
   },
   "critical_path_fixes_completed": [
-    "Packaged fresh R2 execution authority without changing frozen science.",
-    "Fixed Ruff E501 mechanically by line wrapping only.",
-    "Diagnosed production import smoke failure as missing torch caused by the runner's inherited evaluation import path.",
-    "Closed that dependency mechanically by installing the repository's existing pinned [learned] extra in both pre-START and one-way environments.",
-    "Triggered fresh exact-head validation on 84e08cfffa3e1404a1e93dd924ee704aa7bd3853."
+    "Collected final dedicated pre-START 35279859615 and ordinary CI 35279859607; both succeeded on exact head 84e08cfffa3e1404a1e93dd924ee704aa7bd3853.",
+    "Re-fetched exact R2 authority package, scientific config, protocol, preregistration and one-way preservation/scoring boundary.",
+    "Reconfirmed R2 control/preserve/evidence namespaces are fresh before STARTED.",
+    "Detected the Analyst-versus-frozen-contract raw-universe mismatch before any one-way mutation.",
+    "Escalated to FULL RECONCILIATION and confirmed main stability, open PR/Issue state, legacy freeze/control/preserve/evidence refs, consumed historical identities and independent SUB activity."
   ],
   "same_run_steps": [
-    "Acquired RELAY lease after stale BLOCKED PRIMARY state.",
-    "Created the Analyst-authorized R2 authority/preservation/one-way envelope.",
-    "Handled two pre-START mechanical failures without crossing STARTED or changing science.",
-    "Re-fetched Analyst authority and handed off final exact-head checks under WAITING_EXTERNAL."
+    "Consumed current Evidence Analyst handoff and prior MAIN lease/report.",
+    "Collected final exact-head green checks and acquired PRIMARY lease without collision.",
+    "Performed final one-way integrity inspection of authority, workflow, namespace and frozen science bindings.",
+    "Found a semantic mismatch in the raw-universe cardinality and abandoned FAST PATH for FULL RECONCILIATION.",
+    "Stopped before STARTED and persisted a blocked Analyst-ready checkpoint."
   ],
-  "same_run_stop_reason": "Final exact-head pre-START and ordinary CI are running after the pinned runtime dependency closure. STARTED remains forbidden until both are green and fresh authority/head/identity/namespace checks pass; RELAY therefore ends under WAITING_EXTERNAL rather than waiting idly.",
-  "work_intentionally_left_for_sub": "None; SUB remains independent and was not touched.",
+  "same_run_stop_reason": "R2_PRE_START_SEMANTIC_GAP: the current Analyst GO gate and frozen prospective R2 contract disagree on the official raw universe. MAIN cannot choose, repair or redefine that scientific contract after authority review; a fresh Analyst handoff must reconcile it before STARTED.",
+  "work_intentionally_left_for_sub": "None. SUB remains independent/non-evidentiary, has exhausted its currently authorized RV01 exploratory probe, and must not touch R2.",
   "lane_repartition_reason": null,
-  "next_main_action": "Collect 35279859615 and 35279859607. If both succeed on 84e08cfffa3e1404a1e93dd924ee704aa7bd3853, re-fetch Analyst tip, branch head, formal identity/STARTED/consumed state and control/preserve/evidence namespaces. Only then create the exact bound STARTED ref once.",
+  "next_main_action": "Wait for a fresh Evidence Analyst handoff that explicitly reconciles the R2 raw-universe cardinality with the frozen preregistration/config/protocol. On a clarified handoff, re-fetch exact head/identity/namespaces/checks and cross STARTED only if every GO condition is simultaneously unambiguous and green.",
   "write_path_diagnostics": {
-    "authority_packaging": "success",
-    "lint_only_fix": "success",
-    "pinned_runtime_dependency_closure": "success",
-    "final_research_head": "84e08cfffa3e1404a1e93dd924ee704aa7bd3853",
-    "lease_persistence": "success"
+    "github_direct_write_capability": "success",
+    "lease_acquire_commit": "1fe68b0d0b4a164bc9ca6f550535c703f29e64a5",
+    "latest_persistence": "success",
+    "research_mutation_attempted": false,
+    "started_mutation_attempted": false,
+    "force_push_used": false
+  },
+  "full_reconciliation_snapshot": {
+    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "active_r2_head": "84e08cfffa3e1404a1e93dd924ee704aa7bd3853",
+    "open_pr_count": 0,
+    "open_issue_numbers": [139],
+    "legacy_freeze_refs_preserved": true,
+    "sealed_head_refs_observed": 0,
+    "formal_head_refs_observed": 0,
+    "authoritative_evidence_tags": [
+      "evidence/c19-official-v4-c19-external-v2-official-v4"
+    ],
+    "r2_control_ref_observed": false,
+    "r2_preserve_ref_observed": false,
+    "r2_evidence_tag_observed": false,
+    "sub_mode": "exploratory_incubator",
+    "sub_formal_lane": null,
+    "sub_touched_r2": false
   }
 }
