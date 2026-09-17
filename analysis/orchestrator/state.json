@@ -1,357 +1,312 @@
 {
-  "timestamp": "2026-09-17T16:00:29+09:00",
+  "timestamp": "2026-09-17T16:58:04+09:00",
   "worker_role": "evidence_analyst",
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst_before_write": "e9ecad202eca32576dd76fdb2019f23b15179bf0",
+    "evidence_analyst_before_write": "96895860196792329d7b3334c37c92a71f52b415",
     "control_brain": "d8987f8c6d88fad48a8f652f4255e73b30a223e6",
-    "orchestrator_tip": "d18a65e1e4f827b9c9c6f6aad7391d1c3529c3c5",
-    "external_research_audit": "66612643c396a3af04bbd0d53908ef8e2f70b5a2",
-    "c19_v2_package": "270dc981988eb97e73aa6e126eb73ddd643b9c88",
-    "c19_v2_started_commit": "e576dd5d9b496ad0162158162cd2bb72ec21b1f6",
+    "orchestrator_tip": "e038c9b7667c3b7b768696a356fd1b5f2f05fecd",
+    "external_research_audit_tip": "c42adf10546d0825fb13a258f052a6a4be399ec5",
+    "repository_steward": "4cb869b4078de1caa9a9e9aa32df88f6eff54b25",
     "c19_v2_control_head": "7a8af82de0a0dd70ec2391ef7506ae80c5c8d391",
-    "c19_v3_branch": "research/c19-official-v3-runtime-closed-20260917@270dc981988eb97e73aa6e126eb73ddd643b9c88",
-    "c19_v3_compare_to_base": "identical:ahead_by=0:behind_by=0",
-    "c19_v3_branch_ci": "35189286833:success",
+    "c19_v3_branch": "research/c19-official-v3-runtime-closed-20260917@954e527300e25dc772b11f3a23a682d5a71ef9df",
+    "c19_v3_prestart_run": "35194763329:failure",
+    "c19_v3_prestart_failed_step": "Exact runtime and network-blocked import smoke",
     "c19_v3_control_refs": [],
     "c19_v3_preserve_refs": [],
     "c19_v3_evidence_refs": [],
     "open_prs": 0,
     "open_issues": [139, 147],
-    "authoritative_git_tags": 0,
+    "legacy_freeze_branch_count": 13,
+    "preserve_branch_count": 19,
     "repository_rulesets": 0,
-    "main_protected": false
+    "main_protected": false,
+    "authoritative_git_tag_count": "Repository Steward last verified 0; fresh tag enumeration was unavailable through the connector; no v3 evidence tag/ref was observed"
   },
   "Control_Brain_commit": "d8987f8c6d88fad48a8f652f4255e73b30a223e6",
   "MAIN_report_commit_consumed": "4d2098a8627ce700d9e1e2a37c89e5ed58859f46",
-  "SUB_report_commit_consumed": "d18a65e1e4f827b9c9c6f6aad7391d1c3529c3c5",
-  "External_Research_Audit_handoff_commit_consumed": "66612643c396a3af04bbd0d53908ef8e2f70b5a2",
-  "External_Research_Audit_role_consumed": "INDEPENDENT_AUDITOR",
-  "external_input": {
-    "handoff_commit": "66612643c396a3af04bbd0d53908ef8e2f70b5a2",
-    "role": "INDEPENDENT_AUDITOR",
-    "parent_scout_commit": "8f405b63d0afc8a6ffae522aa68799c54006f52d",
-    "parent_scout_role": "LITERATURE_REDUCTION_SCOUT",
-    "genuinely_new_information_this_cycle": false,
-    "genuinely_new_information_in_latest_handoff": true,
-    "findings_consumed": [
-      "Evaluator-target joins must be exact, unique, total, fail-closed and technically target-safe.",
-      "Quantile/scorer edge semantics must be prospectively fixed and executable before STARTED.",
-      "Deterministic golden fixtures or an independent scorer/checksum should verify terminal scorer semantics.",
-      "Any future C19 PASS supports only narrow truth-free structural representation gain until representation-matched alternatives are tested prospectively."
-    ],
-    "affected_lines": ["C19_V2", "C19_PROTOCOL_INTEGRITY", "PROGRAMME_NOVELTY"],
-    "strategic_impact": "No newer external or audit input. Prior audit hardening remains binding. Current v3 branch creation changes readiness state only and does not change novelty, reduction pressure, falsification criteria, or MAIN/SUB allocation.",
-    "allocation_changed": false,
-    "prospective_baselines_or_discriminators": [
-      "representation-matched exact-I2 stateless or shallow comparator after a valid formal result",
-      "representation-matched explicit-state comparator after a valid formal result",
-      "recurrent or Transformer belief-state reduction after a valid formal result",
-      "independent scorer or golden-output equivalence check"
-    ],
-    "must_not_change": [
-      "C19 scientific-semantics anchor 90c936a7abca7eba0dac1f977753503551e73368",
-      "c19-external-v2-official-v1 retired-unSTARTED predecessor",
-      "c19-external-v2-official-v2 consumed POST_START_FAILURE identity",
-      "all consumed A01/RV01/RV02/CX identities",
-      "no outcome-conditioned scorer, join, quantile, threshold, baseline or claim changes"
-    ]
+  "SUB_report_commit_consumed": "e038c9b7667c3b7b768696a356fd1b5f2f05fecd",
+  "SUB_state_file_commit": "92d5b68cb5c552827eb9f4d560b57b8c546106fc",
+  "SUB_operating_mode_observed": "formal_no_op:NO_OP_NO_SECONDARY_FRONTIER",
+  "sub_exploratory_review": {
+    "applicable": false,
+    "classification": "NO_ACTION",
+    "reason": "Latest SUB report does not declare mode: exploratory_incubator and contains no exploratory candidate/result to review.",
+    "evidentiary_status": "none"
   },
-  "active_line_review": {
-    "A01": {
-      "status": "MIXED_PROGRAMME_CLOSED",
-      "strongest_evidence": "P2/P3 consumed development support remains real, but Family-A P4 is terminal negative and registered Family-B/C objects are pre-START reduced/closed.",
-      "shortest_path_to_new_information": "Fresh independently motivated mechanism object only.",
-      "information_value": "LOW_TO_MEDIUM",
-      "implementation_distance": "FAR",
-      "centrality": "CLOSED"
+  "Literature_handoff_commit_consumed": "c42adf10546d0825fb13a258f052a6a4be399ec5",
+  "Audit_handoff_commit_consumed": "66612643c396a3af04bbd0d53908ef8e2f70b5a2",
+  "Repository_Steward_commit_consumed": "4cb869b4078de1caa9a9e9aa32df88f6eff54b25",
+  "Repository_Steward_state_consumed": "reports/repository_steward/state.json@05a3d69095de5c803f8bd18d231c761d56a474aa",
+  "external_role_stream_status": {
+    "literature_latest_state_paths_present": false,
+    "audit_latest_state_paths_present": false,
+    "fallback_used": "newest role-suffixed history per role",
+    "legacy_shared_latest_state_used_as_current_role_authority": false
+  },
+  "external_input": {
+    "literature": {
+      "handoff_commit": "c42adf10546d0825fb13a258f052a6a4be399ec5",
+      "role": "LITERATURE_REDUCTION_SCOUT",
+      "history_file": "analysis/external_research_audit/history/2026-09-17/1632-LITERATURE_REDUCTION_SCOUT.md",
+      "genuinely_new_information": true,
+      "findings_consumed": [
+        "state-dependent revision authority/certainty arbitration is a direct reduction baseline for belief-update gains",
+        "minimal-edit stratification can separate support insertion, defeating evidence, support removal, and irrelevant edits",
+        "explicit/implicit finite-state tracking is a direct reducer for history-dependent-state claims",
+        "state-space size, transition sparsity, and horizon provide controlled future discriminators",
+        "compact selective-history belief state is an alternative to full persistent history"
+      ],
+      "affected_lines": ["C19_V3", "PROGRAMME_NOVELTY", "FUTURE_EXTERNAL_VALIDATION", "PERSISTENT_DYNAMICS_REDUCTION", "FUTURE_AGENTIC_VALIDATION"],
+      "strategic_impact": "STRONGER_FUTURE_REDUCTION_PRESSURE; current v3 protocol and MAIN/SUB allocation remain unchanged. After a valid positive C19 result, prioritize representation-matched revision-authority and FSA/state-tracker reductions before scale-up.",
+      "allocation_changed": false,
+      "prospective_baselines_or_discriminators": [
+        "representation-matched revision-authority/certainty controller",
+        "representation-matched explicit or implicit FSA/state tracker",
+        "minimal-edit causal stratification",
+        "state-count/transition-sparsity/horizon scaling",
+        "compact selective-history belief-state comparator"
+      ],
+      "must_not_change": [
+        "current C19-v3 inherited scientific semantics",
+        "consumed/no-retry c19-external-v2-official-v2",
+        "all consumed A01/RV01/RV02/CX identities",
+        "no external-literature retrofit of the current prospective object"
+      ]
     },
-    "RV01": {
-      "status": "DEVELOPMENT_POSITIVE_REDUCIBLE",
-      "strongest_evidence": "Consumed R01-16/R01-17 observations remain compatible with ordinary adaptive connection-weight/delay or recurrent mechanisms.",
-      "shortest_path_to_new_information": "Fresh successor with stronger matched reductions; none currently registered.",
-      "information_value": "MEDIUM",
-      "implementation_distance": "FAR",
-      "centrality": "SECONDARY_COMPLETE"
-    },
-    "RV02": {
-      "status": "TERMINAL_CONSTRUCTION_NEGATIVE",
-      "strongest_evidence": "D1 exact object consumed with registered construction failure.",
-      "shortest_path_to_new_information": "Fresh prospective object only.",
-      "information_value": "LOW",
-      "implementation_distance": "FAR",
-      "centrality": "TERMINAL"
-    },
-    "CX_CX01": {
-      "status": "TERMINAL_FORMAL_NEGATIVE",
-      "strongest_evidence": "Candidate-002/formal evidence is terminal and consumed.",
-      "shortest_path_to_new_information": "Fresh prospective object only.",
-      "information_value": "LOW",
-      "implementation_distance": "FAR",
-      "centrality": "TERMINAL"
-    },
-    "H8_C08": {
-      "status": "TERMINAL_CAUSAL_SPECIALIZATION_NEGATIVE",
-      "shortest_path_to_new_information": "Distinct prospective object only.",
-      "information_value": "LOW",
-      "implementation_distance": "FAR",
-      "centrality": "TERMINAL"
-    },
-    "H9_C07": {
-      "status": "PRE_START_UNDERSPECIFIED",
-      "strongest_evidence": "Hybrid partial support exists, but fully-spiking continuation still requires eight new prospective scientific choices.",
-      "shortest_path_to_new_information": "Fix those scientific choices prospectively before any execution.",
-      "information_value": "MEDIUM",
-      "implementation_distance": "FAR",
-      "centrality": "SECONDARY_PAUSED_UNRESERVED"
-    },
-    "C19": {
-      "status": "PRIMARY_UNRESOLVED_V3_BRANCH_CREATED_BASE_ONLY",
-      "strongest_evidence": "v2 scientific measurement never opened because consumed POST_START_FAILURE occurred before model execution; v3 branch now exists at exact base with green branch CI but has zero successor-specific commits.",
-      "shortest_path_to_new_information": "Close runtime/dependency parity and admission bindings on v3, then execute exactly once if every pre-START gate passes.",
-      "information_value": "VERY_HIGH",
-      "implementation_distance": "VERY_NEAR_PRESTART",
-      "centrality": "PRIMARY_MAIN"
+    "audit": {
+      "handoff_commit": "66612643c396a3af04bbd0d53908ef8e2f70b5a2",
+      "role": "INDEPENDENT_AUDITOR",
+      "history_file": "analysis/external_research_audit/history/2026-09-17/1032-INDEPENDENT_AUDITOR.md",
+      "genuinely_new_information_this_cycle": false,
+      "findings_consumed": [
+        "evaluator-target joins must be exact, unique, total, fail-closed, and technically target-safe",
+        "quantile/scorer edge semantics must be prospectively fixed before STARTED",
+        "deterministic golden scorer fixtures should make scorer semantics executable before the one-way boundary",
+        "any future C19 PASS remains narrow representation-gain evidence until representation-matched alternatives are tested"
+      ],
+      "affected_lines": ["C19_V3", "C19_PROTOCOL_INTEGRITY", "PROGRAMME_NOVELTY"],
+      "strategic_impact": "Existing pre-START hardening remains binding; no allocation change.",
+      "allocation_changed": false
     }
   },
+  "active_line_review": {
+    "A01": "MIXED_PROGRAMME_CLOSED; fresh independently motivated object only; LOW_TO_MEDIUM/FAR",
+    "RV01": "DEVELOPMENT_POSITIVE_REDUCIBLE; ordinary adaptive-weight/delay or recurrent reductions remain; MEDIUM/FAR",
+    "RV02": "TERMINAL_CONSTRUCTION_NEGATIVE; D1 consumed; fresh object only",
+    "CX_CX01": "TERMINAL_FORMAL_NEGATIVE; Candidate-002/formal evidence consumed; fresh object only",
+    "H8_C08": "TERMINAL_CAUSAL_SPECIALIZATION_NEGATIVE",
+    "H9_C07": "PRE_START_UNDERSPECIFIED; eight prospective scientific choices remain; SECONDARY_PAUSED_UNRESERVED",
+    "C19": "PRIMARY_UNRESOLVED_V3_PRE_START_BLOCKER; v2 consumed before measurement; v3 fresh/unSTARTED/unconsumed at 954e527 with exact-head pre-START smoke failure"
+  },
   "main_lane": {
-    "target": "C19 v3 runtime-closed successor -> exact execution-environment closure -> conditional one-way terminal evidence",
+    "target": "C19 v3 pre-START blocker -> exact runtime-smoke closure -> conditional one-way terminal evidence",
     "scientific_question": "Does I2_truth_free_symbolic_surface/G1_coalition/E0_global improve Belief-R BREU over I1_local_compositional/G1_coalition/E0_global under the unchanged 55-row matrix?",
     "recommended_owner": "main",
     "branch_or_identity": "research/c19-official-v3-runtime-closed-20260917 / c19-external-v2-official-protocol-v3 / c19-external-v2-official-package-v3 / c19-external-v2-official-v3",
-    "current_head": "270dc981988eb97e73aa6e126eb73ddd643b9c88",
-    "base_ref": "research/c19-official-v2-scorer-complete-20260917@270dc981988eb97e73aa6e126eb73ddd643b9c88",
-    "current_delta_from_base": "IDENTICAL_ZERO_COMMITS",
+    "current_head": "954e527300e25dc772b11f3a23a682d5a71ef9df",
+    "current_phase": "V3_PRE_START_BLOCKER",
     "information_value": "VERY_HIGH",
-    "implementation_distance": "VERY_NEAR_PRESTART",
+    "implementation_distance": "NEAR_PRESTART_BLOCKED",
     "dependencies": [
-      "v2 remains preserved consumed/no-retry",
-      "v3 remains fresh, unSTARTED, unconsumed and collision-free",
-      "v3 scientific semantics remain identical to v2",
-      "exact execution-environment/dependency lock and manifest",
-      "same install recipe in pre-START CI and one-way runtime",
-      "same-environment import smoke traverses the exact failed torch import chain",
-      "network-blocked synthetic dry acquisition passes without opening official output",
-      "prior evaluator/scorer/raw-preservation/no-clobber bindings remain green",
-      "final exact-head CI/review and fresh authority collision checks pass"
+      "exact smoke traceback/root-cause classification",
+      "science-invariant repair only if intended behavior was prospectively fixed",
+      "same exact install recipe in pre-START and one-way runtime",
+      "network-blocked runtime/import smoke and synthetic dry acquisition green",
+      "unchanged v2 scientific semantics and exact package/input/runtime/scorer bindings",
+      "unique/total/fail-closed/target-safe evaluator join and golden scorer checks",
+      "STARTED/no-clobber/raw-before-score/immutable-raw-before-targets",
+      "final exact-head CI/review and fresh collision checks"
     ],
     "allowed_scope": [
-      "science-invariant runtime/dependency closure on the existing v3 branch",
-      "pre-START CI/workflow/install/import-smoke/synthetic-dry-run implementation",
-      "exact package/runtime/source/input/parser/envelope/scorer/bootstrap/preserver binding updates required by those mechanical changes",
-      "all critical-path fixes whose intended behavior is already prospectively fixed",
-      "fresh STARTED and one-way execution only after every GO gate passes"
+      "diagnose exact failed pre-START smoke",
+      "fix mechanical runtime/import/CI/workflow/package/binding defects with prospectively fixed intended behavior",
+      "rerun exact-head pre-START validation",
+      "create STARTED and execute one-way only after every GO condition is green"
     ],
     "forbidden_scope": [
       "retry or repair c19-external-v2-official-v2",
-      "change the 55-row matrix, adapter semantics, I2/I1 conditions, baselines, seeds, metric, bootstrap, quantile, thresholds or claim boundary",
-      "silently choose a different model-runtime version if the existing declared constraint cannot resolve",
-      "target leakage",
-      "score before immutable raw preservation",
-      "automatic v4 after any v3 post-START failure"
+      "change matrix, adapter semantics, I2/I1 conditions, baselines, seeds, metric, bootstrap, quantile, thresholds, or claim boundary",
+      "choose a new torch/model-runtime version in response to the observed failure",
+      "target leakage or score-before-preserve",
+      "automatic v4 after a v3 post-START failure"
     ],
     "go_conditions": [
-      "c19-external-v2-official-v3 is fresh, unSTARTED, unconsumed and collision-free",
-      "c19-external-v2-official-v2 remains consumed/no-retry and untouched",
-      "exact v2 scientific semantics are inherited unchanged",
-      "exact source/protocol/package/input/runtime/parser/envelope/scorer/bootstrap/preserver bindings reconstruct",
-      "existing declared learned runtime constraint including torch==2.13.0 resolves, installs and imports on the target one-way platform",
-      "same-environment import smoke traverses the exact failed chain",
-      "network-blocked synthetic dry acquisition passes without official output",
-      "55x1744 raw and 1744 target join contracts remain unique, total, fail-closed and target-safe",
-      "STARTED/no-clobber/raw-before-score/immutable-raw-before-targets remain machine-enforced",
-      "final exact-head CI/review is green",
-      "fresh control/preserve/evidence/identity collision checks are clean immediately before STARTED"
+      "smoke failure is mechanical and fixable without a new scientific/model-runtime choice",
+      "v3 remains fresh, unSTARTED, unconsumed, collision-free and v2 remains untouched",
+      "exact v2 scientific semantics and all source/protocol/package/input/runtime/parser/envelope/scorer/bootstrap/preserver bindings reconstruct",
+      "already-declared runtime constraints install/import on exact target",
+      "network-blocked synthetic dry acquisition passes",
+      "join/golden/integrity gates are green",
+      "final exact-head CI/review is green and fresh collisions are absent immediately before STARTED"
     ],
     "stop_conditions": [
-      "any same-v2 identity retry or reuse",
-      "existing declared runtime constraint cannot resolve/install/import without choosing a new model-runtime version",
-      "any new scientific/statistical/acquisition/baseline/metric/claim choice",
-      "target leakage or non-total/non-unique join",
-      "binding/order/integrity failure requiring scientific redesign",
-      "authority/ref/package/output collision",
-      "INVALID_EVIDENCE",
-      "any v3 POST_START_FAILURE"
+      "root cause requires a new torch/model-runtime version or scientific/model semantic choice",
+      "any v2 retry/reuse or scientific/statistical/acquisition/baseline/metric/claim change",
+      "unresolved dependency/runtime incompatibility under declared constraints",
+      "leakage, non-total/non-unique join, science-affecting redesign, or authority collision",
+      "INVALID_EVIDENCE or any v3 POST_START_FAILURE"
     ],
     "exact_refs_identities_to_recheck": [
       "ops/evidence-analyst-handoff",
-      "ops/external-research-audit-handoff",
       "ops/orchestrator-run-report",
-      "research/c19-official-v3-runtime-closed-20260917",
-      "research/c19-official-v2-scorer-complete-20260917@270dc981988eb97e73aa6e126eb73ddd643b9c88",
+      "ops/external-research-audit-handoff",
+      "research/c19-official-v3-runtime-closed-20260917@954e527300e25dc772b11f3a23a682d5a71ef9df",
       "control/c19-official-v2-started-20260917@7a8af82de0a0dd70ec2391ef7506ae80c5c8d391",
-      "c19-external-v2-official-v1",
       "c19-external-v2-official-v2",
       "c19-external-v2-official-v3",
       "control/c19-official-v3*",
       "preserve/c19-official-v3*",
-      "evidence/c19-official-v3*"
+      "evidence/c19-official-v3*",
+      "workflow 35194763329 and successor exact-head pre-START runs"
     ],
     "main_owns_all_critical_path_fixups": true,
     "successor_budget": "ONE_DISTINCT_V3_ONLY_NO_AUTOMATIC_V4"
   },
   "sub_lane": null,
   "sub_fallback": null,
-  "no_sub_lane_reason": "NO_SECONDARY_FRONTIER: no fully specified independent unconsumed object is reserved. H9 requires eight new scientific choices, H10 requires a new hardware-power protocol/resources, H1-H7 require fresh prospective objects, methods-terminal-provenance is unreserved, and C19 runtime closure is MAIN-only.",
+  "no_sub_lane_reason": "NO_SECONDARY_FRONTIER: no fully specified independent unconsumed formal object is reserved; H9 is underdefined, H10 lacks protocol/resources, historical lines need fresh prospective objects, and C19 repair is MAIN-only.",
+  "sub_incubator_guidance": {
+    "allowed_mode_if_idle": "exploratory_incubator",
+    "evidentiary_status": "NON_EVIDENTIARY",
+    "suggested_outcome_independent_scope": "synthetic/development-only feasibility for future representation-matched revision-authority or FSA/state-tracker reductions",
+    "hard_boundaries": [
+      "independent of MAIN critical path and unknown C19 outcome",
+      "no official Belief-R outputs, STARTED/control/preserve/evidence refs, or one-way identity consumption",
+      "no tuning to C19 terminal results, no consumed-identity reuse, and no claim upgrades",
+      "formalization requires a fresh prospective definition and new identity rather than relabeling exploratory tuning"
+    ]
+  },
   "outcome_contingencies": {
-    "V2_POST_START_FAILURE_CONSUMED": {
-      "trigger": "Observed v2 POST_START_FAILURE after STARTED",
-      "next_action": "Preserve v2 package/control/diagnostics unchanged and never retry; only the separately authorized v3 may proceed.",
-      "constraints": "No v2 mutation or same-ID reuse.",
+    "V3_PRE_START_BLOCKER": {
+      "trigger": "Run 35194763329 installed the declared runtime but failed at Exact runtime and network-blocked import smoke before STARTED.",
+      "next_action": "MAIN obtains exact traceback, fixes only science-invariant mechanical behavior with prospectively fixed intent, re-fetches, and reruns exact-head pre-START.",
       "one_way_execution_allowed": false,
       "prospectively_fixed": true,
-      "go_stop": "GO only to v3 pre-START construction; STOP any v2 repair/rerun."
-    },
-    "V3_PRE_START_RUNTIME_CLOSURE": {
-      "trigger": "Current state: v3 branch exists at exact base with zero successor-specific commits and no STARTED.",
-      "next_action": "MAIN implements exact runtime lock/install parity/import smoke/synthetic network-blocked dry acquisition/package binding, reruns exact-head CI and continues same-run while science-invariant.",
-      "constraints": "v3 branch/protocol/package/identity only; base 270dc981...; v2 science unchanged.",
-      "one_way_execution_allowed": false,
-      "prospectively_fixed": true,
-      "go_stop": "Continue while mechanical; STOP if scientific or model-runtime semantic choice appears."
+      "go_stop": "GO through mechanical fix; STOP if a semantic/runtime-version choice is required."
     },
     "V3_PRE_START_DEPENDENCY_UNRESOLVED": {
-      "trigger": "Existing declared learned runtime constraint cannot resolve/install/import on exact target platform",
-      "next_action": "STOP before STARTED and return to Analyst; do not select another runtime version ad hoc.",
-      "constraints": "No v3 STARTED/control may be created.",
+      "trigger": "Declared runtime cannot resolve/install/import without a different model-runtime version.",
+      "next_action": "STOP before STARTED and return to Analyst.",
       "one_way_execution_allowed": false,
       "prospectively_fixed": true,
       "go_stop": "STOP"
     },
-    "V3_PRE_START_BLOCKER": {
-      "trigger": "Science-preserving CI/verifier/workflow/binding/runtime defect with already-fixed intended behavior",
-      "next_action": "MAIN fixes itself, re-fetches exact refs/checks and continues same-run.",
-      "constraints": "v3 only; no v2 mutation; no scientific semantic changes.",
-      "one_way_execution_allowed": false,
-      "prospectively_fixed": true,
-      "go_stop": "Continue if mechanical; STOP if redesign is required."
-    },
     "V3_PRE_START_SEMANTIC_GAP": {
-      "trigger": "Any scientific/statistical/model-runtime-version/baseline/metric/claim choice remains unbound",
+      "trigger": "Any scientific/statistical/model-runtime-version/baseline/metric/claim choice is required.",
       "next_action": "STOP before STARTED and return to Analyst.",
-      "constraints": "v3 remains unSTARTED/unconsumed.",
       "one_way_execution_allowed": false,
       "prospectively_fixed": true,
       "go_stop": "STOP"
     },
     "V3_PRE_START_READY_FOR_ONE_WAY": {
-      "trigger": "All v3 GO gates pass after fresh refetch",
+      "trigger": "Exact-head CI/review, bindings, runtime smoke, synthetic dry-run, integrity gates, and fresh collision checks are all green.",
       "next_action": "MAIN may create fresh STARTED and continue same-run through acquisition -> target-blind raw -> immutable raw preservation -> evaluator targets -> scoring -> terminal evidence.",
-      "constraints": "Exact final v3 package/protocol/identity and freshly collision-checked namespaces only.",
       "one_way_execution_allowed": true,
       "prospectively_fixed": true,
       "go_stop": "GO once; no retry after STARTED."
     },
     "V3_POST_START_FAILURE": {
-      "trigger": "Any failure after v3 STARTED",
+      "trigger": "Any failure after v3 STARTED.",
       "next_action": "Preserve diagnostics, consume v3, no retry, STOP; no automatic v4.",
-      "constraints": "v3 identity becomes permanently consumed.",
       "one_way_execution_allowed": false,
       "prospectively_fixed": true,
       "go_stop": "STOP"
     },
     "INVALID_EVIDENCE": {
-      "trigger": "Binding, join, completeness, leakage, ordering or integrity invalid",
-      "next_action": "Withhold result; preserve invalidity; consume if STARTED; STOP.",
+      "trigger": "Integrity/binding/order/leakage failure invalidates evidence.",
+      "next_action": "Withhold result, preserve invalidity, consume if STARTED, STOP.",
       "one_way_execution_allowed": false,
       "prospectively_fixed": true,
       "go_stop": "STOP"
     },
     "PASS": {
-      "trigger": "Valid BREU 95% CI lower > 0",
-      "next_action": "Finalize narrow truth-free structural representation-gain evidence; STOP before follow-up design.",
+      "trigger": "Valid preregistered BREU 95% CI lower bound > 0.",
+      "next_action": "Finalize only narrow truth-free surface-structural representation-gain evidence and STOP before follow-up design.",
+      "future_only_after_stop": "Fresh reduction should prioritize representation-matched revision-authority then FSA/state-tracker alternatives before scale-up.",
       "one_way_execution_allowed": false,
       "prospectively_fixed": true,
-      "go_stop": "STOP after evidence finalization"
+      "go_stop": "Finalize and STOP"
     },
     "FAIL": {
-      "trigger": "Valid BREU 95% CI upper <= 0",
+      "trigger": "Valid preregistered BREU 95% CI upper bound <= 0.",
       "next_action": "Finalize registered negative; no rescue/retune/rerun; STOP.",
       "one_way_execution_allowed": false,
       "prospectively_fixed": true,
-      "go_stop": "STOP after evidence finalization"
+      "go_stop": "Finalize and STOP"
     },
     "INCONCLUSIVE": {
-      "trigger": "Valid CI contains 0 without FAIL",
+      "trigger": "Valid preregistered BREU 95% CI contains 0 without PASS or FAIL.",
       "next_action": "Finalize inconclusive; no extra data/resampling/retune; STOP.",
       "one_way_execution_allowed": false,
       "prospectively_fixed": true,
-      "go_stop": "STOP after evidence finalization"
+      "go_stop": "Finalize and STOP"
     }
   },
   "blocked_until": {
-    "MAIN_PRESTART_IMPLEMENTATION": null,
-    "MAIN_ONE_WAY_EXECUTION": "v3-specific runtime/dependency closure, same-environment import/synthetic dry-run, exact bindings, final CI/review and fresh authority collision checks are all green",
-    "SUB": "A future Analyst explicitly reserves a fully specified genuinely independent prospective object"
+    "main_one_way": "exact smoke failure mechanically resolved; exact-head pre-START CI/review and all binding/integrity/collision checks green",
+    "formal_sub": "new Analyst handoff reserves a genuinely independent prospectively specified object",
+    "sub_incubator": "not blocked if strictly NON_EVIDENTIARY, synthetic/development-only, outcome-independent, and outside MAIN critical path"
   },
   "do_not_touch": [
-    "c19-external-v2-official-v2",
-    "control/c19-official-v2-started-20260917",
-    "C19-v1 predecessor artifacts",
-    "consumed A01 objects",
-    "consumed RV01/RV02 objects",
-    "CX01 Candidate-002/formal evidence",
-    "legacy freeze branches",
-    "immutable preserve/evidence refs"
+    "c19-external-v2-official-v2 and its STARTED/control/diagnostic history",
+    "C19-v1 retired predecessor",
+    "consumed A01/RV01/RV02/CX identities",
+    "legacy freeze branches and immutable preserve/formal/evidence refs",
+    "current v3 scientific semantics based on external literature or exploratory output"
   ],
-  "active_MAIN_SUB_claims_observed": {
-    "MAIN": "Durable MAIN report remains at v2 POST_START_FAILURE stop and is stale relative to later v3 branch creation; no newer MAIN durable report exists.",
-    "SUB": "Latest SUB report at 15:38 observed the v3 branch and correctly remained deliberate no-op under NO_SECONDARY_FRONTIER.",
-    "collision": false
-  },
-  "top_recommendation": "MAIN should implement the already-authorized science-invariant v3 runtime closure on the existing branch now, then execute one-way exactly once only if every pre-START GO gate passes. SUB remains no-op.",
+  "active_MAIN_claim_observed": "C19-v3 primary frontier at 954e527; pre-START smoke failure, no STARTED.",
+  "active_SUB_claim_observed": "NO_OP_NO_SECONDARY_FRONTIER; no exploratory_incubator mode and no formal lane.",
+  "top_recommendation": "MAIN diagnoses the exact v3 pre-START smoke failure; repair only if mechanical/science-invariant, rerun exact-head admission, and execute one-way exactly once only after all GO gates pass.",
   "top_3": [
-    {
-      "rank": 1,
-      "owner": "MAIN",
-      "action": "Implement v3 runtime/dependency closure, shared install recipe, import smoke, synthetic network-blocked dry acquisition and exact binding; run final admission; execute once only if fully green.",
-      "information_value": "VERY_HIGH",
-      "distance": "VERY_NEAR"
-    },
-    {
-      "rank": 2,
-      "owner": "SUB",
-      "action": "Deliberate no-op under NO_SECONDARY_FRONTIER; do not take C19 blockers or invent H9/H10 science.",
-      "information_value": "INTEGRITY_PRESERVING",
-      "distance": "NOW"
-    },
-    {
-      "rank": 3,
-      "owner": "GOVERNANCE_REPORTING",
-      "action": "Catch MAIN durable report up to v3 branch creation; reconcile Issue #147 to canonical v2 failure plus v3 successor; keep #139 open until protection exists.",
-      "information_value": "LOW_SCIENTIFIC_HIGH_OPERATIONAL",
-      "distance": "NEAR"
-    }
+    {"rank": 1, "owner": "MAIN", "action": "Close C19-v3 exact-head pre-START smoke mechanically, then conditional one-way execution.", "information_value": "VERY_HIGH", "distance": "NEAR"},
+    {"rank": 2, "owner": "SUB", "action": "No formal lane; if idle, only NON_EVIDENTIARY synthetic feasibility for future matched revision-authority/FSA reductions.", "information_value": "MEDIUM_FUTURE", "distance": "INDEPENDENT"},
+    {"rank": 3, "owner": "FUTURE_ANALYST_AFTER_VALID_C19_RESULT", "action": "Freshly preregister representation-matched revision-authority/FSA reduction before SparkBrain scale-up.", "information_value": "HIGH_IF_C19_VALID_SIGNAL", "distance": "FUTURE"}
   ],
   "consumed_identities": [
-    "A01 MD-001",
-    "A01 P2 candidate-002",
-    "A01 P3 candidate-001",
-    "A01 Family-A P4 candidate-001",
-    "RV01 R01-16 family",
-    "RV01 R01-17",
-    "RV02 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
+    "A01 MD-001 and registered consumed A01 P2/P3/P4 exact objects",
+    "RV01 R01-16 and R01-17",
+    "RV02 D1",
     "CX01 Candidate-002/formal evidence",
-    "C19 c19-external-v2-official-v2 POST_START_FAILURE consumed/no-retry"
+    "c19-external-v2-official-v2"
   ],
   "blockers": [
-    "C19 one-way execution remains blocked until v3 runtime/dependency parity and admission are closed.",
-    "No valid independent SUB lane exists.",
-    "MAIN durable report has not yet caught up to the v3 branch creation, though repository refs are authoritative.",
-    "Issue #147 is operationally stale relative to canonical control and v3 branch state.",
-    "Server-side tag/ruleset protection remains absent."
+    "C19-v3 exact-head pre-START runtime/network-blocked import smoke failure; exact traceback not present in inspected workflow metadata.",
+    "MAIN durable report is stale and does not capture current v3 implementation/pre-START failure.",
+    "No formal independent SUB object is reserved.",
+    "Role-specific external literature/audit latest/state mailbox paths are absent; role-suffixed history fallback was required.",
+    "Issue #147 is stale relative to canonical v2-consumed/v3-pre-START state.",
+    "Repository has zero rulesets and main is unprotected."
   ],
   "governance_advisory": {
-    "issue_canonical_drift": "Issue #147 still describes v2 as planned; canonical control records v2 consumed POST_START_FAILURE and v3 branch now exists. Issue is non-authoritative and should be reconciled by Steward.",
-    "freeze_tag_migration_drift": "Legacy freeze branches remain authoritative historical anchors; do not force-migrate them. New authoritative tags remain prospectively preferred.",
-    "tag_protection_gap": "0 Git tag refs and 0 repository rulesets; main is unprotected; Issue #139 remains valid and non-blocking.",
+    "issue_canonical_drift": "#147 still describes v2 as prospective and predates v3; reconcile later, but git/control state remains authority.",
+    "tag_freeze_migration": "13 legacy freeze branches are freshly present and must remain exact historical anchors; Steward last verified 0 authoritative tags and no v3 evidence tag/ref exists.",
+    "tag_protection": "Fresh ruleset inspection returns 0; main is unprotected; #139 remains open.",
+    "external_stream_schema": "Requested role-specific literature/audit latest/state directories are absent. External workers should add them prospectively; legacy shared latest/state was not used as current role authority.",
     "outcome_independent_main_promotion_candidates": [
-      "generic exact execution-environment/dependency manifest verification",
-      "generic same-environment import/dependency smoke-test helpers",
-      "generic STARTED/no-clobber/collision primitives",
-      "generic raw-preserve-before-score and digest verification",
-      "generic unique+total evaluator-join validators",
-      "generic deterministic golden-scorer fixture harness"
-    ]
+      "generic exact source/runtime manifest verification",
+      "generic STARTED/no-clobber/identity-collision primitives",
+      "raw-preserve-before-score and digest verification",
+      "generic fail-closed verifier patterns",
+      "general exact pair-coverage validation",
+      "stable control-plane pointer/index helpers"
+    ],
+    "repository_steward_snapshot_staleness": "Steward scientific-frontier snapshot predates v3; governance findings were used only after independent current-state verification."
+  },
+  "orchestrator_handoff": {
+    "main": "MAIN takes C19-v3 and owns ALL critical-path diagnosis/fixes for the failed exact-head pre-START smoke.",
+    "sub": "Formal SUB lane is null; while idle, SUB may incubate only independent NON_EVIDENTIARY synthetic work under hard boundaries.",
+    "sub_fallback": null,
+    "main_must_not_absorb_reserved_sub": true,
+    "sub_must_not_take_main_blockers": true,
+    "neither_touches": "consumed v2 or other consumed/frozen/formal/preserve/evidence authorities",
+    "repartition_triggers": [
+      "genuinely independent prospectively specified object becomes reservable",
+      "future SUB incubator proposal is prospectively formalized from scratch",
+      "external/audit finding materially changes expected information value before v3 STARTED",
+      "C19-v3 reaches a terminal state"
+    ],
+    "same_run_main_continuation": ["science-invariant V3_PRE_START_BLOCKER repair", "V3_PRE_START_READY_FOR_ONE_WAY", "terminal evidence finalization"],
+    "same_run_main_stop": ["V3_PRE_START_DEPENDENCY_UNRESOLVED", "V3_PRE_START_SEMANTIC_GAP", "INVALID_EVIDENCE", "V3_POST_START_FAILURE", "before any post-outcome redesign"]
   }
 }
