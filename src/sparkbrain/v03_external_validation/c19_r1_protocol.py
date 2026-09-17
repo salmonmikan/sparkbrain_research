@@ -36,9 +36,10 @@ MECHANISM_ID = "same-i2-stateless-revision-authority-certainty-v1"
 
 BOOTSTRAP_SEED = 19901
 BOOTSTRAP_RESAMPLES = 10_000
-BOOTSTRAP_DRAWS_PER_RESAMPLE = EXPECTED_PAIRS
+PAIR_IID_BOOTSTRAP_DRAWS_PER_RESAMPLE = EXPECTED_PAIRS
 BOOTSTRAP_LOWER_P = 0.025
 BOOTSTRAP_UPPER_P = 0.975
+PRIMARY_BOOTSTRAP_CLUSTER_KEY = "atomic_idx"
 
 CONFIG_PATH = Path("configs/external_validation/c19_r1_revision_authority.json")
 
@@ -146,15 +147,26 @@ def validate_contract(value: Mapping[str, Any]) -> dict[str, object]:
         raw.get("records"),
     ) != (len(OFFICIAL_SEEDS), EXPECTED_PAIRS, len(OFFICIAL_SEEDS) * EXPECTED_PAIRS):
         raise ValueError("R1 raw inventory drift")
-    raw_integrity_keys = (
+    for key in (
         "raw_before_score",
         "immutable_preserve_before_targets",
         "no_clobber",
         "target_blind",
-    )
-    for key in raw_integrity_keys:
+    ):
         if raw.get(key) is not True:
             raise ValueError(f"R1 raw boundary drift: {key}")
+    source_map = raw.get("atomic_idx_source_map")
+    if not isinstance(source_map, Mapping):
+        raise ValueError("R1 atomic_idx source-map contract missing")
+    if dict(source_map) != {
+        "artifact": "atomic_idx_source_map.json",
+        "schema_version": "1",
+        "cluster_key": PRIMARY_BOOTSTRAP_CLUSTER_KEY,
+        "target_free": True,
+        "pair_assignment": "exactly_once",
+        "preserve_with_raw_before_targets": True,
+    }:
+        raise ValueError("R1 atomic_idx source-map contract drift")
 
     scoring = value.get("scoring_contract")
     if not isinstance(scoring, Mapping):
@@ -168,20 +180,25 @@ def validate_contract(value: Mapping[str, Any]) -> dict[str, object]:
     bootstrap = scoring.get("bootstrap")
     if not isinstance(bootstrap, Mapping):
         raise ValueError("R1 bootstrap contract missing")
-    if (
-        bootstrap.get("resamples"),
-        bootstrap.get("draws_per_resample"),
-        bootstrap.get("seed"),
-        bootstrap.get("lower_p"),
-        bootstrap.get("upper_p"),
-    ) != (
-        BOOTSTRAP_RESAMPLES,
-        BOOTSTRAP_DRAWS_PER_RESAMPLE,
-        BOOTSTRAP_SEED,
-        BOOTSTRAP_LOWER_P,
-        BOOTSTRAP_UPPER_P,
-    ):
-        raise ValueError("R1 bootstrap semantics drift")
+    expected_bootstrap = {
+        "primary_method": "paired_atomic_idx_cluster_bootstrap",
+        "primary_cluster_key": PRIMARY_BOOTSTRAP_CLUSTER_KEY,
+        "primary_draws_per_resample": "number_of_unique_atomic_idx_clusters",
+        "cluster_observation_policy": (
+            "carry_all_paired_observations_at_sampled_cluster_multiplicity"
+        ),
+        "cluster_order": "first_occurrence_in_pair_index_order",
+        "secondary_sensitivity_method": "paired_official_pair_bootstrap_sensitivity",
+        "secondary_draws_per_resample": PAIR_IID_BOOTSTRAP_DRAWS_PER_RESAMPLE,
+        "resamples": BOOTSTRAP_RESAMPLES,
+        "seed": BOOTSTRAP_SEED,
+        "confidence_level": 0.95,
+        "quantile_method": "linear_type7",
+        "lower_p": BOOTSTRAP_LOWER_P,
+        "upper_p": BOOTSTRAP_UPPER_P,
+    }
+    if dict(bootstrap) != expected_bootstrap:
+        raise ValueError("R1 audit-aligned bootstrap semantics drift")
 
     integrity = value.get("integrity")
     if not isinstance(integrity, Mapping):
@@ -200,6 +217,7 @@ def validate_contract(value: Mapping[str, Any]) -> dict[str, object]:
         "planned_identity": PLANNED_IDENTITY,
         "rows": len(expected_r1_rows()),
         "pairs_per_row": EXPECTED_PAIRS,
+        "primary_cluster_key": PRIMARY_BOOTSTRAP_CLUSTER_KEY,
         "official_execution_allowed": False,
         "status": "prestart_contract_checks_pass",
     }
@@ -213,7 +231,6 @@ def load_and_validate_contract(path: Path = CONFIG_PATH) -> dict[str, object]:
 
 
 __all__ = [
-    "BOOTSTRAP_DRAWS_PER_RESAMPLE",
     "BOOTSTRAP_LOWER_P",
     "BOOTSTRAP_RESAMPLES",
     "BOOTSTRAP_SEED",
@@ -228,8 +245,10 @@ __all__ = [
     "OFFICIAL_PYTHON_VERSION",
     "OFFICIAL_SEEDS",
     "PACKAGE_ID",
+    "PAIR_IID_BOOTSTRAP_DRAWS_PER_RESAMPLE",
     "PARENT_V4_PACKAGE_COMMIT",
     "PLANNED_IDENTITY",
+    "PRIMARY_BOOTSTRAP_CLUSTER_KEY",
     "PROTOCOL_ID",
     "ROW_KIND",
     "V4_EVIDENCE_COMMIT",
