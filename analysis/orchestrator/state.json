@@ -1,71 +1,64 @@
 {
-  "timestamp": "2026-09-17T18:01:33+09:00",
+  "timestamp": "2026-09-17T19:02:59+09:00",
   "worker_role": "evidence_analyst",
-  "control_plane_mailbox_semantics": "ops/* branches were used only for designated handoff/report paths and role-suffixed history; current repository state was independently re-fetched from main/research/control/preserve/evidence/issues/prs/workflows.",
+  "control_plane_mailbox_semantics": "ops/* branches were treated only as designated persistence/control-plane mailboxes; current repository state was independently re-fetched from main, research/control/preserve/evidence/freeze refs, Issues, PRs, workflows, tags and rulesets.",
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst_prior_tip": "b9c14e9e171bf765447aa45e71b7ba75cc7ce357",
+    "evidence_analyst_prior_tip": "b7cc088df7c9768bb7e62b40d4c54f273df969eb",
     "control_brain": "d8987f8c6d88fad48a8f652f4255e73b30a223e6",
-    "orchestrator_tip": "1c390eb043636bf3ccdfc336778a8d390621fa0d",
-    "external_research_audit_latest_literature_commit": "c42adf10546d0825fb13a258f052a6a4be399ec5",
-    "external_research_audit_latest_audit_commit": "66612643c396a3af04bbd0d53908ef8e2f70b5a2",
+    "orchestrator_tip_observed": "75b898239d06cbd1c89b7de10fbe277f99e4986a",
+    "external_research_audit_tip": "c42adf10546d0825fb13a258f052a6a4be399ec5",
     "repository_steward": "4cb869b4078de1caa9a9e9aa32df88f6eff54b25",
     "c19_v2_package": "research/c19-official-v2-scorer-complete-20260917@270dc981988eb97e73aa6e126eb73ddd643b9c88",
     "c19_v2_control": "control/c19-official-v2-started-20260917@7a8af82de0a0dd70ec2391ef7506ae80c5c8d391",
     "c19_v3_package": "research/c19-official-v3-runtime-closed-20260917@84b244959f249da916a36906508ead0830052e9b",
-    "c19_v3_started": "control/c19-official-v3-started-20260917@915b7b21abe6ef936fa18e81e4a5117712d20f28",
-    "c19_v3_control_final": "control/c19-official-v3-started-20260917@294d947ade2f906e284d5e1eed5ad57ac7527947",
-    "c19_v3_one_way_run": "35200352569:completed:failure",
-    "c19_v3_preserve_refs": [],
-    "c19_v3_evidence_refs": [],
-    "sub_exploratory_branch": "research/exploratory-sub-revision-authority-fsa-20260917@a4e14a13eb4011e94cc93d07f9a13d9251bfd759",
-    "sub_exploratory_ci": "35201182618:success",
+    "c19_v3_control": "control/c19-official-v3-started-20260917@294d947ade2f906e284d5e1eed5ad57ac7527947",
+    "readiness_branch": "research/readiness-raw-preservation-boundary-20260917@158ad46cafcc9d9b17f01a85488562b63e81257d",
+    "readiness_preserve_ref": "readiness/raw-preservation-35204638939@8a4d0107a3251def652fd848a1da5b0731ff3283",
+    "readiness_workflow": "35204638939:completed:success",
+    "readiness_repo_ci": "35204638807:completed:success",
+    "sub_exploratory_branch": "research/exploratory-sub-revision-authority-fsa-20260917@7bf67e39bfbd327e52a2db02304e08e987462e53",
+    "sub_exploratory_ci": "35206884542:completed:success",
     "open_prs": 0,
     "open_issues": [139, 147],
     "legacy_freeze_branch_count": 13,
-    "preserve_branch_count": 19,
     "authoritative_git_tag_count": 0,
-    "repository_rulesets": 0,
+    "repository_ruleset_count": 0,
     "main_protected": false
   },
   "Control_Brain_commit": "d8987f8c6d88fad48a8f652f4255e73b30a223e6",
-  "MAIN_report_commit_consumed": "3d4edab868c7b911b861be3f05849c2a15e1930d",
-  "SUB_report_commit_consumed": "0ad2b4a3cfc9bdf29311beb6d1dc2f0a4b0c98c3",
+  "MAIN_report_commit_consumed": "46d8c4ddcde75efe1f152747e39b3e66984e5587",
+  "SUB_report_commit_consumed": "3033ed68a31e80a656af53bb215944a42dd762d5",
   "SUB_operating_mode_observed": "exploratory_incubator",
+  "concurrency_reconciliation": {
+    "main_report": "MAIN durable state is current through GENERIC_PRESERVATION_READINESS_PASS and stopped for a newer Analyst decision.",
+    "sub_report": "SUB durable report is older than the current exploratory branch head; fresh repository branch 7bf67e39... and CI 35206884542 were independently inspected.",
+    "scientific_collision_observed": false
+  },
   "sub_exploratory_review": {
     "applicable": true,
-    "classification": "CONTINUE_EXPLORING",
+    "classification": "REJECT",
     "evidentiary_status": "NON_EVIDENTIARY",
-    "branch": "research/exploratory-sub-revision-authority-fsa-20260917@a4e14a13eb4011e94cc93d07f9a13d9251bfd759",
-    "observations_consumed": {
-      "exhaustive_histories_horizon_le_5": 111111,
-      "fsa_exact_match_rate": 1.0,
-      "reachable_fsa_states": 27,
-      "stateless_exact_match_rate": 0.5555435555435555,
-      "long_horizon_random_fsa_match_rate": 1.0,
-      "long_horizon_stateless_match_rates": {"10": 0.492, "25": 0.47505, "50": 0.4759}
-    },
-    "interpretation": "The constructed three-source authority/retraction policy is exactly compressible into a 27-state explicit representation. This is useful implementation/reduction-feasibility input, but much of the result follows from the synthetic ontology/state definition and it is not evidence about SparkBrain, C19, or Belief-R.",
-    "formalize_now": false,
-    "next_bounded_exploration": "If no formal SUB lane exists next cycle, perform at most one synthetic stress with same-rank conflicts, provenance-sensitive retractions, and explicit state-growth measurement across source/provenance count and horizon.",
-    "remaining_scientific_choices": [
-      "event ontology and authority relation",
-      "same-rank conflict handling",
-      "source/provenance multiplicity and identity semantics",
-      "confidence/contradiction/retraction semantics",
-      "state/resource matching",
-      "strong representation-matched shallow/recurrent/non-FSA comparators",
-      "held-out task family",
-      "state-count/transition-sparsity/horizon scaling",
-      "success/failure criteria",
-      "fresh identity and exact source/package/runtime/input/integrity binding"
+    "branch": "research/exploratory-sub-revision-authority-fsa-20260917@7bf67e39bfbd327e52a2db02304e08e987462e53",
+    "observations_consumed": [
+      "exact provenance ledger matched full replay on the richer synthetic provenance-targeted retraction stress",
+      "source-only aggregation became inexact when a source had multiple independently retractable provenance records",
+      "deterministic witness: two positive provenance records on one source followed by retraction of only one record leaves exact state positive while source-only clearing becomes neutral",
+      "reachable exact state count follows sum_{j<=min(P,h)} C(P,j) 2^j and saturates at 3^P",
+      "partition refinement found all 3^P states distinguishable for explored P=1..6",
+      "exact-head CI 35206884542 succeeded"
     ],
-    "hard_stop_conditions": [
-      "result remains definition-trivial after one richer stress",
-      "official C19/Belief-R data or outputs would be needed",
-      "exploration would tune to the consumed C19 outcome/failure",
-      "a formal claim or identity would be required",
-      "more than one further bounded probe is needed before Analyst review"
+    "interpretation": "Useful reduction lesson, but not a worthwhile standalone formal scientific object. Token-specific events plus one independent trit per provenance token make the observed exact representation and exponential joint-state growth largely structural consequences of the constructed semantics.",
+    "formalize_now": false,
+    "continue_same_candidate": false,
+    "reason_for_rejection": "The single richer stress authorized by the prior handoff triggered the definition-dominated hard stop. Further cycles on this branch would mostly elaborate a constructed automaton rather than add high-value evidence about SparkBrain or an independently grounded task.",
+    "retained_future_value": "Use provenance-aware explicit-state tracking as a prospective comparator/reduction pressure in a future independently specified formal task.",
+    "hard_boundaries": [
+      "do not relabel exploratory branch/results as evidence",
+      "do not create a formal identity from explored settings",
+      "do not continue tuning this branch",
+      "do not access C19/Belief-R official data or outputs",
+      "do not use this candidate to rescue a consumed/negative MAIN object"
     ]
   },
   "Literature_handoff_commit_consumed": "c42adf10546d0825fb13a258f052a6a4be399ec5",
@@ -83,230 +76,275 @@
       "handoff_commit": "c42adf10546d0825fb13a258f052a6a4be399ec5",
       "role": "LITERATURE_REDUCTION_SCOUT",
       "history_file": "analysis/external_research_audit/history/2026-09-17/1632-LITERATURE_REDUCTION_SCOUT.md",
-      "genuinely_new_information_relative_to_prior_programme_state": true,
       "new_this_analyst_cycle": false,
       "findings_consumed": [
-        "revision-authority/certainty arbitration is a direct reduction baseline",
-        "minimal-edit stratification separates qualitatively different revision failures",
-        "explicit/implicit FSA tracking is a direct reducer for history-sensitive state claims",
-        "state-count/transition-sparsity/horizon scaling is a controlled discriminator",
-        "compact selective-history belief state is an alternative to full persistent history"
+        "revision-authority/certainty arbitration as a direct reduction baseline",
+        "minimal-edit stratification for revision failures",
+        "explicit/implicit FSA tracking for history-sensitive state claims",
+        "state-count/transition-sparsity/horizon scaling",
+        "compact selective-history belief-state alternatives"
       ],
-      "affected_lines": ["C19", "PROGRAMME_NOVELTY", "FUTURE_EXTERNAL_VALIDATION", "PERSISTENT_DYNAMICS_REDUCTION"],
-      "strategic_impact": "Strengthens the case that any future formal object should test matched revision-authority/FSA reductions before scale-up. It does not justify C19-v4 and cannot alter consumed v2/v3.",
+      "affected_lines": ["C19", "PROGRAMME_NOVELTY", "FUTURE_REDUCTION", "SUB_EXPLORATORY_PROVENANCE_FSA"],
+      "strategic_impact": "Keeps the novelty bar high and supports retaining provenance/FSA only as future comparator pressure. It does not alter consumed C19 objects and did not itself cause the new MAIN allocation.",
       "allocation_changed": false,
       "prospective_baselines_or_discriminators": [
         "representation-matched revision-authority controller",
-        "representation-matched FSA/state tracker",
-        "minimal-edit revision stratification",
+        "provenance-aware explicit state tracker",
+        "minimal-edit stratification",
         "state-count/transition-sparsity/horizon scaling",
         "selective-history belief-state comparator"
       ],
-      "must_not_change": ["consumed C19-v2", "consumed C19-v3", "all consumed/frozen A01/RV01/RV02/CX objects"]
+      "must_not_change": ["C19-v2", "C19-v3", "consumed/frozen A01/RV01/RV02/CX objects"]
     },
     "audit": {
       "handoff_commit": "66612643c396a3af04bbd0d53908ef8e2f70b5a2",
       "role": "INDEPENDENT_AUDITOR",
       "history_file": "analysis/external_research_audit/history/2026-09-17/1032-INDEPENDENT_AUDITOR.md",
-      "genuinely_new_information_this_cycle": false,
+      "new_this_analyst_cycle": false,
       "findings_consumed": [
-        "evaluator joins exact/unique/total/fail-closed and target-safe",
-        "quantile edge semantics prospectively fixed",
-        "deterministic golden scorer fixtures",
-        "future PASS claim must remain narrow until representation-matched reductions"
+        "evaluator joins must be exact, unique, total, fail-closed and target-safe",
+        "quantile edge semantics must remain prospectively fixed",
+        "deterministic golden scorer fixtures are required",
+        "any valid C19 PASS supports only a narrow representation-gain claim until matched reductions"
       ],
       "affected_lines": ["C19", "C19_PROTOCOL_INTEGRITY", "PROGRAMME_NOVELTY"],
-      "strategic_impact": "Still binding for any future formal experiment. Audit has not yet independently assessed the new v3 preservation failure.",
+      "strategic_impact": "Still binding for v4 admission. The audit predates v3 preservation failure and generic readiness qualification, so those repository events are not independently audited by this stream.",
       "allocation_changed": false
     }
   },
+  "new_repository_evidence": {
+    "generic_preservation_readiness": "PASS",
+    "effect_on_strategy": "This removes the specific generic raw-preservation readiness blocker that caused the prior handoff to forbid a new C19 identity. Because no scientific outcome from v2/v3 was observed or used, one final fresh science-invariant successor is now justified prospectively.",
+    "sub_richer_stress": "Completed and definition-dominated; current candidate rejected as standalone formal object."
+  },
   "active_line_review": {
-    "A01": {"status": "MIXED_PROGRAMME_CLOSED", "strongest_evidence": "P2/P3 consumed development support with terminal P4 negative and registered A/B/C closure", "shortest_path_new_information": "fresh independently motivated object only", "centrality": "closed"},
-    "RV01": {"status": "DEVELOPMENT_POSITIVE_REDUCIBLE", "strongest_evidence": "R01-16/R01-17 development positives compatible with ordinary adaptive delay/weight/recurrent mechanisms", "shortest_path_new_information": "fresh matched-reduction successor", "centrality": "secondary_complete"},
-    "RV02": {"status": "TERMINAL_CONSTRUCTION_NEGATIVE", "strongest_evidence": "consumed D1", "shortest_path_new_information": "fresh object only", "centrality": "terminal"},
-    "CX_CX01": {"status": "TERMINAL_FORMAL_NEGATIVE", "strongest_evidence": "consumed Candidate-002/formal evidence", "shortest_path_new_information": "fresh object only", "centrality": "terminal"},
+    "A01": {"status": "MIXED_PROGRAMME_CLOSED", "consumed": ["MD-001", "P2 candidate-002", "P3 candidate-001", "P4 candidate-001"], "shortest_path_new_information": "fresh independently motivated object only", "centrality": "closed"},
+    "RV01": {"status": "DEVELOPMENT_POSITIVE_REDUCIBLE", "consumed": ["R01-16", "R01-17"], "simpler_reductions": "ordinary adaptive delay/weight/recurrent mechanisms", "shortest_path_new_information": "fresh matched-reduction successor", "centrality": "secondary_complete"},
+    "RV02": {"status": "TERMINAL_CONSTRUCTION_NEGATIVE", "consumed": ["D1"], "shortest_path_new_information": "fresh object only", "centrality": "terminal"},
+    "CX_CX01": {"status": "TERMINAL_FORMAL_NEGATIVE", "consumed": ["Candidate-002/formal object"], "shortest_path_new_information": "fresh object only", "centrality": "terminal"},
     "H8_C08": {"status": "TERMINAL_CAUSAL_SPECIALIZATION_NEGATIVE", "shortest_path_new_information": "distinct prospective object only", "centrality": "terminal"},
-    "H9_C07": {"status": "PRE_START_UNDERSPECIFIED", "strongest_evidence": "readiness branch exists but eight prospective scientific choices remain", "shortest_path_new_information": "fix scientific choices before formal run", "centrality": "paused_unreserved"},
-    "C19": {"status": "SCIENTIFICALLY_UNRESOLVED_OPERATIONALLY_PAUSED_AFTER_REPEATED_POST_START_FAILURES", "strongest_evidence": "v2 and v3 are both consumed/no-retry with no valid terminal scientific result; v3 completed target-blind acquisition but failed before immutable raw preservation/targets/scoring", "shortest_path_new_information": "prove generic preservation reliability without a scientific identity, then select a fresh prospective object", "centrality": "former_primary_paused"},
-    "SUB_REVISION_AUTHORITY_FSA": {"status": "EXPLORATORY_NON_EVIDENTIARY", "strongest_evidence": "synthetic 27-state exact compression feasibility", "shortest_path_new_information": "one bounded richer synthetic stress then review", "centrality": "incubator"}
+    "H9_C07": {"status": "PRE_START_UNDERSPECIFIED", "shortest_path_new_information": "fix unresolved scientific choices prospectively before formal work", "centrality": "paused_unreserved"},
+    "C19": {"status": "SCIENTIFICALLY_UNRESOLVED_PRESERVATION_READINESS_QUALIFIED", "consumed": ["c19-external-v2-official-v2", "c19-external-v2-official-v3"], "strongest_evidence": "v3 reached target-blind acquisition but no canonical raw/targets/score; generic preservation boundary later passed independent synthetic qualification", "shortest_path_new_information": "one fresh final v4 under unchanged science and qualified preservation", "centrality": "PRIMARY"},
+    "SUB_PROVENANCE_FSA": {"status": "EXPLORATORY_NON_EVIDENTIARY_REJECTED_AS_STANDALONE_FORMAL_OBJECT", "shortest_path_new_information": "none on this candidate; retain only as future comparator idea", "centrality": "rejected_incubator_object"}
   },
   "main_lane": {
-    "target": "generic one-way raw-preservation/evidence-boundary reliability qualification, then fresh scientific-object selection; no C19-v4",
-    "scientific_question": null,
-    "methodological_question": "Can target-blind raw be durably and exactly preserved before any evaluator access under the intended one-way preservation mechanism, demonstrated on synthetic/development-only inputs?",
+    "target": "C19 official-v4 preservation-qualified final successor",
+    "scientific_question": "Under the unchanged C19 official contract, does I2_truth_free_symbolic_surface/G1_coalition/E0_global improve preregistered Belief-R BREU versus I1_local_compositional/G1_coalition/E0_global across the fixed 55-row matrix?",
     "recommended_owner": "main",
-    "branch_or_identity": "fresh clearly non-evidentiary readiness branch; formal identity none",
-    "information_value": "HIGH_ENABLING",
-    "implementation_distance": "NEAR_TO_MEDIUM",
+    "branch_or_identity": {
+      "branch": "research/c19-official-v4-preservation-qualified-20260917",
+      "protocol_id": "c19-external-v2-official-protocol-v4",
+      "package_id": "c19-external-v2-official-package-v4",
+      "identity": "c19-external-v2-official-v4",
+      "science_basis": "research/c19-official-v3-runtime-closed-20260917@84b244959f249da916a36906508ead0830052e9b",
+      "preservation_basis": "research/readiness-raw-preservation-boundary-20260917@158ad46cafcc9d9b17f01a85488562b63e81257d",
+      "qualified_preserve_ref": "readiness/raw-preservation-35204638939@8a4d0107a3251def652fd848a1da5b0731ff3283"
+    },
+    "information_value": "VERY_HIGH",
+    "implementation_distance": "NEAR",
     "dependencies": [
-      "diagnose generic preservation failure mode without recovering/scoring v3 raw",
-      "deterministic synthetic payload and exact source/runtime/preservation binding",
-      "no-clobber and preserve-before-read ordering",
-      "independent re-fetch with exact digest equality",
-      "exact-head CI/review"
+      "mechanically integrate the already-qualified preservation boundary",
+      "prove scientific-contract invariance against v2/v3",
+      "bind exact final source/protocol/package/input/runtime/parser/envelope/scorer/bootstrap/preserver",
+      "exact-head pre-START CI/review",
+      "fresh consumed/STARTED/control/preserve/evidence collision checks"
     ],
     "allowed_scope": [
-      "outcome-independent generic preservation tooling and storage/ref mechanics",
-      "digest verification and failure injection",
-      "synthetic/development-only qualification",
-      "genericization of stable preservation primitives"
+      "science-invariant v4 identity/package/ref updates",
+      "generic preservation integration",
+      "candidate-specific CI/preflight/runner/preserver fixes",
+      "exact binding and admission",
+      "one-way execution after all GO gates"
     ],
     "forbidden_scope": [
-      "retry v2 or v3",
-      "recover/reconstruct/promote transient v3 raw",
-      "score diagnostic artifacts",
-      "official Belief-R access",
-      "STARTED or one-way identity consumption",
-      "C19-v4 design or dispatch",
-      "scientific metric/baseline/claim changes"
+      "v2/v3 retry or transient v3 raw recovery/inspection for science",
+      "candidate, baseline, metric, threshold, seed, matrix or official-input retuning",
+      "target access before immutable raw preservation and fresh re-fetch",
+      "new runtime/scorer semantics selected in response to observed data"
     ],
     "go_conditions": [
-      "identity-free synthetic readiness only",
-      "exact source/runtime/test-payload/preservation binding",
-      "no STARTED and fail-closed no-clobber",
-      "raw persisted before downstream read",
-      "independent re-fetch reproduces exact digest",
-      "exact-head CI/review green"
+      "c19-external-v2-official-v4 is fresh, unSTARTED and unconsumed",
+      "v4 control/preserve/evidence namespaces are collision-free",
+      "final exact head is CI/review green",
+      "scientific fields/55 rows/five seeds/baselines/BREU/bootstrap/quantile contract are unchanged",
+      "same qualified runtime dependency closure remains valid",
+      "exact 1744 input-pair binding and expected 95920 target-blind raw rows",
+      "fresh no-clobber preserve ref is created and independently re-fetched with exact digest match before target access",
+      "evaluator join is exactly 1744 unique/total and target-safe",
+      "golden scorer/quantile fixtures pass",
+      "fresh Analyst authority and all refs are re-fetched immediately before STARTED"
     ],
     "stop_conditions": [
-      "need to use/recover transient v3 raw or official C19 data",
-      "need to touch consumed control/evidence authorities",
-      "need to consume a formal identity or create STARTED",
-      "need for a future scientific protocol choice",
-      "intended preservation mechanism cannot prove lossless durability"
+      "any scientific semantic or runtime-version choice must change",
+      "identity/ref collision",
+      "unresolved runtime or preservation binding",
+      "target leakage or row-count/digest/join/scorer-integrity failure",
+      "INVALID_EVIDENCE",
+      "any POST_START_FAILURE"
     ],
     "exact_refs_identities_to_recheck": [
-      "control/c19-official-v3-started-20260917@294d947ade2f906e284d5e1eed5ad57ac7527947",
       "control/c19-official-v2-started-20260917@7a8af82de0a0dd70ec2391ef7506ae80c5c8d391",
-      "c19-external-v2-official-v2",
-      "c19-external-v2-official-v3",
-      "preserve/c19-official-v3* absent",
-      "evidence/c19-official-v3* absent",
-      "current Evidence Analyst authority"
+      "control/c19-official-v3-started-20260917@294d947ade2f906e284d5e1eed5ad57ac7527947",
+      "c19-external-v2-official-v2 consumed",
+      "c19-external-v2-official-v3 consumed",
+      "research/c19-official-v3-runtime-closed-20260917@84b244959f249da916a36906508ead0830052e9b",
+      "research/readiness-raw-preservation-boundary-20260917@158ad46cafcc9d9b17f01a85488562b63e81257d",
+      "readiness/raw-preservation-35204638939@8a4d0107a3251def652fd848a1da5b0731ff3283",
+      "current Evidence Analyst authority",
+      "prospective v4 namespaces"
     ],
-    "identity_freshness": "no formal identity authorized",
-    "started_no_clobber": "STARTED forbidden; synthetic test namespace must fail closed on collision",
-    "raw_before_score": "synthetic preserve-before-read ordering must be proven; no evaluator/scoring step needed",
-    "ci_review": "exact-head green required",
-    "scientific_falsifier": "not applicable: this is readiness, not a scientific experiment",
-    "readiness_failure_criterion": "cannot preserve and independently re-fetch the exact synthetic payload losslessly under the intended mechanism",
+    "scientific_contract": {
+      "fixed_rows": 55,
+      "input_pairs": 1744,
+      "expected_raw_rows": 95920,
+      "primary": "I2_truth_free_symbolic_surface/G1_coalition/E0_global",
+      "reference": "I1_local_compositional/G1_coalition/E0_global",
+      "seeds": 5,
+      "metric": "BREU primary contrast",
+      "bootstrap_resamples": 10000,
+      "pass": "95% bootstrap CI lower > 0",
+      "fail": "95% bootstrap CI upper <= 0",
+      "inconclusive": "valid CI contains 0"
+    },
     "main_owns_all_critical_path_fixups": true
   },
   "sub_lane": null,
   "sub_fallback": null,
-  "no_sub_lane_reason": "No fully specified independent formal object is prospectively fixed. The revision-authority/FSA direction is promising but still under-specified; H9 remains underdefined; do not manufacture a formal lane.",
+  "no_sub_lane_reason": "The current provenance/FSA candidate is rejected as a standalone formal object because its strongest result is dominated by its constructed token-factorized semantics. H9 remains under-specified and no other independent formal object is fully fixed. Do not manufacture parallelism.",
   "sub_incubator_guidance": {
-    "classification": "CONTINUE_EXPLORING",
-    "evidentiary_status": "NON_EVIDENTIARY",
-    "allowed_next_probe_count": 1,
-    "next_probe": "same-rank conflicts plus provenance-sensitive retractions with state-growth scaling",
-    "independent_of_main_critical_path": true,
-    "execution_allowed_formal": false
+    "current_candidate": "REJECT",
+    "current_branch_must_not_continue_as_science": true,
+    "formal_execution_allowed": false,
+    "idle_capacity_policy": "SUB may incubate a different independently motivated synthetic/development-only NON_EVIDENTIARY line, or no-op.",
+    "independent_of_main_critical_path": true
   },
   "outcome_contingencies": {
-    "C19_V3_POST_START_FAILURE": {
-      "trigger": "Observed v3 failure after STARTED, after target-blind acquisition and before immutable raw preservation/targets/scoring.",
+    "V4_PRE_START_BUILD": {
+      "trigger": "fresh v4 branch/package does not yet exist",
+      "classification": "PRE_START_BUILD",
+      "next_action_main_same_run": "Create/build v4 from exact v3 science basis and qualified preservation basis; no one-way execution until all GO gates pass.",
+      "one_way_execution_allowed": false,
+      "outcome_independent_prospectively_fixed": true
+    },
+    "V4_PRE_START_BLOCKER": {
+      "trigger": "mechanical science-invariant CI/runner/package/binding/preservation admission defect before STARTED",
+      "classification": "PRE_START_BLOCKER",
+      "next_action_main_same_run": "MAIN fixes and re-verifies the blocker while scientific semantics and fixed runtime contract remain unchanged.",
+      "one_way_execution_allowed": false,
+      "go": "all exact-head admission gates become green",
+      "stop": "fix would require scientific semantic/runtime-resource redesign",
+      "outcome_independent_prospectively_fixed": true
+    },
+    "V4_PRE_START_SEMANTIC_GAP": {
+      "trigger": "candidate/protocol/baseline/scorer/threshold/seed/matrix/official-input/runtime scientific choice must change",
+      "classification": "PRE_START_BLOCKER",
+      "next_action_main_same_run": "STOP for Analyst",
+      "one_way_execution_allowed": false,
+      "outcome_independent_prospectively_fixed": true
+    },
+    "V4_PRE_START_READY_FOR_ONE_WAY": {
+      "trigger": "all fresh identity, exact binding, CI/review, no-clobber, preservation and audit gates pass after final re-fetch",
+      "classification": "GO",
+      "next_action_main_same_run": "Create STARTED and continue target-blind acquisition -> immutable raw preserve -> independent re-fetch/digest -> evaluator targets -> scoring -> fixed terminal evidence/reporting.",
+      "one_way_execution_allowed": true,
+      "outcome_independent_prospectively_fixed": true
+    },
+    "V4_PASS": {
+      "trigger": "valid preregistered BREU 95% bootstrap CI lower > 0",
+      "classification": "PASS",
+      "next_action_main_same_run": "Finalize immutable scored evidence/status and durable reporting, then STOP; do not design next science from outcome.",
+      "one_way_execution_allowed": false,
+      "outcome_independent_prospectively_fixed": true
+    },
+    "V4_FAIL": {
+      "trigger": "valid preregistered BREU 95% bootstrap CI upper <= 0",
+      "classification": "FAIL",
+      "next_action_main_same_run": "Finalize immutable scored evidence/status and durable reporting, then STOP; no rescue/retune.",
+      "one_way_execution_allowed": false,
+      "outcome_independent_prospectively_fixed": true
+    },
+    "V4_INCONCLUSIVE": {
+      "trigger": "valid preregistered CI contains 0",
+      "classification": "INCONCLUSIVE",
+      "next_action_main_same_run": "Finalize immutable scored evidence/status and durable reporting, then STOP; no outcome-responsive successor.",
+      "one_way_execution_allowed": false,
+      "outcome_independent_prospectively_fixed": true
+    },
+    "V4_INVALID_EVIDENCE": {
+      "trigger": "raw-count/digest/binding/join/target-safety/scorer-integrity violation",
+      "classification": "INVALID_EVIDENCE",
+      "next_action_main_same_run": "Preserve only prospectively allowed invalidity/diagnostics and STOP; no scientific claim/rescore.",
+      "one_way_execution_allowed": false,
+      "outcome_independent_prospectively_fixed": true
+    },
+    "V4_POST_START_FAILURE": {
+      "trigger": "any operational failure after STARTED before valid terminal evidence",
       "classification": "POST_START_FAILURE",
-      "next_action_main_same_run": "none; v3 consumed/no-retry and C19 execution stops",
+      "next_action_main_same_run": "Mark v4 consumed/no-retry, preserve only allowed diagnostics, durable report, STOP.",
       "one_way_execution_allowed": false,
-      "go_stop": "STOP; no automatic v4",
-      "prospectively_fixed": true
-    },
-    "GENERIC_PRESERVATION_READINESS_BLOCKER": {
-      "trigger": "Synthetic/dev-only readiness exposes an outcome-independent preservation/tooling defect.",
-      "next_action_main_same_run": "MAIN may fix generic mechanics and rerun readiness while no scientific identity or official data is involved.",
-      "one_way_execution_allowed": false,
-      "go_stop": "GO through mechanical readiness fixes",
-      "prospectively_fixed": true
-    },
-    "GENERIC_PRESERVATION_READINESS_PASS": {
-      "trigger": "Exact synthetic raw is durably preserved, freshly re-fetched, digest-equal, no-clobber/order checks green, exact-head CI/review green.",
-      "next_action_main_same_run": "Finalize readiness artifacts/report and STOP; return to Analyst for fresh formal scientific-object selection.",
-      "one_way_execution_allowed": false,
-      "go_stop": "STOP after readiness finalization",
-      "prospectively_fixed": true
-    },
-    "GENERIC_PRESERVATION_READINESS_FAIL": {
-      "trigger": "Intended mechanism cannot prove lossless durable preservation.",
-      "next_action_main_same_run": "Preserve readiness diagnostics and STOP for architecture decision; spend no scientific identity.",
-      "one_way_execution_allowed": false,
-      "go_stop": "STOP",
-      "prospectively_fixed": true
-    },
-    "READINESS_SEMANTIC_COUPLING": {
-      "trigger": "A fix requires C19-specific transient raw/outcome recovery or a future scientific protocol choice.",
-      "next_action_main_same_run": "STOP and return to Analyst.",
-      "one_way_execution_allowed": false,
-      "go_stop": "STOP",
-      "prospectively_fixed": true
-    },
-    "INVALID_EVIDENCE": {
-      "trigger": "Any attempted scientific evidence would violate binding/order/integrity constraints.",
-      "next_action_main_same_run": "Create no scientific result; preserve diagnostics/invalidity only and STOP.",
-      "one_way_execution_allowed": false,
-      "go_stop": "STOP",
-      "prospectively_fixed": true
-    },
-    "PASS": {"applicable": false, "reason": "No fresh formal scientific identity is authorized in this handoff."},
-    "FAIL": {"applicable": false, "reason": "No fresh formal scientific identity is authorized in this handoff."},
-    "INCONCLUSIVE": {"applicable": false, "reason": "No fresh formal scientific identity is authorized in this handoff."}
+      "stop": "no automatic v5 and no recovery/rescore of transient output",
+      "outcome_independent_prospectively_fixed": true
+    }
   },
   "blocked_until": {
-    "new_one_way_science": "generic raw-preservation readiness passes and a newer Analyst handoff prospectively defines a fresh formal object",
-    "C19_v4": "blocked and not authorized",
-    "formal_SUB": "fresh independent object is fully specified and reserved",
-    "SUB_incubator": "one bounded NON_EVIDENTIARY stress may proceed if no formal lane appears"
+    "v4_one_way": "fresh v4 branch/package built; science invariance proven; qualified preservation bound; exact-head CI/review green; fresh identity/ref collision checks clean",
+    "c19_v5": "FORBIDDEN_BY_THIS_HANDOFF",
+    "formal_sub": "new independent object fully prospectively specified and reserved"
   },
   "do_not_touch": [
-    "c19-external-v2-official-v2 and its control history",
-    "c19-external-v2-official-v3 and its control history",
-    "transient/diagnostic v3 raw metadata as scientific evidence",
-    "A01 MD-001 / P2 candidate-002 / P3 candidate-001 / Family-A P4 candidate-001 consumed objects",
-    "RV01 R01-16/R01-17 consumed objects",
-    "RV02 D1 consumed object",
-    "CX01 Candidate-002/formal evidence",
-    "all legacy freeze/preserve/formal/evidence authorities"
+    "C19-v2 identity/control",
+    "C19-v3 identity/control",
+    "transient v3 raw or diagnostic artifacts as scientific evidence",
+    "consumed A01/RV01/RV02/CX identities",
+    "legacy freeze/preserve/evidence authorities",
+    "rejected SUB exploratory branch/results as formal evidence"
   ],
-  "active_MAIN_claim_observed": "C19-v3 consumed by post-START raw-preservation failure after target-blind acquisition and before evaluator targets/scoring; no terminal scientific result; no retry; no auto v4.",
-  "active_SUB_claim_observed": "NON_EVIDENTIARY synthetic revision-authority FSA feasibility; formal lane null.",
-  "top_recommendation": "Stop spending C19 one-way identities. MAIN should first prove a generic immutable raw-preservation boundary on synthetic/dev-only data; SUB may perform only one further bounded non-evidentiary FSA stress.",
+  "active_MAIN_claim_observed": "Generic preservation readiness completed PASS; MAIN stopped pending this Analyst decision.",
+  "active_SUB_claim_observed": "Exploratory incubator branch moved beyond the durable SUB report; no formal lane/identity and no MAIN collision.",
+  "top_recommendation": "MAIN should make one final fresh C19-v4 attempt under unchanged science and the independently qualified preservation boundary; no v5 is authorized.",
   "top_3": [
-    {"rank": 1, "owner": "main", "action": "Generic immutable raw-preservation/evidence-boundary readiness qualification; no C19-v4", "information_value": "HIGH_ENABLING", "distance": "NEAR_TO_MEDIUM"},
-    {"rank": 2, "owner": "sub", "action": "CONTINUE_EXPLORING one bounded same-rank/provenance-sensitive FSA stress, then stop for review", "information_value": "MEDIUM_FUTURE", "distance": "NEAR", "formal": false},
-    {"rank": 3, "owner": "evidence_analyst_future", "action": "After readiness/incubator review, prospectively choose a fresh formal object; matched revision-authority/FSA reduction currently outranks automatic C19-v4", "information_value": "HIGH_FUTURE", "distance": "NOT_READY"}
+    {"rank": 1, "owner": "MAIN", "action": "Build/admit/execute exactly one C19-v4 preservation-qualified successor under unchanged science.", "information_value": "VERY_HIGH", "distance": "NEAR"},
+    {"rank": 2, "owner": "SUB", "action": "Reject/retire the current provenance-FSA standalone candidate; preserve only its comparator lesson. If idle, incubate a different independent NON_EVIDENTIARY line or no-op.", "information_value": "MEDIUM_PORTFOLIO", "distance": "INDEPENDENT"},
+    {"rank": 3, "owner": "GOVERNANCE_SUBSTRATE", "action": "Independently review/promote the qualified generic raw-preservation primitive to main and reconcile Issue #147 without blocking v4.", "information_value": "HIGH_RELIABILITY", "distance": "NEAR"}
   ],
-  "consumed_identities": {
-    "c19-external-v2-official-v2": {"consumed": true, "retry_allowed": false, "result": "POST_START_FAILURE_BEFORE_MODEL_EXECUTION"},
-    "c19-external-v2-official-v3": {"consumed": true, "retry_allowed": false, "automatic_successor_allowed": false, "result": "POST_START_FAILURE_AFTER_TARGET_BLIND_ACQUISITION_BEFORE_RAW_PRESERVATION"},
-    "inherited": ["A01 MD-001", "A01 P2 candidate-002", "A01 P3 candidate-001", "A01 Family-A P4 candidate-001", "RV01 R01-16 family", "RV01 R01-17", "RV02 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a", "CX01 Candidate-002/formal evidence", "C19 predecessor c19-external-v2-official-v1 retired-unSTARTED"]
-  },
+  "consumed_identities": [
+    "c19-external-v2-official-v2",
+    "c19-external-v2-official-v3",
+    "A01 MD-001",
+    "A01 P2 candidate-002",
+    "A01 P3 candidate-001",
+    "A01 P4 candidate-001",
+    "RV01 R01-16",
+    "RV01 R01-17",
+    "RV02 D1",
+    "CX01 Candidate-002/formal object"
+  ],
   "blockers": [
-    "C19-v2 and v3 one-way identities are consumed/no-retry without a valid scientific result",
-    "v3 transient raw was not immutably preserved and may not be scored/recovered as evidence",
-    "automatic v4 is forbidden and this handoff does not authorize it",
-    "generic raw-preservation boundary is not yet qualified outcome-independently",
-    "no independent formal SUB object is sufficiently specified",
-    "external role-specific literature/audit latest/state mailboxes remain absent"
+    "v4 does not yet exist and may not cross STARTED until all prospectively fixed admission gates pass",
+    "no formal SUB lane is currently sufficiently specified",
+    "external role-specific latest/state mailbox paths are absent; role-suffixed history fallback remains necessary"
   ],
-  "governance_advisory": {
-    "issue_drift": "#147 still describes v2 as prospectively planned and should be reconciled/closed against canonical v2/v3 post-START dispositions; #139 remains valid governance tracking.",
-    "freeze_tag_migration": "13 legacy freeze branches remain; preserve them exactly. Authoritative Git tags remain 0.",
-    "tag_protection_gap": "repository rulesets 0; main protected=false; server-side authoritative tag namespace protection absent.",
-    "main_promotion_candidates": [
-      "generic exactly-once raw preservation and digest verification",
-      "exact source/runtime manifests",
-      "STARTED/no-clobber/identity collision primitives",
-      "fail-closed evaluator join validation",
-      "golden scorer fixtures",
-      "generic exact pair-coverage validation"
-    ],
-    "external_mailbox_schema_drift": "role-specific literature/latest|state and audit/latest|state paths are absent; role-suffixed history fallback remains necessary."
+  "go_stop_number_1": {
+    "GO": "fresh/unconsumed/unSTARTED v4; exact science-invariant source/protocol/package/input/runtime/scorer/preserver binding; exact-head CI/review green; preserve-before-target; 95920 raw rows; fresh no-clobber preserve ref; independent digest match; 1744 unique/total target-safe join; golden scorer gates green",
+    "STOP": "any scientific or runtime-version redesign, authority collision, target leakage, row-count/digest/join/scorer violation, INVALID_EVIDENCE or POST_START_FAILURE; v4 failure consumes v4 and no v5 is authorized",
+    "scientific_falsifiers": {"PASS": "BREU 95% bootstrap CI lower > 0", "FAIL": "upper <= 0", "INCONCLUSIVE": "valid CI contains 0"}
   },
-  "allocation_change": {
-    "changed_from_prior_handoff": true,
-    "reason": "new authoritative repository evidence: v3 crossed STARTED and ended POST_START_FAILURE at immutable raw preservation, becoming the second C19 identity consumed operationally without scientific output",
-    "changed_due_to_external_input": false,
-    "changed_due_to_exploratory_input": false,
-    "exploratory_effect": "raises future attractiveness of matched FSA/revision-authority reduction but does not create a formal lane"
+  "governance_advisory": {
+    "issue_drift": "Issue #147 is stale against consumed v2/v3 and prospectively authorized v4; reconcile operational text without treating Issue content as scientific authority.",
+    "tag_migration": "13 legacy freeze branches remain authoritative and must not be moved; no mass migration while server-side protection is absent.",
+    "tag_protection_gap": "0 tags, 0 repository rulesets, main unprotected; #139 remains open and non-blocking.",
+    "main_promotion_candidates": [
+      "qualified generic raw-preservation/digest primitive after independent review",
+      "exact source/runtime manifest verification",
+      "atomic STARTED/no-clobber/identity-collision primitives",
+      "generic fail-closed evaluator join and pair-coverage validators",
+      "stable control-plane pointer/index helpers"
+    ],
+    "legacy_main_drift": "historical CX01 candidate-specific workflows remain on main; defer reversible cleanup until it does not compete with science"
+  },
+  "allocation_change_reason": {
+    "MAIN": "Changed from identity-free readiness to one final v4 because repository evidence now contains an independent GENERIC_PRESERVATION_READINESS_PASS. No scientific v2/v3 outcome was observed or used.",
+    "SUB": "Current exploratory candidate changed from CONTINUE_EXPLORING to REJECT after the authorized richer stress showed the strongest state-complexity result is dominated by the constructed provenance-token semantics.",
+    "external_input_changed_allocation": false
   }
 }
