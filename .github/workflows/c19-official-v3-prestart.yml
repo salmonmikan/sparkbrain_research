@@ -31,6 +31,10 @@ jobs:
         run: |
           set -euo pipefail
           python scripts/check_c19_official_v3_runtime.py
+      - name: Install pre-START-only scorer test tooling
+        run: |
+          set -euo pipefail
+          python -m pip install "pytest>=8.0"
       - name: V2 scientific scorer regression remains green
         run: |
           set -euo pipefail
