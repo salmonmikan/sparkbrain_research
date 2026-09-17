@@ -20,13 +20,20 @@ from sparkbrain.v03_external_validation.c19_r2_protocol import (
     expected_r2_rows,
     load_and_validate_contract,
 )
-from sparkbrain.v03_external_validation.c19_r2_scoring import RawBundleR2, score_reduction
+from sparkbrain.v03_external_validation.c19_r2_scoring import (
+    RawBundleR2,
+    score_reduction,
+)
 from sparkbrain.v03_external_validation.c19_r2_source_map import (
     read_atomic_idx_source_map,
     write_atomic_idx_source_map_no_clobber,
 )
-from sparkbrain.v03_external_validation.c19_r2_state_tracker import state_tracker_executor
-from sparkbrain.v03_external_validation.official_execution_v4 import reconstruct_raw_jsonl_v4
+from sparkbrain.v03_external_validation.c19_r2_state_tracker import (
+    state_tracker_executor,
+)
+from sparkbrain.v03_external_validation.official_execution_v4 import (
+    reconstruct_raw_jsonl_v4,
+)
 from sparkbrain.v03_external_validation.official_io_v4 import (
     assert_visible_envelope_target_blind,
     evaluator_targets_after_preservation,
@@ -44,7 +51,13 @@ STARTED_PREFIX = "control/c19-r2-fsa-state-tracker-started-"
 
 
 def _git(*args: str) -> str:
-    return subprocess.run(["git", *args], cwd=ROOT, check=True, capture_output=True, text=True).stdout.strip()
+    return subprocess.run(
+        ["git", *args],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.strip()
 
 
 def _git_head() -> str:
@@ -93,7 +106,9 @@ def _reconstruct_r2_raw(path: Path, expected_sha256: str) -> RawBundleR2:
     return raw
 
 
-def _validate_authority(*, analyst_commit: str, package_commit: str) -> dict[str, Any]:
+def _validate_authority(
+    *, analyst_commit: str, package_commit: str
+) -> dict[str, Any]:
     authority = _read_json(AUTHORITY_PATH)
     expected = {
         "schema_version": "1",
@@ -107,14 +122,30 @@ def _validate_authority(*, analyst_commit: str, package_commit: str) -> dict[str
             raise ValueError(f"R2 authority drift: {key}")
     if authority.get("evidence_analyst_commit") != analyst_commit:
         raise ValueError("R2 authority Analyst commit mismatch")
-    scientific_package = _require_sha(str(authority.get("scientific_package_commit", "")), "scientific_package_commit")
-    subprocess.run(["git", "merge-base", "--is-ancestor", scientific_package, package_commit], cwd=ROOT, check=True)
+    scientific_package = _require_sha(
+        str(authority.get("scientific_package_commit", "")),
+        "scientific_package_commit",
+    )
+    subprocess.run(
+        ["git", "merge-base", "--is-ancestor", scientific_package, package_commit],
+        cwd=ROOT,
+        check=True,
+    )
     allowed = authority.get("allowed_authority_paths")
-    if not isinstance(allowed, list) or not all(isinstance(item, str) for item in allowed):
+    if not isinstance(allowed, list) or not all(
+        isinstance(item, str) for item in allowed
+    ):
         raise ValueError("R2 authority allowed path set missing")
-    changed = set(_git("diff", "--name-only", f"{scientific_package}..{package_commit}").splitlines())
-    if changed - set(allowed):
-        raise ValueError(f"R2 authority package changed forbidden paths: {sorted(changed - set(allowed))}")
+    changed = set(
+        _git(
+            "diff", "--name-only", f"{scientific_package}..{package_commit}"
+        ).splitlines()
+    )
+    forbidden = changed - set(allowed)
+    if forbidden:
+        raise ValueError(
+            f"R2 authority package changed forbidden paths: {sorted(forbidden)}"
+        )
 
     bound_objects: list[Mapping[str, Any]] = []
     for key in ("scientific_contract", "preregistration"):
@@ -139,27 +170,55 @@ def _validate_authority(*, analyst_commit: str, package_commit: str) -> dict[str
             raise ValueError(f"R2 frozen scientific blob drift: {path}")
 
     frozen = load_and_validate_contract(ROOT / CONFIG_PATH)
-    if frozen["formal_identity"] is not None or frozen["official_execution_allowed"] is not False:
-        raise ValueError("R2 frozen scientific specification was mutated during authority packaging")
+    if (
+        frozen["formal_identity"] is not None
+        or frozen["official_execution_allowed"] is not False
+    ):
+        raise ValueError(
+            "R2 frozen scientific specification was mutated during authority packaging"
+        )
     return authority
 
 
 def prestart_smoke(args: argparse.Namespace) -> None:
-    package_commit = _require_sha(args.package_commit or _git_head(), "package_commit")
+    package_commit = _require_sha(
+        args.package_commit or _git_head(), "package_commit"
+    )
     analyst_commit = _require_sha(args.analyst_commit, "analyst_commit")
     if _git_head() != package_commit:
         raise RuntimeError("R2 pre-START smoke must run from exact package commit")
-    authority = _validate_authority(analyst_commit=analyst_commit, package_commit=package_commit)
-    if authority.get("started_ref") != "control/c19-r2-fsa-state-tracker-started-v1-20260918":
+    authority = _validate_authority(
+        analyst_commit=analyst_commit,
+        package_commit=package_commit,
+    )
+    if (
+        authority.get("started_ref")
+        != "control/c19-r2-fsa-state-tracker-started-v1-20260918"
+    ):
         raise ValueError("R2 STARTED ref binding drift")
-    if authority.get("preserve_ref") != "preserve/c19-r2-fsa-state-tracker-raw-c19-r2-fsa-state-tracker-official-v1":
+    if authority.get("preserve_ref") != (
+        "preserve/c19-r2-fsa-state-tracker-raw-"
+        "c19-r2-fsa-state-tracker-official-v1"
+    ):
         raise ValueError("R2 preserve ref binding drift")
-    if authority.get("evidence_tag") != "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1":
+    if authority.get("evidence_tag") != (
+        "evidence/c19-r2-fsa-state-tracker-"
+        "c19-r2-fsa-state-tracker-official-v1"
+    ):
         raise ValueError("R2 evidence tag binding drift")
     rows = expected_r2_rows()
     if len(rows) != 5:
         raise ValueError("R2 row inventory drift")
-    print(json.dumps({"status": "R2_AUTHORITY_PACKAGE_READY", "run_identity": IDENTITY, "rows": len(rows)}, sort_keys=True))
+    print(
+        json.dumps(
+            {
+                "status": "R2_AUTHORITY_PACKAGE_READY",
+                "run_identity": IDENTITY,
+                "rows": len(rows),
+            },
+            sort_keys=True,
+        )
+    )
 
 
 def acquire_raw(args: argparse.Namespace) -> None:
@@ -169,14 +228,19 @@ def acquire_raw(args: argparse.Namespace) -> None:
         raise RuntimeError("R2 official acquisition must run from exact package commit")
     if not args.started_ref.startswith(STARTED_PREFIX):
         raise ValueError("R2 STARTED ref outside authorized namespace")
-    authority = _validate_authority(analyst_commit=analyst_commit, package_commit=package_commit)
+    authority = _validate_authority(
+        analyst_commit=analyst_commit,
+        package_commit=package_commit,
+    )
     if authority.get("started_ref") != args.started_ref:
         raise ValueError("R2 STARTED ref differs from authority binding")
 
     _spec, pairs = load_verified_official_pairs(args.cache, args.spec)
     examples = target_blind_visible_examples(pairs)
     assert_visible_envelope_target_blind(examples)
-    source_map, source_map_sha256 = write_atomic_idx_source_map_no_clobber(args.source_map, pairs)
+    source_map, source_map_sha256 = write_atomic_idx_source_map_no_clobber(
+        args.source_map, pairs
+    )
     if len(source_map) != 1744:
         raise ValueError("R2 target-free source map inventory drift")
 
@@ -199,7 +263,9 @@ def acquire_raw(args: argparse.Namespace) -> None:
                         "mechanism_id": str(row["mechanism_id"]),
                         "seed": int(row["seed"]),
                         "pair_index": int(emitted["pair_index"]),
-                        "record_id_hash": hashlib.sha256(record_id.encode("utf-8")).hexdigest(),
+                        "record_id_hash": hashlib.sha256(
+                            record_id.encode("utf-8")
+                        ).hexdigest(),
                         "source_index": int(emitted["source_index"]),
                         "step_index": int(metadata["final_step_index"]),
                         "prediction": emitted["prediction"],
@@ -232,22 +298,39 @@ def acquire_raw(args: argparse.Namespace) -> None:
 def score_preserved(args: argparse.Namespace) -> None:
     package_commit = _require_sha(args.package_commit, "package_commit")
     analyst_commit = _require_sha(args.analyst_commit, "analyst_commit")
-    preservation_commit = _require_sha(args.preservation_commit, "preservation_commit")
+    preservation_commit = _require_sha(
+        args.preservation_commit, "preservation_commit"
+    )
     if _git_head() != package_commit:
         raise RuntimeError("R2 scoring must run from exact package commit")
-    _validate_authority(analyst_commit=analyst_commit, package_commit=package_commit)
+    _validate_authority(
+        analyst_commit=analyst_commit,
+        package_commit=package_commit,
+    )
     manifest = _read_json(args.manifest)
-    if manifest.get("protocol_id") != PROTOCOL_ID or manifest.get("run_identity") != IDENTITY:
+    if (
+        manifest.get("protocol_id") != PROTOCOL_ID
+        or manifest.get("run_identity") != IDENTITY
+    ):
         raise ValueError("R2 preserved manifest identity/protocol mismatch")
     if manifest.get("exact_package_commit") != package_commit:
         raise ValueError("R2 preserved manifest package mismatch")
     if manifest.get("evidence_analyst_commit") != analyst_commit:
         raise ValueError("R2 preserved manifest Analyst mismatch")
-    raw = _reconstruct_r2_raw(args.raw, str(manifest.get("raw_bundle_sha256", "")))
-    source_map = read_atomic_idx_source_map(args.source_map, expected_sha256=str(manifest.get("atomic_idx_source_map_sha256", "")))
+    raw = _reconstruct_r2_raw(
+        args.raw,
+        str(manifest.get("raw_bundle_sha256", "")),
+    )
+    source_map = read_atomic_idx_source_map(
+        args.source_map,
+        expected_sha256=str(manifest.get("atomic_idx_source_map_sha256", "")),
+    )
 
     v4_manifest = _read_json(args.v4_manifest)
-    v4_raw = reconstruct_raw_jsonl_v4(args.v4_raw, expected_sha256=str(v4_manifest.get("raw_sha256", "")))
+    v4_raw = reconstruct_raw_jsonl_v4(
+        args.v4_raw,
+        expected_sha256=str(v4_manifest.get("raw_sha256", "")),
+    )
     _spec, pairs = load_verified_official_pairs(args.cache, args.spec)
     evaluator_targets = evaluator_targets_after_preservation(pairs, v4_raw)
     with network_blocked():
@@ -270,7 +353,9 @@ def score_preserved(args: argparse.Namespace) -> None:
             "exact_package_commit": package_commit,
             "raw_preservation_commit": preservation_commit,
             "raw_bundle_sha256": raw.sha256,
-            "atomic_idx_source_map_sha256": manifest["atomic_idx_source_map_sha256"],
+            "atomic_idx_source_map_sha256": manifest[
+                "atomic_idx_source_map_sha256"
+            ],
             "v4_raw_sha256": v4_manifest["raw_sha256"],
         }
     )
@@ -278,7 +363,9 @@ def score_preserved(args: argparse.Namespace) -> None:
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="C19-R2 authority-bound one-way runner")
+    parser = argparse.ArgumentParser(
+        description="C19-R2 authority-bound one-way runner"
+    )
     sub = parser.add_subparsers(dest="phase", required=True)
 
     smoke = sub.add_parser("prestart-smoke")
