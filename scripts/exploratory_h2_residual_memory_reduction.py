@@ -12,7 +12,7 @@ import json
 import random
 from collections.abc import Iterable
 from dataclasses import dataclass
-from functools import lru_cache
+from functools import cache
 
 DECAY_GRID = tuple(round(step / 100.0, 2) for step in range(96))
 DWELL_STEPS = (2, 4, 8, 16)
@@ -36,7 +36,7 @@ class Episode:
     return_index: int
 
 
-@lru_cache(maxsize=None)
+@cache
 def make_episodes(*, seed: int, count: int = 512) -> tuple[Episode, ...]:
     """Create A -> B -> A returning-state episodes from a fixed synthetic world."""
     rng = random.Random(seed)
@@ -59,7 +59,7 @@ def _predict(score_a: float, score_b: float) -> int:
     return 1 if score_a >= score_b else -1
 
 
-@lru_cache(maxsize=None)
+@cache
 def evaluate(*, seed: int, decay: float, mechanism: str) -> dict[str, float]:
     """Evaluate one fixed mechanism/decay without fitting to the evaluation seed."""
     if not 0.0 <= decay <= 0.95:
