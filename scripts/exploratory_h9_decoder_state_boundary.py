@@ -21,7 +21,9 @@ def stateless_current_spike_only(label: str, gap: int) -> tuple[str | None, int]
     return None, 0
 
 
-def analog_leaky_hidden_state(label: str, gap: int, decay: float) -> tuple[str | None, float]:
+def analog_leaky_hidden_state(
+    label: str, gap: int, decay: float
+) -> tuple[str | None, float]:
     a = 1.0 if label == "A" else 0.0
     b = 1.0 if label == "B" else 0.0
     for _ in range(gap):
@@ -108,10 +110,22 @@ def run() -> dict:
             "max_recurrent_spikes_per_trial": max(spike_costs),
         },
         "interpretation": [
-            "No current query spike plus no retained state cannot solve this delayed recall toy.",
-            "Hidden continuous leaky state can solve a decay-dependent horizon with zero non-sensory recurrent spikes.",
-            "A toy recurrent spike latch solves all tested gaps but uses recurrent spike activity proportional to the gap.",
-            "A future H9 fully-spiking boundary must explicitly account for state carried by decoders/filters; spike-valued I/O alone is insufficient.",
+            (
+                "No current query spike plus no retained state cannot solve this "
+                "delayed recall toy."
+            ),
+            (
+                "Hidden continuous leaky state can solve a decay-dependent horizon "
+                "with zero non-sensory recurrent spikes."
+            ),
+            (
+                "A toy recurrent spike latch solves all tested gaps but uses recurrent "
+                "spike activity proportional to the gap."
+            ),
+            (
+                "A future H9 fully-spiking boundary must explicitly account for state "
+                "carried by decoders/filters; spike-valued I/O alone is insufficient."
+            ),
         ],
     }
 
