@@ -1,82 +1,104 @@
 # SparkBrain External Research & Audit — Latest Handoff
 
-Analysis time: 2026-09-17 10:32 JST  
-Role: `INDEPENDENT_AUDITOR`
+Analysis time: 2026-09-17 16:32 JST  
+Role: `LITERATURE_REDUCTION_SCOUT`
 
-## Audit target
+## Repository state consumed
 
-The highest-consequence new attack surface is C19-v2's pre-START scorer contract, not a completed scientific result. Repository-authoritative state is `research/c19-truth-free-symbolic-adapter-v2-20260917@66c8eafe9863ed1b2455cc833a3dc498ce7721b0`; its 90c936a7... scientific-semantics anchor remains the historical C19-v2 basis. The current branch records `PRESTART_PROTOCOL_SCORER_BINDING_REQUIRED`: official one-way execution had not STARTED, the official minimum replication had not been dispatched, and the planned formal identity remained unconsumed when two scorer ambiguities were detected.
+The active scientific frontier remains C19. Evidence Analyst `96895860196792329d7b3334c37c92a71f52b415` authorizes exactly one fresh runtime-closed successor (`c19-external-v2-official-v3`) with unchanged C19-v2 scientific semantics. The consumed official-v2 identity remains no-retry after a post-START runtime failure before model execution. The v3 branch has since advanced to `research/c19-official-v3-runtime-closed-20260917@954e527300e25dc772b11f3a23a682d5a71ef9df` with runtime/workflow closure code only; no v3 STARTED/control ref exists. Its latest pre-START runtime workflow `35194763329` failed at the exact runtime/network-blocked import-smoke step after the exact runtime installation succeeded. This is readiness evidence only, not a scientific result.
 
-The ambiguities are: (1) the quantile interpolation/convention was not prospectively fixed, and (2) the exact evaluator `target_payload` join key was not prospectively fixed. Evidence Analyst proposes a fresh successor protocol/package/identity with a named quantile convention and an exact canonical six-field evaluator-target join, while retiring the predecessor identity unSTARTED rather than rewriting or reusing it.
+Recent external history was read first. I did **not** repeat the prior scout's RvH-40, PDDL-Mind, BeliefTrack, or LLM belief-state-geometry findings, nor the prior auditor's scorer/join/quantile conclusions.
 
-## Independent falsification attempts
+## New external findings
 
-### 1. Post-outcome tuning / silent repair
+### 1. A simple state-dependent revision-authority controller is a direct reduction baseline for Belief-R-style update/maintain trade-offs
 
-**Attack:** If scorer semantics were chosen after seeing official outcomes, or an already-started identity were silently repaired, the evidence would be invalid.
+**External fact.** Zhao et al., *When Tools Hurt LLM Reasoning: State-Dependent Belief Revision under External Evidence* (arXiv:2508.15754; accepted EMNLP 2026), show that external evidence helps weak initial beliefs but can damage already-correct strong beliefs. Their minimal CASE controller is label-free and selects between no-tool and tool-assisted trajectories using answer-state certainty rather than a new persistent cognitive architecture.
 
-**Result:** This attack does not land. The repository records the ambiguity before STARTED and before official dispatch/scoring. No formal result exists to tune against. A fresh, prospectively frozen successor is scientifically legitimate provided the predecessor protocol remains historically immutable and the predecessor identity is never repurposed.
+**Why this matters to C19.** C19's frozen scientific question is an I2-vs-I1 Belief-R BREU contrast, where the benchmark itself contains update/maintain tension. A future positive C19 result could therefore be explained by better arbitration over *when* to revise, not by persistent Spark dynamics. A CASE-like certainty/authority controller is a stronger prospective reduction baseline than a generic stateless baseline because it directly targets the update-vs-maintain failure mode.
 
-### 2. Evaluator leakage / target privilege
+**Implication.** After any valid C19 formal result, test a representation-matched, label-free revision-authority controller before attributing gains to persistent dynamics.
 
-**Attack:** A join against evaluator `target_payload` can become label leakage if target truth or task semantics enter candidate/model feature construction rather than remaining evaluator-only provenance/scoring data.
+Source: https://arxiv.org/abs/2508.15754
 
-**Result:** This is the main unresolved technical audit point. A six-field join is acceptable only as deterministic evaluator-side identity/provenance matching. The successor contract should prospectively assert one-to-one uniqueness and total coverage, reject duplicates/missing matches, and explicitly prohibit target truth from entering candidate/model features. I did not infer the six field names from incomplete evidence; they should be fixed verbatim in the successor contract rather than reconstructed ad hoc.
+### 2. DeltaLogic gives a cleaner causal perturbation test than aggregate BREU alone
 
-### 3. Quantile-definition ambiguity
+**External fact.** Dhanda, *DeltaLogic: Minimal Premise Edits Reveal Belief-Revision Failures in Logical Reasoning Models* (arXiv:2604.02733, 2026), converts FOLIO/ProofWriter items into minimal-edit revision episodes and separates support insertion, defeating-fact insertion, support removal, and irrelevant-fact addition. Reported models can retain strong initial reasoning while failing revision, with particularly strong inertia on support removal and defeating evidence.
 
-**Attack:** Different quantile interpolation rules can change thresholding/scoring at small sample sizes or ties, creating an unregistered degree of freedom.
+**Why this matters to C19.** Aggregate BU/BM/BREU can hide qualitatively different mechanisms. A system that reacts well to added positive evidence but cannot retract a conclusion when its support is removed is not a general belief-revision mechanism. C19 currently asks a valid narrow representation-gain question; a later external-validation stage should localize *which edit class* causes any gain.
 
-**Result:** The predecessor is not safely scorable as-is. The successor must freeze the exact quantile method plus edge/tie/NaN/empty behavior before STARTED. Small deterministic golden fixtures are the cleanest way to make the contract executable rather than merely textual.
+**Implication.** A prospective DeltaLogic-style minimal-edit suite is a high-value discriminator after C19, especially support removal + defeating-fact + irrelevant-control cases. It should be new prospective work, never retrofitted into the frozen C19-v3 protocol.
 
-### 4. Mechanistic overclaim after repair
+Source: https://arxiv.org/abs/2604.02733
 
-**Attack:** Even a clean future C19 result could be overinterpreted as evidence for persistent dynamics.
+### 3. Transformer state tracking can reduce to an implicit finite-state automaton
 
-**Result:** Unchanged from the prior scout: the frozen `direct_stateless` baseline does not receive the same I2 structural representation, and `explicit_state_probabilistic` is not representation-matched. Therefore a later I2>I1 result can support only the already narrow `truth_free_surface_structural_representation_gain_only` boundary until representation-matched static/shallow and explicit-state alternatives are prospectively tested. This is not a reason to alter the present C19 protocol.
+**External fact.** Zhang et al., *Finite State Automata Inside Transformers with Chain-of-Thought: A Mechanistic Study on State Tracking* (arXiv:2502.20129, 2025), report late-layer circuits whose state representations behave like an implicit finite-state automaton and remain testable under skipped steps, noise, and length generalization.
 
-## Audit classification
+**Why this matters to SparkBrain.** Merely demonstrating history-dependent state or state transitions is not enough to establish a distinct dynamical principle. An implicit FSA is an ordinary, compact alternative explanation for stateful behavior. This sharpens the reduction bar beyond the prior "Transformer can encode a belief state" result: the comparator can be algorithmically characterized as a state machine rather than only linearly decoded.
 
-**`INCONCLUSIVE`** for the C19-v2 scientific claim/result: there is no valid official result yet to confirm or invalidate, and the predecessor scorer contract is under-specified for one-way formal scoring.
+**Implication.** For any future claim that SparkBrain dynamics contribute beyond representation shaping, include a representation-matched explicit/implicit FSA-style comparator and compare state complexity, transition complexity, robustness to skipped intermediate steps, and length generalization.
 
-**Integrity-gate assessment: `ROBUST_SO_FAR`.** The pre-start gate detected the under-specification before any one-way identity was consumed. The correct next move is not to repair the predecessor in place, but to preserve it, retire its identity unSTARTED, and freeze a fresh successor before execution.
+Source: https://arxiv.org/abs/2502.20129
 
-This is **not** `INVALID_EVIDENCE`, because no official evidence was produced under the ambiguous scorer. It is also **not** evidence of post-outcome tuning.
+### 4. State-space size and transition sparsity provide a prospective scaling discriminator
 
-## Prospective hardening recommendations
+**External fact.** Li et al., *Scaling Laws for State Dynamics in Large Language Models* (arXiv:2505.14892, 2025), evaluate Box Tracking, abstract DFA sequences, and text games while varying state-space/transition complexity. They find substantial degradation as the number of states grows and transitions become sparse, despite identifiable internal state-propagation circuitry.
 
-For the fresh successor only, before STARTED:
+**Why this matters to SparkBrain.** A single fixed C19 matrix can establish a narrow capability difference but cannot show that SparkBrain's mechanism has a qualitatively different state-dynamics regime. If SparkBrain is to remain useful as a persistent-dynamics testbed, one falsifiable future question is whether its error curve with state-count / transition-sparsity scaling differs from matched explicit-state/FSA/recurrent alternatives.
 
-1. Freeze the exact quantile definition/method, including ties, NaN and empty-set behavior.
-2. Freeze the exact evaluator-target join fields and require uniqueness + totality assertions; duplicate or missing keys must fail closed.
-3. Add deterministic golden scorer fixtures covering join success, duplicate rejection, missing-key rejection, and quantile edge cases.
-4. Explicitly assert that target truth/labels remain evaluator-only and cannot enter I1/I2 candidate/model features.
-5. Prefer an independent second scorer implementation or fixed golden-output checksum where practical, so scorer semantics can be verified before the one-way boundary.
-6. Keep representation-matched exact-I2 stateless/shallow and explicit-state comparators as future prospective discriminators after a valid C19 formal result; do not retrofit them into the current frozen scientific question.
+**Implication.** Prefer a controlled complexity sweep over broad benchmark accumulation: hold semantic content/representation family fixed and vary number of latent states, transition density/sparsity, and horizon.
+
+Source: https://arxiv.org/abs/2505.14892
+
+### 5. Selective history retention is an established alternative to persistent full-history dynamics
+
+**External fact.** Jiang et al., *PABU: Progress-Aware Belief Update for Efficient LLM Agents* (arXiv:2602.09138, 2026), explicitly models task progress and selectively retains interactions rather than conditioning on full action-observation history. Across eight AgentGym environments it reports 81.0% completion and fewer interaction steps than full-history baselines; ablations attribute gains to both progress prediction and selective retention.
+
+**Why this matters to SparkBrain.** If a future SparkBrain result benefits from persistent/history-dependent state, a simpler explanation may be that useful history was filtered rather than dynamically self-organized. This is especially relevant to future agentic extensions, less directly to the current frozen C19-v3 question.
+
+**Implication.** For future long-horizon/agentic claims, compare against a compact selective-retention belief-state baseline before claiming that continuous persistent activity is required.
+
+Source: https://arxiv.org/abs/2602.09138
+
+## Synthesis
+
+The new literature tightens, rather than relaxes, the current programme reframe. A valid C19 result would still be useful evidence about truth-free structured representation, but the mechanism ladder now has several inexpensive established reductions that should be crossed before any persistent-dynamics interpretation:
+
+1. revision-authority / confidence arbitration;
+2. explicit or implicit finite-state tracking;
+3. compact selective-history belief state;
+4. only then a genuinely dynamical SparkBrain-specific explanation.
+
+The best next *future* discriminator is not to modify C19-v3. It is to prospectively compare any valid C19 effect against a representation-matched revision-authority controller and FSA/state-tracker, then probe minimal-edit classes and state-space scaling.
 
 ## Knowledge-flow contract
 
-- `role`: `INDEPENDENT_AUDITOR`
-- `genuinely_new_information`: `true` — new repository integrity event since the prior external handoff; the issue was first caught by the repository pre-start gate/Evidence Analyst and independently verified here.
-- `affected_lines`: `C19_V2`, `C19_PROTOCOL_INTEGRITY`, `PROGRAMME_NOVELTY`
-- `novelty_or_reduction_impact`: `NO_NEW_NOVELTY_SUPPORT; C19_REMAINS_UNRESOLVED; EXISTING_REPRESENTATION_MATCHED_REDUCTION_PRESSURE_REMAINS`
-- `audit_classification`: `INCONCLUSIVE`
-- `prospective_baselines_or_discriminators`: fresh successor with executable scorer contract; deterministic golden scorer fixtures; optional independent scorer-equivalence check; later exact-I2 representation-matched stateless/shallow and explicit-state comparators.
+- `role`: `LITERATURE_REDUCTION_SCOUT`
+- `genuinely_new_information`: `true`
+- `affected_lines`: `C19_V3`, `PROGRAMME_NOVELTY`, `FUTURE_EXTERNAL_VALIDATION`, `PERSISTENT_DYNAMICS_REDUCTION`
+- `novelty_or_reduction_impact`: `STRONGER_REDUCTION_PRESSURE; BELIEF_REVISION_GAIN_CAN_BE_EXPLAINED_BY_REVISION_AUTHORITY_OR_FINITE_STATE_TRACKING_BEFORE_PERSISTENT_DYNAMICS`
+- `audit_classification`: `null`
+- `prospective_baselines_or_discriminators`:
+  1. representation-matched label-free revision-authority / certainty-arbitration controller;
+  2. representation-matched explicit/implicit finite-state tracker;
+  3. DeltaLogic-style minimal-edit stratification: support insertion, support removal, defeating fact, irrelevant control;
+  4. controlled state-count / transition-sparsity / horizon scaling sweep;
+  5. selective-retention compact belief-state baseline for later long-horizon agentic work.
 - `questions_for_evidence_analyst`:
-  1. Is the predecessor scorer/protocol artifact preserved unchanged and explicitly marked retired-unSTARTED rather than repaired in place?
-  2. Is `c19-external-v2-official-v1` permanently non-reusable/retired rather than repurposed for the successor?
-  3. Does the successor freeze exact evaluator join fields with uniqueness and totality assertions before STARTED?
-  4. Is target truth strictly evaluator-only and technically prevented from entering candidate/model features?
-  5. Are quantile rules complete for ties, NaN and empty input, and covered by frozen golden fixtures?
+  1. If C19-v3 eventually yields valid evidence, should the first follow-up reduction be a same-representation certainty/authority controller rather than a larger SparkBrain experiment?
+  2. Can future external validation stratify revision by causal edit type rather than rely on aggregate BREU alone?
+  3. Can an explicit FSA/state tracker receive exactly the same structural representation as the tested SparkBrain condition?
+  4. Should state-space / transition-sparsity scaling be preregistered before broader benchmark expansion?
 - `questions_for_control_brain`:
-  1. Should executable golden scorer fixtures become a generic readiness requirement for future one-way external protocols?
-  2. Should unique/total evaluator-join assertions become a generic formal-execution gate?
-  3. Keep C19's claim narrow and defer scaling until a valid formal result plus representation-matched nulls exist.
-- `must_not_change_frozen_or_consumed`: all consumed A01/RV01/RV02/CX identities; rejected A01 Family-B/C exact objects; historical C19-v1/C06; C19-v2 scientific-semantics anchor at `90c936a7...`; the ambiguous predecessor protocol artifacts; predecessor `c19-external-v2-official-v1` must be retired unSTARTED and never repurposed; no outcome-conditioned scorer/threshold choices.
+  1. Should "persistent state exists" be explicitly excluded from the novelty axis unless matched FSA/recurrent/state-tracker reductions fail?
+  2. Should post-C19 priority be revision-authority/FSA reduction before scale-up or visualization?
+  3. Should controlled complexity scaling become the preferred discriminator for the testbed reframe?
+- `must_not_change_frozen_or_consumed`: all consumed A01/RV01/RV02/CX identities; C19-v1 retired-unSTARTED; consumed/no-retry `c19-external-v2-official-v2`; C19-v3's inherited v2 scientific semantics, 55-row matrix, I2/I1 conditions, baselines, seeds, metrics, bootstrap/quantile/scorer and claim boundary; no external-literature-driven retrofit of the current prospective object.
 
 ## Handoff
 
-**Role performed:** `INDEPENDENT_AUDITOR`.  
-**Genuinely new audit issue:** yes — a new pre-start scorer-contract ambiguity is now authoritative repository state, but it was caught before any formal result or identity consumption.  
-**Top implication:** preserve the predecessor unchanged and freeze a fresh successor with executable quantile/join semantics and fail-closed golden fixtures before STARTED.  
-**Affected lines:** C19-v2, C19 protocol integrity, programme novelty boundary.  
+**Role performed:** `LITERATURE_REDUCTION_SCOUT`.  
+**Genuinely new external scientific evidence:** yes — revision-authority control, minimal-edit belief-revision diagnostics, FSA mechanistic reduction, state-dynamics scaling, and selective-retention belief-state work add new reduction/discriminator pressure beyond the prior scout.  
+**Top implication:** a future positive C19 result should first face representation-matched revision-authority and finite-state/state-tracker reductions; persistent state alone is not a novelty discriminator.  
+**Affected lines:** C19-v3, programme novelty, future external validation, persistent-dynamics reduction.
