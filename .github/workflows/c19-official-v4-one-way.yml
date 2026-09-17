@@ -1,0 +1,195 @@
+name: C19 official-v4 one-way
+run-name: c19-official-v4-${{ github.ref_name }}
+
+on:
+  push:
+    branches:
+      - "control/c19-official-v4-started-*"
+    paths:
+      - "artifacts/v03/c19_external_validation/v2/official_v4/STARTED.json"
+
+permissions:
+  contents: write
+
+jobs:
+  one-way:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    steps:
+      - name: Checkout STARTED control ref
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ github.token }}
+
+      - name: Validate one-way STARTED marker and collision state
+        env:
+          STARTED_PATH: artifacts/v03/c19_external_validation/v2/official_v4/STARTED.json
+        run: |
+          set -euo pipefail
+          test "${GITHUB_RUN_ATTEMPT}" = '1'
+          case "${GITHUB_REF_NAME}" in
+            control/c19-official-v4-started-*) ;;
+            *) echo 'unexpected STARTED ref namespace' >&2; exit 1 ;;
+          esac
+          python - <<'PY' > /tmp/started.env
+          import json, os, re
+          from pathlib import Path
+          value = json.loads(Path(os.environ['STARTED_PATH']).read_text(encoding='utf-8'))
+          required = {
+              'state': 'STARTED',
+              'protocol_id': 'c19-external-v2-official-protocol-v4',
+              'run_identity': 'c19-external-v2-official-v4',
+              'no_retry': True,
+          }
+          for key, expected in required.items():
+              if value.get(key) != expected:
+                  raise SystemExit(f'STARTED marker mismatch: {key}')
+          for key in ('evidence_analyst_commit', 'exact_package_commit'):
+              raw = str(value.get(key, ''))
+              if re.fullmatch(r'[0-9a-f]{40}', raw) is None:
+                  raise SystemExit(f'invalid STARTED {key}')
+              print(f'{key.upper()}={raw}')
+          PY
+          cat /tmp/started.env >> "${GITHUB_ENV}"
+          PACKAGE_COMMIT="$(grep '^EXACT_PACKAGE_COMMIT=' /tmp/started.env | cut -d= -f2)"
+          git cat-file -e "${PACKAGE_COMMIT}^{commit}"
+          git merge-base --is-ancestor "${PACKAGE_COMMIT}" "${GITHUB_SHA}"
+          changed="$(git diff --name-only "${PACKAGE_COMMIT}..${GITHUB_SHA}")"
+          test "${changed}" = "${STARTED_PATH}"
+          PRESERVE_BRANCH='preserve/c19-official-v4-raw-c19-external-v2-official-v4'
+          EVIDENCE_TAG='evidence/c19-official-v4-c19-external-v2-official-v4'
+          if git ls-remote --exit-code --heads origin "${PRESERVE_BRANCH}" >/dev/null 2>&1; then exit 1; fi
+          if git ls-remote --exit-code --tags origin "refs/tags/${EVIDENCE_TAG}" >/dev/null 2>&1; then exit 1; fi
+          echo "PRESERVE_BRANCH=${PRESERVE_BRANCH}" >> "${GITHUB_ENV}"
+          echo "EVIDENCE_TAG=${EVIDENCE_TAG}" >> "${GITHUB_ENV}"
+          echo "STARTED_REF=${GITHUB_REF_NAME}" >> "${GITHUB_ENV}"
+
+      - name: Checkout exact package commit
+        run: |
+          set -euo pipefail
+          git checkout --detach "${EXACT_PACKAGE_COMMIT}"
+          test "$(git rev-parse HEAD)" = "${EXACT_PACKAGE_COMMIT}"
+
+      - name: Set up exact official Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11.16"
+          cache: pip
+
+      - name: Install exact official-v4 runtime
+        run: |
+          set -euo pipefail
+          test "$(python -c 'import platform; print(platform.python_version())')" = '3.11.16'
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[learned]"
+
+      - name: Re-prove exact runtime closure before official data access
+        run: |
+          set -euo pipefail
+          python scripts/check_c19_official_v4_runtime.py
+
+      - name: Acquire and verify pinned Belief-R after STARTED
+        run: |
+          set -euo pipefail
+          python scripts/manage_belief_r.py --acquire --cache "${RUNNER_TEMP}/belief_r-test.csv" > "${RUNNER_TEMP}/belief-r-verification.json"
+
+      - name: Execute target-blind acquisition with network blocked
+        run: |
+          set -euo pipefail
+          python scripts/run_c19_official_v4.py acquire-raw \
+            --cache "${RUNNER_TEMP}/belief_r-test.csv" \
+            --raw "${RUNNER_TEMP}/raw_predictions.jsonl" \
+            --manifest "${RUNNER_TEMP}/raw_manifest.json" \
+            --analyst-commit "${EVIDENCE_ANALYST_COMMIT}" \
+            --package-commit "${EXACT_PACKAGE_COMMIT}" \
+            --started-ref "${STARTED_REF}"
+
+      - name: Preserve target-blind raw through qualified no-clobber boundary
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          python scripts/preserve_raw_boundary.py \
+            --payload "${RUNNER_TEMP}/raw_predictions.jsonl" \
+            --manifest "${RUNNER_TEMP}/raw_manifest.json" \
+            --base-commit "${EXACT_PACKAGE_COMMIT}" \
+            --branch "${PRESERVE_BRANCH}" \
+            --destination "artifacts/v03/c19_external_validation/v2/official_v4" \
+            --commit-message "preserve(c19): retain official-v4 target-blind raw" \
+            --result "${RUNNER_TEMP}/preservation_result.json"
+          PRESERVATION_COMMIT="$(python -c 'import json,os; print(json.load(open(os.path.join(os.environ["RUNNER_TEMP"], "preservation_result.json")))["preservation_commit"])')"
+          echo "PRESERVATION_COMMIT=${PRESERVATION_COMMIT}" >> "${GITHUB_ENV}"
+
+      - name: Independently re-fetch exact preserved raw and verify digests
+        run: |
+          set -euo pipefail
+          git checkout --detach "${EXACT_PACKAGE_COMMIT}"
+          git fetch --no-tags origin "refs/heads/${PRESERVE_BRANCH}:refs/remotes/origin/${PRESERVE_BRANCH}"
+          REMOTE_PRESERVATION_COMMIT="$(git rev-parse "refs/remotes/origin/${PRESERVE_BRANCH}")"
+          test "${REMOTE_PRESERVATION_COMMIT}" = "${PRESERVATION_COMMIT}"
+          DEST='artifacts/v03/c19_external_validation/v2/official_v4'
+          git show "${PRESERVATION_COMMIT}:${DEST}/raw_predictions.jsonl" > "${RUNNER_TEMP}/preserved_raw_predictions.jsonl"
+          git show "${PRESERVATION_COMMIT}:${DEST}/raw_manifest.json" > "${RUNNER_TEMP}/preserved_raw_manifest.json"
+          test "$(sha256sum "${RUNNER_TEMP}/preserved_raw_predictions.jsonl" | awk '{print $1}')" = \
+            "$(sha256sum "${RUNNER_TEMP}/raw_predictions.jsonl" | awk '{print $1}')"
+          test "$(sha256sum "${RUNNER_TEMP}/preserved_raw_manifest.json" | awk '{print $1}')" = \
+            "$(sha256sum "${RUNNER_TEMP}/raw_manifest.json" | awk '{print $1}')"
+
+      - name: Materialize evaluator targets and score only preserved raw
+        run: |
+          set -euo pipefail
+          python scripts/run_c19_official_v4.py score-preserved \
+            --cache "${RUNNER_TEMP}/belief_r-test.csv" \
+            --raw "${RUNNER_TEMP}/preserved_raw_predictions.jsonl" \
+            --manifest "${RUNNER_TEMP}/preserved_raw_manifest.json" \
+            --output "${RUNNER_TEMP}/terminal_evidence" \
+            --analyst-commit "${EVIDENCE_ANALYST_COMMIT}" \
+            --package-commit "${EXACT_PACKAGE_COMMIT}" \
+            --preservation-commit "${PRESERVATION_COMMIT}"
+
+      - name: Create terminal evidence commit and annotated authority tag
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch --create c19-official-v4-terminal-evidence "${EXACT_PACKAGE_COMMIT}"
+          DEST='artifacts/v03/c19_external_validation/v2/official_v4/evidence'
+          mkdir -p "${DEST}"
+          cp "${RUNNER_TEMP}/terminal_evidence/"*.json "${DEST}/"
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          dest = Path('artifacts/v03/c19_external_validation/v2/official_v4/evidence')
+          value = {
+              'schema_version': '1', 'state': 'TERMINAL_EVIDENCE',
+              'protocol_id': 'c19-external-v2-official-protocol-v4',
+              'run_identity': 'c19-external-v2-official-v4',
+              'evidence_analyst_commit': os.environ['EVIDENCE_ANALYST_COMMIT'],
+              'exact_package_commit': os.environ['EXACT_PACKAGE_COMMIT'],
+              'started_ref': os.environ['STARTED_REF'],
+              'raw_preservation_commit': os.environ['PRESERVATION_COMMIT'],
+              'workflow_run_id': os.environ['GITHUB_RUN_ID'],
+              'workflow_run_attempt': int(os.environ['GITHUB_RUN_ATTEMPT']),
+          }
+          (dest / 'evidence_manifest.json').write_text(json.dumps(value, indent=2, sort_keys=True) + '\n', encoding='utf-8')
+          PY
+          git add "${DEST}"
+          git commit -m 'evidence(c19): finalize official-v4 terminal evidence'
+          EVIDENCE_COMMIT="$(git rev-parse HEAD)"
+          git tag -a "${EVIDENCE_TAG}" "${EVIDENCE_COMMIT}" -m "C19 official-v4 terminal evidence; identity c19-external-v2-official-v4"
+          git push origin "refs/tags/${EVIDENCE_TAG}"
+
+      - name: Upload non-text diagnostics for post-START audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: c19-official-v4-run-${{ github.run_id }}
+          if-no-files-found: ignore
+          retention-days: 90
+          path: |
+            ${{ runner.temp }}/belief-r-verification.json
+            ${{ runner.temp }}/raw_manifest.json
+            ${{ runner.temp }}/preservation_result.json
+            ${{ runner.temp }}/preserved_raw_manifest.json
+            ${{ runner.temp }}/terminal_evidence/*.json
