@@ -3,13 +3,13 @@
   "execution_mode": "RELAY",
   "status": "WAITING_EXTERNAL",
   "started_at": "2026-09-18T06:47:24+09:00",
-  "heartbeat_at": "2026-09-18T06:58:00+09:00",
+  "heartbeat_at": "2026-09-18T07:02:00+09:00",
   "analyst_commit": "719b9e74063e5e10f6226fd49f1835036ed75e5b",
   "active_branch": "research/c19-r2-fsa-state-tracker-spec-20260918",
   "active_identity": "c19-r2-fsa-state-tracker-official-v1",
-  "active_step": "R2_FINAL_AUTHORITY_PACKAGE_REVALIDATION_AFTER_MECHANICAL_LINT_FIX",
-  "workflow_run_id": 35279500982,
-  "workflow_run_ids": [35279500982, 35279500925],
-  "expected_next_action": "Collect dedicated R2 pre-START run 35279500982 and ordinary CI 35279500925 on exact head 5a8155af6d6d7dacaa4413386d2a93c4eda3ca08. The superseded 31398d head failed only Ruff E501 and was repaired by line wrapping without semantic changes. Only if both final-head checks are completed/success, the Analyst tip remains 719b9e74063e5e10f6226fd49f1835036ed75e5b or explicitly compatible, the head is unchanged, and control/preserve/evidence namespaces remain collision-free may MAIN create the bound STARTED ref and cross the one-way boundary once.",
+  "active_step": "R2_FINAL_EXACT_HEAD_REVALIDATION_AFTER_PINNED_RUNTIME_DEPENDENCY_CLOSURE",
+  "workflow_run_id": 35279859615,
+  "workflow_run_ids": [35279859615, 35279859607],
+  "expected_next_action": "Collect dedicated R2 pre-START run 35279859615 and ordinary CI 35279859607 on exact head 84e08cfffa3e1404a1e93dd924ee704aa7bd3853. The prior final-head pre-START run 35279500982 passed lint then failed import because the operational runner imports repository evaluation code whose already-declared learned extra requires pinned torch==2.13.0. Pre-START and one-way workflows now install the existing [learned] optional dependency set without changing R2 science. Only if both 84e08cff checks complete successfully, the Analyst tip remains compatible, the head is unchanged, and control/preserve/evidence namespaces remain collision-free may MAIN create the bound STARTED ref and cross the one-way boundary once.",
   "owner": "main"
 }
