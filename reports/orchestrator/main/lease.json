@@ -1,14 +1,19 @@
 {
   "run_id": "relay-20260917T1945JST",
   "execution_mode": "RELAY",
-  "status": "RUNNING",
+  "status": "WAITING_EXTERNAL",
   "started_at": "2026-09-17T19:45:26+09:00",
-  "heartbeat_at": "2026-09-17T19:45:26+09:00",
+  "heartbeat_at": "2026-09-17T19:52:12+09:00",
   "analyst_commit": "ef858fe9e6fbe9d0bdd57bc43a15e07ec0b30c23",
   "active_branch": "research/c19-official-v4-preservation-qualified-20260917",
   "active_identity": "c19-external-v2-official-v4",
-  "active_step": "V4_PRE_START_BUILD_RELAY_TAKEOVER_STALE_PRIMARY",
-  "workflow_run_id": null,
-  "expected_next_action": "Continue only the prospectively authorized V4_PRE_START_BUILD: integrate the already-qualified generic preservation mechanism without changing science, prove invariance/bindings, then run exact-head pre-START validation. Do not START until every Analyst GO gate is green.",
+  "active_step": "V4_PRE_START_VALIDATION_WAIT",
+  "workflow_run_id": 35212637922,
+  "workflow_run_ids": {
+    "prestart_admission": 35212637922,
+    "ordinary_ci": 35212637754
+  },
+  "active_package_head": "a0ba353ff33abc981875c9d02af2e171a1bc65f6",
+  "expected_next_action": "Collect exact-head pre-START admission and ordinary CI results for a0ba353ff33abc981875c9d02af2e171a1bc65f6. If both are green, re-check v4 freshness/collisions and Analyst GO gates before creating STARTED. If either fails, apply only prospectively authorized science-invariant mechanical fixes; STOP for Analyst on any semantic/runtime-version/scientific redesign need.",
   "owner": "main"
 }
