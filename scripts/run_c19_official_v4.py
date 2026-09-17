@@ -166,7 +166,9 @@ def score_preserved(args: argparse.Namespace) -> None:
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="C19 preservation-qualified official-v4 one-way runner")
+    parser = argparse.ArgumentParser(
+        description="C19 preservation-qualified official-v4 one-way runner"
+    )
     subparsers = parser.add_subparsers(dest="phase", required=True)
     acquire = subparsers.add_parser("acquire-raw")
     acquire.add_argument("--cache", type=Path, default=DEFAULT_CACHE)
