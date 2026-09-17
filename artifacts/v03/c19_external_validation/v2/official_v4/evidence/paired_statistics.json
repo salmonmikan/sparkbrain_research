@@ -1,0 +1,16 @@
+{
+  "bootstrap_seed": 19901,
+  "confidence_interval": {
+    "level": 0.95,
+    "lower": 0.09457740578201118,
+    "upper": 0.10647303483001931
+  },
+  "draws_per_resample": 1744,
+  "method": "paired_official_pair_bootstrap",
+  "observed_effect": 0.10044748325412106,
+  "primary_contrast": "primary_condition_minus_reference_condition",
+  "resamples": 10000,
+  "result_class": "PASS",
+  "seed_aggregation": "recompute per-seed BU_Acc/BM_Acc/BREU then mean the five seed BREU values",
+  "shared_resample_indices_across_all_five_seeds": true
+}

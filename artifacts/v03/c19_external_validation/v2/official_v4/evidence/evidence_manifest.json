@@ -1,0 +1,12 @@
+{
+  "evidence_analyst_commit": "56f0665ccc536bff6bf48e9eb581ec9a9eafcecc",
+  "exact_package_commit": "74bfe6b4a39758656f291baaa3f16236e3e71964",
+  "protocol_id": "c19-external-v2-official-protocol-v4",
+  "raw_preservation_commit": "d8fcc5216ff24940836972816cb0ec8f11e4ba06",
+  "run_identity": "c19-external-v2-official-v4",
+  "schema_version": "1",
+  "started_ref": "control/c19-official-v4-started-20260917",
+  "state": "TERMINAL_EVIDENCE",
+  "workflow_run_attempt": 1,
+  "workflow_run_id": "35217655980"
+}

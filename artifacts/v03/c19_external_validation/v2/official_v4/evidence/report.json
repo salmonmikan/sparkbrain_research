@@ -1,0 +1,10 @@
+{
+  "claim_boundary": "truth_free_surface_structural_representation_gain_only",
+  "evidence_analyst_commit": "56f0665ccc536bff6bf48e9eb581ec9a9eafcecc",
+  "exact_package_commit": "74bfe6b4a39758656f291baaa3f16236e3e71964",
+  "primary_result_class": "PASS",
+  "protocol_id": "c19-external-v2-official-protocol-v4",
+  "raw_preservation_commit": "d8fcc5216ff24940836972816cb0ec8f11e4ba06",
+  "raw_sha256": "692f8a5dba48f604eb1f5518a8545b80da01e1a00a9e2d2b6b1c0567355d65af",
+  "run_identity": "c19-external-v2-official-v4"
+}
