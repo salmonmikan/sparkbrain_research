@@ -1,67 +1,51 @@
 {
-  "timestamp": "2026-09-17T17:45:11+09:00",
+  "timestamp": "2026-09-17T19:42:00+09:00",
   "worker_role": "sub",
   "mode": "exploratory_incubator",
-  "evidence_analyst_commit": "b9c14e9e171bf765447aa45e71b7ba75cc7ce357",
+  "evidence_analyst_commit": "ef858fe9e6fbe9d0bdd57bc43a15e07ec0b30c23",
   "control_brain_commit": "d8987f8c6d88fad48a8f652f4255e73b30a223e6",
   "consumed_lanes": {
-    "main_lane": "C19-v3 current primary frontier; MAIN owns all current C19 execution, blockers, result handling and fixups end-to-end",
+    "main_lane": "C19 official-v4 preservation-qualified successor; MAIN owns all critical-path fixups and execution",
     "sub_lane": null,
     "sub_fallback": null
   },
   "selected_independent_lane": null,
-  "exploratory_target": "Synthetic revision-authority explicit finite-state reduction feasibility",
+  "exploratory_target": "H9 fully-spiking operational-boundary sensitivity to hidden continuous decoder/filter state",
   "independence_from_main_critical_path": true,
-  "why_independent_of_main": "Probe is based on stable main, uses generated synthetic event histories only, consumes no C19/Belief-R outputs, does not touch MAIN branches/authority, and remains interpretable regardless of the current C19-v3 outcome.",
+  "why_independent_of_main": "H9/C07 is paused and unreserved; probe uses stable main plus generated delayed-recall trials only, no C19/Belief-R outputs or MAIN branches, and remains useful independent of C19-v4 outcome.",
   "execution_allowed": false,
-  "sub_active_claim": "EXPLORATORY_NON_EVIDENTIARY_REVISION_AUTHORITY_FSA_FEASIBILITY",
+  "sub_active_claim": "EXPLORATORY_NON_EVIDENTIARY_H9_DECODER_STATE_BOUNDARY",
   "main_work_explicitly_avoided": [
-    "research/c19-official-v3-runtime-closed-20260917",
-    "control/c19-official-v3-started-20260917",
-    "c19-external-v2-official-v3",
-    "workflow 35200352569 and its official acquisition/raw/preserve/score/result path",
-    "consumed c19-external-v2-official-v2 repair or retry",
-    "all current C19 blockers/fixups/post-START diagnostics/successor design"
+    "research/c19-official-v4-preservation-qualified-20260917",
+    "c19-external-v2-official-v4 admission/execution and all v4 critical-path fixes",
+    "consumed c19-external-v2-official-v2 and c19-external-v2-official-v3",
+    "C19/Belief-R official inputs, raw, preserve, scorer and evidence",
+    "generic preservation integration required by MAIN"
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "b9c14e9e171bf765447aa45e71b7ba75cc7ce357",
+    "evidence_analyst": "ef858fe9e6fbe9d0bdd57bc43a15e07ec0b30c23",
     "control_brain": "d8987f8c6d88fad48a8f652f4255e73b30a223e6",
-    "orchestrator_report_parent_before_sub_write": "e038c9b7667c3b7b768696a356fd1b5f2f05fecd",
-    "sub_latest_final_update_commit": "0ad2b4a3cfc9bdf29311beb6d1dc2f0a4b0c98c3",
-    "c19_v3_package": "research/c19-official-v3-runtime-closed-20260917@84b244959f249da916a36906508ead0830052e9b",
-    "c19_v3_started_ref": "control/c19-official-v3-started-20260917@915b7b21abe6ef936fa18e81e4a5117712d20f28",
-    "c19_v3_identity": "c19-external-v2-official-v3",
-    "c19_v3_started_no_retry": true,
-    "c19_v3_one_way_run": "35200352569:completed:failure",
-    "c19_v3_control_head_at_final_reconciliation": "915b7b21abe6ef936fa18e81e4a5117712d20f28",
+    "c19_v4_branch_at_reconciliation": "research/c19-official-v4-preservation-qualified-20260917@84b244959f249da916a36906508ead0830052e9b",
+    "c19_v3_control": "control/c19-official-v3-started-20260917@294d947ade2f906e284d5e1eed5ad57ac7527947",
     "c19_v2_control": "control/c19-official-v2-started-20260917@7a8af82de0a0dd70ec2391ef7506ae80c5c8d391",
-    "exploratory_branch": "research/exploratory-sub-revision-authority-fsa-20260917@a4e14a13eb4011e94cc93d07f9a13d9251bfd759",
+    "h9_prior_readiness": "research/c07-h9-fully-spiking-readiness-sub-20260917",
+    "exploratory_branch": "research/exploratory-sub-h9-decoder-state-boundary-20260917@10c4122d1b0afba4fa1f6266c781d41e00f14833",
     "open_pr_count": 0,
-    "open_issues": [139, 147],
-    "legacy_freeze_branch_count": 13,
-    "preserve_branch_count": 19,
-    "sealed_branch_count": 0,
-    "formal_branch_count": 0
+    "open_issues": [139, 147]
   },
   "branches_prs_advanced": {
     "by_sub": {
-      "research_branches_created": ["research/exploratory-sub-revision-authority-fsa-20260917"],
-      "research_branches_advanced": ["research/exploratory-sub-revision-authority-fsa-20260917@a4e14a13eb4011e94cc93d07f9a13d9251bfd759"],
+      "research_branches_created": ["research/exploratory-sub-h9-decoder-state-boundary-20260917"],
+      "research_branches_advanced": ["research/exploratory-sub-h9-decoder-state-boundary-20260917@10c4122d1b0afba4fa1f6266c781d41e00f14833"],
       "implementation_commits": [
-        "8b5dccadf90b4388a37011615f7065baaec44c0c",
-        "2bf9a30775f2385dc0930ebc49680c3a1e22a61a",
-        "344323d7d6cba3190df00bef7c062beca0846d76",
-        "a4e14a13eb4011e94cc93d07f9a13d9251bfd759"
+        "8d8c40a5dd5cdf0eeaa4cbbd3e94d18815c226a3",
+        "a2c30dd765cbbc32743c36da75322c194bf979bd",
+        "10c4122d1b0afba4fa1f6266c781d41e00f14833"
       ],
       "prs_created": [],
       "merges": []
-    },
-    "concurrent_main_movement_observed": [
-      "C19-v3 package advanced to 84b244959f249da916a36906508ead0830052e9b.",
-      "C19-v3 STARTED authority appeared at 915b7b21abe6ef936fa18e81e4a5117712d20f28.",
-      "One-way run 35200352569 completed with failure after the initial SUB report persistence; control head remained at STARTED during final reconciliation."
-    ]
+    }
   },
   "workflows_experiments": {
     "formal_scientific_workflows_dispatched_by_sub": 0,
@@ -70,70 +54,58 @@
     "one_way_dispatches_by_sub": 0,
     "official_data_access_by_sub": false,
     "synthetic_exploratory_micro_experiment": {
-      "script": "experiments/exploratory/sub/revision_authority_fsa_probe.py",
-      "input": "generated synthetic source-assert/retract/irrelevant histories",
+      "script": "scripts/exploratory_h9_decoder_state_boundary.py",
+      "input": "generated two-label delayed-recall trials; A/B x silent gaps 1..20",
       "formal": false,
       "one_way": false,
       "identity": null
     },
-    "exploratory_branch_ci": {
-      "failed_run": "35200816595:failure",
-      "failure_step": "Lint / ruff",
-      "mechanical_fix_commit": "a4e14a13eb4011e94cc93d07f9a13d9251bfd759",
-      "replacement_run": "35201182618:in_progress_at_final_reconciliation"
-    },
-    "observed_main_v3_one_way": {
-      "run_id": 35200352569,
-      "head": "control/c19-official-v3-started-20260917@915b7b21abe6ef936fa18e81e4a5117712d20f28",
-      "status_at_final_reconciliation": "completed",
-      "conclusion": "failure",
-      "diagnosed_or_touched_by_sub": false,
-      "canonical_post_failure_control_record_present_at_final_reconciliation": false
+    "ordinary_branch_ci": {
+      "automatic_push_ci_observed": true,
+      "status_at_report_checkpoint": "in_progress",
+      "formal_scientific_workflow": false
     }
   },
   "scientific_readiness_exploratory_results": {
     "new_formal_scientific_measurement_by_sub": false,
     "new_formal_readiness_result_by_sub": false,
     "exploratory_observation": true,
-    "exhaustive_histories_through_horizon_5": 111111,
-    "fsa_exact_matches": 111111,
-    "fsa_exact_match_rate": 1.0,
-    "reachable_fsa_states": 27,
-    "maximum_fsa_states": 27,
-    "stateless_exact_matches": 61727,
-    "stateless_exact_match_rate": 0.5555435555435555,
-    "random_checks": {
-      "10": {"samples": 20000, "fsa_exact_match_rate": 1.0, "stateless_match_rate": 0.492, "states": 27},
-      "25": {"samples": 20000, "fsa_exact_match_rate": 1.0, "stateless_match_rate": 0.47505, "states": 27},
-      "50": {"samples": 20000, "fsa_exact_match_rate": 1.0, "stateless_match_rate": 0.4759, "states": 27}
-    },
-    "interpretation": "In this deliberately constructed source-authority/retraction world, full-history behavior compresses exactly into a 27-state explicit representation independent of horizon. This is reduction-feasibility input only, not evidence about C19, Belief-R, SparkBrain, or programme novelty.",
-    "main_result_interpretation_by_sub": "none; SUB observed only that the MAIN one-way workflow concluded failure and did not inspect/diagnose/interpret it scientifically"
+    "stateless_current_spike_only_accuracy": 0.0,
+    "analog_hidden_state": [
+      {"decay": 0.5, "accuracy": 0.2, "max_full_gap": 4},
+      {"decay": 0.8, "accuracy": 0.65, "max_full_gap": 13},
+      {"decay": 0.9, "accuracy": 1.0, "max_full_gap": 20},
+      {"decay": 0.95, "accuracy": 1.0, "max_full_gap": 20},
+      {"decay": 0.99, "accuracy": 1.0, "max_full_gap": 20}
+    ],
+    "toy_recurrent_spike_latch_accuracy": 1.0,
+    "toy_recurrent_spike_latch_mean_spikes": 10.5,
+    "interpretation": "Spike-valued I/O alone is insufficient to define a fully-spiking computational substrate when hidden continuous decoder/filter state may carry task-relevant memory. This is synthetic specification pressure only, not evidence for H9 or SparkBrain."
   },
   "evidentiary_status": "NON_EVIDENTIARY",
-  "hypothesis_or_reduction_question": "Can a deliberately history-sensitive source-authority assertion/retraction policy be represented exactly by a small bounded finite-state controller rather than requiring full persistent history?",
-  "synthetic_or_dev_inputs_used": "Generated three-source assertion/retraction/irrelevant histories only; no official, sealed, one-way-only or formal held-out inputs.",
-  "implementation_or_experiment_performed": "Implemented a deterministic full-history reference, 27-state explicit reducer, weak current-event-only comparator, exhaustive horizon<=5 enumeration, and deterministic longer-horizon random checks; persisted code/result/README on an explicitly exploratory branch.",
+  "hypothesis_or_reduction_question": "Can spike-valued I/O appear to preserve delayed behavior while memory is carried by hidden continuous decoder/filter state rather than non-sensory spike-mediated dynamics?",
+  "synthetic_or_dev_inputs_used": "Generated A/B delayed-recall trials across silent gaps 1..20 only; no historical C07 rerun/tuning and no official/formal inputs.",
+  "implementation_or_experiment_performed": "Implemented deterministic stateless, hidden analog-leaky, and toy recurrent-spike-latch comparators and recorded a fixed decay-grid sensitivity result on an explicitly exploratory branch.",
   "observations": [
-    "The explicit reducer exactly matched the constructed full-history reference across all 111111 exhaustive histories through horizon 5.",
-    "All 27 bounded states were reachable.",
-    "The current-event-only comparator matched only 0.5555435555 exhaustively and about 0.476-0.492 at longer horizons.",
-    "This only demonstrates that the constructed authority/retraction semantics admit compact explicit state; it is not a discovery about current MAIN science."
+    "Stateless current-spike-only decoder was 0/40.",
+    "Hidden analog state reached 40/40 for decay 0.9, 0.95 and 0.99 while using zero non-sensory recurrent spikes.",
+    "At decay 0.8 it was 26/40 with full accuracy through gap 13; at 0.5 it was 8/40 through gap 4.",
+    "Toy recurrent spike latch was 40/40 and used mean 10.5 recurrent spikes per trial.",
+    "The only warranted lesson is that decoder/filter memory must be explicit in a future operational fully-spiking boundary."
   ],
-  "what_would_falsify_or_reduce_it": "A richer prospectively defined revision task requiring state growth with history/entity/source/provenance complexity, or a simpler representation-matched comparator that accounts for the same behavior, would reduce or falsify the usefulness of this FSA proposal.",
-  "candidate_formal_question": "Does a prospectively fixed, resource-matched explicit authority/provenance state tracker account for history-sensitive revision behavior under controlled state-count, transition-sparsity and horizon scaling?",
+  "what_would_falsify_or_reduce_it": "A prospectively specified H9 successor that forbids task-relevant hidden continuous/algorithmic memory outside the declared spiking substrate, or proves such state task-irrelevant under a fixed inventory/ablation rule, would reduce this concern.",
+  "candidate_formal_question": "After a fresh prospective definition, does a declared spike-mediated non-sensory substrate preserve fixed H9 behavioral invariants when task-relevant hidden continuous/algorithmic state outside that substrate is prohibited or explicitly resource-matched?",
   "suggested_prospective_object": null,
   "new_scientific_choices_required_before_formalization": [
-    "revision event ontology and authority relation",
-    "same-rank conflict handling",
-    "source/provenance multiplicity and identity semantics",
-    "confidence, contradiction and retraction semantics",
-    "state/resource matching rule",
-    "strong non-FSA and representation-matched stateless/shallow comparators",
-    "prospective held-out task family",
-    "state-count/transition-sparsity/horizon scaling regime",
-    "success/failure criteria and metric",
-    "exact source/package/runtime/input bindings and integrity gates"
+    "exact fully-spiking component boundary",
+    "allowed decoder/filter state and state-inventory rule",
+    "non-sensory neuron/synapse dynamics",
+    "representation/decoder mapping",
+    "primary comparator and allowed claim",
+    "parameter/training budget and development data",
+    "acceptance tolerance authority",
+    "exact runtime, seeds and determinism",
+    "fresh protocol/package/identity/integrity gates"
   ],
   "promotion_recommendation": "CONTINUE_EXPLORING",
   "consumed_identities": {
@@ -141,37 +113,27 @@
     "exploratory_identity_created": false,
     "known_consumed_do_not_touch": [
       "c19-external-v2-official-v2",
+      "c19-external-v2-official-v3",
       "A01 consumed formal/development identities",
       "RV01 R01-16/R01-17 consumed identities",
       "RV02 D1 consumed identity",
       "CX01 Candidate-002/formal evidence"
-    ],
-    "current_main_v3": {
-      "identity": "c19-external-v2-official-v3",
-      "started": true,
-      "no_retry": true,
-      "workflow_conclusion": "failure",
-      "canonical_post_failure_control_record_present": false,
-      "sub_disposition": "do_not_touch; MAIN/Analyst must record and classify",
-      "touched_by_sub": false
-    }
+    ]
   },
   "blockers": {
     "formal_lane": ["No reserved independent formal sub_lane or sub_fallback exists."],
-    "exploratory": [],
-    "main_only": ["C19-v3 crossed STARTED and its one-way workflow concluded failure; SUB must not diagnose, modify, retry, rescue, rescore or design a successor."]
+    "rejected_prior_incubator": ["Analyst classified the prior provenance/FSA standalone object REJECT; do not continue/formalize it."],
+    "main_only": ["C19-v4 is the active PRIMARY frontier and all its build/admission/execution work is MAIN-only."]
   },
   "collision_reconciliation": {
     "concurrent_main_movement_detected": true,
-    "analyst_snapshot_stale_on_main_phase": true,
-    "analyst_incubator_permission_still_applicable": true,
+    "current_main_frontier": "C19-v4 pre-start build",
     "main_frontier_touched_by_sub": false,
     "main_dependency_created_by_sub": false,
     "exploratory_branch_based_on_stable_main": true,
     "official_inputs_or_outputs_used_by_sub": false,
-    "evidence_analyst_authority_rechecked_before_initial_persistence": true,
-    "evidence_analyst_authority_at_write": "b9c14e9e171bf765447aa45e71b7ba75cc7ce357",
-    "post_persistence_main_terminal_movement_reconciled": true
+    "evidence_analyst_authority_rechecked": true,
+    "evidence_analyst_authority_at_write": "ef858fe9e6fbe9d0bdd57bc43a15e07ec0b30c23"
   },
   "integrity_state": {
     "status": "EXPLORATORY_NON_EVIDENTIARY_BOUNDARY_HELD",
@@ -185,15 +147,12 @@
     "main_frontier_touched_by_sub": false
   },
   "completion_target": {
-    "target": "Complete at most one bounded independent NON_EVIDENTIARY incubator probe and hand it to Evidence Analyst without entering MAIN or formal authority.",
+    "target": "Complete at most one different bounded independent NON_EVIDENTIARY incubator probe after retirement of the rejected FSA object and hand it to Evidence Analyst.",
     "status": "reached",
-    "result": "Revision-authority FSA reduction feasibility demonstrated only in a deliberately synthetic constructed world; recommend CONTINUE_EXPLORING, not formalization."
+    "result": "H9 hidden decoder/filter-state boundary materially changes synthetic delayed-recall behavior; recommend further bounded exploration only, not formalization."
   },
-  "fallback_status": {
-    "sub_fallback": null,
-    "used": false
-  },
-  "rejected_lane": null,
-  "lane_rejected_reason": null,
-  "next_sub_action": "Stop after this bounded probe and await Evidence Analyst classification. Do not formalize the exploratory branch/result and do not touch C19-v3 post-START failure. If a later Analyst cycle still permits incubator mode with no formal lane, a single richer synthetic test with same-rank conflicts and provenance-sensitive retractions is the proposed next step."
+  "fallback_status": {"sub_fallback": null, "used": false},
+  "rejected_lane": "research/exploratory-sub-revision-authority-fsa-20260917",
+  "lane_rejected_reason": "Evidence Analyst classification REJECT as a standalone formal scientific object; branch not continued this run.",
+  "next_sub_action": "Stop after this bounded H9 probe and await Evidence Analyst classification. Do not formalize directly, do not continue the rejected FSA branch, and do not touch C19-v4."
 }
