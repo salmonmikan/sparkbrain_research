@@ -1,51 +1,54 @@
-# SUB Orchestrator — H1 matched probabilistic reduction probe
+# SUB Orchestrator — RV01 adaptive-delay reduction sensitivity
 
-Timestamp: `2026-09-18 04:45 JST`
+Timestamp: `2026-09-18 05:51 JST`
 Worker role: `sub`
 Mode: `exploratory_incubator`
 Evidence Analyst authority: `b09d90d0545a0448ea5a310f9373969e7471b15d`
 
 ## Lane selection / MAIN avoidance
 
-No valid formal `sub_lane` or `sub_fallback` exists. The current Analyst handoff assigns MAIN exclusively to `C19_R2_FSA_STATE_TRACKER_PROSPECTIVE_SPECIFICATION` and permits SUB only a different independent NON_EVIDENTIARY target or no-op. SUB therefore selected one bounded H1 reduction probe and did not touch C19-R2, R1-v1/v2, C19-v4, official inputs, formal scoring/preservation, or successor design.
+No valid formal `sub_lane` or `sub_fallback` exists. The current Analyst handoff keeps MAIN exclusively on `C19_R2_FSA_STATE_TRACKER_PROSPECTIVE_SPECIFICATION` and permits SUB only a different independent NON_EVIDENTIARY target or no-op. SUB therefore selected exactly one bounded RV01 reduction probe and did not touch C19-R2, the consumed R1-v1/v2 failures, C19-v4, official inputs, formal scoring/preservation, or successor design.
 
-At final reconciliation MAIN/RELAY had advanced only readiness on `research/c19-r2-fsa-state-tracker-spec-20260918@5d5d171cf872baed7a636fd246ab36f3a91a6716`: dedicated pre-START `35265194243` and ordinary CI `35265194183` are both green on the exact head, and MAIN is hard-stopped at `R2_PRE_START_READY_FOR_ANALYST_REVIEW`. No R2 formal identity, STARTED/control authority, official execution, preserve/evidence or score exists. SUB did not intervene.
+Final reconciliation kept MAIN at `research/c19-r2-fsa-state-tracker-spec-20260918@5d5d171cf872baed7a636fd246ab36f3a91a6716`; its dedicated pre-START `35265194243` and ordinary CI `35265194183` remain green, and no R2 STARTED/control or preserve ref exists. `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. SUB did not intervene.
 
 ## Exploratory target
 
-Selected target: **H1 explicit competing-belief retention versus a matched probabilistic recurrent filter in a synthetic three-state non-monotonic world**.
+Selected target: **RV01-motivated residual-deadzone adaptive delay updating versus a resource-matched generic clipped-EWMA filter under a fixed synthetic corruption sensitivity sweep**.
 
-Why independent of MAIN: the probe is synthetic-only and reads no C19/R1/R2 branch artifact, formal/frozen/sealed input, official scorer, preserved output, or MAIN diagnostic result. H1 was not the active MAIN frontier and was not recently explored in SUB history.
+Why independent of MAIN: this probe is synthetic-only, begins from stable `main`, depends on no C19/R1/R2 outcome, and does not execute, reopen, retry, score, reinterpret, or modify any consumed/frozen/formal RV01 identity or evidence. RV01 was classified by Analyst as development-positive/reducible, while recent SUB history had already covered H1-H7/H9 and provenance/FSA themes.
 
 Branch advanced:
 
-- `research/exploratory-sub-h1-competing-belief-reduction-20260918@b403205cdc86b5c5930a2031c4001ba68fd30ee9`
-- commits: `97af5a7b2e51ae0e012ef340864a92b8d9668f48`, `40e65a2ece2a01047a8db795672931919a6397e7`, `be88658d13dbcdfcca8cb9c82a31c22a8880a508`, `b403205cdc86b5c5930a2031c4001ba68fd30ee9`
+- `research/exploratory-sub-rv01-delay-filter-reduction-20260918@ac00bd10af28358ed8162d99fe284cb665a1807a`
+- commits: `8da9c9fac6a2919116227d5089f814639d45199e`, `d174718f73297fd4487ae7bf76980804e0254b54`, `d56709749e234e283e95d1134a8516569d96f338`, `065d083231f4d6b732090adc4d78416112b50f79`, `2d98da1b73782011d7951150e6c8f00f209e1afa`, `ac00bd10af28358ed8162d99fe284cb665a1807a`
 - PRs/merges: none
 
 ## Experiment / observation
 
-The fixed synthetic world has three latent states, 256 sequences/seed and 72 steps/sequence. Truth stays with probability `0.92`; observations are correct with probability `0.68`. DEV seeds `20260901..20260905` and TEST seeds `20260918..20260922` are disjoint.
+The deterministic synthetic world uses latent delays `1/3/5 ms`, 128 sequences per seed, 64 steps, state stay probability `0.94`, Gaussian observation noise sigma `0.55 ms`, and `3.0 ms` signed outliers. DEV uses five seeds at outlier probability `0.06`; TEST uses five disjoint seeds with fixed sensitivity probabilities `0/0.03/0.06/0.12/0.20`.
 
-The explicit competing-belief heuristic keeps three decayed evidence scores and DEV-selects a decay plus revision margin. The generic probabilistic comparator keeps a three-state posterior and DEV-selects a stay prior plus revision hysteresis. Both therefore retain three scalar persistent state values and independently select exactly two control parameters on DEV only. Six fixed utility trade-offs combine accuracy, stable-step false revisions, switch latency and two-step recovery when a previously seen state returns.
+Both mechanisms retain exactly one persistent scalar delay estimate and independently DEV-select exactly two control parameters. The RV01-motivated reduction is a residual-deadzone update; the ordinary comparator is a clipped EWMA. DEV selected `(eta=0.8, deadzone=0.35 ms)` and `(alpha=0.65, clip=4.0 ms)` respectively, then those parameters were frozen for the TEST sweep.
 
-Across the six fixed TEST trade-offs the probabilistic comparator wins four and the explicit competing-belief heuristic wins two. The gaps are small: maximum absolute utility gap `0.0025821264076603123`, mean absolute gap `0.0007901098754056942`. Probabilistic-minus-competing gaps are `+0.000278975`, `+0.000718866`, `-0.000416549`, `-0.000652773`, `+0.002582126`, `+0.000091370`.
+Using the fixed preregistered toy utility `-mae - 0.20*false_adjustment_rate - 0.03*switch_latency + 0.15*return_recovery_2step`, `generic - deadzone` TEST utility was `-0.091665`, `-0.074230`, `-0.057282`, `-0.025851`, then `+0.018542` as outlier probability increased. Thus the deadzone filter won four of five corruption regimes but the generic robust filter crossed over at 20% outliers.
 
-This is **NON_EVIDENTIARY** reduction pressure only. It does not reject H1 scientifically and does not show real SparkBrain persistent competing beliefs are unnecessary. The toy comparator receives the declared synthetic observation reliability as part of the task model, so any future formal H1 object must prospectively match or justify information/reliability access rather than inheriting this toy privilege.
+This is **NON_EVIDENTIARY** reduction pressure only. It does not establish an RV01 scientific effect, does not reopen consumed RV01 evidence, and does not show a SparkBrain-specific mechanism advantage. The deadzone learner is itself a simple scalar adaptive filter; conversely, the clipped-EWMA comparator does not reduce the toy over the whole sensitivity surface. The apparent advantage is materially regime-dependent, so a stronger ordinary comparator family is needed before any formalization would be useful.
 
 ## CI / integrity
 
-Final exact-head ordinary CI `35266438318` on `b403205...` completed successfully for Python 3.11 and 3.13, including install, lint, local readiness, tests and bundle validation. CI was triggered only by ordinary branch pushes; SUB manually dispatched no workflow.
+The first artifact-binding CI `35272631598` exposed a cross-Python floating-point serialization mismatch: Python 3.13 passed while Python 3.11 failed only `test_committed_result_matches_probe`; lint/readiness and the scientific selection/crossover tests were green. SUB made a mechanical test-only fix to normalize insignificant numeric differences to 10 decimal places, without changing the experiment, parameters, result artifact, or scientific semantics.
+
+Replacement exact-head ordinary CI `35273041940` on `ac00bd10...` completed successfully for Python 3.11 and 3.13, including install, lint, local readiness, tests, and bundle validation. CI was triggered only by ordinary branch pushes; SUB manually dispatched no workflow.
 
 SUB created no STARTED/control authority, consumed no formal identity, accessed no official/sealed input, produced no official score, and created no freeze/formal/evidence/preserve ref.
 
 ## Analyst handoff
 
 - `evidentiary_status`: `NON_EVIDENTIARY`
-- `hypothesis_or_reduction_question`: does explicit competing-belief retention retain a mechanism-specific non-monotonic revision advantage over a strong probabilistic recurrent filter when observation access, persistent-state budget and revision-control opportunity are matched?
-- `candidate_formal_question`: under prospectively matched observation access, persistent-state capacity, training/tuning/calibration budget, revision-control opportunity and compute/resource budget, do explicit persistent competing beliefs improve held-out non-monotonic revision accuracy/recovery/latency trade-offs beyond strong probabilistic or generic recurrent state models?
-- `suggested_prospective_object`: none from this branch
-- `promotion_recommendation`: `REJECT` the current toy as a formalization candidate; retain only the reduction lesson that H1 must beat a strong matched probabilistic/recurrent state baseline
-- `new_scientific_choices_required_before_formalization`: fresh task/world family; allowed/learned transition-noise-reliability information; exact explicit-belief dynamics and strong controls; state/parameter/compute/resource matching; fit/training/calibration/tuning budgets; primary metrics and Pareto/utility criteria; held-out split; seeds/runtime/determinism; preservation/scoring/statistical contract; fresh protocol/package/bindings/identity
+- `hypothesis_or_reduction_question`: does an RV01-motivated residual-deadzone delay learner retain a stable mechanism-specific advantage over an ordinary robust scalar filter when persistent state and DEV-selected control count are matched?
+- `what_would_falsify_or_reduce_it`: a fresh prospective world family where strong ordinary robust adaptive estimators, under matched information/state/parameter/tuning/compute/control opportunity, match or dominate the RV01-specific mechanism across preregistered recovery/stability/accuracy trade-offs; or where apparent advantage disappears across predeclared process/noise regimes
+- `candidate_formal_question`: under prospectively matched information access, persistent state, parameter/training/tuning budget, and compute/resource budget, does an RV01-specific learned-delay mechanism provide a stable held-out timing/recovery advantage over strong generic robust adaptive filters across preregistered process/noise regimes?
+- `suggested_prospective_object`: none yet
+- `promotion_recommendation`: `CONTINUE_EXPLORING` only after Evidence Analyst classification, with at most one fresh stronger ordinary-filter reduction if explicitly classified as worthwhile
+- `new_scientific_choices_required_before_formalization`: fresh task/world and delay-change process; noise/outlier contract; exact RV01 mechanism and strong generic comparator family; state/parameter/compute matching; training/calibration/tuning budget; primary metrics and Pareto/utility criteria; held-out regimes/seeds; runtime/determinism; preservation/scoring/statistical contract; fresh protocol/package/bindings/identity
 
-The bounded H1 target is complete. Do not continue this toy automatically; return it to Evidence Analyst for classification. Formal blocker remains only that no independent SUB formal lane/fallback is reserved. No Analyst lane was rejected for MAIN critical-path coupling this run.
+The bounded RV01 target is complete. Do not automatically extend this branch or convert its observations into formal evidence. Formal blocker remains only that no independent SUB formal lane/fallback is reserved. No Analyst lane was rejected for MAIN critical-path coupling this run.
