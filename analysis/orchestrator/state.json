@@ -1,12 +1,16 @@
 {
-  "timestamp": "2026-09-17T10:08:02+09:00",
+  "timestamp": "2026-09-17T10:57:10+09:00",
   "worker_role": "evidence_analyst",
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst_before_write": "abda3b80450c2ee385c35233b13f6f003f63415b",
-    "control_brain": "909ce53e7b0355f5aab1512e659ab36d910bf6a4",
-    "orchestrator_report": "80fecbc95ed646ce24c0912ff7d3e2615eb1df8f",
-    "external_audit": "8f405b63d0afc8a6ffae522aa68799c54006f52d",
+    "evidence_analyst_before_write": "f709fa1ee0281fab39a1f4f895247117d28aa35c",
+    "control_brain": "2cbd99839d904299a8499b57a05fa2e16b6b0eb0",
+    "orchestrator_report": "51e910ebd2685b17bb13724fc34e5a4a71026e43",
+    "orchestrator_main_latest_content_commit": "6443aa0cbf1d23e59e1f7b3ae6ad76f55e5855d9",
+    "orchestrator_main_latest_history_commit": "e5748cac0753e1ae569e650e07e88c4091d669b4",
+    "orchestrator_sub_report_commit": "51e910ebd2685b17bb13724fc34e5a4a71026e43",
+    "external_research_audit": "66612643c396a3af04bbd0d53908ef8e2f70b5a2",
+    "external_parent_scout": "8f405b63d0afc8a6ffae522aa68799c54006f52d",
     "c19": "research/c19-truth-free-symbolic-adapter-v2-20260917@66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
     "c19_successor": "research/c19-official-v2-scorer-complete-20260917",
     "c19_successor_present": false,
@@ -15,88 +19,219 @@
     "h9_ci": "35158843629:success",
     "methods_unreserved": "research/methods-terminal-provenance-v2-sub-20260917@d5317485a591439cb52d52b649b4930964cf2b3a",
     "open_prs": 0,
-    "open_issues": [147, 139],
+    "open_issues": [139, 147],
     "rulesets": 0,
-    "tags": 0,
+    "authoritative_tags": 0,
+    "main_branch_protected": false,
     "legacy_refs": {"freeze": true, "control": true, "preserve": true, "evidence": true, "formal": false, "sealed": false},
     "c19_refs": {"control": false, "preserve": false, "evidence": false}
   },
-  "control_brain_commit": "909ce53e7b0355f5aab1512e659ab36d910bf6a4",
-  "main_report_commit_consumed": "e5748cac0753e1ae569e650e07e88c4091d669b4",
-  "main_report_latest_content_commit": "6443aa0cbf1d23e59e1f7b3ae6ad76f55e5855d9",
-  "sub_report_commit_consumed": "80fecbc95ed646ce24c0912ff7d3e2615eb1df8f",
-  "external_research_audit_handoff_commit_consumed": "8f405b63d0afc8a6ffae522aa68799c54006f52d",
-  "external_research_audit_role_consumed": "LITERATURE_REDUCTION_SCOUT",
+  "Control_Brain_commit": "2cbd99839d904299a8499b57a05fa2e16b6b0eb0",
+  "MAIN_report_commit_consumed": "e5748cac0753e1ae569e650e07e88c4091d669b4",
+  "MAIN_report_latest_content_commit": "6443aa0cbf1d23e59e1f7b3ae6ad76f55e5855d9",
+  "SUB_report_commit_consumed": "51e910ebd2685b17bb13724fc34e5a4a71026e43",
+  "External_Research_Audit_handoff_commit_consumed": "66612643c396a3af04bbd0d53908ef8e2f70b5a2",
+  "External_Research_Audit_role_consumed": "INDEPENDENT_AUDITOR",
   "external_input": {
-    "handoff_commit": "8f405b63d0afc8a6ffae522aa68799c54006f52d",
-    "role": "LITERATURE_REDUCTION_SCOUT",
-    "newer_since_previous_analyst": false,
-    "handoff_contains_genuinely_new_findings": true,
-    "new_this_cycle": false,
-    "independent_auditor_available": false,
+    "handoff_commit": "66612643c396a3af04bbd0d53908ef8e2f70b5a2",
+    "role": "INDEPENDENT_AUDITOR",
+    "parent_literature_reduction_scout_commit": "8f405b63d0afc8a6ffae522aa68799c54006f52d",
+    "newer_since_previous_analyst": true,
+    "genuinely_new_information": true,
     "findings_consumed": [
-      "symbolic abstraction/canonicalization can explain I2 gain",
-      "explicit symbolic state tracking is a strong reduction",
-      "BeliefTrack adds an Isolation axis absent from C19 BU/BM/BREU",
-      "ordinary Transformers can have functionally causal belief-state geometry"
+      "C19 predecessor scorer/protocol was under-specified for exact evaluator-target join and quantile convention, but the defect was detected before STARTED and official output; no post-outcome tuning or silent repair is evidenced.",
+      "Evaluator target matching must be evaluator-side identity/provenance only; exact join fields must be frozen, one-to-one unique and total, duplicate/missing matches fail closed, and target truth must be technically excluded from model features.",
+      "Quantile semantics must prospectively cover ties, NaN/non-finite input, empty/wrong-length input and boundary behavior before STARTED.",
+      "Deterministic golden scorer fixtures are the pre-START readiness bar; independent scorer equivalence or a frozen golden-output checksum is desirable where practical.",
+      "Representation-matched stateless/shallow and explicit-state nulls remain future prospective reductions and must not be retrofitted into current C19."
     ],
-    "affected_lines": ["C19", "PROGRAMME_NOVELTY", "FUTURE_EXTERNAL_VALIDATION", "A01_REFRAME"],
-    "strategic_impact": "narrows C19 interpretation; strengthens simpler reductions; raises future comparator bar; does not change current allocation",
-    "prospective_baselines": ["identical-I2 stateless/shallow", "representation/information-matched explicit-state", "matched recurrent/Transformer", "separately frozen Update/Stay/Isolation"],
+    "affected_lines": ["C19_V2", "C19_PROTOCOL_INTEGRITY", "PROGRAMME_NOVELTY"],
+    "strategic_impact": "No MAIN/SUB reallocation. C19 remains highest information value; the pre-START admission bar is strengthened and made executable; claim boundary remains narrow.",
+    "novelty_effect": "NO_NEW_NOVELTY_SUPPORT; representation-matched reduction pressure remains",
+    "methodological_risk": "Evaluator-target leakage and outcome-sensitive scorer degrees of freedom unless join/quantile semantics fail closed before STARTED.",
+    "prospective_baselines_or_discriminators": [
+      "deterministic golden scorer fixtures for join and quantile edge cases before STARTED",
+      "optional independent scorer-equivalence or fixed golden-output checksum before STARTED",
+      "after a valid C19 terminal result only: exact-I2 representation-matched stateless/linear/shallow null",
+      "after a valid C19 terminal result only: representation-matched explicit-state comparator",
+      "future separately preregistered Update/Stay/Isolation discriminator"
+    ],
     "allocation_changed": false,
-    "must_not_change": ["C19 v1 predecessor/90c936a7...", "consumed A01/RV01/RV02/CX01", "historical C19-v1/C06", "historical C07/H9 evidence", "fresh C19-v2 inherited science after STARTED"]
+    "main_readiness_bar_changed": true,
+    "must_not_change": [
+      "C19-v2 historical scientific-semantics anchor 90c936a7abca7eba0dac1f977753503551e73368",
+      "ambiguous predecessor protocol/scorer artifacts",
+      "c19-external-v2-official-v1, retired unSTARTED and never reusable",
+      "all consumed A01/RV01/RV02/CX objects",
+      "rejected A01 Family-B/C exact objects",
+      "historical C19-v1/C06 and C07/H9 evidence",
+      "no outcome-conditioned scorer, join, threshold, baseline or quantile choices"
+    ]
   },
   "active_line_review": {
-    "A01": {"status": "MIXED_REGISTERED_PROGRAMME_CLOSED", "consumed": true, "path": "fresh independent object only", "value": "LOW"},
-    "RV01": {"status": "DEVELOPMENT_POSITIVE_CONSUMED_REDUCIBLE", "consumed": true, "path": "fresh successor only", "value": "LOW"},
-    "RV02": {"status": "TERMINAL_CONSTRUCTION_NEGATIVE", "consumed": true, "path": "fresh object only", "value": "LOW"},
-    "CX_CX01": {"status": "TERMINAL_FORMAL_NEGATIVE", "consumed": true, "path": "fresh object only", "value": "LOW"},
-    "H8_C08": {"status": "TERMINAL_SPECIALIZATION_NEGATIVE", "consumed": true, "path": "distinct prospective object only", "value": "LOW"},
-    "H9_C07": {"status": "HYBRID_PARTIAL_SUPPORT_FULLY_SPIKING_PRE_START_UNDERSPECIFIED", "consumed": false, "path": "prospectively fix eight science choices, then fresh identity", "value": "MEDIUM_FUTURE", "centrality": "SECONDARY_PAUSED"},
-    "C19": {"status": "PRIMARY_UNRESOLVED_V1_REJECTED_V2_AUTHORIZED_NOT_CREATED", "consumed": false, "path": "exact fresh v2 package then one-way if GO", "value": "VERY_HIGH", "distance": "NEAR_TO_MEDIUM", "centrality": "PRIMARY"}
+    "A01": {"status": "MIXED_REGISTERED_PROGRAMME_CLOSED", "consumed": true, "strongest_evidence": "P2/P3 development positives, Family-A P4 terminal negative, Family-B/C reduced pre-START", "path": "fresh independent object only", "value": "LOW", "centrality": "CLOSED"},
+    "RV01": {"status": "DEVELOPMENT_POSITIVE_CONSUMED_REDUCIBLE", "consumed": true, "strongest_evidence": "real-delay causal timing observation", "simpler_reductions": ["adaptive-delay plasticity", "ordinary recurrence"], "path": "fresh successor only", "value": "LOW", "centrality": "SECONDARY_COMPLETE"},
+    "RV02": {"status": "TERMINAL_CONSTRUCTION_NEGATIVE", "consumed": true, "strongest_evidence": "RD005 D1 terminal negative", "path": "fresh object only", "value": "LOW", "centrality": "TERMINAL"},
+    "CX_CX01": {"status": "TERMINAL_FORMAL_NEGATIVE", "consumed": true, "strongest_evidence": "Candidate-002 formal negative", "path": "fresh object only", "value": "LOW", "centrality": "TERMINAL"},
+    "H8_C08": {"status": "TERMINAL_SPECIALIZATION_NEGATIVE", "consumed": true, "path": "distinct prospective object only", "value": "LOW", "centrality": "TERMINAL"},
+    "H9_C07": {"status": "HYBRID_PARTIAL_SUPPORT_FULLY_SPIKING_PRE_START_UNDERSPECIFIED", "consumed": false, "strongest_evidence": "historical hybrid 9/9, sensory-only spiking; threshold 1.1 no-spike/no-prediction negative; eight missing science choices", "path": "prospectively fix eight choices, then fresh protocol/identity", "value": "MEDIUM_FUTURE", "centrality": "SECONDARY_PAUSED"},
+    "C19": {"status": "PRIMARY_UNRESOLVED_V1_RETIRED_V2_AUTHORIZED_NOT_CREATED", "consumed": false, "strongest_evidence": "16-field target-blind raw contract and exact 55x1744 coverage green at 66c8eafe; no official result; fresh v2 plus Auditor hardening prospectively define next valid object", "path": "MAIN builds exact auditor-hardened v2 then one-way if GO", "value": "VERY_HIGH", "distance": "NEAR_TO_MEDIUM", "centrality": "PRIMARY"}
   },
   "main_lane": {
-    "target": "C19 fresh official-v2 package and conditional one-way execution",
-    "scientific_question": "Does I2_truth_free_symbolic_surface/G1_coalition/E0_global improve Belief-R BREU over I1_local_compositional/G1_coalition/E0_global under the unchanged 55-row matrix?",
+    "target": "C19 fresh official-v2 package, auditor-hardened pre-START admission, and conditional one-way execution",
+    "scientific_question": "Under the unchanged 55-row matrix, does I2_truth_free_symbolic_surface/G1_coalition/E0_global improve Belief-R BREU over I1_local_compositional/G1_coalition/E0_global?",
     "recommended_owner": "main",
     "branch_or_identity": "research/c19-official-v2-scorer-complete-20260917 / c19-external-v2-official-protocol-v2 / c19-external-v2-official-v2",
+    "source_base": "research/c19-truth-free-symbolic-adapter-v2-20260917@66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
     "information_value": "VERY_HIGH",
     "implementation_distance": "NEAR_TO_MEDIUM",
-    "dependencies": ["base 66c8eafe... unchanged", "v2 identity fresh/unSTARTED/unconsumed", "predecessor 90c936a7... immutable", "current/newer authority preserves exact object"],
-    "allowed_scope": ["create distinct successor", "implement already-fixed parser/envelope/target/scorer/bootstrap/preserver/runtime/input bindings", "fix all science-preserving critical-path defects", "if all GO conditions pass, STARTED→acquisition→raw preserve→score→terminal evidence in same run"],
-    "forbidden_scope": ["repair/execute v1", "change inherited science after output", "official examples before STARTED", "score before raw preserve", "retry post-START failure", "claim persistent-dynamics novelty from C19 alone"],
-    "go_conditions": ["v2 fresh/unSTARTED/unconsumed", "exact source/protocol/package/input/runtime bindings reconstruct", "no prior official output/conflicting C19 authority", "55x1744 raw + 1744 target join fail closed", "STARTED/no-clobber/raw-before-score machine enforced", "exact-head CI green", "Analyst authority current"],
-    "stop_conditions": ["new unbound scientific/statistical/acquisition/baseline/claim choice", "stale authority/collision", "target leakage/prior output", "ordering guarantee fails", "inherited science must change", "post-START failure/invalid evidence"],
-    "exact_refs_identities_to_recheck": ["ops/evidence-analyst-handoff", "66c8eafe9863ed1b2455cc833a3dc498ce7721b0", "research/c19-official-v2-scorer-complete-20260917", "90c936a7abca7eba0dac1f977753503551e73368", "c19-external-v2-official-protocol-v2", "c19-external-v2-official-v2", "control/c19*", "preserve/c19*", "evidence/c19*"],
+    "dependencies": [
+      "source base 66c8eafe remains outcome-free or any movement is re-audited",
+      "predecessor anchor/protocol/identity remain immutable retired-unSTARTED non-reusable",
+      "fresh v2 identity is collision-free unSTARTED unconsumed",
+      "current/newer Analyst authority explicitly preserves exact v2",
+      "INDEPENDENT_AUDITOR 66612643 is consumed as a pre-START readiness constraint"
+    ],
+    "allowed_scope": [
+      "create distinct successor without altering predecessor",
+      "implement already-fixed parser/pair iterator, target-blind envelope, six-field evaluator target, scorer/bootstrap/preserver/runtime/input bindings",
+      "close join uniqueness/totality/duplicate/missing/leakage guards",
+      "close quantile edge semantics and deterministic golden fixtures",
+      "fix every C19-specific science-preserving critical-path defect",
+      "after all GO gates pass, STARTED through terminal evidence in the same run"
+    ],
+    "forbidden_scope": [
+      "repair/execute/repurpose v1",
+      "change inherited matrix/adapter/baselines/seeds/metrics/thresholds/result inequalities/resource gates/claim after output",
+      "allow target truth into model features",
+      "score before immutable raw preservation",
+      "retry same v2 after post-START failure",
+      "claim persistent-dynamics or causal-circulation novelty from C19 alone"
+    ],
+    "evaluator_target_schema": {
+      "fields": ["pair_index", "record_id_hash", "source_index", "step_index", "target_choice_id", "update_required"],
+      "join_key": ["pair_index", "record_id_hash", "source_index", "step_index"],
+      "rows": 1744,
+      "update_rows": 1074,
+      "maintain_rows": 670,
+      "one_to_one_unique_and_total": true,
+      "duplicate_or_missing_fail_closed": true,
+      "target_truth_evaluator_only": true,
+      "materialize_only_after_raw_preservation": true
+    },
+    "bootstrap": {
+      "runtime": "CPython 3.11.16",
+      "rng": "random.Random(19901)",
+      "resamples": 10000,
+      "draw_rule": "exactly 1744 sequential rng.randrange(1744) calls per replicate",
+      "shared_indices": "same sample vector across primary/reference and seeds 15901-15905",
+      "quantile": "sort exactly 10000 finite effects; r=(N-1)*p; floor/ceil linear interpolation; retain ties; reject empty/wrong-length/non-finite; p=0/1 -> min/max; official p=.025/.975; no pre-classification rounding"
+    },
+    "golden_fixture_gate": [
+      "valid full evaluator join",
+      "duplicate-key rejection",
+      "missing-key rejection",
+      "target-leakage exclusion",
+      "tied-effect quantile",
+      "NaN/non-finite rejection",
+      "empty/wrong-length rejection",
+      "p=0 and p=1 boundaries",
+      "official p=.025/.975 interpolation"
+    ],
+    "go_conditions": [
+      "v2 fresh/unSTARTED/unconsumed; no collision/prior output/conflicting authority",
+      "all exact source/protocol/package/input/runtime/parser/envelope/scorer/bootstrap/preserver bindings reconstruct",
+      "55x1744 raw and 1744 evaluator target join fail closed",
+      "target truth technically evaluator-only",
+      "quantile edge rules and deterministic golden fixtures green",
+      "STARTED/no-clobber/raw-before-score machine-enforced",
+      "exact-head CI/review green",
+      "fresh remote authority reconciliation immediately before STARTED"
+    ],
+    "stop_conditions": [
+      "new unbound science/statistics/acquisition/baseline/claim choice",
+      "stale authority or collision/prior output",
+      "target leakage or non-total/non-unique join",
+      "unresolved quantile edge semantics or fixture failure requiring a new convention",
+      "ordering/no-clobber failure or inherited science change",
+      "post-START failure or invalid evidence; identity then consumed and no retry"
+    ],
+    "exact_refs_identities_to_recheck": [
+      "ops/evidence-analyst-handoff",
+      "ops/external-research-audit-handoff",
+      "66c8eafe9863ed1b2455cc833a3dc498ce7721b0",
+      "research/c19-official-v2-scorer-complete-20260917",
+      "90c936a7abca7eba0dac1f977753503551e73368",
+      "c19-external-v2-official-protocol-v1",
+      "c19-external-v2-official-v1",
+      "c19-external-v2-official-protocol-v2",
+      "c19-external-v2-official-v2",
+      "control/c19*", "preserve/c19*", "evidence/c19*"
+    ],
     "main_owns_all_critical_path_fixups": true
   },
   "sub_lane": null,
   "sub_fallback": null,
-  "no_sub_lane_reason": "H9 readiness is complete/PRE_START_UNDERSPECIFIED and needs eight new science choices; no other distinct registered independent object is reserved and ready; methods-terminal-provenance is unreserved; C19 work is MAIN-only.",
+  "no_sub_lane_reason": "Bounded review of H1-H10/current branches found no fully specified current independent unconsumed object ready without new scientific design. H9 needs eight new science choices; H10 needs new hardware-power protocol/resources; H1-H7 need fresh prospective candidate/protocol definitions and overlap historical/closed work; methods-terminal-provenance is unreserved stale lineage. Do not manufacture parallelism.",
   "outcome_contingencies": {
-    "PRE_START_SUCCESSOR_PROTOCOLIZATION": {"trigger": "v2 package incomplete but remaining choices are already fixed", "next": "MAIN continues mechanical closure", "one_way": false, "constraints": "v2/base66c8 only; no v1 mutation/official access", "go": "all edits implement fixed semantics", "stop": "new semantic choice", "prospectively_fixed": true},
-    "PRE_START_BLOCKER": {"trigger": "science-preserving CI/verifier/binding/runtime defect", "next": "MAIN fixes, rechecks, continues", "one_way": false, "constraints": "no scientific redefinition", "go": "mechanical correction", "stop": "scientific redesign required", "prospectively_fixed": true},
-    "PRE_START_STALE_AUTHORITY": {"trigger": "authority/ref/identity/control moves", "next": "reconcile; continue only if exact v2 preserved", "one_way": false, "go": "new authority preserves exact object", "stop": "allocation/object changed", "prospectively_fixed": true},
-    "PRE_START_SEMANTIC_GAP": {"trigger": "any unbound evaluator/bootstrap/acquisition/scoring/preservation/baseline/metric/claim choice", "next": "STOP; return to Analyst", "one_way": false, "stop": "always", "prospectively_fixed": true},
-    "PRE_START_READY_FOR_ONE_WAY": {"trigger": "all GO gates pass on exact v2 head", "next": "STARTED→acquire→raw preserve→targets→score→terminal evidence", "one_way": true, "constraints": "exact bindings; raw-before-score; no retry", "go": "fresh remote check immediately before STARTED", "stop": "any gate fails", "prospectively_fixed": true},
-    "POST_START_FAILURE": {"trigger": "failure after STARTED", "next": "preserve diagnostics, mark consumed, STOP", "one_way": false, "stop": "no retry", "prospectively_fixed": true},
-    "INVALID_EVIDENCE": {"trigger": "binding/completeness/ordering/integrity invalid", "next": "withhold result; preserve invalidity; consumed if STARTED; STOP", "one_way": false, "prospectively_fixed": true},
-    "PASS": {"trigger": "BREU 95% CI lower > 0", "next": "finalize narrow positive evidence then STOP", "one_way": false, "constraints": "no mechanism-novelty claim/post-outcome design", "prospectively_fixed": true},
-    "FAIL": {"trigger": "BREU 95% CI upper <= 0", "next": "finalize negative then STOP", "one_way": false, "constraints": "no rescue/retune/rerun", "prospectively_fixed": true},
-    "INCONCLUSIVE": {"trigger": "valid CI contains 0 and FAIL inequality not met", "next": "finalize inconclusive then STOP", "one_way": false, "constraints": "no extra data/resampling/retune", "prospectively_fixed": true}
+    "PRE_START_SUCCESSOR_PROTOCOLIZATION": {"trigger": "v2 absent/incomplete but remaining work already fixed", "next_action_same_run": "MAIN continues exact package implementation", "one_way_execution_allowed": false, "constraints": "v2/base66c8 only; predecessor untouched; no official outcome observation", "stop": "new semantic choice", "prospectively_fixed": true},
+    "PRE_START_AUDIT_HARDENING": {"trigger": "join/leakage/quantile-edge/golden-fixture conformance incomplete but behavior fixed here", "next_action_same_run": "MAIN fixes uniqueness+totality, duplicate/missing guards, evaluator-only targets, quantile edges, golden fixtures; rerun exact-head CI", "one_way_execution_allowed": false, "stop": "fixture exposes a new semantic choice", "prospectively_fixed": true},
+    "PRE_START_BLOCKER": {"trigger": "science-preserving C19 CI/verifier/binding/runtime/preserver defect", "next_action_same_run": "MAIN fixes, rechecks refs/checks, continues", "one_way_execution_allowed": false, "stop": "scientific redesign required", "prospectively_fixed": true},
+    "PRE_START_STALE_AUTHORITY": {"trigger": "Analyst/audit/C19 ref/identity/control moves", "next_action_same_run": "STOP/reconcile; continue only if newer authority preserves exact v2 and audit gates", "one_way_execution_allowed": false, "prospectively_fixed": true},
+    "PRE_START_SEMANTIC_GAP": {"trigger": "any evaluator/bootstrap/acquisition/scoring/preservation/baseline/metric/claim choice remains unbound", "next_action_same_run": "STOP before STARTED; return to Analyst", "one_way_execution_allowed": false, "prospectively_fixed": true},
+    "PRE_START_READY_FOR_ONE_WAY": {"trigger": "all GO gates including Auditor hardening pass on exact v2 after fresh reconciliation", "next_action_same_run": "STARTED -> acquisition -> target-blind raw -> immutable raw preservation -> evaluator targets -> scoring -> terminal evidence", "one_way_execution_allowed": true, "constraints": "exact v2 only; raw-before-score; no-clobber; no retry", "prospectively_fixed": true},
+    "POST_START_FAILURE": {"trigger": "any failure after STARTED", "next_action_same_run": "preserve diagnostics, mark consumed, STOP", "one_way_execution_allowed": false, "stop": "no retry", "prospectively_fixed": true},
+    "INVALID_EVIDENCE": {"trigger": "binding/join/completeness/leakage/ordering/integrity invalid", "next_action_same_run": "withhold result, preserve invalidity, consumed if STARTED, STOP", "one_way_execution_allowed": false, "prospectively_fixed": true},
+    "PASS": {"trigger": "BREU 95% CI lower > 0", "next_action_same_run": "finalize narrow positive evidence then STOP", "one_way_execution_allowed": false, "constraints": "no mechanism-novelty claim or post-outcome design", "prospectively_fixed": true},
+    "FAIL": {"trigger": "BREU 95% CI upper <= 0", "next_action_same_run": "finalize negative then STOP", "one_way_execution_allowed": false, "constraints": "no rescue/retune/rerun", "prospectively_fixed": true},
+    "INCONCLUSIVE": {"trigger": "valid CI contains 0 and FAIL inequality not met", "next_action_same_run": "finalize inconclusive then STOP", "one_way_execution_allowed": false, "constraints": "no extra data/resampling/retune", "prospectively_fixed": true}
   },
-  "blocked_until": {"main": "implementation may proceed now; one-way waits for all exact GO gates", "sub": "new Analyst reserves a genuinely independent prospective lane; H9 waits for eight science choices"},
-  "do_not_touch": ["C19 v1 protocol/identity/90c936a7...", "consumed A01 P2/P3/P4 and MD-001", "A01 B/C rejected objects", "RV01 R01-16/R01-17", "RV02 D1", "CX01 Candidate-002/formal", "historical C19-v1/C06", "historical C07/H9 + threshold-1.1 negative", "C08/H8 terminal", "legacy authority refs"],
-  "active_main_sub_claims_observed": {"main": "C19 head still 66c8eafe; successor absent; last MAIN durable science report 06:33", "sub": "09:35 deliberate no-op under abda3b; H9 complete/underspecified; no fallback", "collision": false},
-  "top_recommendation": "MAIN closes exact fresh C19-v2 package and, if fresh GO checks pass, continues same-run through one-way terminal evidence; SUB remains deliberately idle.",
-  "top_3": [
-    {"rank": 1, "action": "MAIN exact C19-v2 successor → one-way if GO", "information_value": "VERY_HIGH", "distance": "NEAR_TO_MEDIUM"},
-    {"rank": 2, "action": "SUB deliberate no-op until independent reserved object exists", "information_value": "INTEGRITY_PRESERVING", "distance": "NONE_NOW"},
-    {"rank": 3, "action": "Non-blocking governance: #147 canonical sync; #139 tag/ruleset protection", "information_value": "LOW_SCIENTIFIC_HIGH_GOVERNANCE", "distance": "NEAR_TO_MEDIUM"}
+  "blocked_until": {
+    "main": "Implementation may proceed now; one-way is blocked until the exact fresh v2 passes all original GO gates plus Auditor-required join/leakage/quantile/golden-fixture gates and authority is rechecked.",
+    "sub": "A newer Analyst reserves a fully specified genuinely independent prospective lane/fallback; H9 waits for eight prospective science choices."
+  },
+  "do_not_touch": [
+    "C19 scientific-semantics anchor 90c936a7abca7eba0dac1f977753503551e73368",
+    "c19-external-v2-official-protocol-v1",
+    "c19-external-v2-official-v1",
+    "A01 MD-001", "A01 P2 candidate-002", "A01 P3 candidate-001", "A01 Family-A P4 candidate-001",
+    "A01 Family-B/C rejected exact objects",
+    "RV01 R01-16 family", "RV01 R01-17",
+    "RV02 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
+    "CX01 Candidate-002/formal evidence",
+    "historical C19-v1/C06",
+    "historical C07/H9 including threshold-1.1 negative",
+    "C08/H8 terminal object",
+    "legacy freeze/control/preserve/evidence authorities"
   ],
-  "consumed_identities": ["A01 MD-001", "A01 P2 candidate-002", "A01 P3 candidate-001", "A01 Family-A P4", "RV01 R01-16 family", "RV01 R01-17", "RV02 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a", "CX01 Candidate-002/formal"],
-  "blockers": {"main": ["fresh v2 branch/package not created; implementation gate only"], "sub": ["no valid independent reserved lane"], "audit": ["no durable INDEPENDENT_AUDITOR handoff"]},
-  "go_stop_number_1": {"GO": "fresh identity + exact bindings + no prior output/conflict + raw/target fail-closed + STARTED/no-clobber/raw-first + green exact-head CI + current authority", "STOP": "new science choice/stale authority/collision/leakage/prior output/ordering failure/inherited science change; post-START failure consumes identity", "falsifier": "PASS lower CI>0; FAIL upper CI<=0; else INCONCLUSIVE; PASS is narrow representation-gain only"},
-  "governance_advisory": {"issue_drift": "#147 operational only; canonical git wins", "freeze_tag_drift": "tags still 0; preserve legacy freeze branches", "tag_protection_gap": "rulesets 0 and main unprotected; #139 remains open", "main_promotion_candidates": ["generic source/runtime binding", "STARTED/no-clobber/collision primitives", "exact pair coverage", "raw-before-score/digest verification", "generic fail-closed verifier/state machine"], "priority": "NON_BLOCKING"},
-  "orchestrator_handoff": "MAIN takes C19 and ALL critical-path fixes. SUB takes nothing; fallback null. MAIN must not invent/absorb H9; SUB must not take C19 blockers. Neither touches rejected/consumed/frozen authorities. Repartition only on fresh C19 state change, materially new pre-START external/audit evidence, or a fully specified reserved independent SUB object. MAIN may continue through protocolization/mechanical blockers/ready-for-one-way/PASS-FAIL-INCONCLUSIVE finalization; stop at semantic gap, irreconcilable stale authority, invalid evidence, post-START failure, or before post-outcome redesign."
+  "active_MAIN_SUB_claims_observed": {
+    "main": "C19 substrate remains 66c8eafe; successor absent; latest durable MAIN scientific history remains 0633-main.md; no new MAIN scientific result; operational status FAILED_OR_INCOMPLETE.",
+    "sub": "10:34 deliberate NO_OP_BY_DESIGN; H9 complete/underspecified; no fallback.",
+    "collision": false
+  },
+  "top_recommendation": "MAIN restores durable critical-path progress, closes exact fresh C19-v2 including Auditor-mandated join/leakage/quantile/golden-fixture gates, and if every fresh GO check passes continues same-run through one-way terminal evidence. SUB remains deliberately idle.",
+  "top_3": [
+    {"rank": 1, "action": "MAIN exact Auditor-hardened C19-v2 successor -> one-way if all GO gates pass", "information_value": "VERY_HIGH", "distance": "NEAR_TO_MEDIUM"},
+    {"rank": 2, "action": "SUB deliberate no-op after bounded hypothesis review; do not invent H9/H10/H1-H7 science or take C19 blockers", "information_value": "INTEGRITY_PRESERVING", "distance": "NONE_NOW"},
+    {"rank": 3, "action": "Non-blocking operations/governance: restore MAIN durable progress; keep #147 canonical; #139 ruleset administration", "information_value": "HIGH_OPERATIONAL_LOW_DIRECT_SCIENTIFIC", "distance": "NEAR_TO_MEDIUM"}
+  ],
+  "consumed_identities": [
+    "A01 MD-001", "A01 P2 candidate-002", "A01 P3 candidate-001", "A01 Family-A P4 candidate-001",
+    "RV01 R01-16 family", "RV01 R01-17",
+    "RV02 D1 96634541dc29b00be9f19b5819d45f541af69348ab6c1b0da6b48e943221700a",
+    "CX01 Candidate-002/formal evidence"
+  ],
+  "blockers": {
+    "main_scientific_integrity": ["fresh v2 successor branch/package absent", "Auditor join/leakage/quantile/golden-fixture gates must be implemented before STARTED"],
+    "main_operational": ["No durable MAIN history/latest advancement after 06:33 despite later MAIN cycles; authorized successor remains absent. Treat as worker/persistence failure, not permission to relax science."],
+    "sub": ["no valid independent reserved lane after bounded H1-H10 review"],
+    "governance": ["0 rulesets / main unprotected; authoritative tag namespaces lack server-side protection"]
+  },
+  "governance_advisory": {
+    "issue_canonical_source_drift": "#147 is operational only; canonical git sources/evidence win.",
+    "freeze_tag_migration_drift": "Legacy freeze branches remain authoritative historical anchors; do not force-migrate or rewrite. Authoritative tag count remains 0.",
+    "tag_protection_gap": "Rulesets remain 0 and main is unprotected; #139 remains open; governance is non-blocking for C19.",
+    "main_promotion_candidates": ["generic source/runtime binding", "STARTED/no-clobber/identity-collision primitives", "exact pair coverage", "raw-preserve-before-score/digest verification", "generic fail-closed state machine", "generic unique+total evaluator-join validator", "generic deterministic golden-scorer fixture harness after semantics are independently genericized"]
+  },
+  "orchestrator_handoff": "MAIN takes C19 official-v2 and owns ALL critical-path fixes, including Auditor-required join/leakage/quantile/golden-fixture hardening. SUB takes no lane; fallback null after bounded H1-H10/current-branch review. MAIN must not invent/absorb H9/H10; SUB must not take C19 blockers. Neither touches rejected/consumed/frozen/legacy authorities. Repartition only on fresh C19 state change, materially new pre-START external/audit evidence that changes information value, or a fully specified explicitly reserved independent SUB object. MAIN may continue through successor protocolization, Auditor hardening, science-preserving blockers, ready-for-one-way and terminal PASS/FAIL/INCONCLUSIVE finalization; stop at semantic gap, irreconcilable stale authority, invalid evidence, post-START failure, or before post-outcome redesign."
 }
