@@ -40,7 +40,7 @@ class ExecutionAdmissionV3:
     planned_identity: str = PLANNED_IDENTITY
 
     @classmethod
-    def synthetic_dev(cls) -> "ExecutionAdmissionV3":
+    def synthetic_dev(cls) -> ExecutionAdmissionV3:
         return cls(SYNTHETIC_SCOPE, None, None, None)
 
     def validate(self) -> None:
@@ -73,7 +73,7 @@ class RawBundleV3:
     sha256: str
 
     @classmethod
-    def from_records(cls, records: Sequence[Mapping[str, Any]]) -> "RawBundleV3":
+    def from_records(cls, records: Sequence[Mapping[str, Any]]) -> RawBundleV3:
         normalized = tuple(dict(record) for record in records)
         validate_raw_records_v3(normalized)
         return cls(records=normalized, sha256=inherited.sha256_json(normalized))
