@@ -1,6 +1,6 @@
 # SparkBrain Research Orchestrator — SUB latest
 
-Timestamp: `2026-09-17T20:47:00+09:00`  
+Timestamp: `2026-09-17T20:48:00+09:00`  
 Worker role: `sub`  
 Mode: `exploratory_incubator`  
 Evidence Analyst commit consumed: `56f0665ccc536bff6bf48e9eb581ec9a9eafcecc`
@@ -37,7 +37,7 @@ Artifacts:
 - `artifacts/spiking/exploratory_h9_decoder_state_boundary/state_inventory_ablation.json`
 - updated `artifacts/spiking/exploratory_h9_decoder_state_boundary/README.md`
 
-Ordinary repository CI `35217203157` was still `in_progress` at final report persistence. No formal/scientific workflow was dispatched.
+Ordinary repository CI `35217203157` completed **success** on exact exploratory head `874bc55...`. No formal/scientific workflow was dispatched.
 
 ## NON_EVIDENTIARY observations
 
@@ -62,4 +62,4 @@ This is **NON_EVIDENTIARY**. It does not support H9, does not show historical C0
 
 Formal workflows/experiments: `0`. STARTED/control creation: `0`. Official-data access: `0`. Formal scoring/preservation: `0`. New formal scientific result: **none**. New identities consumed by SUB: **none**. PRs opened/merged: `0`.
 
-Completion target is reached: the one additional Analyst-authorized H9 diagnostic was implemented, executed on synthetic data, persisted with an explicit NON_EVIDENTIARY boundary, and handed back without entering MAIN or formal authority.
+Completion target is reached: the one additional Analyst-authorized H9 diagnostic was implemented, executed on synthetic data, persisted with an explicit NON_EVIDENTIARY boundary, passed ordinary repository CI, and handed back without entering MAIN or formal authority.
