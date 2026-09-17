@@ -1,55 +1,53 @@
 {
-  "timestamp": "2026-09-17T23:41:00+09:00",
+  "timestamp": "2026-09-18T00:43:00+09:00",
   "worker_role": "sub",
   "mode": "exploratory_incubator",
-  "evidence_analyst_commit": "9f88fba973f54bc6608d183aacfaccd7952a229f",
+  "evidence_analyst_commit": "f2342817193f4e3a191bb05921db5598ee3cd10c",
   "consumed_lanes": {
-    "main_lane": "C19-R1 revision-authority matched reduction; MAIN-only; execution/STARTED forbidden pending fresh Analyst authorization",
+    "main_lane": "C19-R1 audit-aligned representation-matched stateless revision-authority reduction; MAIN-only; exact-head readiness green; execution/STARTED forbidden pending fresh Analyst authorization",
     "sub_lane": null,
     "sub_fallback": null
   },
   "selected_independent_lane": null,
-  "exploratory_target": "H7 trace-causality faithfulness under a fixed synthetic hidden predictive bypass",
+  "exploratory_target": "H4 no-ignition versus information-matched ordinary abstention on a fixed synthetic selective-prediction grid",
   "independence_from_main_critical_path": true,
-  "why_independent_of_main": "Distinct H7 synthetic trace-faithfulness diagnostic based on stable main; uses no C19/R1 branch, identity, official Belief-R inputs/outputs, scorer, preservation, or MAIN blocker.",
+  "why_independent_of_main": "Distinct H4 synthetic reduction probe based on stable main. It uses no C19/R1 branch, identity, official Belief-R data, scorer, source map, preservation machinery, MAIN blocker, or v4 per-example outcome.",
   "execution_allowed": false,
-  "sub_active_claim": "EXPLORATORY_NON_EVIDENTIARY_H7_TRACE_CAUSALITY_BYPASS",
+  "sub_active_claim": "EXPLORATORY_NON_EVIDENTIARY_H4_ABSTENTION_EQUIVALENCE",
   "main_work_explicitly_avoided": [
-    "C19-R1 branch/identity/STARTED/execution/successor design",
-    "C19-v4 control/preserve/evidence and official Belief-R materials",
+    "C19-R1 branch implementation, atomic_idx audit amendment, CI/pre-START fixes, STARTED/execution and successor design",
+    "C19-v4 immutable control/preserve/evidence and official Belief-R materials",
     "C19-v2/v3/v4 consumed identities",
-    "MAIN candidate-specific CI/binding/scoring/preservation work"
+    "MAIN candidate-specific binding, scoring and preservation work"
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "9f88fba973f54bc6608d183aacfaccd7952a229f",
+    "evidence_analyst": "f2342817193f4e3a191bb05921db5598ee3cd10c",
     "control_brain": "d8987f8c6d88fad48a8f652f4255e73b30a223e6",
-    "c19_r1": "research/c19-r1-revision-authority-reduction-20260917@c23736b63e6100bcdc38e7f11d94c782eb6273dc",
+    "c19_r1": "research/c19-r1-revision-authority-reduction-20260917@7cf849051a68b4227e29fe2f6ee95b2ff277dacd",
     "c19_r1_started_refs": [],
     "c19_r1_preserve_refs": [],
-    "c19_r1_evidence_refs": [],
-    "c19_r1_ordinary_ci": "35221764016:success",
-    "c19_r1_prestart": "35221764005:success",
+    "c19_r1_prestart": "35241040727:success",
+    "c19_r1_ordinary_ci": "35241040735:success",
     "c19_v4_evidence_tag": "evidence/c19-official-v4-c19-external-v2-official-v4",
-    "exploratory_branch": "research/exploratory-sub-h7-trace-causality-20260917@3b5f122d287025bd9e0aec3a5266704236e6a3d5",
-    "exploratory_exact_head_ci": "35234865430:success",
+    "exploratory_branch": "research/exploratory-sub-h4-abstention-equivalence-20260918@c66c6775319cb569229f5de621f07a61c010b080",
+    "exploratory_exact_head_ci": "35241758360:success",
     "open_pr_count": 0,
     "open_issues": [139, 147],
-    "legacy_freeze_branches_inspected": true,
-    "sealed_branches_observed": 0,
-    "formal_branches_observed": 0,
-    "freeze_tags_observed": 0,
-    "sealed_tags_observed": 0,
-    "formal_tags_observed": 0
+    "authoritative_evidence_tag_observed": "evidence/c19-official-v4-c19-external-v2-official-v4"
   },
   "branches_prs_advanced": {
-    "research_branches_created": ["research/exploratory-sub-h7-trace-causality-20260917"],
-    "research_branches_advanced": ["research/exploratory-sub-h7-trace-causality-20260917@3b5f122d287025bd9e0aec3a5266704236e6a3d5"],
+    "research_branches_created": [
+      "research/exploratory-sub-h4-abstention-equivalence-20260918"
+    ],
+    "research_branches_advanced": [
+      "research/exploratory-sub-h4-abstention-equivalence-20260918@c66c6775319cb569229f5de621f07a61c010b080"
+    ],
     "implementation_commits": [
-      "d8e2900810df73cf7852e090037b9b739e888540",
-      "453cfb4b1f234273a8f318befd9679cd8e6717cd",
-      "6728b40ed19887b8d57549c095fb960ce08b3376",
-      "3b5f122d287025bd9e0aec3a5266704236e6a3d5"
+      "afb56d3d71a3fefe2eb01604c68ef42244c543a9",
+      "d56d62620ef5357520c56fb262e798aa779d9b39",
+      "42fdc3b1856b042b63b126382b096dfac0840e1a",
+      "c66c6775319cb569229f5de621f07a61c010b080"
     ],
     "prs_created": [],
     "merges": []
@@ -61,12 +59,12 @@
     "one_way_dispatches_by_sub": 0,
     "official_data_access_by_sub": false,
     "manual_workflow_dispatches_by_sub": 0,
-    "exploratory_exact_head_ci": "35234865430:success",
+    "exploratory_exact_head_ci": "35241758360:success",
     "synthetic_exploratory_micro_experiment": {
-      "script": "scripts/exploratory_h7_trace_causality.py",
-      "tests": "tests/test_exploratory_h7_trace_causality.py",
-      "result_artifact": "artifacts/exploratory_h7_trace_causality/result.json",
-      "boundary_document": "artifacts/exploratory_h7_trace_causality/README.md",
+      "script": "scripts/exploratory_h4_abstention_equivalence.py",
+      "tests": "tests/test_exploratory_h4_abstention_equivalence.py",
+      "result_artifact": "artifacts/exploratory_h4_abstention_equivalence/result.json",
+      "boundary_document": "artifacts/exploratory_h4_abstention_equivalence/README.md",
       "formal": false,
       "identity": null
     }
@@ -76,49 +74,61 @@
     "new_formal_readiness_result_by_sub": false,
     "exploratory_observation": true,
     "fixed_synthetic_parameters": {
-      "example_count": 64,
-      "bypass_coverages": [0.0, 0.25, 0.5, 0.75, 1.0],
-      "routed_weight": 1.0,
-      "bypass_weight": 1.5
+      "example_count": 192,
+      "margins": [0.2, 0.35, 0.5, 0.65, 0.8, 0.95],
+      "diversities": [1, 2, 3, 4],
+      "contradictions": [false, true],
+      "within_cell_variants": 4,
+      "workspace_gate": "margin >= 0.50 AND diversity >= 2 AND contradiction == false",
+      "matched_feature_score": "margin + 0.10*(diversity-1) - 0.35*contradiction"
     },
-    "baseline_accuracy_all_scenarios": 1.0,
-    "route_stability_all_scenarios": 1.0,
-    "trace_deletion_accuracy_by_bypass_coverage": [0.0, 0.25, 0.5, 0.75, 1.0],
-    "wrong_route_replacement_accuracy_by_bypass_coverage": [0.0, 0.25, 0.5, 0.75, 1.0],
-    "deletion_sensitivity_by_bypass_coverage": [1.0, 0.75, 0.5, 0.25, 0.0],
-    "replacement_sensitivity_by_bypass_coverage": [1.0, 0.75, 0.5, 0.25, 0.0],
-    "interpretation": "In this constructed world, stable route IDs and perfect baseline prediction coexist with arbitrarily weak trace causal necessity when an unreported same-signal bypass covers more cases. Future H7 work must distinguish route stability from trace causal completeness and distinguish legitimate redundancy from misleading or incomplete traces."
+    "workspace_no_ignition": {
+      "accepted": 48,
+      "coverage": 0.25,
+      "selective_risk": 0.125
+    },
+    "best_margin_only_at_or_above_workspace_coverage": {
+      "threshold": 0.8,
+      "accepted": 64,
+      "coverage": 0.3333333333333333,
+      "selective_risk": 0.21875
+    },
+    "matched_feature_dominator": {
+      "threshold": 0.8,
+      "accepted": 52,
+      "coverage": 0.2708333333333333,
+      "selective_risk": 0.11538461538461542
+    },
+    "matched_feature_dominator_count": 1,
+    "interpretation": "In this constructed selective-prediction world, the workspace no-ignition point appears superior to a margin-only abstention comparator but is strictly dominated once the ordinary abstention comparator receives the same margin/diversity/contradiction information. This is comparator-information matching pressure, not H4 evidence."
   },
   "evidentiary_status": "NON_EVIDENTIARY",
-  "hypothesis_or_reduction_question": "Can stable learned-route identifiers and perfect baseline prediction coexist with weak trace-to-output causal faithfulness when an unreported bypass carries the same task signal?",
-  "synthetic_or_dev_inputs_used": "Fixed deterministic 64-example binary-label toy with a stable visible route and fixed hidden-bypass coverage grid; no formal, sealed, official, held-out, C19, R1, Belief-R, or consumed-identity data.",
-  "implementation_or_experiment_performed": "Implemented a fixed synthetic route/bypass model, measured trace deletion and wrong-route counterfactual replacement across a fixed bypass-coverage grid, pinned expected behavior with tests, persisted a NON_EVIDENTIARY result artifact and boundary document, and obtained green exact-head ordinary CI without manual workflow dispatch.",
+  "hypothesis_or_reduction_question": "Does toy no-ignition retain a selective-prediction advantage once an ordinary abstention comparator receives the same margin/diversity/contradiction information?",
+  "synthetic_or_dev_inputs_used": "Fixed deterministic 192-example synthetic grid over margin, diversity, contradiction and four within-cell variants; no formal, sealed, official, held-out C19/R1/Belief-R or consumed-identity data.",
+  "implementation_or_experiment_performed": "Implemented a fixed toy no-ignition gate, a margin-only abstention frontier, and an information-matched abstention frontier; pinned expected coverage-risk behavior with tests; persisted a NON_EVIDENTIARY result artifact and Analyst boundary document; and obtained green exact-head ordinary CI without manual workflow dispatch.",
   "observations": [
-    "Baseline accuracy remains 1.0 for all five fixed bypass-coverage scenarios.",
-    "Route-ID stability remains 1.0 for all five fixed bypass-coverage scenarios.",
-    "Trace deletion accuracy rises from 0.0 to 1.0 as hidden bypass coverage rises from 0 to 1, so deletion sensitivity falls from 1.0 to 0.0.",
-    "Wrong-route replacement shows the same fixed sensitivity collapse from 1.0 to 0.0.",
-    "At complete hidden-bypass coverage, prediction and trace stability remain perfect while deleting or replacing the reported route does not reduce correctness.",
-    "Exact-head CI 35234865430 passed Python 3.11 and 3.13 jobs, including lint, tests, and bundle validation."
+    "Toy workspace no-ignition accepts 48/192 examples at coverage 0.25 and selective risk 0.125.",
+    "The best fixed margin-only abstention point at or above workspace coverage has coverage 0.3333333333333333 and worse selective risk 0.21875.",
+    "When ordinary abstention receives matched margin/diversity/contradiction information, threshold 0.80 accepts 52/192 at coverage 0.2708333333333333 and lower selective risk 0.11538461538461542, strictly dominating the workspace point.",
+    "Exactly one point on the fixed matched-feature frontier dominates the workspace point.",
+    "Exact-head CI 35241758360 completed successfully on c66c6775319cb569229f5de621f07a61c010b080."
   ],
-  "what_would_falsify_or_reduce_it": "The concern is reduced if a prospectively declared trace-completeness contract proves that all task-relevant predictive paths are reported, or if matched held-out interventions show stable trace IDs remain causally necessary/sufficient/complete after accounting for legitimate redundant paths. Deletion alone is not decisive because true redundancy can mask necessity.",
-  "candidate_formal_question": "Under prospectively declared allowed bypass/residual paths and matched predictive quality, do stable learned route IDs/evidence paths remain causally faithful under route/evidence deletion and counterfactual replacement on held-out routing cases?",
+  "what_would_falsify_or_reduce_it": "The comparator-matching concern is reduced if a prospectively frozen H4 experiment gives no-ignition a robust coverage-risk or preregistered utility advantage over ordinary abstention mechanisms matched for uncertainty information, calibration opportunity, predictor capacity, training/tuning budget and resource budget.",
+  "candidate_formal_question": "Under prospectively matched uncertainty information, calibration/training budget, predictor capacity and resource budget, does a no-ignition workspace state improve held-out coverage-risk or preregistered selective utility beyond ordinary abstention mechanisms on insufficient-evidence and OOD cases?",
   "suggested_prospective_object": null,
   "new_scientific_choices_required_before_formalization": [
-    "exact route semantics and stable role/ID definition",
-    "definition of what counts as a reported trace path",
-    "allowed bypass, residual, skip and redundant channels",
-    "necessity, sufficiency and trace-completeness metrics",
-    "held-out routing and nuisance-view construction",
-    "deletion and counterfactual replacement intervention rules",
-    "semantic-label reliability criterion",
-    "matched comparator definitions",
-    "training and tuning budget",
-    "seeds, runtime, determinism and resource contract",
-    "success/failure thresholds",
-    "fresh protocol/package/identity/integrity gates"
+    "task family and insufficient-evidence/OOD construction",
+    "definition of ignition/no-ignition and exact workspace gate inputs",
+    "comparator information budget and feature access",
+    "ordinary abstention comparator family and calibration method",
+    "predictor capacity and training/tuning budget matching",
+    "coverage-risk and utility metrics plus operating-point selection rule",
+    "calibration split and held-out split",
+    "resource/runtime contract, seeds and determinism",
+    "failure/exclusion rules and success/failure criteria",
+    "fresh protocol, package and identity with normal integrity gates"
   ],
-  "promotion_recommendation": "CONTINUE_EXPLORING",
+  "promotion_recommendation": "CONTINUE_EXPLORING only after Evidence Analyst classification; do not automatically continue or formalize this H4 toy next run",
   "consumed_identities": {
     "newly_consumed_by_sub": [],
     "known_consumed_do_not_touch": [
@@ -130,19 +140,24 @@
       "RV02 D1",
       "CX01 Candidate-002"
     ],
-    "c19_r1_observed_consumed": false
+    "c19_r1_revision_authority_official_v1_observed_consumed": false
   },
   "blockers": {
-    "formal_lane": ["No reserved independent formal sub_lane or sub_fallback."],
+    "formal_lane": [
+      "No reserved independent formal sub_lane or sub_fallback."
+    ],
     "exploratory_validation": [],
-    "main_only": ["C19-R1 remains MAIN-only and Analyst-blocked for STARTED/execution; SUB did not touch it."]
+    "main_only": [
+      "C19-R1 is exact-head green but remains MAIN-only and Analyst-blocked before STARTED; SUB did not touch it."
+    ]
   },
   "collision_reconciliation": {
-    "current_main_frontier": "C19-R1@c23736b63e6100bcdc38e7f11d94c782eb6273dc; ordinary/pre-START CI green; no R1 STARTED/preserve/evidence ref observed; execution forbidden by current Analyst handoff",
+    "current_main_frontier": "C19-R1@7cf849051a68b4227e29fe2f6ee95b2ff277dacd; dedicated pre-START 35241040727 success; ordinary CI 35241040735 success; no R1 STARTED/preserve ref observed; fresh Analyst authorization still required",
     "main_frontier_touched_by_sub": false,
     "main_dependency_created_by_sub": false,
     "official_inputs_or_outputs_used_by_sub": false,
-    "evidence_analyst_tip_at_write": "9f88fba973f54bc6608d183aacfaccd7952a229f"
+    "evidence_analyst_tip_at_write": "f2342817193f4e3a191bb05921db5598ee3cd10c",
+    "concurrent_main_reporting_preserved": true
   },
   "integrity_state": {
     "status": "EXPLORATORY_NON_EVIDENTIARY_BOUNDARY_HELD",
@@ -152,12 +167,13 @@
     "started_ref_created_by_sub": false,
     "formal_workflow_dispatched_by_sub": false,
     "official_data_accessed_by_sub": false,
-    "main_frontier_touched_by_sub": false
+    "main_frontier_touched_by_sub": false,
+    "exploratory_artifacts_labeled_non_evidentiary": true
   },
   "completion_target": {
-    "target": "One bounded independent H7 trace-causality / hidden-bypass diagnostic.",
+    "target": "One bounded independent H4 no-ignition versus information-matched abstention reduction probe.",
     "status": "reached",
-    "result": "Branch, fixed synthetic probe, tests, result artifact and NON_EVIDENTIARY boundary document persisted; exact-head CI green."
+    "result": "New exploratory branch, fixed synthetic probe, tests, result artifact and NON_EVIDENTIARY boundary document persisted; exact-head CI green."
   },
   "fallback_status": {
     "sub_fallback": null,
@@ -166,10 +182,11 @@
   "rejected_lane": null,
   "lane_rejected_reason": null,
   "historical_incubator_boundaries": {
+    "h7": "Evidence Analyst classified NO_ACTION; stopped and not touched in this run",
     "h9": "completed/NO_ACTION; not touched",
     "revision_authority_fsa": "rejected; not touched",
     "h5": "returned to Evidence Analyst; not automatically continued",
     "h6": "returned to Evidence Analyst; not automatically continued"
   },
-  "next_sub_action": "Return H7 NON_EVIDENTIARY trace-causality bypass probe to Evidence Analyst for classification; do not touch C19-R1 and do not automatically formalize or continue H7 before Analyst review."
+  "next_sub_action": "Return the H4 NON_EVIDENTIARY abstention-equivalence probe to Evidence Analyst for classification. Do not touch C19-R1 and do not automatically continue/formalize H4 before fresh Analyst review."
 }
