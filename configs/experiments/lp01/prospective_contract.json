@@ -1,0 +1,175 @@
+{
+  "schema": "lp01-prospective-contract-v1",
+  "status": "PROSPECTIVE_SPECIFICATION_ONLY",
+  "formal_identity": null,
+  "formal_execution_authorized": false,
+  "evidence_analyst_authority": "57464c4ad6881c27371be5305512656c6ae315d3",
+  "scientific_question": "Does actual historical lineage/provenance carry causal credit for later credit-allocation and decision behavior after present numeric state, recent input, information privilege and lineage-bookkeeping resource budgets are matched, and does any effect survive an ordinary explicit-state reduction?",
+  "claim_boundary": {
+    "allowed": "A narrow causal-lineage bookkeeping claim under lineage-addressed delayed-credit interventions in a matched synthetic/native-structural testbed.",
+    "disallowed": [
+      "generic memory novelty",
+      "generic persistence novelty",
+      "energy or wall-clock claims",
+      "universal computational complexity claims",
+      "consciousness or cognitive novelty claims",
+      "reuse of H7 exploratory settings or observations",
+      "reuse or rescue of any consumed H5, NI01, PD01 or C19 identity"
+    ]
+  },
+  "candidate": {
+    "name": "NativeActualLineageCredit",
+    "mechanism": "Use append-only StructuralController logical identities, parent tuples and tombstones to resolve actual ancestry for delayed credit allocation; shared present numeric state and recent input remain unchanged.",
+    "lineage_privilege": "Exact parent relation carried by the candidate's own historical structural events; no truth labels, world labels, future query labels or evaluator-only targets.",
+    "trainable_parameters": 0
+  },
+  "comparators": [
+    {
+      "name": "ExplicitParentTable",
+      "role": "strongest ordinary explicit-state reduction",
+      "mechanism": "Independently reconstruct the same parent relation from the same admitted structural event stream using an ordinary explicit parent table and answer the same ancestry/credit queries.",
+      "information_privilege": "Exactly the same structural events, present state and recent input as the candidate.",
+      "trainable_parameters": 0
+    },
+    {
+      "name": "RecentWindowState",
+      "role": "predictive/current-state reduction",
+      "mechanism": "Use matched present observables and a fixed recent-event window only; no older ancestry relation.",
+      "information_privilege": "Same present observables and recent event window; no evaluator target.",
+      "trainable_parameters": 0
+    },
+    {
+      "name": "ProvenanceDestroyedControl",
+      "role": "causal necessity control",
+      "mechanism": "Preserve live slots, current tensors, masks, recent input, event counts, parent arities and resource shape while replacing parent assignment with a deterministic opaque-ID permutation fixed before scoring.",
+      "information_privilege": "Same cardinality and resource surface as candidate, but actual ancestry is destroyed.",
+      "trainable_parameters": 0
+    }
+  ],
+  "observable_envelope": {
+    "matched_present_observables": [
+      "active module mask",
+      "active edge mask",
+      "module numeric state",
+      "model parameters",
+      "router outputs",
+      "pending-event count",
+      "remaining structural budgets",
+      "current decision logits/probabilities",
+      "recent admitted input/event window"
+    ],
+    "candidate_only_semantic_state": "actual parent/tombstone relation, also supplied losslessly to ExplicitParentTable through the same admitted historical event stream",
+    "forbidden_bypass": [
+      "logical-ID lexical encoding of ancestry",
+      "seed or world identifier",
+      "target/query label before intervention",
+      "different current tensors or active masks across matched twins",
+      "different recent input window across matched twins",
+      "different capacity or bookkeeping budget",
+      "direct evaluator target access",
+      "post-outcome parameter selection"
+    ]
+  },
+  "held_out_construction": {
+    "unit": "history_seed x post-history query",
+    "history_family": "balanced branching/merge event histories that end in matched live-state twins with opaque logical IDs",
+    "present_state_matching": "byte-identical synthetic present feature vector and identical recent input window within each ancestry twin; native formal adapter must additionally hash-match all declared present tensors/masks/counters before intervention",
+    "ancestry_difference": "at least one queried live node has different actual ancestor membership across the twin while parent arity histogram and live-slot cardinality are equal",
+    "query_timing": "query/intervention sampled only after the matched present-state checkpoint is fixed",
+    "dev_profile": {
+      "evidentiary_status": "NON_EVIDENTIARY",
+      "history_seeds": [4101, 4103, 4109, 4111, 4127, 4129],
+      "live_nodes": 24,
+      "history_events": 72,
+      "queries_per_history": 12
+    },
+    "planned_formal_profile": {
+      "must_not_run_before_fresh_analyst_go": true,
+      "history_seed_start": 51000,
+      "history_seed_count": 96,
+      "live_nodes": 48,
+      "history_events": 192,
+      "queries_per_history": 32
+    }
+  },
+  "interventions": {
+    "lineage_required": "Deliver delayed signed credit to the descendants of an opaque queried historical ancestor after the matched present-state checkpoint; downstream decision uses only the resulting credited live set plus the already-matched present state.",
+    "provenance_destroyed": "Apply the identical delayed-credit procedure after deterministic parent reassignment while keeping current observables and bookkeeping shape fixed.",
+    "explicit_reduction": "Apply the identical delayed-credit procedure using ExplicitParentTable reconstructed independently from the same event stream.",
+    "redundant_control": "A separate control exposes the queried descendant set in the recent input window; lineage destruction should then add no material benefit or impairment, preventing a generic cue-use effect from being mislabeled lineage causality."
+  },
+  "resource_contract": {
+    "scope": "lineage bookkeeping and query path only; shared SparkBrain substrate excluded symmetrically",
+    "max_state_bytes_per_condition": 32768,
+    "max_parent_records": 256,
+    "max_query_ancestor_visits": 512,
+    "max_recent_window_events": 16,
+    "candidate_and_explicit_same_event_stream": true,
+    "candidate_and_explicit_same_query_budget": true,
+    "fail_closed_on_budget_excess": true
+  },
+  "training_calibration_tuning": {
+    "candidate_training": "none",
+    "explicit_comparator_training": "none",
+    "recent_window_training": "none",
+    "threshold_tuning": "none after this contract is frozen",
+    "dev_use": "implementation invariants and construction validity only; DEV effect sizes must not alter formal seeds, margins, comparator definitions, resource caps or interventions"
+  },
+  "statistics": {
+    "primary_metric": "candidate_accuracy - max(explicit_parent_accuracy, recent_window_accuracy)",
+    "necessity_metric": "candidate_accuracy - provenance_destroyed_accuracy",
+    "redundancy_metric": "absolute candidate-vs-provenance-destroyed accuracy difference in redundant_control",
+    "cluster_unit": "history_seed",
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 76001,
+    "interval": "two-sided percentile 95% using linear Type-7 quantiles"
+  },
+  "decision_rule": {
+    "quality_guards": [
+      "all present-state match hashes equal within ancestry twins",
+      "candidate and ExplicitParentTable resolve identical actual descendant sets on construction oracle checks",
+      "no condition exceeds resource contract",
+      "opaque IDs carry no ancestry information by lexical tests",
+      "raw intervention rows exist before any aggregate scoring",
+      "redundant_control candidate-vs-destroyed absolute accuracy difference <= 0.02"
+    ],
+    "PASS": "all quality guards pass AND primary-effect CI95 lower >= 0.05 AND necessity-effect CI95 lower >= 0.10",
+    "FAIL": "quality guards pass AND (primary-effect CI95 upper <= 0.01 OR abs(candidate_accuracy - explicit_parent_accuracy) <= 0.01)",
+    "INCONCLUSIVE": "quality guards pass and neither PASS nor FAIL condition is met",
+    "INVALID_EVIDENCE": "any quality/integrity/resource guard fails"
+  },
+  "integrity_order": [
+    "fresh Analyst GO and fresh unconsumed identity before formal execution",
+    "exact source/protocol/package/runtime/input/comparator/scorer/preserver/workflow bindings",
+    "exact-head CI and dedicated pre-START green",
+    "STARTED/no-clobber exactly once",
+    "formal matched-state checkpoint hashes before intervention",
+    "raw intervention observations before target-derived scoring",
+    "immutable raw preservation",
+    "independent re-fetch plus digest/cardinality checks",
+    "fail-closed join and invariant checks",
+    "preregistered scoring and terminal evidence"
+  ],
+  "authoritative_source_bindings": {
+    "main_commit": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "src/sparkbrain/structural/model.py": "ed48ff6b473cd27caefb18e48ba41203328a949a",
+    "src/sparkbrain/structural/controller.py": "0df1e9af7d6ba50fb513683f2632827d0d897fe9",
+    "src/sparkbrain/structural/contracts.py": "6ffd0e46de4fb93bb21e5b5a1ab157c4bc99fa41",
+    "src/sparkbrain/structural/config.py": "0aba0f1a5b21b2fc1af6d58f717c4c8881d88678"
+  },
+  "planned_binding_files": [
+    "src/sparkbrain/lp01_lineage.py",
+    "scripts/check_lp01_contract.py",
+    "scripts/run_lp01_dev.py",
+    "tests/test_lp01_lineage.py",
+    ".github/workflows/lp01-prospective-readiness.yml"
+  ],
+  "formal_boundary": {
+    "identity_plan": "lp01-actual-lineage-causal-credit-official-v1 only after fresh Evidence Analyst acceptance; not reserved by this contract",
+    "STARTED": "FORBIDDEN_IN_THIS_PHASE",
+    "official_TEST": "FORBIDDEN_IN_THIS_PHASE",
+    "formal_preserve": "FORBIDDEN_IN_THIS_PHASE",
+    "formal_scoring": "FORBIDDEN_IN_THIS_PHASE",
+    "formal_evidence": "FORBIDDEN_IN_THIS_PHASE"
+  }
+}
