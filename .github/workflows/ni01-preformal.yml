@@ -1,0 +1,33 @@
+name: NI01 preformal contract
+
+on:
+  push:
+    branches:
+      - research/ni01-no-ignition-selective-prediction-spec-20260918
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  preformal:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install preformal verification tools
+        run: python -m pip install pytest ruff
+      - name: Check frozen prospective contract and exact source bindings
+        run: python scripts/check_ni01_preformal.py
+      - name: Run NI01 scorer contract tests
+        run: PYTHONPATH=src python -m pytest -q -p no:cacheprovider tests/test_ni01_preformal.py
+      - name: Lint NI01 prospective implementation
+        run: >-
+          python -m ruff check
+          src/sparkbrain/evaluation/ni01.py
+          scripts/check_ni01_preformal.py
+          tests/test_ni01_preformal.py
