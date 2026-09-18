@@ -7,10 +7,9 @@ remain under Evidence Analyst authority must be supplied only after prospective 
 
 from __future__ import annotations
 
+from collections.abc import Iterable, Mapping, Sequence
 from dataclasses import dataclass
 from math import isfinite
-from typing import Iterable, Mapping, Sequence
-
 
 _TARGET_LIKE_KEYS = frozenset({"answer", "gold", "label", "outcome", "target", "truth"})
 
@@ -45,7 +44,10 @@ class FadingMemoryComparator:
             elif len(vector) != len(state):
                 raise ValueError("all observations in one history must have equal dimensions")
             decay = self.config.decay
-            state = [decay * previous + current for previous, current in zip(state, vector)]
+            state = [
+                decay * previous + current
+                for previous, current in zip(state, vector, strict=True)
+            ]
         if state is None:
             raise ValueError("history must contain at least one observation")
         return tuple(state)
