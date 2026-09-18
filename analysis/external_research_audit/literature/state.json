@@ -1,128 +1,111 @@
 {
-  "timestamp": "2026-09-18T04:30:00+09:00",
+  "timestamp": "2026-09-19T06:33:00+09:00",
   "role": "LITERATURE_REDUCTION_SCOUT",
   "control_plane_mailbox_semantics_respected": true,
   "repository_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "c19_r2": "research/c19-r2-fsa-state-tracker-spec-20260918@5d5d171cf872baed7a636fd246ab36f3a91a6716",
-    "c19_v4_scientific_parent": "74bfe6b4a39758656f291baaa3f16236e3e71964",
-    "c19_v4_evidence_tag": "evidence/c19-official-v4-c19-external-v2-official-v4",
-    "c19_v4_evidence_commit": "a0f83318356ced1c84863737803080d0dc69d208",
-    "r1_v2_consumed_package": "research/c19-r1-revision-authority-runtime-closed-v2-20260918@a23975c5713347eaa459161f538a8f0c3db6152e",
-    "sub_h2_exploratory": "research/exploratory-sub-h2-residual-memory-reduction-20260918@5cd9f65bca71ee1a235c88c27d32e25f27c76745",
-    "open_pr_count": 0,
+    "lp01": "research/lp01-actual-lineage-causal-credit-spec-20260918@f6d59a55730c5f99cd7f30470847fc3f175bdf64",
+    "authoritative_evidence_tag_count": 5,
+    "formal_tag_count": 0,
+    "sealed_tag_count": 0,
     "legacy_freeze_branch_count": 13,
-    "authoritative_evidence_tag_count": 1
+    "open_prs_observed": [148, 149]
   },
-  "control_brain_commit_consumed": "d40f83ababcddf0b1e72621c77b10a8c4900badb",
-  "evidence_analyst_commit_consumed": "b09d90d0545a0448ea5a310f9373969e7471b15d",
-  "main_report_commit_consumed": "a4ff0f85d5c7a89d1f21817775d57ead85ddd21c",
-  "sub_report_commit_consumed": "bb76c6edf206743227a6dba34108a2a01551a9db",
-  "orchestrator_report_branch_tip_observed": "a4ff0f85d5c7a89d1f21817775d57ead85ddd21c",
-  "prior_literature_history_consumed": "analysis/external_research_audit/history/2026-09-17/1632-LITERATURE_REDUCTION_SCOUT.md",
+  "control_brain_commit_consumed": "10eb4206fb0c998fcdbc40c0e16f38829ea5d41e",
+  "evidence_analyst_commit_consumed": "f2ca44cc99797dd13ddc20947558022c35ab2c60",
+  "main_report_commit_consumed": "70f8507f8ff8d3bc4cd355b8eb151b67f1504fc9",
+  "sub_report_commit_consumed": "b32ac63e6ee4d1fa8bcaf8f13b3c91bc9e42d901",
+  "orchestrator_report_branch_tip_observed": "b32ac63e6ee4d1fa8bcaf8f13b3c91bc9e42d901",
+  "prior_literature_latest_consumed": "2026-09-18T04:30:00+09:00",
   "genuinely_new_information": true,
   "current_repository_interpretation": {
-    "programme": "REFRAMED_TESTBED_NO_SUPPORTED_NEW_COMPUTATIONAL_PRINCIPLE",
-    "c19_v4": "TERMINAL_PASS_NARROW_REPRESENTATION_GAIN_IMMUTABLE",
-    "c19_r1": "SCIENTIFICALLY_UNRESOLVED_OPERATIONAL_LINE_TERMINATED_AFTER_CONSUMED_V1_V2_FAILURES",
-    "c19_r2": "PRE_FORMAL_PROSPECTIVE_SEVEN_STATE_FSA_REDUCTION_NOT_EXECUTION_ADMITTED",
-    "r2_dedicated_prestart": "35265194243:success@5d5d171cf872baed7a636fd246ab36f3a91a6716",
-    "r2_ordinary_ci_fresh_observation": "35265194183:success@5d5d171cf872baed7a636fd246ab36f3a91a6716",
-    "r2_formal_identity": null,
-    "r2_started": false
+    "programme": "NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
+    "lp01": "PREFORMAL_CLOSED_NO_NATIVE_NONREDUCIBLE_CAUSAL_PATH",
+    "formal_identity_created_for_lp01": false,
+    "new_formal_scientific_evidence": false,
+    "sub_lane": null
   },
   "findings": [
     {
-      "id": "PSR_POST_R2_REDUCTION",
-      "summary": "Predictive State Representations encode dynamical state as predictions of future observable tests rather than nominal hidden state. A future R2 survival would not exclude a low-dimensional target-blind predictive-state reduction.",
+      "id": "PROVENANCE_BOOKKEEPING_REDUCTION",
+      "summary": "Why-provenance and provenance semirings already formalize propagation of source participation/derivation tokens. Explicit ancestry or opaque source-token retention is therefore an ordinary provenance problem unless a future mechanism demonstrates more than provenance recovery.",
       "sources": [
-        "Littman, Sutton & Singh, Predictive Representations of State, NeurIPS 2001",
-        "Singh, James & Rudary, Predictive State Representations: A New Theory for Modeling Dynamical Systems, UAI 2004"
+        "Buneman, Khanna & Tan, Why and Where: A Characterization of Data Provenance, ICDT 2001",
+        "Green, Karvounarakis & Tannen, Provenance Semirings, PODS 2007"
       ],
-      "direct_applicability_confidence": "MEDIUM_HIGH"
+      "direct_applicability_confidence": "HIGH_TO_LP01_STYLE_EXPLICIT_ANCESTRY"
     },
     {
-      "id": "EPSILON_MACHINE_CAUSAL_STATE_REDUCTION",
-      "summary": "Computational mechanics defines causal states as minimal sufficient predictive equivalence classes of histories. History-derived persistent predictive state is therefore an established formal object, not a SparkBrain-specific novelty axis.",
+      "id": "ANCESTRY_NOT_ACTUAL_CAUSALITY",
+      "summary": "Structural-model actual causality requires counterfactual/interventional witnesses and contingency reasoning; preemption and overdetermination show that historical ancestry or simple but-for dependence is not sufficient for actual causal responsibility.",
       "sources": [
-        "Shalizi & Crutchfield, Computational Mechanics: Pattern and Prediction, Structure and Simplicity, J Stat Phys 2001"
+        "Halpern & Pearl actual causality framework",
+        "Dyrkolbotn, On Preemption and Overdetermination in Formal Theories of Causality, 2017"
       ],
-      "direct_applicability_confidence": "HIGH_FOR_NOVELTY_BAR_MEDIUM_FOR_BENCHMARK_DESIGN"
+      "direct_applicability_confidence": "HIGH_FOR_RESIDUAL_CLAIM_DEFINITION"
     },
     {
-      "id": "LOCAL_CAUSAL_STATE_NOVELTY_PRESSURE",
-      "summary": "Local causal states use spacetime lightcones and predictive equivalence to discover emergent coherent structures from local interactions without semantic labels. Local/pre-semantic/predictive emergence alone is insufficient as a novelty claim.",
+      "id": "QUERY_ANSWER_CAUSALITY_BASELINE",
+      "summary": "Database query-answer causality operationalizes actual cause by controlled deletion under contingency sets and ranks responsibility by minimal contingency size, giving a simple explicit interventional comparator between provenance and causal credit.",
       "sources": [
-        "Rupe, Kashinath, Kumar & Crutchfield, Chaos 2025, DOI 10.1063/5.0267915"
+        "Bertossi et al., Causes for query answers from databases: Datalog abduction, view-updates, and integrity constraints, IJAR 2017",
+        "Chockler & Halpern, Responsibility and Blame: A Structural-Model Approach, JAIR 2004"
       ],
-      "direct_applicability_confidence": "HIGH_FOR_PROGRAMME_NOVELTY_MEDIUM_FOR_DIRECT_C19_COMPARATOR"
+      "direct_applicability_confidence": "HIGH_FOR_PROSPECTIVE_COMPARATOR_DESIGN"
     },
     {
-      "id": "RESERVOIR_FADING_MEMORY_BOUNDARY",
-      "summary": "Echo-state/reservoir systems are universal approximants for broad fading-memory filter classes. Future SparkBrain persistence should be tested for genuinely non-fading history dependence under matched recent inputs and a resource-matched reservoir comparator.",
+      "id": "CURRENT_COUNTERFACTUAL_CREDIT_BAR",
+      "summary": "Recent 2026 counterfactual credit-assignment work isolates contribution through explicit interventions and distinguishes agent contribution from environmental stochasticity. Delayed/history-specific credit alone is therefore below the contemporary causal-credit bar.",
       "sources": [
-        "Grigoryeva & Ortega, Echo state networks are universal, Neural Networks 2018",
-        "Grigoryeva & Ortega, Universal discrete-time reservoir computers with stochastic inputs and linear readouts using non-homogeneous state-affine systems, JMLR 2018"
+        "Li, Lee & Bareinboim, Counterfactual Shapley Credit Assignment, RLC 2026 / arXiv:2607.16999",
+        "Meng, Policy-Conditioned Counterfactual Credit for Verifiable Reinforcement Learning of Long-Horizon Language Agents, arXiv:2606.05263"
       ],
-      "direct_applicability_confidence": "MEDIUM_HIGH_WITH_FADING_MEMORY_ASSUMPTION_CAVEAT"
-    },
-    {
-      "id": "AUTOMATA_EXTRACTION_REDUCTION_WORKFLOW",
-      "summary": "Automata extraction from recurrent networks via queries/counterexamples suggests a principled future workflow: extract a compact finite-state abstraction from frozen SparkBrain behavior rather than manually proliferating one-off FSA comparators.",
-      "sources": [
-        "Weiss, Goldberg & Yahav, Extracting Automata from Recurrent Neural Networks Using Queries and Counterexamples, ICML 2018"
-      ],
-      "direct_applicability_confidence": "MEDIUM_HIGH"
+      "direct_applicability_confidence": "MEDIUM_HIGH_FOR_NOVELTY_BAR_NOT_DIRECT_ARCHITECTURAL_EQUIVALENCE"
     }
   ],
   "affected_lines": [
-    "C19_R2_FSA_STATE_TRACKER",
+    "H7_LINEAGE_PROVENANCE_RESIDUAL",
+    "LP01_PREFORMAL_CLOSEOUT",
     "PROGRAMME_NOVELTY",
-    "POST_R2_REDUCTION",
-    "PERSISTENT_DYNAMICS_RESIDUAL",
-    "FUTURE_EXTERNAL_VALIDATION"
+    "FUTURE_OBJECT_ADMISSION",
+    "CAUSAL_CREDIT_DISCRIMINATORS"
   ],
   "reduction_candidates": [
-    "prospective learned/extracted DFA or WFA abstraction",
-    "Predictive State Representation / transformed PSR",
-    "epsilon-machine / causal-state predictive compression",
-    "local causal-state diagnostic for spatial/local emergence claims",
-    "resource/state-matched echo-state/reservoir fading-memory comparator"
+    "provenance-only opaque-token / derivation-support propagation",
+    "explicit event-DAG actual-cause and causal-responsibility computation",
+    "matched ordinary recurrent/plastic state after provenance and causality baselines"
   ],
   "confidence": {
     "external_prior_art_exists": "HIGH",
     "novelty_bar_impact": "HIGH",
-    "direct_equivalence_to_current_SparkBrain": "NOT_CLAIMED",
-    "prospective_discriminator_value": "MEDIUM_HIGH"
+    "direct_equivalence_to_SparkBrain": "NOT_CLAIMED",
+    "supports_reopening_lp01": "NO",
+    "prospective_discriminator_value": "HIGH"
   },
-  "novelty_or_reduction_impact": "STRONGER_REDUCTION_PRESSURE: a future R2 survival rejects only the exact seven-state tracker. Pre-semantic/local/history-derived predictive state and emergent organization already have established predictive-state/causal-state formalisms. SparkBrain must survive broader predictive-state and fading-memory reductions before any stronger novelty interpretation.",
+  "novelty_or_reduction_impact": "STRONGER_REDUCTION_AND_ADMISSION_PRESSURE: explicit ancestry/source-token propagation is standard provenance; actual causal credit requires intervention/counterfactual distinction, especially under preemption and overdetermination. Current LP01 should remain closed. A future lineage object must beat provenance-only and actual-cause/responsibility baselines under matched privilege.",
   "prospective_baselines_or_discriminators": [
-    "target-blind PSR/TPSR comparator with prospectively frozen state dimension, test set and learning budget",
-    "causal-state / epsilon-machine reconstruction under a frozen observable envelope",
-    "prospective DFA/WFA extraction from frozen SparkBrain behavior with held-out counterexamples",
-    "resource/state-matched ESN/reservoir baseline",
-    "remote-history / washout scaling test that holds current/recent input fixed while moving a causal event farther into the past",
-    "local-causal-state diagnostic if future claims rely on local emergent organization"
+    "provenance-only opaque-token / derivation-support propagation baseline",
+    "explicit event-DAG query-answer actual-cause / responsibility baseline",
+    "preemption and overdetermination cases with matched or near-matched provenance",
+    "ancestry-preserving but responsibility-changing interventions",
+    "counterfactual-credit ground-truth suite separating ancestry, temporal proximity, and causal difference-making"
   ],
   "questions_for_evidence_analyst": [
-    "If R2 survives, should the next reduction use learned/extracted finite-state abstraction before another hand-designed mechanism?",
-    "Should PSR/epsilon-machine compression be placed ahead of any stronger persistent-dynamics claim?",
-    "Can a future remote-history test prospectively hold current/recent input fixed while shifting only the causal event farther into the past?",
-    "Keep R2 frozen exactly as currently specified; treat these findings as future prospective work only."
+    "Keep LP01 closed; do not treat provenance recovery as evidence of actual causal credit.",
+    "Should any future H7/lineage admission require a prospectively fixed actual-cause/responsibility gate, not only ancestry recovery?",
+    "Should provenance-only and counterfactual-responsibility comparators be mandatory before a lineage object can reach formal review?"
   ],
   "questions_for_control_brain": [
-    "Should local/pre-semantic/predictive-state emergence be explicitly removed from novelty axes unless it survives causal-state/local-causal-state reductions?",
-    "Should the post-R2 reduction ladder be organized by representational class rather than one-off mechanism names?",
-    "Should non-fading lineage-specific causal credit under matched state/lookup/resource budgets become the narrower residual novelty target?"
+    "Should the residual theory be narrowed from lineage provenance to intervention-validated lineage-specific causal responsibility?",
+    "Add provenance bookkeeping and actual-cause/responsibility to the ordinary-reduction ladder?",
+    "Retain NO_HIGH_VALUE_OBJECT until a native mechanism independently creates this distinction rather than engineering a rescue benchmark for LP01?"
   ],
   "must_not_change_frozen_or_consumed": [
-    "immutable C19-v4 package/preserve/evidence/tag and terminal PASS",
-    "consumed C19-v2/v3 identities",
-    "consumed R1-v1 and R1-v2 identities and controls",
-    "R1 transient unpreserved outputs",
-    "consumed A01/RV01/RV02/CX identities and legacy immutable refs",
-    "current R2 pre-formal mechanism/statistics/resource semantics in response to this literature",
-    "no formal R2 identity or STARTED without fresh Evidence Analyst authorization"
+    "all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence",
+    "canonical PD01/NI01/H5 terminal classifications",
+    "all consumed A01/RV01/RV02/CX identities and legacy immutable refs",
+    "LP01 remains pre-formal and is not upgraded by this literature",
+    "no outcome-responsive successor, identity, STARTED, official TEST, rerun, retune, or rescore"
   ],
   "legacy_shared_latest_state_updated": false
 }
