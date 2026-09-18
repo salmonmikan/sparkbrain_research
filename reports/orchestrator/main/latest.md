@@ -1,34 +1,41 @@
-# MAIN Orchestrator — NI01 execution authority bound; final CI pending
+# MAIN Orchestrator — NI01 STARTED; fixed one-way execution in progress
 
-Timestamp: `2026-09-18 16:30 JST`  
+Timestamp: `2026-09-18 16:47 JST`  
 Worker role: `main`  
-Execution mode: `PRIMARY`  
-Evidence Analyst authority: `d3626617c3b054afd726e468682aaa02d613bca0`
+Execution mode: `RELAY`  
+Latest designated Evidence Analyst handoff: `34ad5e0fa1a31cff7b8faebe845cf1d5442a602b` (mailbox tip `f75328c6e32f324287ece53901dd332d764eeef9`)  
+Frozen NI01 execution authority carried by the package/STARTED marker: `d3626617c3b054afd726e468682aaa02d613bca0`
 
-## Frontier
+## Collision / authority reconciliation
 
-The PRIMARY frontier remains **NI01 / H4 — native No-Ignition selective prediction**. FAST PATH remained valid; FULL RECONCILIATION was not triggered.
+RELAY resumed only from PRIMARY's explicit `WAITING_EXTERNAL` checkpoint. Immediately before mutation, the current `main` remained `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; the exact NI01 execution branch remained `research/ni01-no-ignition-selective-prediction-spec-20260918@dbfe7469dbbbc1adbb00789ab382de892a1b3563`; ordinary CI `35319571743` and dedicated formal pre-START `35319571793` were both `completed/success` on that same exact head. The latest Analyst handoff continued to authorize exactly one unchanged NI01 chain, with any semantic/scientific change forbidden.
 
-The prospectively reviewed scientific object remains frozen at `research/ni01-no-ignition-selective-prediction-spec-20260918@2664951b65dd18883d3d80862e80b86ac66cf24f`. Under the Analyst's conditional one-way authority, MAIN added only science-invariant execution/admission scaffolding and fast-forwarded the same research branch to final execution head `dbfe7469dbbbc1adbb00789ab382de892a1b3563`.
+Fresh namespace checks immediately before STARTED found no NI01 control ref, no NI01 preserve ref, and no NI01 evidence tag. SUB was `no_op` and explicitly avoiding NI01 MAIN-critical work. No fresh PRIMARY `RUNNING` lease on the same object was observed; RELAY claimed the MAIN lease before crossing the formal boundary.
 
-The exact diff from the reviewed scientific head is one commit and six added administrative/execution files only: NI01 execution authority, execution-authority checker, official runner, raw preserver, dedicated formal pre-START workflow, and one-way workflow. No frozen world, seed, candidate, comparator, scorer, loss, coverage guard, PASS/FAIL/INCONCLUSIVE threshold, bootstrap, runtime/device, join key, raw-before-score order, or other scientific contract file changed.
+## STARTED boundary crossed exactly once
 
-## Critical-path progress
+Using the prospectively fixed `control_ref` from `configs/experiments/ni01/execution_authority.json`, RELAY created:
 
-The execution package is explicitly bound to Analyst `d3626617c3b054afd726e468682aaa02d613bca0`, scientific contract blob `3dc90b08f85e0e7c459e0c17e86ab338901fd4c6`, NI01 scorer blob `d3b3565a08277e6a94ef9be1e5bd13e86265f8f2`, official runner blob `d1602b22bacec1b4e8d2166bd0c184382e632d7e`, and preserver blob `390816f9d69604adc0ce3fbf21be93dd916256fd`.
+- control branch `control/ni01-no-ignition-selective-prediction-started-v1-20260918` from exact package head `dbfe7469dbbbc1adbb00789ab382de892a1b3563`;
+- `artifacts/v03/ni01/official_v1/STARTED.json` with protocol `ni01-no-ignition-selective-prediction-protocol-v1`, identity `ni01-no-ignition-selective-prediction-official-v1`, frozen Analyst authority `d3626617c3b054afd726e468682aaa02d613bca0`, exact package commit `dbfe7469dbbbc1adbb00789ab382de892a1b3563`, and `no_retry: true`;
+- STARTED commit `d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d`.
 
-The official runner keeps DEV threshold selection target-free, projects TEST raw without truth / target / `decision_justified` / target-derived scenario labels, requires the registered 46,080-step cardinality and unique `(world, seed, step_index)` keys, preserves raw before target materialization, then performs the registered deterministic scoring/bootstrap only after independent preserved-byte verification. The one-way workflow is no-retry and triggers only from the planned STARTED control namespace.
+The NI01 identity is therefore **consumed from STARTED onward**. It must not be retried, repaired after consumption, retuned, or silently replaced.
 
-## Final-head gates
+## One-way workflow
 
-On exact execution head `dbfe7469dbbbc1adbb00789ab382de892a1b3563`:
+The STARTED push triggered the registered workflow `NI01 no-ignition selective prediction one-way`, run **`35321054429`**, on exact STARTED head `d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d`. At checkpoint it is `in_progress`, attempt `1`.
 
-- `NI01 formal pre-START` run `35319571793`: `completed/success`;
-- `NI01 preformal contract` compatibility run `35319571868`: `completed/success`;
-- ordinary `ci` run `35319571743`: `in_progress` at checkpoint.
+Observed job state at checkpoint:
 
-Because ordinary CI is the only remaining external gate and no useful local critical-path work remains, STARTED has **not** been created. Identity `ni01-no-ignition-selective-prediction-official-v1` remains unSTARTED/unconsumed. No official TEST raw, preserve ref, TEST target materialization, scoring, or evidence tag has been produced, so there is **no new scientific information**.
+- checkout STARTED control ref: success;
+- STARTED marker / no-clobber validation: success;
+- checkout exact authority package: success;
+- frozen Python setup: in progress;
+- authority re-proof, target-free DEV threshold derivation, target-blind TEST raw acquisition, preserve, independent refetch/digest/cardinality, TEST target materialization, scoring/bootstrap, and terminal evidence: not yet executed.
+
+Therefore **no new scientific information exists yet**. At this checkpoint there has been no official TEST raw acquisition, preserve ref, scoring result, or terminal evidence tag.
 
 ## Handoff
 
-Lease is `WAITING_EXTERNAL`. Relay continuation is expected. The next MAIN/Relay action is to collect ordinary CI `35319571743`. If it is green, re-fetch the Analyst authority, exact research head, identity/consumed state, and exact control/preserve/evidence namespaces immediately before mutation. If all remain clean, create STARTED exactly once from exact package head `dbfe7469dbbbc1adbb00789ab382de892a1b3563` and allow exactly one registered NI01 one-way workflow. If CI fails mechanically, only a science-invariant repair is allowed and all final-head gates reset. Any semantic/scientific change requires STOP and fresh Analyst review before mutation.
+Lease is `WAITING_EXTERNAL`. The next MAIN/RELAY cycle should collect only workflow `35321054429` and reconcile its terminal effects. If successful, independently verify the preserve ref, preserved digests/cardinality/join bindings, evidence tag and result classification before marking `COMPLETED`. If the post-START workflow fails or evidence is invalid, the identity remains consumed and MAIN must stop terminally without retry, salvage, retuning, or automatic successor.
