@@ -1,0 +1,38 @@
+{
+  "authority_scope": "science-invariant admission, exact-head revalidation, exactly-one formal one-way H5 execution only",
+  "artifact_destination": "artifacts/v03/h5/official_v1",
+  "control_ref": "control/h5-event-routing-work-reduction-started-v1-20260918",
+  "evidence_analyst_commit": "f373fe3dfcddc14405d81cabadf0cb2682a659d0",
+  "evidence_analyst_mailbox_tip": "4630decbda55d31ec8f44ac1435950b261225fd5",
+  "evidence_tag": "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1",
+  "formal_contract_git_blob": "1911d4560f4e2774fd725df26ba8cb25b03e2c5f",
+  "formal_identity": "h5-event-routing-work-reduction-official-v1",
+  "h5_module_git_blob": "572f00f7a7361a89a54b647a2e2dca875c9b4829",
+  "integrity_order": [
+    "STARTED/no-clobber",
+    "fixed formal raw acquisition without scoring",
+    "immutable raw preservation before scoring/classification",
+    "independent remote re-fetch and digest/cardinality verification",
+    "fail-closed quality/counter/invariant validation",
+    "deterministic preregistered scoring/bootstrap",
+    "annotated terminal evidence tag"
+  ],
+  "no_retry": true,
+  "official_runner_git_blob": "42a44384d08d680e3767541efce92b0f54edb9ee",
+  "one_way_workflow_git_blob": "37f8dc1817a4587749c0896727dc4f10187ff50e",
+  "post_start_failure_policy": "identity consumed; terminal STOP; no retry, repair, salvage, retuning, or automatic H5-v2",
+  "preserve_ref": "preserve/h5-event-routing-work-reduction-raw-h5-event-routing-work-reduction-official-v1",
+  "preserver_git_blob": "0f3b013025737373e8bec91056c5369f23a3266f",
+  "protocol_id": "h5-event-routing-work-reduction-formal-contract-v2",
+  "required_final_head_gates": [
+    "ordinary CI success on the final execution SHA",
+    "H5 formal-contract pre-START success on the same final execution SHA",
+    "fresh identity and control/preserve/formal/evidence namespace collision checks",
+    "exact source/protocol/package/input/runtime/candidate/comparator/counter/scorer/preserver/workflow binding checks"
+  ],
+  "reviewed_scientific_head": "520fc8391d9ebb02584a16ec466a1bf168548ea9",
+  "schema_version": 1,
+  "scientific_checker_git_blob": "2ff3abb91d7214a9d4e8877ef1c6a992e78bdddd",
+  "scientific_contract_immutable": true,
+  "status": "PRE_START_AUTHORIZED_CONDITIONAL"
+}
