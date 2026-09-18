@@ -1,13 +1,13 @@
 {
-  "timestamp_jst": "2026-09-19T01:50:00+09:00",
+  "timestamp_jst": "2026-09-19T07:52:00+09:00",
   "worker_role": "repository_steward",
-  "selected_slot_jst": "01:50",
+  "selected_slot_jst": "07:50",
   "role_inferred": false,
   "repository": "salmonmikan/sparkbrain_research",
   "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-  "control_brain_commit": "9bf5c0249e88acdd5fc99b12555e785f9c2e2976",
-  "evidence_analyst_commit": "71d0050f3985f888dc34566a0ffbf0b027f37d3e",
-  "orchestrator_report_commit_observed": "12793340d26ff14d7dccdca97f10a279fbdffec3",
+  "control_brain_commit": "10eb4206fb0c998fcdbc40c0e16f38829ea5d41e",
+  "evidence_analyst_commit": "dc29e9810e5f44d602e4908554028e74b69f8d55",
+  "orchestrator_report_commit_observed": "fc29e4c2b74dbf2ee74c260b773ce88cd8503ab9",
   "current_remote_authority": {
     "main_protected": false,
     "repository_ruleset_count": 0,
@@ -19,77 +19,74 @@
       "sealed_count": 0,
       "freeze_tag_count": 0
     },
-    "new_direct_evidence_anchor_since_prior_steward": {
-      "line": "H5",
-      "tag": "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1",
-      "tag_object": "e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
-      "evidence_commit": "61aff6d74b82b68a326f3d90505d70bcd4071fd5",
-      "started_ref": "control/h5-event-routing-work-reduction-started-v1-20260918",
-      "started_head": "058e90227cd48e1c10c6ecbaed01efdec1217d0e"
-    },
-    "post_lp01_programme_state": "NO_HIGH_VALUE_OBJECT_PREFORMAL_NON_EVIDENTIARY"
+    "programme_state": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
+    "new_formal_object_since_prior_steward": false,
+    "new_authoritative_evidence_since_prior_steward": false
+  },
+  "upstream_change_since_prior_steward": {
+    "type": "prospective_admission_doctrine_only",
+    "description": "Evidence Analyst integrated the 2026-09-19 06:33 Literature Reduction Scout: provenance bookkeeping must be distinguished from actual causal responsibility; future lineage objects require explicit counterfactual actual-cause/responsibility baselines plus matched recurrent/plastic reductions.",
+    "scientific_evidence_change": false,
+    "reopens_lp01": false,
+    "repository_governance_mutation_required": false
   },
   "orchestrator_reports": {
     "main": {
-      "time_jst": "2026-09-19 00:48",
-      "mode": "RELAY",
-      "phase": "COMPLETED_PREFORMAL_NON_EVIDENTIARY_ADMISSION",
-      "decision": "NO_HIGH_VALUE_OBJECT",
+      "time_jst": "2026-09-19 07:15",
+      "mode": "PRIMARY",
+      "decision": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
+      "lease_status": "COMPLETED",
       "formal_identity_created": false,
       "started_created": false,
       "formal_evidence_created": false,
+      "research_workflow_dispatched": false,
       "governance_action": "none"
     },
     "sub": {
-      "time_jst": "2026-09-19 01:37",
+      "time_jst": "2026-09-19 07:35",
       "mode": "no_op",
       "formal_lane": null,
       "incubator_candidate": null,
       "main_frontier_touched": false,
-      "formal_evidentiary_status": "NONE"
+      "formal_evidentiary_status": "NONE_FOR_SUB"
     }
   },
   "repository_state": {
     "open_pr_numbers": [148, 149],
     "open_issue_numbers": [139],
-    "issue_changes_this_run": [139],
+    "issue_changes_this_run": [],
     "authoritative_annotated_tag_count": 5,
     "repository_ruleset_count": 0,
     "legacy_freeze_branch_count": 13,
-    "main_protected": false
+    "main_protected": false,
+    "latest_observed_workflow_kind": "control_plane_ci",
+    "fresh_research_experiment_workflow_observed": false
   },
   "doctrine_status": "partially_compliant_science_separated_protection_gap_remains",
   "doctrine_findings": {
     "main_frontier_separation": "compliant",
     "terminal_evidence_annotated_tags": "compliant_five_authoritative_tags",
-    "canonical_science_vs_issues": "compliant_after_issue_inventory_refresh",
-    "main_sub_boundary": "compliant_main_stopped_sub_no_op",
+    "canonical_science_vs_issues": "compliant_issue_139_current",
+    "main_sub_boundary": "compliant_main_hold_sub_no_op",
+    "prospective_admission_doctrine": "compliant_non_evidentiary_not_retrofitted",
     "server_side_protection": "missing",
     "legacy_freeze_preservation": "compliant"
   },
-  "issue_changes": [
-    {
-      "issue": 139,
-      "action": "update_body",
-      "reason": "correct authoritative evidence-tag inventory from 4 to 5 by adding H5 without changing acceptance criteria or scientific interpretation",
-      "state_after": "open"
-    }
-  ],
+  "issue_changes": [],
   "issue_audit": {
-    "139": "open_current_five_evidence_tags_ruleset_gap_remains",
+    "139": "open_current_five_evidence_tags_ruleset_gap_remains_no_change_needed",
     "new_issues_created": 0
   },
   "freeze_migration": {
     "legacy_freeze_branch_count": 13,
     "legacy_freeze_refs_present": true,
     "authoritative_annotated_tag_count": 5,
-    "new_authoritative_tags_since_prior_steward_snapshot": 1,
-    "new_direct_evidence_anchor": "H5",
+    "new_authoritative_tags_since_prior_steward_snapshot": 0,
     "legacy_tag_mirrors_created_this_run": 0,
     "legacy_branches_modified_by_stewardship": 0,
     "mapping_doc": "reports/repository_steward/legacy_freeze_map.md",
     "mapping_changed_this_run": false,
-    "mapping_change_reason": "H5 is a direct authoritative evidence anchor, not a legacy freeze-branch mirror"
+    "mapping_change_reason": "no new safe SHA-equivalent legacy migration case arose"
   },
   "tag_protection": {
     "repository_ruleset_count": 0,
@@ -101,8 +98,7 @@
   "preserve_index": {
     "mapping_changed": false,
     "new_legacy_freeze_entries": 0,
-    "new_direct_evidence_anchors_observed": 1,
-    "direct_anchor_added_to_state": "H5",
+    "new_direct_evidence_anchors_observed": 0,
     "scientific_mappings_changed": 0,
     "existing_preserve_control_formal_evidence_refs_modified_by_stewardship": 0
   },
@@ -118,7 +114,8 @@
     ],
     "research_only": [
       "H5 comparator/counter/workload/statistical semantics",
-      "LP01 lineage/ancestry semantics"
+      "LP01 lineage/ancestry semantics",
+      "future provenance/actual-cause causal-credit discriminator semantics"
     ],
     "recommended_integration_shape": "small neutral current-main extraction with fresh CI; no wholesale research-branch cherry-pick"
   },
@@ -127,19 +124,21 @@
       "title": "Add human-directives repository skill",
       "classification": "defer_pending_review_fix",
       "mergeable": true,
-      "observed_ci_run": 35286849859,
-      "observed_ci": "success",
       "unresolved_review": "2_P1_plus_1_P2",
+      "key_blockers": [
+        "explicitly read fetched ops/human-directives ref instead of normal main worktree",
+        "push committed directives to remote mailbox and reconcile non-fast-forward",
+        "avoid directive ID reuse by scanning retained history"
+      ],
       "merged_by_stewardship": false
     },
     "149": {
       "title": "Add Git-backed SparkBrain scheduler registry skill",
       "classification": "defer_pending_review_fix",
       "mergeable": true,
-      "observed_ci_run": 35287647629,
-      "observed_ci": "success",
       "registry_bootstrap_now_present": true,
-      "unresolved_review": "P1_live_definition_revalidation_race",
+      "unresolved_review": "bootstrap_thread_unresolved_plus_P1_live_definition_revalidation_race",
+      "key_blocker": "re-read and compare full live scheduler definition or updated_at immediately before mutation after PRE_CHANGE",
       "merged_by_stewardship": false
     }
   },
@@ -147,9 +146,9 @@
   "verified_immutable_state": {
     "legacy_freeze_branch_count": 13,
     "all_five_evidence_tags_untouched": true,
-    "h5_started_ref_untouched": true,
     "freeze_branches_deleted_or_moved_by_stewardship": 0,
-    "preserve_control_formal_evidence_refs_modified_by_stewardship": 0
+    "preserve_control_formal_evidence_refs_modified_by_stewardship": 0,
+    "new_formal_or_sealed_or_freeze_tags_created": 0
   },
   "scientific_experiments_executed": 0,
   "research_workflows_dispatched": 0,
@@ -160,8 +159,8 @@
   "deferred": [
     "install authoritative tag namespace protection/rulesets outside scheduled stewardship",
     "create exact-SHA annotated legacy tag mirrors only under an explicitly safe protected migration procedure",
-    "keep LP01 and post-LP01 NO_HIGH_VALUE_OBJECT conclusions pre-formal/non-evidentiary",
-    "keep scientific mechanism semantics research-local",
+    "keep LP01 and provenance/actual-causality admission doctrine pre-formal/non-evidentiary unless a fresh object is prospectively admitted",
+    "keep scientific mechanism/discriminator semantics research-local",
     "resolve PR #148/#149 review blockers through ordinary PR maintenance before main promotion"
   ]
 }
