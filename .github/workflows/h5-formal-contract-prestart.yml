@@ -19,15 +19,34 @@ jobs:
           cache: pip
       - name: Install readiness tooling
         run: python -m pip install -e ".[dev]"
-      - name: Lint H5 prospective package
+      - name: Lint H5 prospective execution package
         run: >-
           python -m ruff check
           src/sparkbrain/h5_work.py
           scripts/check_h5_formal_contract.py
+          scripts/check_h5_execution_authority.py
+          scripts/run_h5_official.py
+          scripts/preserve_h5_boundary.py
           tests/test_h5_work.py
-      - name: Check frozen H5 contract and exact bindings
+      - name: Check frozen H5 scientific contract and exact bindings
         run: python scripts/check_h5_formal_contract.py
+      - name: Check H5 execution authority and exact mechanics
+        run: python scripts/check_h5_execution_authority.py
+      - name: Check fresh H5 identity namespaces remain collision-free
+        run: |
+          set -euo pipefail
+          CONTROL_REF='control/h5-event-routing-work-reduction-started-v1-20260918'
+          PRESERVE_REF='preserve/h5-event-routing-work-reduction-raw-h5-event-routing-work-reduction-official-v1'
+          EVIDENCE_TAG='evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1'
+          if git ls-remote --exit-code --heads origin "${CONTROL_REF}" >/dev/null 2>&1; then exit 1; fi
+          if git ls-remote --exit-code --heads origin "${PRESERVE_REF}" >/dev/null 2>&1; then exit 1; fi
+          if git ls-remote --exit-code --tags origin "refs/tags/${EVIDENCE_TAG}" >/dev/null 2>&1; then exit 1; fi
+          if test -n "$(git ls-remote --heads origin 'refs/heads/formal/h5*')"; then exit 1; fi
       - name: Run H5 DEV-only equivalence and counter fixtures
         run: python -m pytest -q tests/test_h5_work.py
       - name: Execute DEV-only mechanical validation
         run: python -m sparkbrain.h5_work --dev-validate > /tmp/h5-dev.json
+      - name: Execute authority-bound target-free pre-START smoke
+        run: >-
+          python scripts/run_h5_official.py prestart-smoke
+          --analyst-commit f373fe3dfcddc14405d81cabadf0cb2682a659d0
