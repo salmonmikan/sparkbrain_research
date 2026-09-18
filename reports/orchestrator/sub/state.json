@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-09-18T16:32:18+09:00",
+  "timestamp": "2026-09-18T17:32:18+09:00",
   "worker_role": "sub",
   "mode": "no_op",
-  "evidence_analyst_commit": "34ad5e0fa1a31cff7b8faebe845cf1d5442a602b",
-  "evidence_analyst_mailbox_tip": "f75328c6e32f324287ece53901dd332d764eeef9",
+  "evidence_analyst_commit": "ded9d64a779791cbbcd9fbbff5fb3acb730c4263",
+  "evidence_analyst_mailbox_tip": "34756bd0414084ae601a3bc724d5d99101c09676",
   "consumed_lanes": [],
   "selected_independent_lane": null,
   "exploratory_target": null,
@@ -11,27 +11,26 @@
   "execution_allowed": false,
   "sub_active_claim": null,
   "main_work_explicitly_avoided": [
-    "NI01 execution/admission scaffolding and exact binding verification",
-    "NI01 STARTED/control creation and identity consumption",
-    "NI01 one-way workflow dispatch and official TEST access",
-    "NI01 raw preservation/refetch/target materialization/join/scoring/bootstrap/evidence",
-    "NI01 blocker repair or successor design",
-    "consumed C19-R1/R2/PD01 and immutable C19-v4 evidence"
+    "H5 exact-head CI/pre-START failure diagnosis",
+    "H5 branch patching, contract repair, or rerun",
+    "H5 identity reservation and STARTED/control creation",
+    "H5 official TEST access, preservation, scoring, or evidence",
+    "H5 successor/reframe design",
+    "NI01 reconciliation/rescue and consumed C19-R1/R2/PD01/NI01 identities"
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "control_brain": "525796e92f6b633d81539bbddf1ac83904f6f579",
-    "orchestrator_parent_tip_observed": "76f983fcc38f18332a5185c8c3c5cab80dd1bd38",
-    "ni01_reviewed_scientific_head": "2664951b65dd18883d3d80862e80b86ac66cf24f",
-    "ni01_execution_head": "dbfe7469dbbbc1adbb00789ab382de892a1b3563",
-    "ni01_identity": "ni01-no-ignition-selective-prediction-official-v1",
-    "ni01_control_refs": [],
-    "ni01_preserve_refs": [],
-    "ni01_evidence_tags": [],
+    "orchestrator_parent_tip_observed": "6a991e3fba79613a7df542dba4ca285dcd5e1650",
+    "h5_research_head": "c2370cdc658fceab5a69a49a71032efbf4f72ece",
+    "h5_control_refs": [],
+    "h5_preserve_refs": [],
+    "h5_evidence_tags": [],
     "evidence_tags": [
       "evidence/c19-official-v4-c19-external-v2-official-v4",
       "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
-      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1"
+      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1",
+      "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1"
     ]
   },
   "branches_prs_advanced": {
@@ -43,15 +42,15 @@
   "workflows_experiments": {
     "sub_dispatched": [],
     "main_observed": {
-      "ni01_formal_prestart_35319571793": "completed/success@dbfe7469dbbbc1adbb00789ab382de892a1b3563",
-      "ni01_preformal_compatibility_35319571868": "completed/success@dbfe7469dbbbc1adbb00789ab382de892a1b3563",
-      "ordinary_ci_35319571743": "completed/success@dbfe7469dbbbc1adbb00789ab382de892a1b3563"
-    }
+      "ordinary_ci_35324068936": "completed/failure@c2370cdc658fceab5a69a49a71032efbf4f72ece",
+      "h5_formal_contract_prestart_35324069141": "completed/failure@c2370cdc658fceab5a69a49a71032efbf4f72ece"
+    },
+    "failure_logs_or_diagnosis_by_sub": false
   },
   "scientific_readiness_exploratory_results": {
     "sub_new_formal_result": false,
     "sub_new_exploratory_result": false,
-    "main_readiness_observation": "All three NI01 final-head gates are now green on dbfe7469..., while STARTED/control, preserve and evidence refs remain absent at SUB reconciliation time.",
+    "main_readiness_observation": "Both H5 exact-head readiness gates that were in progress in MAIN's 17:23 report are now terminal failures on c2370cdc...; this is a MAIN critical-path blocker and SUB did not diagnose or repair it.",
     "main_scientific_result_observed": false
   },
   "evidentiary_status": "NONE_FOR_SUB",
@@ -62,20 +61,22 @@
       "c19-r1-revision-authority-official-v1",
       "c19-r1-revision-authority-official-v2",
       "c19-r2-fsa-state-tracker-official-v1",
-      "pd01-long-history-fading-memory-official-v1"
+      "pd01-long-history-fading-memory-official-v1",
+      "ni01-no-ignition-selective-prediction-official-v1"
     ],
-    "ni01_identity_state_observed": "UNSTARTED_UNCONSUMED"
+    "h5_identity_state_observed": "UNASSIGNED_UNSTARTED_UNCONSUMED"
   },
   "blockers": [
     "No reserved independent formal SUB lane or fallback exists.",
     "No safe, useful, non-duplicative incubator target exists under current Analyst allocation.",
-    "NI01 readiness/STARTED/execution is MAIN critical-path work and is not valid SUB work."
+    "H5 exact-head ordinary CI and formal-contract pre-START failures are MAIN critical-path work and are not valid SUB work."
   ],
   "collision_reconciliation": {
-    "report_branch_tip_before_persistence": "76f983fcc38f18332a5185c8c3c5cab80dd1bd38",
-    "main_checkpoint_time": "2026-09-18T16:30:00+09:00",
+    "report_branch_tip_before_persistence": "6a991e3fba79613a7df542dba4ca285dcd5e1650",
+    "main_checkpoint_time": "2026-09-18T17:23:09+09:00",
     "main_checkpoint_status": "WAITING_EXTERNAL",
-    "main_checkpoint_active_head": "dbfe7469dbbbc1adbb00789ab382de892a1b3563",
+    "main_checkpoint_active_head": "c2370cdc658fceab5a69a49a71032efbf4f72ece",
+    "fresh_main_head_rechecked": true,
     "sub_collision_detected": false
   },
   "integrity_state": "CLEAN_NO_MAIN_MUTATION_NO_FORMAL_BOUNDARY_CROSSED_BY_SUB",
