@@ -1,8 +1,8 @@
 from __future__ import annotations
 
+import random
 from dataclasses import dataclass
 from hashlib import sha256
-import random
 from typing import Iterable
 
 
@@ -97,10 +97,11 @@ class ExplicitParentTable:
         self.ancestors[event.child] = frozenset(inherited)
 
     def descendants_of(self, ancestor: str, live_ids: Iterable[str]) -> QueryResult:
+        live = tuple(live_ids)
         descendants = tuple(
-            sorted(node for node in live_ids if ancestor in self.ancestors.get(node, ()))
+            sorted(node for node in live if ancestor in self.ancestors.get(node, ()))
         )
-        return QueryResult(ancestor, descendants, len(tuple(live_ids)))
+        return QueryResult(ancestor, descendants, len(live))
 
 
 class RecentWindowState:
@@ -129,7 +130,9 @@ class RecentWindowState:
                 visits += 1
                 if child in found:
                     continue
-                if ancestor in child_parents or any(parent in found for parent in child_parents):
+                direct = ancestor in child_parents
+                inherited = any(parent in found for parent in child_parents)
+                if direct or inherited:
                     found.add(child)
                     changed = True
         return QueryResult(ancestor, tuple(sorted(found & live)), visits)
