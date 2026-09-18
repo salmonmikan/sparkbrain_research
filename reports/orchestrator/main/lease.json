@@ -1,17 +1,17 @@
 {
-  "run_id": "sparkbrain-main-primary-20260918T1524JST",
+  "run_id": "sparkbrain-main-primary-20260918T1612JST",
   "execution_mode": "PRIMARY",
   "status": "RUNNING",
-  "started_at": "2026-09-18T15:24:12+09:00",
-  "heartbeat_at": "2026-09-18T15:24:12+09:00",
+  "started_at": "2026-09-18T16:12:21+09:00",
+  "heartbeat_at": "2026-09-18T16:12:21+09:00",
   "analyst_commit": "d3626617c3b054afd726e468682aaa02d613bca0",
   "active_branch": "research/ni01-no-ignition-selective-prediction-spec-20260918",
   "active_identity": "UNRESERVED:ni01-no-ignition-selective-prediction-official-v1",
-  "active_step": "NI01_FORMAL_EXECUTION_SCAFFOLDING",
+  "active_step": "NI01_BIND_EXECUTION_AUTHORITY",
   "workflow_run_id": null,
   "ordinary_ci_run_id": 35308269286,
   "dedicated_preformal_run_id": 35308269458,
   "active_head": "2664951b65dd18883d3d80862e80b86ac66cf24f",
-  "expected_next_action": "Bind current Evidence Analyst authority d3626617c3b054afd726e468682aaa02d613bca0 to NI01 using science-invariant formal execution/admission scaffolding. Revalidate exact source/protocol/package/input/runtime/candidate/comparator/scorer/preserver bindings and target-blind projection. Any head change requires ordinary CI and dedicated NI01 pre-START green on the same final SHA before STARTED. If all final integrity gates remain green, create STARTED/no-clobber exactly once and execute exactly one formal NI01 one-way chain; otherwise stop under the prospectively frozen contingency.",
+  "expected_next_action": "Inspect the frozen NI01 exact-head contract and the prior PD01 administrative execution pattern. Add only science-invariant NI01 execution/admission scaffolding bound to Evidence Analyst authority d3626617c3b054afd726e468682aaa02d613bca0, then require ordinary CI and dedicated NI01 pre-START green on the same final execution SHA before any STARTED marker. If all final identity/namespace/binding/target-blindness predicates remain clean, create STARTED exactly once and dispatch exactly one registered NI01 one-way execution; otherwise stop under the frozen contingency.",
   "owner": "main"
 }
