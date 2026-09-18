@@ -1,0 +1,30 @@
+{
+  "dense_control_row_count": 8,
+  "evidence_analyst_commit": "f373fe3dfcddc14405d81cabadf0cb2682a659d0",
+  "exact_package_commit": "2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
+  "formal_identity": "h5-event-routing-work-reduction-official-v1",
+  "protocol_id": "h5-event-routing-work-reduction-formal-contract-v2",
+  "raw_preservation_commit": "ce5797eb584344db7a512e585506fb6c59ea475b",
+  "raw_sha256": "c0c87aab6a70969ade75bcfd89ad0629e04e6591c0f7414bf7d8c70049a06000",
+  "result_class": "FAIL_NO_USEFUL_WORK_REDUCTION",
+  "row_count": 152,
+  "schema_version": 1,
+  "score": {
+    "activity_mean_reductions": {
+      "0.01": 0.05927001218870528,
+      "0.05": 0.009811966841371046,
+      "0.15": 0.0023962430412420807
+    },
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 75001,
+    "classification": "FAIL_NO_USEFUL_WORK_REDUCTION",
+    "cluster_unit": "workload_seed",
+    "primary_ci95": [
+      0.02379403660851484,
+      0.023859665012124307
+    ],
+    "primary_mean_work_reduction": 0.023826074023772813
+  },
+  "sparse_row_count": 144,
+  "state": "TERMINAL_CLASSIFICATION"
+}

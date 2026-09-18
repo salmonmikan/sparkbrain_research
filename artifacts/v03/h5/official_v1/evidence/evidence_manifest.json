@@ -1,0 +1,13 @@
+{
+  "evidence_analyst_commit": "f373fe3dfcddc14405d81cabadf0cb2682a659d0",
+  "exact_package_commit": "2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
+  "protocol_id": "h5-event-routing-work-reduction-formal-contract-v2",
+  "raw_preservation_commit": "ce5797eb584344db7a512e585506fb6c59ea475b",
+  "result_class": "FAIL_NO_USEFUL_WORK_REDUCTION",
+  "run_identity": "h5-event-routing-work-reduction-official-v1",
+  "schema_version": 1,
+  "started_ref": "control/h5-event-routing-work-reduction-started-v1-20260918",
+  "state": "TERMINAL_EVIDENCE",
+  "workflow_run_attempt": 1,
+  "workflow_run_id": "35338995888"
+}

@@ -1,0 +1,15 @@
+{
+  "candidate": "AuditedSparkBrain",
+  "comparator": "DenseEagerSparkBrain",
+  "engine_blob": "48fa64414f539ec4a00acc9e25ffc9b1d26a4982",
+  "formal_contract_git_blob": "1911d4560f4e2774fd725df26ba8cb25b03e2c5f",
+  "h5_module_git_blob": "572f00f7a7361a89a54b647a2e2dca875c9b4829",
+  "model_blob": "ab450dba5943fa9184e66c00a4e992d6588bf6a5",
+  "official_runner_git_blob": "42a44384d08d680e3767541efce92b0f54edb9ee",
+  "one_way_workflow_git_blob": "37f8dc1817a4587749c0896727dc4f10187ff50e",
+  "package_blob": "49d47f3d65f67f1c0a6b82a3f7fc2d0364e2a88c",
+  "preserver": "sparkbrain.h5_work.canonical_raw_json",
+  "preserver_git_blob": "0f3b013025737373e8bec91056c5369f23a3266f",
+  "runtime": "CPython 3.11.10",
+  "scorer": "sparkbrain.h5_work.score_rows"
+}
