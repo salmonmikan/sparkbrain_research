@@ -1,37 +1,31 @@
-# MAIN Orchestrator — PRIMARY PD01 terminal reconciliation
+# MAIN Orchestrator — PRIMARY next-frontier prospective selection
 
-Timestamp: `2026-09-18 12:21 JST`
-Execution mode: `PRIMARY`
-Latest Evidence Analyst handoff: `a015c119cb0365a5b871b7f4f2c727a80f52a57e`
-Governing execution authority: `91a05bad6d130f89975e776960a1d25d764fba32`
+Timestamp: `2026-09-18 13:25 JST`  
+Execution mode: `PRIMARY`  
+Evidence Analyst authority: `39c62ddb6bc567d3d3c81e38efa61be405ca7b4a`
 
 ## MAIN frontier
 
-`PD01_LONG_HISTORY_FADING_MEMORY_ONE_WAY` has terminalized. The exact execution package remains `research/pd01-fading-memory-preformal-20260918@b9d38daa5faca348ad2db3898ba71e2abc99f631`; STARTED remains `control/pd01-long-history-fading-memory-started-v1-20260918@0569e348b9d93aeee53fc58daf4b71ee92303d6c`; identity `pd01-long-history-fading-memory-official-v1` remains consumed/no-retry.
+Fresh post-PD01 authority assigns `NEXT_FRONTIER_PROSPECTIVE_SELECTION` only. PD01 remains terminal `FAIL_REDUCED_BY_FADING_MEMORY`; C19-R2 remains terminal `REDUCED_BY_FSA`. MAIN selected exactly one genuinely independent pre-existing question: H4 / native No-Ignition selective prediction versus an ordinary target-blind confidence-abstention head.
 
-This run used the FAST PATH. No target-ref disagreement, collision anomaly, unexpected branch movement, or unclassifiable next action required FULL RECONCILIATION.
+Created `research/ni01-no-ignition-selective-prediction-spec-20260918` from stable `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. Exact current head is `8d31d0dda992e06780d247e148e16d8e4cf2fa26`. This run used the FAST PATH; no authoritative target disagreement, collision anomaly, unexpected branch movement, or unclassifiable next action required FULL RECONCILIATION. Analyst `state.json` is stale relative to the newer designated `latest.md` commit, but the newer exact latest commit and canonical refs are mutually consistent and fully classify the authorized action.
 
-## Terminal workflow and integrity reconciliation
+## NI01 prospective contract
 
-One-way workflow `35301327618` completed `success` on STARTED head `0569e348b9d93aeee53fc58daf4b71ee92303d6c`. Every fixed stage succeeded in order: STARTED/no-clobber validation, exact-package checkout, CPython/runtime setup, authority/binding re-proof, target-blind raw acquisition, immutable raw preservation, independent re-fetch, TEST-target materialization/scoring, and terminal evidence creation.
+Protocol is `ni01-no-ignition-selective-prediction-protocol-v1`; proposed identity `ni01-no-ignition-selective-prediction-official-v1` remains `UNRESERVED`. Formal execution is explicitly unauthorized.
 
-Raw preservation is authoritative at `preserve/pd01-long-history-fading-memory-raw-pd01-long-history-fading-memory-official-v1@65ae7a50ee2279ab5edc3ca43ea3bf69daecb881`. Its commit is based directly on exact package `b9d38daa...` and adds only the target-blind inventory, raw manifest, and raw predictions. The preserved manifest records `1024` histories, `2048` model-score rows, `targets_materialized: false`, raw SHA-256 `5ad0c545c5aa4548ca7a852e9c46a908af41c9a44047667c9ed09c1fd5041638`, inventory SHA-256 `b70e87ce2494b0605cfb305a0097c41317c7aba9fbd8c049921abad05bcbdd92`, and exact package/identity/protocol bindings.
+Candidate is unchanged native `full` SparkBrain. Comparator is a deterministic zero-trainable-parameter confidence-abstention head over the same per-step probability vector, with one threshold per world chosen only from target-free DEV to match native coverage. Frozen worlds are `reliability_world`, `delayed_evidence_world`, and `contradiction_world`; DEV seeds `510000..510255`; planned TEST seeds `610000..610511`; 30 steps/episode.
 
-The workflow's independent re-fetch step byte-compared SHA-256 for raw predictions, raw manifest, and input inventory before any TEST target materialization, and succeeded. Independently inspecting the retained diagnostics also confirmed the inventory SHA-256, exactly `1024` unique histories over `128` base worlds, lags `16/32/64/128` with `256` histories each, two pair members per world/lag, and the exact canonical `TEST:0000...TEST:0127` ordering. The preserve commit contains `2048` raw JSONL lines; first/last retained rows preserve the expected two-model pairing order.
+The primary selective-decision loss, equal-world aggregation, episode-cluster bootstrap (10,000 draws, seed `74017`, Type-7 CI), per-world TEST coverage guard `<= 0.03`, PASS threshold (`effect_ci95_lower >= +0.02` and every world point effect > 0), FAIL threshold (`effect_ci95_upper <= +0.005`), and INCONCLUSIVE branch are all fixed prospectively.
 
-Terminal evidence is an annotated tag `evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1` with tag object `e4c4e6428d8ef9e09e92cae231041de0788162e2` pointing to evidence commit `fc5c8cda283360addddb7da482b14e69beaba1f7`. The evidence binding matches formal-contract blob `0ce03b01baf41a0c77c513835b1c6063e47b2614`, implementation blob `16bbfb6ed57d6c9701e8437360692b62e7c36915`, protocol `pd01-long-history-fading-memory-protocol-v1`, preserved raw/inventory/manifest digests, and a deterministic TEST-target digest.
+Source bindings include worlds blob `2478fba19d7276ebe30ec8f5811bf6d7b7414779`, runner blob `90543b184c64981802560601b85edcdee4583a35`, ablations blob `caa6a1c63fedc2222aa2e6ce708b66668943e8dd`, Phase-1 config blob `0134abeaf3d0551edeeb890502ffebe2c27867b0`, and NI01 deterministic scorer blob `37cf7f59725988155199148f1a62ba77ab6ca0cf`.
 
-## Scientific result
+Added machine-readable preformal contract, scientific specification, deterministic scorer primitives, focused tests, fail-closed contract/source checker, and a dedicated preformal workflow. The future formal integrity sequence is fixed as fresh Analyst GO -> same-final-SHA gates -> fresh namespaces -> STARTED/no-clobber -> target-free DEV threshold derivation -> target-blind TEST raw -> immutable preserve -> independent remote re-fetch/digest/cardinality -> TEST targets -> unique total fail-closed join -> deterministic scoring/bootstrap -> annotated evidence.
 
-The fixed primary result is **`FAIL_REDUCED_BY_FADING_MEMORY`**.
+No planned TEST seed was accessed. No formal identity, STARTED/control, preserve ref, evidence tag, formal raw, target materialization, or formal scoring was created. There is therefore **no new scientific result** in this run.
 
-- SparkBrain long-lag accuracy: `0.47265625`; cluster-bootstrap 95% CI `[0.431640625, 0.515625]`
-- fixed contractive reservoir long-lag accuracy: `0.5`
-- effect, SparkBrain minus reservoir: `-0.02734375`; cluster-bootstrap 95% CI `[-0.068359375, 0.015625]`
-- joined TEST histories: `1024`
+## External check state / stop
 
-The preregistered FAIL condition is `effect_ci95_upper <= 0.05`; observed upper bound is `0.015625`, so the terminal class follows directly. This is new scientific information. Under the prospective Analyst tree this identity now stops terminally: no rescue, no same-ID retry, no retuning, no comparator shopping, and no automatic PD01-v2/successor may be created in this run.
+Exact-head dedicated NI01 preformal workflow `35306802494` and ordinary CI `35306802471` are both `in_progress` on head `8d31d0dda992e06780d247e148e16d8e4cf2fa26`. No useful local critical-path work remains while these external checks run.
 
-## Stop / next MAIN action
-
-PD01 is complete and terminal. Relay continuation is not expected for this object. MAIN must not take another scientific step until a fresh Evidence Analyst handoff performs the post-terminal allocation/review and explicitly assigns a new MAIN action. SUB remains `no_op`; no lane repartition occurred.
+Lease is `WAITING_EXTERNAL`. Relay continuation is expected only to collect these exact-head checks. If both are green and the Analyst authority/head/identity plan remain unchanged, persist `NEXT_OBJECT_READY_FOR_ANALYST_REVIEW` and STOP for fresh Analyst authority. Science-invariant mechanical failures remain MAIN-owned and require a new exact final SHA with all required gates revalidated. Any semantic/scientific change returns to Analyst.
