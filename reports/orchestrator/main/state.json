@@ -1,14 +1,14 @@
 {
-  "timestamp": "2026-09-19T03:47:08+09:00",
+  "timestamp": "2026-09-19T04:12:14+09:00",
   "worker_role": "main",
-  "execution_mode": "RELAY",
+  "execution_mode": "PRIMARY",
   "analyst_commit": "03f027926fb06a42f108e5470779f2de2126116a",
   "current_lane": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
   "current_phase": "NO_ACTIVE_FORMAL_FRONTIER_FRESH_OBJECT_ADMISSION_GATE_ONLY",
   "consumed_contingency_branches": [
     "NO_NEW_OBJECT"
   ],
-  "active_claim": "No active admitted primary experiment exists. The fresh Evidence Analyst handoff adds only a read-only NI01 programme-interpretation narrowing: NI01 validly shows no registered incremental native selective-decision advantage over matched max-confidence abstention, but did not prospectively establish a separate positive native selective signal that the comparator then mechanistically explained.",
+  "active_claim": "No active admitted primary experiment exists. NI01 remains canonically FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION, with programme synthesis narrowed to NO_REGISTERED_INCREMENTAL_NATIVE_ADVANTAGE_OVER_MATCHED_CONFIDENCE_ABSTENTION because no separate positive native selective-signal gate was preregistered.",
   "authoritative_target_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "active_branch": null,
@@ -23,7 +23,8 @@
   "workflows_experiments": {
     "new_workflow_dispatched": false,
     "formal_experiment_dispatched": false,
-    "official_test_accessed": false
+    "official_test_accessed": false,
+    "workflow_run_ids": []
   },
   "scientific_results": {
     "new_formal_scientific_information_this_run": false,
@@ -32,7 +33,6 @@
     "evidentiary_status": "PREFORMAL_NON_EVIDENTIARY_PROGRAMME_HOLD",
     "ni01_canonical_result_token": "FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION",
     "ni01_programme_synthesis": "NO_REGISTERED_INCREMENTAL_NATIVE_ADVANTAGE_OVER_MATCHED_CONFIDENCE_ABSTENTION",
-    "ni01_interpretive_update": "Canonical evidence and result token are unchanged. Because NI01 did not prospectively register a separate positive native-signal gate, the result must not be narrated as proving that confidence abstention mechanistically explained an independently demonstrated positive native capability.",
     "formal_identity_state": "NONE_ACTIVE",
     "started_state": "NONE_NEW",
     "formal_preserve_state": "NONE_NEW",
@@ -49,34 +49,34 @@
     "h5-event-routing-work-reduction-official-v1"
   ],
   "blockers": [
-    "Scientific object availability: no freshly emerging independently motivated object is currently admissible under the architecture/testbed gate.",
-    "Formal one-way science remains blocked until a fresh object satisfies native-causality, matched privilege/resources, ordinary-reduction resistance, prospectively fixed positive-signal gate where mechanistic reduction language is intended, numeric falsifiers, exact bindings, same-final-SHA CI/pre-START, and fresh Analyst authority."
+    "Scientific object availability: no genuinely fresh independently motivated object is currently admissible under the architecture/testbed gate.",
+    "Formal one-way science remains blocked until a fresh object satisfies native-causality, matched information/readout/resources, ordinary-reduction resistance, prospectively fixed positive-signal gate where mechanistic reduction language is intended, numeric falsifiers, exact bindings, same-final-SHA CI/pre-START, and fresh Analyst authority."
   ],
   "lease_collision_reconciliation": {
     "inherited_lease_status": "COMPLETED",
-    "inherited_run_id": "sparkbrain-main-primary-20260919T031242JST",
-    "inherited_heartbeat": "2026-09-19T03:12:42+09:00",
+    "inherited_run_id": "sparkbrain-main-relay-20260919T034708JST",
+    "inherited_heartbeat": "2026-09-19T03:47:08+09:00",
     "fresh_main_running_collision_found": false,
-    "relay_lease_acquired": true,
-    "relay_lease_commit": "5a81c24b3a767c6382bfd2950ba8456bde7383fe",
+    "primary_lease_acquired": true,
+    "primary_lease_start_commit": "93428cfae86e03b8af583f4c3dc38624c5d27c29",
     "latest_sub_mode": "no_op",
     "sub_lane": null,
     "sub_fallback": null,
-    "analyst_ref_drift_found": true,
-    "analyst_ref_drift_description": "Evidence Analyst advanced from c7ccb537878966f10396bfa4c539840509014490 to 03f027926fb06a42f108e5470779f2de2126116a with interpretation-only NI01 narrowing and no allocation/execution change.",
+    "analyst_ref_drift_found": false,
     "main_ref_drift_found": false
   },
   "integrity_status": "CLEAN_ARCHITECTURE_TESTBED_BOUNDARY_NO_ACTIVE_IDENTITY_NO_STARTED_NO_OFFICIAL_TEST_NO_FORMAL_PRESERVE_SCORE_OR_EVIDENCE",
   "critical_path_fixes_completed": [],
   "same_run_steps": [
-    "Read MAIN latest/state/lease and newest MAIN history; inherited lease was COMPLETED with no active branch or identity.",
-    "Consumed fresh Evidence Analyst latest/state at 03f027926fb06a42f108e5470779f2de2126116a and confirmed main_lane remains PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE with formal execution explicitly unarmed.",
+    "Read Evidence Analyst latest/state and consumed main_lane, phase, outcome contingencies, blocked_until, do_not_touch and GO/STOP at authority 03f027926fb06a42f108e5470779f2de2126116a.",
+    "Read MAIN latest/state/lease; inherited Relay lease was COMPLETED and collision-free.",
     "Re-fetched current main and confirmed ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d remains authoritative.",
-    "Read newest SUB history only for collision avoidance; SUB remains no_op with sub_lane:null and sub_fallback:null and explicitly avoids MAIN's fresh-object gate.",
-    "Consumed Control Brain tip 10eb4206fb0c998fcdbc40c0e16f38829ea5d41e as strategic prior only; it does not override the Analyst handoff.",
-    "Applied no research/scientific mutation. Synchronized only the NI01 programme-interpretation narrowing into MAIN control-plane state."
+    "Read SUB report for collision avoidance; SUB remains no_op with no reserved lane or fallback.",
+    "Read Control Brain latest as strategic prior only; it remains consistent with NO_HIGH_VALUE_OBJECT architecture/testbed mode.",
+    "Acquired PRIMARY RUNNING lease and re-fetched lease plus Evidence Analyst ref before final reporting.",
+    "Applied no research/scientific mutation, dispatched no workflow, and crossed no formal boundary."
   ],
-  "stop_reason": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_INTERPRETATION_SYNCED",
+  "stop_reason": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_NO_CHANGE_AFTER_RELAY",
   "work_left_for_SUB": "none; SUB remains no_op with no reserved independent lane or fallback",
   "lane_repartition_reason": null,
   "next_MAIN_action": "Remain in architecture/testbed hold. If and only if a genuinely fresh independently motivated native object appears, perform bounded prospective specification/readiness and STOP at NEXT_OBJECT_READY_FOR_ANALYST_REVIEW. Do not create a formal identity, STARTED marker, official TEST access, preserve/scoring output, evidence, or outcome-responsive successor under the current handoff.",
@@ -84,7 +84,8 @@
     "github_direct_write_attempted": true,
     "github_direct_write_succeeded": true,
     "force_push_used": false,
-    "lease_start_commit": "5a81c24b3a767c6382bfd2950ba8456bde7383fe",
-    "history_path": "reports/orchestrator/history/2026-09-19/0347-main.md"
+    "lease_start_commit": "93428cfae86e03b8af583f4c3dc38624c5d27c29",
+    "latest_report_commit": "173319ab19aa8253cedf28c80e0d33108dc7d7b5",
+    "history_path": "reports/orchestrator/history/2026-09-19/0412-main.md"
   }
 }
