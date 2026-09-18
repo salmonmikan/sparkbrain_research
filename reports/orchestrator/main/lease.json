@@ -1,14 +1,14 @@
 {
-  "run_id": "sparkbrain-main-primary-20260919T041214JST",
+  "run_id": "sparkbrain-main-primary-20260919T051723JST",
   "execution_mode": "PRIMARY",
-  "status": "COMPLETED",
-  "started_at": "2026-09-19T04:12:14+09:00",
-  "heartbeat_at": "2026-09-19T04:12:14+09:00",
-  "analyst_commit": "03f027926fb06a42f108e5470779f2de2126116a",
+  "status": "RUNNING",
+  "started_at": "2026-09-19T05:17:23+09:00",
+  "heartbeat_at": "2026-09-19T05:17:23+09:00",
+  "analyst_commit": "c611bfe28e7f854e3de21bba35eab74d04c08cd9",
   "active_branch": null,
   "active_identity": null,
-  "active_step": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_NO_CHANGE_AFTER_RELAY",
+  "active_step": "PROGRAMME_ARCHITECTURE_TESTBED_RECONCILIATION",
   "workflow_run_id": null,
-  "expected_next_action": "Remain in architecture/testbed hold. If and only if a genuinely fresh independently motivated native object appears, MAIN may perform bounded prospective NON_EVIDENTIARY specification/readiness and must STOP at NEXT_OBJECT_READY_FOR_ANALYST_REVIEW before any formal identity, STARTED, official TEST, preserve, scoring or evidence boundary.",
+  "expected_next_action": "Reconcile the fresh Evidence Analyst architecture/testbed hold against current authoritative main and coordination state; do not cross the formal boundary unless a genuinely fresh prospectively admissible native object exists.",
   "owner": "main"
 }
