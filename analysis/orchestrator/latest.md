@@ -1,116 +1,101 @@
 # SparkBrain Evidence Analyst — Latest Two-Worker Handoff
 
-Analysis time: `2026-09-18 22:00 JST`  
-Prior Evidence Analyst mailbox tip reconciled before writing: `b9af0d1312d02d0be406a82d5bf889c4b578ecf6`
+Analysis time: `2026-09-18 23:02 JST`  
+Prior Evidence Analyst mailbox tip reconciled immediately before writing: `57464c4ad6881c27371be5305512656c6ae315d3`
 
 ## Executive decision
 
-**H5 is immutable terminal `FAIL_NO_USEFUL_WORK_REDUCTION`; the registered efficiency line is closed and `h5-event-routing-work-reduction-official-v1` is consumed/no-retry.** Fresh canonical evidence reports primary mean work reduction `0.023826074023772813`, clustered 95% CI `[0.02379403660851484, 0.023859665012124307]`; the preregistered FAIL rule is met because the CI upper bound is `<= 0.05`. Activity-fraction mean reductions are `0.05927001218870528` at `0.01`, `0.009811966841371046` at `0.05`, and `0.0023962430412420807` at `0.15`. Workflow `35338995888` completed successfully on attempt 1 and the fresh MAIN/SUB reconciliation reports no integrity anomaly.
+There is **no new formal scientific evidence** after terminal H5. The material repository update is pre-formal: MAIN completed the allocated LP01 actual-lineage/provenance investigation far enough to show that the current architecture does **not** supply a clean high-value formal object under the matched-privilege causal-credit question.
 
-This negative result is bounded to the exact registered sparse workloads, standalone `DenseEagerSparkBrain` comparator, primitive-work accounting and quality-equivalence contract. It does not establish a universal complexity, wall-clock, energy or cognitive result. It also gives no permission for H5 rerun, retune, workload/counter rescue, H5-v2 or post-outcome reinterpretation.
+The exact LP01 head is `research/lp01-actual-lineage-causal-credit-spec-20260918@f6d59a55730c5f99cd7f30470847fc3f175bdf64`. Dedicated prospective readiness workflow `35352468809` and ordinary CI `35352468938` are both `completed/success` on that exact SHA. The branch's pre-formal semantic review records `NO_HIGH_VALUE_OBJECT`: current lineage/parents/tombstones are persisted and inspectable, but the ordinary online forward, structural-consumption, reward-eligibility, discovery and candidate-group paths do not consume lineage metadata. A prospectively added ancestry-credit operation is also finitely and losslessly reconstructible by the matched `ExplicitParentTable` comparator from the same admitted event stream.
 
-The highest-information next MAIN move is not another generic persistence or efficiency test. Control Brain's surviving programme-level residual is actual-historical-lineage/provenance-specific causal credit that survives ordinary explicit/predictive/recurrent/plastic reductions. I therefore allocate MAIN to **`LP01_ACTUAL_LINEAGE_CAUSAL_CREDIT_PROSPECTIVE_SPECIFICATION`**. This allocation is specification/readiness only: no formal identity, STARTED, official TEST, one-way formal workflow, formal preserve, scoring or evidence is authorized.
+This is **not a negative scientific result** and must not be upgraded to evidence. It is a prospective identifiability/admission failure: no formal identity exists, no STARTED/control ref exists, no official TEST input was accessed, and no LP01 preserve/scoring/evidence exists. I accept the LP01 `NO_HIGH_VALUE_OBJECT` conclusion at the pre-formal boundary and narrow MAIN to a closeout-only lane. After that closeout, there is no active supported new-computational-principle frontier; SparkBrain should remain primarily an architecture/testbed until a genuinely native, non-definitionally-reducible mechanism appears.
 
-SUB remains `sub_lane: null`, `sub_fallback: null`, latest mode `no_op`.
+A second material update is the new independent PD01 audit. Canonical `FAIL_REDUCED_BY_FADING_MEMORY` remains immutable and evidence-integrity-valid, but the stronger mechanistic interpretation is **confounded**: SparkBrain itself showed no demonstrated positive registered long-lag signal, while the reservoir was not materially worse. Programme synthesis must therefore say `NO_REGISTERED_LONG_LAG_SIGNAL + COMPARATOR_NOT_WORSE`, not that a fading-memory reservoir reproduced a demonstrated positive SparkBrain persistence effect. Future reduction contracts should prospectively distinguish absent signal from comparator explanation, require a positive candidate-signal gate before `REDUCED_BY_*` language is armed, and match readout/observation privilege for latent-state claims.
+
+SUB remains `mode: no_op`, with `sub_lane: null` and `sub_fallback: null`.
 
 ## Streams consumed
 
-All `ops/*` refs were treated only as mailboxes.
+All `ops/*` refs were treated strictly as mailbox/control-plane state.
 
-- Control Brain latest/state: branch tip `23fc2f0c1668526be402fa44b3bc8c5b2258511b`, 18:55 JST strategic prior; decision commit consumed `0bea52bbe8b6723ced2b6f975b3fc8277d720aae`.
-- MAIN latest/state: report commit `fa8c0dc16c8babbaae2ccf4e1bb1a231ee09d70f`, history `reports/orchestrator/history/2026-09-18/2114-main.md`.
-- SUB latest/state: report commit `47de2ae50dd5e9c10c72e5b40a946d61562c124d`, history `reports/orchestrator/history/2026-09-18/2136-sub.md`.
-- Literature handoff commit: `525686fa0c14f64426ca7bf5c89f08cd0bcb9c77`.
-- Independent Audit handoff commit: `0c871b1b9b54d35c826a59c5b9925afa55b78d22`.
-- Repository Steward commit/state: `d50d55610faacf963711d9dce0a5b2fbf0ff63c8`, 19:50 JST, governance advisory only.
+- Control Brain latest commit: `47e25ee17b036b84bee4233b0f67970c41fda658` (22:50 JST). Its older `state.json` lags the latest narrative; the latest narrative wins as strategic prior, current repository evidence wins over both.
+- MAIN latest commit: `4c42f089ba158949ddbc6da33ce83990d2a335ba`; newest role history `reports/orchestrator/history/2026-09-18/2251-main.md`.
+- SUB latest commit: `47de2ae50dd5e9c10c72e5b40a946d61562c124d`; newest role history remains `reports/orchestrator/history/2026-09-18/2136-sub.md`.
+- Literature latest commit: `525686fa0c14f64426ca7bf5c89f08cd0bcb9c77`.
+- Independent Audit latest commit: `04bc885ebd0d6c744918e96d72dc2a9503ec6bfc`; external handoff branch tip observed `d00b6616d2f4fe674b9abe7ccfab1c98abe0452a`.
+- Repository Steward commit/state: `d50d55610faacf963711d9dce0a5b2fbf0ff63c8`, 19:50 JST, consumed as governance advisory only; it predates terminal H5 and LP01.
 
-## New repository evidence
+## New repository evidence and readiness
 
-Fresh authoritative state:
+Formal evidence: **none new this run**.
 
-- `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`.
-- H5 research package `research/h5-event-routing-work-reduction-spec-20260918@2086a8f4ea080a7a8a0e3c79d77afe9b516db905`.
-- H5 STARTED/control `control/h5-event-routing-work-reduction-started-v1-20260918@058e90227cd48e1c10c6ecbaed01efdec1217d0e`.
-- H5 raw preserve `preserve/h5-event-routing-work-reduction-raw-h5-event-routing-work-reduction-official-v1@ce5797eb584344db7a512e585506fb6c59ea475b`.
-- H5 annotated evidence tag `evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1`, tag object `e7d99cc806206ac27ced225d4779c9fc5bb67ff5` -> evidence commit `61aff6d74b82b68a326f3d90505d70bcd4071fd5`.
-- Terminal evidence binds exact package, protocol `h5-event-routing-work-reduction-formal-contract-v2`, candidate `AuditedSparkBrain`, comparator `DenseEagerSparkBrain`, raw-preservation commit, runner/workflow/preserver/scorer/runtime, 152 rows, 10,000 bootstrap replicates, seed `75001`, cluster unit `workload_seed`.
-- Authoritative annotated `evidence/*` tags now total **5**: C19-v4, C19-R2, PD01, NI01, H5.
-- No post-H5 successor research branch or formal identity exists.
+Fresh authoritative/readiness facts:
+
+- `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` remains stable shared substrate.
+- LP01 exact head `f6d59a55730c5f99cd7f30470847fc3f175bdf64` is 16 commits ahead of main and changes only LP01 prospective/readiness material.
+- LP01 contract explicitly remains `PROSPECTIVE_SPECIFICATION_ONLY`, `formal_identity: null`, `formal_execution_authorized: false`; all formal boundaries are forbidden in this phase.
+- LP01 `control/*` and `preserve/*` namespaces are empty; `formal/*` and `sealed/*` tag namespaces are also empty.
+- Both LP01 exact-head gates are green: readiness `35352468809`, CI `35352468938`.
+- Authoritative annotated `evidence/*` tags remain exactly **5**: C19-v4, C19-R2, PD01, NI01, H5.
+- H5 terminal evidence tag remains `e7d99cc806206ac27ced225d4779c9fc5bb67ff5` -> `61aff6d74b82b68a326f3d90505d70bcd4071fd5` and is untouched.
 
 ## Active-line review
 
-| Line | Strongest evidence / status | Shortest path to NEW information | Position |
+| Line | Strongest current interpretation | Shortest path to NEW information | Position |
 |---|---|---|---|
 | A01 | `MIXED_PROGRAMME_CLOSED` | fresh independent programme only | closed |
 | RV01 | `DEVELOPMENT_POSITIVE_REDUCIBLE / EXPLORATORY_BUDGET_EXHAUSTED` | fresh independent question only | secondary |
 | RV02 | `TERMINAL_CONSTRUCTION_NEGATIVE` | fresh object only | terminal |
 | CX/CX01 | `TERMINAL_FORMAL_NEGATIVE` | fresh independent object only | terminal |
-| H8/C08 | causal specialization failed | distinct fresh object | terminal |
+| H8/C08 | terminal causal-specialization negative | distinct fresh object | terminal |
 | H9/C07 | `PRE_START_UNDERSPECIFIED` | exact state/reset/resource/backend-equivalence contract | secondary |
 | C19-v4 | immutable narrow representation PASS / `WEAKENED_NOT_INVALID` | no rerun | historical |
 | C19-R1 | scientifically unresolved / operationally terminated | no rescue v3 | closed |
 | C19-R2 | `TERMINAL_REDUCED_BY_FSA / ROBUST_SO_FAR_AUDITED` | STOP | closed primary |
-| PD01 | `TERMINAL_FAIL_REDUCED_BY_FADING_MEMORY / AUDIT_PENDING` | audit only | closed primary |
-| NI01/H4 | `TERMINAL_FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION / AUDIT_PENDING` | audit only | closed primary |
-| H5 | `TERMINAL_FAIL_NO_USEFUL_WORK_REDUCTION / AUDIT_PENDING` | audit only | closed primary |
-| H3 | unresolved formal claim; strong scalar-reduction pressure; historical incubator promotion `REJECT` | only fresh independent correlation-inference object | secondary |
-| H6 | unresolved; historical incubator shows communication-accounting sensitivity | fresh quality-matched cost contract if independently justified | secondary |
-| H7 / provenance | canonical causal-faithfulness question unresolved; C06 attribution fidelity unavailable | fresh prospective causal-provenance discriminator | feeds MAIN |
-| **LP01** | **no evidence yet** | **clean prospective contract or `NO_HIGH_VALUE_OBJECT`** | **MAIN central** |
+| PD01 | canonical terminal FAIL; integrity robust; mechanistic reservoir-reduction interpretation `CONFOUNDED` | no rerun; audit finding only changes synthesis | closed primary |
+| NI01/H4 | `TERMINAL_FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION` | audit only | closed primary |
+| H5 | `TERMINAL_FAIL_NO_USEFUL_WORK_REDUCTION` | audit only | closed primary |
+| H3 | unresolved; historical incubator has scalar-reduction pressure | only a fresh independently motivated object | secondary |
+| H6 | unresolved; historical incubator is accounting-sensitive | fresh quality-matched cost contract if independently justified | secondary |
+| H7 / provenance | conceptual causal-faithfulness residual, but current native online path does not consume lineage | only new architecture/theory that supplies a native nontrivial causal path | blocked residual |
+| **LP01** | **`NO_HIGH_VALUE_OBJECT` at pre-formal prospective boundary; NON_EVIDENTIARY** | **close out and STOP; no formalization** | **MAIN closeout** |
 
-## SUB operating mode / incubator review
+## SUB operating mode / exploratory review
 
-Latest SUB mode is `no_op`; there is no current incubator candidate, so current `sub_exploratory_review` is not applicable.
+Latest SUB mode is `no_op`. There is no current exploratory-incubator candidate, so `sub_exploratory_review: null` is correct for this run.
 
-Historical NON_EVIDENTIARY incubator material was reviewed only as hypothesis-generation input:
-
-- **H3 noisy-group proxy — `REJECT` promotion on the present basis.** In its fixed noisy-proxy sweep, a normalized scalar is at least as accurate as the coalition-style reader; a formal H3 object would require new grouping-inference, budget, held-out and resource choices.
-- **H6 workspace accounting — bounded exploratory warning only.** The apparent advantage flips with the communication-accounting contract; no formal claim should proceed without prospectively fixed exposure/cost and quality matching.
-- **H7 trace-causality bypass toy — `NO_ACTION` as evidence.** It warns that stable route IDs can be causally dispensable under an unreported bypass. Its 64-example toy, weights and bypass grid must not be reused for formal tuning. It motivates only the need for LP01 to distinguish causal completeness from trace stability.
-- **Historical H5 lazy-routing output — `NO_ACTION`.** Canonical terminal H5 supersedes it and it cannot rescue the failed formal object.
-
-Because provenance/causal-credit is now MAIN-owned, SUB must not continue H7/LP01 as a disguised helper lane.
+Historical SUB exploratory work remains NON_EVIDENTIARY only. H3 is not promotable on its current noisy-group proxy; H6 remains accounting-sensitive; H7's bypass toy remains a warning that trace stability is not causal completeness; historical H5 exploratory material is superseded by terminal formal H5. None of those observations upgrades a claim or creates a SUB formal lane.
 
 ## External knowledge integration
 
 ### `external_input.literature`
 
-No newer durable role-specific Literature handoff exists after `525686fa0c14f64426ca7bf5c89f08cd0bcb9c77` (04:30 JST). The missing later persistence remains an operational knowledge-flow defect, not evidence of no external developments.
+No durable Literature update after `525686fa0c14f64426ca7bf5c89f08cd0bcb9c77`. The reduction ladder remains: learned/extracted finite-state abstraction -> PSR/TPSR / epsilon-machine / causal-state compression -> reservoir/fading-memory -> conventional plasticity/eligibility/slow-state -> only then any narrower lineage-specific residual. Local, pre-semantic, historical or predictive state is not itself a novelty axis.
 
-Available findings keep the reduction ladder active: exact/learned finite-state abstraction -> PSR/TPSR / epsilon-machine / causal-state compression -> recurrent/reservoir/fading-memory -> conventional plasticity/eligibility/slow-state -> only then a narrower lineage-specific residual. Local, pre-semantic, persistent or predictive state is not itself a novelty axis.
-
-Affected lines: programme novelty and **LP01 comparator design**. LP01 must isolate actual historical provenance beyond current-state/predictive-state summaries under matched privilege/resources. No consumed experiment changes. Allocation changed because H5 terminalized, not because Literature changed.
+Affected lines: programme novelty and any future provenance object. No allocation change is caused by Literature this run.
 
 ### `external_input.audit`
 
-No newer Audit handoff exists after `0c871b1b9b54d35c826a59c5b9925afa55b78d22` (10:30 JST). C19-R2 remains independently `ROBUST_SO_FAR`.
+**Changed materially.** New PD01 independent audit classifies the mechanistic interpretation `CONFOUNDED` while preserving the canonical frozen FAIL and integrity chain as valid. Registered statistics remain SparkBrain accuracy `0.47265625` (95% CI `[0.431640625, 0.515625]`), reservoir `0.5`, effect `-0.02734375` (95% CI `[-0.068359375, 0.015625]`). The candidate itself never demonstrated a positive long-lag signal, so `REDUCED_BY_FADING_MEMORY` cannot be synthesized as evidence that the reservoir mechanistically reproduced a positive SparkBrain persistence effect. The candidate readout is also narrower than the reservoir's full continuous state.
 
-Fresh audit priority is terminal H5, then NI01/PD01 as capacity permits. H5 audit should attack exact package/STARTED/raw-preserve/evidence binding, raw-before-score order, counter/quality invariants, bootstrap and the narrow claim boundary. No audit permits rerun or evidence rewrite. Allocation changed because H5 terminalized, not because Audit changed.
+Affected lines: PD01, persistent-dynamics residual, programme novelty, and all future reduction-taxonomy design. Required prospective change: distinguish `NO_REGISTERED_SIGNAL` from `REDUCED_BY_COMPARATOR`, add a positive candidate-signal gate before mechanistic reduction language, and match observation/readout privilege. This does **not** reopen PD01, restore persistence novelty, or alter the MAIN/SUB ownership allocation.
 
 ## Parallel decomposition
 
 ### `main_lane`
 
-`LP01_ACTUAL_LINEAGE_CAUSAL_CREDIT_PROSPECTIVE_SPECIFICATION`
+`LP01_PREFORMAL_CLOSEOUT_NO_HIGH_VALUE_OBJECT`
 
-MAIN owns all work required to turn the residual provenance question into one falsifiable prospective object. This handoff permits source reading, contract design, synthetic/dev-only NON_EVIDENTIARY prototyping, implementation/readiness and CI only.
+MAIN owns the closeout of its own LP01 frontier. It may only:
 
-The prospective contract must fix before any formal identity:
+1. re-fetch the exact head `f6d59a55730c5f99cd7f30470847fc3f175bdf64`;
+2. confirm readiness `35352468809` and CI `35352468938` remain green;
+3. confirm formal identity remains absent, no STARTED/control/preserve/formal/sealed/evidence authority exists, and no official TEST was accessed;
+4. persist the already prospectively reached `LP01_NO_HIGH_VALUE_OBJECT` as **PRE-FORMAL / NON_EVIDENTIARY**;
+5. STOP for fresh Evidence Analyst allocation.
 
-1. scientific question: whether **actual historical lineage/provenance carries causal credit for later competition/decision behavior after current observable state, recent input and privilege/resource budgets are matched**;
-2. exact candidate/mechanism and lineage information privilege;
-3. a provenance-destroying but present-state/resource-matched control plus the strongest necessary ordinary explicit/predictive/recurrent/plastic comparator;
-4. observable envelope and every allowed bypass/residual path;
-5. held-out construction with matched present observables but different causal ancestry;
-6. interventions that distinguish necessity, sufficiency/completeness and legitimate redundancy from hidden bypass;
-7. fixed training/calibration/tuning budgets and resource accounting;
-8. primary unit/cluster, statistics and numeric PASS/FAIL/INCONCLUSIVE criteria;
-9. exact source/checkpoint/package/runtime/input/scorer/preserver/workflow bindings and integrity gates;
-10. a fresh identity plan only after fresh Analyst review.
-
-Completion target: `LP01_PROSPECTIVE_CONTRACT_READY_FOR_ANALYST_REVIEW` or `NO_HIGH_VALUE_OBJECT`.
-
-**No formal identity, STARTED, official TEST, formal preserve/scoring/evidence is authorized.**
+MAIN must not turn the dev-only ancestry adapter into formal science, invent a privileged comparator, or change the claim to efficiency/storage/inductive bias as an outcome-responsive rescue.
 
 ### `sub_lane`
 
@@ -122,86 +107,72 @@ Completion target: `LP01_PROSPECTIVE_CONTRACT_READY_FOR_ANALYST_REVIEW` or `NO_H
 
 ### `no_sub_lane_reason`
 
-No prospectively complete independent secondary formal object is reserved. H3 promotion is rejected on its current exploratory basis; H6 is accounting-sensitive; H9/C07 is under-specified; terminal lines are closed; H7/provenance overlaps MAIN LP01.
+There is no prospectively complete independent secondary formal object. H9/C07 remains under-specified, RV01 exploratory budget is exhausted, terminal lines are consumed, H3/H6 are not ready, and provenance/LP01 closeout remains MAIN-owned. A fake lane would add activity without information gain.
 
 ### `blocked_until`
 
-Formal LP01 science is blocked until the question, candidate, comparators, privilege/resource equivalence, bypass inventory, held-out inputs, interventions, metrics/statistics, numeric falsifiers, source/package/runtime/input bindings and integrity order are prospectively fixed and exact-head CI/pre-START/review are green under a **fresh Evidence Analyst authority**.
+No new formal central-science object should be armed until fresh architecture or external theory supplies a **native** online mechanism where actual historical lineage changes later local competition/decision under matched present state, information/readout privilege and resources, and the effect is not losslessly reconstructible by ordinary explicit/predictive/recurrent/plastic state. Any future mechanistic-reduction contract must also include a prospectively fixed positive candidate-signal gate and matched observation privilege.
 
 ### `do_not_touch`
 
-- H5 official-v1 identity, STARTED/control, raw preserve, terminal evidence/tag and outcome;
-- NI01, PD01, C19-R2, C19-v4 immutable evidence and consumed identities;
-- C19-R1 v1/v2 consumed identities;
-- legacy `freeze/*` refs and authoritative tags;
-- scheduler definitions;
-- historical SUB exploratory numbers/settings as formal evidence or parameter-selection input;
-- any H5 rescue or H5-v2 selected because H5 failed;
-- H7 toy's 64-example construction, bypass weight/coverage choices and observed sensitivities as LP01 tuning.
+- LP01: no formal identity, STARTED, official TEST, formal preserve/scoring/evidence; no relabeling dev diagnostics as evidence.
+- H5 official-v1 identity, STARTED/control, raw preserve, evidence/tag and terminal result.
+- PD01 identity/package/STARTED/raw/evidence/canonical FAIL token; audit changes synthesis only, never frozen evidence.
+- NI01, C19-R2, C19-v4 immutable evidence/consumed identities; C19-R1 v1/v2 consumed authorities.
+- legacy `freeze/*` refs and all authoritative evidence tags.
+- scheduler definitions.
+- historical SUB exploratory settings/results as formal evidence or parameter-selection input.
 
 ## Prospective contingency tree
 
-Observed root: **`POST_H5_TERMINAL_NEXT_FRONTIER_SPECIFICATION`**.
+Observed root: **`LP01_PREFORMAL_CLOSEOUT`**.
 
-- `PRE_START_BLOCKER_MECHANICAL`: MAIN may resolve only science-invariant specification/readiness mechanics with synthetic/dev-only NON_EVIDENTIARY work.
-- `PRE_START_SEMANTIC_GAP`: if lineage cannot be isolated from present-state, information-privilege, hidden-bypass or resource confounds with a clean prospective falsifier, STOP and emit `NO_HIGH_VALUE_OBJECT`; retain architecture/testbed framing.
-- `READY_FOR_ANALYST_REVIEW`: when LP01 contract and exact bindings are complete, STOP for fresh Analyst review. Do not create identity/STARTED in the same run.
-- `PASS`: **UNARMED** pending fresh formal review. Future PASS must require a prospectively nontrivial lineage-specific causal effect beyond all frozen matched reductions while present observables/recent input are controlled.
-- `FAIL`: **UNARMED** pending fresh formal review. Future FAIL/reduction includes matched provenance-destroying or ordinary comparators reproducing the registered effect within the frozen equivalence/reduction margin.
-- `INCONCLUSIVE`, `INVALID_EVIDENCE`, `POST_START_FAILURE`: **UNARMED** until a fresh formal contract/identity is reviewed; future integrity failures must be terminal/no-salvage/no-retry.
-
-Same-run continuation is limited to prospective specification, source/implementation review, synthetic/dev-only NON_EVIDENTIARY diagnostics and science-invariant readiness. There is **no same-run continuation into formal science**.
+- `EXACT_HEAD_UNCHANGED_GATES_GREEN_BOUNDARY_CLEAN`: MAIN may persist `LP01_NO_HIGH_VALUE_OBJECT` as PRE-FORMAL/NON_EVIDENTIARY and STOP. This is the only same-run continuation authorized.
+- `PRE_START_BLOCKER_MECHANICAL`: MAIN may repair only science-invariant closeout/readiness mechanics, then rerun exact-head readiness + ordinary CI and re-check the no-formal-boundary state.
+- `PRE_START_SEMANTIC_GAP`: already observed — current native lineage is not in the decision/reward causal path and the added ancestry operation is explicit-state reducible. Do not formalize; STOP as `NO_HIGH_VALUE_OBJECT`.
+- `NEW_NATIVE_NONREDUCIBLE_MECHANISM_OR_THEORY`: do not continue in the same run. Return to fresh Evidence Analyst selection/specification before any identity or official data.
+- `PASS`, `FAIL`, `INCONCLUSIVE`, `INVALID_EVIDENCE`, `POST_START_FAILURE`: **UNARMED** because no formal LP01 object/identity/STARTED exists.
 
 ## Top 3 / GO-STOP
 
-1. **MAIN — build LP01 actual-lineage causal-credit prospective contract and stop for fresh Analyst review.** Information value `VERY_HIGH`; distance `NEAR_TO_MEDIUM`.
-2. **Independent Audit — audit terminal H5 one-way chain and bounded claim; then NI01/PD01.** Information value `HIGH`; distance `NEAR`.
-3. **SUB — remain no-op unless a genuinely distinct non-LP01, non-terminal bounded synthetic/dev question appears.** Information value `LOW_TO_MEDIUM`; distance `OPTIONAL`.
+1. **MAIN — close LP01 prospectively as `NO_HIGH_VALUE_OBJECT`, persist the PRE-FORMAL/NON_EVIDENTIARY conclusion, and STOP.** Information value `HIGH`; distance `IMMEDIATE`.
+2. **Independent Audit — audit terminal H5 next, then NI01; preserve PD01's new `CONFOUNDED` mechanistic interpretation without altering canonical evidence.** Information value `HIGH`; distance `NEAR`.
+3. **SUB — remain no-op unless a genuinely distinct, prospectively complete non-LP01/non-terminal object appears.** Information value `LOW_TO_MEDIUM`; distance `OPTIONAL`.
 
 ### #1 GO
 
-GO **now** means specification/readiness only using non-official synthetic/dev inputs.
+GO now means **closeout only**. Identity freshness condition: LP01 formal identity must remain **uncreated**; creating/reserving it is a STOP condition. Exact source/protocol package is `f6d59a55730c5f99cd7f30470847fc3f175bdf64` with current contract/source bindings unchanged. Dedicated readiness and ordinary CI are already green on that exact SHA. STARTED/no-clobber must remain absent. There is no raw-before-score path because no official/formal acquisition is authorized.
 
-Before any future formal GO: identity must be fresh/unSTARTED/unconsumed and collision-free; exact source/checkpoint/protocol/package/input/runtime/candidate/comparator/intervention/scorer/preserver/workflow bindings must be frozen; present-state/recent-input/information/resource privilege and bypass inventory must be matched; numeric causal PASS/FAIL/INCONCLUSIVE criteria must be fixed before identity creation; exact-final-SHA CI/pre-START and fresh Analyst review must be green; STARTED/no-clobber must occur exactly once before official TEST; formal raw/intervention observations must precede scoring, be immutably preserved, independently refetched/digest/cardinality checked and fail-closed joined/invariant-checked before preregistered scoring.
+The current scientific falsifier/admission test has already failed prospectively: lineage metadata is not consumed by the native online decision/reward path, and an added lineage-credit operation can be losslessly reconstructed by an ordinary explicit parent-state representation under equal information privilege. That is a semantic reason **not to arm formal science**.
+
+For any future formal object, the full one-way order remains mandatory: fresh identity + collision checks; exact source/protocol/package/input/runtime/candidate/comparator/scorer/preserver/workflow binding; numeric falsifiers plus positive candidate-signal gate fixed prospectively; same-final-SHA CI/pre-START/review green; STARTED/no-clobber before official TEST; raw-before-score; immutable preserve; independent refetch/digest/cardinality; fail-closed join/invariants; preregistered scoring; terminal evidence.
 
 ### #1 STOP
 
-Stop if actual lineage cannot be separated from a current-state/predictive-state surrogate without asymmetric privilege; if trace completeness cannot distinguish legitimate redundancy from hidden bypass; if candidate/checkpoint/comparator/intervention/threshold choices are selected from observed formal outcomes; or if H5/NI01/PD01/C19 negatives are being rescued rather than a distinct question being tested.
-
-If no clean falsifiable LP01 contract exists, `NO_HIGH_VALUE_OBJECT` is preferred: retain SparkBrain as an architecture/testbed and stop inventing new computational-principle claims.
+STOP formalization now. Also stop any successor if it requires invented ancestry causality, asymmetric information/resource privilege, post-outcome comparator selection, claim-switching to efficiency/storage/inductive bias, reuse of consumed identities, or mutation of immutable evidence.
 
 ## Consumed identities
 
-`c19-external-v2-official-v4`, C19-R1 revision-authority v1/v2, `c19-r2-fsa-state-tracker-official-v1`, `pd01-long-history-fading-memory-official-v1`, `ni01-no-ignition-selective-prediction-official-v1`, and `h5-event-routing-work-reduction-official-v1` are closed/consumed and may not be reused.
+Closed/no-retry identities include `c19-external-v2-official-v4`, C19-R1 revision-authority v1/v2, `c19-r2-fsa-state-tracker-official-v1`, `pd01-long-history-fading-memory-official-v1`, `ni01-no-ignition-selective-prediction-official-v1`, and `h5-event-routing-work-reduction-official-v1`.
 
 ## Genuine blockers
 
-The blocker is scientific identifiability, not infrastructure: LP01 must isolate historical causal ancestry from present-state summaries, matched ordinary memory/plasticity, information privilege and unreported bypass paths. Failure to write that contract cleanly is a reason to stop, not loosen the test.
+There is no infrastructure blocker. The central blocker is **scientific object availability**: current SparkBrain lineage is bookkeeping/inspection metadata rather than a native causal input, and manufacturing an ancestry-credit path does not escape an ordinary explicit-state reduction under matched privilege. This is a reason to stop central novelty experimentation, not weaken the comparator.
 
 ## Governance advisory
 
-Fresh governance facts:
+Fresh remote facts override the older Steward snapshot:
 
-- `main` remains unprotected; repository rulesets remain `0`.
-- legacy `freeze/*` branches remain **13** and must remain preserved.
-- authoritative `evidence/*` tags now total **5**.
-- Issue #139 remains open but still inventories **4** evidence tags; H5 makes it stale again. The substantive server-side update/delete protection gap is unchanged.
-- open PRs remain #148/#149; they are control-plane helpers and are not scientific evidence or merged here.
+- `main` remains unprotected.
+- repository rulesets remain `0`.
+- legacy `freeze/*` branches remain **13**.
+- authoritative annotated `evidence/*` tags are **5**; `formal/*` and `sealed/*` tags remain empty.
+- Issue #139 is open but its body still inventories **4** evidence tags, so H5 has reintroduced factual inventory drift. The substantive update/delete-protection gap remains open.
+- open PRs remain #148 and #149; neither is part of the scientific critical path.
+- outcome-independent main-promotion candidates remain neutral event/distribution primitives, architecture-neutral comparator interfaces, snapshot/restore invariants, descriptive resource accounting, generic privilege/leakage/transcript validation, and generic one-way integrity helpers. LP01 lineage-science semantics and dev-only ancestry adapters remain research-local.
 
-Outcome-independent main-promotion candidates remain neutral event/distribution primitives, architecture-neutral comparator helpers, snapshot/restore invariants, descriptive resource accounting, generic privilege/leakage/transcript validation, STARTED/no-clobber, and preserve/refetch/digest/fail-closed invariant primitives. H5-specific `DenseEagerSparkBrain`, WorkCounter, workload/tolerance/bootstrap/decision semantics remain research-local unless independently reusable.
+## Orchestrator handoff
 
-## ORCHESTRATOR HANDOFF
+**MAIN takes LP01 pre-formal closeout and owns every closeout/readiness fix required to persist `LP01_NO_HIGH_VALUE_OBJECT`; MAIN must then STOP.** There is no formal SUB lane; SUB may incubate only under strict NON_EVIDENTIARY rules if a genuinely independent non-LP01 question appears, otherwise it remains no-op. Fallback is `null`. MAIN must not absorb any future independently reserved SUB object; SUB must not take LP01 closeout blockers. Neither worker touches consumed identities, immutable evidence, legacy freezes, or scheduler definitions.
 
-**MAIN takes LP01 actual-lineage causal-credit prospective specification and owns ALL critical-path fixes.** MAIN may perform only prospective specification/readiness and synthetic/dev-only NON_EVIDENTIARY work. Stop at `LP01_PROSPECTIVE_CONTRACT_READY_FOR_ANALYST_REVIEW` or `NO_HIGH_VALUE_OBJECT`; do not create formal identity or STARTED.
-
-**Formal SUB takes nothing.** `sub_lane=null`, `sub_fallback=null`. SUB may incubate only a genuinely distinct line under strict NON_EVIDENTIARY rules. H7/provenance is reserved to MAIN, so SUB must not take LP01 design, bypass accounting, comparator work, runner/scorer/readiness or future LP01 blockers.
-
-MAIN must not absorb future reserved SUB work; none is currently reserved. SUB must not take MAIN blockers. Neither worker touches terminal/immutable H5/C19/PD01/NI01 evidence, consumed identities, legacy freeze refs, authoritative tags or scheduler definitions.
-
-Repartition only if a genuinely independent prospective secondary object appears, or fresh Literature/Audit/incubator information materially changes expected information gain for an unstarted object. H5 failure itself is not permission for a rescue line.
-
-No formal result branch may continue in the same run under this handoff; only LP01 specification/readiness may continue to the Analyst-review stop.
-
-## Persistence boundary
-
-Persist only this handoff to `ops/evidence-analyst-handoff` designated files. No research branch, immutable ref, experiment, workflow, identity, PR merge or scheduler definition is modified by this analysis.
+Repartition only if fresh source/architecture or external theory supplies a native non-reducible causal mechanism, or if a prospectively complete independent secondary object appears for SUB. The new PD01 audit changes future taxonomy and programme wording but does not itself cause repartition. The only result branch MAIN may continue through in the same run is `EXACT_HEAD_UNCHANGED_GATES_GREEN_BOUNDARY_CLEAN -> persist PRE-FORMAL LP01_NO_HIGH_VALUE_OBJECT -> STOP`.
