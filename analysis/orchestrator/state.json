@@ -1,213 +1,179 @@
 {
-  "timestamp": "2026-09-18T08:00:00+09:00",
+  "timestamp": "2026-09-18T08:58:51+09:00",
   "worker_role": "evidence_analyst",
-  "control_plane_mailbox_semantics": "ops/* branches were treated only as persistence/control-plane mailboxes. Only designated handoff/report paths and relevant history were consumed; current science, refs, workflows, Issues/PRs and exact identities were independently re-fetched from the repository.",
+  "control_plane_mailbox_semantics": "ops/* branches treated only as control-plane mailboxes; current main/research/control/preserve/evidence/workflow/Issue/PR state independently re-fetched and wins over stale handoffs.",
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "prior_evidence_analyst_tip": "719b9e74063e5e10f6226fd49f1835036ed75e5b",
-    "r2_authority_package": "research/c19-r2-fsa-state-tracker-spec-20260918@84e08cfffa3e1404a1e93dd924ee704aa7bd3853",
-    "r2_scientific_package": "5d5d171cf872baed7a636fd246ab36f3a91a6716",
-    "r2_spec": "c19-r2-fsa-state-tracker-spec-v1",
-    "r2_protocol": "c19-r2-fsa-state-tracker-protocol-v1",
-    "r2_authorized_identity": "c19-r2-fsa-state-tracker-official-v1",
-    "r2_started": null,
-    "r2_preserve": null,
-    "r2_evidence": null,
-    "r2_ci": "35279859607:success@84e08cfffa3e1404a1e93dd924ee704aa7bd3853",
-    "r2_prestart": "35279859615:success@84e08cfffa3e1404a1e93dd924ee704aa7bd3853",
+    "prior_evidence_analyst_tip": "6ecf13b73cfc75409f6cfe86e9b8ac73fc58b6ce",
+    "r2_exact_package": "research/c19-r2-fsa-state-tracker-spec-20260918@5bfa3962c777fa5bc915bb21e20801ab8294778a",
+    "r2_frozen_science": "5d5d171cf872baed7a636fd246ab36f3a91a6716",
+    "r2_started": "control/c19-r2-fsa-state-tracker-started-v1-20260918@41df2685fe015140c8afa13e646554dd2e8c836b",
+    "r2_preserve": "preserve/c19-r2-fsa-state-tracker-raw-c19-r2-fsa-state-tracker-official-v1@3628694294a6eb33b18a0b42a56bb5ad77fe7b94",
+    "r2_evidence_tag": "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
+    "r2_evidence_tag_object": "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
+    "r2_terminal_evidence_commit": "6197fa801a78a0c5de4c2b6ff5d03216ac5539db",
+    "r2_workflow": "35288390550:completed/success",
     "c19_v4_evidence_tag": "evidence/c19-official-v4-c19-external-v2-official-v4",
-    "open_pr_count": 0,
+    "open_prs": [148, 149],
     "open_issues": [139],
     "ruleset_count": 0,
     "main_protected": false,
     "legacy_freeze_branch_count": 13,
-    "authoritative_evidence_tag_count": 1
+    "authoritative_evidence_tag_count": 2
   },
-  "Control_Brain_commit": "519750750f9a86daeb6c4637ee471cd2d86e1fd2",
-  "MAIN_report_commit_consumed": "09fbde585981284366fe03b9ef1f53674e7cebb5",
-  "SUB_report_commit_consumed": "ab9d5590296744becd2e3c2f33061406ab40bb2b",
+  "Control_Brain_commit": "3bcd000f7e31bc8df8d59ca5ddec88ff5b847e22",
+  "Control_Brain_state_time": "2026-09-18T06:58:00+09:00; strategic prior only and stale versus terminal R2",
+  "MAIN_report_commit_consumed": "73c77290a2f29da4955edea95bb8d19d3dc0790d",
+  "SUB_report_commit_consumed": "10f5821190d0e4fc4d6da9b5ace15bcaf24296ca",
   "SUB_operating_mode_observed": "no_op",
+  "sub_exploratory_review": null,
   "Literature_handoff_commit_consumed": "525686fa0c14f64426ca7bf5c89f08cd0bcb9c77",
   "Audit_handoff_commit_consumed": "1de53b412f66d4da94f54a8bc12a7e2717ef5011",
   "Repository_Steward_commit_consumed": "e16a3f0dae16b7e93ba73551d56772a366b16b84",
-  "Repository_Steward_state_consumed": "reports/repository_steward/latest.md + reports/repository_steward/state.json; governance advisory only",
-  "contract_reconciliation": {
-    "prior_analyst_errors": [
-      "R2 raw universe was incorrectly described as 55 x 5 x 1744 = 479600 records",
-      "R2 seven-state alphabet was incorrectly described as S0_NAV/S1_BACKREF/S2_CONTRAST/S3_HYPOTHESIS/S4_REVISE/S5_TRAP/S6_OTHER"
-    ],
-    "authoritative_raw_records": 8720,
-    "authoritative_raw_derivation": "1744 pairs x 5 fixed seeds",
-    "authoritative_state_alphabet": [
-      "RESET",
-      "A_WEAK",
-      "A_STRONG",
-      "B_WEAK",
-      "B_STRONG",
-      "C_WEAK",
-      "C_STRONG"
-    ],
-    "scientific_package_changed": false,
-    "safe_to_correct_prospectively": true,
-    "reason": "R2 is still unSTARTED/unconsumed with no official raw, preserve, score or evidence; the frozen preregistration/config/protocol already consistently specify 8720 records and the RESET/A/B/C weak/strong state alphabet."
+  "Repository_Steward_state_consumed": "reports/repository_steward/latest.md + reports/repository_steward/state.json; advisory only; stale versus terminal R2/current PRs",
+  "new_repository_evidence": {
+    "r2_result_class": "REDUCED_BY_FSA",
+    "identity": "c19-r2-fsa-state-tracker-official-v1",
+    "identity_consumed_no_retry": true,
+    "contrast": "c19_v4_primary_breu_minus_r2_breu",
+    "observed_effect": -0.2462308568887407,
+    "primary_inference": "paired_atomic_idx_cluster_bootstrap",
+    "confidence_interval_95": [-0.2554750732756702, -0.23690126111231016],
+    "unique_clusters": 204,
+    "resamples": 10000,
+    "pair_iid_sensitivity_ci_95": [-0.25500734086833354, -0.237325193230218],
+    "raw_record_count": 8720,
+    "raw_rows": 5,
+    "pairs_per_row": 1744,
+    "target_fields_materialized_at_preserve": false,
+    "raw_bundle_sha256": "ca990ec40d3f1151525a945baa59176885bc149bbb3d56d7a56af9caac0edd7e",
+    "atomic_idx_source_map_sha256": "6cb7bda6a08c97186d841688d5a3e3e361eb105ab3b03e2351b97a9775cda0a0",
+    "claim_boundary": "Tests only the fixed seven-state FSA reduction; R1 revision-authority remains scientifically unresolved and therefore remains an interpretation ceiling."
   },
   "external_input": {
     "literature": {
-      "new_this_cycle": false,
       "handoff_commit": "525686fa0c14f64426ca7bf5c89f08cd0bcb9c77",
-      "affected_lines": [
-        "C19_R2_FSA_STATE_TRACKER",
-        "PROGRAMME_NOVELTY",
-        "POST_R2_REDUCTION",
-        "PERSISTENT_DYNAMICS_RESIDUAL",
-        "FUTURE_EXTERNAL_VALIDATION"
-      ],
-      "finding": "One hand-enumerated FSA is only one reduction class; extracted/learned automata, PSR/epsilon-machine predictive-state compression and fading-memory reservoir reductions remain live. Local/pre-semantic/history-derived predictive state is not a sufficient novelty axis.",
-      "allocation_changed": false,
-      "constraint": "Do not mutate frozen R2. Apply these findings only to terminal interpretation and fresh future prospective objects."
+      "new_this_cycle": false,
+      "affected_lines": ["C19_R2_FSA_STATE_TRACKER", "PROGRAMME_NOVELTY", "POST_R2_REDUCTION", "PERSISTENT_DYNAMICS_RESIDUAL", "FUTURE_EXTERNAL_VALIDATION"],
+      "finding": "Extracted/learned automata, PSR/epsilon-machine predictive-state compression and reservoir/fading-memory reductions are established ordinary classes; local/pre-semantic/history-derived predictive state is not novel by itself.",
+      "post_r2_interpretation": "Because R2 is REDUCED_BY_FSA, do not automatically escalate to a more expressive reduction merely to rescue novelty. Use those classes only for fresh independently motivated residual claims. The narrower live target is lineage/provenance-specific credit and genuinely non-fading persistence under matched privilege.",
+      "allocation_changed": true,
+      "allocation_change_cause": "R2 terminal evidence activates the stop/reframe implication of prior literature; literature alone did not cause the pivot."
     },
     "audit": {
-      "new_this_cycle": false,
       "handoff_commit": "1de53b412f66d4da94f54a8bc12a7e2717ef5011",
+      "new_this_cycle": false,
       "classification": "WEAKENED_NOT_INVALID",
-      "affected_lines": [
-        "C19_V4",
-        "C19_R2_FSA_STATE_TRACKER",
-        "PROGRAMME_STATISTICAL_INTEGRITY"
-      ],
-      "finding": "C19-v4 narrow PASS/provenance remains valid; pair-IID CI is not independent-family generalization. R2 prospectively uses target-free atomic_idx cluster-primary inference.",
+      "affected_lines": ["C19_V4", "C19_R2_FSA_STATE_TRACKER", "PROGRAMME_STATISTICAL_INTEGRITY"],
+      "finding": "C19-v4 narrow PASS/provenance remains valid; pair-IID CI is not independent-family generalization. R2 prospectively and terminally uses target-free atomic_idx cluster-primary inference.",
+      "r2_fresh_audit_needed": true,
       "allocation_changed": false
     }
   },
-  "sub_exploratory_review": {
-    "applicable": false,
-    "classification": null,
-    "reason": "Latest SUB mode is no_op and produced no new exploratory candidate. Historical RV01 exploratory work remains NON_EVIDENTIARY, its bounded allowance is exhausted, and direct formalization is not authorized."
+  "active_line_review": {
+    "A01": {"status": "MIXED_PROGRAMME_CLOSED", "shortest_new_information": "fresh independently motivated programme only", "centrality": "closed"},
+    "RV01": {"status": "DEVELOPMENT_POSITIVE_REDUCIBLE_EXPLORATORY_BUDGET_EXHAUSTED", "shortest_new_information": "fresh prospective object only", "centrality": "secondary"},
+    "RV02": {"status": "TERMINAL_CONSTRUCTION_NEGATIVE", "shortest_new_information": "fresh object only", "centrality": "terminal"},
+    "CX_CX01": {"status": "TERMINAL_FORMAL_NEGATIVE", "shortest_new_information": "fresh object only", "centrality": "terminal"},
+    "H8_C08": {"status": "TERMINAL_CAUSAL_SPECIALIZATION_NEGATIVE", "shortest_new_information": "distinct prospective object", "centrality": "terminal"},
+    "H9_C07": {"status": "PRE_START_UNDERSPECIFIED", "shortest_new_information": "fresh exact state/reset/resource contract if independently revived", "centrality": "secondary_paused"},
+    "C19_V4": {"status": "TERMINAL_PASS_NARROW_REPRESENTATION_GAIN_WEAKENED_NOT_INVALID", "shortest_new_information": "no rerun; interpretation bounded by R2", "centrality": "completed_result"},
+    "C19_R1": {"status": "SCIENTIFICALLY_UNRESOLVED_OPERATIONALLY_TERMINATED", "shortest_new_information": "no automatic R1 continuation", "centrality": "interpretation_ceiling_only"},
+    "C19_R2": {"status": "TERMINAL_REDUCED_BY_FSA", "shortest_new_information": "STOP; no R2 successor", "centrality": "closed_primary"},
+    "PD01": {"status": "PRE_FORMAL_PROSPECTIVE_SPECIFICATION", "shortest_new_information": "freeze remote-history lineage-persistence discriminator under matched fading-memory comparator", "centrality": "new_primary_specification"}
   },
   "main_lane": {
-    "target": "C19_R2_FSA_STATE_TRACKER_ONE_WAY",
+    "target": "PD01_REMOTE_HISTORY_LINEAGE_PERSISTENCE_SPECIFICATION",
     "owner": "MAIN",
+    "status": "PRE_FORMAL_PROSPECTIVE_SPECIFICATION",
+    "formal_identity": null,
+    "execution_allowed": false,
     "main_owns_all_critical_path_fixups": true,
-    "current_head": "84e08cfffa3e1404a1e93dd924ee704aa7bd3853",
-    "frozen_science_commit": "5d5d171cf872baed7a636fd246ab36f3a91a6716",
-    "protocol": "c19-r2-fsa-state-tracker-protocol-v1",
-    "authorized_identity": "c19-r2-fsa-state-tracker-official-v1",
-    "identity_fresh": true,
-    "execution_allowed": "conditional_exactly_once_after_fresh_analyst_rebind_and_full_GO_gate",
-    "scientific_question": "Can the narrow C19-v4 I2 representation gain be explained by the exact fixed seven-state deterministic FSA/state-tracker under the prospectively fixed target-blind envelope?",
-    "expected_raw_records": 8720,
-    "state_alphabet": [
-      "RESET",
-      "A_WEAK",
-      "A_STRONG",
-      "B_WEAK",
-      "B_STRONG",
-      "C_WEAK",
-      "C_STRONG"
-    ],
+    "scientific_question": "With current/recent observable input held exactly matched, does an older causally relevant event attached to an anonymous historical lineage continue to change later local competition/world interaction at increasing prospective lags beyond a state/resource-matched fading-memory comparator?",
+    "independent_motivation": "Residual lineage-specific/non-fading claim predates the R2 outcome in Control Brain/literature; not a rescue of REDUCED_BY_FSA.",
+    "comparator_requirement": "One prospectively fixed conventional fading-memory state model, e.g. reservoir/ESN family, with matched information privilege/state/resource/compute and frozen fit/tune budget; no comparator shopping.",
+    "allowed_this_handoff": "specification/readiness only; fresh research branch and synthetic/dev fixtures are permissible for MAIN, but no formal identity/STARTED/official acquisition.",
+    "stop_point": "PD01_PRE_START_READY_FOR_ANALYST_REVIEW",
     "information_value": "VERY_HIGH",
-    "distance": "NEAR"
+    "distance": "MEDIUM"
   },
   "sub_lane": null,
   "sub_fallback": null,
-  "no_sub_lane_reason": "No independent formal secondary object is prospectively complete. Recent bounded SUB themes are exhausted or under-specified; every R2 critical-path task belongs exclusively to MAIN. SUB may remain no_op.",
+  "no_sub_lane_reason": "No independent formal secondary object is prospectively complete. H9/C07 remains under-specified; RV01 and recent incubator themes are exhausted. Creating a formal lane would manufacture work rather than add clean information.",
   "active_MAIN_SUB_claims_observed": {
-    "MAIN": {
-      "phase": "R2_PRE_START_SEMANTIC_GAP_RAW_UNIVERSE_MISMATCH",
-      "head": "84e08cfffa3e1404a1e93dd924ee704aa7bd3853",
-      "started": false,
-      "consumed": false,
-      "latest_exact_head_gates_green": true
-    },
-    "SUB": {
-      "mode": "no_op",
-      "formal_lane": null,
-      "formal_fallback": null,
-      "exploratory_target": null,
-      "main_touched": false
-    }
+    "MAIN": {"latest_report_phase": "R2_STARTED_ONE_WAY_IN_PROGRESS_AT_0848_REPORT", "authoritative_current_phase": "R2_TERMINAL_EVIDENCE_REDUCED_BY_FSA", "main_report_stale_vs_repo": true},
+    "SUB": {"mode": "no_op", "observed_terminal_r2": true, "formal_lane": null, "formal_fallback": null, "main_touched": false}
   },
   "outcome_contingencies": {
-    "PRE_START_RECONCILIATION": "This handoff supersedes the prior Analyst bookkeeping error: official R2 raw cardinality is 8720 and the frozen state alphabet is RESET/A_WEAK/A_STRONG/B_WEAK/B_STRONG/C_WEAK/C_STRONG. Rebind authority only; do not mutate science.",
-    "PRE_START_BLOCKER": "MAIN may same-run repair only science-invariant mechanical defects; any head change requires full same-head CI/prestart/binding/ref revalidation.",
-    "PRE_START_SEMANTIC_GAP": "STOP before STARTED and return to Analyst if any new scientific choice is required.",
-    "GO": "fresh Analyst authority rebind -> fresh identity/namespace check -> same-head CI/prestart/runtime/binding gates -> STARTED/no-clobber -> target-blind acquisition of exactly 8720 records -> immutable raw/source-map/manifest preserve -> independent refetch/digest -> targets -> fail-closed join -> cluster-primary scoring",
-    "PASS_SURVIVES_FSA_REDUCTION": "95% atomic_idx cluster-bootstrap CI lower > 0 for C19-v4 primary BREU minus R2 FSA BREU; terminal STOP",
-    "FAIL_REDUCED_BY_FSA": "95% atomic_idx cluster-bootstrap CI upper <= 0; terminal STOP",
-    "INCONCLUSIVE": "95% atomic_idx cluster-bootstrap CI contains 0; terminal STOP",
-    "INVALID_EVIDENCE": "binding/raw/map/digest/join/target-safety/scorer failure; consume identity and STOP with no salvage/retry",
-    "POST_START_FAILURE": "consume identity and STOP with no salvage/same-ID retry/automatic successor"
+    "R2_TERMINAL_REDUCED_BY_FSA": "Observed terminal. Consume/no-retry; stop C19-R2. No automatic R2-v2/R3 and no same-run science successor.",
+    "PD01_PRE_FORMAL_SPECIFICATION": "MAIN may do only outcome-independent specification/readiness work under this handoff.",
+    "PRE_START_BLOCKER": "Science-invariant mechanical/specification tooling defects may be fixed by MAIN; no identity is involved.",
+    "PRE_START_SEMANTIC_GAP": "STOP and return to Analyst if exact task/intervention/lag/comparator/resource/metric/statistics choices cannot be prospectively fixed without outcome-responsive selection.",
+    "PD01_PRE_START_READY_FOR_ANALYST_REVIEW": "STOP. Fresh Analyst review required before any formal identity or STARTED.",
+    "PASS_SURVIVES_FADING_MEMORY_REDUCTION": "Future armed branch only after exact numerical contract is frozen: SparkBrain retains the prospectively defined long-lag lineage effect while matched fading-memory comparator fails under same privilege/budget.",
+    "FAIL_REDUCED_BY_FADING_MEMORY": "Future armed branch only after exact numerical contract is frozen: comparator reproduces the frozen lag-response/reduction criterion or SparkBrain washes out within the frozen boundary.",
+    "INCONCLUSIVE": "Future armed branch only after exact contract: frozen interval/criterion straddles decision boundary.",
+    "INVALID_EVIDENCE": "Future formal identity consumes and stops on binding/leakage/raw/map/digest/join/scorer failure; no salvage.",
+    "POST_START_FAILURE": "Future formal identity consumes and stops; no same-ID retry."
   },
   "blocked_until": [
-    "execution-authority metadata/checks are science-invariantly rebound from superseded Analyst 719b9e74063e5e10f6226fd49f1835036ed75e5b to this fresh handoff tip while frozen scientific blobs remain unchanged",
-    "c19-r2-fsa-state-tracker-official-v1 remains fresh/unSTARTED/unconsumed and control/preserve/evidence namespaces are collision-free",
-    "ordinary CI and dedicated pre-START are green on the same final execution SHA",
-    "production runtime/import/execution-binding parity is green",
-    "target-free atomic_idx map remains total/deterministic/digest-bound/fail-closed",
-    "fresh authority/ref reconciliation immediately before STARTED shows no collision",
-    "STARTED/no-clobber precedes official read and raw/source-map/manifest are immutably preserved/refetched before targets/scoring"
+    "R2 remains terminal REDUCED_BY_FSA with no retry/successor and its per-example outcome is not used to tune PD01",
+    "exact PD01 task/world and anonymous-lineage causal intervention are prospectively fixed",
+    "current/recent-input matching rule and remote-history lag grid are fixed before outcome",
+    "exact SparkBrain source/package/runtime/reset/state contract is frozen",
+    "one fading-memory comparator class, state dimension, information privilege, fit/tune/select opportunity and resource/compute budget are fixed",
+    "paired inputs/seeds, metric, sampling/cluster unit, bootstrap/statistics and numeric PASS/FAIL/INCONCLUSIVE criteria are fixed",
+    "source/package/input/runtime/scorer/preserver bindings and raw-before-score/no-clobber integrity gates are defined",
+    "ordinary CI and dedicated pre-START are green on the same final head",
+    "fresh Evidence Analyst review explicitly authorizes a fresh identity and STARTED",
+    "material fresh R2 audit invalidity, if discovered before formalization, is reconciled"
   ],
   "do_not_touch": [
-    "consumed C19-v2/v3/v4 and R1-v1/v2 identities/controls",
-    "C19-v4 immutable preserve/evidence/tag and registered PASS",
-    "R1 transient outputs and any R1-v3 rescue",
-    "consumed A01/RV01/RV02/CX identities",
+    "c19-r2-fsa-state-tracker-official-v1 consumed terminal identity; no rerun/retune/salvage/R2-v2/R3 rescue",
+    "R2 preserve/evidence/tag and frozen package/scientific parent",
+    "C19-v4 immutable preserve/evidence/tag/PASS",
+    "R1-v1/v2 consumed identities/transient outputs and any R1-v3 rescue",
+    "consumed C19-v2/v3 and A01/RV01/RV02/CX identities",
     "legacy/immutable freeze/sealed/formal/evidence refs",
-    "R2 frozen mechanism/input/seeds/resources/cluster/scorer/statistics semantics while correcting Analyst bookkeeping",
-    "SUB exploratory results as formal evidence",
+    "SUB exploratory outputs as formal evidence",
+    "R2 per-example outcomes as PD01 design/tuning data",
     "scheduler definitions",
     "non-designated ops files as repository truth"
   ],
-  "top_recommendation": "MAIN science-invariantly rebinds R2 execution authority to this corrected Analyst tip, re-establishes every exact-head GO gate, and only if all remain green executes exactly one c19-r2-fsa-state-tracker-official-v1 through terminal evidence; SUB remains formally null and no_op unless a genuinely distinct bounded incubator target later appears.",
+  "top_recommendation": "Stop the C19 representation-reduction frontier at terminal R2 REDUCED_BY_FSA. MAIN now specifies, but does not execute, one fresh remote-history/lineage-persistence discriminator under a prospectively matched fading-memory comparator; SUB remains formally null/no-op. Obtain a fresh read-only R2 audit before relying on the result for stronger downstream claims.",
   "top_3": [
-    {
-      "rank": 1,
-      "owner": "MAIN",
-      "action": "R2 fresh-Analyst authority rebind -> exact-head revalidation -> conditional exactly-one one-way execution",
-      "information_value": "VERY_HIGH",
-      "distance": "NEAR"
-    },
-    {
-      "rank": 2,
-      "owner": "INDEPENDENT_AUDIT",
-      "action": "After terminal R2, read-only audit identity/source/preserve/digest/join/cluster-scoring provenance and narrow interpretation",
-      "information_value": "HIGH",
-      "distance": "NEAR_TO_MEDIUM"
-    },
-    {
-      "rank": 3,
-      "owner": "SUB",
-      "action": "Remain no_op unless a distinct independent NON_EVIDENTIARY incubator target becomes prospectively bounded and non-duplicative",
-      "information_value": "LOW_TO_MEDIUM",
-      "distance": "NEAR"
-    }
+    {"rank": 1, "owner": "MAIN", "action": "Close R2 and produce PD01 remote-history/lineage-persistence prospective specification; stop at Analyst review with no identity/STARTED.", "information_value": "VERY_HIGH", "distance": "MEDIUM"},
+    {"rank": 2, "owner": "INDEPENDENT_AUDIT", "action": "Fresh read-only audit of R2 identity/source/STARTED/preserve/digest/cluster-map/join/scoring provenance and REDUCED_BY_FSA claim boundary.", "information_value": "HIGH", "distance": "NEAR"},
+    {"rank": 3, "owner": "SUB", "action": "Remain no_op; no formal lane. Future incubation only on a distinct bounded NON_EVIDENTIARY question.", "information_value": "LOW_TO_MEDIUM", "distance": "NEAR"}
   ],
   "consumed_identities": {
     "c19-external-v2-official-v4": "terminal immutable PASS",
-    "c19-r1-revision-authority-official-v1": "consumed POST_START_FAILURE, no scientific result, no retry",
-    "c19-r1-revision-authority-official-v2": "consumed POST_START_FAILURE, no scientific result, no retry; R1 operational line terminated",
-    "legacy": "A01/RV01/RV02/CX consumed identities remain no-rerun",
-    "r2": "c19-r2-fsa-state-tracker-official-v1 remains fresh/unSTARTED/unconsumed; prospective authority only"
+    "c19-r1-revision-authority-official-v1": "consumed POST_START_FAILURE; no valid science; no retry",
+    "c19-r1-revision-authority-official-v2": "consumed POST_START_FAILURE; no valid science; no retry; R1 line terminated",
+    "c19-r2-fsa-state-tracker-official-v1": "consumed terminal REDUCED_BY_FSA; no retry/successor",
+    "legacy": "A01/RV01/RV02/CX and C19-v2/v3 consumed identities remain no-rerun"
   },
   "blockers": [
-    "current R2 authority package still binds superseded Analyst commit 719b9e74063e5e10f6226fd49f1835036ed75e5b and must be authority-only rebound before STARTED",
-    "any scientific semantic change, target/source-map ambiguity/leakage or namespace collision blocks STARTED",
-    "R1 revision-authority remains scientifically unresolved and limits broader interpretation",
-    "no formal SUB lane/fallback is ready"
+    "PD01 is not yet a formal object: exact task/intervention/lag/comparator/resource/statistical contract is unresolved",
+    "fresh Independent Audit has not yet audited terminal R2",
+    "no independent formal SUB lane/fallback is ready",
+    "server-side authoritative tag protection remains absent but is governance-nonblocking"
   ],
   "governance_advisory": {
     "open_issue": 139,
-    "open_pr_count": 0,
+    "open_prs": [148, 149],
     "ruleset_count": 0,
     "main_protected": false,
-    "authoritative_evidence_tag_count": 1,
+    "authoritative_evidence_tag_count": 2,
     "legacy_freeze_branch_count": 13,
+    "issue_canonical_drift": "#139 core protection gap remains valid, but its body still describes one authoritative evidence tag; R2 creates a second.",
     "freeze_tag_migration": "defer legacy batch migration until safe server-side authoritative-tag namespace protection exists",
-    "tag_protection_gap": "authoritative tag creation exists and has been exercised, but freeze/sealed/formal/evidence update/delete protection is absent",
+    "tag_protection_gap": "freeze/sealed/formal/evidence namespaces still lack server-side update/delete protection",
+    "pr_scope": "#148 human-directives skill and #149 scheduler-registry skill are control-plane/tooling work, not scientific evidence; this role does not merge them.",
     "main_promotion_candidates": [
       "execution-environment/dependency manifest verifier",
       "same-environment network-blocked production-import smoke",
-      "production function identity/protocol execution-binding parity verifier",
+      "production-function identity/protocol execution-binding parity verifier",
       "STARTED/no-clobber/identity-collision primitives",
       "raw-preserve/refetch/digest verifier",
       "target-free cluster-map validator",
@@ -217,20 +183,28 @@
     ]
   },
   "allocation_change": {
-    "changed": false,
-    "main_sub_ownership_unchanged": true,
-    "execution_gate_changed": true,
-    "from": "R2 blocked on an Analyst/package raw-universe semantic mismatch",
-    "to": "R2 mismatch reconciled prospectively to the already-frozen 8720-record contract; conditional exactly-one execution remains possible after fresh authority rebind and full GO",
-    "caused_by": "fresh independent inspection of the frozen R2 config/preregistration/protocol and confirmation that R2 is still unSTARTED/unconsumed",
-    "literature_caused_change": false,
+    "changed": true,
+    "from": "MAIN=C19_R2 conditional one-way; SUB=null/no_op",
+    "to": "MAIN=PD01 pre-formal remote-history/lineage-persistence specification only; SUB=null/no_op",
+    "caused_by": "fresh terminal R2 REDUCED_BY_FSA repository evidence",
+    "literature_material_to_direction": true,
     "audit_caused_change": false,
     "sub_caused_change": false
+  },
+  "orchestrator_handoff": {
+    "MAIN": "Treat R2 as terminal. Take PD01 prospective specification and own ALL critical-path work. No formal identity/STARTED/official execution under this handoff. Same-run continuation is allowed only through outcome-independent specification/readiness fixed here; stop at PD01_PRE_START_READY_FOR_ANALYST_REVIEW.",
+    "SUB": "No formal lane or fallback. Remain no_op, or if a later scheduler independently selects incubation, only a distinct synthetic/dev NON_EVIDENTIARY question; never take MAIN blockers.",
+    "neither_touches": "consumed/immutable C19/R1/R2/A01/RV/CX evidence, R2 per-example outcomes for tuning, scheduler definitions.",
+    "repartition_if": [
+      "fresh R2 audit finds material invalidity",
+      "PD01 specification exposes a semantic/privilege/resource mismatch preventing a clean prospective object",
+      "SUB independently yields a sufficiently specified distinct candidate that can be prospectively formalized without MAIN dependency"
+    ]
   },
   "persistence": {
     "latest": "analysis/orchestrator/latest.md",
     "state": "analysis/orchestrator/state.json",
-    "history": "analysis/orchestrator/history/2026-09-18/0800.md",
+    "history": "analysis/orchestrator/history/2026-09-18/0858.md",
     "history_append_status": "completed",
     "immutable_refs_written": false,
     "force_push_used": false
