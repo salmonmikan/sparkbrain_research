@@ -1,122 +1,138 @@
 {
-  "timestamp": "2026-09-18T13:47:18+09:00",
+  "timestamp": "2026-09-18T16:30:00+09:00",
   "worker_role": "main",
-  "execution_mode": "RELAY",
-  "evidence_analyst_commit": "39c62ddb6bc567d3d3c81e38efa61be405ca7b4a",
-  "evidence_analyst_mailbox_tip": "938231f8acb714dfa832139383beef6bb8afb0c3",
-  "current_lane": "NEXT_FRONTIER_PROSPECTIVE_SELECTION",
-  "current_phase": "NI01_FINAL_CI_PENDING_AFTER_LINT_REPAIR",
+  "execution_mode": "PRIMARY",
+  "evidence_analyst_commit": "d3626617c3b054afd726e468682aaa02d613bca0",
+  "current_lane": "NI01_NATIVE_NO_IGNITION_SELECTIVE_PREDICTION_ONE_WAY",
+  "current_phase": "NI01_FINAL_EXECUTION_HEAD_ORDINARY_CI_PENDING",
   "consumed_contingency_branches": [
-    "NEXT_FRONTIER_CANDIDATE_UNDERSPECIFIED -> prospective specification/mechanical development",
-    "science-invariant preformal gate failure -> mechanical repair and re-run exact-head gates"
+    "NI01_PRE_START_READY_FOR_CONDITIONAL_ONE_WAY_AUTHORITY -> science-invariant execution/admission scaffolding",
+    "GO -> same-final-SHA gates -> fresh namespace checks -> STARTED exactly once -> fixed one-way chain"
   ],
   "active_claim": {
+    "scientific_object": "NI01 / H4 — native No-Ignition selective prediction",
     "research_branch": "research/ni01-no-ignition-selective-prediction-spec-20260918",
-    "exact_head": "2664951b65dd18883d3d80862e80b86ac66cf24f",
+    "reviewed_scientific_head": "2664951b65dd18883d3d80862e80b86ac66cf24f",
+    "execution_head": "dbfe7469dbbbc1adbb00789ab382de892a1b3563",
     "protocol": "ni01-no-ignition-selective-prediction-protocol-v1",
-    "formal_identity_plan": "ni01-no-ignition-selective-prediction-official-v1",
-    "formal_identity_state": "UNRESERVED",
-    "formal_execution_authorized": false,
+    "identity": "ni01-no-ignition-selective-prediction-official-v1",
+    "identity_state": "UNSTARTED / UNCONSUMED",
     "owner": "main"
   },
   "authoritative_target_refs": {
-    "analyst_latest": "ops/evidence-analyst-handoff@39c62ddb6bc567d3d3c81e38efa61be405ca7b4a",
-    "analyst_mailbox_tip": "ops/evidence-analyst-handoff@938231f8acb714dfa832139383beef6bb8afb0c3",
+    "analyst": "ops/evidence-analyst-handoff@d3626617c3b054afd726e468682aaa02d613bca0",
     "main": "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "ni01_research": "research/ni01-no-ignition-selective-prediction-spec-20260918@2664951b65dd18883d3d80862e80b86ac66cf24f",
+    "ni01_execution_head": "research/ni01-no-ignition-selective-prediction-spec-20260918@dbfe7469dbbbc1adbb00789ab382de892a1b3563",
+    "reviewed_scientific_head": "2664951b65dd18883d3d80862e80b86ac66cf24f",
+    "formal_contract_blob": "3dc90b08f85e0e7c459e0c17e86ab338901fd4c6",
     "worlds_blob": "2478fba19d7276ebe30ec8f5811bf6d7b7414779",
     "runner_blob": "90543b184c64981802560601b85edcdee4583a35",
     "ablations_blob": "caa6a1c63fedc2222aa2e6ce708b66668943e8dd",
     "phase1_config_blob": "0134abeaf3d0551edeeb890502ffebe2c27867b0",
-    "ni01_scorer_blob": "d3b3565a08277e6a94ef9be1e5bd13e86265f8f2"
+    "ni01_scorer_blob": "d3b3565a08277e6a94ef9be1e5bd13e86265f8f2",
+    "official_runner_blob": "d1602b22bacec1b4e8d2166bd0c184382e632d7e",
+    "preserver_blob": "390816f9d69604adc0ce3fbf21be93dd916256fd"
   },
-  "workflow_check_result": {
-    "collected_prior_exact_head": "0d2e085f2960d46dce30e7619e80054db89c3c70",
-    "prior_preformal": {
-      "run_id": 35306927042,
-      "status": "completed",
-      "conclusion": "failure",
-      "classification": "SCIENCE_INVARIANT_MECHANICAL_LINT_E501",
-      "contract_source_check": "success",
-      "focused_tests": "success",
-      "lint": "failure"
+  "fast_path_used": true,
+  "full_reconciliation_reason": null,
+  "branches_prs_advanced": {
+    "research/ni01-no-ignition-selective-prediction-spec-20260918": {
+      "from": "2664951b65dd18883d3d80862e80b86ac66cf24f",
+      "to": "dbfe7469dbbbc1adbb00789ab382de892a1b3563",
+      "force_push": false,
+      "diff_class": "six added science-invariant execution/admission files only"
     },
-    "prior_ci": {
-      "run_id": 35306927037,
-      "status": "completed",
-      "conclusion": "failure",
-      "classification": "SCIENCE_INVARIANT_MECHANICAL_LINT"
-    },
-    "final_head": "2664951b65dd18883d3d80862e80b86ac66cf24f",
-    "final_preformal": {
-      "run_id": 35308269458,
+    "prs_advanced": []
+  },
+  "workflows_experiments": {
+    "final_execution_head": "dbfe7469dbbbc1adbb00789ab382de892a1b3563",
+    "formal_prestart": {
+      "run_id": 35319571793,
       "status": "completed",
       "conclusion": "success"
     },
-    "final_ci": {
-      "run_id": 35308269286,
+    "preformal_compatibility": {
+      "run_id": 35319571868,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "ordinary_ci": {
+      "run_id": 35319571743,
       "status": "in_progress",
       "conclusion": null
     },
-    "formal_experiments": []
+    "official_one_way": null
   },
-  "lease_collision_reconciliation": {
-    "observed_primary_status": "WAITING_EXTERNAL",
-    "observed_primary_heartbeat": "2026-09-18T13:27:30+09:00",
-    "fresh_running_primary_same_object_detected": false,
-    "sub_mode": "no_op",
-    "sub_collision": false,
-    "research_head_before_relay": "0d2e085f2960d46dce30e7619e80054db89c3c70",
-    "research_head_after_relay": "2664951b65dd18883d3d80862e80b86ac66cf24f"
-  },
-  "critical_path_actions_performed": [
-    "Collected dedicated preformal 35306927042 and ordinary CI 35306927037; both failed at lint on the same exact head.",
-    "Inspected the dedicated job traceback and confirmed contract/source checking plus focused scorer tests passed before three Ruff E501 formatting failures.",
-    "Wrapped only the three overlong lines; scorer behavior and scientific contract semantics were unchanged.",
-    "Refreshed the prospective scorer blob binding from 37cf7f59725988155199148f1a62ba77ab6ca0cf to d3b3565a08277e6a94ef9be1e5bd13e86265f8f2 because the formatting-only scorer edit changed the blob identity.",
-    "Re-ran exact-head gates via push-triggered workflows on final head 2664951b65dd18883d3d80862e80b86ac66cf24f; dedicated preformal is green and ordinary CI remains in progress."
-  ],
   "scientific_results": {
     "new_scientific_information": false,
-    "formal_result": null,
-    "test_inputs_accessed": false,
-    "formal_scoring_performed": false
+    "started_created": false,
+    "official_test_accessed": false,
+    "raw_preserved": false,
+    "formal_scoring_performed": false,
+    "terminal_evidence_created": false,
+    "result_class": null
   },
   "consumed_identities": {
     "c19-r1-revision-authority-official-v1": "consumed; untouched",
     "c19-r1-revision-authority-official-v2": "consumed; untouched",
     "c19-r2-fsa-state-tracker-official-v1": "consumed terminal; untouched",
     "pd01-long-history-fading-memory-official-v1": "consumed terminal; untouched",
-    "ni01-no-ignition-selective-prediction-official-v1": "UNRESERVED / UNCONSUMED"
-  },
-  "integrity_status": {
-    "analyst_latest_unchanged": true,
-    "research_head_final": "2664951b65dd18883d3d80862e80b86ac66cf24f",
-    "control_namespace_absent": true,
-    "preserve_namespace_absent": true,
-    "evidence_namespace_absent": true,
-    "formal_identity_reserved": false,
-    "started_created": false,
-    "official_test_access": false,
-    "preserve_or_evidence_created": false,
-    "consumed_identity_retried": false,
-    "outcome_responsive_design_change": false,
-    "scientific_semantics_changed": false,
-    "force_push_used": false,
-    "ops_branch_treated_as_snapshot": false,
-    "integrity_class": "PREFORMAL_CLEAN_WAITING_FINAL_CI"
+    "ni01-no-ignition-selective-prediction-official-v1": "UNSTARTED / UNCONSUMED"
   },
   "blockers": [
-    "ordinary CI 35308269286 on final exact head remains in progress",
-    "fresh Evidence Analyst authorization remains required after NEXT_OBJECT_READY_FOR_ANALYST_REVIEW before formal identity reservation or STARTED"
+    "ordinary CI 35319571743 remains in progress on exact execution head dbfe7469dbbbc1adbb00789ab382de892a1b3563"
   ],
-  "stop_reason": "WAITING_EXTERNAL: dedicated NI01 preformal 35308269458 is green on final head 2664951b65dd18883d3d80862e80b86ac66cf24f, while ordinary CI 35308269286 is still in progress; no useful immediate critical-path work remains.",
-  "next_main_action": "Collect ordinary CI 35308269286 only. If it is green and Analyst authority/head/identity/namespaces remain unchanged, persist NEXT_OBJECT_READY_FOR_ANALYST_REVIEW and STOP for fresh Analyst authority. If it fails mechanically, apply only a science-invariant repair and re-run all exact-head gates; any semantic/scientific change requires Analyst review before mutation.",
-  "persistence": {
-    "latest_path": "reports/orchestrator/main/latest.md",
-    "state_path": "reports/orchestrator/main/state.json",
-    "lease_path": "reports/orchestrator/main/lease.json",
-    "history_path": "reports/orchestrator/history/2026-09-18/1347-main.md",
-    "force_push_used": false
+  "lease_collision_reconciliation": {
+    "stale_prior_primary_recovered": true,
+    "fresh_running_primary_same_branch_identity_detected_before_mutation": false,
+    "lease_rechecked_before_research_mutation": true,
+    "target_ref_rechecked_before_research_mutation": true,
+    "sub_collision": false,
+    "current_owner": "main"
+  },
+  "integrity_status": {
+    "class": "PRE_START_CLEAN_WAITING_FINAL_ORDINARY_CI",
+    "frozen_scientific_contract_changed": false,
+    "reviewed_scientific_head_preserved_as_binding": true,
+    "execution_head_diff_only_science_invariant_scaffolding": true,
+    "formal_prestart_green_same_head": true,
+    "preformal_green_same_head": true,
+    "ordinary_ci_green_same_head": false,
+    "started_created": false,
+    "control_namespace_claimed": false,
+    "preserve_namespace_claimed": false,
+    "evidence_namespace_claimed": false,
+    "consumed_identity_retried": false,
+    "outcome_responsive_design_change": false,
+    "force_push_used": false,
+    "ops_branch_treated_as_snapshot": false
+  },
+  "critical_path_fixes_completed": [
+    "Bound fresh Evidence Analyst conditional authority to a separate NI01 execution_authority.json without rewriting the frozen scientific contract.",
+    "Implemented a target-blind official acquisition/scoring runner that derives comparator thresholds only from target-free DEV coverage and excludes target-derived fields from preserved TEST raw.",
+    "Implemented atomic raw preservation with digest verification and collision refusal.",
+    "Added fail-closed execution-authority binding checks for the frozen contract/source/scorer/runner/preserver blobs.",
+    "Added a dedicated final NI01 pre-START gate and a no-retry STARTED-triggered one-way workflow preserving raw before target materialization.",
+    "Fast-forwarded the research branch by one administrative execution commit; no scientific source/contract file changed.",
+    "Collected final-head NI01 formal pre-START and preformal compatibility success."
+  ],
+  "same_run_steps": [
+    "Consumed the latest Analyst authority and reconciled MAIN/SUB/control-plane state under FAST PATH.",
+    "Recovered the stale MAIN lease after reconciling the exact target ref and absence of a conflicting fresh MAIN mutation.",
+    "Created and atomically committed the NI01 execution/admission package as dbfe7469dbbbc1adbb00789ab382de892a1b3563.",
+    "Verified the reviewed-science-to-execution-head diff is exactly six newly added administrative/execution files.",
+    "Collected final-head formal pre-START 35319571793 success and preformal compatibility 35319571868 success.",
+    "Observed ordinary CI 35319571743 still in progress and stopped before STARTED under the external-wait handoff rule."
+  ],
+  "stop_reason": "WAITING_EXTERNAL_FINAL_HEAD_ORDINARY_CI: the two NI01-specific gates are green on exact head dbfe7469dbbbc1adbb00789ab382de892a1b3563, ordinary CI 35319571743 remains in progress, and no useful local critical-path work remains before its result.",
+  "work_left_for_sub": null,
+  "lane_repartition_reason": null,
+  "next_main_action": "Collect ordinary CI 35319571743. If green, immediately re-fetch the Analyst authority, exact research head, MAIN lease, identity/consumed state and control/preserve/evidence namespaces; if all are still clean, create STARTED exactly once from package head dbfe7469dbbbc1adbb00789ab382de892a1b3563 and dispatch exactly one registered NI01 one-way execution. If CI fails mechanically, repair only science-invariant execution scaffolding and reset every same-final-SHA gate; if semantic/scientific change is required, STOP for fresh Analyst review.",
+  "write_path_diagnostics": {
+    "github_connector_direct_git_data_write_used": true,
+    "research_update_ref_force": false,
+    "ops_update_ref_force": false,
+    "research_package_commit": "dbfe7469dbbbc1adbb00789ab382de892a1b3563",
+    "history_path": "reports/orchestrator/history/2026-09-18/1630-main.md"
   }
 }
