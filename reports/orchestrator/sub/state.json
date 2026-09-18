@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-09-19T07:35:36+09:00",
+  "timestamp": "2026-09-19T08:32:06+09:00",
   "worker_role": "sub",
   "mode": "no_op",
-  "evidence_analyst_commit": "dc29e9810e5f44d602e4908554028e74b69f8d55",
+  "evidence_analyst_commit": "0562bfb0e5085750d88be99839911aaff45c8f60",
   "consumed_lanes": [],
   "selected_independent_lane": null,
   "exploratory_target": null,
@@ -19,22 +19,14 @@
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "dc29e9810e5f44d602e4908554028e74b69f8d55",
+    "evidence_analyst": "0562bfb0e5085750d88be99839911aaff45c8f60",
     "control_brain": "10eb4206fb0c998fcdbc40c0e16f38829ea5d41e",
-    "orchestrator_parent_tip_before_persistence": "13770757223f5dadec66f91b013e983980393813",
-    "main_latest_checkpoint_time": "2026-09-19T07:15:13+09:00",
+    "orchestrator_parent_tip_before_persistence": "6aa6c9e54d8397c978e5d846caa32556cf9b717c",
+    "main_latest_checkpoint_time": "2026-09-19T08:15:38+09:00",
     "main_latest_lane": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
-    "research_heads": {
-      "h9_c07": "9480da3d77dfee4766b28757f1a164f5cd4dac26",
-      "c19_r2": "5bfa3962c777fa5bc915bb21e20801ab8294778a",
-      "h5": "2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
-      "lp01": "f6d59a55730c5f99cd7f30470847fc3f175bdf64",
-      "ni01": "dbfe7469dbbbc1adbb00789ab382de892a1b3563",
-      "pd01": "b9d38daa5faca348ad2db3898ba71e2abc99f631"
-    },
-    "research_branches_dated_20260919": [],
     "formal_tags": [],
     "sealed_tags": [],
+    "freeze_tags": [],
     "evidence_tags": [
       "evidence/c19-official-v4-c19-external-v2-official-v4",
       "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
@@ -44,6 +36,7 @@
     ],
     "authoritative_evidence_tag_count": 5,
     "legacy_freeze_branch_count": 13,
+    "research_branches_dated_20260919": [],
     "control_preserve_status": "existing_consumed_and_historical_refs_only_no_fresh_formal_identity_or_official_preserve"
   },
   "branches_prs_advanced": {
@@ -54,21 +47,20 @@
   },
   "workflows_experiments": {
     "sub_dispatched": [],
-    "latest_observed_before_persistence": "control-plane CI 35401067993 completed/success on ops/orchestrator-run-report@13770757223f5dadec66f91b013e983980393813",
+    "latest_observed_before_persistence": "control-plane CI 35405241447 completed/success on ops/orchestrator-run-report@6aa6c9e54d8397c978e5d846caa32556cf9b717c",
     "formal_experiment_by_sub": "NOT_STARTED",
-    "research_workflow_seen_in_latest_30_runs": false
+    "official_test_accessed_by_sub": false
   },
   "scientific_readiness_exploratory_results": {
     "sub_new_formal_result": false,
     "sub_new_exploratory_result": false,
     "new_formal_scientific_information": false,
-    "new_upstream_admission_information": true,
-    "upstream_admission_change": "Evidence Analyst integrated new causal-provenance literature: future lineage/causal-credit admission must distinguish provenance from actual causal responsibility and prospectively survive provenance-only, explicit actual-cause/responsibility, and matched recurrent/plastic reductions before any Spark-specific residual.",
     "main_lane": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
     "sub_lane": null,
     "sub_fallback": null,
     "sub_exploratory_review": null,
-    "allocation_changed": false
+    "allocation_changed": false,
+    "programme_state": "NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE"
   },
   "evidentiary_status": "NONE_FOR_SUB",
   "consumed_identities": {
@@ -86,7 +78,7 @@
   "blockers": [
     "No reserved independent formal SUB lane or fallback exists.",
     "No safe useful non-duplicative incubator target exists.",
-    "The new causal-provenance comparator ladder is future admission doctrine; implementing it now would risk pre-building a possible MAIN critical path rather than independent SUB work.",
+    "Future lineage/causal-credit comparator construction could become MAIN-critical and is therefore excluded from SUB work.",
     "Scientific object availability is the blocker; there is no SUB infrastructure blocker."
   ],
   "blocked_until": "A genuinely independent prospectively complete secondary object is reserved for SUB, or a distinct bounded NON_EVIDENTIARY synthetic/dev question appears outside MAIN admission, future causal-credit critical-path construction, consumed-line rescue, and already-explored SUB themes.",
@@ -94,11 +86,11 @@
   "rejected_lane": null,
   "lane_rejected_reason": null,
   "collision_reconciliation": {
-    "report_branch_tip_before_persistence": "13770757223f5dadec66f91b013e983980393813",
-    "latest_main_checkpoint_time": "2026-09-19T07:15:13+09:00",
-    "latest_main_checkpoint_analyst_commit": "dc29e9810e5f44d602e4908554028e74b69f8d55",
+    "report_branch_tip_before_persistence": "6aa6c9e54d8397c978e5d846caa32556cf9b717c",
+    "latest_main_checkpoint_time": "2026-09-19T08:15:38+09:00",
+    "latest_main_checkpoint_analyst_commit": "0562bfb0e5085750d88be99839911aaff45c8f60",
     "fresh_analyst_tip_rechecked": true,
-    "fresh_analyst_tip": "dc29e9810e5f44d602e4908554028e74b69f8d55",
+    "fresh_analyst_tip": "0562bfb0e5085750d88be99839911aaff45c8f60",
     "analyst_allocation_changed": false,
     "main_ref_rechecked": true,
     "research_refs_rechecked": true,
@@ -114,9 +106,9 @@
   "suggested_prospective_object": null,
   "promotion_recommendation": "NONE",
   "incubator_handoff": null,
-  "proposed_handoff_to_analyst": "Keep SUB null/no-op until a genuinely independent prospectively complete secondary object is reserved or a distinct bounded NON_EVIDENTIARY synthetic/dev question appears. Do not manufacture work from MAIN admission, causal-provenance comparator requirements, or consumed terminal lines.",
+  "proposed_handoff_to_analyst": "Keep SUB null/no-op until a genuinely independent prospectively complete secondary object is reserved or a distinct bounded NON_EVIDENTIARY synthetic/dev question appears. Do not manufacture work from MAIN admission, future causal-credit comparator requirements, or consumed terminal lines.",
   "report_persistence": {
-    "history_path": "reports/orchestrator/history/2026-09-19/0735-sub.md",
+    "history_path": "reports/orchestrator/history/2026-09-19/0832-sub.md",
     "sub_latest_path": "reports/orchestrator/sub/latest.md",
     "sub_state_path": "reports/orchestrator/sub/state.json",
     "atomic_git_commit_requested": true,
