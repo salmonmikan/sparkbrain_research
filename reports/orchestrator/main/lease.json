@@ -1,14 +1,14 @@
 {
   "run_id": "sparkbrain-main-primary-20260918T221321JST",
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "WAITING_EXTERNAL",
   "started_at": "2026-09-18T22:13:21+09:00",
-  "heartbeat_at": "2026-09-18T22:22:30+09:00",
+  "heartbeat_at": "2026-09-18T22:27:30+09:00",
   "analyst_commit": "57464c4ad6881c27371be5305512656c6ae315d3",
   "active_branch": "research/lp01-actual-lineage-causal-credit-spec-20260918",
   "active_identity": null,
-  "active_step": "LP01_NO_HIGH_VALUE_OBJECT_PENDING_READINESS_CI",
-  "workflow_run_id": 35349695551,
-  "expected_next_action": "Collect exact-head LP01 readiness and ordinary CI. If source/readiness checks stay green, persist NO_HIGH_VALUE_OBJECT because current lineage metadata is non-causal in native decision/reward paths and any new lineage-credit adapter is losslessly reducible to an ordinary explicit parent-state comparator under matched privilege. Do not create formal identity, STARTED, official TEST, formal preserve/scoring/evidence.",
+  "active_step": "LP01_NO_HIGH_VALUE_OBJECT_PENDING_EXACT_HEAD_CHECKS",
+  "workflow_run_id": 35350132766,
+  "expected_next_action": "Collect LP01 prospective readiness 35350132766 and ordinary CI 35350132835 on exact head 56b0e5ddf2ceffb0a53d517d8125f8302c2d2844. If both are green and Analyst/head/identity state remains unchanged, persist LP01_NO_HIGH_VALUE_OBJECT as completed and STOP for fresh Evidence Analyst review. Repair only science-invariant mechanical failures; any semantic/scientific change requires STOP. Do not create formal identity, STARTED, official TEST, formal preserve/scoring/evidence.",
   "owner": "main"
 }
