@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-09-18T22:50:04+09:00",
+  "timestamp": "2026-09-18T22:51:29+09:00",
   "worker_role": "main",
   "execution_mode": "RELAY",
   "analyst_commit": "57464c4ad6881c27371be5305512656c6ae315d3",
   "current_lane": "LP01_ACTUAL_LINEAGE_CAUSAL_CREDIT_PROSPECTIVE_SPECIFICATION",
-  "current_phase": "NO_HIGH_VALUE_OBJECT_PENDING_REPAIRED_EXACT_HEAD_CHECKS",
+  "current_phase": "NO_HIGH_VALUE_OBJECT_PENDING_ORDINARY_CI",
   "consumed_contingency_branches": [
     "PRE_START_SEMANTIC_GAP"
   ],
@@ -28,7 +28,7 @@
   "workflows_experiments": {
     "lp01_readiness_prior_exact_head_35350132766": "completed/failure@56b0e5ddf2ceffb0a53d517d8125f8302c2d2844; lint-only after contract/source-audit/tests/dev-diagnostic passed",
     "ordinary_ci_prior_exact_head_35350132835": "completed/failure@56b0e5ddf2ceffb0a53d517d8125f8302c2d2844; lint-only",
-    "lp01_readiness_repaired_exact_head_35352468809": "in_progress@f6d59a55730c5f99cd7f30470847fc3f175bdf64",
+    "lp01_readiness_repaired_exact_head_35352468809": "completed/success@f6d59a55730c5f99cd7f30470847fc3f175bdf64",
     "ordinary_ci_repaired_exact_head_35352468938": "in_progress@f6d59a55730c5f99cd7f30470847fc3f175bdf64",
     "formal_experiment_dispatched": false,
     "official_test_accessed": false
@@ -48,12 +48,13 @@
     "Confirmed readiness contract integrity, native causality audit, reference tests, and NON_EVIDENTIARY construction diagnostic passed before lint failure.",
     "Applied only four Ruff-directed mechanical formatting/import changes; no scientific/protocol/identity semantics changed.",
     "Advanced the LP01 research branch to f6d59a55730c5f99cd7f30470847fc3f175bdf64.",
-    "Started fresh exact-head readiness 35352468809 and ordinary CI 35352468938 and stopped rather than waiting occupied."
+    "Collected repaired exact-head readiness 35352468809 as completed/success.",
+    "Left ordinary CI 35352468938 running and stopped rather than waiting occupied."
   ],
   "scientific_results": {
     "new_formal_scientific_information_this_run": false,
     "prospective_specification_decision": "NO_HIGH_VALUE_OBJECT",
-    "decision_status": "PRE_FORMAL_NON_EVIDENTIARY_PENDING_GREEN_EXACT_HEAD_CHECKS",
+    "decision_status": "PRE_FORMAL_NON_EVIDENTIARY_PENDING_ORDINARY_CI",
     "formal_identity_state": "NOT_CREATED",
     "started_state": "NOT_CREATED",
     "formal_preserve_state": "NOT_CREATED",
@@ -82,15 +83,17 @@
   },
   "integrity_status": "CLEAN_PRE_FORMAL_BOUNDARY_NO_IDENTITY_NO_STARTED_NO_OFFICIAL_TEST",
   "blockers": [
-    "Repaired exact-head LP01 prospective readiness workflow 35352468809 is still running.",
     "Repaired exact-head ordinary CI 35352468938 is still running."
   ],
-  "stop_reason": "WAITING_EXTERNAL_REPAIRED_EXACT_HEAD_CHECKS",
-  "next_MAIN_action": "Collect readiness 35352468809 and ordinary CI 35352468938 on exact head f6d59a55730c5f99cd7f30470847fc3f175bdf64. If both are green and Analyst/head/identity/formal-boundary state remains unchanged, persist LP01_NO_HIGH_VALUE_OBJECT as completed and STOP for fresh Evidence Analyst review. Repair only science-invariant mechanical failures; any semantic/scientific change requires STOP. Do not create formal identity, STARTED, official TEST, formal preserve/scoring/evidence.",
+  "stop_reason": "WAITING_EXTERNAL_ORDINARY_CI_AFTER_REPAIRED_READINESS_GREEN",
+  "next_MAIN_action": "Collect ordinary CI 35352468938 on exact head f6d59a55730c5f99cd7f30470847fc3f175bdf64. If green and Analyst/head/identity/formal-boundary state remains unchanged, persist LP01_NO_HIGH_VALUE_OBJECT as completed and STOP for fresh Evidence Analyst review. Repair only science-invariant mechanical failures; any semantic/scientific change requires STOP. Do not create formal identity, STARTED, official TEST, formal preserve/scoring/evidence.",
   "write_path_diagnostics": {
     "github_direct_write_attempted": true,
     "github_direct_write_succeeded": true,
     "force_push_used": false,
-    "history_path": "reports/orchestrator/history/2026-09-18/2250-main.md"
+    "history_paths": [
+      "reports/orchestrator/history/2026-09-18/2250-main.md",
+      "reports/orchestrator/history/2026-09-18/2251-main.md"
+    ]
   }
 }
