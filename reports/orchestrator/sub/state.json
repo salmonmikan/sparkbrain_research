@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-09-19T02:35:00+09:00",
+  "timestamp": "2026-09-19T03:35:00+09:00",
   "worker_role": "sub",
   "mode": "no_op",
-  "evidence_analyst_commit": "c7ccb537878966f10396bfa4c539840509014490",
-  "evidence_analyst_mailbox_tip": "c7ccb537878966f10396bfa4c539840509014490",
+  "evidence_analyst_commit": "03f027926fb06a42f108e5470779f2de2126116a",
+  "evidence_analyst_mailbox_tip": "03f027926fb06a42f108e5470779f2de2126116a",
   "consumed_lanes": [],
   "selected_independent_lane": null,
   "exploratory_target": null,
@@ -11,26 +11,26 @@
   "execution_allowed": false,
   "sub_active_claim": null,
   "main_work_explicitly_avoided": [
-    "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE fresh-object admission gate and any candidate ranking or successor selection",
+    "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE fresh-object admission gate and candidate ranking/successor selection",
     "Any H9/H3/H6/H7 successor selection, comparator/mechanism design, specification/readiness or candidate-specific verifier/harness/runner/binding/CI repair",
-    "LP01 formalization, rescue or outcome-dependent successor design",
-    "Terminal H5 retry/retune/rescore/reinterpretation/rescue",
-    "PD01 reopening; NI01, C19-R2, C19-v4 and C19-R1 v1/v2 consumed science",
+    "NI01 outcome-responsive successor design, rerun, relabel, retune, rescore, evidence mutation or rescue",
+    "LP01 formalization/rescue and terminal H5/PD01/C19 consumed-line reopening",
     "Any official TEST, STARTED/control, preserve/scoring/evidence or formal execution work"
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "c7ccb537878966f10396bfa4c539840509014490",
-    "control_brain": "9bf5c0249e88acdd5fc99b12555e785f9c2e2976",
-    "orchestrator_parent_tip_observed_before_sub_persistence": "017514db219a90e7e5bfb67862545c95ba9d3691",
-    "main_latest_checkpoint_time": "2026-09-19T02:16:00+09:00",
+    "evidence_analyst": "03f027926fb06a42f108e5470779f2de2126116a",
+    "control_brain": "10eb4206fb0c998fcdbc40c0e16f38829ea5d41e",
+    "orchestrator_parent_tip_observed_before_sub_persistence": "61b93e2c43b8ec087a961856b4dc57e19fee38a9",
+    "main_latest_checkpoint_time": "2026-09-19T03:12:42+09:00",
+    "main_latest_analyst_commit": "c7ccb537878966f10396bfa4c539840509014490",
     "main_latest_phase": "NO_ACTIVE_FORMAL_FRONTIER_FRESH_OBJECT_ADMISSION_GATE_ONLY",
     "main_stop_reason": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT",
     "h9_readiness": "research/c07-h9-fully-spiking-readiness-sub-20260917@9480da3d77dfee4766b28757f1a164f5cd4dac26",
     "h3_exploratory": "research/exploratory-sub-h3-correlation-reduction-20260918@678e38ae0035ca95c424c0fa1eb9343bed8b680b",
     "h6_exploratory": "research/exploratory-sub-h6-workspace-accounting-20260917@3904596cdb6377fc460435bf1b8a6dcdadff4fab",
     "h7_exploratory": "research/exploratory-sub-h7-trace-causality-20260917@3b5f122d287025bd9e0aec3a5266704236e6a3d5",
-    "rv01_delay_filter_exploratory": "research/exploratory-sub-rv01-delay-filter-20260918@48bd4a831435dbfaeace1d2935a04e05751a61fe",
+    "rv01_delay_filter_exploratory": "research/exploratory-sub-rv01-delay-filter-reduction-20260918@48bd4a831435dbfaeace1d2935a04e05751a61fe",
     "lp01_research": "research/lp01-actual-lineage-causal-credit-spec-20260918@f6d59a55730c5f99cd7f30470847fc3f175bdf64",
     "formal_tags": [],
     "sealed_tags": [],
@@ -42,8 +42,7 @@
       "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1"
     ],
     "authoritative_evidence_tag_count": 5,
-    "legacy_freeze_branch_count": 13,
-    "preserve_branch_count_observed": 24
+    "legacy_freeze_branch_count": 13
   },
   "branches_prs_advanced": {
     "research_branches_by_sub": [],
@@ -54,7 +53,8 @@
   "workflows_experiments": {
     "sub_dispatched": [],
     "fresh_observed": {
-      "evidence_analyst_ci_35372900948": "completed/success@c7ccb537878966f10396bfa4c539840509014490"
+      "scheduler_registry_ci_35381020290": "in_progress@cb4e94a1ed770e570cae0fc4a27010de78bbc635",
+      "scheduler_registry_ci_35380940963": "in_progress@fca51df1e7d1d3d3aa2c346ac3d752a6e3ef5c18"
     },
     "formal_experiment_by_sub": "NOT_STARTED"
   },
@@ -62,16 +62,14 @@
     "sub_new_formal_result": false,
     "sub_new_exploratory_result": false,
     "new_formal_scientific_information": false,
-    "allocation_update_observed": true,
     "analyst_programme_mode": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
-    "main_lane": "FRESH_OBJECT_ADMISSION_GATE_ONLY",
+    "main_lane": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
     "main_lane_phase": "NO_ACTIVE_FORMAL_FRONTIER_FRESH_OBJECT_ADMISSION_GATE_ONLY",
-    "main_latest_decision": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT",
-    "main_formal_execution_authorized": false,
     "sub_lane": null,
     "sub_fallback": null,
     "sub_exploratory_review": null,
-    "interpretation": "Fresh Analyst repartition explicitly keeps SUB null/no-op. The prior stale-authority blocker is resolved; scientific object availability remains the only blocker."
+    "ni01_interpretive_update": "Canonical FAIL token unchanged; programme meaning narrowed to NO_REGISTERED_INCREMENTAL_NATIVE_ADVANTAGE_OVER_MATCHED_CONFIDENCE_ABSTENTION because no separate prospective positive native-signal gate was registered.",
+    "allocation_changed": false
   },
   "evidentiary_status": "NONE_FOR_SUB",
   "consumed_identities": {
@@ -90,44 +88,43 @@
   },
   "blockers": [
     "No reserved independent formal SUB lane or fallback exists.",
-    "No safe, useful, non-duplicative incubator target exists under the fresh Analyst architecture-testbed review and prior SUB exploratory history.",
-    "Scientific object availability is the blocker; infrastructure and authority freshness are not blocked."
+    "No safe, useful, non-duplicative incubator target exists after reconciling fresh Analyst authority and prior SUB exploratory history.",
+    "Scientific object availability is the blocker; there is no SUB infrastructure blocker."
   ],
+  "blocked_until": "A genuinely independent prospectively complete secondary object is explicitly reserved for SUB, or a distinct bounded NON_EVIDENTIARY synthetic/dev question appears outside MAIN admission, terminal-line rescue, NI01 outcome-responsive successor design and already-explored SUB themes.",
+  "fallback_status": "ABSENT",
+  "rejected_lane": null,
+  "lane_rejected_reason": null,
   "collision_reconciliation": {
-    "report_branch_tip_before_persistence": "017514db219a90e7e5bfb67862545c95ba9d3691",
-    "latest_main_checkpoint_time": "2026-09-19T02:16:00+09:00",
-    "latest_main_checkpoint_status": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT",
+    "report_branch_tip_before_persistence": "61b93e2c43b8ec087a961856b4dc57e19fee38a9",
+    "latest_main_checkpoint_time": "2026-09-19T03:12:42+09:00",
+    "latest_main_checkpoint_analyst_commit": "c7ccb537878966f10396bfa4c539840509014490",
     "fresh_analyst_tip_rechecked": true,
-    "analyst_tip": "c7ccb537878966f10396bfa4c539840509014490",
+    "analyst_tip": "03f027926fb06a42f108e5470779f2de2126116a",
+    "analyst_newer_than_main_checkpoint": true,
+    "analyst_allocation_changed": false,
     "main_ref_rechecked": true,
     "research_refs_rechecked": true,
     "evidence_formal_sealed_freeze_control_preserve_refs_rechecked": true,
     "prs_issues_workflows_rechecked": true,
-    "new_formal_identity_after_prior_sub_observed": false,
     "sub_collision_detected": false
   },
   "integrity_state": "CLEAN_NO_MAIN_MUTATION_NO_FORMAL_BOUNDARY_CROSSED_BY_SUB_NO_OFFICIAL_INPUT_ACCESS_NO_IDENTITY_CONSUMPTION",
   "completion_target": "Freshly reconcile current main/research refs, authoritative evidence/formal/sealed/freeze/control/preserve state, Evidence Analyst latest/state/history, MAIN/SUB latest/state/history, Control Brain doctrine, workflows/PRs/issues and identities; select only a valid independent SUB lane or safe non-duplicative incubator target, otherwise persist a clean no-op.",
   "completion_target_status": "ACHIEVED",
-  "fallback_status": "ABSENT",
-  "rejected_lane": null,
-  "lane_rejected_reason": null,
   "candidate_formal_question": null,
   "suggested_prospective_object": null,
   "promotion_recommendation": "NONE",
   "incubator_handoff": null,
-  "proposed_handoff_to_analyst": "Keep SUB null/no-op unless a genuinely independent prospectively complete secondary object is reserved for SUB, or a genuinely distinct bounded NON_EVIDENTIARY synthetic/dev question appears outside MAIN fresh-object admission, terminal-line rescue and already-explored SUB themes. Do not convert historical exploratory outputs, LP01 closeout, or architecture-testbed admission decisions into evidence.",
+  "proposed_handoff_to_analyst": "Keep SUB null/no-op unless a genuinely independent prospectively complete secondary object is reserved for SUB, or a genuinely distinct bounded NON_EVIDENTIARY synthetic/dev question appears outside MAIN fresh-object admission, terminal-line rescue, NI01 outcome-responsive successor design and already-explored SUB themes. Preserve NI01's narrowed programme interpretation without relabeling or mutating immutable evidence.",
   "report_persistence": {
-    "history_path": "reports/orchestrator/history/2026-09-19/0235-sub.md",
+    "history_path": "reports/orchestrator/history/2026-09-19/0335-sub.md",
     "sub_latest_path": "reports/orchestrator/sub/latest.md",
     "sub_state_path": "reports/orchestrator/sub/state.json",
-    "atomic_git_commit_requested": false,
-    "sequential_contents_commits": true,
-    "history_commit": "81265b0daf09bfa5988c7335899f57b434ed4e4a",
-    "latest_commit": "1be7d9a75d48ed4b8ccd6144ebc650c955292ee7",
+    "atomic_git_commit_requested": true,
     "force_push_used": false,
     "main_files_modified": false,
     "legacy_shared_latest_state_modified": false
   },
-  "persistence_limitation": "SUB history/latest/state were persisted as sequential GitHub Contents commits rather than one atomic commit; final readback/ref-tip verification is required and performed after this state write."
+  "persistence_limitation": null
 }
