@@ -1,78 +1,43 @@
 {
-  "timestamp": "2026-09-19T00:48:00+09:00",
+  "timestamp": "2026-09-19T02:16:31+09:00",
   "worker_role": "main",
-  "execution_mode": "RELAY",
-  "analyst_commit": "71d0050f3985f888dc34566a0ffbf0b027f37d3e",
-  "current_lane": "POST_LP01_PROGRAMME_SYNTHESIS_AND_NEXT_OBJECT_ADMISSION",
-  "current_phase": "COMPLETED_PREFORMAL_NON_EVIDENTIARY_ADMISSION",
+  "execution_mode": "PRIMARY",
+  "analyst_commit": "c7ccb537878966f10396bfa4c539840509014490",
+  "current_lane": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
+  "current_phase": "NO_ACTIVE_FORMAL_FRONTIER_FRESH_OBJECT_ADMISSION_GATE_ONLY",
   "consumed_contingency_branches": [
-    "LP01_NO_HIGH_VALUE_OBJECT_CONFIRMED_PREFORMAL_CLOSEOUT_COMPLETE",
+    "POST_LP01_ADMISSION_NO_HIGH_VALUE_OBJECT",
     "NO_HIGH_VALUE_OBJECT"
   ],
-  "active_claim": "No unresolved SparkBrain line currently yields a fresh independently motivated object that is simultaneously native to the causal path, matched in information/readout/resources, robust to ordinary reductions, and prospectively complete without inventing new scientific choices.",
+  "active_claim": "No active admitted primary experiment exists. MAIN holds a standing fresh-object admission gate and must not manufacture successor science absent a genuinely fresh independently motivated natively causal object that is matched in state/information/readout/resources, robust to ordinary reductions, numerically falsifiable, and prospectively complete.",
   "authoritative_target_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "active_branch": null,
     "active_identity": null,
-    "evidence_analyst_handoff": "71d0050f3985f888dc34566a0ffbf0b027f37d3e",
-    "h9_readiness": "research/c07-h9-fully-spiking-readiness-sub-20260917@9480da3d77dfee4766b28757f1a164f5cd4dac26",
-    "h3_exploratory": "research/exploratory-sub-h3-correlation-reduction-20260918@678e38ae0035ca95c424c0fa1eb9343bed8b680b",
-    "h6_exploratory": "research/exploratory-sub-h6-workspace-accounting-20260917@3904596cdb6377fc460435bf1b8a6dcdadff4fab",
-    "h7_exploratory": "research/exploratory-sub-h7-trace-causality-20260917@3b5f122d287025bd9e0aec3a5266704236e6a3d5",
+    "evidence_analyst_handoff": "c7ccb537878966f10396bfa4c539840509014490",
+    "evidence_analyst_ci": "35372900948 completed/success@c7ccb537878966f10396bfa4c539840509014490",
     "control_brain_prior": "9bf5c0249e88acdd5fc99b12555e785f9c2e2976",
-    "formal_boundary": "PROGRAMME_SYNTHESIS / PROSPECTIVE_ADMISSION_ONLY / no formal identity or STARTED authorized"
+    "formal_boundary": "ARCHITECTURE_TESTBED / PROSPECTIVE_ADMISSION_ONLY / no formal identity or STARTED authorized"
   },
+  "fast_path_used": true,
+  "full_reconciliation_reason": null,
   "branches_prs_advanced": [],
   "workflows_experiments": {
-    "evidence_analyst_ci_35361744371": "completed/success@71d0050f3985f888dc34566a0ffbf0b027f37d3e",
+    "evidence_analyst_ci_35372900948": "completed/success@c7ccb537878966f10396bfa4c539840509014490",
     "new_workflow_dispatched": false,
     "formal_experiment_dispatched": false,
     "official_test_accessed": false
   },
-  "candidate_ranking": [
-    {
-      "candidate": "H7 / provenance causal faithfulness",
-      "information_value": "HIGH",
-      "implementation_distance": "FAR",
-      "reduction_risk": "VERY_HIGH",
-      "admission": "REJECT_CURRENTLY",
-      "reason": "Current native online path does not consume lineage relation; LP01 found equal-privilege explicit-parent reconstruction. A clean successor requires new native architecture/theory, which would be new science rather than continuation."
-    },
-    {
-      "candidate": "H9 / C07 fully-spiking",
-      "information_value": "MEDIUM_HIGH",
-      "implementation_distance": "MEDIUM",
-      "reduction_risk": "MEDIUM",
-      "admission": "UNDERSPECIFIED",
-      "reason": "Operational boundary, neural dynamics, spike decoder, tuning budget, comparator claim, tolerance authority, plasticity regime and runtime/randomness remain scientifically open choices."
-    },
-    {
-      "candidate": "H3 correlation robustness",
-      "information_value": "MEDIUM",
-      "implementation_distance": "MEDIUM",
-      "reduction_risk": "HIGH",
-      "admission": "REJECT_CURRENTLY",
-      "reason": "NON_EVIDENTIARY noisy-proxy work leaves ordinary scalar reduction competitive/better; meaningful continuation requires new inference/calibration/capacity/resource choices."
-    },
-    {
-      "candidate": "H6 workspace coordination",
-      "information_value": "MEDIUM",
-      "implementation_distance": "MEDIUM",
-      "reduction_risk": "HIGH",
-      "admission": "REJECT_CURRENTLY",
-      "reason": "Historical toy ordering flips solely with communication-accounting convention; task semantics, routing knowledge, quality matching and resource accounting are not prospectively fixed."
-    }
-  ],
   "scientific_results": {
     "new_formal_scientific_information_this_run": false,
-    "prospective_specification_decision": "NO_HIGH_VALUE_OBJECT",
-    "decision_status": "PRE_FORMAL_NON_EVIDENTIARY_ADMISSION_CLOSEOUT",
-    "formal_identity_state": "NOT_CREATED",
-    "started_state": "NOT_CREATED",
-    "formal_preserve_state": "NOT_CREATED",
-    "formal_scoring_state": "NOT_CREATED",
-    "formal_evidence_state": "NOT_CREATED",
-    "programme_frame": "ARCHITECTURE_TESTBED_UNTIL_FRESH_NATIVE_NON_REDUCIBLE_OBJECT"
+    "programme_state": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
+    "admission_result": "NO_FRESH_OBJECT_EMERGED",
+    "evidentiary_status": "PREFORMAL_NON_EVIDENTIARY_PROGRAMME_HOLD",
+    "formal_identity_state": "NONE_ACTIVE",
+    "started_state": "NONE_NEW",
+    "formal_preserve_state": "NONE_NEW",
+    "formal_scoring_state": "NONE_NEW",
+    "formal_evidence_state": "NONE_NEW"
   },
   "consumed_identities": [
     "c19-external-v2-official-v4",
@@ -84,40 +49,45 @@
     "h5-event-routing-work-reduction-official-v1"
   ],
   "blockers": [
-    "Scientific object scarcity: no current unresolved line passes the fresh novelty-admission gate without new mechanism construction, comparator/metric/resource invention, or other prospectively unfixed scientific choices."
+    "Scientific object availability: no freshly emerging independently motivated object was present to admit under the current architecture/testbed gate.",
+    "Formal one-way science remains blocked until a fresh object satisfies the Analyst's native-causality, privilege/resource symmetry, ordinary-reduction, positive-signal where applicable, numeric-falsifier, exact-binding, same-final-SHA CI/pre-START, and fresh-authority requirements."
   ],
   "lease_collision_reconciliation": {
     "inherited_lease_status": "COMPLETED",
-    "inherited_execution_mode": "PRIMARY",
-    "inherited_heartbeat": "2026-09-18T23:27:34+09:00",
+    "inherited_execution_mode": "RELAY",
+    "inherited_heartbeat": "2026-09-19T00:49:00+09:00",
     "fresh_main_running_collision_found": false,
-    "relay_lease_acquired": true,
-    "relay_lease_commit": "c24f9e395335c83f6e90329c78d73a54c26b86eb",
+    "primary_lease_acquired": true,
+    "primary_lease_commit": "1a4177bc16e4c0ed4fadc91c011cc9c414800741",
     "latest_sub_mode": "no_op",
     "sub_lane": null,
     "sub_fallback": null,
     "analyst_ref_drift_found": false,
     "main_ref_drift_found": false
   },
-  "integrity_status": "CLEAN_PREFORMAL_BOUNDARY_NO_IDENTITY_NO_STARTED_NO_OFFICIAL_TEST_NO_FORMAL_PRESERVE_SCORE_OR_EVIDENCE",
-  "critical_path_actions_performed": [
-    "Consumed fresh Analyst authority 71d0050f3985f888dc34566a0ffbf0b027f37d3e and its bounded admission-only contingency.",
-    "Reconciled current main and the strongest unresolved H9/H3/H6/H7 research refs directly rather than treating ops branches as repository snapshots.",
-    "Read SUB only for collision avoidance and Control Brain only as strategic prior.",
-    "Ranked unresolved objects by information value, reduction risk, identifiability and implementation distance.",
-    "Found no object that can be prospectively completed without inventing new scientific choices, and therefore consumed the authorized NO_HIGH_VALUE_OBJECT contingency.",
-    "Created no research branch, protocol, identity, STARTED marker, workflow, official TEST access, preserve, score or evidence."
+  "integrity_status": "CLEAN_ARCHITECTURE_TESTBED_BOUNDARY_NO_ACTIVE_IDENTITY_NO_STARTED_NO_OFFICIAL_TEST_NO_FORMAL_PRESERVE_SCORE_OR_EVIDENCE",
+  "critical_path_fixes_completed": [],
+  "same_run_steps": [
+    "Consumed designated Evidence Analyst latest/state at c7ccb537878966f10396bfa4c539840509014490.",
+    "Read MAIN latest/state/lease and confirmed the inherited lease was completed with no active branch or identity.",
+    "Re-fetched current main and confirmed ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d remains authoritative.",
+    "Read SUB only for collision avoidance; SUB remains no_op with null lane/fallback.",
+    "Read Control Brain only as strategic prior; it remains consistent with the architecture/testbed frame.",
+    "Verified Analyst CI 35372900948 completed successfully on the exact authority SHA.",
+    "Acquired a fresh PRIMARY lease, re-fetched lease and Analyst tip before closeout, and found no collision or authority drift.",
+    "Observed no freshly emerging object requiring bounded prospective specification; created no research/scientific mutation."
   ],
-  "stop_reason": "POST_LP01_ADMISSION_NO_HIGH_VALUE_OBJECT",
-  "work_left_for_SUB": "none; SUB remains no_op with null lane/fallback",
+  "stop_reason": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT",
+  "work_left_for_SUB": "none; SUB remains no_op with no reserved independent lane or fallback",
   "lane_repartition_reason": null,
-  "next_MAIN_action": "STOP until a fresh Evidence Analyst handoff independently motivates and prospectively specifies a native, matched-privilege, non-definitionally-reducible object. Do not manufacture H9/H3/H6/H7 parameters and do not reopen consumed identities.",
+  "next_MAIN_action": "If and only if a genuinely fresh independently motivated native object appears, perform bounded prospective specification/readiness and STOP at NEXT_OBJECT_READY_FOR_ANALYST_REVIEW. Otherwise keep the architecture/testbed hold and do not create a formal identity, STARTED marker, official TEST access, preserve/scoring output, evidence, or outcome-responsive successor.",
   "write_path_diagnostics": {
     "github_direct_write_attempted": true,
     "github_direct_write_succeeded": true,
     "force_push_used": false,
-    "lease_start_commit": "c24f9e395335c83f6e90329c78d73a54c26b86eb",
-    "latest_closeout_commit": "f4aea699868bf2eceb119f45476c20cdc5000251",
-    "history_path": "reports/orchestrator/history/2026-09-19/0048-main.md"
+    "lease_start_commit": "1a4177bc16e4c0ed4fadc91c011cc9c414800741",
+    "history_commit": "4f2349e1baf14ce4cb53d2acf6da050d94e7988d",
+    "latest_commit": "d406e7723ca35e4853ccc26f502c63b95cdf704a",
+    "history_path": "reports/orchestrator/history/2026-09-19/0216-main.md"
   }
 }
