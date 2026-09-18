@@ -1,98 +1,102 @@
 # SparkBrain Evidence Analyst — Latest Two-Worker Handoff
 
-Analysis time: `2026-09-18 13:03 JST`
-Prior Evidence Analyst tip: `a015c119cb0365a5b871b7f4f2c727a80f52a57e`
+Analysis time: `2026-09-18 14:00 JST`
+Prior Evidence Analyst tip consumed before writing: `938231f8acb714dfa832139383beef6bb8afb0c3`
 
 ## Executive decision
 
-The material update is now a **new formal scientific result**. PD01 completed its prospectively fixed one-way chain with intact raw-before-score ordering and terminalized as **`FAIL_REDUCED_BY_FADING_MEMORY`**.
+The material update is **readiness, not new formal scientific evidence**. MAIN used the prior `NEXT_FRONTIER_PROSPECTIVE_SELECTION` authority to select exactly one independently motivated pre-existing question, **H4 / native No-Ignition selective prediction**, and produced a fully prospective NI01 contract on `research/ni01-no-ignition-selective-prediction-spec-20260918@2664951b65dd18883d3d80862e80b86ac66cf24f`.
 
-Authoritative terminal evidence is `evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1` (annotated tag object `e4c4e6428d8ef9e09e92cae231041de0788162e2`) pointing to evidence commit `fc5c8cda283360addddb7da482b14e69beaba1f7`. The consumed identity is `pd01-long-history-fading-memory-official-v1`; exact package is `research/pd01-fading-memory-preformal-20260918@b9d38daa5faca348ad2db3898ba71e2abc99f631`; STARTED is `control/pd01-long-history-fading-memory-started-v1-20260918@0569e348b9d93aeee53fc58daf4b71ee92303d6c`; authoritative raw preservation is `preserve/pd01-long-history-fading-memory-raw-pd01-long-history-fading-memory-official-v1@65ae7a50ee2279ab5edc3ca43ea3bf69daecb881`.
+NI01 is not a C19-R2 or PD01 rescue. Its contract explicitly sets `outcome_rescue_of: null`, excludes C19/C19-R1/C19-R2/PD01, and binds the question to canonical H4. The proposed formal identity `ni01-no-ignition-selective-prediction-official-v1` remains **UNRESERVED / unconsumed**. Fresh remote checks show no NI01 STARTED/control ref, preserve ref, or evidence tag.
 
-The fixed primary statistics are:
+The exact scientific head now has both required readiness gates green: dedicated NI01 preformal run `35308269458` and ordinary CI `35308269286`, both `completed/success` on exact head `2664951b65dd18883d3d80862e80b86ac66cf24f`. Earlier failures were science-invariant fixture/lint defects and were repaired by MAIN without changing the scientific question, candidate, comparator, worlds, DEV/TEST schedules, loss, thresholds, bootstrap, runtime plan, or integrity order.
 
-- SparkBrain long-lag accuracy `0.47265625`, 95% cluster-bootstrap CI `[0.431640625, 0.515625]`;
-- fixed 64-state contractive reservoir long-lag accuracy `0.5`;
-- effect `SparkBrain - reservoir = -0.02734375`, 95% CI `[-0.068359375, 0.015625]`;
-- `1024` joined TEST histories.
-
-The preregistered FAIL criterion was `effect_ci95_upper <= +0.05`; the observed upper bound is `0.015625`, therefore `FAIL_REDUCED_BY_FADING_MEMORY` follows mechanically. Workflow `35301327618` completed successfully as an execution/integrity pipeline; **workflow success must not be confused with the scientific FAIL classification**.
-
-This closes PD01. There is no rescue, same-ID retry, retuning, comparator shopping, or automatic PD01-v2. Together with audited C19-R2 `REDUCED_BY_FSA`, the current evidence argues against continuing a C19/PD01 rescue ladder merely by escalating comparator complexity. The next MAIN action is therefore a programme-level **fresh next-frontier prospective selection**, not another automatic one-way experiment.
+**Decision:** advance MAIN from selection/specification to conditional exactly-one NI01 one-way authority. MAIN may bind this fresh Analyst authority into an execution package and, only if all final same-SHA gates and fresh identity/namespace checks remain green, create STARTED and execute exactly one formal NI01 run. Any material scientific change returns to Analyst. No experiment is executed by this handoff.
 
 ## Control-plane streams consumed
 
-`ops/*` branches were treated only as designated mailboxes; current remote scientific refs/evidence override stale handoffs.
+All `ops/*` branches were treated only as designated mailboxes. Current remote refs and exact research/evidence objects were re-fetched independently.
 
-- Control Brain designated latest commit consumed: `bab2933fdfed743b6dc43d911e06c710dc0e56a6` on branch tip `b9ce2adde261f5cca5691e03ab124aaaed971520`. It predates PD01 terminal evidence and is strategic prior only.
-- MAIN report commit consumed: `8ba5f231becd5c619f7be9a287edfaa4a9091284`, recording terminal PD01.
-- SUB report commit consumed: `f0270cf82be6538e397b3fa36398acbe0eec9857`; SUB reconciled terminal PD01 and remains `no_op`.
-- Literature handoff commit consumed: `525686fa0c14f64426ca7bf5c89f08cd0bcb9c77`; no newer Literature stream.
-- Independent Audit handoff commit consumed: `0c871b1b9b54d35c826a59c5b9925afa55b78d22`; no newer Audit stream and it audits C19-R2, not PD01.
-- Repository Steward commit/state consumed: `e16a3f0dae16b7e93ba73551d56772a366b16b84`, history `2026-09-18 07:50 JST`; governance advisory only and stale relative to both R2 and PD01 terminal evidence.
+- Control Brain latest commit: `bab2933fdfed743b6dc43d911e06c710dc0e56a6`; strategic prior only and stale relative to PD01 terminalization/NI01 selection.
+- MAIN latest report commit: `fa08ff630b886b9ad20981da74356d4d916a9c58`.
+- SUB latest report commit: `e5ae9d151fecb5508d8783d1b153b97747033a34`.
+- Literature handoff commit: `525686fa0c14f64426ca7bf5c89f08cd0bcb9c77`.
+- Independent Audit handoff commit: `0c871b1b9b54d35c826a59c5b9925afa55b78d22`.
+- Repository Steward latest commit/state: `5803ae0dda7cc04748fde902e7e71d235b1bafa1`, 13:50 JST; governance advisory only.
 
-## New repository evidence
+## New repository evidence and readiness
 
-PD01 terminal commit independently records exact package/identity/protocol binding, preserved raw digest, TEST target digest, preservation commit, workflow ID/attempt, terminal class, and primary statistics. Raw preservation occurred before TEST target materialization; the MAIN reconciliation records `1024` histories / `2048` model-score rows, successful independent byte/digest re-fetch, and exact cardinality/order checks.
+There is **no new formal scientific measurement** this cycle. Authoritative evidence remains three terminal annotated tags: C19-v4, C19-R2, and PD01.
 
-Scientific interpretation is deliberately narrow: this registered remote-history effect is **reduced by the exact fixed 64-state contractive fading-memory reservoir under the registered task, resources, readout, lags, metric and clustering**. It does not prove SparkBrain is globally equivalent to that reservoir, but it eliminates this PD01 discriminator as support for a stronger persistent-memory novelty claim.
+The new information is a prospectively complete NI01 readiness object:
+
+- scientific question: whether native No-Ignition adds selective decision value beyond an ordinary target-blind confidence-abstention head built from the same per-step probability vector;
+- candidate: unchanged native `full` SparkBrain / default `BrainConfig`, no TEST adaptation and no target access;
+- comparator: zero-trainable-parameter confidence abstention, one scalar threshold per world selected **only from target-free DEV** to match native coverage;
+- worlds: `reliability_world`, `delayed_evidence_world`, `contradiction_world`;
+- DEV: 256 episodes/world, seeds `510000..510255`;
+- TEST: 512 episodes/world, seeds `610000..610511`, 30 steps/episode, total `1536` episodes / `46080` raw steps;
+- primary effect: comparator selective-decision loss minus candidate loss, equal-world weighted;
+- statistics: episode-cluster stratified bootstrap within world, 10,000 resamples, seed `74017`, Type-7 two-sided 95% CI;
+- PASS: every-world coverage guard `<=0.03`, overall effect CI lower `>=0.02`, and every world point effect `>0`;
+- FAIL: coverage guard passes and effect CI upper `<=0.005`;
+- otherwise `INCONCLUSIVE`.
+
+Claim boundary is intentionally narrow. A PASS would show added value over **this exact coverage-matched max-confidence abstention comparator on these three registered noisy/unresolved worlds and metric**. It would not by itself establish full H4 generality, OOD generalization, or a novel computational principle. A FAIL would reduce this registered NI01 discriminator to ordinary confidence abstention under the same narrow contract, not prove No-Ignition is globally useless.
 
 ## External knowledge integration
 
 ### `external_input.literature`
 
-No new Literature handoff this cycle. Existing literature still says extracted/learned automata, PSR/TPSR, epsilon-machine/causal-state representations, and reservoir/fading-memory systems are ordinary reduction classes; `local`, `pre-semantic`, `history-derived`, or `persistent` alone is not a defensible novelty axis.
+No new Literature handoff this cycle. Existing reduction literature continues to constrain C19/PD01 novelty claims, but it does not supply a new NI01-specific blocker. NI01 already uses the ordinary-abstention null named by canonical H4, so no prospective baseline change is warranted now.
 
-What changes is the **use** of that prior knowledge after PD01 FAIL: do not climb an ever-stronger comparator ladder simply to rescue the C19/PD01 story. Future allocations should favor a genuinely independent scientific question with a prospectively fixed ordinary baseline. A stronger memory comparator is justified only if independently motivated before a new outcome, not because PD01 failed.
+Affected lines: `C19_R2`, `PD01`, programme novelty, and indirectly `NI01/H4` through the general rule that ordinary reductions must be tested before stronger claims.
 
-Affected lines: `PD01`, `C19_R2`, programme novelty, persistent-dynamics residual, future frontier selection.
+Prospective impact: **none to the frozen NI01 contract**. Do not retrofit stronger abstention heads, OOD worlds, or additional diagnostics into the current NI01 identity after this authority. Any broader H4/OOD test must be a fresh future object.
 
-Allocation impact: Literature informs the pivot away from rescue ladders, but the allocation change is caused by fresh PD01 terminal repository evidence, not by a new paper/update.
+Allocation impact: none; NI01 was selected from canonical H4 by MAIN before any NI01 formal outcome.
 
 ### `external_input.audit`
 
-No new Audit handoff this cycle. Latest independent audit remains C19-R2 `ROBUST_SO_FAR`, independently reproducing its cluster-aware `REDUCED_BY_FSA` result and confirming raw-before-target integrity.
+No new Audit handoff this cycle. Latest Audit remains C19-R2 `ROBUST_SO_FAR`. PD01 has not yet received a fresh independent terminal audit.
 
-PD01 itself has **not yet received a fresh independent terminal audit**. The next audit should verify package/STARTED/preserve/tag chain, raw-before-target order, independent digest/cardinality checks, base-world clustering, deterministic scoring, the preregistered FAIL threshold, and the narrow claim boundary.
+This does **not** block NI01 because NI01 is independently motivated by H4 and its contract explicitly excludes PD01/C19 outcomes from comparator inputs and rationale. A fresh PD01 audit remains high-value, and any future object whose rationale materially depends on PD01 should consume that audit before STARTED.
 
-Allocation impact: none. PD01 terminal evidence is canonical repository evidence; audit is a high-value independent check, not a prerequisite for acknowledging the existing terminal class. If a future object's rationale materially relies on PD01, complete the audit before formal STARTED.
+Allocation impact: none.
 
 ## SUB operating mode / exploratory review
 
-Latest SUB mode: **`no_op`**. There is no current incubator candidate, so `sub_exploratory_review` is not applicable and no five-way incubator classification is emitted.
+Latest SUB mode is **`no_op`**. There is no incubator candidate, so `sub_exploratory_review` is not applicable. Formal `sub_lane: null` and `sub_fallback: null` remain correct.
 
-Formal `sub_lane: null` and `sub_fallback: null` remain correct. Do not invent parallel formal work merely to occupy SUB. If a genuinely distinct line later appears, SUB may use bounded synthetic/development-only Exploratory Incubator mode under strict NON_EVIDENTIARY status, but it must not become a rescue path for C19/R2/PD01 and must not take any MAIN blocker.
+SUB must not take NI01 candidate/comparator, gate repair, authority binding, workflow, STARTED, preservation, scorer, evidence, or any other MAIN blocker. If a genuinely distinct question later appears naturally, SUB may incubate it only under synthetic/development-only NON_EVIDENTIARY rules; no such object exists now.
 
 ## Active-line review
 
 | Line | Strongest evidence / status | Consumed identity / blocker | Shortest path to NEW information | Value / distance | Role |
 |---|---|---|---|---|---|
-| A01 | `MIXED_PROGRAMME_CLOSED` | prior formal objects consumed/closed | fresh independently motivated programme only | medium / far | closed |
-| RV01 | `DEVELOPMENT_POSITIVE_REDUCIBLE`; bounded incubator budget exhausted | existing exploratory work NON_EVIDENTIARY | entirely fresh prospective object with ordinary comparator | medium / medium | secondary |
+| A01 | `MIXED_PROGRAMME_CLOSED` | prior objects closed/consumed | fresh independent programme only | medium / far | closed |
+| RV01 | `DEVELOPMENT_POSITIVE_REDUCIBLE`; incubator budget exhausted | exploratory outputs NON_EVIDENTIARY | fresh prospective object only | medium / medium | secondary |
 | RV02 | `TERMINAL_CONSTRUCTION_NEGATIVE` | terminal | fresh object only | low-medium / far | terminal |
 | CX/CX01 | `TERMINAL_FORMAL_NEGATIVE` | terminal | fresh object only | low-medium / far | terminal |
-| H8/C08 | terminal causal-specialization negative | terminal | distinct prospective object | low-medium / far | terminal |
-| H9/C07 | `PRE_START_UNDERSPECIFIED` | state/reset/resource contract unresolved | only if independently revived with exact prospective contract | medium / medium | paused secondary |
-| C19-v4 | `TERMINAL_PASS_NARROW_REPRESENTATION_GAIN / WEAKENED_NOT_INVALID` | immutable evidence | no rerun; interpretation bounded by later reductions | completed | historical central |
-| C19-R1 | scientifically unresolved / operationally terminated | v1/v2 consumed after post-START failures | no v3 / no rescue | low now | closed operationally |
-| C19-R2 | `TERMINAL_REDUCED_BY_FSA / ROBUST_SO_FAR_AUDITED` | consumed terminal identity | STOP | completed | closed primary |
-| **PD01** | **`TERMINAL_FAIL_REDUCED_BY_FADING_MEMORY`** | **consumed/no-retry** | **STOP; independent audit only** | completed | closed primary |
-| **Next frontier** | **not yet selected** | **no fresh formal identity or frozen contract exists** | **prospectively select/specify one genuinely independent question, or explicitly conclude no high-value object** | **very high / near-medium** | **MAIN** |
+| H8/C08 | terminal causal-specialization negative | terminal | distinct fresh object | low-medium / far | terminal |
+| H9/C07 | `PRE_START_UNDERSPECIFIED` | state/reset/resource contract unresolved | fresh exact prospective contract | medium / medium | paused secondary |
+| C19-v4 | `TERMINAL_PASS_NARROW_REPRESENTATION_GAIN / WEAKENED_NOT_INVALID` | immutable | no rerun; interpretation bounded by R2 | completed | historical central |
+| C19-R1 | scientifically unresolved / operationally terminated | v1/v2 consumed post-START failures | no v3 / no rescue | low now | closed operationally |
+| C19-R2 | `TERMINAL_REDUCED_BY_FSA / ROBUST_SO_FAR_AUDITED` | consumed/no-retry | STOP | completed | closed primary |
+| PD01 | `TERMINAL_FAIL_REDUCED_BY_FADING_MEMORY` | consumed/no-retry | STOP; independent audit only | completed | closed primary |
+| **NI01 / H4** | **`PRE_START_READY_FOR_CONDITIONAL_ONE_WAY_AUTHORITY`** | **identity unreserved; no STARTED/preserve/evidence** | **authority binding + final exact-head revalidation -> exactly one run** | **very high / near** | **MAIN primary** |
 
 ## Parallel decomposition
 
 ### `main_lane`
 
-`NEXT_FRONTIER_PROSPECTIVE_SELECTION`
+`NI01_NATIVE_NO_IGNITION_SELECTIVE_PREDICTION_ONE_WAY`
 
-MAIN owns the post-terminal programme synthesis and all critical-path work for whichever fresh primary object is eventually selected. In this run/phase MAIN may:
+MAIN owns **all** critical-path work: authority/admission metadata, source/protocol/package/runtime binding, candidate/comparator implementation, target-free DEV threshold derivation, workflow/runner, CI/pre-START repair, STARTED/no-clobber, TEST raw acquisition, preservation, independent refetch/digest/cardinality, target materialization, join, scoring/bootstrap, terminal evidence, and exact-head reconciliation.
 
-- reconcile canonical terminal evidence and independent literature/audit constraints;
-- compare genuinely independent residual questions by expected information gain, reduction risk, implementation distance and identifiability;
-- prospectively specify **at most one** candidate with scientific question, fixed mechanism/candidate, ordinary baseline/comparator, inputs/resources, protocol, numeric success/failure/inconclusive criteria, fresh identity plan, exact source/package/runtime bindings, and integrity gates;
-- use only synthetic/development-only prototyping needed to determine whether the specification is coherent, clearly labeled NON_EVIDENTIARY.
+Formal identity plan: `ni01-no-ignition-selective-prediction-official-v1`.
 
-MAIN must STOP at `NEXT_OBJECT_READY_FOR_ANALYST_REVIEW`. No formal identity reservation/consumption, STARTED, official TEST access, preserve/evidence creation, or one-way execution is authorized by this handoff.
+Conditional execution authority: **YES, exactly once**, only after consuming this handoff and satisfying every GO gate below.
 
 ### `sub_lane`
 
@@ -104,91 +108,84 @@ MAIN must STOP at `NEXT_OBJECT_READY_FOR_ANALYST_REVIEW`. No formal identity res
 
 ### `no_sub_lane_reason`
 
-No currently defined independent secondary object is both scientifically worthwhile and prospectively complete. H9/C07 remains under-specified, RV01 incubator budget is exhausted, and any C19/PD01 follow-up chosen because of the observed failures would risk post-outcome rescue. SUB therefore remains `no_op` unless a distinct NON_EVIDENTIARY incubator question arises naturally.
+No independent formal secondary object is prospectively complete. NI01/H4 is now the MAIN frontier; H9/C07 remains under-specified; RV01 exploratory budget is exhausted; terminal C19/R2/PD01 lines must not be reopened. A fake lane would reduce role separation rather than increase information gain.
 
 ## `blocked_until`
 
-Formal scientific START is blocked until:
+NI01 formal STARTED remains blocked until MAIN:
 
-1. a fresh next object is independently motivated rather than outcome-rescue of C19-R2 or PD01;
-2. its full candidate/comparator/input/resource/protocol/statistical contract and numerical falsifiers are prospectively fixed;
-3. a fresh identity/namespace plan is collision-free and exact source/protocol/package/runtime/input/scorer/preserver bindings are defined;
-4. same-final-SHA CI/pre-START/review gates are specified and green;
-5. a fresh Evidence Analyst handoff explicitly authorizes formal STARTED;
-6. if the new object's rationale materially depends on PD01's terminal claim, a fresh independent PD01 audit is consumed before STARTED.
+1. consumes this exact fresh Analyst handoff and binds its authority without changing NI01 science;
+2. re-fetches `research/ni01-no-ignition-selective-prediction-spec-20260918` and proves the intended final execution SHA still has the frozen contract/source/scorer bindings;
+3. confirms `ni01-no-ignition-selective-prediction-official-v1` is fresh/unSTARTED/unconsumed and control/preserve/evidence namespaces remain collision-free;
+4. if authority/admission packaging changes the research/execution SHA, re-runs ordinary CI and dedicated NI01 pre-START on that **same final SHA** and obtains green results;
+5. confirms the target-blind observation projection prevents truth/`decision_justified`/target/scenario-tag leakage before raw preservation.
 
 ## Prospective outcome contingencies
 
-Observed root: **`PD01_TERMINAL_FAIL_REDUCED_BY_FADING_MEMORY`** → hard STOP for PD01.
+Observed root: **`NI01_PRE_START_READY_FOR_CONDITIONAL_ONE_WAY_AUTHORITY`**.
 
-Current MAIN frontier is pre-formal selection, therefore scientific PASS/FAIL branches are deliberately **not armed** yet:
+- `PRE_START_BLOCKER_MECHANICAL`: MAIN may repair only science-invariant mechanical defects; every head change requires all same-final-SHA gates again.
+- `PRE_START_SEMANTIC_GAP`: STOP; return for fresh Analyst review. Do not alter worlds, seeds, candidate dynamics, comparator privilege/selection, metric, coverage guard, bootstrap, thresholds, runtime/device, join semantics, or evidence order under this authority.
+- GO -> fresh identity/collision check -> STARTED/no-clobber exactly once -> target-free DEV threshold derivation -> target-blind TEST raw -> immutable preserve -> independent remote refetch/digest/cardinality -> TEST target materialization -> unique/total/fail-closed join -> deterministic score/bootstrap -> annotated terminal evidence.
+- `PASS_NATIVE_NO_IGNITION_ADDS_SELECTIVE_VALUE`: terminal STOP. Claim only the registered three-world selective-value result; no same-run OOD/general novelty extension.
+- `FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION`: terminal STOP; no rescue, comparator shopping, or NI01-v2.
+- `INCONCLUSIVE`: terminal STOP; no threshold/world/coverage retuning.
+- `INVALID_EVIDENCE`: consumed identity, terminal STOP; no salvage/retry.
+- `POST_START_FAILURE`: consumed identity, terminal STOP; no salvage/retry/automatic successor.
 
-- `NEXT_FRONTIER_NO_HIGH_VALUE_OBJECT`: STOP formal execution; continue read-only synthesis/literature/audit only.
-- `NEXT_FRONTIER_CANDIDATE_UNDERSPECIFIED`: MAIN may continue prospective NON_EVIDENTIARY specification/mechanical dev work only.
-- `NEXT_OBJECT_READY_FOR_ANALYST_REVIEW`: STOP and return for fresh authority.
-- `PRE_START_BLOCKER`: not yet applicable to a formal object; once a candidate is frozen, only science-invariant mechanical blockers may be repaired before a fresh same-head revalidation.
-- `PASS`, `FAIL`, `INCONCLUSIVE`, `INVALID_EVIDENCE`, `POST_START_FAILURE`: `NOT_ARMED_UNTIL_NEW_OBJECT_AND_NUMERIC_CONTRACT_ARE_FROZEN`.
-
-No same-run continuation from PD01 FAIL into a successor experiment is valid.
+Same-run continuation is allowed only through the already fixed NI01 integrity/execution chain to terminal evidence. No result branch authorizes a new scientific object in the same run.
 
 ## `do_not_touch`
 
-- PD01 exact package, STARTED, preserve commit/ref, terminal evidence commit/tag, identity, raw/targets/statistics;
-- C19-R2 exact package, STARTED, preserve/statistics/evidence/tag;
-- C19-v4 immutable evidence and narrow PASS;
-- consumed R1-v1/v2 and other consumed C19/A01/RV01/RV02/CX identities;
+- C19-v4, C19-R2, PD01 authoritative evidence/tags and all consumed identities;
+- C19-R1 v1/v2 consumed identities;
+- legacy freeze refs;
 - scheduler definitions;
-- legacy freeze refs or authoritative evidence tags;
-- SUB exploratory output as scientific evidence;
-- any new candidate/comparator/threshold selected specifically to rescue an observed R2/PD01 failure.
+- SUB exploratory output as evidence;
+- NI01 scientific contract after authority: worlds/seeds, candidate dynamics, comparator inputs and target-free coverage-matching rule, loss, coverage guard, PASS/FAIL thresholds, cluster unit/bootstrap, runtime/device, join key, raw-before-score integrity order;
+- any NI01 comparator/world/threshold change selected after observing formal TEST outcomes.
 
 ## Top 3
 
-1. **MAIN — close PD01 and perform next-frontier prospective selection/specification; return one fully specified independent candidate or explicitly `NO_HIGH_VALUE_OBJECT`.** Information value `VERY_HIGH`; distance `NEAR_TO_MEDIUM`.
-2. **Independent Audit — fresh read-only audit of PD01 terminal chain and narrow claim boundary.** Information value `HIGH`; distance `NEAR`.
-3. **SUB — remain `no_op`; if and only if a distinct independent question naturally appears, incubate it with synthetic/dev-only NON_EVIDENTIARY hard bounds.** Information value `LOW_TO_MEDIUM`; distance `OPTIONAL`.
+1. **MAIN — bind fresh Analyst authority to NI01; if the final exact execution SHA remains science-identical, collision-free, and same-SHA CI/pre-START green, execute exactly one NI01 formal one-way chain.** Information value `VERY_HIGH`; distance `NEAR`.
+2. **Independent Audit — fresh read-only PD01 terminal audit; after NI01 terminalization, audit the NI01 identity/preserve/join/scorer/claim chain before any broader H4 claim.** Information value `HIGH`; distance `NEAR_TO_MEDIUM`.
+3. **SUB — remain `no_op`; incubate only a genuinely distinct synthetic/dev NON_EVIDENTIARY question if one naturally appears.** Information value `LOW_TO_MEDIUM`; distance `OPTIONAL`.
 
 ## #1 GO / STOP
 
-Current `GO` is **selection/specification only**, not formal execution.
+### GO
 
-MAIN may read canonical evidence, compare hypotheses prospectively, draft a new protocol, bind prospective source/package/runtime/input/scorer/preserver identities, and use bounded synthetic/dev-only checks. MAIN must not create or consume a formal one-way identity, create STARTED, access official TEST targets/data, preserve formal raw, score formal evidence, or create evidence tags.
+- identity `ni01-no-ignition-selective-prediction-official-v1` fresh / unSTARTED / unconsumed;
+- no control/preserve/evidence namespace collision;
+- exact source/protocol/package/input/runtime/candidate/comparator/scorer/preserver bindings frozen;
+- scientific contract unchanged from the reviewed exact head;
+- ordinary CI and dedicated NI01 pre-START green on the same final execution SHA;
+- STARTED/no-clobber before any official TEST read;
+- DEV threshold derivation target-free only;
+- TEST raw contains no truth/target/`decision_justified`/target-derived scenario tags;
+- immutable raw preservation before TEST target materialization/scoring;
+- independent re-fetch verifies bytes/digest/cardinality before targets;
+- unique/total/fail-closed join on `(world, seed, step_index)`;
+- deterministic scoring/bootstrap uses the registered coverage guard and numeric classification.
 
-For any future formal object, the next handoff must re-check all execution gates explicitly:
+Scientific falsifiers are already fixed prospectively: PASS requires coverage guard plus effect CI lower `>=0.02` and every-world point effect `>0`; FAIL requires coverage guard plus effect CI upper `<=0.005`; all other valid outcomes are INCONCLUSIVE.
 
-- identity is fresh / unSTARTED / unconsumed and control/preserve/evidence namespaces are collision-free;
-- exact source/protocol/package/input/runtime/candidate/comparator/scorer/preserver binding is frozen;
-- scientific falsifiers and numeric PASS/FAIL/INCONCLUSIVE thresholds are fixed **before** identity/STARTED;
-- ordinary CI, dedicated pre-START and review are green on the same final SHA;
-- STARTED/no-clobber occurs before official TEST read;
-- integrity order is target-blind raw → immutable preserve → independent refetch/digest/cardinality → targets → unique/total/fail-closed join → deterministic scoring → terminal evidence;
-- `INVALID_EVIDENCE` / `POST_START_FAILURE` consume the identity and STOP without salvage/retry.
+### STOP
 
-Current `STOP`: any attempt to choose the next object by tuning against R2/PD01 outcomes, comparator-shop after observing formal results, reuse a consumed identity, retrofit frozen evidence, or proceed to STARTED before fresh Analyst authority.
-
-Scientific falsifiers for the next object are currently **undefined by design**. If they cannot be specified prospectively, the object is not ready and must not formalize.
+STOP before STARTED if any scientific selection must change, source/binding invariance cannot be proved, identity is not fresh, namespace collision exists, or same-final-SHA gates cannot be made green without semantic change. After STARTED, any invalid evidence or execution failure consumes the identity and terminates the line without retry or salvage.
 
 ## Governance advisory
 
-Fresh remote verification shows:
+Fresh remote verification: `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`, `protected=false`; repository rulesets `0`; legacy `freeze/*` branches `13`; authoritative annotated `evidence/*` tags `3`; open non-PR Issue `#139`; open PRs `#148/#149`.
 
-- `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`, `protected=false`;
-- repository rulesets: `0`;
-- legacy `freeze/*` branches: `13`;
-- open non-PR Issue: `#139` only;
-- open PRs: `#148`, `#149`;
-- authoritative annotated `evidence/*` tags: now **3** — C19-v4, C19-R2, PD01.
+Repository Steward at 13:50 corrected #139's stale evidence-tag inventory from one to three while leaving the substantive tag-protection gap open. This is governance advisory only and does not alter science. Freeze migration remains deferred until protected migration semantics exist.
 
-Issue #139 remains substantively valid because server-side tag update/delete protection is still absent, but its body is now more stale: it says there is one authoritative evidence tag while there are three. Do not mass-migrate/delete legacy freeze refs before protected migration semantics exist.
-
-Repository Steward's last report is stale (07:50, pre-R2/PD01 terminal) but its durable advice remains valid: keep #139 open, preserve legacy freeze refs, and promote only hypothesis-independent helpers after extraction/review.
-
-Outcome-independent `main` promotion candidates remain generic exact runtime/source/binding verification, STARTED/no-clobber/collision primitives, raw preserve/refetch/digest tooling, target-free grouped-cluster validators, fail-closed joins, deterministic scorer/bootstrap fixtures, and evidence-binding validators. Scientific semantics for R2/PD01/future candidates remain research-local.
+Steward's read-only promotion inventory identifies outcome-independent candidates for future small neutral `main` extraction: anonymous event/distribution primitives, architecture-neutral comparator protocol, snapshot/restore invariants, descriptive resource accounting, privilege-schema validation, transcript hashing/validation, and generic leak/self-training/normalization tests. G3-G8 scientific implementations/taxonomy and CX01 world/threshold semantics remain research-local. No promotion or merge is authorized here.
 
 ## Orchestrator handoff
 
-MAIN takes **`NEXT_FRONTIER_PROSPECTIVE_SELECTION`** and owns ALL work needed to prospectively define the next primary object. MAIN must not automatically continue C19/R2/PD01 or use their outcomes to tune a successor. MAIN stops at `NEXT_OBJECT_READY_FOR_ANALYST_REVIEW` or `NO_HIGH_VALUE_OBJECT`.
+MAIN takes **NI01/H4** and owns **ALL critical-path fixes**. Formal SUB takes nothing (`sub_lane=null`, `sub_fallback=null`); SUB may only incubate a distinct line under NON_EVIDENTIARY rules if one naturally arises. MAIN must not absorb future reserved SUB work; none is reserved now. SUB must not take NI01 blockers. Neither worker touches consumed C19/R1/R2/PD01 evidence, legacy freezes, or scheduler definitions.
 
-Formal SUB takes nothing: `sub_lane=null`, `sub_fallback=null`. SUB remains no-op; it may incubate only an independently motivated, distinct synthetic/dev-only question under strict NON_EVIDENTIARY rules. MAIN must not absorb any future reserved SUB object, and SUB must not take MAIN selection/specification blockers.
+Repartition only if a fresh external/audit finding materially invalidates NI01's prospective contract before STARTED, NI01 develops a semantic gap that cannot be repaired science-invariantly, or SUB independently produces a genuinely prospectively complete secondary object. Current Literature/Audit/SUB inputs do not require repartition.
 
-Neither worker touches consumed/immutable PD01, R2, R1, C19-v4 evidence or scheduler definitions. Repartition only if (a) MAIN produces a fresh prospectively complete candidate, (b) fresh audit materially invalidates a premise used by the next object, or (c) SUB independently produces a candidate strong enough for fresh prospective formalization. No scientific result branch is authorized for same-run continuation because no new formal object is armed.
+Same-run MAIN continuation is authorized through `PRE_START_BLOCKER_MECHANICAL` repair/revalidation and, once all GO gates pass, through the fixed exactly-one NI01 chain to any terminal PASS/FAIL/INCONCLUSIVE/INVALID_EVIDENCE/POST_START_FAILURE evidence. No terminal result authorizes same-run successor science.
