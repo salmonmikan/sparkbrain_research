@@ -1,166 +1,137 @@
 {
-  "timestamp": "2026-09-18T10:51:54+09:00",
+  "schema_version": 7,
   "role": "CONTROL_BRAIN",
-  "control_plane_mailbox_semantics_respected": true,
-  "main_head": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-  "control_prior_head": "3bcd000f7e31bc8df8d59ca5ddec88ff5b847e22",
-  "evidence_analyst_commit_consumed": "28108fffc2e4e346bff79bf3e38d1cac27d3265c",
-  "doctrine_change": false,
-  "central_theory": "SparkBrain remains a persistent dynamical cognitive architecture / experimental testbed. No new computational principle is established. A surviving novelty claim must remain after finite-state, predictive-state, fading-memory/reservoir, and ordinary plasticity/eligibility/slow-state reductions and be specifically tied to actual historical lineage / causal credit rather than generic persistent memory.",
+  "analysis_time": "2026-09-18T14:50:00+09:00",
+  "role_selection": {
+    "selected_role": "CONTROL_BRAIN",
+    "slot": "14:50 JST"
+  },
+  "repository": {
+    "main_head": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "orchestrator_branch_head": "42f1b1d8c54a7fd22f1547eab4c90dd8bc62b641",
+    "active_research": "research/ni01-no-ignition-selective-prediction-spec-20260918",
+    "active_research_head": "2664951b65dd18883d3d80862e80b86ac66cf24f",
+    "evidence_tag_count": 3,
+    "legacy_freeze_branch_count": 13,
+    "ruleset_count": 0,
+    "open_prs": [148, 149]
+  },
+  "consumed_handoffs": {
+    "evidence_analyst": "e22b401013b01517890d48e33debdd79bb522e65",
+    "main_orchestrator_latest_commit": "58a52882f23e2dc64c1262ec2b0aac92d75b8356",
+    "repository_steward": "5f0faac963861b47b3385083454fdd09e3ff8f4c",
+    "literature": "525686fa0c14f64426ca7bf5c89f08cd0bcb9c77",
+    "audit": "0c871b1b9b54d35c826a59c5b9925afa55b78d22"
+  },
+  "central_theory": {
+    "programme_frame": "PERSISTENT_DYNAMICAL_COGNITIVE_ARCHITECTURE_TESTBED",
+    "doctrine_change": false,
+    "narrow_alive": "residual actual-historical-lineage causal credit after ordinary finite-state/predictive-state/recurrent/fading-memory/plasticity reductions"
+  },
   "scientific_state": {
-    "programme": "REFRAMED_TESTBED_NO_SUPPORTED_NEW_COMPUTATIONAL_PRINCIPLE",
-    "c19_v4": {
-      "status": "TERMINAL_PASS_NARROW_REPRESENTATION_RESULT_ONLY",
-      "interpretation": "Preserve as a truth-free representation result; do not use it as evidence for a novel temporal/state mechanism."
+    "c19_v4": "TERMINAL_PASS_NARROW_REPRESENTATION_RESULT_ONLY",
+    "c19_r2": "TERMINAL_REDUCED_BY_FSA_ROBUST_SO_FAR",
+    "pd01": "TERMINAL_FAIL_REDUCED_BY_FADING_MEMORY"
+  },
+  "primary_frontier": {
+    "line": "NI01/H4",
+    "identity": "ni01-no-ignition-selective-prediction-official-v1",
+    "identity_status": "UNRESERVED_UNCONSUMED",
+    "started": false,
+    "preformal_run": {
+      "id": 35308269458,
+      "conclusion": "success"
     },
-    "c19_r2": {
-      "status": "TERMINAL_REDUCED_BY_FSA",
-      "evidence_commit": "6197fa801a78a0c5de4c2b6ff5d03216ac5539db",
-      "evidence_tag": "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
-      "primary_effect_c19v4_minus_r2": -0.2462308568887407,
-      "cluster_bootstrap_95_ci": [
-        -0.2554750732756702,
-        -0.23690126111231016
-      ],
-      "cluster_count": 204,
-      "bootstrap_resamples": 10000,
-      "identity_consumed": true,
-      "retry_allowed": false,
-      "strategic_action": "Close C19-specific temporal/state reduction work unless a genuinely distinct independent claim arises."
+    "ci_run": {
+      "id": 35308269286,
+      "conclusion": "success"
     },
-    "pd01": {
-      "branch": "research/pd01-fading-memory-preformal-20260918",
-      "head": "ea2a8b4a5f244d601782ecb302760c49ee27e8c1",
-      "status": "FORMAL_CONTRACT_READY_FOR_ANALYST_REVIEW",
-      "proposed_identity": "pd01-long-history-fading-memory-official-v1",
-      "identity_reserved": false,
-      "identity_consumed": false,
-      "started": false,
-      "formal_evidence_exists": false,
-      "prestart_run": "35295370268:success",
-      "ordinary_ci_run": "35295370271:success",
-      "compatibility_run": "35295370202:success",
-      "strategic_issue": "SparkBrain has plasticity enabled while the comparator is a fixed-weight contractive 64-D reservoir. Exposed readout dimension is matched, but persistent-memory resources may not be. This is not automatically invalid; Evidence Analyst must decide prospectively whether the asymmetry is intentional/acceptable and cap interpretation accordingly.",
-      "if_admitted_interpretation_cap": "A PASS means only that SparkBrain beats the specified fixed-weight contractive reservoir under the stated privileges. Before any novelty claim, test a conventional mutable-weight / eligibility / slow-state comparator.",
-      "if_resource_match_required": "Do not freeze or execute the current contract; prospectively revise the comparator/resource contract before any outcome is observed."
-    }
+    "interpretation": "PASS narrow only; FAIL closes registered discriminator; no automatic successor",
+    "operational_blocker": "MAIN PRIMARY lease is stale RUNNING with no durable MAIN advancement after 13:47; fresh repository refs still show no NI01 STARTED/preserve/evidence"
   },
   "external_input": {
     "literature": {
+      "commit": "525686fa0c14f64426ca7bf5c89f08cd0bcb9c77",
       "role": "LITERATURE_REDUCTION_SCOUT",
-      "handoff_commit": "525686fa0c14f64426ca7bf5c89f08cd0bcb9c77",
-      "state_commit": "cdf151a0d915957dda86233367fa660bca0c3ee0",
-      "affected_lines": [
-        "PROGRAMME_NOVELTY",
-        "C19_R2_FSA_STATE_TRACKER",
-        "POST_R2_REDUCTION",
-        "PERSISTENT_DYNAMICS_RESIDUAL",
-        "PD01"
-      ],
-      "strategic_impact": "Confirms stronger reduction pressure from PSR/epsilon-machine/local causal state/reservoir fading-memory and supports learned/extracted finite-state abstractions before bespoke rescue mechanisms.",
-      "novelty_bar_change": "No doctrine change; reinforces that local/pre-semantic/history-derived predictive organization is not itself novel.",
+      "affected_lines": ["C19", "PD01", "future novelty bar"],
+      "strategic_impact": "retain FSA->learned/extracted automata->PSR/epsilon-machine->reservoir/fading-memory->lineage residual reduction ladder",
       "questions_to_evidence_analyst": [
-        "After exact FSA reduction, keep learned/extracted finite-state and predictive-state reductions ahead of stronger novelty claims.",
-        "For PD01 and later work, make the memory/resource privileges of comparators explicit before STARTED."
+        "keep NI01 interpretation narrow",
+        "do not retrofit stronger baselines into current identity"
       ]
     },
     "audit": {
+      "commit": "0c871b1b9b54d35c826a59c5b9925afa55b78d22",
       "role": "INDEPENDENT_AUDITOR",
-      "handoff_commit": "0c871b1b9b54d35c826a59c5b9925afa55b78d22",
-      "mailbox_head_after_persistence": "d14ac2c722feb1ae81a470cc1eef8b4052c2e719",
       "classification": "ROBUST_SO_FAR",
-      "affected_lines": [
-        "C19_R2_FSA_STATE_TRACKER",
-        "C19_V4_INTERPRETATION",
-        "PROGRAMME_REDUCTION_STRATEGY"
-      ],
-      "strategic_impact": "Independently confirms the terminal R2 reduction, integrity chain, recomputed aggregate contrast, all-negative seed contrasts, and that pair-IID sensitivity does not explain away the reduction.",
-      "novelty_bar_change": "No further narrowing beyond current doctrine; provides stronger confidence that the C19 temporal/state mechanism should remain closed.",
+      "affected_lines": ["C19-R2"],
+      "strategic_impact": "C19 temporal/state rescue remains closed; PD01 fresh audit desirable but nonblocking",
       "questions_to_evidence_analyst": [
-        "Consume this fresh audit explicitly in the next cycle.",
-        "Preserve C19-v4 only as the narrower representation result and do not reopen C19 rescue work."
+        "audit NI01 after terminalization",
+        "obtain independent PD01 read-only audit"
       ]
     }
   },
   "sub_incubator": {
-    "current_mode": "no_op",
-    "classification": "NO_ACTION",
-    "scheduler_status": "NO_OP_BY_DESIGN",
-    "independent_of_main": true,
-    "non_evidentiary_boundary_respected": true,
-    "assessment": "Prior bounded exploratory probes are exhausted and did not warrant direct formalization. Do not manufacture activity or assist MAIN/PD01 under an incubator label."
+    "mode": "no_op",
+    "classification": "NO_OP_BY_DESIGN",
+    "independent": true,
+    "formalization": "NO_ACTION",
+    "assessment": "correctly avoiding duplicated MAIN work and exhausted incubator line"
   },
-  "human_directives": [
-    {
-      "id": "HUMAN-20260918-001",
-      "classification": "ACCEPT",
-      "reason": "The request to audit stable outcome-independent reusable CX comparator/model infrastructure for possible promotion to main aligns with repository doctrine and the reduction agenda, while explicitly excluding result-coupled evidence, consumed identities, frozen thresholds/scorers, one-way workflows, and STARTED semantics.",
-      "routing": {
-        "repository_steward": "Perform a read-only structural inventory of G3/G4/G5, G6 VOMM, G7 HTM-inspired temporal memory, G8 spiking temporal memory, architecture-neutral event/contract/adapter interfaces, snapshot/restore, generic resource/privilege accounting, fairness/comparison infrastructure, and reusable result-independent tests/fixtures. Classify assets as main-eligible or science-coupled/research-only.",
-        "main": "Do not divert the PD01 critical path for cleanup or promotion work.",
-        "evidence_analyst": "Use audited assets only as future prospective comparator/baseline candidates when scientifically relevant; do not reinterpret prior CX evidence.",
-        "integration": "If worthwhile, use small coherent PRs with normal review and CI; no wholesale branch merge or cherry-pick of result-coupled/frozen artifacts."
-      },
-      "reconsideration": "Defer or reject any asset that requires result-dependent assumptions, touches immutable/consumed semantics, creates broad merge churn, or delays high-information PD01 work."
-    }
-  ],
+  "human_directive": {
+    "id": "HUMAN-20260918-001",
+    "classification": "ACCEPT",
+    "promotion_direction": "small neutral extraction on current main with fresh CI; no wholesale old-CX branch cherry-pick; keep result/mechanism-coupled assets research-local",
+    "must_not_delay": "NI01"
+  },
+  "programme_drift": {
+    "status": "CONTROLLED",
+    "risk": "stale MAIN PRIMARY lease/durable checkpoint"
+  },
   "repository_doctrine": {
     "status": "PARTIAL_COMPLIANCE_IMPROVING",
-    "main_is_stable_substrate": true,
-    "active_science_off_main": true,
-    "authoritative_evidence_tags": 2,
-    "legacy_freeze_branches_preserved": 13,
-    "repository_ruleset_count": 0,
-    "main_protected": false,
-    "principal_governance_debt": "Server-side protection for authoritative freeze/sealed/formal/evidence namespaces and main remains absent; Issue #139 tracks the gap.",
-    "open_governance_tooling_prs": [
-      {
-        "number": 148,
-        "title": "Add human-directives repository skill",
-        "status": "OPEN_PENDING_NORMAL_REVIEW_CI"
-      },
-      {
-        "number": 149,
-        "title": "Add Git-backed SparkBrain scheduler registry skill",
-        "status": "OPEN_PENDING_NORMAL_REVIEW_CI"
-      }
-    ],
-    "next_steward_direction": "Reconcile the new R2 evidence tag/index where needed, structurally audit HUMAN-20260918-001 assets, and inspect PRs #148/#149 without reinterpreting science or performing scientific merges."
+    "principal_debt": "0 rulesets; main/tag namespaces unprotected"
   },
+  "priorities_12_48h": [
+    "reconcile stale MAIN lease/report then exactly-one NI01 only under fresh authority and exact-green bindings",
+    "audit NI01 after terminalization and obtain a fresh read-only PD01 audit",
+    "preserve terminal/no-retune interpretation; no automatic NI01 successor",
+    "keep neutral CX substrate extraction nonblocking"
+  ],
   "fleet_health": {
     "fleet_status": "YELLOW",
     "critical_failures": [],
-    "scheduler_statuses": {
-      "control_repository_steward_combined": "HEALTHY",
+    "classifications": {
+      "control_steward": "HEALTHY",
       "evidence_analyst": "DELAYED",
-      "research_orchestrator_primary": "DELAYED",
-      "research_orchestrator_relay": "HEALTHY",
-      "research_orchestrator_sub": "NO_OP_BY_DESIGN",
-      "external_research_audit": "DELAYED",
+      "main_primary": "FAILED_OR_INCOMPLETE",
+      "main_relay": "DELAYED",
+      "sub": "NO_OP_BY_DESIGN",
+      "external_research_audit": "HEALTHY",
       "current_state_brief": "DELAYED"
     },
     "operational_defects": [
-      "Evidence Analyst and PRIMARY continue to start materially after nominal cadence, though durable outputs advance.",
-      "The :30 external, :35 SUB, :45 RELAY, :50 control/governance downstream window is dense."
+      "stale MAIN PRIMARY RUNNING lease with no heartbeat/durable report advancement",
+      "runtime slippage and dense :35->:45->:50 downstream window"
     ],
     "efficiency_findings": [
-      "RELAY is useful and continues to recover authority changes between PRIMARY cycles.",
-      "SUB no-op is preferable to fake parallelism when no independent lane exists.",
-      "Both literature and audit outputs are consumed by Control Brain; the fresh 10:30 audit should be consumed by the next Evidence Analyst cycle."
+      "RELAY remains useful as recovery mechanism",
+      "SUB no-op avoids fake parallelism",
+      "both external streams are consumed"
     ],
-    "recommended_scheduler_changes": "None now. Observe another 2-3 cycles; if Control/Steward repeatedly snapshots before RELAY or external persistence completes, consider moving only the downstream read-only control/governance slot 5-10 minutes later."
+    "recommended_scheduler_changes": [
+      "No change now; diagnose MAIN persistence first",
+      "If repeated overlap persists for 2-3 cycles, consider delaying read-only Control/Steward 5-10 minutes"
+    ]
   },
-  "priorities_12_48h": [
-    "Evidence Analyst: consume the fresh R2 audit and exact PD01 head, then rule explicitly on the plastic-SparkBrain versus fixed-reservoir resource asymmetry and interpretation boundary.",
-    "MAIN: execute PD01 only after fresh explicit Analyst admission; otherwise remain pre-START.",
-    "If PD01 passes under the current fixed reservoir, prospectively test a conventional mutable-weight / eligibility / slow-state comparator before any novelty claim.",
-    "Repository Steward: audit HUMAN-20260918-001 reusable assets and reconcile R2 evidence governance without delaying PD01."
-  ],
   "directions_to_evidence_analyst": [
-    "Treat C19-R2 as terminal REDUCED_BY_FSA and explicitly consume independent-audit handoff 0c871b1b9b54d35c826a59c5b9925afa55b78d22.",
-    "Review exact PD01 head ea2a8b4a5f244d601782ecb302760c49ee27e8c1 and decide prospectively whether the plasticity-enabled SparkBrain versus fixed-weight reservoir asymmetry is intentional/acceptable.",
-    "If admitted as-is, cap interpretation and require a conventional mutable-weight / eligibility / slow-state reduction after any PASS.",
-    "If resource matching is required, reject/not-freeze the current contract and revise comparator privileges prospectively before STARTED.",
-    "Do not reopen C19 rescue work and do not force SUB activity."
-  ]
+    "Keep NI01 as the sole MAIN frontier and its current exact prospective semantics unchanged.",
+    "On any NI01 terminal outcome, enforce the fixed narrow interpretation and no automatic successor rule.",
+    "After NI01, prioritize an independent audit before broader H4 interpretation; obtain a fresh PD01 audit separately.",
+    "Do not reopen C19 rescue work.",
+    "Keep SUB null/no-op unless a genuinely distinct independent prospective question appears.",
+    "Treat CX promotion inventory as repository-substrate advice only, not scientific evidence."
+  ],
+  "charter_changed": false
 }
