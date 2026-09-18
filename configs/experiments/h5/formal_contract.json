@@ -20,7 +20,7 @@
     "package_path": "pyproject.toml",
     "package_blob": "49d47f3d65f67f1c0a6b82a3f7fc2d0364e2a88c",
     "h5_module_path": "src/sparkbrain/h5_work.py",
-    "h5_module_blob": "aca6e23dd801230dcd74ef28dd926e1f4adcf06d"
+    "h5_module_blob": "d1ed8c6975803a695eac083a6761de64c29e10e8"
   },
   "runtime_binding": {
     "python": "CPython 3.11.10",
@@ -142,7 +142,7 @@
   },
   "scorer_binding": {
     "function": "sparkbrain.h5_work.score_rows",
-    "module_blob": "aca6e23dd801230dcd74ef28dd926e1f4adcf06d",
+    "module_blob": "d1ed8c6975803a695eac083a6761de64c29e10e8",
     "bootstrap_seed": 75001,
     "bootstrap_replicates": 10000
   },

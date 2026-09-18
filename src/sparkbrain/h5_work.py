@@ -11,7 +11,6 @@ from pathlib import Path
 from .engine import SparkBrain
 from .model import BrainConfig, EventKind, Spark, SparkKind
 
-
 GRAPH_OFFSETS = (1, 7, 23, 61)
 GRAPH_WEIGHTS = (0.18, 0.16, 0.14, 0.12)
 
