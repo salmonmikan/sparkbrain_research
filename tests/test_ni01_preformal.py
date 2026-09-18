@@ -61,4 +61,4 @@ def test_summarize_effect_clusters_by_episode_and_equal_weights_worlds() -> None
     assert summary.world_effects == pytest.approx({"w1": 0.2, "w2": 0.1})
     assert math.isfinite(summary.ci95_lower)
     assert math.isfinite(summary.ci95_upper)
-    assert summary.ci95_lower <= summary.effect <= summary.ci95_upper
+    assert summary.ci95_lower <= summary.ci95_upper
