@@ -1,8 +1,8 @@
 from __future__ import annotations
 
 import json
-from pathlib import Path
 import subprocess
+from pathlib import Path
 
 
 REQUIRED_TOP_LEVEL = {
@@ -56,15 +56,21 @@ def main() -> None:
         raise AssertionError("formal execution must remain unauthorized")
 
     boundary = contract["formal_boundary"]
-    for key in ("STARTED", "official_TEST", "formal_preserve", "formal_scoring", "formal_evidence"):
+    forbidden_boundary_keys = (
+        "STARTED",
+        "official_TEST",
+        "formal_preserve",
+        "formal_scoring",
+        "formal_evidence",
+    )
+    for key in forbidden_boundary_keys:
         if boundary.get(key) != "FORBIDDEN_IN_THIS_PHASE":
             raise AssertionError(f"{key} must remain forbidden in LP01 specification phase")
 
     dev_seeds = set(contract["held_out_construction"]["dev_profile"]["history_seeds"])
     formal = contract["held_out_construction"]["planned_formal_profile"]
-    formal_seeds = set(
-        range(formal["history_seed_start"], formal["history_seed_start"] + formal["history_seed_count"])
-    )
+    formal_seed_stop = formal["history_seed_start"] + formal["history_seed_count"]
+    formal_seeds = set(range(formal["history_seed_start"], formal_seed_stop))
     if dev_seeds & formal_seeds:
         raise AssertionError("DEV and planned formal seed spaces overlap")
     if not formal["must_not_run_before_fresh_analyst_go"]:
@@ -77,12 +83,15 @@ def main() -> None:
         actual = _git_blob(path)
         if actual != expected_blob:
             raise AssertionError(
-                f"authoritative source binding drift for {path}: expected {expected_blob}, got {actual}"
+                f"authoritative source binding drift for {path}: "
+                f"expected {expected_blob}, got {actual}"
             )
 
     for relative in FORBIDDEN_PHASE_PATHS:
         if (root / relative).exists():
-            raise AssertionError(f"formal-only LP01 path exists during specification phase: {relative}")
+            raise AssertionError(
+                f"formal-only LP01 path exists during specification phase: {relative}"
+            )
 
     comparator_names = {row["name"] for row in contract["comparators"]}
     required_comparators = {
