@@ -1,41 +1,40 @@
-# MAIN Orchestrator — NI01 STARTED; fixed one-way execution in progress
+# MAIN Orchestrator — H5 prospective formal contract built; exact-head gates running
 
-Timestamp: `2026-09-18 16:47 JST`  
+Timestamp: `2026-09-18 17:23 JST`  
 Worker role: `main`  
-Execution mode: `RELAY`  
-Latest designated Evidence Analyst handoff: `34ad5e0fa1a31cff7b8faebe845cf1d5442a602b` (mailbox tip `f75328c6e32f324287ece53901dd332d764eeef9`)  
-Frozen NI01 execution authority carried by the package/STARTED marker: `d3626617c3b054afd726e468682aaa02d613bca0`
+Execution mode: `PRIMARY`  
+Evidence Analyst authority consumed: `ded9d64a779791cbbcd9fbbff5fb3acb730c4263` (mailbox tip `34756bd0414084ae601a3bc724d5d99101c09676`)
 
-## Collision / authority reconciliation
+## Frontier and reconciliation
 
-RELAY resumed only from PRIMARY's explicit `WAITING_EXTERNAL` checkpoint. Immediately before mutation, the current `main` remained `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; the exact NI01 execution branch remained `research/ni01-no-ignition-selective-prediction-spec-20260918@dbfe7469dbbbc1adbb00789ab382de892a1b3563`; ordinary CI `35319571743` and dedicated formal pre-START `35319571793` were both `completed/success` on that same exact head. The latest Analyst handoff continued to authorize exactly one unchanged NI01 chain, with any semantic/scientific change forbidden.
+The PRIMARY frontier is now `H5_EVENT_ROUTING_WORK_REDUCTION_PROSPECTIVE_SPECIFICATION`. The latest Analyst handoff terminalized NI01/H4 as `FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION` and explicitly authorized only a fresh H5 prospective specification/readiness object, with completion target `H5_FORMAL_CONTRACT_READY_FOR_ANALYST_REVIEW` followed by STOP. No H5 identity, STARTED, official TEST, preserve, formal score, or evidence is authorized.
 
-Fresh namespace checks immediately before STARTED found no NI01 control ref, no NI01 preserve ref, and no NI01 evidence tag. SUB was `no_op` and explicitly avoiding NI01 MAIN-critical work. No fresh PRIMARY `RUNNING` lease on the same object was observed; RELAY claimed the MAIN lease before crossing the formal boundary.
+FAST PATH was used. Current stable substrate was re-fetched directly as `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. The prior MAIN lease was `WAITING_EXTERNAL` on terminal NI01 and stale beyond the collision window; no fresh MAIN `RUNNING` lease existed on the H5 branch/identity, no pre-existing formal H5 branch existed except the explicitly NON_EVIDENTIARY historical SUB incubator, and SUB remained `no_op`. No repository-wide reconciliation was needed.
 
-## STARTED boundary crossed exactly once
+## H5 prospective contract
 
-Using the prospectively fixed `control_ref` from `configs/experiments/ni01/execution_authority.json`, RELAY created:
+A fresh branch was created from current `main`:
 
-- control branch `control/ni01-no-ignition-selective-prediction-started-v1-20260918` from exact package head `dbfe7469dbbbc1adbb00789ab382de892a1b3563`;
-- `artifacts/v03/ni01/official_v1/STARTED.json` with protocol `ni01-no-ignition-selective-prediction-protocol-v1`, identity `ni01-no-ignition-selective-prediction-official-v1`, frozen Analyst authority `d3626617c3b054afd726e468682aaa02d613bca0`, exact package commit `dbfe7469dbbbc1adbb00789ab382de892a1b3563`, and `no_retry: true`;
-- STARTED commit `d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d`.
+`research/h5-event-routing-work-reduction-spec-20260918@c2370cdc658fceab5a69a49a71032efbf4f72ece`
 
-The NI01 identity is therefore **consumed from STARTED onward**. It must not be retried, repaired after consumption, retuned, or silently replaced.
+The package fixes a zero-trainable-parameter SparkBrain event-routed/lazy candidate against a dense-equivalent comparator with the same graph, state equations, parameters, inputs, seeds, numerical precision, and output semantics. The comparator additionally materializes every Spark and audits every graph edge on every queued event. The existing engine's globally dense eligibility-decay loop is counted symmetrically on both implementations rather than omitted from the candidate.
 
-## One-way workflow
+The audited work schema includes queue pushes/pops, source/destination touches, state touches and decay/relaxation evaluations, eligibility edge touches/multiplications, route-edge checks, message traversals, activation/eligibility/threshold/sequence additions, residual multiplications, and fan-out bookkeeping. Primary work is the unit-weight sum of these named primitive algorithmic actions; hardware energy and wall-clock performance are explicitly outside the claim.
 
-The STARTED push triggered the registered workflow `NI01 no-ignition selective prediction one-way`, run **`35321054429`**, on exact STARTED head `d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d`. At checkpoint it is `in_progress`, attempt `1`.
+The prospective TEST matrix is fixed before any formal identity: `uniform / clustered / bursty`; sizes `128 / 384`; sparse activity fractions `0.01 / 0.05 / 0.15`; horizon `24`; eight fixed workload seeds, for `144` primary sparse cells. A fully-active `uniform`, size `128`, activity `1.0`, horizon `8` diagnostic control is fixed separately for the same eight seeds and excluded from the primary sparse statistic.
 
-Observed job state at checkpoint:
+Quality is fail-closed: logical activation max-absolute error must be `<= 1e-10`, fired-count vectors and event counts must match exactly, and both queues must drain. The primary statistic is sparse work reduction `1 - candidate_work / dense_work`, aggregated equally across strata within each workload seed and then equally across seeds. The preregistered bootstrap is 10,000 seed-cluster resamples with seed `75001` and Type-7 percentile CI. PASS requires quality plus CI lower `>= 0.20` and every sparse activity-level mean reduction `>= 0.10`; FAIL requires quality plus CI upper `<= 0.05` or all sparse activity-level means `<= 0`; otherwise INCONCLUSIVE. These margins were fixed prospectively and have not been applied to formal outcomes.
 
-- checkout STARTED control ref: success;
-- STARTED marker / no-clobber validation: success;
-- checkout exact authority package: success;
-- frozen Python setup: in progress;
-- authority re-proof, target-free DEV threshold derivation, target-blind TEST raw acquisition, preserve, independent refetch/digest/cardinality, TEST target materialization, scoring/bootstrap, and terminal evidence: not yet executed.
+Historical `research/exploratory-sub-h5-lazy-routing-20260917` output was not reused as evidence or as a source of frozen formal parameters. DEV-only validation is limited to mechanical equivalence and counter invariants on a separate fixed synthetic fixture.
 
-Therefore **no new scientific information exists yet**. At this checkpoint there has been no official TEST raw acquisition, preserve ref, scoring result, or terminal evidence tag.
+## Exact bindings and readiness
 
-## Handoff
+The contract binds current-main engine blob `48fa64414f539ec4a00acc9e25ffc9b1d26a4982`, model blob `ab450dba5943fa9184e66c00a4e992d6588bf6a5`, package blob `49d47f3d65f67f1c0a6b82a3f7fc2d0364e2a88c`, and new H5 module blob `aca6e23dd801230dcd74ef28dd926e1f4adcf06d`. Contract blob is `44d2b3fa6108294ebfaa819453888c2a06c81cba`; the checker, DEV tests, and dedicated pre-START workflow are also committed on the exact same head.
 
-Lease is `WAITING_EXTERNAL`. The next MAIN/RELAY cycle should collect only workflow `35321054429` and reconcile its terminal effects. If successful, independently verify the preserve ref, preserved digests/cardinality/join bindings, evidence tag and result classification before marking `COMPLETED`. If the post-START workflow fails or evidence is invalid, the identity remains consumed and MAIN must stop terminally without retry, salvage, retuning, or automatic successor.
+Push of `c2370cdc...` dispatched exactly-head readiness gates. Ordinary CI run `35324068936` and dedicated `H5 formal-contract pre-START` run `35324069141` are both still `in_progress` at checkpoint. No useful local critical-path work remains while those external gates run.
+
+## Integrity and handoff
+
+No formal H5 identity exists. STARTED, official TEST access, formal raw generation, preservation, formal scoring, and evidence creation have not occurred. Consumed NI01/PD01/C19 identities and immutable evidence were not modified. Therefore there is **no new H5 scientific information** in this run.
+
+Lease is `WAITING_EXTERNAL`. Relay/next MAIN should collect only ordinary CI `35324068936` and dedicated H5 readiness `35324069141` on exact head `c2370cdc658fceab5a69a49a71032efbf4f72ece`. If both are green and Analyst/head/lease remain unchanged, persist `H5_FORMAL_CONTRACT_READY_FOR_ANALYST_REVIEW` and STOP for fresh Analyst authority. A science-invariant mechanical failure may be repaired prospectively and all exact-head gates rerun; any semantic/scientific redesign requirement is a STOP. Formal identity, STARTED, official TEST, preserve, score, and evidence remain forbidden until fresh Analyst authorization.
