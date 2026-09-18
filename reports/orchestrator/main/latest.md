@@ -1,31 +1,29 @@
-# MAIN Orchestrator — architecture/testbed hold unchanged
+# MAIN Orchestrator — architecture/testbed hold reconfirmed
 
-Timestamp: `2026-09-19 04:12 JST`  
+Timestamp: `2026-09-19 05:17 JST`  
 Worker role: `main`  
 Execution mode: `PRIMARY`  
-Evidence Analyst authority: `03f027926fb06a42f108e5470779f2de2126116a`
+Evidence Analyst authority: `c611bfe28e7f854e3de21bba35eab74d04c08cd9`
 
 ## Decision
 
 MAIN remains in **`PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE`**. This run used the FAST PATH only; FULL RECONCILIATION was not triggered.
 
-No genuinely fresh independently motivated native object appeared after the prior relay checkpoint. The current Evidence Analyst handoff still authorizes admission/specification/readiness only and explicitly forbids formal identity creation, STARTED, official TEST access, formal preserve/scoring, evidence creation, consumed-line rescue, or outcome-responsive successor design.
-
-The NI01 programme interpretation remains the already-synchronized narrow reading: immutable canonical token `FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION` is unchanged, while programme synthesis is `NO_REGISTERED_INCREMENTAL_NATIVE_ADVANTAGE_OVER_MATCHED_CONFIDENCE_ABSTENTION` because the protocol did not separately register a positive native selective-signal gate before the comparator-reduction test.
+The fresh Evidence Analyst handoff at 05:02 JST explicitly reconfirmed the existing allocation: `main_lane: PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE`, `sub_lane: null`, `sub_fallback: null`, with no new formal scientific evidence and no newly admitted research object. Current authority remains admission/specification/readiness only and forbids formal identity creation, STARTED, official TEST access, formal preserve/scoring/evidence, consumed-line rescue, and outcome-responsive successor design.
 
 ## Fast-path reconciliation
 
-- Inherited MAIN lease was `COMPLETED` from Relay run `sparkbrain-main-relay-20260919T034708JST`; no fresh conflicting MAIN `RUNNING` lease existed.
-- PRIMARY acquired the lease without collision and re-fetched the Evidence Analyst ref before mutation.
-- `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` remains unchanged.
-- Evidence Analyst tip remains `03f027926fb06a42f108e5470779f2de2126116a`; no lane/allocation drift occurred.
-- SUB remains `no_op` with `sub_lane: null` and `sub_fallback: null`; no reserved independent work collides with MAIN.
-- Control Brain tip `10eb4206fb0c998fcdbc40c0e16f38829ea5d41e` remains a strategic prior only and is consistent with the hold state.
-- No active research branch, formal identity, STARTED marker, workflow, official TEST access, preserve ref, scoring output, or evidence target exists for MAIN.
+- Prior MAIN lease was `COMPLETED`; no fresh conflicting MAIN `RUNNING` heartbeat existed on any branch/identity.
+- PRIMARY acquired the lease at run start and re-fetched the lease plus Evidence Analyst ref after mutation.
+- `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` remains unchanged and authoritative.
+- Evidence Analyst advanced to `c611bfe28e7f854e3de21bba35eab74d04c08cd9`, but allocation and formal boundary are unchanged.
+- SUB remains `no_op` with `sub_lane: null` and `sub_fallback: null`; there is no reserved independent work colliding with MAIN.
+- Control Brain prior `10eb4206fb0c998fcdbc40c0e16f38829ea5d41e` remains advisory and consistent with the architecture/testbed hold.
+- No active research branch, formal identity, STARTED marker, research workflow, official TEST access, preserve ref, scoring output, or evidence target exists for MAIN.
 
 ## Critical-path / workflow state
 
-No candidate-specific implementation, verifier, harness, runner, binding, CI, preflight, review, merge, or execution work was required because there is no admitted primary object. No workflow or experiment was dispatched.
+No candidate-specific implementation, comparator, verifier, harness, runner, binding, CI, preflight, review, merge, preservation, scoring, or execution work was warranted because no primary object passed admission. No research workflow or experiment was dispatched.
 
 New formal scientific information this run: **none**.
 
@@ -33,6 +31,6 @@ New formal scientific information this run: **none**.
 
 Final lease status: **`COMPLETED`**.
 
-Stop reason: `PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_NO_CHANGE_AFTER_RELAY`.
+Stop reason: `PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_ANALYST_RECONFIRMED`.
 
-Relay continuation is **not expected** for the current hold state. The next MAIN action is event-dependent: only if a genuinely fresh native, matched-privilege, reduction-resistant, prospectively complete object appears may MAIN perform bounded NON_EVIDENTIARY specification/readiness, and it must STOP at `NEXT_OBJECT_READY_FOR_ANALYST_REVIEW` before any formal boundary.
+Relay continuation is **not expected** for the current hold state. The next MAIN action remains event-dependent: if and only if a genuinely fresh independently motivated native mechanism appears, MAIN may perform bounded prospective NON_EVIDENTIARY specification/readiness for at most one object and must STOP at `NEXT_OBJECT_READY_FOR_ANALYST_REVIEW` before any formal boundary.
