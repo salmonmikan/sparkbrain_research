@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-18T18:35:16+09:00",
+  "timestamp": "2026-09-18T19:32:06+09:00",
   "worker_role": "sub",
   "mode": "no_op",
   "evidence_analyst_commit": "fc1717f54ac045f29557e839268fc3b0f622acdf",
@@ -11,8 +11,8 @@
   "execution_allowed": false,
   "sub_active_claim": null,
   "main_work_explicitly_avoided": [
-    "H5 standalone dense/eager comparator design and implementation",
-    "H5 counter/accounting, contract, checker, tests, CI/pre-START, and exact bindings",
+    "H5 standalone dense/eager comparator scientific acceptance and any further comparator semantics work",
+    "H5 counter/accounting, contract, checker, tests, CI/pre-START repair, and exact binding work",
     "H5 formal identity reservation and STARTED/control creation",
     "H5 official TEST access, preservation, scoring, evidence, or successor design",
     "Historical H5 exploratory output as formal evidence or parameter-selection input",
@@ -20,9 +20,11 @@
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "control_brain": "525796e92f6b633d81539bbddf1ac83904f6f579",
-    "orchestrator_parent_tip_observed": "869d4fcd2c6f23373b0a6e88ce30233150d3dcef",
+    "control_brain": "23fc2f0c1668526be402fa44b3bc8c5b2258511b",
+    "orchestrator_parent_tip_observed_before_sub_persistence": "7fd6b0770076175d387b5e7dc87acd2518ee0cf0",
+    "h5_research_branch": "research/h5-event-routing-work-reduction-spec-20260918",
     "h5_research_head": "520fc8391d9ebb02584a16ec466a1bf168548ea9",
+    "h5_contract_blob": "1911d4560f4e2774fd725df26ba8cb25b03e2c5f",
     "h5_control_refs": [],
     "h5_preserve_refs": [],
     "h5_evidence_tags": [],
@@ -53,7 +55,7 @@
   "scientific_readiness_exploratory_results": {
     "sub_new_formal_result": false,
     "sub_new_exploratory_result": false,
-    "main_readiness_observation": "MAIN's standalone DenseEagerSparkBrain revised-comparator exact head 520fc839... now has both dedicated H5 pre-START and ordinary CI completed/success; this is readiness only and requires fresh Evidence Analyst review before identity/STARTED.",
+    "main_readiness_observation": "H5 exact head 520fc839... remains H5_REVISED_DENSE_COMPARATOR_READY_FOR_ANALYST_REVIEW with both exact-head gates green, execution_authorized=false, formal_identity=null, and MAIN blocked for a newer Evidence Analyst acceptance.",
     "main_scientific_result_observed": false
   },
   "evidentiary_status": "NONE_FOR_SUB",
@@ -71,20 +73,23 @@
   },
   "blockers": [
     "No reserved independent formal SUB lane or fallback exists.",
-    "No safe, useful, non-duplicative incubator target exists under current Analyst allocation.",
-    "H5 revised-comparator acceptance remains a MAIN/Evidence Analyst critical-path boundary and is not valid SUB work."
+    "No safe, useful, non-duplicative incubator target exists under the current Analyst allocation and recent SUB history.",
+    "H5 fresh Analyst acceptance is a MAIN/Evidence Analyst critical-path boundary and is not valid SUB work."
   ],
   "collision_reconciliation": {
-    "report_branch_tip_before_persistence": "869d4fcd2c6f23373b0a6e88ce30233150d3dcef",
-    "main_checkpoint_time": "2026-09-18T18:28:00+09:00",
-    "main_checkpoint_status": "WAITING_EXTERNAL",
+    "report_branch_tip_before_persistence": "7fd6b0770076175d387b5e7dc87acd2518ee0cf0",
+    "latest_main_checkpoint_time": "2026-09-18T19:13:32+09:00",
+    "latest_main_checkpoint_status": "BLOCKED_FOR_FRESH_EVIDENCE_ANALYST_REVIEW",
     "main_checkpoint_active_head": "520fc8391d9ebb02584a16ec466a1bf168548ea9",
     "fresh_main_head_rechecked": true,
     "fresh_analyst_tip_rechecked": true,
-    "sub_collision_detected": false
+    "analyst_tip_unchanged": true,
+    "sub_collision_detected": false,
+    "history_commit": "a0f2a8f01621fab17f5031168d7f4786a7c8bbb0",
+    "latest_commit": "f8d74e9cdb90997f71813344a38db243147b8a5a"
   },
-  "integrity_state": "CLEAN_NO_MAIN_MUTATION_NO_FORMAL_BOUNDARY_CROSSED_BY_SUB",
-  "completion_target": "Freshly reconcile current remote authority, Evidence Analyst scope, MAIN/SUB streams and newest role history, Control Brain doctrine, authoritative refs/workflows/PRs/issues, select only a valid independent SUB lane or safe non-duplicative incubator target, otherwise persist a clean no-op.",
+  "integrity_state": "CLEAN_NO_MAIN_MUTATION_NO_FORMAL_BOUNDARY_CROSSED_BY_SUB_NO_OFFICIAL_INPUT_ACCESS_NO_IDENTITY_CONSUMPTION",
+  "completion_target": "Freshly reconcile current main and research refs, authoritative freeze/sealed/formal/evidence/control/preserve state, Evidence Analyst scope, MAIN/SUB streams and newest relevant history, Control Brain doctrine, workflows/PRs/issues and identities; select only a valid independent SUB lane or safe non-duplicative incubator target, otherwise persist a clean no-op.",
   "completion_target_status": "ACHIEVED",
   "fallback_status": "ABSENT",
   "rejected_lane": null,
@@ -93,6 +98,14 @@
   "suggested_prospective_object": null,
   "promotion_recommendation": "NONE",
   "incubator_handoff": null,
-  "proposed_handoff_to_analyst": "Review MAIN's revised standalone dense/eager H5 comparator on exact head 520fc8391d9ebb02584a16ec466a1bf168548ea9 now that both exact-head gates are green. SUB proposes no independent object.",
+  "proposed_handoff_to_analyst": "Review MAIN's revised standalone dense/eager H5 comparator on exact head 520fc8391d9ebb02584a16ec466a1bf168548ea9; both exact-head gates remain green and no H5 formal namespace has been crossed. SUB proposes no independent object.",
+  "report_persistence": {
+    "history_path": "reports/orchestrator/history/2026-09-18/1932-sub.md",
+    "sub_latest_path": "reports/orchestrator/sub/latest.md",
+    "sub_state_path": "reports/orchestrator/sub/state.json",
+    "force_push_used": false,
+    "main_files_modified": false,
+    "legacy_shared_latest_state_modified": false
+  },
   "persistence_limitation": null
 }
