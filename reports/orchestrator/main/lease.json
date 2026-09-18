@@ -1,14 +1,14 @@
 {
   "run_id": "sparkbrain-main-relay-20260919T034708JST",
   "execution_mode": "RELAY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-19T03:47:08+09:00",
   "heartbeat_at": "2026-09-19T03:47:08+09:00",
   "analyst_commit": "03f027926fb06a42f108e5470779f2de2126116a",
   "active_branch": null,
   "active_identity": null,
-  "active_step": "PROGRAMME_ARCHITECTURE_TESTBED_RECONCILING_NI01_INTERPRETATION",
+  "active_step": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_INTERPRETATION_SYNCED",
   "workflow_run_id": null,
-  "expected_next_action": "Consume the fresh Evidence Analyst interpretation-only handoff, reconcile current main/SUB/control-plane state, persist the narrowed NI01 programme interpretation without mutating immutable evidence, and remain in architecture/testbed hold unless a genuinely fresh prospectively admissible object exists.",
+  "expected_next_action": "Remain in architecture/testbed hold. If and only if a genuinely fresh independently motivated native object appears, MAIN may perform bounded prospective specification/readiness and must STOP at NEXT_OBJECT_READY_FOR_ANALYST_REVIEW before any formal identity/STARTED/official TEST/preserve/scoring/evidence boundary.",
   "owner": "main"
 }
