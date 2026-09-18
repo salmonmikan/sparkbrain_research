@@ -1,100 +1,69 @@
 {
-  "timestamp_jst": "2026-09-18T19:50:00+09:00",
+  "timestamp_jst": "2026-09-19T01:50:00+09:00",
   "worker_role": "repository_steward",
-  "selected_slot_jst": "19:50",
+  "selected_slot_jst": "01:50",
   "role_inferred": false,
   "repository": "salmonmikan/sparkbrain_research",
   "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-  "control_brain_commit": "23fc2f0c1668526be402fa44b3bc8c5b2258511b",
-  "evidence_analyst_commit": "4630decbda55d31ec8f44ac1435950b261225fd5",
-  "orchestrator_report_commit_observed": "a12b86bcd401b1dd7768e122cfd64191a4747a6b",
+  "control_brain_commit": "9bf5c0249e88acdd5fc99b12555e785f9c2e2976",
+  "evidence_analyst_commit": "71d0050f3985f888dc34566a0ffbf0b027f37d3e",
+  "orchestrator_report_commit_observed": "12793340d26ff14d7dccdca97f10a279fbdffec3",
   "current_remote_authority": {
     "main_protected": false,
     "repository_ruleset_count": 0,
-    "authoritative_evidence_tag_count": 4,
+    "authoritative_evidence_tag_count": 5,
     "legacy_freeze_branch_count": 13,
     "tag_namespaces": {
-      "evidence_count": 4,
+      "evidence_count": 5,
       "formal_count": 0,
       "sealed_count": 0,
       "freeze_tag_count": 0
     },
-    "terminal_evidence": {
-      "c19_v4": {
-        "tag": "evidence/c19-official-v4-c19-external-v2-official-v4",
-        "tag_object": "4d6c0bd9a6c06c17352941d3fa730502e72b8540"
-      },
-      "c19_r2": {
-        "tag": "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
-        "tag_object": "82b88f3e2ad524fed8b72300dcba46053c1f2c7e"
-      },
-      "pd01": {
-        "tag": "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1",
-        "tag_object": "e4c4e6428d8ef9e09e92cae231041de0788162e2"
-      },
-      "ni01": {
-        "tag": "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1",
-        "tag_object": "185b741e69ea8a0ce0d076153d36e9296a748765",
-        "evidence_commit": "69aa785a48bbdb531229b7f71f7fa84a5fde9948",
-        "status_recorded_by_control_plane": "TERMINAL_FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION",
-        "started_ref": "control/ni01-no-ignition-selective-prediction-started-v1-20260918",
-        "started_head": "d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d",
-        "preserve_ref": "preserve/ni01-no-ignition-selective-prediction-raw-ni01-no-ignition-selective-prediction-official-v1",
-        "preserve_head": "8a39cf70e397bb7588f948910f01ec58672ac814"
-      }
+    "new_direct_evidence_anchor_since_prior_steward": {
+      "line": "H5",
+      "tag": "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1",
+      "tag_object": "e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
+      "evidence_commit": "61aff6d74b82b68a326f3d90505d70bcd4071fd5",
+      "started_ref": "control/h5-event-routing-work-reduction-started-v1-20260918",
+      "started_head": "058e90227cd48e1c10c6ecbaed01efdec1217d0e"
     },
-    "h5": {
-      "research_branch": "research/h5-event-routing-work-reduction-spec-20260918",
-      "research_head": "520fc8391d9ebb02584a16ec466a1bf168548ea9",
-      "analyst_status": "PRE_START_REVISED_COMPARATOR_ACCEPTED",
-      "formal_identity": null,
-      "started_present": false,
-      "preserve_present": false,
-      "formal_tag_present": false,
-      "sealed_tag_present": false,
-      "evidence_tag_present": false,
-      "readiness": {
-        "h5_readiness": "success",
-        "ci_py311": "success",
-        "ci_py313": "success"
-      },
-      "steward_disposition": "no_scientific_action_main_owned"
-    }
+    "post_lp01_programme_state": "NO_HIGH_VALUE_OBJECT_PREFORMAL_NON_EVIDENTIARY"
   },
   "orchestrator_reports": {
     "main": {
-      "time_jst": "2026-09-18 19:13",
-      "mode": "PRIMARY",
-      "frontier": "H5_REVISED_DENSE_COMPARATOR_READY_FOR_ANALYST_REVIEW",
-      "mailbox_predates_current_analyst": true,
+      "time_jst": "2026-09-19 00:48",
+      "mode": "RELAY",
+      "phase": "COMPLETED_PREFORMAL_NON_EVIDENTIARY_ADMISSION",
+      "decision": "NO_HIGH_VALUE_OBJECT",
+      "formal_identity_created": false,
+      "started_created": false,
+      "formal_evidence_created": false,
       "governance_action": "none"
     },
     "sub": {
-      "time_jst": "2026-09-18 19:32",
+      "time_jst": "2026-09-19 01:37",
       "mode": "no_op",
       "formal_lane": null,
       "incubator_candidate": null,
       "main_frontier_touched": false,
-      "formal_evidentiary_status": "NONE",
-      "mailbox_uses_older_analyst_authority": true
+      "formal_evidentiary_status": "NONE"
     }
   },
   "repository_state": {
     "open_pr_numbers": [148, 149],
     "open_issue_numbers": [139],
     "issue_changes_this_run": [139],
-    "authoritative_annotated_tag_count": 4,
+    "authoritative_annotated_tag_count": 5,
     "repository_ruleset_count": 0,
     "legacy_freeze_branch_count": 13,
     "main_protected": false
   },
-  "doctrine_status": "partially_compliant_active_science_separated_protection_gap_remains",
+  "doctrine_status": "partially_compliant_science_separated_protection_gap_remains",
   "doctrine_findings": {
     "main_frontier_separation": "compliant",
-    "h5_research_off_main": "compliant",
-    "terminal_evidence_annotated_tags": "compliant_four_authoritative_tags",
+    "terminal_evidence_annotated_tags": "compliant_five_authoritative_tags",
     "canonical_science_vs_issues": "compliant_after_issue_inventory_refresh",
-    "sub_boundary": "compliant_no_op",
+    "main_sub_boundary": "compliant_main_stopped_sub_no_op",
     "server_side_protection": "missing",
     "legacy_freeze_preservation": "compliant"
   },
@@ -102,28 +71,25 @@
     {
       "issue": 139,
       "action": "update_body",
-      "reason": "correct authoritative evidence-tag inventory from 3 to 4 by adding NI01 without changing acceptance criteria or scientific interpretation",
+      "reason": "correct authoritative evidence-tag inventory from 4 to 5 by adding H5 without changing acceptance criteria or scientific interpretation",
       "state_after": "open"
     }
   ],
   "issue_audit": {
-    "139": "open_current_four_evidence_tags_ruleset_gap_remains",
-    "new_scientific_issues_created": 0,
-    "h5_issue_created": false,
-    "h5_issue_reason": "no_governance_only_action_clear_without_duplicating_scientific_handoff"
+    "139": "open_current_five_evidence_tags_ruleset_gap_remains",
+    "new_issues_created": 0
   },
   "freeze_migration": {
     "legacy_freeze_branch_count": 13,
     "legacy_freeze_refs_present": true,
-    "authoritative_annotated_tag_count": 4,
+    "authoritative_annotated_tag_count": 5,
     "new_authoritative_tags_since_prior_steward_snapshot": 1,
-    "new_direct_evidence_anchor": "NI01",
+    "new_direct_evidence_anchor": "H5",
     "legacy_tag_mirrors_created_this_run": 0,
     "legacy_branches_modified_by_stewardship": 0,
     "mapping_doc": "reports/repository_steward/legacy_freeze_map.md",
     "mapping_changed_this_run": false,
-    "mapping_change_reason": "NI01 is a direct authoritative evidence anchor, not a legacy freeze-branch mirror",
-    "status": "prospective_annotated_tag_pattern_active_legacy_batch_migration_deferred"
+    "mapping_change_reason": "H5 is a direct authoritative evidence anchor, not a legacy freeze-branch mirror"
   },
   "tag_protection": {
     "repository_ruleset_count": 0,
@@ -136,7 +102,7 @@
     "mapping_changed": false,
     "new_legacy_freeze_entries": 0,
     "new_direct_evidence_anchors_observed": 1,
-    "direct_anchor_added_to_state": "NI01",
+    "direct_anchor_added_to_state": "H5",
     "scientific_mappings_changed": 0,
     "existing_preserve_control_formal_evidence_refs_modified_by_stewardship": 0
   },
@@ -150,40 +116,38 @@
       "generic privilege/leakage guards",
       "external-only transcript hashing/validation"
     ],
-    "h5_research_only": [
-      "DenseEagerSparkBrain",
-      "H5 WorkCounter and named primitive accounting",
-      "H5 workload grid",
-      "H5 quality tolerances",
-      "H5 bootstrap/statistical decision rules and PASS/FAIL margins"
+    "research_only": [
+      "H5 comparator/counter/workload/statistical semantics",
+      "LP01 lineage/ancestry semantics"
     ],
     "recommended_integration_shape": "small neutral current-main extraction with fresh CI; no wholesale research-branch cherry-pick"
   },
   "open_pr_review": {
     "148": {
       "title": "Add human-directives repository skill",
-      "classification": "main_eligible_for_ordinary_review",
+      "classification": "defer_pending_review_fix",
       "mergeable": true,
-      "observed_ci": "green",
+      "observed_ci_run": 35286849859,
+      "observed_ci": "success",
+      "unresolved_review": "2_P1_plus_1_P2",
       "merged_by_stewardship": false
     },
     "149": {
       "title": "Add Git-backed SparkBrain scheduler registry skill",
-      "classification": "main_eligible_for_ordinary_review",
+      "classification": "defer_pending_review_fix",
       "mergeable": true,
-      "observed_ci": "green",
+      "observed_ci_run": 35287647629,
+      "observed_ci": "success",
+      "registry_bootstrap_now_present": true,
+      "unresolved_review": "P1_live_definition_revalidation_race",
       "merged_by_stewardship": false
     }
   },
   "immutable_refs_untouched": true,
   "verified_immutable_state": {
     "legacy_freeze_branch_count": 13,
-    "c19_v4_evidence_tag_untouched": true,
-    "c19_r2_evidence_tag_untouched": true,
-    "pd01_evidence_tag_untouched": true,
-    "ni01_evidence_tag_untouched": true,
-    "ni01_started_ref_untouched": true,
-    "ni01_preserve_ref_untouched": true,
+    "all_five_evidence_tags_untouched": true,
+    "h5_started_ref_untouched": true,
     "freeze_branches_deleted_or_moved_by_stewardship": 0,
     "preserve_control_formal_evidence_refs_modified_by_stewardship": 0
   },
@@ -196,8 +160,8 @@
   "deferred": [
     "install authoritative tag namespace protection/rulesets outside scheduled stewardship",
     "create exact-SHA annotated legacy tag mirrors only under an explicitly safe protected migration procedure",
-    "reconcile H5 governance only after MAIN advances from the fresh Analyst authority",
-    "keep H5 scientific comparator/counter/workload/statistic semantics research-local",
-    "reconcile PR #148 and #149 through ordinary review"
+    "keep LP01 and post-LP01 NO_HIGH_VALUE_OBJECT conclusions pre-formal/non-evidentiary",
+    "keep scientific mechanism semantics research-local",
+    "resolve PR #148/#149 review blockers through ordinary PR maintenance before main promotion"
   ]
 }
