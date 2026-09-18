@@ -6,7 +6,6 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
 CONTRACT = ROOT / "research" / "pd01" / "preformal_contract.json"
 EXPECTED_ANALYST = "b009f497e65cddf1dd93cd4edc50f874c159ccd7"
