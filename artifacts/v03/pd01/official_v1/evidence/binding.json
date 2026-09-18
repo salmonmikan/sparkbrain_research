@@ -1,0 +1,9 @@
+{
+  "formal_contract_git_blob": "0ce03b01baf41a0c77c513835b1c6063e47b2614",
+  "implementation_git_blob": "16bbfb6ed57d6c9701e8437360692b62e7c36915",
+  "input_inventory_sha256": "b70e87ce2494b0605cfb305a0097c41317c7aba9fbd8c049921abad05bcbdd92",
+  "manifest_sha256": "ac5550802d98f7d635d00895a10b0af27105f065cfda717b0a0b5ca41515033d",
+  "protocol_id": "pd01-long-history-fading-memory-protocol-v1",
+  "raw_sha256": "5ad0c545c5aa4548ca7a852e9c46a908af41c9a44047667c9ed09c1fd5041638",
+  "target_sha256": "5d689c842ff55c61e1e5178ac5c2887ef9201ea83f2c9633a23bd25f0c3355ac"
+}

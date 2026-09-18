@@ -1,0 +1,13 @@
+{
+  "evidence_analyst_commit": "91a05bad6d130f89975e776960a1d25d764fba32",
+  "exact_package_commit": "b9d38daa5faca348ad2db3898ba71e2abc99f631",
+  "protocol_id": "pd01-long-history-fading-memory-protocol-v1",
+  "raw_preservation_commit": "65ae7a50ee2279ab5edc3ca43ea3bf69daecb881",
+  "result_class": "FAIL_REDUCED_BY_FADING_MEMORY",
+  "run_identity": "pd01-long-history-fading-memory-official-v1",
+  "schema_version": 1,
+  "started_ref": "control/pd01-long-history-fading-memory-started-v1-20260918",
+  "state": "TERMINAL_EVIDENCE",
+  "workflow_run_attempt": 1,
+  "workflow_run_id": "35301327618"
+}
