@@ -1,123 +1,101 @@
 {
-  "timestamp": "2026-09-18T10:30:00+09:00",
+  "timestamp": "2026-09-18T22:32:40+09:00",
   "role": "INDEPENDENT_AUDITOR",
   "phase_ordering_confirmed": true,
   "blind_target_selection": {
-    "target": "C19-R2 official-v1 terminal REDUCED_BY_FSA",
+    "target": "PD01 pd01-long-history-fading-memory-official-v1 terminal FAIL_REDUCED_BY_FADING_MEMORY",
     "authoritative_refs_inspected": [
       "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-      "research/c19-r2-fsa-state-tracker-spec-20260918 scientific contract@5d5d171cf872baed7a636fd246ab36f3a91a6716",
-      "C19-R2 exact package@5bfa3962c777fa5bc915bb21e20801ab8294778a",
-      "control/c19-r2-fsa-state-tracker-started-v1-20260918@41df2685fe015140c8afa13e646554dd2e8c836b",
-      "C19-R2 raw preserve@3628694294a6eb33b18a0b42a56bb5ad77fe7b94",
-      "C19-R2 terminal evidence@6197fa801a78a0c5de4c2b6ff5d03216ac5539db",
-      "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
-      "C19-v4 scientific parent@74bfe6b4a39758656f291baaa3f16236e3e71964"
+      "exact package@b9d38daa5faca348ad2db3898ba71e2abc99f631",
+      "scientific-contract blob@0ce03b01baf41a0c77c513835b1c6063e47b2614",
+      "implementation blob@16bbfb6ed57d6c9701e8437360692b62e7c36915",
+      "control/pd01-long-history-fading-memory-started-v1-20260918",
+      "raw preserve@65ae7a50ee2279ab5edc3ca43ea3bf69daecb881",
+      "terminal evidence@fc5c8cda283360addddb7da482b14e69beaba1f7",
+      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1"
     ],
     "attack_hypotheses": [
-      "package/identity/STARTED authority drift or post-START mutation",
-      "evaluator-target leakage or target materialization before raw preservation",
-      "source-map/scorer/join/quantile/cluster-bootstrap drift",
-      "seed dependence or one-seed reduction artifact",
-      "representation/resource mismatch or semantic/global-lookup privilege",
-      "claim-boundary overreach from temporal/state reduction to whole raw-input architecture",
-      "simpler stateless/static same-I2 reduction remains possible"
+      "package/identity/STARTED drift, target leakage, or post-START repair",
+      "FAIL taxonomy conflates comparator reduction with absence of registered candidate signal",
+      "candidate/comparator observation and readout privilege is asymmetric",
+      "paired/base-world bootstrap or long-lag endpoint drift",
+      "overclaim from probe-level failure to whole-system fading-memory reduction"
     ],
-    "why_consequential": "R2 directly determines whether the narrow C19-v4 temporal/state effect requires SparkBrain-specific persistent coalition dynamics or is sufficient under a simple explicit finite-state tracker."
+    "why_consequential": "PD01 is used to close the generic remote-history/non-fading persistence frontier; no registered signal and mechanistic comparator reduction are scientifically different conclusions."
   },
   "blind_target_change_reason": null,
   "repository_refs_inspected": [
     "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "research/c19-r2-fsa-state-tracker-spec-20260918@5bfa3962c777fa5bc915bb21e20801ab8294778a",
-    "scientific contract@5d5d171cf872baed7a636fd246ab36f3a91a6716",
-    "STARTED@41df2685fe015140c8afa13e646554dd2e8c836b",
-    "raw preserve@3628694294a6eb33b18a0b42a56bb5ad77fe7b94",
-    "terminal evidence@6197fa801a78a0c5de4c2b6ff5d03216ac5539db",
-    "annotated evidence tag object@82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
-    "C19-v4 parent@74bfe6b4a39758656f291baaa3f16236e3e71964"
+    "active research/* and current control/preserve namespace inventory",
+    "PD01 exact package@b9d38daa5faca348ad2db3898ba71e2abc99f631",
+    "PD01 STARTED control branch",
+    "PD01 raw preserve branch and manifest",
+    "PD01 terminal evidence@fc5c8cda283360addddb7da482b14e69beaba1f7",
+    "prior audit role history through 2026-09-18 10:30 JST"
   ],
-  "control_brain_commit_consumed": "3bcd000f7e31bc8df8d59ca5ddec88ff5b847e22",
-  "evidence_analyst_commit_consumed": "28108fffc2e4e346bff79bf3e38d1cac27d3265c",
-  "main_report_commit_consumed": "ae22b121f603476a6449d86817d14a76d1908fcc",
-  "sub_report_commit_consumed": "ae22b121f603476a6449d86817d14a76d1908fcc",
-  "literature_handoff_commit_consumed": "0ee8a07fb77f79bb226dd1ad12b4b6e9df30832b",
+  "control_brain_commit_consumed": "23fc2f0c1668526be402fa44b3bc8c5b2258511b",
+  "evidence_analyst_commit_consumed": "57464c4ad6881c27371be5305512656c6ae315d3",
+  "main_report_commit_consumed": "14f9348c779fccde09e12ade9d4fbfa9373f5d5c",
+  "sub_report_commit_consumed": "14f9348c779fccde09e12ade9d4fbfa9373f5d5c",
+  "literature_handoff_commit_consumed": "525686fa0c14f64426ca7bf5c89f08cd0bcb9c77",
   "genuinely_new_information": true,
   "findings": [
     {
-      "id": "r2_integrity_chain",
+      "id": "pd01_integrity_chain",
       "status": "ROBUST_SO_FAR",
-      "summary": "Exact package/identity/STARTED binding, no-retry semantics, target-blind raw preservation, target-free atomic_idx source map, terminal evidence binding and first-attempt terminalization are consistent with the prospective contract."
+      "summary": "Exact package/no-retry STARTED binding, target-blind raw acquisition, immutable preservation, independent refetch and target-after-preserve scoring are coherent; no post-START mutation or leakage was found."
     },
     {
-      "id": "r2_cluster_primary_inference",
-      "status": "ROBUST_SO_FAR",
-      "summary": "Primary inference uses the prospectively frozen paired atomic_idx cluster bootstrap over 204 clusters; the prior C19-v4 pair-IID concern is therefore corrected for R2."
+      "id": "pd01_registered_statistics",
+      "status": "CONTRACT_VALID",
+      "summary": "SparkBrain accuracy is 0.47265625 with 95% CI [0.431640625, 0.515625], reservoir accuracy is 0.5, and effect CI is [-0.068359375, 0.015625], satisfying the frozen FAIL rule effect_ci95_upper <= 0.05."
     },
     {
-      "id": "r2_terminal_reduction",
-      "status": "INDEPENDENTLY_REPRODUCED",
-      "summary": "Terminal effect C19-v4 primary BREU minus R2 BREU is -0.2462308568887407 with cluster-bootstrap 95% CI [-0.2554750732756702, -0.23690126111231016], satisfying REDUCED_BY_FSA. Aggregate recomputation from immutable per-seed summaries matches to floating-point precision."
+      "id": "pd01_null_vs_reduction",
+      "status": "CONFOUNDED",
+      "summary": "The frozen FAIL taxonomy does not require a positive SparkBrain candidate signal. The observed run has no demonstrated above-chance long-lag SparkBrain signal, so REDUCED_BY_FADING_MEMORY conflates absence of signal with mechanistic comparator reduction."
     },
     {
-      "id": "r2_seed_robustness",
-      "status": "ROBUST_SO_FAR",
-      "summary": "The v4-minus-R2 BREU contrast is negative in all five fixed seeds; the reduction is not driven by one seed."
-    },
-    {
-      "id": "r2_claim_boundary",
-      "status": "APPROPRIATELY_NARROW",
-      "summary": "The result reduces the registered temporal/state contrast under the same fixed I2 frontend/projection; it does not claim the entire SparkBrain raw-input computation is literally seven-state. R1 remains an interpretation ceiling."
+      "id": "pd01_readout_access",
+      "status": "ACKNOWLEDGED_INTERPRETATION_CEILING",
+      "summary": "SparkBrain exposes final-probe spike-response features while the reservoir exposes full continuous state. Authority prospectively accepted this asymmetry for the boundary test, so the result cannot support whole-latent-state fading-memory equivalence."
     }
   ],
-  "recomputed_aggregate": {
-    "mean_r2_breu": 0.34667834014286114,
-    "mean_c19_v4_primary_breu": 0.10044748325412048,
-    "mean_v4_minus_r2": -0.24623085688874066,
-    "per_seed_v4_minus_r2": [
-      -0.2874857555796437,
-      -0.2809472192112066,
-      -0.23027321493093192,
-      -0.2668250924150199,
-      -0.1656230023069012
-    ]
-  },
   "affected_lines": [
-    "C19_R2_FSA_STATE_TRACKER",
-    "C19_V4",
     "PD01",
+    "PERSISTENT_DYNAMICS_RESIDUAL",
     "PROGRAMME_NOVELTY",
-    "PROGRAMME_STATISTICAL_INTEGRITY"
+    "FUTURE_REDUCTION_TAXONOMY"
   ],
-  "audit_classification": "ROBUST_SO_FAR",
+  "audit_classification": "CONFOUNDED",
   "confidence": "HIGH",
-  "novelty_or_reduction_impact": "R2_TERMINAL_REDUCTION_INDEPENDENTLY_CONFIRMED; C19_V4_TEMPORAL_STATE_STORY_REDUCED_TO_EXPLICIT_FSA_UNDER_SAME_I2_FRONTEND; NO_NEW_NOVELTY_SUPPORT; PD01_REMAINS_HIGHER_VALUE_DISTINCT_FRONTIER",
+  "novelty_or_reduction_impact": "PD01_NO_POSITIVE_LONG_LAG_SIGNAL; CANONICAL_FAIL_VALID_BUT_MECHANISTIC_RESERVOIR_REDUCTION_NOT_ESTABLISHED; NO_NOVELTY_SUPPORT_RESTORED",
   "prospective_baselines_or_discriminators": [
-    "Do not rerun, retune, rescue or rescore canonical R2.",
-    "If a distinct future C19-specific question warrants it, prospectively test whether temporal state is needed at all using the same frozen I2 frontend/projection with a stateless/final-step comparator.",
-    "Otherwise prioritize the separately prospectively specified PD01 remote-history/washout discriminator against a stronger matched fading-memory reservoir.",
-    "Retain source-family/base-world cluster-aware primary inference for structurally grouped future external validations."
+    "Do not rerun, retune, rescore, relabel or reopen canonical PD01.",
+    "Future reduction contracts should separate NO_REGISTERED_SIGNAL from REDUCED_BY_COMPARATOR.",
+    "Require a prospectively fixed candidate-signal floor before mechanistic REDUCED_BY_* language is armed.",
+    "For latent-memory claims, match observation/readout privilege rather than only feature dimensionality."
   ],
   "questions_for_evidence_analyst": [
-    "Should terminal R2 close the C19-specific state-tracker rescue ladder unless a genuinely distinct question appears?",
-    "Should REDUCED_BY_FSA always be stated as scoped to the registered same-I2 temporal/state contrast rather than the whole raw-input architecture?",
-    "Is a stateless same-I2 temporal-null comparator worth a future fresh prospective object, or is PD01 now clearly higher information value?"
+    "Should canonical PD01 be summarized as no registered long-lag probe signal plus comparator-not-worse while preserving the frozen FAIL token unchanged?",
+    "Should future mechanistic reduction contracts require a positive candidate-signal gate?",
+    "Should PD01 syntheses explicitly state that the SparkBrain feature is final-probe spike response rather than full latent state?"
   ],
   "questions_for_control_brain": [
-    "Should the programme record the C19 mechanism story as reduced to ordinary explicit finite-state tracking under its fixed frontend while preserving C19-v4 only as a representation result?",
-    "Should further C19-specific reduction work stop unless a new independent claim requires it, with PD01 prioritized for the narrower non-fading lineage-persistence thesis?",
-    "Should cluster-aware primary inference remain the default doctrine for structurally grouped future external validations?"
+    "Should PD01 be counted as negative evidence for the registered persistence probe rather than a mechanistically specific reservoir reduction?",
+    "Should programme doctrine distinguish ABSENT_SIGNAL from EXPLAINED_BY_REDUCTION?",
+    "Should the reduction-first/testbed framing remain unchanged because this audit restores no positive persistence evidence?"
   ],
   "must_not_change_frozen_or_consumed": [
-    "c19-r2-fsa-state-tracker-official-v1",
-    "41df2685fe015140c8afa13e646554dd2e8c836b",
-    "5bfa3962c777fa5bc915bb21e20801ab8294778a",
-    "5d5d171cf872baed7a636fd246ab36f3a91a6716",
-    "3628694294a6eb33b18a0b42a56bb5ad77fe7b94",
-    "6197fa801a78a0c5de4c2b6ff5d03216ac5539db",
-    "canonical R2 paired_reduction_statistics.json, pair_iid_sensitivity_statistics.json and REDUCED_BY_FSA classification",
-    "immutable C19-v4 package/preserve/evidence/tag and narrow PASS",
-    "consumed R1-v1/v2 and C19-v2/v3 identities",
-    "all consumed A01/RV01/RV02/CX identities",
-    "R2/C19 per-example outcomes must not tune PD01 or another successor"
+    "pd01-long-history-fading-memory-official-v1",
+    "b9d38daa5faca348ad2db3898ba71e2abc99f631",
+    "0ce03b01baf41a0c77c513835b1c6063e47b2614",
+    "16bbfb6ed57d6c9701e8437360692b62e7c36915",
+    "control/pd01-long-history-fading-memory-started-v1-20260918",
+    "65ae7a50ee2279ab5edc3ca43ea3bf69daecb881",
+    "fc5c8cda283360addddb7da482b14e69beaba1f7",
+    "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1",
+    "canonical PD01 statistics and FAIL_REDUCED_BY_FADING_MEMORY token",
+    "all consumed C19/R1/R2/NI01/H5/A01/RV01/RV02/CX identities and immutable evidence"
   ]
 }
