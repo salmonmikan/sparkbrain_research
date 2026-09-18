@@ -1,31 +1,41 @@
-# MAIN Orchestrator — PRIMARY next-frontier prospective selection
+# MAIN Orchestrator — RELAY NI01 exact-head mechanical continuation
 
-Timestamp: `2026-09-18 13:27 JST`  
-Execution mode: `PRIMARY`  
+Timestamp: `2026-09-18 13:47 JST`  
+Execution mode: `RELAY`  
 Evidence Analyst authority: `39c62ddb6bc567d3d3c81e38efa61be405ca7b4a`
 
-## MAIN frontier
+## Collision / authority reconciliation
 
-Fresh post-PD01 authority assigns `NEXT_FRONTIER_PROSPECTIVE_SELECTION` only. PD01 remains terminal `FAIL_REDUCED_BY_FADING_MEMORY`; C19-R2 remains terminal `REDUCED_BY_FSA`. MAIN selected exactly one genuinely independent pre-existing question: H4 / native No-Ignition selective prediction versus an ordinary target-blind confidence-abstention head.
+The observed PRIMARY lease was `WAITING_EXTERNAL`, not `RUNNING`, with heartbeat `2026-09-18T13:27:30+09:00`; therefore no fresh PRIMARY same-object mutation lease blocked continuation. SUB remains `no_op` and explicitly avoids NI01. The designated Evidence Analyst latest still authorizes only prospective selection/specification and science-invariant mechanical preformal repair; formal identity reservation, STARTED, official TEST access, preserve/evidence creation, and one-way execution remain unauthorized.
 
-Created `research/ni01-no-ignition-selective-prediction-spec-20260918` from stable `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. Exact current head is `0d2e085f2960d46dce30e7619e80054db89c3c70`. This run used the FAST PATH; no authoritative target disagreement, collision anomaly, unexpected branch movement, or unclassifiable next action required FULL RECONCILIATION.
+Authoritative shared `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. NI01 identity plan `ni01-no-ignition-selective-prediction-official-v1` remains `UNRESERVED` / unconsumed. Planned NI01 control, preserve, and evidence namespaces remain absent.
 
-## NI01 prospective contract
+## Collected exact-head failures
 
-Protocol is `ni01-no-ignition-selective-prediction-protocol-v1`; proposed identity `ni01-no-ignition-selective-prediction-official-v1` remains `UNRESERVED`. Formal execution is explicitly unauthorized.
+Collected the PRIMARY-requested exact-head runs on `0d2e085f2960d46dce30e7619e80054db89c3c70`:
 
-Candidate is unchanged native `full` SparkBrain. Comparator is a deterministic zero-trainable-parameter confidence-abstention head over the same per-step probability vector, with one threshold per world chosen only from target-free DEV to match native coverage. Frozen worlds are `reliability_world`, `delayed_evidence_world`, and `contradiction_world`; DEV seeds `510000..510255`; planned TEST seeds `610000..610511`; 30 steps/episode.
+- dedicated NI01 preformal `35306927042`: `completed/failure`;
+- ordinary CI `35306927037`: `completed/failure`.
 
-The primary selective-decision loss, equal-world aggregation, episode-cluster bootstrap (10,000 draws, seed `74017`, Type-7 CI), per-world TEST coverage guard `<= 0.03`, PASS threshold (`effect_ci95_lower >= +0.02` and every world point effect > 0), FAIL threshold (`effect_ci95_upper <= +0.005`), and INCONCLUSIVE branch are fixed prospectively.
+The dedicated job passed the frozen contract/source-binding checker and all focused NI01 scorer contract tests before failing only Ruff `E501` on three overlong lines: two in `scripts/check_ni01_preformal.py` and one in `src/sparkbrain/evaluation/ni01.py`. Ordinary CI likewise failed at lint. This is a science-invariant mechanical formatting failure within the prospectively authorized repair contingency.
 
-Source bindings include worlds blob `2478fba19d7276ebe30ec8f5811bf6d7b7414779`, runner blob `90543b184c64981802560601b85edcdee4583a35`, ablations blob `caa6a1c63fedc2222aa2e6ce708b66668943e8dd`, Phase-1 config blob `0134abeaf3d0551edeeb890502ffebe2c27867b0`, and NI01 deterministic scorer blob `37cf7f59725988155199148f1a62ba77ab6ca0cf`.
+## Mechanical continuation performed
 
-Added machine-readable preformal contract, scientific specification, deterministic scorer primitives, focused tests, fail-closed contract/source checker, and a dedicated preformal workflow. No planned TEST seed was accessed. No formal identity, STARTED/control, preserve ref, evidence tag, formal raw, target materialization, or formal scoring was created. There is therefore **no new scientific result** in this run.
+RELAY changed only formatting required by the existing lint gate:
 
-## Mechanical repair and check state
+- wrapped the overlong scorer exception line without changing behavior;
+- wrapped the overlong checker lines without changing behavior;
+- refreshed the prospective `ni01_scorer_blob` binding because the formatting-only scorer edit necessarily changed its Git blob identity from `37cf7f59725988155199148f1a62ba77ab6ca0cf` to `d3b3565a08277e6a94ef9be1e5bd13e86265f8f2`.
 
-Dedicated run `35306802494` on prior head `8d31d0dda992e06780d247e148e16d8e4cf2fa26` failed only because a synthetic bootstrap fixture asserted that a finite 100-draw percentile CI must contain the point estimate. Contract/source checking had already passed. MAIN corrected only that test assertion (`finite bounds and lower <= upper`); scorer, scientific contract, thresholds, seeds, loss, and bootstrap implementation were unchanged.
+No world, seed, candidate, comparator, metric, loss, coverage guard, PASS/FAIL/INCONCLUSIVE threshold, bootstrap semantic, runtime choice, protocol, or formal identity was changed. No official TEST seed/data was accessed.
 
-New exact head `0d2e085f2960d46dce30e7619e80054db89c3c70` has dedicated NI01 preformal run `35306927042` and ordinary CI `35306927037` queued/running externally. No useful local critical-path work remains while these exact-head checks execute.
+The final coherent research head is `research/ni01-no-ignition-selective-prediction-spec-20260918@2664951b65dd18883d3d80862e80b86ac66cf24f`.
 
-Lease is `WAITING_EXTERNAL`. Relay continuation is expected only to collect `35306927042` and `35306927037`. If both are green and authority/head/identity plan remain unchanged, persist `NEXT_OBJECT_READY_FOR_ANALYST_REVIEW` and STOP for fresh Analyst authority. A science-invariant mechanical failure remains MAIN-owned; any semantic/scientific change returns to Analyst.
+## Final-head gate state
+
+- dedicated NI01 preformal `35308269458` on exact head `2664951b65dd18883d3d80862e80b86ac66cf24f`: `completed/success`;
+- ordinary CI `35308269286` on the same exact head: `in_progress` at checkpoint.
+
+There is **no new scientific information**. NI01 remains preformal and unconsumed; STARTED/test/preserve/scoring/evidence are all absent.
+
+Lease is `WAITING_EXTERNAL`. Next MAIN/RELAY action is only to collect ordinary CI `35308269286`. If it is green and Analyst authority/head/identity/namespace state remain unchanged, persist `NEXT_OBJECT_READY_FOR_ANALYST_REVIEW` and STOP for fresh Analyst authority. If it fails mechanically, only science-invariant repair is allowed followed by all same-final-SHA gates; any semantic/scientific change returns to Analyst before mutation.
