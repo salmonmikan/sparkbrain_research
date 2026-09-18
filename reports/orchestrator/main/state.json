@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-09-18T18:28:00+09:00",
+  "timestamp": "2026-09-18T18:42:46+09:00",
   "worker_role": "main",
-  "execution_mode": "PRIMARY",
+  "execution_mode": "RELAY",
   "analyst_commit": "fc1717f54ac045f29557e839268fc3b0f622acdf",
   "analyst_handoff_mailbox_tip": "04389d811d58215981a397371f153d485b005fbd",
   "current_lane": "H5_DENSE_COMPARATOR_SEMANTIC_REWORK",
-  "current_phase": "H5_REVISED_DENSE_COMPARATOR_GATES_RUNNING",
+  "current_phase": "H5_REVISED_DENSE_COMPARATOR_READY_FOR_ANALYST_REVIEW",
   "consumed_contingency_branches": [
     "PRE_START_SEMANTIC_GAP_DENSE_COMPARATOR"
   ],
@@ -13,7 +13,6 @@
   "authoritative_target_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "active_branch": "research/h5-event-routing-work-reduction-spec-20260918",
-    "prior_rejected_head": "e247f9aa3f78899147fbc37e5e6a41cd559ce6d9",
     "active_head": "520fc8391d9ebb02584a16ec466a1bf168548ea9",
     "active_tree": "ca697ff00c0dccc153760a7f466b16847f1a1393",
     "h5_module_blob": "572f00f7a7361a89a54b647a2e2dca875c9b4829",
@@ -24,14 +23,12 @@
   "fast_path_used": true,
   "full_reconciliation_reason": null,
   "branches_prs_advanced": {
-    "branches": [
-      "research/h5-event-routing-work-reduction-spec-20260918@520fc8391d9ebb02584a16ec466a1bf168548ea9"
-    ],
+    "branches": [],
     "prs": []
   },
   "workflows_experiments": {
     "h5_prestart_35329505864": "completed/success on exact head 520fc8391d9ebb02584a16ec466a1bf168548ea9",
-    "ordinary_ci_35329505891": "in_progress on exact head 520fc8391d9ebb02584a16ec466a1bf168548ea9",
+    "ordinary_ci_35329505891": "completed/success on exact head 520fc8391d9ebb02584a16ec466a1bf168548ea9",
     "formal_experiment": "NOT_STARTED"
   },
   "scientific_results": null,
@@ -46,49 +43,32 @@
   ],
   "active_identity": null,
   "blockers": [
-    "Ordinary CI 35329505891 remains externally in progress.",
-    "Fresh Evidence Analyst acceptance is required after revised-comparator exact-head gates are green before any formal identity/STARTED transition."
+    "Fresh Evidence Analyst acceptance is required before any H5 formal identity reservation or STARTED transition."
   ],
   "lease_collision_reconciliation": {
-    "prior_lease_status": "BLOCKED",
-    "prior_lease_mode": "RELAY",
-    "prior_heartbeat": "2026-09-18T17:56:00+09:00",
-    "stale_at_takeover": true,
-    "same_branch_identity_collision_found": false,
-    "target_head_before_mutation": "e247f9aa3f78899147fbc37e5e6a41cd559ce6d9",
-    "target_head_after_mutation": "520fc8391d9ebb02584a16ec466a1bf168548ea9",
+    "prior_lease_status": "WAITING_EXTERNAL",
+    "prior_lease_mode": "PRIMARY",
+    "prior_heartbeat": "2026-09-18T18:28:00+09:00",
+    "fresh_primary_running_collision_found": false,
+    "target_head_reconfirmed": "520fc8391d9ebb02584a16ec466a1bf168548ea9",
+    "analyst_mailbox_tip_reconfirmed": "04389d811d58215981a397371f153d485b005fbd",
     "sub_mode_observed": "no_op",
     "sub_lane_reserved": false
   },
-  "integrity_status": "CLEAN_PRE_START_REVISED_COMPARATOR_NO_IDENTITY_NO_STARTED_NO_OFFICIAL_TEST_NO_PRESERVE_NO_SCORE_NO_EVIDENCE",
-  "critical_path_fixes_completed": [
-    "Reclaimed stale MAIN lease only after re-fetching lease and exact target ref.",
-    "Replaced rejected candidate-plus-no-op-scan comparator with standalone DenseEagerSparkBrain not inheriting from or invoking SparkBrain candidate transitions.",
-    "Revised the prospective primitive-cost schema to count implementation-faithful scheduler/state/edge/fanout work without artificial dense overhead.",
-    "Preserved fixed formal workloads, TEST seeds, bootstrap/statistic and PASS/FAIL margins.",
-    "Strengthened DEV-only state-equivalence guards across activation, threshold, refractory, eligibility, last-fire, fired counts, event counts and scheduler closure.",
-    "Updated exact source/scorer bindings and fail-closed contract checker.",
-    "Passed dedicated H5 pre-START 35329505864 on exact revised head."
+  "integrity_status": "CLEAN_PRE_START_REVISED_COMPARATOR_BOTH_GATES_GREEN_NO_IDENTITY_NO_STARTED_NO_OFFICIAL_TEST_NO_PRESERVE_NO_SCORE_NO_EVIDENCE",
+  "critical_path_actions_performed": [
+    "Read latest Evidence Analyst handoff, MAIN latest/state/lease, newest MAIN history, and SUB collision report.",
+    "Re-fetched main and exact active H5 branch refs and confirmed both unchanged.",
+    "Collected ordinary CI 35329505891 as completed/success on exact head 520fc8391d9ebb02584a16ec466a1bf168548ea9.",
+    "Reconfirmed dedicated H5 pre-START 35329505864 as completed/success on the same exact head.",
+    "Re-fetched H5 control/preserve/evidence/formal namespaces and confirmed they remain empty.",
+    "Persisted H5_REVISED_DENSE_COMPARATOR_READY_FOR_ANALYST_REVIEW without crossing the formal boundary."
   ],
-  "same_run_steps": [
-    "Consumed fresh Analyst semantic-gap handoff and current MAIN lease/report.",
-    "Read SUB report for collision avoidance and confirmed no reserved independent work.",
-    "Read Control Brain only as strategic prior.",
-    "Re-fetched exact H5 source/contract/checker/tests and stable engine/model bindings.",
-    "Claimed PRIMARY lease through direct GitHub write path.",
-    "Atomically committed revised comparator/contract/checker/tests and fast-forwarded research branch without force.",
-    "Collected dedicated pre-START success and ordinary CI in-progress status on the exact revised head.",
-    "Stopped external waiting and prepared durable Relay continuation state."
-  ],
-  "stop_reason": "WAITING_EXTERNAL_ORDINARY_CI_35329505891",
-  "work_left_for_SUB": null,
-  "lane_repartition_reason": null,
-  "next_MAIN_action": "Collect ordinary CI 35329505891. If completed/success and exact head 520fc8391d9ebb02584a16ec466a1bf168548ea9 plus Analyst authority remain unchanged, persist H5_REVISED_DENSE_COMPARATOR_READY_FOR_ANALYST_REVIEW and STOP for fresh Analyst review. If failure is purely mechanical, repair science-invariant mechanics and rerun all exact-head gates; if semantic/scientific change is required, STOP. Do not reserve identity, create STARTED, access official TEST, preserve, score, or create evidence under current authority.",
+  "stop_reason": "BLOCKED_FOR_FRESH_EVIDENCE_ANALYST_REVIEW",
+  "next_MAIN_action": "Wait for fresh Evidence Analyst review of exact head 520fc8391d9ebb02584a16ec466a1bf168548ea9 with both gates green. Continue only if a new handoff prospectively authorizes the next formal step. Do not reserve identity, create STARTED, access official TEST, preserve, score, create evidence, retune, or choose a successor under the current authority.",
   "write_path_diagnostics": {
     "github_direct_write_attempted": true,
     "github_direct_write_succeeded": true,
-    "lease_claim_commit": "1f3d9b9c3fbf3ae1a3b760487ef0539045574a71",
-    "research_commit": "520fc8391d9ebb02584a16ec466a1bf168548ea9",
     "force_push_used": false
   }
 }
