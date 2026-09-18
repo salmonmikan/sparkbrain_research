@@ -1,43 +1,78 @@
 {
-  "timestamp": "2026-09-18T23:27:34+09:00",
+  "timestamp": "2026-09-19T00:48:00+09:00",
   "worker_role": "main",
-  "execution_mode": "PRIMARY",
-  "analyst_commit": "ebf5c289b58d61a37b124863bcf53e52417a11bd",
-  "current_lane": "LP01_PREFORMAL_CLOSEOUT_NO_HIGH_VALUE_OBJECT",
-  "current_phase": "COMPLETED_PREFORMAL_NON_EVIDENTIARY",
+  "execution_mode": "RELAY",
+  "analyst_commit": "71d0050f3985f888dc34566a0ffbf0b027f37d3e",
+  "current_lane": "POST_LP01_PROGRAMME_SYNTHESIS_AND_NEXT_OBJECT_ADMISSION",
+  "current_phase": "COMPLETED_PREFORMAL_NON_EVIDENTIARY_ADMISSION",
   "consumed_contingency_branches": [
-    "PRE_START_SEMANTIC_GAP",
-    "EXACT_HEAD_UNCHANGED_GATES_GREEN_BOUNDARY_CLEAN"
+    "LP01_NO_HIGH_VALUE_OBJECT_CONFIRMED_PREFORMAL_CLOSEOUT_COMPLETE",
+    "NO_HIGH_VALUE_OBJECT"
   ],
-  "active_claim": "LP01 has no clean high-value formal object under the allocated matched-privilege causal-credit question: native lineage metadata is not on the current online causal path, and a prospectively added ancestry-credit operation is losslessly reducible to ordinary explicit parent-state under equal information privilege.",
+  "active_claim": "No unresolved SparkBrain line currently yields a fresh independently motivated object that is simultaneously native to the causal path, matched in information/readout/resources, robust to ordinary reductions, and prospectively complete without inventing new scientific choices.",
   "authoritative_target_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "active_branch": "research/lp01-actual-lineage-causal-credit-spec-20260918",
-    "active_branch_head": "f6d59a55730c5f99cd7f30470847fc3f175bdf64",
+    "active_branch": null,
     "active_identity": null,
-    "evidence_analyst_handoff": "ebf5c289b58d61a37b124863bcf53e52417a11bd",
-    "contract_blob": "749c6cd83ed64f408e5b1dee822b4a05100c0b14",
-    "formal_boundary": "PROSPECTIVE_SPECIFICATION_ONLY / formal_identity null / formal execution forbidden"
+    "evidence_analyst_handoff": "71d0050f3985f888dc34566a0ffbf0b027f37d3e",
+    "h9_readiness": "research/c07-h9-fully-spiking-readiness-sub-20260917@9480da3d77dfee4766b28757f1a164f5cd4dac26",
+    "h3_exploratory": "research/exploratory-sub-h3-correlation-reduction-20260918@678e38ae0035ca95c424c0fa1eb9343bed8b680b",
+    "h6_exploratory": "research/exploratory-sub-h6-workspace-accounting-20260917@3904596cdb6377fc460435bf1b8a6dcdadff4fab",
+    "h7_exploratory": "research/exploratory-sub-h7-trace-causality-20260917@3b5f122d287025bd9e0aec3a5266704236e6a3d5",
+    "control_brain_prior": "9bf5c0249e88acdd5fc99b12555e785f9c2e2976",
+    "formal_boundary": "PROGRAMME_SYNTHESIS / PROSPECTIVE_ADMISSION_ONLY / no formal identity or STARTED authorized"
   },
-  "fast_path_used": true,
-  "full_reconciliation_reason": null,
   "branches_prs_advanced": [],
   "workflows_experiments": {
-    "lp01_readiness_35352468809": "completed/success@f6d59a55730c5f99cd7f30470847fc3f175bdf64",
-    "ordinary_ci_35352468938": "completed/success@f6d59a55730c5f99cd7f30470847fc3f175bdf64",
+    "evidence_analyst_ci_35361744371": "completed/success@71d0050f3985f888dc34566a0ffbf0b027f37d3e",
+    "new_workflow_dispatched": false,
     "formal_experiment_dispatched": false,
     "official_test_accessed": false
   },
+  "candidate_ranking": [
+    {
+      "candidate": "H7 / provenance causal faithfulness",
+      "information_value": "HIGH",
+      "implementation_distance": "FAR",
+      "reduction_risk": "VERY_HIGH",
+      "admission": "REJECT_CURRENTLY",
+      "reason": "Current native online path does not consume lineage relation; LP01 found equal-privilege explicit-parent reconstruction. A clean successor requires new native architecture/theory, which would be new science rather than continuation."
+    },
+    {
+      "candidate": "H9 / C07 fully-spiking",
+      "information_value": "MEDIUM_HIGH",
+      "implementation_distance": "MEDIUM",
+      "reduction_risk": "MEDIUM",
+      "admission": "UNDERSPECIFIED",
+      "reason": "Operational boundary, neural dynamics, spike decoder, tuning budget, comparator claim, tolerance authority, plasticity regime and runtime/randomness remain scientifically open choices."
+    },
+    {
+      "candidate": "H3 correlation robustness",
+      "information_value": "MEDIUM",
+      "implementation_distance": "MEDIUM",
+      "reduction_risk": "HIGH",
+      "admission": "REJECT_CURRENTLY",
+      "reason": "NON_EVIDENTIARY noisy-proxy work leaves ordinary scalar reduction competitive/better; meaningful continuation requires new inference/calibration/capacity/resource choices."
+    },
+    {
+      "candidate": "H6 workspace coordination",
+      "information_value": "MEDIUM",
+      "implementation_distance": "MEDIUM",
+      "reduction_risk": "HIGH",
+      "admission": "REJECT_CURRENTLY",
+      "reason": "Historical toy ordering flips solely with communication-accounting convention; task semantics, routing knowledge, quality matching and resource accounting are not prospectively fixed."
+    }
+  ],
   "scientific_results": {
     "new_formal_scientific_information_this_run": false,
-    "prospective_specification_decision": "LP01_NO_HIGH_VALUE_OBJECT",
-    "decision_status": "PRE_FORMAL_NON_EVIDENTIARY_CLOSEOUT_ACCEPTED",
+    "prospective_specification_decision": "NO_HIGH_VALUE_OBJECT",
+    "decision_status": "PRE_FORMAL_NON_EVIDENTIARY_ADMISSION_CLOSEOUT",
     "formal_identity_state": "NOT_CREATED",
     "started_state": "NOT_CREATED",
     "formal_preserve_state": "NOT_CREATED",
     "formal_scoring_state": "NOT_CREATED",
     "formal_evidence_state": "NOT_CREATED",
-    "pd01_audit_programme_interpretation": "NO_REGISTERED_LONG_LAG_SIGNAL + COMPARATOR_NOT_WORSE; canonical consumed PD01 evidence remains immutable and no retry/reopening is authorized"
+    "programme_frame": "ARCHITECTURE_TESTBED_UNTIL_FRESH_NATIVE_NON_REDUCIBLE_OBJECT"
   },
   "consumed_identities": [
     "c19-external-v2-official-v4",
@@ -49,45 +84,40 @@
     "h5-event-routing-work-reduction-official-v1"
   ],
   "blockers": [
-    "No active supported new-computational-principle frontier exists after LP01 closeout; fresh Evidence Analyst allocation is required before new MAIN science."
+    "Scientific object scarcity: no current unresolved line passes the fresh novelty-admission gate without new mechanism construction, comparator/metric/resource invention, or other prospectively unfixed scientific choices."
   ],
   "lease_collision_reconciliation": {
-    "inherited_lease_status": "WAITING_EXTERNAL",
-    "inherited_execution_mode": "RELAY",
-    "inherited_heartbeat": "2026-09-18T22:51:29+09:00",
+    "inherited_lease_status": "COMPLETED",
+    "inherited_execution_mode": "PRIMARY",
+    "inherited_heartbeat": "2026-09-18T23:27:34+09:00",
     "fresh_main_running_collision_found": false,
-    "primary_lease_acquired": true,
-    "primary_lease_commit": "5141a41b79ffb622c27dc4f1d4961f91b1dfb8ef",
+    "relay_lease_acquired": true,
+    "relay_lease_commit": "c24f9e395335c83f6e90329c78d73a54c26b86eb",
     "latest_sub_mode": "no_op",
     "sub_lane": null,
     "sub_fallback": null,
     "analyst_ref_drift_found": false,
-    "target_ref_drift_found": false
+    "main_ref_drift_found": false
   },
   "integrity_status": "CLEAN_PREFORMAL_BOUNDARY_NO_IDENTITY_NO_STARTED_NO_OFFICIAL_TEST_NO_FORMAL_PRESERVE_SCORE_OR_EVIDENCE",
-  "critical_path_fixes_completed": [
-    "No new fix was needed in this PRIMARY run.",
-    "Accepted the prior RELAY science-invariant lint/import repair only after exact-head readiness and ordinary CI both completed successfully."
+  "critical_path_actions_performed": [
+    "Consumed fresh Analyst authority 71d0050f3985f888dc34566a0ffbf0b027f37d3e and its bounded admission-only contingency.",
+    "Reconciled current main and the strongest unresolved H9/H3/H6/H7 research refs directly rather than treating ops branches as repository snapshots.",
+    "Read SUB only for collision avoidance and Control Brain only as strategic prior.",
+    "Ranked unresolved objects by information value, reduction risk, identifiability and implementation distance.",
+    "Found no object that can be prospectively completed without inventing new scientific choices, and therefore consumed the authorized NO_HIGH_VALUE_OBJECT contingency.",
+    "Created no research branch, protocol, identity, STARTED marker, workflow, official TEST access, preserve, score or evidence."
   ],
-  "same_run_steps": [
-    "Read fresh Analyst authority ebf5c289b58d61a37b124863bcf53e52417a11bd and consumed its closeout-only contingency.",
-    "Read MAIN lease/latest/state and SUB no-op report as control-plane mailboxes only.",
-    "Re-fetched the LP01 research branch directly and confirmed exact head f6d59a55730c5f99cd7f30470847fc3f175bdf64.",
-    "Confirmed readiness 35352468809 and ordinary CI 35352468938 both completed/success on the exact head.",
-    "Confirmed the prospective contract remains formal_identity null and forbids STARTED, official TEST, formal preserve/scoring/evidence.",
-    "Confirmed branch search exposes no LP01 control/preserve branch and no target drift.",
-    "Acquired PRIMARY lease without collision and persisted LP01_NO_HIGH_VALUE_OBJECT closeout."
-  ],
-  "stop_reason": "LP01_PREFORMAL_CLOSEOUT_COMPLETE_NO_ACTIVE_SUPPORTED_NEW_PRINCIPLE_FRONTIER",
+  "stop_reason": "POST_LP01_ADMISSION_NO_HIGH_VALUE_OBJECT",
   "work_left_for_SUB": "none; SUB remains no_op with null lane/fallback",
   "lane_repartition_reason": null,
-  "next_MAIN_action": "STOP until a fresh Evidence Analyst handoff explicitly allocates a genuinely native, non-definitionally-reducible mechanism/theory or another prospectively complete independent frontier. Do not invent an LP01/H5/PD01 outcome-dependent successor and do not touch consumed identities or immutable evidence.",
+  "next_MAIN_action": "STOP until a fresh Evidence Analyst handoff independently motivates and prospectively specifies a native, matched-privilege, non-definitionally-reducible object. Do not manufacture H9/H3/H6/H7 parameters and do not reopen consumed identities.",
   "write_path_diagnostics": {
     "github_direct_write_attempted": true,
     "github_direct_write_succeeded": true,
     "force_push_used": false,
-    "lease_start_commit": "5141a41b79ffb622c27dc4f1d4961f91b1dfb8ef",
-    "latest_closeout_commit": "531c668c29bdbeab29641866e88f734bf03ee614",
-    "history_path": "reports/orchestrator/history/2026-09-18/2327-main.md"
+    "lease_start_commit": "c24f9e395335c83f6e90329c78d73a54c26b86eb",
+    "latest_closeout_commit": "f4aea699868bf2eceb119f45476c20cdc5000251",
+    "history_path": "reports/orchestrator/history/2026-09-19/0048-main.md"
   }
 }
