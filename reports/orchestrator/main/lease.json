@@ -1,14 +1,16 @@
 {
   "run_id": "sparkbrain-main-20260918T1315JST",
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "WAITING_EXTERNAL",
   "started_at": "2026-09-18T13:14:05+09:00",
-  "heartbeat_at": "2026-09-18T13:18:00+09:00",
+  "heartbeat_at": "2026-09-18T13:27:30+09:00",
   "analyst_commit": "39c62ddb6bc567d3d3c81e38efa61be405ca7b4a",
-  "active_branch": "research/h4-no-ignition-selective-prediction-spec-20260918",
-  "active_identity": "UNRESERVED",
-  "active_step": "NEXT_FRONTIER_PROSPECTIVE_SELECTION",
-  "workflow_run_id": null,
-  "expected_next_action": "Prospectively select and specify at most one genuinely independent next-frontier object, without formal identity reservation, STARTED, official TEST access, formal preservation/scoring, or evidence creation; stop at NEXT_OBJECT_READY_FOR_ANALYST_REVIEW or NO_HIGH_VALUE_OBJECT.",
+  "active_branch": "research/ni01-no-ignition-selective-prediction-spec-20260918",
+  "active_identity": "UNRESERVED:ni01-no-ignition-selective-prediction-official-v1",
+  "active_step": "NI01_PREFORMAL_EXACT_HEAD_CHECKS_PENDING",
+  "workflow_run_id": 35306927042,
+  "ordinary_ci_run_id": 35306927037,
+  "active_head": "0d2e085f2960d46dce30e7619e80054db89c3c70",
+  "expected_next_action": "Collect dedicated NI01 preformal run 35306927042 and ordinary CI 35306927037 on exact head 0d2e085f2960d46dce30e7619e80054db89c3c70. If both are green and Analyst authority/head/identity state remain unchanged, persist NEXT_OBJECT_READY_FOR_ANALYST_REVIEW and STOP for fresh Analyst authority. If a science-invariant mechanical failure occurs, MAIN owns the repair and must re-run all exact-head gates; any semantic/scientific change requires Analyst review before mutation.",
   "owner": "main"
 }
