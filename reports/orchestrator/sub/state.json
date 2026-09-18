@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-09-18T17:32:18+09:00",
+  "timestamp": "2026-09-18T18:35:16+09:00",
   "worker_role": "sub",
   "mode": "no_op",
-  "evidence_analyst_commit": "ded9d64a779791cbbcd9fbbff5fb3acb730c4263",
-  "evidence_analyst_mailbox_tip": "34756bd0414084ae601a3bc724d5d99101c09676",
+  "evidence_analyst_commit": "fc1717f54ac045f29557e839268fc3b0f622acdf",
+  "evidence_analyst_mailbox_tip": "04389d811d58215981a397371f153d485b005fbd",
   "consumed_lanes": [],
   "selected_independent_lane": null,
   "exploratory_target": null,
@@ -11,21 +11,24 @@
   "execution_allowed": false,
   "sub_active_claim": null,
   "main_work_explicitly_avoided": [
-    "H5 exact-head CI/pre-START failure diagnosis",
-    "H5 branch patching, contract repair, or rerun",
-    "H5 identity reservation and STARTED/control creation",
-    "H5 official TEST access, preservation, scoring, or evidence",
-    "H5 successor/reframe design",
-    "NI01 reconciliation/rescue and consumed C19-R1/R2/PD01/NI01 identities"
+    "H5 standalone dense/eager comparator design and implementation",
+    "H5 counter/accounting, contract, checker, tests, CI/pre-START, and exact bindings",
+    "H5 formal identity reservation and STARTED/control creation",
+    "H5 official TEST access, preservation, scoring, evidence, or successor design",
+    "Historical H5 exploratory output as formal evidence or parameter-selection input",
+    "Consumed or terminal C19-R1/R2/C19-v4/PD01/NI01 science"
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "control_brain": "525796e92f6b633d81539bbddf1ac83904f6f579",
-    "orchestrator_parent_tip_observed": "6a991e3fba79613a7df542dba4ca285dcd5e1650",
-    "h5_research_head": "c2370cdc658fceab5a69a49a71032efbf4f72ece",
+    "orchestrator_parent_tip_observed": "869d4fcd2c6f23373b0a6e88ce30233150d3dcef",
+    "h5_research_head": "520fc8391d9ebb02584a16ec466a1bf168548ea9",
     "h5_control_refs": [],
     "h5_preserve_refs": [],
     "h5_evidence_tags": [],
+    "formal_tags": [],
+    "sealed_tags": [],
+    "legacy_freeze_branch_count": 13,
     "evidence_tags": [
       "evidence/c19-official-v4-c19-external-v2-official-v4",
       "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
@@ -42,15 +45,15 @@
   "workflows_experiments": {
     "sub_dispatched": [],
     "main_observed": {
-      "ordinary_ci_35324068936": "completed/failure@c2370cdc658fceab5a69a49a71032efbf4f72ece",
-      "h5_formal_contract_prestart_35324069141": "completed/failure@c2370cdc658fceab5a69a49a71032efbf4f72ece"
+      "h5_formal_contract_prestart_35329505864": "completed/success@520fc8391d9ebb02584a16ec466a1bf168548ea9",
+      "ordinary_ci_35329505891": "completed/success@520fc8391d9ebb02584a16ec466a1bf168548ea9"
     },
-    "failure_logs_or_diagnosis_by_sub": false
+    "formal_experiment_by_sub": "NOT_STARTED"
   },
   "scientific_readiness_exploratory_results": {
     "sub_new_formal_result": false,
     "sub_new_exploratory_result": false,
-    "main_readiness_observation": "Both H5 exact-head readiness gates that were in progress in MAIN's 17:23 report are now terminal failures on c2370cdc...; this is a MAIN critical-path blocker and SUB did not diagnose or repair it.",
+    "main_readiness_observation": "MAIN's standalone DenseEagerSparkBrain revised-comparator exact head 520fc839... now has both dedicated H5 pre-START and ordinary CI completed/success; this is readiness only and requires fresh Evidence Analyst review before identity/STARTED.",
     "main_scientific_result_observed": false
   },
   "evidentiary_status": "NONE_FOR_SUB",
@@ -69,18 +72,19 @@
   "blockers": [
     "No reserved independent formal SUB lane or fallback exists.",
     "No safe, useful, non-duplicative incubator target exists under current Analyst allocation.",
-    "H5 exact-head ordinary CI and formal-contract pre-START failures are MAIN critical-path work and are not valid SUB work."
+    "H5 revised-comparator acceptance remains a MAIN/Evidence Analyst critical-path boundary and is not valid SUB work."
   ],
   "collision_reconciliation": {
-    "report_branch_tip_before_persistence": "6a991e3fba79613a7df542dba4ca285dcd5e1650",
-    "main_checkpoint_time": "2026-09-18T17:23:09+09:00",
+    "report_branch_tip_before_persistence": "869d4fcd2c6f23373b0a6e88ce30233150d3dcef",
+    "main_checkpoint_time": "2026-09-18T18:28:00+09:00",
     "main_checkpoint_status": "WAITING_EXTERNAL",
-    "main_checkpoint_active_head": "c2370cdc658fceab5a69a49a71032efbf4f72ece",
+    "main_checkpoint_active_head": "520fc8391d9ebb02584a16ec466a1bf168548ea9",
     "fresh_main_head_rechecked": true,
+    "fresh_analyst_tip_rechecked": true,
     "sub_collision_detected": false
   },
   "integrity_state": "CLEAN_NO_MAIN_MUTATION_NO_FORMAL_BOUNDARY_CROSSED_BY_SUB",
-  "completion_target": "Freshly reconcile authority, MAIN/SUB streams, Control Brain, current refs/workflows/issues, select only an independent SUB lane or safe non-duplicative incubator target, otherwise persist a clean no-op.",
+  "completion_target": "Freshly reconcile current remote authority, Evidence Analyst scope, MAIN/SUB streams and newest role history, Control Brain doctrine, authoritative refs/workflows/PRs/issues, select only a valid independent SUB lane or safe non-duplicative incubator target, otherwise persist a clean no-op.",
   "completion_target_status": "ACHIEVED",
   "fallback_status": "ABSENT",
   "rejected_lane": null,
@@ -88,5 +92,7 @@
   "candidate_formal_question": null,
   "suggested_prospective_object": null,
   "promotion_recommendation": "NONE",
+  "incubator_handoff": null,
+  "proposed_handoff_to_analyst": "Review MAIN's revised standalone dense/eager H5 comparator on exact head 520fc8391d9ebb02584a16ec466a1bf168548ea9 now that both exact-head gates are green. SUB proposes no independent object.",
   "persistence_limitation": null
 }
