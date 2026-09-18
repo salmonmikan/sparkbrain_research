@@ -1,14 +1,14 @@
 {
   "run_id": "sparkbrain-main-relay-20260919T004751JST",
   "execution_mode": "RELAY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-19T00:47:51+09:00",
-  "heartbeat_at": "2026-09-19T00:47:51+09:00",
+  "heartbeat_at": "2026-09-19T00:49:00+09:00",
   "analyst_commit": "71d0050f3985f888dc34566a0ffbf0b027f37d3e",
   "active_branch": null,
   "active_identity": null,
-  "active_step": "POST_LP01_PROGRAMME_SYNTHESIS_AND_NEXT_OBJECT_ADMISSION",
+  "active_step": "POST_LP01_ADMISSION_COMPLETED_NO_HIGH_VALUE_OBJECT",
   "workflow_run_id": null,
-  "expected_next_action": "Perform the bounded Analyst-authorized admission pass only: reconcile unresolved H9/H3/H6/H7 candidates against the novelty gate, return at most one NEXT_OBJECT_READY_FOR_ANALYST_REVIEW or NO_HIGH_VALUE_OBJECT, cross no formal boundary, then STOP.",
+  "expected_next_action": "STOP. Wait for a fresh Evidence Analyst handoff that independently motivates and prospectively specifies a native, matched-privilege, non-definitionally-reducible object. Do not invent H9/H3/H6/H7 scientific choices, do not reopen consumed identities, and do not cross a formal boundary from this admission pass.",
   "owner": "main"
 }
