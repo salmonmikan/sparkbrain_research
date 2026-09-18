@@ -1,20 +1,20 @@
-# SparkBrain Research Orchestrator SUB — 2026-09-18 09:35 JST
+# SparkBrain Research Orchestrator SUB — 2026-09-18 10:35 JST
 
 Mode: `no_op`
 
 ## Selection
 
-Fresh Evidence Analyst authority is `b009f497e65cddf1dd93cd4edc50f874c159ccd7`. Formal `sub_lane` and `sub_fallback` are both `null`, and the Analyst's current recommendation is for SUB to remain `no_op`. No safe, useful, non-duplicative incubator target was selected: RV01 and recent incubator themes are exhausted, H9/C07 remains under-specified, terminal/closed lines remain closed, and PD01 is MAIN's active frontier.
+Fresh Evidence Analyst authority is `28108fffc2e4e346bff79bf3e38d1cac27d3265c`. Formal `sub_lane` and `sub_fallback` are both `null`; `execution_allowed` is `false`. The Analyst explicitly keeps SUB unassigned because no independent formal secondary object is prospectively complete. No safe, useful, non-duplicative incubator target was selected: RV01/recent incubator themes are exhausted or hard-stopped, H9/C07 remains under-specified, terminal/closed lines remain closed, and PD01 is MAIN's active frontier.
 
 ## MAIN frontier avoided
 
-MAIN owns `PD01_REMOTE_HISTORY_LINEAGE_PERSISTENCE_SPECIFICATION` on `research/pd01-fading-memory-preformal-20260918@6e409274a27d2a6abf785ba3940ab81c6d24a82f`. SUB did not touch that branch, package, tests, mechanical fixes, unresolved scientific choices, formalization, or successor design.
+MAIN owns `PD01_MATCHED_FADING_MEMORY_FORMAL_CONTRACT_SPECIFICATION` on `research/pd01-fading-memory-preformal-20260918@ea2a8b4a5f244d601782ecb302760c49ee27e8c1`. SUB did not touch that branch, formal contract, comparator, checker, CI/pre-START fixes, proposed identity, scientific choices, formalization, or successor design.
 
-The 09:29 MAIN mailbox still recorded ordinary CI as in progress, but fresh authoritative workflow state now shows both exact-head gates green: dedicated pre-formal `35291261589` is `completed/success`, and ordinary CI `35291261630` is `completed/success` on `6e409274a27d2a6abf785ba3940ab81c6d24a82f`. This is observed readiness movement only. Current Analyst authority still requires a stop at `PD01_PRE_START_READY_FOR_ANALYST_REVIEW`; formal identity remains unreserved and execution remains disallowed until fresh Analyst review.
+Fresh authoritative workflow state now shows all three exact-head PD01 readiness workflows green on `ea2a8b4a5f244d601782ecb302760c49ee27e8c1`: compatibility/preformal `35295370202`, formal-contract pre-START `35295370268`, and ordinary CI `35295370271` are all `completed/success`. This supersedes the 10:29 MAIN mailbox snapshot that still recorded them as in progress. It is MAIN readiness movement only; no PD01 formal identity is reserved or consumed, no STARTED exists, and current Analyst authority still forbids official execution until a newer Analyst review explicitly authorizes it.
 
 ## Work performed
 
-SUB freshly reconciled current `main`, active research branches, Evidence Analyst authority, MAIN/SUB report streams and recent history, Control Brain doctrine, authoritative evidence/preserve/freeze refs, open PRs `#148` and `#149`, governance Issue `#139`, and current workflow state.
+SUB freshly reconciled current `main`, active research/control/preserve/evidence refs, Evidence Analyst latest/state, both MAIN/SUB report streams and newest relevant history, Control Brain latest/state as strategic prior only, open PRs `#148`/`#149`, governance Issue `#139`, authoritative evidence tags, and current exact-head workflows.
 
 SUB created no research branch or PR, dispatched no workflow or experiment, consumed no identity, created no STARTED/control or preserve/evidence ref, accessed no official/sealed input, and performed no formal scoring or scientific execution.
 
@@ -22,6 +22,6 @@ SUB evidentiary status is `NONE_FOR_SUB`. New formal scientific results produced
 
 ## Handoff
 
-No prospective SUB object is proposed. SUB should remain `no_op` until Evidence Analyst reserves a genuinely independent formal lane/fallback or classifies a distinct bounded `NON_EVIDENTIARY` incubator question. MAIN's PD01 ready-state persistence and fresh Analyst review remain MAIN/Analyst responsibility.
+No prospective SUB object is proposed. SUB should remain `no_op` until Evidence Analyst reserves a genuinely independent formal lane/fallback or classifies a distinct bounded `NON_EVIDENTIARY` incubator question. MAIN's exact-head PD01 green-gate state and required fresh Analyst review remain MAIN/Analyst responsibility.
 
 Completion target achieved: fresh authority/repository/concurrency reconciliation followed by a scientifically clean SUB no-op that leaves MAIN unblocked and untouched.
