@@ -1,10 +1,10 @@
 {
-  "schema": "h5-event-routing-work-reduction-formal-contract-v1",
-  "phase": "H5_FORMAL_CONTRACT_READY_FOR_ANALYST_REVIEW",
+  "schema": "h5-event-routing-work-reduction-formal-contract-v2",
+  "phase": "H5_REVISED_DENSE_COMPARATOR_READY_FOR_ANALYST_REVIEW",
   "execution_authorized": false,
   "formal_identity": null,
-  "analyst_authority_commit": "ded9d64a779791cbbcd9fbbff5fb3acb730c4263",
-  "analyst_mailbox_tip_at_spec_start": "34756bd0414084ae601a3bc724d5d99101c09676",
+  "analyst_authority_commit": "fc1717f54ac045f29557e839268fc3b0f622acdf",
+  "analyst_handoff_mailbox_tip_at_rework_start": "04389d811d58215981a397371f153d485b005fbd",
   "claim": "Lazy decay and event-routed active execution reduce audited algorithmic work relative to a dense-equivalent implementation while preserving target behavior in fixed sparse workloads.",
   "non_claims": [
     "No hardware-energy claim.",
@@ -20,30 +20,43 @@
     "package_path": "pyproject.toml",
     "package_blob": "49d47f3d65f67f1c0a6b82a3f7fc2d0364e2a88c",
     "h5_module_path": "src/sparkbrain/h5_work.py",
-    "h5_module_blob": "d1ed8c6975803a695eac083a6761de64c29e10e8"
+    "h5_module_blob": "572f00f7a7361a89a54b647a2e2dca875c9b4829"
   },
   "runtime_binding": {
     "python": "CPython 3.11.10",
     "scientific_runtime_third_party_dependencies": [],
-    "notes": "The H5 candidate/comparator/workload/counter/scorer/preserver use Python stdlib plus the bound SparkBrain source only. Pytest and Ruff are readiness tooling, not scientific runtime dependencies."
+    "notes": "The H5 candidate, standalone comparator, workload, counter, scorer and preserver use Python stdlib plus the bound SparkBrain source only. Pytest and Ruff are readiness tooling, not scientific runtime dependencies."
   },
   "candidate": {
     "name": "sparkbrain_event_routed_lazy",
-    "implementation": "AuditedSparkBrain(dense_scan=false)",
-    "semantics": "Current SparkBrain queued-event execution, lazy per-Spark closed-form decay on touch, active outgoing-edge fanout on firing, and current dense eligibility-decay loop unchanged.",
+    "implementation": "AuditedSparkBrain",
+    "semantics": "Bound SparkBrain queued-event execution with lazy per-Spark closed-form decay on touch, active outgoing-edge fanout on firing, and current all-edge eligibility decay per event.",
     "trainable_parameters": 0
   },
   "comparator": {
-    "name": "sparkbrain_dense_equivalent",
-    "implementation": "AuditedSparkBrain(dense_scan=true)",
-    "semantics": "Same graph, state equations, thresholds, decay, events, seeds, precision and output semantics as candidate; additionally materializes every Spark and evaluates every graph edge at every queued event before the same event transition.",
+    "name": "sparkbrain_dense_eager_equivalent",
+    "implementation": "DenseEagerSparkBrain",
+    "semantics": "Standalone array-based eager implementation of the same H5 state equations. It materializes the full node state once at each distinct event time, applies the same per-event all-edge eligibility decay, processes the same ordered external/propagation messages, and derives circulant fanout directly without invoking SparkBrain or the candidate transition path.",
+    "scheduler": "Independent time-bucket calendar keyed by exact float event times; events are processed by priority and insertion order, preserving the candidate H5 ordering semantics without reusing candidate queue code.",
     "information_privilege": "identical",
-    "trainable_parameters": 0
+    "trainable_parameters": 0,
+    "inherits_candidate_engine": false,
+    "invokes_candidate_transition_path": false
   },
   "graph": {
     "type": "directed_circulant",
-    "offsets": [1, 7, 23, 61],
-    "weights": [0.18, 0.16, 0.14, 0.12],
+    "offsets": [
+      1,
+      7,
+      23,
+      61
+    ],
+    "weights": [
+      0.18,
+      0.16,
+      0.14,
+      0.12
+    ],
     "spark_kind": "feature",
     "threshold": 1.0,
     "base_threshold": 1.0,
@@ -54,41 +67,79 @@
   },
   "formal_test_workloads": {
     "sparse_primary": {
-      "families": ["uniform", "clustered", "bursty"],
-      "sizes": [128, 384],
-      "activity_fractions": [0.01, 0.05, 0.15],
+      "families": [
+        "uniform",
+        "clustered",
+        "bursty"
+      ],
+      "sizes": [
+        128,
+        384
+      ],
+      "activity_fractions": [
+        0.01,
+        0.05,
+        0.15
+      ],
       "horizon": 24,
-      "seeds": [51001, 51017, 51031, 51047, 51059, 51071, 51083, 51097],
+      "seeds": [
+        51001,
+        51017,
+        51031,
+        51047,
+        51059,
+        51071,
+        51083,
+        51097
+      ],
       "cell_count": 144,
       "aggregation": "equal weight across all family-size-activity strata within each seed, then equal weight across seeds"
     },
     "dense_control": {
-      "families": ["uniform"],
-      "sizes": [128],
-      "activity_fractions": [1.0],
+      "families": [
+        "uniform"
+      ],
+      "sizes": [
+        128
+      ],
+      "activity_fractions": [
+        1.0
+      ],
       "horizon": 8,
-      "seeds": [51001, 51017, 51031, 51047, 51059, 51071, 51083, 51097],
+      "seeds": [
+        51001,
+        51017,
+        51031,
+        51047,
+        51059,
+        51071,
+        51083,
+        51097
+      ],
       "cell_count": 8,
       "role": "diagnostic only; excluded from primary sparse PASS/FAIL statistic"
     },
     "max_events_per_cell": 1000000
   },
   "dev_only_validation": {
-    "families": ["uniform", "clustered", "bursty"],
+    "families": [
+      "uniform",
+      "clustered",
+      "bursty"
+    ],
     "size": 64,
     "activity_fraction": 0.08,
     "horizon": 4,
     "seed": 1709,
-    "allowed_use": "mechanical equivalence and counter-invariant validation only; no threshold, workload, margin or statistic selection"
+    "allowed_use": "mechanical equivalence, state-equation parity and counter-invariant validation only; no threshold, workload, margin, dense-design or statistic selection"
   },
   "audited_work": {
-    "metric": "unit-weight sum of named primitive algorithmic actions",
+    "metric": "unit-weight sum of prospectively named primitive algorithmic actions",
     "counter_fields": [
-      "queue_pushes",
-      "queue_pops",
-      "source_touches",
-      "destination_touches",
-      "state_touches",
+      "scheduler_writes",
+      "scheduler_reads",
+      "target_state_accesses",
+      "state_materializations",
       "state_decay_evaluations",
       "threshold_relax_evaluations",
       "eligibility_edge_touches",
@@ -98,19 +149,24 @@
       "activation_additions",
       "eligibility_additions",
       "threshold_additions",
-      "sequence_additions",
       "residual_multiplications",
-      "fanout_bookkeeping"
+      "fanout_index_lookups"
     ],
     "candidate_bookkeeping_included": true,
     "dense_common_work_included": true,
-    "notes": "Current SparkBrain eligibility decay already touches every edge per event and is counted on both sides. Queue and fanout bookkeeping are not omitted from the candidate. No hardware timing or energy surrogate enters the primary metric."
+    "scheduler_rule": "Each implementation is charged one scheduler write per stored event/message and one scheduler read per executed event/message. Heap/calendar comparison micro-costs are not separately weighted.",
+    "implementation_specific_rule": "Candidate fanout container lookup is charged only to the candidate because the dense comparator derives fixed circulant targets directly. Dense full-state materialization is charged only when the dense algorithm actually advances to a new event time. No output-neutral scan is added merely to inflate dense work.",
+    "notes": "Both sides count target accesses, per-event all-edge eligibility decay, routed edge checks, message traversals, activation/eligibility/threshold additions and residual multiplication when genuinely executed. The schema intentionally permits either implementation to win."
   },
   "quality_guard": {
     "logical_activation_max_abs_error_lte": 1e-10,
+    "logical_threshold_max_abs_error_lte": 1e-10,
+    "refractory_max_abs_error_lte": 1e-10,
+    "eligibility_max_abs_error_lte": 1e-10,
+    "last_fire_vector": "exact",
     "fired_count_vector": "exact",
     "events_processed": "exact",
-    "terminal_queue_empty": "required_both",
+    "terminal_scheduler_empty": "required_both",
     "failure_classification": "INVALID_QUALITY_GUARD"
   },
   "primary_statistic": {
@@ -136,13 +192,17 @@
   "raw_preservation_contract": {
     "preserver": "sparkbrain.h5_work.canonical_raw_json",
     "required_before_scoring": true,
-    "raw_fields": "workload identifiers, candidate/dense named counters, total work, output-equivalence observations, and counter invariants",
-    "forbidden_pre_preserve": ["primary_classification", "bootstrap_ci", "pass_fail_decision"],
+    "raw_fields": "workload identifiers, candidate/dense named counters, total work, full logical-state equivalence observations and counter invariants",
+    "forbidden_pre_preserve": [
+      "primary_classification",
+      "bootstrap_ci",
+      "pass_fail_decision"
+    ],
     "independent_refetch_digest_required_before_score": true
   },
   "scorer_binding": {
     "function": "sparkbrain.h5_work.score_rows",
-    "module_blob": "d1ed8c6975803a695eac083a6761de64c29e10e8",
+    "module_blob": "572f00f7a7361a89a54b647a2e2dca875c9b4829",
     "bootstrap_seed": 75001,
     "bootstrap_replicates": 10000
   },
@@ -156,5 +216,5 @@
     "preserve_before_read_for_scoring": true,
     "formal_identity_is_intentionally_unassigned": true
   },
-  "stop_rule": "Stop after green readiness at H5_FORMAL_CONTRACT_READY_FOR_ANALYST_REVIEW. Fresh Evidence Analyst authorization is required before identity reservation, STARTED, official TEST, preservation, formal scoring or evidence creation."
+  "stop_rule": "Stop after green readiness at H5_REVISED_DENSE_COMPARATOR_READY_FOR_ANALYST_REVIEW. Fresh Evidence Analyst acceptance is required before identity reservation, STARTED, official TEST, preservation, formal scoring or evidence creation."
 }

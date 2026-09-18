@@ -1,19 +1,32 @@
 from __future__ import annotations
 
-from sparkbrain.h5_work import dev_validate, quality_pass, score_rows, type7_quantile
+from sparkbrain.engine import SparkBrain
+from sparkbrain.h5_work import (
+    DenseEagerSparkBrain,
+    dev_validate,
+    quality_pass,
+    score_rows,
+    type7_quantile,
+)
 
 
-def test_h5_dev_equivalence_and_counter_closure() -> None:
+def test_h5_dense_comparator_is_standalone_and_state_equivalent() -> None:
+    assert not issubclass(DenseEagerSparkBrain, SparkBrain)
     rows = dev_validate()
-    assert {row["family"] for row in rows} == {"uniform", "clustered", "bursty"}
+    assert {row["family"] for row in rows} == {
+        "uniform",
+        "clustered",
+        "bursty",
+    }
     assert all(quality_pass(row) for row in rows)
     for row in rows:
         candidate = row["candidate_counters"]
         dense = row["dense_counters"]
-        assert candidate["queue_pushes"] == candidate["queue_pops"]
-        assert dense["queue_pushes"] == dense["queue_pops"]
-        assert dense["route_edge_checks"] >= candidate["route_edge_checks"]
-        assert dense["state_touches"] >= candidate["state_touches"]
+        assert candidate["scheduler_writes"] == candidate["scheduler_reads"]
+        assert dense["scheduler_writes"] == dense["scheduler_reads"]
+        assert candidate["fanout_index_lookups"] > 0
+        assert dense["fanout_index_lookups"] == 0
+        assert row["dense_algorithm"] == "standalone_dense_eager_calendar"
 
 
 def test_h5_type7_quantile_fixture() -> None:
@@ -35,6 +48,10 @@ def test_h5_scorer_rejects_quality_failure_before_work_classification() -> None:
         "candidate_work": 100,
         "dense_work": 200,
         "max_abs_activation_error": 1e-4,
+        "max_abs_threshold_error": 0.0,
+        "max_abs_refractory_error": 0.0,
+        "max_abs_eligibility_error": 0.0,
+        "last_fire_exact": True,
         "fired_counts_exact": True,
         "events_processed_exact": True,
         "queue_empty_exact": True,
