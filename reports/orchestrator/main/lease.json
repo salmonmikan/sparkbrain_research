@@ -1,14 +1,14 @@
 {
-  "run_id": "sparkbrain-main-relay-20260919T004751JST",
-  "execution_mode": "RELAY",
-  "status": "COMPLETED",
-  "started_at": "2026-09-19T00:47:51+09:00",
-  "heartbeat_at": "2026-09-19T00:49:00+09:00",
-  "analyst_commit": "71d0050f3985f888dc34566a0ffbf0b027f37d3e",
+  "run_id": "sparkbrain-main-primary-20260919T021631JST",
+  "execution_mode": "PRIMARY",
+  "status": "RUNNING",
+  "started_at": "2026-09-19T02:16:31+09:00",
+  "heartbeat_at": "2026-09-19T02:16:31+09:00",
+  "analyst_commit": "c7ccb537878966f10396bfa4c539840509014490",
   "active_branch": null,
   "active_identity": null,
-  "active_step": "POST_LP01_ADMISSION_COMPLETED_NO_HIGH_VALUE_OBJECT",
+  "active_step": "PROGRAMME_ARCHITECTURE_TESTBED_FRESH_OBJECT_ADMISSION_RECONCILIATION",
   "workflow_run_id": null,
-  "expected_next_action": "STOP. Wait for a fresh Evidence Analyst handoff that independently motivates and prospectively specifies a native, matched-privilege, non-definitionally-reducible object. Do not invent H9/H3/H6/H7 scientific choices, do not reopen consumed identities, and do not cross a formal boundary from this admission pass.",
+  "expected_next_action": "Consume the fresh architecture/testbed authority, verify there is no newly emerged independently motivated native object or collision, and if none exists persist NO_HIGH_VALUE_OBJECT/architecture-testbed hold without creating a research branch, identity, STARTED, official TEST access, preserve/scoring output, or evidence.",
   "owner": "main"
 }
