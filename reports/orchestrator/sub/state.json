@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-19T03:35:00+09:00",
+  "timestamp": "2026-09-19T04:35:00+09:00",
   "worker_role": "sub",
   "mode": "no_op",
   "evidence_analyst_commit": "03f027926fb06a42f108e5470779f2de2126116a",
@@ -11,27 +11,20 @@
   "execution_allowed": false,
   "sub_active_claim": null,
   "main_work_explicitly_avoided": [
-    "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE fresh-object admission gate and candidate ranking/successor selection",
-    "Any H9/H3/H6/H7 successor selection, comparator/mechanism design, specification/readiness or candidate-specific verifier/harness/runner/binding/CI repair",
-    "NI01 outcome-responsive successor design, rerun, relabel, retune, rescore, evidence mutation or rescue",
-    "LP01 formalization/rescue and terminal H5/PD01/C19 consumed-line reopening",
-    "Any official TEST, STARTED/control, preserve/scoring/evidence or formal execution work"
+    "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE fresh-object admission and candidate selection",
+    "Candidate-specific successor/comparator/mechanism design, implementation, verifier/harness/runner/binding/CI/readiness or review fixes",
+    "NI01 rerun/relabel/retune/rescore/rescue or outcome-responsive successor design",
+    "LP01/H5/PD01/C19 consumed-line reopening or repair",
+    "Any formal identity, STARTED/control, official TEST, preserve/scoring/evidence execution"
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "evidence_analyst": "03f027926fb06a42f108e5470779f2de2126116a",
     "control_brain": "10eb4206fb0c998fcdbc40c0e16f38829ea5d41e",
-    "orchestrator_parent_tip_observed_before_sub_persistence": "61b93e2c43b8ec087a961856b4dc57e19fee38a9",
-    "main_latest_checkpoint_time": "2026-09-19T03:12:42+09:00",
-    "main_latest_analyst_commit": "c7ccb537878966f10396bfa4c539840509014490",
-    "main_latest_phase": "NO_ACTIVE_FORMAL_FRONTIER_FRESH_OBJECT_ADMISSION_GATE_ONLY",
-    "main_stop_reason": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT",
-    "h9_readiness": "research/c07-h9-fully-spiking-readiness-sub-20260917@9480da3d77dfee4766b28757f1a164f5cd4dac26",
-    "h3_exploratory": "research/exploratory-sub-h3-correlation-reduction-20260918@678e38ae0035ca95c424c0fa1eb9343bed8b680b",
-    "h6_exploratory": "research/exploratory-sub-h6-workspace-accounting-20260917@3904596cdb6377fc460435bf1b8a6dcdadff4fab",
-    "h7_exploratory": "research/exploratory-sub-h7-trace-causality-20260917@3b5f122d287025bd9e0aec3a5266704236e6a3d5",
-    "rv01_delay_filter_exploratory": "research/exploratory-sub-rv01-delay-filter-reduction-20260918@48bd4a831435dbfaeace1d2935a04e05751a61fe",
-    "lp01_research": "research/lp01-actual-lineage-causal-credit-spec-20260918@f6d59a55730c5f99cd7f30470847fc3f175bdf64",
+    "orchestrator_parent_tip_observed_before_sub_persistence": "198737fcb4976b5b61b97939db32807d36b462ec",
+    "main_latest_checkpoint_time": "2026-09-19T04:12:14+09:00",
+    "main_latest_lane": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
+    "main_stop_reason": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_NO_CHANGE_AFTER_RELAY",
     "formal_tags": [],
     "sealed_tags": [],
     "evidence_tags": [
@@ -53,8 +46,7 @@
   "workflows_experiments": {
     "sub_dispatched": [],
     "fresh_observed": {
-      "scheduler_registry_ci_35381020290": "in_progress@cb4e94a1ed770e570cae0fc4a27010de78bbc635",
-      "scheduler_registry_ci_35380940963": "in_progress@fca51df1e7d1d3d3aa2c346ac3d752a6e3ef5c18"
+      "orchestrator_main_ci_35385017316": "completed/success@198737fcb4976b5b61b97939db32807d36b462ec"
     },
     "formal_experiment_by_sub": "NOT_STARTED"
   },
@@ -64,12 +56,12 @@
     "new_formal_scientific_information": false,
     "analyst_programme_mode": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
     "main_lane": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
-    "main_lane_phase": "NO_ACTIVE_FORMAL_FRONTIER_FRESH_OBJECT_ADMISSION_GATE_ONLY",
     "sub_lane": null,
     "sub_fallback": null,
     "sub_exploratory_review": null,
-    "ni01_interpretive_update": "Canonical FAIL token unchanged; programme meaning narrowed to NO_REGISTERED_INCREMENTAL_NATIVE_ADVANTAGE_OVER_MATCHED_CONFIDENCE_ABSTENTION because no separate prospective positive native-signal gate was registered.",
-    "allocation_changed": false
+    "ni01_programme_synthesis": "NO_REGISTERED_INCREMENTAL_NATIVE_ADVANTAGE_OVER_MATCHED_CONFIDENCE_ABSTENTION",
+    "allocation_changed": false,
+    "new_update_this_run": "MAIN 04:12 reconciliation remained on architecture/testbed hold with no fresh object; its report CI completed successfully."
   },
   "evidentiary_status": "NONE_FOR_SUB",
   "consumed_identities": {
@@ -82,26 +74,23 @@
       "pd01-long-history-fading-memory-official-v1",
       "ni01-no-ignition-selective-prediction-official-v1",
       "h5-event-routing-work-reduction-official-v1"
-    ],
-    "lp01_formal_identity": null,
-    "architecture_testbed_admission_formal_identity": null
+    ]
   },
   "blockers": [
     "No reserved independent formal SUB lane or fallback exists.",
-    "No safe, useful, non-duplicative incubator target exists after reconciling fresh Analyst authority and prior SUB exploratory history.",
+    "No safe, useful, non-duplicative incubator target exists after fresh Analyst, MAIN, Control Brain and prior SUB reconciliation.",
     "Scientific object availability is the blocker; there is no SUB infrastructure blocker."
   ],
-  "blocked_until": "A genuinely independent prospectively complete secondary object is explicitly reserved for SUB, or a distinct bounded NON_EVIDENTIARY synthetic/dev question appears outside MAIN admission, terminal-line rescue, NI01 outcome-responsive successor design and already-explored SUB themes.",
+  "blocked_until": "A genuinely independent prospectively complete secondary object is reserved for SUB, or a distinct bounded NON_EVIDENTIARY synthetic/dev question appears outside MAIN admission, consumed-line rescue and already-explored SUB themes.",
   "fallback_status": "ABSENT",
   "rejected_lane": null,
   "lane_rejected_reason": null,
   "collision_reconciliation": {
-    "report_branch_tip_before_persistence": "61b93e2c43b8ec087a961856b4dc57e19fee38a9",
-    "latest_main_checkpoint_time": "2026-09-19T03:12:42+09:00",
-    "latest_main_checkpoint_analyst_commit": "c7ccb537878966f10396bfa4c539840509014490",
+    "report_branch_tip_before_persistence": "198737fcb4976b5b61b97939db32807d36b462ec",
+    "latest_main_checkpoint_time": "2026-09-19T04:12:14+09:00",
+    "latest_main_checkpoint_analyst_commit": "03f027926fb06a42f108e5470779f2de2126116a",
     "fresh_analyst_tip_rechecked": true,
     "analyst_tip": "03f027926fb06a42f108e5470779f2de2126116a",
-    "analyst_newer_than_main_checkpoint": true,
     "analyst_allocation_changed": false,
     "main_ref_rechecked": true,
     "research_refs_rechecked": true,
@@ -116,9 +105,9 @@
   "suggested_prospective_object": null,
   "promotion_recommendation": "NONE",
   "incubator_handoff": null,
-  "proposed_handoff_to_analyst": "Keep SUB null/no-op unless a genuinely independent prospectively complete secondary object is reserved for SUB, or a genuinely distinct bounded NON_EVIDENTIARY synthetic/dev question appears outside MAIN fresh-object admission, terminal-line rescue, NI01 outcome-responsive successor design and already-explored SUB themes. Preserve NI01's narrowed programme interpretation without relabeling or mutating immutable evidence.",
+  "proposed_handoff_to_analyst": "Keep SUB null/no-op until a genuinely independent prospectively complete secondary object is reserved or a distinct bounded NON_EVIDENTIARY synthetic/dev question appears. Do not manufacture work from MAIN admission or consumed terminal lines.",
   "report_persistence": {
-    "history_path": "reports/orchestrator/history/2026-09-19/0335-sub.md",
+    "history_path": "reports/orchestrator/history/2026-09-19/0435-sub.md",
     "sub_latest_path": "reports/orchestrator/sub/latest.md",
     "sub_state_path": "reports/orchestrator/sub/state.json",
     "atomic_git_commit_requested": true,
