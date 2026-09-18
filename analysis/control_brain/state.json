@@ -1,137 +1,186 @@
 {
-  "schema_version": 7,
+  "schema_version": 8,
   "role": "CONTROL_BRAIN",
-  "analysis_time": "2026-09-18T14:50:00+09:00",
+  "analysis_time": "2026-09-18T18:55:00+09:00",
   "role_selection": {
     "selected_role": "CONTROL_BRAIN",
-    "slot": "14:50 JST"
+    "slot": "18:50 JST"
   },
   "repository": {
     "main_head": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "orchestrator_branch_head": "42f1b1d8c54a7fd22f1547eab4c90dd8bc62b641",
-    "active_research": "research/ni01-no-ignition-selective-prediction-spec-20260918",
-    "active_research_head": "2664951b65dd18883d3d80862e80b86ac66cf24f",
-    "evidence_tag_count": 3,
+    "orchestrator_branch_head": "6572edfbe91a825b7fef66aaac329bbcd4bf8e4e",
+    "active_research": "research/h5-event-routing-work-reduction-spec-20260918",
+    "active_research_head": "520fc8391d9ebb02584a16ec466a1bf168548ea9",
+    "evidence_tag_count": 4,
     "legacy_freeze_branch_count": 13,
     "ruleset_count": 0,
-    "open_prs": [148, 149]
+    "open_prs": [148, 149],
+    "open_governance_issue": 139
   },
   "consumed_handoffs": {
-    "evidence_analyst": "e22b401013b01517890d48e33debdd79bb522e65",
-    "main_orchestrator_latest_commit": "58a52882f23e2dc64c1262ec2b0aac92d75b8356",
+    "evidence_analyst_decision": "fc1717f54ac045f29557e839268fc3b0f622acdf",
+    "evidence_analyst_mailbox_tip": "04389d811d58215981a397371f153d485b005fbd",
+    "orchestrator_report_tip": "6572edfbe91a825b7fef66aaac329bbcd4bf8e4e",
     "repository_steward": "5f0faac963861b47b3385083454fdd09e3ff8f4c",
     "literature": "525686fa0c14f64426ca7bf5c89f08cd0bcb9c77",
-    "audit": "0c871b1b9b54d35c826a59c5b9925afa55b78d22"
+    "audit": "0c871b1b9b54d35c826a59c5b9925afa55b78d22",
+    "human_directives_tip": "11b32af792fd974508819d4018292e228d52f88d"
   },
   "central_theory": {
     "programme_frame": "PERSISTENT_DYNAMICAL_COGNITIVE_ARCHITECTURE_TESTBED",
     "doctrine_change": false,
-    "narrow_alive": "residual actual-historical-lineage causal credit after ordinary finite-state/predictive-state/recurrent/fading-memory/plasticity reductions"
+    "narrow_alive": "actual-historical-lineage-specific causal credit/circulation surviving explicit finite-state, predictive-state, recurrent/reservoir/fading-memory, conventional plasticity/eligibility/slow-state and simple abstention reductions",
+    "current_formal_support_for_new_principle": "NONE"
   },
   "scientific_state": {
     "c19_v4": "TERMINAL_PASS_NARROW_REPRESENTATION_RESULT_ONLY",
     "c19_r2": "TERMINAL_REDUCED_BY_FSA_ROBUST_SO_FAR",
-    "pd01": "TERMINAL_FAIL_REDUCED_BY_FADING_MEMORY"
+    "pd01": "TERMINAL_FAIL_REDUCED_BY_FADING_MEMORY",
+    "ni01": {
+      "status": "TERMINAL_FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION",
+      "identity": "ni01-no-ignition-selective-prediction-official-v1",
+      "evidence_commit": "69aa785a48bbdb531229b7f71f7fa84a5fde9948",
+      "effect": -0.00047743055555544517,
+      "ci95": [-0.0024414062499999965, 0.0014756944444444355],
+      "coverage_guard_pass": true,
+      "no_retry": true
+    }
   },
   "primary_frontier": {
-    "line": "NI01/H4",
-    "identity": "ni01-no-ignition-selective-prediction-official-v1",
-    "identity_status": "UNRESERVED_UNCONSUMED",
+    "line": "H5_EVENT_ROUTING_WORK_REDUCTION",
+    "branch": "research/h5-event-routing-work-reduction-spec-20260918",
+    "head": "520fc8391d9ebb02584a16ec466a1bf168548ea9",
+    "phase": "H5_REVISED_DENSE_COMPARATOR_READY_FOR_ANALYST_REVIEW",
+    "formal_identity": null,
     "started": false,
-    "preformal_run": {
-      "id": 35308269458,
+    "prestart_run": {
+      "id": 35329505864,
       "conclusion": "success"
     },
     "ci_run": {
-      "id": 35308269286,
+      "id": 35329505891,
       "conclusion": "success"
     },
-    "interpretation": "PASS narrow only; FAIL closes registered discriminator; no automatic successor",
-    "operational_blocker": "MAIN PRIMARY lease is stale RUNNING with no durable MAIN advancement after 13:47; fresh repository refs still show no NI01 STARTED/preserve/evidence"
+    "strategic_scope": "bounded algorithmic-work/efficiency discriminator only; not central cognitive novelty evidence",
+    "anti_drift_rule": "one fresh Analyst review; if another substantive comparator semantic/resource-equivalence defect appears, prefer stop/reframe as engineering benchmark over repeated bespoke redesign"
   },
   "external_input": {
     "literature": {
       "commit": "525686fa0c14f64426ca7bf5c89f08cd0bcb9c77",
       "role": "LITERATURE_REDUCTION_SCOUT",
-      "affected_lines": ["C19", "PD01", "future novelty bar"],
-      "strategic_impact": "retain FSA->learned/extracted automata->PSR/epsilon-machine->reservoir/fading-memory->lineage residual reduction ladder",
+      "latest_timestamp": "2026-09-18T04:30:00+09:00",
+      "genuinely_new_information_since_prior_control": false,
+      "affected_lines": ["programme novelty", "post-reduction ladder", "future lineage discriminator"],
+      "strategic_impact": "unchanged reduction ladder: exact FSA -> learned/extracted finite-state -> PSR/epsilon-machine/causal-state -> recurrent/reservoir/fading-memory -> conventional plasticity/eligibility/slow-state -> lineage-specific residual",
+      "persistence_defect": "scheduled 16:30 literature cycle produced no durable role-specific latest/state advancement",
       "questions_to_evidence_analyst": [
-        "keep NI01 interpretation narrow",
-        "do not retrofit stronger baselines into current identity"
+        "keep NI01 terminal interpretation narrow and no-retry",
+        "after H5, prioritize only a genuinely distinct prospective lineage/provenance discriminator",
+        "if no such object exists, explicitly retain architecture/testbed framing rather than inventing generic persistence work"
       ]
     },
     "audit": {
       "commit": "0c871b1b9b54d35c826a59c5b9925afa55b78d22",
       "role": "INDEPENDENT_AUDITOR",
+      "latest_timestamp": "2026-09-18T10:30:00+09:00",
       "classification": "ROBUST_SO_FAR",
-      "affected_lines": ["C19-R2"],
-      "strategic_impact": "C19 temporal/state rescue remains closed; PD01 fresh audit desirable but nonblocking",
+      "genuinely_new_information_since_prior_control": false,
+      "affected_lines": ["C19-R2", "C19-v4", "programme novelty"],
+      "strategic_impact": "C19 temporal/state rescue remains closed; terminal FSA reduction independently reproduced",
       "questions_to_evidence_analyst": [
-        "audit NI01 after terminalization",
-        "obtain independent PD01 read-only audit"
+        "request independent read-only NI01 audit next",
+        "obtain PD01 audit separately"
       ]
     }
   },
   "sub_incubator": {
     "mode": "no_op",
     "classification": "NO_OP_BY_DESIGN",
-    "independent": true,
     "formalization": "NO_ACTION",
-    "assessment": "correctly avoiding duplicated MAIN work and exhausted incubator line"
+    "independent": true,
+    "assessment": "correctly avoided H5 disguised assistance; no distinct formal or incubator target exists"
   },
   "human_directive": {
     "id": "HUMAN-20260918-001",
+    "source_tip": "11b32af792fd974508819d4018292e228d52f88d",
     "classification": "ACCEPT",
-    "promotion_direction": "small neutral extraction on current main with fresh CI; no wholesale old-CX branch cherry-pick; keep result/mechanism-coupled assets research-local",
-    "must_not_delay": "NI01"
+    "changed_since_prior_review": false,
+    "routing": "Repository Steward / ordinary small current-main extraction PRs for neutral outcome-independent substrate only",
+    "reconsideration_condition": "material integration risk or opportunity cost increase"
   },
   "programme_drift": {
-    "status": "CONTROLLED",
-    "risk": "stale MAIN PRIMARY lease/durable checkpoint"
+    "status": "CONTROLLED_WITH_WARNING",
+    "risk": "H5 engineering-efficiency work could displace the residual lineage-specific cognitive question if allowed to iterate through repeated comparator redesign"
   },
   "repository_doctrine": {
     "status": "PARTIAL_COMPLIANCE_IMPROVING",
-    "principal_debt": "0 rulesets; main/tag namespaces unprotected"
+    "principal_debt": "0 rulesets; authoritative tag namespaces remain server-side unprotected",
+    "issue_139_status": "STALE_COUNT_3_BUT_REMOTE_EVIDENCE_TAG_COUNT_4",
+    "next_steward_action": "update Issue #139 count/reference to include NI01 without reinterpreting science"
+  },
+  "promotion_candidates": {
+    "neutral_candidates": [
+      "architecture-neutral event/prediction primitives",
+      "snapshot/restore invariants",
+      "descriptive resource accounting",
+      "generic privilege/leakage guards",
+      "neutral comparator protocol helpers",
+      "transcript validation"
+    ],
+    "h5_workcounter_dense_reference": "RESEARCH_LOCAL_PENDING_OUTCOME_INDEPENDENCE_REVIEW"
   },
   "priorities_12_48h": [
-    "reconcile stale MAIN lease/report then exactly-one NI01 only under fresh authority and exact-green bindings",
-    "audit NI01 after terminalization and obtain a fresh read-only PD01 audit",
-    "preserve terminal/no-retune interpretation; no automatic NI01 successor",
-    "keep neutral CX substrate extraction nonblocking"
+    "fresh Evidence Analyst review of H5 head 520fc839; admit at most one clean prospective formal object if semantics/resources are credible",
+    "if another substantive H5 comparator semantic/resource mismatch appears, stop/reframe H5 as engineering benchmark instead of repeated redesign",
+    "independent read-only NI01 audit, then PD01 audit",
+    "reassess whether any genuinely prospective non-privileged lineage-specific causal-credit discriminator remains; if none, explicitly preserve testbed framing",
+    "keep repository neutral-substrate work and Issue #139 correction nonblocking"
+  ],
+  "stop_reframe": [
+    "H5 PASS is efficiency-only and cannot upgrade cognitive/novelty claims",
+    "H5 FAIL terminates the registered efficiency claim with no rescue tuning",
+    "another material H5 semantic/resource mismatch triggers stop/reframe preference over third redesign",
+    "NI01 remains terminal FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION with no successor rescue",
+    "C19-R2 and PD01 remain terminal reductions",
+    "if no clean lineage-specific discriminator remains or it reduces under ordinary mechanisms, stop new-computational-principle claims and retain architecture/testbed framing"
   ],
   "fleet_health": {
     "fleet_status": "YELLOW",
     "critical_failures": [],
     "classifications": {
-      "control_steward": "HEALTHY",
-      "evidence_analyst": "DELAYED",
-      "main_primary": "FAILED_OR_INCOMPLETE",
-      "main_relay": "DELAYED",
+      "control_steward": "DELAYED",
+      "evidence_analyst": "HEALTHY",
+      "main_primary": "DELAYED",
+      "main_relay": "HEALTHY",
       "sub": "NO_OP_BY_DESIGN",
-      "external_research_audit": "HEALTHY",
+      "external_research_audit": "FAILED_OR_INCOMPLETE",
       "current_state_brief": "DELAYED"
     },
     "operational_defects": [
-      "stale MAIN PRIMARY RUNNING lease with no heartbeat/durable report advancement",
-      "runtime slippage and dense :35->:45->:50 downstream window"
+      "16:30 LITERATURE_REDUCTION_SCOUT cycle has no durable role-specific latest/state advancement; external branch tip still 10:30 audit history",
+      "MAIN PRIMARY cadence spills materially beyond :15",
+      "dense :35 -> :45 -> :50 downstream window",
+      "Issue #139 evidence-tag count is stale at 3 versus remote count 4"
     ],
     "efficiency_findings": [
-      "RELAY remains useful as recovery mechanism",
-      "SUB no-op avoids fake parallelism",
-      "both external streams are consumed"
+      "RELAY successfully completed bounded H5 readiness collection without crossing formal boundaries",
+      "SUB no-op prevents fake parallelism",
+      "available literature and audit findings are consumed by Analyst and Control"
     ],
     "recommended_scheduler_changes": [
-      "No change now; diagnose MAIN persistence first",
-      "If repeated overlap persists for 2-3 cycles, consider delaying read-only Control/Steward 5-10 minutes"
+      "No mutation in this review-only role",
+      "diagnose missing external literature persistence before changing cadence",
+      "if literature persistence fails again, treat as scheduler/tooling defect",
+      "if repeated MAIN spillover makes Control/Steward sample unfinished RELAY work across several cycles, consider shifting only read-only control/governance 5-10 minutes later"
     ]
   },
   "directions_to_evidence_analyst": [
-    "Keep NI01 as the sole MAIN frontier and its current exact prospective semantics unchanged.",
-    "On any NI01 terminal outcome, enforce the fixed narrow interpretation and no automatic successor rule.",
-    "After NI01, prioritize an independent audit before broader H4 interpretation; obtain a fresh PD01 audit separately.",
-    "Do not reopen C19 rescue work.",
-    "Keep SUB null/no-op unless a genuinely distinct independent prospective question appears.",
-    "Treat CX promotion inventory as repository-substrate advice only, not scientific evidence."
+    "Review revised H5 standalone dense/eager equivalence and resource/accounting symmetry before any formal identity exists.",
+    "If H5 is admitted, prospectively freeze interpretations so PASS remains efficiency-only and FAIL closes the line.",
+    "If another material H5 semantic mismatch appears, prefer stopping/reframing over a third comparator redesign cycle.",
+    "Treat NI01 as terminal and request independent read-only NI01 audit; do not authorize rescue successor.",
+    "After H5, rank only genuinely distinct lineage/provenance questions above repository/engineering characterization; if none exists, explicitly preserve architecture/testbed framing.",
+    "Keep SUB null/no-op unless a truly independent secondary question appears."
   ],
   "charter_changed": false
 }
