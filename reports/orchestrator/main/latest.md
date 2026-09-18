@@ -1,57 +1,39 @@
-# MAIN Orchestrator — LP01 mechanical gate repair checkpoint
+# MAIN Orchestrator — LP01 pre-formal closeout
 
-Timestamp: `2026-09-18 22:51:29 JST`  
+Timestamp: `2026-09-18 23:27:34 JST`  
 Worker role: `main`  
-Execution mode: `RELAY`  
-Evidence Analyst authority: `57464c4ad6881c27371be5305512656c6ae315d3`
+Execution mode: `PRIMARY`  
+Evidence Analyst authority: `ebf5c289b58d61a37b124863bcf53e52417a11bd`
 
-## Collision / authority reconciliation
+## Decision
 
-The inherited PRIMARY lease was `WAITING_EXTERNAL`, not `RUNNING`, and explicitly authorized RELAY to collect LP01 exact-head readiness/CI and apply only science-invariant mechanical fixes. Evidence Analyst authority remains unchanged at `57464c4ad6881c27371be5305512656c6ae315d3`; SUB has no LP01 lane/fallback. The active LP01 research branch had not drifted before repair.
+LP01 is closed at the **PRE-FORMAL / NON_EVIDENTIARY** boundary as `LP01_NO_HIGH_VALUE_OBJECT`.
 
-## Collected exact-head failures
+Fresh Analyst authority accepted the prospective semantic-gap conclusion and authorized closeout only. The exact LP01 research head remains `research/lp01-actual-lineage-causal-credit-spec-20260918@f6d59a55730c5f99cd7f30470847fc3f175bdf64`; no target drift occurred.
 
-On prior exact head `56b0e5ddf2ceffb0a53d517d8125f8302c2d2844`:
+## Exact-head gates
 
-- LP01 prospective readiness `35350132766` — `completed/failure`.
-- ordinary CI `35350132835` — `completed/failure`.
+- LP01 prospective readiness `35352468809` — `completed/success` on `f6d59a55730c5f99cd7f30470847fc3f175bdf64`.
+- ordinary CI `35352468938` — `completed/success` on the same exact SHA.
 
-Both failures were lint-only. In readiness, prospective contract integrity, native lineage causality source audit, reference lineage tests, and the NON_EVIDENTIARY dev construction diagnostic all passed before focused lint failed. Ordinary CI likewise stopped at lint.
+No further implementation or repair was required in this PRIMARY run. The prior RELAY repair was science-invariant lint/import formatting only.
 
-The exact Ruff findings were two import-block formatting findings, one 101-character assertion line, and one `typing.Iterable` modernization finding. No scientific/protocol/semantic check failed.
+## Scientific / integrity boundary
 
-## Mechanical continuation performed
+The accepted conclusion is an admission/identifiability result, **not formal scientific evidence**: current native lineage/provenance metadata is inspectable/persisted but is not consumed by the ordinary online forward, structural-consumption, reward-eligibility, discovery or candidate-group decision paths; prospectively adding ancestry-credit still fails to isolate a new principle because an equal-privilege `ExplicitParentTable` can losslessly reconstruct the same finite parent relation from the same admitted event stream.
 
-Applied only the prospectively authorized science-invariant fixes:
+The exact contract remains `PROSPECTIVE_SPECIFICATION_ONLY`, `formal_identity: null`, `formal_execution_authorized: false`. `STARTED`, official TEST, formal preserve, formal scoring and formal evidence remain forbidden/not created. Branch search finds no LP01 control/preserve branch; only the research branch exists. No consumed identity or immutable evidence was modified.
 
-- normalized blank-line formatting in `scripts/check_lp01_contract.py`;
-- normalized blank-line formatting in `scripts/check_lp01_native_causality.py`;
-- wrapped the long assertion in `scripts/run_lp01_dev.py` without changing its condition/message;
-- imported `Iterable` from `collections.abc` rather than `typing` in `src/sparkbrain/lp01_lineage.py`.
+The fresh independent PD01 audit was consumed only as programme interpretation: canonical PD01 evidence remains immutable/valid, but future synthesis should use `NO_REGISTERED_LONG_LAG_SIGNAL + COMPARATOR_NOT_WORSE` rather than overstate a demonstrated positive SparkBrain long-lag effect reproduced by fading memory. This does not reopen or rerun PD01.
 
-The final repaired branch head is:
+## Path / lease
 
-- `research/lp01-actual-lineage-causal-credit-spec-20260918@f6d59a55730c5f99cd7f30470847fc3f175bdf64`
+FAST PATH was sufficient; FULL RECONCILIATION was not triggered. SUB remains `no_op` with no reserved lane/fallback.
 
-Comparison from `56b0e5dd...` to `f6d59a55...` contains only those four mechanical file changes. The LP01 scientific question, comparator/information privilege, resource contract, semantic-gap reasoning, prospective `NO_HIGH_VALUE_OBJECT` conclusion, thresholds, formal boundary, and identity state were not changed.
+Lease status at closeout: **`COMPLETED`**.
 
-## Fresh exact-head checks
+Stop reason: `LP01_PREFORMAL_CLOSEOUT_COMPLETE_NO_ACTIVE_SUPPORTED_NEW_PRINCIPLE_FRONTIER`.
 
-On final head `f6d59a55730c5f99cd7f30470847fc3f175bdf64`:
+There is no Relay continuation for LP01. Next MAIN work requires a fresh Evidence Analyst allocation based on a genuinely native, non-definitionally-reducible mechanism/theory or another prospectively complete independent frontier. MAIN must not invent a successor from LP01/H5/PD01 outcomes.
 
-- LP01 prospective readiness `35352468809` — `completed/success`.
-- ordinary CI `35352468938` — `in_progress`.
-
-The repaired readiness gate is therefore green. No useful local critical-path work remains while ordinary CI executes.
-
-## Scientific / integrity state
-
-New formal scientific information: **none**. The existing LP01 `NO_HIGH_VALUE_OBJECT` statement remains a prospective pre-formal specification conclusion only.
-
-Formal identity: **not created**. STARTED/control: **not created**. Official TEST: **not accessed**. Formal preserve/scoring/evidence: **none**. No consumed identity or immutable evidence was modified.
-
-## Lease / continuation
-
-Lease status: **`WAITING_EXTERNAL`**.
-
-Next MAIN/RELAY cycle should collect ordinary CI `35352468938` on exact head `f6d59a55730c5f99cd7f30470847fc3f175bdf64`. If it is green and Analyst/head/identity/formal-boundary state remains unchanged, persist `LP01_NO_HIGH_VALUE_OBJECT` as completed and STOP for fresh Evidence Analyst review. If a remaining failure is purely mechanical, repair only science-invariantly; any semantic/scientific change requires STOP. Do not create formal identity, STARTED, official TEST, formal preserve/scoring/evidence.
+New formal scientific information this run: **none**.
