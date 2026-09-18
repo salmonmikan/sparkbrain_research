@@ -1,99 +1,123 @@
 {
-  "timestamp": "2026-09-17T22:27:17+09:00",
+  "timestamp": "2026-09-18T10:30:00+09:00",
   "role": "INDEPENDENT_AUDITOR",
   "phase_ordering_confirmed": true,
   "blind_target_selection": {
-    "target": "C19 official-v4 terminal PASS and inferential/statistical validity",
+    "target": "C19-R2 official-v1 terminal REDUCED_BY_FSA",
     "authoritative_refs_inspected": [
       "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-      "research/c19-official-v4-preservation-qualified-20260917@74bfe6b4a39758656f291baaa3f16236e3e71964",
-      "control/c19-official-v4-started-20260917@3ebffb0c55ea9e5dac6c2a52d3d5c0ee6443d58e",
-      "preserve/c19-official-v4-raw-c19-external-v2-official-v4@d8fcc5216ff24940836972816cb0ec8f11e4ba06",
-      "evidence/c19-official-v4-c19-external-v2-official-v4 -> a0f83318356ced1c84863737803080d0dc69d208",
-      "research/c19-r1-revision-authority-reduction-20260917@c23736b63e6100bcdc38e7f11d94c782eb6273dc"
+      "research/c19-r2-fsa-state-tracker-spec-20260918 scientific contract@5d5d171cf872baed7a636fd246ab36f3a91a6716",
+      "C19-R2 exact package@5bfa3962c777fa5bc915bb21e20801ab8294778a",
+      "control/c19-r2-fsa-state-tracker-started-v1-20260918@41df2685fe015140c8afa13e646554dd2e8c836b",
+      "C19-R2 raw preserve@3628694294a6eb33b18a0b42a56bb5ad77fe7b94",
+      "C19-R2 terminal evidence@6197fa801a78a0c5de4c2b6ff5d03216ac5539db",
+      "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
+      "C19-v4 scientific parent@74bfe6b4a39758656f291baaa3f16236e3e71964"
     ],
     "attack_hypotheses": [
-      "target/evaluator leakage before raw preservation",
-      "package/identity/STARTED binding drift or post-START mutation",
-      "scorer/join/quantile drift from prospective contract",
-      "overclaim through unmatched descriptive baselines",
-      "pair-level bootstrap pseudo-replication from structurally clustered Belief-R pairs",
-      "simpler representation/state reductions"
+      "package/identity/STARTED authority drift or post-START mutation",
+      "evaluator-target leakage or target materialization before raw preservation",
+      "source-map/scorer/join/quantile/cluster-bootstrap drift",
+      "seed dependence or one-seed reduction artifact",
+      "representation/resource mismatch or semantic/global-lookup privilege",
+      "claim-boundary overreach from temporal/state reduction to whole raw-input architecture",
+      "simpler stateless/static same-I2 reduction remains possible"
     ],
-    "why_consequential": "C19-v4 is the newest terminal positive scientific result and directly determines the next reduction frontier."
+    "why_consequential": "R2 directly determines whether the narrow C19-v4 temporal/state effect requires SparkBrain-specific persistent coalition dynamics or is sufficient under a simple explicit finite-state tracker."
   },
   "blind_target_change_reason": null,
   "repository_refs_inspected": [
     "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "research/c19-official-v4-preservation-qualified-20260917@74bfe6b4a39758656f291baaa3f16236e3e71964",
-    "control/c19-official-v4-started-20260917@3ebffb0c55ea9e5dac6c2a52d3d5c0ee6443d58e",
-    "preserve/c19-official-v4-raw-c19-external-v2-official-v4@d8fcc5216ff24940836972816cb0ec8f11e4ba06",
-    "evidence/c19-official-v4-c19-external-v2-official-v4 -> a0f83318356ced1c84863737803080d0dc69d208",
-    "research/c19-r1-revision-authority-reduction-20260917@c23736b63e6100bcdc38e7f11d94c782eb6273dc"
+    "research/c19-r2-fsa-state-tracker-spec-20260918@5bfa3962c777fa5bc915bb21e20801ab8294778a",
+    "scientific contract@5d5d171cf872baed7a636fd246ab36f3a91a6716",
+    "STARTED@41df2685fe015140c8afa13e646554dd2e8c836b",
+    "raw preserve@3628694294a6eb33b18a0b42a56bb5ad77fe7b94",
+    "terminal evidence@6197fa801a78a0c5de4c2b6ff5d03216ac5539db",
+    "annotated evidence tag object@82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
+    "C19-v4 parent@74bfe6b4a39758656f291baaa3f16236e3e71964"
   ],
-  "control_brain_commit_consumed": "d8987f8c6d88fad48a8f652f4255e73b30a223e6",
-  "evidence_analyst_commit_consumed": "9f88fba973f54bc6608d183aacfaccd7952a229f",
-  "main_report_commit_consumed": "0d1305d96ef67982b578bb854bc8c1e4bea2be5f",
-  "sub_report_commit_consumed": "982fcd7d08ab8d157a91c499f52b896e47df4ced",
-  "literature_handoff_commit_consumed": "c42adf10546d0825fb13a258f052a6a4be399ec5",
+  "control_brain_commit_consumed": "3bcd000f7e31bc8df8d59ca5ddec88ff5b847e22",
+  "evidence_analyst_commit_consumed": "28108fffc2e4e346bff79bf3e38d1cac27d3265c",
+  "main_report_commit_consumed": "ae22b121f603476a6449d86817d14a76d1908fcc",
+  "sub_report_commit_consumed": "ae22b121f603476a6449d86817d14a76d1908fcc",
+  "literature_handoff_commit_consumed": "0ee8a07fb77f79bb226dd1ad12b4b6e9df30832b",
   "genuinely_new_information": true,
   "findings": [
     {
-      "id": "v4_integrity_chain",
+      "id": "r2_integrity_chain",
       "status": "ROBUST_SO_FAR",
-      "summary": "Exact package/STARTED binding, target-blind raw preservation, independent digest re-fetch, post-preservation target materialization, fail-closed scorer joins, and immutable evidence tag are consistent with the frozen contract."
+      "summary": "Exact package/identity/STARTED binding, no-retry semantics, target-blind raw preservation, target-free atomic_idx source map, terminal evidence binding and first-attempt terminalization are consistent with the prospective contract."
     },
     {
-      "id": "v4_formal_pass",
-      "status": "CONTRACT_VALID",
-      "summary": "Observed primary BREU effect is +0.10044748325412106 with registered pair-bootstrap 95% CI [0.09457740578201118, 0.10647303483001931], yielding formal PASS under the frozen rule."
-    },
-    {
-      "id": "clustered_bootstrap_unit",
-      "status": "NEW_AUDIT_ISSUE",
-      "summary": "The scorer resamples 1,744 pair indices independently, while Belief-R pair construction groups/reuses structure by (atomic_idx, modus) and the official dataset has atomic_idx 0-596; pair-level independence is not established, so the tight CI may be anti-conservative for generalization across reasoning families."
-    },
-    {
-      "id": "baseline_claim_boundary",
+      "id": "r2_cluster_primary_inference",
       "status": "ROBUST_SO_FAR",
-      "summary": "Terminal evidence explicitly forbids winner claims for unmatched descriptive baselines and limits the result to truth-free surface structural representation gain."
+      "summary": "Primary inference uses the prospectively frozen paired atomic_idx cluster bootstrap over 204 clusters; the prior C19-v4 pair-IID concern is therefore corrected for R2."
+    },
+    {
+      "id": "r2_terminal_reduction",
+      "status": "INDEPENDENTLY_REPRODUCED",
+      "summary": "Terminal effect C19-v4 primary BREU minus R2 BREU is -0.2462308568887407 with cluster-bootstrap 95% CI [-0.2554750732756702, -0.23690126111231016], satisfying REDUCED_BY_FSA. Aggregate recomputation from immutable per-seed summaries matches to floating-point precision."
+    },
+    {
+      "id": "r2_seed_robustness",
+      "status": "ROBUST_SO_FAR",
+      "summary": "The v4-minus-R2 BREU contrast is negative in all five fixed seeds; the reduction is not driven by one seed."
+    },
+    {
+      "id": "r2_claim_boundary",
+      "status": "APPROPRIATELY_NARROW",
+      "summary": "The result reduces the registered temporal/state contrast under the same fixed I2 frontend/projection; it does not claim the entire SparkBrain raw-input computation is literally seven-state. R1 remains an interpretation ceiling."
     }
   ],
+  "recomputed_aggregate": {
+    "mean_r2_breu": 0.34667834014286114,
+    "mean_c19_v4_primary_breu": 0.10044748325412048,
+    "mean_v4_minus_r2": -0.24623085688874066,
+    "per_seed_v4_minus_r2": [
+      -0.2874857555796437,
+      -0.2809472192112066,
+      -0.23027321493093192,
+      -0.2668250924150199,
+      -0.1656230023069012
+    ]
+  },
   "affected_lines": [
+    "C19_R2_FSA_STATE_TRACKER",
     "C19_V4",
-    "C19_R1",
-    "PROGRAMME_STATISTICAL_INTEGRITY",
-    "FUTURE_EXTERNAL_VALIDATION"
+    "PD01",
+    "PROGRAMME_NOVELTY",
+    "PROGRAMME_STATISTICAL_INTEGRITY"
   ],
-  "audit_classification": "WEAKENED",
-  "confidence": "HIGH_ON_INTEGRITY_CHAIN_MEDIUM_HIGH_ON_CLUSTERING_CONCERN",
-  "novelty_or_reduction_impact": "NO_NEW_NOVELTY_SUPPORT; C19_V4_REMAINS_NARROW_PASS; CI_GENERALIZATION_WEAKENED_BY_UNRESOLVED_CLUSTERING; R1_REMAINS_HIGH_VALUE",
+  "audit_classification": "ROBUST_SO_FAR",
+  "confidence": "HIGH",
+  "novelty_or_reduction_impact": "R2_TERMINAL_REDUCTION_INDEPENDENTLY_CONFIRMED; C19_V4_TEMPORAL_STATE_STORY_REDUCED_TO_EXPLICIT_FSA_UNDER_SAME_I2_FRONTEND; NO_NEW_NOVELTY_SUPPORT; PD01_REMAINS_HIGHER_VALUE_DISTINCT_FRONTIER",
   "prospective_baselines_or_discriminators": [
-    "Do not alter v4; any cluster sensitivity on v4 must be explicitly post-hoc/read-only and non-canonical.",
-    "Before R1 STARTED, prospectively freeze the scientific inferential unit and a cluster-aware paired bootstrap/sensitivity keyed to a justified Belief-R family grouping such as (atomic_idx, modus) or another preregistered source-family key.",
-    "Retain the same-I2 stateless revision-authority reduction comparator.",
-    "If R1 survives, proceed to representation-matched FSA/state-tracker reduction."
+    "Do not rerun, retune, rescue or rescore canonical R2.",
+    "If a distinct future C19-specific question warrants it, prospectively test whether temporal state is needed at all using the same frozen I2 frontend/projection with a stateless/final-step comparator.",
+    "Otherwise prioritize the separately prospectively specified PD01 remote-history/washout discriminator against a stronger matched fading-memory reservoir.",
+    "Retain source-family/base-world cluster-aware primary inference for structurally grouped future external validations."
   ],
   "questions_for_evidence_analyst": [
-    "For R1, what is the scientific sampling unit: individual pair, (atomic_idx, modus) family, dataset family, or another predeclared grouping?",
-    "Should R1 freeze pair-level and cluster-level paired intervals, with the cluster-aware result governing any claim that generalizes across reasoning families?",
-    "Should v4's pair-bootstrap CI be described as contract-valid resampling stability rather than independent-example population uncertainty unless cluster sensitivity is performed?",
-    "Does this finding change R1 START authorization or only its prospective statistical contract?"
+    "Should terminal R2 close the C19-specific state-tracker rescue ladder unless a genuinely distinct question appears?",
+    "Should REDUCED_BY_FSA always be stated as scoped to the registered same-I2 temporal/state contrast rather than the whole raw-input architecture?",
+    "Is a stateless same-I2 temporal-null comparator worth a future fresh prospective object, or is PD01 now clearly higher information value?"
   ],
   "questions_for_control_brain": [
-    "Should future external-validation protocols require an explicit independence/cluster-unit declaration before STARTED?",
-    "Should matched reductions reuse the same frozen benchmark clustering to avoid pseudo-replication?",
-    "Should the programme keep the testbed reframe and narrow v4 claim unchanged unless a cluster-aware sensitivity materially overturns the effect?"
+    "Should the programme record the C19 mechanism story as reduced to ordinary explicit finite-state tracking under its fixed frontend while preserving C19-v4 only as a representation result?",
+    "Should further C19-specific reduction work stop unless a new independent claim requires it, with PD01 prioritized for the narrower non-fading lineage-persistence thesis?",
+    "Should cluster-aware primary inference remain the default doctrine for structurally grouped future external validations?"
   ],
   "must_not_change_frozen_or_consumed": [
-    "c19-external-v2-official-v4",
-    "74bfe6b4a39758656f291baaa3f16236e3e71964",
-    "3ebffb0c55ea9e5dac6c2a52d3d5c0ee6443d58e",
-    "d8fcc5216ff24940836972816cb0ec8f11e4ba06",
-    "a0f83318356ced1c84863737803080d0dc69d208",
-    "canonical v4 paired_statistics.json and formal PASS",
-    "consumed C19-v2/v3 identities",
+    "c19-r2-fsa-state-tracker-official-v1",
+    "41df2685fe015140c8afa13e646554dd2e8c836b",
+    "5bfa3962c777fa5bc915bb21e20801ab8294778a",
+    "5d5d171cf872baed7a636fd246ab36f3a91a6716",
+    "3628694294a6eb33b18a0b42a56bb5ad77fe7b94",
+    "6197fa801a78a0c5de4c2b6ff5d03216ac5539db",
+    "canonical R2 paired_reduction_statistics.json, pair_iid_sensitivity_statistics.json and REDUCED_BY_FSA classification",
+    "immutable C19-v4 package/preserve/evidence/tag and narrow PASS",
+    "consumed R1-v1/v2 and C19-v2/v3 identities",
     "all consumed A01/RV01/RV02/CX identities",
-    "v4 per-example outcomes must not tune R1 mechanism/resource choices"
+    "R2/C19 per-example outcomes must not tune PD01 or another successor"
   ]
 }
