@@ -1,30 +1,24 @@
 {
-  "timestamp": "2026-09-18T11:00:43+09:00",
+  "timestamp": "2026-09-18T11:59:30+09:00",
   "worker_role": "evidence_analyst",
-  "control_plane_mailbox_semantics": "ops/* branches treated only as designated persistence/control-plane mailboxes; main/research/control/preserve/formal/evidence/workflow/Issue/PR state independently re-fetched and wins over stale handoffs.",
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "prior_evidence_analyst_tip": "28108fffc2e4e346bff79bf3e38d1cac27d3265c",
-    "pd01_research": "research/pd01-fading-memory-preformal-20260918@ea2a8b4a5f244d601782ecb302760c49ee27e8c1",
-    "pd01_contract_path": "research/pd01/formal_contract.json",
-    "pd01_contract_status": "FORMAL_CONTRACT_PROPOSAL_REVIEW_ONLY",
-    "pd01_proposed_identity": "pd01-long-history-fading-memory-official-v1",
-    "pd01_identity_reserved": false,
-    "pd01_started": false,
-    "pd01_control_refs": [],
+    "prior_evidence_analyst_tip": "91a05bad6d130f89975e776960a1d25d764fba32",
+    "pd01_research": "research/pd01-fading-memory-preformal-20260918@b9d38daa5faca348ad2db3898ba71e2abc99f631",
+    "pd01_started": "control/pd01-long-history-fading-memory-started-v1-20260918@0569e348b9d93aeee53fc58daf4b71ee92303d6c",
+    "pd01_identity": "pd01-long-history-fading-memory-official-v1",
+    "pd01_identity_state": "STARTED_CONSUMED_NO_RETRY",
+    "pd01_workflow": "35301327618:in_progress",
+    "pd01_current_step": "target-blind formal raw acquisition",
     "pd01_preserve_refs": [],
-    "pd01_formal_refs": [],
     "pd01_evidence_refs": [],
-    "pd01_prestart": "35295370268:completed/success@ea2a8b4a5f244d601782ecb302760c49ee27e8c1",
-    "pd01_ordinary_ci": "35295370271:completed/success@ea2a8b4a5f244d601782ecb302760c49ee27e8c1",
-    "pd01_compatibility": "35295370202:completed/success@ea2a8b4a5f244d601782ecb302760c49ee27e8c1",
-    "c19_r2_scientific_contract": "5d5d171cf872baed7a636fd246ab36f3a91a6716",
-    "c19_r2_exact_package": "5bfa3962c777fa5bc915bb21e20801ab8294778a",
-    "c19_r2_started": "41df2685fe015140c8afa13e646554dd2e8c836b",
-    "c19_r2_raw_preserve": "3628694294a6eb33b18a0b42a56bb5ad77fe7b94",
-    "c19_r2_terminal_evidence": "6197fa801a78a0c5de4c2b6ff5d03216ac5539db",
-    "c19_r2_evidence_tag": "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
+    "pd01_final_head_gates": {
+      "compatibility": "35299421985:success",
+      "formal_prestart": "35299421942:success",
+      "ordinary_ci": "35299421957:success"
+    },
     "c19_v4_evidence_tag": "evidence/c19-official-v4-c19-external-v2-official-v4",
+    "c19_r2_evidence_tag": "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
     "authoritative_evidence_tag_count": 2,
     "legacy_freeze_branch_count": 13,
     "open_prs": [148, 149],
@@ -32,341 +26,138 @@
     "repository_ruleset_count": 0,
     "main_protected": false
   },
-  "Control_Brain_commit": "3bcd000f7e31bc8df8d59ca5ddec88ff5b847e22",
-  "Control_Brain_state_consumed": "analysis/control_brain/state.json and history/2026-09-18/1051.md; strategic prior only; current state explicitly raised PD01 fixed-reservoir versus plastic-SparkBrain persistent-resource asymmetry.",
-  "MAIN_report_commit_consumed": "2563b208e22e46b4d55b815ad25e0a4e3dbf3b6a",
-  "MAIN_report_branch_tip_observed": "13e8ee908ef6a8c7a48671b27be706b67cbe52fd",
-  "MAIN_history_consumed": "reports/orchestrator/history/2026-09-18/1045-main.md",
-  "SUB_report_commit_consumed": "ae22b121f603476a6449d86817d14a76d1908fcc",
-  "SUB_history_consumed": "reports/orchestrator/history/2026-09-18/1035-sub.md",
+  "Control_Brain_commit": "b9ce2adde261f5cca5691e03ab124aaaed971520",
+  "Control_Brain_state_consumed": "analysis/control_brain/latest.md and 2026-09-18 10:51 history; strategic prior only",
+  "MAIN_report_commit_consumed": "a721ddbb1fd7d1438bb7c7b10933ef6a822a1991",
+  "SUB_report_commit_consumed": "29ecb0666031f6154ea62d8c2a7e03f17c8ab2a7",
   "SUB_operating_mode_observed": "no_op",
   "sub_exploratory_review": null,
   "Literature_handoff_commit_consumed": "525686fa0c14f64426ca7bf5c89f08cd0bcb9c77",
-  "Literature_history_consumed": "analysis/external_research_audit/history/2026-09-18/0430-LITERATURE_REDUCTION_SCOUT.md",
   "Audit_handoff_commit_consumed": "0c871b1b9b54d35c826a59c5b9925afa55b78d22",
-  "Audit_history_consumed": "analysis/external_research_audit/history/2026-09-18/1030-INDEPENDENT_AUDITOR.md",
   "Repository_Steward_commit_consumed": "e16a3f0dae16b7e93ba73551d56772a366b16b84",
-  "Repository_Steward_state_consumed": "reports/repository_steward/latest.md + reports/repository_steward/state.json at 2026-09-18 07:50 JST; governance advisory only and stale versus terminal R2/current PD01/two evidence tags.",
+  "Repository_Steward_state_consumed": "07:50 governance advisory only; stale versus current PD01 STARTED state",
   "new_repository_evidence": {
     "new_formal_scientific_measurement": false,
-    "pd01_material_readiness_update": "MAIN completed the full matched fading-memory formal contract and all required exact-head readiness gates on ea2a8b4a5f244d601782ecb302760c49ee27e8c1.",
-    "pd01_status_observed": "PD01_FORMAL_CONTRACT_READY_FOR_ANALYST_REVIEW",
-    "pd01_formal_identity_reserved": false,
-    "pd01_started": false,
-    "pd01_official_test_accessed": false,
-    "pd01_targets_accessed": false,
-    "pd01_preserve_or_evidence_created": false,
-    "pd01_scientific_scoring_performed": false,
-    "r2_new_audit": "Independent audit ROBUST_SO_FAR reproduced terminal REDUCED_BY_FSA aggregate and confirmed one-way/statistical integrity."
+    "material_update": "PD01 exact final package passed all final-head gates, STARTED was created, identity is consumed/no-retry, and the one-way workflow is currently executing target-blind raw acquisition.",
+    "started_commit": "0569e348b9d93aeee53fc58daf4b71ee92303d6c",
+    "workflow_id": 35301327618,
+    "raw_preserved": false,
+    "targets_materialized": false,
+    "scientific_scoring_completed": false,
+    "terminal_evidence_created": false
   },
   "external_input": {
     "literature": {
       "handoff_commit": "525686fa0c14f64426ca7bf5c89f08cd0bcb9c77",
       "new_this_cycle": false,
-      "affected_lines": [
-        "PD01",
-        "PROGRAMME_NOVELTY",
-        "PERSISTENT_DYNAMICS_RESIDUAL",
-        "FUTURE_EXTERNAL_VALIDATION",
-        "C19_R2_INTERPRETATION"
-      ],
-      "finding": "Established predictive-state, causal-state and reservoir/fading-memory reductions keep the novelty bar above generic local/history-derived persistence. A remote-history/washout test against a conventional contractive reservoir is a valid prospective reduction boundary.",
-      "prospective_change": "No change to the now-reviewed PD01 contract. A PD01 PASS is capped to survival against this exact fixed contractive reservoir; a fresh conventional mutable-weight/eligibility/slow-state comparator is required before any novelty claim.",
+      "affected_lines": ["PD01", "PROGRAMME_NOVELTY", "PERSISTENT_DYNAMICS_RESIDUAL", "FUTURE_EXTERNAL_VALIDATION"],
+      "prospective_change": "None to the already-STARTED PD01 object. Keep PSR/epsilon-machine/extracted-automata and mutable-memory reductions for fresh future objects only.",
       "allocation_changed": false
     },
     "audit": {
       "handoff_commit": "0c871b1b9b54d35c826a59c5b9925afa55b78d22",
-      "new_this_cycle": true,
+      "new_this_cycle": false,
       "classification": "ROBUST_SO_FAR",
-      "affected_lines": [
-        "C19_R2_FSA_STATE_TRACKER",
-        "C19_V4",
-        "PD01",
-        "PROGRAMME_NOVELTY",
-        "PROGRAMME_STATISTICAL_INTEGRITY"
-      ],
-      "finding": "Terminal R2 is independently verified: exact package/STARTED/preserve binding is intact; 8,720 target-blind raw rows were preserved before targets; primary atomic_idx cluster bootstrap over 204 clusters matches preregistration; effect -0.2462308568887407 with CI [-0.2554750732756702, -0.23690126111231016]; all five seed contrasts are negative; no new validity defect was found.",
-      "prospective_change": "Clear the prior pending-R2-audit blocker, keep R2 closed, and retain source-family/base-world cluster-aware primary inference for future formal validations. PD01 already uses base_world_id clustering.",
-      "allocation_changed": false,
-      "execution_gate_effect": "strengthens PD01 admission by removing dependence on an unaudited R2 terminal result"
-    }
-  },
-  "active_line_review": {
-    "A01": {
-      "status": "MIXED_PROGRAMME_CLOSED",
-      "consumed_identity_state": "consumed/closed; no rescue",
-      "shortest_new_information": "fresh independently motivated programme only",
-      "simpler_reduction": "eligibility/provenance/ordinary local update explanations remain sufficient for prior positives",
-      "information_value": "LOW",
-      "distance": "FAR",
-      "centrality": "closed"
-    },
-    "RV01": {
-      "status": "DEVELOPMENT_POSITIVE_REDUCIBLE_EXPLORATORY_BUDGET_EXHAUSTED",
-      "consumed_identity_state": "formal identities consumed; exploratory budget exhausted",
-      "shortest_new_information": "fresh prospective object only",
-      "simpler_reduction": "ordinary scalar delay/filter adaptation remains live",
-      "information_value": "LOW_TO_MEDIUM",
-      "distance": "MEDIUM",
-      "centrality": "secondary"
-    },
-    "RV02": {
-      "status": "TERMINAL_CONSTRUCTION_NEGATIVE",
-      "consumed_identity_state": "consumed",
-      "shortest_new_information": "fresh object only",
-      "information_value": "LOW",
-      "distance": "FAR",
-      "centrality": "terminal"
-    },
-    "CX_CX01": {
-      "status": "TERMINAL_FORMAL_NEGATIVE",
-      "consumed_identity_state": "immutable formal evidence",
-      "shortest_new_information": "fresh object only",
-      "information_value": "LOW",
-      "distance": "FAR",
-      "centrality": "terminal"
-    },
-    "H8_C08": {
-      "status": "TERMINAL_CAUSAL_SPECIALIZATION_NEGATIVE",
-      "consumed_identity_state": "consumed/closed",
-      "shortest_new_information": "distinct prospective object only",
-      "information_value": "LOW",
-      "distance": "FAR",
-      "centrality": "terminal"
-    },
-    "H9_C07": {
-      "status": "PRE_START_UNDERSPECIFIED",
-      "consumed_identity_state": "no clean formal object",
-      "shortest_new_information": "fresh exact state/reset/resource contract if independently revived",
-      "information_value": "MEDIUM",
-      "distance": "MEDIUM",
-      "centrality": "secondary_paused"
-    },
-    "C19_V4": {
-      "status": "TERMINAL_PASS_NARROW_REPRESENTATION_GAIN_WEAKENED_NOT_INVALID",
-      "consumed_identity_state": "immutable evidence",
-      "shortest_new_information": "no rerun; interpretation bounded by R2 and audits",
-      "information_value": "COMPLETED",
-      "distance": "N_A",
-      "centrality": "completed_result"
-    },
-    "C19_R1": {
-      "status": "SCIENTIFICALLY_UNRESOLVED_OPERATIONALLY_TERMINATED",
-      "consumed_identity_state": "v1/v2 consumed POST_START_FAILURE; no R1-v3",
-      "shortest_new_information": "no automatic continuation",
-      "simpler_reduction": "revision-authority remains an unresolved interpretation ceiling only",
-      "information_value": "LOW",
-      "distance": "FAR",
-      "centrality": "interpretation_ceiling_only"
-    },
-    "C19_R2": {
-      "status": "TERMINAL_REDUCED_BY_FSA_ROBUST_SO_FAR_AUDITED",
-      "consumed_identity_state": "c19-r2-fsa-state-tracker-official-v1 consumed terminal evidence; no retry/successor",
-      "shortest_new_information": "STOP",
-      "strongest_evidence": "independently audited paired atomic_idx cluster-bootstrap effect -0.2462308568887407, CI [-0.2554750732756702, -0.23690126111231016], all five seed contrasts negative",
-      "information_value": "HIGH_COMPLETED",
-      "distance": "N_A",
-      "centrality": "closed_primary"
-    },
-    "PD01": {
-      "status": "FORMAL_CONTRACT_READY_FOR_ANALYST_REVIEW_ADVANCE_TO_PRE_START_AUTHORITY_PACKAGING",
-      "consumed_identity_state": "proposed identity unreserved/unconsumed; no STARTED; no official TEST/targets/evidence",
-      "strongest_evidence": "exact formal contract with fixed 64-state contractive reservoir, exact task/world/resource/statistical contract and all exact-head readiness gates green",
-      "shortest_new_information": "science-invariant authority packaging and exact-head revalidation, then exactly one one-way formal execution if all GO gates pass",
-      "genuine_blocker": "fresh authority binding and final-head integrity revalidation only; no unresolved scientific field remains in the reviewed contract",
-      "simpler_reduction": "fixed conventional contractive fading-memory reservoir is the current registered reduction; mutable-weight/eligibility/slow-state mechanisms remain a future stronger reduction after any PASS",
-      "information_value": "VERY_HIGH",
-      "distance": "NEAR",
-      "centrality": "PRIMARY"
+      "affected_lines": ["C19_R2_FSA_STATE_TRACKER", "C19_V4", "PD01", "PROGRAMME_STATISTICAL_INTEGRITY"],
+      "prospective_change": "Keep C19-R2 closed and audited; no change to in-flight PD01.",
+      "allocation_changed": false
     }
   },
   "main_lane": {
     "target": "PD01_LONG_HISTORY_FADING_MEMORY_ONE_WAY",
     "owner": "MAIN",
-    "status": "PRE_START_AUTHORITY_PACKAGING",
-    "reviewed_scientific_head": "research/pd01-fading-memory-preformal-20260918@ea2a8b4a5f244d601782ecb302760c49ee27e8c1",
-    "formal_identity": "pd01-long-history-fading-memory-official-v1",
-    "formal_identity_reserved": false,
-    "execution_allowed": "CONDITIONAL_AFTER_FINAL_HEAD_GO_REVALIDATION",
+    "status": "POST_START_ONE_WAY_IN_PROGRESS",
+    "identity": "pd01-long-history-fading-memory-official-v1",
+    "identity_consumed": true,
+    "no_retry": true,
+    "started_commit": "0569e348b9d93aeee53fc58daf4b71ee92303d6c",
+    "workflow": 35301327618,
     "main_owns_all_critical_path_fixups": true,
-    "scientific_question": "With current/recent observable input exactly matched, does an older anonymous-lineage event remain recoverable from SparkBrain probe response at long lag beyond the exact frozen conventional contractive fading-memory reservoir under equal observable-input and linear-readout privilege?",
-    "resource_asymmetry_ruling": "ACCEPT_FOR_THIS_BOUNDARY_TEST_WITH_INTERPRETATION_CAP",
-    "resource_asymmetry_detail": "SparkBrain plasticity is enabled while the reservoir recurrent weights are fixed. Exposed 64-dimensional features, observable inputs, reset semantics, readout privilege and bounded compute are matched; total adaptive/persistent-memory resources are not fully matched. This is intentional for a fading-memory-boundary test but cannot support novelty beyond the exact comparator.",
-    "pass_interpretation_cap": "PASS rejects only this exact fixed 64-state contractive reservoir; before any novelty claim a fresh conventional mutable-weight/eligibility/slow-state comparator is required.",
-    "same_run_allowed": "science-invariant PRE_START repair/revalidation and, after all GO gates pass, the exactly-one formal one-way path through terminal evidence",
-    "information_value": "VERY_HIGH",
-    "distance": "NEAR"
+    "same_run_allowed": "Only prospectively frozen acquisition -> preserve -> independent refetch/digest -> target materialization -> fail-closed join -> deterministic scoring -> terminal evidence, plus integrity reconciliation. No new science design."
   },
   "sub_lane": null,
   "sub_fallback": null,
-  "no_sub_lane_reason": "No independent formal secondary object is prospectively complete. RV01/recent incubator themes are exhausted or hard-stopped, H9/C07 remains under-specified, and PD01 is wholly MAIN-owned. Fake parallelism would reduce integrity.",
+  "no_sub_lane_reason": "No independent formal secondary object is prospectively complete; PD01 is actively one-way and entirely MAIN-owned; fake parallelism or transient-output inspection would reduce integrity.",
+  "outcome_contingencies": {
+    "current": "POST_START_ONE_WAY_IN_PROGRESS",
+    "PASS_SURVIVES_FADING_MEMORY_REDUCTION": "Terminal STOP. Interpretation capped to survival against this exact fixed 64-state contractive reservoir; no same-run successor.",
+    "FAIL_REDUCED_BY_FADING_MEMORY": "Terminal STOP. No rescue or comparator shopping.",
+    "INCONCLUSIVE": "Terminal STOP. No lag/threshold/comparator retuning.",
+    "INVALID_EVIDENCE": "Identity consumed; terminal STOP; no salvage from invalid/transient material.",
+    "POST_START_FAILURE": "Identity consumed; terminal STOP; no retry and no automatic PD01-v2.",
+    "PRE_START_BLOCKER": "Not applicable: STARTED has already occurred after all final-head gates were green."
+  },
+  "blocked_until": [
+    "Workflow 35301327618 reaches a terminal state.",
+    "Fresh remote reconciliation determines whether preserve/evidence refs exist and whether binding/cardinality/order are intact.",
+    "No new successor allocation before terminal PD01 reconciliation."
+  ],
+  "do_not_touch": [
+    "PD01 scientific semantics after STARTED: task/world/lags/comparator/resources/readout/TEST inventory/metric/clustering/bootstrap/threshold/runtime/source binding",
+    "Transient PD01 raw outside the fixed one-way preserve path",
+    "Consumed PD01 identity outside the fixed workflow",
+    "C19-R2 immutable package/STARTED/preserve/statistics/evidence/tag",
+    "C19-v4 immutable package/preserve/evidence/tag and narrow PASS",
+    "consumed R1-v1/v2, C19-v2/v3, A01/RV01/RV02/CX identities",
+    "scheduler definitions",
+    "SUB exploratory output as evidence"
+  ],
   "active_MAIN_SUB_claims_observed": {
     "MAIN": {
-      "report_phase": "PD01_FORMAL_CONTRACT_READY_FOR_ANALYST_REVIEW",
-      "branch": "research/pd01-fading-memory-preformal-20260918",
-      "exact_head": "ea2a8b4a5f244d601782ecb302760c49ee27e8c1",
-      "proposed_identity": "pd01-long-history-fading-memory-official-v1",
-      "identity_reserved": false,
-      "execution_allowed_under_prior_authority": false,
-      "new_scientific_information": false
+      "phase": "POST_START_ONE_WAY_IN_PROGRESS",
+      "package_head": "b9d38daa5faca348ad2db3898ba71e2abc99f631",
+      "identity": "pd01-long-history-fading-memory-official-v1",
+      "workflow": 35301327618,
+      "scientific_result_observed": false
     },
     "SUB": {
       "mode": "no_op",
       "formal_lane": null,
       "formal_fallback": null,
       "exploratory_target": null,
-      "main_touched": false,
-      "evidentiary_status": "NONE_FOR_SUB"
+      "main_touched": false
     }
   },
-  "blocked_until": [
-    "Authority/admission metadata is rebound to this Evidence Analyst handoff without changing reviewed scientific semantics.",
-    "Exact task/world, lags, recent-window rule, SparkBrain config, fixed reservoir config, ridge/readout, resource ceiling, DEV/TEST inventory, primary lags, cluster unit, bootstrap and numerical terminal criteria remain byte/semantic consistent with the reviewed contract.",
-    "Exact source/protocol/package/input/runtime/candidate/comparator/scorer/preserver bindings are frozen on the final execution head.",
-    "pd01-long-history-fading-memory-official-v1 remains fresh, unSTARTED and unconsumed with no formal/control/preserve/evidence collision.",
-    "Ordinary CI, dedicated formal-contract pre-START and required compatibility checks are green on the same final execution SHA after any authority packaging or fixup.",
-    "STARTED/no-clobber is guaranteed before any TEST read and TEST targets remain inaccessible until immutable raw preservation plus independent refetch/digest verification."
-  ],
-  "do_not_touch": [
-    "c19-r2-fsa-state-tracker-official-v1, STARTED, exact package, raw preserve, canonical statistics, terminal evidence/tag and REDUCED_BY_FSA classification",
-    "immutable C19-v4 package/preserve/evidence/tag and narrow PASS",
-    "consumed R1-v1/v2 identities, transient R1 outputs and any R1-v3 rescue",
-    "consumed C19-v2/v3 and A01/RV01/RV02/CX identities",
-    "legacy/immutable freeze/sealed/formal/evidence refs",
-    "R2/C19 per-example outcomes as PD01 design or tuning data",
-    "SUB exploratory output as formal evidence",
-    "scheduler definitions",
-    "non-designated files on ops/* branches as repository truth"
-  ],
-  "outcome_contingencies": {
-    "PRE_START_BLOCKER_MECHANICAL": {
-      "action": "MAIN owns science-invariant repair only; after every head movement rerun all exact-head gates and fresh namespace/binding checks.",
-      "same_run_continuation_allowed": true
-    },
-    "PRE_START_SEMANTIC_GAP": {
-      "action": "STOP for fresh Evidence Analyst review before identity consumption.",
-      "same_run_continuation_allowed": false
-    },
-    "GO_ALL_GATES_GREEN": {
-      "action": "Reserve/create exactly one fresh authorized identity, create STARTED/no-clobber before TEST access, then target-free TEST input -> DEV-only readout fit -> target-blind TEST raw -> immutable preserve -> independent refetch/digest -> TEST targets -> fail-closed join -> deterministic scoring/evidence.",
-      "same_run_continuation_allowed": true
-    },
-    "PASS_SURVIVES_FADING_MEMORY_REDUCTION": {
-      "registered_rule": "effect_ci95_lower >= 0.10 AND sparkbrain_accuracy_ci95_lower >= 0.60",
-      "action": "Terminal STOP. Interpret only as survival against this exact fixed 64-state contractive reservoir. No same-run novelty upgrade or successor. A fresh mutable-weight/eligibility/slow-state comparator is required before any novelty claim.",
-      "same_run_continuation_allowed": false
-    },
-    "FAIL_REDUCED_BY_FADING_MEMORY": {
-      "registered_rule": "effect_ci95_upper <= 0.05",
-      "action": "Terminal STOP. Treat the narrow long-lag persistence discriminator as reduced under this exact conventional fading-memory comparator; no rescue tuning.",
-      "same_run_continuation_allowed": false
-    },
-    "INCONCLUSIVE": {
-      "registered_rule": "all other valid outcomes",
-      "action": "Terminal STOP. No threshold, lag, resource or comparator retuning.",
-      "same_run_continuation_allowed": false
-    },
-    "INVALID_EVIDENCE": {
-      "action": "Consume identity and STOP; no salvage, same-ID retry or outcome-responsive repair.",
-      "same_run_continuation_allowed": false
-    },
-    "POST_START_FAILURE": {
-      "action": "Consume identity and STOP; no same-ID retry or automatic PD01-v2.",
-      "same_run_continuation_allowed": false
-    }
-  },
-  "top_recommendation": "MAIN should science-invariantly bind the reviewed PD01 contract to the fresh Analyst authority, revalidate all GO gates on the final exact head, and only then execute exactly one pd01-long-history-fading-memory-official-v1 one-way run; keep PASS interpretation capped to the exact fixed contractive reservoir.",
+  "top_recommendation": "Do not redesign anything. MAIN alone should collect the already-started PD01 one-way workflow to terminalization and reconcile the fixed evidence chain; SUB remains no-op.",
   "top_3": [
-    {
-      "rank": 1,
-      "owner": "MAIN",
-      "action": "PD01 authority/admission packaging -> final exact-head CI/pre-START/compatibility revalidation -> exactly-one formal execution only if all gates remain green",
-      "information_value": "VERY_HIGH",
-      "distance": "NEAR"
-    },
-    {
-      "rank": 2,
-      "owner": "INDEPENDENT_AUDIT_AFTER_TERMINAL_PD01",
-      "action": "Fresh read-only audit of PD01 identity/STARTED/raw-preserve/refetch/join/scorer/bootstrap chain and narrow resource/claim boundary",
-      "information_value": "HIGH",
-      "distance": "NEAR_TO_MEDIUM"
-    },
-    {
-      "rank": 3,
-      "owner": "SUB",
-      "action": "Remain no_op; do not manufacture a formal lane. Incubate only a genuinely distinct bounded NON_EVIDENTIARY question if one naturally appears.",
-      "information_value": "LOW_WHILE_NO_VALID_OBJECT",
-      "distance": "N_A"
-    }
+    {"rank": 1, "action": "MAIN collect workflow 35301327618 through terminal evidence or terminal failure and independently reconcile preserve/binding/cardinality/order", "information_value": "VERY_HIGH", "distance": "IMMEDIATE_IN_FLIGHT"},
+    {"rank": 2, "action": "After terminal PD01, fresh independent read-only audit of STARTED/raw-preserve/refetch/join/scoring/evidence and claim boundary", "information_value": "HIGH", "distance": "NEAR"},
+    {"rank": 3, "action": "SUB remain no_op; no fake formal or incubator work on PD01", "information_value": "LOW_NOW", "distance": "IMMEDIATE"}
   ],
-  "go_stop_number_1": {
-    "go": [
-      "fresh/unSTARTED/unconsumed identity and collision-free namespaces",
-      "exact source/protocol/package/input/runtime/candidate/comparator/scorer/preserver binding",
-      "same final SHA green ordinary CI + dedicated formal-contract pre-START + required compatibility",
-      "STARTED/no-clobber before any TEST read",
-      "DEV-only one-shot readout fitting; zero TEST-conditioned tune/select",
-      "target-blind TEST raw for both models before immutable preserve",
-      "independent raw refetch/digest/cardinality verification before target materialization",
-      "unique total fail-closed history_id join before deterministic scoring",
-      "primary lags 64/128, base_world_id cluster bootstrap, 10,000 resamples seed 19901 Type-7, frozen terminal rules"
-    ],
-    "scientific_falsifiers": {
-      "pass": "effect CI lower >= +0.10 and SparkBrain long-lag accuracy CI lower >= 0.60",
-      "fail_reduced": "effect CI upper <= +0.05",
-      "inconclusive": "all other valid outcomes"
-    },
-    "stop": [
-      "any pre-START scientific-semantic change to task/world/lags/candidate/comparator/plasticity/resource/readout/seeds/inventory/runtime/metric/cluster/statistics/threshold requires fresh Analyst review",
-      "any post-START binding/leakage/raw/preserve/digest/cardinality/join/integrity violation is INVALID_EVIDENCE and consumes identity",
-      "any post-START infrastructure/runtime failure consumes identity",
-      "no salvage, same-ID retry, comparator shopping, threshold tuning or automatic PD01-v2"
-    ]
-  },
   "consumed_identities": {
-    "c19-external-v2-official-v4": "terminal immutable narrow PASS; untouched",
-    "c19-r1-revision-authority-official-v1": "consumed POST_START_FAILURE; no retry",
-    "c19-r1-revision-authority-official-v2": "consumed POST_START_FAILURE; no retry; R1 line terminated",
-    "c19-r2-fsa-state-tracker-official-v1": "consumed terminal REDUCED_BY_FSA; independently audited ROBUST_SO_FAR; no retry/successor",
-    "pd01-long-history-fading-memory-official-v1": "PROPOSED ONLY; currently unreserved/unconsumed; conditionally authorized only after final-head GO revalidation"
+    "pd01-long-history-fading-memory-official-v1": "STARTED@0569e348b9d93aeee53fc58daf4b71ee92303d6c; currently in-flight; no retry",
+    "c19-r2-fsa-state-tracker-official-v1": "terminal REDUCED_BY_FSA; immutable/no retry",
+    "c19-r1-revision-authority-official-v1": "consumed POST_START_FAILURE",
+    "c19-r1-revision-authority-official-v2": "consumed POST_START_FAILURE",
+    "c19-external-v2-official-v4": "terminal immutable narrow PASS"
   },
   "blockers": [
-    "Fresh Analyst authority must be rebound into science-invariant admission metadata/checks because the reviewed contract currently names prior Analyst authority 28108fffc2e4e346bff79bf3e38d1cac27d3265c.",
-    "Any head movement caused by authority packaging resets the same-final-SHA CI/pre-START/compatibility requirement.",
-    "Any newly discovered semantic/resource issue beyond the prospectively accepted fixed-reservoir asymmetry requires STOP and fresh Analyst review."
+    "PD01 workflow 35301327618 is still in progress; no preserved raw or terminal evidence exists at this checkpoint.",
+    "No valid scientific interpretation is available until terminal evidence or terminal post-START failure is reconciled."
   ],
+  "go_stop": {
+    "GO": "Continue only the already-started fixed one-way sequence. STARTED/no-clobber and all exact-head gates were satisfied prospectively.",
+    "remaining_integrity_order": "target-blind raw -> immutable preserve -> independent refetch/digest/cardinality -> TEST targets -> unique/total/fail-closed join -> deterministic scoring -> terminal evidence",
+    "scientific_falsifiers": {
+      "PASS": "effect CI lower >= 0.10 AND SparkBrain long-lag accuracy CI lower >= 0.60",
+      "FAIL": "effect CI upper <= 0.05",
+      "INCONCLUSIVE": "otherwise"
+    },
+    "STOP": "Any binding/order/cardinality/join/evidence defect or post-START semantic change; classify INVALID_EVIDENCE/POST_START_FAILURE and stop with identity consumed."
+  },
   "governance_advisory": {
-    "repository_steward_tip": "e16a3f0dae16b7e93ba73551d56772a366b16b84",
-    "fresh_remote_overrides_stale_steward": true,
+    "open_issue_139": "Tag-protection gap remains real; body count is stale because authoritative evidence tags are now two, not one.",
+    "rulesets": 0,
     "main_protected": false,
-    "repository_ruleset_count": 0,
-    "legacy_freeze_branch_count": 13,
-    "authoritative_evidence_tag_count": 2,
-    "issue_139": "Protection gap remains valid; body is stale where it records one authoritative evidence tag and should be reconciled by Steward without scientific reinterpretation.",
-    "open_tooling_prs": [148, 149],
+    "legacy_freeze_branches": 13,
+    "open_prs": [148, 149],
     "main_promotion_candidates": [
-      "exact environment/source/runtime/package binding verification",
-      "same-environment production import smoke",
-      "STARTED/no-clobber/identity-collision primitives",
-      "raw-preserve/refetch/digest verification",
-      "target-free cluster-map/base-world validators",
-      "unique/total/fail-closed evaluator joins",
-      "deterministic scorer/bootstrap fixtures",
-      "hypothesis-independent execution-integrity helpers"
-    ],
-    "research_only": [
-      "PD01 synthetic world/intervention/lag semantics",
-      "PD01 fixed reservoir scientific comparator contract",
-      "PD01 terminal thresholds",
-      "C19/R2 scientific semantics and workflows",
-      "SUB exploratory code"
-    ],
-    "control_brain_human_directive": "HUMAN-20260918-001 accepted for read-only Steward audit of reusable outcome-independent CX infrastructure; it must not divert MAIN or create a formal SUB scientific lane."
-  },
-  "allocation_changed_due_to_external_or_exploratory_input": {
-    "ownership_changed": false,
-    "phase_changed": true,
-    "reason": "MAIN completed the prospectively requested formal contract and exact-head readiness. The new R2 independent audit clears the prior pending-audit risk. Literature is unchanged and SUB has no exploratory input. MAIN advances from specification-only to conditional exactly-one formal execution authority; SUB remains null/no_op."
-  },
-  "orchestrator_handoff": "MAIN takes PD01 and owns ALL critical-path fixes from authority packaging through terminal evidence. Formal SUB takes nothing; otherwise SUB may only incubate a genuinely independent bounded NON_EVIDENTIARY question and is currently no_op. sub_fallback is null. MAIN must not absorb future reserved SUB work; none is currently reserved. SUB must not take PD01 blockers. Neither touches consumed C19-R2/R1/C19-v4 or other immutable evidence, nor scheduler definitions. Repartition only on a fresh material invalidity, a PD01 semantic gap, or a genuinely independent prospectively complete SUB object. MAIN may continue same-run through science-invariant PRE_START repairs/revalidation and, after all GO gates pass, the exactly-one PD01 one-way path through terminal classification."
+      "generic exact runtime/source/binding verifier",
+      "STARTED/no-clobber/collision primitives",
+      "raw preserve/refetch/digest tooling",
+      "grouped-cluster validators",
+      "fail-closed joins",
+      "deterministic scorer/bootstrap fixtures"
+    ]
+  }
 }
