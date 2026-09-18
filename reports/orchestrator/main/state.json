@@ -1,154 +1,149 @@
 {
-  "timestamp": "2026-09-18T16:47:00+09:00",
+  "timestamp": "2026-09-18T17:23:09+09:00",
   "worker_role": "main",
-  "execution_mode": "RELAY",
-  "evidence_analyst_commit": "34ad5e0fa1a31cff7b8faebe845cf1d5442a602b",
-  "evidence_analyst_mailbox_tip": "f75328c6e32f324287ece53901dd332d764eeef9",
-  "execution_authority_analyst_commit": "d3626617c3b054afd726e468682aaa02d613bca0",
-  "current_lane": "NI01_NATIVE_NO_IGNITION_SELECTIVE_PREDICTION_ONE_WAY",
-  "current_phase": "NI01_POST_START_ONE_WAY_IN_PROGRESS",
+  "execution_mode": "PRIMARY",
+  "evidence_analyst_commit": "ded9d64a779791cbbcd9fbbff5fb3acb730c4263",
+  "evidence_analyst_mailbox_tip": "34756bd0414084ae601a3bc724d5d99101c09676",
+  "current_lane": "H5_EVENT_ROUTING_WORK_REDUCTION_PROSPECTIVE_SPECIFICATION",
+  "current_phase": "H5_FORMAL_CONTRACT_GATES_RUNNING",
   "consumed_contingency_branches": [
-    "NI01_PRE_START_READY_FOR_CONDITIONAL_ONE_WAY_AUTHORITY -> science-invariant execution/admission package",
-    "GO -> all final-SHA gates green -> fresh identity/namespace checks -> STARTED exactly once -> registered one-way workflow"
+    "NI01_TERMINAL_FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION -> hard STOP on NI01",
+    "H5_PROSPECTIVE_SPECIFICATION -> prospective contract/readiness and DEV-only equivalence/counter validation",
+    "H5_FORMAL_CONTRACT_READY_FOR_ANALYST_REVIEW -> STOP for fresh Analyst authority after exact-head gates are green"
   ],
   "active_claim": {
-    "scientific_object": "NI01 / H4 — native No-Ignition selective prediction",
-    "research_branch": "research/ni01-no-ignition-selective-prediction-spec-20260918",
-    "reviewed_scientific_head": "2664951b65dd18883d3d80862e80b86ac66cf24f",
-    "execution_head": "dbfe7469dbbbc1adbb00789ab382de892a1b3563",
-    "started_ref": "control/ni01-no-ignition-selective-prediction-started-v1-20260918",
-    "started_commit": "d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d",
-    "protocol": "ni01-no-ignition-selective-prediction-protocol-v1",
-    "identity": "ni01-no-ignition-selective-prediction-official-v1",
-    "identity_state": "CONSUMED_BY_STARTED / NO_RETRY",
+    "scientific_object": "H5 — event-routed execution can reduce audited algorithmic work at matched behavior",
+    "research_branch": "research/h5-event-routing-work-reduction-spec-20260918",
+    "head": "c2370cdc658fceab5a69a49a71032efbf4f72ece",
+    "identity": null,
+    "identity_state": "UNASSIGNED / FORMALIZATION_NOT_AUTHORIZED",
     "owner": "main"
   },
   "authoritative_target_refs": {
-    "analyst_handoff_state": "ops/evidence-analyst-handoff@34ad5e0fa1a31cff7b8faebe845cf1d5442a602b",
-    "analyst_mailbox_tip": "ops/evidence-analyst-handoff@f75328c6e32f324287ece53901dd332d764eeef9",
-    "execution_authority_analyst_commit": "d3626617c3b054afd726e468682aaa02d613bca0",
+    "analyst_latest_commit": "ops/evidence-analyst-handoff@ded9d64a779791cbbcd9fbbff5fb3acb730c4263",
+    "analyst_mailbox_tip": "ops/evidence-analyst-handoff@34756bd0414084ae601a3bc724d5d99101c09676",
     "main": "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "ni01_execution_head": "research/ni01-no-ignition-selective-prediction-spec-20260918@dbfe7469dbbbc1adbb00789ab382de892a1b3563",
-    "reviewed_scientific_head": "2664951b65dd18883d3d80862e80b86ac66cf24f",
-    "started_ref": "control/ni01-no-ignition-selective-prediction-started-v1-20260918@d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d",
-    "formal_contract_blob": "3dc90b08f85e0e7c459e0c17e86ab338901fd4c6",
-    "worlds_blob": "2478fba19d7276ebe30ec8f5811bf6d7b7414779",
-    "runner_blob": "90543b184c64981802560601b85edcdee4583a35",
-    "ablations_blob": "caa6a1c63fedc2222aa2e6ce708b66668943e8dd",
-    "phase1_config_blob": "0134abeaf3d0551edeeb890502ffebe2c27867b0",
-    "ni01_scorer_blob": "d3b3565a08277e6a94ef9be1e5bd13e86265f8f2",
-    "official_runner_blob": "d1602b22bacec1b4e8d2166bd0c184382e632d7e",
-    "preserver_blob": "390816f9d69604adc0ce3fbf21be93dd916256fd"
+    "h5_research_head": "research/h5-event-routing-work-reduction-spec-20260918@c2370cdc658fceab5a69a49a71032efbf4f72ece",
+    "engine_blob": "48fa64414f539ec4a00acc9e25ffc9b1d26a4982",
+    "model_blob": "ab450dba5943fa9184e66c00a4e992d6588bf6a5",
+    "package_blob": "49d47f3d65f67f1c0a6b82a3f7fc2d0364e2a88c",
+    "h5_module_blob": "aca6e23dd801230dcd74ef28dd926e1f4adcf06d",
+    "h5_formal_contract_blob": "44d2b3fa6108294ebfaa819453888c2a06c81cba",
+    "h5_contract_checker_blob": "00bd5ad61641acb4d504bf3a4a75cfbe8b209200",
+    "h5_dev_tests_blob": "bcf8f05087bd9fc63e1c2547bcacd36b37649688",
+    "h5_prestart_workflow_blob": "0723364d8e2840efa7193dec335c7c91ec4092d2"
   },
   "fast_path_used": true,
   "full_reconciliation_reason": null,
   "branches_prs_advanced": {
-    "research_branch_mutated_by_relay": false,
-    "control/ni01-no-ignition-selective-prediction-started-v1-20260918": {
-      "base": "dbfe7469dbbbc1adbb00789ab382de892a1b3563",
-      "started_commit": "d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d",
+    "research/h5-event-routing-work-reduction-spec-20260918": {
+      "base": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+      "head": "c2370cdc658fceab5a69a49a71032efbf4f72ece",
       "force_push": false,
-      "diff_class": "STARTED.json only"
+      "purpose": "fresh prospective H5 contract/readiness only"
     },
     "prs_advanced": []
   },
   "workflows_experiments": {
-    "formal_prestart": {
-      "run_id": 35319571793,
-      "status": "completed",
-      "conclusion": "success",
-      "head": "dbfe7469dbbbc1adbb00789ab382de892a1b3563"
-    },
-    "preformal_compatibility": {
-      "run_id": 35319571868,
-      "status": "completed",
-      "conclusion": "success",
-      "head": "dbfe7469dbbbc1adbb00789ab382de892a1b3563"
-    },
     "ordinary_ci": {
-      "run_id": 35319571743,
-      "status": "completed",
-      "conclusion": "success",
-      "head": "dbfe7469dbbbc1adbb00789ab382de892a1b3563"
-    },
-    "official_one_way": {
-      "run_id": 35321054429,
-      "run_attempt": 1,
+      "run_id": 35324068936,
       "status": "in_progress",
       "conclusion": null,
-      "head": "d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d",
-      "last_observed_step": "Set up frozen Python family",
-      "completed_steps": [
-        "Checkout STARTED control ref",
-        "Validate STARTED marker and no-clobber state",
-        "Checkout exact authority package"
-      ]
-    }
+      "head": "c2370cdc658fceab5a69a49a71032efbf4f72ece"
+    },
+    "h5_formal_contract_prestart": {
+      "run_id": 35324069141,
+      "status": "in_progress",
+      "conclusion": null,
+      "head": "c2370cdc658fceab5a69a49a71032efbf4f72ece",
+      "scope": "lint, exact binding checker, DEV-only equivalence/counter fixtures, DEV-only validation"
+    },
+    "formal_h5_execution": null
   },
   "scientific_results": {
     "new_scientific_information": false,
-    "started_created": true,
+    "h5_formal_identity_created": false,
+    "started_created": false,
     "official_test_accessed": false,
+    "formal_raw_generated": false,
     "raw_preserved": false,
     "formal_scoring_performed": false,
     "terminal_evidence_created": false,
-    "result_class": null
+    "result_class": null,
+    "note": "This run only prospectively fixed an H5 contract and readiness tooling; no formal H5 outcomes were observed."
   },
   "consumed_identities": {
     "c19-r1-revision-authority-official-v1": "consumed; untouched",
     "c19-r1-revision-authority-official-v2": "consumed; untouched",
     "c19-r2-fsa-state-tracker-official-v1": "consumed terminal; untouched",
     "pd01-long-history-fading-memory-official-v1": "consumed terminal; untouched",
-    "ni01-no-ignition-selective-prediction-official-v1": "CONSUMED_BY_STARTED at d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d; no retry"
+    "ni01-no-ignition-selective-prediction-official-v1": "consumed terminal FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION; untouched"
   },
   "blockers": [
-    "official one-way workflow 35321054429 is still in progress; waiting for its terminal result"
+    "ordinary CI 35324068936 and dedicated H5 formal-contract pre-START 35324069141 are still in progress on exact head c2370cdc658fceab5a69a49a71032efbf4f72ece"
   ],
   "lease_collision_reconciliation": {
-    "prior_primary_status": "WAITING_EXTERNAL",
-    "prior_primary_heartbeat": "2026-09-18T16:30:00+09:00",
-    "fresh_running_primary_same_branch_identity_detected_before_mutation": false,
-    "lease_rechecked_immediately_before_mutation": true,
-    "target_ref_rechecked_immediately_before_mutation": true,
-    "analyst_handoff_rechecked_immediately_before_mutation": true,
-    "control_preserve_evidence_namespaces_rechecked_immediately_before_mutation": true,
+    "prior_status": "WAITING_EXTERNAL",
+    "prior_heartbeat": "2026-09-18T16:47:00+09:00",
+    "prior_object": "terminal NI01 post-START workflow",
+    "prior_lease_stale_beyond_20_minutes": true,
+    "current_main_ref_reconciled": true,
+    "analyst_authority_reconciled": true,
+    "target_h5_branch_reconciled_before_mutation": true,
+    "fresh_running_main_same_h5_branch_identity_detected": false,
+    "only_preexisting_h5_branch": "research/exploratory-sub-h5-lazy-routing-20260917 (EXPLORATORY_NON_EVIDENTIARY; not reused as formal evidence)",
     "sub_collision": false,
-    "relay_lease_claim_commit": "48192046edfbe3ad333ca9e14d9311d1b5f3d581",
+    "lease_claim_commit": "b0be0159f4a763009d356335c75418448320d928",
+    "lease_checkpoint_commit": "8013dc2720e2e017cd2cdab74532994f01125f11",
     "current_owner": "main"
   },
   "integrity_status": {
-    "class": "POST_START_ONE_WAY_IN_PROGRESS_CLEAN",
-    "frozen_scientific_contract_changed": false,
-    "reviewed_scientific_head_preserved_as_binding": true,
-    "execution_head_diff_only_science_invariant_scaffolding": true,
-    "formal_prestart_green_same_head": true,
-    "preformal_green_same_head": true,
-    "ordinary_ci_green_same_head": true,
-    "started_created": true,
-    "started_no_clobber_validated_by_workflow": true,
-    "preserve_namespace_claimed": false,
-    "evidence_namespace_claimed": false,
-    "consumed_identity_retried": false,
-    "outcome_responsive_design_change": false,
+    "class": "H5_PROSPECTIVE_CONTRACT_BUILT_GATES_RUNNING_CLEAN",
+    "ops_branch_treated_as_repository_snapshot": false,
+    "historical_h5_exploratory_output_reused_as_evidence": false,
+    "historical_h5_exploratory_parameters_silently_frozen": false,
+    "formal_identity_assigned": false,
+    "started_created": false,
+    "official_test_accessed": false,
+    "formal_outcome_used_for_design": false,
+    "candidate_bookkeeping_included_in_work_metric": true,
+    "existing_dense_eligibility_edge_work_counted_symmetrically": true,
+    "quality_guard_frozen_prospectively": true,
+    "numeric_work_margins_frozen_prospectively": true,
+    "cluster_unit_and_statistics_frozen_prospectively": true,
     "force_push_used": false,
-    "ops_branch_treated_as_snapshot": false
+    "consumed_or_immutable_refs_modified": false
   },
+  "critical_path_fixes_completed": [],
   "critical_path_actions_performed": [
-    "Collected ordinary CI 35319571743 success on exact final execution head dbfe7469dbbbc1adbb00789ab382de892a1b3563.",
-    "Freshly reconciled latest Analyst handoff, current main, exact research head, MAIN lease, SUB no-op state, and clean NI01 control/preserve/evidence namespaces.",
-    "Claimed MAIN lease as RELAY before formal mutation.",
-    "Created the prospectively fixed NI01 control branch from the exact package head.",
-    "Created STARTED.json exactly once as commit d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d, consuming the NI01 identity.",
-    "Observed the registered one-way workflow 35321054429 start automatically from the STARTED push.",
-    "Confirmed the workflow passed STARTED/no-clobber validation and exact-package checkout before entering runtime setup."
+    "Consumed the fresh Evidence Analyst terminal-NI01 / H5-specification handoff and treated ops branches only as control-plane mailboxes.",
+    "Re-fetched current stable main, stale prior MAIN lease, SUB no-op state, H5 branch namespace, and H5 source primitives; no collision or integrity anomaly required full reconciliation.",
+    "Recovered the stale MAIN lease and claimed PRIMARY ownership before H5 mutation.",
+    "Created research/h5-event-routing-work-reduction-spec-20260918 from current main without using the historical SUB H5 incubator as evidence.",
+    "Implemented a prospectively fixed event-routed candidate and genuinely dense-equivalent audited comparator with symmetric named operation counters.",
+    "Fixed workload families, sizes, activity regimes, horizons, seeds, dense diagnostic control, quality guard, work metric, numerical decision margins, cluster unit, bootstrap, exact source/runtime/scorer/preserver bindings, and fail-closed integrity rules before formal identity.",
+    "Added DEV-only equivalence/counter validation, an exact binding checker, and a dedicated H5 formal-contract pre-START workflow.",
+    "Fast-forwarded the H5 branch to exact head c2370cdc658fceab5a69a49a71032efbf4f72ece with no force push and observed ordinary CI and dedicated readiness start on that exact head."
   ],
-  "stop_reason": "WAITING_EXTERNAL_POST_START_ONE_WAY: workflow 35321054429 is in progress and no useful safe MAIN work remains until it reaches a terminal result.",
-  "next_main_action": "Collect workflow 35321054429 only. If successful, independently verify preserve ref, raw manifest/inventory/digests/cardinality, evidence tag and terminal result binding before marking COMPLETED. If failed or evidence invalid, treat ni01-no-ignition-selective-prediction-official-v1 as consumed and stop terminally without retry, salvage, retuning or automatic successor.",
+  "same_run_steps": [
+    "analyst/main/lease/SUB reconciliation",
+    "fresh H5 branch creation",
+    "prospective formal-contract construction",
+    "DEV-only readiness tooling construction",
+    "exact-head push",
+    "workflow dispatch observation",
+    "external-wait durable checkpoint"
+  ],
+  "stop_reason": "WAITING_EXTERNAL: exact-head ordinary CI 35324068936 and dedicated H5 readiness 35324069141 are still running; no useful safe local MAIN critical-path work remains while they execute.",
+  "work_left_for_sub": "none; sub_lane and sub_fallback are null and H5 remains MAIN-owned",
+  "lane_repartition_reason": null,
+  "next_main_action": "Collect only runs 35324068936 and 35324069141 on c2370cdc658fceab5a69a49a71032efbf4f72ece. If both are green and Analyst/head/lease remain unchanged, persist H5_FORMAL_CONTRACT_READY_FOR_ANALYST_REVIEW and STOP. Repair only science-invariant mechanical failures prospectively; STOP on any semantic/scientific redesign requirement. Do not create formal identity, STARTED, official TEST, preserve, formal score, or evidence without a fresh Analyst handoff.",
   "write_path_diagnostics": {
     "github_connector_direct_write_used": true,
+    "research_branch_create_used": true,
     "research_update_ref_force": false,
-    "ops_update_ref_force": false,
-    "started_commit": "d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d",
-    "history_path": "reports/orchestrator/history/2026-09-18/1647-main.md"
+    "ops_force_push_used": false,
+    "research_commit": "c2370cdc658fceab5a69a49a71032efbf4f72ece",
+    "history_path": "reports/orchestrator/history/2026-09-18/1723-main.md"
   }
 }
