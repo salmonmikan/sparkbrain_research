@@ -3,9 +3,9 @@ from __future__ import annotations
 import pytest
 
 from sparkbrain.external_validation.fading_memory import (
-    assert_target_free_record,
     FadingMemoryComparator,
     FadingMemoryConfig,
+    assert_target_free_record,
     inventory_histories,
     stable_history_order,
 )
