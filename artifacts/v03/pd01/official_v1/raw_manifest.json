@@ -1,0 +1,19 @@
+{
+  "candidate_readout_sha256": "16940a5240fb6402a9ba74e236f009c203431240d1db5dfbca10d65057da3bdd",
+  "comparator_readout_sha256": "8d544fce44c00d318bb297bba43f5a65e197fad6e1ea8b4593b6602d432f5a6d",
+  "evidence_analyst_commit": "91a05bad6d130f89975e776960a1d25d764fba32",
+  "exact_package_commit": "b9d38daa5faca348ad2db3898ba71e2abc99f631",
+  "history_count": 1024,
+  "input_inventory_sha256": "b70e87ce2494b0605cfb305a0097c41317c7aba9fbd8c049921abad05bcbdd92",
+  "models": [
+    "sparkbrain_v04",
+    "fixed_contractive_reservoir"
+  ],
+  "protocol_id": "pd01-long-history-fading-memory-protocol-v1",
+  "raw_row_count": 2048,
+  "raw_sha256": "5ad0c545c5aa4548ca7a852e9c46a908af41c9a44047667c9ed09c1fd5041638",
+  "run_identity": "pd01-long-history-fading-memory-official-v1",
+  "schema_version": 1,
+  "started_ref": "control/pd01-long-history-fading-memory-started-v1-20260918",
+  "targets_materialized": false
+}
