@@ -24,7 +24,7 @@ No task/world subset, official history rule, lag grid, formal comparator configu
 
 ## Workflow/check state
 
-On exact final head `6e409274...`, dedicated PD0.1 pre-formal run `35291261589` is now **completed / success**. Ordinary CI `35291261630` remains `in_progress`. fileciteturn91file0 fileciteturn92file0
+On exact final head `6e409274...`, dedicated PD0.1 pre-formal run `35291261589` is now **completed / success**. Ordinary CI `35291261630` remains `in_progress`.
 
 No useful local critical-path work remains while ordinary CI runs, so PRIMARY hands off rather than waiting idly.
 
