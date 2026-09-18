@@ -1,0 +1,38 @@
+{
+  "candidate_overall_loss": 0.2119466145833332,
+  "comparator_overall_loss": 0.21146918402777773,
+  "coverage_by_world": {
+    "contradiction_world": {
+      "absolute_difference": 0.0057942708333333925,
+      "candidate": 0.9328776041666667,
+      "comparator": 0.938671875
+    },
+    "delayed_evidence_world": {
+      "absolute_difference": 0.0069010416666667185,
+      "candidate": 0.9284505208333333,
+      "comparator": 0.9215494791666666
+    },
+    "reliability_world": {
+      "absolute_difference": 0.0005208333333334147,
+      "candidate": 0.9238932291666667,
+      "comparator": 0.9233723958333333
+    }
+  },
+  "coverage_guard_pass": true,
+  "effect": -0.00047743055555544517,
+  "effect_ci95": [
+    -0.0024414062499999965,
+    0.0014756944444444355
+  ],
+  "joined_step_count": 46080,
+  "protocol_id": "ni01-no-ignition-selective-prediction-protocol-v1",
+  "result_class": "FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION",
+  "run_identity": "ni01-no-ignition-selective-prediction-official-v1",
+  "schema_version": 1,
+  "test_target_count": 46080,
+  "world_effects": {
+    "contradiction_world": -0.003743489583333176,
+    "delayed_evidence_world": 0.00745442708333327,
+    "reliability_world": -0.00514322916666643
+  }
+}

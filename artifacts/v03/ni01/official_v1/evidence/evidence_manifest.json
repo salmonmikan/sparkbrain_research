@@ -1,0 +1,13 @@
+{
+  "evidence_analyst_commit": "d3626617c3b054afd726e468682aaa02d613bca0",
+  "exact_package_commit": "dbfe7469dbbbc1adbb00789ab382de892a1b3563",
+  "protocol_id": "ni01-no-ignition-selective-prediction-protocol-v1",
+  "raw_preservation_commit": "8a39cf70e397bb7588f948910f01ec58672ac814",
+  "result_class": "FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION",
+  "run_identity": "ni01-no-ignition-selective-prediction-official-v1",
+  "schema_version": 1,
+  "started_ref": "control/ni01-no-ignition-selective-prediction-started-v1-20260918",
+  "state": "TERMINAL_EVIDENCE",
+  "workflow_run_attempt": 1,
+  "workflow_run_id": "35321054429"
+}

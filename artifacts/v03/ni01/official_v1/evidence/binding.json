@@ -1,0 +1,18 @@
+{
+  "evidence_analyst_commit": "d3626617c3b054afd726e468682aaa02d613bca0",
+  "exact_package_commit": "dbfe7469dbbbc1adbb00789ab382de892a1b3563",
+  "formal_contract_git_blob": "3dc90b08f85e0e7c459e0c17e86ab338901fd4c6",
+  "inventory_sha256": "292be7a8253bf619cb8b110a5901f994d90a53f4ba4f6146775fefbf5aceb1ad",
+  "manifest_sha256": "d0d77eca163356d8b096d8009fbd0d7dfa86b619dac0f7583e37855cb2be6b84",
+  "ni01_scorer_git_blob": "d3b3565a08277e6a94ef9be1e5bd13e86265f8f2",
+  "preservation_commit": "8a39cf70e397bb7588f948910f01ec58672ac814",
+  "raw_sha256": "2389a77e3c6a04e4a64e6e0a5dc7766b3d03aac021c9fb0b493f00f0e7007a63",
+  "source_binding": {
+    "ablations_blob": "caa6a1c63fedc2222aa2e6ce708b66668943e8dd",
+    "base_main_commit": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "ni01_scorer_blob": "d3b3565a08277e6a94ef9be1e5bd13e86265f8f2",
+    "phase1_main_config_blob": "0134abeaf3d0551edeeb890502ffebe2c27867b0",
+    "runner_blob": "90543b184c64981802560601b85edcdee4583a35",
+    "worlds_blob": "2478fba19d7276ebe30ec8f5811bf6d7b7414779"
+  }
+}
