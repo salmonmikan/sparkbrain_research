@@ -1,17 +1,18 @@
 {
-  "timestamp": "2026-09-18T13:27:00+09:00",
+  "timestamp": "2026-09-18T13:47:18+09:00",
   "worker_role": "main",
-  "execution_mode": "PRIMARY",
+  "execution_mode": "RELAY",
   "evidence_analyst_commit": "39c62ddb6bc567d3d3c81e38efa61be405ca7b4a",
+  "evidence_analyst_mailbox_tip": "938231f8acb714dfa832139383beef6bb8afb0c3",
   "current_lane": "NEXT_FRONTIER_PROSPECTIVE_SELECTION",
-  "current_phase": "NI01_PREFORMAL_EXACT_HEAD_CHECKS_PENDING",
+  "current_phase": "NI01_FINAL_CI_PENDING_AFTER_LINT_REPAIR",
   "consumed_contingency_branches": [
     "NEXT_FRONTIER_CANDIDATE_UNDERSPECIFIED -> prospective specification/mechanical development",
-    "science-invariant preformal test failure -> fixture-only repair and re-run exact-head gates"
+    "science-invariant preformal gate failure -> mechanical repair and re-run exact-head gates"
   ],
   "active_claim": {
     "research_branch": "research/ni01-no-ignition-selective-prediction-spec-20260918",
-    "exact_head": "0d2e085f2960d46dce30e7619e80054db89c3c70",
+    "exact_head": "2664951b65dd18883d3d80862e80b86ac66cf24f",
     "protocol": "ni01-no-ignition-selective-prediction-protocol-v1",
     "formal_identity_plan": "ni01-no-ignition-selective-prediction-official-v1",
     "formal_identity_state": "UNRESERVED",
@@ -20,51 +21,66 @@
   },
   "authoritative_target_refs": {
     "analyst_latest": "ops/evidence-analyst-handoff@39c62ddb6bc567d3d3c81e38efa61be405ca7b4a",
+    "analyst_mailbox_tip": "ops/evidence-analyst-handoff@938231f8acb714dfa832139383beef6bb8afb0c3",
     "main": "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "ni01_research": "research/ni01-no-ignition-selective-prediction-spec-20260918@0d2e085f2960d46dce30e7619e80054db89c3c70",
+    "ni01_research": "research/ni01-no-ignition-selective-prediction-spec-20260918@2664951b65dd18883d3d80862e80b86ac66cf24f",
     "worlds_blob": "2478fba19d7276ebe30ec8f5811bf6d7b7414779",
     "runner_blob": "90543b184c64981802560601b85edcdee4583a35",
     "ablations_blob": "caa6a1c63fedc2222aa2e6ce708b66668943e8dd",
     "phase1_config_blob": "0134abeaf3d0551edeeb890502ffebe2c27867b0",
-    "ni01_scorer_blob": "37cf7f59725988155199148f1a62ba77ab6ca0cf"
+    "ni01_scorer_blob": "d3b3565a08277e6a94ef9be1e5bd13e86265f8f2"
   },
-  "fast_path_used": true,
-  "full_reconciliation_reason": null,
-  "branches_prs_advanced": {
-    "created_branch": "research/ni01-no-ignition-selective-prediction-spec-20260918",
-    "final_head": "0d2e085f2960d46dce30e7619e80054db89c3c70",
-    "prs_advanced": []
-  },
-  "workflows_experiments": {
+  "workflow_check_result": {
+    "collected_prior_exact_head": "0d2e085f2960d46dce30e7619e80054db89c3c70",
     "prior_preformal": {
-      "run_id": 35306802494,
-      "head_sha": "8d31d0dda992e06780d247e148e16d8e4cf2fa26",
+      "run_id": 35306927042,
       "status": "completed",
       "conclusion": "failure",
-      "classification": "MECHANICAL_TEST_FIXTURE_ONLY",
-      "contract_source_check": "success"
+      "classification": "SCIENCE_INVARIANT_MECHANICAL_LINT_E501",
+      "contract_source_check": "success",
+      "focused_tests": "success",
+      "lint": "failure"
     },
-    "final_head_preformal": {
-      "run_id": 35306927042,
-      "head_sha": "0d2e085f2960d46dce30e7619e80054db89c3c70",
-      "status": "queued_or_running",
-      "conclusion": null
-    },
-    "final_head_ci": {
+    "prior_ci": {
       "run_id": 35306927037,
-      "head_sha": "0d2e085f2960d46dce30e7619e80054db89c3c70",
-      "status": "queued_or_running",
+      "status": "completed",
+      "conclusion": "failure",
+      "classification": "SCIENCE_INVARIANT_MECHANICAL_LINT"
+    },
+    "final_head": "2664951b65dd18883d3d80862e80b86ac66cf24f",
+    "final_preformal": {
+      "run_id": 35308269458,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "final_ci": {
+      "run_id": 35308269286,
+      "status": "in_progress",
       "conclusion": null
     },
     "formal_experiments": []
   },
+  "lease_collision_reconciliation": {
+    "observed_primary_status": "WAITING_EXTERNAL",
+    "observed_primary_heartbeat": "2026-09-18T13:27:30+09:00",
+    "fresh_running_primary_same_object_detected": false,
+    "sub_mode": "no_op",
+    "sub_collision": false,
+    "research_head_before_relay": "0d2e085f2960d46dce30e7619e80054db89c3c70",
+    "research_head_after_relay": "2664951b65dd18883d3d80862e80b86ac66cf24f"
+  },
+  "critical_path_actions_performed": [
+    "Collected dedicated preformal 35306927042 and ordinary CI 35306927037; both failed at lint on the same exact head.",
+    "Inspected the dedicated job traceback and confirmed contract/source checking plus focused scorer tests passed before three Ruff E501 formatting failures.",
+    "Wrapped only the three overlong lines; scorer behavior and scientific contract semantics were unchanged.",
+    "Refreshed the prospective scorer blob binding from 37cf7f59725988155199148f1a62ba77ab6ca0cf to d3b3565a08277e6a94ef9be1e5bd13e86265f8f2 because the formatting-only scorer edit changed the blob identity.",
+    "Re-ran exact-head gates via push-triggered workflows on final head 2664951b65dd18883d3d80862e80b86ac66cf24f; dedicated preformal is green and ordinary CI remains in progress."
+  ],
   "scientific_results": {
     "new_scientific_information": false,
     "formal_result": null,
     "test_inputs_accessed": false,
-    "formal_scoring_performed": false,
-    "candidate_selected": "NI01_NATIVE_NO_IGNITION_SELECTIVE_PREDICTION",
-    "selection_basis": "pre-existing independent H4 falsification question; not a C19/PD01 rescue"
+    "formal_scoring_performed": false
   },
   "consumed_identities": {
     "c19-r1-revision-authority-official-v1": "consumed; untouched",
@@ -73,51 +89,34 @@
     "pd01-long-history-fading-memory-official-v1": "consumed terminal; untouched",
     "ni01-no-ignition-selective-prediction-official-v1": "UNRESERVED / UNCONSUMED"
   },
-  "blockers": [
-    "final-head dedicated preformal and ordinary CI are external and not yet terminal",
-    "fresh Evidence Analyst authorization is required after NEXT_OBJECT_READY_FOR_ANALYST_REVIEW before any formal identity/STARTED/TEST access"
-  ],
-  "lease_collision_reconciliation": {
-    "fresh_running_main_same_object_detected": false,
-    "primary_lease_commit": "8cc47e49bd7758f6b12a53c9a9a9dd47d8395ab5",
-    "sub_mode": "no_op",
-    "sub_collision": false
-  },
   "integrity_status": {
-    "analyst_latest_fresh": true,
-    "analyst_state_json_stale_but_not_authoritative_over_newer_latest": true,
-    "research_head_fresh": true,
-    "consumed_identity_retried": false,
-    "outcome_responsive_design_change": false,
+    "analyst_latest_unchanged": true,
+    "research_head_final": "2664951b65dd18883d3d80862e80b86ac66cf24f",
+    "control_namespace_absent": true,
+    "preserve_namespace_absent": true,
+    "evidence_namespace_absent": true,
     "formal_identity_reserved": false,
     "started_created": false,
-    "test_access": false,
+    "official_test_access": false,
     "preserve_or_evidence_created": false,
+    "consumed_identity_retried": false,
+    "outcome_responsive_design_change": false,
+    "scientific_semantics_changed": false,
     "force_push_used": false,
     "ops_branch_treated_as_snapshot": false,
-    "integrity_class": "PREFORMAL_CLEAN_WAITING_EXACT_HEAD_CHECKS"
+    "integrity_class": "PREFORMAL_CLEAN_WAITING_FINAL_CI"
   },
-  "critical_path_fixes_completed": [
-    "Replaced only a synthetic fixture assertion requiring a finite 100-draw percentile CI to contain the point estimate; scorer/science contract unchanged."
+  "blockers": [
+    "ordinary CI 35308269286 on final exact head remains in progress",
+    "fresh Evidence Analyst authorization remains required after NEXT_OBJECT_READY_FOR_ANALYST_REVIEW before formal identity reservation or STARTED"
   ],
-  "same_run_steps": [
-    "Consumed fresh Evidence Analyst next-frontier selection authority and reconciled PD01 terminal state.",
-    "Confirmed SUB no-op and stable main substrate; used Control Brain only as strategic prior.",
-    "Selected independent pre-existing H4 No-Ignition question rather than extending the failed memory/reduction ladder.",
-    "Created NI01 research branch and prospective machine-readable/scientific contract.",
-    "Implemented deterministic confidence-abstention threshold/scoring/bootstrap primitives and focused non-evidentiary tests.",
-    "Added fail-closed exact source/contract checker and dedicated preformal workflow.",
-    "Collected first dedicated gate failure, verified contract checker success, and repaired only the synthetic fixture assertion.",
-    "Dispatched new same-final-SHA dedicated preformal and ordinary CI runs, then stopped for external collection."
-  ],
-  "stop_reason": "WAITING_EXTERNAL: exact-head preformal 35306927042 and CI 35306927037 remain queued/running; no useful local critical-path work remains.",
-  "work_left_for_sub": null,
-  "lane_repartition_reason": null,
-  "next_main_action": "Collect exact-head runs 35306927042 and 35306927037. If both green with unchanged authority/head/identity state, persist NEXT_OBJECT_READY_FOR_ANALYST_REVIEW and STOP. Mechanical failures remain MAIN-owned; semantic/scientific changes require Analyst.",
-  "write_path_diagnostics": {
-    "github_connector_write_available": true,
-    "lease_start_update_commit": "8cc47e49bd7758f6b12a53c9a9a9dd47d8395ab5",
-    "force_push_used": false,
-    "ops_branch_synchronized_with_main": false
+  "stop_reason": "WAITING_EXTERNAL: dedicated NI01 preformal 35308269458 is green on final head 2664951b65dd18883d3d80862e80b86ac66cf24f, while ordinary CI 35308269286 is still in progress; no useful immediate critical-path work remains.",
+  "next_main_action": "Collect ordinary CI 35308269286 only. If it is green and Analyst authority/head/identity/namespaces remain unchanged, persist NEXT_OBJECT_READY_FOR_ANALYST_REVIEW and STOP for fresh Analyst authority. If it fails mechanically, apply only a science-invariant repair and re-run all exact-head gates; any semantic/scientific change requires Analyst review before mutation.",
+  "persistence": {
+    "latest_path": "reports/orchestrator/main/latest.md",
+    "state_path": "reports/orchestrator/main/state.json",
+    "lease_path": "reports/orchestrator/main/lease.json",
+    "history_path": "reports/orchestrator/history/2026-09-18/1347-main.md",
+    "force_push_used": false
   }
 }
