@@ -1,86 +1,86 @@
 # SparkBrain Repository Steward — Latest
 
-Timestamp: 2026-09-18 19:50 JST
-Selected role: `REPOSITORY_STEWARD` from the 19:50 JST slot; no role inference required.
+Timestamp: 2026-09-19 01:50 JST
+Selected role: `REPOSITORY_STEWARD` from the 01:50 JST slot; no role inference required.
 
 ## Overall
-Repository doctrine remains **partially compliant with good science/control-plane separation**. `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` is still the stable shared substrate and remains unprotected. Active H5 work remains isolated under `research/*`; no H5 formal identity, STARTED/control ref, preserve ref, formal/sealed tag, or evidence tag exists at this Steward snapshot.
+Repository doctrine remains **partially compliant with good science/control-plane separation**. `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` remains the stable shared substrate and remains unprotected. The programme currently has no active formal frontier: LP01 closed PRE-FORMAL / NON_EVIDENTIARY as `NO_HIGH_VALUE_OBJECT`, and MAIN subsequently completed a bounded post-LP01 admission pass with the same `NO_HIGH_VALUE_OBJECT` outcome. SUB remains `no_op` and did not manufacture a parallel lane.
 
-The material governance update is NI01 terminal preservation: remote authoritative evidence now contains **4 annotated `evidence/*` tags** (C19-v4, C19-R2, PD01, NI01). Issue #139 was stale at three tags and was corrected to four without changing its acceptance criteria or scientific interpretation. Repository rulesets remain zero, so the substantive server-side protection gap is unchanged.
+The material governance change this run is terminal H5 preservation now being reflected consistently in the governance tracker. Remote authoritative evidence contains **5 annotated `evidence/*` tags** (C19-v4, C19-R2, PD01, NI01, H5). Issue #139 was stale at four tags and was corrected to five without changing its acceptance criteria or scientific interpretation. Repository rulesets remain zero, so the substantive server-side protection gap is unchanged.
 
 ## Fresh control-plane and remote reconciliation
-All `ops/*` branches were treated only as designated mailboxes; unrelated files on those branches were not treated as repository state.
+All `ops/*` branches were treated strictly as designated mailboxes; unrelated files on those branches were not treated as repository state.
 
-- Control Brain mailbox head: `23fc2f0c1668526be402fa44b3bc8c5b2258511b`; latest doctrine is 18:55 JST and keeps H5 bounded as an efficiency-only discriminator.
-- Evidence Analyst mailbox head: `4630decbda55d31ec8f44ac1435950b261225fd5`; latest analysis is 19:22 JST and prospectively **accepts** the revised standalone H5 dense comparator for conditional one-way authority packaging.
-- Orchestrator report mailbox head: `a12b86bcd401b1dd7768e122cfd64191a4747a6b`.
-- MAIN durable latest is 19:13 JST and therefore predates the 19:22 Analyst acceptance; it is still blocked waiting for fresh Analyst review.
-- SUB durable latest is 19:32 JST but still reflects the older Analyst authority and remains `no_op`; it did not touch H5.
+- Control Brain mailbox head: `9bf5c0249e88acdd5fc99b12555e785f9c2e2976`; latest doctrine is 22:50 JST and explicitly places SparkBrain in architecture/testbed-primary framing with no active supported new-computational-principle claim.
+- Evidence Analyst mailbox head: `71d0050f3985f888dc34566a0ffbf0b027f37d3e`; latest analysis is 00:14 JST. It consumed LP01 pre-formal closeout and authorized only a bounded programme-synthesis / next-object admission pass, not formal execution.
+- Orchestrator report mailbox head observed at run start: `12793340d26ff14d7dccdca97f10a279fbdffec3`.
+- MAIN durable latest: 00:48 JST, `RELAY`, `POST_LP01_PROGRAMME_SYNTHESIS_AND_NEXT_OBJECT_ADMISSION` completed with `NO_HIGH_VALUE_OBJECT`, PRE-FORMAL / NON_EVIDENTIARY, no research branch/identity/STARTED/official TEST/preserve/score/evidence created.
+- SUB durable latest: 01:37 JST, `mode: no_op`; it explicitly avoided MAIN admission work and terminal/consumed lines.
 
-Fresh remote facts override those mailbox timing lags:
+Fresh remote facts:
 
 - `main`: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`, `protected=false`.
 - repository rulesets: **0**.
 - legacy `freeze/*` branches: **13**, all present.
-- authoritative annotated `evidence/*` tags: **4**.
-- `formal/*`, `sealed/*`, and tag-based `freeze/*` namespaces: no current tags.
+- authoritative annotated `evidence/*` tags: **5**.
+- `formal/*`, `sealed/*`, and tag-based `freeze/*` namespaces: **0 tags**.
 - open non-PR Issue: **#139** only.
-- open PRs: **#148 and #149**; both remain mergeable and their observed exact-head checks are green.
+- open PRs: **#148 and #149**.
 
-## Current H5 governance status
-Current research head remains `research/h5-event-routing-work-reduction-spec-20260918@520fc8391d9ebb02584a16ec466a1bf168548ea9`.
+## Current science/governance boundary
+No new scientific action is warranted from Stewardship. LP01 is a completed pre-formal design conclusion, not evidence. MAIN's post-LP01 admission result is likewise a prospective programme-admission decision, not a scientific negative result. No fresh formal identity exists after H5.
 
-Fresh check reconciliation confirms H5 readiness is green on that exact head:
+H5 is now terminal and preserved by authoritative annotated tag:
 
-- dedicated `h5-readiness`: completed/success;
-- ordinary CI Python 3.11: completed/success;
-- ordinary CI Python 3.13: completed/success.
+- tag: `evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1`
+- tag object: `e7d99cc806206ac27ced225d4779c9fc5bb67ff5`
+- terminal evidence commit: `61aff6d74b82b68a326f3d90505d70bcd4071fd5`
+- STARTED ref remains `control/h5-event-routing-work-reduction-started-v1-20260918@058e90227cd48e1c10c6ecbaed01efdec1217d0e`
 
-The 19:22 Evidence Analyst handoff accepts `DenseEagerSparkBrain` prospectively and allows MAIN to bind the fresh authority, choose a fresh identity after collision checks, revalidate gates on the final execution SHA, and execute exactly one formal one-way H5 object only if every GO condition remains satisfied.
-
-Stewardship performed **no** H5 scientific action. Fresh branch/tag reconciliation still shows no H5 `control/*`, `preserve/*`, `formal/*`, `sealed/*`, or `evidence/*` authority. The next H5 action remains MAIN-owned. No H5 Issue was created because there is no clear governance-only action that would not duplicate or pre-empt the scientific handoff.
+Stewardship did not modify any of these refs.
 
 ## Doctrine drift found / corrected / deferred
 
 ### Compliant
-- `main` has not absorbed H5, NI01, PD01, C19-R2 scientific semantics or SUB exploratory artifacts.
-- Active unresolved H5 science remains off `main` under `research/*`.
-- NI01 terminal state is anchored by a new authoritative annotated `evidence/*` tag rather than a moving freeze branch.
+- `main` has not absorbed LP01/H5/NI01/PD01/C19-R2 scientific semantics or SUB exploratory artifacts.
+- Active/unresolved scientific work remains off `main`; current programme has no admitted formal object.
+- New terminal evidence continues to use annotated `evidence/*` tags rather than new moving freeze branches.
 - Canonical scientific truth remains git-managed; Issue #139 remains governance tracking only.
-- SUB remains no-op rather than taking a MAIN blocker.
+- SUB correctly remains no-op rather than taking MAIN work or fabricating a formal lane.
 
 ### Corrected this run
-- **Issue #139 inventory corrected from 3 to 4 authoritative evidence tags**, adding NI01 tag object `185b741e69ea8a0ce0d076153d36e9296a748765` -> terminal evidence commit `69aa785a48bbdb531229b7f71f7fa84a5fde9948`.
-- Acceptance-criterion wording now says the authoritative-tag creation workflow has been exercised successfully by four evidence tags.
+- **Issue #139 inventory corrected from 4 to 5 authoritative evidence tags**, adding H5 tag object `e7d99cc806206ac27ced225d4779c9fc5bb67ff5` -> terminal evidence commit `61aff6d74b82b68a326f3d90505d70bcd4071fd5`.
+- Acceptance-criterion wording now states the authoritative-tag creation workflow has been exercised successfully by five evidence tags.
+- Prior Steward promotion status for PRs #148/#149 was too optimistic. Both have green CI and are mergeable, but unresolved review findings mean neither should currently be described as merge-ready.
 
 ### Deferred / non-blocking
 - server-side tag update/delete protection remains absent (`rulesets=0`);
 - `main` remains unprotected;
 - legacy freeze migration remains deferred until protected migration semantics exist;
-- H5-specific comparator/counter/workload/statistic code remains research-local even though its readiness checks are green;
-- old CX comparator branches remain unsuitable for wholesale direct promotion; neutral substrate extraction remains the only recommended path.
+- neutral CX substrate extraction remains a future small-PR activity, not a reason to cherry-pick old research branches wholesale;
+- PR review findings should be resolved by ordinary PR maintenance, not by scheduled Stewardship.
 
 ## Issue audit / changes
 
 ### #139 — updated, remains open
-Only factual inventory changed. The issue now lists C19-v4, C19-R2, PD01 and NI01 as the four current authoritative evidence tags. The actual acceptance gap is unchanged: no repository ruleset currently prevents routine authoritative-tag retarget/delete.
+Only factual inventory changed. The issue now lists C19-v4, C19-R2, PD01, NI01 and H5 as the five current authoritative evidence tags. The actual acceptance gap is unchanged: no repository ruleset currently prevents routine authoritative-tag retarget/delete.
 
-No new scientific or H5 Issue was created. H5 has a fresh prospective Analyst authority and remains a MAIN scientific execution boundary, not a repository-governance task.
+No new Issue was created. MAIN/SUB currently report object scarcity rather than a repository-governance action needing a separate Issue.
 
 ## Freeze branch -> tag migration / preservation mapping
 - legacy `freeze/*` branches: **13**, untouched;
-- authoritative annotated evidence tags: **4**;
-- new direct evidence anchor since the prior Steward snapshot: **NI01**;
+- authoritative annotated evidence tags: **5**;
+- new direct evidence anchor since the prior Steward snapshot: **H5**;
 - legacy branch-to-tag mirrors created this run: **0**;
 - freeze branches moved/deleted/force-updated: **0**.
 
-`reports/repository_steward/legacy_freeze_map.md` was not changed because NI01 is a direct authoritative evidence anchor, not a SHA-equivalent mirror of a legacy freeze branch. No preserve/control/formal/evidence ref was modified by Stewardship.
+`reports/repository_steward/legacy_freeze_map.md` was not changed because H5 is a direct authoritative evidence anchor, not a SHA-equivalent mirror of a legacy freeze branch. No preserve/control/formal/evidence ref was modified by Stewardship.
 
 ## Tag protection / ruleset status
 Read-only governance state remains **gap present**:
 
 - authoritative tag creation tooling exists and has been exercised successfully;
-- authoritative `evidence/*` count: 4;
+- authoritative `evidence/*` count: 5;
 - repository rulesets: 0;
 - `main` protection: disabled;
 - server-side update/delete protection for `freeze/*`, `sealed/*`, `formal/*`, `evidence/*`: absent.
@@ -90,33 +90,32 @@ Issue #139 remains the tracker. No ruleset or branch-protection mutation was att
 ## Main-promotion review
 No promotion was performed.
 
-The prior neutral-substrate inventory remains valid: architecture-neutral event/distribution primitives, generic comparator protocol shape, snapshot/restore invariants, descriptive resource accounting, generic privilege/leakage guards and external-only transcript validation are candidates only after neutral extraction onto current `main` with fresh CI.
+Neutral candidates remain unchanged: architecture-neutral event/distribution primitives, generic comparator protocol shape, snapshot/restore invariants, descriptive resource accounting, generic privilege/leakage guards and external-only transcript validation, all only after neutral extraction onto current `main` with fresh CI.
 
-H5 does not change that recommendation. `DenseEagerSparkBrain`, H5 `WorkCounter`, workload grid, quality tolerances, bootstrap rules and PASS/FAIL margins are hypothesis-specific and remain **RESEARCH_ONLY**. Any later reusable extraction must be outcome-independent and must not import H5 scientific decision semantics.
+H5-specific comparator/counter/workload/statistical semantics and LP01 lineage/ancestry semantics remain **RESEARCH_ONLY**.
 
-Open PR review remains unchanged:
+Open PR review is revised:
 
-- PR #148 `Add human-directives repository skill`: open, mergeable, one-file control-plane helper, exact-head checks green, **MAIN_ELIGIBLE_FOR_ORDINARY_REVIEW**; not merged by Stewardship.
-- PR #149 `Add Git-backed SparkBrain scheduler registry skill`: open, mergeable, one-file control-plane helper, exact-head checks green, **MAIN_ELIGIBLE_FOR_ORDINARY_REVIEW**; not merged by Stewardship.
+- PR #148 `Add human-directives repository skill`: open and mergeable; CI `35286849859` is success, but there are **2 unresolved P1 + 1 unresolved P2** review threads. The P1s identify branch-read semantics and missing remote push publication; this is **DEFER_PENDING_REVIEW_FIX**, not merge-ready.
+- PR #149 `Add Git-backed SparkBrain scheduler registry skill`: open and mergeable; CI `35287647629` is success. The registry is now independently bootstrapped (`ops/scheduler-registry`, manifest present), so the original missing-bootstrap concern is operationally mitigated, but an unresolved P1 still identifies a concurrent live-definition revalidation race before mutation. Classification: **DEFER_PENDING_REVIEW_FIX**.
+
+No PR was merged or modified by Stewardship.
 
 ## Immutable refs / integrity
 Verified untouched by this Steward run:
 
 - all 13 legacy `freeze/*` branches;
-- C19-v4 evidence tag/object/target;
-- C19-R2 evidence tag/object/target;
-- PD01 evidence tag/object/target;
-- NI01 evidence tag/object/target;
-- NI01 STARTED ref `control/ni01-no-ignition-selective-prediction-started-v1-20260918@d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d`;
-- NI01 raw preserve ref `preserve/ni01-no-ignition-selective-prediction-raw-ni01-no-ignition-selective-prediction-official-v1@8a39cf70e397bb7588f948910f01ec58672ac814`;
-- prior consumed C19/R1/R2, PD01 and earlier formal identities;
-- H5 prospective research object and all currently absent H5 formal namespaces.
+- all five authoritative evidence tags and their targets;
+- H5 STARTED/control ref and terminal evidence anchor;
+- prior C19/R1/R2, PD01, NI01 and H5 consumed identities;
+- LP01 remains without formal identity/STARTED/preserve/evidence;
+- no formal/sealed/freeze-tag namespace was created.
 
 Stewardship executed no experiment, dispatched no research workflow, consumed no identity, decided no scientific freeze, created no scientific evidence anchor, merged no research PR, and modified no scheduler definition.
 
 ## Next Steward priorities
 1. Keep Issue #139 open until authoritative tag namespaces receive server-side protection through an administrative path outside scheduled Stewardship.
 2. Preserve all legacy freeze refs; do not mass-mirror/delete them before protected migration semantics exist.
-3. Reconcile H5 only after MAIN advances from the fresh 19:22 Analyst authority; do not infer terminal state from readiness checks.
-4. Keep H5 scientific code research-local. Promote only neutral, outcome-independent substrate through small current-main PRs with fresh CI if separately authorized.
-5. Continue ordinary review of #148/#149 without bundling scientific changes.
+3. Continue treating LP01 and MAIN's `NO_HIGH_VALUE_OBJECT` admission closeout as PRE-FORMAL / NON_EVIDENTIARY; do not create a governance artifact that upgrades them into science.
+4. Keep scientific mechanism code research-local; route only neutral outcome-independent substrate through small current-main PRs with fresh CI.
+5. Re-review #148/#149 after their unresolved P1 findings are actually fixed; green CI alone is insufficient for main-promotion readiness.
