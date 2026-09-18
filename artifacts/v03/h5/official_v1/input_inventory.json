@@ -1,0 +1,89 @@
+{
+  "dense_control": {
+    "activity_fractions": [
+      1.0
+    ],
+    "cell_count": 8,
+    "families": [
+      "uniform"
+    ],
+    "horizon": 8,
+    "role": "diagnostic only; excluded from primary sparse PASS/FAIL statistic",
+    "seeds": [
+      51001,
+      51017,
+      51031,
+      51047,
+      51059,
+      51071,
+      51083,
+      51097
+    ],
+    "sizes": [
+      128
+    ]
+  },
+  "expected_dense_control_rows": 8,
+  "expected_sparse_rows": 144,
+  "expected_total_rows": 152,
+  "formal_identity": "h5-event-routing-work-reduction-official-v1",
+  "graph": {
+    "base_threshold": 1.0,
+    "decay_tau": 3.0,
+    "edge_delay": 0.01,
+    "offsets": [
+      1,
+      7,
+      23,
+      61
+    ],
+    "plastic": false,
+    "spark_kind": "feature",
+    "stimulus_strength": 1.05,
+    "threshold": 1.0,
+    "type": "directed_circulant",
+    "weights": [
+      0.18,
+      0.16,
+      0.14,
+      0.12
+    ]
+  },
+  "protocol_id": "h5-event-routing-work-reduction-formal-contract-v2",
+  "runtime_binding": {
+    "notes": "The H5 candidate, standalone comparator, workload, counter, scorer and preserver use Python stdlib plus the bound SparkBrain source only. Pytest and Ruff are readiness tooling, not scientific runtime dependencies.",
+    "python": "CPython 3.11.10",
+    "scientific_runtime_third_party_dependencies": []
+  },
+  "schema_version": 1,
+  "sparse_primary": {
+    "activity_fractions": [
+      0.01,
+      0.05,
+      0.15
+    ],
+    "aggregation": "equal weight across all family-size-activity strata within each seed, then equal weight across seeds",
+    "cell_count": 144,
+    "families": [
+      "uniform",
+      "clustered",
+      "bursty"
+    ],
+    "horizon": 24,
+    "seeds": [
+      51001,
+      51017,
+      51031,
+      51047,
+      51059,
+      51071,
+      51083,
+      51097
+    ],
+    "sizes": [
+      128,
+      384
+    ]
+  },
+  "state": "FORMAL_INPUT_INVENTORY"
+}

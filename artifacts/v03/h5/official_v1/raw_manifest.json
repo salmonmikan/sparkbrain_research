@@ -1,0 +1,21 @@
+{
+  "contains_formal_classification": false,
+  "dense_control_row_count": 8,
+  "evidence_analyst_commit": "f373fe3dfcddc14405d81cabadf0cb2682a659d0",
+  "evidence_analyst_mailbox_tip": "4630decbda55d31ec8f44ac1435950b261225fd5",
+  "exact_package_commit": "2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
+  "formal_contract_git_blob": "1911d4560f4e2774fd725df26ba8cb25b03e2c5f",
+  "formal_identity": "h5-event-routing-work-reduction-official-v1",
+  "h5_module_git_blob": "572f00f7a7361a89a54b647a2e2dca875c9b4829",
+  "inventory_sha256": "afa358c02eafa7abc2e9e0c7eba06c000f6c00b2c93599c7e7cf2b77e3c1cd0b",
+  "official_runner_git_blob": "42a44384d08d680e3767541efce92b0f54edb9ee",
+  "one_way_workflow_git_blob": "37f8dc1817a4587749c0896727dc4f10187ff50e",
+  "preserver_git_blob": "0f3b013025737373e8bec91056c5369f23a3266f",
+  "protocol_id": "h5-event-routing-work-reduction-formal-contract-v2",
+  "raw_sha256": "c0c87aab6a70969ade75bcfd89ad0629e04e6591c0f7414bf7d8c70049a06000",
+  "row_count": 152,
+  "schema_version": 1,
+  "sparse_row_count": 144,
+  "started_ref": "control/h5-event-routing-work-reduction-started-v1-20260918",
+  "state": "RAW_UNSCORED"
+}
