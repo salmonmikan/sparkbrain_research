@@ -1,0 +1,137 @@
+{
+  "schema_version": "ni01-preformal-contract-v1",
+  "status": "PREFORMAL_REVIEW_ONLY",
+  "protocol_id": "ni01-no-ignition-selective-prediction-protocol-v1",
+  "scientific_question": "Does SparkBrain's native No-Ignition gate provide selective decision value beyond an ordinary target-blind confidence-abstention head built from the same score vector, on fresh noisy/unresolved controlled worlds?",
+  "independent_motivation": {
+    "hypothesis": "H4 — No-ignition is a valuable computational state",
+    "hypothesis_source": "docs/HYPOTHESES_AND_FALSIFICATION.md",
+    "outcome_rescue_of": null,
+    "excluded_lines": ["C19", "C19-R1", "C19-R2", "PD01"]
+  },
+  "source_binding": {
+    "base_main_commit": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "worlds_blob": "2478fba19d7276ebe30ec8f5811bf6d7b7414779",
+    "runner_blob": "90543b184c64981802560601b85edcdee4583a35",
+    "ablations_blob": "caa6a1c63fedc2222aa2e6ce708b66668943e8dd",
+    "phase1_main_config_blob": "0134abeaf3d0551edeeb890502ffebe2c27867b0"
+  },
+  "candidate": {
+    "name": "SparkBrain native No-Ignition",
+    "condition": "full",
+    "dynamics": "unchanged default BrainConfig plus existing build_reference_brain",
+    "test_time_adaptation": false,
+    "target_access": false
+  },
+  "comparator": {
+    "name": "coverage-matched ordinary confidence abstention head",
+    "input_privilege": "same per-step LABELS probability vector exposed by the frozen runner",
+    "decision_label": "deterministic argmax probability with canonical LABELS-order tie break",
+    "thresholds": "one scalar per world selected on target-free DEV to match native candidate coverage",
+    "threshold_selection": {
+      "candidate_set": "all unique DEV max-probability values plus +infinity and -infinity sentinels",
+      "objective": "minimize absolute comparator-coverage minus native-coverage",
+      "tie_break": "choose the larger threshold, then numeric order",
+      "labels_or_targets_used": false
+    },
+    "trainable_parameters": 0,
+    "test_time_adaptation": false,
+    "forbidden_inputs": ["truth", "decision_justified", "scenario_tags", "future_observations", "PD01_or_C19_outcomes"]
+  },
+  "inputs": {
+    "worlds": ["reliability_world", "delayed_evidence_world", "contradiction_world"],
+    "steps_per_episode": 30,
+    "dev": {
+      "seed_start": 510000,
+      "seed_end_inclusive": 510255,
+      "episodes_per_world": 256,
+      "total_episodes": 768,
+      "target_visibility": "forbidden during threshold derivation"
+    },
+    "test": {
+      "seed_start": 610000,
+      "seed_end_inclusive": 610511,
+      "episodes_per_world": 512,
+      "total_episodes": 1536,
+      "target_visibility_before_raw_preserve": "forbidden"
+    }
+  },
+  "primary_metric": {
+    "name": "equal-world-weighted selective decision loss",
+    "per_step_loss": {
+      "unjustified_and_abstain": 0.0,
+      "unjustified_and_decide": 1.0,
+      "justified_and_correct": 0.0,
+      "justified_and_abstain": 0.5,
+      "justified_and_wrong": 1.0
+    },
+    "episode_loss": "mean per-step loss over exactly 30 steps",
+    "world_loss": "mean episode loss over exactly 512 TEST episodes",
+    "overall_loss": "arithmetic mean of the three world losses",
+    "effect": "comparator_overall_loss - candidate_overall_loss; positive favors native No-Ignition"
+  },
+  "statistics": {
+    "cluster_unit": "episode identity",
+    "stratification": "resample 512 episode identities with replacement independently within each world, then equal-weight the three world means",
+    "resamples": 10000,
+    "bootstrap_seed": 74017,
+    "ci": "two-sided 95 percent percentile interval",
+    "quantile": "Type-7"
+  },
+  "classification": {
+    "coverage_guard": "absolute TEST coverage difference between candidate and comparator must be <= 0.03 in every world",
+    "PASS_NATIVE_NO_IGNITION_ADDS_SELECTIVE_VALUE": "coverage guard passes AND effect_ci95_lower >= 0.02 AND every world point effect > 0",
+    "FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION": "coverage guard passes AND effect_ci95_upper <= 0.005",
+    "INCONCLUSIVE": "all other valid outcomes, including coverage guard failure"
+  },
+  "secondary_diagnostics_not_claim_gating": [
+    "coverage by world",
+    "appropriate abstention rate",
+    "missed decision rate",
+    "wrong justified decision rate",
+    "false certainty rate",
+    "candidate and comparator loss by world"
+  ],
+  "runtime": {
+    "python": "CPython 3.11.x",
+    "device": "CPU",
+    "network": "disabled",
+    "install": "python -m pip install -e . --no-deps",
+    "environment": {
+      "PYTHONHASHSEED": "0",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1"
+    }
+  },
+  "formal_identity_plan": {
+    "identity": "ni01-no-ignition-selective-prediction-official-v1",
+    "state": "UNRESERVED",
+    "control_ref_pattern": "control/ni01-no-ignition-selective-prediction-started-v1-YYYYMMDD",
+    "preserve_ref": "preserve/ni01-no-ignition-selective-prediction-raw-ni01-no-ignition-selective-prediction-official-v1",
+    "evidence_tag": "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1"
+  },
+  "integrity_order": [
+    "fresh Analyst formal authorization",
+    "same-final-SHA ordinary CI and dedicated pre-START green",
+    "fresh identity and namespace collision check",
+    "STARTED/no-clobber exactly once",
+    "target-free DEV threshold derivation",
+    "target-blind TEST raw acquisition",
+    "immutable raw preservation",
+    "independent remote re-fetch and digest/cardinality verification",
+    "TEST target materialization",
+    "unique total fail-closed join on world/seed/step_index",
+    "deterministic scoring and bootstrap",
+    "annotated terminal evidence tag"
+  ],
+  "raw_contract": {
+    "expected_test_episode_count": 1536,
+    "expected_test_step_count": 46080,
+    "join_key": ["world", "seed", "step_index"],
+    "raw_must_not_contain": ["truth", "decision_justified", "target", "scenario_tags_from_target"],
+    "target_blind_generator_requirement": "formal acquisition must expose only observations and latent-free identifiers; hidden world truth may exist only inside the deterministic generator and must never be returned to candidate/comparator/scorer before preservation"
+  },
+  "post_start_failure_policy": "identity consumed; terminal STOP; no retry, repair, salvage, threshold retuning, or automatic NI01-v2",
+  "formal_execution_authorized": false
+}
