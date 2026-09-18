@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-09-18T23:32:31+09:00",
+  "timestamp": "2026-09-19T00:35:21+09:00",
   "worker_role": "sub",
   "mode": "no_op",
-  "evidence_analyst_commit": "ebf5c289b58d61a37b124863bcf53e52417a11bd",
-  "evidence_analyst_mailbox_tip": "ebf5c289b58d61a37b124863bcf53e52417a11bd",
+  "evidence_analyst_commit": "71d0050f3985f888dc34566a0ffbf0b027f37d3e",
+  "evidence_analyst_mailbox_tip": "71d0050f3985f888dc34566a0ffbf0b027f37d3e",
   "consumed_lanes": [],
   "selected_independent_lane": null,
   "exploratory_target": null,
@@ -11,16 +11,18 @@
   "execution_allowed": false,
   "sub_active_claim": null,
   "main_work_explicitly_avoided": [
-    "LP01 active research branch mutation, semantic-gap closeout fixes, formal identity, STARTED/control, official TEST, preserve/scoring/evidence, or outcome-dependent successor design",
-    "Terminal H5 retry, retune, rescore, reinterpretation, rescue, or successor design",
-    "PD01 retry/reopening or mechanistic reinterpretation beyond the fresh Analyst/audit bounded synthesis",
-    "Consumed/terminal NI01, C19-R2, C19-v4 and C19-R1 v1/v2 science",
-    "Any MAIN blocker, repair, binding, preservation, scoring, evidence, or successor work"
+    "POST_LP01_PROGRAMME_SYNTHESIS_AND_NEXT_OBJECT_ADMISSION candidate selection and successor admission",
+    "Any MAIN candidate comparator/specification/readiness/verifier/harness/runner/binding/CI or review fix",
+    "LP01 outcome-dependent rescue or formalization",
+    "Terminal H5 retry, retune, rescore, reinterpretation, rescue or successor design",
+    "PD01 retry/reopening; NI01, C19-R2, C19-v4 and C19-R1 v1/v2 consumed science",
+    "Any official TEST, STARTED/control, preserve/scoring/evidence or formal execution work"
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "evidence_analyst": "71d0050f3985f888dc34566a0ffbf0b027f37d3e",
     "control_brain": "9bf5c0249e88acdd5fc99b12555e785f9c2e2976",
-    "orchestrator_parent_tip_observed_before_sub_persistence": "05ad231ee039df7b53d455da362f120926e37688",
+    "orchestrator_parent_tip_observed_before_sub_persistence": "e8e0917d9251d2c78dd88d63d71aebc7d92087b5",
     "lp01_research_branch": "research/lp01-actual-lineage-causal-credit-spec-20260918",
     "lp01_research_head": "f6d59a55730c5f99cd7f30470847fc3f175bdf64",
     "lp01_control_refs": [],
@@ -45,28 +47,23 @@
   },
   "workflows_experiments": {
     "sub_dispatched": [],
-    "main_observed": {
+    "fresh_observed": {
+      "evidence_analyst_ci_35361744371": "completed/success@71d0050f3985f888dc34566a0ffbf0b027f37d3e",
       "lp01_readiness_35352468809": "completed/success@f6d59a55730c5f99cd7f30470847fc3f175bdf64",
-      "lp01_ordinary_ci_35352468938": "completed/success@f6d59a55730c5f99cd7f30470847fc3f175bdf64",
-      "main_closeout_report": "2026-09-18T23:27:34+09:00 COMPLETED_PREFORMAL_NON_EVIDENTIARY"
+      "lp01_ordinary_ci_35352468938": "completed/success@f6d59a55730c5f99cd7f30470847fc3f175bdf64"
     },
     "formal_experiment_by_sub": "NOT_STARTED"
   },
   "scientific_readiness_exploratory_results": {
     "sub_new_formal_result": false,
     "sub_new_exploratory_result": false,
-    "main_preformal_result_observed": true,
-    "main_preformal_result": {
-      "line": "LP01",
-      "classification": "LP01_NO_HIGH_VALUE_OBJECT",
-      "evidentiary_status": "PRE_FORMAL_NON_EVIDENTIARY",
-      "formal_identity_state": "NOT_CREATED",
-      "started_state": "NOT_CREATED",
-      "official_test_access": false,
-      "formal_preserve_state": "NOT_CREATED",
-      "formal_scoring_state": "NOT_CREATED",
-      "formal_evidence_state": "NOT_CREATED"
-    }
+    "new_formal_scientific_information": false,
+    "allocation_update_observed": true,
+    "main_lane": "POST_LP01_PROGRAMME_SYNTHESIS_AND_NEXT_OBJECT_ADMISSION",
+    "main_lane_phase": "PROSPECTIVE_SELECTION_ONLY",
+    "main_formal_execution_authorized": false,
+    "analyst_programme_frame": "architecture/testbed primary until a fresh native non-definitionally-reducible mechanism passes admission",
+    "sub_exploratory_review": null
   },
   "evidentiary_status": "NONE_FOR_SUB",
   "consumed_identities": {
@@ -79,25 +76,28 @@
       "pd01-long-history-fading-memory-official-v1",
       "ni01-no-ignition-selective-prediction-official-v1",
       "h5-event-routing-work-reduction-official-v1"
-    ]
+    ],
+    "lp01_formal_identity": null
   },
   "blockers": [
     "No reserved independent formal SUB lane or fallback exists.",
-    "No safe, useful, non-duplicative incubator target exists under the current allocation and prior SUB exploratory history.",
-    "MAIN completed LP01 at the pre-formal boundary and no active supported new-computational-principle frontier exists pending a fresh Evidence Analyst allocation.",
-    "LP01/H5/PD01 outcome-dependent rescue or successor work is not valid SUB work."
+    "No safe, useful, non-duplicative incubator target exists under current Analyst review and prior SUB exploratory history.",
+    "Scientific object availability is the blocker; infrastructure is not blocked.",
+    "MAIN owns post-LP01 candidate admission and every candidate-specific blocker or readiness step."
   ],
   "collision_reconciliation": {
-    "report_branch_tip_before_persistence": "05ad231ee039df7b53d455da362f120926e37688",
+    "report_branch_tip_before_persistence": "e8e0917d9251d2c78dd88d63d71aebc7d92087b5",
     "latest_main_checkpoint_time": "2026-09-18T23:27:34+09:00",
     "latest_main_checkpoint_status": "COMPLETED_PREFORMAL_NON_EVIDENTIARY_STOP",
     "fresh_analyst_tip_rechecked": true,
     "analyst_tip_unchanged": true,
+    "lp01_head_rechecked": true,
     "lp01_head_unchanged": true,
+    "new_main_durable_report_after_analyst_authority_observed": false,
     "sub_collision_detected": false
   },
-  "integrity_state": "CLEAN_NO_MAIN_MUTATION_NO_FORMAL_BOUNDARY_CROSSED_BY_SUB_NO_OFFICIAL_INPUT_ACCESS_NO_IDENTITY_CONSUMPTION_LP01_PREFORMAL_BOUNDARY_RESPECTED",
-  "completion_target": "Freshly reconcile current main and research refs, authoritative evidence/formal/sealed/freeze/control/preserve state, Evidence Analyst scope, MAIN/SUB streams and newest relevant history, Control Brain doctrine, workflows/PRs/issues and identities; select only a valid independent SUB lane or safe non-duplicative incubator target, otherwise persist a clean no-op.",
+  "integrity_state": "CLEAN_NO_MAIN_MUTATION_NO_FORMAL_BOUNDARY_CROSSED_BY_SUB_NO_OFFICIAL_INPUT_ACCESS_NO_IDENTITY_CONSUMPTION",
+  "completion_target": "Freshly reconcile current main/research refs, authoritative evidence/formal/sealed/freeze/control/preserve state, Evidence Analyst latest/state/history, MAIN/SUB latest/state/history, Control Brain doctrine, workflows/PRs/issues and identities; select only a valid independent SUB lane or safe non-duplicative incubator target, otherwise persist a clean no-op.",
   "completion_target_status": "ACHIEVED",
   "fallback_status": "ABSENT",
   "rejected_lane": null,
@@ -106,9 +106,9 @@
   "suggested_prospective_object": null,
   "promotion_recommendation": "NONE",
   "incubator_handoff": null,
-  "proposed_handoff_to_analyst": "MAIN completed LP01_NO_HIGH_VALUE_OBJECT as a PRE-FORMAL/NON_EVIDENTIARY closeout with identity/STARTED/official TEST/preserve/scoring/evidence absent. Keep that boundary intact and issue a future SUB lane only if a genuinely independent prospectively complete secondary object appears; do not manufacture an outcome-dependent rescue or successor.",
+  "proposed_handoff_to_analyst": "Keep SUB null/no-op unless a genuinely independent prospectively complete secondary object appears, or a genuinely distinct bounded NON_EVIDENTIARY synthetic/dev question emerges outside MAIN candidate selection and terminal-line rescue. Historical exploratory outputs remain NON_EVIDENTIARY and must not be promoted or tuned against formal outcomes.",
   "report_persistence": {
-    "history_path": "reports/orchestrator/history/2026-09-18/2332-sub.md",
+    "history_path": "reports/orchestrator/history/2026-09-19/0035-sub.md",
     "sub_latest_path": "reports/orchestrator/sub/latest.md",
     "sub_state_path": "reports/orchestrator/sub/state.json",
     "atomic_git_commit_requested": true,
