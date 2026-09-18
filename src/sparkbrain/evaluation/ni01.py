@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import math
 import random
+from collections.abc import Iterable, Sequence
 from dataclasses import dataclass
-from typing import Iterable, Sequence
 
 
 @dataclass(frozen=True, slots=True)
@@ -158,9 +158,11 @@ def summarize_effect(
         resampled_world_effects: list[float] = []
         for world in worlds:
             episode_effects = world_episode_effects[world]
-            resampled_world_effects.append(
-                _mean(episode_effects[rng.randrange(episodes_per_world)] for _ in range(episodes_per_world))
+            draw = (
+                episode_effects[rng.randrange(episodes_per_world)]
+                for _ in range(episodes_per_world)
             )
+            resampled_world_effects.append(_mean(draw))
         bootstrap_effects.append(_mean(resampled_world_effects))
 
     return EffectSummary(
