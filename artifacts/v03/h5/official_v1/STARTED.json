@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "state": "STARTED",
+  "protocol_id": "h5-event-routing-work-reduction-formal-contract-v2",
+  "run_identity": "h5-event-routing-work-reduction-official-v1",
+  "evidence_analyst_commit": "f373fe3dfcddc14405d81cabadf0cb2682a659d0",
+  "exact_package_commit": "2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
+  "no_retry": true
+}
