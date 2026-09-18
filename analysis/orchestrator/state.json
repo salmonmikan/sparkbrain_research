@@ -1,28 +1,29 @@
 {
-  "timestamp": "2026-09-18T15:58:00+09:00",
+  "timestamp": "2026-09-18T17:01:00+09:00",
   "worker_role": "evidence_analyst",
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "prior_evidence_analyst_tip": "d3626617c3b054afd726e468682aaa02d613bca0",
+    "prior_evidence_analyst_tip": "f75328c6e32f324287ece53901dd332d764eeef9",
     "control_brain_mailbox_tip": "525796e92f6b633d81539bbddf1ac83904f6f579",
-    "orchestrator_report_mailbox_tip": "25c20c2aeafcd76eb234d1ab2f61a6c58fe2426d",
+    "orchestrator_report_mailbox_tip": "0ed910cfdac4cf30b4d550c3141b50dda5141e30",
     "external_research_audit_mailbox_tip": "d14ac2c722feb1ae81a470cc1eef8b4052c2e719",
     "repository_steward_mailbox_tip": "5f0faac963861b47b3385083454fdd09e3ff8f4c",
-    "ni01_research": "research/ni01-no-ignition-selective-prediction-spec-20260918@2664951b65dd18883d3d80862e80b86ac66cf24f",
-    "ni01_protocol": "ni01-no-ignition-selective-prediction-protocol-v1",
-    "ni01_identity_plan": "ni01-no-ignition-selective-prediction-official-v1",
-    "ni01_identity_state": "UNRESERVED_UNCONSUMED",
-    "ni01_preformal_run": "35308269458:completed/success@2664951b65dd18883d3d80862e80b86ac66cf24f",
-    "ni01_ordinary_ci": "35308269286:completed/success@2664951b65dd18883d3d80862e80b86ac66cf24f",
-    "ni01_control_refs": [],
-    "ni01_preserve_refs": [],
-    "ni01_evidence_tags": [],
+    "ni01_execution_head": "research/ni01-no-ignition-selective-prediction-spec-20260918@dbfe7469dbbbc1adbb00789ab382de892a1b3563",
+    "ni01_started": "control/ni01-no-ignition-selective-prediction-started-v1-20260918@d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d",
+    "ni01_preserve": "preserve/ni01-no-ignition-selective-prediction-raw-ni01-no-ignition-selective-prediction-official-v1@8a39cf70e397bb7588f948910f01ec58672ac814",
+    "ni01_terminal_evidence": "69aa785a48bbdb531229b7f71f7fa84a5fde9948",
+    "ni01_evidence_tag": "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1",
+    "ni01_workflow": "35321054429:attempt1:completed/success",
+    "ni01_identity": "ni01-no-ignition-selective-prediction-official-v1",
+    "ni01_identity_state": "CONSUMED_TERMINAL_NO_RETRY",
+    "historical_h5_incubator": "research/exploratory-sub-h5-lazy-routing-20260917@cdcee56dc8d918236ed5e342d3e1712a770cd481",
     "evidence_tags": [
       "evidence/c19-official-v4-c19-external-v2-official-v4",
       "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
-      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1"
+      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1",
+      "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1"
     ],
-    "authoritative_evidence_tag_count": 3,
+    "authoritative_evidence_tag_count": 4,
     "legacy_freeze_branch_count": 13,
     "open_prs": [148, 149],
     "open_non_pr_issues": [139],
@@ -30,115 +31,128 @@
     "main_protected": false
   },
   "Control_Brain_commit": "525796e92f6b633d81539bbddf1ac83904f6f579",
-  "Control_Brain_state_consumed": "analysis/control_brain/latest.md + state.json at 2026-09-18 14:50 JST as strategic prior only; current remote facts override it",
-  "MAIN_report_commit_consumed": "fa08ff630b886b9ad20981da74356d4d916a9c58",
-  "MAIN_report_time_observed": "2026-09-18T13:47:00+09:00",
-  "MAIN_report_history_consumed": "reports/orchestrator/history/2026-09-18/1347-main.md",
-  "MAIN_lease_commit_observed": "b9fc8e36fa0bbbd1dc859fd64fe01c6df509df42",
-  "MAIN_lease_time_observed": "2026-09-18T15:24:12+09:00",
-  "MAIN_lease_note": "Lease-only movement recovered the stale PRIMARY lease, bound Analyst d3626617c3b054afd726e468682aaa02d613bca0, and advanced active_step to NI01_FORMAL_EXECUTION_SCAFFOLDING. It did not move the NI01 research head, reserve/consume identity, create STARTED/preserve/evidence, or produce science.",
-  "SUB_report_commit_consumed": "25c20c2aeafcd76eb234d1ab2f61a6c58fe2426d",
-  "SUB_report_time_observed": "2026-09-18T15:35:31+09:00",
-  "SUB_report_history_consumed": "reports/orchestrator/history/2026-09-18/1535-sub.md",
+  "Control_Brain_state_consumed": "analysis/control_brain/latest.md + state.json at 2026-09-18 14:50 JST as strategic prior only; current remote terminal NI01 evidence overrides stale pre-START facts",
+  "MAIN_report_commit_consumed": "0ed910cfdac4cf30b4d550c3141b50dda5141e30",
+  "MAIN_report_time_observed": "2026-09-18T16:47:00+09:00",
+  "MAIN_report_history_consumed": "reports/orchestrator/history/2026-09-18/1647-main.md",
+  "MAIN_report_note": "Designated MAIN report observed NI01 workflow 35321054429 in progress; fresh authoritative workflow/preserve/evidence refs now show terminal FAIL and therefore override the stale in-flight report.",
+  "SUB_report_commit_consumed": "0ed910cfdac4cf30b4d550c3141b50dda5141e30",
+  "SUB_report_time_observed": "2026-09-18T16:32:18+09:00",
+  "SUB_report_history_consumed": "reports/orchestrator/history/2026-09-18/1632-sub.md",
   "SUB_operating_mode_observed": "no_op",
   "sub_exploratory_review": null,
-  "sub_exploratory_review_reason": "Latest SUB mode is no_op and no exploratory target exists; the five incubator classifications are not applicable.",
+  "sub_exploratory_review_reason": "Latest SUB mode is no_op; no current incubator target exists, so the five-way current-candidate classification is not applicable.",
+  "historical_sub_exploratory_review": {
+    "branch": "research/exploratory-sub-h5-lazy-routing-20260917@cdcee56dc8d918236ed5e342d3e1712a770cd481",
+    "status": "EXPLORATORY_NON_EVIDENTIARY",
+    "classification": "NO_ACTION",
+    "reason": "Historical synthetic lazy-routing work is informational only: it shows a DEV equivalence/accounting harness is implementable and identifies bookkeeping as a confound. It is not evidence, does not upgrade H5, and its explored parameters must not become a formal protocol merely because they were tried. The new H5 MAIN object is independently motivated by canonical H5."
+  },
   "Literature_handoff_commit_consumed": "525686fa0c14f64426ca7bf5c89f08cd0bcb9c77",
-  "Literature_history_consumed": "analysis/external_research_audit/history/2026-09-18/0430-LITERATURE_REDUCTION_SCOUT.md",
+  "Literature_mailbox_tip_consumed": "d14ac2c722feb1ae81a470cc1eef8b4052c2e719",
   "Audit_handoff_commit_consumed": "0c871b1b9b54d35c826a59c5b9925afa55b78d22",
   "Audit_mailbox_tip_consumed": "d14ac2c722feb1ae81a470cc1eef8b4052c2e719",
-  "Audit_history_consumed": "analysis/external_research_audit/history/2026-09-18/1030-INDEPENDENT_AUDITOR.md",
   "Repository_Steward_commit_consumed": "5f0faac963861b47b3385083454fdd09e3ff8f4c",
-  "Repository_Steward_state_consumed": "reports/repository_steward/latest.md + state.json at 2026-09-18 13:50 JST; governance advisory only",
+  "Repository_Steward_state_consumed": "13:50 JST governance advisory; current remote facts override its stale NI01/tag inventory",
   "new_repository_evidence": {
-    "new_formal_scientific_measurement": false,
-    "new_readiness_evidence": true,
-    "material_update": "Operational readiness only: MAIN recovered the stale lease under the current Analyst authority and entered NI01 formal execution scaffolding while exact science/head/identity/ref state stayed unchanged.",
-    "claim_boundary": "No NI01 scientific outcome exists. PASS/FAIL/INCONCLUSIVE remain prospectively scoped to the exact registered three-world confidence-abstention discriminator."
+    "new_formal_scientific_measurement": true,
+    "line": "NI01_H4",
+    "result_class": "FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION",
+    "effect_definition": "comparator_loss_minus_native_no_ignition_loss",
+    "effect": -0.00047743055555544517,
+    "effect_ci95": [-0.0024414062499999965, 0.0014756944444444355],
+    "candidate_overall_loss": 0.2119466145833332,
+    "comparator_overall_loss": 0.21146918402777773,
+    "coverage_guard_pass": true,
+    "joined_step_count": 46080,
+    "test_target_count": 46080,
+    "world_effects": {
+      "contradiction_world": -0.003743489583333176,
+      "delayed_evidence_world": 0.00745442708333327,
+      "reliability_world": -0.00514322916666643
+    },
+    "claim_boundary": "The exact registered three-world native No-Ignition selective-value discriminator is reduced by the prospectively fixed target-blind coverage-matched max-confidence abstention comparator. This does not prove No-Ignition is globally useless."
   },
   "external_input": {
     "literature": {
       "handoff_commit": "525686fa0c14f64426ca7bf5c89f08cd0bcb9c77",
       "new_this_cycle": false,
-      "affected_lines": ["C19_R2", "PD01", "PROGRAMME_NOVELTY", "NI01_H4_INDIRECTLY"],
+      "affected_lines": ["C19_R2", "PD01", "PROGRAMME_NOVELTY", "NI01_H4", "FUTURE_FRONTIER_SELECTION"],
       "what_changed": "No new literature stream since 04:30 JST.",
-      "prospective_change": "None for NI01. Do not retrofit stronger abstention, OOD or predictive-state comparators into this identity; any extension is a fresh future object.",
+      "prospective_change": "Do not retrofit NI01. Use the reduction-first doctrine to avoid result-responsive H4 rescue and prefer independent falsifiable future claims.",
       "allocation_changed": false
     },
     "audit": {
       "handoff_commit": "0c871b1b9b54d35c826a59c5b9925afa55b78d22",
-      "mailbox_tip": "d14ac2c722feb1ae81a470cc1eef8b4052c2e719",
       "new_this_cycle": false,
       "latest_classification": "C19_R2_ROBUST_SO_FAR",
-      "affected_lines": ["C19_R2_FSA_STATE_TRACKER", "C19_V4", "PD01", "NI01_H4_INDIRECTLY"],
-      "what_changed": "No new audit since 10:30 JST. PD01 terminal audit remains pending.",
-      "prospective_change": "No NI01 block because NI01 is independently H4-motivated. A future object materially depending on PD01 should consume a fresh PD01 audit before STARTED.",
+      "affected_lines": ["C19_R2", "PD01", "NI01_H4"],
+      "what_changed": "No new independent audit since 10:30 JST. NI01 is now terminal and audit-pending; PD01 remains audit-pending.",
+      "prospective_change": "Audit NI01 before broader H4 interpretation. PD01 audit remains separately desirable. Neither blocks independent H5 prospective specification.",
       "allocation_changed": false
     }
   },
   "main_lane": {
-    "target": "NI01_NATIVE_NO_IGNITION_SELECTIVE_PREDICTION_ONE_WAY",
+    "target": "H5_EVENT_ROUTING_WORK_REDUCTION_PROSPECTIVE_SPECIFICATION",
     "owner": "MAIN",
-    "status": "PRE_START_FORMAL_EXECUTION_SCAFFOLDING",
-    "scientific_root": "NI01_PRE_START_READY_FOR_CONDITIONAL_ONE_WAY_AUTHORITY",
-    "research_head": "2664951b65dd18883d3d80862e80b86ac66cf24f",
-    "formal_identity": "ni01-no-ignition-selective-prediction-official-v1",
-    "formal_identity_current_state": "UNRESERVED_UNCONSUMED",
+    "status": "PROSPECTIVE_SPECIFICATION_ONLY",
+    "formal_identity": null,
     "main_owns_all_critical_path_fixups": true,
-    "formal_execution_authorized": "CONDITIONAL_EXACTLY_ONCE",
-    "allocation_changed_this_cycle": false
+    "formal_execution_authorized": false,
+    "completion_target": "H5_FORMAL_CONTRACT_READY_FOR_ANALYST_REVIEW",
+    "allocation_changed_this_cycle": true,
+    "allocation_change_reason": "NI01 official-v1 terminal FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION closed the registered H4 discriminator; H5 is a pre-existing independent canonical hypothesis, not an outcome rescue."
   },
   "sub_lane": null,
   "sub_fallback": null,
-  "no_sub_lane_reason": "No independent formal secondary object is prospectively complete. NI01 is MAIN-owned; H9/C07 remains under-specified; RV01 bounded exploration is exhausted; terminal C19/R2/PD01 lines remain closed; no non-duplicative incubator target is selected.",
+  "no_sub_lane_reason": "No independently reserved prospectively complete formal secondary object exists. H5 is MAIN-owned; H9/C07 remains under-specified; RV01 exploration is exhausted; C19/R2/PD01/NI01 are terminal or consumed.",
   "outcome_contingencies": {
-    "observed_root": "NI01_PRE_START_READY_FOR_CONDITIONAL_ONE_WAY_AUTHORITY",
-    "operational_phase": "NI01_FORMAL_EXECUTION_SCAFFOLDING",
-    "PRE_START_BLOCKER_MECHANICAL": "MAIN may repair only science-invariant mechanical defects; every head change requires same-final-SHA ordinary CI and dedicated pre-START revalidation.",
-    "PRE_START_SEMANTIC_GAP": "STOP and require fresh Evidence Analyst review before mutation or STARTED.",
-    "GO_CHAIN": "fresh identity/collision -> STARTED/no-clobber -> target-free DEV threshold -> target-blind TEST raw -> immutable preserve -> independent refetch/digest/cardinality -> TEST targets -> unique/total/fail-closed (world, seed, step_index) join -> deterministic scoring/bootstrap -> annotated terminal evidence",
-    "PASS_NATIVE_NO_IGNITION_ADDS_SELECTIVE_VALUE": "Terminal STOP; claim only the registered three-world selective-value result; no same-run OOD/general-H4 extension.",
-    "FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION": "Terminal STOP; no rescue/comparator shopping/threshold retuning/automatic NI01-v2.",
-    "INCONCLUSIVE": "Terminal STOP; no retuning.",
-    "INVALID_EVIDENCE": "Identity consumed; terminal STOP; no salvage/retry.",
-    "POST_START_FAILURE": "Identity consumed; terminal STOP; no salvage/retry/automatic successor."
+    "observed_root": "NI01_TERMINAL_FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION",
+    "NI01_FAIL": "Hard STOP. No rescue, comparator shopping, threshold/world retuning, same-ID retry or automatic NI01-v2.",
+    "H5_PROSPECTIVE_SPECIFICATION": "MAIN may perform only prospective contract construction, DEV-only equivalence/counter validation and science-invariant readiness tooling.",
+    "H5_SPEC_MECHANICAL_BLOCKER": "MAIN may repair prospective implementation/spec tooling without consulting formal outcomes.",
+    "H5_SPEC_SEMANTIC_GAP": "STOP if a genuinely dense-equivalent comparator, complete symmetric work-accounting boundary, quality guard or prospective falsifier cannot be defined.",
+    "H5_FORMAL_CONTRACT_READY_FOR_ANALYST_REVIEW": "STOP and require fresh Analyst authority before identity/STARTED.",
+    "PASS": "NOT_ARMED until H5 numerical work/quality margins and statistics are prospectively frozen.",
+    "FAIL": "NOT_ARMED until H5 numerical work/quality margins and statistics are prospectively frozen.",
+    "INCONCLUSIVE": "NOT_ARMED until H5 numerical decision rule is frozen.",
+    "INVALID_EVIDENCE": "NOT_ARMED; future formal object only.",
+    "PRE_START_BLOCKER": "Future formal object only after fresh Analyst acceptance.",
+    "POST_START_FAILURE": "NOT_ARMED; future formal identity only."
   },
   "blocked_until": [
-    "A science-invariant final execution/admission package carries an explicitly valid Analyst authorization for the unchanged NI01 object.",
-    "Final execution SHA exact source/protocol/package/input/runtime/candidate/comparator/scorer/preserver bindings are proven invariant and internally consistent.",
-    "Identity remains fresh/unSTARTED/unconsumed with collision-free control/preserve/evidence namespaces.",
-    "If execution/admission packaging moves the SHA, ordinary CI and dedicated NI01 pre-START are both green on that same final SHA.",
-    "Target-blind TEST projection excludes truth, target, decision_justified and target-derived scenario labels before immutable raw preservation."
+    "Exact H5 candidate and genuinely dense-equivalent comparator are frozen prospectively.",
+    "Workload families/sizes/activity regimes/horizon/seeds and resource privileges are fixed before formal identity.",
+    "Audited algorithmic-work schema symmetrically includes state updates/touches, edge/message traversals, queue/source/destination operations and candidate-specific bookkeeping/fan-out costs.",
+    "Quality-equivalence or non-inferiority metric and numerical margin are fixed prospectively.",
+    "Primary work metric, numerical PASS/FAIL/INCONCLUSIVE criteria, cluster/sampling unit and statistics are fixed prospectively.",
+    "Exact source/package/runtime/workload/counter/scorer/preserver bindings are specified.",
+    "A fresh Evidence Analyst review explicitly authorizes any H5 formal identity/STARTED."
   ],
   "do_not_touch": [
+    "NI01 STARTED/raw preserve/terminal evidence/tag and consumed identity",
     "C19-v4 immutable evidence and narrow PASS",
     "C19-R2 terminal package/STARTED/preserve/statistics/evidence/tag and consumed identity",
     "PD01 terminal package/STARTED/preserve/evidence/tag/raw/targets/statistics and consumed identity",
     "C19-R1 v1/v2 consumed identities",
     "legacy freeze refs and authoritative evidence tags",
     "scheduler definitions",
-    "SUB exploratory output as scientific evidence",
-    "NI01 worlds/seeds/native dynamics/comparator privilege/coverage matching/loss/coverage guard/PASS-FAIL thresholds/bootstrap/runtime-device/join key/raw-before-score order",
-    "any NI01 comparator/world/threshold selected in response to formal TEST outcomes"
+    "historical SUB H5 exploratory output as evidence or as a pre-frozen formal protocol",
+    "any outcome-responsive H4/NI01 rescue comparator/world/threshold",
+    "hardware-energy interpretation of H5 without H9/H10-style direct measurement"
   ],
   "active_MAIN_SUB_claims_observed": {
     "MAIN": {
-      "designated_report_phase": "NI01_FINAL_CI_PENDING_AFTER_LINT_REPAIR",
-      "designated_report_time": "2026-09-18T13:47:00+09:00",
-      "designated_report_stale_relative_to_lease": true,
-      "fresh_lease_phase": "NI01_FORMAL_EXECUTION_SCAFFOLDING",
-      "fresh_lease_commit": "b9fc8e36fa0bbbd1dc859fd64fe01c6df509df42",
-      "research_head": "2664951b65dd18883d3d80862e80b86ac66cf24f",
-      "preformal_run": "35308269458:success",
-      "ordinary_ci": "35308269286:success",
-      "identity": "ni01-no-ignition-selective-prediction-official-v1",
-      "identity_consumed": false,
-      "started": false,
-      "scientific_result_observed": false
+      "designated_report_phase": "NI01_POST_START_ONE_WAY_IN_PROGRESS",
+      "designated_report_time": "2026-09-18T16:47:00+09:00",
+      "designated_report_stale_relative_to_authoritative_terminal_refs": true,
+      "authoritative_current_phase": "NI01_TERMINAL_FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION",
+      "ni01_identity_consumed": true,
+      "scientific_result_observed": true
     },
     "SUB": {
       "mode": "no_op",
-      "report_time": "2026-09-18T15:35:31+09:00",
+      "report_time": "2026-09-18T16:32:18+09:00",
       "formal_lane": null,
       "formal_fallback": null,
       "exploratory_target": null,
@@ -157,30 +171,32 @@
     "C19_R1": "SCIENTIFICALLY_UNRESOLVED_OPERATIONALLY_TERMINATED",
     "C19_R2": "TERMINAL_REDUCED_BY_FSA / ROBUST_SO_FAR_AUDITED",
     "PD01": "TERMINAL_FAIL_REDUCED_BY_FADING_MEMORY / AUDIT_PENDING",
-    "NI01_H4": "PRE_START_READY_FOR_CONDITIONAL_ONE_WAY_AUTHORITY / FORMAL_EXECUTION_SCAFFOLDING"
+    "NI01_H4": "TERMINAL_FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION / AUDIT_PENDING",
+    "H5": "PROSPECTIVE_SPECIFICATION"
   },
-  "top_recommendation": "MAIN should finish science-invariant NI01 execution/admission scaffolding and, only if final identity/namespace/binding state is clean and all final-SHA gates are green without scientific change, execute exactly one formal NI01 one-way chain; SUB remains no-op.",
+  "top_recommendation": "MAIN should hard-stop NI01 and build a fresh, prospectively specified H5 event-routing algorithmic-work contract, stopping at H5_FORMAL_CONTRACT_READY_FOR_ANALYST_REVIEW without identity or STARTED; SUB remains no-op.",
   "top_3": [
     {
       "rank": 1,
-      "action": "MAIN finish NI01 execution/admission scaffolding and conditionally execute exactly one formal one-way chain after final exact-head/identity/namespace revalidation",
+      "action": "MAIN build fresh H5 event-routing algorithmic-work formal-contract proposal and stop for Analyst review",
       "information_value": "VERY_HIGH",
-      "distance": "NEAR"
-    },
-    {
-      "rank": 2,
-      "action": "Fresh independent read-only PD01 terminal audit; after NI01 terminalization, audit NI01 before broader H4 claims",
-      "information_value": "HIGH",
       "distance": "NEAR_TO_MEDIUM"
     },
     {
+      "rank": 2,
+      "action": "Fresh independent read-only NI01 terminal audit; separately audit PD01",
+      "information_value": "HIGH",
+      "distance": "NEAR"
+    },
+    {
       "rank": 3,
-      "action": "SUB remain no_op; incubate only a genuinely distinct independently motivated synthetic/dev NON_EVIDENTIARY question if one naturally appears",
+      "action": "SUB remain no_op; incubate only a genuinely distinct bounded synthetic/dev NON_EVIDENTIARY question that is neither H5 nor terminal-line rescue",
       "information_value": "LOW_TO_MEDIUM",
       "distance": "OPTIONAL"
     }
   ],
   "consumed_identities": {
+    "ni01-no-ignition-selective-prediction-official-v1": "terminal FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION; no retry",
     "pd01-long-history-fading-memory-official-v1": "terminal FAIL_REDUCED_BY_FADING_MEMORY; no retry",
     "c19-r2-fsa-state-tracker-official-v1": "terminal REDUCED_BY_FSA; audited ROBUST_SO_FAR; no retry",
     "c19-r1-revision-authority-official-v1": "consumed POST_START_FAILURE",
@@ -188,33 +204,38 @@
     "c19-external-v2-official-v4": "terminal immutable narrow PASS"
   },
   "blockers": [
-    "No scientific blocker is currently known; remaining NI01 gates are operational/admission integrity gates before STARTED.",
-    "Any execution-package head change requires ordinary CI and dedicated NI01 pre-START green on the same final SHA.",
-    "Any semantic/scientific NI01 change invalidates conditional authority and requires fresh Analyst review.",
-    "PD01 terminal audit remains outstanding but is nonblocking for independently motivated NI01."
+    "NI01 has no remaining scientific blocker because it is terminal; any continuation would be invalid rescue.",
+    "H5 formal execution is blocked because numerical work/quality margins, workload/resource contract, audited operation boundary, statistics and exact bindings are not yet prospectively frozen.",
+    "NI01 and PD01 fresh independent audits remain pending but do not block independent H5 specification."
   ],
   "go_stop": {
-    "GO": "Conditional exactly-one NI01 execution only after fresh identity/collision checks, frozen exact bindings, final-SHA green gates, STARTED/no-clobber before TEST read, target-free DEV thresholding, target-blind TEST raw, raw-before-target immutable preservation, independent refetch/digest/cardinality, fail-closed join and deterministic registered scoring.",
-    "identity_freshness": "ni01-no-ignition-selective-prediction-official-v1 remains unreserved/unconsumed and must remain fresh/unSTARTED until STARTED exactly once.",
-    "scientific_falsifiers": "coverage difference <=0.03 in every world; PASS if effect CI lower >=0.02 and all world point effects >0; FAIL if effect CI upper <=0.005; otherwise INCONCLUSIVE.",
-    "STOP": "Stop before STARTED for semantic change, binding ambiguity, nonfresh identity, namespace collision, or inability to make final-SHA gates green without semantic change. After STARTED, invalid evidence or post-start failure consumes identity and stops without salvage/retry."
+    "GO": "Specification/readiness only for H5. MAIN may construct candidate/comparator/workload/counter/scorer specifications and DEV-only equivalence/counter fixtures. No formal identity, STARTED, official TEST workload, formal preserve/scoring/evidence.",
+    "FUTURE_FORMAL_INTEGRITY": "fresh identity -> namespace/no-clobber checks -> exact source/protocol/package/input/runtime/candidate/comparator/scorer/preserver binding -> same-final-SHA CI/pre-START -> STARTED before TEST -> raw operation/quality observations -> immutable preserve -> independent refetch/digest/cardinality -> targets/quality labels if needed -> fail-closed join -> preregistered scoring/statistics -> terminal evidence",
+    "SCIENTIFIC_FALSIFIER": "Canonical H5 falsifier is equal or greater audited algorithmic operations at matched quality across intended sparse regimes. Exact numerical margins and formal multi-regime decision rule must be fixed before identity; they are intentionally not invented here.",
+    "STOP": "Stop if formal TEST/outcome information is needed to choose workload regimes, comparator, counter boundary, bookkeeping treatment, quality/work margins, cluster unit or statistics; if dense comparator is not equivalent apart from routing strategy; if bookkeeping is asymmetrically omitted; or if the object drifts into hardware-energy claims."
   },
   "governance_advisory": {
-    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "main_protected": false,
-    "rulesets": 0,
-    "legacy_freeze_branches": 13,
-    "authoritative_evidence_tags": 3,
-    "open_non_pr_issue": 139,
+    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d stable/unprotected",
+    "ruleset_count": 0,
+    "legacy_freeze_count": 13,
+    "evidence_tag_count": 4,
+    "issue_139": "Open; prior three-tag inventory is now stale after NI01. Substantive authoritative-tag update/delete protection gap remains.",
     "open_prs": [148, 149],
-    "issue_139": "Inventory current at three evidence tags; server-side authoritative tag update/delete protection still absent.",
-    "freeze_tag_migration": "defer until protected migration semantics exist",
-    "main_promotion_candidates": "Neutral extraction only: anonymous event/distribution primitives, architecture-neutral comparator protocol, snapshot/restore invariants, descriptive resource accounting, generic privilege validation, external-only transcript hashing/validation, generic leak/self-training/distribution tests; fresh current-main CI required; keep scientific comparator implementations/taxonomy/worlds/thresholds research-local."
+    "freeze_tag_migration": "Do not batch-migrate legacy freeze refs until server-side protected migration semantics exist.",
+    "outcome_independent_main_promotion_candidates": [
+      "anonymous event/prediction-distribution primitives",
+      "architecture-neutral comparator protocol/interface shape",
+      "snapshot/restore invariants",
+      "descriptive resource accounting",
+      "generic privilege-schema validation",
+      "external-only transcript hashing/validation",
+      "generic no-self-training/no-target-leak/distribution-validation tests"
+    ],
+    "research_local": [
+      "H5 scientific workload/work-accounting/threshold semantics",
+      "G4/G5/G7/G8 mechanisms",
+      "CX01 worlds/threshold/result semantics"
+    ]
   },
-  "allocation_changed": false,
-  "persistence_scope": [
-    "analysis/orchestrator/latest.md",
-    "analysis/orchestrator/state.json",
-    "analysis/orchestrator/history/2026-09-18/1558.md"
-  ]
+  "persistence_limitation": null
 }
