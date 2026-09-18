@@ -1,14 +1,14 @@
 {
   "run_id": "sparkbrain-main-primary-20260919T071513JST",
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-19T07:15:13+09:00",
-  "heartbeat_at": "2026-09-19T07:15:13+09:00",
+  "heartbeat_at": "2026-09-19T07:19:25+09:00",
   "analyst_commit": "dc29e9810e5f44d602e4908554028e74b69f8d55",
   "active_branch": null,
   "active_identity": null,
-  "active_step": "PROGRAMME_ARCHITECTURE_TESTBED_RECONCILE_FRESH_CAUSAL_PROVENANCE_ADMISSION_DOCTRINE",
+  "active_step": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_CAUSAL_PROVENANCE_ADMISSION_STRENGTHENED",
   "workflow_run_id": null,
-  "expected_next_action": "Reconcile the fresh Evidence Analyst admission doctrine. Maintain architecture/testbed hold unless a genuinely fresh independently motivated native object already exists; do not manufacture a successor from the new literature. If no fresh object exists, persist a clean completed hold checkpoint.",
+  "expected_next_action": "Remain in architecture/testbed hold. If and only if a genuinely fresh independently motivated native object appears, MAIN may perform bounded prospective NON_EVIDENTIARY specification/readiness for at most one object and must STOP at NEXT_OBJECT_READY_FOR_ANALYST_REVIEW. For any future lineage/causal-credit object, require a native online causal-responsibility mechanism, positive intervention-validated signal, matched-provenance responsibility-changing interventions, preemption/overdetermination cases, provenance-only and explicit actual-cause/responsibility baselines, matched information/readout/resources, ordinary recurrent/plastic reductions, and fixed numeric falsifiers. Do not create a formal identity, STARTED, official TEST, preserve/scoring, evidence, or outcome-responsive successor under the current authority.",
   "owner": "main"
 }
