@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "state": "STARTED",
+  "protocol_id": "pd01-long-history-fading-memory-protocol-v1",
+  "run_identity": "pd01-long-history-fading-memory-official-v1",
+  "evidence_analyst_commit": "91a05bad6d130f89975e776960a1d25d764fba32",
+  "exact_package_commit": "b9d38daa5faca348ad2db3898ba71e2abc99f631",
+  "no_retry": true
+}
