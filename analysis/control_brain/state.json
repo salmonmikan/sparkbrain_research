@@ -1,295 +1,166 @@
 {
-  "analysis_time_jst": "2026-09-18T06:58:00+09:00",
-  "schema": "sparkbrain-control-brain-state-v6",
-  "selected_role": "CONTROL_BRAIN",
-  "role_selection_basis": "06:50 JST scheduled slot; no inference required",
-  "branch": "ops/control-brain-handoff",
-  "strategic_status": "PROGRAMME_REFRAMED_TESTBED_C19_R2_AUTHORIZED_PRESTART_MECHANICAL_BLOCKER_SUB_RV01_EXPLORATORY_HARD_STOP",
-  "central_theory": {
-    "operating_doctrine": "SparkBrain remains an experimental persistent dynamical cognitive architecture/testbed. The registered A01 A/B/C programme is closed and no current evidence establishes an irreducible new computational principle.",
-    "residual_open_motif": "actual anonymous historical provenance -> plural unresolved causal structure -> later external evidence selectively changes the correct historical lineage using locally available causal structure -> changed future local competition/world interaction",
-    "novelty_bar_sharpening": "Local/pre-semantic/history-derived/persistent/predictive/self-organizing state is not novel by itself; future novelty must survive finite-state, predictive-state/causal-state, recurrent/reservoir/fading-memory and privilege/resource-matched reductions.",
-    "new_principle_claim_status": "SUSPENDED"
-  },
-  "authoritative_refs_inspected": {
-    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "control_brain_prior_commit": "d40f83ababcddf0b1e72621c77b10a8c4900badb",
-    "evidence_analyst_commit": "719b9e74063e5e10f6226fd49f1835036ed75e5b",
-    "orchestrator_report_tip_observed": "3885b9595b17b5d4dcd1996d9d11bf0012ec06c0",
-    "main_state_time_jst": "2026-09-18T06:54:00+09:00",
-    "sub_state_time_jst": "2026-09-18T06:54:30+09:00",
-    "literature_handoff_commit": "525686fa0c14f64426ca7bf5c89f08cd0bcb9c77",
-    "literature_role": "LITERATURE_REDUCTION_SCOUT",
-    "audit_handoff_commit": "1de53b412f66d4da94f54a8bc12a7e2717ef5011",
-    "audit_role": "INDEPENDENT_AUDITOR",
-    "repository_steward_commit": "5feec031a602c8a68bf9da1f07aae54225ecc212",
-    "r2_scientific_package": "research/c19-r2-fsa-state-tracker-spec-20260918@5d5d171cf872baed7a636fd246ab36f3a91a6716",
-    "r2_authority_package_head_at_cut": "1be42635cdb4f49c89788ceb66b541086ed3dae5",
-    "r2_identity": "c19-r2-fsa-state-tracker-official-v1",
-    "r2_started": null,
-    "r2_preserve": null,
-    "r2_evidence": null,
-    "sub_rv01_exploratory": "research/exploratory-sub-rv01-delay-filter-reduction-20260918@48bd4a831435dbfaeace1d2935a04e05751a61fe",
-    "c19_v4_evidence_tag": "evidence/c19-official-v4-c19-external-v2-official-v4",
-    "open_pr_count": 0,
-    "open_operational_issues": [139],
-    "repository_ruleset_count": 0,
-    "legacy_freeze_branch_count": 13,
-    "authoritative_evidence_tag_count": 1
-  },
-  "new_formal_scientific_measurement": false,
-  "foundational_update": {
-    "programme_level_strategic_doctrine_changed": false,
-    "programme_reframe_condition_remains_active": true,
-    "novelty_bar_sharpened": true,
-    "charter_revision_required": false,
-    "material_scientific_phase_update": "R1-v1/v2 are terminated consumed failures; R2 is now prospectively authorized exactly once after full exact-head GO gates.",
-    "material_operational_update": "PRIMARY missed the fresh Analyst authority; RELAY recovered it and is performing science-invariant R2 authority packaging/prestart repairs without STARTED."
-  },
-  "active_line_review": {
-    "A01": {
-      "status": "CLOSED_REGISTERED_MECHANISM_PROGRAMME",
-      "rescue": "FORBIDDEN_WITHOUT_INDEPENDENT_PROSPECTIVE_PROGRAMME_DECISION"
+  "timestamp": "2026-09-18T10:51:54+09:00",
+  "role": "CONTROL_BRAIN",
+  "control_plane_mailbox_semantics_respected": true,
+  "main_head": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+  "control_prior_head": "3bcd000f7e31bc8df8d59ca5ddec88ff5b847e22",
+  "evidence_analyst_commit_consumed": "28108fffc2e4e346bff79bf3e38d1cac27d3265c",
+  "doctrine_change": false,
+  "central_theory": "SparkBrain remains a persistent dynamical cognitive architecture / experimental testbed. No new computational principle is established. A surviving novelty claim must remain after finite-state, predictive-state, fading-memory/reservoir, and ordinary plasticity/eligibility/slow-state reductions and be specifically tied to actual historical lineage / causal credit rather than generic persistent memory.",
+  "scientific_state": {
+    "programme": "REFRAMED_TESTBED_NO_SUPPORTED_NEW_COMPUTATIONAL_PRINCIPLE",
+    "c19_v4": {
+      "status": "TERMINAL_PASS_NARROW_REPRESENTATION_RESULT_ONLY",
+      "interpretation": "Preserve as a truth-free representation result; do not use it as evidence for a novel temporal/state mechanism."
     },
-    "C19_V4": {
-      "status": "TERMINAL_PASS_NARROW_REPRESENTATION_GAIN",
-      "audit_status": "WEAKENED_NOT_INVALID",
-      "claim_boundary": "truth_free_surface_structural_representation_gain_only"
-    },
-    "C19_R1": {
-      "status": "TERMINATED_AFTER_TWO_POST_START_FAILURES",
-      "consumed": [
-        "c19-r1-revision-authority-official-v1",
-        "c19-r1-revision-authority-official-v2"
+    "c19_r2": {
+      "status": "TERMINAL_REDUCED_BY_FSA",
+      "evidence_commit": "6197fa801a78a0c5de4c2b6ff5d03216ac5539db",
+      "evidence_tag": "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
+      "primary_effect_c19v4_minus_r2": -0.2462308568887407,
+      "cluster_bootstrap_95_ci": [
+        -0.2554750732756702,
+        -0.23690126111231016
       ],
-      "r1_v3_allowed": false
+      "cluster_count": 204,
+      "bootstrap_resamples": 10000,
+      "identity_consumed": true,
+      "retry_allowed": false,
+      "strategic_action": "Close C19-specific temporal/state reduction work unless a genuinely distinct independent claim arises."
     },
-    "C19_R2": {
-      "status": "AUTHORIZED_PRESTART_MECHANICAL_BLOCKER",
-      "scientific_package": "5d5d171cf872baed7a636fd246ab36f3a91a6716",
-      "authority_head_at_cut": "1be42635cdb4f49c89788ceb66b541086ed3dae5",
-      "formal_identity": "c19-r2-fsa-state-tracker-official-v1",
+    "pd01": {
+      "branch": "research/pd01-fading-memory-preformal-20260918",
+      "head": "ea2a8b4a5f244d601782ecb302760c49ee27e8c1",
+      "status": "FORMAL_CONTRACT_READY_FOR_ANALYST_REVIEW",
+      "proposed_identity": "pd01-long-history-fading-memory-official-v1",
+      "identity_reserved": false,
+      "identity_consumed": false,
       "started": false,
-      "consumed": false,
-      "execution_allowed": "CONDITIONAL_EXACTLY_ONCE_AFTER_ALL_FINAL_HEAD_GO_GATES",
-      "latest_prestart": "35279443322:failure_at_lint_before_official_read",
-      "latest_ordinary_ci": "35279443317:in_progress_at_analysis_cut",
-      "scientific_semantics_changed": false
-    },
-    "RV01_SUB_EXPLORATORY": {
-      "status": "NON_EVIDENTIARY_FINAL_BOUNDED_PROBE_COMPLETE_HARD_STOP",
-      "branch": "48bd4a831435dbfaeace1d2935a04e05751a61fe",
-      "exact_head_ci": "35278782680:success",
-      "promotion_recommendation": "REJECT_DIRECT_FORMALIZATION_CANDIDATE_ONLY",
-      "formal_rv01_rejection": false,
-      "further_same_theme_allowed": false
-    },
-    "H9_C07": {
-      "status": "PRE_START_UNDERSPECIFIED_PAUSED"
-    },
-    "H8_C08": {
-      "status": "TERMINAL_CAUSAL_SPECIALIZATION_NEGATIVE"
-    }
-  },
-  "r2_frontier": {
-    "scientific_question": "Can the C19-v4 I2 truth-free representation gain be explained by the exact fixed seven-state deterministic FSA/state tracker?",
-    "expected_raw_rows": 479600,
-    "primary_inference": "target-free atomic_idx cluster bootstrap",
-    "formal_identity": "c19-r2-fsa-state-tracker-official-v1",
-    "go_required": [
-      "fresh identity and collision-free control/preserve/evidence namespaces",
-      "unchanged frozen R2 scientific blobs and exact authority binding",
-      "ordinary CI success and dedicated pre-START success on the same final head",
-      "production runtime/import/execution parity green",
-      "target-free atomic_idx map total/deterministic/digest-bound/fail-closed",
-      "fresh Analyst/head/namespace reconciliation immediately before STARTED",
-      "STARTED/no-clobber before official read",
-      "raw preserved and independently refetched/digest-verified before target materialization/scoring"
-    ],
-    "prestart_blocker_policy": "science-invariant mechanical fixes may continue same-run; every head change resets exact-head validation",
-    "semantic_gap_policy": "any scientific semantic change must stop and return to Analyst",
-    "terminal_interpretation": {
-      "REDUCED_BY_FSA": "narrow C19-v4 mechanism story toward ordinary finite-state tracking; no rescue-tuning",
-      "SURVIVES_FSA_REDUCTION": "rejects only this exact FSA; next-class reduction required before novelty claim",
-      "INCONCLUSIVE": "terminal exact-identity stop",
-      "INVALID_EVIDENCE": "consume and stop; no same-ID salvage",
-      "POST_START_FAILURE": "consume and stop; no same-ID salvage"
+      "formal_evidence_exists": false,
+      "prestart_run": "35295370268:success",
+      "ordinary_ci_run": "35295370271:success",
+      "compatibility_run": "35295370202:success",
+      "strategic_issue": "SparkBrain has plasticity enabled while the comparator is a fixed-weight contractive 64-D reservoir. Exposed readout dimension is matched, but persistent-memory resources may not be. This is not automatically invalid; Evidence Analyst must decide prospectively whether the asymmetry is intentional/acceptable and cap interpretation accordingly.",
+      "if_admitted_interpretation_cap": "A PASS means only that SparkBrain beats the specified fixed-weight contractive reservoir under the stated privileges. Before any novelty claim, test a conventional mutable-weight / eligibility / slow-state comparator.",
+      "if_resource_match_required": "Do not freeze or execute the current contract; prospectively revise the comparator/resource contract before any outcome is observed."
     }
   },
   "external_input": {
     "literature": {
       "role": "LITERATURE_REDUCTION_SCOUT",
       "handoff_commit": "525686fa0c14f64426ca7bf5c89f08cd0bcb9c77",
-      "new_this_cycle": true,
+      "state_commit": "cdf151a0d915957dda86233367fa660bca0c3ee0",
       "affected_lines": [
-        "C19_R2_FSA_STATE_TRACKER",
         "PROGRAMME_NOVELTY",
+        "C19_R2_FSA_STATE_TRACKER",
         "POST_R2_REDUCTION",
         "PERSISTENT_DYNAMICS_RESIDUAL",
-        "FUTURE_EXTERNAL_VALIDATION"
+        "PD01"
       ],
-      "findings": [
-        "PSR/TPSR predictive state remains a live post-R2 ordinary reduction",
-        "epsilon-machine/causal-state compression formalizes minimal history-derived predictive state",
-        "local causal states raise the bar for local/pre-semantic emergence claims",
-        "reservoir universality defines a fading-memory reduction boundary",
-        "automata extraction is preferable to an endless hand-authored FSA ladder"
-      ],
-      "strategic_impact": "NOVELTY_BAR_SHARPENED_NO_CHANGE_TO_FROZEN_R2",
-      "post_r2_reduction_ladder": "exact FSA -> extracted/learned finite-state -> PSR/epsilon-machine -> reservoir/fading-memory -> narrower lineage-specific residual"
+      "strategic_impact": "Confirms stronger reduction pressure from PSR/epsilon-machine/local causal state/reservoir fading-memory and supports learned/extracted finite-state abstractions before bespoke rescue mechanisms.",
+      "novelty_bar_change": "No doctrine change; reinforces that local/pre-semantic/history-derived predictive organization is not itself novel.",
+      "questions_to_evidence_analyst": [
+        "After exact FSA reduction, keep learned/extracted finite-state and predictive-state reductions ahead of stronger novelty claims.",
+        "For PD01 and later work, make the memory/resource privileges of comparators explicit before STARTED."
+      ]
     },
     "audit": {
       "role": "INDEPENDENT_AUDITOR",
-      "handoff_commit": "1de53b412f66d4da94f54a8bc12a7e2717ef5011",
-      "new_this_cycle": false,
-      "classification": "WEAKENED_NOT_INVALID",
+      "handoff_commit": "0c871b1b9b54d35c826a59c5b9925afa55b78d22",
+      "mailbox_head_after_persistence": "d14ac2c722feb1ae81a470cc1eef8b4052c2e719",
+      "classification": "ROBUST_SO_FAR",
       "affected_lines": [
-        "C19_V4",
         "C19_R2_FSA_STATE_TRACKER",
-        "PROGRAMME_STATISTICAL_INTEGRITY"
+        "C19_V4_INTERPRETATION",
+        "PROGRAMME_REDUCTION_STRATEGY"
       ],
-      "finding": "C19-v4 integrity/narrow PASS remains valid; pair-IID bootstrap does not establish independent reasoning-situation population uncertainty because pairs are structurally clustered.",
-      "strategic_impact": "V4_PRESERVED_GENERALIZATION_NARROWED_FUTURE_CLUSTER_UNIT_REQUIRED",
-      "r2_alignment": "R2 already prospectively uses atomic_idx cluster-primary inference"
-    },
-    "knowledge_flow_status": "HEALTHY_BOTH_STREAMS_CONSUMED_BY_0601_ANALYST_AND_CONTROL_BRAIN",
-    "literature_role_specific_mailbox_status": "RESOLVED_AND_PERSISTING"
+      "strategic_impact": "Independently confirms the terminal R2 reduction, integrity chain, recomputed aggregate contrast, all-negative seed contrasts, and that pair-IID sensitivity does not explain away the reduction.",
+      "novelty_bar_change": "No further narrowing beyond current doctrine; provides stronger confidence that the C19 temporal/state mechanism should remain closed.",
+      "questions_to_evidence_analyst": [
+        "Consume this fresh audit explicitly in the next cycle.",
+        "Preserve C19-v4 only as the narrower representation result and do not reopen C19 rescue work."
+      ]
+    }
   },
-  "sub_incubator_review": {
-    "mode": "exploratory_incubator",
+  "sub_incubator": {
+    "current_mode": "no_op",
+    "classification": "NO_ACTION",
+    "scheduler_status": "NO_OP_BY_DESIGN",
     "independent_of_main": true,
-    "allowed_resources_only": true,
-    "evidentiary_status": "NON_EVIDENTIARY",
-    "analyst_classification_before_final_probe": "CONTINUE_EXPLORING_EXACTLY_ONE_FINAL_PROBE",
-    "final_probe_complete": true,
-    "branch": "research/exploratory-sub-rv01-delay-filter-reduction-20260918@48bd4a831435dbfaeace1d2935a04e05751a61fe",
-    "ci": "35278782680:success",
-    "deadzone_wins": 3,
-    "generic_innovation_gated_ewma_wins": 2,
-    "crossover_observed": true,
-    "promotion_recommendation_from_sub": "REJECT",
-    "control_brain_assessment": "EXPLORATORY_PRODUCTIVE_THEN_STOP_CURRENT_THEME",
-    "recommended_next_analyst_classification": "REJECT_OR_NO_ACTION_FOR_DIRECT_FORMALIZATION",
-    "followup_budget_exhausted": true,
-    "further_same_theme_without_fresh_analyst": false
+    "non_evidentiary_boundary_respected": true,
+    "assessment": "Prior bounded exploratory probes are exhausted and did not warrant direct formalization. Do not manufacture activity or assist MAIN/PD01 under an incubator label."
   },
-  "programme_drift": {
-    "status": "REFRAMED_ALIGNED",
-    "main_sub_role_split": "SOUND",
-    "main_sub_collision_observed": false,
-    "primary_risks": [
-      "allowing authority/preflight engineering to become an end in itself",
-      "treating R2 survival as novelty rather than rejection of one FSA",
-      "building an endless hand-authored comparator ladder",
-      "elevating SUB exploratory observations directly to evidence",
-      "reopening A01 or R1 with outcome-responsive rescue identities"
-    ]
-  },
-  "repository_doctrine": {
-    "status": "PARTIALLY_COMPLIANT_MATERIALLY_IMPROVED_SERVER_SIDE_PROTECTION_GAP_REMAINS",
-    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "main_is_scientific_frontier": false,
-    "open_pr_count": 0,
-    "open_operational_issues": [139],
-    "authoritative_evidence_tag_count": 1,
-    "repository_ruleset_count": 0,
-    "main_protected": false,
-    "legacy_freeze_branch_count": 13,
-    "legacy_immutable_refs_preserved": true,
-    "governance_priority": "NON_BLOCKING"
-  },
-  "promotion_candidates": [
-    "generic execution-environment/dependency manifest verifier",
-    "same-environment network-blocked production-import smoke harness",
-    "exact source/runtime/binding verifier",
-    "STARTED/no-clobber/identity-collision primitives",
-    "raw-preserve/refetch/digest verification",
-    "fail-closed evaluator join validators",
-    "target-free cluster-map validators",
-    "deterministic scorer fixture harnesses",
-    "generic prospective sampling-unit/cluster-aware inference helpers",
-    "stable control-plane pointer/index helpers"
-  ],
-  "top_3": [
+  "human_directives": [
     {
-      "rank": 1,
-      "owner": "MAIN_RELAY",
-      "action": "Finish only science-invariant R2 authority/prestart repair; require same-head green CI+prestart and fresh authority/namespaces before one exact STARTED/execution.",
-      "information_value": "VERY_HIGH"
-    },
-    {
-      "rank": 2,
-      "owner": "EVIDENCE_ANALYST",
-      "action": "After terminal R2, apply exact cluster-primary result and choose STOP or one fresh next-representational-class reduction; do not default to a manual R3 FSA.",
-      "information_value": "HIGH"
-    },
-    {
-      "rank": 3,
-      "owner": "EVIDENCE_ANALYST_SUB",
-      "action": "Close the current RV01 incubator direct-formalization candidate; redirect SUB only to a distinct bounded question if worthwhile.",
-      "information_value": "MEDIUM"
+      "id": "HUMAN-20260918-001",
+      "classification": "ACCEPT",
+      "reason": "The request to audit stable outcome-independent reusable CX comparator/model infrastructure for possible promotion to main aligns with repository doctrine and the reduction agenda, while explicitly excluding result-coupled evidence, consumed identities, frozen thresholds/scorers, one-way workflows, and STARTED semantics.",
+      "routing": {
+        "repository_steward": "Perform a read-only structural inventory of G3/G4/G5, G6 VOMM, G7 HTM-inspired temporal memory, G8 spiking temporal memory, architecture-neutral event/contract/adapter interfaces, snapshot/restore, generic resource/privilege accounting, fairness/comparison infrastructure, and reusable result-independent tests/fixtures. Classify assets as main-eligible or science-coupled/research-only.",
+        "main": "Do not divert the PD01 critical path for cleanup or promotion work.",
+        "evidence_analyst": "Use audited assets only as future prospective comparator/baseline candidates when scientifically relevant; do not reinterpret prior CX evidence.",
+        "integration": "If worthwhile, use small coherent PRs with normal review and CI; no wholesale branch merge or cherry-pick of result-coupled/frozen artifacts."
+      },
+      "reconsideration": "Defer or reject any asset that requires result-dependent assumptions, touches immutable/consumed semantics, creates broad merge churn, or delays high-information PD01 work."
     }
   ],
-  "stop_reframe": {
-    "a01_family_abc_closed": true,
-    "r1_line_terminated_no_r1_v3": true,
-    "r2_no_started_until_exact_go": true,
-    "r2_semantic_change_returns_to_analyst": true,
-    "r2_post_start_failure_consumes_identity": true,
-    "r2_survival_is_not_novelty": true,
-    "sub_rv01_current_theme_hard_stopped": true,
-    "testbed_reframe_remains_active": true
+  "repository_doctrine": {
+    "status": "PARTIAL_COMPLIANCE_IMPROVING",
+    "main_is_stable_substrate": true,
+    "active_science_off_main": true,
+    "authoritative_evidence_tags": 2,
+    "legacy_freeze_branches_preserved": 13,
+    "repository_ruleset_count": 0,
+    "main_protected": false,
+    "principal_governance_debt": "Server-side protection for authoritative freeze/sealed/formal/evidence namespaces and main remains absent; Issue #139 tracks the gap.",
+    "open_governance_tooling_prs": [
+      {
+        "number": 148,
+        "title": "Add human-directives repository skill",
+        "status": "OPEN_PENDING_NORMAL_REVIEW_CI"
+      },
+      {
+        "number": 149,
+        "title": "Add Git-backed SparkBrain scheduler registry skill",
+        "status": "OPEN_PENDING_NORMAL_REVIEW_CI"
+      }
+    ],
+    "next_steward_direction": "Reconcile the new R2 evidence tag/index where needed, structurally audit HUMAN-20260918-001 assets, and inspect PRs #148/#149 without reinterpreting science or performing scientific merges."
   },
   "fleet_health": {
     "fleet_status": "YELLOW",
     "critical_failures": [],
-    "schedulers": {
-      "control_repository_steward": "HEALTHY",
-      "evidence_analyst": "DELAYED_BUT_SCIENTIFICALLY_HEALTHY",
-      "research_orchestrator_primary": "DELAYED_STALE_ANALYST_CONSUMPTION_IN_0613_CYCLE",
-      "research_orchestrator_relay": "HEALTHY_RECOVERY_WITH_PRESTART_BLOCKER",
-      "research_orchestrator_sub": "EXPLORATORY_PRODUCTIVE_NOW_HARD_STOPPED_PENDING_ANALYST",
-      "external_research_audit": "HEALTHY",
-      "current_state_brief": "HEALTHY",
-      "repository_steward_stream": "HEALTHY_AWAITING_NEXT_ROLE_SLOT"
+    "scheduler_statuses": {
+      "control_repository_steward_combined": "HEALTHY",
+      "evidence_analyst": "DELAYED",
+      "research_orchestrator_primary": "DELAYED",
+      "research_orchestrator_relay": "HEALTHY",
+      "research_orchestrator_sub": "NO_OP_BY_DESIGN",
+      "external_research_audit": "DELAYED",
+      "current_state_brief": "DELAYED"
     },
     "operational_defects": [
-      "PRIMARY 06:13 consumed an older Analyst tip despite 719b9e already existing; safe stop but lost throughput",
-      "Evidence Analyst completion latency makes the nominal :00->:15 handoff window unreliable",
-      ":35 SUB -> :45 RELAY -> :50 Control/Steward remains dense and produces transient overlapping snapshots",
-      "R2 authority packaging is spending multiple cycles on mechanical lint-only prestart defects"
+      "Evidence Analyst and PRIMARY continue to start materially after nominal cadence, though durable outputs advance.",
+      "The :30 external, :35 SUB, :45 RELAY, :50 control/governance downstream window is dense."
     ],
     "efficiency_findings": [
-      "RELAY recovered the fresh Analyst authority and advanced the primary lane without weakening integrity",
-      "SUB incubator produced a bounded reduction-oriented conclusion and stopped",
-      "role-specific literature persistence is repaired and external knowledge is consumed downstream"
+      "RELAY is useful and continues to recover authority changes between PRIMARY cycles.",
+      "SUB no-op is preferable to fake parallelism when no independent lane exists.",
+      "Both literature and audit outputs are consumed by Control Brain; the fresh 10:30 audit should be consumed by the next Evidence Analyst cycle."
     ],
-    "recommended_scheduler_changes": [
-      "Do not increase cadence",
-      "Require exact Analyst branch-tip re-fetch immediately before MAIN policy/STARTED decisions",
-      "Observe at least the next two cycles before moving read-only Control/Steward later than Relay",
-      "No External Research/Audit schedule change currently justified"
-    ]
+    "recommended_scheduler_changes": "None now. Observe another 2-3 cycles; if Control/Steward repeatedly snapshots before RELAY or external persistence completes, consider moving only the downstream read-only control/governance slot 5-10 minutes later."
   },
-  "direction_to_evidence_analyst": [
-    "Keep R2 as sole primary scientific frontier until terminal; MAIN owns every critical-path mechanical blocker.",
-    "Do not weaken R2 scientific semantics because CI/prestart is slow; every head change resets same-head validation.",
-    "On terminal R2 apply the frozen atomic_idx cluster-primary decision exactly and stop the identity.",
-    "If R2 survives, choose a fresh extracted/learned finite-state or PSR/epsilon-machine reduction before broad novelty claims; do not default to hand-authored R3/R4 FSAs.",
-    "If R2 reduces C19-v4, narrow the mechanism story rather than rescue-tune.",
-    "Classify the completed RV01 incubator direct-formalization candidate REJECT/NO_ACTION; its one allowed follow-up is exhausted.",
-    "Preserve C19-v4 unchanged with audit status WEAKENED_NOT_INVALID and retain cluster-aware sampling doctrine."
+  "priorities_12_48h": [
+    "Evidence Analyst: consume the fresh R2 audit and exact PD01 head, then rule explicitly on the plastic-SparkBrain versus fixed-reservoir resource asymmetry and interpretation boundary.",
+    "MAIN: execute PD01 only after fresh explicit Analyst admission; otherwise remain pre-START.",
+    "If PD01 passes under the current fixed reservoir, prospectively test a conventional mutable-weight / eligibility / slow-state comparator before any novelty claim.",
+    "Repository Steward: audit HUMAN-20260918-001 reusable assets and reconcile R2 evidence governance without delaying PD01."
   ],
-  "charter_status": {
-    "changed": false,
-    "reason": "Existing charter already covers reduction-first novelty discipline, testbed reframe, and actual-causal-lineage residual; current update sharpens the reduction ladder without changing foundational doctrine."
-  },
-  "persistence": {
-    "latest_commit": "66c17b60f9729b9cac5cc3d2d75fceb515d10efd",
-    "latest_path": "analysis/control_brain/latest.md",
-    "state_path": "analysis/control_brain/state.json",
-    "history_path": "analysis/control_brain/history/2026-09-18/0658.md",
-    "immutable_refs_written": false,
-    "force_push_used": false
-  }
+  "directions_to_evidence_analyst": [
+    "Treat C19-R2 as terminal REDUCED_BY_FSA and explicitly consume independent-audit handoff 0c871b1b9b54d35c826a59c5b9925afa55b78d22.",
+    "Review exact PD01 head ea2a8b4a5f244d601782ecb302760c49ee27e8c1 and decide prospectively whether the plasticity-enabled SparkBrain versus fixed-weight reservoir asymmetry is intentional/acceptable.",
+    "If admitted as-is, cap interpretation and require a conventional mutable-weight / eligibility / slow-state reduction after any PASS.",
+    "If resource matching is required, reject/not-freeze the current contract and revise comparator privileges prospectively before STARTED.",
+    "Do not reopen C19 rescue work and do not force SUB activity."
+  ]
 }
