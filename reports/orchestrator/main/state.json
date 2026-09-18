@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-19T02:16:31+09:00",
+  "timestamp": "2026-09-19T03:12:42+09:00",
   "worker_role": "main",
   "execution_mode": "PRIMARY",
   "analyst_commit": "c7ccb537878966f10396bfa4c539840509014490",
@@ -15,15 +15,13 @@
     "active_branch": null,
     "active_identity": null,
     "evidence_analyst_handoff": "c7ccb537878966f10396bfa4c539840509014490",
-    "evidence_analyst_ci": "35372900948 completed/success@c7ccb537878966f10396bfa4c539840509014490",
-    "control_brain_prior": "9bf5c0249e88acdd5fc99b12555e785f9c2e2976",
+    "control_brain_prior": "10eb4206fb0c998fcdbc40c0e16f38829ea5d41e",
     "formal_boundary": "ARCHITECTURE_TESTBED / PROSPECTIVE_ADMISSION_ONLY / no formal identity or STARTED authorized"
   },
   "fast_path_used": true,
   "full_reconciliation_reason": null,
   "branches_prs_advanced": [],
   "workflows_experiments": {
-    "evidence_analyst_ci_35372900948": "completed/success@c7ccb537878966f10396bfa4c539840509014490",
     "new_workflow_dispatched": false,
     "formal_experiment_dispatched": false,
     "official_test_accessed": false
@@ -50,15 +48,15 @@
   ],
   "blockers": [
     "Scientific object availability: no freshly emerging independently motivated object was present to admit under the current architecture/testbed gate.",
-    "Formal one-way science remains blocked until a fresh object satisfies the Analyst's native-causality, privilege/resource symmetry, ordinary-reduction, positive-signal where applicable, numeric-falsifier, exact-binding, same-final-SHA CI/pre-START, and fresh-authority requirements."
+    "Formal one-way science remains blocked until a fresh object satisfies the Analyst native-causality, privilege/resource symmetry, ordinary-reduction, positive-signal where applicable, numeric-falsifier, exact-binding, same-final-SHA CI/pre-START, and fresh-authority requirements."
   ],
   "lease_collision_reconciliation": {
     "inherited_lease_status": "COMPLETED",
-    "inherited_execution_mode": "RELAY",
-    "inherited_heartbeat": "2026-09-19T00:49:00+09:00",
+    "inherited_run_id": "sparkbrain-main-primary-20260919T021631JST",
+    "inherited_heartbeat": "2026-09-19T02:16:31+09:00",
     "fresh_main_running_collision_found": false,
     "primary_lease_acquired": true,
-    "primary_lease_commit": "1a4177bc16e4c0ed4fadc91c011cc9c414800741",
+    "primary_lease_commit": "db6681890b44ab6fa9180d10ac81c86e0c4605ff",
     "latest_sub_mode": "no_op",
     "sub_lane": null,
     "sub_fallback": null,
@@ -68,13 +66,12 @@
   "integrity_status": "CLEAN_ARCHITECTURE_TESTBED_BOUNDARY_NO_ACTIVE_IDENTITY_NO_STARTED_NO_OFFICIAL_TEST_NO_FORMAL_PRESERVE_SCORE_OR_EVIDENCE",
   "critical_path_fixes_completed": [],
   "same_run_steps": [
-    "Consumed designated Evidence Analyst latest/state at c7ccb537878966f10396bfa4c539840509014490.",
+    "Consumed designated Evidence Analyst latest at c7ccb537878966f10396bfa4c539840509014490 and confirmed PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE remains authoritative.",
     "Read MAIN latest/state/lease and confirmed the inherited lease was completed with no active branch or identity.",
     "Re-fetched current main and confirmed ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d remains authoritative.",
     "Read SUB only for collision avoidance; SUB remains no_op with null lane/fallback.",
-    "Read Control Brain only as strategic prior; it remains consistent with the architecture/testbed frame.",
-    "Verified Analyst CI 35372900948 completed successfully on the exact authority SHA.",
-    "Acquired a fresh PRIMARY lease, re-fetched lease and Analyst tip before closeout, and found no collision or authority drift.",
+    "Consumed newer Control Brain prior 10eb4206fb0c998fcdbc40c0e16f38829ea5d41e and confirmed it preserves NO_HIGH_VALUE_OBJECT; its NI01 read-only audit recommendation is assigned to Evidence Analyst, not MAIN.",
+    "Acquired a fresh PRIMARY lease and re-fetched lease, Analyst tip, and main ref before closeout; found no collision or authority drift.",
     "Observed no freshly emerging object requiring bounded prospective specification; created no research/scientific mutation."
   ],
   "stop_reason": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT",
@@ -85,9 +82,9 @@
     "github_direct_write_attempted": true,
     "github_direct_write_succeeded": true,
     "force_push_used": false,
-    "lease_start_commit": "1a4177bc16e4c0ed4fadc91c011cc9c414800741",
-    "history_commit": "4f2349e1baf14ce4cb53d2acf6da050d94e7988d",
-    "latest_commit": "d406e7723ca35e4853ccc26f502c63b95cdf704a",
-    "history_path": "reports/orchestrator/history/2026-09-19/0216-main.md"
+    "lease_start_commit": "db6681890b44ab6fa9180d10ac81c86e0c4605ff",
+    "history_commit": "2e99e1a2cb81a69a33660869cbed1a47feca5d7c",
+    "latest_commit": "9c49e16e5de7ab14d02d01d69f476acfd9cde4a4",
+    "history_path": "reports/orchestrator/history/2026-09-19/0312-main.md"
   }
 }
