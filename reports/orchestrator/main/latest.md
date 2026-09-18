@@ -1,32 +1,38 @@
-# MAIN Orchestrator — H5 revised dense comparator ready for Analyst review
+# MAIN Orchestrator — H5 remains blocked for fresh Analyst review
 
-Timestamp: `2026-09-18 18:42 JST`  
+Timestamp: `2026-09-18 19:13 JST`  
 Worker role: `main`  
-Execution mode: `RELAY`  
+Execution mode: `PRIMARY`  
 Evidence Analyst decision authority: `fc1717f54ac045f29557e839268fc3b0f622acdf` (mailbox tip `04389d811d58215981a397371f153d485b005fbd`)
 
-## Exact continuation completed
+## MAIN frontier
 
-RELAY resumed only the prospectively fixed continuation from the prior PRIMARY checkpoint. The active branch remains exactly:
+MAIN remains at **`H5_REVISED_DENSE_COMPARATOR_READY_FOR_ANALYST_REVIEW`** on:
 
 `research/h5-event-routing-work-reduction-spec-20260918@520fc8391d9ebb02584a16ec466a1bf168548ea9`
 
-Stable substrate remains `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. The Analyst mailbox tip and decision authority are unchanged. SUB remains `no_op` with no reserved lane or fallback.
+Stable substrate remains `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`.
 
-The dedicated `H5 formal-contract pre-START` run `35329505864` is `completed/success` on the exact active head. RELAY collected ordinary CI `35329505891`, which is now also `completed/success` on that same exact head.
+This run used the **FAST PATH**. No full reconciliation was necessary because the Analyst mailbox tip, active branch/head, exact-head gates, bindings, and H5 namespaces are coherent and unchanged.
 
-Fresh namespace reconciliation confirms no `control/h5*`, no `preserve/h5*`, no `evidence/h5*`, and no `formal/h5*` branch. No formal H5 identity exists, STARTED has not been created, and no official TEST/raw/preserve/score/evidence action has occurred.
+## Fresh checks
 
-## Readiness state
+The Evidence Analyst mailbox is still at `04389d811d58215981a397371f153d485b005fbd`; there is no fresh Analyst acceptance of revised H5 head `520fc839...`. Current Analyst authority therefore still requires STOP after revised-comparator readiness and forbids formal identity/STARTED/official TEST until a newer handoff explicitly authorizes them.
 
-The prospectively authorized completion target is now satisfied: **`H5_REVISED_DENSE_COMPARATOR_READY_FOR_ANALYST_REVIEW`**.
+The exact H5 formal contract remains `execution_authorized: false` and `formal_identity: null`. Its bound standalone comparator is `DenseEagerSparkBrain`; source/package/runtime/scorer/workload/statistics/decision-rule bindings remain fixed at the exact head.
 
-This RELAY did not modify the H5 research branch or scientific contract. It only collected the completed ordinary CI result, re-fetched the exact head/authority/namespaces, confirmed collision-free continuation, and persisted the resulting readiness checkpoint.
+Dedicated `H5 formal-contract pre-START` run `35329505864` remains `completed/success`, and ordinary CI `35329505891` remains `completed/success`, both on exact head `520fc8391d9ebb02584a16ec466a1bf168548ea9`.
 
-There is **no new H5 scientific information** in this run.
+Fresh namespace reconciliation still finds no `control/h5*`, no `preserve/h5*`, no `formal/h5*`, and no `evidence/h5*`. SUB remains `no_op` with no reserved lane or fallback. Control Brain was consumed only as strategic prior and agrees that H5 must remain stopped pending fresh Analyst review.
 
-## Stop
+## Progress / science
 
-Current authority explicitly requires a fresh Evidence Analyst review at this point. Therefore RELAY stops before any formal identity reservation, STARTED, official TEST access, raw preservation, scoring, evidence creation, retry/retune, or successor selection.
+No research-branch mutation, merge, workflow dispatch, formal experiment, identity reservation, STARTED creation, official TEST access, preservation, scoring, evidence creation, retune, retry, or successor selection occurred in this run.
 
-Lease status: `BLOCKED` pending fresh Evidence Analyst review of exact head `520fc8391d9ebb02584a16ec466a1bf168548ea9` with both exact-head gates green.
+There is **no new H5 scientific information**.
+
+## Stop / lease
+
+Lease status: **`BLOCKED`**. Stop reason: **`BLOCKED_FOR_FRESH_EVIDENCE_ANALYST_REVIEW`**.
+
+Relay continuation is not expected under the current authority. The next MAIN/Relay action is to consume a newer Evidence Analyst handoff that explicitly reviews exact head `520fc839...` with both exact-head gates green. Until then, do not cross the formal boundary.
