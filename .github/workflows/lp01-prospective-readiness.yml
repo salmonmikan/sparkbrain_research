@@ -1,0 +1,45 @@
+name: lp01-prospective-readiness
+
+on:
+  push:
+    branches:
+      - research/lp01-actual-lineage-causal-credit-spec-20260918
+    paths:
+      - "configs/experiments/lp01/**"
+      - "src/sparkbrain/lp01_lineage.py"
+      - "scripts/check_lp01_contract.py"
+      - "scripts/check_lp01_native_causality.py"
+      - "scripts/run_lp01_dev.py"
+      - "tests/test_lp01_lineage.py"
+      - ".github/workflows/lp01-prospective-readiness.yml"
+  workflow_dispatch:
+
+jobs:
+  readiness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install dev dependencies
+        run: python -m pip install -e ".[dev]"
+      - name: Prospective contract integrity
+        run: python scripts/check_lp01_contract.py
+      - name: Native lineage causality source audit
+        run: python scripts/check_lp01_native_causality.py
+      - name: Reference lineage tests
+        run: python -m pytest -q tests/test_lp01_lineage.py
+      - name: Dev-only construction diagnostic
+        run: python scripts/run_lp01_dev.py
+      - name: Focused lint
+        run: >-
+          python -m ruff check
+          src/sparkbrain/lp01_lineage.py
+          scripts/check_lp01_contract.py
+          scripts/check_lp01_native_causality.py
+          scripts/run_lp01_dev.py
+          tests/test_lp01_lineage.py
