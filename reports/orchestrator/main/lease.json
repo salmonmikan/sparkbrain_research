@@ -1,14 +1,14 @@
 {
   "run_id": "sparkbrain-main-primary-20260919T041214JST",
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-19T04:12:14+09:00",
   "heartbeat_at": "2026-09-19T04:12:14+09:00",
   "analyst_commit": "03f027926fb06a42f108e5470779f2de2126116a",
   "active_branch": null,
   "active_identity": null,
-  "active_step": "PROGRAMME_ARCHITECTURE_TESTBED_RECONCILE",
+  "active_step": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_NO_CHANGE_AFTER_RELAY",
   "workflow_run_id": null,
-  "expected_next_action": "Reconcile current main, Analyst authority, SUB reservation state and Control Brain strategic prior. If no genuinely fresh independently motivated native object exists, remain in architecture/testbed hold and do not cross any formal boundary.",
+  "expected_next_action": "Remain in architecture/testbed hold. If and only if a genuinely fresh independently motivated native object appears, MAIN may perform bounded prospective NON_EVIDENTIARY specification/readiness and must STOP at NEXT_OBJECT_READY_FOR_ANALYST_REVIEW before any formal identity, STARTED, official TEST, preserve, scoring or evidence boundary.",
   "owner": "main"
 }
