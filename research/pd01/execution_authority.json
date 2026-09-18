@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "status": "PRE_START_AUTHORIZED_CONDITIONAL",
+  "evidence_analyst_commit": "91a05bad6d130f89975e776960a1d25d764fba32",
+  "reviewed_scientific_head": "ea2a8b4a5f244d601782ecb302760c49ee27e8c1",
+  "base_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+  "formal_contract_git_blob": "0ce03b01baf41a0c77c513835b1c6063e47b2614",
+  "implementation_git_blob": "16bbfb6ed57d6c9701e8437360692b62e7c36915",
+  "formal_identity": "pd01-long-history-fading-memory-official-v1",
+  "protocol_id": "pd01-long-history-fading-memory-protocol-v1",
+  "scientific_contract_immutable": true,
+  "authority_scope": "science-invariant admission, exact-head revalidation, exactly-one formal one-way execution only",
+  "resource_asymmetry_ruling": "ACCEPT_FOR_THIS_BOUNDARY_TEST_WITH_INTERPRETATION_CAP",
+  "pass_interpretation_cap": "PASS rejects only the exact fixed 64-state contractive reservoir; no novelty upgrade or successor is authorized in the same run.",
+  "required_final_head_gates": [
+    "ordinary CI success",
+    "pd01-formal-contract-prestart success",
+    "pd01-preformal compatibility success",
+    "fresh identity/control/preserve/evidence namespace checks",
+    "exact source/protocol/package/input/runtime/candidate/comparator/scorer/preserver binding checks"
+  ],
+  "integrity_order": [
+    "STARTED/no-clobber",
+    "target-free TEST inputs",
+    "DEV-only one-shot readout fit",
+    "target-blind candidate+comparator TEST raw",
+    "immutable raw/inventory/binding preserve",
+    "independent refetch/digest/cardinality",
+    "TEST targets",
+    "unique/total/fail-closed history_id join",
+    "deterministic score/evidence"
+  ],
+  "namespaces": {
+    "started_branch": "control/pd01-long-history-fading-memory-started-v1-20260918",
+    "started_path": "artifacts/v03/pd01/official_v1/STARTED.json",
+    "preserve_branch": "preserve/pd01-long-history-fading-memory-raw-pd01-long-history-fading-memory-official-v1",
+    "evidence_tag": "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1",
+    "artifact_root": "artifacts/v03/pd01/official_v1"
+  },
+  "terminal_rules": {
+    "PASS_SURVIVES_FADING_MEMORY_REDUCTION": "effect_ci95_lower >= 0.10 AND sparkbrain_accuracy_ci95_lower >= 0.60",
+    "FAIL_REDUCED_BY_FADING_MEMORY": "effect_ci95_upper <= 0.05",
+    "INCONCLUSIVE": "all other valid outcomes",
+    "INVALID_EVIDENCE": "post-START binding/leakage/raw/preserve/digest/cardinality/join/integrity failure; consume identity and stop",
+    "POST_START_FAILURE": "post-START infrastructure/runtime failure; consume identity and stop"
+  },
+  "no_retry": true
+}
