@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-09-18T15:01:00+09:00",
+  "timestamp": "2026-09-18T15:58:00+09:00",
   "worker_role": "evidence_analyst",
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "prior_evidence_analyst_tip": "e22b401013b01517890d48e33debdd79bb522e65",
-    "control_brain_mailbox_tip": "b9ce2adde261f5cca5691e03ab124aaaed971520",
-    "orchestrator_report_mailbox_tip": "42f640ae840648c572a3027e3aa6366c43fc6e07",
+    "prior_evidence_analyst_tip": "d3626617c3b054afd726e468682aaa02d613bca0",
+    "control_brain_mailbox_tip": "525796e92f6b633d81539bbddf1ac83904f6f579",
+    "orchestrator_report_mailbox_tip": "25c20c2aeafcd76eb234d1ab2f61a6c58fe2426d",
     "external_research_audit_mailbox_tip": "d14ac2c722feb1ae81a470cc1eef8b4052c2e719",
     "repository_steward_mailbox_tip": "5f0faac963861b47b3385083454fdd09e3ff8f4c",
     "ni01_research": "research/ni01-no-ignition-selective-prediction-spec-20260918@2664951b65dd18883d3d80862e80b86ac66cf24f",
@@ -17,8 +17,6 @@
     "ni01_control_refs": [],
     "ni01_preserve_refs": [],
     "ni01_evidence_tags": [],
-    "formal_tags": [],
-    "sealed_tags": [],
     "evidence_tags": [
       "evidence/c19-official-v4-c19-external-v2-official-v4",
       "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
@@ -31,111 +29,105 @@
     "repository_ruleset_count": 0,
     "main_protected": false
   },
-  "Control_Brain_commit": "2d9017c58a6526b253b34bc0f3314adb7eb60d47",
-  "Control_Brain_mailbox_tip": "b9ce2adde261f5cca5691e03ab124aaaed971520",
-  "Control_Brain_state_consumed": "analysis/control_brain/latest.md + state.json at 2026-09-18 10:51 JST as strategic prior only; current repository evidence and later NI01/PD01 state override stale frontier details",
+  "Control_Brain_commit": "525796e92f6b633d81539bbddf1ac83904f6f579",
+  "Control_Brain_state_consumed": "analysis/control_brain/latest.md + state.json at 2026-09-18 14:50 JST as strategic prior only; current remote facts override it",
   "MAIN_report_commit_consumed": "fa08ff630b886b9ad20981da74356d4d916a9c58",
   "MAIN_report_time_observed": "2026-09-18T13:47:00+09:00",
   "MAIN_report_history_consumed": "reports/orchestrator/history/2026-09-18/1347-main.md",
-  "MAIN_mailbox_freshness_note": "MAIN latest recorded ordinary CI as in_progress at checkpoint; fresh Actions and later SUB reconciliation supersede that timing lag and show both exact-head gates completed/success.",
-  "SUB_report_commit_consumed": "0422510af39a597a1442bc824df59d98928366a3",
-  "SUB_report_branch_tip_observed": "42f640ae840648c572a3027e3aa6366c43fc6e07",
-  "SUB_report_time_observed": "2026-09-18T14:40:00+09:00",
-  "SUB_report_history_consumed": "reports/orchestrator/history/2026-09-18/1440-sub.md",
+  "MAIN_lease_commit_observed": "b9fc8e36fa0bbbd1dc859fd64fe01c6df509df42",
+  "MAIN_lease_time_observed": "2026-09-18T15:24:12+09:00",
+  "MAIN_lease_note": "Lease-only movement recovered the stale PRIMARY lease, bound Analyst d3626617c3b054afd726e468682aaa02d613bca0, and advanced active_step to NI01_FORMAL_EXECUTION_SCAFFOLDING. It did not move the NI01 research head, reserve/consume identity, create STARTED/preserve/evidence, or produce science.",
+  "SUB_report_commit_consumed": "25c20c2aeafcd76eb234d1ab2f61a6c58fe2426d",
+  "SUB_report_time_observed": "2026-09-18T15:35:31+09:00",
+  "SUB_report_history_consumed": "reports/orchestrator/history/2026-09-18/1535-sub.md",
   "SUB_operating_mode_observed": "no_op",
   "sub_exploratory_review": null,
-  "sub_exploratory_review_reason": "Latest SUB mode is no_op and reports no exploratory target; the five incubator classifications are not applicable.",
+  "sub_exploratory_review_reason": "Latest SUB mode is no_op and no exploratory target exists; the five incubator classifications are not applicable.",
   "Literature_handoff_commit_consumed": "525686fa0c14f64426ca7bf5c89f08cd0bcb9c77",
   "Literature_history_consumed": "analysis/external_research_audit/history/2026-09-18/0430-LITERATURE_REDUCTION_SCOUT.md",
   "Audit_handoff_commit_consumed": "0c871b1b9b54d35c826a59c5b9925afa55b78d22",
+  "Audit_mailbox_tip_consumed": "d14ac2c722feb1ae81a470cc1eef8b4052c2e719",
   "Audit_history_consumed": "analysis/external_research_audit/history/2026-09-18/1030-INDEPENDENT_AUDITOR.md",
   "Repository_Steward_commit_consumed": "5f0faac963861b47b3385083454fdd09e3ff8f4c",
   "Repository_Steward_state_consumed": "reports/repository_steward/latest.md + state.json at 2026-09-18 13:50 JST; governance advisory only",
   "new_repository_evidence": {
     "new_formal_scientific_measurement": false,
-    "new_readiness_evidence": false,
-    "material_update": "No material change since the prior 14:00 Evidence Analyst handoff. Fresh remote confirms NI01 exact head and green readiness gates remain unchanged; identity remains unreserved and no STARTED/preserve/evidence exists.",
-    "fresh_control_plane_update": "SUB refreshed at 14:40 as no_op and independently reconciled the same NI01 exact-head readiness/authority state.",
-    "claim_boundary": "No NI01 scientific outcome exists. Prior prospective boundary remains: PASS would establish value only over the exact registered coverage-matched confidence-abstention comparator on the three registered worlds/metric; FAIL would reduce only that registered discriminator."
+    "new_readiness_evidence": true,
+    "material_update": "Operational readiness only: MAIN recovered the stale lease under the current Analyst authority and entered NI01 formal execution scaffolding while exact science/head/identity/ref state stayed unchanged.",
+    "claim_boundary": "No NI01 scientific outcome exists. PASS/FAIL/INCONCLUSIVE remain prospectively scoped to the exact registered three-world confidence-abstention discriminator."
   },
   "external_input": {
     "literature": {
       "handoff_commit": "525686fa0c14f64426ca7bf5c89f08cd0bcb9c77",
       "new_this_cycle": false,
-      "affected_lines": [
-        "C19_R2",
-        "PD01",
-        "PROGRAMME_NOVELTY",
-        "NI01_H4_INDIRECTLY"
-      ],
+      "affected_lines": ["C19_R2", "PD01", "PROGRAMME_NOVELTY", "NI01_H4_INDIRECTLY"],
       "what_changed": "No new literature stream since 04:30 JST.",
-      "prospective_change": "No change to NI01. Existing reduction doctrine supports testing ordinary reductions first, and NI01 already uses the canonical H4 confidence-abstention null. Any stronger abstention/OOD/predictive-state extension must be a fresh future object.",
+      "prospective_change": "None for NI01. Do not retrofit stronger abstention, OOD or predictive-state comparators into this identity; any extension is a fresh future object.",
       "allocation_changed": false
     },
     "audit": {
       "handoff_commit": "0c871b1b9b54d35c826a59c5b9925afa55b78d22",
+      "mailbox_tip": "d14ac2c722feb1ae81a470cc1eef8b4052c2e719",
       "new_this_cycle": false,
       "latest_classification": "C19_R2_ROBUST_SO_FAR",
-      "affected_lines": [
-        "C19_R2_FSA_STATE_TRACKER",
-        "C19_V4",
-        "PD01",
-        "NI01_H4_INDIRECTLY"
-      ],
-      "what_changed": "No new audit stream since 10:30 JST; PD01 terminal audit remains outstanding.",
-      "prospective_change": "No NI01 block because NI01 is independently motivated by H4 and excludes PD01/C19 outcome rescue. A future object materially depending on PD01 should consume a fresh PD01 audit before STARTED.",
+      "affected_lines": ["C19_R2_FSA_STATE_TRACKER", "C19_V4", "PD01", "NI01_H4_INDIRECTLY"],
+      "what_changed": "No new audit since 10:30 JST. PD01 terminal audit remains pending.",
+      "prospective_change": "No NI01 block because NI01 is independently H4-motivated. A future object materially depending on PD01 should consume a fresh PD01 audit before STARTED.",
       "allocation_changed": false
     }
   },
   "main_lane": {
     "target": "NI01_NATIVE_NO_IGNITION_SELECTIVE_PREDICTION_ONE_WAY",
     "owner": "MAIN",
-    "status": "PRE_START_AUTHORITY_PACKAGING",
+    "status": "PRE_START_FORMAL_EXECUTION_SCAFFOLDING",
+    "scientific_root": "NI01_PRE_START_READY_FOR_CONDITIONAL_ONE_WAY_AUTHORITY",
     "research_head": "2664951b65dd18883d3d80862e80b86ac66cf24f",
     "formal_identity": "ni01-no-ignition-selective-prediction-official-v1",
     "formal_identity_current_state": "UNRESERVED_UNCONSUMED",
     "main_owns_all_critical_path_fixups": true,
     "formal_execution_authorized": "CONDITIONAL_EXACTLY_ONCE",
-    "same_run_stop": "terminal PASS/FAIL/INCONCLUSIVE/INVALID_EVIDENCE/POST_START_FAILURE evidence or PRE_START_SEMANTIC_GAP"
+    "allocation_changed_this_cycle": false
   },
   "sub_lane": null,
   "sub_fallback": null,
-  "no_sub_lane_reason": "No independent formal secondary object is prospectively complete. NI01/H4 is MAIN-owned; H9/C07 remains under-specified, RV01 exploratory budget is exhausted, and terminal C19/R2/PD01 lines must remain closed. No safe useful non-duplicative incubator target is currently selected.",
+  "no_sub_lane_reason": "No independent formal secondary object is prospectively complete. NI01 is MAIN-owned; H9/C07 remains under-specified; RV01 bounded exploration is exhausted; terminal C19/R2/PD01 lines remain closed; no non-duplicative incubator target is selected.",
   "outcome_contingencies": {
     "observed_root": "NI01_PRE_START_READY_FOR_CONDITIONAL_ONE_WAY_AUTHORITY",
+    "operational_phase": "NI01_FORMAL_EXECUTION_SCAFFOLDING",
     "PRE_START_BLOCKER_MECHANICAL": "MAIN may repair only science-invariant mechanical defects; every head change requires same-final-SHA ordinary CI and dedicated pre-START revalidation.",
     "PRE_START_SEMANTIC_GAP": "STOP and require fresh Evidence Analyst review before mutation or STARTED.",
-    "GO_CHAIN": "fresh identity/collision -> STARTED/no-clobber -> target-free DEV threshold -> target-blind TEST raw -> immutable preserve -> independent refetch/digest/cardinality -> TEST targets -> unique/total/fail-closed join -> deterministic scoring/bootstrap -> annotated terminal evidence",
-    "PASS_NATIVE_NO_IGNITION_ADDS_SELECTIVE_VALUE": "Terminal STOP; claim only the registered three-world selective-value result; no same-run OOD/general H4 extension.",
-    "FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION": "Terminal STOP; no rescue, comparator shopping, threshold retuning or automatic NI01-v2.",
-    "INCONCLUSIVE": "Terminal STOP; no world/coverage/threshold retuning.",
+    "GO_CHAIN": "fresh identity/collision -> STARTED/no-clobber -> target-free DEV threshold -> target-blind TEST raw -> immutable preserve -> independent refetch/digest/cardinality -> TEST targets -> unique/total/fail-closed (world, seed, step_index) join -> deterministic scoring/bootstrap -> annotated terminal evidence",
+    "PASS_NATIVE_NO_IGNITION_ADDS_SELECTIVE_VALUE": "Terminal STOP; claim only the registered three-world selective-value result; no same-run OOD/general-H4 extension.",
+    "FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION": "Terminal STOP; no rescue/comparator shopping/threshold retuning/automatic NI01-v2.",
+    "INCONCLUSIVE": "Terminal STOP; no retuning.",
     "INVALID_EVIDENCE": "Identity consumed; terminal STOP; no salvage/retry.",
     "POST_START_FAILURE": "Identity consumed; terminal STOP; no salvage/retry/automatic successor."
   },
   "blocked_until": [
-    "MAIN consumes the current Evidence Analyst authority and binds it without changing NI01 science.",
-    "Final execution SHA exact source/protocol/package/input/runtime/candidate/comparator/scorer/preserver bindings are proven unchanged.",
+    "A science-invariant final execution/admission package carries an explicitly valid Analyst authorization for the unchanged NI01 object.",
+    "Final execution SHA exact source/protocol/package/input/runtime/candidate/comparator/scorer/preserver bindings are proven invariant and internally consistent.",
     "Identity remains fresh/unSTARTED/unconsumed with collision-free control/preserve/evidence namespaces.",
-    "If authority/admission packaging changes the SHA, ordinary CI and dedicated NI01 pre-START are both green on that same final SHA.",
-    "Target-blind observation projection excludes truth, decision_justified, target and target-derived scenario tags before raw preservation."
+    "If execution/admission packaging moves the SHA, ordinary CI and dedicated NI01 pre-START are both green on that same final SHA.",
+    "Target-blind TEST projection excludes truth, target, decision_justified and target-derived scenario labels before immutable raw preservation."
   ],
   "do_not_touch": [
     "C19-v4 immutable evidence and narrow PASS",
-    "C19-R2 package/STARTED/preserve/statistics/evidence/tag and consumed identity",
-    "PD01 package/STARTED/preserve/evidence/tag/raw/targets/statistics and consumed identity",
+    "C19-R2 terminal package/STARTED/preserve/statistics/evidence/tag and consumed identity",
+    "PD01 terminal package/STARTED/preserve/evidence/tag/raw/targets/statistics and consumed identity",
     "C19-R1 v1/v2 consumed identities",
     "legacy freeze refs and authoritative evidence tags",
     "scheduler definitions",
     "SUB exploratory output as scientific evidence",
-    "NI01 worlds/seeds/candidate dynamics/comparator privilege and target-free coverage-matching rule/loss/coverage guard/PASS-FAIL thresholds/bootstrap/runtime-device/join key/raw-before-score order after authority binding",
+    "NI01 worlds/seeds/native dynamics/comparator privilege/coverage matching/loss/coverage guard/PASS-FAIL thresholds/bootstrap/runtime-device/join key/raw-before-score order",
     "any NI01 comparator/world/threshold selected in response to formal TEST outcomes"
   ],
   "active_MAIN_SUB_claims_observed": {
     "MAIN": {
-      "mailbox_phase": "NI01_FINAL_CI_PENDING_AFTER_LINT_REPAIR",
-      "mailbox_time": "2026-09-18T13:47:00+09:00",
-      "mailbox_stale_relative_to_actions": true,
-      "fresh_reconciled_phase": "NI01_PRE_START_READY_FOR_CONDITIONAL_ONE_WAY_AUTHORITY",
+      "designated_report_phase": "NI01_FINAL_CI_PENDING_AFTER_LINT_REPAIR",
+      "designated_report_time": "2026-09-18T13:47:00+09:00",
+      "designated_report_stale_relative_to_lease": true,
+      "fresh_lease_phase": "NI01_FORMAL_EXECUTION_SCAFFOLDING",
+      "fresh_lease_commit": "b9fc8e36fa0bbbd1dc859fd64fe01c6df509df42",
       "research_head": "2664951b65dd18883d3d80862e80b86ac66cf24f",
       "preformal_run": "35308269458:success",
       "ordinary_ci": "35308269286:success",
@@ -146,7 +138,7 @@
     },
     "SUB": {
       "mode": "no_op",
-      "report_time": "2026-09-18T14:40:00+09:00",
+      "report_time": "2026-09-18T15:35:31+09:00",
       "formal_lane": null,
       "formal_fallback": null,
       "exploratory_target": null,
@@ -164,14 +156,14 @@
     "C19_V4": "TERMINAL_PASS_NARROW_REPRESENTATION_GAIN / WEAKENED_NOT_INVALID",
     "C19_R1": "SCIENTIFICALLY_UNRESOLVED_OPERATIONALLY_TERMINATED",
     "C19_R2": "TERMINAL_REDUCED_BY_FSA / ROBUST_SO_FAR_AUDITED",
-    "PD01": "TERMINAL_FAIL_REDUCED_BY_FADING_MEMORY",
-    "NI01_H4": "PRE_START_READY_FOR_CONDITIONAL_ONE_WAY_AUTHORITY"
+    "PD01": "TERMINAL_FAIL_REDUCED_BY_FADING_MEMORY / AUDIT_PENDING",
+    "NI01_H4": "PRE_START_READY_FOR_CONDITIONAL_ONE_WAY_AUTHORITY / FORMAL_EXECUTION_SCAFFOLDING"
   },
-  "top_recommendation": "MAIN should consume/bind the current Analyst authority to NI01 and, only if final identity/namespace/binding state is clean and same-final-SHA gates are green without scientific change, execute exactly one formal NI01 one-way chain; SUB remains no-op.",
+  "top_recommendation": "MAIN should finish science-invariant NI01 execution/admission scaffolding and, only if final identity/namespace/binding state is clean and all final-SHA gates are green without scientific change, execute exactly one formal NI01 one-way chain; SUB remains no-op.",
   "top_3": [
     {
       "rank": 1,
-      "action": "MAIN consume/bind current Analyst authority to NI01 and conditionally execute exactly one formal one-way chain after final exact-head revalidation",
+      "action": "MAIN finish NI01 execution/admission scaffolding and conditionally execute exactly one formal one-way chain after final exact-head/identity/namespace revalidation",
       "information_value": "VERY_HIGH",
       "distance": "NEAR"
     },
@@ -183,7 +175,7 @@
     },
     {
       "rank": 3,
-      "action": "SUB remain no_op; incubate only a distinct independently motivated synthetic/dev NON_EVIDENTIARY question if one naturally appears",
+      "action": "SUB remain no_op; incubate only a genuinely distinct independently motivated synthetic/dev NON_EVIDENTIARY question if one naturally appears",
       "information_value": "LOW_TO_MEDIUM",
       "distance": "OPTIONAL"
     }
@@ -196,71 +188,33 @@
     "c19-external-v2-official-v4": "terminal immutable narrow PASS"
   },
   "blockers": [
-    "NI01 has not yet bound/consumed the current Analyst authority into a final execution package.",
+    "No scientific blocker is currently known; remaining NI01 gates are operational/admission integrity gates before STARTED.",
     "Any execution-package head change requires ordinary CI and dedicated NI01 pre-START green on the same final SHA.",
-    "Any semantic/scientific change to NI01 invalidates the existing conditional authority and requires fresh Analyst review.",
-    "PD01 terminal audit remains outstanding but does not block independently motivated NI01."
+    "Any semantic/scientific NI01 change invalidates conditional authority and requires fresh Analyst review.",
+    "PD01 terminal audit remains outstanding but is nonblocking for independently motivated NI01."
   ],
   "go_stop": {
-    "GO": "Conditional exactly-one NI01 execution after authority binding, identity/namespace freshness, frozen exact bindings, same-final-SHA green gates and target-blind observation projection verification.",
-    "identity_freshness": "ni01-no-ignition-selective-prediction-official-v1 is currently unreserved/unconsumed and must remain fresh/unSTARTED until STARTED/no-clobber exactly once.",
-    "binding": "Current reviewed scientific head is 2664951b65dd18883d3d80862e80b86ac66cf24f with worlds blob 2478fba19d7276ebe30ec8f5811bf6d7b7414779, runner 90543b184c64981802560601b85edcdee4583a35, ablations caa6a1c63fedc2222aa2e6ce708b66668943e8dd, phase1 config 0134abeaf3d0551edeeb890502ffebe2c27867b0 and scorer d3b3565a08277e6a94ef9be1e5bd13e86265f8f2; all final execution bindings must remain exact.",
-    "started_no_clobber": "STARTED/no-clobber before any official TEST read.",
-    "raw_before_score": "target-free DEV threshold -> target-blind TEST raw -> immutable preserve -> independent refetch/digest/cardinality -> TEST targets -> unique/total/fail-closed join -> deterministic scoring/bootstrap -> terminal evidence.",
-    "ci_review": "35308269458 and 35308269286 are green on current exact head; re-run both on any changed final execution SHA.",
-    "scientific_falsifiers": {
-      "coverage_guard": "absolute TEST coverage difference <= 0.03 in every world",
-      "PASS_NATIVE_NO_IGNITION_ADDS_SELECTIVE_VALUE": "coverage guard AND effect_ci95_lower >= 0.02 AND every world point effect > 0",
-      "FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION": "coverage guard AND effect_ci95_upper <= 0.005",
-      "INCONCLUSIVE": "all other valid outcomes, including coverage guard failure"
-    },
-    "STOP": "Stop before STARTED on semantic change, identity collision/non-freshness, or inability to prove same-final-SHA integrity without changing science. After STARTED, INVALID_EVIDENCE or POST_START_FAILURE consume identity and STOP with no salvage/retry."
+    "GO": "Conditional exactly-one NI01 execution only after fresh identity/collision checks, frozen exact bindings, final-SHA green gates, STARTED/no-clobber before TEST read, target-free DEV thresholding, target-blind TEST raw, raw-before-target immutable preservation, independent refetch/digest/cardinality, fail-closed join and deterministic registered scoring.",
+    "identity_freshness": "ni01-no-ignition-selective-prediction-official-v1 remains unreserved/unconsumed and must remain fresh/unSTARTED until STARTED exactly once.",
+    "scientific_falsifiers": "coverage difference <=0.03 in every world; PASS if effect CI lower >=0.02 and all world point effects >0; FAIL if effect CI upper <=0.005; otherwise INCONCLUSIVE.",
+    "STOP": "Stop before STARTED for semantic change, binding ambiguity, nonfresh identity, namespace collision, or inability to make final-SHA gates green without semantic change. After STARTED, invalid evidence or post-start failure consumes identity and stops without salvage/retry."
   },
   "governance_advisory": {
-    "open_issue_139": "Repository Steward updated the evidence-tag inventory to three; substantive authoritative-tag update/delete protection gap remains open.",
-    "rulesets": 0,
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "main_protected": false,
+    "rulesets": 0,
     "legacy_freeze_branches": 13,
     "authoritative_evidence_tags": 3,
-    "formal_tags": 0,
-    "sealed_tags": 0,
+    "open_non_pr_issue": 139,
     "open_prs": [148, 149],
-    "main_promotion_candidates": [
-      "anonymous event and prediction-distribution primitives after neutral extraction/fresh CI",
-      "architecture-neutral comparator protocol without G3-G8 taxonomy",
-      "snapshot/restore deterministic round-trip invariants",
-      "descriptive resource accounting decoupled from CX01 kinds",
-      "generic privilege schema/validation",
-      "external-only transcript hashing/validation",
-      "generic no-self-training/context-leak/distribution invariant tests",
-      "generic exact runtime/source/binding and STARTED/no-clobber/collision/preserve/refetch/join helpers"
-    ],
-    "research_only_not_for_direct_promotion": [
-      "G4 explicit Assembly comparator",
-      "G5 typed scientific comparator",
-      "G7 HTM-inspired implementation",
-      "G8 spiking/replay implementation",
-      "G3-G8 taxonomy/privilege mapping",
-      "CX01 scientific world/schedule/threshold/result semantics and frozen fixtures"
-    ]
+    "issue_139": "Inventory current at three evidence tags; server-side authoritative tag update/delete protection still absent.",
+    "freeze_tag_migration": "defer until protected migration semantics exist",
+    "main_promotion_candidates": "Neutral extraction only: anonymous event/distribution primitives, architecture-neutral comparator protocol, snapshot/restore invariants, descriptive resource accounting, generic privilege validation, external-only transcript hashing/validation, generic leak/self-training/distribution tests; fresh current-main CI required; keep scientific comparator implementations/taxonomy/worlds/thresholds research-local."
   },
-  "allocation_change": {
-    "changed": false,
-    "from": "NI01_NATIVE_NO_IGNITION_SELECTIVE_PREDICTION_ONE_WAY / conditional exactly-one authority",
-    "to": "NI01_NATIVE_NO_IGNITION_SELECTIVE_PREDICTION_ONE_WAY / conditional exactly-one authority",
-    "cause": "No material scientific/readiness change; fresh SUB no-op and remote refs confirm the prior allocation.",
-    "caused_by_literature_update": false,
-    "caused_by_audit_update": false,
-    "caused_by_sub_exploratory_output": false
-  },
-  "persistence": {
-    "branch": "ops/evidence-analyst-handoff",
-    "latest": "analysis/orchestrator/latest.md",
-    "state": "analysis/orchestrator/state.json",
-    "history": "analysis/orchestrator/history/2026-09-18/1501.md",
-    "prior_tip": "e22b401013b01517890d48e33debdd79bb522e65",
-    "force_push_used": false,
-    "scientific_refs_modified": false
-  }
+  "allocation_changed": false,
+  "persistence_scope": [
+    "analysis/orchestrator/latest.md",
+    "analysis/orchestrator/state.json",
+    "analysis/orchestrator/history/2026-09-18/1558.md"
+  ]
 }
