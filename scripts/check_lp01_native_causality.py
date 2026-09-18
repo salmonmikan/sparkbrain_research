@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import ast
+import textwrap
 from pathlib import Path
 
 
@@ -13,15 +14,25 @@ def _function_source(path: Path, class_name: str, function_name: str) -> str:
     for node in tree.body:
         if isinstance(node, ast.ClassDef) and node.name == class_name:
             for child in node.body:
-                if isinstance(child, (ast.FunctionDef, ast.AsyncFunctionDef)) and child.name == function_name:
+                if (
+                    isinstance(child, (ast.FunctionDef, ast.AsyncFunctionDef))
+                    and child.name == function_name
+                ):
                     return ast.get_source_segment(text, child) or ""
     raise AssertionError(f"missing {class_name}.{function_name} in {path}")
 
 
+def _referenced_identifiers(source: str) -> set[str]:
+    tree = ast.parse(textwrap.dedent(source))
+    names = {node.id.lower() for node in ast.walk(tree) if isinstance(node, ast.Name)}
+    attrs = {node.attr.lower() for node in ast.walk(tree) if isinstance(node, ast.Attribute)}
+    return names | attrs
+
+
 def _assert_no_lineage_dependency(path: Path, class_name: str, function_name: str) -> None:
     source = _function_source(path, class_name, function_name)
-    lowered = source.lower()
-    found = sorted(token for token in FORBIDDEN_CAUSAL_TOKENS if token in lowered)
+    identifiers = _referenced_identifiers(source)
+    found = sorted(FORBIDDEN_CAUSAL_TOKENS & identifiers)
     if found:
         raise AssertionError(
             f"{class_name}.{function_name} unexpectedly depends on lineage metadata: {found}"
