@@ -1,156 +1,216 @@
 {
-  "timestamp": "2026-09-19T06:57:28+09:00",
-  "repository": "salmonmikan/sparkbrain_research",
+  "timestamp": "2026-09-19T08:02:33+09:00",
+  "change_summary": {
+    "new_formal_repository_evidence": false,
+    "allocation_changed": false,
+    "new_literature_finding": false,
+    "new_independent_audit_finding": false,
+    "new_repository_steward_advisory": true,
+    "repository_steward_material_state_change": false,
+    "decision": "HOLD_PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE"
+  },
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "main_protected": false,
-    "research_heads": {
-      "H9_C07": "9480da3d77dfee4766b28757f1a164f5cd4dac26",
-      "C19_R2": "5bfa3962c777fa5bc915bb21e20801ab8294778a",
-      "H5": "2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
-      "LP01": "f6d59a55730c5f99cd7f30470847fc3f175bdf64",
-      "NI01": "dbfe7469dbbbc1adbb00789ab382de892a1b3563",
-      "PD01": "b9d38daa5faca348ad2db3898ba71e2abc99f631"
-    },
-    "authoritative_evidence_tags": [
+    "control_brain_mailbox": "10eb4206fb0c998fcdbc40c0e16f38829ea5d41e",
+    "orchestrator_mailbox": "fc29e4c2b74dbf2ee74c260b773ce88cd8503ab9",
+    "external_research_audit_mailbox": "b5ac57be98e2a470f20fb5ec65514c9d9d8d6e17",
+    "repository_steward_mailbox": "af98bf1af700df7fe6502335df5c3971143d2a15",
+    "evidence_analyst_prior_tip_reconciled_before_write": "dc29e9810e5f44d602e4908554028e74b69f8d55",
+    "research_h5": "2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
+    "research_lp01": "f6d59a55730c5f99cd7f30470847fc3f175bdf64",
+    "research_ni01": "dbfe7469dbbbc1adbb00789ab382de892a1b3563",
+    "research_pd01": "b9d38daa5faca348ad2db3898ba71e2abc99f631",
+    "research_h9_c07": "9480da3d77dfee4766b28757f1a164f5cd4dac26",
+    "research_c19_r2": "5bfa3962c777fa5bc915bb21e20801ab8294778a",
+    "evidence_tags": [
       "evidence/c19-official-v4-c19-external-v2-official-v4",
       "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
-      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1",
+      "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1",
       "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1",
-      "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1"
+      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1"
     ],
-    "authoritative_evidence_tag_count": 5,
-    "formal_tag_count": 0,
-    "sealed_tag_count": 0,
-    "legacy_freeze_branch_count": 13,
-    "control_preserve_status": "existing_consumed_and_historical_refs_only_no_fresh_post_H5_formal_identity_or_official_preserve",
-    "repository_ruleset_count": 0,
-    "issue_139": "open_inventory_current_five_tags_protection_gap",
-    "open_prs": [148, 149],
-    "workflow_state": "latest_observed_movement_is_control_plane_literature_handoff_CI_no_research_dispatch"
+    "formal_tags_count": 0,
+    "sealed_tags_count": 0,
+    "freeze_tags_count": 0,
+    "legacy_freeze_branches_count": 13,
+    "main_protected": false,
+    "repository_rulesets_count": 0
   },
   "control_brain_commit": "10eb4206fb0c998fcdbc40c0e16f38829ea5d41e",
-  "main_report_commit_consumed": "70f8507f8ff8d3bc4cd355b8eb151b67f1504fc9",
-  "sub_report_commit_consumed": "b32ac63e6ee4d1fa8bcaf8f13b3c91bc9e42d901",
+  "main_report_commit_consumed": "928ef3eef7cf0cfd452e95e50a808182dad8b1c5",
+  "sub_report_commit_consumed": "909a36a52e6eda15f781921243dab5481263ccb0",
   "sub_operating_mode_observed": "no_op",
   "sub_exploratory_review": null,
-  "literature_handoff_commit_consumed": "b5ac57be98e2a470f20fb5ec65514c9d9d8d6e17",
-  "audit_handoff_commit_consumed": "04bc885ebd0d6c744918e96d72dc2a9503ec6bfc",
+  "literature_handoff_commit_consumed": "5a0ad2e15bad735928db5df4b0bf54446bdf8644",
+  "audit_handoff_commit_consumed": "04bc4ebbddd737f9159763216c706eb388e58cce",
   "repository_steward": {
-    "commit_consumed": "d44780cb4ff869cac264eee7906858d1bdde57c7",
-    "state_consumed": "reports/repository_steward/state.json@2026-09-19T01:50:00+09:00",
-    "role": "governance_advisory_only"
+    "commit_consumed": "af98bf1af700df7fe6502335df5c3971143d2a15",
+    "state_timestamp": "2026-09-19T07:52:00+09:00",
+    "authority": "governance_advisory_only",
+    "material_facts_independently_verified": true,
+    "material_change_since_prior_analyst_handoff": false
   },
   "external_input": {
     "literature": {
-      "changed_this_run": true,
-      "latest": "2026-09-19_0633_LITERATURE_REDUCTION_SCOUT",
-      "genuinely_new_information": true,
-      "affected_lines": [
-        "H7_LINEAGE_PROVENANCE_RESIDUAL",
-        "LP01_PREFORMAL_CLOSEOUT",
-        "PROGRAMME_NOVELTY",
-        "FUTURE_OBJECT_ADMISSION",
-        "CAUSAL_CREDIT_DISCRIMINATORS"
+      "changed_this_run": false,
+      "latest_durable_stream": "2026-09-19 06:33 JST lineage/provenance reduction scout",
+      "affected_lines": ["H7", "future_lineage_causal_credit"],
+      "doctrine": [
+        "explicit provenance bookkeeping",
+        "explicit counterfactual actual-cause/responsibility",
+        "matched ordinary recurrent/plastic reductions",
+        "Spark-specific residual only if anything survives"
       ],
-      "findings": [
-        "explicit ancestry and source-token propagation are reducible to ordinary provenance bookkeeping baselines",
-        "historical ancestry or provenance is not actual causal responsibility; preemption and overdetermination require counterfactual/interventional distinction",
-        "explicit event-DAG actual-cause and responsibility computation is an ordinary prospective comparator",
-        "recent counterfactual credit-assignment work reinforces intervention-validated contribution as the relevant causal-credit bar"
-      ],
-      "prospective_reduction_ladder": [
-        "explicit_provenance_bookkeeping",
-        "explicit_counterfactual_actual_cause_and_responsibility",
-        "matched_ordinary_recurrent_and_plastic_reductions",
-        "only_then_Spark_specific_lineage_credit_residual"
-      ],
-      "prospective_baselines_or_discriminators": [
-        "provenance-only opaque-token or derivation-support propagation baseline",
-        "explicit event-DAG actual-cause and responsibility baseline",
-        "preemption and overdetermination cases with matched or near-matched provenance",
+      "prospective_changes_required_for_future_lineage_object": [
+        "provenance-only baseline",
+        "explicit actual-cause/responsibility baseline",
+        "preemption and overdetermination cases",
         "ancestry-preserving but responsibility-changing interventions",
-        "counterfactual-credit ground-truth suite separating ancestry temporal proximity and difference-making"
+        "ordinary recurrent/plastic matched-privilege baselines",
+        "positive intervention-validated candidate-signal gate",
+        "matched information/readout/resource privilege",
+        "fixed numeric falsifiers before outcome observation"
       ],
-      "impact": "STRENGTHENS_LP01_CLOSEOUT_AND_RAISES_H7_FUTURE_ADMISSION_BAR_WITHOUT_REOPENING_LP01_OR_CREATING_A_NEW_OBJECT",
       "allocation_change": false,
-      "admission_doctrine_change": true
+      "frozen_results_modified": false
     },
     "audit": {
       "changed_this_run": false,
       "latest_target": "PD01",
-      "latest_timestamp": "2026-09-18T22:32:40+09:00",
-      "integrity": "ROBUST_SO_FAR",
-      "audit_classification": "CONFOUNDED",
-      "programme_synthesis": "NO_REGISTERED_LONG_LAG_SIGNAL_PLUS_COMPARATOR_NOT_WORSE",
-      "future_doctrine": [
-        "separate_absent_candidate_signal_from_comparator_reduction",
-        "require_positive_candidate_signal_gate_before_mechanistic_REDUCED_BY_language",
-        "match_observation_readout_and_resource_privilege"
-      ],
-      "next_high_value_audit_target": "H5",
-      "allocation_change": false
+      "integrity_status": "ROBUST_SO_FAR",
+      "programme_interpretation": "NO_REGISTERED_LONG_LAG_SIGNAL + COMPARATOR_NOT_WORSE",
+      "mechanistic_interpretation": "CONFOUNDED",
+      "next_high_value_target": "H5 terminal chain, then NI01",
+      "allocation_change": false,
+      "rerun_relabel_or_evidence_mutation_authorized": false
     }
   },
-  "new_repository_evidence": "NONE_NEW",
+  "active_main_claims_observed": {
+    "mode": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
+    "phase": "NO_ACTIVE_FORMAL_FRONTIER_FRESH_OBJECT_ADMISSION_GATE_ONLY",
+    "fresh_object_admitted": false,
+    "formal_identity_created": false,
+    "workflow_dispatched": false,
+    "evidence_created": false,
+    "latest_report_timestamp": "2026-09-19T07:15:00+09:00"
+  },
+  "active_sub_claims_observed": {
+    "mode": "no_op",
+    "sub_lane": null,
+    "sub_fallback": null,
+    "incubator_candidate": null,
+    "scientific_mutation": false,
+    "latest_report_timestamp": "2026-09-19T07:35:00+09:00"
+  },
   "main_lane": {
     "name": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
     "owner": "MAIN",
+    "status": "HOLD",
     "formal_execution_authorized": false,
-    "allowed": [
-      "programme_synthesis",
-      "fresh_independent_native_object_admission",
-      "bounded_non_evidentiary_prospective_specification_and_readiness_for_at_most_one_object"
-    ],
-    "must_stop_at": "NEXT_OBJECT_READY_FOR_ANALYST_REVIEW",
-    "critical_path_ownership": "MAIN_OWNS_ALL_PRIMARY_CANDIDATE_IMPLEMENTATION_BUG_COMPARATOR_VERIFIER_HARNESS_RUNNER_BINDING_CI_PREFLIGHT_REVIEW_PRESERVATION_SCORING_EXECUTION_FIXES",
-    "lineage_specific_future_admission_requirements": [
-      "native online causal-responsibility mechanism must independently exist",
-      "positive intervention-validated candidate signal",
-      "matched provenance with responsibility-changing cases",
-      "provenance-only baseline",
-      "explicit actual-cause and responsibility baseline",
-      "preemption and overdetermination discriminator suite",
-      "matched information readout and resource privilege",
-      "ordinary recurrent and plastic reductions addressed"
-    ]
+    "scope": "Fresh-object admission only. If a genuinely fresh object appears, MAIN owns all candidate-specific implementation, comparator, bugs, verifier/harness/runner, bindings, CI/preflight, review, preservation/scoring/execution blockers and exact-head integration.",
+    "stop_point": "NEXT_OBJECT_READY_FOR_ANALYST_REVIEW"
   },
   "sub_lane": null,
   "sub_fallback": null,
-  "no_sub_lane_reason": "No prospectively complete independent secondary formal object survives the search order. H9/C07 remains underspecified; H3/H6 remain reduction/accounting-sensitive; H7/LP01 lacks a native non-reducible causal mechanism and now faces stronger provenance/actual-cause baselines; terminal lines are consumed; latest SUB found no useful non-duplicative incubator question. A formal lane would be fake parallelism.",
-  "blocked_until": "A fresh independent object has a native causal mechanism, matched state/information/readout/resource privilege, ordinary explicit/predictive/recurrent/plastic reductions addressed, a prospectively fixed positive candidate-signal gate if mechanistic reduction language is intended, fixed numeric PASS/FAIL/INCONCLUSIVE, exact source/protocol/package/input/runtime/checkpoint/candidate/comparator/intervention/scorer/preserver/workflow binding, same-final-SHA ordinary CI plus dedicated pre-START, and fresh Evidence Analyst authority. A lineage/causal-credit object additionally requires provenance-only and explicit actual-cause/responsibility baselines plus preemption/overdetermination and responsibility-changing interventions.",
+  "no_sub_lane_reason": "No independently high-value prospectively complete secondary object exists. Remaining obvious lines are under-specified, reducible, accounting-sensitive, reserved for a possible future MAIN object, or terminal/consumed; a fake formal lane would lower scientific quality.",
+  "blocked_until": "A new independently motivated native computational/causal mechanism emerges and can be specified prospectively with matched task semantics and information/readout/resource privilege, credible ordinary comparators, positive candidate-signal admission where mechanistic reduction is claimed, fixed numeric falsifiers, exact source/package/runtime bindings, and no reliance on terminal-result rescue.",
   "do_not_touch": [
-    "consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities",
-    "immutable scientific evidence",
-    "LP01 and post-LP01 pre-formal closeouts as evidence",
+    "consumed identities",
+    "STARTED/control refs for consumed identities",
+    "immutable evidence refs/tags",
+    "post-outcome retuning or terminal successor rescue",
+    "LP01 as formal evidence",
     "legacy freeze refs",
-    "authoritative evidence tags",
     "scheduler definitions",
     "research PR merges",
-    "historical SUB exploratory results as evidence or outcome-responsive tuning",
-    "external Literature findings as retroactive changes to frozen or consumed experiments"
+    "scientific workflow dispatch",
+    "frozen protocol mutation"
   ],
-  "active_main_claims_observed": {
-    "timestamp": "2026-09-19T06:14:40+09:00",
-    "mode": "PRIMARY",
-    "status": "COMPLETED_ARCHITECTURE_TESTBED_HOLD",
-    "formal_frontier": null,
-    "formal_identity_created": false,
-    "started_created": false,
-    "workflow_dispatched": false,
-    "evidence_created": false,
-    "stop_reason": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_ANALYST_RECONFIRMED"
+  "outcome_contingencies": {
+    "root": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
+    "NO_FRESH_OBJECT": {
+      "action": "HOLD",
+      "formal_identity": false,
+      "workflow": false,
+      "evidence": false
+    },
+    "FRESH_OBJECT_CANDIDATE": {
+      "owner": "MAIN",
+      "allowed": "bounded prospective NON_EVIDENTIARY specification/readiness only",
+      "CANDIDATE_UNDERSPECIFIED": "MAIN may continue bounded readiness/specification only when choices remain outcome-independent",
+      "PRE_START_SEMANTIC_GAP": "STOP",
+      "REDUCIBLE_OR_ASYMMETRIC_OR_OUTCOME_CONDITIONED": "STOP",
+      "NEXT_OBJECT_READY_FOR_ANALYST_REVIEW": "STOP for fresh Analyst authority"
+    },
+    "FUTURE_LINEAGE_CAUSAL_RESPONSIBILITY_OBJECT": {
+      "required_before_review": [
+        "provenance-only comparator",
+        "explicit actual-cause/responsibility comparator",
+        "preemption and overdetermination",
+        "ancestry-preserving responsibility-changing interventions",
+        "ordinary recurrent/plastic matched-privilege comparators",
+        "matched information/readout/resource privileges",
+        "positive intervention-validated candidate signal",
+        "fixed numeric falsifiers"
+      ]
+    },
+    "PASS": "UNARMED",
+    "FAIL": "UNARMED",
+    "INCONCLUSIVE": "UNARMED",
+    "INVALID_EVIDENCE": "UNARMED",
+    "POST_START_FAILURE": "UNARMED",
+    "same_run_formal_execution": false
   },
-  "active_sub_claims_observed": {
-    "timestamp": "2026-09-19T06:35:00+09:00",
-    "mode": "no_op",
-    "status": "idle_no_formal_sub_lane",
-    "formal_lane": null,
-    "fallback": null,
-    "incubator_candidate": null,
-    "main_work_touched": false,
-    "new_formal_result": false,
-    "new_exploratory_result": false
+  "top_recommendation": "Maintain architecture/testbed HOLD and strict fresh-object admission. Do not create a formal object merely to maintain experimental throughput.",
+  "top_3": [
+    {
+      "rank": 1,
+      "owner": "MAIN",
+      "action": "Hold architecture/testbed mode and maintain the strict fresh-object admission gate, including the provenance -> actual-cause/responsibility -> ordinary recurrent/plastic reduction ladder for future causal-credit objects.",
+      "information_value": "VERY_HIGH",
+      "distance": "EVENT_DEPENDENT"
+    },
+    {
+      "rank": 2,
+      "owner": "INDEPENDENT_AUDIT",
+      "action": "Audit the H5 terminal one-way chain next, then NI01, without reopening consumed identities.",
+      "information_value": "HIGH",
+      "distance": "NEAR"
+    },
+    {
+      "rank": 3,
+      "owner": "SUB",
+      "action": "Remain no-op unless a genuinely independent, bounded, nonduplicative synthetic/development question naturally appears; any exploration remains NON_EVIDENTIARY.",
+      "information_value": "LOW_TO_MEDIUM",
+      "distance": "OPTIONAL"
+    }
+  ],
+  "go_stop": {
+    "current_go": "Admission/specification only; no formal execution GO.",
+    "future_formal_go_requires": [
+      "fresh unconsumed collision-free identity",
+      "exact source/protocol/package/input/runtime/checkpoint/candidate/comparator/intervention/scorer/preserver/workflow binding",
+      "matched information/readout/resource privilege",
+      "positive candidate-signal gate before mechanistic REDUCED_BY interpretation",
+      "numeric PASS/FAIL/INCONCLUSIVE and scientific falsifiers fixed prospectively",
+      "same-final-SHA CI + pre-START + fresh Analyst review",
+      "exactly-once STARTED/no-clobber before official TEST",
+      "target/scoring-blind raw acquisition",
+      "immutable raw preservation before scoring",
+      "independent refetch/digest/cardinality",
+      "fail-closed joins/invariants",
+      "preregistered scoring after preserved-raw integrity"
+    ],
+    "stop_if": [
+      "terminal-result rescue is the motivation",
+      "ordinary explicit/predictive/recurrent/plastic matched-privilege comparator reproduces the effect",
+      "lineage claim is reproduced by provenance-only or explicit actual-cause/responsibility bookkeeping",
+      "asymmetric privilege is required",
+      "no positive candidate signal exists where mechanistic reduction is claimed",
+      "outcome knowledge is required to choose comparator/resource/metric/threshold",
+      "no native causal path exists",
+      "no high-information falsifiable object exists"
+    ]
   },
   "active_line_review": {
     "A01": "MIXED_PROGRAMME_CLOSED",
@@ -159,117 +219,58 @@
     "CX_CX01": "TERMINAL_FORMAL_NEGATIVE",
     "H8_C08": "TERMINAL_NEGATIVE",
     "H9_C07": "PRE_START_UNDERSPECIFIED",
-    "C19_v4": "NARROW_IMMUTABLE_PASS_WEAKENED_NOT_INVALID",
+    "C19_v4": "NARROW_IMMUTABLE_PASS_WEAKENED_NO_RERUN",
     "C19_R1": "SCIENTIFICALLY_UNRESOLVED_OPERATIONALLY_TERMINATED",
     "C19_R2": "TERMINAL_REDUCED_BY_FSA_ROBUST_SO_FAR_AUDITED",
-    "PD01": "CANONICAL_TERMINAL_FAIL_MECHANISTIC_INTERPRETATION_CONFOUNDED",
-    "NI01_H4": "CANONICAL_FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION_PROGRAMME_NO_REGISTERED_INCREMENTAL_NATIVE_ADVANTAGE",
-    "H5": "TERMINAL_FAIL_NO_USEFUL_WORK_REDUCTION_AUDIT_PENDING",
-    "H3": "UNRESOLVED_SCALAR_REDUCTION_PRESSURE_NOT_ADMITTED",
-    "H6": "UNRESOLVED_ACCOUNTING_SENSITIVE_NOT_ADMITTED",
-    "H7_LINEAGE_CAUSAL_CREDIT": "BLOCKED_NO_NATIVE_NONREDUCIBLE_CAUSAL_PATH_STRONGER_PROVENANCE_AND_ACTUAL_CAUSALITY_REDUCTION_PRESSURE",
-    "LP01": "NO_HIGH_VALUE_OBJECT_PREFORMAL_CLOSEOUT_COMPLETE_STRENGTHENED_BY_NEW_LITERATURE",
+    "PD01": "CANONICAL_TERMINAL_FAIL_PROGRAMME_MECHANISTIC_INTERPRETATION_CONFOUNDED",
+    "NI01_H4": "CANONICAL_FAIL_NO_REGISTERED_INCREMENTAL_NATIVE_ADVANTAGE_OVER_MATCHED_CONFIDENCE_ABSTENTION",
+    "H5": "TERMINAL_FAIL_NO_USEFUL_WORK_REDUCTION",
+    "H3": "UNRESOLVED_SCALAR_REDUCTION_PRESSURE",
+    "H6": "UNRESOLVED_ACCOUNTING_SENSITIVE",
+    "H7_LINEAGE": "UNRESOLVED_STRONG_PROVENANCE_ACTUAL_CAUSE_REDUCTION_PRESSURE_NO_NATIVE_IRREDUCIBLE_MECHANISM",
+    "LP01": "NO_HIGH_VALUE_OBJECT_PREFORMAL_CLOSEOUT_COMPLETE",
     "PROGRAMME": "NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE"
-  },
-  "outcome_contingencies": {
-    "root": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
-    "NO_NEW_OBJECT": "HOLD_FORMAL_SCIENCE_STOP",
-    "FRESH_INDEPENDENT_NATIVE_MECHANISM_APPEARS": "MAIN_MAY_BOUNDED_PROSPECTIVE_SPECIFICATION_READINESS_FOR_AT_MOST_ONE_OBJECT",
-    "FRESH_LINEAGE_CAUSAL_RESPONSIBILITY_MECHANISM_APPEARS": "MAIN_MAY_SPECIFY_ONLY_WITH_NATIVE_DIFFERENCE_MAKING_PATH_PROVENANCE_BASELINE_ACTUAL_CAUSE_RESPONSIBILITY_BASELINE_PREEMPTION_OVERDETERMINATION_RESPONSIBILITY_CHANGING_INTERVENTIONS_MATCHED_PRIVILEGE_POSITIVE_SIGNAL_AND_NUMERIC_FALSIFIERS",
-    "CANDIDATE_UNDERSPECIFIED": "NON_EVIDENTIARY_SPECIFICATION_ONLY_NO_IDENTITY_NO_STARTED_NO_OFFICIAL_TEST",
-    "NEXT_OBJECT_READY_FOR_ANALYST_REVIEW": "STOP_FRESH_ANALYST_AUTHORITY_REQUIRED",
-    "PRE_START_BLOCKER_MECHANICAL": "FOR_FUTURE_ADMITTED_OBJECT_MAIN_OWNS_ONLY_SCIENCE_INVARIANT_REPAIR_AND_EXACT_HEAD_GATE_RERUNS",
-    "PRE_START_SEMANTIC_GAP": "STOP_NO_COMPARATOR_WEAKENING_CLAIM_SWITCH_ASYMMETRIC_PRIVILEGE_OR_RESCUE_BENCHMARK_ENGINEERING",
-    "PASS": "UNARMED",
-    "FAIL": "UNARMED",
-    "INCONCLUSIVE": "UNARMED",
-    "INVALID_EVIDENCE": "UNARMED",
-    "POST_START_FAILURE": "UNARMED",
-    "same_run_formal_execution": false
-  },
-  "top_recommendation": "Maintain architecture/testbed hold while strengthening fresh-object admission with the new provenance-to-actual-cause/responsibility reduction ladder. Prospectively specify at most one genuinely native object only if it independently appears; do not reopen LP01 or manufacture a lineage successor from external literature.",
-  "top_3": [
-    {
-      "rank": 1,
-      "owner": "MAIN",
-      "action": "Maintain architecture/testbed hold, incorporate provenance then actual-cause/responsibility baselines into future admission, and prospectively specify at most one genuinely native object only if one independently appears.",
-      "information_value": "VERY_HIGH",
-      "distance": "EVENT_DEPENDENT"
-    },
-    {
-      "rank": 2,
-      "owner": "INDEPENDENT_AUDIT",
-      "action": "Audit terminal H5 next; NI01 claim and integrity boundary may follow without reopening it.",
-      "information_value": "HIGH",
-      "distance": "NEAR"
-    },
-    {
-      "rank": 3,
-      "owner": "SUB",
-      "action": "Remain no-op unless a genuinely independent bounded NON_EVIDENTIARY question appears outside MAIN admission and terminal-line rescue.",
-      "information_value": "LOW_TO_MEDIUM",
-      "distance": "OPTIONAL"
-    }
-  ],
-  "number_one_go_stop": {
-    "GO": "Admission/specification only. Future formal GO requires a fresh/unconsumed collision-free identity; exact source/protocol/package/input/runtime/checkpoint/candidate/comparator/intervention/scorer/preserver/workflow binding; a prospectively fixed positive candidate-signal gate where mechanistic REDUCED_BY interpretation is intended; fixed numeric PASS/FAIL/INCONCLUSIVE and scientific falsifiers; same-final-SHA ordinary CI plus dedicated pre-START plus fresh Analyst review; exactly-once STARTED/no-clobber before official TEST; target/scoring-blind raw; immutable preserve; independent refetch/digest/cardinality; fail-closed joins/invariants; preregistered scoring; terminal evidence. For lineage/causal-credit, also require matched-provenance responsibility-changing intervention cases and fixed provenance-only plus explicit actual-cause/responsibility baselines.",
-    "STOP": "Stop if the candidate rescues a consumed line; is losslessly reducible to ordinary explicit/provenance/predictive/recurrent/plastic or explicit actual-cause state under matched privilege; requires asymmetric information/readout/resources; requires outcome inspection to choose comparator/resources/metric/threshold; lacks a native causal path or positive candidate signal; or no high-information falsifiable object exists.",
-    "lineage_scientific_falsifiers": [
-      "no positive intervention-validated candidate signal",
-      "candidate cannot distinguish responsibility changes when ancestry/provenance is matched",
-      "provenance-only baseline matches the candidate under the prospectively fixed margin",
-      "explicit event-DAG actual-cause/responsibility baseline matches the candidate under the prospectively fixed margin",
-      "ordinary recurrent/plastic matched-privilege baseline explains the effect"
-    ]
   },
   "consumed_identities": [
     "c19-external-v2-official-v4",
-    "c19-r1-revision-authority-official-v1",
-    "c19-r1-revision-authority-official-v2",
+    "C19-R1 revision-authority-v1",
+    "C19-R1 revision-authority-v2",
     "c19-r2-fsa-state-tracker-official-v1",
     "pd01-long-history-fading-memory-official-v1",
     "ni01-no-ignition-selective-prediction-official-v1",
     "h5-event-routing-work-reduction-official-v1"
   ],
   "blockers": [
-    "no admitted high-information native reduction-resistant formal object",
-    "H9/C07 remains underspecified",
-    "H3 scalar-reduction pressure",
-    "H6 accounting sensitivity",
-    "H7/LP01 lacks a native non-reducible causal path and now faces explicit provenance plus actual-causality baselines",
-    "server-side authoritative-tag protection remains absent but is governance-only"
+    "No high-value native reduction-resistant prospective object currently exists.",
+    "Future lineage/causal-credit work is blocked on a native actual-responsibility mechanism that survives provenance, explicit actual-cause/responsibility, and ordinary recurrent/plastic reductions under matched privilege."
   ],
   "governance_advisory": {
-    "repository_steward_consumed": true,
-    "issue_139_inventory_drift": "resolved_five_tags_listed",
-    "authoritative_evidence_tag_count": 5,
-    "repository_ruleset_count": 0,
+    "issue_139_inventory_current": true,
+    "authoritative_evidence_tags_count": 5,
     "main_protected": false,
-    "legacy_freeze_branch_count": 13,
-    "tag_protection_gap": "open",
-    "open_pr_148": "open_steward_DEFER_PENDING_REVIEW_FIX_fresh_threads_2_P1_1_P2",
-    "open_pr_149": "open_steward_DEFER_PENDING_REVIEW_FIX_bootstrap_reportedly_mitigated_but_unresolved_P1_threads_include_live_definition_revalidation_race",
-    "main_promotion_candidates": [
-      "neutral event/distribution primitives",
-      "architecture-neutral comparator protocol shape",
-      "snapshot/restore invariants",
+    "repository_rulesets_count": 0,
+    "tag_update_delete_protection_gap": true,
+    "legacy_freeze_branches_count": 13,
+    "open_prs": {
+      "148": "DEFER_PENDING_REVIEW_FIX",
+      "149": "DEFER_PENDING_REVIEW_FIX"
+    },
+    "outcome_independent_main_promotion_candidates": [
+      "generic event/distribution primitives",
+      "architecture-neutral comparator shapes",
+      "snapshot/restore",
       "descriptive resource accounting",
       "generic privilege/leakage/transcript validation",
-      "generic one-way integrity helpers"
+      "one-way integrity helpers"
     ],
-    "research_local": [
-      "H5 scientific semantics",
-      "LP01 lineage semantics",
-      "NI01 scientific semantics",
-      "future causal-credit scientific discriminator semantics"
-    ]
+    "science_specific_semantics_remain_research_local": true
   },
-  "allocation_changed_due_to_external_or_exploratory_input": false,
-  "allocation_changed_this_run": false,
-  "admission_doctrine_changed_due_to_literature": true,
-  "persistence_scope": [
-    "analysis/orchestrator/latest.md",
-    "analysis/orchestrator/state.json",
-    "analysis/orchestrator/history/2026-09-19/0657.md"
-  ]
+  "orchestrator_handoff": "MAIN takes architecture/testbed HOLD plus future fresh-object admission and owns ALL critical-path fixes for any admitted candidate. Formal SUB takes nothing and there is no formal fallback. SUB may incubate only under strict NON_EVIDENTIARY boundaries when a genuinely independent nonduplicative bounded question exists. MAIN must not absorb future work formally reserved to SUB; SUB must not take MAIN blockers, admission work, candidate fixups, or rescue terminal lines. Neither touches consumed identities, immutable evidence, legacy freeze refs, scheduler definitions, research PR merges, or post-outcome rescue/retuning. Repartition only on fresh canonical evidence, a genuinely independent prospectively complete SUB object, or new Literature/Audit that materially changes information gain or reduction risk. SUB exploratory output alone cannot upgrade a claim. MAIN same-run continuation is limited to pre-formal specification/readiness and may not continue to STARTED or formal execution.",
+  "persistence": {
+    "designated_paths_only": true,
+    "prior_tip_reconciled_before_write": "dc29e9810e5f44d602e4908554028e74b69f8d55",
+    "latest_md_update_commit": "90501959c98c909ed06f1e73234677bef699e019",
+    "scientific_refs_mutated": false,
+    "scheduler_definitions_mutated": false
+  }
 }
