@@ -52,10 +52,10 @@
       "id": "6aa9b43ec5288191bc12c59cb5ae1e99",
       "title": "SparkBrain External Research & Audit",
       "enabled": true,
-      "updated_at": "2026-09-18T13:41:36.631433Z",
+      "updated_at": "2026-09-18T18:33:35.086939Z",
       "timing_mode": "exact_schedule",
       "timezone": "Asia/Tokyo",
-      "schedule": "BEGIN:VEVENT\nDTSTART;TZID=Asia/Tokyo:20260917T043000\nRRULE:FREQ=DAILY;BYHOUR=4,10,16,22;BYMINUTE=30;BYSECOND=0\nEND:VEVENT"
+      "schedule": "BEGIN:VEVENT\nDTSTART;TZID=Asia/Tokyo:20260919T003000\nRRULE:FREQ=DAILY;BYHOUR=0,3,6,9,10,12,15,18,21,22;BYMINUTE=30;BYSECOND=0\nEND:VEVENT"
     },
     {
       "id": "6aa9543b594c8191b44e2356a34719c1",
