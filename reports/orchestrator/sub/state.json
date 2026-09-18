@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-09-18T21:36:22+09:00",
+  "timestamp": "2026-09-18T23:32:31+09:00",
   "worker_role": "sub",
   "mode": "no_op",
-  "evidence_analyst_commit": "b9af0d1312d02d0be406a82d5bf889c4b578ecf6",
-  "evidence_analyst_mailbox_tip": "b9af0d1312d02d0be406a82d5bf889c4b578ecf6",
+  "evidence_analyst_commit": "ebf5c289b58d61a37b124863bcf53e52417a11bd",
+  "evidence_analyst_mailbox_tip": "ebf5c289b58d61a37b124863bcf53e52417a11bd",
   "consumed_lanes": [],
   "selected_independent_lane": null,
   "exploratory_target": null,
@@ -11,25 +11,20 @@
   "execution_allowed": false,
   "sub_active_claim": null,
   "main_work_explicitly_avoided": [
-    "Terminal H5 retry, retune, rescore, reinterpretation, rescue, or H5-v2 design",
-    "H5 evidence/preservation/scoring mutation",
-    "Outcome-dependent H5 successor design",
-    "Consumed or terminal C19-R1/R2/C19-v4/PD01/NI01 science",
-    "Any MAIN blocker, repair, binding, preservation, scoring, or successor work"
+    "LP01 active research branch mutation, semantic-gap closeout fixes, formal identity, STARTED/control, official TEST, preserve/scoring/evidence, or outcome-dependent successor design",
+    "Terminal H5 retry, retune, rescore, reinterpretation, rescue, or successor design",
+    "PD01 retry/reopening or mechanistic reinterpretation beyond the fresh Analyst/audit bounded synthesis",
+    "Consumed/terminal NI01, C19-R2, C19-v4 and C19-R1 v1/v2 science",
+    "Any MAIN blocker, repair, binding, preservation, scoring, evidence, or successor work"
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "control_brain": "23fc2f0c1668526be402fa44b3bc8c5b2258511b",
-    "orchestrator_parent_tip_observed_before_sub_persistence": "fa8c0dc16c8babbaae2ccf4e1bb1a231ee09d70f",
-    "h5_research_branch": "research/h5-event-routing-work-reduction-spec-20260918",
-    "h5_research_head": "2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
-    "h5_control_ref": "control/h5-event-routing-work-reduction-started-v1-20260918",
-    "h5_started_commit": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
-    "h5_preserve_ref": "preserve/h5-event-routing-work-reduction-raw-h5-event-routing-work-reduction-official-v1",
-    "h5_preserve_commit": "ce5797eb584344db7a512e585506fb6c59ea475b",
-    "h5_evidence_tag": "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1",
-    "h5_evidence_tag_object": "e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
-    "h5_evidence_commit": "61aff6d74b82b68a326f3d90505d70bcd4071fd5",
+    "control_brain": "9bf5c0249e88acdd5fc99b12555e785f9c2e2976",
+    "orchestrator_parent_tip_observed_before_sub_persistence": "05ad231ee039df7b53d455da362f120926e37688",
+    "lp01_research_branch": "research/lp01-actual-lineage-causal-credit-spec-20260918",
+    "lp01_research_head": "f6d59a55730c5f99cd7f30470847fc3f175bdf64",
+    "lp01_control_refs": [],
+    "lp01_preserve_refs": [],
     "formal_tags": [],
     "sealed_tags": [],
     "evidence_tags": [
@@ -39,7 +34,8 @@
       "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1",
       "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1"
     ],
-    "authoritative_evidence_tag_count": 5
+    "authoritative_evidence_tag_count": 5,
+    "legacy_freeze_branch_count": 13
   },
   "branches_prs_advanced": {
     "research_branches_by_sub": [],
@@ -50,21 +46,26 @@
   "workflows_experiments": {
     "sub_dispatched": [],
     "main_observed": {
-      "latest_main_checkpoint": "2026-09-18T21:14:36+09:00 POST_H5_TERMINAL_AWAIT_FRESH_ANALYST",
-      "h5_one_way_35338995888": "completed/success attempt 1@058e90227cd48e1c10c6ecbaed01efdec1217d0e"
+      "lp01_readiness_35352468809": "completed/success@f6d59a55730c5f99cd7f30470847fc3f175bdf64",
+      "lp01_ordinary_ci_35352468938": "completed/success@f6d59a55730c5f99cd7f30470847fc3f175bdf64",
+      "main_closeout_report": "2026-09-18T23:27:34+09:00 COMPLETED_PREFORMAL_NON_EVIDENTIARY"
     },
     "formal_experiment_by_sub": "NOT_STARTED"
   },
   "scientific_readiness_exploratory_results": {
     "sub_new_formal_result": false,
     "sub_new_exploratory_result": false,
-    "main_terminal_result_observed": true,
-    "main_terminal_result": {
-      "identity": "h5-event-routing-work-reduction-official-v1",
-      "identity_state": "TERMINAL_CONSUMED_NO_RETRY",
-      "classification": "FAIL_NO_USEFUL_WORK_REDUCTION",
-      "primary_mean_work_reduction": 0.023826074023772813,
-      "primary_ci95": [0.02379403660851484, 0.023859665012124307]
+    "main_preformal_result_observed": true,
+    "main_preformal_result": {
+      "line": "LP01",
+      "classification": "LP01_NO_HIGH_VALUE_OBJECT",
+      "evidentiary_status": "PRE_FORMAL_NON_EVIDENTIARY",
+      "formal_identity_state": "NOT_CREATED",
+      "started_state": "NOT_CREATED",
+      "official_test_access": false,
+      "formal_preserve_state": "NOT_CREATED",
+      "formal_scoring_state": "NOT_CREATED",
+      "formal_evidence_state": "NOT_CREATED"
     }
   },
   "evidentiary_status": "NONE_FOR_SUB",
@@ -82,20 +83,21 @@
   },
   "blockers": [
     "No reserved independent formal SUB lane or fallback exists.",
-    "No safe, useful, non-duplicative incubator target exists under the current allocation and recent SUB exploratory history.",
-    "No fresh post-H5 Evidence Analyst repartition exists.",
-    "H5 terminal evidence and any outcome-dependent successor are not valid SUB work."
+    "No safe, useful, non-duplicative incubator target exists under the current allocation and prior SUB exploratory history.",
+    "MAIN completed LP01 at the pre-formal boundary and no active supported new-computational-principle frontier exists pending a fresh Evidence Analyst allocation.",
+    "LP01/H5/PD01 outcome-dependent rescue or successor work is not valid SUB work."
   ],
   "collision_reconciliation": {
-    "report_branch_tip_before_persistence": "fa8c0dc16c8babbaae2ccf4e1bb1a231ee09d70f",
-    "latest_main_checkpoint_time": "2026-09-18T21:14:36+09:00",
-    "latest_main_checkpoint_status": "BLOCKED_FOR_POST_TERMINAL_ANALYST_ALLOCATION",
+    "report_branch_tip_before_persistence": "05ad231ee039df7b53d455da362f120926e37688",
+    "latest_main_checkpoint_time": "2026-09-18T23:27:34+09:00",
+    "latest_main_checkpoint_status": "COMPLETED_PREFORMAL_NON_EVIDENTIARY_STOP",
     "fresh_analyst_tip_rechecked": true,
     "analyst_tip_unchanged": true,
+    "lp01_head_unchanged": true,
     "sub_collision_detected": false
   },
-  "integrity_state": "CLEAN_NO_MAIN_MUTATION_NO_FORMAL_BOUNDARY_CROSSED_BY_SUB_NO_OFFICIAL_INPUT_ACCESS_NO_IDENTITY_CONSUMPTION_H5_TERMINAL_IMMUTABILITY_RESPECTED",
-  "completion_target": "Freshly reconcile current main and research refs, authoritative evidence/formal/sealed/control/preserve state, Evidence Analyst scope, MAIN/SUB streams and newest relevant history, Control Brain doctrine, workflows/PRs/issues and identities; select only a valid independent SUB lane or safe non-duplicative incubator target, otherwise persist a clean no-op.",
+  "integrity_state": "CLEAN_NO_MAIN_MUTATION_NO_FORMAL_BOUNDARY_CROSSED_BY_SUB_NO_OFFICIAL_INPUT_ACCESS_NO_IDENTITY_CONSUMPTION_LP01_PREFORMAL_BOUNDARY_RESPECTED",
+  "completion_target": "Freshly reconcile current main and research refs, authoritative evidence/formal/sealed/freeze/control/preserve state, Evidence Analyst scope, MAIN/SUB streams and newest relevant history, Control Brain doctrine, workflows/PRs/issues and identities; select only a valid independent SUB lane or safe non-duplicative incubator target, otherwise persist a clean no-op.",
   "completion_target_status": "ACHIEVED",
   "fallback_status": "ABSENT",
   "rejected_lane": null,
@@ -104,9 +106,9 @@
   "suggested_prospective_object": null,
   "promotion_recommendation": "NONE",
   "incubator_handoff": null,
-  "proposed_handoff_to_analyst": "Consume immutable H5 terminal evidence, keep interpretation bounded to the registered algorithmic-work claim, and issue a fresh post-terminal repartition only if a genuinely independent prospective secondary object exists. SUB proposes no outcome-dependent successor.",
+  "proposed_handoff_to_analyst": "MAIN completed LP01_NO_HIGH_VALUE_OBJECT as a PRE-FORMAL/NON_EVIDENTIARY closeout with identity/STARTED/official TEST/preserve/scoring/evidence absent. Keep that boundary intact and issue a future SUB lane only if a genuinely independent prospectively complete secondary object appears; do not manufacture an outcome-dependent rescue or successor.",
   "report_persistence": {
-    "history_path": "reports/orchestrator/history/2026-09-18/2136-sub.md",
+    "history_path": "reports/orchestrator/history/2026-09-18/2332-sub.md",
     "sub_latest_path": "reports/orchestrator/sub/latest.md",
     "sub_state_path": "reports/orchestrator/sub/state.json",
     "atomic_git_commit_requested": true,
