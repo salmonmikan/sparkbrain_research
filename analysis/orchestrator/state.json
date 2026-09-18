@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-19T03:00:00+09:00",
+  "timestamp": "2026-09-19T05:02:49+09:00",
   "repository": "salmonmikan/sparkbrain_research",
   "control_plane_mailbox_semantics_respected": true,
   "authoritative_refs_inspected": {
@@ -7,8 +7,17 @@
     "research_refs": {
       "lp01": "f6d59a55730c5f99cd7f30470847fc3f175bdf64",
       "h5": "2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
-      "ni01": "2664951b65dd18883d3d80862e80b86ac66cf24f",
+      "ni01": "dbfe7469dbbbc1adbb00789ab382de892a1b3563",
+      "pd01": "b9d38daa5faca348ad2db3898ba71e2abc99f631",
+      "c19_r2": "5bfa3962c777fa5bc915bb21e20801ab8294778a",
       "new_formal_frontier": null
+    },
+    "evidence": {
+      "c19_v4": "a0f83318356ced1c84863737803080d0dc69d208",
+      "c19_r2": "6197fa801a78a0c5de4c2b6ff5d03216ac5539db",
+      "pd01": "fc5c8cda283360addddb7da482b14e69beaba1f7",
+      "ni01": "69aa785a48bbdb531229b7f71f7fa84a5fde9948",
+      "h5": "61aff6d74b82b68a326f3d90505d70bcd4071fd5"
     },
     "evidence_tags": [
       "evidence/c19-official-v4-c19-external-v2-official-v4",
@@ -17,25 +26,28 @@
       "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1",
       "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1"
     ],
-    "control_refs": "fresh control/* inspected; consumed STARTED refs present; no fresh post-H5 formal STARTED",
-    "preserve_refs": "fresh preserve/* inspected; terminal formal raw preserves present; no fresh post-H5/LP01 preserve",
+    "control_refs": "fresh control/* inspected; consumed STARTED refs remain; no fresh post-H5 formal STARTED",
+    "preserve_refs": "fresh preserve/* inspected; terminal formal raw preserves remain; no fresh post-H5 official preserve",
     "formal_tags": [],
     "sealed_tags": [],
     "legacy_freeze_branch_count": 13,
     "open_prs": [148, 149],
     "governance_issue": 139,
     "repository_ruleset_count": 0,
-    "main_protected": false
+    "main_protected": false,
+    "fresh_workflow_state": "report CI movement only; no research workflow dispatched"
   },
-  "control_brain_commit": "97f736a9b052488f5d1ed194b380452799b16a63",
-  "main_report_commit_consumed": "90e0fedd5141f7c6b1dc4f6d77b3e1fdc81bfa29",
-  "sub_report_commit_consumed": "81dd00a2e886169483f4d9fb74b997fdad3517f5",
+  "prior_evidence_analyst_tip_reconciled": "03f027926fb06a42f108e5470779f2de2126116a",
+  "control_brain_commit": "10eb4206fb0c998fcdbc40c0e16f38829ea5d41e",
+  "main_report_commit_consumed": "173319ab19aa8253cedf28c80e0d33108dc7d7b5",
+  "sub_report_commit_consumed": "54ee926c44dd8ef0bd2ff5179f0cc997e4b65ffa",
   "sub_operating_mode_observed": "no_op",
   "sub_exploratory_review": null,
   "literature_handoff_commit_consumed": "525686fa0c14f64426ca7bf5c89f08cd0bcb9c77",
   "audit_handoff_commit_consumed": "04bc885ebd0d6c744918e96d72dc2a9503ec6bfc",
   "repository_steward_commit_state_consumed": {
-    "commit": "d44780cb4ff869cac264eee7906858d1bdde57c7",
+    "mailbox_tip": "d44780cb4ff869cac264eee7906858d1bdde57c7",
+    "state_commit": "f22aa73a4c26f9ff59e795fde977921566a554a6",
     "authority": "governance_advisory_only"
   },
   "external_input": {
@@ -43,9 +55,10 @@
       "changed_this_run": false,
       "commit": "525686fa0c14f64426ca7bf5c89f08cd0bcb9c77",
       "affected_lines": ["PROGRAMME_NOVELTY", "FUTURE_OBJECT_ADMISSION", "H7_PROVENANCE", "H9_C07"],
-      "impact": "Reduction ladder unchanged; finite/predictive/causal-state, reservoir/fading-memory and conventional plastic/slow-state reductions remain admission pressure. Locality/history/persistence/predictiveness alone are not novelty.",
+      "impact": "Reduction ladder unchanged: learned/extracted finite-state, predictive/causal-state, reservoir/fading-memory and conventional plastic/slow-state reductions remain admission pressure. Locality/history/persistence/predictiveness alone are not novelty.",
+      "prospective_baseline_change": false,
       "allocation_change": false,
-      "operational_note": "durable Literature handoff remains stale since 04:30 JST"
+      "operational_note": "durable Literature handoff remains stale since 2026-09-18 04:30 JST"
     },
     "audit": {
       "changed_this_run": false,
@@ -61,35 +74,6 @@
       "allocation_change": false
     }
   },
-  "ni01_interpretation_audit": {
-    "status": "READ_ONLY_INTERPRETATION_AUDIT_COMPLETE",
-    "canonical_result_token": "FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION",
-    "canonical_evidence_mutated": false,
-    "evidence_commit": "69aa785a48bbdb531229b7f71f7fa84a5fde9948",
-    "exact_package_commit": "dbfe7469dbbbc1adbb00789ab382de892a1b3563",
-    "formal_contract_blob": "3dc90b08f85e0e7c459e0c17e86ab338901fd4c6",
-    "scorer_blob": "d3b3565a08277e6a94ef9be1e5bd13e86265f8f2",
-    "identity": "ni01-no-ignition-selective-prediction-official-v1",
-    "registered_structure": {
-      "question": "incremental selective decision value beyond a target-blind coverage-matched max-confidence abstention head",
-      "positive_candidate_signal_gate_registered": false,
-      "pass_rule": "coverage guard AND effect_ci95_lower >= 0.02 AND every world point effect > 0",
-      "fail_rule": "coverage guard AND effect_ci95_upper <= 0.005",
-      "effect": "comparator_overall_loss - candidate_overall_loss",
-      "coverage_guard": "absolute TEST coverage difference <= 0.03 in every world"
-    },
-    "observed": {
-      "candidate_overall_loss": 0.2119466145833332,
-      "comparator_overall_loss": 0.21146918402777773,
-      "effect": -0.00047743055555544517,
-      "effect_ci95": [-0.0024414062499999965, 0.0014756944444444355],
-      "coverage_guard_pass": true
-    },
-    "interpretation": "The formal protocol validly establishes no registered incremental native No-Ignition selective-decision advantage over the matched ordinary confidence-abstention comparator. Because no separate Stage-A positive native selective-signal floor or candidate-vs-null criterion was registered, it does not establish that confidence abstention mechanistically explained a previously demonstrated positive native capability.",
-    "programme_synthesis_token": "NO_REGISTERED_INCREMENTAL_NATIVE_ADVANTAGE_OVER_MATCHED_CONFIDENCE_ABSTENTION",
-    "future_doctrine_change": "For mechanistic REDUCED_BY_* language, require a prospectively fixed candidate-positive-signal gate before the comparator-reduction stage.",
-    "rerun_or_relabel_allowed": false
-  },
   "main_lane": {
     "name": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
     "owner": "MAIN",
@@ -99,7 +83,7 @@
       "evaluate genuinely fresh independently motivated native mechanisms/theories",
       "prospectively specify at most one fresh object under matched information/readout/resources and ordinary reduction pressure",
       "perform bounded NON_EVIDENTIARY readiness only to determine specifiability",
-      "own all candidate-specific implementation/verifier/harness/runner/binding/CI/review fixes",
+      "own all candidate-specific implementation/comparator/verifier/harness/runner/binding/CI/review fixes",
       "stop at NEXT_OBJECT_READY_FOR_ANALYST_REVIEW"
     ],
     "forbidden": [
@@ -113,7 +97,7 @@
   },
   "sub_lane": null,
   "sub_fallback": null,
-  "no_sub_lane_reason": "No prospectively complete independent secondary formal object survives the search order. H9 remains under-specified; H3/H6 remain reduction/accounting-sensitive; H7/LP01 lacks a native non-reducible causal object; terminal lines are consumed; latest SUB found no independent incubator target.",
+  "no_sub_lane_reason": "No prospectively complete independent secondary formal object survives the search order. H9/C07 remains under-specified; H3/H6 remain reduction/accounting-sensitive; H7/LP01 lacks a native non-reducible causal object; terminal lines are consumed; latest SUB found no independent non-duplicative incubator target.",
   "blocked_until": "A genuinely fresh independent native object is prospectively complete, survives ordinary reductions under matched state/information/readout/resources, has a positive candidate-signal gate where mechanistic reduction language is intended, fixed numeric outcomes and exact bindings, same-final-SHA CI/pre-START, and fresh Evidence Analyst authority.",
   "do_not_touch": [
     "C19-v4 immutable evidence/identity",
@@ -134,6 +118,7 @@
     "FRESH_INDEPENDENT_NATIVE_MECHANISM_APPEARS": "MAIN may perform bounded prospective specification/readiness for at most one object.",
     "CANDIDATE_UNDERSPECIFIED": "NON_EVIDENTIARY specification/readiness only; no identity/STARTED/official TEST.",
     "NEXT_OBJECT_READY_FOR_ANALYST_REVIEW": "STOP; fresh Evidence Analyst authority required before any formal boundary.",
+    "PRE_START_BLOCKER": "If mechanical and science-invariant for a future admitted candidate, MAIN owns repair and exact-head gate reruns; if semantic, STOP.",
     "PRE_START_BLOCKER_MECHANICAL": "Only for a future admitted candidate, MAIN may repair science-invariant mechanics and rerun exact-head gates.",
     "PRE_START_SEMANTIC_GAP": "STOP; do not weaken comparators, switch claims, or introduce asymmetric privilege.",
     "PASS": "UNARMED_NO_FRESH_FORMAL_OBJECT",
@@ -144,19 +129,41 @@
   },
   "active_main_sub_claims_observed": {
     "MAIN": {
-      "mode": "primary_frontier_hold",
+      "timestamp": "2026-09-19T04:12:14+09:00",
+      "mode": "PRIMARY",
       "lane": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
+      "stop_reason": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_NO_CHANGE_AFTER_RELAY",
       "formal_identity": null,
       "STARTED": false,
       "new_scientific_evidence": false
     },
     "SUB": {
+      "timestamp": "2026-09-19T04:35:00+09:00",
       "mode": "no_op",
       "formal_lane": null,
       "fallback": null,
       "incubator_candidate": null,
       "new_scientific_evidence": false
     }
+  },
+  "active_line_review": {
+    "A01": "MIXED_PROGRAMME_CLOSED",
+    "RV01": "DEVELOPMENT_POSITIVE_REDUCIBLE / EXPLORATORY_BUDGET_EXHAUSTED",
+    "RV02": "TERMINAL_CONSTRUCTION_NEGATIVE",
+    "CX_CX01": "TERMINAL_FORMAL_NEGATIVE",
+    "H8_C08": "TERMINAL_NEGATIVE",
+    "H9_C07": "PRE_START_UNDERSPECIFIED",
+    "C19_v4": "NARROW_IMMUTABLE_PASS_WEAKENED_NOT_INVALID",
+    "C19_R1": "SCIENTIFICALLY_UNRESOLVED_OPERATIONALLY_TERMINATED",
+    "C19_R2": "TERMINAL_REDUCED_BY_FSA_ROBUST_SO_FAR_AUDITED",
+    "PD01": "CANONICAL_TERMINAL_FAIL_PROGRAMME_MECHANISTIC_INTERPRETATION_CONFOUNDED",
+    "NI01_H4": "CANONICAL_FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION_PROGRAMME_NO_REGISTERED_INCREMENTAL_NATIVE_ADVANTAGE",
+    "H5": "TERMINAL_FAIL_NO_USEFUL_WORK_REDUCTION",
+    "H3": "UNRESOLVED_SCALAR_REDUCTION_PRESSURE_NOT_ADMITTED",
+    "H6": "UNRESOLVED_ACCOUNTING_SENSITIVE_NOT_ADMITTED",
+    "H7_PROVENANCE": "NO_NATIVE_NON_REDUCIBLE_CAUSAL_PATH_CURRENT_ARCHITECTURE",
+    "LP01": "NO_HIGH_VALUE_OBJECT_PREFORMAL_CLOSEOUT_COMPLETE",
+    "PROGRAMME": "NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_PRIMARY"
   },
   "top_recommendation": "Keep SparkBrain in architecture/testbed mode. Do not manufacture a successor; admit a new primary experiment only when a genuinely fresh native mechanism survives matched-privilege ordinary-reduction and prospective-identifiability gates.",
   "top_3": [
@@ -166,11 +173,11 @@
       "information_value": "VERY_HIGH",
       "distance": "EVENT_DEPENDENT",
       "go": "Admission/specification only, not formal execution.",
-      "stop": "STOP on terminal-result rescue, ordinary-state lossless reduction, asymmetric privilege/resources, outcome-responsive design, or absence of a high-value object."
+      "stop": "STOP on consumed-line rescue, ordinary-state lossless reduction, asymmetric privilege/resources, outcome-responsive design, missing native causal path, or absence of a high-value object."
     },
     {
       "rank": 2,
-      "action": "Independent Audit should audit terminal H5 next. NI01 programme interpretation is now narrowed by this read-only Evidence Analyst audit; a future independent NI01 audit may test integrity/claim boundary without reopening the identity.",
+      "action": "Independent Audit should audit terminal H5 next; NI01 may later receive an independent claim/integrity audit without reopening it.",
       "information_value": "HIGH",
       "distance": "NEAR"
     },
@@ -213,7 +220,7 @@
     "current": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
     "changed_due_to_external_input": false,
     "changed_due_to_exploratory_input": false,
-    "ni01_interpretation_changed_allocation": false
+    "fresh_orchestrator_reports_confirmed_prior_allocation": true
   },
   "repartition_triggers": [
     "genuinely independent prospectively complete primary object appears",
@@ -231,6 +238,7 @@
     "issue_139": "inventory count drift resolved at five tags; authoritative evidence-tag update/delete protection gap remains",
     "pr_148": "DEFER_PENDING_REVIEW_FIX",
     "pr_149": "DEFER_PENDING_REVIEW_FIX",
+    "freeze_migration": "DEFER_UNTIL_PROTECTED_MIGRATION_SEMANTICS",
     "outcome_independent_main_promotion_candidates": [
       "anonymous event/distribution primitives",
       "architecture-neutral comparator protocol shape",
@@ -242,8 +250,16 @@
   },
   "new_repository_evidence": {
     "formal_scientific_evidence": "NONE_NEW",
-    "operational_movement": "Control Brain refreshed priority to NI01 interpretation audit; MAIN remains hold; SUB remains no_op; no new formal object.",
-    "interpretive_update": "NI01 canonical FAIL token remains frozen, but programme-level meaning is narrowed to no registered incremental native advantage over matched confidence abstention because no separate positive native selective-signal gate was registered."
+    "operational_movement": "MAIN 04:12 remained hold; SUB 04:35 remained no_op; both independently confirm the prior Evidence Analyst allocation. Report CI succeeded; no research workflow or formal object appeared.",
+    "interpretive_update": "NONE_NEW; prior NI01 narrowing remains unchanged."
+  },
+  "orchestrator_handoff": {
+    "MAIN": "Take PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE; own all critical-path fixes for any future primary object prospectively admitted; no formal execution under this handoff.",
+    "SUB": "No formal lane. May incubate only a genuinely distinct bounded NON_EVIDENTIARY question; must not take MAIN blockers or primary readiness.",
+    "fallback": null,
+    "neither_touches": "consumed identities, immutable evidence, LP01/admission closeouts as evidence, legacy freeze refs, authoritative evidence tags, scheduler definitions",
+    "repartition_on": "fresh prospectively complete independent primary or secondary object, or material future Literature/Audit input affecting prospective admission",
+    "same_run_main_continuation": "bounded prospective admission/specification/readiness only; STOP at NEXT_OBJECT_READY_FOR_ANALYST_REVIEW"
   },
   "persistence_limitation": null
 }
