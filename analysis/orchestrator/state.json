@@ -1,154 +1,104 @@
 {
-  "timestamp": "2026-09-19T05:02:49+09:00",
+  "timestamp": "2026-09-19T05:58:06+09:00",
   "repository": "salmonmikan/sparkbrain_research",
-  "control_plane_mailbox_semantics_respected": true,
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "research_refs": {
-      "lp01": "f6d59a55730c5f99cd7f30470847fc3f175bdf64",
-      "h5": "2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
-      "ni01": "dbfe7469dbbbc1adbb00789ab382de892a1b3563",
-      "pd01": "b9d38daa5faca348ad2db3898ba71e2abc99f631",
-      "c19_r2": "5bfa3962c777fa5bc915bb21e20801ab8294778a",
-      "new_formal_frontier": null
-    },
-    "evidence": {
-      "c19_v4": "a0f83318356ced1c84863737803080d0dc69d208",
-      "c19_r2": "6197fa801a78a0c5de4c2b6ff5d03216ac5539db",
-      "pd01": "fc5c8cda283360addddb7da482b14e69beaba1f7",
-      "ni01": "69aa785a48bbdb531229b7f71f7fa84a5fde9948",
-      "h5": "61aff6d74b82b68a326f3d90505d70bcd4071fd5"
-    },
-    "evidence_tags": [
-      "evidence/c19-official-v4-c19-external-v2-official-v4",
-      "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
-      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1",
-      "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1",
-      "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1"
-    ],
-    "control_refs": "fresh control/* inspected; consumed STARTED refs remain; no fresh post-H5 formal STARTED",
-    "preserve_refs": "fresh preserve/* inspected; terminal formal raw preserves remain; no fresh post-H5 official preserve",
-    "formal_tags": [],
-    "sealed_tags": [],
-    "legacy_freeze_branch_count": 13,
-    "open_prs": [148, 149],
-    "governance_issue": 139,
-    "repository_ruleset_count": 0,
     "main_protected": false,
-    "fresh_workflow_state": "report CI movement only; no research workflow dispatched"
+    "research_heads": {
+      "LP01": "f6d59a55730c5f99cd7f30470847fc3f175bdf64",
+      "H5": "2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
+      "NI01": "dbfe7469dbbbc1adbb00789ab382de892a1b3563",
+      "PD01": "b9d38daa5faca348ad2db3898ba71e2abc99f631",
+      "C19_R2": "5bfa3962c777fa5bc915bb21e20801ab8294778a"
+    },
+    "authoritative_evidence_tag_count": 5,
+    "legacy_freeze_branch_count": 13,
+    "repository_ruleset_count": 0,
+    "issue_139": "open_inventory_current_five_tags_protection_gap",
+    "open_prs": [148, 149],
+    "workflow_state": "latest_observed_movement_is_control_plane_report_CI_no_research_dispatch"
   },
-  "prior_evidence_analyst_tip_reconciled": "03f027926fb06a42f108e5470779f2de2126116a",
   "control_brain_commit": "10eb4206fb0c998fcdbc40c0e16f38829ea5d41e",
-  "main_report_commit_consumed": "173319ab19aa8253cedf28c80e0d33108dc7d7b5",
-  "sub_report_commit_consumed": "54ee926c44dd8ef0bd2ff5179f0cc997e4b65ffa",
+  "main_report_commit_consumed": "74a8c355e6f66c7206dafbbaa0d1b7432c87864b",
+  "sub_report_commit_consumed": "8f210dd9773d772778694a26ab888039419d7e71",
   "sub_operating_mode_observed": "no_op",
   "sub_exploratory_review": null,
   "literature_handoff_commit_consumed": "525686fa0c14f64426ca7bf5c89f08cd0bcb9c77",
   "audit_handoff_commit_consumed": "04bc885ebd0d6c744918e96d72dc2a9503ec6bfc",
-  "repository_steward_commit_state_consumed": {
-    "mailbox_tip": "d44780cb4ff869cac264eee7906858d1bdde57c7",
-    "state_commit": "f22aa73a4c26f9ff59e795fde977921566a554a6",
-    "authority": "governance_advisory_only"
+  "repository_steward": {
+    "commit_consumed": "d44780cb4ff869cac264eee7906858d1bdde57c7",
+    "state_consumed": "reports/repository_steward/state.json@2026-09-19T01:50:00+09:00",
+    "role": "governance_advisory_only"
   },
   "external_input": {
     "literature": {
       "changed_this_run": false,
-      "commit": "525686fa0c14f64426ca7bf5c89f08cd0bcb9c77",
-      "affected_lines": ["PROGRAMME_NOVELTY", "FUTURE_OBJECT_ADMISSION", "H7_PROVENANCE", "H9_C07"],
-      "impact": "Reduction ladder unchanged: learned/extracted finite-state, predictive/causal-state, reservoir/fading-memory and conventional plastic/slow-state reductions remain admission pressure. Locality/history/persistence/predictiveness alone are not novelty.",
-      "prospective_baseline_change": false,
-      "allocation_change": false,
-      "operational_note": "durable Literature handoff remains stale since 2026-09-18 04:30 JST"
+      "latest": "2026-09-18_0430_REDUCTION_SCOUT",
+      "impact": "none_on_current_allocation",
+      "affected_future_lines": ["PROGRAMME_NOVELTY", "H7_PROVENANCE", "H9_C07", "FUTURE_OBJECT_ADMISSION"],
+      "carry_forward": "exact_or_learned_finite_state_then_predictive_causal_state_then_reservoir_fading_memory_then_conventional_plasticity_slow_state_then_narrower_residual"
     },
     "audit": {
       "changed_this_run": false,
-      "commit": "04bc885ebd0d6c744918e96d72dc2a9503ec6bfc",
       "latest_target": "PD01",
       "integrity": "ROBUST_SO_FAR",
-      "programme_interpretation": "CONFOUNDED",
-      "prospective_change": [
-        "separate NO_REGISTERED_SIGNAL from mechanistic REDUCED_BY_COMPARATOR",
-        "require a positive candidate-signal gate before mechanistic REDUCED_BY_* interpretation",
-        "match observation/readout/resource privilege"
+      "mechanistic_interpretation": "CONFOUNDED",
+      "programme_synthesis": "NO_REGISTERED_LONG_LAG_SIGNAL_PLUS_COMPARATOR_NOT_WORSE",
+      "future_doctrine": [
+        "separate_absent_candidate_signal_from_comparator_reduction",
+        "require_positive_candidate_signal_gate_before_mechanistic_REDUCED_BY_language",
+        "match_observation_readout_resource_privilege"
       ],
-      "allocation_change": false
+      "next_high_value_audit_target": "H5"
     }
   },
+  "new_repository_evidence": "NONE_NEW",
   "main_lane": {
     "name": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
     "owner": "MAIN",
-    "phase": "NO_ACTIVE_FORMAL_FRONTIER_FRESH_OBJECT_ADMISSION_GATE_ONLY",
+    "formal_execution_authorized": false,
     "allowed": [
-      "maintain architecture/testbed programme synthesis",
-      "evaluate genuinely fresh independently motivated native mechanisms/theories",
-      "prospectively specify at most one fresh object under matched information/readout/resources and ordinary reduction pressure",
-      "perform bounded NON_EVIDENTIARY readiness only to determine specifiability",
-      "own all candidate-specific implementation/comparator/verifier/harness/runner/binding/CI/review fixes",
-      "stop at NEXT_OBJECT_READY_FOR_ANALYST_REVIEW"
+      "programme_synthesis",
+      "fresh_independent_native_object_admission",
+      "bounded_non_evidentiary_prospective_specification_and_readiness_for_at_most_one_object"
     ],
-    "forbidden": [
-      "formal identity creation/reservation under current handoff",
-      "STARTED/no-clobber creation",
-      "official TEST access",
-      "formal raw acquisition/preserve/scoring/evidence",
-      "rescue of consumed terminal lines or LP01",
-      "outcome-responsive comparator/resource/metric/threshold selection"
-    ]
+    "must_stop_at": "NEXT_OBJECT_READY_FOR_ANALYST_REVIEW",
+    "critical_path_ownership": "MAIN_OWNS_ALL_PRIMARY_CANDIDATE_IMPLEMENTATION_BUG_COMPARATOR_VERIFIER_HARNESS_RUNNER_BINDING_CI_PREFLIGHT_REVIEW_PRESERVATION_SCORING_EXECUTION_FIXES"
   },
   "sub_lane": null,
   "sub_fallback": null,
-  "no_sub_lane_reason": "No prospectively complete independent secondary formal object survives the search order. H9/C07 remains under-specified; H3/H6 remain reduction/accounting-sensitive; H7/LP01 lacks a native non-reducible causal object; terminal lines are consumed; latest SUB found no independent non-duplicative incubator target.",
-  "blocked_until": "A genuinely fresh independent native object is prospectively complete, survives ordinary reductions under matched state/information/readout/resources, has a positive candidate-signal gate where mechanistic reduction language is intended, fixed numeric outcomes and exact bindings, same-final-SHA CI/pre-START, and fresh Evidence Analyst authority.",
+  "no_sub_lane_reason": "No prospectively complete independent secondary formal object survives the search order. H9/C07 is underspecified; H3/H6 remain reduction/accounting-sensitive; H7/LP01 lacks a native non-reducible causal object; terminal lines are consumed; latest SUB found no independent incubator question. A formal lane would be fake parallelism.",
+  "blocked_until": "A fresh independent object has a native causal mechanism, matched state/information/readout/resource privilege, ordinary explicit/predictive/recurrent/plastic reductions addressed, positive candidate-signal gate if mechanistic reduction language is intended, fixed numeric PASS/FAIL/INCONCLUSIVE, exact source/protocol/package/input/runtime/candidate/comparator/intervention/scorer/preserver/workflow binding, same-final-SHA CI plus dedicated pre-START, and fresh Evidence Analyst authority.",
   "do_not_touch": [
-    "C19-v4 immutable evidence/identity",
-    "C19-R1 revision-authority v1/v2 consumed identities",
-    "C19-R2 immutable evidence/identity",
-    "PD01 immutable evidence/identity/canonical FAIL",
-    "NI01 immutable evidence/identity/canonical token",
-    "H5 immutable evidence/identity/STARTED/raw preserve/result",
-    "LP01/post-LP01 closeouts as evidence",
-    "legacy freeze refs or authoritative evidence tags",
-    "research PR merges",
+    "consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities",
+    "immutable scientific evidence",
+    "LP01 and post-LP01 pre-formal closeouts as evidence",
+    "legacy freeze refs",
+    "authoritative evidence tags",
     "scheduler definitions",
-    "historical SUB exploratory outputs as formal evidence or outcome-responsive tuning"
+    "research PR merges",
+    "historical SUB exploratory results as evidence or outcome-responsive tuning"
   ],
-  "outcome_contingencies": {
-    "root": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
-    "NO_NEW_OBJECT": "Remain on hold; formal science STOP.",
-    "FRESH_INDEPENDENT_NATIVE_MECHANISM_APPEARS": "MAIN may perform bounded prospective specification/readiness for at most one object.",
-    "CANDIDATE_UNDERSPECIFIED": "NON_EVIDENTIARY specification/readiness only; no identity/STARTED/official TEST.",
-    "NEXT_OBJECT_READY_FOR_ANALYST_REVIEW": "STOP; fresh Evidence Analyst authority required before any formal boundary.",
-    "PRE_START_BLOCKER": "If mechanical and science-invariant for a future admitted candidate, MAIN owns repair and exact-head gate reruns; if semantic, STOP.",
-    "PRE_START_BLOCKER_MECHANICAL": "Only for a future admitted candidate, MAIN may repair science-invariant mechanics and rerun exact-head gates.",
-    "PRE_START_SEMANTIC_GAP": "STOP; do not weaken comparators, switch claims, or introduce asymmetric privilege.",
-    "PASS": "UNARMED_NO_FRESH_FORMAL_OBJECT",
-    "FAIL": "UNARMED_NO_FRESH_FORMAL_OBJECT",
-    "INCONCLUSIVE": "UNARMED_NO_FRESH_FORMAL_OBJECT",
-    "INVALID_EVIDENCE": "UNARMED_NO_FRESH_FORMAL_OBJECT",
-    "POST_START_FAILURE": "UNARMED_NO_FRESH_FORMAL_OBJECT"
+  "active_main_claims_observed": {
+    "mode": "no_op",
+    "status": "idle_no_formal_lane",
+    "formal_frontier": null,
+    "formal_identity_created": false,
+    "started_created": false,
+    "workflow_dispatched": false,
+    "evidence_created": false
   },
-  "active_main_sub_claims_observed": {
-    "MAIN": {
-      "timestamp": "2026-09-19T04:12:14+09:00",
-      "mode": "PRIMARY",
-      "lane": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
-      "stop_reason": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_NO_CHANGE_AFTER_RELAY",
-      "formal_identity": null,
-      "STARTED": false,
-      "new_scientific_evidence": false
-    },
-    "SUB": {
-      "timestamp": "2026-09-19T04:35:00+09:00",
-      "mode": "no_op",
-      "formal_lane": null,
-      "fallback": null,
-      "incubator_candidate": null,
-      "new_scientific_evidence": false
-    }
+  "active_sub_claims_observed": {
+    "mode": "no_op",
+    "status": "idle_no_formal_sub_lane",
+    "formal_lane": null,
+    "fallback": null,
+    "incubator_candidate": null,
+    "main_work_touched": false
   },
   "active_line_review": {
     "A01": "MIXED_PROGRAMME_CLOSED",
-    "RV01": "DEVELOPMENT_POSITIVE_REDUCIBLE / EXPLORATORY_BUDGET_EXHAUSTED",
+    "RV01": "DEVELOPMENT_POSITIVE_REDUCIBLE_EXPLORATORY_BUDGET_EXHAUSTED",
     "RV02": "TERMINAL_CONSTRUCTION_NEGATIVE",
     "CX_CX01": "TERMINAL_FORMAL_NEGATIVE",
     "H8_C08": "TERMINAL_NEGATIVE",
@@ -156,48 +106,57 @@
     "C19_v4": "NARROW_IMMUTABLE_PASS_WEAKENED_NOT_INVALID",
     "C19_R1": "SCIENTIFICALLY_UNRESOLVED_OPERATIONALLY_TERMINATED",
     "C19_R2": "TERMINAL_REDUCED_BY_FSA_ROBUST_SO_FAR_AUDITED",
-    "PD01": "CANONICAL_TERMINAL_FAIL_PROGRAMME_MECHANISTIC_INTERPRETATION_CONFOUNDED",
+    "PD01": "CANONICAL_TERMINAL_FAIL_MECHANISTIC_INTERPRETATION_CONFOUNDED",
     "NI01_H4": "CANONICAL_FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION_PROGRAMME_NO_REGISTERED_INCREMENTAL_NATIVE_ADVANTAGE",
-    "H5": "TERMINAL_FAIL_NO_USEFUL_WORK_REDUCTION",
+    "H5": "TERMINAL_FAIL_NO_USEFUL_WORK_REDUCTION_AUDIT_PENDING",
     "H3": "UNRESOLVED_SCALAR_REDUCTION_PRESSURE_NOT_ADMITTED",
     "H6": "UNRESOLVED_ACCOUNTING_SENSITIVE_NOT_ADMITTED",
-    "H7_PROVENANCE": "NO_NATIVE_NON_REDUCIBLE_CAUSAL_PATH_CURRENT_ARCHITECTURE",
+    "H7_PROVENANCE": "BLOCKED_NO_NATIVE_NONREDUCIBLE_CAUSAL_PATH",
     "LP01": "NO_HIGH_VALUE_OBJECT_PREFORMAL_CLOSEOUT_COMPLETE",
-    "PROGRAMME": "NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_PRIMARY"
+    "PROGRAMME": "NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE"
   },
-  "top_recommendation": "Keep SparkBrain in architecture/testbed mode. Do not manufacture a successor; admit a new primary experiment only when a genuinely fresh native mechanism survives matched-privilege ordinary-reduction and prospective-identifiability gates.",
+  "outcome_contingencies": {
+    "root": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
+    "NO_NEW_OBJECT": "HOLD_FORMAL_SCIENCE_STOP",
+    "FRESH_INDEPENDENT_NATIVE_MECHANISM_APPEARS": "MAIN_MAY_BOUNDED_PROSPECTIVE_SPECIFICATION_READINESS_FOR_AT_MOST_ONE_OBJECT",
+    "CANDIDATE_UNDERSPECIFIED": "NON_EVIDENTIARY_SPECIFICATION_ONLY_NO_IDENTITY_NO_STARTED_NO_OFFICIAL_TEST",
+    "NEXT_OBJECT_READY_FOR_ANALYST_REVIEW": "STOP_FRESH_ANALYST_AUTHORITY_REQUIRED",
+    "PRE_START_BLOCKER": "FOR_FUTURE_ADMITTED_OBJECT_MAIN_OWNS_ONLY_SCIENCE_INVARIANT_REPAIR_AND_EXACT_HEAD_GATE_RERUNS",
+    "PRE_START_SEMANTIC_GAP": "STOP_NO_COMPARATOR_WEAKENING_CLAIM_SWITCH_OR_ASYMMETRIC_PRIVILEGE",
+    "PASS": "UNARMED",
+    "FAIL": "UNARMED",
+    "INCONCLUSIVE": "UNARMED",
+    "INVALID_EVIDENCE": "UNARMED",
+    "POST_START_FAILURE": "UNARMED",
+    "same_run_formal_execution": false
+  },
+  "top_recommendation": "Maintain architecture/testbed hold and admit/specify at most one fresh independently motivated native reduction-resistant object only if one actually appears; do not manufacture formal science to fill worker capacity.",
   "top_3": [
     {
       "rank": 1,
-      "action": "MAIN holds architecture/testbed mode and enforces the fresh-object admission gate; at most one genuinely new native object may be prospectively specified if one appears.",
+      "owner": "MAIN",
+      "action": "Hold architecture/testbed mode and enforce fresh-object admission gate; prospectively specify at most one genuinely new native object only if one appears.",
       "information_value": "VERY_HIGH",
-      "distance": "EVENT_DEPENDENT",
-      "go": "Admission/specification only, not formal execution.",
-      "stop": "STOP on consumed-line rescue, ordinary-state lossless reduction, asymmetric privilege/resources, outcome-responsive design, missing native causal path, or absence of a high-value object."
+      "distance": "EVENT_DEPENDENT"
     },
     {
       "rank": 2,
-      "action": "Independent Audit should audit terminal H5 next; NI01 may later receive an independent claim/integrity audit without reopening it.",
+      "owner": "INDEPENDENT_AUDIT",
+      "action": "Audit terminal H5 next; NI01 claim/integrity boundary can follow without reopening it.",
       "information_value": "HIGH",
       "distance": "NEAR"
     },
     {
       "rank": 3,
-      "action": "SUB remains no-op; only a genuinely independent bounded NON_EVIDENTIARY question may use incubator capacity.",
+      "owner": "SUB",
+      "action": "Remain no-op unless a genuinely independent bounded NON_EVIDENTIARY question appears.",
       "information_value": "LOW_TO_MEDIUM",
       "distance": "OPTIONAL"
     }
   ],
-  "future_formal_go_integrity_gate": {
-    "identity_freshness": "fresh, unSTARTED, unconsumed, collision-free",
-    "bindings": "exact source/protocol/package/input/runtime/checkpoint/candidate/comparator/intervention/scorer/preserver/workflow",
-    "positive_signal_gate": "prospectively fixed where mechanistic REDUCED_BY_* interpretation is intended",
-    "scientific_falsifiers": "numeric PASS/FAIL/INCONCLUSIVE fixed before outcome access",
-    "ci_review": "same-final-SHA ordinary CI + dedicated pre-START + fresh Analyst review green",
-    "started_no_clobber": "exactly once before official TEST",
-    "raw_before_score": true,
-    "preservation_order": "target/scoring-blind raw -> immutable preserve -> independent refetch/digest/cardinality -> fail-closed join/invariants -> preregistered scoring -> terminal evidence",
-    "readout_resource_privilege": "matched"
+  "number_one_go_stop": {
+    "GO": "Admission/specification only. Future formal GO requires fresh/unconsumed collision-free identity; exact source/protocol/package/input/runtime/checkpoint/candidate/comparator/intervention/scorer/preserver/workflow binding; positive candidate-signal gate where mechanistic REDUCED_BY interpretation is intended; fixed numeric PASS/FAIL/INCONCLUSIVE; same-final-SHA ordinary CI + dedicated pre-START + fresh Analyst review; exactly-once STARTED/no-clobber before official TEST; target/scoring-blind raw; immutable preserve; independent refetch/digest/cardinality; fail-closed joins/invariants; preregistered scoring; terminal evidence.",
+    "STOP": "Stop if the candidate rescues a consumed line; is losslessly reducible to ordinary explicit/predictive/recurrent/plastic state under matched privilege; requires asymmetric information/readout/resources; requires outcome inspection to choose comparator/resources/metric/threshold; lacks a native causal path; or no high-information falsifiable object exists."
   },
   "consumed_identities": [
     "c19-external-v2-official-v4",
@@ -209,57 +168,39 @@
     "h5-event-routing-work-reduction-official-v1"
   ],
   "blockers": [
-    "scientific object availability, not infrastructure",
-    "no currently admitted native matched-privilege reduction-robust prospectively complete primary object",
-    "no independent formal SUB object",
-    "literature handoff staleness is an operational knowledge-flow defect but not a scientific START blocker"
-  ],
-  "allocation": {
-    "ownership_changed": false,
-    "main_phase_changed": false,
-    "current": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
-    "changed_due_to_external_input": false,
-    "changed_due_to_exploratory_input": false,
-    "fresh_orchestrator_reports_confirmed_prior_allocation": true
-  },
-  "repartition_triggers": [
-    "genuinely independent prospectively complete primary object appears",
-    "clean independent secondary object appears that can be reserved to SUB without MAIN dependency",
-    "new literature materially changes a future comparator/reduction class",
-    "new audit materially changes future admission/integrity doctrine without mutating consumed evidence"
+    "no admitted high-information native reduction-resistant formal object",
+    "H9/C07 remains underspecified",
+    "H3 scalar-reduction pressure",
+    "H6 accounting sensitivity",
+    "H7/LP01 lacks a native non-reducible causal path",
+    "literature handoff is stale but not a formal START blocker",
+    "server-side authoritative-tag protection remains absent but is governance-only"
   ],
   "governance_advisory": {
-    "repository_steward_authority": "advisory_only",
-    "repository_steward_commit": "d44780cb4ff869cac264eee7906858d1bdde57c7",
-    "main_protected": false,
-    "repository_ruleset_count": 0,
-    "legacy_freeze_branch_count": 13,
+    "repository_steward_consumed": true,
+    "issue_139_inventory_drift": "resolved_five_tags_listed",
     "authoritative_evidence_tag_count": 5,
-    "issue_139": "inventory count drift resolved at five tags; authoritative evidence-tag update/delete protection gap remains",
-    "pr_148": "DEFER_PENDING_REVIEW_FIX",
-    "pr_149": "DEFER_PENDING_REVIEW_FIX",
-    "freeze_migration": "DEFER_UNTIL_PROTECTED_MIGRATION_SEMANTICS",
-    "outcome_independent_main_promotion_candidates": [
-      "anonymous event/distribution primitives",
+    "repository_ruleset_count": 0,
+    "main_protected": false,
+    "legacy_freeze_branch_count": 13,
+    "tag_protection_gap": "open",
+    "open_pr_148": "open_steward_DEFER_PENDING_REVIEW_FIX",
+    "open_pr_149": "open_steward_DEFER_PENDING_REVIEW_FIX",
+    "main_promotion_candidates": [
+      "neutral event/distribution primitives",
       "architecture-neutral comparator protocol shape",
       "snapshot/restore invariants",
       "descriptive resource accounting",
       "generic privilege/leakage/transcript validation",
       "generic one-way integrity helpers"
-    ]
+    ],
+    "research_local": ["H5 scientific semantics", "LP01 lineage semantics", "NI01 scientific semantics"]
   },
-  "new_repository_evidence": {
-    "formal_scientific_evidence": "NONE_NEW",
-    "operational_movement": "MAIN 04:12 remained hold; SUB 04:35 remained no_op; both independently confirm the prior Evidence Analyst allocation. Report CI succeeded; no research workflow or formal object appeared.",
-    "interpretive_update": "NONE_NEW; prior NI01 narrowing remains unchanged."
-  },
-  "orchestrator_handoff": {
-    "MAIN": "Take PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE; own all critical-path fixes for any future primary object prospectively admitted; no formal execution under this handoff.",
-    "SUB": "No formal lane. May incubate only a genuinely distinct bounded NON_EVIDENTIARY question; must not take MAIN blockers or primary readiness.",
-    "fallback": null,
-    "neither_touches": "consumed identities, immutable evidence, LP01/admission closeouts as evidence, legacy freeze refs, authoritative evidence tags, scheduler definitions",
-    "repartition_on": "fresh prospectively complete independent primary or secondary object, or material future Literature/Audit input affecting prospective admission",
-    "same_run_main_continuation": "bounded prospective admission/specification/readiness only; STOP at NEXT_OBJECT_READY_FOR_ANALYST_REVIEW"
-  },
-  "persistence_limitation": null
+  "allocation_changed_due_to_external_or_exploratory_input": false,
+  "allocation_changed_this_run": false,
+  "persistence_scope": [
+    "analysis/orchestrator/latest.md",
+    "analysis/orchestrator/state.json",
+    "analysis/orchestrator/history/2026-09-19/0558.md"
+  ]
 }
