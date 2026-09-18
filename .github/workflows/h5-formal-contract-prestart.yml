@@ -1,0 +1,33 @@
+name: H5 formal-contract pre-START
+
+on:
+  push:
+    branches:
+      - research/h5-event-routing-work-reduction-spec-20260918
+  workflow_dispatch:
+
+jobs:
+  h5-readiness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11.10"
+          cache: pip
+      - name: Install readiness tooling
+        run: python -m pip install -e ".[dev]"
+      - name: Lint H5 prospective package
+        run: >-
+          python -m ruff check
+          src/sparkbrain/h5_work.py
+          scripts/check_h5_formal_contract.py
+          tests/test_h5_work.py
+      - name: Check frozen H5 contract and exact bindings
+        run: python scripts/check_h5_formal_contract.py
+      - name: Run H5 DEV-only equivalence and counter fixtures
+        run: python -m pytest -q tests/test_h5_work.py
+      - name: Execute DEV-only mechanical validation
+        run: python -m sparkbrain.h5_work --dev-validate > /tmp/h5-dev.json

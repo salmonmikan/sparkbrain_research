@@ -1,0 +1,160 @@
+{
+  "schema": "h5-event-routing-work-reduction-formal-contract-v1",
+  "phase": "H5_FORMAL_CONTRACT_READY_FOR_ANALYST_REVIEW",
+  "execution_authorized": false,
+  "formal_identity": null,
+  "analyst_authority_commit": "ded9d64a779791cbbcd9fbbff5fb3acb730c4263",
+  "analyst_mailbox_tip_at_spec_start": "34756bd0414084ae601a3bc724d5d99101c09676",
+  "claim": "Lazy decay and event-routed active execution reduce audited algorithmic work relative to a dense-equivalent implementation while preserving target behavior in fixed sparse workloads.",
+  "non_claims": [
+    "No hardware-energy claim.",
+    "No wall-clock speed claim.",
+    "No use of historical exploratory H5 results as evidence or parameter selection."
+  ],
+  "source_binding": {
+    "base_commit": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "engine_path": "src/sparkbrain/engine.py",
+    "engine_blob": "48fa64414f539ec4a00acc9e25ffc9b1d26a4982",
+    "model_path": "src/sparkbrain/model.py",
+    "model_blob": "ab450dba5943fa9184e66c00a4e992d6588bf6a5",
+    "package_path": "pyproject.toml",
+    "package_blob": "49d47f3d65f67f1c0a6b82a3f7fc2d0364e2a88c",
+    "h5_module_path": "src/sparkbrain/h5_work.py",
+    "h5_module_blob": "aca6e23dd801230dcd74ef28dd926e1f4adcf06d"
+  },
+  "runtime_binding": {
+    "python": "CPython 3.11.10",
+    "scientific_runtime_third_party_dependencies": [],
+    "notes": "The H5 candidate/comparator/workload/counter/scorer/preserver use Python stdlib plus the bound SparkBrain source only. Pytest and Ruff are readiness tooling, not scientific runtime dependencies."
+  },
+  "candidate": {
+    "name": "sparkbrain_event_routed_lazy",
+    "implementation": "AuditedSparkBrain(dense_scan=false)",
+    "semantics": "Current SparkBrain queued-event execution, lazy per-Spark closed-form decay on touch, active outgoing-edge fanout on firing, and current dense eligibility-decay loop unchanged.",
+    "trainable_parameters": 0
+  },
+  "comparator": {
+    "name": "sparkbrain_dense_equivalent",
+    "implementation": "AuditedSparkBrain(dense_scan=true)",
+    "semantics": "Same graph, state equations, thresholds, decay, events, seeds, precision and output semantics as candidate; additionally materializes every Spark and evaluates every graph edge at every queued event before the same event transition.",
+    "information_privilege": "identical",
+    "trainable_parameters": 0
+  },
+  "graph": {
+    "type": "directed_circulant",
+    "offsets": [1, 7, 23, 61],
+    "weights": [0.18, 0.16, 0.14, 0.12],
+    "spark_kind": "feature",
+    "threshold": 1.0,
+    "base_threshold": 1.0,
+    "decay_tau": 3.0,
+    "edge_delay": 0.01,
+    "plastic": false,
+    "stimulus_strength": 1.05
+  },
+  "formal_test_workloads": {
+    "sparse_primary": {
+      "families": ["uniform", "clustered", "bursty"],
+      "sizes": [128, 384],
+      "activity_fractions": [0.01, 0.05, 0.15],
+      "horizon": 24,
+      "seeds": [51001, 51017, 51031, 51047, 51059, 51071, 51083, 51097],
+      "cell_count": 144,
+      "aggregation": "equal weight across all family-size-activity strata within each seed, then equal weight across seeds"
+    },
+    "dense_control": {
+      "families": ["uniform"],
+      "sizes": [128],
+      "activity_fractions": [1.0],
+      "horizon": 8,
+      "seeds": [51001, 51017, 51031, 51047, 51059, 51071, 51083, 51097],
+      "cell_count": 8,
+      "role": "diagnostic only; excluded from primary sparse PASS/FAIL statistic"
+    },
+    "max_events_per_cell": 1000000
+  },
+  "dev_only_validation": {
+    "families": ["uniform", "clustered", "bursty"],
+    "size": 64,
+    "activity_fraction": 0.08,
+    "horizon": 4,
+    "seed": 1709,
+    "allowed_use": "mechanical equivalence and counter-invariant validation only; no threshold, workload, margin or statistic selection"
+  },
+  "audited_work": {
+    "metric": "unit-weight sum of named primitive algorithmic actions",
+    "counter_fields": [
+      "queue_pushes",
+      "queue_pops",
+      "source_touches",
+      "destination_touches",
+      "state_touches",
+      "state_decay_evaluations",
+      "threshold_relax_evaluations",
+      "eligibility_edge_touches",
+      "eligibility_multiplications",
+      "route_edge_checks",
+      "message_traversals",
+      "activation_additions",
+      "eligibility_additions",
+      "threshold_additions",
+      "sequence_additions",
+      "residual_multiplications",
+      "fanout_bookkeeping"
+    ],
+    "candidate_bookkeeping_included": true,
+    "dense_common_work_included": true,
+    "notes": "Current SparkBrain eligibility decay already touches every edge per event and is counted on both sides. Queue and fanout bookkeeping are not omitted from the candidate. No hardware timing or energy surrogate enters the primary metric."
+  },
+  "quality_guard": {
+    "logical_activation_max_abs_error_lte": 1e-10,
+    "fired_count_vector": "exact",
+    "events_processed": "exact",
+    "terminal_queue_empty": "required_both",
+    "failure_classification": "INVALID_QUALITY_GUARD"
+  },
+  "primary_statistic": {
+    "cell_work_reduction": "1 - candidate_total_work / dense_total_work",
+    "cluster_unit": "workload_seed",
+    "seed_level_statistic": "equal-weight mean across all sparse family-size-activity strata",
+    "point_estimate": "equal-weight mean of seed-level statistics",
+    "bootstrap": {
+      "replicates": 10000,
+      "seed": 75001,
+      "resample_unit": "workload_seed",
+      "interval": "percentile_95",
+      "quantile": "Type-7"
+    },
+    "multiplicity": "single primary statistic; activity-level reductions are deterministic gate summaries, other cell-level analyses descriptive only"
+  },
+  "decision_rule": {
+    "pass": "All quality guards pass; primary 95% CI lower bound >= 0.20; and each sparse activity-fraction mean work reduction >= 0.10.",
+    "fail": "All quality guards pass and either primary 95% CI upper bound <= 0.05 or every sparse activity-fraction mean work reduction <= 0.0.",
+    "inconclusive": "All quality guards pass and neither PASS nor FAIL condition holds.",
+    "invalid": "Any quality guard, join/cardinality, counter invariant, exact binding or evidence-integrity check fails."
+  },
+  "raw_preservation_contract": {
+    "preserver": "sparkbrain.h5_work.canonical_raw_json",
+    "required_before_scoring": true,
+    "raw_fields": "workload identifiers, candidate/dense named counters, total work, output-equivalence observations, and counter invariants",
+    "forbidden_pre_preserve": ["primary_classification", "bootstrap_ci", "pass_fail_decision"],
+    "independent_refetch_digest_required_before_score": true
+  },
+  "scorer_binding": {
+    "function": "sparkbrain.h5_work.score_rows",
+    "module_blob": "aca6e23dd801230dcd74ef28dd926e1f4adcf06d",
+    "bootstrap_seed": 75001,
+    "bootstrap_replicates": 10000
+  },
+  "pre_start_integrity": {
+    "future_identity_must_be_fresh": true,
+    "future_started_no_clobber": true,
+    "same_final_sha_ordinary_ci_required": true,
+    "same_final_sha_dedicated_prestart_required": true,
+    "formal_test_forbidden_before_started": true,
+    "raw_before_score": true,
+    "preserve_before_read_for_scoring": true,
+    "formal_identity_is_intentionally_unassigned": true
+  },
+  "stop_rule": "Stop after green readiness at H5_FORMAL_CONTRACT_READY_FOR_ANALYST_REVIEW. Fresh Evidence Analyst authorization is required before identity reservation, STARTED, official TEST, preservation, formal scoring or evidence creation."
+}
