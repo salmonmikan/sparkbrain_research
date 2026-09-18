@@ -1,22 +1,17 @@
 {
-  "timestamp": "2026-09-18T20:20:01+09:00",
+  "timestamp": "2026-09-18T21:14:36+09:00",
   "worker_role": "main",
   "execution_mode": "PRIMARY",
   "analyst_commit": "b9af0d1312d02d0be406a82d5bf889c4b578ecf6",
-  "analyst_handoff_mailbox_tip": "b9af0d1312d02d0be406a82d5bf889c4b578ecf6",
-  "bound_scientific_authority_commit": "f373fe3dfcddc14405d81cabadf0cb2682a659d0",
-  "bound_scientific_authority_mailbox_tip": "4630decbda55d31ec8f44ac1435950b261225fd5",
-  "current_lane": "H5_EVENT_ROUTING_WORK_REDUCTION_ONE_WAY",
-  "current_phase": "H5_TERMINAL_FAIL_NO_USEFUL_WORK_REDUCTION",
+  "current_lane": "POST_H5_TERMINAL_AWAIT_FRESH_ANALYST",
+  "current_phase": "BLOCKED_FOR_POST_TERMINAL_ANALYST_ALLOCATION",
   "consumed_contingency_branches": ["GO", "FAIL"],
-  "active_claim": "Lazy decay and event-routed active execution reduce audited algorithmic work relative to a dense-equivalent implementation while preserving target behavior in fixed sparse workloads.",
-  "active_identity": "h5-event-routing-work-reduction-official-v1",
-  "identity_state": "TERMINAL_CONSUMED_NO_RETRY",
+  "active_claim": "H5 event-routing work reduction is terminal FAIL_NO_USEFUL_WORK_REDUCTION for h5-event-routing-work-reduction-official-v1; no successor claim is authorized yet.",
   "authoritative_target_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "active_branch": "research/h5-event-routing-work-reduction-spec-20260918",
-    "reviewed_scientific_head": "520fc8391d9ebb02584a16ec466a1bf168548ea9",
-    "final_execution_head": "2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
+    "active_branch_head": "2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
+    "active_identity": "h5-event-routing-work-reduction-official-v1",
     "control_ref": "control/h5-event-routing-work-reduction-started-v1-20260918",
     "control_started_commit": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
     "preserve_ref": "preserve/h5-event-routing-work-reduction-raw-h5-event-routing-work-reduction-official-v1",
@@ -24,47 +19,22 @@
     "evidence_tag": "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1",
     "evidence_tag_object": "e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
     "evidence_commit": "61aff6d74b82b68a326f3d90505d70bcd4071fd5",
-    "formal_contract_blob": "1911d4560f4e2774fd725df26ba8cb25b03e2c5f",
-    "h5_module_blob": "572f00f7a7361a89a54b647a2e2dca875c9b4829",
-    "scientific_checker_blob": "2ff3abb91d7214a9d4e8877ef1c6a992e78bdddd",
-    "execution_authority_blob": "4d60a8499d321426b4c2278d7317ad927d39aa26",
-    "official_runner_blob": "42a44384d08d680e3767541efce92b0f54edb9ee",
-    "preserver_blob": "0f3b013025737373e8bec91056c5369f23a3266f",
-    "one_way_workflow_blob": "37f8dc1817a4587749c0896727dc4f10187ff50e"
+    "one_way_workflow_run_id": 35338995888
   },
   "fast_path_used": true,
   "full_reconciliation_reason": null,
-  "branches_prs_advanced": [
-    "Created control/h5-event-routing-work-reduction-started-v1-20260918 from exact package head 2086a8f4ea080a7a8a0e3c79d77afe9b516db905.",
-    "Created STARTED exactly once at control commit 058e90227cd48e1c10c6ecbaed01efdec1217d0e.",
-    "Workflow created immutable preserve ref and annotated terminal evidence tag; no PR was created or merged."
-  ],
+  "branches_prs_advanced": [],
   "workflows_experiments": {
-    "final_head_prestart_35337279639": "completed/success@2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
-    "final_head_ci_35337279740": "completed/success@2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
     "h5_one_way_35338995888": "completed/success attempt 1@058e90227cd48e1c10c6ecbaed01efdec1217d0e",
-    "control_ci_35338995808": "non-scientific companion CI dispatched by STARTED push; terminal one-way evidence does not depend on its completion"
+    "new_workflow_dispatched_this_run": false
   },
   "scientific_results": {
-    "result_class": "FAIL_NO_USEFUL_WORK_REDUCTION",
+    "new_scientific_information_this_run": false,
+    "existing_terminal_result": "FAIL_NO_USEFUL_WORK_REDUCTION",
     "primary_mean_work_reduction": 0.023826074023772813,
     "primary_ci95": [0.02379403660851484, 0.023859665012124307],
-    "activity_mean_reductions": {
-      "0.01": 0.05927001218870528,
-      "0.05": 0.009811966841371046,
-      "0.15": 0.0023962430412420807
-    },
-    "bootstrap_replicates": 10000,
-    "bootstrap_seed": 75001,
-    "cluster_unit": "workload_seed",
-    "fail_rule_applied": "primary_ci95_upper <= 0.05",
-    "raw_row_count": 152,
-    "sparse_row_count": 144,
-    "dense_control_row_count": 8,
-    "raw_sha256": "c0c87aab6a70969ade75bcfd89ad0629e04e6591c0f7414bf7d8c70049a06000",
-    "interpretation": "On the exact registered sparse workloads and audited primitive-work metric, event-routed/lazy execution did not demonstrate useful work reduction versus the frozen standalone dense/eager comparator. No hardware-energy, wall-clock, cognitive, or computational-novelty conclusion is licensed."
+    "identity_state": "TERMINAL_CONSUMED_NO_RETRY"
   },
-  "new_scientific_information": true,
   "consumed_identities": [
     "c19-external-v2-official-v4",
     "c19-r1-revision-authority-official-v1",
@@ -74,51 +44,35 @@
     "ni01-no-ignition-selective-prediction-official-v1",
     "h5-event-routing-work-reduction-official-v1"
   ],
-  "blockers": [],
+  "blockers": [
+    "No fresh Evidence Analyst post-terminal handoff exists after H5 terminalized; current mailbox b9af0d1312d02d0be406a82d5bf889c4b578ecf6 is the already-consumed pre-START GO authority and cannot authorize a successor."
+  ],
   "lease_collision_reconciliation": {
-    "prior_lease_mode": "RELAY",
-    "prior_lease_status": "WAITING_EXTERNAL",
-    "prior_heartbeat": "2026-09-18T19:58:08+09:00",
+    "prior_lease_status": "COMPLETED",
+    "prior_heartbeat": "2026-09-18T20:20:01+09:00",
     "fresh_running_collision_found": false,
-    "fresh_remote_reconciliation_performed": true,
-    "research_head_before_started": "2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
-    "fresh_analyst_tip_before_started": "b9af0d1312d02d0be406a82d5bf889c4b578ecf6",
-    "sub_mode_observed": "no_op",
-    "control_namespace_before_started": "empty",
-    "preserve_namespace_before_started": "empty",
-    "formal_namespace_before_started": "empty",
-    "sealed_namespace_before_started": "empty",
-    "evidence_namespace_before_started": "empty",
-    "result": "SAFE_TO_START_EXACTLY_ONCE"
+    "lease_acquired_this_run": true,
+    "latest_sub_mode": "no_op",
+    "target_ref_drift_found": false,
+    "terminal_integrity_anomaly_found": false
   },
-  "integrity_status": "CLEAN_TERMINAL_EVIDENCE_RAW_PRESERVED_BEFORE_SCORE_INDEPENDENT_REFETCH_VERIFIED_EXACT_BINDINGS_VALID_IDENTITY_CONSUMED_NO_RETRY",
-  "critical_path_fixes_completed": [
-    "No scientific or semantic fix was required this run.",
-    "Revalidated final exact-head CI and dedicated pre-START success.",
-    "Revalidated frozen scientific contract, H5 module, checker, runner, preserver, workflow, execution authority, and collision-free namespaces immediately before STARTED.",
-    "Created STARTED exactly once and allowed only the preregistered one-way chain.",
-    "Verified workflow success, raw preserve commit, annotated evidence tag, terminal evidence bindings, and fixed classification."
-  ],
+  "integrity_status": "CLEAN_TERMINAL_H5_REFS_UNCHANGED_NO_SUCCESSOR_AUTHORITY",
+  "critical_path_fixes_completed": [],
   "same_run_steps": [
-    "Consumed Evidence Analyst b9af0d1312d02d0be406a82d5bf889c4b578ecf6 PRE_START_GO_READY handoff.",
-    "Consumed MAIN lease/report, SUB no-op report, and Control Brain strategic prior.",
-    "Acquired PRIMARY RUNNING lease after collision reconciliation.",
-    "Performed immediate atomic H5 freshness/no-clobber and exact-binding recheck.",
-    "Created control STARTED branch from exact package head and STARTED.json exactly once.",
-    "Observed one-way workflow 35338995888 dispatch.",
-    "Re-fetched workflow after dispatch; it completed success in attempt 1.",
-    "Re-fetched preserve ref ce5797eb584344db7a512e585506fb6c59ea475b and validated unscored raw manifest/bindings.",
-    "Re-fetched annotated terminal evidence tag object e7d99cc806206ac27ced225d4779c9fc5bb67ff5 -> commit 61aff6d74b82b68a326f3d90505d70bcd4071fd5.",
-    "Read immutable terminal report and applied only the preregistered FAIL contingency; no successor design was performed."
+    "Consumed Evidence Analyst latest/state at mailbox b9af0d1312d02d0be406a82d5bf889c4b578ecf6 and recognized it as pre-terminal/pre-START authority already consumed by the terminal H5 run.",
+    "Read MAIN latest/state/lease, SUB latest no-op report, and Control Brain strategic prior.",
+    "Re-fetched current main, H5 research head, STARTED/control ref, preserve ref, evidence tag, and one-way workflow run.",
+    "Confirmed no fresh RUNNING MAIN collision, acquired the PRIMARY lease, then re-fetched the Analyst mailbox.",
+    "Confirmed no post-terminal Analyst allocation exists and performed no scientific mutation or successor design."
   ],
-  "stop_reason": "H5_TERMINAL_FAIL_NO_USEFUL_WORK_REDUCTION; identity consumed/no-retry; fresh Evidence Analyst post-terminal review required before any new scientific object.",
-  "work_left_for_SUB": "None. sub_lane and sub_fallback remain null; H5 is terminal and SUB must not rescue it.",
+  "stop_reason": "NO_FRESH_POST_TERMINAL_EVIDENCE_ANALYST_AUTHORITY",
+  "work_left_for_SUB": "None. SUB remains no_op with sub_lane=null and sub_fallback=null; it must not rescue or reinterpret terminal H5.",
   "lane_repartition_reason": null,
-  "next_MAIN_action": "STOP on this identity. Wait for a fresh Evidence Analyst post-terminal handoff assigning a prospectively independent next frontier. Do not rerun, retune, repair, salvage, or create H5-v2 from this observed outcome.",
+  "next_MAIN_action": "Wait for a fresh Evidence Analyst post-terminal handoff. If a prospectively independent frontier is assigned, start from that exact authority; otherwise remain stopped. Never rerun, retune, repair, salvage, or create H5-v2 from the observed terminal outcome.",
   "write_path_diagnostics": {
     "github_direct_write_attempted": true,
     "github_direct_write_succeeded": true,
     "force_push_used": false,
-    "history_path": "reports/orchestrator/history/2026-09-18/2020-main.md"
+    "history_path": "reports/orchestrator/history/2026-09-18/2114-main.md"
   }
 }
