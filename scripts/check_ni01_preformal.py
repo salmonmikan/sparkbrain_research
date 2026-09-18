@@ -13,7 +13,7 @@ EXPECTED_SOURCE_BLOBS = {
     "src/sparkbrain/evaluation/runner.py": "90543b184c64981802560601b85edcdee4583a35",
     "src/sparkbrain/evaluation/ablations.py": "caa6a1c63fedc2222aa2e6ce708b66668943e8dd",
     "configs/experiments/phase1/main.json": "0134abeaf3d0551edeeb890502ffebe2c27867b0",
-    "src/sparkbrain/evaluation/ni01.py": "37cf7f59725988155199148f1a62ba77ab6ca0cf",
+    "src/sparkbrain/evaluation/ni01.py": "d3b3565a08277e6a94ef9be1e5bd13e86265f8f2",
 }
 
 
@@ -99,12 +99,18 @@ def main() -> int:
 
     actual_blobs = {path: _git_blob(path) for path in EXPECTED_SOURCE_BLOBS}
     if actual_blobs != EXPECTED_SOURCE_BLOBS:
-        raise SystemExit(f"source binding drift: expected {EXPECTED_SOURCE_BLOBS}, got {actual_blobs}")
+        raise SystemExit(
+            f"source binding drift: expected {EXPECTED_SOURCE_BLOBS}, got {actual_blobs}"
+        )
 
     source_binding = contract["source_binding"]
-    if source_binding["worlds_blob"] != EXPECTED_SOURCE_BLOBS["src/sparkbrain/tasks/worlds.py"]:
+    if source_binding["worlds_blob"] != EXPECTED_SOURCE_BLOBS[
+        "src/sparkbrain/tasks/worlds.py"
+    ]:
         raise SystemExit("worlds binding mismatch")
-    if source_binding["runner_blob"] != EXPECTED_SOURCE_BLOBS["src/sparkbrain/evaluation/runner.py"]:
+    if source_binding["runner_blob"] != EXPECTED_SOURCE_BLOBS[
+        "src/sparkbrain/evaluation/runner.py"
+    ]:
         raise SystemExit("runner binding mismatch")
     if source_binding["ablations_blob"] != EXPECTED_SOURCE_BLOBS[
         "src/sparkbrain/evaluation/ablations.py"
