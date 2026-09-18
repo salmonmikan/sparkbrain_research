@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-18T10:28:01+09:00",
+  "timestamp": "2026-09-18T10:29:00+09:00",
   "worker_role": "main",
   "execution_mode": "PRIMARY",
   "evidence_analyst_commit": "28108fffc2e4e346bff79bf3e38d1cac27d3265c",
@@ -139,7 +139,7 @@
   "write_path_diagnostics": {
     "github_connector_direct_writes_attempted": true,
     "research_branch_writes": "success",
-    "report_branch_writes": "in progress at checkpoint; latest update succeeded",
+    "report_branch_writes": "success",
     "force_push_used": false
   },
   "persistence": {
@@ -147,7 +147,7 @@
     "state": "reports/orchestrator/main/state.json",
     "lease": "reports/orchestrator/main/lease.json",
     "history": "reports/orchestrator/history/2026-09-18/1028-main.md",
-    "history_append_status": "pending until final append in this run",
+    "history_append_status": "completed",
     "force_push_used": false
   }
 }
