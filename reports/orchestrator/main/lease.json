@@ -1,14 +1,14 @@
 {
   "run_id": "sparkbrain-main-primary-20260919T081538JST",
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-19T08:15:38+09:00",
   "heartbeat_at": "2026-09-19T08:15:38+09:00",
   "analyst_commit": "0562bfb0e5085750d88be99839911aaff45c8f60",
   "active_branch": null,
   "active_identity": null,
-  "active_step": "PROGRAMME_ARCHITECTURE_TESTBED_FRESH_OBJECT_ADMISSION_RECONCILIATION",
+  "active_step": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_ANALYST_0802_RECONFIRMED",
   "workflow_run_id": null,
-  "expected_next_action": "Reconcile the fresh Evidence Analyst hold against current authoritative main/control/sub state. If no genuinely fresh independently motivated native reduction-resistant object exists, perform no research mutation, preserve architecture/testbed mode, and close with durable MAIN reporting. If a fresh object exists, only bounded prospective NON_EVIDENTIARY specification/readiness is authorized and MAIN must stop at NEXT_OBJECT_READY_FOR_ANALYST_REVIEW.",
+  "expected_next_action": "Remain in architecture/testbed hold. If and only if a genuinely fresh independently motivated native reduction-resistant object appears, MAIN may perform bounded prospective NON_EVIDENTIARY specification/readiness for at most one object and must STOP at NEXT_OBJECT_READY_FOR_ANALYST_REVIEW. Do not create a formal identity, STARTED, official TEST, preserve/scoring, evidence, or outcome-responsive successor under the current authority.",
   "owner": "main"
 }
