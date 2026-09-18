@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "status": "FORMAL_CONTRACT_PROPOSAL_REVIEW_ONLY",
+  "analyst_authority": "28108fffc2e4e346bff79bf3e38d1cac27d3265c",
+  "base_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+  "research_branch": "research/pd01-fading-memory-preformal-20260918",
+  "formal_identity_proposed": "pd01-long-history-fading-memory-official-v1",
+  "formal_identity_reserved": false,
+  "started_allowed": false,
+  "official_test_access_allowed": false,
+  "official_test_target_access_allowed": false,
+  "one_way_execution_allowed": false,
+  "claim": "With current and recent observable input exactly matched, an older anonymous-lineage event remains recoverable from SparkBrain probe response at long lag beyond a conventional contractive fading-memory reservoir with equal observable input and equal linear-readout privilege.",
+  "source_binding": {
+    "sparkbrain_commit": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "sparkbrain_class": "sparkbrain.v04.brain:IntegratedV04Brain",
+    "sparkbrain_config": {
+      "width": 8,
+      "height": 8,
+      "receptor_rows": 1,
+      "topology_seed": 41,
+      "settle_ms": 5.0,
+      "enable_plasticity": true,
+      "enable_expectations": false,
+      "ignition_threshold": 4.2,
+      "max_cascade_gap_ms": 6.0
+    },
+    "pd01_implementation_path": "src/sparkbrain/external_validation/fading_memory.py",
+    "pd01_implementation_git_blob": "9ac9c349d42dc0fe8c45803cb831daa05708df55",
+    "package_version": "0.3.2.dev0"
+  },
+  "runtime_binding": {
+    "python": "3.11.16",
+    "third_party_runtime_dependencies": [],
+    "network_during_dev_or_test_execution": false,
+    "gpu_allowed": false
+  },
+  "task_world": {
+    "type": "paired_synthetic_remote_history_washout",
+    "observable_dimensions": 2,
+    "anonymous_lineages": 2,
+    "remote_event": {
+      "strong_amplitude": 1.0,
+      "weak_amplitude": 0.0,
+      "paired_intervention": "swap which anonymous lineage receives the strong remote event"
+    },
+    "washout": {
+      "generator": "one base-world symmetric filler sequence reused by both paired interventions and suffix-nested across all lag conditions",
+      "amplitude_low": 0.2,
+      "amplitude_high": 0.8,
+      "lineage_symmetry": true
+    },
+    "probe": {
+      "amplitude_per_lineage": 0.75,
+      "symmetric": true
+    },
+    "recent_window_steps": 8,
+    "recent_window_match": "exactly identical across intervention pair and across all lag conditions within one base world",
+    "lag_grid_steps": [16, 32, 64, 128],
+    "target": "which anonymous lineage received the strong remote event; -1 for lineage 0, +1 for lineage 1",
+    "history_reset": "fresh SparkBrain and fresh reservoir zero-state for every history",
+    "cross_history_state": false
+  },
+  "splits": {
+    "dev": {
+      "base_worlds": 64,
+      "seed": 33031,
+      "target_access": true,
+      "use": "fit exactly one fixed ridge readout per model; no hyperparameter selection"
+    },
+    "test": {
+      "base_worlds": 128,
+      "seed": 77237,
+      "target_access_before_raw_preserve": false,
+      "use": "one-way formal evaluation only after future Analyst authorization"
+    },
+    "leakage_rule": "DEV and TEST base-world seeds and identifiers are disjoint; TEST targets never participate in fit, tune, select, thresholds, architecture, or runtime choice"
+  },
+  "candidate_observation_and_readout": {
+    "input": "the exact same ordered 2-vector observation sequence as the comparator",
+    "probe_feature": "64-vector; per v0.4 unit, sum potential_before_reset over spikes emitted during the final symmetric probe only",
+    "feature_dimension": 64,
+    "readout": "ridge_linear",
+    "ridge_alpha": 0.001,
+    "label_encoding": [-1, 1],
+    "classification": "score >= 0 -> +1; score < 0 -> -1",
+    "fit_budget": "one fit on all DEV histories; zero tune/select retries"
+  },
+  "formal_comparator": {
+    "family": "deterministic_sparse_contractive_tanh_reservoir",
+    "state_dimension": 64,
+    "input_dimension": 2,
+    "fan_in": 8,
+    "leak": 0.35,
+    "recurrent_row_l1": 0.9,
+    "input_scale": 0.5,
+    "bias_scale": 0.05,
+    "reservoir_seed": 90917,
+    "recurrent_training": false,
+    "cross_history_state": false,
+    "probe_feature": "64-vector reservoir state immediately after the same final symmetric probe",
+    "readout": "the identical ridge-linear procedure and alpha used for SparkBrain",
+    "fit_budget": "one fit on all DEV histories; zero tune/select retries",
+    "fading_memory_guarantee": "every recurrent row has absolute weight sum 0.9 < 1 before tanh; with leak 0.35 this is a contractive finite-dimensional fading-memory state system"
+  },
+  "resource_matching": {
+    "rule": "reservoir state dimension equals SparkBrain v0.4 field unit count (8 x 8 = 64); both models expose exactly 64 probe features and receive the same 2-dimensional observations and same one-shot ridge readout privilege",
+    "formal_contender_count": 2,
+    "candidate_feature_dimension": 64,
+    "comparator_state_dimension": 64,
+    "readout_parameter_count_each": 65,
+    "max_cpu_cores": 2,
+    "max_memory_gib": 8,
+    "max_wall_clock_hours": 4,
+    "gpu": false,
+    "network": false
+  },
+  "inventory": {
+    "dev_histories": 512,
+    "test_histories": 1024,
+    "dev_observations": 31744,
+    "test_observations": 63488,
+    "test_raw_prediction_rows": 2048,
+    "test_target_rows": 1024,
+    "rows_per_base_world_test": 8,
+    "model_rows_per_base_world_test": 16
+  },
+  "primary_scoring": {
+    "primary_lags": [64, 128],
+    "metric": "classification_accuracy",
+    "effect": "SparkBrain accuracy minus reservoir accuracy over all TEST rows at lags 64 and 128",
+    "cluster_unit": "base_world_id; all lags and both paired interventions from a base world travel together with bootstrap multiplicity",
+    "bootstrap_resamples": 10000,
+    "bootstrap_seed": 19901,
+    "interval": "percentile 95% using Hyndman-Fan Type-7 quantiles",
+    "pass": "effect_ci95_lower >= 0.10 AND sparkbrain_accuracy_ci95_lower >= 0.60",
+    "fail_reduced": "effect_ci95_upper <= 0.05",
+    "inconclusive": "all other valid outcomes",
+    "secondary_descriptive": "per-lag accuracies at 16, 32, 64, 128; no secondary endpoint may override the primary terminal classification"
+  },
+  "integrity_order": [
+    "freeze exact source/protocol/package/input/runtime/candidate/comparator/scorer/preserver binding",
+    "future Analyst explicitly authorizes and reserves one fresh identity",
+    "create STARTED/no-clobber before any TEST read",
+    "materialize target-free TEST input inventory only",
+    "fit readouts using DEV only",
+    "generate candidate and comparator TEST raw scores without TEST targets",
+    "write immutable raw plus inventory and binding manifest",
+    "independently refetch preserved raw and verify digests/cardinality",
+    "materialize TEST targets",
+    "perform unique total fail-closed history_id join",
+    "score deterministically and append terminal evidence"
+  ],
+  "invalid_evidence_if": [
+    "identity or STARTED collision",
+    "source/protocol/package/input/runtime/comparator/scorer/preserver binding mismatch",
+    "TEST target accessed before immutable raw preservation and independent refetch",
+    "raw cardinality differs from 2048 model prediction rows or target cardinality differs from 1024 histories",
+    "duplicate, missing, or unmatched history_id",
+    "DEV/TEST seed or identifier overlap",
+    "post-START repair, rerun, retune, threshold change, comparator shopping, or outcome-responsive redefinition"
+  ],
+  "review_gate": {
+    "required_status": "PD01_FORMAL_CONTRACT_READY_FOR_ANALYST_REVIEW",
+    "ordinary_ci_same_head_required": true,
+    "dedicated_prestart_same_head_required": true,
+    "fresh_analyst_authority_required_before_identity_or_started": true
+  }
+}
