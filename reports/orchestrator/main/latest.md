@@ -1,6 +1,6 @@
-# MAIN Orchestrator — PRIMARY PD0.1 pre-formal fading-memory package / exact-head checks running
+# MAIN Orchestrator — PRIMARY PD0.1 pre-formal fading-memory package / dedicated green, CI running
 
-Timestamp: `2026-09-18 09:28 JST`
+Timestamp: `2026-09-18 09:29 JST`
 Execution mode: `PRIMARY`
 Evidence Analyst authority: `b009f497e65cddf1dd93cd4edc50f874c159ccd7`
 
@@ -18,21 +18,18 @@ Current branch/head:
 
 The package contains one deterministic non-trainable exponential fading-memory primitive with per-history reset and no cross-history state; deterministic target-free history ordering/inventory support; a `PREFORMAL_REVIEW_ONLY` contract that keeps every Analyst-controlled scientific value explicitly `UNRESOLVED_BY_ANALYST`; synthetic/dev-only tests; a fail-closed checker; and a dedicated synthetic-only workflow. Dev fixture values (`decay=0.5`, `order_field=seq`) are explicitly non-scientific and non-promotable.
 
-Two pre-START lint-only failures were consumed as authorized mechanical `PRE_START_BLOCKER` work. Initial dedicated run `35290714808` exposed import organization/modernization plus explicit `zip(..., strict=...)` requirements. Corrected run `35291105255` then reduced this to one remaining Ruff `I001` import-order finding in the synthetic test file. MAIN fetched the exact job logs each time and changed only those lint mechanics; no scientific contract value was selected, retuned, or rebound.
+Two earlier dedicated runs were consumed as authorized mechanical `PRE_START_BLOCKER` work only. Run `35290714808` exposed Ruff import organization/modernization plus explicit `zip(..., strict=...)` requirements. Run `35291105255` reduced the remaining issue to one Ruff `I001` import-order finding in the synthetic test. MAIN fetched exact logs and changed only those mechanics; no scientific contract value was selected, retuned, or rebound.
 
 No task/world subset, official history rule, lag grid, formal comparator configuration, representation binding, metric, effect contrast, decision threshold/equivalence rule, contender count, resource budget, runtime/package pin, or official raw cardinality was invented or frozen by MAIN.
 
 ## Workflow/check state
 
-On final exact head `6e409274...`:
+On exact final head `6e409274...`, dedicated PD0.1 pre-formal run `35291261589` is now **completed / success**. Ordinary CI `35291261630` remains `in_progress`. fileciteturn91file0 fileciteturn92file0
 
-- dedicated PD0.1 pre-formal `35291261589`: `in_progress`;
-- ordinary CI `35291261630`: `in_progress`.
-
-No useful local critical-path work remains while these external jobs run, so PRIMARY hands off rather than waiting idly.
+No useful local critical-path work remains while ordinary CI runs, so PRIMARY hands off rather than waiting idly.
 
 ## Scientific/integrity state
 
 Formal identity remains **UNRESERVED**. No STARTED/control ref, official data or targets, preserve/evidence object, scoring, or scientific execution was created or accessed. There is **no new scientific information**. Terminal C19-R2 evidence was not used to tune PD0.1.
 
-Lease is `WAITING_EXTERNAL`. Relay/next MAIN should collect only runs `35291261589` and `35291261630` for exact head `6e409274...`. If both are green, re-fetch Analyst authority and exact branch head, persist `PD01_PRE_START_READY_FOR_ANALYST_REVIEW`, and STOP; a newer Analyst handoff is required before any formal identity or STARTED. Further science-invariant mechanical failures remain MAIN-owned; any repair requiring selection of an unresolved scientific field must STOP for fresh Analyst review.
+Lease is `WAITING_EXTERNAL`. Relay/next MAIN should collect ordinary CI `35291261630` for exact head `6e409274...`; dedicated pre-formal `35291261589` is already green. If CI is also green, re-fetch Analyst authority and exact branch head, persist `PD01_PRE_START_READY_FOR_ANALYST_REVIEW`, and STOP; a newer Analyst handoff is required before any formal identity or STARTED. A science-invariant mechanical CI failure remains MAIN-owned, while any repair requiring selection of an unresolved scientific field must STOP for fresh Analyst review.
