@@ -1,22 +1,18 @@
 {
-  "timestamp": "2026-09-18T17:01:00+09:00",
+  "timestamp": "2026-09-18T18:00:00+09:00",
   "worker_role": "evidence_analyst",
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "prior_evidence_analyst_tip": "f75328c6e32f324287ece53901dd332d764eeef9",
-    "control_brain_mailbox_tip": "525796e92f6b633d81539bbddf1ac83904f6f579",
-    "orchestrator_report_mailbox_tip": "0ed910cfdac4cf30b4d550c3141b50dda5141e30",
-    "external_research_audit_mailbox_tip": "d14ac2c722feb1ae81a470cc1eef8b4052c2e719",
-    "repository_steward_mailbox_tip": "5f0faac963861b47b3385083454fdd09e3ff8f4c",
-    "ni01_execution_head": "research/ni01-no-ignition-selective-prediction-spec-20260918@dbfe7469dbbbc1adbb00789ab382de892a1b3563",
-    "ni01_started": "control/ni01-no-ignition-selective-prediction-started-v1-20260918@d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d",
-    "ni01_preserve": "preserve/ni01-no-ignition-selective-prediction-raw-ni01-no-ignition-selective-prediction-official-v1@8a39cf70e397bb7588f948910f01ec58672ac814",
-    "ni01_terminal_evidence": "69aa785a48bbdb531229b7f71f7fa84a5fde9948",
-    "ni01_evidence_tag": "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1",
-    "ni01_workflow": "35321054429:attempt1:completed/success",
-    "ni01_identity": "ni01-no-ignition-selective-prediction-official-v1",
-    "ni01_identity_state": "CONSUMED_TERMINAL_NO_RETRY",
-    "historical_h5_incubator": "research/exploratory-sub-h5-lazy-routing-20260917@cdcee56dc8d918236ed5e342d3e1712a770cd481",
+    "prior_evidence_analyst_tip": "34756bd0414084ae601a3bc724d5d99101c09676",
+    "current_h5_branch": "research/h5-event-routing-work-reduction-spec-20260918",
+    "current_h5_head": "e247f9aa3f78899147fbc37e5e6a41cd559ce6d9",
+    "h5_formal_contract_blob": "913021566d6782ede4a2854befb7923e5cbb9cb7",
+    "h5_module_blob": "d1ed8c6975803a695eac083a6761de64c29e10e8",
+    "h5_ordinary_ci": "35326594070:completed/success",
+    "h5_prestart": "35326594027:completed/success",
+    "h5_control_refs": [],
+    "h5_preserve_refs": [],
+    "h5_evidence_tags": [],
     "evidence_tags": [
       "evidence/c19-official-v4-c19-external-v2-official-v4",
       "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
@@ -24,62 +20,38 @@
       "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1"
     ],
     "authoritative_evidence_tag_count": 4,
-    "legacy_freeze_branch_count": 13,
     "open_prs": [148, 149],
     "open_non_pr_issues": [139],
     "repository_ruleset_count": 0,
     "main_protected": false
   },
   "Control_Brain_commit": "525796e92f6b633d81539bbddf1ac83904f6f579",
-  "Control_Brain_state_consumed": "analysis/control_brain/latest.md + state.json at 2026-09-18 14:50 JST as strategic prior only; current remote terminal NI01 evidence overrides stale pre-START facts",
-  "MAIN_report_commit_consumed": "0ed910cfdac4cf30b4d550c3141b50dda5141e30",
-  "MAIN_report_time_observed": "2026-09-18T16:47:00+09:00",
-  "MAIN_report_history_consumed": "reports/orchestrator/history/2026-09-18/1647-main.md",
-  "MAIN_report_note": "Designated MAIN report observed NI01 workflow 35321054429 in progress; fresh authoritative workflow/preserve/evidence refs now show terminal FAIL and therefore override the stale in-flight report.",
-  "SUB_report_commit_consumed": "0ed910cfdac4cf30b4d550c3141b50dda5141e30",
-  "SUB_report_time_observed": "2026-09-18T16:32:18+09:00",
-  "SUB_report_history_consumed": "reports/orchestrator/history/2026-09-18/1632-sub.md",
+  "Control_Brain_state_consumed": "14:50 JST designated latest/state as strategic prior only; stale relative to terminal NI01 and current H5 specification",
+  "MAIN_report_commit_consumed": "19af774881536232845e5ce9317930ccb45829e3",
+  "MAIN_report_time_observed": "2026-09-18T17:56:00+09:00",
+  "MAIN_report_history_consumed": "newest role-suffixed MAIN history corresponding to H5 readiness repair/review gate",
+  "SUB_report_commit_consumed": "70be1d7c4fd811254f81e12ffc6e907873e8d2c2",
+  "SUB_report_time_observed": "2026-09-18T17:32:00+09:00",
   "SUB_operating_mode_observed": "no_op",
   "sub_exploratory_review": null,
-  "sub_exploratory_review_reason": "Latest SUB mode is no_op; no current incubator target exists, so the five-way current-candidate classification is not applicable.",
+  "sub_exploratory_review_reason": "Latest SUB mode is no_op and no current incubator candidate exists; five-way current-candidate classification is not applicable.",
   "historical_sub_exploratory_review": {
     "branch": "research/exploratory-sub-h5-lazy-routing-20260917@cdcee56dc8d918236ed5e342d3e1712a770cd481",
     "status": "EXPLORATORY_NON_EVIDENTIARY",
     "classification": "NO_ACTION",
-    "reason": "Historical synthetic lazy-routing work is informational only: it shows a DEV equivalence/accounting harness is implementable and identifies bookkeeping as a confound. It is not evidence, does not upgrade H5, and its explored parameters must not become a formal protocol merely because they were tried. The new H5 MAIN object is independently motivated by canonical H5."
+    "reason": "Historical H5 synthetic work is informational only and may not justify, tune, or rescue the formal comparator or thresholds."
   },
   "Literature_handoff_commit_consumed": "525686fa0c14f64426ca7bf5c89f08cd0bcb9c77",
-  "Literature_mailbox_tip_consumed": "d14ac2c722feb1ae81a470cc1eef8b4052c2e719",
   "Audit_handoff_commit_consumed": "0c871b1b9b54d35c826a59c5b9925afa55b78d22",
-  "Audit_mailbox_tip_consumed": "d14ac2c722feb1ae81a470cc1eef8b4052c2e719",
   "Repository_Steward_commit_consumed": "5f0faac963861b47b3385083454fdd09e3ff8f4c",
-  "Repository_Steward_state_consumed": "13:50 JST governance advisory; current remote facts override its stale NI01/tag inventory",
-  "new_repository_evidence": {
-    "new_formal_scientific_measurement": true,
-    "line": "NI01_H4",
-    "result_class": "FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION",
-    "effect_definition": "comparator_loss_minus_native_no_ignition_loss",
-    "effect": -0.00047743055555544517,
-    "effect_ci95": [-0.0024414062499999965, 0.0014756944444444355],
-    "candidate_overall_loss": 0.2119466145833332,
-    "comparator_overall_loss": 0.21146918402777773,
-    "coverage_guard_pass": true,
-    "joined_step_count": 46080,
-    "test_target_count": 46080,
-    "world_effects": {
-      "contradiction_world": -0.003743489583333176,
-      "delayed_evidence_world": 0.00745442708333327,
-      "reliability_world": -0.00514322916666643
-    },
-    "claim_boundary": "The exact registered three-world native No-Ignition selective-value discriminator is reduced by the prospectively fixed target-blind coverage-matched max-confidence abstention comparator. This does not prove No-Ignition is globally useless."
-  },
+  "Repository_Steward_state_consumed": "13:50 JST governance advisory only; fresh remote facts override stale evidence-tag inventory",
   "external_input": {
     "literature": {
       "handoff_commit": "525686fa0c14f64426ca7bf5c89f08cd0bcb9c77",
       "new_this_cycle": false,
-      "affected_lines": ["C19_R2", "PD01", "PROGRAMME_NOVELTY", "NI01_H4", "FUTURE_FRONTIER_SELECTION"],
-      "what_changed": "No new literature stream since 04:30 JST.",
-      "prospective_change": "Do not retrofit NI01. Use the reduction-first doctrine to avoid result-responsive H4 rescue and prefer independent falsifiable future claims.",
+      "affected_lines": ["PROGRAMME_NOVELTY", "FUTURE_FRONTIER_SELECTION"],
+      "what_changed": "No new literature handoff since 04:30 JST.",
+      "prospective_change": "No H5 semantic change is motivated by literature; preserve reduction-first doctrine and do not retrofit terminal evidence.",
       "allocation_changed": false
     },
     "audit": {
@@ -87,72 +59,80 @@
       "new_this_cycle": false,
       "latest_classification": "C19_R2_ROBUST_SO_FAR",
       "affected_lines": ["C19_R2", "PD01", "NI01_H4"],
-      "what_changed": "No new independent audit since 10:30 JST. NI01 is now terminal and audit-pending; PD01 remains audit-pending.",
-      "prospective_change": "Audit NI01 before broader H4 interpretation. PD01 audit remains separately desirable. Neither blocks independent H5 prospective specification.",
+      "what_changed": "No new independent audit since 10:30 JST. NI01 and PD01 remain audit-pending.",
+      "prospective_change": "Audit NI01 and PD01 read-only; neither blocks independent H5 comparator redesign.",
       "allocation_changed": false
     }
   },
+  "new_repository_evidence": {
+    "new_formal_scientific_measurement": false,
+    "new_readiness_information": true,
+    "h5_exact_head_green": true,
+    "h5_identity_state": "UNASSIGNED_UNSTARTED_UNCONSUMED",
+    "analyst_semantic_finding": "PRE_START_SEMANTIC_GAP_DENSE_COMPARATOR",
+    "finding_detail": "The current dense comparator runs the same event-routed/lazy candidate execution path and adds output-neutral full-state/full-edge scans, so it is not a credible independent dense-equivalent algorithm for canonical H5."
+  },
   "main_lane": {
-    "target": "H5_EVENT_ROUTING_WORK_REDUCTION_PROSPECTIVE_SPECIFICATION",
+    "target": "H5_DENSE_COMPARATOR_SEMANTIC_REWORK",
     "owner": "MAIN",
-    "status": "PROSPECTIVE_SPECIFICATION_ONLY",
+    "status": "PRE_START_SEMANTIC_REWORK_ONLY",
     "formal_identity": null,
     "main_owns_all_critical_path_fixups": true,
     "formal_execution_authorized": false,
-    "completion_target": "H5_FORMAL_CONTRACT_READY_FOR_ANALYST_REVIEW",
-    "allocation_changed_this_cycle": true,
-    "allocation_change_reason": "NI01 official-v1 terminal FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION closed the registered H4 discriminator; H5 is a pre-existing independent canonical hypothesis, not an outcome rescue."
+    "completion_target": "H5_REVISED_DENSE_COMPARATOR_READY_FOR_ANALYST_REVIEW",
+    "allocation_changed_this_cycle": false,
+    "phase_changed_this_cycle": true,
+    "phase_change_reason": "Fresh Analyst code/contract review found the green comparator scientifically confounded: dense is candidate event-routing plus extra output-neutral scans."
   },
   "sub_lane": null,
   "sub_fallback": null,
-  "no_sub_lane_reason": "No independently reserved prospectively complete formal secondary object exists. H5 is MAIN-owned; H9/C07 remains under-specified; RV01 exploration is exhausted; C19/R2/PD01/NI01 are terminal or consumed.",
+  "no_sub_lane_reason": "No independently reserved prospectively complete secondary object exists. H5 remains MAIN-owned; H9/C07 is under-specified; RV01 exploration is exhausted; terminal lines remain closed.",
   "outcome_contingencies": {
-    "observed_root": "NI01_TERMINAL_FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION",
-    "NI01_FAIL": "Hard STOP. No rescue, comparator shopping, threshold/world retuning, same-ID retry or automatic NI01-v2.",
-    "H5_PROSPECTIVE_SPECIFICATION": "MAIN may perform only prospective contract construction, DEV-only equivalence/counter validation and science-invariant readiness tooling.",
-    "H5_SPEC_MECHANICAL_BLOCKER": "MAIN may repair prospective implementation/spec tooling without consulting formal outcomes.",
-    "H5_SPEC_SEMANTIC_GAP": "STOP if a genuinely dense-equivalent comparator, complete symmetric work-accounting boundary, quality guard or prospective falsifier cannot be defined.",
-    "H5_FORMAL_CONTRACT_READY_FOR_ANALYST_REVIEW": "STOP and require fresh Analyst authority before identity/STARTED.",
-    "PASS": "NOT_ARMED until H5 numerical work/quality margins and statistics are prospectively frozen.",
-    "FAIL": "NOT_ARMED until H5 numerical work/quality margins and statistics are prospectively frozen.",
-    "INCONCLUSIVE": "NOT_ARMED until H5 numerical decision rule is frozen.",
-    "INVALID_EVIDENCE": "NOT_ARMED; future formal object only.",
-    "PRE_START_BLOCKER": "Future formal object only after fresh Analyst acceptance.",
-    "POST_START_FAILURE": "NOT_ARMED; future formal identity only."
+    "observed_root": "H5_FORMAL_CONTRACT_READY_FOR_ANALYST_REVIEW",
+    "PRE_START_BLOCKER": "PRE_START_SEMANTIC_GAP_DENSE_COMPARATOR: stop formalization and redesign comparator prospectively before identity/TEST.",
+    "H5_REVISED_DENSE_COMPARATOR_READY_FOR_ANALYST_REVIEW": "STOP and require fresh Analyst acceptance before formal identity/STARTED.",
+    "PRE_START_BLOCKER_MECHANICAL": "After scientific comparator acceptance, MAIN may repair science-invariant mechanics and rerun all exact-head gates.",
+    "PASS": "NOT_ARMED under the rejected comparator; may be armed only after revised comparator acceptance and fresh identity.",
+    "FAIL": "NOT_ARMED under the rejected comparator.",
+    "INCONCLUSIVE": "NOT_ARMED under the rejected comparator.",
+    "INVALID_EVIDENCE": "Future formal identity only; if later STARTED, invalidity consumes identity with no salvage.",
+    "POST_START_FAILURE": "Future formal identity only; no same-ID retry."
   },
   "blocked_until": [
-    "Exact H5 candidate and genuinely dense-equivalent comparator are frozen prospectively.",
-    "Workload families/sizes/activity regimes/horizon/seeds and resource privileges are fixed before formal identity.",
-    "Audited algorithmic-work schema symmetrically includes state updates/touches, edge/message traversals, queue/source/destination operations and candidate-specific bookkeeping/fan-out costs.",
-    "Quality-equivalence or non-inferiority metric and numerical margin are fixed prospectively.",
-    "Primary work metric, numerical PASS/FAIL/INCONCLUSIVE criteria, cluster/sampling unit and statistics are fixed prospectively.",
-    "Exact source/package/runtime/workload/counter/scorer/preserver bindings are specified.",
-    "A fresh Evidence Analyst review explicitly authorizes any H5 formal identity/STARTED."
+    "A standalone dense/eager comparator exists that does not run the candidate lazy/event-routed execution path plus extra no-op scans.",
+    "Candidate and dense comparator share the same mathematical state equations, graph, inputs, seeds, precision, parameters and output semantics.",
+    "Implementation-specific bookkeeping is counted only where genuinely required, under one prospectively fixed primitive-cost schema.",
+    "Quality-equivalence/non-inferiority guard remains fixed and passes DEV-only validation.",
+    "Workloads, TEST seeds and decision margins remain prospectively fixed unless comparator semantics make them invalid; any scientific change is returned for Analyst review before TEST.",
+    "Exact revised source/package/runtime/counter/scorer/preserver bindings are recorded.",
+    "Ordinary CI and dedicated H5 pre-START are green on the same revised final SHA.",
+    "Fresh Evidence Analyst explicitly authorizes any formal identity/STARTED."
   ],
   "do_not_touch": [
     "NI01 STARTED/raw preserve/terminal evidence/tag and consumed identity",
-    "C19-v4 immutable evidence and narrow PASS",
+    "PD01 terminal package/STARTED/preserve/evidence/tag and consumed identity",
     "C19-R2 terminal package/STARTED/preserve/statistics/evidence/tag and consumed identity",
-    "PD01 terminal package/STARTED/preserve/evidence/tag/raw/targets/statistics and consumed identity",
+    "C19-v4 immutable evidence and narrow PASS",
     "C19-R1 v1/v2 consumed identities",
     "legacy freeze refs and authoritative evidence tags",
     "scheduler definitions",
-    "historical SUB H5 exploratory output as evidence or as a pre-frozen formal protocol",
-    "any outcome-responsive H4/NI01 rescue comparator/world/threshold",
-    "hardware-energy interpretation of H5 without H9/H10-style direct measurement"
+    "historical H5 SUB exploratory results as evidence or parameter-selection input",
+    "official H5 TEST before fresh Analyst authority",
+    "H5 hardware-energy interpretation"
   ],
   "active_MAIN_SUB_claims_observed": {
     "MAIN": {
-      "designated_report_phase": "NI01_POST_START_ONE_WAY_IN_PROGRESS",
-      "designated_report_time": "2026-09-18T16:47:00+09:00",
-      "designated_report_stale_relative_to_authoritative_terminal_refs": true,
-      "authoritative_current_phase": "NI01_TERMINAL_FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION",
-      "ni01_identity_consumed": true,
-      "scientific_result_observed": true
+      "designated_report_phase": "H5_FORMAL_CONTRACT_READY_FOR_ANALYST_REVIEW",
+      "report_time": "2026-09-18T17:56:00+09:00",
+      "active_head": "e247f9aa3f78899147fbc37e5e6a41cd559ce6d9",
+      "ordinary_ci_green": true,
+      "dedicated_prestart_green": true,
+      "scientific_result": null,
+      "identity_state": "UNASSIGNED_UNSTARTED_UNCONSUMED"
     },
     "SUB": {
       "mode": "no_op",
-      "report_time": "2026-09-18T16:32:18+09:00",
+      "report_time": "2026-09-18T17:32:00+09:00",
       "formal_lane": null,
       "formal_fallback": null,
       "exploratory_target": null,
@@ -172,15 +152,15 @@
     "C19_R2": "TERMINAL_REDUCED_BY_FSA / ROBUST_SO_FAR_AUDITED",
     "PD01": "TERMINAL_FAIL_REDUCED_BY_FADING_MEMORY / AUDIT_PENDING",
     "NI01_H4": "TERMINAL_FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION / AUDIT_PENDING",
-    "H5": "PROSPECTIVE_SPECIFICATION"
+    "H5": "PRE_START_SEMANTIC_GAP_DENSE_COMPARATOR"
   },
-  "top_recommendation": "MAIN should hard-stop NI01 and build a fresh, prospectively specified H5 event-routing algorithmic-work contract, stopping at H5_FORMAL_CONTRACT_READY_FOR_ANALYST_REVIEW without identity or STARTED; SUB remains no-op.",
+  "top_recommendation": "MAIN should replace the current candidate-plus-output-neutral-scan dense comparator with a genuine standalone dense/eager equivalent, keep formal identity/STARTED blocked, and return at H5_REVISED_DENSE_COMPARATOR_READY_FOR_ANALYST_REVIEW; SUB remains no-op.",
   "top_3": [
     {
       "rank": 1,
-      "action": "MAIN build fresh H5 event-routing algorithmic-work formal-contract proposal and stop for Analyst review",
+      "action": "MAIN prospectively redesign H5 dense comparator as an independent eager/dense algorithm and return for Analyst review",
       "information_value": "VERY_HIGH",
-      "distance": "NEAR_TO_MEDIUM"
+      "distance": "NEAR"
     },
     {
       "rank": 2,
@@ -198,44 +178,57 @@
   "consumed_identities": {
     "ni01-no-ignition-selective-prediction-official-v1": "terminal FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION; no retry",
     "pd01-long-history-fading-memory-official-v1": "terminal FAIL_REDUCED_BY_FADING_MEMORY; no retry",
-    "c19-r2-fsa-state-tracker-official-v1": "terminal REDUCED_BY_FSA; audited ROBUST_SO_FAR; no retry",
-    "c19-r1-revision-authority-official-v1": "consumed POST_START_FAILURE",
-    "c19-r1-revision-authority-official-v2": "consumed POST_START_FAILURE",
-    "c19-external-v2-official-v4": "terminal immutable narrow PASS"
+    "c19-r2-fsa-state-tracker-official-v1": "terminal REDUCED_BY_FSA; no retry",
+    "c19-r1-revision-authority-official-v1": "consumed post-START failure; no retry",
+    "c19-r1-revision-authority-official-v2": "consumed post-START failure; no retry",
+    "c19-external-v2-official-v4": "terminal immutable C19-v4 identity"
   },
   "blockers": [
-    "NI01 has no remaining scientific blocker because it is terminal; any continuation would be invalid rescue.",
-    "H5 formal execution is blocked because numerical work/quality margins, workload/resource contract, audited operation boundary, statistics and exact bindings are not yet prospectively frozen.",
-    "NI01 and PD01 fresh independent audits remain pending but do not block independent H5 specification."
+    "Current H5 dense comparator is not independently dense/eager; it executes candidate event-routing plus extra output-neutral scans.",
+    "Formal H5 identity/STARTED is prohibited until revised comparator passes fresh Analyst review and exact-head gates."
   ],
-  "go_stop": {
-    "GO": "Specification/readiness only for H5. MAIN may construct candidate/comparator/workload/counter/scorer specifications and DEV-only equivalence/counter fixtures. No formal identity, STARTED, official TEST workload, formal preserve/scoring/evidence.",
-    "FUTURE_FORMAL_INTEGRITY": "fresh identity -> namespace/no-clobber checks -> exact source/protocol/package/input/runtime/candidate/comparator/scorer/preserver binding -> same-final-SHA CI/pre-START -> STARTED before TEST -> raw operation/quality observations -> immutable preserve -> independent refetch/digest/cardinality -> targets/quality labels if needed -> fail-closed join -> preregistered scoring/statistics -> terminal evidence",
-    "SCIENTIFIC_FALSIFIER": "Canonical H5 falsifier is equal or greater audited algorithmic operations at matched quality across intended sparse regimes. Exact numerical margins and formal multi-regime decision rule must be fixed before identity; they are intentionally not invented here.",
-    "STOP": "Stop if formal TEST/outcome information is needed to choose workload regimes, comparator, counter boundary, bookkeeping treatment, quality/work margins, cluster unit or statistics; if dense comparator is not equivalent apart from routing strategy; if bookkeeping is asymmetrically omitted; or if the object drifts into hardware-energy claims."
-  },
-  "governance_advisory": {
-    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d stable/unprotected",
-    "ruleset_count": 0,
-    "legacy_freeze_count": 13,
-    "evidence_tag_count": 4,
-    "issue_139": "Open; prior three-tag inventory is now stale after NI01. Substantive authoritative-tag update/delete protection gap remains.",
-    "open_prs": [148, 149],
-    "freeze_tag_migration": "Do not batch-migrate legacy freeze refs until server-side protected migration semantics exist.",
-    "outcome_independent_main_promotion_candidates": [
-      "anonymous event/prediction-distribution primitives",
-      "architecture-neutral comparator protocol/interface shape",
-      "snapshot/restore invariants",
-      "descriptive resource accounting",
-      "generic privilege-schema validation",
-      "external-only transcript hashing/validation",
-      "generic no-self-training/no-target-leak/distribution-validation tests"
-    ],
-    "research_local": [
-      "H5 scientific workload/work-accounting/threshold semantics",
-      "G4/G5/G7/G8 mechanisms",
-      "CX01 worlds/threshold/result semantics"
+  "go_stop_number_1": {
+    "go": "Prospective comparator repair, contract/binding updates, DEV-only equivalence/counter validation, and exact-head readiness only.",
+    "stop": "No formal identity, STARTED, official TEST, formal preserve/score/evidence. Stop if credible dense/eager equivalence or symmetric implementation-faithful accounting cannot be defined without outcome-responsive selection.",
+    "future_integrity_gates": [
+      "fresh/unconsumed identity",
+      "namespace collision-free",
+      "exact source/protocol/package/input/runtime/candidate/comparator/counter/scorer/preserver binding",
+      "same-final-SHA CI and dedicated pre-START",
+      "STARTED/no-clobber before official TEST",
+      "raw before score",
+      "immutable preserve before scoring",
+      "independent refetch/digest/cardinality",
+      "fail-closed joins/invariants",
+      "preregistered statistics and falsifiers"
     ]
   },
-  "persistence_limitation": null
+  "governance_advisory": {
+    "main_protected": false,
+    "repository_ruleset_count": 0,
+    "authoritative_evidence_tag_count": 4,
+    "issue_139": "OPEN; body inventory is stale at three evidence tags while fresh remote has four; underlying tag update/delete protection gap remains real",
+    "open_prs": [148, 149],
+    "freeze_tag_migration": "Do not mutate legacy freeze refs or force-migrate them before protection semantics are installed.",
+    "outcome_independent_main_promotion_candidates": [
+      "generic runtime/source binding",
+      "STARTED/no-clobber/collision primitives",
+      "raw preserve/refetch/digest",
+      "fail-closed join/invariant checks",
+      "generic operation-counter primitives",
+      "snapshot/restore invariants",
+      "privilege-schema validation"
+    ]
+  },
+  "orchestrator_handoff": {
+    "MAIN": "Take H5 dense-comparator semantic repair and own ALL critical-path fixes. Do not formalize or run official TEST under the current comparator.",
+    "SUB": "No formal lane. Remain no_op or incubate only a genuinely distinct bounded NON_EVIDENTIARY line; do not take H5 blockers.",
+    "fallback": null,
+    "MAIN_must_not_absorb_reserved_SUB_work": "No reserved SUB work exists currently; preserve this boundary if one is later assigned.",
+    "neither_touches": "terminal/immutable C19/PD01/NI01 evidence, consumed identities, legacy freeze refs, authoritative tags, scheduler definitions",
+    "repartition_trigger": "A genuinely independent prospective SUB object appears, or fresh audit/external information materially changes expected information gain of an unstarted line.",
+    "same_run_MAIN_continuation": "Only prospective H5 comparator redesign, DEV equivalence/counter validation, contract/binding updates, tests/CI/pre-START, then stop at fresh Analyst review."
+  },
+  "evidence_analyst_authority_commit": "fc1717f54ac045f29557e839268fc3b0f622acdf",
+  "persistence_limitation": "Persist only latest.md, state.json, and append-only 2026-09-18/1800.md on ops/evidence-analyst-handoff. No research/evidence/scheduler mutation."
 }
