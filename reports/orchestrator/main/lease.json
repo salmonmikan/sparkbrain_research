@@ -1,15 +1,17 @@
 {
   "run_id": "sparkbrain-main-primary-20260918T171534JST",
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "WAITING_EXTERNAL",
   "started_at": "2026-09-18T17:15:34+09:00",
-  "heartbeat_at": "2026-09-18T17:15:34+09:00",
+  "heartbeat_at": "2026-09-18T17:23:09+09:00",
   "analyst_commit": "ded9d64a779791cbbcd9fbbff5fb3acb730c4263",
   "analyst_handoff_mailbox_tip": "34756bd0414084ae601a3bc724d5d99101c09676",
   "active_branch": "research/h5-event-routing-work-reduction-spec-20260918",
   "active_identity": null,
-  "active_step": "H5_PROSPECTIVE_SPECIFICATION",
-  "workflow_run_id": null,
-  "expected_next_action": "Construct a fresh H5 prospective formal-contract proposal and DEV-only equivalence/work-accounting validation on a new research branch from current main. Do not create identity, STARTED, official TEST, preserve, score, or evidence. Stop at H5_FORMAL_CONTRACT_READY_FOR_ANALYST_REVIEW after exact-head CI/readiness gates are green.",
+  "active_step": "H5_FORMAL_CONTRACT_GATES_RUNNING",
+  "workflow_run_id": 35324069141,
+  "ordinary_ci_run_id": 35324068936,
+  "active_head": "c2370cdc658fceab5a69a49a71032efbf4f72ece",
+  "expected_next_action": "Collect dedicated H5 readiness run 35324069141 and ordinary CI 35324068936 on exact head c2370cdc658fceab5a69a49a71032efbf4f72ece. If both are green and Analyst/head/lease remain unchanged, persist H5_FORMAL_CONTRACT_READY_FOR_ANALYST_REVIEW and STOP. If failure is mechanical, repair prospectively without changing the frozen H5 scientific contract and rerun same-head gates on the new head; if semantic/scientific redesign is required, STOP for Analyst. Do not create formal identity, STARTED, official TEST, preserve, score or evidence.",
   "owner": "main"
 }
