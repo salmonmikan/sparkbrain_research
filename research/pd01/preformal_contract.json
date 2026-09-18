@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "status": "PREFORMAL_REVIEW_ONLY",
+  "analyst_authority": "b009f497e65cddf1dd93cd4edc50f874c159ccd7",
+  "base_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+  "lane": "PD0.1 / External-Validation Protocol - long-history / fading-memory",
+  "formal_identity": null,
+  "formal_identity_reserved": false,
+  "started_allowed": false,
+  "official_data_access_allowed": false,
+  "official_target_access_allowed": false,
+  "one_way_execution_allowed": false,
+  "learned_recurrent_training_allowed": false,
+  "preformal_candidate": {
+    "implementation_count": 1,
+    "family": "deterministic_exponential_fading_memory",
+    "transition": "state_t = decay * state_(t-1) + observation_t",
+    "cross_history_state": false,
+    "fit_tune_select": false,
+    "trainable_parameters": 0,
+    "formal_configuration": "UNRESOLVED_BY_ANALYST"
+  },
+  "prospective_integrity": {
+    "target_free_history_and_inventory": true,
+    "raw_before_score_required": true,
+    "preserve_before_targets_required": true,
+    "scorability_gate_required_before_official_access": true,
+    "exact_head_ci_required_before_formalization": true,
+    "terminal_c19_r2_tuning_forbidden": true
+  },
+  "blocked_fields": {
+    "task_world_subset": "UNRESOLVED_BY_ANALYST",
+    "official_input_universe": "UNRESOLVED_BY_ANALYST",
+    "official_history_construction": "UNRESOLVED_BY_ANALYST",
+    "official_history_order_field": "UNRESOLVED_BY_ANALYST",
+    "lag_grid": "UNRESOLVED_BY_ANALYST",
+    "comparator_configuration": "UNRESOLVED_BY_ANALYST",
+    "representation_binding": "UNRESOLVED_BY_ANALYST",
+    "scoring_metrics": "UNRESOLVED_BY_ANALYST",
+    "effect_contrast": "UNRESOLVED_BY_ANALYST",
+    "no_effect_criterion": "UNRESOLVED_BY_ANALYST",
+    "inconclusive_criterion": "UNRESOLVED_BY_ANALYST",
+    "success_criterion": "UNRESOLVED_BY_ANALYST",
+    "threshold_or_equivalence_rule": "UNRESOLVED_BY_ANALYST",
+    "formal_contender_count": "UNRESOLVED_BY_ANALYST",
+    "resource_cost_budget": "UNRESOLVED_BY_ANALYST",
+    "runtime_version": "UNRESOLVED_BY_ANALYST",
+    "package_versions": "UNRESOLVED_BY_ANALYST",
+    "official_raw_cardinality": "UNRESOLVED_BY_ANALYST"
+  },
+  "dev_fixture": {
+    "scope": "SYNTHETIC_NON_SCIENTIFIC_ONLY",
+    "decay": 0.5,
+    "order_field": "seq",
+    "promotion_to_formal_protocol_forbidden": true
+  }
+}
