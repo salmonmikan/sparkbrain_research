@@ -1,16 +1,19 @@
 {
-  "timestamp": "2026-09-18T22:27:30+09:00",
+  "timestamp": "2026-09-18T22:50:04+09:00",
   "worker_role": "main",
-  "execution_mode": "PRIMARY",
+  "execution_mode": "RELAY",
   "analyst_commit": "57464c4ad6881c27371be5305512656c6ae315d3",
   "current_lane": "LP01_ACTUAL_LINEAGE_CAUSAL_CREDIT_PROSPECTIVE_SPECIFICATION",
-  "current_phase": "NO_HIGH_VALUE_OBJECT_PENDING_EXACT_HEAD_CHECKS",
-  "consumed_contingency_branches": ["PRE_START_SEMANTIC_GAP"],
+  "current_phase": "NO_HIGH_VALUE_OBJECT_PENDING_REPAIRED_EXACT_HEAD_CHECKS",
+  "consumed_contingency_branches": [
+    "PRE_START_SEMANTIC_GAP"
+  ],
   "active_claim": "Under the currently allocated matched-privilege/resource question, LP01 has no clean high-value formal object: native lineage metadata is not causal in current online decision/reward paths, and a newly added ancestry-credit path is losslessly reducible to ordinary explicit parent-state under equal information privilege.",
   "authoritative_target_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "active_branch": "research/lp01-actual-lineage-causal-credit-spec-20260918",
-    "active_branch_head": "56b0e5ddf2ceffb0a53d517d8125f8302c2d2844",
+    "active_branch_head": "f6d59a55730c5f99cd7f30470847fc3f175bdf64",
+    "pre_repair_head": "56b0e5ddf2ceffb0a53d517d8125f8302c2d2844",
     "active_identity": null,
     "evidence_analyst_handoff": "57464c4ad6881c27371be5305512656c6ae315d3",
     "structural_model_blob": "ed48ff6b473cd27caefb18e48ba41203328a949a",
@@ -19,31 +22,42 @@
     "structural_contracts_blob": "6ffd0e46de4fb93bb21e5b5a1ab157c4bc99fa41",
     "structural_config_blob": "0aba0f1a5b21b2fc1af6d58f717c4c8881d88678"
   },
-  "fast_path_used": true,
-  "full_reconciliation_reason": null,
   "branches_prs_advanced": [
-    "research/lp01-actual-lineage-causal-credit-spec-20260918@56b0e5ddf2ceffb0a53d517d8125f8302c2d2844"
+    "research/lp01-actual-lineage-causal-credit-spec-20260918@f6d59a55730c5f99cd7f30470847fc3f175bdf64"
   ],
   "workflows_experiments": {
-    "lp01_readiness_initial_35349695551": "completed/failure@c6c4838e9f378a1b4527afd9a811e8c019857cc9; false-positive source audit matched docstring token only",
-    "lp01_readiness_exact_head_35350132766": "in_progress@56b0e5ddf2ceffb0a53d517d8125f8302c2d2844",
-    "ordinary_ci_exact_head_35350132835": "in_progress@56b0e5ddf2ceffb0a53d517d8125f8302c2d2844",
+    "lp01_readiness_prior_exact_head_35350132766": "completed/failure@56b0e5ddf2ceffb0a53d517d8125f8302c2d2844; lint-only after contract/source-audit/tests/dev-diagnostic passed",
+    "ordinary_ci_prior_exact_head_35350132835": "completed/failure@56b0e5ddf2ceffb0a53d517d8125f8302c2d2844; lint-only",
+    "lp01_readiness_repaired_exact_head_35352468809": "in_progress@f6d59a55730c5f99cd7f30470847fc3f175bdf64",
+    "ordinary_ci_repaired_exact_head_35352468938": "in_progress@f6d59a55730c5f99cd7f30470847fc3f175bdf64",
     "formal_experiment_dispatched": false,
     "official_test_accessed": false
   },
+  "mechanical_failure_diagnosis": {
+    "classification": "SCIENCE_INVARIANT_LINT_ONLY",
+    "ruff_findings": [
+      "I001 import-block formatting in scripts/check_lp01_contract.py",
+      "I001 import-block formatting in scripts/check_lp01_native_causality.py",
+      "E501 101-character assertion line in scripts/run_lp01_dev.py",
+      "UP035 import Iterable from collections.abc in src/sparkbrain/lp01_lineage.py"
+    ],
+    "semantic_checks_failed": false
+  },
+  "critical_path_actions_performed": [
+    "Collected completed readiness 35350132766 and ordinary CI 35350132835 on the inherited exact head.",
+    "Confirmed readiness contract integrity, native causality audit, reference tests, and NON_EVIDENTIARY construction diagnostic passed before lint failure.",
+    "Applied only four Ruff-directed mechanical formatting/import changes; no scientific/protocol/identity semantics changed.",
+    "Advanced the LP01 research branch to f6d59a55730c5f99cd7f30470847fc3f175bdf64.",
+    "Started fresh exact-head readiness 35352468809 and ordinary CI 35352468938 and stopped rather than waiting occupied."
+  ],
   "scientific_results": {
     "new_formal_scientific_information_this_run": false,
     "prospective_specification_decision": "NO_HIGH_VALUE_OBJECT",
-    "decision_basis": [
-      "Current StructuralSparseModel.forward_step does not consume lineage/parent/tombstone metadata.",
-      "Current StructuralBrainBackend run/_consume_structural and reward eligibility paths do not consume lineage ancestry.",
-      "Current StructuralController discover/candidate_group algorithms do not consume ancestry; candidate_group contains only a lineage word in its docstring.",
-      "Stored lineage is finite explicit parent/version/tombstone/event state and can be supplied losslessly to an ordinary explicit-state comparator under equal privilege.",
-      "A formal advantage would therefore require privilege/resource asymmetry or a materially different claim, which is outside the allocated LP01 question."
-    ],
-    "dev_diagnostics_evidentiary_status": "NON_EVIDENTIARY",
+    "decision_status": "PRE_FORMAL_NON_EVIDENTIARY_PENDING_GREEN_EXACT_HEAD_CHECKS",
     "formal_identity_state": "NOT_CREATED",
-    "started_state": "NOT_CREATED"
+    "started_state": "NOT_CREATED",
+    "formal_preserve_state": "NOT_CREATED",
+    "formal_evidence_state": "NOT_CREATED"
   },
   "consumed_identities": [
     "c19-external-v2-official-v4",
@@ -54,49 +68,29 @@
     "ni01-no-ignition-selective-prediction-official-v1",
     "h5-event-routing-work-reduction-official-v1"
   ],
-  "blockers": [
-    "Exact-head LP01 prospective readiness workflow 35350132766 is still running.",
-    "Exact-head ordinary CI 35350132835 is still running."
-  ],
   "lease_collision_reconciliation": {
-    "prior_lease_status": "BLOCKED",
-    "prior_heartbeat": "2026-09-18T21:14:36+09:00",
-    "fresh_running_collision_found": false,
-    "lease_acquired_this_run": true,
+    "inherited_lease_status": "WAITING_EXTERNAL",
+    "inherited_execution_mode": "PRIMARY",
+    "inherited_heartbeat": "2026-09-18T22:27:30+09:00",
+    "fresh_primary_running_collision_found": false,
+    "relay_lease_acquired": true,
     "latest_sub_mode": "no_op",
     "sub_lane": null,
     "sub_fallback": null,
-    "target_ref_drift_found": false,
-    "analyst_ref_drift_found": false
+    "analyst_ref_drift_found": false,
+    "target_ref_drift_before_repair": false
   },
   "integrity_status": "CLEAN_PRE_FORMAL_BOUNDARY_NO_IDENTITY_NO_STARTED_NO_OFFICIAL_TEST",
-  "critical_path_fixes_completed": [
-    "Created LP01 prospective-only research branch from current main.",
-    "Specified a matched-privilege draft candidate/comparator/control envelope without creating formal identity or execution authority.",
-    "Added independent dev-only ActualLineageIndex and ExplicitParentTable reference representations and construction tests.",
-    "Added source-level audit for native lineage causal dependencies.",
-    "Diagnosed readiness run 35349695551 as a checker false positive caused by a docstring token, then changed the checker to AST identifier/attribute inspection so strings/docstrings are ignored.",
-    "Applied focused lint/iterable-handling repairs without changing the scientific question or semantic-gap conclusion.",
-    "Recorded docs/research/lp01-semantic-gap.md with the prospective NO_HIGH_VALUE_OBJECT conclusion."
+  "blockers": [
+    "Repaired exact-head LP01 prospective readiness workflow 35352468809 is still running.",
+    "Repaired exact-head ordinary CI 35352468938 is still running."
   ],
-  "same_run_steps": [
-    "Consumed fresh Evidence Analyst allocation 57464c4ad6881c27371be5305512656c6ae315d3 and its PRE_START_SEMANTIC_GAP contingency.",
-    "Read prior MAIN lease/latest/state, SUB no-op report, and Control Brain strategic prior.",
-    "Confirmed no fresh RUNNING collision and acquired the PRIMARY lease.",
-    "Re-fetched current main and the relevant structural model/backend/controller source rather than treating ops branches as repository snapshots.",
-    "Built a prospective draft contract and dev-only semantics specifically to determine whether a falsifiable non-privileged lineage discriminator exists.",
-    "Found that current native lineage is persistence/inspection metadata rather than a causal online input, while any newly added ancestry query is explicitly state-reconstructible under equal privilege.",
-    "Consumed Analyst PRE_START_SEMANTIC_GAP and selected NO_HIGH_VALUE_OBJECT rather than manufacturing a new formal identity or changing the claim.",
-    "Started exact-head readiness and ordinary CI; no useful local critical-path work remains while they execute."
-  ],
-  "stop_reason": "WAITING_EXTERNAL_EXACT_HEAD_CHECKS_BEFORE_DURABLE_NO_HIGH_VALUE_COMPLETION",
-  "work_left_for_SUB": "None. SUB has no assigned lane/fallback and must not turn historical H7 exploratory settings/results into LP01 formal parameter selection.",
-  "lane_repartition_reason": null,
-  "next_MAIN_action": "Collect readiness 35350132766 and ordinary CI 35350132835 on exact head 56b0e5ddf2ceffb0a53d517d8125f8302c2d2844. If both are green and Analyst/head state is unchanged, persist LP01_NO_HIGH_VALUE_OBJECT as completed and STOP for fresh Analyst review. Mechanical-only failures may be repaired science-invariantly; semantic/scientific changes require STOP.",
+  "stop_reason": "WAITING_EXTERNAL_REPAIRED_EXACT_HEAD_CHECKS",
+  "next_MAIN_action": "Collect readiness 35352468809 and ordinary CI 35352468938 on exact head f6d59a55730c5f99cd7f30470847fc3f175bdf64. If both are green and Analyst/head/identity/formal-boundary state remains unchanged, persist LP01_NO_HIGH_VALUE_OBJECT as completed and STOP for fresh Evidence Analyst review. Repair only science-invariant mechanical failures; any semantic/scientific change requires STOP. Do not create formal identity, STARTED, official TEST, formal preserve/scoring/evidence.",
   "write_path_diagnostics": {
     "github_direct_write_attempted": true,
     "github_direct_write_succeeded": true,
     "force_push_used": false,
-    "history_path": "reports/orchestrator/history/2026-09-18/2227-main.md"
+    "history_path": "reports/orchestrator/history/2026-09-18/2250-main.md"
   }
 }
