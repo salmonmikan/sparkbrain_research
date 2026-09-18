@@ -1,80 +1,101 @@
 {
-  "timestamp": "2026-09-18T09:45:28+09:00",
+  "timestamp": "2026-09-18T10:28:01+09:00",
   "worker_role": "main",
-  "execution_mode": "RELAY",
-  "evidence_analyst_commit": "b009f497e65cddf1dd93cd4edc50f874c159ccd7",
-  "current_lane": "PD01_REMOTE_HISTORY_LINEAGE_PERSISTENCE_SPECIFICATION",
-  "current_phase": "PD01_PRE_START_READY_FOR_ANALYST_REVIEW",
+  "execution_mode": "PRIMARY",
+  "evidence_analyst_commit": "28108fffc2e4e346bff79bf3e38d1cac27d3265c",
+  "current_lane": "PD01_MATCHED_FADING_MEMORY_FORMAL_CONTRACT_SPECIFICATION",
+  "current_phase": "PD01_FORMAL_CONTRACT_PACKAGE_EXACT_HEAD_GATES_RUNNING",
   "consumed_contingency_branches": [
-    "R2_TERMINAL_REDUCED_BY_FSA",
-    "PD01_PRE_FORMAL_SPECIFICATION",
-    "PRE_START_BLOCKER",
-    "PD01_PRE_START_READY_FOR_ANALYST_REVIEW"
+    "PD01_PRE_START_READY_FOR_ANALYST_REVIEW",
+    "PD01_MATCHED_FADING_MEMORY_FORMAL_CONTRACT_SPECIFICATION",
+    "PRE_START_BLOCKER_MECHANICAL"
   ],
   "active_claim": {
+    "claim": "With current and recent observable input exactly matched, an older anonymous-lineage event remains recoverable from SparkBrain probe response at long lag beyond a conventional contractive fading-memory reservoir with equal observable input and equal linear-readout privilege.",
     "research_branch": "research/pd01-fading-memory-preformal-20260918",
-    "exact_head": "6e409274a27d2a6abf785ba3940ab81c6d24a82f",
-    "formal_identity": null,
+    "exact_head": "ea2a8b4a5f244d601782ecb302760c49ee27e8c1",
+    "formal_identity_proposed": "pd01-long-history-fading-memory-official-v1",
     "formal_identity_reserved": false,
     "execution_allowed": false,
     "owner": "main",
-    "status": "PREFORMAL_READY_FOR_ANALYST_REVIEW"
+    "status": "FORMAL_CONTRACT_PROPOSAL_REVIEW_ONLY"
   },
   "authoritative_target_refs": {
-    "analyst": "ops/evidence-analyst-handoff@b009f497e65cddf1dd93cd4edc50f874c159ccd7",
+    "analyst": "ops/evidence-analyst-handoff@28108fffc2e4e346bff79bf3e38d1cac27d3265c",
     "main": "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "pd01_preformal": "research/pd01-fading-memory-preformal-20260918@6e409274a27d2a6abf785ba3940ab81c6d24a82f",
-    "pd01_control_matching_refs": [],
-    "pd01_preserve_matching_refs": [],
-    "pd01_evidence_matching_tags": []
+    "pd01_research": "research/pd01-fading-memory-preformal-20260918@ea2a8b4a5f244d601782ecb302760c49ee27e8c1",
+    "sparkbrain_source": "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d:src/sparkbrain/v04/brain.py",
+    "pd01_implementation_blob": "16bbfb6ed57d6c9701e8437360692b62e7c36915",
+    "formal_contract": "research/pd01/formal_contract.json",
+    "formal_identity": "UNRESERVED"
+  },
+  "fast_path_used": true,
+  "full_reconciliation_reason": null,
+  "branches_prs_advanced": {
+    "research_branch": {
+      "name": "research/pd01-fading-memory-preformal-20260918",
+      "from": "6e409274a27d2a6abf785ba3940ab81c6d24a82f",
+      "to": "ea2a8b4a5f244d601782ecb302760c49ee27e8c1"
+    },
+    "pull_requests_created_or_merged": []
   },
   "workflows_experiments": {
-    "dedicated_preformal": {
-      "run_id": 35291261589,
-      "head": "6e409274a27d2a6abf785ba3940ab81c6d24a82f",
+    "first_formal_contract_prestart": {
+      "run_id": 35295140779,
+      "head": "938c8ed366130d160b79dcad8deb2f10088e33fa",
       "status": "completed",
-      "conclusion": "success"
+      "conclusion": "failure",
+      "failure_class": "PRE_START_BLOCKER_MECHANICAL",
+      "failure_detail": "Ruff only: unused math.exp import and one 101-character docstring line; no scientific execution occurred."
     },
-    "ordinary_ci": {
-      "run_id": 35291261630,
-      "head": "6e409274a27d2a6abf785ba3940ab81c6d24a82f",
-      "status": "completed",
-      "conclusion": "success"
+    "final_exact_head_formal_contract_prestart": {
+      "run_id": 35295370268,
+      "head": "ea2a8b4a5f244d601782ecb302760c49ee27e8c1",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    "final_exact_head_ordinary_ci": {
+      "run_id": 35295370271,
+      "head": "ea2a8b4a5f244d601782ecb302760c49ee27e8c1",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    "final_exact_head_preformal_compatibility": {
+      "run_id": 35295370202,
+      "head": "ea2a8b4a5f244d601782ecb302760c49ee27e8c1",
+      "status": "in_progress",
+      "conclusion": null
     },
     "official_execution": null
   },
-  "lease_collision_reconciliation": {
-    "prior_run_id": "sparkbrain-main-20260918T0912JST",
-    "prior_execution_mode": "PRIMARY",
-    "prior_status": "WAITING_EXTERNAL",
-    "prior_heartbeat": "2026-09-18T09:30:00+09:00",
-    "fresh_primary_running_same_object": false,
-    "sub_mode": "no_op",
-    "sub_collision": false,
-    "analyst_tip_reconfirmed": "b009f497e65cddf1dd93cd4edc50f874c159ccd7",
-    "research_head_reconfirmed": "6e409274a27d2a6abf785ba3940ab81c6d24a82f",
-    "result": "safe RELAY continuation from WAITING_EXTERNAL"
-  },
-  "critical_path_actions_performed": [
-    "Read latest Evidence Analyst state/latest/history and confirmed PD01 specification-only authority, stop point and do-not-touch set.",
-    "Read MAIN latest/state/lease/newest MAIN history and SUB state for collision avoidance.",
-    "Re-fetched main, Analyst tip and exact PD01 research branch/head.",
-    "Collected ordinary CI 35291261630 and confirmed completed/success on exact head 6e409274a27d2a6abf785ba3940ab81c6d24a82f.",
-    "Re-confirmed dedicated pre-formal 35291261589 completed/success on the same exact head.",
-    "Confirmed no PD01 control, preserve or evidence matching refs/tags.",
-    "Reached and persisted PD01_PRE_START_READY_FOR_ANALYST_REVIEW without crossing STARTED."
-  ],
   "scientific_results": {
     "new_scientific_measurement": false,
+    "official_test_access": false,
     "terminal_scientific_result": null,
     "classification": "NO_NEW_SCIENTIFIC_INFORMATION",
-    "interpretation": "This RELAY cycle only collected/reconciled pre-formal workflow results and advanced the control-plane readiness state to the prospectively fixed Analyst review stop."
+    "interpretation": "This PRIMARY cycle performed prospective formal-contract construction and synthetic/dev-only readiness work only. No official PD0.1 TEST outputs or targets were observed."
   },
   "consumed_identities": {
     "c19-external-v2-official-v4": "terminal immutable PASS; untouched",
     "c19-r1-revision-authority-official-v1": "consumed POST_START_FAILURE; untouched",
     "c19-r1-revision-authority-official-v2": "consumed POST_START_FAILURE; untouched",
-    "c19-r2-fsa-state-tracker-official-v1": "consumed terminal REDUCED_BY_FSA; untouched; no retry/successor"
+    "c19-r2-fsa-state-tracker-official-v1": "consumed terminal REDUCED_BY_FSA; untouched; no retry/successor",
+    "pd01-long-history-fading-memory-official-v1": "PROPOSED NAMESPACE ONLY; UNRESERVED AND UNCONSUMED"
+  },
+  "blockers": [
+    "Exact-head external gates 35295370268, 35295370271 and 35295370202 are still in progress.",
+    "Even after green readiness gates, a fresh Evidence Analyst handoff must explicitly review the final exact head before formal identity reservation, STARTED, official TEST/target access, preservation/scoring, or one-way execution."
+  ],
+  "lease_collision_reconciliation": {
+    "prior_main_lease_status": "BLOCKED relay checkpoint at 2026-09-18T09:45:28+09:00 before this PRIMARY run",
+    "run_start_lease_written": true,
+    "fresh_primary_running_same_object_at_start": false,
+    "sub_lane": null,
+    "sub_fallback": null,
+    "sub_collision": false,
+    "analyst_tip_reconfirmed_after_mutation": "28108fffc2e4e346bff79bf3e38d1cac27d3265c",
+    "research_head_reconfirmed_after_mutation": "ea2a8b4a5f244d601782ecb302760c49ee27e8c1",
+    "result": "safe PRIMARY fast-path mutation; handing off only external workflow collection"
   },
   "integrity_status": {
     "control_plane_ops_used_only_for_designated_handoffs_reports": true,
@@ -87,22 +108,46 @@
     "one_way_execution_dispatched": false,
     "immutable_evidence_modified": false,
     "consumed_identity_retried_or_modified": false,
-    "research_head_matches_both_green_workflows": true,
-    "analyst_authority_unchanged_at_stop": true
+    "outcome_responsive_design_change": false,
+    "test_outcomes_seen": false,
+    "implementation_blob_bound_after_lint_repair": "16bbfb6ed57d6c9701e8437360692b62e7c36915",
+    "analyst_authority_unchanged_at_checkpoint": true
   },
-  "blockers": [
-    "The latest Evidence Analyst handoff explicitly requires STOP at PD01_PRE_START_READY_FOR_ANALYST_REVIEW.",
-    "Formal PD01 task/world, anonymous-lineage intervention, recent-input matching rule, lag grid, comparator configuration/resource contract, metrics/statistics/numeric criteria, runtime/package pins and other Analyst-controlled fields remain unresolved for formal execution.",
-    "A fresh Evidence Analyst handoff is required before formal identity reservation or STARTED."
+  "critical_path_fixes_completed": [
+    "Replaced the single-exponential DEV/sanity-only comparator as the formal comparator with one deterministic fixed sparse contractive tanh reservoir while retaining the exponential primitive for sanity only.",
+    "Frozen exact outcome-independent resource matching: 64 SparkBrain probe features versus 64 reservoir states and identical 65-coefficient ridge readouts.",
+    "Frozen exact paired remote-history world, recent-input matching, lag grid, DEV/TEST split seeds/cardinality, SparkBrain source/config/reset, comparator, readout, runtime/resource ceiling, primary metric/effect, cluster bootstrap and terminal criteria.",
+    "Implemented target-free TEST-input and separately materialized target generators, deterministic reservoir, equal-readout ridge mechanics, SparkBrain/reservoir probe features, and primary cluster-bootstrap scorer primitives.",
+    "Added formal_contract.json, FORMAL_CONTRACT.md, synthetic/dev-only tests, fail-closed formal checker and dedicated exact-runtime pre-START workflow.",
+    "Classified dedicated run 35295140779 failure as mechanical Ruff-only; removed unused import and wrapped one docstring line without changing scientific semantics.",
+    "Rebound formal-contract/checker implementation blob to 16bbfb6ed57d6c9701e8437360692b62e7c36915 after the lint-only source change."
   ],
-  "stop_reason": "ANALYST_REVIEW_REQUIRED: both pre-formal gates are green on the unchanged exact head, so the prospectively authorized relay chain terminates at PD01_PRE_START_READY_FOR_ANALYST_REVIEW.",
-  "next_main_action": "Wait for and consume a fresh Evidence Analyst handoff that explicitly reviews research/pd01-fading-memory-preformal-20260918@6e409274a27d2a6abf785ba3940ab81c6d24a82f and authorizes the next prospective step. Do not reserve a formal identity, create STARTED, access official data/targets, or invent unresolved scientific contract values before that handoff.",
+  "same_run_steps": [
+    "Consumed Analyst 28108fffc2e4e346bff79bf3e38d1cac27d3265c and confirmed MAIN authority to construct one stronger conventional fading-memory formal proposal only.",
+    "Read MAIN lease/report and SUB no-op report; established no collision.",
+    "Re-fetched authoritative main, PD0.1 branch, relevant v0.4 source/runtime package and existing pre-formal contract.",
+    "Constructed the full prospective formal-contract package and dedicated gate.",
+    "Observed no scientific result; first gate failed at lint before checker/tests.",
+    "Applied prospectively authorized science-invariant mechanical repair and exact implementation-blob rebind.",
+    "Re-fetched final research head, final external run identities and Analyst tip.",
+    "Exited to external wait instead of holding PRIMARY while exact-head jobs run."
+  ],
+  "stop_reason": "EXTERNAL_WAIT: no useful local critical-path work remains while exact-head formal pre-START, ordinary CI and compatibility pre-formal jobs run. The next authorized step is collection/reconciliation only; identity reservation and STARTED remain forbidden.",
+  "work_left_for_sub": null,
+  "lane_repartition_reason": null,
+  "next_main_action": "Collect exact-head runs 35295370268, 35295370271 and 35295370202 for research/pd01-fading-memory-preformal-20260918@ea2a8b4a5f244d601782ecb302760c49ee27e8c1. If any failure is strictly mechanical and science-invariant, repair it and require all gates on the new exact head. If semantic/scientific, STOP for Analyst. If required gates are green, persist PD01_FORMAL_CONTRACT_READY_FOR_ANALYST_REVIEW and STOP. Do not reserve pd01-long-history-fading-memory-official-v1, create STARTED, access official TEST/targets, preserve/score, or dispatch one-way execution without a newer Analyst authorization.",
+  "write_path_diagnostics": {
+    "github_connector_direct_writes_attempted": true,
+    "research_branch_writes": "success",
+    "report_branch_writes": "in progress at checkpoint; latest update succeeded",
+    "force_push_used": false
+  },
   "persistence": {
     "latest": "reports/orchestrator/main/latest.md",
     "state": "reports/orchestrator/main/state.json",
     "lease": "reports/orchestrator/main/lease.json",
-    "history": "reports/orchestrator/history/2026-09-18/0945-main.md",
-    "history_append_status": "completed",
+    "history": "reports/orchestrator/history/2026-09-18/1028-main.md",
+    "history_append_status": "pending until final append in this run",
     "force_push_used": false
   }
 }
