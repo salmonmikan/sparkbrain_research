@@ -47,9 +47,17 @@ def _json_digest(value: Any) -> str:
 def _load_authority(analyst_commit: str) -> tuple[dict[str, Any], dict[str, Any]]:
     authority = json.loads(AUTHORITY_PATH.read_text(encoding="utf-8"))
     contract = json.loads(CONTRACT_PATH.read_text(encoding="utf-8"))
-    if analyst_commit != EXPECTED_ANALYST or authority["evidence_analyst_commit"] != EXPECTED_ANALYST:
+    analyst_mismatch = (
+        analyst_commit != EXPECTED_ANALYST
+        or authority["evidence_analyst_commit"] != EXPECTED_ANALYST
+    )
+    if analyst_mismatch:
         raise SystemExit("PD01 analyst authority mismatch")
-    if authority["formal_identity"] != EXPECTED_IDENTITY or authority["no_retry"] is not True:
+    identity_mismatch = (
+        authority["formal_identity"] != EXPECTED_IDENTITY
+        or authority["no_retry"] is not True
+    )
+    if identity_mismatch:
         raise SystemExit("PD01 identity/one-way authority mismatch")
     if contract["formal_identity_proposed"] != EXPECTED_IDENTITY:
         raise SystemExit("PD01 scientific contract identity mismatch")
@@ -129,8 +137,14 @@ def acquire_raw(args: argparse.Namespace) -> None:
 
     if len(raw_rows) != contract["inventory"]["test_raw_prediction_rows"]:
         raise SystemExit("PD01 raw cardinality mismatch")
-    args.raw.write_text("".join(json.dumps(row, sort_keys=True) + "\n" for row in raw_rows), encoding="utf-8")
-    args.inventory.write_text(json.dumps(inventory_rows, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    args.raw.write_text(
+        "".join(json.dumps(row, sort_keys=True) + "\n" for row in raw_rows),
+        encoding="utf-8",
+    )
+    args.inventory.write_text(
+        json.dumps(inventory_rows, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
     manifest = {
         "schema_version": 1,
         "run_identity": EXPECTED_IDENTITY,
@@ -147,7 +161,10 @@ def acquire_raw(args: argparse.Namespace) -> None:
         "models": [MODEL_CANDIDATE, MODEL_COMPARATOR],
         "targets_materialized": False,
     }
-    args.manifest.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    args.manifest.write_text(
+        json.dumps(manifest, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
 
 
 def score_preserved(args: argparse.Namespace) -> None:
@@ -161,7 +178,11 @@ def score_preserved(args: argparse.Namespace) -> None:
         raise SystemExit("PD01 preserved cardinality mismatch")
     if manifest["targets_materialized"] is not False:
         raise SystemExit("PD01 pre-target manifest leakage")
-    raw_rows = [json.loads(line) for line in args.raw.read_text(encoding="utf-8").splitlines() if line]
+    raw_rows = [
+        json.loads(line)
+        for line in args.raw.read_text(encoding="utf-8").splitlines()
+        if line
+    ]
     if len(raw_rows) != 2048:
         raise SystemExit("PD01 raw row count mismatch")
     by_history: dict[str, dict[str, dict[str, Any]]] = {}
@@ -184,7 +205,11 @@ def score_preserved(args: argparse.Namespace) -> None:
             raise SystemExit("PD01 incomplete model/history join")
         candidate = bucket[MODEL_CANDIDATE]
         comparator = bucket[MODEL_COMPARATOR]
-        if candidate["base_world_id"] != comparator["base_world_id"] or candidate["lag"] != comparator["lag"]:
+        metadata_mismatch = (
+            candidate["base_world_id"] != comparator["base_world_id"]
+            or candidate["lag"] != comparator["lag"]
+        )
+        if metadata_mismatch:
             raise SystemExit("PD01 paired metadata mismatch")
         score_rows.append(
             PD01ScoreRow(
@@ -210,7 +235,10 @@ def score_preserved(args: argparse.Namespace) -> None:
         "test_target_count": len(target_map),
         "joined_history_count": len(score_rows),
     }
-    (args.output / "report.json").write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    (args.output / "report.json").write_text(
+        json.dumps(report, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
     binding = {
         "raw_sha256": _sha256(args.raw),
         "manifest_sha256": _sha256(args.manifest),
@@ -220,7 +248,10 @@ def score_preserved(args: argparse.Namespace) -> None:
         "formal_contract_git_blob": authority["formal_contract_git_blob"],
         "implementation_git_blob": authority["implementation_git_blob"],
     }
-    (args.output / "binding.json").write_text(json.dumps(binding, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    (args.output / "binding.json").write_text(
+        json.dumps(binding, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
 
 
 def parser() -> argparse.ArgumentParser:

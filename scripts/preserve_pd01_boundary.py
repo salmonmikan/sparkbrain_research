@@ -28,7 +28,8 @@ def _remote_branch_sha(remote: str, branch: str) -> str | None:
     if result.returncode == 2:
         return None
     if result.returncode != 0:
-        raise SystemExit(f"unable to inspect remote branch {remote}/{branch}: {result.stderr.strip()}")
+        detail = f"unable to inspect remote branch {remote}/{branch}: {result.stderr.strip()}"
+        raise SystemExit(detail)
     lines = [line for line in result.stdout.splitlines() if line.strip()]
     if len(lines) != 1:
         raise SystemExit(f"ambiguous remote branch resolution for {remote}/{branch}")
@@ -80,7 +81,10 @@ def main() -> None:
         "manifest_sha256": digests[args.manifest.name],
         "inventory_sha256": digests[args.inventory.name],
     }
-    args.result.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    args.result.write_text(
+        json.dumps(result, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
 
 
 if __name__ == "__main__":

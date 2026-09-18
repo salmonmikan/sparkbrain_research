@@ -53,7 +53,10 @@ def main() -> None:
     assert contract["official_test_access_allowed"] is False
     assert contract["official_test_target_access_allowed"] is False
     assert contract["one_way_execution_allowed"] is False
-    assert contract["source_binding"]["pd01_implementation_git_blob"] == EXPECTED_IMPLEMENTATION_BLOB
+    assert (
+        contract["source_binding"]["pd01_implementation_git_blob"]
+        == EXPECTED_IMPLEMENTATION_BLOB
+    )
     assert contract["runtime_binding"]["python"] == "3.11.16"
     assert contract["inventory"]["test_histories"] == 1024
     assert contract["inventory"]["test_raw_prediction_rows"] == 2048
