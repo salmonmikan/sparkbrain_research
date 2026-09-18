@@ -1,13 +1,14 @@
 {
-  "timestamp": "2026-09-18T18:42:46+09:00",
+  "timestamp": "2026-09-18T19:13:32+09:00",
   "worker_role": "main",
-  "execution_mode": "RELAY",
+  "execution_mode": "PRIMARY",
   "analyst_commit": "fc1717f54ac045f29557e839268fc3b0f622acdf",
   "analyst_handoff_mailbox_tip": "04389d811d58215981a397371f153d485b005fbd",
   "current_lane": "H5_DENSE_COMPARATOR_SEMANTIC_REWORK",
   "current_phase": "H5_REVISED_DENSE_COMPARATOR_READY_FOR_ANALYST_REVIEW",
   "consumed_contingency_branches": [
-    "PRE_START_SEMANTIC_GAP_DENSE_COMPARATOR"
+    "PRE_START_SEMANTIC_GAP_DENSE_COMPARATOR",
+    "H5_REVISED_DENSE_COMPARATOR_READY_FOR_ANALYST_REVIEW"
   ],
   "active_claim": "Lazy decay and event-routed active execution reduce audited algorithmic work relative to a credible standalone dense-equivalent implementation while preserving target behavior in fixed sparse workloads.",
   "authoritative_target_refs": {
@@ -15,10 +16,17 @@
     "active_branch": "research/h5-event-routing-work-reduction-spec-20260918",
     "active_head": "520fc8391d9ebb02584a16ec466a1bf168548ea9",
     "active_tree": "ca697ff00c0dccc153760a7f466b16847f1a1393",
+    "formal_contract_path": "configs/experiments/h5/formal_contract.json",
+    "formal_contract_blob": "1911d4560f4e2774fd725df26ba8cb25b03e2c5f",
     "h5_module_blob": "572f00f7a7361a89a54b647a2e2dca875c9b4829",
     "engine_blob": "48fa64414f539ec4a00acc9e25ffc9b1d26a4982",
     "model_blob": "ab450dba5943fa9184e66c00a4e992d6588bf6a5",
-    "package_blob": "49d47f3d65f67f1c0a6b82a3f7fc2d0364e2a88c"
+    "package_blob": "49d47f3d65f67f1c0a6b82a3f7fc2d0364e2a88c",
+    "runtime": "CPython 3.11.10",
+    "candidate": "AuditedSparkBrain",
+    "comparator": "DenseEagerSparkBrain",
+    "scorer": "sparkbrain.h5_work.score_rows",
+    "preserver": "sparkbrain.h5_work.canonical_raw_json"
   },
   "fast_path_used": true,
   "full_reconciliation_reason": null,
@@ -43,32 +51,40 @@
   ],
   "active_identity": null,
   "blockers": [
-    "Fresh Evidence Analyst acceptance is required before any H5 formal identity reservation or STARTED transition."
+    "No Evidence Analyst handoff newer than mailbox tip 04389d811d58215981a397371f153d485b005fbd has accepted revised H5 exact head 520fc8391d9ebb02584a16ec466a1bf168548ea9.",
+    "Fresh Evidence Analyst acceptance is required before any H5 formal identity reservation, STARTED, official TEST, preserve, score, or evidence transition."
   ],
   "lease_collision_reconciliation": {
-    "prior_lease_status": "WAITING_EXTERNAL",
-    "prior_lease_mode": "PRIMARY",
-    "prior_heartbeat": "2026-09-18T18:28:00+09:00",
+    "prior_lease_status": "BLOCKED",
+    "prior_lease_mode": "RELAY",
+    "prior_heartbeat": "2026-09-18T18:42:46+09:00",
     "fresh_primary_running_collision_found": false,
     "target_head_reconfirmed": "520fc8391d9ebb02584a16ec466a1bf168548ea9",
     "analyst_mailbox_tip_reconfirmed": "04389d811d58215981a397371f153d485b005fbd",
     "sub_mode_observed": "no_op",
     "sub_lane_reserved": false
   },
-  "integrity_status": "CLEAN_PRE_START_REVISED_COMPARATOR_BOTH_GATES_GREEN_NO_IDENTITY_NO_STARTED_NO_OFFICIAL_TEST_NO_PRESERVE_NO_SCORE_NO_EVIDENCE",
-  "critical_path_actions_performed": [
-    "Read latest Evidence Analyst handoff, MAIN latest/state/lease, newest MAIN history, and SUB collision report.",
-    "Re-fetched main and exact active H5 branch refs and confirmed both unchanged.",
-    "Collected ordinary CI 35329505891 as completed/success on exact head 520fc8391d9ebb02584a16ec466a1bf168548ea9.",
-    "Reconfirmed dedicated H5 pre-START 35329505864 as completed/success on the same exact head.",
-    "Re-fetched H5 control/preserve/evidence/formal namespaces and confirmed they remain empty.",
-    "Persisted H5_REVISED_DENSE_COMPARATOR_READY_FOR_ANALYST_REVIEW without crossing the formal boundary."
+  "integrity_status": "CLEAN_PRE_START_REVISED_COMPARATOR_BOTH_GATES_GREEN_NO_FRESH_ANALYST_ACCEPTANCE_NO_IDENTITY_NO_STARTED_NO_OFFICIAL_TEST_NO_PRESERVE_NO_SCORE_NO_EVIDENCE",
+  "critical_path_fixes_completed": [],
+  "same_run_steps": [
+    "Read latest Evidence Analyst latest/state/history and confirmed current authority still stops at H5_REVISED_DENSE_COMPARATOR_READY_FOR_ANALYST_REVIEW.",
+    "Read MAIN latest/state/lease and acquired a PRIMARY RUNNING heartbeat after collision check.",
+    "Read SUB latest only to avoid collision; SUB remains no_op with no reserved lane/fallback.",
+    "Read Control Brain only as strategic prior; it agrees H5 must remain bounded pending fresh Analyst acceptance.",
+    "Re-fetched main and exact H5 active branch/head and confirmed no ref drift.",
+    "Re-fetched exact H5 formal contract and bound source/package/runtime/candidate/comparator/scorer/preserver information.",
+    "Reconfirmed dedicated H5 pre-START 35329505864 and ordinary CI 35329505891 are completed/success on the exact active head.",
+    "Reconfirmed H5 control/preserve/formal/evidence namespaces remain empty.",
+    "Stopped without research mutation because the prospectively required fresh Analyst acceptance is absent."
   ],
   "stop_reason": "BLOCKED_FOR_FRESH_EVIDENCE_ANALYST_REVIEW",
-  "next_MAIN_action": "Wait for fresh Evidence Analyst review of exact head 520fc8391d9ebb02584a16ec466a1bf168548ea9 with both gates green. Continue only if a new handoff prospectively authorizes the next formal step. Do not reserve identity, create STARTED, access official TEST, preserve, score, create evidence, retune, or choose a successor under the current authority.",
+  "work_left_for_SUB": "None. SUB remains no_op; H5 is MAIN-owned and no independent sub_lane/sub_fallback is reserved.",
+  "lane_repartition_reason": null,
+  "next_MAIN_action": "Consume a newer Evidence Analyst handoff that explicitly reviews exact head 520fc8391d9ebb02584a16ec466a1bf168548ea9 with dedicated pre-START 35329505864 and ordinary CI 35329505891 green. Continue only if that handoff prospectively authorizes the next formal step; otherwise remain blocked. Do not reserve identity, create STARTED, access official TEST, preserve, score, create evidence, retune, retry, or choose a successor under the current authority.",
   "write_path_diagnostics": {
     "github_direct_write_attempted": true,
     "github_direct_write_succeeded": true,
-    "force_push_used": false
+    "force_push_used": false,
+    "history_path": "reports/orchestrator/history/2026-09-18/1913-main.md"
   }
 }
