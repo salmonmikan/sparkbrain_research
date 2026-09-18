@@ -3,7 +3,7 @@
   "execution_mode": "PRIMARY",
   "status": "WAITING_EXTERNAL",
   "started_at": "2026-09-18T17:15:34+09:00",
-  "heartbeat_at": "2026-09-18T17:23:09+09:00",
+  "heartbeat_at": "2026-09-18T17:24:00+09:00",
   "analyst_commit": "ded9d64a779791cbbcd9fbbff5fb3acb730c4263",
   "analyst_handoff_mailbox_tip": "34756bd0414084ae601a3bc724d5d99101c09676",
   "active_branch": "research/h5-event-routing-work-reduction-spec-20260918",
@@ -12,6 +12,9 @@
   "workflow_run_id": 35324069141,
   "ordinary_ci_run_id": 35324068936,
   "active_head": "c2370cdc658fceab5a69a49a71032efbf4f72ece",
-  "expected_next_action": "Collect dedicated H5 readiness run 35324069141 and ordinary CI 35324068936 on exact head c2370cdc658fceab5a69a49a71032efbf4f72ece. If both are green and Analyst/head/lease remain unchanged, persist H5_FORMAL_CONTRACT_READY_FOR_ANALYST_REVIEW and STOP. If failure is mechanical, repair prospectively without changing the frozen H5 scientific contract and rerun same-head gates on the new head; if semantic/scientific redesign is required, STOP for Analyst. Do not create formal identity, STARTED, official TEST, preserve, score or evidence.",
+  "durable_latest_commit": "e997f66602d01f91bd90d1d50bc79e0d2d81bdb8",
+  "durable_state_commit": "53a563c1f858c4f3e273e7d4712f94006ffb3393",
+  "durable_history_commit": "fdef1ddca0bf45ff0551e7c320f6123e15c56daa",
+  "expected_next_action": "Collect dedicated H5 readiness run 35324069141 and ordinary CI 35324068936 on exact head c2370cdc658fceab5a69a49a71032efbf4f72ece. If both are green and Analyst/head/lease remain unchanged, persist H5_FORMAL_CONTRACT_READY_FOR_ANALYST_REVIEW and STOP. If failure is mechanical, repair prospectively without changing the frozen H5 scientific contract and rerun all exact-head gates on the new head; if semantic/scientific redesign is required, STOP for Analyst. Do not create formal identity, STARTED, official TEST, preserve, score or evidence.",
   "owner": "main"
 }
