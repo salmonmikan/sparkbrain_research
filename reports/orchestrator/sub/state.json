@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-09-19T01:37:23+09:00",
+  "timestamp": "2026-09-19T02:35:00+09:00",
   "worker_role": "sub",
   "mode": "no_op",
-  "evidence_analyst_commit": "71d0050f3985f888dc34566a0ffbf0b027f37d3e",
-  "evidence_analyst_mailbox_tip": "71d0050f3985f888dc34566a0ffbf0b027f37d3e",
+  "evidence_analyst_commit": "c7ccb537878966f10396bfa4c539840509014490",
+  "evidence_analyst_mailbox_tip": "c7ccb537878966f10396bfa4c539840509014490",
   "consumed_lanes": [],
   "selected_independent_lane": null,
   "exploratory_target": null,
@@ -11,8 +11,8 @@
   "execution_allowed": false,
   "sub_active_claim": null,
   "main_work_explicitly_avoided": [
-    "POST_LP01_PROGRAMME_SYNTHESIS_AND_NEXT_OBJECT_ADMISSION candidate ranking and admission closeout",
-    "Any H9/H3/H6/H7 successor selection, comparator/mechanism design, specification/readiness or candidate-specific verifier/harness/runner/binding/CI fix",
+    "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE fresh-object admission gate and any candidate ranking or successor selection",
+    "Any H9/H3/H6/H7 successor selection, comparator/mechanism design, specification/readiness or candidate-specific verifier/harness/runner/binding/CI repair",
     "LP01 formalization, rescue or outcome-dependent successor design",
     "Terminal H5 retry/retune/rescore/reinterpretation/rescue",
     "PD01 reopening; NI01, C19-R2, C19-v4 and C19-R1 v1/v2 consumed science",
@@ -20,15 +20,17 @@
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "71d0050f3985f888dc34566a0ffbf0b027f37d3e",
+    "evidence_analyst": "c7ccb537878966f10396bfa4c539840509014490",
     "control_brain": "9bf5c0249e88acdd5fc99b12555e785f9c2e2976",
-    "orchestrator_parent_tip_observed_before_sub_persistence": "1a42d9eba8bacf0c01ea8fd3a05ef9645a89aee6",
-    "main_latest_report_commit": "1a42d9eba8bacf0c01ea8fd3a05ef9645a89aee6",
-    "main_admission_result": "NO_HIGH_VALUE_OBJECT",
+    "orchestrator_parent_tip_observed_before_sub_persistence": "017514db219a90e7e5bfb67862545c95ba9d3691",
+    "main_latest_checkpoint_time": "2026-09-19T02:16:00+09:00",
+    "main_latest_phase": "NO_ACTIVE_FORMAL_FRONTIER_FRESH_OBJECT_ADMISSION_GATE_ONLY",
+    "main_stop_reason": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT",
     "h9_readiness": "research/c07-h9-fully-spiking-readiness-sub-20260917@9480da3d77dfee4766b28757f1a164f5cd4dac26",
     "h3_exploratory": "research/exploratory-sub-h3-correlation-reduction-20260918@678e38ae0035ca95c424c0fa1eb9343bed8b680b",
     "h6_exploratory": "research/exploratory-sub-h6-workspace-accounting-20260917@3904596cdb6377fc460435bf1b8a6dcdadff4fab",
     "h7_exploratory": "research/exploratory-sub-h7-trace-causality-20260917@3b5f122d287025bd9e0aec3a5266704236e6a3d5",
+    "rv01_delay_filter_exploratory": "research/exploratory-sub-rv01-delay-filter-20260918@48bd4a831435dbfaeace1d2935a04e05751a61fe",
     "lp01_research": "research/lp01-actual-lineage-causal-credit-spec-20260918@f6d59a55730c5f99cd7f30470847fc3f175bdf64",
     "formal_tags": [],
     "sealed_tags": [],
@@ -52,8 +54,7 @@
   "workflows_experiments": {
     "sub_dispatched": [],
     "fresh_observed": {
-      "orchestrator_report_ci_35364921628": "completed/success@1a42d9eba8bacf0c01ea8fd3a05ef9645a89aee6",
-      "evidence_analyst_ci_35361744371": "completed/success@71d0050f3985f888dc34566a0ffbf0b027f37d3e"
+      "evidence_analyst_ci_35372900948": "completed/success@c7ccb537878966f10396bfa4c539840509014490"
     },
     "formal_experiment_by_sub": "NOT_STARTED"
   },
@@ -61,14 +62,16 @@
     "sub_new_formal_result": false,
     "sub_new_exploratory_result": false,
     "new_formal_scientific_information": false,
-    "allocation_update_observed": false,
-    "main_lane": "POST_LP01_PROGRAMME_SYNTHESIS_AND_NEXT_OBJECT_ADMISSION",
-    "main_lane_phase": "COMPLETED_PREFORMAL_NON_EVIDENTIARY_ADMISSION",
-    "main_admission_decision": "NO_HIGH_VALUE_OBJECT",
+    "allocation_update_observed": true,
+    "analyst_programme_mode": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
+    "main_lane": "FRESH_OBJECT_ADMISSION_GATE_ONLY",
+    "main_lane_phase": "NO_ACTIVE_FORMAL_FRONTIER_FRESH_OBJECT_ADMISSION_GATE_ONLY",
+    "main_latest_decision": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT",
     "main_formal_execution_authorized": false,
-    "analyst_programme_frame": "architecture/testbed primary until a fresh native non-definitionally-reducible mechanism passes admission",
+    "sub_lane": null,
+    "sub_fallback": null,
     "sub_exploratory_review": null,
-    "interpretation": "MAIN's admission closeout reinforces object scarcity but creates no scientific evidence and no SUB lane."
+    "interpretation": "Fresh Analyst repartition explicitly keeps SUB null/no-op. The prior stale-authority blocker is resolved; scientific object availability remains the only blocker."
   },
   "evidentiary_status": "NONE_FOR_SUB",
   "consumed_identities": {
@@ -83,24 +86,24 @@
       "h5-event-routing-work-reduction-official-v1"
     ],
     "lp01_formal_identity": null,
-    "post_lp01_admission_formal_identity": null
+    "architecture_testbed_admission_formal_identity": null
   },
   "blockers": [
     "No reserved independent formal SUB lane or fallback exists.",
-    "No safe, useful, non-duplicative incubator target exists under current Analyst review, MAIN admission closeout and prior SUB exploratory history.",
-    "A fresh Evidence Analyst handoff has not yet repartitioned lanes after MAIN returned NO_HIGH_VALUE_OBJECT.",
-    "Scientific object availability is the blocker; infrastructure is not blocked."
+    "No safe, useful, non-duplicative incubator target exists under the fresh Analyst architecture-testbed review and prior SUB exploratory history.",
+    "Scientific object availability is the blocker; infrastructure and authority freshness are not blocked."
   ],
   "collision_reconciliation": {
-    "report_branch_tip_before_persistence": "1a42d9eba8bacf0c01ea8fd3a05ef9645a89aee6",
-    "latest_main_checkpoint_time": "2026-09-19T00:48:00+09:00",
-    "latest_main_checkpoint_status": "COMPLETED_PREFORMAL_NON_EVIDENTIARY_ADMISSION_NO_HIGH_VALUE_OBJECT",
+    "report_branch_tip_before_persistence": "017514db219a90e7e5bfb67862545c95ba9d3691",
+    "latest_main_checkpoint_time": "2026-09-19T02:16:00+09:00",
+    "latest_main_checkpoint_status": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT",
     "fresh_analyst_tip_rechecked": true,
-    "analyst_tip_unchanged_after_main_closeout": true,
+    "analyst_tip": "c7ccb537878966f10396bfa4c539840509014490",
     "main_ref_rechecked": true,
-    "unresolved_research_refs_rechecked": true,
-    "new_main_durable_report_after_prior_sub_observed": true,
-    "new_formal_identity_or_started_after_prior_sub_observed": false,
+    "research_refs_rechecked": true,
+    "evidence_formal_sealed_freeze_control_preserve_refs_rechecked": true,
+    "prs_issues_workflows_rechecked": true,
+    "new_formal_identity_after_prior_sub_observed": false,
     "sub_collision_detected": false
   },
   "integrity_state": "CLEAN_NO_MAIN_MUTATION_NO_FORMAL_BOUNDARY_CROSSED_BY_SUB_NO_OFFICIAL_INPUT_ACCESS_NO_IDENTITY_CONSUMPTION",
@@ -113,15 +116,18 @@
   "suggested_prospective_object": null,
   "promotion_recommendation": "NONE",
   "incubator_handoff": null,
-  "proposed_handoff_to_analyst": "Consume MAIN report 1a42d9eba8bacf0c01ea8fd3a05ef9645a89aee6 / NO_HIGH_VALUE_OBJECT. Keep SUB null/no-op unless a genuinely independent prospectively complete secondary object appears, or a genuinely distinct bounded NON_EVIDENTIARY synthetic/dev question emerges outside MAIN candidate selection, terminal-line rescue and already-explored SUB themes. Do not convert historical exploratory outputs or the admission closeout into evidence.",
+  "proposed_handoff_to_analyst": "Keep SUB null/no-op unless a genuinely independent prospectively complete secondary object is reserved for SUB, or a genuinely distinct bounded NON_EVIDENTIARY synthetic/dev question appears outside MAIN fresh-object admission, terminal-line rescue and already-explored SUB themes. Do not convert historical exploratory outputs, LP01 closeout, or architecture-testbed admission decisions into evidence.",
   "report_persistence": {
-    "history_path": "reports/orchestrator/history/2026-09-19/0137-sub.md",
+    "history_path": "reports/orchestrator/history/2026-09-19/0235-sub.md",
     "sub_latest_path": "reports/orchestrator/sub/latest.md",
     "sub_state_path": "reports/orchestrator/sub/state.json",
-    "atomic_git_commit_requested": true,
+    "atomic_git_commit_requested": false,
+    "sequential_contents_commits": true,
+    "history_commit": "81265b0daf09bfa5988c7335899f57b434ed4e4a",
+    "latest_commit": "1be7d9a75d48ed4b8ccd6144ebc650c955292ee7",
     "force_push_used": false,
     "main_files_modified": false,
     "legacy_shared_latest_state_modified": false
   },
-  "persistence_limitation": null
+  "persistence_limitation": "SUB history/latest/state were persisted as sequential GitHub Contents commits rather than one atomic commit; final readback/ref-tip verification is required and performed after this state write."
 }
