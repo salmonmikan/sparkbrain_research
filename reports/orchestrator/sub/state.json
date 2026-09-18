@@ -104,7 +104,8 @@
     "latest": "reports/orchestrator/sub/latest.md",
     "state": "reports/orchestrator/sub/state.json",
     "history": "reports/orchestrator/history/2026-09-18/1035-sub.md",
-    "history_append_status": "pending",
+    "history_commit": "0f8719b729f8beff1f33380401fbb35e0d3dd019",
+    "history_append_status": "completed",
     "force_push_used": false
   }
 }
