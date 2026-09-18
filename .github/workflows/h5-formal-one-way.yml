@@ -1,0 +1,227 @@
+name: H5 event-routing work-reduction one-way
+run-name: h5-${{ github.ref_name }}
+
+on:
+  push:
+    branches:
+      - "control/h5-event-routing-work-reduction-started-v1-*"
+    paths:
+      - "artifacts/v03/h5/official_v1/STARTED.json"
+
+permissions:
+  contents: write
+
+jobs:
+  one-way:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 240
+    steps:
+      - name: Checkout STARTED control ref
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ github.token }}
+
+      - name: Validate STARTED marker and no-clobber state
+        env:
+          STARTED_PATH: artifacts/v03/h5/official_v1/STARTED.json
+        run: |
+          set -euo pipefail
+          test "${GITHUB_RUN_ATTEMPT}" = '1'
+          python - <<'PY' > /tmp/started.env
+          import json, os, re
+          from pathlib import Path
+          value = json.loads(Path(os.environ['STARTED_PATH']).read_text(encoding='utf-8'))
+          required = {
+              'state': 'STARTED',
+              'protocol_id': 'h5-event-routing-work-reduction-formal-contract-v2',
+              'run_identity': 'h5-event-routing-work-reduction-official-v1',
+              'evidence_analyst_commit': 'f373fe3dfcddc14405d81cabadf0cb2682a659d0',
+              'no_retry': True,
+          }
+          for key, expected in required.items():
+              if value.get(key) != expected:
+                  raise SystemExit(f'H5 STARTED mismatch: {key}')
+          raw = str(value.get('exact_package_commit', ''))
+          if re.fullmatch(r'[0-9a-f]{40}', raw) is None:
+              raise SystemExit('invalid H5 exact_package_commit')
+          print(f'EXACT_PACKAGE_COMMIT={raw}')
+          print(f'EVIDENCE_ANALYST_COMMIT={value["evidence_analyst_commit"]}')
+          PY
+          cat /tmp/started.env >> "${GITHUB_ENV}"
+          PACKAGE_COMMIT="$(grep '^EXACT_PACKAGE_COMMIT=' /tmp/started.env | cut -d= -f2)"
+          git cat-file -e "${PACKAGE_COMMIT}^{commit}"
+          git merge-base --is-ancestor "${PACKAGE_COMMIT}" "${GITHUB_SHA}"
+          changed="$(git diff --name-only "${PACKAGE_COMMIT}..${GITHUB_SHA}")"
+          test "${changed}" = "${STARTED_PATH}"
+          PRESERVE_BRANCH='preserve/h5-event-routing-work-reduction-raw-h5-event-routing-work-reduction-official-v1'
+          EVIDENCE_TAG='evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1'
+          if git ls-remote --exit-code --heads origin "${PRESERVE_BRANCH}" >/dev/null 2>&1; then exit 1; fi
+          if git ls-remote --exit-code --tags origin "refs/tags/${EVIDENCE_TAG}" >/dev/null 2>&1; then exit 1; fi
+          echo "PRESERVE_BRANCH=${PRESERVE_BRANCH}" >> "${GITHUB_ENV}"
+          echo "EVIDENCE_TAG=${EVIDENCE_TAG}" >> "${GITHUB_ENV}"
+          echo "STARTED_REF=${GITHUB_REF_NAME}" >> "${GITHUB_ENV}"
+
+      - name: Checkout exact authority package
+        run: |
+          set -euo pipefail
+          git checkout --detach "${EXACT_PACKAGE_COMMIT}"
+          test "$(git rev-parse HEAD)" = "${EXACT_PACKAGE_COMMIT}"
+
+      - name: Set up frozen Python runtime
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11.10"
+          cache: pip
+
+      - name: Install exact local runtime without dependency resolution
+        run: |
+          set -euo pipefail
+          python -c 'import sys; assert sys.version_info[:3] == (3, 11, 10)'
+          python -m pip install -e . --no-deps
+
+      - name: Re-prove authority and DEV-only pre-START smoke
+        env:
+          PYTHONHASHSEED: "0"
+          OMP_NUM_THREADS: "1"
+          OPENBLAS_NUM_THREADS: "1"
+          MKL_NUM_THREADS: "1"
+        run: |
+          set -euo pipefail
+          python scripts/check_h5_formal_contract.py
+          python scripts/check_h5_execution_authority.py
+          python scripts/run_h5_official.py prestart-smoke --analyst-commit "${EVIDENCE_ANALYST_COMMIT}"
+
+      - name: Acquire fixed formal raw without scoring
+        env:
+          PYTHONHASHSEED: "0"
+          OMP_NUM_THREADS: "1"
+          OPENBLAS_NUM_THREADS: "1"
+          MKL_NUM_THREADS: "1"
+        run: |
+          set -euo pipefail
+          python scripts/run_h5_official.py acquire-raw \
+            --raw "${RUNNER_TEMP}/raw_rows.json" \
+            --manifest "${RUNNER_TEMP}/raw_manifest.json" \
+            --inventory "${RUNNER_TEMP}/input_inventory.json" \
+            --analyst-commit "${EVIDENCE_ANALYST_COMMIT}" \
+            --package-commit "${EXACT_PACKAGE_COMMIT}" \
+            --started-ref "${STARTED_REF}"
+
+      - name: Preserve formal raw before scoring or classification
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          python scripts/preserve_h5_boundary.py \
+            --raw "${RUNNER_TEMP}/raw_rows.json" \
+            --manifest "${RUNNER_TEMP}/raw_manifest.json" \
+            --inventory "${RUNNER_TEMP}/input_inventory.json" \
+            --base-commit "${EXACT_PACKAGE_COMMIT}" \
+            --branch "${PRESERVE_BRANCH}" \
+            --destination artifacts/v03/h5/official_v1 \
+            --result "${RUNNER_TEMP}/preservation_result.json"
+          PRESERVATION_COMMIT="$(python -c 'import json,os; print(json.load(open(os.path.join(os.environ["RUNNER_TEMP"], "preservation_result.json")))["preservation_commit"])')"
+          echo "PRESERVATION_COMMIT=${PRESERVATION_COMMIT}" >> "${GITHUB_ENV}"
+
+      - name: Independently re-fetch preserved bytes and verify digests/cardinality
+        run: |
+          set -euo pipefail
+          git checkout --detach "${EXACT_PACKAGE_COMMIT}"
+          git fetch --no-tags origin "refs/heads/${PRESERVE_BRANCH}:refs/remotes/origin/${PRESERVE_BRANCH}"
+          test "$(git rev-parse "refs/remotes/origin/${PRESERVE_BRANCH}")" = "${PRESERVATION_COMMIT}"
+          DEST='artifacts/v03/h5/official_v1'
+          git show "${PRESERVATION_COMMIT}:${DEST}/raw_rows.json" > "${RUNNER_TEMP}/preserved_raw_rows.json"
+          git show "${PRESERVATION_COMMIT}:${DEST}/raw_manifest.json" > "${RUNNER_TEMP}/preserved_raw_manifest.json"
+          git show "${PRESERVATION_COMMIT}:${DEST}/input_inventory.json" > "${RUNNER_TEMP}/preserved_input_inventory.json"
+          test "$(sha256sum "${RUNNER_TEMP}/raw_rows.json" | awk '{print $1}')" = "$(sha256sum "${RUNNER_TEMP}/preserved_raw_rows.json" | awk '{print $1}')"
+          test "$(sha256sum "${RUNNER_TEMP}/raw_manifest.json" | awk '{print $1}')" = "$(sha256sum "${RUNNER_TEMP}/preserved_raw_manifest.json" | awk '{print $1}')"
+          test "$(sha256sum "${RUNNER_TEMP}/input_inventory.json" | awk '{print $1}')" = "$(sha256sum "${RUNNER_TEMP}/preserved_input_inventory.json" | awk '{print $1}')"
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          root = Path(os.environ['RUNNER_TEMP'])
+          rows = json.loads((root / 'preserved_raw_rows.json').read_text(encoding='utf-8'))
+          manifest = json.loads((root / 'preserved_raw_manifest.json').read_text(encoding='utf-8'))
+          inventory = json.loads((root / 'preserved_input_inventory.json').read_text(encoding='utf-8'))
+          if len(rows) != 152:
+              raise SystemExit('H5 preserved raw row cardinality mismatch')
+          if manifest.get('row_count') != 152 or manifest.get('sparse_row_count') != 144 or manifest.get('dense_control_row_count') != 8:
+              raise SystemExit('H5 preserved manifest cardinality mismatch')
+          if inventory.get('expected_total_rows') != 152 or inventory.get('expected_sparse_rows') != 144 or inventory.get('expected_dense_control_rows') != 8:
+              raise SystemExit('H5 preserved inventory cardinality mismatch')
+          if manifest.get('contains_formal_classification') is not False:
+              raise SystemExit('H5 raw was scored before preservation')
+          forbidden = {'classification', 'primary_mean_work_reduction', 'primary_ci95', 'activity_mean_reductions', 'work_reduction'}
+          if any(forbidden.intersection(row) for row in rows):
+              raise SystemExit('H5 preserved raw contains score fields')
+          PY
+
+      - name: Score only independently refetched preserved raw
+        env:
+          PYTHONHASHSEED: "0"
+          OMP_NUM_THREADS: "1"
+          OPENBLAS_NUM_THREADS: "1"
+          MKL_NUM_THREADS: "1"
+        run: |
+          set -euo pipefail
+          python scripts/run_h5_official.py score-preserved \
+            --raw "${RUNNER_TEMP}/preserved_raw_rows.json" \
+            --manifest "${RUNNER_TEMP}/preserved_raw_manifest.json" \
+            --inventory "${RUNNER_TEMP}/preserved_input_inventory.json" \
+            --output "${RUNNER_TEMP}/terminal_evidence" \
+            --analyst-commit "${EVIDENCE_ANALYST_COMMIT}" \
+            --package-commit "${EXACT_PACKAGE_COMMIT}" \
+            --preservation-commit "${PRESERVATION_COMMIT}"
+
+      - name: Create immutable terminal evidence tag
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch --create h5-terminal-evidence "${EXACT_PACKAGE_COMMIT}"
+          DEST='artifacts/v03/h5/official_v1/evidence'
+          mkdir -p "${DEST}"
+          cp "${RUNNER_TEMP}/terminal_evidence/"*.json "${DEST}/"
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          dest = Path('artifacts/v03/h5/official_v1/evidence')
+          report = json.loads((dest / 'report.json').read_text(encoding='utf-8'))
+          value = {
+              'schema_version': 1,
+              'state': 'TERMINAL_EVIDENCE',
+              'protocol_id': 'h5-event-routing-work-reduction-formal-contract-v2',
+              'run_identity': 'h5-event-routing-work-reduction-official-v1',
+              'evidence_analyst_commit': os.environ['EVIDENCE_ANALYST_COMMIT'],
+              'exact_package_commit': os.environ['EXACT_PACKAGE_COMMIT'],
+              'started_ref': os.environ['STARTED_REF'],
+              'raw_preservation_commit': os.environ['PRESERVATION_COMMIT'],
+              'workflow_run_id': os.environ['GITHUB_RUN_ID'],
+              'workflow_run_attempt': int(os.environ['GITHUB_RUN_ATTEMPT']),
+              'result_class': report['result_class'],
+          }
+          (dest / 'evidence_manifest.json').write_text(
+              json.dumps(value, indent=2, sort_keys=True) + '\n',
+              encoding='utf-8',
+          )
+          PY
+          git add "${DEST}"
+          git commit -m 'evidence(h5): finalize work-reduction terminal evidence'
+          EVIDENCE_COMMIT="$(git rev-parse HEAD)"
+          git tag -a "${EVIDENCE_TAG}" "${EVIDENCE_COMMIT}" -m 'H5 event-routing work-reduction terminal evidence; identity h5-event-routing-work-reduction-official-v1'
+          git push origin "refs/tags/${EVIDENCE_TAG}"
+
+      - name: Upload post-START diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: h5-run-${{ github.run_id }}
+          if-no-files-found: ignore
+          retention-days: 90
+          path: |
+            ${{ runner.temp }}/raw_manifest.json
+            ${{ runner.temp }}/input_inventory.json
+            ${{ runner.temp }}/preservation_result.json
+            ${{ runner.temp }}/preserved_raw_manifest.json
+            ${{ runner.temp }}/terminal_evidence/*.json
