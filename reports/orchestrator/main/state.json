@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-09-18T09:28:00+09:00",
+  "timestamp": "2026-09-18T09:29:00+09:00",
   "worker_role": "main",
   "execution_mode": "PRIMARY",
   "evidence_analyst_commit": "b009f497e65cddf1dd93cd4edc50f874c159ccd7",
   "current_lane": "PD01_REMOTE_HISTORY_LINEAGE_PERSISTENCE_SPECIFICATION",
-  "current_phase": "PD01_PREFORMAL_FINAL_EXACT_HEAD_CHECKS_RUNNING",
+  "current_phase": "PD01_PREFORMAL_DEDICATED_GREEN_CI_RUNNING",
   "consumed_contingency_branches": [
     "R2_TERMINAL_REDUCED_BY_FSA",
     "PD01_PRE_FORMAL_SPECIFICATION",
@@ -57,8 +57,8 @@
     "dedicated_preformal": {
       "run_id": 35291261589,
       "head": "6e409274a27d2a6abf785ba3940ab81c6d24a82f",
-      "status": "in_progress",
-      "conclusion": null
+      "status": "completed",
+      "conclusion": "success"
     },
     "ordinary_ci": {
       "run_id": 35291261630,
@@ -81,7 +81,7 @@
     "c19-r2-fsa-state-tracker-official-v1": "consumed terminal REDUCED_BY_FSA; untouched; no retry/successor"
   },
   "blockers": [
-    "Dedicated pre-formal 35291261589 and ordinary CI 35291261630 are running on final exact head 6e409274a27d2a6abf785ba3940ab81c6d24a82f.",
+    "Ordinary CI 35291261630 remains in progress on exact head 6e409274a27d2a6abf785ba3940ab81c6d24a82f; dedicated pre-formal 35291261589 is green on that same head.",
     "Formal PD0.1 task/world subset, official history construction/order, lag grid, comparator configuration/representation binding, scoring metrics/effect contrast, numeric decision criteria, formal contender count, resource budget, runtime/package pins, and official raw cardinality remain UNRESOLVED_BY_ANALYST.",
     "A newer Evidence Analyst handoff is required before formal identity reservation or STARTED."
   ],
@@ -130,7 +130,7 @@
     "Added a fail-closed pre-formal checker, synthetic/dev tests, and dedicated synthetic-only workflow.",
     "Fetched exact job logs for dedicated run 35290714808 and fixed only its mechanical Ruff import/modernization/zip(strict=True) findings.",
     "Fetched exact job logs for dedicated run 35291105255 and fixed only its remaining synthetic-test Ruff I001 import ordering.",
-    "Re-fetched final exact research head 6e409274a27d2a6abf785ba3940ab81c6d24a82f and observed fresh ordinary/dedicated checks start on that same head."
+    "Dedicated pre-formal run 35291261589 completed successfully on final exact head 6e409274a27d2a6abf785ba3940ab81c6d24a82f."
   ],
   "same_run_steps": [
     "Read fresh Evidence Analyst handoff and current MAIN/SUB/control-plane coordination state.",
@@ -139,13 +139,13 @@
     "Built the target-free pre-formal comparator/readiness package without formal identity/STARTED/official access.",
     "Classified two exact-log lint failures under the authorized PRE_START_BLOCKER contingency and repaired them without scientific changes.",
     "Before each mechanical mutation re-fetched lease, exact research head, and current Analyst authority.",
-    "Re-fetched final research head and exact final workflow IDs 35291261589/35291261630.",
+    "Verified dedicated pre-formal success on final head; ordinary CI remains running on the same head.",
     "Persisted relay-safe MAIN reports and append-only checkpoints."
   ],
-  "same_run_stop_reason": "EXTERNAL_WAIT: final exact-head dedicated pre-formal and ordinary CI checks are running, and no useful local critical-path work remains until terminal check status is available.",
+  "same_run_stop_reason": "EXTERNAL_WAIT: dedicated pre-formal is green, but ordinary CI 35291261630 remains in progress on the same exact head and no useful local critical-path work remains until its terminal status is available.",
   "work_intentionally_left_for_sub": "None. Evidence Analyst assigned no formal SUB lane/fallback; SUB remains outside the PD0.1 critical path.",
   "lane_repartition_reason": null,
-  "next_main_action": "Collect workflow runs 35291261589 and 35291261630 for exact head 6e409274a27d2a6abf785ba3940ab81c6d24a82f. If both are green, re-fetch the Analyst tip and exact branch head, persist PD01_PRE_START_READY_FOR_ANALYST_REVIEW, and STOP without creating a formal identity or STARTED. If a science-invariant mechanical failure occurs, MAIN may fix it and rerun both gates on one new exact head. If repair requires selecting any unresolved scientific contract value, STOP for fresh Analyst authorization.",
+  "next_main_action": "Collect ordinary CI 35291261630 for exact head 6e409274a27d2a6abf785ba3940ab81c6d24a82f; dedicated pre-formal 35291261589 is already success on that head. If CI is also green, re-fetch the Analyst tip and exact branch head, persist PD01_PRE_START_READY_FOR_ANALYST_REVIEW, and STOP without creating a formal identity or STARTED. If CI has a science-invariant mechanical failure, MAIN may fix it and rerun both gates on one new exact head. If repair requires selecting any unresolved scientific contract value, STOP for fresh Analyst authorization.",
   "write_path_diagnostics": {
     "github_direct_write_capability": "success",
     "lease_acquire_commit": "97533392ea614edd9fc61b4dda867355567484e3",
