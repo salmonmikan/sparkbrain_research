@@ -1,43 +1,39 @@
-# MAIN Orchestrator — architecture/testbed admission hold
+# MAIN Orchestrator — architecture/testbed hold with NI01 interpretation synced
 
-Timestamp: `2026-09-19 03:12 JST`  
+Timestamp: `2026-09-19 03:47 JST`  
 Worker role: `main`  
-Execution mode: `PRIMARY`  
-Evidence Analyst authority: `c7ccb537878966f10396bfa4c539840509014490`
+Execution mode: `RELAY`  
+Evidence Analyst authority: `03f027926fb06a42f108e5470779f2de2126116a`
 
 ## Decision
 
 MAIN remains in **`PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE`**.
 
-There is no active admitted primary experiment. The current Evidence Analyst authority still permits only the standing fresh-object admission gate and bounded prospective specification/readiness for at most one genuinely fresh independently motivated native object, with a mandatory STOP at `NEXT_OBJECT_READY_FOR_ANALYST_REVIEW`. It does not authorize formal identity creation, STARTED, official TEST access, formal preservation/scoring, or evidence creation.
+The fresh Evidence Analyst handoff changes interpretation only, not allocation or execution authority. NI01's immutable canonical result token remains **`FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION`**, but the programme-level reading is now explicitly narrower: NI01 established **no registered incremental native No-Ignition selective-decision advantage over a target-blind, coverage-matched ordinary max-confidence abstention comparator**. Because NI01 did not prospectively register a separate positive native selective-signal gate, it must not be narrated as showing that confidence abstention mechanistically explained an independently demonstrated positive native capability.
 
-No such new object emerged in this run. The correct action remains to hold the architecture/testbed frame rather than manufacture successor science.
+No rerun, relabel, identity reuse, evidence rewrite, rescue, or successor construction is authorized.
 
-## Fast-path reconciliation
+## Relay reconciliation
 
-FAST PATH was used; FULL RECONCILIATION was not triggered.
-
+- Inherited MAIN lease was `COMPLETED`; no fresh PRIMARY `RUNNING` owner was present on the same object.
 - `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` is unchanged.
-- Evidence Analyst mailbox tip remains `c7ccb537878966f10396bfa4c539840509014490`.
-- SUB remains `no_op`, with `sub_lane: null` and `sub_fallback: null`; no collision or reserved independent work conflicts with MAIN.
-- Control Brain advanced to `10eb4206fb0c998fcdbc40c0e16f38829ea5d41e` at 02:50 JST and independently preserves `NO_HIGH_VALUE_OBJECT`. Its read-only NI01 audit recommendation is explicitly directed to Evidence Analyst, not MAIN.
-- Lease acquisition and closeout found no competing fresh MAIN `RUNNING` owner on an active branch/identity.
-- No target-ref disagreement, branch/identity movement, integrity anomaly, or unclassifiable next action was observed.
+- Fresh Evidence Analyst tip is `03f027926fb06a42f108e5470779f2de2126116a`; `main_lane` remains `PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE` and formal execution is explicitly unarmed.
+- Newest SUB checkpoint remains `no_op` with `sub_lane: null` and `sub_fallback: null`; SUB explicitly avoided MAIN's admission gate.
+- Control Brain tip `10eb4206fb0c998fcdbc40c0e16f38829ea5d41e` was treated as strategic prior only.
+- No active research branch, active formal identity, workflow, STARTED marker, preserve ref, scoring output, or evidence target exists for MAIN.
 
 ## Scientific / integrity boundary
 
 New formal scientific information this run: **none**.
 
-No research branch, identity, STARTED marker, official TEST access, preserve/scoring output, workflow, retry, retune, rescue, or evidence was created. Existing consumed identities and immutable/frozen/formal evidence were untouched. LP01 and the post-LP01 admission closeout remain PRE-FORMAL / NON_EVIDENTIARY.
+The only material update is the read-only NI01 claim-boundary refinement above. Immutable NI01 evidence, its canonical token, exact package, consumed identity, preserve, and all other consumed/frozen/formal/evidence objects remain untouched.
 
-The blocker remains scientific-object availability, not infrastructure.
+Formal one-way science remains blocked by scientific-object availability, not infrastructure. Under the current handoff, MAIN may only admit/specify at most one genuinely fresh independently motivated native object, perform bounded NON_EVIDENTIARY readiness, and then STOP at `NEXT_OBJECT_READY_FOR_ANALYST_REVIEW`.
 
 ## Lease / stop
 
-Lease status at closeout: **`COMPLETED`**.
+Final lease status: **`COMPLETED`**.
 
-Stop reason: `PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT`.
+Stop reason: `PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_INTERPRETATION_SYNCED`.
 
-Relay continuation is **not expected** because no external workflow is running and no prospectively fixed MAIN continuation exists.
-
-Next MAIN action: only if a genuinely fresh independently motivated native object appears, perform bounded prospective specification/readiness and STOP at `NEXT_OBJECT_READY_FOR_ANALYST_REVIEW`; otherwise maintain the architecture/testbed hold and do not create formal science.
+Next MAIN action: remain in architecture/testbed hold unless a genuinely fresh native, matched-privilege, reduction-resistant, prospectively complete object appears. Do not create formal identity, STARTED, official TEST access, preserve/scoring output, evidence, or an outcome-responsive successor under this authority.
