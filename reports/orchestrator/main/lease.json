@@ -3,12 +3,12 @@
   "execution_mode": "PRIMARY",
   "status": "RUNNING",
   "started_at": "2026-09-18T11:18:02+09:00",
-  "heartbeat_at": "2026-09-18T11:20:00+09:00",
+  "heartbeat_at": "2026-09-18T11:26:00+09:00",
   "analyst_commit": "91a05bad6d130f89975e776960a1d25d764fba32",
   "active_branch": "research/pd01-fading-memory-preformal-20260918",
   "active_identity": "pd01-long-history-fading-memory-official-v1",
-  "active_step": "PD01_PRE_START_AUTHORITY_PACKAGING",
-  "workflow_run_id": null,
-  "expected_next_action": "Rebind science-invariant PD01 authority/admission metadata to Evidence Analyst 91a05bad6d130f89975e776960a1d25d764fba32, preserve the reviewed scientific contract unchanged, rerun same-final-SHA ordinary CI + dedicated formal pre-START + compatibility, then if every fresh GO check remains green create exactly one STARTED/no-clobber identity and dispatch the fixed one-way chain.",
+  "active_step": "PRE_START_BLOCKER_MECHANICAL_RUFF_E501_REPAIR",
+  "workflow_run_id": 35299066515,
+  "expected_next_action": "Repair only the ten Ruff E501 line-wrap findings in the new science-invariant execution package, change no scientific semantics, push a new exact head, then require compatibility + ordinary CI + dedicated formal pre-START all green on that same final SHA before any STARTED action.",
   "owner": "main"
 }
