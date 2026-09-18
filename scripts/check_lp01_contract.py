@@ -4,7 +4,6 @@ import json
 import subprocess
 from pathlib import Path
 
-
 REQUIRED_TOP_LEVEL = {
     "schema",
     "status",
