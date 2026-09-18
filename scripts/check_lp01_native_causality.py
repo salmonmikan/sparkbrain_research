@@ -4,7 +4,6 @@ import ast
 import textwrap
 from pathlib import Path
 
-
 FORBIDDEN_CAUSAL_TOKENS = {"identities", "parents", "tombstones", "lineage"}
 
 
