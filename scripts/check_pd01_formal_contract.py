@@ -18,7 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CONTRACT = ROOT / "research" / "pd01" / "formal_contract.json"
 EXPECTED_ANALYST = "28108fffc2e4e346bff79bf3e38d1cac27d3265c"
 EXPECTED_BASE = "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d"
-EXPECTED_IMPLEMENTATION_BLOB = "9ac9c349d42dc0fe8c45803cb831daa05708df55"
+EXPECTED_IMPLEMENTATION_BLOB = "16bbfb6ed57d6c9701e8437360692b62e7c36915"
 
 
 def main() -> None:
