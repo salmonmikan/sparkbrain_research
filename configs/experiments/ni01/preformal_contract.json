@@ -15,7 +15,7 @@
     "runner_blob": "90543b184c64981802560601b85edcdee4583a35",
     "ablations_blob": "caa6a1c63fedc2222aa2e6ce708b66668943e8dd",
     "phase1_main_config_blob": "0134abeaf3d0551edeeb890502ffebe2c27867b0",
-    "ni01_scorer_blob": "37cf7f59725988155199148f1a62ba77ab6ca0cf"
+    "ni01_scorer_blob": "d3b3565a08277e6a94ef9be1e5bd13e86265f8f2"
   },
   "candidate": {
     "name": "SparkBrain native No-Ignition",
