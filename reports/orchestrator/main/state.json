@@ -1,20 +1,19 @@
 {
-  "timestamp": "2026-09-19T03:12:42+09:00",
+  "timestamp": "2026-09-19T03:47:08+09:00",
   "worker_role": "main",
-  "execution_mode": "PRIMARY",
-  "analyst_commit": "c7ccb537878966f10396bfa4c539840509014490",
+  "execution_mode": "RELAY",
+  "analyst_commit": "03f027926fb06a42f108e5470779f2de2126116a",
   "current_lane": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
   "current_phase": "NO_ACTIVE_FORMAL_FRONTIER_FRESH_OBJECT_ADMISSION_GATE_ONLY",
   "consumed_contingency_branches": [
-    "POST_LP01_ADMISSION_NO_HIGH_VALUE_OBJECT",
-    "NO_HIGH_VALUE_OBJECT"
+    "NO_NEW_OBJECT"
   ],
-  "active_claim": "No active admitted primary experiment exists. MAIN holds a standing fresh-object admission gate and must not manufacture successor science absent a genuinely fresh independently motivated natively causal object that is matched in state/information/readout/resources, robust to ordinary reductions, numerically falsifiable, and prospectively complete.",
+  "active_claim": "No active admitted primary experiment exists. The fresh Evidence Analyst handoff adds only a read-only NI01 programme-interpretation narrowing: NI01 validly shows no registered incremental native selective-decision advantage over matched max-confidence abstention, but did not prospectively establish a separate positive native selective signal that the comparator then mechanistically explained.",
   "authoritative_target_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "active_branch": null,
     "active_identity": null,
-    "evidence_analyst_handoff": "c7ccb537878966f10396bfa4c539840509014490",
+    "evidence_analyst_handoff": "03f027926fb06a42f108e5470779f2de2126116a",
     "control_brain_prior": "10eb4206fb0c998fcdbc40c0e16f38829ea5d41e",
     "formal_boundary": "ARCHITECTURE_TESTBED / PROSPECTIVE_ADMISSION_ONLY / no formal identity or STARTED authorized"
   },
@@ -31,6 +30,9 @@
     "programme_state": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
     "admission_result": "NO_FRESH_OBJECT_EMERGED",
     "evidentiary_status": "PREFORMAL_NON_EVIDENTIARY_PROGRAMME_HOLD",
+    "ni01_canonical_result_token": "FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION",
+    "ni01_programme_synthesis": "NO_REGISTERED_INCREMENTAL_NATIVE_ADVANTAGE_OVER_MATCHED_CONFIDENCE_ABSTENTION",
+    "ni01_interpretive_update": "Canonical evidence and result token are unchanged. Because NI01 did not prospectively register a separate positive native-signal gate, the result must not be narrated as proving that confidence abstention mechanistically explained an independently demonstrated positive native capability.",
     "formal_identity_state": "NONE_ACTIVE",
     "started_state": "NONE_NEW",
     "formal_preserve_state": "NONE_NEW",
@@ -47,44 +49,42 @@
     "h5-event-routing-work-reduction-official-v1"
   ],
   "blockers": [
-    "Scientific object availability: no freshly emerging independently motivated object was present to admit under the current architecture/testbed gate.",
-    "Formal one-way science remains blocked until a fresh object satisfies the Analyst native-causality, privilege/resource symmetry, ordinary-reduction, positive-signal where applicable, numeric-falsifier, exact-binding, same-final-SHA CI/pre-START, and fresh-authority requirements."
+    "Scientific object availability: no freshly emerging independently motivated object is currently admissible under the architecture/testbed gate.",
+    "Formal one-way science remains blocked until a fresh object satisfies native-causality, matched privilege/resources, ordinary-reduction resistance, prospectively fixed positive-signal gate where mechanistic reduction language is intended, numeric falsifiers, exact bindings, same-final-SHA CI/pre-START, and fresh Analyst authority."
   ],
   "lease_collision_reconciliation": {
     "inherited_lease_status": "COMPLETED",
-    "inherited_run_id": "sparkbrain-main-primary-20260919T021631JST",
-    "inherited_heartbeat": "2026-09-19T02:16:31+09:00",
+    "inherited_run_id": "sparkbrain-main-primary-20260919T031242JST",
+    "inherited_heartbeat": "2026-09-19T03:12:42+09:00",
     "fresh_main_running_collision_found": false,
-    "primary_lease_acquired": true,
-    "primary_lease_commit": "db6681890b44ab6fa9180d10ac81c86e0c4605ff",
+    "relay_lease_acquired": true,
+    "relay_lease_commit": "5a81c24b3a767c6382bfd2950ba8456bde7383fe",
     "latest_sub_mode": "no_op",
     "sub_lane": null,
     "sub_fallback": null,
-    "analyst_ref_drift_found": false,
+    "analyst_ref_drift_found": true,
+    "analyst_ref_drift_description": "Evidence Analyst advanced from c7ccb537878966f10396bfa4c539840509014490 to 03f027926fb06a42f108e5470779f2de2126116a with interpretation-only NI01 narrowing and no allocation/execution change.",
     "main_ref_drift_found": false
   },
   "integrity_status": "CLEAN_ARCHITECTURE_TESTBED_BOUNDARY_NO_ACTIVE_IDENTITY_NO_STARTED_NO_OFFICIAL_TEST_NO_FORMAL_PRESERVE_SCORE_OR_EVIDENCE",
   "critical_path_fixes_completed": [],
   "same_run_steps": [
-    "Consumed designated Evidence Analyst latest at c7ccb537878966f10396bfa4c539840509014490 and confirmed PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE remains authoritative.",
-    "Read MAIN latest/state/lease and confirmed the inherited lease was completed with no active branch or identity.",
+    "Read MAIN latest/state/lease and newest MAIN history; inherited lease was COMPLETED with no active branch or identity.",
+    "Consumed fresh Evidence Analyst latest/state at 03f027926fb06a42f108e5470779f2de2126116a and confirmed main_lane remains PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE with formal execution explicitly unarmed.",
     "Re-fetched current main and confirmed ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d remains authoritative.",
-    "Read SUB only for collision avoidance; SUB remains no_op with null lane/fallback.",
-    "Consumed newer Control Brain prior 10eb4206fb0c998fcdbc40c0e16f38829ea5d41e and confirmed it preserves NO_HIGH_VALUE_OBJECT; its NI01 read-only audit recommendation is assigned to Evidence Analyst, not MAIN.",
-    "Acquired a fresh PRIMARY lease and re-fetched lease, Analyst tip, and main ref before closeout; found no collision or authority drift.",
-    "Observed no freshly emerging object requiring bounded prospective specification; created no research/scientific mutation."
+    "Read newest SUB history only for collision avoidance; SUB remains no_op with sub_lane:null and sub_fallback:null and explicitly avoids MAIN's fresh-object gate.",
+    "Consumed Control Brain tip 10eb4206fb0c998fcdbc40c0e16f38829ea5d41e as strategic prior only; it does not override the Analyst handoff.",
+    "Applied no research/scientific mutation. Synchronized only the NI01 programme-interpretation narrowing into MAIN control-plane state."
   ],
-  "stop_reason": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT",
+  "stop_reason": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_INTERPRETATION_SYNCED",
   "work_left_for_SUB": "none; SUB remains no_op with no reserved independent lane or fallback",
   "lane_repartition_reason": null,
-  "next_MAIN_action": "If and only if a genuinely fresh independently motivated native object appears, perform bounded prospective specification/readiness and STOP at NEXT_OBJECT_READY_FOR_ANALYST_REVIEW. Otherwise keep the architecture/testbed hold and do not create a formal identity, STARTED marker, official TEST access, preserve/scoring output, evidence, or outcome-responsive successor.",
+  "next_MAIN_action": "Remain in architecture/testbed hold. If and only if a genuinely fresh independently motivated native object appears, perform bounded prospective specification/readiness and STOP at NEXT_OBJECT_READY_FOR_ANALYST_REVIEW. Do not create a formal identity, STARTED marker, official TEST access, preserve/scoring output, evidence, or outcome-responsive successor under the current handoff.",
   "write_path_diagnostics": {
     "github_direct_write_attempted": true,
     "github_direct_write_succeeded": true,
     "force_push_used": false,
-    "lease_start_commit": "db6681890b44ab6fa9180d10ac81c86e0c4605ff",
-    "history_commit": "2e99e1a2cb81a69a33660869cbed1a47feca5d7c",
-    "latest_commit": "9c49e16e5de7ab14d02d01d69f476acfd9cde4a4",
-    "history_path": "reports/orchestrator/history/2026-09-19/0312-main.md"
+    "lease_start_commit": "5a81c24b3a767c6382bfd2950ba8456bde7383fe",
+    "history_path": "reports/orchestrator/history/2026-09-19/0347-main.md"
   }
 }
