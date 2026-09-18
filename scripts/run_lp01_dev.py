@@ -56,7 +56,9 @@ def main() -> None:
             candidate = actual.descendants_of(ancestor, live).descendants
             ordinary = explicit.descendants_of(ancestor, live).descendants
             if candidate != ordinary:
-                raise AssertionError("ordinary explicit parent table failed exact lineage reduction")
+                raise AssertionError(
+                    "ordinary explicit parent table failed exact lineage reduction"
+                )
             if candidate != destroyed.descendants_of(ancestor, live).descendants:
                 destroyed_differences += 1
             if candidate != recent.descendants_of(ancestor, live).descendants:
