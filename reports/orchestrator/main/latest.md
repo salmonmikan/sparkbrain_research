@@ -1,37 +1,27 @@
-# MAIN Orchestrator — PRIMARY PD0.1 exact-head gates after mechanical repair
+# MAIN Orchestrator — RELAY PD01 STARTED / one-way running
 
-Timestamp: `2026-09-18 11:30 JST`
-Execution mode: `PRIMARY`
+Timestamp: `2026-09-18 11:58 JST`
+Execution mode: `RELAY`
 Evidence Analyst authority: `91a05bad6d130f89975e776960a1d25d764fba32`
 
-## MAIN frontier
+## Exact continuation performed
 
-PD0.1 long-history / fading-memory is conditionally authorized for exactly one formal execution after every fresh exact-head GO gate is green. MAIN retained the reviewed scientific object byte-for-byte: scientific head `ea2a8b4a5f244d601782ecb302760c49ee27e8c1`, formal-contract blob `0ce03b01baf41a0c77c513835b1c6063e47b2614`, and implementation blob `16bbfb6ed57d6c9701e8437360692b62e7c36915` remain unchanged.
+RELAY collected the final ordinary CI `35299421957` on `research/pd01-fading-memory-preformal-20260918@b9d38daa5faca348ad2db3898ba71e2abc99f631`; it completed `success`. The compatibility gate `35299421985` and dedicated formal-contract pre-START gate `35299421942` were already `success` on the same exact head.
 
-MAIN first added only the Analyst-bound execution/admission envelope and one-way machinery at `9defd189963cde9e296df48adb56e374a3d51f2f`. Dedicated pre-START run `35299066515` then failed solely on ten Ruff `E501` line-length findings in the newly added execution scripts. The exact job log showed no scientific, protocol, runtime, scorer, resource, or data-binding failure. MAIN therefore consumed the prospectively authorized mechanical-fix contingency and changed only line wrapping / equivalent expression formatting.
+Fresh reconciliation then confirmed:
+- Evidence Analyst tip remains `91a05bad6d130f89975e776960a1d25d764fba32` and prospectively authorizes exactly one execution after all fresh GO gates;
+- research head remains `b9d38daa5faca348ad2db3898ba71e2abc99f631`;
+- formal contract blob remains `0ce03b01baf41a0c77c513835b1c6063e47b2614`;
+- PD01 implementation blob remains `16bbfb6ed57d6c9701e8437360692b62e7c36915`;
+- runtime remains CPython `3.11.16`, package `0.3.2.dev0`, no runtime dependencies/network/GPU under the frozen contract;
+- identity `pd01-long-history-fading-memory-official-v1` was fresh/unSTARTED/unconsumed before mutation;
+- planned STARTED/control, preserve, and evidence namespaces were absent;
+- SUB remained `no_op` and explicitly avoided the PD01 critical path.
 
-The current exact research head is now `research/pd01-fading-memory-preformal-20260918@b9d38daa5faca348ad2db3898ba71e2abc99f631`. No scientific field changed between the reviewed object, first authority package, and this final lint-only repair.
+RELAY created `control/pd01-long-history-fading-memory-started-v1-20260918` from the exact package and added only `artifacts/v03/pd01/official_v1/STARTED.json`. STARTED commit: `0569e348b9d93aeee53fc58daf4b71ee92303d6c`. The identity is now consumed and must never be retried.
 
-## Exact-head workflow state
+The fixed push-triggered one-way workflow `35301327618` is `in_progress`. At checkpoint, STARTED/no-clobber validation, exact-package checkout, Python setup, and local runtime installation succeeded; the authority/binding re-proof step is running. Target-blind TEST acquisition, raw preservation, target materialization, scoring, and terminal evidence are still pending. No new scientific information has been observed.
 
-At the final head `b9d38daa5faca348ad2db3898ba71e2abc99f631`:
+## Stop / next MAIN action
 
-- `pd01-preformal` compatibility `35299421985`: `completed / success`;
-- `pd01-formal-contract-prestart` `35299421942`: `completed / success`;
-- ordinary CI `35299421957`: `in_progress` at checkpoint.
-
-Only ordinary CI remains external. There is no useful local critical-path work left while it runs, so PRIMARY is yielding with `WAITING_EXTERNAL` for Relay continuation.
-
-## Collision and integrity reconciliation
-
-The prior RELAY lease was stale and `BLOCKED`, not a fresh conflicting `RUNNING` owner. PRIMARY recovered it only after re-fetching the Analyst authority, authoritative research head, identity and namespaces. Before the lint-only repair, PRIMARY also re-fetched its own current `RUNNING` lease and the exact target ref; no competing mutation existed.
-
-The Evidence Analyst tip remains `91a05bad6d130f89975e776960a1d25d764fba32`, and the authoritative research branch remains on the expected final head. The proposed identity `pd01-long-history-fading-memory-official-v1` remains fresh/unSTARTED/unconsumed. No STARTED/control ref was created, no official TEST inputs or targets were accessed, no formal raw was generated or preserved, no scoring or evidence was produced, and no immutable/consumed evidence was modified.
-
-## Relay / next MAIN action
-
-Collect ordinary CI `35299421957` for exact head `b9d38daa5faca348ad2db3898ba71e2abc99f631`. If it fails mechanically, inspect the exact log, make only a science-invariant repair, and require compatibility + ordinary CI + dedicated pre-START all green again on the new final SHA. If a scientific or semantic change would be required, STOP as `PRE_START_SEMANTIC_GAP`.
-
-If ordinary CI is green, re-fetch the Evidence Analyst tip, exact research head, identity/consumed state, STARTED/control/preserve/evidence namespaces, and every exact source/protocol/package/input/runtime/candidate/comparator/scorer/preserver binding. Only if every fresh GO condition remains clean may MAIN create exactly one STARTED/no-clobber branch for `pd01-long-history-fading-memory-official-v1` and dispatch the fixed one-way chain.
-
-There is **no new scientific information** in this checkpoint.
+Lease is yielded as `WAITING_EXTERNAL`. Next MAIN/RELAY cycle must collect only workflow `35301327618` and reconcile the resulting preserve/evidence refs. If it succeeds, independently verify raw preservation/bindings/cardinality and terminal classification. If it fails post-START, consume the already-started identity and stop under the prospectively fixed `INVALID_EVIDENCE` or `POST_START_FAILURE` classification as applicable. No same-ID retry, salvage, retune, comparator shopping, threshold change, or automatic PD01-v2 is allowed.
