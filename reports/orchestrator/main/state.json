@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-09-19T05:17:23+09:00",
+  "timestamp": "2026-09-19T06:14:40+09:00",
   "worker_role": "main",
   "execution_mode": "PRIMARY",
-  "analyst_commit": "c611bfe28e7f854e3de21bba35eab74d04c08cd9",
+  "analyst_commit": "f2ca44cc99797dd13ddc20947558022c35ab2c60",
   "current_lane": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
   "current_phase": "NO_ACTIVE_FORMAL_FRONTIER_FRESH_OBJECT_ADMISSION_GATE_ONLY",
   "consumed_contingency_branches": [
@@ -13,19 +13,26 @@
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "active_branch": null,
     "active_identity": null,
-    "evidence_analyst_handoff": "c611bfe28e7f854e3de21bba35eab74d04c08cd9",
+    "evidence_analyst_handoff": "f2ca44cc99797dd13ddc20947558022c35ab2c60",
     "control_brain_prior": "10eb4206fb0c998fcdbc40c0e16f38829ea5d41e",
-    "sub_report_commit": "54ee926c44dd8ef0bd2ff5179f0cc997e4b65ffa",
+    "sub_report_commit": "8f210dd9773d772778694a26ab888039419d7e71",
     "formal_boundary": "ARCHITECTURE_TESTBED / PROSPECTIVE_ADMISSION_ONLY / no formal identity or STARTED authorized"
   },
   "fast_path_used": true,
   "full_reconciliation_reason": null,
   "branches_prs_advanced": [],
   "workflows_experiments": {
-    "new_workflow_dispatched": false,
+    "new_research_workflow_dispatched": false,
     "formal_experiment_dispatched": false,
     "official_test_accessed": false,
-    "workflow_run_ids": []
+    "research_workflow_run_ids": [],
+    "control_plane_ci_observed": {
+      "run_id": 35395853848,
+      "branch": "ops/orchestrator-run-report",
+      "head_sha": "2b9e77853e7ecb5f16893648d8f3d09c895f1fc3",
+      "status_when_observed": "in_progress",
+      "scientific_relevance": "none"
+    }
   },
   "scientific_results": {
     "new_formal_scientific_information_this_run": false,
@@ -53,11 +60,11 @@
   ],
   "lease_collision_reconciliation": {
     "inherited_lease_status": "COMPLETED",
-    "inherited_run_id": "sparkbrain-main-primary-20260919T041214JST",
-    "inherited_heartbeat": "2026-09-19T04:12:14+09:00",
+    "inherited_run_id": "sparkbrain-main-primary-20260919T051723JST",
+    "inherited_heartbeat": "2026-09-19T05:17:23+09:00",
     "fresh_main_running_collision_found": false,
     "primary_lease_acquired": true,
-    "primary_lease_start_commit": "d7882f746917cc8643629b7b7d603b647178e82f",
+    "primary_lease_start_commit": "2b9e77853e7ecb5f16893648d8f3d09c895f1fc3",
     "latest_sub_mode": "no_op",
     "sub_lane": null,
     "sub_fallback": null,
@@ -67,13 +74,15 @@
   "integrity_status": "CLEAN_ARCHITECTURE_TESTBED_BOUNDARY_NO_ACTIVE_IDENTITY_NO_STARTED_NO_OFFICIAL_TEST_NO_FORMAL_PRESERVE_SCORE_OR_EVIDENCE",
   "critical_path_fixes_completed": [],
   "same_run_steps": [
-    "Read fresh Evidence Analyst latest/state at authority c611bfe28e7f854e3de21bba35eab74d04c08cd9 and consumed main_lane, phase, outcome contingencies, blocked_until, do_not_touch and GO/STOP.",
+    "Read fresh Evidence Analyst latest/state at authority f2ca44cc99797dd13ddc20947558022c35ab2c60 and consumed main_lane, phase, outcome contingencies, blocked_until, do_not_touch and GO/STOP.",
     "Read MAIN latest/state/lease; inherited lease was COMPLETED and collision-free.",
     "Re-fetched current main and confirmed ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d remains authoritative.",
     "Read SUB latest for collision avoidance; SUB remains no_op with no reserved lane or fallback.",
     "Read Control Brain commit 10eb4206fb0c998fcdbc40c0e16f38829ea5d41e as strategic prior only; it remains consistent with NO_HIGH_VALUE_OBJECT architecture/testbed mode.",
     "Acquired PRIMARY RUNNING lease and re-fetched lease plus Evidence Analyst ref before durable reporting.",
-    "Applied no research/scientific mutation, dispatched no workflow, and crossed no formal boundary."
+    "Observed only control-plane CI 35395853848 from the lease/report write; no research workflow was dispatched.",
+    "Applied no research/scientific mutation and crossed no formal boundary.",
+    "Persisted latest, append-only history, and final COMPLETED lease on ops/orchestrator-run-report."
   ],
   "stop_reason": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_ANALYST_RECONFIRMED",
   "work_left_for_SUB": "none; SUB remains no_op with no reserved independent lane or fallback",
@@ -83,10 +92,10 @@
     "github_direct_write_attempted": true,
     "github_direct_write_succeeded": true,
     "force_push_used": false,
-    "lease_start_commit": "d7882f746917cc8643629b7b7d603b647178e82f",
-    "latest_report_commit": "773eb1a06d4d02086bcf77dcf7137237ed9e9383",
-    "history_commit": "839a20299e33da101dfb4174ca5627e2f1990df6",
-    "history_path": "reports/orchestrator/history/2026-09-19/0517-main.md",
-    "final_lease_commit": "ee30521cfea39aec4a944fdcb0caaf336559a8e4"
+    "lease_start_commit": "2b9e77853e7ecb5f16893648d8f3d09c895f1fc3",
+    "latest_report_commit": "70f8507f8ff8d3bc4cd355b8eb151b67f1504fc9",
+    "history_commit": "100d23ad13aad4a124a01ad1bb68a83ee77f92d4",
+    "history_path": "reports/orchestrator/history/2026-09-19/0614-main.md",
+    "final_lease_commit": "0e7fc6af64841c4355c70265501ecfa11042bde6"
   }
 }
