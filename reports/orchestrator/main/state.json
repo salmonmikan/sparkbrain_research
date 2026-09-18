@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-09-18T09:26:00+09:00",
+  "timestamp": "2026-09-18T09:28:00+09:00",
   "worker_role": "main",
   "execution_mode": "PRIMARY",
   "evidence_analyst_commit": "b009f497e65cddf1dd93cd4edc50f874c159ccd7",
   "current_lane": "PD01_REMOTE_HISTORY_LINEAGE_PERSISTENCE_SPECIFICATION",
-  "current_phase": "PD01_PREFORMAL_CORRECTED_EXACT_HEAD_CHECKS_RUNNING",
+  "current_phase": "PD01_PREFORMAL_FINAL_EXACT_HEAD_CHECKS_RUNNING",
   "consumed_contingency_branches": [
     "R2_TERMINAL_REDUCED_BY_FSA",
     "PD01_PRE_FORMAL_SPECIFICATION",
@@ -12,7 +12,7 @@
   ],
   "active_claim": {
     "research_branch": "research/pd01-fading-memory-preformal-20260918",
-    "exact_head": "1702bb1a2dd70e2f363be48ab4652183c461fbc0",
+    "exact_head": "6e409274a27d2a6abf785ba3940ab81c6d24a82f",
     "formal_identity": null,
     "formal_identity_reserved": false,
     "execution_allowed": false,
@@ -22,7 +22,7 @@
   "authoritative_target_refs": {
     "analyst": "ops/evidence-analyst-handoff@b009f497e65cddf1dd93cd4edc50f874c159ccd7",
     "main": "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "pd01_preformal": "research/pd01-fading-memory-preformal-20260918@1702bb1a2dd70e2f363be48ab4652183c461fbc0"
+    "pd01_preformal": "research/pd01-fading-memory-preformal-20260918@6e409274a27d2a6abf785ba3940ab81c6d24a82f"
   },
   "fast_path_used": true,
   "full_reconciliation_triggered": false,
@@ -31,28 +31,38 @@
     "research_branch_created": true,
     "research_branch": "research/pd01-fading-memory-preformal-20260918",
     "initial_review_head": "2dfbfb1b10e4b1dbf2e5812222fbf08d006b50a2",
-    "research_head_after_mechanical_fix": "1702bb1a2dd70e2f363be48ab4652183c461fbc0",
+    "research_head_after_first_mechanical_fix": "1702bb1a2dd70e2f363be48ab4652183c461fbc0",
+    "research_final_head": "6e409274a27d2a6abf785ba3940ab81c6d24a82f",
     "prs_created_or_merged": []
   },
   "workflows_experiments": {
-    "superseded_initial_dedicated_preformal": {
-      "run_id": 35290714808,
-      "head": "2dfbfb1b10e4b1dbf2e5812222fbf08d006b50a2",
-      "status": "completed",
-      "conclusion": "failure",
-      "failure_class": "PRE_START_BLOCKER_MECHANICAL_LINT",
-      "failed_step": "Lint pre-formal package",
-      "scientific_execution_started": false
-    },
-    "ordinary_ci": {
-      "run_id": 35291105188,
-      "head": "1702bb1a2dd70e2f363be48ab4652183c461fbc0",
+    "superseded_dedicated_preformal_failures": [
+      {
+        "run_id": 35290714808,
+        "head": "2dfbfb1b10e4b1dbf2e5812222fbf08d006b50a2",
+        "status": "completed",
+        "conclusion": "failure",
+        "failure_class": "PRE_START_BLOCKER_MECHANICAL_LINT",
+        "detail": "Ruff import organization/UP035/B905; checker/tests skipped"
+      },
+      {
+        "run_id": 35291105255,
+        "head": "1702bb1a2dd70e2f363be48ab4652183c461fbc0",
+        "status": "completed",
+        "conclusion": "failure",
+        "failure_class": "PRE_START_BLOCKER_MECHANICAL_LINT",
+        "detail": "single Ruff I001 import-order finding in synthetic test file; checker/tests skipped"
+      }
+    ],
+    "dedicated_preformal": {
+      "run_id": 35291261589,
+      "head": "6e409274a27d2a6abf785ba3940ab81c6d24a82f",
       "status": "in_progress",
       "conclusion": null
     },
-    "dedicated_preformal": {
-      "run_id": 35291105255,
-      "head": "1702bb1a2dd70e2f363be48ab4652183c461fbc0",
+    "ordinary_ci": {
+      "run_id": 35291261630,
+      "head": "6e409274a27d2a6abf785ba3940ab81c6d24a82f",
       "status": "in_progress",
       "conclusion": null
     },
@@ -62,7 +72,7 @@
     "new_scientific_measurement": false,
     "terminal_scientific_result": null,
     "classification": "NO_NEW_SCIENTIFIC_INFORMATION",
-    "interpretation": "Only outcome-independent pre-formal implementation/readiness and science-invariant lint repair were performed. No official data, targets, scoring, or execution occurred."
+    "interpretation": "Only outcome-independent pre-formal implementation/readiness and science-invariant pre-START lint repair were performed. No official data, targets, scoring, or execution occurred."
   },
   "consumed_identities": {
     "c19-external-v2-official-v4": "terminal immutable PASS; untouched",
@@ -71,7 +81,7 @@
     "c19-r2-fsa-state-tracker-official-v1": "consumed terminal REDUCED_BY_FSA; untouched; no retry/successor"
   },
   "blockers": [
-    "Ordinary CI 35291105188 and dedicated pre-formal workflow 35291105255 are running on corrected exact head 1702bb1a2dd70e2f363be48ab4652183c461fbc0.",
+    "Dedicated pre-formal 35291261589 and ordinary CI 35291261630 are running on final exact head 6e409274a27d2a6abf785ba3940ab81c6d24a82f.",
     "Formal PD0.1 task/world subset, official history construction/order, lag grid, comparator configuration/representation binding, scoring metrics/effect contrast, numeric decision criteria, formal contender count, resource budget, runtime/package pins, and official raw cardinality remain UNRESOLVED_BY_ANALYST.",
     "A newer Evidence Analyst handoff is required before formal identity reservation or STARTED."
   ],
@@ -81,11 +91,13 @@
     "prior_heartbeat_older_than_20_minutes_at_recovery": true,
     "same_branch_or_identity_fresh_main_collision": false,
     "main_ref_reconfirmed": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_tip_reconfirmed_before_initial_mutation": "b009f497e65cddf1dd93cd4edc50f874c159ccd7",
-    "analyst_tip_reconfirmed_before_mechanical_repair": "b009f497e65cddf1dd93cd4edc50f874c159ccd7",
+    "analyst_tip_reconfirmed": "b009f497e65cddf1dd93cd4edc50f874c159ccd7",
     "preexisting_pd01_branch_before_create": false,
-    "research_head_before_mechanical_repair": "2dfbfb1b10e4b1dbf2e5812222fbf08d006b50a2",
-    "result": "safe PRIMARY recovery and science-invariant same-run PRE_START_BLOCKER repair"
+    "research_heads_reconciled_before_mutation": [
+      "2dfbfb1b10e4b1dbf2e5812222fbf08d006b50a2",
+      "1702bb1a2dd70e2f363be48ab4652183c461fbc0"
+    ],
+    "result": "safe PRIMARY recovery and science-invariant same-run PRE_START_BLOCKER continuation"
   },
   "integrity_status": {
     "control_plane_ops_used_only_for_designated_handoffs_reports": true,
@@ -104,8 +116,8 @@
     "analyst_blocked_fields_left_unresolved": true,
     "raw_before_score_future_requirement_recorded": true,
     "preserve_before_targets_future_requirement_recorded": true,
-    "initial_failure_occurred_before_checker_tests_or_science": true,
-    "mechanical_fix_changed_scientific_contract": false,
+    "mechanical_failures_occurred_before_science": true,
+    "mechanical_fixes_changed_scientific_contract": false,
     "c19_r2_used_as_tuning_data": false,
     "immutable_evidence_modified": false,
     "consumed_identity_retried_or_modified": false
@@ -115,39 +127,36 @@
     "Created fresh research/pd01-fading-memory-preformal-20260918 from exact main ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d.",
     "Implemented one deterministic non-trainable exponential fading-memory comparator primitive with per-history reset and target-free support utilities.",
     "Added a PREFORMAL_REVIEW_ONLY contract that keeps every unresolved scientific choice explicitly UNRESOLVED_BY_ANALYST.",
-    "Added a fail-closed pre-formal checker and synthetic/dev tests with dev-only values explicitly forbidden from formal promotion.",
-    "Added a dedicated synthetic-only PD0.1 pre-formal workflow.",
-    "Collected dedicated run 35290714808 as a pre-START mechanical lint failure only; job logs showed import-order/UP035/B905 issues and checker/tests were skipped.",
-    "Fixed only the identified lint mechanics: import organization, collections.abc modernization, explicit zip(strict=True), and test/checker import spacing/order.",
-    "Re-fetched corrected exact head 1702bb1a2dd70e2f363be48ab4652183c461fbc0 and observed fresh ordinary/dedicated checks start on that same head."
+    "Added a fail-closed pre-formal checker, synthetic/dev tests, and dedicated synthetic-only workflow.",
+    "Fetched exact job logs for dedicated run 35290714808 and fixed only its mechanical Ruff import/modernization/zip(strict=True) findings.",
+    "Fetched exact job logs for dedicated run 35291105255 and fixed only its remaining synthetic-test Ruff I001 import ordering.",
+    "Re-fetched final exact research head 6e409274a27d2a6abf785ba3940ab81c6d24a82f and observed fresh ordinary/dedicated checks start on that same head."
   ],
   "same_run_steps": [
     "Read fresh Evidence Analyst handoff and current MAIN/SUB/control-plane coordination state.",
-    "Re-fetched main, Analyst tip, prior lease, and PD0.1 branch namespace before mutation.",
-    "Acquired PRIMARY lease on the new PD0.1 lane.",
-    "Created the fresh research branch and pre-formal package without formal identity/STARTED/official access.",
-    "Observed initial dedicated pre-formal run fail at lint and fetched exact job logs.",
-    "Re-fetched lease, exact research head, and Analyst tip before mechanical mutation.",
-    "Applied only science-invariant Ruff fixes across the comparator primitive, checker, and synthetic test file.",
-    "Re-fetched corrected exact research head and fresh workflow runs.",
-    "Observed ordinary CI 35291105188 and dedicated pre-formal 35291105255 running on the same corrected exact head.",
-    "Persisted a relay-safe WAITING_EXTERNAL checkpoint."
+    "Re-fetched main, Analyst tip, prior lease, and PD0.1 branch namespace before initial mutation.",
+    "Acquired PRIMARY lease and created the fresh pre-formal research branch.",
+    "Built the target-free pre-formal comparator/readiness package without formal identity/STARTED/official access.",
+    "Classified two exact-log lint failures under the authorized PRE_START_BLOCKER contingency and repaired them without scientific changes.",
+    "Before each mechanical mutation re-fetched lease, exact research head, and current Analyst authority.",
+    "Re-fetched final research head and exact final workflow IDs 35291261589/35291261630.",
+    "Persisted relay-safe MAIN reports and append-only checkpoints."
   ],
-  "same_run_stop_reason": "EXTERNAL_WAIT: corrected exact-head ordinary CI and dedicated pre-formal checks are running, and no useful local critical-path work remains until their terminal status is known.",
+  "same_run_stop_reason": "EXTERNAL_WAIT: final exact-head dedicated pre-formal and ordinary CI checks are running, and no useful local critical-path work remains until terminal check status is available.",
   "work_intentionally_left_for_sub": "None. Evidence Analyst assigned no formal SUB lane/fallback; SUB remains outside the PD0.1 critical path.",
   "lane_repartition_reason": null,
-  "next_main_action": "Collect workflow runs 35291105188 and 35291105255 for exact head 1702bb1a2dd70e2f363be48ab4652183c461fbc0. If both are green, re-fetch the Analyst tip and exact branch head, mark PD01_PRE_START_READY_FOR_ANALYST_REVIEW, and STOP without creating a formal identity or STARTED. If a science-invariant mechanical failure occurs, MAIN may fix it and rerun both gates on one new exact head. If repair requires selecting any unresolved scientific contract value, STOP for fresh Analyst authorization.",
+  "next_main_action": "Collect workflow runs 35291261589 and 35291261630 for exact head 6e409274a27d2a6abf785ba3940ab81c6d24a82f. If both are green, re-fetch the Analyst tip and exact branch head, persist PD01_PRE_START_READY_FOR_ANALYST_REVIEW, and STOP without creating a formal identity or STARTED. If a science-invariant mechanical failure occurs, MAIN may fix it and rerun both gates on one new exact head. If repair requires selecting any unresolved scientific contract value, STOP for fresh Analyst authorization.",
   "write_path_diagnostics": {
     "github_direct_write_capability": "success",
     "lease_acquire_commit": "97533392ea614edd9fc61b4dda867355567484e3",
     "research_branch_create": "success",
-    "initial_review_head": "2dfbfb1b10e4b1dbf2e5812222fbf08d006b50a2",
     "mechanical_fix_commits": [
       "59d5dbfdae0b84c9d257c962d11d7c1b9bb7b389",
       "88e14cddea2795deaa20b5a9b52da435625ff45a",
-      "1702bb1a2dd70e2f363be48ab4652183c461fbc0"
+      "1702bb1a2dd70e2f363be48ab4652183c461fbc0",
+      "6e409274a27d2a6abf785ba3940ab81c6d24a82f"
     ],
-    "research_final_head": "1702bb1a2dd70e2f363be48ab4652183c461fbc0",
+    "research_final_head": "6e409274a27d2a6abf785ba3940ab81c6d24a82f",
     "force_push_used": false
   }
 }
