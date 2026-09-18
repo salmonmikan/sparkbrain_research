@@ -1,38 +1,44 @@
-# MAIN Orchestrator — RELAY C19-R2 STARTED / one-way external wait
+# MAIN Orchestrator — PRIMARY PD0.1 pre-formal fading-memory package / external checks running
 
-Timestamp: `2026-09-18 08:48 JST`
-Execution mode: `RELAY`
-Evidence Analyst authority: `6ecf13b73cfc75409f6cfe86e9b8ac73fc58b6ce`
+Timestamp: `2026-09-18 09:21 JST`
+Execution mode: `PRIMARY`
+Evidence Analyst authority: `b009f497e65cddf1dd93cd4edc50f874c159ccd7`
 
 ## MAIN frontier
 
-RELAY continued only the prospectively authorized `C19_R2_FSA_STATE_TRACKER_ONE_WAY` critical path. The corrected Analyst handoff remains current and explicitly reconciles R2 to the already-frozen `8,720 = 1,744 pairs x 5 fixed seeds` contract and seven-state alphabet `RESET, A_WEAK, A_STRONG, B_WEAK, B_STRONG, C_WEAK, C_STRONG`.
+The terminal C19-R2 line remains closed and immutable. Fresh Analyst authority repartitioned MAIN to `PD01_REMOTE_HISTORY_LINEAGE_PERSISTENCE_SPECIFICATION`, with specification/readiness only and an explicit stop before formal identity, STARTED, official acquisition, or one-way execution.
 
-The prior PRIMARY lease was `WAITING_EXTERNAL`, its heartbeat was older than 20 minutes, the active research head remained exactly `research/c19-r2-fsa-state-tracker-spec-20260918@5bfa3962c777fa5bc915bb21e20801ab8294778a`, and no fresh conflicting MAIN mutation was present.
+PRIMARY used the FAST PATH. The prior MAIN lease was a stale/non-running R2 external-wait lease; current `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`, Analyst tip `b009f497...`, and absence of an existing `pd01` research branch were re-fetched before mutation. No fresh RUNNING MAIN collision existed.
 
-## Exact-head gates and final pre-START reconciliation
+## Critical-path progress
 
-The two required gates on exact head `5bfa3962...` are both terminal green:
+Created fresh branch:
 
-- dedicated pre-START `35286420308`: `completed/success`;
-- ordinary CI `35286420401`: `completed/success`.
+`research/pd01-fading-memory-preformal-20260918@2dfbfb1b10e4b1dbf2e5812222fbf08d006b50a2`
 
-The authority-only rebind from `84e08cff...` to `5bfa3962...` changes only `.github/workflows/c19-r2-prestart.yml`, `configs/external_validation/c19_r2_execution_authority.json`, and `scripts/check_c19_r2_prestart.py`, each only rebinding the Analyst authority pointer/check. Frozen scientific package remains `5d5d171cf872baed7a636fd246ab36f3a91a6716`.
+The review package contains:
 
-Immediately before STARTED, RELAY re-fetched the Analyst tip (`6ecf13b...`), the exact research branch head (`5bfa3962...`), and the R2 control/preserve/evidence namespaces. No STARTED control ref, preserve ref, or terminal evidence tag existed, so `c19-r2-fsa-state-tracker-official-v1` was still fresh at the boundary.
+- one deterministic, non-trainable exponential fading-memory comparator primitive with per-history reset and no cross-history state;
+- deterministic target-free history ordering and inventory primitives;
+- a `PREFORMAL_REVIEW_ONLY` contract that leaves every Analyst-blocked scientific value explicitly `UNRESOLVED_BY_ANALYST`;
+- explicit prohibitions on formal identity reservation, STARTED, official data/target access, learned recurrent training, and one-way execution;
+- synthetic/dev-only fixtures (`decay=0.5`, `order_field=seq`) explicitly forbidden from promotion into a formal protocol;
+- a fail-closed pre-formal checker and synthetic unit tests;
+- a dedicated synthetic-only `pd01-preformal` workflow.
 
-## STARTED and one-way execution
+No task/world subset, official history rule, lag grid, formal comparator configuration, representation binding, metric, effect contrast, decision threshold/equivalence rule, formal contender count, resource budget, runtime/package pins, or official raw cardinality was invented or frozen by MAIN.
 
-RELAY crossed STARTED exactly once by creating:
+## Workflow/check state
 
-`control/c19-r2-fsa-state-tracker-started-v1-20260918@41df2685fe015140c8afa13e646554dd2e8c836b`
+Exact final head `2dfbfb1...` has both required checks running:
 
-The control ref is based on exact package `5bfa3962...` and adds only `artifacts/v03/c19_external_validation/r2/official_v1/STARTED.json`. From this point, identity `c19-r2-fsa-state-tracker-official-v1` is consumed and must never be retried.
+- ordinary CI `35290714753`: `in_progress`;
+- dedicated PD0.1 pre-formal `35290714808`: `in_progress`.
 
-The fixed one-way workflow was triggered automatically and is currently:
+Because both are external jobs and there is no useful local critical-path work remaining until they complete, MAIN stops here under the external-wait rule.
 
-- workflow `35288390550`: `in_progress` on STARTED commit `41df2685...`.
+## Scientific/integrity state
 
-At the final checkpoint, the R2 preserve ref and evidence tag were still absent, so no raw preservation, terminal evidence, or terminal scientific classification had yet been observed. There is **no new scientific information yet**.
+Formal identity remains **UNRESERVED**. No STARTED/control ref, official data or targets, preserve/evidence object, scoring, or scientific execution was created or accessed. There is **no new scientific information**. C19-R2 terminal evidence was not used as candidate tuning data.
 
-Lease is `WAITING_EXTERNAL`. The next MAIN/RELAY cycle must collect only workflow `35288390550`. If it succeeds, independently verify the preserve ref, evidence tag/manifest, exact package/Analyst/STARTED/preservation bindings, and terminal reduction class before marking `COMPLETED`. If it fails after STARTED, classify the identity as consumed `POST_START_FAILURE` and stop with no retry, salvage, repair, or automatic successor.
+Lease is `WAITING_EXTERNAL`. Relay/next MAIN should collect only runs `35290714753` and `35290714808` for exact head `2dfbfb1...`. If both are green, re-fetch Analyst authority/head and persist `PD01_PRE_START_READY_FOR_ANALYST_REVIEW`, then STOP; a newer Analyst handoff is required before any formal identity or STARTED. Science-invariant mechanical failures remain MAIN-owned; a semantic choice among blocked scientific fields requires STOP/Analyst review.
