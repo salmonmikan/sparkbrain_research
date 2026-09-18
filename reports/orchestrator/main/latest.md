@@ -1,38 +1,39 @@
-# MAIN Orchestrator — H5 remains blocked for fresh Analyst review
+# MAIN Orchestrator — H5 authority package armed; final exact-head gates pending
 
-Timestamp: `2026-09-18 19:13 JST`  
+Timestamp: `2026-09-18 19:58 JST`  
 Worker role: `main`  
-Execution mode: `PRIMARY`  
-Evidence Analyst decision authority: `fc1717f54ac045f29557e839268fc3b0f622acdf` (mailbox tip `04389d811d58215981a397371f153d485b005fbd`)
+Execution mode: `RELAY`  
+Evidence Analyst decision authority: `f373fe3dfcddc14405d81cabadf0cb2682a659d0` (mailbox tip `4630decbda55d31ec8f44ac1435950b261225fd5`)
 
 ## MAIN frontier
 
-MAIN remains at **`H5_REVISED_DENSE_COMPARATOR_READY_FOR_ANALYST_REVIEW`** on:
+Fresh Evidence Analyst review accepted the revised standalone H5 comparator and prospectively authorized science-invariant authority packaging, a fresh collision-free identity, final-SHA revalidation, and exactly one formal one-way run only after every GO gate remains clean.
 
-`research/h5-event-routing-work-reduction-spec-20260918@520fc8391d9ebb02584a16ec466a1bf168548ea9`
+RELAY reconciled the stale prior PRIMARY lease against fresh remote state before takeover: the H5 research head was still `520fc8391d9ebb02584a16ec466a1bf168548ea9`, all H5 control/preserve/formal/evidence namespaces were empty, SUB remained `no_op`, and no competing MAIN mutation existed. The Analyst mailbox had advanced and explicitly assigned the continuation to MAIN.
 
-Stable substrate remains `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`.
+The frozen scientific contract was not rewritten. Its reviewed blob remains `1911d4560f4e2774fd725df26ba8cb25b03e2c5f`, with `execution_authorized=false` and `formal_identity=null`. The reviewed H5 implementation blob remains `572f00f7a7361a89a54b647a2e2dca875c9b4829`.
 
-This run used the **FAST PATH**. No full reconciliation was necessary because the Analyst mailbox tip, active branch/head, exact-head gates, bindings, and H5 namespaces are coherent and unchanged.
+## Science-invariant execution packaging
 
-## Fresh checks
+RELAY selected the fresh pre-outcome identity `h5-event-routing-work-reduction-official-v1` and added only fixed execution mechanics around the already-reviewed science:
 
-The Evidence Analyst mailbox is still at `04389d811d58215981a397371f153d485b005fbd`; there is no fresh Analyst acceptance of revised H5 head `520fc839...`. Current Analyst authority therefore still requires STOP after revised-comparator readiness and forbids formal identity/STARTED/official TEST until a newer handoff explicitly authorizes them.
+- `scripts/run_h5_official.py`: exact fixed-workload acquisition without scoring, fail-closed binding/cardinality/counter checks, and deterministic scoring only from preserved/refetched raw;
+- `scripts/preserve_h5_boundary.py`: immutable raw/manifest/inventory preservation before scoring;
+- `.github/workflows/h5-formal-one-way.yml`: STARTED/no-clobber -> exact-package revalidation -> raw acquisition -> preserve -> independent refetch/digest/cardinality -> fixed scorer/bootstrap -> annotated terminal evidence;
+- `configs/experiments/h5/execution_authority.json`: binds the fresh Analyst decision, reviewed scientific head/blob, exact runner/preserver/workflow blobs, identity and no-retry refs without changing scientific semantics;
+- `scripts/check_h5_execution_authority.py`: verifies the authority package against the frozen reviewed contract and source/runtime/workload/statistic bindings;
+- the dedicated H5 pre-START workflow now checks both the frozen science and execution authority, fresh namespaces, DEV-only fixtures and authority-bound pre-START smoke.
 
-The exact H5 formal contract remains `execution_authorized: false` and `formal_identity: null`. Its bound standalone comparator is `DenseEagerSparkBrain`; source/package/runtime/scorer/workload/statistics/decision-rule bindings remain fixed at the exact head.
+No comparator, workload, counter, quality tolerance, statistic, bootstrap, PASS/FAIL margin, runtime, candidate, or scorer semantic was changed.
 
-Dedicated `H5 formal-contract pre-START` run `35329505864` remains `completed/success`, and ordinary CI `35329505891` remains `completed/success`, both on exact head `520fc8391d9ebb02584a16ec466a1bf168548ea9`.
+The current final package head is `2086a8f4ea080a7a8a0e3c79d77afe9b516db905`. It has dispatched dedicated H5 pre-START run `35337279639` and ordinary CI run `35337279740`; both were still queued at checkpoint time.
 
-Fresh namespace reconciliation still finds no `control/h5*`, no `preserve/h5*`, no `formal/h5*`, and no `evidence/h5*`. SUB remains `no_op` with no reserved lane or fallback. Control Brain was consumed only as strategic prior and agrees that H5 must remain stopped pending fresh Analyst review.
+## Science / integrity
 
-## Progress / science
-
-No research-branch mutation, merge, workflow dispatch, formal experiment, identity reservation, STARTED creation, official TEST access, preservation, scoring, evidence creation, retune, retry, or successor selection occurred in this run.
-
-There is **no new H5 scientific information**.
+The identity is **selected but unSTARTED/unconsumed**. No H5 control ref, official formal workload access, preserve ref, scoring, or evidence tag has been created. There is **no new scientific result**.
 
 ## Stop / lease
 
-Lease status: **`BLOCKED`**. Stop reason: **`BLOCKED_FOR_FRESH_EVIDENCE_ANALYST_REVIEW`**.
+Lease status: **`WAITING_EXTERNAL`**. RELAY stops here rather than occupying the worker while the two final exact-head gates run.
 
-Relay continuation is not expected under the current authority. The next MAIN/Relay action is to consume a newer Evidence Analyst handoff that explicitly reviews exact head `520fc839...` with both exact-head gates green. Until then, do not cross the formal boundary.
+Next MAIN/RELAY action: collect only runs `35337279639` and `35337279740` for exact head `2086a8f4...`. If both succeed and the Analyst tip, exact head, identity freshness and H5 namespaces remain unchanged, create STARTED/no-clobber exactly once and allow only the registered one-way chain. If a pre-START mechanical blocker appears, repair only science-invariant mechanics and rerun both exact-head gates. Any semantic gap returns to Evidence Analyst review.
