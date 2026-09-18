@@ -1,9 +1,8 @@
 {
-  "timestamp": "2026-09-19T05:35:40+09:00",
+  "timestamp": "2026-09-19T06:35:00+09:00",
   "worker_role": "sub",
   "mode": "no_op",
-  "evidence_analyst_commit": "c611bfe28e7f854e3de21bba35eab74d04c08cd9",
-  "evidence_analyst_mailbox_tip": "c611bfe28e7f854e3de21bba35eab74d04c08cd9",
+  "evidence_analyst_commit": "f2ca44cc99797dd13ddc20947558022c35ab2c60",
   "consumed_lanes": [],
   "selected_independent_lane": null,
   "exploratory_target": null,
@@ -11,26 +10,26 @@
   "execution_allowed": false,
   "sub_active_claim": null,
   "main_work_explicitly_avoided": [
-    "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE fresh-object admission and candidate selection",
-    "Candidate-specific successor/comparator/mechanism design and implementation",
-    "Candidate-specific verifier/harness/runner/binding/CI/readiness/review fixes",
-    "Preservation/scoring blockers and formal execution work",
-    "Consumed-line rescue, retry, retune, rescore, reinterpretation, or outcome-responsive successor design"
+    "fresh-object admission and candidate selection",
+    "successor/comparator/mechanism design",
+    "candidate-specific implementation and verifier/harness/runner/binding/CI/readiness fixes",
+    "preservation/scoring/execution blockers",
+    "consumed-line rescue/retry/retune/rescore/reinterpretation"
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "c611bfe28e7f854e3de21bba35eab74d04c08cd9",
+    "evidence_analyst": "f2ca44cc99797dd13ddc20947558022c35ab2c60",
     "control_brain": "10eb4206fb0c998fcdbc40c0e16f38829ea5d41e",
-    "orchestrator_parent_tip_before_persistence": "74a8c355e6f66c7206dafbbaa0d1b7432c87864b",
-    "main_latest_checkpoint_time": "2026-09-19T05:17:23+09:00",
+    "orchestrator_parent_tip_before_persistence": "44079ac4d459c9e055c08a228486d637c2119352",
+    "main_latest_checkpoint_time": "2026-09-19T06:14:40+09:00",
     "main_latest_lane": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
-    "main_stop_reason": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_ANALYST_RECONFIRMED",
     "research_heads": {
-      "lp01": "f6d59a55730c5f99cd7f30470847fc3f175bdf64",
+      "h9_c07": "9480da3d77dfee4766b28757f1a164f5cd4dac26",
+      "c19_r2": "5bfa3962c777fa5bc915bb21e20801ab8294778a",
       "h5": "2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
+      "lp01": "f6d59a55730c5f99cd7f30470847fc3f175bdf64",
       "ni01": "dbfe7469dbbbc1adbb00789ab382de892a1b3563",
-      "pd01": "b9d38daa5faca348ad2db3898ba71e2abc99f631",
-      "c19_r2": "5bfa3962c777fa5bc915bb21e20801ab8294778a"
+      "pd01": "b9d38daa5faca348ad2db3898ba71e2abc99f631"
     },
     "formal_tags": [],
     "sealed_tags": [],
@@ -42,9 +41,7 @@
       "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1"
     ],
     "authoritative_evidence_tag_count": 5,
-    "legacy_freeze_branch_count": 13,
-    "control_started_refs_observed": 20,
-    "preserve_refs_observed": 24
+    "legacy_freeze_branch_count": 13
   },
   "branches_prs_advanced": {
     "research_branches_by_sub": [],
@@ -54,22 +51,18 @@
   },
   "workflows_experiments": {
     "sub_dispatched": [],
-    "fresh_observed": {
-      "orchestrator_report_ci_35390911828": "completed/success@74a8c355e6f66c7206dafbbaa0d1b7432c87864b"
-    },
+    "latest_observed": "control-plane CI 35395986204 completed/success on ops/orchestrator-run-report@44079ac4d459c9e055c08a228486d637c2119352",
     "formal_experiment_by_sub": "NOT_STARTED"
   },
   "scientific_readiness_exploratory_results": {
     "sub_new_formal_result": false,
     "sub_new_exploratory_result": false,
     "new_formal_scientific_information": false,
-    "analyst_programme_mode": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
     "main_lane": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
     "sub_lane": null,
     "sub_fallback": null,
     "sub_exploratory_review": null,
-    "allocation_changed": false,
-    "new_update_this_run": "Evidence Analyst advanced to c611bfe28e7f854e3de21bba35eab74d04c08cd9 at 05:02 JST and MAIN 05:17 reconfirmed the architecture/testbed hold with no fresh object."
+    "allocation_changed": false
   },
   "evidentiary_status": "NONE_FOR_SUB",
   "consumed_identities": {
@@ -86,7 +79,7 @@
   },
   "blockers": [
     "No reserved independent formal SUB lane or fallback exists.",
-    "No safe, useful, non-duplicative incubator target exists after fresh Analyst, MAIN, Control Brain, repository, workflow and prior SUB reconciliation.",
+    "No safe useful non-duplicative incubator target exists.",
     "Scientific object availability is the blocker; there is no SUB infrastructure blocker."
   ],
   "blocked_until": "A genuinely independent prospectively complete secondary object is reserved for SUB, or a distinct bounded NON_EVIDENTIARY synthetic/dev question appears outside MAIN admission, consumed-line rescue and already-explored SUB themes.",
@@ -94,11 +87,10 @@
   "rejected_lane": null,
   "lane_rejected_reason": null,
   "collision_reconciliation": {
-    "report_branch_tip_before_persistence": "74a8c355e6f66c7206dafbbaa0d1b7432c87864b",
-    "latest_main_checkpoint_time": "2026-09-19T05:17:23+09:00",
-    "latest_main_checkpoint_analyst_commit": "c611bfe28e7f854e3de21bba35eab74d04c08cd9",
+    "report_branch_tip_before_persistence": "44079ac4d459c9e055c08a228486d637c2119352",
+    "latest_main_checkpoint_time": "2026-09-19T06:14:40+09:00",
+    "latest_main_checkpoint_analyst_commit": "f2ca44cc99797dd13ddc20947558022c35ab2c60",
     "fresh_analyst_tip_rechecked": true,
-    "analyst_tip": "c611bfe28e7f854e3de21bba35eab74d04c08cd9",
     "analyst_allocation_changed": false,
     "main_ref_rechecked": true,
     "research_refs_rechecked": true,
@@ -115,7 +107,7 @@
   "incubator_handoff": null,
   "proposed_handoff_to_analyst": "Keep SUB null/no-op until a genuinely independent prospectively complete secondary object is reserved or a distinct bounded NON_EVIDENTIARY synthetic/dev question appears. Do not manufacture work from MAIN admission or consumed terminal lines.",
   "report_persistence": {
-    "history_path": "reports/orchestrator/history/2026-09-19/0535-sub.md",
+    "history_path": "reports/orchestrator/history/2026-09-19/0635-sub.md",
     "sub_latest_path": "reports/orchestrator/sub/latest.md",
     "sub_state_path": "reports/orchestrator/sub/state.json",
     "atomic_git_commit_requested": true,
