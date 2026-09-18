@@ -1,0 +1,37 @@
+{
+  "authority_contract_blob": "3dc90b08f85e0e7c459e0c17e86ab338901fd4c6",
+  "evidence_analyst_commit": "d3626617c3b054afd726e468682aaa02d613bca0",
+  "exact_package_commit": "dbfe7469dbbbc1adbb00789ab382de892a1b3563",
+  "protocol_id": "ni01-no-ignition-selective-prediction-protocol-v1",
+  "raw_forbidden_keys": [
+    "decision_justified",
+    "scenario_tags_from_target",
+    "target",
+    "truth"
+  ],
+  "run_identity": "ni01-no-ignition-selective-prediction-official-v1",
+  "schema_version": 1,
+  "source_binding": {
+    "ablations_blob": "caa6a1c63fedc2222aa2e6ce708b66668943e8dd",
+    "base_main_commit": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "ni01_scorer_blob": "d3b3565a08277e6a94ef9be1e5bd13e86265f8f2",
+    "phase1_main_config_blob": "0134abeaf3d0551edeeb890502ffebe2c27867b0",
+    "runner_blob": "90543b184c64981802560601b85edcdee4583a35",
+    "worlds_blob": "2478fba19d7276ebe30ec8f5811bf6d7b7414779"
+  },
+  "started_ref": "control/ni01-no-ignition-selective-prediction-started-v1-20260918",
+  "targets_materialized": false,
+  "test_episode_count": 1536,
+  "test_step_count": 46080,
+  "threshold_source": "target-free DEV native-coverage matching only",
+  "thresholds_by_world": {
+    "contradiction_world": 0.4344505230131153,
+    "delayed_evidence_world": 0.43859092652956055,
+    "reliability_world": 0.43837666247277174
+  },
+  "worlds": [
+    "reliability_world",
+    "delayed_evidence_world",
+    "contradiction_world"
+  ]
+}
