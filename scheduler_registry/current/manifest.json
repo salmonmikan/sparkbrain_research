@@ -7,7 +7,7 @@
       "id": "6aa9184960d4819192c8de1d9b22c1d9",
       "title": "SparkBrain Control & Repository Steward",
       "enabled": true,
-      "updated_at": "2026-09-18T18:07:32.219266Z",
+      "updated_at": "2026-09-18T18:36:41.540038Z",
       "timing_mode": "exact_schedule",
       "timezone": "Asia/Tokyo",
       "schedule": "BEGIN:VEVENT\nDTSTART;TZID=Asia/Tokyo:20260918T015000\nRRULE:FREQ=DAILY;BYHOUR=1,2,6,7,10,13,14,18,19,22;BYMINUTE=50;BYSECOND=0\nEND:VEVENT"
