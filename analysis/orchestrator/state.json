@@ -13,7 +13,7 @@
     "ni01_control_refs": [],
     "ni01_preserve_refs": [],
     "ni01_evidence_tags": [],
-    "authoritative_evidence_tags": [
+    "evidence_tags": [
       "evidence/c19-official-v4-c19-external-v2-official-v4",
       "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
       "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1"
@@ -26,7 +26,6 @@
     "main_protected": false
   },
   "Control_Brain_commit": "bab2933fdfed743b6dc43d911e06c710dc0e56a6",
-  "Control_Brain_branch_tip": "b9ce2adde261f5cca5691e03ab124aaaed971520",
   "Control_Brain_state_consumed": "designated latest/state as strategic prior only; current remote and later terminal/readiness evidence override it",
   "MAIN_report_commit_consumed": "fa08ff630b886b9ad20981da74356d4d916a9c58",
   "SUB_report_commit_consumed": "e5ae9d151fecb5508d8783d1b153b97747033a34",
@@ -39,15 +38,16 @@
   "new_repository_evidence": {
     "new_formal_scientific_measurement": false,
     "new_readiness_evidence": true,
-    "material_update": "MAIN selected independently motivated H4/NI01 and completed a prospectively fixed preformal contract with dedicated preformal and ordinary CI both green on the same exact head; identity remains unreserved and no STARTED/preserve/evidence exists.",
-    "ni01_claim_boundary": "A PASS would show value over the exact coverage-matched max-confidence abstention comparator on the three registered worlds and metric only; it would not establish full H4/OOD generality or a novel computational principle. A FAIL would reduce this registered discriminator under the same narrow contract, not prove global uselessness of No-Ignition."
+    "material_update": "MAIN selected independently motivated H4/NI01 and completed a fully prospective NI01 contract. Dedicated preformal and ordinary CI are both green on the same exact head; identity remains unreserved and no STARTED/preserve/evidence exists.",
+    "claim_boundary": "PASS would establish value only over the exact registered coverage-matched confidence-abstention comparator on the three registered worlds/metric; FAIL would reduce only this registered discriminator. Neither outcome alone settles full H4/OOD generality or novelty."
   },
   "external_input": {
     "literature": {
       "handoff_commit": "525686fa0c14f64426ca7bf5c89f08cd0bcb9c77",
       "new_this_cycle": false,
       "affected_lines": ["C19_R2", "PD01", "PROGRAMME_NOVELTY", "NI01_H4_INDIRECTLY"],
-      "prospective_change": "No change to the frozen NI01 contract. Existing ordinary-reduction doctrine is already satisfied by the registered confidence-abstention null; any stronger abstention or OOD extension must be a fresh future object.",
+      "what_changed": "No new literature stream.",
+      "prospective_change": "No change to frozen NI01. Existing ordinary-reduction doctrine is already represented by the registered confidence-abstention null. Any stronger abstention or OOD extension must be a fresh future object.",
       "allocation_changed": false
     },
     "audit": {
@@ -55,7 +55,8 @@
       "new_this_cycle": false,
       "latest_classification": "C19_R2_ROBUST_SO_FAR",
       "affected_lines": ["C19_R2_FSA_STATE_TRACKER", "C19_V4", "PD01", "NI01_H4_INDIRECTLY"],
-      "prospective_change": "No NI01 block. PD01 terminal audit remains high-value but NI01 is independently motivated and does not rely on PD01 outcomes.",
+      "what_changed": "No new audit stream; PD01 terminal audit is still pending.",
+      "prospective_change": "No NI01 block because NI01 is independently motivated and excludes PD01/C19 outcomes from rationale/comparator. A future object materially depending on PD01 should consume a fresh PD01 audit before STARTED.",
       "allocation_changed": false
     }
   },
@@ -66,38 +67,29 @@
     "formal_identity": "ni01-no-ignition-selective-prediction-official-v1",
     "formal_identity_current_state": "UNRESERVED_UNCONSUMED",
     "main_owns_all_critical_path_fixups": true,
-    "conditional_exactly_one_execution_authorized": true,
-    "allowed_work": [
-      "bind this Analyst authority without changing NI01 scientific content",
-      "fresh ref/identity/namespace collision checks",
-      "science-invariant authority/admission/runner/binding fixes",
-      "same-final-SHA ordinary CI and dedicated NI01 pre-START revalidation after any head change",
-      "create STARTED/no-clobber only after every GO gate passes",
-      "execute the prospectively fixed target-free DEV -> target-blind TEST raw -> immutable preserve -> independent refetch/digest/cardinality -> TEST targets -> fail-closed join -> deterministic scoring/bootstrap -> terminal evidence chain exactly once"
-    ],
-    "same_run_stop": "terminal PASS/FAIL/INCONCLUSIVE/INVALID_EVIDENCE/POST_START_FAILURE evidence or PRE_START_SEMANTIC_GAP",
-    "formal_execution_authorized": "CONDITIONAL_EXACTLY_ONCE"
+    "formal_execution_authorized": "CONDITIONAL_EXACTLY_ONCE",
+    "same_run_stop": "terminal PASS/FAIL/INCONCLUSIVE/INVALID_EVIDENCE/POST_START_FAILURE evidence or PRE_START_SEMANTIC_GAP"
   },
   "sub_lane": null,
   "sub_fallback": null,
-  "no_sub_lane_reason": "No independent formal secondary object is prospectively complete. NI01/H4 is the MAIN frontier; H9/C07 remains under-specified, RV01 exploratory budget is exhausted, and terminal C19/R2/PD01 lines must not be reopened.",
+  "no_sub_lane_reason": "No independent formal secondary object is prospectively complete. NI01/H4 is MAIN-owned; H9/C07 remains under-specified, RV01 exploratory budget is exhausted, and terminal C19/R2/PD01 lines must remain closed.",
   "outcome_contingencies": {
     "observed_root": "NI01_PRE_START_READY_FOR_CONDITIONAL_ONE_WAY_AUTHORITY",
     "PRE_START_BLOCKER_MECHANICAL": "MAIN may repair only science-invariant mechanical defects; every head change requires same-final-SHA CI and dedicated pre-START revalidation.",
-    "PRE_START_SEMANTIC_GAP": "STOP and return for fresh Analyst review; no scientific contract mutation under this authority.",
-    "GO_CHAIN": "fresh identity/collision check -> STARTED/no-clobber -> target-free DEV threshold derivation -> target-blind TEST raw -> immutable preserve -> independent remote refetch/digest/cardinality -> TEST targets -> unique/total/fail-closed join -> deterministic scoring/bootstrap -> annotated terminal evidence",
-    "PASS_NATIVE_NO_IGNITION_ADDS_SELECTIVE_VALUE": "Terminal STOP. Claim only the registered three-world selective-value result; no same-run OOD/general novelty extension.",
-    "FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION": "Terminal STOP. No rescue, comparator shopping, retune, or automatic NI01-v2.",
-    "INCONCLUSIVE": "Terminal STOP. No threshold/world/coverage retuning.",
-    "INVALID_EVIDENCE": "Identity consumed; terminal STOP; no salvage or retry.",
-    "POST_START_FAILURE": "Identity consumed; terminal STOP; no salvage, retry, or automatic successor."
+    "PRE_START_SEMANTIC_GAP": "STOP and require fresh Analyst review.",
+    "GO_CHAIN": "fresh identity/collision -> STARTED/no-clobber -> target-free DEV threshold -> target-blind TEST raw -> immutable preserve -> independent refetch/digest/cardinality -> TEST targets -> unique/total/fail-closed join -> deterministic scoring/bootstrap -> annotated terminal evidence",
+    "PASS_NATIVE_NO_IGNITION_ADDS_SELECTIVE_VALUE": "Terminal STOP; only registered three-world selective-value claim; no same-run OOD/general novelty extension.",
+    "FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION": "Terminal STOP; no rescue, comparator shopping, retune, or automatic NI01-v2.",
+    "INCONCLUSIVE": "Terminal STOP; no threshold/world/coverage retuning.",
+    "INVALID_EVIDENCE": "Identity consumed; terminal STOP; no salvage/retry.",
+    "POST_START_FAILURE": "Identity consumed; terminal STOP; no salvage/retry/automatic successor."
   },
   "blocked_until": [
-    "MAIN consumes this exact fresh Evidence Analyst authority and binds it science-invariantly.",
-    "Final execution SHA is re-fetched and exact source/protocol/package/input/runtime/candidate/comparator/scorer bindings are proven unchanged.",
-    "Identity ni01-no-ignition-selective-prediction-official-v1 remains fresh/unSTARTED/unconsumed with collision-free control/preserve/evidence namespaces.",
+    "MAIN consumes this exact fresh Evidence Analyst authority and binds it without changing NI01 science.",
+    "Final execution SHA exact source/protocol/package/input/runtime/candidate/comparator/scorer bindings are proven unchanged.",
+    "Identity remains fresh/unSTARTED/unconsumed with collision-free control/preserve/evidence namespaces.",
     "If authority/admission packaging changes the SHA, ordinary CI and dedicated NI01 pre-START are both green on that same final SHA.",
-    "Target-blind observation projection is verified to exclude truth, decision_justified, target, and target-derived scenario tags before raw preservation."
+    "Target-blind observation projection excludes truth, decision_justified, target, and target-derived scenario tags before raw preservation."
   ],
   "do_not_touch": [
     "C19-v4 immutable evidence and narrow PASS",
@@ -106,7 +98,7 @@
     "C19-R1 v1/v2 consumed identities",
     "legacy freeze refs and authoritative evidence tags",
     "scheduler definitions",
-    "SUB exploratory output as evidence",
+    "SUB exploratory output as scientific evidence",
     "NI01 worlds/seeds/candidate dynamics/comparator privilege and target-free coverage-matching rule/loss/coverage guard/PASS-FAIL thresholds/bootstrap/runtime-device/join key/raw-before-score order after this authority",
     "any NI01 comparator/world/threshold selected in response to formal TEST outcome"
   ],
@@ -119,8 +111,7 @@
       "identity": "ni01-no-ignition-selective-prediction-official-v1",
       "identity_consumed": false,
       "started": false,
-      "scientific_result_observed": false,
-      "formal_execution_authorized_by_prior_handoff": false
+      "scientific_result_observed": false
     },
     "SUB": {
       "mode": "no_op",
@@ -129,6 +120,19 @@
       "exploratory_target": null,
       "main_touched": false
     }
+  },
+  "active_lines": {
+    "A01": "MIXED_PROGRAMME_CLOSED",
+    "RV01": "DEVELOPMENT_POSITIVE_REDUCIBLE / EXPLORATORY_BUDGET_EXHAUSTED",
+    "RV02": "TERMINAL_CONSTRUCTION_NEGATIVE",
+    "CX_CX01": "TERMINAL_FORMAL_NEGATIVE",
+    "H8_C08": "TERMINAL_NEGATIVE",
+    "H9_C07": "PRE_START_UNDERSPECIFIED",
+    "C19_V4": "TERMINAL_PASS_NARROW_REPRESENTATION_GAIN / WEAKENED_NOT_INVALID",
+    "C19_R1": "SCIENTIFICALLY_UNRESOLVED_OPERATIONALLY_TERMINATED",
+    "C19_R2": "TERMINAL_REDUCED_BY_FSA / ROBUST_SO_FAR_AUDITED",
+    "PD01": "TERMINAL_FAIL_REDUCED_BY_FADING_MEMORY",
+    "NI01_H4": "PRE_START_READY_FOR_CONDITIONAL_ONE_WAY_AUTHORITY"
   },
   "top_recommendation": "MAIN should bind this fresh authority to NI01 and, only if final identity/namespace/binding and same-SHA CI/pre-START gates remain green without scientific change, execute exactly one formal NI01 one-way chain; SUB remains no-op.",
   "top_3": [
@@ -140,7 +144,7 @@
     },
     {
       "rank": 2,
-      "action": "Fresh independent read-only PD01 terminal audit; after NI01 terminalization, audit NI01 before any broader H4 claim",
+      "action": "Fresh independent read-only PD01 terminal audit; after NI01 terminalization, audit NI01 before broader H4 claims",
       "information_value": "HIGH",
       "distance": "NEAR_TO_MEDIUM"
     },
@@ -161,65 +165,58 @@
   "blockers": [
     "NI01 must consume this fresh Analyst authority and complete final execution-package binding before STARTED.",
     "Any execution-package head change requires ordinary CI and dedicated NI01 pre-START green on the same final SHA.",
-    "Any semantic/scientific change to the reviewed NI01 contract invalidates this authority and requires fresh Analyst review.",
-    "PD01 has not yet received fresh independent terminal audit, but this does not block independently motivated NI01."
+    "Any semantic/scientific change to NI01 invalidates this authority and requires fresh Analyst review.",
+    "PD01 terminal audit remains outstanding but does not block independently motivated NI01."
   ],
   "go_stop": {
-    "GO": "Conditional exactly-one NI01 execution after fresh authority binding, identity/namespace freshness, frozen exact bindings, same-final-SHA green gates, and target-blind observation projection verification.",
-    "identity_freshness": "ni01-no-ignition-selective-prediction-official-v1 is currently UNRESERVED_UNCONSUMED; must remain fresh/unSTARTED/unconsumed until STARTED/no-clobber exactly once.",
-    "binding": "Freeze exact source/protocol/package/input/runtime/candidate/comparator/scorer/preserver bindings; current reviewed source is research/ni01-no-ignition-selective-prediction-spec-20260918@2664951b65dd18883d3d80862e80b86ac66cf24f.",
-    "started_no_clobber": "STARTED/no-clobber must occur before any official TEST read.",
-    "raw_before_score": "target-free DEV threshold derivation -> target-blind TEST raw -> immutable preserve -> independent refetch/digest/cardinality -> TEST targets -> unique/total/fail-closed join -> deterministic scoring/bootstrap -> terminal evidence.",
-    "ci_review": "Dedicated NI01 preformal 35308269458 and ordinary CI 35308269286 are green on current exact head; re-run both on any changed final execution SHA.",
+    "GO": "Conditional exactly-one NI01 execution after authority binding, identity/namespace freshness, frozen exact bindings, same-final-SHA green gates, and target-blind observation projection verification.",
+    "identity_freshness": "ni01-no-ignition-selective-prediction-official-v1 is currently unreserved/unconsumed and must remain fresh/unSTARTED until STARTED/no-clobber exactly once.",
+    "binding": "Current reviewed research head is 2664951b65dd18883d3d80862e80b86ac66cf24f; exact source/protocol/package/input/runtime/candidate/comparator/scorer/preserver bindings must be frozen.",
+    "started_no_clobber": "STARTED/no-clobber before any official TEST read.",
+    "raw_before_score": "target-free DEV threshold -> target-blind TEST raw -> immutable preserve -> independent refetch/digest/cardinality -> TEST targets -> unique/total/fail-closed join -> deterministic scoring/bootstrap -> terminal evidence.",
+    "ci_review": "35308269458 and 35308269286 are green on current exact head; re-run both on any changed final execution SHA.",
     "scientific_falsifiers": {
       "coverage_guard": "absolute TEST coverage difference <= 0.03 in every world",
-      "PASS_NATIVE_NO_IGNITION_ADDS_SELECTIVE_VALUE": "coverage guard passes AND effect_ci95_lower >= 0.02 AND every world point effect > 0",
-      "FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION": "coverage guard passes AND effect_ci95_upper <= 0.005",
+      "PASS_NATIVE_NO_IGNITION_ADDS_SELECTIVE_VALUE": "coverage guard AND effect_ci95_lower >= 0.02 AND every world point effect > 0",
+      "FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION": "coverage guard AND effect_ci95_upper <= 0.005",
       "INCONCLUSIVE": "all other valid outcomes, including coverage guard failure"
     },
-    "STOP": "Stop before STARTED on semantic change, identity collision/non-freshness, or inability to prove same-final-SHA integrity without changing science. After STARTED, INVALID_EVIDENCE or POST_START_FAILURE consume the identity and STOP with no salvage/retry."
+    "STOP": "Stop before STARTED on semantic change, identity collision/non-freshness, or inability to prove same-final-SHA integrity without changing science. After STARTED, INVALID_EVIDENCE or POST_START_FAILURE consume identity and STOP with no salvage/retry."
   },
   "governance_advisory": {
-    "open_issue_139": "Updated by Repository Steward to current three evidence tags; substantive tag-protection gap remains open.",
+    "open_issue_139": "Repository Steward updated the evidence-tag inventory to three; substantive tag-protection gap remains open.",
     "rulesets": 0,
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "main_protected": false,
     "legacy_freeze_branches": 13,
     "authoritative_evidence_tags": 3,
     "open_prs": [148, 149],
-    "repository_steward_note": "13:50 advisory is current for governance facts; it independently confirmed NI01 exact-head preformal+CI success and no NI01 STARTED/preserve/evidence.",
     "main_promotion_candidates": [
-      "anonymous event and prediction-distribution primitives after neutral extraction and fresh CI",
+      "anonymous event and prediction-distribution primitives after neutral extraction/fresh CI",
       "architecture-neutral comparator protocol without G3-G8 taxonomy",
       "snapshot/restore deterministic round-trip invariants",
       "descriptive resource accounting decoupled from CX01 kinds",
       "generic privilege schema/validation",
       "external-only transcript hashing/validation",
       "generic no-self-training/context-leak/normalization invariant tests",
-      "generic exact runtime/source/binding verifier",
-      "STARTED/no-clobber/collision primitives",
-      "raw preserve/refetch/digest and fail-closed join tooling"
-    ],
-    "research_only": [
-      "G3-G8 scientific implementations/taxonomy and privilege mapping",
-      "CX01 world/schedule/threshold scientific semantics",
-      "R2/PD01/NI01 experiment-specific scientific contracts and result-dependent fixtures"
+      "generic exact runtime/source/binding and STARTED/no-clobber/collision/preserve/refetch/join helpers"
     ]
   },
   "allocation_change": {
     "changed": true,
     "from": "NEXT_FRONTIER_PROSPECTIVE_SELECTION / pre-formal selection",
     "to": "NI01_NATIVE_NO_IGNITION_SELECTIVE_PREDICTION_ONE_WAY / conditional exactly-one authority",
-    "cause": "fresh repository readiness evidence: independently motivated NI01/H4 contract completed with exact-head dedicated preformal and ordinary CI both green, identity still unconsumed and no STARTED/preserve/evidence present",
+    "cause": "fresh NI01 readiness evidence: independently motivated H4 contract completed with exact-head preformal and ordinary CI both green, identity unconsumed, no STARTED/preserve/evidence",
     "caused_by_literature_update": false,
     "caused_by_audit_update": false,
     "caused_by_sub_exploratory_output": false
   },
   "persistence": {
     "latest_md_commit": "dabd6dcb9a54293dbea31b4c19aea62d232e86de",
-    "state_json_commit": "PENDING_THIS_WRITE",
     "history_path": "analysis/orchestrator/history/2026-09-18/1400.md",
-    "history_commit": "PENDING",
-    "limitation": "No scientific execution or immutable evidence mutation performed by Evidence Analyst. Final branch tip will be recorded after append-only history creation."
+    "history_commit": "1a7fd2ae8f8f30abdbe44ed77430312a5ec9c9b3",
+    "scientific_execution_performed_by_analyst": false,
+    "immutable_evidence_mutated_by_analyst": false,
+    "scheduler_definition_changed_by_analyst": false
   }
 }
