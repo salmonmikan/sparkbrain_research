@@ -11,7 +11,7 @@ from __future__ import annotations
 import random
 from collections.abc import Iterable, Mapping, Sequence
 from dataclasses import dataclass
-from math import exp, isfinite, tanh
+from math import isfinite, tanh
 
 _TARGET_LIKE_KEYS = frozenset({"answer", "gold", "label", "outcome", "target", "truth"})
 
@@ -55,8 +55,8 @@ class FadingMemoryComparator:
 class ReservoirConfig:
     """Fixed contractive reservoir configuration for the formal PD0.1 proposal.
 
-    ``recurrent_l1`` is the exact per-row absolute recurrent-weight sum.  Keeping it below one gives
-    a simple outcome-independent contraction bound rather than selecting a spectral radius from data.
+    ``recurrent_l1`` is the exact per-row absolute recurrent-weight sum. Keeping it below one gives
+    a simple outcome-independent contraction bound instead of selecting a spectral radius from data.
     """
 
     state_dim: int = 64
