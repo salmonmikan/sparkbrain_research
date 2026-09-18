@@ -1,42 +1,30 @@
 {
-  "timestamp": "2026-09-18T19:13:32+09:00",
+  "timestamp": "2026-09-18T19:58:08+09:00",
   "worker_role": "main",
-  "execution_mode": "PRIMARY",
-  "analyst_commit": "fc1717f54ac045f29557e839268fc3b0f622acdf",
-  "analyst_handoff_mailbox_tip": "04389d811d58215981a397371f153d485b005fbd",
-  "current_lane": "H5_DENSE_COMPARATOR_SEMANTIC_REWORK",
-  "current_phase": "H5_REVISED_DENSE_COMPARATOR_READY_FOR_ANALYST_REVIEW",
-  "consumed_contingency_branches": [
-    "PRE_START_SEMANTIC_GAP_DENSE_COMPARATOR",
-    "H5_REVISED_DENSE_COMPARATOR_READY_FOR_ANALYST_REVIEW"
-  ],
-  "active_claim": "Lazy decay and event-routed active execution reduce audited algorithmic work relative to a credible standalone dense-equivalent implementation while preserving target behavior in fixed sparse workloads.",
+  "execution_mode": "RELAY",
+  "analyst_commit": "f373fe3dfcddc14405d81cabadf0cb2682a659d0",
+  "analyst_handoff_mailbox_tip": "4630decbda55d31ec8f44ac1435950b261225fd5",
+  "current_lane": "H5_EVENT_ROUTING_WORK_REDUCTION_ONE_WAY",
+  "current_phase": "H5_FINAL_EXECUTION_SHA_GATES_PENDING",
+  "active_identity": "h5-event-routing-work-reduction-official-v1",
+  "identity_state": "SELECTED_FRESH_UNSTARTED_UNCONSUMED",
   "authoritative_target_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "active_branch": "research/h5-event-routing-work-reduction-spec-20260918",
-    "active_head": "520fc8391d9ebb02584a16ec466a1bf168548ea9",
-    "active_tree": "ca697ff00c0dccc153760a7f466b16847f1a1393",
-    "formal_contract_path": "configs/experiments/h5/formal_contract.json",
+    "reviewed_scientific_head": "520fc8391d9ebb02584a16ec466a1bf168548ea9",
+    "final_execution_head": "2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
     "formal_contract_blob": "1911d4560f4e2774fd725df26ba8cb25b03e2c5f",
     "h5_module_blob": "572f00f7a7361a89a54b647a2e2dca875c9b4829",
-    "engine_blob": "48fa64414f539ec4a00acc9e25ffc9b1d26a4982",
-    "model_blob": "ab450dba5943fa9184e66c00a4e992d6588bf6a5",
-    "package_blob": "49d47f3d65f67f1c0a6b82a3f7fc2d0364e2a88c",
-    "runtime": "CPython 3.11.10",
-    "candidate": "AuditedSparkBrain",
-    "comparator": "DenseEagerSparkBrain",
-    "scorer": "sparkbrain.h5_work.score_rows",
-    "preserver": "sparkbrain.h5_work.canonical_raw_json"
-  },
-  "fast_path_used": true,
-  "full_reconciliation_reason": null,
-  "branches_prs_advanced": {
-    "branches": [],
-    "prs": []
+    "official_runner_blob": "42a44384d08d680e3767541efce92b0f54edb9ee",
+    "preserver_blob": "0f3b013025737373e8bec91056c5369f23a3266f",
+    "one_way_workflow_blob": "37f8dc1817a4587749c0896727dc4f10187ff50e",
+    "control_ref_planned": "control/h5-event-routing-work-reduction-started-v1-20260918",
+    "preserve_ref_planned": "preserve/h5-event-routing-work-reduction-raw-h5-event-routing-work-reduction-official-v1",
+    "evidence_tag_planned": "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1"
   },
   "workflows_experiments": {
-    "h5_prestart_35329505864": "completed/success on exact head 520fc8391d9ebb02584a16ec466a1bf168548ea9",
-    "ordinary_ci_35329505891": "completed/success on exact head 520fc8391d9ebb02584a16ec466a1bf168548ea9",
+    "h5_prestart_35337279639": "queued on exact final execution head 2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
+    "ordinary_ci_35337279740": "queued on exact final execution head 2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
     "formal_experiment": "NOT_STARTED"
   },
   "scientific_results": null,
@@ -49,42 +37,43 @@
     "pd01-long-history-fading-memory-official-v1",
     "ni01-no-ignition-selective-prediction-official-v1"
   ],
-  "active_identity": null,
-  "blockers": [
-    "No Evidence Analyst handoff newer than mailbox tip 04389d811d58215981a397371f153d485b005fbd has accepted revised H5 exact head 520fc8391d9ebb02584a16ec466a1bf168548ea9.",
-    "Fresh Evidence Analyst acceptance is required before any H5 formal identity reservation, STARTED, official TEST, preserve, score, or evidence transition."
-  ],
   "lease_collision_reconciliation": {
-    "prior_lease_status": "BLOCKED",
-    "prior_lease_mode": "RELAY",
-    "prior_heartbeat": "2026-09-18T18:42:46+09:00",
-    "fresh_primary_running_collision_found": false,
-    "target_head_reconfirmed": "520fc8391d9ebb02584a16ec466a1bf168548ea9",
-    "analyst_mailbox_tip_reconfirmed": "04389d811d58215981a397371f153d485b005fbd",
+    "prior_lease_mode": "PRIMARY",
+    "prior_lease_status": "RUNNING",
+    "prior_heartbeat": "2026-09-18T19:13:32+09:00",
+    "prior_lease_stale_over_20_minutes": true,
+    "stale_lease_used_as_permission": false,
+    "fresh_remote_reconciliation_performed": true,
+    "research_head_before_takeover": "520fc8391d9ebb02584a16ec466a1bf168548ea9",
+    "fresh_analyst_tip": "4630decbda55d31ec8f44ac1435950b261225fd5",
+    "fresh_analyst_decision": "REVISED_H5_ACCEPTED_FOR_CONDITIONAL_ONE_WAY",
+    "h5_control_refs_before_takeover": [],
+    "h5_preserve_refs_before_takeover": [],
+    "h5_formal_refs_before_takeover": [],
+    "h5_evidence_tags_before_takeover": [],
     "sub_mode_observed": "no_op",
-    "sub_lane_reserved": false
+    "fresh_primary_same_object_mutation_found": false,
+    "relay_takeover_result": "SAFE_AFTER_REMOTE_RECONCILIATION"
   },
-  "integrity_status": "CLEAN_PRE_START_REVISED_COMPARATOR_BOTH_GATES_GREEN_NO_FRESH_ANALYST_ACCEPTANCE_NO_IDENTITY_NO_STARTED_NO_OFFICIAL_TEST_NO_PRESERVE_NO_SCORE_NO_EVIDENCE",
-  "critical_path_fixes_completed": [],
-  "same_run_steps": [
-    "Read latest Evidence Analyst latest/state/history and confirmed current authority still stops at H5_REVISED_DENSE_COMPARATOR_READY_FOR_ANALYST_REVIEW.",
-    "Read MAIN latest/state/lease and acquired a PRIMARY RUNNING heartbeat after collision check.",
-    "Read SUB latest only to avoid collision; SUB remains no_op with no reserved lane/fallback.",
-    "Read Control Brain only as strategic prior; it agrees H5 must remain bounded pending fresh Analyst acceptance.",
-    "Re-fetched main and exact H5 active branch/head and confirmed no ref drift.",
-    "Re-fetched exact H5 formal contract and bound source/package/runtime/candidate/comparator/scorer/preserver information.",
-    "Reconfirmed dedicated H5 pre-START 35329505864 and ordinary CI 35329505891 are completed/success on the exact active head.",
-    "Reconfirmed H5 control/preserve/formal/evidence namespaces remain empty.",
-    "Stopped without research mutation because the prospectively required fresh Analyst acceptance is absent."
+  "contingency_consumed": "GO_AUTHORITY_PACKAGING_AND_FINAL_SHA_REVALIDATION_ONLY",
+  "critical_path_actions_performed": [
+    "Consumed fresh Evidence Analyst acceptance of revised standalone DenseEagerSparkBrain H5 comparator.",
+    "Reconciled stale PRIMARY lease against unchanged research head, empty H5 namespaces, no-op SUB and fresh Analyst assignment before takeover.",
+    "Claimed MAIN lease in RELAY mode.",
+    "Selected fresh pre-outcome identity h5-event-routing-work-reduction-official-v1 after collision and consumed-identity checks.",
+    "Preserved frozen scientific contract unchanged with execution_authorized=false and formal_identity=null.",
+    "Added fixed H5 official runner, raw preservation helper and one-way workflow implementing raw-before-score and independent preserve/refetch/digest/cardinality ordering.",
+    "Added separate execution authority binding fresh Analyst decision and exact reviewed science/mechanics without changing scientific semantics.",
+    "Added execution authority checker and armed dedicated pre-START to verify frozen science, exact authority bindings, identity namespaces and DEV-only smoke.",
+    "Reached final execution head 2086a8f4ea080a7a8a0e3c79d77afe9b516db905 and dispatched exact-head dedicated pre-START and ordinary CI automatically by push."
   ],
-  "stop_reason": "BLOCKED_FOR_FRESH_EVIDENCE_ANALYST_REVIEW",
-  "work_left_for_SUB": "None. SUB remains no_op; H5 is MAIN-owned and no independent sub_lane/sub_fallback is reserved.",
-  "lane_repartition_reason": null,
-  "next_MAIN_action": "Consume a newer Evidence Analyst handoff that explicitly reviews exact head 520fc8391d9ebb02584a16ec466a1bf168548ea9 with dedicated pre-START 35329505864 and ordinary CI 35329505891 green. Continue only if that handoff prospectively authorizes the next formal step; otherwise remain blocked. Do not reserve identity, create STARTED, access official TEST, preserve, score, create evidence, retune, retry, or choose a successor under the current authority.",
+  "integrity_status": "CLEAN_PRE_START_AUTHORITY_PACKAGED_IDENTITY_FRESH_UNSTARTED_NO_OFFICIAL_FORMAL_ACCESS_NO_PRESERVE_NO_SCORE_NO_EVIDENCE_FINAL_SHA_GATES_PENDING",
+  "stop_reason": "WAITING_FOR_FINAL_EXACT_HEAD_CI_AND_PRESTART",
+  "next_MAIN_action": "Collect only H5 pre-START run 35337279639 and ordinary CI run 35337279740 for exact head 2086a8f4ea080a7a8a0e3c79d77afe9b516db905. If both are success and Analyst tip/head/identity/namespaces remain unchanged, create STARTED/no-clobber exactly once and enter only the preregistered one-way chain. If a mechanical pre-START blocker appears, repair science-invariant mechanics and rerun both final-head gates; any semantic gap returns to fresh Analyst review.",
   "write_path_diagnostics": {
     "github_direct_write_attempted": true,
     "github_direct_write_succeeded": true,
     "force_push_used": false,
-    "history_path": "reports/orchestrator/history/2026-09-18/1913-main.md"
+    "history_path": "reports/orchestrator/history/2026-09-18/1958-main.md"
   }
 }
