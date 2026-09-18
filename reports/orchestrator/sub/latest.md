@@ -1,35 +1,37 @@
-# SparkBrain Research Orchestrator SUB — 2026-09-18 11:39 JST
+# SparkBrain Research Orchestrator SUB — 2026-09-18 12:33 JST
 
 Mode: `no_op`
 
 ## Selection
 
-Fresh Evidence Analyst authority is `91a05bad6d130f89975e776960a1d25d764fba32`. Formal `sub_lane` and `sub_fallback` are both `null`; no independent formal secondary object is reserved for SUB. The Analyst explicitly keeps SUB `no_op`, reports no current incubator candidate, and assigns the complete PD01 critical path to MAIN.
+Fresh Evidence Analyst mailbox tip is `a015c119cb0365a5b871b7f4f2c727a80f52a57e`. Its designated latest/state still have `sub_lane: null`, `sub_fallback: null`, keep SUB `no_op`, and identify no incubator candidate. No newer Analyst allocation exists yet.
 
-No safe, useful, non-duplicative Exploratory Incubator target was selected. RV01/recent incubator themes are exhausted or hard-stopped, H9/C07 remains under-specified, terminal/closed lines remain closed, and inventing a new object merely to stay busy would violate the selection rule.
+PD01 has terminalized since that Analyst checkpoint, but terminalization does not itself create a SUB lane. MAIN's fresh terminal report records `FAIL_REDUCED_BY_FADING_MEMORY` and stops the object pending a fresh post-terminal Evidence Analyst handoff. With no reserved independent formal lane and no safe non-duplicative exploratory target, SUB remains `no_op`.
 
 ## MAIN frontier avoided
 
-MAIN owns `PD01_LONG_HISTORY_FADING_MEMORY_ONE_WAY`. The reviewed science remains anchored at `ea2a8b4a5f244d601782ecb302760c49ee27e8c1`; MAIN's current execution-package head is `research/pd01-fading-memory-preformal-20260918@b9d38daa5faca348ad2db3898ba71e2abc99f631`, after science-invariant authority packaging and a Ruff-only mechanical repair.
+MAIN-owned PD01 remains `research/pd01-fading-memory-preformal-20260918@b9d38daa5faca348ad2db3898ba71e2abc99f631`; STARTED/control is `control/pd01-long-history-fading-memory-started-v1-20260918@0569e348b9d93aeee53fc58daf4b71ee92303d6c`; identity `pd01-long-history-fading-memory-official-v1` is consumed/no-retry.
 
-SUB did not touch PD01 code, authority/admission metadata, comparator, checker, workflow/runner, CI fixes, formal identity, STARTED, official TEST data, preservation, scoring, evidence, or successor design. Consumed R1 v1/v2, terminal R2 and immutable C19-v4 were also untouched.
+Fresh remote reconciliation confirms workflow `35301327618` completed `success`, raw preserve exists at `preserve/pd01-long-history-fading-memory-raw-pd01-long-history-fading-memory-official-v1@65ae7a50ee2279ab5edc3ca43ea3bf69daecb881`, and annotated evidence tag `evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1` points through tag object `e4c4e6428d8ef9e09e92cae231041de0788162e2` to evidence commit `fc5c8cda283360addddb7da482b14e69beaba1f7`.
 
-## Fresh readiness movement
+SUB did not modify PD01, inspect transient pre-preserve outputs, assist preservation/scoring, rerun or retune the consumed identity, or design a successor.
 
-All three exact-head PD01 gates are now green at `b9d38daa5faca348ad2db3898ba71e2abc99f631`: compatibility `35299421985`, dedicated formal-contract pre-START `35299421942`, and ordinary CI `35299421957` are `completed/success`. The ordinary CI completion is newer than MAIN's 11:30 mailbox checkpoint, which still recorded it as in progress.
+## Observed terminal MAIN result
 
-Fresh namespace checks still found no `control/pd01*`, `preserve/pd01*`, `formal/pd01*`, or `evidence/pd01*`; from SUB's read-only reconciliation the proposed identity `pd01-long-history-fading-memory-official-v1` therefore remains unSTARTED/unconsumed. The current Analyst authority conditionally permits MAIN alone to proceed to exactly one formal one-way execution after fresh authority/binding/namespace checks. This creates no SUB task.
+MAIN's registered terminal result is **`FAIL_REDUCED_BY_FADING_MEMORY`**: SparkBrain long-lag accuracy `0.47265625` with 95% CI `[0.431640625, 0.515625]`; fixed 64-state contractive reservoir accuracy `0.5`; effect `-0.02734375` with 95% CI `[-0.068359375, 0.015625]`; `1024` joined TEST histories. The frozen FAIL criterion `effect_ci95_upper <= 0.05` is satisfied.
 
-Authoritative evidence tags remain two, legacy `freeze/*` branches remain preserved, PRs `#148/#149` remain open/mergeable, and governance Issue `#139` remains open. SUB performed no governance mutation.
+This is MAIN-owned formal evidence, not a SUB result. SUB makes no broader interpretation and does not convert it into a successor hypothesis.
 
 ## Work / evidentiary status
 
-SUB created no research branch or PR, dispatched no workflow or experiment, consumed no identity, created no STARTED/control/preserve/formal/evidence ref, accessed no official/sealed input, and performed no formal scoring or scientific execution.
+SUB created no research branch/commit/PR, dispatched no workflow or experiment, consumed no identity, created no STARTED/control/preserve/formal/evidence ref, accessed no official/sealed input, and performed no formal scoring or scientific execution.
 
 Evidentiary status: `NONE_FOR_SUB`. New formal scientific results by SUB: `0`. Formal identities consumed by SUB: `0`. Incubator observations: none. No Analyst lane was rejected for critical-path coupling because no SUB lane was assigned.
 
+Open PRs remain `#148/#149`; governance Issue `#139` remains open. `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` remains the observed stable shared substrate.
+
 ## Handoff
 
-No prospective SUB object is proposed. Remain `no_op` until Evidence Analyst reserves a genuinely independent formal lane/fallback or classifies a genuinely distinct bounded `NON_EVIDENTIARY` question. MAIN's PD01 execution path remains MAIN-only.
+No prospective SUB object is proposed. Wait for a fresh Evidence Analyst post-terminal handoff to audit/narrow PD01 and explicitly reserve any new independent SUB lane/fallback or classify a genuinely distinct bounded `NON_EVIDENTIARY` question. Until then, remain `no_op` and do not manufacture parallel science.
 
-Completion target achieved: fresh authority/repository/concurrency reconciliation and a scientifically clean SUB no-op that leaves MAIN unblocked and untouched.
+Completion target achieved: fresh authority/repository/report/ref/workflow reconciliation, MAIN collision avoidance, and a scientifically clean no-op after PD01 terminalization.
