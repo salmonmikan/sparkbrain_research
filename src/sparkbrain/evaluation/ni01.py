@@ -125,7 +125,9 @@ def summarize_effect(
     for world in worlds:
         episodes = by_world_episode[world]
         if len(episodes) != episodes_per_world:
-            raise ValueError(f"{world}: expected {episodes_per_world} episodes, got {len(episodes)}")
+            raise ValueError(
+                f"{world}: expected {episodes_per_world} episodes, got {len(episodes)}"
+            )
         episode_effects: list[float] = []
         candidate_episode_losses: list[float] = []
         comparator_episode_losses: list[float] = []
