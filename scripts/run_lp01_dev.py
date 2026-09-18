@@ -1,8 +1,8 @@
 from __future__ import annotations
 
 import json
-from pathlib import Path
 import random
+from pathlib import Path
 
 from sparkbrain.lp01_lineage import (
     build_indexes,
@@ -14,9 +14,8 @@ from sparkbrain.lp01_lineage import (
 
 def main() -> None:
     root = Path(__file__).resolve().parents[1]
-    contract = json.loads(
-        (root / "configs/experiments/lp01/prospective_contract.json").read_text(encoding="utf-8")
-    )
+    contract_path = root / "configs/experiments/lp01/prospective_contract.json"
+    contract = json.loads(contract_path.read_text(encoding="utf-8"))
     profile = contract["held_out_construction"]["dev_profile"]
     if profile["evidentiary_status"] != "NON_EVIDENTIARY":
         raise AssertionError("LP01 dev runner may execute only NON_EVIDENTIARY profile")
@@ -24,6 +23,7 @@ def main() -> None:
     total_queries = 0
     destroyed_differences = 0
     recent_differences = 0
+    recent_window = contract["resource_contract"]["max_recent_window_events"]
     for seed in profile["history_seeds"]:
         roots, events, live = generate_history(
             seed=seed,
@@ -33,17 +33,19 @@ def main() -> None:
         actual, explicit, recent = build_indexes(
             roots,
             events,
-            recent_window=contract["resource_contract"]["max_recent_window_events"],
+            recent_window=recent_window,
         )
         destroyed_events = destroy_provenance(roots, events, seed=seed + 900_000)
         destroyed, _, _ = build_indexes(
             roots,
             destroyed_events,
-            recent_window=contract["resource_contract"]["max_recent_window_events"],
+            recent_window=recent_window,
         )
 
         actual_present = present_state_digest(seed=seed, live_ids=live, recent_token="matched")
-        destroyed_present = present_state_digest(seed=seed, live_ids=live, recent_token="matched")
+        destroyed_present = present_state_digest(
+            seed=seed, live_ids=live, recent_token="matched"
+        )
         if actual_present != destroyed_present:
             raise AssertionError("present-state digest changed under provenance destruction")
 
