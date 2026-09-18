@@ -1,17 +1,17 @@
 {
   "run_id": "sparkbrain-main-relay-20260918T174213JST",
   "execution_mode": "RELAY",
-  "status": "WAITING_EXTERNAL",
+  "status": "BLOCKED",
   "started_at": "2026-09-18T17:42:13+09:00",
-  "heartbeat_at": "2026-09-18T17:53:30+09:00",
+  "heartbeat_at": "2026-09-18T17:56:00+09:00",
   "analyst_commit": "ded9d64a779791cbbcd9fbbff5fb3acb730c4263",
   "analyst_handoff_mailbox_tip": "34756bd0414084ae601a3bc724d5d99101c09676",
   "active_branch": "research/h5-event-routing-work-reduction-spec-20260918",
   "active_identity": null,
-  "active_step": "H5_FORMAL_CONTRACT_GATES_RUNNING",
+  "active_step": "H5_FORMAL_CONTRACT_READY_FOR_ANALYST_REVIEW",
   "workflow_run_id": 35326594027,
   "ordinary_ci_run_id": 35326594070,
   "active_head": "e247f9aa3f78899147fbc37e5e6a41cd559ce6d9",
-  "expected_next_action": "Collect dedicated H5 readiness run 35326594027 and ordinary CI 35326594070 on exact head e247f9aa3f78899147fbc37e5e6a41cd559ce6d9. If both are green and Analyst/head/integrity remain unchanged, persist H5_FORMAL_CONTRACT_READY_FOR_ANALYST_REVIEW and STOP. If another failure is purely mechanical, repair prospectively without changing the fixed H5 scientific contract and rerun all exact-head gates; if semantic/scientific redesign is required, STOP for Analyst. Formal identity, STARTED, official TEST, preserve, score and evidence remain forbidden.",
+  "expected_next_action": "Fresh Evidence Analyst review is required for exact green head e247f9aa3f78899147fbc37e5e6a41cd559ce6d9. Do not reserve a formal H5 identity, create STARTED, access official TEST, preserve formal raw, score, or create evidence until a fresh Analyst handoff explicitly authorizes that continuation.",
   "owner": "main"
 }
