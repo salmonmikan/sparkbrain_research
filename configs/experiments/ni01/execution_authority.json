@@ -1,0 +1,36 @@
+{
+  "authority_scope": "science-invariant admission, exact-head revalidation, exactly-one formal one-way NI01 execution only",
+  "control_ref": "control/ni01-no-ignition-selective-prediction-started-v1-20260918",
+  "evidence_analyst_commit": "d3626617c3b054afd726e468682aaa02d613bca0",
+  "evidence_tag": "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1",
+  "formal_contract_git_blob": "3dc90b08f85e0e7c459e0c17e86ab338901fd4c6",
+  "formal_identity": "ni01-no-ignition-selective-prediction-official-v1",
+  "integrity_order": [
+    "STARTED/no-clobber",
+    "target-free DEV threshold derivation",
+    "target-blind TEST raw acquisition",
+    "raw preservation before TEST target materialization",
+    "independent remote re-fetch and digest/cardinality verification",
+    "TEST target materialization",
+    "unique total fail-closed join",
+    "deterministic scoring/bootstrap",
+    "annotated terminal evidence tag"
+  ],
+  "ni01_scorer_git_blob": "d3b3565a08277e6a94ef9be1e5bd13e86265f8f2",
+  "no_retry": true,
+  "official_runner_git_blob": "d1602b22bacec1b4e8d2166bd0c184382e632d7e",
+  "post_start_failure_policy": "identity consumed; terminal STOP; no retry, repair, salvage, threshold retuning, or automatic NI01-v2",
+  "preserve_ref": "preserve/ni01-no-ignition-selective-prediction-raw-ni01-no-ignition-selective-prediction-official-v1",
+  "preserver_git_blob": "390816f9d69604adc0ce3fbf21be93dd916256fd",
+  "protocol_id": "ni01-no-ignition-selective-prediction-protocol-v1",
+  "required_final_head_gates": [
+    "ordinary CI success",
+    "ni01-formal-prestart success",
+    "fresh identity/control/preserve/evidence namespace checks",
+    "exact source/protocol/package/input/runtime/candidate/comparator/scorer/preserver binding checks"
+  ],
+  "reviewed_scientific_head": "2664951b65dd18883d3d80862e80b86ac66cf24f",
+  "schema_version": 1,
+  "scientific_contract_immutable": true,
+  "status": "PRE_START_AUTHORIZED_CONDITIONAL"
+}

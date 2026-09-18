@@ -1,0 +1,56 @@
+name: NI01 formal pre-START
+
+on:
+  push:
+    branches:
+      - research/ni01-no-ignition-selective-prediction-spec-20260918
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  formal-prestart:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install verification/runtime package
+        run: |
+          python -m pip install pytest ruff
+          python -m pip install -e . --no-deps
+      - name: Lint exact NI01 execution package
+        run: >-
+          python -m ruff check
+          src/sparkbrain/evaluation/ni01.py
+          scripts/check_ni01_preformal.py
+          scripts/check_ni01_execution_authority.py
+          scripts/run_ni01_official.py
+          scripts/preserve_ni01_boundary.py
+          tests/test_ni01_preformal.py
+      - name: Re-prove frozen scientific contract
+        run: python scripts/check_ni01_preformal.py
+      - name: Verify fresh execution authority envelope
+        run: python scripts/check_ni01_execution_authority.py
+      - name: Verify namespaces are unused
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "control/ni01-no-ignition-selective-prediction-started-v1-20260918" >/dev/null 2>&1; then exit 1; fi
+          if git ls-remote --exit-code --heads origin "preserve/ni01-no-ignition-selective-prediction-raw-ni01-no-ignition-selective-prediction-official-v1" >/dev/null 2>&1; then exit 1; fi
+          if git ls-remote --exit-code --tags origin "refs/tags/evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1" >/dev/null 2>&1; then exit 1; fi
+      - name: Run target-free production smoke
+        env:
+          PYTHONHASHSEED: "0"
+          OMP_NUM_THREADS: "1"
+          OPENBLAS_NUM_THREADS: "1"
+          MKL_NUM_THREADS: "1"
+        run: >-
+          python scripts/run_ni01_official.py prestart-smoke
+          --analyst-commit d3626617c3b054afd726e468682aaa02d613bca0
+      - name: Run prospective NI01 scorer tests
+        run: python -m pytest -q -p no:cacheprovider tests/test_ni01_preformal.py
