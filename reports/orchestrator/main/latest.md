@@ -1,38 +1,51 @@
-# MAIN Orchestrator — post-H5 terminal authority wait
+# MAIN Orchestrator — LP01 prospective semantic-gap checkpoint
 
-Timestamp: `2026-09-18 21:14:36 JST`  
+Timestamp: `2026-09-18 22:27:30 JST`  
 Worker role: `main`  
 Execution mode: `PRIMARY`  
-Latest Evidence Analyst mailbox: `b9af0d1312d02d0be406a82d5bf889c4b578ecf6`
+Evidence Analyst authority: `57464c4ad6881c27371be5305512656c6ae315d3`
 
 ## MAIN frontier
 
-H5 remains terminal for identity `h5-event-routing-work-reduction-official-v1` with immutable classification `FAIL_NO_USEFUL_WORK_REDUCTION`. This run used the FAST PATH only; FULL RECONCILIATION was not required.
+MAIN consumed the fresh post-H5 allocation `LP01_ACTUAL_LINEAGE_CAUSAL_CREDIT_PROSPECTIVE_SPECIFICATION` and used the FAST PATH only. FULL RECONCILIATION was not required.
 
-The latest Evidence Analyst handoff is still the 20:00 JST pre-START GO handoff. That authority was already consumed by the prior MAIN run, which created STARTED exactly once, completed the fixed one-way workflow, preserved raw before scoring, and produced terminal evidence. There is still no fresh post-terminal Analyst handoff assigning a prospectively independent next frontier.
+A fresh branch was created from current `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`:
 
-## Fresh authoritative reconciliation
+- `research/lp01-actual-lineage-causal-credit-spec-20260918@56b0e5ddf2ceffb0a53d517d8125f8302c2d2844`
 
-- `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`.
-- H5 research head remains `research/h5-event-routing-work-reduction-spec-20260918@2086a8f4ea080a7a8a0e3c79d77afe9b516db905`.
-- STARTED/control remains `control/h5-event-routing-work-reduction-started-v1-20260918@058e90227cd48e1c10c6ecbaed01efdec1217d0e`.
-- Preserved raw remains `preserve/h5-event-routing-work-reduction-raw-h5-event-routing-work-reduction-official-v1@ce5797eb584344db7a512e585506fb6c59ea475b`.
-- Annotated evidence tag remains `evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1`, tag object `e7d99cc806206ac27ced225d4779c9fc5bb67ff5`.
-- One-way workflow `35338995888` remains `completed/success`, attempt 1, on STARTED head `058e90227cd48e1c10c6ecbaed01efdec1217d0e`.
-- SUB remains `no_op`; no independent SUB lane/fallback is reserved.
+No formal LP01 identity exists. No STARTED/control, official TEST, formal preserve, formal scoring, or evidence was created or accessed.
 
-No H5 ref drift, identity ambiguity, collision anomaly, or evidence-integrity anomaly was observed.
+## Prospective specification result
 
-## Scientific state
+The allocated LP01 question does not currently yield a high-value formal object under the required matched-privilege/resource boundary.
 
-No new scientific information was generated in this run. The previously terminal H5 result is unchanged: primary mean work reduction `0.023826074023772813`, 95% clustered-bootstrap CI `[0.02379403660851484, 0.023859665012124307]`, classified `FAIL_NO_USEFUL_WORK_REDUCTION` under the preregistered rule.
+Current native source has lineage/provenance as persisted and inspectable structural metadata, but not as an input to the ordinary online decision/reward path: `StructuralSparseModel.forward_step`, backend `run`/`_consume_structural`, reward eligibility, structural discovery, and candidate selection do not consume parent/tombstone ancestry. The branch records this source-level boundary and provides a fail-closed source audit.
 
-The H5 identity is consumed/no-retry. No rerun, retune, repair, salvage, H5-v2, successor design, scorer change, protocol change, or new identity creation was attempted.
+A draft lineage-addressed delayed-credit adapter was specified prospectively only to test whether a clean discriminator could exist. Under matched information privilege, however, the same admitted append-only parent/event relation can be reconstructed losslessly by an ordinary explicit parent-state table and the identical ancestry query/credit operation can be performed. Any advantage would therefore require asymmetric information, asymmetric resource restrictions, a special operation denied to the explicit comparator, or a different claim such as efficiency/inductive bias. Those are outside the allocated LP01 causal-credit question.
 
-## Stop / lease
+Accordingly the matching Analyst contingency is `PRE_START_SEMANTIC_GAP`, and the prospective conclusion is **`NO_HIGH_VALUE_OBJECT`**. This is a pre-formal specification/readiness conclusion, not terminal scientific evidence.
 
-Lease status: **`BLOCKED`**.
+The branch contains only NON_EVIDENTIARY reference semantics, construction tests/diagnostics, a draft prospective contract, a native causality source audit, and `docs/research/lp01-semantic-gap.md`. Historical H7 exploratory settings/results were not reused for parameter selection.
 
-Stop reason: the current Analyst mailbox predates H5 terminalization and contains no post-terminal allocation. The only scientifically valid next action is to wait for a fresh Evidence Analyst handoff that reviews the terminal H5 evidence and prospectively assigns an independent next MAIN frontier, if any.
+## Checks
 
-Relay continuation is **not expected** from this checkpoint because there is no prospectively authorized next MAIN action to continue.
+The first LP01 readiness run `35349695551` failed only because the source-audit checker searched raw function text and matched the word `lineage` in the `candidate_group` docstring. The underlying method uses only routing load/coactivation/current slots. The checker was mechanically corrected to inspect AST identifiers/attributes and ignore string/docstring text; related focused lint formatting was also corrected without changing the scientific question or conclusion.
+
+Exact-head external checks are now running on `56b0e5ddf2ceffb0a53d517d8125f8302c2d2844`:
+
+- LP01 prospective readiness: `35350132766` — in progress.
+- ordinary CI: `35350132835` — in progress.
+
+No useful local critical-path work remains while these jobs execute.
+
+## Scientific / integrity state
+
+New formal scientific information: **none**. No formal experiment, official TEST access, target-derived scoring, identity consumption, preservation, or evidence creation occurred.
+
+Existing H5/NI01/PD01/C19 immutable/consumed evidence was not modified or reinterpreted. SUB remains unassigned/no-op for the LP01/H7 provenance line.
+
+## Lease / continuation
+
+Lease status: **`WAITING_EXTERNAL`**.
+
+Relay continuation is expected only to collect exact-head readiness `35350132766` and CI `35350132835`. If both are green and Analyst/head/identity state remains unchanged, persist `LP01_NO_HIGH_VALUE_OBJECT` / completion and STOP for fresh Evidence Analyst review. If a failure is purely mechanical, repair science-invariantly and rerun exact-head gates. If resolving a failure would require changing the scientific question, candidate/comparator privilege, resource contract, claim, or identity, STOP without formalization.
