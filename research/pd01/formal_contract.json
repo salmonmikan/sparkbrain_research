@@ -26,7 +26,7 @@
       "max_cascade_gap_ms": 6.0
     },
     "pd01_implementation_path": "src/sparkbrain/external_validation/fading_memory.py",
-    "pd01_implementation_git_blob": "9ac9c349d42dc0fe8c45803cb831daa05708df55",
+    "pd01_implementation_git_blob": "16bbfb6ed57d6c9701e8437360692b62e7c36915",
     "package_version": "0.3.2.dev0"
   },
   "runtime_binding": {
