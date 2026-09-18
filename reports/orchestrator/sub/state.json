@@ -1,9 +1,11 @@
 {
-  "timestamp": "2026-09-18T19:32:06+09:00",
+  "timestamp": "2026-09-18T20:35:00+09:00",
   "worker_role": "sub",
   "mode": "no_op",
-  "evidence_analyst_commit": "fc1717f54ac045f29557e839268fc3b0f622acdf",
-  "evidence_analyst_mailbox_tip": "04389d811d58215981a397371f153d485b005fbd",
+  "evidence_analyst_commit": "b9af0d1312d02d0be406a82d5bf889c4b578ecf6",
+  "evidence_analyst_mailbox_tip": "b9af0d1312d02d0be406a82d5bf889c4b578ecf6",
+  "evidence_analyst_time_observed": "2026-09-18T20:00:00+09:00",
+  "evidence_analyst_post_terminal_repartition_observed": false,
   "consumed_lanes": [],
   "selected_independent_lane": null,
   "exploratory_target": null,
@@ -11,32 +13,36 @@
   "execution_allowed": false,
   "sub_active_claim": null,
   "main_work_explicitly_avoided": [
-    "H5 standalone dense/eager comparator scientific acceptance and any further comparator semantics work",
-    "H5 counter/accounting, contract, checker, tests, CI/pre-START repair, and exact binding work",
-    "H5 formal identity reservation and STARTED/control creation",
-    "H5 official TEST access, preservation, scoring, evidence, or successor design",
-    "Historical H5 exploratory output as formal evidence or parameter-selection input",
-    "Consumed or terminal C19-R1/R2/C19-v4/PD01/NI01 science"
+    "H5 consumed identity retry, retune, rescore, reinterpretation, rescue, or H5-v2 design",
+    "H5 STARTED/control, raw preserve, evidence tag, evidence commit, and terminal classification mutation",
+    "H5 immediate successor design based on the observed terminal FAIL",
+    "Consumed or terminal C19-R1/R2/C19-v4/PD01/NI01 science",
+    "Any MAIN blocker, repair, binding, preservation, scoring, or successor work"
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "control_brain": "23fc2f0c1668526be402fa44b3bc8c5b2258511b",
-    "orchestrator_parent_tip_observed_before_sub_persistence": "7fd6b0770076175d387b5e7dc87acd2518ee0cf0",
+    "orchestrator_parent_tip_observed_before_sub_persistence": "1b1b0999de9dad6d2cd8c73776915b4bd97382fc",
     "h5_research_branch": "research/h5-event-routing-work-reduction-spec-20260918",
-    "h5_research_head": "520fc8391d9ebb02584a16ec466a1bf168548ea9",
-    "h5_contract_blob": "1911d4560f4e2774fd725df26ba8cb25b03e2c5f",
-    "h5_control_refs": [],
-    "h5_preserve_refs": [],
-    "h5_evidence_tags": [],
+    "h5_research_head": "2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
+    "h5_control_ref": "control/h5-event-routing-work-reduction-started-v1-20260918",
+    "h5_started_commit": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
+    "h5_preserve_ref": "preserve/h5-event-routing-work-reduction-raw-h5-event-routing-work-reduction-official-v1",
+    "h5_preserve_commit": "ce5797eb584344db7a512e585506fb6c59ea475b",
+    "h5_evidence_tag": "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1",
+    "h5_evidence_tag_object": "e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
+    "h5_evidence_commit": "61aff6d74b82b68a326f3d90505d70bcd4071fd5",
     "formal_tags": [],
     "sealed_tags": [],
     "legacy_freeze_branch_count": 13,
     "evidence_tags": [
       "evidence/c19-official-v4-c19-external-v2-official-v4",
       "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
-      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1",
-      "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1"
-    ]
+      "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1",
+      "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1",
+      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1"
+    ],
+    "authoritative_evidence_tag_count": 5
   },
   "branches_prs_advanced": {
     "research_branches_by_sub": [],
@@ -47,16 +53,33 @@
   "workflows_experiments": {
     "sub_dispatched": [],
     "main_observed": {
-      "h5_formal_contract_prestart_35329505864": "completed/success@520fc8391d9ebb02584a16ec466a1bf168548ea9",
-      "ordinary_ci_35329505891": "completed/success@520fc8391d9ebb02584a16ec466a1bf168548ea9"
+      "h5_one_way_35338995888": "completed/success attempt 1@058e90227cd48e1c10c6ecbaed01efdec1217d0e",
+      "h5_control_ci_35338995808": "completed/success@058e90227cd48e1c10c6ecbaed01efdec1217d0e"
     },
     "formal_experiment_by_sub": "NOT_STARTED"
   },
   "scientific_readiness_exploratory_results": {
     "sub_new_formal_result": false,
     "sub_new_exploratory_result": false,
-    "main_readiness_observation": "H5 exact head 520fc839... remains H5_REVISED_DENSE_COMPARATOR_READY_FOR_ANALYST_REVIEW with both exact-head gates green, execution_authorized=false, formal_identity=null, and MAIN blocked for a newer Evidence Analyst acceptance.",
-    "main_scientific_result_observed": false
+    "main_terminal_result_observed": true,
+    "main_terminal_result": {
+      "identity": "h5-event-routing-work-reduction-official-v1",
+      "identity_state": "TERMINAL_CONSUMED_NO_RETRY",
+      "classification": "FAIL_NO_USEFUL_WORK_REDUCTION",
+      "primary_mean_work_reduction": 0.023826074023772813,
+      "primary_ci95": [0.02379403660851484, 0.023859665012124307],
+      "activity_mean_reductions": {
+        "0.01": 0.05927001218870528,
+        "0.05": 0.009811966841371046,
+        "0.15": 0.0023962430412420807
+      },
+      "fail_rule_applied": "primary_ci95_upper <= 0.05",
+      "raw_row_count": 152,
+      "sparse_row_count": 144,
+      "dense_control_row_count": 8,
+      "raw_sha256": "c0c87aab6a70969ade75bcfd89ad0629e04e6591c0f7414bf7d8c70049a06000",
+      "interpretation": "Registered sparse workloads and audited primitive-work metric only; no hardware-energy, wall-clock, cognitive, or computational-novelty conclusion."
+    }
   },
   "evidentiary_status": "NONE_FOR_SUB",
   "consumed_identities": {
@@ -67,28 +90,28 @@
       "c19-r1-revision-authority-official-v2",
       "c19-r2-fsa-state-tracker-official-v1",
       "pd01-long-history-fading-memory-official-v1",
-      "ni01-no-ignition-selective-prediction-official-v1"
+      "ni01-no-ignition-selective-prediction-official-v1",
+      "h5-event-routing-work-reduction-official-v1"
     ],
-    "h5_identity_state_observed": "UNASSIGNED_UNSTARTED_UNCONSUMED"
+    "h5_identity_state_observed": "TERMINAL_CONSUMED_NO_RETRY"
   },
   "blockers": [
     "No reserved independent formal SUB lane or fallback exists.",
-    "No safe, useful, non-duplicative incubator target exists under the current Analyst allocation and recent SUB history.",
-    "H5 fresh Analyst acceptance is a MAIN/Evidence Analyst critical-path boundary and is not valid SUB work."
+    "No safe, useful, non-duplicative incubator target exists under the current Analyst allocation and recent SUB exploratory history.",
+    "The current Evidence Analyst handoff predates H5 terminalization and no post-terminal repartition has been issued.",
+    "H5 terminal evidence and any outcome-dependent successor are not valid SUB work."
   ],
   "collision_reconciliation": {
-    "report_branch_tip_before_persistence": "7fd6b0770076175d387b5e7dc87acd2518ee0cf0",
-    "latest_main_checkpoint_time": "2026-09-18T19:13:32+09:00",
-    "latest_main_checkpoint_status": "BLOCKED_FOR_FRESH_EVIDENCE_ANALYST_REVIEW",
-    "main_checkpoint_active_head": "520fc8391d9ebb02584a16ec466a1bf168548ea9",
-    "fresh_main_head_rechecked": true,
-    "fresh_analyst_tip_rechecked": true,
-    "analyst_tip_unchanged": true,
-    "sub_collision_detected": false,
-    "history_commit": "a0f2a8f01621fab17f5031168d7f4786a7c8bbb0",
-    "latest_commit": "f8d74e9cdb90997f71813344a38db243147b8a5a"
+    "report_branch_tip_before_persistence": "1b1b0999de9dad6d2cd8c73776915b4bd97382fc",
+    "latest_main_checkpoint_time": "2026-09-18T20:20:01+09:00",
+    "latest_main_checkpoint_status": "H5_TERMINAL_FAIL_NO_USEFUL_WORK_REDUCTION",
+    "main_checkpoint_active_head": "2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
+    "fresh_main_terminal_refs_rechecked": true,
+    "fresh_analyst_tip_rechecked_after_main_terminal": true,
+    "analyst_tip_unchanged_after_main_terminal": true,
+    "sub_collision_detected": false
   },
-  "integrity_state": "CLEAN_NO_MAIN_MUTATION_NO_FORMAL_BOUNDARY_CROSSED_BY_SUB_NO_OFFICIAL_INPUT_ACCESS_NO_IDENTITY_CONSUMPTION",
+  "integrity_state": "CLEAN_NO_MAIN_MUTATION_NO_FORMAL_BOUNDARY_CROSSED_BY_SUB_NO_OFFICIAL_INPUT_ACCESS_NO_IDENTITY_CONSUMPTION_H5_TERMINAL_IMMUTABILITY_RESPECTED",
   "completion_target": "Freshly reconcile current main and research refs, authoritative freeze/sealed/formal/evidence/control/preserve state, Evidence Analyst scope, MAIN/SUB streams and newest relevant history, Control Brain doctrine, workflows/PRs/issues and identities; select only a valid independent SUB lane or safe non-duplicative incubator target, otherwise persist a clean no-op.",
   "completion_target_status": "ACHIEVED",
   "fallback_status": "ABSENT",
@@ -98,11 +121,13 @@
   "suggested_prospective_object": null,
   "promotion_recommendation": "NONE",
   "incubator_handoff": null,
-  "proposed_handoff_to_analyst": "Review MAIN's revised standalone dense/eager H5 comparator on exact head 520fc8391d9ebb02584a16ec466a1bf168548ea9; both exact-head gates remain green and no H5 formal namespace has been crossed. SUB proposes no independent object.",
+  "proposed_handoff_to_analyst": "Consume immutable H5 terminal evidence at evidence commit 61aff6d74b82b68a326f3d90505d70bcd4071fd5 / annotated tag object e7d99cc806206ac27ced225d4779c9fc5bb67ff5, keep the interpretation bounded to the registered algorithmic-work claim, and issue a fresh post-terminal repartition only if a genuinely independent prospective secondary object exists. SUB proposes no outcome-dependent successor.",
+  "governance_observation": "Issue #139 inventories four authoritative evidence tags while fresh remote now has five after H5; governance-only, not SUB work.",
   "report_persistence": {
-    "history_path": "reports/orchestrator/history/2026-09-18/1932-sub.md",
+    "history_path": "reports/orchestrator/history/2026-09-18/2035-sub.md",
     "sub_latest_path": "reports/orchestrator/sub/latest.md",
     "sub_state_path": "reports/orchestrator/sub/state.json",
+    "atomic_git_commit_requested": true,
     "force_push_used": false,
     "main_files_modified": false,
     "legacy_shared_latest_state_modified": false
