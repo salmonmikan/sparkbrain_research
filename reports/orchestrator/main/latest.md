@@ -1,6 +1,6 @@
 # MAIN Orchestrator — LP01 mechanical gate repair checkpoint
 
-Timestamp: `2026-09-18 22:50:04 JST`  
+Timestamp: `2026-09-18 22:51:29 JST`  
 Worker role: `main`  
 Execution mode: `RELAY`  
 Evidence Analyst authority: `57464c4ad6881c27371be5305512656c6ae315d3`
@@ -37,12 +37,12 @@ Comparison from `56b0e5dd...` to `f6d59a55...` contains only those four mechanic
 
 ## Fresh exact-head checks
 
-Final-head checks are now running on `f6d59a55730c5f99cd7f30470847fc3f175bdf64`:
+On final head `f6d59a55730c5f99cd7f30470847fc3f175bdf64`:
 
-- LP01 prospective readiness `35352468809` — `in_progress`.
+- LP01 prospective readiness `35352468809` — `completed/success`.
 - ordinary CI `35352468938` — `in_progress`.
 
-No useful local critical-path work remains while those jobs execute.
+The repaired readiness gate is therefore green. No useful local critical-path work remains while ordinary CI executes.
 
 ## Scientific / integrity state
 
@@ -54,4 +54,4 @@ Formal identity: **not created**. STARTED/control: **not created**. Official TES
 
 Lease status: **`WAITING_EXTERNAL`**.
 
-Next MAIN/RELAY cycle should collect readiness `35352468809` and ordinary CI `35352468938` on exact head `f6d59a55730c5f99cd7f30470847fc3f175bdf64`. If both are green and Analyst/head/identity/formal-boundary state remains unchanged, persist `LP01_NO_HIGH_VALUE_OBJECT` as completed and STOP for fresh Evidence Analyst review. If a remaining failure is purely mechanical, repair only science-invariantly; any semantic/scientific change requires STOP. Do not create formal identity, STARTED, official TEST, formal preserve/scoring/evidence.
+Next MAIN/RELAY cycle should collect ordinary CI `35352468938` on exact head `f6d59a55730c5f99cd7f30470847fc3f175bdf64`. If it is green and Analyst/head/identity/formal-boundary state remains unchanged, persist `LP01_NO_HIGH_VALUE_OBJECT` as completed and STOP for fresh Evidence Analyst review. If a remaining failure is purely mechanical, repair only science-invariantly; any semantic/scientific change requires STOP. Do not create formal identity, STARTED, official TEST, formal preserve/scoring/evidence.
