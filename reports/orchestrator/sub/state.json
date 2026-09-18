@@ -1,130 +1,91 @@
 {
-  "timestamp": "2026-09-18T15:35:31+09:00",
+  "timestamp": "2026-09-18T16:32:18+09:00",
   "worker_role": "sub",
   "mode": "no_op",
-  "evidence_analyst_commit": "befc8839f63f950a7f2b0ea3ef828786f499c04d",
-  "evidence_analyst_mailbox_tip": "d3626617c3b054afd726e468682aaa02d613bca0",
+  "evidence_analyst_commit": "34ad5e0fa1a31cff7b8faebe845cf1d5442a602b",
+  "evidence_analyst_mailbox_tip": "f75328c6e32f324287ece53901dd332d764eeef9",
   "consumed_lanes": [],
-  "sub_lane": null,
-  "sub_fallback": null,
   "selected_independent_lane": null,
   "exploratory_target": null,
   "independent_of_main_critical_path": true,
   "execution_allowed": false,
-  "sub_active_claim": "No active SUB research claim; clean no-op while MAIN actively owns NI01 formal execution scaffolding.",
+  "sub_active_claim": null,
   "main_work_explicitly_avoided": [
-    "NI01/H4 candidate/comparator and prospective scientific contract",
-    "NI01 current Analyst authority/admission binding and formal execution scaffolding",
-    "NI01 source/protocol/package/runtime/candidate/comparator/scorer/preserver binding work and exact-head gates",
-    "NI01 identity reservation, STARTED/no-clobber, official TEST acquisition, preservation/refetch/join, scoring/bootstrap, evidence and successor design",
-    "PD01 terminal consumed package/evidence and any retry/rescue/retuning/comparator shopping",
-    "C19-R2 terminal consumed evidence and any retry/rescue/successor",
-    "C19-R1 v1/v2 consumed failures and any repair/retry/rescue",
-    "immutable C19-v4 evidence",
-    "legacy freeze/formal/evidence refs and scheduler definitions"
+    "NI01 execution/admission scaffolding and exact binding verification",
+    "NI01 STARTED/control creation and identity consumption",
+    "NI01 one-way workflow dispatch and official TEST access",
+    "NI01 raw preservation/refetch/target materialization/join/scoring/bootstrap/evidence",
+    "NI01 blocker repair or successor design",
+    "consumed C19-R1/R2/PD01 and immutable C19-v4 evidence"
   ],
   "authoritative_refs": {
-    "main": "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst_designated_state_commit": "ops/evidence-analyst-handoff@befc8839f63f950a7f2b0ea3ef828786f499c04d",
-    "evidence_analyst_mailbox_tip": "ops/evidence-analyst-handoff@d3626617c3b054afd726e468682aaa02d613bca0",
-    "control_brain_doctrine": "ops/control-brain-handoff@525796e92f6b633d81539bbddf1ac83904f6f579",
-    "ni01_research": "research/ni01-no-ignition-selective-prediction-spec-20260918@2664951b65dd18883d3d80862e80b86ac66cf24f",
-    "ni01_identity_plan": "ni01-no-ignition-selective-prediction-official-v1:UNRESERVED_UNCONSUMED",
-    "pd01_evidence_tag": "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1",
-    "c19_r2_evidence_tag": "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
-    "c19_v4_evidence_tag": "evidence/c19-official-v4-c19-external-v2-official-v4",
-    "legacy_freeze_branch_count": 13,
-    "authoritative_evidence_tag_count": 3,
-    "formal_tag_count_observed": 0,
-    "sealed_tag_count_observed": 0
+    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "control_brain": "525796e92f6b633d81539bbddf1ac83904f6f579",
+    "orchestrator_parent_tip_observed": "76f983fcc38f18332a5185c8c3c5cab80dd1bd38",
+    "ni01_reviewed_scientific_head": "2664951b65dd18883d3d80862e80b86ac66cf24f",
+    "ni01_execution_head": "dbfe7469dbbbc1adbb00789ab382de892a1b3563",
+    "ni01_identity": "ni01-no-ignition-selective-prediction-official-v1",
+    "ni01_control_refs": [],
+    "ni01_preserve_refs": [],
+    "ni01_evidence_tags": [],
+    "evidence_tags": [
+      "evidence/c19-official-v4-c19-external-v2-official-v4",
+      "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
+      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1"
+    ]
   },
   "branches_prs_advanced": {
     "research_branches_by_sub": [],
-    "prs_created_or_merged_by_sub": [],
-    "observed_open_prs": [148, 149]
+    "prs_by_sub": [],
+    "open_prs_observed": [148, 149],
+    "open_non_pr_issues_observed": [139]
   },
-  "workflows_experiments": [],
-  "observed_main_progress": {
-    "lane": "NI01_NATIVE_NO_IGNITION_SELECTIVE_PREDICTION_ONE_WAY",
-    "research_head": "2664951b65dd18883d3d80862e80b86ac66cf24f",
-    "formal_identity_state": "UNRESERVED_UNCONSUMED",
-    "dedicated_preformal_run": "35308269458:completed/success",
-    "ordinary_ci_run": "35308269286:completed/success",
-    "latest_main_control_plane_commit": "b9fc8e36fa0bbbd1dc859fd64fe01c6df509df42",
-    "latest_main_lease_state": "RUNNING since 2026-09-18T15:24:12+09:00; active_step NI01_FORMAL_EXECUTION_SCAFFOLDING",
-    "ni01_control_refs": [],
-    "ni01_preserve_refs": [],
-    "ni01_evidence_refs": [],
-    "created_by_sub": false,
-    "sub_response": "observe only; all NI01 authority/execution work remains MAIN critical path"
+  "workflows_experiments": {
+    "sub_dispatched": [],
+    "main_observed": {
+      "ni01_formal_prestart_35319571793": "completed/success@dbfe7469dbbbc1adbb00789ab382de892a1b3563",
+      "ni01_preformal_compatibility_35319571868": "completed/success@dbfe7469dbbbc1adbb00789ab382de892a1b3563",
+      "ordinary_ci_35319571743": "completed/success@dbfe7469dbbbc1adbb00789ab382de892a1b3563"
+    }
   },
   "scientific_readiness_exploratory_results": {
-    "sub_scientific_results": [],
-    "sub_readiness_results": [],
-    "sub_exploratory_results": [],
-    "observed_main_scientific_progress": "No NI01 scientific outcome exists at SUB checkpoint. Exact-head preformal and ordinary CI are green; MAIN has begun authority/execution scaffolding but identity is still unreserved/unconsumed and NI01 control/preserve/evidence refs remain absent.",
-    "new_formal_scientific_result_by_sub": false
+    "sub_new_formal_result": false,
+    "sub_new_exploratory_result": false,
+    "main_readiness_observation": "All three NI01 final-head gates are now green on dbfe7469..., while STARTED/control, preserve and evidence refs remain absent at SUB reconciliation time.",
+    "main_scientific_result_observed": false
   },
   "evidentiary_status": "NONE_FOR_SUB",
   "consumed_identities": {
-    "sub_consumed": [],
-    "authoritative_untouched": {
-      "c19-external-v2-official-v4": "terminal immutable narrow PASS; untouched",
-      "c19-r1-revision-authority-official-v1": "consumed POST_START_FAILURE; untouched; no retry",
-      "c19-r1-revision-authority-official-v2": "consumed POST_START_FAILURE; untouched; no retry",
-      "c19-r2-fsa-state-tracker-official-v1": "consumed terminal REDUCED_BY_FSA; untouched; no retry/successor",
-      "pd01-long-history-fading-memory-official-v1": "consumed terminal FAIL_REDUCED_BY_FADING_MEMORY; untouched; no retry/successor",
-      "ni01-no-ignition-selective-prediction-official-v1": "unreserved/unconsumed; MAIN-owned plan; untouched by SUB"
-    }
+    "by_sub": [],
+    "observed_closed_or_consumed": [
+      "c19-external-v2-official-v4",
+      "c19-r1-revision-authority-official-v1",
+      "c19-r1-revision-authority-official-v2",
+      "c19-r2-fsa-state-tracker-official-v1",
+      "pd01-long-history-fading-memory-official-v1"
+    ],
+    "ni01_identity_state_observed": "UNSTARTED_UNCONSUMED"
   },
   "blockers": [
     "No reserved independent formal SUB lane or fallback exists.",
-    "Evidence Analyst explicitly identifies no current safe useful non-duplicative incubator candidate for SUB.",
-    "MAIN is actively working NI01 formal execution scaffolding; NI01 remains invalid SUB work.",
-    "No safe incubator target exists without reviving exhausted/hard-stopped/terminal/under-specified work or colliding with MAIN-owned NI01."
+    "No safe, useful, non-duplicative incubator target exists under current Analyst allocation.",
+    "NI01 readiness/STARTED/execution is MAIN critical-path work and is not valid SUB work."
   ],
   "collision_reconciliation": {
-    "analyst_mailbox_tip_before_persistence": "d3626617c3b054afd726e468682aaa02d613bca0",
-    "analyst_designated_state_commit": "befc8839f63f950a7f2b0ea3ef828786f499c04d",
-    "main_final": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "main_lane_final_observed_head": "2664951b65dd18883d3d80862e80b86ac66cf24f",
-    "report_branch_tip_before_sub_persistence": "b9fc8e36fa0bbbd1dc859fd64fe01c6df509df42",
-    "main_lease_observed": "PRIMARY RUNNING / NI01_FORMAL_EXECUTION_SCAFFOLDING / heartbeat 2026-09-18T15:24:12+09:00",
-    "open_pr_numbers": [148, 149],
-    "open_issue_numbers": [139],
-    "sub_collision": false,
-    "action": "Observed fresh MAIN movement only; performed no MAIN research/control/preserve/formal/evidence mutation, workflow dispatch, diagnosis, repair, authority binding or execution."
+    "report_branch_tip_before_persistence": "76f983fcc38f18332a5185c8c3c5cab80dd1bd38",
+    "main_checkpoint_time": "2026-09-18T16:30:00+09:00",
+    "main_checkpoint_status": "WAITING_EXTERNAL",
+    "main_checkpoint_active_head": "dbfe7469dbbbc1adbb00789ab382de892a1b3563",
+    "sub_collision_detected": false
   },
-  "integrity_state": {
-    "formal_identity_created_by_sub": false,
-    "started_created_by_sub": false,
-    "official_or_sealed_inputs_accessed_by_sub": false,
-    "formal_workflow_dispatched_by_sub": false,
-    "formal_score_or_preservation_created_by_sub": false,
-    "immutable_refs_modified_by_sub": false,
-    "consumed_identity_rerun_or_retuned": false,
-    "main_branch_touched": false,
-    "main_research_branch_touched": false,
-    "research_branch_touched_by_sub": false,
-    "exploratory_boundary_respected": true,
-    "ops_branch_treated_as_mailbox_only": true,
-    "force_push_used": false,
-    "integrity_class": "CLEAN_NO_OP_NI01_MAIN_ACTIVE_AVOIDED"
-  },
-  "completion_target": "Freshly reconcile current repository authority, Evidence Analyst, both orchestrator streams/history, Control Brain doctrine, authoritative refs, PRs/issues/workflows and concurrent movement; select a valid independent formal or safe non-duplicative bounded incubator target if one exists; otherwise persist a scientifically clean no-op without blocking MAIN.",
-  "completion_status": "achieved",
-  "fallback_status": "no safe useful non-duplicative incubator target selected",
+  "integrity_state": "CLEAN_NO_MAIN_MUTATION_NO_FORMAL_BOUNDARY_CROSSED_BY_SUB",
+  "completion_target": "Freshly reconcile authority, MAIN/SUB streams, Control Brain, current refs/workflows/issues, select only an independent SUB lane or safe non-duplicative incubator target, otherwise persist a clean no-op.",
+  "completion_target_status": "ACHIEVED",
+  "fallback_status": "ABSENT",
   "rejected_lane": null,
   "lane_rejected_reason": null,
-  "no_op_reason": "No valid formal lane/fallback exists; fresh Analyst authority selects no current SUB incubator candidate, and MAIN is actively advancing NI01 formal execution scaffolding which SUB must not touch.",
   "candidate_formal_question": null,
   "suggested_prospective_object": null,
   "promotion_recommendation": "NONE",
-  "persistence": {
-    "latest": "reports/orchestrator/sub/latest.md",
-    "state": "reports/orchestrator/sub/state.json",
-    "history": "reports/orchestrator/history/2026-09-18/1535-sub.md",
-    "history_append_status": "pending_atomic_commit",
-    "force_push_used": false
-  }
+  "persistence_limitation": null
 }
