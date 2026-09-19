@@ -1,39 +1,39 @@
-# RELAY MAIN — v0.5 topology config-contract Architecture cycle 1 valid terminal outcome
+# PRIMARY MAIN — post-RELAY terminal outcome authority hold
 
-Timestamp: `2026-09-20 03:50 JST`  
+Timestamp: `2026-09-20 04:13 JST`  
 Worker role: `main`  
-Execution mode: `RELAY`  
+Execution mode: `PRIMARY`  
 Evidence Analyst authority: `9bb852bc1461755814d6a9a0e7ea561f1858a0da`  
 Research layer: `ARCHITECTURE_STUDY`  
-MAIN lane: `V05_TOPOLOGY_CONFIG_CONTRACT_ARCHITECTURE_STUDY_CYCLE1`  
-Candidate: `CAND-V05-TOPOLOGY-CONFIG-BINDING-01`
+Candidate: `CAND-V05-TOPOLOGY-CONFIG-BINDING-01`  
+Exploration count: `DISCOVERY=1`, `ARCHITECTURE_STUDY=1`
 
 ## Reconciliation
 
-The inherited PRIMARY lease was `WAITING_EXTERNAL`, not `RUNNING`, with workflow `35460876580`. Fresh reconciliation found no same-object PRIMARY collision. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; Evidence Analyst tip remains `9bb852bc1461755814d6a9a0e7ea561f1858a0da`; exact research branch remains `research/main-v05-topology-config-contract-arch-study-20260920@4a15a91edb8e92b89cda960f533590f7b46a70f2`. The research head is four commits ahead of stable main and contains only the prospectively bound contract, Architecture harness/workflow, and the science-invariant pre-diagnostic lint repair. SUB is operating on an independent Discovery object and does not collide with MAIN.
+FAST PATH only; no FULL RECONCILIATION was required. The prior RELAY lease is completed, so there is no fresh same-object MAIN collision. PRIMARY acquired a fresh lease before control-plane mutation. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; Evidence Analyst remains `9bb852bc1461755814d6a9a0e7ea561f1858a0da`; exact research branch remains `research/main-v05-topology-config-contract-arch-study-20260920@4a15a91edb8e92b89cda960f533590f7b46a70f2`.
 
-## Exact-head workflow and artifact provenance
+SUB is independently stopped after `V05_UNIT_SUPPRESSION_LATENT_STATE_DISCOVERY_CYCLE1` on `research/exploratory-sub-unit-suppression-latent-state-20260920@a2b65919ade8c4fe33514aa686ae18db8e0889d3`, with a NON_EVIDENTIARY promotion recommendation awaiting Analyst review. MAIN does not absorb it.
 
-Replacement Architecture workflow `35460876580` completed `success` on exact head `4a15a91edb8e92b89cda960f533590f7b46a70f2`. Python 3.11 and 3.13 exact-head CI both passed repository tests and prospective binding. The `architecture-study` job passed exact-head/main-ancestry verification, preflight, exactly one fixed DEV/reference NON_EVIDENTIARY diagnostic cycle, and raw-before-summary artifact upload. Ordinary CI `35460876614` also completed `success` on the same head.
+## Exact target and completed Architecture result
 
-Artifact `10589564435` (`v05-topology-config-contract-cycle1-4a15a91edb8e92b89cda960f533590f7b46a70f2`) has archive digest `sha256:e73909be3e647566540a06a4da94829b4737c3de3a24c5e0e54c697245be1970`. Embedded metadata binds contract SHA256 `85539052afe90f86b47480e12d2d867d5a3ca912210b1d4708e5c8447c74fa1a` and raw SHA256 `bb0af4fc22241f41108abf50e471eaf2f1f0ff4a5c94782779a858efbed02f51`; RELAY independently recomputed the raw digest before reading the machine summary and obtained the same value. Summary SHA256 is `8608f3e90889aa6654be65f0c781ff4f1ad0f2f9f8cd7097f1da0a8d2a41033a`.
+Workflow `35460876580` remains `completed / success` on exact head `4a15a91edb8e92b89cda960f533590f7b46a70f2`. Artifact `10589564435` remains present and bound to that run/head with archive digest `sha256:e73909be3e647566540a06a4da94829b4737c3de3a24c5e0e54c697245be1970`.
 
-## Fixed Architecture result
+The already-persisted fixed terminal mapping remains **`SILENT_DECLARED_REALIZED_GEOMETRY_DIVERGENCE`**. All five prospectively fixed public geometry tuples were accepted and preserved across checkpoint round-trip while realizing the identical topology signature: 64 total units, 16 receptors, 48 reservoir units, and 326 connections. The fixed explicit-contract audit found no supported docs/tests/callsites declaring the v0.5 geometry intentionally fixed with `width/height/receptor_rows` intentionally non-operative.
 
-All five prospectively fixed configs — `(8,8,1)`, `(12,8,1)`, `(8,10,1)`, `(8,8,2)`, `(12,10,2)` — were accepted with no construction error/warning. Each declared tuple propagated to the nested v0.4 config and was preserved across checkpoint round-trip. Nevertheless, every config realized the identical topology signature `d92b79779dd89f99e32a7f72d0be176f34cbcc936af901edd55a2d3b65d95519`: 64 total units, 16 receptors, 48 reservoir units, 326 connections. The realized topology was also preserved through round-trip for all five configs. The prospectively defined explicit-contract audit found zero current supported docs/tests/callsites stating that the v0.5 geometry is intentionally fixed and `width/height/receptor_rows` are intentionally non-operative compatibility metadata.
+This remains strictly a **NON_EVIDENTIARY Architecture/API correctness signal**. It is not FORMAL scientific evidence and not PRE_FORMAL evidence.
 
-The fixed terminal mapping is therefore:
+## Authority boundary / stop
 
-**`SILENT_DECLARED_REALIZED_GEOMETRY_DIVERGENCE`**
+No fresh Evidence Analyst commit exists after the RELAY-completed valid terminal outcome. The current authority prospectively requires `ANY_VALID_TERMINAL_ARCHITECTURE_OUTCOME -> STOP_FOR_FRESH_EVIDENCE_ANALYST_REVIEW` and does not authorize a same-run implementation fix, Architecture cycle 2, PRE_FORMAL, or FORMAL continuation.
 
-This is a DEV/reference **NON_EVIDENTIARY Architecture/API correctness signal**. It is not FORMAL scientific evidence, not PRE_FORMAL evidence, and does not authorize choosing a replacement geometry formula, deprecation behavior, backward-compatibility policy, or code fix.
+PRIMARY therefore performed no research branch mutation, new workflow dispatch, rerun, retune, redesign, scoring, official TEST access, formal identity/STARTED creation, formal preserve/evidence operation, research merge, or consumed-identity mutation.
 
-## Integrity / stop
+New FORMAL scientific evidence: **none**.  
+New PRE_FORMAL development evidence: **none**.  
+New PRIMARY Architecture observation: **none**; this run revalidated the completed RELAY result and current authority boundary only.
 
-No formal identity, STARTED marker, official TEST access, FORMAL raw/preserve/scorer/evidence operation, rerun, retune, research merge, consumed-identity mutation, or post-outcome redesign occurred. The first workflow `35460700075` remains a pre-diagnostic lint-only failure and non-outcome-bearing.
+Authoritative tags remain exactly five `evidence/*` refs. No new formal identity appeared. Utility request: **none**.
 
-The prospectively fixed contingency `ANY_VALID_TERMINAL_ARCHITECTURE_OUTCOME -> STOP_FOR_FRESH_EVIDENCE_ANALYST_REVIEW` is now consumed. No same-run post-outcome implementation fix, cycle 2, PRE_FORMAL, or FORMAL promotion is authorized.
+Stop reason: **`NO_FRESH_ANALYST_AUTHORITY_AFTER_VALID_TERMINAL_ARCHITECTURE_OUTCOME`**.
 
-Lease terminates `COMPLETED`. New FORMAL scientific information: **none**. New lower-funnel information: the NON_EVIDENTIARY Architecture classification above. Utility request: **none**.
-
-Next MAIN action: wait for fresh Evidence Analyst review of this exact valid result. Do not continue this object until a new prospective handoff explicitly authorizes the next bounded action.
+Next MAIN action: wait for a fresh Evidence Analyst handoff that classifies this exact completed Architecture result and prospectively authorizes any successor. Do not implement geometry semantics, run cycle 2, or enter PRE_FORMAL/FORMAL before that authority exists.
