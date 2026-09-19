@@ -1,14 +1,14 @@
 {
   "run_id": "sparkbrain-main-primary-20260920T0513JST",
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "BLOCKED",
   "started_at": "2026-09-20T05:13:00+09:00",
-  "heartbeat_at": "2026-09-20T05:13:00+09:00",
+  "heartbeat_at": "2026-09-20T05:18:00+09:00",
   "analyst_commit": "493573eb3b8c38d88f251db7c04dfe1a586c6ff0",
   "active_branch": "research/main-v05-unit-suppression-transient-semantics-arch-study-20260920",
   "active_identity": null,
-  "active_step": "VERIFY_COMPLETED_SUPPRESSION_SEMANTICS_ARTIFACT_INTEGRITY",
+  "active_step": "INVALID_DIAGNOSTIC_POST_OUTCOME_STATIC_HARNESS_FALSE_NEGATIVE",
   "workflow_run_id": 35465512928,
-  "expected_next_action": "Verify completed exact-head Architecture workflow 35465512928, ordinary CI 35465512894, artifact provenance/raw-before-summary binding, and fixed terminal mapping against the prospectively blob-bound static scope. If an integrity or diagnostic implementation anomaly is found after outcome material exists, do not repair or rescore in-run; persist the anomaly and STOP for fresh Evidence Analyst review.",
+  "expected_next_action": "Fresh Evidence Analyst review is required. The completed artifact emitted AMBIGUOUS_CONTRACT, but verification found a deterministic false-negative in the prospectively bound restore-threshold detector, so the attempt is discarded under INVALID_DIAGNOSTIC. Do not patch, rerun, rescore, or infer a repaired semantic class under the current authority. If and only if fresh prospective authority permits, MAIN may mechanically fix the detector, re-bind exact source/contract/head, and execute a replacement static diagnostic.",
   "owner": "main"
 }
