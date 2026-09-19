@@ -25,7 +25,7 @@ Earlier scheduler versions are **not reconstructed by guesswork**. Old one-time 
 
 ## Managed fleet
 
-The registry currently manages the seven enabled SparkBrain schedulers:
+The registry currently manages the eight enabled SparkBrain schedulers:
 
 1. SparkBrain Control & Repository Steward
 2. SparkBrain Evidence Analyst
@@ -34,6 +34,7 @@ The registry currently manages the seven enabled SparkBrain schedulers:
 5. SparkBrain Research Orchestrator Sub
 6. SparkBrain External Research & Audit
 7. SparkBrain 現在状態ブリーフ
+8. SparkBrain Methodology Calibration Auditor
 
 Disabled legacy/maintenance tasks may be recorded separately, but they are not part of the current seven-task fleet.
 
