@@ -1,14 +1,14 @@
 {
-  "run_id": "sparkbrain-main-primary-20260919T2217JST",
+  "run_id": "sparkbrain-main-primary-20260919T2317JST",
   "execution_mode": "PRIMARY",
-  "status": "COMPLETED",
-  "started_at": "2026-09-19T22:17:29+09:00",
-  "heartbeat_at": "2026-09-19T22:20:00+09:00",
-  "analyst_commit": "a3ec861d71c0965625fc1d2e5e8f65f4ce47f834",
-  "active_branch": null,
+  "status": "RUNNING",
+  "started_at": "2026-09-19T23:17:40+09:00",
+  "heartbeat_at": "2026-09-19T23:18:00+09:00",
+  "analyst_commit": "982e5686524c9fc2b665efcf44069fef49196333",
+  "active_branch": "research/main-assembly-prototype-lockin-arch-study-20260919",
   "active_identity": null,
-  "active_step": "LOWER_FUNNEL_MAIN_HOLD_PENDING_FRESH_OBJECT",
+  "active_step": "PRE_START_SPEC_AND_BINDING",
   "workflow_run_id": null,
-  "expected_next_action": "Await a fresh Evidence Analyst handoff prospectively authorizing a central Architecture/PRE_FORMAL/FORMAL object. Under current authority do not continue Structural cycle 2, Top-k cycle 3, construct H7, access TEST/formal surfaces, or absorb SUB Discovery.",
+  "expected_next_action": "Create a fresh research branch from exact main ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d, bind the prospectively fixed DEV-only Assembly prototype-lockin Architecture cycle-1 contract/harness, run exact-head CI/preflight, then execute exactly one diagnostic if green.",
   "owner": "main"
 }
