@@ -1,14 +1,14 @@
 {
   "run_id": "sparkbrain-main-primary-20260919T191428JST",
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-19T19:14:28+09:00",
   "heartbeat_at": "2026-09-19T19:14:28+09:00",
   "analyst_commit": "5b63d21f44812ef8d4938c9ad968bb8ab481b3c5",
   "active_branch": "research/main-topk-persistent-amplification-arch-study-20260919",
   "active_identity": null,
-  "active_step": "CYCLE2_RESULT_VALIDATION_AND_TERMINAL_MAPPING",
+  "active_step": "CYCLE2_COMPLETE_PERSISTENCE_SIGNAL_REPLICATED_STOP_FOR_ANALYST_REVIEW",
   "workflow_run_id": 35435714352,
-  "expected_next_action": "Validate exact-head workflow artifact 10581094196 against the prospectively fixed cycle-2 contract, classify only under the frozen Analyst mapping, persist the NON_EVIDENTIARY terminal result, and STOP for fresh Analyst review without same-run PRE_FORMAL promotion, redesign, retuning, rerun, merge, or formalization.",
+  "expected_next_action": "Fresh Evidence Analyst review only. CAND-TOPK-PA-01 is eligible for fresh PRE_FORMAL review but no PRE_FORMAL work, cycle 3, comparator/intervention redesign, retuning, rerun, FORMAL identity/STARTED creation, research merge, or successor construction is authorized without new prospective authority.",
   "owner": "main"
 }
