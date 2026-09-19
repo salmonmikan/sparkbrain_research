@@ -1,14 +1,13 @@
 {
-  "timestamp": "2026-09-19T15:32:48+09:00",
+  "timestamp": "2026-09-19T18:30:00+09:00",
   "role": "LITERATURE_REDUCTION_SCOUT",
-  "schedule_slot_jst": "15:30",
+  "schedule_slot_jst": "18:30",
   "control_plane_mailbox_semantics_respected": true,
   "repository_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "main_topk_architecture": "research/main-topk-persistent-amplification-arch-study-20260919@97f542d86dcd3a609cd039379fcda41ba61e0909",
+    "sub_structural_order_discovery": "research/exploratory-sub-structural-order-path-dependence-20260919@8156bba7b119fb831b7c28eac7cd900746f9876e",
     "lp01": "research/lp01-actual-lineage-causal-credit-spec-20260918@f6d59a55730c5f99cd7f30470847fc3f175bdf64",
-    "ni01": "research/ni01-no-ignition-selective-prediction-spec-20260918@dbfe7469dbbbc1adbb00789ab382de892a1b3563",
-    "h5": "research/h5-event-routing-work-reduction-spec-20260918@2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
-    "h9_c07": "research/c07-h9-fully-spiking-readiness-sub-20260917@9480da3d77dfee4766b28757f1a164f5cd4dac26",
     "authoritative_evidence_tag_count": 5,
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
@@ -19,94 +18,112 @@
   },
   "control_brain_commit_consumed": "6ed239b241a39f7d3e934e37751454c8bf3ebb4c",
   "control_brain_latest_blob_consumed": "4a15b2f117700274dfb4f04aca78a105fd9b63cc",
-  "evidence_analyst_commit_consumed": "8e8aa0924ff5c7dae99332d9babe7f3dd748f25b",
-  "main_report_commit_consumed": "313da06cdafd8cbaf82c19a1f82c9e9e2a234827",
-  "main_history_blob_consumed": "095b7507c23c7a78485ac72376a22ac462b38bd1",
-  "sub_report_commit_consumed": "f582546dfd29b300fe596a54ecc403ed120160dd",
-  "sub_history_blob_consumed": "cb94f74b70a5dd555182c7b7de23bc23959c1b40",
-  "orchestrator_report_branch_tip_observed": "313da06cdafd8cbaf82c19a1f82c9e9e2a234827",
-  "prior_external_research_audit_mailbox_tip": "52c14035b246c664938901fa7bbc559007cfc924",
-  "prior_literature_latest_consumed": "2026-09-19T12:30:00+09:00",
+  "evidence_analyst_branch_ref_observed": "5b63d21f44812ef8d4938c9ad968bb8ab481b3c5",
+  "evidence_analyst_latest_blob_consumed": "e35563cecdc39e2572f9d4a43fb5415baae04bdf",
+  "evidence_analyst_state_blob_consumed": "934f8a97828f029d9b506c229c2b863b14d89de9",
+  "evidence_analyst_latest_timestamp": "2026-09-19T18:20:52+09:00",
+  "orchestrator_report_branch_ref_observed": "9861a3e408fa98794eedb42aa7714e2fb0e0293a",
+  "main_report_commit_consumed": "9fcd1b85f753092273fe695ce5552c4c79b9bbdb",
+  "main_latest_blob_consumed": "1f62b06cc269b0dc4f62965a2778224834e9d585",
+  "main_state_blob_consumed": "382330caee5b663c7bfbcc8d79d0292a7888c5fa",
+  "main_history_blob_consumed": "d02fb62f69f483e027822d7067c95400471d2abc",
+  "sub_report_commit_consumed": "548d4492e7c26dc33ce6bc2d6ac47c2ea63b49b4",
+  "sub_latest_blob_consumed": "1e7770316cbb25fce88eb6cfb2e990ad8ed21f0f",
+  "sub_state_blob_consumed": "8e37d5342bb3fc9e316cc91e3e383de3c3031dad",
+  "sub_history_blob_consumed": "1e7770316cbb25fce88eb6cfb2e990ad8ed21f0f",
+  "prior_external_research_audit_mailbox_tip": "ea84b5d9f2c1fc6d4d0478d0506a897c280cb8f0",
+  "prior_literature_latest_consumed": "2026-09-19T15:32:00+09:00",
   "genuinely_new_information": true,
   "current_repository_interpretation": {
-    "programme": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
-    "lp01": "PREFORMAL_CLOSED_NO_NATIVE_NONREDUCIBLE_CAUSAL_PATH",
-    "formal_identity_created_for_lp01": false,
     "new_formal_scientific_evidence": false,
-    "main_lane": "HOLD",
-    "sub_lane": null,
-    "sub_mode": "no_op"
+    "main_candidate": "CAND-TOPK-PA-01",
+    "main_cycle1_result": "PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL_NON_EVIDENTIARY",
+    "main_cycle2_status": "AUTHORIZED_FIXED_INDEPENDENT_SEED_REPLICATION_BY_EVIDENCE_ANALYST",
+    "sub_structural_result": "STRUCTURAL_ORDER_PATH_DEPENDENCE_OBSERVED_NON_EVIDENTIARY",
+    "sub_structural_review": "PROMOTE_TO_ARCHITECTURE_STUDY_QUEUE",
+    "pre_formal": "EMPTY_HOLD",
+    "formal": "EMPTY_HOLD"
   },
   "findings": [
     {
-      "id": "C3_FIXED_CONTEXT_COUNTERFACTUAL_REPLAY_CEILING",
-      "summary": "C3 freezes exact transcript-derived context, substitutes alternative upstream messages and evaluates them with fixed-continuation replay plus a leave-one-out baseline. This makes historical-event substitution under held continuation an ordinary counterfactual-credit construction, but with stronger replay/rewind privilege than a strict local online SparkBrain mechanism.",
+      "id": "TOPK_DISCONTINUITY_HYBRID_SWITCH_REDUCTION",
+      "summary": "Hard Top-k expert/router selection is an ordinary piecewise/discontinuous switching mechanism. 2026 Sparse-MoE theory formalizes selected-set discontinuity surfaces; hybrid-system saltation theory supplies the general first-order language for perturbation transport across switches, with the caveat that SparkBrain's discrete-time router should use an appropriate piecewise/discrete Jacobian or finite-difference analogue rather than assuming continuous-time saltation exactly.",
       "sources": [
-        "Chen et al., Contextual Counterfactual Credit Assignment for Multi-Agent Reinforcement Learning in LLM Collaboration, arXiv:2603.06859 (2026)"
+        "Tran Huu et al., Geometric and Stochastic Analysis of Discontinuities in Sparse Mixture-of-Experts, arXiv:2606.19036 (2026)",
+        "Kong et al., Saltation Matrices: The Essential Tool for Linearizing Hybrid Dynamical Systems, Proceedings of the IEEE 112(6), 2024, DOI 10.1109/JPROC.2024.3440211"
       ],
-      "direct_applicability_confidence": "HIGH_AS_STRONGER_PRIVILEGE_FUNCTIONAL_CEILING_NOT_EQUAL_PRIVILEGE_MECHANISTIC_EQUIVALENCE"
+      "direct_applicability_confidence": "HIGH_FOR_TOPK_DISCONTINUITY; MEDIUM_FOR_SALTATION_FORMALISM_DUE_DISCRETE_TIME_IMPLEMENTATION"
     },
     {
-      "id": "COMA_COUNTERFACTUAL_MARGINAL_CONTRIBUTION_BASELINE",
-      "summary": "COMA uses a centralized critic and a counterfactual baseline that marginalizes one agent's action while holding other agents' actions fixed. Counterfactual marginal-contribution credit is therefore a foundational ordinary multi-agent baseline; any Spark-specific residual must concern native local/online realization under matched privilege rather than the abstract counterfactual principle.",
+      "id": "NONNORMAL_RECURRENT_TRANSIENT_GAIN_REDUCTION",
+      "summary": "Stable recurrent systems can exhibit large finite-horizon transient amplification through non-normal operator geometry. The observed delayed full/no-persistent divergence after top-k turnover therefore has a strong ordinary candidate explanation: boundary jump followed by recurrent transient gain.",
       "sources": [
-        "Foerster et al., Counterfactual Multi-Agent Policy Gradients, AAAI 2018, DOI 10.1609/aaai.v32i1.11794"
+        "Hennequin, Vogels & Gerstner, Non-normal amplification in random balanced neuronal networks, Physical Review E 86, 011909 (2012), DOI 10.1103/PhysRevE.86.011909"
       ],
-      "direct_applicability_confidence": "HIGH_AS_COUNTERFACTUAL_CREDIT_BASELINE_WITH_EXPLICIT_CENTRALIZED_PRIVILEGE_WARNING"
+      "direct_applicability_confidence": "HIGH_AS_ORDINARY_TRANSIENT_AMPLIFICATION_MECHANISM; DIRECT_EQUIVALENCE_NOT_CLAIMED"
     },
     {
-      "id": "CONCURRENT_STOCHASTIC_RESPONSIBILITY_FORMAL_BASELINE",
-      "summary": "Mu & Najib model concurrent stochastic multi-player games and define retrospective counterfactual responsibility under a strategy profile, allocating responsibility with Shapley values and proving fairness/consistency properties. Stochastic concurrent responsibility itself therefore has an explicit ordinary formal comparator.",
+      "id": "STRUCTURAL_REWRITE_CONFLUENCE_CRITICAL_PAIR_REDUCTION",
+      "summary": "Same-start/same-input-multiset but order-dependent final graphs are standard graph-rewriting non-confluence/conflict phenomena. Critical-pair and conflict/dependency analysis provide a direct ordinary reduction for the synthetic structural duplicate/prune path-dependence line before any stronger mechanistic claim.",
       "sources": [
-        "Mu & Najib, Counterfactual Reasoning for Responsibility Attribution in Probabilistic Multi-Agent Systems, IJCAI 2026, DOI 10.24963/ijcai.2026/33; arXiv:2605.13077"
+        "Campbell & Plump, Confluence up to Garbage in Graph Transformation (2020/2021)",
+        "Lambers et al., Granularity of conflicts and dependencies in graph transformation systems: A two-dimensional approach, JLAMP 103 (2019)"
       ],
-      "direct_applicability_confidence": "HIGH_FOR_FORMAL_STOCHASTIC_RESPONSIBILITY_BASELINE_NOT_NATIVE_LOCAL_IMPLEMENTATION"
+      "direct_applicability_confidence": "HIGH_AS_REDUCTION_LANGUAGE_FOR_RULE_ORDER_DEPENDENCE"
     }
   ],
   "affected_lines": [
-    "H7_LINEAGE_CAUSAL_CREDIT_RESIDUAL",
-    "LP01_PREFORMAL_CLOSEOUT",
-    "PROGRAMME_NOVELTY",
-    "FUTURE_OBJECT_ADMISSION",
-    "CAUSAL_CREDIT_REDUCTION_LADDER"
+    "CAND_TOPK_PA_01",
+    "TOPK_ROUTER_PERSISTENT_AMPLIFICATION",
+    "CAND_STRUCTURAL_ORDER_PATH_01",
+    "ARCHITECTURE_STUDY_REDUCTION",
+    "PROGRAMME_NOVELTY"
   ],
   "reduction_candidates": [
-    "COMA-style centralized counterfactual marginal-contribution ceiling",
-    "C3-style fixed-context/fixed-continuation replay ceiling",
-    "concurrent-stochastic retrospective responsibility / Shapley formal baseline",
-    "responsibility-changing local-observation-preserving intervention pairs"
+    "hard Top-k piecewise/discontinuous switching geometry",
+    "discrete switching-jump sensitivity / finite-difference boundary decomposition",
+    "finite-horizon recurrent Jacobian/JVP and non-normal transient gain",
+    "graph rewrite critical-pair / commutation / joinability analysis",
+    "explicit age/slot/provenance-state reduction for structural path dependence"
   ],
   "confidence": {
     "external_prior_art_exists": "HIGH",
-    "novelty_bar_impact": "HIGH",
+    "novelty_bar_impact": "HIGH_FOR_ACTIVE_ARCHITECTURE_LINES",
     "direct_equivalence_to_SparkBrain": "NOT_CLAIMED",
-    "supports_reopening_lp01": "NO",
+    "supports_changing_cycle2_contract": "NO",
     "prospective_discriminator_value": "HIGH"
   },
-  "novelty_or_reduction_impact": "STRONGER_REDUCTION_AND_PRIVILEGE_PRESSURE: counterfactual marginal contribution is established in ordinary MARL; exact-context fixed-continuation replay provides a strong counterfactual credit ceiling; concurrent stochastic responsibility has an explicit formal framework. The remaining possible Spark-specific residual is a native online/local mechanism that tracks responsibility-sensitive interventions without centralized/replay/oracle privilege and survives matched ordinary local-learning reductions.",
+  "novelty_or_reduction_impact": "STRONGER_ORDINARY_REDUCTION_PRESSURE_ON_NEW_ARCHITECTURE_LINES: hard Top-k turnover is ordinary switching/discontinuity geometry; delayed amplification can be produced by ordinary non-normal recurrent transient gain; and structural same-multiset order dependence is ordinary non-confluence/critical-pair territory. Architecture characterization remains valuable, but mechanistic novelty requires a residual after these reductions.",
   "prospective_baselines_or_discriminators": [
-    "COMA-style centralized counterfactual marginal-contribution ceiling, explicitly marked stronger-privilege unless matched",
-    "C3-style fixed-context/fixed-continuation replay ceiling, explicitly marked stronger-privilege unless matched",
-    "explicit concurrent-stochastic retrospective responsibility/Shapley baseline",
-    "paired responsibility-changing interventions with current/local observations, timing, activity, eligibility, reward and resources matched",
-    "preserve equal-privilege eligibility/recurrent/plastic/local-diffusion comparators before any novelty claim"
+    "piecewise/discrete switching sensitivity or finite-difference boundary-jump decomposition for hard Top-k turnover",
+    "finite-horizon recurrent Jacobian/JVP and non-normal transient-gain analysis matched full vs no_persistent_state",
+    "predicted-versus-observed delayed divergence under boundary-jump times recurrent-gain decomposition",
+    "graph-rewrite critical-pair / commutation / joinability analysis for duplicate-prune-grow-prune operations",
+    "structural-history tests matched on explicit age/slot/provenance/rewrite-relevant state"
   ],
   "questions_for_evidence_analyst": [
-    "Keep LP01 closed; counterfactual responsibility itself is not sufficient novelty because explicit ordinary solvers and replay methods already compute it.",
-    "Should future H7 admission explicitly separate equal-privilege mechanistic baselines from stronger-privilege counterfactual ceilings?",
-    "Require a future native H7 mechanism to track responsibility-changing interventions without replay/global critic/world-label access before formal review?"
+    "Keep the already authorized CAND-TOPK-PA-01 cycle-2 replication unchanged; if it replicates, should fresh PRE_FORMAL review require an ordinary switching-plus-recurrent-transient reduction before mechanistic-distinctness claims?",
+    "For CAND-STRUCTURAL-ORDER-PATH-01, should the first Architecture reduction explicitly test whether rewrite critical pairs plus explicit age/slot state explain the path dependence?",
+    "Treat architecture-signal replication as necessary but not sufficient, evaluating these external reductions only after the prospectively required stop/review?"
   ],
   "questions_for_control_brain": [
-    "Narrow the residual from intervention-validated responsibility in general to native local/online responsibility sensitivity under matched privilege?",
-    "Add COMA/C3/concurrent-stochastic responsibility to the stronger-privilege ceiling tier of the reduction doctrine?",
-    "Retain NO_HIGH_VALUE_OBJECT until this residual appears natively rather than engineering a literature-driven successor?"
+    "Add hard-switch geometry plus recurrent transient/non-normal gain to the ordinary-reduction doctrine for routing-persistence claims?",
+    "Add graph-rewrite confluence/critical-pair analysis to the ordinary-reduction doctrine for structural path-dependence claims?",
+    "Preserve the current FORMAL/H7 novelty bar while allowing these lower-layer architecture lines to proceed as testbed characterization?"
   ],
   "must_not_change_frozen_or_consumed": [
     "all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence",
-    "canonical PD01/NI01/H5 terminal classifications",
+    "canonical PD01/NI01/H5 terminal classifications and consumed STARTED/control/preserve/evidence refs",
     "all consumed A01/RV01/RV02/CX identities and legacy immutable refs",
-    "LP01 remains pre-formal and is not upgraded by this literature",
-    "no outcome-responsive successor, identity, STARTED, official TEST, rerun, retune, rescore, research merge, immutable ref/tag mutation, or scheduler change"
+    "CAND-TOPK-PA-01 cycle-2 fixed replication contract, thresholds, metrics, seed choice, DEV split, comparator and stop boundary",
+    "no outcome-responsive retune/redesign, official TEST, formal identity/STARTED, rescore, research merge, immutable ref/tag mutation, or scheduler change"
   ],
+  "utility_request_created": {
+    "request_id": "LIT-20260919-1830-TOPK-HYBRID-TRANSIENT",
+    "path": "utility_orchestrator/requests/2026-09-19/LIT-20260919-1830-topk-hybrid-transient-decomposition.md",
+    "branch": "ops/utility-orchestrator-requests",
+    "commit": "a9c53c4307bfc36a8166371abdf69380e929d0e3",
+    "dedupe_key": "literature:topk-switch-nonnormal-transient-decomposition:v1"
+  },
   "legacy_shared_latest_state_updated": false
 }
