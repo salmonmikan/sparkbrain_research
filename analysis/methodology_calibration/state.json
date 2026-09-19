@@ -1,55 +1,64 @@
 {
   "schema_version": 1,
-  "timestamp": "2026-09-19T18:18:00+09:00",
-  "overall_classification": "MIXED_CALIBRATION",
-  "confidence": "HIGH_ON_FORMAL_INTEGRITY_HIGH_ON_LOWER_LAYER_SUPPORT_DEFECT_MEDIUM_ON_BEST_REPLACEMENT_RULE",
+  "timestamp": "2026-09-19T19:20:00+09:00",
+  "overall_classification": "SLIGHTLY_TOO_PERMISSIVE",
+  "confidence": "HIGH_ON_DIRECTION_HIGH_ON_REPEATED_SUPPORT_DEFECT_MEDIUM_ON_EXACT_REPLACEMENT_RULE",
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "main_branch_protected": false,
-    "topk_discovery_branch": "2d6152601ebb395822b763990f6dfaf19110453c",
-    "topk_architecture_branch": "97f542d86dcd3a609cd039379fcda41ba61e0909",
-    "topk_architecture_workflow_run": 35432088902,
-    "topk_architecture_artifact": 10581155271,
-    "structural_order_discovery_branch": "8156bba7b119fb831b7c28eac7cd900746f9876e",
-    "c19_r2_terminal_commit": "6197fa801a78a0c5de4c2b6ff5d03216ac5539db"
+    "topk_architecture_branch": "04ced2b97ed088bb2cdb086d164a86212741e601",
+    "topk_cycle2_workflow_run": 35435714352,
+    "topk_cycle2_artifact": 10581094196,
+    "topk_cycle2_artifact_digest": "sha256:31820e1be709068e51aac00d9df17aa1df642b9a58245d44800065a1dd409500",
+    "topk_cycle1_result": "PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL",
+    "topk_cycle2_result": "PERSISTENCE_SIGNAL_REPLICATED",
+    "topk_evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
+    "sub_update_cap_discovery_branch": "6444848f3cf9c4a92bfd6317591ac4e39ffea44f",
+    "sub_update_cap_discovery_result": "REJECT_ORDINARY_IMPLEMENTATION_REDUCTION"
   },
   "control_plane_consumed": {
-    "control_brain_branch_tip": "6ed239b241a39f7d3e934e37751454c8bf3ebb4c",
-    "evidence_analyst_branch_tip": "3e83f1eb683ce80e326b756fa304e96688fdd3fe",
-    "orchestrator_report_branch_tip": "9861a3e408fa98794eedb42aa7714e2fb0e0293a",
-    "literature_audit_branch_tip": "ea84b5d9f2c1fc6d4d0478d0506a897c280cb8f0",
-    "independent_audit_latest_target": "NI01",
+    "control_brain_commit": "566f3b7c590fcfe2b9e8aaa0415da964989b1124",
+    "evidence_analyst_commit": "5b63d21f44812ef8d4938c9ad968bb8ab481b3c5",
+    "literature_commit": "8ffb225e1c7f1e2584c4d5a26657b748fb6514ea",
+    "independent_audit_commit": "baa5bfbc2ac2a3532fc4ac67bedcecc2c5a409da",
+    "independent_audit_target": "NI01",
     "independent_audit_classification": "WEAKENED",
-    "repository_steward_latest_timestamp": "2026-09-19T13:50:00+09:00",
-    "main_latest_timestamp": "2026-09-19T18:16:20+09:00",
-    "sub_latest_timestamp": "2026-09-19T17:36:00+09:00",
-    "utility_assignment": "IDLE"
+    "main_latest_timestamp": "2026-09-19T19:14:00+09:00",
+    "sub_latest_timestamp": "2026-09-19T18:50:00+09:00",
+    "utility_assignment_id": "CTRL-20260919-1850-ARCH-SIGNAL-ROBUSTNESS",
+    "utility_assignment_source_request": "METHCAL-20260919-1818-ARCH-SIGNAL-SUPPORT",
+    "utility_state_observed": "IDLE_NO_RESULT_YET"
   },
   "gate_changes_reviewed": [
     {
-      "change": "MAIN architecture cycle 1 completed under the fixed DEV-only contract and produced a NON_EVIDENTIARY positive architecture signal",
-      "direction": "LOWER_LAYER_SIGNAL_NOW_OBSERVED",
-      "assessment": "VALID_PROSPECTIVE_EXECUTION"
+      "change": "Control Brain retired stale programme-wide HOLD and explicitly adopted FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL",
+      "direction": "CORRECTS_OVERCONSERVATIVE_ALLOCATION",
+      "assessment": "WELL_CALIBRATED_OPERATING_DOCTRINE"
     },
     {
-      "change": "MAIN stopped after the valid positive architecture result pending fresh Evidence Analyst review",
+      "change": "MAIN completed unchanged independent-seed Architecture Study cycle 2 and mapped it to PERSISTENCE_SIGNAL_REPLICATED",
+      "direction": "REPLICATION_OF_LOWER_LAYER_SIGNAL_RULE",
+      "assessment": "VALID_PROSPECTIVE_NON_EVIDENTIARY_EXECUTION"
+    },
+    {
+      "change": "cycle 2 again passed categorical signal using one sparse qualifying magnitude stratum, now n=2, plus a well-supported n=26 stratum",
+      "direction": "REPEATED_LOWER_LAYER_TRIAGE_PERMISSIVENESS",
+      "assessment": "SUPPORT_ADEQUACY_DEFECT_CONFIRMED_ACROSS_INDEPENDENT_CYCLES"
+    },
+    {
+      "change": "MAIN stopped after cycle 2 for fresh Analyst review without cycle 3, retuning, redesign, PRE_FORMAL/FORMAL escalation, identity creation, or merge",
       "direction": "ANTI_RESCUE_STOP_BOUNDARY",
       "assessment": "WELL_CALIBRATED_AND_OPERATIONALLY_VALIDATED"
     },
     {
-      "change": "architecture signal rule uses total turnover support but no per-magnitude support floor before equal magnitude voting",
-      "direction": "LOWER_LAYER_TRIAGE_PERMISSIVENESS",
-      "assessment": "UNDER_CALIBRATED_SUPPORT_ADEQUACY"
+      "change": "SUB reduced PLASTICITY_UPDATE_CAP_SCALING_BIAS_DISCOVERY to deterministic sorted-edge iteration plus fixed update cap and rejected the scientific candidate",
+      "direction": "LOWER_LAYER_FALSE_NEGATIVE_CONTROL_WITH_EARLY_REDUCTION",
+      "assessment": "HEALTHY_FUNNEL_BEHAVIOR"
     },
     {
-      "change": "SUB independently generated structural-order path-dependence Discovery rather than blanket no-op",
-      "direction": "ANTI_STALL_LOWER_LAYER_THROUGHPUT",
-      "assessment": "POSITIVE_OPERATIONAL_EVIDENCE"
-    },
-    {
-      "change": "durable Control Brain still predates the lower-layer correction",
-      "direction": "CONTROL_PLANE_DOCTRINE_LAG",
-      "assessment": "OVERCONSERVATIVE_RESIDUAL"
+      "change": "Literature added hard-switch geometry plus non-normal recurrent transient gain and graph-rewrite non-confluence as ordinary prospective reductions",
+      "direction": "STRONGER_PROSPECTIVE_REDUCTION_CONTEXT",
+      "assessment": "CALIBRATION_INPUT_NOT_AUTOMATIC_AUTHORITY"
     }
   ],
   "gate_by_gate_classifications": {
@@ -67,64 +76,53 @@
     "stop_new_principle_claim_after_convincing_ordinary_reduction": "SPLIT_BY_CLAIM_TYPE",
     "stop_after_architecture_cycle_for_analyst_review": "KEEP",
     "architecture_signal_support_adequacy_across_strata": "TIGHTEN",
+    "exact_replacement_support_or_uncertainty_rule": "INSUFFICIENT_EVIDENCE",
     "architecture_signal_thresholds_as_formal_or_novelty_thresholds": "CLARIFY",
-    "h7_as_only_plausible_central_novelty_residual": "CLARIFY",
-    "control_plane_adoption_of_lower_layer_doctrine": "CLARIFY"
+    "control_plane_adoption_of_lower_layer_doctrine": "KEEP",
+    "automatic_preformal_promotion_after_architecture_replication": "KEEP_FORBIDDEN"
   },
   "architecture_signal_support_finding": {
-    "classification": "UNDER_SUPPORTED_STRATUM_CAN_CAST_FULL_SIGNAL_VOTE",
-    "cycle1_result": "PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL",
-    "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
-    "total_paired_cases": 1152,
-    "total_turnover_cases": 37,
-    "per_magnitude": [
-      {
-        "magnitude": 0.01,
-        "turnover_cases": 1,
-        "median_state_auc_ratio": 2.029666675181907,
-        "median_probability_auc_ratio": 35.503615825433144,
-        "signal_vote": true
-      },
-      {
-        "magnitude": 0.05,
-        "turnover_cases": 11,
-        "median_state_auc_ratio": 1.4653520785633158,
-        "median_probability_auc_ratio": 10.126039295887697,
-        "signal_vote": false
-      },
-      {
-        "magnitude": 0.1,
-        "turnover_cases": 25,
-        "median_state_auc_ratio": 2.032640896310804,
-        "median_probability_auc_ratio": 7.81916889018252,
-        "signal_vote": true
-      }
-    ],
+    "classification": "REPEATED_SPARSE_STRATUM_CAN_CAST_DECISIVE_FULL_SIGNAL_VOTE",
     "current_gate": "total turnover >=20, then >=2/3 magnitudes with median state ratio >=2.0 and probability ratio >=1.5",
-    "missing_guard": "no per-magnitude minimum support or uncertainty requirement before a magnitude casts a full vote",
-    "retroactive_action": "NONE; canonical cycle-1 NON_EVIDENTIARY result remains unchanged"
+    "missing_guard": "no per-magnitude support minimum, uncertainty condition, or robust weighting before a magnitude casts a full vote",
+    "cycle1": {
+      "result": "PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL",
+      "total_turnover_cases": 37,
+      "per_magnitude_turnover_cases": [1, 11, 25],
+      "qualifying_signal_vote_support": [1, 25]
+    },
+    "cycle2": {
+      "result": "PERSISTENCE_SIGNAL_REPLICATED",
+      "total_turnover_cases": 28,
+      "per_magnitude_turnover_cases": [0, 2, 26],
+      "qualifying_signal_vote_support": [2, 26],
+      "magnitude_0_05_state_auc_ratio": 4.2881896011,
+      "magnitude_0_05_probability_auc_ratio": 21.7324778987,
+      "magnitude_0_10_state_auc_ratio": 4.4210032404,
+      "magnitude_0_10_probability_auc_ratio": 15.3917076607
+    },
+    "counterfactual_support_note": "A prospective per-stratum floor of n>=3 would remove the sparse decisive vote in both completed cycles, so the current 2-of-3 categorical signal would not pass; this is a diagnostic observation only, not a recommendation to retroactively rescore or to adopt n=3 as the final rule.",
+    "retroactive_action": "NONE"
   },
   "false_positive_risks": [
-    "architecture triage can receive a full magnitude-level signal vote from a single turnover case",
-    "large ratio statistics may be inflated by near-zero control denominators unless diagnostic robustness is checked",
-    "laundering non-evidentiary architecture cutoffs into validated novelty/formal thresholds",
-    "promoting Discovery or Architecture observations into formal claims without a fresh prospective object",
-    "treating stronger-privilege replay/global-critic/actual-cause ceilings as equal-privilege mechanistic reductions",
-    "letting future exploratory cycles become outcome-responsive rescue tuning"
+    "architecture triage can receive a decisive full magnitude-level signal vote from n=1 or n=2 turnover cases",
+    "large ratio statistics may be inflated by small denominators unless robustness is checked",
+    "treating replicated local architecture triage labels as sufficient PRE_FORMAL or novelty evidence",
+    "laundering architecture 2.0/1.5 cutoffs into formal admission criteria",
+    "treating stronger-privilege replay/global-causal ceilings as equal-privilege mechanistic reductions"
   ],
   "false_negative_risks": [
-    "stale Control Brain programme-wide HOLD language reasserting itself over productive lower-layer work",
-    "broad historical family coverage being used again as blanket observable-level exhaustion",
-    "using new-computational-principle novelty as the threshold for architecture/system/testbed research-worthiness",
-    "responding to one permissive lower-layer gate by globally re-tightening Discovery/Architecture admission"
+    "responding to a local lower-layer support defect by globally re-tightening Discovery/Architecture admission",
+    "historical family coverage being used as blanket observable-level exhaustion",
+    "using new-computational-principle novelty as the threshold for architecture/system/testbed research-worthiness"
   ],
   "duplicate_guards": {
     "assessment": "NO_SCIENTIFIC_PURPOSE_SHOULD_BE_REMOVED",
-    "recommendation": "Consolidate implementation where useful but preserve distinct integrity purposes."
+    "recommendation": "Implementation consolidation is permissible, but distinct integrity purposes should remain explicit."
   },
   "moving_goalpost_assessment": {
     "classification": "LOW_RETROACTIVE_RISK",
-    "basis": "Cycle-1 data/probes/metrics/thresholds were fixed before execution; only mechanical pre-outcome lint/hygiene fixes occurred; after the valid result MAIN stopped for fresh Analyst review and made no scientific/protocol changes."
+    "basis": "Cycle 2 reused the prospectively fixed cycle-1 criterion and changed only the independently authorized model/training seed. MAIN stopped after the replicated result. Any support-adequacy change is prospective only and must not rescore or relabel cycles 1 or 2."
   },
   "pass_reachability_assessment": {
     "classification": "REACHABLE_BUT_NARROW",
@@ -136,43 +134,43 @@
       "fixed intervention and numeric falsifier",
       "one-way preserved formal evidence"
     ],
-    "effect_of_new_funnel": "IMPROVES_CANDIDATE_DISCOVERY_WITHOUT_WEAKENING_FORMAL_PATH",
-    "calibration_note": "Lower-layer signal triage needs stronger support adequacy; this does not change the FORMAL path."
+    "effect_of_active_lower_funnel": "IMPROVES_OBJECT_DISCOVERY_WITHOUT_WEAKENING_FORMAL_PATH",
+    "current_limit": "Architecture replication alone is not PRE_FORMAL or FORMAL evidence; support adequacy and ordinary reductions remain open."
   },
   "claim_type_separation_findings": {
-    "historical_operational_state": "PARTIALLY_CONFLATED_NOVELTY_WITH_RESEARCH_WORTHINESS",
-    "current_evidence_analyst_main_sub_state": "EXPLICITLY_SEPARATED_AND_OPERATIONAL",
-    "topk_result_status": "ARCHITECTURE_SIGNAL_ONLY_NON_EVIDENTIARY",
-    "structural_order_discovery_status": "DISCOVERY_ONLY_PENDING_ANALYST_REVIEW",
-    "remaining_risk": "OVERCONFIDENCE_WITHIN_LOWER_LAYER_SIGNAL_LABEL_NOT_CLAIM_TYPE_CONFLATION",
-    "control_brain_sync": "PENDING_NEXT_CONTROL_RUN"
+    "current_control_state": "EXPLICIT_FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL",
+    "current_evidence_analyst_main_sub_state": "CLAIM_TYPES_EXPLICITLY_SEPARATED",
+    "topk_cycle2_status": "REPLICATED_LOCAL_ARCHITECTURE_TRIAGE_SIGNAL_NON_EVIDENTIARY",
+    "sub_update_cap_status": "REJECTED_SCIENTIFIC_CANDIDATE_RETAINED_AS_ARCHITECTURE_ENGINEERING_INFORMATION",
+    "remaining_risk": "OVERCONFIDENCE_IN_LOWER_LAYER_CATEGORICAL_SIGNAL_SUPPORT_NOT_NOVELTY_RESEARCH_WORTHINESS_CONFLATION"
   },
   "external_calibration": {
-    "literature_commit_consumed": "ea84b5d9f2c1fc6d4d0478d0506a897c280cb8f0",
-    "literature": "COMA/C3/concurrent responsibility remain stronger-privilege prospective ceilings; no newer literature supersedes them.",
-    "independent_audit_commit_consumed": "ea84b5d9f2c1fc6d4d0478d0506a897c280cb8f0",
-    "independent_audit": "NI01 remains canonical FAIL with equal-privilege mechanistic interpretation weakened; no new audit supersedes it.",
-    "use_rule": "External findings calibrate future novelty/baselines prospectively and do not rewrite consumed evidence."
+    "literature_commit_consumed": "8ffb225e1c7f1e2584c4d5a26657b748fb6514ea",
+    "literature": "Hard Top-k turnover is ordinary switching geometry; delayed amplification may arise from ordinary non-normal recurrent transient gain; structural path dependence is ordinary non-confluence territory absent residual matched-state effects.",
+    "independent_audit_commit_consumed": "baa5bfbc2ac2a3532fc4ac67bedcecc2c5a409da",
+    "independent_audit": "NI01 canonical FAIL integrity remains robust while equal-privilege mechanistic reduction is weakened by world-label privilege.",
+    "use_rule": "External findings calibrate future baselines prospectively and do not rewrite consumed evidence or fixed completed Architecture contracts."
   },
-  "opportunity_cost_assessment": "Continue bounded lower-layer work; tighten the local architecture triage support rule rather than restoring global programme-wide conservatism.",
-  "utility_request_created": {
+  "opportunity_cost_assessment": "Target local Architecture support calibration. Global tightening would recreate the prior stagnation/false-negative defect with little added FORMAL safety.",
+  "utility_request_created": null,
+  "existing_utility_request_status": {
     "request_id": "METHCAL-20260919-1818-ARCH-SIGNAL-SUPPORT",
-    "path": "utility_orchestrator/requests/2026-09-19/METHCAL-20260919-1818-architecture-signal-support-robustness.md",
-    "request_bus_commit": "7c697feff17052aca1c6f08f8f13aea0dc59d29e",
-    "mode": "READ_ONLY_METHOD_CALIBRATION_SUPPORT",
-    "purpose": "Artifact-only robustness analysis of per-magnitude support, uncertainty, leave-one-magnitude-out stability, and denominator sensitivity; no scientific rerun or result mutation."
+    "assignment_id": "CTRL-20260919-1850-ARCH-SIGNAL-ROBUSTNESS",
+    "status": "ASSIGNED_PENDING_RESULT",
+    "reason_no_duplicate": "The existing assignment directly addresses the current support and denominator calibration question."
   },
   "prospective_recommendations": [
-    "Keep the four-layer funnel and current claim-type separation.",
-    "Do not alter the completed cycle-1 NON_EVIDENTIARY architecture classification retroactively.",
-    "Require fresh artifact-only support/robustness review before any PRE_FORMAL promotion based on CAND-TOPK-PA-01.",
-    "Prospectively add per-stratum support adequacy or an uncertainty-aware robust aggregate to future Architecture Study signal gates.",
-    "Keep stop-after-cycle Analyst review exactly as-is; it successfully blocked automatic outcome-responsive escalation.",
-    "Do not reuse architecture 2.0/1.5 AUC-ratio cutoffs as novelty or FORMAL admission thresholds without independent prospective justification.",
-    "Use observable/question-level exhaustion and retain the three-cycle budget.",
-    "Require the next Control Brain handoff to reconcile stale programme-wide HOLD language with productive lower-layer behaviour.",
-    "Keep equal-privilege reductions separate from stronger-privilege ceilings.",
-    "Never alter consumed/frozen evidence because of methodology changes."
+    "Keep the four-layer funnel and FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL doctrine.",
+    "Do not alter cycle 1 or cycle 2 NON_EVIDENTIARY labels retroactively.",
+    "Do not start cycle 3 or PRE_FORMAL solely from PERSISTENCE_SIGNAL_REPLICATED; require fresh Evidence Analyst review.",
+    "Explicitly review the repeated n=1 and n=2 decisive sparse strata before any PRE_FORMAL promotion.",
+    "Prospectively add per-stratum support adequacy or uncertainty-aware robust aggregation to future Architecture Study signal gates.",
+    "Do not guess the exact replacement minimum support rule before the accepted read-only Utility robustness diagnostic returns.",
+    "Keep stop-after-cycle Analyst review exactly as-is.",
+    "Keep 2.0/1.5 Architecture ratios local to bounded Architecture triage; do not transfer them to novelty or FORMAL admission.",
+    "For future Top-k mechanistic work, test hard switching geometry then ordinary recurrent/non-normal transient gain before claiming a persistence-specific residual.",
+    "Keep equal-privilege reductions separate from stronger-privilege ceilings and preserve all one-way integrity safeguards.",
+    "Continue early rejection of lower-layer candidates when ordinary implementation mechanisms explain them."
   ],
   "hard_integrity_floor_confirmation": {
     "confirmed": true,
@@ -188,15 +186,14 @@
     ]
   },
   "questions_for_control_brain": [
-    "Will the next Control handoff explicitly recognize that FORMAL HOLD can coexist with productive bounded Discovery/Architecture work?",
-    "Will lower-layer architecture signal gates gain support-adequacy calibration without turning that into a stronger global admission bar?",
-    "Will architecture thresholds remain local triage aids rather than novelty/formal gates?",
-    "Will stronger-privilege causal-credit solvers remain ceilings unless privilege is matched?"
+    "Continue treating FORMAL HOLD as compatible with active bounded lower-layer research.",
+    "Keep the current support-calibration issue local rather than using it to re-tighten the programme globally.",
+    "Keep stronger-privilege reduction methods as ceilings unless privilege is matched."
   ],
   "questions_for_evidence_analyst": [
-    "Before any PRE_FORMAL promotion of CAND-TOPK-PA-01, will the n=1/n=11/n=25 support imbalance and denominator sensitivity be reviewed from existing artifacts only?",
-    "Will future architecture signal contracts specify support adequacy per stratum or use an uncertainty-aware aggregate before categorical signal labels?",
-    "Will the current architecture result remain NON_EVIDENTIARY regardless of the robustness diagnostic outcome?",
-    "Will STRUCTURAL_ORDER_PATH_DEPENDENCE_DISCOVERY receive fresh prospective review rather than direct promotion from synthetic observations?"
+    "On fresh post-cycle-2 review, will PERSISTENCE_SIGNAL_REPLICATED be treated as a local Architecture triage replication rather than sufficient PRE_FORMAL evidence?",
+    "Will the repeated sparse decisive strata be explicitly reviewed before any promotion decision?",
+    "Will any new support/uncertainty rule be frozen prospectively only for future work, without rescoring cycles 1 or 2?",
+    "Will the pending Utility artifact-only robustness result be consumed as methodology input rather than scientific evidence?"
   ]
 }
