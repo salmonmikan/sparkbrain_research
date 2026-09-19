@@ -1,14 +1,14 @@
 {
-  "run_id": "sparkbrain-main-primary-20260920T0215JST",
+  "run_id": "sparkbrain-main-primary-20260920T0312JST",
   "execution_mode": "PRIMARY",
-  "status": "COMPLETED",
-  "started_at": "2026-09-20T02:15:05+09:00",
-  "heartbeat_at": "2026-09-20T02:23:00+09:00",
-  "analyst_commit": "7dd9d9d4d02febe2547a4cc547b31891a0bc285f",
-  "active_branch": null,
+  "status": "RUNNING",
+  "started_at": "2026-09-20T03:12:38+09:00",
+  "heartbeat_at": "2026-09-20T03:15:00+09:00",
+  "analyst_commit": "9bb852bc1461755814d6a9a0e7ea561f1858a0da",
+  "active_branch": "research/main-v05-topology-config-contract-arch-study-20260920",
   "active_identity": null,
-  "active_step": "LOWER_FUNNEL_MAIN_HOLD_PENDING_FRESH_OBJECT",
+  "active_step": "V05_TOPOLOGY_CONFIG_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_PROSPECTIVE_BINDING",
   "workflow_run_id": null,
-  "expected_next_action": "Await a fresh Evidence Analyst handoff that prospectively authorizes a genuinely fresh central Architecture/PRE_FORMAL/FORMAL object. Do not run Temporal cycle 2, Top-k cycle 3, synthetic resonant fanout follow-up, H7 queue-filler, or SUB's V05 topology config-binding Discovery.",
+  "expected_next_action": "Create the fresh Architecture Study branch from exact main ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d, bind the fixed five-config matrix/topology seed/checkpoint-roundtrip schema/outcome mapping before any outcome-bearing diagnostic, run exact-head ordinary CI/readiness, then execute at most one NON_EVIDENTIARY Architecture cycle and stop for fresh Analyst review on any valid outcome.",
   "owner": "main"
 }
