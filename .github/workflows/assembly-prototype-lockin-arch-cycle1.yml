@@ -34,8 +34,8 @@ jobs:
         run: |
           test "$(git rev-parse HEAD)" = "${GITHUB_SHA}"
           git merge-base --is-ancestor ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d HEAD
-      - name: Install development dependencies
-        run: python -m pip install -e '.[dev]'
+      - name: Install repository CI dependencies
+        run: python -m pip install -e '.[dev,learned,spiking]'
       - name: Compile and lint Architecture harness
         run: |
           python -m py_compile analysis/architecture/assembly_prototype_lockin_cycle1_20260919.py
