@@ -1,14 +1,14 @@
 {
-  "run_id": "sparkbrain-main-primary-20260919T2317JST",
-  "execution_mode": "PRIMARY",
-  "status": "WAITING_EXTERNAL",
-  "started_at": "2026-09-19T23:17:40+09:00",
-  "heartbeat_at": "2026-09-19T23:30:00+09:00",
+  "run_id": "sparkbrain-main-relay-20260919T2347JST",
+  "execution_mode": "RELAY",
+  "status": "RUNNING",
+  "started_at": "2026-09-19T23:47:42+09:00",
+  "heartbeat_at": "2026-09-19T23:47:42+09:00",
   "analyst_commit": "982e5686524c9fc2b665efcf44069fef49196333",
   "active_branch": "research/main-assembly-prototype-lockin-arch-study-20260919",
   "active_identity": null,
-  "active_step": "WAITING_EXTERNAL_REPAIRED_EXACT_HEAD_ARCHITECTURE_WORKFLOW",
+  "active_step": "COLLECTING_COMPLETED_ARCHITECTURE_CYCLE1_RESULT",
   "workflow_run_id": 35448815310,
-  "expected_next_action": "Collect workflow 35448815310 only for exact head 7d9b90e58ee088ff2b4187d3c62c5e568148e6aa. If pre-diagnostic CI/preflight fails, repair only science-invariant mechanical defects under the unchanged prospective contract. If one valid diagnostic completes, verify artifacts and raw-before-summary, consume the fixed four-way mapping exactly once, persist the NON_EVIDENTIARY Architecture result, and STOP for fresh Evidence Analyst review. Do not run cycle 2 or auto-promote to PRE_FORMAL/FORMAL.",
+  "expected_next_action": "Verify completed exact-head workflow/artifact integrity, consume the prospectively fixed four-way mapping exactly once, persist the NON_EVIDENTIARY Architecture result, then STOP for fresh Evidence Analyst review. No cycle 2 or PRE_FORMAL/FORMAL promotion.",
   "owner": "main"
 }
