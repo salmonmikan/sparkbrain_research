@@ -1,89 +1,151 @@
-# Control Brain — Latest
+# SparkBrain Control Brain — 2026-09-19 10:50 JST
 
-- Generated: 2026-09-19 02:50 JST
-- Role: CONTROL_BRAIN
-- Selected slot: 02:50 JST
-- Foundational doctrine change: NO
-- Programme position: experimental cognitive architecture / testbed
-- Current strategic status: NO_HIGH_VALUE_OBJECT
+- role: `CONTROL_BRAIN`
+- selected_slot_jst: `10:50`
+- foundational_doctrine_change: `NO`
+- programme_position: `experimental_cognitive_architecture_testbed`
+- central_theory_status: `NO_HIGH_VALUE_OBJECT`
+- scheduler_controller_action: `BLOCKED`
 
 ## Central theory
-The only potentially novel residual remains non-privileged causal credit/circulation along actual historical lineage after ordinary-memory/recurrent/predictive/plastic reductions. No current prospective object clears the admission bar. The programme should not manufacture a formal object merely to maintain scheduler activity.
+
+The central novelty thesis remains deliberately narrow. SparkBrain has not established a new computational principle from persistence, locality, anonymous history, No-Ignition, event routing, or lineage bookkeeping alone. The only residual worth reopening as a central claim would be a **native, intervention-validated lineage-specific causal-responsibility effect** that is positive prospectively and survives both ordinary history/influence reductions and ordinary local-learning/recurrent/plastic reductions under matched information, readout, task/regime-label and resource privilege. No current prospective object clears that admission bar, so the programme remains in architecture/testbed HOLD rather than manufacturing a successor.
 
 ## Strongest support and counterevidence
-- C19-R2 remains robustly reduced by a small explicit FSA, so that C19 temporal-state claim is ordinary finite state.
-- H5 terminally failed the registered useful-work threshold; event routing did not establish the registered efficiency claim.
-- PD01 terminal evidence chain is valid, but the independent audit shows no registered positive long-lag candidate signal. Programme-level interpretation is `NO_REGISTERED_LONG_LAG_SIGNAL + COMPARATOR_NOT_WORSE`, not a mechanistic reservoir-reduction occurrence.
-- LP01 pre-formal review finds no native online lineage/provenance causal path and no nontrivial residual beyond explicit parent/event state. Evidence Analyst and MAIN now independently converge on `NO_HIGH_VALUE_OBJECT`.
 
-## Reductions and absent-signal doctrine
-Future reduction claims must distinguish `ABSENT_SIGNAL` from `EXPLAINED_BY_REDUCTION`. A prospectively fixed candidate-positive-signal gate must pass before a `REDUCED_BY_*` outcome is counted as mechanistic reduction. Latent-state comparisons also require observation/readout/resource privilege symmetry.
+### Support for the programme as a rigorous testbed
+
+- One-way integrity, terminal-negative preservation and stop/reframe discipline continue to work: MAIN has no active branch or identity and made no scientific mutation at 10:16; SUB remained an independent `no_op` at 10:32.
+- The 09:32 Literature Reduction Scout supplies a sharper prospective discriminator rather than a rescue mechanism: lineage-history claims must survive causal/event-structure and dynamic-slicing reductions, while learning claims must survive matched eligibility/three-factor/e-prop/GLE/SAL/recurrent-plastic comparators.
+- The 10:32 Independent Audit found the NI01 evidence chain itself coherent and the preregistered terminal decision valid, showing that the evidence infrastructure can preserve a result even when programme-level interpretation is narrowed.
+
+### Counterevidence / weakened assumptions
+
+- C19-R2 remains reduced by an explicit finite-state tracker.
+- PD01 should not be counted as a clean mechanistic reservoir reduction at programme level because its prospectively registered positive long-lag candidate signal was absent; the safe synthesis is `NO_REGISTERED_LONG_LAG_SIGNAL + COMPARATOR_NOT_WORSE`.
+- H5 is terminal `FAIL_NO_USEFUL_WORK_REDUCTION`; event routing did not establish a meaningful registered work advantage.
+- LP01 remains pre-formal closed: current lineage/provenance metadata do not provide a demonstrated native online causal-responsibility object that resists explicit reconstruction.
+- NI01's canonical `FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION` token remains valid under the frozen contract, but the newest independent audit weakens the mechanistic interpretation because the comparator receives explicit world identity and uses one DEV-derived threshold per world while the candidate does not receive the symbolic world label. The strongest safe programme statement is now `NO_REGISTERED_INCREMENTAL_NATIVE_ADVANTAGE_OVER_WORLD_CONDITIONED_CONFIDENCE_ABSTENTION`; an equal-privilege generic confidence-abstention reduction is **not established**. This does not restore positive novelty evidence.
+
+## Reductions and interpretation discipline
+
+The current reduction ladder is now explicitly two-axis:
+
+1. **History / influence:** provenance or ancestry bookkeeping → individual-token causal-net / occurrence-net / event-structure history and conflict → causally consistent dynamic slicing → explicit counterfactual actual-cause / responsibility computation → only then a possible Spark-specific lineage residual.
+2. **Learning / locality:** matched eligibility traces / three-factor learning / e-prop / GLE / SAL / recurrent-plastic mechanisms → only then a possible Spark-specific residual.
+
+For all future mechanistic `REDUCED_BY_*` claims, keep `ABSENT_SIGNAL` separate from `EXPLAINED_BY_REDUCTION`, require a prospectively fixed positive candidate-signal gate where scientifically meaningful, and match not just dimensional/resource budgets but **information and readout privilege, including explicit task/world/regime labels**.
 
 ## Unresolved residual mechanism
-The narrow residual hypothesis is lineage-specific online causal credit carried by actual historical ancestry without semantic/evaluator privilege and not losslessly reconstructible by simpler explicit/predictive/recurrent/plastic state under equal resources. There is currently no formal object that demonstrates this premise.
 
-## External input — literature
-Latest role-specific Literature handoff remains 2026-09-18 04:30 JST and is stale. The newest available literature was nevertheless consumed. It continues to raise the novelty bar via PSR, epsilon-machine/causal-state, recurrent/reservoir/fading-memory, and learned/extracted finite-state reductions. Local, pre-semantic, history-derived, or emergent state alone is not a novelty axis. Treat the missing later durable Literature update as a persistence/freshness defect, not as evidence that no relevant literature exists.
+The only unresolved central mechanism worth prospective admission is intervention-validated lineage-specific causal responsibility: a native historical lineage must make a difference to later local competition or decision under interventions that distinguish ancestry, trace influence and responsibility, including preemption/overdetermination and ancestry-preserving responsibility-changing cases. The object must survive both reduction axes with matched information/readout/task-label/resources and fixed numeric falsifiers. No such object currently exists in the repository.
 
-## External input — audit
-Latest Audit handoff is 2026-09-18 22:32 JST. It validates the PD01 one-way evidence chain while weakening programme synthesis from strong reservoir reduction to absent registered candidate signal plus comparator-not-worse. Evidence Analyst has now explicitly consumed this audit, so the previous Audit→Analyst lag is resolved.
+## External input — Literature
+
+Consumed the 2026-09-19 09:32 `LITERATURE_REDUCTION_SCOUT` stream independently. It strengthens reduction pressure rather than supporting a new SparkBrain claim:
+
+- causal Petri/occurrence-net/event-structure semantics are ordinary baselines for token-specific causal history, concurrency and conflict;
+- causally consistent dynamic slicing is an ordinary actual-run influence baseline stronger than ancestor lookup;
+- contemporary local/online physical credit mechanisms mean locality, online operation, spiking implementation and history-sensitive plasticity are not standalone novelty axes.
+
+Impact: keep LP01 closed, retain testbed HOLD, and require future lineage objects to survive both history/influence and learning/locality reductions before formal review.
+
+## External input — Audit
+
+Consumed the new 2026-09-19 10:32 `INDEPENDENT_AUDITOR` stream independently. The NI01 evidence chain is `ROBUST_SO_FAR`, and the frozen statistics still validly produce the canonical terminal token: candidate loss `0.2119466146`, comparator loss `0.2114691840`, effect `-0.0004774306`, 95% CI `[-0.00244140625, 0.00147569444]`, coverage guard PASS. However, the comparator is world-conditioned: it derives/applies separate thresholds for explicit world identity, while the candidate does not receive the symbolic world label. Therefore the audit classification is `WEAKENED` at the interpretation level.
+
+Impact: preserve NI01 unchanged; do not rerun, retune, rescore or reopen it. Correct programme language to world-conditioned confidence abstention, add explicit task/world/regime-label symmetry to future comparator contracts, and do not count NI01 as an equal-privilege mechanistic reduction. The latest Evidence Analyst handoff at 10:02 predates this 10:32 audit, so the next Analyst cycle must consume it explicitly.
 
 ## SUB incubator assessment
-SUB did not run an incubator cycle. `NO_OP_BY_DESIGN` is correct: there is no independent formal lane or admissible exploratory target, and SUB did not disguise MAIN assistance as parallel work.
 
-## Programme drift assessment
-No evidence of rescue tuning or forced mechanism multiplication this cycle. Convergence on `NO_HIGH_VALUE_OBJECT` is a healthy stop/reframe outcome. The primary programme framing should remain experimental cognitive architecture/testbed unless a genuinely new candidate independently clears the admission gates.
+SUB ran in `no_op`, not exploratory-incubator mode. This is `NO_OP_BY_DESIGN` / `NO_ACTION`:
 
-## Repository doctrine status
-`PARTIAL_COMPLIANCE_IMPROVING`.
-- `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` remains stable substrate.
-- 5 authoritative annotated `evidence/*` tags and 13 legacy `freeze/*` branches are present and untouched.
-- Repository rulesets remain 0 and `main` remains unprotected; authoritative tag protection is still governance debt.
-- PR #148 and #149 remain structurally outcome-independent but are `DEFER_PENDING_REVIEW_FIX`; do not merge them merely to create activity.
+- no formal SUB lane or fallback exists;
+- no safe distinct incubator target exists outside MAIN admission and future causal-credit critical-path construction;
+- SUB did not touch MAIN, consumed identities, or formal evidence;
+- no NON_EVIDENTIARY exploratory observation was produced this cycle.
 
-## Promotion candidates
-Only neutral, outcome-independent components remain candidates: event/distribution primitives, architecture-neutral comparator helpers, snapshot/restore, descriptive resource accounting, privilege/leakage guards, and transcript validation. Extract on current `main` in small reviewed units with fresh CI. Do not promote H5/LP01 scientific semantics or candidate-specific machinery.
+This is productive restraint, not a throughput defect. Do not force incubator activity merely to increase utilization.
+
+## Programme-drift assessment
+
+No rescue drift is detected. MAIN and SUB both respected the no-object HOLD instead of engineering a literature-driven successor. The remaining risk is conceptual overclaiming: terminal labels such as NI01's canonical token must not be silently promoted into stronger equal-privilege mechanistic-reduction statements than the actual comparator contract supports.
+
+## Repository doctrine and promotion candidates
+
+Status: `PARTIAL_COMPLIANCE_IMPROVING`.
+
+- `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` remains stable shared substrate.
+- authoritative `evidence/*` tags: 5.
+- legacy `freeze/*` branches: 13, preserved.
+- `formal/*`, `sealed/*`, tag-based `freeze/*`: none.
+- repository rulesets: 0; `main` remains unprotected. Server-side protection of authoritative tag namespaces remains the main governance debt.
+- Issue #139 remains current; no Issue mutation is required from Control Brain.
+- PR #148 and #149 remain open and are not strategic merge priorities while their review blockers remain unresolved.
+
+Human Directive `HUMAN-20260918-001` remains `ACCEPT` with no disposition change: audit and eventually extract only outcome-independent neutral CX substrate (event/distribution primitives, architecture-neutral comparator interfaces, snapshot/restore, resource accounting, privilege/leakage guards, transcript validation) as small fresh-current-main changes with fresh CI. Do not wholesale-merge research branches or promote hypothesis-dependent comparator semantics, consumed identities, scorers or evidence. This promotion work remains subordinate to science and is not a reason to fabricate a frontier.
 
 ## Ranked priorities — next 12–48h
-1. No new central formal object. Have Evidence Analyst perform a read-only NI01 audit to determine whether its programme-level confidence-abstention interpretation also needs `ABSENT_SIGNAL` versus `EXPLAINED_BY_REDUCTION`; do not rerun, retune, or mutate NI01 evidence.
-2. Keep LP01 closed at pre-formal `NO_HIGH_VALUE_OBJECT` unless a native causal lineage object emerges independently and clears all admission gates.
-3. Repair the role-specific Literature persistence/freshness path before treating external-science cadence as healthy.
-4. Allow neutral substrate extraction only when it is clean, reviewed, current-main based, and does not distract from higher-information work.
+
+1. **Evidence Analyst consumes the 10:32 NI01 audit.** Keep the canonical evidence untouched, but revise programme synthesis to world-conditioned confidence abstention and add task/world/regime-label privilege symmetry to future comparator admission.
+2. **Maintain architecture/testbed HOLD.** Do not create a formal identity or successor simply to maintain activity. A fresh central object must independently satisfy the strengthened prospective admission gate.
+3. **If a future lineage object appears, require the full two-axis reduction ladder prospectively.** Include positive candidate signal, preemption/overdetermination, ancestry-preserving responsibility-changing interventions, fixed numeric falsifiers and symmetric information/readout/task-label/resources.
+4. **Optional read-only NI01 diagnostic only if it materially informs future contracts.** A single global DEV-derived threshold sensitivity may be computed from immutable raw data if practical, but it is non-canonical and cannot change NI01's terminal evidence.
+5. **Repository-neutral promotion remains secondary.** Resolve PR #148/#149 review blockers and extract only neutral reusable substrate when it does not compete with higher-information work.
 
 ## Stop / reframe conditions
-- No native causal path or no prospective positive candidate signal => stop before formalization.
-- Clean discriminator fails => terminate the affected mechanism; no rescue-tuning successor by default.
-- Positive signal exists but ordinary explicit/predictive/recurrent/plastic comparator explains it under symmetric privilege/resources => count as reduction and stop novelty claim.
-- If no independent candidate clears admission, retain SparkBrain as an experimental cognitive architecture/testbed rather than inventing a mechanism.
 
-## Scheduler fleet health
+- Do not reopen consumed NI01/PD01/H5/C19 identities or rescue-tune them.
+- A future candidate that lacks a prospectively positive signal is `ABSENT_SIGNAL`, not evidence of a mechanism reduction.
+- A candidate that only preserves ancestry, trace influence, locality, online credit, spiking dynamics or persistent state without surviving matched ordinary baselines does not clear the novelty bar.
+- If no native intervention-validated lineage-responsibility object independently appears and survives the admission gate, continue treating SparkBrain as an experimental cognitive architecture/testbed rather than inventing a new central mechanism.
+
+## SCHEDULER FLEET HEALTH
+
 `fleet_status: YELLOW`
 
-- Evidence Analyst — HEALTHY: durable 02:00 handoff advanced and consumed both latest available Literature and Audit inputs.
-- MAIN PRIMARY — NO_OP_BY_DESIGN: durable 02:16 `NO_HIGH_VALUE_OBJECT`; no workflow dispatch or identity consumption.
-- MAIN RELAY — NO_OP_BY_DESIGN: no separate durable advancement observed or required because upstream authority and PRIMARY were already aligned.
-- SUB — NO_OP_BY_DESIGN: durable 02:35 no-op; no MAIN collision or disguised assistance.
-- External Literature — FAILED_OR_INCOMPLETE: role-specific durable stream has not advanced since 2026-09-18 04:30 JST.
-- External Audit — HEALTHY: 22:32 durable audit exists and is now consumed by Evidence Analyst.
-- Repository Steward — HEALTHY: 01:50 durable stewardship record advanced.
+| Active SparkBrain scheduler/stream | Classification | Finding |
+| --- | --- | --- |
+| Control & Repository Steward | `HEALTHY` | Current role-specific handoffs continue to advance; no persistence failure observed before this write. |
+| Evidence Analyst | `HEALTHY` | 10:02 handoff consumed 09:32 Literature. The 10:32 Audit arrived afterward and is pending normal next-cycle consumption. |
+| Research Orchestrator MAIN | `NO_OP_BY_DESIGN` | 10:16 durable hold; no active object, identity or one-way workflow. |
+| Research Orchestrator Relay | `NO_OP_BY_DESIGN` | No active MAIN continuation exists; however its `:45` offset repeatedly crowds the `:50` Control/Steward slot. |
+| Research Orchestrator SUB | `NO_OP_BY_DESIGN` | 10:32 durable no-op; no valid independent lane/incubator target. |
+| External Literature | `HEALTHY` | Role-specific stream advanced at 09:32; the previous persistence defect is resolved. |
+| External Audit | `HEALTHY` | Role-specific NI01 audit advanced at 10:32 and CI completed successfully. |
+| Current State Brief | `HEALTHY` | No control-plane defect requiring strategic intervention observed. |
 
 Critical failures: none.
 
-Operational defects:
-- Literature role-specific persistence/freshness is stale.
-- Authoritative tag namespaces lack server-side ruleset protection (repository governance debt, not scheduler mutation for this role).
-- RELAY→Control/Steward spacing remains a possible observability/collision risk.
+Operational defects / lags:
+
+- the newest NI01 Audit is not yet consumed by Evidence Analyst because it was produced after the 10:02 Analyst cycle; this is a one-cycle knowledge-flow lag, not evidence loss;
+- Relay `:45` versus Control/Steward `:50` has produced repeated observability/collision pressure across at least three Control cycles;
+- authoritative tag namespaces still lack server-side protection.
 
 Efficiency findings:
-- MAIN and SUB no-op behavior is efficient by design while `NO_HIGH_VALUE_OBJECT` holds; do not create fake workload.
-- Control-plane stop decisions are currently preventing one-way identity consumption on low-value objects.
 
-Recommended scheduler changes (review-only):
-- Repair Literature persistence before increasing research cadence.
-- If schedule maintenance is undertaken by the proper scheduler-maintenance path, widen RELAY→Control/Steward separation toward about 10 minutes.
-- No scheduler definition is changed by Control Brain.
+- MAIN/SUB repeated no-op is scientifically appropriate while `NO_HIGH_VALUE_OBJECT` holds;
+- no scheduler should be accelerated merely to create work;
+- the cleanest timing improvement remains moving Relay from `:45` to `:40`, which is semantics-neutral and widens the Relay→Control/Steward gap.
+
+### Scheduler controller
+
+`scheduler_controller_action: BLOCKED`
+
+The candidate change remains **SparkBrain Research Orchestrator Relay `:45 → :40`**. Repeated evidence is sufficient and there is no in-flight one-way experiment. The live Relay definition and `ops/scheduler-registry` current snapshot were reconciled semantically before considering mutation: title, enabled state, timing mode, timezone, schedule and prompt agree; only live service metadata has advanced since registry bootstrap.
+
+No live mutation was made because the required registry transaction mandates an independent **post-mutation live re-read** before updating `current/manifest` and appending `APPLIED`. In this run the scheduler interface available after the already-performed fleet read does not expose a separate safe reread operation without violating the runtime's no-repeat-list constraint. Failing closed is preferable to a partially recorded scheduler mutation. No `PRE_CHANGE` record was written and `ops/scheduler-registry` was not modified. Retry the same single offset change only when the full PRE_CHANGE → live mutation → independent live reread → current/manifest → APPLIED chain can be completed in one run.
 
 ## Direction to Evidence Analyst
-- Do not authorize a new central formal object solely to maintain activity.
-- Audit NI01 read-only for `ABSENT_SIGNAL` versus `EXPLAINED_BY_REDUCTION`; preserve its consumed identity and evidence exactly.
-- For any future central object, require before formalization: a native causal path, a prospectively positive signal, a non-privileged effect, nontrivial resistance to ordinary-mechanism reduction, and symmetric resource/readout access.
+
+- Consume the 10:32 NI01 independent audit explicitly on the next cycle.
+- Preserve the canonical NI01 terminal token and evidence exactly; revise only programme-level interpretation to `NO_REGISTERED_INCREMENTAL_NATIVE_ADVANTAGE_OVER_WORLD_CONDITIONED_CONFIDENCE_ABSTENTION` and mark equal-privilege mechanistic reduction as not established.
+- Add explicit task/world/regime-label privilege to future symmetry checks alongside information, readout and resources.
+- Keep `ABSENT_SIGNAL` separate from `EXPLAINED_BY_REDUCTION` and retain a positive candidate-signal gate for future mechanistic reduction claims.
+- Do not authorize a new central formal object merely because MAIN/SUB are idle.
+- For future lineage/causal-credit admission, require survival of the two-axis reduction ladder and intervention tests before formalization.
+
+## Persistence scope
+
+This Control Brain run changes only the designated `ops/control-brain-handoff` latest/state/history files. `charter.md`, scheduler definitions, scheduler registry, research branches, consumed identities, control/preserve refs and immutable evidence remain untouched.
