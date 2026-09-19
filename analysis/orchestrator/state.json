@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-09-20T05:58:48+09:00",
+  "timestamp": "2026-09-20T07:00:00+09:00",
   "new_repository_evidence": true,
   "new_formal_scientific_evidence": false,
-  "new_lower_funnel_scientific_outcome": true,
+  "new_valid_main_architecture_terminal": false,
   "material_methodology_update": true,
   "authoritative_state": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
@@ -18,64 +18,59 @@
   },
   "latest_streams": {
     "main": {
-      "mailbox_timestamp_jst": "2026-09-20 05:49",
-      "mailbox_tip_observed": "7d7a2913e167c938dbb06976b8d9e5483bd20552",
-      "authority_seen": "d6b14d826a0847e439dfedd86e363786d84e329a",
-      "candidate": "CAND-ASSEMBLY-CROSSCASCADE-FALLBACK-01",
-      "research_head": "388799d9880d7b472417a680f288da13f4fd9b41",
-      "workflow": 35468475903,
-      "workflow_state_fresh": "completed_success",
-      "artifact_id": 10591704496,
-      "artifact_digest": "sha256:5abb9a4b12673f1ef0c50c3dcaf9b6b6f3d4ba20270f777789dc9893ea140ac5",
-      "contract_sha256": "902d04379f3d89df27cee490e2ba2988d0bc7b695cf951b0dcf471e2a96d64dd",
-      "input_family_digest": "180ba148660e9283e4c10b68a35d8b008c185c4a5806e22f90a3c6c8068a3f5c",
-      "raw_sha256": "96b5164dd8c43ea6dc94654308a15bcf35caca6b69df8f0acf38b8dd81e908d9",
-      "mapped_outcome": "FUNCTIONAL_CROSSCASCADE_SEGMENTATION_EFFECT",
+      "mailbox_timestamp_jst": "2026-09-20 06:57",
+      "mailbox_branch_tip_observed": "80afca1fe2fe77087bac13fc55a826cf7c217856",
+      "authority_seen": "eb1c305017d32c8c3efb0794e547b889e5a80461",
+      "candidate": "CAND-REFRACTORY-CURRENT-ACCOUNTING-01",
+      "research_head": "ac5f4d5ef59bafaafe046130d21d3bed27a677a4",
+      "ordinary_ci": 35471788678,
+      "ordinary_ci_state": "completed_success",
+      "architecture_workflow": 35471788666,
+      "architecture_workflow_state_fresh": "completed_failure",
+      "failure_stage": "VERIFY_PROSPECTIVE_BINDING_ONLY",
+      "architecture_job": "skipped",
+      "outcome_visible": false,
+      "valid_terminal": null,
       "evidentiary_status": "NON_EVIDENTIARY",
-      "stop_required": true,
-      "source_blob_verification": "PASS",
-      "joined_control_match": true,
-      "decision_facts": {
-        "representation_effect": true,
-        "assembly_effect": true,
-        "functional_effect": true
-      }
+      "static_failure_diagnosis": "contract binds a continuous semantic source comment but preflight uses raw substring matching against the exact line-wrapped two-comment-line source; this deterministically makes bound_positive_drive_ignored_comment_present false while the source blob and semantic criterion are unchanged"
     },
     "sub": {
-      "mailbox_timestamp_jst": "2026-09-20 05:44",
-      "latest_target": "REFRACTORY_INHIBITION_CANCELLATION_DISCOVERY_CYCLE1",
-      "research_head": "7b1dff2b1b3677c4af37969364b74d119bd942a8",
-      "prospective_binding": "cfab761c4bb971593ddab3ab37cd0c8398d13b66",
-      "workflow": 35468137269,
+      "mailbox_timestamp_jst": "2026-09-20 06:46",
+      "latest_target": "OUTCOME_CREDIT_SLOT_OVERWRITE_DISCOVERY_CYCLE1",
+      "research_head": "83eb00212eb9c877e8217c44dfb35a5563f04626",
+      "workflow": 35471236612,
       "workflow_state_fresh": "completed_success",
       "recommendation": "PROMOTE_TO_ARCHITECTURE_STUDY",
       "analyst_review": "PROMOTE_TO_ARCHITECTURE_STUDY",
+      "candidate_id": "CAND-V05-DELAYED-OUTCOME-ATTRIBUTION-01",
       "evidentiary_status": "NON_EVIDENTIARY",
-      "ordinary_reduction": "positive and negative same-time currents are netted before the refractory min(0, net_current) clamp"
+      "ordinary_reduction": "one mutable pending activation plus one mutable pending action tuple are overwritten by a newer decision; learn_outcome carries no episode or decision identity",
+      "scope_limit": "current repository evaluation/demo/test callsites call learn_outcome immediately after process_episode, so delayed/asynchronous prevalence is not established"
     }
   },
   "external_inputs": {
     "control_brain": {
-      "timestamp_jst": "2026-09-20 04:50",
-      "commit": "98155846394925730997fc35389fd6ad1b53f710",
+      "timestamp_jst": "2026-09-20 06:50",
+      "commit": "36a41bb720c051ee6d4563d7ecb6b720a8fc2c2d",
       "role": "strategic_prior_only",
-      "programme_position": "FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL"
+      "programme_position": "FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL",
+      "operating_update": "PROSPECTIVE_HANDOFF_BINDING_GUARD_ADOPTED",
+      "suppression_utility_assignment": "CTRL-20260920-0650-SUPPRESSION-STATIC-DETECTOR-CONSISTENCY"
     },
     "literature": {
-      "timestamp_jst": "2026-09-20 03:30",
-      "commit": "123b05253edbe3247cf4979e0bae1e230de0b4e6",
-      "finding": "No new Assembly/Refractory-specific update; ordinary configuration/API/event-time reductions remain prior context."
+      "timestamp_jst": "2026-09-20 06:30",
+      "commit": "a39f0007a55000efd7a237f05e21d381176e47f1",
+      "finding": "Absolute refractory does not imply one universal input policy. Signed-current netting, discard/defer/clamp/integrate choices and retained post-refractory state are ordinary model semantics; equal-current cancellation must not be generalized to conductance-based biology."
     },
     "independent_audit": {
       "timestamp_jst": "2026-09-19 22:31",
-      "commit": "c24ec86447a0030cbe1d072bf8796f8f78f7b2dd",
-      "finding": "H5 remains ROBUST_SO_FAR only for the exact registered aggregate algorithmic-work claim; no general no-go inference."
+      "finding": "H5 remains ROBUST_SO_FAR only for the exact registered aggregate algorithmic-work claim; global eligibility maintenance dominates the audited sparse implementation and no general event-routing no-go inference is permitted."
     },
     "methodology": {
-      "timestamp_jst": "2026-09-20 05:18",
-      "commit": "16ce8d76348853cfec39a686faada91109e797d1",
+      "timestamp_jst": "2026-09-20 06:20",
+      "commit": "6797d28848673341075082acb7940da2cc8a3c9f",
       "overall": "MIXED_CALIBRATION",
-      "finding": "Scientific gates remain calibrated. Tighten decision-relevant machine-fact extraction validity separately from provenance/handoff binding; fail closed on detector anomalies."
+      "finding": "Substantive science gates remain calibrated; prospectively tighten provenance/handoff binding and machine-fact extractor fidelity. Brittle literal semantic detectors should fail closed; do not repair/relabel completed outcomes."
     },
     "repository_steward": {
       "timestamp_jst": "2026-09-20 01:50",
@@ -83,13 +78,10 @@
       "role": "governance_advisory_only"
     },
     "utility": {
-      "updated_at": "2026-09-20T05:23:53+09:00",
-      "assignment_id": "CTRL-20260920-0450-HANDOFF-BINDING-GUARD",
-      "status": "COMPLETED",
-      "validation": "PASS_EXPECTATIONS",
-      "recommendation": "ADOPT_PROSPECTIVELY_AFTER_SEPARATE_CONTROL_DECISION",
-      "suppression_detector_request": "EVA-20260920-0502-SUPPRESSION-STATIC-DETECTOR-CONSISTENCY",
-      "suppression_detector_request_status": "PROPOSED_PENDING_CONTROL_DISPOSITION"
+      "branch_tip": "dcb7dc021b09c7ec0713d99b8c2f8168169ac8af",
+      "handoff_binding_guard": "COMPLETED_PASS_EXPECTATIONS_ADOPTED_PROSPECTIVELY_BY_CONTROL",
+      "active_assignment": "CTRL-20260920-0650-SUPPRESSION-STATIC-DETECTOR-CONSISTENCY",
+      "status": "ASSIGNED_READ_ONLY_NONBLOCKING"
     }
   },
   "research_layer_state": {
@@ -99,9 +91,10 @@
       "status": "NON_EVIDENTIARY"
     },
     "ARCHITECTURE_STUDY": {
-      "state": "ACTIVE_PENDING_MAIN_PROSPECTIVE_BINDING",
+      "state": "ACTIVE_PRESTART_MACHINE_FACT_BINDING_BLOCKER",
       "owner": "MAIN",
       "current_object": "CAND-REFRACTORY-CURRENT-ACCOUNTING-01",
+      "queued_object": "CAND-V05-DELAYED-OUTCOME-ATTRIBUTION-01",
       "status": "NON_EVIDENTIARY"
     },
     "PRE_FORMAL": {
@@ -117,226 +110,116 @@
     {
       "id": "CAND-REFRACTORY-CURRENT-ACCOUNTING-01",
       "classification": "ARCHITECTURE_STUDY",
-      "question": "During absolute refractory, do same-time positive arrivals cancel inhibitory current before the refractory clamp, and does that current-accounting choice alter one fixed post-refractory spike observable relative to a comment-consistent positive-ignore shadow comparator?",
-      "not_rescue_reason": "Fresh field-state/API semantics discovered on synthetic development data; independent of all consumed identities and unrelated to prior Assembly/Temporal/Top-k lines.",
+      "question": "Does same-time signed-current netting before the refractory clamp alter retained state and one fixed post-refractory spike observable relative to the already-bound positive-ignore shadow?",
+      "not_rescue_reason": "Fresh field/API semantics from synthetic Discovery; independent of all consumed identities.",
       "target_layer": "ARCHITECTURE_STUDY",
       "expected_information_gain": "HIGH_ARCHITECTURE_API_SEMANTICS_LOW_NOVELTY",
-      "ordinary_reduction_risks": [
-        "ordinary signed-current aggregation",
-        "absolute-refractory clamp semantics",
-        "comment/implementation contract mismatch",
-        "post-refractory membrane-state carryover"
-      ],
-      "implementation_distance": "NEAR",
-      "scientific_choices_still_open": [
-        "whether absolute refractory means spike prevention only, positive-current rejection, or signed-current netting",
-        "whether comment/docs/tests define a supported net-current contract",
-        "whether the fixed state difference reaches the preregistered post-refractory spike observable"
-      ],
-      "exploration_cycle_count": {
-        "DISCOVERY": 1,
-        "ARCHITECTURE_STUDY": 0
-      },
-      "promotion_rejection_condition": "One prospectively bound NON_EVIDENTIARY Architecture cycle. Any valid terminal STOPs for fresh Analyst review; no automatic PRE_FORMAL/FORMAL and no in-run semantic fix."
+      "ordinary_reduction_risks": ["signed-current aggregation", "refractory discard/defer/clamp/integrate policy", "retained membrane state", "current-based versus conductance-based boundary"],
+      "implementation_distance": "VERY_NEAR_AFTER_PREFLIGHT_FIX",
+      "scientific_choices_still_open": ["supported refractory input/state policy", "whether the fixed difference reaches the preregistered probe"],
+      "exploration_cycle_count": {"DISCOVERY": 1, "ARCHITECTURE_STUDY": 0},
+      "promotion_rejection_condition": "One fixed NON_EVIDENTIARY Architecture cycle after exact preflight passes; every valid terminal STOPs for fresh review."
     },
     {
-      "id": "CAND-ASSEMBLY-CROSSCASCADE-FALLBACK-01",
-      "classification": "HOLD",
-      "question": "Does episode-global fallback across distinct sparse cascades produce functionally consequential assembly behavior relative to a boundary-preserving shadow extractor?",
-      "not_rescue_reason": "Fresh extractor-segmentation/testbed question independent of consumed lines and distinct from the rejected assembly prototype-order line.",
+      "id": "CAND-V05-DELAYED-OUTCOME-ATTRIBUTION-01",
+      "classification": "ARCHITECTURE_STUDY",
+      "question": "Can a supported delayed/interleaved outcome be attributed to the wrong decision because prediction/action credit use the latest mutable pending activation/action?",
+      "not_rescue_reason": "Fresh public-API bookkeeping question independently discovered on synthetic inputs and unrelated to consumed results.",
       "target_layer": "ARCHITECTURE_STUDY",
-      "expected_information_gain": "CURRENT_QUESTION_RESOLVED_POSITIVE_ARCHITECTURE_EFFECT",
-      "ordinary_reduction_risks": [
-        "ordinary segmentation semantics",
-        "episode-global fallback policy",
-        "minimum-spike gating",
-        "cascade-provenance erasure"
-      ],
-      "implementation_distance": "COMPLETE_CURRENT_OBJECT",
-      "scientific_choices_still_open": [
-        "only a freshly framed prevalence/reliability or supported-contract successor, if independently justified"
-      ],
-      "exploration_cycle_count": {
-        "DISCOVERY": 1,
-        "ARCHITECTURE_STUDY": 1
-      },
-      "promotion_rejection_condition": "Current object complete at FUNCTIONAL_CROSSCASCADE_SEGMENTATION_EFFECT. HOLD; no same-object cycle 2. Any successor must be a fresh prospective question."
+      "expected_information_gain": "MEDIUM_HIGH_API_RELIABILITY_LOW_NOVELTY",
+      "ordinary_reduction_risks": ["immediate-only caller contract", "single-slot pending bookkeeping", "unsupported asynchronous use", "identity-token API semantics"],
+      "implementation_distance": "NEAR_BUT_QUEUED",
+      "scientific_choices_still_open": ["whether learn_outcome is immediate-only", "supported interleaving scope", "identity-bound attribution semantics", "fixed downstream observable if dynamic comparison is justified"],
+      "exploration_cycle_count": {"DISCOVERY": 1, "ARCHITECTURE_STUDY": 0},
+      "promotion_rejection_condition": "Blocked until current MAIN stops. Future Architecture first binds supported caller ordering; reject dynamic continuation if canonical use is immediate-only with no delayed/interleaved support, otherwise one fresh cycle then STOP."
     },
     {
       "id": "CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01",
       "classification": "HOLD",
-      "question": "Is transient suppress/clear explicitly state-preserving, state-neutral, or silent/ambiguous for supported causal/recovery use?",
-      "not_rescue_reason": "Fresh API/testbed semantics; scored persistent causal-ablation path excluded.",
+      "question": "What are supported transient suppression/clear semantics and was the completed machine-fact extraction source-faithful?",
+      "not_rescue_reason": "Fresh API/testbed line; completed artifact remains closed.",
       "target_layer": "ARCHITECTURE_STUDY",
       "expected_information_gain": "BLOCKED_BY_MACHINE_FACT_EXTRACTOR_FIDELITY",
-      "ordinary_reduction_risks": [
-        "threshold-only blockade",
-        "retained dynamic state",
-        "lazy decay",
-        "ordinary API semantics",
-        "brittle literal-string source detector"
-      ],
+      "ordinary_reduction_risks": ["threshold-only blockade", "retained state", "lazy decay", "brittle static detector"],
       "implementation_distance": "HOLD",
-      "scientific_choices_still_open": [
-        "whether the completed artifact's static fact extraction is source-faithful",
-        "fresh future transient contract only after bounded read-only detector characterization"
-      ],
-      "exploration_cycle_count": {
-        "DISCOVERY": 1,
-        "ARCHITECTURE_STUDY": 1
-      },
-      "promotion_rejection_condition": "No repair/rerun/relabel of completed AMBIGUOUS_CONTRACT artifact. Hold successor allocation pending read-only detector-consistency disposition and any genuinely fresh object."
+      "scientific_choices_still_open": ["future fresh semantics only after bounded detector consistency result"],
+      "exploration_cycle_count": {"DISCOVERY": 1, "ARCHITECTURE_STUDY": 1},
+      "promotion_rejection_condition": "No repair/rerun/relabel of completed AMBIGUOUS_CONTRACT; wait for assigned Utility diagnostic."
     },
     {
       "id": "CAND-TOPK-PA-01",
       "classification": "HOLD",
       "question": "Is there residual beyond ordinary hard switching, basin/hysteresis effects, and recurrent transient amplification?",
-      "not_rescue_reason": "Existing lower-funnel characterization only; same-object cycle 3 prohibited.",
+      "not_rescue_reason": "Completed lower-funnel characterization; same-object cycle 3 prohibited.",
       "target_layer": "ARCHITECTURE_STUDY",
       "expected_information_gain": "HIGH_ONLY_IF_FRESH_REDUCTION_OBJECT",
-      "ordinary_reduction_risks": [
-        "hard switching",
-        "border collision",
-        "basin selection",
-        "WTA hysteresis",
-        "recurrent transient gain"
-      ],
+      "ordinary_reduction_risks": ["hard switching", "border collision", "basin selection", "WTA hysteresis", "recurrent transient gain"],
       "implementation_distance": "HOLD",
-      "scientific_choices_still_open": [
-        "fresh reduction discriminator only"
-      ],
-      "exploration_cycle_count": {
-        "DISCOVERY": 1,
-        "ARCHITECTURE_STUDY": 2,
-        "UTILITY_READ_ONLY": 2
-      },
-      "promotion_rejection_condition": "No cycle 3; no PRE_FORMAL without a fresh reduction question and prospective support handling."
+      "scientific_choices_still_open": ["fresh reduction discriminator only"],
+      "exploration_cycle_count": {"DISCOVERY": 1, "ARCHITECTURE_STUDY": 2, "UTILITY_READ_ONLY": 2},
+      "promotion_rejection_condition": "No cycle 3 and no PRE_FORMAL promotion from current narrow/mixed result."
     },
     {
       "id": "CAND-H7-RESP-01",
       "classification": "HOLD",
       "question": "Does a native online/local responsibility-sensitive mechanism independently appear under matched privilege?",
-      "not_rescue_reason": "No current mechanism; dormant candidate not constructed to fill utilization.",
+      "not_rescue_reason": "Dormant future candidate; no current mechanism.",
       "target_layer": "PRE_FORMAL",
       "expected_information_gain": "VERY_HIGH_IF_NATIVE_MECHANISM_APPEARS",
-      "ordinary_reduction_risks": [
-        "counterfactual responsibility",
-        "actual causality",
-        "central-critic/replay privilege",
-        "ordinary local-learning reductions"
-      ],
+      "ordinary_reduction_risks": ["counterfactual responsibility", "actual causality", "central-critic/replay privilege", "ordinary local-learning reductions"],
       "implementation_distance": "FAR",
-      "scientific_choices_still_open": [
-        "native mechanism",
-        "equal-privilege comparator",
-        "fresh reduction discriminator"
-      ],
-      "exploration_cycle_count": {
-        "PRE_FORMAL": 0
-      },
+      "scientific_choices_still_open": ["native mechanism", "equal-privilege comparator", "fresh discriminator"],
+      "exploration_cycle_count": {"PRE_FORMAL": 0},
       "promotion_rejection_condition": "Remain HOLD; no queue-filler construction."
     }
   ],
   "sub_discovery_review": {
     "new_review_this_run": true,
-    "source_target": "REFRACTORY_INHIBITION_CANCELLATION_DISCOVERY_CYCLE1",
+    "source_target": "OUTCOME_CREDIT_SLOT_OVERWRITE_DISCOVERY_CYCLE1",
     "classification": "PROMOTE_TO_ARCHITECTURE_STUDY",
-    "candidate_id": "CAND-REFRACTORY-CURRENT-ACCOUNTING-01",
-    "prospective_boundary": "Fresh NON_EVIDENTIARY field/refractory current-accounting Architecture object only; exploratory result cannot be relabeled formal."
+    "candidate_id": "CAND-V05-DELAYED-OUTCOME-ATTRIBUTION-01",
+    "prospective_boundary": "Fresh NON_EVIDENTIARY supported-caller/outcome-attribution Architecture object only; SUB result cannot be relabeled evidence and SUB must not continue it."
   },
   "main_lane": "REFRACTORY_CURRENT_ACCOUNTING_ARCHITECTURE_STUDY_CYCLE1",
   "sub_lane": "BOUNDED_SECONDARY_DISCOVERY",
   "sub_fallback": "NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON",
-  "main_prospective_contract": {
-    "layer": "ARCHITECTURE_STUDY",
-    "evidentiary_status": "NON_EVIDENTIARY",
-    "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "required_source_blob": {
-      "path": "src/sparkbrain/v04/field.py",
-      "sha": "e2279d69cd04030238317361d5ee3abdc1009c32"
-    },
-    "production_semantics": "NET_THEN_REFRACTORY_CLAMP",
-    "shadow_comparator": "IGNORE_POSITIVE_THEN_APPLY_INHIBITION_DURING_REFRACTORY",
-    "input_scope": "synthetic/development-only; no official TEST, consumed raw, trained confirmatory checkpoint, formal scorer or one-way identity",
-    "fixed_core_arms": [
-      "inhibition-only",
-      "balanced same-time inhibition+excitation",
-      "excitation-only"
-    ],
-    "fixed_downstream_observable": "post-refractory probe spike occurrence/count",
-    "controls": [
-      "same currents/timestamps outside refractory to confirm comparator differs only in refractory accounting",
-      "inhibition-only control",
-      "excitation-only control"
-    ],
-    "terminal_outcomes": [
-      "EXPLICIT_NETTING_CONTRACT_MATCHES_PRODUCTION",
-      "NO_SUPPORTED_MIXED_SIGN_RUNTIME_CONDITION",
-      "STATE_ONLY_REFRACTORY_ACCOUNTING_EFFECT",
-      "FUNCTIONAL_REFRACTORY_ACCOUNTING_EFFECT",
-      "NO_SEMANTIC_DIFFERENCE_UNDER_FIXED_PROBE",
-      "MIXED_OR_AMBIGUOUS_REFRACTORY_CONTRACT",
-      "INVALID_DIAGNOSTIC"
-    ],
-    "stop_after_any_terminal": true
-  },
   "outcome_contingencies": {
-    "PRE_START_BINDING_COMPLETE": "one Refractory current-accounting Architecture cycle",
-    "PRE_START_MECHANICAL_BLOCKER": "MAIN science-invariant pre-diagnostic fix + exact rebind + ordinary exact-head CI",
+    "PRE_START_COMMENT_DETECTOR_REPRESENTATION_BLOCKER": "MAIN may normalize/extract the exact already-bound comment content only; preserve contract semantics and all scientific bindings; rebind exact head and run ordinary CI/preflight",
+    "PREFLIGHT_GREEN_UNCHANGED_CONTRACT": "execute exactly one fixed Refractory NON_EVIDENTIARY Architecture cycle",
+    "ANY_OTHER_MACHINE_FACT_FAILURE": "STOP_TO_FRESH_ANALYST",
     "PRE_START_SEMANTIC_OR_PROTOCOL_GAP": "STOP",
-    "EXPLICIT_NETTING_CONTRACT_MATCHES_PRODUCTION": "STOP_REJECT_SCIENTIFIC_NOVELTY_CONTINUATION; retain architecture/API contract note only",
+    "EXPLICIT_NETTING_CONTRACT_MATCHES_PRODUCTION": "STOP_ARCHITECTURE_API_NOTE_ONLY",
     "NO_SUPPORTED_MIXED_SIGN_RUNTIME_CONDITION": "STOP_REJECT_RUNTIME_RELEVANCE_CLAIM",
-    "STATE_ONLY_REFRACTORY_ACCOUNTING_EFFECT": "STOP_ARCHITECTURE_STATE_SEMANTICS_NOTE",
+    "STATE_ONLY_REFRACTORY_ACCOUNTING_EFFECT": "STOP_ARCHITECTURE_STATE_SEMANTICS_ONLY",
     "FUNCTIONAL_REFRACTORY_ACCOUNTING_EFFECT": "STOP_FRESH_ARCHITECTURE_REVIEW_NO_AUTO_PRE_FORMAL",
     "NO_SEMANTIC_DIFFERENCE_UNDER_FIXED_PROBE": "STOP_REJECT_CURRENT_FUNCTIONAL_QUESTION",
     "MIXED_OR_AMBIGUOUS_REFRACTORY_CONTRACT": "STOP_HOLD",
-    "INVALID_DIAGNOSTIC": "DISCARD_STOP",
-    "POST_OUTCOME_FAILURE_OR_REDESIGN": "STOP_NO_RESULT_DEPENDENT_REPAIR",
-    "FORMAL_PATHS": "UNARMED_NO_FORMAL_OBJECT"
+    "INVALID_DIAGNOSTIC": "DISCARD_AND_STOP",
+    "POST_OUTCOME_FAILURE_OR_REDESIGN_DESIRE": "STOP_NO_RESULT_DEPENDENT_REPAIR",
+    "FORMAL": "UNARMED_NO_FORMAL_OBJECT"
   },
   "blocked_until": {
-    "REFRACTORY_MAIN_EXECUTION": "Exact prospective source/docs/tests/input/comparator/control/observable/terminal-map/machine-field binding plus exact-head ordinary CI/readiness.",
-    "SUPPRESSION_SUCCESSOR": "Control disposition/result for EVA-20260920-0502-SUPPRESSION-STATIC-DETECTOR-CONSISTENCY and, if needed, a genuinely fresh prospective object; completed artifact is not repaired.",
-    "ASSEMBLY_SUCCESSOR": "Fresh independent prevalence/reliability/contract question; current Architecture object is complete and HOLD.",
-    "PRE_FORMAL": "Fresh supported mechanistic/reduction object.",
-    "FORMAL": "Fresh prospectively admissible object plus one-way authority and all existing formal integrity gates."
+    "main_refractory": "formatting-sensitive comment machine-fact detector is source-faithfully normalized without semantic changes and exact-head CI/preflight are green",
+    "delayed_outcome_attribution": "current MAIN Refractory terminal/stop fresh review plus prospective supported-caller-order binding",
+    "suppression_successor": "CTRL-20260920-0650-SUPPRESSION-STATIC-DETECTOR-CONSISTENCY result and fresh Analyst review",
+    "pre_formal": "fresh supported mechanism/reduction object",
+    "formal": "fresh admissible one-way object, collision-free identity and authority"
   },
   "do_not_touch": [
-    "consumed identities and immutable evidence/control/preserve refs",
-    "completed Assembly cross-cascade cycle-1 artifact and mapped outcome",
-    "completed suppression/topology-config/Temporal/Top-k/H5/NI01/C19/PD01 artifacts and outcomes",
-    "official TEST/formal scorer surfaces",
-    "Utility results/decisions/active state except through their owning control process",
-    "scheduler definitions",
-    "PR 148/149 governance work"
+    "all consumed identities and STARTED/control/preserve/evidence anchors",
+    "official TEST and consumed raw/scored evidence",
+    "completed suppression artifact/terminal: no rerun, repair or relabel",
+    "completed Assembly cross-cascade current question: no same-object cycle 2",
+    "completed Temporal and topology-config current questions",
+    "Top-k same-object cycle 3",
+    "immutable evidence/freeze/control/preserve refs",
+    "scheduler definitions"
   ],
-  "top_3": [
-    {
-      "rank": 1,
-      "action": "MAIN one prospectively bound Refractory current-accounting Architecture cycle",
-      "information_value": "HIGH",
-      "distance": "NEAR",
-      "decision": "GO_NON_EVIDENTIARY_ONLY"
-    },
-    {
-      "rank": 2,
-      "action": "Control/Utility disposition of suppression static-detector consistency request; separately consider prospective adoption point for completed handoff-binding guard",
-      "information_value": "HIGH",
-      "distance": "VERY_NEAR",
-      "decision": "READ_ONLY_CONTROL_PLANE_NONBLOCKING"
-    },
-    {
-      "rank": 3,
-      "action": "SUB one independent bounded Discovery or explicit no-op",
-      "information_value": "MEDIUM",
-      "distance": "OPTIONAL",
-      "decision": "GO_IF_SAFE_NONDUPLICATIVE"
-    }
+  "top3": [
+    {"rank": 1, "action": "MAIN repair only the Refractory preflight comment-detector representation false negative, then exact-head CI/preflight and unchanged Architecture cycle if green", "information_value": "HIGH", "distance": "VERY_NEAR", "go_stop": "GO_NON_EVIDENTIARY_PRESTART_ONLY"},
+    {"rank": 2, "action": "Utility execute already-assigned suppression static-detector consistency audit", "information_value": "HIGH", "distance": "VERY_NEAR", "go_stop": "READ_ONLY_NONBLOCKING"},
+    {"rank": 3, "action": "SUB one independent bounded Discovery or explicit no-op", "information_value": "MEDIUM", "distance": "OPTIONAL", "go_stop": "DISCOVERY_ONLY"}
   ],
-  "go_stop_1": {
-    "go": "One NON_EVIDENTIARY Refractory current-accounting Architecture cycle only after exact source/comment/docs/tests/input/comparator/control/observable/terminal-map/machine-field bindings and exact-head ordinary CI/readiness.",
-    "stop": "Semantic/protocol scope gap, need for TEST/consumed/formal surfaces, unsupported mixed-sign condition, arm mismatch beyond preregistered refractory treatment, binding mismatch, any valid terminal class, or any outcome-bearing failure requiring redesign."
-  },
   "consumed_identities": [
     "c19-external-v2-official-v4",
     "C19-R1 revision-authority official-v1",
@@ -346,19 +229,10 @@
     "NI01 official-v1",
     "H5 official-v1"
   ],
-  "utility_request": {
-    "created_this_run": false,
-    "reason": "No new orphan bounded task. Generic handoff-binding guard completed successfully; existing suppression detector-consistency request already covers the remaining detector-fidelity question.",
-    "completed_assignment": "CTRL-20260920-0450-HANDOFF-BINDING-GUARD",
-    "completed_assignment_validation": "PASS_EXPECTATIONS",
-    "pending_request": "EVA-20260920-0502-SUPPRESSION-STATIC-DETECTOR-CONSISTENCY",
-    "pending_request_status": "PROPOSED_PENDING_CONTROL_DISPOSITION"
-  },
+  "utility_request_created": null,
   "persistence": {
     "branch": "ops/evidence-analyst-handoff",
-    "history_path": "analysis/orchestrator/history/2026-09-20/0558.md",
-    "allowed_paths_only": true,
-    "force_push": false,
-    "atomic_git_data_commit_requested": true
+    "paths": ["analysis/orchestrator/latest.md", "analysis/orchestrator/state.json", "analysis/orchestrator/history/2026-09-20/0700.md"],
+    "force_push": false
   }
 }
