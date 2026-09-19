@@ -1,14 +1,14 @@
 {
   "run_id": "sparkbrain-main-primary-20260919T2317JST",
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "WAITING_EXTERNAL",
   "started_at": "2026-09-19T23:17:40+09:00",
-  "heartbeat_at": "2026-09-19T23:18:00+09:00",
+  "heartbeat_at": "2026-09-19T23:30:00+09:00",
   "analyst_commit": "982e5686524c9fc2b665efcf44069fef49196333",
   "active_branch": "research/main-assembly-prototype-lockin-arch-study-20260919",
   "active_identity": null,
-  "active_step": "PRE_START_SPEC_AND_BINDING",
-  "workflow_run_id": null,
-  "expected_next_action": "Create a fresh research branch from exact main ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d, bind the prospectively fixed DEV-only Assembly prototype-lockin Architecture cycle-1 contract/harness, run exact-head CI/preflight, then execute exactly one diagnostic if green.",
+  "active_step": "WAITING_EXTERNAL_REPAIRED_EXACT_HEAD_ARCHITECTURE_WORKFLOW",
+  "workflow_run_id": 35448815310,
+  "expected_next_action": "Collect workflow 35448815310 only for exact head 7d9b90e58ee088ff2b4187d3c62c5e568148e6aa. If pre-diagnostic CI/preflight fails, repair only science-invariant mechanical defects under the unchanged prospective contract. If one valid diagnostic completes, verify artifacts and raw-before-summary, consume the fixed four-way mapping exactly once, persist the NON_EVIDENTIARY Architecture result, and STOP for fresh Evidence Analyst review. Do not run cycle 2 or auto-promote to PRE_FORMAL/FORMAL.",
   "owner": "main"
 }
