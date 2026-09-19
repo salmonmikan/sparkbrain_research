@@ -1,146 +1,76 @@
 {
-  "timestamp": "2026-09-19T19:14:28+09:00",
+  "timestamp": "2026-09-19T19:55:04+09:00",
   "worker_role": "main",
-  "execution_mode": "PRIMARY",
-  "analyst_commit": "5b63d21f44812ef8d4938c9ad968bb8ab481b3c5",
+  "execution_mode": "RELAY",
+  "analyst_commit": "9c6302d83f71ab22d45c5f6290951a48902d9c1e",
   "research_layer": "ARCHITECTURE_STUDY",
-  "current_lane": "TOPK_ROUTER_PERSISTENT_AMPLIFICATION_ARCHITECTURE_STUDY_CYCLE2_REPLICATION",
-  "current_phase": "CYCLE2_COMPLETED_STOP_FOR_FRESH_ANALYST_REVIEW",
+  "current_lane": "STRUCTURAL_ORDER_PATH_DEPENDENCE_ARCHITECTURE_STUDY_CYCLE1",
+  "current_phase": "EXACT_HEAD_CI_IN_PROGRESS_BEFORE_OUTCOME_DIAGNOSTICS",
   "candidate": {
-    "id": "CAND-TOPK-PA-01",
-    "question": "Is the observed persistence-coupled delayed amplification after hard-router turnover repeatable across an independently trained checkpoint/model seed under the unchanged cycle-1 perturbation contract?",
+    "id": "CAND-STRUCTURAL-ORDER-PATH-01",
     "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
-    "exploration_cycle_count": {
-      "discovery": 1,
-      "architecture_completed": 2,
-      "default_max": 3
-    }
-  },
-  "active_claim": "The bounded DEV-only architecture signal replicated under independent model/training seed 42 and the unchanged cycle-1 contract. This is repeatable architecture/system-integration information only, not FORMAL evidence or a mechanistic-distinctness/new-principle result.",
-  "research_layer_state_after_run": {
-    "ARCHITECTURE_STUDY": "CAND-TOPK-PA-01 cycle 2 completed with PERSISTENCE_SIGNAL_REPLICATED and is stopped for Analyst review",
-    "PRE_FORMAL": "NOT_AUTHORIZED; candidate is only eligible for a fresh Analyst review",
-    "FORMAL": "EMPTY_HOLD"
+    "exploration_cycle": "architecture 1/3 authorized; no cycle 2 authority"
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst_handoff": "5b63d21f44812ef8d4938c9ad968bb8ab481b3c5",
-    "authorized_continuation_head": "97f542d86dcd3a609cd039379fcda41ba61e0909",
-    "research_branch": "research/main-topk-persistent-amplification-arch-study-20260919",
-    "research_head": "04ced2b97ed088bb2cdb086d164a86212741e601",
-    "workflow_run_id": 35435714352,
-    "artifact_id": 10581094196,
-    "artifact_digest": "sha256:31820e1be709068e51aac00d9df17aa1df642b9a58245d44800065a1dd409500",
+    "evidence_analyst_handoff": "9c6302d83f71ab22d45c5f6290951a48902d9c1e",
+    "discovery_reference": "research/exploratory-sub-structural-order-path-dependence-20260919@8156bba7b119fb831b7c28eac7cd900746f9876e",
+    "research_branch": "research/main-structural-order-path-arch-study-20260919",
+    "research_head": "16389e70352336b9d0ea539bdb5951a54f79ff2e",
+    "workflow_run_id": 35438684016,
     "formal_identity": null,
     "started_ref": null,
     "formal_preserve_ref": null,
     "formal_evidence_ref": null
   },
-  "fast_path_used": true,
-  "full_reconciliation_reason": null,
   "lease_collision_reconciliation": {
     "observed_prior_lease": {
-      "run_id": "sparkbrain-main-relay-20260919T184525JST",
-      "execution_mode": "RELAY",
-      "status": "WAITING_EXTERNAL",
-      "heartbeat_at": "2026-09-19T18:48:41+09:00"
+      "run_id": "sparkbrain-main-primary-20260919T191428JST",
+      "execution_mode": "PRIMARY",
+      "status": "COMPLETED",
+      "heartbeat_at": "2026-09-19T19:14:28+09:00"
     },
-    "prior_wait_lease_age_over_20_minutes_at_takeover": true,
-    "research_head_reconciled_before_takeover": "04ced2b97ed088bb2cdb086d164a86212741e601",
-    "fresh_same_object_running_collision_found": false,
-    "conflicting_research_mutation_found": false,
-    "primary_lease_acquired": true,
-    "final_lease_status": "COMPLETED"
+    "fresh_same_object_primary_running_collision_found": false,
+    "main_ref_reconciled": true,
+    "analyst_ref_reconciled": true,
+    "sub_collision_check": "SUB latest explicitly left structural-order candidate untouched"
   },
-  "contingencies_consumed": [
-    "FRESH_ANALYST_GO_FOR_EXACTLY_ONE_CYCLE2_INDEPENDENT_SEED_REPLICATION",
-    "RUN_VALID.PERSISTENCE_SIGNAL_REPLICATED -> STOP_ELIGIBLE_FOR_FRESH_PRE_FORMAL_REVIEW_NOT_AUTOMATIC_PROMOTION"
+  "contingency_consumed": "GO_NON_EVIDENTIARY_EXACTLY_ONE_STRUCTURAL_ORDER_PATH_ARCHITECTURE_STUDY_CYCLE1",
+  "prospective_binding": {
+    "model_training_seed": 43,
+    "structural_seed": 83,
+    "permutation_seed": 20260919,
+    "train_dev_offset_count": [0, 48],
+    "adapt_dev_offset_count": [48, 12],
+    "probe_dev_offset_count": [60, 12],
+    "steps": 24,
+    "adapt_probe_worlds": ["goal_conflict_world", "multi_object_world"],
+    "order_pairs": 12,
+    "conditions": ["full_budget16", "full_budget64", "edge_only_budget64"],
+    "test_allowed": false,
+    "formal_allowed": false
+  },
+  "critical_path_actions_performed": [
+    "Read latest Analyst handoff/state and MAIN latest/state/lease; checked SUB latest for collision only.",
+    "Re-fetched exact main and Analyst refs and confirmed no fresh PRIMARY RUNNING collision.",
+    "Re-fetched the promoted structural Discovery reference as non-authoritative implementation context only.",
+    "Created a fresh MAIN research branch from exact current main.",
+    "Added only the prospectively fixed DEV-only cycle-1 harness and exact-head CI execution wiring.",
+    "Separated raw acquisition/upload from terminal mapping so raw diagnostic material is archived before interpretation.",
+    "Launched exact-head workflow 35438684016 via the research-branch push and confirmed it is in progress."
   ],
-  "branches_prs_advanced": {
-    "this_primary_run": [],
-    "existing_relay_research_commit_consumed": "research/main-topk-persistent-amplification-arch-study-20260919@04ced2b97ed088bb2cdb086d164a86212741e601",
-    "pull_requests_merged": [],
-    "research_merge_performed": false
+  "workflow_check": {
+    "run_id": 35438684016,
+    "head_sha": "16389e70352336b9d0ea539bdb5951a54f79ff2e",
+    "status": "in_progress",
+    "conclusion": null,
+    "python_3_11": "in_progress",
+    "python_3_13": "in_progress",
+    "architecture_job_started": false,
+    "outcome_bearing_diagnostics_visible": false
   },
-  "workflow_experiments": [
-    {
-      "run_id": 35435714352,
-      "head_sha": "04ced2b97ed088bb2cdb086d164a86212741e601",
-      "event": "push",
-      "attempt": 1,
-      "status": "completed",
-      "conclusion": "success",
-      "python_3_11_job": "success",
-      "python_3_13_job": "success",
-      "ordinary_ci_before_architecture_step": "success",
-      "cycle2_architecture_step": "success",
-      "raw_artifact_upload_step": "success",
-      "artifact_id": 10581094196
-    }
-  ],
-  "artifact_validation": {
-    "downloaded_zip_sha256": "31820e1be709068e51aac00d9df17aa1df642b9a58245d44800065a1dd409500",
-    "github_artifact_digest_match": true,
-    "raw_row_count": 2304,
-    "paired_case_count": 1152,
-    "missing_condition_pairs": 0,
-    "turnover_flag_mismatches": 0,
-    "metadata_binding": {
-      "analyst_commit": "5b63d21f44812ef8d4938c9ad968bb8ab481b3c5",
-      "source_main_sha": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-      "config_path": "configs/experiments/phase2/main.json",
-      "dev_manifest_path": "configs/experiments/phase1/manifests/dev-v1.json",
-      "model_training_seed": 42,
-      "training_episode_count": 48,
-      "calibration_episode_count": 12,
-      "probe_positions_1based": [6, 12, 18, 24],
-      "direction_seed": 20260919,
-      "directions_per_probe": 8,
-      "magnitudes": [0.01, 0.05, 0.1],
-      "probe_horizon": 6,
-      "conditions": ["full", "no_persistent_state"],
-      "test_manifest_opened": false
-    }
-  },
-  "observations_results": {
-    "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
-    "formal_scientific_evidence_created": false,
-    "new_architecture_information": true,
-    "harness_local_classification": "PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL",
-    "analyst_mapped_terminal_outcome": "PERSISTENCE_SIGNAL_REPLICATED",
-    "total_paired_cases": 1152,
-    "total_turnover_cases": 28,
-    "turnover_minimum": 20,
-    "magnitude_summary": [
-      {
-        "magnitude": 0.01,
-        "turnover_cases": 0,
-        "median_state_auc_ratio": null,
-        "median_probability_auc_ratio": null,
-        "median_action_logit_auc_ratio": null,
-        "signal_criterion_met": false
-      },
-      {
-        "magnitude": 0.05,
-        "turnover_cases": 2,
-        "median_state_auc_ratio": 4.288189601055972,
-        "median_probability_auc_ratio": 21.732477898653634,
-        "median_action_logit_auc_ratio": 22.89248489324716,
-        "signal_criterion_met": true
-      },
-      {
-        "magnitude": 0.1,
-        "turnover_cases": 26,
-        "median_state_auc_ratio": 4.421003240394292,
-        "median_probability_auc_ratio": 15.39170766074759,
-        "median_action_logit_auc_ratio": 15.491224014190244,
-        "signal_criterion_met": true
-      }
-    ],
-    "fixed_signal_rule": "total turnover >=20 and median state-AUC ratio >=2.0 plus median probability-AUC ratio >=1.5 at at least 2 of 3 magnitudes",
-    "signal_magnitudes_met": [0.05, 0.1],
-    "interpretation_boundary": "Repeatable bounded architecture signal only; ordinary hard top-k boundary geometry plus ordinary recurrent persistence remain live reductions."
-  },
+  "scientific_result": null,
+  "new_scientific_information": false,
   "consumed_identities": [
     "c19-external-v2-official-v4",
     "c19-r1-revision-authority-official-v1",
@@ -152,7 +82,7 @@
   ],
   "current_object_consumed_identity": null,
   "integrity_state": {
-    "status": "CLEAN_NON_EVIDENTIARY_CYCLE2_COMPLETE",
+    "status": "CLEAN_PRE_DIAGNOSTIC_WAIT",
     "official_test_accessed": false,
     "formal_identity_created": false,
     "started_created": false,
@@ -162,37 +92,16 @@
     "immutable_evidence_modified": false,
     "consumed_identity_reused": false,
     "research_merge_performed": false,
-    "outcome_responsive_retuning": false,
-    "same_run_rerun": false,
-    "artifact_verified_before_final_interpretation": true
+    "outcome_responsive_change": false
   },
-  "critical_path_fixes_completed": [],
-  "same_run_steps": [
-    "Read fresh Analyst latest/state, MAIN latest/state/lease, and SUB latest.",
-    "Re-fetched exact research head, workflow, artifact, Analyst ref, and main ref.",
-    "Recovered the stale external-wait lease only after confirming no conflicting mutation.",
-    "Acquired PRIMARY MAIN lease before control-plane mutation.",
-    "Collected completed exact-head workflow 35435714352 and verified all required CI/execution/upload steps succeeded.",
-    "Downloaded artifact 10581094196 and verified its ZIP digest against GitHub metadata.",
-    "Validated metadata bindings and independently recomputed paired-case/turnover/magnitude summaries from raw rows.",
-    "Applied only the prospectively fixed Analyst cycle-2 outcome mapping.",
-    "Stopped at Analyst boundary without PRE_FORMAL promotion, cycle 3, redesign, rerun, merge, or formalization."
-  ],
-  "blockers": [
-    "Fresh Analyst review is required before any PRE_FORMAL work or further top-k candidate cycle.",
-    "FORMAL remains unarmed with no fresh formal object or identity."
-  ],
-  "work_left_for_SUB": "Independent SUB Discovery only. SUB must not take CAND-TOPK-PA-01 follow-up or the already-promoted structural-order Architecture follow-up unless a fresh Analyst repartitions it.",
-  "lane_repartition_reason": null,
   "utility_request_created": null,
-  "stop_reason": "PERSISTENCE_SIGNAL_REPLICATED_STOP_FOR_FRESH_ANALYST_REVIEW",
-  "next_MAIN_action": "Wait for a fresh Evidence Analyst decision. CAND-TOPK-PA-01 is eligible for fresh PRE_FORMAL review only; do not begin PRE_FORMAL, cycle 3, comparator/intervention redesign, retuning, rerun, FORMAL identity/STARTED creation, or merge without new prospective authority.",
+  "stop_reason": "EXACT_HEAD_CI_AND_GATED_ARCHITECTURE_WORKFLOW_IN_PROGRESS",
+  "next_MAIN_action": "Collect workflow 35438684016 only. If it fails before any outcome-bearing diagnostic for a science-invariant mechanical reason, repair only that blocker and re-run exact-head ordinary CI. If outcome-bearing diagnostics became visible, do not rerun or redesign. If valid and successful, independently validate raw/result artifact bindings, accept only the prospectively fixed six-way local Architecture label, persist it, and STOP for fresh Analyst review.",
   "persistence_result": {
-    "latest_md_commit": "a0a4e59495c91dffe9a19cf80a7c9d347e9ea9eb",
-    "history_path": "reports/orchestrator/history/2026-09-19/1914-main.md",
-    "history_commit": "131620d89dad55ed90f70a4360c343557c224404",
+    "latest_md_commit": "061c4471945eab7d9d533cc90d4382e870b4b5d8",
     "state_json": "this update",
-    "lease_json": "final COMPLETED update follows",
+    "lease_json": "WAITING_EXTERNAL update follows",
+    "history_path": "reports/orchestrator/history/2026-09-19/1955-main.md",
     "force_push_used": false
   }
 }
