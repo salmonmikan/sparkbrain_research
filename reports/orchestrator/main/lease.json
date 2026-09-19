@@ -1,14 +1,14 @@
 {
-  "run_id": "sparkbrain-main-primary-20260919T181620JST",
-  "execution_mode": "PRIMARY",
-  "status": "COMPLETED",
-  "started_at": "2026-09-19T18:16:20+09:00",
-  "heartbeat_at": "2026-09-19T18:16:20+09:00",
-  "analyst_commit": "3e83f1eb683ce80e326b756fa304e96688fdd3fe",
+  "run_id": "sparkbrain-main-relay-20260919T184525JST",
+  "execution_mode": "RELAY",
+  "status": "RUNNING",
+  "started_at": "2026-09-19T18:45:25+09:00",
+  "heartbeat_at": "2026-09-19T18:45:25+09:00",
+  "analyst_commit": "5b63d21f44812ef8d4938c9ad968bb8ab481b3c5",
   "active_branch": "research/main-topk-persistent-amplification-arch-study-20260919",
   "active_identity": null,
-  "active_step": "VALID_CYCLE1_OUTCOME_AWAITING_FRESH_ANALYST_REVIEW",
-  "workflow_run_id": 35432088902,
-  "expected_next_action": "Consume a fresh prospective Evidence Analyst handoff reviewing exact NON_EVIDENTIARY result PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL at research/main-topk-persistent-amplification-arch-study-20260919@97f542d86dcd3a609cd039379fcda41ba61e0909. Until fresh authority exists, do not run cycle 2, retune/redesign, promote/formalize, merge, create identity/STARTED/evidence refs, or construct an outcome-responsive successor.",
+  "active_step": "CYCLE2_REPLICATION_PACKAGING_PRE_PUSH",
+  "workflow_run_id": null,
+  "expected_next_action": "Create one science-invariant cycle-2 wrapper/workflow commit from exact cycle-1 head 97f542d86dcd3a609cd039379fcda41ba61e0909, changing only model/training seed 41->42 while preserving the fixed protocol; then observe the exact push CI and stop WAITING_EXTERNAL if still running.",
   "owner": "main"
 }
