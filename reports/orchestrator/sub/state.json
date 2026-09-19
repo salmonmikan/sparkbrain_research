@@ -1,38 +1,36 @@
 {
-  "timestamp": "2026-09-19T13:53:01+09:00",
+  "timestamp": "2026-09-19T14:37:08+09:00",
   "worker_role": "sub",
-  "mode": "formal_sub_lane",
-  "evidence_analyst_commit": "34911078061f83099a74d45868c665ac2b30c6da",
-  "consumed_lanes": [],
-  "selected_independent_lane": "NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY",
+  "mode": "no_op",
+  "evidence_analyst_commit": "ca0f19d52a80622bd6e4d6d61830f805c1f89234",
+  "consumed_lanes": ["NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY:CLOSED_BY_ANALYST_INTEGRITY_BLOCKED"],
+  "selected_independent_lane": null,
   "exploratory_target": null,
-  "reservation_status": "reserved_for_sub",
+  "reservation_status": null,
   "independent_of_main_critical_path": true,
   "depends_on_main_outcome": false,
   "execution_allowed": false,
-  "sub_active_claim": "Bounded read-only NON_EVIDENTIARY NI01 world-label-privilege sensitivity; exact fixed procedure recovered, numeric TEST scoring intentionally not crossed because current authority forbids one-way TEST target access and official scoring.",
+  "sub_active_claim": "No active SUB claim. Analyst closed the prior NI01 world-label-privilege diagnostic; no valid formal lane/fallback and no safe useful non-duplicative incubator target exists this run.",
   "main_work_explicitly_avoided": [
     "fresh-object admission and primary candidate selection",
     "successor/comparator/mechanism design for MAIN frontier",
     "candidate-specific bugs, verifier/harness/runner/binding/CI/readiness fixes",
     "preservation/scoring/execution blockers",
     "consumed-line rescue/retry/retune/rescore/reinterpretation",
-    "future causal-credit critical-path construction"
+    "future causal-credit critical-path construction",
+    "creation of a post-terminal NI01 target-access or scoring surface"
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "34911078061f83099a74d45868c665ac2b30c6da",
+    "evidence_analyst": "ca0f19d52a80622bd6e4d6d61830f805c1f89234",
     "control_brain": "1914db5b9b58b4d53bd0406adda062189d688cb8",
-    "orchestrator_parent_tip_before_persistence": "4ff7b982c509c4c0538a8b06248ad4c779b29e8c",
-    "ni01_package": "dbfe7469dbbbc1adbb00789ab382de892a1b3563",
-    "ni01_contract_blob": "3dc90b08f85e0e7c459e0c17e86ab338901fd4c6",
-    "ni01_preserve_raw": "8a39cf70e397bb7588f948910f01ec58672ac814",
-    "ni01_evidence_tag_object": "185b741e69ea8a0ce0d076153d36e9296a748765",
-    "ni01_evidence_commit": "69aa785a48bbdb531229b7f71f7fa84a5fde9948",
+    "orchestrator_parent_tip_before_persistence": "2ab034f3c8852f5df312a685717ca32656981017",
     "formal_tags": [],
     "sealed_tags": [],
     "authoritative_evidence_tag_count": 5,
-    "legacy_freeze_branch_count": 13
+    "legacy_freeze_branch_count": 13,
+    "ni01_started": "d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d",
+    "ni01_preserve_raw": "8a39cf70e397bb7588f948910f01ec58672ac814"
   },
   "branches_prs_advanced": {
     "research_branches_by_sub": [],
@@ -45,65 +43,54 @@
     "formal_experiment_by_sub": "NOT_STARTED",
     "official_test_accessed_by_sub": false,
     "official_scoring_produced_by_sub": false,
-    "read_only_repository_inspection_only": true
+    "latest_control_plane_ci_observed": {
+      "run_id": 35423515192,
+      "branch": "ops/orchestrator-run-report",
+      "head_sha": "2ab034f3c8852f5df312a685717ca32656981017",
+      "status": "completed",
+      "conclusion": "success",
+      "scientific_relevance": "none"
+    }
   },
   "scientific_readiness_exploratory_results": {
     "sub_new_formal_result": false,
     "sub_new_exploratory_result": false,
     "new_formal_scientific_information": false,
-    "lane_progress": "EXACT_DIAGNOSTIC_PROTOCOL_RECOVERED_NUMERIC_TYPE7_RESULT_NOT_PRODUCED",
-    "fixed_question": "Would NI01 candidate-vs-comparator effect materially change if comparator uses one world-blind threshold derived from pooled target-free DEV coverage instead of separate explicit-world thresholds?",
-    "fixed_threshold_procedure": {
-      "source": "frozen NI01 coverage_matched_threshold",
-      "pooling": "pool original target-free DEV rows across all frozen worlds/seeds",
-      "candidate_set": "all unique pooled DEV confidences plus +infinity and -infinity",
-      "objective": "minimize absolute comparator coverage minus pooled native coverage",
-      "tie_break": "larger more-conservative threshold",
-      "test_calibration_forbidden": true,
-      "alternate_threshold_or_sweep_forbidden": true
-    },
-    "fixed_scoring": {
-      "resamples": 10000,
-      "bootstrap_seed": 74017,
-      "ci_quantile": "Type-7",
-      "coverage_shift_guard_per_world": 0.03
-    },
-    "preserved_manifest": {
-      "worlds": ["reliability_world", "delayed_evidence_world", "contradiction_world"],
-      "test_episode_count": 1536,
-      "test_step_count": 46080,
-      "thresholds_by_world": {
-        "reliability_world": 0.43837666247277174,
-        "delayed_evidence_world": 0.43859092652956055,
-        "contradiction_world": 0.4344505230131153
-      },
-      "threshold_span": 0.004140403516445235,
-      "targets_materialized": false,
-      "raw_forbidden_keys": ["decision_justified", "scenario_tags_from_target", "target", "truth"]
-    },
-    "numeric_diagnostic_status": "BLOCKED_BY_CURRENT_INTEGRITY_AUTHORITY_NOT_BY_PROTOCOL_AMBIGUITY",
+    "allocation_change_consumed": "NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY closed by Analyst as INTEGRITY_BLOCKED_UNEXECUTABLE_WITH_CURRENT_SAFE_SURFACE",
+    "incubator_selection_result": "NO_SAFE_USEFUL_NON_DUPLICATIVE_TARGET",
+    "incubator_nonduplication_basis": [
+      "existing exploratory SUB branches cover H1 competing-belief reduction",
+      "H2 residual-memory reduction",
+      "H3 correlation reduction",
+      "H4 abstention equivalence",
+      "H5 lazy routing",
+      "H6 workspace accounting",
+      "H7 trace causality",
+      "H9 decoder-state boundary",
+      "revision-authority/FSA",
+      "RV01 delay-filter reduction"
+    ],
     "canonical_ni01_result_unchanged": "FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION"
   },
-  "evidentiary_status": "NON_EVIDENTIARY_NON_CANONICAL",
+  "evidentiary_status": "NONE_FOR_SUB",
   "consumed_identities": {
     "by_sub": [],
     "ni01_identity_reused_or_rerun": false
   },
   "blockers": [
-    "Current execution_allowed=false forbids STARTED, dispatch, identity consumption, official scoring, and formal authority creation.",
-    "Preserved NI01 raw is intentionally target-blind; scoring requires TEST truth/decision_justified materialization after preservation.",
-    "SUB hard boundary forbids accessing sealed/one-way-only TEST evaluation inputs, so a numeric Type-7 effect/CI cannot be recomputed safely from the current read-only surface.",
-    "A non-canonical read-only score surface or precomputed sufficient statistics would need explicit Analyst authorization; otherwise the one-shot sensitivity should be closed as presently unexecutable."
+    "Scientific-object availability: no genuinely independent prospectively complete SUB object is reserved.",
+    "No safe useful non-duplicative synthetic/development-only incubator target exists after comparison with current exploratory SUB history and Analyst active-line review.",
+    "NI01 world-label-privilege sensitivity is closed by Analyst and may not be continued without an already-safe separate non-canonical score surface or sufficient statistics plus fresh prospective re-authorization."
   ],
   "fallback_status": "ABSENT",
   "rejected_lane": null,
   "lane_rejected_reason": null,
   "collision_reconciliation": {
-    "report_branch_tip_before_persistence": "4ff7b982c509c4c0538a8b06248ad4c779b29e8c",
-    "latest_main_checkpoint_time": "2026-09-19T13:17:08+09:00",
-    "latest_main_checkpoint_analyst_commit": "34911078061f83099a74d45868c665ac2b30c6da",
+    "report_branch_tip_before_persistence": "2ab034f3c8852f5df312a685717ca32656981017",
+    "latest_main_checkpoint_time": "2026-09-19T14:16:10+09:00",
+    "latest_main_checkpoint_analyst_commit": "ca0f19d52a80622bd6e4d6d61830f805c1f89234",
     "fresh_analyst_tip_rechecked": true,
-    "fresh_analyst_tip": "34911078061f83099a74d45868c665ac2b30c6da",
+    "fresh_analyst_tip": "ca0f19d52a80622bd6e4d6d61830f805c1f89234",
     "main_ref_rechecked": true,
     "research_refs_rechecked": true,
     "evidence_formal_sealed_freeze_control_preserve_refs_rechecked": true,
@@ -111,16 +98,16 @@
     "sub_collision_detected": false,
     "append_only_history_path_prechecked_absent": true
   },
-  "integrity_state": "CLEAN_READONLY_NO_MAIN_MUTATION_NO_FORMAL_BOUNDARY_NO_TEST_TARGET_ACCESS_NO_IDENTITY_CONSUMPTION_NO_OFFICIAL_SCORING_CANONICAL_NI01_UNCHANGED",
-  "completion_target": "Advance exactly the reserved independent read-only NI01 privilege-sensitivity lane without crossing the formal/one-way boundary; recover exact procedure, execute only what current authority permits, and persist a durable SUB report.",
-  "completion_target_status": "PARTIAL_SAFE_PROGRESS_PROTOCOL_RECOVERED_NUMERIC_SCORING_BLOCKED_BY_AUTHORITY",
+  "integrity_state": "CLEAN_NO_OP_NO_MAIN_MUTATION_NO_FORMAL_BOUNDARY_NO_TEST_TARGET_ACCESS_NO_IDENTITY_CONSUMPTION_NO_OFFICIAL_SCORING_CANONICAL_EVIDENCE_UNCHANGED",
+  "completion_target": "Reconcile fresh authority and repository state, avoid MAIN collision, select formal/fallback/incubator work only if valid, otherwise persist a justified no-op SUB checkpoint.",
+  "completion_target_status": "ACHIEVED_NO_OP_BY_DESIGN",
   "candidate_formal_question": null,
   "suggested_prospective_object": null,
   "promotion_recommendation": "NONE",
   "incubator_handoff": null,
-  "proposed_handoff_to_analyst": "Either authorize/provide a strictly NON_EVIDENTIARY read-only score surface or sufficient statistics for the fixed world-blind diagnostic without exposing one-way TEST targets, or classify the one-shot sensitivity as presently unexecutable and return SUB to no-op. Do not relax integrity by local TEST target materialization or consumed-identity rerun.",
+  "proposed_handoff_to_analyst": "Keep SUB null/no-op until a genuinely independent prospectively complete secondary object is reserved or a clearly distinct synthetic/development-only NON_EVIDENTIARY question appears outside existing SUB exploratory coverage and MAIN critical-path construction. Reconsider NI01 sensitivity only after an already-safe separate non-canonical score surface/sufficient-stat source appears and is prospectively re-authorized.",
   "report_persistence": {
-    "history_path": "reports/orchestrator/history/2026-09-19/1353-sub.md",
+    "history_path": "reports/orchestrator/history/2026-09-19/1437-sub.md",
     "sub_latest_path": "reports/orchestrator/sub/latest.md",
     "sub_state_path": "reports/orchestrator/sub/state.json",
     "atomic_git_commit_requested": true,
