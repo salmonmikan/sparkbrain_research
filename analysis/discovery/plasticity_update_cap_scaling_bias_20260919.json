@@ -1,0 +1,73 @@
+{
+  "assumption": "All effective plastic edges are eligible in the synthetic step, isolating only sorted-edge update-budget scheduling.",
+  "candidate": "PLASTICITY_UPDATE_CAP_SCALING_BIAS_DISCOVERY",
+  "exploration_cycle": 1,
+  "max_updates_per_step": 2000,
+  "relabel_seed": 20260919,
+  "relabelings_per_scale": 24,
+  "results": [
+    {
+      "cap_active": false,
+      "effective_edges": 326,
+      "fraction_edges_updated": 1.0,
+      "height": 6,
+      "max_pairwise_semantic_edge_jaccard": 1.0,
+      "mean_pairwise_semantic_edge_jaccard": 1.0,
+      "mean_reservoir_sources_touched": 48.0,
+      "min_pairwise_semantic_edge_jaccard": 1.0,
+      "reservoir_units": 48,
+      "width": 8
+    },
+    {
+      "cap_active": false,
+      "effective_edges": 1193,
+      "fraction_edges_updated": 1.0,
+      "height": 12,
+      "max_pairwise_semantic_edge_jaccard": 1.0,
+      "mean_pairwise_semantic_edge_jaccard": 1.0,
+      "mean_reservoir_sources_touched": 192.0,
+      "min_pairwise_semantic_edge_jaccard": 1.0,
+      "reservoir_units": 192,
+      "width": 16
+    },
+    {
+      "cap_active": false,
+      "effective_edges": 1836,
+      "fraction_edges_updated": 1.0,
+      "height": 15,
+      "max_pairwise_semantic_edge_jaccard": 1.0,
+      "mean_pairwise_semantic_edge_jaccard": 1.0,
+      "mean_reservoir_sources_touched": 300.0,
+      "min_pairwise_semantic_edge_jaccard": 1.0,
+      "reservoir_units": 300,
+      "width": 20
+    },
+    {
+      "cap_active": true,
+      "effective_edges": 2628,
+      "fraction_edges_updated": 0.76103500761035,
+      "height": 18,
+      "max_pairwise_semantic_edge_jaccard": 0.670843776106934,
+      "mean_pairwise_semantic_edge_jaccard": 0.6159224175330678,
+      "mean_reservoir_sources_touched": 327.125,
+      "min_pairwise_semantic_edge_jaccard": 0.5717092337917485,
+      "reservoir_units": 432,
+      "width": 24
+    },
+    {
+      "cap_active": true,
+      "effective_edges": 4648,
+      "fraction_edges_updated": 0.43029259896729777,
+      "height": 24,
+      "max_pairwise_semantic_edge_jaccard": 0.3289036544850498,
+      "mean_pairwise_semantic_edge_jaccard": 0.280915273536068,
+      "mean_reservoir_sources_touched": 326.4166666666667,
+      "min_pairwise_semantic_edge_jaccard": 0.2345679012345679,
+      "reservoir_units": 768,
+      "width": 32
+    }
+  ],
+  "source_main_sha": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+  "status": "EXPLORATORY / NON_EVIDENTIARY",
+  "topology_seed": 505
+}
