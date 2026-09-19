@@ -1,14 +1,14 @@
 {
   "run_id": "sparkbrain-main-relay-20260920T0542JST",
   "execution_mode": "RELAY",
-  "status": "RUNNING",
+  "status": "WAITING_EXTERNAL",
   "started_at": "2026-09-20T05:42:14+09:00",
-  "heartbeat_at": "2026-09-20T05:42:14+09:00",
+  "heartbeat_at": "2026-09-20T05:49:00+09:00",
   "analyst_commit": "d6b14d826a0847e439dfedd86e363786d84e329a",
   "active_branch": "research/main-assembly-crosscascade-fallback-segmentation-arch-study-20260920",
   "active_identity": null,
-  "active_step": "ASSEMBLY_CROSSCASCADE_PROSPECTIVE_BINDING",
-  "workflow_run_id": null,
-  "expected_next_action": "Create the fresh Architecture research branch from exact stable main, prospectively bind exact source/input/comparator/metrics/terminal mapping/machine handoff fields, add a read-only NON_EVIDENTIARY harness and push-triggered exact-head workflow, then stop at WAITING_EXTERNAL if CI/outcome workflow is still running.",
+  "active_step": "EXACT_HEAD_ASSEMBLY_SEGMENTATION_ARCHITECTURE_WORKFLOW_IN_PROGRESS",
+  "workflow_run_id": 35468475903,
+  "expected_next_action": "Re-fetch fresh Evidence Analyst authority, this lease, exact research head 388799d9880d7b472417a680f288da13f4fd9b41, ordinary CI 35468475862, and Architecture workflow 35468475903. If a pre-diagnostic science-invariant mechanical blocker occurs, only the prospectively allowed mechanical fix plus exact rebind/CI is permitted. If a valid terminal artifact is produced, verify exact head/source/contract/artifact/raw binding, persist the fixed mapped outcome, and STOP for fresh Evidence Analyst review. Do not automatically continue to cycle 2, PRE_FORMAL, or FORMAL.",
   "owner": "main"
 }
