@@ -1,40 +1,50 @@
-# SparkBrain Research Orchestrator SUB — 2026-09-20 00:41 JST
+# SparkBrain Research Orchestrator SUB — 2026-09-20 01:47 JST
 
 ## Mode / allocation
 
 - mode: `discovery`
-- Evidence Analyst authority: `862dd62cdce58f06e5c782b4b54212d93e40212e`
+- Evidence Analyst authority: `e781202e8c7ae4562c10fa46cdddfb3b0eb1bc08`
 - SUB lane consumed: `BOUNDED_SECONDARY_DISCOVERY`
 - formal SUB lane: none
 - fallback: `NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON` (not used)
-- selected target: `FIELD_SOURCE_LINEAGE_CAP_PERMUTATION_SENSITIVITY_DISCOVERY`
-- candidate_pool_id: none; one safe bounded SUB self-selection outside the MAIN-reserved candidate pool
+- selected target: `TOPOLOGY_RECEPTOR_FANOUT_ALIASING_DISCOVERY`
+- candidate_pool_id: none; one safe bounded SUB self-selection outside the reserved candidate pool
 - exploration cycle: `1/3`
 - evidentiary status: `NON_EVIDENTIARY`
-- recommendation: `REJECT`
+- recommendation: `PROMOTE_TO_ARCHITECTURE_STUDY`
 
 ## MAIN frontier avoided / integrity
 
-Fresh `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` and fresh Evidence Analyst authority remains `862dd62cdce58f06e5c782b4b54212d93e40212e`. MAIN owns `CAND-TEMPORAL-BATCH-PARTITION-01` on `research/main-temporal-batch-partition-arch-study-20260920@7fa4391bbf34cf25e10b708ce64acddf07bf7f42`; SUB did not continue that candidate, inspect outcome-bearing Architecture artifacts, modify MAIN's branch, or take any MAIN blocker/successor. MAIN workflow `35451528895` completed successfully during this run, but its scientific artifacts were deliberately not opened by SUB.
+Fresh `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` and fresh Evidence Analyst authority remains `e781202e8c7ae4562c10fa46cdddfb3b0eb1bc08`. MAIN is holding after `CAND-TEMPORAL-BATCH-PARTITION-01`; SUB did not continue that line, construct a successor, touch Top-k follow-up, H7 construction, consumed-line rescue, formal/TEST/scoring/preserve/evidence surfaces, or any MAIN blocker. No MAIN active research branch was modified.
 
-Five authoritative evidence tags remain present; formal/sealed/freeze tags remain empty and 13 legacy freeze branches remain preserved. No consumed identity, official TEST, formal raw/scorer, STARTED/control, preserve/evidence authority, immutable evidence, or merge surface was touched.
+Five authoritative evidence tags remain the observed scientific anchors; no new formal/sealed/freeze tag was created and legacy freeze/control/preserve refs were left untouched. Consumed identities were not accessed or rerun.
 
-## Discovery implementation / observations
+## Discovery question / implementation
 
-Created non-authoritative branch `research/exploratory-sub-field-source-lineage-cap-20260920` from exact stable main. Test commit: `1a91187173a713d87f343b871ec16b94ee956bfb`; prospective question/reduction binding and exact research head: `21af9d2a5546cc081f4fe4472540ab8a17760c7c`.
+Created non-authoritative branch `research/exploratory-sub-topology-fanout-aliasing-20260920` from exact stable main. The prospective question was bound first in commit `91aaf6c10ed691540689fe3d426d6a9354828e2e`; the deterministic topology test was added in `cdff7a4b29d0fdd4263897c208359e2b90ce4681`. Two subsequent commits (`726aac111720643e6f1475a91477e6db3204372c`, `daaf9a865d4ba5911640d127f55dc8d44a75e078`) changed formatting/import hygiene only. Exact final research head: `daaf9a865d4ba5911640d127f55dc8d44a75e078`.
 
-The fixed synthetic experiment uses one field unit, no recurrent connections, `max_sources_per_unit=16`, and twenty distinct simultaneous arrivals `p00..p19` at `1.0 ms`, each with current `0.06`. Only enqueue order changes. Exact-head ordinary CI `35452444346` completed `success` on Python 3.11 and 3.13.
+Question: with `receptor_count=16`, does the fixed v0.5 receptor routing stride `11` create scale-specific physical first-hop projection aliasing when reservoir size shares a factor with 11, and does the default two-receptor input fanout inherit the same collapse?
 
-Both arms emit exactly one spike and have identical physical spike observables and identical unit state once `source_pulse_ids` is removed. Ascending enqueue retains `p04..p19`; descending enqueue retains `p15..p00`. The retained sets have Jaccard `0.6`, while full `field.state_hash()` differs because bounded source provenance is serialized.
+Fixed synthetic/static matrix: reservoir dimensions `(4,4)`, `(5,5)`, `(6,6)`, `(8,6)`, `(4,11)`, `(5,11)`, `(6,11)`, `(8,11)`. No repository dataset, trained checkpoint, formal raw, held-out TEST, official scorer, or consumed identity was used.
 
-The result is exactly explained by current implementation: same-time arrivals preserve insertion-counter order; `_source_tuple` appends unseen IDs and keeps only the last 16. Current production-code search found no source-ID consumer that changes current, threshold, refractory, adaptation, or another physical update. This is bounded provenance-buffer bookkeeping/reproducibility sensitivity, not a new memory or causal mechanism.
+## Observations
+
+For reservoir sizes `16,25,36,48` (coprime with 11), all 16 receptor first-hop signatures remain unique: no collision pairs and maximum alias multiplicity 1. For the resonant sizes `44,55,66,88`, unique receptor signatures collapse to `4,5,6,8` respectively, with collision-pair counts `24,18,14,8` and maximum alias multiplicities `4,4,3,2`.
+
+The exact count is explained by the modular period `N / gcd(N, 11)`: unique signatures equal `min(16, N/gcd(N,11))`. The default two-consecutive-receptor routing path inherits the collapse: the 16 possible start receptors produce only `4,6,7,8` unique first-hop pair projections at `N=44,55,66,88`, versus 16/16 across all four tested coprime sizes. The current default `8x6` reservoir (`N=48`) is non-resonant in this check.
+
+This is an actual physical wiring collision in reservoir targets, not metadata/hash bookkeeping. The immediate cause is nevertheless exactly reducible to deterministic number-theoretic aliasing from the fixed stride `11` modulo reservoir size; no emergent mechanism is claimed.
+
+Ordinary CI initially failed only on Ruff formatting/import hygiene (`35455648337`, then `35455755740`); no scientific assertion failed in those runs because tests were skipped after lint. Exact-head CI `35455915055` then completed `success` on Python 3.11 and 3.13, including lint, readiness, tests, and bundle validation.
 
 ## Handoff / stop
 
-Evidentiary status: `NON_EVIDENTIARY`. Recommendation: `REJECT`. Candidate next scientific layer: `NONE_SCIENTIFICALLY`. Keep only an engineering note that full state hashes can differ from provenance ordering while the physical state projection is identical.
+Evidentiary status remains `NON_EVIDENTIARY`. Recommendation to Evidence Analyst: `PROMOTE_TO_ARCHITECTURE_STUDY`, because the aliasing changes physical first-hop connectivity and can reduce 16 nominal receptor routes to as few as four projection classes at resonant reservoir sizes. This is a candidate architecture/scaling constraint, not evidence of functional harm or scientific novelty.
 
-What would falsify the reduction is a fresh current-code path where source IDs themselves causally affect physical updates or downstream behavior under otherwise identical currents/timestamps/targets; none was found. Scientific choices still open: none. No cycle-2 tuning/sweep is warranted.
+A fresh prospective Architecture Study, if accepted, should use DEV-only inputs and compare the current stride-11 fanout against an identity-neutral/resource-matched collision-free or hash-based fanout at matched edge count/resources across resonant and non-resonant sizes. It should predefine an internal channel-separability observable plus a downstream prediction/action observable and horizon.
 
-Utility request created: none. Consumed identities: none. New formal results: zero. Blockers: none.
+The candidate would be reduced to a static engineering wiring constraint if supported production/DEV dimensions never enter resonant regimes, or if a matched collision-free comparator does not improve internal/downstream distinction despite removing projection collisions. Open scientific choices before promotion: DEV dimensions/regimes, channel set, comparator construction/resource matching, internal separability metric, downstream observable, and horizon. SUB does not continue cycle 2 without fresh Analyst repartition.
 
-Completion target: `ACHIEVED_ONE_BOUNDED_INDEPENDENT_DISCOVERY_CYCLE_AND_STOPPED_AFTER_EXACT_BOOKKEEPING_REDUCTION`.
+Utility request created: none. Consumed identities: none. New formal results: zero. STARTED/control/freeze/evidence/official-score actions: zero. Blocker: fresh Evidence Analyst classification/prospective Architecture Study specification only.
+
+Completion target: `ACHIEVED_ONE_BOUNDED_INDEPENDENT_DISCOVERY_CYCLE_AND_RETURNED_TOPOLOGY_ARCHITECTURE_PROMOTION_CANDIDATE_FOR_FRESH_ANALYST_REVIEW`.
