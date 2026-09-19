@@ -1,33 +1,31 @@
 {
   "schema_version": 1,
-  "timestamp": "2026-09-19T21:20:00+09:00",
+  "timestamp": "2026-09-19T22:18:00+09:00",
   "run_disposition": "NO_MATERIAL_CALIBRATION_CHANGE",
   "overall_classification": "SLIGHTLY_TOO_PERMISSIVE",
   "confidence": "HIGH_ON_LOCAL_PERMISSIVENESS_MEDIUM_ON_EXACT_REPLACEMENT_RULE",
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "main_branch_protected": false,
     "evidence_tag_count": 5,
     "evidence_tag_set_unchanged": true,
-    "structural_order_branch": "6a53ee36259bca31b77024245e5ab0a9ef5ec405",
-    "structural_order_result": "EDGE_OR_HOMEOSTASIS_CONTROL_REPRODUCES",
-    "structural_order_analyst_disposition": "REJECT_CURRENT_QUESTION",
     "topk_cycle1_result": "PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL",
     "topk_cycle2_result": "PERSISTENCE_SIGNAL_REPLICATED",
     "topk_evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
-    "receptor_polarity_branch": "ddbaec1f91a9a02c18c9cc04ab45b529bd2410ef",
-    "receptor_polarity_result": "REJECT_EXACT_IMPLEMENTATION_REDUCTION",
+    "structural_order_result": "EDGE_OR_HOMEOSTASIS_CONTROL_REPRODUCES",
+    "structural_order_analyst_disposition": "REJECT_CURRENT_QUESTION",
+    "homeostasis_window_partition_branch": "cb8ea52a917e91b2aac6f1cd3de7c2a5e7573000",
+    "homeostasis_window_partition_result": "REJECT_EXACT_PER_WINDOW_IMPLEMENTATION_REDUCTION",
     "c19_r2_result": "REDUCED_BY_FSA"
   },
   "control_plane_consumed": {
     "control_brain_commit": "566f3b7c590fcfe2b9e8aaa0415da964989b1124",
     "evidence_analyst_branch_commit": "a3ec861d71c0965625fc1d2e5e8f65f4ce47f834",
     "evidence_analyst_latest_timestamp": "2026-09-19T21:02:00+09:00",
-    "orchestrator_branch_commit": "c4fd52d8c44455cf34c3ce8556a8d96cef2ac866",
+    "orchestrator_branch_commit": "dfb86ffc7ef0158b24abf118eef0b71fab81f50b",
     "main_latest_timestamp": "2026-09-19T21:16:00+09:00",
-    "sub_latest_timestamp": "2026-09-19T20:48:00+09:00",
-    "literature_audit_branch_commit": "02c5eec39f8fca9dd180c4c91c4ae444ebd50995",
-    "literature_latest_timestamp": "2026-09-19T18:30:00+09:00",
+    "sub_latest_timestamp": "2026-09-19T21:46:00+09:00",
+    "literature_audit_branch_commit": "94ae4abf7b310faefa7244a03cda2a597dba4dca",
+    "literature_latest_timestamp": "2026-09-19T21:30:00+09:00",
     "independent_audit_latest_timestamp": "2026-09-19T10:32:00+09:00",
     "repository_steward_commit": "7f77044f3159e7db15b45c9a471ae983c2a64284",
     "repository_steward_latest_timestamp": "2026-09-19T19:50:00+09:00",
@@ -39,19 +37,14 @@
   },
   "gate_changes_reviewed": [
     {
-      "change": "Evidence Analyst formally rejected the current structural-order Architecture question after ordinary edge/homeostatic control reproduction",
-      "direction": "CONFIRMS_EXISTING_ORDINARY_REDUCTION_AND_STOP_RULE",
+      "change": "SUB homeostasis-window-partition Discovery produced a real threshold shift but reduced exactly to per-observe target subtraction and per-call EMA decay",
+      "direction": "CONFIRMS_EXISTING_EARLY_ORDINARY_REDUCTION_AND_STOP_RULE",
       "assessment": "NO_NEW_CALIBRATION_CHANGE"
     },
     {
-      "change": "SUB receptor-polarity Discovery was exactly reduced to existing fast-minus-medium receptor semantics and rejected after one cycle",
-      "direction": "CONFIRMS_EXISTING_EARLY_REDUCTION_BEHAVIOR",
-      "assessment": "NO_NEW_CALIBRATION_CHANGE"
-    },
-    {
-      "change": "MAIN entered explicit lower-funnel HOLD pending a fresh central object rather than manufacturing a rescue cycle",
-      "direction": "CONFIRMS_CURRENT_ANTI_STALL_WITHOUT_UTILIZATION_PRESSURE",
-      "assessment": "NO_NEW_CALIBRATION_CHANGE"
+      "change": "21:30 Literature added border-collision / branch-basin selection / WTA hysteresis as ordinary explanations for durable post-routing divergence",
+      "direction": "SHARPENS_PROSPECTIVE_TOPK_REDUCTION_LADDER",
+      "assessment": "NO_GATE_CLASSIFICATION_CHANGE"
     },
     {
       "change": "No new formal evidence, identity, STARTED authority, TEST access, scorer/preserve path, or evidence anchor appeared",
@@ -79,20 +72,22 @@
     "automatic_preformal_promotion_after_architecture_replication": "KEEP",
     "pre_start_science_invariant_repair_before_diagnostic_visibility": "KEEP",
     "ordinary_control_first_architecture_reduction": "KEEP",
-    "outcome_informed_selection_of_future_support_rule": "CLARIFY"
+    "outcome_informed_selection_of_future_support_rule": "CLARIFY",
+    "routing_persistence_ordinary_reduction_scope": "CLARIFY"
   },
   "false_positive_risks": [
     "Top-k Architecture triage can still receive a decisive full magnitude-level vote from an under-supported stratum",
     "replicated local Architecture labels could be over-read as PRE_FORMAL or novelty evidence if fresh review is bypassed",
     "an exact future support rule could be outcome-fitted to completed Top-k cases",
     "local Architecture thresholds could be laundered into programme-wide novelty or FORMAL admission criteria",
-    "stronger-privilege replay/global-causal ceilings could be mistaken for equal-privilege reductions"
+    "stronger-privilege replay/global-causal ceilings could be mistaken for equal-privilege reductions",
+    "durable post-routing divergence could be over-interpreted as intrinsic long-memory if branch/basin selection or WTA hysteresis is not excluded prospectively"
   ],
   "false_negative_risks": [
     "globally re-tightening Discovery/Architecture because of a local support-calibration defect",
     "using prior family coverage as blanket observable-level exhaustion",
     "using new-principle novelty as the threshold for architecture/testbed research-worthiness",
-    "forcing MAIN to manufacture work when no central object currently clears the information-value/non-rescue bar"
+    "treating exact ordinary reductions as evidence that similar but independently motivated future questions should be forbidden a priori"
   ],
   "duplicate_guards": {
     "assessment": "NO_SCIENTIFIC_PURPOSE_SHOULD_BE_REMOVED",
@@ -100,7 +95,7 @@
   },
   "moving_goalpost_assessment": {
     "classification": "LOW_RETROACTIVE_RISK_WITH_PROSPECTIVE_RULE_SELECTION_WARNING",
-    "basis": "No completed lower-layer or FORMAL label was retroactively rewritten. Structural-order and receptor-polarity stopped under existing ordinary-reduction logic. Any future Top-k support guard must be prospectively justified and not selected to flip or preserve completed outcomes."
+    "basis": "No completed lower-layer or FORMAL label was retroactively rewritten. New literature only sharpens future reduction questions. Any future Top-k support guard or basin/hysteresis discriminator must be prospectively justified and must not be selected to flip or preserve completed outcomes."
   },
   "pass_reachability_assessment": {
     "classification": "REACHABLE_BUT_NARROW",
@@ -108,7 +103,7 @@
       "prospectively positive native signal",
       "fresh exact-bound object and protocol",
       "matched equal-privilege comparators",
-      "survive ordinary mechanistic reductions",
+      "survive ordinary implementation and dynamical reductions including routing-boundary/basin explanations when relevant",
       "fixed intervention and numeric falsifier",
       "one-way preserved formal evidence"
     ],
@@ -121,34 +116,33 @@
     "discovery_state": "OPEN_FOR_SUB_BOUNDED_NON_EVIDENTIARY_WORK",
     "topk_state": "NON_EVIDENTIARY_ARCHITECTURE_HOLD_PENDING_SUPPORT_DIAGNOSTIC_AND_FRESH_REDUCTION_QUESTION",
     "structural_order_state": "REJECT_CURRENT_QUESTION_AFTER_ORDINARY_CONTROL_REPRODUCTION; ARCHITECTURE_OBSERVATION_RETAINED",
-    "receptor_polarity_state": "REJECTED_SCIENTIFIC_CANDIDATE; ENGINEERING_CONSTRAINT_RETAINED",
+    "homeostasis_window_partition_state": "REJECTED_SCIENTIFIC_CANDIDATE; ENGINEERING_PROTOCOL_CONSTRAINT_RETAINED",
     "remaining_risk": "LOCAL_LOWER_LAYER_CONFIDENCE_CALIBRATION_NOT_NOVELTY_RESEARCH_WORTHINESS_CONFLATION"
   },
   "external_calibration": {
-    "literature": "No new Literature result since the prior audit; retain hard-switch/recurrent-transient and graph-rewrite ordinary-reduction ladders.",
-    "independent_audit": "No new Audit result since the prior audit; NI01 canonical integrity remains robust while equal-privilege reduction remains weakened by world-label privilege.",
+    "literature": "21:30 Literature adds border-collision, branch/basin selection, recurrent WTA hysteresis and discontinuity-driven global dynamics as ordinary Top-k persistence reductions. This prospectively sharpens the reduction ladder without changing completed evidence or gate classifications.",
+    "independent_audit": "No newer Audit result since 10:32; NI01 canonical integrity remains robust while equal-privilege mechanistic reduction remains weakened by world-label privilege.",
     "use_rule": "External findings calibrate future comparators and reduction ladders prospectively, never rewrite consumed evidence."
   },
-  "opportunity_cost_assessment": "No material change: keep the calibration fix local to Top-k support/uncertainty and avoid global tightening. MAIN HOLD with no fresh central object is appropriate and should not be treated as a utilization defect by itself.",
+  "opportunity_cost_assessment": "No material change: keep the calibration fix local to Top-k support/uncertainty and future routing-persistence reductions; avoid global tightening. Allow bounded Discovery questions and stop them early on exact ordinary reduction.",
   "utility_request_created": null,
   "utility_request_status": {
     "completed_methodology_request": "METHCAL-20260919-1818-ARCH-SIGNAL-SUPPORT",
     "completed_assignment": "CTRL-20260919-1850-ARCH-SIGNAL-ROBUSTNESS",
     "completed_result": "MIXED / ADD_PER_STRATUM_SUPPORT",
     "pending_next_request": "EVA-20260919-1943-TOPK-CROSS-SEED-SUPPORT",
-    "reason_no_duplicate": "The existing Evidence Analyst request already targets the next decision-relevant calibration question."
+    "reason_no_duplicate": "The existing Evidence Analyst request already targets the next decision-relevant calibration question; basin/hysteresis reduction design should wait until support robustness and fresh Analyst review."
   },
   "prospective_recommendations": [
     "Keep the four-layer funnel and FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL doctrine.",
     "Do not alter completed Top-k cycle labels retroactively.",
     "Require future Top-k-like Architecture signal gates to address per-stratum support or uncertainty, but do not choose the exact rule by fitting completed outcomes.",
     "Consume the existing cross-seed read-only support diagnostic before any Top-k PRE_FORMAL decision.",
+    "If Top-k support remains sufficient for a fresh question, prospectively test hard-routing branch/basin selection and hysteresis before persistence-specific mechanistic interpretation.",
     "Keep stop-after-cycle fresh Analyst review exactly as-is.",
-    "Treat the current structural-order question as rejected after ordinary-control reproduction; any future residual must be a fresh prospective candidate.",
-    "Continue early rejection of Discovery candidates when ordinary implementation semantics exactly explain them, as with receptor polarity.",
+    "Continue early rejection of Discovery candidates when ordinary implementation semantics exactly explain them, as with homeostasis window partitioning.",
     "Keep local Architecture thresholds local and separate from novelty/FORMAL admission.",
-    "Keep equal-privilege reductions separate from stronger-privilege ceilings and preserve all one-way integrity safeguards.",
-    "Do not manufacture a MAIN object solely for scheduler utilization when no central candidate clears the current information-value/non-rescue bar."
+    "Keep equal-privilege reductions separate from stronger-privilege ceilings and preserve all one-way integrity safeguards."
   ],
   "hard_integrity_floor_confirmation": {
     "confirmed": true,
@@ -165,12 +159,12 @@
   },
   "questions_for_control_brain": [
     "When the cross-seed support request is reviewed, keep it methodology-only and nonblocking for unrelated research.",
-    "If a future support rule is adopted, require an explicit general prospective rationale and scope rather than fitting the completed Top-k outcomes.",
-    "Do not reinterpret current MAIN HOLD as programme-wide research HOLD or as a scheduler-utilization failure by itself."
+    "If a future support rule is adopted, require an explicit general prospective rationale and scope rather than fitting completed Top-k outcomes.",
+    "If Top-k support survives, add branch/basin selection and WTA hysteresis to the ordinary reduction ladder before any persistence-specific mechanistic escalation."
   ],
   "questions_for_evidence_analyst": [
     "Keep Top-k on HOLD until the existing cross-seed support diagnostic is consumed and a fresh reduction question is prospectively fixed.",
-    "Keep structural-order current question rejected; require a genuinely new residual question for any future work.",
-    "Continue separating engineering/architecture information from novelty after exact ordinary reductions such as receptor polarity."
+    "If support is sufficient, require a future routing-persistence object to exclude branch/basin selection and hysteresis rather than treating within-region contraction alone as a novelty-positive result.",
+    "Continue separating engineering/architecture information from novelty after exact ordinary reductions such as the new homeostasis window-partition result."
   ]
 }
