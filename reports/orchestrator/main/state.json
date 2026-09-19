@@ -1,21 +1,20 @@
 {
-  "timestamp": "2026-09-19T12:20:00+09:00",
+  "timestamp": "2026-09-19T13:17:08+09:00",
   "worker_role": "main",
   "execution_mode": "PRIMARY",
-  "analyst_commit": "2c1caa7063feabde079725e198e09b273d005a80",
+  "analyst_commit": "34911078061f83099a74d45868c665ac2b30c6da",
   "current_lane": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
   "current_phase": "NO_ACTIVE_FORMAL_FRONTIER_FRESH_OBJECT_ADMISSION_GATE_ONLY",
   "consumed_contingency_branches": [
     "NO_FRESH_OBJECT"
   ],
-  "active_claim": "No active admitted primary experiment exists. Evidence Analyst authority is unchanged from 11:10 JST: canonical NI01 remains unchanged, programme interpretation remains world-conditioned confidence abstention, and NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY remains reserved exclusively to SUB. MAIN remains on architecture/testbed HOLD.",
+  "active_claim": "No active admitted primary experiment exists. The 12:58 Evidence Analyst handoff adds material prospective causal-credit reduction pressure but explicitly admits no new primary object, creates no formal execution GO, keeps LP01 closed, and retains NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY exclusively for SUB. MAIN remains on architecture/testbed HOLD.",
   "authoritative_target_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "active_branch": null,
     "active_identity": null,
-    "evidence_analyst_handoff": "2c1caa7063feabde079725e198e09b273d005a80",
+    "evidence_analyst_handoff": "34911078061f83099a74d45868c665ac2b30c6da",
     "control_brain_branch_tip_observed": "1914db5b9b58b4d53bd0406adda062189d688cb8",
-    "control_brain_latest_content_commit": "e2cfdb15612d248c0991a82555cffde5c6ae0c61",
     "research_ni01": "dbfe7469dbbbc1adbb00789ab382de892a1b3563",
     "ni01_contract_blob": "3dc90b08f85e0e7c459e0c17e86ab338901fd4c6",
     "research_h5": "2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
@@ -34,10 +33,19 @@
     "research_workflow_run_ids": [],
     "control_plane_ci_observed": [
       {
-        "run_id": 35418198047,
+        "run_id": 35420279746,
+        "branch": "ops/evidence-analyst-handoff",
+        "head_sha": "34911078061f83099a74d45868c665ac2b30c6da",
+        "status_when_observed": "completed",
+        "conclusion_when_observed": "success",
+        "scientific_relevance": "none"
+      },
+      {
+        "run_id": 35420924758,
         "branch": "ops/orchestrator-run-report",
-        "head_sha": "6f81b94a8aff350f0cb4f0f983cf47661a0fcb13",
+        "head_sha": "0a827c90e181a97431e1e8f0330acdd5141c90aa",
         "status_when_observed": "in_progress",
+        "conclusion_when_observed": null,
         "scientific_relevance": "none"
       }
     ]
@@ -53,6 +61,18 @@
     "formal_preserve_state": "NONE_NEW",
     "formal_scoring_state": "NONE_NEW",
     "formal_evidence_state": "NONE_NEW",
+    "material_prospective_doctrine_change": true,
+    "causal_credit_reduction_update": {
+      "cascading_eligibility_reduction_required": true,
+      "local_diffusive_neuromodulatory_reduction_required_where_relevant": true,
+      "stronger_privilege_functional_ceilings": [
+        "RUDDER reward redistribution",
+        "Temporal Value Transport"
+      ],
+      "required_discriminator": "Eligibility-matched but counterfactual-responsibility-different histories using preemption, backup, or overdetermination under matched timing, activity, eligibility strength, delay, reward, and relevant spatial/diffusion conditions.",
+      "lp01_reopened": false,
+      "literature_driven_successor_authorized": false
+    },
     "ni01_canonical_terminal_token": "FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION",
     "ni01_canonical_evidence_modified": false,
     "ni01_safe_programme_interpretation": "NO_REGISTERED_INCREMENTAL_NATIVE_ADVANTAGE_OVER_WORLD_CONDITIONED_CONFIDENCE_ABSTENTION",
@@ -75,48 +95,52 @@
   ],
   "blockers": [
     "Scientific object availability: no genuinely fresh independently motivated native reduction-resistant primary object is currently admitted.",
-    "Formal MAIN execution remains blocked by the Evidence Analyst admission gate; current authority allows only bounded prospective NON_EVIDENTIARY readiness for a future admitted object and requires STOP at NEXT_OBJECT_READY_FOR_ANALYST_REVIEW."
+    "Formal MAIN execution remains blocked by the Evidence Analyst admission gate; current authority permits only bounded prospective NON_EVIDENTIARY readiness for a future admitted object and requires STOP at NEXT_OBJECT_READY_FOR_ANALYST_REVIEW.",
+    "Future H7/lineage-causal-credit admission must survive both history/influence reductions and strengthened learning/locality reductions while matching privilege; the literature update itself cannot be used to manufacture that object."
   ],
   "lease_collision_reconciliation": {
     "inherited_lease_status": "COMPLETED",
-    "inherited_run_id": "sparkbrain-main-primary-20260919T111324JST",
-    "inherited_heartbeat": "2026-09-19T11:24:00+09:00",
+    "inherited_run_id": "sparkbrain-main-primary-20260919T121739JST",
+    "inherited_heartbeat": "2026-09-19T12:22:00+09:00",
     "fresh_main_running_collision_found": false,
     "primary_lease_acquired": true,
-    "primary_lease_start_commit": "6f81b94a8aff350f0cb4f0f983cf47661a0fcb13",
+    "primary_lease_start_commit": "0a827c90e181a97431e1e8f0330acdd5141c90aa",
     "lease_rechecked_before_mutation": true,
     "analyst_ref_drift_found": false,
-    "analyst_ref_after_reconciliation": "2c1caa7063feabde079725e198e09b273d005a80",
+    "analyst_ref_after_reconciliation": "34911078061f83099a74d45868c665ac2b30c6da",
     "main_ref_drift_found": false,
     "sub_latest_observed_mode": "no_op",
     "sub_latest_predates_current_allocation": true,
     "sub_lane_after_current_analyst": "NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY",
     "sub_fallback_after_current_analyst": null
   },
-  "integrity_status": "CLEAN_FAST_PATH_NO_FRESH_MAIN_OBJECT_NO_NEW_FORMAL_IDENTITY_NO_NEW_STARTED_NO_OFFICIAL_TEST_NO_NEW_PRESERVE_SCORE_EVIDENCE_AND_CANONICAL_NI01_UNCHANGED",
+  "integrity_status": "CLEAN_FAST_PATH_NO_FRESH_MAIN_OBJECT_NO_NEW_FORMAL_IDENTITY_NO_NEW_STARTED_NO_OFFICIAL_TEST_NO_NEW_PRESERVE_SCORE_EVIDENCE_CANONICAL_NI01_UNCHANGED_AND_LP01_NOT_REOPENED",
   "critical_path_fixes_completed": [],
   "same_run_steps": [
-    "Consumed Evidence Analyst latest/state/history at 2c1caa7063feabde079725e198e09b273d005a80.",
+    "Consumed Evidence Analyst latest/state/history at 34911078061f83099a74d45868c665ac2b30c6da.",
     "Read MAIN latest/state/lease, SUB latest only for collision avoidance, and Control Brain only as strategic prior.",
     "Re-fetched authoritative main directly and confirmed ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d.",
-    "Re-fetched MAIN lease and confirmed no fresh RUNNING heartbeat/collision before mutation.",
-    "Acquired PRIMARY RUNNING lease at commit 6f81b94a8aff350f0cb4f0f983cf47661a0fcb13.",
-    "Re-fetched Evidence Analyst after lease acquisition and confirmed authority unchanged.",
-    "Observed only control-plane CI 35418198047 from the lease write; no research workflow exists to wait on.",
+    "Re-fetched inherited MAIN lease and confirmed no fresh competing RUNNING heartbeat/collision.",
+    "Acquired PRIMARY RUNNING lease at commit 0a827c90e181a97431e1e8f0330acdd5141c90aa.",
+    "Re-fetched Evidence Analyst repeatedly before control-plane writes and confirmed authority remained 34911078061f83099a74d45868c665ac2b30c6da.",
+    "Observed Evidence Analyst control-plane CI 35420279746 completed/success and MAIN lease control-plane CI 35420924758 in_progress; no research workflow existed to wait on.",
     "Applied NO_FRESH_OBJECT -> MAIN HOLD and preserved NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY exclusively for SUB.",
-    "Persisted no-change MAIN checkpoint without research/scientific mutation."
+    "Integrated the literature update only as prospective admission doctrine: cascading eligibility, local diffusive neuromodulatory reduction, privilege-tiered functional ceilings, and eligibility-vs-counterfactual-responsibility discrimination.",
+    "Did not reopen LP01, mutate NI01, create a successor, or perform research/scientific mutation.",
+    "Persisted MAIN latest checkpoint and append-only 1317 history."
   ],
-  "stop_reason": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_NO_CHANGE_AFTER_NI01_AUDIT_ALLOCATION",
-  "work_left_for_SUB": "Run exactly the independently reserved NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY diagnostic under Evidence Analyst's fixed read-only procedure, persist only SUB's normal NON_EVIDENTIARY report, then return to no-op. MAIN must not absorb or wait on this work.",
+  "stop_reason": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_CAUSAL_CREDIT_REDUCTION_LADDER_STRENGTHENED",
+  "work_left_for_SUB": "Run exactly the independently reserved NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY diagnostic under the Evidence Analyst fixed read-only procedure, persist only SUB's normal NON_EVIDENTIARY report, then return to no-op. MAIN must not absorb or wait on this work.",
   "lane_repartition_reason": null,
-  "next_MAIN_action": "Remain in architecture/testbed HOLD. If and only if a fresh Evidence Analyst handoff prospectively admits a genuinely fresh independently motivated native reduction-resistant primary object, MAIN owns all authorized critical-path implementation/fixup work and must stop at that handoff's review boundary. Do not absorb the reserved SUB NI01 diagnostic, reopen consumed identities, or create audit-driven/literature-driven successors.",
+  "next_MAIN_action": "Remain in architecture/testbed HOLD. If and only if a fresh Evidence Analyst handoff prospectively admits a genuinely fresh independently motivated native reduction-resistant primary object, MAIN owns all authorized critical-path implementation/fixup work and must stop at that handoff's review boundary. For any future lineage/causal-credit object, require the strengthened reduction ladder and eligibility-vs-counterfactual-responsibility discriminator prospectively. Do not absorb the reserved SUB NI01 diagnostic, reopen LP01, reuse consumed identities, or create audit-driven/literature-driven successors.",
   "write_path_diagnostics": {
     "github_direct_write_attempted": true,
     "github_direct_write_succeeded": true,
     "force_push_used": false,
-    "lease_start_commit": "6f81b94a8aff350f0cb4f0f983cf47661a0fcb13",
-    "latest_commit": "f76258c9885e7b1ac2e97eae7dc6d5bc6a194e42",
-    "history_path": "reports/orchestrator/history/2026-09-19/1219-main.md",
+    "lease_start_commit": "0a827c90e181a97431e1e8f0330acdd5141c90aa",
+    "latest_commit": "a1a6063259eb5ae8870f8d5ec7a822ae054269eb",
+    "history_commit": "968dc1a9e61b9a5d773aa85b8de27b43e14615fc",
+    "history_path": "reports/orchestrator/history/2026-09-19/1317-main.md",
     "history_path_prechecked_absent": true
   }
 }
