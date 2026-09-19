@@ -1,0 +1,129 @@
+{
+  "schema": "sparkbrain-architecture-study-contract-v1",
+  "candidate_id": "CAND-ASSEMBLY-CROSSCASCADE-FALLBACK-01",
+  "lane": "ASSEMBLY_CROSSCASCADE_FALLBACK_SEGMENTATION_ARCHITECTURE_STUDY_CYCLE1",
+  "research_layer": "ARCHITECTURE_STUDY",
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "question": "Within supported synthetic-development v0.5 conditions, does episode-global fallback across distinct sparse cascades alter assembly candidate/maturation or one fixed downstream prediction observable relative to a boundary-preserving no-crosscascade-fallback shadow extractor?",
+  "analyst_authority": "d6b14d826a0847e439dfedd86e363786d84e329a",
+  "source_binding": {
+    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "src/sparkbrain/v04/contracts.py": "9d3ae216a518ff6d409a67cd02f34f1dc20a8ab8",
+    "src/sparkbrain/v05/assemblies.py": "a0a8c41e21db68cafc08ace8dac50b7a56607a52",
+    "src/sparkbrain/v05/brain.py": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
+    "src/sparkbrain/v05/contracts.py": "048b93cddb16dbe9276a0e2c0f972406291c1cb2",
+    "src/sparkbrain/v05/prediction.py": "9805031fb8db235d2f3cf4c81421b896d2597af4",
+    "tests/v05/test_v05_assemblies.py": "99d847dae4aa8b394680acbb44ae01e72a5d9d4f"
+  },
+  "supported_contract_scope": {
+    "paths": [
+      "src/sparkbrain/v05/assemblies.py",
+      "src/sparkbrain/v05/brain.py",
+      "src/sparkbrain/v05/contracts.py",
+      "src/sparkbrain/v05/prediction.py",
+      "tests/v05/test_v05_assemblies.py"
+    ],
+    "explicit_episode_global_crosscascade_contract_hits": [],
+    "interpretation": "No bound canonical docstring/test statement explicitly declares cross-cascade episode-global fallback as the supported segmentation contract. Code behavior itself is not promoted to an explicit contract statement."
+  },
+  "input_family": {
+    "kind": "SYNTHETIC_DEVELOPMENT_MATCHED",
+    "temporal_bin_ms": 2.0,
+    "excluded_unit_ids": [0],
+    "source_kind": "internal_reservoir",
+    "spikes": [
+      {"time_ms": 0.0, "unit_id": 0},
+      {"time_ms": 1.0, "unit_id": 101},
+      {"time_ms": 20.0, "unit_id": 0},
+      {"time_ms": 21.0, "unit_id": 102}
+    ],
+    "segmentation_variants": {
+      "split_sparse": [
+        {"cascade_id": "cascade-a", "start_ms": 0.0, "end_ms": 1.0, "unit_ids": [0, 101], "ordered_units": [0, 101]},
+        {"cascade_id": "cascade-b", "start_ms": 20.0, "end_ms": 21.0, "unit_ids": [0, 102], "ordered_units": [0, 102]}
+      ],
+      "joined_control": [
+        {"cascade_id": "cascade-joined", "start_ms": 0.0, "end_ms": 21.0, "unit_ids": [0, 101, 102], "ordered_units": [0, 101, 0, 102]}
+      ]
+    },
+    "matched_rule": "Spike identities, spike times, exclusion set, source kind, temporal binning, assembly defaults, episode count, and predictor training target are identical across segmentation variants and extractor arms; only cascade boundary segmentation and the preregistered fallback treatment differ."
+  },
+  "extractor_arms": {
+    "EPISODE_GLOBAL_FALLBACK": "Call repository patterns_from_step exactly as bound.",
+    "BOUNDARY_PRESERVING_NO_CROSSCASCADE_FALLBACK": "Read-only shadow: run the same per-cascade row selection and pattern_from_spikes call for each cascade, but emit no pooled episode-global fallback when no individual cascade yields a pattern."
+  },
+  "assembly_binding": {
+    "config": "repository-default AssemblyConfig",
+    "mature_episodes": 3,
+    "training_episodes": 3,
+    "probe_episode": 4,
+    "predictor_training_target": "target-A",
+    "predictor_observation_rule": "After each training episode, call AssemblyPredictor.observe on the strongest mature unsuppressed activation with target-A. On probe episode, read prediction before any new observation."
+  },
+  "observables": {
+    "representation": [
+      "pattern_count",
+      "ordered_units",
+      "source_cascade_id"
+    ],
+    "assembly": [
+      "candidate_count",
+      "mature_activation_present"
+    ],
+    "downstream_exactly_one": "probe_prediction_value"
+  },
+  "decision_rules": {
+    "joined_control_must_match": "For joined_control, both extractor arms must have identical pattern ordered_units, candidate_count, mature_activation_present, and probe_prediction_value. Otherwise INVALID_DIAGNOSTIC.",
+    "representation_effect": "For split_sparse, representation_effect is true iff the two arms differ in pattern_count or ordered_units/source_cascade_id representation.",
+    "assembly_effect": "For split_sparse, assembly_effect is true iff candidate_count or mature_activation_present differs between arms.",
+    "functional_effect": "For split_sparse, functional_effect is true iff probe_prediction_value differs between arms. No numeric threshold or post-outcome tuning is used."
+  },
+  "terminal_mapping": {
+    "INVALID_DIAGNOSTIC": "Any source/blob/head/contract mismatch, matched-input violation, joined-control mismatch, forbidden input access, or inability to execute the fixed comparator/observables exactly as bound.",
+    "EXPLICIT_EPISODE_GLOBAL_FALLBACK_CONTRACT": "A bound supported canonical contract statement explicitly permits cross-cascade episode-global fallback and implementation is consistent with it.",
+    "NO_SUPPORTED_RUNTIME_CONDITION": "The fixed supported synthetic-development public event contracts cannot represent the bound sparse multi-cascade condition without changing semantics or using forbidden surfaces.",
+    "FUNCTIONAL_CROSSCASCADE_SEGMENTATION_EFFECT": "On split_sparse, representation_effect and assembly_effect are true and the single fixed downstream probe_prediction_value differs between current and shadow arms.",
+    "REPRESENTATION_ONLY_CROSSCASCADE_EFFECT": "On split_sparse, representation_effect or assembly_effect is true, but probe_prediction_value is identical between arms.",
+    "MIXED_OR_AMBIGUOUS_SEGMENTATION_CONTRACT": "The valid bounded result does not satisfy any more specific terminal class without adding a new semantic choice."
+  },
+  "precedence": [
+    "INVALID_DIAGNOSTIC",
+    "EXPLICIT_EPISODE_GLOBAL_FALLBACK_CONTRACT",
+    "NO_SUPPORTED_RUNTIME_CONDITION",
+    "FUNCTIONAL_CROSSCASCADE_SEGMENTATION_EFFECT",
+    "REPRESENTATION_ONLY_CROSSCASCADE_EFFECT",
+    "MIXED_OR_AMBIGUOUS_SEGMENTATION_CONTRACT"
+  ],
+  "machine_handoff_fields_required": [
+    "analyst_authority",
+    "candidate_id",
+    "lane",
+    "research_layer",
+    "evidentiary_status",
+    "source_binding",
+    "source_blob_verification",
+    "input_family_digest",
+    "comparator",
+    "observables",
+    "joined_control",
+    "split_sparse",
+    "mapped_outcome",
+    "git_head",
+    "contract_sha256",
+    "raw_sha256",
+    "workflow_run_id",
+    "stop_required"
+  ],
+  "forbidden_inputs": [
+    "official TEST",
+    "retained confirmatory or held-out datasets",
+    "trained checkpoint",
+    "consumed FORMAL raw",
+    "formal scorer",
+    "consumed identities",
+    "SUB exploratory artifact as Architecture evidence",
+    "production source mutation"
+  ],
+  "stop_condition": "Any valid terminal Architecture classification stops cycle 1 for fresh Evidence Analyst review. No same-run implementation change, cycle 2, PRE_FORMAL, or FORMAL continuation. Any outcome-bearing failure requiring redesign is INVALID_DIAGNOSTIC and stops.",
+  "formal_paths": "UNARMED_NO_FORMAL_OBJECT"
+}
