@@ -1,109 +1,153 @@
 {
-  "timestamp": "2026-09-19T21:30:00+09:00",
+  "timestamp": "2026-09-20T00:30:00+09:00",
   "role": "LITERATURE_REDUCTION_SCOUT",
-  "schedule_slot_jst": "21:30",
+  "schedule_slot_jst": "00:30",
   "schedule_inference_used": false,
   "control_plane_mailbox_semantics_respected": true,
   "repository_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "main_topk_architecture": "research/main-topk-persistent-amplification-arch-study-20260919@04ced2b97ed088bb2cdb086d164a86212741e601",
-    "main_structural_architecture": "research/main-structural-order-path-arch-study-20260919@6a53ee36259bca31b77024245e5ab0a9ef5ec405",
+    "active_temporal_batch_architecture": "research/main-temporal-batch-partition-arch-study-20260920@7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
+    "topk_hold": "research/main-topk-persistent-amplification-arch-study-20260919@04ced2b97ed088bb2cdb086d164a86212741e601",
+    "sub_temporal_batch_discovery": "research/exploratory-sub-temporal-expectation-batch-partition-20260919@7aa5d681a400173c09c55603a459d63a6aaf7b43",
     "authoritative_evidence_tag_count": 5,
+    "formal_tag_count": 0,
+    "legacy_freeze_branch_count": 13,
     "fresh_formal_identity_observed": false,
     "fresh_started_observed": false,
     "fresh_formal_test_authority_observed": false,
     "fresh_formal_evidence_observed": false
   },
-  "control_brain_commit_consumed": "566f3b7c590fcfe2b9e8aaa0415da964989b1124",
-  "evidence_analyst_commit_consumed": "a3ec861d71c0965625fc1d2e5e8f65f4ce47f834",
-  "orchestrator_report_branch_ref_observed": "c4fd52d8c44455cf34c3ce8556a8d96cef2ac866",
-  "main_report_commit_consumed": "be8ad6035444bd7ffeeb92b220c634377b49517b",
-  "sub_report_commit_consumed": "e809711bd42622e922ee765f8e5c75b3162ada1d",
-  "prior_literature_handoff_tip": "02c5eec39f8fca9dd180c4c91c4ae444ebd50995",
-  "prior_literature_latest_consumed": "2026-09-19T18:30:00+09:00",
+  "source_blobs_inspected": {
+    "src/sparkbrain/v04/brain.py": "25fd56b082168a9ea71f313023451858d00b6184",
+    "src/sparkbrain/v04/transduction.py": "1b88027fbcc0a1f8506fb644fd251c14039ef8a4"
+  },
+  "control_brain_commit_consumed": "c737fbcbcbceacdd906780fcb7f020658cd19422",
+  "evidence_analyst_commit_consumed": "862dd62cdce58f06e5c782b4b54212d93e40212e",
+  "orchestrator_report_branch_ref_observed": "afd8c8e5443ca8493ad39dd94f1f742284ab7d45",
+  "main_report_blob_consumed": "532c35bc12b492a209af13edd48f5fb4d0f2fc9d",
+  "main_state_blob_consumed": "15c575712ab949246bfee9b9e31bd754ea757a41",
+  "sub_report_blob_consumed": "52dc0aa5b754b4ddd9784cd97328725e64a53865",
+  "newest_role_history_consumed": [
+    "reports/orchestrator/history/2026-09-20/0023-main.md",
+    "reports/orchestrator/history/2026-09-19/2346-sub.md",
+    "reports/orchestrator/history/2026-09-19/2348-main.md"
+  ],
+  "prior_literature_handoff_tip_before_run": "fbb06db5913b8f48844ea1e21e0ce02be08f289c",
+  "prior_literature_latest_consumed": "2026-09-19T21:30:00+09:00",
+  "fresh_architecture_workflow_observed": {
+    "run_id": 35451528895,
+    "head": "7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
+    "status": "completed",
+    "conclusion": "success",
+    "artifact_id": 10587410697,
+    "artifact_digest": "sha256:22a5c650a58501a1dc8303118c366845201f9eba8453a22996f5fb4ca4d6428f",
+    "mapped_outcome_from_artifact_summary": "FUNCTIONAL_BATCH_PARTITION_EFFECT",
+    "raw_row_count": 6,
+    "raw_sha256": "71d4d8fddbe6b683b4ad93951c0f95fc1dfa5df74645743bfd39fba5b33c54ef",
+    "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
+    "fresh_analyst_review_pending": true
+  },
   "genuinely_new_information": true,
   "current_repository_interpretation": {
     "new_formal_scientific_evidence": false,
-    "main_lane": "LOWER_FUNNEL_MAIN_HOLD_PENDING_FRESH_OBJECT",
-    "topk": "HOLD_PENDING_READONLY_CROSS_SEED_SUPPORT_AND_FRESH_PROSPECTIVE_REDUCTION_QUESTION",
-    "structural_order": "REJECT_EDGE_OR_HOMEOSTASIS_CONTROL_REPRODUCES",
-    "sub_receptor_polarity": "REJECT_EXACT_IMPLEMENTATION_REDUCTION",
+    "main_lane": "TEMPORAL_EXPECTATION_BATCH_PARTITION_ARCHITECTURE_STUDY_CYCLE1",
+    "temporal_batch_partition": "EXACT_HEAD_WORKFLOW_COMPLETED_FUNCTIONAL_BATCH_PARTITION_EFFECT_PENDING_FRESH_ANALYST_REVIEW",
+    "topk": "HOLD_UTILITY_MIXED_NO_CYCLE3_NO_PRE_FORMAL",
+    "assembly_prototype_lockin": "REJECT_NO_OR_LOW_SUPPORT",
     "pre_formal": "EMPTY_HOLD",
     "formal": "EMPTY_HOLD"
   },
   "findings": [
     {
-      "id": "TOPK_BORDER_COLLISION_BASIN_REDUCTION",
-      "summary": "Discrete-time piecewise-smooth systems can change invariant sets when trajectories cross a switching surface. Border-collision theory therefore supplies an ordinary explanation for durable post-Top-k divergence: boundary crossing can move the system into a different basin/attractor, not merely create an immediate jump.",
+      "id": "TEMPORAL_NON_ANTICIPATION_REDUCTION",
+      "summary": "If time_ms is intended as event/physical time and omission pulses are online prediction errors, allowing a future-dated row already present in the same API batch to alter whether an earlier omission is emitted is an ordinary non-anticipation/causality violation or explicit look-ahead privilege, not a novel cognitive mechanism.",
       "sources": [
-        "Simpson, Border-Collision Bifurcations in R^N, SIAM Review 58(2), 2016, DOI 10.1137/15M1006982",
-        "Simpson, Border-collision bifurcations from stable fixed points to any number of coexisting chaotic attractors, arXiv:2207.10251, 2022"
+        "Classical causal/non-anticipative systems semantics: output at time t depends only on present/past inputs",
+        "SparkBrain main source blobs brain.py@25fd56b... and transduction.py@1b88027..."
       ],
-      "direct_applicability_confidence": "HIGH_AS_ORDINARY_DISCRETE_SWITCHING_REDUCTION; DIRECT_EQUIVALENCE_NOT_CLAIMED"
+      "direct_applicability_confidence": "HIGH_AS_SEMANTIC_REDUCTION_IF_OMISSIONS_ARE_INTENDED_ONLINE_EVENT_TIME_OUTPUTS"
     },
     {
-      "id": "RECURRENT_WTA_HYSTERESIS_REDUCTION",
-      "summary": "Recurrent lateral-inhibition/WTA networks can have multiple stable equilibria and hysteretic state transitions. A small routing perturbation can therefore produce persistent post-perturbation differences through ordinary attractor selection/hysteresis.",
+      "id": "EVENT_TIME_PROGRESS_BASELINE",
+      "summary": "Dataflow/event-time models and discrete-event simulation separate modeled event time from processing/batching time and use explicit event-time progress/chronological scheduling. This supplies a mature ordinary reference for the EVENT_TIME_CAUSAL arm and for partition-invariance requirements.",
       "sources": [
-        "Mao & Massaquoi, Dynamics of winner-take-all competition in recurrent neural networks with lateral inhibition, IEEE TNN 18(1), 2007, DOI 10.1109/TNN.2006.883724",
-        "Cotteret et al., Robust Spiking Attractor Networks with a Hard Winner-Take-All Neuron Circuit, ISCAS 2023, DOI 10.1109/ISCAS46773.2023.10181513"
+        "Akidau et al., The Dataflow Model, PVLDB 8(12), 2015, DOI 10.14778/2824032.2824076",
+        "Winter Simulation Conference literature on DES chronology and causal ordering"
       ],
-      "direct_applicability_confidence": "HIGH_AS_ORDINARY_COMPETITIVE_RECURRENT_BASELINE"
+      "direct_applicability_confidence": "HIGH_AS_ARCHITECTURE_SEMANTICS_BASELINE"
     },
     {
-      "id": "PIECEWISE_CONTRACTION_DISCONTINUITY_REDUCTION",
-      "summary": "Piecewise-contracting systems can still exhibit nontrivial recurrent/chaotic attractors when discontinuities participate in the attractor. Consequently a locally stable or contractive within-region Jacobian does not by itself rule out switching-driven long-lived complexity.",
+      "id": "DETERMINISTIC_STREAM_PARTITION_INVARIANCE_BASELINE",
+      "summary": "Kahn-style deterministic stream models establish the broader principle that transport/scheduling choices need not alter logical outputs. For SparkBrain, if API chunking is not a modeled input, legal repartitioning of the same timestamped stream should be a metamorphic invariance property.",
       "sources": [
-        "Catsigeras, Guiraud, Meyroneinc & Ugalde, On the asymptotic properties of piecewise contracting maps, Dynamical Systems 31(2), 2016, DOI 10.1080/14689367.2015.1068274"
+        "Gonnord et al., A Survey on Parallelism and Determinism, ACM Computing Surveys 55(10), 2023, DOI 10.1145/3564529",
+        "Gilles Kahn, The Semantics of a Simple Language for Parallel Programming, 1974"
       ],
-      "direct_applicability_confidence": "HIGH_AS_WARNING_AGAINST_LOCAL_STABILITY_OVERINTERPRETATION"
+      "direct_applicability_confidence": "HIGH_AS_SEMANTIC_TEST; DIRECT_KPN_EQUIVALENCE_NOT_CLAIMED"
+    },
+    {
+      "id": "OMISSION_EVENT_TIME_SCIENTIFIC_BAR",
+      "summary": "Current omission-response neuroscience treats omission activity as tied to the expected time of a missing event and distinguishes ordinary local regularity mechanisms from richer model-based prediction. This makes event-time deadline adjudication scientifically meaningful while providing no novelty rescue for the batching effect.",
+      "sources": [
+        "Yaron et al., Nothing Really Matters: What Omission Responses Reveal About the Predictive Brain, European Journal of Neuroscience 63(10), 2026, DOI 10.1111/ejn.70566"
+      ],
+      "direct_applicability_confidence": "MODERATE_TO_HIGH_FOR_SCIENTIFIC_TIMING_BAR; NOT_A_DIRECT_MECHANISTIC_EQUIVALENCE"
     }
   ],
   "affected_lines": [
-    "CAND_TOPK_PA_01",
-    "TOPK_ROUTER_PERSISTENT_AMPLIFICATION",
-    "ARCHITECTURE_STUDY_REDUCTION",
-    "PROGRAMME_NOVELTY",
-    "CAND_STRUCTURAL_ORDER_PATH_01"
+    "CAND_TEMPORAL_BATCH_PARTITION_01",
+    "TEMPORAL_EXPECTATION_V04",
+    "ARCHITECTURE_REPRODUCIBILITY",
+    "EVENT_TIME_CAUSALITY",
+    "PROGRAMME_NOVELTY"
   ],
   "reduction_candidates": [
-    "border-collision / active-set basin switching",
-    "recurrent WTA multistability and hysteresis",
-    "piecewise-contracting dynamics with discontinuity-supported attractors",
-    "within-region Jacobian/JVP and non-normal transient gain kept separate from cross-boundary global dynamics"
+    "non-anticipative event-time causal scheduling",
+    "event-time versus processing-time separation with explicit progress/watermark semantics",
+    "partition-invariance metamorphic testing over the same timestamped stream",
+    "chronological discrete-event execution with fixed equal-time ordering",
+    "omission-at-expected-time semantics"
   ],
   "confidence": {
     "external_prior_art_exists": "HIGH",
-    "novelty_bar_impact": "HIGH_FOR_HELD_TOPK_LINE",
+    "novelty_bar_impact": "HIGH_FOR_TEMPORAL_BATCH_PARTITION_LINE",
     "direct_equivalence_to_sparkbrain": "NOT_CLAIMED",
-    "supports_reopening_structural_candidate": "NO",
-    "supports_changing_completed_topk_contracts": "NO"
+    "supports_architecture_correctness_interpretation": "YES",
+    "supports_preformal_or_formal_promotion": "NO",
+    "supports_outcome_responsive_cycle2": "NO"
   },
-  "novelty_or_reduction_impact": "STRONGER_ORDINARY_REDUCTION_PRESSURE_ON_HELD_TOPK_LINE: hard routing can yield durable divergence through border-collision, basin/attractor selection and WTA hysteresis; local contraction or weak non-normal gain alone does not eliminate switching-driven persistence. The current Structural residual remains rejected and should not be rescued from literature.",
+  "novelty_or_reduction_impact": "STRONG_ORDINARY_ARCHITECTURE_REDUCTION: the observed batching sensitivity is naturally explained by non-anticipation, event-time progress and deterministic stream-semantics failures. Future-dated rows in one host-language batch can update expectation state before an earlier omission deadline is adjudicated. The completed Architecture artifact therefore supports an API/reproducibility issue, not a new cognitive principle.",
   "prospective_baselines_or_discriminators": [
-    "border/basin-crossing and return-map analysis around Top-k active-set boundaries",
-    "hysteresis test: cross a boundary, remove perturbation, then test persistence under matched subsequent inputs",
-    "controlled recurrent-state reset or matched-within-branch initialization to separate basin selection from propagated memory",
-    "analyze within-region contraction/non-normal gain separately from cross-boundary global branch selection"
+    "explicit non-anticipative event-time scheduler/reference",
+    "partition-invariance metamorphic property over the same timestamped stream",
+    "discrete-event chronological processing with prospectively fixed equal-time ordering",
+    "event-time versus processing-time separation with an explicit progress/watermark concept",
+    "omission-at-expected-time analysis that forbids retrospective suppression by later event-time observations"
   ],
   "questions_for_evidence_analyst": [
-    "If the existing Top-k cross-seed support diagnostic is robust, should the next fresh reduction question explicitly test basin/attractor switching and hysteresis before any persistence-specific interpretation?",
-    "Should a stable or contractive within-region Jacobian be considered insufficient to clear ordinary reduction unless cross-boundary branch selection is also excluded?",
-    "Keep CAND-STRUCTURAL-ORDER-PATH-01 rejected under its current question with no literature-driven rescue cycle?"
+    "If the completed exact-head artifact is accepted, classify FUNCTIONAL_BATCH_PARTITION_EFFECT as Architecture/API causality-reproducibility evidence rather than mechanism evidence?",
+    "Make partition invariance under fixed event-time history an explicit future correctness invariant for temporal expectations?",
+    "Keep EVENT_TIME_CAUSAL as a stronger semantic reference and require any atomic-batch alternative to state its look-ahead privilege explicitly?"
   ],
   "questions_for_control_brain": [
-    "Add border-collision/multistability/WTA hysteresis to the ordinary routing-persistence reduction ladder after support robustness is established?",
-    "Keep LIT-20260919-1830-TOPK-HYBRID-TRANSIENT deferred until fresh Analyst review rather than creating an overlapping mechanism request now?",
-    "Preserve FORMAL/H7 novelty criteria while MAIN remains HOLD pending a genuinely fresh central object?"
+    "Add non-anticipation and event-time/processing-time separation to the ordinary temporal-expectation reduction ladder?",
+    "Treat batching boundaries as non-semantic by default unless an API contract says otherwise?",
+    "Keep PRE_FORMAL/FORMAL empty for this line and require fresh Analyst authority before any further Architecture cycle or implementation change?"
   ],
   "must_not_change_frozen_or_consumed": [
     "all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence",
-    "canonical terminal classifications and consumed STARTED/control/preserve/evidence refs",
-    "completed CAND-TOPK-PA-01 Architecture cycles/labels and current HOLD boundary; no cycle 3 rescue or outcome-responsive redesign",
-    "rejected CAND-STRUCTURAL-ORDER-PATH-01 current question; no cycle 2 rescue under that object",
-    "no official TEST, new formal identity/STARTED, rerun, retune, rescore, research merge, immutable-ref/tag mutation, or scheduler change"
+    "all canonical terminal classifications and consumed STARTED/control/preserve/evidence refs",
+    "CAND-TEMPORAL-BATCH-PARTITION-01 cycle-1 prospective contract, exact-head result and mapped label; no rerun, retune, relabel or outcome-responsive cycle-2 extension before fresh review",
+    "completed CAND-TOPK-PA-01 Architecture cycles/HOLD boundary; no cycle-3 rescue",
+    "rejected Assembly and Structural current questions; no literature-driven rescue",
+    "no official TEST, new formal identity/STARTED, rescore, research merge, immutable-ref/tag mutation, or scheduler change"
   ],
   "utility_request_created": null,
-  "existing_relevant_utility_request": "LIT-20260919-1830-TOPK-HYBRID-TRANSIENT",
-  "legacy_shared_latest_state_updated": false
+  "existing_relevant_utility_request": "SUB-20260919-2344-TEMPORAL-EXPECTATION-BATCHING-CALLSITE-AUDIT",
+  "legacy_shared_latest_state_updated": false,
+  "persistence": {
+    "history_path": "analysis/external_research_audit/history/2026-09-20/0030-LITERATURE_REDUCTION_SCOUT.md",
+    "history_commit": "c10e915532885f96a47804c1d05031a552714079",
+    "latest_commit": "fa2c35656b92a2bb958682e2ba1a294453105d96"
+  }
 }
