@@ -1,4 +1,4 @@
-# SparkBrain Literature Reduction Scout — 2026-09-19 12:30 JST
+# SparkBrain Literature Reduction Scout — 2026-09-19 15:32 JST
 
 ## Role
 
@@ -6,43 +6,62 @@
 
 ## Repository evidence inspected
 
-Repository state was re-fetched independently from the control-plane mailboxes. `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. The active LP01 branch remains `research/lp01-actual-lineage-causal-credit-spec-20260918@f6d59a55730c5f99cd7f30470847fc3f175bdf64`. No new formal identity, STARTED marker, immutable scientific evidence, or active formal TEST was observed. The programme remains `PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE`.
+Repository state was re-fetched independently from all control-plane mailboxes. `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. The active LP01 branch remains `research/lp01-actual-lineage-causal-credit-spec-20260918@f6d59a55730c5f99cd7f30470847fc3f175bdf64`. Its current reference implementation still represents lineage explicitly as append-only parent/child relations (`ActualLineageIndex`) and includes an ordinary explicit transitive-ancestor comparator (`ExplicitParentTable`) plus a bounded recent-window comparator. No fresh formal identity, STARTED marker, formal TEST, immutable scientific evidence, or new research workflow was observed.
 
-Control-plane mailboxes were read only at their designated handoff/report paths. Evidence Analyst `2c1caa7063feabde079725e198e09b273d005a80` keeps MAIN on HOLD and reserves only a read-only NON_EVIDENTIARY NI01 world-label-privilege sensitivity for SUB. MAIN history `1219-main.md` reports no scientific mutation or fresh object; the newest relevant SUB role history remains `1032-sub.md`, also with no formal scientific work. These mailbox summaries were not used as repository snapshots.
+Authoritative evidence remains exactly five annotated `evidence/*` tags (C19-v4, C19-R2, PD01, NI01, H5); `formal/*`, `sealed/*`, and tag-based `freeze/*` remain absent, while 13 legacy `freeze/*` branches remain preserved. Relevant open PRs #148 and #149 remain open/mergeable governance work and do not alter current science.
 
-Recent Literature history was read before search. The 06:33 and 09:32 scouts already covered provenance/actual causality, Petri/event structures, dynamic slicing, GLE/SAL and the two-axis history/influence + learning/locality reduction ladder. Those findings are not repeated below.
+Control-plane mailboxes were read only at designated paths. Control Brain `6ed239b241a39f7d3e934e37751454c8bf3ebb4c` retains `NO_HIGH_VALUE_OBJECT` / experimental-cognitive-architecture-testbed framing. Evidence Analyst `8e8aa0924ff5c7dae99332d9babe7f3dd748f25b` reports no new formal repository scientific evidence and leaves MAIN on HOLD and SUB at `no_op`. The current orchestrator report branch state through `313da06cdafd8cbaf82c19a1f82c9e9e2a234827` likewise has no active research branch/identity or formal execution GO; newest relevant role histories are MAIN `1512-main.md` and SUB `1437-sub.md`.
+
+Recent Literature history was read before search. Prior runs already covered provenance/actual causality, query-answer responsibility, Petri/event structures, dynamic slicing, GLE/SAL, cascading eligibility, diffusive neuromodulatory credit, RUDDER/TVT, predictive-state/causal-state reductions, reservoirs, and automata extraction. Those findings are not repeated below.
 
 ## Genuinely new external literature findings
 
-### 1. Cascading eligibility traces make long delayed local credit an ordinary reduction target
+### 1. Fixed-context counterfactual replay supplies a strong functional ceiling for lineage-specific credit
 
-Raharison Ralambomihanta et al. (2025), *Learning From the Past with Cascading Eligibility Traces* (arXiv:2506.14598), show that a state-space cascade can form temporally precise eligibility memories at arbitrary delays and demonstrate credit assignment over behavioral time scales from seconds to minutes. The important reduction pressure is not that this proves equivalence to SparkBrain; it shows that delayed, history-sensitive, local synaptic credit can be implemented by a compact ordinary state-space eligibility mechanism without explicit historical lineage tokens.
+Chen et al. (2026), *Contextual Counterfactual Credit Assignment for Multi-Agent Reinforcement Learning in LLM Collaboration* (C3; arXiv:2603.06859), explicitly freezes the transcript-derived context, substitutes an alternative upstream message, and evaluates it with fixed-continuation replay plus a leave-one-out baseline. The paper reports that this isolates decision-level marginal credit from sparse terminal feedback and improves performance across five math/coding benchmarks under matched budgets.
 
-Foundationally, Izhikevich (2007), *Solving the Distal Reward Problem through Linkage of STDP and Dopamine Signaling*, already supplied the canonical local synaptic-tag + delayed global dopamine route for distal reward. CET materially strengthens that baseline by addressing the temporal smearing problem of ordinary exponential traces.
+**Reduction impact:** the conceptual operation `change one historical event while holding downstream context as fixed as possible, then measure outcome change` is not itself a Spark-specific idea. It is already an ordinary counterfactual-credit construction. C3 has much stronger replay/rewind privilege than a strict local online SparkBrain mechanism, so it should be treated as a **stronger-privilege functional ceiling**, not an equal-privilege mechanistic reduction.
 
-**Implication:** future H7/causal-credit novelty cannot rest on `credit arrives long after the responsible activity` or `the system preserves precise local eligibility over long delays`. A native residual must distinguish among multiple temporally co-eligible histories and track actual difference-making responsibility, not merely temporal eligibility.
+**Prospective discriminator value:** if a native H7 mechanism ever appears, a paired intervention that holds present state, local activity envelope, timing, eligibility and continuation distribution fixed while changing only one historical lineage/event is a much sharper test than ancestor recovery. SparkBrain would need to change credit in the same responsibility-sensitive direction without receiving C3-style replay privilege.
 
-### 2. Diffusive neuromodulatory credit supplies another ordinary local physical mechanism under sparse feedback
+Source: Chen et al., arXiv:2603.06859 (2026).
 
-Barretto-Bittar, Levina, Giannakakis & Zeraati (2026), *Diffusion of Neuromodulators for Temporal Credit Assignment* (arXiv:2603.08949), introduce a model where error information diffuses locally through a recurrent spiking network, allowing neurons without direct feedback to learn from the local concentration of a credit signal. Against an eligibility-propagation baseline, diffusion-based modulation improves learning on three benchmark tasks with sparse feedback connectivity.
+### 2. COMA shows that counterfactual marginal contribution under fixed peers is already a foundational ordinary credit baseline
 
-**Implication:** spatially distributed, local, biologically flavored credit circulation also cannot be treated as a Spark-specific novelty axis by itself. If a future Spark mechanism uses local credit propagation, it should be challenged with a matched local eligibility/diffusion comparator before a lineage-specific interpretation is admitted.
+Foerster et al. (AAAI 2018), *Counterfactual Multi-Agent Policy Gradients*, use a centralized critic and a counterfactual baseline that marginalizes one agent's action while keeping the other agents' actions fixed. The method was designed specifically to address multi-agent credit assignment while retaining decentralized actors.
 
-### 3. Long-horizon credit is also reducible by explicit reward/value transport, but these are stronger-privilege functional baselines
+**Reduction impact:** `credit by comparing what happened with what would have happened if one contributor acted differently while peers are fixed` has a well-established algorithmic baseline. This further narrows H7: novelty cannot rest on counterfactual marginal contribution itself. The possible residual is an **online/local implementation of responsibility-sensitive credit under matched privilege**, rather than access to a centralized critic or explicit counterfactual evaluator.
 
-Arjona-Medina et al. (NeurIPS 2019), *RUDDER: Return Decomposition for Delayed Rewards*, formalize reward redistribution: a return-equivalent process can move credit toward salient earlier state-action events, with optimal redistribution driving expected future rewards toward zero. Hung et al. (Nature Communications 2019), *Optimizing agent behavior over long time scales by transporting value*, use attentional external-memory reads to transport future value back to remote remembered events.
+**Privilege warning:** COMA's centralized critic is deliberately stronger than a local anonymous mechanism. It therefore belongs beside RUDDER/TVT/C3 in a privilege-tiered ceiling family unless a future contract can actually match the information surface.
 
-These are not equal-privilege mechanistic reductions for a strict local/anonymous SparkBrain claim: RUDDER uses trajectory-level sequence prediction/contribution analysis, while TVT explicitly uses content-addressed memory and read events. They are nevertheless important **functional ceiling baselines**: success at delayed causal credit is not itself novel. Future comparisons should explicitly tier baselines by information/readout privilege rather than treating all ordinary mechanisms as equally matched.
+Source: Foerster et al., AAAI 2018, DOI 10.1609/aaai.v32i1.11794.
+
+### 3. Concurrent stochastic responsibility now has an explicit formal counterfactual baseline
+
+Mu & Najib (IJCAI 2026), *Counterfactual Reasoning for Responsibility Attribution in Probabilistic Multi-Agent Systems*, model concurrent stochastic multi-player games and define retrospective/backward counterfactual responsibility for outcomes under a strategy profile. They then use the Shapley value to allocate responsibility and establish fairness/consistency properties.
+
+**Reduction impact:** stochasticity, concurrency and distributed contribution do not by themselves make lineage responsibility a novel computational object. There is now a direct formal comparator for retrospective responsibility in concurrent stochastic systems. This complements the previously identified Halpern-Pearl / database-causality baselines by moving closer to multi-agent competition under stochastic outcomes.
+
+**Prospective discriminator value:** future preemption/backup/overdetermination tests should include stochastic variants where ancestry and co-eligibility are held similar but backward counterfactual responsibility differs. A Spark-specific residual would need to track that distinction through its native dynamics rather than through an explicit global responsibility solver.
+
+Source: Mu & Najib, IJCAI 2026, DOI 10.24963/ijcai.2026/33; arXiv:2605.13077.
 
 ## Inference for SparkBrain
 
-The current LP01 close/no-go remains supported; this literature does not justify reopening it or constructing a successor. The residual can be narrowed further to:
+These findings do **not** justify reopening LP01 or manufacturing a successor. They strengthen the current close/HOLD decision.
 
-> **Counterfactual actual-cause-specific credit among multiple temporally and/or spatially co-eligible historical lineages, under matched local-information/readout/resource privilege, where ordinary eligibility-state dynamics, diffusive neuromodulatory credit, and stronger-privilege reward/value transport do not explain the selective effect.**
+The remaining H7 hypothesis should be narrowed one step further. The scientifically interesting residual is no longer merely `actual causal responsibility` in the abstract, because explicit counterfactual evaluators already compute that. The possible Spark-specific residual is:
 
-The clean future discriminator, only if a native mechanism independently appears, is to **orthogonalize eligibility from causal responsibility**: match timing, local activity, eligibility strength, delay, reward and diffusion neighborhood while changing only actual responsibility through preemption, backup or overdetermination. A mechanism that merely follows temporal eligibility should then fail while a genuine responsibility-sensitive mechanism should change its credit allocation.
+> **A native online/local mechanism that assigns lineage-specific credit in the direction of counterfactual actual responsibility among co-eligible histories, without centralized world/task labels, global causal-graph lookup, explicit replay/rewind, or an oracle counterfactual critic, and that survives matched ordinary eligibility/recurrent/plastic baselines.**
 
-This is prospective admission guidance only. It must not be used to rewrite any frozen/consumed protocol or to engineer a literature-driven rescue object now.
+This suggests a clearer privilege-tiered reduction ladder for any future independently arising object:
+
+1. **Equal-privilege mechanistic reductions:** eligibility/three-factor/e-prop/cascading traces, recurrent/plastic state, local diffusive credit, explicit local state machines where applicable.
+2. **Trace/influence reductions:** provenance, event structures/causal nets, dynamic slicing.
+3. **Stronger-privilege counterfactual ceilings:** explicit actual-cause/responsibility solvers, COMA-style centralized counterfactual critics, C3 fixed-context replay, RUDDER/TVT where privilege is stronger.
+4. **Only then:** a possible Spark-specific residual if the native local mechanism tracks responsibility-sensitive interventions despite lacking those oracle privileges.
+
+The most decisive future discriminator, only if a native mechanism independently appears, is therefore a **responsibility-changing / local-observation-preserving intervention pair**: match timing, current/recent observations, activity, eligibility, reward, resource budget and local neighborhood while changing actual responsibility through substitution, preemption, backup or overdetermination. Do not construct such a formal object merely because the literature suggests it while `NO_HIGH_VALUE_OBJECT` remains in force.
 
 ## Knowledge-flow contract
 
@@ -56,38 +75,37 @@ affected_lines:
   - FUTURE_OBJECT_ADMISSION
   - CAUSAL_CREDIT_REDUCTION_LADDER
 novelty_or_reduction_impact: >
-  STRONGER_REDUCTION_PRESSURE. Long-delay local credit can be carried by
-  cascading eligibility-state dynamics; sparse local credit can be carried by
-  diffusive neuromodulatory signals; delayed credit can also be solved
-  functionally by reward/value transport mechanisms with stronger privilege.
-  The residual should be actual-cause-specific selection among co-eligible
-  histories under matched privilege, not delayed/history-sensitive credit itself.
+  STRONGER_REDUCTION_AND_PRIVILEGE_PRESSURE. Counterfactual marginal credit itself is
+  established in ordinary multi-agent learning (COMA), exact-context/fixed-continuation
+  replay now provides a strong decision-level counterfactual credit ceiling (C3), and
+  concurrent stochastic responsibility has an explicit formal counterfactual framework.
+  The remaining possible Spark-specific residual is a native online/local implementation
+  of responsibility-sensitive lineage credit without centralized/replay/oracle privilege.
 audit_classification: null
 prospective_baselines_or_discriminators:
-  - matched cascading-eligibility / three-factor local delayed-credit comparator
-  - matched local diffusive-neuromodulation comparator when physical locality is central
-  - paired histories with matched temporal/spatial eligibility but responsibility changed by preemption/backup/overdetermination
-  - RUDDER and TVT only as explicitly stronger-privilege functional ceiling baselines unless privilege can be matched
+  - COMA-style centralized counterfactual marginal-contribution ceiling, explicitly marked stronger-privilege unless matched
+  - C3-style fixed-context / fixed-continuation replay ceiling, explicitly marked stronger-privilege unless matched
+  - explicit concurrent-stochastic retrospective responsibility / Shapley baseline
+  - paired responsibility-changing interventions with current/local observations, timing, eligibility, reward and resources matched
+  - preserve the equal-privilege local eligibility/recurrent/plastic reduction ladder before any novelty claim
 questions_for_evidence_analyst:
-  - Keep LP01 closed; do not count long-delay or temporally precise local eligibility as lineage-specific causal responsibility.
-  - Add cascading eligibility and local diffusive credit to the ordinary learning/locality reduction ladder?
-  - Require future H7 objects to orthogonalize eligibility from counterfactual responsibility prospectively?
+  - Keep LP01 closed; counterfactual responsibility itself is not sufficient novelty because explicit ordinary solvers and replay methods already compute it.
+  - Should future H7 admission require explicit separation of equal-privilege mechanistic baselines from stronger-privilege counterfactual ceilings?
+  - Require a future native H7 mechanism to track responsibility-changing interventions without replay/global critic/world-label access before formal review?
 questions_for_control_brain:
-  - Narrow future causal-credit admission to actual-cause-specific selection among co-eligible histories under matched privilege?
-  - Tier ordinary baselines by privilege, separating equal-privilege mechanistic reductions from stronger-privilege functional ceilings?
-  - Retain NO_HIGH_VALUE_OBJECT until a native mechanism independently exposes this residual rather than constructing a literature-driven successor?
+  - Narrow the residual from intervention-validated responsibility in general to native local/online responsibility sensitivity under matched privilege?
+  - Add COMA/C3/concurrent-stochastic responsibility to the stronger-privilege ceiling tier of the reduction doctrine?
+  - Retain NO_HIGH_VALUE_OBJECT until this residual appears natively rather than engineering a literature-driven successor?
 must_not_change_frozen_or_consumed:
   - all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence
   - canonical PD01/NI01/H5 terminal classifications
   - all consumed A01/RV01/RV02/CX identities and legacy immutable refs
   - LP01 remains pre-formal and is not upgraded by this literature
-  - no outcome-responsive successor, identity, STARTED, official TEST, rerun, retune, rescore, or scheduler change
+  - no outcome-responsive successor, identity, STARTED, official TEST, rerun, retune, rescore, research merge, immutable-ref/tag mutation, or scheduler change
 ```
 
 ## Sources
 
-- Raharison Ralambomihanta et al., *Learning From the Past with Cascading Eligibility Traces*, arXiv:2506.14598 (2025).
-- Izhikevich, *Solving the Distal Reward Problem through Linkage of STDP and Dopamine Signaling*, Cerebral Cortex 17(10), 2443–2452 (2007), DOI 10.1093/cercor/bhl152.
-- Barretto-Bittar, Levina, Giannakakis & Zeraati, *Diffusion of Neuromodulators for Temporal Credit Assignment*, arXiv:2603.08949 (2026).
-- Arjona-Medina et al., *RUDDER: Return Decomposition for Delayed Rewards*, NeurIPS 2019.
-- Hung et al., *Optimizing agent behavior over long time scales by transporting value*, Nature Communications 10, 5223 (2019), DOI 10.1038/s41467-019-13073-w.
+- Chen et al., *Contextual Counterfactual Credit Assignment for Multi-Agent Reinforcement Learning in LLM Collaboration*, arXiv:2603.06859 (2026).
+- Foerster et al., *Counterfactual Multi-Agent Policy Gradients*, AAAI 2018, DOI 10.1609/aaai.v32i1.11794.
+- Mu & Najib, *Counterfactual Reasoning for Responsibility Attribution in Probabilistic Multi-Agent Systems*, IJCAI 2026, DOI 10.24963/ijcai.2026/33; arXiv:2605.13077.
