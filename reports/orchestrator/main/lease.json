@@ -1,14 +1,14 @@
 {
-  "run_id": "sparkbrain-main-primary-20260919T141235JST",
+  "run_id": "sparkbrain-main-primary-20260919T151232JST",
   "execution_mode": "PRIMARY",
-  "status": "COMPLETED",
-  "started_at": "2026-09-19T14:12:35+09:00",
-  "heartbeat_at": "2026-09-19T14:16:00+09:00",
-  "analyst_commit": "ca0f19d52a80622bd6e4d6d61830f805c1f89234",
+  "status": "RUNNING",
+  "started_at": "2026-09-19T15:12:32+09:00",
+  "heartbeat_at": "2026-09-19T15:12:32+09:00",
+  "analyst_commit": "8e8aa0924ff5c7dae99332d9babe7f3dd748f25b",
   "active_branch": null,
   "active_identity": null,
-  "active_step": "PROGRAMME_ARCHITECTURE_TESTBED_HOLD_NI01_SUB_DIAGNOSTIC_INTEGRITY_CLOSED",
+  "active_step": "FAST_PATH_RECONCILIATION_ARCHITECTURE_TESTBED_HOLD",
   "workflow_run_id": null,
-  "expected_next_action": "Remain in architecture/testbed HOLD. The prior NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY lane is closed as integrity-blocked and must not be recreated or absorbed by MAIN. Continue only if a fresh Evidence Analyst handoff prospectively admits a genuinely fresh independently motivated native reduction-resistant primary object; then MAIN owns the full authorized critical path and stops at the specified review boundary. Do not reopen LP01 or reuse consumed identities.",
+  "expected_next_action": "Re-fetch current MAIN integrity envelope under Evidence Analyst 8e8aa0924ff5c7dae99332d9babe7f3dd748f25b. If no fresh admitted primary object or integrity anomaly exists, preserve architecture/testbed HOLD, perform no scientific mutation, persist a no-op checkpoint, and complete. Do not absorb SUB work or reopen consumed identities.",
   "owner": "main"
 }
