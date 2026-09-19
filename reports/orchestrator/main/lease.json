@@ -1,14 +1,14 @@
 {
   "run_id": "sparkbrain-main-primary-20260919T2115JST",
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-19T21:15:00+09:00",
-  "heartbeat_at": "2026-09-19T21:15:00+09:00",
+  "heartbeat_at": "2026-09-19T21:17:00+09:00",
   "analyst_commit": "a3ec861d71c0965625fc1d2e5e8f65f4ce47f834",
   "active_branch": null,
   "active_identity": null,
-  "active_step": "LOWER_FUNNEL_MAIN_HOLD_RECONCILE",
+  "active_step": "LOWER_FUNNEL_MAIN_HOLD_PENDING_FRESH_OBJECT",
   "workflow_run_id": null,
-  "expected_next_action": "Reconcile the fresh Analyst HOLD allocation and persist a no-op MAIN checkpoint. Do not continue Structural cycle 2, Top-k cycle 3, construct H7, access TEST/formal surfaces, or absorb SUB Discovery.",
+  "expected_next_action": "Await a fresh Evidence Analyst handoff prospectively authorizing a central Architecture/PRE_FORMAL/FORMAL object. Under current authority do not continue Structural cycle 2, Top-k cycle 3, construct H7, access TEST/formal surfaces, or absorb SUB Discovery.",
   "owner": "main"
 }
