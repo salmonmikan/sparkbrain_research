@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-20T04:49:00+09:00",
+  "timestamp": "2026-09-20T04:51:00+09:00",
   "worker_role": "sub",
   "mode": "discovery",
   "evidence_analyst_commit": "493573eb3b8c38d88f251db7c04dfe1a586c6ff0",
@@ -72,7 +72,7 @@
   "recommendation": "PROMOTE_TO_ARCHITECTURE_STUDY",
   "research_layer_state": {
     "DISCOVERY": "OPEN_SUB_TARGET_COMPLETED_STOPPED_FOR_ANALYST_REVIEW",
-    "ARCHITECTURE_STUDY": "ACTIVE_AUTHORIZED_PENDING_MAIN_PROSPECTIVE_BINDING_ON_UNIT_SUPPRESSION_TRANSIENT_SEMANTICS",
+    "ARCHITECTURE_STUDY": "ACTIVE_MAIN_UNIT_SUPPRESSION_TRANSIENT_SEMANTICS_CYCLE1_WORKFLOW_IN_PROGRESS",
     "PRE_FORMAL": "EMPTY_HOLD",
     "FORMAL": "EMPTY_HOLD"
   },
@@ -82,7 +82,7 @@
     "formal": "fresh prospectively admissible object plus one-way authority exists"
   },
   "main_work_explicitly_avoided": [
-    "CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01 Architecture object, blockers, and successor",
+    "CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01 Architecture object, blockers, semantic outcome, and successor",
     "replay or continuation of V05_UNIT_SUPPRESSION_LATENT_STATE_DISCOVERY_CYCLE1",
     "CAND-V05-TOPOLOGY-CONFIG-BINDING-01 continuation",
     "CAND-TEMPORAL-BATCH-PARTITION-01 continuation",
@@ -103,7 +103,11 @@
     "fresh_analyst_arrived_after_initial_persistence": true,
     "allocation_changed": false,
     "selected_target_invalidated": false,
-    "main_started_new_suppression_object_according_to_fresh_analyst": false
+    "main_started_authorized_suppression_object_after_sub_persistence": true,
+    "main_active_research_branch_observed": "research/main-v05-unit-suppression-transient-semantics-arch-study-20260920",
+    "main_active_research_head_observed": "2ef4b24f8e7ef8577ebbcb0328e7b3476bc24336",
+    "sub_collision_found": false,
+    "main_semantic_outcome_opened_by_sub": false
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
@@ -111,7 +115,10 @@
     "control_brain_branch_tip_observed": "84a2cbbb11f2820dcedd6fee53137d1de439de62",
     "sub_research_branch": "research/exploratory-sub-assembly-cascade-fallback-bridging-20260920",
     "sub_research_head": "373f7d52af3b46a23ae976863a2eb5d73d982b5f",
-    "orchestrator_tip_before_sub_persistence": "6df69c16b22a73ae7be1302ec126bb964949b937"
+    "main_active_research_branch": "research/main-v05-unit-suppression-transient-semantics-arch-study-20260920",
+    "main_active_research_head": "2ef4b24f8e7ef8577ebbcb0328e7b3476bc24336",
+    "orchestrator_tip_before_sub_persistence": "6df69c16b22a73ae7be1302ec126bb964949b937",
+    "shared_orchestrator_tip_observed_after_concurrent_main_persistence": "28726c3d8e797928f5f7a745caa37228f8c72705"
   },
   "utility_request_created": null,
   "consumed_identities": [],
@@ -128,13 +135,13 @@
   ],
   "completion_target": "ACHIEVED_ONE_BOUNDED_INDEPENDENT_ASSEMBLY_SEGMENTATION_DISCOVERY_CYCLE_AND_RETURNED_ARCHITECTURE_PROMOTION_CANDIDATE",
   "completion_target_achieved": true,
-  "integrity_state": "CLEAN_NON_EVIDENTIARY_DISCOVERY_COMPLETED_RECONCILED_TO_FRESH_ANALYST_AND_STOPPED_FOR_REVIEW",
+  "integrity_state": "CLEAN_NON_EVIDENTIARY_DISCOVERY_COMPLETED_RECONCILED_WITH_CONCURRENT_MAIN_AND_STOPPED_FOR_REVIEW",
   "persistence_result": {
     "preliminary_history_path": "reports/orchestrator/history/2026-09-20/0447-sub.md",
     "preliminary_history_commit": "0b18c8ff3a39d5b6a4d9bf7757276e4fa71ad233",
     "final_history_path": "reports/orchestrator/history/2026-09-20/0449-sub.md",
     "final_history_commit": "70ee6ef3364d1abd6d5c6196b31b7b9fded02067",
-    "latest_md_commit": "a0cfd486f69fa819ecc091d8912816cba6fd4b3c",
+    "latest_md_commit": "993d29e0e1ae8b949805e8297c4e4fc59b21ff05",
     "state_json_commit": "this update",
     "force_push_used": false,
     "main_or_legacy_shared_latest_state_modified": false
