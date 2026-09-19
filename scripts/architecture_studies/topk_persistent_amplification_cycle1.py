@@ -21,10 +21,10 @@ MAGNITUDES = (0.01, 0.05, 0.10)
 PROBE_POSITIONS = (6, 12, 18, 24)
 DIRECTIONS_PER_PROBE = 8
 HORIZON = 6
+TURNOVER_MINIMUM = 20
 STATE_RATIO_SIGNAL = 2.0
 OUTPUT_RATIO_SIGNAL = 1.5
 STATE_RATIO_ORDINARY = 1.25
-TURNOVER_MINIMUM = 20
 RATIO_FLOOR = 1e-12
 
 
@@ -44,38 +44,33 @@ def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def _snapshot_runtime(model: torch.nn.Module) -> tuple[torch.Tensor, torch.Tensor]:
-    return (
-        model.module_state.detach().clone(),
-        model.previous_probabilities.detach().clone(),
-    )
+def _snapshot(model: torch.nn.Module) -> tuple[torch.Tensor, torch.Tensor]:
+    return model.module_state.detach().clone(), model.previous_probabilities.detach().clone()
 
 
-def _restore_runtime(
-    model: torch.nn.Module, snapshot: tuple[torch.Tensor, torch.Tensor]
-) -> None:
+def _restore(model: torch.nn.Module, snapshot: tuple[torch.Tensor, torch.Tensor]) -> None:
     model.module_state = snapshot[0].detach().clone()
     model.previous_probabilities = snapshot[1].detach().clone()
 
 
-def _forward_with_effective_state(
+def _step(
     model: torch.nn.Module,
     example: Any,
     *,
     condition: str,
     perturbation: torch.Tensor | None = None,
-) -> tuple[Any, torch.Tensor]:
+) -> dict[str, Any]:
     pre_state = model.module_state.detach().clone()
-    raw_updated: list[torch.Tensor] = []
+    captured: list[torch.Tensor] = []
 
     def capture_update(
         _module: torch.nn.Module,
         _inputs: tuple[torch.Tensor, ...],
         output: torch.Tensor,
     ) -> None:
-        raw_updated.append(output.detach().clone())
+        captured.append(output.detach().clone())
 
-    handle = model.update.register_forward_hook(capture_update)
+    hook = model.update.register_forward_hook(capture_update)
     original_forward = model.encoder.forward
     if perturbation is not None:
 
@@ -95,24 +90,28 @@ def _forward_with_effective_state(
         )
     finally:
         model.encoder.forward = original_forward
-        handle.remove()
+        hook.remove()
 
-    if len(raw_updated) != 1:
-        raise RuntimeError(f"Expected one GRU update capture, got {len(raw_updated)}")
+    if len(captured) != 1:
+        raise RuntimeError(f"Expected one GRU update capture, got {len(captured)}")
 
     previous = pre_state.index_select(0, output.selected)
-    if condition == "no_persistent_state":
-        selected_state = raw_updated[0]
-    else:
+    selected_state = captured[0]
+    if condition != "no_persistent_state":
         selected_state = (
-            model.config.persistence * raw_updated[0]
+            model.config.persistence * selected_state
             + (1.0 - model.config.persistence) * previous
         )
     effective_state = pre_state.clone().index_copy(0, output.selected, selected_state)
-    return output, effective_state
+    return {
+        "selected": [int(value) for value in output.selected.detach().cpu().tolist()],
+        "effective_state": effective_state.detach().cpu(),
+        "probabilities": output.probabilities.detach().cpu(),
+        "action_logits": output.action_logits.detach().cpu(),
+    }
 
 
-def _run_sequence(
+def _sequence(
     model: torch.nn.Module,
     examples: list[Any],
     *,
@@ -122,63 +121,58 @@ def _run_sequence(
 ) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
     for offset in range(HORIZON + 1):
-        example = examples[start_index + offset]
-        delta = perturbation if offset == 0 else None
-        output, effective_state = _forward_with_effective_state(
-            model,
-            example,
-            condition=condition,
-            perturbation=delta,
-        )
         rows.append(
-            {
-                "selected": [int(value) for value in output.selected.detach().cpu().tolist()],
-                "effective_state": effective_state.detach().cpu(),
-                "probabilities": output.probabilities.detach().cpu(),
-                "action_logits": output.action_logits.detach().cpu(),
-            }
+            _step(
+                model,
+                examples[start_index + offset],
+                condition=condition,
+                perturbation=perturbation if offset == 0 else None,
+            )
         )
     return rows
 
 
 def _auc(values: list[float]) -> float:
-    return sum((left + right) * 0.5 for left, right in zip(values, values[1:]))
+    return sum(
+        (left + right) * 0.5
+        for left, right in zip(values, values[1:], strict=False)
+    )
 
 
 def _ratio(numerator: float, denominator: float) -> float:
     return numerator / max(denominator, RATIO_FLOOR)
 
 
-def _metric_rows(
-    baseline: list[dict[str, Any]],
-    perturbed: list[dict[str, Any]],
+def _metrics(
+    baseline: list[dict[str, Any]], changed: list[dict[str, Any]]
 ) -> dict[str, Any]:
-    state_divergence: list[float] = []
-    probability_divergence: list[float] = []
-    action_divergence: list[float] = []
-    for base, changed in zip(baseline, perturbed, strict=True):
+    state: list[float] = []
+    probabilities: list[float] = []
+    action_logits: list[float] = []
+    for base, perturbed in zip(baseline, changed, strict=True):
         base_state = base["effective_state"]
-        changed_state = changed["effective_state"]
-        state_norm = float(torch.linalg.vector_norm(base_state))
-        state_delta = float(torch.linalg.vector_norm(changed_state - base_state))
-        state_divergence.append(state_delta / max(state_norm, RATIO_FLOOR))
-        probability_divergence.append(
-            float(torch.sum(torch.abs(changed["probabilities"] - base["probabilities"])))
+        changed_state = perturbed["effective_state"]
+        state.append(
+            float(torch.linalg.vector_norm(changed_state - base_state))
+            / max(float(torch.linalg.vector_norm(base_state)), RATIO_FLOOR)
         )
-        action_divergence.append(
-            float(torch.linalg.vector_norm(changed["action_logits"] - base["action_logits"]))
+        probabilities.append(
+            float(torch.sum(torch.abs(perturbed["probabilities"] - base["probabilities"])))
+        )
+        action_logits.append(
+            float(torch.linalg.vector_norm(perturbed["action_logits"] - base["action_logits"]))
         )
     return {
-        "state_divergence": state_divergence,
-        "probability_l1_divergence": probability_divergence,
-        "action_logit_l2_divergence": action_divergence,
-        "state_auc": _auc(state_divergence),
-        "probability_auc": _auc(probability_divergence),
-        "action_logit_auc": _auc(action_divergence),
+        "state_divergence": state,
+        "probability_l1_divergence": probabilities,
+        "action_logit_l2_divergence": action_logits,
+        "state_auc": _auc(state),
+        "probability_auc": _auc(probabilities),
+        "action_logit_auc": _auc(action_logits),
     }
 
 
-def _directions(event_dim: int, generator: torch.Generator) -> list[torch.Tensor]:
+def _unit_directions(event_dim: int, generator: torch.Generator) -> list[torch.Tensor]:
     rows = torch.randn(
         DIRECTIONS_PER_PROBE,
         event_dim,
@@ -212,27 +206,25 @@ def _probe_condition(
                 delay=example.delivery_delay,
                 condition=condition,
             )
-    prefix_snapshot = _snapshot_runtime(model)
+    prefix = _snapshot(model)
     encoded_norm = float(torch.linalg.vector_norm(encoded))
     rows: list[dict[str, Any]] = []
 
     for direction_index, direction in enumerate(directions):
         for magnitude in MAGNITUDES:
             perturbation = direction * (magnitude * encoded_norm)
-
-            _restore_runtime(model, prefix_snapshot)
+            _restore(model, prefix)
             with torch.no_grad():
-                baseline = _run_sequence(
+                baseline = _sequence(
                     model,
                     examples,
                     start_index=probe_index,
                     condition=condition,
                     perturbation=None,
                 )
-
-            _restore_runtime(model, prefix_snapshot)
+            _restore(model, prefix)
             with torch.no_grad():
-                changed = _run_sequence(
+                changed = _sequence(
                     model,
                     examples,
                     start_index=probe_index,
@@ -240,9 +232,8 @@ def _probe_condition(
                     perturbation=perturbation,
                 )
 
-            baseline_selected = set(baseline[0]["selected"])
+            base_selected = set(baseline[0]["selected"])
             changed_selected = set(changed[0]["selected"])
-            metrics = _metric_rows(baseline, changed)
             rows.append(
                 {
                     "case_id": (
@@ -257,20 +248,17 @@ def _probe_condition(
                     "condition": condition,
                     "router_logit_margin_k_kplus1": margin,
                     "encoded_l2_norm": encoded_norm,
-                    "selected_baseline": sorted(baseline_selected),
+                    "selected_baseline": sorted(base_selected),
                     "selected_perturbed": sorted(changed_selected),
-                    "selected_set_turnover": baseline_selected != changed_selected,
-                    "turnover_count": len(
-                        baseline_selected.symmetric_difference(changed_selected)
-                    )
-                    // 2,
-                    **metrics,
+                    "selected_set_turnover": base_selected != changed_selected,
+                    "turnover_count": len(base_selected.symmetric_difference(changed_selected)) // 2,
+                    **_metrics(baseline, changed),
                 }
             )
     return rows
 
 
-def _summarize(rows: list[dict[str, Any]]) -> dict[str, Any]:
+def _summary(rows: list[dict[str, Any]]) -> dict[str, Any]:
     by_case: dict[str, dict[str, dict[str, Any]]] = {}
     for row in rows:
         by_case.setdefault(row["case_id"], {})[row["condition"]] = row
@@ -288,78 +276,65 @@ def _summarize(rows: list[dict[str, Any]]) -> dict[str, Any]:
                 "case_id": case_id,
                 "magnitude": full["magnitude"],
                 "turnover": full["selected_set_turnover"],
-                "state_auc_ratio_full_over_no_persistent": _ratio(
-                    full["state_auc"], control["state_auc"]
-                ),
-                "probability_auc_ratio_full_over_no_persistent": _ratio(
+                "state_auc_ratio": _ratio(full["state_auc"], control["state_auc"]),
+                "probability_auc_ratio": _ratio(
                     full["probability_auc"], control["probability_auc"]
                 ),
-                "action_logit_auc_ratio_full_over_no_persistent": _ratio(
+                "action_logit_auc_ratio": _ratio(
                     full["action_logit_auc"], control["action_logit_auc"]
                 ),
             }
         )
 
-    turnover_cases = [row for row in paired if row["turnover"]]
-    magnitude_summary: list[dict[str, Any]] = []
+    turnover = [row for row in paired if row["turnover"]]
+    by_magnitude: list[dict[str, Any]] = []
     for magnitude in MAGNITUDES:
-        selected = [
-            row for row in turnover_cases if math.isclose(row["magnitude"], magnitude)
-        ]
-        magnitude_summary.append(
+        selected = [row for row in turnover if math.isclose(row["magnitude"], magnitude)]
+        by_magnitude.append(
             {
                 "magnitude": magnitude,
                 "turnover_cases": len(selected),
                 "median_state_auc_ratio": (
-                    statistics.median(
-                        row["state_auc_ratio_full_over_no_persistent"] for row in selected
-                    )
+                    statistics.median(row["state_auc_ratio"] for row in selected)
                     if selected
                     else None
                 ),
                 "median_probability_auc_ratio": (
-                    statistics.median(
-                        row["probability_auc_ratio_full_over_no_persistent"]
-                        for row in selected
-                    )
+                    statistics.median(row["probability_auc_ratio"] for row in selected)
                     if selected
                     else None
                 ),
                 "median_action_logit_auc_ratio": (
-                    statistics.median(
-                        row["action_logit_auc_ratio_full_over_no_persistent"]
-                        for row in selected
-                    )
+                    statistics.median(row["action_logit_auc_ratio"] for row in selected)
                     if selected
                     else None
                 ),
             }
         )
 
-    total_turnover = len(turnover_cases)
-    if total_turnover < TURNOVER_MINIMUM:
+    if len(turnover) < TURNOVER_MINIMUM:
         classification = "ARCHITECTURE_INCONCLUSIVE_LOW_TURNOVER"
     else:
-        signal_magnitudes = sum(
+        signal_count = sum(
             bool(
                 row["median_state_auc_ratio"] is not None
                 and row["median_state_auc_ratio"] >= STATE_RATIO_SIGNAL
                 and row["median_probability_auc_ratio"] is not None
                 and row["median_probability_auc_ratio"] >= OUTPUT_RATIO_SIGNAL
             )
-            for row in magnitude_summary
+            for row in by_magnitude
         )
         ordinary_state = all(
             row["median_state_auc_ratio"] is not None
             and row["median_state_auc_ratio"] < STATE_RATIO_ORDINARY
-            for row in magnitude_summary
+            for row in by_magnitude
         )
         ordinary_output = all(
             row["median_probability_auc_ratio"] is not None
             and row["median_probability_auc_ratio"] < OUTPUT_RATIO_SIGNAL
-            for row in magnitude_summary
+            for row in by_magnitude
         )
-        if signal_magnitudes >= 2:
+        if signal_count >= 2:
             classification = "PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL"
         elif ordinary_state and ordinary_output:
             classification = "ORDINARY_ROUTER_BOUNDARY_EFFECT_ONLY"
@@ -370,17 +345,14 @@ def _summarize(rows: list[dict[str, Any]]) -> dict[str, Any]:
         "classification": classification,
         "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
         "total_paired_cases": len(paired),
-        "total_turnover_cases": total_turnover,
-        "magnitude_summary": magnitude_summary,
+        "total_turnover_cases": len(turnover),
+        "magnitude_summary": by_magnitude,
         "interpretation_contract": {
             "turnover_minimum": TURNOVER_MINIMUM,
             "state_ratio_signal": STATE_RATIO_SIGNAL,
             "probability_ratio_signal": OUTPUT_RATIO_SIGNAL,
             "state_ratio_ordinary": STATE_RATIO_ORDINARY,
-            "ordinary_output_materiality_operationalization": (
-                "median probability-AUC ratio < 1.5 at all magnitudes; "
-                "1.5 is the handoff's only fixed output-materiality threshold"
-            ),
+            "ordinary_output_materiality": "probability AUC ratio < 1.5 at all magnitudes",
             "ratio_denominator_floor": RATIO_FLOOR,
         },
     }
@@ -392,7 +364,6 @@ def run(output_dir: Path) -> dict[str, Any]:
     config = LearnedConfig.from_dict(raw["learned"])
     dev_path = Path(raw["dev_manifest"])
     dev_manifest = _read_json(dev_path)
-
     training = _episodes(
         dev_manifest,
         count=config.train_episodes,
@@ -406,10 +377,8 @@ def run(output_dir: Path) -> dict[str, Any]:
         steps=config.steps + 6,
         offset=config.train_episodes,
     )
-
     model, training_history = train_model(config, training)
     model.eval()
-
     generator = torch.Generator().manual_seed(DIRECTION_SEED)
     raw_rows: list[dict[str, Any]] = []
 
@@ -428,12 +397,9 @@ def run(output_dir: Path) -> dict[str, Any]:
                     example.strength,
                     example.delivery_delay,
                 ).detach()
-                router_logits = model.router(encoded).detach()
-                sorted_logits = torch.sort(router_logits, descending=True).values
-                margin = float(
-                    sorted_logits[config.active_k - 1] - sorted_logits[config.active_k]
-                )
-            directions = _directions(config.event_dim, generator)
+                logits = torch.sort(model.router(encoded).detach(), descending=True).values
+                margin = float(logits[config.active_k - 1] - logits[config.active_k])
+            directions = _unit_directions(config.event_dim, generator)
             for condition in ("full", "no_persistent_state"):
                 raw_rows.extend(
                     _probe_condition(
@@ -472,25 +438,21 @@ def run(output_dir: Path) -> dict[str, Any]:
         "conditions": ["full", "no_persistent_state"],
         "state_measurement": (
             "normalized L2 divergence of effective post-step per-module hidden state; "
-            "for no_persistent_state this records the transient post-update state before "
-            "the existing ablation zeros the persistent buffer"
+            "the no-persistent control records its transient post-update state before the "
+            "existing ablation clears the persistent runtime buffer"
         ),
         "auc_method": "trapezoidal over horizons 0..6",
         "direction_reuse": "same 8 unit directions reused across magnitudes within each probe",
-        "probe_step_semantics": (
-            "probe positions are 1-based positions in 30-step calibration episodes"
-        ),
+        "probe_step_semantics": "1-based positions in 30-step DEV calibration episodes",
         "training_history": training_history,
     }
-
     output_dir.mkdir(parents=True, exist_ok=True)
     _write_json(output_dir / "metadata.json", metadata)
     _write_json(output_dir / "raw_rows.json", raw_rows)
-    summary = _summarize(raw_rows)
-    _write_json(output_dir / "summary.json", summary)
-
-    print("ARCHITECTURE_STUDY_RESULT=" + json.dumps(summary, sort_keys=True))
-    return summary
+    result = _summary(raw_rows)
+    _write_json(output_dir / "summary.json", result)
+    print("ARCHITECTURE_STUDY_RESULT=" + json.dumps(result, sort_keys=True))
+    return result
 
 
 def main() -> int:
