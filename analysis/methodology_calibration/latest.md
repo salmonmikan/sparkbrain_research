@@ -1,99 +1,98 @@
-# SparkBrain Methodology Calibration Audit — 2026-09-20 03:38 JST
+# SparkBrain Methodology Calibration Audit — 2026-09-20 03:50 JST
+
+## Run disposition
+
+**`NO_MATERIAL_CALIBRATION_CHANGE`**
 
 ## Overall classification
 
-**`MIXED_CALIBRATION`** — unchanged, with materially stronger evidence that the remaining calibration defect is systemic enough to require a machine-checkable guard rather than manual vigilance alone.
+**`MIXED_CALIBRATION`** — unchanged.
 
-The strict scientific gates remain well calibrated: the one-way integrity floor, prospective exact binding, matched-privilege comparator discipline, ordinary-reduction-first interpretation, stop-after-Architecture review, and claim-type separation continue to prevent novelty inflation and post-outcome rescue without shutting down lower-funnel research. The new problem is narrower but now independently replicated: machine artifacts can be faithfully produced while lower-level machine facts are mistranscribed or misapplied in durable MAIN/Evidence Analyst prose.
+The current scientific admission/novelty/reduction/comparator/stop gates remain broadly well calibrated. The unresolved defect remains control-plane interpretation fidelity: two completed Architecture chains already established that correct machine artifacts can be mistranscribed or have fixed support rules misapplied in durable prose handoffs. A generic fail-closed machine-checkable artifact-to-handoff guard is still justified and has not yet been demonstrated end-to-end in a newer Control Brain / Evidence Analyst closure handoff.
 
-## Material change since the 02:20 audit
+No new evidence in this run justifies tightening the FORMAL novelty bar, relaxing the hard integrity floor, adding universal replication thresholds, or changing PASS criteria.
 
-### 1. The requested cross-sample fidelity audit completed and found a repeated defect
+## What changed since the 03:38 audit
 
-Control accepted `METHCAL-20260920-0120-ARTIFACT-HANDOFF-FIDELITY` and assigned one bounded read-only NON_EVIDENTIARY audit, `CTRL-20260920-0250-ARTIFACT-HANDOFF-FIDELITY`. The completed Utility result is `REPEATED_HANDOFF_FIDELITY_DEFECT` with recommendation `ADD_FAIL_CLOSED_MACHINE_CHECKABLE_HANDOFF_GUARD`.
+### 1. The v0.5 config Architecture workflow now has a directly inspected terminal machine artifact
 
-Two independent completed Architecture chains were checked without rerunning science:
+The exact-head workflow `35460876580` on `research/main-v05-topology-config-contract-arch-study-20260920@4a15a91edb8e92b89cda960f533590f7b46a70f2` completed successfully. Its artifact `10589564435` has archive digest `sha256:e73909be3e647566540a06a4da94829b4737c3de3a24c5e0e54c697245be1970`, embedded contract digest `85539052afe90f86b47480e12d2d867d5a3ca912210b1d4708e5c8447c74fa1a`, and raw digest `bb0af4fc22241f41108abf50e471eaf2f1f0ff4a5c94782779a858efbed02f51`.
 
-- **Temporal cycle 1:** the earlier Evidence Analyst handoff used the wrong embedded contract digest and reversed which timeline family had schedule/replay divergence. MAIN later reconciled the exact artifact correctly. The top-level outcome and HOLD decision did not change.
-- **Top-k cycle 1:** workflow/head/artifact provenance, aggregate ratios, and the top-level classification were preserved, but MAIN and the next Evidence Analyst handoff both stated that the fixed signal criterion cleared at magnitudes `0.01` and `0.10`. The machine interpretation contract required `turnover_minimum >= 20`; `0.01` had only one turnover case, while `0.10` had 25. Therefore only `0.10` clears all fixed requirements. The top-level classification remains supportable because `0.10` independently clears the contract, but the breadth rationale was overstated and the mistake propagated one hop.
+The machine outcome is `SILENT_DECLARED_REALIZED_GEOMETRY_DIVERGENCE`: all five prospectively fixed configuration tuples were accepted, all realized the same topology signature, no explicit supported fixed-topology contract was found, and checkpoint round-trip preserved both the declared configuration and realized topology. The artifact itself records `NON_EVIDENTIARY` and the fixed stop condition requiring fresh Evidence Analyst review with no same-run code fix, cycle 2, PRE_FORMAL, or FORMAL promotion.
 
-This rejects the hypothesis that the Temporal mismatch was a single isolated transcription accident. It does **not** establish a fleet-wide numerical error rate from two samples.
+This is useful new lower-funnel information, but it does **not** materially change methodology calibration. It is exactly the kind of Architecture/API correctness result the claim-type split was created to retain without inflating mechanism novelty. It also remains ordinarily reducible to inactive/non-operative configuration semantics and API/reproducibility concerns.
 
-### 2. The appropriate calibration response is procedural tightening, not stricter scientific thresholds
+Critically, the terminal artifact has not yet been consumed into a newer durable MAIN/Evidence Analyst closure handoff. Therefore it cannot yet demonstrate that the recommended generic machine-checkable handoff guard is operational. The prior `TIGHTEN` finding remains unresolved rather than newly worsened or resolved.
 
-The repeated defect is manual semantic transcription after a correct artifact exists. The highest-information, lowest-opportunity-cost response is a fail-closed machine-checkable handoff binding for decision-relevant artifact fields, not stronger novelty, replication, comparator, or effect-size thresholds.
+### 2. Fresh SUB Discovery again respects the lower-funnel boundary
 
-Prospectively, outcome-bearing lower-funnel handoffs should machine-bind at least workflow run/exact head, artifact identity/archive digest, candidate/study identity, embedded Analyst/contract identity, raw digest/cardinality where present, mapped outcome/classification, a canonical digest of the complete machine summary used for interpretation, and every narrated family/stratum count/boolean/ratio/threshold application that can affect successor design or breadth claims. On mismatch, the artifact remains authority and successor allocation that depends on the disputed field should fail closed until reconciliation.
+SUB completed one bounded NON_EVIDENTIARY DEV-only cycle on `research/exploratory-sub-unit-suppression-latent-state-20260920@a2b65919ade8c4fe33514aa686ae18db8e0889d3` and stopped for fresh Analyst review. The observed post-clear rebound is explicitly reduced to ordinary source semantics: threshold-only suppression retains membrane state and later lazy decay/thresholding can expose it. SUB does not reinterpret the persistent causal-ablation formal path, does not claim a new mechanism, and recommends Architecture review only as a transient intervention/API-semantics question.
 
-This guard should block **interpretation-dependent continuation**, not reject the scientific object itself. Minor prose outside decision-bound machine fields must not become a new false-negative gate.
+This is corroborative calibration evidence, not a gate change. It supports the current separation between mechanistic novelty and architecture/testbed worthiness, while preserving fresh Analyst authority over whether the completely source-reduced behavior merits any Architecture object at all.
 
-### 3. Control correctly kept the scientific gate unchanged while authorizing the fidelity diagnostic
+### 3. Fresh Literature strengthens ordinary reduction of the v0.5 config result but does not alter gates
 
-The newest Control handoff preserves `FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL`, explicitly says the central FORMAL novelty bar is unchanged, and treats artifact-to-handoff fidelity as an operational/methodology reliability problem rather than a reason to tighten scientific novelty. It also kept Temporal and Top-k on HOLD and restricted Utility to read-only comparison with no rerun, mutation, threshold choice, or consumed-evidence access.
-
-### 4. A fresh Architecture object already contains a prospective local fidelity requirement
-
-Evidence Analyst promoted `CAND-V05-TOPOLOGY-CONFIG-BINDING-01` only as a NON_EVIDENTIARY Architecture/API correctness object. Its fixed prospective contract includes `artifact_fidelity_required` fields covering workflow/head, contract/raw digests, mapped outcome, and all later-narrated machine-summary fields. The first exact-head Architecture run failed at lint before ordinary tests/preflight/diagnostic visibility. MAIN then applied a science-invariant mechanical repair only; the replacement exact-head Architecture workflow and ordinary CI completed successfully on the repaired head. No scientific threshold, comparator, source binding, output mapping, or identity was changed.
-
-This is good prospective practice and supports `KEEP` for the pre-diagnostic mechanical-repair boundary. It is not yet evidence that a generic programme-wide handoff checker is operational, because the completed Utility recommendation has not yet been consumed by a newer Control/Evidence Analyst durable handoff and no generic fail-closed validator has been demonstrated end-to-end.
+The 03:30 Literature stream treats the five-config collapse as ordinary inactive-configuration / observational-equivalence behavior, a configuration-contract validation issue, and a checkpoint reproducibility concern. It specifically argues against same-object combinatorial expansion or cycle-2 rescue. This supports `ordinary_control_first_architecture_reduction = KEEP` and `architecture_value_survives_novelty_rejection = KEEP`; it does not supply a new admission threshold.
 
 ## Gate calibration
 
 | Gate / rule | Classification | Current finding |
 | --- | --- | --- |
 | No rerun/retune/rescore; immutable evidence; raw-before-score / preserve-before-read | `KEEP` | No weakening warranted. |
-| Prospective protocol / exact source-runtime-input binding | `KEEP` | Strongly justified by one-way integrity needs. |
-| Positive signal before strong mechanistic reduction language | `KEEP` | Avoids reducing absent phenomena. |
-| Equal-privilege comparator/resource matching | `KEEP` | Prevents unfair mechanistic comparisons. |
+| Prospective protocol / exact source-runtime-input binding | `KEEP` | Strongly justified and respected in fresh lower-funnel work. |
+| Positive signal before strong mechanistic reduction language | `KEEP` | No evidence for change. |
+| Equal-privilege comparator/resource matching | `KEEP` | No evidence for relaxation or overmatching. |
 | New-computational-principle novelty bar | `KEEP` | Appropriate for the strongest claim type. |
-| Applying that novelty bar to architecture/system/testbed value | `SPLIT_BY_CLAIM_TYPE` | Lower-funnel API/system questions remain researchable. |
-| `NO_HIGH_VALUE_FORMAL_OBJECT => programme-wide HOLD` | `RELAX` | Current lower-funnel-active doctrine remains correct. |
-| Observable/question-level exhaustion | `KEEP` | Exact reduction of one question does not ban adjacent distinct questions. |
-| Stop after each Architecture cycle for fresh Analyst review | `KEEP` | Continues to contain local errors before escalation. |
-| Pre-diagnostic science-invariant mechanical repair | `KEEP` | Fresh v0.5 lint repair occurred before diagnostic visibility and did not change science. |
-| Legacy Top-k sparse-stratum support gate | `TIGHTEN` | Historical support semantics should not be reused as-is. |
+| Applying that novelty bar to architecture/system/testbed value | `SPLIT_BY_CLAIM_TYPE` | Fresh v0.5 and SUB cases support the separation. |
+| `NO_HIGH_VALUE_FORMAL_OBJECT => programme-wide HOLD` | `RELAX` | Active lower-funnel work remains informative without weakening FORMAL. |
+| Observable/question-level exhaustion | `KEEP` | Exact reduction of one question does not exhaust distinct API/testbed questions. |
+| Stop after each Architecture cycle for fresh Analyst review | `KEEP` | v0.5 artifact has an explicit terminal stop and no auto-promotion. |
+| Pre-diagnostic science-invariant mechanical repair | `KEEP` | v0.5 lint repair preceded diagnostic visibility and preserved the contract. |
+| Legacy Top-k sparse-stratum support gate | `TIGHTEN` | Prior finding unchanged. |
 | Programme-wide replacement support/uncertainty threshold | `INSUFFICIENT_EVIDENCE` | Do not fit completed outcomes. |
-| Machine artifact -> durable handoff value fidelity | `TIGHTEN` | Two independent chains now show lower-level drift. |
-| Embedded contract/interpretation digest binding | `TIGHTEN` | Temporal demonstrated a wrong embedded digest in handoff. |
-| Machine application of declared thresholds/support rules | `TIGHTEN` | Top-k showed a threshold-application error despite correct values being present. |
-| Fail-closed reconciliation after detected mismatch | `KEEP` | Temporal reconciliation contained the error without rewriting science. |
-| Generic machine-checkable handoff guard before successor allocation | `TIGHTEN` | Utility now gives direct cross-sample justification. |
-| Static provenance checks vs semantic-summary checks | `KEEP` | These are complementary, not duplicate guards. |
+| Machine artifact -> durable handoff value fidelity | `TIGHTEN` | Repeated defect remains unresolved at programme level. |
+| Embedded contract/interpretation digest binding | `TIGHTEN` | Prior Temporal defect still justifies it. |
+| Machine application of declared thresholds/support rules | `TIGHTEN` | Prior Top-k defect still justifies it. |
+| Fail-closed reconciliation after detected mismatch | `KEEP` | Existing reconciliation behavior remains appropriate. |
+| Generic machine-checkable handoff guard before successor allocation | `TIGHTEN` | Still not demonstrated in a new closure handoff. |
+| Static provenance checks vs semantic-summary checks | `KEEP` | Complementary, not duplicate. |
 | Automatic PRE_FORMAL promotion after Architecture signal | `KEEP` | Must remain absent. |
-| Local Architecture thresholds as FORMAL/novelty thresholds | `CLARIFY` | Local triage must stay local. |
+| Local Architecture thresholds as FORMAL/novelty thresholds | `CLARIFY` | Local triage remains local. |
 
 ## Mandatory calibration dimensions
 
-- `gate_drift`: no new scientific novelty/admission tightening occurred. The evidence-driven change is procedural: one isolated fidelity concern has become a repeated cross-object handoff defect, justifying prospective machine-checked ingestion.
-- `justification_trace`: the fidelity guard now has direct traceable justification from Temporal and Top-k. The scientific integrity/reduction/comparator gates retain their prior empirical and integrity justifications.
-- `false_positive_control`: strong at the scientific gate level. Remaining risk is that manually narrated lower-level machine facts can exaggerate breadth/support and influence successor design even when the top-level outcome is still valid.
-- `false_negative_risk`: do not solve a transcription problem by globally requiring more replications, larger effects, or universal support floors. The fail-closed guard should block disputed interpretation fields pending reconciliation, not automatically reject candidates.
-- `duplicate_guards`: exact IDs/digests protect provenance; semantic summary checks protect interpretation. They carry distinct information value and should not be merged away.
-- `moving_goalposts`: `LOW`. Utility changed no historical classification; the prospective fidelity guard is forward-only. The v0.5 lint repair occurred before any outcome-bearing diagnostic and left the scientific contract unchanged.
-- `pass_reachability`: `REACHABLE_BUT_NARROW`. A genuine mechanism still has a prospectively specifiable route to PASS; adding faithful machine-bound ingestion improves integrity without raising the substantive novelty bar.
-- `comparator_calibration`: unchanged and appropriate. No new evidence supports relaxing equal-privilege/resource matching or making stronger-privilege ceilings mandatory peers.
-- `signal_before_reduction`: unchanged/healthy. Fidelity checks concern faithful interpretation of an observed signal, not permission to reduce absent signals.
-- `claim_type_separation`: healthy. The v0.5 config object is explicitly Architecture/API correctness, not mechanism novelty or FORMAL evidence.
-- `research_worthiness_vs_novelty`: no material conflation observed. Lower-funnel work remains active despite FORMAL HOLD.
-- `external_calibration`: no newer Literature or Independent Audit changes the scientific bars; external results remain calibration/reduction inputs, not authority over repository evidence.
-- `opportunity_cost`: the fail-closed machine checker has high expected information/integrity value and low research opportunity cost if scoped to decision-relevant machine fields. Further substantive scientific strictness would lose more opportunities for less calibration gain.
+- `gate_drift`: no material scientific gate drift since 03:38. The only unresolved calibration change remains the evidence-driven procedural tightening for artifact-to-handoff fidelity.
+- `justification_trace`: the fidelity tightening remains directly justified by two prior independent handoff defects; the fresh v0.5 artifact adds no contrary evidence because no new closure handoff exists yet.
+- `false_positive_control`: strong at scientific admission. Residual risk remains semantic overstatement during handoff, not permissive FORMAL admission.
+- `false_negative_risk`: no justification for universal extra replication/support gates. Fresh API/intervention-semantics questions should remain researchable below FORMAL when they have concrete Architecture/testbed value.
+- `duplicate_guards`: provenance binding and semantic-summary validation protect distinct failure stages; no material duplicate guard should be merged.
+- `moving_goalposts`: `LOW`. No historical label, threshold, identity, or consumed evidence was changed; all recommendations remain prospective.
+- `pass_reachability`: `REACHABLE_BUT_NARROW`. The substantive path to PASS is unchanged and not made harder by a fidelity check.
+- `comparator_calibration`: unchanged and appropriate; stronger-privilege ceilings must not be mistaken for equal-privilege mechanistic peers.
+- `signal_before_reduction`: healthy. Fresh Architecture findings are interpreted only after an observed behavior exists, while source reductions constrain novelty meaning.
+- `claim_type_separation`: healthy. v0.5 config semantics and unit-suppression rebound are treated as Architecture/API/testbed questions, not computational-principle evidence.
+- `research_worthiness_vs_novelty`: no material conflation observed. A source-reduced phenomenon may still justify a bounded semantics/reproducibility question, subject to fresh Analyst review.
+- `external_calibration`: new literature strengthens ordinary configuration/API reduction only; it is not treated as authority over repository artifacts.
+- `opportunity_cost`: the highest-value remaining methodology action is still a narrowly scoped machine-checkable handoff guard. Additional scientific strictness would cost more research opportunity without addressing the demonstrated defect.
 
 ## PASS reachability
 
-**`REACHABLE_BUT_NARROW`**. The prospective path remains: native positive signal -> fresh exact-bound object -> locally adequate support -> matched equal-privilege comparator for mechanistic claims -> survive ordinary implementation/dynamical reductions -> faithful machine-bound ingestion -> fixed intervention/falsifier -> one-way preserved FORMAL evidence. No current PRE_FORMAL/FORMAL object exists, and no new formal/evidence identity was created in this audit.
+**`REACHABLE_BUT_NARROW`**. The route remains: prospectively positive native signal -> fresh exact-bound object -> locally adequate support -> matched equal-privilege comparator for mechanistic claims -> survive ordinary implementation/dynamical reductions -> faithful machine-bound interpretation -> fixed intervention/falsifier -> one-way preserved FORMAL evidence.
+
+There is still no active PRE_FORMAL or FORMAL object and no new authoritative evidence tag.
 
 ## Prospective recommendations
 
-1. Keep the four-layer funnel, strict FORMAL novelty bar, matched comparator discipline, ordinary-reduction-first interpretation, and complete one-way integrity floor unchanged.
-2. Adopt the completed Utility recommendation prospectively: a structured machine-checkable handoff binding (for example a `handoff_binding.json` or equivalent) for outcome-bearing lower-funnel artifacts.
-3. Bind only decision-relevant machine fields and narrated machine facts; on mismatch, set a fail-closed reconciliation state and block successor allocation that depends on the disputed field. Do not convert a prose mismatch into automatic scientific rejection.
-4. Keep historical Temporal/Top-k artifacts and classifications untouched. Historical cases calibrate the new guard only.
-5. Preserve the v0.5 Architecture object's prospective fidelity fields and use its eventual handoff as a natural first end-to-end test of the generic guard if Control/Evidence Analyst adopt one.
-6. Do not create a new Utility request: the requested cross-sample diagnostic is complete and has already answered the bounded calibration question.
+1. Keep the four-layer funnel, strict FORMAL novelty bar, comparator discipline, ordinary-reduction-first interpretation, and full hard-integrity floor unchanged.
+2. Keep the prospective recommendation for a structured machine-checkable outcome handoff. Bind exact workflow/head, artifact ID/archive digest, candidate/contract identity and digest, raw digest/cardinality where present, mapped outcome, canonical machine-summary digest, and every decision-relevant narrated machine field.
+3. On mismatch, fail closed only for interpretation-dependent successor allocation until reconciliation; do not automatically reject the candidate or rewrite the historical artifact.
+4. Let the completed v0.5 config artifact stop for fresh Evidence Analyst review exactly as prospectively specified. Do not add same-object fuzzing/cycle 2 merely because the mismatch is deterministic.
+5. Treat SUB unit-suppression latent state as a pending semantics/testbed question only. Its complete ordinary source reduction supplies no mechanistic novelty support and does not reopen consumed causal-ablation evidence.
+6. Do not create another Utility request; the prior bounded fidelity diagnostic already answered its question and the next informative event is an actual machine-bound closure handoff.
 
 ## Utility request
 
-No new Utility request created. Existing `METHCAL-20260920-0120-ARTIFACT-HANDOFF-FIDELITY` completed under assignment `CTRL-20260920-0250-ARTIFACT-HANDOFF-FIDELITY` with diagnostic `REPEATED_HANDOFF_FIDELITY_DEFECT` and recommendation `ADD_FAIL_CLOSED_MACHINE_CHECKABLE_HANDOFF_GUARD`.
+No new Utility request created.
 
 ## Hard-integrity-floor confirmation
 
@@ -101,4 +100,4 @@ Confirmed unchanged: no rerun/retune/rescore of consumed identities; frozen/pros
 
 ## Bottom line
 
-**`MIXED_CALIBRATION` remains the best classification.** Core scientific admission, novelty, reduction, comparator, and stop gates are well calibrated, and PASS remains realistically reachable. But the control-plane interpretation layer now has two independent examples of lower-level machine facts drifting in durable handoffs. Until a generic fail-closed machine-checkable handoff guard is actually adopted and demonstrated end-to-end, upgrading to `WELL_CALIBRATED` would be premature.
+**`NO_MATERIAL_CALIBRATION_CHANGE`**. Overall remains **`MIXED_CALIBRATION`**. Fresh v0.5 and SUB results are consistent with the current lower-funnel/claim-type design, while the previously demonstrated cross-object handoff-fidelity defect remains the only material unresolved calibration weakness. Upgrade back to `WELL_CALIBRATED` should wait for a generic machine-checkable guard to be adopted and demonstrated on a real outcome-bearing closure handoff.
