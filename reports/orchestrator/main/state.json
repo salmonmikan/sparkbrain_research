@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-09-19T23:24:30+09:00",
+  "timestamp": "2026-09-19T23:29:30+09:00",
   "worker_role": "main",
   "execution_mode": "PRIMARY",
   "analyst_commit": "982e5686524c9fc2b665efcf44069fef49196333",
   "research_layer": "ARCHITECTURE_STUDY",
   "current_lane": "ASSEMBLY_PROTOTYPE_LOCKIN_ARCHITECTURE_STUDY_CYCLE1",
-  "current_phase": "WAITING_EXTERNAL_EXACT_HEAD_CI_AND_DIAGNOSTIC",
+  "current_phase": "WAITING_EXTERNAL_REPAIRED_EXACT_HEAD_CI_AND_DIAGNOSTIC",
   "candidate": {
     "id": "CAND-ASSEMBLY-PROTOTYPE-LOCKIN-01",
     "question": "Does episode order alone on an identical DEV-derived internal-pattern multiset change mature assembly partitioning enough to alter downstream prediction/action behavior under current frozen first-exemplar greedy assignment?",
@@ -13,7 +13,7 @@
     "exploration_cycle_count": {
       "discovery_completed": 1,
       "architecture_completed": 0,
-      "architecture_cycle_1_status": "DISPATCHED_WAITING_EXTERNAL"
+      "architecture_cycle_1_status": "REPAIRED_PREFLIGHT_DISPATCHED_WAITING_EXTERNAL"
     }
   },
   "research_layer_state": {
@@ -23,7 +23,7 @@
     "FORMAL": "EMPTY_HOLD"
   },
   "candidate_pool": {
-    "CAND-ASSEMBLY-PROTOTYPE-LOCKIN-01": "ARCHITECTURE_STUDY_CYCLE1_DISPATCHED",
+    "CAND-ASSEMBLY-PROTOTYPE-LOCKIN-01": "ARCHITECTURE_STUDY_CYCLE1_REPAIRED_PREFLIGHT_DISPATCHED",
     "CAND-TOPK-PA-01": "HOLD_PENDING_EXISTING_CROSS_SEED_UTILITY_AND_FRESH_PROSPECTIVE_REDUCTION_QUESTION",
     "CAND-H7-RESP-01": "HOLD_NO_NATIVE_OBJECT",
     "CAND-STRUCTURAL-ORDER-PATH-01": "REJECT"
@@ -32,7 +32,7 @@
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "evidence_analyst_handoff": "982e5686524c9fc2b665efcf44069fef49196333",
     "active_main_research_branch": "research/main-assembly-prototype-lockin-arch-study-20260919",
-    "active_main_research_head": "39364dd34cbb1cb51ab80421f95b491d273c5676",
+    "active_main_research_head": "7d9b90e58ee088ff2b4187d3c62c5e568148e6aa",
     "source_blobs": {
       "assemblies": "a0a8c41e21db68cafc08ace8dac50b7a56607a52",
       "brain": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
@@ -81,13 +81,14 @@
   "full_reconciliation_reason": null,
   "branches_prs_advanced": {
     "research_branch_created": "research/main-assembly-prototype-lockin-arch-study-20260919",
-    "research_head": "39364dd34cbb1cb51ab80421f95b491d273c5676",
+    "research_head": "7d9b90e58ee088ff2b4187d3c62c5e568148e6aa",
     "research_commits_this_run": [
       "df834699cd5d06c0929f990794426dee69553ff7",
       "1c5814d5670128430b3ae958027a0eb06311f9aa",
       "5c66bf2ac9473a4a270b5deb80ced8834391c6bc",
       "4605ccb9d2a750d990dcc12f0f5bd0d85cd06f52",
-      "39364dd34cbb1cb51ab80421f95b491d273c5676"
+      "39364dd34cbb1cb51ab80421f95b491d273c5676",
+      "7d9b90e58ee088ff2b4187d3c62c5e568148e6aa"
     ],
     "prs_advanced": [],
     "merge_performed": false
@@ -97,23 +98,33 @@
       "run_id": 35448630760,
       "name": "Assembly prototype lock-in Architecture cycle 1",
       "head": "39364dd34cbb1cb51ab80421f95b491d273c5676",
-      "status_at_checkpoint": "in_progress",
-      "scientific_role": "exact-head CI/preflight followed by exactly one DEV-only NON_EVIDENTIARY Architecture diagnostic if green"
+      "status": "completed/failure",
+      "failure_stage": "ordinary repository pytest collection before prospective binding step and before architecture-study job",
+      "failure_reason": "branch-local workflow installed only dev extras; repository tests require optional learned/spiking dependencies torch/numpy",
+      "diagnostic_executed": false
     },
     {
-      "run_id": 35448630753,
+      "run_id": 35448815310,
+      "name": "Assembly prototype lock-in Architecture cycle 1",
+      "head": "7d9b90e58ee088ff2b4187d3c62c5e568148e6aa",
+      "status_at_checkpoint": "in_progress",
+      "scientific_role": "repaired exact-head CI/preflight followed by exactly one DEV-only NON_EVIDENTIARY Architecture diagnostic if green"
+    },
+    {
+      "run_id": 35448815303,
       "name": "ci",
-      "head": "39364dd34cbb1cb51ab80421f95b491d273c5676",
-      "status_at_checkpoint": "queued_or_running",
+      "head": "7d9b90e58ee088ff2b4187d3c62c5e568148e6aa",
+      "status_at_checkpoint": "in_progress",
       "scientific_role": "ordinary repository CI only"
     }
   ],
   "observations_results": {
     "formal_scientific_evidence": "NONE_NEW",
     "pre_formal_development_evidence": "NONE_NEW",
-    "architecture_study_result": "PENDING_EXTERNAL_WORKFLOW",
+    "architecture_study_result": "PENDING_REPAIRED_EXTERNAL_WORKFLOW",
     "outcome_bearing_rows_consumed_by_main": false,
-    "mapped_result": null
+    "mapped_result": null,
+    "first_workflow_failure_evidentiary_status": "NON_SCIENTIFIC_PREFLIGHT_FAILURE_NO_DIAGNOSTIC_VISIBILITY"
   },
   "consumed_identities": [
     "c19-external-v2-official-v4",
@@ -125,7 +136,7 @@
     "h5-event-routing-work-reduction-official-v1"
   ],
   "integrity_state": {
-    "status": "CLEAN_PRE_OUTCOME_BOUND_AND_DISPATCHED",
+    "status": "CLEAN_PRE_OUTCOME_MECHANICAL_REPAIR_REDISPATCHED",
     "official_test_accessed": false,
     "formal_identity_created": false,
     "started_created": false,
@@ -142,27 +153,37 @@
     "prior_status": "COMPLETED",
     "fresh_same_object_main_collision_found": false,
     "lease_acquire_commit": "b5b1f518a01403c4614523190c36ee0a87509e89",
-    "analyst_ref_rechecked_after_push": "982e5686524c9fc2b665efcf44069fef49196333",
+    "analyst_ref_rechecked_after_initial_push": "982e5686524c9fc2b665efcf44069fef49196333",
     "main_ref_rechecked": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "research_head_rechecked": "39364dd34cbb1cb51ab80421f95b491d273c5676"
+    "research_head_rechecked_after_repair": "7d9b90e58ee088ff2b4187d3c62c5e568148e6aa"
   },
   "critical_path_fixes": [
     {
       "kind": "PRE_OUTCOME_MECHANICAL_HARNESS_REPAIR",
-      "description": "A malformed draft Python harness was removed and recreated before the Architecture workflow existed or any diagnostic visibility. The prospectively fixed scientific contract was unchanged.",
+      "description": "A malformed draft Python harness was removed and recreated before any workflow/diagnostic visibility; scientific contract unchanged.",
+      "outcome_visible": false
+    },
+    {
+      "kind": "PRE_DIAGNOSTIC_CI_DEPENDENCY_REPAIR",
+      "description": "Initial exact-head workflow failed ordinary pytest collection because only dev extras were installed. Workflow install was aligned exactly with repository CI extras dev,learned,spiking; no scientific contract field changed.",
+      "failed_run_id": 35448630760,
+      "repair_commit": "7d9b90e58ee088ff2b4187d3c62c5e568148e6aa",
       "outcome_visible": false
     }
   ],
-  "stop_reason": "WAITING_EXTERNAL_EXACT_HEAD_ARCHITECTURE_WORKFLOW",
+  "stop_reason": "WAITING_EXTERNAL_REPAIRED_EXACT_HEAD_ARCHITECTURE_WORKFLOW",
   "work_left_for_sub": "Independent bounded Discovery only; SUB must not touch CAND-ASSEMBLY-PROTOTYPE-LOCKIN-01 or MAIN critical-path work.",
   "utility_request_created": null,
   "existing_utility_request": "EVA-20260919-1943-TOPK-CROSS-SEED-SUPPORT",
-  "next_MAIN_action": "Collect exact workflow 35448630760 only for research head 39364dd34cbb1cb51ab80421f95b491d273c5676. If pre-diagnostic CI/preflight fails, repair only science-invariant mechanical defects under the unchanged contract. If one valid diagnostic completes, verify artifacts, consume the prospectively fixed four-way mapping exactly once, persist the NON_EVIDENTIARY Architecture result, and STOP for fresh Analyst review. Do not run cycle 2 or auto-promote to PRE_FORMAL/FORMAL.",
+  "next_MAIN_action": "Collect workflow 35448815310 only for research head 7d9b90e58ee088ff2b4187d3c62c5e568148e6aa. If pre-diagnostic CI/preflight fails, repair only science-invariant mechanical defects under the unchanged contract. If one valid diagnostic completes, verify artifacts/raw-before-summary, consume the prospectively fixed four-way mapping exactly once, persist the NON_EVIDENTIARY Architecture result, and STOP for fresh Analyst review. Do not run cycle 2 or auto-promote to PRE_FORMAL/FORMAL.",
   "persistence_result": {
     "lease_acquire_commit": "b5b1f518a01403c4614523190c36ee0a87509e89",
-    "latest_md_commit": "38aa6be5604148671030d8c5d981915ac8491fc4",
-    "history_path": "reports/orchestrator/history/2026-09-19/2324-main.md",
-    "history_commit": "492fbe4457f7a4eb0cbee42b4fdd1387098dbf63",
+    "latest_md_commit": "ac86d65af83d783343744cb46f60989917754e6e",
+    "history_paths": [
+      "reports/orchestrator/history/2026-09-19/2324-main.md",
+      "reports/orchestrator/history/2026-09-19/2329-main.md"
+    ],
+    "latest_history_commit": "b4b201d28c0ce74628363a3465661064d6a63d05",
     "state_json": "this update",
     "final_lease_commit": "follows state update",
     "force_push_used": false
