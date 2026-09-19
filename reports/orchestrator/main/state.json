@@ -1,66 +1,119 @@
 {
-  "timestamp": "2026-09-19T22:19:30+09:00",
+  "timestamp": "2026-09-19T23:24:30+09:00",
   "worker_role": "main",
   "execution_mode": "PRIMARY",
-  "analyst_commit": "a3ec861d71c0965625fc1d2e5e8f65f4ce47f834",
-  "research_layer": "ARCHITECTURE_STUDY_OR_PRE_FORMAL_ADMISSION",
-  "current_lane": "LOWER_FUNNEL_MAIN_HOLD_PENDING_FRESH_OBJECT",
-  "current_phase": "HOLD_NO_ACTIVE_OBJECT",
+  "analyst_commit": "982e5686524c9fc2b665efcf44069fef49196333",
+  "research_layer": "ARCHITECTURE_STUDY",
+  "current_lane": "ASSEMBLY_PROTOTYPE_LOCKIN_ARCHITECTURE_STUDY_CYCLE1",
+  "current_phase": "WAITING_EXTERNAL_EXACT_HEAD_CI_AND_DIAGNOSTIC",
   "candidate": {
-    "active": null,
-    "question": "No fresh central high-information non-rescue object is currently authorized.",
-    "evidentiary_status": "NO_NEW_EVIDENCE",
-    "exploration_cycle_count_this_run": 0,
-    "programme_tracking": {
-      "CAND_STRUCTURAL_ORDER_PATH_01": {"discovery": 1, "architecture_completed": 1, "classification": "REJECT"},
-      "CAND_TOPK_PA_01": {"discovery": 1, "architecture_completed": 2, "classification": "HOLD"}
+    "id": "CAND-ASSEMBLY-PROTOTYPE-LOCKIN-01",
+    "question": "Does episode order alone on an identical DEV-derived internal-pattern multiset change mature assembly partitioning enough to alter downstream prediction/action behavior under current frozen first-exemplar greedy assignment?",
+    "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
+    "exploration_cycle_count": {
+      "discovery_completed": 1,
+      "architecture_completed": 0,
+      "architecture_cycle_1_status": "DISPATCHED_WAITING_EXTERNAL"
     }
-  },
-  "authoritative_refs": {
-    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst_handoff": "a3ec861d71c0965625fc1d2e5e8f65f4ce47f834",
-    "active_main_research_branch": null,
-    "active_main_research_head": null,
-    "formal_identity": null,
-    "started_ref": null,
-    "formal_preserve_ref": null,
-    "formal_evidence_ref": null,
-    "sub_observed_branch": "research/exploratory-sub-homeostasis-window-partition-20260919",
-    "sub_observed_head": "cb8ea52a917e91b2aac6f1cd3de7c2a5e7573000",
-    "sub_observed_ci_run": 35443669621,
-    "sub_observed_ci_status": "completed/success"
   },
   "research_layer_state": {
     "DISCOVERY": "OPEN_SUB_DEFAULT_NON_EVIDENTIARY",
-    "ARCHITECTURE_STUDY": "HOLD_NO_ACTIVE_MAIN_OBJECT",
+    "ARCHITECTURE_STUDY": "ACTIVE_MAIN_ASSEMBLY_PROTOTYPE_LOCKIN_CYCLE1_WAITING_EXTERNAL",
     "PRE_FORMAL": "EMPTY_HOLD",
     "FORMAL": "EMPTY_HOLD"
   },
   "candidate_pool": {
-    "CAND-TOPK-PA-01": "HOLD_PENDING_READONLY_CROSS_SEED_SUPPORT_AND_FRESH_PROSPECTIVE_REDUCTION_QUESTION",
-    "CAND-STRUCTURAL-ORDER-PATH-01": "REJECT_EDGE_OR_HOMEOSTASIS_CONTROL_REPRODUCES",
-    "CAND-H5-AUDIT-01": "HOLD_INDEPENDENT_READONLY_AUDIT",
+    "CAND-ASSEMBLY-PROTOTYPE-LOCKIN-01": "ARCHITECTURE_STUDY_CYCLE1_DISPATCHED",
+    "CAND-TOPK-PA-01": "HOLD_PENDING_EXISTING_CROSS_SEED_UTILITY_AND_FRESH_PROSPECTIVE_REDUCTION_QUESTION",
     "CAND-H7-RESP-01": "HOLD_NO_NATIVE_OBJECT",
-    "CAND-RECEPTOR-POLARITY-01": "REJECT_EXACT_IMPLEMENTATION_REDUCTION"
+    "CAND-STRUCTURAL-ORDER-PATH-01": "REJECT"
+  },
+  "authoritative_refs": {
+    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "evidence_analyst_handoff": "982e5686524c9fc2b665efcf44069fef49196333",
+    "active_main_research_branch": "research/main-assembly-prototype-lockin-arch-study-20260919",
+    "active_main_research_head": "39364dd34cbb1cb51ab80421f95b491d273c5676",
+    "source_blobs": {
+      "assemblies": "a0a8c41e21db68cafc08ace8dac50b7a56607a52",
+      "brain": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
+      "prediction": "9805031fb8db235d2f3cf4c81421b896d2597af4",
+      "action": "792cba20ec5411633f12478d641adf35dba505e3",
+      "worlds": "454b05c0347a58687b7d0c50c3a56dd744164946",
+      "v05_reference": "d3c82d0279c3bce09d76ddf0ad2df1ec74bc2d7f"
+    },
+    "formal_identity": null,
+    "started_ref": null,
+    "formal_preserve_ref": null,
+    "formal_evidence_ref": null,
+    "sub_reserved_lane": "BOUNDED_SECONDARY_DISCOVERY"
+  },
+  "prospective_contract": {
+    "path": "analysis/architecture/assembly_prototype_lockin_cycle1_contract_20260919.json",
+    "development_seeds": [501, 502],
+    "adaptation_episodes_per_seed": 48,
+    "fixed_probe_condition": "jitter",
+    "fixed_probe_episodes_per_seed": 16,
+    "order_pairs_per_seed": 12,
+    "pairing": "deterministic permutation paired with exact reversal",
+    "corpus_rule": "One fixed DEV-derived internal-pattern corpus per seed is generated before order replay and reused identically across all arms.",
+    "isolation_rule": "Upstream field/receptor/homeostasis/plasticity effects are frozen before assembly-order replay.",
+    "native_threshold": 0.66,
+    "comparator": "stronger-privilege order-invariant connected-component/union-find at threshold 0.66",
+    "metrics": [
+      "mature assembly count",
+      "pairwise co-clustering disagreement",
+      "prediction disagreement",
+      "prediction coverage delta",
+      "prediction accuracy delta",
+      "descriptive action disagreement"
+    ],
+    "support_mapping": [
+      "NO_OR_LOW_SUPPORT",
+      "FUNCTIONAL_ORDER_LOCKIN_SIGNAL",
+      "REPRESENTATION_ONLY",
+      "MIXED"
+    ],
+    "raw_before_interpretation": true,
+    "official_test_forbidden": true,
+    "formal_authority": false
   },
   "fast_path_used": true,
   "full_reconciliation_reason": null,
   "branches_prs_advanced": {
-    "research_branch_mutated_this_run": false,
-    "ops_report_branch_mutated": true,
-    "prs_advanced": []
+    "research_branch_created": "research/main-assembly-prototype-lockin-arch-study-20260919",
+    "research_head": "39364dd34cbb1cb51ab80421f95b491d273c5676",
+    "research_commits_this_run": [
+      "df834699cd5d06c0929f990794426dee69553ff7",
+      "1c5814d5670128430b3ae958027a0eb06311f9aa",
+      "5c66bf2ac9473a4a270b5deb80ced8834391c6bc",
+      "4605ccb9d2a750d990dcc12f0f5bd0d85cd06f52",
+      "39364dd34cbb1cb51ab80421f95b491d273c5676"
+    ],
+    "prs_advanced": [],
+    "merge_performed": false
   },
-  "workflows_experiments": [],
+  "workflows_experiments": [
+    {
+      "run_id": 35448630760,
+      "name": "Assembly prototype lock-in Architecture cycle 1",
+      "head": "39364dd34cbb1cb51ab80421f95b491d273c5676",
+      "status_at_checkpoint": "in_progress",
+      "scientific_role": "exact-head CI/preflight followed by exactly one DEV-only NON_EVIDENTIARY Architecture diagnostic if green"
+    },
+    {
+      "run_id": 35448630753,
+      "name": "ci",
+      "head": "39364dd34cbb1cb51ab80421f95b491d273c5676",
+      "status_at_checkpoint": "queued_or_running",
+      "scientific_role": "ordinary repository CI only"
+    }
+  ],
   "observations_results": {
     "formal_scientific_evidence": "NONE_NEW",
     "pre_formal_development_evidence": "NONE_NEW",
-    "main_architecture_study_observations_this_run": "NONE_NEW",
-    "sub_collision_observation_only": {
-      "target": "HOMEOSTASIS_WINDOW_PARTITION_INVARIANCE_DISCOVERY",
-      "evidentiary_status": "NON_EVIDENTIARY",
-      "classification_from_sub": "REJECT",
-      "main_action": "NO_ABSORPTION_NO_PROMOTION_WITHOUT_FRESH_ANALYST_AUTHORITY"
-    }
+    "architecture_study_result": "PENDING_EXTERNAL_WORKFLOW",
+    "outcome_bearing_rows_consumed_by_main": false,
+    "mapped_result": null
   },
   "consumed_identities": [
     "c19-external-v2-official-v4",
@@ -72,7 +125,7 @@
     "h5-event-routing-work-reduction-official-v1"
   ],
   "integrity_state": {
-    "status": "CLEAN_EXPLICIT_ANALYST_HOLD_RECONFIRMED",
+    "status": "CLEAN_PRE_OUTCOME_BOUND_AND_DISPATCHED",
     "official_test_accessed": false,
     "formal_identity_created": false,
     "started_created": false,
@@ -82,28 +135,34 @@
     "immutable_evidence_modified": false,
     "consumed_identity_reused": false,
     "research_merge_performed": false,
-    "rerun_performed": false,
-    "retune_performed": false,
-    "redesign_performed": false
+    "outcome_responsive_redesign_performed": false,
+    "diagnostic_outcome_visible_to_main": false
   },
   "lease_collision_reconciliation": {
     "prior_status": "COMPLETED",
     "fresh_same_object_main_collision_found": false,
-    "lease_acquired_commit": "440b7d5d74c4f71b807bcf5fded96cdfb5a79da5",
-    "analyst_ref_rechecked": "a3ec861d71c0965625fc1d2e5e8f65f4ce47f834",
-    "main_ref_rechecked": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d"
+    "lease_acquire_commit": "b5b1f518a01403c4614523190c36ee0a87509e89",
+    "analyst_ref_rechecked_after_push": "982e5686524c9fc2b665efcf44069fef49196333",
+    "main_ref_rechecked": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "research_head_rechecked": "39364dd34cbb1cb51ab80421f95b491d273c5676"
   },
-  "critical_path_fixes": [],
-  "stop_reason": "ANALYST_EXPLICIT_MAIN_HOLD_NO_FRESH_CENTRAL_OBJECT_RECONFIRMED",
-  "work_left_for_sub": "Independent bounded Discovery only under Analyst allocation; no MAIN critical-path dependency.",
+  "critical_path_fixes": [
+    {
+      "kind": "PRE_OUTCOME_MECHANICAL_HARNESS_REPAIR",
+      "description": "A malformed draft Python harness was removed and recreated before the Architecture workflow existed or any diagnostic visibility. The prospectively fixed scientific contract was unchanged.",
+      "outcome_visible": false
+    }
+  ],
+  "stop_reason": "WAITING_EXTERNAL_EXACT_HEAD_ARCHITECTURE_WORKFLOW",
+  "work_left_for_sub": "Independent bounded Discovery only; SUB must not touch CAND-ASSEMBLY-PROTOTYPE-LOCKIN-01 or MAIN critical-path work.",
   "utility_request_created": null,
   "existing_utility_request": "EVA-20260919-1943-TOPK-CROSS-SEED-SUPPORT",
-  "next_MAIN_action": "Await fresh Evidence Analyst authorization of a central Architecture/PRE_FORMAL/FORMAL object. Do not run Structural cycle 2, Top-k cycle 3, construct H7, access TEST/formal surfaces, or absorb SUB Discovery under current authority.",
+  "next_MAIN_action": "Collect exact workflow 35448630760 only for research head 39364dd34cbb1cb51ab80421f95b491d273c5676. If pre-diagnostic CI/preflight fails, repair only science-invariant mechanical defects under the unchanged contract. If one valid diagnostic completes, verify artifacts, consume the prospectively fixed four-way mapping exactly once, persist the NON_EVIDENTIARY Architecture result, and STOP for fresh Analyst review. Do not run cycle 2 or auto-promote to PRE_FORMAL/FORMAL.",
   "persistence_result": {
-    "lease_acquire_commit": "440b7d5d74c4f71b807bcf5fded96cdfb5a79da5",
-    "latest_md_commit": "b02e07e9229de0f9c5be7b93a487369717dd43f7",
-    "history_path": "reports/orchestrator/history/2026-09-19/2219-main.md",
-    "history_commit": "9b0f49bebc2d52bfdcc260271682198efa0dffe5",
+    "lease_acquire_commit": "b5b1f518a01403c4614523190c36ee0a87509e89",
+    "latest_md_commit": "38aa6be5604148671030d8c5d981915ac8491fc4",
+    "history_path": "reports/orchestrator/history/2026-09-19/2324-main.md",
+    "history_commit": "492fbe4457f7a4eb0cbee42b4fdd1387098dbf63",
     "state_json": "this update",
     "final_lease_commit": "follows state update",
     "force_push_used": false
