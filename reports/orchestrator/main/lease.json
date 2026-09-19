@@ -1,14 +1,14 @@
 {
-  "run_id": "sparkbrain-main-relay-20260919T184525JST",
-  "execution_mode": "RELAY",
-  "status": "WAITING_EXTERNAL",
-  "started_at": "2026-09-19T18:45:25+09:00",
-  "heartbeat_at": "2026-09-19T18:48:41+09:00",
+  "run_id": "sparkbrain-main-primary-20260919T191428JST",
+  "execution_mode": "PRIMARY",
+  "status": "RUNNING",
+  "started_at": "2026-09-19T19:14:28+09:00",
+  "heartbeat_at": "2026-09-19T19:14:28+09:00",
   "analyst_commit": "5b63d21f44812ef8d4938c9ad968bb8ab481b3c5",
   "active_branch": "research/main-topk-persistent-amplification-arch-study-20260919",
   "active_identity": null,
-  "active_step": "CYCLE2_EXACT_HEAD_WORKFLOW_IN_PROGRESS",
+  "active_step": "CYCLE2_RESULT_VALIDATION_AND_TERMINAL_MAPPING",
   "workflow_run_id": 35435714352,
-  "expected_next_action": "Collect exact-head workflow 35435714352. If valid, verify uploaded raw diagnostics/metadata before interpretation, apply only the prospectively fixed cycle-2 outcome mapping, persist the terminal NON_EVIDENTIARY result, and STOP for fresh Analyst review. If a pre-execution mechanical CI defect occurs, only science-invariant repair plus exact-head recheck is allowed; semantic/protocol gaps, TEST leakage, or post-execution failure after diagnostics are visible must STOP without same-run redesign.",
+  "expected_next_action": "Validate exact-head workflow artifact 10581094196 against the prospectively fixed cycle-2 contract, classify only under the frozen Analyst mapping, persist the NON_EVIDENTIARY terminal result, and STOP for fresh Analyst review without same-run PRE_FORMAL promotion, redesign, retuning, rerun, merge, or formalization.",
   "owner": "main"
 }
