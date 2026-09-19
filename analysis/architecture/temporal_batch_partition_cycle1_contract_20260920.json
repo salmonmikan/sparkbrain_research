@@ -1,0 +1,109 @@
+{
+  "candidate_id": "CAND-TEMPORAL-BATCH-PARTITION-01",
+  "research_layer": "ARCHITECTURE_STUDY",
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "analyst_authority": "862dd62cdce58f06e5c782b4b54212d93e40212e",
+  "source_binding": {
+    "main_sha": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "src/sparkbrain/v04/brain.py": "25fd56b082168a9ea71f313023451858d00b6184",
+    "src/sparkbrain/v04/transduction.py": "1b88027fbcc0a1f8506fb644fd251c14039ef8a4",
+    "src/sparkbrain/v04/worlds.py": "0305aa5493c097f58b1fbdbc2bdeccff5dff4f25",
+    "src/sparkbrain/v04/evaluation.py": "9d8bbe91c466eddcd6ecaa1b3ccf65399d4445cd"
+  },
+  "data_authority": {
+    "repository_reference_development_synthetic_only": true,
+    "official_test_forbidden": true,
+    "consumed_preserve_raw_forbidden": true,
+    "formal_scorer_forbidden": true,
+    "formal_identity": null,
+    "started_ref": null
+  },
+  "timeline_families": {
+    "repetition_train_defaults": {
+      "factory": "sparkbrain.v04.worlds.repetition_train",
+      "channel": "tick",
+      "start_ms": 0.0,
+      "interval_ms": 12.0,
+      "count": 8,
+      "magnitude": 0.85,
+      "expected_pulse_count": 8,
+      "expected_timeline_sha256": "632f30cb47bd2b2a34abe892b24f5af0e357713a5f8a384e45a6abfac2d29b12"
+    },
+    "noisy_motif_stream_defaults": {
+      "factory": "sparkbrain.v04.worlds.noisy_motif_stream",
+      "motif": ["A", "F", "C"],
+      "repeats": 8,
+      "noise_per_repeat": 4,
+      "start_ms": 0.0,
+      "seed": 904,
+      "expected_pulse_count": 56,
+      "expected_timeline_sha256": "b34ab49412ec7170c6a2655c2d047f62ff5bd48ed3c9c85e43bfe6a21384c1dd"
+    }
+  },
+  "expectation_semantics": {
+    "tracker": "TemporalExpectationTracker",
+    "tolerance_fraction": 0.3,
+    "min_observations": 3,
+    "alpha": 0.35,
+    "parameter_sweep_forbidden": true
+  },
+  "partition_arms": {
+    "WHOLE_BATCH": {
+      "semantics": "Observe every pulse in the sorted external timeline, then poll once through the common final horizon."
+    },
+    "MIDPOINT_TWO_BATCH": {
+      "semantics": "Split at the pulse-index midpoint, moving the boundary right until an equal-timestamp group is not split. Within each API batch, observe all pulses before polling. For the first batch poll only through that batch's terminal external timestamp; after the second batch poll through the common final horizon. This freezes call-boundary grouping without introducing a different inter-batch settle duration."
+    },
+    "EVENT_TIME_CAUSAL": {
+      "semantics": "Group equal-timestamp pulses; before observing each timestamp group poll through that external timestamp, then observe the group; after all groups poll through the common final horizon.",
+      "role": "stronger_reference_api_event_time_ceiling_not_equal_resource_mechanistic_comparator"
+    }
+  },
+  "final_horizon": {
+    "rule": "last external pulse time + 35.0 ms",
+    "offset_ms": 35.0
+  },
+  "isolation_replay": {
+    "rule": "Derive omission schedules before downstream replay. For each arm replay the identical external pulses plus only that arm's omission pulses through a fresh v0.4 brain.",
+    "brain_config": {
+      "topology_seed": 41,
+      "enable_expectations": false,
+      "enable_plasticity": false
+    },
+    "attribution": "downstream differences are attributable to omission-schedule differences rather than expectation training or plasticity history"
+  },
+  "raw_schema": {
+    "one_row_per_family_arm": true,
+    "required_fields": [
+      "family",
+      "arm",
+      "external_timeline_sha256",
+      "partition_definition",
+      "omission_pulses",
+      "final_expectation_state",
+      "symmetric_difference_from_event_time_causal",
+      "replay_spikes",
+      "replay_bursts",
+      "replay_cascades",
+      "replay_ignitions",
+      "replay_action",
+      "replay_field_state_hash",
+      "replay_trace_hash",
+      "replay_observable_sha256"
+    ],
+    "raw_before_interpretation": true
+  },
+  "outcome_map": {
+    "NO_BATCH_PARTITION_EFFECT": "Both timeline families have identical omission schedules across all three arms and identical downstream replay observables.",
+    "SCHEDULER_ONLY_PARTITION_EFFECT": "At least one family has an omission-schedule difference, and every family with a schedule difference has identical downstream replay observables across arms.",
+    "FUNCTIONAL_BATCH_PARTITION_EFFECT": "At least one family has an omission-schedule difference and at least one such family has a downstream replay-observable difference across arms.",
+    "MIXED": "Deterministic results do not fit the three clean cases or contain an unexpected downstream difference without an omission-schedule difference."
+  },
+  "stop_rules": {
+    "one_architecture_cycle_only": true,
+    "stop_after_any_valid_mapped_result_for_fresh_analyst_review": true,
+    "no_cycle2_without_fresh_analyst_authority": true,
+    "no_pre_formal_or_formal_auto_promotion": true,
+    "no_outcome_responsive_partition_timeline_horizon_tracker_replay_metric_runtime_change": true
+  }
+}
