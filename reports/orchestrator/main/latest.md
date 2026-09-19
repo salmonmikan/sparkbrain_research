@@ -1,39 +1,36 @@
-# PRIMARY MAIN — post-RELAY terminal outcome authority hold
+# MAIN RELAY — v0.5 transient suppression semantics Architecture cycle 1 checkpoint
 
-Timestamp: `2026-09-20 04:13 JST`  
+Timestamp: `2026-09-20 04:50 JST`  
 Worker role: `main`  
-Execution mode: `PRIMARY`  
-Evidence Analyst authority: `9bb852bc1461755814d6a9a0e7ea561f1858a0da`  
+Execution mode: `RELAY`  
+Evidence Analyst authority: `493573eb3b8c38d88f251db7c04dfe1a586c6ff0`  
 Research layer: `ARCHITECTURE_STUDY`  
-Candidate: `CAND-V05-TOPOLOGY-CONFIG-BINDING-01`  
-Exploration count: `DISCOVERY=1`, `ARCHITECTURE_STUDY=1`
+Candidate: `CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01`
 
 ## Reconciliation
 
-FAST PATH only; no FULL RECONCILIATION was required. The prior RELAY lease is completed, so there is no fresh same-object MAIN collision. PRIMARY acquired a fresh lease before control-plane mutation. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; Evidence Analyst remains `9bb852bc1461755814d6a9a0e7ea561f1858a0da`; exact research branch remains `research/main-v05-topology-config-contract-arch-study-20260920@4a15a91edb8e92b89cda960f533590f7b46a70f2`.
+The prior MAIN lease was `COMPLETED`; no fresh PRIMARY `RUNNING` lease or same-object collision was present. Stable `main` was re-fetched at `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. SUB remains independently stopped on `research/exploratory-sub-unit-suppression-latent-state-20260920@a2b65919ade8c4fe33514aa686ae18db8e0889d3`; this RELAY did not touch the SUB branch or treat its exploratory pulse as Architecture evidence.
 
-SUB is independently stopped after `V05_UNIT_SUPPRESSION_LATENT_STATE_DISCOVERY_CYCLE1` on `research/exploratory-sub-unit-suppression-latent-state-20260920@a2b65919ade8c4fe33514aa686ae18db8e0889d3`, with a NON_EVIDENTIARY promotion recommendation awaiting Analyst review. MAIN does not absorb it.
+The fresh Analyst handoff prospectively authorizes exactly one static NON_EVIDENTIARY suppression-contract Architecture cycle, only after deterministic source/scope/terminal mapping/machine-field binding plus exact-head ordinary CI/readiness. Every valid outcome stops for fresh Analyst review. Dynamic cycle 2, same-run implementation fix after outcome, PRE_FORMAL, FORMAL, TEST, scorer, identity, STARTED, preserve, and evidence paths remain unarmed.
 
-## Exact target and completed Architecture result
+## Exact continuation performed
 
-Workflow `35460876580` remains `completed / success` on exact head `4a15a91edb8e92b89cda960f533590f7b46a70f2`. Artifact `10589564435` remains present and bound to that run/head with archive digest `sha256:e73909be3e647566540a06a4da94829b4737c3de3a24c5e0e54c697245be1970`.
+Created `research/main-v05-unit-suppression-transient-semantics-arch-study-20260920` from exact stable `main`.
 
-The already-persisted fixed terminal mapping remains **`SILENT_DECLARED_REALIZED_GEOMETRY_DIVERGENCE`**. All five prospectively fixed public geometry tuples were accepted and preserved across checkpoint round-trip while realizing the identical topology signature: 64 total units, 16 receptors, 48 reservoir units, and 326 connections. The fixed explicit-contract audit found no supported docs/tests/callsites declaring the v0.5 geometry intentionally fixed with `width/height/receptor_rows` intentionally non-operative.
+Prospective binding commit: `05a9c4e26954adf04012a554e800bf63d23ba627`. The deterministic stable-main exact-token scope is blob-bound to:
 
-This remains strictly a **NON_EVIDENTIARY Architecture/API correctness signal**. It is not FORMAL scientific evidence and not PRE_FORMAL evidence.
+- `src/sparkbrain/v05/brain.py` -> `652552f8dc6a53a68e441f593e9bfd82cebb9f7c`
+- `src/sparkbrain/v05/evaluation.py` -> `efd52d236708aea3bf23b6139d8717b1ac1d0559`
+- `tests/v05/test_v05_brain.py` -> `6a81994ac82a3f0660585ef0d95495aaaa336629`
 
-## Authority boundary / stop
+The six Analyst-authorized terminal classes and their machine mapping were fixed before outcome interpretation. A static-only harness was added at `d8bf9c34b16d05ad4a8e10f145b46e367d93f89c`; the exact-head workflow was added at current research head `2ef4b24f8e7ef8577ebbcb0328e7b3476bc24336`. The workflow performs Python 3.11/3.13 ordinary CI, exact binding preflight, one static characterization only, and raw-before-summary artifact preservation.
 
-No fresh Evidence Analyst commit exists after the RELAY-completed valid terminal outcome. The current authority prospectively requires `ANY_VALID_TERMINAL_ARCHITECTURE_OUTCOME -> STOP_FOR_FRESH_EVIDENCE_ANALYST_REVIEW` and does not authorize a same-run implementation fix, Architecture cycle 2, PRE_FORMAL, or FORMAL continuation.
+## Workflow checkpoint
 
-PRIMARY therefore performed no research branch mutation, new workflow dispatch, rerun, retune, redesign, scoring, official TEST access, formal identity/STARTED creation, formal preserve/evidence operation, research merge, or consumed-identity mutation.
+Architecture workflow `35465512928` is `in_progress` on exact head `2ef4b24f8e7ef8577ebbcb0328e7b3476bc24336`. Ordinary CI `35465512894` is also `in_progress` on that exact head.
 
-New FORMAL scientific evidence: **none**.  
-New PRE_FORMAL development evidence: **none**.  
-New PRIMARY Architecture observation: **none**; this run revalidated the completed RELAY result and current authority boundary only.
+No terminal Architecture classification has been consumed yet. New FORMAL scientific evidence: **none**. New PRE_FORMAL evidence: **none**. New Architecture outcome: **none yet**. No formal identity, STARTED, official TEST, formal preserve/scoring/evidence operation, consumed-identity mutation, rerun/retune, post-outcome repair, or research merge occurred. Utility request: **none**.
 
-Authoritative tags remain exactly five `evidence/*` refs. No new formal identity appeared. Utility request: **none**.
+Stop reason: **`EXACT_HEAD_SUPPRESSION_SEMANTICS_ARCHITECTURE_WORKFLOW_IN_PROGRESS`**.
 
-Stop reason: **`NO_FRESH_ANALYST_AUTHORITY_AFTER_VALID_TERMINAL_ARCHITECTURE_OUTCOME`**.
-
-Next MAIN action: wait for a fresh Evidence Analyst handoff that classifies this exact completed Architecture result and prospectively authorizes any successor. Do not implement geometry semantics, run cycle 2, or enter PRE_FORMAL/FORMAL before that authority exists.
+Next MAIN action: collect workflow `35465512928` and ordinary CI `35465512894`. A pre-start mechanical blocker may receive only a science-invariant fix followed by re-binding. A valid fixed terminal outcome must be artifact-verified and then STOP for fresh Evidence Analyst review; no same-run dynamic continuation is authorized.
