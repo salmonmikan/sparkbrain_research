@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-09-19T08:15:38+09:00",
+  "timestamp": "2026-09-19T09:14:40+09:00",
   "worker_role": "main",
   "execution_mode": "PRIMARY",
-  "analyst_commit": "0562bfb0e5085750d88be99839911aaff45c8f60",
+  "analyst_commit": "7a2ef7021fdaa3dd701353a18b45b6db4915756c",
   "current_lane": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
   "current_phase": "NO_ACTIVE_FORMAL_FRONTIER_FRESH_OBJECT_ADMISSION_GATE_ONLY",
   "consumed_contingency_branches": [
     "NO_FRESH_OBJECT"
   ],
-  "active_claim": "No active admitted primary experiment exists. The fresh 08:02 Evidence Analyst handoff reconfirms architecture/testbed HOLD, no new formal evidence, no fresh object, and no MAIN/SUB allocation change.",
+  "active_claim": "No active admitted primary experiment exists. The 09:00 Evidence Analyst handoff reports no material scientific or allocation change, no fresh object, and no new formal repository evidence.",
   "authoritative_target_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "active_branch": null,
     "active_identity": null,
-    "evidence_analyst_handoff": "0562bfb0e5085750d88be99839911aaff45c8f60",
+    "evidence_analyst_handoff": "7a2ef7021fdaa3dd701353a18b45b6db4915756c",
     "control_brain_prior": "10eb4206fb0c998fcdbc40c0e16f38829ea5d41e",
-    "sub_state_blob_sha": "01c0372c8f47206c83adb621b0cc789e9d262f1b",
+    "sub_state_blob_sha": "c76c0b373cfd51cff2cc388a70058f5f67a99600",
     "formal_boundary": "ARCHITECTURE_TESTBED / PROSPECTIVE_ADMISSION_ONLY / stop at NEXT_OBJECT_READY_FOR_ANALYST_REVIEW / no formal identity or STARTED authorized"
   },
   "fast_path_used": true,
@@ -27,9 +27,9 @@
     "official_test_accessed": false,
     "research_workflow_run_ids": [],
     "control_plane_ci_observed": {
-      "run_id": 35405103584,
+      "run_id": 35408834143,
       "branch": "ops/orchestrator-run-report",
-      "head_sha": "aea73d48e45f5cebbcebc067779fd854900e498b",
+      "head_sha": "e47eb87b670b3bd6739422377cac4f8c56a86fa1",
       "status_when_observed": "in_progress",
       "scientific_relevance": "none"
     }
@@ -37,10 +37,8 @@
   "scientific_results": {
     "new_formal_scientific_information_this_run": false,
     "new_external_admission_information_this_run": false,
-    "new_governance_advisory_consumed_by_analyst": true,
-    "governance_material_state_change": false,
     "programme_state": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
-    "admission_result": "NO_FRESH_OBJECT_ANALYST_0802_RECONFIRMED",
+    "admission_result": "NO_FRESH_OBJECT_ANALYST_0900_RECONFIRMED",
     "evidentiary_status": "PREFORMAL_NON_EVIDENTIARY_PROGRAMME_HOLD",
     "formal_identity_state": "NONE_ACTIVE",
     "started_state": "NONE_NEW",
@@ -63,11 +61,11 @@
   ],
   "lease_collision_reconciliation": {
     "inherited_lease_status": "COMPLETED",
-    "inherited_run_id": "sparkbrain-main-primary-20260919T071513JST",
-    "inherited_heartbeat": "2026-09-19T07:19:25+09:00",
+    "inherited_run_id": "sparkbrain-main-primary-20260919T081538JST",
+    "inherited_heartbeat": "2026-09-19T08:15:38+09:00",
     "fresh_main_running_collision_found": false,
     "primary_lease_acquired": true,
-    "primary_lease_start_commit": "aea73d48e45f5cebbcebc067779fd854900e498b",
+    "primary_lease_start_commit": "e47eb87b670b3bd6739422377cac4f8c56a86fa1",
     "lease_rechecked_after_acquisition": true,
     "latest_sub_mode": "no_op",
     "sub_lane": null,
@@ -78,17 +76,17 @@
   "integrity_status": "CLEAN_ARCHITECTURE_TESTBED_BOUNDARY_NO_ACTIVE_BRANCH_OR_IDENTITY_NO_STARTED_NO_OFFICIAL_TEST_NO_FORMAL_PRESERVE_SCORE_OR_EVIDENCE",
   "critical_path_fixes_completed": [],
   "same_run_steps": [
-    "Read Evidence Analyst latest/state/history at fresh mailbox tip 0562bfb0e5085750d88be99839911aaff45c8f60 and consumed main_lane, phase, outcome contingencies, blocked_until, do_not_touch, and GO/STOP.",
-    "Read MAIN latest/state/lease; inherited lease was COMPLETED and older than 20 minutes with no active branch/identity collision.",
-    "Re-fetched current main and confirmed ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d remains authoritative.",
+    "Read fresh Evidence Analyst latest/state/history at mailbox tip 7a2ef7021fdaa3dd701353a18b45b6db4915756c and consumed main_lane, phase, outcome contingencies, blocked_until, do_not_touch, and GO/STOP.",
+    "Read MAIN latest/state/lease; inherited lease was COMPLETED and there was no active branch/identity collision.",
     "Read SUB state for collision avoidance; SUB remains no_op with no reserved lane, fallback, or incubator candidate.",
     "Read Control Brain 10eb4206fb0c998fcdbc40c0e16f38829ea5d41e as strategic prior only; it remains consistent with NO_HIGH_VALUE_OBJECT architecture/testbed mode.",
-    "Acquired PRIMARY RUNNING lease at commit aea73d48e45f5cebbcebc067779fd854900e498b, then re-fetched lease and Evidence Analyst tip and confirmed no drift/collision.",
-    "Applied no research/scientific mutation because the fresh Analyst handoff reconfirms NO_FRESH_OBJECT and no candidate-specific critical path exists.",
-    "Observed control-plane CI 35405103584 only; no research workflow or experiment was dispatched.",
-    "Persisted MAIN latest and append-only reports/orchestrator/history/2026-09-19/0815-main.md before final lease closeout."
+    "Re-fetched current main and confirmed ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d remains authoritative.",
+    "Acquired PRIMARY RUNNING lease at commit e47eb87b670b3bd6739422377cac4f8c56a86fa1, then re-fetched lease, main, and Evidence Analyst tip and confirmed no drift/collision.",
+    "Applied no research/scientific mutation because the 09:00 Analyst handoff reconfirms NO_FRESH_OBJECT and no candidate-specific critical path exists.",
+    "Observed control-plane CI 35408834143 only; no research workflow or experiment was dispatched.",
+    "Persisted MAIN latest checkpoint at commit 904e9e041a26d102d87f0a6ac088385619fad363."
   ],
-  "stop_reason": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_ANALYST_0802_RECONFIRMED",
+  "stop_reason": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_ANALYST_0900_RECONFIRMED",
   "work_left_for_SUB": "none; SUB remains no_op with no reserved independent lane or fallback",
   "lane_repartition_reason": null,
   "next_MAIN_action": "Remain in architecture/testbed hold. If and only if a genuinely fresh independently motivated native reduction-resistant object appears, perform bounded prospective NON_EVIDENTIARY specification/readiness for at most one object and STOP at NEXT_OBJECT_READY_FOR_ANALYST_REVIEW. Do not create a formal identity, STARTED marker, official TEST access, preserve/scoring output, evidence, or outcome-responsive successor under the current handoff.",
@@ -96,9 +94,10 @@
     "github_direct_write_attempted": true,
     "github_direct_write_succeeded": true,
     "force_push_used": false,
-    "lease_start_commit": "aea73d48e45f5cebbcebc067779fd854900e498b",
-    "latest_report_commit": "d265594d7679e0a82004a17040bb4f47ae24e73f",
-    "history_commit": "195ebebee0e1ef8ea109de0714ecb643de12f4db",
-    "history_path": "reports/orchestrator/history/2026-09-19/0815-main.md"
+    "lease_start_commit": "e47eb87b670b3bd6739422377cac4f8c56a86fa1",
+    "latest_report_commit": "904e9e041a26d102d87f0a6ac088385619fad363",
+    "history_path": "reports/orchestrator/history/2026-09-19/0914-main.md",
+    "history_commit": null,
+    "history_path_prechecked_absent": true
   }
 }
