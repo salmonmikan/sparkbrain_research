@@ -1,36 +1,40 @@
-# MAIN RELAY — v0.5 transient suppression semantics Architecture cycle 1 checkpoint
+# MAIN PRIMARY — suppression semantics Architecture cycle 1 invalid diagnostic stop
 
-Timestamp: `2026-09-20 04:50 JST`  
+Timestamp: `2026-09-20 05:18 JST`  
 Worker role: `main`  
-Execution mode: `RELAY`  
+Execution mode: `PRIMARY`  
 Evidence Analyst authority: `493573eb3b8c38d88f251db7c04dfe1a586c6ff0`  
 Research layer: `ARCHITECTURE_STUDY`  
 Candidate: `CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01`
 
 ## Reconciliation
 
-The prior MAIN lease was `COMPLETED`; no fresh PRIMARY `RUNNING` lease or same-object collision was present. Stable `main` was re-fetched at `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. SUB remains independently stopped on `research/exploratory-sub-unit-suppression-latent-state-20260920@a2b65919ade8c4fe33514aa686ae18db8e0889d3`; this RELAY did not touch the SUB branch or treat its exploratory pulse as Architecture evidence.
+The inherited RELAY checkpoint was collected successfully. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`, active research head remains `research/main-v05-unit-suppression-transient-semantics-arch-study-20260920@2ef4b24f8e7ef8577ebbcb0328e7b3476bc24336`, and fresh Evidence Analyst authority remains `493573eb3b8c38d88f251db7c04dfe1a586c6ff0`. SUB remains independent and was not absorbed.
 
-The fresh Analyst handoff prospectively authorizes exactly one static NON_EVIDENTIARY suppression-contract Architecture cycle, only after deterministic source/scope/terminal mapping/machine-field binding plus exact-head ordinary CI/readiness. Every valid outcome stops for fresh Analyst review. Dynamic cycle 2, same-run implementation fix after outcome, PRE_FORMAL, FORMAL, TEST, scorer, identity, STARTED, preserve, and evidence paths remain unarmed.
+FAST PATH escalated to **FULL RECONCILIATION** after artifact/source verification found a diagnostic integrity anomaly. Reconciliation confirmed five authoritative `evidence/*` annotated tags, zero tag-based `formal/*`, `sealed/*`, and `freeze/*`, 13 preserved legacy `freeze/*` branches, preserve branch `ops/a01-md-001-preserve-once@465b8afe73aa6ff9dad2fa67d1f954a3ec689097`, Control branch `ops/control-brain-handoff@98155846394925730997fc35389fd6ad1b53f710`, and PR #148/#149 still open/unmerged.
 
-## Exact continuation performed
+## Exact workflow / artifact
 
-Created `research/main-v05-unit-suppression-transient-semantics-arch-study-20260920` from exact stable `main`.
+Architecture workflow `35465512928` completed `success` on exact head `2ef4b24f8e7ef8577ebbcb0328e7b3476bc24336`; ordinary CI `35465512894` also completed `success` on the same head. Artifact `10591265966` was retrieved. Its downloaded archive SHA-256 exactly matches GitHub's digest: `d4dd67e97132229fc60c1cf13b6dbc9366bfa22a2568aa7de116667b41d33669`. `summary.json` binds the same workflow/head/Analyst/source scope and records raw SHA-256 `220eb06b051273680726b8f0f4ad318a95863fcc1e9909daeb23ffd745ec6805`; the downloaded raw file independently hashes to that value.
 
-Prospective binding commit: `05a9c4e26954adf04012a554e800bf63d23ba627`. The deterministic stable-main exact-token scope is blob-bound to:
+The artifact emitted `AMBIGUOUS_CONTRACT`, but that emitted class is **not accepted as a valid Architecture observation**.
 
-- `src/sparkbrain/v05/brain.py` -> `652552f8dc6a53a68e441f593e9bfd82cebb9f7c`
-- `src/sparkbrain/v05/evaluation.py` -> `efd52d236708aea3bf23b6139d8717b1ac1d0559`
-- `tests/v05/test_v05_brain.py` -> `6a81994ac82a3f0660585ef0d95495aaaa336629`
+## Diagnostic integrity defect
 
-The six Analyst-authorized terminal classes and their machine mapping were fixed before outcome interpretation. A static-only harness was added at `d8bf9c34b16d05ad4a8e10f145b46e367d93f89c`; the exact-head workflow was added at current research head `2ef4b24f8e7ef8577ebbcb0328e7b3476bc24336`. The workflow performs Python 3.11/3.13 ordinary CI, exact binding preflight, one static characterization only, and raw-before-summary artifact preservation.
+The prospectively bound harness detects threshold restoration with the literal check `"unit.base_threshold = threshold" in restore_source`. The exact blob-bound stable source actually restores the saved threshold as `self.base.field.units[unit_id].base_threshold = threshold`; its apply path stores `original[unit_id] = unit.base_threshold` before setting `unit.base_threshold = 1e9`.
 
-## Workflow checkpoint
+Accordingly, the artifact's raw fact `restore_restores_original_base_threshold=false` is mechanically false for the exact bound source. That false fact propagates to `implementation_state_preserving=false` and causes the fixed mapper to fall through to `AMBIGUOUS_CONTRACT`.
 
-Architecture workflow `35465512928` is `in_progress` on exact head `2ef4b24f8e7ef8577ebbcb0328e7b3476bc24336`. Ordinary CI `35465512894` is also `in_progress` on that exact head.
+Because the defect was discovered **after outcome-bearing material existed**, the Analyst's prospective no-post-outcome-fix rule applies. MAIN did not patch, rerun, retune, rescore, or assign a repaired alternative semantic class. The attempted cycle is disposed as **`INVALID_DIAGNOSTIC / DISCARD_STOP`** pending fresh Evidence Analyst review.
 
-No terminal Architecture classification has been consumed yet. New FORMAL scientific evidence: **none**. New PRE_FORMAL evidence: **none**. New Architecture outcome: **none yet**. No formal identity, STARTED, official TEST, formal preserve/scoring/evidence operation, consumed-identity mutation, rerun/retune, post-outcome repair, or research merge occurred. Utility request: **none**.
+## Evidentiary status / ownership
 
-Stop reason: **`EXACT_HEAD_SUPPRESSION_SEMANTICS_ARCHITECTURE_WORKFLOW_IN_PROGRESS`**.
+New FORMAL scientific evidence: **none**.  
+New PRE_FORMAL development evidence: **none**.  
+Accepted new ARCHITECTURE_STUDY observation: **none**; cycle 1 was attempted but discarded as invalid diagnostic.  
 
-Next MAIN action: collect workflow `35465512928` and ordinary CI `35465512894`. A pre-start mechanical blocker may receive only a science-invariant fix followed by re-binding. A valid fixed terminal outcome must be artifact-verified and then STOP for fresh Evidence Analyst review; no same-run dynamic continuation is authorized.
+No official TEST, formal identity, STARTED, scorer, preserve/evidence mutation, consumed-identity mutation, immutable evidence change, research merge, same-run repair, or Utility request occurred. The harness defect remains MAIN critical path and was not offloaded. SUB retains only its independent bounded Discovery lane.
+
+Stop reason: **`POST_OUTCOME_STATIC_HARNESS_FALSE_NEGATIVE_INVALID_DIAGNOSTIC_DISCARD_STOP`**.
+
+Final lease: **`BLOCKED`** pending fresh Evidence Analyst review. A later MAIN run may mechanically fix/rebind/re-execute only if fresh prospective authority explicitly permits it.
