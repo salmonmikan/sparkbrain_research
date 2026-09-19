@@ -1,101 +1,119 @@
 {
-  "timestamp": "2026-09-18T22:32:40+09:00",
+  "timestamp": "2026-09-19T10:32:25+09:00",
   "role": "INDEPENDENT_AUDITOR",
   "phase_ordering_confirmed": true,
+  "control_plane_mailbox_semantics_respected": true,
   "blind_target_selection": {
-    "target": "PD01 pd01-long-history-fading-memory-official-v1 terminal FAIL_REDUCED_BY_FADING_MEMORY",
+    "target": "NI01 ni01-no-ignition-selective-prediction-official-v1 terminal FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION",
     "authoritative_refs_inspected": [
       "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-      "exact package@b9d38daa5faca348ad2db3898ba71e2abc99f631",
-      "scientific-contract blob@0ce03b01baf41a0c77c513835b1c6063e47b2614",
-      "implementation blob@16bbfb6ed57d6c9701e8437360692b62e7c36915",
-      "control/pd01-long-history-fading-memory-started-v1-20260918",
-      "raw preserve@65ae7a50ee2279ab5edc3ca43ea3bf69daecb881",
-      "terminal evidence@fc5c8cda283360addddb7da482b14e69beaba1f7",
-      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1"
+      "exact package@dbfe7469dbbbc1adbb00789ab382de892a1b3563",
+      "scientific-contract blob@3dc90b08f85e0e7c459e0c17e86ab338901fd4c6",
+      "control/ni01-no-ignition-selective-prediction-started-v1-20260918@d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d",
+      "raw preserve@8a39cf70e397bb7588f948910f01ec58672ac814",
+      "terminal evidence@69aa785a48bbdb531229b7f71f7fa84a5fde9948",
+      "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1"
     ],
     "attack_hypotheses": [
-      "package/identity/STARTED drift, target leakage, or post-START repair",
-      "FAIL taxonomy conflates comparator reduction with absence of registered candidate signal",
-      "candidate/comparator observation and readout privilege is asymmetric",
-      "paired/base-world bootstrap or long-lag endpoint drift",
-      "overclaim from probe-level failure to whole-system fading-memory reduction"
+      "authority/package/STARTED drift, leakage, or post-START repair",
+      "hidden world/task-label privilege in confidence comparator",
+      "threshold/scorer drift or outcome-conditioned threshold selection",
+      "seed/world fragility",
+      "comparator observation/resource mismatch",
+      "absent-signal versus mechanistic reduction conflation",
+      "claim-boundary overreach"
     ],
-    "why_consequential": "PD01 is used to close the generic remote-history/non-fading persistence frontier; no registered signal and mechanistic comparator reduction are scientifically different conclusions."
+    "why_consequential": "NI01 is used to close the native No-Ignition/selective-decision line via an ordinary-confidence reduction; extra regime identity in the comparator can make that mechanistic conclusion stronger than the actual evidence."
   },
   "blind_target_change_reason": null,
   "repository_refs_inspected": [
     "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "active research/* and current control/preserve namespace inventory",
-    "PD01 exact package@b9d38daa5faca348ad2db3898ba71e2abc99f631",
-    "PD01 STARTED control branch",
-    "PD01 raw preserve branch and manifest",
-    "PD01 terminal evidence@fc5c8cda283360addddb7da482b14e69beaba1f7",
-    "prior audit role history through 2026-09-18 10:30 JST"
+    "active research/*, current evidence/formal/sealed/freeze/control/preserve refs and tags",
+    "open PR/workflow state",
+    "NI01 exact package@dbfe7469dbbbc1adbb00789ab382de892a1b3563",
+    "NI01 STARTED@d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d",
+    "NI01 raw preserve@8a39cf70e397bb7588f948910f01ec58672ac814",
+    "NI01 terminal evidence@69aa785a48bbdb531229b7f71f7fa84a5fde9948",
+    "prior audit role history through PD01 2026-09-18 22:32 JST"
   ],
-  "control_brain_commit_consumed": "23fc2f0c1668526be402fa44b3bc8c5b2258511b",
-  "evidence_analyst_commit_consumed": "57464c4ad6881c27371be5305512656c6ae315d3",
-  "main_report_commit_consumed": "14f9348c779fccde09e12ade9d4fbfa9373f5d5c",
-  "sub_report_commit_consumed": "14f9348c779fccde09e12ade9d4fbfa9373f5d5c",
-  "literature_handoff_commit_consumed": "525686fa0c14f64426ca7bf5c89f08cd0bcb9c77",
+  "control_brain_commit_consumed": "10eb4206fb0c998fcdbc40c0e16f38829ea5d41e",
+  "evidence_analyst_commit_consumed": "8ee6d305acdc8310335e65c5bd3f35d121f35280",
+  "main_report_commit_consumed": "a6b85547ae743fd6ff7d28d2e6ea4204719e5f06",
+  "sub_report_commit_consumed": "44284b5de7240bd794633ec5d1543c22dfb216f4",
+  "literature_handoff_commit_consumed": "70580cbea48f8d6ad7e12327e8d14800c78915ff",
   "genuinely_new_information": true,
   "findings": [
     {
-      "id": "pd01_integrity_chain",
+      "id": "ni01_integrity_chain",
       "status": "ROBUST_SO_FAR",
-      "summary": "Exact package/no-retry STARTED binding, target-blind raw acquisition, immutable preservation, independent refetch and target-after-preserve scoring are coherent; no post-START mutation or leakage was found."
+      "summary": "No-retry STARTED binds exact package and authority; target-free DEV threshold derivation, target-blind TEST raw acquisition, immutable preserve, independent re-fetch/digest check and target-after-preserve scoring are coherent. No post-START scientific mutation or target leakage was found."
     },
     {
-      "id": "pd01_registered_statistics",
+      "id": "ni01_registered_result",
       "status": "CONTRACT_VALID",
-      "summary": "SparkBrain accuracy is 0.47265625 with 95% CI [0.431640625, 0.515625], reservoir accuracy is 0.5, and effect CI is [-0.068359375, 0.015625], satisfying the frozen FAIL rule effect_ci95_upper <= 0.05."
+      "summary": "Candidate loss 0.2119466145833332, comparator loss 0.21146918402777773, effect -0.00047743055555544517, CI [-0.0024414062499999965, 0.0014756944444444355], coverage guard pass; frozen rule validly yields FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION."
     },
     {
-      "id": "pd01_null_vs_reduction",
-      "status": "CONFOUNDED",
-      "summary": "The frozen FAIL taxonomy does not require a positive SparkBrain candidate signal. The observed run has no demonstrated above-chance long-lag SparkBrain signal, so REDUCED_BY_FADING_MEMORY conflates absence of signal with mechanistic comparator reduction."
+      "id": "ni01_world_label_privilege",
+      "status": "WEAKENED",
+      "summary": "Comparator thresholds are derived and applied separately by explicit world identity, while the candidate reference brain receives observations but not symbolic world identity. The comparator therefore has prospective target-free but asymmetric regime/task-label privilege."
     },
     {
-      "id": "pd01_readout_access",
-      "status": "ACKNOWLEDGED_INTERPRETATION_CEILING",
-      "summary": "SparkBrain exposes final-probe spike-response features while the reservoir exposes full continuous state. Authority prospectively accepted this asymmetry for the boundary test, so the result cannot support whole-latent-state fading-memory equivalence."
+      "id": "ni01_reduction_semantics",
+      "status": "INTERPRETATION_CEILING",
+      "summary": "The evidence supports no registered incremental native advantage over a world-conditioned coverage-matched confidence-abstention comparator. Equal-privilege generic confidence-abstention mechanism reduction is not established."
     }
   ],
   "affected_lines": [
-    "PD01",
-    "PERSISTENT_DYNAMICS_RESIDUAL",
+    "NI01_H4",
     "PROGRAMME_NOVELTY",
-    "FUTURE_REDUCTION_TAXONOMY"
+    "FUTURE_REDUCTION_TAXONOMY",
+    "COMPARATOR_PRIVILEGE_DOCTRINE"
   ],
-  "audit_classification": "CONFOUNDED",
-  "confidence": "HIGH",
-  "novelty_or_reduction_impact": "PD01_NO_POSITIVE_LONG_LAG_SIGNAL; CANONICAL_FAIL_VALID_BUT_MECHANISTIC_RESERVOIR_REDUCTION_NOT_ESTABLISHED; NO_NOVELTY_SUPPORT_RESTORED",
+  "audit_classification": "WEAKENED",
+  "confidence": "HIGH_ON_PRIVILEGE_ASYMMETRY_MEDIUM_ON_OUTCOME_SENSITIVITY",
+  "novelty_or_reduction_impact": "NI01_CANONICAL_FAIL_VALID; NO_REGISTERED_INCREMENTAL_NATIVE_ADVANTAGE_OVER_WORLD_CONDITIONED_CONFIDENCE_ABSTENTION; EQUAL_PRIVILEGE_MECHANISTIC_REDUCTION_NOT_ESTABLISHED; NO_NOVELTY_SUPPORT_RESTORED",
+  "thresholds_by_world": {
+    "contradiction_world": 0.4344505230131153,
+    "delayed_evidence_world": 0.43859092652956055,
+    "reliability_world": 0.43837666247277174
+  },
+  "world_effects": {
+    "contradiction_world": -0.003743489583333176,
+    "delayed_evidence_world": 0.00745442708333327,
+    "reliability_world": -0.00514322916666643
+  },
   "prospective_baselines_or_discriminators": [
-    "Do not rerun, retune, rescore, relabel or reopen canonical PD01.",
-    "Future reduction contracts should separate NO_REGISTERED_SIGNAL from REDUCED_BY_COMPARATOR.",
-    "Require a prospectively fixed candidate-signal floor before mechanistic REDUCED_BY_* language is armed.",
-    "For latent-memory claims, match observation/readout privilege rather than only feature dimensionality."
+    "Do not rerun, retune, rescore, relabel or reopen canonical NI01.",
+    "Diagnostic-only read-only sensitivity with one global DEV-derived threshold that does not use world identity.",
+    "Future comparator contracts should enumerate task/regime identifiers and match candidate information privilege or prospectively justify the asymmetry.",
+    "Future mechanistic REDUCED_BY_* contracts should require a prospectively fixed positive candidate-signal gate where scientifically meaningful."
   ],
   "questions_for_evidence_analyst": [
-    "Should canonical PD01 be summarized as no registered long-lag probe signal plus comparator-not-worse while preserving the frozen FAIL token unchanged?",
-    "Should future mechanistic reduction contracts require a positive candidate-signal gate?",
-    "Should PD01 syntheses explicitly state that the SparkBrain feature is final-probe spike response rather than full latent state?"
+    "Should NI01 synthesis say world-conditioned coverage-matched confidence abstention rather than simply matched confidence abstention?",
+    "Can a read-only global-threshold sensitivity be computed from immutable NI01 raw without changing canonical evidence?",
+    "Should future comparator contracts treat regime/task IDs as explicit privilege that must be matched or justified?"
   ],
   "questions_for_control_brain": [
-    "Should PD01 be counted as negative evidence for the registered persistence probe rather than a mechanistically specific reservoir reduction?",
-    "Should programme doctrine distinguish ABSENT_SIGNAL from EXPLAINED_BY_REDUCTION?",
-    "Should the reduction-first/testbed framing remain unchanged because this audit restores no positive persistence evidence?"
+    "Should NI01 be counted as no registered incremental native advantage, but not yet equal-privilege mechanistic reduction?",
+    "Should explicit task/regime-label privilege be added to the programme-wide symmetry gate?",
+    "Should architecture/testbed HOLD remain unchanged because this audit restores no positive NI01 signal?"
   ],
   "must_not_change_frozen_or_consumed": [
-    "pd01-long-history-fading-memory-official-v1",
-    "b9d38daa5faca348ad2db3898ba71e2abc99f631",
-    "0ce03b01baf41a0c77c513835b1c6063e47b2614",
-    "16bbfb6ed57d6c9701e8437360692b62e7c36915",
-    "control/pd01-long-history-fading-memory-started-v1-20260918",
-    "65ae7a50ee2279ab5edc3ca43ea3bf69daecb881",
-    "fc5c8cda283360addddb7da482b14e69beaba1f7",
-    "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1",
-    "canonical PD01 statistics and FAIL_REDUCED_BY_FADING_MEMORY token",
-    "all consumed C19/R1/R2/NI01/H5/A01/RV01/RV02/CX identities and immutable evidence"
-  ]
+    "ni01-no-ignition-selective-prediction-official-v1",
+    "dbfe7469dbbbc1adbb00789ab382de892a1b3563",
+    "3dc90b08f85e0e7c459e0c17e86ab338901fd4c6",
+    "control/ni01-no-ignition-selective-prediction-started-v1-20260918",
+    "8a39cf70e397bb7588f948910f01ec58672ac814",
+    "69aa785a48bbdb531229b7f71f7fa84a5fde9948",
+    "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1",
+    "canonical NI01 statistics and FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION token",
+    "all other consumed C19/R1/R2/PD01/H5/A01/RV01/RV02/CX identities and immutable evidence"
+  ],
+  "read_only_recompute": {
+    "attempted": true,
+    "completed": false,
+    "limitation": "Immutable raw_predictions.jsonl is 12.8 MB and the GitHub connector could not stream it in this run; no diagnostic global-threshold sensitivity was computed. Canonical scoring was not changed."
+  },
+  "legacy_shared_latest_state_updated": false
 }
