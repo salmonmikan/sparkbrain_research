@@ -1,129 +1,109 @@
 {
-  "timestamp": "2026-09-19T18:30:00+09:00",
+  "timestamp": "2026-09-19T21:30:00+09:00",
   "role": "LITERATURE_REDUCTION_SCOUT",
-  "schedule_slot_jst": "18:30",
+  "schedule_slot_jst": "21:30",
+  "schedule_inference_used": false,
   "control_plane_mailbox_semantics_respected": true,
   "repository_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "main_topk_architecture": "research/main-topk-persistent-amplification-arch-study-20260919@97f542d86dcd3a609cd039379fcda41ba61e0909",
-    "sub_structural_order_discovery": "research/exploratory-sub-structural-order-path-dependence-20260919@8156bba7b119fb831b7c28eac7cd900746f9876e",
-    "lp01": "research/lp01-actual-lineage-causal-credit-spec-20260918@f6d59a55730c5f99cd7f30470847fc3f175bdf64",
+    "main_topk_architecture": "research/main-topk-persistent-amplification-arch-study-20260919@04ced2b97ed088bb2cdb086d164a86212741e601",
+    "main_structural_architecture": "research/main-structural-order-path-arch-study-20260919@6a53ee36259bca31b77024245e5ab0a9ef5ec405",
     "authoritative_evidence_tag_count": 5,
-    "formal_tag_count": 0,
-    "sealed_tag_count": 0,
-    "legacy_freeze_branch_count": 13,
-    "new_formal_identity_observed": false,
-    "active_formal_test_observed": false,
-    "relevant_open_prs": [148, 149]
+    "fresh_formal_identity_observed": false,
+    "fresh_started_observed": false,
+    "fresh_formal_test_authority_observed": false,
+    "fresh_formal_evidence_observed": false
   },
-  "control_brain_commit_consumed": "6ed239b241a39f7d3e934e37751454c8bf3ebb4c",
-  "control_brain_latest_blob_consumed": "4a15b2f117700274dfb4f04aca78a105fd9b63cc",
-  "evidence_analyst_branch_ref_observed": "5b63d21f44812ef8d4938c9ad968bb8ab481b3c5",
-  "evidence_analyst_latest_blob_consumed": "e35563cecdc39e2572f9d4a43fb5415baae04bdf",
-  "evidence_analyst_state_blob_consumed": "934f8a97828f029d9b506c229c2b863b14d89de9",
-  "evidence_analyst_latest_timestamp": "2026-09-19T18:20:52+09:00",
-  "orchestrator_report_branch_ref_observed": "9861a3e408fa98794eedb42aa7714e2fb0e0293a",
-  "main_report_commit_consumed": "9fcd1b85f753092273fe695ce5552c4c79b9bbdb",
-  "main_latest_blob_consumed": "1f62b06cc269b0dc4f62965a2778224834e9d585",
-  "main_state_blob_consumed": "382330caee5b663c7bfbcc8d79d0292a7888c5fa",
-  "main_history_blob_consumed": "d02fb62f69f483e027822d7067c95400471d2abc",
-  "sub_report_commit_consumed": "548d4492e7c26dc33ce6bc2d6ac47c2ea63b49b4",
-  "sub_latest_blob_consumed": "1e7770316cbb25fce88eb6cfb2e990ad8ed21f0f",
-  "sub_state_blob_consumed": "8e37d5342bb3fc9e316cc91e3e383de3c3031dad",
-  "sub_history_blob_consumed": "1e7770316cbb25fce88eb6cfb2e990ad8ed21f0f",
-  "prior_external_research_audit_mailbox_tip": "ea84b5d9f2c1fc6d4d0478d0506a897c280cb8f0",
-  "prior_literature_latest_consumed": "2026-09-19T15:32:00+09:00",
+  "control_brain_commit_consumed": "566f3b7c590fcfe2b9e8aaa0415da964989b1124",
+  "evidence_analyst_commit_consumed": "a3ec861d71c0965625fc1d2e5e8f65f4ce47f834",
+  "orchestrator_report_branch_ref_observed": "c4fd52d8c44455cf34c3ce8556a8d96cef2ac866",
+  "main_report_commit_consumed": "be8ad6035444bd7ffeeb92b220c634377b49517b",
+  "sub_report_commit_consumed": "e809711bd42622e922ee765f8e5c75b3162ada1d",
+  "prior_literature_handoff_tip": "02c5eec39f8fca9dd180c4c91c4ae444ebd50995",
+  "prior_literature_latest_consumed": "2026-09-19T18:30:00+09:00",
   "genuinely_new_information": true,
   "current_repository_interpretation": {
     "new_formal_scientific_evidence": false,
-    "main_candidate": "CAND-TOPK-PA-01",
-    "main_cycle1_result": "PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL_NON_EVIDENTIARY",
-    "main_cycle2_status": "AUTHORIZED_FIXED_INDEPENDENT_SEED_REPLICATION_BY_EVIDENCE_ANALYST",
-    "sub_structural_result": "STRUCTURAL_ORDER_PATH_DEPENDENCE_OBSERVED_NON_EVIDENTIARY",
-    "sub_structural_review": "PROMOTE_TO_ARCHITECTURE_STUDY_QUEUE",
+    "main_lane": "LOWER_FUNNEL_MAIN_HOLD_PENDING_FRESH_OBJECT",
+    "topk": "HOLD_PENDING_READONLY_CROSS_SEED_SUPPORT_AND_FRESH_PROSPECTIVE_REDUCTION_QUESTION",
+    "structural_order": "REJECT_EDGE_OR_HOMEOSTASIS_CONTROL_REPRODUCES",
+    "sub_receptor_polarity": "REJECT_EXACT_IMPLEMENTATION_REDUCTION",
     "pre_formal": "EMPTY_HOLD",
     "formal": "EMPTY_HOLD"
   },
   "findings": [
     {
-      "id": "TOPK_DISCONTINUITY_HYBRID_SWITCH_REDUCTION",
-      "summary": "Hard Top-k expert/router selection is an ordinary piecewise/discontinuous switching mechanism. 2026 Sparse-MoE theory formalizes selected-set discontinuity surfaces; hybrid-system saltation theory supplies the general first-order language for perturbation transport across switches, with the caveat that SparkBrain's discrete-time router should use an appropriate piecewise/discrete Jacobian or finite-difference analogue rather than assuming continuous-time saltation exactly.",
+      "id": "TOPK_BORDER_COLLISION_BASIN_REDUCTION",
+      "summary": "Discrete-time piecewise-smooth systems can change invariant sets when trajectories cross a switching surface. Border-collision theory therefore supplies an ordinary explanation for durable post-Top-k divergence: boundary crossing can move the system into a different basin/attractor, not merely create an immediate jump.",
       "sources": [
-        "Tran Huu et al., Geometric and Stochastic Analysis of Discontinuities in Sparse Mixture-of-Experts, arXiv:2606.19036 (2026)",
-        "Kong et al., Saltation Matrices: The Essential Tool for Linearizing Hybrid Dynamical Systems, Proceedings of the IEEE 112(6), 2024, DOI 10.1109/JPROC.2024.3440211"
+        "Simpson, Border-Collision Bifurcations in R^N, SIAM Review 58(2), 2016, DOI 10.1137/15M1006982",
+        "Simpson, Border-collision bifurcations from stable fixed points to any number of coexisting chaotic attractors, arXiv:2207.10251, 2022"
       ],
-      "direct_applicability_confidence": "HIGH_FOR_TOPK_DISCONTINUITY; MEDIUM_FOR_SALTATION_FORMALISM_DUE_DISCRETE_TIME_IMPLEMENTATION"
+      "direct_applicability_confidence": "HIGH_AS_ORDINARY_DISCRETE_SWITCHING_REDUCTION; DIRECT_EQUIVALENCE_NOT_CLAIMED"
     },
     {
-      "id": "NONNORMAL_RECURRENT_TRANSIENT_GAIN_REDUCTION",
-      "summary": "Stable recurrent systems can exhibit large finite-horizon transient amplification through non-normal operator geometry. The observed delayed full/no-persistent divergence after top-k turnover therefore has a strong ordinary candidate explanation: boundary jump followed by recurrent transient gain.",
+      "id": "RECURRENT_WTA_HYSTERESIS_REDUCTION",
+      "summary": "Recurrent lateral-inhibition/WTA networks can have multiple stable equilibria and hysteretic state transitions. A small routing perturbation can therefore produce persistent post-perturbation differences through ordinary attractor selection/hysteresis.",
       "sources": [
-        "Hennequin, Vogels & Gerstner, Non-normal amplification in random balanced neuronal networks, Physical Review E 86, 011909 (2012), DOI 10.1103/PhysRevE.86.011909"
+        "Mao & Massaquoi, Dynamics of winner-take-all competition in recurrent neural networks with lateral inhibition, IEEE TNN 18(1), 2007, DOI 10.1109/TNN.2006.883724",
+        "Cotteret et al., Robust Spiking Attractor Networks with a Hard Winner-Take-All Neuron Circuit, ISCAS 2023, DOI 10.1109/ISCAS46773.2023.10181513"
       ],
-      "direct_applicability_confidence": "HIGH_AS_ORDINARY_TRANSIENT_AMPLIFICATION_MECHANISM; DIRECT_EQUIVALENCE_NOT_CLAIMED"
+      "direct_applicability_confidence": "HIGH_AS_ORDINARY_COMPETITIVE_RECURRENT_BASELINE"
     },
     {
-      "id": "STRUCTURAL_REWRITE_CONFLUENCE_CRITICAL_PAIR_REDUCTION",
-      "summary": "Same-start/same-input-multiset but order-dependent final graphs are standard graph-rewriting non-confluence/conflict phenomena. Critical-pair and conflict/dependency analysis provide a direct ordinary reduction for the synthetic structural duplicate/prune path-dependence line before any stronger mechanistic claim.",
+      "id": "PIECEWISE_CONTRACTION_DISCONTINUITY_REDUCTION",
+      "summary": "Piecewise-contracting systems can still exhibit nontrivial recurrent/chaotic attractors when discontinuities participate in the attractor. Consequently a locally stable or contractive within-region Jacobian does not by itself rule out switching-driven long-lived complexity.",
       "sources": [
-        "Campbell & Plump, Confluence up to Garbage in Graph Transformation (2020/2021)",
-        "Lambers et al., Granularity of conflicts and dependencies in graph transformation systems: A two-dimensional approach, JLAMP 103 (2019)"
+        "Catsigeras, Guiraud, Meyroneinc & Ugalde, On the asymptotic properties of piecewise contracting maps, Dynamical Systems 31(2), 2016, DOI 10.1080/14689367.2015.1068274"
       ],
-      "direct_applicability_confidence": "HIGH_AS_REDUCTION_LANGUAGE_FOR_RULE_ORDER_DEPENDENCE"
+      "direct_applicability_confidence": "HIGH_AS_WARNING_AGAINST_LOCAL_STABILITY_OVERINTERPRETATION"
     }
   ],
   "affected_lines": [
     "CAND_TOPK_PA_01",
     "TOPK_ROUTER_PERSISTENT_AMPLIFICATION",
-    "CAND_STRUCTURAL_ORDER_PATH_01",
     "ARCHITECTURE_STUDY_REDUCTION",
-    "PROGRAMME_NOVELTY"
+    "PROGRAMME_NOVELTY",
+    "CAND_STRUCTURAL_ORDER_PATH_01"
   ],
   "reduction_candidates": [
-    "hard Top-k piecewise/discontinuous switching geometry",
-    "discrete switching-jump sensitivity / finite-difference boundary decomposition",
-    "finite-horizon recurrent Jacobian/JVP and non-normal transient gain",
-    "graph rewrite critical-pair / commutation / joinability analysis",
-    "explicit age/slot/provenance-state reduction for structural path dependence"
+    "border-collision / active-set basin switching",
+    "recurrent WTA multistability and hysteresis",
+    "piecewise-contracting dynamics with discontinuity-supported attractors",
+    "within-region Jacobian/JVP and non-normal transient gain kept separate from cross-boundary global dynamics"
   ],
   "confidence": {
     "external_prior_art_exists": "HIGH",
-    "novelty_bar_impact": "HIGH_FOR_ACTIVE_ARCHITECTURE_LINES",
-    "direct_equivalence_to_SparkBrain": "NOT_CLAIMED",
-    "supports_changing_cycle2_contract": "NO",
-    "prospective_discriminator_value": "HIGH"
+    "novelty_bar_impact": "HIGH_FOR_HELD_TOPK_LINE",
+    "direct_equivalence_to_sparkbrain": "NOT_CLAIMED",
+    "supports_reopening_structural_candidate": "NO",
+    "supports_changing_completed_topk_contracts": "NO"
   },
-  "novelty_or_reduction_impact": "STRONGER_ORDINARY_REDUCTION_PRESSURE_ON_NEW_ARCHITECTURE_LINES: hard Top-k turnover is ordinary switching/discontinuity geometry; delayed amplification can be produced by ordinary non-normal recurrent transient gain; and structural same-multiset order dependence is ordinary non-confluence/critical-pair territory. Architecture characterization remains valuable, but mechanistic novelty requires a residual after these reductions.",
+  "novelty_or_reduction_impact": "STRONGER_ORDINARY_REDUCTION_PRESSURE_ON_HELD_TOPK_LINE: hard routing can yield durable divergence through border-collision, basin/attractor selection and WTA hysteresis; local contraction or weak non-normal gain alone does not eliminate switching-driven persistence. The current Structural residual remains rejected and should not be rescued from literature.",
   "prospective_baselines_or_discriminators": [
-    "piecewise/discrete switching sensitivity or finite-difference boundary-jump decomposition for hard Top-k turnover",
-    "finite-horizon recurrent Jacobian/JVP and non-normal transient-gain analysis matched full vs no_persistent_state",
-    "predicted-versus-observed delayed divergence under boundary-jump times recurrent-gain decomposition",
-    "graph-rewrite critical-pair / commutation / joinability analysis for duplicate-prune-grow-prune operations",
-    "structural-history tests matched on explicit age/slot/provenance/rewrite-relevant state"
+    "border/basin-crossing and return-map analysis around Top-k active-set boundaries",
+    "hysteresis test: cross a boundary, remove perturbation, then test persistence under matched subsequent inputs",
+    "controlled recurrent-state reset or matched-within-branch initialization to separate basin selection from propagated memory",
+    "analyze within-region contraction/non-normal gain separately from cross-boundary global branch selection"
   ],
   "questions_for_evidence_analyst": [
-    "Keep the already authorized CAND-TOPK-PA-01 cycle-2 replication unchanged; if it replicates, should fresh PRE_FORMAL review require an ordinary switching-plus-recurrent-transient reduction before mechanistic-distinctness claims?",
-    "For CAND-STRUCTURAL-ORDER-PATH-01, should the first Architecture reduction explicitly test whether rewrite critical pairs plus explicit age/slot state explain the path dependence?",
-    "Treat architecture-signal replication as necessary but not sufficient, evaluating these external reductions only after the prospectively required stop/review?"
+    "If the existing Top-k cross-seed support diagnostic is robust, should the next fresh reduction question explicitly test basin/attractor switching and hysteresis before any persistence-specific interpretation?",
+    "Should a stable or contractive within-region Jacobian be considered insufficient to clear ordinary reduction unless cross-boundary branch selection is also excluded?",
+    "Keep CAND-STRUCTURAL-ORDER-PATH-01 rejected under its current question with no literature-driven rescue cycle?"
   ],
   "questions_for_control_brain": [
-    "Add hard-switch geometry plus recurrent transient/non-normal gain to the ordinary-reduction doctrine for routing-persistence claims?",
-    "Add graph-rewrite confluence/critical-pair analysis to the ordinary-reduction doctrine for structural path-dependence claims?",
-    "Preserve the current FORMAL/H7 novelty bar while allowing these lower-layer architecture lines to proceed as testbed characterization?"
+    "Add border-collision/multistability/WTA hysteresis to the ordinary routing-persistence reduction ladder after support robustness is established?",
+    "Keep LIT-20260919-1830-TOPK-HYBRID-TRANSIENT deferred until fresh Analyst review rather than creating an overlapping mechanism request now?",
+    "Preserve FORMAL/H7 novelty criteria while MAIN remains HOLD pending a genuinely fresh central object?"
   ],
   "must_not_change_frozen_or_consumed": [
     "all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence",
-    "canonical PD01/NI01/H5 terminal classifications and consumed STARTED/control/preserve/evidence refs",
-    "all consumed A01/RV01/RV02/CX identities and legacy immutable refs",
-    "CAND-TOPK-PA-01 cycle-2 fixed replication contract, thresholds, metrics, seed choice, DEV split, comparator and stop boundary",
-    "no outcome-responsive retune/redesign, official TEST, formal identity/STARTED, rescore, research merge, immutable ref/tag mutation, or scheduler change"
+    "canonical terminal classifications and consumed STARTED/control/preserve/evidence refs",
+    "completed CAND-TOPK-PA-01 Architecture cycles/labels and current HOLD boundary; no cycle 3 rescue or outcome-responsive redesign",
+    "rejected CAND-STRUCTURAL-ORDER-PATH-01 current question; no cycle 2 rescue under that object",
+    "no official TEST, new formal identity/STARTED, rerun, retune, rescore, research merge, immutable-ref/tag mutation, or scheduler change"
   ],
-  "utility_request_created": {
-    "request_id": "LIT-20260919-1830-TOPK-HYBRID-TRANSIENT",
-    "path": "utility_orchestrator/requests/2026-09-19/LIT-20260919-1830-topk-hybrid-transient-decomposition.md",
-    "branch": "ops/utility-orchestrator-requests",
-    "commit": "a9c53c4307bfc36a8166371abdf69380e929d0e3",
-    "dedupe_key": "literature:topk-switch-nonnormal-transient-decomposition:v1"
-  },
+  "utility_request_created": null,
+  "existing_relevant_utility_request": "LIT-20260919-1830-TOPK-HYBRID-TRANSIENT",
   "legacy_shared_latest_state_updated": false
 }
