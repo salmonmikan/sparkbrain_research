@@ -1,10 +1,10 @@
-# SparkBrain Control Brain — 2026-09-20 06:50 JST
+# SparkBrain Control Brain — 2026-09-20 08:50 JST
 
 - role: `CONTROL_BRAIN`
-- selected_slot_jst: `06:50`
+- selected_slot_jst: `08:50`
 - role_inference_required: `false`
 - foundational_doctrine_change: `NO`
-- operating_doctrine_change: `PROSPECTIVE_HANDOFF_BINDING_GUARD_ADOPTED`
+- operating_doctrine_change: `NO_NEW_CHANGE`
 - programme_position: `FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL`
 - scheduler_controller_action: `NO_CHANGE`
 - fleet_status: `YELLOW`
@@ -13,46 +13,51 @@
 
 No Human Directive is new or materially changed. Existing dispositions remain:
 
-- `HUMAN-20260918-001`: `ACCEPT / UNCHANGED` — review only stable outcome-independent reusable CX/comparator substrate for `main`; do not wholesale-promote consumed/result-dependent research state.
-- `HUMAN-20260919-002`: `ACCEPT / UNCHANGED` — repository protection/ruleset deployment remains deferred absent a materially changed concrete immutable-ref risk. The factual protection gap remains recorded.
-- `HUMAN-20260919-003`: `ACCEPT / UNCHANGED` — keep the FORMAL one-way integrity floor strict while actively using Discovery/Architecture/Pre-formal for substantive information gain; do not substitute low-value governance work for research progress.
+- `HUMAN-20260918-001`: `ACCEPT / UNCHANGED` — only stable, outcome-independent reusable CX/comparator substrate should be reviewed for `main`; consumed/result-dependent scientific state must not be wholesale-promoted.
+- `HUMAN-20260919-002`: `ACCEPT / UNCHANGED` — repository protection/ruleset deployment remains deferred absent a materially changed concrete immutable-ref risk. The protection gap remains a recorded governance fact, not a current implementation priority.
+- `HUMAN-20260919-003`: `ACCEPT / UNCHANGED` — keep the FORMAL one-way integrity floor strict while actively using Discovery/Architecture/Pre-formal for substantive information gain. Current lower-funnel throughput supports this posture.
 
-The temporarily faster Control cadence remains an operational turnover measure only and does not widen scientific or scheduler authority.
+The temporarily faster Control cadence remains operational only and does not widen scientific or scheduler authority.
 
 ## Central theory, reductions, and residual
 
 The central novelty bar is unchanged. A future FORMAL SparkBrain novelty claim remains admissible only for a native, prospectively positive, intervention-validated lineage-specific causal-responsibility effect that survives ordinary history/provenance/actual-causality and local-learning/recurrent/plastic reductions under matched information, readout, task/world/regime-label, and resource privilege. No current object clears that bar.
 
-Current lower-funnel work continues to be useful primarily as architecture/API/testbed characterization. Two fresh observations strengthen that separation rather than the central novelty thesis:
+The completed lower-funnel objects continue to separate architecture/testbed value from computational-principle novelty:
 
-1. Refractory current handling is an explicit input/state-transition contract question. Ordinary same-time signed-current aggregation, refractory discard/defer/clamp/integrate policy, retained state, and post-refractory sensitivity explain the relevant mechanism space.
-2. Delayed outcome attribution in v0.5 is currently reducible to one mutable pending activation plus one mutable pending action slot. An intervening decision can overwrite both before `learn_outcome`, so credit can follow the latest pending identity. That is an architecture/API temporal-credit contract issue, not evidence for a new credit-assignment principle.
+1. Refractory current handling reached a real functional Architecture terminal but is ordinarily reduced to explicit refractory input/state policy plus retained-state dynamics.
+2. Delayed outcome attribution now has a valid static Architecture terminal showing immediate-only observed usage while the public caller contract remains unspecified. This is an API/caller-contract issue; it does not establish a supported delayed-credit failure.
+3. SUB's newest homeostasis observation is reducible to population accounting: receptor spikes are included in the homeostatic activity surface, so receptor-only activity can mask a silent internal reservoir in the public `dead` signal.
 
-The unresolved central residual therefore remains H7-like native causal responsibility under matched privilege; no new native mechanism has appeared.
+The unresolved central residual remains H7-like native causal responsibility under matched privilege. No new native mechanism appeared.
 
 ## Research funnel
 
 ### DISCOVERY — `EXPLORATORY_PRODUCTIVE`
 
-SUB completed `OUTCOME_CREDIT_SLOT_OVERWRITE_DISCOVERY_CYCLE1` on `research/exploratory-sub-outcome-credit-slot-overwrite-20260920@83eb00212eb9c877e8217c44dfb35a5563f04626`. Exact-head workflow `35471236612` completed successfully.
+SUB completed `HOMEOSTASIS_RECEPTOR_DEAD_MASK_DISCOVERY_CYCLE1` on `research/exploratory-sub-homeostasis-receptor-dead-mask-20260920@8a2fa2efa7ac13ea7a1a835c14e8ea0f8013d71f`; exact-head CI `35476878641` completed successfully.
 
-The bounded synthetic probe found that an immediate A outcome credits `assembly-A`, while A pending -> B pending -> delayed A-labelled `learn_outcome` credits `assembly-B`; `assembly-A` receives neither predictor nor action-policy credit in the deferred arm. The repository mechanism is ordinary and explicit: `IntegratedV05Brain` has one mutable pending activation and `AssemblyActionPolicy` one mutable pending action tuple, and `learn_outcome` accepts no episode/decision identity. Current repository evaluation/demo/test callsites appear synchronous/immediate, so the Discovery characterizes delayed/asynchronous public-API use rather than demonstrated prevalence in the exercised evaluation path.
+Under a fixed synthetic two-unit field, receptor-only spikes kept production `dead=false`, `dead_streak=0`, and `active_unit_fraction=0.5` for six windows while the internal reservoir unit remained completely silent. Empty and receptor-filtered controls both reached `dead=true`, `dead_streak=6`, `active_unit_fraction=0.0`.
 
-SUB correctly kept this `NON_EVIDENTIARY`, did not touch MAIN, and stopped after one cycle with `PROMOTE_TO_ARCHITECTURE_STUDY` as a proposal only. Control does not promote it directly. Evidence Analyst should decide whether a fresh Architecture object has enough value, with the intended immediate-only versus delayed-outcome API contract and a supported-callsite/interleaving question fixed prospectively.
+The effect reduces directly to ordinary source semantics: `HomeostaticController.observe()` counts all supplied field spikes and does not filter receptor IDs, while the integrated brain passes all base-result spikes into homeostasis. This is an observability/population-definition issue, not novelty evidence. SUB correctly kept it `NON_EVIDENTIARY`, avoided MAIN, stopped after one bounded cycle, and returned only a `PROMOTE_TO_ARCHITECTURE_STUDY` proposal.
 
-### ARCHITECTURE_STUDY — `ACTIVE_MAIN_PRE_OUTCOME_BLOCKER`
+Evidence Analyst must decide prospectively whether an Architecture object is worthwhile. If admitted, it should first bind the intended population semantics for `dead`, active fraction, rate EMA, and threshold adaptation, plus supported consumers and a matched receptor-aware comparator. If whole-field liveness is explicitly intended or receptor-only/silent-reservoir states are irrelevant to supported paths, reduce to an engineering note rather than forcing continuation.
 
-Evidence Analyst admitted `CAND-REFRACTORY-CURRENT-ACCOUNTING-01` for exactly one NON_EVIDENTIARY Architecture cycle and assigned MAIN. MAIN bound the object on `research/main-refractory-current-accounting-arch-study-20260920@4ac9aeead78ec8d053291f922096fab7e31f6070`.
+### ARCHITECTURE_STUDY — `COMPLETED_CURRENT_OBJECT_PENDING_FRESH_ANALYST_REVIEW`
 
-Fresh workflow state shows both exact-head Architecture workflow `35470259892` and ordinary CI `35470259884` completed with failure. The Architecture run failed in exact-head compile/lint work before the outcome-bearing `architecture-study` job; therefore **no valid Architecture terminal result exists yet**. This is a pre-outcome mechanical blocker, not a scientific failure and not a result to interpret.
+Evidence Analyst admitted `CAND-V05-DELAYED-OUTCOME-ATTRIBUTION-01` for exactly one static/read-only Architecture cycle. MAIN/Relay completed it on exact head `c79c5434222a6d018931dc1752e7f0074c23854b`; ordinary CI `35475862604` completed `success`.
 
-MAIN owns the blocker end-to-end. If fresh reconciliation confirms it is purely science-invariant lint/build/import/harness work allowed by the prospective contract, MAIN may make only that mechanical fix, rebind the exact head, rerun ordinary CI/readiness, and continue under the unchanged contract. If resolving it requires semantic/protocol/current/timing/probe/comparator/observable/terminal-map change, STOP and return to Evidence Analyst. SUB and Utility must not take this blocker.
+The prospectively fixed terminal is:
 
-Completed Assembly Architecture `CAND-ASSEMBLY-CROSSCASCADE-FALLBACK-01` is now `HOLD` after a real functional segmentation effect that is ordinarily reduced to episode-global fallback/segmentation policy. No same-object cycle 2 is authorized.
+`IMMEDIATE_ONLY_USAGE_BUT_PUBLIC_CONTRACT_UNSPECIFIED`.
 
-`CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01` remains `HOLD`; its completed `AMBIGUOUS_CONTRACT` result is not relabeled. A separate read-only machine-fact extractor consistency audit is assigned to Utility below.
+Every bound observed caller uses `learn_outcome` immediately after the relevant `process_episode`; the implementation still has a single mutable pending credit state that a later `process_episode` can overwrite; `learn_outcome` carries no episode/decision identity; and no explicit public contract for immediate-only or delayed/interleaved use was found on the bound surface.
 
-Top-k, Temporal and topology-config remain HOLD/do-not-touch unless a genuinely fresh prospective successor question is independently justified.
+This is a valid **NON_EVIDENTIARY Architecture/API contract result**. It does not demonstrate a supported delayed-credit defect and does not authorize a dynamic interleaving test. MAIN/Relay correctly STOPped after the valid static terminal and exact-head CI success for fresh Analyst review. Same-object cycle 2, PRE_FORMAL, and FORMAL remain prohibited without a genuinely fresh prospectively specified successor question.
+
+`CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01` remains a queued Architecture candidate from the prior SUB Discovery. It should not automatically become the next MAIN object merely because the delayed-outcome cycle is complete; Evidence Analyst should re-rank it against the fresh homeostasis observability candidate by expected information gain and supported-system relevance.
+
+`CAND-REFRACTORY-CURRENT-ACCOUNTING-01` remains `HOLD` after valid `FUNCTIONAL_REFRACTORY_ACCOUNTING_EFFECT`; no same-object cycle 2. `CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01` remains `HOLD / AMBIGUOUS_CONTRACT`; its extractor defect does not retroactively relabel the terminal. Top-k, Temporal, topology-config, cross-cascade and other answered lower-funnel objects remain HOLD/do-not-touch absent fresh questions.
 
 ### PRE_FORMAL — `EMPTY_HOLD`
 
@@ -64,64 +69,56 @@ No fresh FORMAL identity, STARTED marker, TEST authority, scorer, preserve path,
 
 ## Candidate pool
 
-1. `CAND-REFRACTORY-CURRENT-ACCOUNTING-01` — `ARCHITECTURE_STUDY / PRE_OUTCOME_MECHANICAL_BLOCKER`. MAIN owns the blocker; no outcome exists yet.
-2. `OUTCOME_CREDIT_SLOT_OVERWRITE_DISCOVERY_CYCLE1` — `DISCOVERY_COMPLETE / PENDING_ANALYST_CLASSIFICATION`. Ordinary single-slot pending-state reduction found; potential Architecture/API attribution question only.
-3. `CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01` — `HOLD / COMPLETED_RESULT_UNCHANGED`; Utility may only audit static-detector fidelity read-only.
-4. `CAND-ASSEMBLY-CROSSCASCADE-FALLBACK-01` — `HOLD`; functional Architecture effect ordinarily reduced to segmentation/fallback policy; no cycle 2.
-5. `CAND-TOPK-PA-01` — `HOLD`; narrow/mixed support, no cycle 3 or PRE_FORMAL.
+1. `CAND-V05-DELAYED-OUTCOME-ATTRIBUTION-01` — `ARCHITECTURE_STUDY / CYCLE1_COMPLETE_PENDING_ANALYST`; terminal `IMMEDIATE_ONLY_USAGE_BUT_PUBLIC_CONTRACT_UNSPECIFIED`; no dynamic continuation authority.
+2. `HOMEOSTASIS_RECEPTOR_DEAD_MASK_DISCOVERY_CYCLE1` — `DISCOVERY_COMPLETE / PENDING_ANALYST_CLASSIFICATION`; ordinary all-field homeostatic accounting reduction; possible Architecture observability question only.
+3. `CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01` — `ARCHITECTURE_STUDY / QUEUED`; lifecycle intent and realistic saturation relevance must be bound before any turnover comparator.
+4. `CAND-REFRACTORY-CURRENT-ACCOUNTING-01` — `HOLD`; valid functional Architecture/API effect with strong ordinary reduction.
+5. `CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01` — `HOLD`; historical `AMBIGUOUS_CONTRACT` unchanged; static extractor false negative confirmed separately.
 6. `CAND-H7-RESP-01` — `HOLD / NO_NATIVE_OBJECT`.
 
 ## External Literature implication
 
-The fresh 06:30 Literature stream is consumed by Control in this run and had not yet been available to the 05:58 Evidence Analyst handoff.
+The newest role-specific Literature remains 06:30 JST and is consumed by both Control and the current Evidence Analyst handoff. It strengthens ordinary refractory reduction through explicit discard/defer/clamp/integrate input/state policy, signed-current aggregation, retained-state behavior, and a clear current-based-versus-conductance-based biological boundary. This supports keeping the completed Refractory result at Architecture/API value and does not reopen it or raise it toward PRE_FORMAL/FORMAL.
 
-It materially sharpens, but does not raise, the ordinary reduction bar for the active refractory line. Established spiking simulators expose multiple legitimate refractory input/state policies: discard, defer, voltage/state clamp, or continued integration for selected variables. Same-time signed E/I netting is ordinary current arithmetic; SparkBrain's negative-only post-net refractory update is a production-specific API/state policy to characterize. A later post-refractory spike difference is ordinary retained-state behavior. Equal nominal current cancellation must also not be generalized to conductance-based biological E/I semantics.
-
-Control therefore adds `explicit refractory input/state policy` to the ordinary Architecture reduction checklist. This is a prospective interpretation rule only; it does not modify the already-bound current cycle. PRE_FORMAL/FORMAL remain empty for this line unless a fresh mechanism independently survives these ordinary state-semantics reductions.
+No fresh literature result changes the novelty bar or supplies a new native SparkBrain mechanism.
 
 ## Independent Audit implication
 
-The newest Independent Audit remains H5 at 22:31 JST with `ROBUST_SO_FAR`. The exact registered `FAIL_NO_USEFUL_WORK_REDUCTION` remains valid. Its claim boundary remains narrow: globally eager all-edge eligibility maintenance dominates the tested aggregate algorithmic-work metric, but this is not a general event-routing/lazy-state no-go theorem. No H5 rerun, repair, reinterpretation, or successor is authorized here.
+The newest Independent Audit remains H5 at 22:31 JST with `ROBUST_SO_FAR`. The canonical `FAIL_NO_USEFUL_WORK_REDUCTION` is robust for the exact registered aggregate algorithmic-work claim. Global all-edge eligibility maintenance is a concrete architecture bottleneck in that implementation, not a general theorem that event routing/lazy execution is useless. H5 remains consumed and closed.
 
 ## Methodology Calibration implication
 
-The 06:20 Methodology Calibration remains `MIXED_CALIBRATION` with no need to tighten substantive scientific novelty/comparator/FORMAL gates.
+The fresh 08:20 Methodology Calibration remains `MIXED_CALIBRATION`, with the scientific hard floor and substantive novelty/comparator thresholds unchanged.
 
-The generic Utility handoff-binding prototype `CTRL-20260920-0450-HANDOFF-BINDING-GUARD` completed `1/1` with `PASS_EXPECTATIONS`: both known-bad Temporal and Top-k bindings fail closed as `HANDOFF_FIDELITY_BLOCKED`, while a faithful positive control passes. Control therefore **adopts the design principle prospectively** for future outcome-bearing lower-funnel closures: bind/check provenance, canonical machine-summary digest, exact mapped outcome/classification, and narrated decision-relevant machine fields before successor decisions rely on them.
+The remaining mixed element is procedural. Utility independently confirmed a deterministic machine-fact extractor false negative in the completed suppression chain: exact source restores the saved threshold although the machine artifact encoded `restore_restores_original_base_threshold=false`; the derived `implementation_state_preserving=false` is therefore also unreliable as source-semantic authority. The historical `AMBIGUOUS_CONTRACT` result remains untouched.
 
-This is a procedural control-plane change, not retroactive invalidation and not live workflow/scheduler integration authority. It also does not solve upstream machine-fact extractor errors that are internally self-consistent; those require separate semantic validation.
+This reinforces the already-adopted prospective policy: decision-relevant source facts should use fact-type-appropriate structural/AST/typed/runtime checks with exact binding, and artifact-to-handoff provenance/classification/narrative fields should remain machine-bound and fail closed. It does **not** justify retroactive repair or tighter scientific admission thresholds. The delayed-outcome object is a positive example of the stronger structural extraction approach.
 
 ## Utility request bus
 
-### `EVA-20260920-0502-SUPPRESSION-STATIC-DETECTOR-CONSISTENCY` — `ACCEPT`
+No new or unhandled Utility request exists. The three 2026-09-20 requests have already been dispositioned and completed under prior Control decisions:
 
-The request is high-information, bounded, read-only, and independent of active MAIN/SUB work. The completed suppression artifact records `restore_restores_original_base_threshold=false`, while the exact bound source visibly restores `base_threshold`; the completed harness used a narrower literal detector, so an extractor mismatch is plausible. The purpose is methodology fidelity only, not changing the completed `AMBIGUOUS_CONTRACT` result.
+- `METHCAL-20260920-0120-ARTIFACT-HANDOFF-FIDELITY` — prior `ACCEPT`, completed.
+- `EVA-20260920-0401-HANDOFF-BINDING-GUARD` — prior `ACCEPT`, completed.
+- `EVA-20260920-0502-SUPPRESSION-STATIC-DETECTOR-CONSISTENCY` — prior `ACCEPT`, completed `1/1` with `STATIC_EXTRACTOR_FALSE_NEGATIVE_CONFIRMED`.
 
-New assignment: `CTRL-20260920-0650-SUPPRESSION-STATIC-DETECTOR-CONSISTENCY`.
+A control-plane lifecycle pointer defect was reconciled in this run. `utility_orchestrator/state.json` already recorded the suppression assignment as `COMPLETED / run_count=1`, while `assignment/current.md` still advertised `ASSIGNED / active_assignment=true / run_count=0`. Control normalized only the assignment pointer to `COMPLETED / active_assignment=false / run_count=1`, preserving the completed result, scope, historical records and scientific status. Normalization commit: `7321568e67b1c17ef37e028e342ae0ace08c5f94`.
 
-- mode: `READ_ONLY_STATIC_DETECTOR_CONSISTENCY_AUDIT`
-- max_runs: `1`
-- expiry: `2026-09-20T09:00:00+09:00`
-- evidentiary status: `NON_EVIDENTIARY_METHODOLOGY_DIAGNOSTIC`
-- target: completed suppression cycle-1 artifact/contract/harness/exact bound source only
-- forbidden: workflow rerun/redispatch, dynamic probes, artifact repair, relabel/rescore/retune, TEST/formal/consumed raw access, research/main/ref mutation, successor choice, scheduler mutation
-
-The completed handoff-binding assignment is not rerun. No live Utility scheduler reconfiguration is needed. Control decision commit: `5d72eca7f3011cee1cc3b5971a7f19f2e2881c17`. Current Utility assignment commit: `dcb7dc021b09c7ec0713d99b8c2f8168169ac8af`.
+No new Utility assignment is created. Utility is idle until a fresh high-information request is submitted and accepted. No live Utility scheduler reconfiguration is needed.
 
 ## MAIN / SUB / Utility assessment
 
-- MAIN PRIMARY: `FAILED_OR_INCOMPLETE` operationally, specifically a pre-outcome exact-head compile/lint blocker. This is not a scientific terminal failure; MAIN retains ownership under the already-fixed contract.
-- MAIN Relay: `DELAYED` relative to the completed failure state. Its durable lease remains `WAITING_EXTERNAL`; it has not yet persisted post-failure reconciliation. Do not treat this short lag as authority to bypass Relay or transfer the blocker.
-- SUB: `EXPLORATORY_PRODUCTIVE`. It produced a genuinely independent delayed-outcome attribution observation, ordinary-reduced it to mutable pending slots, kept it NON_EVIDENTIARY, and stopped for Analyst review.
-- Utility: `HEALTHY / ASSIGNED`. The guard prototype completed successfully; one independent read-only suppression detector audit is now assigned.
+- MAIN / Relay: `HEALTHY`. The current delayed-outcome static Architecture cycle completed on the exact bound head with successful CI and a valid prospectively mapped terminal, then STOPped for Analyst review. The earlier Refractory pre-outcome blocker is resolved and no longer a fleet defect.
+- SUB: `EXPLORATORY_PRODUCTIVE`. It produced a genuinely independent homeostasis observability candidate, ordinary-reduced it, kept it NON_EVIDENTIARY and stopped after one cycle.
+- Utility: `HEALTHY / IDLE`. The one-run suppression audit completed correctly; the stale assignment pointer was normalized by Control. No hidden MAIN dependency exists.
 
-No MAIN critical-path blocker has been pushed to SUB or Utility. Utility is not a hidden dependency of the current MAIN refractory cycle.
+No MAIN critical-path blocker has been pushed to SUB or Utility. MAIN and SUB are producing true parallel throughput without role collision.
 
 ## Programme-drift assessment
 
-The anti-stall policy continues to work. Lower layers are generating substantive information: Assembly produced a real but ordinary Architecture effect; Refractory Discovery yielded a fresh API semantics object; SUB has now found a separate delayed-outcome attribution contract issue; weak/reduced observations are stopped rather than rescue-tuned.
+The anti-stall policy is working. Over the latest cycles, lower layers have produced substantive information and clear terminal decisions rather than governance-only churn: Refractory reached a functional Architecture effect but reduced ordinarily; delayed-outcome reached a static caller-contract terminal without overclaim; Assembly mature-capacity was queued for a fresh Architecture question; and SUB now exposed a separate homeostasis observability issue.
 
-The current risks are procedural rather than scientific permissiveness: (1) MAIN has a pre-outcome mechanical blocker that must be resolved strictly within its prospective contract, (2) artifact-to-handoff binding is now demonstrably guardable but not live-enforced, and (3) upstream machine-fact extractor fidelity remains under bounded audit. None justifies weakening FORMAL integrity or creating a formal object for throughput optics.
+The current risk is not excessive scientific conservatism. It is procedural fidelity and candidate prioritization: machine-fact extraction must remain robust, and Evidence Analyst should avoid serially promoting every engineering/API discrepancy merely because one exists. Fresh Architecture work should be selected for supported-system relevance and expected information gain, with a small candidate pool and explicit rejection conditions.
 
 ## Repository doctrine
 
@@ -129,67 +126,71 @@ Fresh remote state remains consistent with doctrine:
 
 - `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` remains stable shared substrate and unprotected.
 - authoritative annotated `evidence/*` tags remain exactly `5`.
-- legacy `freeze/*` branches remain `13`; tag-based `freeze/*`, `formal/*`, and `sealed/*` remain `0`.
-- no consumed identity, STARTED/control ref, raw preserve ref, or authoritative evidence tag changed.
+- legacy `freeze/*` branches remain `13` and preserved.
+- no fresh FORMAL/sealed/evidence identity appeared; no consumed identity or authoritative evidence tag was modified.
+- PR #148 and #149 remain open and unmerged.
 - protection/ruleset deployment remains deferred under the accepted Human Directive because no new immutable-ref incident occurred.
 
-No current research-specific candidate is eligible for `main`. A generic handoff-binding validator may become an outcome-independent promotion candidate only after separate structural review/testing detached from observed candidate semantics.
+No current research-specific candidate is eligible for `main`. Generic handoff-binding/extractor helpers may become outcome-independent promotion candidates only after separate structural review/testing detached from observed candidate semantics.
 
 ## Stop / reframe conditions
 
-- Refractory Architecture: fix only a prospectively allowed science-invariant pre-outcome mechanical blocker. Any semantic/protocol change requirement -> STOP for Analyst. Any valid future terminal -> STOP for fresh Analyst review; no automatic cycle 2/PRE_FORMAL/FORMAL.
-- Delayed-outcome attribution Discovery: no SUB cycle 2/self-promotion. Analyst must decide whether supported delayed/asynchronous API semantics justify one fresh Architecture object.
-- Suppression detector audit: exactly one Utility read-only run. It may identify extractor mismatch but may not relabel or repair the completed Architecture outcome.
-- Assembly, Top-k, Temporal, topology-config, H5, NI01 and other consumed/closed/completed lines remain HOLD/do-not-touch absent a genuinely fresh object.
+- Delayed-outcome: current static question is answered. Do not run a dynamic interleaving test unless Evidence Analyst independently defines a fresh prospective object and establishes that delayed/interleaved use is a supported or scientifically meaningful contract question. Public-contract ambiguity alone is not a mechanistic novelty signal.
+- Homeostasis receptor-dead masking: no SUB cycle 2/self-promotion. If promoted, bind intended population semantics and supported consumer relevance first; reject or reduce to engineering-note status if whole-field liveness is intended or the state is unsupported/unreachable.
+- Assembly mature-capacity: bind lifetime-memory versus reclaimable-working-set intent and realistic saturation relevance before any comparator. Do not inherit the Discovery outcome into a fresh Architecture threshold.
+- Suppression: extractor mismatch informs future methodology only; historical `AMBIGUOUS_CONTRACT` remains closed and unchanged.
+- Refractory, Top-k, Temporal, H5, NI01 and other answered/consumed lines remain HOLD/do-not-touch absent genuinely fresh prospective objects.
 - FORMAL stays HOLD until a fresh object independently clears the unchanged central admission bar.
 
 ## Scheduler fleet health
 
 `fleet_status: YELLOW`.
 
-- Control/Steward combined task: `HEALTHY` — faster Control cadence remains authority-neutral.
-- Evidence Analyst: `HEALTHY` — latest durable review is substantive; fresh post-review Literature/SUB/MAIN-blocker inputs await the next normal review.
-- MAIN PRIMARY: `FAILED_OR_INCOMPLETE` — exact-head Architecture workflow/CI failed pre-outcome at compile/lint; no scientific artifact exists.
-- MAIN Relay: `DELAYED` — durable lease still says `WAITING_EXTERNAL` after workflow failure; post-failure reconciliation is pending.
-- SUB: `EXPLORATORY_PRODUCTIVE` — fresh independent outcome-credit Discovery completed successfully and stopped.
-- External Literature: `HEALTHY` — fresh 06:30 output consumed by Control.
+- Control/Steward combined task: `HEALTHY` — temporary faster Control cadence remains authority-neutral.
+- Evidence Analyst: `HEALTHY` — 07:59 review is substantive; the just-completed MAIN terminal and 08:46 SUB Discovery now await its next normal fresh review.
+- MAIN PRIMARY / Relay: `HEALTHY` — delayed-outcome Architecture cycle completed successfully and durable STOP was persisted.
+- SUB: `EXPLORATORY_PRODUCTIVE` — fresh independent homeostasis observability Discovery completed successfully and stopped.
+- External Literature: `HEALTHY` — 06:30 output consumed by Analyst and Control.
 - Independent Audit: `HEALTHY` — H5 `ROBUST_SO_FAR` remains current and consumed.
-- Methodology Calibration: `HEALTHY` — fresh 06:20 material update consumed.
-- Utility Orchestrator: `HEALTHY` — prior guard assignment completed 1/1; new bounded detector audit assigned.
-- Current State Brief: `HEALTHY` based on the previously observed active read-only stream; it has no strategic blocker in this cycle.
+- Methodology Calibration: `HEALTHY` — fresh 08:20 material update consumed.
+- Utility Orchestrator: `HEALTHY` — suppression audit completed; lifecycle pointer normalized; no assignment backlog.
+- Current State Brief: `UNKNOWN` in this run because its live handoff was not independently read; it has no observed strategic dependency on the active scientific path.
 
 Critical scientific/integrity failures: **none**.
 
 Operational defects:
-1. MAIN exact-head refractory cycle is blocked pre-outcome by compile/lint failure and requires MAIN-owned reconciliation.
-2. Relay durable state has not yet advanced past `WAITING_EXTERNAL` after the failed exact-head runs.
-3. Upstream suppression machine-fact detector fidelity is unresolved; one bounded Utility audit now owns that question.
+1. Decision-relevant machine-fact extraction has a confirmed historical false-negative mode; prospective structural/typed checks are required where such facts affect decisions.
+2. The new MAIN and SUB terminals await fresh Evidence Analyst classification, but this is normal handoff latency rather than staleness.
 
 Efficiency findings:
-- lower-funnel throughput remains substantive and parallel without ownership collision;
-- no repeated no-op or scheduler failure warrants cadence escalation;
-- moving the MAIN blocker to SUB/Utility would be a coordination defect;
-- live wiring of the validated handoff guard is not needed during the current active research blocker; prospective adoption can remain a process requirement until separate integration review.
+- lower-funnel throughput is substantive and parallel;
+- current MAIN/SUB ownership is clean;
+- Utility request/assignment/result turnover completed without requiring live scheduler changes;
+- no repeated no-op or collision pattern warrants cadence mutation;
+- do not promote every API/engineering observation: prioritize supported-system relevance and information gain.
 
 ## Scheduler controller
 
 `scheduler_controller_action: NO_CHANGE`.
 
-No non-Utility scheduler timing mutation, Utility live prompt/cadence mutation, or scheduler-registry transaction occurred. The current failures are object-local pre-outcome CI/lint issues, not cadence problems. Increasing frequency would not solve them. The temporary faster Control cadence remains pinned as recent explicit human direction.
+No non-Utility scheduler timing mutation, Utility live prompt/cadence mutation, or scheduler-registry transaction occurred. The current work is progressing at the existing cadence. Increasing frequency would add churn without increasing scientific information. The temporary faster Control cadence remains pinned as recent explicit human direction.
 
 ## Ranked priorities — next 12–48h
 
-1. **Highest:** MAIN/Relay reconcile the failed refractory exact-head workflow. Apply only a prospectively allowed science-invariant mechanical fix if the blocker is truly mechanical; otherwise STOP to Analyst. Do not delegate the blocker.
-2. Evidence Analyst consumes the 06:30 Literature reduction and the fresh SUB delayed-outcome attribution Discovery; decide whether the latter merits one fresh Architecture/API contract without inheriting exploratory outcomes.
-3. Utility runs exactly one suppression static-detector consistency audit; use its result only to govern future successor interpretation, not to repair/relabel the completed suppression outcome.
-4. Prospectively use machine-checkable handoff binding for future lower-funnel closures where decision-relevant machine fields are narrated, while keeping extractor semantic validation a distinct guard.
-5. Preserve FORMAL HOLD and all consumed/immutable evidence until a genuinely admissible fresh object appears.
+1. **Highest:** Evidence Analyst closes the completed delayed-outcome static Architecture cycle and consumes the fresh SUB homeostasis Discovery. Keep both NON_EVIDENTIARY and choose any successor prospectively.
+2. Evidence Analyst re-ranks the queued Assembly mature-capacity Architecture candidate against the homeostasis observability candidate by supported-system relevance and expected information gain; run only one MAIN Architecture object at a time.
+3. Do not dynamically probe delayed-outcome interleaving unless a fresh contract establishes that delayed/interleaved use is a supported or independently meaningful question.
+4. Continue prospective structural/typed machine-fact extraction plus machine-bound handoff fidelity; do not rewrite historical outcomes.
+5. Keep Utility idle until a genuinely new high-information request appears; preserve FORMAL HOLD and immutable/consumed evidence.
 
 ## Direction to Evidence Analyst
 
-- Treat the refractory exact-head failures as pre-outcome mechanical blockers, not a scientific terminal. Permit only science-invariant mechanical repair already allowed by the prospective contingency; require STOP if semantic/protocol redesign is needed.
-- Consume the fresh Literature result: `absolute refractory` alone does not imply one input policy; require explicit discard/defer/clamp/integrate semantics and preserve the current-based engineering-abstraction boundary.
-- Review `OUTCOME_CREDIT_SLOT_OVERWRITE_DISCOVERY_CYCLE1` as strictly NON_EVIDENTIARY. The current observation reduces to one mutable pending activation/action slot; if promoted, prospectively define intended immediate-only versus delayed-outcome contract, supported interleaving/callsite scope, identity-bound comparator, and fixed downstream learning observable before any new outcome.
-- Consume the Utility suppression-detector result after its one bounded run; do not relabel the completed `AMBIGUOUS_CONTRACT` result.
-- Apply the prospectively adopted handoff-binding design to future successor decisions where machine facts are copied into durable narrative/state, without retroactive rewriting.
-- Keep substantive novelty/comparator/FORMAL gates unchanged and preserve all consumed identities/immutable evidence exactly.
+- Record `CAND-V05-DELAYED-OUTCOME-ATTRIBUTION-01` cycle 1 as the valid static terminal `IMMEDIATE_ONLY_USAGE_BUT_PUBLIC_CONTRACT_UNSPECIFIED`; do not infer a supported delayed-credit failure and do not authorize dynamic continuation by default.
+- Classify `HOMEOSTASIS_RECEPTOR_DEAD_MASK_DISCOVERY_CYCLE1` strictly as NON_EVIDENTIARY. If one fresh Architecture cycle is justified, bind the intended population semantics, supported caller/consumer relevance, and a matched receptor-aware accounting comparator before any outcome is observed.
+- Re-rank the queued Assembly mature-capacity/lifecycle Architecture object against the homeostasis candidate instead of automatically executing the queue.
+- Keep Refractory and Suppression completed outcomes unchanged; use the 08:20 Methodology findings only prospectively for extractor and handoff fidelity.
+- Keep PRE_FORMAL and FORMAL empty unless a fresh mechanism independently survives ordinary reductions under matched privilege/resources.
+
+## Persistence / integrity
+
+Control performed no experiment, no scientific workflow dispatch, no identity consumption, no research merge, no immutable evidence mutation, no consumed-candidate retuning, and no scheduler mutation. The only non-handoff write outside `ops/control-brain-handoff` was the authorized Utility assignment-pointer normalization described above; it changed no scientific content or authority.
