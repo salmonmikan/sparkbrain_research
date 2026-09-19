@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-19T11:24:00+09:00",
+  "timestamp": "2026-09-19T12:20:00+09:00",
   "worker_role": "main",
   "execution_mode": "PRIMARY",
   "analyst_commit": "2c1caa7063feabde079725e198e09b273d005a80",
@@ -8,27 +8,24 @@
   "consumed_contingency_branches": [
     "NO_FRESH_OBJECT"
   ],
-  "active_claim": "No active admitted primary experiment exists. Fresh Evidence Analyst authority consumed the NI01 privilege audit, preserved canonical NI01 unchanged, narrowed programme-level interpretation to NO_REGISTERED_INCREMENTAL_NATIVE_ADVANTAGE_OVER_WORLD_CONDITIONED_CONFIDENCE_ABSTENTION, and reserved an independent read-only NI01 world-label privilege sensitivity diagnostic to SUB. MAIN remains on architecture/testbed HOLD.",
+  "active_claim": "No active admitted primary experiment exists. Evidence Analyst authority is unchanged from 11:10 JST: canonical NI01 remains unchanged, programme interpretation remains world-conditioned confidence abstention, and NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY remains reserved exclusively to SUB. MAIN remains on architecture/testbed HOLD.",
   "authoritative_target_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "active_branch": null,
     "active_identity": null,
     "evidence_analyst_handoff": "2c1caa7063feabde079725e198e09b273d005a80",
     "control_brain_branch_tip_observed": "1914db5b9b58b4d53bd0406adda062189d688cb8",
+    "control_brain_latest_content_commit": "e2cfdb15612d248c0991a82555cffde5c6ae0c61",
     "research_ni01": "dbfe7469dbbbc1adbb00789ab382de892a1b3563",
     "ni01_contract_blob": "3dc90b08f85e0e7c459e0c17e86ab338901fd4c6",
     "research_h5": "2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
     "research_lp01": "f6d59a55730c5f99cd7f30470847fc3f175bdf64",
     "research_h9_c07": "9480da3d77dfee4766b28757f1a164f5cd4dac26",
-    "evidence_tags_count": 5,
-    "formal_tags_count": 0,
-    "sealed_tags_count": 0,
-    "legacy_freeze_branches_count": 13,
     "formal_boundary": "ARCHITECTURE_TESTBED / PROSPECTIVE_ADMISSION_ONLY / stop at NEXT_OBJECT_READY_FOR_ANALYST_REVIEW / no formal identity or STARTED authorized"
   },
   "fast_path_used": true,
-  "full_reconciliation_triggered": true,
-  "full_reconciliation_reason": "Evidence Analyst authority moved mid-run from 8ee6d305acdc8310335e65c5bd3f35d121f35280 to 2c1caa7063feabde079725e198e09b273d005a80 after initial fast-path persistence. The new handoff materially changed NI01 programme interpretation and SUB allocation, so MAIN abandoned the fast-only path and reconciled broader research/control/preserve/evidence/freeze/PR/workflow state before finalizing.",
+  "full_reconciliation_triggered": false,
+  "full_reconciliation_reason": null,
   "branches_prs_advanced": [],
   "workflows_experiments": {
     "new_research_workflow_dispatched": false,
@@ -37,16 +34,9 @@
     "research_workflow_run_ids": [],
     "control_plane_ci_observed": [
       {
-        "run_id": 35415089496,
+        "run_id": 35418198047,
         "branch": "ops/orchestrator-run-report",
-        "head_sha": "781d4113ec68cd29ee14815e0b92c9d304da83ba",
-        "status_when_observed": "in_progress",
-        "scientific_relevance": "none"
-      },
-      {
-        "run_id": 35415189064,
-        "branch": "ops/orchestrator-run-report",
-        "head_sha": "e974b743ccb7b67a57fd0fb295a179a5760417eb",
+        "head_sha": "6f81b94a8aff350f0cb4f0f983cf47661a0fcb13",
         "status_when_observed": "in_progress",
         "scientific_relevance": "none"
       }
@@ -67,18 +57,12 @@
     "ni01_canonical_evidence_modified": false,
     "ni01_safe_programme_interpretation": "NO_REGISTERED_INCREMENTAL_NATIVE_ADVANTAGE_OVER_WORLD_CONDITIONED_CONFIDENCE_ABSTENTION",
     "ni01_not_established": "EQUAL_PRIVILEGE_GENERIC_CONFIDENCE_ABSTENTION_MECHANISTIC_REDUCTION",
-    "ni01_audit_integrity": "ROBUST_SO_FAR",
-    "ni01_audit_interpretation_class": "WEAKENED",
-    "future_comparator_contract_requirement": "Match or prospectively justify task/world/regime-label privilege in addition to information/readout/resource privilege; separate ABSENT_SIGNAL from EXPLAINED_BY_REDUCTION and use a positive candidate-signal gate where scientifically meaningful.",
-    "allocation_change": {
-      "main_lane_changed": false,
-      "sub_lane": "NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY",
-      "sub_fallback": null,
-      "sub_lane_evidentiary_status": "NON_EVIDENTIARY_NON_CANONICAL",
-      "sub_lane_can_unblock_main": false,
-      "sub_lane_can_trigger_formal_execution": false,
-      "main_absorbed_sub_lane": false
-    }
+    "allocation_change_this_run": false,
+    "sub_lane": "NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY",
+    "sub_lane_owner": "SUB",
+    "sub_lane_evidentiary_status": "NON_EVIDENTIARY_NON_CANONICAL",
+    "sub_lane_can_unblock_main": false,
+    "main_absorbed_sub_lane": false
   },
   "consumed_identities": [
     "c19-external-v2-official-v4",
@@ -95,52 +79,44 @@
   ],
   "lease_collision_reconciliation": {
     "inherited_lease_status": "COMPLETED",
-    "inherited_run_id": "sparkbrain-main-primary-20260919T101249JST",
-    "inherited_heartbeat": "2026-09-19T10:19:00+09:00",
+    "inherited_run_id": "sparkbrain-main-primary-20260919T111324JST",
+    "inherited_heartbeat": "2026-09-19T11:24:00+09:00",
     "fresh_main_running_collision_found": false,
     "primary_lease_acquired": true,
-    "primary_lease_start_commit": "781d4113ec68cd29ee14815e0b92c9d304da83ba",
-    "authority_drift_heartbeat_commit": "e974b743ccb7b67a57fd0fb295a179a5760417eb",
-    "lease_rechecked_after_acquisition": true,
-    "lease_rechecked_before_final_mutation": true,
-    "analyst_ref_drift_found_mid_run": true,
+    "primary_lease_start_commit": "6f81b94a8aff350f0cb4f0f983cf47661a0fcb13",
+    "lease_rechecked_before_mutation": true,
+    "analyst_ref_drift_found": false,
     "analyst_ref_after_reconciliation": "2c1caa7063feabde079725e198e09b273d005a80",
     "main_ref_drift_found": false,
-    "sub_lane_after_fresh_analyst": "NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY",
-    "sub_fallback_after_fresh_analyst": null
+    "sub_latest_observed_mode": "no_op",
+    "sub_latest_predates_current_allocation": true,
+    "sub_lane_after_current_analyst": "NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY",
+    "sub_fallback_after_current_analyst": null
   },
-  "integrity_status": "CLEAN_AFTER_FULL_RECONCILIATION_NO_FRESH_FORMAL_IDENTITY_NO_NEW_STARTED_NO_OFFICIAL_TEST_NO_NEW_PRESERVE_SCORE_EVIDENCE_AND_CANONICAL_NI01_UNCHANGED",
+  "integrity_status": "CLEAN_FAST_PATH_NO_FRESH_MAIN_OBJECT_NO_NEW_FORMAL_IDENTITY_NO_NEW_STARTED_NO_OFFICIAL_TEST_NO_NEW_PRESERVE_SCORE_EVIDENCE_AND_CANONICAL_NI01_UNCHANGED",
   "critical_path_fixes_completed": [],
   "same_run_steps": [
-    "Consumed the then-current Evidence Analyst handoff 8ee6d305acdc8310335e65c5bd3f35d121f35280 and started on FAST PATH.",
-    "Read MAIN latest/state/lease, SUB only for collision avoidance, Control Brain only as strategic prior, and authoritative main directly.",
-    "Acquired PRIMARY RUNNING lease at commit 781d4113ec68cd29ee14815e0b92c9d304da83ba and confirmed no concurrent MAIN mutation.",
-    "Persisted an initial 11:16 checkpoint under the old authority; append-only history 1116-main.md remains as a chronological pre-drift checkpoint and was not overwritten.",
-    "Re-fetched Evidence Analyst before finalization and detected authority drift to 2c1caa7063feabde079725e198e09b273d005a80, which consumed the NI01 privilege audit and changed SUB allocation.",
-    "Updated lease heartbeat/authority at e974b743ccb7b67a57fd0fb295a179a5760417eb and escalated to FULL RECONCILIATION.",
-    "Reconciled broader research branches and exact active-line heads; NI01/H5/LP01/H9-C07 matched fresh Analyst authority.",
-    "Reconciled control/* and preserve/* inventories as historical/consumed state and found no fresh formal identity, STARTED, or preserve anchor.",
-    "Reconciled authoritative evidence tags: exactly five annotated evidence tags; formal/* and sealed/* empty; 13 legacy freeze branches preserved.",
-    "Reconciled open PR/Issue and recent workflow surfaces; no research PR merge or scientific workflow dispatch occurred.",
-    "Applied fresh contingency NO_FRESH_OBJECT -> MAIN HOLD and preserved the newly allocated NI01 world-label privilege diagnostic exclusively for SUB.",
-    "Accepted the fresh Analyst programme interpretation: canonical NI01 unchanged; world-conditioned confidence-abstention is the safe synthesis; equal-privilege generic reduction is not established.",
-    "Persisted corrected MAIN latest report after reconciliation."
+    "Consumed Evidence Analyst latest/state/history at 2c1caa7063feabde079725e198e09b273d005a80.",
+    "Read MAIN latest/state/lease, SUB latest only for collision avoidance, and Control Brain only as strategic prior.",
+    "Re-fetched authoritative main directly and confirmed ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d.",
+    "Re-fetched MAIN lease and confirmed no fresh RUNNING heartbeat/collision before mutation.",
+    "Acquired PRIMARY RUNNING lease at commit 6f81b94a8aff350f0cb4f0f983cf47661a0fcb13.",
+    "Re-fetched Evidence Analyst after lease acquisition and confirmed authority unchanged.",
+    "Observed only control-plane CI 35418198047 from the lease write; no research workflow exists to wait on.",
+    "Applied NO_FRESH_OBJECT -> MAIN HOLD and preserved NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY exclusively for SUB.",
+    "Persisted no-change MAIN checkpoint without research/scientific mutation."
   ],
-  "stop_reason": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_NI01_AUDIT_CONSUMED_SUB_DIAGNOSTIC_RESERVED",
+  "stop_reason": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_NO_CHANGE_AFTER_NI01_AUDIT_ALLOCATION",
   "work_left_for_SUB": "Run exactly the independently reserved NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY diagnostic under Evidence Analyst's fixed read-only procedure, persist only SUB's normal NON_EVIDENTIARY report, then return to no-op. MAIN must not absorb or wait on this work.",
-  "lane_repartition_reason": "Fresh Evidence Analyst authority consumed the 10:32 NI01 audit and reserved a genuinely independent bounded read-only privilege-sensitivity diagnostic to SUB. MAIN lane itself did not change and the diagnostic is not on MAIN's critical path.",
-  "next_MAIN_action": "Remain in architecture/testbed HOLD. If and only if Evidence Analyst prospectively admits a genuinely fresh independently motivated native reduction-resistant primary object, MAIN owns all critical-path implementation/fixup work allowed by that fresh handoff and must stop at its review boundary. Do not absorb the reserved SUB NI01 diagnostic, reopen consumed identities, or create an audit-driven/literature-driven successor.",
+  "lane_repartition_reason": null,
+  "next_MAIN_action": "Remain in architecture/testbed HOLD. If and only if a fresh Evidence Analyst handoff prospectively admits a genuinely fresh independently motivated native reduction-resistant primary object, MAIN owns all authorized critical-path implementation/fixup work and must stop at that handoff's review boundary. Do not absorb the reserved SUB NI01 diagnostic, reopen consumed identities, or create audit-driven/literature-driven successors.",
   "write_path_diagnostics": {
     "github_direct_write_attempted": true,
     "github_direct_write_succeeded": true,
     "force_push_used": false,
-    "lease_start_commit": "781d4113ec68cd29ee14815e0b92c9d304da83ba",
-    "authority_drift_lease_commit": "e974b743ccb7b67a57fd0fb295a179a5760417eb",
-    "provisional_latest_commit": "2eae24388ed86537d99c97f239af4f2509566b09",
-    "provisional_state_commit": "63fcf95337948f80e07c6e0d406193236106d1c0",
-    "pre_drift_history_commit": "4eec1481183997b975b11d130ae96f61459754f5",
-    "corrected_latest_commit": "9c163ddb91e1ef15137a3d409dd575a7af0903ad",
-    "final_history_path": "reports/orchestrator/history/2026-09-19/1124-main.md",
-    "final_history_path_prechecked_absent": true
+    "lease_start_commit": "6f81b94a8aff350f0cb4f0f983cf47661a0fcb13",
+    "latest_commit": "f76258c9885e7b1ac2e97eae7dc6d5bc6a194e42",
+    "history_path": "reports/orchestrator/history/2026-09-19/1219-main.md",
+    "history_path_prechecked_absent": true
   }
 }
