@@ -3,12 +3,12 @@
   "execution_mode": "PRIMARY",
   "status": "RUNNING",
   "started_at": "2026-09-19T17:15:00+09:00",
-  "heartbeat_at": "2026-09-19T17:26:00+09:00",
+  "heartbeat_at": "2026-09-19T17:29:00+09:00",
   "analyst_commit": "3e83f1eb683ce80e326b756fa304e96688fdd3fe",
   "active_branch": "research/main-topk-persistent-amplification-arch-study-20260919",
   "active_identity": null,
-  "active_step": "HARNESS_PREFLIGHT_CI_AFTER_SECOND_MECHANICAL_LINT_FIX",
-  "workflow_run_id": 35431971254,
-  "expected_next_action": "If exact-head preflight CI for cde99b5a4f0aef7e3a8b2ce94052ce580c174c51 succeeds, arm and execute the already-fixed DEV-only architecture study without scientific protocol changes, preserve raw diagnostics as a workflow artifact before interpretation, and stop for Analyst review on any valid outcome. Mechanical fixes so far: Ruff B905 strict argument and E501 line wrapping only.",
+  "active_step": "ARCHITECTURE_STUDY_CYCLE1_EXECUTION_CI_RUNNING",
+  "workflow_run_id": 35432088902,
+  "expected_next_action": "Collect exact-head workflow 35432088902 for 97f542d86dcd3a609cd039379fcda41ba61e0909. If the fixed DEV-only study completes, preserve/read the workflow artifact and stop for Analyst review on the fixed classification without retuning or cycle 2. If it fails mechanically before a valid outcome, repair only the mechanical defect while preserving the fixed protocol.",
   "owner": "main"
 }
