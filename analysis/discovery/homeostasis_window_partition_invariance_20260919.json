@@ -1,0 +1,35 @@
+{
+  "label": "EXPLORATORY / NON_EVIDENTIARY",
+  "source_semantics": "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+  "question": "Does v0.5 homeostatic adaptation preserve the final threshold under different observation-window partitions of the same physical spike train?",
+  "protocol": {
+    "duration_ms": 1000.0,
+    "units": 4,
+    "spikes": 40,
+    "spike_interval_ms": 25.0,
+    "spikes_per_unit": 10,
+    "initial_threshold": 1.0,
+    "window_widths_ms": [10.0, 20.0, 25.0, 50.0, 100.0, 200.0],
+    "controller_config": {
+      "target_spikes_per_window": 0.35,
+      "learning_rate": 0.004,
+      "rate_decay": 0.88
+    }
+  },
+  "rows": [
+    {"window_ms": 10.0, "windows": 100, "empty_windows": 60, "final_mean_threshold": 0.8966936837947685, "min_unit_threshold": 0.8951212822169508, "max_unit_threshold": 0.8980061871004916, "mean_final_rate_ema": 0.11271532517834632},
+    {"window_ms": 20.0, "windows": 50, "empty_windows": 10, "final_mean_threshold": 0.9637945225524823, "min_unit_threshold": 0.9625590940569451, "max_unit_threshold": 0.9649292309451744, "mean_final_rate_ema": 0.21155036752901446},
+    {"window_ms": 25.0, "windows": 40, "empty_windows": 0, "final_mean_threshold": 0.9767107839043511, "min_unit_threshold": 0.9752595973758598, "max_unit_threshold": 0.978043660342922, "mean_final_rate_ema": 0.24849600326075988},
+    {"window_ms": 50.0, "windows": 20, "empty_windows": 0, "final_mean_threshold": 0.99847092097336, "min_unit_threshold": 0.997607362737617, "max_unit_threshold": 0.9993344792091029, "mean_final_rate_ema": 0.4612186031809052},
+    {"window_ms": 100.0, "windows": 10, "empty_windows": 0, "final_mean_threshold": 1.004836028629609, "min_unit_threshold": 1.004836028629609, "max_unit_threshold": 1.004836028629609, "mean_final_rate_ema": 0.721499023990598},
+    {"window_ms": 200.0, "windows": 5, "empty_windows": 0, "final_mean_threshold": 1.0052936057856, "min_unit_threshold": 1.0052936057856, "max_unit_threshold": 1.0052936057856, "mean_final_rate_ema": 0.9445361664}
+  ],
+  "summary": {
+    "threshold_span": 0.10859992199083146,
+    "smallest_window_final_mean_threshold": 0.8966936837947685,
+    "largest_window_final_mean_threshold": 1.0052936057856,
+    "interpretation": "The same elapsed-time spike train produces different homeostatic thresholds because target_spikes_per_window and rate_decay are applied once per observe() call, not normalized by physical window duration. The effect is therefore reduced to explicit per-window controller semantics rather than a distinct scientific phenomenon."
+  },
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "recommendation": "REJECT"
+}
