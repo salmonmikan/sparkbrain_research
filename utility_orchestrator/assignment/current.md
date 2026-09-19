@@ -24,7 +24,7 @@ target_research_heads:
 - research/main-topk-persistent-amplification-arch-study-20260919@04ced2b97ed088bb2cdb086d164a86212741e601
 target_workflows:
 - 35432088902
-a- 35435714352
+- 35435714352
 reporting_destination: utility_orchestrator/results/2026-09-19/
 evidentiary_status: NON_EVIDENTIARY_METHODOLOGY_ARCHITECTURE_DIAGNOSTIC
 
