@@ -138,7 +138,9 @@ def machine_facts(contract: dict[str, Any]) -> dict[str, bool]:
         "negative_current_is_summed_separately": negative_aggregation,
         "net_current_is_positive_minus_negative": net_is_subtraction,
         "refractory_branch_applies_min_zero_net_current": refractory_min_net,
-        "schedule_arrival_accepts_signed_current_without_sign_rejection": not schedule_current_sign_checks,
+        "schedule_arrival_accepts_signed_current_without_sign_rejection": (
+            not schedule_current_sign_checks
+        ),
         "bound_positive_drive_ignored_comment_present": source_comment in source,
     }
 
@@ -311,12 +313,18 @@ def map_outcome(
 ) -> tuple[str, dict[str, bool]]:
     required = contract["machine_fact_binding"]["required_production_facts"]
     fact_key_map = {
-        "deliver_group_groups_same_time_arrivals_by_target": "deliver_group_groups_same_time_arrivals_by_target",
+        "deliver_group_groups_same_time_arrivals_by_target": (
+            "deliver_group_groups_same_time_arrivals_by_target"
+        ),
         "positive_current_is_summed_separately": "positive_current_is_summed_separately",
         "negative_current_is_summed_separately": "negative_current_is_summed_separately",
         "net_current_is_positive_minus_negative": "net_current_is_positive_minus_negative",
-        "refractory_branch_applies_min_zero_net_current": "refractory_branch_applies_min_zero_net_current",
-        "schedule_arrival_accepts_signed SynapticArrival.current without sign rejection": "schedule_arrival_accepts_signed_current_without_sign_rejection",
+        "refractory_branch_applies_min_zero_net_current": (
+            "refractory_branch_applies_min_zero_net_current"
+        ),
+        "schedule_arrival_accepts_signed SynapticArrival.current without sign rejection": (
+            "schedule_arrival_accepts_signed_current_without_sign_rejection"
+        ),
     }
     machine_facts_ok = all(facts[fact_key_map[name]] for name in required)
     outside_match = all(
