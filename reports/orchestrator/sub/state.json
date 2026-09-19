@@ -1,73 +1,81 @@
 {
-  "timestamp": "2026-09-19T21:46:00+09:00",
+  "timestamp": "2026-09-19T22:40:00+09:00",
   "worker_role": "sub",
   "mode": "discovery",
   "evidence_analyst_commit": "a3ec861d71c0965625fc1d2e5e8f65f4ce47f834",
   "consumed_lane": "BOUNDED_SECONDARY_DISCOVERY",
   "formal_sub_lane": null,
   "sub_fallback": "NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON",
-  "exploratory_target": "HOMEOSTASIS_WINDOW_PARTITION_INVARIANCE_DISCOVERY",
+  "exploratory_target": "ASSEMBLY_PROTOTYPE_LOCKIN_ORDER_SENSITIVITY_DISCOVERY",
   "candidate_pool_id": null,
   "exploration_cycle": "1/3",
-  "why_independent_of_main": "Standalone v0.5 homeostatic observation-window semantics; no dependency on MAIN routing/structural candidates, their outcomes, H5, H7, or formal surfaces.",
-  "question": "Does v0.5 homeostatic adaptation preserve final threshold under different observation-window partitions of the exact same physical spike train?",
+  "why_independent_of_main": "Standalone v0.5 TemporalAssemblyMemory representation-order semantics; no dependency on MAIN Top-k/Structural work, H5 Audit, H7, formal surfaces, or MAIN outcomes.",
+  "question": "Can frozen first-exemplar prototypes make mature assembly cardinality depend on episode order for an identical multiset of patterns?",
   "inputs_used": {
     "type": "synthetic_only",
-    "duration_ms": 1000.0,
-    "units": 4,
-    "spikes": 40,
-    "spike_interval_ms": 25.0,
-    "window_widths_ms": [10, 20, 25, 50, 100, 200],
+    "pattern_types": 3,
+    "episodes_per_pattern": 3,
+    "total_episodes": 9,
+    "unique_episode_orders": 1680,
+    "similarity_threshold": 0.66,
+    "mature_episodes": 3,
     "repository_dataset": false,
     "trained_checkpoint": false,
     "formal_raw": false,
     "heldout_test": false
   },
   "implementation_experiment": {
-    "branch": "research/exploratory-sub-homeostasis-window-partition-20260919",
-    "head": "cb8ea52a917e91b2aac6f1cd3de7c2a5e7573000",
+    "branch": "research/exploratory-sub-assembly-prototype-lockin-20260919",
+    "head": "1a62f81eeb0295a94101c6bfe205c460fd9eedfc",
     "artifacts": [
-      "analysis/discovery/homeostasis_window_partition_invariance_20260919.py",
-      "analysis/discovery/homeostasis_window_partition_invariance_20260919.json",
-      "analysis/discovery/homeostasis_window_partition_invariance_20260919.md"
+      "analysis/discovery/assembly_prototype_lockin_order_sensitivity_20260919.py",
+      "analysis/discovery/assembly_prototype_lockin_order_sensitivity_20260919.json",
+      "analysis/discovery/assembly_prototype_lockin_order_sensitivity_20260919.md"
     ],
-    "workflow_run": 35443669621,
-    "workflow_status_at_snapshot": "in_progress"
+    "workflow_run": 35446343263,
+    "workflow_status_at_snapshot": "in_progress_tests_after_lint_and_readiness_success"
   },
   "observations": {
-    "final_mean_threshold_by_window_ms": {
-      "10": 0.8966936837947685,
-      "20": 0.9637945225524823,
-      "25": 0.9767107839043511,
-      "50": 0.99847092097336,
-      "100": 1.004836028629609,
-      "200": 1.0052936057856
+    "pairwise_similarity": {
+      "A_B": 0.7250000000000001,
+      "B_C": 0.7250000000000001,
+      "A_C": 0.45
     },
-    "threshold_span": 0.10859992199083146,
-    "reduction": "Exact per-observe semantics: target_spikes_per_window and rate_decay are applied per call, not normalized by elapsed physical duration."
+    "one_mature_assembly_orders": 560,
+    "two_mature_assembly_orders": 1120,
+    "outcomes": [
+      {"prototype_order": ["A", "C"], "episode_counts": [6, 3], "mature_assemblies": 2, "orders": 560},
+      {"prototype_order": ["B"], "episode_counts": [9], "mature_assemblies": 1, "orders": 560},
+      {"prototype_order": ["C", "A"], "episode_counts": [6, 3], "mature_assemblies": 2, "orders": 560}
+    ],
+    "order_invariant_similarity_graph_components": 1,
+    "interpretation": "The connected thresholded similarity graph does not force the split. Greedy matching against a prototype that is never updated makes the first exemplar determine whether bridging pattern B joins A/C into one mature assembly or A/C seed two mature assemblies."
   },
   "evidentiary_status": "NON_EVIDENTIARY",
-  "what_would_falsify_or_reduce_it": "Already reduced by explicit current implementation. Any duration-normalized contract is a fresh prospective object, not a rescue cycle.",
-  "candidate_next_research_layer": "NONE_SCIENTIFICALLY",
+  "what_would_falsify_or_reduce_it": "A fresh prospectively specified DEV-only Architecture Study should reduce this to representation bookkeeping if matched episode-order permutations change assembly identity/cardinality but not downstream prediction/action behavior beyond an order-invariant clustering comparator.",
+  "candidate_next_research_layer": "ARCHITECTURE_STUDY",
   "scientific_choices_still_open": [
-    "physical-time target definition",
-    "duration-normalized decay",
-    "observation-window contract",
-    "functional metric/resource comparator for any fresh object"
+    "DEV input family",
+    "episode-order permutation family",
+    "assembly identity matching",
+    "functional metric and horizon",
+    "order-invariant clustering comparator",
+    "resource matching"
   ],
-  "recommendation": "REJECT",
+  "recommendation": "PROMOTE_TO_ARCHITECTURE_STUDY",
   "main_work_explicitly_avoided": [
-    "CAND-TOPK-PA-01",
-    "CAND-STRUCTURAL-ORDER-PATH-01",
+    "CAND-TOPK-PA-01 support/reduction",
+    "CAND-STRUCTURAL-ORDER-PATH-01 follow-up",
     "CAND-H5-AUDIT-01",
     "CAND-H7-RESP-01",
+    "MAIN critical path",
     "formal/TEST/evidence work"
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "evidence_analyst": "a3ec861d71c0965625fc1d2e5e8f65f4ce47f834",
     "control_brain": "566f3b7c590fcfe2b9e8aaa0415da964989b1124",
-    "main_structural_closed_head": "6a53ee36259bca31b77024245e5ab0a9ef5ec405",
+    "orchestrator_parent_before_persistence": "dfb86ffc7ef0158b24abf118eef0b71fab81f50b",
     "evidence_tag_count": 5
   },
   "consumed_identities": [],
@@ -77,8 +85,10 @@
   "formal_scoring_or_evidence_created": false,
   "immutable_evidence_modified": false,
   "utility_request_created": null,
-  "blockers": [],
-  "completion_target": "ACHIEVED_ONE_BOUNDED_INDEPENDENT_DISCOVERY_CYCLE_AND_STOPPED_AFTER_EXACT_REDUCTION",
+  "blockers": [
+    "Fresh Evidence Analyst promotion and a prospective Architecture Study specification are required before any continuation."
+  ],
+  "completion_target": "ACHIEVED_ONE_BOUNDED_INDEPENDENT_DISCOVERY_CYCLE_AND_RETURNED_PROMOTION_CANDIDATE_FOR_FRESH_ANALYST_REVIEW",
   "integrity_state": "CLEAN_NON_EVIDENTIARY_DISCOVERY",
-  "persistence_result": "pending_atomic_sub_report_commit"
+  "persistence_result": "atomic_sub_report_commit"
 }
