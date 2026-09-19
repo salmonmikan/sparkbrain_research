@@ -1,10 +1,10 @@
 {
-  "generated_at_jst": "2026-09-20T06:50:00+09:00",
+  "generated_at_jst": "2026-09-20T08:50:00+09:00",
   "role": "CONTROL_BRAIN",
-  "selected_slot_jst": "06:50",
+  "selected_slot_jst": "08:50",
   "role_inference_required": false,
   "foundational_doctrine_change": false,
-  "operating_doctrine_change": "PROSPECTIVE_HANDOFF_BINDING_GUARD_ADOPTED",
+  "operating_doctrine_change": "NO_NEW_CHANGE",
   "programme_position": "FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL",
   "central_theory_status": "NO_HIGH_VALUE_FORMAL_OBJECT",
   "central_theory": "A central novelty claim remains admissible only for a native intervention-validated lineage-specific causal-responsibility effect that is prospectively positive and survives ordinary history/provenance/actual-causality and local-learning/recurrent/plastic reductions under matched information, readout, task/world/regime-label, and resource privilege. No current object clears this FORMAL admission bar.",
@@ -18,175 +18,188 @@
     "main_protected": false,
     "evidence_tag_count": 5,
     "legacy_freeze_branch_count": 13,
-    "freeze_tag_count": 0,
-    "formal_tag_count": 0,
-    "sealed_tag_count": 0,
     "immutable_evidence_changed": false,
-    "consumed_identity_changed": false
+    "consumed_identity_changed": false,
+    "pr_148": "OPEN_UNMERGED",
+    "pr_149": "OPEN_UNMERGED"
   },
   "research_funnel": {
     "DISCOVERY": {
       "status": "EXPLORATORY_PRODUCTIVE",
       "owner": "SUB_DEFAULT",
-      "latest_target": "OUTCOME_CREDIT_SLOT_OVERWRITE_DISCOVERY_CYCLE1",
-      "research_head": "83eb00212eb9c877e8217c44dfb35a5563f04626",
-      "workflow": 35471236612,
+      "latest_target": "HOMEOSTASIS_RECEPTOR_DEAD_MASK_DISCOVERY_CYCLE1",
+      "research_head": "8a2fa2efa7ac13ea7a1a835c14e8ea0f8013d71f",
+      "workflow": 35476878641,
       "workflow_conclusion": "success",
       "evidentiary_status": "NON_EVIDENTIARY",
       "recommendation": "PROMOTE_TO_ARCHITECTURE_STUDY_PROPOSAL_PENDING_ANALYST",
-      "ordinary_reduction": "One mutable pending activation and one mutable pending action slot are overwritten by an intervening decision; learn_outcome has no episode/decision identity."
+      "ordinary_reduction": "HomeostaticController observes all supplied field spikes without filtering receptor IDs, so receptor activity can mask silent internal-reservoir activity in the public dead signal."
     },
     "ARCHITECTURE_STUDY": {
-      "status": "ACTIVE_MAIN_PRE_OUTCOME_BLOCKER",
-      "main_active_candidate": "CAND-REFRACTORY-CURRENT-ACCOUNTING-01",
-      "main_head": "4ac9aeead78ec8d053291f922096fab7e31f6070",
-      "workflow": 35470259892,
-      "workflow_conclusion": "failure",
-      "ci": 35470259884,
-      "ci_conclusion": "failure",
-      "outcome_bearing_job_ran": false,
-      "valid_terminal_result": false,
-      "blocker_class": "PRE_OUTCOME_COMPILE_LINT_MECHANICAL_BLOCKER",
-      "assembly": "HOLD_AFTER_FUNCTIONAL_CROSSCASCADE_SEGMENTATION_EFFECT_ORDINARY_REDUCTION",
-      "suppression": "HOLD_COMPLETED_AMBIGUOUS_CONTRACT_RESULT_UNCHANGED_UTILITY_DETECTOR_AUDIT_ASSIGNED",
-      "topk": "HOLD_NO_CYCLE3_NO_PREFORMAL",
-      "temporal": "HOLD_AFTER_RECONCILED_CYCLE1",
-      "v05_config_binding": "HOLD"
+      "status": "COMPLETED_CURRENT_OBJECT_PENDING_FRESH_ANALYST_REVIEW",
+      "main_active_candidate": "CAND-V05-DELAYED-OUTCOME-ATTRIBUTION-01",
+      "main_head": "c79c5434222a6d018931dc1752e7f0074c23854b",
+      "ci": 35475862604,
+      "ci_conclusion": "success",
+      "terminal": "IMMEDIATE_ONLY_USAGE_BUT_PUBLIC_CONTRACT_UNSPECIFIED",
+      "evidentiary_status": "NON_EVIDENTIARY",
+      "same_object_dynamic_continuation_authorized": false,
+      "queued_candidate": "CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01",
+      "refractory": "HOLD_FUNCTIONAL_REFRACTORY_ACCOUNTING_EFFECT",
+      "suppression": "HOLD_AMBIGUOUS_CONTRACT_STATIC_EXTRACTOR_FALSE_NEGATIVE_CONFIRMED_SEPARATELY",
+      "topk": "HOLD",
+      "temporal": "HOLD"
     },
     "PRE_FORMAL": {"status": "EMPTY_HOLD"},
-    "FORMAL": {"status": "EMPTY_HOLD", "fresh_identity": null, "started": null, "test_authority": false}
+    "FORMAL": {
+      "status": "EMPTY_HOLD",
+      "fresh_identity": null,
+      "started": null,
+      "test_authority": false
+    }
   },
   "candidate_pool": [
     {
-      "id": "CAND-REFRACTORY-CURRENT-ACCOUNTING-01",
+      "id": "CAND-V05-DELAYED-OUTCOME-ATTRIBUTION-01",
       "layer": "ARCHITECTURE_STUDY",
-      "status": "PRE_OUTCOME_MECHANICAL_BLOCKER",
-      "owner": "MAIN",
-      "next_gate": "MAIN may apply only prospectively allowed science-invariant mechanical repair; semantic/protocol change requirement stops to Evidence Analyst."
+      "status": "CYCLE1_COMPLETE_PENDING_ANALYST",
+      "terminal": "IMMEDIATE_ONLY_USAGE_BUT_PUBLIC_CONTRACT_UNSPECIFIED",
+      "next_gate": "Fresh Analyst closure; no dynamic interleaving continuation without a genuinely fresh prospectively specified supported-contract question."
     },
     {
-      "id": "OUTCOME_CREDIT_SLOT_OVERWRITE_DISCOVERY_CYCLE1",
+      "id": "HOMEOSTASIS_RECEPTOR_DEAD_MASK_DISCOVERY_CYCLE1",
       "layer": "DISCOVERY",
       "status": "COMPLETE_PENDING_ANALYST",
       "evidentiary_status": "NON_EVIDENTIARY",
-      "next_gate": "Fresh Evidence Analyst decision on whether delayed/asynchronous API attribution merits one Architecture object."
+      "next_gate": "Analyst decides whether intended homeostatic population semantics and supported consumer relevance justify one fresh Architecture object."
+    },
+    {
+      "id": "CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01",
+      "layer": "ARCHITECTURE_STUDY",
+      "status": "QUEUED_PENDING_REPRIORITIZATION",
+      "next_gate": "Bind lifetime-memory versus reclaimable-working-set intent and realistic saturation relevance before any comparator."
+    },
+    {
+      "id": "CAND-REFRACTORY-CURRENT-ACCOUNTING-01",
+      "layer": "ARCHITECTURE_STUDY",
+      "status": "HOLD",
+      "completed_outcome": "FUNCTIONAL_REFRACTORY_ACCOUNTING_EFFECT"
     },
     {
       "id": "CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01",
       "layer": "ARCHITECTURE_STUDY",
       "status": "HOLD",
       "completed_outcome": "AMBIGUOUS_CONTRACT",
-      "utility_audit": "CTRL-20260920-0650-SUPPRESSION-STATIC-DETECTOR-CONSISTENCY"
+      "methodology_finding": "STATIC_EXTRACTOR_FALSE_NEGATIVE_CONFIRMED_NO_RETROACTIVE_RELABEL"
     },
-    {"id": "CAND-ASSEMBLY-CROSSCASCADE-FALLBACK-01", "layer": "ARCHITECTURE_STUDY", "status": "HOLD", "same_object_cycle2": false},
-    {"id": "CAND-TOPK-PA-01", "layer": "ARCHITECTURE_STUDY", "status": "HOLD", "cycle3": false, "preformal": false},
-    {"id": "CAND-H7-RESP-01", "layer": "HOLD", "status": "NO_NATIVE_OBJECT"}
+    {
+      "id": "CAND-H7-RESP-01",
+      "layer": "HOLD",
+      "status": "NO_NATIVE_OBJECT"
+    }
   ],
   "external_input": {
     "literature": {
       "latest_generated_jst": "2026-09-20T06:30:00+09:00",
       "consumed_by_control": true,
-      "consumed_by_evidence_analyst": false,
-      "impact": "Treat refractory behavior through explicit signed-current aggregation and discard/defer/clamp/integrate state policy; retained post-refractory effects are ordinary state semantics; do not generalize current-based cancellation to conductance-based biology."
+      "consumed_by_evidence_analyst": true,
+      "impact": "Refractory behavior remains reducible through signed-current aggregation and explicit discard/defer/clamp/integrate state policy plus retained-state dynamics; current-based cancellation must not be generalized to conductance-based biology."
     },
     "audit": {
-      "latest_generated_jst": "2026-09-19T22:31:21+09:00",
+      "latest_generated_jst": "2026-09-19T22:31:00+09:00",
       "consumed_by_control": true,
+      "consumed_by_evidence_analyst": true,
       "target": "H5",
       "classification": "ROBUST_SO_FAR",
-      "impact": "Canonical H5 FAIL remains valid for the exact registered aggregate work metric; global all-edge eligibility maintenance dominates tested cost but is not a general event-routing no-go theorem."
+      "impact": "Canonical H5 FAIL remains valid for the exact registered aggregate algorithmic-work metric; global all-edge eligibility maintenance is a bottleneck but not a general event-routing no-go theorem."
     }
   },
   "methodology_calibration": {
-    "latest_generated_jst": "2026-09-20T06:20:00+09:00",
+    "latest_generated_jst": "2026-09-20T08:20:00+09:00",
     "classification": "MIXED_CALIBRATION",
     "material_update": true,
-    "handoff_guard_result": "PASS_EXPECTATIONS",
-    "control_disposition": "ADOPT_DESIGN_PROSPECTIVELY_NO_LIVE_INTEGRATION",
-    "scientific_gate_change": false,
-    "remaining_gap": "UPSTREAM_MACHINE_FACT_EXTRACTOR_FIDELITY"
+    "scientific_hard_floor_change": false,
+    "novelty_threshold_change": false,
+    "confirmed_defect": "DECISION_RELEVANT_MACHINE_FACT_EXTRACTOR_FALSE_NEGATIVE",
+    "prospective_policy": "USE_FACT_TYPE_APPROPRIATE_STRUCTURAL_AST_TYPED_RUNTIME_VALIDATION_WITH_EXACT_BINDING_AND_MACHINE_BOUND_HANDOFF_FIDELITY"
   },
   "main": {
-    "classification": "FAILED_OR_INCOMPLETE",
-    "analyst_commit": "eb1c305017d32c8c3efb0794e547b889e5a80461",
-    "lane": "REFRACTORY_CURRENT_ACCOUNTING_ARCHITECTURE_STUDY_CYCLE1",
-    "head": "4ac9aeead78ec8d053291f922096fab7e31f6070",
-    "workflow": 35470259892,
-    "workflow_conclusion": "failure",
-    "ci": 35470259884,
-    "ci_conclusion": "failure",
-    "valid_scientific_outcome": false,
-    "blocker_owner": "MAIN"
+    "classification": "HEALTHY",
+    "analyst_commit": "850b4502cf15d3f6118a487c5ab4ba81fbf7b75e",
+    "lane": "V05_DELAYED_OUTCOME_CALLER_CONTRACT_ARCHITECTURE_STUDY_CYCLE1",
+    "head": "c79c5434222a6d018931dc1752e7f0074c23854b",
+    "ci": 35475862604,
+    "ci_conclusion": "success",
+    "valid_terminal": "IMMEDIATE_ONLY_USAGE_BUT_PUBLIC_CONTRACT_UNSPECIFIED",
+    "status": "COMPLETED_STOPPED_FOR_FRESH_ANALYST_REVIEW"
   },
   "relay": {
-    "classification": "DELAYED",
-    "durable_status": "WAITING_EXTERNAL",
-    "post_failure_reconciliation_pending": true
+    "classification": "HEALTHY",
+    "durable_status": "COMPLETED",
+    "stop_reason": "VALID_STATIC_TERMINAL_AND_EXACT_HEAD_CI_SUCCESS_STOP_FOR_FRESH_ANALYST_REVIEW"
   },
   "sub": {
     "classification": "EXPLORATORY_PRODUCTIVE",
-    "latest_jst": "2026-09-20T06:46:00+09:00",
-    "target": "OUTCOME_CREDIT_SLOT_OVERWRITE_DISCOVERY_CYCLE1",
-    "head": "83eb00212eb9c877e8217c44dfb35a5563f04626",
+    "latest_jst": "2026-09-20T08:46:00+09:00",
+    "target": "HOMEOSTASIS_RECEPTOR_DEAD_MASK_DISCOVERY_CYCLE1",
+    "head": "8a2fa2efa7ac13ea7a1a835c14e8ea0f8013d71f",
+    "workflow": 35476878641,
+    "workflow_conclusion": "success",
     "recommendation": "PROMOTE_TO_ARCHITECTURE_STUDY",
     "evidentiary_status": "NON_EVIDENTIARY",
     "independent_of_main": true
   },
   "utility_request_bus": {
-    "completed_guard_assignment": {
-      "assignment_id": "CTRL-20260920-0450-HANDOFF-BINDING-GUARD",
-      "status": "COMPLETED",
-      "run_count": 1,
-      "validation": "PASS_EXPECTATIONS",
-      "recommendation": "ADOPT_PROSPECTIVELY_AFTER_SEPARATE_CONTROL_DECISION",
-      "control_adoption": "ADOPTED_PROSPECTIVELY_NO_LIVE_INTEGRATION"
-    },
+    "unhandled_request_count": 0,
     "decisions": {
-      "EVA-20260920-0502-SUPPRESSION-STATIC-DETECTOR-CONSISTENCY": "ACCEPT",
-      "EVA-20260920-0401-HANDOFF-BINDING-GUARD": "COMPLETED_PRIOR_ACCEPT",
       "METHCAL-20260920-0120-ARTIFACT-HANDOFF-FIDELITY": "COMPLETED_PRIOR_ACCEPT",
-      "LIT-20260919-1830-TOPK-HYBRID-TRANSIENT": "DEFER"
+      "EVA-20260920-0401-HANDOFF-BINDING-GUARD": "COMPLETED_PRIOR_ACCEPT",
+      "EVA-20260920-0502-SUPPRESSION-STATIC-DETECTOR-CONSISTENCY": "COMPLETED_PRIOR_ACCEPT"
     },
     "current_assignment": {
       "assignment_id": "CTRL-20260920-0650-SUPPRESSION-STATIC-DETECTOR-CONSISTENCY",
-      "status": "ASSIGNED",
-      "active_assignment": true,
+      "status": "COMPLETED",
+      "active_assignment": false,
       "max_runs": 1,
-      "run_count": 0,
-      "expiry": "2026-09-20T09:00:00+09:00",
-      "mode": "READ_ONLY_STATIC_DETECTOR_CONSISTENCY_AUDIT",
-      "evidentiary_status": "NON_EVIDENTIARY_METHODOLOGY_DIAGNOSTIC",
-      "decision_commit": "5d72eca7f3011cee1cc3b5971a7f19f2e2881c17",
-      "assignment_commit": "dcb7dc021b09c7ec0713d99b8c2f8168169ac8af"
-    }
+      "run_count": 1,
+      "classification": "STATIC_EXTRACTOR_FALSE_NEGATIVE_CONFIRMED",
+      "result_commit": "f30da2ea3ba0a4cc064be4847c2e2945344c6aa2",
+      "pointer_normalization_commit": "7321568e67b1c17ef37e028e342ae0ace08c5f94"
+    },
+    "new_assignment_created": false,
+    "utility_status": "IDLE"
   },
   "fleet": {
     "fleet_status": "YELLOW",
     "critical_failures": [],
     "operational_defects": [
-      "MAIN refractory exact-head workflow/CI failed pre-outcome at compile/lint and awaits MAIN-owned reconciliation.",
-      "Relay durable state remains WAITING_EXTERNAL after the workflow failure and has not yet persisted post-failure reconciliation.",
-      "Suppression decision-relevant machine-fact extractor fidelity remains unresolved; one bounded Utility read-only audit is assigned."
+      "Decision-relevant machine-fact extraction has a confirmed historical false-negative mode; prospective fact-type-appropriate validation remains required.",
+      "Fresh MAIN and SUB terminals await normal Evidence Analyst review; this is handoff latency, not stale execution."
     ],
     "scheduler_classification": {
       "control_repository_steward": "HEALTHY",
       "evidence_analyst": "HEALTHY",
-      "main_primary": "FAILED_OR_INCOMPLETE",
-      "main_relay": "DELAYED",
+      "main_primary_relay": "HEALTHY",
       "sub": "EXPLORATORY_PRODUCTIVE",
       "external_literature": "HEALTHY",
       "external_audit": "HEALTHY",
       "methodology_calibration_auditor": "HEALTHY",
       "utility_orchestrator": "HEALTHY",
-      "current_state_brief": "HEALTHY"
-    }
+      "current_state_brief": "UNKNOWN"
+    },
+    "efficiency_findings": [
+      "Lower-funnel throughput is substantive and parallel without ownership collision.",
+      "Utility request-assignment-result turnover completed without live scheduler mutation.",
+      "No repeated no-op or cadence failure justifies timing changes.",
+      "Candidate prioritization should favor supported-system relevance and information gain over automatic promotion of every API discrepancy."
+    ]
   },
   "scheduler_controller_action": "NO_CHANGE",
   "scheduler_controller": {
     "non_utility_mutations": 0,
     "utility_live_reconfiguration": false,
     "scheduler_registry_modified": false,
-    "reason": "The active failure is an object-local pre-outcome compile/lint blocker, not a cadence problem; the generic hourly Utility scheduler can consume the Git assignment."
+    "reason": "Current research is progressing; no collision/no-op/failure pattern is cadence-driven. The temporary faster Control cadence remains recent explicit human direction."
   },
   "repository_doctrine": {
     "status": "CURRENT_RESEARCH_SEPARATION_HEALTHY_PROTECTION_DEFERRED",
@@ -196,12 +209,21 @@
     "main_protected": false,
     "new_immutable_incident": false
   },
-  "top_priority": "MAIN/Relay must reconcile the pre-outcome refractory exact-head compile/lint blocker within the already-fixed contract; only science-invariant mechanical repair is allowed, otherwise STOP to Evidence Analyst.",
+  "top_priority": "Evidence Analyst should close the completed delayed-outcome static Architecture terminal, consume the fresh homeostasis Discovery, and prospectively choose at most one next MAIN Architecture object after re-ranking against the queued Assembly lifecycle candidate.",
   "direction_to_evidence_analyst": [
-    "Consume the fresh 06:30 refractory Literature reduction before the next successor decision.",
-    "Review OUTCOME_CREDIT_SLOT_OVERWRITE_DISCOVERY_CYCLE1 as strictly NON_EVIDENTIARY and decide prospectively whether an Architecture/API attribution object is worthwhile.",
-    "Treat the failed refractory workflows as pre-outcome mechanical blockers rather than a scientific terminal; permit only contract-allowed science-invariant repair.",
-    "Consume the one-run suppression detector audit without relabeling the completed AMBIGUOUS_CONTRACT result.",
-    "Use the prospectively adopted handoff-binding design for future decision-relevant lower-funnel closures without retroactive rewriting."
-  ]
+    "Record delayed-outcome cycle 1 as IMMEDIATE_ONLY_USAGE_BUT_PUBLIC_CONTRACT_UNSPECIFIED; do not infer a supported delayed-credit defect or authorize dynamic continuation by default.",
+    "Classify HOMEOSTASIS_RECEPTOR_DEAD_MASK_DISCOVERY_CYCLE1 strictly NON_EVIDENTIARY; if promoted, bind intended population semantics, supported consumer relevance, and a matched receptor-aware comparator before outcome visibility.",
+    "Re-rank the queued Assembly mature-capacity/lifecycle candidate against homeostasis observability rather than automatically executing the queue.",
+    "Keep Refractory and Suppression historical outcomes unchanged; apply Methodology extractor/handoff improvements prospectively only.",
+    "Keep PRE_FORMAL and FORMAL empty unless a fresh mechanism independently survives ordinary reductions under matched privilege/resources."
+  ],
+  "integrity_actions": {
+    "experiments_executed_by_control": 0,
+    "scientific_workflows_dispatched_by_control": 0,
+    "identities_consumed_by_control": 0,
+    "research_prs_merged_by_control": 0,
+    "immutable_refs_mutated_by_control": 0,
+    "schedulers_mutated_by_control": 0,
+    "utility_pointer_normalized": true
+  }
 }
