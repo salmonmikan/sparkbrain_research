@@ -1,78 +1,41 @@
 {
-  "timestamp": "2026-09-20T03:21:30+09:00",
+  "timestamp": "2026-09-20T03:25:30+09:00",
   "worker_role": "main",
   "execution_mode": "PRIMARY",
   "analyst_commit": "9bb852bc1461755814d6a9a0e7ea561f1858a0da",
   "research_layer": "ARCHITECTURE_STUDY",
   "current_lane": "V05_TOPOLOGY_CONFIG_CONTRACT_ARCHITECTURE_STUDY_CYCLE1",
-  "current_phase": "WAITING_EXTERNAL_EXACT_HEAD_CI_BEFORE_FIRST_VALID_DIAGNOSTIC",
   "candidate_question": {
     "id": "CAND-V05-TOPOLOGY-CONFIG-BINDING-01",
     "question": "Are exported v0.5 width/height/receptor_rows fields coherently bound to realized topology and checkpoint semantics, or silently accepted while runtime geometry remains fixed?",
-    "exploration_cycle_count": {
-      "DISCOVERY": 1,
-      "ARCHITECTURE_STUDY": 0,
-      "current_architecture_cycle": 1
-    },
-    "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY_PENDING_EXECUTION"
+    "exploration_cycle_count": {"DISCOVERY": 1, "ARCHITECTURE_STUDY": 0, "current_architecture_cycle": 1},
+    "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY_PENDING_VALID_DIAGNOSTIC"
   },
   "research_layer_state": {
-    "DISCOVERY": {
-      "state": "OPEN",
-      "owner": "SUB",
-      "current_object": null,
-      "status": "NON_EVIDENTIARY"
-    },
-    "ARCHITECTURE_STUDY": {
-      "state": "ACTIVE_PENDING_EXACT_HEAD_CI",
-      "owner": "MAIN",
-      "current_object": "CAND-V05-TOPOLOGY-CONFIG-BINDING-01",
-      "lane": "V05_TOPOLOGY_CONFIG_CONTRACT_ARCHITECTURE_STUDY_CYCLE1",
-      "status": "NON_EVIDENTIARY"
-    },
-    "PRE_FORMAL": {
-      "state": "EMPTY_HOLD",
-      "owner": "MAIN"
-    },
-    "FORMAL": {
-      "state": "EMPTY_HOLD",
-      "owner": "MAIN"
-    }
-  },
-  "candidate_pool": {
-    "CAND-V05-TOPOLOGY-CONFIG-BINDING-01": "ARCHITECTURE_STUDY_CYCLE1_ACTIVE_DISCOVERY1_ARCHITECTURE0_BEFORE_VALID_OUTCOME",
-    "CAND-TEMPORAL-BATCH-PARTITION-01": "HOLD_CURRENT_QUESTION_COMPLETE_NO_CYCLE2",
-    "CAND-TOPK-PA-01": "HOLD_NO_CYCLE3_FRESH_REDUCTION_OBJECT_REQUIRED",
-    "CAND-H7-RESP-01": "HOLD_NO_NATIVE_OBJECT",
-    "CAND-TOPOLOGY-FANOUT-ALIAS-01": "REJECT"
+    "DISCOVERY": {"state": "OPEN", "owner": "SUB", "status": "NON_EVIDENTIARY"},
+    "ARCHITECTURE_STUDY": {"state": "ACTIVE_WAITING_EXACT_HEAD_CI_RECHECK", "owner": "MAIN", "current_object": "CAND-V05-TOPOLOGY-CONFIG-BINDING-01"},
+    "PRE_FORMAL": {"state": "EMPTY_HOLD", "owner": "MAIN"},
+    "FORMAL": {"state": "EMPTY_HOLD", "owner": "MAIN"}
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "evidence_analyst_handoff": "9bb852bc1461755814d6a9a0e7ea561f1858a0da",
     "research_branch": "research/main-v05-topology-config-contract-arch-study-20260920",
-    "research_head": "03296eb1f986838567db82b36a2f342b0181fe5c",
+    "research_head": "4a15a91edb8e92b89cda960f533590f7b46a70f2",
     "prospective_contract_commit": "94b312ab5998b6e929b7498473bfc6e7459f4a1c",
-    "diagnostic_harness_commit": "ca7048f1223ab533d19b1e7be408f7f63859bdf5",
+    "initial_harness_commit": "ca7048f1223ab533d19b1e7be408f7f63859bdf5",
+    "initial_workflow_head": "03296eb1f986838567db82b36a2f342b0181fe5c",
+    "mechanical_lint_fix_commit": "4a15a91edb8e92b89cda960f533590f7b46a70f2",
     "source_blobs": {
       "src/sparkbrain/v05/brain.py": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
       "src/sparkbrain/v05/topology.py": "d9d292bdedc1288a929d1e53f03b9fc182b45a36",
       "src/sparkbrain/v04/brain.py": "25fd56b082168a9ea71f313023451858d00b6184",
       "configs/v05_reference.json": "d3c82d0279c3bce09d76ddf0ad2df1ec74bc2d7f"
-    },
-    "formal_identity": null,
-    "started_ref": null,
-    "formal_preserve_ref": null,
-    "formal_evidence_ref": null
+    }
   },
   "prospective_architecture_contract": {
     "topology_seed": 41,
-    "config_matrix": [
-      [8, 8, 1],
-      [12, 8, 1],
-      [8, 10, 1],
-      [8, 8, 2],
-      [12, 10, 2]
-    ],
+    "config_matrix": [[8,8,1],[12,8,1],[8,10,1],[8,8,2],[12,10,2]],
     "outcomes": [
       "INTENTIONAL_FIXED_TOPOLOGY_EXPLICIT_CONTRACT",
       "SILENT_DECLARED_REALIZED_GEOMETRY_DIVERGENCE",
@@ -81,33 +44,41 @@
       "INVALID_DIAGNOSTIC"
     ],
     "raw_before_interpretation": true,
-    "official_test_allowed": false,
-    "formal_surfaces_allowed": false,
-    "valid_outcome_stop_for_fresh_analyst": true
+    "valid_outcome_requires_fresh_analyst_review": true
   },
   "fast_path_used": true,
   "full_reconciliation_reason": null,
   "branches_prs_advanced": {
     "research_branch_created": "research/main-v05-topology-config-contract-arch-study-20260920",
-    "research_branch_mutations_this_run": [
+    "research_commits_this_run": [
       "94b312ab5998b6e929b7498473bfc6e7459f4a1c",
       "ca7048f1223ab533d19b1e7be408f7f63859bdf5",
-      "03296eb1f986838567db82b36a2f342b0181fe5c"
+      "03296eb1f986838567db82b36a2f342b0181fe5c",
+      "4a15a91edb8e92b89cda960f533590f7b46a70f2"
     ],
     "pull_requests_merged": []
   },
   "workflows_experiments": {
-    "architecture_workflow": {
+    "first_architecture_workflow": {
       "run_id": 35460700075,
       "head": "03296eb1f986838567db82b36a2f342b0181fe5c",
-      "status_at_checkpoint": "in_progress",
-      "conclusion_at_checkpoint": null,
-      "outcome_bearing_diagnostic_completed": false
+      "status": "completed",
+      "conclusion": "failure",
+      "failure_stage": "Compile and lint Architecture harness on Python 3.11 and 3.13",
+      "ordinary_tests_reached": false,
+      "preflight_reached": false,
+      "outcome_bearing_architecture_job_reached": false
     },
-    "ordinary_ci": {
-      "run_id": 35460700049,
-      "head": "03296eb1f986838567db82b36a2f342b0181fe5c",
-      "status_at_first_observation": "queued"
+    "replacement_architecture_workflow": {
+      "run_id": 35460876580,
+      "head": "4a15a91edb8e92b89cda960f533590f7b46a70f2",
+      "status_at_checkpoint": "queued",
+      "conclusion_at_checkpoint": null
+    },
+    "replacement_ordinary_ci": {
+      "run_id": 35460876614,
+      "head": "4a15a91edb8e92b89cda960f533590f7b46a70f2",
+      "status_at_checkpoint": "queued"
     },
     "artifact_id": null,
     "mapped_outcome": null
@@ -116,8 +87,8 @@
     "formal_scientific_evidence": "NONE_NEW",
     "pre_formal_development_evidence": "NONE_NEW",
     "architecture_study_observation": "NONE_COMPLETED_YET",
-    "non_evidentiary_status": "PROSPECTIVE_CONTRACT_AND_HARNESS_ONLY_WAITING_EXACT_HEAD_WORKFLOW",
-    "claim_boundary": "No scientific or Architecture outcome is claimed before the exact-head workflow completes and its artifact provenance is verified."
+    "first_run_result": "PRE_DIAGNOSTIC_MECHANICAL_LINT_FAILURE_ONLY",
+    "claim_boundary": "No Architecture outcome exists until the replacement exact-head workflow completes a valid fixed diagnostic and its artifact provenance is verified."
   },
   "consumed_identities": [
     "c19-external-v2-official-v4",
@@ -129,84 +100,64 @@
     "h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1"
   ],
   "integrity_state": {
-    "status": "CLEAN_PRE_DIAGNOSTIC_WAITING_EXTERNAL",
-    "scientific_execution_integrity": "CLEAN",
-    "analyst_source_bindings_rechecked": true,
+    "status": "CLEAN_PRE_DIAGNOSTIC_MECHANICAL_REPAIR",
     "prospective_contract_committed_before_outcome_visibility": true,
+    "first_failure_outcome_bearing": false,
+    "mechanical_fix_changed_scientific_contract": false,
     "official_test_accessed": false,
     "consumed_preserve_raw_accessed": false,
     "formal_identity_created": false,
     "started_created": false,
-    "formal_preserve_created": false,
-    "formal_scoring_created": false,
-    "formal_evidence_created": false,
+    "formal_preserve_or_evidence_created": false,
     "immutable_evidence_modified": false,
-    "consumed_identity_reused": false,
     "research_merge_performed": false,
     "outcome_responsive_redesign_performed": false,
     "rerun_or_retune_performed": false
   },
+  "critical_path_fixes": [
+    {
+      "type": "PRE_START_MECHANICAL_LINT_FIX",
+      "trigger_workflow": 35460700075,
+      "commit": "4a15a91edb8e92b89cda960f533590f7b46a70f2",
+      "scope": "unused import, line wrapping, Git subprocess helper, equivalent control-flow cleanup",
+      "scientific_contract_changed": false
+    }
+  ],
   "outcome_contingencies_consumed": {
+    "PRE_START_MECHANICAL_BLOCKER": "FIX_SCIENCE_INVARIANT_DEFECT_REBIND_EXACT_HEAD_RECHECK_CI_AND_CONTINUE_UNCHANGED",
     "PRE_START_CONTRACT_COMPLETE_AND_CI_GREEN": "RUN_EXACTLY_ONE_FIXED_DEVELOPMENT_ONLY_DIAGNOSTIC_CYCLE",
-    "PRE_START_MECHANICAL_BLOCKER": "MAIN_MAY_FIX_SCIENCE_INVARIANT_LINT_BUILD_IMPORT_HARNESS_DEFECT_REBIND_EXACT_HEAD_RECHECK_CI_AND_CONTINUE_UNCHANGED",
-    "PRE_START_SEMANTIC_OR_PROTOCOL_GAP": "STOP",
     "ANY_VALID_TERMINAL_ARCHITECTURE_OUTCOME": "STOP_FOR_FRESH_EVIDENCE_ANALYST_REVIEW",
     "POST_DIAGNOSTIC_FIX_OR_REDESIGN": "NOT_AUTHORIZED",
     "PRE_FORMAL_OR_FORMAL_AUTO_PROMOTION": "NOT_AUTHORIZED"
   },
-  "blocked_until": {
-    "ARCHITECTURE_RESULT": "exact-head ordinary CI/readiness green plus one fixed development-only diagnostic with verified machine artifact provenance",
-    "PRE_FORMAL": "fresh Analyst review after lower-layer evidence; no automatic promotion from this cycle",
-    "FORMAL": "fresh high-value object and complete one-way formal authority; no authority exists in this cycle"
-  },
-  "do_not_touch": [
-    "SUB independent Discovery lane",
-    "Temporal cycle 2",
-    "Top-k cycle 3",
-    "H7 construction",
-    "rejected fanout rescue",
-    "official TEST or retained confirmatory inputs",
-    "consumed FORMAL raw or identities",
-    "formal scorer/preserve/evidence surfaces",
-    "immutable evidence/freeze refs",
-    "same-run post-outcome implementation fix",
-    "Architecture cycle 2 without fresh Analyst authority",
-    "research merge",
-    "scheduler definitions"
-  ],
+  "stop_reason": "WAITING_EXTERNAL_REPAIRED_V05_TOPOLOGY_CONFIG_CONTRACT_EXACT_HEAD_WORKFLOW",
+  "work_left_for_sub": "Independent bounded Discovery only; do not continue the promoted v0.5 config-contract object or take its MAIN blockers/fixes.",
+  "lane_repartition_reason": "Fresh Analyst authority promoted the completed SUB Discovery into a new prospectively defined MAIN Architecture/API-contract object.",
+  "utility_request_created": null,
+  "next_MAIN_action": "Collect workflow 35460876580 only for exact head 4a15a91edb8e92b89cda960f533590f7b46a70f2. Continue only under the fixed pre-start mechanical contingency until the first valid diagnostic; then verify provenance, persist the NON_EVIDENTIARY result, and stop for fresh Analyst review.",
   "lease_collision_reconciliation": {
     "prior_status": "COMPLETED",
-    "fresh_same_object_running_collision_found": false,
-    "main_ref_reconciled_before_acquire": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_ref_reconciled_before_acquire": "9bb852bc1461755814d6a9a0e7ea561f1858a0da",
-    "sub_report_reconciled": "completed independent Discovery and stopped before MAIN promotion",
+    "fresh_same_object_collision_found": false,
     "primary_lease_acquire_commit": "b62151b1d33a9aabb7fd42a10e4d34707f1ecba0",
-    "final_lease_commit": "c04a534e6b65a93386de5e24c97399ffd263d25f",
-    "sub_collision": false
+    "resume_after_external_failure_commit": "5fc614234a93651205313743277b421ac0bbd019",
+    "final_lease_commit": "ce7dd52125cc15ef73f413c5f4a2a3580dbd0d7b"
   },
-  "critical_path_fixes": [],
   "same_run_steps": [
-    "Consumed fresh Evidence Analyst authority 9bb852bc1461755814d6a9a0e7ea561f1858a0da and the promoted Architecture/API-contract lane.",
-    "Read prior MAIN latest/state/terminal lease and current SUB completion report for collision avoidance.",
-    "Re-fetched exact stable main and all four Analyst-bound source blobs; all matched.",
-    "Acquired a fresh PRIMARY lease before research mutation.",
-    "Created the fresh research branch from exact stable main.",
-    "Committed the five-config/topology-seed/checkpoint/audit/outcome contract before any outcome-bearing diagnostic.",
-    "Added a bounded raw-before-summary diagnostic harness with exact source binding and machine provenance.",
-    "Added and dispatched the exact-head Architecture workflow and observed it in progress on the expected SHA.",
-    "Stopped local PRIMARY work because only external exact-head CI/workflow execution remains."
+    "Consumed Analyst promotion and re-fetched stable main/source bindings.",
+    "Acquired PRIMARY lease and created a fresh research branch from exact main.",
+    "Committed the prospective five-config contract before outcome-bearing execution.",
+    "Implemented the bounded raw-before-summary diagnostic and exact-head workflow.",
+    "Observed first workflow fail before diagnostic at lint only.",
+    "Applied only the authorized science-invariant mechanical harness repair.",
+    "Re-fetched exact repaired head and dispatched replacement Architecture workflow and ordinary CI.",
+    "Returned to WAITING_EXTERNAL because only replacement external CI/workflow remains."
   ],
-  "stop_reason": "WAITING_EXTERNAL_V05_TOPOLOGY_CONFIG_CONTRACT_CYCLE1_EXACT_HEAD_WORKFLOW",
-  "work_left_for_sub": "Independent bounded Discovery only. SUB must not continue CAND-V05-TOPOLOGY-CONFIG-BINDING-01 or take its MAIN blockers/fixes.",
-  "lane_repartition_reason": "Fresh Analyst authority promoted the completed SUB Discovery into a new prospectively defined MAIN Architecture/API-contract object; SUB stopped the object before promotion and no collision exists.",
-  "utility_request_created": null,
-  "next_MAIN_action": "Collect workflow 35460700075 only for exact head 03296eb1f986838567db82b36a2f342b0181fe5c. If pre-diagnostic CI fails, make only science-invariant mechanical fixes and rebind/recheck exact head. If a valid fixed diagnostic completes, verify artifact provenance, persist the NON_EVIDENTIARY Architecture result, and stop for fresh Analyst review without same-run code repair or promotion.",
   "persistence_result": {
     "primary_lease_acquire_commit": "b62151b1d33a9aabb7fd42a10e4d34707f1ecba0",
-    "history_commit": "440f43908573e6d294b6dde71c57d09ef1875081",
-    "history_path": "reports/orchestrator/history/2026-09-20/0320-main.md",
-    "latest_md_commit": "bf5dda4f8baf3565a32f50613ecaeafc4e5612d7",
-    "final_lease_commit": "c04a534e6b65a93386de5e24c97399ffd263d25f",
+    "history_commits": ["440f43908573e6d294b6dde71c57d09ef1875081", "1035bcf9a87474da9d8d4dc13d7499012173e465"],
+    "latest_history_path": "reports/orchestrator/history/2026-09-20/0324-main.md",
+    "latest_md_commit": "55c9c2e2820569fb9f942974ee6bd52df06b0fcf",
+    "final_lease_commit": "ce7dd52125cc15ef73f413c5f4a2a3580dbd0d7b",
     "state_json": "this update",
     "force_push_used": false
   }
