@@ -1,0 +1,58 @@
+{
+  "config": {
+    "conditions": [
+      "omission",
+      "neutral_each_step",
+      "negative_once",
+      "negative_each_step",
+      "positive_once"
+    ],
+    "eligibility_decay": 0.9,
+    "lags_ms": [2.0, 5.0, 10.0, 20.0],
+    "learning_rate": 0.001,
+    "reward_trace_default": 1.0,
+    "reward_trace_relaxation_to_default": 0.85,
+    "steps": 40,
+    "tau_plus_ms": 18.0
+  },
+  "observations": {
+    "continuous_negative_required_for_sustained_depression": "Calling reward(-1.0) before every step mirrors omission with opposite weight sign.",
+    "explicit_neutral_is_neutral": "Calling reward(0.0) before every step keeps weight exactly 0.0 in this single-edge harness.",
+    "omission_is_not_neutral": "With no reward() call, reward_trace remains exactly +1.0, so every causal eligibility event potentiates the edge.",
+    "one_shot_negative_recovers": "For all tested lags, one reward(-1.0) event reaches minimum weight at step 5 and crosses back to nonnegative at step 9 when later updates omit reward().",
+    "reduction": "The effect is fully predicted by the explicit reward_trace baseline recurrence toward +1.0 combined with positive causal eligibility; no additional adaptive mechanism is required."
+  },
+  "source_main_sha": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+  "status": "EXPLORATORY_NON_EVIDENTIARY",
+  "summary": {
+    "2": {
+      "negative_each_step": {"minimum_weight": -0.27859057457984504, "minimum_weight_step": 40, "weight_step_10": -0.03702939910957227, "weight_step_20": -0.10822356619767678, "weight_step_40": -0.27859057457984504, "weight_step_5": -0.011761857464139758},
+      "negative_once": {"first_nonnegative_weight_step_after_negative": 9, "first_positive_reward_trace_step_after_negative": 6, "minimum_weight": -0.004027794661094699, "minimum_weight_step": 5, "weight_step_10": 0.005042787109003311, "weight_step_20": 0.06175403270983235, "weight_step_40": 0.22799726996868797, "weight_step_5": -0.004027794661094699},
+      "neutral_each_step": {"minimum_weight": 0.0, "minimum_weight_step": 1, "weight_step_10": 0.0, "weight_step_20": 0.0, "weight_step_40": 0.0, "weight_step_5": 0.0},
+      "omission": {"minimum_weight": 0.0008948393168143698, "minimum_weight_step": 1, "weight_step_10": 0.03702939910957227, "weight_step_20": 0.10822356619767678, "weight_step_40": 0.27859057457984504, "weight_step_5": 0.011761857464139758},
+      "positive_once": {"minimum_weight": 0.0017896786336287396, "minimum_weight_step": 1, "weight_step_10": 0.053022705109856766, "weight_step_20": 0.1314583329415991, "weight_step_40": 0.3038872268854236, "weight_step_5": 0.019656683526756993}
+    },
+    "5": {
+      "negative_each_step": {"minimum_weight": -0.2358218301086146, "minimum_weight_step": 40, "weight_step_10": -0.031344709629933715, "weight_step_20": -0.09160927098882306, "weight_step_40": -0.2358218301086146, "weight_step_5": -0.009956197394162567},
+      "negative_once": {"first_nonnegative_weight_step_after_negative": 9, "first_positive_reward_trace_step_after_negative": 6, "minimum_weight": -0.003409454572228647, "minimum_weight_step": 5, "weight_step_10": 0.004268627130285277, "weight_step_20": 0.05227366012717031, "weight_step_40": 0.1929955223534461, "weight_step_5": -0.003409454572228647},
+      "neutral_each_step": {"minimum_weight": 0.0, "minimum_weight_step": 1, "weight_step_10": 0.0, "weight_step_20": 0.0, "weight_step_40": 0.0, "weight_step_5": 0.0},
+      "omission": {"minimum_weight": 0.0007574651283969665, "minimum_weight_step": 1, "weight_step_10": 0.031344709629933715, "weight_step_20": 0.09160927098882306, "weight_step_40": 0.2358218301086146, "weight_step_5": 0.009956197394162567},
+      "positive_once": {"minimum_weight": 0.001514930256793933, "minimum_weight_step": 1, "weight_step_10": 0.044882750879757925, "weight_step_20": 0.11127707641964946, "weight_step_40": 0.2572349839861988, "weight_step_5": 0.016639023377358175}
+    },
+    "10": {
+      "negative_each_step": {"minimum_weight": -0.1786268128220292, "minimum_weight_step": 40, "weight_step_10": -0.023742524504403364, "weight_step_20": -0.06939082821190132, "weight_step_40": -0.1786268128220292, "weight_step_5": -0.00754147233751489},
+      "negative_once": {"first_nonnegative_weight_step_after_negative": 9, "first_positive_reward_trace_step_after_negative": 6, "minimum_weight": -0.002582542945316796, "minimum_weight_step": 5, "weight_step_10": 0.0032333361973203123, "weight_step_20": 0.039595474680006425, "weight_step_40": 0.14618737811949253, "weight_step_5": -0.002582542945316796},
+      "neutral_each_step": {"minimum_weight": 0.0, "minimum_weight_step": 1, "weight_step_10": 0.0, "weight_step_20": 0.0, "weight_step_40": 0.0, "weight_step_5": 0.0},
+      "omission": {"minimum_weight": 0.0005737534207374327, "minimum_weight_step": 1, "weight_step_10": 0.023742524504403364, "weight_step_20": 0.06939082821190132, "weight_step_40": 0.1786268128220292, "weight_step_5": 0.00754147233751489},
+      "positive_once": {"minimum_weight": 0.0011475068414748654, "minimum_weight_step": 1, "weight_step_10": 0.0339971186579449, "weight_step_20": 0.0842885049778488, "weight_step_40": 0.19484653017329762, "weight_step_5": 0.012603479978930734}
+    },
+    "20": {
+      "negative_each_step": {"minimum_weight": -0.10248774489206441, "minimum_weight_step": 40, "weight_step_10": -0.013622354651343753, "weight_step_20": -0.03981322505438195, "weight_step_40": -0.10248774489206441, "weight_step_5": -0.004326945551045892},
+      "negative_once": {"first_nonnegative_weight_step_after_negative": 9, "first_positive_reward_trace_step_after_negative": 6, "minimum_weight": -0.001481742849076837, "minimum_weight_step": 5, "weight_step_10": 0.0018551377036066918, "weight_step_20": 0.022718039043376097, "weight_step_40": 0.0838755082646954, "weight_step_5": -0.001481742849076837},
+      "neutral_each_step": {"minimum_weight": 0.0, "minimum_weight_step": 1, "weight_step_10": 0.0, "weight_step_20": 0.0, "weight_step_40": 0.0, "weight_step_5": 0.0},
+      "omission": {"minimum_weight": 0.0003291929878079056, "minimum_weight_step": 1, "weight_step_10": 0.013622354651343753, "weight_step_20": 0.03981322505438195, "weight_step_40": 0.10248774489206441, "weight_step_5": 0.004326945551045892},
+      "positive_once": {"minimum_weight": 0.0006583859756158112, "minimum_weight_step": 1, "weight_step_10": 0.019505963125212286, "weight_step_20": 0.048360818059884875, "weight_step_40": 0.11179386320574893, "weight_step_5": 0.007231289751107257}
+    }
+  },
+  "target": "PLASTICITY_REWARD_OMISSION_BASELINE_DISCOVERY"
+}
