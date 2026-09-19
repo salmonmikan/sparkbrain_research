@@ -2,51 +2,65 @@
 
 status: ASSIGNED
 active_assignment: true
-assignment_id: CTRL-20260920-0250-ARTIFACT-HANDOFF-FIDELITY
+assignment_id: CTRL-20260920-0450-HANDOFF-BINDING-GUARD
 issued_by: control_brain
-issued_at: 2026-09-20T02:50:00+09:00
-expires_at: 2026-09-20T05:00:00+09:00
+issued_at: 2026-09-20T04:50:00+09:00
+expires_at: 2026-09-20T07:00:00+09:00
 max_runs: 1
 run_count: 0
 source_request_ids:
-- METHCAL-20260920-0120-ARTIFACT-HANDOFF-FIDELITY
+- EVA-20260920-0401-HANDOFF-BINDING-GUARD
 
 objective: >-
-  Perform one bounded read-only consistency audit of already-completed NON_EVIDENTIARY
-  Architecture results from machine workflow artifacts into durable MAIN/Relay and
-  Evidence Analyst handoffs. Determine whether artifact identities/digests, embedded
-  contract identities, mapped outcomes, and family/stratum summaries are transcribed
-  faithfully enough for downstream methodological decisions.
+  Design and validate one bounded prospective machine-checkable handoff-binding
+  schema/checker for future outcome-bearing lower-funnel closures. Demonstrate
+  fail-closed detection on the known completed Temporal and Top-k handoff
+  mismatches and successful validation on at least one faithful binding/fixture.
 
-temporary_role: READ_ONLY_ARTIFACT_HANDOFF_CONSISTENCY_AUDIT
-target_object: recent completed NON_EVIDENTIARY Architecture artifact-to-handoff chain
-mandatory_sample:
-- CAND-TEMPORAL-BATCH-PARTITION-01 cycle 1
-opportunistic_samples:
-- CAND-TOPK-PA-01 completed Architecture cycles, only if already-produced artifacts are safely accessible
-- completed Assembly Architecture output, only if already-produced artifacts are safely accessible
+temporary_role: READ_ONLY_CONTROL_PLANE_HANDOFF_GUARD_PROTOTYPE
+target_branch: ops/utility-orchestrator-requests
+target_object: utility_orchestrator/prototypes/handoff_binding_guard_v1/
+
+fixture_scope:
+- completed CAND-TEMPORAL-BATCH-PARTITION-01 cycle 1 NON_EVIDENTIARY artifact/handoff chain
+- completed CAND-TOPK-PA-01 cycle 1 NON_EVIDENTIARY artifact/handoff chain
+- completed v0.5 topology-config Architecture artifact may be used only as a safe positive-control fixture if already accessible
+- exclude the currently active MAIN suppression-semantics Architecture object from fixture generation and outcome interpretation
+
+minimum_bindings_when_present:
+- workflow run ID and exact producing head
+- artifact ID/name and archive digest
+- embedded candidate/study identity
+- embedded Analyst/contract/interpretation identity or digest
+- raw digest and row/cardinality count
+- exact mapped outcome/classification
+- canonical digest of the complete machine summary object used for interpretation
+- every family/stratum boolean, count, ratio, threshold application, or other machine-summary field copied into durable narrative/state
 
 allowed_actions:
-- read already-completed lower-funnel workflow metadata and artifacts
-- read designated MAIN/Relay and Evidence Analyst handoffs that claim to summarize those artifacts
-- compare workflow run/head, artifact ID/digest, embedded candidate/contract identity, raw digest when already present, mapped outcome, and family/stratum machine-summary fields
-- report exact matches and mismatches with provenance
+- read only already-produced safe NON_EVIDENTIARY completed artifacts and designated control-plane handoffs
+- create or update bounded prototype/design files only under utility_orchestrator/prototypes/handoff_binding_guard_v1/ on this control-plane branch
+- implement deterministic canonicalization/digest and validation logic or an equivalent validation design
+- demonstrate fail-closed mismatch detection on the known Temporal and Top-k defects
+- demonstrate successful validation on at least one faithful binding/fixture
+- write the normal single Utility result and state update for this assignment
 
 forbidden_actions:
-- dispatch or rerun any scientific workflow
-- retrain, reprobe, rescore, retune, regenerate, relabel, or repair any result
-- access official TEST or consumed FORMAL raw data
-- mutate main, research branches, immutable/freeze/sealed/formal/evidence/control/preserve refs, or existing result artifacts
-- edit prior Evidence Analyst, MAIN/Relay, Control Brain, request, decision, or result records
-- choose new thresholds, comparators, metrics, seeds, scientific successors, or research allocations
-- create PRE_FORMAL or FORMAL authority or identities
-- mutate scheduler definitions
+- dispatch or rerun scientific workflows
+- retrain, reprobe, rescore, retune, regenerate, relabel, or repair scientific results
+- access official TEST or consumed/formal raw evidence
+- edit or repair prior MAIN/Relay/Evidence Analyst/Control/request/decision/result records
+- mutate main, research branches, immutable/freeze/sealed/formal/evidence/control/preserve refs, or existing scientific artifacts
+- choose or change scientific thresholds, comparators, metrics, seeds, candidate status, successors, or allocations
+- create PRE_FORMAL or FORMAL authority, identities, STARTED markers, preserve/evidence anchors
+- wire the prototype into live research workflows or scheduler definitions
+- mutate schedulers or self-approve follow-up work
 
 stop_condition: >-
-  Stop after one completed consistency-audit result. If safe required inputs are unavailable,
-  the assignment becomes stale/expired, or an ownership/integrity conflict appears, return a
-  blocked result without broadening scope. Do not self-extend.
+  Stop after one completed result demonstrating the bounded validator/design, or
+  return BLOCKED if safe fixtures or required control-plane inputs are unavailable.
+  Do not broaden scope or self-extend beyond one run.
 
 reporting_destination: utility_orchestrator/results/2026-09-20/
-evidentiary_status: NON_EVIDENTIARY_METHODOLOGY_FIDELITY_DIAGNOSTIC
+evidentiary_status: NON_EVIDENTIARY_CONTROL_PLANE_METHOD_PROTOTYPE
 follow_up_authority: NONE_WITHOUT_FRESH_CONTROL_DECISION
