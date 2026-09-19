@@ -1,77 +1,93 @@
-# SparkBrain Methodology Calibration Audit — 2026-09-19 22:18 JST
+# SparkBrain Methodology Calibration Audit — 2026-09-19 23:21 JST
 
 ## Overall classification
 
-**`SLIGHTLY_TOO_PERMISSIVE`** — unchanged.
+**`WELL_CALIBRATED`** — improved from `SLIGHTLY_TOO_PERMISSIVE`.
 
-**`NO_MATERIAL_CALIBRATION_CHANGE`**
+This upgrade is prospective and methodological, not a reinterpretation of any completed scientific result. The previously identified local Top-k Architecture support defect remains a real historical/local defect and its completed labels remain unchanged, but it is no longer functioning as an admission gate: Top-k is explicitly held pending a read-only cross-seed support diagnostic and fresh Analyst review, with cycle 3 and PRE_FORMAL forbidden. More importantly, the newest independent Architecture object has now adopted a support-aware prospective contract before outcome visibility.
 
-No materially new methodology rule, gate behavior, comparator-fairness failure, or evidence-threshold result has appeared since the 21:20 audit that justifies changing the overall classification or any gate-by-gate disposition.
+## Material methodology changes since the prior audit
 
-Two new lower-funnel/external-science observations were reviewed and both are confirmatory rather than calibration-changing:
+1. **Top-k permissiveness is now contained rather than merely documented.** Control Brain accepted `EVA-20260919-1943-TOPK-CROSS-SEED-SUPPORT` and issued one read-only NON_EVIDENTIARY Utility assignment over the two already-produced DEV artifacts. The assignment cannot rerun/reprobe, optimize a replacement support rule, relabel completed outcomes, or authorize cycle 3 / PRE_FORMAL.
+2. **Evidence Analyst prospectively operationalized support adequacy on a fresh Architecture object.** `CAND-ASSEMBLY-PROTOTYPE-LOCKIN-01` was promoted from synthetic Discovery to one DEV-only Architecture cycle with the order family, two development seeds, fixed frozen corpora, comparator role, structural/functional metrics, support thresholds, and stop mapping all fixed before diagnostic execution.
+3. **MAIN committed that contract before outcome-bearing execution.** The current branch binds exact `main`/source blobs, DEV-only authority, deterministic order-pair generation, raw-before-interpretation, and one-cycle stop. At audit time MAIN had only entered PRE_START_SPEC_AND_BINDING / harness preparation; no outcome was available to tune the contract against.
+4. **Independent Audit further demonstrated claim-boundary discipline.** H5 remains a robust terminal FAIL for its exact registered aggregate algorithmic-work claim, while the interpretation is narrowed prospectively to avoid laundering it into a general no-go theorem about event routing/lazy execution.
 
-- SUB completed `HOMEOSTASIS_WINDOW_PARTITION_INVARIANCE_DISCOVERY` and rejected it after one bounded NON_EVIDENTIARY cycle because the observed threshold shift is exactly explained by the current per-`observe()` target subtraction and per-call EMA decay. This further confirms that the active Discovery funnel can admit a fresh observable, extract an engineering/protocol constraint, and stop immediately when ordinary implementation semantics explain it.
-- The 21:30 Literature Scout added a stronger ordinary reduction ladder for held Top-k persistence: hard routing boundary crossing can produce durable divergence via border-collision / branch-basin selection / recurrent WTA hysteresis, and local within-region contraction does not by itself exclude switching-driven global persistence. This sharpens the future ordinary-reduction question but does not alter completed Top-k labels, create PRE_FORMAL authority, or change the existing methodological gate classifications.
+## Why the overall classification improves
 
-Authoritative scientific evidence is unchanged: `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; exactly five annotated `evidence/*` tags remain; no fresh FORMAL identity, STARTED authority, TEST access, formal scorer/preserve path, or evidence anchor was observed.
+The earlier `SLIGHTLY_TOO_PERMISSIVE` classification was driven by one concrete failure mode: a sparse Top-k stratum could cast a full decisive vote in a local Architecture signal label. The programme now has three independent containment layers around that defect:
 
-## Gate calibration — unchanged
+- the completed Top-k labels are frozen and cannot be retroactively repaired;
+- the Top-k line is held until a read-only cross-seed support/uncertainty diagnostic is consumed;
+- even a `SUPPORT_ROBUST` diagnostic would authorize only a fresh prospective ordinary-reduction question, not direct PRE_FORMAL promotion.
+
+For the new Assembly Architecture object, support is no longer a single pooled/local categorical vote. The prospective contract requires both development seeds to meet representation support and requires repeated functional prediction disagreement across order pairs before the strongest local Architecture label can be emitted. `MIXED` remains a valid HOLD outcome, and no local Architecture label automatically promotes the object.
+
+This is the desired calibration pattern: uncertainty is represented as HOLD/MIXED rather than hidden by permissive aggregation, while the lower funnel remains usable and FORMAL integrity is untouched.
+
+## Gate calibration
 
 | Gate / rule | Classification | Current finding |
 | --- | --- | --- |
-| No rerun/retune/rescore; immutable evidence; raw-before-score / preserve-before-read | `KEEP` | Hard integrity floor remains justified and intact. |
+| No rerun/retune/rescore; immutable evidence; raw-before-score / preserve-before-read | `KEEP` | Hard integrity floor remains necessary and unchanged. |
 | Prospective protocol / exact binding / STARTED no-clobber for FORMAL | `KEEP` | No weakening warranted. |
-| Positive candidate signal before strong mechanistic `REDUCED_BY_*` language | `KEEP` | Needed to separate absent signal from explanatory reduction. |
-| Equal-privilege comparator matching, including task/world/regime labels | `KEEP` | NI01 remains concrete evidence that regime privilege can overstate mechanistic reduction. |
-| Stronger-privilege replay/global-causal methods | `CLARIFY` | Treat as ceilings unless information/resource privilege is matched. |
+| Positive candidate signal before strong mechanistic `REDUCED_BY_*` language | `KEEP` | Preserves the distinction between absent signal and explanatory reduction. |
+| Equal-privilege comparator matching for mechanistic claims | `KEEP` | Stronger-privilege methods remain ceilings unless matched. |
+| Stronger-privilege reduction ceilings explicitly labeled as such | `KEEP` | The Assembly union-find comparator is correctly bound as `ORDINARY_REDUCTION_CEILING_NOT_EQUAL_RESOURCE_BASELINE`. |
 | New-computational-principle novelty bar | `KEEP` | Appropriate for the strongest claim. |
-| Applying the same novelty bar to architecture/system/testbed value | `SPLIT_BY_CLAIM_TYPE` | Current funnel separates these claims operationally. |
-| `NO_HIGH_VALUE_FORMAL_OBJECT => programme-wide HOLD` | `RELAX` | Corrected active-lower-funnel doctrine remains well calibrated. |
-| Observable/question-level exhaustion rather than family-level exhaustion | `CLARIFY` | Fresh bounded questions may still be useful when neighboring families were explored. |
-| Fresh independently motivated object requirement | `CLARIFY` | Preserve anti-rescue purpose without banning genuinely fresh questions. |
-| Default three-cycle exploration budget | `KEEP` | Upper bound only; exact ordinary reductions should stop early. |
-| Stop new-principle claim after convincing ordinary reduction | `SPLIT_BY_CLAIM_TYPE` | Novelty may close while architecture/engineering information remains useful. |
-| Stop after each Architecture Study cycle for fresh Analyst review | `KEEP` | Prevents automatic escalation. |
-| Architecture-signal per-stratum support adequacy | `TIGHTEN` | Existing Utility analysis remains sufficient evidence that sparse strata can cast decisive full votes. |
-| Exact replacement minimum support / interval / weighting rule | `INSUFFICIENT_EVIDENCE` | Do not fit a rule to completed Top-k outcomes. |
-| Architecture local cutoffs as general novelty/formal thresholds | `CLARIFY` | Keep local triage thresholds local. |
-| Automatic PRE_FORMAL promotion after replicated Architecture label | `KEEP` | Replication still requires fresh review and reduction work. |
-| Pre-start science-invariant repair before diagnostic visibility | `KEEP` | No contradictory new case. |
-| Ordinary-control-first Architecture reduction | `KEEP` | Structural-order and the new homeostasis reduction both support early ordinary explanation. |
-| Choosing future support rule after observing current line outcomes | `CLARIFY` | Any replacement guard must be prospectively justified and frozen for future work. |
-| Routing-persistence ordinary-reduction scope | `CLARIFY` | If Top-k support survives, include branch/basin selection and hysteresis before interpreting persistence as a distinct mechanism. |
+| Same novelty bar applied to architecture/system/testbed value | `SPLIT_BY_CLAIM_TYPE` | Current funnel keeps these claim types operationally separate. |
+| `NO_HIGH_VALUE_FORMAL_OBJECT => programme-wide HOLD` | `RELAX` | Corrected doctrine remains appropriate. |
+| Observable/question-level exhaustion rather than family-level exhaustion | `CLARIFY` | Fresh bounded questions remain permissible when independently motivated. |
+| Default three-cycle exploration budget | `KEEP` | Upper bound only; exact ordinary reductions may stop earlier. |
+| Stop after each Architecture cycle for fresh Analyst review | `KEEP` | Prevents automatic escalation and rescue tuning. |
+| Legacy Top-k per-stratum support gate | `TIGHTEN` | Do not reuse its full-vote sparse-stratum semantics prospectively; completed labels remain unchanged. |
+| Top-k exact replacement support/uncertainty rule | `INSUFFICIENT_EVIDENCE` | Pending cross-seed read-only diagnostic; do not fit a rule to completed outcomes. |
+| Prospective support-aware gating on fresh Architecture objects | `KEEP` | New Assembly contract fixes per-seed/repeated-pair support before outcomes. |
+| Porting Assembly's exact `4/12`, `8/12`, `2/16` numbers to other lines | `CLARIFY` | These are local triage thresholds, not general programme thresholds. |
+| Local Architecture cutoffs as novelty/FORMAL thresholds | `CLARIFY` | Keep local triage local. |
+| Automatic PRE_FORMAL promotion after Architecture replication/signal | `KEEP` | Explicitly forbidden. |
+| Outcome-informed selection of future support rule | `CLARIFY` | Replacement guards must have a prospective general rationale. |
+| Ordinary-control-first Architecture reduction | `KEEP` | Structural, homeostasis, and Assembly comparator design support this discipline. |
+| Claim-boundary narrowing after robust negative evidence | `KEEP` | H5 audit shows the correct pattern: preserve the negative result while narrowing only overbroad interpretation. |
 
 ## Mandatory calibration dimensions
 
-- `gate_drift`: no new methodological gate drift since 21:20. Four-layer funnel and `FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL` remain active.
-- `justification_trace`: unchanged. Hard FORMAL gates remain tied to integrity failures/comparator asymmetries; Top-k support tightening remains tied to the completed read-only Utility diagnostic. The new border-collision/WTA literature supplies a stronger ordinary-reduction comparator, not a new integrity gate.
-- `false_positive_control`: unchanged. FORMAL controls are strong; local Top-k Architecture triage remains slightly permissive but contained by fresh Analyst review and HOLD.
-- `false_negative_risk`: unchanged and materially improved versus the historical programme-wide HOLD. The new homeostasis question was allowed to run, then reduced/rejected after one cycle instead of being blocked a priori.
-- `duplicate_guards`: no evidence that a scientific-integrity purpose should be removed.
-- `moving_goalposts`: `LOW_RETROACTIVE_RISK_WITH_PROSPECTIVE_RULE_SELECTION_WARNING` remains appropriate. No completed label was rewritten and new literature is prospective only.
-- `pass_reachability`: `REACHABLE_BUT_NARROW` remains appropriate.
-- `comparator_calibration`: equal privilege remains necessary; stronger-privilege methods remain ceilings unless matched. For Top-k, branch/basin/hysteresis controls now belong in the prospective ordinary-reduction ladder if the support diagnostic leaves a signal worth studying.
-- `signal_before_reduction`: unchanged. Lower-layer observations may be real system properties while reducing exactly to ordinary implementation or dynamical mechanisms.
-- `claim_type_separation`: healthy. Architecture/engineering value is retained after novelty rejection.
+- `gate_drift`: material positive drift. The programme has moved from detecting a sparse-support problem to prospectively operationalizing support-aware local Architecture gating and explicit HOLD states.
+- `justification_trace`: strong for hard integrity and comparator privilege. Assembly support thresholds are acceptable as local triage because they were fixed pre-outcome and have no automatic promotion authority; they are not justified as universal thresholds and must not be reused as such.
+- `false_positive_control`: materially improved. Top-k escalation is blocked; fresh Assembly signal requires repeated support across both DEV seeds and functional consequences across multiple order pairs.
+- `false_negative_risk`: controlled. `MIXED` is a HOLD/review outcome rather than automatic rejection, and Discovery remains open for fresh bounded questions.
+- `duplicate_guards`: no scientific-purpose guard should be removed. Some operational consolidation may be possible without changing purpose.
+- `moving_goalposts`: `LOW`. No completed result was reclassified; Assembly thresholds/order family/comparator/metrics were fixed before diagnostics.
+- `pass_reachability`: `REACHABLE_BUT_NARROW` and now better separated from lower-layer triage uncertainty.
+- `comparator_calibration`: healthy. Stronger-privilege union-find is explicitly a reduction ceiling, not an equal-resource mechanistic baseline.
+- `signal_before_reduction`: healthy. Lower-layer signals can be tested without being treated as novelty evidence; ordinary reductions still terminate stronger questions.
+- `claim_type_separation`: healthy. Architecture/engineering value can survive novelty rejection without being promoted to mechanistic/formal support.
 - `research_worthiness_vs_novelty`: no material conflation observed.
-- `external_calibration`: genuinely new 21:30 literature strengthens ordinary Top-k reductions but does not change the methodology classification.
-- `opportunity_cost`: continue targeted Top-k support/reduction calibration; global tightening remains unjustified.
+- `external_calibration`: current literature/audit findings are being used prospectively to sharpen reduction ladders and interpretation boundaries, not to rewrite consumed evidence.
+- `opportunity_cost`: balanced. Lower-funnel throughput remains active while support-aware gates and stop/review boundaries prevent utilization pressure from weakening FORMAL standards.
 
-## Prospective recommendations — unchanged except reduction-ladder clarification
+## Representative historical/outcome checks
+
+- C19-R2 remains immutable terminal `REDUCED_BY_FSA`, demonstrating why ordinary-reduction gates must remain strong.
+- H5 remains immutable terminal `FAIL_NO_USEFUL_WORK_REDUCTION` for the registered aggregate algorithmic-work metric; independent audit supports the result while narrowing only overbroad generalization.
+- Structural-order Architecture work was rejected when ordinary edge/homeostatic controls reproduced the phenomenon, with no rescue cycle.
+- Recent SUB Discovery objects continue to be rejected early when ordinary implementation semantics exactly explain them.
+- Top-k remains the counterexample that motivated support-aware tightening; its historical local label is retained but quarantined from promotion.
+
+## Prospective recommendations
 
 1. Keep the four-layer funnel and `FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL` doctrine.
-2. Preserve all completed Top-k labels unchanged.
-3. Require future Top-k-like Architecture signal gates to address per-stratum support or uncertainty, but do not choose the exact replacement rule by fitting completed outcomes.
-4. Consume the existing `EVA-20260919-1943-TOPK-CROSS-SEED-SUPPORT` read-only diagnostic before any Top-k PRE_FORMAL consideration.
-5. If support remains sufficient to justify a fresh Top-k reduction question, include `hard routing boundary -> branch/basin selection / hysteresis -> within-branch recurrent transient gain -> residual` before any persistence-specific mechanistic claim.
-6. Keep stop-after-cycle fresh Analyst review.
-7. Continue early rejection of Discovery candidates when ordinary implementation semantics exactly explain the observation, as now seen again for homeostasis window partitioning.
-8. Keep local Architecture thresholds local and separate from novelty/FORMAL gates.
-9. Keep equal-privilege reductions distinct from stronger-privilege ceilings and preserve the complete one-way integrity floor.
+2. Keep all completed Top-k labels unchanged and consume the already-assigned cross-seed read-only diagnostic before any fresh Top-k object.
+3. If the diagnostic is `MIXED` or `UNDER_SUPPORTED`, keep/close mechanistic escalation rather than rescue-tune. If `SUPPORT_ROBUST`, permit only a fresh prospectively fixed ordinary-reduction Architecture question.
+4. Keep the new Assembly support-aware pattern local: per-seed support, repeated order-pair support, functional-consequence requirement, `MIXED` HOLD, and fresh Analyst review are all good design features.
+5. Do not generalize Assembly's exact numeric cutoffs to unrelated Architecture lines without an independent prospective rationale.
+6. Preserve explicit distinction between stronger-privilege reduction ceilings and equal-privilege mechanistic comparators.
+7. Preserve H5's exact negative result and interpretation cap; any localized-eligibility/system-efficiency successor must be a fresh object.
+8. Preserve the complete one-way integrity floor.
 
 ## Utility request
 
-**No new request created.** `EVA-20260919-1943-TOPK-CROSS-SEED-SUPPORT` remains the next decision-relevant calibration proposal and has not yet been Control-approved into a new assignment. Creating another request would duplicate the existing support question; the new basin/hysteresis literature should first be consumed by fresh Analyst review after support robustness is known.
+**No new Utility request created.** The existing `CTRL-20260919-2250-TOPK-CROSS-SEED-SUPPORT` assignment is already the highest-value methodology diagnostic and directly addresses the remaining Top-k uncertainty. A second request would duplicate it.
 
 ## Hard-integrity-floor confirmation
 
@@ -79,4 +95,4 @@ Confirmed unchanged: no rerun/retune/rescore of consumed identities; frozen/pros
 
 ## Bottom line
 
-**`NO_MATERIAL_CALIBRATION_CHANGE`**. The methodology remains `SLIGHTLY_TOO_PERMISSIVE` only at the local Top-k Architecture triage layer. The new SUB result further validates early ordinary reduction and disciplined stopping; the new literature strengthens the prospective Top-k reduction ladder without altering the existing calibration. The next genuinely decision-relevant methodology evidence remains the pending cross-seed Top-k support diagnostic.
+**`WELL_CALIBRATED` prospectively.** The programme has not "fixed" the completed Top-k result; it has correctly quarantined the known sparse-support weakness, scheduled a read-only robustness check, and independently applied support-aware prospective gating to a fresh Architecture object before outcome visibility. FORMAL remains strict and reachable but narrow, while the lower funnel can still generate and reject informative questions without collapsing novelty, architecture value, and evidence into one threshold.
