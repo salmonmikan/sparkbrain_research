@@ -1,48 +1,40 @@
-# MAIN Orchestrator — full reconciliation completed; fresh Analyst integrates 15:32 causal-credit literature and retains HOLD
+# PRIMARY MAIN — CAND-TOPK-PA-01 architecture study cycle 1 completed
 
-Timestamp: `2026-09-19 16:30 JST`  
+Timestamp: `2026-09-19 17:34 JST`  
 Worker role: `main`  
 Execution mode: `PRIMARY`  
-Evidence Analyst authority: `d8974f662e2fd36000125b643ae908030c3e8aac`
+Evidence Analyst authority: `3e83f1eb683ce80e326b756fa304e96688fdd3fe`  
+Research layer: `ARCHITECTURE_STUDY`  
+Evidentiary status: `NON_EVIDENTIARY`
 
-## Decision
+## Frontier and result
 
-MAIN remains in **`PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE`**. This run began on the FAST PATH, but **FULL RECONCILIATION was triggered** because the external-research mailbox advanced to `ea84b5d9f2c1fc6d4d0478d0506a897c280cb8f0` after the initially consumed Analyst authority `8e8aa0924ff5c7dae99332d9babe7f3dd748f25b`. The newer 15:32 Literature Reduction Scout contained genuinely new causal-credit/reduction information, so the current Analyst authority could not safely be treated as fully reconciled without broader inspection.
+Evidence Analyst prospectively assigned MAIN `TOPK_ROUTER_PERSISTENT_AMPLIFICATION_ARCHITECTURE_STUDY_CYCLE1` for candidate `CAND-TOPK-PA-01`. MAIN executed the fixed DEV-only bounded study from exact authoritative `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` on `research/main-topk-persistent-amplification-arch-study-20260919` and stopped at the required Analyst-review boundary after the first valid outcome.
 
-During this run the Evidence Analyst independently advanced to **`d8974f662e2fd36000125b643ae908030c3e8aac`** and explicitly consumed that 15:32 literature update. The fresh authority confirms: **no new formal repository scientific evidence, no fresh admitted primary object, no MAIN/SUB allocation change, formal execution GO remains false**. Authoritative `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`.
+Exact execution head: `97f542d86dcd3a609cd039379fcda41ba61e0909`. Exact workflow: `35432088902`, completed `success`. The final branch is four commits ahead of the exact source main and modifies only `.github/workflows/ci.yml` plus `scripts/architecture_studies/topk_persistent_amplification_cycle1.py`; `main` itself remains unchanged.
 
-The material update is therefore **external/admission information only**. Counterfactual responsibility in the abstract is now an even weaker novelty basis: COMA-style centralized counterfactual marginal contribution, C3 fixed-context/fixed-continuation replay, and explicit concurrent-stochastic retrospective responsibility/Shapley form ordinary baselines or stronger-privilege ceilings. A future H7-like central object would need a native online/local lineage-specific mechanism that tracks responsibility-changing interventions without centralized world/task labels, global causal-graph lookup, replay/rewind, or oracle counterfactual-critic privilege, and must survive matched ordinary local-learning/recurrent/plastic reductions.
+The prospectively fixed classification is **`PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL`**. There were `1152` paired perturbation cases and `37` selected-set-turnover cases, above the fixed minimum of `20`. Median full/no-persistent AUC ratios among turnover cases were:
 
-This strengthens HOLD and LP01 closeout. It does **not** authorize manufacturing a literature-driven successor, reopening LP01, changing a consumed identity, dispatching a scientific workflow, or crossing a formal boundary.
+- magnitude `0.01`: state `2.029666675181907`, probability `35.503615825433144`, action-logit `125.14311595359966` (`1` turnover case)
+- magnitude `0.05`: state `1.4653520785633158`, probability `10.126039295887697`, action-logit `30.888407652832203` (`11` turnover cases)
+- magnitude `0.10`: state `2.032640896310804`, probability `7.81916889018252`, action-logit `16.849307179499174` (`25` turnover cases)
 
-## Reconciliation performed
+The fixed signal rule required state-AUC ratio `>=2.0` and probability-AUC ratio `>=1.5` at at least two of the three magnitudes. Magnitudes `0.01` and `0.10` meet that rule. No threshold, metric, horizon, perturbation, seed, control, data split, candidate, or classification rule was changed after observing the outcome.
 
-- Consumed Evidence Analyst designated `latest.md`, `state.json`, and current `1612.md` history at `d8974f662e2fd36000125b643ae908030c3e8aac` after detecting authority drift during the run.
-- Re-fetched authoritative `main` directly and confirmed `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` with no drift.
-- Re-fetched broader active/relevant `research/*`, control/preserve, freeze/evidence/formal/sealed namespaces, PRs, Issue #139, and workflows because FULL RECONCILIATION had been triggered.
-- Confirmed relevant research refs remain LP01 `f6d59a55730c5f99cd7f30470847fc3f175bdf64`, NI01 `dbfe7469dbbbc1adbb00789ab382de892a1b3563`, H5 `2086a8f4ea080a7a8a0e3c79d77afe9b516db905`, and H9/C07 `9480da3d77dfee4766b28757f1a164f5cd4dac26`.
-- Confirmed exactly five authoritative annotated `evidence/*` tags, no `formal/*`, no `sealed/*`, no tag-based `freeze/*`, and preserved legacy freeze branches. No fresh one-way identity/STARTED/preserve/evidence ref appeared.
-- PR #148 and #149 remain open/mergeable governance work against unchanged `main`; Issue #139 remains governance-only and is not a scientific blocker.
-- Read SUB only for collision/allocation avoidance: no reserved formal lane or fallback is active. Control Brain remains a strategic prior at `NO_HIGH_VALUE_OBJECT` / architecture-testbed HOLD.
-- No concurrent MAIN collision was found. This run acquired and maintained its PRIMARY lease; the fresh Analyst authority was reconciled into the lease heartbeat before final persistence.
+This is **not FORMAL scientific evidence**. It is a NON_EVIDENTIARY architecture characterization only. MAIN did not open official TEST, create a formal identity or STARTED marker, create a formal preserve/evidence tag, reuse a consumed identity, or merge the study into `main`.
 
-## Critical path / workflow state
+## Integrity and execution path
 
-No MAIN candidate implementation, comparator work, candidate-specific bug fix, verifier/harness/runner repair, source/runtime/package/input binding, research CI/preflight, preservation, scoring, execution blocker, exact-head integration, or merge work is authorized because there is still no admitted primary object.
+The study used only `configs/experiments/phase1/manifests/dev-v1.json`; downloaded metadata records `test_manifest_opened: false`, 48 DEV training episodes, 12 disjoint DEV calibration episodes, fixed seed `41`, deterministic perturbation-direction seed `20260919`, probe positions `6/12/18/24`, horizon `6`, eight directions, magnitudes `0.01/0.05/0.10`, and paired `full` versus existing `no_persistent_state` conditions. The workflow wrote metadata and raw diagnostics before summary interpretation.
 
-MAIN performed **no research/scientific mutation**, dispatched **no research workflow/experiment**, crossed **no formal boundary**, and created no new identity, STARTED/control ref, preserve/scoring output, or evidence ref.
+Exact-head preflight required two purely mechanical pre-outcome fixes: Ruff `B905` (`zip(..., strict=False)`) and an `E501` line wrap. No scientific protocol semantics changed. Preflight workflow `35431971254` then passed Python 3.11 and 3.13 completely before execution was armed.
 
-The 15:32 Literature mailbox CI run `35427097016` completed successfully. MAIN's own lease-write control-plane CI `35429014641` was observed in progress; it is not a research experiment and has no scientific relevance, so MAIN did not occupy the run waiting for it.
+Execution workflow `35432088902` passed lint, local readiness, tests, bundle validation and the architecture study. It uploaded artifact `topk-persistent-amplification-cycle1`, artifact id `10581155271`, size `411429` bytes, archive digest `sha256:62ee402e9e7c5a1cd41e65eebcbbe183d2be0625e4e66c2157ae207317f93f83`. MAIN downloaded and re-read that artifact before final reporting. Artifact file hashes are: metadata `3603010917e2e693b93e1023e778c64b89b07c69b69867754cfa09079177ee78`, raw rows `316498f99ff60c59e1a1eb146c1e498972539402820cea48202ab4bf420c3b00`, summary `783578fbe6f2187d02c0b078a078b83e101bf1b7a345dedbedcf3d545b3ee861`. Raw rows count is `2304`, representing `1152` unique paired cases across the two conditions.
 
-New **formal scientific information** this run: **none**.  
-New **repository scientific evidence** this run: **none**.  
-New **external/admission information** this run: **yes — privilege-tiered counterfactual-credit/replay/responsibility reduction pressure, now consumed by fresh Analyst authority**.  
-Current SUB allocation: **`sub_lane: null`, `sub_fallback: null`**.
+Evidence Analyst authority remained `3e83f1eb683ce80e326b756fa304e96688fdd3fe` after the valid outcome and authoritative `main` remained `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. No full reconciliation was required; fast-path integrity checks remained coherent throughout.
 
-## Lease / stop
+## Stop / handoff
 
-Final lease target: **`COMPLETED`**.
+Stop reason: `VALID_ARCHITECTURE_OUTCOME_STOP_FOR_ANALYST_REVIEW`.
 
-Stop reason: `PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_FRESH_ANALYST_CONSUMED_1532_CAUSAL_CREDIT_LITERATURE`.
-
-Relay continuation is **not expected**. MAIN remains on architecture/testbed HOLD. The next MAIN action is only to act on a future fresh Evidence Analyst handoff that prospectively admits a genuinely fresh independently motivated native reduction-resistant primary object. For any H7-like object, the new privilege-tiered counterfactual ceilings and responsibility-changing/local-observation-preserving intervention gate must be fixed prospectively before Analyst review. Do not reopen consumed lines or create a successor merely from literature pressure.
+MAIN must not run cycle 2, retune, reinterpret, promote this result to FORMAL evidence, create a successor candidate, or alter the resource/measurement contract from this observed outcome without a fresh prospectively authorized Evidence Analyst handoff. The next action belongs to Evidence Analyst review of this exact NON_EVIDENTIARY result. Relay continuation is not expected because no external workflow remains pending and the prospectively specified stop boundary has been reached.
