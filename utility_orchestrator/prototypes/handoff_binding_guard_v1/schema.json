@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sparkbrain://utility/handoff-binding-guard-v1",
+  "title": "SparkBrain Handoff Binding Guard v1",
+  "type": "object",
+  "$defs": {
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "workflow_run_id": {"type": ["integer", "null"]},
+        "producing_head": {"type": ["string", "null"]},
+        "artifact_id": {"type": ["integer", "null"]},
+        "artifact_name": {"type": ["string", "null"]},
+        "archive_sha256": {"type": ["string", "null"]},
+        "candidate_or_study_id": {"type": ["string", "null"]},
+        "embedded_authority": {"type": ["string", "null"]},
+        "contract_or_interpretation_digest": {"type": ["string", "null"]},
+        "raw_sha256": {"type": ["string", "null"]},
+        "row_count": {"type": ["integer", "null"]},
+        "mapped_outcome": {"type": ["string", "null"]},
+        "source_summary_sha256": {"type": ["string", "null"]}
+      },
+      "additionalProperties": true
+    },
+    "narratedField": {
+      "type": "object",
+      "required": ["path", "value"],
+      "properties": {
+        "path": {"type": "string", "pattern": "^/"},
+        "value": {}
+      },
+      "additionalProperties": false
+    },
+    "machineFixture": {
+      "type": "object",
+      "required": ["provenance", "machine_summary"],
+      "properties": {
+        "provenance": {"$ref": "#/$defs/provenance"},
+        "machine_summary": {"type": "object"}
+      },
+      "additionalProperties": false
+    },
+    "handoffBinding": {
+      "type": "object",
+      "required": ["provenance", "machine_summary_canonical_sha256", "narrated_fields"],
+      "properties": {
+        "provenance": {"$ref": "#/$defs/provenance"},
+        "machine_summary_canonical_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "narrated_fields": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/narratedField"}
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
