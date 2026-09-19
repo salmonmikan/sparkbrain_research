@@ -1,70 +1,40 @@
-# SparkBrain Research Orchestrator SUB — 2026-09-19 23:46 JST
+# SparkBrain Research Orchestrator SUB — 2026-09-20 00:41 JST
 
 ## Mode / allocation
 
 - mode: `discovery`
-- Evidence Analyst authority: `982e5686524c9fc2b665efcf44069fef49196333`
+- Evidence Analyst authority: `862dd62cdce58f06e5c782b4b54212d93e40212e`
 - SUB lane consumed: `BOUNDED_SECONDARY_DISCOVERY`
 - formal SUB lane: none
 - fallback: `NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON` (not used)
-- selected target: `TEMPORAL_EXPECTATION_BATCH_PARTITION_SENSITIVITY_DISCOVERY`
-- candidate_pool_id: none; one safe bounded SUB self-selection outside the reserved candidate pool
+- selected target: `FIELD_SOURCE_LINEAGE_CAP_PERMUTATION_SENSITIVITY_DISCOVERY`
+- candidate_pool_id: none; one safe bounded SUB self-selection outside the MAIN-reserved candidate pool
 - exploration cycle: `1/3`
 - evidentiary status: `NON_EVIDENTIARY`
-- recommendation: `PROMOTE_TO_ARCHITECTURE_STUDY`
+- recommendation: `REJECT`
 
-## Reconciliation / MAIN frontier avoided
+## MAIN frontier avoided / integrity
 
-Fresh authoritative `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. Fresh Evidence Analyst authority remains `982e5686524c9fc2b665efcf44069fef49196333`, with MAIN owning `ASSEMBLY_PROTOTYPE_LOCKIN_ARCHITECTURE_STUDY_CYCLE1` and SUB restricted to `BOUNDED_SECONDARY_DISCOVERY`. The Analyst exclusions reserve `CAND-ASSEMBLY-PROTOTYPE-LOCKIN-01`, `CAND-TOPK-PA-01`, `CAND-STRUCTURAL-ORDER-PATH-01`, H5, H7, MAIN critical path, and FORMAL/TEST/scoring/identity surfaces away from SUB.
+Fresh `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` and fresh Evidence Analyst authority remains `862dd62cdce58f06e5c782b4b54212d93e40212e`. MAIN owns `CAND-TEMPORAL-BATCH-PARTITION-01` on `research/main-temporal-batch-partition-arch-study-20260920@7fa4391bbf34cf25e10b708ce64acddf07bf7f42`; SUB did not continue that candidate, inspect outcome-bearing Architecture artifacts, modify MAIN's branch, or take any MAIN blocker/successor. MAIN workflow `35451528895` completed successfully during this run, but its scientific artifacts were deliberately not opened by SUB.
 
-Current MAIN exact research head remains `research/main-assembly-prototype-lockin-arch-study-20260919@7d9b90e58ee088ff2b4187d3c62c5e568148e6aa`, waiting on its repaired exact-head Architecture workflow. SUB did not inspect or use MAIN outcome-bearing artifacts, did not modify MAIN's branch/workflow, and did not work any MAIN blocker or successor.
+Five authoritative evidence tags remain present; formal/sealed/freeze tags remain empty and 13 legacy freeze branches remain preserved. No consumed identity, official TEST, formal raw/scorer, STARTED/control, preserve/evidence authority, immutable evidence, or merge surface was touched.
 
-Authoritative evidence/control surfaces were independently re-fetched. Five `evidence/*` tags remain present; `formal/*` tags remain empty. Existing `preserve/*` and `control/*` refs are historical/consumed surfaces and were not mutated or reused. Open PRs remain operationally separate from this Discovery.
+## Discovery implementation / observations
 
-## Discovery question
+Created non-authoritative branch `research/exploratory-sub-field-source-lineage-cap-20260920` from exact stable main. Test commit: `1a91187173a713d87f343b871ec16b94ee956bfb`; prospective question/reduction binding and exact research head: `21af9d2a5546cc081f4fe4472540ab8a17760c7c`.
 
-For the exact same external pulse timeline, can the current v0.4 temporal-expectation integration produce a different internally generated omission history and a different final field trajectory solely because the external timeline is partitioned differently across `IntegratedV04Brain.ingest_pulses(...)` calls?
+The fixed synthetic experiment uses one field unit, no recurrent connections, `max_sources_per_unit=16`, and twenty distinct simultaneous arrivals `p00..p19` at `1.0 ms`, each with current `0.06`. Only enqueue order changes. Exact-head ordinary CI `35452444346` completed `success` on Python 3.11 and 3.13.
 
-This target is independent of MAIN because it uses the stable v0.4 temporal expectation/transduction integration path, not v0.5 assembly-memory order sensitivity, Top-k persistence, Structural, H5, H7, or any formal object.
+Both arms emit exactly one spike and have identical physical spike observables and identical unit state once `source_pulse_ids` is removed. Ascending enqueue retains `p04..p19`; descending enqueue retains `p15..p00`. The retained sets have Jaccard `0.6`, while full `field.state_hash()` differs because bounded source provenance is serialized.
 
-## Inputs / implementation
+The result is exactly explained by current implementation: same-time arrivals preserve insertion-counter order; `_source_tuple` appends unseen IDs and keeps only the last 16. Current production-code search found no source-ID consumer that changes current, threshold, refractory, adaptation, or another physical update. This is bounded provenance-buffer bookkeeping/reproducibility sensitivity, not a new memory or causal mechanism.
 
-Created non-authoritative branch `research/exploratory-sub-temporal-expectation-batch-partition-20260919`, exact head `7aa5d681a400173c09c55603a459d63a6aaf7b43`, from exact stable `main`.
+## Handoff / stop
 
-Artifacts:
-- `tests/discovery/test_temporal_expectation_batch_partition_20260919.py`
-- `analysis/discovery/temporal_expectation_batch_partition_20260919.json`
-- `analysis/discovery/temporal_expectation_batch_partition_20260919.md`
+Evidentiary status: `NON_EVIDENTIARY`. Recommendation: `REJECT`. Candidate next scientific layer: `NONE_SCIENTIFICALLY`. Keep only an engineering note that full state hashes can differ from provenance ordering while the physical state projection is identical.
 
-The fixed synthetic timeline is channel `A` at `0, 10, 20, 100 ms`, magnitude `0.72`, expectations enabled, plasticity disabled, `settle_ms=35`. The batched arm submits all four pulses in one call. The split arm submits `[0,10,20]` first and `[100]` second. No repository dataset, trained checkpoint, preserved formal raw, held-out TEST, official scorer, STARTED identity, or consumed scientific identity is used.
+What would falsify the reduction is a fresh current-code path where source IDs themselves causally affect physical updates or downstream behavior under otherwise identical currents/timestamps/targets; none was found. Scientific choices still open: none. No cycle-2 tuning/sweep is warranted.
 
-Exact-head ordinary repository CI run `35449503678` completed `success` on Python 3.11 and 3.13, including lint, readiness, tests, and bundle validation. This CI has no scientific authority.
+Utility request created: none. Consumed identities: none. New formal results: zero. Blockers: none.
 
-## Observations / interpretation
-
-Both arms end at model time `135 ms` and end with the same learned external-channel expectation state: `interval[A] = 34.5 ms` and `last_time[A] = 100 ms`. Yet their generated omission histories differ:
-
-- batched `[0,10,20,100]`: no omission pulse;
-- split `[0,10,20]` then `[100]`: `omission:A` at `33 ms`.
-
-The executable characterization also verifies that final field state hashes differ.
-
-The mechanism is explicit in current integration semantics. `ingest_pulses` first calls `expectations.observe(...)` for every pulse in the supplied batch, and only afterward calls `expectations.poll(until_ms=end_ms)`. In the batched arm, the future `100 ms` observation updates `last_time` and the interval before polling through `135 ms`, replacing the earlier would-be `33 ms` deadline. In the split arm, polling occurs after the first three observations and the `33 ms` omission is emitted before the `100 ms` observation arrives.
-
-This is therefore not evidence of a novel cognitive mechanism. It is a batching/event-time causality and reproducibility property of the current API integration. Discovery remains strictly `NON_EVIDENTIARY`.
-
-## Handoff / stopping decision
-
-What would falsify/reduce it at the next layer: a fresh prospectively specified DEV-only Architecture study should reduce the concern to an API artifact if supported callers obey a batching contract that makes deadline-straddling batches impossible, or if an event-time-causal comparator shows no material downstream behavior difference on representative DEV traces. If otherwise-identical DEV timelines produce materially different downstream behavior solely from partition choice, the concern survives as an Architecture-level reproducibility failure mode.
-
-Candidate next research layer: `ARCHITECTURE_STUDY`.
-
-Scientific/Architecture choices still open: supported ingestion/batching contract; DEV pulse families/channel cadences; deadline-straddling partition family; event-time-causal comparator semantics; downstream functional observable/horizon; resource matching. These must be fixed prospectively by fresh Analyst authority. No cycle-2 rescue tuning is authorized by this run.
-
-Recommendation: `PROMOTE_TO_ARCHITECTURE_STUDY`.
-
-Utility request created: `SUB-20260919-2344-TEMPORAL-EXPECTATION-BATCHING-CALLSITE-AUDIT`, commit `ab0609cb37b83d84b5ee9d1701feebb8273956fe`, proposal-only. It asks for a read-only repository callsite audit to determine whether supported non-formal usage can actually create deadline-straddling batches. It is independent of MAIN and is not a dependency for MAIN or SUB completion.
-
-Consumed identities: none. New formal results: zero. Formal identity/STARTED/control/freeze/evidence/official scoring created: none. Blocker for further work: fresh Evidence Analyst classification/prospective Architecture contract only; the Utility request is optional/nonblocking.
-
-Completion target: `ACHIEVED_ONE_BOUNDED_INDEPENDENT_DISCOVERY_CYCLE_AND_RETURNED_ARCHITECTURE_PROMOTION_CANDIDATE_WITH_OPTIONAL_READ_ONLY_UTILITY_AUDIT`.
+Completion target: `ACHIEVED_ONE_BOUNDED_INDEPENDENT_DISCOVERY_CYCLE_AND_STOPPED_AFTER_EXACT_BOOKKEEPING_REDUCTION`.
