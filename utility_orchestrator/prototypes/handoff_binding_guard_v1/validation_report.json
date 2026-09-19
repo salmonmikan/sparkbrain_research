@@ -1,0 +1,68 @@
+{
+  "prototype": "handoff_binding_guard_v1",
+  "evidentiary_status": "NON_EVIDENTIARY_CONTROL_PLANE_METHOD_PROTOTYPE",
+  "all_expectations_met": true,
+  "canonicalization": "json.dumps(sort_keys=true,separators=(',',':'),ensure_ascii=false,allow_nan=false) -> UTF-8 -> SHA-256",
+  "results": [
+    {
+      "case": "temporal_known_bad",
+      "expected_status": "HANDOFF_FIDELITY_BLOCKED",
+      "observed_status": "HANDOFF_FIDELITY_BLOCKED",
+      "machine_summary_canonical_sha256": "16132f843606bc6ed715495d86be64497e49ab0402c6b004c6a2111631a206bd",
+      "errors": [
+        {
+          "kind": "PROVENANCE_MISMATCH",
+          "field": "contract_or_interpretation_digest",
+          "machine": "eb4aa28cd4b7299302ac31a65c73586c4e5a17e5487b1d1ddf43757cee901049",
+          "binding": "681c21e31c686be7d8beb10e927ef65510ce82689c2cc81ae5fd9fedc179c06d"
+        },
+        {
+          "kind": "NARRATED_FIELD_MISMATCH",
+          "path": "/families/repetition_train_defaults/schedule_differs_across_arms",
+          "machine": false,
+          "binding": true
+        },
+        {
+          "kind": "NARRATED_FIELD_MISMATCH",
+          "path": "/families/repetition_train_defaults/replay_differs_across_arms",
+          "machine": false,
+          "binding": true
+        },
+        {
+          "kind": "NARRATED_FIELD_MISMATCH",
+          "path": "/families/noisy_motif_stream_defaults/replay_differs_across_arms",
+          "machine": true,
+          "binding": false
+        }
+      ]
+    },
+    {
+      "case": "topk_known_bad",
+      "expected_status": "HANDOFF_FIDELITY_BLOCKED",
+      "observed_status": "HANDOFF_FIDELITY_BLOCKED",
+      "machine_summary_canonical_sha256": "84b296b71aa3fcfafcd6e4abe9099612599a71dba5ba3817fee23c8a2a1c92a2",
+      "errors": [
+        {
+          "kind": "NARRATED_FIELD_MISMATCH",
+          "path": "/strata/0.01/clears_all_fixed_signal_requirements",
+          "machine": false,
+          "binding": true
+        }
+      ]
+    },
+    {
+      "case": "topk_faithful_positive_control",
+      "expected_status": "PASS",
+      "observed_status": "PASS",
+      "machine_summary_canonical_sha256": "84b296b71aa3fcfafcd6e4abe9099612599a71dba5ba3817fee23c8a2a1c92a2",
+      "errors": []
+    }
+  ],
+  "scope_notes": [
+    "Temporal workflow artifact metadata was independently rechecked against GitHub run 35451528895 and artifact 10587410697.",
+    "Top-k workflow artifact metadata was independently rechecked against GitHub run 35432088902 and artifact 10581155271.",
+    "Known lower-level mismatch facts were taken from the completed bounded fidelity audit and designated historical Evidence Analyst handoffs.",
+    "No current MAIN suppression or Assembly object was used as a fixture or interpreted by this prototype.",
+    "No scientific workflow was dispatched or rerun and no historical scientific/control-plane record was edited."
+  ]
+}
