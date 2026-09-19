@@ -18,7 +18,7 @@
     "research_branches": [
       {
         "branch": "research/exploratory-sub-structural-order-path-dependence-20260919",
-        "head": "05aa366c661bba43fa0e3d5cb1957539bcedd66b"
+        "head": "8156bba7b119fb831b7c28eac7cd900746f9876e"
       }
     ]
   },
@@ -27,7 +27,8 @@
   "collision_reconciliation": {
     "analyst_authority_unchanged_immediately_before_research_ref_update": "3e83f1eb683ce80e326b756fa304e96688fdd3fe",
     "main_frontier_observed_complete_and_stopped_for_analyst_review": true,
-    "report_branch_refetched_before_persistence": "60c814f7244894f13063006d5512ac3f9ce8797e"
+    "report_branch_refetched_before_persistence": "60c814f7244894f13063006d5512ac3f9ce8797e",
+    "research_branch_head_after_lint_fix": "8156bba7b119fb831b7c28eac7cd900746f9876e"
   },
   "completion_target": "ACHIEVED_ONE_BOUNDED_INDEPENDENT_DISCOVERY_CYCLE_WITH_REDUCTION_CONTROL_AND_ANALYST_HANDOFF",
   "consumed_identities": [],
@@ -48,13 +49,14 @@
   "implementation_experiment_performed": {
     "aggregate": "analysis/discovery/structural-order-path-dependence-cycle1-aggregate.json",
     "branch": "research/exploratory-sub-structural-order-path-dependence-20260919",
-    "commit": "05aa366c661bba43fa0e3d5cb1957539bcedd66b",
+    "commit": "8156bba7b119fb831b7c28eac7cd900746f9876e",
     "conditions": [
       "full",
       "module_only",
       "edge_only"
     ],
     "handoff": "analysis/discovery/structural-order-path-dependence-cycle1.md",
+    "initial_commit": "05aa366c661bba43fa0e3d5cb1957539bcedd66b",
     "orders_per_seed": 120,
     "pair_samples_per_seed_condition_budget": 300,
     "replicate_seeds": [
@@ -139,6 +141,7 @@
     },
     "interpretation": "Synthetic path dependence persists for full/module-only conditions after total budget ceases to bind, while edge-only converges to one final graph. Candidate noncommutativity localizes to stateful duplicate/prune and active-slot history in this harness."
   },
+  "persistence_note": "1736 history preserved append-only; final corrected-head state is appended separately in 1748-sub.md.",
   "question_hypothesis_reduction_question": "For the same multiset of synthetic unlabeled routing-load and edge-credit frames, is final structural topology order-sensitive, and is any sensitivity explained only by the production total-event budget or edge-event order?",
   "recommendation": "PROMOTE_TO_ARCHITECTURE_STUDY",
   "rejected_lane": null,
@@ -166,12 +169,24 @@
   "worker_role": "sub",
   "workflows_experiments": {
     "branch_ci": {
-      "run_id": 35432790695,
-      "scientific_relevance": "ordinary repository CI only",
-      "status_when_observed": "in_progress"
+      "corrected_run": {
+        "head": "8156bba7b119fb831b7c28eac7cd900746f9876e",
+        "run_id": 35432992040,
+        "scientific_relevance": "ordinary repository CI only",
+        "status_when_observed": "in_progress"
+      },
+      "initial_run": {
+        "conclusion": "failure",
+        "failure_stage": "lint",
+        "head": "05aa366c661bba43fa0e3d5cb1957539bcedd66b",
+        "run_id": 35432790695,
+        "scientific_steps_run": false,
+        "status": "completed"
+      }
     },
     "discovery_script_executed_locally": true,
     "formal_workflow_dispatched": false,
+    "mechanical_lint_fix_preserved_aggregate_observations": true,
     "official_test_accessed": false
   }
 }
