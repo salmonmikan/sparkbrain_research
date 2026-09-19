@@ -7,8 +7,8 @@
   "analyst_commit": "5982fc0ae76d62c4a6fce42f6b1aaaf7f85b8e23",
   "active_branch": "research/main-structural-order-path-arch-study-20260919",
   "active_identity": null,
-  "active_step": "COLLECT_AND_VALIDATE_STRUCTURAL_ORDER_PATH_CYCLE1_RESULT",
+  "active_step": "STRUCTURAL_ORDER_PATH_CYCLE1_RESULT_VALIDATED_PENDING_DURABLE_REPORT",
   "workflow_run_id": 35438868911,
-  "expected_next_action": "Validate exact successful workflow 35438868911 artifacts and prospectively fixed NON_EVIDENTIARY Architecture label on head 6a53ee36259bca31b77024245e5ab0a9ef5ec405, then STOP for fresh Evidence Analyst review. Do not rerun, retune, redesign, start cycle 2, create FORMAL identity/STARTED, access TEST, or merge.",
+  "expected_next_action": "Persist validated NON_EVIDENTIARY Architecture label EDGE_OR_HOMEOSTASIS_CONTROL_REPRODUCES and STOP for fresh Evidence Analyst review. Do not rerun, retune, redesign, start cycle 2, create PRE_FORMAL/FORMAL continuation, access TEST, or merge.",
   "owner": "main"
 }
