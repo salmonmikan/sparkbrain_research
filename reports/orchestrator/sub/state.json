@@ -1,157 +1,177 @@
 {
-  "timestamp": "2026-09-19T16:42:00+09:00",
-  "worker_role": "sub",
-  "mode": "discovery",
-  "evidence_analyst_commit": "d8974f662e2fd36000125b643ae908030c3e8aac",
-  "consumed_lanes": [],
-  "selected_independent_lane": null,
-  "exploratory_target": "TOPK_ROUTER_MARGIN_CHURN_STABILITY_DISCOVERY",
-  "candidate_pool_id": null,
-  "candidate_pool_status": "CURRENT_ANALYST_HANDOFF_HAS_NO_USABLE_CANDIDATE_POOL_FIELD_OR_TARGET; SELF_SELECTED_UNDER_DISCOVERY_FALLBACK",
-  "research_layer_state": "DISCOVERY_NON_EVIDENTIARY",
-  "exploration_cycle": 1,
-  "exploration_cycle_max": 3,
-  "independent_of_main_critical_path": true,
-  "depends_on_main_outcome": false,
-  "execution_allowed": false,
-  "sub_active_claim": "Bounded synthetic architecture Discovery of hard top-k router perturbation churn; no formal authority and no dependency for MAIN.",
-  "why_independent_of_main": "MAIN has no admitted object/identity/branch/STARTED/workflow. Probe uses only synthetic linear routers and synthetic module-state vectors and does not touch any candidate, blocker, successor or consumed line.",
-  "main_work_explicitly_avoided": [
-    "fresh-object admission and primary candidate selection",
-    "future H7/causal-credit mechanism or comparator construction",
-    "candidate-specific bugs and verifier/harness/runner/binding/CI fixes",
-    "preservation/scoring/execution blockers",
-    "consumed-line rescue/retry/retune/rescore/reinterpretation",
-    "sealed or one-way TEST surfaces"
-  ],
   "authoritative_refs": {
-    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "d8974f662e2fd36000125b643ae908030c3e8aac",
     "control_brain": "6ed239b241a39f7d3e934e37751454c8bf3ebb4c",
-    "orchestrator_parent_tip_before_persistence": "5f037440607580fbfb4c1e1829bd127131d54c33",
-    "main_latest_state_analyst": "d8974f662e2fd36000125b643ae908030c3e8aac",
-    "authoritative_evidence_tag_count": 5,
-    "formal_tags_count": 0,
-    "sealed_tags_count": 0,
-    "tag_freeze_count": 0,
-    "legacy_freeze_branch_count": 13
-  },
-  "question_or_hypothesis": "Can small perturbations near hard top-k router boundaries create discrete selected-set churn and O(1) pooled-state changes, with boundary density increasing as module count grows at fixed k=4; and is the churn fully reducible to ordinary linear top-k hyperplane geometry?",
-  "inputs_used": {
-    "surface": "synthetic_only",
-    "event_dim": 24,
-    "active_k": 4,
-    "module_counts": [8, 12, 24, 48],
-    "epsilons": [0.005, 0.01, 0.05, 0.1],
-    "samples_per_cell": 6000,
-    "total_samples": 96000,
-    "seed": 20260919,
-    "repository_dataset_used": false,
-    "trained_checkpoint_used": false,
-    "formal_or_preserved_test_material_used": false
-  },
-  "implementation_or_experiment_performed": {
-    "branch": "research/exploratory-sub-topk-margin-churn-20260919",
-    "commit": "2d6152601ebb395822b763990f6dfaf19110453c",
-    "script": "scripts/exploratory_topk_router_margin_churn.py",
-    "handoff_artifact": "analysis/exploratory/sub/topk-router-margin-churn-cycle1.md",
-    "method": "Synthetic Gaussian linear router; exact analytic first top-k crossing radius along a random perturbation direction; compare hard selected-set turnover and pooled-state jump with smooth softmax-weighted pooling."
-  },
-  "observations": {
-    "boundary_predictor_accuracy_all_96000": 1.0,
-    "interpretation": "Raw hard top-k selected-set churn is exactly reduced to ordinary linear hyperplane crossing geometry in this synthetic setting.",
-    "turnover_rate_epsilon_0_05": {
-      "modules_8": 0.016666666666666666,
-      "modules_12": 0.023,
-      "modules_24": 0.029666666666666668,
-      "modules_48": 0.04133333333333333
-    },
-    "turnover_rate_epsilon_0_10": {
-      "modules_8": 0.034,
-      "modules_12": 0.04833333333333333,
-      "modules_24": 0.06516666666666666,
-      "modules_48": 0.081
-    },
-    "median_margin_epsilon_0_05": {
-      "modules_8": 0.2232190057121843,
-      "modules_12": 0.16848310136463923,
-      "modules_24": 0.11499528213234989,
-      "modules_48": 0.09582355456271974
-    },
-    "mean_turnover_state_jump_range": "approximately 1.6-1.7 L2",
-    "soft_pooling_behavior": "continuous / smooth under same perturbations",
-    "scientific_claim": false
-  },
-  "evidentiary_status": "NON_EVIDENTIARY",
-  "what_would_falsify_or_reduce_it": "On a prospectively specified DEV-only trained SparseRoutingModel study, reject/reduce if delayed state/output divergence is fully predicted by router margin plus selected-set turnover and is not meaningfully larger than a privilege-matched smooth or margin-matched baseline, or if realistic DEV margins make turnover negligible.",
-  "candidate_next_research_layer": "ARCHITECTURE_STUDY",
-  "scientific_choices_still_open": [
-    "perturbation norm and semantic axis",
-    "random initialization versus DEV-trained checkpoint",
-    "state/output divergence metric and horizon",
-    "smooth-router versus margin-matched comparator",
-    "router-margin normalization across module counts",
-    "prospective conditioning on selected-set turnover",
-    "resource matching for comparator"
-  ],
-  "recommendation": "PROMOTE_TO_ARCHITECTURE_STUDY",
-  "branches_prs_advanced": {
-    "research_branches_by_sub": ["research/exploratory-sub-topk-margin-churn-20260919"],
-    "research_commit": "2d6152601ebb395822b763990f6dfaf19110453c",
-    "prs_by_sub": []
-  },
-  "workflows_experiments": {
-    "formal_experiment_dispatched": false,
-    "scientific_workflow_dispatched": false,
-    "official_test_accessed": false,
-    "official_scoring_produced": false,
-    "ordinary_branch_ci": {
-      "run_id": 35430020142,
-      "status_when_observed": "queued",
-      "scientific_relevance": "repository CI only; not formal/scientific execution"
-    }
-  },
-  "scientific_readiness_exploratory_results": {
-    "sub_new_formal_result": false,
-    "sub_new_exploratory_result": true,
-    "new_formal_scientific_information": false,
-    "raw_selection_phenomenon_reduced": true,
-    "new_architecture_diagnostic": true
-  },
-  "consumed_identities": {
-    "by_sub": [],
-    "closed_or_historical_identities_reused": false
+    "evidence_analyst": "3e83f1eb683ce80e326b756fa304e96688fdd3fe",
+    "evidence_tag_count": 5,
+    "formal_tag_count": 0,
+    "legacy_freeze_branch_count": 13,
+    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "main_architecture_branch": "97f542d86dcd3a609cd039379fcda41ba61e0909",
+    "sealed_tag_count": 0
   },
   "blockers": [
-    "No formal SUB lane/fallback is allocated; Discovery only.",
-    "Any cycle-2 DEV architecture study requires fresh Analyst acceptance/promotion and prospective choices before execution."
+    "No blocker for Discovery cycle 1. Fresh Analyst review/specification is required before any promoted architecture study or cycle 2."
   ],
+  "branches_prs_advanced": {
+    "merged_to_main": false,
+    "prs": [],
+    "research_branches": [
+      {
+        "branch": "research/exploratory-sub-structural-order-path-dependence-20260919",
+        "head": "05aa366c661bba43fa0e3d5cb1957539bcedd66b"
+      }
+    ]
+  },
+  "candidate_next_research_layer": "ARCHITECTURE_STUDY",
+  "candidate_pool_id": null,
   "collision_reconciliation": {
-    "report_branch_tip_before_persistence": "5f037440607580fbfb4c1e1829bd127131d54c33",
-    "fresh_analyst_tip_rechecked": true,
-    "fresh_analyst_tip": "d8974f662e2fd36000125b643ae908030c3e8aac",
-    "main_ref_rechecked": true,
-    "research_target_branch_prechecked_absent": true,
-    "evidence_formal_sealed_freeze_control_preserve_refs_rechecked": true,
-    "prs_workflows_rechecked": true,
-    "main_collision_detected": false,
-    "append_only_history_path_prechecked_absent": true
+    "analyst_authority_unchanged_immediately_before_research_ref_update": "3e83f1eb683ce80e326b756fa304e96688fdd3fe",
+    "main_frontier_observed_complete_and_stopped_for_analyst_review": true,
+    "report_branch_refetched_before_persistence": "60c814f7244894f13063006d5512ac3f9ce8797e"
   },
-  "integrity_state": "CLEAN_DISCOVERY_SYNTHETIC_ONLY_NO_MAIN_DEPENDENCY_NO_FORMAL_BOUNDARY_NO_TEST_ACCESS_NO_IDENTITY_CONSUMPTION_NO_OFFICIAL_SCORING_CANONICAL_EVIDENCE_UNCHANGED",
-  "completion_target": "Select and execute one bounded high-information Discovery target, record NON_EVIDENTIARY observations and reduction test, and hand it to Evidence Analyst for promotion/rejection without touching MAIN or formal one-way surfaces.",
-  "completion_target_status": "ACHIEVED_DISCOVERY_CYCLE_1",
-  "fallback_status": "FORMAL_SUB_FALLBACK_ABSENT_DISCOVERY_FALLBACK_USED",
+  "completion_target": "ACHIEVED_ONE_BOUNDED_INDEPENDENT_DISCOVERY_CYCLE_WITH_REDUCTION_CONTROL_AND_ANALYST_HANDOFF",
+  "consumed_identities": [],
+  "consumed_lanes": [
+    "BOUNDED_SECONDARY_DISCOVERY"
+  ],
+  "evidence_analyst_commit": "3e83f1eb683ce80e326b756fa304e96688fdd3fe",
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "execution_allowed_for_formal_work": false,
+  "exploration_cycle": {
+    "current": 1,
+    "expected_new_information": "Test whether identical unlabeled structural observations are order-sensitive and whether any effect reduces to finite total-event budget or edge-event ordering.",
+    "max_default": 3
+  },
+  "exploratory_target": "STRUCTURAL_ORDER_PATH_DEPENDENCE_DISCOVERY",
+  "fallback_status": null,
+  "formal_sub_lane": null,
+  "implementation_experiment_performed": {
+    "aggregate": "analysis/discovery/structural-order-path-dependence-cycle1-aggregate.json",
+    "branch": "research/exploratory-sub-structural-order-path-dependence-20260919",
+    "commit": "05aa366c661bba43fa0e3d5cb1957539bcedd66b",
+    "conditions": [
+      "full",
+      "module_only",
+      "edge_only"
+    ],
+    "handoff": "analysis/discovery/structural-order-path-dependence-cycle1.md",
+    "orders_per_seed": 120,
+    "pair_samples_per_seed_condition_budget": 300,
+    "replicate_seeds": [
+      20260919,
+      20260920,
+      20260921,
+      20260922,
+      20260923
+    ],
+    "script": "scripts/discovery/structural_order_path_dependence.py",
+    "total_event_budgets": [
+      16,
+      64
+    ]
+  },
+  "inputs_used": {
+    "experiment_inputs": "synthetic unlabeled routing-load and edge-credit frames only",
+    "files_read": [
+      "src/sparkbrain/structural/controller.py",
+      "src/sparkbrain/structural/config.py",
+      "src/sparkbrain/structural/model.py",
+      "docs/C08_STRUCTURAL_PLASTICITY_RESULTS.md"
+    ],
+    "heldout_test_accessed": false,
+    "official_scorer_used": false,
+    "preserved_formal_raw_accessed": false,
+    "source_semantics": "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "trained_checkpoint_used": false
+  },
+  "integrity_state": {
+    "consumed_identity_rerun": false,
+    "formal_freeze_evidence_created": false,
+    "immutable_evidence_modified": false,
+    "official_score_created": false,
+    "sealed_or_one_way_test_access": false,
+    "started_or_control_created": false
+  },
+  "main_work_explicitly_avoided": [
+    "CAND-TOPK-PA-01 router/persistent-state branch and outcome",
+    "any CAND-TOPK-PA-01 follow-up or cycle 2",
+    "H5 independent audit",
+    "H7 mechanism/comparator construction",
+    "MAIN blockers and outcome-dependent successors"
+  ],
+  "mode": "discovery",
+  "observations": {
+    "budget16_edge_only": {
+      "edge_jaccard_mean": 0.0,
+      "module_jaccard_mean": 0.0,
+      "remaining_budget_mean": 0.0,
+      "unique_final_graphs_mean_of_120": 1.0
+    },
+    "budget16_full": {
+      "edge_jaccard_mean": 0.3298638417800739,
+      "module_jaccard_mean": 0.18769719887955186,
+      "remaining_budget_mean": 0.0,
+      "unique_final_graphs_mean_of_120": 116.4
+    },
+    "budget16_module_only": {
+      "edge_jaccard_mean": 0.2938602783926313,
+      "module_jaccard_mean": 0.206574358974359,
+      "remaining_budget_mean": 0.0,
+      "unique_final_graphs_mean_of_120": 95.6
+    },
+    "budget64_edge_only": {
+      "edge_jaccard_mean": 0.0,
+      "module_jaccard_mean": 0.0,
+      "remaining_budget_mean": 48.0,
+      "unique_final_graphs_mean_of_120": 1.0
+    },
+    "budget64_full": {
+      "edge_jaccard_mean": 0.3003272537756486,
+      "module_jaccard_mean": 0.23006432162608634,
+      "remaining_budget_mean": 40.18,
+      "unique_final_graphs_mean_of_120": 108.2
+    },
+    "budget64_module_only": {
+      "edge_jaccard_mean": 0.28177794612794616,
+      "module_jaccard_mean": 0.28177794612794616,
+      "remaining_budget_mean": 41.38,
+      "unique_final_graphs_mean_of_120": 70.8
+    },
+    "interpretation": "Synthetic path dependence persists for full/module-only conditions after total budget ceases to bind, while edge-only converges to one final graph. Candidate noncommutativity localizes to stateful duplicate/prune and active-slot history in this harness."
+  },
+  "question_hypothesis_reduction_question": "For the same multiset of synthetic unlabeled routing-load and edge-credit frames, is final structural topology order-sensitive, and is any sensitivity explained only by the production total-event budget or edge-event order?",
+  "recommendation": "PROMOTE_TO_ARCHITECTURE_STUDY",
   "rejected_lane": null,
-  "lane_rejected_reason": null,
-  "proposed_handoff_to_analyst": "PROMOTE_TO_ARCHITECTURE_STUDY if a DEV-only recurrent/persistence follow-up is judged useful. Do not promote raw top-k churn as novelty: cycle 1 already reduces selection turnover exactly to ordinary top-k boundary geometry. A future cycle should ask only whether recurrent persistent-state dynamics create delayed amplification beyond that ordinary boundary effect.",
-  "report_persistence": {
-    "history_path": "reports/orchestrator/history/2026-09-19/1642-sub.md",
-    "sub_latest_path": "reports/orchestrator/sub/latest.md",
-    "sub_state_path": "reports/orchestrator/sub/state.json",
-    "atomic_git_commit_requested": true,
-    "force_push_used": false,
-    "main_files_modified": false,
-    "legacy_shared_latest_state_modified": false
+  "scientific_choices_still_open": [
+    "fresh DEV-only task/regime construction and split",
+    "matched-multiset permutation family",
+    "identity-neutral graph matching",
+    "functional/output divergence metric and horizon",
+    "event-count/resource-matched module comparator",
+    "homeostatic router-bias factor"
+  ],
+  "scientific_readiness_exploratory_results": {
+    "discovery_result": "STRUCTURAL_ORDER_PATH_DEPENDENCE_OBSERVED_IN_SYNTHETIC_MODULE_EVENT_DYNAMICS",
+    "new_formal_evidence": false,
+    "new_formal_results": 0,
+    "promotion_boundary": "Analyst review; any next layer must be freshly prospective."
   },
-  "persistence_limitation": null
+  "selected_independent_lane": null,
+  "sub_active_claim": "One bounded NON_EVIDENTIARY structural path-dependence Discovery cycle completed; no formal claim.",
+  "sub_fallback": null,
+  "timestamp": "2026-09-19T17:36:08+09:00",
+  "utility_request_created": null,
+  "what_would_falsify_or_reduce_it": "Reject/reduce if a prospectively fixed fresh DEV-only matched-multiset order study has negligible topology/output divergence, if divergence collapses under an identity-neutral/resource-matched module-event comparator, or if topology differences are functionally/output invariant.",
+  "why_independent_of_main": "MAIN owns CAND-TOPK-PA-01 router/persistent-state architecture work and has stopped after a valid cycle-1 signal for Analyst review. This target instead probes structural-plasticity duplicate/prune path dependence using standalone synthetic frames and has no dependency on MAIN outcome.",
+  "worker_role": "sub",
+  "workflows_experiments": {
+    "branch_ci": {
+      "run_id": 35432790695,
+      "scientific_relevance": "ordinary repository CI only",
+      "status_when_observed": "in_progress"
+    },
+    "discovery_script_executed_locally": true,
+    "formal_workflow_dispatched": false,
+    "official_test_accessed": false
+  }
 }
