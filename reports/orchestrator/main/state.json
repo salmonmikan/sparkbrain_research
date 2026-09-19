@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-09-19T14:16:10+09:00",
+  "timestamp": "2026-09-19T15:16:45+09:00",
   "worker_role": "main",
   "execution_mode": "PRIMARY",
-  "analyst_commit": "ca0f19d52a80622bd6e4d6d61830f805c1f89234",
+  "analyst_commit": "8e8aa0924ff5c7dae99332d9babe7f3dd748f25b",
   "current_lane": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
   "current_phase": "NO_ACTIVE_FORMAL_FRONTIER_FRESH_OBJECT_ADMISSION_GATE_ONLY",
   "consumed_contingency_branches": [
     "NO_FRESH_OBJECT",
     "NI01_SENSITIVITY_BLOCKED_BY_ONE_WAY_SCORE_BOUNDARY"
   ],
-  "active_claim": "No active admitted primary experiment exists. Fresh Analyst authority closes the previously reserved NI01 world-label privilege sensitivity because the requested numeric result cannot be computed from the current target-blind preserved raw without crossing sealed/one-way TEST-target or post-terminal rescoring boundaries. The diagnostic is not reassigned to MAIN. MAIN remains on architecture/testbed HOLD.",
+  "active_claim": "No active admitted primary experiment exists. The 15:02 JST Evidence Analyst handoff reconfirms architecture/testbed HOLD, no new formal repository scientific evidence, no fresh primary object, and no allocation change. The integrity-closed NI01 world-label sensitivity remains closed and is not assigned to MAIN.",
   "authoritative_target_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "active_branch": null,
     "active_identity": null,
-    "evidence_analyst_handoff": "ca0f19d52a80622bd6e4d6d61830f805c1f89234",
-    "control_brain_branch_tip_observed": "1914db5b9b58b4d53bd0406adda062189d688cb8",
+    "evidence_analyst_handoff": "8e8aa0924ff5c7dae99332d9babe7f3dd748f25b",
+    "control_brain_branch_tip_observed": "6ed239b241a39f7d3e934e37751454c8bf3ebb4c",
     "research_ni01": "dbfe7469dbbbc1adbb00789ab382de892a1b3563",
     "ni01_started": "d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d",
     "ni01_raw_preserve": "8a39cf70e397bb7588f948910f01ec58672ac814",
@@ -35,18 +35,18 @@
     "research_workflow_run_ids": [],
     "control_plane_ci_observed": [
       {
-        "run_id": 35422993802,
+        "run_id": 35425862538,
         "branch": "ops/evidence-analyst-handoff",
-        "head_sha": "ca0f19d52a80622bd6e4d6d61830f805c1f89234",
+        "head_sha": "8e8aa0924ff5c7dae99332d9babe7f3dd748f25b",
         "status_when_observed": "completed",
         "conclusion_when_observed": "success",
         "scientific_relevance": "none"
       },
       {
-        "run_id": 35423401020,
+        "run_id": 35426018120,
         "branch": "ops/orchestrator-run-report",
-        "head_sha": "554910d0252a2aee01e1a41d114c0731702212f2",
-        "status_when_observed": "queued",
+        "head_sha": "01d818d6ac91e78aed1c9ffa9b0f701911e2d3a3",
+        "status_when_observed": "in_progress",
         "conclusion_when_observed": null,
         "scientific_relevance": "none"
       }
@@ -76,7 +76,7 @@
       "reassigned_to_main": false,
       "reopen_condition": "An already-safe separate non-canonical score surface or precomputed sufficient statistics must independently exist, followed by fresh prospective Analyst authorization."
     },
-    "allocation_change_this_run": true,
+    "allocation_change_this_run": false,
     "sub_lane": null,
     "sub_fallback": null
   },
@@ -92,53 +92,53 @@
   "blockers": [
     "Scientific object availability: no genuinely fresh independently motivated native reduction-resistant primary object is currently admitted.",
     "Formal MAIN execution remains blocked by the Evidence Analyst admission gate; current authority permits only bounded prospective NON_EVIDENTIARY readiness for a future fresh object and requires STOP at NEXT_OBJECT_READY_FOR_ANALYST_REVIEW.",
-    "NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY cannot be safely executed from the current target-blind preserved raw without sealed/one-way TEST-target access or a new post-terminal scoring surface; Analyst closed the lane rather than weakening integrity."
+    "NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY remains integrity-blocked under the current safe one-way scoring surface and must not be recreated by MAIN."
   ],
   "lease_collision_reconciliation": {
     "inherited_lease_status": "COMPLETED",
-    "inherited_run_id": "sparkbrain-main-primary-20260919T131708JST",
-    "inherited_heartbeat": "2026-09-19T13:20:06+09:00",
+    "inherited_run_id": "sparkbrain-main-primary-20260919T141235JST",
+    "inherited_heartbeat": "2026-09-19T14:16:00+09:00",
     "fresh_main_running_collision_found": false,
     "primary_lease_acquired": true,
-    "primary_lease_start_commit": "554910d0252a2aee01e1a41d114c0731702212f2",
+    "primary_lease_start_commit": "01d818d6ac91e78aed1c9ffa9b0f701911e2d3a3",
     "lease_rechecked_before_mutation": true,
     "analyst_ref_drift_found": false,
-    "analyst_ref_after_reconciliation": "ca0f19d52a80622bd6e4d6d61830f805c1f89234",
+    "analyst_ref_after_reconciliation": "8e8aa0924ff5c7dae99332d9babe7f3dd748f25b",
     "main_ref_drift_found": false,
-    "sub_latest_observed_mode": "formal_sub_lane",
-    "sub_latest_observed_commit": "317e2ec3abf4ab028e009299909030ea962f6445",
+    "sub_latest_observed_mode": "no_op",
     "sub_lane_after_current_analyst": null,
-    "sub_fallback_after_current_analyst": null
+    "sub_fallback_after_current_analyst": null,
+    "final_lease_status": "COMPLETED",
+    "final_lease_commit": "938ecb99b3dfc45ee63fa0bff0c4b9052e964c83"
   },
-  "integrity_status": "CLEAN_FAST_PATH_NO_FRESH_MAIN_OBJECT_NO_NEW_FORMAL_IDENTITY_NO_NEW_STARTED_NO_OFFICIAL_TEST_NO_NEW_PRESERVE_SCORE_EVIDENCE_NI01_CANONICAL_UNCHANGED_SUB_DIAGNOSTIC_CLOSED_WITHOUT_BOUNDARY_RELAXATION",
+  "integrity_status": "CLEAN_FAST_PATH_NO_FRESH_MAIN_OBJECT_NO_NEW_FORMAL_IDENTITY_NO_NEW_STARTED_NO_OFFICIAL_TEST_NO_NEW_PRESERVE_SCORE_EVIDENCE_NI01_CANONICAL_UNCHANGED_SUB_NULL_NO_OP",
   "critical_path_fixes_completed": [],
   "same_run_steps": [
-    "Consumed Evidence Analyst latest/state/history at ca0f19d52a80622bd6e4d6d61830f805c1f89234.",
+    "Consumed Evidence Analyst latest/state/history at 8e8aa0924ff5c7dae99332d9babe7f3dd748f25b.",
     "Read MAIN latest/state/lease, SUB latest for collision/allocation avoidance, and Control Brain only as strategic prior.",
     "Re-fetched authoritative main directly and confirmed ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d.",
     "Re-fetched inherited MAIN lease and confirmed no fresh competing RUNNING heartbeat/collision.",
-    "Acquired PRIMARY RUNNING lease at commit 554910d0252a2aee01e1a41d114c0731702212f2.",
-    "Re-fetched Evidence Analyst and main again before durable report mutation and found no drift.",
-    "Observed Evidence Analyst CI 35422993802 completed/success and MAIN lease control-plane CI 35423401020 queued; no research workflow existed to wait on.",
+    "Acquired PRIMARY RUNNING lease at commit 01d818d6ac91e78aed1c9ffa9b0f701911e2d3a3.",
+    "Re-fetched Evidence Analyst immediately before durable report persistence and found no drift.",
+    "Observed Evidence Analyst CI 35425862538 completed/success and MAIN lease control-plane CI 35426018120 in progress; no research workflow existed to wait on.",
     "Applied NO_FRESH_OBJECT -> MAIN HOLD.",
-    "Applied NI01_SENSITIVITY_BLOCKED_BY_ONE_WAY_SCORE_BOUNDARY -> close SUB lane / return SUB no-op; did not absorb or recreate the diagnostic in MAIN.",
+    "Preserved NI01_SENSITIVITY_BLOCKED_BY_ONE_WAY_SCORE_BOUNDARY closure; did not absorb or recreate the diagnostic in MAIN.",
     "Performed no research/scientific mutation and crossed no formal boundary.",
-    "Persisted final COMPLETED lease without waiting on control-plane CI."
+    "Persisted latest.md, append-only 1512-main.md, final COMPLETED lease, and state.json without force-push."
   ],
-  "stop_reason": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_NI01_SUB_DIAGNOSTIC_INTEGRITY_CLOSED",
-  "work_left_for_SUB": "None under current Analyst allocation. The prior NI01 sensitivity lane is closed; SUB returns to no-op unless a fresh independent bounded NON_EVIDENTIARY question is prospectively authorized.",
-  "lane_repartition_reason": "Fresh Analyst authority closed the previously reserved NI01 sensitivity as integrity-blocked under the current safe scoring surface. It was not transferred to MAIN because doing so would require the same forbidden sealed/one-way TEST-target or post-terminal scoring access.",
-  "next_MAIN_action": "Remain in architecture/testbed HOLD. If and only if a fresh Evidence Analyst handoff prospectively admits a genuinely fresh independently motivated native reduction-resistant primary object, MAIN owns all authorized critical-path implementation/fixup work and must stop at that handoff's review boundary. Do not reopen the closed NI01 diagnostic by manufacturing a score surface, do not reopen LP01, and do not reuse consumed identities.",
+  "stop_reason": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_ANALYST_1502_RECONFIRMED",
+  "work_left_for_SUB": "None under current Analyst allocation. SUB remains no-op with null lane/fallback unless a fresh independent bounded NON_EVIDENTIARY question is prospectively authorized.",
+  "lane_repartition_reason": null,
+  "next_MAIN_action": "Remain in architecture/testbed HOLD. If and only if a fresh Evidence Analyst handoff prospectively admits a genuinely fresh independently motivated native reduction-resistant primary object, MAIN owns all authorized critical-path implementation/fixup work and must stop at that handoff's review boundary. Do not reopen the closed NI01 diagnostic, LP01, or consumed identities.",
   "write_path_diagnostics": {
     "github_direct_write_attempted": true,
     "github_direct_write_succeeded": true,
     "force_push_used": false,
-    "lease_start_commit": "554910d0252a2aee01e1a41d114c0731702212f2",
-    "latest_commit": "832eeea1a5e634c1af823b6206cb60da91287053",
-    "state_initial_commit": "8e63874b11b2aa7639c0f57ce287e1c27b8704ee",
-    "history_commit": "5b45756be0a954d4a57d88733b24aedb3cf453df",
-    "history_path": "reports/orchestrator/history/2026-09-19/1412-main.md",
+    "lease_start_commit": "01d818d6ac91e78aed1c9ffa9b0f701911e2d3a3",
+    "latest_commit": "e13d2e9fb2b90a38edfa8845003d0c6256d0810e",
+    "history_commit": "123756de900db9f201d6d35625ca65cc7ba14f72",
+    "history_path": "reports/orchestrator/history/2026-09-19/1512-main.md",
     "history_path_prechecked_absent": true,
-    "completion_lease_commit": "1ab2ab1072229d431a3b985051f1a9419a8bf3e3"
+    "completion_lease_commit": "938ecb99b3dfc45ee63fa0bff0c4b9052e964c83"
   }
 }
