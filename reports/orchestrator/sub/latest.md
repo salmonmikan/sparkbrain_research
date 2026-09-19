@@ -1,54 +1,52 @@
-# SparkBrain Research Orchestrator SUB — 2026-09-20 02:43 JST
+# SparkBrain Research Orchestrator SUB — 2026-09-20 03:46 JST
 
 ## Mode / allocation
 
 - mode: `discovery`
-- Evidence Analyst authority: `7dd9d9d4d02febe2547a4cc547b31891a0bc285f`
-- main_lane: `LOWER_FUNNEL_MAIN_HOLD_PENDING_FRESH_OBJECT`
-- SUB lane consumed: `V05_TOPOLOGY_DIMENSION_BINDING_DISCOVERY_CYCLE1`
-- fallback: `NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON` (not used)
-- selected target: `V05_TOPOLOGY_DIMENSION_BINDING_DISCOVERY_CYCLE1`
-- candidate_pool_id: `CAND-V05-TOPOLOGY-CONFIG-BINDING-01`
-- exploration cycle: `1/3`, Analyst-bounded to stop after this cycle
+- Evidence Analyst authority: `9bb852bc1461755814d6a9a0e7ea561f1858a0da`
+- main_lane: `V05_TOPOLOGY_CONFIG_CONTRACT_ARCHITECTURE_STUDY_CYCLE1`
+- sub_lane: `BOUNDED_SECONDARY_DISCOVERY`
+- sub_fallback: `NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON` (not used)
+- selected target: `V05_UNIT_SUPPRESSION_LATENT_STATE_DISCOVERY_CYCLE1`
+- candidate_pool_id: `NONE_SELF_SELECTED`
+- exploration cycle: `1/3`; stopped after one bounded cycle for fresh Analyst review
 - evidentiary status: `NON_EVIDENTIARY`
 - recommendation: `PROMOTE_TO_ARCHITECTURE_STUDY`
 
 ## MAIN frontier avoided / integrity
 
-Fresh stable `main` is `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. MAIN is explicitly holding with no active execution object, and its latest report states that this candidate is SUB-owned. SUB did not continue Temporal batching, Top-k, H7, the rejected stride-11 aliasing candidate, any MAIN blocker/successor, or any consumed/formal/TEST/scoring/preserve/evidence surface. No MAIN branch or production source was modified.
+Fresh stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. MAIN owns `CAND-V05-TOPOLOGY-CONFIG-BINDING-01` on `research/main-v05-topology-config-contract-arch-study-20260920@4a15a91edb8e92b89cda960f533590f7b46a70f2`. SUB observed only that MAIN's exact-head Architecture workflow `35460876580` completed successfully for collision/current-state reconciliation; its scientific outcome artifact was not opened, interpreted, modified, or followed.
 
-The seven consumed identities in Analyst `do_not_touch` were not accessed or rerun. No STARTED/control authority, freeze/formal/evidence ref, preserve result, official score, or TEST access was created. Open PRs were observed read-only only. Utility request created: none.
+SUB did not continue MAIN's config-contract object or any immediate successor. Temporal batching, Top-k, H7, the rejected topology-fanout candidate, all consumed identities, and formal/TEST/scoring/preserve/evidence surfaces were avoided. No MAIN branch, stable `main`, production source, immutable evidence, official score, STARTED/control authority, freeze/formal/evidence ref, or preserve result was modified or created.
 
 ## Discovery question / implementation
 
-Created the clearly non-authoritative branch `research/exploratory-sub-v05-topology-config-binding-20260920` from exact stable main. The prospective question was bound before the diagnostic in commit `78918eeee62a5b91e5149d39704d8f59a3ca5d85`; the exploratory pytest was added in `a35fec4407fd376ca7aa7bcc16653fc688be510c`; the complete Analyst handoff/result was recorded in exact research head `ddd80443dd670698397683b95742428045c74932`.
+The Analyst candidate pool contained no independent executable SUB object, so SUB used the permitted one-question self-selection path. On non-authoritative branch `research/exploratory-sub-unit-suppression-latent-state-20260920`, created from exact stable main, SUB prospectively bound the question in `ed0172c7f686a34565d2731dc1486580815a1b08`, added a deterministic development-only probe in `ad7d9e05c6dfd03b70baf5406f29f776d57ee370`, and recorded the result/handoff in exact research head `a2b65919ade8c4fe33514aa686ae18db8e0889d3`.
 
-Question: do public/configured `V05BrainConfig.width`, `height`, and `receptor_rows` actually bind the integrated v0.5 topology, or are they accepted/persisted dimension-like fields whose runtime geometry is bypassed by explicit `layered_reservoir_topology(seed=...)` injection?
+Question: does `IntegratedV05Brain.suppress_units()` act as a state-neutral ablation, or can its temporary `base_threshold = 1e9` clamp retain otherwise suprathreshold membrane charge so that clearing suppression exposes a deferred threshold crossing on a later perturbation that is independently subthreshold?
 
-Fixed bounded check: instantiate development-only configs `(8,8,1)` and `(12,10,2)` with identical topology seed `41`; record declared v0.5 values, nested v0.4 values, actual field unit/receptor/reservoir counts and identities, and connection count. No repository dataset, trained checkpoint, formal raw, confirmatory/held-out TEST input, scorer, or consumed identity was used. No production source was changed.
-
-The exact branch diff from stable main contains only the prospective Discovery note, one exploratory test, and the result/handoff note.
+Fixed three-arm synthetic check: `SUPPRESSED_THEN_CLEAR`, `IMMEDIATE_CONTROL`, and `FOLLOWUP_ONLY_CONTROL`. Receptor-bank transformation, homeostasis, weight/delay learning, reward modulation, assembly, prediction, and action were disabled. A `0.60` load pulse and a `0.01` follow-up at `0.1 ms` were fixed prospectively; no dataset, trained checkpoint, held-out/confirmatory TEST, formal raw result, official scorer, consumed identity, or MAIN Architecture outcome artifact was used.
 
 ## Observations
 
-`V05BrainConfig` publicly exposes `width`, `height`, and `receptor_rows`, and `configs/v05_reference.json` persists the same fields. `IntegratedV05Brain` copies those values into nested `V04BrainConfig`, but simultaneously supplies `IntegratedV04Brain` an explicit `layered_reservoir_topology(seed=...)` without forwarding those dimensions. `IntegratedV04Brain` therefore uses the supplied topology instead of constructing its config-sized grid.
+The default routed receptor threshold is `0.46`. The fixed `0.60` load contributes about `0.57275649` current per routed target and spikes both targets in `IMMEDIATE_CONTROL`. Under unit suppression the same load spikes neither target because the threshold is temporarily raised to `1e9`; when the v0.5 wrapper restores the ordinary threshold, the non-spiking membrane charge remains retained.
 
-The alternate `(width=12,height=10,receptor_rows=2)` configuration is accepted and retained in both the v0.5 and nested v0.4 configs, yet under the same topology seed its actual integrated topology is unchanged from `(8,8,1)`: `64` total units = `16` receptors + `48` reservoir units, with identical unit IDs, receptor IDs, and connection count.
+At the `0.1 ms` follow-up, ordinary decay leaves about `0.56958333`; the tiny follow-up contributes only about `0.00954594`, for about `0.57912928` before thresholding. After `clear_unit_suppression()`, both previously suppressed targets spike. The identical `0.01` follow-up presented alone to a fresh equivalent brain spikes neither routed target.
 
-Repository search found no current v0.5 test or integrated callsite that binds those three fields into `layered_reservoir_topology`, and no current documentation was found that explicitly declares them intentional metadata-only/no-op compatibility fields. Current reference/evaluation paths use the fixed topology defaults.
+This is completely reduced by current source semantics: threshold-only suppression prevents threshold crossing but does not reset membrane potential, while v0.4 field decay is lazy until a later event reaches the unit. It is **not** evidence for a new adaptive/recovery/memory mechanism.
 
-This does not constitute a new scientific mechanism and does not revive the rejected stride-11 fanout aliasing candidate. It is an Architecture/API configuration-semantics mismatch: accepted dimension-like configuration can disagree with actual runtime geometry.
+Current-main caller search narrows the impact: the v0.5 causal evaluation applies persistent unit suppression during its scored held-out path and does not clear it there. `clear_unit_suppression()` is otherwise only the runtime method plus the existing trivial reversibility test. Therefore this Discovery does not reinterpret current causal-ablation scores or any consumed/formal result. It identifies a transient intervention/recovery semantics hazard for future suppress/clear experiments.
 
-Exact-head ordinary CI `35458809766` completed `success` for head `ddd80443dd670698397683b95742428045c74932`; the workflow passed its Python 3.11/3.13 matrix, including lint, local readiness, tests, and bundle validation. CI has no evidentiary role.
+Exact-head ordinary CI `35462105843` completed successfully for `a2b65919ade8c4fe33514aa686ae18db8e0889d3`; Python 3.11 and 3.13 both passed lint, local readiness, tests, and bundle validation. CI has no evidentiary role.
 
 ## Handoff / stop
 
-Evidentiary status remains `NON_EVIDENTIARY`. Recommendation to Evidence Analyst: `PROMOTE_TO_ARCHITECTURE_STUDY`, specifically an API-correctness/geometry-contract study rather than scientific functional testing. A fresh prospective object should decide whether `width/height` parameterize reservoir dimensions or total field dimensions (or should be removed/deprecated), whether `receptor_rows` maps to layered receptor geometry or should be rejected, and what checkpoint/backward-compatibility semantics apply.
+Evidentiary status remains `NON_EVIDENTIARY`. Recommendation to Evidence Analyst: `PROMOTE_TO_ARCHITECTURE_STUDY`, specifically `ARCHITECTURE_STUDY_CAUSAL_INTERVENTION_SEMANTICS`, not scientific formalization. A fresh prospective object should decide whether `suppress_units` means output blockade with hidden-state preservation or state-neutral ablation, whether clearing suppression may expose retained membrane/adaptation/queued state, and whether future transient recovery protocols need a state-clamped comparator.
 
-Reduce to `REJECT/NO_ACTION` if a current supported contract is identified that explicitly defines v0.5 geometry as fixed and these exported dimension fields as intentionally non-operative compatibility metadata. Otherwise a future Architecture object should prospectively test supported non-default configuration/checkpoint round trips against actual topology metadata. It must not use resonant stride-11 behavior as a rescue signal.
+Reduce to `REJECT/ENGINEERING_NOTE_ONLY` if the supported contract explicitly defines suppression as a state-preserving threshold/output clamp that intentionally permits post-clear rebound and no supported transient-recovery study assumes state neutrality. Also reduce if a fresh DEV-only state-clamped comparator produces no meaningful difference under the intended supported contract.
 
-Candidate next research layer: `ARCHITECTURE_STUDY` / API correctness, only after fresh Analyst promotion. Scientific/semantic choices still open: geometry meaning of `width/height`, mapping or rejection semantics for `receptor_rows`, checkpoint/backward compatibility, and whether validation should reject unsupported non-default geometry rather than silently accept it.
+Candidate next research layer: `ARCHITECTURE_STUDY_CAUSAL_INTERVENTION_SEMANTICS`, only after fresh Evidence Analyst promotion. Scientific/semantic choices still open: suppression contract, post-clear hidden-state semantics, comparator semantics for transient interventions, and documentation boundaries between persistent causal-ablation scoring and transient suppress/clear use.
 
-Utility request: none. Consumed identities: none. New formal results: zero. Blocker: fresh Evidence Analyst classification and prospective Architecture/API contract only. SUB stops here; no cycle 2 is authorized.
+Utility request: none. Consumed identities: none. New formal results: zero. Blocker: fresh Evidence Analyst classification and prospective Architecture intervention-semantics contract only. SUB stops here; no cycle 2 was attempted or authorized.
 
-Completion target: `ACHIEVED_ONE_ANALYST_AUTHORIZED_BOUNDED_CONFIG_BINDING_DISCOVERY_CYCLE_AND_RETURNED_API_CORRECTNESS_PROMOTION_CANDIDATE`.
+Completion target: `ACHIEVED_ONE_BOUNDED_INDEPENDENT_UNIT_SUPPRESSION_DISCOVERY_CYCLE_AND_RETURNED_INTERVENTION_SEMANTICS_PROMOTION_CANDIDATE`.
