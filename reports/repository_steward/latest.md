@@ -1,25 +1,26 @@
 # SparkBrain Repository Steward — Latest
 
-Timestamp: 2026-09-19 19:50 JST
-Selected role: `REPOSITORY_STEWARD` from the 19:50 JST slot; no role inference required.
+Timestamp: 2026-09-20 01:50 JST
+Selected role: `REPOSITORY_STEWARD` from the 01:50 JST slot; no role inference required.
 
 ## Overall
 Repository doctrine remains **partially compliant with strong science/control-plane separation**. `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` remains stable shared substrate and unprotected. No new FORMAL scientific object, STARTED authority, immutable scientific anchor, or authoritative evidence tag has appeared.
 
-The material upstream change since the prior Steward run is allocation/scientific-funnel activity, not a repository-governance mutation. Control Brain has explicitly replaced programme-wide HOLD with `FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL`. Evidence Analyst has now completed fresh review of the lower-layer work: `CAND-TOPK-PA-01` replicated its prospectively fixed local Architecture Study signal on cycle 2 but remains NON_EVIDENTIARY and is held at `ARCHITECTURE_STUDY`; `CAND-STRUCTURAL-ORDER-PATH-01` is the next MAIN Architecture Study; SUB's reward-omission Discovery was rejected after exact reduction to current implementation semantics. This is consistent with repository doctrine: active unresolved/noncanonical work remains off `main`, and no lower-layer result was promoted into canonical FORMAL evidence.
+The material governance update is a **NON_EVIDENTIARY artifact-to-handoff fidelity defect** in the completed Temporal batch-partition Architecture Study. MAIN independently reconciled the exact workflow artifact and found that the 01:15 Evidence Analyst handoff preserves the correct high-level mapped outcome (`FUNCTIONAL_BATCH_PARTITION_EFFECT`) and correct HOLD/no-promotion decision, but reverses which timeline family exhibited schedule/functional divergence and records a different contract digest. This is decision-nonchanging, but it is a real control-plane fidelity issue. Steward does not reinterpret or repair the scientific record; MAIN has already produced a durable reconciliation and Methodology Calibration has filed a dedicated read-only Utility request, so no duplicate Issue is warranted.
+
+A fresh SUB Discovery also produced a repository-scoped Architecture candidate: stride-11 receptor fanout aliases physical first-hop projections at reservoir sizes sharing a factor with 11. It remains explicitly NON_EVIDENTIARY, exactly reducible to modular routing geometry, and isolated on `research/*`. No main promotion or canonical evidence mapping is appropriate.
 
 No governance mutation beyond this Steward record is warranted.
 
 ## Fresh reconciliation
 All `ops/*` branches were treated only as designated mailboxes; unrelated branch contents were not used as repository state.
 
-- Control Brain mailbox tip: `566f3b7c590fcfe2b9e8aaa0415da964989b1124` (18:50 JST). Current operating doctrine is `FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL`. Human directive `HUMAN-20260919-002` is accepted: repository protection/rulesets remain read-only deferred governance state unless a materially changed concrete integrity risk or new human direction appears.
-- Evidence Analyst mailbox tip: `9c6302d83f71ab22d45c5f6290951a48902d9c1e` (19:47 JST). It keeps FORMAL empty/HOLD, holds Top-k at Architecture Study, authorizes exactly one DEV-only structural-order Architecture cycle, and creates no formal identity/evidence authority.
-- Orchestrator mailbox tip: `075144b199c3d0f863c131b886012dba34f20e8b`.
-- MAIN latest: 19:14 JST. Top-k cycle 2 completed on `research/main-topk-persistent-amplification-arch-study-20260919@04ced2b97ed088bb2cdb086d164a86212741e601`; workflow `35435714352` completed `success`; terminal local result is `PERSISTENCE_SIGNAL_REPLICATED`, explicitly NON_EVIDENTIARY, followed by the mandatory Analyst stop.
-- SUB latest: 19:42 JST. `PLASTICITY_REWARD_OMISSION_BASELINE_DISCOVERY` completed on `research/exploratory-sub-plasticity-reward-omission-20260919@bdcd068db2f7d645e323d6fc7e4e2172bcc6d1cb`; exact-head CI `35437912586` completed `success`; result is `REJECT` as a scientific candidate because current reward-trace recurrence exactly explains the observation.
-- Promoted structural-order Discovery source remains `research/exploratory-sub-structural-order-path-dependence-20260919@8156bba7b119fb831b7c28eac7cd900746f9876e`. No fresh MAIN Architecture implementation/workflow for that candidate had appeared at this Steward snapshot.
-- Utility mailbox tip: `4d8a98637e07e8a7f560b47012c573f34c643068`. The one-run `CTRL-20260919-1850-ARCH-SIGNAL-ROBUSTNESS` diagnostic is complete with `MIXED` / `ADD_PER_STRATUM_SUPPORT`, explicitly NON_EVIDENTIARY and with no research/evidence mutation. Evidence Analyst has appended a fresh proposal `EVA-20260919-1943-TOPK-CROSS-SEED-SUPPORT`; disposition/assignment remains Control Brain authority, not Steward authority.
+- Control Brain mailbox tip: `3b2ff0f8ecb845c486b6e5806d58c36df24657de` (00:50 JST). Programme position remains `FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL`; Temporal batching is Architecture/engineering information, Top-k remains HOLD, FORMAL remains empty, and repository protection remains deferred absent changed concrete integrity risk.
+- Evidence Analyst mailbox tip: `e781202e8c7ae4562c10fa46cdddfb3b0eb1bc08` (01:15 JST). It closes the Temporal cycle at Architecture HOLD and creates no FORMAL authority. Its high-level classification/allocation is unchanged by the later fidelity reconciliation.
+- Orchestrator mailbox tip: `c98c06554123ee561b82843deec91af341afddc0`.
+- MAIN latest: 01:24 JST. Temporal workflow `35451528895` completed `success` on exact research head `7fa4391bbf34cf25e10b708ce64acddf07bf7f42`. Exact artifact metadata reports contract SHA-256 `eb4aa28cd4b7299302ac31a65c73586c4e5a17e5487b1d1ddf43757cee901049`; `repetition_train_defaults` is schedule/replay invariant, while `noisy_motif_stream_defaults` differs in both omission schedule and replay observables. The Analyst handoff instead records contract digest `681c21e31c686be7d8beb10e927ef65510ce82689c2cc81ae5fd9fedc179c06d` and reverses the family-level narrative. MAIN labels this `YELLOW_NON_DECISION_CHANGING_ANALYST_DESCRIPTIVE_MISMATCH`, performs no science continuation, and ends at HOLD.
+- SUB latest: 01:47 JST. `TOPOLOGY_RECEPTOR_FANOUT_ALIASING_DISCOVERY` completed on `research/exploratory-sub-topology-fanout-aliasing-20260920@daaf9a865d4ba5911640d127f55dc8d44a75e078`; exact-head CI `35455915055` completed `success`. Resonant reservoir sizes `44,55,66,88` collapse nominal receptor routing classes through fixed stride-11 modular aliasing. Recommendation is `PROMOTE_TO_ARCHITECTURE_STUDY`, explicitly NON_EVIDENTIARY and subject to fresh Analyst prospective specification.
+- Utility mailbox tip: `1e28e558a985db1c05bf81ef1033028b39ee9018`. Prior Top-k assignment is correctly `COMPLETED`, `active_assignment: false`. Methodology Calibration has added proposal `METHCAL-20260920-0120-ARTIFACT-HANDOFF-FIDELITY`, requesting a bounded read-only audit of artifact IDs/digests/outcome/family summaries against durable handoffs. Disposition/assignment belongs to Control Brain; Steward makes no Utility write.
 
 Fresh remote facts independently rechecked:
 
@@ -36,48 +37,50 @@ Fresh remote facts independently rechecked:
 ## Doctrine drift found / corrected / deferred
 
 ### Compliant
-- `main` has not absorbed Top-k, structural-order, reward-omission, Utility methodology, or other unresolved scientific semantics.
-- Active lower-layer science remains under `research/*`; the successful Top-k replication was not misrepresented as PRE_FORMAL or FORMAL evidence.
-- SUB stopped reward-omission after an exact ordinary reduction instead of polishing a reduced phenomenon into a claim.
-- Utility remained read-only/NON_EVIDENTIARY and did not become a hidden MAIN critical-path dependency.
-- Authoritative evidence remains annotated-tag based; five evidence tags are unchanged and legacy freeze branches remain preserved.
-- Canonical scientific truth remains git-managed; Issue #139 is operational governance tracking only.
+- `main` has not absorbed Temporal batching, Top-k, topology aliasing, or Utility/Methodology diagnostic semantics.
+- Active unresolved science remains under `research/*`; lower-layer success or reproducibility has not been relabeled as PRE_FORMAL or FORMAL evidence.
+- MAIN stopped after exact artifact reconciliation and did not use the descriptive mismatch to authorize a Temporal cycle 2.
+- SUB kept the stride-11 topology finding NON_EVIDENTIARY and returned it for fresh Analyst review instead of self-promoting it.
+- Utility remains read-only/proposal driven and has no active assignment after the completed Top-k diagnostic.
+- Authoritative evidence remains annotated-tag based; five evidence tags are unchanged and all thirteen legacy freeze branches remain preserved.
+- Canonical scientific truth remains git-managed; Issue #139 remains operational governance tracking only.
 
 ### Corrected this run
-**None.** No Issue, PR, preservation mapping, branch, tag, ruleset, or scientific source required Steward mutation.
+**None.** No Issue, PR, preservation mapping, scientific branch, tag, ruleset, scheduler, or canonical scientific source required Steward mutation.
 
 ### Deferred / non-blocking
-- server-side authoritative-tag update/delete protection remains absent (`rulesets=0`) and `main` remains unprotected, but under accepted human direction this is **deferred read-only governance state**, not a current implementation priority or research prerequisite absent a concrete changed risk;
-- legacy freeze branch-to-tag migration remains deferred; there is no need to manufacture tag mirrors while protection semantics remain deferred;
-- PR #148/#149 remain deferred pending their correctness review fixes;
-- Utility `assignment/current.md` still describes the completed 18:50 assignment as `ASSIGNED` while Utility `state.json` reports `COMPLETED`. This is a control-plane presentation lag only: execution state is explicit, the assignment's max-runs stop was obeyed, and only Control Brain may replace/update the current assignment. Steward makes no Utility write.
+- Temporal artifact-to-handoff fidelity mismatch: **defer to fresh Evidence Analyst/Control review and the dedicated Methodology Utility proposal**. Do not edit the completed artifact, retroactively alter experimental contracts, or create a duplicate Issue. The high-level outcome and allocation agree, so this is a fidelity/control-plane defect rather than a changed scientific result.
+- server-side authoritative-tag update/delete protection remains absent (`rulesets=0`) and `main` remains unprotected. Under accepted human direction this remains read-only deferred governance state; no immutable-ref integrity incident was observed.
+- legacy freeze branch-to-tag migration remains deferred; no mass migration or mirror creation is justified.
+- PR #148/#149 remain deferred pending correctness fixes.
+- SUB topology aliasing remains research-local pending fresh Analyst classification; even an Architecture promotion would remain NON_EVIDENTIARY.
 
 ## Issue audit / changes
-Issue #139 remains current and unchanged. It correctly lists all five authoritative evidence tags, records repository rulesets as zero, preserves legacy freeze branches, and states that scheduled Stewardship cannot administer rulesets. The newer accepted human direction changes **priority**, not the factual issue content: keep it open as a deferred governance record, but do not actively advance protection work unless concrete integrity risk or human direction changes.
+Issue #139 remains current and unchanged. It correctly lists all five authoritative evidence tags, records repository rulesets as zero, preserves legacy freeze branches, and states the scheduled Steward cannot administer rulesets. The Temporal fidelity mismatch does **not** justify a new Issue in this run because MAIN has already persisted the exact reconciliation and Methodology has already created a dedicated high-information read-only Utility request; a second operational tracker would duplicate ownership.
 
 Issue changes this run: **0**. New Issues: **0**.
 
 ## Freeze migration / preservation mapping
 Legacy `freeze/*` branches remain **13** and untouched. Authoritative annotated `evidence/*` tags remain **5** and untouched. No tag-based `freeze/*`, `formal/*`, or `sealed/*` tags exist.
 
-No branch-to-tag mirror was created; `reports/repository_steward/legacy_freeze_map.md` was not changed. No new safe/necessary SHA-equivalent migration case arose, and migration work would be low-value while the current scientific funnel is active.
+No branch-to-tag mirror was created and no preservation mapping was changed. Temporal Architecture, topology aliasing Discovery, Top-k Architecture, and Utility/Methodology diagnostics are NON_EVIDENTIARY and must not be inserted into canonical evidence mappings.
 
 ## Tag protection / ruleset status
 Read-only state remains: repository rulesets **0**, `main` unprotected, and no server-side routine update/delete protection for authoritative `freeze/*`, `sealed/*`, `formal/*`, or `evidence/*` namespaces. No ruleset/protection mutation was attempted.
 
-This remains a real structural protection gap, but not a new incident: exact immutable refs were independently re-read and remain unchanged, and there is no observed retarget/delete event. Under current accepted human direction, Steward records the gap without escalating it into competing implementation work.
+The new Temporal fidelity defect is **not** an immutable-tag integrity incident: no evidence tag, freeze branch, STARTED ref, or preserve ref was retargeted or deleted. Therefore it does not materially change the accepted deferment of protection work.
 
 ## Preserve-index / mapping changes
-None. No new FORMAL identity, raw preserve, scored preserve, or evidence anchor appeared. The Top-k Architecture Study cycles, structural-order candidate, reward-omission Discovery result, and Utility methodology diagnostics are all NON_EVIDENTIARY and must not be inserted into canonical scientific evidence mappings merely because they are useful or reproducible.
+None. No new FORMAL identity, raw preserve, scored preserve, or evidence anchor appeared. The exact Temporal artifact discrepancy is a control-plane transcription/fidelity matter and must not be repaired by rewriting canonical scientific evidence or preservation indexes.
 
 Historical H5/NI01 control and raw-preserve refs were independently re-fetched and match the prior authoritative identities. No preserve/control/evidence ref was modified by Stewardship.
 
 ## Main-promotion review
 No promotion was performed.
 
-Neutral, outcome-independent substrate remains structurally eligible for a future small reviewed extraction onto current `main`: architecture-neutral event/distribution primitives, generic comparator protocol shape without scientific taxonomy, snapshot/restore invariants, descriptive resource accounting, generic privilege/leakage guards, and external-only transcript validation.
+Neutral, outcome-independent substrate remains structurally eligible for future small reviewed extraction onto current `main`: architecture-neutral event/distribution primitives, generic comparator protocol shape without scientific taxonomy, snapshot/restore invariants, descriptive resource accounting, generic privilege/leakage guards, and external-only transcript hashing/validation.
 
-Current Top-k persistence/amplification semantics, structural-order/path-dependence study semantics, reward-omission diagnostic semantics, support/robustness methodology diagnostics, and future causal-credit/discriminator semantics remain **RESEARCH_ONLY / NON-MAIN**. Scientific reproducibility at the lower layer is not by itself a main-promotion criterion.
+Two additional implementation ideas are only **potential future neutral substrate**, not current promotion candidates: a generic event-time/partition-invariance validation helper, and a generic routing-collision/fanout validator. Either would need to be detached from the observed Temporal outcome or stride-11 candidate semantics, made stable/reusable, and tested independently before main promotion. Current Temporal semantics, exact artifact-reconciliation details, stride-11 topology semantics, Top-k semantics, and Methodology fidelity diagnostics remain **RESEARCH_ONLY / CONTROL-PLANE_ONLY**.
 
 PR #148 remains `DEFER_PENDING_REVIEW_FIX`: it is open/mergeable, but unresolved review findings still require explicit reading of the fetched `ops/human-directives` ref, remote publication/reconciliation of committed directives, and retained-history-safe directive ID allocation.
 
@@ -91,8 +94,8 @@ Verified untouched by this Steward run: all 13 legacy `freeze/*` branches; all f
 Stewardship executed no experiment, dispatched no research workflow, consumed no identity, decided no scientific freeze, created no scientific evidence anchor, merged no research PR, modified no scheduler definition, and changed no ruleset/protection setting.
 
 ## Next Steward priorities
-1. Preserve the science/repository separation while MAIN begins the Analyst-authorized structural-order Architecture Study; ensure any resulting lower-layer artifacts remain research-scoped unless a fresh prospective promotion decision occurs.
-2. Keep Top-k cycle-2 replication and Utility support diagnostics out of canonical evidence mappings while Analyst keeps the candidate on Architecture HOLD.
-3. Keep Issue #139 open as deferred read-only governance state; do not spend research throughput on protection deployment absent concrete changed risk or fresh human direction.
-4. Preserve all legacy freeze/evidence/control/preserve refs exactly; do not mass-mirror, retarget, delete, or rewrite.
+1. Keep the Temporal exact artifact and both durable descriptions immutable; allow Evidence Analyst/Control/Utility to resolve the fidelity gap prospectively without turning Steward into a scientific interpretation owner.
+2. Keep `TOPOLOGY_RECEPTOR_FANOUT_ALIASING_DISCOVERY` research-scoped through any fresh Analyst Architecture decision; do not promote stride-11-specific semantics to `main`.
+3. Preserve all legacy freeze/evidence/control/preserve refs exactly and keep lower-funnel/Methodology artifacts out of canonical evidence mappings.
+4. Keep Issue #139 open as deferred read-only governance state; do not divert research throughput into protection deployment absent changed concrete immutable-ref risk.
 5. Re-review PR #148/#149 only after their outstanding correctness findings are actually fixed; mergeability alone is insufficient.
