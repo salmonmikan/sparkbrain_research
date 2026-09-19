@@ -1,138 +1,210 @@
 {
-  "generated_at_jst": "2026-09-20T00:50:00+09:00",
+  "generated_at_jst": "2026-09-20T02:50:00+09:00",
   "role": "CONTROL_BRAIN",
-  "selected_slot_jst": "00:50",
+  "selected_slot_jst": "02:50",
   "role_inference_required": false,
   "foundational_doctrine_change": false,
-  "operating_doctrine_change": true,
-  "operating_doctrine_change_summary": "Prospective temporal-expectation reduction/correctness ladder now explicitly includes non-anticipation, event-time versus processing-time separation, and partition invariance under fixed timestamped history. Batch boundaries are non-semantic by default unless contractually declared semantic.",
+  "operating_doctrine_change": false,
   "programme_position": "FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL",
   "central_theory_status": "NO_HIGH_VALUE_FORMAL_OBJECT",
   "central_theory": "A central novelty claim remains admissible only for a native intervention-validated lineage-specific causal-responsibility effect that is prospectively positive and survives ordinary history/provenance/actual-causality and local-learning/recurrent/plastic reductions under matched information, readout, task/world/regime-label, and resource privilege. No current object clears this FORMAL admission bar.",
   "human_directives": {
-    "HUMAN-20260918-001": {"disposition": "ACCEPT", "status": "UNCHANGED", "reason": "Only stable outcome-independent reusable substrate is main-eligible; consumed/result-dependent science is not wholesale-promoted."},
-    "HUMAN-20260919-002": {"disposition": "ACCEPT", "status": "UNCHANGED", "reason": "Protection/ruleset deployment remains deferred absent materially changed concrete integrity risk; the factual gap remains recorded."},
+    "HUMAN-20260918-001": {"disposition": "ACCEPT", "status": "UNCHANGED", "reason": "Review only stable outcome-independent reusable CX/comparator substrate for main promotion; do not wholesale-promote consumed/result-dependent science."},
+    "HUMAN-20260919-002": {"disposition": "ACCEPT", "status": "UNCHANGED", "reason": "Protection/ruleset deployment remains deferred absent materially changed concrete integrity risk; factual protection gap remains recorded."},
     "HUMAN-20260919-003": {"disposition": "ACCEPT", "status": "UNCHANGED", "reason": "Use Discovery/Architecture/Pre-formal for substantive forward motion while preserving the strict FORMAL integrity floor and avoiding low-value governance churn."}
   },
+  "authoritative_repository": {
+    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "main_protected": false,
+    "evidence_tag_count": 5,
+    "legacy_freeze_branch_count": 13,
+    "repository_ruleset_count": 0,
+    "active_sub_config_binding_head": "ddd80443dd670698397683b95742428045c74932",
+    "active_sub_config_binding_ci": {"run": 35458809766, "status": "completed", "conclusion": "success"},
+    "pr_148": {"state": "open", "merged": false, "mergeable": true, "head": "14ba187bb13705bc306baabe310d5364cf1b60fb"},
+    "pr_149": {"state": "open", "merged": false, "mergeable": true, "head": "db85c4503c9895adf4ace00bcacaf62df07a34e2"}
+  },
   "research_funnel": {
-    "DISCOVERY": {"status": "ACTIVE_PRODUCTIVE", "owner": "SUB_DEFAULT", "latest_target": "FIELD_SOURCE_LINEAGE_CAP_PERMUTATION_SENSITIVITY_DISCOVERY", "latest_classification": "REJECT_EXACT_PROVENANCE_BUFFER_BOOKKEEPING_REDUCTION", "evidentiary_status": "NON_EVIDENTIARY"},
-    "ARCHITECTURE_STUDY": {"status": "ACTIVE_RESULT_PENDING_FRESH_ANALYST", "active_candidate": "CAND-TEMPORAL-BATCH-PARTITION-01", "workflow": 35451528895, "workflow_status": "COMPLETED_SUCCESS", "durable_orchestrator_status": "WAITING_EXTERNAL_STALE_RELATIVE_TO_WORKFLOW", "literature_observed_local_label": "FUNCTIONAL_BATCH_PARTITION_EFFECT_NON_EVIDENTIARY_PENDING_ANALYST", "topk": "HOLD_UTILITY_MIXED_NO_CYCLE3_NO_PRE_FORMAL", "assembly": "REJECT_NO_OR_LOW_SUPPORT"},
+    "DISCOVERY": {
+      "status": "EXPLORATORY_PRODUCTIVE",
+      "owner": "SUB_DEFAULT",
+      "latest_target": "CAND-V05-TOPOLOGY-CONFIG-BINDING-01",
+      "exploration_cycle": 1,
+      "latest_classification": "DISCOVERY_COMPLETE_PROMOTE_TO_ARCHITECTURE_STUDY_RECOMMENDATION_PENDING_ANALYST",
+      "evidentiary_status": "NON_EVIDENTIARY"
+    },
+    "ARCHITECTURE_STUDY": {
+      "status": "HOLD_NO_ACTIVE_MAIN_OBJECT",
+      "main_active_candidate": null,
+      "temporal": "HOLD_AFTER_RECONCILED_CYCLE1_FUNCTIONAL_BATCH_PARTITION_EFFECT_NON_EVIDENTIARY",
+      "topk": "HOLD_UTILITY_MIXED_NO_CYCLE3_NO_PRE_FORMAL",
+      "v05_config_binding": "PENDING_FRESH_ANALYST_PROMOTION_DECISION"
+    },
     "PRE_FORMAL": {"status": "EMPTY_HOLD"},
     "FORMAL": {"status": "EMPTY_HOLD", "fresh_identity": null, "started": null, "test_authority": false}
   },
   "candidate_pool": [
-    {"id": "CAND-TEMPORAL-BATCH-PARTITION-01", "layer": "ARCHITECTURE_STUDY", "status": "CYCLE1_RESULT_AVAILABLE_PENDING_FRESH_ANALYST", "research_head": "7fa4391bbf34cf25e10b708ce64acddf07bf7f42", "workflow": 35451528895, "workflow_conclusion": "success", "artifact_digest": "sha256:22a5c650a58501a1dc8303118c366845201f9eba8453a22996f5fb4ca4d6428f", "evidentiary_status": "NON_EVIDENTIARY", "next_gate": "Fresh Evidence Analyst review only; no cycle 2, implementation repair, PRE_FORMAL or FORMAL continuation."},
-    {"id": "CAND-TOPK-PA-01", "layer": "ARCHITECTURE_STUDY", "status": "HOLD", "cycles": "DISCOVERY 1; ARCHITECTURE 2; UTILITY READ_ONLY 1", "utility_classification": "MIXED", "next_gate": "Fresh Analyst-defined ordinary-reduction successor only if justified; no cycle 3 or PRE_FORMAL automatically."},
-    {"id": "CAND-ASSEMBLY-PROTOTYPE-LOCKIN-01", "layer": "ARCHITECTURE_STUDY", "status": "REJECT", "reason": "Both fixed DEV seeds returned 0/12 representation-divergent pairs and no downstream disagreement; no rescue cycle."},
-    {"id": "FIELD_SOURCE_LINEAGE_CAP_PERMUTATION_SENSITIVITY_DISCOVERY", "layer": "DISCOVERY", "status": "REJECT", "reason": "Physical state unchanged; full state-hash difference is exactly bounded last-16 source-provenance bookkeeping with no causal source-ID consumer found."},
-    {"id": "CAND-H5-AUDIT-01", "layer": "READ_ONLY_AUDIT", "status": "AUDITED_ROBUST_SO_FAR", "interpretation": "Canonical FAIL valid for exact registered algorithmic-work contract; global all-edge eligibility maintenance is the dominant audited bottleneck; not a general event-routing/lazy-execution no-go theorem."},
-    {"id": "CAND-H7-RESP-01", "layer": "HOLD", "status": "NO_NATIVE_OBJECT"}
+    {
+      "id": "CAND-V05-TOPOLOGY-CONFIG-BINDING-01",
+      "layer": "DISCOVERY",
+      "status": "CYCLE1_COMPLETE_PENDING_ANALYST",
+      "research_head": "ddd80443dd670698397683b95742428045c74932",
+      "ci_run": 35458809766,
+      "evidentiary_status": "NON_EVIDENTIARY",
+      "observation": "Public V05 geometry fields are accepted/serialized and retained in nested config but the integrated topology construction path does not forward them; alternate bounded config did not change realized integrated topology.",
+      "ordinary_interpretation": "API/configuration-semantics correctness or binding gap, not mechanism novelty.",
+      "next_gate": "Fresh Evidence Analyst decision; no cycle 2 from Control."
+    },
+    {
+      "id": "CAND-TEMPORAL-BATCH-PARTITION-01",
+      "layer": "ARCHITECTURE_STUDY",
+      "status": "HOLD_AFTER_RECONCILED_CYCLE1",
+      "research_head": "7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
+      "workflow": 35451528895,
+      "mapped_outcome": "FUNCTIONAL_BATCH_PARTITION_EFFECT",
+      "evidentiary_status": "NON_EVIDENTIARY",
+      "next_gate": "No cycle 2/PRE_FORMAL without fresh prospective question."
+    },
+    {
+      "id": "CAND-TOPK-PA-01",
+      "layer": "ARCHITECTURE_STUDY",
+      "status": "HOLD",
+      "utility_classification": "MIXED",
+      "next_gate": "Fresh Analyst-defined support/reduction successor only; no cycle 3 or PRE_FORMAL automatically."
+    },
+    {"id": "CAND-H7-RESP-01", "layer": "HOLD", "status": "NO_NATIVE_OBJECT"},
+    {"id": "TOPOLOGY_RECEPTOR_FANOUT_ALIASING_DISCOVERY", "layer": "DISCOVERY", "status": "REJECT", "reason": "Exact modular stride aliasing and current integrated default N=48 is non-resonant."}
   ],
   "external_input": {
-    "literature": {"latest_generated_jst": "2026-09-20T00:30:00+09:00", "consumed_by_control": true, "consumed_by_evidence_analyst": false, "affected_line": "CAND-TEMPORAL-BATCH-PARTITION-01", "impact": "Strong ordinary architecture reduction to non-anticipation/event-time semantics and partition invariance; current result is API/reproducibility information, not computational-principle novelty."},
-    "audit": {"latest_generated_jst": "2026-09-19T22:31:00+09:00", "consumed_by_control": true, "consumed_by_evidence_analyst": true, "target": "H5", "classification": "ROBUST_SO_FAR", "impact": "Preserve exact canonical FAIL; narrow interpretation to registered work contract; global eligibility maintenance is an architecture bottleneck."}
+    "literature": {
+      "latest_generated_jst": "2026-09-20T00:30:00+09:00",
+      "consumed_by_control": true,
+      "consumed_by_evidence_analyst": true,
+      "affected_line": "CAND-TEMPORAL-BATCH-PARTITION-01",
+      "impact": "Ordinary reduction/correctness ladder is non-anticipation, event-time versus processing-time separation, and partition invariance."
+    },
+    "audit": {
+      "latest_generated_jst": "2026-09-19T22:31:00+09:00",
+      "consumed_by_control": true,
+      "consumed_by_evidence_analyst": true,
+      "target": "H5",
+      "classification": "ROBUST_SO_FAR",
+      "impact": "Preserve exact canonical FAIL; global eligibility maintenance is an architecture bottleneck, not a general event-routing no-go theorem."
+    }
   },
   "methodology_calibration": {
-    "latest_generated_jst": "2026-09-20T00:22:00+09:00",
-    "classification": "WELL_CALIBRATED",
-    "material_change": true,
+    "latest_generated_jst": "2026-09-20T02:20:00+09:00",
+    "latest_commit": "ecb11ef282614beb324d20fb69e20e60684b432d",
+    "classification": "MIXED_CALIBRATION",
     "consumed_by_control": true,
     "consumed_by_evidence_analyst": false,
-    "impact": "Keep hard FORMAL floor, claim-type separation, support-aware prospective Architecture gating, and stop-after-cycle review; do not fit a universal Top-k support rule from completed outcomes."
+    "impact": "Temporal mismatch was correctly reconciled without scientific reclassification, but programme-wide artifact-to-handoff fidelity remains unproven; tighten provenance binding prospectively, not the novelty bar.",
+    "utility_request": "METHCAL-20260920-0120-ARTIFACT-HANDOFF-FIDELITY"
   },
   "main": {
-    "classification": "HEALTHY",
-    "latest_durable_jst": "2026-09-20T00:23:00+09:00",
-    "current_lane": "TEMPORAL_EXPECTATION_BATCH_PARTITION_ARCHITECTURE_STUDY_CYCLE1",
-    "active_object": "CAND-TEMPORAL-BATCH-PARTITION-01",
-    "research_head": "7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
-    "workflow": 35451528895,
-    "workflow_status": "COMPLETED_SUCCESS",
-    "durable_status": "WAITING_EXTERNAL",
-    "integrity": "CLEAN_PROSPECTIVE_BINDING_NO_FORMAL_AUTHORITY"
+    "classification": "NO_OP_BY_DESIGN",
+    "latest_durable_jst": "2026-09-20T02:22:00+09:00",
+    "analyst_commit": "7dd9d9d4d02febe2547a4cc547b31891a0bc285f",
+    "current_lane": "LOWER_FUNNEL_MAIN_HOLD_PENDING_FRESH_OBJECT",
+    "active_object": null,
+    "integrity": "CLEAN_NO_MUTATION_NO_FORMAL_AUTHORITY"
   },
   "sub": {
     "classification": "EXPLORATORY_PRODUCTIVE",
-    "latest_jst": "2026-09-20T00:41:00+09:00",
+    "latest_jst": "2026-09-20T02:43:00+09:00",
     "mode": "discovery",
-    "target": "FIELD_SOURCE_LINEAGE_CAP_PERMUTATION_SENSITIVITY_DISCOVERY",
-    "cycle": "1/3",
-    "recommendation": "REJECT",
-    "evidentiary_status": "NON_EVIDENTIARY"
+    "target": "CAND-V05-TOPOLOGY-CONFIG-BINDING-01",
+    "cycle": "1/3_PROGRAMME_BUDGET_BUT_ANALYST_BOUNDED_TO_ONE",
+    "recommendation": "PROMOTE_TO_ARCHITECTURE_STUDY",
+    "evidentiary_status": "NON_EVIDENTIARY",
+    "research_head": "ddd80443dd670698397683b95742428045c74932",
+    "ci_run": 35458809766,
+    "ci_conclusion": "success"
   },
-  "relay": {"classification": "DELAYED", "reason": "MAIN workflow completed successfully but no post-workflow role-suffixed Relay history or updated MAIN durable handoff was present at the 00:50 snapshot; do not infer failure yet or duplicate Relay work."},
+  "relay": {
+    "classification": "NO_OP_BY_DESIGN",
+    "reason": "Current MAIN handoff is explicit HOLD with no expected continuation; no relay advancement is needed."
+  },
   "utility_request_bus": {
     "decisions": {
-      "SUB-20260919-2344-TEMPORAL-EXPECTATION-BATCHING-CALLSITE-AUDIT": "SUPERSEDED",
+      "METHCAL-20260920-0120-ARTIFACT-HANDOFF-FIDELITY": "ACCEPT",
       "LIT-20260919-1830-TOPK-HYBRID-TRANSIENT": "DEFER",
       "EVA-20260919-1943-TOPK-CROSS-SEED-SUPPORT": "COMPLETED_PRIOR_ACCEPT",
       "METHCAL-20260919-1818-ARCH-SIGNAL-SUPPORT": "COMPLETED_PRIOR_ACCEPT"
     },
-    "decision_commit": "22ccc78c19a4def427717f3dac21fc2ee52bdf1f",
+    "decision_commit": "dc953e8276e2b832495e8a33fd4a89752bbe9e86",
     "assignment": {
-      "assignment_id": "CTRL-20260919-2250-TOPK-CROSS-SEED-SUPPORT",
-      "status": "COMPLETED",
-      "active_assignment": false,
+      "assignment_id": "CTRL-20260920-0250-ARTIFACT-HANDOFF-FIDELITY",
+      "status": "ASSIGNED",
+      "active_assignment": true,
       "max_runs": 1,
-      "run_count": 1,
-      "diagnostic_classification": "MIXED",
-      "recommendation": "ADD_MORE_ARCHITECTURE_SUPPORT",
-      "assignment_closure_commit": "b993c07ec9860dc271b5da6720dae6158689aa7d",
-      "next_assignment": null
+      "run_count": 0,
+      "expiry": "2026-09-20T05:00:00+09:00",
+      "mode": "READ_ONLY_ARTIFACT_HANDOFF_CONSISTENCY_AUDIT",
+      "evidentiary_status": "NON_EVIDENTIARY_METHODOLOGY_FIDELITY_DIAGNOSTIC",
+      "assignment_commit": "04d6964167cb17308c2b32a5b0f0694ebdf96141"
     }
   },
   "knowledge_flow": {
-    "evidence_analyst_latest_jst": "2026-09-20T00:00:00+09:00",
-    "pending_for_analyst": ["Temporal batch-partition cycle-1 completed exact-head artifact / proper Relay closure", "2026-09-20 00:30 Literature event-time/non-anticipation reduction", "2026-09-20 00:22 Methodology Calibration WELL_CALIBRATED update", "2026-09-20 00:41 SUB field-source lineage-cap Discovery REJECT"],
+    "evidence_analyst_latest_jst": "2026-09-20T02:01:14+09:00",
+    "evidence_analyst_commit": "7dd9d9d4d02febe2547a4cc547b31891a0bc285f",
+    "pending_for_analyst": [
+      "2026-09-20 02:43 SUB CAND-V05-TOPOLOGY-CONFIG-BINDING-01 Discovery result and promotion recommendation",
+      "2026-09-20 02:20 Methodology Calibration MIXED_CALIBRATION update",
+      "Future one-run Utility artifact-handoff fidelity result once completed"
+    ],
     "status": "FRESH_POST_HANDOFF_INPUTS_PENDING_NEXT_CYCLE"
   },
   "fleet": {
     "fleet_status": "YELLOW",
     "critical_failures": [],
-    "operational_defects": ["Relay durable continuation lags the completed MAIN temporal-batching workflow at this snapshot.", "Scheduler-registry manifest still reflects the pre-override Control cadence rather than the current temporary faster Control cadence; treat as reconciliation debt, not authority expansion."],
+    "operational_defects": [
+      "Generic artifact-to-handoff fidelity has not yet been demonstrated; Temporal was manually reconciled and a one-run Utility audit is assigned."
+    ],
     "scheduler_classification": {
       "control_repository_steward": "HEALTHY",
       "evidence_analyst": "HEALTHY",
-      "main_primary": "HEALTHY",
-      "main_relay": "DELAYED",
+      "main_primary": "NO_OP_BY_DESIGN",
+      "main_relay": "NO_OP_BY_DESIGN",
       "sub": "EXPLORATORY_PRODUCTIVE",
       "external_literature": "HEALTHY",
       "external_audit": "HEALTHY",
       "methodology_calibration_auditor": "HEALTHY",
       "utility_orchestrator": "HEALTHY",
-      "current_state_brief": "UNKNOWN"
+      "current_state_brief": "HEALTHY"
     },
-    "efficiency_findings": ["Lower-funnel throughput is substantive despite FORMAL HOLD.", "Do not manufacture Utility work while MAIN has a fresh Architecture result awaiting review and SUB is independently productive.", "Do not prioritize ruleset deployment or scheduler timing churn over current safe scientific throughput."]
+    "efficiency_findings": [
+      "Lower-funnel throughput is substantive: SUB produced a new independent API/config semantics candidate while MAIN correctly remained on HOLD.",
+      "Utility is being used for one narrow cross-role reliability question rather than manufactured research activity.",
+      "Protection/ruleset deployment remains lower priority absent a concrete integrity incident."
+    ]
   },
   "scheduler_controller_action": "NO_CHANGE",
   "scheduler_controller": {
     "non_utility_mutations": 0,
     "utility_live_reconfiguration": false,
     "scheduler_registry_modified": false,
-    "reason": "No high-value timing or live Utility semantic change is justified. The temporary Control cadence is recent explicit direction and pinned; Relay lag should be observed across subsequent cycles before changing offsets."
+    "reason": "The generic hourly Utility scheduler can consume the Git assignment; no fleet timing change is justified. The temporary Control cadence remains pinned as recent explicit direction."
   },
   "repository_doctrine": {
     "status": "CURRENT_RESEARCH_SEPARATION_HEALTHY_PROTECTION_DEFERRED",
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "evidence_tag_count": 5,
     "legacy_freeze_branch_count": 13,
-    "tag_based_formal_count": 0,
-    "tag_based_sealed_count": 0,
-    "tag_based_freeze_count": 0,
     "main_protected": false,
+    "repository_ruleset_count": 0,
     "protection_rules_action": "DEFERRED_BY_ACCEPTED_HUMAN_DIRECTIVE_ABSENT_NEW_CONCRETE_RISK",
     "immutable_refs_untouched": true
   },
-  "top_priority": "Fresh Evidence Analyst closure of CAND-TEMPORAL-BATCH-PARTITION-01 cycle 1 using the exact prospectively bound artifact, with non-anticipation/event-time/partition-invariance treated as the ordinary architecture reduction ladder.",
+  "top_priority": "Fresh Evidence Analyst review of CAND-V05-TOPOLOGY-CONFIG-BINDING-01 to decide prospectively whether it merits one bounded Architecture/API correctness study or should be rejected/no-action.",
   "direction_to_evidence_analyst": [
-    "Collect/verify the completed temporal-batching Architecture artifact through the proper MAIN/Relay handoff and classify it under the precommitted outcome map without elevating it to PRE_FORMAL or FORMAL evidence.",
-    "Consume the 00:30 Literature reduction: non-anticipation, event-time/processing-time separation and partition invariance are ordinary temporal semantics; explicit atomic-batch semantics carry look-ahead privilege.",
-    "Consume the 00:22 WELL_CALIBRATED methodology update.",
-    "Record SUB field-source lineage-cap Discovery as ordinary provenance-buffer bookkeeping REJECT with no rescue cycle.",
-    "Keep Top-k HOLD after the completed MIXED Utility diagnosis; any successor must be a fresh prospectively defined ordinary-reduction Architecture object."
+    "Review SUB CAND-V05-TOPOLOGY-CONFIG-BINDING-01 and decide prospectively whether to promote one bounded Architecture Study; if promoted, fix intended geometry/receptor_rows semantics and backward-compatibility success conditions before further measurement.",
+    "Consume the 02:20 MIXED_CALIBRATION methodology update; after Utility completes, decide whether a generic machine-verifiable artifact-to-handoff fidelity guard is warranted prospectively.",
+    "Keep Temporal and Top-k HOLD unless a genuinely new prospectively specified question appears.",
+    "Preserve FORMAL HOLD and all consumed identities."
   ],
   "utility_control_commits": {
-    "decision": "22ccc78c19a4def427717f3dac21fc2ee52bdf1f",
-    "assignment_closure": "b993c07ec9860dc271b5da6720dae6158689aa7d"
+    "decision": "dc953e8276e2b832495e8a33fd4a89752bbe9e86",
+    "assignment": "04d6964167cb17308c2b32a5b0f0694ebdf96141"
   }
 }
