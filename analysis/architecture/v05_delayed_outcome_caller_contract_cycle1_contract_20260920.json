@@ -1,0 +1,75 @@
+{
+  "schema": "sparkbrain-architecture-study-contract-v1",
+  "candidate_id": "CAND-V05-DELAYED-OUTCOME-ATTRIBUTION-01",
+  "lane": "V05_DELAYED_OUTCOME_CALLER_CONTRACT_ARCHITECTURE_STUDY_CYCLE1",
+  "research_layer": "ARCHITECTURE_STUDY",
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "analyst_authority": "850b4502cf15d3f6118a487c5ab4ba81fbf7b75e",
+  "question": "Is learn_outcome explicitly immediate-only, explicitly delayed/interleaved, or publicly unspecified, given that current credit state is a single mutable pending slot overwritten by each process_episode?",
+  "source_binding": {
+    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "src/sparkbrain/v05/brain.py": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
+    "src/sparkbrain/v05/evaluation.py": "efd52d236708aea3bf23b6139d8717b1ac1d0559",
+    "tests/v05/test_v05_brain.py": "6a81994ac82a3f0660585ef0d95495aaaa336629",
+    "examples/v05_assembly_demo.py": "e4bab1adf0bfc66db3d6c72ba8d934d151cbeaf1"
+  },
+  "fixed_callsite_surface": [
+    "src/sparkbrain/v05/brain.py",
+    "src/sparkbrain/v05/evaluation.py",
+    "tests/v05/test_v05_brain.py",
+    "examples/v05_assembly_demo.py"
+  ],
+  "facts_to_record_before_interpretation": [
+    "public_or_source_docs_explicitly_require_immediately_preceding_process_episode",
+    "delayed_or_interleaved_use_explicitly_supported",
+    "any_supported_callsite_has_intervening_process_episode_before_learn_outcome",
+    "process_episode_overwrites_pending_activation",
+    "process_episode_overwrites_pending_action",
+    "learn_outcome_has_episode_or_decision_identity_parameter",
+    "learn_outcome_reads_pending_activation",
+    "learn_outcome_rewards_current_action_policy_pending_state"
+  ],
+  "callsite_classification": [
+    "AFTER_OUTCOME_KNOWN",
+    "SAME_PASS_OR_PRE_OUTCOME",
+    "NOT_CALLED"
+  ],
+  "machine_fact_policy": {
+    "method": "AST_STRUCTURAL_PLUS_EXACT_BLOB_HASHES",
+    "required": [
+      "IntegratedV05Brain.process_episode does not invoke learn_outcome",
+      "all learn_outcome occurrences are inventoried on the exact fixed callsite surface",
+      "pending_activation and pending_action overwrite points are recorded structurally",
+      "learn_outcome signature identity fields are recorded structurally"
+    ],
+    "invalid_on_mismatch": true,
+    "post_outcome_repair_forbidden": true
+  },
+  "terminal_mapping": {
+    "EXPLICIT_IMMEDIATE_ONLY_PUBLIC_CONTRACT": "All supported/canonical callsites use learn_outcome only after the immediately preceding process_episode and the bound public/source contract explicitly requires that ordering.",
+    "EXPLICIT_DELAYED_OR_INTERLEAVED_PUBLIC_CONTRACT_WITH_IDENTITY_GAP": "The bound public/source contract explicitly supports delayed or interleaved outcome learning while learn_outcome lacks identity sufficient to bind feedback to the originating episode/decision.",
+    "IMMEDIATE_ONLY_USAGE_BUT_PUBLIC_CONTRACT_UNSPECIFIED": "Observed supported/canonical usage is immediate-after-process_episode, no supported callsite interleaves another process_episode, but the bound public/source contract does not explicitly constrain delayed/interleaved use.",
+    "MIXED_OR_CONTRADICTORY_CALLER_CONTRACT": "Supported/canonical callsites or explicit contract statements disagree on immediate versus delayed/interleaved semantics.",
+    "INVALID_STATIC_CHARACTERIZATION": "Any source/blob/head/callsite/AST binding mismatch, incomplete occurrence inventory, or need for a new semantic choice beyond this contract."
+  },
+  "precedence": [
+    "INVALID_STATIC_CHARACTERIZATION",
+    "MIXED_OR_CONTRADICTORY_CALLER_CONTRACT",
+    "EXPLICIT_DELAYED_OR_INTERLEAVED_PUBLIC_CONTRACT_WITH_IDENTITY_GAP",
+    "EXPLICIT_IMMEDIATE_ONLY_PUBLIC_CONTRACT",
+    "IMMEDIATE_ONLY_USAGE_BUT_PUBLIC_CONTRACT_UNSPECIFIED"
+  ],
+  "forbidden": [
+    "dynamic interleaving probe",
+    "official TEST",
+    "consumed/formal surface",
+    "STARTED identity",
+    "formal scorer",
+    "preserve/evidence mutation",
+    "production source mutation",
+    "rerun or retune after terminal visibility",
+    "same-run cycle 2",
+    "automatic PRE_FORMAL or FORMAL promotion"
+  ],
+  "stop_condition": "Any valid terminal or INVALID_STATIC_CHARACTERIZATION stops for fresh Evidence Analyst review. No dynamic continuation is authorized in this cycle."
+}
