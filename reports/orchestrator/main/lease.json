@@ -1,14 +1,14 @@
 {
-  "run_id": "sparkbrain-main-primary-20260919T151232JST",
+  "run_id": "sparkbrain-main-primary-20260919T161801JST",
   "execution_mode": "PRIMARY",
-  "status": "COMPLETED",
-  "started_at": "2026-09-19T15:12:32+09:00",
-  "heartbeat_at": "2026-09-19T15:16:30+09:00",
+  "status": "RUNNING",
+  "started_at": "2026-09-19T16:18:01+09:00",
+  "heartbeat_at": "2026-09-19T16:24:00+09:00",
   "analyst_commit": "8e8aa0924ff5c7dae99332d9babe7f3dd748f25b",
   "active_branch": null,
   "active_identity": null,
-  "active_step": "PROGRAMME_ARCHITECTURE_TESTBED_HOLD_ANALYST_1502_RECONFIRMED",
+  "active_step": "FULL_RECONCILIATION_NEWER_EXTERNAL_LITERATURE_AFTER_ANALYST",
   "workflow_run_id": null,
-  "expected_next_action": "Remain in architecture/testbed HOLD. Continue only if a fresh Evidence Analyst handoff prospectively admits a genuinely fresh independently motivated native reduction-resistant primary object; then MAIN owns all authorized critical-path implementation/fixup work and stops at the specified review boundary. Do not reopen the integrity-closed NI01 sensitivity, LP01, or any consumed identity.",
+  "expected_next_action": "Reconcile the Evidence Analyst authority against newer external literature at ops/external-research-audit-handoff@ea84b5d9f2c1fc6d4d0478d0506a897c280cb8f0. Do not self-authorize science from literature; verify broader authoritative refs, preserve HOLD unless fresh Analyst authority admits a primary object, then persist durable MAIN state.",
   "owner": "main"
 }
