@@ -1,14 +1,14 @@
 {
   "run_id": "sparkbrain-main-primary-20260920T0815JST",
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "WAITING_EXTERNAL",
   "started_at": "2026-09-20T08:15:01+09:00",
-  "heartbeat_at": "2026-09-20T08:15:01+09:00",
+  "heartbeat_at": "2026-09-20T08:21:00+09:00",
   "analyst_commit": "850b4502cf15d3f6118a487c5ab4ba81fbf7b75e",
   "active_branch": "research/main-v05-delayed-outcome-caller-contract-arch-study-20260920",
   "active_identity": null,
-  "active_step": "V05_DELAYED_OUTCOME_CALLER_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_PROSPECTIVE_BINDING",
-  "workflow_run_id": null,
-  "expected_next_action": "Bind the exact stable-main source/callsite scope and fixed static terminal mapping before interpretation; execute only one read-only NON_EVIDENTIARY Architecture characterization if binding remains exact.",
+  "active_step": "V05_DELAYED_OUTCOME_CALLER_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_STATIC_TERMINAL_CI_PENDING",
+  "workflow_run_id": 35475862604,
+  "expected_next_action": "Collect ordinary CI 35475862604 for exact head c79c5434222a6d018931dc1752e7f0074c23854b. If it succeeds, persist COMPLETED and stop for fresh Evidence Analyst review. Do not execute dynamic interleaving, semantic redesign, cycle 2, PRE_FORMAL, or FORMAL without new authority.",
   "owner": "main"
 }
