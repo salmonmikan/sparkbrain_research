@@ -19,7 +19,10 @@ _DIMENSIONS = (
 _RECEPTOR_COUNT = 16
 
 
-def _receptor_signatures(width: int, height: int) -> dict[int, tuple[tuple[int, float, float], ...]]:
+def _receptor_signatures(
+    width: int,
+    height: int,
+) -> dict[int, tuple[tuple[int, float, float], ...]]:
     topology = layered_reservoir_topology(
         receptor_count=_RECEPTOR_COUNT,
         reservoir_width=width,
