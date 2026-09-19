@@ -1,28 +1,32 @@
 {
-  "timestamp": "2026-09-19T12:30:00+09:00",
+  "timestamp": "2026-09-19T15:32:48+09:00",
   "role": "LITERATURE_REDUCTION_SCOUT",
-  "schedule_slot_jst": "12:30",
+  "schedule_slot_jst": "15:30",
   "control_plane_mailbox_semantics_respected": true,
   "repository_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "lp01": "research/lp01-actual-lineage-causal-credit-spec-20260918@f6d59a55730c5f99cd7f30470847fc3f175bdf64",
+    "ni01": "research/ni01-no-ignition-selective-prediction-spec-20260918@dbfe7469dbbbc1adbb00789ab382de892a1b3563",
+    "h5": "research/h5-event-routing-work-reduction-spec-20260918@2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
+    "h9_c07": "research/c07-h9-fully-spiking-readiness-sub-20260917@9480da3d77dfee4766b28757f1a164f5cd4dac26",
     "authoritative_evidence_tag_count": 5,
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
     "legacy_freeze_branch_count": 13,
     "new_formal_identity_observed": false,
-    "active_formal_test_observed": false
+    "active_formal_test_observed": false,
+    "relevant_open_prs": [148, 149]
   },
-  "control_brain_commit_consumed": "1914db5b9b58b4d53bd0406adda062189d688cb8",
-  "control_brain_latest_blob_consumed": "bb67445fda73c6e62f3712fce88b5100df15e9ac",
-  "evidence_analyst_commit_consumed": "2c1caa7063feabde079725e198e09b273d005a80",
-  "main_report_commit_consumed": "f55fe8250c14c65b0ae91bd8b0bb5511f794e49e",
-  "main_history_blob_consumed": "f695bb5502ec056e48ae8d6990d26dbd771539c1",
-  "sub_report_commit_consumed": "44284b5de7240bd794633ec5d1543c22dfb216f4",
-  "sub_history_blob_consumed": "a2712d5aa22e8cfbda50b46f0f00e10345bec7f8",
-  "orchestrator_report_branch_tip_observed": "f55fe8250c14c65b0ae91bd8b0bb5511f794e49e",
-  "prior_external_research_audit_mailbox_tip": "8acd3ef2f0dfc9d0d4d95c5009a09b53b0883ba2",
-  "prior_literature_latest_consumed": "2026-09-19T09:32:00+09:00",
+  "control_brain_commit_consumed": "6ed239b241a39f7d3e934e37751454c8bf3ebb4c",
+  "control_brain_latest_blob_consumed": "4a15b2f117700274dfb4f04aca78a105fd9b63cc",
+  "evidence_analyst_commit_consumed": "8e8aa0924ff5c7dae99332d9babe7f3dd748f25b",
+  "main_report_commit_consumed": "313da06cdafd8cbaf82c19a1f82c9e9e2a234827",
+  "main_history_blob_consumed": "095b7507c23c7a78485ac72376a22ac462b38bd1",
+  "sub_report_commit_consumed": "f582546dfd29b300fe596a54ecc403ed120160dd",
+  "sub_history_blob_consumed": "cb94f74b70a5dd555182c7b7de23bc23959c1b40",
+  "orchestrator_report_branch_tip_observed": "313da06cdafd8cbaf82c19a1f82c9e9e2a234827",
+  "prior_external_research_audit_mailbox_tip": "52c14035b246c664938901fa7bbc559007cfc924",
+  "prior_literature_latest_consumed": "2026-09-19T12:30:00+09:00",
   "genuinely_new_information": true,
   "current_repository_interpretation": {
     "programme": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
@@ -30,34 +34,33 @@
     "formal_identity_created_for_lp01": false,
     "new_formal_scientific_evidence": false,
     "main_lane": "HOLD",
-    "sub_lane": "NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY_NON_EVIDENTIARY"
+    "sub_lane": null,
+    "sub_mode": "no_op"
   },
   "findings": [
     {
-      "id": "CASCADING_ELIGIBILITY_LONG_DELAY_REDUCTION",
-      "summary": "Cascading Eligibility Traces use a state-space cascade to preserve temporally precise local eligibility over arbitrary delays and demonstrate behavioral-timescale credit from seconds to minutes. Long-delay/history-sensitive local credit therefore does not itself require explicit lineage tokens or a novel computational principle.",
+      "id": "C3_FIXED_CONTEXT_COUNTERFACTUAL_REPLAY_CEILING",
+      "summary": "C3 freezes exact transcript-derived context, substitutes alternative upstream messages and evaluates them with fixed-continuation replay plus a leave-one-out baseline. This makes historical-event substitution under held continuation an ordinary counterfactual-credit construction, but with stronger replay/rewind privilege than a strict local online SparkBrain mechanism.",
       "sources": [
-        "Raharison Ralambomihanta et al., Learning From the Past with Cascading Eligibility Traces, arXiv:2506.14598 (2025)",
-        "Izhikevich, Solving the Distal Reward Problem through Linkage of STDP and Dopamine Signaling, Cerebral Cortex 17(10), 2443-2452 (2007)"
+        "Chen et al., Contextual Counterfactual Credit Assignment for Multi-Agent Reinforcement Learning in LLM Collaboration, arXiv:2603.06859 (2026)"
       ],
-      "direct_applicability_confidence": "HIGH_FOR_DELAYED_LOCAL_CREDIT_REDUCTION_NOT_ACTUAL_CAUSE_EQUIVALENCE"
+      "direct_applicability_confidence": "HIGH_AS_STRONGER_PRIVILEGE_FUNCTIONAL_CEILING_NOT_EQUAL_PRIVILEGE_MECHANISTIC_EQUIVALENCE"
     },
     {
-      "id": "DIFFUSIVE_NEUROMODULATORY_CREDIT_REDUCTION",
-      "summary": "A 2026 preprint models locally diffusing error/neuromodulatory signals in recurrent spiking networks and reports improved learning under sparse feedback connectivity relative to eligibility propagation. Spatially distributed local credit circulation is therefore another ordinary physical mechanism class that future lineage claims must distinguish from.",
+      "id": "COMA_COUNTERFACTUAL_MARGINAL_CONTRIBUTION_BASELINE",
+      "summary": "COMA uses a centralized critic and a counterfactual baseline that marginalizes one agent's action while holding other agents' actions fixed. Counterfactual marginal-contribution credit is therefore a foundational ordinary multi-agent baseline; any Spark-specific residual must concern native local/online realization under matched privilege rather than the abstract counterfactual principle.",
       "sources": [
-        "Barretto-Bittar, Levina, Giannakakis & Zeraati, Diffusion of Neuromodulators for Temporal Credit Assignment, arXiv:2603.08949 (2026)"
+        "Foerster et al., Counterfactual Multi-Agent Policy Gradients, AAAI 2018, DOI 10.1609/aaai.v32i1.11794"
       ],
-      "direct_applicability_confidence": "MEDIUM_HIGH_FOR_LOCAL_CREDIT_BASELINE_NOT_DIRECT_SPARK_EQUIVALENCE"
+      "direct_applicability_confidence": "HIGH_AS_COUNTERFACTUAL_CREDIT_BASELINE_WITH_EXPLICIT_CENTRALIZED_PRIVILEGE_WARNING"
     },
     {
-      "id": "FUNCTIONAL_REWARD_VALUE_TRANSPORT_CEILINGS",
-      "summary": "RUDDER redistributes delayed returns toward salient earlier state-action events, while Temporal Value Transport uses explicit memory reads to send future value back to remote events. These are strong functional delayed-credit reductions, but they use stronger trajectory/global-memory privilege and should be treated as privilege-tiered ceiling baselines rather than automatically equal-privilege mechanistic reductions.",
+      "id": "CONCURRENT_STOCHASTIC_RESPONSIBILITY_FORMAL_BASELINE",
+      "summary": "Mu & Najib model concurrent stochastic multi-player games and define retrospective counterfactual responsibility under a strategy profile, allocating responsibility with Shapley values and proving fairness/consistency properties. Stochastic concurrent responsibility itself therefore has an explicit ordinary formal comparator.",
       "sources": [
-        "Arjona-Medina et al., RUDDER: Return Decomposition for Delayed Rewards, NeurIPS 2019",
-        "Hung et al., Optimizing agent behavior over long time scales by transporting value, Nature Communications 10, 5223 (2019)"
+        "Mu & Najib, Counterfactual Reasoning for Responsibility Attribution in Probabilistic Multi-Agent Systems, IJCAI 2026, DOI 10.24963/ijcai.2026/33; arXiv:2605.13077"
       ],
-      "direct_applicability_confidence": "HIGH_AS_FUNCTIONAL_CEILING_MEDIUM_AS_MECHANISTIC_COMPARATOR"
+      "direct_applicability_confidence": "HIGH_FOR_FORMAL_STOCHASTIC_RESPONSIBILITY_BASELINE_NOT_NATIVE_LOCAL_IMPLEMENTATION"
     }
   ],
   "affected_lines": [
@@ -68,10 +71,10 @@
     "CAUSAL_CREDIT_REDUCTION_LADDER"
   ],
   "reduction_candidates": [
-    "matched cascading-eligibility / three-factor local delayed-credit comparator",
-    "matched local diffusive-neuromodulation comparator",
-    "RUDDER reward redistribution as stronger-privilege functional ceiling",
-    "Temporal Value Transport as stronger-privilege memory/value-transport ceiling"
+    "COMA-style centralized counterfactual marginal-contribution ceiling",
+    "C3-style fixed-context/fixed-continuation replay ceiling",
+    "concurrent-stochastic retrospective responsibility / Shapley formal baseline",
+    "responsibility-changing local-observation-preserving intervention pairs"
   ],
   "confidence": {
     "external_prior_art_exists": "HIGH",
@@ -80,22 +83,23 @@
     "supports_reopening_lp01": "NO",
     "prospective_discriminator_value": "HIGH"
   },
-  "novelty_or_reduction_impact": "STRONGER_REDUCTION_PRESSURE: delayed and temporally precise local credit can be implemented by cascading eligibility-state dynamics; sparse local credit can use diffusive neuromodulatory signals; and delayed reward can be redistributed or transported by stronger-privilege sequence/memory mechanisms. A future Spark-specific residual should be actual-cause-specific allocation among temporally/spatially co-eligible histories under matched privilege, not delayed/history-sensitive credit itself.",
+  "novelty_or_reduction_impact": "STRONGER_REDUCTION_AND_PRIVILEGE_PRESSURE: counterfactual marginal contribution is established in ordinary MARL; exact-context fixed-continuation replay provides a strong counterfactual credit ceiling; concurrent stochastic responsibility has an explicit formal framework. The remaining possible Spark-specific residual is a native online/local mechanism that tracks responsibility-sensitive interventions without centralized/replay/oracle privilege and survives matched ordinary local-learning reductions.",
   "prospective_baselines_or_discriminators": [
-    "matched cascading-eligibility / three-factor local delayed-credit comparator",
-    "matched local diffusive-neuromodulation comparator when physical locality is central",
-    "paired histories with matched timing/activity/eligibility/delay/reward/diffusion neighborhood but causal responsibility changed by preemption, backup, or overdetermination",
-    "RUDDER and TVT only as explicitly stronger-privilege functional ceiling baselines unless their privilege can be matched"
+    "COMA-style centralized counterfactual marginal-contribution ceiling, explicitly marked stronger-privilege unless matched",
+    "C3-style fixed-context/fixed-continuation replay ceiling, explicitly marked stronger-privilege unless matched",
+    "explicit concurrent-stochastic retrospective responsibility/Shapley baseline",
+    "paired responsibility-changing interventions with current/local observations, timing, activity, eligibility, reward and resources matched",
+    "preserve equal-privilege eligibility/recurrent/plastic/local-diffusion comparators before any novelty claim"
   ],
   "questions_for_evidence_analyst": [
-    "Keep LP01 closed; do not count long-delay or temporally precise local eligibility as lineage-specific causal responsibility.",
-    "Add cascading eligibility and local diffusive credit to the ordinary learning/locality reduction ladder?",
-    "Require future H7 objects to orthogonalize temporal/spatial eligibility from counterfactual responsibility prospectively?"
+    "Keep LP01 closed; counterfactual responsibility itself is not sufficient novelty because explicit ordinary solvers and replay methods already compute it.",
+    "Should future H7 admission explicitly separate equal-privilege mechanistic baselines from stronger-privilege counterfactual ceilings?",
+    "Require a future native H7 mechanism to track responsibility-changing interventions without replay/global critic/world-label access before formal review?"
   ],
   "questions_for_control_brain": [
-    "Narrow future causal-credit admission to actual-cause-specific selection among co-eligible histories under matched privilege?",
-    "Tier ordinary baselines by privilege, separating equal-privilege mechanistic reductions from stronger-privilege functional ceilings?",
-    "Retain NO_HIGH_VALUE_OBJECT until a native mechanism independently exposes this residual rather than constructing a literature-driven successor?"
+    "Narrow the residual from intervention-validated responsibility in general to native local/online responsibility sensitivity under matched privilege?",
+    "Add COMA/C3/concurrent-stochastic responsibility to the stronger-privilege ceiling tier of the reduction doctrine?",
+    "Retain NO_HIGH_VALUE_OBJECT until this residual appears natively rather than engineering a literature-driven successor?"
   ],
   "must_not_change_frozen_or_consumed": [
     "all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence",
