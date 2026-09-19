@@ -1,75 +1,46 @@
-# SparkBrain Literature Reduction Scout — 2026-09-19 18:30 JST
+# SparkBrain Literature Reduction Scout — 2026-09-19 21:30 JST
 
 ## Role
 
 `LITERATURE_REDUCTION_SCOUT`
 
-## Repository evidence inspected
+## Repository and control-plane state
 
-Repository scientific state was re-fetched independently of control-plane mailboxes. Authoritative `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; the existing five annotated `evidence/*` tags remain the complete formal evidence set and no fresh `formal/*`, `sealed/*`, tag-based `freeze/*`, formal identity or STARTED authority was observed. Legacy freeze/control/preserve refs remain historical/immutable inputs only.
+Repository state was independently re-fetched. `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. The active Top-k Architecture branch remains `research/main-topk-persistent-amplification-arch-study-20260919@04ced2b97ed088bb2cdb086d164a86212741e601`; its two Architecture cycles are complete and the candidate is now HOLD pending read-only cross-seed support analysis plus a fresh prospective reduction question. The structural-order branch is `research/main-structural-order-path-arch-study-20260919@6a53ee36259bca31b77024245e5ab0a9ef5ec405`; its current question is REJECT after the edge-only/homeostatic control reproduced the relevant order dependence. Exactly five authoritative evidence tags remain and no fresh FORMAL identity, STARTED, TEST authority, formal preserve/scorer/evidence anchor was observed in the current Analyst handoff.
 
-Two new NON_EVIDENTIARY lower-layer lines are now materially active:
+Control Brain `566f3b7c590fcfe2b9e8aaa0415da964989b1124` remains `FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL`. Evidence Analyst `a3ec861d71c0965625fc1d2e5e8f65f4ce47f834` is newer and places MAIN on `LOWER_FUNNEL_MAIN_HOLD_PENDING_FRESH_OBJECT`; Structural is REJECT, Top-k is HOLD, PRE_FORMAL/FORMAL remain empty/HOLD. Current MAIN report `be8ad6035444bd7ffeeb92b220c634377b49517b` confirms no active MAIN object; current SUB report `e809711bd42622e922ee765f8e5c75b3162ada1d` rejects its receptor-polarity Discovery after exact reduction to the existing fast-minus-medium receptor derivative rule. The `ops/*` mailboxes were read only at their designated handoff/report paths and were not treated as repository snapshots.
 
-- MAIN `CAND-TOPK-PA-01` cycle 1 at `research/main-topk-persistent-amplification-arch-study-20260919@97f542d86dcd3a609cd039379fcda41ba61e0909` produced `PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL` on DEV only. The fixed study had 1152 paired cases / 37 top-k turnover cases. It perturbs encoder state across hard-router boundaries and compares `full` with `no_persistent_state`; this is Architecture Study information, not formal evidence.
-- SUB `STRUCTURAL_ORDER_PATH_DEPENDENCE_DISCOVERY` at `research/exploratory-sub-structural-order-path-dependence-20260919@8156bba7b119fb831b7c28eac7cd900746f9876e` found strong same-multiset/different-order final-topology divergence in a synthetic structural-controller harness, localized to stateful module duplicate/prune and active-slot history rather than edge-only update order or total-event-budget exhaustion. This is Discovery information only.
-
-Evidence Analyst's current designated handoff (18:20 JST) authorizes exactly one unchanged independent-seed cycle-2 replication for `CAND-TOPK-PA-01`, and promotes the structural-order question into the Architecture queue behind it. PRE_FORMAL and FORMAL remain empty/HOLD. This Literature run does not change those prospective contracts.
-
-Control Brain designated state remains testbed/strict-admission oriented; its 14:50 mailbox predates the newly completed lower-layer results, so repository evidence and the newer Evidence Analyst handoff control current interpretation. MAIN's 18:16 report is still stopped at its pre-Analyst boundary; SUB's latest completed Discovery is the structural-order result. These are mailbox summaries only, not repository source-of-truth snapshots.
-
-Prior role-specific Literature history was read before search. Previous runs already covered revision authority, finite-state/state-complexity reductions, PSR/epsilon-machines, reservoirs, automata extraction, provenance/actual causality, causal nets/event structures, dynamic slicing, eligibility/three-factor/e-prop/GLE/SAL, cascading traces, diffusive neuromodulation, RUDDER/TVT, COMA/C3 and stochastic responsibility. Those results are not recycled below.
+Prior Literature history through 18:30 was read before search. Previously covered reductions include PSR/epsilon-machines, reservoir/fading memory, automata extraction, provenance/actual causality, Petri/event structures, dynamic slicing, eligibility/three-factor/e-prop/GLE/SAL, cascading traces, diffusive neuromodulation, RUDDER/TVT, COMA/C3, stochastic responsibility, hard Top-k discontinuity/switching, non-normal transient gain, and graph-rewrite confluence/critical pairs. Those are not recycled below.
 
 ## Genuinely new external literature findings
 
-### 1. Hard Top-k turnover is directly an ordinary discontinuous-switch mechanism; hybrid sensitivity tools give the correct reduction language
+### 1. A hard routing boundary can cause a persistent basin/attractor change through ordinary border-collision dynamics
 
-Tran Huu et al. (2026), *Geometric and Stochastic Analysis of Discontinuities in Sparse Mixture-of-Experts* (arXiv:2606.19036), formalize hard Top-k expert selection as a piecewise-smooth map with discontinuity surfaces where the selected set changes. They show that ordinary pairwise Top-k boundary crossings are the dominant discontinuity class and explicitly motivate smoothing because arbitrarily small input changes near those surfaces can cause large output jumps.
+The 18:30 scout established that hard Top-k turnover is an ordinary discontinuous switching event. The stronger reduction found here is that, in discrete-time piecewise-smooth systems, crossing such a switching boundary can change the long-run invariant set itself. Simpson's SIAM Review survey of border-collision bifurcations shows that when a fixed point meets a nonsmooth switching surface, piecewise-linear local dynamics can create invariant circles, chaotic sets, and multiple attractors. Later work also constructs border-collision transitions from a stable fixed point to multiple coexisting chaotic attractors.
 
-Separately, Kong et al. (Proceedings of the IEEE, 2024), *Saltation Matrices: The Essential Tool for Linearizing Hybrid Dynamical Systems*, review the saltation matrix as the first-order sensitivity update across a discrete switching/jump event in a hybrid dynamical system.
+**Reduction impact for `CAND-TOPK-PA-01`:** persistent post-turnover divergence does not require a special memory mechanism or even purely transient non-normal amplification. An ordinary explanation is `hard Top-k boundary crossing -> different local branch/basin -> different attracting trajectory`. Therefore, if the cross-seed support diagnostic leaves a signal worth reducing, a fresh future mechanism question should test branch/basin switching and return behavior before interpreting delayed persistence as a distinct Spark mechanism.
 
-**Reduction impact for `CAND-TOPK-PA-01`:** the immediate turnover/jump component is not novel and should be treated as ordinary switching geometry. Saltation language is useful conceptually, but SparkBrain's router is discrete-time; an exact future diagnostic should use the model's piecewise/discrete Jacobian or finite-difference equivalent rather than forcing continuous-time saltation assumptions. The important discriminator is whether anything remains after separating the boundary-switch jump from subsequent recurrent propagation.
+### 2. Recurrent winner-take-all competition already exhibits multiple stable equilibria and hysteresis
 
-### 2. Large delayed amplification can arise from ordinary non-normal recurrent dynamics even when the recurrent system is asymptotically stable
+Mao & Massaquoi (IEEE Transactions on Neural Networks, 2007) derive existence/stability conditions for recurrent networks with lateral inhibition and show that multiple stable equilibria can coexist; changing inputs can produce state transitions with hysteresis. More recent hard-WTA spiking attractor work likewise demonstrates stable persistent-firing attractor states when hard winner selection is combined with recurrent excitation.
 
-Hennequin, Vogels & Gerstner (Physical Review E 86, 011909, 2012) show that recurrent systems can exhibit strong transient amplification because the connectivity/operator is **non-normal**: perturbations can grow substantially for a finite horizon even without near-critical unstable eigenvalues. Schur decomposition separates this transient mechanism from conventional dynamical slowing.
+**Reduction impact:** a small perturbation that changes the selected Top-k set can leave a lasting effect after the perturbation itself is gone simply because recurrent competition enters another stable basin and exhibits hysteresis. That is a more direct ordinary comparator for the current Top-k/persistent-state interaction than treating persistence only as a fading-memory or non-normal-transient phenomenon.
 
-This is highly relevant to the current MAIN observation because the reported architecture signal is specifically a ratio of downstream state/output divergence after a hard Top-k turnover, and the `full` model retains recurrent/persistent state while `no_persistent_state` removes that route.
+### 3. Local contraction within each routing region does not rule out switching-driven recurrent complexity
 
-**Reduction impact:** a large delayed `full / no_persistent_state` AUC ratio does not by itself identify a Spark-specific persistence mechanism. A strong ordinary explanation is `hard routing switch -> state perturbation -> recurrent transient gain`. Before any mechanistic-distinctness/PRE_FORMAL interpretation, a future fresh review should ask whether local finite-horizon Jacobian/JVP or singular-value/transient-gain calculations predict most of the observed amplification. This does not alter the already fixed cycle-2 replication.
+The piecewise-contraction literature shows that systems can be contractive on each smooth piece yet have nontrivial recurrent/chaotic attractors when the discontinuity set participates in the attractor. Catsigeras, Guiraud, Meyroneinc & Ugalde show that non-periodic attractors in their piecewise-contracting setting necessarily involve discontinuities, with examples ranging from finite to connected/chaotic attractors.
 
-### 3. Same-multiset/different-order structural topology is textbook non-confluence territory; critical-pair analysis is the sharper ordinary baseline
-
-Graph-transformation theory treats order-dependent final graphs as a **confluence / conflict** problem. Critical-pair analysis identifies minimal overlapping rule applications that can lead to divergent states; Campbell & Plump's confluence work for graph transformation generalizes the critical-pair approach, and the broader graph-transformation literature uses conflict/dependency analysis to localize rule interactions.
-
-**Reduction impact for `CAND-STRUCTURAL-ORDER-PATH-01`:** the synthetic observation that duplicate/prune operations yield different final graphs under permutations of the same input multiset is interesting architecture behavior, but path dependence itself is not a new dynamical principle. The next ordinary reduction should first model duplicate/prune/grow/prune operations as graph/state rewrite rules and identify the minimal non-commuting/critical pairs. If the observed order dependence is fully predicted by explicit age/slot state and a small set of non-joinable rule overlaps, mechanistic novelty is reduced while architecture implications remain useful.
-
-A stronger future discriminator is not merely `different order -> different graph`, but whether two histories that are matched on the explicit rewrite-relevant state still diverge in future topology/output. If explicit age/slot/provenance state suffices, the phenomenon is ordinary stateful non-confluence.
+**Reduction impact:** even if a future Top-k diagnostic finds that the within-region recurrent Jacobian is locally contractive or lacks large non-normal gain, that alone does not establish a special Spark persistence mechanism. The discontinuous active-set boundary can be the source of global long-lived complexity. The prospective reduction should therefore separate `within-region contraction/transient gain` from `cross-boundary basin selection/hysteresis` rather than using a stable local Jacobian as a novelty-positive result.
 
 ## Inference for SparkBrain
 
-The new lower-layer results are worth studying, but the external literature raises the reduction bar **before** either line can become a mechanistic novelty candidate.
+The newest repository state already rejects the current Structural residual, so no further structural-order literature-driven successor is justified. The new information mainly sharpens the held Top-k line. If the existing read-only support diagnostic says the cross-seed signal is robust enough to study, the ordinary reduction ladder should be expanded from the 18:30 form to:
 
-For the top-k line, the clean reduction ladder is now:
+`hard Top-k switching geometry -> immediate boundary jump -> basin/attractor selection and hysteresis -> recurrent transient/non-normal gain within a branch -> only then an unexplained persistence residual`.
 
-`hard Top-k switching geometry` → `immediate piecewise/hybrid jump sensitivity` → `ordinary recurrent/non-normal transient gain` → only then any unexplained persistence-coupled residual.
+A useful prospective discriminator would use only a fresh independently authorized Architecture object: cross a router boundary with a small perturbation, remove the perturbation, and test whether trajectories remain on distinct branches; then use controlled recurrent-state reset or matched within-branch initial states to distinguish branch selection from intrinsic long-memory propagation. This is a proposal for future prospective design only; it must not alter completed Top-k cycles or their existing labels.
 
-For the structural-order line:
-
-`explicit age/slot/provenance state` → `rewrite-rule noncommutativity / critical pairs / non-confluence` → functional/output consequence under matched current explicit state → only then any unexplained structural-history residual.
-
-This is compatible with the current four-layer funnel. It does not justify changing cycle-2, promoting anything automatically, or constructing a formal successor from literature.
-
-## Utility request
-
-Created one deduplicated proposal on `ops/utility-orchestrator-requests`:
-
-- request: `LIT-20260919-1830-TOPK-HYBRID-TRANSIENT`
-- path: `utility_orchestrator/requests/2026-09-19/LIT-20260919-1830-topk-hybrid-transient-decomposition.md`
-- request commit: `a9c53c4307bfc36a8166371abdf69380e929d0e3`
-- purpose: bounded NON_EVIDENTIARY diagnostic that decomposes existing/future-safe DEV top-k amplification into immediate hard-switch contribution and subsequent recurrent/non-normal transient gain.
-- explicit boundary: must not alter/delay the authorized cycle-2 replication; if safe existing inputs are insufficient, Utility must return `BLOCKED_MISSING_SAFE_INPUT` rather than rerunning/retraining scientific work.
-
-An existing Methodology Calibration Utility request already covers support-count/denominator robustness of the cycle-1 signal; this new request is intentionally mechanistic and non-duplicative.
+No new Utility request was created. The existing `LIT-20260919-1830-TOPK-HYBRID-TRANSIENT` request is already the closest mechanistic diagnostic and Control deferred it pending support/fresh review; a second basin/hysteresis request now would be premature and duplicative in purpose.
 
 ## Knowledge-flow contract
 
@@ -79,46 +50,43 @@ genuinely_new_information: true
 affected_lines:
   - CAND_TOPK_PA_01
   - TOPK_ROUTER_PERSISTENT_AMPLIFICATION
-  - CAND_STRUCTURAL_ORDER_PATH_01
   - ARCHITECTURE_STUDY_REDUCTION
   - PROGRAMME_NOVELTY
+  - CAND_STRUCTURAL_ORDER_PATH_01
 novelty_or_reduction_impact: >
-  STRONGER_ORDINARY_REDUCTION_PRESSURE_ON_NEW_ARCHITECTURE_LINES.
-  Hard Top-k selected-set turnover is an ordinary discontinuity/switching phenomenon;
-  delayed amplification can arise from ordinary non-normal recurrent transient gain;
-  and same-multiset/different-order graph outcomes are ordinary non-confluence/conflict
-  phenomena addressable by critical-pair analysis. Architecture value remains, but
-  mechanistic novelty requires residual effects after these reductions.
+  STRONGER_ORDINARY_REDUCTION_PRESSURE_ON_HELD_TOPK_LINE.
+  Hard routing can produce durable divergence through ordinary border-collision,
+  multistability, attractor/basin selection and recurrent WTA hysteresis. Local
+  contraction or absence of large non-normal gain is not sufficient to rule out
+  switching-driven persistence. Structural current residual remains rejected and
+  should not be rescued from literature.
 audit_classification: null
 prospective_baselines_or_discriminators:
-  - piecewise/discrete switching sensitivity or finite-difference boundary-jump decomposition for hard Top-k turnover
-  - finite-horizon recurrent Jacobian/JVP and non-normal transient-gain analysis, matched full vs no_persistent_state
-  - predicted-versus-observed delayed divergence under boundary-jump x recurrent-gain decomposition
-  - graph-rewrite critical-pair / commutation / joinability analysis for duplicate-prune-grow-prune operations
-  - structural-history tests matched on explicit age/slot/provenance/rewrite-relevant state
+  - border/basin-crossing and return-map analysis around Top-k active-set boundaries
+  - hysteresis test: perturb across a boundary, remove the perturbation, and measure branch persistence under matched subsequent inputs
+  - recurrent-state reset or matched-within-branch initialization to separate basin selection from propagated memory
+  - within-region Jacobian/JVP contraction and non-normal gain analyzed separately from cross-boundary global dynamics
 questions_for_evidence_analyst:
-  - Keep the already authorized CAND-TOPK-PA-01 cycle-2 replication unchanged; if it replicates, should fresh PRE_FORMAL review require an ordinary switching-plus-recurrent-transient reduction before any mechanistic-distinctness claim?
-  - For CAND-STRUCTURAL-ORDER-PATH-01, should the first Architecture reduction explicitly test whether a small set of rewrite critical pairs and explicit age/slot state explains the path dependence?
-  - Treat architecture signal replication as necessary but not sufficient, with these external reductions evaluated only after a fresh stop/review?
+  - If the existing cross-seed support diagnostic is robust, should the fresh Top-k reduction question explicitly include basin/attractor switching and hysteresis before any persistence-specific interpretation?
+  - Treat a stable/contractive within-region Jacobian as insufficient to clear ordinary reduction unless cross-boundary branch selection is also excluded?
+  - Keep CAND-STRUCTURAL-ORDER-PATH-01 rejected under its current question, with no literature-driven rescue cycle?
 questions_for_control_brain:
-  - Add hard-switch geometry plus recurrent transient/non-normal gain to the ordinary-reduction doctrine for routing-persistence claims?
-  - Add graph-rewrite confluence/critical-pair analysis to the ordinary-reduction doctrine for structural path-dependence claims?
-  - Preserve the current FORMAL/H7 novelty bar while allowing these lower-layer architecture lines to proceed as testbed characterization?
+  - Add border-collision/multistability/WTA hysteresis to the ordinary routing-persistence reduction ladder after support robustness is established?
+  - Keep the deferred 18:30 Utility request deferred until fresh Analyst review rather than spawning a second overlapping mechanism diagnostic now?
+  - Preserve FORMAL/H7 novelty criteria while MAIN remains HOLD pending a genuinely fresh object?
 must_not_change_frozen_or_consumed:
   - all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence
-  - canonical PD01/NI01/H5 terminal classifications and all consumed STARTED/control/preserve/evidence refs
-  - all consumed A01/RV01/RV02/CX identities and legacy immutable refs
-  - CAND-TOPK-PA-01 cycle-2 fixed replication contract, thresholds, metrics, seed choice, DEV split, comparator and stop boundary
-  - no outcome-responsive retune/redesign, official TEST, formal identity/STARTED, rescore, research merge, immutable-ref/tag mutation, or scheduler change
-utility_request_created:
-  request_id: LIT-20260919-1830-TOPK-HYBRID-TRANSIENT
-  commit: a9c53c4307bfc36a8166371abdf69380e929d0e3
+  - canonical terminal classifications and all consumed STARTED/control/preserve/evidence refs
+  - completed CAND-TOPK-PA-01 Architecture cycles/labels and current HOLD boundary; no cycle 3 rescue or outcome-responsive redesign
+  - rejected CAND-STRUCTURAL-ORDER-PATH-01 current question; no cycle 2 rescue under that object
+  - no official TEST, new formal identity/STARTED, rerun, retune, rescore, research merge, immutable-ref/tag mutation, or scheduler change
+utility_request_created: null
 ```
 
 ## Sources
 
-- Tran Huu et al., *Geometric and Stochastic Analysis of Discontinuities in Sparse Mixture-of-Experts*, arXiv:2606.19036 (2026).
-- Kong et al., *Saltation Matrices: The Essential Tool for Linearizing Hybrid Dynamical Systems*, Proceedings of the IEEE 112(6), 585–608 (2024), DOI 10.1109/JPROC.2024.3440211.
-- Hennequin, Vogels & Gerstner, *Non-normal amplification in random balanced neuronal networks*, Physical Review E 86, 011909 (2012), DOI 10.1103/PhysRevE.86.011909.
-- Campbell & Plump, *Confluence up to Garbage in Graph Transformation*, graph-transformation confluence/critical-pair framework (2020/2021).
-- Lambers et al., *Granularity of conflicts and dependencies in graph transformation systems: A two-dimensional approach*, Journal of Logical and Algebraic Methods in Programming 103 (2019), 105–129.
+- D. J. W. Simpson, *Border-Collision Bifurcations in R^N*, SIAM Review 58(2), 2016, DOI 10.1137/15M1006982.
+- D. J. W. Simpson, *Border-collision bifurcations from stable fixed points to any number of coexisting chaotic attractors*, 2022, arXiv:2207.10251.
+- Z.-H. Mao & S. G. Massaquoi, *Dynamics of winner-take-all competition in recurrent neural networks with lateral inhibition*, IEEE Transactions on Neural Networks 18(1), 55–69, 2007, DOI 10.1109/TNN.2006.883724.
+- M. Cotteret et al., *Robust Spiking Attractor Networks with a Hard Winner-Take-All Neuron Circuit*, ISCAS 2023, DOI 10.1109/ISCAS46773.2023.10181513.
+- E. Catsigeras, P. Guiraud, A. Meyroneinc & E. Ugalde, *On the asymptotic properties of piecewise contracting maps*, Dynamical Systems 31(2), 2016, DOI 10.1080/14689367.2015.1068274.
