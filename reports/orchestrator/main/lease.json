@@ -1,14 +1,14 @@
 {
   "run_id": "sparkbrain-main-primary-20260919T161801JST",
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-19T16:18:01+09:00",
-  "heartbeat_at": "2026-09-19T16:29:00+09:00",
+  "heartbeat_at": "2026-09-19T16:32:00+09:00",
   "analyst_commit": "d8974f662e2fd36000125b643ae908030c3e8aac",
   "active_branch": null,
   "active_identity": null,
-  "active_step": "FULL_RECONCILIATION_FRESH_ANALYST_CONSUMED_1532_LITERATURE_HOLD_CONFIRMED",
+  "active_step": "PROGRAMME_ARCHITECTURE_TESTBED_HOLD_FRESH_ANALYST_CONSUMED_1532_CAUSAL_CREDIT_LITERATURE",
   "workflow_run_id": null,
-  "expected_next_action": "Persist MAIN reconciliation under fresh Evidence Analyst authority d8974f662e2fd36000125b643ae908030c3e8aac. Architecture/testbed HOLD remains authoritative; no formal science or successor engineering is authorized. Record new privilege-tiered H7 admission pressure as external/admission information only, then complete lease.",
+  "expected_next_action": "Remain in architecture/testbed HOLD. Continue only if a future fresh Evidence Analyst handoff prospectively admits a genuinely fresh independently motivated native reduction-resistant primary object; then MAIN owns all authorized critical-path work and stops at the specified review boundary. For any H7-like object, prospectively separate equal-privilege mechanistic reductions from stronger-privilege counterfactual ceilings and require responsibility-changing/local-observation-preserving intervention pairs. Do not manufacture a successor from literature pressure, reopen LP01 or NI01 sensitivity, or reuse consumed identities.",
   "owner": "main"
 }
