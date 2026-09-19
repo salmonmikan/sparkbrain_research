@@ -1,14 +1,14 @@
 {
-  "run_id": "sparkbrain-main-primary-20260919T201410JST",
+  "run_id": "sparkbrain-main-primary-20260919T2115JST",
   "execution_mode": "PRIMARY",
-  "status": "COMPLETED",
-  "started_at": "2026-09-19T20:14:10+09:00",
-  "heartbeat_at": "2026-09-19T20:14:10+09:00",
-  "analyst_commit": "5982fc0ae76d62c4a6fce42f6b1aaaf7f85b8e23",
-  "active_branch": "research/main-structural-order-path-arch-study-20260919",
+  "status": "RUNNING",
+  "started_at": "2026-09-19T21:15:00+09:00",
+  "heartbeat_at": "2026-09-19T21:15:00+09:00",
+  "analyst_commit": "a3ec861d71c0965625fc1d2e5e8f65f4ce47f834",
+  "active_branch": null,
   "active_identity": null,
-  "active_step": "STRUCTURAL_ORDER_PATH_CYCLE1_VALID_OUTCOME_STOPPED_FOR_ANALYST_REVIEW",
-  "workflow_run_id": 35438868911,
-  "expected_next_action": "Fresh Evidence Analyst review of NON_EVIDENTIARY label EDGE_OR_HOMEOSTASIS_CONTROL_REPRODUCES. No structural-order cycle 2, comparator/control redesign, PRE_FORMAL promotion, FORMAL identity/STARTED, TEST access, rerun, retune, or merge is authorized under the current authority.",
+  "active_step": "LOWER_FUNNEL_MAIN_HOLD_RECONCILE",
+  "workflow_run_id": null,
+  "expected_next_action": "Reconcile the fresh Analyst HOLD allocation and persist a no-op MAIN checkpoint. Do not continue Structural cycle 2, Top-k cycle 3, construct H7, access TEST/formal surfaces, or absorb SUB Discovery.",
   "owner": "main"
 }
