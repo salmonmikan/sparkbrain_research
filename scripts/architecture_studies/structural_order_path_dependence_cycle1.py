@@ -13,7 +13,6 @@ import hashlib
 import json
 import random
 from collections import Counter
-from dataclasses import replace
 from pathlib import Path
 from typing import Any
 
@@ -196,7 +195,11 @@ def _adapt(
     return backend
 
 
-def _clone(checkpoint: Path, config: StructuralConfig, state: dict[str, Any]) -> StructuralBrainBackend:
+def _clone(
+    checkpoint: Path,
+    config: StructuralConfig,
+    state: dict[str, Any],
+) -> StructuralBrainBackend:
     backend = StructuralBrainBackend.from_c04_checkpoint(checkpoint, config)
     backend.load_state_dict(state)
     return backend
@@ -274,7 +277,10 @@ def _jaccard(left: set[Any], right: set[Any]) -> float:
     return 0.0 if not union else 1.0 - len(left & right) / len(union)
 
 
-def _paired_probe_metrics(left: list[dict[str, Any]], right: list[dict[str, Any]]) -> dict[str, Any]:
+def _paired_probe_metrics(
+    left: list[dict[str, Any]],
+    right: list[dict[str, Any]],
+) -> dict[str, Any]:
     l1_values: list[float] = []
     disagreements = 0
     steps = 0
@@ -293,7 +299,10 @@ def _paired_probe_metrics(left: list[dict[str, Any]], right: list[dict[str, Any]
             labels.update(b["probabilities"])
             l1_values.append(
                 sum(
-                    abs(float(a["probabilities"].get(label, 0.0)) - float(b["probabilities"].get(label, 0.0)))
+                    abs(
+                        float(a["probabilities"].get(label, 0.0))
+                        - float(b["probabilities"].get(label, 0.0))
+                    )
                     for label in labels
                 )
             )
@@ -404,7 +413,10 @@ def _run_raw(output: Path) -> dict[str, Any]:
 def _map(raw: dict[str, Any]) -> dict[str, Any]:
     if raw.get("test_manifest_opened") is not False:
         raise RuntimeError("invalid DEV-only binding")
-    if raw.get("scientific_source") != SCIENTIFIC_SOURCE or raw.get("analyst_commit") != ANALYST_COMMIT:
+    if (
+        raw.get("scientific_source") != SCIENTIFIC_SOURCE
+        or raw.get("analyst_commit") != ANALYST_COMMIT
+    ):
         raise RuntimeError("authority/source binding mismatch")
     summary: dict[str, Any] = {}
     for condition, rows in raw["conditions"].items():
@@ -440,8 +452,9 @@ def _map(raw: dict[str, Any]) -> dict[str, Any]:
         "local_architecture_label": label,
         "condition_summary": summary,
         "interpretation_boundary": (
-            "DEV-only Architecture Study triage. This label is not FORMAL evidence, a novelty gate, "
-            "or authority for PRE_FORMAL/FORMAL continuation. STOP for fresh Analyst review."
+            "DEV-only Architecture Study triage. This label is not FORMAL evidence, "
+            "a novelty gate, or authority for PRE_FORMAL/FORMAL continuation. "
+            "STOP for fresh Analyst review."
         ),
     }
 
