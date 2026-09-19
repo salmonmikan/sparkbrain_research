@@ -1,175 +1,128 @@
 {
-  "timestamp": "2026-09-20T07:44:30+09:00",
+  "timestamp": "2026-09-20T08:21:00+09:00",
   "worker_role": "main",
-  "execution_mode": "RELAY",
-  "analyst_commit": "7e7d425948a86d0eec306b1a75bfc07165d9afa1",
+  "execution_mode": "PRIMARY",
+  "analyst_commit": "850b4502cf15d3f6118a487c5ab4ba81fbf7b75e",
   "research_layer": "ARCHITECTURE_STUDY",
-  "current_lane": "REFRACTORY_CURRENT_ACCOUNTING_ARCHITECTURE_STUDY_CYCLE1_VALID_TERMINAL_STOPPED_FOR_ANALYST_REVIEW",
+  "current_lane": "V05_DELAYED_OUTCOME_CALLER_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_STATIC_TERMINAL_CI_PENDING",
   "candidate_question": {
-    "id": "CAND-REFRACTORY-CURRENT-ACCOUNTING-01",
-    "evidentiary_status": "NON_EVIDENTIARY",
-    "valid_architecture_outcomes": 1,
-    "mapped_outcome": "FUNCTIONAL_REFRACTORY_ACCOUNTING_EFFECT"
+    "id": "CAND-V05-DELAYED-OUTCOME-ATTRIBUTION-01",
+    "question": "Is learn_outcome explicitly immediate-only, explicitly delayed/interleaved, or publicly unspecified, given a single mutable pending credit state?",
+    "exploration_cycle_count": {"DISCOVERY": 1, "ARCHITECTURE_STUDY": 1},
+    "mapped_outcome": "IMMEDIATE_ONLY_USAGE_BUT_PUBLIC_CONTRACT_UNSPECIFIED",
+    "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY"
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst_handoff": "7e7d425948a86d0eec306b1a75bfc07165d9afa1",
-    "prospective_contract_analyst_authority": "eb1c305017d32c8c3efb0794e547b889e5a80461",
-    "research_branch": "research/main-refractory-current-accounting-arch-study-20260920",
-    "research_head": "4589192d927e40cf7a05cf8a94207efb42ebbc65",
-    "prospective_contract_commit": "c32ec231e217f4229b761f2ccf426f3ecd7ed582",
-    "contract_blob": "957b8ad5c22e3485dfedf8cf9052a234a63102aa",
-    "contract_sha256_reported_by_artifact": "0b2a079a7ffc3c3257cd942e3868d273e105397224264f828757348254f41807",
+    "evidence_analyst_handoff": "850b4502cf15d3f6118a487c5ab4ba81fbf7b75e",
+    "research_branch": "research/main-v05-delayed-outcome-caller-contract-arch-study-20260920",
+    "research_head": "c79c5434222a6d018931dc1752e7f0074c23854b",
+    "prospective_contract_commit": "25cdd7db1d5a546b38810c40ffdc75085c8d196a",
+    "raw_facts_commit": "d226f5993b69f0d0c98c1e1cd7b049e2ba3ded49",
     "source_blobs": {
-      "src/sparkbrain/v04/field.py": "e2279d69cd04030238317361d5ee3abdc1009c32",
-      "src/sparkbrain/v04/contracts.py": "9d3ae216a518ff6d409a67cd02f34f1dc20a8ab8",
-      "src/sparkbrain/v04/topology.py": "9129161bd2e7f7cd0ec70684e176700f128d4a6b",
-      "tests/v04/test_v04_field.py": "08128a255b09d996160211f598d6f0a64d91ead0",
-      "docs/THEORY_SPEC_v0.4.md": "4040aca59b32d8cd3c72dc0df64b55f434a42351",
-      "docs/V04_STATUS.md": "f75d9c27f2c1cc906ea480c925c08868d1c08ef4"
-    }
+      "src/sparkbrain/v05/brain.py": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
+      "src/sparkbrain/v05/evaluation.py": "efd52d236708aea3bf23b6139d8717b1ac1d0559",
+      "tests/v05/test_v05_brain.py": "6a81994ac82a3f0660585ef0d95495aaaa336629",
+      "examples/v05_assembly_demo.py": "e4bab1adf0bfc66db3d6c72ba8d934d151cbeaf1"
+    },
+    "evidence_tag_count": 5,
+    "formal_tag_count": 0,
+    "sealed_tag_count": 0,
+    "freeze_tag_count": 0
   },
-  "lease_collision_reconciliation": {
-    "inherited_execution_mode": "RELAY",
-    "inherited_status": "WAITING_EXTERNAL",
-    "inherited_heartbeat_at": "2026-09-20T07:17:00+09:00",
-    "fresh_primary_running_collision": false,
-    "stable_main_matches_contract": true,
-    "research_head_matches_checkpoint": true,
-    "fresh_analyst_tip_matches_checkpoint": true,
-    "sub_collision_found": false,
-    "relay_lease_acquired_before_persistence": true,
-    "relay_lease_acquisition_commit": "ef7d9f2ee9deb43e094343f2fcc8a35efb92008d"
+  "fast_path_reconciliation": {
+    "mode": "FAST_PATH",
+    "full_reconciliation_triggered": false,
+    "stable_main_exact": true,
+    "analyst_allocation_clear": true,
+    "source_bindings_exact": true,
+    "fresh_main_collision": false,
+    "sub_collision": false,
+    "legacy_freeze_refs_refetched_read_only": true,
+    "preserve_refs_refetched_read_only": true,
+    "control_refs_refetched_read_only": true,
+    "pr_148": "open_unmerged",
+    "pr_149": "open_unmerged"
   },
-  "contingency_consumed": {
-    "precondition": "PREFLIGHT_GREEN_UNCHANGED_CONTRACT",
-    "terminal": "FUNCTIONAL_REFRACTORY_ACCOUNTING_EFFECT",
-    "required_action": "STOP_FRESH_ARCHITECTURE_REVIEW_NO_AUTO_PRE_FORMAL",
-    "terminal_mapping_applied_once": true
+  "branches_prs_advanced": {
+    "created_research_branch": "research/main-v05-delayed-outcome-caller-contract-arch-study-20260920",
+    "research_commits": [
+      "25cdd7db1d5a546b38810c40ffdc75085c8d196a",
+      "d226f5993b69f0d0c98c1e1cd7b049e2ba3ded49",
+      "c79c5434222a6d018931dc1752e7f0074c23854b"
+    ],
+    "pull_requests_created_or_merged": []
   },
-  "critical_path_actions_performed": [
-    "Read latest Evidence Analyst state/history and confirmed MAIN lane, fixed terminal contingencies, do_not_touch, and FORMAL unarmed state.",
-    "Read MAIN latest/state/lease and reconciled the inherited WAITING_EXTERNAL lease; no fresh PRIMARY RUNNING collision existed.",
-    "Re-fetched stable main ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d and exact research head 4589192d927e40cf7a05cf8a94207efb42ebbc65.",
-    "Re-fetched ordinary CI 35472786733 as completed/success on the exact head.",
-    "Re-fetched Architecture workflow 35472786687 as completed/success; Python 3.11/3.13 exact-head jobs, prospective binding, preflight, one NON_EVIDENTIARY cycle, and raw-before-summary upload all succeeded.",
-    "Downloaded artifact 10593866036 and read raw.json before summary.json.",
-    "Verified local ZIP SHA-256 equals GitHub artifact digest b4dfbf04ab2f1dbb69fcee3833890ce6ad30d85a0c095a4699cde356c43e9115.",
-    "Verified independently computed raw.json SHA-256 4587b7e0ee1404f3f78f8a0c83c8224fea3d632e8a25162cb0ae586dc4a5712e equals summary.json raw_sha256.",
-    "Confirmed artifact head/workflow/source bindings, source_blob_verification, comparator, observables, input-family digest and machine facts are internally consistent with the unchanged fixed contract.",
-    "Applied the already-fixed terminal precedence exactly once and mapped the valid result to FUNCTIONAL_REFRACTORY_ACCOUNTING_EFFECT.",
-    "Stopped for fresh Evidence Analyst review without cycle 2, semantic repair, implementation mutation, PRE_FORMAL or FORMAL continuation."
-  ],
   "workflow_experiments": {
     "ordinary_ci": {
-      "run_id": 35472786733,
-      "head": "4589192d927e40cf7a05cf8a94207efb42ebbc65",
-      "status": "completed",
-      "conclusion": "success"
+      "run_id": 35475862604,
+      "head": "c79c5434222a6d018931dc1752e7f0074c23854b",
+      "status": "in_progress",
+      "conclusion": null
     },
-    "architecture_workflow": {
-      "run_id": 35472786687,
-      "head": "4589192d927e40cf7a05cf8a94207efb42ebbc65",
-      "status": "completed",
-      "conclusion": "success",
-      "exact_head_ci_3_11": "success",
-      "exact_head_ci_3_13": "success",
-      "prospective_binding": "success",
-      "architecture_study": "success",
-      "artifact_upload": "success"
-    },
-    "artifact": {
-      "artifact_id": 10593866036,
-      "name": "refractory-current-accounting-cycle1-4589192d927e40cf7a05cf8a94207efb42ebbc65",
-      "archive_sha256": "b4dfbf04ab2f1dbb69fcee3833890ce6ad30d85a0c095a4699cde356c43e9115",
-      "raw_sha256": "4587b7e0ee1404f3f78f8a0c83c8224fea3d632e8a25162cb0ae586dc4a5712e",
-      "summary_sha256": "da73a4dfa6750041e9e7c58e44e7e33c4bcedbde97a4b7e1af5e84a805eddb4a",
-      "raw_before_summary_verified": true
-    }
+    "outcome_bearing_workflow": null,
+    "dynamic_probe_executed": false,
+    "characterization_mode": "STATIC_READ_ONLY_REPOSITORY_CALLSITE_AND_SOURCE_CONTRACT"
   },
-  "scientific_result": {
-    "new_formal_scientific_information": false,
-    "new_pre_formal_evidence": false,
-    "new_architecture_terminal_outcome": true,
-    "mapped_outcome": "FUNCTIONAL_REFRACTORY_ACCOUNTING_EFFECT",
-    "evidentiary_status": "NON_EVIDENTIARY",
-    "decision_facts": {
-      "source_bindings_ok": true,
-      "machine_facts_ok": true,
-      "explicit_netting_contract_match": false,
-      "supported_mixed_sign_runtime_condition": true,
-      "outside_refractory_control_match": true,
-      "refractory_simple_controls_match": true,
-      "refractory_treatment_spikes_zero": true,
-      "state_effect": true,
-      "functional_effect": true
+  "observations_results": {
+    "new_formal_scientific_evidence": false,
+    "new_pre_formal_development_evidence": false,
+    "new_architecture_observation": true,
+    "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
+    "mapped_outcome": "IMMEDIATE_ONLY_USAGE_BUT_PUBLIC_CONTRACT_UNSPECIFIED",
+    "raw_facts": {
+      "learn_outcome_occurrences_on_bound_surface": 4,
+      "implementation_definition_occurrences": 1,
+      "caller_occurrences": 3,
+      "all_observed_callers_after_outcome_known": true,
+      "supported_callsite_with_intervening_process_episode": false,
+      "process_episode_calls_learn_outcome": false,
+      "process_episode_overwrites_pending_activation": true,
+      "process_episode_overwrites_pending_action": true,
+      "learn_outcome_has_episode_or_decision_identity": false,
+      "explicit_immediate_only_public_contract": false,
+      "explicit_delayed_or_interleaved_support": false
     },
-    "balanced_same_time_refractory": {
-      "production_potential_after_treatment": 0.4729797344533827,
-      "shadow_potential_after_treatment": -0.027020265546617295,
-      "production_post_refractory_probe_spike_count": 1,
-      "shadow_post_refractory_probe_spike_count": 0
-    },
-    "interpretation_boundary": "Valid bounded DEV Architecture/API semantics result only. It is not PRE_FORMAL or FORMAL evidence and does not establish biological novelty or prevalence beyond the fixed synthetic probe."
+    "interpretation": "Current bound usage is immediate and coherent, but delayed/interleaved behavior is publicly unspecified. Mutable pending credit state plus no feedback identity is an API-contract ambiguity, not a demonstrated dynamic failure."
   },
   "consumed_identities": [
     "c19-external-v2-official-v4",
     "C19-R1 revision-authority official-v1",
     "C19-R1 revision-authority official-v2",
-    "C19-R2 official-v1",
-    "PD01 official-v1",
-    "NI01 official-v1",
-    "H5 official-v1"
+    "c19-r2-fsa-state-tracker-official-v1",
+    "pd01-long-history-fading-memory-official-v1",
+    "ni01-no-ignition-selective-prediction-official-v1",
+    "h5-event-routing-work-reduction-official-v1"
   ],
   "integrity_state": {
-    "status": "VALID_NON_EVIDENTIARY_ARCHITECTURE_TERMINAL_STOPPED",
-    "exact_main_verified": true,
-    "exact_research_head_verified": true,
-    "prospective_contract_unchanged": true,
-    "source_blobs_verified_by_workflow_and_artifact": true,
-    "raw_before_summary_verified": true,
-    "artifact_archive_digest_verified": true,
-    "raw_digest_verified": true,
-    "terminal_mapping_applied_once": true,
-    "production_source_modified_this_run": false,
-    "input_family_modified_this_run": false,
-    "comparator_modified_this_run": false,
-    "observable_modified_this_run": false,
-    "threshold_or_tolerance_modified_this_run": false,
-    "terminal_mapping_modified_this_run": false,
-    "official_test_accessed_this_run": false,
-    "formal_identity_created_this_run": false,
-    "started_created_this_run": false,
-    "formal_preserve_or_evidence_created_this_run": false,
-    "immutable_evidence_modified_this_run": false,
-    "consumed_identity_mutated_this_run": false,
-    "sub_reserved_work_mutated_this_run": false,
-    "outcome_responsive_redesign_performed_this_run": false,
-    "post_outcome_repair_performed_this_run": false
+    "status": "VALID_NON_EVIDENTIARY_STATIC_TERMINAL_EXACT_HEAD_CI_PENDING",
+    "prospective_binding_before_interpretation": true,
+    "raw_facts_persisted_before_terminal_mapping": true,
+    "source_blob_verification": true,
+    "production_source_modified": false,
+    "official_test_accessed": false,
+    "formal_identity_created": false,
+    "started_created": false,
+    "preserve_or_evidence_mutated": false,
+    "consumed_identity_mutated": false,
+    "outcome_responsive_redesign": false,
+    "same_object_cycle2_started": false,
+    "sub_reserved_work_mutated": false
   },
-  "do_not_touch": [
-    "consumed identities",
-    "immutable evidence/control/preserve refs",
-    "SUB-reserved independent work",
-    "official TEST/formal scorer surfaces",
-    "completed suppression artifact/terminal",
-    "completed Assembly cross-cascade current question",
-    "completed Temporal and topology-config current questions",
-    "Top-k same-object cycle 3",
-    "Utility-owned decisions/results/state",
-    "scheduler definitions"
-  ],
-  "outcome_contingencies": {
-    "FUNCTIONAL_REFRACTORY_ACCOUNTING_EFFECT": "STOP_FRESH_ARCHITECTURE_REVIEW_NO_AUTO_PRE_FORMAL",
-    "FORMAL": "UNARMED_NO_FORMAL_OBJECT"
+  "critical_path_fixes": [],
+  "outcome_contingency_consumed": {
+    "terminal": "IMMEDIATE_ONLY_USAGE_BUT_PUBLIC_CONTRACT_UNSPECIFIED",
+    "required_action": "STOP_HOLD_API_CONTRACT_AMBIGUOUS_NO_DYNAMIC_CONTINUATION",
+    "terminal_mapping_applied_once": true
   },
+  "work_left_for_sub": "Remain on independent SUB Discovery only; do not absorb this completed MAIN static object or queued MAIN Assembly lifecycle object.",
   "utility_request_created": null,
-  "stop_reason": "VALID_FUNCTIONAL_REFRACTORY_ACCOUNTING_EFFECT_STOP_FOR_FRESH_ANALYST_REVIEW",
-  "next_MAIN_action": "STOP until a fresh Evidence Analyst handoff reviews this valid NON_EVIDENTIARY Architecture terminal. Do not automatically start cycle 2, implementation repair, PRE_FORMAL, FORMAL, or the queued delayed-outcome Architecture object without new prospective authority.",
+  "stop_reason": "VALID_STATIC_TERMINAL_REACHED_WAITING_ONLY_FOR_EXACT_HEAD_ORDINARY_CI_THEN_FRESH_ANALYST_REVIEW",
+  "next_MAIN_action": "Collect ordinary CI 35475862604 for exact head c79c5434222a6d018931dc1752e7f0074c23854b. If success, persist COMPLETED and stop for fresh Evidence Analyst review. Do not execute dynamic interleaving, semantic redesign, cycle 2, PRE_FORMAL, or FORMAL without new authority.",
   "persistence_result": {
-    "lease_acquisition_commit": "ef7d9f2ee9deb43e094343f2fcc8a35efb92008d",
-    "latest_md_commit": "d85307c42921ae1d2bc9a88c0e9fe4347078e9b0",
-    "history_path": "reports/orchestrator/history/2026-09-20/0744-main.md",
+    "latest_md_commit": "a771e26d80db514e76527809bad8a3d419d9acf7",
+    "history_path": "reports/orchestrator/history/2026-09-20/0821-main.md",
+    "history_commit": "081e555661cd34bf503eda3a7a51531ab4e82ad2",
     "state_json": "this update",
     "final_lease": "pending final update",
     "force_push_used": false
