@@ -1,21 +1,39 @@
 {
-  "timestamp": "2026-09-20T04:50:00+09:00",
+  "timestamp": "2026-09-20T05:18:00+09:00",
   "worker_role": "main",
-  "execution_mode": "RELAY",
+  "execution_mode": "PRIMARY",
   "analyst_commit": "493573eb3b8c38d88f251db7c04dfe1a586c6ff0",
   "research_layer": "ARCHITECTURE_STUDY",
-  "current_lane": "V05_UNIT_SUPPRESSION_TRANSIENT_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_WORKFLOW_IN_PROGRESS",
+  "current_lane": "V05_UNIT_SUPPRESSION_TRANSIENT_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_INVALID_DIAGNOSTIC_STOP",
   "candidate_question": {
     "id": "CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01",
     "question": "Is public transient suppress_units / clear_unit_suppression explicitly state-preserving, state-neutral, or silent/ambiguous in a way that can confound future causal/recovery studies?",
-    "exploration_cycle_count": {"DISCOVERY": 1, "ARCHITECTURE_STUDY": 1},
-    "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY_IN_PROGRESS"
+    "exploration_cycle_count": {
+      "DISCOVERY": 1,
+      "ARCHITECTURE_STUDY_ATTEMPTED": 1,
+      "VALID_ARCHITECTURE_OUTCOMES": 0
+    },
+    "evidentiary_status": "NON_EVIDENTIARY_INVALID_DIAGNOSTIC_DISCARDED"
   },
   "research_layer_state": {
-    "DISCOVERY": {"state": "OPEN", "owner": "SUB", "status": "NON_EVIDENTIARY"},
-    "ARCHITECTURE_STUDY": {"state": "CYCLE1_EXACT_HEAD_WORKFLOW_IN_PROGRESS", "owner": "MAIN", "current_object": "CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01"},
-    "PRE_FORMAL": {"state": "EMPTY_HOLD", "owner": "MAIN"},
-    "FORMAL": {"state": "EMPTY_HOLD", "owner": "MAIN"}
+    "DISCOVERY": {
+      "state": "OPEN",
+      "owner": "SUB",
+      "status": "NON_EVIDENTIARY"
+    },
+    "ARCHITECTURE_STUDY": {
+      "state": "CYCLE1_INVALID_DIAGNOSTIC_DISCARD_STOP_PENDING_FRESH_ANALYST",
+      "owner": "MAIN",
+      "current_object": "CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01"
+    },
+    "PRE_FORMAL": {
+      "state": "EMPTY_HOLD",
+      "owner": "MAIN"
+    },
+    "FORMAL": {
+      "state": "EMPTY_HOLD",
+      "owner": "MAIN"
+    }
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
@@ -24,59 +42,79 @@
     "research_head": "2ef4b24f8e7ef8577ebbcb0328e7b3476bc24336",
     "prospective_contract_commit": "05a9c4e26954adf04012a554e800bf63d23ba627",
     "harness_commit": "d8bf9c34b16d05ad4a8e10f145b46e367d93f89c",
+    "control_brain": "98155846394925730997fc35389fd6ad1b53f710",
+    "preserve_branch": "ops/a01-md-001-preserve-once@465b8afe73aa6ff9dad2fa67d1f954a3ec689097",
+    "evidence_tag_count": 5,
+    "formal_tag_count": 0,
+    "sealed_tag_count": 0,
+    "freeze_tag_count": 0,
+    "legacy_freeze_branch_count": 13,
     "source_blobs": {
       "src/sparkbrain/v05/brain.py": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
       "src/sparkbrain/v05/evaluation.py": "efd52d236708aea3bf23b6139d8717b1ac1d0559",
       "tests/v05/test_v05_brain.py": "6a81994ac82a3f0660585ef0d95495aaaa336629"
     }
   },
-  "lease_collision_reconciliation": {
-    "inherited_status": "COMPLETED",
-    "fresh_primary_running_collision_found": false,
+  "fast_path_reconciliation": {
+    "initial_mode": "FAST_PATH",
+    "escalated_to_full_reconciliation": true,
+    "trigger": "ARTIFACT_STATIC_FACT_DISAGREES_WITH_EXACT_BLOB_BOUND_SOURCE",
+    "full_reconciliation_status": "COMPLETE_NO_COLLISION_NO_REF_DRIFT",
+    "same_object_collision_found": false,
     "sub_collision_found": false,
-    "sub_reference": "research/exploratory-sub-unit-suppression-latent-state-20260920@a2b65919ade8c4fe33514aa686ae18db8e0889d3",
-    "relay_lease_acquired": true
+    "sub_reference": "research/exploratory-sub-assembly-cascade-fallback-bridging-20260920@373f7d52af3b46a23ae976863a2eb5d73d982b5f",
+    "open_governance_prs_rechecked": [148, 149]
   },
-  "prospective_binding": {
-    "status": "COMPLETE_BEFORE_TERMINAL_MAPPING_EXECUTION",
-    "deterministic_scope_tokens": ["suppress_units", "clear_unit_suppression", "suppressed_unit_ids"],
-    "scope_paths": [
-      "src/sparkbrain/v05/brain.py",
-      "src/sparkbrain/v05/evaluation.py",
-      "tests/v05/test_v05_brain.py"
-    ],
-    "terminal_classes": [
-      "EXPLICIT_STATE_PRESERVING_TRANSIENT_CONTRACT",
-      "EXPLICIT_STATE_NEUTRAL_CONTRACT_VIOLATED",
-      "PUBLIC_TRANSIENT_API_SILENT_STATE_PRESERVATION",
-      "NO_SUPPORTED_TRANSIENT_CLEAR_SURFACE",
-      "AMBIGUOUS_CONTRACT",
-      "INVALID_DIAGNOSTIC"
-    ],
-    "machine_handoff_fields_bound": true,
-    "formal_paths": "UNARMED_NO_FORMAL_OBJECT"
+  "branches_prs_advanced": {
+    "research_branch_mutation_this_run": false,
+    "research_merge_this_run": false,
+    "pr_mutation_this_run": false,
+    "pr_148": "OPEN_UNMERGED_UNTOUCHED",
+    "pr_149": "OPEN_UNMERGED_UNTOUCHED"
   },
   "workflow_experiments": {
     "architecture_workflow": {
       "run_id": 35465512928,
       "head": "2ef4b24f8e7ef8577ebbcb0328e7b3476bc24336",
-      "status": "in_progress",
-      "conclusion": null,
-      "purpose": "exact-head CI/readiness then one static NON_EVIDENTIARY Architecture characterization with raw-before-summary artifact upload"
+      "status": "completed",
+      "conclusion": "success",
+      "artifact_id": 10591265966,
+      "artifact_sha256": "d4dd67e97132229fc60c1cf13b6dbc9366bfa22a2568aa7de116667b41d33669",
+      "raw_sha256": "220eb06b051273680726b8f0f4ad318a95863fcc1e9909daeb23ffd745ec6805",
+      "artifact_emitted_outcome": "AMBIGUOUS_CONTRACT",
+      "accepted_outcome": "NONE_INVALID_DIAGNOSTIC_DISCARDED"
     },
     "ordinary_ci": {
       "run_id": 35465512894,
       "head": "2ef4b24f8e7ef8577ebbcb0328e7b3476bc24336",
-      "status": "in_progress",
-      "conclusion": null
+      "status": "completed",
+      "conclusion": "success"
+    }
+  },
+  "artifact_verification": {
+    "scope_blob_verification": "PASS",
+    "artifact_archive_digest_matches_github": true,
+    "raw_digest_matches_summary": true,
+    "machine_handoff_fields_present": true,
+    "contract_sha256_reported": "4d688d4d6ed4e7998d6e4a14ddb0cb9442474168f22996608acceae60fd8a51a",
+    "diagnostic_integrity": "FAIL",
+    "defect": {
+      "field": "static_facts.restore_restores_original_base_threshold",
+      "artifact_value": false,
+      "harness_detector": "literal substring unit.base_threshold = threshold in _restore_unit_suppression source",
+      "exact_bound_source": "self.base.field.units[unit_id].base_threshold = threshold",
+      "supporting_apply_source": "original[unit_id] = unit.base_threshold; unit.base_threshold = 1e9",
+      "derived_effect": "implementation_state_preserving was forced false and mapper fell through to AMBIGUOUS_CONTRACT"
     }
   },
   "observations_results": {
     "formal_scientific_evidence": "NONE_NEW",
     "pre_formal_development_evidence": "NONE_NEW",
-    "new_architecture_outcome": "NONE_YET_WORKFLOW_IN_PROGRESS",
-    "terminal_mapping_consumed": false,
-    "claim_boundary": "Static Architecture/API contract characterization only. SUB exploratory pulse is not Architecture evidence; no dynamic cycle 2, implementation repair, PRE_FORMAL, or FORMAL continuation is authorized in this run."
+    "accepted_architecture_observation": "NONE",
+    "artifact_emitted_terminal_class": "AMBIGUOUS_CONTRACT",
+    "verification_disposition": "INVALID_DIAGNOSTIC_DISCARD_STOP",
+    "evidentiary_status": "NON_EVIDENTIARY",
+    "claim_boundary": "The emitted AMBIGUOUS_CONTRACT class is not accepted because a prospectively bound static fact was mechanically misdetected. MAIN does not infer or assign a repaired semantic class in this run."
   },
   "consumed_identities": [
     "c19-external-v2-official-v4",
@@ -88,12 +126,14 @@
     "H5 official-v1"
   ],
   "integrity_state": {
-    "status": "CLEAN_WAITING_EXTERNAL_EXACT_HEAD_VALIDATION_AND_STATIC_ARCHITECTURE_CYCLE",
+    "status": "INVALID_DIAGNOSTIC_POST_OUTCOME_STATIC_HARNESS_FALSE_NEGATIVE",
     "exact_main_verified": true,
     "exact_research_head_verified": true,
     "source_scope_blob_bound_before_terminal_mapping_execution": true,
-    "terminal_mapping_bound_before_terminal_mapping_execution": true,
-    "machine_handoff_fields_bound": true,
+    "terminal_mapping_bound_before_execution": true,
+    "artifact_provenance_verified": true,
+    "raw_before_summary_digest_verified": true,
+    "static_fact_consistency_verified": false,
     "official_test_accessed_this_run": false,
     "formal_identity_created_this_run": false,
     "started_created_this_run": false,
@@ -103,28 +143,29 @@
     "rerun_or_retune_performed_this_run": false,
     "post_outcome_code_fix_performed_this_run": false
   },
-  "contingency_consumed": "PRE_START_BINDING_COMPLETE",
+  "contingency_consumed": "INVALID_DIAGNOSTIC",
   "critical_path_fixes": [],
+  "critical_path_fix_status": "OWNED_BY_MAIN_BUT_NOT_AUTHORIZED_POST_OUTCOME_THIS_RUN",
   "critical_path_actions_performed": [
-    "Read fresh Evidence Analyst handoff, MAIN latest/state/lease, and current SUB state.",
-    "Re-fetched stable main and confirmed no fresh PRIMARY RUNNING same-object collision.",
-    "Acquired a RELAY MAIN lease on the control plane.",
-    "Created the new research branch directly from exact stable main.",
-    "Deterministically enumerated and blob-bound the suppress_units/clear_unit_suppression source/tests/callsite scope before terminal mapping execution.",
-    "Prospectively fixed the Analyst-authorized terminal mapping and required machine-readable handoff fields.",
-    "Added a static-only harness and exact-head workflow that require ordinary CI/readiness before the single Architecture characterization.",
-    "Observed both the Architecture workflow and ordinary CI running on exact head and stopped rather than waiting."
+    "Read fresh Evidence Analyst latest/state plus MAIN latest/state/lease and current SUB report.",
+    "Re-fetched stable main, active research branch, evidence/formal/sealed/freeze refs, preserve/control refs, open PRs, workflow and artifact identities.",
+    "Acquired a fresh PRIMARY MAIN lease before control-plane mutation.",
+    "Collected exact-head Architecture workflow 35465512928 and ordinary CI 35465512894; both succeeded.",
+    "Downloaded artifact 10591265966 and verified GitHub archive digest and raw digest binding.",
+    "Compared the artifact's static facts against the exact prospectively blob-bound source scope.",
+    "Detected a deterministic restore-threshold detector false-negative and escalated to FULL RECONCILIATION.",
+    "Applied the pre-bound INVALID_DIAGNOSTIC discard/stop integrity disposition without patching, rerunning, rescoring, or assigning a repaired semantic class."
   ],
-  "stop_reason": "EXACT_HEAD_SUPPRESSION_SEMANTICS_ARCHITECTURE_WORKFLOW_IN_PROGRESS",
-  "work_left_for_sub": "Independent bounded Discovery only; do not continue the promoted suppression Architecture object or touch MAIN blockers/formal surfaces.",
+  "stop_reason": "POST_OUTCOME_STATIC_HARNESS_FALSE_NEGATIVE_INVALID_DIAGNOSTIC_DISCARD_STOP",
+  "work_left_for_sub": "Independent bounded Discovery only. Do not continue or repair the MAIN suppression Architecture object; latest assembly-segmentation promotion candidate remains for fresh Analyst classification.",
   "utility_request_created": null,
-  "next_MAIN_action": "Collect workflow 35465512928 and ordinary CI 35465512894 on exact head 2ef4b24f8e7ef8577ebbcb0328e7b3476bc24336. If a pre-start mechanical blocker appears, only a science-invariant fix plus re-binding is authorized. If one valid terminal class is produced, verify raw-before-summary artifact binding, persist that fixed outcome, and STOP for fresh Evidence Analyst review without same-run implementation repair, dynamic cycle 2, PRE_FORMAL, or FORMAL continuation.",
+  "next_MAIN_action": "Wait for fresh Evidence Analyst review. Only if fresh prospective authority explicitly permits it may MAIN mechanically correct the static detector, re-bind exact source/contract/head, and execute a replacement diagnostic. Do not repair or rerun under the current authority and do not infer a repaired semantic class from this discarded attempt.",
   "persistence_result": {
-    "history_path": "reports/orchestrator/history/2026-09-20/0450-main.md",
-    "history_commit": "7ce07b9f4c740acc887d7136848ef5c01c0ba34e",
-    "latest_md_commit": "ad4222917e40f884592abc872c6d92db6f80f668",
+    "history_path": "reports/orchestrator/history/2026-09-20/0518-main.md",
+    "history_commit": "45751e31fa751c1986654495a1ac444ea74f26e8",
+    "latest_md_commit": "3f9be10a8ba5bf8c668e92463936148a27d66814",
+    "lease_acquisition_commit": "6988a1c278bae147071e06564c2194cabf9fdc1e",
     "state_json": "this update",
-    "lease_acquisition_commit": "77db134c038b75ebf2277c0188bf9f9aff735dd1",
     "force_push_used": false
   }
 }
