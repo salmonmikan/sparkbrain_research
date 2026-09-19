@@ -1,14 +1,14 @@
 {
-  "run_id": "sparkbrain-main-primary-20260920T0015JST",
+  "run_id": "sparkbrain-main-primary-20260920T0115JST",
   "execution_mode": "PRIMARY",
-  "status": "WAITING_EXTERNAL",
-  "started_at": "2026-09-20T00:15:00+09:00",
-  "heartbeat_at": "2026-09-20T00:23:00+09:00",
-  "analyst_commit": "862dd62cdce58f06e5c782b4b54212d93e40212e",
+  "status": "RUNNING",
+  "started_at": "2026-09-20T01:15:06+09:00",
+  "heartbeat_at": "2026-09-20T01:23:39+09:00",
+  "analyst_commit": "e781202e8c7ae4562c10fa46cdddfb3b0eb1bc08",
   "active_branch": "research/main-temporal-batch-partition-arch-study-20260920",
   "active_identity": null,
-  "active_step": "TEMPORAL_BATCH_PARTITION_CYCLE1_WAITING_EXACT_HEAD_WORKFLOW",
+  "active_step": "FULL_RECONCILIATION_ANALYST_ARTIFACT_DESCRIPTIVE_MISMATCH",
   "workflow_run_id": 35451528895,
-  "expected_next_action": "Collect workflow 35451528895 only on exact head 7fa4391bbf34cf25e10b708ce64acddf07bf7f42. If exact-head CI/readiness and the one prospectively fixed Architecture diagnostic complete validly, download and verify raw-before-summary artifacts, apply the fixed four-way Architecture outcome map exactly once, persist the NON_EVIDENTIARY result, and STOP for fresh Evidence Analyst review. Do not run cycle 2, retune/redesign, PRE_FORMAL or FORMAL continuation.",
+  "expected_next_action": "Reconcile the completed exact-head Temporal Architecture artifact against the fresh Analyst handoff, persist the exact NON_EVIDENTIARY result and integrity discrepancy, then HOLD pending a fresh prospectively authorized MAIN object. Do not execute Temporal cycle 2, PRE_FORMAL, FORMAL, or outcome-responsive redesign.",
   "owner": "main"
 }
