@@ -1,132 +1,59 @@
 {
-  "timestamp": "2026-09-19T20:14:10+09:00",
+  "timestamp": "2026-09-19T21:16:30+09:00",
   "worker_role": "main",
   "execution_mode": "PRIMARY",
-  "analyst_commit": "5982fc0ae76d62c4a6fce42f6b1aaaf7f85b8e23",
-  "research_layer": "ARCHITECTURE_STUDY",
-  "current_lane": "STRUCTURAL_ORDER_PATH_DEPENDENCE_ARCHITECTURE_STUDY_CYCLE1",
-  "current_phase": "VALID_OUTCOME_STOP_FOR_FRESH_ANALYST_REVIEW",
+  "analyst_commit": "a3ec861d71c0965625fc1d2e5e8f65f4ce47f834",
+  "research_layer": "ARCHITECTURE_STUDY_OR_PRE_FORMAL_ADMISSION",
+  "current_lane": "LOWER_FUNNEL_MAIN_HOLD_PENDING_FRESH_OBJECT",
+  "current_phase": "HOLD_NO_ACTIVE_OBJECT",
   "candidate": {
-    "id": "CAND-STRUCTURAL-ORDER-PATH-01",
-    "question": "Does actual SparkBrain structural execution show reproducible topology/output dependence for the same DEV episode multiset under different orders beyond event-budget exhaustion and edge-only order effects?",
-    "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
+    "active": null,
+    "question": "No fresh central high-information non-rescue object is currently authorized.",
+    "evidentiary_status": "NO_NEW_EVIDENCE",
     "exploration_cycle_count": {
-      "discovery": 1,
-      "architecture_completed": 1,
-      "default_programme_max": 3,
-      "cycle2_authorized": false
+      "CAND_STRUCTURAL_ORDER_PATH_01": {"discovery": 1, "architecture_completed": 1, "classification": "REJECT"},
+      "CAND_TOPK_PA_01": {"discovery": 1, "architecture_completed": 2, "classification": "HOLD"}
     }
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst_handoff": "5982fc0ae76d62c4a6fce42f6b1aaaf7f85b8e23",
-    "fixed_study_contract_authority": "9c6302d83f71ab22d45c5f6290951a48902d9c1e",
-    "discovery_reference": "research/exploratory-sub-structural-order-path-dependence-20260919@8156bba7b119fb831b7c28eac7cd900746f9876e",
-    "research_branch": "research/main-structural-order-path-arch-study-20260919",
-    "research_head": "6a53ee36259bca31b77024245e5ab0a9ef5ec405",
-    "workflow_run_id": 35438868911,
+    "evidence_analyst_handoff": "a3ec861d71c0965625fc1d2e5e8f65f4ce47f834",
+    "structural_research_branch": "research/main-structural-order-path-arch-study-20260919",
+    "structural_research_head": "6a53ee36259bca31b77024245e5ab0a9ef5ec405",
+    "structural_workflow_run_id": 35438868911,
+    "structural_workflow_status": "completed/success",
     "formal_identity": null,
     "started_ref": null,
     "formal_preserve_ref": null,
     "formal_evidence_ref": null
   },
+  "research_layer_state": {
+    "DISCOVERY": "OPEN_SUB_DEFAULT_NON_EVIDENTIARY",
+    "ARCHITECTURE_STUDY": "HOLD_NO_ACTIVE_MAIN_OBJECT",
+    "PRE_FORMAL": "EMPTY_HOLD",
+    "FORMAL": "EMPTY_HOLD"
+  },
+  "candidate_pool": {
+    "CAND-TOPK-PA-01": "HOLD_PENDING_READONLY_CROSS_SEED_SUPPORT_AND_FRESH_PROSPECTIVE_REDUCTION_QUESTION",
+    "CAND-STRUCTURAL-ORDER-PATH-01": "REJECT_EDGE_OR_HOMEOSTASIS_CONTROL_REPRODUCES",
+    "CAND-H5-AUDIT-01": "HOLD_INDEPENDENT_READONLY_AUDIT",
+    "CAND-H7-RESP-01": "HOLD_NO_NATIVE_OBJECT",
+    "CAND-RECEPTOR-POLARITY-01": "REJECT_EXACT_IMPLEMENTATION_REDUCTION"
+  },
   "fast_path_used": true,
   "full_reconciliation_reason": null,
   "branches_prs_advanced": {
-    "research_branch_mutated_this_primary_run": false,
+    "research_branch_mutated_this_run": false,
     "ops_report_branch_mutated": true,
     "prs_advanced": []
   },
-  "lease_collision_reconciliation": {
-    "observed_prior_lease": {
-      "run_id": "sparkbrain-main-relay-20260919T195504JST",
-      "execution_mode": "RELAY",
-      "status": "WAITING_EXTERNAL",
-      "heartbeat_at": "2026-09-19T19:59:30+09:00",
-      "workflow_run_id": 35438868911
-    },
-    "fresh_same_object_primary_running_collision_found": false,
-    "primary_lease_acquired": true,
-    "primary_run_id": "sparkbrain-main-primary-20260919T201410JST",
-    "research_head_reconciled": "6a53ee36259bca31b77024245e5ab0a9ef5ec405",
-    "analyst_ref_reconciled": "5982fc0ae76d62c4a6fce42f6b1aaaf7f85b8e23"
-  },
-  "outcome_contingencies_consumed": [
-    "PRE_START_BLOCKER_MECHANICAL -> science-invariant lint repair and fresh exact-head CI",
-    "VALID_OUTCOME -> persist fixed NON_EVIDENTIARY architecture label and STOP for fresh Analyst review"
-  ],
-  "prospective_binding": {
-    "model_training_seed": 43,
-    "structural_seed": 83,
-    "permutation_seed": 20260919,
-    "train_dev_offset_count": [0, 48],
-    "adapt_dev_offset_count": [48, 12],
-    "probe_dev_offset_count": [60, 12],
-    "steps": 24,
-    "adapt_probe_worlds": ["goal_conflict_world", "multi_object_world"],
-    "order_pairs": 12,
-    "conditions": ["full_budget16", "full_budget64", "edge_only_budget64"],
-    "test_allowed": false,
-    "formal_allowed": false
-  },
-  "workflows_experiments": [
-    {
-      "run_id": 35438868911,
-      "head_sha": "6a53ee36259bca31b77024245e5ab0a9ef5ec405",
-      "status": "completed",
-      "conclusion": "success",
-      "python_3_11": "success",
-      "python_3_13": "success",
-      "architecture_study_job": "success",
-      "raw_before_interpretation": true,
-      "exact_source_ancestry_check": "success"
-    }
-  ],
-  "artifact_validation": {
-    "raw_artifact": {
-      "id": 10583406878,
-      "name": "structural-order-path-cycle1-raw",
-      "github_digest": "sha256:135caa35bf95239bad45404f13363536227a4144588aab4db0194b1545815a0d",
-      "downloaded_digest_matches": true,
-      "files": ["raw.json", "source-seed43.pt"]
-    },
-    "result_artifact": {
-      "id": 10583416906,
-      "name": "structural-order-path-cycle1-result",
-      "github_digest": "sha256:4459a88878b7d463de73bd66034ca1f28b60f41838da5efae61b201104624625",
-      "downloaded_digest_matches": true,
-      "files": ["summary.json"]
-    },
-    "raw_source_binding": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "raw_contract_authority": "9c6302d83f71ab22d45c5f6290951a48902d9c1e",
-    "checkpoint_metadata_binding_matches": true,
-    "test_manifest_opened": false,
-    "independent_mapping_recomputed": true
-  },
+  "workflows_experiments": [],
   "observations_results": {
-    "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
-    "local_architecture_label": "EDGE_OR_HOMEOSTASIS_CONTROL_REPRODUCES",
-    "condition_summary": {
-      "full_budget16": {
-        "topology_divergent_pairs": 6,
-        "functional_l1_ge_0_01_pairs": 12,
-        "mean_probability_l1": 0.15678818114372042
-      },
-      "full_budget64": {
-        "topology_divergent_pairs": 6,
-        "functional_l1_ge_0_01_pairs": 12,
-        "mean_probability_l1": 0.15678818114372042
-      },
-      "edge_only_budget64": {
-        "topology_divergent_pairs": 11,
-        "functional_l1_ge_0_01_pairs": 12,
-        "mean_probability_l1": 0.026581938685854695
-      }
-    },
-    "interpretation": "Within this bounded DEV Architecture Study, edge-only/homeostatic control reproduces the order-dependent observable under the fixed mapping. The study does not establish a residual beyond that ordinary control.",
-    "formal_scientific_evidence_created": false,
-    "new_formal_repository_evidence": false,
-    "new_non_evidentiary_architecture_information": true
+    "formal_scientific_evidence": "NONE_NEW",
+    "pre_formal_development_evidence": "NONE_NEW",
+    "architecture_study_observations_this_run": "NONE_NEW",
+    "prior_architecture_result_retained": "EDGE_OR_HOMEOSTASIS_CONTROL_REPRODUCES",
+    "analyst_interpretation": "CAND-STRUCTURAL-ORDER-PATH-01 is rejected for further cycles under the current question because edge-only/homeostatic control reproduces the required observable; order sensitivity remains useful non-evidentiary system characterization."
   },
   "consumed_identities": [
     "c19-external-v2-official-v4",
@@ -137,9 +64,8 @@
     "ni01-no-ignition-selective-prediction-official-v1",
     "h5-event-routing-work-reduction-official-v1"
   ],
-  "current_object_consumed_identity": null,
   "integrity_state": {
-    "status": "CLEAN_NON_EVIDENTIARY_VALID_OUTCOME_STOPPED",
+    "status": "CLEAN_EXPLICIT_ANALYST_HOLD",
     "official_test_accessed": false,
     "formal_identity_created": false,
     "started_created": false,
@@ -149,24 +75,29 @@
     "immutable_evidence_modified": false,
     "consumed_identity_reused": false,
     "research_merge_performed": false,
-    "outcome_responsive_change": false,
-    "rerun_performed_after_outcome": false,
+    "rerun_performed": false,
     "retune_performed": false,
     "redesign_performed": false
   },
-  "critical_path_fixes": [
-    "No new critical-path code fix was required in this PRIMARY collection run; the prior RELAY had already applied the Analyst-authorized science-invariant lint-only repair.",
-    "PRIMARY collected the exact repaired workflow, validated both ordinary CI matrix jobs and gated Architecture job, downloaded both artifacts, verified archive digests, checked raw/checkpoint bindings, and independently recomputed the fixed six-way label."
-  ],
-  "stop_reason": "VALID_ARCHITECTURE_OUTCOME_EDGE_OR_HOMEOSTASIS_CONTROL_REPRODUCES_STOP_FOR_FRESH_ANALYST_REVIEW",
-  "work_left_for_sub": "Independent Discovery only; no MAIN critical-path dependency and no structural-order work transferred to SUB.",
+  "lease_collision_reconciliation": {
+    "prior_status": "COMPLETED",
+    "fresh_same_object_main_collision_found": false,
+    "lease_acquired_commit": "ad011b459630299f9994a8275a69dae6d15c2af2",
+    "analyst_ref_rechecked": "a3ec861d71c0965625fc1d2e5e8f65f4ce47f834",
+    "main_ref_rechecked": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "structural_ref_rechecked": "6a53ee36259bca31b77024245e5ab0a9ef5ec405"
+  },
+  "critical_path_fixes": [],
+  "stop_reason": "ANALYST_EXPLICIT_MAIN_HOLD_NO_FRESH_CENTRAL_OBJECT",
+  "work_left_for_sub": "Independent bounded Discovery only under Analyst allocation; no MAIN critical-path dependency.",
   "utility_request_created": null,
-  "next_MAIN_action": "Wait for fresh Evidence Analyst review. Do not run structural-order cycle 2, redesign controls/comparators, promote to PRE_FORMAL, create a FORMAL identity/STARTED, access TEST, or merge under the current authority.",
+  "existing_utility_request": "EVA-20260919-1943-TOPK-CROSS-SEED-SUPPORT",
+  "next_MAIN_action": "Await fresh Evidence Analyst authorization of a central Architecture/PRE_FORMAL/FORMAL object. Do not run Structural cycle 2, Top-k cycle 3, construct H7, access TEST/formal surfaces, or absorb SUB Discovery under current authority.",
   "persistence_result": {
-    "latest_md_commit": "ed481b7105ca5e374aa728b0466a45ed2b581e06",
+    "latest_md_commit": "be8ad6035444bd7ffeeb92b220c634377b49517b",
+    "history_path": "reports/orchestrator/history/2026-09-19/2116-main.md",
+    "history_commit": "406a963403a919b451b70af76425407db578c9ba",
     "state_json": "this update",
-    "history_path": "reports/orchestrator/history/2026-09-19/2014-main.md",
-    "history_commit": "b091cc11d9c15b5948d2dd5e044748f7f11592e8",
     "final_lease_commit": "follows state update",
     "force_push_used": false
   }
