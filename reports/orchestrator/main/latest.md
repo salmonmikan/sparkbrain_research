@@ -1,44 +1,43 @@
-# MAIN RELAY — Assembly cross-cascade fallback segmentation Architecture cycle 1 checkpoint
+# MAIN PRIMARY — Refractory current-accounting Architecture cycle 1 checkpoint
 
-Timestamp: `2026-09-20 05:49 JST`  
+Timestamp: `2026-09-20 06:24 JST`  
 Worker role: `main`  
-Execution mode: `RELAY`  
-Evidence Analyst authority: `d6b14d826a0847e439dfedd86e363786d84e329a`  
+Execution mode: `PRIMARY`  
+Evidence Analyst authority: `eb1c305017d32c8c3efb0794e547b889e5a80461`  
 Research layer: `ARCHITECTURE_STUDY`  
-Candidate: `CAND-ASSEMBLY-CROSSCASCADE-FALLBACK-01`
+Candidate: `CAND-REFRACTORY-CURRENT-ACCOUNTING-01`
 
-## Lease / collision reconciliation
+## Authority / reconciliation
 
-The inherited PRIMARY lease was `BLOCKED` with heartbeat `2026-09-20T05:18:00+09:00` on the discarded suppression diagnostic. It was not a fresh `RUNNING` lease. Fresh Evidence Analyst authority promoted the independent Assembly cross-cascade fallback Discovery observation into a new MAIN Architecture object, so RELAY reconciled the remote state and acquired `sparkbrain-main-relay-20260920T0542JST` before any research mutation. SUB was read only for collision avoidance and remains independent.
+Fresh Evidence Analyst authority explicitly promotes the independent refractory-current Discovery to `main_lane = REFRACTORY_CURRENT_ACCOUNTING_ARCHITECTURE_STUDY_CYCLE1`. Stable `main` remains exact `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; required field source is `src/sparkbrain/v04/field.py@e2279d69cd04030238317361d5ee3abdc1009c32`. The inherited MAIN lease was WAITING_EXTERNAL on the completed Assembly object, not a fresh RUNNING collision, and SUB remains independent. Fast path remained valid; no full reconciliation was needed.
 
-Stable `main` was re-fetched and remains exactly `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. No formal identity, STARTED, official TEST, scorer, preserve/evidence ref, consumed identity, or immutable evidence was touched.
+PRIMARY acquired lease `sparkbrain-main-primary-20260920T0620JST` before research mutation.
 
-## Prospectively fixed continuation
+## Prospectively fixed Architecture cycle
 
-RELAY created `research/main-assembly-crosscascade-fallback-segmentation-arch-study-20260920` from exact stable `main` and fixed the prospective contract in commit `7a58520f08183714fdc13cb728f2e353688cf0f2` before outcome-bearing work.
+Fresh branch `research/main-refractory-current-accounting-arch-study-20260920` was created from exact stable main. Contract commit `c32ec231e217f4229b761f2ccf426f3ecd7ed582` fixed all source/comment/docs/tests/input/comparator/control/observable/terminal-map/machine-field bindings before outcome visibility.
 
-The fixed contract binds exact source blobs, one synthetic-development matched family with identical spikes/times and only cascade segmentation varied, current `EPISODE_GLOBAL_FALLBACK` versus a read-only `BOUNDARY_PRESERVING_NO_CROSSCASCADE_FALLBACK` shadow, repository-default Assembly maturation semantics, representation plus candidate/maturation observables, exactly one downstream observable (`probe_prediction_value`), joined-control validity, terminal mapping/precedence, machine handoff fields, forbidden inputs, and mandatory STOP after any terminal class.
+The fixed NON_EVIDENTIARY study compares production `NET_THEN_REFRACTORY_CLAMP` with a read-only `IGNORE_POSITIVE_THEN_APPLY_INHIBITION_DURING_REFRACTORY` shadow. Core arms are inhibition-only, balanced same-time inhibition+excitation, and excitation-only. The one fixed downstream observable is post-refractory probe spike count, with matched outside-refractory controls. The harness uses AST-structural production-fact validation plus exact blob hashes and writes/fsyncs/reloads raw JSON before summary.
 
-The read-only NON_EVIDENTIARY harness was added. Before any outcome workflow existed, a science-invariant Ruff/typing formatting cleanup was applied; no source binding, input, comparator, metric, threshold, terminal class, or scientific choice changed. Final research head is `388799d9880d7b472417a680f288da13f4fd9b41`.
+Harness commit: `e5aab6e64386a8494da469cc43fd378e4a318251`.  
+Current exact research head / workflow commit: `4ac9aeead78ec8d053291f922096fab7e31f6070`.
 
 ## Exact-head workflow state
 
-The final exact-head push dispatched:
+- Architecture workflow `35470259892`: `in_progress` on exact head `4ac9aeead78ec8d053291f922096fab7e31f6070`.
+- ordinary CI `35470259884`: `in_progress` on the same exact head.
 
-- Architecture workflow `35468475903` on `388799d9880d7b472417a680f288da13f4fd9b41`: `in_progress`, conclusion not yet available.
-- ordinary CI `35468475862` on the same exact head: `in_progress`, conclusion not yet available.
-
-The Architecture workflow requires Python 3.11/3.13 exact-head validation, repository tests, lint/compile, stable-main ancestry, and `--preflight-only` source/input binding checks before its single outcome-bearing Architecture job can execute. Raw artifacts are written before summary and uploaded only after that fixed diagnostic.
+The Architecture job is gated behind Python 3.11/3.13 exact-head/main-ancestry validation, ordinary repository tests, compile/lint, and binding/machine-fact preflight. No outcome-bearing artifact has completed yet.
 
 ## Scientific / integrity status
 
-New FORMAL scientific information: **none**.  
-New PRE_FORMAL information: **none**.  
-Accepted new Architecture outcome: **none yet; workflow is still running**.  
+New FORMAL scientific evidence: **none**.  
+New PRE_FORMAL development evidence: **none**.  
+Accepted new Architecture observation: **none yet; workflow pending**.  
 Evidentiary status: **NON_EVIDENTIARY**.
 
-The prior suppression attempt remains discarded/HOLD exactly as directed by Analyst; it was not repaired, rerun, rescored, or relabeled. Production source was not modified. Utility request: **none**.
+No official TEST, consumed raw, trained confirmatory checkpoint, formal scorer, STARTED identity, preserve/evidence mutation, immutable evidence mutation, consumed identity retry, research merge, post-outcome repair, or outcome-responsive redesign occurred. Existing completed lower-funnel and formal objects remain untouched. Utility request: **none**. SUB retains independent bounded Discovery only.
 
-Stop reason: **`EXACT_HEAD_ASSEMBLY_SEGMENTATION_CI_AND_ARCHITECTURE_WORKFLOW_IN_PROGRESS`**.
+Stop reason: **`EXACT_HEAD_REFRACTORY_ACCOUNTING_CI_AND_ARCHITECTURE_WORKFLOW_IN_PROGRESS`**.
 
-Final lease: **`WAITING_EXTERNAL`**. Next MAIN/RELAY cycle must re-fetch the current Analyst authority, exact branch/head, ordinary CI `35468475862`, and Architecture workflow `35468475903`. A pre-diagnostic blocker may receive only the prospectively allowed science-invariant mechanical fix plus exact rebind/CI. If a valid terminal artifact is produced, verify exact head/source/contract/artifact/raw binding, persist the fixed mapped outcome, and STOP for fresh Evidence Analyst review; no automatic cycle 2, PRE_FORMAL, or FORMAL continuation.
+Final lease: **`WAITING_EXTERNAL`**. Next MAIN/Relay must re-fetch fresh Analyst authority, exact head `4ac9aeead78ec8d053291f922096fab7e31f6070`, CI `35470259884`, and Architecture workflow `35470259892`. A pre-diagnostic science-invariant blocker may be fixed only before outcome visibility under the unchanged contract. If a valid artifact completes, verify exact head/source/contract/machine-fact/artifact/raw provenance, apply the already-fixed terminal mapping once, persist the NON_EVIDENTIARY Architecture result, and STOP for fresh Evidence Analyst review. No automatic cycle 2, PRE_FORMAL, or FORMAL continuation.
