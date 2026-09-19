@@ -1,133 +1,133 @@
-# SparkBrain Control Brain — 2026-09-20 00:50 JST
+# SparkBrain Control Brain — 2026-09-20 02:50 JST
 
 - role: `CONTROL_BRAIN`
-- selected_slot_jst: `00:50`
+- selected_slot_jst: `02:50`
 - role_inference_required: `false`
 - foundational_doctrine_change: `NO`
-- operating_doctrine_change: `PROSPECTIVE_TEMPORAL_SEMANTICS_REFINEMENT`
+- operating_doctrine_change: `NO_NEW_DOCTRINE`
 - programme_position: `FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL`
 - scheduler_controller_action: `NO_CHANGE`
 - fleet_status: `YELLOW`
 
 ## Human Directive review
 
-No new or materially changed active Human Directive was found. Existing dispositions remain:
+No new or materially changed active Human Directive is present. Existing dispositions remain:
 
-- `HUMAN-20260918-001`: `ACCEPT / UNCHANGED` — only stable outcome-independent reusable substrate is main-eligible; consumed/result-dependent scientific state is not wholesale-promoted.
+- `HUMAN-20260918-001`: `ACCEPT / UNCHANGED` — review stable outcome-independent CX/comparator substrate for eventual main promotion, but never wholesale-promote consumed/result-dependent scientific state.
 - `HUMAN-20260919-002`: `ACCEPT / UNCHANGED` — repository protection/ruleset deployment remains deferred absent a materially changed concrete integrity risk; the factual protection gap remains recorded.
-- `HUMAN-20260919-003`: `ACCEPT / UNCHANGED` — preserve strict FORMAL integrity while actively using Discovery/Architecture/Pre-formal for substantive forward motion and avoid low-value governance churn.
+- `HUMAN-20260919-003`: `ACCEPT / UNCHANGED` — preserve the strict FORMAL floor while actively using Discovery/Architecture/Pre-formal for substantive forward motion and avoiding low-value governance churn.
 
-The temporary faster Control cadence changes turnover latency only. It does not widen scientific or scheduler authority.
+The temporary faster Control cadence remains an operational turnover choice only and does not widen scientific or scheduler authority.
 
 ## Central theory / reductions / unresolved residual
 
 The central novelty bar is unchanged. A FORMAL SparkBrain novelty claim remains admissible only for a native, prospectively positive, intervention-validated lineage-specific causal-responsibility effect that survives ordinary history/provenance/actual-causality and local-learning/recurrent/plastic reductions under matched information, readout, task/world/regime-label and resource privilege. No current object clears that bar.
 
-The lower funnel is active and useful. It is now producing both clean rejections and architecture-reproducibility findings without laundering them into mechanism novelty.
-
-A prospective operating refinement is added for temporal-expectation work: **non-anticipation, event-time versus processing-time separation, and partition invariance under a fixed timestamped history belong in the ordinary reduction/correctness ladder.** API batch boundaries are non-semantic by default unless an explicit contract says otherwise. `EVENT_TIME_CAUSAL` remains a stronger semantic reference/ceiling, not an equal-resource mechanistic comparator.
+The programme is nevertheless not scientifically idle. The lower funnel is producing bounded information: Temporal cycle 1 was reconciled as an Architecture/API timing effect, Top-k remains support-limited, and SUB has now exposed a separate v0.5 topology configuration-binding mismatch that is potentially worth an Architecture correctness study without implying mechanism novelty.
 
 ## Research funnel / candidate pool
 
-`DISCOVERY` is `ACTIVE_PRODUCTIVE`. Evidence Analyst rejected the stronger Assembly prototype-lock-in Architecture question after both fixed DEV seeds returned `0/12` supported representation-divergent pairs and no downstream disagreement. SUB then independently found a field-source lineage-cap permutation effect, but reduced it exactly to bounded provenance-buffer bookkeeping and rejected it in the same cycle. Both are healthy stop behavior.
+`DISCOVERY` is `EXPLORATORY_PRODUCTIVE`. Evidence Analyst authorized one bounded SUB cycle for `CAND-V05-TOPOLOGY-CONFIG-BINDING-01`. SUB completed that cycle on `research/exploratory-sub-v05-topology-config-binding-20260920@ddd80443dd670698397683b95742428045c74932`; exact-head CI `35458809766` completed successfully. The result is NON_EVIDENTIARY: `V05BrainConfig` exposes and serializes width/height/receptor_rows, and the nested v0.4 config retains alternate values, but `IntegratedV05Brain` constructs the integrated topology through an explicit seeded topology path without forwarding those geometry values. In the bounded probe, alternate public configuration did not change the realized 64-unit topology or its connection structure. SUB found no current docs/tests declaring those fields intentionally metadata-only and recommends `PROMOTE_TO_ARCHITECTURE_STUDY` after fresh Analyst review.
 
-`ARCHITECTURE_STUDY` is `ACTIVE`. Evidence Analyst promoted `CAND-TEMPORAL-BATCH-PARTITION-01` from independent SUB Discovery and prospectively bound one MAIN cycle. MAIN fixed the contract before outcome visibility on `research/main-temporal-batch-partition-arch-study-20260920@7fa4391bbf34cf25e10b708ce64acddf07bf7f42`. Workflow `35451528895` has now completed `success`, including both exact-head CI jobs and the one bounded Architecture diagnostic. The durable MAIN handoff still says `WAITING_EXTERNAL`; therefore Control treats the completed outcome as **available but not yet durable-orchestrator/Analyst closed**. Literature independently reports the artifact maps to `FUNCTIONAL_BATCH_PARTITION_EFFECT`: the noisy-motif reference family changes omission schedule and isolated downstream replay across partition arms, while repetition-train is invariant. This remains strictly NON_EVIDENTIARY and must stop for fresh Evidence Analyst review.
+Control treats this as an **API/configuration-semantics candidate, not a new computational principle**. No cycle 2 is authorized by Control. Evidence Analyst should decide whether to define a fresh, bounded Architecture object with explicit semantics for geometry/receptor_rows and backward-compatibility expectations, or reject/no-action if the fields are intentionally non-operative.
 
-`CAND-TOPK-PA-01` remains `HOLD`. The one-run cross-seed Utility diagnosis completed `MIXED`: the `0.10` magnitude replicates across both DEV seeds and survives the predeclared support sensitivities, while lower magnitudes are under-supported and support is concentrated in the high-magnitude stratum. No cycle 3 and no PRE_FORMAL promotion.
+`ARCHITECTURE_STUDY` has no active MAIN object. The reconciled Temporal object `CAND-TEMPORAL-BATCH-PARTITION-01` remains HOLD after cycle 1: the authoritative machine artifact has the corrected contract digest and shows the effect in `noisy_motif_stream_defaults`, while `repetition_train_defaults` is invariant. Its classification remains NON_EVIDENTIARY `FUNCTIONAL_BATCH_PARTITION_EFFECT`, best treated through non-anticipation/event-time/partition-invariance semantics. No cycle 2 or PRE_FORMAL promotion is authorized.
 
-`PRE_FORMAL` remains `EMPTY_HOLD`. `FORMAL` remains `EMPTY_HOLD`; there is no fresh identity, STARTED, official TEST authority, formal preserve/scorer/evidence object or consumed-identity reuse.
+`CAND-TOPK-PA-01` remains HOLD. Its two Architecture cycles plus one read-only cross-seed Utility diagnosis remain `MIXED`; the strongest supported stratum is concentrated at magnitude 0.10, while lower magnitudes are under-supported. No cycle 3 or PRE_FORMAL promotion is automatic.
+
+`PRE_FORMAL` remains `EMPTY_HOLD`. `FORMAL` remains `EMPTY_HOLD`; no new identity, STARTED, official TEST authority, formal preserve/scorer/evidence object, or consumed-identity reuse exists.
 
 ## External Literature implication
 
-The 00:30 Literature stream materially narrows interpretation of the completed temporal-batching Architecture result. The strongest ordinary explanation is batch-level look-ahead caused by host-language batching: future-dated rows can update expectation state before an earlier event-time omission deadline is adjudicated. Mature ordinary analogues are causal/non-anticipative systems, event-time versus processing-time/dataflow semantics, discrete-event chronological processing and deterministic stream/partition invariance.
-
-Strategic effect: treat the current line as an API/event-time causality and reproducibility question, not new cognitive-mechanism evidence. If a future correctness object is independently justified, the clean invariant is partition invariance for the same logical timestamped stream with prospectively fixed equal-time ordering. Do not extend the completed cycle outcome-responsively before fresh Analyst review.
+No newer Literature stream exists after the 00:30 event-time/non-anticipation reduction. It is now consumed by Evidence Analyst. The strategic implication remains: for Temporal work, same timestamped logical history should normally be invariant to API partition unless batching is explicitly semantic; event-time versus processing-time separation and causal/non-anticipative processing are ordinary baselines/correctness semantics, not SparkBrain novelty.
 
 ## Independent Audit implication
 
-The latest Independent Audit remains the H5 `ROBUST_SO_FAR` audit. Canonical `FAIL_NO_USEFUL_WORK_REDUCTION` and its one-way chain remain valid for the exact registered algorithmic-work contract. Interpretation remains narrow: global all-edge eligibility maintenance dominates audited sparse candidate work, so H5 is an architecture bottleneck diagnosis rather than a general theorem that event routing/lazy materialization cannot save compute. Consumed H5 stays closed; any localized-eligibility or component-wise efficiency question must be a genuinely fresh prospective object.
-
-Evidence Analyst 00:00 has now consumed this H5 audit.
+No newer Independent Audit exists after the H5 `ROBUST_SO_FAR` audit. Evidence Analyst has consumed it. Canonical H5 `FAIL_NO_USEFUL_WORK_REDUCTION` remains valid for its exact registered algorithmic-work contract, while the broader interpretation stays narrow because global all-edge eligibility maintenance dominated the audited cost. H5 stays consumed and closed.
 
 ## Methodology Calibration implication
 
-The 00:22 Methodology Calibration is `WELL_CALIBRATED`. The programme has now behaviorally demonstrated the intended gate behavior: a fresh support-aware Assembly Architecture candidate failed and was rejected without rescue; Top-k returned a mixed robustness result and stayed HOLD; and an ordinary API/event-time phenomenon was allowed to proceed for Architecture/reproducibility value without being promoted as mechanism novelty.
+The fresh 02:20 Methodology Calibration remains `MIXED_CALIBRATION`, but the immediate Temporal narrative/provenance mismatch has been contained correctly: Evidence Analyst reconciled the machine artifact without changing the artifact, scientific classification, or allocation, and MAIN propagated the correction without reopening science.
 
-Keep the full one-way FORMAL floor, claim-type separation, prospective support-aware Architecture gating and stop-after-each-cycle fresh Analyst review. Do not derive a universal support threshold from completed Top-k outcomes.
+The unresolved methodological question is narrower and operational: is exact artifact-to-handoff fidelity reliable across recent lower-funnel objects, or was Temporal one instance of a broader missing guard? The recommended tightening is to bind workflow/head, artifact ID/digest, embedded candidate/contract identity, raw digest where present, mapped outcome, and narrated family/stratum summaries. This is not a reason to tighten the scientific novelty bar itself.
+
+Control therefore accepted `METHCAL-20260920-0120-ARTIFACT-HANDOFF-FIDELITY` and issued one bounded Utility assignment: `CTRL-20260920-0250-ARTIFACT-HANDOFF-FIDELITY`. It is read-only, NON_EVIDENTIARY, max_runs=1, with Temporal mandatory and recent Top-k/Assembly opportunistic only when already-produced safe artifacts are accessible. It may report exact consistency mismatches but may not repair prior records or perform scientific reruns/reinterpretation.
 
 ## MAIN / SUB / Relay / Utility assessment
 
-MAIN is scientifically `HEALTHY` but its durable report is one continuation behind reality: it prospectively bound and dispatched the temporal-batching Architecture cycle correctly, and the exact-head workflow has since completed successfully. No same-run continuation is authorized by Control.
+MAIN is `NO_OP_BY_DESIGN` at 02:22. Evidence Analyst explicitly has no fresh central MAIN object after Temporal reconciliation, so MAIN correctly performed no research mutation, dispatch, identity creation, preserve/scoring/evidence action, or merge.
 
-Relay is `DELAYED` at this snapshot, not failed: MAIN explicitly delegated post-workflow collection, the workflow completed well before this control review, but no new role-suffixed Relay history or updated MAIN durable handoff is present yet. Because Relay runs close to Control, the absence may be an in-progress persistence lag; do not duplicate Relay work from Control.
+Relay is `NO_OP_BY_DESIGN` for the current MAIN state. MAIN reports no expected relay continuation, and no 2026-09-20 relay history is needed for the completed HOLD state.
 
-SUB is `EXPLORATORY_PRODUCTIVE`. Its fresh `FIELD_SOURCE_LINEAGE_CAP_PERMUTATION_SENSITIVITY_DISCOVERY` stopped at `REJECT` after exact reduction to last-16 provenance bookkeeping; no cycle 2 or Utility request is warranted.
+SUB is `EXPLORATORY_PRODUCTIVE`. The v0.5 topology config-binding cycle produced a genuinely new, bounded Architecture/API question rather than disguised MAIN assistance, remained strictly NON_EVIDENTIARY, and stopped after the one Analyst-authorized cycle with a promotion recommendation instead of self-escalating.
 
-Utility is `HEALTHY / IDLE`. The prior assignment `CTRL-20260919-2250-TOPK-CROSS-SEED-SUPPORT` reached its one-run stop with `MIXED` and was consumed by Evidence Analyst. Control corrected the stale assignment presentation to `COMPLETED`, `active_assignment: false`.
+Utility is `HEALTHY / ASSIGNED`. The prior Top-k assignment is completed and closed. The new assignment `CTRL-20260920-0250-ARTIFACT-HANDOFF-FIDELITY` is one-run, read-only methodology-fidelity work and does not collide with MAIN/SUB ownership.
 
 ## Utility request bus decisions
 
-- `SUB-20260919-2344-TEMPORAL-EXPECTATION-BATCHING-CALLSITE-AUDIT`: `SUPERSEDED`. Evidence Analyst independently confirmed multiple current multi-time `ingest_pulses` callsites and already promoted/bound the Architecture question; MAIN has executed the one authorized cycle. A Utility census now duplicates a resolved allocation question and would be outcome-adjacent same-object work.
-- `LIT-20260919-1830-TOPK-HYBRID-TRANSIENT`: remains `DEFER`. Top-k is `MIXED/HOLD`; decomposition is useful only after a fresh Analyst-defined successor Architecture question, not as activity for its own sake.
-- `EVA-20260919-1943-TOPK-CROSS-SEED-SUPPORT`: prior `ACCEPT`, now `COMPLETED` at max-runs.
-- `METHCAL-20260919-1818-ARCH-SIGNAL-SUPPORT`: prior `ACCEPT`, `COMPLETED`; no extension.
+- `METHCAL-20260920-0120-ARTIFACT-HANDOFF-FIDELITY`: `ACCEPT`. One bounded read-only cross-sample consistency audit is justified by the verified Temporal transcription defect and has high expected information gain at low scientific risk.
+- `LIT-20260919-1830-TOPK-HYBRID-TRANSIENT`: remains `DEFER`. Top-k remains HOLD; no new authority is created.
+- Prior Top-k support and architecture-signal-support assignments remain completed; no extension.
 
-No new Utility assignment is issued. Decision commit: `22ccc78c19a4def427717f3dac21fc2ee52bdf1f`. Assignment closure commit: `b993c07ec9860dc271b5da6720dae6158689aa7d`.
+Control decision commit: `dc953e8276e2b832495e8a33fd4a89752bbe9e86`.
+Active Utility assignment commit: `04d6964167cb17308c2b32a5b0f0694ebdf96141`.
+
+No Utility live-scheduler reconfiguration was needed.
 
 ## Knowledge flow / direction to Evidence Analyst
 
-Evidence Analyst advanced at 00:00 and resolved the prior multi-stream lag. It now needs one fresh convergence pass over material information produced after that handoff:
+Evidence Analyst is current through 02:01 and has already reconciled Temporal plus consumed the latest Literature/Audit available at that time. Its next high-value convergence work is:
 
-1. collect/verify the completed temporal-batching Architecture artifact and its exact precommitted outcome map through the proper MAIN/Relay handoff, then classify the Architecture result without relabeling it as PRE_FORMAL or FORMAL evidence;
-2. consume the 00:30 Literature reduction: non-anticipation, event-time/processing-time separation and partition invariance are ordinary temporal semantics, and any atomic-batch alternative carries explicit look-ahead privilege;
-3. consume the 00:22 `WELL_CALIBRATED` methodology update;
-4. record SUB field-source lineage-cap Discovery as an ordinary provenance-buffer bookkeeping `REJECT`, with no rescue cycle;
-5. keep Top-k HOLD after the completed `MIXED` Utility diagnosis; any successor must be a fresh prospectively defined ordinary-reduction Architecture object.
+1. review `CAND-V05-TOPOLOGY-CONFIG-BINDING-01` from SUB and decide prospectively whether it merits one Architecture Study as an API/configuration correctness question; if promoted, explicitly freeze what width/height/receptor_rows are supposed to mean and what backward compatibility counts as success before any further measurement;
+2. consume the 02:20 Methodology Calibration update and, after the Utility one-run result arrives, decide whether a generic machine-verifiable artifact-to-handoff fidelity guard is warranted prospectively;
+3. keep Temporal and Top-k on HOLD unless a genuinely new prospectively specified question appears;
+4. preserve FORMAL HOLD and all consumed identities.
 
 ## Stop / reframe conditions
 
-- Temporal batching: cycle 1 must stop for fresh Analyst review. No cycle 2, implementation repair, partition fuzzing, PRE_FORMAL or FORMAL continuation from Control. If retained, frame it as event-time/API semantics and architecture reproducibility unless a new independently defined question establishes something more.
-- Top-k: current object stays HOLD. No cycle 3 or PRE_FORMAL from the mixed support diagnosis. A successor requires a fresh reduction question and fresh prospective support rule.
-- Assembly current question: `REJECT`; no additional seeds/permutations/thresholds/corpora to rescue it.
-- SUB lineage-cap current question: `REJECT`; no cycle 2 unless a genuinely new current-code causal consumer of source IDs independently appears.
-- H5: consumed and closed; never rerun/reopen/rescore.
+- V05 config binding: no cycle 2 from the Discovery result alone. If public configuration is intentionally metadata-only, reject/no-action and document the interpretation in the appropriate future repository path; if the API promises operative geometry, define a fresh bounded Architecture correctness object before implementation/measurement. Do not present this as mechanism novelty.
+- Temporal: HOLD after reconciled cycle 1; no outcome-responsive cycle 2, fix, fuzzing, PRE_FORMAL or FORMAL continuation.
+- Top-k: HOLD after `MIXED`; no cycle 3 or PRE_FORMAL without a fresh support/reduction question.
+- Utility fidelity audit: exactly one run; stop on completed comparison or blocked-safe-input condition. It may not correct prior handoffs itself.
 - FORMAL: remain HOLD until a fresh object independently clears the unchanged central admission bar.
 
 ## Scheduler fleet health
 
 `fleet_status: YELLOW`.
 
-- Control/Steward: `HEALTHY` for durable governance; temporary faster Control cadence is an operational throughput choice only.
-- Evidence Analyst: `HEALTHY` at 00:00; several post-handoff inputs are fresh and appropriately await the next cycle rather than constituting a stale condition.
-- MAIN PRIMARY: `HEALTHY` — 00:23 durable handoff and exact-head workflow completed successfully.
-- MAIN Relay: `DELAYED` — post-workflow durable continuation is not yet present at this snapshot; no failure is inferred yet.
-- SUB: `EXPLORATORY_PRODUCTIVE` — fresh 00:41 bounded Discovery with clean ordinary reduction and stop.
-- External Literature: `HEALTHY` — fresh 00:30 material reduction update.
-- Independent Audit: `HEALTHY` — latest H5 audit remains current and consumed.
-- Methodology Calibration: `HEALTHY` — fresh 00:22 `WELL_CALIBRATED` update.
-- Utility Orchestrator: `HEALTHY` — prior assignment completed one run, lifecycle presentation now closed; no active assignment.
-- Current State Brief: `UNKNOWN` — no dedicated durable handoff was available in the repository streams inspected for this Control run.
+- Control/Steward combined task: `HEALTHY`; the temporary faster Control cadence is active and remains authority-neutral.
+- Evidence Analyst: `HEALTHY` — fresh 02:01 handoff, with the later SUB/Methodology inputs appropriately pending the next cycle.
+- MAIN PRIMARY: `NO_OP_BY_DESIGN` — explicit Analyst HOLD and no active central object.
+- MAIN Relay: `NO_OP_BY_DESIGN` — no continuation expected from the current MAIN state.
+- SUB: `EXPLORATORY_PRODUCTIVE` — fresh bounded v0.5 config-binding Discovery and successful exact-head CI.
+- External Literature: `HEALTHY` — latest 00:30 stream consumed; next cadence has not yet been missed.
+- Independent Audit: `HEALTHY` — latest H5 audit is current for its lower-frequency role and consumed.
+- Methodology Calibration: `HEALTHY` — fresh 02:20 output and concrete request.
+- Utility Orchestrator: `HEALTHY` — new one-run assignment issued through Git, no live reconfiguration required.
+- Current State Brief: `HEALTHY` — recent scheduled read-only brief completed within cadence.
 
 Critical scientific/integrity failures: none.
 
-Operational defects: Relay durable continuation lag; scheduler-registry manifest still reflects the pre-override Control cadence rather than the temporary faster Control cadence. The latter is registry reconciliation debt, not authority expansion and not a reason for scheduler mutation in this run.
+Operational defect: the programme still lacks a demonstrated generic artifact-to-handoff fidelity guard. The Temporal defect was manually reconciled correctly, but the new Utility audit must determine whether the problem is isolated or cross-object.
 
-Efficiency finding: lower-funnel throughput is substantive. Do not manufacture Utility work while MAIN has a fresh Architecture result awaiting review and SUB is independently productive.
+Efficiency finding: lower-funnel throughput is substantive. SUB is generating independent candidate information while MAIN is correctly held; Utility is now used for one narrow cross-role reliability question rather than manufactured research activity.
 
 ## Scheduler controller
 
 `scheduler_controller_action: NO_CHANGE`.
 
-No non-Utility scheduler timing mutation, Utility live reconfiguration, or scheduler-registry transaction was performed. The temporary Control cadence is recent explicit human/runtime direction and is pinned. Relay proximity is observable, but this snapshot alone does not justify timing churn; diagnose durable continuation behavior across subsequent cycles first. Utility work is currently better represented by no active assignment than by changing its live hourly scheduler.
+No non-Utility scheduler timing mutation, Utility live reconfiguration, or scheduler-registry transaction was performed. The temporary Control cadence is recent explicit direction and remains pinned. Current fleet behavior does not justify timing churn.
 
 ## Repository doctrine
 
-Repository separation remains healthy with protection deferred: `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` remains stable shared substrate; unresolved work remains under `research/*`; exactly five authoritative evidence tags and 13 legacy freeze branches remain unchanged; tag-based `formal/*`, `sealed/*`, and `freeze/*` remain empty. No immutable evidence/control/preserve identity was modified by Control. Repository protection/ruleset deployment remains deferred under accepted human direction absent a concrete changed integrity risk.
+Repository separation remains healthy with protection deferred. Fresh remote state confirms `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` remains stable and unprotected, exactly five authoritative `evidence/*` tags remain present, and 13 legacy `freeze/*` branches remain preserved. Repository rulesets remain empty. Active v0.5 config-binding work stays on a research branch. PR #148 and #149 remain open, mergeable, and unmerged; Control does not merge them. No immutable evidence/control/preserve ref was modified.
+
+The accepted human preference to defer protection/ruleset deployment remains appropriate because no new concrete immutable-ref integrity incident was observed; the current Temporal issue was a control-plane transcription defect, not an immutable-ref mutation.
 
 ## Ranked priorities — next 12–48h
 
-1. Fresh Evidence Analyst closure of `CAND-TEMPORAL-BATCH-PARTITION-01` cycle 1 using the exact prospectively bound artifact, with the new non-anticipation/event-time reduction ladder.
-2. Keep Top-k on HOLD after `MIXED`; do not create a successor until Analyst can prospectively define a genuinely new ordinary-reduction question.
-3. Continue bounded independent SUB Discovery with early ordinary-reduction stops; do not redirect SUB to temporal-batching or Top-k support work.
-4. Leave Utility idle until a distinct high-information request survives dedupe/collision review.
-5. Preserve FORMAL HOLD and all consumed evidence while using Architecture/Discovery to improve system understanding and reproducibility.
+1. Fresh Evidence Analyst review of the SUB v0.5 topology config-binding result; decide whether to prospectively promote it to a bounded Architecture/API correctness object or reject/no-action.
+2. Let Utility execute exactly one artifact-to-handoff fidelity audit, then have Evidence Analyst/Control consume the result prospectively without rewriting prior scientific records.
+3. Keep Temporal and Top-k HOLD and MAIN idle unless a fresh high-information central object is prospectively defined.
+4. Continue independent SUB Discovery only under fresh Analyst allocation; preserve early reduction/rejection behavior and the 3-cycle budget.
+5. Preserve FORMAL HOLD, consumed identities, and the current repository separation while avoiding protection/governance churn with negligible near-term scientific value.
