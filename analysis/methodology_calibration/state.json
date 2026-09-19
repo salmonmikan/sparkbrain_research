@@ -1,79 +1,62 @@
 {
   "schema_version": 1,
-  "timestamp": "2026-09-19T20:22:00+09:00",
+  "timestamp": "2026-09-19T21:20:00+09:00",
+  "run_disposition": "NO_MATERIAL_CALIBRATION_CHANGE",
   "overall_classification": "SLIGHTLY_TOO_PERMISSIVE",
   "confidence": "HIGH_ON_LOCAL_PERMISSIVENESS_MEDIUM_ON_EXACT_REPLACEMENT_RULE",
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "main_branch_protected": false,
     "evidence_tag_count": 5,
-    "topk_architecture_branch": "04ced2b97ed088bb2cdb086d164a86212741e601",
-    "topk_cycle1_harness_head": "97f542d86dcd3a609cd039379fcda41ba61e0909",
+    "evidence_tag_set_unchanged": true,
+    "structural_order_branch": "6a53ee36259bca31b77024245e5ab0a9ef5ec405",
+    "structural_order_result": "EDGE_OR_HOMEOSTASIS_CONTROL_REPRODUCES",
+    "structural_order_analyst_disposition": "REJECT_CURRENT_QUESTION",
     "topk_cycle1_result": "PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL",
     "topk_cycle2_result": "PERSISTENCE_SIGNAL_REPLICATED",
     "topk_evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
-    "structural_order_branch": "6a53ee36259bca31b77024245e5ab0a9ef5ec405",
-    "structural_order_workflow_run": 35438868911,
-    "structural_order_raw_artifact": 10583406878,
-    "structural_order_raw_digest": "sha256:135caa35bf95239bad45404f13363536227a4144588aab4db0194b1545815a0d",
-    "structural_order_result_artifact": 10583416906,
-    "structural_order_result_digest": "sha256:4459a88878b7d463de73bd66034ca1f28b60f41838da5efae61b201104624625",
-    "structural_order_result": "EDGE_OR_HOMEOSTASIS_CONTROL_REPRODUCES",
-    "structural_order_evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
-    "c19_r2_evidence_commit": "6197fa801a78a0c5de4c2b6ff5d03216ac5539db",
+    "receptor_polarity_branch": "ddbaec1f91a9a02c18c9cc04ab45b529bd2410ef",
+    "receptor_polarity_result": "REJECT_EXACT_IMPLEMENTATION_REDUCTION",
     "c19_r2_result": "REDUCED_BY_FSA"
   },
   "control_plane_consumed": {
     "control_brain_commit": "566f3b7c590fcfe2b9e8aaa0415da964989b1124",
-    "evidence_analyst_commit": "5982fc0ae76d62c4a6fce42f6b1aaaf7f85b8e23",
-    "orchestrator_commit": "f8ea70d49bd28eb52f59c014b67cf43b3c8eb01b",
+    "evidence_analyst_branch_commit": "a3ec861d71c0965625fc1d2e5e8f65f4ce47f834",
+    "evidence_analyst_latest_timestamp": "2026-09-19T21:02:00+09:00",
+    "orchestrator_branch_commit": "c4fd52d8c44455cf34c3ce8556a8d96cef2ac866",
+    "main_latest_timestamp": "2026-09-19T21:16:00+09:00",
+    "sub_latest_timestamp": "2026-09-19T20:48:00+09:00",
     "literature_audit_branch_commit": "02c5eec39f8fca9dd180c4c91c4ae444ebd50995",
+    "literature_latest_timestamp": "2026-09-19T18:30:00+09:00",
+    "independent_audit_latest_timestamp": "2026-09-19T10:32:00+09:00",
     "repository_steward_commit": "7f77044f3159e7db15b45c9a471ae983c2a64284",
+    "repository_steward_latest_timestamp": "2026-09-19T19:50:00+09:00",
     "utility_branch_commit": "4d8a98637e07e8a7f560b47012c573f34c643068",
-    "independent_audit_target": "NI01",
-    "independent_audit_classification": "WEAKENED",
-    "main_latest_timestamp": "2026-09-19T20:14:00+09:00",
-    "sub_latest_timestamp": "2026-09-19T19:42:00+09:00",
-    "completed_utility_assignment_id": "CTRL-20260919-1850-ARCH-SIGNAL-ROBUSTNESS",
-    "completed_utility_assignment_result": "MIXED",
-    "completed_utility_methodology_recommendation": "ADD_PER_STRATUM_SUPPORT",
-    "pending_cross_seed_request": "EVA-20260919-1943-TOPK-CROSS-SEED-SUPPORT"
+    "completed_utility_assignment": "CTRL-20260919-1850-ARCH-SIGNAL-ROBUSTNESS",
+    "completed_utility_result": "MIXED / ADD_PER_STRATUM_SUPPORT",
+    "pending_cross_seed_request": "EVA-20260919-1943-TOPK-CROSS-SEED-SUPPORT",
+    "pending_cross_seed_assignment_status": "NOT_YET_CONTROL_ASSIGNED"
   },
   "gate_changes_reviewed": [
     {
-      "change": "Read-only Utility cycle-1 support diagnostic completed and classified support-aware robustness as MIXED",
-      "direction": "CONFIRMS_LOCAL_LOWER_LAYER_PERMISSIVENESS",
-      "assessment": "PER_STRATUM_SUPPORT_GUARD_JUSTIFIED"
+      "change": "Evidence Analyst formally rejected the current structural-order Architecture question after ordinary edge/homeostatic control reproduction",
+      "direction": "CONFIRMS_EXISTING_ORDINARY_REDUCTION_AND_STOP_RULE",
+      "assessment": "NO_NEW_CALIBRATION_CHANGE"
     },
     {
-      "change": "Utility leave-one-magnitude, support-floor and episode-cluster sensitivity showed state-amplification classification is not robust while output amplification is materially more stable",
-      "direction": "REFINES_SIGNAL_INTERPRETATION",
-      "assessment": "STATE_COMPONENT_THRESHOLD_SENSITIVE_OUTPUT_COMPONENT_MORE_ROBUST"
+      "change": "SUB receptor-polarity Discovery was exactly reduced to existing fast-minus-medium receptor semantics and rejected after one cycle",
+      "direction": "CONFIRMS_EXISTING_EARLY_REDUCTION_BEHAVIOR",
+      "assessment": "NO_NEW_CALIBRATION_CHANGE"
     },
     {
-      "change": "Utility denominator analysis found no canonical 1e-12 clipping in turnover cases",
-      "direction": "REMOVES_ONE_FALSE_POSITIVE_HYPOTHESIS",
-      "assessment": "LARGE_RATIOS_NOT_NUMERICAL_FLOOR_ARTIFACT"
+      "change": "MAIN entered explicit lower-funnel HOLD pending a fresh central object rather than manufacturing a rescue cycle",
+      "direction": "CONFIRMS_CURRENT_ANTI_STALL_WITHOUT_UTILIZATION_PRESSURE",
+      "assessment": "NO_NEW_CALIBRATION_CHANGE"
     },
     {
-      "change": "Evidence Analyst created a cross-seed read-only support/uncertainty request without scientific rerun or threshold optimization",
-      "direction": "PROSPECTIVE_METHODOLOGY_CALIBRATION",
-      "assessment": "APPROPRIATE_NEXT_DIAGNOSTIC"
-    },
-    {
-      "change": "Structural-order Architecture Study cycle 1 completed after lint-only pre-diagnostic repair and mapped prospectively to EDGE_OR_HOMEOSTASIS_CONTROL_REPRODUCES",
-      "direction": "ORDINARY_CONTROL_REDUCTION_AT_LOWER_LAYER",
-      "assessment": "HEALTHY_FALSE_POSITIVE_CONTROL_AND_STOPPING"
-    },
-    {
-      "change": "Structural-order lint repair changed only formatting/unused import before any diagnostic visibility",
-      "direction": "PRE_START_MECHANICAL_CONTINUATION",
-      "assessment": "WELL_CALIBRATED_BOUNDARY"
-    },
-    {
-      "change": "SUB reward-omission Discovery reduced to explicit reward-trace recurrence and stopped after one cycle",
-      "direction": "EARLY_ORDINARY_REDUCTION",
-      "assessment": "HEALTHY_FUNNEL_BEHAVIOR"
+      "change": "No new formal evidence, identity, STARTED authority, TEST access, scorer/preserve path, or evidence anchor appeared",
+      "direction": "FORMAL_INTEGRITY_UNCHANGED",
+      "assessment": "NO_NEW_CALIBRATION_CHANGE"
     }
   ],
   "gate_by_gate_classifications": {
@@ -98,79 +81,26 @@
     "ordinary_control_first_architecture_reduction": "KEEP",
     "outcome_informed_selection_of_future_support_rule": "CLARIFY"
   },
-  "topk_support_diagnostic": {
-    "assignment_id": "CTRL-20260919-1850-ARCH-SIGNAL-ROBUSTNESS",
-    "status": "COMPLETED",
-    "evidentiary_status": "NON_EVIDENTIARY_METHODOLOGY_DIAGNOSTIC",
-    "classification": "MIXED",
-    "recommendation": "ADD_PER_STRATUM_SUPPORT",
-    "cycle1_support": {
-      "total_turnover_cases": 37,
-      "per_magnitude_turnover_cases": [1, 11, 25],
-      "qualifying_signal_vote_support": [1, 25]
-    },
-    "leave_one_magnitude_out": {
-      "omit_0_01": "MIXED_ARCHITECTURE_RESULT",
-      "omit_0_05": "PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL",
-      "omit_0_10": "ARCHITECTURE_INCONCLUSIVE_LOW_TURNOVER"
-    },
-    "support_floor_sensitivity": {
-      "n_ge_3": "MIXED",
-      "n_ge_5": "MIXED",
-      "n_ge_10": "MIXED",
-      "interpretation": "DIAGNOSTIC_ONLY_NOT_A_RECOMMENDATION_FOR_ANY_EXACT_FLOOR"
-    },
-    "episode_cluster_current_rule": {
-      "signal_fraction": 0.569,
-      "low_turnover_inconclusive_fraction": 0.097,
-      "mixed_or_other_fraction": 0.334,
-      "interpretation": "DESCRIPTIVE_ROBUSTNESS_NOT_FORMAL_P_VALUE"
-    },
-    "denominator_floor_finding": "NO_TURNOVER_DENOMINATOR_CLIPPED_BY_1E_12; OUTPUT_AMPLIFICATION_NOT_A_NUMERICAL_FLOOR_ARTIFACT",
-    "robust_aggregate_interpretation": "STRONG_OUTPUT_AMPLIFICATION_WITH_MIXED_THRESHOLD_SENSITIVE_STATE_AMPLIFICATION",
-    "retroactive_action": "NONE"
-  },
-  "structural_order_calibration_finding": {
-    "classification": "ORDINARY_CONTROL_REPRODUCES_AT_ARCHITECTURE_LAYER",
-    "result": "EDGE_OR_HOMEOSTASIS_CONTROL_REPRODUCES",
-    "full_budget16": {
-      "topology_divergent_pairs": 6,
-      "functional_l1_ge_0_01_pairs": 12,
-      "mean_probability_l1": 0.15678818114372042
-    },
-    "full_budget64": {
-      "topology_divergent_pairs": 6,
-      "functional_l1_ge_0_01_pairs": 12,
-      "mean_probability_l1": 0.15678818114372042
-    },
-    "edge_only_budget64": {
-      "topology_divergent_pairs": 11,
-      "functional_l1_ge_0_01_pairs": 12,
-      "mean_probability_l1": 0.026581938685854695
-    },
-    "methodology_interpretation": "Fresh bounded Architecture question admitted; prospectively fixed ordinary control reproduced the phenomenon; novelty escalation stopped for fresh review.",
-    "retroactive_action": "NONE"
-  },
   "false_positive_risks": [
-    "architecture triage can receive a decisive full magnitude-level signal vote from n=1 or n=2 turnover cases",
-    "treating a replicated local architecture label as sufficient PRE_FORMAL or novelty evidence",
-    "choosing an exact future support rule by optimizing completed Top-k outcomes rather than a general prospective rationale",
-    "laundering local Architecture thresholds into formal admission criteria",
-    "treating stronger-privilege replay/global-causal ceilings as equal-privilege mechanistic reductions"
+    "Top-k Architecture triage can still receive a decisive full magnitude-level vote from an under-supported stratum",
+    "replicated local Architecture labels could be over-read as PRE_FORMAL or novelty evidence if fresh review is bypassed",
+    "an exact future support rule could be outcome-fitted to completed Top-k cases",
+    "local Architecture thresholds could be laundered into programme-wide novelty or FORMAL admission criteria",
+    "stronger-privilege replay/global-causal ceilings could be mistaken for equal-privilege reductions"
   ],
   "false_negative_risks": [
-    "responding to a local lower-layer support defect by globally re-tightening Discovery/Architecture admission",
-    "historical family coverage being used as blanket observable-level exhaustion",
-    "using new-computational-principle novelty as the threshold for architecture/system/testbed research-worthiness",
-    "continuing reduced Architecture lines mechanically merely because the nominal three-cycle budget remains"
+    "globally re-tightening Discovery/Architecture because of a local support-calibration defect",
+    "using prior family coverage as blanket observable-level exhaustion",
+    "using new-principle novelty as the threshold for architecture/testbed research-worthiness",
+    "forcing MAIN to manufacture work when no central object currently clears the information-value/non-rescue bar"
   ],
   "duplicate_guards": {
     "assessment": "NO_SCIENTIFIC_PURPOSE_SHOULD_BE_REMOVED",
-    "recommendation": "Implementation consolidation is permissible, but distinct integrity purposes should remain explicit."
+    "recommendation": "Implementation consolidation may be considered separately, but the distinct integrity purposes remain justified."
   },
   "moving_goalpost_assessment": {
     "classification": "LOW_RETROACTIVE_RISK_WITH_PROSPECTIVE_RULE_SELECTION_WARNING",
-    "basis": "Completed Top-k cycles retain their fixed NON_EVIDENTIARY labels; Utility was read-only. Structural-order mapping was fixed before outcome and the pre-diagnostic repair was formatting/unused-import only. Any new support rule must apply prospectively and should not be selected solely to flip or preserve completed Top-k labels."
+    "basis": "No completed lower-layer or FORMAL label was retroactively rewritten. Structural-order and receptor-polarity stopped under existing ordinary-reduction logic. Any future Top-k support guard must be prospectively justified and not selected to flip or preserve completed outcomes."
   },
   "pass_reachability_assessment": {
     "classification": "REACHABLE_BUT_NARROW",
@@ -183,42 +113,42 @@
       "one-way preserved formal evidence"
     ],
     "effect_of_active_lower_funnel": "IMPROVES_OBJECT_DISCOVERY_WITHOUT_WEAKENING_FORMAL_PATH",
-    "current_limit": "Architecture labels are local NON_EVIDENTIARY triage; support adequacy and ordinary reductions must be resolved before escalation."
+    "current_limit": "Top-k support adequacy and ordinary reductions remain unresolved; no central MAIN object is presently justified."
   },
   "claim_type_separation_findings": {
     "control_state": "FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL",
-    "topk_state": "NON_EVIDENTIARY_LOCAL_ARCHITECTURE_LABEL_WITH_SUPPORT_CALIBRATION_OPEN",
-    "structural_order_state": "NON_EVIDENTIARY_ARCHITECTURE_PHENOMENON_REPRODUCED_BY_ORDINARY_CONTROL",
-    "sub_reward_omission_state": "REJECTED_SCIENTIFIC_CANDIDATE_RETAINED_AS_ENGINEERING_PROTOCOL_INFORMATION",
-    "remaining_risk": "LOWER_LAYER_CONFIDENCE_CALIBRATION_NOT_NOVELTY_RESEARCH_WORTHINESS_CONFLATION"
+    "main_state": "LOWER_FUNNEL_MAIN_HOLD_PENDING_FRESH_OBJECT",
+    "discovery_state": "OPEN_FOR_SUB_BOUNDED_NON_EVIDENTIARY_WORK",
+    "topk_state": "NON_EVIDENTIARY_ARCHITECTURE_HOLD_PENDING_SUPPORT_DIAGNOSTIC_AND_FRESH_REDUCTION_QUESTION",
+    "structural_order_state": "REJECT_CURRENT_QUESTION_AFTER_ORDINARY_CONTROL_REPRODUCTION; ARCHITECTURE_OBSERVATION_RETAINED",
+    "receptor_polarity_state": "REJECTED_SCIENTIFIC_CANDIDATE; ENGINEERING_CONSTRAINT_RETAINED",
+    "remaining_risk": "LOCAL_LOWER_LAYER_CONFIDENCE_CALIBRATION_NOT_NOVELTY_RESEARCH_WORTHINESS_CONFLATION"
   },
   "external_calibration": {
-    "literature_branch_commit_consumed": "02c5eec39f8fca9dd180c4c91c4ae444ebd50995",
-    "literature": "Top-k: hard switching geometry then ordinary recurrent/non-normal transient gain before residual. Structural order: explicit state then critical pairs/non-confluence before residual.",
-    "independent_audit": "NI01 canonical one-way evidence remains robust while equal-privilege mechanistic reduction is weakened by world-label privilege.",
-    "use_rule": "External findings calibrate future baselines prospectively and do not rewrite consumed evidence or fixed completed Architecture contracts."
+    "literature": "No new Literature result since the prior audit; retain hard-switch/recurrent-transient and graph-rewrite ordinary-reduction ladders.",
+    "independent_audit": "No new Audit result since the prior audit; NI01 canonical integrity remains robust while equal-privilege reduction remains weakened by world-label privilege.",
+    "use_rule": "External findings calibrate future comparators and reduction ladders prospectively, never rewrite consumed evidence."
   },
-  "opportunity_cost_assessment": "Target local Architecture support/uncertainty calibration and ordinary controls. Global tightening would recreate prior stagnation with little added FORMAL safety.",
+  "opportunity_cost_assessment": "No material change: keep the calibration fix local to Top-k support/uncertainty and avoid global tightening. MAIN HOLD with no fresh central object is appropriate and should not be treated as a utilization defect by itself.",
   "utility_request_created": null,
   "utility_request_status": {
     "completed_methodology_request": "METHCAL-20260919-1818-ARCH-SIGNAL-SUPPORT",
     "completed_assignment": "CTRL-20260919-1850-ARCH-SIGNAL-ROBUSTNESS",
     "completed_result": "MIXED / ADD_PER_STRATUM_SUPPORT",
     "pending_next_request": "EVA-20260919-1943-TOPK-CROSS-SEED-SUPPORT",
-    "reason_no_duplicate": "Evidence Analyst already requested the next necessary cross-seed methodology diagnostic using existing artifacts only."
+    "reason_no_duplicate": "The existing Evidence Analyst request already targets the next decision-relevant calibration question."
   },
   "prospective_recommendations": [
     "Keep the four-layer funnel and FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL doctrine.",
     "Do not alter completed Top-k cycle labels retroactively.",
-    "Treat the completed Utility result as sufficient evidence that future Top-k-like Architecture gates need per-stratum support or uncertainty handling.",
-    "Do not freeze an exact minimum support or uncertainty rule until the existing cross-seed diagnostic is consumed; choose the rule for a general prospective rationale rather than by fitting completed outcomes.",
-    "Do not start Top-k cycle 3 or PRE_FORMAL solely from PERSISTENCE_SIGNAL_REPLICATED.",
+    "Require future Top-k-like Architecture signal gates to address per-stratum support or uncertainty, but do not choose the exact rule by fitting completed outcomes.",
+    "Consume the existing cross-seed read-only support diagnostic before any Top-k PRE_FORMAL decision.",
     "Keep stop-after-cycle fresh Analyst review exactly as-is.",
-    "Treat structural-order EDGE_OR_HOMEOSTASIS_CONTROL_REPRODUCES as an ordinary-control reduction at the current Architecture layer; do not rescue with mechanical extra cycles.",
-    "Allow science-invariant pre-start mechanical repair only before diagnostic visibility and with exact scientific contract unchanged.",
-    "Keep local Architecture thresholds local; do not transfer them to novelty or FORMAL admission without independent calibration.",
+    "Treat the current structural-order question as rejected after ordinary-control reproduction; any future residual must be a fresh prospective candidate.",
+    "Continue early rejection of Discovery candidates when ordinary implementation semantics exactly explain them, as with receptor polarity.",
+    "Keep local Architecture thresholds local and separate from novelty/FORMAL admission.",
     "Keep equal-privilege reductions separate from stronger-privilege ceilings and preserve all one-way integrity safeguards.",
-    "Continue early rejection of Discovery candidates when ordinary implementation mechanisms explain them."
+    "Do not manufacture a MAIN object solely for scheduler utilization when no central candidate clears the current information-value/non-rescue bar."
   ],
   "hard_integrity_floor_confirmation": {
     "confirmed": true,
@@ -234,15 +164,13 @@
     ]
   },
   "questions_for_control_brain": [
-    "Consume the completed support diagnostic as justification for a future support guard, not as authority to alter completed Top-k labels.",
-    "Keep the support problem local and do not re-tighten lower-layer research globally.",
-    "Treat the pending cross-seed request as the next methodology diagnostic before Top-k PRE_FORMAL consideration.",
-    "Treat structural-order edge/homeostasis reproduction as a successful ordinary reduction unless a fresh independent residual question appears."
+    "When the cross-seed support request is reviewed, keep it methodology-only and nonblocking for unrelated research.",
+    "If a future support rule is adopted, require an explicit general prospective rationale and scope rather than fitting the completed Top-k outcomes.",
+    "Do not reinterpret current MAIN HOLD as programme-wide research HOLD or as a scheduler-utilization failure by itself."
   ],
   "questions_for_evidence_analyst": [
-    "Will the cross-seed diagnostic be used to calibrate a general future support rule rather than optimize a rule to the completed Top-k labels?",
-    "Will Top-k remain on Architecture HOLD until support and ordinary switch/recurrent reductions are resolved?",
-    "Will structural-order stop after its ordinary-control reproduction unless a fresh residual question is independently motivated?",
-    "Will any new support/uncertainty rule be frozen prospectively only for future work?"
+    "Keep Top-k on HOLD until the existing cross-seed support diagnostic is consumed and a fresh reduction question is prospectively fixed.",
+    "Keep structural-order current question rejected; require a genuinely new residual question for any future work.",
+    "Continue separating engineering/architecture information from novelty after exact ordinary reductions such as receptor polarity."
   ]
 }
