@@ -1,14 +1,14 @@
 {
   "run_id": "sparkbrain-main-primary-20260919T111324JST",
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-19T11:13:24+09:00",
-  "heartbeat_at": "2026-09-19T11:21:00+09:00",
+  "heartbeat_at": "2026-09-19T11:24:00+09:00",
   "analyst_commit": "2c1caa7063feabde079725e198e09b273d005a80",
   "active_branch": null,
   "active_identity": null,
-  "active_step": "FULL_RECONCILIATION_AFTER_ANALYST_AUTHORITY_DRIFT",
+  "active_step": "PROGRAMME_ARCHITECTURE_TESTBED_HOLD_NI01_AUDIT_CONSUMED_SUB_DIAGNOSTIC_RESERVED",
   "workflow_run_id": null,
-  "expected_next_action": "Reconcile the fresh 11:10 Evidence Analyst authority after mid-run mailbox drift. MAIN remains on architecture/testbed HOLD; do not absorb the newly reserved independent SUB NI01 world-label privilege diagnostic. Inspect broader active research/control/preserve/evidence/PR/workflow state for integrity only, then persist corrected MAIN state and stop unless the fresh Analyst handoff admits a MAIN object.",
+  "expected_next_action": "Remain in architecture/testbed HOLD. Do not absorb or wait on the independently reserved SUB NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY diagnostic. If and only if a fresh Evidence Analyst handoff prospectively admits a genuinely fresh independently motivated native reduction-resistant primary object, MAIN owns all authorized critical-path implementation/fixup work and must stop at the specified review boundary. Do not reopen consumed identities or create audit-driven/literature-driven successors.",
   "owner": "main"
 }
