@@ -1,0 +1,83 @@
+{
+  "label": "EXPLORATORY / NON_EVIDENTIARY",
+  "source_semantics": "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+  "question": "Can a positive probe after sustained positive stimulation be emitted with negative polarity, and is any inversion fully reduced by the explicit signed_input + derivative direction rule?",
+  "protocol": {
+    "train_pulses": 20,
+    "train_magnitude": 1.0,
+    "train_polarity": 1,
+    "train_itis_ms": [2, 5, 10, 20, 40],
+    "post_train_gaps_ms": [0, 2, 5, 10, 20, 40, 80, 160],
+    "positive_probe_magnitudes": [0.02, 0.05, 0.1, 0.2, 0.4, 0.8, 1.0],
+    "prediction_error": 0.0,
+    "cells": 280
+  },
+  "summary": {
+    "emitted_negative_despite_positive_probe": 191,
+    "emitted_positive": 89,
+    "non_emitted": 0,
+    "direction_rule_mismatches": 0,
+    "negative_fraction": 0.6821428571428572,
+    "interpretation": "Polarity inversion is common after dense positive preconditioning, but every cell is exactly predicted by sign(probe + derivative). This is ordinary multi-timescale temporal-contrast coding, not an unexplained memory effect."
+  },
+  "by_iti_ms": {
+    "2": {"cells": 56, "negative_emitted": 46, "max_gap_with_inversion_ms": 80.0},
+    "5": {"cells": 56, "negative_emitted": 43, "max_gap_with_inversion_ms": 80.0},
+    "10": {"cells": 56, "negative_emitted": 42, "max_gap_with_inversion_ms": 80.0},
+    "20": {"cells": 56, "negative_emitted": 33, "max_gap_with_inversion_ms": 80.0},
+    "40": {"cells": 56, "negative_emitted": 27, "max_gap_with_inversion_ms": 80.0}
+  },
+  "max_inverted_probe_by_iti_gap_ms": {
+    "2": {"0": 1.0, "2": 1.0, "5": 1.0, "10": 1.0, "20": 1.0, "40": 1.0, "80": 0.2, "160": null},
+    "5": {"0": 1.0, "2": 1.0, "5": 1.0, "10": 1.0, "20": 1.0, "40": 0.4, "80": 0.1, "160": null},
+    "10": {"0": 1.0, "2": 1.0, "5": 1.0, "10": 1.0, "20": 1.0, "40": 0.4, "80": 0.05, "160": null},
+    "20": {"0": 0.4, "2": 0.8, "5": 0.8, "10": 0.8, "20": 0.4, "40": 0.2, "80": 0.02, "160": null},
+    "40": {"0": 0.1, "2": 0.4, "5": 0.4, "10": 0.4, "20": 0.4, "40": 0.1, "80": 0.02, "160": null}
+  },
+  "representative_cells": [
+    {
+      "iti_ms": 5.0,
+      "gap_ms": 80.0,
+      "probe_magnitude": 0.1,
+      "signed": 0.1,
+      "derivative": -0.12822772559565568,
+      "novelty": 0.9595307400737481,
+      "gain": 1.0,
+      "emitted_magnitude": 0.4175242519708249,
+      "emitted": true,
+      "signed_plus_derivative": -0.028227725595655673,
+      "observed_direction": -1,
+      "predicted_direction": -1
+    },
+    {
+      "iti_ms": 10.0,
+      "gap_ms": 20.0,
+      "probe_magnitude": 1.0,
+      "signed": 1.0,
+      "derivative": -1.0817059175788482,
+      "novelty": 0.8752277618786223,
+      "gain": 1.0,
+      "emitted_magnitude": 1.6493802587091304,
+      "emitted": true,
+      "signed_plus_derivative": -0.08170591757884815,
+      "observed_direction": -1,
+      "predicted_direction": -1
+    },
+    {
+      "iti_ms": 40.0,
+      "gap_ms": 20.0,
+      "probe_magnitude": 1.0,
+      "signed": 1.0,
+      "derivative": -0.4626382657911139,
+      "novelty": 0.708699625152531,
+      "gain": 1.0,
+      "emitted_magnitude": 1.3427439666749765,
+      "emitted": true,
+      "signed_plus_derivative": 0.5373617342088861,
+      "observed_direction": 1,
+      "predicted_direction": 1
+    }
+  ],
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "recommendation": "REJECT"
+}
