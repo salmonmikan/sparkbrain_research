@@ -1,42 +1,46 @@
 {
-  "timestamp": "2026-09-19T14:37:08+09:00",
+  "timestamp": "2026-09-19T15:33:10+09:00",
   "worker_role": "sub",
   "mode": "no_op",
-  "evidence_analyst_commit": "ca0f19d52a80622bd6e4d6d61830f805c1f89234",
-  "consumed_lanes": ["NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY:CLOSED_BY_ANALYST_INTEGRITY_BLOCKED"],
+  "evidence_analyst_commit": "8e8aa0924ff5c7dae99332d9babe7f3dd748f25b",
+  "consumed_lanes": [
+    "NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY:CLOSED_BY_ANALYST_INTEGRITY_BLOCKED"
+  ],
   "selected_independent_lane": null,
   "exploratory_target": null,
   "reservation_status": null,
   "independent_of_main_critical_path": true,
   "depends_on_main_outcome": false,
   "execution_allowed": false,
-  "sub_active_claim": "No active SUB claim. Analyst closed the prior NI01 world-label-privilege diagnostic; no valid formal lane/fallback and no safe useful non-duplicative incubator target exists this run.",
+  "sub_active_claim": "No active SUB claim. Current Analyst allocation has no formal lane/fallback and no safe useful non-duplicative incubator target.",
   "main_work_explicitly_avoided": [
     "fresh-object admission and primary candidate selection",
     "successor/comparator/mechanism design for MAIN frontier",
-    "candidate-specific bugs, verifier/harness/runner/binding/CI/readiness fixes",
+    "candidate-specific bugs and verifier/harness/runner/binding/CI/readiness fixes",
     "preservation/scoring/execution blockers",
     "consumed-line rescue/retry/retune/rescore/reinterpretation",
     "future causal-credit critical-path construction",
-    "creation of a post-terminal NI01 target-access or scoring surface"
+    "creation of post-terminal NI01 TEST-target or scoring access"
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "ca0f19d52a80622bd6e4d6d61830f805c1f89234",
-    "control_brain": "1914db5b9b58b4d53bd0406adda062189d688cb8",
-    "orchestrator_parent_tip_before_persistence": "2ab034f3c8852f5df312a685717ca32656981017",
+    "evidence_analyst": "8e8aa0924ff5c7dae99332d9babe7f3dd748f25b",
+    "control_brain": "6ed239b241a39f7d3e934e37751454c8bf3ebb4c",
+    "orchestrator_parent_tip_before_persistence": "313da06cdafd8cbaf82c19a1f82c9e9e2a234827",
+    "main_latest_state_analyst": "8e8aa0924ff5c7dae99332d9babe7f3dd748f25b",
     "formal_tags": [],
     "sealed_tags": [],
+    "tag_freeze_refs": [],
     "authoritative_evidence_tag_count": 5,
     "legacy_freeze_branch_count": 13,
-    "ni01_started": "d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d",
-    "ni01_preserve_raw": "8a39cf70e397bb7588f948910f01ec58672ac814"
+    "methodology_calibration_mailbox": "97c2d17c3e6b097311626cce1058e2d56e889cef"
   },
   "branches_prs_advanced": {
     "research_branches_by_sub": [],
     "prs_by_sub": [],
     "open_prs_observed": [148, 149],
-    "open_non_pr_issues_observed": [139]
+    "open_non_pr_issues_observed": [139],
+    "research_20260919_branches_observed": []
   },
   "workflows_experiments": {
     "sub_dispatched": [],
@@ -44,9 +48,9 @@
     "official_test_accessed_by_sub": false,
     "official_scoring_produced_by_sub": false,
     "latest_control_plane_ci_observed": {
-      "run_id": 35423515192,
-      "branch": "ops/orchestrator-run-report",
-      "head_sha": "2ab034f3c8852f5df312a685717ca32656981017",
+      "run_id": 35426665138,
+      "branch": "ops/scheduler-registry",
+      "head_sha": "349704fd5e144fc42df11c780ed0a20caf003144",
       "status": "completed",
       "conclusion": "success",
       "scientific_relevance": "none"
@@ -56,41 +60,27 @@
     "sub_new_formal_result": false,
     "sub_new_exploratory_result": false,
     "new_formal_scientific_information": false,
-    "allocation_change_consumed": "NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY closed by Analyst as INTEGRITY_BLOCKED_UNEXECUTABLE_WITH_CURRENT_SAFE_SURFACE",
+    "allocation_change_this_run": false,
     "incubator_selection_result": "NO_SAFE_USEFUL_NON_DUPLICATIVE_TARGET",
-    "incubator_nonduplication_basis": [
-      "existing exploratory SUB branches cover H1 competing-belief reduction",
-      "H2 residual-memory reduction",
-      "H3 correlation reduction",
-      "H4 abstention equivalence",
-      "H5 lazy routing",
-      "H6 workspace accounting",
-      "H7 trace causality",
-      "H9 decoder-state boundary",
-      "revision-authority/FSA",
-      "RV01 delay-filter reduction"
-    ],
-    "canonical_ni01_result_unchanged": "FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION"
+    "canonical_ni01_result_unchanged": "FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION",
+    "methodology_calibration_result_available": false
   },
   "evidentiary_status": "NONE_FOR_SUB",
   "consumed_identities": {
     "by_sub": [],
-    "ni01_identity_reused_or_rerun": false
+    "closed_or_historical_identities_reused": false
   },
   "blockers": [
     "Scientific-object availability: no genuinely independent prospectively complete SUB object is reserved.",
     "No safe useful non-duplicative synthetic/development-only incubator target exists after comparison with current exploratory SUB history and Analyst active-line review.",
-    "NI01 world-label-privilege sensitivity is closed by Analyst and may not be continued without an already-safe separate non-canonical score surface or sufficient statistics plus fresh prospective re-authorization."
+    "NI01 world-label-privilege sensitivity remains closed and may not be revived by creating TEST-target/scoring access around a consumed identity."
   ],
-  "fallback_status": "ABSENT",
-  "rejected_lane": null,
-  "lane_rejected_reason": null,
   "collision_reconciliation": {
-    "report_branch_tip_before_persistence": "2ab034f3c8852f5df312a685717ca32656981017",
-    "latest_main_checkpoint_time": "2026-09-19T14:16:10+09:00",
-    "latest_main_checkpoint_analyst_commit": "ca0f19d52a80622bd6e4d6d61830f805c1f89234",
+    "report_branch_tip_before_persistence": "313da06cdafd8cbaf82c19a1f82c9e9e2a234827",
+    "latest_main_checkpoint_time": "2026-09-19T15:16:45+09:00",
+    "latest_main_checkpoint_analyst_commit": "8e8aa0924ff5c7dae99332d9babe7f3dd748f25b",
     "fresh_analyst_tip_rechecked": true,
-    "fresh_analyst_tip": "ca0f19d52a80622bd6e4d6d61830f805c1f89234",
+    "fresh_analyst_tip": "8e8aa0924ff5c7dae99332d9babe7f3dd748f25b",
     "main_ref_rechecked": true,
     "research_refs_rechecked": true,
     "evidence_formal_sealed_freeze_control_preserve_refs_rechecked": true,
@@ -101,13 +91,16 @@
   "integrity_state": "CLEAN_NO_OP_NO_MAIN_MUTATION_NO_FORMAL_BOUNDARY_NO_TEST_TARGET_ACCESS_NO_IDENTITY_CONSUMPTION_NO_OFFICIAL_SCORING_CANONICAL_EVIDENCE_UNCHANGED",
   "completion_target": "Reconcile fresh authority and repository state, avoid MAIN collision, select formal/fallback/incubator work only if valid, otherwise persist a justified no-op SUB checkpoint.",
   "completion_target_status": "ACHIEVED_NO_OP_BY_DESIGN",
+  "fallback_status": "ABSENT",
+  "rejected_lane": null,
+  "lane_rejected_reason": null,
   "candidate_formal_question": null,
   "suggested_prospective_object": null,
   "promotion_recommendation": "NONE",
   "incubator_handoff": null,
-  "proposed_handoff_to_analyst": "Keep SUB null/no-op until a genuinely independent prospectively complete secondary object is reserved or a clearly distinct synthetic/development-only NON_EVIDENTIARY question appears outside existing SUB exploratory coverage and MAIN critical-path construction. Reconsider NI01 sensitivity only after an already-safe separate non-canonical score surface/sufficient-stat source appears and is prospectively re-authorized.",
+  "proposed_handoff_to_analyst": "Keep SUB null/no-op until a genuinely independent prospectively complete secondary object is reserved or a clearly distinct synthetic/development-only NON_EVIDENTIARY question appears outside existing SUB exploratory coverage and MAIN critical-path construction. Do not revive NI01 by manufacturing target/scoring access.",
   "report_persistence": {
-    "history_path": "reports/orchestrator/history/2026-09-19/1437-sub.md",
+    "history_path": "reports/orchestrator/history/2026-09-19/1533-sub.md",
     "sub_latest_path": "reports/orchestrator/sub/latest.md",
     "sub_state_path": "reports/orchestrator/sub/state.json",
     "atomic_git_commit_requested": true,
