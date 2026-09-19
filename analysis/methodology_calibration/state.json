@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "timestamp": "2026-09-20T07:21:44+09:00",
+  "timestamp": "2026-09-20T08:20:39+09:00",
   "run_disposition": "MATERIAL_CALIBRATION_UPDATE",
   "overall_classification": "MIXED_CALIBRATION",
   "previous_classification": "MIXED_CALIBRATION",
@@ -11,167 +11,162 @@
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
     "freeze_tag_count": 0,
-    "legacy_freeze_branch_count": 13,
-    "active_refractory_architecture_head": "4589192d927e40cf7a05cf8a94207efb42ebbc65",
+    "refractory_architecture_head": "4589192d927e40cf7a05cf8a94207efb42ebbc65",
     "refractory_architecture_workflow": 35472786687,
     "refractory_architecture_workflow_conclusion": "success",
-    "refractory_ordinary_ci": 35472786733,
-    "refractory_ordinary_ci_conclusion": "success",
     "refractory_artifact_id": 10593866036,
-    "refractory_artifact_archive_digest": "sha256:b4dfbf04ab2f1dbb69fcee3833890ce6ad30d85a0c095a4699cde356c43e9115",
-    "sub_delayed_outcome_discovery_head": "83eb00212eb9c877e8217c44dfb35a5563f04626",
+    "refractory_raw_sha256": "4587b7e0ee1404f3f78f8a0c83c8224fea3d632e8a25162cb0ae586dc4a5712e",
+    "delayed_outcome_architecture_head": "c79c5434222a6d018931dc1752e7f0074c23854b",
+    "delayed_outcome_contract_commit": "25cdd7db1d5a546b38810c40ffdc75085c8d196a",
+    "delayed_outcome_raw_facts_commit": "d226f5993b69f0d0c98c1e1cd7b049e2ba3ded49",
+    "sub_assembly_capacity_head": "3cac844ca6a80725c87d7e681c23b703f35150c2",
     "control_brain_ref": "36a41bb720c051ee6d4563d7ecb6b720a8fc2c2d",
-    "evidence_analyst_ref": "7e7d425948a86d0eec306b1a75bfc07165d9afa1",
-    "main_orchestrator_ref": "f19a048a71b973c2a08975e91e5ce538e85de802",
+    "evidence_analyst_ref": "850b4502cf15d3f6118a487c5ab4ba81fbf7b75e",
+    "main_orchestrator_ref": "682a940bd1c58d5dad2f201b3a65d87297327f17",
     "external_research_audit_ref": "a39f0007a55000efd7a237f05e21d381176e47f1",
-    "repository_steward_ref": "877a5d4ea077e48863c46019445c5bc696ce43ef",
-    "utility_bus_ref": "dcb7dc021b09c7ec0713d99b8c2f8168169ac8af",
+    "repository_steward_ref": "e53df976b98d56b8e37a5cbfc20f1aeb84caadeb",
+    "utility_bus_ref": "38a5a715b3d5afec73e76fea49b56647c095d8fb",
     "open_prs": [148, 149]
   },
   "control_plane_consumed": {
     "control_brain_commit": "36a41bb720c051ee6d4563d7ecb6b720a8fc2c2d",
     "control_brain_latest_timestamp": "2026-09-20T06:50:00+09:00",
     "control_operating_doctrine_change": "PROSPECTIVE_HANDOFF_BINDING_GUARD_ADOPTED",
-    "evidence_analyst_commit": "7e7d425948a86d0eec306b1a75bfc07165d9afa1",
-    "evidence_analyst_latest_timestamp": "2026-09-20T07:00:00+09:00",
-    "main_orchestrator_commit": "f19a048a71b973c2a08975e91e5ce538e85de802",
-    "main_latest_timestamp": "2026-09-20T07:17:00+09:00",
-    "main_current_step": "REFRACTORY_COMMENT_DETECTOR_REPAIRED_EXACT_HEAD_WORKFLOWS_IN_PROGRESS_AT_DURABLE_CHECKPOINT",
+    "evidence_analyst_commit": "850b4502cf15d3f6118a487c5ab4ba81fbf7b75e",
+    "evidence_analyst_latest_timestamp": "2026-09-20T07:59:00+09:00",
+    "main_orchestrator_commit": "682a940bd1c58d5dad2f201b3a65d87297327f17",
+    "main_latest_timestamp": "2026-09-20T08:16:00+09:00",
     "literature_commit": "a39f0007a55000efd7a237f05e21d381176e47f1",
     "literature_latest_timestamp": "2026-09-20T06:30:00+09:00",
     "independent_audit_latest_timestamp": "2026-09-19T22:31:00+09:00",
     "independent_audit_latest_blob": "55da8cc9b7e11ea0b0b22893a73003739c49c41f",
-    "repository_steward_commit": "877a5d4ea077e48863c46019445c5bc696ce43ef",
-    "utility_request_bus_commit": "dcb7dc021b09c7ec0713d99b8c2f8168169ac8af",
-    "handoff_guard_status": "PROTOTYPE_PASS_EXPECTATIONS_AND_PROSPECTIVELY_ADOPTED_BY_CONTROL",
+    "repository_steward_commit": "e53df976b98d56b8e37a5cbfc20f1aeb84caadeb",
+    "utility_request_bus_commit": "38a5a715b3d5afec73e76fea49b56647c095d8fb",
     "suppression_detector_assignment": "CTRL-20260920-0650-SUPPRESSION-STATIC-DETECTOR-CONSISTENCY",
-    "suppression_detector_assignment_status": "ASSIGNED_ONE_RUN_PENDING_RESULT"
+    "suppression_detector_result": "STATIC_EXTRACTOR_FALSE_NEGATIVE_CONFIRMED",
+    "handoff_guard_status": "PROSPECTIVELY_ADOPTED_BY_CONTROL_PENDING_REAL_SUCCESSOR_DECISION_DEMONSTRATION"
   },
   "gate_changes_reviewed": [
     {
-      "change": "Control prospectively adopted the validated artifact-to-handoff binding design for future outcome-bearing lower-funnel successor decisions",
+      "change": "Suppression read-only Utility audit independently confirmed a decision-relevant static extractor false negative while leaving the historical terminal unchanged",
+      "direction": "CONFIRMED_FALSE_NEGATIVE_CALIBRATION_EVIDENCE",
+      "assessment": "TIGHTEN_MACHINE_FACT_EXTRACTOR_FIDELITY"
+    },
+    {
+      "change": "Delayed-outcome Architecture contract prospectively bound AST/structural extraction plus exact blob hashes, invalid-on-mismatch, raw-before-interpretation, and fixed static STOP terminals",
       "direction": "EVIDENCE_DRIVEN_PROCEDURAL_TIGHTENING",
       "assessment": "KEEP"
     },
     {
-      "change": "Refractory preflight exposed a second independent representation-sensitive machine-fact false negative before outcome visibility",
-      "direction": "NEW_FALSE_NEGATIVE_EVIDENCE",
-      "assessment": "TIGHTEN_MACHINE_FACT_EXTRACTOR_FIDELITY"
-    },
-    {
-      "change": "Evidence Analyst allowed only a science-invariant pre-outcome comment-representation normalization under unchanged scientific bindings; exact-head CI and Architecture workflow then succeeded",
-      "direction": "CALIBRATES_PRE_OUTCOME_REPAIR_BOUNDARY",
+      "change": "Delayed-outcome raw facts and interpretation were committed separately in the prospective order and mapped only to API-contract ambiguity, not a demonstrated dynamic failure",
+      "direction": "CORROBORATES_RAW_BEFORE_INTERPRETATION_AND_SIGNAL_SCOPE",
       "assessment": "KEEP"
     },
     {
-      "change": "Control accepted and assigned the bounded suppression static-detector consistency audit",
-      "direction": "TARGETED_METHODOLOGY_DIAGNOSTIC",
-      "assessment": "KEEP_PENDING_RESULT"
+      "change": "Refractory produced a genuine functional Architecture terminal but remained HOLD with novelty/mechanistic/biological claims unsupported",
+      "direction": "CORROBORATES_CLAIM_TYPE_SEPARATION_AND_STOP_RULE",
+      "assessment": "KEEP"
     },
     {
-      "change": "Delayed-outcome mutable-slot finding was admitted only as a queued Architecture/API attribution question and explicitly not as novelty evidence",
-      "direction": "CORROBORATES_CLAIM_TYPE_SEPARATION",
-      "assessment": "KEEP"
+      "change": "Assembly mature-capacity Discovery was admitted only to a fresh Architecture characterization with default saturation and intended lifecycle semantics still unresolved",
+      "direction": "CORROBORATES_RESEARCH_WORTHINESS_WITH_RELEVANCE_CAVEATS",
+      "assessment": "CLARIFY_COMPARATOR_INTENT_BEFORE_TURNOVER_TEST"
     }
   ],
   "gate_by_gate_classifications": {
     "one_way_integrity_floor": "KEEP",
     "prospective_protocol_and_exact_binding": "KEEP",
+    "raw_facts_before_interpretation": "KEEP",
     "pre_outcome_science_invariant_representation_repair_under_unchanged_bindings": "KEEP",
     "post_outcome_semantic_or_protocol_repair_of_consumed_object": "KEEP",
     "positive_signal_before_mechanistic_claims": "KEEP",
     "equal_privilege_comparator_matching": "KEEP",
-    "comparator_semantics_matched_to_claim_type": "CLARIFY",
-    "stronger_privilege_reduction_ceiling_labeling": "KEEP",
+    "comparator_semantics_matched_to_claim_and_intended_resource_policy": "CLARIFY",
     "new_computational_principle_novelty_bar": "KEEP",
-    "same_novelty_bar_for_architecture_testbed_research": "SPLIT_BY_CLAIM_TYPE",
+    "same_novelty_bar_for_architecture_system_engineering_testbed_value": "SPLIT_BY_CLAIM_TYPE",
     "no_high_value_formal_object_implies_programme_wide_hold": "RELAX",
-    "observable_level_exhaustion_over_family_level_exhaustion": "KEEP",
     "fresh_independently_motivated_object_requirement": "KEEP",
     "default_three_cycle_exploration_budget": "KEEP",
-    "stop_after_architecture_cycle_for_analyst_review": "KEEP",
+    "stop_after_architecture_cycle_for_fresh_analyst_review": "KEEP",
     "legacy_topk_architecture_support_gate": "TIGHTEN",
     "topk_exact_replacement_support_or_uncertainty_rule": "INSUFFICIENT_EVIDENCE",
     "prospective_support_aware_architecture_triage": "KEEP",
-    "local_architecture_numeric_threshold_portability": "CLARIFY",
-    "architecture_local_thresholds_as_formal_or_novelty_thresholds": "CLARIFY",
+    "local_architecture_threshold_portability": "CLARIFY",
     "automatic_preformal_promotion_after_architecture_signal": "KEEP",
     "ordinary_control_first_architecture_reduction": "KEEP",
     "negative_evidence_claim_boundary_narrowing": "KEEP",
     "architecture_value_survives_novelty_rejection": "KEEP",
-    "generic_handoff_binding_guard_design": "KEEP",
     "artifact_to_durable_handoff_binding_requirement": "KEEP",
     "automated_live_handoff_guard_tooling_coverage": "CLARIFY",
-    "embedded_contract_and_interpretation_digest_binding": "KEEP",
-    "machine_application_of_declared_thresholds_and_support_rules": "KEEP",
     "decision_relevant_machine_fact_extractor_fidelity": "TIGHTEN",
     "brittle_literal_or_format_sensitive_semantic_detectors": "TIGHTEN",
+    "structural_ast_exact_blob_policy_for_structural_source_facts": "KEEP",
+    "one_universal_extractor_technology_for_all_fact_types": "CLARIFY",
     "documentation_comment_facts_vs_executable_semantic_facts": "CLARIFY",
-    "post_outcome_invalid_diagnostic_fail_closed_handling": "KEEP",
-    "static_provenance_vs_semantic_extractor_validation": "KEEP"
+    "post_outcome_invalid_diagnostic_fail_closed_handling": "KEEP"
   },
   "false_positive_risks": [
     "A provenance-correct and handoff-consistent artifact can still contain a semantically wrong decision-relevant extracted fact",
-    "Architecture/API effects could be laundered into mechanistic novelty if claim-type boundaries are ignored",
-    "A comparator chosen as a supposedly universal biological policy could answer a different question than the declared engineering/API claim",
-    "Stronger-privilege ceilings could be mistaken for matched equal-resource mechanistic comparators"
+    "Architecture or API effects could be laundered into mechanistic novelty if claim-type boundaries are ignored",
+    "An Assembly turnover comparator chosen before binding lifetime-memory versus working-set intent could answer a different architectural question",
+    "A biologically richer comparator could overmatch a narrow engineering/API claim and remove the phenomenon being characterized"
   ],
   "false_negative_risks": [
-    "Literal or formatting-sensitive machine-fact detectors can block valid objects before measurement, as independently seen in suppression and Refractory",
-    "Fail-closed handling becomes overconservative if one disputed machine fact automatically rejects the candidate rather than blocking only dependent continuation",
-    "Treating documentation formatting as executable semantics can create non-scientific admission blockers",
+    "Brittle literal or representation-sensitive extractors can block valid measurement or misclassify a decision-relevant machine fact",
+    "Fail-closed handling becomes overconservative if one disputed fact automatically rejects the candidate rather than blocking only dependent continuation",
+    "Mandating AST for facts better represented by runtime invariants or explicit documentation checks could add ceremony without information gain",
     "Universal replication or novelty-threshold inflation would suppress useful Architecture/testbed questions without addressing extractor fidelity",
     "Fitting a universal support threshold to completed Top-k outcomes would create post-outcome goalpost movement"
   ],
   "duplicate_guards": {
     "assessment": "NO_MATERIAL_DUPLICATE_GUARD_TO_MERGE",
     "notes": [
-      "provenance binding validates exact identity and inputs",
-      "machine-fact semantic validation checks whether artifact fields faithfully represent bound source/runtime conditions",
-      "artifact-to-handoff binding checks faithful transfer into durable control-plane state",
-      "fresh Analyst review governs successor allocation after interpretation"
+      "exact provenance binding validates identity and inputs",
+      "machine-fact extractor validation checks whether artifact fields represent bound source/runtime semantics",
+      "artifact-to-handoff binding checks transfer into durable control-plane state",
+      "fresh Analyst review governs interpretation and successor allocation"
     ]
   },
   "moving_goalpost_assessment": {
     "classification": "LOW",
-    "basis": "Control's handoff rule applies prospectively. The Refractory detector normalization was authorized and performed before any outcome-bearing job ran, changed only representation handling, preserved all scientific bindings and terminal mapping, and re-ran on a new exact head. Suppression and all consumed historical outcomes remain unrepaired and unrelabeled."
+    "basis": "Suppression was audited without repair or relabel; Refractory's representation fix occurred before outcome and preserved the scientific contract; delayed-outcome fixed its source surface, extraction method, terminal mapping and STOP rule before raw facts and interpretation."
   },
   "pass_reachability_assessment": {
     "classification": "REACHABLE_BUT_NARROW",
     "required_path": [
       "prospectively positive native signal",
       "fresh exact-bound object and protocol",
-      "support or uncertainty adequate to the local claim",
-      "matched equal-privilege comparators for mechanistic claims",
+      "claim-local adequate support",
+      "matched equal-privilege comparator where required by claim type",
       "survive ordinary implementation and dynamical reductions",
-      "semantically valid decision-relevant machine-fact extraction",
+      "fact-type-appropriate semantically valid machine extraction",
       "faithful machine-bound artifact-to-handoff interpretation",
-      "fixed intervention and numeric falsifier",
+      "fixed intervention and falsifier",
       "one-way preserved FORMAL evidence"
     ],
-    "current_limit": "No active PRE_FORMAL or FORMAL object. Handoff fidelity is now prospectively adopted, but suppression and the Refractory preflight history show that upstream extractor validity still needs calibration and the suppression read-only audit is pending."
+    "current_limit": "No active PRE_FORMAL or FORMAL object. Machine-fact extractor fidelity remains a confirmed procedural weakness, although the delayed-outcome object prospectively uses a stronger structural policy and stops before any dynamic escalation."
   },
   "claim_type_separation_findings": {
     "control_state": "FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL",
-    "refractory_state": "ACTIVE_ARCHITECTURE_API_SEMANTICS_OBJECT_EXACT_HEAD_WORKFLOW_SUCCESS_NOT_YET_DURABLY_RECONCILED",
-    "delayed_outcome_state": "QUEUED_FRESH_ARCHITECTURE_API_ATTRIBUTION_OBJECT_NOT_NOVELTY",
-    "suppression_state": "HOLD_AFTER_AMBIGUOUS_CONTRACT_PENDING_READ_ONLY_EXTRACTOR_AUDIT",
-    "assembly_crosscascade_state": "HOLD_AFTER_POSITIVE_FUNCTIONAL_ARCHITECTURE_EFFECT_ORDINARY_SEGMENTATION_REDUCTION",
+    "refractory_state": "HOLD_AFTER_FUNCTIONAL_ARCHITECTURE_EFFECT_NO_NOVELTY_PROMOTION",
+    "delayed_outcome_state": "STATIC_ARCHITECTURE_TERMINAL_IMMEDIATE_ONLY_USAGE_BUT_PUBLIC_CONTRACT_UNSPECIFIED_PENDING_FRESH_ANALYST_REVIEW",
+    "assembly_mature_capacity_state": "QUEUED_ARCHITECTURE_CHARACTERIZATION_AFTER_ORDINARY_RESOURCE_POLICY_REDUCTION",
+    "suppression_state": "HISTORICAL_AMBIGUOUS_CONTRACT_UNCHANGED_EXTRACTOR_FALSE_NEGATIVE_CONFIRMED",
     "topk_state": "HOLD_MIXED_WITH_HISTORICAL_SUPPORT_CAVEAT",
     "temporal_state": "HOLD_ARCHITECTURE_API_REPRODUCIBILITY_ONLY",
-    "h5_state": "TERMINAL_NEGATIVE_EVIDENCE_WITH_NARROW_INTERPRETATION_CAP",
+    "h5_state": "TERMINAL_NEGATIVE_EVIDENCE_WITH_NARROW_REGISTERED_CLAIM_BOUNDARY",
     "assessment": "HEALTHY",
     "research_worthiness_vs_novelty": "SEPARATED",
-    "remaining_risk": "UPSTREAM_MACHINE_FACT_EXTRACTOR_VALIDITY"
+    "remaining_risk": "MACHINE_FACT_EXTRACTOR_VALIDITY_AND_END_TO_END_SUCCESSOR_HANDOFF_DEMONSTRATION"
   },
   "external_calibration": {
     "literature_commit": "a39f0007a55000efd7a237f05e21d381176e47f1",
-    "literature_assessment": "REFRACTORY_INPUT_STATE_POLICY_IS_MODEL_SPECIFIC_AND_ORDINARY;_NO_NEW_REASON_TO_CHANGE_SCIENTIFIC_ADMISSION_THRESHOLDS",
-    "independent_audit_assessment": "H5_ROBUST_SO_FAR_FOR_REGISTERED_METRIC_WITH_NARROW_INTERPRETATION",
+    "literature_assessment": "REFRACTORY_INPUT_STATE_POLICY_IS_MODEL_SPECIFIC_AND_ORDINARY; COMPARATOR_SCOPE_SHOULD_FOLLOW_CLAIM_TYPE",
+    "independent_audit_assessment": "H5_ROBUST_SO_FAR_FOR_REGISTERED_ALGORITHMIC_WORK_METRIC_WITH_NARROW_INTERPRETATION_CAP",
     "overall_assessment": "NO_EXTERNAL_RESULT_JUSTIFIES_STRICTER_OR_LOOSER_SCIENTIFIC_ADMISSION_THRESHOLDS",
-    "use_rule": "External literature/audit calibrate reductions, comparator scope, and claim boundaries; they do not override machine artifacts or rewrite consumed evidence."
+    "use_rule": "External literature and audit calibrate ordinary reductions, comparator scope and claim boundaries; they do not override machine artifacts or rewrite consumed evidence."
   },
-  "opportunity_cost_assessment": "Highest expected methodology information gain now comes from completing the assigned suppression extractor audit and observing one real successor decision under the prospectively adopted handoff-binding requirement. Additional general scientific strictness would target the wrong failure mode and reduce lower-funnel information gain.",
+  "opportunity_cost_assessment": "Highest expected information gain now comes from observing one real fresh successor decision under the stronger extraction method plus adopted handoff binding, and from clarifying Assembly lifecycle intent before any turnover comparator. Additional global scientific strictness would target the wrong failure mode and reduce lower-funnel information gain.",
   "utility_request_created": null,
   "utility_requests_observed": [
     {
@@ -182,20 +177,20 @@
     {
       "request_id": "EVA-20260920-0502-SUPPRESSION-STATIC-DETECTOR-CONSISTENCY",
       "control_assignment": "CTRL-20260920-0650-SUPPRESSION-STATIC-DETECTOR-CONSISTENCY",
-      "status": "ASSIGNED_PENDING_RESULT",
+      "status": "COMPLETED_STATIC_EXTRACTOR_FALSE_NEGATIVE_CONFIRMED",
       "duplicate_methodology_request_created": false
     }
   ],
   "prospective_recommendations": [
-    "Keep the four-layer funnel, strict FORMAL novelty bar, comparator discipline, ordinary-reduction-first interpretation, and hard integrity floor unchanged.",
-    "Treat Control's prospective handoff-binding adoption as the current methodology; demonstrate its use on a future real successor decision without turning tooling coverage into a new scientific hurdle.",
-    "Complete the already-assigned suppression static-detector consistency audit without repairing, rerunning, rescoring, or relabeling the completed suppression object.",
-    "For future decision-relevant source/runtime facts, prospectively bind the validity method and prefer AST/structural/typed checks or explicit invariants over syntax/format-sensitive literal matching when practical.",
-    "Separate documentation/comment concordance from executable semantic facts unless the study claim itself concerns the documented API contract.",
-    "Permit only science-invariant pre-outcome mechanical/representation repair under unchanged bindings; preserve the no-silent-repair rule once outcome-bearing information is visible.",
-    "On a mismatch, block only interpretation-dependent continuation rather than automatically rejecting the candidate or inflating replication/novelty thresholds.",
-    "Preserve Architecture/system/engineering/testbed value even when computational-principle novelty fails.",
-    "Do not retroactively rescore, relabel, rerun, invalidate, or upgrade consumed/frozen experiments because methodology safeguards improve."
+    "Keep the four-layer funnel, strict FORMAL novelty bar, comparator discipline, ordinary-reduction-first interpretation and hard integrity floor unchanged.",
+    "Keep decision-relevant machine-fact extractor fidelity at TIGHTEN until at least one real successor decision completes under stronger extraction plus adopted handoff binding.",
+    "Prospectively bind a fact-type-appropriate validity method for decision-relevant machine facts; prefer structural AST, typed or runtime invariants over brittle raw-string matching when they express the intended fact faithfully.",
+    "Treat the completed suppression diagnostic as calibration evidence only; never repair, rerun, rescore or relabel the historical terminal.",
+    "Honor the delayed-outcome static STOP; do not create a dynamic interleaving experiment unless fresh prospective authority first establishes a supported delayed/interleaved claim worth testing.",
+    "For Assembly mature-capacity, bind intended memory lifecycle and plausible supported saturation before selecting a turnover comparator or downstream learnability threshold.",
+    "Fail closed only for successor decisions that depend on a disputed machine fact; do not automatically reject a candidate or inflate programme-wide thresholds.",
+    "Preserve Architecture, system, engineering and testbed value even when computational-principle novelty fails.",
+    "Do not retroactively rescore, relabel, rerun, invalidate or upgrade consumed/frozen experiments because methodology safeguards improve."
   ],
   "hard_integrity_floor_confirmation": {
     "confirmed": true,
@@ -211,14 +206,14 @@
     ]
   },
   "questions_for_control_brain": [
-    "Will the prospectively adopted handoff-binding requirement be explicitly applied to the next real interpretation-dependent successor decision, without adding an unnecessary duplicate scientific gate?",
-    "Will machine-fact semantic validation remain distinct from artifact-to-handoff consistency?",
-    "Will the suppression static-detector audit remain read-only and non-relabeling regardless of its result?"
+    "Will the adopted handoff-binding requirement be explicitly applied to the next real interpretation-dependent successor decision after delayed-outcome fresh review?",
+    "Will source/runtime machine-fact validity remain a distinct guard from artifact-to-handoff consistency rather than being collapsed into one check?",
+    "Will the confirmed suppression extractor mismatch remain calibration-only with the historical terminal untouched?"
   ],
   "questions_for_evidence_analyst": [
-    "Will future Architecture contracts bind an appropriate validity method for every decision-relevant source/runtime-derived machine fact, not merely its expected value?",
-    "Will documentation/comment concordance be separated from executable semantic facts unless documentation semantics are the actual claim?",
-    "Will future pre-outcome mechanical repairs remain narrowly science-invariant and become forbidden once outcome-bearing information is visible?",
+    "Will future Architecture contracts continue to bind a validity method appropriate to each decision-relevant machine fact before facts are observed?",
+    "Will the delayed-outcome static terminal remain an API-contract characterization unless a separately justified delayed/interleaved claim is prospectively admitted?",
+    "Will Assembly mature-capacity require intended lifecycle and supported saturation relevance before a turnover comparator is treated as scientifically informative?",
     "Will positive Architecture/system effects continue to remain separate from new-principle novelty and automatic PRE_FORMAL promotion?"
   ]
 }
