@@ -1,24 +1,26 @@
 {
-  "timestamp": "2026-09-19T23:46:00+09:00",
+  "timestamp": "2026-09-20T00:41:00+09:00",
   "worker_role": "sub",
   "mode": "discovery",
-  "evidence_analyst_commit": "982e5686524c9fc2b665efcf44069fef49196333",
+  "evidence_analyst_commit": "862dd62cdce58f06e5c782b4b54212d93e40212e",
   "consumed_lane": "BOUNDED_SECONDARY_DISCOVERY",
   "formal_sub_lane": null,
   "sub_fallback": "NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON",
-  "exploratory_target": "TEMPORAL_EXPECTATION_BATCH_PARTITION_SENSITIVITY_DISCOVERY",
+  "exploratory_target": "FIELD_SOURCE_LINEAGE_CAP_PERMUTATION_SENSITIVITY_DISCOVERY",
   "candidate_pool_id": null,
   "exploration_cycle": "1/3",
-  "why_independent_of_main": "Stable v0.4 temporal expectation/transduction integration; independent of MAIN's active v0.5 assembly prototype-lockin Architecture study and all reserved candidate/formal surfaces.",
-  "question": "Can the exact same external pulse timeline produce a different internally generated omission history and field trajectory solely because it is partitioned differently across IntegratedV04Brain.ingest_pulses calls?",
+  "why_independent_of_main": "Direct synthetic v0.4 field provenance-retention probe; independent of MAIN's active temporal-expectation batch-partition Architecture candidate and all reserved Top-k/Assembly/H5/H7/formal surfaces.",
+  "question": "When more than max_sources_per_unit distinct simultaneous arrivals hit one field unit, can enqueue order alone change retained source lineage and full serialized state hash while physical field dynamics remain invariant?",
   "inputs_used": {
     "type": "synthetic_only",
-    "channel": "A",
-    "external_pulse_times_ms": [0.0, 10.0, 20.0, 100.0],
-    "magnitude": 0.72,
-    "settle_ms": 35.0,
-    "expectations_enabled": true,
-    "plasticity_enabled": false,
+    "units": 1,
+    "connections": 0,
+    "arrival_time_ms": 1.0,
+    "arrival_count": 20,
+    "current_per_arrival": 0.06,
+    "pulse_ids": "p00..p19",
+    "max_sources_per_unit": 16,
+    "arms": ["ascending_enqueue", "descending_enqueue"],
     "repository_dataset": false,
     "trained_checkpoint": false,
     "formal_raw": false,
@@ -26,103 +28,108 @@
     "official_scorer": false
   },
   "implementation_experiment": {
-    "branch": "research/exploratory-sub-temporal-expectation-batch-partition-20260919",
-    "head": "7aa5d681a400173c09c55603a459d63a6aaf7b43",
+    "branch": "research/exploratory-sub-field-source-lineage-cap-20260920",
+    "test_commit": "1a91187173a713d87f343b871ec16b94ee956bfb",
+    "head": "21af9d2a5546cc081f4fe4472540ab8a17760c7c",
     "artifacts": [
-      "tests/discovery/test_temporal_expectation_batch_partition_20260919.py",
-      "analysis/discovery/temporal_expectation_batch_partition_20260919.json",
-      "analysis/discovery/temporal_expectation_batch_partition_20260919.md"
+      "tests/discovery/test_field_source_lineage_cap_20260920.py",
+      "analysis/discovery/field_source_lineage_cap_20260920.md"
     ],
-    "workflow_run": 35449503678,
-    "workflow_status_at_snapshot": "completed_success_python_3_11_and_3_13"
+    "workflow_run": 35452444346,
+    "workflow_status": "completed_success_python_3_11_and_3_13"
   },
   "observations": {
-    "batched": {
-      "calls": [[0.0, 10.0, 20.0, 100.0]],
-      "final_end_ms": 135.0,
-      "omission_times_ms": [],
-      "final_expected_interval_ms": 34.5,
-      "final_last_observation_ms": 100.0
-    },
-    "split": {
-      "calls": [[0.0, 10.0, 20.0], [100.0]],
-      "final_end_ms": 135.0,
-      "omission_times_ms": [33.0],
-      "final_expected_interval_ms": 34.5,
-      "final_last_observation_ms": 100.0
-    },
-    "final_field_state_hash_equal": false,
-    "mechanistic_reduction": "ingest_pulses observes every supplied external row before polling omission deadlines. A later observation inside the same batch can therefore replace a deadline that would have emitted if polling occurred causally between observations. This is current integration/batching semantics, not evidence of a new cognitive mechanism."
+    "ascending_retained_source_ids": "p04..p19",
+    "descending_retained_source_ids": "p15..p00",
+    "retained_set_intersection_count": 12,
+    "retained_set_union_count": 20,
+    "retained_set_jaccard": 0.6,
+    "spike_count_equal": true,
+    "physical_spike_observables_equal": true,
+    "physical_unit_state_without_source_ids_equal": true,
+    "full_field_state_hash_equal": false,
+    "mechanistic_reduction": "Same-time arrivals preserve insertion-counter order; _source_tuple appends unseen pulse IDs in that order and retains only the last max_sources_per_unit entries. Current production code does not use source IDs in physical update equations, so the difference is bounded provenance bookkeeping/hash reproducibility rather than a causal dynamics effect."
   },
   "evidentiary_status": "NON_EVIDENTIARY",
-  "what_would_falsify_or_reduce_it": "A fresh prospectively specified DEV-only Architecture study should reduce it to an API artifact if supported callers cannot create deadline-straddling batches or if an event-time-causal comparator shows no material downstream behavior difference for otherwise-identical timelines.",
-  "candidate_next_research_layer": "ARCHITECTURE_STUDY",
-  "scientific_choices_still_open": [
-    "supported ingestion/batching contract",
-    "DEV pulse families and channel cadences",
-    "deadline-straddling partition family",
-    "event-time-causal comparator semantics",
-    "downstream functional observable and horizon",
-    "resource matching"
-  ],
-  "recommendation": "PROMOTE_TO_ARCHITECTURE_STUDY",
+  "what_would_falsify_or_reduce_it": "The candidate is already reduced under current code. The reduction would be falsified only by a fresh production path where pulse/source IDs causally alter physical updates or downstream behavior under otherwise identical currents, timestamps, and targets; current production-code search found no such consumer.",
+  "candidate_next_research_layer": "NONE_SCIENTIFICALLY",
+  "scientific_choices_still_open": [],
+  "recommendation": "REJECT",
   "research_layer_state": {
     "DISCOVERY": "OPEN_SUB_DEFAULT_NON_EVIDENTIARY",
-    "ARCHITECTURE_STUDY": "ACTIVE_MAIN_ASSEMBLY_PROTOTYPE_LOCKIN_CYCLE1",
+    "ARCHITECTURE_STUDY": "MAIN_TEMPORAL_BATCH_PARTITION_CYCLE1_ALLOCATED; exact-head workflow completed success during SUB run; SUB did not inspect outcome artifacts",
     "PRE_FORMAL": "EMPTY_HOLD",
     "FORMAL": "EMPTY_HOLD"
   },
   "candidate_pool_snapshot": {
-    "CAND-ASSEMBLY-PROTOTYPE-LOCKIN-01": "ARCHITECTURE_STUDY_MAIN_RESERVED",
-    "CAND-TOPK-PA-01": "HOLD",
-    "CAND-H7-RESP-01": "HOLD",
-    "CAND-STRUCTURAL-ORDER-PATH-01": "REJECT"
+    "CAND-TEMPORAL-BATCH-PARTITION-01": "MAIN_ARCHITECTURE_CYCLE1_SUB_MUST_NOT_CONTINUE",
+    "CAND-TOPK-PA-01": "HOLD_NO_CYCLE3_NO_PRE_FORMAL",
+    "CAND-ASSEMBLY-PROTOTYPE-LOCKIN-01": "REJECT_NO_OR_LOW_SUPPORT",
+    "CAND-H7-RESP-01": "HOLD_NO_NATIVE_OBJECT"
   },
   "blocked_until": {
-    "main_architecture_execution": "MAIN-owned exact prospective binding/preflight conditions only",
-    "topk_further_work": "existing cross-seed Utility result plus fresh Analyst prospective reduction question",
-    "pre_formal": "sufficient lower-layer support plus independently motivated mechanistic/reduction question",
-    "formal": "genuinely fresh object with full prospective one-way authority"
+    "pre_formal": "fresh mechanistic/reduction candidate with sufficient lower-layer support and matched ordinary reductions exists",
+    "topk": "fresh independently specified ordinary-reduction Architecture object is justified; same-object cycle3 remains prohibited",
+    "h7": "independently arising native responsibility-sensitive mechanism exists",
+    "formal": "fresh identity/STARTED/TEST/scorer/preserve/evidence authority"
   },
   "main_work_explicitly_avoided": [
-    "CAND-ASSEMBLY-PROTOTYPE-LOCKIN-01 active Architecture cycle and workflow",
+    "CAND-TEMPORAL-BATCH-PARTITION-01 active MAIN Architecture study and outcome-bearing artifacts",
     "CAND-TOPK-PA-01",
-    "CAND-STRUCTURAL-ORDER-PATH-01",
-    "H5",
-    "H7",
+    "CAND-ASSEMBLY-PROTOTYPE-LOCKIN-01 follow-up",
+    "H5 consumed line",
+    "H7 construction",
     "MAIN blockers and outcome-dependent successors",
     "FORMAL/TEST/scoring/identity surfaces"
   ],
   "do_not_touch_respected": [
-    "consumed C19-v4 identity/evidence",
-    "consumed C19-R1 revision-authority v1/v2 identities",
-    "consumed C19-R2 identity/evidence",
-    "consumed PD01 identity/evidence",
-    "consumed NI01 identity/evidence",
-    "consumed H5 identity/evidence",
-    "official TEST/formal raw/scoring surfaces without fresh authority",
+    "all consumed identities",
+    "official TEST and formal held-out surfaces",
     "immutable evidence refs/tags",
+    "legacy freeze refs",
+    "STARTED/control refs",
+    "formal preserve/scoring/evidence surfaces",
     "research PR merges",
     "scheduler definitions"
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "982e5686524c9fc2b665efcf44069fef49196333",
+    "evidence_analyst": "862dd62cdce58f06e5c782b4b54212d93e40212e",
     "control_brain_observed": "c737fbcbcbceacdd906780fcb7f020658cd19422",
-    "main_active_research_branch": "research/main-assembly-prototype-lockin-arch-study-20260919",
-    "main_active_research_head": "7d9b90e58ee088ff2b4187d3c62c5e568148e6aa",
-    "sub_research_branch": "research/exploratory-sub-temporal-expectation-batch-partition-20260919",
-    "sub_research_head": "7aa5d681a400173c09c55603a459d63a6aaf7b43",
-    "orchestrator_parent_before_persistence": "0198d6f36d050b7ba5852fda7711aafd99f70b5a",
+    "main_active_research_branch": "research/main-temporal-batch-partition-arch-study-20260920",
+    "main_active_research_head": "7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
+    "sub_research_branch": "research/exploratory-sub-field-source-lineage-cap-20260920",
+    "sub_research_head": "21af9d2a5546cc081f4fe4472540ab8a17760c7c",
+    "orchestrator_parent_before_sub_persistence": "afd8c8e5443ca8493ad39dd94f1f742284ab7d45",
+    "orchestrator_tip_before_state_persistence": "85b18ca01652a370f176aa5c4f9bfc18c2214467",
     "evidence_tag_count": 5,
-    "formal_tag_count": 0
+    "formal_tag_count": 0,
+    "sealed_tag_count": 0,
+    "freeze_tag_count": 0,
+    "legacy_freeze_branch_count": 13
   },
-  "utility_request_created": {
-    "request_id": "SUB-20260919-2344-TEMPORAL-EXPECTATION-BATCHING-CALLSITE-AUDIT",
-    "commit": "ab0609cb37b83d84b5ee9d1701feebb8273956fe",
-    "dedupe_key": "temporal-expectation-batching-callsite-audit-v1",
-    "status": "PROPOSAL_ONLY_NONBLOCKING"
-  },
+  "workflows_experiments": [
+    {
+      "run_id": 35452444346,
+      "name": "ordinary repository ci",
+      "head": "21af9d2a5546cc081f4fe4472540ab8a17760c7c",
+      "status": "completed",
+      "conclusion": "success",
+      "python_3_11": "success",
+      "python_3_13": "success",
+      "scientific_role": "none"
+    },
+    {
+      "run_id": 35451528895,
+      "name": "MAIN Temporal batch partition Architecture cycle 1",
+      "head": "7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
+      "status": "completed",
+      "conclusion": "success",
+      "sub_artifact_access": false,
+      "note": "status only observed for collision awareness; outcome-bearing artifacts not inspected"
+    }
+  ],
+  "utility_request_created": null,
   "consumed_identities": [],
   "formal_identity_created": false,
   "started_or_control_created": false,
@@ -131,21 +138,21 @@
   "immutable_evidence_modified": false,
   "research_merge_performed": false,
   "collision_reconciliation": {
-    "analyst_ref_rechecked": "982e5686524c9fc2b665efcf44069fef49196333",
+    "analyst_ref_rechecked": "862dd62cdce58f06e5c782b4b54212d93e40212e",
     "main_ref_rechecked": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "main_active_research_head_rechecked": "7d9b90e58ee088ff2b4187d3c62c5e568148e6aa",
-    "orchestrator_parent_rechecked": "0198d6f36d050b7ba5852fda7711aafd99f70b5a",
+    "main_active_research_head_rechecked": "7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
+    "sub_research_head_rechecked": "21af9d2a5546cc081f4fe4472540ab8a17760c7c",
+    "orchestrator_tip_rechecked_before_state": "85b18ca01652a370f176aa5c4f9bfc18c2214467",
     "collision_found": false
   },
-  "blockers": [
-    "Fresh Evidence Analyst classification and prospective Architecture Study specification are required before any continuation beyond this Discovery cycle."
-  ],
-  "completion_target": "ACHIEVED_ONE_BOUNDED_INDEPENDENT_DISCOVERY_CYCLE_AND_RETURNED_ARCHITECTURE_PROMOTION_CANDIDATE_WITH_OPTIONAL_READ_ONLY_UTILITY_AUDIT",
-  "integrity_state": "CLEAN_NON_EVIDENTIARY_DISCOVERY",
+  "blockers": [],
+  "completion_target": "ACHIEVED_ONE_BOUNDED_INDEPENDENT_DISCOVERY_CYCLE_AND_STOPPED_AFTER_EXACT_BOOKKEEPING_REDUCTION",
+  "integrity_state": "CLEAN_NON_EVIDENTIARY_DISCOVERY_REDUCED_AND_STOPPED",
   "persistence_result": {
-    "atomic_snapshot_commit": "a797612f3540d5080360b8ff758f3f4fb28dafdf",
-    "history_path": "reports/orchestrator/history/2026-09-19/2346-sub.md",
-    "final_state_commit": "this update",
+    "history_commit": "2fc9c3697bcc8c1fe289da206b78ec935440e28f",
+    "history_path": "reports/orchestrator/history/2026-09-20/0041-sub.md",
+    "latest_md_commit": "85b18ca01652a370f176aa5c4f9bfc18c2214467",
+    "state_json_commit": "this update",
     "force_push_used": false
   }
 }
