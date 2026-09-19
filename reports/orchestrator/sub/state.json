@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-19T22:40:00+09:00",
+  "timestamp": "2026-09-19T22:41:00+09:00",
   "worker_role": "sub",
   "mode": "discovery",
   "evidence_analyst_commit": "a3ec861d71c0965625fc1d2e5e8f65f4ce47f834",
@@ -33,7 +33,7 @@
       "analysis/discovery/assembly_prototype_lockin_order_sensitivity_20260919.md"
     ],
     "workflow_run": 35446343263,
-    "workflow_status_at_snapshot": "in_progress_tests_after_lint_and_readiness_success"
+    "workflow_status_at_snapshot": "completed_success"
   },
   "observations": {
     "pairwise_similarity": {
@@ -75,7 +75,7 @@
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "evidence_analyst": "a3ec861d71c0965625fc1d2e5e8f65f4ce47f834",
     "control_brain": "566f3b7c590fcfe2b9e8aaa0415da964989b1124",
-    "orchestrator_parent_before_persistence": "dfb86ffc7ef0158b24abf118eef0b71fab81f50b",
+    "orchestrator_parent_before_final_persistence": "41f4cad3071a234f7a4d39e6ee17930d3592c7c4",
     "evidence_tag_count": 5
   },
   "consumed_identities": [],
@@ -90,5 +90,5 @@
   ],
   "completion_target": "ACHIEVED_ONE_BOUNDED_INDEPENDENT_DISCOVERY_CYCLE_AND_RETURNED_PROMOTION_CANDIDATE_FOR_FRESH_ANALYST_REVIEW",
   "integrity_state": "CLEAN_NON_EVIDENTIARY_DISCOVERY",
-  "persistence_result": "atomic_sub_report_commit"
+  "persistence_result": "atomic_sub_report_commit_final_ci_snapshot"
 }
