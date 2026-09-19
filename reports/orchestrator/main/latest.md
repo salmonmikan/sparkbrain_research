@@ -1,40 +1,44 @@
-# MAIN PRIMARY — suppression semantics Architecture cycle 1 invalid diagnostic stop
+# MAIN RELAY — Assembly cross-cascade fallback segmentation Architecture cycle 1 checkpoint
 
-Timestamp: `2026-09-20 05:18 JST`  
+Timestamp: `2026-09-20 05:49 JST`  
 Worker role: `main`  
-Execution mode: `PRIMARY`  
-Evidence Analyst authority: `493573eb3b8c38d88f251db7c04dfe1a586c6ff0`  
+Execution mode: `RELAY`  
+Evidence Analyst authority: `d6b14d826a0847e439dfedd86e363786d84e329a`  
 Research layer: `ARCHITECTURE_STUDY`  
-Candidate: `CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01`
+Candidate: `CAND-ASSEMBLY-CROSSCASCADE-FALLBACK-01`
 
-## Reconciliation
+## Lease / collision reconciliation
 
-The inherited RELAY checkpoint was collected successfully. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`, active research head remains `research/main-v05-unit-suppression-transient-semantics-arch-study-20260920@2ef4b24f8e7ef8577ebbcb0328e7b3476bc24336`, and fresh Evidence Analyst authority remains `493573eb3b8c38d88f251db7c04dfe1a586c6ff0`. SUB remains independent and was not absorbed.
+The inherited PRIMARY lease was `BLOCKED` with heartbeat `2026-09-20T05:18:00+09:00` on the discarded suppression diagnostic. It was not a fresh `RUNNING` lease. Fresh Evidence Analyst authority promoted the independent Assembly cross-cascade fallback Discovery observation into a new MAIN Architecture object, so RELAY reconciled the remote state and acquired `sparkbrain-main-relay-20260920T0542JST` before any research mutation. SUB was read only for collision avoidance and remains independent.
 
-FAST PATH escalated to **FULL RECONCILIATION** after artifact/source verification found a diagnostic integrity anomaly. Reconciliation confirmed five authoritative `evidence/*` annotated tags, zero tag-based `formal/*`, `sealed/*`, and `freeze/*`, 13 preserved legacy `freeze/*` branches, preserve branch `ops/a01-md-001-preserve-once@465b8afe73aa6ff9dad2fa67d1f954a3ec689097`, Control branch `ops/control-brain-handoff@98155846394925730997fc35389fd6ad1b53f710`, and PR #148/#149 still open/unmerged.
+Stable `main` was re-fetched and remains exactly `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. No formal identity, STARTED, official TEST, scorer, preserve/evidence ref, consumed identity, or immutable evidence was touched.
 
-## Exact workflow / artifact
+## Prospectively fixed continuation
 
-Architecture workflow `35465512928` completed `success` on exact head `2ef4b24f8e7ef8577ebbcb0328e7b3476bc24336`; ordinary CI `35465512894` also completed `success` on the same head. Artifact `10591265966` was retrieved. Its downloaded archive SHA-256 exactly matches GitHub's digest: `d4dd67e97132229fc60c1cf13b6dbc9366bfa22a2568aa7de116667b41d33669`. `summary.json` binds the same workflow/head/Analyst/source scope and records raw SHA-256 `220eb06b051273680726b8f0f4ad318a95863fcc1e9909daeb23ffd745ec6805`; the downloaded raw file independently hashes to that value.
+RELAY created `research/main-assembly-crosscascade-fallback-segmentation-arch-study-20260920` from exact stable `main` and fixed the prospective contract in commit `7a58520f08183714fdc13cb728f2e353688cf0f2` before outcome-bearing work.
 
-The artifact emitted `AMBIGUOUS_CONTRACT`, but that emitted class is **not accepted as a valid Architecture observation**.
+The fixed contract binds exact source blobs, one synthetic-development matched family with identical spikes/times and only cascade segmentation varied, current `EPISODE_GLOBAL_FALLBACK` versus a read-only `BOUNDARY_PRESERVING_NO_CROSSCASCADE_FALLBACK` shadow, repository-default Assembly maturation semantics, representation plus candidate/maturation observables, exactly one downstream observable (`probe_prediction_value`), joined-control validity, terminal mapping/precedence, machine handoff fields, forbidden inputs, and mandatory STOP after any terminal class.
 
-## Diagnostic integrity defect
+The read-only NON_EVIDENTIARY harness was added. Before any outcome workflow existed, a science-invariant Ruff/typing formatting cleanup was applied; no source binding, input, comparator, metric, threshold, terminal class, or scientific choice changed. Final research head is `388799d9880d7b472417a680f288da13f4fd9b41`.
 
-The prospectively bound harness detects threshold restoration with the literal check `"unit.base_threshold = threshold" in restore_source`. The exact blob-bound stable source actually restores the saved threshold as `self.base.field.units[unit_id].base_threshold = threshold`; its apply path stores `original[unit_id] = unit.base_threshold` before setting `unit.base_threshold = 1e9`.
+## Exact-head workflow state
 
-Accordingly, the artifact's raw fact `restore_restores_original_base_threshold=false` is mechanically false for the exact bound source. That false fact propagates to `implementation_state_preserving=false` and causes the fixed mapper to fall through to `AMBIGUOUS_CONTRACT`.
+The final exact-head push dispatched:
 
-Because the defect was discovered **after outcome-bearing material existed**, the Analyst's prospective no-post-outcome-fix rule applies. MAIN did not patch, rerun, retune, rescore, or assign a repaired alternative semantic class. The attempted cycle is disposed as **`INVALID_DIAGNOSTIC / DISCARD_STOP`** pending fresh Evidence Analyst review.
+- Architecture workflow `35468475903` on `388799d9880d7b472417a680f288da13f4fd9b41`: `in_progress`, conclusion not yet available.
+- ordinary CI `35468475862` on the same exact head: `in_progress`, conclusion not yet available.
 
-## Evidentiary status / ownership
+The Architecture workflow requires Python 3.11/3.13 exact-head validation, repository tests, lint/compile, stable-main ancestry, and `--preflight-only` source/input binding checks before its single outcome-bearing Architecture job can execute. Raw artifacts are written before summary and uploaded only after that fixed diagnostic.
 
-New FORMAL scientific evidence: **none**.  
-New PRE_FORMAL development evidence: **none**.  
-Accepted new ARCHITECTURE_STUDY observation: **none**; cycle 1 was attempted but discarded as invalid diagnostic.  
+## Scientific / integrity status
 
-No official TEST, formal identity, STARTED, scorer, preserve/evidence mutation, consumed-identity mutation, immutable evidence change, research merge, same-run repair, or Utility request occurred. The harness defect remains MAIN critical path and was not offloaded. SUB retains only its independent bounded Discovery lane.
+New FORMAL scientific information: **none**.  
+New PRE_FORMAL information: **none**.  
+Accepted new Architecture outcome: **none yet; workflow is still running**.  
+Evidentiary status: **NON_EVIDENTIARY**.
 
-Stop reason: **`POST_OUTCOME_STATIC_HARNESS_FALSE_NEGATIVE_INVALID_DIAGNOSTIC_DISCARD_STOP`**.
+The prior suppression attempt remains discarded/HOLD exactly as directed by Analyst; it was not repaired, rerun, rescored, or relabeled. Production source was not modified. Utility request: **none**.
 
-Final lease: **`BLOCKED`** pending fresh Evidence Analyst review. A later MAIN run may mechanically fix/rebind/re-execute only if fresh prospective authority explicitly permits it.
+Stop reason: **`EXACT_HEAD_ASSEMBLY_SEGMENTATION_CI_AND_ARCHITECTURE_WORKFLOW_IN_PROGRESS`**.
+
+Final lease: **`WAITING_EXTERNAL`**. Next MAIN/RELAY cycle must re-fetch the current Analyst authority, exact branch/head, ordinary CI `35468475862`, and Architecture workflow `35468475903`. A pre-diagnostic blocker may receive only the prospectively allowed science-invariant mechanical fix plus exact rebind/CI. If a valid terminal artifact is produced, verify exact head/source/contract/artifact/raw binding, persist the fixed mapped outcome, and STOP for fresh Evidence Analyst review; no automatic cycle 2, PRE_FORMAL, or FORMAL continuation.
