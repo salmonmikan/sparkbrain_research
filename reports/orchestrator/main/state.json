@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-19T14:12:35+09:00",
+  "timestamp": "2026-09-19T14:16:10+09:00",
   "worker_role": "main",
   "execution_mode": "PRIMARY",
   "analyst_commit": "ca0f19d52a80622bd6e4d6d61830f805c1f89234",
@@ -122,7 +122,8 @@
     "Observed Evidence Analyst CI 35422993802 completed/success and MAIN lease control-plane CI 35423401020 queued; no research workflow existed to wait on.",
     "Applied NO_FRESH_OBJECT -> MAIN HOLD.",
     "Applied NI01_SENSITIVITY_BLOCKED_BY_ONE_WAY_SCORE_BOUNDARY -> close SUB lane / return SUB no-op; did not absorb or recreate the diagnostic in MAIN.",
-    "Performed no research/scientific mutation and crossed no formal boundary."
+    "Performed no research/scientific mutation and crossed no formal boundary.",
+    "Persisted final COMPLETED lease without waiting on control-plane CI."
   ],
   "stop_reason": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_NI01_SUB_DIAGNOSTIC_INTEGRITY_CLOSED",
   "work_left_for_SUB": "None under current Analyst allocation. The prior NI01 sensitivity lane is closed; SUB returns to no-op unless a fresh independent bounded NON_EVIDENTIARY question is prospectively authorized.",
@@ -134,8 +135,10 @@
     "force_push_used": false,
     "lease_start_commit": "554910d0252a2aee01e1a41d114c0731702212f2",
     "latest_commit": "832eeea1a5e634c1af823b6206cb60da91287053",
+    "state_initial_commit": "8e63874b11b2aa7639c0f57ce287e1c27b8704ee",
+    "history_commit": "5b45756be0a954d4a57d88733b24aedb3cf453df",
     "history_path": "reports/orchestrator/history/2026-09-19/1412-main.md",
     "history_path_prechecked_absent": true,
-    "final_lease_commit": "pending final lease write"
+    "completion_lease_commit": "1ab2ab1072229d431a3b985051f1a9419a8bf3e3"
   }
 }
