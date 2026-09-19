@@ -1,0 +1,42 @@
+{
+  "schema": "sparkbrain-architecture-static-characterization-raw-v1",
+  "candidate_id": "CAND-V05-DELAYED-OUTCOME-ATTRIBUTION-01",
+  "research_layer": "ARCHITECTURE_STUDY",
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "analyst_authority": "850b4502cf15d3f6118a487c5ab4ba81fbf7b75e",
+  "bound_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+  "source_blob_verification": {
+    "src/sparkbrain/v05/brain.py": {"expected": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c", "observed": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c", "match": true},
+    "src/sparkbrain/v05/evaluation.py": {"expected": "efd52d236708aea3bf23b6139d8717b1ac1d0559", "observed": "efd52d236708aea3bf23b6139d8717b1ac1d0559", "match": true},
+    "tests/v05/test_v05_brain.py": {"expected": "6a81994ac82a3f0660585ef0d95495aaaa336629", "observed": "6a81994ac82a3f0660585ef0d95495aaaa336629", "match": true},
+    "examples/v05_assembly_demo.py": {"expected": "e4bab1adf0bfc66db3d6c72ba8d934d151cbeaf1", "observed": "e4bab1adf0bfc66db3d6c72ba8d934d151cbeaf1", "match": true}
+  },
+  "learn_outcome_occurrence_inventory": [
+    {"path": "src/sparkbrain/v05/brain.py", "kind": "definition", "enclosing": "IntegratedV05Brain.learn_outcome", "classification": "NOT_CALLED"},
+    {"path": "src/sparkbrain/v05/evaluation.py", "kind": "call", "enclosing": "_run_episode", "classification": "AFTER_OUTCOME_KNOWN", "intervening_process_episode": false, "basis": "process_episode result is built first; next_event and reward are then supplied from the same episode/result when learn=true"},
+    {"path": "tests/v05/test_v05_brain.py", "kind": "call", "enclosing": "trained_brain", "classification": "AFTER_OUTCOME_KNOWN", "intervening_process_episode": false, "basis": "each loop iteration calls process_episode then learn_outcome using that episode and result"},
+    {"path": "examples/v05_assembly_demo.py", "kind": "call", "enclosing": "main", "classification": "AFTER_OUTCOME_KNOWN", "intervening_process_episode": false, "basis": "each training iteration calls process_episode, computes reward from that result, then calls learn_outcome"}
+  ],
+  "repository_search_occurrence_count": 4,
+  "machine_facts": {
+    "process_episode_calls_learn_outcome": false,
+    "process_episode_overwrites_pending_activation": true,
+    "process_episode_overwrites_pending_action": true,
+    "learn_outcome_identity_parameters": [],
+    "learn_outcome_parameters": ["next_event", "reward"],
+    "learn_outcome_reads_pending_activation": true,
+    "learn_outcome_invokes_action_policy_reward_without_episode_or_decision_identity": true,
+    "supported_callsite_has_intervening_process_episode": false,
+    "all_observed_canonical_runtime_calls_are_after_outcome_known": true
+  },
+  "contract_surface_facts": {
+    "learn_outcome_method_has_explicit_immediate_only_docstring": false,
+    "repository_search_found_separate_learn_outcome_public_documentation": false,
+    "explicit_delayed_or_interleaved_support_found_on_bound_surface": false,
+    "explicit_immediately_preceding_process_episode_requirement_found_on_bound_surface": false
+  },
+  "forbidden_surface_accessed": false,
+  "dynamic_probe_executed": false,
+  "formal_or_test_surface_consumed": false,
+  "interpretation_applied": false
+}
