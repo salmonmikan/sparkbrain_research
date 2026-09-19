@@ -1,57 +1,65 @@
 {
   "status": "COMPLETED",
-  "assignment_id": "CTRL-20260920-0250-ARTIFACT-HANDOFF-FIDELITY",
+  "assignment_id": "CTRL-20260920-0450-HANDOFF-BINDING-GUARD",
   "run_count": 1,
-  "updated_at": "2026-09-20T03:27:15+09:00",
-  "last_result": "utility_orchestrator/results/2026-09-20/CTRL-20260920-0250-ARTIFACT-HANDOFF-FIDELITY-0327.md",
-  "evidentiary_status": "NON_EVIDENTIARY_METHODOLOGY_FIDELITY_DIAGNOSTIC",
-  "diagnostic_classification": "REPEATED_HANDOFF_FIDELITY_DEFECT",
-  "recommendation": "ADD_FAIL_CLOSED_MACHINE_CHECKABLE_HANDOFF_GUARD",
-  "sample_summary": {
-    "mandatory_temporal_cycle1": {
+  "updated_at": "2026-09-20T05:23:53+09:00",
+  "last_result": "utility_orchestrator/results/2026-09-20/CTRL-20260920-0450-HANDOFF-BINDING-GUARD-0523.md",
+  "evidentiary_status": "NON_EVIDENTIARY_CONTROL_PLANE_METHOD_PROTOTYPE",
+  "prototype": {
+    "path": "utility_orchestrator/prototypes/handoff_binding_guard_v1/",
+    "readme_commit": "ba0f4c557008df18098ccd82a59036c269b99e21",
+    "validator_commit": "38295bcdae1ca25848f96d4e2b5897f169e53f1b",
+    "schema_commit": "f8ecf5b2730b8d5feba2ce2ef8c26d108b0e8d5c",
+    "fixtures_commit": "c2d883f4d70847d983ae5489427ab0dab299000c",
+    "validation_report_commit": "3e4e7bd1de34f61bd0f8b55970bdf53db0d34b8b",
+    "validation": "PASS_EXPECTATIONS",
+    "cases": {
+      "temporal_known_bad": "HANDOFF_FIDELITY_BLOCKED",
+      "topk_known_bad": "HANDOFF_FIDELITY_BLOCKED",
+      "topk_faithful_positive_control": "PASS"
+    }
+  },
+  "fixture_provenance": {
+    "temporal": {
       "workflow_run": 35451528895,
       "head_sha": "7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
       "artifact_id": 10587410697,
       "archive_sha256": "22a5c650a58501a1dc8303118c366845201f9eba8453a22996f5fb4ca4d6428f",
-      "artifact_contract_sha256": "eb4aa28cd4b7299302ac31a65c73586c4e5a17e5487b1d1ddf43757cee901049",
-      "raw_sha256": "71d4d8fddbe6b683b4ad93951c0f95fc1dfa5df74645743bfd39fba5b33c54ef",
-      "mapped_outcome": "FUNCTIONAL_BATCH_PARTITION_EFFECT",
-      "fidelity": "MISMATCH_CONFIRMED_DECISION_UNCHANGED",
-      "mismatch": [
-        "EVIDENCE_ANALYST_CONTRACT_DIGEST",
-        "EVIDENCE_ANALYST_FAMILY_BEHAVIOR_REVERSED"
-      ]
+      "normalized_machine_summary_sha256": "16132f843606bc6ed715495d86be64497e49ab0402c6b004c6a2111631a206bd"
     },
-    "opportunistic_topk_cycle1": {
+    "topk": {
       "workflow_run": 35432088902,
       "head_sha": "97f542d86dcd3a609cd039379fcda41ba61e0909",
       "artifact_id": 10581155271,
       "archive_sha256": "62ee402e9e7c5a1cd41e65eebcbbe183d2be0625e4e66c2157ae207317f93f83",
-      "raw_sha256": "316498f99ff60c59e1a1eb146c1e498972539402820cea48202ab4bf420c3b00",
-      "mapped_outcome": "PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL",
-      "fidelity": "MISMATCH_CONFIRMED_PROPAGATED_ONE_HOP_TOP_LEVEL_DECISION_SUPPORTED",
-      "mismatch": [
-        "MAIN_FALSE_SIGNAL_AT_MAGNITUDE_0_01_DESPITE_TURNOVER_N_1_LT_20",
-        "EVIDENCE_ANALYST_REPEATED_FALSE_SIGNAL_AT_MAGNITUDE_0_01"
-      ]
-    },
-    "assembly_sampled": false,
-    "assembly_skip_reason": "SECOND_INDEPENDENT_SAMPLE_ALREADY_ESTABLISHED_NON_ISOLATED_DEFECT_WITHIN_BOUNDED_AUDIT"
+      "normalized_machine_summary_sha256": "84b296b71aa3fcfafcd6e4abe9099612599a71dba5ba3817fee23c8a2a1c92a2"
+    }
   },
-  "stop_reason": "COMPLETED_ONE_BOUNDED_CONSISTENCY_AUDIT_MAX_RUNS_REACHED",
+  "collision_context": {
+    "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "evidence_analyst_authority_observed": "493573eb3b8c38d88f251db7c04dfe1a586c6ff0",
+    "main_research_head_observed": "2ef4b24f8e7ef8577ebbcb0328e7b3476bc24336",
+    "sub_research_head_observed": "373f7d52af3b46a23ae976863a2eb5d73d982b5f",
+    "active_main_or_sub_fixture_used": false,
+    "collision_found": false
+  },
+  "recommendation": "ADOPT_PROSPECTIVELY_AFTER_SEPARATE_CONTROL_DECISION",
+  "stop_reason": "COMPLETED_ONE_BOUNDED_GUARD_PROTOTYPE_AND_VALIDATION_MAX_RUNS_REACHED",
   "follow_up_request": null,
   "integrity": {
     "scientific_workflow_rerun": false,
     "workflow_dispatch": false,
-    "training_or_probe_rerun": false,
-    "result_regenerated_or_rescored": false,
-    "test_accessed": false,
+    "training_probe_rescore_retune_regeneration": false,
+    "official_test_accessed": false,
     "formal_or_consumed_raw_accessed": false,
+    "historical_scientific_result_repaired_or_relabelled": false,
     "research_or_main_branch_mutated": false,
     "immutable_or_scientific_control_refs_mutated": false,
     "prior_control_plane_records_edited": false,
-    "threshold_metric_comparator_seed_successor_changed": false,
+    "threshold_metric_comparator_seed_candidate_successor_changed": false,
     "preformal_or_formal_authority_created": false,
-    "scheduler_mutated": false
+    "live_workflow_or_scheduler_integration": false,
+    "scheduler_mutated": false,
+    "self_approved_follow_up": false
   }
 }
