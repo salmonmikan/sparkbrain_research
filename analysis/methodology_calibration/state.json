@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "timestamp": "2026-09-19T16:21:00+09:00",
+  "overall_classification": "MIXED_CALIBRATION",
+  "confidence": "HIGH_ON_DIRECTION_MEDIUM_ON_NEW_FUNNEL_EFFECT",
+  "authoritative_refs_inspected": {
+    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "research_refs": {
+      "LP01": "f6d59a55730c5f99cd7f30470847fc3f175bdf64",
+      "NI01": "dbfe7469dbbbc1adbb00789ab382de892a1b3563",
+      "H5": "2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
+      "H9_C07": "9480da3d77dfee4766b28757f1a164f5cd4dac26"
+    },
+    "evidence_tags": [
+      "evidence/c19-official-v4-c19-external-v2-official-v4",
+      "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
+      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1",
+      "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1",
+      "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1"
+    ],
+    "c19_v4_terminal_commit": "a0f83318356ced1c84863737803080d0dc69d208",
+    "c19_r2_terminal_commit": "6197fa801a78a0c5de4c2b6ff5d03216ac5539db"
+  },
+  "control_plane_consumed": {
+    "control_brain_branch_tip": "6ed239b241a39f7d3e934e37751454c8bf3ebb4c",
+    "evidence_analyst_branch_tip": "d8974f662e2fd36000125b643ae908030c3e8aac",
+    "literature_branch_tip": "ea84b5d9f2c1fc6d4d0478d0506a897c280cb8f0",
+    "independent_audit_latest_target": "NI01",
+    "independent_audit_classification": "WEAKENED",
+    "repository_steward_latest_timestamp": "2026-09-19T13:50:00+09:00",
+    "main_latest_timestamp": "2026-09-19T16:30:00+09:00",
+    "sub_latest_timestamp": "2026-09-19T15:33:00+09:00"
+  },
+  "gate_changes_reviewed": [
+    {
+      "change": "formal novelty and reduction pressure tightened after C19-R2, PD01/H5 interpretation, NI01 privilege audit, and causal-credit literature",
+      "direction": "TIGHTEN_FORMAL_CLAIM_BAR",
+      "assessment": "MOSTLY_EVIDENCE_DRIVEN"
+    },
+    {
+      "change": "world/task/regime label treated as explicit comparator privilege",
+      "direction": "TIGHTEN_COMPARATOR_SYMMETRY",
+      "assessment": "JUSTIFIED_BY_NI01_AUDIT"
+    },
+    {
+      "change": "positive candidate-signal requirement separated from mechanistic reduction interpretation",
+      "direction": "CLARIFY_REDUCTION_SEMANTICS",
+      "assessment": "JUSTIFIED_BY_ABSENT_SIGNAL_RISK"
+    },
+    {
+      "change": "new live scheduler doctrine splits DISCOVERY, ARCHITECTURE_STUDY, PRE_FORMAL, FORMAL and adds bounded candidate pool",
+      "direction": "RELAX_RESEARCH_ALLOCATION_WITHOUT_RELAXING_FORMAL_INTEGRITY",
+      "assessment": "WELL_TARGETED_CORRECTION_NOT_YET_OBSERVED_IN_DURABLE_HANDOFFS"
+    }
+  ],
+  "gate_by_gate_classifications": {
+    "one_way_integrity_floor": "KEEP",
+    "prospective_protocol_and_exact_binding": "KEEP",
+    "positive_signal_before_mechanistic_reduction": "KEEP",
+    "equal_privilege_comparator_matching": "KEEP",
+    "stronger_privilege_counterfactual_ceilings": "CLARIFY",
+    "new_computational_principle_novelty_bar": "KEEP",
+    "same_novelty_bar_for_architecture_testbed_research": "SPLIT_BY_CLAIM_TYPE",
+    "no_high_value_formal_object_implies_programme_wide_hold": "RELAX",
+    "broad_historical_family_coverage_implies_no_discovery": "CLARIFY",
+    "fresh_independently_motivated_object_requirement": "CLARIFY",
+    "default_three_cycle_exploration_budget": "KEEP",
+    "stop_new_principle_claim_after_convincing_ordinary_reduction": "SPLIT_BY_CLAIM_TYPE",
+    "h7_as_only_plausible_central_novelty_residual": "CLARIFY"
+  },
+  "false_positive_risks": [
+    "promoting Discovery, Architecture Study, or Pre-formal observations into formal claims without a fresh prospective object",
+    "treating stronger-privilege replay/global-critic/actual-cause ceilings as equal-privilege mechanistic reductions",
+    "letting repeated exploratory cycles become outcome-responsive rescue tuning",
+    "retroactively importing newly discovered literature comparators into already-consumed evidence interpretations"
+  ],
+  "false_negative_risks": [
+    "binary formal-or-stop allocation suppressing architecture/system characterization and hypothesis generation",
+    "using new-computational-principle novelty as the threshold for architecture, engineering, or testbed research-worthiness",
+    "treating prior H1-H9 family exploration as blanket observable-level exhaustion",
+    "interpreting independent-motivation rules as forbidding prospectively defined literature-seeded fresh questions"
+  ],
+  "duplicate_guards": {
+    "assessment": "NO_SCIENTIFIC_PURPOSE_SHOULD_BE_REMOVED",
+    "recommendation": "Operationally consolidate one-way integrity checks into a single checklist/state machine where practical, while preserving all protected failure modes."
+  },
+  "moving_goalpost_assessment": {
+    "classification": "LOW_RETROACTIVE_RISK",
+    "basis": "Important tightenings have remained prospective and consumed evidence has stayed immutable. Risk would increase if later literature ceilings were retroactively treated as preregistered matched comparators."
+  },
+  "pass_reachability_assessment": {
+    "classification": "REACHABLE_BUT_NARROW",
+    "required_path": [
+      "prospectively positive native signal",
+      "fresh exact-bound object and protocol",
+      "matched equal-privilege comparators",
+      "survive ordinary mechanistic reductions",
+      "fixed intervention and numeric falsifier",
+      "one-way preserved formal evidence"
+    ],
+    "unreachability_risk": "HIGH_IF_STRONGER_PRIVILEGE_CEILINGS_ARE_TREATED_AS_AUTOMATIC_EQUAL_STANDING_REJECT_GATES"
+  },
+  "claim_type_separation_findings": {
+    "historical_operational_state": "PARTIALLY_CONFLATED_NOVELTY_WITH_RESEARCH_WORTHINESS",
+    "new_live_doctrine": "EXPLICITLY_SEPARATES_NEW_PRINCIPLE_MECHANISTIC_ARCHITECTURE_ENGINEERING_TESTBED_VALUE",
+    "verification_status": "NOT_YET_DEMONSTRATED_IN_DURABLE_ANALYST_MAIN_SUB_HANDOFFS"
+  },
+  "external_calibration": {
+    "literature": "Counterfactual responsibility/credit is ordinary territory; COMA/C3/concurrent responsibility strengthen prior-art pressure but often with stronger privilege.",
+    "independent_audit": "NI01 confirms that task/world/regime label privilege must be explicit; canonical FAIL remains valid but equal-privilege mechanistic reduction is weakened.",
+    "use_rule": "External findings calibrate future novelty/baselines prospectively and do not rewrite consumed evidence."
+  },
+  "opportunity_cost_assessment": "Further formal tightening currently has lower expected information gain than productive bounded Discovery/Architecture/Pre-formal work. Keep FORMAL strict while restoring lower-layer throughput.",
+  "prospective_recommendations": [
+    "Keep the four-layer research funnel and treat FORMAL HOLD separately from programme-wide inactivity.",
+    "Require claim-type labeling for every candidate.",
+    "Record equal-privilege reductions separately from stronger-privilege functional ceilings.",
+    "Verify next durable Analyst/MAIN/SUB cycles actually create and consume a bounded candidate pool rather than reproduce universal no-op.",
+    "If no-op persists, require observable-level exhaustion justification rather than family-level 'already explored' reasoning.",
+    "Preserve the default three-cycle exploration budget with explicit reasoned exceptions.",
+    "Allow prospectively defined literature-seeded fresh Discovery while continuing to ban post-outcome rescue of consumed lines.",
+    "Never alter consumed/frozen evidence because of methodology changes."
+  ],
+  "hard_integrity_floor_confirmation": {
+    "confirmed": true,
+    "protected_purposes": [
+      "no rerun/retune/rescore of consumed identities",
+      "frozen/prospective protocols",
+      "raw-before-score",
+      "preserve-before-read",
+      "exact identity/source/package/runtime/input binding",
+      "immutable evidence",
+      "no evaluator/target leakage",
+      "no silent post-outcome repair"
+    ]
+  },
+  "questions_for_control_brain": [
+    "Will the next Control handoff explicitly distinguish FORMAL HOLD from lower-layer research throughput and measure candidate-pool health?",
+    "Will stronger-privilege COMA/C3/global responsibility solvers be recorded as ceilings rather than automatic mechanistic reject gates unless privilege is matched?",
+    "Will architecture/system questions remain researchable after a new-principle novelty claim is reduced?"
+  ],
+  "questions_for_evidence_analyst": [
+    "Will the next handoff populate a candidate_pool across Discovery/Architecture/Pre-formal even if FORMAL remains empty?",
+    "If SUB remains no-op, can the justification be stated at the observable/question level rather than by broad H1-H9 family coverage?",
+    "Can fresh literature-seeded questions be admitted to Discovery when they are prospectively defined and not rescues of consumed outcomes?"
+  ]
+}
