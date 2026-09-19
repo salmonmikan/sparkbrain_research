@@ -1,14 +1,14 @@
 {
   "run_id": "sparkbrain-main-relay-20260920T0712JST",
   "execution_mode": "RELAY",
-  "status": "RUNNING",
+  "status": "WAITING_EXTERNAL",
   "started_at": "2026-09-20T07:12:23+09:00",
-  "heartbeat_at": "2026-09-20T07:12:23+09:00",
+  "heartbeat_at": "2026-09-20T07:17:00+09:00",
   "analyst_commit": "7e7d425948a86d0eec306b1a75bfc07165d9afa1",
   "active_branch": "research/main-refractory-current-accounting-arch-study-20260920",
   "active_identity": null,
-  "active_step": "PRE_START_COMMENT_DETECTOR_REPRESENTATION_REPAIR",
-  "workflow_run_id": 35471788666,
-  "expected_next_action": "Normalize/extract only the already-bound two-line full-line source comment in the existing Architecture harness without changing semantic criteria or scientific bindings, then re-fetch the new exact head and replacement exact-head ordinary CI/Architecture workflow. Continue the unchanged one-cycle NON_EVIDENTIARY diagnostic only if every existing preflight binding is green; otherwise stop.",
+  "active_step": "REFRACTORY_COMMENT_DETECTOR_REPAIRED_EXACT_HEAD_WORKFLOWS_IN_PROGRESS",
+  "workflow_run_id": 35472786687,
+  "expected_next_action": "Re-fetch fresh Analyst authority, exact research head 4589192d927e40cf7a05cf8a94207efb42ebbc65, ordinary CI 35472786733, and Architecture workflow 35472786687. If every unchanged prospective binding passes and a valid artifact exists, verify exact head/source/contract/machine-fact/artifact/raw binding, apply the already-fixed terminal mapping exactly once, persist the NON_EVIDENTIARY result, and STOP for fresh Analyst review. Any other machine-fact failure or semantic/protocol gap STOPs; do not continue to cycle 2, PRE_FORMAL, FORMAL, semantic repair, or outcome-responsive redesign.",
   "owner": "main"
 }
