@@ -1,97 +1,86 @@
 {
-  "timestamp": "2026-09-20T01:47:00+09:00",
+  "timestamp": "2026-09-20T02:43:00+09:00",
   "worker_role": "sub",
   "mode": "discovery",
-  "evidence_analyst_commit": "e781202e8c7ae4562c10fa46cdddfb3b0eb1bc08",
-  "consumed_lane": "BOUNDED_SECONDARY_DISCOVERY",
+  "evidence_analyst_commit": "7dd9d9d4d02febe2547a4cc547b31891a0bc285f",
+  "main_lane": "LOWER_FUNNEL_MAIN_HOLD_PENDING_FRESH_OBJECT",
+  "consumed_lane": "V05_TOPOLOGY_DIMENSION_BINDING_DISCOVERY_CYCLE1",
   "formal_sub_lane": null,
   "sub_fallback": "NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON",
-  "exploratory_target": "TOPOLOGY_RECEPTOR_FANOUT_ALIASING_DISCOVERY",
-  "candidate_pool_id": null,
+  "exploratory_target": "V05_TOPOLOGY_DIMENSION_BINDING_DISCOVERY_CYCLE1",
+  "candidate_pool_id": "CAND-V05-TOPOLOGY-CONFIG-BINDING-01",
   "exploration_cycle": "1/3",
-  "why_independent_of_main": "Static/synthetic v0.5 topology-scaling diagnostic on stable main. It does not continue MAIN's completed temporal batch-partition object, Top-k follow-up, H7 construction, any consumed line, or any formal/TEST/scoring/preserve/evidence surface.",
-  "question": "With receptor_count=16, does the fixed receptor routing stride 11 create scale-specific physical first-hop projection aliasing when reservoir size shares a factor with 11, and does the default two-receptor input fanout inherit the same collapse?",
+  "analyst_bounded_stop_after_cycle": 1,
+  "why_independent_of_main": "MAIN is explicitly holding with no active execution object. This current-main v0.5 API/configuration-semantics diagnostic does not continue Temporal batching, Top-k, H7, the rejected stride-11 aliasing candidate, any consumed identity, or any formal/TEST/scoring/preserve/evidence surface.",
+  "question": "Do V05BrainConfig.width, height, and receptor_rows bind the actual integrated v0.5 topology, or are they accepted/persisted dimension-like configuration fields whose runtime geometry is bypassed by explicit layered_reservoir_topology(seed=...) injection?",
   "inputs_used": {
-    "type": "synthetic_static_topology_only",
-    "receptor_count": 16,
-    "reservoir_dimensions": [[4, 4], [5, 5], [6, 6], [8, 6], [4, 11], [5, 11], [6, 11], [8, 11]],
-    "routing_offsets": [0, 7, 19],
-    "routing_stride": 11,
-    "default_external_receptor_fanout": 2,
+    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "default_config": [8, 8, 1],
+    "alternate_config": [12, 10, 2],
+    "topology_seed": 41,
     "repository_dataset": false,
     "trained_checkpoint": false,
     "formal_raw": false,
-    "heldout_test": false,
-    "official_scorer": false
+    "heldout_or_confirmatory_test": false,
+    "official_scorer": false,
+    "consumed_identity": false
   },
   "implementation_experiment": {
-    "branch": "research/exploratory-sub-topology-fanout-aliasing-20260920",
-    "prospective_binding_commit": "91aaf6c10ed691540689fe3d426d6a9354828e2e",
-    "test_commit": "cdff7a4b29d0fdd4263897c208359e2b90ce4681",
-    "mechanical_format_commit_1": "726aac111720643e6f1475a91477e6db3204372c",
-    "head": "daaf9a865d4ba5911640d127f55dc8d44a75e078",
-    "artifacts": [
-      "analysis/discovery/topology_fanout_aliasing_20260920.md",
-      "tests/discovery/test_topology_fanout_aliasing_20260920.py"
+    "branch": "research/exploratory-sub-v05-topology-config-binding-20260920",
+    "prospective_binding_commit": "78918eeee62a5b91e5149d39704d8f59a3ca5d85",
+    "diagnostic_test_commit": "a35fec4407fd376ca7aa7bcc16653fc688be510c",
+    "head": "ddd80443dd670698397683b95742428045c74932",
+    "production_source_modified": false,
+    "changed_files": [
+      "analysis/discovery/sub_v05_topology_config_binding_cycle1.md",
+      "tests/v05/test_exploratory_sub_v05_topology_config_binding.py",
+      "analysis/discovery/sub_v05_topology_config_binding_cycle1_result.md"
     ],
-    "final_workflow_run": 35455915055,
-    "final_workflow_status": "completed_success_python_3_11_and_3_13"
+    "final_workflow_run": 35458809766,
+    "final_workflow_status": "completed",
+    "final_workflow_conclusion": "success",
+    "python_3_11": "success",
+    "python_3_13": "success"
   },
   "observations": {
-    "coprime_sizes": {
-      "reservoir_sizes": [16, 25, 36, 48],
-      "unique_single_receptor_projection_signatures": [16, 16, 16, 16],
-      "collision_pairs": [0, 0, 0, 0],
-      "max_alias_multiplicity": [1, 1, 1, 1],
-      "unique_default_two_receptor_projection_signatures": [16, 16, 16, 16]
-    },
-    "stride_resonant_sizes": {
-      "reservoir_sizes": [44, 55, 66, 88],
-      "unique_single_receptor_projection_signatures": [4, 5, 6, 8],
-      "collision_pairs": [24, 18, 14, 8],
-      "max_alias_multiplicity": [4, 4, 3, 2],
-      "unique_default_two_receptor_projection_signatures": [4, 6, 7, 8]
-    },
-    "default_8x6_size_48_is_nonresonant_in_fixed_matrix": true,
-    "mechanistic_reduction": "The fixed topology maps receptor r to targets (11*r+offset) mod N. Projection identity therefore repeats with modular period N/gcd(N,11). The measured unique-signature counts exactly equal min(16, N/gcd(N,11)); default two-consecutive-receptor fanout inherits the collapse. This is deterministic number-theoretic wiring aliasing, not an emergent mechanism or metadata-only artifact."
+    "alternate_config_accepted": true,
+    "alternate_config_persisted_in_v05_config": true,
+    "alternate_config_persisted_in_nested_v04_config": true,
+    "actual_topology_changes_with_dimension_config": false,
+    "actual_unit_count_default": 64,
+    "actual_unit_count_alternate": 64,
+    "actual_receptor_count_default": 16,
+    "actual_receptor_count_alternate": 16,
+    "actual_reservoir_count_default": 48,
+    "actual_reservoir_count_alternate": 48,
+    "unit_ids_identical": true,
+    "receptor_ids_identical": true,
+    "connection_count_identical": true,
+    "mechanistic_reduction": "IntegratedV05Brain copies width/height/receptor_rows into V04BrainConfig but supplies IntegratedV04Brain an explicit layered_reservoir_topology(seed=...) that does not receive those dimensions. IntegratedV04Brain therefore uses the supplied fixed layered topology instead of constructing its config-sized grid.",
+    "current_intent_documentation_found": false,
+    "interpretation": "Architecture/API configuration-semantics mismatch, not a new scientific mechanism and not a rescue of the rejected stride-11 aliasing candidate."
   },
   "evidentiary_status": "NON_EVIDENTIARY",
-  "what_would_falsify_or_reduce_it": "Reduce to a static engineering wiring constraint if supported production/DEV reservoir dimensions do not enter resonant regimes, or if a freshly specified matched collision-free fanout comparator removes the first-hop collisions without improving predefined internal channel-separability or downstream functional observables. The deterministic modular mechanism itself is already explained by current code.",
-  "candidate_next_research_layer": "ARCHITECTURE_STUDY",
+  "what_would_falsify_or_reduce_it": "Reduce to REJECT/NO_ACTION if a current supported contract is identified that explicitly defines v0.5 geometry as fixed and these exported dimension fields as intentionally non-operative compatibility metadata. Otherwise treat as API/geometry-contract correctness work only.",
+  "candidate_next_research_layer": "ARCHITECTURE_STUDY_API_CORRECTNESS",
   "scientific_choices_still_open": [
-    "DEV reservoir dimensions and regimes",
-    "DEV channel/input set",
-    "identity-neutral collision-free/hash-based fanout comparator",
-    "edge-count and resource matching contract",
-    "internal channel-separability metric",
-    "downstream prediction/action observable",
-    "observation horizon"
+    "whether width/height parameterize reservoir dimensions, total field dimensions, or should be removed/deprecated",
+    "whether receptor_rows maps to layered receptor geometry or should be explicitly unsupported",
+    "checkpoint/backward-compatibility semantics for persisted dimension fields",
+    "whether unsupported non-default geometry should be rejected rather than silently accepted"
   ],
   "recommendation": "PROMOTE_TO_ARCHITECTURE_STUDY",
   "research_layer_state": {
-    "DISCOVERY": "OPEN_SUB_DEFAULT_NON_EVIDENTIARY",
+    "DISCOVERY": "ACTIVE_SUB_TARGET_COMPLETED_STOPPED_FOR_ANALYST_REVIEW",
     "ARCHITECTURE_STUDY": "HOLD_NO_ACTIVE_MAIN_OBJECT",
     "PRE_FORMAL": "EMPTY_HOLD",
     "FORMAL": "EMPTY_HOLD"
   },
-  "candidate_pool_snapshot": {
-    "CAND-TEMPORAL-BATCH-PARTITION-01": "HOLD_NO_CYCLE2_RESCUE",
-    "CAND-TOPK-PA-01": "HOLD_NO_CYCLE3_NO_PRE_FORMAL",
-    "CAND-H7-RESP-01": "HOLD_NO_NATIVE_RESPONSIBILITY_OBJECT",
-    "CAND-FIELD-SOURCE-LINEAGE-CAP-01": "REJECT_CYCLE1_BOOKKEEPING_REDUCTION",
-    "CAND-ASSEMBLY-PROTOTYPE-LOCKIN-01": "CLOSED_REJECTED",
-    "CAND-STRUCTURAL-ORDER-PATH-01": "CLOSED_REJECTED"
-  },
-  "blocked_until": {
-    "pre_formal": "fresh mechanistic/reduction candidate with sufficient lower-layer support and matched ordinary reductions exists",
-    "topk": "fresh independently specified ordinary-reduction Architecture object is justified; same-object cycle3 remains prohibited",
-    "h7": "independently arising native responsibility-sensitive mechanism exists",
-    "formal": "fresh identity/STARTED/TEST/scorer/preserve/evidence authority"
-  },
   "main_work_explicitly_avoided": [
-    "CAND-TEMPORAL-BATCH-PARTITION-01 successor/rescue construction",
-    "CAND-TOPK-PA-01 follow-up/cycle3",
+    "Temporal batching continuation/successor",
+    "CAND-TOPK-PA-01 follow-up",
     "CAND-H7-RESP-01 construction",
+    "rejected stride-11 topology aliasing rescue",
     "consumed-line repair or reinterpretation",
     "MAIN blockers and outcome-dependent successors",
     "FORMAL/TEST/scoring/identity/preserve/evidence surfaces"
@@ -103,84 +92,35 @@
     "c19-r2-fsa-state-tracker-official-v1",
     "pd01-long-history-fading-memory-official-v1",
     "ni01-no-ignition-selective-prediction-official-v1",
-    "h5-event-routing-work-reduction-official-v1",
-    "official TEST and formal held-out surfaces",
-    "immutable evidence refs/tags",
-    "legacy freeze refs",
-    "STARTED/control refs",
-    "formal preserve/scoring/evidence surfaces",
-    "research PR merges",
-    "scheduler definitions"
+    "h5-event-routing-work-reduction-official-v1"
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "e781202e8c7ae4562c10fa46cdddfb3b0eb1bc08",
+    "evidence_analyst": "7dd9d9d4d02febe2547a4cc547b31891a0bc285f",
     "control_brain_branch_tip_observed": "3b2ff0f8ecb845c486b6e5806d58c36df24657de",
-    "sub_research_branch": "research/exploratory-sub-topology-fanout-aliasing-20260920",
-    "sub_research_head": "daaf9a865d4ba5911640d127f55dc8d44a75e078",
-    "orchestrator_tip_before_sub_persistence": "89b99c3e97ea1795dce4d9e5a32f588d72ea7be5",
-    "orchestrator_tip_before_state_persistence": "6d1bfd3423c9e6f114531b230a5967e9ecf3f2fb",
-    "evidence_tag_count": 5,
-    "formal_tag_count": 0,
-    "sealed_tag_count": 0,
-    "freeze_tag_count": 0,
-    "legacy_freeze_branch_count": 13
+    "sub_research_branch": "research/exploratory-sub-v05-topology-config-binding-20260920",
+    "sub_research_head": "ddd80443dd670698397683b95742428045c74932",
+    "orchestrator_tip_before_sub_persistence": "34ed142bbfa212c62f1814ffcddf83e45ebac48a"
   },
-  "workflows_experiments": [
-    {
-      "run_id": 35455648337,
-      "head": "cdff7a4b29d0fdd4263897c208359e2b90ce4681",
-      "status": "completed",
-      "conclusion": "failure",
-      "failure_scope": "mechanical Ruff import-format and line-length lint only; scientific tests skipped",
-      "scientific_role": "none"
-    },
-    {
-      "run_id": 35455755740,
-      "head": "726aac111720643e6f1475a91477e6db3204372c",
-      "status": "completed",
-      "conclusion": "failure",
-      "failure_scope": "mechanical Ruff import-block lint only; scientific tests skipped",
-      "scientific_role": "none"
-    },
-    {
-      "run_id": 35455915055,
-      "head": "daaf9a865d4ba5911640d127f55dc8d44a75e078",
-      "status": "completed",
-      "conclusion": "success",
-      "python_3_11": "success",
-      "python_3_13": "success",
-      "lint": "success",
-      "readiness": "success",
-      "tests": "success",
-      "bundle_validation": "success",
-      "scientific_role": "none; ordinary CI only"
-    }
-  ],
   "utility_request_created": null,
   "consumed_identities": [],
+  "new_formal_results": 0,
   "formal_identity_created": false,
   "started_or_control_created": false,
   "official_test_accessed": false,
   "formal_scoring_or_evidence_created": false,
   "immutable_evidence_modified": false,
   "research_merge_performed": false,
-  "collision_reconciliation": {
-    "analyst_ref_rechecked": "e781202e8c7ae4562c10fa46cdddfb3b0eb1bc08",
-    "main_ref_rechecked": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "sub_research_head_rechecked": "daaf9a865d4ba5911640d127f55dc8d44a75e078",
-    "orchestrator_tip_rechecked_before_state": "6d1bfd3423c9e6f114531b230a5967e9ecf3f2fb",
-    "collision_found": false
-  },
+  "main_modified": false,
   "blockers": [
-    "fresh Evidence Analyst classification and prospective Architecture Study specification required before any continuation"
+    "fresh Evidence Analyst classification and prospective Architecture/API geometry contract required before any continuation"
   ],
-  "completion_target": "ACHIEVED_ONE_BOUNDED_INDEPENDENT_DISCOVERY_CYCLE_AND_RETURNED_TOPOLOGY_ARCHITECTURE_PROMOTION_CANDIDATE_FOR_FRESH_ANALYST_REVIEW",
+  "completion_target": "ACHIEVED_ONE_ANALYST_AUTHORIZED_BOUNDED_CONFIG_BINDING_DISCOVERY_CYCLE_AND_RETURNED_API_CORRECTNESS_PROMOTION_CANDIDATE",
   "integrity_state": "CLEAN_NON_EVIDENTIARY_DISCOVERY_COMPLETED_AND_STOPPED_FOR_FRESH_ANALYST_REVIEW",
   "persistence_result": {
-    "history_path": "reports/orchestrator/history/2026-09-20/0147-sub.md",
-    "history_commit": "f8818e29cf78f18839c1655fe32f706f905285ff",
-    "latest_md_commit": "6d1bfd3423c9e6f114531b230a5967e9ecf3f2fb",
+    "latest_md_commit": "36be4382a7d93e45546215b29011b1444e773018",
+    "history_path": "reports/orchestrator/history/2026-09-20/0243-sub.md",
+    "history_commit": "f849e036695bca55a48c64583c0431a96fa0c47b",
     "state_json_commit": "this update",
     "force_push_used": false
   }
