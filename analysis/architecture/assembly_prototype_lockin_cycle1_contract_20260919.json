@@ -1,0 +1,83 @@
+{
+  "schema": "sparkbrain-architecture-study-contract-1",
+  "candidate_id": "CAND-ASSEMBLY-PROTOTYPE-LOCKIN-01",
+  "research_layer": "ARCHITECTURE_STUDY",
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "cycle": 1,
+  "analyst_authority": "982e5686524c9fc2b665efcf44069fef49196333",
+  "source_binding": {
+    "main_sha": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "src/sparkbrain/v05/assemblies.py": "a0a8c41e21db68cafc08ace8dac50b7a56607a52",
+    "src/sparkbrain/v05/brain.py": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
+    "src/sparkbrain/v05/prediction.py": "9805031fb8db235d2f3cf4c81421b896d2597af4",
+    "src/sparkbrain/v05/action.py": "792cba20ec5411633f12478d641adf35dba505e3",
+    "src/sparkbrain/v05/worlds.py": "454b05c0347a58687b7d0c50c3a56dd744164946",
+    "configs/v05_reference.json": "d3c82d0279c3bce09d76ddf0ad2df1ec74bc2d7f"
+  },
+  "data_authority": {
+    "surface": "DEV_ONLY",
+    "development_seeds": [501, 502],
+    "official_test_forbidden": true,
+    "consumed_preserve_raw_forbidden": true,
+    "formal_scorer_forbidden": true
+  },
+  "corpus": {
+    "adaptation_episode_generator": "training_episodes",
+    "adaptation_episode_count_per_seed": 48,
+    "probe_episode_generator": "held_out_episodes",
+    "probe_condition": "jitter",
+    "probe_episode_count_per_seed": 16,
+    "upstream_generation": "IntegratedV05Brain with assembly/prediction/action disabled; adaptation learn_field=true, probes learn_field=false",
+    "freeze_rule": "Generate and serialize one fixed internal-pattern corpus per seed before any assembly-order replay. Every arm reuses the identical frozen adaptation multiset and probe corpus.",
+    "isolation_rule": "Only frozen ActivityPattern rows are replayed through assembly/prediction/action; field, receptor, homeostasis and plasticity are not rerun per order arm."
+  },
+  "order_family": {
+    "pairs_per_seed": 12,
+    "pair_rule": "For each pair, create one deterministic pseudorandom permutation of the 48 adaptation episodes and pair it with the exact reversed permutation.",
+    "seed_derivation": "int.from_bytes(sha256(f'{candidate_id}|{source_main_sha}|{development_seed}|{pair_index}').digest()[:8], 'big')",
+    "replay_time_rule": "Assembly observe() receives monotonic synthetic replay time based only on replay rank and within-episode pattern index; ActivityPattern relative timing is unchanged."
+  },
+  "native_path": {
+    "assembly": "current TemporalAssemblyMemory",
+    "similarity_threshold": 0.66,
+    "mature_episodes": 3,
+    "prediction": "current AssemblyPredictor semantics; predictor observes the episode future_event after each adaptation episode's strongest mature activation",
+    "action": "current AssemblyActionPolicy; adaptation follows current deterministic exploration/reward semantics; probes use explore=false and no learning",
+    "probe_learning": false
+  },
+  "comparator": {
+    "kind": "STRONGER_PRIVILEGE_ORDER_INVARIANT_CONNECTED_COMPONENT_UNION_FIND",
+    "role": "ORDINARY_REDUCTION_CEILING_NOT_EQUAL_RESOURCE_BASELINE",
+    "similarity_threshold": 0.66,
+    "component_maturity": "component contains patterns from at least 3 distinct adaptation episodes",
+    "episode_component_rule": "Choose the mature component with maximum pattern-to-component-member similarity across the episode; ties break by canonical component id.",
+    "prediction_rule": "Order-invariant majority future_event per mature component; ties break lexicographically."
+  },
+  "structural_metrics": {
+    "mature_assembly_count": true,
+    "pairwise_co_clustering_disagreement": true,
+    "representation_divergent_pair": "true iff paired arms differ in mature assembly count OR pairwise co-clustering disagreement is greater than 0.0; unassigned patterns never co-cluster with one another"
+  },
+  "functional_metrics": {
+    "prediction_disagreement": "count of the 16 fixed probe episodes whose predicted value differs between paired arms, including None-vs-value",
+    "prediction_coverage_delta": "arm_a coverage minus arm_b coverage over the 16 probes",
+    "prediction_accuracy_delta": "arm_a accuracy minus arm_b accuracy against probe future_event over the 16 probes",
+    "descriptive_action_disagreement": "count of fixed probes whose deterministic explore=false action differs between paired arms"
+  },
+  "support_rule": {
+    "NO_OR_LOW_SUPPORT": "if either development seed has representation_divergent_pairs < 4 of 12",
+    "FUNCTIONAL_ORDER_LOCKIN_SIGNAL": "if both development seeds have representation_divergent_pairs >= 8 of 12 AND prediction_disagreement >= 2 of 16 in >= 8 of 12 order pairs",
+    "REPRESENTATION_ONLY": "if both development seeds have representation_divergent_pairs >= 8 of 12 but FUNCTIONAL_ORDER_LOCKIN_SIGNAL is false",
+    "MIXED": "all other valid outcomes"
+  },
+  "raw_before_interpretation": true,
+  "stop_condition": "After one valid mapped result, STOP for fresh Evidence Analyst review. No same-object redesign, retune, threshold search, extra permutations, PRE_FORMAL promotion or FORMAL promotion.",
+  "formal_authority": {
+    "identity": null,
+    "started": false,
+    "official_test": false,
+    "formal_preserve": false,
+    "formal_scoring": false,
+    "formal_evidence": false
+  }
+}
