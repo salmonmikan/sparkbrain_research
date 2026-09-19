@@ -1,0 +1,73 @@
+{
+  "schema": "sparkbrain-architecture-study-contract-v1",
+  "candidate_id": "CAND-V05-TOPOLOGY-CONFIG-BINDING-01",
+  "lane": "V05_TOPOLOGY_CONFIG_CONTRACT_ARCHITECTURE_STUDY_CYCLE1",
+  "research_layer": "ARCHITECTURE_STUDY",
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "question": "Are exported v0.5 width/height/receptor_rows fields coherently bound to realized topology and checkpoint semantics, or silently accepted while runtime geometry remains fixed?",
+  "analyst_authority": "9bb852bc1461755814d6a9a0e7ea561f1858a0da",
+  "source_binding": {
+    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "src/sparkbrain/v05/brain.py": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
+    "src/sparkbrain/v05/topology.py": "d9d292bdedc1288a929d1e53f03b9fc182b45a36",
+    "src/sparkbrain/v04/brain.py": "25fd56b082168a9ea71f313023451858d00b6184",
+    "configs/v05_reference.json": "d3c82d0279c3bce09d76ddf0ad2df1ec74bc2d7f"
+  },
+  "runtime": "ordinary_local_reference_runtime",
+  "topology_seed": 41,
+  "config_matrix": [
+    {"label": "baseline", "width": 8, "height": 8, "receptor_rows": 1},
+    {"label": "width_only", "width": 12, "height": 8, "receptor_rows": 1},
+    {"label": "height_only", "width": 8, "height": 10, "receptor_rows": 1},
+    {"label": "receptor_only", "width": 8, "height": 8, "receptor_rows": 2},
+    {"label": "combined", "width": 12, "height": 10, "receptor_rows": 2}
+  ],
+  "record_before_interpretation": [
+    "declared_v05_config_tuple",
+    "nested_v04_config_tuple",
+    "construction_errors_and_warnings",
+    "realized_total_unit_count",
+    "realized_receptor_count_and_ids",
+    "realized_reservoir_count",
+    "realized_coordinate_extents",
+    "realized_connection_count",
+    "checkpoint_payload_config",
+    "checkpoint_nested_field_topology_metadata",
+    "roundtrip_declared_config_tuple",
+    "roundtrip_realized_topology_metadata",
+    "roundtrip_preserves_or_repairs_declared_realized_mismatch",
+    "canonical_docs_tests_callsites_explicit_contract_hits"
+  ],
+  "contract_audit_scope": [
+    "README.md",
+    "docs/**/*.md",
+    "tests/**/*.py",
+    "examples/**/*.py",
+    "src/**/*.py",
+    "configs/**/*.json"
+  ],
+  "explicit_contract_requirement": "Only an explicit supported statement that v0.5 topology geometry is fixed and width/height/receptor_rows are intentionally non-operative compatibility metadata, or an equivalent explicit supported contract, counts as fixed-topology contract evidence. Implicit implementation behavior alone does not count.",
+  "classifications": {
+    "INTENTIONAL_FIXED_TOPOLOGY_EXPLICIT_CONTRACT": "Current supported docs/tests explicitly define fixed v0.5 geometry and non-operative compatibility fields, and runtime/checkpoint behavior is consistent with that contract.",
+    "SILENT_DECLARED_REALIZED_GEOMETRY_DIVERGENCE": "Non-default geometry-like fields are accepted/persisted without an explicit fixed-topology contract, realized geometry remains unbound, and checkpoint round-trip preserves the contradictory declared/realized state.",
+    "PARTIAL_BINDING_OR_INCONSISTENT_ROUNDTRIP": "Only some exported fields bind or checkpoint/runtime metadata disagree in another deterministic way.",
+    "AMBIGUOUS_CONTRACT": "Behavior is observable but supported semantics cannot be determined from current canonical source/docs/tests.",
+    "INVALID_DIAGNOSTIC": "Binding mismatch, forbidden access, or inability to compare the fixed matrix without changing semantics."
+  },
+  "forbidden_inputs": [
+    "official TEST",
+    "retained confirmatory datasets",
+    "consumed FORMAL raw",
+    "formal scorer",
+    "consumed identities"
+  ],
+  "stop_condition": "Any valid terminal Architecture classification stops cycle 1 for fresh Evidence Analyst review. No same-run code fix, cycle 2, PRE_FORMAL, or FORMAL promotion is authorized. Only science-invariant pre-diagnostic mechanical fixes may precede the first valid diagnostic after exact-head CI recheck.",
+  "artifact_fidelity_required": [
+    "workflow_run_id",
+    "git_head",
+    "contract_sha256",
+    "raw_sha256",
+    "mapped_outcome",
+    "all_machine_summary_fields_narrated_later"
+  ]
+}
