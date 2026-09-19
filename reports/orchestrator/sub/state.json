@@ -1,8 +1,9 @@
 {
-  "timestamp": "2026-09-20T04:47:00+09:00",
+  "timestamp": "2026-09-20T04:49:00+09:00",
   "worker_role": "sub",
   "mode": "discovery",
-  "evidence_analyst_commit": "6e37598f6c92dbe6b6a88d6083db93bd0f022b10",
+  "evidence_analyst_commit": "493573eb3b8c38d88f251db7c04dfe1a586c6ff0",
+  "evidence_analyst_commit_at_run_start": "6e37598f6c92dbe6b6a88d6083db93bd0f022b10",
   "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
   "main_lane": "V05_UNIT_SUPPRESSION_TRANSIENT_CONTRACT_ARCHITECTURE_STUDY_CYCLE1",
   "sub_lane": "BOUNDED_SECONDARY_DISCOVERY",
@@ -76,9 +77,9 @@
     "FORMAL": "EMPTY_HOLD"
   },
   "blocked_until": {
-    "main": "prospective contract and deterministic blob-bound source/docs/tests/callsite scope are committed before semantic interpretation; dynamic continuation remains blocked",
+    "main": "only the prospectively bound static suppression-contract Architecture cycle is authorized; dynamic continuation remains blocked",
     "pre_formal": "fresh supported mechanistic/reduction object exists",
-    "formal": "fresh admissible object plus collision-free identity/STARTED/official TEST/scorer/preserve/evidence authority exists"
+    "formal": "fresh prospectively admissible object plus one-way authority exists"
   },
   "main_work_explicitly_avoided": [
     "CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01 Architecture object, blockers, and successor",
@@ -93,15 +94,20 @@
   "do_not_touch_respected": [
     "all consumed identities",
     "immutable evidence/control/preserve refs",
-    "completed v0.5 config-contract raw/artifact/outcome",
-    "completed Temporal and Top-k artifacts/outcomes",
-    "H5/NI01/C19/PD01 evidence",
+    "completed topology-config, Temporal, Top-k, H5, NI01, C19, and PD01 artifacts/outcomes",
     "official TEST/formal scorer surfaces",
-    "scheduler definitions"
+    "scheduler definitions",
+    "PR #148/#149 governance work"
   ],
+  "authority_reconciliation": {
+    "fresh_analyst_arrived_after_initial_persistence": true,
+    "allocation_changed": false,
+    "selected_target_invalidated": false,
+    "main_started_new_suppression_object_according_to_fresh_analyst": false
+  },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "6e37598f6c92dbe6b6a88d6083db93bd0f022b10",
+    "evidence_analyst": "493573eb3b8c38d88f251db7c04dfe1a586c6ff0",
     "control_brain_branch_tip_observed": "84a2cbbb11f2820dcedd6fee53137d1de439de62",
     "sub_research_branch": "research/exploratory-sub-assembly-cascade-fallback-bridging-20260920",
     "sub_research_head": "373f7d52af3b46a23ae976863a2eb5d73d982b5f",
@@ -122,11 +128,13 @@
   ],
   "completion_target": "ACHIEVED_ONE_BOUNDED_INDEPENDENT_ASSEMBLY_SEGMENTATION_DISCOVERY_CYCLE_AND_RETURNED_ARCHITECTURE_PROMOTION_CANDIDATE",
   "completion_target_achieved": true,
-  "integrity_state": "CLEAN_NON_EVIDENTIARY_DISCOVERY_COMPLETED_AND_STOPPED_FOR_FRESH_ANALYST_REVIEW",
+  "integrity_state": "CLEAN_NON_EVIDENTIARY_DISCOVERY_COMPLETED_RECONCILED_TO_FRESH_ANALYST_AND_STOPPED_FOR_REVIEW",
   "persistence_result": {
-    "history_path": "reports/orchestrator/history/2026-09-20/0447-sub.md",
-    "history_commit": "0b18c8ff3a39d5b6a4d9bf7757276e4fa71ad233",
-    "latest_md_commit": "185c3e6fd144d5af5c5bfa8f6f1000be0f9cf6f5",
+    "preliminary_history_path": "reports/orchestrator/history/2026-09-20/0447-sub.md",
+    "preliminary_history_commit": "0b18c8ff3a39d5b6a4d9bf7757276e4fa71ad233",
+    "final_history_path": "reports/orchestrator/history/2026-09-20/0449-sub.md",
+    "final_history_commit": "70ee6ef3364d1abd6d5c6196b31b7b9fded02067",
+    "latest_md_commit": "a0cfd486f69fa819ecc091d8912816cba6fd4b3c",
     "state_json_commit": "this update",
     "force_push_used": false,
     "main_or_legacy_shared_latest_state_modified": false
