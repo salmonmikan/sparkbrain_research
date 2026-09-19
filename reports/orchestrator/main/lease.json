@@ -1,14 +1,14 @@
 {
   "run_id": "sparkbrain-main-primary-20260919T131708JST",
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-19T13:17:08+09:00",
-  "heartbeat_at": "2026-09-19T13:17:08+09:00",
+  "heartbeat_at": "2026-09-19T13:20:06+09:00",
   "analyst_commit": "34911078061f83099a74d45868c665ac2b30c6da",
   "active_branch": null,
   "active_identity": null,
-  "active_step": "RECONCILE_1258_LITERATURE_UPDATE_ARCHITECTURE_TESTBED_HOLD",
+  "active_step": "PROGRAMME_ARCHITECTURE_TESTBED_HOLD_CAUSAL_CREDIT_REDUCTION_LADDER_STRENGTHENED",
   "workflow_run_id": null,
-  "expected_next_action": "Fast-path reconcile the fresh Evidence Analyst authority and current authoritative main. Preserve PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE; do not absorb NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY reserved to SUB; do not reopen LP01 or manufacture a literature-driven successor. If no fresh primary object is admitted and no integrity anomaly appears, persist completed MAIN checkpoint and stop.",
+  "expected_next_action": "Remain in architecture/testbed HOLD. Do not absorb or wait on NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY, which remains independently reserved to SUB. Continue only if a fresh Evidence Analyst handoff prospectively admits a genuinely fresh independently motivated native reduction-resistant primary object; for any future lineage/causal-credit object require the strengthened history/influence and learning/locality reduction ladder plus an eligibility-matched, counterfactual-responsibility-different discriminator. Then MAIN owns the full authorized critical path and stops at the specified review boundary. Do not reopen LP01, reuse consumed identities, or construct an audit-driven/literature-driven successor.",
   "owner": "main"
 }
