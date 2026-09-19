@@ -1,26 +1,23 @@
 {
-  "timestamp": "2026-09-20T00:41:00+09:00",
+  "timestamp": "2026-09-20T01:47:00+09:00",
   "worker_role": "sub",
   "mode": "discovery",
-  "evidence_analyst_commit": "862dd62cdce58f06e5c782b4b54212d93e40212e",
+  "evidence_analyst_commit": "e781202e8c7ae4562c10fa46cdddfb3b0eb1bc08",
   "consumed_lane": "BOUNDED_SECONDARY_DISCOVERY",
   "formal_sub_lane": null,
   "sub_fallback": "NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON",
-  "exploratory_target": "FIELD_SOURCE_LINEAGE_CAP_PERMUTATION_SENSITIVITY_DISCOVERY",
+  "exploratory_target": "TOPOLOGY_RECEPTOR_FANOUT_ALIASING_DISCOVERY",
   "candidate_pool_id": null,
   "exploration_cycle": "1/3",
-  "why_independent_of_main": "Direct synthetic v0.4 field provenance-retention probe; independent of MAIN's active temporal-expectation batch-partition Architecture candidate and all reserved Top-k/Assembly/H5/H7/formal surfaces.",
-  "question": "When more than max_sources_per_unit distinct simultaneous arrivals hit one field unit, can enqueue order alone change retained source lineage and full serialized state hash while physical field dynamics remain invariant?",
+  "why_independent_of_main": "Static/synthetic v0.5 topology-scaling diagnostic on stable main. It does not continue MAIN's completed temporal batch-partition object, Top-k follow-up, H7 construction, any consumed line, or any formal/TEST/scoring/preserve/evidence surface.",
+  "question": "With receptor_count=16, does the fixed receptor routing stride 11 create scale-specific physical first-hop projection aliasing when reservoir size shares a factor with 11, and does the default two-receptor input fanout inherit the same collapse?",
   "inputs_used": {
-    "type": "synthetic_only",
-    "units": 1,
-    "connections": 0,
-    "arrival_time_ms": 1.0,
-    "arrival_count": 20,
-    "current_per_arrival": 0.06,
-    "pulse_ids": "p00..p19",
-    "max_sources_per_unit": 16,
-    "arms": ["ascending_enqueue", "descending_enqueue"],
+    "type": "synthetic_static_topology_only",
+    "receptor_count": 16,
+    "reservoir_dimensions": [[4, 4], [5, 5], [6, 6], [8, 6], [4, 11], [5, 11], [6, 11], [8, 11]],
+    "routing_offsets": [0, 7, 19],
+    "routing_stride": 11,
+    "default_external_receptor_fanout": 2,
     "repository_dataset": false,
     "trained_checkpoint": false,
     "formal_raw": false,
@@ -28,44 +25,62 @@
     "official_scorer": false
   },
   "implementation_experiment": {
-    "branch": "research/exploratory-sub-field-source-lineage-cap-20260920",
-    "test_commit": "1a91187173a713d87f343b871ec16b94ee956bfb",
-    "head": "21af9d2a5546cc081f4fe4472540ab8a17760c7c",
+    "branch": "research/exploratory-sub-topology-fanout-aliasing-20260920",
+    "prospective_binding_commit": "91aaf6c10ed691540689fe3d426d6a9354828e2e",
+    "test_commit": "cdff7a4b29d0fdd4263897c208359e2b90ce4681",
+    "mechanical_format_commit_1": "726aac111720643e6f1475a91477e6db3204372c",
+    "head": "daaf9a865d4ba5911640d127f55dc8d44a75e078",
     "artifacts": [
-      "tests/discovery/test_field_source_lineage_cap_20260920.py",
-      "analysis/discovery/field_source_lineage_cap_20260920.md"
+      "analysis/discovery/topology_fanout_aliasing_20260920.md",
+      "tests/discovery/test_topology_fanout_aliasing_20260920.py"
     ],
-    "workflow_run": 35452444346,
-    "workflow_status": "completed_success_python_3_11_and_3_13"
+    "final_workflow_run": 35455915055,
+    "final_workflow_status": "completed_success_python_3_11_and_3_13"
   },
   "observations": {
-    "ascending_retained_source_ids": "p04..p19",
-    "descending_retained_source_ids": "p15..p00",
-    "retained_set_intersection_count": 12,
-    "retained_set_union_count": 20,
-    "retained_set_jaccard": 0.6,
-    "spike_count_equal": true,
-    "physical_spike_observables_equal": true,
-    "physical_unit_state_without_source_ids_equal": true,
-    "full_field_state_hash_equal": false,
-    "mechanistic_reduction": "Same-time arrivals preserve insertion-counter order; _source_tuple appends unseen pulse IDs in that order and retains only the last max_sources_per_unit entries. Current production code does not use source IDs in physical update equations, so the difference is bounded provenance bookkeeping/hash reproducibility rather than a causal dynamics effect."
+    "coprime_sizes": {
+      "reservoir_sizes": [16, 25, 36, 48],
+      "unique_single_receptor_projection_signatures": [16, 16, 16, 16],
+      "collision_pairs": [0, 0, 0, 0],
+      "max_alias_multiplicity": [1, 1, 1, 1],
+      "unique_default_two_receptor_projection_signatures": [16, 16, 16, 16]
+    },
+    "stride_resonant_sizes": {
+      "reservoir_sizes": [44, 55, 66, 88],
+      "unique_single_receptor_projection_signatures": [4, 5, 6, 8],
+      "collision_pairs": [24, 18, 14, 8],
+      "max_alias_multiplicity": [4, 4, 3, 2],
+      "unique_default_two_receptor_projection_signatures": [4, 6, 7, 8]
+    },
+    "default_8x6_size_48_is_nonresonant_in_fixed_matrix": true,
+    "mechanistic_reduction": "The fixed topology maps receptor r to targets (11*r+offset) mod N. Projection identity therefore repeats with modular period N/gcd(N,11). The measured unique-signature counts exactly equal min(16, N/gcd(N,11)); default two-consecutive-receptor fanout inherits the collapse. This is deterministic number-theoretic wiring aliasing, not an emergent mechanism or metadata-only artifact."
   },
   "evidentiary_status": "NON_EVIDENTIARY",
-  "what_would_falsify_or_reduce_it": "The candidate is already reduced under current code. The reduction would be falsified only by a fresh production path where pulse/source IDs causally alter physical updates or downstream behavior under otherwise identical currents, timestamps, and targets; current production-code search found no such consumer.",
-  "candidate_next_research_layer": "NONE_SCIENTIFICALLY",
-  "scientific_choices_still_open": [],
-  "recommendation": "REJECT",
+  "what_would_falsify_or_reduce_it": "Reduce to a static engineering wiring constraint if supported production/DEV reservoir dimensions do not enter resonant regimes, or if a freshly specified matched collision-free fanout comparator removes the first-hop collisions without improving predefined internal channel-separability or downstream functional observables. The deterministic modular mechanism itself is already explained by current code.",
+  "candidate_next_research_layer": "ARCHITECTURE_STUDY",
+  "scientific_choices_still_open": [
+    "DEV reservoir dimensions and regimes",
+    "DEV channel/input set",
+    "identity-neutral collision-free/hash-based fanout comparator",
+    "edge-count and resource matching contract",
+    "internal channel-separability metric",
+    "downstream prediction/action observable",
+    "observation horizon"
+  ],
+  "recommendation": "PROMOTE_TO_ARCHITECTURE_STUDY",
   "research_layer_state": {
     "DISCOVERY": "OPEN_SUB_DEFAULT_NON_EVIDENTIARY",
-    "ARCHITECTURE_STUDY": "MAIN_TEMPORAL_BATCH_PARTITION_CYCLE1_ALLOCATED; exact-head workflow completed success during SUB run; SUB did not inspect outcome artifacts",
+    "ARCHITECTURE_STUDY": "HOLD_NO_ACTIVE_MAIN_OBJECT",
     "PRE_FORMAL": "EMPTY_HOLD",
     "FORMAL": "EMPTY_HOLD"
   },
   "candidate_pool_snapshot": {
-    "CAND-TEMPORAL-BATCH-PARTITION-01": "MAIN_ARCHITECTURE_CYCLE1_SUB_MUST_NOT_CONTINUE",
+    "CAND-TEMPORAL-BATCH-PARTITION-01": "HOLD_NO_CYCLE2_RESCUE",
     "CAND-TOPK-PA-01": "HOLD_NO_CYCLE3_NO_PRE_FORMAL",
-    "CAND-ASSEMBLY-PROTOTYPE-LOCKIN-01": "REJECT_NO_OR_LOW_SUPPORT",
-    "CAND-H7-RESP-01": "HOLD_NO_NATIVE_OBJECT"
+    "CAND-H7-RESP-01": "HOLD_NO_NATIVE_RESPONSIBILITY_OBJECT",
+    "CAND-FIELD-SOURCE-LINEAGE-CAP-01": "REJECT_CYCLE1_BOOKKEEPING_REDUCTION",
+    "CAND-ASSEMBLY-PROTOTYPE-LOCKIN-01": "CLOSED_REJECTED",
+    "CAND-STRUCTURAL-ORDER-PATH-01": "CLOSED_REJECTED"
   },
   "blocked_until": {
     "pre_formal": "fresh mechanistic/reduction candidate with sufficient lower-layer support and matched ordinary reductions exists",
@@ -74,16 +89,21 @@
     "formal": "fresh identity/STARTED/TEST/scorer/preserve/evidence authority"
   },
   "main_work_explicitly_avoided": [
-    "CAND-TEMPORAL-BATCH-PARTITION-01 active MAIN Architecture study and outcome-bearing artifacts",
-    "CAND-TOPK-PA-01",
-    "CAND-ASSEMBLY-PROTOTYPE-LOCKIN-01 follow-up",
-    "H5 consumed line",
-    "H7 construction",
+    "CAND-TEMPORAL-BATCH-PARTITION-01 successor/rescue construction",
+    "CAND-TOPK-PA-01 follow-up/cycle3",
+    "CAND-H7-RESP-01 construction",
+    "consumed-line repair or reinterpretation",
     "MAIN blockers and outcome-dependent successors",
-    "FORMAL/TEST/scoring/identity surfaces"
+    "FORMAL/TEST/scoring/identity/preserve/evidence surfaces"
   ],
   "do_not_touch_respected": [
-    "all consumed identities",
+    "c19-external-v2-official-v4",
+    "c19-r1-revision-authority-official-v1",
+    "c19-r1-revision-authority-official-v2",
+    "c19-r2-fsa-state-tracker-official-v1",
+    "pd01-long-history-fading-memory-official-v1",
+    "ni01-no-ignition-selective-prediction-official-v1",
+    "h5-event-routing-work-reduction-official-v1",
     "official TEST and formal held-out surfaces",
     "immutable evidence refs/tags",
     "legacy freeze refs",
@@ -94,14 +114,12 @@
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "862dd62cdce58f06e5c782b4b54212d93e40212e",
-    "control_brain_observed": "c737fbcbcbceacdd906780fcb7f020658cd19422",
-    "main_active_research_branch": "research/main-temporal-batch-partition-arch-study-20260920",
-    "main_active_research_head": "7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
-    "sub_research_branch": "research/exploratory-sub-field-source-lineage-cap-20260920",
-    "sub_research_head": "21af9d2a5546cc081f4fe4472540ab8a17760c7c",
-    "orchestrator_parent_before_sub_persistence": "afd8c8e5443ca8493ad39dd94f1f742284ab7d45",
-    "orchestrator_tip_before_state_persistence": "85b18ca01652a370f176aa5c4f9bfc18c2214467",
+    "evidence_analyst": "e781202e8c7ae4562c10fa46cdddfb3b0eb1bc08",
+    "control_brain_branch_tip_observed": "3b2ff0f8ecb845c486b6e5806d58c36df24657de",
+    "sub_research_branch": "research/exploratory-sub-topology-fanout-aliasing-20260920",
+    "sub_research_head": "daaf9a865d4ba5911640d127f55dc8d44a75e078",
+    "orchestrator_tip_before_sub_persistence": "89b99c3e97ea1795dce4d9e5a32f588d72ea7be5",
+    "orchestrator_tip_before_state_persistence": "6d1bfd3423c9e6f114531b230a5967e9ecf3f2fb",
     "evidence_tag_count": 5,
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
@@ -110,23 +128,33 @@
   },
   "workflows_experiments": [
     {
-      "run_id": 35452444346,
-      "name": "ordinary repository ci",
-      "head": "21af9d2a5546cc081f4fe4472540ab8a17760c7c",
+      "run_id": 35455648337,
+      "head": "cdff7a4b29d0fdd4263897c208359e2b90ce4681",
+      "status": "completed",
+      "conclusion": "failure",
+      "failure_scope": "mechanical Ruff import-format and line-length lint only; scientific tests skipped",
+      "scientific_role": "none"
+    },
+    {
+      "run_id": 35455755740,
+      "head": "726aac111720643e6f1475a91477e6db3204372c",
+      "status": "completed",
+      "conclusion": "failure",
+      "failure_scope": "mechanical Ruff import-block lint only; scientific tests skipped",
+      "scientific_role": "none"
+    },
+    {
+      "run_id": 35455915055,
+      "head": "daaf9a865d4ba5911640d127f55dc8d44a75e078",
       "status": "completed",
       "conclusion": "success",
       "python_3_11": "success",
       "python_3_13": "success",
-      "scientific_role": "none"
-    },
-    {
-      "run_id": 35451528895,
-      "name": "MAIN Temporal batch partition Architecture cycle 1",
-      "head": "7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
-      "status": "completed",
-      "conclusion": "success",
-      "sub_artifact_access": false,
-      "note": "status only observed for collision awareness; outcome-bearing artifacts not inspected"
+      "lint": "success",
+      "readiness": "success",
+      "tests": "success",
+      "bundle_validation": "success",
+      "scientific_role": "none; ordinary CI only"
     }
   ],
   "utility_request_created": null,
@@ -138,20 +166,21 @@
   "immutable_evidence_modified": false,
   "research_merge_performed": false,
   "collision_reconciliation": {
-    "analyst_ref_rechecked": "862dd62cdce58f06e5c782b4b54212d93e40212e",
+    "analyst_ref_rechecked": "e781202e8c7ae4562c10fa46cdddfb3b0eb1bc08",
     "main_ref_rechecked": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "main_active_research_head_rechecked": "7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
-    "sub_research_head_rechecked": "21af9d2a5546cc081f4fe4472540ab8a17760c7c",
-    "orchestrator_tip_rechecked_before_state": "85b18ca01652a370f176aa5c4f9bfc18c2214467",
+    "sub_research_head_rechecked": "daaf9a865d4ba5911640d127f55dc8d44a75e078",
+    "orchestrator_tip_rechecked_before_state": "6d1bfd3423c9e6f114531b230a5967e9ecf3f2fb",
     "collision_found": false
   },
-  "blockers": [],
-  "completion_target": "ACHIEVED_ONE_BOUNDED_INDEPENDENT_DISCOVERY_CYCLE_AND_STOPPED_AFTER_EXACT_BOOKKEEPING_REDUCTION",
-  "integrity_state": "CLEAN_NON_EVIDENTIARY_DISCOVERY_REDUCED_AND_STOPPED",
+  "blockers": [
+    "fresh Evidence Analyst classification and prospective Architecture Study specification required before any continuation"
+  ],
+  "completion_target": "ACHIEVED_ONE_BOUNDED_INDEPENDENT_DISCOVERY_CYCLE_AND_RETURNED_TOPOLOGY_ARCHITECTURE_PROMOTION_CANDIDATE_FOR_FRESH_ANALYST_REVIEW",
+  "integrity_state": "CLEAN_NON_EVIDENTIARY_DISCOVERY_COMPLETED_AND_STOPPED_FOR_FRESH_ANALYST_REVIEW",
   "persistence_result": {
-    "history_commit": "2fc9c3697bcc8c1fe289da206b78ec935440e28f",
-    "history_path": "reports/orchestrator/history/2026-09-20/0041-sub.md",
-    "latest_md_commit": "85b18ca01652a370f176aa5c4f9bfc18c2214467",
+    "history_path": "reports/orchestrator/history/2026-09-20/0147-sub.md",
+    "history_commit": "f8818e29cf78f18839c1655fe32f706f905285ff",
+    "latest_md_commit": "6d1bfd3423c9e6f114531b230a5967e9ecf3f2fb",
     "state_json_commit": "this update",
     "force_push_used": false
   }
