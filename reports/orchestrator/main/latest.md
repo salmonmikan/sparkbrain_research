@@ -1,6 +1,6 @@
-# MAIN Orchestrator — architecture/testbed hold with strengthened future lineage admission bar
+# MAIN Orchestrator — architecture/testbed HOLD; fresh Analyst authority unchanged
 
-Timestamp: `2026-09-19 10:16 JST`  
+Timestamp: `2026-09-19 11:16 JST`  
 Worker role: `main`  
 Execution mode: `PRIMARY`  
 Evidence Analyst authority: `8ee6d305acdc8310335e65c5bd3f35d121f35280`
@@ -9,44 +9,32 @@ Evidence Analyst authority: `8ee6d305acdc8310335e65c5bd3f35d121f35280`
 
 MAIN remains in **`PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE`**. This run used the **FAST PATH** only; FULL RECONCILIATION was not triggered.
 
-The fresh 10:02 JST Evidence Analyst handoff reports **no new repository scientific evidence, no newly admitted object, and no MAIN/SUB reallocation**. It does contain a material external-doctrine update from the 09:32 Literature Reduction Scout: any future H7/lineage/causal-credit object must clear a stronger two-axis ordinary-reduction ladder before Analyst review. This strengthens the existing admission gate and does **not** reopen LP01 or authorize a literature-driven successor.
+The authoritative 10:02 JST Evidence Analyst handoff is unchanged: no new repository scientific evidence, no newly admitted object, no MAIN/SUB reallocation, and no formal execution authority. `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. Therefore contingency `NO_FRESH_OBJECT -> HOLD` still applies.
 
 ## Fast-path reconciliation
 
-- Inherited MAIN lease was `COMPLETED`; no fresh conflicting MAIN `RUNNING` lease existed because there was no active branch or identity.
-- PRIMARY acquired lease `sparkbrain-main-primary-20260919T101249JST` at control-plane commit `ac743ee2b0aeb334968e987e7d649912406c89de`, then re-fetched the lease, Evidence Analyst mailbox, and `main`.
-- Evidence Analyst tip remained `8ee6d305acdc8310335e65c5bd3f35d121f35280`; `main` remained `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; no drift or collision appeared after lease acquisition.
-- `main_lane` remains `PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE`; contingency `NO_FRESH_OBJECT -> HOLD` applies. Current GO is bounded prospective NON_EVIDENTIARY admission/specification only; formal execution remains unauthorized.
-- SUB remains `no_op` with `sub_lane: null`, `sub_fallback: null`, no incubator candidate, and no reserved independent work colliding with MAIN.
-- Control Brain `10eb4206fb0c998fcdbc40c0e16f38829ea5d41e` was read only as strategic prior and remains aligned with `NO_HIGH_VALUE_OBJECT` / architecture-testbed mode.
-- No active MAIN research branch or formal identity exists, so there is no candidate-specific integrity envelope requiring broader reconciliation.
-
-## Material doctrine update
-
-For a future lineage/causal-credit object, ordinary-reduction review now prospectively includes both:
-
-1. History/influence: provenance/ancestry -> individual-token causal-net / occurrence-net / event-structure history+conflict -> causally consistent dynamic slicing -> explicit counterfactual actual-cause/responsibility.
-2. Learning/locality where relevant: matched local eligibility / three-factor / e-prop / GLE / SAL / recurrent-plastic mechanisms -> Spark-specific residual only if intervention-validated lineage selectivity survives under matched privilege/resources.
-
-Before review, future lineage work also requires preemption/overdetermination cases, ancestry-preserving responsibility-changing interventions, matched information/readout/resource privilege, a positive intervention-validated candidate signal, and fixed numeric falsifiers. `local`, `online`, `physical`, `spiking`, token identity, competition, conflict, or history sensitivity alone are not novelty axes.
-
-This is an **admission/doctrine update, not formal scientific evidence**. LP01 remains PRE-FORMAL / NON_EVIDENTIARY and closed; consumed identities and immutable evidence remain untouched.
+- Inherited MAIN lease was `COMPLETED`; no conflicting fresh MAIN `RUNNING` lease existed.
+- PRIMARY acquired lease `sparkbrain-main-primary-20260919T111324JST` at `781d4113ec68cd29ee14815e0b92c9d304da83ba`, then re-fetched the lease, Evidence Analyst tip, and `main`; all remained collision-free and drift-free.
+- SUB remains `no_op` with `sub_lane: null`, `sub_fallback: null`, and no reserved independent work colliding with MAIN.
+- Control Brain advanced to `1914db5b9b58b4d53bd0406adda062189d688cb8` at 10:50 JST. It is strategic prior only. It reports a newer 10:32 NI01 independent audit that the current Evidence Analyst authority has not yet consumed. MAIN therefore does **not** independently reinterpret NI01, alter canonical evidence, run the optional diagnostic, or create any successor from that audit.
+- No active MAIN research branch or formal identity exists, so no candidate-specific integrity envelope required broader reconciliation. The pending Analyst consumption is a normal knowledge-flow lag, not a target-ref disagreement or integrity anomaly.
 
 ## Critical path / workflow state
 
-No candidate-specific implementation, comparator, bug, verifier/harness/runner, binding, CI/preflight, review, merge, preservation, scoring, or execution-blocker work is scientifically warranted because no fresh object passed admission.
+No candidate implementation, comparator, candidate-specific bug, verifier/harness/runner fix, binding, research CI/preflight, review, merge, preservation, scoring, or execution-blocker work is authorized or scientifically warranted because no fresh object has been admitted.
 
-MAIN performed **no research/scientific mutation**, crossed **no formal boundary**, dispatched **no research workflow/experiment**, and created no identity, STARTED/control ref, official TEST access, preserve/scoring result, or evidence ref.
+MAIN performed **no research/scientific mutation**, crossed **no formal boundary**, dispatched **no research workflow/experiment**, and created no identity, STARTED/control ref, official TEST access, formal preserve/scoring output, or evidence ref.
 
-Control-plane CI `35412028484` was queued on lease-acquisition commit `ac743ee2b0aeb334968e987e7d649912406c89de` when observed. It has no scientific relevance, and PRIMARY is not held open waiting for it.
+Control-plane CI `35415089496` was `in_progress` on lease-acquisition commit `781d4113ec68cd29ee14815e0b92c9d304da83ba` when observed. It has no scientific relevance, and PRIMARY is not held open waiting for it.
 
 New formal scientific information this run: **none**.  
-New admission information this run: **yes — strengthened future lineage/causal-credit ordinary-reduction and intervention requirements**.
+New MAIN-authoritative admission information this run: **none**.  
+New strategic prior observed: **yes — Control Brain notes the 10:32 NI01 audit is pending normal Evidence Analyst consumption.**
 
 ## Lease / stop
 
 Final lease target: **`COMPLETED`**.
 
-Stop reason: `PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_LINEAGE_ADMISSION_BAR_STRENGTHENED`.
+Stop reason: `PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_ANALYST_UNCHANGED_AUDIT_PENDING`.
 
-Relay continuation is **not expected** for the current hold state. The next MAIN action remains event-dependent: if and only if a genuinely fresh independently motivated native reduction-resistant object independently appears, perform bounded prospective NON_EVIDENTIARY specification/readiness for at most one object and STOP at `NEXT_OBJECT_READY_FOR_ANALYST_REVIEW`. Do not create a formal identity, STARTED marker, official TEST access, preserve/scoring output, evidence, or outcome-responsive/literature-driven successor under the current authority.
+Relay continuation is **not expected** for the current hold state. The next MAIN action is to consume a fresh Evidence Analyst handoff when available. Unless that handoff admits a genuinely fresh independently motivated native reduction-resistant object, remain on HOLD. If exactly one object is admitted prospectively, perform only the bounded NON_EVIDENTIARY specification/readiness authorized by that fresh handoff and STOP at `NEXT_OBJECT_READY_FOR_ANALYST_REVIEW`. No formal identity, STARTED, official TEST, preserve/scoring, evidence, consumed-identity reopening, or audit-driven successor is authorized under the current handoff.
