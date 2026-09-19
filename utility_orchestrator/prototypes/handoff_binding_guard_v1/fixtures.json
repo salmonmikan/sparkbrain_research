@@ -1,0 +1,222 @@
+{
+  "fixture_basis": {
+    "temporal_workflow_artifact_rechecked": true,
+    "temporal_workflow_run_id": 35451528895,
+    "temporal_artifact_id": 10587410697,
+    "temporal_archive_sha256": "22a5c650a58501a1dc8303118c366845201f9eba8453a22996f5fb4ca4d6428f",
+    "topk_workflow_artifact_rechecked": true,
+    "topk_workflow_run_id": 35432088902,
+    "topk_artifact_id": 10581155271,
+    "topk_archive_sha256": "62ee402e9e7c5a1cd41e65eebcbbe183d2be0625e4e66c2157ae207317f93f83",
+    "note": "Normalized machine summaries are reconstructed from the completed NON_EVIDENTIARY fidelity audit and designated handoffs. source_summary_sha256 preserves the original artifact-reported summary digest; machine_summary_canonical_sha256 binds this prototype's normalized machine_summary object."
+  },
+  "cases": [
+    {
+      "id": "temporal_known_bad",
+      "expected_status": "HANDOFF_FIDELITY_BLOCKED",
+      "machine": {
+        "provenance": {
+          "workflow_run_id": 35451528895,
+          "producing_head": "7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
+          "artifact_id": 10587410697,
+          "artifact_name": "temporal-batch-partition-cycle1-7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
+          "archive_sha256": "22a5c650a58501a1dc8303118c366845201f9eba8453a22996f5fb4ca4d6428f",
+          "candidate_or_study_id": "CAND-TEMPORAL-BATCH-PARTITION-01",
+          "embedded_authority": "862dd62cdce58f06e5c782b4b54212d93e40212e",
+          "contract_or_interpretation_digest": "eb4aa28cd4b7299302ac31a65c73586c4e5a17e5487b1d1ddf43757cee901049",
+          "raw_sha256": "71d4d8fddbe6b683b4ad93951c0f95fc1dfa5df74645743bfd39fba5b33c54ef",
+          "row_count": 6,
+          "mapped_outcome": "FUNCTIONAL_BATCH_PARTITION_EFFECT",
+          "source_summary_sha256": "037e3bfdd7f14404308753512a0331c4b8a9d31ec7b59191778d7f84af195290"
+        },
+        "machine_summary": {
+          "families": {
+            "repetition_train_defaults": {
+              "schedule_differs_across_arms": false,
+              "replay_differs_across_arms": false
+            },
+            "noisy_motif_stream_defaults": {
+              "schedule_differs_across_arms": true,
+              "replay_differs_across_arms": true
+            }
+          },
+          "mapped_outcome": "FUNCTIONAL_BATCH_PARTITION_EFFECT"
+        }
+      },
+      "binding": {
+        "provenance": {
+          "workflow_run_id": 35451528895,
+          "producing_head": "7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
+          "artifact_id": 10587410697,
+          "artifact_name": "temporal-batch-partition-cycle1-7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
+          "archive_sha256": "22a5c650a58501a1dc8303118c366845201f9eba8453a22996f5fb4ca4d6428f",
+          "candidate_or_study_id": "CAND-TEMPORAL-BATCH-PARTITION-01",
+          "embedded_authority": "862dd62cdce58f06e5c782b4b54212d93e40212e",
+          "contract_or_interpretation_digest": "681c21e31c686be7d8beb10e927ef65510ce82689c2cc81ae5fd9fedc179c06d",
+          "raw_sha256": "71d4d8fddbe6b683b4ad93951c0f95fc1dfa5df74645743bfd39fba5b33c54ef",
+          "row_count": 6,
+          "mapped_outcome": "FUNCTIONAL_BATCH_PARTITION_EFFECT",
+          "source_summary_sha256": "037e3bfdd7f14404308753512a0331c4b8a9d31ec7b59191778d7f84af195290"
+        },
+        "machine_summary_canonical_sha256": "16132f843606bc6ed715495d86be64497e49ab0402c6b004c6a2111631a206bd",
+        "narrated_fields": [
+          {"path": "/families/repetition_train_defaults/schedule_differs_across_arms", "value": true},
+          {"path": "/families/repetition_train_defaults/replay_differs_across_arms", "value": true},
+          {"path": "/families/noisy_motif_stream_defaults/schedule_differs_across_arms", "value": true},
+          {"path": "/families/noisy_motif_stream_defaults/replay_differs_across_arms", "value": false},
+          {"path": "/mapped_outcome", "value": "FUNCTIONAL_BATCH_PARTITION_EFFECT"}
+        ]
+      }
+    },
+    {
+      "id": "topk_known_bad",
+      "expected_status": "HANDOFF_FIDELITY_BLOCKED",
+      "machine": {
+        "provenance": {
+          "workflow_run_id": 35432088902,
+          "producing_head": "97f542d86dcd3a609cd039379fcda41ba61e0909",
+          "artifact_id": 10581155271,
+          "artifact_name": "topk-persistent-amplification-cycle1",
+          "archive_sha256": "62ee402e9e7c5a1cd41e65eebcbbe183d2be0625e4e66c2157ae207317f93f83",
+          "candidate_or_study_id": "CAND-TOPK-PA-01",
+          "embedded_authority": "3e83f1eb683ce80e326b756fa304e96688fdd3fe",
+          "contract_or_interpretation_digest": null,
+          "raw_sha256": "316498f99ff60c59e1a1eb146c1e498972539402820cea48202ab4bf420c3b00",
+          "row_count": 1152,
+          "mapped_outcome": "PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL",
+          "source_summary_sha256": "783578fbe6f2187d02c0b078a078b83e101bf1b7a345dedbedcf3d545b3ee861"
+        },
+        "machine_summary": {
+          "thresholds": {
+            "probability_ratio_signal_gte": 1.5,
+            "state_ratio_signal_gte": 2.0,
+            "turnover_minimum_gte": 20,
+            "denominator_floor": 1e-12
+          },
+          "strata": {
+            "0.01": {
+              "turnover_cases": 1,
+              "median_probability_ratio": 35.5036,
+              "median_state_ratio": 2.0297,
+              "clears_all_fixed_signal_requirements": false
+            },
+            "0.05": {
+              "turnover_cases": 11,
+              "median_probability_ratio": 10.126,
+              "median_state_ratio": 1.4654,
+              "clears_all_fixed_signal_requirements": false
+            },
+            "0.10": {
+              "turnover_cases": 25,
+              "median_probability_ratio": 7.8192,
+              "median_state_ratio": 2.0326,
+              "clears_all_fixed_signal_requirements": true
+            }
+          },
+          "mapped_outcome": "PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL"
+        }
+      },
+      "binding": {
+        "provenance": {
+          "workflow_run_id": 35432088902,
+          "producing_head": "97f542d86dcd3a609cd039379fcda41ba61e0909",
+          "artifact_id": 10581155271,
+          "artifact_name": "topk-persistent-amplification-cycle1",
+          "archive_sha256": "62ee402e9e7c5a1cd41e65eebcbbe183d2be0625e4e66c2157ae207317f93f83",
+          "candidate_or_study_id": "CAND-TOPK-PA-01",
+          "embedded_authority": "3e83f1eb683ce80e326b756fa304e96688fdd3fe",
+          "contract_or_interpretation_digest": null,
+          "raw_sha256": "316498f99ff60c59e1a1eb146c1e498972539402820cea48202ab4bf420c3b00",
+          "row_count": 1152,
+          "mapped_outcome": "PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL",
+          "source_summary_sha256": "783578fbe6f2187d02c0b078a078b83e101bf1b7a345dedbedcf3d545b3ee861"
+        },
+        "machine_summary_canonical_sha256": "84b296b71aa3fcfafcd6e4abe9099612599a71dba5ba3817fee23c8a2a1c92a2",
+        "narrated_fields": [
+          {"path": "/thresholds/turnover_minimum_gte", "value": 20},
+          {"path": "/strata/0.01/turnover_cases", "value": 1},
+          {"path": "/strata/0.01/clears_all_fixed_signal_requirements", "value": true},
+          {"path": "/strata/0.10/turnover_cases", "value": 25},
+          {"path": "/strata/0.10/clears_all_fixed_signal_requirements", "value": true},
+          {"path": "/mapped_outcome", "value": "PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL"}
+        ]
+      }
+    },
+    {
+      "id": "topk_faithful_positive_control",
+      "expected_status": "PASS",
+      "machine": {
+        "provenance": {
+          "workflow_run_id": 35432088902,
+          "producing_head": "97f542d86dcd3a609cd039379fcda41ba61e0909",
+          "artifact_id": 10581155271,
+          "artifact_name": "topk-persistent-amplification-cycle1",
+          "archive_sha256": "62ee402e9e7c5a1cd41e65eebcbbe183d2be0625e4e66c2157ae207317f93f83",
+          "candidate_or_study_id": "CAND-TOPK-PA-01",
+          "embedded_authority": "3e83f1eb683ce80e326b756fa304e96688fdd3fe",
+          "contract_or_interpretation_digest": null,
+          "raw_sha256": "316498f99ff60c59e1a1eb146c1e498972539402820cea48202ab4bf420c3b00",
+          "row_count": 1152,
+          "mapped_outcome": "PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL",
+          "source_summary_sha256": "783578fbe6f2187d02c0b078a078b83e101bf1b7a345dedbedcf3d545b3ee861"
+        },
+        "machine_summary": {
+          "thresholds": {
+            "probability_ratio_signal_gte": 1.5,
+            "state_ratio_signal_gte": 2.0,
+            "turnover_minimum_gte": 20,
+            "denominator_floor": 1e-12
+          },
+          "strata": {
+            "0.01": {
+              "turnover_cases": 1,
+              "median_probability_ratio": 35.5036,
+              "median_state_ratio": 2.0297,
+              "clears_all_fixed_signal_requirements": false
+            },
+            "0.05": {
+              "turnover_cases": 11,
+              "median_probability_ratio": 10.126,
+              "median_state_ratio": 1.4654,
+              "clears_all_fixed_signal_requirements": false
+            },
+            "0.10": {
+              "turnover_cases": 25,
+              "median_probability_ratio": 7.8192,
+              "median_state_ratio": 2.0326,
+              "clears_all_fixed_signal_requirements": true
+            }
+          },
+          "mapped_outcome": "PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL"
+        }
+      },
+      "binding": {
+        "provenance": {
+          "workflow_run_id": 35432088902,
+          "producing_head": "97f542d86dcd3a609cd039379fcda41ba61e0909",
+          "artifact_id": 10581155271,
+          "artifact_name": "topk-persistent-amplification-cycle1",
+          "archive_sha256": "62ee402e9e7c5a1cd41e65eebcbbe183d2be0625e4e66c2157ae207317f93f83",
+          "candidate_or_study_id": "CAND-TOPK-PA-01",
+          "embedded_authority": "3e83f1eb683ce80e326b756fa304e96688fdd3fe",
+          "contract_or_interpretation_digest": null,
+          "raw_sha256": "316498f99ff60c59e1a1eb146c1e498972539402820cea48202ab4bf420c3b00",
+          "row_count": 1152,
+          "mapped_outcome": "PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL",
+          "source_summary_sha256": "783578fbe6f2187d02c0b078a078b83e101bf1b7a345dedbedcf3d545b3ee861"
+        },
+        "machine_summary_canonical_sha256": "84b296b71aa3fcfafcd6e4abe9099612599a71dba5ba3817fee23c8a2a1c92a2",
+        "narrated_fields": [
+          {"path": "/thresholds/probability_ratio_signal_gte", "value": 1.5},
+          {"path": "/thresholds/state_ratio_signal_gte", "value": 2.0},
+          {"path": "/thresholds/turnover_minimum_gte", "value": 20},
+          {"path": "/strata/0.01/turnover_cases", "value": 1},
+          {"path": "/strata/0.01/clears_all_fixed_signal_requirements", "value": false},
+          {"path": "/strata/0.10/turnover_cases", "value": 25},
+          {"path": "/strata/0.10/clears_all_fixed_signal_requirements", "value": true},
+          {"path": "/mapped_outcome", "value": "PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL"}
+        ]
+      }
+    }
+  ]
+}
