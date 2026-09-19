@@ -1,14 +1,14 @@
 {
   "run_id": "sparkbrain-main-primary-20260919T141235JST",
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-19T14:12:35+09:00",
-  "heartbeat_at": "2026-09-19T14:12:35+09:00",
+  "heartbeat_at": "2026-09-19T14:16:00+09:00",
   "analyst_commit": "ca0f19d52a80622bd6e4d6d61830f805c1f89234",
   "active_branch": null,
   "active_identity": null,
-  "active_step": "RECONCILE_FRESH_ANALYST_SUB_DIAGNOSTIC_CLOSURE",
+  "active_step": "PROGRAMME_ARCHITECTURE_TESTBED_HOLD_NI01_SUB_DIAGNOSTIC_INTEGRITY_CLOSED",
   "workflow_run_id": null,
-  "expected_next_action": "Consume the fresh Analyst closure of NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY, confirm MAIN remains on architecture/testbed HOLD with no fresh primary object, preserve the one-way boundary, and persist updated MAIN coordination state without scientific mutation.",
+  "expected_next_action": "Remain in architecture/testbed HOLD. The prior NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY lane is closed as integrity-blocked and must not be recreated or absorbed by MAIN. Continue only if a fresh Evidence Analyst handoff prospectively admits a genuinely fresh independently motivated native reduction-resistant primary object; then MAIN owns the full authorized critical path and stops at the specified review boundary. Do not reopen LP01 or reuse consumed identities.",
   "owner": "main"
 }
