@@ -1,87 +1,154 @@
 {
-  "generated_at_jst": "2026-09-19T02:50:00+09:00",
+  "generated_at_jst": "2026-09-19T10:50:00+09:00",
   "role": "CONTROL_BRAIN",
-  "selected_slot_jst": "02:50",
+  "selected_slot_jst": "10:50",
   "foundational_doctrine_change": false,
   "programme_position": "experimental_cognitive_architecture_testbed",
   "central_theory_status": "NO_HIGH_VALUE_OBJECT",
-  "central_theory": "The only potentially novel residual is non-privileged causal credit/circulation along actual historical lineage after ordinary finite-state, predictive, recurrent/reservoir, plastic/eligibility and simple decision reductions. No current prospective object clears the admission bar.",
+  "central_theory": "The only residual worth reopening centrally is a native intervention-validated lineage-specific causal-responsibility effect that is prospectively positive and survives ordinary history/influence and local-learning/recurrent/plastic reductions under matched information, readout, task/world/regime-label and resource privilege. No current object clears this bar.",
   "strategic_assumptions": {
     "weakened": [
-      "The central novelty thesis remains weak because no surviving positive formal residual mechanism has been established.",
-      "PD01 should not count as a mechanistic reservoir-reduction occurrence at programme level because the prospectively registered candidate long-lag signal was absent.",
-      "Lineage-specific novelty currently has no native online causal object that resists explicit-state reconstruction."
+      "NI01 does not establish an equal-privilege generic confidence-abstention reduction because the frozen comparator receives explicit world identity and applies world-specific DEV-derived thresholds while the candidate does not receive the symbolic world label.",
+      "Persistent/local/history-derived/lineage bookkeeping remains insufficient for novelty absent a native intervention-validated responsibility residual.",
+      "No current repository object supplies a positive formal residual mechanism beyond ordinary reductions."
     ],
     "strengthened": [
-      "Prospective admission gates are preventing rescue complexity and low-value identity consumption.",
-      "ABSENT_SIGNAL is now explicitly separated from EXPLAINED_BY_REDUCTION.",
-      "Negative/terminal preservation and NO_OP_BY_DESIGN are productive scientific outcomes rather than reasons to force new work."
+      "The canonical NI01 evidence chain and terminal token remain valid even while the programme-level mechanistic interpretation is narrowed.",
+      "Future comparator symmetry must explicitly include task/world/regime-label privilege in addition to information, readout and resource matching.",
+      "ABSENT_SIGNAL remains distinct from EXPLAINED_BY_REDUCTION, and a prospective positive candidate-signal gate is required for future mechanistic reduction claims where scientifically meaningful.",
+      "The two-axis lineage reduction ladder is now the appropriate prospective novelty bar: history/influence reductions plus learning/locality reductions."
     ]
+  },
+  "authoritative_refs": {
+    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "control_brain_parent": "10eb4206fb0c998fcdbc40c0e16f38829ea5d41e",
+    "evidence_analyst": "8ee6d305acdc8310335e65c5bd3f35d121f35280",
+    "orchestrator_report_branch": "44284b5de7240bd794633ec5d1543c22dfb216f4",
+    "external_research_audit_branch": "8acd3ef2f0dfc9d0d4d95c5009a09b53b0883ba2",
+    "human_directives": "11b32af792fd974508819d4018292e228d52f88d"
   },
   "external_input": {
     "literature": {
-      "handoff_head": "d00b6616d2f4fe674b9abe7ccfab1c98abe0452a",
-      "latest_generated_jst": "2026-09-18T04:30:00+09:00",
-      "status": "STALE",
-      "consumed": true,
-      "impact": "PSR, epsilon-machine/causal-state, recurrent/reservoir/fading-memory and learned/extracted finite-state baselines continue to narrow novelty; local/pre-semantic/history-derived/emergent state alone is insufficient."
-    },
-    "audit": {
-      "handoff_head": "d00b6616d2f4fe674b9abe7ccfab1c98abe0452a",
-      "latest_generated_jst": "2026-09-18T22:32:00+09:00",
+      "handoff_head": "8acd3ef2f0dfc9d0d4d95c5009a09b53b0883ba2",
+      "latest_generated_jst": "2026-09-19T09:32:00+09:00",
       "status": "HEALTHY",
       "consumed": true,
-      "impact": "PD01 one-way integrity stands, but programme synthesis is absent registered candidate signal plus comparator-not-worse rather than strong mechanistic reservoir reduction; Evidence Analyst has now consumed this result."
+      "impact": "Causal/event-structure formalisms, causally consistent dynamic slicing and contemporary local/online credit mechanisms strengthen a two-axis reduction ladder. LP01 stays closed and no literature-driven successor is authorized."
+    },
+    "audit": {
+      "handoff_head": "8acd3ef2f0dfc9d0d4d95c5009a09b53b0883ba2",
+      "latest_generated_jst": "2026-09-19T10:32:25+09:00",
+      "status": "HEALTHY",
+      "consumed": true,
+      "classification": "WEAKENED",
+      "impact": "NI01 canonical FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION remains contract-valid and the integrity chain is robust-so-far, but the comparator has explicit world-label privilege via world-specific thresholds. Programme interpretation is limited to no registered incremental native advantage over world-conditioned confidence abstention; equal-privilege mechanistic reduction is not established and no novelty support is restored.",
+      "evidence_analyst_consumed": false,
+      "knowledge_flow_note": "The latest Analyst handoff at 10:02 predates the 10:32 audit; next-cycle consumption is required."
     }
   },
   "sub": {
     "mode": "no_op",
     "classification": "NO_OP_BY_DESIGN",
     "incubator_ran": false,
-    "assessment": "No independent formal lane or admissible incubator target existed; SUB correctly avoided disguised MAIN assistance."
+    "evidence_analyst_classification": "NO_ACTION",
+    "assessment": "No independent formal lane/fallback or safe distinct incubator target exists. SUB correctly avoided MAIN admission work, future causal-credit critical-path construction, consumed-line rescue and literature-driven successor engineering."
+  },
+  "human_directives": {
+    "HUMAN-20260918-001": {
+      "ref": "ops/human_directives/active.md@11b32af792fd974508819d4018292e228d52f88d",
+      "disposition": "ACCEPT",
+      "disposition_changed": false,
+      "reasoning": "Outcome-independent CX comparator substrate may be useful on main, but only after neutral extraction from research-specific semantics with fresh current-main review and CI; wholesale branch promotion is neither requested nor appropriate.",
+      "routing": "Repository Steward / ordinary PR maintenance may continue to audit small neutral extraction candidates; do not promote consumed evidence, hypothesis-dependent mechanisms, candidate-specific scorers, thresholds or one-way execution semantics.",
+      "reconsideration_condition": null
+    }
   },
   "fleet": {
     "fleet_status": "YELLOW",
     "critical_failures": [],
     "operational_defects": [
-      "Literature role-specific stream has not advanced since 2026-09-18 04:30 JST.",
-      "Authoritative tag namespaces lack server-side ruleset protection; this is repository governance debt, not a scheduler mutation for Control Brain.",
-      "RELAY-to-Control/Steward timing remains a possible collision and observability risk."
+      "The 10:32 NI01 Independent Audit is not yet consumed by Evidence Analyst because it arrived after the 10:02 Analyst cycle; this is a one-cycle knowledge-flow lag.",
+      "Research Orchestrator Relay at :45 repeatedly crowds the combined Control/Steward :50 slot, creating avoidable observability/collision pressure across at least three Control cycles.",
+      "Authoritative evidence/freeze/formal/sealed tag namespaces still lack server-side ruleset protection; main is also unprotected."
     ],
     "efficiency_findings": [
-      "MAIN and SUB NO_OP_BY_DESIGN behavior is appropriate while there is no high-value object.",
-      "Stop/reframe control is avoiding needless one-way identity consumption."
+      "MAIN PRIMARY, Relay and SUB no-op behavior is appropriate while NO_HIGH_VALUE_OBJECT holds; no cadence increase is justified merely to create activity.",
+      "External Literature persistence is healthy again at 09:32 and External Audit advanced at 10:32.",
+      "A semantics-neutral Relay offset move from :45 to :40 remains the cleanest scheduler improvement once the full registry transaction can be completed safely."
     ],
     "scheduler_classification": {
+      "control_repository_steward": "HEALTHY",
       "evidence_analyst": "HEALTHY",
       "main_primary": "NO_OP_BY_DESIGN",
       "main_relay": "NO_OP_BY_DESIGN",
       "sub": "NO_OP_BY_DESIGN",
-      "external_literature": "FAILED_OR_INCOMPLETE",
+      "external_literature": "HEALTHY",
       "external_audit": "HEALTHY",
-      "repository_steward": "HEALTHY"
+      "current_state_brief": "HEALTHY"
     },
+    "literature_consumed_by_control": true,
+    "audit_consumed_by_control": true,
+    "literature_consumed_by_evidence_analyst": true,
+    "audit_consumed_by_evidence_analyst": false,
     "recommended_scheduler_changes": [
-      "Repair Literature persistence before increasing science cadence.",
-      "If schedule maintenance is undertaken elsewhere, widen RELAY-to-Control/Steward spacing toward about 10 minutes."
+      "Move SparkBrain Research Orchestrator Relay from hourly :45 to :40 only when the full ops/scheduler-registry PRE_CHANGE -> live mutation -> independent live reread -> current/manifest -> APPLIED transaction can be completed in one run.",
+      "Do not accelerate MAIN/SUB/Analyst cadence while the programme is in NO_HIGH_VALUE_OBJECT hold."
     ]
+  },
+  "scheduler_controller_action": "BLOCKED",
+  "scheduler_controller": {
+    "candidate_task_id": "6aaba7c85034819198e3b91eb58556d0",
+    "candidate_task_title": "SparkBrain Research Orchestrator Relay",
+    "reason": "Repeated Relay-to-Control/Steward overlap/observability pressure across at least three Control cycles; moving the Relay five minutes earlier is semantics-neutral and does not alter research authority or cadence.",
+    "before_schedule": "BEGIN:VEVENT\nDTSTART;TZID=Asia/Tokyo:20260917T184500\nRRULE:FREQ=HOURLY;BYMINUTE=45;BYSECOND=0\nEND:VEVENT",
+    "intended_after_schedule": "BEGIN:VEVENT\nDTSTART;TZID=Asia/Tokyo:20260917T184000\nRRULE:FREQ=HOURLY;BYMINUTE=40;BYSECOND=0\nEND:VEVENT",
+    "repeated_evidence_cycles": 3,
+    "in_flight_one_way_experiment": false,
+    "registry_head_observed": "691c9247e98de48b37fe456b8cd25d2585b73461",
+    "live_registry_semantic_drift_found": false,
+    "blocker": "The strict registry protocol requires an independent post-mutation live scheduler reread before current/manifest and APPLIED persistence. After the current-turn fleet read, the available automation interface does not expose a separate safe reread operation without violating the runtime no-repeat-list constraint. No partial mutation is permitted.",
+    "pre_change_written": false,
+    "live_mutation_performed": false,
+    "registry_modified": false,
+    "registry_out_of_sync": false
   },
   "repository_doctrine": {
     "status": "PARTIAL_COMPLIANCE_IMPROVING",
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "evidence_tag_count": 5,
     "legacy_freeze_branch_count": 13,
+    "formal_tag_count": 0,
+    "sealed_tag_count": 0,
+    "freeze_tag_count": 0,
     "ruleset_count": 0,
     "main_protected": false,
+    "issue_139": "CURRENT",
     "open_pr_review": {
       "148": "DEFER_PENDING_REVIEW_FIX",
       "149": "DEFER_PENDING_REVIEW_FIX"
-    }
+    },
+    "immutable_refs_untouched": true
   },
-  "top_priority": "Do not formalize a new central object. Have Evidence Analyst perform a read-only NI01 absent-signal-versus-reduction audit and keep LP01 closed unless a native causal object independently emerges.",
+  "top_priority": "Have Evidence Analyst consume the 10:32 NI01 audit and narrow programme synthesis to no registered incremental native advantage over world-conditioned confidence abstention while adding task/world/regime-label privilege symmetry to future comparator admission; do not reopen NI01 or manufacture a new central object.",
   "direction_to_evidence_analyst": [
-    "Do not authorize a new central formal object solely to maintain activity.",
-    "Audit NI01 read-only for ABSENT_SIGNAL versus EXPLAINED_BY_REDUCTION; do not rerun, retune, or mutate its evidence.",
-    "For any future central object, require native causal path, prospectively positive signal, non-privileged effect, nontrivial ordinary-mechanism reduction resistance, and resource/readout symmetry before formalization."
+    "Consume the 2026-09-19 10:32 NI01 Independent Audit explicitly on the next cycle.",
+    "Do not change the canonical NI01 terminal token or evidence. Programme-level wording should become NO_REGISTERED_INCREMENTAL_NATIVE_ADVANTAGE_OVER_WORLD_CONDITIONED_CONFIDENCE_ABSTENTION; equal-privilege mechanistic reduction is not established.",
+    "Add explicit task/world/regime-label privilege to future symmetry checks alongside information, readout and resources.",
+    "Keep ABSENT_SIGNAL separate from EXPLAINED_BY_REDUCTION and require a prospectively fixed positive candidate-signal gate for future mechanistic reduction claims where meaningful.",
+    "Keep LP01 closed and do not authorize a new central formal object solely because MAIN/SUB are idle.",
+    "For any future lineage/causal-credit object, require prospective survival of the two-axis reduction ladder plus preemption/overdetermination and ancestry-preserving responsibility-changing interventions with fixed numeric falsifiers."
+  ],
+  "ranked_priorities_12_48h": [
+    "Evidence Analyst consumes and integrates the NI01 privilege-asymmetry audit.",
+    "Maintain architecture/testbed HOLD with no new formal identity absent a genuinely fresh object clearing the strengthened admission gate.",
+    "Apply the two-axis lineage reduction ladder prospectively to any independently arising future object.",
+    "Optionally compute a non-canonical read-only global-threshold NI01 sensitivity only if it materially informs future contract design and without modifying terminal evidence.",
+    "Keep neutral main-promotion work secondary and resolve PR #148/#149 review blockers before promotion."
+  ],
+  "stop_reframe_conditions": [
+    "Never rerun, retune, rescore or reopen consumed NI01/PD01/H5/C19 identities.",
+    "Do not label absent candidate signal as a mechanistic reduction.",
+    "Do not count ancestry retention, trace influence, locality, online operation, spiking implementation or persistent state as novelty without survival of matched ordinary baselines.",
+    "If no native intervention-validated lineage-responsibility object independently appears and clears the admission bar, continue SparkBrain as an experimental cognitive architecture/testbed rather than inventing a new central mechanism."
   ]
 }
