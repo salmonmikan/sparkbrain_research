@@ -1,99 +1,98 @@
 {
-  "timestamp": "2026-09-20T06:57:00+09:00",
+  "timestamp": "2026-09-20T07:16:30+09:00",
   "worker_role": "main",
   "execution_mode": "RELAY",
-  "analyst_commit": "eb1c305017d32c8c3efb0794e547b889e5a80461",
+  "analyst_commit": "7e7d425948a86d0eec306b1a75bfc07165d9afa1",
   "research_layer": "ARCHITECTURE_STUDY",
-  "current_lane": "REFRACTORY_CURRENT_ACCOUNTING_ARCHITECTURE_STUDY_CYCLE1_REPLACEMENT_WORKFLOW_IN_PROGRESS",
+  "current_lane": "REFRACTORY_CURRENT_ACCOUNTING_ARCHITECTURE_STUDY_CYCLE1_COMMENT_DETECTOR_REPAIRED_EXACT_HEAD_WORKFLOWS_IN_PROGRESS",
   "candidate_question": {
     "id": "CAND-REFRACTORY-CURRENT-ACCOUNTING-01",
-    "evidentiary_status": "NON_EVIDENTIARY_PENDING_REPLACEMENT_EXACT_HEAD_WORKFLOW",
+    "evidentiary_status": "NON_EVIDENTIARY_PENDING_EXACT_HEAD_WORKFLOWS",
     "valid_architecture_outcomes": 0
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst_handoff": "eb1c305017d32c8c3efb0794e547b889e5a80461",
+    "evidence_analyst_handoff": "7e7d425948a86d0eec306b1a75bfc07165d9afa1",
     "research_branch": "research/main-refractory-current-accounting-arch-study-20260920",
-    "failed_exact_head": "4ac9aeead78ec8d053291f922096fab7e31f6070",
-    "current_research_head": "ac5f4d5ef59bafaafe046130d21d3bed27a677a4",
+    "prior_research_head": "ac5f4d5ef59bafaafe046130d21d3bed27a677a4",
+    "current_research_head": "4589192d927e40cf7a05cf8a94207efb42ebbc65",
     "prospective_contract_commit": "c32ec231e217f4229b761f2ccf426f3ecd7ed582",
-    "harness_commit": "e5aab6e64386a8494da469cc43fd378e4a318251",
-    "mechanical_fix_commit": "ac5f4d5ef59bafaafe046130d21d3bed27a677a4",
+    "contract_blob": "957b8ad5c22e3485dfedf8cf9052a234a63102aa",
+    "detector_repair_commit": "4589192d927e40cf7a05cf8a94207efb42ebbc65",
     "source_blobs": {
       "src/sparkbrain/v04/field.py": "e2279d69cd04030238317361d5ee3abdc1009c32",
       "src/sparkbrain/v04/contracts.py": "9d3ae216a518ff6d409a67cd02f34f1dc20a8ab8",
-      "src/sparkbrain/v04/topology.py": "9129161bd2e7f7cd0ec70684e176700f128d4a6b"
+      "src/sparkbrain/v04/topology.py": "9129161bd2e7f7cd0ec70684e176700f128d4a6b",
+      "tests/v04/test_v04_field.py": "08128a255b09d996160211f598d6f0a64d91ead0",
+      "docs/THEORY_SPEC_v0.4.md": "4040aca59b32d8cd3c72dc0df64b55f434a42351",
+      "docs/V04_STATUS.md": "f75d9c27f2c1cc906ea480c925c08868d1c08ef4"
     }
   },
   "lease_collision_reconciliation": {
-    "inherited_execution_mode": "PRIMARY",
-    "inherited_status": "WAITING_EXTERNAL",
-    "inherited_heartbeat_at": "2026-09-20T06:24:00+09:00",
+    "inherited_execution_mode": "RELAY",
+    "inherited_status": "RUNNING",
+    "inherited_heartbeat_at": "2026-09-20T06:49:00+09:00",
+    "inherited_lease_stale_at_run_start": true,
     "fresh_primary_running_collision": false,
-    "research_head_unchanged_before_relay_mutation": true,
     "stable_main_matches_analyst": true,
-    "analyst_authority_unchanged": true,
+    "research_head_matches_prior_main_report_before_mutation": true,
+    "fresh_analyst_authority_advanced": true,
     "sub_collision_found": false,
-    "sub_latest_independent_target": "OUTCOME_CREDIT_SLOT_OVERWRITE_DISCOVERY_CYCLE1",
     "relay_lease_acquired_before_research_mutation": true,
-    "relay_lease_acquisition_commit": "768f0ccdded0401bdc25e97eb49ad18298b3c4e7"
+    "relay_lease_acquisition_commit": "da7e9b1647f7e87a1bea1cd4665a03d5cdb413c7"
   },
   "contingency_consumed": {
-    "name": "PRE_START_MECHANICAL_BLOCKER",
-    "basis": "Both failed exact-head runs stopped at Ruff lint before readiness/tests/preflight or any Architecture outcome-bearing job; Architecture job was skipped.",
-    "observed_blocker": [
-      "E501 line 141 in refractory_current_accounting_cycle1_20260920.py",
-      "E501 line 314 in refractory_current_accounting_cycle1_20260920.py",
-      "E501 line 318 in refractory_current_accounting_cycle1_20260920.py",
-      "E501 line 319 in refractory_current_accounting_cycle1_20260920.py"
-    ],
+    "name": "PRE_START_COMMENT_DETECTOR_REPRESENTATION_BLOCKER",
+    "basis": "Architecture workflow 35471788666 passed lint and ordinary tests but both exact-head jobs failed only at Verify prospective binding; the Architecture outcome-bearing job was skipped and no diagnostic outcome was visible.",
+    "observed_blocker": "The contract binds one continuous source-comment sentence while the exact immutable source blob stores the same sentence over two adjacent full-line # comments; raw substring matching therefore returned a deterministic false negative.",
+    "authorized_repair": "Normalize/extract only the already-bound full-line comment content; preserve the exact source blob, contract meaning, scientific bindings and terminal mapping.",
     "outcome_visibility_before_fix": false
   },
   "critical_path_actions_performed": [
-    "Read latest Evidence Analyst handoff, MAIN latest/state/lease/history, and SUB latest for collision avoidance.",
-    "Re-fetched stable main, active research branch/head, failed Architecture workflow 35470259892, failed ordinary CI 35470259884, and exact failure logs.",
-    "Confirmed both failures were pre-diagnostic Ruff E501-only mechanical blockers and the Architecture outcome-bearing job was skipped.",
+    "Read fresh Evidence Analyst handoff 7e7d425948a86d0eec306b1a75bfc07165d9afa1 and existing MAIN latest/state/lease.",
+    "Re-fetched exact research branch ac5f4d5ef59bafaafe046130d21d3bed27a677a4 and Architecture workflow 35471788666 as completed/failure at Verify prospective binding only with architecture-study skipped.",
+    "Confirmed stable main and exact immutable source/comment representation match the Analyst diagnosis.",
     "Acquired RELAY MAIN lease before research mutation.",
-    "Applied only parenthesized line wrapping to the four overlong harness expressions; no scientific or protocol semantic was changed.",
-    "Re-fetched current research head ac5f4d5ef59bafaafe046130d21d3bed27a677a4.",
-    "Collected replacement ordinary CI 35471788678 as completed/success and replacement Architecture workflow 35471788666 as in_progress.",
-    "Stopped under WAITING_EXTERNAL policy rather than remaining occupied waiting for the external Architecture workflow."
+    "Changed only the Architecture harness comment-presence detector: normalize adjacent full-line # comments by stripping markers/outer whitespace and joining the block, then match the already-bound contract sentence exactly.",
+    "Verified the resulting commit 4589192d927e40cf7a05cf8a94207efb42ebbc65 changes one harness file only (+20/-1) and does not alter production source or the prospective contract.",
+    "Collected newly triggered ordinary CI 35472786733 and Architecture workflow 35472786687 on the exact new head; both were in_progress at checkpoint.",
+    "Stopped under WAITING_EXTERNAL policy rather than waiting on external workflows."
   ],
   "workflow_experiments": {
-    "failed_architecture_workflow": {
-      "run_id": 35470259892,
-      "head": "4ac9aeead78ec8d053291f922096fab7e31f6070",
+    "prior_architecture_workflow": {
+      "run_id": 35471788666,
+      "head": "ac5f4d5ef59bafaafe046130d21d3bed27a677a4",
       "status": "completed",
       "conclusion": "failure",
-      "failure_stage": "exact-head lint",
-      "outcome_job": "skipped"
+      "failure_stage": "VERIFY_PROSPECTIVE_BINDING_ONLY",
+      "outcome_job": "skipped",
+      "outcome_visible": false
     },
-    "failed_ordinary_ci": {
-      "run_id": 35470259884,
-      "head": "4ac9aeead78ec8d053291f922096fab7e31f6070",
-      "status": "completed",
-      "conclusion": "failure",
-      "failure_stage": "lint"
-    },
-    "replacement_ordinary_ci": {
+    "prior_ordinary_ci": {
       "run_id": 35471788678,
       "head": "ac5f4d5ef59bafaafe046130d21d3bed27a677a4",
       "status": "completed",
       "conclusion": "success"
     },
-    "replacement_architecture_workflow": {
-      "run_id": 35471788666,
-      "head": "ac5f4d5ef59bafaafe046130d21d3bed27a677a4",
+    "current_ordinary_ci": {
+      "run_id": 35472786733,
+      "head": "4589192d927e40cf7a05cf8a94207efb42ebbc65",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    "current_architecture_workflow": {
+      "run_id": 35472786687,
+      "head": "4589192d927e40cf7a05cf8a94207efb42ebbc65",
       "status": "in_progress",
       "conclusion": null
     }
   },
   "critical_path_fixes": [
     {
-      "type": "SCIENCE_INVARIANT_MECHANICAL_LINT_FIX",
-      "commit": "ac5f4d5ef59bafaafe046130d21d3bed27a677a4",
+      "type": "SCIENCE_INVARIANT_PRESTART_COMMENT_DETECTOR_NORMALIZATION",
+      "commit": "4589192d927e40cf7a05cf8a94207efb42ebbc65",
       "file": "analysis/architecture/refractory_current_accounting_cycle1_20260920.py",
-      "changes": "Four E501-only line wraps using parentheses; expression values and behavior unchanged."
+      "changes": "Normalize adjacent full-line source comments by stripping # markers/outer whitespace and joining the block; compare the existing bound comment sentence exactly against normalized blocks. No scientific binding or production source changed."
     }
   ],
   "scientific_result": {
@@ -102,7 +101,7 @@
     "new_architecture_terminal_outcome": false,
     "mapped_outcome": null,
     "evidentiary_status": "NON_EVIDENTIARY",
-    "reason": "The first exact-head runs failed before diagnostic execution; the replacement Architecture workflow is still in progress."
+    "reason": "The prior failure was pre-outcome; the repaired exact-head workflows are still external/in progress."
   },
   "consumed_identities": [
     "c19-external-v2-official-v4",
@@ -114,10 +113,11 @@
     "H5 official-v1"
   ],
   "integrity_state": {
-    "status": "REPLACEMENT_EXACT_HEAD_ARCHITECTURE_WORKFLOW_IN_PROGRESS",
+    "status": "COMMENT_DETECTOR_REPAIRED_EXACT_HEAD_WORKFLOWS_IN_PROGRESS",
     "exact_main_verified": true,
     "exact_research_head_verified": true,
     "prospective_contract_unchanged": true,
+    "source_blobs_unchanged": true,
     "production_source_modified_this_run": false,
     "input_family_modified_this_run": false,
     "comparator_modified_this_run": false,
@@ -139,22 +139,35 @@
     "immutable evidence/control/preserve refs",
     "SUB-reserved independent work",
     "official TEST/formal scorer surfaces",
+    "completed suppression artifact/terminal",
+    "completed Assembly cross-cascade current question",
+    "completed Temporal and topology-config current questions",
+    "Top-k same-object cycle 3",
     "Utility-owned decisions/results/state",
     "scheduler definitions"
   ],
   "outcome_contingencies": {
-    "PRE_START_MECHANICAL_BLOCKER": "SCIENCE_INVARIANT_FIX_BEFORE_OUTCOME_ONLY_THEN_REBIND_AND_CI",
+    "PRE_START_COMMENT_DETECTOR_REPRESENTATION_BLOCKER": "NORMALIZE_OR_EXTRACT_ALREADY_BOUND_COMMENT_ONLY_THEN_REBIND_AND_CI",
+    "PREFLIGHT_GREEN_UNCHANGED_CONTRACT": "EXECUTE_EXACTLY_ONE_FIXED_NON_EVIDENTIARY_REFRACTORY_ARCHITECTURE_CYCLE",
+    "ANY_OTHER_MACHINE_FACT_FAILURE": "STOP_TO_FRESH_ANALYST",
     "PRE_START_SEMANTIC_OR_PROTOCOL_GAP": "STOP",
-    "VALID_ARCHITECTURE_TERMINAL": "VERIFY_FIXED_BINDINGS_APPLY_FIXED_MAPPING_AND_STOP_FOR_FRESH_ANALYST_REVIEW",
-    "POST_RESULT_REPAIR_OR_REDESIGN": "STOP"
+    "EXPLICIT_NETTING_CONTRACT_MATCHES_PRODUCTION": "STOP_ARCHITECTURE_API_NOTE_ONLY",
+    "NO_SUPPORTED_MIXED_SIGN_RUNTIME_CONDITION": "STOP_REJECT_RUNTIME_RELEVANCE_CLAIM",
+    "STATE_ONLY_REFRACTORY_ACCOUNTING_EFFECT": "STOP_ARCHITECTURE_STATE_SEMANTICS_ONLY",
+    "FUNCTIONAL_REFRACTORY_ACCOUNTING_EFFECT": "STOP_FRESH_ARCHITECTURE_REVIEW_NO_AUTO_PRE_FORMAL",
+    "NO_SEMANTIC_DIFFERENCE_UNDER_FIXED_PROBE": "STOP_REJECT_CURRENT_FUNCTIONAL_QUESTION",
+    "MIXED_OR_AMBIGUOUS_REFRACTORY_CONTRACT": "STOP_HOLD",
+    "INVALID_DIAGNOSTIC": "DISCARD_AND_STOP",
+    "POST_OUTCOME_FAILURE_OR_REDESIGN_DESIRE": "STOP_NO_RESULT_DEPENDENT_REPAIR",
+    "FORMAL": "UNARMED_NO_FORMAL_OBJECT"
   },
   "utility_request_created": null,
-  "stop_reason": "REPAIRED_PRE_START_MECHANICAL_LINT_BLOCKER_REPLACEMENT_ARCHITECTURE_WORKFLOW_IN_PROGRESS",
-  "next_MAIN_action": "Re-fetch fresh Evidence Analyst authority, MAIN lease, exact research head ac5f4d5ef59bafaafe046130d21d3bed27a677a4, successful ordinary CI 35471788678, and Architecture workflow 35471788666. If the Architecture workflow yields a valid artifact, verify exact head/source/contract/machine-fact/artifact/raw binding, apply the prospectively fixed terminal mapping once, persist the NON_EVIDENTIARY Architecture result, and STOP for fresh Analyst review. Do not automatically continue to cycle 2, PRE_FORMAL, FORMAL, semantic repair, or post-outcome redesign.",
+  "stop_reason": "PREFLIGHT_COMMENT_DETECTOR_REPAIRED_NEW_EXACT_HEAD_WORKFLOWS_IN_PROGRESS",
+  "next_MAIN_action": "Re-fetch fresh Evidence Analyst authority, exact research head 4589192d927e40cf7a05cf8a94207efb42ebbc65, ordinary CI 35472786733, and Architecture workflow 35472786687. If every existing prospective binding passes and a valid artifact exists, verify exact head/source/contract/machine-fact/artifact/raw binding, apply the prospectively fixed terminal mapping once, persist the NON_EVIDENTIARY Architecture result, and STOP for fresh Analyst review. If any other machine fact fails or a semantic/protocol change is required, STOP. Do not automatically continue to cycle 2, PRE_FORMAL, FORMAL, semantic repair, or post-outcome redesign.",
   "persistence_result": {
-    "lease_acquisition_commit": "768f0ccdded0401bdc25e97eb49ad18298b3c4e7",
-    "latest_md_commit": "b260479b6909478a81a20e49ee97cab91b3567d6",
-    "history_path": "reports/orchestrator/history/2026-09-20/0657-main.md",
+    "lease_acquisition_commit": "da7e9b1647f7e87a1bea1cd4665a03d5cdb413c7",
+    "latest_md_commit": "1015c0069bab04abbd71e53ed7d51a4dc776516e",
+    "history_path": "reports/orchestrator/history/2026-09-20/0716-main.md",
     "state_json": "this update",
     "final_lease": "pending final update",
     "force_push_used": false
