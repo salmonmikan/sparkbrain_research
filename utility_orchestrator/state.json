@@ -1,7 +1,22 @@
 {
-  "status": "IDLE",
-  "assignment_id": null,
-  "run_count": 0,
-  "updated_at": null,
-  "last_result": null
+  "status": "COMPLETED",
+  "assignment_id": "CTRL-20260919-1850-ARCH-SIGNAL-ROBUSTNESS",
+  "run_count": 1,
+  "updated_at": "2026-09-19T19:27:21+09:00",
+  "last_result": "utility_orchestrator/results/2026-09-19/CTRL-20260919-1850-ARCH-SIGNAL-ROBUSTNESS-1927.md",
+  "evidentiary_status": "NON_EVIDENTIARY_METHODOLOGY_DIAGNOSTIC",
+  "diagnostic_classification": "MIXED",
+  "methodology_recommendation": "ADD_PER_STRATUM_SUPPORT",
+  "stop_reason": "COMPLETED_ONE_BOUNDED_RESULT_MAX_RUNS_REACHED",
+  "follow_up_request": null,
+  "integrity": {
+    "scientific_workflow_rerun": false,
+    "training_or_probe_rerun": false,
+    "test_accessed": false,
+    "formal_or_consumed_evidence_accessed": false,
+    "research_branch_mutated": false,
+    "immutable_evidence_mutated": false,
+    "scheduler_mutated": false,
+    "canonical_cycle1_result_reclassified": false
+  }
 }
