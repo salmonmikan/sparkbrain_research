@@ -1,210 +1,113 @@
 {
-  "timestamp": "2026-09-20T00:00:28+09:00",
+  "timestamp": "2026-09-20T01:15:21+09:00",
   "new_repository_evidence": false,
+  "new_lower_funnel_result": true,
   "allocation_changed": true,
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "main_protected": false,
-    "evidence_tags": [
-      "evidence/c19-official-v4-c19-external-v2-official-v4",
-      "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
-      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1",
-      "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1",
-      "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1"
-    ],
+    "evidence_tags": ["evidence/c19-checkpoint-selector-v4", "evidence/c19-r2-fsa", "evidence/h5-event-routing-work-reduction", "evidence/ni01-native-ignition", "evidence/pd01-persistence-discriminant"],
+    "evidence_tag_count": 5,
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
     "freeze_tag_count": 0,
     "legacy_freeze_branch_count": 13,
-    "research_refs": {
-      "assembly_architecture": "7d9b90e58ee088ff2b4187d3c62c5e568148e6aa",
-      "topk_architecture": "04ced2b97ed088bb2cdb086d164a86212741e601",
-      "latest_sub_discovery": "7aa5d681a400173c09c55603a459d63a6aaf7b43"
-    },
-    "control_refs": {
-      "h5_started": "058e90227cd48e1c10c6ecbaed01efdec1217d0e"
-    },
-    "preserve_refs": {
-      "h5_raw": "ce5797eb584344db7a512e585506fb6c59ea475b"
-    },
-    "workflow_ci": {
-      "assembly_cycle1": {
-        "run_id": 35448815310,
-        "head": "7d9b90e58ee088ff2b4187d3c62c5e568148e6aa",
-        "status": "completed",
-        "conclusion": "success"
-      },
-      "sub_temporal_batching": {
-        "run_id": 35449503678,
-        "head": "7aa5d681a400173c09c55603a459d63a6aaf7b43",
-        "status": "completed",
-        "conclusion": "success"
-      }
-    },
-    "issue_139": "open",
     "repository_rulesets": 0,
-    "pr_148": {"state": "open", "merged": false, "mergeable": true},
-    "pr_149": {"state": "open", "merged": false, "mergeable": true}
+    "issue_139": "open",
+    "pr_148": {"state": "open", "merged": false},
+    "pr_149": {"state": "open", "merged": false}
   },
-  "control_brain": {
-    "latest_commit_consumed": "9ebfad73aca4c4a40d6c46b0c4713cf15f5317d2",
-    "branch_tip_observed": "c737fbcbcbceacdd906780fcb7f020658cd19422",
-    "doctrine": "FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL",
-    "role": "strategic_prior_only"
-  },
+  "control_brain": {"commit_consumed": "3b2ff0f8ecb845c486b6e5806d58c36df24657de", "role": "strategic_prior_only"},
   "main_report": {
-    "commit_consumed": "63b5734053d75520154cce83997bac9bd9d31417",
-    "orchestrator_branch_tip_observed": "0f58d63f321fa5bb076f09f1f70b4db743843438",
-    "timestamp": "2026-09-19T23:48:30+09:00",
-    "mode": "architecture_study",
-    "candidate": "CAND-ASSEMBLY-PROTOTYPE-LOCKIN-01",
-    "result": "NO_OR_LOW_SUPPORT",
-    "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY"
+    "commit_consumed": "4b80e8cf6c46ae4e771039c0a62c835e7b9a3877",
+    "reported_state": "waiting/pre-result",
+    "current_result_independently_verified": {
+      "workflow": 35451528895,
+      "head": "7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
+      "conclusion": "success",
+      "classification": "FUNCTIONAL_BATCH_PARTITION_EFFECT",
+      "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
+      "contract_sha256": "681c21e31c686be7d8beb10e927ef65510ce82689c2cc81ae5fd9fedc179c06d",
+      "artifact_id": 10587410697
+    }
   },
   "sub_report": {
-    "commit_consumed": "a797612f3540d5080360b8ff758f3f4fb28dafdf",
-    "timestamp": "2026-09-19T23:46:00+09:00",
+    "commit_consumed": "f61e48079a3359ea7b1aa2c5fba8b83ccf9205ce",
+    "timestamp": "2026-09-20T00:41:00+09:00",
     "operating_mode_observed": "discovery",
-    "candidate": "TEMPORAL_EXPECTATION_BATCH_PARTITION_SENSITIVITY_DISCOVERY",
+    "candidate": "FIELD_SOURCE_LINEAGE_CAP_PERMUTATION_SENSITIVITY_DISCOVERY",
+    "research_head": "21af9d2a5546cc081f4fe4472540ab8a17760c7c",
+    "workflow": 35452444346,
     "evidentiary_status": "NON_EVIDENTIARY",
-    "recommendation_observed": "PROMOTE_TO_ARCHITECTURE_STUDY"
+    "recommendation_observed": "REJECT"
   },
   "sub_discovery_review": {
-    "classification": "PROMOTE_TO_ARCHITECTURE_STUDY",
-    "candidate_id": "CAND-TEMPORAL-BATCH-PARTITION-01",
-    "reason": "Current ingest_pulses semantics observe every pulse in a batch before expectation polling, so API partitioning can change omission generation. Current repository callsites include both per-pulse and multi-time batched ingestion, making this an architecture/API reproducibility question rather than a purely synthetic curiosity.",
-    "formal_boundary": "Discovery result remains NON_EVIDENTIARY and may not be relabeled or reused as a formal success surface."
+    "classification": "REJECT",
+    "candidate_id": "CAND-FIELD-SOURCE-LINEAGE-CAP-01",
+    "reason": "Enqueue order changes only bounded retained source-ID provenance and full serialized hash; physical spike observables/state are invariant and current production code has no source-ID consumer that changes dynamics.",
+    "formal_boundary": "NON_EVIDENTIARY; no cycle2 and no promotion."
   },
   "external_input": {
     "literature": {
-      "commit_consumed": "2ff131d05cbb7a6b61db005a384e0808ec8dac07",
-      "changed_since_prior_analyst": false,
-      "latest_finding": "Top-k ordinary reduction ladder includes border-collision/branch-basin selection and recurrent WTA hysteresis.",
-      "affected_lines": ["CAND-TOPK-PA-01"],
-      "allocation_effect": "none; Top-k remains HOLD after MIXED cross-seed Utility result"
+      "commit_consumed": "96dd0cd2fb9a932d29ddfecf7c791b122f6461bb",
+      "changed_since_prior_analyst": true,
+      "latest_finding": "Temporal batching sensitivity reduces first to discrete-event scheduling/batching semantics and online-vs-batch stream processing; canonical event-time semantics are the engineering direction.",
+      "affected_lines": ["CAND-TEMPORAL-BATCH-PARTITION-01"],
+      "allocation_effect": "close current Architecture cycle at HOLD; no PRE_FORMAL promotion"
     },
     "audit": {
       "commit_consumed": "c24ec86447a0030cbe1d072bf8796f8f78f7b2dd",
       "changed_since_prior_analyst": false,
-      "latest_finding": "H5 one-way chain and registered terminal FAIL are robust; interpretation is limited to the exact aggregate work contract because eager all-edge eligibility maintenance dominates work.",
+      "latest_finding": "H5 chain robust; exact registered aggregate-work implementation failed, but eager all-edge eligibility maintenance limits generalization.",
       "affected_lines": ["H5", "future_efficiency_contracts"],
       "allocation_effect": "none; H5 remains consumed/closed"
+    },
+    "methodology": {
+      "commit_consumed": "fdf51b3f60b638e6beb41b9decbd5cf3397f09e5",
+      "changed_since_prior_analyst": false,
+      "overall": "WELL_CALIBRATED",
+      "effect": "retain hard FORMAL floor, four-layer funnel, claim separation, stop-after-cycle review, and prospective support-aware Architecture gates"
     }
-  },
-  "methodology_input": {
-    "commit_consumed": "ef2f075ec279d4095d54791625a436cca605c0e2",
-    "branch_tip_observed": "930b0da2d48d7e63d52037d33d3483cfb7cec361",
-    "changed_since_prior_analyst": true,
-    "overall": "WELL_CALIBRATED",
-    "effect": "retain hard FORMAL floor, four-layer funnel, claim-type separation, stop-after-cycle review, and prospective support-aware Architecture gates; do not fit universal support thresholds to completed Top-k outcomes"
   },
   "repository_steward": {
-    "latest_commit_consumed": "24fb37b45e0d30ccfe89f1909107a71fb21fecab",
-    "branch_tip_observed": "7f77044f3159e7db15b45c9a471ae983c2a64284",
+    "branch_tip_observed": "0c1b41ee7f2d8600688169db1fd6a5c90efb6f62",
     "state_path": "reports/repository_steward/state.json",
     "state_blob_observed": "db11614ddb823979fbd422a9c858b798fb4b7467",
-    "timestamp": "2026-09-19T19:50:00+09:00",
+    "state_timestamp": "2026-09-19T19:50:00+09:00",
     "role": "governance_advisory_only"
   },
-  "utility_input": {
-    "topk_cross_seed_support": {
-      "assignment_id": "CTRL-20260919-2250-TOPK-CROSS-SEED-SUPPORT",
-      "status": "COMPLETED",
-      "classification": "MIXED",
-      "recommendation": "ADD_MORE_ARCHITECTURE_SUPPORT",
-      "leave_one_seed_stable": true,
-      "replicated_supported_magnitude": 0.1,
-      "magnitude_0_1_survives_support_n_ge": [3, 5, 10, 20],
-      "lower_magnitude_support": "UNDER_SUPPORTED_OR_NOT_ASSESSABLE",
-      "leave_one_magnitude_0_1": "SIGNAL_LOST",
-      "cycle1_supported_episodes_high_magnitude": 9,
-      "cycle2_supported_episodes_high_magnitude": 5,
-      "evidentiary_status": "NON_EVIDENTIARY_METHODOLOGY_ARCHITECTURE_DIAGNOSTIC"
-    },
-    "existing_pending_request": "SUB-20260919-2344-TEMPORAL-EXPECTATION-BATCHING-CALLSITE-AUDIT",
-    "analyst_request_created_this_run": null
-  },
   "research_layer_state": {
-    "DISCOVERY": {
-      "state": "OPEN",
-      "owner": "SUB",
-      "status": "NON_EVIDENTIARY"
-    },
-    "ARCHITECTURE_STUDY": {
-      "state": "ACTIVE_PENDING_PROSPECTIVE_BINDING",
-      "owner": "MAIN",
-      "active_candidate": "CAND-TEMPORAL-BATCH-PARTITION-01",
-      "status": "NON_EVIDENTIARY"
-    },
-    "PRE_FORMAL": {
-      "state": "EMPTY_HOLD",
-      "owner": "MAIN",
-      "reason": "no fresh mechanistic/reduction object with sufficient lower-layer support"
-    },
-    "FORMAL": {
-      "state": "EMPTY_HOLD",
-      "owner": "MAIN",
-      "reason": "no fresh identity/STARTED/TEST/scorer/preserve/evidence authority"
-    }
+    "DISCOVERY": {"state": "OPEN", "owner": "SUB", "status": "NON_EVIDENTIARY"},
+    "ARCHITECTURE_STUDY": {"state": "HOLD_NO_ACTIVE_MAIN_OBJECT", "owner": "MAIN", "status": "NON_EVIDENTIARY"},
+    "PRE_FORMAL": {"state": "EMPTY_HOLD", "owner": "MAIN", "reason": "no fresh mechanistic/reduction object with sufficient lower-layer support"},
+    "FORMAL": {"state": "EMPTY_HOLD", "owner": "MAIN", "reason": "no fresh identity/STARTED/TEST/scorer/preserve/evidence authority"}
   },
   "candidate_pool": [
     {
       "id": "CAND-TEMPORAL-BATCH-PARTITION-01",
-      "classification": "ARCHITECTURE_STUDY",
-      "question": "Does API batch partitioning alone change temporal-expectation omission schedules for an identical external timeline, and do those changes propagate into downstream v0.4 field/cascade/action behavior?",
-      "not_rescue_reason": "Fresh API/event-time semantics issue discovered independently by SUB; unrelated to consumed formal lines.",
+      "classification": "HOLD",
+      "question": "Does API call partition alter temporal-expectation omission scheduling and downstream behavior for identical external timelines?",
+      "not_rescue_reason": "Fresh API/event-time architecture issue independent of consumed formal lines.",
       "target_layer": "ARCHITECTURE_STUDY",
-      "expected_information_gain": "HIGH_ARCHITECTURE_REPRODUCIBILITY_LOW_NOVELTY",
-      "ordinary_reduction_risks": [
-        "call-boundary scheduling artifact",
-        "ordinary temporal state-machine semantics",
-        "deadline polling order",
-        "batching contract ambiguity",
-        "downstream differences fully mediated by omission-pulse set"
-      ],
-      "implementation_distance": "NEAR",
-      "scientific_choices_still_open": [
-        "exact harness representation of event-time-causal reference",
-        "raw result schema"
-      ],
-      "exploration_cycle_count": {"DISCOVERY": 1, "ARCHITECTURE_STUDY": 0},
-      "promotion_rejection_condition": "One bounded Architecture cycle only. No automatic PRE_FORMAL path; every valid result returns to Analyst."
+      "expected_information_gain": "RESOLVED_CURRENT_QUESTION_HIGH_ENGINEERING_VALUE_LOW_NOVELTY",
+      "ordinary_reduction_risks": ["discrete-event scheduling", "batching semantics", "online-vs-batch stream processing", "deadline polling order"],
+      "implementation_distance": "COMPLETED_CURRENT_CYCLE",
+      "scientific_choices_still_open": ["fresh API-invariance contract only if independently justified", "fresh downstream reliability scope only if independently justified"],
+      "exploration_cycle_count": {"DISCOVERY": 1, "ARCHITECTURE_STUDY": 1},
+      "promotion_rejection_condition": "Current cycle complete; no cycle2 rescue or automatic PRE_FORMAL. A future object must be freshly specified around API/event-time invariance or reliability."
     },
     {
       "id": "CAND-TOPK-PA-01",
       "classification": "HOLD",
-      "question": "Does the replicated high-magnitude persistent Top-k signal contain a residual beyond ordinary switching/basin/hysteresis/recurrent-transient dynamics?",
-      "not_rescue_reason": "Existing lower-layer characterization; same-object cycle-3 rescue explicitly prohibited.",
+      "question": "Does the replicated high-magnitude Top-k signal contain residual beyond ordinary switching/basin/hysteresis/recurrent-transient dynamics?",
+      "not_rescue_reason": "Existing lower-layer characterization; same-object cycle3 prohibited.",
       "target_layer": "ARCHITECTURE_STUDY",
       "expected_information_gain": "HIGH_IF_FRESH_REDUCTION_OBJECT",
-      "ordinary_reduction_risks": [
-        "hard switching geometry",
-        "border collision",
-        "branch/basin selection",
-        "WTA hysteresis",
-        "within-branch recurrent or non-normal transient gain"
-      ],
+      "ordinary_reduction_risks": ["hard switching geometry", "border collision", "branch/basin selection", "WTA hysteresis", "recurrent/non-normal transient gain"],
       "implementation_distance": "MEDIUM",
-      "scientific_choices_still_open": [
-        "fresh branch/basin discriminator",
-        "matched-state/reset control",
-        "prospective support/uncertainty rule"
-      ],
+      "scientific_choices_still_open": ["fresh reduction discriminator", "matched-state/reset control", "prospective uncertainty rule"],
       "exploration_cycle_count": {"DISCOVERY": 1, "ARCHITECTURE_STUDY": 2, "UTILITY_READ_ONLY": 1},
-      "promotion_rejection_condition": "Utility result is MIXED; remain HOLD. No Top-k cycle3 and no PRE_FORMAL promotion."
-    },
-    {
-      "id": "CAND-ASSEMBLY-PROTOTYPE-LOCKIN-01",
-      "classification": "REJECT",
-      "question": "Does frozen-prototype order sensitivity on a fixed DEV internal-pattern multiset produce robust representation and downstream functional divergence?",
-      "not_rescue_reason": "Fresh Assembly architecture issue, not a consumed-line rescue.",
-      "target_layer": "ARCHITECTURE_STUDY",
-      "expected_information_gain": "RESOLVED",
-      "ordinary_reduction_risks": ["greedy leader clustering", "first-exemplar bias", "generic online clustering path dependence"],
-      "implementation_distance": "COMPLETED",
-      "scientific_choices_still_open": [],
-      "exploration_cycle_count": {"DISCOVERY": 1, "ARCHITECTURE_STUDY": 1},
-      "promotion_rejection_condition": "Observed NO_OR_LOW_SUPPORT on both DEV seeds; reject current stronger functional question and prohibit cycle2 rescue."
+      "promotion_rejection_condition": "Remain HOLD; no cycle3 and no PRE_FORMAL until a genuinely fresh reduction object exists."
     },
     {
       "id": "CAND-H7-RESP-01",
@@ -213,210 +116,56 @@
       "not_rescue_reason": "Must arise independently and cannot be engineered to rescue LP01 or another consumed negative.",
       "target_layer": "PRE_FORMAL",
       "expected_information_gain": "VERY_HIGH_IF_NATIVE_OBJECT_APPEARS",
-      "ordinary_reduction_risks": [
-        "provenance/event structure",
-        "dynamic slicing",
-        "actual-cause solvers",
-        "eligibility/e-prop/cascading traces",
-        "recurrent/plastic state",
-        "local diffusion",
-        "stronger-privilege C3/COMA/RUDDER/TVT ceilings"
-      ],
+      "ordinary_reduction_risks": ["provenance/event structure", "dynamic slicing", "actual-cause solvers", "eligibility/e-prop/cascading traces", "recurrent/plastic state", "local diffusion", "stronger-privilege counterfactual ceilings"],
       "implementation_distance": "FAR_EVENT_DEPENDENT",
       "scientific_choices_still_open": ["candidate mechanism", "matched baseline", "responsibility intervention", "resource contract", "positive-signal gate"],
       "exploration_cycle_count": {},
       "promotion_rejection_condition": "Remain HOLD until a genuinely native mechanism appears independently."
+    },
+    {
+      "id": "CAND-FIELD-SOURCE-LINEAGE-CAP-01",
+      "classification": "REJECT",
+      "question": "Can enqueue order above max_sources_per_unit change retained lineage and state hash while physical field dynamics remain invariant?",
+      "not_rescue_reason": "Fresh bounded synthetic provenance question, independent of consumed lines and MAIN.",
+      "target_layer": "DISCOVERY",
+      "expected_information_gain": "RESOLVED",
+      "ordinary_reduction_risks": ["bounded provenance buffer", "insertion-order retention", "serialization/hash bookkeeping"],
+      "implementation_distance": "COMPLETED",
+      "scientific_choices_still_open": [],
+      "exploration_cycle_count": {"DISCOVERY": 1},
+      "promotion_rejection_condition": "Exact bookkeeping reduction with physical dynamics invariant; no cycle2."
     }
   ],
-  "main_lane": {
-    "name": "TEMPORAL_EXPECTATION_BATCH_PARTITION_ARCHITECTURE_STUDY_CYCLE1",
-    "owner": "MAIN",
-    "claim_type": ["architecture_system_integration_value", "engineering_reproducibility_value"],
-    "evidentiary_status": "NON_EVIDENTIARY",
-    "source_binding": {
-      "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-      "brain_py_blob": "25fd56b082168a9ea71f313023451858d00b6184",
-      "transduction_py_blob": "1b88027fbcc0a1f8506fb644fd251c14039ef8a4",
-      "worlds_py_blob": "0305aa5493c097f58b1fbdbc2bdeccff5dff4f25",
-      "evaluation_py_blob": "9d8bbe91c466eddcd6ecaa1b3ccf65399d4445cd"
-    },
-    "data_authority": "repository reference/development synthetic timelines only",
-    "fixed_timeline_families": [
-      "repetition_train defaults: tick, interval_ms=12, count=8, magnitude=0.85",
-      "noisy_motif_stream defaults: seed=904, repeats=8, noise_per_repeat=4"
-    ],
-    "fixed_tracker": {"tolerance_fraction": 0.3, "min_observations": 3, "alpha": 0.35},
-    "partition_arms": [
-      "WHOLE_BATCH",
-      "MIDPOINT_TWO_BATCH without splitting equal-timestamp groups",
-      "EVENT_TIME_CAUSAL stronger-reference: poll through each external timestamp before observing that timestamp group"
-    ],
-    "final_horizon_ms_after_last_external": 35.0,
-    "downstream_replay": "replay identical external+arm omission schedules on fresh v0.4 with expectations=false, plasticity=false, topology_seed=41",
-    "raw_before_interpretation": true,
-    "outcome_classes": [
-      "NO_BATCH_PARTITION_EFFECT",
-      "SCHEDULER_ONLY_PARTITION_EFFECT",
-      "FUNCTIONAL_BATCH_PARTITION_EFFECT",
-      "MIXED"
-    ],
-    "formal_identity": null,
-    "STARTED": null,
-    "official_TEST_authority": false
-  },
-  "sub_lane": {
-    "name": "BOUNDED_SECONDARY_DISCOVERY",
-    "owner": "SUB",
-    "limit": "at most one independent synthetic/development/read-only question per run",
-    "status": "NON_EVIDENTIARY",
-    "reserved_exclusions": [
-      "CAND-TEMPORAL-BATCH-PARTITION-01",
-      "MAIN blockers",
-      "Top-k cycle3 or branch/basin follow-up",
-      "Assembly or Structural rescue",
-      "H5 reopen",
-      "H7 queue-filler construction",
-      "FORMAL/TEST/scoring/identity surfaces"
-    ]
-  },
+  "main_lane": {"name": "LOWER_FUNNEL_MAIN_HOLD_PENDING_FRESH_OBJECT", "owner": "MAIN", "evidentiary_status": "NO_ACTIVE_EXECUTION_OBJECT", "critical_path_ownership": "all future central Architecture/PRE_FORMAL/FORMAL fixes remain MAIN-owned"},
+  "sub_lane": {"name": "BOUNDED_SECONDARY_DISCOVERY", "owner": "SUB", "max_per_run": 1, "status": "NON_EVIDENTIARY"},
   "sub_fallback": "NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON",
   "outcome_contingencies": {
-    "PRE_START_SPEC_AND_BINDING": {
-      "action": "freeze source blobs, timeline digests, partition semantics, final horizon, replay config, raw schema, and outcome classes before diagnostics",
-      "continue_if": "complete and exact-head CI/readiness green",
-      "otherwise": "STOP_FOR_FRESH_ANALYST"
-    },
-    "PRE_START_BLOCKER_MECHANICAL": {
-      "action": "MAIN may repair science-invariant lint/build/import/harness/CI defects before diagnostic visibility, rerun exact-head checks, continue unchanged"
-    },
-    "PRE_START_SEMANTIC_OR_BINDING_GAP": {
-      "action": "STOP; no substitute protocol in same object"
-    },
-    "INVALID_EVIDENCE_OR_LEAKAGE": {
-      "action": "discard and STOP on TEST/formal/consumed-raw access, timeline mismatch, or unbound source/runtime"
-    },
-    "POST_DIAGNOSTIC_FAILURE": {
-      "action": "STOP; no outcome-responsive repair of partitions, timelines, horizon, tracker parameters, comparator semantics, replay metrics, runtime, or model"
-    },
-    "NO_BATCH_PARTITION_EFFECT": {
-      "action": "REJECT current Architecture concern and STOP"
-    },
-    "SCHEDULER_ONLY_PARTITION_EFFECT": {
-      "action": "retain API semantics/documentation warning only and STOP"
-    },
-    "FUNCTIONAL_BATCH_PARTITION_EFFECT": {
-      "action": "retain Architecture/engineering/reproducibility signal; STOP for fresh Analyst; no automatic PRE_FORMAL"
-    },
-    "MIXED": {
-      "action": "HOLD and STOP for fresh Analyst; no extra timelines or partition search"
-    },
-    "FORMAL_BRANCHES": "UNARMED_NO_FORMAL_OBJECT"
+    "root": "LOWER_FUNNEL_MAIN_HOLD_PENDING_FRESH_OBJECT",
+    "NO_FRESH_CENTRAL_OBJECT": "MAIN_HOLD_SUB_MAY_DISCOVER",
+    "FRESH_SUB_DISCOVERY": "STOP_FOR_FRESH_ANALYST_REVIEW_BEFORE_PROMOTION",
+    "TEMPORAL_CALLSITE_AUDIT": {"BROAD_SUPPORTED": "MAY_MOTIVATE_FRESH_API_INVARIANCE_ARCH_OBJECT_NOT_PRE_FORMAL", "NARROW_LOCAL": "DOCUMENT_ENGINEERING_CONSTRAINT_AND_HOLD", "MISSING_SAFE_INPUT": "HOLD_NO_REGENERATION"},
+    "FRESH_CENTRAL_ARCH_OR_PRE_FORMAL_OBJECT": {"PRE_START_MECHANICAL_BLOCKER": "MAIN_MAY_FIX_OUTCOME_INDEPENDENTLY_AND_RECHECK_CI", "SEMANTIC_OR_PROTOCOL_GAP": "STOP", "INVALID_OR_LEAKY_INPUT": "DISCARD_STOP", "ANY_VALID_OUTCOME": "STOP_FRESH_ANALYST_REVIEW"},
+    "FORMAL": "UNARMED_NO_FORMAL_OBJECT"
   },
   "blocked_until": {
-    "FORMAL": "fresh prospectively bound high-value formal object exists",
-    "PRE_FORMAL": "fresh mechanistic/reduction candidate with sufficient lower-layer support and matched ordinary reductions exists",
-    "CAND_TOPK_PA_01": "fresh independently specified ordinary-reduction Architecture object is justified; same-object cycle3 remains prohibited",
-    "CAND_H7_RESP_01": "independently arising native responsibility-sensitive mechanism exists",
-    "TEMPORAL_ARCHITECTURE_EXECUTION": "prospective contract/bindings are committed and exact-head CI/readiness is green"
+    "FORMAL": "fresh high-value object plus fresh identity and complete prospective formal binding/STARTED/raw-preserve authority",
+    "PRE_FORMAL": "fresh mechanistic/reduction question with sufficient lower-layer support",
+    "TEMPORAL": "new prospectively specified API/event-time-invariance or reliability question; no current-object cycle2 rescue",
+    "TOPK": "fresh ordinary-reduction Architecture object; no same-object cycle3",
+    "H7": "independently arising native responsibility-sensitive mechanism"
   },
-  "do_not_touch": [
-    "all consumed identities",
-    "official TEST and formal held-out surfaces",
-    "immutable evidence refs/tags",
-    "legacy freeze refs",
-    "STARTED/control refs",
-    "raw/scored preserve refs",
-    "scheduler definitions",
-    "research PR merges",
-    "Assembly cycle2 rescue",
-    "Structural rescue",
-    "Top-k cycle3 repetition"
+  "do_not_touch": ["all consumed identities", "official TEST/formal held-out surfaces without fresh authority", "immutable evidence refs/tags", "legacy freeze refs", "STARTED/control and preserve refs", "formal scorer/evidence surfaces", "research PR merges", "scheduler definitions"],
+  "active_claims_observed": {"MAIN": "FUNCTIONAL_BATCH_PARTITION_EFFECT_NON_EVIDENTIARY_ARCHITECTURE_ENGINEERING_ONLY", "SUB": "FIELD_SOURCE_LINEAGE_CAP_EXACT_BOOKKEEPING_REDUCTION_REJECT"},
+  "top_recommendation": "Hold MAIN pending a genuinely fresh central lower-funnel object; keep Temporal result as Architecture/engineering constraint only; allow SUB one independent bounded Discovery question.",
+  "top3": [
+    {"rank": 1, "action": "Fresh-object admission / MAIN HOLD", "information_value": "VERY_HIGH_IF_OBJECT_APPEARS", "distance": "EVENT_DEPENDENT"},
+    {"rank": 2, "action": "Existing SUB-20260919-2344 Temporal batching callsite audit proposal", "information_value": "MEDIUM_HIGH", "distance": "VERY_NEAR_READ_ONLY_NONBLOCKING"},
+    {"rank": 3, "action": "SUB one independent bounded Discovery or reasoned no-op", "information_value": "MEDIUM_OPTIONAL", "distance": "NEAR_OPTIONAL"}
   ],
-  "active_main_claims_observed": [
-    "Assembly Architecture cycle1 completed validly as NO_OR_LOW_SUPPORT",
-    "both DEV seeds had 0/12 representation divergence and zero prediction/action disagreement",
-    "MAIN stopped and created no PRE_FORMAL/FORMAL authority"
-  ],
-  "active_sub_claims_observed": [
-    "batch partition alone can alter omission generation under current expectation scheduling semantics",
-    "same final expectation state can coexist with different omission history and field-state hash",
-    "SUB classifies the phenomenon as API/event-time causality and recommends Architecture promotion, not novelty"
-  ],
-  "top_recommendation": "Run one prospectively bound NON_EVIDENTIARY Temporal expectation batch-partition Architecture cycle on fixed repository reference timelines, with MAIN owning the entire critical path.",
-  "top_3": [
-    {
-      "rank": 1,
-      "action": "MAIN: TEMPORAL_EXPECTATION_BATCH_PARTITION_ARCHITECTURE_STUDY_CYCLE1",
-      "information_value": "HIGH",
-      "distance": "NEAR",
-      "go_stop": "GO only after fixed prospective contract and exact-head CI/readiness; every valid outcome STOPs for fresh Analyst"
-    },
-    {
-      "rank": 2,
-      "action": "Utility: existing SUB-20260919-2344-TEMPORAL-EXPECTATION-BATCHING-CALLSITE-AUDIT if Control assigns it",
-      "information_value": "MEDIUM_HIGH",
-      "distance": "VERY_NEAR",
-      "blocking": false
-    },
-    {
-      "rank": 3,
-      "action": "SUB: one new independent bounded Discovery object or explicit no-op",
-      "information_value": "MEDIUM_OPTIONAL",
-      "distance": "NEAR_OPTIONAL"
-    }
-  ],
-  "consumed_identities": [
-    "c19-external-v2-official-v4",
-    "c19-r1-revision-authority-official-v1",
-    "c19-r1-revision-authority-official-v2",
-    "c19-r2-fsa-state-tracker-official-v1",
-    "pd01-long-history-fading-memory-official-v1",
-    "ni01-no-ignition-selective-prediction-official-v1",
-    "h5-event-routing-work-reduction-official-v1"
-  ],
-  "blockers": [
-    "FORMAL has no fresh high-value object",
-    "PRE_FORMAL has no fresh mechanistic-distinctness candidate with sufficient lower-layer support",
-    "Top-k support is narrow and Utility classification MIXED",
-    "H7 has no independent native mechanism",
-    "Temporal Architecture must freeze contract/bindings and pass exact-head CI before one bounded run"
-  ],
-  "go_stop_number_1": {
-    "GO": "NON_EVIDENTIARY Architecture only after exact source/timeline/partition/runtime binding and raw-diagnostic-before-interpretation contract is committed and CI/readiness is green",
-    "FORMAL_identity_freshness": "UNARMED_NOT_APPLICABLE",
-    "STARTED_no_clobber": "UNARMED_NOT_APPLICABLE",
-    "raw_before_score": "formal scoring unarmed; Architecture raw diagnostics must be persisted before interpretation",
-    "CI_review": "exact-head CI/readiness required before diagnostic",
-    "scientific_falsifiers": [
-      "NO_BATCH_PARTITION_EFFECT",
-      "SCHEDULER_ONLY_PARTITION_EFFECT",
-      "FUNCTIONAL_BATCH_PARTITION_EFFECT",
-      "MIXED"
-    ],
-    "STOP": "semantic/binding gap, TEST/consumed/formal access, any outcome-responsive protocol change, post-diagnostic failure, or any valid terminal result"
-  },
-  "governance_advisory": {
-    "issue_canonical_source_drift": "none observed; Issue #139 remains operational tracking and correctly lists five evidence tags",
-    "freeze_tag_migration_drift": "none; 13 legacy freeze branches preserved and no tag-based freeze namespace exists",
-    "tag_protection_gap": "rulesets=0 and main unprotected; real but deferred/nonblocking governance state",
-    "outcome_independent_main_promotion_candidates": [
-      "architecture-neutral event/distribution primitives",
-      "generic snapshot/restore invariants",
-      "generic descriptive resource accounting",
-      "generic privilege/leakage guards"
-    ],
-    "pr_148": "open/mergeable/unmerged; outside scientific critical path",
-    "pr_149": "open/mergeable/unmerged; outside scientific critical path"
-  },
-  "persistence": {
-    "branch": "ops/evidence-analyst-handoff",
-    "base_tip_before_write": "982e5686524c9fc2b665efcf44069fef49196333",
-    "paths": [
-      "analysis/orchestrator/latest.md",
-      "analysis/orchestrator/state.json",
-      "analysis/orchestrator/history/2026-09-20/0000.md"
-    ],
-    "force_push": false,
-    "utility_request_created_by_analyst": null
-  }
+  "go_stop_top1": {"GO": "prospective admission/specification only; future execution requires fixed outcome-independent bindings and falsifiers", "STOP": "no current MAIN execution GO; stop if outcome knowledge is needed to choose candidate/comparator/metric/threshold/resources/runtime/identity or if object rescues consumed evidence"},
+  "consumed_identities": ["c19-external-v2-official-v4", "c19-r1-revision-authority-official-v1", "c19-r1-revision-authority-official-v2", "c19-r2-fsa-state-tracker-official-v1", "pd01-long-history-fading-memory-official-v1", "ni01-no-ignition-selective-prediction-official-v1", "h5-event-routing-work-reduction-official-v1"],
+  "blockers": ["FORMAL has no fresh high-value object", "PRE_FORMAL has no fresh mechanistic/reduction object with sufficient support", "Temporal current question is complete and ordinarily reducible; any successor must be fresh", "Top-k breadth/generalization remains mixed", "H7 has no independently arising native mechanism"],
+  "governance_advisory": {"issue_139": "open/current", "repository_rulesets": 0, "main_protected": false, "legacy_freeze_branch_count": 13, "pr_148": "open/unmerged governance review", "pr_149": "open/unmerged governance review"},
+  "utility": {"existing_request": "SUB-20260919-2344-TEMPORAL-EXPECTATION-BATCHING-CALLSITE-AUDIT", "new_request_created_this_run": null, "status": "REQUEST_EXISTS_NO_DUPLICATE_CREATED"},
+  "persistence": {"parent_before_write": "862dd62cdce58f06e5c782b4b54212d93e40212e", "paths": ["analysis/orchestrator/latest.md", "analysis/orchestrator/state.json", "analysis/orchestrator/history/2026-09-20/0115.md"], "force_push": false}
 }
