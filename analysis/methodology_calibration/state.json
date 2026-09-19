@@ -1,66 +1,55 @@
 {
   "schema_version": 1,
-  "timestamp": "2026-09-20T02:20:00+09:00",
-  "run_disposition": "MATERIAL_FIDELITY_MITIGATION_NOT_YET_SYSTEMIC",
+  "timestamp": "2026-09-20T03:38:00+09:00",
+  "run_disposition": "MATERIAL_CROSS_SAMPLE_FIDELITY_DEFECT_CONFIRMED",
   "overall_classification": "MIXED_CALIBRATION",
   "previous_classification": "MIXED_CALIBRATION",
   "confidence": "HIGH",
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "main_protected": false,
     "evidence_tag_count": 5,
     "formal_tag_count": 0,
-    "temporal_architecture_head": "7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
-    "topology_alias_discovery_head": "daaf9a865d4ba5911640d127f55dc8d44a75e078",
-    "v05_brain_source": "src/sparkbrain/v05/brain.py@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "v05_topology_source": "src/sparkbrain/v05/topology.py@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "v05_config_geometry": {
-      "V05BrainConfig_width": 8,
-      "V05BrainConfig_height": 8,
-      "V05BrainConfig_receptor_rows": 1,
-      "injected_topology_call": "layered_reservoir_topology(seed=self.config.topology_seed)",
-      "layered_topology_default_receptor_count": 16,
-      "layered_topology_default_reservoir_width": 8,
-      "layered_topology_default_reservoir_height": 6
-    }
+    "sealed_tag_count": 0,
+    "freeze_tag_count": 0,
+    "v05_config_architecture_head": "4a15a91edb8e92b89cda960f533590f7b46a70f2",
+    "v05_config_architecture_workflow": 35460876580,
+    "v05_config_architecture_workflow_conclusion": "success",
+    "relevant_prs": [148, 149]
   },
   "control_plane_consumed": {
-    "control_brain_commit": "3b2ff0f8ecb845c486b6e5806d58c36df24657de",
-    "control_brain_latest_timestamp": "2026-09-20T00:50:00+09:00",
-    "evidence_analyst_commit": "7dd9d9d4d02febe2547a4cc547b31891a0bc285f",
-    "evidence_analyst_latest_timestamp": "2026-09-20T02:01:00+09:00",
-    "orchestrator_branch_commit": "34ed142bbfa212c62f1814ffcddf83e45ebac48a",
-    "main_latest_timestamp": "2026-09-20T02:22:00+09:00",
-    "sub_latest_timestamp": "2026-09-20T01:47:00+09:00",
+    "control_brain_commit": "84a2cbbb11f2820dcedd6fee53137d1de439de62",
+    "control_brain_latest_timestamp": "2026-09-20T02:50:00+09:00",
+    "evidence_analyst_commit": "9bb852bc1461755814d6a9a0e7ea561f1858a0da",
+    "evidence_analyst_latest_timestamp": "2026-09-20T02:58:00+09:00",
+    "orchestrator_branch_commit": "9b985e0bededad87ef33b0f9e9da694360582f5c",
+    "main_latest_timestamp": "2026-09-20T03:24:00+09:00",
     "external_research_audit_branch_commit": "96dd0cd2fb9a932d29ddfecf7c791b122f6461bb",
-    "literature_latest_timestamp": "2026-09-20T00:30:00+09:00",
     "independent_audit_commit": "c24ec86447a0030cbe1d072bf8796f8f78f7b2dd",
-    "independent_audit_latest_timestamp": "2026-09-19T22:31:00+09:00",
     "repository_steward_commit": "877a5d4ea077e48863c46019445c5bc696ce43ef",
-    "repository_steward_latest_timestamp": "2026-09-20T01:50:00+09:00",
-    "utility_request_bus_commit": "1e28e558a985db1c05bf81ef1033028b39ee9018",
-    "utility_active_assignment": false,
-    "utility_current_assignment_status": "COMPLETED"
+    "utility_request_bus_commit": "54210927df0a9152427f4cb84c1f51cc551a81c2",
+    "utility_assignment": "CTRL-20260920-0250-ARTIFACT-HANDOFF-FIDELITY",
+    "utility_status": "COMPLETED",
+    "utility_diagnostic": "REPEATED_HANDOFF_FIDELITY_DEFECT"
   },
   "gate_changes_reviewed": [
     {
-      "change": "Evidence Analyst explicitly reconciled the Temporal machine artifact versus prior durable handoff mismatch using exact artifact and digest fields without rewriting or rerunning science",
-      "direction": "VALIDATES_FAIL_CLOSED_INTERPRETATION_RECONCILIATION",
-      "assessment": "KEEP"
-    },
-    {
-      "change": "MAIN consumed the corrected Analyst authority and remained on explicit no-object HOLD with no scientific continuation",
-      "direction": "VALIDATES_CROSS_ROLE_CONTAINMENT_AFTER_INTERPRETATION_CORRECTION",
-      "assessment": "KEEP"
-    },
-    {
-      "change": "Dedicated cross-sample artifact/handoff fidelity audit remains pending; latest Control durable handoff predates the methodology defect",
-      "direction": "SYSTEMIC_FIDELITY_GUARD_NOT_YET_DEMONSTRATED",
+      "change": "Cross-sample Utility audit confirmed artifact-to-handoff semantic fidelity defects in two independent completed Architecture chains",
+      "direction": "ISOLATED_DEFECT_HYPOTHESIS_REJECTED",
       "assessment": "TIGHTEN"
     },
     {
-      "change": "Topology fanout aliasing was rejected for scientific promotion after exact modular reduction plus current integrated-path irrelevance, while a distinct config-binding API-semantics Discovery was admitted",
-      "direction": "VALIDATES_ORDINARY_REDUCTION_CURRENT_PATH_RELEVANCE_AND_OBSERVABLE_LEVEL_EXHAUSTION",
+      "change": "Temporal mismatch remained decision-neutral after exact artifact reconciliation; no historical artifact or classification was rewritten",
+      "direction": "VALIDATES_FAIL_CLOSED_RECONCILIATION",
+      "assessment": "KEEP"
+    },
+    {
+      "change": "Top-k cycle 1 handoffs propagated an incorrect claim that magnitude 0.01 cleared all fixed signal requirements despite turnover support 1 < minimum 20",
+      "direction": "SEMANTIC_THRESHOLD_APPLICATION_FIDELITY_DEFECT",
+      "assessment": "TIGHTEN"
+    },
+    {
+      "change": "Fresh v0.5 config Architecture contract prospectively binds artifact fidelity fields and preserved fixed science through a pre-diagnostic lint repair",
+      "direction": "LOCAL_PROSPECTIVE_FIDELITY_AND_MECHANICAL_REPAIR_BOUNDARY_VALIDATED",
       "assessment": "KEEP"
     }
   ],
@@ -76,116 +65,96 @@
     "observable_level_exhaustion_over_family_level_exhaustion": "KEEP",
     "fresh_independently_motivated_object_requirement": "KEEP",
     "default_three_cycle_exploration_budget": "KEEP",
-    "stop_new_principle_claim_after_convincing_ordinary_reduction": "SPLIT_BY_CLAIM_TYPE",
     "stop_after_architecture_cycle_for_analyst_review": "KEEP",
+    "pre_start_science_invariant_repair_before_diagnostic_visibility": "KEEP",
     "legacy_topk_architecture_support_gate": "TIGHTEN",
     "topk_exact_replacement_support_or_uncertainty_rule": "INSUFFICIENT_EVIDENCE",
     "prospective_support_aware_architecture_triage": "KEEP",
     "local_architecture_numeric_threshold_portability": "CLARIFY",
     "architecture_local_thresholds_as_formal_or_novelty_thresholds": "CLARIFY",
     "automatic_preformal_promotion_after_architecture_signal": "KEEP",
-    "pre_start_science_invariant_repair_before_diagnostic_visibility": "KEEP",
     "ordinary_control_first_architecture_reduction": "KEEP",
-    "outcome_informed_selection_of_future_support_rule": "CLARIFY",
     "negative_evidence_claim_boundary_narrowing": "KEEP",
     "architecture_value_survives_novelty_rejection": "KEEP",
-    "fresh_architecture_contract_before_outcome_visibility": "KEEP",
     "machine_artifact_to_durable_handoff_value_fidelity": "TIGHTEN",
-    "embedded_contract_and_artifact_digest_binding_in_interpretation_handoff": "TIGHTEN",
+    "embedded_contract_and_interpretation_digest_binding": "TIGHTEN",
+    "machine_application_of_declared_thresholds_and_support_rules": "TIGHTEN",
     "fail_closed_reconciliation_on_artifact_handoff_mismatch": "KEEP",
-    "cross_role_propagation_of_detected_fidelity_defect": "CLARIFY",
-    "programme_wide_machine_checked_handoff_consistency": "INSUFFICIENT_EVIDENCE",
-    "current_integrated_path_relevance_before_synthetic_architecture_promotion": "KEEP",
-    "fresh_api_config_semantics_question_after_mechanism_rejection": "KEEP"
-  },
-  "fidelity_mitigation": {
-    "candidate": "CAND-TEMPORAL-BATCH-PARTITION-01",
-    "previous_defect": "WRONG_CONTRACT_DIGEST_AND_REVERSED_FAMILY_LEVEL_EFFECTS_IN_01_15_ANALYST_HANDOFF",
-    "current_evidence_analyst_reconciliation": {
-      "commit": "7dd9d9d4d02febe2547a4cc547b31891a0bc285f",
-      "mapped_outcome": "FUNCTIONAL_BATCH_PARTITION_EFFECT",
-      "artifact_id": 10587410697,
-      "artifact_archive_sha256": "22a5c650a58501a1dc8303118c366845201f9eba8453a22996f5fb4ca4d6428f",
-      "contract_sha256": "eb4aa28cd4b7299302ac31a65c73586c4e5a17e5487b1d1ddf43757cee901049",
-      "raw_sha256": "71d4d8fddbe6b683b4ad93951c0f95fc1dfa5df74645743bfd39fba5b33c54ef",
-      "repetition_train_defaults": "SCHEDULE_AND_REPLAY_INVARIANT",
-      "noisy_motif_stream_defaults": "SCHEDULE_AND_REPLAY_DIFFER",
-      "allocation": "HOLD_NO_CYCLE2_NO_PREFORMAL_NO_FORMAL"
-    },
-    "main_propagation": "CONSUMED_CORRECTED_ANALYST_AUTHORITY_WITH_NO_SCIENTIFIC_MUTATION",
-    "systemic_guard_status": "NOT_YET_PROVEN",
-    "pending_diagnostic": "METHCAL-20260920-0120-ARTIFACT-HANDOFF-FIDELITY"
+    "generic_machine_checkable_handoff_guard_before_successor_allocation": "TIGHTEN",
+    "static_provenance_and_semantic_summary_checks": "KEEP",
+    "programme_wide_machine_checked_handoff_consistency": "TIGHTEN"
   },
   "false_positive_risks": [
-    "Future manually transcribed artifact fields can still drift before machine-bound consistency validation is systematic",
-    "Local Architecture cutoffs could still be laundered into novelty or FORMAL admission rules",
-    "A real but off-current-path deterministic synthetic effect could consume Architecture cycles if current-path relevance is not checked",
-    "Stronger-reference ceilings could be mistaken for equal-resource mechanistic comparators"
+    "Manual semantic transcription can overstate support breadth or criterion satisfaction even when artifact identity and top-level classification are preserved",
+    "Incorrect lower-level summaries can propagate one or more control-plane hops and influence successor design before being noticed",
+    "Local Architecture cutoffs could be laundered into novelty or FORMAL admission rules if claim-type boundaries are ignored",
+    "Stronger-privilege ceilings could be mistaken for equal-resource mechanistic comparators"
   ],
   "false_negative_risks": [
-    "Overreacting to the fidelity defect by globally requiring replication or stronger support for every bounded Architecture existence question",
-    "Treating exact reduction of one topology-alias question as exhaustion of all v0.5 topology/configuration semantics",
-    "Using new-principle novelty as the threshold for engineering/reproducibility/API questions",
-    "Treating robust H5 failure as a general no-go theorem beyond its registered aggregate work metric"
+    "A machine-fidelity fix could become overconservative if any prose mismatch automatically rejects the scientific object instead of blocking only interpretation-dependent continuation",
+    "Reacting to transcription defects with universal replication or stronger support requirements would suppress modest but useful Architecture/API questions",
+    "Using new-principle novelty as the threshold for engineering, reproducibility, API, or testbed value would recreate programme-wide overconservatism",
+    "Fitting a new universal support threshold to completed Top-k outcomes would create post-outcome goalpost movement"
   ],
   "duplicate_guards": {
-    "assessment": "NO_MATERIAL_DUPLICATE_SCIENTIFIC_GUARD_FOUND",
+    "assessment": "NO_MATERIAL_DUPLICATE_GUARD_TO_MERGE",
     "notes": [
-      "machine-handoff fidelity is distinct from one-way execution integrity",
-      "current-path relevance is distinct from novelty",
-      "fresh-object requirement is distinct from family-level prohibition"
+      "workflow/head/artifact digests validate provenance while semantic-summary validation checks interpreted machine content; these are complementary",
+      "one-way execution integrity does not guarantee correct handoff transcription",
+      "fresh Analyst review and machine-checkable handoff binding protect different failure stages"
     ]
   },
   "moving_goalpost_assessment": {
     "classification": "LOW",
-    "basis": "Temporal machine values were corrected in narrative without changing the artifact, outcome token, allocation, or success criterion. Topology aliasing was rejected by exact mechanism and current-source relevance rather than a post-hoc numeric success threshold."
+    "basis": "The completed Utility audit rewrote no historical artifact, label, threshold, allocation, or identity. Its recommendation is prospective. The v0.5 lint repair preceded any outcome-bearing diagnostic and kept the scientific contract unchanged."
   },
   "pass_reachability_assessment": {
     "classification": "REACHABLE_BUT_NARROW",
     "required_path": [
       "prospectively positive native signal",
       "fresh exact-bound object and protocol",
-      "support/uncertainty adequate to the local question",
+      "support or uncertainty adequate to the local question",
       "matched equal-privilege comparators for mechanistic claims",
       "survive ordinary implementation and dynamical reductions",
-      "machine-bound faithful result ingestion and interpretation",
+      "faithful machine-bound artifact ingestion and interpretation",
       "fixed intervention and numeric falsifier",
-      "one-way preserved formal evidence"
+      "one-way preserved FORMAL evidence"
     ],
-    "current_limit": "No active PRE_FORMAL or FORMAL object; MAIN is explicit HOLD pending a fresh central object."
+    "current_limit": "No active PRE_FORMAL or FORMAL object; adding fidelity validation is procedural integrity rather than a substantive novelty hurdle."
   },
   "claim_type_separation_findings": {
     "control_state": "FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL",
+    "v05_config_state": "ARCHITECTURE_API_CORRECTNESS_NON_EVIDENTIARY",
     "temporal_state": "HOLD_ARCHITECTURE_API_REPRODUCIBILITY_ONLY",
-    "topology_alias_state": "REJECT_SCIENTIFIC_PROMOTION_KEEP_ENGINEERING_SCALING_CONSTRAINT",
-    "config_binding_state": "DISCOVERY_FRESH_API_SEMANTICS_QUESTION",
-    "topk_state": "HOLD",
-    "h5_state": "TERMINAL_NEGATIVE_EVIDENCE_PRESERVED_WITH_NARROW_INTERPRETATION_CAP",
-    "remaining_risk": "PROGRAMME_WIDE_RESULT_INGESTION_FIDELITY_NOT_YET_PROVEN"
+    "topk_state": "HOLD_MIXED",
+    "h5_state": "TERMINAL_NEGATIVE_EVIDENCE_WITH_NARROW_INTERPRETATION_CAP",
+    "assessment": "HEALTHY",
+    "remaining_risk": "HANDOFF_SEMANTIC_FIDELITY_CAN_DISTORT_BREADTH_OR_SUCCESSOR_RATIONALE_WITHOUT_CHANGING_TOP_LEVEL_LABEL"
   },
   "external_calibration": {
     "external_branch_commit": "96dd0cd2fb9a932d29ddfecf7c791b122f6461bb",
-    "literature": "No new stream since 00:30. Temporal remains strongly ordinarily reducible to non-anticipation, event-time versus processing-time and partition-invariance semantics.",
-    "independent_audit": "No newer audit since H5 22:31. H5 terminal FAIL remains robust for the exact registered aggregate algorithmic-work claim with narrow interpretation.",
-    "use_rule": "External findings calibrate prospective reductions and claim boundaries; they do not override machine artifacts or rewrite consumed evidence."
+    "independent_audit_commit": "c24ec86447a0030cbe1d072bf8796f8f78f7b2dd",
+    "assessment": "NO_NEW_EXTERNAL_RESULT_REQUIRES_SCIENTIFIC_GATE_CHANGE",
+    "use_rule": "External literature and audits calibrate prospective reductions and claim boundaries only; they do not override machine artifacts or rewrite consumed evidence."
   },
-  "opportunity_cost_assessment": "Balanced. The existing read-only cross-sample handoff-fidelity audit is a higher-value and lower-cost next action than extra scientific gating or reruns.",
+  "opportunity_cost_assessment": "A structured fail-closed machine handoff checker has high integrity information gain with low scientific opportunity cost when limited to decision-relevant machine-bound fields. Additional substantive scientific strictness would cost more research opportunity for less calibration benefit.",
   "utility_request_created": null,
-  "existing_utility_request": {
+  "utility_request_completed": {
     "request_id": "METHCAL-20260920-0120-ARTIFACT-HANDOFF-FIDELITY",
-    "request_bus_commit": "1e28e558a985db1c05bf81ef1033028b39ee9018",
-    "status": "PENDING_CONTROL_DISPOSITION",
-    "utility_active_assignment": false
+    "assignment_id": "CTRL-20260920-0250-ARTIFACT-HANDOFF-FIDELITY",
+    "result_branch_commit": "54210927df0a9152427f4cb84c1f51cc551a81c2",
+    "diagnostic_classification": "REPEATED_HANDOFF_FIDELITY_DEFECT",
+    "recommendation": "ADD_FAIL_CLOSED_MACHINE_CHECKABLE_HANDOFF_GUARD",
+    "historical_records_rewritten": false
   },
   "prospective_recommendations": [
-    "Keep the four-layer funnel and FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL doctrine.",
-    "Keep Temporal HOLD; treat the 02:01 handoff as interpretation reconciliation only, not authority to rerun, relabel, repair, or extend science.",
-    "Preserve prospective machine-bound handoff fields: workflow/head, artifact ID/digest, candidate/contract digest, raw digest, mapped outcome, and narrated machine-summary fields.",
-    "Keep machine-handoff fidelity classified TIGHTEN until a programme-wide/cross-sample consistency check or equivalent machine validation is demonstrated.",
-    "Do not globally increase Architecture support/replication requirements to solve a provenance problem.",
-    "Keep the topology alias scientific candidate closed; allow only the fresh bounded config-binding semantics question under current lower-funnel rules.",
-    "Do not fit programme-wide numeric thresholds from completed lower-funnel outcomes.",
-    "Preserve the complete one-way integrity floor."
+    "Keep the four-layer funnel, strict FORMAL novelty bar, comparator discipline, ordinary-reduction-first interpretation, and hard integrity floor unchanged.",
+    "Adopt a structured machine-checkable handoff binding for future outcome-bearing lower-funnel artifacts before interpretation-dependent successor allocation.",
+    "Bind workflow/head, artifact identity/digest, candidate/contract identity, raw digest/cardinality where present, mapped outcome, canonical machine-summary digest, and narrated decision-relevant machine fields.",
+    "On mismatch, preserve the artifact as authority and block only successor allocation that depends on disputed fields until reconciliation; do not automatically reject the candidate.",
+    "Do not retroactively rescore, relabel, rerun, invalidate, or upgrade Temporal or Top-k because of the new methodology recommendation.",
+    "Do not increase universal scientific support/replication thresholds to solve a control-plane transcription problem.",
+    "Use the fresh v0.5 Architecture handoff as a natural prospective end-to-end validation target if Control/Evidence Analyst implement the generic guard."
   ],
   "hard_integrity_floor_confirmation": {
     "confirmed": true,
@@ -201,13 +170,13 @@
     ]
   },
   "questions_for_control_brain": [
-    "Consume the corrected 02:01 Analyst reconciliation and the 01:20 methodology fidelity finding without treating either as authority to reopen Temporal science?",
-    "Disposition the existing read-only Utility fidelity request if nonduplicative so programme-wide handoff consistency can be tested cheaply?",
-    "Keep scientific novelty/admission gates unchanged while tightening only result-ingestion fidelity?"
+    "Will the completed repeated-fidelity finding be converted into a generic fail-closed machine-checkable handoff prerequisite for interpretation-dependent successor allocation?",
+    "Can the guard be scoped to decision-relevant machine fields so it does not create unnecessary lower-funnel false negatives?",
+    "Will historical handoffs remain immutable, with any reconciliation recorded append-only rather than rewritten?"
   ],
   "questions_for_evidence_analyst": [
-    "Continue machine-bound artifact fields in future lower-funnel closure handoffs rather than manual re-transcription?",
-    "Keep the rejected topology-alias candidate closed while treating config-binding as a distinct bounded API-semantics Discovery?",
-    "Do not convert the fidelity defect into stricter universal Architecture support thresholds?"
+    "Will future Architecture closure handoffs consume a structured machine summary or binding object rather than manually restating decision-relevant counts and threshold applications?",
+    "Will a mismatch produce HOLD/reconciliation rather than scientific rejection or post-outcome repair?",
+    "Can the fresh v0.5 config Architecture object serve as the first prospective end-to-end test of the generic fidelity guard without changing its scientific contract?"
   ]
 }
