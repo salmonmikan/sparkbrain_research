@@ -1,0 +1,50 @@
+{
+  "mode": "discovery",
+  "exploratory_target": "TEMPORAL_EXPECTATION_BATCH_PARTITION_SENSITIVITY_DISCOVERY",
+  "candidate_pool_id": null,
+  "exploration_cycle": 1,
+  "max_cycles": 3,
+  "base_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "question": "Does the current IntegratedV04Brain temporal-expectation path produce a different internal omission history and field trajectory for the same external pulse timeline solely because the timeline is partitioned differently across ingest_pulses calls?",
+  "why_independent_of_main": "The active MAIN frontier is the v0.5 assembly prototype-lock-in Architecture study. This target uses the stable v0.4 temporal expectation/transduction integration path and does not touch MAIN's active branch, candidate, workflow, blocker, or outcome-dependent successor.",
+  "inputs": {
+    "external_channel": "A",
+    "external_pulse_times_ms": [0.0, 10.0, 20.0, 100.0],
+    "magnitude": 0.72,
+    "enable_plasticity": false,
+    "enable_expectations": true,
+    "settle_ms": 35.0
+  },
+  "arms": {
+    "batched": {
+      "calls": [[0.0, 10.0, 20.0, 100.0]],
+      "final_end_ms": 135.0,
+      "omission_times_ms": [],
+      "final_expected_interval_ms": 34.5,
+      "final_last_observation_ms": 100.0
+    },
+    "split": {
+      "calls": [[0.0, 10.0, 20.0], [100.0]],
+      "final_end_ms": 135.0,
+      "omission_times_ms": [33.0],
+      "final_expected_interval_ms": 34.5,
+      "final_last_observation_ms": 100.0
+    }
+  },
+  "observation": "Both arms receive the same external pulses and end with the same learned interval/last observation, but only the split arm emits the omission pulse at 33 ms. The exploratory executable additionally asserts unequal final field_state_hash values.",
+  "mechanistic_reduction": "IntegratedV04Brain.ingest_pulses observes every pulse in the provided batch before polling TemporalExpectationTracker. A future observation at 100 ms therefore updates last_time and interval before the batch polls through 135 ms, suppressing the omission that would have been emitted at 33 ms if polling occurred after the first three pulses. This is an integration/batching semantic, not evidence of a new cognitive mechanism.",
+  "what_would_falsify_or_reduce_it": "A prospectively fixed DEV-only study should reduce this to an API artifact if an event-time-causal comparator yields batching-invariant downstream behavior, or if all supported callers obey a batching contract that makes deadline-straddling partitions impossible. If the same DEV timeline produces materially different downstream activity/action solely from ingestion partition under otherwise identical resources, it remains an Architecture reproducibility concern.",
+  "candidate_next_research_layer": "ARCHITECTURE_STUDY",
+  "scientific_choices_still_open": [
+    "supported ingestion/batching contract",
+    "DEV pulse families and channel cadences",
+    "deadline-straddling partition family",
+    "event-time-causal comparator semantics",
+    "downstream functional observable and horizon",
+    "resource matching"
+  ],
+  "recommendation": "PROMOTE_TO_ARCHITECTURE_STUDY",
+  "consumed_identities": [],
+  "formal_results_created": 0
+}
