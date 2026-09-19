@@ -1,14 +1,14 @@
 {
-  "timestamp_jst": "2026-09-20T01:50:00+09:00",
+  "timestamp_jst": "2026-09-20T07:50:00+09:00",
   "worker_role": "repository_steward",
-  "selected_slot_jst": "01:50",
+  "selected_slot_jst": "07:50",
   "role_inferred": false,
   "repository": "salmonmikan/sparkbrain_research",
   "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-  "control_brain_commit": "3b2ff0f8ecb845c486b6e5806d58c36df24657de",
-  "evidence_analyst_commit": "e781202e8c7ae4562c10fa46cdddfb3b0eb1bc08",
-  "orchestrator_report_commit_observed": "c98c06554123ee561b82843deec91af341afddc0",
-  "utility_request_bus_commit_observed": "1e28e558a985db1c05bf81ef1033028b39ee9018",
+  "control_brain_commit": "36a41bb720c051ee6d4563d7ecb6b720a8fc2c2d",
+  "evidence_analyst_commit": "7e7d425948a86d0eec306b1a75bfc07165d9afa1",
+  "orchestrator_report_commit_observed": "b3261c355b68fb8b77d7ba5e79b866f5a23f9ac1",
+  "utility_request_bus_commit_observed": "38a5a715b3d5afec73e76fea49b56647c095d8fb",
   "current_remote_authority": {
     "main_protected": false,
     "repository_ruleset_count": 0,
@@ -22,73 +22,82 @@
     "new_authoritative_evidence_since_prior_steward": false
   },
   "upstream_change_since_prior_steward": {
-    "type": "temporal_artifact_handoff_fidelity_mismatch_and_new_sub_topology_discovery",
-    "description": "MAIN reconciled the completed Temporal Architecture artifact and found a non-decision-changing mismatch in the 01:15 Evidence Analyst narrative/contract digest. SUB independently found physical stride-11 receptor fanout aliasing at resonant reservoir sizes and returned it as a NON_EVIDENTIARY Architecture promotion candidate. Neither changes FORMAL evidence or repository authority.",
+    "type": "refractory_architecture_valid_terminal_sub_assembly_capacity_discovery_and_utility_static_extractor_false_negative",
+    "description": "MAIN completed a valid NON_EVIDENTIARY Refractory Architecture terminal and stopped for fresh Analyst review; SUB independently produced a NON_EVIDENTIARY assembly mature-capacity lockout Discovery reduced to resource/prune policy; Utility confirmed a deterministic static-extractor false negative in the already-closed suppression artifact. None changes FORMAL evidence or repository authority.",
     "scientific_evidence_change": false,
     "repository_governance_mutation_required": false
   },
   "orchestrator_reports": {
     "main": {
-      "time_jst": "2026-09-20 01:24",
-      "mode": "PRIMARY",
-      "research_layer": "HOLD_AFTER_ARCHITECTURE_STUDY",
-      "target": "CAND-TEMPORAL-BATCH-PARTITION-01 cycle 1 reconciliation",
-      "research_head": "7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
-      "workflow_run": 35451528895,
-      "workflow_conclusion": "success",
-      "classification": "FUNCTIONAL_BATCH_PARTITION_EFFECT",
+      "time_jst": "2026-09-20 07:44",
+      "mode": "RELAY",
+      "research_layer": "ARCHITECTURE_STUDY",
+      "target": "CAND-REFRACTORY-CURRENT-ACCOUNTING-01 cycle 1",
+      "research_branch": "research/main-refractory-current-accounting-arch-study-20260920",
+      "research_head": "4589192d927e40cf7a05cf8a94207efb42ebbc65",
+      "ordinary_ci_run": 35472786733,
+      "ordinary_ci_conclusion": "success",
+      "architecture_workflow_run": 35472786687,
+      "architecture_workflow_conclusion": "success",
+      "artifact_id": 10593866036,
+      "artifact_archive_sha256": "b4dfbf04ab2f1dbb69fcee3833890ce6ad30d85a0c095a4699cde356c43e9115",
+      "raw_sha256": "4587b7e0ee1404f3f78f8a0c83c8224fea3d632e8a25162cb0ae586dc4a5712e",
+      "classification": "FUNCTIONAL_REFRACTORY_ACCOUNTING_EFFECT",
       "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
-      "artifact_id": 10587410697,
-      "artifact_contract_sha256": "eb4aa28cd4b7299302ac31a65c73586c4e5a17e5487b1d1ddf43757cee901049",
-      "analyst_recorded_contract_sha256": "681c21e31c686be7d8beb10e927ef65510ce82689c2cc81ae5fd9fedc179c06d",
-      "artifact_family_summary": {
-        "repetition_train_defaults": "schedule_and_replay_invariant",
-        "noisy_motif_stream_defaults": "schedule_and_replay_divergent"
-      },
-      "fidelity_mismatch": "analyst_family_summary_reversed_and_contract_digest_mismatch",
-      "integrity_status": "YELLOW_NON_DECISION_CHANGING_ANALYST_DESCRIPTIVE_MISMATCH",
-      "decision_impact": false,
+      "terminal_stop": "STOP_FRESH_ARCHITECTURE_REVIEW_NO_AUTO_PRE_FORMAL",
       "formal_identity_created": false,
       "started_created": false,
-      "formal_evidence_created": false
+      "formal_evidence_created": false,
+      "production_source_modified_after_outcome": false
     },
     "sub": {
-      "time_jst": "2026-09-20 01:47",
+      "time_jst": "2026-09-20 07:50",
       "mode": "discovery",
-      "target": "TOPOLOGY_RECEPTOR_FANOUT_ALIASING_DISCOVERY",
-      "research_head": "daaf9a865d4ba5911640d127f55dc8d44a75e078",
-      "workflow_run": 35455915055,
+      "target": "ASSEMBLY_MATURE_CAPACITY_LOCKOUT_DISCOVERY_CYCLE1",
+      "research_branch": "research/exploratory-sub-assembly-capacity-lockout-20260920",
+      "research_head": "3cac844ca6a80725c87d7e681c23b703f35150c2",
+      "workflow_run": 35474327443,
       "workflow_conclusion": "success",
       "decision": "PROMOTE_TO_ARCHITECTURE_STUDY_FOR_FRESH_ANALYST_REVIEW",
       "evidentiary_status": "NON_EVIDENTIARY",
-      "ordinary_reduction": "fixed_stride_11_modular_aliasing_at_reservoir_sizes_sharing_factor_11",
-      "current_default_reservoir_n48_resonant": false,
+      "ordinary_reduction": "mature_candidates_outside_stale_immature_reclamation_path_at_max_candidates_capacity",
+      "default_workload_saturation_established": false,
       "main_frontier_touched": false,
       "formal_identity_created": false
     }
   },
-  "evidence_analyst_allocation": {
+  "evidence_analyst_context": {
+    "time_jst": "2026-09-20 07:00",
     "formal": "EMPTY_HOLD",
     "preformal": "EMPTY_HOLD",
-    "architecture": "HOLD_NO_ACTIVE_MAIN_OBJECT",
-    "temporal_candidate": "CAND-TEMPORAL-BATCH-PARTITION-01_HOLD_AFTER_CYCLE1",
-    "topk_candidate": "CAND-TOPK-PA-01_HOLD",
-    "sub_default": "BOUNDED_SECONDARY_DISCOVERY",
+    "refractory_status_at_handoff": "ACTIVE_PRESTART_MACHINE_FACT_BINDING_BLOCKER",
+    "delayed_outcome_candidate": "CAND-V05-DELAYED-OUTCOME-ATTRIBUTION-01_QUEUED_NOT_ALLOCATED",
     "new_formal_authority": false,
-    "fidelity_reconciliation_needed": true,
-    "fidelity_reconciliation_owner": "evidence_analyst_with_control_or_utility_read_only_support_not_repository_steward"
+    "fresh_review_pending_for_main_terminal": true,
+    "fresh_review_pending_for_sub_discovery": true
   },
   "utility": {
-    "branch_tip": "1e28e558a985db1c05bf81ef1033028b39ee9018",
-    "completed_assignment": "CTRL-20260919-2250-TOPK-CROSS-SEED-SUPPORT",
-    "completed_assignment_status": "COMPLETED",
-    "active_assignment": false,
-    "diagnostic_classification": "MIXED",
-    "evidentiary_status": "NON_EVIDENTIARY_METHODOLOGY_ARCHITECTURE_DIAGNOSTIC",
-    "fresh_unhandled_request_observed": "METHCAL-20260920-0120-ARTIFACT-HANDOFF-FIDELITY",
-    "fresh_request_objective": "read_only_consistency_audit_of_machine_artifacts_vs_main_relay_and_analyst_handoffs",
-    "fresh_request_disposition_owner": "CONTROL_BRAIN",
-    "steward_action": "NO_WRITE_NO_DUPLICATE_ISSUE"
+    "branch_tip": "38a5a715b3d5afec73e76fea49b56647c095d8fb",
+    "assignment_id": "CTRL-20260920-0650-SUPPRESSION-STATIC-DETECTOR-CONSISTENCY",
+    "state_status": "COMPLETED",
+    "state_run_count": 1,
+    "result_commit": "f30da2ea3ba0a4cc064be4847c2e2945344c6aa2",
+    "classification": "STATIC_EXTRACTOR_FALSE_NEGATIVE_CONFIRMED",
+    "evidentiary_status": "NON_EVIDENTIARY_METHODOLOGY_DIAGNOSTIC",
+    "restore_restores_original_base_threshold_artifact": false,
+    "restore_restores_original_base_threshold_source_semantics": true,
+    "implementation_state_preserving_artifact": false,
+    "implementation_state_preserving_source_semantics_under_fixed_conjunction": true,
+    "other_decision_relevant_fields": "MATCH",
+    "artifact_to_handoff_mismatch": false,
+    "extractor_mismatch": true,
+    "historical_terminal_relabelled": false,
+    "current_assignment_file_status": "ASSIGNED",
+    "current_assignment_file_active_assignment": true,
+    "current_assignment_file_run_count": 0,
+    "lifecycle_pointer_drift": true,
+    "lifecycle_pointer_drift_classification": "control_plane_non_scientific_defer_to_control_utility_owner",
+    "steward_action": "RECORD_ONLY_NO_UTILITY_WRITE_NO_DUPLICATE_ISSUE"
   },
   "repository_state": {
     "open_pr_numbers": [148, 149],
@@ -104,17 +113,20 @@
     "main_frontier_separation": "compliant",
     "lower_funnel_research_scoped": "compliant",
     "lower_layer_not_promoted_to_formal_evidence": "compliant",
+    "main_terminal_stopped_for_fresh_analyst_review": "compliant",
+    "sub_independent_discovery_boundary": "compliant",
     "utility_non_evidentiary_isolation": "compliant",
     "terminal_evidence_annotated_tags": "compliant_five_authoritative_tags",
     "canonical_science_vs_issues": "compliant_issue_139_current",
-    "artifact_handoff_fidelity": "defect_detected_non_decision_changing_deferred_to_analyst_control_utility",
+    "utility_assignment_lifecycle_pointer": "stale_current_md_deferred_to_control_utility_owner",
+    "static_extractor_semantic_fidelity": "defect_confirmed_historical_terminal_unchanged_future_fields_not_semantic_authority",
     "server_side_protection": "missing_but_deferred_read_only_under_accepted_human_direction",
     "legacy_freeze_preservation": "compliant"
   },
   "issue_changes": [],
   "issue_audit": {
     "139": "open_current_five_evidence_tags_ruleset_gap_remains_priority_deferred_no_change_needed",
-    "artifact_handoff_fidelity_new_issue": "not_created_duplicate_of_existing_main_reconciliation_and_methodology_utility_request",
+    "utility_lifecycle_pointer_new_issue": "not_created_low_value_duplicate_of_control_utility_owned_assignment_lifecycle",
     "new_issues_created": 0
   },
   "freeze_migration": {
@@ -132,18 +144,17 @@
     "status": "real_gap_but_deferred_read_only",
     "tracking_issue": 139,
     "new_concrete_immutable_ref_incident": false,
-    "temporal_fidelity_defect_is_immutable_ref_incident": false,
+    "lower_funnel_or_utility_findings_are_immutable_ref_incident": false,
     "scheduled_stewardship_boundary": "read_only_only_no_ruleset_mutation"
   },
   "preserve_index": {
     "mapping_changed": false,
     "new_direct_evidence_anchors_observed": 0,
     "scientific_mappings_changed": 0,
-    "temporal_architecture_cycle_is_noncanonical": true,
-    "topology_fanout_discovery_is_noncanonical": true,
-    "topk_architecture_cycles_are_noncanonical": true,
+    "refractory_architecture_terminal_is_noncanonical": true,
+    "assembly_capacity_discovery_is_noncanonical": true,
+    "suppression_static_detector_audit_is_noncanonical": true,
     "utility_methodology_diagnostics_are_noncanonical": true,
-    "artifact_handoff_fidelity_defect_does_not_rewrite_evidence_mapping": true,
     "existing_preserve_control_evidence_refs_modified_by_stewardship": 0,
     "verified_h5_started": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
     "verified_h5_raw_preserve": "ce5797eb584344db7a512e585506fb6c59ea475b",
@@ -161,17 +172,19 @@
       "external-only transcript hashing/validation"
     ],
     "potential_future_neutral_candidates_not_promoted": [
-      "generic event-time and partition-invariance validation helper detached from Temporal outcome semantics",
-      "generic routing-collision or fanout validator detached from stride-11 candidate semantics"
+      "generic machine-checkable artifact-handoff binding validator",
+      "generic fail-closed AST or structural semantic-fact detector with extractor version and digest binding",
+      "architecture-neutral state and input-policy validation helper detached from Refractory outcome semantics",
+      "generic resource-budget or capacity invariant tooling detached from assembly mature-capacity candidate semantics"
     ],
     "research_or_control_plane_only": [
-      "CAND-TEMPORAL-BATCH-PARTITION-01 scientific and family-level outcome semantics",
-      "TOPOLOGY_RECEPTOR_FANOUT_ALIASING_DISCOVERY stride-11 scientific semantics",
-      "CAND-TOPK-PA-01 persistence/amplification scientific semantics",
-      "artifact-handoff fidelity diagnostic findings",
-      "future lineage/actual-causality causal-credit discriminator semantics"
+      "CAND-REFRACTORY-CURRENT-ACCOUNTING-01 scientific outcome semantics",
+      "ASSEMBLY_MATURE_CAPACITY_LOCKOUT_DISCOVERY_CYCLE1 scientific and resource-policy semantics",
+      "CAND-V05-DELAYED-OUTCOME-ATTRIBUTION-01 candidate semantics",
+      "suppression static-extractor audit findings as observed candidate-specific facts",
+      "Top-k Temporal topology-config and other completed lower-funnel candidate semantics"
     ],
-    "recommended_integration_shape": "small neutral current-main extraction with fresh CI only when independently stable reusable and worth the opportunity cost; no wholesale research-branch cherry-pick"
+    "recommended_integration_shape": "small neutral current-main extraction with fresh CI only when independently stable reusable outcome-independent and worth the opportunity cost; no wholesale research-branch cherry-pick"
   },
   "open_pr_review": {
     "148": {
@@ -208,12 +221,11 @@
   "scheduler_definitions_modified": 0,
   "ruleset_or_protection_mutations": 0,
   "deferred": [
-    "artifact-to-handoff fidelity mismatch to fresh Evidence Analyst and Control/Utility read-only review; do not rewrite completed artifacts or scientific evidence",
-    "keep authoritative tag namespace protection/rulesets as read-only deferred governance state unless concrete immutable-ref risk or human direction changes",
+    "fresh Evidence Analyst review of the valid Refractory Architecture terminal and the new assembly capacity Discovery",
+    "normalize stale Utility assignment current pointer through Control or Utility ownership if still present; no Steward cross-branch edit",
+    "keep authoritative tag namespace protection and rulesets as read-only deferred governance state unless concrete immutable-ref risk or human direction changes",
     "preserve legacy freeze branches exactly; do not mass-mirror or migrate merely for tidiness",
-    "keep Temporal, topology fanout, Top-k and Utility/Methodology diagnostics out of canonical evidence mappings",
-    "keep candidate-specific mechanism and routing semantics research-local",
-    "resolve PR #148/#149 review blockers through ordinary PR maintenance before main promotion",
-    "leave Utility request disposition and assignment authority to Control Brain"
+    "keep Refractory assembly-capacity delayed-outcome suppression-methodology and other lower-funnel semantics out of canonical evidence mappings",
+    "resolve PR #148/#149 review blockers through ordinary PR maintenance before main promotion"
   ]
 }
