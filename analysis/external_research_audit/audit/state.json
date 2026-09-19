@@ -1,119 +1,113 @@
 {
-  "timestamp": "2026-09-19T10:32:25+09:00",
+  "timestamp": "2026-09-19T22:31:21+09:00",
   "role": "INDEPENDENT_AUDITOR",
   "phase_ordering_confirmed": true,
   "control_plane_mailbox_semantics_respected": true,
+  "schedule_slot_jst": "22:30",
+  "schedule_inference_used": false,
   "blind_target_selection": {
-    "target": "NI01 ni01-no-ignition-selective-prediction-official-v1 terminal FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION",
+    "target": "H5 h5-event-routing-work-reduction-official-v1 terminal FAIL_NO_USEFUL_WORK_REDUCTION",
     "authoritative_refs_inspected": [
       "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-      "exact package@dbfe7469dbbbc1adbb00789ab382de892a1b3563",
-      "scientific-contract blob@3dc90b08f85e0e7c459e0c17e86ab338901fd4c6",
-      "control/ni01-no-ignition-selective-prediction-started-v1-20260918@d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d",
-      "raw preserve@8a39cf70e397bb7588f948910f01ec58672ac814",
-      "terminal evidence@69aa785a48bbdb531229b7f71f7fa84a5fde9948",
-      "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1"
+      "exact package@2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
+      "control/h5-event-routing-work-reduction-started-v1-20260918@058e90227cd48e1c10c6ecbaed01efdec1217d0e",
+      "raw preserve@ce5797eb584344db7a512e585506fb6c59ea475b",
+      "terminal evidence@61aff6d74b82b68a326f3d90505d70bcd4071fd5",
+      "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1"
     ],
     "attack_hypotheses": [
-      "authority/package/STARTED drift, leakage, or post-START repair",
-      "hidden world/task-label privilege in confidence comparator",
-      "threshold/scorer drift or outcome-conditioned threshold selection",
-      "seed/world fragility",
-      "comparator observation/resource mismatch",
-      "absent-signal versus mechanistic reduction conflation",
-      "claim-boundary overreach"
+      "authority/package/STARTED/preserve/evidence mismatch",
+      "target/evaluator leakage",
+      "comparator information/resource privilege mismatch",
+      "seed fragility or pseudo-replication",
+      "insufficient ablation or simple accounting explanation",
+      "post-outcome tuning or protocol drift",
+      "stale/duplicate evidence",
+      "claim-boundary overreach from algorithmic work to general compute efficiency"
     ],
-    "why_consequential": "NI01 is used to close the native No-Ignition/selective-decision line via an ordinary-confidence reduction; extra regime identity in the comparator can make that mechanistic conclusion stronger than the actual evidence."
+    "why_consequential": "H5 is a consumed terminal architecture-efficiency result not previously independently audited; its aggregate FAIL can be overgeneralized beyond the exact registered counter metric."
   },
   "blind_target_change_reason": null,
   "repository_refs_inspected": [
     "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "active research/*, current evidence/formal/sealed/freeze/control/preserve refs and tags",
-    "open PR/workflow state",
-    "NI01 exact package@dbfe7469dbbbc1adbb00789ab382de892a1b3563",
-    "NI01 STARTED@d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d",
-    "NI01 raw preserve@8a39cf70e397bb7588f948910f01ec58672ac814",
-    "NI01 terminal evidence@69aa785a48bbdb531229b7f71f7fa84a5fde9948",
-    "prior audit role history through PD01 2026-09-18 22:32 JST"
+    "active research/* and authoritative evidence/control/preserve refs",
+    "H5 package@2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
+    "H5 STARTED@058e90227cd48e1c10c6ecbaed01efdec1217d0e",
+    "H5 raw preserve@ce5797eb584344db7a512e585506fb6c59ea475b",
+    "H5 terminal evidence@61aff6d74b82b68a326f3d90505d70bcd4071fd5",
+    "H5 evidence annotated tag",
+    "workflow run 35338995888 attempt 1 success",
+    "prior audit role history through NI01 2026-09-19 10:32 JST"
   ],
-  "control_brain_commit_consumed": "10eb4206fb0c998fcdbc40c0e16f38829ea5d41e",
-  "evidence_analyst_commit_consumed": "8ee6d305acdc8310335e65c5bd3f35d121f35280",
-  "main_report_commit_consumed": "a6b85547ae743fd6ff7d28d2e6ea4204719e5f06",
-  "sub_report_commit_consumed": "44284b5de7240bd794633ec5d1543c22dfb216f4",
-  "literature_handoff_commit_consumed": "70580cbea48f8d6ad7e12327e8d14800c78915ff",
+  "control_brain_commit_consumed": "566f3b7c590fcfe2b9e8aaa0415da964989b1124",
+  "evidence_analyst_commit_consumed": "a3ec861d71c0965625fc1d2e5e8f65f4ce47f834",
+  "orchestrator_report_branch_tip_consumed": "40f43d747bdac156113be7812fc0623a86f99c60",
+  "main_report_commit_consumed": "b02e07e9229de0f9c5be7b93a487369717dd43f7",
+  "sub_report_commit_consumed": "40f43d747bdac156113be7812fc0623a86f99c60",
+  "literature_handoff_commit_consumed": "94ae4abf7b310faefa7244a03cda2a597dba4dca",
   "genuinely_new_information": true,
   "findings": [
     {
-      "id": "ni01_integrity_chain",
+      "id": "h5_integrity_chain",
       "status": "ROBUST_SO_FAR",
-      "summary": "No-retry STARTED binds exact package and authority; target-free DEV threshold derivation, target-blind TEST raw acquisition, immutable preserve, independent re-fetch/digest check and target-after-preserve scoring are coherent. No post-START scientific mutation or target leakage was found."
+      "summary": "Exact package, STARTED, one-shot workflow, raw-before-score preservation and terminal evidence bindings are coherent. No retry, post-START scientific drift, leakage or identity mismatch found."
     },
     {
-      "id": "ni01_registered_result",
+      "id": "h5_registered_result",
       "status": "CONTRACT_VALID",
-      "summary": "Candidate loss 0.2119466145833332, comparator loss 0.21146918402777773, effect -0.00047743055555544517, CI [-0.0024414062499999965, 0.0014756944444444355], coverage guard pass; frozen rule validly yields FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION."
+      "summary": "Primary mean reduction 0.023826074023772813 with CI [0.02379403660851484, 0.023859665012124307]; frozen rule validly yields FAIL_NO_USEFUL_WORK_REDUCTION. Activity means are 0.05927001218870528, 0.009811966841371046 and 0.0023962430412420807 at 1%, 5% and 15% activity."
     },
     {
-      "id": "ni01_world_label_privilege",
-      "status": "WEAKENED",
-      "summary": "Comparator thresholds are derived and applied separately by explicit world identity, while the candidate reference brain receives observations but not symbolic world identity. The comparator therefore has prospective target-free but asymmetric regime/task-label privilege."
+      "id": "h5_global_eligibility_bottleneck",
+      "status": "NEW_INTERPRETATION_CAP",
+      "summary": "Candidate and dense comparator both perform per-event all-edge eligibility decay. In the first 128-node/1%-bursty raw cell, eligibility touches+multiplications are 122880 of 124062 candidate work (99.05%), swamping the candidate's node-state lazy-materialization saving."
     },
     {
-      "id": "ni01_reduction_semantics",
-      "status": "INTERPRETATION_CEILING",
-      "summary": "The evidence supports no registered incremental native advantage over a world-conditioned coverage-matched confidence-abstention comparator. Equal-privilege generic confidence-abstention mechanism reduction is not established."
+      "id": "h5_claim_boundary",
+      "status": "ROBUST_NARROW_CLAIM",
+      "summary": "H5 supports failure to reach the prospectively defined useful aggregate algorithmic-work gate for this exact implementation/counter vocabulary. It is not a wall-clock, energy, or general event-routing no-go result."
     }
   ],
   "affected_lines": [
-    "NI01_H4",
-    "PROGRAMME_NOVELTY",
-    "FUTURE_REDUCTION_TAXONOMY",
-    "COMPARATOR_PRIVILEGE_DOCTRINE"
+    "H5_EVENT_ROUTING_WORK_REDUCTION",
+    "PROGRAMME_ARCHITECTURE_EFFICIENCY",
+    "FUTURE_WORK_REDUCTION_CONTRACTS",
+    "PROGRAMME_NOVELTY"
   ],
-  "audit_classification": "WEAKENED",
-  "confidence": "HIGH_ON_PRIVILEGE_ASYMMETRY_MEDIUM_ON_OUTCOME_SENSITIVITY",
-  "novelty_or_reduction_impact": "NI01_CANONICAL_FAIL_VALID; NO_REGISTERED_INCREMENTAL_NATIVE_ADVANTAGE_OVER_WORLD_CONDITIONED_CONFIDENCE_ABSTENTION; EQUAL_PRIVILEGE_MECHANISTIC_REDUCTION_NOT_ESTABLISHED; NO_NOVELTY_SUPPORT_RESTORED",
-  "thresholds_by_world": {
-    "contradiction_world": 0.4344505230131153,
-    "delayed_evidence_world": 0.43859092652956055,
-    "reliability_world": 0.43837666247277174
-  },
-  "world_effects": {
-    "contradiction_world": -0.003743489583333176,
-    "delayed_evidence_world": 0.00745442708333327,
-    "reliability_world": -0.00514322916666643
-  },
+  "audit_classification": "ROBUST_SO_FAR",
+  "confidence": "HIGH",
+  "novelty_or_reduction_impact": "H5_CANONICAL_FAIL_ROBUST_FOR_REGISTERED_ALGORITHMIC_WORK_METRIC; INTERPRETATION_MUST_REMAIN_IMPLEMENTATION_AND_COUNTER_VOCABULARY_SPECIFIC; GLOBAL_ALL_EDGE_ELIGIBILITY_MAINTENANCE_DOMINATES_SPARSE_CANDIDATE_WORK; NO_POSITIVE_NOVELTY_SUPPORT_RESTORED",
   "prospective_baselines_or_discriminators": [
-    "Do not rerun, retune, rescore, relabel or reopen canonical NI01.",
-    "Diagnostic-only read-only sensitivity with one global DEV-derived threshold that does not use world identity.",
-    "Future comparator contracts should enumerate task/regime identifiers and match candidate information privilege or prospectively justify the asymmetry.",
-    "Future mechanistic REDUCED_BY_* contracts should require a prospectively fixed positive candidate-signal gate where scientifically meaningful."
+    "Do not rerun, retune, rescore, relabel or reopen canonical H5.",
+    "Future fresh efficiency objects should prospectively report component-wise work shares as well as aggregate reduction.",
+    "Separate node-state locality, routing work and eligibility-maintenance complexity, and explicitly declare whether eligibility maintenance is globally eager or localized.",
+    "If runtime/energy claims are desired, bind a separate prospective wall-clock/memory/cache/energy methodology rather than reinterpreting H5 counters.",
+    "Use prospective scaling analysis across size/activity only in a genuinely fresh object if independently justified."
   ],
   "questions_for_evidence_analyst": [
-    "Should NI01 synthesis say world-conditioned coverage-matched confidence abstention rather than simply matched confidence abstention?",
-    "Can a read-only global-threshold sensitivity be computed from immutable NI01 raw without changing canonical evidence?",
-    "Should future comparator contracts treat regime/task IDs as explicit privilege that must be matched or justified?"
+    "Keep H5 synthesis explicitly scoped to the registered algorithmic-work metric and exact all-edge-eligibility implementation?",
+    "Record global eligibility maintenance as the principal architectural bottleneck revealed by H5 without treating it as a rescue rationale?",
+    "Require component-wise resource accounting in future fresh efficiency contracts?"
   ],
   "questions_for_control_brain": [
-    "Should NI01 be counted as no registered incremental native advantage, but not yet equal-privilege mechanistic reduction?",
-    "Should explicit task/regime-label privilege be added to the programme-wide symmetry gate?",
-    "Should architecture/testbed HOLD remain unchanged because this audit restores no positive NI01 signal?"
+    "Continue counting H5 as a robust negative result for the exact efficiency claim while avoiding a general no-go statement about event routing/lazy execution?",
+    "Treat H5 as architecture bottleneck information rather than mechanistic novelty evidence?",
+    "Keep consumed H5 fully closed; any optimized/local-eligibility efficiency question must be a genuinely fresh prospective object if independently justified?"
   ],
   "must_not_change_frozen_or_consumed": [
-    "ni01-no-ignition-selective-prediction-official-v1",
-    "dbfe7469dbbbc1adbb00789ab382de892a1b3563",
-    "3dc90b08f85e0e7c459e0c17e86ab338901fd4c6",
-    "control/ni01-no-ignition-selective-prediction-started-v1-20260918",
-    "8a39cf70e397bb7588f948910f01ec58672ac814",
-    "69aa785a48bbdb531229b7f71f7fa84a5fde9948",
-    "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1",
-    "canonical NI01 statistics and FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION token",
-    "all other consumed C19/R1/R2/PD01/H5/A01/RV01/RV02/CX identities and immutable evidence"
+    "h5-event-routing-work-reduction-official-v1",
+    "2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
+    "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
+    "ce5797eb584344db7a512e585506fb6c59ea475b",
+    "61aff6d74b82b68a326f3d90505d70bcd4071fd5",
+    "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1",
+    "canonical H5 statistics and FAIL_NO_USEFUL_WORK_REDUCTION token",
+    "all other consumed C19/R1/R2/PD01/NI01/A01/RV01/RV02/CX identities and immutable evidence"
   ],
   "read_only_recompute": {
-    "attempted": true,
-    "completed": false,
-    "limitation": "Immutable raw_predictions.jsonl is 12.8 MB and the GitHub connector could not stream it in this run; no diagnostic global-threshold sensitivity was computed. Canonical scoring was not changed."
+    "completed": "PARTIAL_COMPONENT_RECOMPUTE",
+    "detail": "Verified terminal classification from frozen score/report and independently decomposed preserved raw work counters for representative sparse cells; no canonical scoring or artifacts changed."
   },
+  "utility_request_created": null,
   "legacy_shared_latest_state_updated": false
 }
