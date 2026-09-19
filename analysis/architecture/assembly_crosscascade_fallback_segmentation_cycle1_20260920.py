@@ -5,8 +5,9 @@ import hashlib
 import json
 import os
 import subprocess
+from collections.abc import Callable
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any
 
 from sparkbrain.v04.contracts import CascadeEvent, SpikeEvent
 from sparkbrain.v05.assemblies import (
@@ -18,7 +19,8 @@ from sparkbrain.v05.assemblies import (
 from sparkbrain.v05.prediction import AssemblyPredictor
 
 CONTRACT_PATH = Path(
-    "analysis/architecture/assembly_crosscascade_fallback_segmentation_cycle1_contract_20260920.json"
+    "analysis/architecture/"
+    "assembly_crosscascade_fallback_segmentation_cycle1_contract_20260920.json"
 )
 
 
@@ -82,9 +84,13 @@ def cascade(row: dict[str, Any]) -> CascadeEvent:
     )
 
 
-def materialize_family(contract: dict[str, Any]) -> tuple[tuple[SpikeEvent, ...], dict[str, tuple[CascadeEvent, ...]]]:
+def materialize_family(
+    contract: dict[str, Any],
+) -> tuple[tuple[SpikeEvent, ...], dict[str, tuple[CascadeEvent, ...]]]:
     family = contract["input_family"]
-    spikes = tuple(spike(float(row["time_ms"]), int(row["unit_id"])) for row in family["spikes"])
+    spikes = tuple(
+        spike(float(row["time_ms"]), int(row["unit_id"])) for row in family["spikes"]
+    )
     variants = {
         name: tuple(cascade(row) for row in rows)
         for name, rows in family["segmentation_variants"].items()
@@ -99,7 +105,7 @@ def shadow_boundary_preserving(
     temporal_bin_ms: float,
     excluded_unit_ids: tuple[int, ...],
     source_kind: str,
-):
+) -> tuple[Any, ...]:
     excluded = set(excluded_unit_ids)
     spike_rows = tuple(row for row in spikes if row.unit_id not in excluded)
     patterns = []
@@ -128,7 +134,7 @@ def current_extractor(
     temporal_bin_ms: float,
     excluded_unit_ids: tuple[int, ...],
     source_kind: str,
-):
+) -> tuple[Any, ...]:
     return patterns_from_step(
         cascades,
         spikes,
@@ -138,7 +144,7 @@ def current_extractor(
     )
 
 
-def strongest(activations):
+def strongest(activations: list[Any]) -> Any | None:
     usable = [row for row in activations if row.mature and not row.suppressed]
     return max(
         usable,
@@ -148,7 +154,7 @@ def strongest(activations):
 
 
 def run_arm(
-    extractor: Callable[..., tuple],
+    extractor: Callable[..., tuple[Any, ...]],
     cascades: tuple[CascadeEvent, ...],
     spikes: tuple[SpikeEvent, ...],
     contract: dict[str, Any],
@@ -163,7 +169,7 @@ def run_arm(
     predictor = AssemblyPredictor()
     target = contract["assembly_binding"]["predictor_training_target"]
     training_episodes = int(contract["assembly_binding"]["training_episodes"])
-    last_patterns = ()
+    last_patterns: tuple[Any, ...] = ()
     last_activation = None
     for index in range(1, training_episodes + 1):
         last_patterns = extractor(cascades, spikes, **kwargs)
@@ -225,7 +231,10 @@ def same_joined_control(left: dict[str, Any], right: dict[str, Any]) -> bool:
 
 
 def representation_diff(left: dict[str, Any], right: dict[str, Any]) -> bool:
-    return left["pattern_count"] != right["pattern_count"] or left["patterns"] != right["patterns"]
+    return (
+        left["pattern_count"] != right["pattern_count"]
+        or left["patterns"] != right["patterns"]
+    )
 
 
 def assembly_diff(left: dict[str, Any], right: dict[str, Any]) -> bool:
@@ -246,7 +255,10 @@ def map_outcome(
     joined_ok = same_joined_control(joined_current, joined_shadow)
     rep_effect = representation_diff(split_current, split_shadow)
     asm_effect = assembly_diff(split_current, split_shadow)
-    functional_effect = split_current["probe_prediction_value"] != split_shadow["probe_prediction_value"]
+    functional_effect = (
+        split_current["probe_prediction_value"]
+        != split_shadow["probe_prediction_value"]
+    )
     facts = {
         "source_bindings_ok": bindings_ok,
         "joined_control_match": joined_ok,
@@ -256,9 +268,16 @@ def map_outcome(
     }
     if not bindings_ok or not joined_ok:
         return "INVALID_DIAGNOSTIC", facts
-    if contract["supported_contract_scope"]["explicit_episode_global_crosscascade_contract_hits"]:
+    explicit_hits = contract["supported_contract_scope"][
+        "explicit_episode_global_crosscascade_contract_hits"
+    ]
+    if explicit_hits:
         return "EXPLICIT_EPISODE_GLOBAL_FALLBACK_CONTRACT", facts
-    if not rep_effect and split_current["pattern_count"] == 0 and split_shadow["pattern_count"] == 0:
+    if (
+        not rep_effect
+        and split_current["pattern_count"] == 0
+        and split_shadow["pattern_count"] == 0
+    ):
         return "NO_SUPPORTED_RUNTIME_CONDITION", facts
     if rep_effect and asm_effect and functional_effect:
         return "FUNCTIONAL_CROSSCASCADE_SEGMENTATION_EFFECT", facts
@@ -271,15 +290,22 @@ def preflight(contract: dict[str, Any]) -> dict[str, Any]:
     checks = verify_bindings(contract)
     spikes, variants = materialize_family(contract)
     matched = set(variants) == {"split_sparse", "joined_control"} and len(spikes) == 4
+    ancestry = subprocess.run(
+        [
+            "git",
+            "merge-base",
+            "--is-ancestor",
+            contract["source_binding"]["main"],
+            "HEAD",
+        ],
+        check=False,
+    ).returncode == 0
     return {
         "source_blob_verification": checks,
         "all_source_bindings_ok": all(checks.values()),
         "matched_family_materialized": matched,
         "git_head": git("rev-parse", "HEAD"),
-        "main_is_ancestor": subprocess.call(
-            ["git", "merge-base", "--is-ancestor", contract["source_binding"]["main"], "HEAD"]
-        )
-        == 0,
+        "main_is_ancestor": ancestry,
     }
 
 
@@ -291,7 +317,12 @@ def main() -> None:
 
     contract = load_contract()
     pre = preflight(contract)
-    if not pre["all_source_bindings_ok"] or not pre["matched_family_materialized"] or not pre["main_is_ancestor"]:
+    valid_preflight = (
+        pre["all_source_bindings_ok"]
+        and pre["matched_family_materialized"]
+        and pre["main_is_ancestor"]
+    )
+    if not valid_preflight:
         raise SystemExit(f"preflight failed: {canonical(pre)}")
     if args.preflight_only:
         print(canonical(pre))
@@ -300,10 +331,30 @@ def main() -> None:
         raise SystemExit("--output-dir is required unless --preflight-only is used")
 
     spikes, variants = materialize_family(contract)
-    joined_current = run_arm(current_extractor, variants["joined_control"], spikes, contract)
-    joined_shadow = run_arm(shadow_boundary_preserving, variants["joined_control"], spikes, contract)
-    split_current = run_arm(current_extractor, variants["split_sparse"], spikes, contract)
-    split_shadow = run_arm(shadow_boundary_preserving, variants["split_sparse"], spikes, contract)
+    joined_current = run_arm(
+        current_extractor,
+        variants["joined_control"],
+        spikes,
+        contract,
+    )
+    joined_shadow = run_arm(
+        shadow_boundary_preserving,
+        variants["joined_control"],
+        spikes,
+        contract,
+    )
+    split_current = run_arm(
+        current_extractor,
+        variants["split_sparse"],
+        spikes,
+        contract,
+    )
+    split_shadow = run_arm(
+        shadow_boundary_preserving,
+        variants["split_sparse"],
+        spikes,
+        contract,
+    )
     outcome, decision_facts = map_outcome(
         contract,
         joined_current,
@@ -368,8 +419,17 @@ def main() -> None:
         )
     }
     summary["raw_sha256"] = raw_sha
-    (args.output_dir / "summary.json").write_text(canonical(summary) + "\n", encoding="utf-8")
-    print(canonical({"mapped_outcome": outcome, "raw_sha256": raw_sha, "stop_required": True}))
+    summary_path = args.output_dir / "summary.json"
+    summary_path.write_text(canonical(summary) + "\n", encoding="utf-8")
+    print(
+        canonical(
+            {
+                "mapped_outcome": outcome,
+                "raw_sha256": raw_sha,
+                "stop_required": True,
+            }
+        )
+    )
 
 
 if __name__ == "__main__":
