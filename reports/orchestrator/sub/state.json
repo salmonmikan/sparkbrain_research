@@ -1,137 +1,84 @@
 {
-  "timestamp": "2026-09-19T20:48:00+09:00",
+  "timestamp": "2026-09-19T21:46:00+09:00",
   "worker_role": "sub",
   "mode": "discovery",
-  "evidence_analyst_commit": "5982fc0ae76d62c4a6fce42f6b1aaaf7f85b8e23",
-  "consumed_lanes": [
-    "BOUNDED_SECONDARY_DISCOVERY"
-  ],
+  "evidence_analyst_commit": "a3ec861d71c0965625fc1d2e5e8f65f4ce47f834",
+  "consumed_lane": "BOUNDED_SECONDARY_DISCOVERY",
   "formal_sub_lane": null,
   "sub_fallback": "NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON",
+  "exploratory_target": "HOMEOSTASIS_WINDOW_PARTITION_INVARIANCE_DISCOVERY",
   "candidate_pool_id": null,
-  "exploratory_target": "RECEPTOR_POST_ADAPTATION_POLARITY_INVERSION_DISCOVERY",
-  "exploration_cycle": {
-    "current": 1,
-    "max_default": 3,
-    "expected_new_information": "Determine whether positive-input receptor polarity inversion survives history and whether it reduces exactly to the explicit fast-minus-medium temporal-contrast rule."
-  },
-  "why_independent_of_main": "Uses only stable main v0.5 receptor semantics and synthetic single-channel pulses; does not use structural-order or Top-k MAIN branches/results, H5 audit, H7 construction, repository data, checkpoints, formal raw, TEST, or consumed identities.",
-  "question_hypothesis_reduction_question": "Can a positive probe after sustained positive stimulation be emitted with negative polarity, and if so is every inversion exactly explained by sign(signed_input + fast_trace - medium_trace)?",
+  "exploration_cycle": "1/3",
+  "why_independent_of_main": "Standalone v0.5 homeostatic observation-window semantics; no dependency on MAIN routing/structural candidates, their outcomes, H5, H7, or formal surfaces.",
+  "question": "Does v0.5 homeostatic adaptation preserve final threshold under different observation-window partitions of the exact same physical spike train?",
   "inputs_used": {
-    "source_semantics": "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "files_read": [
-      "src/sparkbrain/v05/receptors.py",
-      "src/sparkbrain/v04/contracts.py"
-    ],
-    "experiment_inputs": "synthetic one-channel positive pulse trains only",
-    "trained_checkpoint_used": false,
-    "repository_dataset_used": false,
-    "heldout_test_accessed": false,
-    "preserved_formal_raw_accessed": false,
-    "official_scorer_used": false
+    "type": "synthetic_only",
+    "duration_ms": 1000.0,
+    "units": 4,
+    "spikes": 40,
+    "spike_interval_ms": 25.0,
+    "window_widths_ms": [10, 20, 25, 50, 100, 200],
+    "repository_dataset": false,
+    "trained_checkpoint": false,
+    "formal_raw": false,
+    "heldout_test": false
   },
-  "implementation_experiment_performed": {
-    "branch": "research/exploratory-sub-receptor-polarity-inversion-20260919",
-    "commit": "ddbaec1f91a9a02c18c9cc04ab45b529bd2410ef",
-    "script": "analysis/discovery/receptor_post_adaptation_polarity_inversion_20260919.py",
-    "result": "analysis/discovery/receptor_post_adaptation_polarity_inversion_20260919.json",
-    "handoff": "analysis/discovery/receptor_post_adaptation_polarity_inversion_20260919.md",
-    "cells": 280,
-    "train_pulses": 20,
-    "itis_ms": [2, 5, 10, 20, 40],
-    "gaps_ms": [0, 2, 5, 10, 20, 40, 80, 160],
-    "probe_magnitudes": [0.02, 0.05, 0.1, 0.2, 0.4, 0.8, 1.0]
+  "implementation_experiment": {
+    "branch": "research/exploratory-sub-homeostasis-window-partition-20260919",
+    "head": "cb8ea52a917e91b2aac6f1cd3de7c2a5e7573000",
+    "artifacts": [
+      "analysis/discovery/homeostasis_window_partition_invariance_20260919.py",
+      "analysis/discovery/homeostasis_window_partition_invariance_20260919.json",
+      "analysis/discovery/homeostasis_window_partition_invariance_20260919.md"
+    ],
+    "workflow_run": 35443669621,
+    "workflow_status_at_snapshot": "in_progress"
   },
   "observations": {
-    "negative_emitted_despite_positive_probe": 191,
-    "positive_emitted": 89,
-    "non_emitted": 0,
-    "direction_rule_mismatches": 0,
-    "negative_fraction": 0.6821428571428572,
-    "inversion_seen_through_gap_ms": 80,
-    "no_inversion_at_gap_ms": 160,
-    "interpretation": "The inversion is exactly predicted by the explicit signed_input + derivative rule, with derivative = fast_trace - medium_trace; it is ordinary temporal-contrast coding under current semantics."
+    "final_mean_threshold_by_window_ms": {
+      "10": 0.8966936837947685,
+      "20": 0.9637945225524823,
+      "25": 0.9767107839043511,
+      "50": 0.99847092097336,
+      "100": 1.004836028629609,
+      "200": 1.0052936057856
+    },
+    "threshold_span": 0.10859992199083146,
+    "reduction": "Exact per-observe semantics: target_spikes_per_window and rate_decay are applied per call, not normalized by elapsed physical duration."
   },
   "evidentiary_status": "NON_EVIDENTIARY",
-  "what_would_falsify_or_reduce_it": "Already exactly reduced for current semantics by the explicit direction rule. A future sign-preserving receptor rule would be a distinct prospective object, not a rescue cycle.",
+  "what_would_falsify_or_reduce_it": "Already reduced by explicit current implementation. Any duration-normalized contract is a fresh prospective object, not a rescue cycle.",
   "candidate_next_research_layer": "NONE_SCIENTIFICALLY",
   "scientific_choices_still_open": [
-    "Any future distinct receptor object must prospectively define whether emitted polarity is allowed to invert relative to current raw stimulus sign."
+    "physical-time target definition",
+    "duration-normalized decay",
+    "observation-window contract",
+    "functional metric/resource comparator for any fresh object"
   ],
   "recommendation": "REJECT",
-  "execution_allowed_for_formal_work": false,
-  "sub_active_claim": "One bounded NON_EVIDENTIARY receptor-semantics Discovery cycle completed and stopped after exact implementation reduction.",
   "main_work_explicitly_avoided": [
-    "CAND-STRUCTURAL-ORDER-PATH-01 valid Architecture outcome and all follow-up",
-    "research/main-structural-order-path-arch-study-20260919",
-    "CAND-TOPK-PA-01 support/reduction and PRE_FORMAL escalation",
-    "H5 Independent Audit",
-    "H7 mechanism/comparator construction",
-    "consumed/frozen/formal identities"
+    "CAND-TOPK-PA-01",
+    "CAND-STRUCTURAL-ORDER-PATH-01",
+    "CAND-H5-AUDIT-01",
+    "CAND-H7-RESP-01",
+    "formal/TEST/evidence work"
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "5982fc0ae76d62c4a6fce42f6b1aaaf7f85b8e23",
+    "evidence_analyst": "a3ec861d71c0965625fc1d2e5e8f65f4ce47f834",
     "control_brain": "566f3b7c590fcfe2b9e8aaa0415da964989b1124",
-    "main_report_tip_observed": "f8ea70d49bd28eb52f59c014b67cf43b3c8eb01b",
-    "main_structural_research_head_observed": "6a53ee36259bca31b77024245e5ab0a9ef5ec405",
-    "topk_research_head_observed": "04ced2b97ed088bb2cdb086d164a86212741e601",
-    "evidence_tag_count": 5,
-    "formal_tag_count": 0,
-    "sealed_tag_count": 0
-  },
-  "branches_prs_advanced": {
-    "research_branches": [
-      {
-        "branch": "research/exploratory-sub-receptor-polarity-inversion-20260919",
-        "head": "ddbaec1f91a9a02c18c9cc04ab45b529bd2410ef"
-      }
-    ],
-    "prs": [],
-    "merged_to_main": false
-  },
-  "workflows_experiments": {
-    "formal_workflow_dispatched": false,
-    "official_test_accessed": false,
-    "discovery_sweep_executed": true,
-    "branch_ci": {
-      "run_id": 35440941684,
-      "head": "ddbaec1f91a9a02c18c9cc04ab45b529bd2410ef",
-      "status_when_persisted": "completed",
-      "conclusion": "success",
-      "scientific_relevance": "ordinary repository CI only"
-    }
-  },
-  "scientific_readiness_exploratory_results": {
-    "discovery_result": "POSITIVE_PROBE_POLARITY_CAN_INVERT_AFTER_ADAPTATION_HISTORY",
-    "ordinary_reduction": "explicit sign(signed_input + fast_trace - medium_trace) direction rule",
-    "new_formal_evidence": false,
-    "new_formal_results": 0,
-    "promotion_boundary": "REJECT scientific candidate; retain as receptor-semantics engineering/protocol constraint."
+    "main_structural_closed_head": "6a53ee36259bca31b77024245e5ab0a9ef5ec405",
+    "evidence_tag_count": 5
   },
   "consumed_identities": [],
-  "blockers": [],
+  "formal_identity_created": false,
+  "started_or_control_created": false,
+  "official_test_accessed": false,
+  "formal_scoring_or_evidence_created": false,
+  "immutable_evidence_modified": false,
   "utility_request_created": null,
-  "fallback_status": "not_used",
-  "rejected_lane": null,
-  "collision_reconciliation": {
-    "evidence_analyst_refetched_before_mutation": "5982fc0ae76d62c4a6fce42f6b1aaaf7f85b8e23",
-    "main_refetched_before_mutation": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "ops_report_tip_before_persistence": "f8ea70d49bd28eb52f59c014b67cf43b3c8eb01b",
-    "main_frontier_collision_found": false,
-    "analyst_main_snapshot_stale_after_main_outcome": true,
-    "handling": "Kept only the still-valid independent SUB Discovery allocation; treated the new structural-order outcome and all follow-up as MAIN-owned.",
-    "ops_report_tip_before_ci_finalization": "1b20012fd84dc5a43c79b248939597a6f43a068f"
-  },
-  "integrity_state": {
-    "sealed_or_one_way_test_access": false,
-    "consumed_identity_rerun": false,
-    "started_or_control_created": false,
-    "formal_freeze_evidence_created": false,
-    "official_score_created": false,
-    "immutable_evidence_modified": false,
-    "main_branch_or_main_research_branch_modified": false
-  },
+  "blockers": [],
   "completion_target": "ACHIEVED_ONE_BOUNDED_INDEPENDENT_DISCOVERY_CYCLE_AND_STOPPED_AFTER_EXACT_REDUCTION",
-  "persistence_note": "2045-sub.md is preserved append-only; the CI-complete final snapshot is appended as 2048-sub.md. No persistence limitation remains."
+  "integrity_state": "CLEAN_NON_EVIDENTIARY_DISCOVERY",
+  "persistence_result": "pending_atomic_sub_report_commit"
 }
