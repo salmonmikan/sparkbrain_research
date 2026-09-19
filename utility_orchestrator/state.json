@@ -1,52 +1,57 @@
 {
   "status": "COMPLETED",
-  "assignment_id": "CTRL-20260919-2250-TOPK-CROSS-SEED-SUPPORT",
+  "assignment_id": "CTRL-20260920-0250-ARTIFACT-HANDOFF-FIDELITY",
   "run_count": 1,
-  "updated_at": "2026-09-19T23:25:03+09:00",
-  "last_result": "utility_orchestrator/results/2026-09-19/CTRL-20260919-2250-TOPK-CROSS-SEED-SUPPORT-2325.md",
-  "evidentiary_status": "NON_EVIDENTIARY_METHODOLOGY_ARCHITECTURE_DIAGNOSTIC",
-  "diagnostic_classification": "MIXED",
-  "recommendation": "ADD_MORE_ARCHITECTURE_SUPPORT",
-  "support_summary": {
-    "leave_one_seed_stable": true,
-    "replicated_supported_magnitude": 0.1,
-    "magnitude_0_1_survives_support_n_ge": [3, 5, 10, 20],
-    "lower_magnitude_support": "UNDER_SUPPORTED_OR_NOT_ASSESSABLE",
-    "leave_one_magnitude_0_1": "SIGNAL_LOST",
-    "cycle1_high_magnitude_turnover_pairs": 25,
-    "cycle2_high_magnitude_turnover_pairs": 26,
-    "cycle1_supported_episodes_high_magnitude": 9,
-    "cycle2_supported_episodes_high_magnitude": 5,
-    "cycle1_leave_one_episode_retained": "10/12",
-    "cycle2_leave_one_episode_retained": "10/12"
-  },
-  "artifact_provenance": {
-    "cycle1": {
+  "updated_at": "2026-09-20T03:27:15+09:00",
+  "last_result": "utility_orchestrator/results/2026-09-20/CTRL-20260920-0250-ARTIFACT-HANDOFF-FIDELITY-0327.md",
+  "evidentiary_status": "NON_EVIDENTIARY_METHODOLOGY_FIDELITY_DIAGNOSTIC",
+  "diagnostic_classification": "REPEATED_HANDOFF_FIDELITY_DEFECT",
+  "recommendation": "ADD_FAIL_CLOSED_MACHINE_CHECKABLE_HANDOFF_GUARD",
+  "sample_summary": {
+    "mandatory_temporal_cycle1": {
+      "workflow_run": 35451528895,
+      "head_sha": "7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
+      "artifact_id": 10587410697,
+      "archive_sha256": "22a5c650a58501a1dc8303118c366845201f9eba8453a22996f5fb4ca4d6428f",
+      "artifact_contract_sha256": "eb4aa28cd4b7299302ac31a65c73586c4e5a17e5487b1d1ddf43757cee901049",
+      "raw_sha256": "71d4d8fddbe6b683b4ad93951c0f95fc1dfa5df74645743bfd39fba5b33c54ef",
+      "mapped_outcome": "FUNCTIONAL_BATCH_PARTITION_EFFECT",
+      "fidelity": "MISMATCH_CONFIRMED_DECISION_UNCHANGED",
+      "mismatch": [
+        "EVIDENCE_ANALYST_CONTRACT_DIGEST",
+        "EVIDENCE_ANALYST_FAMILY_BEHAVIOR_REVERSED"
+      ]
+    },
+    "opportunistic_topk_cycle1": {
       "workflow_run": 35432088902,
       "head_sha": "97f542d86dcd3a609cd039379fcda41ba61e0909",
-      "artifact": "topk-persistent-amplification-cycle1",
-      "sha256": "62ee402e9e7c5a1cd41e65eebcbbe183d2be0625e4e66c2157ae207317f93f83"
+      "artifact_id": 10581155271,
+      "archive_sha256": "62ee402e9e7c5a1cd41e65eebcbbe183d2be0625e4e66c2157ae207317f93f83",
+      "raw_sha256": "316498f99ff60c59e1a1eb146c1e498972539402820cea48202ab4bf420c3b00",
+      "mapped_outcome": "PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL",
+      "fidelity": "MISMATCH_CONFIRMED_PROPAGATED_ONE_HOP_TOP_LEVEL_DECISION_SUPPORTED",
+      "mismatch": [
+        "MAIN_FALSE_SIGNAL_AT_MAGNITUDE_0_01_DESPITE_TURNOVER_N_1_LT_20",
+        "EVIDENCE_ANALYST_REPEATED_FALSE_SIGNAL_AT_MAGNITUDE_0_01"
+      ]
     },
-    "cycle2": {
-      "workflow_run": 35435714352,
-      "head_sha": "04ced2b97ed088bb2cdb086d164a86212741e601",
-      "artifact": "topk-persistent-amplification-cycle2",
-      "sha256": "31820e1be709068e51aac00d9df17aa1df642b9a58245d44800065a1dd409500"
-    }
+    "assembly_sampled": false,
+    "assembly_skip_reason": "SECOND_INDEPENDENT_SAMPLE_ALREADY_ESTABLISHED_NON_ISOLATED_DEFECT_WITHIN_BOUNDED_AUDIT"
   },
-  "stop_reason": "COMPLETED_ONE_BOUNDED_RESULT_MAX_RUNS_REACHED",
+  "stop_reason": "COMPLETED_ONE_BOUNDED_CONSISTENCY_AUDIT_MAX_RUNS_REACHED",
   "follow_up_request": null,
   "integrity": {
     "scientific_workflow_rerun": false,
     "workflow_dispatch": false,
     "training_or_probe_rerun": false,
+    "result_regenerated_or_rescored": false,
     "test_accessed": false,
     "formal_or_consumed_raw_accessed": false,
     "research_or_main_branch_mutated": false,
-    "immutable_evidence_mutated": false,
-    "scheduler_mutated": false,
-    "threshold_metric_horizon_comparator_seed_changed": false,
-    "canonical_cycle_result_reclassified": false,
-    "preformal_or_formal_authority_created": false
+    "immutable_or_scientific_control_refs_mutated": false,
+    "prior_control_plane_records_edited": false,
+    "threshold_metric_comparator_seed_successor_changed": false,
+    "preformal_or_formal_authority_created": false,
+    "scheduler_mutated": false
   }
 }
