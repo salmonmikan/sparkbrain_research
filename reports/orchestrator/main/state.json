@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-19T21:16:30+09:00",
+  "timestamp": "2026-09-19T22:19:30+09:00",
   "worker_role": "main",
   "execution_mode": "PRIMARY",
   "analyst_commit": "a3ec861d71c0965625fc1d2e5e8f65f4ce47f834",
@@ -10,7 +10,8 @@
     "active": null,
     "question": "No fresh central high-information non-rescue object is currently authorized.",
     "evidentiary_status": "NO_NEW_EVIDENCE",
-    "exploration_cycle_count": {
+    "exploration_cycle_count_this_run": 0,
+    "programme_tracking": {
       "CAND_STRUCTURAL_ORDER_PATH_01": {"discovery": 1, "architecture_completed": 1, "classification": "REJECT"},
       "CAND_TOPK_PA_01": {"discovery": 1, "architecture_completed": 2, "classification": "HOLD"}
     }
@@ -18,14 +19,16 @@
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "evidence_analyst_handoff": "a3ec861d71c0965625fc1d2e5e8f65f4ce47f834",
-    "structural_research_branch": "research/main-structural-order-path-arch-study-20260919",
-    "structural_research_head": "6a53ee36259bca31b77024245e5ab0a9ef5ec405",
-    "structural_workflow_run_id": 35438868911,
-    "structural_workflow_status": "completed/success",
+    "active_main_research_branch": null,
+    "active_main_research_head": null,
     "formal_identity": null,
     "started_ref": null,
     "formal_preserve_ref": null,
-    "formal_evidence_ref": null
+    "formal_evidence_ref": null,
+    "sub_observed_branch": "research/exploratory-sub-homeostasis-window-partition-20260919",
+    "sub_observed_head": "cb8ea52a917e91b2aac6f1cd3de7c2a5e7573000",
+    "sub_observed_ci_run": 35443669621,
+    "sub_observed_ci_status": "completed/success"
   },
   "research_layer_state": {
     "DISCOVERY": "OPEN_SUB_DEFAULT_NON_EVIDENTIARY",
@@ -51,9 +54,13 @@
   "observations_results": {
     "formal_scientific_evidence": "NONE_NEW",
     "pre_formal_development_evidence": "NONE_NEW",
-    "architecture_study_observations_this_run": "NONE_NEW",
-    "prior_architecture_result_retained": "EDGE_OR_HOMEOSTASIS_CONTROL_REPRODUCES",
-    "analyst_interpretation": "CAND-STRUCTURAL-ORDER-PATH-01 is rejected for further cycles under the current question because edge-only/homeostatic control reproduces the required observable; order sensitivity remains useful non-evidentiary system characterization."
+    "main_architecture_study_observations_this_run": "NONE_NEW",
+    "sub_collision_observation_only": {
+      "target": "HOMEOSTASIS_WINDOW_PARTITION_INVARIANCE_DISCOVERY",
+      "evidentiary_status": "NON_EVIDENTIARY",
+      "classification_from_sub": "REJECT",
+      "main_action": "NO_ABSORPTION_NO_PROMOTION_WITHOUT_FRESH_ANALYST_AUTHORITY"
+    }
   },
   "consumed_identities": [
     "c19-external-v2-official-v4",
@@ -65,7 +72,7 @@
     "h5-event-routing-work-reduction-official-v1"
   ],
   "integrity_state": {
-    "status": "CLEAN_EXPLICIT_ANALYST_HOLD",
+    "status": "CLEAN_EXPLICIT_ANALYST_HOLD_RECONFIRMED",
     "official_test_accessed": false,
     "formal_identity_created": false,
     "started_created": false,
@@ -82,21 +89,21 @@
   "lease_collision_reconciliation": {
     "prior_status": "COMPLETED",
     "fresh_same_object_main_collision_found": false,
-    "lease_acquired_commit": "ad011b459630299f9994a8275a69dae6d15c2af2",
+    "lease_acquired_commit": "440b7d5d74c4f71b807bcf5fded96cdfb5a79da5",
     "analyst_ref_rechecked": "a3ec861d71c0965625fc1d2e5e8f65f4ce47f834",
-    "main_ref_rechecked": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "structural_ref_rechecked": "6a53ee36259bca31b77024245e5ab0a9ef5ec405"
+    "main_ref_rechecked": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d"
   },
   "critical_path_fixes": [],
-  "stop_reason": "ANALYST_EXPLICIT_MAIN_HOLD_NO_FRESH_CENTRAL_OBJECT",
+  "stop_reason": "ANALYST_EXPLICIT_MAIN_HOLD_NO_FRESH_CENTRAL_OBJECT_RECONFIRMED",
   "work_left_for_sub": "Independent bounded Discovery only under Analyst allocation; no MAIN critical-path dependency.",
   "utility_request_created": null,
   "existing_utility_request": "EVA-20260919-1943-TOPK-CROSS-SEED-SUPPORT",
   "next_MAIN_action": "Await fresh Evidence Analyst authorization of a central Architecture/PRE_FORMAL/FORMAL object. Do not run Structural cycle 2, Top-k cycle 3, construct H7, access TEST/formal surfaces, or absorb SUB Discovery under current authority.",
   "persistence_result": {
-    "latest_md_commit": "be8ad6035444bd7ffeeb92b220c634377b49517b",
-    "history_path": "reports/orchestrator/history/2026-09-19/2116-main.md",
-    "history_commit": "406a963403a919b451b70af76425407db578c9ba",
+    "lease_acquire_commit": "440b7d5d74c4f71b807bcf5fded96cdfb5a79da5",
+    "latest_md_commit": "b02e07e9229de0f9c5be7b93a487369717dd43f7",
+    "history_path": "reports/orchestrator/history/2026-09-19/2219-main.md",
+    "history_commit": "9b0f49bebc2d52bfdcc260271682198efa0dffe5",
     "state_json": "this update",
     "final_lease_commit": "follows state update",
     "force_push_used": false
