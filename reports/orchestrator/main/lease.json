@@ -3,12 +3,12 @@
   "execution_mode": "PRIMARY",
   "status": "RUNNING",
   "started_at": "2026-09-19T11:13:24+09:00",
-  "heartbeat_at": "2026-09-19T11:13:24+09:00",
-  "analyst_commit": "8ee6d305acdc8310335e65c5bd3f35d121f35280",
+  "heartbeat_at": "2026-09-19T11:21:00+09:00",
+  "analyst_commit": "2c1caa7063feabde079725e198e09b273d005a80",
   "active_branch": null,
   "active_identity": null,
-  "active_step": "PROGRAMME_ARCHITECTURE_TESTBED_FAST_PATH_RECONCILE",
+  "active_step": "FULL_RECONCILIATION_AFTER_ANALYST_AUTHORITY_DRIFT",
   "workflow_run_id": null,
-  "expected_next_action": "Reconcile the current Evidence Analyst HOLD against current main, SUB collision state, and Control Brain strategic prior. The newer 10:32 NI01 audit is pending Evidence Analyst consumption, so MAIN must not independently reinterpret NI01 or create a successor. If no fresh Analyst-admitted object appears, apply NO_FRESH_OBJECT -> HOLD and persist completion.",
+  "expected_next_action": "Reconcile the fresh 11:10 Evidence Analyst authority after mid-run mailbox drift. MAIN remains on architecture/testbed HOLD; do not absorb the newly reserved independent SUB NI01 world-label privilege diagnostic. Inspect broader active research/control/preserve/evidence/PR/workflow state for integrity only, then persist corrected MAIN state and stop unless the fresh Analyst handoff admits a MAIN object.",
   "owner": "main"
 }
