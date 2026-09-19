@@ -1,90 +1,99 @@
 {
-  "timestamp": "2026-09-20T04:13:23+09:00",
+  "timestamp": "2026-09-20T04:50:00+09:00",
   "worker_role": "main",
-  "execution_mode": "PRIMARY",
-  "analyst_commit": "9bb852bc1461755814d6a9a0e7ea561f1858a0da",
+  "execution_mode": "RELAY",
+  "analyst_commit": "493573eb3b8c38d88f251db7c04dfe1a586c6ff0",
   "research_layer": "ARCHITECTURE_STUDY",
-  "current_lane": "V05_TOPOLOGY_CONFIG_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_STOPPED_PENDING_FRESH_ANALYST_REVIEW",
+  "current_lane": "V05_UNIT_SUPPRESSION_TRANSIENT_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_WORKFLOW_IN_PROGRESS",
   "candidate_question": {
-    "id": "CAND-V05-TOPOLOGY-CONFIG-BINDING-01",
-    "question": "Are exported v0.5 width/height/receptor_rows fields coherently bound to realized topology and checkpoint semantics, or silently accepted while runtime geometry remains fixed?",
+    "id": "CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01",
+    "question": "Is public transient suppress_units / clear_unit_suppression explicitly state-preserving, state-neutral, or silent/ambiguous in a way that can confound future causal/recovery studies?",
     "exploration_cycle_count": {"DISCOVERY": 1, "ARCHITECTURE_STUDY": 1},
-    "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY_VALID_TERMINAL_OUTCOME"
+    "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY_IN_PROGRESS"
   },
   "research_layer_state": {
     "DISCOVERY": {"state": "OPEN", "owner": "SUB", "status": "NON_EVIDENTIARY"},
-    "ARCHITECTURE_STUDY": {"state": "CYCLE1_COMPLETE_STOPPED_FOR_FRESH_ANALYST_REVIEW", "owner": "MAIN", "current_object": "CAND-V05-TOPOLOGY-CONFIG-BINDING-01"},
+    "ARCHITECTURE_STUDY": {"state": "CYCLE1_EXACT_HEAD_WORKFLOW_IN_PROGRESS", "owner": "MAIN", "current_object": "CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01"},
     "PRE_FORMAL": {"state": "EMPTY_HOLD", "owner": "MAIN"},
     "FORMAL": {"state": "EMPTY_HOLD", "owner": "MAIN"}
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst_handoff": "9bb852bc1461755814d6a9a0e7ea561f1858a0da",
-    "research_branch": "research/main-v05-topology-config-contract-arch-study-20260920",
-    "research_head": "4a15a91edb8e92b89cda960f533590f7b46a70f2",
-    "prospective_contract_commit": "94b312ab5998b6e929b7498473bfc6e7459f4a1c",
+    "evidence_analyst_handoff": "493573eb3b8c38d88f251db7c04dfe1a586c6ff0",
+    "research_branch": "research/main-v05-unit-suppression-transient-semantics-arch-study-20260920",
+    "research_head": "2ef4b24f8e7ef8577ebbcb0328e7b3476bc24336",
+    "prospective_contract_commit": "05a9c4e26954adf04012a554e800bf63d23ba627",
+    "harness_commit": "d8bf9c34b16d05ad4a8e10f145b46e367d93f89c",
     "source_blobs": {
       "src/sparkbrain/v05/brain.py": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
-      "src/sparkbrain/v05/topology.py": "d9d292bdedc1288a929d1e53f03b9fc182b45a36",
-      "src/sparkbrain/v04/brain.py": "25fd56b082168a9ea71f313023451858d00b6184",
-      "configs/v05_reference.json": "d3c82d0279c3bce09d76ddf0ad2df1ec74bc2d7f"
+      "src/sparkbrain/v05/evaluation.py": "efd52d236708aea3bf23b6139d8717b1ac1d0559",
+      "tests/v05/test_v05_brain.py": "6a81994ac82a3f0660585ef0d95495aaaa336629"
     }
   },
-  "fast_path_reconciliation": {
-    "status": "FAST_PATH_COMPLETE_NO_FULL_RECONCILIATION",
-    "reason": "Refs, completed workflow/head, artifact binding, current Analyst authority, and MAIN/SUB ownership are internally consistent.",
-    "inherited_main_lease": "RELAY_COMPLETED",
-    "fresh_main_collision_found": false,
+  "lease_collision_reconciliation": {
+    "inherited_status": "COMPLETED",
+    "fresh_primary_running_collision_found": false,
     "sub_collision_found": false,
-    "fresh_analyst_authority_after_terminal_outcome_found": false
+    "sub_reference": "research/exploratory-sub-unit-suppression-latent-state-20260920@a2b65919ade8c4fe33514aa686ae18db8e0889d3",
+    "relay_lease_acquired": true
   },
-  "branches_prs_advanced": {
-    "research_branches_advanced": [],
-    "prs_advanced": [],
-    "main_mutated": false,
-    "research_merge_performed": false
+  "prospective_binding": {
+    "status": "COMPLETE_BEFORE_TERMINAL_MAPPING_EXECUTION",
+    "deterministic_scope_tokens": ["suppress_units", "clear_unit_suppression", "suppressed_unit_ids"],
+    "scope_paths": [
+      "src/sparkbrain/v05/brain.py",
+      "src/sparkbrain/v05/evaluation.py",
+      "tests/v05/test_v05_brain.py"
+    ],
+    "terminal_classes": [
+      "EXPLICIT_STATE_PRESERVING_TRANSIENT_CONTRACT",
+      "EXPLICIT_STATE_NEUTRAL_CONTRACT_VIOLATED",
+      "PUBLIC_TRANSIENT_API_SILENT_STATE_PRESERVATION",
+      "NO_SUPPORTED_TRANSIENT_CLEAR_SURFACE",
+      "AMBIGUOUS_CONTRACT",
+      "INVALID_DIAGNOSTIC"
+    ],
+    "machine_handoff_fields_bound": true,
+    "formal_paths": "UNARMED_NO_FORMAL_OBJECT"
   },
   "workflow_experiments": {
-    "new_workflow_dispatched_this_primary_run": false,
-    "revalidated_completed_architecture_workflow": {
-      "run_id": 35460876580,
-      "head": "4a15a91edb8e92b89cda960f533590f7b46a70f2",
-      "status": "completed",
-      "conclusion": "success",
-      "artifact_id": 10589564435,
-      "artifact_digest": "sha256:e73909be3e647566540a06a4da94829b4737c3de3a24c5e0e54c697245be1970"
+    "architecture_workflow": {
+      "run_id": 35465512928,
+      "head": "2ef4b24f8e7ef8577ebbcb0328e7b3476bc24336",
+      "status": "in_progress",
+      "conclusion": null,
+      "purpose": "exact-head CI/readiness then one static NON_EVIDENTIARY Architecture characterization with raw-before-summary artifact upload"
+    },
+    "ordinary_ci": {
+      "run_id": 35465512894,
+      "head": "2ef4b24f8e7ef8577ebbcb0328e7b3476bc24336",
+      "status": "in_progress",
+      "conclusion": null
     }
   },
   "observations_results": {
     "formal_scientific_evidence": "NONE_NEW",
     "pre_formal_development_evidence": "NONE_NEW",
-    "new_primary_architecture_observation": "NONE_NEW",
-    "persisted_relay_architecture_outcome": "SILENT_DECLARED_REALIZED_GEOMETRY_DIVERGENCE",
-    "persisted_relay_outcome_evidentiary_status": "NON_EVIDENTIARY",
-    "config_count": 5,
-    "all_roundtrip_declared_config_preserved": true,
-    "all_roundtrip_realized_topology_preserved": true,
-    "explicit_contract_hit_count": 0,
-    "unique_realized_topology_signatures": ["d92b79779dd89f99e32a7f72d0be176f34cbcc936af901edd55a2d3b65d95519"],
-    "realized_topology_summary": {"total_unit_count": 64, "receptor_count": 16, "reservoir_count": 48, "connection_count": 326},
-    "claim_boundary": "Architecture/API correctness signal only. No geometry formula, code fix, deprecation/backward-compatibility policy, PRE_FORMAL claim, or FORMAL claim is authorized by the completed result."
+    "new_architecture_outcome": "NONE_YET_WORKFLOW_IN_PROGRESS",
+    "terminal_mapping_consumed": false,
+    "claim_boundary": "Static Architecture/API contract characterization only. SUB exploratory pulse is not Architecture evidence; no dynamic cycle 2, implementation repair, PRE_FORMAL, or FORMAL continuation is authorized in this run."
   },
   "consumed_identities": [
     "c19-external-v2-official-v4",
-    "c19-r1-revision-authority-official-v1",
-    "c19-r1-revision-authority-official-v2",
-    "c19-r2-fsa-state-tracker-official-v1",
-    "pd01-long-history-fading-memory-official-v1",
-    "ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1",
-    "h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1"
+    "C19-R1 revision-authority official-v1",
+    "C19-R1 revision-authority official-v2",
+    "C19-R2 official-v1",
+    "PD01 official-v1",
+    "NI01 official-v1",
+    "H5 official-v1"
   ],
   "integrity_state": {
-    "status": "CLEAN_STOPPED_PENDING_FRESH_ANALYST_AUTHORITY",
+    "status": "CLEAN_WAITING_EXTERNAL_EXACT_HEAD_VALIDATION_AND_STATIC_ARCHITECTURE_CYCLE",
     "exact_main_verified": true,
     "exact_research_head_verified": true,
-    "completed_workflow_exact_head_verified": true,
-    "artifact_run_head_binding_verified": true,
-    "authoritative_evidence_tag_count": 5,
+    "source_scope_blob_bound_before_terminal_mapping_execution": true,
+    "terminal_mapping_bound_before_terminal_mapping_execution": true,
+    "machine_handoff_fields_bound": true,
     "official_test_accessed_this_run": false,
     "formal_identity_created_this_run": false,
     "started_created_this_run": false,
@@ -94,25 +103,28 @@
     "rerun_or_retune_performed_this_run": false,
     "post_outcome_code_fix_performed_this_run": false
   },
+  "contingency_consumed": "PRE_START_BINDING_COMPLETE",
   "critical_path_fixes": [],
   "critical_path_actions_performed": [
-    "Read latest Evidence Analyst handoff, MAIN latest/state/lease, and current SUB report.",
-    "Acquired fresh PRIMARY MAIN lease after confirming inherited RELAY lease was completed.",
-    "Re-fetched stable main, exact active research branch, completed Architecture workflow, artifact identity/digest, authoritative tags, and open PR state.",
-    "Confirmed no fresh Evidence Analyst authority exists after the valid terminal Architecture result.",
-    "Applied the already-bound stop contingency and performed no research mutation or successor design."
+    "Read fresh Evidence Analyst handoff, MAIN latest/state/lease, and current SUB state.",
+    "Re-fetched stable main and confirmed no fresh PRIMARY RUNNING same-object collision.",
+    "Acquired a RELAY MAIN lease on the control plane.",
+    "Created the new research branch directly from exact stable main.",
+    "Deterministically enumerated and blob-bound the suppress_units/clear_unit_suppression source/tests/callsite scope before terminal mapping execution.",
+    "Prospectively fixed the Analyst-authorized terminal mapping and required machine-readable handoff fields.",
+    "Added a static-only harness and exact-head workflow that require ordinary CI/readiness before the single Architecture characterization.",
+    "Observed both the Architecture workflow and ordinary CI running on exact head and stopped rather than waiting."
   ],
-  "stop_reason": "NO_FRESH_ANALYST_AUTHORITY_AFTER_VALID_TERMINAL_ARCHITECTURE_OUTCOME",
-  "work_left_for_sub": "Independent bounded Discovery only. SUB's unit-suppression latent-state candidate remains SUB-owned pending fresh Analyst review and is not absorbed by MAIN.",
+  "stop_reason": "EXACT_HEAD_SUPPRESSION_SEMANTICS_ARCHITECTURE_WORKFLOW_IN_PROGRESS",
+  "work_left_for_sub": "Independent bounded Discovery only; do not continue the promoted suppression Architecture object or touch MAIN blockers/formal surfaces.",
   "utility_request_created": null,
-  "next_MAIN_action": "Wait for fresh Evidence Analyst review/classification of the completed v0.5 config-contract Architecture result and any prospective successor authority. Do not implement geometry semantics, run Architecture cycle 2, or enter PRE_FORMAL/FORMAL before that handoff exists.",
+  "next_MAIN_action": "Collect workflow 35465512928 and ordinary CI 35465512894 on exact head 2ef4b24f8e7ef8577ebbcb0328e7b3476bc24336. If a pre-start mechanical blocker appears, only a science-invariant fix plus re-binding is authorized. If one valid terminal class is produced, verify raw-before-summary artifact binding, persist that fixed outcome, and STOP for fresh Evidence Analyst review without same-run implementation repair, dynamic cycle 2, PRE_FORMAL, or FORMAL continuation.",
   "persistence_result": {
-    "history_path": "reports/orchestrator/history/2026-09-20/0413-main.md",
-    "history_commit": "03227e88713964390e21fe8162c469dce94331c6",
-    "latest_md_commit": "e78f7268773d8cc1af79ef0a6770b45f759358b5",
+    "history_path": "reports/orchestrator/history/2026-09-20/0450-main.md",
+    "history_commit": "7ce07b9f4c740acc887d7136848ef5c01c0ba34e",
+    "latest_md_commit": "ad4222917e40f884592abc872c6d92db6f80f668",
     "state_json": "this update",
-    "lease_acquisition_commit": "a0c62798e1b94af80340584fb3ca19966420febc",
-    "lease_final_commit": "dadb7edd2352860632e4cd69d131f816a53f5176",
+    "lease_acquisition_commit": "77db134c038b75ebf2277c0188bf9f9aff735dd1",
     "force_push_used": false
   }
 }
