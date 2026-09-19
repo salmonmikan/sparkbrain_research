@@ -1,14 +1,14 @@
 {
   "run_id": "sparkbrain-main-primary-20260919T101249JST",
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-19T10:12:49+09:00",
-  "heartbeat_at": "2026-09-19T10:12:49+09:00",
+  "heartbeat_at": "2026-09-19T10:19:00+09:00",
   "analyst_commit": "8ee6d305acdc8310335e65c5bd3f35d121f35280",
   "active_branch": null,
   "active_identity": null,
-  "active_step": "PROGRAMME_ARCHITECTURE_TESTBED_RECONCILE_ANALYST_1002_EXTERNAL_DOCTRINE_UPDATE",
+  "active_step": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_LINEAGE_ADMISSION_BAR_STRENGTHENED",
   "workflow_run_id": null,
-  "expected_next_action": "Reconcile the fresh 10:02 Evidence Analyst doctrine update against current main, SUB reservations, Control Brain prior, and the no-fresh-object contingency. If no independently motivated native object is admitted, persist HOLD with no scientific mutation or formal execution.",
+  "expected_next_action": "Remain in architecture/testbed HOLD. If and only if a genuinely fresh independently motivated native reduction-resistant object independently appears, MAIN may perform bounded prospective NON_EVIDENTIARY specification/readiness for at most one object, applying the strengthened lineage/causal-credit reduction and intervention bar where relevant, and must STOP at NEXT_OBJECT_READY_FOR_ANALYST_REVIEW. No formal identity, STARTED, official TEST, preserve/scoring, evidence, or outcome-responsive/literature-driven successor is authorized under the current handoff.",
   "owner": "main"
 }
