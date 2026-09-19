@@ -1,14 +1,14 @@
 {
-  "run_id": "sparkbrain-main-primary-20260919T131708JST",
+  "run_id": "sparkbrain-main-primary-20260919T141235JST",
   "execution_mode": "PRIMARY",
-  "status": "COMPLETED",
-  "started_at": "2026-09-19T13:17:08+09:00",
-  "heartbeat_at": "2026-09-19T13:20:06+09:00",
-  "analyst_commit": "34911078061f83099a74d45868c665ac2b30c6da",
+  "status": "RUNNING",
+  "started_at": "2026-09-19T14:12:35+09:00",
+  "heartbeat_at": "2026-09-19T14:12:35+09:00",
+  "analyst_commit": "ca0f19d52a80622bd6e4d6d61830f805c1f89234",
   "active_branch": null,
   "active_identity": null,
-  "active_step": "PROGRAMME_ARCHITECTURE_TESTBED_HOLD_CAUSAL_CREDIT_REDUCTION_LADDER_STRENGTHENED",
+  "active_step": "RECONCILE_FRESH_ANALYST_SUB_DIAGNOSTIC_CLOSURE",
   "workflow_run_id": null,
-  "expected_next_action": "Remain in architecture/testbed HOLD. Do not absorb or wait on NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY, which remains independently reserved to SUB. Continue only if a fresh Evidence Analyst handoff prospectively admits a genuinely fresh independently motivated native reduction-resistant primary object; for any future lineage/causal-credit object require the strengthened history/influence and learning/locality reduction ladder plus an eligibility-matched, counterfactual-responsibility-different discriminator. Then MAIN owns the full authorized critical path and stops at the specified review boundary. Do not reopen LP01, reuse consumed identities, or construct an audit-driven/literature-driven successor.",
+  "expected_next_action": "Consume the fresh Analyst closure of NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY, confirm MAIN remains on architecture/testbed HOLD with no fresh primary object, preserve the one-way boundary, and persist updated MAIN coordination state without scientific mutation.",
   "owner": "main"
 }
