@@ -1,6 +1,6 @@
-# PRIMARY MAIN — Assembly prototype lock-in Architecture cycle 1 dispatched
+# PRIMARY MAIN — Assembly prototype lock-in Architecture cycle 1 waiting on repaired exact-head CI
 
-Timestamp: `2026-09-19 23:24 JST`  
+Timestamp: `2026-09-19 23:29 JST`  
 Worker role: `main`  
 Execution mode: `PRIMARY`  
 Evidence Analyst authority: `982e5686524c9fc2b665efcf44069fef49196333`  
@@ -10,46 +10,24 @@ Evidentiary status: `NON_EVIDENTIARY_ARCHITECTURE_STUDY_PENDING_EXTERNAL_EXECUTI
 
 ## Frontier / fast-path reconciliation
 
-FAST PATH remained valid; no repository-wide reconciliation was triggered. The fresh Evidence Analyst handoff promoted `CAND-ASSEMBLY-PROTOTYPE-LOCKIN-01` from the SUB Discovery result into one prospectively bounded MAIN Architecture cycle. Authoritative `main` was independently re-fetched at `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`, and the Analyst authority was re-fetched after the research push and remained `982e5686524c9fc2b665efcf44069fef49196333`.
+FAST PATH remains valid; no repository-wide reconciliation was triggered. Fresh Evidence Analyst authority remains `982e5686524c9fc2b665efcf44069fef49196333`, authoritative `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`, and SUB remains on independent bounded Discovery rather than this MAIN lane.
 
-SUB remains reserved to independent bounded Discovery and must not touch this Assembly Architecture lane. MAIN did not absorb any unrelated SUB work. Existing Top-k Utility work remains nonblocking and was not duplicated.
+MAIN created `research/main-assembly-prototype-lockin-arch-study-20260919` from exact `main` and prospectively fixed the DEV-only cycle-1 contract before any diagnostic visibility: development seeds 501/502, one frozen upstream internal-pattern corpus per seed, 48 adaptation episodes, 16 fixed jitter probes, 12 deterministic order/reversal pairs per seed, current assembly/predictor semantics, fixed label-invariant structural metrics, fixed prediction/action functional metrics, the stronger-privilege order-invariant union-find reduction ceiling, and the Analyst-fixed four-way mapping. Official TEST/formal/consumed surfaces remain forbidden.
 
-## Prospectively fixed Architecture contract
+## Critical-path implementation and science-invariant repair
 
-Created fresh branch `research/main-assembly-prototype-lockin-arch-study-20260919` from exact `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. Exact current research head is `39364dd34cbb1cb51ab80421f95b491d273c5676`.
+MAIN implemented the Architecture harness and exact-head workflow. The first exact-head Architecture workflow `35448630760` at head `39364dd34cbb1cb51ab80421f95b491d273c5676` failed during ordinary repository test collection on both Python 3.11 and 3.13 because the branch-local workflow installed only `.[dev]`, while repository tests import optional learned/spiking dependencies (`torch`/`numpy`). Harness compile/lint passed, exact-head/main-ancestry checks passed, and the Architecture diagnostic job was skipped. Therefore no outcome-bearing Architecture rows were generated or observed.
 
-Before any diagnostic visibility MAIN committed a fixed contract binding:
+Under the prospectively authorized pre-diagnostic mechanical-fix contingency, MAIN changed only workflow dependency installation to match the repository's own CI (`.[dev,learned,spiking]`). No candidate, hypothesis, corpus, order family, comparator, metric, mapping, threshold, seed, probe, resource contract, or source binding changed.
 
-- DEV-only development seeds `501` and `502`;
-- 48 development adaptation episodes and 16 fixed `jitter` probes per seed;
-- upstream corpus generation once per seed with Assembly/prediction/action disabled, adaptation field learning enabled, and probe field learning disabled;
-- frozen internal-pattern corpus reused identically across all order arms;
-- 12 deterministic order pairs per seed, each pseudorandom order paired with its exact reversal, with seed derivation fixed from candidate ID + source main SHA + development seed + pair index;
-- current `TemporalAssemblyMemory` threshold `0.66`, current `AssemblyPredictor`, and current action-policy semantics; probes are learning-disabled and action probes use `explore=false`;
-- label-invariant mature-assembly count and pairwise co-clustering disagreement;
-- functional probe prediction disagreement, coverage delta, accuracy delta, and descriptive action disagreement;
-- stronger-privilege order-invariant connected-component / union-find comparator at the same threshold as an ordinary-reduction ceiling;
-- Analyst-fixed `NO_OR_LOW_SUPPORT`, `FUNCTIONAL_ORDER_LOCKIN_SIGNAL`, `REPRESENTATION_ONLY`, and `MIXED` mapping with raw-before-interpretation;
-- explicit prohibition on official TEST, consumed preserve/raw, formal scorer, identity, STARTED, formal preserve/scoring/evidence, outcome-responsive tuning, or same-object rescue.
+Current exact research head is `7d9b90e58ee088ff2b4187d3c62c5e568148e6aa`. Repaired Architecture workflow `35448815310` is running on that exact head. Generic repository CI `35448815303` is also running on the same head and is not a separate scientific execution.
 
-The contract binds current source blobs for assembly, brain, predictor, action, worlds, and `configs/v05_reference.json`.
+## Scientific status
 
-## Implementation / critical-path fixes
+No FORMAL scientific evidence was created. No PRE_FORMAL development evidence was created. No completed Architecture observation exists yet. No official TEST, formal identity, STARTED, formal preserve/scoring/evidence, merge, consumed-identity reuse, rerun, retune, or outcome-responsive redesign occurred.
 
-MAIN implemented the Architecture harness and a branch-local exact-head workflow. Before any workflow existed or any diagnostic was visible, one malformed draft harness was deleted and recreated with the intended unchanged scientific contract; this was a science-invariant pre-outcome mechanical repair only.
+## Stop / relay handoff
 
-The final workflow runs ordinary repository CI/preflight on Python 3.11 and 3.13, verifies exact research head and `main` ancestry, verifies the bound source blobs, and only then executes exactly one DEV-only Architecture diagnostic on Python 3.11. The harness writes the frozen corpus manifest and raw diagnostic rows to disk and fsyncs them before reloading raw rows to compute the mapped summary.
+Stop reason: `WAITING_EXTERNAL_REPAIRED_EXACT_HEAD_ARCHITECTURE_WORKFLOW`.
 
-## Workflow / external wait
-
-Exact research head: `39364dd34cbb1cb51ab80421f95b491d273c5676`.
-
-Architecture workflow run: `35448630760` (`Assembly prototype lock-in Architecture cycle 1`), exact head, currently `in_progress` at checkpoint. Generic repository CI run `35448630753` was also created for the same exact head and is not a separate scientific execution.
-
-No outcome-bearing rows or scientific result have been consumed by MAIN in this run. No FORMAL scientific evidence exists. No PRE_FORMAL evidence exists. The Architecture cycle is dispatched but not yet classified.
-
-## Stop / next action
-
-Stop reason: `WAITING_EXTERNAL_EXACT_HEAD_ARCHITECTURE_WORKFLOW`.
-
-Lease ends `WAITING_EXTERNAL`; Relay continuation is expected. Relay/next MAIN may collect only exact workflow `35448630760` for head `39364dd34cbb1cb51ab80421f95b491d273c5676`. If exact-head CI/preflight fails before diagnostic visibility, only science-invariant mechanical repair under the unchanged contract is authorized. If a valid diagnostic completes, verify/download its artifacts, consume the already-fixed mapping exactly once, persist the NON_EVIDENTIARY result, and STOP for fresh Evidence Analyst review. No outcome-responsive redesign, retune, extra permutations, cycle 2, PRE_FORMAL promotion, or FORMAL promotion is authorized.
+Lease ends `WAITING_EXTERNAL`; Relay continuation is expected. Relay/next MAIN must collect only workflow `35448815310` for exact head `7d9b90e58ee088ff2b4187d3c62c5e568148e6aa`. If it fails before diagnostic visibility, only science-invariant mechanical repair under the unchanged prospective contract is allowed. If one valid diagnostic completes, verify artifacts/raw-before-summary, consume the fixed four-way mapping exactly once, persist the result as NON_EVIDENTIARY Architecture evidence, and STOP for fresh Evidence Analyst review. No cycle 2 or automatic PRE_FORMAL/FORMAL promotion is authorized.
