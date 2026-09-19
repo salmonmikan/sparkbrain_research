@@ -1,22 +1,52 @@
 {
   "status": "COMPLETED",
-  "assignment_id": "CTRL-20260919-1850-ARCH-SIGNAL-ROBUSTNESS",
+  "assignment_id": "CTRL-20260919-2250-TOPK-CROSS-SEED-SUPPORT",
   "run_count": 1,
-  "updated_at": "2026-09-19T19:27:21+09:00",
-  "last_result": "utility_orchestrator/results/2026-09-19/CTRL-20260919-1850-ARCH-SIGNAL-ROBUSTNESS-1927.md",
-  "evidentiary_status": "NON_EVIDENTIARY_METHODOLOGY_DIAGNOSTIC",
+  "updated_at": "2026-09-19T23:25:03+09:00",
+  "last_result": "utility_orchestrator/results/2026-09-19/CTRL-20260919-2250-TOPK-CROSS-SEED-SUPPORT-2325.md",
+  "evidentiary_status": "NON_EVIDENTIARY_METHODOLOGY_ARCHITECTURE_DIAGNOSTIC",
   "diagnostic_classification": "MIXED",
-  "methodology_recommendation": "ADD_PER_STRATUM_SUPPORT",
+  "recommendation": "ADD_MORE_ARCHITECTURE_SUPPORT",
+  "support_summary": {
+    "leave_one_seed_stable": true,
+    "replicated_supported_magnitude": 0.1,
+    "magnitude_0_1_survives_support_n_ge": [3, 5, 10, 20],
+    "lower_magnitude_support": "UNDER_SUPPORTED_OR_NOT_ASSESSABLE",
+    "leave_one_magnitude_0_1": "SIGNAL_LOST",
+    "cycle1_high_magnitude_turnover_pairs": 25,
+    "cycle2_high_magnitude_turnover_pairs": 26,
+    "cycle1_supported_episodes_high_magnitude": 9,
+    "cycle2_supported_episodes_high_magnitude": 5,
+    "cycle1_leave_one_episode_retained": "10/12",
+    "cycle2_leave_one_episode_retained": "10/12"
+  },
+  "artifact_provenance": {
+    "cycle1": {
+      "workflow_run": 35432088902,
+      "head_sha": "97f542d86dcd3a609cd039379fcda41ba61e0909",
+      "artifact": "topk-persistent-amplification-cycle1",
+      "sha256": "62ee402e9e7c5a1cd41e65eebcbbe183d2be0625e4e66c2157ae207317f93f83"
+    },
+    "cycle2": {
+      "workflow_run": 35435714352,
+      "head_sha": "04ced2b97ed088bb2cdb086d164a86212741e601",
+      "artifact": "topk-persistent-amplification-cycle2",
+      "sha256": "31820e1be709068e51aac00d9df17aa1df642b9a58245d44800065a1dd409500"
+    }
+  },
   "stop_reason": "COMPLETED_ONE_BOUNDED_RESULT_MAX_RUNS_REACHED",
   "follow_up_request": null,
   "integrity": {
     "scientific_workflow_rerun": false,
+    "workflow_dispatch": false,
     "training_or_probe_rerun": false,
     "test_accessed": false,
-    "formal_or_consumed_evidence_accessed": false,
-    "research_branch_mutated": false,
+    "formal_or_consumed_raw_accessed": false,
+    "research_or_main_branch_mutated": false,
     "immutable_evidence_mutated": false,
     "scheduler_mutated": false,
-    "canonical_cycle1_result_reclassified": false
+    "threshold_metric_horizon_comparator_seed_changed": false,
+    "canonical_cycle_result_reclassified": false,
+    "preformal_or_formal_authority_created": false
   }
 }
