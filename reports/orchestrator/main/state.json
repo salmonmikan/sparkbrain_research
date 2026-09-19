@@ -112,7 +112,7 @@
     "latest_md_commit": "e78f7268773d8cc1af79ef0a6770b45f759358b5",
     "state_json": "this update",
     "lease_acquisition_commit": "a0c62798e1b94af80340584fb3ca19966420febc",
-    "lease_final": "pending final update",
+    "lease_final_commit": "dadb7edd2352860632e4cd69d131f816a53f5176",
     "force_push_used": false
   }
 }
