@@ -1,9 +1,9 @@
-# SparkBrain Research Orchestrator SUB — 2026-09-20 04:47 JST
+# SparkBrain Research Orchestrator SUB — 2026-09-20 04:49 JST
 
 ## Mode / allocation
 
 - mode: `discovery`
-- Evidence Analyst authority: `6e37598f6c92dbe6b6a88d6083db93bd0f022b10`
+- final Evidence Analyst authority: `493573eb3b8c38d88f251db7c04dfe1a586c6ff0`
 - authoritative stable main: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
 - main_lane: `V05_UNIT_SUPPRESSION_TRANSIENT_CONTRACT_ARCHITECTURE_STUDY_CYCLE1`
 - sub_lane: `BOUNDED_SECONDARY_DISCOVERY`
@@ -16,9 +16,9 @@
 
 ## Authority reconciliation / MAIN frontier avoided
 
-Fresh Analyst authority assigns MAIN exclusively to `CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01` static contract characterization. SUB did not continue that promoted suppression object, replay the prior suppression pulse diagnostic, take MAIN blockers, continue v0.5 config binding / Temporal / Top-k / H7, or touch FORMAL/TEST/scoring/identity/preserve/evidence surfaces.
+The final fresh Analyst handoff appeared after the initial same-run SUB snapshot but leaves the allocation materially unchanged: Discovery remains open to SUB for at most one independent bounded question, while MAIN exclusively owns `CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01` static contract characterization. The new handoff explicitly confirms MAIN has not yet started that object and does not classify this newly completed SUB result yet.
 
-`blocked_until` keeps MAIN dynamic scientific execution blocked beyond its authorized static contract cycle, PRE_FORMAL blocked until a fresh supported mechanism/reduction object exists, and FORMAL blocked until a fresh admissible object plus one-way authority exists. `do_not_touch` was respected for all consumed identities and immutable evidence/control/preserve refs, completed config/Temporal/Top-k artifacts, H5/NI01/C19/PD01 evidence, official TEST/formal scorer surfaces, and scheduler definitions.
+SUB did not continue the promoted suppression object, replay the prior suppression pulse diagnostic, take MAIN blockers, continue v0.5 config binding / Temporal / Top-k / H7, or touch FORMAL/TEST/scoring/identity/preserve/evidence surfaces. `blocked_until` keeps dynamic MAIN continuation, PRE_FORMAL, and FORMAL gated behind their respective fresh prospective authorities. `do_not_touch` was respected for consumed identities, immutable evidence/control/preserve refs, completed topology-config/Temporal/Top-k/H5/NI01/C19/PD01 artifacts/outcomes, official TEST/formal scorer surfaces, scheduler definitions, and PR #148/#149 governance work.
 
 ## Discovery question / implementation
 
@@ -26,7 +26,7 @@ Because the named Analyst pool contained no independent executable SUB object, S
 
 Question: when one episode contains multiple temporally separated cascades, each with only one eligible non-receptor spike after receptor exclusion, does `patterns_from_step(...)` synthesize one fallback `ActivityPattern` spanning those distinct cascades even though no individual cascade can form a pattern?
 
-Fixed synthetic diagnostic: two explicit cascades separated by 20 ms; each contains one receptor spike (`unit 0`) and one reservoir spike (`unit 101` at 1 ms; `unit 102` at 21 ms). Excluding the receptor leaves only one eligible internal spike per cascade. A control adds a second eligible internal spike to the first cascade. A separate assembly-facing check passes the fallback through `TemporalAssemblyMemory(mature_episodes=3)` for three distinct synthetic episode IDs.
+Fixed synthetic diagnostic: two explicit cascades separated by 20 ms; each contains one receptor spike (`unit 0`) and one reservoir spike (`unit 101` at 1 ms; `unit 102` at 21 ms). Excluding the receptor leaves one eligible internal spike per cascade. A control adds a second eligible internal spike to the first cascade. A separate assembly-facing check passes the fallback through `TemporalAssemblyMemory(mature_episodes=3)` for three distinct synthetic episode IDs.
 
 No production source was modified. No repository dataset, trained checkpoint, retained/confirmatory/held-out TEST input, formal raw result, official scorer, consumed identity, or MAIN outcome artifact was opened or used.
 
@@ -54,4 +54,4 @@ Utility request: none. Consumed identities: none. New formal results: zero. Bloc
 
 Completion target: `ACHIEVED_ONE_BOUNDED_INDEPENDENT_ASSEMBLY_SEGMENTATION_DISCOVERY_CYCLE_AND_RETURNED_ARCHITECTURE_PROMOTION_CANDIDATE` — achieved.
 
-SUB persistence history: `reports/orchestrator/history/2026-09-20/0447-sub.md`, history commit `0b18c8ff3a39d5b6a4d9bf7757276e4fa71ad233`. `sub/state.json` is updated separately after this latest snapshot. No MAIN or legacy shared latest/state file is modified; no force-push is used.
+SUB persistence history: preliminary same-run snapshot `reports/orchestrator/history/2026-09-20/0447-sub.md` at `0b18c8ff3a39d5b6a4d9bf7757276e4fa71ad233`; final authority-reconciled append-only snapshot `reports/orchestrator/history/2026-09-20/0449-sub.md` at `70ee6ef3364d1abd6d5c6196b31b7b9fded02067`. No MAIN or legacy shared latest/state file was modified; no force-push was used.
