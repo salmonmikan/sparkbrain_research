@@ -1,85 +1,63 @@
 # SparkBrain External Research & Audit — Independent Audit Latest
 
-Analysis time: 2026-09-19 10:32 JST
+Analysis time: 2026-09-19 22:31 JST
 Role: `INDEPENDENT_AUDITOR`
 
 ## Phase ordering
 
 `phase_ordering_confirmed: true`
 
-The audit target and attack hypotheses were fixed from current repository evidence and prior audit history before reading Control Brain, Evidence Analyst, MAIN/SUB, or Literature summaries.
+Phase 1 fixed the target from repository evidence and prior audit history before Control Brain, Evidence Analyst, MAIN/SUB, or Literature summaries were read.
 
 ### blind_target_selection
 
-- target: NI01 `ni01-no-ignition-selective-prediction-official-v1`, canonical terminal `FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION`
+- target: H5 `h5-event-routing-work-reduction-official-v1`, canonical terminal `FAIL_NO_USEFUL_WORK_REDUCTION`
 - main: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
-- exact package: `dbfe7469dbbbc1adbb00789ab382de892a1b3563`
-- scientific-contract blob: `3dc90b08f85e0e7c459e0c17e86ab338901fd4c6`
-- STARTED: `control/ni01-no-ignition-selective-prediction-started-v1-20260918@d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d`
-- raw preserve: `8a39cf70e397bb7588f948910f01ec58672ac814`
-- terminal evidence: `69aa785a48bbdb531229b7f71f7fa84a5fde9948`
-- evidence tag: `evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1`
-- attacks fixed blind: authority/package drift; target/evaluator leakage; hidden world/task-label privilege; threshold/scorer drift; seed/world fragility; comparator observation/resource mismatch; absent-signal-versus-reduction semantics; claim-boundary overreach.
-- why consequential: NI01 is used to reduce the native No-Ignition/selective-decision line to ordinary confidence abstention. A comparator with extra regime identity can make that mechanistic reduction claim stronger than the actual evidence.
+- exact package: `2086a8f4ea080a7a8a0e3c79d77afe9b516db905`
+- STARTED: `control/h5-event-routing-work-reduction-started-v1-20260918@058e90227cd48e1c10c6ecbaed01efdec1217d0e`
+- raw preserve: `ce5797eb584344db7a512e585506fb6c59ea475b`
+- terminal evidence: `61aff6d74b82b68a326f3d90505d70bcd4071fd5`
+- attacks fixed blind: authority/package/STARTED/preserve/evidence mismatch; leakage; comparator information/resource privilege; seed fragility/pseudo-replication; insufficient ablation/simple bookkeeping explanations; post-outcome drift; stale/duplicate evidence; and overclaim from registered algorithmic work to general compute efficiency.
+- why consequential: H5 is a consumed terminal efficiency line not previously independently audited, and its result can be overgeneralized beyond the exact registered work metric.
 
 `blind_target_change_reason: null`
 
 ## Repository-evidence audit
 
-### Evidence integrity: `ROBUST_SO_FAR`
+### Integrity and registered classification: `ROBUST_SO_FAR`
 
-The no-retry STARTED marker binds the exact package and Evidence Analyst authority. The successful one-way workflow uses target-free DEV threshold derivation, target-blind TEST raw acquisition, immutable preserve, independent byte re-fetch/digest verification, then target materialization and deterministic scoring. The preserved manifest records 46,080 TEST steps, `targets_materialized: false`, and the exact source/package bindings. No post-START retuning, identity reuse, target-before-preserve scoring, or package drift was found.
+No authority drift, retry, scorer/package mismatch, or target leakage was found. The one-shot workflow ran once on the exact package, raw rows were preserved before scoring, and terminal evidence binds the same package, STARTED ref, preserve commit and run identity.
 
-Terminal statistics are contract-valid:
+The frozen contract is explicitly an **algorithmic-work** claim, not wall-clock or hardware-energy efficiency. It compares event-routed lazy state materialization against a standalone dense eager equivalent, while charging both sides the same genuinely executed per-event all-edge eligibility decay and routed-message work. The primary statistic is workload-seed clustered, with equal stratum weight within seed and bootstrap over eight seeds.
 
-- candidate selective loss: `0.2119466145833332`
-- comparator selective loss: `0.21146918402777773`
-- effect `(comparator - candidate)`: `-0.00047743055555544517`
-- 95% CI: `[-0.0024414062499999965, 0.0014756944444444355]`
-- coverage guard: pass
-- terminal class: `FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION`
+The terminal result is contract-valid:
 
-The frozen FAIL rule is satisfied because the 95% CI upper bound is below `0.005`.
+- primary mean work reduction: `0.023826074023772813`
+- 95% CI: `[0.02379403660851484, 0.023859665012124307]`
+- activity means: `0.01 -> 0.05927001218870528`, `0.05 -> 0.009811966841371046`, `0.15 -> 0.0023962430412420807`
+- terminal class: `FAIL_NO_USEFUL_WORK_REDUCTION`
 
-### New issue: comparator receives explicit world identity that the candidate does not
+The registered FAIL rule is satisfied because the primary CI upper bound is below `0.05`. Quality/equivalence guards passed.
 
-The formal contract describes the comparator as receiving the same per-step LABELS probability vector, but also prospectively fits **one separate DEV threshold per world**. The exact raw manifest shows:
+### New audit information: the FAIL is a bottleneck diagnosis, not a general no-go theorem
 
-- `contradiction_world`: `0.4344505230131153`
-- `delayed_evidence_world`: `0.43859092652956055`
-- `reliability_world`: `0.43837666247277174`
+The preserved counters expose why the aggregate reduction is small. The candidate still performs **global all-edge eligibility decay on every processed event**, exactly as the dense comparator does. In the first sparse 128-node / 1% bursty cell, eligibility touches plus eligibility multiplications contribute `122880 / 124062 = 99.05%` of candidate audited work. The candidate does save node-state materialization/decay work (`120` materializations versus `1408` for dense in that cell), but that saving is swamped by shared eligibility maintenance.
 
-The threshold spread is about `0.00414` confidence units. At TEST time the official runner indexes `thresholds[world]` and applies that threshold to each row.
+At higher activity some cells even make the candidate slightly more expensive because repeated target-state/fanout bookkeeping can exceed the dense state-materialization saving. Conversely the 1% activity aggregate remains positively reduced (~5.93%), so the evidence does **not** support the broad sentence “event routing/lazy execution yields no computational saving.” It supports the narrower registered conclusion: **this exact H5 implementation did not reach the prospectively defined useful aggregate algorithmic-work reduction gate under these workloads and counter vocabulary.**
 
-By contrast, the candidate path creates the same reference brain for each episode and injects only the generated observation (`evidence_label`, strength, source/evidence IDs, sensor/object metadata). It does not pass the symbolic `world` identifier into SparkBrain. Thus the confidence comparator is not strictly information-privilege matched: it receives an oracle regime/task label used to choose its abstention policy, while the candidate must infer regime consequences only from observations/dynamics.
-
-This is target-free and prospectively preregistered, so it is **not leakage or post-outcome tuning**. But it is hidden task-label privilege in the comparator. The three worlds are genuinely different generative regimes, and the terminal world effects are heterogeneous (`-0.00374349`, `+0.00745443`, `-0.00514323`), so the asymmetry cannot be dismissed from the summary alone.
-
-The safe conclusion is therefore narrower:
-
-> NI01 found no registered incremental native No-Ignition advantage over a **world-conditioned, coverage-matched confidence-abstention comparator**.
-
-It does not yet establish equal-privilege reduction to a single ordinary confidence-abstention rule that sees only the same score vector.
-
-### Secondary semantics: no positive-signal gate for mechanistic `REDUCED_BY_*`
-
-NI01's FAIL taxonomy, like the previously audited PD01 taxonomy, does not separately require an absolute/prospective candidate-positive-signal gate before mechanistic `REDUCED_BY_*` language is armed. For NI01, the registered scientific question is itself incremental value over the comparator, so the terminal result validly supports **no registered incremental advantage**. It is still safer not to upgrade that to a stronger mechanism-equivalence statement, especially while comparator privilege is asymmetric.
-
-### Read-only sensitivity limitation
-
-A decisive post-hoc sensitivity would recompute the frozen TEST contrast using one global DEV-derived confidence threshold (or another threshold policy that does not receive world identity), while preserving all targets, raw predictions, loss, and bootstrap machinery. The immutable raw is preserved, but the GitHub connector could not stream the 12.8 MB JSONL in this run, so this sensitivity was not recomputed here. Canonical evidence must not be rescored or relabeled; any such calculation is diagnostic only.
+This is not a confound in the frozen experiment: the contract prospectively and explicitly includes the shared all-edge eligibility cost, and the dense comparator has no extra semantic/task privilege. It is an interpretation ceiling and a useful architectural bottleneck finding.
 
 ## Phase-2 comparison
 
-After blind selection was fixed, current control-plane summaries were read. Control Brain already requires symmetric privilege for future reduction claims and explicitly requested a read-only NI01 absent-signal-versus-reduction audit. Evidence Analyst currently summarizes NI01 as “no registered incremental native advantage over matched confidence abstention.” MAIN/SUB remain architecture/testbed HOLD/no-op; newest Literature concerns future lineage admission and does not alter NI01 evidence.
+After blind selection was fixed, Control Brain, Evidence Analyst, both MAIN/SUB report streams, and the newest Literature stream were read. Control Brain only carries H5 as `FAIL_NO_USEFUL_WORK_REDUCTION` and does not generalize it to wall-clock/system efficiency. Evidence Analyst explicitly queued H5 for this narrow read-only accounting/claim-boundary audit and already flagged that the resource-accounting definition may narrow interpretation. MAIN/SUB remain outside H5 and did not touch the consumed identity. Literature concerns held Top-k reductions and does not alter H5 evidence.
 
-The new audit finding sharpens the Evidence Analyst wording: “matched” is accurate for coverage and score-vector source, but **not for regime-information privilege** because the comparator is keyed by exact world identity.
+Therefore no control-plane overclaim currently requires downgrading the canonical H5 result.
 
 ## Audit classification
 
-`WEAKENED`
+`ROBUST_SO_FAR`
 
-The canonical terminal token and one-way evidence integrity remain valid. The mechanistic/equal-privilege reduction interpretation is weakened by a prospectively registered but asymmetric world-label privilege. No positive NI01 novelty evidence is restored.
+Canonical H5 FAIL and one-way integrity are robust for the registered claim. The new information is a strong interpretation cap: H5 mainly demonstrates that globally eager eligibility maintenance dominates this implementation's audited budget; it is not evidence that event routing/lazy state materialization is generally useless.
 
 ## Knowledge-flow contract
 
@@ -87,53 +65,57 @@ The canonical terminal token and one-way evidence integrity remain valid. The me
 role: INDEPENDENT_AUDITOR
 genuinely_new_information: true
 affected_lines:
-  - NI01_H4
+  - H5_EVENT_ROUTING_WORK_REDUCTION
+  - PROGRAMME_ARCHITECTURE_EFFICIENCY
+  - FUTURE_WORK_REDUCTION_CONTRACTS
   - PROGRAMME_NOVELTY
-  - FUTURE_REDUCTION_TAXONOMY
-  - COMPARATOR_PRIVILEGE_DOCTRINE
 novelty_or_reduction_impact: >
-  NI01_CANONICAL_FAIL_VALID; NO_REGISTERED_INCREMENTAL_NATIVE_ADVANTAGE_OVER_WORLD_CONDITIONED_CONFIDENCE_ABSTENTION;
-  EQUAL_PRIVILEGE_MECHANISTIC_REDUCTION_NOT_ESTABLISHED; NO_NOVELTY_SUPPORT_RESTORED.
-audit_classification: WEAKENED
+  H5_CANONICAL_FAIL_ROBUST_FOR_REGISTERED_ALGORITHMIC_WORK_METRIC;
+  INTERPRETATION_MUST_REMAIN_IMPLEMENTATION_AND_COUNTER_VOCABULARY_SPECIFIC;
+  GLOBAL_ALL_EDGE_ELIGIBILITY_MAINTENANCE_DOMINATES_SPARSE_CANDIDATE_WORK;
+  NO_POSITIVE_NOVELTY_SUPPORT_RESTORED.
+audit_classification: ROBUST_SO_FAR
 blind_target_selection:
-  target: NI01 official-v1 terminal FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION
+  target: H5 official-v1 terminal FAIL_NO_USEFUL_WORK_REDUCTION
   selected_before_control_plane_summaries: true
   authoritative_refs:
     - main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d
-    - exact package@dbfe7469dbbbc1adbb00789ab382de892a1b3563
-    - STARTED@d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d
-    - raw preserve@8a39cf70e397bb7588f948910f01ec58672ac814
-    - terminal evidence@69aa785a48bbdb531229b7f71f7fa84a5fde9948
+    - exact package@2086a8f4ea080a7a8a0e3c79d77afe9b516db905
+    - STARTED@058e90227cd48e1c10c6ecbaed01efdec1217d0e
+    - raw preserve@ce5797eb584344db7a512e585506fb6c59ea475b
+    - terminal evidence@61aff6d74b82b68a326f3d90505d70bcd4071fd5
   attack_hypotheses:
-    - authority/package drift or leakage
-    - hidden world/task-label privilege
-    - threshold/scorer drift
-    - seed/world fragility
-    - observation/resource mismatch
-    - absent-signal versus reduction conflation
-    - claim-boundary overreach
-  why_consequential: NI01 closes the native No-Ignition/selective-decision mechanism line via an ordinary-confidence interpretation.
+    - authority/package/STARTED/preserve/evidence mismatch
+    - target/evaluator leakage
+    - comparator information/resource privilege mismatch
+    - seed fragility or pseudo-replication
+    - insufficient ablation/simple accounting explanation
+    - post-outcome drift
+    - stale/duplicate evidence
+    - claim-boundary overreach from algorithmic work to general compute efficiency
+  why_consequential: H5 is a consumed terminal architecture-efficiency result and had not yet received independent audit.
 blind_target_change_reason: null
 prospective_baselines_or_discriminators:
-  - never rerun, retune, rescore, relabel or reopen canonical NI01
-  - diagnostic-only read-only sensitivity with one global DEV-derived threshold that does not use world identity
-  - future comparators must declare every task/regime identifier and match candidate information privilege
-  - future mechanistic REDUCED_BY_* contracts should require a prospectively fixed positive candidate-signal gate where scientifically meaningful
+  - never rerun, retune, rescore, relabel or reopen canonical H5
+  - future fresh efficiency objects should prospectively report component-wise work shares, not only an aggregate
+  - distinguish mechanism-isolation accounting from end-to-end architecture efficiency; declare whether eligibility maintenance is globally eager or localized
+  - if making runtime/energy claims, use a separately prospectively bound wall-clock/memory/cache/energy methodology rather than reinterpreting H5 counters
+  - prospective scaling analysis should separate node-state locality, routing work, and eligibility-maintenance complexity
 questions_for_evidence_analyst:
-  - Should NI01 synthesis say “world-conditioned coverage-matched confidence abstention” rather than simply “matched confidence abstention”?
-  - Can a read-only global-threshold sensitivity be computed from immutable NI01 raw without changing canonical evidence?
-  - Should future comparator contracts treat regime/task IDs as explicit privilege that must be matched or justified?
+  - Keep H5 synthesis explicitly scoped to the registered algorithmic-work metric and exact all-edge-eligibility implementation?
+  - Record global eligibility maintenance as the principal architectural bottleneck revealed by H5, without treating it as a rescue rationale?
+  - Require component-wise resource accounting in future fresh efficiency contracts?
 questions_for_control_brain:
-  - Count NI01 as no registered incremental native advantage, but not yet equal-privilege mechanistic reduction?
-  - Add explicit task/regime-label privilege to the programme-wide symmetry gate?
-  - Keep architecture/testbed HOLD unchanged because this audit restores no positive NI01 signal?
+  - Continue counting H5 as a robust negative result for the exact efficiency claim, while avoiding a general no-go statement about event routing/lazy execution?
+  - Treat H5 as architecture bottleneck information rather than mechanistic novelty evidence?
+  - Keep consumed H5 fully closed; any optimized/local-eligibility efficiency question must be a genuinely fresh prospective object if independently justified?
 must_not_change_frozen_or_consumed:
-  - ni01-no-ignition-selective-prediction-official-v1
-  - exact package dbfe7469dbbbc1adbb00789ab382de892a1b3563
-  - scientific-contract blob 3dc90b08f85e0e7c459e0c17e86ab338901fd4c6
-  - STARTED control/ni01-no-ignition-selective-prediction-started-v1-20260918
-  - raw preserve 8a39cf70e397bb7588f948910f01ec58672ac814
-  - terminal evidence 69aa785a48bbdb531229b7f71f7fa84a5fde9948 and evidence tag
-  - canonical NI01 statistics and FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION token
-  - all other consumed C19/R1/R2/PD01/H5/A01/RV01/RV02/CX identities and immutable evidence
+  - h5-event-routing-work-reduction-official-v1
+  - exact package 2086a8f4ea080a7a8a0e3c79d77afe9b516db905
+  - STARTED 058e90227cd48e1c10c6ecbaed01efdec1217d0e
+  - raw preserve ce5797eb584344db7a512e585506fb6c59ea475b
+  - terminal evidence 61aff6d74b82b68a326f3d90505d70bcd4071fd5 and evidence tag
+  - canonical H5 statistics and FAIL_NO_USEFUL_WORK_REDUCTION token
+  - all other consumed C19/R1/R2/PD01/NI01/A01/RV01/RV02/CX identities and immutable evidence
+utility_request_created: null
 ```
