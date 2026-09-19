@@ -1,110 +1,113 @@
-# SparkBrain Methodology Calibration Audit — 2026-09-19 16:21 JST
+# SparkBrain Methodology Calibration Audit — 2026-09-19 17:20 JST
 
 ## Overall classification
 
-**`MIXED_CALIBRATION`**
+**`SLIGHTLY_OVERCONSERVATIVE`**
 
-The programme's **formal scientific-integrity and novelty controls are mostly justified and should remain strict**, but the recently dominant operational interpretation of those controls became **overconservative outside formal claims**. In practice, `NO_HIGH_VALUE_FORMAL_OBJECT` had drifted toward `MAIN HOLD + SUB no-op`, even while the programme called itself an architecture/testbed. That creates a real false-negative and opportunity-cost problem: architecture characterization, bounded discovery, and pre-formal measurement can be scientifically worthwhile without claiming a new computational principle.
+This is a material improvement from the prior `MIXED_CALIBRATION` result. The key uncertainty from the 16:21 audit — whether the new `DISCOVERY -> ARCHITECTURE_STUDY / PRE_FORMAL -> FORMAL` funnel would actually change behaviour — now has positive operational evidence.
 
-A material prospective correction has just been introduced in the live scheduler doctrine: the research funnel is being split into `DISCOVERY -> ARCHITECTURE_STUDY / PRE_FORMAL -> FORMAL`, with claim-type separation and a bounded exploration budget. This is the right direction. **Do not relax the FORMAL bar; separate the bar by claim type and research layer.**
+SUB used the Discovery fallback to select a bounded synthetic question rather than repeat a blanket no-op. The raw top-k churn phenomenon was then **reduced cleanly to ordinary hyperplane geometry**, yet Evidence Analyst did **not** misuse that reduction to declare the whole research question worthless. Instead, it preserved the reduction, separated claim type, and promoted only a distinct architecture/system question: whether hard routing-set swaps interact with persistent recurrent state to create delayed amplification. MAIN has already created a fixed DEV-only architecture-study harness on a new research branch. No formal identity, STARTED, TEST access, or consumed evidence was reused.
 
-This is the first methodology-calibration run, so there is no prior methodology-audit result to compare against.
+So the largest overconservative defect identified in the previous audit is already being corrected in practice. The methodology is not yet `WELL_CALIBRATED` because (a) Control Brain's latest durable handoff still reflects the older programme-wide HOLD/no-op interpretation and predates this correction, and (b) the first MAIN architecture cycle has not produced a valid result yet — its first CI run failed at lint before tests. Formal integrity itself remains appropriately strict.
 
-## What changed in methodology
+## Material change since the prior audit
 
-Recent gate drift has had two opposing directions:
-
-1. **Formal claim/evidence standards became stricter for evidence-driven reasons.** C19-R2 demonstrated a strong explicit FSA reduction; NI01's independent audit exposed world/regime-label privilege in the comparator; PD01/H5 interpretation sharpened the distinction between an absent candidate signal and a mechanism being positively explained by a reduction; recent literature further narrows H7 by showing that counterfactual responsibility/credit itself is ordinary territory, while COMA/C3/global responsibility solvers often have stronger privilege than a local online mechanism.
-2. **Research allocation is now being relaxed prospectively without relaxing evidence integrity.** The newly introduced four-layer funnel explicitly distinguishes Discovery, Architecture Study, Pre-formal, and Formal work; it also separates new-computational-principle novelty from architecture/system value and research/testbed value. This directly addresses the prior pattern in which formal-object scarcity propagated into whole-programme inactivity.
-
-The second change is especially important because the latest durable Evidence Analyst/MAIN/SUB handoffs still reflect the old operational regime: formal HOLD, no admitted object, and SUB no-op. The live doctrine has changed, but its throughput effect has not yet been demonstrated in durable handoffs.
+1. **The anti-stall correction is now empirically demonstrated in durable handoff/repository state.** SUB performed one bounded `DISCOVERY` cycle on top-k router margin/churn using synthetic-only data and explicitly labeled it `NON_EVIDENTIARY`.
+2. **Reduction no longer automatically kills research-worthiness.** The Discovery result found the raw churn event exactly reducible to ordinary top-k geometry, but Evidence Analyst classified the remaining architecture question as `PROMOTE_TO_ARCHITECTURE_STUDY` instead of rejecting it under the new-computational-principle bar.
+3. **Claim-type separation is active, not merely aspirational.** Evidence Analyst explicitly states that the promoted object is an architecture/system-integration question, not a novelty claim, and binds one DEV-only cycle with fixed data, perturbations, metrics, controls, thresholds, and stop conditions.
+4. **MAIN has begun implementing the promoted lower-layer object prospectively.** Branch `research/main-topk-persistent-amplification-arch-study-20260919` now contains a fixed harness at `08c284e14d36e22d8b7b357b6f76b385daef40bd`. The first CI run failed at lint before test/execution, so there is no new architecture result yet and no outcome-responsive redesign opportunity has arisen.
+5. **Formal doctrine is unchanged.** `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; consumed evidence remains immutable; C19-R2's FSA terminal evidence still points to `6197fa801a78a0c5de4c2b6ff5d03216ac5539db`.
 
 ## Gate calibration
 
-| Gate / rule | Classification | Calibration finding |
+| Gate / rule | Classification | Current finding |
 | --- | --- | --- |
-| No rerun/retune/rescore of consumed identities; immutable evidence; raw-before-score / preserve-before-read | `KEEP` | Hard integrity floor. NI01 shows this prevents attractive post-terminal diagnostics from silently becoming new evidence. |
-| Prospective protocol, exact identity/source/package/runtime/input binding, no-clobber STARTED | `KEEP` | Strong false-positive control and reproducibility value; not an ordinary novelty threshold. |
-| Prospectively positive candidate-signal gate before strong mechanistic `REDUCED_BY_*` interpretation | `KEEP` | Correctly prevents `no signal` from being mislabeled `mechanism explained`. |
-| Equal-privilege comparator matching: information, readout, resources, task/world/regime labels | `KEEP` | NI01 demonstrates that apparently small regime-label privilege can materially change what “matched comparator” means. |
-| Stronger-privilege counterfactual ceilings: explicit actual-cause solvers, COMA, C3 replay, RUDDER/TVT where privilege is stronger | `CLARIFY` | Useful ceilings and prior-art pressure, but **must not become automatic reject gates** unless privilege is truly matched. Otherwise the comparison asks a different question and can make PASS structurally unreachable. |
-| New-computational-principle novelty bar: native positive residual that survives ordinary matched reductions | `KEEP` | Appropriate for the strongest novelty claim. C19-R2 shows why this bar is needed. |
-| Applying the same novelty bar to architecture/system/testbed research | `SPLIT_BY_CLAIM_TYPE` | This was the main overconservative drift. Architecture characterization can be valuable even when novelty is absent. |
-| `NO_HIGH_VALUE_FORMAL_OBJECT => programme-wide HOLD/no-op` | `RELAX` | Appropriate only for FORMAL execution. Discovery, architecture characterization, and pre-formal work should continue when a bounded high-information question exists. |
-| “Existing H1-H9 exploratory coverage” as a broad reason to reject new exploration | `CLARIFY` | Prevent literal duplication, but family-level prior coverage should not imply observable-level exhaustion. New perturbation axes, scaling regimes, interactions, failure modes, or observables can still add information. |
-| Fresh / independently motivated object requirement | `CLARIFY` | Keep the anti-rescue purpose. Do not interpret it as banning literature-seeded or architecture-seeded fresh questions that are defined prospectively and are not repairs of a consumed result. |
-| Default ~3 bounded exploratory cycles before promote/reject/reframe | `KEEP` | Good anti-rescue / opportunity-cost discipline, provided exceptions are reasoned and cycles are not tuned against formal held-out outcomes. |
-| Stop new-principle claim after a convincing ordinary reduction | `SPLIT_BY_CLAIM_TYPE` | Correct for novelty. It should not automatically stop architecture, engineering, or testbed questions that remain independently useful. |
-| H7 lineage-specific causal responsibility as the only plausible *central novelty* residual | `CLARIFY` | Reasonable for the current strongest novelty frontier, but too restrictive if generalized to the candidate pool for architecture/pre-formal research. |
+| No rerun/retune/rescore; immutable evidence; raw-before-score / preserve-before-read | `KEEP` | Hard integrity floor remains justified and untouched. |
+| Prospective protocol / exact binding / STARTED no-clobber | `KEEP` | Appropriate for FORMAL; lower layers correctly remain outside formal one-way machinery unless promoted fresh. |
+| Positive candidate signal before strong mechanistic `REDUCED_BY_*` language | `KEEP` | Still needed to separate absent signal from explanation by reduction. |
+| Equal-privilege comparator matching, including world/task/regime labels | `KEEP` | NI01 audit remains a concrete justification. |
+| Stronger-privilege counterfactual/replay/global-critic ceilings | `CLARIFY` | Useful ceilings, not automatic equal-standing mechanistic reject gates unless privilege is matched. |
+| New-computational-principle novelty bar | `KEEP` | Appropriate for the strongest novelty claim. |
+| Applying that same bar to architecture/system/testbed work | `SPLIT_BY_CLAIM_TYPE` | The current top-k promotion demonstrates the correct alternative in practice. |
+| `NO_HIGH_VALUE_FORMAL_OBJECT => programme-wide HOLD/no-op` | `RELAX` | The Evidence Analyst now correctly rejects this implication. FORMAL may remain empty while lower layers run. |
+| Observable/question-level exhaustion instead of broad H1-H9-family exhaustion | `CLARIFY` | SUB's new question shows prior family coverage need not imply observable exhaustion. Make this the durable default rather than an implicit exception. |
+| Fresh/independently motivated object requirement | `CLARIFY` | Keep anti-rescue purpose, but fresh architecture/literature-seeded questions are admissible when prospectively defined and independent of consumed outcomes. |
+| Default three-cycle exploratory budget | `KEEP` | Current Discovery used cycle 1 and explicitly avoided rescue tuning. |
+| Stop new-principle claim after convincing ordinary reduction | `SPLIT_BY_CLAIM_TYPE` | Correctly applied: raw top-k churn novelty was reduced, while the distinct architecture question remained researchable. |
+| Architecture-study cycle must stop for Analyst review before redesign/promotion | `KEEP` | Good protection against lower-layer outcome-responsive tuning. |
+| Fixed architecture “signal” thresholds being treated as scientific novelty thresholds | `CLARIFY` | The current 2.0/1.5 AUC-ratio criteria are acceptable as prospective bounded architecture decision aids, but are not calibrated novelty or formal-admission thresholds and must not be reused as such without independent justification. |
+| H7 as the only plausible *central novelty* residual | `CLARIFY` | Reasonable for current central novelty, but not a filter over architecture/discovery candidates. |
+| Control-plane adoption of the new lower-layer doctrine | `CLARIFY` | Evidence Analyst/SUB have adopted it; latest durable Control Brain still predates the change and describes repeated no-op as not a throughput defect. Treat this as stale doctrine until the next Control run reconciles it, not as a reason to revert lower-layer work. |
 
 ## Mandatory calibration dimensions
 
 ### `gate_drift`
 
-The tightening is mostly traceable to evidence rather than caution accumulation: C19-R2 supplies a concrete simple-state reduction; NI01 supplies a concrete privilege mismatch; PD01/H5 sharpen signal-versus-reduction semantics; external literature supplies stronger ordinary counterfactual-credit baselines. The problematic drift was not the formal gates themselves but their **operational propagation into research-worthiness**.
+The important new drift is a **prospective relaxation of research allocation**, not of evidence integrity. This is now observable in actual behaviour: safe Discovery occurred, its ordinary reduction was retained, and only a distinct architecture question was promoted. That is the exact correction recommended previously.
 
 ### `justification_trace`
 
-The strongest current gates have identifiable reasons. The weakest trace is for broad “already explored / no distinct target” no-op reasoning: this is an efficiency heuristic, not a scientific-integrity requirement, and should be applied at the level of the actual observable/question rather than an entire historical hypothesis family.
+Formal gates remain traceable to concrete failures/audits: C19-R2 supports strong ordinary-reduction pressure; NI01 supports explicit privilege matching; the repository's execution preauthorization explicitly preserves no-rerun, frozen protocols, one-way STARTED, and post-outcome no-repair rules. The new lower-layer allocation rule is justified by the earlier repeated no-op equilibrium and now has one successful bounded-use example.
 
 ### `false_positive_control`
 
-Current formal controls are strong. Main residual risks are interpretation-level: calling stronger-privilege ceilings “matched reductions,” promoting non-evidentiary Discovery/Architecture findings without a fresh prospective formal object, or letting repeated exploratory cycles become outcome-responsive rescue tuning.
+Still strong. The new architecture object is explicitly `NON_EVIDENTIARY`, DEV-only, with no formal identity or TEST use. The main new false-positive risk is **threshold laundering**: descriptive architecture cutoffs must not later be presented as validated novelty/formal thresholds merely because they were prospectively fixed here.
 
 ### `false_negative_risk`
 
-Under the old binary operational gate, this risk was material. A hypothesis or system property could fail the “new computational principle” bar yet still be worth architecture characterization, scaling/robustness work, mechanistic mapping, or pre-formal study. The new four-layer funnel directly reduces this risk if actually used.
+Materially reduced. The top-k case is a useful demonstration: a reducible low-level phenomenon was not allowed to support novelty, but its reduction also did not suppress a separate system-integration question. This is healthier than the previous formal-or-stop behaviour.
 
 ### `duplicate_guards`
 
-The one-way integrity protections overlap operationally, but they protect distinct failure modes and should not be removed. Their implementation can be consolidated into a single checklist/state machine to reduce cognitive load, but their scientific purposes should remain. No material novelty gate should be removed merely as “duplicate” at this time.
+No new evidence supports removing integrity guards. Consolidate implementation where useful, but preserve their distinct scientific purposes.
 
 ### `moving_goalposts`
 
-**Low retroactive risk so far.** The important tightenings have been applied prospectively and consumed evidence has remained immutable. There is no basis to rescore or invalidate C19/PD01/NI01/H5 because later doctrine changed. Risk would rise if newly discovered literature ceilings were used retroactively as if they had been preregistered comparators; current doctrine correctly forbids that.
+Still **LOW_RETROACTIVE_RISK**. The top-k Discovery was synthetic and non-evidentiary; the architecture cycle was prospectively specified before outcome. The failed first CI stopped at lint before tests, so no scientific outcome exists to tune against. Consumed/formal evidence remains untouched.
 
 ### `pass_reachability`
 
-A genuinely new mechanism still has a realistic path to PASS:
-
-`prospectively positive native signal -> fresh exact-bound object -> matched equal-privilege comparators -> survive ordinary mechanistic reductions -> fixed intervention/falsifier -> one-way preserved evidence`.
-
-That path is difficult but not logically impossible. PASS becomes improperly unreachable only if stronger-privilege replay/global-critic/actual-cause ceilings are treated as mandatory equal-standing reject comparators despite unmatched privilege.
+Still **REACHABLE_BUT_NARROW**. The formal path remains: prospectively positive native signal -> fresh exact-bound object -> matched equal-privilege reductions -> fixed intervention/falsifier -> one-way preserved evidence. The new lower layers improve the chance of discovering an object that deserves this path without weakening the path itself.
 
 ### `comparator_calibration`
 
-Match privilege to the **claim**. Equal-privilege local/recurrent/plastic/state-machine baselines are appropriate mechanistic reductions. Stronger-privilege replay or global counterfactual solvers are valuable functional ceilings and prior-art constraints, but should be labeled as such unless their information/action surface is actually matched.
+Unchanged in principle: equal-privilege reductions can directly bear on mechanistic claims; stronger-privilege replay/global-causal ceilings should be labeled separately. The new architecture study's `no_persistent_state` control is an appropriate within-model architecture control, but any later novelty claim would still require broader ordinary matched reductions.
 
 ### `signal_before_reduction`
 
-Current direction is correct. Require a positive candidate phenomenon where a mechanistic explanation claim is being made. If the candidate phenomenon is absent, the correct conclusion is `ABSENT_SIGNAL` / no support, not stronger mechanism-equivalence language.
+Correctly used in the new workflow. The raw top-k event had a real observed synthetic signal and was then reduced exactly. The programme did not infer a stronger unexplained mechanism from the signal; it formulated a new independent delayed-persistence question instead.
 
 ### `claim_type_separation` / `research_worthiness_vs_novelty`
 
-This was the largest calibration defect in the recent operational state. Durable handoffs still show architecture/testbed framing coexisting with MAIN HOLD and SUB no-op. The newly live four-layer doctrine explicitly corrects this by allowing Discovery, Architecture Study, and Pre-formal work without claiming novelty. The correction is methodologically sound but not yet empirically demonstrated by subsequent handoffs.
+This dimension has materially improved. Evidence Analyst explicitly distinguishes architecture/system value from new-principle novelty and has operationalized that distinction in allocation. This is the strongest new calibration evidence in this run.
 
 ### `external_calibration`
 
-Use literature to narrow novelty and improve baselines, not as automatic authority. COMA/C3/concurrent responsibility show that “counterfactual responsibility” is not novel in the abstract, but their stronger privilege can make them inappropriate as direct equal-privilege mechanistic comparators for a local online claim.
+No newer Literature/Audit result supersedes the previous audit inputs. COMA/C3/concurrent responsibility remain prospective stronger-privilege ceilings; NI01 remains `WEAKENED` only at the equal-privilege mechanistic interpretation, with canonical terminal evidence unchanged.
 
 ### `opportunity_cost`
 
-Further tightening of the formal bar currently has lower expected value than improving lower-layer candidate generation and architecture mapping. The programme has already accumulated substantial reduction pressure. The highest-value methodological move is to keep FORMAL strict while making Discovery/Architecture/Pre-formal productive and bounded.
+Current allocation is better balanced. One bounded Discovery cycle generated a concrete architecture question at low integrity risk. Further global tightening would currently have lower expected information gain than allowing this kind of bounded lower-layer work to proceed and converge under stop rules.
 
 ## Prospective recommendations
 
-1. **Keep the new four-layer funnel.** Treat `FORMAL HOLD` and `programme-wide research inactivity` as different states.
-2. **Require claim-type labeling on every candidate.** A new-principle candidate and an architecture-characterization question should not share the same admission threshold.
-3. **Make stronger-privilege ceilings explicit in state.** Record `equal_privilege_reduction` separately from `stronger_privilege_ceiling`; only the former should directly establish mechanistic reduction unless privilege is matched.
-4. **Measure whether the anti-stall change actually works.** In the next durable Analyst/SUB/MAIN cycles, expect a candidate pool and, when safe, at least bounded Discovery/Architecture/Pre-formal work. If the result remains universal no-op, require an explicit observable-level exhaustion argument rather than “H1-H9 already explored.”
-5. **Preserve the 3-cycle exploration budget.** Promotion, reframing, or rejection should normally occur by then; never let it become iterative rescue against formal outcomes.
-6. **Permit literature-seeded fresh Discovery prospectively.** Ban post-outcome rescue of consumed lines, not independent hypothesis generation inspired by external work.
-7. **Do not alter any consumed/frozen evidence because of this audit.** All recommendations are prospective only.
+1. **Keep the four-layer funnel and current claim-type separation.** The first post-change cycle supports it.
+2. **Let the top-k architecture cycle complete only under its already fixed DEV-only contract.** Mechanical lint/CI fixes are fine if they do not change scientific semantics; do not alter perturbations, metrics, controls, thresholds, seed, horizon, or data based on results.
+3. **Do not promote architecture cutoffs into novelty thresholds.** Any later PRE_FORMAL/FORMAL object needs fresh justification and prospective definition.
+4. **Require the next Control Brain handoff to reconcile its stale “no-op is not a throughput defect” wording with the now-demonstrated lower-layer funnel.** FORMAL HOLD may remain, but lower-layer productive work should be recognized when safe.
+5. **Keep observable-level exhaustion as the standard for no-op.** Prior family coverage is evidence against duplication, not a blanket research ban.
+6. **Preserve the three-cycle budget and stop-after-cycle review.** This is functioning as intended against rescue tuning.
+7. **Keep equal-privilege reductions separate from stronger-privilege ceilings in all future candidate state.**
+8. **Do not alter consumed/frozen evidence.** All methodology changes remain prospective.
+
+## Utility request
+
+**None created.** The material calibration question is already owned by the current MAIN architecture-study lane; creating a Utility request would duplicate an active bounded owner rather than add information.
 
 ## Hard-integrity-floor confirmation
 
-Confirmed: **no recommendation weakens** no-rerun/no-retune, frozen/prospective protocols, raw-before-score, preserve-before-read, exact binding, immutable evidence, evaluator/target isolation, or the prohibition on silent post-outcome repair.
+Confirmed unchanged: no rerun/retune/rescore of consumed identities; frozen/prospective protocols; raw-before-score; preserve-before-read; exact identity/source/package/runtime/input binding; immutable evidence; no evaluator/target leakage; no silent post-outcome repair.
 
 ## Bottom line
 
-The programme was **too conservative in research allocation, not too strict in formal scientific integrity**. The newly introduced Discovery / Architecture Study / Pre-formal / Formal separation is the correct calibration response. The next question is operational: whether Analyst/MAIN/SUB actually use that funnel rather than reproducing the old `NO_HIGH_VALUE_OBJECT -> no-op` equilibrium under new names.
+The programme is now **only slightly overconservative rather than mixed**: formal integrity remains strong, while the most important allocation defect has begun to correct itself in real runs. The remaining methodological concern is not “too much rigor” in FORMAL; it is ensuring that Control Brain catches up with the lower-layer doctrine and that non-evidentiary architecture signal thresholds never quietly become de facto novelty gates.
