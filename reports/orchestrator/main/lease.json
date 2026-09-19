@@ -1,14 +1,14 @@
 {
-  "run_id": "sparkbrain-main-relay-20260920T0712JST",
+  "run_id": "sparkbrain-main-relay-20260920T0742JST",
   "execution_mode": "RELAY",
-  "status": "WAITING_EXTERNAL",
-  "started_at": "2026-09-20T07:12:23+09:00",
-  "heartbeat_at": "2026-09-20T07:17:00+09:00",
+  "status": "RUNNING",
+  "started_at": "2026-09-20T07:42:07+09:00",
+  "heartbeat_at": "2026-09-20T07:42:07+09:00",
   "analyst_commit": "7e7d425948a86d0eec306b1a75bfc07165d9afa1",
   "active_branch": "research/main-refractory-current-accounting-arch-study-20260920",
   "active_identity": null,
-  "active_step": "REFRACTORY_COMMENT_DETECTOR_REPAIRED_EXACT_HEAD_WORKFLOWS_IN_PROGRESS",
+  "active_step": "COLLECT_EXACT_HEAD_REFRACTORY_ARCHITECTURE_TERMINAL",
   "workflow_run_id": 35472786687,
-  "expected_next_action": "Re-fetch fresh Analyst authority, exact research head 4589192d927e40cf7a05cf8a94207efb42ebbc65, ordinary CI 35472786733, and Architecture workflow 35472786687. If every unchanged prospective binding passes and a valid artifact exists, verify exact head/source/contract/machine-fact/artifact/raw binding, apply the already-fixed terminal mapping exactly once, persist the NON_EVIDENTIARY result, and STOP for fresh Analyst review. Any other machine-fact failure or semantic/protocol gap STOPs; do not continue to cycle 2, PRE_FORMAL, FORMAL, semantic repair, or outcome-responsive redesign.",
+  "expected_next_action": "Collect exact-head ordinary CI and Architecture workflow, verify raw-before-summary artifact/source/contract bindings, apply the prospectively fixed terminal mapping exactly once, persist the NON_EVIDENTIARY terminal, and STOP for fresh Evidence Analyst review. No cycle 2, PRE_FORMAL, FORMAL, semantic repair, or result-dependent redesign.",
   "owner": "main"
 }
