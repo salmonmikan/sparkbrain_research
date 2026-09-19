@@ -1,15 +1,20 @@
 # Current Utility Assignment
 
-status: ASSIGNED
-active_assignment: true
+status: COMPLETED
+active_assignment: false
 assignment_id: CTRL-20260920-0650-SUPPRESSION-STATIC-DETECTOR-CONSISTENCY
 issued_by: control_brain
 issued_at: 2026-09-20T06:50:00+09:00
+completed_at: 2026-09-20T07:25:00+09:00
 expires_at: 2026-09-20T09:00:00+09:00
 max_runs: 1
-run_count: 0
+run_count: 1
 source_request_ids:
 - EVA-20260920-0502-SUPPRESSION-STATIC-DETECTOR-CONSISTENCY
+result: utility_orchestrator/results/2026-09-20/CTRL-20260920-0650-SUPPRESSION-STATIC-DETECTOR-CONSISTENCY-0725.md
+result_commit: f30da2ea3ba0a4cc064be4847c2e2945344c6aa2
+classification: STATIC_EXTRACTOR_FALSE_NEGATIVE_CONFIRMED
+completion_reason: COMPLETED_ONE_READ_ONLY_CONSISTENCY_RESULT_MAX_RUNS_REACHED
 
 objective: >-
   Read-only audit the already-completed CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01
