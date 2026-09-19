@@ -1,19 +1,19 @@
 {
-  "timestamp": "2026-09-20T05:18:00+09:00",
+  "timestamp": "2026-09-20T05:49:00+09:00",
   "worker_role": "main",
-  "execution_mode": "PRIMARY",
-  "analyst_commit": "493573eb3b8c38d88f251db7c04dfe1a586c6ff0",
+  "execution_mode": "RELAY",
+  "analyst_commit": "d6b14d826a0847e439dfedd86e363786d84e329a",
   "research_layer": "ARCHITECTURE_STUDY",
-  "current_lane": "V05_UNIT_SUPPRESSION_TRANSIENT_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_INVALID_DIAGNOSTIC_STOP",
+  "current_lane": "ASSEMBLY_CROSSCASCADE_FALLBACK_SEGMENTATION_ARCHITECTURE_STUDY_CYCLE1_WORKFLOW_IN_PROGRESS",
   "candidate_question": {
-    "id": "CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01",
-    "question": "Is public transient suppress_units / clear_unit_suppression explicitly state-preserving, state-neutral, or silent/ambiguous in a way that can confound future causal/recovery studies?",
+    "id": "CAND-ASSEMBLY-CROSSCASCADE-FALLBACK-01",
+    "question": "Within supported synthetic-development v0.5 conditions, does episode-global fallback across distinct sparse cascades alter assembly candidate/maturation or one fixed downstream prediction observable relative to a boundary-preserving no-crosscascade-fallback shadow extractor?",
     "exploration_cycle_count": {
       "DISCOVERY": 1,
-      "ARCHITECTURE_STUDY_ATTEMPTED": 1,
+      "ARCHITECTURE_STUDY_STARTED": 1,
       "VALID_ARCHITECTURE_OUTCOMES": 0
     },
-    "evidentiary_status": "NON_EVIDENTIARY_INVALID_DIAGNOSTIC_DISCARDED"
+    "evidentiary_status": "NON_EVIDENTIARY_PENDING_EXACT_HEAD_WORKFLOW"
   },
   "research_layer_state": {
     "DISCOVERY": {
@@ -22,9 +22,9 @@
       "status": "NON_EVIDENTIARY"
     },
     "ARCHITECTURE_STUDY": {
-      "state": "CYCLE1_INVALID_DIAGNOSTIC_DISCARD_STOP_PENDING_FRESH_ANALYST",
+      "state": "CYCLE1_EXACT_HEAD_WORKFLOW_IN_PROGRESS",
       "owner": "MAIN",
-      "current_object": "CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01"
+      "current_object": "CAND-ASSEMBLY-CROSSCASCADE-FALLBACK-01"
     },
     "PRE_FORMAL": {
       "state": "EMPTY_HOLD",
@@ -37,84 +37,74 @@
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst_handoff": "493573eb3b8c38d88f251db7c04dfe1a586c6ff0",
-    "research_branch": "research/main-v05-unit-suppression-transient-semantics-arch-study-20260920",
-    "research_head": "2ef4b24f8e7ef8577ebbcb0328e7b3476bc24336",
-    "prospective_contract_commit": "05a9c4e26954adf04012a554e800bf63d23ba627",
-    "harness_commit": "d8bf9c34b16d05ad4a8e10f145b46e367d93f89c",
-    "control_brain": "98155846394925730997fc35389fd6ad1b53f710",
-    "preserve_branch": "ops/a01-md-001-preserve-once@465b8afe73aa6ff9dad2fa67d1f954a3ec689097",
-    "evidence_tag_count": 5,
-    "formal_tag_count": 0,
-    "sealed_tag_count": 0,
-    "freeze_tag_count": 0,
-    "legacy_freeze_branch_count": 13,
+    "evidence_analyst_handoff": "d6b14d826a0847e439dfedd86e363786d84e329a",
+    "research_branch": "research/main-assembly-crosscascade-fallback-segmentation-arch-study-20260920",
+    "research_head": "388799d9880d7b472417a680f288da13f4fd9b41",
+    "prospective_contract_commit": "7a58520f08183714fdc13cb728f2e353688cf0f2",
+    "pre_diagnostic_harness_cleanup_commit": "e84793081444f16fe0a3f3c457176569ee70267b",
+    "workflow_commit": "388799d9880d7b472417a680f288da13f4fd9b41",
     "source_blobs": {
+      "src/sparkbrain/v04/contracts.py": "9d3ae216a518ff6d409a67cd02f34f1dc20a8ab8",
+      "src/sparkbrain/v05/assemblies.py": "a0a8c41e21db68cafc08ace8dac50b7a56607a52",
       "src/sparkbrain/v05/brain.py": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
-      "src/sparkbrain/v05/evaluation.py": "efd52d236708aea3bf23b6139d8717b1ac1d0559",
-      "tests/v05/test_v05_brain.py": "6a81994ac82a3f0660585ef0d95495aaaa336629"
+      "src/sparkbrain/v05/contracts.py": "048b93cddb16dbe9276a0e2c0f972406291c1cb2",
+      "src/sparkbrain/v05/prediction.py": "9805031fb8db235d2f3cf4c81421b896d2597af4",
+      "tests/v05/test_v05_assemblies.py": "99d847dae4aa8b394680acbb44ae01e72a5d9d4f"
     }
   },
-  "fast_path_reconciliation": {
-    "initial_mode": "FAST_PATH",
-    "escalated_to_full_reconciliation": true,
-    "trigger": "ARTIFACT_STATIC_FACT_DISAGREES_WITH_EXACT_BLOB_BOUND_SOURCE",
-    "full_reconciliation_status": "COMPLETE_NO_COLLISION_NO_REF_DRIFT",
-    "same_object_collision_found": false,
+  "lease_collision_reconciliation": {
+    "inherited_execution_mode": "PRIMARY",
+    "inherited_status": "BLOCKED",
+    "inherited_heartbeat_at": "2026-09-20T05:18:00+09:00",
+    "inherited_object": "CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01",
+    "fresh_primary_running_collision": false,
+    "fresh_analyst_superseded_frontier": true,
+    "new_target_branch_preexisted": false,
     "sub_collision_found": false,
     "sub_reference": "research/exploratory-sub-assembly-cascade-fallback-bridging-20260920@373f7d52af3b46a23ae976863a2eb5d73d982b5f",
-    "open_governance_prs_rechecked": [148, 149]
+    "relay_lease_acquired_before_research_mutation": true
   },
-  "branches_prs_advanced": {
-    "research_branch_mutation_this_run": false,
-    "research_merge_this_run": false,
-    "pr_mutation_this_run": false,
-    "pr_148": "OPEN_UNMERGED_UNTOUCHED",
-    "pr_149": "OPEN_UNMERGED_UNTOUCHED"
+  "prospective_binding": {
+    "stable_main_and_exact_source_blobs": "BOUND",
+    "input_family": "SYNTHETIC_DEVELOPMENT_MATCHED_SPLIT_SPARSE_AND_JOINED_CONTROL",
+    "current_arm": "EPISODE_GLOBAL_FALLBACK",
+    "shadow_arm": "BOUNDARY_PRESERVING_NO_CROSSCASCADE_FALLBACK",
+    "assembly_parameters": "REPOSITORY_DEFAULT_ASSEMBLY_CONFIG_MATURE_EPISODES_3",
+    "representation_observables": [
+      "pattern_count",
+      "ordered_units",
+      "source_cascade_id"
+    ],
+    "assembly_observables": [
+      "candidate_count",
+      "mature_activation_present"
+    ],
+    "downstream_observable": "probe_prediction_value",
+    "terminal_mapping_bound": true,
+    "machine_handoff_fields_bound": true,
+    "raw_before_summary_bound": true
   },
   "workflow_experiments": {
     "architecture_workflow": {
-      "run_id": 35465512928,
-      "head": "2ef4b24f8e7ef8577ebbcb0328e7b3476bc24336",
-      "status": "completed",
-      "conclusion": "success",
-      "artifact_id": 10591265966,
-      "artifact_sha256": "d4dd67e97132229fc60c1cf13b6dbc9366bfa22a2568aa7de116667b41d33669",
-      "raw_sha256": "220eb06b051273680726b8f0f4ad318a95863fcc1e9909daeb23ffd745ec6805",
-      "artifact_emitted_outcome": "AMBIGUOUS_CONTRACT",
-      "accepted_outcome": "NONE_INVALID_DIAGNOSTIC_DISCARDED"
+      "run_id": 35468475903,
+      "head": "388799d9880d7b472417a680f288da13f4fd9b41",
+      "status": "in_progress",
+      "conclusion": null
     },
     "ordinary_ci": {
-      "run_id": 35465512894,
-      "head": "2ef4b24f8e7ef8577ebbcb0328e7b3476bc24336",
-      "status": "completed",
-      "conclusion": "success"
-    }
-  },
-  "artifact_verification": {
-    "scope_blob_verification": "PASS",
-    "artifact_archive_digest_matches_github": true,
-    "raw_digest_matches_summary": true,
-    "machine_handoff_fields_present": true,
-    "contract_sha256_reported": "4d688d4d6ed4e7998d6e4a14ddb0cb9442474168f22996608acceae60fd8a51a",
-    "diagnostic_integrity": "FAIL",
-    "defect": {
-      "field": "static_facts.restore_restores_original_base_threshold",
-      "artifact_value": false,
-      "harness_detector": "literal substring unit.base_threshold = threshold in _restore_unit_suppression source",
-      "exact_bound_source": "self.base.field.units[unit_id].base_threshold = threshold",
-      "supporting_apply_source": "original[unit_id] = unit.base_threshold; unit.base_threshold = 1e9",
-      "derived_effect": "implementation_state_preserving was forced false and mapper fell through to AMBIGUOUS_CONTRACT"
+      "run_id": 35468475862,
+      "head": "388799d9880d7b472417a680f288da13f4fd9b41",
+      "status": "in_progress",
+      "conclusion": null
     }
   },
   "observations_results": {
     "formal_scientific_evidence": "NONE_NEW",
     "pre_formal_development_evidence": "NONE_NEW",
-    "accepted_architecture_observation": "NONE",
-    "artifact_emitted_terminal_class": "AMBIGUOUS_CONTRACT",
-    "verification_disposition": "INVALID_DIAGNOSTIC_DISCARD_STOP",
+    "accepted_architecture_observation": "NONE_YET_WORKFLOW_PENDING",
+    "mapped_outcome": null,
     "evidentiary_status": "NON_EVIDENTIARY",
-    "claim_boundary": "The emitted AMBIGUOUS_CONTRACT class is not accepted because a prospectively bound static fact was mechanically misdetected. MAIN does not infer or assign a repaired semantic class in this run."
+    "claim_boundary": "No scientific or Architecture terminal result is interpreted before the exact-head workflow completes and artifact/source/contract/raw binding is verified."
   },
   "consumed_identities": [
     "c19-external-v2-official-v4",
@@ -126,45 +116,46 @@
     "H5 official-v1"
   ],
   "integrity_state": {
-    "status": "INVALID_DIAGNOSTIC_POST_OUTCOME_STATIC_HARNESS_FALSE_NEGATIVE",
+    "status": "EXACT_HEAD_ARCHITECTURE_WORKFLOW_IN_PROGRESS",
     "exact_main_verified": true,
     "exact_research_head_verified": true,
-    "source_scope_blob_bound_before_terminal_mapping_execution": true,
-    "terminal_mapping_bound_before_execution": true,
-    "artifact_provenance_verified": true,
-    "raw_before_summary_digest_verified": true,
-    "static_fact_consistency_verified": false,
+    "source_scope_blob_bound_before_outcome": true,
+    "input_family_bound_before_outcome": true,
+    "comparator_bound_before_outcome": true,
+    "metrics_and_terminal_mapping_bound_before_outcome": true,
+    "machine_handoff_bound_before_outcome": true,
+    "pre_diagnostic_mechanical_cleanup_only": true,
+    "production_source_modified_this_run": false,
     "official_test_accessed_this_run": false,
     "formal_identity_created_this_run": false,
     "started_created_this_run": false,
     "formal_preserve_or_evidence_created_this_run": false,
     "immutable_evidence_modified_this_run": false,
+    "consumed_identity_mutated_this_run": false,
+    "sub_reserved_work_mutated_this_run": false,
     "outcome_responsive_redesign_performed_this_run": false,
-    "rerun_or_retune_performed_this_run": false,
-    "post_outcome_code_fix_performed_this_run": false
+    "post_outcome_repair_performed_this_run": false
   },
-  "contingency_consumed": "INVALID_DIAGNOSTIC",
-  "critical_path_fixes": [],
-  "critical_path_fix_status": "OWNED_BY_MAIN_BUT_NOT_AUTHORIZED_POST_OUTCOME_THIS_RUN",
+  "contingency_consumed": "PRE_START_BINDING_COMPLETE",
   "critical_path_actions_performed": [
-    "Read fresh Evidence Analyst latest/state plus MAIN latest/state/lease and current SUB report.",
-    "Re-fetched stable main, active research branch, evidence/formal/sealed/freeze refs, preserve/control refs, open PRs, workflow and artifact identities.",
-    "Acquired a fresh PRIMARY MAIN lease before control-plane mutation.",
-    "Collected exact-head Architecture workflow 35465512928 and ordinary CI 35465512894; both succeeded.",
-    "Downloaded artifact 10591265966 and verified GitHub archive digest and raw digest binding.",
-    "Compared the artifact's static facts against the exact prospectively blob-bound source scope.",
-    "Detected a deterministic restore-threshold detector false-negative and escalated to FULL RECONCILIATION.",
-    "Applied the pre-bound INVALID_DIAGNOSTIC discard/stop integrity disposition without patching, rerunning, rescoring, or assigning a repaired semantic class."
+    "Read fresh Evidence Analyst latest/state, MAIN latest/state/lease, and current SUB report.",
+    "Re-fetched stable main and the exact source/callsite/test blobs required for the new Architecture object.",
+    "Confirmed there was no fresh PRIMARY RUNNING collision on the new object and acquired a RELAY MAIN lease.",
+    "Created the fresh research branch from exact stable main.",
+    "Prospectively bound exact source/input/comparator/observables/terminal mapping/machine handoff fields before outcome-bearing execution.",
+    "Added a read-only NON_EVIDENTIARY harness and applied only a pre-diagnostic science-invariant Ruff/typing cleanup.",
+    "Added a push-triggered exact-head Architecture workflow gated by Python 3.11/3.13 validation, ordinary tests, stable-main ancestry, and preflight binding checks.",
+    "Observed Architecture workflow 35468475903 and ordinary CI 35468475862 in progress on exact head 388799d9880d7b472417a680f288da13f4fd9b41 and stopped under WAITING_EXTERNAL policy."
   ],
-  "stop_reason": "POST_OUTCOME_STATIC_HARNESS_FALSE_NEGATIVE_INVALID_DIAGNOSTIC_DISCARD_STOP",
-  "work_left_for_sub": "Independent bounded Discovery only. Do not continue or repair the MAIN suppression Architecture object; latest assembly-segmentation promotion candidate remains for fresh Analyst classification.",
+  "stop_reason": "EXACT_HEAD_ASSEMBLY_SEGMENTATION_CI_AND_ARCHITECTURE_WORKFLOW_IN_PROGRESS",
+  "work_left_for_sub": "Independent bounded Discovery only. Do not continue the MAIN Assembly segmentation object or take its blockers.",
   "utility_request_created": null,
-  "next_MAIN_action": "Wait for fresh Evidence Analyst review. Only if fresh prospective authority explicitly permits it may MAIN mechanically correct the static detector, re-bind exact source/contract/head, and execute a replacement diagnostic. Do not repair or rerun under the current authority and do not infer a repaired semantic class from this discarded attempt.",
+  "next_MAIN_action": "Re-fetch fresh Analyst authority, lease, exact research head, ordinary CI 35468475862, and Architecture workflow 35468475903. If a pre-diagnostic science-invariant mechanical blocker occurs, only the prospectively allowed mechanical fix plus exact rebind/CI is permitted. If a valid terminal artifact is produced, verify exact head/source/contract/artifact/raw binding, persist the fixed mapped outcome, and STOP for fresh Evidence Analyst review. No automatic cycle 2, PRE_FORMAL, or FORMAL continuation.",
   "persistence_result": {
-    "history_path": "reports/orchestrator/history/2026-09-20/0518-main.md",
-    "history_commit": "45751e31fa751c1986654495a1ac444ea74f26e8",
-    "latest_md_commit": "3f9be10a8ba5bf8c668e92463936148a27d66814",
-    "lease_acquisition_commit": "6988a1c278bae147071e06564c2194cabf9fdc1e",
+    "history_path": "reports/orchestrator/history/2026-09-20/0548-main.md",
+    "history_commit": "4659bbb1e344ba73aeba60a4c2555ac85b090f03",
+    "latest_md_commit": "0fa5968cd6b328783a904e7fb85005af952e235e",
+    "lease_acquisition_commit": "a5569d11a7bda7a1de11c92b964367d881e4f82f",
     "state_json": "this update",
     "force_push_used": false
   }
