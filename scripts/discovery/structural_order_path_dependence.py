@@ -1,21 +1,17 @@
 #!/usr/bin/env python3
 """EXPLORATORY / NON_EVIDENTIARY structural-order path-dependence probe.
 
-This standalone synthetic probe mirrors the structural event-selection/apply semantics
-relevant to source-module activation, duplicate/prune, edge grow/prune, event priority,
-per-boundary cap, and total run budget. It never reads repository datasets, checkpoints,
-held-out TEST, preserved formal raw, or official scorers.
-
-Question: for the same multiset of unlabeled routing-load and edge-credit frames, how
-sensitive is the final structural graph to observation order, and is that sensitivity
-explained only by the finite total event budget?
+The probe uses synthetic unlabeled routing-load and edge-credit frames only. It mirrors the
+structural controller's relevant module/edge event semantics without reading repository data,
+checkpoints, held-out TEST, preserved formal raw, or official scorers.
 """
+
 from __future__ import annotations
 
-from dataclasses import dataclass
 import json
 import random
 import statistics
+from dataclasses import dataclass
 
 MAX_MODULES = 18
 SOURCE_MODULES = 12
@@ -43,9 +39,7 @@ class Frame:
 
 class ControllerSim:
     def __init__(self, *, total_budget: int, enabled: frozenset[str]) -> None:
-        self.active = [False] * MAX_MODULES
-        for index in range(SOURCE_MODULES):
-            self.active[index] = True
+        self.active = [index < SOURCE_MODULES for index in range(MAX_MODULES)]
         self.edges = [[False] * MAX_MODULES for _ in range(MAX_MODULES)]
         for index in range(SOURCE_MODULES):
             self.edges[index][index] = True
@@ -57,8 +51,7 @@ class ControllerSim:
     def discover(self, frame: Frame) -> list[tuple[float, str, int | None, int | None]]:
         active = [index for index, value in enumerate(self.active) if value]
         inactive = [index for index, value in enumerate(self.active) if not value]
-        total = sum(frame.routing_load[index] for index in active) or 1.0
-        mean_load = total / len(active)
+        mean_load = (sum(frame.routing_load[index] for index in active) or 1.0) / len(active)
         candidates: list[tuple[float, str, int | None, int | None]] = []
 
         if "duplicate" in self.enabled and inactive:
@@ -128,9 +121,7 @@ class ControllerSim:
             return True
 
         if kind == "module_prune":
-            if source is None or not self.active[source]:
-                return False
-            if sum(self.active) <= MIN_LIVE_MODULES:
+            if source is None or not self.active[source] or sum(self.active) <= MIN_LIVE_MODULES:
                 return False
             self.active[source] = False
             for index in range(MAX_MODULES):
@@ -141,9 +132,7 @@ class ControllerSim:
         if kind == "edge_grow":
             if source is None or target is None:
                 return False
-            if not self.active[source] or not self.active[target]:
-                return False
-            if self.edges[source][target]:
+            if not self.active[source] or not self.active[target] or self.edges[source][target]:
                 return False
             if sum(sum(row) for row in self.edges) >= MAX_ACTIVE_EDGES:
                 return False
@@ -153,7 +142,8 @@ class ControllerSim:
         if kind == "edge_prune":
             if source is None or target is None or not self.edges[source][target]:
                 return False
-            if sum(self.edges[index][target] for index in range(MAX_MODULES)) <= MIN_IN_DEGREE:
+            in_degree = sum(self.edges[index][target] for index in range(MAX_MODULES))
+            if in_degree <= MIN_IN_DEGREE:
                 return False
             self.edges[source][target] = False
             return True
@@ -194,20 +184,13 @@ def make_frames(seed: int) -> list[Frame]:
         prune_source = (step * 3 + 2) % SOURCE_MODULES
         prune_target = (prune_source + 1) % SOURCE_MODULES
         credit[prune_source][prune_target] = rng.uniform(0.0001, 0.002)
-        frames.append(
-            Frame(
-                tuple(routing),
-                tuple(tuple(row) for row in credit),
-            )
-        )
+        frames.append(Frame(tuple(routing), tuple(tuple(row) for row in credit)))
     return frames
 
 
 def jaccard_distance(left: set[object], right: set[object]) -> float:
     union = left | right
-    if not union:
-        return 0.0
-    return 1.0 - len(left & right) / len(union)
+    return 0.0 if not union else 1.0 - len(left & right) / len(union)
 
 
 def run_seed(
@@ -262,12 +245,8 @@ def summarize() -> dict[str, object]:
 
     for budget in (16, 64):
         for condition, enabled in conditions.items():
-            cell = [
-                run_seed(seed=seed, budget=budget, enabled=enabled)
-                for seed in seeds
-            ]
-            for row in cell:
-                rows.append({"budget": budget, "condition": condition, **row})
+            cell = [run_seed(seed=seed, budget=budget, enabled=enabled) for seed in seeds]
+            rows.extend({"budget": budget, "condition": condition, **row} for row in cell)
             aggregate.append(
                 {
                     "budget": budget,
