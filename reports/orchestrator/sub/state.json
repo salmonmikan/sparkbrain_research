@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-19T19:40:00+09:00",
+  "timestamp": "2026-09-19T19:42:00+09:00",
   "worker_role": "sub",
   "mode": "discovery",
   "evidence_analyst_commit": "5b63d21f44812ef8d4938c9ad968bb8ab481b3c5",
@@ -88,8 +88,8 @@
     "branch_ci": {
       "run_id": 35437912586,
       "head": "bdcd068db2f7d645e323d6fc7e4e2172bcc6d1cb",
-      "status_when_persisted": "in_progress",
-      "conclusion": null,
+      "status_when_persisted": "completed",
+      "conclusion": "success",
       "scientific_relevance": "ordinary repository CI only"
     }
   },
@@ -108,7 +108,8 @@
   "collision_reconciliation": {
     "evidence_analyst_refetched_before_mutation": "5b63d21f44812ef8d4938c9ad968bb8ab481b3c5",
     "main_refetched_before_mutation": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "ops_report_tip_before_persistence": "5e07224e2303e89902ce4d497153de55fba92944",
+    "ops_report_tip_before_initial_persistence": "5e07224e2303e89902ce4d497153de55fba92944",
+    "ops_report_tip_before_ci_finalization": "91b385598db9f57b97d6834ed5620f3268a3a155",
     "main_frontier_collision_found": false
   },
   "integrity_state": {
@@ -119,5 +120,6 @@
     "official_score_created": false,
     "immutable_evidence_modified": false
   },
+  "persistence_note": "1940-sub.md is preserved append-only; the CI-complete final snapshot is appended as 1942-sub.md.",
   "completion_target": "ACHIEVED_ONE_BOUNDED_INDEPENDENT_DISCOVERY_CYCLE_AND_STOPPED_AFTER_EXACT_REDUCTION"
 }
