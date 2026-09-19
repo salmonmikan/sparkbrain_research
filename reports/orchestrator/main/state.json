@@ -166,8 +166,8 @@
     "latest_md_commit": "ed481b7105ca5e374aa728b0466a45ed2b581e06",
     "state_json": "this update",
     "history_path": "reports/orchestrator/history/2026-09-19/2014-main.md",
-    "history_commit": "pending",
-    "final_lease_commit": "pending",
+    "history_commit": "b091cc11d9c15b5948d2dd5e044748f7f11592e8",
+    "final_lease_commit": "follows state update",
     "force_push_used": false
   }
 }
