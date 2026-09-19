@@ -1,0 +1,79 @@
+{
+  "label": "EXPLORATORY / NON_EVIDENTIARY",
+  "source_semantics": "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+  "question": "Can frozen first-exemplar prototypes make mature assembly cardinality depend on episode order for an identical multiset of patterns?",
+  "protocol": {
+    "similarity_threshold": 0.66,
+    "mature_episodes": 3,
+    "pattern_multiset": {
+      "A": 3,
+      "B": 3,
+      "C": 3
+    },
+    "unique_episode_orders": 1680,
+    "all_episode_ids_distinct": true
+  },
+  "pairwise_similarity": {
+    "A": {
+      "A": 1.0,
+      "B": 0.7250000000000001,
+      "C": 0.45
+    },
+    "B": {
+      "A": 0.7250000000000001,
+      "B": 1.0,
+      "C": 0.7250000000000001
+    },
+    "C": {
+      "A": 0.45,
+      "B": 0.7250000000000001,
+      "C": 1.0
+    }
+  },
+  "outcomes": [
+    {
+      "prototype_order": [
+        "A",
+        "C"
+      ],
+      "episode_counts": [
+        6,
+        3
+      ],
+      "mature_assemblies": 2,
+      "permutation_count": 560
+    },
+    {
+      "prototype_order": [
+        "B"
+      ],
+      "episode_counts": [
+        9
+      ],
+      "mature_assemblies": 1,
+      "permutation_count": 560
+    },
+    {
+      "prototype_order": [
+        "C",
+        "A"
+      ],
+      "episode_counts": [
+        6,
+        3
+      ],
+      "mature_assemblies": 2,
+      "permutation_count": 560
+    }
+  ],
+  "summary": {
+    "one_mature_assembly_orders": 560,
+    "two_mature_assembly_orders": 1120,
+    "first_B_orders": 560,
+    "first_A_or_C_orders": 1120,
+    "order_invariant_similarity_graph_components": 1,
+    "interpretation": "A-B and B-C exceed the fixed similarity threshold while A-C does not. TemporalAssemblyMemory never updates an accepted candidate's prototype, so the first exemplar determines whether B bridges A/C into one mature assembly or whether A/C seed two mature assemblies. The similarity graph itself is connected, so the path dependence is specific to greedy frozen-prototype assignment rather than the metric alone."
+  },
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "recommendation": "PROMOTE_TO_ARCHITECTURE_STUDY"
+}
