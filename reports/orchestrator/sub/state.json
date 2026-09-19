@@ -1,7 +1,7 @@
 {
   "authoritative_refs": {
     "control_brain": "6ed239b241a39f7d3e934e37751454c8bf3ebb4c",
-    "evidence_analyst": "3e83f1eb683ce80e326b756fa304e96688fdd3fe",
+    "evidence_analyst": "5b63d21f44812ef8d4938c9ad968bb8ab481b3c5",
     "evidence_tag_count": 5,
     "formal_tag_count": 0,
     "legacy_freeze_branch_count": 13,
@@ -10,75 +10,67 @@
     "sealed_tag_count": 0
   },
   "blockers": [
-    "No blocker for Discovery cycle 1. Fresh Analyst review/specification is required before any promoted architecture study or cycle 2."
+    "No implementation blocker. Candidate is reduced and should stop after cycle 1; any identity-neutral scheduler comparison requires a fresh prospective Analyst decision."
   ],
   "branches_prs_advanced": {
     "merged_to_main": false,
     "prs": [],
     "research_branches": [
       {
-        "branch": "research/exploratory-sub-structural-order-path-dependence-20260919",
-        "head": "8156bba7b119fb831b7c28eac7cd900746f9876e"
+        "branch": "research/exploratory-sub-plasticity-update-cap-bias-20260919",
+        "head": "6444848f3cf9c4a92bfd6317591ac4e39ffea44f"
       }
     ]
   },
-  "candidate_next_research_layer": "ARCHITECTURE_STUDY",
+  "candidate_next_research_layer": "NONE_SCIENTIFICALLY; optional architecture/infrastructure scaling constraint only",
   "candidate_pool_id": null,
   "collision_reconciliation": {
-    "analyst_authority_unchanged_immediately_before_research_ref_update": "3e83f1eb683ce80e326b756fa304e96688fdd3fe",
-    "main_frontier_observed_complete_and_stopped_for_analyst_review": true,
-    "report_branch_refetched_before_persistence": "60c814f7244894f13063006d5512ac3f9ce8797e",
-    "research_branch_head_after_lint_fix": "8156bba7b119fb831b7c28eac7cd900746f9876e"
+    "evidence_analyst_refetched_before_research_commit": "5b63d21f44812ef8d4938c9ad968bb8ab481b3c5",
+    "main_active_branch_observed_and_avoided": "97f542d86dcd3a609cd039379fcda41ba61e0909",
+    "main_refetched_before_research_commit": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "report_branch_refetched_before_persistence": "656c934c337d0126e5a98ed2f1461842760b9892"
   },
-  "completion_target": "ACHIEVED_ONE_BOUNDED_INDEPENDENT_DISCOVERY_CYCLE_WITH_REDUCTION_CONTROL_AND_ANALYST_HANDOFF",
+  "completion_target": "ACHIEVED_ONE_BOUNDED_INDEPENDENT_DISCOVERY_CYCLE_AND_STOPPED_AFTER_REDUCTION",
   "consumed_identities": [],
   "consumed_lanes": [
     "BOUNDED_SECONDARY_DISCOVERY"
   ],
-  "evidence_analyst_commit": "3e83f1eb683ce80e326b756fa304e96688fdd3fe",
+  "evidence_analyst_commit": "5b63d21f44812ef8d4938c9ad968bb8ab481b3c5",
   "evidentiary_status": "NON_EVIDENTIARY",
   "execution_allowed_for_formal_work": false,
   "exploration_cycle": {
     "current": 1,
-    "expected_new_information": "Test whether identical unlabeled structural observations are order-sensitive and whether any effect reduces to finite total-event budget or edge-event ordering.",
+    "expected_new_information": "Determine whether the fixed v0.5 plasticity update cap introduces semantic update-set dependence on arbitrary numeric unit IDs only after topology scale crosses the cap.",
     "max_default": 3
   },
-  "exploratory_target": "STRUCTURAL_ORDER_PATH_DEPENDENCE_DISCOVERY",
-  "fallback_status": null,
+  "exploratory_target": "PLASTICITY_UPDATE_CAP_SCALING_BIAS_DISCOVERY",
+  "fallback_status": "not_used",
   "formal_sub_lane": null,
   "implementation_experiment_performed": {
-    "aggregate": "analysis/discovery/structural-order-path-dependence-cycle1-aggregate.json",
-    "branch": "research/exploratory-sub-structural-order-path-dependence-20260919",
-    "commit": "8156bba7b119fb831b7c28eac7cd900746f9876e",
-    "conditions": [
-      "full",
-      "module_only",
-      "edge_only"
+    "branch": "research/exploratory-sub-plasticity-update-cap-bias-20260919",
+    "commit": "6444848f3cf9c4a92bfd6317591ac4e39ffea44f",
+    "handoff": "analysis/discovery/plasticity_update_cap_scaling_bias_20260919.md",
+    "max_updates_per_step": 2000,
+    "relabel_seed": 20260919,
+    "relabelings_per_scale": 24,
+    "result": "analysis/discovery/plasticity_update_cap_scaling_bias_20260919.json",
+    "scales": [
+      "8x6",
+      "16x12",
+      "20x15",
+      "24x18",
+      "32x24"
     ],
-    "handoff": "analysis/discovery/structural-order-path-dependence-cycle1.md",
-    "initial_commit": "05aa366c661bba43fa0e3d5cb1957539bcedd66b",
-    "orders_per_seed": 120,
-    "pair_samples_per_seed_condition_budget": 300,
-    "replicate_seeds": [
-      20260919,
-      20260920,
-      20260921,
-      20260922,
-      20260923
-    ],
-    "script": "scripts/discovery/structural_order_path_dependence.py",
-    "total_event_budgets": [
-      16,
-      64
-    ]
+    "script": "analysis/discovery/plasticity_update_cap_scaling_bias_20260919.py",
+    "topology_seed": 505
   },
   "inputs_used": {
-    "experiment_inputs": "synthetic unlabeled routing-load and edge-credit frames only",
+    "experiment_inputs": "synthetic all-eligible plastic-edge scheduling only",
     "files_read": [
-      "src/sparkbrain/structural/controller.py",
-      "src/sparkbrain/structural/config.py",
-      "src/sparkbrain/structural/model.py",
-      "docs/C08_STRUCTURAL_PLASTICITY_RESULTS.md"
+      "src/sparkbrain/v05/plasticity.py",
+      "src/sparkbrain/v05/topology.py",
+      "src/sparkbrain/v04/field.py",
+      "src/sparkbrain/v04/topology.py"
     ],
     "heldout_test_accessed": false,
     "official_scorer_used": false,
@@ -95,98 +87,67 @@
     "started_or_control_created": false
   },
   "main_work_explicitly_avoided": [
-    "CAND-TOPK-PA-01 router/persistent-state branch and outcome",
-    "any CAND-TOPK-PA-01 follow-up or cycle 2",
-    "H5 independent audit",
+    "CAND-TOPK-PA-01 cycle-2 replication and active branch",
+    "CAND-STRUCTURAL-ORDER-PATH-01 promoted Architecture follow-up",
+    "H5 Independent Audit",
     "H7 mechanism/comparator construction",
     "MAIN blockers and outcome-dependent successors"
   ],
   "mode": "discovery",
   "observations": {
-    "budget16_edge_only": {
-      "edge_jaccard_mean": 0.0,
-      "module_jaccard_mean": 0.0,
-      "remaining_budget_mean": 0.0,
-      "unique_final_graphs_mean_of_120": 1.0
+    "24x18": {
+      "effective_edges": 2628,
+      "fraction_edges_updated": 0.76103500761035,
+      "jaccard_range": [
+        0.5717092337917485,
+        0.670843776106934
+      ],
+      "mean_pairwise_semantic_edge_jaccard": 0.6159224175330678,
+      "mean_reservoir_sources_touched": 327.125
     },
-    "budget16_full": {
-      "edge_jaccard_mean": 0.3298638417800739,
-      "module_jaccard_mean": 0.18769719887955186,
-      "remaining_budget_mean": 0.0,
-      "unique_final_graphs_mean_of_120": 116.4
+    "32x24": {
+      "effective_edges": 4648,
+      "fraction_edges_updated": 0.43029259896729777,
+      "jaccard_range": [
+        0.2345679012345679,
+        0.3289036544850498
+      ],
+      "mean_pairwise_semantic_edge_jaccard": 0.280915273536068,
+      "mean_reservoir_sources_touched": 326.4166666666667
     },
-    "budget16_module_only": {
-      "edge_jaccard_mean": 0.2938602783926313,
-      "module_jaccard_mean": 0.206574358974359,
-      "remaining_budget_mean": 0.0,
-      "unique_final_graphs_mean_of_120": 95.6
-    },
-    "budget64_edge_only": {
-      "edge_jaccard_mean": 0.0,
-      "module_jaccard_mean": 0.0,
-      "remaining_budget_mean": 48.0,
-      "unique_final_graphs_mean_of_120": 1.0
-    },
-    "budget64_full": {
-      "edge_jaccard_mean": 0.3003272537756486,
-      "module_jaccard_mean": 0.23006432162608634,
-      "remaining_budget_mean": 40.18,
-      "unique_final_graphs_mean_of_120": 108.2
-    },
-    "budget64_module_only": {
-      "edge_jaccard_mean": 0.28177794612794616,
-      "module_jaccard_mean": 0.28177794612794616,
-      "remaining_budget_mean": 41.38,
-      "unique_final_graphs_mean_of_120": 70.8
-    },
-    "interpretation": "Synthetic path dependence persists for full/module-only conditions after total budget ceases to bind, while edge-only converges to one final graph. Candidate noncommutativity localizes to stateful duplicate/prune and active-slot history in this harness."
+    "below_cap": "At 326, 1193, and 1836 effective edges every edge is selected and semantic update-set Jaccard is exactly 1.0 under all 24 relabelings.",
+    "interpretation": "Numeric relabel sensitivity appears exactly when the hard cap binds and is prospectively reduced by sorted numeric edge keys plus the fixed successful-update cap. Source coverage saturates near 326 rather than scaling with reservoir size."
   },
-  "persistence_note": "1736 history preserved append-only; final corrected-head state is appended separately in 1748-sub.md.",
-  "question_hypothesis_reduction_question": "For the same multiset of synthetic unlabeled routing-load and edge-credit frames, is final structural topology order-sensitive, and is any sensitivity explained only by the production total-event budget or edge-event order?",
-  "recommendation": "PROMOTE_TO_ARCHITECTURE_STUDY",
+  "question_hypothesis_reduction_question": "When effective plastic edges exceed max_updates_per_step=2000, can isomorphic reservoir-ID relabeling change which semantic edges receive updates, and is any effect fully reduced by sorted edge-key iteration plus the fixed cap?",
+  "recommendation": "REJECT",
   "rejected_lane": null,
   "scientific_choices_still_open": [
-    "fresh DEV-only task/regime construction and split",
-    "matched-multiset permutation family",
-    "identity-neutral graph matching",
-    "functional/output divergence metric and horizon",
-    "event-count/resource-matched module comparator",
-    "homeostatic router-bias factor"
+    "If engineering remediation is ever desired: randomized vs round-robin vs source-balanced vs other identity-neutral quota scheduling.",
+    "Any such scheduler comparison must be a fresh prospective question, not cycle-2 rescue tuning."
   ],
   "scientific_readiness_exploratory_results": {
-    "discovery_result": "STRUCTURAL_ORDER_PATH_DEPENDENCE_OBSERVED_IN_SYNTHETIC_MODULE_EVENT_DYNAMICS",
+    "discovery_result": "NUMERIC_ID_UPDATE_PRIVILEGE_WHEN_FIXED_PLASTICITY_CAP_BINDS",
     "new_formal_evidence": false,
     "new_formal_results": 0,
-    "promotion_boundary": "Analyst review; any next layer must be freshly prospective."
+    "ordinary_reduction": "sorted numeric edge keys + hard successful-update cap",
+    "promotion_boundary": "REJECT scientific candidate; optionally carry as engineering/scaling constraint."
   },
-  "selected_independent_lane": null,
-  "sub_active_claim": "One bounded NON_EVIDENTIARY structural path-dependence Discovery cycle completed; no formal claim.",
-  "sub_fallback": null,
-  "timestamp": "2026-09-19T17:36:08+09:00",
+  "sub_active_claim": "One bounded NON_EVIDENTIARY scaling/resource Discovery cycle completed and stopped after ordinary implementation reduction.",
+  "sub_fallback": "NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON",
+  "timestamp": "2026-09-19T18:47:00+09:00",
   "utility_request_created": null,
-  "what_would_falsify_or_reduce_it": "Reject/reduce if a prospectively fixed fresh DEV-only matched-multiset order study has negligible topology/output divergence, if divergence collapses under an identity-neutral/resource-matched module-event comparator, or if topology differences are functionally/output invariant.",
-  "why_independent_of_main": "MAIN owns CAND-TOPK-PA-01 router/persistent-state architecture work and has stopped after a valid cycle-1 signal for Analyst review. This target instead probes structural-plasticity duplicate/prune path dependence using standalone synthetic frames and has no dependency on MAIN outcome.",
+  "what_would_falsify_or_reduce_it": "Reduction is already achieved by sorted numeric edge keys plus a hard cap. A separately prospective identity-neutral matched-budget scheduler that retained comparable semantic asymmetry would indicate an additional mechanism.",
+  "why_independent_of_main": "MAIN owns CAND-TOPK-PA-01 cycle-2 replication. This target uses stable v0.5 plasticity/topology substrate and a standalone synthetic all-eligible scheduling probe; it does not use MAIN branch, signal, blocker, result, or successor.",
   "worker_role": "sub",
   "workflows_experiments": {
     "branch_ci": {
-      "corrected_run": {
-        "head": "8156bba7b119fb831b7c28eac7cd900746f9876e",
-        "run_id": 35432992040,
-        "scientific_relevance": "ordinary repository CI only",
-        "status_when_observed": "in_progress"
-      },
-      "initial_run": {
-        "conclusion": "failure",
-        "failure_stage": "lint",
-        "head": "05aa366c661bba43fa0e3d5cb1957539bcedd66b",
-        "run_id": 35432790695,
-        "scientific_steps_run": false,
-        "status": "completed"
-      }
+      "head": "6444848f3cf9c4a92bfd6317591ac4e39ffea44f",
+      "run_id": 35435596401,
+      "scientific_relevance": "ordinary repository CI only",
+      "status_when_persisted": "in_progress"
     },
     "discovery_script_executed_locally": true,
     "formal_workflow_dispatched": false,
-    "mechanical_lint_fix_preserved_aggregate_observations": true,
     "official_test_accessed": false
   }
 }
