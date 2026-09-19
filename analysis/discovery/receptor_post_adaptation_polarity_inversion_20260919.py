@@ -50,6 +50,7 @@ def run_cell(iti_ms: float, gap_ms: float, probe_magnitude: float) -> dict[str, 
         "iti_ms": iti_ms,
         "gap_ms": gap_ms,
         "probe_magnitude": probe_magnitude,
+        "signed": probe_magnitude,
         "derivative": trace.derivative,
         "novelty": trace.novelty,
         "gain": trace.gain,
@@ -101,11 +102,7 @@ def main() -> None:
 
         gap_summary: dict[str, float | None] = {}
         for gap_ms in GAPS_MS:
-            gap_negative = [
-                row
-                for row in iti_negative
-                if row["gap_ms"] == gap_ms
-            ]
+            gap_negative = [row for row in iti_negative if row["gap_ms"] == gap_ms]
             gap_summary[str(int(gap_ms))] = max(
                 (float(row["probe_magnitude"]) for row in gap_negative),
                 default=None,
