@@ -1,0 +1,75 @@
+{
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "source_semantics_reference": {
+    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "controller": "src/sparkbrain/structural/controller.py",
+    "config": "src/sparkbrain/structural/config.py",
+    "model_initial_mask": "src/sparkbrain/structural/model.py"
+  },
+  "question": "For the same multiset of synthetic unlabeled routing-load and edge-credit frames, is final structural topology order-sensitive, and is any sensitivity explained only by the production total-event budget?",
+  "replicate_seeds": [20260919, 20260920, 20260921, 20260922, 20260923],
+  "orders_per_seed": 120,
+  "aggregate": [
+    {
+      "budget": 16,
+      "condition": "full",
+      "unique_final_graphs_mean_of_120": 116.4,
+      "unique_final_graphs_range": [114, 120],
+      "pairwise_module_jaccard_mean": 0.18769719887955186,
+      "pairwise_edge_jaccard_mean": 0.3298638417800739,
+      "median_applied_events_mean": 16.0,
+      "remaining_budget_mean": 0.0
+    },
+    {
+      "budget": 16,
+      "condition": "module_only",
+      "unique_final_graphs_mean_of_120": 95.6,
+      "unique_final_graphs_range": [91, 101],
+      "pairwise_module_jaccard_mean": 0.206574358974359,
+      "pairwise_edge_jaccard_mean": 0.2938602783926313,
+      "median_applied_events_mean": 16.0,
+      "remaining_budget_mean": 0.0
+    },
+    {
+      "budget": 16,
+      "condition": "edge_only",
+      "unique_final_graphs_mean_of_120": 1.0,
+      "unique_final_graphs_range": [1, 1],
+      "pairwise_module_jaccard_mean": 0.0,
+      "pairwise_edge_jaccard_mean": 0.0,
+      "median_applied_events_mean": 16.0,
+      "remaining_budget_mean": 0.0
+    },
+    {
+      "budget": 64,
+      "condition": "full",
+      "unique_final_graphs_mean_of_120": 108.2,
+      "unique_final_graphs_range": [106, 111],
+      "pairwise_module_jaccard_mean": 0.23006432162608634,
+      "pairwise_edge_jaccard_mean": 0.3003272537756486,
+      "median_applied_events_mean": 24.0,
+      "remaining_budget_mean": 40.18
+    },
+    {
+      "budget": 64,
+      "condition": "module_only",
+      "unique_final_graphs_mean_of_120": 70.8,
+      "unique_final_graphs_range": [67, 73],
+      "pairwise_module_jaccard_mean": 0.28177794612794616,
+      "pairwise_edge_jaccard_mean": 0.28177794612794616,
+      "median_applied_events_mean": 23.0,
+      "remaining_budget_mean": 41.38
+    },
+    {
+      "budget": 64,
+      "condition": "edge_only",
+      "unique_final_graphs_mean_of_120": 1.0,
+      "unique_final_graphs_range": [1, 1],
+      "pairwise_module_jaccard_mean": 0.0,
+      "pairwise_edge_jaccard_mean": 0.0,
+      "median_applied_events_mean": 16.0,
+      "remaining_budget_mean": 48.0
+    }
+  ],
+  "interpretation_boundary": "Synthetic architecture diagnostic only. No C08 formal run, checkpoint, dataset, preserved raw, held-out TEST, official scorer, or consumed identity is read or reinterpreted."
+}
