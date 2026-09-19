@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-09-19T09:14:40+09:00",
+  "timestamp": "2026-09-19T10:16:00+09:00",
   "worker_role": "main",
   "execution_mode": "PRIMARY",
-  "analyst_commit": "7a2ef7021fdaa3dd701353a18b45b6db4915756c",
+  "analyst_commit": "8ee6d305acdc8310335e65c5bd3f35d121f35280",
   "current_lane": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
   "current_phase": "NO_ACTIVE_FORMAL_FRONTIER_FRESH_OBJECT_ADMISSION_GATE_ONLY",
   "consumed_contingency_branches": [
     "NO_FRESH_OBJECT"
   ],
-  "active_claim": "No active admitted primary experiment exists. The 09:00 Evidence Analyst handoff reports no material scientific or allocation change, no fresh object, and no new formal repository evidence.",
+  "active_claim": "No active admitted primary experiment exists. The 10:02 Evidence Analyst handoff contains a material external-doctrine update that strengthens future lineage/causal-credit admission, but reports no new repository scientific evidence, no fresh admitted object, and no MAIN/SUB reallocation.",
   "authoritative_target_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "active_branch": null,
     "active_identity": null,
-    "evidence_analyst_handoff": "7a2ef7021fdaa3dd701353a18b45b6db4915756c",
+    "evidence_analyst_handoff": "8ee6d305acdc8310335e65c5bd3f35d121f35280",
     "control_brain_prior": "10eb4206fb0c998fcdbc40c0e16f38829ea5d41e",
-    "sub_state_blob_sha": "c76c0b373cfd51cff2cc388a70058f5f67a99600",
+    "sub_report_tip_observed": "e8ab335ab67a81b9ab2fc299a0266b7b32fd5d6c",
     "formal_boundary": "ARCHITECTURE_TESTBED / PROSPECTIVE_ADMISSION_ONLY / stop at NEXT_OBJECT_READY_FOR_ANALYST_REVIEW / no formal identity or STARTED authorized"
   },
   "fast_path_used": true,
@@ -27,24 +27,47 @@
     "official_test_accessed": false,
     "research_workflow_run_ids": [],
     "control_plane_ci_observed": {
-      "run_id": 35408834143,
+      "run_id": 35412028484,
       "branch": "ops/orchestrator-run-report",
-      "head_sha": "e47eb87b670b3bd6739422377cac4f8c56a86fa1",
-      "status_when_observed": "in_progress",
+      "head_sha": "ac743ee2b0aeb334968e987e7d649912406c89de",
+      "status_when_observed": "queued",
       "scientific_relevance": "none"
     }
   },
   "scientific_results": {
     "new_formal_scientific_information_this_run": false,
-    "new_external_admission_information_this_run": false,
+    "new_external_admission_information_this_run": true,
     "programme_state": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
-    "admission_result": "NO_FRESH_OBJECT_ANALYST_0900_RECONFIRMED",
+    "admission_result": "NO_FRESH_OBJECT_WITH_STRENGTHENED_FUTURE_LINEAGE_REDUCTION_BAR",
     "evidentiary_status": "PREFORMAL_NON_EVIDENTIARY_PROGRAMME_HOLD",
     "formal_identity_state": "NONE_ACTIVE",
     "started_state": "NONE_NEW",
     "formal_preserve_state": "NONE_NEW",
     "formal_scoring_state": "NONE_NEW",
-    "formal_evidence_state": "NONE_NEW"
+    "formal_evidence_state": "NONE_NEW",
+    "external_doctrine_update": {
+      "source": "Evidence Analyst 10:02 handoff consuming 09:32 Literature Reduction Scout",
+      "history_influence_axis": [
+        "provenance/ancestry",
+        "individual-token causal-net / occurrence-net / event-structure history+conflict",
+        "causally consistent dynamic slicing",
+        "explicit counterfactual actual-cause/responsibility"
+      ],
+      "learning_locality_axis": [
+        "matched local eligibility / three-factor / e-prop",
+        "GLE / SAL where relevant",
+        "matched recurrent/plastic mechanisms"
+      ],
+      "additional_requirements": [
+        "preemption and overdetermination cases",
+        "ancestry-preserving responsibility-changing interventions",
+        "matched information/readout/resource privilege",
+        "positive intervention-validated candidate signal",
+        "fixed numeric falsifiers"
+      ],
+      "lp01_reopened": false,
+      "formal_execution_authorized": false
+    }
   },
   "consumed_identities": [
     "c19-external-v2-official-v4",
@@ -57,15 +80,15 @@
   ],
   "blockers": [
     "Scientific object availability: no genuinely fresh independently motivated native reduction-resistant object currently exists.",
-    "Formal one-way science remains blocked until a fresh object prospectively satisfies native causality, matched task semantics and information/readout/resource privilege, credible ordinary comparators, a positive candidate-signal gate where mechanistic reduction is claimed, fixed numeric falsifiers, exact bindings, same-final-SHA CI/pre-START, and fresh Analyst authority."
+    "For future lineage/causal-credit work, formal admission remains blocked until a native intervention-validated effect prospectively survives provenance, causal/event-structure, dynamic-slicing, explicit actual-cause/responsibility, and matched ordinary local/recurrent/plastic reductions under symmetric privilege/resources with fixed falsifiers."
   ],
   "lease_collision_reconciliation": {
     "inherited_lease_status": "COMPLETED",
-    "inherited_run_id": "sparkbrain-main-primary-20260919T081538JST",
-    "inherited_heartbeat": "2026-09-19T08:15:38+09:00",
+    "inherited_run_id": "sparkbrain-main-primary-20260919T091440JST",
+    "inherited_heartbeat": "2026-09-19T09:19:00+09:00",
     "fresh_main_running_collision_found": false,
     "primary_lease_acquired": true,
-    "primary_lease_start_commit": "e47eb87b670b3bd6739422377cac4f8c56a86fa1",
+    "primary_lease_start_commit": "ac743ee2b0aeb334968e987e7d649912406c89de",
     "lease_rechecked_after_acquisition": true,
     "latest_sub_mode": "no_op",
     "sub_lane": null,
@@ -76,29 +99,28 @@
   "integrity_status": "CLEAN_ARCHITECTURE_TESTBED_BOUNDARY_NO_ACTIVE_BRANCH_OR_IDENTITY_NO_STARTED_NO_OFFICIAL_TEST_NO_FORMAL_PRESERVE_SCORE_OR_EVIDENCE",
   "critical_path_fixes_completed": [],
   "same_run_steps": [
-    "Read fresh Evidence Analyst latest/state/history at mailbox tip 7a2ef7021fdaa3dd701353a18b45b6db4915756c and consumed main_lane, phase, outcome contingencies, blocked_until, do_not_touch, and GO/STOP.",
+    "Read fresh Evidence Analyst latest/state/history at mailbox tip 8ee6d305acdc8310335e65c5bd3f35d121f35280 and consumed main_lane, phase, outcome contingencies, blocked_until, do_not_touch, and GO/STOP.",
     "Read MAIN latest/state/lease; inherited lease was COMPLETED and there was no active branch/identity collision.",
-    "Read SUB state for collision avoidance; SUB remains no_op with no reserved lane, fallback, or incubator candidate.",
+    "Read SUB state only for collision avoidance; SUB remains no_op with no reserved lane, fallback, or incubator candidate.",
     "Read Control Brain 10eb4206fb0c998fcdbc40c0e16f38829ea5d41e as strategic prior only; it remains consistent with NO_HIGH_VALUE_OBJECT architecture/testbed mode.",
     "Re-fetched current main and confirmed ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d remains authoritative.",
-    "Acquired PRIMARY RUNNING lease at commit e47eb87b670b3bd6739422377cac4f8c56a86fa1, then re-fetched lease, main, and Evidence Analyst tip and confirmed no drift/collision.",
-    "Applied no research/scientific mutation because the 09:00 Analyst handoff reconfirms NO_FRESH_OBJECT and no candidate-specific critical path exists.",
-    "Observed control-plane CI 35408834143 only; no research workflow or experiment was dispatched.",
-    "Persisted MAIN latest checkpoint at commit 904e9e041a26d102d87f0a6ac088385619fad363.",
-    "Persisted append-only reports/orchestrator/history/2026-09-19/0914-main.md at commit dd1a8effe91079f195357f8fd3c007e24b3f65de."
+    "Acquired PRIMARY RUNNING lease at commit ac743ee2b0aeb334968e987e7d649912406c89de, then re-fetched lease, main, and Evidence Analyst tip and confirmed no drift/collision.",
+    "Applied contingency NO_FRESH_OBJECT -> HOLD. No research/scientific mutation was performed because the fresh Analyst handoff strengthens admission doctrine but admits no object.",
+    "Recorded the strengthened future lineage/causal-credit ordinary-reduction ladder without reopening LP01 or engineering a literature-driven successor.",
+    "Observed control-plane CI 35412028484 only; no research workflow or experiment was dispatched.",
+    "Persisted MAIN latest checkpoint at commit a6b85547ae743fd6ff7d28d2e6ea4204719e5f06."
   ],
-  "stop_reason": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_ANALYST_0900_RECONFIRMED",
+  "stop_reason": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_LINEAGE_ADMISSION_BAR_STRENGTHENED",
   "work_left_for_SUB": "none; SUB remains no_op with no reserved independent lane or fallback",
   "lane_repartition_reason": null,
-  "next_MAIN_action": "Remain in architecture/testbed hold. If and only if a genuinely fresh independently motivated native reduction-resistant object appears, perform bounded prospective NON_EVIDENTIARY specification/readiness for at most one object and STOP at NEXT_OBJECT_READY_FOR_ANALYST_REVIEW. Do not create a formal identity, STARTED marker, official TEST access, preserve/scoring output, evidence, or outcome-responsive successor under the current handoff.",
+  "next_MAIN_action": "Remain in architecture/testbed HOLD. If and only if a genuinely fresh independently motivated native reduction-resistant object independently appears, perform bounded prospective NON_EVIDENTIARY specification/readiness for at most one object and STOP at NEXT_OBJECT_READY_FOR_ANALYST_REVIEW. For future lineage/causal-credit objects, apply the strengthened two-axis reduction ladder and intervention requirements before review. Do not create a formal identity, STARTED marker, official TEST access, preserve/scoring output, evidence, or outcome-responsive/literature-driven successor under the current authority.",
   "write_path_diagnostics": {
     "github_direct_write_attempted": true,
     "github_direct_write_succeeded": true,
     "force_push_used": false,
-    "lease_start_commit": "e47eb87b670b3bd6739422377cac4f8c56a86fa1",
-    "latest_report_commit": "904e9e041a26d102d87f0a6ac088385619fad363",
-    "history_path": "reports/orchestrator/history/2026-09-19/0914-main.md",
-    "history_commit": "dd1a8effe91079f195357f8fd3c007e24b3f65de",
+    "lease_start_commit": "ac743ee2b0aeb334968e987e7d649912406c89de",
+    "latest_report_commit": "a6b85547ae743fd6ff7d28d2e6ea4204719e5f06",
+    "history_path": "reports/orchestrator/history/2026-09-19/1016-main.md",
     "history_path_prechecked_absent": true
   }
 }
