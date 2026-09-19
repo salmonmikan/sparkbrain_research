@@ -1,4 +1,4 @@
-# SparkBrain Research Orchestrator SUB — 2026-09-20 04:49 JST
+# SparkBrain Research Orchestrator SUB — 2026-09-20 04:51 JST
 
 ## Mode / allocation
 
@@ -16,9 +16,9 @@
 
 ## Authority reconciliation / MAIN frontier avoided
 
-The final fresh Analyst handoff appeared after the initial same-run SUB snapshot but leaves the allocation materially unchanged: Discovery remains open to SUB for at most one independent bounded question, while MAIN exclusively owns `CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01` static contract characterization. The new handoff explicitly confirms MAIN has not yet started that object and does not classify this newly completed SUB result yet.
+Fresh Analyst authority leaves the allocation unchanged: Discovery is open to SUB for at most one independent bounded question, while MAIN exclusively owns `CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01`. During final persistence reconciliation, MAIN independently started its authorized branch `research/main-v05-unit-suppression-transient-semantics-arch-study-20260920@2ef4b24f8e7ef8577ebbcb0328e7b3476bc24336`; the shared control-plane tip advanced through MAIN persistence after SUB's writes. This does not collide with the SUB research branch or target. SUB did not inspect MAIN's semantic outcome or take its blocker/successor.
 
-SUB did not continue the promoted suppression object, replay the prior suppression pulse diagnostic, take MAIN blockers, continue v0.5 config binding / Temporal / Top-k / H7, or touch FORMAL/TEST/scoring/identity/preserve/evidence surfaces. `blocked_until` keeps dynamic MAIN continuation, PRE_FORMAL, and FORMAL gated behind their respective fresh prospective authorities. `do_not_touch` was respected for consumed identities, immutable evidence/control/preserve refs, completed topology-config/Temporal/Top-k/H5/NI01/C19/PD01 artifacts/outcomes, official TEST/formal scorer surfaces, scheduler definitions, and PR #148/#149 governance work.
+SUB did not continue the promoted suppression object, replay the prior suppression pulse diagnostic, continue v0.5 config binding / Temporal / Top-k / H7, or touch FORMAL/TEST/scoring/identity/preserve/evidence surfaces. `blocked_until` keeps dynamic MAIN continuation, PRE_FORMAL, and FORMAL gated behind their respective fresh prospective authorities. `do_not_touch` was respected for consumed identities, immutable evidence/control/preserve refs, completed topology-config/Temporal/Top-k/H5/NI01/C19/PD01 artifacts/outcomes, official TEST/formal scorer surfaces, scheduler definitions, and PR #148/#149 governance work.
 
 ## Discovery question / implementation
 
@@ -54,4 +54,4 @@ Utility request: none. Consumed identities: none. New formal results: zero. Bloc
 
 Completion target: `ACHIEVED_ONE_BOUNDED_INDEPENDENT_ASSEMBLY_SEGMENTATION_DISCOVERY_CYCLE_AND_RETURNED_ARCHITECTURE_PROMOTION_CANDIDATE` — achieved.
 
-SUB persistence history: preliminary same-run snapshot `reports/orchestrator/history/2026-09-20/0447-sub.md` at `0b18c8ff3a39d5b6a4d9bf7757276e4fa71ad233`; final authority-reconciled append-only snapshot `reports/orchestrator/history/2026-09-20/0449-sub.md` at `70ee6ef3364d1abd6d5c6196b31b7b9fded02067`. No MAIN or legacy shared latest/state file was modified; no force-push was used.
+SUB persistence history: preliminary snapshot `reports/orchestrator/history/2026-09-20/0447-sub.md` at `0b18c8ff3a39d5b6a4d9bf7757276e4fa71ad233`; final authority-reconciled append-only snapshot `reports/orchestrator/history/2026-09-20/0449-sub.md` at `70ee6ef3364d1abd6d5c6196b31b7b9fded02067`. No MAIN or legacy shared latest/state file was modified by SUB; no force-push was used.
