@@ -29,3 +29,52 @@ jobs:
         run: python -m pytest -q
       - name: Validate bundle
         run: python scripts/validate_bundle.py
+      - name: Validate structural-order Architecture Study contract
+        run: >-
+          python scripts/architecture_studies/structural_order_path_dependence_cycle1.py
+          --phase validate
+
+  architecture-study:
+    if: >-
+      github.event_name == 'push' &&
+      github.ref == 'refs/heads/research/main-structural-order-path-arch-study-20260919'
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install
+        run: python -m pip install -e ".[dev,learned,spiking]"
+      - name: Verify exact scientific-source ancestry
+        run: test "$(git merge-base HEAD ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d)" = "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d"
+      - name: Acquire DEV-only raw Architecture Study diagnostics
+        run: >-
+          python scripts/architecture_studies/structural_order_path_dependence_cycle1.py
+          --phase raw
+          --output artifacts/architecture_studies/structural-order-path-cycle1
+      - name: Archive raw diagnostics before interpretation
+        uses: actions/upload-artifact@v4
+        with:
+          name: structural-order-path-cycle1-raw
+          path: |
+            artifacts/architecture_studies/structural-order-path-cycle1/raw.json
+            artifacts/architecture_studies/structural-order-path-cycle1/source-seed43.pt
+          if-no-files-found: error
+      - name: Apply prospectively fixed local triage mapping
+        run: >-
+          python scripts/architecture_studies/structural_order_path_dependence_cycle1.py
+          --phase map
+          --output artifacts/architecture_studies/structural-order-path-cycle1
+      - name: Upload mapped NON_EVIDENTIARY result
+        uses: actions/upload-artifact@v4
+        with:
+          name: structural-order-path-cycle1-result
+          path: artifacts/architecture_studies/structural-order-path-cycle1/summary.json
+          if-no-files-found: error
