@@ -1,14 +1,14 @@
 {
-  "run_id": "sparkbrain-main-relay-20260920T0445JST",
-  "execution_mode": "RELAY",
-  "status": "WAITING_EXTERNAL",
-  "started_at": "2026-09-20T04:45:00+09:00",
-  "heartbeat_at": "2026-09-20T04:50:00+09:00",
+  "run_id": "sparkbrain-main-primary-20260920T0513JST",
+  "execution_mode": "PRIMARY",
+  "status": "RUNNING",
+  "started_at": "2026-09-20T05:13:00+09:00",
+  "heartbeat_at": "2026-09-20T05:13:00+09:00",
   "analyst_commit": "493573eb3b8c38d88f251db7c04dfe1a586c6ff0",
   "active_branch": "research/main-v05-unit-suppression-transient-semantics-arch-study-20260920",
   "active_identity": null,
-  "active_step": "EXACT_HEAD_SUPPRESSION_SEMANTICS_ARCHITECTURE_WORKFLOW_IN_PROGRESS",
+  "active_step": "VERIFY_COMPLETED_SUPPRESSION_SEMANTICS_ARTIFACT_INTEGRITY",
   "workflow_run_id": 35465512928,
-  "expected_next_action": "Collect Architecture workflow 35465512928 and ordinary CI 35465512894 on exact head 2ef4b24f8e7ef8577ebbcb0328e7b3476bc24336. If a pre-start mechanical blocker appears, only a science-invariant fix plus re-binding is authorized. If one valid terminal class is produced, verify raw-before-summary artifact binding, persist the fixed outcome, and STOP for fresh Evidence Analyst review without same-run implementation repair or cycle 2.",
+  "expected_next_action": "Verify completed exact-head Architecture workflow 35465512928, ordinary CI 35465512894, artifact provenance/raw-before-summary binding, and fixed terminal mapping against the prospectively blob-bound static scope. If an integrity or diagnostic implementation anomaly is found after outcome material exists, do not repair or rescore in-run; persist the anomaly and STOP for fresh Evidence Analyst review.",
   "owner": "main"
 }
