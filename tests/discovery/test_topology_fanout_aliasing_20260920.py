@@ -5,7 +5,6 @@ from math import gcd
 
 from sparkbrain.v05.topology import layered_reservoir_topology
 
-
 _DIMENSIONS = (
     (4, 4),
     (5, 5),
