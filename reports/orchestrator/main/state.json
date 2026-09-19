@@ -124,7 +124,8 @@
     "history_path": "reports/orchestrator/history/2026-09-20/0821-main.md",
     "history_commit": "081e555661cd34bf503eda3a7a51531ab4e82ad2",
     "state_json": "this update",
-    "final_lease": "pending final update",
+    "final_lease_commit": "c41a90232674e6d20819e4a5662aad26f48ada55",
+    "final_lease_status": "WAITING_EXTERNAL",
     "force_push_used": false
   }
 }
