@@ -74,6 +74,15 @@
       "timing_mode": "exact_schedule",
       "timezone": "Asia/Tokyo",
       "schedule": "BEGIN:VEVENT\nDTSTART;TZID=Asia/Tokyo:20260919T162020\nRRULE:FREQ=HOURLY;BYMINUTE=20;BYSECOND=0\nEND:VEVENT"
+    },
+    {
+      "id": "6aae3f2a085c8191b522a8138cc62dd9",
+      "title": "SparkBrain Utility Orchestrator",
+      "enabled": true,
+      "updated_at": "2026-09-19T07:52:11.670850Z",
+      "timing_mode": "exact_schedule",
+      "timezone": "Asia/Tokyo",
+      "schedule": "BEGIN:VEVENT\nDTSTART;TZID=Asia/Tokyo:20260919T172500\nRRULE:FREQ=HOURLY;BYMINUTE=25;BYSECOND=0\nEND:VEVENT"
     }
   ]
 }
