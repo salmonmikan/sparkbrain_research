@@ -1,7 +1,7 @@
 {
-  "generated_at_jst": "2026-09-20T02:50:00+09:00",
+  "generated_at_jst": "2026-09-20T04:50:00+09:00",
   "role": "CONTROL_BRAIN",
-  "selected_slot_jst": "02:50",
+  "selected_slot_jst": "04:50",
   "role_inference_required": false,
   "foundational_doctrine_change": false,
   "operating_doctrine_change": false,
@@ -9,79 +9,144 @@
   "central_theory_status": "NO_HIGH_VALUE_FORMAL_OBJECT",
   "central_theory": "A central novelty claim remains admissible only for a native intervention-validated lineage-specific causal-responsibility effect that is prospectively positive and survives ordinary history/provenance/actual-causality and local-learning/recurrent/plastic reductions under matched information, readout, task/world/regime-label, and resource privilege. No current object clears this FORMAL admission bar.",
   "human_directives": {
-    "HUMAN-20260918-001": {"disposition": "ACCEPT", "status": "UNCHANGED", "reason": "Review only stable outcome-independent reusable CX/comparator substrate for main promotion; do not wholesale-promote consumed/result-dependent science."},
-    "HUMAN-20260919-002": {"disposition": "ACCEPT", "status": "UNCHANGED", "reason": "Protection/ruleset deployment remains deferred absent materially changed concrete integrity risk; factual protection gap remains recorded."},
-    "HUMAN-20260919-003": {"disposition": "ACCEPT", "status": "UNCHANGED", "reason": "Use Discovery/Architecture/Pre-formal for substantive forward motion while preserving the strict FORMAL integrity floor and avoiding low-value governance churn."}
+    "HUMAN-20260918-001": {
+      "disposition": "ACCEPT",
+      "status": "UNCHANGED",
+      "reason": "Only stable outcome-independent reusable CX/comparator substrate may be considered for main promotion; do not wholesale-promote consumed/result-dependent research state."
+    },
+    "HUMAN-20260919-002": {
+      "disposition": "ACCEPT",
+      "status": "UNCHANGED",
+      "reason": "Protection/ruleset deployment remains deferred absent materially changed concrete immutable-ref risk; the factual protection gap remains recorded."
+    },
+    "HUMAN-20260919-003": {
+      "disposition": "ACCEPT",
+      "status": "UNCHANGED",
+      "reason": "Use Discovery/Architecture/Pre-formal for substantive forward motion while preserving the strict FORMAL hard floor and avoiding low-value governance churn."
+    }
   },
   "authoritative_repository": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "main_protected": false,
     "evidence_tag_count": 5,
     "legacy_freeze_branch_count": 13,
+    "freeze_tag_count": 0,
+    "formal_tag_count": 0,
+    "sealed_tag_count": 0,
     "repository_ruleset_count": 0,
-    "active_sub_config_binding_head": "ddd80443dd670698397683b95742428045c74932",
-    "active_sub_config_binding_ci": {"run": 35458809766, "status": "completed", "conclusion": "success"},
-    "pr_148": {"state": "open", "merged": false, "mergeable": true, "head": "14ba187bb13705bc306baabe310d5364cf1b60fb"},
-    "pr_149": {"state": "open", "merged": false, "mergeable": true, "head": "db85c4503c9895adf4ace00bcacaf62df07a34e2"}
+    "active_main_suppression_head": "2ef4b24f8e7ef8577ebbcb0328e7b3476bc24336",
+    "suppression_architecture_workflow": {
+      "run": 35465512928,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "suppression_ci": {
+      "run": 35465512894,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "active_sub_crosscascade_head": "29c9130dfda56d1c29a970e0df62aef76a41aebf",
+    "pr_148": {
+      "state": "open",
+      "merged": false,
+      "mergeable": true,
+      "head": "14ba187bb13705bc306baabe310d5364cf1b60fb"
+    },
+    "pr_149": {
+      "state": "open",
+      "merged": false,
+      "mergeable": true,
+      "head": "db85c4503c9895adf4ace00bcacaf62df07a34e2"
+    }
   },
   "research_funnel": {
     "DISCOVERY": {
       "status": "EXPLORATORY_PRODUCTIVE",
       "owner": "SUB_DEFAULT",
-      "latest_target": "CAND-V05-TOPOLOGY-CONFIG-BINDING-01",
+      "latest_target": "ASSEMBLY_CROSSCASCADE_FALLBACK_BRIDGING_DISCOVERY",
       "exploration_cycle": 1,
       "latest_classification": "DISCOVERY_COMPLETE_PROMOTE_TO_ARCHITECTURE_STUDY_RECOMMENDATION_PENDING_ANALYST",
-      "evidentiary_status": "NON_EVIDENTIARY"
+      "evidentiary_status": "NON_EVIDENTIARY",
+      "ordinary_reduction": "Fallback context is keyed only by label with no cascade/window identity, so later same-label activity appends to prior context through ordinary extractor control flow."
     },
     "ARCHITECTURE_STUDY": {
-      "status": "HOLD_NO_ACTIVE_MAIN_OBJECT",
-      "main_active_candidate": null,
+      "status": "ACTIVE_MAIN_RESULT_PENDING_DURABLE_COLLECTION",
+      "main_active_candidate": "CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01",
+      "main_head": "2ef4b24f8e7ef8577ebbcb0328e7b3476bc24336",
+      "workflow": 35465512928,
+      "workflow_conclusion": "success",
+      "ci": 35465512894,
+      "ci_conclusion": "success",
+      "durable_outcome_available": false,
       "temporal": "HOLD_AFTER_RECONCILED_CYCLE1_FUNCTIONAL_BATCH_PARTITION_EFFECT_NON_EVIDENTIARY",
       "topk": "HOLD_UTILITY_MIXED_NO_CYCLE3_NO_PRE_FORMAL",
-      "v05_config_binding": "PENDING_FRESH_ANALYST_PROMOTION_DECISION"
+      "v05_config_binding": "HOLD_AFTER_ARCHITECTURE_CYCLE1_INACTIVE_CONFIGURATION_CONTRACT_REDUCTION"
     },
-    "PRE_FORMAL": {"status": "EMPTY_HOLD"},
-    "FORMAL": {"status": "EMPTY_HOLD", "fresh_identity": null, "started": null, "test_authority": false}
+    "PRE_FORMAL": {
+      "status": "EMPTY_HOLD"
+    },
+    "FORMAL": {
+      "status": "EMPTY_HOLD",
+      "fresh_identity": null,
+      "started": null,
+      "test_authority": false
+    }
   },
   "candidate_pool": [
     {
-      "id": "CAND-V05-TOPOLOGY-CONFIG-BINDING-01",
-      "layer": "DISCOVERY",
-      "status": "CYCLE1_COMPLETE_PENDING_ANALYST",
-      "research_head": "ddd80443dd670698397683b95742428045c74932",
-      "ci_run": 35458809766,
+      "id": "CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01",
+      "layer": "ARCHITECTURE_STUDY",
+      "status": "ACTIVE_RESULT_PENDING_ROLE_OWNED_COLLECTION",
+      "research_head": "2ef4b24f8e7ef8577ebbcb0328e7b3476bc24336",
+      "workflow": 35465512928,
+      "ci": 35465512894,
       "evidentiary_status": "NON_EVIDENTIARY",
-      "observation": "Public V05 geometry fields are accepted/serialized and retained in nested config but the integrated topology construction path does not forward them; alternate bounded config did not change realized integrated topology.",
-      "ordinary_interpretation": "API/configuration-semantics correctness or binding gap, not mechanism novelty.",
-      "next_gate": "Fresh Evidence Analyst decision; no cycle 2 from Control."
+      "next_gate": "MAIN/Relay artifact collection and prospectively fixed terminal mapping, then fresh Evidence Analyst review; no automatic cycle2/PRE_FORMAL/FORMAL."
     },
     {
-      "id": "CAND-TEMPORAL-BATCH-PARTITION-01",
-      "layer": "ARCHITECTURE_STUDY",
-      "status": "HOLD_AFTER_RECONCILED_CYCLE1",
-      "research_head": "7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
-      "workflow": 35451528895,
-      "mapped_outcome": "FUNCTIONAL_BATCH_PARTITION_EFFECT",
+      "id": "ASSEMBLY_CROSSCASCADE_FALLBACK_BRIDGING_DISCOVERY",
+      "layer": "DISCOVERY",
+      "status": "CYCLE1_COMPLETE_PENDING_ANALYST",
+      "research_head": "29c9130dfda56d1c29a970e0df62aef76a41aebf",
       "evidentiary_status": "NON_EVIDENTIARY",
-      "next_gate": "No cycle 2/PRE_FORMAL without fresh prospective question."
+      "observation": "Cross-cascade fallback bridging in 8/8 candidate conditions versus 0/8 same-window qualified-cluster control conditions.",
+      "ordinary_interpretation": "Label-only fallback context without cascade/window identity explains the observation; no new computational principle is supported.",
+      "next_gate": "Fresh Evidence Analyst classification of whether one bounded Architecture segmentation/API semantics object is worthwhile."
+    },
+    {
+      "id": "CAND-V05-TOPOLOGY-CONFIG-BINDING-01",
+      "layer": "ARCHITECTURE_STUDY",
+      "status": "HOLD",
+      "ordinary_interpretation": "Inactive-configuration/configuration-contract/reproducibility semantics.",
+      "next_gate": "Any operative-binding/rejection/backward-compatibility policy is a fresh object."
     },
     {
       "id": "CAND-TOPK-PA-01",
       "layer": "ARCHITECTURE_STUDY",
       "status": "HOLD",
       "utility_classification": "MIXED",
-      "next_gate": "Fresh Analyst-defined support/reduction successor only; no cycle 3 or PRE_FORMAL automatically."
+      "next_gate": "No cycle3/PRE_FORMAL without a genuinely fresh ordinary-reduction/support question."
     },
-    {"id": "CAND-H7-RESP-01", "layer": "HOLD", "status": "NO_NATIVE_OBJECT"},
-    {"id": "TOPOLOGY_RECEPTOR_FANOUT_ALIASING_DISCOVERY", "layer": "DISCOVERY", "status": "REJECT", "reason": "Exact modular stride aliasing and current integrated default N=48 is non-resonant."}
+    {
+      "id": "CAND-TEMPORAL-BATCH-PARTITION-01",
+      "layer": "ARCHITECTURE_STUDY",
+      "status": "HOLD_AFTER_RECONCILED_CYCLE1",
+      "mapped_outcome": "FUNCTIONAL_BATCH_PARTITION_EFFECT",
+      "evidentiary_status": "NON_EVIDENTIARY",
+      "next_gate": "Fresh partition-invariance/reliability object only; no cycle2 automatically."
+    },
+    {
+      "id": "CAND-H7-RESP-01",
+      "layer": "HOLD",
+      "status": "NO_NATIVE_OBJECT"
+    }
   ],
   "external_input": {
     "literature": {
-      "latest_generated_jst": "2026-09-20T00:30:00+09:00",
+      "latest_generated_jst": "2026-09-20T03:30:00+09:00",
       "consumed_by_control": true,
       "consumed_by_evidence_analyst": true,
-      "affected_line": "CAND-TEMPORAL-BATCH-PARTITION-01",
-      "impact": "Ordinary reduction/correctness ladder is non-anticipation, event-time versus processing-time separation, and partition invariance."
+      "impact": "No central novelty support. Treat v0.5 topology configuration through ordinary configuration/binding/reproducibility semantics; treat transient suppression first as an API/state-transition contract; keep Temporal under event-time/non-anticipation/partition-invariance reductions."
     },
     "audit": {
       "latest_generated_jst": "2026-09-19T22:31:00+09:00",
@@ -89,83 +154,93 @@
       "consumed_by_evidence_analyst": true,
       "target": "H5",
       "classification": "ROBUST_SO_FAR",
-      "impact": "Preserve exact canonical FAIL; global eligibility maintenance is an architecture bottleneck, not a general event-routing no-go theorem."
+      "impact": "Preserve exact canonical H5 FAIL; global all-edge eligibility maintenance is an architecture bottleneck, not a general event-routing no-go theorem."
     }
   },
   "methodology_calibration": {
-    "latest_generated_jst": "2026-09-20T02:20:00+09:00",
-    "latest_commit": "ecb11ef282614beb324d20fb69e20e60684b432d",
+    "latest_generated_jst": "2026-09-20T04:21:00+09:00",
     "classification": "MIXED_CALIBRATION",
+    "material_update": true,
     "consumed_by_control": true,
-    "consumed_by_evidence_analyst": false,
-    "impact": "Temporal mismatch was correctly reconciled without scientific reclassification, but programme-wide artifact-to-handoff fidelity remains unproven; tighten provenance binding prospectively, not the novelty bar.",
-    "utility_request": "METHCAL-20260920-0120-ARTIFACT-HANDOFF-FIDELITY"
+    "consumed_by_evidence_analyst": true,
+    "impact": "Repeated lower-level artifact-to-handoff fidelity weakness is now confirmed. Tighten prospective machine binding/checking, not scientific novelty/comparator/FORMAL gates.",
+    "recommended_guard": "FAIL_CLOSED_MACHINE_CHECKABLE_HANDOFF_BINDING"
   },
   "main": {
-    "classification": "NO_OP_BY_DESIGN",
-    "latest_durable_jst": "2026-09-20T02:22:00+09:00",
-    "analyst_commit": "7dd9d9d4d02febe2547a4cc547b31891a0bc285f",
-    "current_lane": "LOWER_FUNNEL_MAIN_HOLD_PENDING_FRESH_OBJECT",
-    "active_object": null,
-    "integrity": "CLEAN_NO_MUTATION_NO_FORMAL_AUTHORITY"
+    "primary_classification": "NO_OP_BY_DESIGN",
+    "relay_classification": "HEALTHY",
+    "analyst_commit": "6e37598f6c92dbe6b6a88d6083db93bd0f022b10",
+    "current_lane": "V05_UNIT_SUPPRESSION_TRANSIENT_CONTRACT_ARCHITECTURE_STUDY_CYCLE1",
+    "active_object": "CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01",
+    "active_head": "2ef4b24f8e7ef8577ebbcb0328e7b3476bc24336",
+    "latest_relay_status": "WAITING_EXTERNAL",
+    "workflow_completed_after_relay_checkpoint": true,
+    "durable_outcome_pending": true,
+    "integrity": "CLEAN_NON_EVIDENTIARY_STATIC_ARCHITECTURE_ONLY_NO_FORMAL_AUTHORITY"
   },
   "sub": {
     "classification": "EXPLORATORY_PRODUCTIVE",
-    "latest_jst": "2026-09-20T02:43:00+09:00",
+    "latest_jst": "2026-09-20T04:51:00+09:00",
     "mode": "discovery",
-    "target": "CAND-V05-TOPOLOGY-CONFIG-BINDING-01",
-    "cycle": "1/3_PROGRAMME_BUDGET_BUT_ANALYST_BOUNDED_TO_ONE",
+    "target": "ASSEMBLY_CROSSCASCADE_FALLBACK_BRIDGING_DISCOVERY",
+    "cycle": 1,
     "recommendation": "PROMOTE_TO_ARCHITECTURE_STUDY",
     "evidentiary_status": "NON_EVIDENTIARY",
-    "research_head": "ddd80443dd670698397683b95742428045c74932",
-    "ci_run": 35458809766,
-    "ci_conclusion": "success"
-  },
-  "relay": {
-    "classification": "NO_OP_BY_DESIGN",
-    "reason": "Current MAIN handoff is explicit HOLD with no expected continuation; no relay advancement is needed."
+    "research_head": "29c9130dfda56d1c29a970e0df62aef76a41aebf",
+    "independent_of_main": true,
+    "ordinary_reduction_found": true
   },
   "utility_request_bus": {
+    "completed_prior_assignment": {
+      "assignment_id": "CTRL-20260920-0250-ARTIFACT-HANDOFF-FIDELITY",
+      "status": "COMPLETED",
+      "run_count": 1,
+      "classification": "REPEATED_HANDOFF_FIDELITY_DEFECT",
+      "recommendation": "ADD_FAIL_CLOSED_MACHINE_CHECKABLE_HANDOFF_GUARD"
+    },
     "decisions": {
-      "METHCAL-20260920-0120-ARTIFACT-HANDOFF-FIDELITY": "ACCEPT",
+      "EVA-20260920-0401-HANDOFF-BINDING-GUARD": "ACCEPT",
+      "METHCAL-20260920-0120-ARTIFACT-HANDOFF-FIDELITY": "COMPLETED_PRIOR_ACCEPT",
       "LIT-20260919-1830-TOPK-HYBRID-TRANSIENT": "DEFER",
       "EVA-20260919-1943-TOPK-CROSS-SEED-SUPPORT": "COMPLETED_PRIOR_ACCEPT",
       "METHCAL-20260919-1818-ARCH-SIGNAL-SUPPORT": "COMPLETED_PRIOR_ACCEPT"
     },
-    "decision_commit": "dc953e8276e2b832495e8a33fd4a89752bbe9e86",
-    "assignment": {
-      "assignment_id": "CTRL-20260920-0250-ARTIFACT-HANDOFF-FIDELITY",
+    "current_assignment": {
+      "assignment_id": "CTRL-20260920-0450-HANDOFF-BINDING-GUARD",
       "status": "ASSIGNED",
       "active_assignment": true,
       "max_runs": 1,
       "run_count": 0,
-      "expiry": "2026-09-20T05:00:00+09:00",
-      "mode": "READ_ONLY_ARTIFACT_HANDOFF_CONSISTENCY_AUDIT",
-      "evidentiary_status": "NON_EVIDENTIARY_METHODOLOGY_FIDELITY_DIAGNOSTIC",
-      "assignment_commit": "04d6964167cb17308c2b32a5b0f0694ebdf96141"
-    }
+      "expiry": "2026-09-20T07:00:00+09:00",
+      "mode": "READ_ONLY_CONTROL_PLANE_HANDOFF_GUARD_PROTOTYPE",
+      "evidentiary_status": "NON_EVIDENTIARY_CONTROL_PLANE_METHOD_PROTOTYPE",
+      "decision_commit": "d84294fc24cabd6c4dcebe70b158e1a974de16c2",
+      "assignment_commit": "9f6719029b2745386b5ba08c58d8d85329f589f7"
+    },
+    "lifecycle_reconciliation": "The prior current.md pointer remained stale after Utility state/result completed 1/1; publishing the new Control-approved assignment superseded the stale pointer without rewriting completed history."
   },
   "knowledge_flow": {
-    "evidence_analyst_latest_jst": "2026-09-20T02:01:14+09:00",
-    "evidence_analyst_commit": "7dd9d9d4d02febe2547a4cc547b31891a0bc285f",
+    "evidence_analyst_latest_jst": "2026-09-20T04:37:00+09:00",
+    "evidence_analyst_commit": "6e37598f6c92dbe6b6a88d6083db93bd0f022b10",
     "pending_for_analyst": [
-      "2026-09-20 02:43 SUB CAND-V05-TOPOLOGY-CONFIG-BINDING-01 Discovery result and promotion recommendation",
-      "2026-09-20 02:20 Methodology Calibration MIXED_CALIBRATION update",
-      "Future one-run Utility artifact-handoff fidelity result once completed"
+      "Role-owned terminal artifact/classification for CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01 after successful workflow/CI completion",
+      "2026-09-20 04:51 SUB ASSEMBLY_CROSSCASCADE_FALLBACK_BRIDGING_DISCOVERY result and promotion recommendation",
+      "Future one-run Utility handoff-binding guard result once completed"
     ],
-    "status": "FRESH_POST_HANDOFF_INPUTS_PENDING_NEXT_CYCLE"
+    "status": "FRESH_POST_HANDOFF_INPUTS_PENDING_NEXT_ANALYST_CYCLE"
   },
   "fleet": {
     "fleet_status": "YELLOW",
     "critical_failures": [],
     "operational_defects": [
-      "Generic artifact-to-handoff fidelity has not yet been demonstrated; Temporal was manually reconciled and a one-run Utility audit is assigned."
+      "Repeated artifact-to-handoff lower-level semantic fidelity weakness is confirmed; a prospective generic guard is assigned but not yet demonstrated.",
+      "The prior Utility assignment/current.md lifecycle display remained stale after completion, but the current pointer has now been superseded by a fresh Control-approved assignment without rewriting history."
     ],
     "scheduler_classification": {
       "control_repository_steward": "HEALTHY",
       "evidence_analyst": "HEALTHY",
       "main_primary": "NO_OP_BY_DESIGN",
-      "main_relay": "NO_OP_BY_DESIGN",
+      "main_relay": "HEALTHY",
       "sub": "EXPLORATORY_PRODUCTIVE",
       "external_literature": "HEALTHY",
       "external_audit": "HEALTHY",
@@ -174,9 +249,9 @@
       "current_state_brief": "HEALTHY"
     },
     "efficiency_findings": [
-      "Lower-funnel throughput is substantive: SUB produced a new independent API/config semantics candidate while MAIN correctly remained on HOLD.",
-      "Utility is being used for one narrow cross-role reliability question rather than manufactured research activity.",
-      "Protection/ruleset deployment remains lower priority absent a concrete integrity incident."
+      "Lower-funnel throughput is substantive: MAIN has one bounded Architecture cycle, SUB is producing independent reducible candidate information, and Utility is addressing a demonstrated cross-object control-plane defect.",
+      "No MAIN blocker has been pushed to SUB or Utility and no hidden Utility dependency exists on the current MAIN critical path.",
+      "No repeated no-op or scheduler failure justifies cadence escalation; protection/ruleset cleanup remains lower information value absent an immutable-ref incident."
     ]
   },
   "scheduler_controller_action": "NO_CHANGE",
@@ -184,27 +259,39 @@
     "non_utility_mutations": 0,
     "utility_live_reconfiguration": false,
     "scheduler_registry_modified": false,
-    "reason": "The generic hourly Utility scheduler can consume the Git assignment; no fleet timing change is justified. The temporary Control cadence remains pinned as recent explicit direction."
+    "reason": "The generic hourly Utility scheduler can consume the Git assignment and the current fleet is producing useful work. The temporary faster Control cadence remains pinned as recent explicit human direction."
   },
   "repository_doctrine": {
     "status": "CURRENT_RESEARCH_SEPARATION_HEALTHY_PROTECTION_DEFERRED",
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "evidence_tag_count": 5,
     "legacy_freeze_branch_count": 13,
+    "freeze_tag_count": 0,
+    "formal_tag_count": 0,
+    "sealed_tag_count": 0,
     "main_protected": false,
     "repository_ruleset_count": 0,
-    "protection_rules_action": "DEFERRED_BY_ACCEPTED_HUMAN_DIRECTIVE_ABSENT_NEW_CONCRETE_RISK",
-    "immutable_refs_untouched": true
+    "protection_rules_action": "DEFERRED_BY_ACCEPTED_HUMAN_DIRECTIVE_ABSENT_NEW_CONCRETE_IMMUTABLE_REF_RISK",
+    "immutable_refs_untouched": true,
+    "promotion_candidates": [
+      "generic machine-checkable handoff binding/validation if independently stabilized and reusable",
+      "generic event-time/partition-invariance validation",
+      "generic routing/topology validation",
+      "snapshot/restore invariants",
+      "descriptive resource accounting",
+      "generic privilege/leakage guards"
+    ]
   },
-  "top_priority": "Fresh Evidence Analyst review of CAND-V05-TOPOLOGY-CONFIG-BINDING-01 to decide prospectively whether it merits one bounded Architecture/API correctness study or should be rejected/no-action.",
+  "top_priority": "Collect and durably persist the completed CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01 machine artifact/terminal class through MAIN/Relay, then require fresh Evidence Analyst review before any successor action.",
   "direction_to_evidence_analyst": [
-    "Review SUB CAND-V05-TOPOLOGY-CONFIG-BINDING-01 and decide prospectively whether to promote one bounded Architecture Study; if promoted, fix intended geometry/receptor_rows semantics and backward-compatibility success conditions before further measurement.",
-    "Consume the 02:20 MIXED_CALIBRATION methodology update; after Utility completes, decide whether a generic machine-verifiable artifact-to-handoff fidelity guard is warranted prospectively.",
-    "Keep Temporal and Top-k HOLD unless a genuinely new prospectively specified question appears.",
-    "Preserve FORMAL HOLD and all consumed identities."
+    "Consume the role-owned suppression Architecture artifact after MAIN/Relay persists it; machine-bound fields are authoritative and every terminal outcome stops for fresh review.",
+    "Review ASSEMBLY_CROSSCASCADE_FALLBACK_BRIDGING_DISCOVERY strictly as NON_EVIDENTIARY; the current observation is ordinarily reduced to label-only fallback context bridging and only a fresh architecture/segmentation-semantics question may merit promotion.",
+    "Consume the one-run Utility handoff-binding guard result prospectively. Do not rewrite, invalidate, rescore, or relabel historical scientific outcomes solely because narration drift was found.",
+    "Keep novelty/comparator/FORMAL gates unchanged absent materially new evidence or calibration data.",
+    "Preserve all consumed identities and immutable evidence/control/preserve refs exactly."
   ],
   "utility_control_commits": {
-    "decision": "dc953e8276e2b832495e8a33fd4a89752bbe9e86",
-    "assignment": "04d6964167cb17308c2b32a5b0f0694ebdf96141"
+    "decision": "d84294fc24cabd6c4dcebe70b158e1a974de16c2",
+    "assignment": "9f6719029b2745386b5ba08c58d8d85329f589f7"
   }
 }
