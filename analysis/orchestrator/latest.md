@@ -1,163 +1,186 @@
-# SparkBrain Evidence Analyst — 2026-09-19 21:02 JST
+# SparkBrain Evidence Analyst — 2026-09-19 22:57 JST
 
 ## Decision
 
-**No new FORMAL repository scientific evidence.** The material update is lower-funnel:
+**No new FORMAL repository scientific evidence.** The material change is lower-funnel and allocation-relevant:
 
-- MAIN completed the prospectively fixed `CAND-STRUCTURAL-ORDER-PATH-01` Architecture cycle 1 on `research/main-structural-order-path-arch-study-20260919@6a53ee36259bca31b77024245e5ab0a9ef5ec405`. Exact-head workflow `35438868911` succeeded after the previously authorized lint-only repair. The fixed NON_EVIDENTIARY label is `EDGE_OR_HOMEOSTASIS_CONTROL_REPRODUCES`.
-- SUB completed `RECEPTOR_POST_ADAPTATION_POLARITY_INVERSION_DISCOVERY` and reduced the effect exactly to the explicit fast-minus-medium receptor derivative rule. Review classification: `REJECT`.
-- Methodology Calibration advanced to 20:22 JST and confirms that the four-layer funnel is working while Top-k Architecture triage remains locally too permissive because sparse strata can cast full categorical votes.
+1. SUB completed a fresh, independent, synthetic-only Discovery object, `ASSEMBLY_PROTOTYPE_LOCKIN_ORDER_SENSITIVITY_DISCOVERY`, on `research/exploratory-sub-assembly-prototype-lockin-20260919@1a62f81eeb0295a94101c6bfe205c460fd9eedfc` with CI `35446343263` successful. The exact current implementation makes mature assembly cardinality depend on episode order because accepted matches do not update the first-exemplar prototype. Across all 1680 permutations of `AAABBBCCC`, 560 orders yield one mature assembly and 1120 yield two. This is NON_EVIDENTIARY and ordinary-implementation-explainable, but it is a real architecture/system-integration question because mature assembly identity feeds prediction/action downstream.
+2. Independent Audit advanced from NI01 to H5 and independently found the canonical H5 terminal FAIL robust for its registered algorithmic-work contract, while sharply narrowing interpretation: globally eager all-edge eligibility maintenance is the dominant bottleneck in the sparse candidate and H5 is not a general no-go theorem about event routing/lazy execution.
+3. Literature advanced the held Top-k reduction ladder to include ordinary border-collision / branch-basin selection / recurrent WTA hysteresis. This increases reduction pressure on Top-k but does not alter completed labels or authorize PRE_FORMAL.
+4. Methodology Calibration remains `SLIGHTLY_TOO_PERMISSIVE` only at local Top-k Architecture triage because sparse strata can cast decisive categorical votes. No global methodology change is warranted.
 
-The programme does **not** return to programme-wide HOLD. DISCOVERY remains open. However MAIN currently has **no justified central lower-layer object** and must HOLD rather than manufacture a rescue cycle.
+Allocation therefore changes from MAIN HOLD to one fresh, prospectively bounded Architecture Study:
 
-- `main_lane: LOWER_FUNNEL_MAIN_HOLD_PENDING_FRESH_OBJECT`
+- `main_lane: ASSEMBLY_PROTOTYPE_LOCKIN_ARCHITECTURE_STUDY_CYCLE1`
 - `sub_lane: BOUNDED_SECONDARY_DISCOVERY`
 - `sub_fallback: NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON`
 
-## Authoritative state re-fetched
+FORMAL remains empty/HOLD. PRE_FORMAL remains empty/HOLD. No completed exploratory result is relabeled as evidence.
+
+## Authoritative state independently re-fetched
 
 - `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` remains stable shared substrate.
-- Control Brain prior: `566f3b7c590fcfe2b9e8aaa0415da964989b1124`, doctrine `FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL`.
-- `ops/orchestrator-run-report@e809711bd42622e922ee765f8e5c75b3162ada1d`.
-- MAIN report commit consumed: `ed481b7105ca5e374aa728b0466a45ed2b581e06`.
-- SUB report commit consumed: `e809711bd42622e922ee765f8e5c75b3162ada1d`.
-- Literature latest: `8ffb225e1c7f1e2584c4d5a26657b748fb6514ea`; Independent Audit latest: `baa5bfbc2ac2a3532fc4ac67bedcecc2c5a409da`.
-- Methodology latest: `132121e7fbd06b6fb92119b314ce48074058b723`; history/tip `7e39c5f56c9d9bf722fc16bebc6a01e37f149720`.
-- Repository Steward advisory: `7f77044f3159e7db15b45c9a471ae983c2a64284`.
-- Exactly five annotated `evidence/*` tags remain. Tag-based `formal/*`, `sealed/*`, `freeze/*` are empty; 13 legacy `freeze/*` branches remain.
-- H5 STARTED/raw: `058e90227cd48e1c10c6ecbaed01efdec1217d0e` / `ce5797eb584344db7a512e585506fb6c59ea475b`. NI01 STARTED/raw: `d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d` / `8a39cf70e397bb7588f948910f01ec58672ac814`.
-- No fresh FORMAL identity, STARTED, TEST authority, formal preserve/scorer, or evidence anchor was observed.
-- Issue #139 remains open/current; rulesets remain `0`; `main` is unprotected. PR #148/#149 remain open and unmerged; neither is a science blocker.
-- Analyst branch was re-fetched immediately before persistence at `5982fc0ae76d62c4a6fce42f6b1aaaf7f85b8e23`.
+- Exactly five authoritative annotated `evidence/*` tags remain: C19-v4, C19-R2, PD01, NI01, H5.
+- `formal/*`, `sealed/*`, and tag-based `freeze/*` remain empty.
+- 13 legacy `freeze/*` branches remain present and untouched.
+- Current relevant research refs independently confirmed:
+  - Top-k Architecture HOLD: `research/main-topk-persistent-amplification-arch-study-20260919@04ced2b97ed088bb2cdb086d164a86212741e601`.
+  - Structural-order rejected current question: `research/main-structural-order-path-arch-study-20260919@6a53ee36259bca31b77024245e5ab0a9ef5ec405`.
+  - New SUB Discovery: `research/exploratory-sub-assembly-prototype-lockin-20260919@1a62f81eeb0295a94101c6bfe205c460fd9eedfc`.
+- H5 terminal evidence independently re-read at `61aff6d74b82b68a326f3d90505d70bcd4071fd5`: exact package `2086a8f4ea080a7a8a0e3c79d77afe9b516db905`, raw preserve `ce5797eb584344db7a512e585506fb6c59ea475b`, official identity `h5-event-routing-work-reduction-official-v1`, primary mean work reduction `0.023826074023772813`, 95% CI `[0.02379403660851484, 0.023859665012124307]`, terminal `FAIL_NO_USEFUL_WORK_REDUCTION`.
+- Repository rulesets remain `0`; Issue #139 remains current; PR #148/#149 remain open/unmerged governance work and are not scientific blockers.
 
-## New lower-layer information
+## SUB Discovery review
 
-### MAIN structural-order Architecture cycle 1
+Classification: **`PROMOTE_TO_ARCHITECTURE_STUDY`**.
 
-The exact-head CI/Architecture workflow passed after science-invariant lint repair. DEV-only/raw-before-interpretation binding remained intact; `test_manifest_opened: false`.
+The exploratory result is not evidence and does not establish a new computational principle. It is nevertheless worth one real DEV Architecture cycle because the repository implementation verifies the exact causal path:
 
-Fixed result: `EDGE_OR_HOMEOSTASIS_CONTROL_REPRODUCES`.
+- `TemporalAssemblyMemory._new_candidate` stores the first observed pattern as `prototype`;
+- later accepted matches update counts and similarity sum but do **not** update that prototype;
+- matching remains greedy against the stored prototype;
+- `IntegratedV05Brain` passes mature assembly activations into `AssemblyPredictor` and `AssemblyActionPolicy`.
 
-- `full_budget16`: topology divergence `6/12`; functional probability-L1 >=0.01 in `12/12`; mean L1 `0.15678818114372042`.
-- `full_budget64`: topology divergence `6/12`; functional `12/12`; same mean L1.
-- `edge_only_budget64`: topology divergence `11/12`; functional `12/12`; mean L1 `0.026581938685854695`.
+Thus the fresh Architecture question is not whether frozen-prototype greedy clustering is novel; it is whether this ordinary representation-order sensitivity has material downstream functional consequences on real DEV-derived internal patterns. This is distinct from the rejected Structural-order topology/plasticity question and is not a rescue of any consumed line.
 
-The fixed question asked whether same-multiset order dependence survives beyond event-budget exhaustion and edge-only order effects. The edge-only/homeostatic control itself reproduces topology and functional order dependence. Therefore the current residual is not supported.
-
-**Decision: `CAND-STRUCTURAL-ORDER-PATH-01 = REJECT` for further cycles under this question.** This does not erase Architecture value: order sensitivity is a real system property. It does mean there is no basis for a cycle-2 rescue or a mechanistic-distinctness claim. Any future magnitude residual, explicit-state, or critical-pair question must be a fresh independently motivated candidate with a new prospective definition.
-
-### SUB receptor-polarity Discovery
-
-Latest SUB mode is `discovery`. Review classification: **`REJECT`**.
-
-Cycle 1 observed negative emitted polarity in `191/280` cells after a positive probe, but `sign(probe + derivative)` matched emitted direction `280/280`. Existing semantics `signed_input + (fast_trace - medium_trace)` explain the effect exactly: after positive adaptation, fast trace can decay below medium trace and reverse emitted sign.
-
-Stop after cycle 1. Retain only the engineering/protocol constraint that receptor output polarity need not preserve raw stimulus polarity after adaptation history.
-
-## Claim-type separation
-
-- New computational principle: no new support.
-- Mechanistic distinctness: structural current residual reduced; receptor effect implementation-reduced; Top-k unresolved/HOLD.
-- Architecture/system integration: useful NON_EVIDENTIARY information remains from structural order sensitivity and Top-k output amplification.
-- Engineering value: receptor polarity and prior reward-semantics constraints remain useful.
-- Research/testbed value: strengthened; the funnel generated ordinary reductions/rejections without weakening FORMAL integrity.
+The synthetic Discovery itself must never be reused as a formal dataset, threshold-tuning surface, or positive scientific claim.
 
 ## Research-layer state
 
-| Layer | State | Interpretation |
+| Layer | State | Allocation |
 | --- | --- | --- |
-| `DISCOVERY` | `OPEN` | SUB-default, NON_EVIDENTIARY. One new independent bounded target or concrete no-op. |
-| `ARCHITECTURE_STUDY` | `HOLD_NO_ACTIVE_MAIN_OBJECT` | Structural current question rejected after ordinary-control reproduction; Top-k HOLD pending support diagnostics and fresh reduction question. |
-| `PRE_FORMAL` | `EMPTY / HOLD` | No support-aware candidate with a fresh matched mechanistic/reduction question. |
-| `FORMAL` | `EMPTY / HOLD` | No fresh object/identity/STARTED/TEST/scorer/preserver authority. |
+| `DISCOVERY` | `OPEN` | SUB default, one bounded independent synthetic/dev/read-only question per run or explicit no-op |
+| `ARCHITECTURE_STUDY` | `ACTIVE_PENDING_PROSPECTIVE_BINDING` | MAIN: Assembly prototype-lock-in cycle 1 |
+| `PRE_FORMAL` | `EMPTY_HOLD` | No candidate has a fresh mechanistic/reduction question plus sufficient lower-layer support |
+| `FORMAL` | `EMPTY_HOLD` | No fresh identity/STARTED/TEST/scorer/preserve/evidence authority |
 
 ## Candidate pool
 
+### `CAND-ASSEMBLY-PROTOTYPE-LOCKIN-01` — `ARCHITECTURE_STUDY`
+
+- question / phenomenon: does episode ordering alone, for an identical DEV-derived internal-pattern multiset, change mature assembly partitioning enough to alter downstream prediction/action behavior under the current frozen-prototype greedy assignment?
+- not a rescue: independent v0.5 assembly-representation issue discovered by SUB; distinct from Top-k routing, Structural topology order, H5 efficiency, H7 causal-credit, and all consumed objects.
+- target layer: `ARCHITECTURE_STUDY`.
+- expected information gain: `HIGH` for architecture/system integration and engineering semantics; low direct new-principle value because the order dependence already has an ordinary algorithmic explanation.
+- ordinary reduction risks: greedy leader/frozen-prototype clustering, first-exemplar bias, generic online clustering path dependence, order-invariant connected-components/union-find reduction, representation bookkeeping without functional consequence.
+- implementation distance: `NEAR_MEDIUM`.
+- scientific choices still open: exact DEV corpus binding, deterministic order-pair family, label-invariant partition metric, order-invariant comparator implementation, functional probe metric/horizon, support rule. These choices must be fixed in the pre-outcome Architecture contract before any diagnostic run.
+- exploration cycles: Discovery `1`, Architecture `0`.
+- promotion/rejection: real DEV functional order sensitivity may retain the object at Architecture/engineering value only; representation-only or ordinary comparator explanation closes the stronger question. No automatic PRE_FORMAL promotion. Any mechanistic PRE_FORMAL successor must be independently motivated and freshly specified.
+
 ### `CAND-TOPK-PA-01` — `HOLD`
-Question: support-robust delayed amplification after hard Top-k turnover beyond ordinary switching geometry and recurrent/non-normal transient gain. Target `ARCHITECTURE_STUDY`; high information value, near read-only diagnostic distance. Risks: hard-switch geometry, non-normal recurrent gain, sparse-stratum triage artifact. Cycles: Discovery 1, Architecture 2. Stay HOLD until the existing cross-seed support diagnostic is consumed and a fresh reduction question is prospectively fixed. Do not outcome-fit an exact support rule; no cycle 3 solely to rescue/confirm prior labels.
 
-### `CAND-STRUCTURAL-ORDER-PATH-01` — `REJECT`
-Question: same-multiset order dependence beyond budget exhaustion and edge-only/homeostatic effects. Target `ARCHITECTURE_STUDY`. Discovery 1 + Architecture 1. Rejection condition is met because `edge_only_budget64` reproduced topology and functional order dependence. Preserve the architecture observation, but any residual becomes a new candidate, not cycle 2.
-
-### `CAND-H5-AUDIT-01` — `HOLD`
-Independent read-only H5 one-way/accounting/claim-boundary audit. High information value / near. No rerun, retune, rescore, or new H5 outcome. Audit may narrow claims/future contracts only.
+- question: whether hard Top-k turnover plus persistent recurrent state has a robust residual beyond ordinary switching dynamics.
+- not a rescue: existing lower-layer architecture object, but cycle-3 rescue is prohibited.
+- target layer: `ARCHITECTURE_STUDY`.
+- expected information gain: `HIGH` if support survives; current uncertainty is methodological.
+- ordinary reductions: hard switching geometry, border-collision/branch-basin selection, WTA hysteresis, within-branch recurrent/non-normal transient gain.
+- distance: `NEAR_READ_ONLY` for support diagnosis, farther for a fresh mechanism object.
+- open choices: a future prospective support/uncertainty rule and fresh branch/basin discriminator; neither may be selected by fitting completed outcomes.
+- exploration cycles: Discovery `1`, Architecture `2`.
+- promotion/rejection: consume the existing cross-seed read-only Utility result first. Only `SUPPORT_ROBUST` plus a fresh prospective ordinary-reduction question can justify another Architecture object; no direct PRE_FORMAL promotion.
 
 ### `CAND-H7-RESP-01` — `HOLD`
-Conditional PRE_FORMAL object only if an independently arising native online/local responsibility-sensitive mechanism appears. It must not be engineered as LP01 rescue or literature-driven successor.
 
-### `CAND-RECEPTOR-POLARITY-01` — `REJECT`
-Fresh synthetic Discovery question resolved after cycle 1 by the explicit fast-minus-medium trace rule. Retain protocol/engineering constraint only.
+- question: whether a native online/local mechanism responds to actual responsibility differences under matched eligibility/local observations without central critic/replay/oracle privilege.
+- not a rescue: must arise independently; may not be engineered to rescue LP01 or any consumed negative.
+- target layer: `PRE_FORMAL` only if a native object appears.
+- expected information gain: `VERY_HIGH_IF_NATIVE_OBJECT_APPEARS`.
+- ordinary reductions: provenance/event structure, dynamic slicing, actual-cause solvers, eligibility/e-prop/cascading traces, recurrent/plastic state, local diffusion, stronger-privilege COMA/C3/RUDDER/TVT ceilings.
+- distance: `FAR_EVENT_DEPENDENT`.
+- open choices: candidate mechanism, equal-privilege baseline, paired responsibility intervention, resource contract, positive-signal gate.
+- exploration cycles: no current active cycle.
+- promotion/rejection: remain HOLD until independently arising mechanism exists.
 
-## Literature / Audit / Methodology
+### `CAND-STRUCTURAL-ORDER-PATH-01` — `REJECT`
 
-**Literature:** no newer run than 18:30. Keep Top-k reduction ladder `hard switching -> immediate jump -> recurrent/non-normal transient gain -> residual`; Structural ladder `explicit rewrite state -> critical pairs/non-confluence -> matched-state consequence -> residual`. The current structural result lands on the ordinary-control side of that ladder; no consumed evidence changes.
+Discovery `1`, Architecture `1`. The fixed current question is closed because edge-only/homeostatic control reproduced the relevant order dependence. Architecture fact retained; no cycle-2 rescue.
 
-**Independent Audit:** no newer run than NI01 10:32. Canonical NI01 FAIL and one-way integrity remain valid. Programme synthesis stays `NO_REGISTERED_INCREMENTAL_NATIVE_ADVANTAGE_OVER_WORLD_CONDITIONED_CONFIDENCE_ABSTENTION`; equal-privilege generic abstention reduction remains unestablished. H5 remains next audit priority.
+## External inputs consumed
 
-**Methodology Calibration:** 20:22 is new relative to the prior Analyst handoff. `SLIGHTLY_TOO_PERMISSIVE` remains local to Top-k Architecture triage. Preserve completed labels; future Top-k-like gates need prospective per-stratum support/uncertainty handling; do not choose the exact rule from observed outcomes; consume `EVA-20260919-1943-TOPK-CROSS-SEED-SUPPORT` before any PRE_FORMAL decision; structural ordinary-control reproduction does not justify mechanically spending cycle 2.
+### Literature
 
-## MAIN / SUB allocation
+Latest Literature handoff `2ff131d05cbb7a6b61db005a384e0808ec8dac07` adds prospective Top-k ordinary reductions: border-collision branch/basin selection, recurrent WTA hysteresis, and switching-driven global persistence even when local pieces are contractive. Effect on allocation: **none today** because Top-k support robustness is still pending. Effect on future design: a fresh Top-k object, if ever justified, must test `hard boundary -> branch/basin/hysteresis -> within-branch transient gain -> residual` before persistence-specific interpretation. Structural remains rejected; literature must not rescue it.
 
-### MAIN
+### Independent Audit
 
-MAIN enters `LOWER_FUNNEL_MAIN_HOLD_PENDING_FRESH_OBJECT`. There is no justified execution target now. MAIN must not continue Structural to cycle 2, start Top-k cycle 3, absorb SUB Discovery, or construct H7 as queue filler. MAIN owns all critical-path fixes once a new central Architecture/PRE_FORMAL/FORMAL object is prospectively authorized.
+Latest Audit handoff `c24ec86447a0030cbe1d072bf8796f8f78f7b2dd` is materially new. H5 one-way chain and registered FAIL are `ROBUST_SO_FAR`. The audit's new interpretation cap is that globally eager all-edge eligibility maintenance dominates sparse candidate audited work; the node-state materialization saving exists but is swamped in the registered aggregate. Therefore H5 means **this exact implementation failed the registered useful aggregate algorithmic-work gate**, not that event routing/lazy state materialization is generally useless. Future fresh efficiency contracts should prospectively report component-wise work shares and separate node-state locality, routing work, and eligibility maintenance; wall-clock/memory/cache/energy claims require their own prospectively bound methodology. H5 remains consumed and fully closed; this finding is not a rescue rationale.
 
-Repartition only after a completed Top-k support diagnostic plus a fresh reduction question; a SUB result that earns fresh prospective promotion; or a genuinely new central candidate. Worker utilization alone is not a reason.
+### Methodology Calibration
 
-### SUB
+Latest methodology handoff `f8dc9af488d440a841f16807634495f72aeffe88` remains `SLIGHTLY_TOO_PERMISSIVE` only for Top-k local Architecture triage. Keep the four-layer funnel, stop-after-cycle review, hard integrity floor, claim-type separation, and ordinary-control-first reductions. Tighten future Architecture support/uncertainty prospectively, but do not derive the exact rule from completed Top-k outcomes.
 
-SUB remains `BOUNDED_SECONDARY_DISCOVERY`: at most one genuinely independent synthetic/development/read-only observable-level question per run, NON_EVIDENTIARY. It must not take Top-k support/reduction work, Structural follow-up, H5 Audit, H7 construction, MAIN blockers, TEST/formal raw/scoring, or identity/STARTED/evidence work.
+### Repository Steward
 
-Fallback: `NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON`.
+Latest designated Steward state remains governance advisory only. Independently verified material facts agree: five evidence tags, 13 legacy freeze branches, zero rulesets, unprotected `main`, Issue #139 current. No governance action is a prerequisite for the lower-funnel study. PR #148/#149 remain outside the scientific critical path.
+
+## MAIN lane — prospective Architecture cycle 1
+
+MAIN owns **all** implementation, contract, harness, exact-head CI/preflight, diagnostic execution, and candidate-specific fixes for `CAND-ASSEMBLY-PROTOTYPE-LOCKIN-01`. SUB must not touch this lane or any MAIN blocker.
+
+Before any outcome-bearing diagnostic, MAIN must create a fresh research branch from current `main` and commit a prospective Architecture contract that fixes:
+
+1. source binding: `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`, current v0.5 assembly/prediction/action source blobs, and `configs/v05_reference.json`;
+2. data authority: DEV-only / development-seed surfaces only; no official TEST, no consumed preserve/raw, no formal scorer;
+3. corpus construction: use v0.5 development seeds `501` and `502`; create one fixed corpus per seed before order manipulation; use exactly the same adaptation multiset and the same fixed probe corpus in every order arm;
+4. isolation: freeze the upstream pattern corpus before assembly-order replay so field/receptor/plasticity order effects cannot masquerade as assembly-order effects;
+5. order family: exactly 12 deterministic paired episode-order permutations per development seed, with each pair containing the same episodes and one order-reversed/counterordered partner; derive the permutation seed deterministically from the candidate ID plus source SHA and record it in the contract before execution;
+6. native path: replay stored internal patterns through the current `TemporalAssemblyMemory`, then current predictor semantics; action is secondary/descriptive and must not use exploratory randomness during probes;
+7. comparator: an explicitly labeled stronger-privilege order-invariant connected-component/union-find clustering control at the same `0.66` similarity threshold; use it as an ordinary reduction ceiling, not as an equal-resource mechanistic baseline;
+8. label-invariant structural metrics: mature assembly count and pairwise co-clustering disagreement, never raw assembly IDs alone;
+9. functional metrics on the fixed probe corpus: prediction disagreement, prediction coverage/accuracy delta, and descriptive action disagreement with learning disabled during probes;
+10. support rule fixed before run: `NO_OR_LOW_SUPPORT` if either development seed shows representation divergence in fewer than 4/12 order pairs; `FUNCTIONAL_ORDER_LOCKIN_SIGNAL` only if both seeds show representation divergence in at least 8/12 pairs and prediction disagreement on at least 2/16 fixed probe episodes in at least 8/12 pairs; `REPRESENTATION_ONLY` if representation support reaches that bar but functional support does not; all other valid outcomes are `MIXED`. These are local Architecture triage criteria only, never novelty/FORMAL thresholds.
+
+Raw diagnostic rows/metadata must be written before summary interpretation. Exact-head CI/readiness/binding checks must be green before execution. There is no formal identity, STARTED, no-clobber, formal preserve, or official TEST authority because this is NON_EVIDENTIARY Architecture work.
+
+## MAIN prospective contingency tree
+
+- `PRE_START_SPEC_AND_BINDING`
+  - fix all scientific choices above before diagnostics;
+  - if complete and exact-head CI/readiness green -> one DEV-only cycle may run in the same MAIN run;
+  - if a semantic/protocol choice remains outcome-dependent -> `STOP_FOR_FRESH_ANALYST`.
+- `PRE_START_BLOCKER_MECHANICAL`
+  - MAIN may repair science-invariant lint/build/CI/harness defects before diagnostic visibility, then rerun exact-head CI and continue unchanged.
+- `INVALID_EVIDENCE_OR_LEAKAGE`
+  - any TEST/formal/raw contamination, binding mismatch, or non-identical order-arm corpus -> discard result and STOP.
+- `POST_DIAGNOSTIC_FAILURE`
+  - once outcome-bearing rows are visible, no redesign/retune/threshold/permutation/corpus repair in the same object; STOP.
+- valid outcomes:
+  - `NO_OR_LOW_SUPPORT` -> classify current candidate `REJECT` for stronger functional question; retain Discovery observation only; STOP.
+  - `REPRESENTATION_ONLY` -> retain architecture bookkeeping warning, reject stronger functional question; STOP.
+  - `FUNCTIONAL_ORDER_LOCKIN_SIGNAL` -> retain candidate as Architecture/engineering-value signal; STOP for fresh Analyst. **No automatic PRE_FORMAL or FORMAL promotion.**
+  - `MIXED` -> HOLD/STOP for fresh Analyst; no additional permutation or threshold search.
+
+FORMAL `PASS/FAIL/INCONCLUSIVE/INVALID_EVIDENCE/POST_START_FAILURE` branches remain unarmed because there is no FORMAL object.
+
+## SUB lane
+
+SUB remains `BOUNDED_SECONDARY_DISCOVERY`: at most one genuinely independent synthetic/development/read-only question per run. It must not continue the Assembly prototype-lock-in object now reserved to MAIN, must not perform Top-k support/reduction work, must not reopen Structural, H5, H7, or any consumed line, and must not touch formal/TEST/scoring/identity surfaces. If no safe nonduplicative question exists, fallback is explicit no-op with an observable-level duplication/low-value reason.
 
 ## Top 3
 
-1. **Utility/methodology — HIGH / NEAR:** consume existing `EVA-20260919-1943-TOPK-CROSS-SEED-SUPPORT` on already-produced cycle-1/cycle-2 DEV artifacts.
-2. **Independent Audit — HIGH / NEAR:** H5 one-way integrity/resource-accounting/claim-boundary audit, read-only.
-3. **SUB — MEDIUM / OPTIONAL:** one new independent bounded Discovery question, or explicit no-op. MAIN remains HOLD unless a central object earns fresh authority.
+1. **MAIN — HIGH / NEAR-MEDIUM:** execute one prospectively bound DEV-only Assembly prototype-lock-in Architecture cycle as specified above.
+2. **Utility — HIGH / NEAR / NONBLOCKING:** existing `EVA-20260919-1943-TOPK-CROSS-SEED-SUPPORT` read-only proposal over already-produced DEV artifacts; still pending Control disposition. Do not duplicate it and do not block MAIN on it.
+3. **SUB — MEDIUM / OPTIONAL:** one new independent bounded Discovery object, otherwise explicit no-op.
 
-## #1 GO / STOP
+### #1 GO / STOP
 
-**GO** only for the already-persisted Utility proposal if Control accepts it. Use only existing NON_EVIDENTIARY Top-k cycle-1/cycle-2 DEV artifacts and exact contracts; verify heads/digests; compute support by seed/magnitude, leave-one-stratum/leave-one-seed stability, episode-cluster robustness, and the predeclared descriptive `n>=3/5/10` sensitivity family where feasible. Keep completed labels unchanged. Do not execute models/probes, access TEST/formal raw, optimize thresholds, or choose a future support rule to preserve/flip outcomes.
+`GO` only for the NON_EVIDENTIARY Architecture cycle after the prospective contract, exact source/DEV-corpus/permutation/comparator/metric/support bindings, and exact-head CI/preflight are fixed. No identity consumption or official TEST authority exists.
 
-**STOP** after one result. If safe input is insufficient, return `BLOCKED_MISSING_SAFE_INPUT`; do not recreate/rerun/retrain/reprobe. `SUPPORT_ROBUST`, `MIXED`, `UNDER_SUPPORTED`, or blocked all return to fresh Analyst review. None authorizes Top-k cycle 3 or PRE_FORMAL in the same run.
+`STOP` on semantic/protocol gaps; any need for TEST/consumed raw/formal scorer; corpus mismatch; outcome-responsive choice of seed/order/comparator/metric/threshold; outcome-bearing failure; or after any one valid mapped result. MAIN may continue in the same run only through outcome-independent pre-start specification and mechanical repairs explicitly authorized above.
 
-## Prospective contingency tree
+## Blocked / do-not-touch
 
-```text
-LOWER_FUNNEL_MAIN_HOLD_PENDING_FRESH_OBJECT
-├─ NO_FRESH_CENTRAL_OBJECT
-│  └─ MAIN no-op; SUB may continue one independent bounded Discovery
-├─ TOPK_CROSS_SEED_DIAGNOSTIC
-│  ├─ SUPPORT_ROBUST -> STOP; fresh Analyst may define a new prospective reduction question
-│  ├─ MIXED / UNDER_SUPPORTED -> STOP; keep HOLD or close mechanistic escalation; no rescue cycle
-│  └─ BLOCKED_MISSING_SAFE_INPUT -> STOP; no recreation/rerun
-├─ SUB_DISCOVERY_PROMOTION_CANDIDATE
-│  └─ STOP; fresh Analyst + NEW prospective Architecture/PRE_FORMAL definition
-├─ FRESH_INDEPENDENT_CENTRAL_CANDIDATE
-│  └─ STOP; prospectively bind question/comparators/resources/metrics/integrity before MAIN execution
-└─ FORMAL PASS / FAIL / INCONCLUSIVE
-   └─ UNARMED_NO_FORMAL_OBJECT
-```
+- Top-k remains blocked from further Architecture/PRE_FORMAL work until the existing cross-seed Utility result is consumed and a fresh reduction question is prospectively defined.
+- PRE_FORMAL remains blocked until a lower-layer candidate has sufficient support **and** an independently motivated mechanistic/reduction question.
+- FORMAL remains blocked until a genuinely fresh object receives full prospective one-way authority.
+- Do not rerun/retune/rescore/relabel consumed C19-v4, C19-R1 v1/v2, C19-R2, PD01, NI01, or H5.
+- Do not relabel SUB Discovery outputs as evidence.
+- Do not run Structural cycle 2, Top-k cycle 3, H7 queue-filler construction, or H5 optimized successor as rescue work.
+- Do not merge research PRs, mutate immutable evidence/tags, or change scheduler definitions in this role.
 
-There is no same-run MAIN scientific continuation currently authorized.
+## Utility / persistence
 
-## Consumed identities / hard boundaries
+No new Utility request is created. Existing `EVA-20260919-1943-TOPK-CROSS-SEED-SUPPORT` already covers the orphan read-only Top-k support question and remains nonblocking.
 
-Consumed/no-retry identities remain `c19-external-v2-official-v4`, C19-R1 revision-authority v1/v2, `c19-r2-fsa-state-tracker-official-v1`, `pd01-long-history-fading-memory-official-v1`, `ni01-no-ignition-selective-prediction-official-v1`, and `h5-event-routing-work-reduction-official-v1`.
-
-Never rerun, retune, rescore, relabel, or silently repair them. `do_not_touch` also includes immutable evidence and legacy freeze/preserve/control anchors except read-only inspection; official TEST/sealed targets for lower layers; Structural cycle 2 under the current candidate; Top-k cycle 3/PRE_FORMAL under current authority; receptor rescue; research PR merges; scheduler definitions; and MAIN critical-path work by SUB.
-
-## Real blockers
-
-Top-k support robustness and a general prospective support rule remain unresolved; Structural current residual is closed by ordinary control; H5 audit is pending; H7 has no native object; FORMAL has no fresh object; MAIN has no central lower-layer candidate currently clearing the information-value/non-rescue bar.
-
-## Utility request
-
-**No new Utility request created.** Existing `EVA-20260919-1943-TOPK-CROSS-SEED-SUPPORT` remains the correct nonblocking proposal; do not duplicate it.
-
-## Persistence boundary
-
-Persist only to `analysis/orchestrator/latest.md`, `analysis/orchestrator/state.json`, and append-only `analysis/orchestrator/history/2026-09-19/2102.md` on `ops/evidence-analyst-handoff`.
-
-No scientific experiment/workflow is executed or dispatched; no one-way identity is consumed; no research PR is merged; no immutable evidence is mutated; no scheduler definition is changed.
+Persist only this latest, state, and append-only history on `ops/evidence-analyst-handoff`; no force push.
