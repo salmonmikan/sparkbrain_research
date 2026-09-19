@@ -1,19 +1,26 @@
 {
-  "timestamp": "2026-09-19T19:59:30+09:00",
+  "timestamp": "2026-09-19T20:14:10+09:00",
   "worker_role": "main",
-  "execution_mode": "RELAY",
-  "analyst_commit": "9c6302d83f71ab22d45c5f6290951a48902d9c1e",
+  "execution_mode": "PRIMARY",
+  "analyst_commit": "5982fc0ae76d62c4a6fce42f6b1aaaf7f85b8e23",
   "research_layer": "ARCHITECTURE_STUDY",
   "current_lane": "STRUCTURAL_ORDER_PATH_DEPENDENCE_ARCHITECTURE_STUDY_CYCLE1",
-  "current_phase": "PRE_DIAGNOSTIC_MECHANICAL_LINT_REPAIRED_EXACT_HEAD_CI_IN_PROGRESS",
+  "current_phase": "VALID_OUTCOME_STOP_FOR_FRESH_ANALYST_REVIEW",
   "candidate": {
     "id": "CAND-STRUCTURAL-ORDER-PATH-01",
+    "question": "Does actual SparkBrain structural execution show reproducible topology/output dependence for the same DEV episode multiset under different orders beyond event-budget exhaustion and edge-only order effects?",
     "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
-    "exploration_cycle": "architecture 1/3 authorized; no cycle 2 authority"
+    "exploration_cycle_count": {
+      "discovery": 1,
+      "architecture_completed": 1,
+      "default_programme_max": 3,
+      "cycle2_authorized": false
+    }
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst_handoff": "9c6302d83f71ab22d45c5f6290951a48902d9c1e",
+    "evidence_analyst_handoff": "5982fc0ae76d62c4a6fce42f6b1aaaf7f85b8e23",
+    "fixed_study_contract_authority": "9c6302d83f71ab22d45c5f6290951a48902d9c1e",
     "discovery_reference": "research/exploratory-sub-structural-order-path-dependence-20260919@8156bba7b119fb831b7c28eac7cd900746f9876e",
     "research_branch": "research/main-structural-order-path-arch-study-20260919",
     "research_head": "6a53ee36259bca31b77024245e5ab0a9ef5ec405",
@@ -23,22 +30,30 @@
     "formal_preserve_ref": null,
     "formal_evidence_ref": null
   },
+  "fast_path_used": true,
+  "full_reconciliation_reason": null,
+  "branches_prs_advanced": {
+    "research_branch_mutated_this_primary_run": false,
+    "ops_report_branch_mutated": true,
+    "prs_advanced": []
+  },
   "lease_collision_reconciliation": {
     "observed_prior_lease": {
       "run_id": "sparkbrain-main-relay-20260919T195504JST",
       "execution_mode": "RELAY",
       "status": "WAITING_EXTERNAL",
-      "heartbeat_at": "2026-09-19T19:55:04+09:00",
-      "workflow_run_id": 35438684016
+      "heartbeat_at": "2026-09-19T19:59:30+09:00",
+      "workflow_run_id": 35438868911
     },
     "fresh_same_object_primary_running_collision_found": false,
-    "research_head_before_repair": "16389e70352336b9d0ea539bdb5951a54f79ff2e",
-    "analyst_ref_before_repair": "9c6302d83f71ab22d45c5f6290951a48902d9c1e",
-    "same_relay_continuation": true
+    "primary_lease_acquired": true,
+    "primary_run_id": "sparkbrain-main-primary-20260919T201410JST",
+    "research_head_reconciled": "6a53ee36259bca31b77024245e5ab0a9ef5ec405",
+    "analyst_ref_reconciled": "5982fc0ae76d62c4a6fce42f6b1aaaf7f85b8e23"
   },
-  "contingencies_consumed": [
-    "GO_NON_EVIDENTIARY_EXACTLY_ONE_STRUCTURAL_ORDER_PATH_ARCHITECTURE_STUDY_CYCLE1",
-    "PRE_START_BLOCKER_MECHANICAL -> SCIENCE_INVARIANT_LINT_REPAIR_AND_FRESH_EXACT_HEAD_CI"
+  "outcome_contingencies_consumed": [
+    "PRE_START_BLOCKER_MECHANICAL -> science-invariant lint repair and fresh exact-head CI",
+    "VALID_OUTCOME -> persist fixed NON_EVIDENTIARY architecture label and STOP for fresh Analyst review"
   ],
   "prospective_binding": {
     "model_training_seed": 43,
@@ -54,50 +69,65 @@
     "test_allowed": false,
     "formal_allowed": false
   },
-  "critical_path_actions_performed": [
-    "Collected exact workflow 35438684016 and confirmed both matrix jobs failed at Ruff lint before readiness/tests/contract validation and before the gated Architecture Study job.",
-    "Inspected the exact 3.13 traceback/log and identified one unused-import finding plus five line-length findings in the new harness only.",
-    "Re-fetched lease, exact research head, and Analyst mailbox before mutation and found no fresh PRIMARY RUNNING collision or authority change.",
-    "Applied only the science-invariant Ruff repair: removed the unused import and wrapped the five long lines; no behavior or prospective binding changed.",
-    "Advanced the research branch by fast-forward from 16389e70352336b9d0ea539bdb5951a54f79ff2e to 6a53ee36259bca31b77024245e5ab0a9ef5ec405.",
-    "Verified the repair commit modifies only the Architecture Study harness file.",
-    "Collected the newly triggered exact-head workflow id 35438868911 and confirmed both ordinary matrix jobs are in progress while the Architecture job remains gated."
-  ],
-  "workflow_checks": [
-    {
-      "run_id": 35438684016,
-      "head_sha": "16389e70352336b9d0ea539bdb5951a54f79ff2e",
-      "status": "completed",
-      "conclusion": "failure",
-      "python_3_11": "lint failure",
-      "python_3_13": "lint failure",
-      "architecture_job_started": false,
-      "outcome_bearing_diagnostics_visible": false,
-      "classification": "PRE_START_BLOCKER_MECHANICAL"
-    },
+  "workflows_experiments": [
     {
       "run_id": 35438868911,
       "head_sha": "6a53ee36259bca31b77024245e5ab0a9ef5ec405",
-      "status": "in_progress",
-      "conclusion": null,
-      "python_3_11": "in_progress",
-      "python_3_13": "in_progress",
-      "architecture_job_started": false,
-      "outcome_bearing_diagnostics_visible": false
+      "status": "completed",
+      "conclusion": "success",
+      "python_3_11": "success",
+      "python_3_13": "success",
+      "architecture_study_job": "success",
+      "raw_before_interpretation": true,
+      "exact_source_ancestry_check": "success"
     }
   ],
-  "mechanical_fix": {
-    "commit": "6a53ee36259bca31b77024245e5ab0a9ef5ec405",
-    "changed_file": "scripts/architecture_studies/structural_order_path_dependence_cycle1.py",
-    "changes": [
-      "remove unused dataclasses.replace import",
-      "wrap five Ruff E501 lines only"
-    ],
-    "scientific_behavior_changed": false,
-    "prospective_contract_changed": false
+  "artifact_validation": {
+    "raw_artifact": {
+      "id": 10583406878,
+      "name": "structural-order-path-cycle1-raw",
+      "github_digest": "sha256:135caa35bf95239bad45404f13363536227a4144588aab4db0194b1545815a0d",
+      "downloaded_digest_matches": true,
+      "files": ["raw.json", "source-seed43.pt"]
+    },
+    "result_artifact": {
+      "id": 10583416906,
+      "name": "structural-order-path-cycle1-result",
+      "github_digest": "sha256:4459a88878b7d463de73bd66034ca1f28b60f41838da5efae61b201104624625",
+      "downloaded_digest_matches": true,
+      "files": ["summary.json"]
+    },
+    "raw_source_binding": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "raw_contract_authority": "9c6302d83f71ab22d45c5f6290951a48902d9c1e",
+    "checkpoint_metadata_binding_matches": true,
+    "test_manifest_opened": false,
+    "independent_mapping_recomputed": true
   },
-  "scientific_result": null,
-  "new_scientific_information": false,
+  "observations_results": {
+    "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
+    "local_architecture_label": "EDGE_OR_HOMEOSTASIS_CONTROL_REPRODUCES",
+    "condition_summary": {
+      "full_budget16": {
+        "topology_divergent_pairs": 6,
+        "functional_l1_ge_0_01_pairs": 12,
+        "mean_probability_l1": 0.15678818114372042
+      },
+      "full_budget64": {
+        "topology_divergent_pairs": 6,
+        "functional_l1_ge_0_01_pairs": 12,
+        "mean_probability_l1": 0.15678818114372042
+      },
+      "edge_only_budget64": {
+        "topology_divergent_pairs": 11,
+        "functional_l1_ge_0_01_pairs": 12,
+        "mean_probability_l1": 0.026581938685854695
+      }
+    },
+    "interpretation": "Within this bounded DEV Architecture Study, edge-only/homeostatic control reproduces the order-dependent observable under the fixed mapping. The study does not establish a residual beyond that ordinary control.",
+    "formal_scientific_evidence_created": false,
+    "new_formal_repository_evidence": false,
+    "new_non_evidentiary_architecture_information": true
+  },
   "consumed_identities": [
     "c19-external-v2-official-v4",
     "c19-r1-revision-authority-official-v1",
@@ -109,7 +139,7 @@
   ],
   "current_object_consumed_identity": null,
   "integrity_state": {
-    "status": "CLEAN_PRE_DIAGNOSTIC_MECHANICAL_REPAIR_WAIT",
+    "status": "CLEAN_NON_EVIDENTIARY_VALID_OUTCOME_STOPPED",
     "official_test_accessed": false,
     "formal_identity_created": false,
     "started_created": false,
@@ -120,16 +150,24 @@
     "consumed_identity_reused": false,
     "research_merge_performed": false,
     "outcome_responsive_change": false,
-    "outcome_bearing_diagnostics_visible_before_repair": false
+    "rerun_performed_after_outcome": false,
+    "retune_performed": false,
+    "redesign_performed": false
   },
+  "critical_path_fixes": [
+    "No new critical-path code fix was required in this PRIMARY collection run; the prior RELAY had already applied the Analyst-authorized science-invariant lint-only repair.",
+    "PRIMARY collected the exact repaired workflow, validated both ordinary CI matrix jobs and gated Architecture job, downloaded both artifacts, verified archive digests, checked raw/checkpoint bindings, and independently recomputed the fixed six-way label."
+  ],
+  "stop_reason": "VALID_ARCHITECTURE_OUTCOME_EDGE_OR_HOMEOSTASIS_CONTROL_REPRODUCES_STOP_FOR_FRESH_ANALYST_REVIEW",
+  "work_left_for_sub": "Independent Discovery only; no MAIN critical-path dependency and no structural-order work transferred to SUB.",
   "utility_request_created": null,
-  "stop_reason": "REPAIRED_PRE_DIAGNOSTIC_MECHANICAL_BLOCKER_NEW_EXACT_HEAD_CI_IN_PROGRESS",
-  "next_MAIN_action": "Collect workflow 35438868911 only. A further repair is allowed only if failure remains wholly pre-diagnostic, mechanical, science-invariant, and within the fixed Analyst contingency. If outcome-bearing diagnostics become visible, do not rerun or redesign. If valid and successful, independently validate raw/result artifact bindings, accept only the prospectively fixed six-way NON_EVIDENTIARY Architecture label, persist it, and STOP for fresh Analyst review.",
+  "next_MAIN_action": "Wait for fresh Evidence Analyst review. Do not run structural-order cycle 2, redesign controls/comparators, promote to PRE_FORMAL, create a FORMAL identity/STARTED, access TEST, or merge under the current authority.",
   "persistence_result": {
-    "latest_md_commit": "1f04e75b3e3ae73278ec5508ef23186b1b8aee39",
-    "history_path": "reports/orchestrator/history/2026-09-19/1959-main.md",
+    "latest_md_commit": "ed481b7105ca5e374aa728b0466a45ed2b581e06",
     "state_json": "this update",
-    "lease_json": "WAITING_EXTERNAL update follows",
+    "history_path": "reports/orchestrator/history/2026-09-19/2014-main.md",
+    "history_commit": "pending",
+    "final_lease_commit": "pending",
     "force_push_used": false
   }
 }
