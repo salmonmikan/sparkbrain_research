@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-09-19T09:35:00+09:00",
+  "timestamp": "2026-09-19T10:32:00+09:00",
   "worker_role": "sub",
   "mode": "no_op",
-  "evidence_analyst_commit": "7a2ef7021fdaa3dd701353a18b45b6db4915756c",
+  "evidence_analyst_commit": "8ee6d305acdc8310335e65c5bd3f35d121f35280",
   "consumed_lanes": [],
   "selected_independent_lane": null,
   "exploratory_target": null,
@@ -12,18 +12,19 @@
   "main_work_explicitly_avoided": [
     "fresh-object admission and candidate selection",
     "successor/comparator/mechanism design",
-    "future lineage/causal-credit provenance and actual-cause comparator construction that could become MAIN-critical",
+    "future lineage/causal-credit provenance, event-structure, dynamic-slicing, actual-cause/responsibility, and local-learning comparator construction that could become MAIN-critical",
     "candidate-specific implementation and verifier/harness/runner/binding/CI/readiness fixes",
     "preservation/scoring/execution blockers",
-    "consumed-line rescue/retry/retune/rescore/reinterpretation"
+    "consumed-line rescue/retry/retune/rescore/reinterpretation",
+    "literature-driven successor engineering"
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "7a2ef7021fdaa3dd701353a18b45b6db4915756c",
+    "evidence_analyst": "8ee6d305acdc8310335e65c5bd3f35d121f35280",
     "control_brain": "10eb4206fb0c998fcdbc40c0e16f38829ea5d41e",
-    "orchestrator_parent_tip_before_persistence": "cc415491ecce926b34496c8365e02ed2c9d1c24a",
-    "main_latest_checkpoint_time": "2026-09-19T09:14:00+09:00",
-    "main_latest_lane": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
+    "orchestrator_parent_tip_before_persistence": "eb30669410f91de24f5da44021ed6d9d2a76daab",
+    "main_latest_checkpoint_time": "2026-09-19T10:16:00+09:00",
+    "main_latest_analyst_commit": "8ee6d305acdc8310335e65c5bd3f35d121f35280",
     "formal_tags": [],
     "sealed_tags": [],
     "evidence_tags": [
@@ -35,6 +36,8 @@
     ],
     "authoritative_evidence_tag_count": 5,
     "legacy_freeze_branch_count": 13,
+    "research_branch_20260919_count": 0,
+    "repository_rulesets_count": 0,
     "control_preserve_status": "existing_consumed_and_historical_refs_only_no_fresh_formal_identity_or_official_preserve"
   },
   "branches_prs_advanced": {
@@ -45,7 +48,7 @@
   },
   "workflows_experiments": {
     "sub_dispatched": [],
-    "latest_observed_before_persistence": "control-plane CI 35408951106 completed/success on ops/orchestrator-run-report@cc415491ecce926b34496c8365e02ed2c9d1c24a",
+    "latest_observed_before_persistence": "control-plane CI 35412147343 completed/success on ops/orchestrator-run-report@eb30669410f91de24f5da44021ed6d9d2a76daab",
     "formal_experiment_by_sub": "NOT_STARTED",
     "official_test_accessed_by_sub": false
   },
@@ -53,12 +56,36 @@
     "sub_new_formal_result": false,
     "sub_new_exploratory_result": false,
     "new_formal_scientific_information": false,
+    "new_admission_doctrine_information": true,
     "main_lane": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
     "sub_lane": null,
     "sub_fallback": null,
     "sub_exploratory_review": null,
     "allocation_changed": false,
-    "programme_state": "NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE"
+    "programme_state": "NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
+    "admission_doctrine_update": {
+      "source": "Evidence Analyst 10:02 handoff consuming 09:32 Literature Reduction Scout",
+      "history_influence_axis": [
+        "provenance/ancestry",
+        "individual-token causal-net / occurrence-net / event-structure history+conflict",
+        "causally consistent dynamic slicing",
+        "explicit counterfactual actual-cause/responsibility"
+      ],
+      "learning_locality_axis": [
+        "matched local eligibility / three-factor / e-prop",
+        "GLE / SAL where relevant",
+        "matched recurrent/plastic mechanisms"
+      ],
+      "additional_requirements": [
+        "preemption and overdetermination cases",
+        "ancestry-preserving responsibility-changing interventions",
+        "matched information/readout/resource privilege",
+        "positive intervention-validated candidate signal",
+        "fixed numeric falsifiers"
+      ],
+      "lp01_reopened": false,
+      "sub_work_created": false
+    }
   },
   "evidentiary_status": "NONE_FOR_SUB",
   "consumed_identities": {
@@ -79,16 +106,16 @@
     "Future lineage/causal-credit comparator construction could become MAIN-critical and is therefore excluded from SUB work.",
     "Scientific object availability is the blocker; there is no SUB infrastructure blocker."
   ],
-  "blocked_until": "A genuinely independent prospectively complete secondary object is reserved for SUB, or a distinct bounded NON_EVIDENTIARY synthetic/dev question appears outside MAIN admission, future causal-credit critical-path construction, consumed-line rescue, and already-explored SUB themes.",
+  "blocked_until": "A genuinely independent prospectively complete secondary object is reserved for SUB, or a distinct bounded NON_EVIDENTIARY synthetic/dev question appears outside MAIN admission, future causal-credit critical-path construction, consumed-line rescue, literature-driven successor engineering, and already-explored SUB themes.",
   "fallback_status": "ABSENT",
   "rejected_lane": null,
   "lane_rejected_reason": null,
   "collision_reconciliation": {
-    "report_branch_tip_before_persistence": "cc415491ecce926b34496c8365e02ed2c9d1c24a",
-    "latest_main_checkpoint_time": "2026-09-19T09:14:00+09:00",
-    "latest_main_checkpoint_analyst_commit": "7a2ef7021fdaa3dd701353a18b45b6db4915756c",
+    "report_branch_tip_before_persistence": "eb30669410f91de24f5da44021ed6d9d2a76daab",
+    "latest_main_checkpoint_time": "2026-09-19T10:16:00+09:00",
+    "latest_main_checkpoint_analyst_commit": "8ee6d305acdc8310335e65c5bd3f35d121f35280",
     "fresh_analyst_tip_rechecked": true,
-    "fresh_analyst_tip": "7a2ef7021fdaa3dd701353a18b45b6db4915756c",
+    "fresh_analyst_tip": "8ee6d305acdc8310335e65c5bd3f35d121f35280",
     "analyst_allocation_changed": false,
     "main_ref_rechecked": true,
     "research_refs_rechecked": true,
@@ -104,9 +131,9 @@
   "suggested_prospective_object": null,
   "promotion_recommendation": "NONE",
   "incubator_handoff": null,
-  "proposed_handoff_to_analyst": "Keep SUB null/no-op until a genuinely independent prospectively complete secondary object is reserved or a distinct bounded NON_EVIDENTIARY synthetic/dev question appears. Do not manufacture work from MAIN admission, future causal-credit comparator requirements, or consumed terminal lines.",
+  "proposed_handoff_to_analyst": "Keep SUB null/no-op until a genuinely independent prospectively complete secondary object is reserved or a distinct bounded NON_EVIDENTIARY synthetic/dev question appears. Do not manufacture work from MAIN admission, future causal-credit comparator requirements, literature-driven successor engineering, or consumed terminal lines.",
   "report_persistence": {
-    "history_path": "reports/orchestrator/history/2026-09-19/0935-sub.md",
+    "history_path": "reports/orchestrator/history/2026-09-19/1032-sub.md",
     "sub_latest_path": "reports/orchestrator/sub/latest.md",
     "sub_state_path": "reports/orchestrator/sub/state.json",
     "atomic_git_commit_requested": true,
