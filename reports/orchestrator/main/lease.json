@@ -1,14 +1,14 @@
 {
   "run_id": "sparkbrain-main-relay-20260920T0847JST",
   "execution_mode": "RELAY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-20T08:47:12+09:00",
-  "heartbeat_at": "2026-09-20T08:47:12+09:00",
+  "heartbeat_at": "2026-09-20T08:49:00+09:00",
   "analyst_commit": "850b4502cf15d3f6118a487c5ab4ba81fbf7b75e",
   "active_branch": "research/main-v05-delayed-outcome-caller-contract-arch-study-20260920",
   "active_identity": null,
-  "active_step": "V05_DELAYED_OUTCOME_CALLER_CONTRACT_CYCLE1_COLLECT_CI_AND_PERSIST_COMPLETION",
+  "active_step": "V05_DELAYED_OUTCOME_CALLER_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_COMPLETED_STOPPED_FOR_ANALYST_REVIEW",
   "workflow_run_id": 35475862604,
-  "expected_next_action": "Persist the already-fixed static terminal with exact-head ordinary CI 35475862604 completed/success, then set COMPLETED and stop for fresh Evidence Analyst review. No dynamic interleaving, semantic redesign, cycle 2, PRE_FORMAL, or FORMAL is authorized.",
+  "expected_next_action": "Wait for a fresh Evidence Analyst handoff. Do not continue dynamic interleaving, semantic redesign, cycle 2, PRE_FORMAL, or FORMAL on this object without new prospective authority.",
   "owner": "main"
 }
