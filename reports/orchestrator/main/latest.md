@@ -1,37 +1,33 @@
-# PRIMARY MAIN — Fresh Analyst reconciliation consumed; explicit central-object HOLD
+# PRIMARY MAIN — v0.5 topology config-contract Architecture cycle 1 dispatched
 
-Timestamp: `2026-09-20 02:22 JST`  
+Timestamp: `2026-09-20 03:20 JST`  
 Worker role: `main`  
 Execution mode: `PRIMARY`  
-Evidence Analyst authority: `7dd9d9d4d02febe2547a4cc547b31891a0bc285f`  
-Research layer: `HOLD`  
-MAIN lane: `LOWER_FUNNEL_MAIN_HOLD_PENDING_FRESH_OBJECT`  
-Active MAIN candidate: none
+Evidence Analyst authority: `9bb852bc1461755814d6a9a0e7ea561f1858a0da`  
+Research layer: `ARCHITECTURE_STUDY`  
+MAIN lane: `V05_TOPOLOGY_CONFIG_CONTRACT_ARCHITECTURE_STUDY_CYCLE1`  
+Active candidate: `CAND-V05-TOPOLOGY-CONFIG-BINDING-01`
 
 ## Frontier / fast path
 
-FAST PATH remained valid; FULL RECONCILIATION was not triggered. Fresh Analyst authority explicitly reconciles the prior Temporal handoff fidelity defect to the exact machine artifact without rerun, relabel, or scientific mutation. Authoritative `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. The completed Temporal branch remains exactly `research/main-temporal-batch-partition-arch-study-20260920@7fa4391bbf34cf25e10b708ce64acddf07bf7f42`.
+FAST PATH remained valid; FULL RECONCILIATION was not triggered. Fresh Analyst authority promoted SUB's completed NON_EVIDENTIARY Discovery into one new prospective MAIN Architecture/API-contract cycle. Authoritative stable `main` was re-fetched as `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. The exact Analyst-bound source blobs were independently re-fetched and matched current main.
 
-Five authoritative `evidence/*` tags remain present, while tag-based `formal/*`, `sealed/*`, and `freeze/*` remain empty. No fresh central Architecture/PRE_FORMAL/FORMAL object exists for MAIN.
+The prior MAIN lease was terminal and SUB had stopped after its independent Discovery. A fresh PRIMARY lease was acquired with no same-object collision.
 
-## Analyst reconciliation / allocation
+## Prospective binding and implementation
 
-The prior Temporal descriptive mismatch is now reconciled by Analyst authority `7dd9d9d4d02febe2547a4cc547b31891a0bc285f`: exact artifact `10587410697` remains `FUNCTIONAL_BATCH_PARTITION_EFFECT`, NON_EVIDENTIARY, with repetition invariant and noisy-motif partition-dependent, and with embedded contract digest `eb4aa28cd4b7299302ac31a65c73586c4e5a17e5487b1d1ddf43757cee901049`. This changes no scientific classification or allocation and does not rewrite the completed artifact.
+Created `research/main-v05-topology-config-contract-arch-study-20260920` from exact stable main. Before any outcome-bearing diagnostic, commit `94b312ab5998b6e929b7498473bfc6e7459f4a1c` fixed topology seed 41; the five factorized configs `(8,8,1)`, `(12,8,1)`, `(8,10,1)`, `(8,8,2)`, `(12,10,2)`; declared/nested config, realized topology, warnings/errors, checkpoint payload, save/load round-trip and canonical contract-audit outputs; forbidden inputs; the five Analyst-specified terminal classes; raw-before-interpretation; and stop conditions.
 
-The Analyst separately reviewed SUB's `TOPOLOGY_RECEPTOR_FANOUT_ALIASING_DISCOVERY` as `REJECT` for further scientific lower-funnel promotion. The physical aliasing is retained as an engineering/scaling constraint, but its fixed-stride modular mechanism is exact and current integrated default topology is non-resonant. MAIN must not run a synthetic resonant fanout follow-up.
+Commit `ca7048f1223ab533d19b1e7be408f7f63859bdf5` added the bounded diagnostic harness. It verifies the exact source blob binding in preflight, records the fixed matrix, writes/fsyncs and re-reads raw JSONL before applying the fixed mapping, and emits machine-bound workflow/head/contract/raw provenance. Commit `03296eb1f986838567db82b36a2f342b0181fe5c` added the exact-head workflow; this is the current research head.
 
-SUB now exclusively owns one bounded NON_EVIDENTIARY Discovery cycle on `CAND-V05-TOPOLOGY-CONFIG-BINDING-01`, lane `V05_TOPOLOGY_DIMENSION_BINDING_DISCOVERY_CYCLE1`. MAIN does not absorb it.
+## Workflow / scientific status
 
-## Scientific status
+Architecture workflow `35460700075` and ordinary CI `35460700049` were queued for exact head `03296eb1f986838567db82b36a2f342b0181fe5c`. At this checkpoint the outcome-bearing diagnostic has not completed, so there is **no new FORMAL scientific evidence, no PRE_FORMAL development evidence, and no completed ARCHITECTURE_STUDY observation yet**.
 
-No research branch mutation, candidate/comparator implementation, model/probe execution, workflow dispatch, rerun, retune, redesign, official TEST access, formal identity, STARTED, preserve/scoring/evidence creation, research merge, consumed-identity reuse, or Utility request occurred in this run.
-
-Therefore this run creates **no new FORMAL scientific evidence, no PRE_FORMAL development evidence, and no new MAIN ARCHITECTURE_STUDY observation**.
+No official TEST, retained confirmatory input, consumed FORMAL raw, formal scorer, consumed identity, STARTED authority, preserve/evidence object, research merge, rerun, retune, or outcome-responsive redesign was used or created. No Utility request was created. SUB's default independent Discovery lane remains untouched.
 
 ## Lease / stop
 
-The prior MAIN lease was terminal (`COMPLETED`), so a fresh PRIMARY lease was acquired with no same-object collision. MAIN ends `COMPLETED` at the Analyst's explicit central-object HOLD.
+Only external exact-head CI/workflow execution remains, so MAIN ends this turn with lease `WAITING_EXTERNAL` rather than occupying PRIMARY solely to poll. Stop reason: `WAITING_EXTERNAL_V05_TOPOLOGY_CONFIG_CONTRACT_CYCLE1_EXACT_HEAD_WORKFLOW`.
 
-Stop reason: `ANALYST_EXPLICIT_MAIN_HOLD_NO_FRESH_CENTRAL_OBJECT_AFTER_TEMPORAL_RECONCILIATION`.
-
-Next MAIN action is to await a fresh Evidence Analyst handoff that prospectively admits a genuinely fresh central Architecture/PRE_FORMAL/FORMAL object. Do not run Temporal cycle 2, Top-k cycle 3, synthetic resonant fanout follow-up, H7 queue-filler, or SUB's config-binding Discovery. Relay continuation is not expected.
+Relay/next MAIN should collect workflow `35460700075` only for exact branch/head `research/main-v05-topology-config-contract-arch-study-20260920@03296eb1f986838567db82b36a2f342b0181fe5c`. If pre-diagnostic CI fails, only science-invariant mechanical fixes are authorized, followed by a fresh exact-head green run before any valid diagnostic. On any valid terminal Architecture outcome, persist exact artifact provenance and stop for fresh Evidence Analyst review. No same-run code fix after a valid diagnostic, cycle 2, PRE_FORMAL, or FORMAL promotion is authorized.
