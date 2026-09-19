@@ -84,7 +84,8 @@
     "Acquired PRIMARY RUNNING lease at commit e47eb87b670b3bd6739422377cac4f8c56a86fa1, then re-fetched lease, main, and Evidence Analyst tip and confirmed no drift/collision.",
     "Applied no research/scientific mutation because the 09:00 Analyst handoff reconfirms NO_FRESH_OBJECT and no candidate-specific critical path exists.",
     "Observed control-plane CI 35408834143 only; no research workflow or experiment was dispatched.",
-    "Persisted MAIN latest checkpoint at commit 904e9e041a26d102d87f0a6ac088385619fad363."
+    "Persisted MAIN latest checkpoint at commit 904e9e041a26d102d87f0a6ac088385619fad363.",
+    "Persisted append-only reports/orchestrator/history/2026-09-19/0914-main.md at commit dd1a8effe91079f195357f8fd3c007e24b3f65de."
   ],
   "stop_reason": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_ANALYST_0900_RECONFIRMED",
   "work_left_for_SUB": "none; SUB remains no_op with no reserved independent lane or fallback",
@@ -97,7 +98,7 @@
     "lease_start_commit": "e47eb87b670b3bd6739422377cac4f8c56a86fa1",
     "latest_report_commit": "904e9e041a26d102d87f0a6ac088385619fad363",
     "history_path": "reports/orchestrator/history/2026-09-19/0914-main.md",
-    "history_commit": null,
+    "history_commit": "dd1a8effe91079f195357f8fd3c007e24b3f65de",
     "history_path_prechecked_absent": true
   }
 }
