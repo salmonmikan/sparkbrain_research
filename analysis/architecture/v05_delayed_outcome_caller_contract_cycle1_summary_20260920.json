@@ -1,0 +1,31 @@
+{
+  "schema": "sparkbrain-architecture-static-characterization-summary-v1",
+  "candidate_id": "CAND-V05-DELAYED-OUTCOME-ATTRIBUTION-01",
+  "lane": "V05_DELAYED_OUTCOME_CALLER_CONTRACT_ARCHITECTURE_STUDY_CYCLE1",
+  "research_layer": "ARCHITECTURE_STUDY",
+  "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
+  "analyst_authority": "850b4502cf15d3f6118a487c5ab4ba81fbf7b75e",
+  "bound_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+  "prospective_contract_commit": "25cdd7db1d5a546b38810c40ffdc75085c8d196a",
+  "raw_facts_commit": "d226f5993b69f0d0c98c1e1cd7b049e2ba3ded49",
+  "decision_facts": {
+    "all_exact_source_blobs_match": true,
+    "all_observed_supported_runtime_callsites_are_after_outcome_known": true,
+    "any_supported_callsite_has_intervening_process_episode": false,
+    "explicit_immediate_only_public_contract": false,
+    "explicit_delayed_or_interleaved_public_contract": false,
+    "process_episode_overwrites_single_pending_activation_and_pending_action_slots": true,
+    "learn_outcome_has_episode_or_decision_identity": false,
+    "binding_or_inventory_invalid": false
+  },
+  "mapped_outcome": "IMMEDIATE_ONLY_USAGE_BUT_PUBLIC_CONTRACT_UNSPECIFIED",
+  "interpretation": "Stable-main canonical/runtime usage always applies learn_outcome after the corresponding process_episode and after the outcome-bearing episode/result values are available, with no intervening process_episode in the bound callsites. However, the bound public/source surface does not explicitly state that learn_outcome is restricted to the immediately preceding process_episode or that delayed/interleaved calls are unsupported. The wrapper keeps mutable pending activation/action state and learn_outcome carries no episode/decision identity. This is an API-contract ambiguity, not evidence of a demonstrated delayed-credit failure.",
+  "scientific_status": "Architecture/API characterization only. This is not FORMAL scientific evidence, not PRE_FORMAL development evidence, and does not establish a new computational principle.",
+  "dynamic_probe_executed": false,
+  "official_test_accessed": false,
+  "consumed_identity_created_or_reused": false,
+  "production_source_modified": false,
+  "stop_required": true,
+  "stop_reason": "VALID_STATIC_TERMINAL_REQUIRES_FRESH_EVIDENCE_ANALYST_REVIEW_NO_DYNAMIC_CONTINUATION",
+  "next_action": "Fresh Evidence Analyst review only. Do not execute a dynamic interleaving comparator, cycle 2, PRE_FORMAL, or FORMAL continuation without new prospective authority."
+}
