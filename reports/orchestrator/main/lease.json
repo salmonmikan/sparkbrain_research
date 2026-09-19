@@ -1,14 +1,14 @@
 {
   "run_id": "sparkbrain-main-relay-20260920T0445JST",
   "execution_mode": "RELAY",
-  "status": "RUNNING",
+  "status": "WAITING_EXTERNAL",
   "started_at": "2026-09-20T04:45:00+09:00",
-  "heartbeat_at": "2026-09-20T04:45:00+09:00",
+  "heartbeat_at": "2026-09-20T04:50:00+09:00",
   "analyst_commit": "493573eb3b8c38d88f251db7c04dfe1a586c6ff0",
   "active_branch": "research/main-v05-unit-suppression-transient-semantics-arch-study-20260920",
   "active_identity": null,
-  "active_step": "PROSPECTIVE_STATIC_SCOPE_AND_TERMINAL_BINDING",
-  "workflow_run_id": null,
-  "expected_next_action": "Create the exact-main research branch, prospectively bind deterministic suppress_units/clear_unit_suppression source/docs/tests/callsite scope plus terminal mapping and machine-readable handoff fields, then run ordinary exact-head validation before one static NON_EVIDENTIARY Architecture characterization cycle.",
+  "active_step": "EXACT_HEAD_SUPPRESSION_SEMANTICS_ARCHITECTURE_WORKFLOW_IN_PROGRESS",
+  "workflow_run_id": 35465512928,
+  "expected_next_action": "Collect Architecture workflow 35465512928 and ordinary CI 35465512894 on exact head 2ef4b24f8e7ef8577ebbcb0328e7b3476bc24336. If a pre-start mechanical blocker appears, only a science-invariant fix plus re-binding is authorized. If one valid terminal class is produced, verify raw-before-summary artifact binding, persist the fixed outcome, and STOP for fresh Evidence Analyst review without same-run implementation repair or cycle 2.",
   "owner": "main"
 }
