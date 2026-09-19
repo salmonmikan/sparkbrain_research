@@ -25,10 +25,11 @@
   "candidate_next_research_layer": "NONE_SCIENTIFICALLY; optional architecture/infrastructure scaling constraint only",
   "candidate_pool_id": null,
   "collision_reconciliation": {
+    "concurrent_main_report_movement": "Observed MAIN relay checkpoint on shared ops report branch and rebased SUB-only persistence onto it without modifying MAIN files.",
     "evidence_analyst_refetched_before_research_commit": "5b63d21f44812ef8d4938c9ad968bb8ab481b3c5",
     "main_active_branch_observed_and_avoided": "97f542d86dcd3a609cd039379fcda41ba61e0909",
     "main_refetched_before_research_commit": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "report_branch_refetched_before_persistence": "656c934c337d0126e5a98ed2f1461842760b9892"
+    "report_branch_refetched_before_persistence": "d71a8a57f314693c844a0db88ba77ef2d55c8221"
   },
   "completion_target": "ACHIEVED_ONE_BOUNDED_INDEPENDENT_DISCOVERY_CYCLE_AND_STOPPED_AFTER_REDUCTION",
   "consumed_identities": [],
@@ -118,6 +119,7 @@
     "below_cap": "At 326, 1193, and 1836 effective edges every edge is selected and semantic update-set Jaccard is exactly 1.0 under all 24 relabelings.",
     "interpretation": "Numeric relabel sensitivity appears exactly when the hard cap binds and is prospectively reduced by sorted numeric edge keys plus the fixed successful-update cap. Source coverage saturates near 326 rather than scaling with reservoir size."
   },
+  "persistence_note": "1847-sub.md preserved append-only; final CI-complete snapshot appended as 1850-sub.md.",
   "question_hypothesis_reduction_question": "When effective plastic edges exceed max_updates_per_step=2000, can isomorphic reservoir-ID relabeling change which semantic edges receive updates, and is any effect fully reduced by sorted edge-key iteration plus the fixed cap?",
   "recommendation": "REJECT",
   "rejected_lane": null,
@@ -134,17 +136,18 @@
   },
   "sub_active_claim": "One bounded NON_EVIDENTIARY scaling/resource Discovery cycle completed and stopped after ordinary implementation reduction.",
   "sub_fallback": "NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON",
-  "timestamp": "2026-09-19T18:47:00+09:00",
+  "timestamp": "2026-09-19T18:50:00+09:00",
   "utility_request_created": null,
   "what_would_falsify_or_reduce_it": "Reduction is already achieved by sorted numeric edge keys plus a hard cap. A separately prospective identity-neutral matched-budget scheduler that retained comparable semantic asymmetry would indicate an additional mechanism.",
   "why_independent_of_main": "MAIN owns CAND-TOPK-PA-01 cycle-2 replication. This target uses stable v0.5 plasticity/topology substrate and a standalone synthetic all-eligible scheduling probe; it does not use MAIN branch, signal, blocker, result, or successor.",
   "worker_role": "sub",
   "workflows_experiments": {
     "branch_ci": {
+      "conclusion": "success",
       "head": "6444848f3cf9c4a92bfd6317591ac4e39ffea44f",
       "run_id": 35435596401,
       "scientific_relevance": "ordinary repository CI only",
-      "status_when_persisted": "in_progress"
+      "status_when_persisted": "completed"
     },
     "discovery_script_executed_locally": true,
     "formal_workflow_dispatched": false,
