@@ -1,4 +1,4 @@
-# SparkBrain Methodology Calibration Audit — 2026-09-20 06:20 JST
+# SparkBrain Methodology Calibration Audit — 2026-09-20 07:21 JST
 
 ## Run disposition
 
@@ -6,39 +6,44 @@
 
 ## Overall classification
 
-**`MIXED_CALIBRATION`** — unchanged, but improved.
+**`MIXED_CALIBRATION`** — unchanged, but the previous handoff-fidelity gap is now prospectively closed at the methodology/doctrine level. The remaining material weakness is narrower: validity of decision-relevant machine-fact extraction before an artifact is produced.
 
-The substantive scientific admission, novelty, reduction, comparator, STOP/reframe, and FORMAL evidence bars remain broadly well calibrated. The main unresolved calibration risk is procedural: decision-relevant facts must be valid inside the machine artifact and then faithfully bound into durable handoffs before they influence successor allocation.
+The substantive scientific admission, novelty, reduction, comparator, STOP/reframe, and FORMAL evidence bars remain broadly well calibrated. No new evidence supports making the scientific bar globally stricter or looser.
 
-Since the previous audit, the generic artifact-to-handoff binding guard has moved from an assigned idea to a completed bounded prototype with `PASS_EXPECTATIONS`. It correctly blocks the two known historical bad bindings (Temporal and Top-k) and passes a faithful positive control. This materially reduces uncertainty about whether the proposed guard is operationally implementable.
+## What changed since the 06:20 audit
 
-However, the prototype is still NON_EVIDENTIARY control-plane methodology work. Control has not yet made the separate prospective adoption/integration decision, and no live lower-funnel closure has yet demonstrated that the guard actually blocks a successor transition end-to-end. The independent suppression machine-fact extractor defect also remains unresolved. Therefore the programme is not yet `WELL_CALIBRATED` at the full end-to-end methodology level.
+### 1. Control prospectively adopted the validated handoff-binding guard
 
-## What changed since the 05:18 audit
+Control Brain `36a41bb720c051ee6d4563d7ecb6b720a8fc2c2d` explicitly adopted the already-validated handoff-binding design for future outcome-bearing lower-funnel closures. Before successor decisions depend on a result, Control now requires machine-bound checks of provenance, canonical machine-summary digest, exact mapped classification, and narrated decision-relevant fields.
 
-### 1. The handoff-binding guard prototype completed successfully
+This closes the prior *methodology-definition* gap around artifact-to-handoff fidelity. It does not rewrite historical Temporal/Top-k records and does not grant the prototype scientific execution authority. Therefore:
 
-`CTRL-20260920-0450-HANDOFF-BINDING-GUARD` completed one bounded run. The validator checks provenance binding, a canonical complete machine-summary digest, and exact narrated-field bindings. Validation produced:
+- generic handoff-binding requirement: `KEEP`;
+- automated/live tooling coverage: `CLARIFY` rather than a new scientific gate — one future closure should demonstrate end-to-end use, but lack of scheduler wiring is an implementation issue, not a reason to tighten novelty/admission criteria.
 
-- Temporal known-bad -> `HANDOFF_FIDELITY_BLOCKED`
-- Top-k known-bad -> `HANDOFF_FIDELITY_BLOCKED`
-- faithful Top-k positive control -> `PASS`
+### 2. A second independent brittle-extractor false negative appeared before outcome — and the repair boundary behaved correctly
 
-The prototype did not rerun, repair, rescore, relabel, or mutate any scientific result, research branch, immutable ref, scheduler, or FORMAL authority. This is strong evidence that a prospective fail-closed handoff guard can control the previously observed transcription/threshold-application failure mode without weakening the hard integrity floor.
+The Refractory Architecture object failed preflight before any outcome-bearing job ran because the prospectively bound semantic comment was stored as one sentence in the contract but split across two `#` lines in the exact source. The harness used a literal representation-sensitive presence check.
 
-### 2. Programme-wide live enforcement is still pending
+Evidence Analyst authorized only a pre-outcome, science-invariant representation repair: normalize consecutive full-line comments against the same exact source blob and same already-bound semantic comment. Contract meaning, source bindings, input family, comparator, currents, timing, probe, tolerance, observables, and terminal mapping remained frozen.
 
-The completed Utility result explicitly recommends prospective adoption only after a separate Control decision and performed no live workflow/scheduler integration. Current Control Brain durable authority still predates prototype completion. Thus the guard design itself is now `KEEP`, while programme-wide enforcement before interpretation-dependent successor allocation remains `TIGHTEN`.
+The actual repair commit `4589192d927e40cf7a05cf8a94207efb42ebbc65` modifies only `analysis/architecture/refractory_current_accounting_cycle1_20260920.py`: it adds comment-block normalization and replaces the literal raw-source membership test. On that exact head, ordinary CI `35472786733` and Architecture workflow `35472786687` both completed successfully, and artifact `10593866036` was produced with archive digest `sha256:b4dfbf04ab2f1dbb69fcee3833890ce6ad30d85a0c095a4699cde356c43e9115`.
 
-### 3. The upstream machine-fact extraction gap remains distinct
+This is calibration evidence for a useful boundary: pre-outcome science-invariant representation/mechanical repair under unchanged prospective scientific bindings is legitimate; outcome-responsive semantic/protocol repair remains prohibited. `moving_goalposts` therefore remains `LOW`.
 
-The suppression Architecture defect remains the counterexample showing why the new handoff guard is not sufficient by itself: a provenance-correct and internally self-consistent artifact can still contain an incorrect decision-relevant extracted fact if the detector is brittle. The existing `EVA-20260920-0502-SUPPRESSION-STATIC-DETECTOR-CONSISTENCY` request remains pending Control disposition. No same-object repair/rerun/relabel has been authorized.
+It also strengthens the case that decision-relevant machine-fact extraction is the remaining weak layer. Suppression showed a post-outcome static-fact false negative; Refractory independently showed a pre-outcome representation false negative.
 
-### 4. New lower-funnel outcomes support claim-type separation and STOP calibration
+### 3. The suppression extractor audit is now accepted and assigned
 
-`CAND-ASSEMBLY-CROSSCASCADE-FALLBACK-01` completed successfully on exact head `388799d9880d7b472417a680f288da13f4fd9b41` and reached a positive functional Architecture effect. Evidence Analyst nevertheless reduced it to ordinary segmentation/fallback policy, moved the object to HOLD, and prohibited same-object cycle 2. This is the desired behavior: a real architecture/system effect is preserved without laundering it into computational-principle novelty.
+Control accepted `EVA-20260920-0502-SUPPRESSION-STATIC-DETECTOR-CONSISTENCY` and issued `CTRL-20260920-0650-SUPPRESSION-STATIC-DETECTOR-CONSISTENCY` for one bounded read-only run. It may compare only the completed suppression artifact/contract/harness/workflow metadata with exact bound source, using deterministic source/AST/structural checks. It may not rerun, dynamically probe, repair, rescore, relabel `AMBIGUOUS_CONTRACT`, choose a successor, or touch TEST/FORMAL/immutable refs.
 
-SUB's fresh refractory-current Discovery is likewise ordinarily explained by signed-current netting followed by refractory clamping. It was not promoted as mechanistic novelty; only a fresh NON_EVIDENTIARY Architecture/API-state-semantics question was admitted. MAIN has acquired the lane but is still at prospective-binding stage, with no identity or outcome workflow yet.
+This is the highest-value unresolved methodology diagnostic. No duplicate Methodology Utility request is warranted.
+
+### 4. Claim-type separation continues to work
+
+SUB's fresh `OUTCOME_CREDIT_SLOT_OVERWRITE_DISCOVERY_CYCLE1` shows delayed outcomes can be redirected to the latest mutable pending activation/action slot, but the observation is fully reduced to ordinary single-slot bookkeeping and current repository callers use immediate outcome ordering. Evidence Analyst nonetheless admitted one queued fresh Architecture/API attribution question, with a prospective first question of whether delayed/interleaved outcomes are even supported. If the canonical contract is immediate-only, the line reduces to an engineering/API note instead of manufacturing a dynamic novelty experiment.
+
+This is the desired distinction between research-worthiness and new-principle novelty.
 
 ## Authoritative repository/evidence state independently re-fetched
 
@@ -48,79 +53,84 @@ SUB's fresh refractory-current Discovery is likewise ordinarily explained by sig
 - tag-based `sealed/*`: `0`
 - tag-based `freeze/*`: `0`
 - legacy `freeze/*` branches: `13`
-- Assembly Architecture head: `388799d9880d7b472417a680f288da13f4fd9b41`
-- suppression Architecture head: `2ef4b24f8e7ef8577ebbcb0328e7b3476bc24336`
-- refractory SUB Discovery head: `7b1dff2b1b3677c4af37969364b74d119bd942a8`
-- Assembly workflow `35468475903`: completed / success / run attempt 1 on the exact head
+- active Refractory Architecture head: `4589192d927e40cf7a05cf8a94207efb42ebbc65`
+- Refractory ordinary CI `35472786733`: completed / success / exact head
+- Refractory Architecture workflow `35472786687`: completed / success / exact head
+- Refractory artifact: `10593866036`, archive digest `sha256:b4dfbf04ab2f1dbb69fcee3833890ce6ad30d85a0c095a4699cde356c43e9115`
+- fresh SUB delayed-outcome Discovery head: `83eb00212eb9c877e8217c44dfb35a5563f04626`
 - PR `#148`: open/unmerged
 - PR `#149`: open/unmerged
 
-No new FORMAL evidence or fresh FORMAL identity was observed.
+No new FORMAL evidence or fresh FORMAL identity was observed. At the latest durable MAIN relay checkpoint, the just-completed Refractory workflow had not yet been reconciled into a machine-verified terminal handoff, so this audit does not infer or score its scientific result from workflow success alone.
 
 ## Gate calibration
 
 | Gate / rule | Classification | Current finding |
 | --- | --- | --- |
-| No rerun/retune/rescore; immutable evidence; raw-before-score / preserve-before-read | `KEEP` | Repeatedly contains lower-funnel diagnostic defects without post-outcome repair. |
-| Prospective protocol / exact source-runtime-input binding | `KEEP` | Necessary and functioning; not sufficient for semantic detector validity. |
-| Positive signal before strong mechanistic reduction language | `KEEP` | No reason to relax or tighten. |
+| No rerun/retune/rescore; immutable evidence; raw-before-score / preserve-before-read | `KEEP` | Still the hard integrity floor. |
+| Prospective protocol / exact source-runtime-input binding | `KEEP` | Necessary and functioning. |
+| Pre-outcome science-invariant representation/mechanical repair under unchanged bindings | `KEEP` | Refractory demonstrates a legitimate repair boundary without outcome-responsive redesign. |
+| Any post-outcome semantic/protocol repair of the same consumed object | `KEEP` | Remains prohibited. |
+| Positive signal before strong mechanistic claims | `KEEP` | No reason to change. |
 | Equal-privilege comparator/resource matching | `KEEP` | No current evidence of systematic overmatching or undermatching. |
+| Comparator semantics matched to the actual claim | `CLARIFY` | Refractory policy comparators should answer the declared API/model claim; do not impose a biological conductance comparator unless a biological claim independently appears. |
 | New-computational-principle novelty bar | `KEEP` | Appropriate for the strongest claim type. |
-| Applying that novelty bar to architecture/system/testbed value | `SPLIT_BY_CLAIM_TYPE` | Assembly and refractory handling show the split is useful. |
-| `NO_HIGH_VALUE_FORMAL_OBJECT => programme-wide HOLD` | `RELAX` | Lower-funnel Architecture/Discovery work continues to produce information. |
-| Fresh independently motivated object requirement | `KEEP` | Prevents rescue of consumed or exhausted lines. |
-| Stop after each Architecture cycle for fresh Analyst review | `KEEP` | Assembly stopped after one positive cycle rather than escalating automatically. |
+| Applying that novelty bar to architecture/system/testbed value | `SPLIT_BY_CLAIM_TYPE` | Current lower-funnel handling remains healthy. |
+| `NO_HIGH_VALUE_FORMAL_OBJECT => programme-wide HOLD` | `RELAX` | Productive Discovery/Architecture work continues while FORMAL remains empty. |
+| Fresh independently motivated object requirement | `KEEP` | Prevents rescue of consumed/exhausted lines. |
+| Stop after each Architecture cycle for fresh Analyst review | `KEEP` | No automatic escalation. |
 | Legacy Top-k sparse-stratum support gate | `TIGHTEN` | Historical local weakness remains. |
 | Programme-wide replacement support/uncertainty threshold | `INSUFFICIENT_EVIDENCE` | Do not fit a universal rule to completed outcomes. |
-| Ordinary-control-first Architecture reduction | `KEEP` | Assembly and refractory are correctly reduced before novelty claims. |
-| Negative-evidence claim-boundary narrowing | `KEEP` | H5 remains robust only for its registered work metric, not a general no-go theorem. |
-| Generic handoff-binding guard design | `KEEP` | Bounded prototype passed both known-bad fixtures and a faithful control. |
-| Programme-wide machine-checked handoff consistency | `TIGHTEN` | Live adoption and successor-transition enforcement are not yet demonstrated. |
-| Embedded contract/interpretation digest binding | `TIGHTEN` | Prototype demonstrates feasibility; programme-wide use still pending. |
-| Machine application of declared thresholds/support rules | `TIGHTEN` | Prototype catches the known Top-k mismatch; live enforcement still pending. |
-| Decision-relevant machine-fact extraction from source/runtime | `TIGHTEN` | Suppression false negative remains unresolved by the handoff guard. |
-| Brittle literal-string semantic detectors used for outcome mapping | `TIGHTEN` | Prefer structural/AST/typed checks or explicit invariants where practical. |
-| Post-outcome invalid-diagnostic fail-closed handling | `KEEP` | Preserve artifact, block dependent continuation, do not silently repair. |
+| Ordinary-control-first Architecture reduction | `KEEP` | Continues to separate ordinary semantics from novelty. |
+| Negative-evidence claim-boundary narrowing | `KEEP` | H5 remains narrow to its registered work metric. |
+| Generic artifact-to-handoff binding requirement | `KEEP` | Prototype validated and Control prospectively adopted it. |
+| Automated/live handoff-guard tooling coverage | `CLARIFY` | End-to-end demonstration is desirable, but tooling coverage is implementation, not an extra scientific admission hurdle. |
+| Decision-relevant machine-fact extraction from source/runtime | `TIGHTEN` | Suppression plus Refractory give two distinct false-negative examples. |
+| Literal/format-sensitive semantic detectors used as scientific machine facts | `TIGHTEN` | Prefer structural/AST/typed/invariant checks when practical. |
+| Documentation/comment-presence facts versus executable semantic facts | `CLARIFY` | Bind documentation concordance separately unless the claim itself is about documented API contract. |
+| Post-outcome invalid-diagnostic fail-closed handling | `KEEP` | Preserve artifact; block only dependent continuation; no silent repair. |
 | Automatic PRE_FORMAL promotion after Architecture signal | `KEEP` | Must remain absent. |
-| Local Architecture thresholds as FORMAL/novelty thresholds | `CLARIFY` | Local triage rules must remain claim-local. |
+| Local Architecture thresholds as FORMAL/novelty thresholds | `CLARIFY` | Keep local triage claim-local. |
 
 ## Mandatory calibration dimensions
 
-- `gate_drift`: the new change is evidence-driven procedural maturation, not a stricter scientific novelty bar. The handoff guard has progressed from recommendation -> Control-approved prototype -> validated prototype. No completed result was redefined.
-- `justification_trace`: strong. Temporal and Top-k directly justify handoff-field binding; suppression independently justifies machine-fact semantic validation.
-- `false_positive_control`: improved because known bad durable bindings can now be machine-blocked. Remaining risk is semantically wrong machine facts that are internally consistent.
-- `false_negative_risk`: still concentrated in brittle fact extractors and over-broad fail-closed handling. A disputed field should block only dependent continuation, not automatically reject the candidate or require universal replication.
-- `duplicate_guards`: no material duplicate to merge. Provenance binding, machine-fact semantic validation, artifact-to-handoff consistency, and fresh Analyst review protect distinct stages.
-- `moving_goalposts`: `LOW`. Utility used completed safe fixtures without changing historical outcomes. Assembly was interpreted under prospectively fixed terminal semantics, stopped after the valid terminal, and was not rescued into cycle 2/PRE_FORMAL.
+- `gate_drift`: evidence-driven procedural maturation. The handoff guard progressed recommendation -> bounded validation -> prospective Control adoption. No scientific novelty threshold was raised and no completed result was redefined.
+- `justification_trace`: strong. Temporal/Top-k justify handoff binding; suppression and now Refractory independently justify extractor-validity checks.
+- `false_positive_control`: strong at the scientific gate level and improved procedurally by handoff adoption. Remaining risk is an internally consistent but semantically wrong machine fact.
+- `false_negative_risk`: the main live risk. Brittle literal/format-sensitive detectors can block otherwise valid objects before measurement. The narrow pre-outcome repair rule appropriately mitigates this without permitting post-outcome rescue.
+- `duplicate_guards`: none to merge. Provenance binding, semantic extractor validation, artifact-to-handoff binding, and fresh Analyst review protect different stages.
+- `moving_goalposts`: `LOW`. The Refractory repair occurred before outcome visibility, changed only detector representation, preserved all scientific bindings, and re-ran on a new exact head. Historical outcomes remain untouched.
 - `pass_reachability`: `REACHABLE_BUT_NARROW`.
-- `comparator_calibration`: unchanged and appropriate to current claim types.
-- `signal_before_reduction`: healthy; positive Architecture signals are characterized before stronger novelty language, while ordinary reductions remain mandatory.
-- `claim_type_separation`: healthy. A real Architecture effect may be positive while computational-principle novelty remains unsupported.
-- `research_worthiness_vs_novelty`: no material conflation observed. Refractory current accounting is research-worthy as API/state semantics despite low novelty.
-- `external_calibration`: no new Literature/Audit result warrants changing scientific thresholds. H5 continues to support narrow claim-boundary discipline.
-- `opportunity_cost`: further general scientific strictness has lower expected information gain than finishing the two fidelity layers: live handoff-guard adoption and suppression extractor validation.
+- `comparator_calibration`: broadly appropriate. External literature supports explicitly naming refractory input/state policy rather than treating one policy as universal; comparator choice must follow claim type.
+- `signal_before_reduction`: healthy. Architecture/API findings are characterized before stronger novelty language and are ordinarily reduced first.
+- `claim_type_separation`: healthy across new-principle, mechanistic, architecture/system, engineering, and testbed claims.
+- `research_worthiness_vs_novelty`: separated. Delayed-outcome attribution can merit one Architecture/API check despite low novelty.
+- `external_calibration`: current refractory literature strengthens ordinary-reduction and claim-scope discipline; it does not justify changing the scientific admission threshold.
+- `opportunity_cost`: additional global scientific strictness has lower expected information gain than completing the suppression extractor audit and demonstrating the adopted handoff binding on one real successor decision.
 
 ## PASS reachability
 
-**`REACHABLE_BUT_NARROW`**. A prospectively specifiable path remains:
+**`REACHABLE_BUT_NARROW`**. A realistic prospective path remains:
 
 positive native signal -> fresh exact-bound object -> claim-local adequate support -> matched equal-privilege comparator for mechanistic claims -> survive ordinary implementation/dynamical reductions -> semantically valid machine-fact extraction -> faithful machine-bound handoff -> fixed intervention/falsifier -> one-way preserved FORMAL evidence.
 
-Nothing in this run makes PASS less reachable; the new guard is an integrity transfer check rather than a novelty hurdle.
+The Refractory preflight episode is evidence that integrity checks need not make measurement unreachable: a representation-only pre-outcome blocker was narrowly repaired while scientific bindings stayed frozen, after which exact-head CI and the Architecture workflow completed successfully.
 
 ## Prospective recommendations
 
 1. Keep the four-layer funnel, strict FORMAL novelty bar, comparator discipline, ordinary-reduction-first interpretation, and hard integrity floor unchanged.
-2. Treat the completed handoff-binding prototype as a validated design, then require a separate prospective Control decision for where it gates live successor allocation. Do not silently make the prototype itself operational authority.
-3. Keep handoff fidelity separate from machine-fact semantic validity. Complete the bounded suppression detector-consistency disposition before any fresh suppression successor is considered.
-4. For future decision-relevant source/runtime facts, prospectively bind an appropriate validity method; prefer structural/AST/typed checks or explicit invariant tests over syntax-fragile literal matching when practical.
-5. On any mismatch, fail closed only for decisions depending on the disputed fact. Do not automatically reject the candidate, inflate novelty/support thresholds, or demand universal replication.
-6. Preserve Architecture/system/engineering/testbed value even where computational-principle novelty fails.
-7. Never retroactively rescore, relabel, rerun, invalidate, or upgrade consumed/frozen experiments because methodology safeguards improve.
+2. Treat Control's prospective handoff-binding adoption as the current method. On the next outcome-bearing closure, demonstrate that a successor decision actually consumes the checked machine binding; do not add a second redundant guard merely for ceremony.
+3. Complete the already-assigned suppression static-detector consistency audit. Do not repair or relabel the completed suppression terminal.
+4. For future decision-relevant source/runtime facts, prospectively bind the validity method. Prefer AST/structural/typed checks or explicit invariants over syntax/format-sensitive literal matching where practical.
+5. Separate documentation/comment concordance from executable semantic facts unless the study claim itself is explicitly about the documented API contract.
+6. Permit only science-invariant pre-outcome mechanical/representation repair under unchanged bindings; once outcome-bearing data are visible, retain the no-silent-repair rule.
+7. On a disputed machine fact, fail closed only for decisions that depend on it. Do not automatically reject the candidate, inflate novelty/support thresholds, or demand universal replication.
+8. Preserve Architecture/system/engineering/testbed value even when computational-principle novelty fails.
+9. Never retroactively rescore, relabel, rerun, invalidate, or upgrade consumed/frozen experiments because methodology safeguards improve.
 
 ## Utility request
 
-No new Methodology Calibration Utility request created. The handoff-binding request is complete, and the existing `EVA-20260920-0502-SUPPRESSION-STATIC-DETECTOR-CONSISTENCY` request already targets the remaining bounded extractor-fidelity question. A duplicate request would add little information value.
+No new Methodology Calibration Utility request created. `CTRL-20260920-0650-SUPPRESSION-STATIC-DETECTOR-CONSISTENCY` already targets the highest-value unresolved extractor-fidelity question and is currently assigned.
 
 ## Hard-integrity-floor confirmation
 
@@ -128,4 +138,4 @@ Confirmed unchanged: no rerun/retune/rescore of consumed identities; frozen/pros
 
 ## Bottom line
 
-There is a material positive calibration update: the generic artifact-to-handoff guard is now operationally demonstrated on bounded fixtures. The overall programme remains **`MIXED_CALIBRATION`**, not because the scientific novelty/admission bar is mis-set, but because live programme-wide handoff enforcement is still pending and the separate upstream machine-fact extractor validity gap remains unresolved. Tighten those two fidelity layers prospectively; do not tighten the scientific bar itself.
+The current methodology remains **`MIXED_CALIBRATION`**, but the mixture is now narrow. Artifact-to-handoff fidelity has moved from an identified weakness to a validated and prospectively adopted requirement. The remaining material calibration weakness is upstream machine-fact extractor validity, where suppression and Refractory provide independent false-negative examples. Tighten that layer prospectively; do not tighten the scientific novelty/admission bar itself.
