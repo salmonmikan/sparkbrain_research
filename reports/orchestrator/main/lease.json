@@ -1,14 +1,14 @@
 {
   "run_id": "sparkbrain-main-primary-20260919T201410JST",
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-19T20:14:10+09:00",
   "heartbeat_at": "2026-09-19T20:14:10+09:00",
   "analyst_commit": "5982fc0ae76d62c4a6fce42f6b1aaaf7f85b8e23",
   "active_branch": "research/main-structural-order-path-arch-study-20260919",
   "active_identity": null,
-  "active_step": "STRUCTURAL_ORDER_PATH_CYCLE1_RESULT_VALIDATED_PENDING_DURABLE_REPORT",
+  "active_step": "STRUCTURAL_ORDER_PATH_CYCLE1_VALID_OUTCOME_STOPPED_FOR_ANALYST_REVIEW",
   "workflow_run_id": 35438868911,
-  "expected_next_action": "Persist validated NON_EVIDENTIARY Architecture label EDGE_OR_HOMEOSTASIS_CONTROL_REPRODUCES and STOP for fresh Evidence Analyst review. Do not rerun, retune, redesign, start cycle 2, create PRE_FORMAL/FORMAL continuation, access TEST, or merge.",
+  "expected_next_action": "Fresh Evidence Analyst review of NON_EVIDENTIARY label EDGE_OR_HOMEOSTASIS_CONTROL_REPRODUCES. No structural-order cycle 2, comparator/control redesign, PRE_FORMAL promotion, FORMAL identity/STARTED, TEST access, rerun, retune, or merge is authorized under the current authority.",
   "owner": "main"
 }
