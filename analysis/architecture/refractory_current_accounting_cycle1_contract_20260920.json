@@ -1,0 +1,165 @@
+{
+  "schema": "sparkbrain-architecture-study-contract-v1",
+  "candidate_id": "CAND-REFRACTORY-CURRENT-ACCOUNTING-01",
+  "lane": "REFRACTORY_CURRENT_ACCOUNTING_ARCHITECTURE_STUDY_CYCLE1",
+  "research_layer": "ARCHITECTURE_STUDY",
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "question": "During absolute refractory, do same-time positive arrivals cancel inhibitory current before the production clamp, and can that accounting choice change one fixed post-refractory spike observable relative to a positive-ignore shadow comparator?",
+  "analyst_authority": "eb1c305017d32c8c3efb0794e547b889e5a80461",
+  "source_binding": {
+    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "src/sparkbrain/v04/field.py": "e2279d69cd04030238317361d5ee3abdc1009c32",
+    "src/sparkbrain/v04/contracts.py": "9d3ae216a518ff6d409a67cd02f34f1dc20a8ab8",
+    "src/sparkbrain/v04/topology.py": "9129161bd2e7f7cd0ec70684e176700f128d4a6b",
+    "tests/v04/test_v04_field.py": "08128a255b09d996160211f598d6f0a64d91ead0",
+    "docs/THEORY_SPEC_v0.4.md": "4040aca59b32d8cd3c72dc0df64b55f434a42351",
+    "docs/V04_STATUS.md": "f75d9c27f2c1cc906ea480c925c08868d1c08ef4"
+  },
+  "supported_contract_scope": {
+    "paths": [
+      "src/sparkbrain/v04/field.py",
+      "src/sparkbrain/v04/contracts.py",
+      "src/sparkbrain/v04/topology.py",
+      "tests/v04/test_v04_field.py",
+      "docs/THEORY_SPEC_v0.4.md",
+      "docs/V04_STATUS.md"
+    ],
+    "explicit_refractory_netting_contract_hits": [],
+    "bound_source_comment": "Inhibition can still shorten the post-spike residual; positive drive is ignored during the absolute refractory window.",
+    "theory_spec_scope": "The bound theory spec defines signed arrival-time accumulation and says a unit emits only when it is not refractory, but it does not explicitly specify mixed-sign current accounting inside the refractory window.",
+    "test_scope": "The bound field tests cover delayed propagation, coincident subthreshold arrivals, and checkpoint continuation, but do not establish mixed-sign refractory accounting semantics.",
+    "interpretation_rule": "Production code behavior alone is not promoted to an explicit supported refractory-current contract statement."
+  },
+  "machine_fact_binding": {
+    "method": "AST_STRUCTURAL_PLUS_EXACT_BLOB_HASHES",
+    "required_production_facts": [
+      "deliver_group_groups_same_time_arrivals_by_target",
+      "positive_current_is_summed_separately",
+      "negative_current_is_summed_separately",
+      "net_current_is_positive_minus_negative",
+      "refractory_branch_applies_min_zero_net_current",
+      "schedule_arrival_accepts_signed SynapticArrival.current without sign rejection"
+    ],
+    "comment_fact": "Bound source contains the exact positive-drive-ignored refractory comment.",
+    "decision_relevant_extractor_policy": "Any structural/source/hash mismatch is INVALID_DIAGNOSTIC; do not repair or relabel after outcome visibility."
+  },
+  "input_family": {
+    "kind": "SYNTHETIC_DEVELOPMENT_ONE_UNIT_DIRECT_ARRIVAL",
+    "unit": {
+      "unit_id": 0,
+      "x": 0.0,
+      "y": 0.0,
+      "initial_potential": 0.5,
+      "base_threshold": 1.0,
+      "adaptation": 0.0,
+      "last_update_ms": 0.0
+    },
+    "field_config": {
+      "membrane_tau_ms": 18.0,
+      "adaptation_tau_ms": 90.0,
+      "refractory_ms": 3.0,
+      "reset_potential": 0.0,
+      "adaptation_increment": 0.16
+    },
+    "refractory_condition": {
+      "refractory_until_ms": 5.0,
+      "treatment_time_ms": 1.0,
+      "arms": {
+        "inhibition_only": [-0.5],
+        "balanced_same_time": [-0.5, 0.5],
+        "excitation_only": [0.5]
+      },
+      "probe_time_ms": 5.1,
+      "probe_current": 0.7
+    },
+    "outside_refractory_control": {
+      "refractory_until_ms": 0.0,
+      "treatment_time_ms": 1.0,
+      "arms": {
+        "inhibition_only": [-0.5],
+        "balanced_same_time": [-0.5, 0.5],
+        "excitation_only": [0.5]
+      },
+      "probe_time_ms": 5.1,
+      "probe_current": 0.7
+    },
+    "matched_rule": "Production and shadow receive identical unit state, field config, current magnitudes, timestamps, treatment-arm labels, and probe. The only comparator difference is refractory mixed-sign accounting: production nets all same-time signed current before clamp; shadow discards positive current during refractory then applies inhibition. Outside refractory both use identical net-current semantics."
+  },
+  "comparator": {
+    "production": "NET_THEN_REFRACTORY_CLAMP",
+    "shadow": "IGNORE_POSITIVE_THEN_APPLY_INHIBITION_DURING_REFRACTORY",
+    "shadow_scope": "Read-only harness comparator only; production source is never mutated."
+  },
+  "observables": {
+    "state": [
+      "potential_after_treatment",
+      "treatment_spike_count"
+    ],
+    "downstream_exactly_one": "post_refractory_probe_spike_count",
+    "controls": [
+      "outside_refractory_production_shadow_match",
+      "inhibition_only",
+      "excitation_only"
+    ]
+  },
+  "decision_rules": {
+    "supported_mixed_sign_runtime_condition": "True iff exact bound production structurally groups same-time signed SynapticArrival currents and permits both positive and negative current values through the public scheduling path.",
+    "outside_control_must_match": "For every arm outside refractory, production and shadow must match potential_after_treatment and post_refractory_probe_spike_count within the fixed tolerance; otherwise INVALID_DIAGNOSTIC.",
+    "state_effect": "Within refractory balanced_same_time, state_effect is true iff production and shadow potential_after_treatment differ by more than 1e-12.",
+    "functional_effect": "Within refractory balanced_same_time, functional_effect is true iff post_refractory_probe_spike_count differs between production and shadow. No post-outcome threshold or probe change is permitted.",
+    "core_control_validity": "Inhibition-only and excitation-only arms must execute successfully in both production and shadow; treatment spikes must be zero in all refractory arms."
+  },
+  "terminal_mapping": {
+    "INVALID_DIAGNOSTIC": "Any source/blob/head/contract/machine-fact mismatch, matched-input violation, outside-refractory control mismatch, core-control failure, forbidden input access, or inability to execute the fixed comparator/observable exactly as bound.",
+    "EXPLICIT_NETTING_CONTRACT_MATCHES_PRODUCTION": "A bound supported canonical doc/test statement explicitly defines mixed-sign refractory accounting as net-current-before-clamp and production structurally matches it.",
+    "NO_SUPPORTED_MIXED_SIGN_RUNTIME_CONDITION": "The bound supported public field/event contracts cannot represent same-time mixed-sign current without changing semantics or using forbidden surfaces.",
+    "FUNCTIONAL_REFRACTORY_ACCOUNTING_EFFECT": "The balanced refractory arm has a production-vs-shadow state difference and the single fixed post-refractory probe spike count differs.",
+    "STATE_ONLY_REFRACTORY_ACCOUNTING_EFFECT": "The balanced refractory arm has a production-vs-shadow state difference but the fixed post-refractory probe spike count is identical.",
+    "NO_SEMANTIC_DIFFERENCE_UNDER_FIXED_PROBE": "The supported balanced refractory arm executes validly but production and shadow have no state or functional difference under the fixed treatment/probe.",
+    "MIXED_OR_AMBIGUOUS_REFRACTORY_CONTRACT": "The valid bounded result does not satisfy any more specific terminal class without adding a new semantic choice."
+  },
+  "precedence": [
+    "INVALID_DIAGNOSTIC",
+    "EXPLICIT_NETTING_CONTRACT_MATCHES_PRODUCTION",
+    "NO_SUPPORTED_MIXED_SIGN_RUNTIME_CONDITION",
+    "FUNCTIONAL_REFRACTORY_ACCOUNTING_EFFECT",
+    "STATE_ONLY_REFRACTORY_ACCOUNTING_EFFECT",
+    "NO_SEMANTIC_DIFFERENCE_UNDER_FIXED_PROBE",
+    "MIXED_OR_AMBIGUOUS_REFRACTORY_CONTRACT"
+  ],
+  "machine_handoff_fields_required": [
+    "analyst_authority",
+    "candidate_id",
+    "lane",
+    "research_layer",
+    "evidentiary_status",
+    "source_binding",
+    "source_blob_verification",
+    "machine_facts",
+    "input_family_digest",
+    "comparator",
+    "observables",
+    "refractory_results",
+    "outside_refractory_control",
+    "decision_facts",
+    "mapped_outcome",
+    "git_head",
+    "contract_sha256",
+    "raw_sha256",
+    "workflow_run_id",
+    "stop_required"
+  ],
+  "forbidden_inputs": [
+    "official TEST",
+    "retained confirmatory or held-out datasets",
+    "trained checkpoint",
+    "consumed FORMAL raw",
+    "formal scorer",
+    "STARTED identity",
+    "preserve/evidence mutation",
+    "SUB exploratory artifact as Architecture evidence",
+    "production source mutation"
+  ],
+  "stop_condition": "Any valid terminal Architecture classification stops cycle 1 for fresh Evidence Analyst review. No same-run implementation change, cycle 2, PRE_FORMAL, or FORMAL continuation. Any outcome-bearing failure requiring redesign is INVALID_DIAGNOSTIC and stops.",
+  "formal_paths": "UNARMED_NO_FORMAL_OBJECT"
+}
