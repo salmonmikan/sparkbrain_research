@@ -1,33 +1,42 @@
-# PRIMARY MAIN — Assembly prototype lock-in Architecture cycle 1 waiting on repaired exact-head CI
+# RELAY MAIN — Assembly prototype lock-in Architecture cycle 1 completed with NO_OR_LOW_SUPPORT
 
-Timestamp: `2026-09-19 23:29 JST`  
+Timestamp: `2026-09-19 23:48 JST`  
 Worker role: `main`  
-Execution mode: `PRIMARY`  
+Execution mode: `RELAY`  
 Evidence Analyst authority: `982e5686524c9fc2b665efcf44069fef49196333`  
 Research layer: `ARCHITECTURE_STUDY`  
 MAIN lane: `ASSEMBLY_PROTOTYPE_LOCKIN_ARCHITECTURE_STUDY_CYCLE1`  
-Evidentiary status: `NON_EVIDENTIARY_ARCHITECTURE_STUDY_PENDING_EXTERNAL_EXECUTION`
+Evidentiary status: `NON_EVIDENTIARY_ARCHITECTURE_STUDY_COMPLETED`
 
-## Frontier / fast-path reconciliation
+## Lease / collision reconciliation
 
-FAST PATH remains valid; no repository-wide reconciliation was triggered. Fresh Evidence Analyst authority remains `982e5686524c9fc2b665efcf44069fef49196333`, authoritative `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`, and SUB remains on independent bounded Discovery rather than this MAIN lane.
+PRIMARY handed off in `WAITING_EXTERNAL` on the same MAIN object. No fresh PRIMARY `RUNNING` lease was present. Authoritative `main` remained `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; Evidence Analyst remained `982e5686524c9fc2b665efcf44069fef49196333`; exact research branch remained `research/main-assembly-prototype-lockin-arch-study-20260919@7d9b90e58ee088ff2b4187d3c62c5e568148e6aa`. SUB was independently operating on temporal-expectation batch-partition Discovery and explicitly avoided this MAIN candidate, so no collision existed.
 
-MAIN created `research/main-assembly-prototype-lockin-arch-study-20260919` from exact `main` and prospectively fixed the DEV-only cycle-1 contract before any diagnostic visibility: development seeds 501/502, one frozen upstream internal-pattern corpus per seed, 48 adaptation episodes, 16 fixed jitter probes, 12 deterministic order/reversal pairs per seed, current assembly/predictor semantics, fixed label-invariant structural metrics, fixed prediction/action functional metrics, the stronger-privilege order-invariant union-find reduction ceiling, and the Analyst-fixed four-way mapping. Official TEST/formal/consumed surfaces remain forbidden.
+## Exact-head workflow and artifact verification
 
-## Critical-path implementation and science-invariant repair
+Repaired Architecture workflow `35448815310` completed `success` on exact head `7d9b90e58ee088ff2b4187d3c62c5e568148e6aa`. Both exact-head CI jobs (Python 3.11 and 3.13) passed source ancestry, repository tests, harness lint/compile and prospective binding. The Architecture job then passed its final preflight, executed exactly one DEV-only NON_EVIDENTIARY cycle, and uploaded raw-before-summary artifacts. Ordinary repository CI `35448815303` also completed `success` on the same head.
 
-MAIN implemented the Architecture harness and exact-head workflow. The first exact-head Architecture workflow `35448630760` at head `39364dd34cbb1cb51ab80421f95b491d273c5676` failed during ordinary repository test collection on both Python 3.11 and 3.13 because the branch-local workflow installed only `.[dev]`, while repository tests import optional learned/spiking dependencies (`torch`/`numpy`). Harness compile/lint passed, exact-head/main-ancestry checks passed, and the Architecture diagnostic job was skipped. Therefore no outcome-bearing Architecture rows were generated or observed.
+Artifact `assembly-prototype-lockin-cycle1-7d9b90e58ee088ff2b4187d3c62c5e568148e6aa` (`artifact_id=10586141881`, Actions digest `sha256:ec67a10eb4374a7af17840020de23a57427d20a3e72cab13685777125c0dccc1`) was downloaded and inspected. It contains `corpus_manifest.json`, `metadata.json`, `raw.jsonl`, and `summary.json`. `raw.jsonl` has 410 rows: 2 comparator rows, 24 paired-order rows, and 384 probe rows. The corpus manifest contains exactly 48 adaptation and 16 probe episodes for each DEV seed 501 and 502. The artifact metadata binds Analyst authority, exact source blobs/main SHA, no FORMAL identity, no STARTED, no official TEST, and `raw_before_interpretation=true`. The recorded corpus-manifest SHA-256 matches the downloaded manifest (`9c1843646a8ebe40a9b12e2bada89202643986c17785095c987ef0c87c52c356`); downloaded raw SHA-256 is `956cf3db8c7036a4f8d6ebb441e6e61d681b7029722227c6be2d855475f1ef64`.
 
-Under the prospectively authorized pre-diagnostic mechanical-fix contingency, MAIN changed only workflow dependency installation to match the repository's own CI (`.[dev,learned,spiking]`). No candidate, hypothesis, corpus, order family, comparator, metric, mapping, threshold, seed, probe, resource contract, or source binding changed.
+The exact harness writes `corpus_manifest.json`, then `metadata.json`, then fsyncs `raw.jsonl`; only after reloading that raw file does it compute and write `summary.json`. Thus the prospectively required raw-before-interpretation ordering was satisfied.
 
-Current exact research head is `7d9b90e58ee088ff2b4187d3c62c5e568148e6aa`. Repaired Architecture workflow `35448815310` is running on that exact head. Generic repository CI `35448815303` is also running on the same head and is not a separate scientific execution.
+## Prospectively fixed mapping consumed exactly once
 
-## Scientific status
+The artifact summary maps the one valid cycle to `NO_OR_LOW_SUPPORT`. Recalculation from raw rows agrees:
 
-No FORMAL scientific evidence was created. No PRE_FORMAL development evidence was created. No completed Architecture observation exists yet. No official TEST, formal identity, STARTED, formal preserve/scoring/evidence, merge, consumed-identity reuse, rerun, retune, or outcome-responsive redesign occurred.
+- seed 501: `representation_divergent_pairs=0/12`, `prediction_support_pairs=0/12`, total prediction disagreements `0`, total descriptive action disagreements `0`, maximum pairwise co-clustering disagreement `0.0`;
+- seed 502: `representation_divergent_pairs=0/12`, `prediction_support_pairs=0/12`, total prediction disagreements `0`, total descriptive action disagreements `0`, maximum pairwise co-clustering disagreement `0.0`.
 
-## Stop / relay handoff
+The fixed Analyst rule says `NO_OR_LOW_SUPPORT` when either development seed has fewer than 4/12 representation-divergent pairs. Both seeds are 0/12, so the mapping is unambiguous. The corresponding prospectively fixed contingency is consumed: **reject the current stronger functional order-lock-in question, retain the Discovery observation only, and STOP.**
 
-Stop reason: `WAITING_EXTERNAL_REPAIRED_EXACT_HEAD_ARCHITECTURE_WORKFLOW`.
+## Scientific / integrity status
 
-Lease ends `WAITING_EXTERNAL`; Relay continuation is expected. Relay/next MAIN must collect only workflow `35448815310` for exact head `7d9b90e58ee088ff2b4187d3c62c5e568148e6aa`. If it fails before diagnostic visibility, only science-invariant mechanical repair under the unchanged prospective contract is allowed. If one valid diagnostic completes, verify artifacts/raw-before-summary, consume the fixed four-way mapping exactly once, persist the result as NON_EVIDENTIARY Architecture evidence, and STOP for fresh Evidence Analyst review. No cycle 2 or automatic PRE_FORMAL/FORMAL promotion is authorized.
+New lower-layer information exists only as a DEV-only NON_EVIDENTIARY Architecture result. There is **no new FORMAL scientific evidence and no PRE_FORMAL development evidence**. No official TEST was accessed; no formal identity, STARTED, preserve, scoring or evidence object was created; no consumed identity was reused; no immutable/frozen/formal evidence was modified; no research merge, rerun, retune, threshold search, cycle 2, or outcome-responsive redesign occurred.
+
+## Stop / next MAIN action
+
+Stop reason: `VALID_ARCHITECTURE_RESULT_NO_OR_LOW_SUPPORT_STOP_FOR_FRESH_ANALYST_REVIEW`.
+
+Lease ends `COMPLETED`. Next MAIN action is **fresh Evidence Analyst review only**. Do not run cycle 2, redesign this same object, or promote it to PRE_FORMAL/FORMAL unless a later Analyst handoff independently supplies fresh prospective authority.
+
+Utility request created by this RELAY: none.
