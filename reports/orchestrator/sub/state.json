@@ -1,44 +1,38 @@
 {
-  "timestamp": "2026-09-19T10:32:00+09:00",
+  "timestamp": "2026-09-19T13:53:01+09:00",
   "worker_role": "sub",
-  "mode": "no_op",
-  "evidence_analyst_commit": "8ee6d305acdc8310335e65c5bd3f35d121f35280",
+  "mode": "formal_sub_lane",
+  "evidence_analyst_commit": "34911078061f83099a74d45868c665ac2b30c6da",
   "consumed_lanes": [],
-  "selected_independent_lane": null,
+  "selected_independent_lane": "NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY",
   "exploratory_target": null,
+  "reservation_status": "reserved_for_sub",
   "independent_of_main_critical_path": true,
+  "depends_on_main_outcome": false,
   "execution_allowed": false,
-  "sub_active_claim": null,
+  "sub_active_claim": "Bounded read-only NON_EVIDENTIARY NI01 world-label-privilege sensitivity; exact fixed procedure recovered, numeric TEST scoring intentionally not crossed because current authority forbids one-way TEST target access and official scoring.",
   "main_work_explicitly_avoided": [
-    "fresh-object admission and candidate selection",
-    "successor/comparator/mechanism design",
-    "future lineage/causal-credit provenance, event-structure, dynamic-slicing, actual-cause/responsibility, and local-learning comparator construction that could become MAIN-critical",
-    "candidate-specific implementation and verifier/harness/runner/binding/CI/readiness fixes",
+    "fresh-object admission and primary candidate selection",
+    "successor/comparator/mechanism design for MAIN frontier",
+    "candidate-specific bugs, verifier/harness/runner/binding/CI/readiness fixes",
     "preservation/scoring/execution blockers",
     "consumed-line rescue/retry/retune/rescore/reinterpretation",
-    "literature-driven successor engineering"
+    "future causal-credit critical-path construction"
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "8ee6d305acdc8310335e65c5bd3f35d121f35280",
-    "control_brain": "10eb4206fb0c998fcdbc40c0e16f38829ea5d41e",
-    "orchestrator_parent_tip_before_persistence": "eb30669410f91de24f5da44021ed6d9d2a76daab",
-    "main_latest_checkpoint_time": "2026-09-19T10:16:00+09:00",
-    "main_latest_analyst_commit": "8ee6d305acdc8310335e65c5bd3f35d121f35280",
+    "evidence_analyst": "34911078061f83099a74d45868c665ac2b30c6da",
+    "control_brain": "1914db5b9b58b4d53bd0406adda062189d688cb8",
+    "orchestrator_parent_tip_before_persistence": "4ff7b982c509c4c0538a8b06248ad4c779b29e8c",
+    "ni01_package": "dbfe7469dbbbc1adbb00789ab382de892a1b3563",
+    "ni01_contract_blob": "3dc90b08f85e0e7c459e0c17e86ab338901fd4c6",
+    "ni01_preserve_raw": "8a39cf70e397bb7588f948910f01ec58672ac814",
+    "ni01_evidence_tag_object": "185b741e69ea8a0ce0d076153d36e9296a748765",
+    "ni01_evidence_commit": "69aa785a48bbdb531229b7f71f7fa84a5fde9948",
     "formal_tags": [],
     "sealed_tags": [],
-    "evidence_tags": [
-      "evidence/c19-official-v4-c19-external-v2-official-v4",
-      "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
-      "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1",
-      "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1",
-      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1"
-    ],
     "authoritative_evidence_tag_count": 5,
-    "legacy_freeze_branch_count": 13,
-    "research_branch_20260919_count": 0,
-    "repository_rulesets_count": 0,
-    "control_preserve_status": "existing_consumed_and_historical_refs_only_no_fresh_formal_identity_or_official_preserve"
+    "legacy_freeze_branch_count": 13
   },
   "branches_prs_advanced": {
     "research_branches_by_sub": [],
@@ -48,75 +42,68 @@
   },
   "workflows_experiments": {
     "sub_dispatched": [],
-    "latest_observed_before_persistence": "control-plane CI 35412147343 completed/success on ops/orchestrator-run-report@eb30669410f91de24f5da44021ed6d9d2a76daab",
     "formal_experiment_by_sub": "NOT_STARTED",
-    "official_test_accessed_by_sub": false
+    "official_test_accessed_by_sub": false,
+    "official_scoring_produced_by_sub": false,
+    "read_only_repository_inspection_only": true
   },
   "scientific_readiness_exploratory_results": {
     "sub_new_formal_result": false,
     "sub_new_exploratory_result": false,
     "new_formal_scientific_information": false,
-    "new_admission_doctrine_information": true,
-    "main_lane": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
-    "sub_lane": null,
-    "sub_fallback": null,
-    "sub_exploratory_review": null,
-    "allocation_changed": false,
-    "programme_state": "NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
-    "admission_doctrine_update": {
-      "source": "Evidence Analyst 10:02 handoff consuming 09:32 Literature Reduction Scout",
-      "history_influence_axis": [
-        "provenance/ancestry",
-        "individual-token causal-net / occurrence-net / event-structure history+conflict",
-        "causally consistent dynamic slicing",
-        "explicit counterfactual actual-cause/responsibility"
-      ],
-      "learning_locality_axis": [
-        "matched local eligibility / three-factor / e-prop",
-        "GLE / SAL where relevant",
-        "matched recurrent/plastic mechanisms"
-      ],
-      "additional_requirements": [
-        "preemption and overdetermination cases",
-        "ancestry-preserving responsibility-changing interventions",
-        "matched information/readout/resource privilege",
-        "positive intervention-validated candidate signal",
-        "fixed numeric falsifiers"
-      ],
-      "lp01_reopened": false,
-      "sub_work_created": false
-    }
+    "lane_progress": "EXACT_DIAGNOSTIC_PROTOCOL_RECOVERED_NUMERIC_TYPE7_RESULT_NOT_PRODUCED",
+    "fixed_question": "Would NI01 candidate-vs-comparator effect materially change if comparator uses one world-blind threshold derived from pooled target-free DEV coverage instead of separate explicit-world thresholds?",
+    "fixed_threshold_procedure": {
+      "source": "frozen NI01 coverage_matched_threshold",
+      "pooling": "pool original target-free DEV rows across all frozen worlds/seeds",
+      "candidate_set": "all unique pooled DEV confidences plus +infinity and -infinity",
+      "objective": "minimize absolute comparator coverage minus pooled native coverage",
+      "tie_break": "larger more-conservative threshold",
+      "test_calibration_forbidden": true,
+      "alternate_threshold_or_sweep_forbidden": true
+    },
+    "fixed_scoring": {
+      "resamples": 10000,
+      "bootstrap_seed": 74017,
+      "ci_quantile": "Type-7",
+      "coverage_shift_guard_per_world": 0.03
+    },
+    "preserved_manifest": {
+      "worlds": ["reliability_world", "delayed_evidence_world", "contradiction_world"],
+      "test_episode_count": 1536,
+      "test_step_count": 46080,
+      "thresholds_by_world": {
+        "reliability_world": 0.43837666247277174,
+        "delayed_evidence_world": 0.43859092652956055,
+        "contradiction_world": 0.4344505230131153
+      },
+      "threshold_span": 0.004140403516445235,
+      "targets_materialized": false,
+      "raw_forbidden_keys": ["decision_justified", "scenario_tags_from_target", "target", "truth"]
+    },
+    "numeric_diagnostic_status": "BLOCKED_BY_CURRENT_INTEGRITY_AUTHORITY_NOT_BY_PROTOCOL_AMBIGUITY",
+    "canonical_ni01_result_unchanged": "FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION"
   },
-  "evidentiary_status": "NONE_FOR_SUB",
+  "evidentiary_status": "NON_EVIDENTIARY_NON_CANONICAL",
   "consumed_identities": {
     "by_sub": [],
-    "observed_closed_or_consumed": [
-      "c19-external-v2-official-v4",
-      "c19-r1-revision-authority-official-v1",
-      "c19-r1-revision-authority-official-v2",
-      "c19-r2-fsa-state-tracker-official-v1",
-      "pd01-long-history-fading-memory-official-v1",
-      "ni01-no-ignition-selective-prediction-official-v1",
-      "h5-event-routing-work-reduction-official-v1"
-    ]
+    "ni01_identity_reused_or_rerun": false
   },
   "blockers": [
-    "No reserved independent formal SUB lane or fallback exists.",
-    "No safe useful non-duplicative incubator target exists.",
-    "Future lineage/causal-credit comparator construction could become MAIN-critical and is therefore excluded from SUB work.",
-    "Scientific object availability is the blocker; there is no SUB infrastructure blocker."
+    "Current execution_allowed=false forbids STARTED, dispatch, identity consumption, official scoring, and formal authority creation.",
+    "Preserved NI01 raw is intentionally target-blind; scoring requires TEST truth/decision_justified materialization after preservation.",
+    "SUB hard boundary forbids accessing sealed/one-way-only TEST evaluation inputs, so a numeric Type-7 effect/CI cannot be recomputed safely from the current read-only surface.",
+    "A non-canonical read-only score surface or precomputed sufficient statistics would need explicit Analyst authorization; otherwise the one-shot sensitivity should be closed as presently unexecutable."
   ],
-  "blocked_until": "A genuinely independent prospectively complete secondary object is reserved for SUB, or a distinct bounded NON_EVIDENTIARY synthetic/dev question appears outside MAIN admission, future causal-credit critical-path construction, consumed-line rescue, literature-driven successor engineering, and already-explored SUB themes.",
   "fallback_status": "ABSENT",
   "rejected_lane": null,
   "lane_rejected_reason": null,
   "collision_reconciliation": {
-    "report_branch_tip_before_persistence": "eb30669410f91de24f5da44021ed6d9d2a76daab",
-    "latest_main_checkpoint_time": "2026-09-19T10:16:00+09:00",
-    "latest_main_checkpoint_analyst_commit": "8ee6d305acdc8310335e65c5bd3f35d121f35280",
+    "report_branch_tip_before_persistence": "4ff7b982c509c4c0538a8b06248ad4c779b29e8c",
+    "latest_main_checkpoint_time": "2026-09-19T13:17:08+09:00",
+    "latest_main_checkpoint_analyst_commit": "34911078061f83099a74d45868c665ac2b30c6da",
     "fresh_analyst_tip_rechecked": true,
-    "fresh_analyst_tip": "8ee6d305acdc8310335e65c5bd3f35d121f35280",
-    "analyst_allocation_changed": false,
+    "fresh_analyst_tip": "34911078061f83099a74d45868c665ac2b30c6da",
     "main_ref_rechecked": true,
     "research_refs_rechecked": true,
     "evidence_formal_sealed_freeze_control_preserve_refs_rechecked": true,
@@ -124,16 +111,16 @@
     "sub_collision_detected": false,
     "append_only_history_path_prechecked_absent": true
   },
-  "integrity_state": "CLEAN_NO_MAIN_MUTATION_NO_FORMAL_BOUNDARY_CROSSED_BY_SUB_NO_OFFICIAL_INPUT_ACCESS_NO_IDENTITY_CONSUMPTION",
-  "completion_target": "Freshly reconcile current main/research refs, authoritative evidence/formal/sealed/freeze/control/preserve state, Evidence Analyst latest/state/history, MAIN/SUB latest/state/history, Control Brain doctrine, workflows/PRs/issues and identities; select only a valid independent SUB lane or safe non-duplicative incubator target, otherwise persist a clean no-op.",
-  "completion_target_status": "ACHIEVED",
+  "integrity_state": "CLEAN_READONLY_NO_MAIN_MUTATION_NO_FORMAL_BOUNDARY_NO_TEST_TARGET_ACCESS_NO_IDENTITY_CONSUMPTION_NO_OFFICIAL_SCORING_CANONICAL_NI01_UNCHANGED",
+  "completion_target": "Advance exactly the reserved independent read-only NI01 privilege-sensitivity lane without crossing the formal/one-way boundary; recover exact procedure, execute only what current authority permits, and persist a durable SUB report.",
+  "completion_target_status": "PARTIAL_SAFE_PROGRESS_PROTOCOL_RECOVERED_NUMERIC_SCORING_BLOCKED_BY_AUTHORITY",
   "candidate_formal_question": null,
   "suggested_prospective_object": null,
   "promotion_recommendation": "NONE",
   "incubator_handoff": null,
-  "proposed_handoff_to_analyst": "Keep SUB null/no-op until a genuinely independent prospectively complete secondary object is reserved or a distinct bounded NON_EVIDENTIARY synthetic/dev question appears. Do not manufacture work from MAIN admission, future causal-credit comparator requirements, literature-driven successor engineering, or consumed terminal lines.",
+  "proposed_handoff_to_analyst": "Either authorize/provide a strictly NON_EVIDENTIARY read-only score surface or sufficient statistics for the fixed world-blind diagnostic without exposing one-way TEST targets, or classify the one-shot sensitivity as presently unexecutable and return SUB to no-op. Do not relax integrity by local TEST target materialization or consumed-identity rerun.",
   "report_persistence": {
-    "history_path": "reports/orchestrator/history/2026-09-19/1032-sub.md",
+    "history_path": "reports/orchestrator/history/2026-09-19/1353-sub.md",
     "sub_latest_path": "reports/orchestrator/sub/latest.md",
     "sub_state_path": "reports/orchestrator/sub/state.json",
     "atomic_git_commit_requested": true,
