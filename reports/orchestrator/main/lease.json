@@ -1,14 +1,14 @@
 {
-  "run_id": "sparkbrain-main-primary-20260919T161801JST",
+  "run_id": "sparkbrain-main-primary-20260919T171500JST",
   "execution_mode": "PRIMARY",
-  "status": "COMPLETED",
-  "started_at": "2026-09-19T16:18:01+09:00",
-  "heartbeat_at": "2026-09-19T16:32:00+09:00",
-  "analyst_commit": "d8974f662e2fd36000125b643ae908030c3e8aac",
-  "active_branch": null,
+  "status": "RUNNING",
+  "started_at": "2026-09-19T17:15:00+09:00",
+  "heartbeat_at": "2026-09-19T17:15:00+09:00",
+  "analyst_commit": "3e83f1eb683ce80e326b756fa304e96688fdd3fe",
+  "active_branch": "research/main-topk-persistent-amplification-arch-study-20260919",
   "active_identity": null,
-  "active_step": "PROGRAMME_ARCHITECTURE_TESTBED_HOLD_FRESH_ANALYST_CONSUMED_1532_CAUSAL_CREDIT_LITERATURE",
+  "active_step": "PREPARE_TOPK_ROUTER_PERSISTENT_AMPLIFICATION_ARCHITECTURE_STUDY_CYCLE1",
   "workflow_run_id": null,
-  "expected_next_action": "Remain in architecture/testbed HOLD. Continue only if a future fresh Evidence Analyst handoff prospectively admits a genuinely fresh independently motivated native reduction-resistant primary object; then MAIN owns all authorized critical-path work and stops at the specified review boundary. For any H7-like object, prospectively separate equal-privilege mechanistic reductions from stronger-privilege counterfactual ceilings and require responsibility-changing/local-observation-preserving intervention pairs. Do not manufacture a successor from literature pressure, reopen LP01 or NI01 sensitivity, or reuse consumed identities.",
+  "expected_next_action": "Create a research branch from exact main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d, implement the fixed DEV-only cycle-1 harness exactly as prospectively specified by Evidence Analyst 3e83f1eb683ce80e326b756fa304e96688fdd3fe, run outcome-independent CI/preflight, then execute once and stop for Analyst review on any valid outcome.",
   "owner": "main"
 }
