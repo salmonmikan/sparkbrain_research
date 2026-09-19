@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-09-20T05:49:00+09:00",
+  "timestamp": "2026-09-20T06:24:00+09:00",
   "worker_role": "main",
-  "execution_mode": "RELAY",
-  "analyst_commit": "d6b14d826a0847e439dfedd86e363786d84e329a",
+  "execution_mode": "PRIMARY",
+  "analyst_commit": "eb1c305017d32c8c3efb0794e547b889e5a80461",
   "research_layer": "ARCHITECTURE_STUDY",
-  "current_lane": "ASSEMBLY_CROSSCASCADE_FALLBACK_SEGMENTATION_ARCHITECTURE_STUDY_CYCLE1_WORKFLOW_IN_PROGRESS",
+  "current_lane": "REFRACTORY_CURRENT_ACCOUNTING_ARCHITECTURE_STUDY_CYCLE1_WORKFLOW_IN_PROGRESS",
   "candidate_question": {
-    "id": "CAND-ASSEMBLY-CROSSCASCADE-FALLBACK-01",
-    "question": "Within supported synthetic-development v0.5 conditions, does episode-global fallback across distinct sparse cascades alter assembly candidate/maturation or one fixed downstream prediction observable relative to a boundary-preserving no-crosscascade-fallback shadow extractor?",
+    "id": "CAND-REFRACTORY-CURRENT-ACCOUNTING-01",
+    "question": "During absolute refractory, do same-time positive arrivals cancel inhibitory current before the production clamp, and can that accounting choice change one fixed post-refractory spike observable relative to a positive-ignore shadow comparator?",
     "exploration_cycle_count": {
       "DISCOVERY": 1,
       "ARCHITECTURE_STUDY_STARTED": 1,
@@ -24,7 +24,7 @@
     "ARCHITECTURE_STUDY": {
       "state": "CYCLE1_EXACT_HEAD_WORKFLOW_IN_PROGRESS",
       "owner": "MAIN",
-      "current_object": "CAND-ASSEMBLY-CROSSCASCADE-FALLBACK-01"
+      "current_object": "CAND-REFRACTORY-CURRENT-ACCOUNTING-01"
     },
     "PRE_FORMAL": {
       "state": "EMPTY_HOLD",
@@ -35,65 +35,76 @@
       "owner": "MAIN"
     }
   },
+  "candidate_pool": {
+    "CAND-REFRACTORY-CURRENT-ACCOUNTING-01": "ACTIVE_ARCHITECTURE_CYCLE1",
+    "CAND-ASSEMBLY-CROSSCASCADE-FALLBACK-01": "HOLD_COMPLETE_DISCOVERY1_ARCHITECTURE1",
+    "CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01": "HOLD_STATIC_DETECTOR_CONSISTENCY_PENDING",
+    "CAND-TOPK-PA-01": "HOLD_NO_CYCLE3",
+    "CAND-H7-RESP-01": "HOLD_NO_NATIVE_MECHANISM"
+  },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst_handoff": "d6b14d826a0847e439dfedd86e363786d84e329a",
-    "research_branch": "research/main-assembly-crosscascade-fallback-segmentation-arch-study-20260920",
-    "research_head": "388799d9880d7b472417a680f288da13f4fd9b41",
-    "prospective_contract_commit": "7a58520f08183714fdc13cb728f2e353688cf0f2",
-    "pre_diagnostic_harness_cleanup_commit": "e84793081444f16fe0a3f3c457176569ee70267b",
-    "workflow_commit": "388799d9880d7b472417a680f288da13f4fd9b41",
+    "evidence_analyst_handoff": "eb1c305017d32c8c3efb0794e547b889e5a80461",
+    "research_branch": "research/main-refractory-current-accounting-arch-study-20260920",
+    "research_head": "4ac9aeead78ec8d053291f922096fab7e31f6070",
+    "prospective_contract_commit": "c32ec231e217f4229b761f2ccf426f3ecd7ed582",
+    "harness_commit": "e5aab6e64386a8494da469cc43fd378e4a318251",
+    "workflow_commit": "4ac9aeead78ec8d053291f922096fab7e31f6070",
     "source_blobs": {
+      "src/sparkbrain/v04/field.py": "e2279d69cd04030238317361d5ee3abdc1009c32",
       "src/sparkbrain/v04/contracts.py": "9d3ae216a518ff6d409a67cd02f34f1dc20a8ab8",
-      "src/sparkbrain/v05/assemblies.py": "a0a8c41e21db68cafc08ace8dac50b7a56607a52",
-      "src/sparkbrain/v05/brain.py": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
-      "src/sparkbrain/v05/contracts.py": "048b93cddb16dbe9276a0e2c0f972406291c1cb2",
-      "src/sparkbrain/v05/prediction.py": "9805031fb8db235d2f3cf4c81421b896d2597af4",
-      "tests/v05/test_v05_assemblies.py": "99d847dae4aa8b394680acbb44ae01e72a5d9d4f"
+      "src/sparkbrain/v04/topology.py": "9129161bd2e7f7cd0ec70684e176700f128d4a6b",
+      "tests/v04/test_v04_field.py": "08128a255b09d996160211f598d6f0a64d91ead0",
+      "docs/THEORY_SPEC_v0.4.md": "4040aca59b32d8cd3c72dc0df64b55f434a42351",
+      "docs/V04_STATUS.md": "f75d9c27f2c1cc906ea480c925c08868d1c08ef4"
     }
   },
-  "lease_collision_reconciliation": {
-    "inherited_execution_mode": "PRIMARY",
-    "inherited_status": "BLOCKED",
-    "inherited_heartbeat_at": "2026-09-20T05:18:00+09:00",
-    "inherited_object": "CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01",
+  "fast_path_reconciliation": {
+    "status": "FAST_PATH_NO_FULL_RECONCILIATION",
+    "stable_main_matches_analyst": true,
+    "fresh_analyst_allocation_clear": true,
+    "inherited_main_lease_status": "WAITING_EXTERNAL",
+    "inherited_object": "CAND-ASSEMBLY-CROSSCASCADE-FALLBACK-01",
     "fresh_primary_running_collision": false,
-    "fresh_analyst_superseded_frontier": true,
     "new_target_branch_preexisted": false,
     "sub_collision_found": false,
-    "sub_reference": "research/exploratory-sub-assembly-cascade-fallback-bridging-20260920@373f7d52af3b46a23ae976863a2eb5d73d982b5f",
-    "relay_lease_acquired_before_research_mutation": true
+    "sub_reference": "research/exploratory-sub-refractory-inhibition-cancellation-20260920@7b1dff2b1b3677c4af37969364b74d119bd942a8",
+    "primary_lease_acquired_before_research_mutation": true
   },
   "prospective_binding": {
     "stable_main_and_exact_source_blobs": "BOUND",
-    "input_family": "SYNTHETIC_DEVELOPMENT_MATCHED_SPLIT_SPARSE_AND_JOINED_CONTROL",
-    "current_arm": "EPISODE_GLOBAL_FALLBACK",
-    "shadow_arm": "BOUNDARY_PRESERVING_NO_CROSSCASCADE_FALLBACK",
-    "assembly_parameters": "REPOSITORY_DEFAULT_ASSEMBLY_CONFIG_MATURE_EPISODES_3",
-    "representation_observables": [
-      "pattern_count",
-      "ordered_units",
-      "source_cascade_id"
+    "source_comment_docs_tests": "BOUND",
+    "input_family": "SYNTHETIC_DEVELOPMENT_ONE_UNIT_DIRECT_ARRIVAL",
+    "production_semantics": "NET_THEN_REFRACTORY_CLAMP",
+    "shadow_semantics": "IGNORE_POSITIVE_THEN_APPLY_INHIBITION_DURING_REFRACTORY",
+    "core_arms": [
+      "inhibition_only",
+      "balanced_same_time",
+      "excitation_only"
     ],
-    "assembly_observables": [
-      "candidate_count",
-      "mature_activation_present"
-    ],
-    "downstream_observable": "probe_prediction_value",
+    "outside_refractory_control": "BOUND_IDENTICAL_CURRENTS_TIMES_AND_PROBE",
+    "downstream_observable": "post_refractory_probe_spike_count",
+    "machine_fact_method": "AST_STRUCTURAL_PLUS_EXACT_BLOB_HASHES",
     "terminal_mapping_bound": true,
     "machine_handoff_fields_bound": true,
-    "raw_before_summary_bound": true
+    "raw_before_summary_bound": true,
+    "fixed_tolerance": 1e-12
+  },
+  "branches_prs_advanced": {
+    "research_branch_created": "research/main-refractory-current-accounting-arch-study-20260920",
+    "research_head": "4ac9aeead78ec8d053291f922096fab7e31f6070",
+    "prs_created_or_merged": []
   },
   "workflow_experiments": {
     "architecture_workflow": {
-      "run_id": 35468475903,
-      "head": "388799d9880d7b472417a680f288da13f4fd9b41",
+      "run_id": 35470259892,
+      "head": "4ac9aeead78ec8d053291f922096fab7e31f6070",
       "status": "in_progress",
       "conclusion": null
     },
     "ordinary_ci": {
-      "run_id": 35468475862,
-      "head": "388799d9880d7b472417a680f288da13f4fd9b41",
+      "run_id": 35470259884,
+      "head": "4ac9aeead78ec8d053291f922096fab7e31f6070",
       "status": "in_progress",
       "conclusion": null
     }
@@ -104,7 +115,7 @@
     "accepted_architecture_observation": "NONE_YET_WORKFLOW_PENDING",
     "mapped_outcome": null,
     "evidentiary_status": "NON_EVIDENTIARY",
-    "claim_boundary": "No scientific or Architecture terminal result is interpreted before the exact-head workflow completes and artifact/source/contract/raw binding is verified."
+    "claim_boundary": "No Architecture terminal result is interpreted before exact-head CI/preflight and the outcome-bearing workflow complete with verifiable raw provenance."
   },
   "consumed_identities": [
     "c19-external-v2-official-v4",
@@ -119,12 +130,11 @@
     "status": "EXACT_HEAD_ARCHITECTURE_WORKFLOW_IN_PROGRESS",
     "exact_main_verified": true,
     "exact_research_head_verified": true,
-    "source_scope_blob_bound_before_outcome": true,
-    "input_family_bound_before_outcome": true,
-    "comparator_bound_before_outcome": true,
-    "metrics_and_terminal_mapping_bound_before_outcome": true,
-    "machine_handoff_bound_before_outcome": true,
-    "pre_diagnostic_mechanical_cleanup_only": true,
+    "required_field_blob_verified": true,
+    "source_comment_docs_tests_bound_before_outcome": true,
+    "input_comparator_control_observable_bound_before_outcome": true,
+    "terminal_mapping_bound_before_outcome": true,
+    "decision_relevant_machine_facts_use_ast_structural_checks": true,
     "production_source_modified_this_run": false,
     "official_test_accessed_this_run": false,
     "formal_identity_created_this_run": false,
@@ -136,26 +146,48 @@
     "outcome_responsive_redesign_performed_this_run": false,
     "post_outcome_repair_performed_this_run": false
   },
-  "contingency_consumed": "PRE_START_BINDING_COMPLETE",
-  "critical_path_actions_performed": [
-    "Read fresh Evidence Analyst latest/state, MAIN latest/state/lease, and current SUB report.",
-    "Re-fetched stable main and the exact source/callsite/test blobs required for the new Architecture object.",
-    "Confirmed there was no fresh PRIMARY RUNNING collision on the new object and acquired a RELAY MAIN lease.",
-    "Created the fresh research branch from exact stable main.",
-    "Prospectively bound exact source/input/comparator/observables/terminal mapping/machine handoff fields before outcome-bearing execution.",
-    "Added a read-only NON_EVIDENTIARY harness and applied only a pre-diagnostic science-invariant Ruff/typing cleanup.",
-    "Added a push-triggered exact-head Architecture workflow gated by Python 3.11/3.13 validation, ordinary tests, stable-main ancestry, and preflight binding checks.",
-    "Observed Architecture workflow 35468475903 and ordinary CI 35468475862 in progress on exact head 388799d9880d7b472417a680f288da13f4fd9b41 and stopped under WAITING_EXTERNAL policy."
+  "blocked_until": "Exact-head ordinary CI/readiness/preflight and Architecture workflow complete. Any semantic/protocol gap or outcome-bearing failure requiring redesign stops the cycle.",
+  "do_not_touch": [
+    "consumed identities",
+    "immutable evidence/control/preserve refs",
+    "completed Assembly/suppression/Temporal/topology-config/Top-k/H5/NI01/C19/PD01 artifacts",
+    "official TEST/formal scorer surfaces",
+    "Utility-owned decisions/results/state",
+    "scheduler definitions",
+    "PR #148/#149 governance work"
   ],
-  "stop_reason": "EXACT_HEAD_ASSEMBLY_SEGMENTATION_CI_AND_ARCHITECTURE_WORKFLOW_IN_PROGRESS",
-  "work_left_for_sub": "Independent bounded Discovery only. Do not continue the MAIN Assembly segmentation object or take its blockers.",
+  "outcome_contingencies": {
+    "PRE_START_BINDING_COMPLETE": "ONE_FIXED_ARCHITECTURE_CYCLE",
+    "PRE_START_MECHANICAL_BLOCKER": "SCIENCE_INVARIANT_FIX_BEFORE_OUTCOME_ONLY_THEN_REBIND_AND_CI",
+    "PRE_START_SEMANTIC_OR_PROTOCOL_GAP": "STOP",
+    "EXPLICIT_NETTING_CONTRACT_MATCHES_PRODUCTION": "STOP_ARCHITECTURE_API_NOTE_ONLY",
+    "NO_SUPPORTED_MIXED_SIGN_RUNTIME_CONDITION": "STOP_REJECT_RUNTIME_RELEVANCE",
+    "STATE_ONLY_REFRACTORY_ACCOUNTING_EFFECT": "STOP_ARCHITECTURE_STATE_SEMANTICS_ONLY",
+    "FUNCTIONAL_REFRACTORY_ACCOUNTING_EFFECT": "STOP_FRESH_ARCHITECTURE_REVIEW_NO_AUTO_PROMOTION",
+    "NO_SEMANTIC_DIFFERENCE_UNDER_FIXED_PROBE": "STOP_REJECT_CURRENT_FUNCTIONAL_QUESTION",
+    "MIXED_OR_AMBIGUOUS_REFRACTORY_CONTRACT": "STOP_HOLD",
+    "INVALID_DIAGNOSTIC": "DISCARD_STOP"
+  },
+  "critical_path_actions_performed": [
+    "Read fresh Evidence Analyst authority, MAIN latest/state/lease, and current SUB report.",
+    "Re-fetched exact stable main and required v0.4 field source plus bound source/contracts/topology/docs/tests blobs.",
+    "Confirmed no fresh PRIMARY RUNNING collision and acquired PRIMARY lease before research mutation.",
+    "Created a fresh research branch from exact stable main.",
+    "Prospectively bound source/comment/docs/tests/input/comparator/control/observable/terminal mapping/machine handoff fields before outcome-bearing execution.",
+    "Added a read-only NON_EVIDENTIARY harness using AST-structural machine-fact validation and raw fsync/reload-before-summary semantics.",
+    "Added a push-triggered exact-head Architecture workflow gated by Python 3.11/3.13 validation, ordinary tests, main ancestry, lint/compile, and preflight.",
+    "Observed Architecture workflow 35470259892 and ordinary CI 35470259884 in progress on exact head 4ac9aeead78ec8d053291f922096fab7e31f6070 and stopped under WAITING_EXTERNAL policy."
+  ],
+  "critical_path_fixes": [],
+  "stop_reason": "EXACT_HEAD_REFRACTORY_ACCOUNTING_CI_AND_ARCHITECTURE_WORKFLOW_IN_PROGRESS",
+  "work_left_for_sub": "Independent bounded secondary Discovery only. Do not take CAND-REFRACTORY-CURRENT-ACCOUNTING-01 or its blockers, Assembly follow-up, suppression detector task, Top-k, H7 construction, or FORMAL/TEST/scoring/preserve/evidence surfaces.",
   "utility_request_created": null,
-  "next_MAIN_action": "Re-fetch fresh Analyst authority, lease, exact research head, ordinary CI 35468475862, and Architecture workflow 35468475903. If a pre-diagnostic science-invariant mechanical blocker occurs, only the prospectively allowed mechanical fix plus exact rebind/CI is permitted. If a valid terminal artifact is produced, verify exact head/source/contract/artifact/raw binding, persist the fixed mapped outcome, and STOP for fresh Evidence Analyst review. No automatic cycle 2, PRE_FORMAL, or FORMAL continuation.",
+  "next_MAIN_action": "Re-fetch fresh Analyst authority, lease, exact research head 4ac9aeead78ec8d053291f922096fab7e31f6070, ordinary CI 35470259884, and Architecture workflow 35470259892. If a pre-diagnostic science-invariant blocker occurs before outcome visibility, only the prospectively allowed mechanical fix plus exact rebind/CI is permitted. If a valid terminal artifact is produced, verify exact head/source/contract/machine-fact/artifact/raw binding, apply the fixed mapping once, persist the NON_EVIDENTIARY Architecture result, and STOP for fresh Analyst review. No automatic cycle 2, PRE_FORMAL, or FORMAL continuation.",
   "persistence_result": {
-    "history_path": "reports/orchestrator/history/2026-09-20/0548-main.md",
-    "history_commit": "4659bbb1e344ba73aeba60a4c2555ac85b090f03",
-    "latest_md_commit": "0fa5968cd6b328783a904e7fb85005af952e235e",
-    "lease_acquisition_commit": "a5569d11a7bda7a1de11c92b964367d881e4f82f",
+    "lease_acquisition_commit": "38c3686fca2486f3a8d3d7c73556d2b4e04b4ff6",
+    "history_path": "reports/orchestrator/history/2026-09-20/0624-main.md",
+    "history_commit": "14efe39652e22dac7c616586bc0d03d4271e5bd6",
+    "latest_md_commit": "ca67eeae484572f7c7f6b0713feeea06b4f9bb2e",
     "state_json": "this update",
     "force_push_used": false
   }
