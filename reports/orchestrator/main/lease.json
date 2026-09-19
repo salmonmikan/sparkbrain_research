@@ -1,14 +1,14 @@
 {
   "run_id": "sparkbrain-main-primary-20260920T0620JST",
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "WAITING_EXTERNAL",
   "started_at": "2026-09-20T06:20:00+09:00",
-  "heartbeat_at": "2026-09-20T06:20:00+09:00",
+  "heartbeat_at": "2026-09-20T06:24:00+09:00",
   "analyst_commit": "eb1c305017d32c8c3efb0794e547b889e5a80461",
-  "active_branch": null,
+  "active_branch": "research/main-refractory-current-accounting-arch-study-20260920",
   "active_identity": null,
-  "active_step": "REFRACTORY_CURRENT_ACCOUNTING_ARCHITECTURE_STUDY_CYCLE1_PROSPECTIVE_BINDING",
-  "workflow_run_id": null,
-  "expected_next_action": "Prospectively bind exact source/comment/docs/tests/input/comparator/control/observable/terminal-map/machine-field contract for CAND-REFRACTORY-CURRENT-ACCOUNTING-01 on a fresh branch from main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d, then run exact-head ordinary CI/readiness before the one authorized NON_EVIDENTIARY Architecture diagnostic. Stop on any semantic/protocol gap or outcome-bearing failure requiring redesign.",
+  "active_step": "EXACT_HEAD_REFRACTORY_ACCOUNTING_ARCHITECTURE_WORKFLOW_IN_PROGRESS",
+  "workflow_run_id": 35470259892,
+  "expected_next_action": "Re-fetch fresh Evidence Analyst authority, this lease, exact research head 4ac9aeead78ec8d053291f922096fab7e31f6070, ordinary CI 35470259884, and Architecture workflow 35470259892. If a pre-diagnostic science-invariant mechanical blocker occurs before outcome visibility, only the prospectively authorized mechanical fix plus exact rebind/CI is permitted. If a valid terminal artifact is produced, verify exact head/source/contract/machine-fact/artifact/raw binding, apply the fixed terminal mapping once, persist the NON_EVIDENTIARY Architecture result, and STOP for fresh Evidence Analyst review. Do not automatically continue to cycle 2, PRE_FORMAL, or FORMAL.",
   "owner": "main"
 }
