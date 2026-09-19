@@ -1,14 +1,14 @@
 {
   "run_id": "sparkbrain-main-primary-20260920T0115JST",
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-20T01:15:06+09:00",
-  "heartbeat_at": "2026-09-20T01:23:39+09:00",
+  "heartbeat_at": "2026-09-20T01:25:42+09:00",
   "analyst_commit": "e781202e8c7ae4562c10fa46cdddfb3b0eb1bc08",
   "active_branch": "research/main-temporal-batch-partition-arch-study-20260920",
   "active_identity": null,
-  "active_step": "FULL_RECONCILIATION_ANALYST_ARTIFACT_DESCRIPTIVE_MISMATCH",
+  "active_step": "LOWER_FUNNEL_MAIN_HOLD_PENDING_FRESH_OBJECT",
   "workflow_run_id": 35451528895,
-  "expected_next_action": "Reconcile the completed exact-head Temporal Architecture artifact against the fresh Analyst handoff, persist the exact NON_EVIDENTIARY result and integrity discrepancy, then HOLD pending a fresh prospectively authorized MAIN object. Do not execute Temporal cycle 2, PRE_FORMAL, FORMAL, or outcome-responsive redesign.",
+  "expected_next_action": "Await a fresh Evidence Analyst handoff that prospectively authorizes a genuinely fresh central Architecture/PRE_FORMAL/FORMAL object. Do not run Temporal cycle 2, reinterpret or rebind the completed cycle 1, manufacture a successor, or absorb SUB Discovery.",
   "owner": "main"
 }
