@@ -1,45 +1,44 @@
 {
-  "timestamp": "2026-09-19T23:48:30+09:00",
+  "timestamp": "2026-09-20T00:23:00+09:00",
   "worker_role": "main",
-  "execution_mode": "RELAY",
-  "analyst_commit": "982e5686524c9fc2b665efcf44069fef49196333",
+  "execution_mode": "PRIMARY",
+  "analyst_commit": "862dd62cdce58f06e5c782b4b54212d93e40212e",
   "research_layer": "ARCHITECTURE_STUDY",
-  "current_lane": "ASSEMBLY_PROTOTYPE_LOCKIN_ARCHITECTURE_STUDY_CYCLE1",
-  "current_phase": "COMPLETED_NO_OR_LOW_SUPPORT_STOP_FOR_FRESH_ANALYST_REVIEW",
+  "current_lane": "TEMPORAL_EXPECTATION_BATCH_PARTITION_ARCHITECTURE_STUDY_CYCLE1",
+  "current_phase": "WAITING_EXTERNAL_EXACT_HEAD_CI_AND_ONE_BOUNDED_DIAGNOSTIC",
   "candidate": {
-    "id": "CAND-ASSEMBLY-PROTOTYPE-LOCKIN-01",
-    "question": "Does episode order alone on an identical DEV-derived internal-pattern multiset change mature assembly partitioning enough to alter downstream prediction/action behavior under current frozen first-exemplar greedy assignment?",
-    "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
+    "id": "CAND-TEMPORAL-BATCH-PARTITION-01",
+    "question": "For identical repository-reference external pulse timelines, does API batch partitioning alone alter omission schedules and fixed downstream replay observables under current temporal-expectation semantics?",
+    "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY_PENDING",
     "exploration_cycle_count": {
       "discovery_completed": 1,
-      "architecture_completed": 1,
-      "architecture_cycle_1_status": "VALID_COMPLETED_NO_OR_LOW_SUPPORT"
+      "architecture_started": 1,
+      "architecture_completed": 0,
+      "programme_default_budget": 3
     }
   },
   "research_layer_state": {
     "DISCOVERY": "OPEN_SUB_DEFAULT_NON_EVIDENTIARY",
-    "ARCHITECTURE_STUDY": "MAIN_CYCLE1_COMPLETED_NO_OR_LOW_SUPPORT_STOPPED",
+    "ARCHITECTURE_STUDY": "ACTIVE_MAIN_TEMPORAL_BATCH_PARTITION_CYCLE1_WAITING_EXTERNAL",
     "PRE_FORMAL": "EMPTY_HOLD",
     "FORMAL": "EMPTY_HOLD"
   },
   "candidate_pool": {
-    "CAND-ASSEMBLY-PROTOTYPE-LOCKIN-01": "ARCHITECTURE_CYCLE1_COMPLETED_NO_OR_LOW_SUPPORT_REJECT_CURRENT_STRONGER_FUNCTIONAL_QUESTION_PENDING_ANALYST",
-    "CAND-TOPK-PA-01": "HOLD_PENDING_EXISTING_CROSS_SEED_UTILITY_AND_FRESH_PROSPECTIVE_REDUCTION_QUESTION",
-    "CAND-H7-RESP-01": "HOLD_NO_NATIVE_OBJECT",
-    "CAND-STRUCTURAL-ORDER-PATH-01": "REJECT"
+    "CAND-TEMPORAL-BATCH-PARTITION-01": "ARCHITECTURE_CYCLE1_ACTIVE_WAITING_EXTERNAL",
+    "CAND-TOPK-PA-01": "HOLD_UTILITY_MIXED_NO_CYCLE3_NO_PRE_FORMAL",
+    "CAND-ASSEMBLY-PROTOTYPE-LOCKIN-01": "REJECT_NO_OR_LOW_SUPPORT",
+    "CAND-H7-RESP-01": "HOLD_NO_NATIVE_OBJECT"
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst_handoff": "982e5686524c9fc2b665efcf44069fef49196333",
-    "active_main_research_branch": "research/main-assembly-prototype-lockin-arch-study-20260919",
-    "active_main_research_head": "7d9b90e58ee088ff2b4187d3c62c5e568148e6aa",
+    "evidence_analyst_handoff": "862dd62cdce58f06e5c782b4b54212d93e40212e",
+    "active_main_research_branch": "research/main-temporal-batch-partition-arch-study-20260920",
+    "active_main_research_head": "7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
     "source_blobs": {
-      "assemblies": "a0a8c41e21db68cafc08ace8dac50b7a56607a52",
-      "brain": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
-      "prediction": "9805031fb8db235d2f3cf4c81421b896d2597af4",
-      "action": "792cba20ec5411633f12478d641adf35dba505e3",
-      "worlds": "454b05c0347a58687b7d0c50c3a56dd744164946",
-      "v05_reference": "d3c82d0279c3bce09d76ddf0ad2df1ec74bc2d7f"
+      "src/sparkbrain/v04/brain.py": "25fd56b082168a9ea71f313023451858d00b6184",
+      "src/sparkbrain/v04/transduction.py": "1b88027fbcc0a1f8506fb644fd251c14039ef8a4",
+      "src/sparkbrain/v04/worlds.py": "0305aa5493c097f58b1fbdbc2bdeccff5dff4f25",
+      "src/sparkbrain/v04/evaluation.py": "9d8bbe91c466eddcd6ecaa1b3ccf65399d4445cd"
     },
     "formal_identity": null,
     "started_ref": null,
@@ -47,22 +46,34 @@
     "formal_evidence_ref": null,
     "sub_reserved_lane": "BOUNDED_SECONDARY_DISCOVERY"
   },
+  "fast_path_used": true,
+  "full_reconciliation_reason": null,
+  "branches_prs_advanced": {
+    "research_branch_created": "research/main-temporal-batch-partition-arch-study-20260920",
+    "contract_commit": "7d41c8a5ba53c7bb84a7f5fda8d46d59f1d5c4a7",
+    "harness_commit": "819e0b9ea6a7b93c0b8d3f22c6cf95065068297f",
+    "exact_head": "7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
+    "pull_requests_merged": []
+  },
   "prospective_contract": {
-    "path": "analysis/architecture/assembly_prototype_lockin_cycle1_contract_20260919.json",
-    "development_seeds": [501, 502],
-    "adaptation_episodes_per_seed": 48,
-    "fixed_probe_condition": "jitter",
-    "fixed_probe_episodes_per_seed": 16,
-    "order_pairs_per_seed": 12,
-    "pairing": "deterministic permutation paired with exact reversal",
-    "corpus_rule": "One fixed DEV-derived internal-pattern corpus per seed is generated before order replay and reused identically across all arms.",
-    "isolation_rule": "Upstream field/receptor/homeostasis/plasticity effects are frozen before assembly-order replay.",
-    "native_threshold": 0.66,
-    "comparator": "stronger-privilege order-invariant connected-component/union-find at threshold 0.66",
-    "support_mapping": [
-      "NO_OR_LOW_SUPPORT",
-      "FUNCTIONAL_ORDER_LOCKIN_SIGNAL",
-      "REPRESENTATION_ONLY",
+    "path": "analysis/architecture/temporal_batch_partition_cycle1_contract_20260920.json",
+    "timeline_families": ["repetition_train_defaults", "noisy_motif_stream_defaults"],
+    "timeline_sha256": {
+      "repetition_train_defaults": "632f30cb47bd2b2a34abe892b24f5af0e357713a5f8a384e45a6abfac2d29b12",
+      "noisy_motif_stream_defaults": "b34ab49412ec7170c6a2655c2d047f62ff5bd48ed3c9c85e43bfe6a21384c1dd"
+    },
+    "tracker_defaults": {
+      "tolerance_fraction": 0.3,
+      "min_observations": 3,
+      "alpha": 0.35
+    },
+    "partition_arms": ["WHOLE_BATCH", "MIDPOINT_TWO_BATCH", "EVENT_TIME_CAUSAL"],
+    "final_horizon": "last external pulse + 35.0 ms",
+    "replay": "fresh v0.4 brain; topology_seed=41; expectations=false; plasticity=false",
+    "outcome_map": [
+      "NO_BATCH_PARTITION_EFFECT",
+      "SCHEDULER_ONLY_PARTITION_EFFECT",
+      "FUNCTIONAL_BATCH_PARTITION_EFFECT",
       "MIXED"
     ],
     "raw_before_interpretation": true,
@@ -71,87 +82,28 @@
   },
   "workflows_experiments": [
     {
-      "run_id": 35448630760,
-      "name": "Assembly prototype lock-in Architecture cycle 1",
-      "head": "39364dd34cbb1cb51ab80421f95b491d273c5676",
-      "status": "completed/failure",
-      "failure_stage": "ordinary repository pytest collection before Architecture diagnostic",
-      "diagnostic_executed": false,
-      "classification": "NON_SCIENTIFIC_PREFLIGHT_FAILURE_NO_DIAGNOSTIC_VISIBILITY"
+      "run_id": 35451528895,
+      "name": "Temporal batch partition Architecture cycle 1",
+      "head": "7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
+      "status": "in_progress",
+      "exact_head_ci_python_3_11": "in_progress_dependency_install_after_ancestry_success",
+      "exact_head_ci_python_3_13": "in_progress_dependency_install_after_ancestry_success",
+      "architecture_job": "pending_on_exact_head_ci",
+      "diagnostic_executed": false
     },
     {
-      "run_id": 35448815310,
-      "name": "Assembly prototype lock-in Architecture cycle 1",
-      "head": "7d9b90e58ee088ff2b4187d3c62c5e568148e6aa",
-      "status": "completed/success",
-      "exact_head_ci_python_3_11": "success",
-      "exact_head_ci_python_3_13": "success",
-      "architecture_job": "success",
-      "diagnostic_executed": true
-    },
-    {
-      "run_id": 35448815303,
-      "name": "ci",
-      "head": "7d9b90e58ee088ff2b4187d3c62c5e568148e6aa",
-      "status": "completed/success",
-      "scientific_role": "ordinary repository CI only"
+      "name": "ordinary repository ci",
+      "head": "7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
+      "status": "dispatched_by_push",
+      "scientific_role": "none"
     }
   ],
-  "artifact_verification": {
-    "artifact_id": 10586141881,
-    "artifact_name": "assembly-prototype-lockin-cycle1-7d9b90e58ee088ff2b4187d3c62c5e568148e6aa",
-    "actions_digest": "sha256:ec67a10eb4374a7af17840020de23a57427d20a3e72cab13685777125c0dccc1",
-    "files": ["corpus_manifest.json", "metadata.json", "raw.jsonl", "summary.json"],
-    "raw_sha256": "956cf3db8c7036a4f8d6ebb441e6e61d681b7029722227c6be2d855475f1ef64",
-    "corpus_manifest_sha256": "9c1843646a8ebe40a9b12e2bada89202643986c17785095c987ef0c87c52c356",
-    "contract_sha256_recorded": "07ef45cd468d76dce89fadfe62f3d3740c2877c042671ae6a6fdb7d22b2ce9a0",
-    "raw_row_count": 410,
-    "raw_breakdown": {
-      "comparator_rows": 2,
-      "pair_rows": 24,
-      "probe_rows": 384
-    },
-    "corpus_counts": {
-      "501": {"adaptation_episodes": 48, "probe_episodes": 16, "adaptation_patterns": 48, "probe_patterns": 16},
-      "502": {"adaptation_episodes": 48, "probe_episodes": 16, "adaptation_patterns": 48, "probe_patterns": 16}
-    },
-    "raw_before_summary_verified": true,
-    "source_binding_verified_by_exact_head_preflight": true,
-    "official_test_opened": false,
-    "formal_identity": null,
-    "started": false
-  },
   "observations_results": {
     "formal_scientific_evidence": "NONE_NEW",
     "pre_formal_development_evidence": "NONE_NEW",
-    "architecture_study_result": "NO_OR_LOW_SUPPORT",
-    "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
-    "mapped_result": "NO_OR_LOW_SUPPORT",
-    "per_seed": {
-      "501": {
-        "representation_divergent_pairs": 0,
-        "prediction_support_pairs": 0,
-        "joint_representation_and_prediction_support_pairs": 0,
-        "total_prediction_disagreements": 0,
-        "total_descriptive_action_disagreements": 0,
-        "max_pairwise_co_clustering_disagreement": 0.0
-      },
-      "502": {
-        "representation_divergent_pairs": 0,
-        "prediction_support_pairs": 0,
-        "joint_representation_and_prediction_support_pairs": 0,
-        "total_prediction_disagreements": 0,
-        "total_descriptive_action_disagreements": 0,
-        "max_pairwise_co_clustering_disagreement": 0.0
-      }
-    },
-    "mapping_check": "Both seeds have 0/12 representation-divergent pairs; prospectively fixed NO_OR_LOW_SUPPORT rule triggers when either seed is below 4/12.",
-    "new_scientific_information": "NEW_DEV_ONLY_NON_EVIDENTIARY_ARCHITECTURE_INFORMATION_ONLY"
-  },
-  "contingency_consumed": {
-    "label": "NO_OR_LOW_SUPPORT",
-    "prospectively_fixed_action": "REJECT current stronger functional question; retain Discovery observation only; STOP",
-    "consumed_exactly_once": true
+    "architecture_study_result": "PENDING_EXTERNAL_WORKFLOW",
+    "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY_PENDING",
+    "new_scientific_information": "NONE_YET"
   },
   "consumed_identities": [
     "c19-external-v2-official-v4",
@@ -163,8 +115,10 @@
     "h5-event-routing-work-reduction-official-v1"
   ],
   "integrity_state": {
-    "status": "CLEAN_VALID_NON_EVIDENTIARY_ARCHITECTURE_RESULT_STOPPED",
+    "status": "CLEAN_PROSPECTIVE_BINDING_COMPLETE_WAITING_EXTERNAL",
+    "contract_fixed_before_outcome_visibility": true,
     "official_test_accessed": false,
+    "consumed_preserve_raw_accessed": false,
     "formal_identity_created": false,
     "started_created": false,
     "formal_preserve_created": false,
@@ -174,50 +128,42 @@
     "consumed_identity_reused": false,
     "research_merge_performed": false,
     "outcome_responsive_redesign_performed": false,
-    "cycle_2_executed": false,
     "rerun_or_retune_performed": false
   },
   "lease_collision_reconciliation": {
-    "prior_execution_mode": "PRIMARY",
-    "prior_status": "WAITING_EXTERNAL",
-    "prior_heartbeat": "2026-09-19T23:30:00+09:00",
-    "fresh_same_object_primary_running_collision_found": false,
-    "relay_lease_acquire_commit": "0e9afedbaeab72b4756ac75ebbe129ee5b5968d9",
-    "analyst_ref_rechecked": "982e5686524c9fc2b665efcf44069fef49196333",
+    "prior_status": "COMPLETED",
+    "prior_execution_mode": "RELAY",
+    "fresh_same_object_running_collision_found": false,
+    "primary_lease_acquire_commit": "df7503449466fe729ee60d1a23e04a25231da2fc",
+    "analyst_ref_rechecked": "862dd62cdce58f06e5c782b4b54212d93e40212e",
     "main_ref_rechecked": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "research_head_rechecked": "7d9b90e58ee088ff2b4187d3c62c5e568148e6aa",
+    "research_head_rechecked": "7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
     "sub_collision": false,
-    "sub_note": "SUB independently completed TEMPORAL_EXPECTATION_BATCH_PARTITION_SENSITIVITY_DISCOVERY and explicitly avoided the MAIN assembly candidate."
+    "sub_note": "Fresh Analyst promoted SUB's completed temporal-batching Discovery to MAIN Architecture cycle 1 and explicitly prohibited SUB continuation of this candidate."
   },
-  "critical_path_actions_performed": [
-    "Collected repaired exact-head workflow 35448815310 and ordinary CI 35448815303.",
-    "Verified both exact-head CI matrices, prospective binding, Architecture preflight and exactly one diagnostic all succeeded.",
-    "Downloaded and inspected artifact 10586141881.",
-    "Verified corpus counts, exact authority/source metadata, no TEST/FORMAL surfaces, and raw-before-summary execution ordering.",
-    "Recomputed the prospectively fixed support statistics from raw rows and confirmed summary label NO_OR_LOW_SUPPORT.",
-    "Consumed the precommitted NO_OR_LOW_SUPPORT contingency exactly once and stopped."
+  "critical_path_fixes": [],
+  "same_run_steps": [
+    "Acquired PRIMARY lease after collision check.",
+    "Re-fetched stable main and exact Analyst source bindings.",
+    "Created fresh research branch from exact main.",
+    "Frozen prospectively fixed NON_EVIDENTIARY Architecture contract before outcome visibility.",
+    "Implemented fixed tracker partition/event-time-causal schedule derivation and isolated replay harness.",
+    "Added exact-head CI/preflight/one-cycle workflow and dispatched it on final research head.",
+    "Observed only pre-diagnostic CI progress; no Architecture outcome is visible.",
+    "Persisted WAITING_EXTERNAL handoff rather than occupying PRIMARY solely for CI wait."
   ],
-  "critical_path_fixes": [
-    {
-      "kind": "PRE_DIAGNOSTIC_CI_DEPENDENCY_REPAIR",
-      "performed_by": "PRIMARY",
-      "description": "Initial exact-head workflow failed ordinary pytest collection because only dev extras were installed; install was aligned with repository CI extras dev,learned,spiking before diagnostic visibility.",
-      "failed_run_id": 35448630760,
-      "repair_commit": "7d9b90e58ee088ff2b4187d3c62c5e568148e6aa",
-      "outcome_visible": false
-    }
-  ],
-  "stop_reason": "VALID_ARCHITECTURE_RESULT_NO_OR_LOW_SUPPORT_STOP_FOR_FRESH_ANALYST_REVIEW",
-  "work_left_for_sub": "Independent bounded Discovery only; SUB must not touch the completed MAIN assembly object unless fresh Analyst authority reallocates it.",
+  "stop_reason": "WAITING_EXTERNAL_EXACT_HEAD_TEMPORAL_BATCH_PARTITION_WORKFLOW",
+  "work_left_for_sub": "Independent bounded Discovery only; SUB must not continue CAND-TEMPORAL-BATCH-PARTITION-01 or take MAIN blockers.",
   "utility_request_created": null,
-  "existing_utility_request": "EVA-20260919-1943-TOPK-CROSS-SEED-SUPPORT",
-  "next_MAIN_action": "STOP. Await fresh Evidence Analyst review. Do not run cycle 2, redesign/retune this same object, or promote to PRE_FORMAL/FORMAL without new prospective Analyst authority.",
+  "existing_utility_request": "SUB-20260919-2344-TEMPORAL-EXPECTATION-BATCHING-CALLSITE-AUDIT",
+  "next_MAIN_action": "Relay or next MAIN must collect only workflow 35451528895 on exact head 7fa4391bbf34cf25e10b708ce64acddf07bf7f42. If valid, verify raw-before-summary artifacts, apply the precommitted four-way outcome map exactly once, persist the NON_EVIDENTIARY result, and STOP for fresh Analyst review. No cycle 2, redesign/retune, PRE_FORMAL or FORMAL continuation is authorized.",
   "persistence_result": {
-    "relay_lease_acquire_commit": "0e9afedbaeab72b4756ac75ebbe129ee5b5968d9",
-    "latest_md_commit": "63b5734053d75520154cce83997bac9bd9d31417",
-    "history_path": "reports/orchestrator/history/2026-09-19/2348-main.md",
+    "primary_lease_acquire_commit": "df7503449466fe729ee60d1a23e04a25231da2fc",
+    "history_commit": "5dd12aaf30d82b99399fb2ad852de97eec5f41e2",
+    "history_path": "reports/orchestrator/history/2026-09-20/0023-main.md",
+    "latest_md_commit": "85d11e0652c5110cb5aa166094a0cd1329273d13",
     "state_json": "this update",
-    "final_lease_commit": "follows history/state persistence",
+    "final_lease_commit": "follows state persistence",
     "force_push_used": false
   }
 }
