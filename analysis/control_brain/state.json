@@ -1,182 +1,91 @@
 {
-  "generated_at_jst": "2026-09-19T18:50:00+09:00",
+  "generated_at_jst": "2026-09-19T22:50:00+09:00",
   "role": "CONTROL_BRAIN",
-  "selected_slot_jst": "18:50",
+  "selected_slot_jst": "22:50",
+  "role_inference_required": false,
   "foundational_doctrine_change": false,
-  "operating_doctrine_change": true,
-  "programme_position": "EXPERIMENTAL_COGNITIVE_ARCHITECTURE_TESTBED_WITH_ACTIVE_LOWER_FUNNEL",
+  "operating_doctrine_change": false,
+  "programme_position": "FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL",
   "central_theory_status": "NO_HIGH_VALUE_FORMAL_OBJECT",
-  "central_theory": "A central novelty claim remains admissible only for a native intervention-validated lineage-specific causal-responsibility effect that is prospectively positive and survives ordinary history/influence and local-learning/recurrent/plastic reductions under matched information, readout, task/world/regime-label and resource privilege. No current object clears this FORMAL admission bar.",
-  "operating_doctrine": "FORMAL HOLD does not imply programme-wide HOLD. DISCOVERY, ARCHITECTURE_STUDY and PRE_FORMAL should remain active when safe bounded nonduplicative work exists, with explicit candidate budgets, promotion/rejection conditions and no automatic evidentiary elevation.",
+  "central_theory": "A central novelty claim remains admissible only for a native intervention-validated lineage-specific causal-responsibility effect that is prospectively positive and survives ordinary history/provenance/actual-causality and local-learning/recurrent/plastic reductions under matched information, readout, task/world/regime-label, and resource privilege. No current object clears this FORMAL admission bar.",
   "human_directives": {
-    "HUMAN-20260918-001": {
-      "disposition": "ACCEPT",
-      "status": "UNCHANGED",
-      "reason": "Promote only stable outcome-independent reusable CX substrate through small reviewed extraction; never wholesale-merge consumed scientific state or result-dependent evidence machinery."
-    },
-    "HUMAN-20260919-002": {
-      "disposition": "ACCEPT",
-      "reason": "Repository protection gaps remain reportable facts but are deferred as implementation work absent a new concrete material integrity risk or fresh human direction. This does not weaken scientific immutability boundaries."
-    },
-    "HUMAN-20260919-003": {
-      "disposition": "ACCEPT",
-      "reason": "Research stagnation is a real throughput defect when safe lower-layer work exists. Preserve strict FORMAL integrity while actively using Discovery, Architecture Study and Pre-formal; prioritize substantive information gain over low-value governance cleanup."
-    }
-  },
-  "strategic_assumptions": {
-    "weakened": [
-      "The prior programme-wide NO_HIGH_VALUE_OBJECT HOLD/no-op posture is no longer justified: lower-layer work has produced useful promotion, rejection and reduction outcomes without weakening FORMAL integrity.",
-      "CAND-TOPK-PA-01 cycle-1 architecture triage support is less robust than the binary signal label suggests because one qualifying magnitude had only one turnover case.",
-      "A delayed amplification architecture signal does not by itself imply a Spark-specific persistence mechanism because ordinary hard-switch geometry plus non-normal recurrent transient gain is a strong reduction candidate.",
-      "Structural same-multiset order dependence does not by itself imply a new mechanism because explicit rewrite-relevant state and graph non-confluence/critical pairs are ordinary explanations."
-    ],
-    "strengthened": [
-      "The four-layer funnel can increase scientific information while keeping all lower-layer outputs explicitly NON_EVIDENTIARY.",
-      "Stop-after-cycle Analyst review remains effective: cycle 1 stopped before replication, and exactly one fixed independent-seed cycle 2 was then prospectively authorized.",
-      "SUB can generate independent candidate information and reject ordinary implementation effects early rather than becoming disguised MAIN assistance.",
-      "FORMAL one-way integrity and consumed-evidence boundaries remain intact while lower-layer throughput increases.",
-      "Architecture triage support adequacy and uncertainty must be calibrated prospectively before any PRE_FORMAL promotion."
-    ]
-  },
-  "authoritative_refs": {
-    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "control_brain_parent": "6ed239b241a39f7d3e934e37751454c8bf3ebb4c",
-    "evidence_analyst": "5b63d21f44812ef8d4938c9ad968bb8ab481b3c5",
-    "orchestrator_report_branch": "beb7b3fec72b90329f0fc3f617e01b8373ed5257",
-    "external_research_audit_branch": "02c5eec39f8fca9dd180c4c91c4ae444ebd50995",
-    "methodology_calibration_branch": "c47e643ec869080493cb1b5560a0ec23db450193",
-    "repository_steward": "6791bbef63e6d6360ed352dcc929d663cd26f851",
-    "scheduler_registry": "ab20cadf2d98b80e43102a38fbdd993f2b80a458",
-    "utility_request_bus_after_assignment": "29822bae19b733b0053ad7bf8d594faab3f4f5e7",
-    "active_topk_research_head": "04ced2b97ed088bb2cdb086d164a86212741e601",
-    "latest_sub_exploratory_head": "6444848f3cf9c4a92bfd6317591ac4e39ffea44f"
+    "HUMAN-20260918-001": {"disposition": "ACCEPT", "status": "UNCHANGED", "reason": "Only stable outcome-independent reusable substrate is main-eligible; consumed/result-dependent science is not wholesale-promoted."},
+    "HUMAN-20260919-002": {"disposition": "ACCEPT", "status": "UNCHANGED", "reason": "Protection/ruleset deployment remains deferred absent materially changed concrete integrity risk; the factual gap remains recorded."},
+    "HUMAN-20260919-003": {"disposition": "ACCEPT", "status": "UNCHANGED", "reason": "Use Discovery/Architecture/Pre-formal for substantive forward motion while preserving the strict FORMAL integrity floor and avoiding low-value governance churn."}
   },
   "research_funnel": {
-    "discovery": {
-      "status": "ACTIVE_PRODUCTIVE",
-      "latest": "PLASTICITY_UPDATE_CAP_SCALING_BIAS_DISCOVERY",
-      "classification": "REJECT_SCIENTIFIC_CANDIDATE_RETAIN_ARCHITECTURE_CONSTRAINT",
-      "reason": "Observed scaling bias reduces to deterministic numeric edge ordering plus a fixed successful-update cap; useful engineering/system information but no new mechanism."
-    },
-    "architecture_study": {
-      "status": "ACTIVE",
-      "owner": "MAIN",
-      "primary_candidate": "CAND-TOPK-PA-01",
-      "cycle": "2/3",
-      "cycle2_exact_head": "04ced2b97ed088bb2cdb086d164a86212741e601",
-      "cycle2_workflow": 35435714352,
-      "cycle2_workflow_status_at_control_check": "COMPLETED_SUCCESS_UNINTERPRETED_BY_CONTROL",
-      "queued_candidate": "CAND-STRUCTURAL-ORDER-PATH-01"
-    },
-    "pre_formal": {
-      "status": "EMPTY_HOLD",
-      "promotion_requirement": "Fresh mechanistic/reduction question, prospectively matched comparator/resources/privileges, development-only criteria, support/uncertainty adequacy where relevant, and fresh Evidence Analyst authority."
-    },
-    "formal": {
-      "status": "EMPTY_HOLD",
-      "identity": null,
-      "started": null,
-      "official_test_access": false,
-      "formal_evidence_authority": false
-    }
+    "DISCOVERY": {"status": "ACTIVE_PRODUCTIVE", "owner": "SUB_DEFAULT", "latest_target": "ASSEMBLY_PROTOTYPE_LOCKIN_ORDER_SENSITIVITY_DISCOVERY", "latest_classification": "PROMOTION_RECOMMENDED_PENDING_ANALYST", "evidentiary_status": "NON_EVIDENTIARY"},
+    "ARCHITECTURE_STUDY": {"status": "ACTIVE_HOLD", "topk": "HOLD_PENDING_CROSS_SEED_SUPPORT", "structural_order": "REJECT_EDGE_OR_HOMEOSTASIS_CONTROL_REPRODUCES", "fresh_sub_promotion_candidate": "ASSEMBLY_PROTOTYPE_LOCKIN_ORDER_SENSITIVITY_DISCOVERY"},
+    "PRE_FORMAL": {"status": "EMPTY_HOLD"},
+    "FORMAL": {"status": "EMPTY_HOLD", "fresh_identity": null, "started": null, "test_authority": false}
   },
   "candidate_pool": [
-    {
-      "id": "CAND-TOPK-PA-01",
-      "layer": "ARCHITECTURE_STUDY",
-      "status": "CYCLE2_DISPATCHED_WORKFLOW_SUCCESS_AWAITING_MAIN_COLLECTION_AND_ANALYST_REVIEW",
-      "expected_information_gain": "HIGH",
-      "budget": "ARCHITECTURE 2/3",
-      "promotion_condition": "Independent-seed replication plus fresh review; then support robustness and ordinary switching/recurrent-transient reduction before stronger claims.",
-      "stop_condition": "Nonreplication, mixed/under-supported outcome, ordinary-boundary-only result, or successful ordinary reduction stops/reframes without rescue tuning."
-    },
-    {
-      "id": "CAND-STRUCTURAL-ORDER-PATH-01",
-      "layer": "ARCHITECTURE_STUDY_QUEUED",
-      "status": "WAITING_BEHIND_TOPK",
-      "expected_information_gain": "MEDIUM_HIGH",
-      "budget": "DISCOVERY 1/3; ARCHITECTURE 0/3",
-      "promotion_condition": "Matched-current-explicit-state functional divergence after explicit age/slot/provenance and critical-pair/non-confluence baselines.",
-      "stop_condition": "Explicit rewrite-relevant state and ordinary non-confluence explain behavior with no residual functional consequence."
-    },
-    {
-      "id": "CAND-H7-RESP-01",
-      "layer": "HOLD",
-      "status": "CONDITIONAL_CENTRAL_RESIDUAL",
-      "expected_information_gain": "VERY_HIGH_IF_OBJECT_APPEARS",
-      "budget": "0/3",
-      "promotion_condition": "Independently arising native responsibility-sensitive mechanism with prospectively bound intervention, positive signal and matched ordinary reductions.",
-      "stop_condition": "Do not engineer as LP01 rescue or queue filler."
-    }
+    {"id": "CAND-TOPK-PA-01", "layer": "ARCHITECTURE_STUDY", "status": "HOLD", "cycles": "DISCOVERY 1; ARCHITECTURE 2", "next_gate": "One read-only cross-seed support diagnostic then fresh Analyst review; no cycle 3 or PRE_FORMAL automatically."},
+    {"id": "CAND-STRUCTURAL-ORDER-PATH-01", "layer": "ARCHITECTURE_STUDY", "status": "REJECT", "reason": "Edge-only/homeostatic control reproduces the current topology and functional order-dependence question."},
+    {"id": "ASSEMBLY_PROTOTYPE_LOCKIN_ORDER_SENSITIVITY_DISCOVERY", "layer": "DISCOVERY", "status": "AWAITING_FRESH_ANALYST_REVIEW", "cycle": "1/3", "observation": "Identical AAABBBCCC multiset gives one mature assembly in 560/1680 orders and two in 1120/1680 under greedy frozen-first-exemplar prototypes.", "evidentiary_status": "NON_EVIDENTIARY"},
+    {"id": "CAND-H5-AUDIT-01", "layer": "READ_ONLY_AUDIT", "status": "AUDITED_ROBUST_SO_FAR", "interpretation": "Canonical FAIL valid; global all-edge eligibility maintenance is the dominant audited bottleneck; not a general no-go theorem for event routing/lazy execution."},
+    {"id": "CAND-H7-RESP-01", "layer": "HOLD", "status": "NO_NATIVE_OBJECT"}
   ],
-  "methodology_calibration": {
-    "latest_generated_jst": "2026-09-19T18:18:00+09:00",
-    "classification": "MIXED_CALIBRATION",
-    "consumed_by_control": true,
-    "impact": "Keep four-layer funnel and strict FORMAL floor; retire programme-wide HOLD. Prospectively tighten lower-layer architecture triage support adequacy/uncertainty because one positive magnitude vote had n=1. Do not retroactively alter cycle-1 classification or reuse architecture cutoffs as novelty/formal gates."
-  },
   "external_input": {
-    "literature": {
-      "latest_generated_jst": "2026-09-19T18:30:00+09:00",
-      "status": "HEALTHY",
-      "consumed_by_control": true,
-      "consumed_by_evidence_analyst": false,
-      "impact": "For Top-k, ordinary reduction ladder is hard switching geometry -> immediate boundary jump -> recurrent/non-normal transient gain -> residual only. For structural order, explicit rewrite state -> critical pairs/non-confluence -> matched-state functional consequence -> residual only. Fixed cycle 2 remains unchanged."
-    },
-    "audit": {
-      "latest_generated_jst": "2026-09-19T10:32:25+09:00",
-      "status": "HEALTHY",
-      "consumed_by_control": true,
-      "consumed_by_evidence_analyst": true,
-      "classification": "WEAKENED_INTERPRETATION",
-      "impact": "NI01 canonical evidence remains intact but equal-privilege generic confidence-abstention reduction is not established because the comparator uses explicit world identity/world-specific thresholds."
-    }
+    "literature": {"latest_generated_jst": "2026-09-19T21:30:00+09:00", "consumed_by_control": true, "consumed_by_evidence_analyst": false, "impact": "Prospective Top-k reduction ladder expands to hard switching -> border-collision/branch-basin selection -> recurrent WTA hysteresis -> within-branch transient/non-normal gain -> residual."},
+    "audit": {"latest_generated_jst": "2026-09-19T22:31:00+09:00", "consumed_by_control": true, "consumed_by_evidence_analyst": false, "target": "H5", "classification": "ROBUST_SO_FAR", "impact": "Preserve exact canonical FAIL; narrow interpretation to the registered algorithmic-work contract and treat global eligibility maintenance as an architecture bottleneck rather than a general event-routing no-go."}
   },
-  "utility_request_bus": {
-    "unhandled_requests_seen": 2,
-    "decisions": {
-      "METHCAL-20260919-1818-ARCH-SIGNAL-SUPPORT": "ACCEPT",
-      "LIT-20260919-1830-TOPK-HYBRID-TRANSIENT": "DEFER"
-    },
-    "decision_commit": "399e1ab6dfa4ea072dfded4fa5d74cc8af4ca6f3",
-    "assignment": {
-      "assignment_id": "CTRL-20260919-1850-ARCH-SIGNAL-ROBUSTNESS",
-      "status": "ASSIGNED_PENDING_UTILITY_RUN",
-      "max_runs": 1,
-      "expires_at": "2026-09-19T22:30:00+09:00",
-      "evidentiary_status": "NON_EVIDENTIARY_METHODOLOGY_DIAGNOSTIC",
-      "dependency_on_main": false,
-      "assignment_commit": "29822bae19b733b0053ad7bf8d594faab3f4f5e7"
-    },
-    "deferred_request_reconsideration": "Reconsider LIT Top-k hybrid/transient decomposition after cycle-2 fresh Analyst review and/or accepted support-robustness result if a signal remains worth reducing and safe existing DEV inputs suffice."
+  "methodology_calibration": {
+    "latest_generated_jst": "2026-09-19T22:18:00+09:00",
+    "classification": "SLIGHTLY_TOO_PERMISSIVE",
+    "material_change": false,
+    "consumed_by_control": true,
+    "consumed_by_evidence_analyst": false,
+    "impact": "Tighten future Architecture per-stratum support prospectively; do not fit an exact replacement rule from completed Top-k outcomes; keep hard integrity and claim-type separation unchanged."
+  },
+  "main": {
+    "classification": "NO_OP_BY_DESIGN",
+    "latest_jst": "2026-09-19T22:19:30+09:00",
+    "current_lane": "LOWER_FUNNEL_MAIN_HOLD_PENDING_FRESH_OBJECT",
+    "active_object": null,
+    "integrity": "CLEAN_EXPLICIT_ANALYST_HOLD_RECONFIRMED"
   },
   "sub": {
-    "mode": "discovery",
     "classification": "EXPLORATORY_PRODUCTIVE",
-    "latest_candidate": "PLASTICITY_UPDATE_CAP_SCALING_BIAS_DISCOVERY",
-    "latest_candidate_decision": "REJECT",
-    "incubator_evidentiary_status": "NON_EVIDENTIARY",
-    "assessment": "Independent synthetic Discovery produced concrete architecture information, reduced to ordinary deterministic ordering plus a hard update cap, and stopped without rescue cycle. SUB did not assist MAIN or continue the promoted structural-order Architecture candidate."
+    "latest_jst": "2026-09-19T22:41:00+09:00",
+    "mode": "discovery",
+    "target": "ASSEMBLY_PROTOTYPE_LOCKIN_ORDER_SENSITIVITY_DISCOVERY",
+    "cycle": "1/3",
+    "recommendation": "PROMOTE_TO_ARCHITECTURE_STUDY",
+    "evidentiary_status": "NON_EVIDENTIARY"
+  },
+  "relay": {"classification": "NO_OP_BY_DESIGN", "reason": "MAIN has no live continuation object; no durable MAIN overwrite is required solely to record a no-op."},
+  "utility_request_bus": {
+    "decisions": {
+      "EVA-20260919-1943-TOPK-CROSS-SEED-SUPPORT": "ACCEPT",
+      "LIT-20260919-1830-TOPK-HYBRID-TRANSIENT": "DEFER",
+      "METHCAL-20260919-1818-ARCH-SIGNAL-SUPPORT": "COMPLETED_PRIOR_ACCEPT"
+    },
+    "decision_commit": "ffe5b7b5f363802270d90ec1af65e8c8d265423e",
+    "assignment": {
+      "assignment_id": "CTRL-20260919-2250-TOPK-CROSS-SEED-SUPPORT",
+      "status": "ASSIGNED",
+      "max_runs": 1,
+      "expires_at": "2026-09-20T06:50:00+09:00",
+      "evidentiary_status": "NON_EVIDENTIARY_METHODOLOGY_ARCHITECTURE_DIAGNOSTIC",
+      "dependency_on_main": false,
+      "final_assignment_commit": "3dffa7212e054fd5ca8ca5ddf1991ad2a69affbc"
+    }
+  },
+  "knowledge_flow": {
+    "evidence_analyst_latest_jst": "2026-09-19T21:02:00+09:00",
+    "pending_for_analyst": ["2026-09-19 21:30 Literature", "2026-09-19 22:18 Methodology Calibration", "2026-09-19 22:31 H5 Independent Audit", "2026-09-19 22:41 SUB assembly-prototype Discovery", "Utility cross-seed result when produced"],
+    "status": "DELAYED_NOT_INTEGRITY_FAILURE"
   },
   "fleet": {
     "fleet_status": "YELLOW",
     "critical_failures": [],
-    "operational_defects": [
-      "MAIN Relay at :45 again spilled into the combined Control/Steward observation window while correctly continuing cycle 2.",
-      "Evidence Analyst and SUB have shown material schedule latency even though durable handoffs arrived in time to preserve scientific authority boundaries.",
-      "The new Utility assignment has not yet executed; it is deliberately nonblocking for MAIN."
-    ],
-    "efficiency_findings": [
-      "Programme-wide lower-layer no-op is no longer justified: Discovery and Architecture Study now generate substantive promotion/rejection/reduction information.",
-      "SUB update-cap Discovery demonstrates useful early ordinary reduction and early stop rather than activity-for-activity's-sake.",
-      "Ruleset/protection cleanup is deprioritized under accepted human direction absent a new concrete integrity risk.",
-      "Utility capacity is assigned to one bounded read-only methodology robustness check rather than duplicating MAIN/SUB scientific work."
-    ],
+    "operational_defects": ["Evidence Analyst durable handoff predates several material newer streams.", "Relay-to-Control timing remains close, but has not caused a scientific-authority or persistence failure."],
     "scheduler_classification": {
       "control_repository_steward": "HEALTHY",
       "evidence_analyst": "DELAYED",
-      "main_primary": "HEALTHY",
-      "main_relay": "DELAYED",
+      "main_primary": "NO_OP_BY_DESIGN",
+      "main_relay": "NO_OP_BY_DESIGN",
       "sub": "EXPLORATORY_PRODUCTIVE",
       "external_literature": "HEALTHY",
       "external_audit": "HEALTHY",
@@ -184,67 +93,30 @@
       "utility_orchestrator": "HEALTHY",
       "current_state_brief": "HEALTHY"
     },
-    "literature_consumed_by_control": true,
-    "audit_consumed_by_control": true,
-    "methodology_consumed_by_control": true,
-    "literature_consumed_by_evidence_analyst": false,
-    "audit_consumed_by_evidence_analyst": true,
-    "recommended_scheduler_changes": [
-      "No immediate timing mutation while the cycle-2 collection/review boundary is active and scheduler overlap has not caused a scientific-authority failure.",
-      "If Relay-to-Control overlap later causes missed/stale handoffs, reconsider the previously identified semantics-neutral Relay :45 -> :40 offset under full scheduler-registry transaction discipline.",
-      "Do not change Utility cadence; Git assignment is sufficient and the normal hourly Utility schedule can execute it."
-    ]
+    "efficiency_findings": ["Lower-funnel throughput is substantive despite FORMAL HOLD.", "Do not downshift Discovery/Architecture while they continue producing bounded nonduplicative information.", "Do not prioritize ruleset deployment or Relay offset cleanup over safe scientific throughput this run."]
   },
   "scheduler_controller_action": "NO_CHANGE",
   "scheduler_controller": {
-    "reason": "Lower-layer research throughput is now active, Relay is at a live cycle-2 collection boundary, and the repeated overlap has not caused a scientific-authority failure. Accepted human direction prioritizes meaningful forward research over low-value scheduler cleanup. No scheduler mutation is warranted this run.",
     "non_utility_mutations": 0,
     "utility_live_reconfiguration": false,
     "scheduler_registry_modified": false,
-    "registry_head_observed": "ab20cadf2d98b80e43102a38fbdd993f2b80a458"
+    "reason": "Git assignment fully expresses the new Utility task; no live scheduler change is needed. Existing Relay proximity has not caused authority failure and science is moving safely."
   },
   "repository_doctrine": {
     "status": "CURRENT_RESEARCH_SEPARATION_HEALTHY_PROTECTION_DEFERRED",
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "evidence_tag_count": 5,
     "legacy_freeze_branch_count": 13,
-    "formal_tag_count": 0,
-    "sealed_tag_count": 0,
-    "freeze_tag_count": 0,
     "main_protected": false,
     "protection_rules_action": "DEFERRED_BY_ACCEPTED_HUMAN_DIRECTIVE_ABSENT_NEW_CONCRETE_RISK",
-    "open_pr_review": {
-      "148": "OPEN_MERGEABLE_UNMERGED_NOT_CURRENT_PRIORITY",
-      "149": "OPEN_MERGEABLE_UNMERGED_NOT_CURRENT_PRIORITY"
-    },
     "immutable_refs_untouched": true
   },
-  "top_priority": "Complete the already-authorized CAND-TOPK-PA-01 cycle-2 collection/classification through MAIN/Relay and fresh Evidence Analyst review without Control pre-interpreting the artifact; consume the one-run nonblocking Utility support-robustness diagnostic before any PRE_FORMAL consideration.",
+  "top_priority": "Fresh Evidence Analyst convergence over the 21:30-22:41 Literature/Methodology/Audit/SUB updates, followed by exactly one read-only Utility cross-seed Top-k support diagnostic before any PRE_FORMAL consideration.",
   "direction_to_evidence_analyst": [
-    "Retire programme-wide HOLD language: keep FORMAL HOLD but actively manage the lower-layer candidate pool.",
-    "After MAIN/Relay persists cycle 2, review it fresh under the already-fixed outcome mapping; no same-run redesign or retuning.",
-    "Consume Methodology Calibration prospectively: preserve cycle-1 classification, require support/uncertainty adequacy before PRE_FORMAL promotion, and do not reuse Architecture cutoffs as novelty thresholds.",
-    "Consume the 18:30 Literature reductions prospectively: hard-switch geometry plus recurrent/non-normal transient gain for Top-k; explicit rewrite state plus critical-pair/non-confluence for structural order.",
-    "Keep candidate count small and three-cycle budgets as ceilings, with early rejection when ordinary reductions explain an observation.",
-    "Treat Utility assignment CTRL-20260919-1850-ARCH-SIGNAL-ROBUSTNESS as NON_EVIDENTIARY methodology input only and never a MAIN dependency.",
-    "Reconsider the deferred LIT Top-k hybrid/transient Utility request only if replication/support review leaves a worthwhile reduction question.",
-    "Preserve all consumed C19/PD01/NI01/H5 evidence/identity boundaries and the blocked NI01 post-terminal sensitivity closure."
-  ],
-  "ranked_priorities_12_48h": [
-    "Collect and classify the already completed exact-head CAND-TOPK-PA-01 cycle-2 workflow under existing MAIN/Relay authority, then stop for fresh Analyst review.",
-    "Consume the one-run Utility support-robustness result before any PRE_FORMAL consideration; keep it read-only and nonblocking.",
-    "If Top-k remains informative, test ordinary hard-switch plus recurrent transient-gain explanations before mechanistic-distinctness claims.",
-    "Advance CAND-STRUCTURAL-ORDER-PATH-01 only after the current MAIN cycle reaches Analyst review, with explicit-state and critical-pair/non-confluence baselines.",
-    "Keep SUB on one bounded independent Discovery question per run or a concrete no-op; reject early on ordinary implementation reductions.",
-    "Keep FORMAL/H7 on HOLD until a genuinely independent native responsibility-sensitive object appears."
-  ],
-  "stop_reframe_conditions": [
-    "Never rerun, retune, rescore or reopen consumed C19/PD01/NI01/H5 identities.",
-    "Do not retroactively alter CAND-TOPK-PA-01 cycle-1 classification because of new methodology-calibration findings.",
-    "Do not alter the fixed cycle-2 contract from outcome knowledge; every valid cycle-2 outcome stops for fresh Analyst review.",
-    "If cycle 2 fails to replicate, is mixed or under-supported, or support robustness reveals a sparse/denominator artifact, retain only bounded architecture value and do not rescue-tune.",
-    "If Top-k amplification reduces to hard-switch geometry plus ordinary recurrent transient gain, close mechanistic novelty for that phenomenon while preserving architecture characterization.",
-    "If structural path dependence reduces to explicit rewrite state and non-confluence/critical pairs without residual function, retain architecture value only.",
-    "No lower-layer result becomes FORMAL evidence without a fresh prospectively bound formal object and complete one-way evidence path."
+    "Prospectively classify the new assembly-prototype lock-in Discovery; do not relabel it as evidence.",
+    "Consume H5 audit and narrow interpretation without changing canonical evidence; never rerun/reopen/rescore H5.",
+    "Consume the 21:30 Top-k border-collision/basin/WTA hysteresis reduction ladder and 22:18 methodology calibration.",
+    "Consume the Utility cross-seed support result before any Top-k cycle 3 or PRE_FORMAL decision.",
+    "If Top-k support is robust, define a fresh ordinary-reduction question; if mixed/under-supported, hold/close escalation rather than rescue-tune."
   ]
 }
