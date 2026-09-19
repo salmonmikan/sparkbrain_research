@@ -1,14 +1,14 @@
 {
   "run_id": "sparkbrain-main-relay-20260920T0742JST",
   "execution_mode": "RELAY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-20T07:42:07+09:00",
-  "heartbeat_at": "2026-09-20T07:42:07+09:00",
+  "heartbeat_at": "2026-09-20T07:45:30+09:00",
   "analyst_commit": "7e7d425948a86d0eec306b1a75bfc07165d9afa1",
   "active_branch": "research/main-refractory-current-accounting-arch-study-20260920",
   "active_identity": null,
-  "active_step": "COLLECT_EXACT_HEAD_REFRACTORY_ARCHITECTURE_TERMINAL",
+  "active_step": "REFRACTORY_ARCHITECTURE_CYCLE1_VALID_FUNCTIONAL_TERMINAL_STOPPED_FOR_ANALYST_REVIEW",
   "workflow_run_id": 35472786687,
-  "expected_next_action": "Collect exact-head ordinary CI and Architecture workflow, verify raw-before-summary artifact/source/contract bindings, apply the prospectively fixed terminal mapping exactly once, persist the NON_EVIDENTIARY terminal, and STOP for fresh Evidence Analyst review. No cycle 2, PRE_FORMAL, FORMAL, semantic repair, or result-dependent redesign.",
+  "expected_next_action": "STOP until fresh Evidence Analyst review of FUNCTIONAL_REFRACTORY_ACCOUNTING_EFFECT. Do not automatically start cycle 2, implementation repair, PRE_FORMAL, FORMAL, or the queued delayed-outcome Architecture object without new prospective authority.",
   "owner": "main"
 }
