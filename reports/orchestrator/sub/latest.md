@@ -1,14 +1,14 @@
-# SparkBrain Research Orchestrator SUB — 2026-09-20 07:50 JST
+# SparkBrain Research Orchestrator SUB — 2026-09-20 08:46 JST
 
 ## Mode / allocation
 
 - mode: `discovery`
-- Evidence Analyst authority: `7e7d425948a86d0eec306b1a75bfc07165d9afa1`
+- Evidence Analyst authority: `850b4502cf15d3f6118a487c5ab4ba81fbf7b75e`
 - authoritative stable main: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
-- main_lane: `REFRACTORY_CURRENT_ACCOUNTING_ARCHITECTURE_STUDY_CYCLE1`
+- main_lane: `V05_DELAYED_OUTCOME_CALLER_CONTRACT_ARCHITECTURE_STUDY_CYCLE1`
 - sub_lane: `BOUNDED_SECONDARY_DISCOVERY`
 - sub_fallback: `NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON` (not used)
-- exploratory_target: `ASSEMBLY_MATURE_CAPACITY_LOCKOUT_DISCOVERY_CYCLE1`
+- exploratory_target: `HOMEOSTASIS_RECEPTOR_DEAD_MASK_DISCOVERY_CYCLE1`
 - candidate_pool_id: `NONE_SELF_SELECTED`
 - exploration_cycle: `1/3`; stopped after one bounded cycle for fresh Analyst review
 - evidentiary_status: `NON_EVIDENTIARY`
@@ -16,48 +16,42 @@
 
 ## Authority reconciliation / MAIN frontier avoided
 
-Fresh Analyst authority reserved `CAND-REFRACTORY-CURRENT-ACCOUNTING-01` and its complete Architecture critical path for MAIN, queued the delayed-outcome candidate outside SUB authority, and allowed SUB at most one independent bounded Discovery. The named candidate pool contained no independently executable SUB object, so SUB used the permitted one-question self-selection path.
+Fresh Evidence Analyst authority reserved `CAND-V05-DELAYED-OUTCOME-ATTRIBUTION-01` and its full caller-contract Architecture path for MAIN, queued `CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01` outside SUB authority, and left Refractory/suppression follow-ups, Top-k and H7 unavailable to SUB. No named candidate-pool item was independently executable by SUB, so the permitted one-question self-selection path was used.
 
-The selected target is limited to stable v0.5 `TemporalAssemblyMemory` capacity/pruning semantics. SUB did not work MAIN's Refractory branch, comparator, blocker, outcome, or successor; did not continue the queued delayed-outcome candidate; did not touch suppression Utility work, completed Assembly cross-cascade work, Temporal/topology-config work, Top-k, H7, consumed identities, FORMAL/TEST/scoring/identity/preserve/evidence surfaces, or immutable evidence.
-
-During final reconciliation, MAIN independently reached terminal `FUNCTIONAL_REFRACTORY_ACCOUNTING_EFFECT` and stopped for fresh Evidence Analyst review. The Evidence Analyst tip remained `7e7d425948a86d0eec306b1a75bfc07165d9afa1`; no changed allocation invalidated this independent SUB target.
+The selected question touches only stable v0.5 homeostatic stability accounting over synthetic field/spike values. SUB did not work MAIN's delayed-outcome object/branch/blocker/outcome/successor; did not continue the queued Assembly capacity object; did not touch Refractory, suppression methodology, Top-k, H7, consumed identities, FORMAL/TEST/scoring/identity/preserve/evidence surfaces, or immutable evidence. MAIN's current report/head was read only for collision reconciliation and did not tune this work.
 
 ## Discovery question / implementation
 
-Question: when `TemporalAssemblyMemory` reaches `max_candidates` with only mature stale candidates, does the current prune policy deny a genuinely dissimilar new pattern indefinitely, while an otherwise matched immature stale candidate is reclaimable?
+Question: can receptor/input-layer activity keep the public v0.5 homeostatic `dead` flag false while the internal reservoir is completely silent, because `HomeostaticController.observe()` accounts over all field spikes rather than internal-reservoir spikes?
 
-SUB created non-authoritative branch `research/exploratory-sub-assembly-capacity-lockout-20260920` from exact stable main. The fixed question/diagnostic were prospectively bound at `d45926e153b638e1ba980cdb108fb8d3d8137439`, the deterministic diagnostic was added at `ced4850fcf7dc7d4aa02b21f3ebc118abb112456`, and the result/handoff was recorded on exact research head `3cac844ca6a80725c87d7e681c23b703f35150c2`.
+SUB created non-authoritative branch `research/exploratory-sub-homeostasis-receptor-dead-mask-20260920` from exact stable main. Prospective question/arms/observables/falsifier were bound before the diagnostic at `550636870dc564297d567efddab919ea31b37044`; the deterministic diagnostic was added at `ae5856d26d7a24e77a17bf564e491b293057d55b`; result/handoff was recorded on exact research head `8a2fa2efa7ac13ea7a1a835c14e8ea0f8013d71f`.
 
-Fixed synthetic configuration: `similarity_threshold=0.66`, `mature_episodes=2`, `max_candidates=2`, `stale_after_ms=10.0`, `immature_stale_episodes=1`. Fixed P1 `(1,2)`, P2 `(3,4)`, P3 `(5,6)` all use relative bins `(0,1)` and have pairwise `pattern_similarity=0.2`, below the fixed match threshold.
+Fixed DEV-only field: receptor unit `0`, internal reservoir unit `1`, no connections, `base_threshold=0.5`, default `HomeostasisConfig` (`dead_windows_before_flag=6`). Six windows were compared: production accounting received one receptor spike each window; empty control received no spikes; a receptor-filtered diagnostic shadow received the exact same receptor-spike stream after excluding `field.receptor_ids`. Production code was not modified.
 
-`MATURE_SATURATED` matures P1 and P2 across two distinct episodes each, then presents P3 at `100.0 ms` and again at `1000.0 ms`. `IMMATURE_RECLAIMABLE` matures P1, observes P2 once, then presents P3 at `100.0 ms`. No production source, repository dataset, world generator, checkpoint, formal raw, held-out TEST, official scorer, consumed identity, or MAIN outcome artifact was used to design/run the diagnostic.
-
-Exact-final-head ordinary CI `35474327443` on `3cac844ca6a80725c87d7e681c23b703f35150c2` completed `success`; Python 3.11 and 3.13 both passed lint, local readiness, full tests, and bundle validation. CI has no evidentiary role.
+Exact-final-head ordinary CI `35476878641` completed `success`; Python 3.11 and 3.13 both passed lint, local readiness, full tests, and bundle validation. CI has no evidentiary authority.
 
 ## Observations
 
-In `MATURE_SATURATED`, the two slots are `assembly-0001 / pattern-p1 / episode_count=2` and `assembly-0002 / pattern-p2 / episode_count=2`. P3 returns `None` at `100.0 ms` and again at `1000.0 ms`; both mature candidates remain and P3 never acquires a slot.
+After six windows, production receptor-only accounting reports `dead=false`, controller `dead_streak=0`, and `active_unit_fraction=0.5`, while internal reservoir unit `1` remains at `rate_ema=0.0`. Empty control reports `dead=true`, `dead_streak=6`, `active_unit_fraction=0.0`. The receptor-filtered shadow, using the same receptor input stream but excluding receptor IDs from the accounting surface, likewise reports `dead=true`, `dead_streak=6`, `active_unit_fraction=0.0`.
 
-In `IMMATURE_RECLAIMABLE`, P2 has `episode_count=1`; at `100.0 ms` it is stale and is removed, allowing P3 to enter as `assembly-0003`. Remaining candidates are `assembly-0001` and `assembly-0003`.
+The result reduces directly to source semantics: `HomeostaticController.observe()` treats every supplied spike as activity, resets `dead_streak` whenever all-field `rows` is non-empty, computes active fraction over all spiking IDs, and updates rate/threshold state over every unit. It does not filter `field.receptor_ids`. `IntegratedV05Brain.process_episode()` passes all `base_result.spikes` directly into homeostasis, even though subsequent Assembly extraction explicitly excludes receptor IDs for its `internal_reservoir` representation.
 
-The observation is fully reduced to current resource policy. When a new dissimilar pattern arrives at capacity, `observe()` invokes `prune()`, while `prune()` only removes stale candidates whose `episode_count <= immature_stale_episodes`. Mature candidates therefore lie outside this reclamation path. Default configuration preserves the same structural relation (`mature_episodes=3`, `immature_stale_episodes=2`), but this cap-two synthetic probe does not establish that supported/default workloads actually saturate the default `max_candidates=256`.
-
-This is functionally stronger than metadata-only divergence because a new dissimilar pattern receives no candidate/activation path once every slot is mature in the fixed probe. It does not establish real-world prevalence, downstream behavioral impairment, or scientific novelty.
+Thus receptor activity can mask complete internal-reservoir silence in the public stability signal under this fixed synthetic probe. This is an Architecture/API observability semantics issue, not a new stability mechanism, not scientific evidence, and not evidence of novelty.
 
 ## Handoff / stop
 
-Evidentiary status remains `NON_EVIDENTIARY`. Recommendation to Evidence Analyst: `PROMOTE_TO_ARCHITECTURE_STUDY`, specifically `ARCHITECTURE_STUDY_ASSEMBLY_CAPACITY_AND_LIFELONG_PLASTICITY_SEMANTICS`; not PRE_FORMAL or FORMAL.
+Evidentiary status: `NON_EVIDENTIARY`. Recommendation to Evidence Analyst: `PROMOTE_TO_ARCHITECTURE_STUDY`, candidate next layer `ARCHITECTURE_STUDY_STABILITY_OBSERVABILITY_SEMANTICS`.
 
-A fresh prospective Architecture object should first bind whether `max_candidates` is a hard lifetime mature-memory cap or an active working-set resource budget. If promoted, use DEV-only streams that fill mature capacity before a genuinely novel pattern, compare current mature retention against an identity-neutral/resource-matched turnover comparator, and pre-bind resource budget plus one downstream Assembly prediction/action learnability observable.
+A fresh prospective Architecture object should first bind the intended population semantics for `dead`, `active_unit_fraction`, rate EMA and threshold adaptation: whole field, separately accounted receptor/reservoir populations, or internal reservoir only. A matched DEV comparator can then compare current all-field accounting with receptor-aware accounting using fixed spike streams and pre-bound monitoring/adaptation observables.
 
-Reduce to `REJECT/ENGINEERING_NOTE_ONLY` if permanent mature retention is the supported contract with no ongoing acquisition requirement, if supported workloads cannot plausibly approach mature saturation, or if a fresh resource-matched turnover comparator changes no pre-bound downstream learnability observable.
+Reduce to `REJECT/ENGINEERING_NOTE_ONLY` if whole-field silence is explicitly the supported meaning of `dead` and no supported consumer requires reservoir liveness, if receptor-only activity with a silent reservoir is unreachable in supported paths, or if a receptor-aware comparator changes no pre-bound behavior of interest.
 
-Scientific/API choices still open: whether mature assemblies are permanent; whether they may age/compact/evict; what turnover comparator is identity-neutral/resource-matched; what supported DEV horizon makes saturation relevant; and which downstream observable should represent retained capacity for new learning. SUB does not continue to cycle 2 without fresh Analyst promotion.
+Scientific/API choices still open: intended population represented by `dead`; whether receptor units share reservoir homeostatic targets; denominator/population for `active_unit_fraction`; and which supported caller/monitor consumes `StabilitySnapshot.dead`. SUB does not run cycle 2 without fresh Analyst promotion.
 
-Utility request: none. Consumed identities: none. New formal results: zero. No formal identity, STARTED/control authority, freeze/evidence ref, official score, held-out TEST access, immutable evidence mutation, research merge, or main mutation occurred.
+Utility request: none. Consumed identities: none. New FORMAL results: zero. No formal identity, STARTED/control authority, freeze/evidence ref, official score, held-out TEST access, immutable evidence mutation, research merge, or stable-main mutation occurred.
 
-Blocker: fresh Evidence Analyst classification and prospective assembly-capacity/lifecycle Architecture contract before any continuation.
+Blocker: fresh Evidence Analyst classification and prospective stability-observability Architecture contract before continuation.
 
-Completion target: `ACHIEVED_ONE_BOUNDED_INDEPENDENT_ASSEMBLY_CAPACITY_DISCOVERY_CYCLE_AND_RETURNED_RESOURCE_SEMANTICS_PROMOTION_CANDIDATE` — achieved.
+Completion target: `ACHIEVED_ONE_BOUNDED_INDEPENDENT_HOMEOSTASIS_STABILITY_OBSERVABILITY_DISCOVERY_CYCLE_AND_RETURNED_ARCHITECTURE_PROMOTION_CANDIDATE` — achieved.
 
-Append-only SUB history snapshot: `reports/orchestrator/history/2026-09-20/0750-sub.md` at `a2381ee51087c0da69708b485bc920242ebdf82f`. No MAIN or legacy shared latest/state file was modified by SUB; no force-push was used.
+Append-only SUB history snapshot: `reports/orchestrator/history/2026-09-20/0846-sub.md` at `561ef8f062b1a02945e49843d1b65856f6804319`. No MAIN or legacy shared latest/state file was modified by SUB; no force-push was used.
