@@ -1,6 +1,6 @@
 # SparkBrain External Research — Literature Reduction Scout
 
-Timestamp: `2026-09-19 06:33 JST`
+Timestamp: `2026-09-19 09:32 JST`
 Role: `LITERATURE_REDUCTION_SCOUT`
 
 ## Repository context
@@ -9,71 +9,63 @@ Repository science was re-fetched independently; `ops/*` branches were treated o
 
 - `main`: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
 - LP01 research head: `research/lp01-actual-lineage-causal-credit-spec-20260918@f6d59a55730c5f99cd7f30470847fc3f175bdf64`
-- Authoritative annotated `evidence/*` tags: 5; `formal/*`: 0; `sealed/*`: 0.
+- Authoritative annotated `evidence/*` tags: 5; legacy `freeze/*` branches: 13.
 - Control Brain: `ops/control-brain-handoff@10eb4206fb0c998fcdbc40c0e16f38829ea5d41e`
-- Evidence Analyst: `ops/evidence-analyst-handoff@f2ca44cc99797dd13ddc20947558022c35ab2c60`
-- MAIN report stream consumed through its 06:14 latest/state; SUB through 06:35 latest/state on `ops/orchestrator-run-report@b32ac63e6ee4d1fa8bcaf8f13b3c91bc9e42d901`.
+- Evidence Analyst: `ops/evidence-analyst-handoff@7a2ef7021fdaa3dd701353a18b45b6db4915756c`
+- MAIN latest commit consumed: `904e9e041a26d102d87f0a6ac088385619fad363` (09:14 report).
+- SUB report stream advanced during this run through `e8ab335ab67a81b9ab2fc299a0266b7b32fd5d6c` (09:35 no-op reconciliation).
 
-Current programme status is `NO_HIGH_VALUE_OBJECT / experimental cognitive architecture testbed`. LP01 is closed pre-formal: no formal identity was consumed. The current LP01 reference implementation is explicitly an append-only parent relation (`ActualLineageIndex`) with opaque IDs and an ordinary explicit transitive-ancestor comparator (`ExplicitParentTable`). This is useful as a dev/reference object, but it does not yet establish an online native causal-credit mechanism.
+Current programme status remains `NO_HIGH_VALUE_OBJECT / experimental cognitive architecture testbed`. LP01 remains closed pre-formal with no formal identity. Its current reference code is still explicit bookkeeping: `ActualLineageIndex` stores append-only parent/child relations, `ExplicitParentTable` stores transitive ancestor sets, and `RecentWindowState` is a bounded comparator. No new formal scientific evidence appeared.
 
-The prior Literature stream covered PSRs, causal states/epsilon-machines, local causal states, reservoir/fading-memory universality and automata extraction. Those findings are not repeated here.
+The 06:33 Literature run already covered provenance semirings, ancestry-vs-actual-causality, query-answer causality, and counterfactual credit. Earlier runs covered PSRs, causal states/epsilon-machines, reservoirs/fading memory, local causal states, and automata extraction. Those findings are not repeated here.
 
 ## Genuinely new external findings
 
-### 1. LP01-like explicit ancestry is already a standard provenance problem
+### 1. Causal-history tokens plus competition/conflict already have an ordinary Petri-net/event-structure reduction
 
-Buneman, Khanna & Tan (ICDT 2001) distinguish **why-provenance**—which source records influenced the existence of an output—from where-provenance. Green, Karvounarakis & Tannen (PODS 2007) go further: provenance semirings attach source variables to derivations and algebraically propagate/combine those annotations.
+Petri-net causal semantics explicitly represent dependencies between transition occurrences. Under the individual-token interpretation, tokens are distinguished by their causal history; process semantics recover a partial order of causal dependencies. More recent causal-net/event-structure work also represents concurrency and asymmetric conflict explicitly.
 
-That is a strong reduction pressure on any future SparkBrain claim that is based only on retaining opaque source IDs and parent/ancestor relations. The present LP01 dev/reference index is structurally much closer to explicit provenance bookkeeping than to a new cognitive credit mechanism.
+This raises the bar beyond the 06:33 provenance finding. A future SparkBrain object that retains opaque token identities, ancestry, concurrent alternatives, or winner/loser history is not yet outside standard formal machinery. In particular, `historical lineage + local competition/conflict` can be represented by occurrence/causal nets and event structures without invoking a novel cognitive credit principle.
 
-Prospective implication: if a lineage object is ever reopened for independent reasons, include a **provenance-only baseline** that propagates opaque source tokens/derivation supports with no SparkBrain dynamics or learning. A win over recent-window memory but not over provenance bookkeeping would not support novelty.
-
-Sources:
-- Buneman, Khanna & Tan, *Why and Where: A Characterization of Data Provenance*, ICDT 2001, DOI 10.1007/3-540-44503-X_20.
-- Green, Karvounarakis & Tannen, *Provenance Semirings*, PODS 2007, DOI 10.1145/1265530.1265535.
-
-### 2. Historical ancestry/provenance is not the same thing as actual causation
-
-Halpern–Pearl structural-model work makes actual causation counterfactual/interventional rather than something that can simply be read from an ancestry graph. Classic **preemption** and **overdetermination** are exactly the cases where naive ancestry or simple but-for dependence is insufficient.
-
-This sharply changes the admission bar for the residual `actual historical lineage` idea. A future object should not merely ask whether a source is an ancestor of an outcome. It should force two candidate lineages to have comparable provenance while differing in **actual causal responsibility under intervention**.
-
-Prospective discriminator: construct redundant/backup/preempted routes. Preserve or closely match the provenance graph, then intervene on a candidate source/edge and ask whether only the actually responsible lineage receives credit. This is much stronger than source-token lookup or ancestor recovery.
+Prospective implication: if a native lineage mechanism independently appears, include an **individual-token causal-net/event-structure baseline** that receives the same event envelope and tests whether the claimed causal-history/competition effect is exactly reconstructible as ordinary partial-order/conflict state.
 
 Sources:
-- Halpern & Pearl, structural-model actual causality framework (2005); modern summaries emphasize that actual causality cannot simply be read off a causal model and requires counterfactual witnesses/contingencies.
-- Dyrkolbotn, *On Preemption and Overdetermination in Formal Theories of Causality*, 2017.
+- van Glabbeek, Goltz & Schicke, *On Causal Semantics of Petri Nets*, arXiv:2103.00729 (2021).
+- Melgratti, Mezzina & Pinna, *Relating Reversible Petri Nets and Reversible Event Structures, categorically*, Logical Methods in Computer Science 21(2:20), published 2025-06-05, DOI 10.46298/lmcs-21(2:20)2025.
 
-### 3. Query-answer causality gives an ordinary interventional comparator between provenance and causal credit
+### 2. Dynamic slicing is a stronger ordinary baseline than ancestry alone for actual-run influence
 
-Database causality work operationalizes actual cause for a query answer by deleting a candidate tuple, possibly under a contingency set, and checking whether the answer disappears; causal responsibility increases as the minimum required contingency shrinks. This is important because it bridges exactly the gap relevant to SparkBrain: **provenance says what participated in a derivation; causality asks what was actually difference-making under controlled intervention**.
+Dynamic slicing asks which executed statements/events actually affected a selected outcome in a particular run. Perera, Garg & Cheney extend this to concurrent systems and show a causally consistent slicing relation: causally equivalent executions yield the same slicing structure up to isomorphism.
 
-Prospective implication: before attributing lineage-specific credit to persistent dynamics, compare against an explicit event-DAG deletion/responsibility model under the same observable event envelope. If the ordinary counterfactual model identifies the same responsible source, the result reduces to standard causal attribution rather than a new circulation principle.
+This fills an important gap in the reduction ladder. Provenance/ancestry records participation; full structural-model actual causality asks counterfactual responsibility. **Causally consistent dynamic slicing** supplies an intermediate ordinary baseline that follows actual execution dependencies while respecting concurrency and causal equivalence, without requiring SparkBrain-style persistent dynamics.
+
+Prospective implication: a future lineage-credit claim should beat three distinct levels rather than only one explicit parent table: provenance/ancestry, actual-run dynamic dependence/slicing, and counterfactual actual-cause/responsibility. A result that exceeds ancestry but is exactly recovered by a dynamic slice is still ordinary trace dependence, not a new causal-credit mechanism.
 
 Source:
-- Bertossi et al., query-answer causality / responsibility work, including *Causes for query answers from databases: Datalog abduction, view-updates, and integrity constraints*, International Journal of Approximate Reasoning, 2017.
+- Perera, Garg & Cheney, *Causally Consistent Dynamic Slicing*, CONCUR 2016, DOI 10.4230/LIPIcs.CONCUR.2016.18.
 
-### 4. Recent 2026 credit-assignment work independently reinforces the intervention requirement
+### 3. Local/online/spiking credit assignment is now too well populated to carry novelty by itself
 
-Counterfactual Shapley Credit Assignment (Li, Lee & Bareinboim, 2026) explicitly targets the credit-assignment problem by separating policy contribution from environmental stochasticity via counterfactual Shapley values; related 2026 agent work estimates step contribution by controlled deletion/substitution interventions rather than temporal correlation alone.
+Generalized Latent Equilibrium (GLE) derives fully local spatio-temporal credit assignment for physical dynamical neuronal networks from neuron-local mismatch signals, with phase-free continuous-time local plasticity. Separately, Spike-based Alignment Learning (SAL), published 2026-07-07, provides a synapse-local STDP-compatible mechanism for maintaining effective weight alignment in noisy spiking systems and explicitly frames locality in space and time as the core credit-assignment constraint.
 
-This is not a direct architectural equivalent to SparkBrain, but it raises the contemporary bar: `delayed/history-specific credit` is not enough. A claimed causal-credit mechanism should recover **intervention-validated contribution**, especially when multiple plausible historical contributors or stochastic outcomes exist.
+Neither result is an architectural equivalent of SparkBrain's remaining lineage-specific hypothesis, and neither by itself solves preemption/actual-responsibility attribution. But together they make `local`, `online`, `physical`, `spiking`, or `history-sensitive learning` unusable as standalone novelty axes.
 
-Prospective implication: if a future native lineage mechanism appears, preregister a small counterfactual-credit ground-truth suite where ancestry, temporal proximity and causal responsibility are deliberately dissociated.
+Prospective implication: any future Spark-specific causal-credit object must demonstrate **lineage-selective, intervention-validated responsibility under matched local information** beyond ordinary local physical credit rules—not merely that learning occurs without global backpropagation or semantic lookup.
 
 Sources:
-- Li, Lee & Bareinboim, *Counterfactual Shapley Credit Assignment*, RLC 2026 / arXiv:2607.16999.
-- Meng, *Policy-Conditioned Counterfactual Credit for Verifiable Reinforcement Learning of Long-Horizon Language Agents*, arXiv:2606.05263 (2026).
+- *Backpropagation through space, time and the brain*, Nature Communications 17, Article 66 (2026), DOI 10.1038/s41467-025-66666-z; published 2025-12-26.
+- Gierlich et al., *Spike-based alignment learning solves the weight transport problem*, Nature Communications 17, 8699 (2026), DOI 10.1038/s41467-026-74460-8; published 2026-07-07.
 
 ## Reduction synthesis
 
-The new literature does **not** justify reopening LP01. It strengthens the current stop decision. The residual programme question should be narrowed from `historical lineage can be retained/recovered` to:
+No literature finding justifies reopening LP01. The current close/HOLD decision is strengthened.
 
-> can a native, non-privileged mechanism assign credit to the **actual difference-making historical cause**, not merely an ancestor/provenance token, under preemption/overdetermination and matched ordinary provenance/counterfactual baselines?
+The lineage residual should now be evaluated on two orthogonal reduction axes:
 
-A future admission ladder should therefore include:
+1. **History/influence representation:** `provenance -> causal-net/event-structure history + conflict -> causally consistent dynamic slice -> counterfactual actual-cause/responsibility`.
+2. **Learning/locality:** `ordinary local eligibility/three-factor/e-prop/GLE/SAL/recurrent-plastic mechanisms -> Spark-specific residual only if intervention-validated lineage selectivity remains under matched privilege/resources`.
 
-`explicit provenance bookkeeping -> counterfactual actual-cause/responsibility baseline -> matched ordinary recurrent/plastic reductions -> only then a Spark-specific lineage-credit residual`.
+A future object is scientifically interesting only if it arises natively and survives both axes. Designing a benchmark solely because these papers suggest one would be rescue-driven and should remain disallowed while `NO_HIGH_VALUE_OBJECT` holds.
 
 ## Knowledge-flow contract
 
@@ -81,32 +73,34 @@ A future admission ladder should therefore include:
 role: LITERATURE_REDUCTION_SCOUT
 genuinely_new_information: true
 affected_lines:
-  - H7_LINEAGE_PROVENANCE_RESIDUAL
+  - H7_LINEAGE_CAUSAL_CREDIT_RESIDUAL
   - LP01_PREFORMAL_CLOSEOUT
   - PROGRAMME_NOVELTY
   - FUTURE_OBJECT_ADMISSION
-  - CAUSAL_CREDIT_DISCRIMINATORS
+  - CAUSAL_CREDIT_REDUCTION_LADDER
 novelty_or_reduction_impact: >
-  STRONGER_REDUCTION_AND_ADMISSION_PRESSURE. Explicit historical ancestry/source-token
-  propagation is well covered by provenance theory, while actual causal credit requires
-  counterfactual/interventional distinction, especially under preemption and
-  overdetermination. Current LP01 should remain closed; a future lineage object must beat
-  both provenance-only and actual-cause/responsibility baselines under matched privilege.
+  STRONGER_REDUCTION_PRESSURE. Causal-history token identity, concurrency and conflict can be
+  represented by causal/occurrence-net and event-structure formalisms; actual-run influence
+  has an ordinary causally-consistent dynamic-slicing baseline; and local/online/spiking
+  credit assignment is already strongly populated by contemporary physical-learning work.
+  LP01 should remain closed. A future Spark-specific residual must demonstrate native,
+  intervention-validated lineage responsibility that survives both history/influence and
+  local-learning reduction axes under matched privilege/resources.
 audit_classification: null
 prospective_baselines_or_discriminators:
-  - provenance-only opaque-token / derivation-support propagation baseline
-  - explicit event-DAG query-answer actual-cause / responsibility baseline
-  - preemption and overdetermination cases with matched or near-matched provenance
-  - ancestry-preserving but responsibility-changing interventions
-  - counterfactual-credit ground-truth suite separating ancestry, temporal proximity, and difference-making
+  - individual-token causal-net / occurrence-net / event-structure baseline
+  - causally consistent dynamic-slicing baseline on the same event envelope
+  - explicit counterfactual actual-cause / responsibility baseline
+  - matched local physical credit comparator family where learning is central
+  - preemption/overdetermination cases separating ancestry, trace influence, and responsibility
 questions_for_evidence_analyst:
-  - Keep LP01 closed; do not treat provenance recovery as evidence of actual causal credit.
-  - Should any future H7/lineage admission require a prospectively fixed actual-cause/responsibility gate, not only ancestry recovery?
-  - Should provenance-only and counterfactual-responsibility comparators be mandatory before a lineage object can reach formal review?
+  - Keep LP01 closed; do not count causal-history retention or conflict tracking alone as actual causal credit.
+  - Should future lineage admission require survival of provenance, event-structure/dynamic-slice, and actual-cause baselines before formal review?
+  - When local learning is claimed, require matched local-information comparators rather than treating locality itself as novelty?
 questions_for_control_brain:
-  - Should the residual theory be renamed/narrowed from lineage provenance to intervention-validated lineage-specific causal responsibility?
-  - Add provenance semiring / explicit ancestry bookkeeping and actual-cause responsibility to the ordinary-reduction ladder?
-  - Retain NO_HIGH_VALUE_OBJECT until a native mechanism independently creates this distinction rather than engineering a new benchmark to rescue LP01?
+  - Organize the residual reduction ladder into separate history/influence and learning/locality axes?
+  - Remove local/online/spiking credit assignment as standalone novelty evidence?
+  - Retain NO_HIGH_VALUE_OBJECT until a native mechanism independently creates an intervention-validated residual rather than engineering a successor from literature?
 must_not_change_frozen_or_consumed:
   - all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence
   - canonical PD01/NI01/H5 terminal classifications
