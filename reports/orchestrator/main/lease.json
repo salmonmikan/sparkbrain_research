@@ -1,14 +1,14 @@
 {
-  "run_id": "sparkbrain-main-relay-20260919T195504JST",
-  "execution_mode": "RELAY",
-  "status": "WAITING_EXTERNAL",
-  "started_at": "2026-09-19T19:54:55+09:00",
-  "heartbeat_at": "2026-09-19T19:59:30+09:00",
-  "analyst_commit": "9c6302d83f71ab22d45c5f6290951a48902d9c1e",
+  "run_id": "sparkbrain-main-primary-20260919T201410JST",
+  "execution_mode": "PRIMARY",
+  "status": "RUNNING",
+  "started_at": "2026-09-19T20:14:10+09:00",
+  "heartbeat_at": "2026-09-19T20:14:10+09:00",
+  "analyst_commit": "5982fc0ae76d62c4a6fce42f6b1aaaf7f85b8e23",
   "active_branch": "research/main-structural-order-path-arch-study-20260919",
   "active_identity": null,
-  "active_step": "STRUCTURAL_ORDER_PATH_CYCLE1_MECHANICAL_LINT_REPAIRED_EXACT_HEAD_CI_IN_PROGRESS",
+  "active_step": "COLLECT_AND_VALIDATE_STRUCTURAL_ORDER_PATH_CYCLE1_RESULT",
   "workflow_run_id": 35438868911,
-  "expected_next_action": "Collect exact workflow 35438868911. A further repair is allowed only if failure remains wholly pre-diagnostic, mechanical, science-invariant, and covered by the fixed Analyst contingency. If outcome-bearing diagnostics become visible, stop without rerun/redesign. If valid and successful, independently validate uploaded raw/result bindings, accept only the prospectively fixed six-way NON_EVIDENTIARY Architecture label, persist it, and STOP for fresh Evidence Analyst review. No cycle 2, PRE_FORMAL, FORMAL identity/STARTED, TEST, or merge is authorized.",
+  "expected_next_action": "Validate exact successful workflow 35438868911 artifacts and prospectively fixed NON_EVIDENTIARY Architecture label on head 6a53ee36259bca31b77024245e5ab0a9ef5ec405, then STOP for fresh Evidence Analyst review. Do not rerun, retune, redesign, start cycle 2, create FORMAL identity/STARTED, access TEST, or merge.",
   "owner": "main"
 }
